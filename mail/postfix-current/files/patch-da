@@ -1,11 +1,17 @@
-*** ./proto/regexp_table.orig	Wed Mar  8 19:18:20 2000
---- ./proto/regexp_table	Thu Jun  1 22:44:43 2000
-***************
-*** 6,8 ****
-  # SYNOPSIS
-! #	regexp:/etc/postfix/filename
-  # DESCRIPTION
---- 6,8 ----
-  # SYNOPSIS
-! #	regexp:!!PREFIX!!/etc/postfix/filename
-  # DESCRIPTION
+--- proto/regexp_table.orig	Tue Sep 17 18:54:42 2002
++++ proto/regexp_table	Wed Sep 18 15:16:26 2002
+@@ -4,11 +4,11 @@
+ # SUMMARY
+ #	format of Postfix regular expression tables
+ # SYNOPSIS
+-#	\fBregexp:/etc/postfix/\fIfilename\fR
++#	\fBregexp:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ #
+-#	\fBpostmap -q "\fIstring\fB" regexp:/etc/postfix/\fIfilename\fR
++#	\fBpostmap -q "\fIstring\fB" regexp:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ #
+-#	\fBpostmap -q - regexp:/etc/postfix/\fIfilename\fR <\fIinputfile\fR
++#	\fBpostmap -q - regexp:!!PREFIX!!/etc/postfix/\fIfilename\fR <\fIinputfile\fR
+ # DESCRIPTION
+ #	The Postfix mail system uses optional tables for address
+ #	rewriting or mail routing. These tables are usually in
