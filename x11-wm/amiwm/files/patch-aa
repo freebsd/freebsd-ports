@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Nov 21 00:36:13 1998
++++ Makefile.in	Sat Nov 21 00:36:20 1998
+@@ -42,7 +42,7 @@
+ 
+ PACKAGENAME = amiwm
+ 
+-AMIWM_HOME = $(libdir)/amiwm
++AMIWM_HOME = $(libdir)/X11/amiwm
+ 
+ all : $(PROGS) $(MODULES)
+ 
