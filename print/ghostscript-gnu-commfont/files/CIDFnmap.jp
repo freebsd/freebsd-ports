@@ -1,6 +1,6 @@
 % Japanese Truetype Fonts (Kochi)
-/Kochi-Mincho	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-mincho.ttf) 1 ;
-/Kochi-Gothic	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-gothic.ttf) 1 ;
+/Kochi-Mincho	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf) 1 ;
+/Kochi-Gothic	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-gothic-subst.ttf) 1 ;
 
 %
 % Convenient aliases for PS files on Japanese PostScript printer
