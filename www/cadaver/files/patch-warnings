@@ -1,9 +1,0 @@
---- src/cadaver.c	Tue Apr 13 15:23:17 2004
-+++ src/cadaver.c	Tue May  4 11:45:45 2004
-@@ -1015,5 +1015,5 @@
- 		 (n==(len-1)?'>':' '));
-     }
--    printf(_("] %5.1f%% of %ld bytes"), pc*100, total);
-+    printf(_("] %5.1f%% of %llu bytes"), pc*100, (unsigned long long)total);
-     fflush(stdout);
- }

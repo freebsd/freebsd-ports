@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.22.1
+PORTVERSION=	0.22.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
