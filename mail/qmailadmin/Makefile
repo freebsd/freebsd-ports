@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.26
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,6 +50,7 @@ USE_GMAKE=	YES
 # WITH_MODIFY_QUOTA	- enable domain admin to modify user quotas
 # WITH_DOMAIN_AUTOFILL	- autofill the domain on login page based on the
 #			  hostname
+# WITHOUT_IDX_SQL	- disable the SQL support for mailing lists
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -84,7 +85,7 @@ CONFIGURE_ARGS+=	\
 	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-cgipath=${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-vpopmaildir=${LOCALBASE}/vpopmail \
-	--enable-autoresponder-bin=${LOCALBASE}/bin \
+	--enable-autoresponder-path=${LOCALBASE}/bin \
 	--enable-ezmlmdir=${LOCALBASE}/bin
 
 .if defined(WITHOUT_IPAUTH)
@@ -101,6 +102,10 @@ CONFIGURE_ARGS+=	--enable-modify-quota=y
 
 .if defined(WITH_DOMAIN_AUTOFILL)
 CONFIGURE_ARGS+=	--enable-domain-autofill=y
+.endif
+
+.if defined(WITHOUT_IDX_SQL)
+CONFIGURE_ARGS+=	--enable-ezmlm-mysql=n
 .endif
 
 .include <bsd.port.post.mk>
