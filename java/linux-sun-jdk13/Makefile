@@ -35,6 +35,8 @@ ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7479
 
+CPIO?=		/usr/bin/cpio
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
@@ -67,8 +69,9 @@ post-patch:
 	@find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
-	@${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION} --unlink -xpf-
-	@${LOCALBASE}/bin/registervm "${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}/bin/java # Linux-JDK${JDK_VERSION}"
+	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
+	cd ${WRKSRC} && ${FIND} . -print \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
+	${LOCALBASE}/bin/registervm "${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}/bin/java # Linux-Sun-JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>
