@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/09/27 16:06:57 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/01 02:17:48 jseger Exp $
 #
 
 DISTNAME=	glbiff-0.2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
 		Mesatk.14:${PORTSDIR}/graphics/Mesa3 \
 		glut.3:${PORTSDIR}/graphics/Mesa3
 
-BROKEN=		can't find mesatk
+BROKEN=		can\'t find mesatk
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/glbiff
