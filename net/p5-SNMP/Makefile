@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SNMP
-PORTVERSION=	1.8.1
+PORTVERSION=	3.1.0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SNMP
@@ -16,11 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/ucd-snmp
 
-USE_PERL5=	yes
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
+PERL_CONFIGURE=	yes
 
 post-install:
 		@${INSTALL_DATA} ${WRKSRC}/README \
