@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-1.0.3/src/libsablevm/Makefile.am work/sablevm-1.0.3/src/libsablevm/Makefile.am
---- work.orig/sablevm-1.0.3/src/libsablevm/Makefile.am	Sun Aug 11 14:33:05 2002
-+++ work/sablevm-1.0.3/src/libsablevm/Makefile.am	Sat Aug 17 21:14:51 2002
+diff -ur work.orig/sablevm-1.0.4/src/libsablevm/Makefile.am work/sablevm-1.0.4/src/libsablevm/Makefile.am
+--- work.orig/sablevm-1.0.4/src/libsablevm/Makefile.am	Sun Aug 11 14:33:05 2002
++++ work/sablevm-1.0.4/src/libsablevm/Makefile.am	Sat Aug 17 21:14:51 2002
 @@ -306,7 +306,7 @@
  	rm -f util.c
  	rm -f vm_args.c

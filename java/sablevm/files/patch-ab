@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-1.0.3/configure.ac work/sablevm-1.0.3/configure.ac
---- work.orig/sablevm-1.0.3/configure.ac	Wed Aug 14 22:29:54 2002
-+++ work/sablevm-1.0.3/configure.ac	Sat Aug 17 21:14:51 2002
+diff -ur work.orig/sablevm-1.0.4/configure.ac work/sablevm-1.0.4/configure.ac
+--- work.orig/sablevm-1.0.4/configure.ac	Wed Aug 14 22:29:54 2002
++++ work/sablevm-1.0.4/configure.ac	Sat Aug 17 21:14:51 2002
 @@ -119,7 +119,6 @@
  AC_CHECK_LIB(ltdl,lt_dlinit,echo -n,echo ***ERROR: libltdl is missing; exit 1)
  AC_CHECK_LIB(m,fmod,echo -n,echo ***ERROR: libm is missing; exit 1)

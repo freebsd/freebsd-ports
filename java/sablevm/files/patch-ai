@@ -1,5 +1,5 @@
---- work.orig/sablevm-native-library-1.0.3/src/fdlibm/mprec.h.orig	Thu Aug 22 21:32:46 2002
-+++ work/sablevm-native-library-1.0.3/src/fdlibm/mprec.h	Thu Aug 22 21:35:34 2002
+--- work.orig/sablevm-native-library-1.0.4/src/fdlibm/mprec.h.orig	Thu Aug 22 21:32:46 2002
++++ work/sablevm-native-library-1.0.4/src/fdlibm/mprec.h	Thu Aug 22 21:35:34 2002
 @@ -57,11 +57,11 @@
  
  /* ISO C99 int type declarations */

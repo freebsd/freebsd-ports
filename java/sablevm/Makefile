@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sablevm
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	java
 MASTER_SITES=	http://unc.dl.sourceforge.net/sablevm/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \

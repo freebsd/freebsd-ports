@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in work/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in
---- work.orig/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in	Sun Aug 18 01:09:29 2002
-+++ work/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in	Mon Aug 19 09:02:43 2002
+diff -ur work.orig/sablevm-native-library-1.0.4/src/gnu-java-awt-peer-gtk/Makefile.in work/sablevm-native-library-1.0.4/src/gnu-java-awt-peer-gtk/Makefile.in
+--- work.orig/sablevm-native-library-1.0.4/src/gnu-java-awt-peer-gtk/Makefile.in	Sun Aug 18 01:09:29 2002
++++ work/sablevm-native-library-1.0.4/src/gnu-java-awt-peer-gtk/Makefile.in	Mon Aug 19 09:02:43 2002
 @@ -126,11 +126,11 @@
  INCLUDES = \
  	-I@top_srcdir@/src/include \
