@@ -22,8 +22,6 @@ USE_REINPLACE=	yes
 
 # convert scripts EOL from DOS to NIX
 post-extract:
-.for i in ${WRKSRC}/PySilverCity/Scripts/*.py
-	@${REINPLACE_CMD} -e 's,$$,,' ${WRKSRC}/${i}
-.endfor
+	@${REINPLACE_CMD} -e 's,$$,,' ${WRKSRC}/PySilverCity/Scripts/*.py
 
 .include <bsd.port.mk>
