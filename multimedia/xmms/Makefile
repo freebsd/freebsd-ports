@@ -15,12 +15,11 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 
 MAINTAINER?=	esk@ira.uka.de
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 gnomehack libxml
+USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -54,18 +53,30 @@ PLIST_SUB+=	VORBISPLUGIN:=""
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-.else
-CONFIGURE_ARGS=	--without-gnome
-.endif
-
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
 OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
+.else
+PKGNAMESUFFIX=	-esound
+.endif
 .else
 PLIST_SUB+=	ESDPLUGIN:="@comment "
+.endif
+
+.if ${HAVE_GNOME:Mlibpanel}!=""
+USE_GNOME+=	libpanel gnomeprefix
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gnome
+.else
+PKGNAMESUFFIX=	-gnome
+.endif
+PLIST_SUB+=	DATADIR="share/gnome"
+.else
+CONFIGURE_ARGS=	--without-gnome
+PLIST_SUB+=	DATADIR="share"
 .endif
 
 .if ${MACHINE_ARCH} != "i386"
@@ -80,8 +91,8 @@ CONFIGURE_ARGS+=	--enable-3dnow
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
-	${PERL} -pi.bak -e 's:\.s :\.S :g' ${WRKSRC}/Input/mpg123/Makefile.in
-	${PERL} -pi.bak -e 's:blur_8.s:blur_8.S:g' \
+	${REINPLACE_CMD} -e 's:\.s :\.S :g' ${WRKSRC}/Input/mpg123/Makefile.in
+	${REINPLACE_CMD} -e 's:blur_8.s:blur_8.S:g' \
 	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
 .endif
 
@@ -100,11 +111,9 @@ pre-extract:
 	@${ECHO_MSG}
 .endif
 
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/aclocal|\$\(prefix\)/share/aclocal|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+post-patch:
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmms/Skins
