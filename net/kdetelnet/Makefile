@@ -9,7 +9,7 @@ PORTNAME=	ktelnet
 PORTVERSION=	0.61
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/1.1/apps/network
+MASTER_SITE_SUBDIR=    Attic/old/1.1.2/apps/network
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hanspb@persbraten.vgs.no
