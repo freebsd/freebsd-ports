@@ -62,7 +62,7 @@
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += gedit-plugins
-    SUBDIR += ghex2
+    SUBDIR += ghex
     SUBDIR += glimmer
     SUBDIR += gmanedit
     SUBDIR += gnome2-office

@@ -697,7 +697,6 @@ security/pgp5||2003-11-08|Software is outdated
 x11-toolkits/wxgtk-devel|x11-toolkits/wxgtk|2003-11-10|renamed
 net/lmule||2003-11-10|project has been abadoned in favor of net/xmule
 net/kxicq-devel||2003-11-13|unmaintained, better KDE ICQ clients available
-editors/ghex|editors/ghex2|2003-11-15|ghex2 holds the latest stable version
 x11-fonts/ae_fonts_mono|arabic/ae_fonts_mono|2003-11-15|Moved to new arabic category
 x11-fonts/ae_fonts_ttf|arabic/ae_fonts_ttf|2003-11-15|Moved to new arabic category
 x11-fonts/khotot|arabic/khotot|2003-11-15|Moved to new arabic category
@@ -1379,3 +1378,4 @@ graphics/eog2|graphics/eog|2005-01-25|moved to non-versioned directory
 x11/gdm2|x11/gdm|2005-01-25|moved to non-versioned directory
 editors/gedit2|editors/gedit|2005-01-25|moved to non-versioned directory
 print/ggv2|print/ggv|2005-01-25|moved to non-versioned directory
+editors/ghex2|editors/ghex|2005-01-25|moved to non-versioned directory
