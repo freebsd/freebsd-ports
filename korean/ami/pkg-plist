@@ -7,7 +7,6 @@ share/doc/ami/AUTHORS
 share/doc/ami/ChangeLog
 share/doc/ami/NEWS
 share/doc/ami/README
-share/doc/ami/XLC_LOCALE
 %%DATADIR%%/ami/gtkrc
 %%DATADIR%%/ami/hanja.dic
 %%DATADIR%%/ami/pix/Aqua/AUTHORS
@@ -31,11 +30,6 @@ share/doc/ami/XLC_LOCALE
 %%DATADIR%%/ami/pix/nam/ami-e.xpm
 %%DATADIR%%/ami/pix/nam/ami-h.xpm
 %%GNOME:%%share/gnome/applets/Utility/ami.desktop
-@comment copy new locale definition(no harm, so need not be uninstalled)
-@exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
-@exec cp %D/share/doc/ami/XLC_LOCALE %D/lib/X11/locale/ko/
-@unexec rm -f %D/lib/X11/locale/ko/XLC_LOCALE
-@unexec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE.orig ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE.orig %D/lib/X11/locale/ko/XLC_LOCALE; fi
 @dirrm share/doc/ami
 @dirrm %%DATADIR%%/ami/pix/nam
 @dirrm %%DATADIR%%/ami/pix/arctic
