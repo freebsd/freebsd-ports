@@ -1,0 +1,11 @@
+--- src/testimages/Makefile.in.orig	Thu Oct 26 21:29:04 2000
++++ src/testimages/Makefile.in	Thu Oct 26 22:38:54 2000
+@@ -76,7 +76,7 @@
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = Makefile.in				
+ 
+-testimages_DATA =  bg.png bulb.png elogo.png globe.png mail.png mush.png paper.png laet.jpg
++testimages_DATA =  bg.png bulb.png elogo.png globe.png mail.png mush.png paper.png
+ 
+ 
+ testimagesdir = $(prefix)/share/geist/images
