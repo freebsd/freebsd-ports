@@ -88,33 +88,6 @@ pre-fetch:
 	@${ECHO_MSG} "to use."
 .endif
 
-.if defined(CVS_DATE)
-DIST_SUBDIR=	${PKGNAME}
-CVS_CMD?=	cvs -z3 -qR
-CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
-STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
-do-fetch:
-	@if [ ! -e ${STAMPFILE} ] || \
-	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-		cd ${DISTDIR}/${DIST_SUBDIR} ; \
-		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
-		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
-		if ${CVS_CMD} -d ${CVSROOT} co -r gcc-3_2-branch gcc ; \
-		then \
-			( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
-			exit ; \
-		fi ; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
-		${ECHO_MSG} ">> Please try again later."; \
-		exit 1; \
-	fi
-
-do-extract:
-	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
-.endif	# CVS_DATE
-
 .if defined(WITH_BOUNDSCHECKING)
 # Extract bounds-checking patch, removing the ada parts of the patch with sed.
 pre-patch:
@@ -199,10 +172,5 @@ post-install:
 	# libgcj is built on all platforms except sparc64 and ia64.
 	${CAT} ${MASTERDIR}/pkg-plist.libgcj >> ${TMPPLIST}
 .endif
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} LATEST
-.endfor
 
 .include <bsd.port.post.mk>
