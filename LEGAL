@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.112 1998/07/22 11:32:59 asami Exp $
+# $Id: LEGAL,v 1.113 1998/07/24 18:43:47 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -110,6 +110,9 @@ vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
+xfntmizi-*.noarch	ports/korean/mizifont	Not a free software, but
+						redistributable on FreeBSD
+						mirrors
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
