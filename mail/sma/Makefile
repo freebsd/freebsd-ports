@@ -9,7 +9,7 @@ PORTNAME=	sma
 PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.klake.org/sma/dl/ \
-		http://www.saunalahti.fi/~jt2/sma/
+		http://www.saunalahti.fi/~jt2/sma/dl/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
