@@ -25,7 +25,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack metacity nautilus2 \
-		gstreamerplugins
+		gstreamerplugins desktopfileutils
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
