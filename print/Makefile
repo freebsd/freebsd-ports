@@ -122,7 +122,6 @@
     SUBDIR += pclprint
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
-    SUBDIR += pdflib4
     SUBDIR += pdq
     SUBDIR += perlftlib
     SUBDIR += pfaedit
