@@ -1,5 +1,5 @@
---- config.h.orig	Wed Oct 19 00:56:25 1994
-+++ config.h	Sun May 30 21:19:39 1999
+--- config.h.orig	Wed Oct 19 06:56:25 1994
++++ config.h	Fri Dec 12 13:16:55 2003
 @@ -8,7 +8,7 @@
  /*
   *	For X11R6
@@ -22,7 +22,7 @@
   *	For MH scan users
   */
  
-@@ -42,45 +48,71 @@
+@@ -42,12 +48,12 @@
   *	For Shape Extension
   */
  
@@ -37,18 +37,7 @@
  
  /*
   *	Set Local Spool pathname
-  */
- #undef SPOOLPATH	"/usr/mail"
- 
-+#ifndef SPOOLPATH
-+#ifdef __FreeBSD__
-+#include <paths.h>
-+#define SPOOLPATH	_PATH_MAILDIR
-+#else
-+#undef SPOOLPATH	"/usr/mail"
-+#endif
-+#endif
-+
+@@ -57,30 +63,47 @@
  /*
   *	For X pixmap
   */
@@ -57,11 +46,11 @@
 +#define XPM
 +
 +#ifdef XPM
-+#ifdef __FreeBSD__
++#ifdef FreeBSDArchitecture
 +#undef DepXpmLib
 +#else
 +#define DepXpmLib	/usr/local/lib/libXpm.a
-+#endif /* __FreeBSD__ */
++#endif /* FreeBSDArchitecture */
 +#endif /* XPM */
  
  /*
@@ -70,7 +59,7 @@
 -#undef XI18N
 -/* If you use X11R6, these settings below are not necessary */
 +#ifndef XI18N
-+#ifdef __FreeBSD__
++#ifdef FreeBSDArchitecture
 +#define XI18N
 +#endif
 +#endif
@@ -102,7 +91,7 @@
  
  /*
   *	For SUN Audio
-@@ -88,9 +120,19 @@
+@@ -88,9 +111,19 @@
  #undef SUN_AUDIO
  #undef AudioIncDir /usr/demo/SOUND
  
