@@ -10,7 +10,7 @@ PORTVERSION=	1.5.28
 PORTREVISION=	2
 CATEGORIES=	security ipv6
 
-MAINTAINER=	FreeBSD-Maintainer@westbend.net
+MAINTAINER=	hetzelsw@westbend.net
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
