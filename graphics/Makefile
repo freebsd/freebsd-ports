@@ -185,6 +185,7 @@
     SUBDIR += mpgtx
     SUBDIR += mplayer
     SUBDIR += mplayer-fonts
+    SUBDIR += mplayer-skins
     SUBDIR += mplex
     SUBDIR += mtv
     SUBDIR += netpbm

@@ -1,0 +1,65 @@
+#! /bin/sh
+
+# $FreeBSD$
+# based on configure from mplayer-skins by Andreas Klemm <andreas@FreeBSD.org>
+
+if [ "$BATCH" != "yes" ]; then
+
+#
+# configure - mplayer-skins installation options
+#
+
+/usr/bin/dialog --title "mplayer skins" --clear \
+	--checklist "\n\
+This configuration dialog allows you to choose \n\
+only the skins you really want. \n\n\
+  Select the skins you want to install:" -1 -1 13 \
+  "ALL"	"Install ALL skins"		OFF \
+  "Default"	"The default MPlayer skin"			ON \
+  "avifile"	"MPlayer skin, with the look of aviplay"	OFF \
+  "BlueHeart"	"MPlayer conversion of a BlueHeart XMMS skin"	OFF \
+  "Cyrus"	"Cyrus skin from XMMS"				OFF \
+  "Mentalic"	"Sharp and shiny"				OFF \
+  "MidnightLove"	"MPlayer version of WinAMP/XMMS Rei Ayanami's skin"		OFF \
+  "Neutron"	"VERY nice skin!"				OFF \
+  "Phony"	"Look-and-feel of a desktop DVD player"		OFF \
+  "Plastic"	"Remote control-like skin with plastic feeling"	OFF \
+  "WindowsMediaPlayer6"	"no comment"				OFF \
+  "Xanim"	"xanim \"feeling\""					OFF \
+  "Xine-LCD"	"MPlayer conversion of Xine's LCD skin"		OFF \
+2> /tmp/mplayer-skins-checklist.$$
+
+retval=$?
+
+if [ -s /tmp/mplayer-skins-checklist.$$ ]; then
+	set `cat /tmp/mplayer-skins-checklist.$$`
+fi
+rm -f /tmp/mplayer-skins-checklist.$$
+
+case $retval in
+	0)	if [ -z "$*" ]; then
+			echo "Nothing selected."
+			echo "You HAVE to choose, at least, one skin."
+			exit 1
+		fi
+		;;
+	1)	echo "Cancel pressed."
+		exit 1
+		;;
+esac
+
+/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+while [ "$1" ]; do
+	echo WITH_SKIN_`echo "$1" | tr "[:lower:]" "[:upper:]" | tr " -" "_" | tr -d \"`=yes
+	shift
+done
+
+fi # if $BATCH
+
+# if batch, then start creating Makefile.inc here
+if [ "$BATCH" = "yes" ]; then
+	/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
+	exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+fi
