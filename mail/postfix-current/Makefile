@@ -110,8 +110,8 @@ CONF2+=			sample-tls.cf
 BIN1+=			tlsmgr
 POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl
 POSTFIX_AUXLIBS+=	-lssl -lcrypto
-DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.23-snap20001030-0.9.6.tar.gz
-EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.23-snap20001030-0.9.6/pfixtls.diff
+DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.24-snap20001121-0.9.6.tar.gz
+EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.24-snap20001121-0.9.6/pfixtls.diff
 PATCH_STRIP=		-p1
 PLIST_SUB+=		WITH_TLS=""
 .else
