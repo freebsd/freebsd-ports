@@ -4,6 +4,6 @@ You have installed the php-templates package.
 
 Edit %%LOCALBASE%%/etc/php.ini and add:
 
-extension="%%PREFIX%%/lib/php/20010901/templates.so"
+extension="%%PREFIX%%/lib/php/extensions/templates.so"
 
 *****************************************************************************
