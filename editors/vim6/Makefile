@@ -7,22 +7,22 @@
 # $FreeBSD$
 #
 
-PKGVER=		5.6a.21
-DISTNAME=	vim-5.6a
+PKGVER=		5.6
+DISTNAME=	vim-5.6
 PKGNAME?=	vim-${PKGVER}
 CATEGORIES=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
-		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unreleased/unix/  \
-		ftp://ftp.is.co.za/applications/editors/unreleased/vim/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/unreleased/vim/
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
+		ftp://ftp.nuxi.com/pub/vim/unix/ \
+		ftp://ftp.vim.org/pub/vim/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
+		ftp://ftp.is.co.za/applications/editors/vim/  \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 05 06 07 08 09 10 12 13 14 15 17 18 19 20 21
-PATCHFILES+=	5.6a.0${p}
-.endfor
+#.for p in 01 
+#PATCHFILES+=	5.6.0${p}
+#.endfor
 
 MAINTAINER=     obrien@FreeBSD.org
 
