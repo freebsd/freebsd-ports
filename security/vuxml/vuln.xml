@@ -3856,4 +3856,35 @@ misc.c:
       <entry>2004-07-05</entry>
     </dates>
   </vuln>
+
+  <vuln vid="e5e2883d-ceb9-11d8-8898-000d6111a684">
+    <topic>MySQL authentication bypass / buffer overflow</topic>
+    <affects>
+      <package>
+        <name>mysql-server</name>
+        <range><ge>4.1.*</ge><lt>4.1.3</lt></range>
+        <range><ge>5.*</ge><le>5.0.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>By submitting a carefully crafted authentication packet, it is possible
+          for an attacker to bypass password authentication in MySQL 4.1. Using a
+          similar method, a stack buffer used in the authentication mechanism can
+          be overflowed.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.nextgenss.com/advisories/mysql-authbypass.txt</url>
+      <url>http://dev.mysql.com/doc/mysql/en/News-4.1.3.html</url>
+      <url>http://secunia.com/advisories/12020</url>
+      <url>http://www.osvdb.org/7475</url>
+      <url>http://www.osvdb.org/7476</url>
+      <mlist msgid="Pine.LNX.4.44.0407080940550.9602-200000@pineapple.shacknet.nu">http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0003.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-07-01</discovery>
+      <entry>2004-07-05</entry>
+    </dates>
+  </vuln>
 </vuxml>
