@@ -33,8 +33,9 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+# ppl needs gcc > 3.1, with libgmp4 compiled with the same gcc version
 .if ${OSVERSION} < 500035
-#BROKEN=		"Does not build"
+BROKEN=		"Does not build"
 .endif
 
 .include <bsd.port.post.mk>
