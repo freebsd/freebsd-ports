@@ -7945,6 +7945,7 @@ wmbluecpu	ports/mail/wmbluecpu
 wmbutton	ports/x11/wmbutton
 wmcalc		ports/math/wmcalc
 wmcalclock	ports/x11-clocks/wmcalclock
+wmcalendar	ports/misc/wmcalendar
 wmcdplay	ports/audio/wmcdplay
 wmcliphist	ports/x11/wmcliphist
 wmclock		ports/x11-clocks/wmclock
