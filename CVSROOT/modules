@@ -1070,6 +1070,7 @@ dcdflib		ports/math/dcdflib
 dcgui		ports/net/dcgui
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
+dcons		ports/devel/dcons
 dctc		ports/net/dctc
 dctc-gui	ports/net/dctc-gui
 dctc-gui-qt	ports/net/dctc-gui-qt
