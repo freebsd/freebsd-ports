@@ -1,0 +1,396 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/skiptool_stubs.c work.new/skip/tools/skiptool/skiptool_stubs.c
+--- skipsrc-1.0.orig/skip/tools/skiptool/skiptool_stubs.c	Fri Oct 25 13:13:10 1996
++++ work.new/skip/tools/skiptool/skiptool_stubs.c	Tue Jan 25 09:59:40 2000
+@@ -68,6 +68,10 @@
+ 
+ #include "es_glue.h"
+ 
++#ifndef __GNUC__
++#define __attribute__ (x)
++#endif
++
+ /*
+  * Global object definitions.
+  */
+@@ -124,7 +128,7 @@
+  */
+ Attr_attribute	INSTANCE;
+ 
+-void
++int
+ main(int argc, char **argv)
+ {
+ 	/*
+@@ -161,7 +165,7 @@
+ 	 * Turn control over to XView.
+ 	 */
+ 	xv_main_loop(Skiptool_base_window->base_window);
+-	exit(0);
++	return(0);
+ }
+ 
+ #endif
+@@ -173,7 +177,7 @@
+ Menu_item
+ skiptool_menu_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -206,7 +210,7 @@
+ void
+ skiptool_base_window_access_ctrl_notify_callback(Panel_item item, int value, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -231,7 +235,7 @@
+ void
+ skiptool_base_window_access_mode_notify_callback(Panel_item item, int value, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -261,7 +265,7 @@
+ void
+ skiptool_base_window_delete_button_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -280,7 +284,7 @@
+ void
+ skiptool_key_params_win_key_apply_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_key_params_win_objects *ip = (skiptool_key_params_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_key_params_win_objects *ip __attribute__ ((unused)) = (skiptool_key_params_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -302,7 +306,7 @@
+ void
+ skiptool_key_params_win_key_default_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_key_params_win_objects *ip = (skiptool_key_params_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_key_params_win_objects *ip __attribute__ ((unused)) = (skiptool_key_params_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -322,7 +326,7 @@
+ void
+ skiptool_required_win_required_add_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_required_win_objects *ip = (skiptool_required_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_required_win_objects *ip __attribute__ ((unused)) = (skiptool_required_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -341,7 +345,7 @@
+ void
+ skiptool_required_win_required_cancel_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_required_win_objects *ip = (skiptool_required_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_required_win_objects *ip __attribute__ ((unused)) = (skiptool_required_win_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -360,7 +364,7 @@
+ Menu_item
+ skiptool_help_menu_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -405,7 +409,7 @@
+ Menu_item
+ skiptool_stats_menu_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -438,7 +442,7 @@
+ Menu_item
+ skiptool_stats_menu_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -471,7 +475,7 @@
+ Menu_item
+ skiptool_stats_menu_item2_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -504,7 +508,7 @@
+ Menu_item
+ skiptool_stats_menu_item3_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -537,7 +541,7 @@
+ void
+ skiptool_hostwin_v2_s_nsid_notify_callback(Panel_item item, int value, Event *event)
+ {
+-	skiptool_hostwin_v2_objects *ip = (skiptool_hostwin_v2_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_hostwin_v2_objects *ip __attribute__ ((unused)) = (skiptool_hostwin_v2_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -572,6 +576,10 @@
+ 
+ 	case PANEL_LIST_OP_DELETE:
+ 		break;
++
++	case PANEL_LIST_OP_DESELECT:
++	case PANEL_LIST_OP_DBL_CLICK:
++		break;
+ 	}
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+ 
+@@ -601,6 +609,10 @@
+ 
+ 	case PANEL_LIST_OP_DELETE:
+ 		break;
++
++	case PANEL_LIST_OP_DESELECT:
++	case PANEL_LIST_OP_DBL_CLICK:
++		break;
+ 	}
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -616,7 +628,7 @@
+ void
+ skiptool_base_window_delete_xbutton_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+ 
+@@ -634,7 +646,7 @@
+ void
+ skiptool_base_window_to_x_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+ 
+@@ -652,7 +664,7 @@
+ void
+ skiptool_base_window_to_a_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+ 
+@@ -670,7 +682,7 @@
+ Menu_item
+ skiptool_stats_menu_item4_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -703,7 +715,7 @@
+ Menu_item
+ skiptool_stats_menu_item5_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -736,7 +748,7 @@
+ Menu_item
+ skiptool_menu_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -772,7 +784,7 @@
+ Menu_item
+ skiptool_menu_item3_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -805,7 +817,7 @@
+ Menu_item
+ skiptool_menu_item4_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -838,7 +850,7 @@
+ Menu_item
+ skiptool_version_menu_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -869,7 +881,7 @@
+ Menu_item
+ skiptool_version_menu_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -900,7 +912,7 @@
+ Menu_item
+ skiptool_version_menu_item2_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -931,7 +943,7 @@
+ Menu_item
+ skiptool_version_menu_nom_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -962,7 +974,7 @@
+ Menu_item
+ skiptool_version_menu_nom_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -993,7 +1005,7 @@
+ Menu_item
+ skiptool_version_menu_net_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1024,7 +1036,7 @@
+ Menu_item
+ skiptool_version_menu_net_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1055,7 +1067,7 @@
+ Menu_item
+ skiptool_version_menu_net_item2_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1086,7 +1098,7 @@
+ Menu_item
+ skiptool_version_menu_net_item3_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1346,7 +1358,7 @@
+ Menu_item
+ skiptool_version_menu_item3_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1377,7 +1389,7 @@
+ Menu_item
+ skiptool_xversion_menu_nom_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1410,7 +1422,7 @@
+ Menu_item
+ skiptool_xversion_menu_nom_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	Xv_opaque ip = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
++	Xv_opaque ip __attribute__ ((unused)) = (Xv_opaque) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1443,7 +1455,7 @@
+ Menu_item
+ skiptool_exc_menu_item0_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1476,7 +1488,7 @@
+ Menu_item
+ skiptool_exc_menu_item1_callback(Menu_item item, Menu_generate op)
+ {
+-	skiptool_base_window_objects * ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects * ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	switch (op) {
+ 	case MENU_DISPLAY:
+@@ -1842,7 +1854,7 @@
+ void
+ skiptool_nomwin_v2_skip_mode_notify_callback(Panel_item item, int value, Event *event)
+ {
+-	skiptool_nomwin_v2_objects *ip = (skiptool_nomwin_v2_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_nomwin_v2_objects *ip __attribute__ ((unused)) = (skiptool_nomwin_v2_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+@@ -1910,7 +1922,7 @@
+ void
+ skiptool_base_window_about_button_notify_callback(Panel_item item, Event *event)
+ {
+-	skiptool_base_window_objects *ip = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
++	skiptool_base_window_objects *ip __attribute__ ((unused)) = (skiptool_base_window_objects *) xv_get(item, XV_KEY_DATA, INSTANCE);
+ 	
+ 	/* gxv_start_connections DO NOT EDIT THIS SECTION */
+ 
