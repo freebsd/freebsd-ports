@@ -10,7 +10,7 @@ PORTVERSION=	0.05
 CATEGORIES=	net
 MASTER_SITES=	http://www.raccoon.kiev.ua/projects/remarp/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	An SNMP-based ARP watcher
 
 RUN_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
