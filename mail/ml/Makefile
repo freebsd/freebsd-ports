@@ -14,6 +14,12 @@ MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IMAP client
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
 USE_MOTIF=	yes
@@ -23,4 +29,4 @@ pre-configure:
 	@( cd ${WRKSRC}/../imap-4; make bsi )
 	@( cd ${WRKSRC}; ${RM} -f makeproto )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

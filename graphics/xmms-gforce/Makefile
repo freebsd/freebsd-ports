@@ -17,6 +17,12 @@ COMMENT=	A visual plugin for XMMS
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -37,4 +43,4 @@ pre-fetch:
 	@${ECHO_MSG} "*******************************************************"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
