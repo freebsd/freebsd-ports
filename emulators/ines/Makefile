@@ -3,13 +3,13 @@
 # Date created:		02 November 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/06/07 19:23:12 max Exp $
+# $Id: Makefile,v 1.5 1997/08/24 20:27:22 max Exp $
 #
 
 DISTNAME=	iNES07-FreeBSD-80x86-bin
 PKGNAME=        ines-0.7
 CATEGORIES=     emulators
-MASTER_SITES=   http://freeflight.com/fms/iNES/
+MASTER_SITES=   http://www.komkon.org/fms/iNES/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
