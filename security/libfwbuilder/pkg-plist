@@ -102,3 +102,4 @@ lib/libfwbuilder.so
 @dirrm %%DOCSDIR%%
 @dirrm include/fwb-2.0/fwcompiler
 @dirrm include/fwb-2.0/fwbuilder
+@dirrm include/fwb-2.0
