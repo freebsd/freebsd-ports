@@ -8,7 +8,7 @@
 PORTNAME=	pr
 PORTVERSION=	1.1
 CATEGORIES=	comms net
-MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
+MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	pr-${PORTVERSION}
 
 MAINTAINER=	anton@chelcom.ru
