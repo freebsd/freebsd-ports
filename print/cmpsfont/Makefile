@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cmps
-# Version required:	1.0
 # Date created:		11 September 1998
 # Whom:			giffunip
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cmps
-PKGNAME=	cmpsfont-1.0
+PORTNAME=	cmpsfont 
+PORTVERSION=	1.0 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/cm/
+DISTNAME=	cmps
 EXTRACT_SUFX=	-unix.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

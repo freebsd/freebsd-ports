@@ -1,15 +1,15 @@
 # New ports collection makefile for:   c2ps (letter)
-# Version required:    4.0
 # Date created:        19 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	c2ps-4.0
-PKGNAME=	c2ps-${PAPERSIZE}-4.0
+PORTNAME=	c2ps-${PAPERSIZE} 
+PORTVERSION=	4.0 
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
+DISTNAME=	c2ps-${PORTVERSION}
 
 MAINTAINER=	mph@freebsd.org
 

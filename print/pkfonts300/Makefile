@@ -1,13 +1,12 @@
 # New ports collection makefile for: English PK fonts
-# Version required:	?
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pkfonts
-PKGNAME=	pkfonts${RESOLUTION}-1.0
+PORTNAME=	pkfonts${RESOLUTION} 
+PORTVERSION=	1.0 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	pkfonts

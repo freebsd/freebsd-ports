@@ -1,12 +1,12 @@
 # New ports collection makefile for:    makeindex
-# Version required:     3.0.8
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	makeindex-3.0.8
+PORTNAME=	makeindex 
+PORTVERSION=	3.0.8 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/tex/src/makeindex/BETA/
 EXTRACT_SUFX=	.tar.Z

@@ -1,17 +1,16 @@
 # New ports collection makefile for:    dvi2xx
-# Version required:     0.51alpha9
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dvi2xx
-PKGNAME=	dvi2xx-0.51a9
-DISTFILES=	dvi2xx.tar.gz
+PORTNAME=	dvi2xx 
+PORTVERSION=	0.51.a9 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	dviware
+DISTNAME=	dvi2xx
 
 MAINTAINER=	jmz@FreeBSD.org
 

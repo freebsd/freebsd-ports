@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  bibcard
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bibcard.6.4
-PKGNAME=	bibcard-0.6.4
+PORTNAME=	bibcard 
+PORTVERSION=	0.6.4 
 CATEGORIES=	print databases
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/misc/
+DISTNAME=	bibcard.6.4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@NUXI.com

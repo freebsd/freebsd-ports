@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pdq
-# Version required:	2.1.1
 # Date created:		15 May 1999
 # Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pdq-2.1.1
+PORTNAME=	pdq 
+PORTVERSION=	2.1.1 
 CATEGORIES=	print
 MASTER_SITES=	ftp://feynman.tam.uiuc.edu/pub/pdq/
 EXTRACT_SUFX=	.tgz

@@ -1,22 +1,22 @@
 # New ports collection makefile for:	pbm2ppa
-# Version required:	0.8.6
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ppa-0.8.6
-PKGNAME=	pbm2ppa-0.8.6
+PORTNAME=	pbm2ppa 
+PORTVERSION=	0.8.6 
 CATEGORIES=	print
 MASTER_SITES=	http://www.httptech.com/ppa/files/
+DISTNAME=	ppa-0.8.6
 
 MAINTAINER=	smace@freebsd.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		enscript:${PORTSDIR}/print/enscript-letter
 
-WRKSRC=		${WRKDIR}/pbm2ppa-0.8.6
+WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
 
 HPMODEL?=	720

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ghostscript
-# Version required:	5.50
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ghostscript-5.50
+PORTNAME=	ghostscript 
+PORTVERSION=	5.50 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/ \

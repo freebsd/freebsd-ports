@@ -1,5 +1,4 @@
 # New ports collection makefile for:	acroread
-# Version required:	3.02
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
@@ -7,15 +6,16 @@
 #
 .include <bsd.port.pre.mk>
 
+PORTNAME=	acroread 
+PORTVERSION=	3.02 
+CATEGORIES=	print linux
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
 .if ${ARCH} == "i386"
 DISTNAME=	ar302lin
 .elif ${ARCH} == "alpha"
 DISTNAME=	ar302osf
 .endif
-PKGNAME=	acroread-3.02
-CATEGORIES=	print linux
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.org

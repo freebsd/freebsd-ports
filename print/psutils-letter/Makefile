@@ -1,15 +1,15 @@
 # New ports collection makefile for:    psutils (letter)
-# Version required:     1.16
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	psutils-p17
-PKGNAME=	psutils-${PAPERSIZE}-1.17
+PORTNAME=	psutils-${PAPERSIZE} 
+PORTVERSION=	1.17 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
+DISTNAME=	psutils-p17
 
 MAINTAINER=	jmz@FreeBSD.org
 

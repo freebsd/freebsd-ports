@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xdvi
-# Version required:     patchlevel 20
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdvi-20
-PKGNAME=	xdvi-pl20
+PORTNAME=	xdvi 
+PORTVERSION=	pl20 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
+DISTNAME=	${PORTNAME}-20
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org

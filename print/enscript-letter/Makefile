@@ -1,16 +1,16 @@
 # New ports collection makefile for:	enscript (letter)
-# Version required:     	1.6.1
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
 # $FreeBSD$
 #
 
-DISTNAME=       enscript-1.6.1
-PKGNAME=        enscript-${PAPERSIZE}-1.6.1
+PORTNAME=	enscript-${PAPERSIZE} 
+PORTVERSION=	1.6.1 
 CATEGORIES=	print
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	enscript
+DISTNAME=	enscript-${PORTVERSION}
 
 MAINTAINER=	kline@thought.org
 

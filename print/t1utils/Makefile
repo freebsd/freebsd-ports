@@ -1,12 +1,12 @@
 # New ports collection makefile for:   t1utils
-# Version required:    1.14
 # Date created:        2 September 1999
 # Whom:                mwm
 #
 # $FreeBSD$
 #
 
-DISTNAME=	t1utils-1.14
+PORTNAME=	t1utils 
+PORTVERSION=	1.14 
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/type/
 

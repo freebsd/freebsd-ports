@@ -1,12 +1,12 @@
 # New ports collection makefile for: YaTeX
-# Version required:	1.67
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	yatex-xemacs-mule-1.67
+PORTNAME=	yatex-xemacs-mule 
+PORTVERSION=	1.67 
 
 XEMACS-MULE=	yes
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gsfonts
-# Version required:	5.10
 # Date created:		11 September 1997
 # Whom:			giffunip
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gsfonts-5.10
+PORTNAME=	gsfonts 
+PORTVERSION=	5.10 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/

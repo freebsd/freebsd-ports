@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  lprps (letter)
-# Version required: 0.0
 # Date created:			  Sat Aug 3, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lprps-2.5
-PKGNAME=	lprps-${PAPERSIZE}-2.5
+PORTNAME=	lprps-${PAPERSIZE} 
+PORTVERSION=	2.5 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
+DISTNAME=	lprps-2.5
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

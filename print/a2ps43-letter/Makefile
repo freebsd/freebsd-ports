@@ -1,16 +1,16 @@
 # ex:ts=8
 # New ports collection makefile for:    a2ps
-# Version required: 0.0
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	a2ps.V4.3
-PKGNAME=	a2ps-${PAPERSIZE}-4.3
+PORTNAME=	a2ps-${PAPERSIZE} 
+PORTVERSION=	4.3 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
+DISTNAME=	a2ps.V4.3
 
 MAINTAINER=	obrien@FreeBSD.org
 

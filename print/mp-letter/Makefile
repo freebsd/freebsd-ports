@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  mp (letter)
-# Version required: 0.0
 # Date created:			  11 July 1996
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mp-3.0.1
-PKGNAME=	mp-${PAPERSIZE}-3.0.1
+PORTNAME=	mp-${PAPERSIZE} 
+PORTVERSION=	3.0.1 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 		ftp://ftp.win.tue.nl/pub/mail/
+DISTNAME=	mp-3.0.1
 
 MAINTAINER=	obrien@FreeBSD.org
 
