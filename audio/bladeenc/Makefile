@@ -3,13 +3,13 @@
 # Date created:		Thu Jan 14 23:28:40 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/07/27 10:46:29 dirk Exp $
+# $Id: Makefile,v 1.6 1999/07/27 13:08:48 dirk Exp $
 #
 
 DISTNAME=	bladeenc-082-src-stable
 PKGNAME=	bladeenc-0.82
 CATEGORIES=	audio
-MASTER_SITES=	http://home8.swipnet.se/~w-82625/encoder/binaries/ \
+MASTER_SITES=	http://home8.swipnet.se/~w-82625/encoder/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
