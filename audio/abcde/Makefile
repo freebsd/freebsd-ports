@@ -17,20 +17,21 @@ MAINTAINER=	mchopra@engmail.uwaterloo.ca
 RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
 		dagrab:${PORTSDIR}/audio/dagrab \
 		id3v2:${PORTSDIR}/audio/id3v2 \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAN1=		abcde.1 cddb-tool.1
 
 .if defined(WITH_CDDA2WAV)
 RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-.endif
-
+.else
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option:"
 	@${ECHO_MSG} "WITH_CDDA2WAV=yes           enable support for cdda2wav"
 	@${ECHO_MSG} ""
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
