@@ -4,6 +4,6 @@ if [ "$2" = "PRE-INSTALL" ]; then
 fi
 XPDFRC=${PKG_PREFIX}/etc/xpdfrc
 ADDRESOURCE=${PKG_PREFIX}/share/xpdf/chinese-traditional/dot.xpdfrc
-/usr/bin/grep -F -v --file=${ADDRESOURCE} ${XPDFRC} > ${XPDFRC}.nochinese-traditional
-/bin/cat ${XPDFRC}.nochinese-traditional ${ADDRESOURCE} > ${XPDFRC}
-/bin/rm -f ${XPDFRC}.nochinese-traditional
+grep -F -v --file=${ADDRESOURCE} ${XPDFRC} > ${XPDFRC}.nochinese-traditional
+cat ${XPDFRC}.nochinese-traditional ${ADDRESOURCE} > ${XPDFRC}
+rm -f ${XPDFRC}.nochinese-traditional
