@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnowavcut
-PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTVERSION=	0.0.8
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gnowavcut.good-day.net/src/
 
