@@ -19,6 +19,8 @@ MAINTAINER=	alane@FreeBSD.org
 
 USE_GNAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
