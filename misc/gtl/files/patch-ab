@@ -1,0 +1,11 @@
+--- src/graph.cpp.orig	Wed Jan 12 14:25:24 2000
++++ src/graph.cpp	Wed Jan 12 14:25:51 2000
+@@ -24,6 +24,8 @@
+ #include <fstream>
+ #include <string>
+ 
++#include <map>
++
+ __GTL_BEGIN_NAMESPACE
+ 
+ //--------------------------------------------------------------------------
