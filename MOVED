@@ -1228,3 +1228,12 @@ net/ntp-devel||2004-08-10|Cleanup, NTP development branch has been dormant for a
 shells/bash3|shells/bash|2004-08-11|move latest stable version to unnumbered directory
 audio/songpring||2004-08-15|Obsolete, it has not been developed since 2000
 audio/mpt||2004-08-15|Obsolete, it has not been developed since 2000
+net/SSLtelnet||2004-08-15|Unfixed security vulnerabilities
+audio/mppdec|audio/musepack|2004-08-15|musepack is a newer version
+databases/tora||2004-08-15|Based on QT2 which is obsolete
+games/nethack33-qt||2004-08-15|Based on QT2 which is obsolete
+math/rcalc||2004-08-15|Stale version, many bugs
+korean/hlatexp||2004-08-15|Port was unfetchable
+korean/hlatexp-pkfonts1200||2004-08-15|Port was unfetchable
+korean/hlatexp-pkfonts300||2004-08-15|Port was unfetchable
+korean/hlatexp-pkfonts600||2004-08-15|Port was unfetchable 
