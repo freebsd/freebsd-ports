@@ -17,8 +17,6 @@ COMMENT=	CRL Management module
 
 PERL_CONFIGURE=	yes
 
-MAN3=		OpenCA::CRL.3
-
 .include <bsd.port.pre.mk>
 
 post-patch:
