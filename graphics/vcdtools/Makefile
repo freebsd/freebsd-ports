@@ -10,12 +10,12 @@ PORTNAME=	vcdtools
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mpegnews.com/files/video/
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
+MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/v/vcdtools/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mkvcdfs ${WRKSRC}/vcdmplex ${PREFIX}/bin
