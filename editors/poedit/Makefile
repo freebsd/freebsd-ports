@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	poedit
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
-USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -51,7 +51,10 @@ BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|db-3.1;|db-3.1 db${USE_BDB_VER};|g ; \
-		 s|-O3||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's/for version in .*;/for version in ${USE_BDB_VER};/ ; \
+		 s/-ldb-$$version/-ldb${USE_BDB_VER}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s/ install / /' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
