@@ -1,4 +1,6 @@
 bin/swig
+lib/swig%%VER%%/mzscheme/typemaps.i
+lib/swig%%VER%%/mzscheme/mzscheme.swg
 lib/swig%%VER%%/tcl/constarray.i
 lib/swig%%VER%%/tcl/consthash.i
 lib/swig%%VER%%/tcl/ptrlang.i
@@ -27,6 +29,7 @@ lib/swig%%VER%%/guile/guilemain.i
 lib/swig%%VER%%/guile/interpreter.i
 lib/swig%%VER%%/guile/typemaps.i
 lib/swig%%VER%%/guile/guile.swg
+lib/swig%%VER%%/guile/guiledec.swg
 lib/swig%%VER%%/java/typemaps.i
 lib/swig%%VER%%/java/java.swg
 lib/swig%%VER%%/array.i
@@ -42,19 +45,19 @@ lib/swig%%VER%%/objc.i
 lib/swig%%VER%%/pointer.i
 lib/swig%%VER%%/stdlib.i
 lib/swig%%VER%%/timers.i
-lib/swig%%VER%%/swigptr.swg
-lib/libswigtcl8.so
 lib/libswigtcl8.a
+lib/libswigtcl8.la
+lib/libswigtcl8.so
 lib/libswigpl.a
+lib/libswigpl.la
 lib/libswigpl.so
 lib/libswigpy.a
-lib/libswigpy.so
-lib/libswigpl.la
 lib/libswigpy.la
-lib/libswigtcl8.la
+lib/libswigpy.so
 @dirrm lib/swig%%VER%%/guile
 @dirrm lib/swig%%VER%%/java
 @dirrm lib/swig%%VER%%/python
 @dirrm lib/swig%%VER%%/perl5
 @dirrm lib/swig%%VER%%/tcl
+@dirrm lib/swig%%VER%%/mzscheme
 @dirrm lib/swig%%VER%%
