@@ -5103,6 +5103,7 @@ py-kqueue	ports/devel/py-kqueue
 py-m2crypto	ports/security/py-m2crypto
 py-martel	ports/textproc/py-martel
 py-ming		ports/graphics/py-ming
+py-mpz		ports/math/py-mpz
 py-mx-base	ports/lang/py-mx-base
 py-ncurses	ports/devel/py-ncurses
 py-numeric	ports/math/py-numeric

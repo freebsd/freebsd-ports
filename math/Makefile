@@ -94,6 +94,7 @@
     SUBDIR += pspp
     SUBDIR += py-gato
     SUBDIR += py-gnuplot
+    SUBDIR += py-mpz
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
     SUBDIR += py-scientific
