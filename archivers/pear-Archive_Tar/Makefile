@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Archive_Tar
-PORTVERSION=	1.2
+PORTVERSION=	1.3.0
 CATEGORIES=	archivers www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR tar file management class
 
 USE_PHP=	yes
