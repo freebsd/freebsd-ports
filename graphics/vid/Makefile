@@ -7,6 +7,7 @@
 
 PORTNAME=	vid
 PORTVERSION=	1.0.1
+PORTREVSION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.home.com/housel/
 

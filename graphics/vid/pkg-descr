@@ -1,5 +1,5 @@
 vid is a Image Capture program for USB cameras using the
-Omnivision OV511 chipset.
+Omnivision OV511 and OV511+ chipset.
 
 
 These include the
@@ -11,16 +11,17 @@ These include the
   Lifeview RoboCam 
   AverMedia InterCam Elite 
   MediaForte MV300 
+  Trust SpaceCam 300 (*** see note about the OV511+ below ***)
 
 The program was written by Peter Housel <housel@acm.org) and
 is heavily based on the Linux OV511 driver from http://alpha.dyndns.org/ov511/
 
 Notes On The OV511+
 -------------------
-There is a new version of the chipset called the OV511+.
-This is slightly different to the OV511 and is not supported by this
-program at this time.
-Josh Elasser has reported that newer versions of the Creative Labs
-WebCam3 use the OV511+ chipset and so cannot be used with this program.
+Josh Elsasser <jre@vineyard.net> has added support for OV511+ cameras.
+Older Creative WebCam 3's use the OV511 but newer ones use the OV511+
+
+On my OV511+ Trust SpaceCam 300 the image appears orange. I'm investigating.
+
 
 WWW: http://members.home.com/housel/
