@@ -1,5 +1,5 @@
---- Makefile.FreeBSD.orig	Sun Nov 21 14:54:44 1999
-+++ Makefile.FreeBSD	Tue Aug 22 22:23:03 2000
+--- Makefile.FreeBSD.orig	Sun Nov 21 06:54:44 1999
++++ Makefile.FreeBSD	Mon Feb  9 21:24:05 2004
 @@ -1,8 +1,8 @@
  # Makefile for ClibPDF library - FreeBSD/gcc
  # make lib; make install    OR   make shlib; make shinstall
@@ -11,6 +11,19 @@
  # LIB_FILE=libcpdfpm.a
  # SHLIB_FILE=libcpdfpm.sl
  
+@@ -11,10 +11,10 @@
+ 
+ 
+ #CC=cc
+-CC=gcc
++CC?=gcc
+ 
+ #CFLAGS= -O
+-CFLAGS=-Wall -g -DFreeBSD
++CFLAGS+=-Wall -g -DFreeBSD -fPIC
+ #CFLAGS=-Wall -g -DFreeBSD -DUSE_LIBTIFF
+ 
+ #For GCC, if you want to pack structure
 @@ -75,7 +75,7 @@
  
  $(SHLIB_FILE):  $(OBJS) $(POBJS) $(ZOBJS) Makefile
