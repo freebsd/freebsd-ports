@@ -9,8 +9,7 @@
 PORTNAME=	nibbles
 PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	http://download.nmee.net/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@freebsdcluster.org
