@@ -4823,6 +4823,7 @@ mod_log_sql	ports/www/mod_log_sql
 mod_macro	ports/www/mod_macro
 mod_mp3		ports/www/mod_mp3
 mod_musicindex	ports/www/mod_musicindex
+mod_mya		ports/www/mod_mya
 mod_mylo	ports/www/mod_mylo
 mod_mysqluserdir	ports/www/mod_mysqluserdir
 mod_pcgi2	ports/www/mod_pcgi2
