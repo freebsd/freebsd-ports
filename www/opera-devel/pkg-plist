@@ -1,125 +1,125 @@
 bin/opera
-share/doc/opera/LICENSE
-share/doc/opera/help
-share/opera/bin/m2.so
-share/opera/bin/missingsyms.so
-share/opera/bin/opera
-share/opera/bin/works
-share/opera/chartables.bin
-share/opera/config/opera6rc
-share/opera/config/opera6rc.fixed
-share/opera/help/advertising.html
-share/opera/help/background.png
-share/opera/help/dialogs.html
-share/opera/help/filetypes.html
-share/opera/help/fonts.html
-share/opera/help/glossary.html
-share/opera/help/help.css
-share/opera/help/history.html
-share/opera/help/hotlist.html
-share/opera/help/index.html
-share/opera/help/input.html
-share/opera/help/keyboard.html
-share/opera/help/languages.html
-share/opera/help/layout.html
-share/opera/help/license.txt
-share/opera/help/m2.html
-share/opera/help/mail.html
-share/opera/help/menus.html
-share/opera/help/mouse.html
-share/opera/help/multimedia.html
-share/opera/help/network.html
-share/opera/help/page.html
-share/opera/help/paths.html
-share/opera/help/personal.html
-share/opera/help/preferences.html
-share/opera/help/privacy.html
-share/opera/help/search.html
-share/opera/help/security.html
-share/opera/help/skin.html
-share/opera/help/sounds.html
-share/opera/help/start.html
-share/opera/help/toc.html
-share/opera/help/toolbars.html
-share/opera/help/windows.html
-share/opera/images/background.gif
-share/opera/images/blank.gif
-share/opera/images/drive.gif
-share/opera/images/file.gif
-share/opera/images/folder.gif
-share/opera/images/link.gif
-share/opera/images/opera.xpm
-share/opera/images/opera_16x16.png
-share/opera/images/opera_22x22.png
-share/opera/images/opera_32x32.png
-share/opera/images/opera_48x48.png
-share/opera/images/operabanner.png
-share/opera/images/shared.gif
-share/opera/images/startup1.png
-share/opera/images/startup2.png
-share/opera/ini/dialog.ini
-share/opera/ini/fastforward.ini
-share/opera/ini/minimal_toolbar.ini
-share/opera/ini/standard_keyboard.ini
-share/opera/ini/standard_menu.ini
-share/opera/ini/standard_mouse.ini
-share/opera/ini/standard_toolbar.ini
-share/opera/ini/unix_keyboard.ini
-share/opera/java/opera.jar
-share/opera/java/opera.policy
-share/opera/jsconsole.html
-share/opera/lngcode.txt
-share/opera/locale/english.lng
-share/opera/locale/en/lngcode.txt
-share/opera/locale/en/search.ini
-share/opera/opera6.adr
-share/opera/plugins/libnpp.so
-share/opera/plugins/operamotifwrapper
-share/opera/plugins/operaplugincleaner
-share/opera/search.ini
-share/opera/skin/standard_skin.zip
-share/opera/skin/windows_skin.zip
-share/opera/styles/OPF.css
-share/opera/styles/about.css
-share/opera/styles/cache.css
-share/opera/styles/csr.css
-share/opera/styles/dir.css
-share/opera/styles/drives.css
-share/opera/styles/email.css
-share/opera/styles/history.css
-share/opera/styles/im.css
-share/opera/styles/info.css
-share/opera/styles/mime.css
-share/opera/styles/mimehead.css
-share/opera/styles/opf.css
-share/opera/styles/plugins.css
-share/opera/styles/user/accessibility.css
-share/opera/styles/user/contrastbw.css
-share/opera/styles/user/contrastwb.css
-share/opera/styles/user/debugwithoutline.css
-share/opera/styles/user/disabletables.css
-share/opera/styles/user/hidecertainsizes.css
-share/opera/styles/user/hidenonlinkimages.css
-share/opera/styles/user/imageandlinkonly.css
-share/opera/styles/user/nostalgia.css
-share/opera/styles/user/showstructure.css
-share/opera/styles/user/textonly.css
-share/opera/styles/user/userstyle.ini
-share/opera/styles/wml.css
-@dirrm share/opera/styles/user
-@dirrm share/opera/styles
-@dirrm share/opera/skin
-@dirrm share/opera/plugins
-@dirrm share/opera/locale/en
-@dirrm share/opera/locale
-@dirrm share/opera/java
-@dirrm share/opera/ini
-@dirrm share/opera/images
-@dirrm share/opera/help
-@dirrm share/opera/config
-@dirrm share/opera/bin
-@dirrm share/opera
-@dirrm share/doc/opera
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/help
+%%DATADIR%%/bin/m2.so
+%%DATADIR%%/bin/missingsyms.so
+%%DATADIR%%/bin/opera
+%%DATADIR%%/bin/works
+%%DATADIR%%/chartables.bin
+%%DATADIR%%/config/opera6rc
+%%DATADIR%%/config/opera6rc.fixed
+%%DATADIR%%/help/advertising.html
+%%DATADIR%%/help/background.png
+%%DATADIR%%/help/dialogs.html
+%%DATADIR%%/help/filetypes.html
+%%DATADIR%%/help/fonts.html
+%%DATADIR%%/help/glossary.html
+%%DATADIR%%/help/help.css
+%%DATADIR%%/help/history.html
+%%DATADIR%%/help/hotlist.html
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/input.html
+%%DATADIR%%/help/keyboard.html
+%%DATADIR%%/help/languages.html
+%%DATADIR%%/help/layout.html
+%%DATADIR%%/help/license.txt
+%%DATADIR%%/help/m2.html
+%%DATADIR%%/help/mail.html
+%%DATADIR%%/help/menus.html
+%%DATADIR%%/help/mouse.html
+%%DATADIR%%/help/multimedia.html
+%%DATADIR%%/help/network.html
+%%DATADIR%%/help/page.html
+%%DATADIR%%/help/paths.html
+%%DATADIR%%/help/personal.html
+%%DATADIR%%/help/preferences.html
+%%DATADIR%%/help/privacy.html
+%%DATADIR%%/help/search.html
+%%DATADIR%%/help/security.html
+%%DATADIR%%/help/skin.html
+%%DATADIR%%/help/sounds.html
+%%DATADIR%%/help/start.html
+%%DATADIR%%/help/toc.html
+%%DATADIR%%/help/toolbars.html
+%%DATADIR%%/help/windows.html
+%%DATADIR%%/images/background.gif
+%%DATADIR%%/images/blank.gif
+%%DATADIR%%/images/drive.gif
+%%DATADIR%%/images/file.gif
+%%DATADIR%%/images/folder.gif
+%%DATADIR%%/images/link.gif
+%%DATADIR%%/images/opera.xpm
+%%DATADIR%%/images/opera_16x16.png
+%%DATADIR%%/images/opera_22x22.png
+%%DATADIR%%/images/opera_32x32.png
+%%DATADIR%%/images/opera_48x48.png
+%%DATADIR%%/images/operabanner.png
+%%DATADIR%%/images/shared.gif
+%%DATADIR%%/images/startup1.png
+%%DATADIR%%/images/startup2.png
+%%DATADIR%%/ini/dialog.ini
+%%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/minimal_toolbar.ini
+%%DATADIR%%/ini/standard_keyboard.ini
+%%DATADIR%%/ini/standard_menu.ini
+%%DATADIR%%/ini/standard_mouse.ini
+%%DATADIR%%/ini/standard_toolbar.ini
+%%DATADIR%%/ini/unix_keyboard.ini
+%%DATADIR%%/java/opera.jar
+%%DATADIR%%/java/opera.policy
+%%DATADIR%%/jsconsole.html
+%%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/english.lng
+%%DATADIR%%/locale/en/lngcode.txt
+%%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/opera6.adr
+%%DATADIR%%/plugins/libnpp.so
+%%DATADIR%%/plugins/operamotifwrapper
+%%DATADIR%%/plugins/operaplugincleaner
+%%DATADIR%%/search.ini
+%%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/skin/windows_skin.zip
+%%DATADIR%%/styles/OPF.css
+%%DATADIR%%/styles/about.css
+%%DATADIR%%/styles/cache.css
+%%DATADIR%%/styles/csr.css
+%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/drives.css
+%%DATADIR%%/styles/email.css
+%%DATADIR%%/styles/history.css
+%%DATADIR%%/styles/im.css
+%%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/mimehead.css
+%%DATADIR%%/styles/opf.css
+%%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/user/contrastbw.css
+%%DATADIR%%/styles/user/contrastwb.css
+%%DATADIR%%/styles/user/debugwithoutline.css
+%%DATADIR%%/styles/user/disabletables.css
+%%DATADIR%%/styles/user/hidecertainsizes.css
+%%DATADIR%%/styles/user/hidenonlinkimages.css
+%%DATADIR%%/styles/user/imageandlinkonly.css
+%%DATADIR%%/styles/user/nostalgia.css
+%%DATADIR%%/styles/user/showstructure.css
+%%DATADIR%%/styles/user/textonly.css
+%%DATADIR%%/styles/user/userstyle.ini
+%%DATADIR%%/styles/wml.css
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 
 %%KDE:%%share/applnk/Internet/opera.desktop
 %%KDE2:%%share/applnk/Networking/WWW/opera.desktop
