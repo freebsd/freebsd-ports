@@ -7742,7 +7742,6 @@ php4-session	ports/www/php4-session
 php4-shmop	ports/devel/php4-shmop
 php4-snmp	ports/net-mgmt/php4-snmp
 php4-sockets	ports/net/php4-sockets
-php4-sybase	ports/databases/php4-sybase
 php4-sybase_ct	ports/databases/php4-sybase_ct
 php4-sysvmsg	ports/devel/php4-sysvmsg
 php4-sysvsem	ports/devel/php4-sysvsem
@@ -7806,7 +7805,6 @@ php5-snmp	ports/net-mgmt/php5-snmp
 php5-soap	ports/net/php5-soap
 php5-sockets	ports/net/php5-sockets
 php5-sqlite	ports/databases/php5-sqlite
-php5-sybase	ports/databases/php5-sybase
 php5-sybase_ct	ports/databases/php5-sybase_ct
 php5-sysvmsg	ports/devel/php5-sysvmsg
 php5-sysvsem	ports/devel/php5-sysvsem

@@ -215,7 +215,6 @@
     SUBDIR += php4-odbc
     SUBDIR += php4-oracle
     SUBDIR += php4-pgsql
-    SUBDIR += php4-sybase
     SUBDIR += php4-sybase_ct
     SUBDIR += php5-dba
     SUBDIR += php5-dbase
@@ -229,7 +228,6 @@
     SUBDIR += php5-oracle
     SUBDIR += php5-pgsql
     SUBDIR += php5-sqlite
-    SUBDIR += php5-sybase
     SUBDIR += php5-sybase_ct
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
