@@ -1,9 +1,9 @@
---- ext/mcal/config.m4.orig	Tue Mar 27 22:34:31 2001
-+++ ext/mcal/config.m4	Fri Nov 30 09:26:56 2001
-@@ -44,5 +44,14 @@
+--- ext/mcal/config.m4.orig	Wed Mar 27 11:26:16 2002
++++ ext/mcal/config.m4	Fri Jan  3 19:38:46 2003
+@@ -41,5 +41,14 @@
    PHP_SUBST(MCAL_SHARED_LIBADD)
    AC_DEFINE(HAVE_MCAL,1,[ ])
-   PHP_EXTENSION(mcal,$ext_shared)
+   PHP_NEW_EXTENSION(mcal, php_mcal.c, $ext_shared)
 +  cat >> confdefs.h <<\EOF
 +/* Interfaces to callbacks in libmcal */
 +#include <mcal/mcal.h>

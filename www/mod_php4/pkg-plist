@@ -1,16 +1,16 @@
-bin/pear
-bin/pearize
+bin/php
 bin/php-config
 bin/phpextdist
 bin/phpize
-bin/phptar
 etc/php.ini-dist
 include/php/TSRM/TSRM.h
 include/php/TSRM/acconfig.h
 include/php/TSRM/readdir.h
 include/php/TSRM/tsrm_config.h
+include/php/TSRM/tsrm_config.nw.h
 include/php/TSRM/tsrm_config.w32.h
 include/php/TSRM/tsrm_config_common.h
+include/php/TSRM/tsrm_nw.h
 include/php/TSRM/tsrm_strtok_r.h
 include/php/TSRM/tsrm_virtual_cwd.h
 include/php/TSRM/tsrm_win32.h
@@ -27,6 +27,7 @@ include/php/Zend/zend_constants.h
 include/php/Zend/zend_dynamic_array.h
 include/php/Zend/zend_errors.h
 include/php/Zend/zend_execute.h
+include/php/Zend/zend_execute_globals.h
 include/php/Zend/zend_execute_locks.h
 include/php/Zend/zend_extensions.h
 include/php/Zend/zend_fast_cache.h
@@ -44,20 +45,34 @@ include/php/Zend/zend_language_scanner.h
 include/php/Zend/zend_list.h
 include/php/Zend/zend_llist.h
 include/php/Zend/zend_modules.h
+include/php/Zend/zend_multibyte.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_qsort.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
+include/php/Zend/zend_types.h
 include/php/Zend/zend_variables.h
 include/php/acconfig.h
 include/php/ext/mbstring/cp932_table.h
 include/php/ext/mbstring/mbfilter.h
+include/php/ext/mbstring/mbfilter_cn.h
 include/php/ext/mbstring/mbfilter_ja.h
+include/php/ext/mbstring/mbfilter_kr.h
+include/php/ext/mbstring/mbfilter_ru.h
+include/php/ext/mbstring/mbfilter_tw.h
 include/php/ext/mbstring/mbregex.h
 include/php/ext/mbstring/mbstring.h
+include/php/ext/mbstring/php_mbregex.h
+include/php/ext/mbstring/php_unicode.h
+include/php/ext/mbstring/unicode_data.h
 include/php/ext/mbstring/unicode_table.h
+include/php/ext/mbstring/unicode_table_cn.h
 include/php/ext/mbstring/unicode_table_ja.h
+include/php/ext/mbstring/unicode_table_kr.h
+include/php/ext/mbstring/unicode_table_ru.h
+include/php/ext/mbstring/unicode_table_tw.h
+include/php/ext/pgsql/php_pgsql.h
 include/php/ext/session/mod_files.h
 include/php/ext/session/mod_mm.h
 include/php/ext/session/mod_user.h
@@ -69,6 +84,7 @@ include/php/ext/standard/crc32.h
 include/php/ext/standard/credits.h
 include/php/ext/standard/credits_ext.h
 include/php/ext/standard/credits_sapi.h
+include/php/ext/standard/css.h
 include/php/ext/standard/cyr_convert.h
 include/php/ext/standard/datetime.h
 include/php/ext/standard/dl.h
@@ -114,6 +130,7 @@ include/php/ext/standard/php_versioning.h
 include/php/ext/standard/quot_print.h
 include/php/ext/standard/reg.h
 include/php/ext/standard/scanf.h
+include/php/ext/standard/sha1.h
 include/php/ext/standard/uniqid.h
 include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner.h
@@ -132,7 +149,7 @@ include/php/ext/xml/expat/xmltok_impl.h
 include/php/ext/xml/php_xml.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
-include/php/main/config.w32.h
+include/php/main/config.nw.h
 include/php/main/fopen_wrappers.h
 include/php/main/internal_functions_registry.h
 include/php/main/logos.h
@@ -141,10 +158,12 @@ include/php/main/php3_compat.h
 include/php/main/php_compat.h
 include/php/main/php_config.h
 include/php/main/php_content_types.h
+include/php/main/php_embed.h
 include/php/main/php_globals.h
 include/php/main/php_ini.h
 include/php/main/php_logos.h
 include/php/main/php_main.h
+include/php/main/php_memory_streams.h
 include/php/main/php_network.h
 include/php/main/php_open_temporary_file.h
 include/php/main/php_output.h
@@ -158,6 +177,7 @@ include/php/main/php_version.h
 include/php/main/rfc1867.h
 include/php/main/safe_mode.h
 include/php/main/snprintf.h
+include/php/main/spprintf.h
 include/php/main/win95nt.h
 include/php/php_version.h
 include/php/regex/cclass.h
@@ -166,12 +186,23 @@ include/php/regex/regex.h
 include/php/regex/regex2.h
 include/php/regex/regex_extra.h
 include/php/regex/utils.h
+lib/php/.filemap
+lib/php/.lock
+lib/php/.registry/Archive_Tar.reg
+lib/php/.registry/Console_Getopt.reg
+lib/php/.registry/DB.reg
+lib/php/.registry/HTTP.reg
+lib/php/.registry/Mail.reg
+lib/php/.registry/Net_SMTP.reg
+lib/php/.registry/Net_Socket.reg
+lib/php/.registry/PEAR.reg
+lib/php/.registry/XML_Parser.reg
+lib/php/.registry/XML_RPC.reg
 lib/php/Archive/Tar.php
 lib/php/Console/Getopt.php
-lib/php/Crypt/CBC.php
-lib/php/Crypt/HCEMD5.php
 lib/php/DB.php
 lib/php/DB/common.php
+lib/php/DB/dbase.php
 lib/php/DB/fbsql.php
 lib/php/DB/ibase.php
 lib/php/DB/ifx.php
@@ -183,33 +214,21 @@ lib/php/DB/odbc.php
 lib/php/DB/pgsql.php
 lib/php/DB/storage.php
 lib/php/DB/sybase.php
-lib/php/Date/Calc.php
-lib/php/Date/Human.php
-lib/php/File/Find.php
-lib/php/File/Passwd.php
-lib/php/File/SearchReplace.php
-lib/php/HTML/Common.php
-lib/php/HTML/Form.php
-lib/php/HTML/IT.php
-lib/php/HTML/ITX.php
-lib/php/HTML/IT_Error.php
-lib/php/HTML/Page.php
-lib/php/HTML/Processor.php
-lib/php/HTML/Select.php
-lib/php/HTML/Table.php
 lib/php/HTTP.php
-lib/php/HTTP/Compress.php
 lib/php/Mail.php
 lib/php/Mail/RFC822.php
+lib/php/Mail/mail.php
 lib/php/Mail/sendmail.php
 lib/php/Mail/smtp.php
-lib/php/Net/Curl.php
-lib/php/Net/Dig.php
 lib/php/Net/SMTP.php
+lib/php/Net/Socket.php
+lib/php/OS/Guess.php
 lib/php/PEAR.php
 lib/php/PEAR/Autoloader.php
+lib/php/PEAR/Builder.php
 lib/php/PEAR/Command.php
 lib/php/PEAR/Command/Auth.php
+lib/php/PEAR/Command/Build.php
 lib/php/PEAR/Command/Common.php
 lib/php/PEAR/Command/Config.php
 lib/php/PEAR/Command/Install.php
@@ -224,28 +243,106 @@ lib/php/PEAR/Installer.php
 lib/php/PEAR/Packager.php
 lib/php/PEAR/Registry.php
 lib/php/PEAR/Remote.php
-lib/php/Schedule/At.php
 lib/php/System.php
 lib/php/XML/Parser.php
+lib/php/XML/RPC.php
+lib/php/XML/RPC/Server.php
+lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
-lib/php/build/dynlib.m4
-lib/php/build/dynlib.mk
-lib/php/build/fastgen.sh
-lib/php/build/library.mk
-lib/php/build/ltlib.mk
 lib/php/build/mkdep.awk
 lib/php/build/pear.m4
-lib/php/build/program.mk
-lib/php/build/rules.mk
-lib/php/build/rules_common.mk
-lib/php/build/rules_pear.mk
+lib/php/build/scan_makefile_in.awk
 lib/php/build/shtool
+lib/php/data/PEAR/package.dtd
+lib/php/data/PEAR/template.spec
+lib/php/docs/Archive_Tar/docs/Archive_Tar.txt
+lib/php/docs/DB/DB/IDEAS
+lib/php/docs/DB/DB/MAINTAINERS
+lib/php/docs/DB/DB/STATUS
+lib/php/docs/DB/DB/TESTERS
+lib/php/tests/DB/tests/db_error.phpt
+lib/php/tests/DB/tests/db_error2.phpt
+lib/php/tests/DB/tests/db_factory.phpt
+lib/php/tests/DB/tests/db_ismanip.phpt
+lib/php/tests/DB/tests/db_parsedsn.phpt
+lib/php/tests/DB/tests/driver/01connect.phpt
+lib/php/tests/DB/tests/driver/02fetch.phpt
+lib/php/tests/DB/tests/driver/03simplequery.phpt
+lib/php/tests/DB/tests/driver/04numcols.phpt
+lib/php/tests/DB/tests/driver/05sequences.phpt
+lib/php/tests/DB/tests/driver/06prepexec.phpt
+lib/php/tests/DB/tests/driver/08affectedrows.phpt
+lib/php/tests/DB/tests/driver/09numrows.phpt
+lib/php/tests/DB/tests/driver/10errormap.phpt
+lib/php/tests/DB/tests/driver/13limit.phpt
+lib/php/tests/DB/tests/driver/14fetchmode_object.phpt
+lib/php/tests/DB/tests/driver/15quote.phpt
+lib/php/tests/DB/tests/ibase/01connect.phpt
+lib/php/tests/DB/tests/ibase/02fetch.phpt
+lib/php/tests/DB/tests/ibase/03simplequery.phpt
+lib/php/tests/DB/tests/ibase/04numcols.phpt
+lib/php/tests/DB/tests/ibase/05sequences.phpt
+lib/php/tests/DB/tests/ibase/06prepexec.phpt
+lib/php/tests/DB/tests/ibase/10errormap.phpt
+lib/php/tests/DB/tests/mysql/01connect.phpt
+lib/php/tests/DB/tests/mysql/02fetch.phpt
+lib/php/tests/DB/tests/mysql/03simplequery.phpt
+lib/php/tests/DB/tests/mysql/04numcols.phpt
+lib/php/tests/DB/tests/mysql/05sequences.phpt
+lib/php/tests/DB/tests/mysql/06prepexec.phpt
+lib/php/tests/DB/tests/mysql/07errornative.phpt
+lib/php/tests/DB/tests/mysql/08affectedrows.phpt
+lib/php/tests/DB/tests/mysql/09numrows.phpt
+lib/php/tests/DB/tests/mysql/10errormap.phpt
+lib/php/tests/DB/tests/mysql/12tableinfo.phpt
+lib/php/tests/DB/tests/mysql/13limit.phpt
+lib/php/tests/DB/tests/mysql/14fetchmode_object.phpt
+lib/php/tests/DB/tests/oci8/01connect.phpt
+lib/php/tests/DB/tests/oci8/02fetch.phpt
+lib/php/tests/DB/tests/oci8/03simplequery.phpt
+lib/php/tests/DB/tests/oci8/04numcols.phpt
+lib/php/tests/DB/tests/oci8/05sequences.phpt
+lib/php/tests/DB/tests/oci8/06prepexec.phpt
+lib/php/tests/DB/tests/oci8/07errornative.phpt
+lib/php/tests/DB/tests/oci8/08affectedrows.phpt
+lib/php/tests/DB/tests/oci8/09numrows.phpt
+lib/php/tests/DB/tests/oci8/10errormap.phpt
+lib/php/tests/DB/tests/oci8/13limit.phpt
+lib/php/tests/DB/tests/odbc/01connect.phpt
+lib/php/tests/DB/tests/odbc/02fetch.phpt
+lib/php/tests/DB/tests/odbc/03simplequery.phpt
+lib/php/tests/DB/tests/odbc/04numcols.phpt
+lib/php/tests/DB/tests/odbc/06prepexec.phpt
+lib/php/tests/DB/tests/odbc/07errornative.phpt
+lib/php/tests/DB/tests/odbc/09numrows.phpt
+lib/php/tests/DB/tests/odbc/10errormap.phpt
+lib/php/tests/DB/tests/pgsql/01connect.phpt
+lib/php/tests/DB/tests/pgsql/02fetch.phpt
+lib/php/tests/DB/tests/pgsql/03simplequery.phpt
+lib/php/tests/DB/tests/pgsql/04numcols.phpt
+lib/php/tests/DB/tests/pgsql/05sequences.phpt
+lib/php/tests/DB/tests/pgsql/06prepexec.phpt
+lib/php/tests/DB/tests/pgsql/07errornative.phpt
+lib/php/tests/DB/tests/pgsql/08affectedrows.phpt
+lib/php/tests/DB/tests/pgsql/09numrows.phpt
+lib/php/tests/DB/tests/pgsql/10errormap.phpt
+lib/php/tests/DB/tests/pgsql/11transact.phpt
+lib/php/tests/DB/tests/pgsql/13limit.phpt
+lib/php/tests/DB/tests/pgsql/14fetchmode_object.phpt
+lib/php/tests/XML_Parser/tests/001.phpt
+lib/php/tests/XML_Parser/tests/002.phpt
+lib/php/tests/XML_Parser/tests/003.phpt
+lib/php/tests/XML_Parser/tests/004.phpt
+lib/php/tests/XML_Parser/tests/005.phpt
+lib/php/tests/XML_Parser/tests/test2.xml
+lib/php/tests/XML_Parser/tests/test3.xml
 %%MOD_DIR%%/libphp4.so
 @exec %D/sbin/apxs -e -a -n php4 %f
 @unexec %D/sbin/apxs -e -A -n php4 %f
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/mbstring
+@dirrm include/php/ext/pgsql
 @dirrm include/php/ext/session
 @dirrm include/php/ext/standard
 @dirrm include/php/ext/xml/expat
@@ -254,25 +351,40 @@ lib/php/build/shtool
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php
+@dirrm lib/php/.registry
 @dirrm lib/php/Archive
 @dirrm lib/php/Console
-@dirrm lib/php/Crypt
 @dirrm lib/php/DB
-@dirrm lib/php/Date
-@dirrm lib/php/File
-@dirrm lib/php/HTML
-@dirrm lib/php/HTTP
 @dirrm lib/php/Image
 @dirrm lib/php/Mail
 @dirrm lib/php/Net
+@dirrm lib/php/OS
 @dirrm lib/php/PEAR/Command
 @dirrm lib/php/PEAR/Frontend
 @dirrm lib/php/PEAR
-@dirrm lib/php/Schedule
+@dirrm lib/php/XML/RPC
 @dirrm lib/php/XML
 @dirrm lib/php/build
+@dirrm lib/php/data/PEAR
+@dirrm lib/php/data
+@dirrm lib/php/docs/Archive_Tar/docs
+@dirrm lib/php/docs/Archive_Tar
+@dirrm lib/php/docs/DB/DB
+@dirrm lib/php/docs/DB
+@dirrm lib/php/docs
 @dirrm lib/php/extensions/no-debug-%%NON%%zts-20020429
 @dirrm lib/php/extensions
+@dirrm lib/php/tests/DB/tests/driver
+@dirrm lib/php/tests/DB/tests/ibase
+@dirrm lib/php/tests/DB/tests/mysql
+@dirrm lib/php/tests/DB/tests/oci8
+@dirrm lib/php/tests/DB/tests/odbc
+@dirrm lib/php/tests/DB/tests/pgsql
+@dirrm lib/php/tests/DB/tests
+@dirrm lib/php/tests/DB
+@dirrm lib/php/tests/XML_Parser/tests
+@dirrm lib/php/tests/XML_Parser
+@dirrm lib/php/tests
 @dirrm lib/php
 @exec mkdir -p %D/lib/php/extensions/no-debug-%%NON%%zts-20020429
 @exec mkdir -p %D/lib/php/Image
