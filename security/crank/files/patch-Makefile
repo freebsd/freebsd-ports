@@ -1,29 +1,31 @@
---- Makefile.orig	Tue Apr 17 08:42:25 2001
-+++ Makefile	Wed Apr 18 23:57:16 2001
-@@ -1,7 +1,7 @@
+--- Makefile.orig	Sun Apr 22 22:33:28 2001
++++ Makefile	Mon Apr 23 14:21:00 2001
+@@ -6,8 +6,8 @@
+ 
  VERSION = $(shell cat VERSION)
  CC = gcc
- DYNAMICGDB = -Wl,--dynamic-linker,/lib/ld-linux.so.2 
 -CFLAGS = -g -Wall -pedantic `gtk-config --cflags`
-+CFLAGS += `gtk-config --cflags`
- LIBS  = `gtk-config --libs`
+-LIBS  = `gtk-config --libs`
++CFLAGS += `/usr/X11R6/bin/gtk12-config --cflags`
++LIBS  = `/usr/X11R6/bin/gtk12-config --libs`
  OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
  PLUGIN-SRC = plugin-src
-@@ -10,7 +10,7 @@
+ PLUGINS = $(PLUGIN-SRC)/monoalphabetic.hillclimb-cracker.so \
+@@ -15,7 +15,7 @@
            $(PLUGIN-SRC)/statistics.n-grams.so \
            $(PLUGIN-SRC)/text.simple-filters.so \
            $(PLUGIN-SRC)/utilities.notepad.so
 -TMPDIR = /usr/tmp
 +TMPDIR = /tmp
+ 
+ # Files for source distribution
  DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
-             HISTORY LICENSE TODO ciphertext.txt 
- DISTFILES_DATA = data/*.dat
-@@ -19,7 +19,7 @@
+@@ -36,7 +36,7 @@
  all: crank plugin
-
+ 
  crank: $(OBJFILES)
 -	$(CC) $(CFLAGS) $(LIBDIR) -o crank $(OBJFILES) $(LIBS)
 +	$(CC) $(CFLAGS) -o crank $(OBJFILES) $(LIBS)
-
+ 
  $(OBJFILES) : crank.h
-
+ 
