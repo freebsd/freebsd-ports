@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.11 1995/03/28 12:15:37 asami Exp $
+# $Id: Makefile,v 1.12 1995/03/31 19:17:46 gpalmer Exp $
 #
-# BROKEN = xboing xchomp xmine xmj xpipeman xrobots
+# BROKEN = xchomp xmine xmj xpipeman xrobots
 #
-SUBDIR= acm golddig jetpack oneko nethack xasteroids xboard \
+SUBDIR= acm golddig jetpack oneko nethack xasteroids xboard xboing \
 	xemeraldia xinvaders \
 	xjewel xlife xmille xminesweep xmris xsol \
 	xtetris
