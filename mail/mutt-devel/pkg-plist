@@ -7,6 +7,7 @@ bin/pgpewrap
 bin/pgpring
 etc/Muttrc
 etc/mime.types
+share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
@@ -32,6 +33,7 @@ share/locale/tr/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/zh_CN/LC_MESSAGES/mutt.mo
 share/locale/zh_TW/LC_MESSAGES/mutt.mo
+%%PORTDOCS%%share/doc/mutt/ABOUT-NLS
 %%PORTDOCS%%share/doc/mutt/PGP-Notes.txt
 %%PORTDOCS%%share/doc/mutt/applying-patches.txt
 %%PORTDOCS%%share/doc/mutt/devel-notes.txt
@@ -39,11 +41,14 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%PORTDOCS%%share/doc/mutt/GPL
 %%PORTDOCS%%share/doc/mutt/INSTALL
 %%PORTDOCS%%share/doc/mutt/ChangeLog
+%%SUB_NNTP%%share/doc/mutt/ChangeLog.nntp
 %%PORTDOCS%%share/doc/mutt/README
 %%PORTDOCS%%share/doc/mutt/NEWS
 %%PORTDOCS%%share/doc/mutt/TODO
 %%PORTDOCS%%share/doc/mutt/README.SECURITY
 %%PORTDOCS%%share/doc/mutt/README.SSL
+%%PORTDOCS%%share/doc/mutt/language.txt
+%%PORTDOCS%%share/doc/mutt/language50.txt
 %%PORTDOCS%%share/doc/mutt/manual.txt
 %%PORTDOCS%%share/doc/mutt/patch-notes.txt
 %%PORTDOCS%%share/doc/mutt/samples/iconv/iconv.aix-3.2.5.rc
@@ -77,13 +82,6 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%PORTDOCS%%@dirrm share/doc/mutt/samples/iconv
 %%PORTDOCS%%@dirrm share/doc/mutt/samples
 %%SUB_HTML%%share/doc/mutt/manual.latin1
-%%SUB_HTML%%share/doc/mutt/html/manual-1.html
-%%SUB_HTML%%share/doc/mutt/html/manual-2.html
-%%SUB_HTML%%share/doc/mutt/html/manual-3.html
-%%SUB_HTML%%share/doc/mutt/html/manual-4.html
-%%SUB_HTML%%share/doc/mutt/html/manual-5.html
-%%SUB_HTML%%share/doc/mutt/html/manual-6.html
-%%SUB_HTML%%share/doc/mutt/html/manual-7.html
 %%SUB_HTML%%share/doc/mutt/html/manual.html
 %%SUB_HTML%%share/doc/mutt/html/manual_toc.html
 %%SUB_HTML%%share/doc/mutt/html/manual1.html
