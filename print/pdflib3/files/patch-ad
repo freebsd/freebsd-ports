@@ -1,11 +1,11 @@
---- configure.old	Wed Sep 13 17:10:19 2000
-+++ configure	Wed Sep 13 17:10:01 2000
-@@ -578,7 +578,7 @@
+--- configure.orig	Thu Dec 21 18:03:35 2000
++++ configure	Sat Mar 10 16:47:35 2001
+@@ -580,7 +580,7 @@
  
  
  
 -PDFLIB_CURRENT=1
 +PDFLIB_CURRENT=3
- PDFLIB_REVISION=0
- PDFLIB_AGE=0
+ PDFLIB_REVISION=1
+ PDFLIB_AGE=1
  
