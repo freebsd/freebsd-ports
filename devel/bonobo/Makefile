@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bonobo
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/bonobo
@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
