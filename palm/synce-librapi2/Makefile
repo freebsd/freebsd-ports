@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-librapi2
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.9
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	synce
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Utilities/libraries to make RAPI calls on WinCE devices
 
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 ONLY_FOR_ARCHS=	i386
@@ -22,6 +21,7 @@ MAN1=		pcp.1 pls.1 pmkdir.1 pmv.1 prm.1 prmdir.1 prun.1 pstatus.1 rapiconfig.1 s
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+USE_ICONV=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
