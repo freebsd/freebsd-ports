@@ -1,0 +1,24 @@
+freescope is a programmer tool that provides source code browsing on
+UNIX-like operating systems. It is a clone of the cscope program but
+has its own unique features such as symbol completion and easy result
+browsing.
+
+freescope is currently limited to building a symbol database for C
+source files only but has been designed and implemented with
+extensibility in mind. This should lead in the next future in new
+capabilities for parsing new programming languages such as C++, Java,
+Pascal, etc. 
+
+freescope supports currently 7 different queries. These are: 
+
+   - Search for a symbol occurences 
+   - Search for a global definition 
+   - Search for calls to a given function 
+   - Search for text occurences 
+   - Search for regular expression occurences 
+   - Search for a file 
+   - Search for inclusions of the given file 
+
+Note that these queries can be extended to most programming languages. 
+
+WWW: http://freescope.sourceforge.net/

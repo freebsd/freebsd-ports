@@ -100,6 +100,7 @@
     SUBDIR += fortran-utils
     SUBDIR += fpp
     SUBDIR += freelibiberty
+    SUBDIR += freescope
     SUBDIR += ftnchek
     SUBDIR += funnelweb
     SUBDIR += g-wrap
