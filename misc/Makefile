@@ -169,7 +169,6 @@
     SUBDIR += kde3-i18n-nl
     SUBDIR += kde3-i18n-nn
     SUBDIR += kde3-i18n-nso
-    SUBDIR += kde3-i18n-pl
     SUBDIR += kde3-i18n-ro
     SUBDIR += kde3-i18n-se
     SUBDIR += kde3-i18n-sk
@@ -205,7 +204,6 @@
     SUBDIR += koffice-i18n-nb
     SUBDIR += koffice-i18n-nl
     SUBDIR += koffice-i18n-nn
-    SUBDIR += koffice-i18n-pl
     SUBDIR += koffice-i18n-sk
     SUBDIR += koffice-i18n-sl
     SUBDIR += koffice-i18n-sv
@@ -288,7 +286,6 @@
     SUBDIR += pg
     SUBDIR += phraze
     SUBDIR += pinfo
-    SUBDIR += pl-sms
     SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell

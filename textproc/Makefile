@@ -317,7 +317,6 @@
     SUBDIR += pardiff
     SUBDIR += pdftohtml
     SUBDIR += perl2html
-    SUBDIR += pl-aspell
     SUBDIR += pocketreader
     SUBDIR += prosper
     SUBDIR += py-4suite

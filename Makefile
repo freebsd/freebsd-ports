@@ -37,6 +37,7 @@ SUBDIR += net
 SUBDIR += news
 SUBDIR += palm
 SUBDIR += picobsd
+SUBDIR += polish
 SUBDIR += portuguese
 SUBDIR += print
 SUBDIR += russian

@@ -133,7 +133,6 @@
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-gui-java
     SUBDIR += ehnt
-    SUBDIR += ekg
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherape
     SUBDIR += etherboot
@@ -190,7 +189,6 @@
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
     SUBDIR += gnu-radius
-    SUBDIR += gnugadu
     SUBDIR += gnunet
     SUBDIR += gofish
     SUBDIR += googolplex
