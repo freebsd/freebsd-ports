@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jul 25 07:19:50 1998
-+++ Makefile	Mon Nov  8 18:22:45 1999
++++ Makefile	Wed Jan 19 11:53:51 2000
 @@ -2,20 +2,20 @@
  # HINT: If you want to run the program on an UltraSPARC driven machine,
  #       I recommend to use Sun C-Compiler >= 4.0 or gcc >= 2.8.0 with
@@ -31,7 +31,7 @@
  # redirect rules are ignored, if there are some.
  # 
 -# DEFS = -DUSE_ACCEL
-+DEFS = -DUSE_ACCEL -DDEFAULT_PATH=\"${PREFIX}/etc/squid\"
++DEFS = -DUSE_ACCEL -DDEFAULT_PATH=\"${PREFIX}/etc/jesred\"
  
  # That's it - no further changes should be necessary ;-)
  # ===========================================================================

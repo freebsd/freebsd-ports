@@ -13,19 +13,14 @@ MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/
 
 MAINTAINER=	dsh@vlink.ru
 
-RUN_DEPENDS=	squid:${PORTSDIR}/www/squid22
-
 do-install:
-	${INSTALL_PROGRAM} ${COPY} ${WRKSRC}/jesred ${PREFIX}/libexec
-	${SED} "s!%%PREFIX%%!${PREFIX}!" < ${WRKSRC}/etc/jesred.conf \
-		> ${WRKSRC}/etc/jesred.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/jesred.conf.sample ${PREFIX}/etc/squid
-	${INSTALL_DATA} ${COPY} ${WRKSRC}/etc/redirect.acl \
-		${PREFIX}/etc/squid/redirect.acl.sample
-	${INSTALL_DATA} ${COPY} ${WRKSRC}/etc/redirect.rules \
-		${PREFIX}/etc/squid/redirect.rules.sample
-	@[ -f ${PREFIX}/etc/squid/jesred.conf ] || \
-		${CP} ${PREFIX}/etc/squid/jesred.conf.sample \
-		${PREFIX}/etc/squid/jesred.conf
+	${INSTALL_PROGRAM} ${WRKSRC}/jesred ${PREFIX}/libexec
+	${MKDIR} ${PREFIX}/etc/jesred
+	${INSTALL_DATA} ${WRKSRC}/etc/jesred.conf \
+		${PREFIX}/etc/jesred/jesred.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/redirect.acl \
+		${PREFIX}/etc/jesred/redirect.acl.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/redirect.rules \
+		${PREFIX}/etc/jesred/redirect.rules.sample
 
 .include <bsd.port.mk>
