@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-game
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}

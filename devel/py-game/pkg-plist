@@ -1,13 +1,17 @@
-include/%%PYTHON_VERSION%%/pygame/CPS.h
 include/%%PYTHON_VERSION%%/pygame/font.h
 include/%%PYTHON_VERSION%%/pygame/mixer.h
 include/%%PYTHON_VERSION%%/pygame/pygame.h
-include/%%PYTHON_VERSION%%/pygame/setproctitle.h
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/base.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cdrom.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/color.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/color.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/color.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pygame/colordict.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/colordict.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/colordict.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/constants.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.pyc
@@ -24,6 +28,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/key.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pygame/macosx.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/macosx.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/macosx.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer_music.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
@@ -41,6 +48,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surface.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surfarray.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surflock.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sysfont.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sysfont.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sysfont.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/time.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/transform.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.py
@@ -64,6 +74,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/doc/py-game/ref/Surface.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_cdrom.html
+%%PORTDOCS%%share/doc/py-game/ref/pygame_color.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_constants.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_cursors.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_display.html
@@ -82,25 +93,35 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/doc/py-game/ref/pygame_surfarray.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_time.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_transform.html
-%%PORTDOCS%%share/doc/py-game/tut/ChimpLineByLine.html
 %%PORTDOCS%%share/doc/py-game/tut/DisplayModes.html
 %%PORTDOCS%%share/doc/py-game/tut/Executable.html
 %%PORTDOCS%%share/doc/py-game/tut/ImportInit.html
 %%PORTDOCS%%share/doc/py-game/tut/MoveIt.html
 %%PORTDOCS%%share/doc/py-game/tut/SpriteIntro.html
-%%PORTDOCS%%share/doc/py-game/tut/SurfarrayIntro.html
-%%PORTDOCS%%share/doc/py-game/tut/allblack.jpg
-%%PORTDOCS%%share/doc/py-game/tut/chimp.py.html
-%%PORTDOCS%%share/doc/py-game/tut/chimpshot.gif
-%%PORTDOCS%%share/doc/py-game/tut/flipped.jpg
-%%PORTDOCS%%share/doc/py-game/tut/imgarray.jpg
+%%PORTDOCS%%share/doc/py-game/tut/chimp/ChimpLineByLine.html
+%%PORTDOCS%%share/doc/py-game/tut/chimp/chimp.py.html
+%%PORTDOCS%%share/doc/py-game/tut/chimp/chimpshot.gif
 %%PORTDOCS%%share/doc/py-game/tut/newbieguide.html
-%%PORTDOCS%%share/doc/py-game/tut/redimg.jpg
-%%PORTDOCS%%share/doc/py-game/tut/scaledown.jpg
-%%PORTDOCS%%share/doc/py-game/tut/scaleup.jpg
-%%PORTDOCS%%share/doc/py-game/tut/soften.jpg
-%%PORTDOCS%%share/doc/py-game/tut/striped.jpg
-%%PORTDOCS%%share/doc/py-game/tut/xfade.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/SurfarrayIntro.html
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/allblack.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/flipped.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/imgarray.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/redimg.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/scaledown.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/scaleup.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/soften.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/striped.jpg
+%%PORTDOCS%%share/doc/py-game/tut/surfarray/xfade.jpg
+%%PORTDOCS%%share/doc/py-game/tut/tom/MakeGames.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/basic.png
+%%PORTDOCS%%share/doc/py-game/tut/tom/event-flowchart.png
+%%PORTDOCS%%share/doc/py-game/tut/tom/formulae.png
+%%PORTDOCS%%share/doc/py-game/tut/tom/games2.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/games3.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/games4.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/games5.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/games6.html
+%%PORTDOCS%%share/doc/py-game/tut/tom/radians.png
 %%PORTDOCS%%share/doc/py-game/util/doclate.html
 %%PORTDOCS%%share/doc/py-game/util/listlate.html
 %%PORTDOCS%%share/doc/py-game/util/makedocs.py
@@ -129,6 +150,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/examples/py-game/data/secosmic_lo.wav
 %%PORTDOCS%%share/examples/py-game/data/shot.gif
 %%PORTDOCS%%share/examples/py-game/data/whiff.wav
+%%PORTDOCS%%share/examples/py-game/eventlist.py
 %%PORTDOCS%%share/examples/py-game/fonty.py
 %%PORTDOCS%%share/examples/py-game/glcube.py
 %%PORTDOCS%%share/examples/py-game/liquid.py
@@ -142,6 +164,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%@dirrm share/examples/py-game/data
 %%PORTDOCS%%@dirrm share/examples/py-game
 %%PORTDOCS%%@dirrm share/doc/py-game/util
+%%PORTDOCS%%@dirrm share/doc/py-game/tut/tom
+%%PORTDOCS%%@dirrm share/doc/py-game/tut/surfarray
+%%PORTDOCS%%@dirrm share/doc/py-game/tut/chimp
 %%PORTDOCS%%@dirrm share/doc/py-game/tut
 %%PORTDOCS%%@dirrm share/doc/py-game/ref
 %%PORTDOCS%%@dirrm share/doc/py-game
