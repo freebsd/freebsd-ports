@@ -70,14 +70,6 @@ MAN3=	AuAnyEvent.3 AuBucketAttributes.3 AuCloseServer.3 \
 	SoundReadFile.3 SoundRewindFile.3 SoundSeekFile.3 \
 	SoundStringToFileFormat.3 SoundTellFile.3 SoundWriteFile.3
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} > 3
-PLIST_SUB+=	XFREE4:=""
-.else
-PLIST_SUB+=	XFREE4:="@comment "
-.endif
-
 post-patch:
 	@find ${WRKSRC} -name '*.[ch]' | xargs \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
@@ -85,4 +77,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
