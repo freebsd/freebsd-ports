@@ -182,4 +182,3 @@ share/setup-tool-backends/scripts/xml.pl
 @dirrm share/gnome-system-tools/pixmaps
 @dirrm share/gnome-system-tools/interfaces
 @dirrm share/gnome-system-tools
-@dirrm etc/X11/sysconfig
