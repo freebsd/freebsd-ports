@@ -295,3 +295,39 @@
  				       streamEndsSize * sizeof(int));
        }
 
+--- xpdf/Gfx.cc.orig	Thu Jan 22 10:26:45 2004
++++ xpdf/Gfx.cc	Thu Dec 23 09:48:17 2004
+@@ -2654,7 +2654,9 @@
+     haveMask = gFalse;
+     dict->lookup("Mask", &maskObj);
+     if (maskObj.isArray()) {
+-      for (i = 0; i < maskObj.arrayGetLength(); ++i) {
++      for (i = 0;
++	   i < maskObj.arrayGetLength() && i < 2*gfxColorMaxComps;
++	   ++i) {
+ 	maskObj.arrayGet(i, &obj1);
+ 	maskColors[i] = obj1.getInt();
+ 	obj1.free();
+--- xpdf/GfxState.cc.orig	Thu Jan 22 10:26:45 2004
++++ xpdf/GfxState.cc	Thu Dec 23 09:48:17 2004
+@@ -708,6 +708,11 @@
+   }
+   nCompsA = obj2.getInt();
+   obj2.free();
++  if (nCompsA > gfxColorMaxComps) {
++    error(-1, "ICCBased color space with too many (%d > %d) components",
++	  nCompsA, gfxColorMaxComps);
++    nCompsA = gfxColorMaxComps;
++  }
+   if (dict->lookup("Alternate", &obj2)->isNull() ||
+       !(altA = GfxColorSpace::parse(&obj2))) {
+     switch (nCompsA) {
+@@ -1054,7 +1059,7 @@
+   }
+   nCompsA = obj1.arrayGetLength();
+   if (nCompsA > gfxColorMaxComps) {
+-    error(-1, "DeviceN color space with more than %d > %d components",
++    error(-1, "DeviceN color space with too many (%d > %d) components",
+ 	  nCompsA, gfxColorMaxComps);
+     nCompsA = gfxColorMaxComps;
+   }
