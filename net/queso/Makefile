@@ -21,9 +21,7 @@ GNU_CONFIGURE=  yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300004
-DISTFILES=	queso-980922.tar.gz libpcap-0.4.tar.Z
-post-patch:
-	@cd ${WRKSRC}/../libpcap-0.4/; ./configure; make
+LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
 .endif
 
 post-install:
