@@ -1,0 +1,66 @@
+# New ports collection makefile for:	VJE-Delta 3.0 Trial
+# Version required:     3.0 trial
+# Date created:		14 January 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	vje-delta-3.0t
+PKGNAME=	ja-vje-trial-3.0
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.vacs.co.jp/pub/unix/vje30/FreeBSD/	\
+		http://www.green.machida.ne.jp/vacs/unix/FreeBSD/
+EXTRACT_SUFX=	-${DISTOBJFORMAT}.tgz
+
+MAINTAINER=	knu@idaemons.org
+
+#RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
+
+NO_BUILD=	yes
+
+ONLY_FOR_ARCHS=	i386
+
+PLIST_SUB=	X11BASE="${X11BASE}" BINSTUFF="${BINSTUFF}"
+
+WRKSRC=		${WRKDIR}/usr/local
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+DISTOBJFORMAT=	AOUT
+.else
+DISTOBJFORMAT=	ELF
+.endif
+
+BINSTUFF=	vje	\
+		vjed	\
+		vadd	\
+		vdel	\
+		vdispd	\
+		vmaked	\
+		vpen	\
+		vpu	\
+		vjekill	\
+		vpr	\
+		vprc	\
+		vjeacc
+
+post-patch:
+	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar *.orig
+
+do-install:
+	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
+.for f in ${BINSTUFF}
+	@${LN} -fs ${PREFIX}/vje30/bin/$f ${X11BASE}/bin/$f
+.endfor
+	@${CHMOD} a+x ${PREFIX}/etc/rc.d/vje.sh
+	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
+	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
+	@${CP} -Pp /etc/services /etc/services.bak
+	@${GREP} -qw '^vjed' /etc/services || ${ECHO} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
+
+post-install:
+	@${CAT} ${PKGDIR}/MESSAGE
+
+.include <bsd.port.post.mk>
