@@ -1,0 +1,29 @@
+--- libgnomeprint/transports/Makefile.in.orig	Mon Jun 10 22:16:36 2002
++++ libgnomeprint/transports/Makefile.in	Mon Jun 10 22:22:35 2002
+@@ -121,7 +121,7 @@
+ 
+ libgnomeprint_file_la_SOURCES = $(FILE_SRC)
+ 
+-libgnomeprint_file_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_file_la_LDFLAGS = -avoid-version -module
+ 
+ libgnomeprint_file_la_LIBADD = 
+ 
+@@ -132,7 +132,7 @@
+ 
+ libgnomeprint_lpr_la_SOURCES = $(LPR_SRC)
+ 
+-libgnomeprint_lpr_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_lpr_la_LDFLAGS = -avoid-version -module
+ 
+ libgnomeprint_lpr_la_LIBADD = 
+ 
+@@ -143,7 +143,7 @@
+ 
+ libgnomeprint_custom_la_SOURCES = $(CUSTOM_SRC)
+ 
+-libgnomeprint_custom_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_custom_la_LDFLAGS = -avoid-version -module
+ 
+ libgnomeprint_custom_la_LIBADD = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
