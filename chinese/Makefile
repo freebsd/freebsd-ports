@@ -100,6 +100,7 @@
     SUBDIR += tocps
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
+    SUBDIR += unzip
     SUBDIR += ve
     SUBDIR += vflib
     SUBDIR += wangttf
