@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.3 1996/09/23 01:52:06 chuckr Exp $
+# $Id: Makefile,v 1.4 1996/10/26 23:24:05 max Exp $
 #
 
+    SUBDIR += Wnn
     SUBDIR += cless
     SUBDIR += celvis
     SUBDIR += cxterm
