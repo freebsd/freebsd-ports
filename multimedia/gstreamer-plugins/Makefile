@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -34,7 +35,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \
 		--enable-cdrom \
-		--disable-mjpegtools \
 		--disable-divx \
 		--disable-dxr3 \
 		--disable-http \
@@ -42,7 +42,6 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-raw1394 \
 		--disable-v4l2 \
 		--disable-v4l \
-		--disable-vcd \
 		--disable-dependency-tracking \
 		--enable-xshm \
 		--enable-static
@@ -79,6 +78,19 @@ GST_VERSION=${PORTVERSION:C/..$//}
 # library minor number
 SHLIB_VERSION=	1
 
+## Additional directories which should be both built and installed
+## but configure neglected to correctly identify them
+# cdrom/vcd support
+EXTRA_BUILD_DIR+=	sys/vcd
+# modplug
+EXTRA_BUILD_DIR+=	gst/modplug
+
+post-extract:
+# for cdrom/vcd support
+# taken from mplayer distfile
+# MD5 (MPlayer-1.0pre4.tar.bz2) = 83ebac0f05b192516a41fca2350ca01a
+	@${CP} ${FILESDIR}/bsdi_dvd.h ${WRKSRC}/sys/vcd/
+
 post-patch:
 # as of this writing, FreeBSD does not support lrint* C99 math functions
 	@${REINPLACE_CMD} -E -e \
@@ -93,10 +105,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|(mcopidl.+)(\$$<)(.+)$$|\1 \3 \2|' \
 		${WRKSRC}/ext/arts/Makefile.in
-# no linux/cdrom.h
-	@${REINPLACE_CMD} -E -e \
-		's|^#include[[:space:]]+.+linux/cdrom\.h.*$$||' \
-		${WRKSRC}/ext/dvdread/dvdreadsrc.c
 # malloc.h was deprecated in favor of stdlib.h
 # inttypes.h not stdint.h
 	@${FIND} ${WRKSRC} -type f | \
@@ -107,10 +115,25 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^.*afOpenVirtualFile[[:space:]]*\(\);|;|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-# register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} 2>/dev/null
+# cdrom default device
+	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
+		${WRKSRC}/ext/cdparanoia/gstcdparanoia.c \
+		${WRKSRC}/sys/cdrom/gstcdplayer.c \
+		${WRKSRC}/sys/vcd/vcdsrc.c
+# dvd default device
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+		${WRKSRC}/ext/dvdnav/dvdnavsrc.c \
+		${WRKSRC}/ext/dvdread/dvdreadsrc.c
+# cdrom/vcd support
+	@${REINPLACE_CMD} -e 's|<linux/cdrom.h>|"bsdi_dvd.h"|' \
+		${WRKSRC}/sys/cdrom/gstcdplayer_ioctl.c \
+		${WRKSRC}/sys/vcd/vcdsrc.c \
+		${WRKSRC}/sys/vcd/vcdsrc.h
+# KDE libkio required thread support
+	${REINPLACE_CMD} -E \
+		 -e 's|(KIO_CFLAGS=.+)"$$|\1 ${PTHREAD_CFLAGS}"|' \
+		 -e 's|(KIO_LIBS=.+)"$$|\1 ${PTHREAD_LIBS}"|' \
+			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
 
@@ -187,7 +210,7 @@ WITH_JACK=YES
 .endif
 
 # KIO
-.if exists(${LOCALBASE}/lib/libkio.a)
+.if exists(${LOCALBASE}/lib/libkio.so)
 WITH_KIO=yes
 .endif
 
@@ -284,6 +307,11 @@ WITH_LIBTHEORA=yes
 # mad
 .if exists(${LOCALBASE}/lib/libmad.a)
 WITH_MAD=yes
+.endif
+
+# mjpegtools
+.if exists(${LOCALBASE}/lib/libmjpegutils.a)
+WITH_MJPEGTOOLS=yes
 .endif
 
 # nas
@@ -388,6 +416,17 @@ LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
 PLIST_SUB+=	CDPARANOIA=""
 .endif
 
+# cdrom default device
+.ifdef(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
+.else
+. if ${OSVERSION} < 500000
+DEFAULT_CDROM_DEVICE=/dev/acd0c
+. else
+DEFAULT_CDROM_DEVICE=/dev/acd0
+. endif
+.endif
+
 # dts
 .ifndef(WITH_DTS)
 CONFIGURE_ARGS+=	--disable-dts
@@ -396,6 +435,17 @@ PLIST_SUB+=	DTS="@comment "
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
 RUN_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
 PLIST_SUB+=	DTS=""
+.endif
+
+# dvd default device
+.ifdef(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
+.else
+. if ${OSVERSION} < 500000
+DEFAULT_DVD_DEVICE=/dev/acd0c
+. else
+DEFAULT_DVD_DEVICE=/dev/acd0
+. endif
 .endif
 
 # esound
@@ -484,6 +534,10 @@ CONFIGURE_ARGS+=	--disable-kio
 PLIST_SUB+=	KIO="@comment "
 .else
 LIB_DEPENDS+=	kio.6:${PORTSDIR}/x11/kdelibs3
+
+CONFIGURE_ENV+=	KDE_PREFIX="${LOCALBASE}" \
+		KDE_MOC="${X11BASE}/bin/moc" \
+		QTDIR="${X11BASE}"
 PLIST_SUB+=	KIO=""
 .endif
 
@@ -619,7 +673,6 @@ PLIST_SUB+=	LIBMPEG2="@comment "
 .else
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
-CONFIGURE_ARGS+=	--with-mpeg2dec-prefix=${LOCALBASE}
 PLIST_SUB+=	LIBMPEG2=""
 .endif
 
@@ -679,6 +732,20 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 
 PLIST_SUB+=	LIBMAD=""
+.endif
+
+# mjpegtools
+.ifndef(WITH_MJPEGTOOLS)
+CONFIGURE_ARGS+=	--disable-mpeg2enc
+PLIST_SUB+=	MJPEGTOOLS="@comment "
+.else
+LIB_DEPENDS+=	lavjpeg-1.6.2:${PORTSDIR}/multimedia/mjpegtools
+
+# XXX - make sure CONFIGURE works with mpeg2enc even with "ccache
+# c++" ... weird but necessary
+CONFIGURE_ENV+=	HAVE_CXX=yes
+
+PLIST_SUB+=	MJPEGTOOLS=""
 .endif
 
 # nas
@@ -815,6 +882,22 @@ PLIST_SUB+=	XVID="@comment "
 #PLIST_SUB+=	XVID=""
 #.endif
 
+post-build:
+.ifdef(EXTRA_BUILD_DIR)
+. for dir in ${EXTRA_BUILD_DIR}
+	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+. endfor
+.endif
+
+post-install:
+.ifdef(EXTRA_BUILD_DIR)
+. for dir in ${EXTRA_BUILD_DIR}
+	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+. endfor
+.endif
+# register plugins
+	-@${X11BASE}/bin/gst-register-${GST_VERSION} 2>/dev/null
+
 pre-everything::
 .ifndef(WITH_AALIB)
 	@${ECHO_MSG} '===>'
@@ -831,9 +914,21 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_CDPARANOIA to enable cdparanoia Audio plugin'
 .endif
+.ifndef(WITH_CDROM_DEVICE)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> The default CDROM device is ${DEFAULT_CDROM_DEVICE}'
+	@${ECHO_MSG} '===> Define WITH_CDROM_DEVICE if you want to change the default'
+	@${ECHO_MSG} '===> For example, make WITH_CDROM_DEVICE="/dev/somedevice"'
+.endif
 .ifndef(WITH_DTS)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_DTS to enable DTS decoding support'
+.endif
+.ifndef(WITH_DVD_DEVICE)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> The default DVD device is ${DEFAULT_DVD_DEVICE}'
+	@${ECHO_MSG} '===> Define WITH_DVD_DEVICE if you want to change the default'
+	@${ECHO_MSG} '===> For example, make WITH_DVD_DEVICE="/dev/somedevice"'
 .endif
 .ifndef(WITH_ESOUND)
 	@${ECHO_MSG} '===>'
