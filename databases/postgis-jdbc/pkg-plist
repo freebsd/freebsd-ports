@@ -1,4 +1,8 @@
-share/java/classes/postgis.jar
+%%JAVAJARDIR%%/postgis.jar
 %%EXAMPLESDIR%%/Test.java
+%%EXAMPLESDIR%%/TestAutoregister.java
+%%EXAMPLESDIR%%/TestBoxes.java
+%%EXAMPLESDIR%%/TestParser.java
 %%EXAMPLESDIR%%/TestServer.java
+%%EXAMPLESDIR%%/VersionPrinter.java
 @dirrm %%EXAMPLESDIR%%

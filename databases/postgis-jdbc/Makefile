@@ -6,28 +6,34 @@
 #
 
 PORTNAME=	postgis-jdbc
-PORTVERSION=	0.8.2
+PORTVERSION=	1.0.0r3
 CATEGORIES=	databases java
 MASTER_SITES=	http://postgis.refractions.net/
-DISTNAME=	postgis-${PORTVERSION}
+DISTNAME=	postgis-1.0.0-rc3
 
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	PostGIS spatial data structures for JDBC
 
-BUILD_DEPENDS=	${JAVAJARDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+BUILD_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 
-BROKEN=		Does not build
-
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
+USE_GMAKE=	yes
 MAKE_ARGS=	EXAMPLESDIR="${EXAMPLESDIR}" \
-		DESTDIR="${PREFIX}" \
+		DESTDIR="${JAVAJARDIR}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
-		JAVAJARDIR="${JAVAJARDIR}" \
 		JAVAC="${JAVAC}" \
 		JAVA="${JAVA}" \
-		JAR="${JAR}"
+		JAR="${JAR}" \
+		CLASSPATH="${JAVALIBDIR}/postgresql.jar" \
+		mkinstalldirs="${MKDIR}"
 
-WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}/jdbc
+WRKSRC=		${WRKDIR}/${DISTNAME}/jdbc2
+
+do-install:
+		${INSTALL_DATA} ${WRKSRC}/postgis.jar ${JAVAJARDIR}
+		${MKDIR} ${EXAMPLESDIR}
+		${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
