@@ -299,8 +299,8 @@ lib/m3/pkg/m3core/src/float/Common/LongFloat.i3
 lib/m3/pkg/m3core/src/float/Common/RealFloat.i3
 lib/m3/pkg/m3core/src/float/IEEE-default/FPU.i3
 lib/m3/pkg/m3core/src/float/IEEE-default/FloatMode.i3
-lib/m3/pkg/m3core/src/float/IEEE-le/LongRealRep.i3
-lib/m3/pkg/m3core/src/float/IEEE-le/RealRep.i3
+lib/m3/pkg/m3core/src/float/IEEE-%%ENDIANESS%%/LongRealRep.i3
+lib/m3/pkg/m3core/src/float/IEEE-%%ENDIANESS%%/RealRep.i3
 lib/m3/pkg/m3core/src/float/IEEE/Extended.i3
 lib/m3/pkg/m3core/src/float/IEEE/LongReal.i3
 lib/m3/pkg/m3core/src/float/IEEE/Real.i3
@@ -971,7 +971,7 @@ share/ezm3/COPYRIGHT
 @dirrm lib/m3/pkg/m3core/src/C
 @dirrm lib/m3/pkg/m3core/src/float/IEEE-default
 @dirrm lib/m3/pkg/m3core/src/float/IEEE
-@dirrm lib/m3/pkg/m3core/src/float/IEEE-le
+@dirrm lib/m3/pkg/m3core/src/float/IEEE-%%ENDIANESS%%
 @dirrm lib/m3/pkg/m3core/src/float/Common
 @dirrm lib/m3/pkg/m3core/src/float
 @dirrm lib/m3/pkg/m3core/src/convert
