@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	SlingShot${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon__s@videotron.ca
 COMMENT=	Supplemental Libraries to extend Xview
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
