@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sentinel
-PORTVERSION=	1.6.5b
-PORTREVISION=   3
+PORTVERSION=	1.7b
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
@@ -20,16 +19,16 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .include <bsd.port.pre.mk>
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
-IGNORE=         requires Sendmail 8.12
+IGNORE=		requires Sendmail 8.12
 .endif
-CFLAGS+=       -I${LOCALBASE}/include
-LDFLAGS+=      -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} ${PTHREAD_CFLAGS} \
 		-o ${PORTNAME} ${PORTNAME}.c ${LDFLAGS} \
-		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS} 
+		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
@@ -40,6 +39,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
 .endif
 
 post-install:
