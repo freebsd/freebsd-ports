@@ -17,6 +17,7 @@
     SUBDIR += iozone21
     SUBDIR += lmbench
     SUBDIR += nbench
+    SUBDIR += netio
     SUBDIR += netperf
     SUBDIR += netpipe
     SUBDIR += nttcp
