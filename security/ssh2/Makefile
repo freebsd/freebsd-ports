@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.63 1998/09/15 21:31:53 asami Exp $
+# $Id: Makefile,v 1.64 1998/09/17 10:53:31 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -100,6 +100,7 @@ fetch-depends:
 post-extract:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 	@mv ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
+	@(cd ${WRKSRC} && patch -s -p < ${FILESDIR}/rsa64.diff)
 .endif
 
 post-install:
