@@ -40,6 +40,9 @@ fi
 
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
+INCLUDE_PATH=${LOCALBASE}/include/
+LIB_PATH=${LOCALBASE}/lib/
+
 while [ "$1" ]; do
 	case $1 in
 		\"Client\")
@@ -52,12 +55,12 @@ while [ "$1" ]; do
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client:install"
 			echo "CONFIGURE_ARGS+= --with-mysql"
-			echo "CONFIGURE_ARGS+= --with-lib-path=${LOCALBASE}/lib/mysql/"
+			LIB_PATH="$LIB_PATH:${LOCALBASE}/lib/mysql/"
 			;;
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7:install"
 			echo "CONFIGURE_ARGS+= --with-postgres"
-			echo "CONFIGURE_ARGS+= --with-include-path=${LOCALBASE}/include/pgsql/"
+			INCLUDE_PATH="$INCLUDE_PATH:${LOCALBASE}/include/pgsql/"
 			;;
 		\"SNMP\")
 			echo "CONFIGURE_ARGS+= --enable-snmp"
@@ -73,6 +76,9 @@ while [ "$1" ]; do
 	esac
 	shift
 done
+
+echo "CONFIGURE_ARGS+= --with-include-path=\"$INCLUDE_PATH\""
+echo "CONFIGURE_ARGS+= --with-lib-path=\"$LIB_PATH\""
 
 if [ -z $GUILE ]; then
 	echo "CONFIGURE_ARGS+= --without-guile"
