@@ -200,6 +200,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # LIBTOOLFLAGS	- Additional flags to pass to ltconfig
 #				  (default: --disable-ltlibs)
 # USE_PERL5		- Says that the port uses perl5 for building and running.
+# USE_PERL5_BUILD	- Says that the port uses perl5 for building.
+# USE_PERL5_RUN		- Says that the port uses perl5 for running.
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
 # PERL			- Set to full path of perl5, either in the system or
@@ -1006,8 +1008,13 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
 				PERL_ARCH=${PERL_ARCH}
 
+.if defined(PERL_CONFIGURE)
+USE_PERL5=	yes
+.endif
+
 .if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
-.if !exists(/usr/bin/perl${PERL_VERSION}) && defined(USE_PERL5)
+.if !exists(/usr/bin/perl${PERL_VERSION}) && ( defined(USE_PERL5) || \
+	defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) )
 pre-everything::
 	@${ECHO_CMD} "Error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
@@ -1017,9 +1024,11 @@ PERL=			/usr/bin/perl
 .else
 PERL5=			${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=			${LOCALBASE}/bin/perl
-.if defined(USE_PERL5)
-BUILD_DEPENDS+=	perl${PERL_VERSION}:${PORTSDIR}/lang/perl5
-RUN_DEPENDS+=	perl${PERL_VERSION}:${PORTSDIR}/lang/perl5
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
+BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/perl5
+.endif
+.if defined(USE_PERL5) || defined(USE_PERL5_RUN)
+RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/perl5
 .endif
 .endif
 
@@ -1744,7 +1753,6 @@ PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-USE_PERL5=			yes
 .undef HAS_CONFIGURE
 .endif
 
