@@ -1,0 +1,21 @@
+--- Imakefile.orig	Thu Jul 18 11:02:56 1996
++++ Imakefile	Sat Feb  7 22:15:55 1998
+@@ -8,7 +8,7 @@
+ 
+ XCOMM where to search for data-files, when not found in current dir
+ 
+-         XMEMORYDIR = \"/usr/games/lib/xmemory\"
++         XMEMORYDIR = \"${LIBDIR}/xmemory\"
+ 
+ XCOMM set the compiler that you like,
+ XCOMM gcc should suit, since the libraries are not needed.
+@@ -29,8 +29,7 @@
+ 	$(RM) $@
+ 	$(CXX) -o $@ $(OBJS) $(LDOPTIONS) $(LOCAL_LIBRARIES) $(LDLIBS) $(EXTRA_LOAD_FLAGS)
+ 
+-InstallProgram(xmemory,$(BINDIR))
+-InstallManPage(xmemory,$(MANDIR))
++ComplexProgramTarget(xmemory)
+ DependTarget()
+ CleanTarget()
+ 
