@@ -22,7 +22,7 @@ RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
 		enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 USE_X_PREFIX=	yes
-USE_GNOME=	esound
+USE_GNOME=	esound lthack
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -35,10 +35,6 @@ CONFIGURE_ARGS=	--enable-fsstd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile (missing dependency)"
-.endif
-
 .if ${ARCH} == "i386"
 APM_PROGS=	E-Power.epplet
 PLIST_SUB+=	APM_PROGS=""
@@ -47,8 +43,13 @@ APM_PROGS=	# none
 PLIST_SUB+=	APM_PROGS="@comment "
 .endif
 
+post-extract:
+	@${RM} -f ${WRKSRC}/api/epplet.h*
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@APM_PROGS@|${APM_PROGS}|g' ${WRKSRC}/epplets/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| ../api/epplet.h||g ; \
+		 s|@APM_PROGS@|${APM_PROGS}|g'
+	@${REINPLACE_CMD} -e 's| api/epplet.h||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
