@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
@@ -18,9 +18,16 @@ COMMENT=	A compiler for the minimum procedural language T3X
 MAN7=		t3x.7
 MANCOMPRESSED=	no
 
-MAKE_ENV=	INSTALL_PREFIX=${PREFIX}
+MAKE_ENV+=	INSTALL_PREFIX=${PREFIX}
 
 do-configure:
 	@(cd ${WRKSRC}/ports/freebsd-386-elf; ./Config boot)
+
+do-build:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} INSTALL_PREFIX=${WRKSRC}/test ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}; ${MAKE} allclean)
+	@(cd ${WRKSRC}/ports/freebsd-386-elf; ./Config build)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} T3XDIR=${WRKSRC}/test/t3x/r8 PATH=${PATH}:${WRKSRC}/test/bin ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 .include <bsd.port.mk>
