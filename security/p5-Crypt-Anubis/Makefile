@@ -21,8 +21,9 @@ MAN3=		Crypt::Anubis.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw{$$1};$$1/g' ${WRKSRC}/Anubis.pm
 .endif
 
 .include <bsd.port.post.mk>
