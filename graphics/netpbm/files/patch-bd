@@ -1,63 +1,22 @@
---- pbm/Makefile.orig	Sun Mar 25 18:24:46 2001
-+++ pbm/Makefile	Tue Mar 27 00:00:00 2001
-@@ -17,10 +17,12 @@
- LIBLIBS = 
- NETPBMLIBS = $(LIBPBM)
- 
-+SOVER = 1
-+
- PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
- 		icontopbm macptopbm mdatopbm mgrtopbm \
- 		pbmclean pbmlife pbmmake pbmmask pbmpscale \
--		pbmreduce pbmtext \
-+		pbmreduce \
- 		pbmto10x pbmto4425 pbmtoascii pbmtoatk \
- 		pbmtobbnbg pbmtocmuwm \
- 		pbmtoepsi pbmtoepson \
-@@ -30,20 +32,25 @@
- 		pbmtox10bm pbmtoxbm pbmtoybm pbmtozinc \
- 		pbmupc pi3topbm pktopbm wbmptopbm xbmtopbm ybmtopbm
- MATHBINARIES =	pbmpage pbmtopk
--BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
-+SHHOPTBINARIES =	pbmtext
-+
-+NOMERGEBINARIES =	$(SHHOPTBINARIES)
-+
-+MERGEBINARIES =	$(PORTBINARIES) $(MATHBINARIES)
-+
-+BINARIES =	$(MERGEBINARIES) $(NOMERGEBINARIES)
- 
- OBJECTS = $(patsubst %, %.o, $(BINARIES))
- 
--MERGEBINARIES = $(BINARIES)
- MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
+--- pbm/Makefile.orig	Fri May  4 12:39:43 2001
++++ pbm/Makefile	Tue May 15 00:00:00 2001
+@@ -47,6 +47,7 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
--# Library objects to be linked but not built by Makefile.common:
--LIBOBJECTS_X = $(BUILDDIR)/shhopt/shhopt.o
- 
- MANUALS1 =	$(BINARIES)
- MANUALS3 =	libpbm
-@@ -55,26 +62,25 @@
+@@ -63,26 +64,21 @@
  
  .PHONY: all
  all:	$(BINARIES)
 -	$(MAKE) -C pbmtoppa all
  
  .PHONY: merge
--merge: $(MERGENAME)
+ merge: $(MERGENAME)
 -	$(MAKE) -C pbmtoppa all
-+merge: $(MERGENAME) $(NOMERGEBINARIES)
-+
-+$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
-+	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
-+	  $(LIBSHHOPT) $(CDEBUG)
  
  .PHONY: install.bin
  install.bin: install.bin.common
@@ -76,17 +35,10 @@
  
  HEADERLINKS = pbmplus.h version.h compile.h
  
-@@ -88,13 +94,10 @@
- compile.h:
- 	$(SRCDIR)/stamp-date
- 
--$(BUILDDIR)/shhopt/shhopt.o:
--	cd ../shhopt; $(MAKE) shhopt.o
- $(BUILDDIR)/shhopt/libshhopt.a:
- 	cd ../shhopt; $(MAKE) libshhopt.a
- 
+@@ -104,6 +100,5 @@
  .PHONY: clean
  clean: clean.common
+ 	rm -f thinkjettopbm.c
 -	$(MAKE) -C pbmtoppa clean
  
  FORCE:

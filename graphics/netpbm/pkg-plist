@@ -212,6 +212,7 @@ bin/spctoppm
 bin/spottopgm
 bin/sputoppm
 bin/tgatoppm
+bin/thinkjettopbm
 bin/tifftopnm
 bin/wbmptopbm
 bin/winicontoppm
@@ -226,6 +227,7 @@ bin/yuvtoppm
 bin/zeisstopnm
 include/pbm.h
 include/pbmplus.h
+include/pbmshhopt.h
 include/pgm.h
 include/pnm.h
 include/ppm.h
