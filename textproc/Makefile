@@ -25,6 +25,7 @@
     SUBDIR += cole
     SUBDIR += cost
     SUBDIR += crimson
+    SUBDIR += cs-aspell
     SUBDIR += cwtext
     SUBDIR += dadadodo
     SUBDIR += dico
