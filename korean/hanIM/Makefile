@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://ftp.mizi.com/pub/hanIM/
 
 MAINTAINER=     cjh@FreeBSD.org
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_IMAKE=	YES
