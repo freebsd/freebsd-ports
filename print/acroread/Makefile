@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/20 07:29:45 tg Exp $
 #
 
 DISTNAME=	acroread_linux_b1106
@@ -16,18 +16,20 @@ MAINTAINER=	tg@FreeBSD.ORG
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
-RESTRICTED=	"Commercial software."
-IS_INTERACTIVE=	yes
 NO_WRKSUBDIR=	yes
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
-	@${WRKDIR}/INSTALL
+	@mkdir -p ${PREFIX}/Acrobat3
+	@mkdir -p ${PREFIX}/bin
+	@ReadInstallDir=${PREFIX}/Acrobat3 ${WRKDIR}/INSTALL
 
 post-install:
 	@sed -e 's/Linux)/FreeBSD\|Linux)/' <${PREFIX}/Acrobat3/bin/acroread >${PREFIX}/bin/acroread
 	@chmod +x ${PREFIX}/bin/acroread
+	@${ECHO_MSG} "Be sure to read the license agreement in"
+	@${ECHO_MSG} "${PREFIX}/Acrobat3/Reader/License.pdf"
 
 .include <bsd.port.mk>
