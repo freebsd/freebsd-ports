@@ -7,5 +7,3 @@ share/doc/mindterm/mindterm-ssh.html
 share/java/mindterm/mindterm.jar
 @dirrm share/java/mindterm
 @dirrm share/doc/mindterm
-@unexec rmdir %D/share/java || true
-@unexec rmdir %D/share/doc || true

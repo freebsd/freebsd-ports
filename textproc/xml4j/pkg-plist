@@ -578,5 +578,3 @@ share/java/xml4j/docs/html/y2k.html
 @dirrm share/java/xml4j/docs
 @dirrm share/java/xml4j/data
 @dirrm share/java/xml4j
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

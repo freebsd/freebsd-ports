@@ -216,7 +216,6 @@ share/java/classes/SmartDoc.jar
 share/xml/smartdoc/PureSmartDoc.dtd
 share/xml/smartdoc/catalog
 @dirrm share/xml/smartdoc
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
 @dirrm share/examples/smartdoc/pure
 @dirrm share/examples/smartdoc/html4
 @dirrm share/examples/smartdoc

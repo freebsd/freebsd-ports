@@ -37,5 +37,3 @@ share/java/collections-1.1/README.TXT
 share/java/collections-1.1/LICENSE.TXT
 @dirrm share/java/collections-1.1/javadoc
 @dirrm share/java/collections-1.1/
-@unexec rmdir %D/share/java/classes || true
-@unexec rmdir %D/share/java || true

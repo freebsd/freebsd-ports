@@ -2064,5 +2064,3 @@ share/java/%%JFCSUBDIR%%/examples/TableExample/TableExample.jar
 @dirrm share/java/%%JFCSUBDIR%%/examples/TableExample
 @dirrm share/java/%%JFCSUBDIR%%/examples
 @dirrm share/java/%%JFCSUBDIR%%/
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

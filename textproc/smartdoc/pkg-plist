@@ -243,5 +243,3 @@ share/xml/smartdoc/catalog
 %%PORTDOCS%%@dirrm share/doc/smartdoc/doc/quick
 %%PORTDOCS%%@dirrm share/doc/smartdoc/doc
 %%PORTDOCS%%@dirrm share/doc/smartdoc
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

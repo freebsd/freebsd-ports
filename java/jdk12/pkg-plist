@@ -761,10 +761,7 @@ jdk%%JDK_VERSION%%/lib/dt.jar
 jdk%%JDK_VERSION%%/lib/jpda.jar
 jdk%%JDK_VERSION%%/lib/tools.jar
 jdk%%JDK_VERSION%%/src.jar
-@exec	mkdir -p %D/share/java/classes
 @exec	mkdir -p %D/share/doc/java
-@unexec	rmdir %D/share/java/classes 2>/dev/null || true
-@unexec	rmdir %D/share/java 2>/dev/null || true
 @unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # JDK%%JDK_VERSION%%"
 @unexec	%D/bin/unregistervm JDK%%JDK_VERSION%%

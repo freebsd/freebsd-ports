@@ -24,5 +24,3 @@ share/postgresql/java/retepTools.jar
 @dirrm share/postgresql/java
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
 share/java/classes/postgresql.jar
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

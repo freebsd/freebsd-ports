@@ -77,5 +77,3 @@ share/java/infobus-1.2/doc/stylesheet.css
 @dirrm share/java/infobus-1.2/doc/javax
 @dirrm share/java/infobus-1.2/doc
 @dirrm share/java/infobus-1.2/
-@unexec rmdir %D/share/java/classes || true
-@unexec rmdir %D/share/java || true

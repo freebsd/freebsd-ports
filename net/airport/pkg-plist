@@ -14,4 +14,3 @@ share/doc/airport/helpdocs/mainscreen.jpg
 share/doc/airport/helpdocs/manual.html
 @dirrm share/doc/airport/helpdocs
 @dirrm share/doc/airport
-@unexec rmdir %D/share/java || true

@@ -198,5 +198,3 @@ share/doc/junit/src.jar
 %%PORTDOCS%%@dirrm share/doc/junit/junit/tests
 %%PORTDOCS%%@dirrm share/doc/junit/junit
 @dirrm share/doc/junit
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
