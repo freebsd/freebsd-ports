@@ -10,7 +10,7 @@
 -.if ${OBJFORMAT} == elf
 -BFDDIR= ${.CURDIR}/../../binutils/libbfd/${MACHINE_ARCH}
 -BINDIR=	/usr/local/bin
-+FBSDGDBDIR=	${.CURDIR}/../src/gnu/usr.bin/gdb/gdb
++FBSDGDBDIR=	${.CURDIR}/src/gnu/usr.bin/gdb/gdb
 +
 +GDBDIR=		${FBSDGDBDIR}/../../../../contrib/gdb
 +
