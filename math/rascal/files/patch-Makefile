@@ -1,43 +1,27 @@
---- Makefile.orig	Wed May 23 09:25:03 2001
-+++ Makefile	Fri May 25 02:58:44 2001
-@@ -15,23 +15,25 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
- #
--PREFIX=/usr/local
- 
- VERSION=0.2.1
+--- Makefile.orig	Mon Jun 25 19:38:33 2001
++++ Makefile	Mon Jun 25 19:40:33 2001
+@@ -21,4 +21,3 @@
  
 -CC=g++
--CFLAGS=-O0 -fno-default-inline -g -DVERSION=\"$(VERSION)\"
-+CXXFLAGS+=-fno-default-inline -DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
- INSTALL=install -m 755
- STRIP=strip -g
- RM=rm -f
- RMDIR=rm -rf
- INSTDIR=install -d
+-CFLAGS=-O0 -g -DVERSION=\"$(VERSION)\"
++CXXFLAGS+=-DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
+ # with the following options you might be able to optimize
+@@ -33,3 +32,3 @@
  
 -LIBS=-lm -lreadline -lcurses
 +LIBS=-lm -lreadline -lcurses -L%%LOCALBASE%%/lib -lgnugetopt
  OBJS=y.tab.o lex.yy.o symtab.o value.o
+@@ -38,2 +37,6 @@
  
- -include value.mak
- 
-+.SUFFIXES: .o .c
++.SUFFIXES:	.o .c
 +
 +.c.o:	;	${CXX} ${CXXFLAGS} -c $*.c
 +
  rascal:	$(OBJS)
- 	g++ -o rascal $(CFLAGS) $(OBJS) $(LIBS)
- test: rascal
-@@ -64,10 +66,8 @@
- 	$(INSTALL) ./rascal $(PREFIX)/bin/
- 	$(INSTALL) ./rascal.rc $(PREFIX)/bin/
+@@ -74,6 +77,4 @@
  	$(STRIP)   $(PREFIX)/bin/rascal
 -	$(INSTDIR) $(PREFIX)/doc/rascal
  	$(INSTALL) rascal.ps $(PREFIX)/doc/rascal
  	$(INSTALL) rascal.pdf $(PREFIX)/doc/rascal
 -	-$(INSTDIR) $(PREFIX)/doc/rascal/html
- 	-$(INSTALL) rascal_html/index.html rascal_html/*.gif rascal_html/*.css $(PREFIX)/doc/rascal/html
- 
- source-archive: clean
+ 	-$(INSTALL) rascal_html/index.html rascal_html/rascal.html rascal_html/*.gif rascal_html/*.css $(PREFIX)/doc/rascal/html
