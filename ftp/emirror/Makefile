@@ -9,8 +9,7 @@
 PORTNAME=	emirror
 PORTVERSION=	2.1.21
 CATEGORIES=	ftp python
-MASTER_SITES=	ftp://eclipt.uni-klu.ac.at/projects/emirror/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
