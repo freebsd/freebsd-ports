@@ -1,0 +1,13 @@
+--- network.c.orig	Fri Aug  9 15:24:23 2002
++++ network.c		Mon Jul 28 11:21:26 2003
+@@ -20,9 +20,9 @@
+
+
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+-#include <sys/types.h>
+ #include <string.h>
+ #include <netdb.h>
+ #include <unistd.h>
