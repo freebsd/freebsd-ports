@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- nagiostat.orig	Tue Jul 20 17:30:18 2004
++++ nagiostat	Tue Jul 20 18:01:53 2004
+@@ -21,8 +21,8 @@
+ use strict;
+ 
+ ## Basic configuration options
+-my $BASE_DIR = "/usr/local/nagios/nagiostat";
+-my $CONFIG_FILE = $BASE_DIR."/nagiostat.conf";  ## Config-file location
++my $BASE_DIR = "%%NAGIOSTATDIR%%";
++my $CONFIG_FILE = "%%NAGIOSTATCONFDIR%%/nagiostat.conf";  ## Config-file location
+ my $DEBUG_LOG_FILE = $BASE_DIR."/debug.log";    ## Specify where to create log-file and what filename (must be writable by nagios-user!)
+ my $DEBUGLEVEL = 3;              ## 0=Nothing, 1=Errors, 2=Warnings, 3=Debug
+ my $DEBUGOUTPUT = 0;		 ## 0=file, 1=STDERR, 2=STDOUT (for cgi)

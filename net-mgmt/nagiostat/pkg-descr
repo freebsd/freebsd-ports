@@ -1,0 +1,6 @@
+Nagiostat parses performance-data from Nagios and generates graphs of
+trends over time. Nagiostat makes use of RRD-tool. It then generates
+graphs on-the-fly through a CGI-script and HTML-templates. Nagiostat is
+written in perl.
+
+WWW: http://nagiostat.sourceforge.net

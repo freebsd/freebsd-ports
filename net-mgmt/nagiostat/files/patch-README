@@ -1,0 +1,112 @@
+
+$FreeBSD$
+
+--- README.orig	Wed Jul 21 10:07:51 2004
++++ README	Wed Jul 21 10:12:10 2004
+@@ -27,24 +27,28 @@
+ 
+ 
+ **INSTALLING
+-1. Unpack the tar-file to a directory, for example '/usr/local/nagios/nagiostat'. 
+-The nagiostat-base-dir does not have to be within the nagios-installation directory.
+ 
+-2. Start by editing the $BASE_DIR parameter in the file called "nagiostat", which is
+-the main script. Set the value to the directory where you unpacked the files.
+-Create a file called "debug.log" ('$ touch debug.log') in this dir and change permissions so that the
+-nagios-user may write to it. This is the logfile for nagiostat which can be
+-very helpful when debugging the regular-expression thing.
++1. Unpack the tar-file to a directory, for example '%%NAGIOSTATDIR%%'.  
++The nagiostat-base-dir does not have to be within the nagios-installation
++directory.
+ 
+-If things are installed in the directory specified in step 1, you can also run "make install" to
+-create debug.log, archives-directory and set permissions on them. "make install" is under development.
+-It also assumes that the nagios-user is called 'nagios'.
++2. Start by editing the $BASE_DIR parameter in the file called
++"nagiostat", which is the main script. Set the value to the directory
++where you unpacked the files. Create a file called "debug.log" ('$ touch
++debug.log') in this dir and change permissions so that the nagios-user may
++write to it. This is the logfile for nagiostat which can be very helpful
++when debugging the regular-expression thing.
+ 
+-3. Then read the nagios.conf-file where also most of the documentation is located and change the
+-parameters to your liking.
++If things are installed in the directory specified in step 1, you can also
++run "make install" to create debug.log, archives-directory and set
++permissions on them. "make install" is under development. It also assumes
++that the nagios-user is called 'nagios'.
+ 
+-4. Then set up your webserver so that you can access the nagiostat.cgi (symbolic-link
+-to 'nagiostat') from some URL. Example for apache:
++3. Then read the nagios.conf-file where also most of the documentation is
++located and change the parameters to your liking.
++
++4. Then set up your webserver so that you can access the nagiostat.cgi
++(symbolic-link to 'nagiostat') from some URL. Example for apache:
+ ---
+ Alias /nagiostat/ /usr/local/nagios/nagiostat/
+ <Directory /usr/local/nagios/nagiostat>
+@@ -53,41 +57,47 @@
+   Allow from all
+ </Directory>
+ ---
+-You also have to make sure that the apache-user has read-rights to the RRDArchivePath
+-and the config-file nagios.conf. You also would probably add additional security to
+-this, password protecting for instance.
+ 
+-5. Set up nagios to enable performance-data handling and that it should send the perfdata
+-to nagiostat.
+-In nagios.cfg, set the parameter 'process_performance_data=1'. This enables processing of
+-performance data.
+-Then add the parameter 'service_perfdata_command=service-perf-data-handler' also to nagios.cfg. This
+-tells nagios to run the "service-perf-data-handler" command to process the performance data after
+-each plugin has been executed.
+-Then add the following to the checkcommands.cfg-file (or whatever nagios-config-file you find suitable):
++You also have to make sure that the apache-user has read-rights to the
++RRDArchivePath and the config-file nagios.conf. You also would probably
++add additional security to this, password protecting for instance.
++
++5. Set up nagios to enable performance-data handling and that it should
++send the perfdata to nagiostat. In nagios.cfg, set the parameter
++'process_performance_data=1'. This enables processing of performance data.
++Then add the parameter
++'service_perfdata_command=service-perf-data-handler' also to nagios.cfg.
++This tells nagios to run the "service-perf-data-handler" command to
++process the performance data after each plugin has been executed. Then add
++the following to the checkcommands.cfg-file (or whatever
++nagios-config-file you find suitable):
++
+ ---
+ ##
+ ##  PERF-DATA-HANDLER
+ ##
+ define command {
+   command_name          service-perf-data-handler
+-  command_line          /usr/local/nagios/nagiostat/nagiostat -p "$LASTCHECK$|!!|$HOSTNAME$|!!|$SERVICEDESC$|!!|$SERVICESTATE$|!!|$OUTPUT$|!!|$PERFDATA$"
++  command_line          /%%NAGIOSTATDIR%%/nagiostat -p "$LASTCHECK$|!!|$HOSTNAME$|!!|$SERVICEDESC$|!!|$SERVICESTATE$|!!|$OUTPUT$|!!|$PERFDATA$"
+ }
+ ---
+ Alter the path to nagiostat to reflect where you installed the files in step 1.
+ 
+-6. To add a nifty icon to click on in the "service detail"-page in the nagios web interface, you
+-can add something like the following to the serviceextinfo.cfg-file:
++6. To add a nifty icon to click on in the "service detail"-page in the
++nagios web interface, you can add something like the following to the
++serviceextinfo.cfg-file:
++
+ ---
+ define serviceextinfo {
+         host_name                       purjo.dacom.se
+         service_description             PING
+-        notes_url                       /nagiostat/nagiostat.cgi?graph_name=purjo-ping
++        notes_url                       /nagiostat.cgi?graph_name=purjo-ping
+         icon_image                      graph.gif
+         icon_image_alt                  View graphs
+ }
+ ---
+-Copy graph.gif to /usr/local/nagios/share/images/logos (or whichever directory your nagios-installation is in)
++Copy graph.gif to /%%PREFIX%%/nagios/share/images/logos (or whichever 
++directory your nagios-installation is in)
+ to get the little ugly graph-icon in the right place.
+ 
+ 
