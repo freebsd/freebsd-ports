@@ -11,7 +11,7 @@
 DISTNAME=	docbk31
 PKGNAME=	docbook-3.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/docbook/3.1/
+MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/3.1/
 
 MAINTAINER=	nik@FreeBSD.org
 
