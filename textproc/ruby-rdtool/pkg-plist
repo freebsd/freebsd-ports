@@ -22,6 +22,7 @@ lib/xemacs/site-lisp/rd-mode.el
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 @comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
 %%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
+%%RUBY_DOCDIR%%/optparse/optparse.en.html
 %%RUBY_DOCDIR%%/rd/README.html
 %%RUBY_DOCDIR%%/rd/rd-draft.html
 %%RUBY_DOCDIR%%/rd/rd-draft.rd
