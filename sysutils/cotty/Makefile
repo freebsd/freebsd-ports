@@ -8,7 +8,7 @@
 PORTNAME=	cotty
 PORTVERSION=	0.4c
 CATEGORIES=	sysutils
-MASTER_SITES=	http://fare.tunes.org/files/fwprc/
+MASTER_SITES=	http://www.breuninger.org/files/distfiles/
 EXTRACT_SUFX=	.c.gz
 
 MAINTAINER=	ob@breuninger.org
