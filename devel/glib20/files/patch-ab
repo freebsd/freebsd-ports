@@ -45,7 +45,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  glib.spec glib-config
+-CONFIG_CLEAN_FILES =  glib.spec glibconfig.h.win32 glib-config
 +CONFIG_CLEAN_FILES =  glib12-config
  LTLIBRARIES =  $(lib_LTLIBRARIES)
  
@@ -250,8 +250,8 @@
 -man_MANS = glib-config.1
 +man_MANS = glib12-config.1
  
--EXTRA_DIST = glib-config.1		     glib.html 			     glib_toc.html
-+EXTRA_DIST = glib12-config.1		     glib.html 			     glib_toc.html
+-EXTRA_DIST = glib-config.1.in		     glib.html 			     glib_toc.html
++EXTRA_DIST = glib12-config.1.in		     glib.html 			     glib_toc.html
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
