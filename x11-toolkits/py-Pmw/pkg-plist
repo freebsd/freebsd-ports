@@ -241,6 +241,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/examples/Pmw/MessageBar.py
 %%PORTDOCS%%share/examples/Pmw/MessageDialog.py
 %%PORTDOCS%%share/examples/Pmw/MessageInfo.py
+%%PORTDOCS%%share/examples/Pmw/MultiLineLabel.py
 %%PORTDOCS%%share/examples/Pmw/NestedDialogs.py
 %%PORTDOCS%%share/examples/Pmw/NoteBook.py
 %%PORTDOCS%%share/examples/Pmw/NoteBook_2.py
