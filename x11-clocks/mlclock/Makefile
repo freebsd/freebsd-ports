@@ -1,28 +1,25 @@
 # New ports collection makefile for:   mlclock
-# Version required:    1.0
+# Version required:    1.1
 # Date created:        December 05 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mlclock
-PKGNAME=	mlclock-1.0
+DISTNAME=	mlclock-1.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
+MASTER_SITES=	http://www.hry.info.gifu-u.ac.jp/~hideki/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/mlclock
 
-.if !defined(KANJIMODE)
-pre-patch:
-	@${ECHO_MSG} "Japanese Kanji mode disabled."
-	@${ECHO_MSG} "Use 'make -DKANJIMODE' when compiling if you want the Japanese"
-	@${ECHO_MSG} "kanji mode enabled."
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-aa
-.endif
+post-install:
+	@${MKDIR} ${PREFIX}/share/mlclock
+.for i in mlclockrc mlclockrc-kanji
+	${INSTALL_DATA} ${WRKSRC}/rcfile/${i} ${PREFIX}/share/mlclock
+.endfor
 
 .include <bsd.port.mk>
