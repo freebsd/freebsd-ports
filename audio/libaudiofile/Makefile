@@ -16,9 +16,8 @@ DISTNAME=	audiofile-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A sound library for SGI audio file
 
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
