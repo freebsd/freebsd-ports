@@ -1,0 +1,37 @@
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Fingerprint.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Handles.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Interface.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Key.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Options.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/PublicKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/SecretKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Signature.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/SubKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/UserId.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/clearsign.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/decrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/detach_sign.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/encrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/encrypt_symmetrically.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/export_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/get_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/get_public_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/get_public_keys_with_sigs.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/get_secret_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/import_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/list_public_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/list_secret_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/list_sigs.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/recv_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/send_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/sign.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/sign_and_encrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/test_default_key_passphrase.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface/verify.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GnuPG
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG/Interface
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GnuPG
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GnuPG/Interface
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GnuPG
