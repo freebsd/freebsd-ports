@@ -8,6 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -21,10 +22,13 @@ CONFLICTS=	juk-*
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+		musicbrainz:${PORTSDIR}/audio/musicbrainz \
 		mp3lame:${PORTSDIR}/audio/lame \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	trm:${PORTSDIR}/audio/trm
+RUN_DEPENDS=	trm:${PORTSDIR}/audio/trm
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
