@@ -24,4 +24,7 @@ MAN1=	xopps.1
 pre-patch:
 	$(CP) $(WRKSRC)/Defines.spr $(WRKSRC)/Defines.$(MACH)
 
+pre-install:
+	$(MKDIR) $(PREFIX)/lib/help
+
 .include <bsd.port.mk>
