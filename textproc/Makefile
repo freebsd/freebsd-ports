@@ -297,6 +297,7 @@
     SUBDIR += p5-XML-Schematron
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-SimpleObject
+    SUBDIR += p5-XML-SimpleObject-LibXML
     SUBDIR += p5-XML-Stream
     SUBDIR += p5-XML-TreeBuilder
     SUBDIR += p5-XML-Twig
