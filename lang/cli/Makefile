@@ -7,6 +7,7 @@
 
 PORTNAME=	cli
 PORTVERSION=	20020326
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
 		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \

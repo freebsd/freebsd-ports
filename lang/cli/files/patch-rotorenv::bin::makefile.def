@@ -1,14 +1,23 @@
 
 $FreeBSD$
 
---- rotorenv/bin/makefile.def.orig	Fri Mar 22 03:48:24 2002
-+++ rotorenv/bin/makefile.def	Fri Mar 29 20:21:35 2002
-@@ -1428,7 +1428,7 @@
+--- rotorenv/bin/makefile.def.orig	Tue Apr  9 21:37:31 2002
++++ rotorenv/bin/makefile.def	Tue Apr  9 21:45:20 2002
+@@ -340,6 +340,8 @@
+ ! else
+ !  if "$(TARGETTYPE)" == "DYNLINK"
+ TARGETPRE=lib
++DEFAULT_MSC_OPT=$(DEFAULT_MSC_OPT) -fpic -DPIC
++LINKER_FLAGS=$(LINKER_FLAGS) -soname $(TARGETPRE)$(TARGETLIBNAME).$(TARGETEXT)
+ !  endif
+ ! endif
+ !endif
+@@ -1428,7 +1430,7 @@
  !ENDIF
  
  !ifdef PLATFORM_UNIX
 -DEFAULT_MSC_OPT=-O2
-+DEFAULT_MSC_OPT=$(CXXFLAGS)
++DEFAULT_MSC_OPT=$(DEFAULT_MSC_OPT) $(CXXFLAGS)
  !else
  DEFAULT_MSC_OPT = /Oxs
  !endif
