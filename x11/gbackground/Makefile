@@ -9,12 +9,13 @@ PORTNAME=	gbackground
 PORTVERSION=	1.0.0.b2
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://ringer.cs.utsa.edu/~gsalinas/gBackGround/
+MASTER_SITES=	http://gBackGround.sourceforge.net/
 DISTNAME=	gBackGround-1.0.0-beta2
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 
-USE_GNOME=	yes
+USE_GNOME=	gnomelibs libpanel
+USE_GNOMENG=	yes
 ALL_TARGET=	gBackGround_applet
 USE_X_PREFIX=	YES
 USE_AUTOCONF=	YES
