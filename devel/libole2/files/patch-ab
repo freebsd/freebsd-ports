@@ -1,0 +1,16 @@
+--- libole2Conf.sh.in.orig	Fri Oct  8 16:27:56 1999
++++ libole2Conf.sh.in	Tue Jun 20 11:45:56 2000
+@@ -2,11 +2,11 @@
+ exec_prefix=@exec_prefix@
+ 
+ if test "@includedir@" != /usr/include ; then
+-  LIBOLE2_INCLUDEDIR="`glib-config --cflags` -I@includedir@"
++  LIBOLE2_INCLUDEDIR="`@GLIB_CONFIG@ --cflags` -I@includedir@"
+ else
+   LIBOLE2_INCLUDEDIR=""
+ fi
+ LIBOLE2_LIBDIR="-L@libdir@"
+-LIBOLE2_LIBS="-lole2 `glib-config --libs` @LIBS@"
++LIBOLE2_LIBS="-lole2 `@GLIB_CONFIG@ --libs` @LIBS@"
+ MODULE_VERSION="libole2-@VERSION@"
+ 

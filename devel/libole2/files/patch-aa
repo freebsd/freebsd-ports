@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed May 10 18:54:12 2000
++++ Makefile.in	Tue Jun 20 10:23:44 2000
+@@ -92,7 +92,7 @@
+ 
+ EXTRA_DIST = autogen.sh libole2.m4 libole2Conf.sh.in gnome-libole2.m4
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = libole2Conf.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
