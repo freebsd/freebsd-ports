@@ -16,13 +16,6 @@ MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 		oo_moz_1.0_includes.tgz ${MOZILLADIST}
 
-.if !defined(LANG_EXT)
-LANG_EXT=01
-EXTRACT_LANGDIST+=	en_CA.zip en_GB.zip
-.endif
-
-DISTFILES+=		${EXTRACT_LANGDIST}
-
 SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
 
@@ -115,9 +108,6 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_CMD_L?=	unzip
-EXTRACT_BEFORE_ARGS_L?=	-q -o
-EXTRACT_AFTER_ARGS_L?=	-d ${DICT_DIR}
 EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz_1.0_includes.tgz
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
@@ -376,22 +366,7 @@ install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
 		${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
-# configuration for language specific slave ports
 post-install:
-	@${ECHO_MSG} "===>  Add spelling dictionaries";
-	@for file in ${EXTRACT_LANGDIST}; do \
-		if ! (cd ${DICTDIR}/ && ${EXTRACT_CMD_L} \
-			${EXTRACT_BEFORE_ARGS_L} \
-			${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS_L}) ; \
-		then \
-			exit 1; \
-		fi ; \
-		ABRV=`${ECHO_CMD} $$file | ${SED} -e 's|\.zip||'`; \
-		COUNTRY=`${ECHO_CMD} $$ABRV | ${SED} -e 's|_.*||'`; \
-		LANGUAGE=`${ECHO_CMD} $$ABRV | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
-		${ECHO_CMD} "DICT $$COUNTRY $$LANGUAGE $$ABRV" >> \
-			${DICT_DIR}/dictionary.lst ; \
-	done
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${INSTALL_SCRIPT} ${WRKSRC}/openoffice ${PREFIX}/bin/openoffice
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda
