@@ -91,6 +91,7 @@
     SUBDIR += gnomesystemmonitor
     SUBDIR += gpart
     SUBDIR += grub
+    SUBDIR += gtk-imonc
     SUBDIR += gtoaster
     SUBDIR += gtop
     SUBDIR += gupsc
