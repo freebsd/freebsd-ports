@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml \
-		gtksourceview intlhack
+		gtksourceview intlhack desktopfileutils
 USE_LIBTOOL_VER=15
 
 GCONF_SCHEMAS=	screem.schemas
