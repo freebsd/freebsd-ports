@@ -10,7 +10,7 @@ CATEGORIES=		www textproc
 MASTER_SITES=		http://files.b9.com/lml/
 PKGNAMEPREFIX=		cl-
 
-MAINTAINER=		henrik.motakef@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Lisp Markup Language
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf

@@ -17,7 +17,7 @@ PKGNAMESUFFIX=		-sbcl
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=		henrik.motakef@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A parser generator for Common Lisp
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/meta/meta.asd:${PORTSDIR}/textproc/cl-meta \

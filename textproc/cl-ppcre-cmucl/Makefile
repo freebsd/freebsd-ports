@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-cmucl
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre \

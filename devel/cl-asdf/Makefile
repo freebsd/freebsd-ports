@@ -10,7 +10,7 @@ CATEGORIES=		devel
 MASTER_SITES=		http://www.henrik-motakef.de/freebsd-distfiles/asdf/
 PKGNAMEPREFIX=		cl-
 
-MAINTAINER=		henrik.motakef@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system definition facility for Common Lisp
 
 WRKSRC=			${WRKDIR}/${PORTNAME}

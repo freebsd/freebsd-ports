@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI Common Lisp
 
 USE_BZIP2=	yes

@@ -17,7 +17,7 @@ PKGNAMESUFFIX=		-cmucl
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=		henrik.motakef@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Cross-Lisp portability package
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \

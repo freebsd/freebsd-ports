@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 PKGNAMEPREFIX=		cl-
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=		henrik.motakef@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A parser generator for Common Lisp
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
