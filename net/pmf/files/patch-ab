@@ -30,7 +30,7 @@
  # Distribution: CFLAGS = -O
  # Maximum debug: CFLAGS = -g -pg -DDEBUG -pipe
 -CFLAGS = -O
-+CFLAGS += -D_ANSI_SOURCE -DSYSTEM_DIR=\"${PREFIX}/libdata/pmf\"
++CFLAGS += -D_ANSI_SOURCE -DSYSTEM_DIR=\"${PREFIX}/share/pmf\"
  
  ######################################################################
  
