@@ -1,17 +1,17 @@
---- setup.py.orig	Sun May 12 22:37:06 2002
-+++ setup.py	Sat May 18 23:03:58 2002
+--- setup.py.orig	Sun Nov  9 12:15:24 2003
++++ setup.py	Mon Nov 10 20:55:24 2003
 @@ -20,7 +20,7 @@
  # Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  # MA 02111-1307, USA.
  
--import os, string, sys
-+import os, string, sys, re
+-import os, string, sys, distutils.dist
++import os, string, sys, re, distutils.dist
  from distutils.core import setup, Extension
  
- # Notes:
-@@ -34,9 +34,21 @@
- #     end of the gcc command, which is useless in this case. So, I use
- #     "include_dirs" instead.
+ # Note:
+@@ -30,9 +30,21 @@
+ #   run the Distutils from Python 2.1, you will get License: UNKNOWN. This
+ #   problem does not appear with the versions included in Python 2.2 and 2.3.
  
 +def patch4gcc3(fname):
 +    instr = 0
@@ -21,35 +21,45 @@
 +        instr = (instr+len(re.findall(r'(^")|([^\\]")', l))) % 2
 +        print >>of, l[:-1] + ((not l.startswith('/*') and instr) and "\\n\\" or "")
 +if 'patch' in sys.argv:
-+    patch4gcc3('_xmmsmodule.c')
++    patch4gcc3('src/_xmmscontrolmodule.c')
 +    raise SystemExit
 +
  PACKAGE = "pyxmms"
- VERSION = "1.07"
+ VERSION = "2.00"
 -GLIB_CONFIG = "glib-config"
 +GLIB_CONFIG = os.environ['GLIB_CONFIG']
 +XMMS_CONFIG = os.environ['XMMS_CONFIG']
  
- def main():
-     glib_opts = {}
-@@ -52,6 +64,9 @@
-     glib_include_dirs = map(lambda s: s[2:],
-                             string.split(glib_opts["cflags"], ' '))
  
+ def get_glib_config():
+@@ -70,13 +82,16 @@
+ def setup_args():
+     """Craft appropriate arguments for distutils.setup."""
+     (glib_include_dirs, glib_compile_args, glib_link_args) = get_glib_config()
++
 +    XMMSINCDIR = re.findall('-I([^ ]+)', os.popen(XMMS_CONFIG+" --cflags").read())
 +    XMMSLIBDIR = re.findall('-L([^ ]+)', os.popen(XMMS_CONFIG+" --libs").read())
-+
-     setup(name=PACKAGE,
-           version=VERSION,
-           description="A Python interface to XMMS",
-@@ -69,8 +84,8 @@
-           keywords=["xmms"],
-           py_modules=["xmms"],
-           ext_modules=[Extension("_xmms", ["_xmmsmodule.c"],
--                                 include_dirs=glib_include_dirs,
--                                 libraries=["xmms"],
-+                                 include_dirs=glib_include_dirs+XMMSINCDIR,
-+                                 libraries=["xmms"], library_dirs=XMMSLIBDIR,
-                                  extra_link_args=[glib_opts["libs"]])])
+     
+     # Modules built whatever the version of the running Python
+     ext_modules = [Extension("xmms._xmmscontrol",
+                              ["src/_xmmscontrolmodule.c"],
+-                             include_dirs=glib_include_dirs,
++                             include_dirs=glib_include_dirs+XMMSINCDIR,
+                              extra_compile_args=glib_compile_args,
+-                             libraries=["xmms"],
++                             libraries=["xmms"], library_dirs=XMMSLIBDIR,
+                              extra_link_args=glib_link_args)]
  
- if __name__ == "__main__": main()
+     if sys.hexversion < 0x02020000:
+@@ -92,9 +107,9 @@
+         # This module requires Python >= 2.2
+         ext_modules.append(Extension("xmms._xmmsconfig",
+                                      ["src/_xmmsconfigmodule.c"],
+-                                     include_dirs=glib_include_dirs,
++                                     include_dirs=glib_include_dirs+XMMSINCDIR,
+                                      extra_compile_args=glib_compile_args,
+-                                     libraries=["xmms"],
++                                     libraries=["xmms"], library_dirs=XMMSLIBDIR,
+                                      extra_link_args=glib_link_args))
+ 
+     # Trove classifiers picked up from the list at
