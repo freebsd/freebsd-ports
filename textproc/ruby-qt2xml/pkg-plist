@@ -1,12 +1,16 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2xml.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/quotes.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/domtest1.cc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/domtest1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/README.jp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/README.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example1/example1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example1/example1.ui
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2.ui
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2j.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2j.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/jplabel.ui
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example3/example3.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example3/example3.ui
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example4/example4.rb
@@ -30,6 +34,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quotes.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.h.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quoteparser.h.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quoteparser.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/xmlquotes.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/marble.png
