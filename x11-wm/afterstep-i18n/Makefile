@@ -10,8 +10,8 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 		${MASTER_SITE_LOCAL} \
-		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/ \
-		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/icons/
+		http://www.itlb.te.noda.tus.ac.jp/~manome/afterstep/archive/ \
+		http://www.itlb.te.noda.tus.ac.jp/~manome/afterstep/archive/icons/
 # former for ${MASTER_SITE_AFTERSTEP}, latter for ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archives/1.0 kuriyama
 DISTNAME=	AfterStep-1.0
