@@ -7,14 +7,22 @@
 #
 
 PORTNAME=	nylon
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.citi.umich.edu/u/marius/
+MASTER_SITES=	http://monkey.org/~marius/nylon/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+# Necessary for $PREFIX to work:
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 
 MAN1=		nylon.1
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${PREFIX}/etc
 
 .include <bsd.port.mk>

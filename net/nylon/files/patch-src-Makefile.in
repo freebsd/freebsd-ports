@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Oct 21 19:32:41 2002
++++ src/Makefile.in	Mon Oct 21 19:33:00 2002
+@@ -92,7 +92,7 @@
+                 socks4.c socks5.c mirror.c cleanup.c misc.c
+ 
+ 
+-CFLAGS = @EVENTINC@ -Wall -g $(AM_CFLAGS)
++CFLAGS += @EVENTINC@ -Wall -g $(AM_CFLAGS)
+ LDADD = @EVENTLIB@ @LIBOBJS@
+ 
+ EXTRA_DIST = strlcpy.c strlcat.c setproctitle.c strsep.c err.c daemon.c
