@@ -1,2 +1,6 @@
 MD5 (gnuplot-4.0.0.tar.gz) = 66258443d9f93cc4f46b147dac33e63a
 SIZE (gnuplot-4.0.0.tar.gz) = 2160918
+MD5 (datastrings_4.0.patch) = 7d2c4015f15f96e3a0f8063c2199ab6f
+SIZE (datastrings_4.0.patch) = 77936
+MD5 (histograms_4.0.patch) = ba87f28e4aed68637e7b5160e7151919
+SIZE (histograms_4.0.patch) = 63433
