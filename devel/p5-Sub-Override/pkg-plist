@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Sub/Override.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Override/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Override
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Sub 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Sub 2>/dev/null || true
