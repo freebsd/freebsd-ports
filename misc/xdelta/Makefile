@@ -14,13 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	c9710216@atlas.newcastle.edu.au
 
 USE_GLIB=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		xdelta.1
-
-pre-patch:
-	@${PERL} -pi -e 's|\$\(top_builddir\)/libtool|\$\(prefix\)/bin/libtool|' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
