@@ -1,0 +1,4 @@
+lib/libgnomejava%%GNOME_API_VERSION%%.so
+lib/libgnomejava%%GNOME_API_VERSION%%.so.%%PORTVERSION%%
+share/java/classes/gnome%%GNOME_API_VERSION%%-%%PORTVERSION%%.jar
+share/java/classes/gnome%%GNOME_API_VERSION%%.jar

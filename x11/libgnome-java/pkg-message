@@ -1,0 +1,7 @@
+************************************************************************
+Libgnome-java was successfully installed.  In order to build and run GTK+
+Java applications, you must add the following to your CLASSPATH:
+
+%%JAVAJARDIR%%/gnome%%GNOME_API_VERSION%%.jar
+
+************************************************************************
