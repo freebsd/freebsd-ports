@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shapelib
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.10
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 
