@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbattbar
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://infonet.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
