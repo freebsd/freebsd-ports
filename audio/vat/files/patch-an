@@ -1,0 +1,45 @@
+--- old/ui-main.tcl	Fri May  3 13:27:22 1996
++++ ui-main.tcl	Sat Feb 21 06:02:59 1998
+@@ -373,9 +373,9 @@
+ 	}
+ 	mk.obuttons $w.frame.buttons
+ 	frame $w.frame.ssthresh
+-	# mk.ssthresh $w.frame.ssthresh
+-	#pack $w.frame.radios $w.frame.buttons $w.frame.ssthresh \
+-	#	-anchor c -pady 4
++	mk.ssthresh $w.frame.ssthresh
++	pack $w.frame.radios $w.frame.buttons $w.frame.ssthresh \
++		-anchor c -pady 4
+ 	pack $w.frame.radios $w.frame.buttons \
+ 		-anchor c -pady 4
+ 	pack $w.label $w.frame -expand 1 -fill x
+@@ -515,6 +515,12 @@
+ 	return 0
+ }
+ 
++proc update_filename { w s } {
++	set s [string trim $s]
++	audio filename $s
++	return 0
++}
++
+ proc mk.entries { w } {
+ 	global sessionKey confName
+ 	set sessionKey [option get . sessionKey Vat]
+@@ -913,6 +919,16 @@
+ 	set a .m.right
+ 	frame $a.ab
+ 	mk.ab $a.ab
++
++### XXX
++	set f [ctrlfont]
++	frame .m.file
++	label .m.file.label -text "AU File: " -font $f
++	mk.entry .m.file update_filename ""
++	.m.file.entry configure -width 30
++	pack .m.file.label -side left
++	pack .m.file.entry -side left -expand 1 -fill x -pady 2
++	pack .m.file -fill x
+ 
+ 	bind . c purge_sources
+ 	bind . C purge_sources
