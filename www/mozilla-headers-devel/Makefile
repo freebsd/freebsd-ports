@@ -18,8 +18,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-devel:configure
 
 USE_X_PREFIX=	yes
 
-NO_LATEST_LINK=	yes
-
+LATEST_LINK=	mozilla-headers-devel
+PLIST=		${WRKSRC}/pkg-plist
 MAINDIR=	${.CURDIR}/../mozilla-devel
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
@@ -32,6 +32,14 @@ ALL_TARGET=	export
 .if defined(INCOWN) || defined(INCGRP)
 CPIOOWN=	-R ${INCOWN}:${INCGRP}
 .endif
+
+pre-install:
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
+		${SED} -e ':^:include/mozilla-devel/:' >> ${PLIST} \
+		&& ${FIND} -d * -type f | \
+		${SED} -e 's:^:@dirrm include/mozilla-devel/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/mozilla-devel >> ${PLIST}
 
 do-install:
 	-${RM} -fr ${PREFIX}/include/mozilla-devel

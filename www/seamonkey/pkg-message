@@ -1,0 +1,9 @@
+###
+A symlink has been created for the Java plugin.  However, in order for Java
+to function, you must first install the java/jdk13 port.  If you do not
+do this, you will see the following error when starting Mozilla:
+
+LoadPlugin: failed to initialize shared library /usr/local/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so [Cannot open "/usr/local/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so"]
+
+If you do not want Java support, you can safely ignore this message.
+###
