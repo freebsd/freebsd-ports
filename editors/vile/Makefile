@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.2t
-DISTNAME=	vile-9.2
+PORTVERSION=	9.2u
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
+DISTNAME=	vile-9.2
+EXTRACT_SUFX=	.tgz
+
 PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches/,g}
 PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2b.patch.gz \
@@ -31,15 +33,19 @@ PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2q.patch.gz \
 		vile-9.2r.patch.gz \
 		vile-9.2s.patch.gz \
-		vile-9.2t.patch.gz
-
-EXTRACT_SUFX=	.tgz
+		vile-9.2t.patch.gz \
+		vile-9.2u.patch.gz
 
 MAINTAINER=	gj@freebsd.org
 
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 MAN1=		vile.1
+
+.if defined(WITH_ALL)
+WITH_FILTERS=1
+WITH_PERL=1
+.endif
 
 .if defined(WITH_PERL)
 CONFIGURE_ARGS=	--with-perl
