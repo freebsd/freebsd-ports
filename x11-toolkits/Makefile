@@ -145,6 +145,7 @@
     SUBDIR += py-fltk
     SUBDIR += py-fox
     SUBDIR += py-gnome
+    SUBDIR += py-gnome-extras
     SUBDIR += py-gnome2
     SUBDIR += py-gtk
     SUBDIR += py-gtk2

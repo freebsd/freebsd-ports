@@ -1,0 +1,9 @@
+Excerpt from the README:
+
+ PyGNOME -- Python bindings for GNOME 2
+ ======================================
+ Author: James Henstridge <james@daa.com.au>
+
+ This is a set of bindings for the GNOME 2 libraries for use with python.
+
+-- Jacques Vidrine <nectar@FreeBSD.ORG>
