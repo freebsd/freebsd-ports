@@ -1,0 +1,13 @@
+include/libtasn1.h
+lib/libtasn1.so.0
+lib/libtasn1.so
+lib/libtasn1.la
+lib/libtasn1.a
+%%PORTDOCS%%share/doc/libtasn1/AUTHORS
+%%PORTDOCS%%share/doc/libtasn1/NEWS
+%%PORTDOCS%%share/doc/libtasn1/README
+%%PORTDOCS%%share/doc/libtasn1/THANKS
+%%PORTDOCS%%share/doc/libtasn1/asn1.ps
+%%PORTDOCS%%share/doc/libtasn1/asn1.tex
+%%PORTDOCS%%share/doc/libtasn1/fdl.tex
+%%PORTDOCS%%@dirrm share/doc/libtasn1
