@@ -28,7 +28,7 @@ SHAREMODE=	644
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
 INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
-		DEFAULT=${DEFAULT} WANT_CJK=${WANT_CJK} WANT_GS6=${WANT_GS6} \
+		DEFAULT=${DEFAULT} WANT_CJK=${WANT_CJK} WANT_GS=${WANT_GS} \
 		WITHOUT_X=${WITHOUT_X}
 
 .include <bsd.port.pre.mk>
@@ -36,8 +36,8 @@ INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
 .if defined(WANT_CJK)
 RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
 .endif
-.if defined(WANT_GS6)
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/CJK/CMap/B5pc-H:${PORTSDIR}/chinese/ghostscript6
+.if defined(WANT_GS)
+RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 .endif
 .if ${XFREE86_VERSION} == 3 && !defined(WITHOUT_X)
 RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
@@ -47,8 +47,8 @@ pre-fetch:
 .if defined(WANT_CJK)
 	@${ECHO} "CJK support will be added."
 .endif
-.if defined(WANT_GS6)
-	@${ECHO} "Ghostscript6 support will be added."
+.if defined(WANT_GS)
+	@${ECHO} "Ghostscript support will be added."
 .endif
 .if defined(WITHOUT_X)
 	@${ECHO} "X Window support will NOT be added."
@@ -56,10 +56,10 @@ pre-fetch:
 .if defined(DEFAULT)
 	@${ECHO} "MOETTF will be set as default font."
 .endif
-.if !defined(WANT_CJK) && !defined(WANT_GS6) && !defined(WITHOUT_X) && !defined(DEFAULT)
+.if !defined(WANT_CJK) && !defined(WANT_GS) && !defined(WITHOUT_X) && !defined(DEFAULT)
 	@${ECHO} --
 	@${ECHO} "Type \"make WANT_CJK=yes\" if you want CJK support."
-	@${ECHO} "Type \"make WANT_GS6=yes\" if you want Ghostscript6 support."
+	@${ECHO} "Type \"make WANT_GS=yes\" if you want Ghostscript support."
 	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
 	@${ECHO} "Type \"make DEFAULT=yes\" to set MOETTF the default font."
 	@${ECHO} "You can use them in combinations."
