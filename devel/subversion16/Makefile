@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -64,6 +64,7 @@ MAN3=			SVN::Base.3 \
 			SVN::Client.3 \
 			SVN::Core.3 \
 			SVN::Delta.3 \
+			SVN::Fs.3 \
 			SVN::Ra.3 \
 			SVN::Repos.3 \
 			SVN::Wc.3
@@ -80,13 +81,26 @@ PLIST_SUB+=		WITH_PYTHON=""
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
+#.if defined(WITH_JAVA)
+#USE_JAVA=	yes
+#JAVA_VERSION=	1.2+
+#JAVA_OS=	native
+#JAVA_BUILD=	yes
+#JAVA_RUN=	yes
+#.include "${PORTSDIR}/Mk/bsd.java.mk"
+#CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} 
+#PLIST_SUB+=		WITH_JAVA=""
+#.else
+#PLIST_SUB+=		WITH_JAVA="@comment "
+#.endif
+
 .if defined(SWIG_BINDINGS) && ${SWIG_BINDINGS} != ""
 BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
 DEPENDS_ARGS+=		SWIG_LANGUAGES='${SWIG_BINDINGS}'
 CONFIGURE_ARGS+=	--with-swig=${LOCALBASE} \
 			--enable-swig-bindings=${SWIG_BINDINGS:Q:S/ /,/g:S/\\//g}
 .else
-CONFIGURE_ARGS+=	--with-swig=no
+CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings 
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
@@ -105,19 +119,21 @@ APACHE2_PORT?=	www/apache2
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
-CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
-		--with-apr-util=${LOCALBASE}/lib/apache2/apu-config
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
+APR_CONFIG=	apr-config
+APU_CONFIG=	apu-config
 APR_PORT=	www/apache2
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
 .else
 LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr-svn
-CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
-		--with-apr-util=${LOCALBASE}
 APR_APU_DIR=	${LOCALBASE}/bin
+APR_CONFIG=	apr-1-config
+APU_CONFIG=	apu-1-config
 APR_PORT=	devel/apr
 OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
 .endif
+CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
+		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
 
 .if defined(WITH_SVNSERVE_WRAPPER)
 PLIST_SUB+=	SVNSERVE_WRAPPER=""
@@ -131,6 +147,10 @@ PORTDOCS+=	book
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
+
+SCRIPTS=
+
+SCRIPTS_DATA=
 
 pre-extract:
 	@${ECHO_MSG} ""
@@ -160,6 +180,13 @@ pre-extract:
 	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
 .endif
 	@${ECHO_MSG} ""
+#.if defined(WITH_JAVA)
+#	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
+#.else
+#	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
+#	@${ECHO_MSG} "You should have apr builded with threads for Java support!"
+#.endif
+#	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
@@ -209,6 +236,7 @@ pre-extract:
 	@${ECHO_MSG} "WITH_BOOK_HTML."
 .endif
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "May useful scripts will be installed into ${PREFIX}/share/subversion"
 
 post-extract:
 	@${RM} -r ${WRKSRC}/neon
@@ -225,17 +253,17 @@ post-patch:
 	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 
 pre-configure:
-	@if [ ! -x ${APR_APU_DIR}/apr-config -o ! -x ${APR_APU_DIR}/apu-config ] ; then \
+	@if [ ! -x ${APR_APU_DIR}/${APR_CONFIG} -o ! -x ${APR_APU_DIR}/${APU_CONFIG} ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You select to use`'"${APR_PORT}' for apr library." ; \
+		${ECHO_MSG} 'You selected to use`'"${APR_PORT}' for apr library." ; \
 		${ECHO_MSG} 'It seems that `'"${APR_PORT}' is not properly installed." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
-	@if [ `${APR_APU_DIR}/apu-config --db-version` != "4" ] ; then \
+	@if [ `${APR_APU_DIR}/${APU_CONFIG} --db-version` != "4" ] ; then \
 		${ECHO_MSG} "" ; \
  		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
- 		${ECHO_MSG} 'Please, rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+ 		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
@@ -243,18 +271,17 @@ pre-configure:
 post-build:
 .if defined(WITH_PERL)
 	cd ${WRKSRC} ; \
-	  ${MAKE} swig-pl-lib
-	cd ${WRKSRC}/subversion/bindings/swig/perl ; \
-	  ${SETENV} APR_CONFIG="${APR_APU_DIR}/apr-config" APU_CONFIG="${APR_APU_DIR}/apu-config" \
-	    CCFLAGS="${CCFLAGS}" CC="${CC}" \
-	    ${PERL} Makefile.PL PREFIX="${PREFIX}" \
-	    INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib" ; \
-	  ${MAKE} all
+	  ${MAKE} swig-pl
 .endif
 .if defined(WITH_PYTHON)
 	cd ${WRKSRC} ; \
 	  ${MAKE} swig-py
 .endif
+#.if defined(WITH_JAVA)
+#	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
+#	cd ${WRKSRC} ; \
+#	  ${MAKE} javahl
+#.endif
 .if defined(WITH_BOOK_HTML)
 	cd ${WRKSRC}/doc/book/tools/ ; \
 	  ${LN} -s ${PREFIX}/share/xsl/docbook xsl
@@ -268,6 +295,9 @@ pre-install:
 .endif
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/subversion
+	cd ${WRKSRC}/tools ; \
+	  tar --exclude '*.in' -cf - * | tar -C ${PREFIX}/share/subversion -xf -
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
@@ -280,14 +310,16 @@ post-install:
 .endif
 .if defined(WITH_PERL)
 	cd ${WRKSRC} ; \
-	  ${MAKE} install-swig-pl-lib
-	cd ${WRKSRC}/subversion/bindings/swig/perl ; \
-	  ${MAKE} install
+	  ${MAKE} install-swig-pl
 .endif
 .if defined(WITH_PYTHON)
 	cd ${WRKSRC} ; \
 	  ${MAKE} install-swig-py
 .endif
+#.if defined(WITH_JAVA)
+#	cd ${WRKSRC} ; \
+#	  ${MAKE} install-javahl
+#.endif
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
 .endif
