@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	pchar
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
+MASTER_SITES=	http://www.kitchenlab.org/www/bmah/Software/pchar/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bmah
 
