@@ -1,12 +1,12 @@
---- Makefile.orig	Wed Nov 28 20:24:11 2001
-+++ Makefile	Wed Nov 28 21:46:19 2001
+--- Makefile.orig	Fri Jun  7 20:09:07 2002
++++ Makefile	Fri Jun  7 20:14:39 2002
 @@ -28,8 +28,8 @@
  # Directories to make...
  #
  
--DIRS	=	cups backend berkeley cgi-bin filter man pdftops pstoraster \
+-DIRS	=	cups backend berkeley cgi-bin filter man pdftops \
 -		scheduler systemv
-+DIRS	=	cups backend cgi-bin filter man pdftops pstoraster \
++DIRS	=	cups backend cgi-bin filter man pdftops \
 +		scheduler
  
  #

@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	cups-base
-PORTVERSION=	${CUPS_VERSION}
-CATEGORIES=	print
+PORTVERSION=	${CUPS_PORTVER}
+CATEGORIES?=	print
+
 MAINTAINER=	jah4007@cs.rit.edu
 
 INSTALLS_SHLIB=	yes
@@ -31,6 +32,5 @@ post-install:
 		${PREFIX}/etc/rc.d/cupsd.sh.sample
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/print/cups/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../print/cups/Makefile.inc"
+.include <bsd.port.mk>
