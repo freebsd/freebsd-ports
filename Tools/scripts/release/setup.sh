@@ -2,6 +2,10 @@
 # $FreeBSD$
 
 dir=$@
+if [ -z $dir ]; then
+	echo "Usage: $0 <path to dir with ports and packages to split>"
+	exit 1
+fi
 if [ ! -d $dir ]; then
 	echo "Directory not found.  Aborting."
 	exit 1
