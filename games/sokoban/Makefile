@@ -26,10 +26,6 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/sokoban/screens
 	@ ${CHOWN} root:games ${PREFIX}/share/sokoban/screens
 	@ ${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/share/sokoban/screens
-	@ if [ ! -f ${PREFIX}/share/sokoban/highscore ]; then \
-		dd if=/dev/zero of=${PREFIX}/share/sokoban/highscore bs=1 count=2; \
-	  fi
-	@ ${CHOWN} root:games ${PREFIX}/share/sokoban/highscore
-	@ ${CHMOD} 0600 ${PREFIX}/share/sokoban/highscore
+	@ ${SH} pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@
 + #define SCREENPATH	PREFIX	"/share/sokoban/screens"
 + #define SAVEPATH	PREFIX	"/share/sokoban"
 + #define LOCKFILE		"/tmp/sok.tmp"
-+ #define SCOREFILE	PREFIX	"/share/sokoban/highscore"
++ #define SCOREFILE		"/var/games/sokoban"
 + #else
 + 
   /**/
