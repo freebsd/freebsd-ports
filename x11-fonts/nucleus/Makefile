@@ -7,7 +7,7 @@
 
 PORTNAME=	nucleus
 PORTVERSION=	0.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dreamer.nitro.dk/linux/lfp/
 
