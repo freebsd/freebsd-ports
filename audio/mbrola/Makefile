@@ -26,6 +26,11 @@ RUN_DEPENDS+=	${PREFIX}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
 CONFLICTS?=	linux-mbrola-*
 NO_BUILD=	yes
 ONLY_FOR_ARCHS?=i386
+PLIST_DIRS=	share/doc/mbrola
+PLIST_FILES=	bin/mbrola
+.if !defined(NOPORTDOCS)
+PLIST_FILES+=	share/doc/mbrola/readme.txt
+.endif
 RESTRICTED=	"for non-commercial, non-military applications only"
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/mbr301h
@@ -37,13 +42,6 @@ do-extract:
 
 do-patch:
 	@${RM} -f ${WRKSRC}/mbrola-FreeBSD-i386-aout
-
-pre-install:
-	@${ECHO_CMD} bin/mbrola > ${PLIST}
-.if !defined(NOPORTDOCS)
-	@${ECHO_CMD} share/doc/mbrola/readme.txt >> ${PLIST}
-	@${ECHO_CMD} @dirrm share/doc/mbrola >> ${PLIST}
-.endif
 
 do-install:
 .if defined(USE_LINUX)
