@@ -1,0 +1,5 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+The trayicon sits in the notification area displays information about a
+connected Windows CE device such as battery charge and storage space.
+
+WWW: http://synce.sourceforge.net/
