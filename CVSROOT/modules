@@ -11764,6 +11764,7 @@ xdaliclock	ports/x11-clocks/xdaliclock
 xdeblock	ports/games/xdeblock
 xdelta		ports/misc/xdelta
 xdemineur	ports/games/xdemineur
+xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
 xdf		ports/misc/xdf
 xdgagrab	ports/graphics/xdgagrab
