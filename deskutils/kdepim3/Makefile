@@ -15,8 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		gpgsm:${PORTSDIR}/security/gnupg-devel
 LIB_DEPENDS=	mal:${PORTSDIR}/palm/libmal \
 		pisock:${PORTSDIR}/palm/pilot-link
 
@@ -33,6 +31,8 @@ USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
+		--with-gpgsm=${LOCALBASE}/bin/gpgsm
 
 OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
 
