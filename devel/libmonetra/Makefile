@@ -7,7 +7,7 @@
 
 PORTNAME=	libmcve
 PORTVERSION=	4.1
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	libmonetra-${PORTVERSION}
 MASTER_SITES=	ftp://ftp.mcve.com/pub/libmonetra/
