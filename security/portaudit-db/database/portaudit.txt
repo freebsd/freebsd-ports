@@ -66,3 +66,4 @@ putty<0.55|http://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html http:/
 cvstrac<1.1.4|http://www.securityfocus.com/archive/1/370955 http://secunia.com/advisories/12090 http://www.osvdb.org/8373 http://www.cvstrac.org/cvstrac/chngview?cn=316|CVStrac remote code execution vulnerability|0139e7e0-e850-11d8-9440-000347a4fa7d
 p5-Mail-SpamAssassin<2.64|http://marc.theaimsgroup.com/?l=spamassassin-announce&m=109168121628767&w=2|SpamAssassin DoS vulnerability|bacbc357-ea65-11d8-9440-000347a4fa7d
 cfengine2<2.1.8|http://www.coresecurity.com/common/showdoc.php?idx=387&idxseccion=10|cfengine authentication heap corruption|f2a1dc8b-ea66-11d8-9440-000347a4fa7d
+libxine<=1.0.r5_1|http://www.open-security.org/advisories/6 http://secunia.com/advisories/12194 http://sourceforge.net/mailarchive/forum.php?thread_id=5143955&forum_id=11923|libxine vcd MRL input identifier management overflow|bef4515b-eaa9-11d8-9440-000347a4fa7d
