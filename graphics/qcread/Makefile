@@ -7,6 +7,7 @@
 
 PORTNAME=	qcread
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fhttpd.org/pub/qcread/
 
@@ -15,9 +16,11 @@ COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
 ONLY_FOR_ARCHS=	i386
 
-post-extract:
+USE_GETOPT_LONG=	yes
 
-	@${CP} -r ${WRKSRC}/gnu-getopt/. ${WRKSRC}
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I. -DFreeBSD ${CPPFLAGS} \
+		-o qcread qcread.c cqc.c -lm ${LDFLAGS}
 
 do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 644 ${WRKSRC}/qcam.conf ${PREFIX}/etc/qcam.conf.dist
