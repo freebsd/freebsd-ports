@@ -1,8 +1,12 @@
 Sapphire is a small window manager based on aewm and blackbox.
 Windows can be rolled up or hidden.  Programs can be run from a
-menu.  A clock and calendar are built in.  This port installs
-both sapphire itelf and all the themes from its Web site, except
-"linux" and "linuxturf".
+menu.  A clock and calendar are built in.
+
+This version of sapphire incorporates a patch which cycles windows
+up or down when Alt+up cursor or Alt+down cursor are pressed.
+
+If you like this window manager, you may wish to install the
+sapphire-themes package to accompany it.
 
 WWW: http://sapphire.sourceforge.net/
 
