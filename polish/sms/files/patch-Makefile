@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 19 11:03:10 2003
-+++ Makefile	Sat Mar 29 19:50:28 2003
+--- Makefile.orig	Wed Aug 25 12:52:38 2004
++++ Makefile	Wed Aug 25 12:53:44 2004
 @@ -22,7 +22,7 @@
  #
  # wszystkie ww opcje nalezy dodawac do zmiennej CFLAGS
@@ -15,21 +15,17 @@
  # Odkomentuj ponizsze linie jesli kompilujesz program na tych systemach
 -# BSD_INC=-I/usr/local/include -I/usr/pkg/include
 -# BSD_LIB=-L/usr/local/lib -L/usr/pkg/lib
-+BSD_INC=-I${LOCALBASE}/include -I/usr/pkg/include
-+BSD_LIB=-L${LOCALBASE}/lib -L/usr/pkg/lib
++BSD_INC=-I/usr/local/include -I/usr/pkg/include
++BSD_LIB=-L/usr/local/lib -L/usr/pkg/lib
  
  # jesli kompilujemu program w systemie AmigaOS nalezy odkomentowac
  # ponizsze linie:
-@@ -52,10 +52,10 @@
- 
- # katalog pod ktorym program zostanie zainstalowany po make install - binaria
- # ida do $DIR/$BIN, reszta do $DIR/$DOC
--PREFIX?=/usr/local
-+PREFIX?={PREFIX}
+@@ -55,7 +55,7 @@
+ PREFIX?=/usr/local
  INSTALL_PREFIX=$(PREFIX)
  INSTALL_BIN=$(INSTALL_PREFIX)/bin
--INSTALL_DOC=$(INSTALL_PREFIX)/doc/sms
+-INSTALL_DOC=$(INSTALL_PREFIX)/share/sms
 +INSTALL_DOC=$(INSTALL_PREFIX)/share/doc/pl-sms
+ INSTALL_MAN=$(INSTALL_PREFIX)/man
  
  # ponizej juz nic nie powinno sie zmieniac
- 

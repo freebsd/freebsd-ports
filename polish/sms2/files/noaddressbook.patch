@@ -1,0 +1,19 @@
+--- Makefile.orig	Wed Aug 25 13:03:09 2004
++++ Makefile	Wed Aug 25 13:03:15 2004
+@@ -35,11 +35,11 @@
+ 
+ # jesli chcesz wylaczyc obsluge ksiazki adresowej zakomentuj caly
+ # ponizszy blok:
+-GDBM=-lgdbm
+-ADDR_DEF=-DADDR_BOOK
+-ADDR_O=cgdbm.o addrbook.o
+-SMSADDR=smsaddr
+-LNCMD=rm -f $(SMSADDR); ln -s $(TARGET) $(SMSADDR)
++#GDBM=-lgdbm
++#ADDR_DEF=-DADDR_BOOK
++#ADDR_O=cgdbm.o addrbook.o
++#SMSADDR=smsaddr
++#LNCMD=rm -f $(SMSADDR); ln -s $(TARGET) $(SMSADDR)
+ 
+ # nw katalogi nie sa przeszukiwane automatycznie na FreeBSD, NetBSD i OpenBSD.
+ # Odkomentuj ponizsze linie jesli kompilujesz program na tych systemach
