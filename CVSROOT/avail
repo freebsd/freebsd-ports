@@ -10,3 +10,11 @@ avail||doc
 avail||ports
 avail||src
 avail||www
+unavail||src/crypto
+unavail||src/eBones
+unavail||src/secure
+unavail||src/sys/crypto
+avail|markm|src/crypto
+avail|markm|src/eBones
+avail|markm|src/secure
+avail|markm|src/sys/crypto
