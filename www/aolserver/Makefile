@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	aolserver
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.aolserver.com/server/3.0/
-DISTNAME=	aolserver3_0
+MASTER_SITES=	ftp://ftp.aolserver.com/server/aolserver3_1/
+DISTNAME=	aolserver3_1-source
 
 MAINTAINER=	mab@red-bean.com
+
+WRKSRC=		${WRKDIR}/aolserver3_1
 
 USE_GMAKE=	yes
 
 INSTALL_TARGET=	install INST=${PREFIX}/aolserver
+
+post-extract:
+	find ${WRKSRC} -name CVS | xargs ${RM} -rf
 
 post-install:
 # Headers
@@ -43,6 +48,6 @@ post-install:
 			>${PREFIX}/etc/rc.d/aolserver.sh ; \
 		${CHMOD} 755 ${PREFIX}/etc/rc.d/aolserver.sh; \
 	fi
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGDIR}/pkg-message
 
 .include <bsd.port.mk>

@@ -6,11 +6,11 @@ CONFIG=${PREFIX}/nsd.tcl
 case "$1" in
 
 start)
-        ${PREFIX}/bin/nsd8x -t ${CONFIG} -u nsadmin -g nsadmin
+        ${PREFIX}/bin/nsd8x -t ${CONFIG} -u nobody -g nobody
         ;;
 
 stop)
-        ${PREFIX}/bin/nsd8x -t ${CONFIG} -u nsadmin -g nsadmin -K
+        ${PREFIX}/bin/nsd8x -t ${CONFIG} -u nobody -g nobody -K
         ;;
 
 *)
