@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Mon May  5 21:23:30 1997
++++ Makefile.PL	Mon May  5 21:31:53 1997
+@@ -17,7 +17,7 @@
+ my @IncludeFiles = qw[asn1.h parse.h snmp.h snmp_api.h 
+ 		      snmp_client.h snmp_impl.h];
+ 
+-my @IncludeDirs = qw[/usr/include /usr/local/include];
++my @IncludeDirs = qw[/usr/include /usr/local/include /usr/local/include/snmp];
+ 
+ my $IncludeDir = find_files(\@IncludeFiles,\@IncludeDirs) ||
+ 	prompt("Where are the cmu-snmpv2 include files installed?","/usr/local/include");
