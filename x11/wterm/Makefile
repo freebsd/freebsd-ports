@@ -29,6 +29,7 @@ MAN1=		wterm.1
 
 post-extract:
 	${RM} -f ${WRKSRC}/config.cache
+	${RM} -f ${WRKSRC}/src/*.o
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/wterm
