@@ -1,4 +1,4 @@
-LinPopUp is a Xwindow port of Winpopup,
+LinPopUp is a X11 port of Winpopup,
 running over Samba. It permits to communicate with a
 windows computer that run Winpopup, sending or receiving
 message. (It also provides an alternative way 
