@@ -34,7 +34,7 @@
 + 	(cd source; make -f Makefile.freebsd install)
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nedit.man ${PREFIX}/man/man1/nedit.1
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nc.man ${PREFIX}/man/man1/nc.1
-+ 	${INSTALL} ${COPY} -m 644 NEdit ${X11BASE}/lib/X11/app-defaults/NEdit
++ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit.ad
 *** util/Makefile.freebsd.orig	Sun Apr  7 18:09:19 1996
 --- util/Makefile.freebsd	Sun Apr  7 17:32:32 1996
 ***************
