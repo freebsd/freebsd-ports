@@ -26,3 +26,4 @@ share/autoconf/autoheader.m4
 share/autoconf/autoheader.m4f
 share/autoconf/config.guess
 share/autoconf/config.sub
+@dirrm share/autoconf
