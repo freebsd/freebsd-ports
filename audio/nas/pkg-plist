@@ -34,6 +34,7 @@ include/audio/audiolib.h
 include/audio/audioutil.h
 include/audio/fileutil.h
 include/audio/mutex.h
+include/audio/release.h
 include/audio/snd.h
 include/audio/sound.h
 include/audio/soundlib.h

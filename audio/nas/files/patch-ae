@@ -1,19 +1,11 @@
---- lib/audio/Imakefile.orig	Sat Jan  1 18:28:13 2000
-+++ lib/audio/Imakefile	Sat Mar 25 14:56:19 2000
-@@ -64,10 +64,15 @@
-     COMPAT_OBJS = AuGetBest.o
- #endif /* ProjectX < 5 */
+--- lib/audio/Imakefile.orig	Sun Sep 12 06:23:33 2004
++++ lib/audio/Imakefile	Mon Nov 15 21:42:49 2004
+@@ -60,7 +60,7 @@
  
-+#if HasBSD44Sockets
-+   SOCK_DEFINES = -DBSD44SOCKETS
-+#endif
-+
-+
-      EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
+ XCOMM JET - hmmm.
+ #if (defined(FreeBSDArchitecture) || defined(BSDArchitecture)) && defined(HasBSD44Sockets)
+-	EXTRA_DEFINES = -DBSD44SOCKETS
++   EXTRA_DEFINES = -DBSD44SOCKETS
+ #endif
  
-         DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
--   CONN_DEFINES = ConnectionFlags
-+   CONN_DEFINES = ConnectionFlags $(SOCK_DEFINES)
- 
- HEADERS = Alibint.h Alibnet.h Xtutil.h audiolib.h audioutil.h snd.h wave.h    \
-           voc.h aiff.h sound.h soundlib.h fileutil.h 8svx.h Astreams.h \
+ XCOMM JET - see if we should avoid streams
