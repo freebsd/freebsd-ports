@@ -248,6 +248,7 @@
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-Include
+    SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
