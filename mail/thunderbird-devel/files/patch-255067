@@ -1,0 +1,60 @@
+Index: mozilla/gfx/src/shared/gfxImageFrame.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/gfx/src/shared/gfxImageFrame.cpp,v
+retrieving revision 1.26
+retrieving revision 1.26.12.1
+diff -u -r1.26 -r1.26.12.1
+--- gfx/src/shared/gfxImageFrame.cpp	16 Jan 2004 23:28:48 -0000	1.26
++++ gfx/src/shared/gfxImageFrame.cpp	27 Aug 2004 11:02:58 -0000	1.26.12.1
+@@ -72,6 +72,13 @@
+     return NS_ERROR_FAILURE;
+   }
+ 
++  /* reject over-wide or over-tall images */
++  const PRInt32 k64KLimit = 0x0000FFFF;
++  if ( aWidth > k64KLimit || aHeight > k64KLimit ){
++    NS_ERROR("image too big");
++    return NS_ERROR_FAILURE;
++  }
++
+   nsresult rv;
+ 
+   mOffset.MoveTo(aX, aY);
+Index: mozilla/gfx/src/windows/nsImageWin.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/gfx/src/windows/nsImageWin.cpp,v
+retrieving revision 3.130.2.1
+retrieving revision 3.130.2.1.6.1
+diff -u -r3.130.2.1 -r3.130.2.1.6.1
+--- gfx/src/windows/nsImageWin.cpp	11 May 2004 21:53:49 -0000	3.130.2.1
++++ gfx/src/windows/nsImageWin.cpp	27 Aug 2004 11:02:58 -0000	3.130.2.1.6.1
+@@ -131,6 +131,10 @@
+     return NS_ERROR_UNEXPECTED;
+   }
+ 
++  // limit images to 64k pixels on a side (~55 feet on a 100dpi monitor)
++  const PRInt32 k64KLimit = 0x0000FFFF;
++  if (aWidth > k64KLimit || aHeight > k64KLimit)
++      return NS_ERROR_FAILURE;
+ 
+   if (mNumPaletteColors >= 0){
+     // If we have a palette
+Index: mozilla/modules/libpr0n/decoders/bmp/nsBMPDecoder.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/modules/libpr0n/decoders/bmp/nsBMPDecoder.cpp,v
+retrieving revision 1.24.2.1
+retrieving revision 1.24.2.1.6.1
+diff -u -r1.24.2.1 -r1.24.2.1.6.1
+--- modules/libpr0n/decoders/bmp/nsBMPDecoder.cpp	13 May 2004 22:27:35 -0000	1.24.2.1
++++ modules/libpr0n/decoders/bmp/nsBMPDecoder.cpp	27 Aug 2004 11:02:58 -0000	1.24.2.1.6.1
+@@ -274,7 +274,9 @@
+             CalcBitShift();
+         }
+         // BMPs with negative width are invalid
+-        if (mBIH.width < 0)
++        // Reject extremely wide images to keep the math sane
++        const PRInt32 k64KWidth = 0x0000FFFF;
++        if (mBIH.width < 0 || mBIH.width > k64KWidth)
+             return NS_ERROR_FAILURE;
+ 
+         PRUint32 real_height = (mBIH.height > 0) ? mBIH.height : -mBIH.height;
