@@ -12,16 +12,15 @@ general ASCII text files, and plot to graph.
 
     and you need....
      - kinput2
-     - X Trye Type or X True Type Font server,
-       or kanji18 and kanji26 fonts(but these fonts are not yet in ports),
-       or to change font name in Ngraph.ini as below.
+     - X Trye Type or X True Type Font server[best],
+       or kanji18 and kanji26 fonts, these fonts are in below ports[better],
+		- ja-ngraph-fonts	(japanese/ngraph-fonts)
+		- ja-kanji18		(japanese/kanji18)
+		- ja-kanji26		(japanese/kanji26)
+       or to change font name in Ngraph.ini as below[poor].
 
 font_map=Mincho,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
 font_map=Gothic,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
-
-     o You can get kanji18 and kanji26 fonts from below URL for Linux:
-ftp://ring.astem.or.jp/pub/linux/PJE/PJE-0.1.5/tgz/packages/font/xfnt18.tgz
-ftp://ring.astem.or.jp/pub/linux/PJE/PJE-0.1.5/tgz/packages/font/xfnt26.tgz
 
   - You can get documentation in Japanese from below URL.
 
