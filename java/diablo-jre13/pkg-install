@@ -1,8 +1,13 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/java/diablo-jre13/Attic/pkg-install,v 1.1 2003-08-25 16:53:03 glewis Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/diablo-jre13/Attic/pkg-install,v 1.2 2004-03-17 16:44:11 glewis Exp $
 
 # Set up a standard path
 PATH=/usr/bin:/bin
+
+# Hack to prevent licensing from breaking bento.
+if [ "x${PACKAGE_BUILDING}" != "x" ]; then
+	exit 0
+fi
 
 # Attempt to install a link for the browser plugin during post-install
 if [ "$2" = "POST-INSTALL" ]; then
