@@ -1,0 +1,23 @@
+bin/pureadmin
+bin/pureadminsearch
+share/gnome/applications/pureadmin.desktop
+share/gnome/pixmaps/pureadmin.png
+share/gnome/pureadmin/docs/index.txt
+share/gnome/pureadmin/docs/introduction.txt
+share/gnome/pureadmin/docs/main_window.txt
+share/gnome/pureadmin/docs/preferences.txt
+share/gnome/pureadmin/docs/user_manager.txt
+share/gnome/pureadmin/pixmaps/down.png
+share/gnome/pureadmin/pixmaps/logo.png
+share/gnome/pureadmin/pixmaps/main-icon.png
+share/gnome/pureadmin/pixmaps/up.png
+share/gnome/pureadmin/pixmaps/user.png
+share/gnome/pureadmin/pixmaps/user_identity.png
+share/gnome/pureadmin/pixmaps/userconfig.png
+share/gnome/pureadmin/pixmaps/usericon.png
+share/locale/fr/LC_MESSAGES/pureadmin.mo
+share/locale/it/LC_MESSAGES/pureadmin.mo
+share/locale/sv/LC_MESSAGES/pureadmin.mo
+@dirrm share/gnome/pureadmin/pixmaps
+@dirrm share/gnome/pureadmin/docs
+@dirrm share/gnome/pureadmin

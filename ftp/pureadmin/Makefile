@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pureadmin
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	purify
@@ -18,24 +17,14 @@ COMMENT=	Management utility for the PureFTPd
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
-USE_GNOME=	gnomeprefix gnomehack pkgconfig gtk20
 USE_X_PREFIX=	yes
-USE_GETTEXT=	yes
+USE_GNOME=	gnomehack gnomeprefix gtk20
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/pureadmin bin/pureadminsearch \
-		share/locale/fr/LC_MESSAGES/pureadmin.mo \
-		share/locale/it/LC_MESSAGES/pureadmin.mo \
-		share/locale/sv/LC_MESSAGES/pureadmin.mo \
-		share/gnome/applications/pureadmin.desktop \
-		share/gnome/pixmaps/pureadmin.png
-
-post-install:
-	@${FIND} ${PREFIX}/share/gnome/pureadmin ! -type d | \
-		${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/share/gnome/pureadmin -type d | ${SORT} -r | \
-		${SED} 's,${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+post-patch:
+	@${REINPLACE_CMD} -e '/-g -Wall/d' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
