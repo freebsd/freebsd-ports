@@ -7,6 +7,7 @@
 
 PORTNAME=	kdeaddons
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -30,6 +31,7 @@ RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
 
 NO_BUILD=	yes
 USE_KDELIBS_VER=3
+_NO_KDE_FIXPTHREAD=yes
 
 .if make(package)
 DEPENDS_TARGET="package"
@@ -39,5 +41,5 @@ do-install:	# empty
 	${DO_NADA}
 
 .include "${.CURDIR}/Makefile.split"
-
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>
