@@ -1,0 +1,109 @@
+@cd /usr/X11R6
+@mode 755
+@owner bin
+@group bin
+bin/pcb
+@mode 644
+@owner bin
+@group bin
+man/man1/pcb.1.gz
+@cd /usr/X11R6/lib/X11
+@mode 644
+@owner bin
+@group bin
+pcb/default_font
+pcb/small_font
+pcb/big_font
+pcb/circuits
+pcb/circuits/27512
+pcb/circuits/ti34010_plcc
+pcb/circuits/scsi_connector_50pin
+pcb/circuits/rtc62421
+pcb/circuits/r_tr_400
+pcb/circuits/r_sil_1x8
+pcb/circuits/r_sil_1x4
+pcb/circuits/r_400
+pcb/circuits/plcc84
+pcb/circuits/plcc68
+pcb/circuits/plcc52
+pcb/circuits/oscillator
+pcb/circuits/mc68hc11_plcc
+pcb/circuits/mc68882_pga
+pcb/circuits/mc68030_pga
+pcb/circuits/mc68008_plcc
+pcb/circuits/mc68000_dil
+pcb/circuits/max691
+pcb/circuits/max690
+pcb/circuits/max680
+pcb/circuits/max667
+pcb/circuits/max233
+pcb/circuits/max232
+pcb/circuits/max222
+pcb/circuits/jumper
+pcb/circuits/dil8
+pcb/circuits/dil64
+pcb/circuits/dil40
+pcb/circuits/dil32
+pcb/circuits/dil28
+pcb/circuits/dil24wide
+pcb/circuits/dil24small
+pcb/circuits/dil20
+pcb/circuits/dil18
+pcb/circuits/dil16
+pcb/circuits/d_300
+pcb/circuits/crystal_300
+pcb/circuits/connector_50pin
+pcb/circuits/connector_20pin
+pcb/circuits/connector_10pin
+pcb/circuits/c_uni_100_small
+pcb/circuits/c_uni_100_med
+pcb/circuits/c_bi_100_small
+pcb/circuits/c_bi_100_med
+pcb/circuits/bt484_plcc
+pcb/circuits/82077_plcc
+pcb/circuits/7485
+pcb/circuits/74688
+pcb/circuits/74645
+pcb/circuits/74592
+pcb/circuits/74574
+pcb/circuits/74573
+pcb/circuits/74541
+pcb/circuits/74538
+pcb/circuits/74519
+pcb/circuits/74373
+pcb/circuits/74367
+pcb/circuits/7432
+pcb/circuits/74292
+pcb/circuits/74245
+pcb/circuits/74244
+pcb/circuits/74157
+pcb/circuits/74148
+pcb/circuits/74145
+pcb/circuits/74139
+pcb/circuits/74138
+pcb/circuits/7410
+pcb/circuits/7407
+pcb/circuits/7404
+pcb/circuits/7401
+pcb/circuits/7400
+pcb/circuits/68681
+pcb/circuits/628128
+pcb/circuits/62256
+pcb/circuits/514100
+pcb/circuits/511000
+pcb/circuits/wd33c93a_dil
+pcb/packages/dil14.pkg
+pcb/packages/plcc68.pkg
+pcb/packages/plcc52.pkg
+pcb/packages/dil8.pkg
+pcb/packages/dil64.pkg
+pcb/packages/dil40.pkg
+pcb/packages/dil32.pkg
+pcb/packages/dil28.pkg
+pcb/packages/dil24wide.pkg
+pcb/packages/dil24small.pkg
+pcb/packages/dil20.pkg
+pcb/packages/dil18.pkg
+pcb/packages/dil16.pkg
+pcb/packages/plcc84.pkg
+app-defaults/Pcb
