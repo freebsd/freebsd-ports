@@ -7126,6 +7126,7 @@ splitvt		ports/misc/splitvt
 spppcontrol	src/sbin/spppcontrol
 spray           src/usr.sbin/spray
 spread		ports/net/spread
+springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
 sqlite		ports/databases/sqlite
 sqlrelay	ports/databases/sqlrelay
