@@ -100,6 +100,10 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_NSS		Enable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
+.if !defined(WITH_GNUTLS) && !defined(WITH_NSS)
+	@${ECHO_MSG} "WARNING: In order to use MSN, you must define WITH_GNUTLS and/or WITH_NSS"
+	@${ECHO_MSG} ""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
