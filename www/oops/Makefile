@@ -7,6 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}.${OOPSDATE}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
@@ -31,6 +32,8 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops \
 		--enable-large-files
+MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN8=		oops.8 oopsctl.8
 OOPSVAR=	/var/run/oops

@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Mar 21 18:46:36 2003
-+++ configure.in	Fri Mar 21 18:54:01 2003
+--- configure.in.orig	Tue Sep 16 16:32:04 2003
++++ configure.in	Tue Sep 16 16:34:21 2003
 @@ -37,7 +37,7 @@
  AC_ARG_WITH(zlib,--with-zlib=[[PATH]]         Which zlib library/object file to use,
    with_zlib="$withval", with_zlib="")
@@ -9,7 +9,20 @@
  AC_CHECK_HEADERS(netinet/ip_fil.h, AC_DEFINE(HAVE_IPF))
  AC_CHECK_HEADERS(netinet/ip6.h, AC_DEFINE(HAVE_IP6_H))
  
-@@ -375,10 +375,10 @@
+@@ -296,10 +296,9 @@
+ 	  LIBS="-oldstyle_liblookup -lpthread $LIBS"
+ 
+ 	  ;;
+-freebsd*) CFLAGS="$CFLAGS -pthread -D_REENTRANT -DFREEBSD -D_THREAD_SAFE -DFD_SETSIZE=2048 -I."
+-	  CXX=g++
++freebsd*) CFLAGS="$CFLAGS $PTHREAD_CFLAGS -D_REENTRANT -DFREEBSD -DFD_SETSIZE=2048 -I."
+ 	  CXXSOFLAGS="-shared -Xlinker -Bstatic"
+-	  LIBS="-lc_r $LEXLIB $LIBS"
++	  LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
+ 	  if test "$large_files" = "yes" ; then
+ 		## FreeBSD need no any special flags for 64bit files
+ 		CFLAGS="$CFLAGS -DWITH_LARGE_FILES"
+@@ -375,10 +374,10 @@
  esac
  
  if test "X$MYSQL_PATH" != "X" ; then
@@ -23,7 +36,17 @@
  fi
  
  if test "X$PGSQL_PATH" != "X" ; then
-@@ -464,6 +464,9 @@
+@@ -427,6 +426,9 @@
+     cp -f lib/rwlock/rwlock.h ./; 
+     cd ..
+     ;;
++freebsd*)
++    echo "Already have pthread_rwlock_init() support in our libc_r";
++    ;;
+ *)
+     AC_CHECK_FUNC(pthread_rwlock_init,AC_DEFINE(HAVE_PTHREAD_RWLOCK_INIT),EXTRASRC="$EXTRASRC rwlock.c" ; cd src; cp -f lib/rwlock/rwlock.c ./; cp -f lib/rwlock/rwlock.h ./; cd ..)
+     ;;
+@@ -464,6 +466,9 @@
      LIBDB_PATH="$pwd"
  elif test -r "/usr/local/lib/libdb.a"; then
      LIBDB_PATH="/usr/local"
@@ -33,7 +56,7 @@
  elif test -r "/usr/lib/libdb2.a"; then                                         
      LIBDB_PATH="/usr"                                                          
      LIBDB_NAME=-ldb2                                                           
-@@ -574,7 +577,7 @@
+@@ -574,7 +579,7 @@
      AC_DEFINE(HAVE_ZLIB)
      AC_MSG_RESULT(/usr/local/lib/libz.a)
      if test "X`echo $CFLAGS | grep '\-I/usr/local/include'`" = "X"; then
