@@ -7,15 +7,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=	bochs-${DATE}a
-CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.bochs.com/pub/
+DISTNAME=	bochs-${DATE}c
+CATEGORIES= 	emulators
+MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
 MAINTAINER=	obrien@FreeBSD.org
 
 VGABIOS=	VGABIOS-elpin-2.20
 BIOS=		BIOS-bochs-990925a
-DATE=		991114
+DATE= 		2000_0104
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	YES
@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--enable-cpu-level=4 --enable-vga \
 .ifdef(WANT_DEBUGGER)
 CONFIGURE_ARGS+= --enable-debugger --enable-disasm
 .endif
-
-WRKSRC=		${WRKDIR}/bochs-${DATE}a
 
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
