@@ -10,7 +10,7 @@
 
 PORTNAME=	quanta
 PORTVERSION= 	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2	# dammit! I hate this kludge.
 CATEGORIES=	www kde
 
@@ -26,7 +26,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	alane@freebsd.org
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=3
 USE_XPM=	yes
