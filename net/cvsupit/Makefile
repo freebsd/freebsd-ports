@@ -18,13 +18,8 @@ BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
 NO_INSTALL=	yes
 .endif
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
-post-extract:
-	cd ${FILESDIR} ; \
-		${CP} -p Makefile ${WRKDIR}
-
-post-install:
+do-install:
 .if !make(package)
 	@${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .endif
