@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-File-BasicFlock
 # Version required:			96.072401
-# Date created:				
+# Date created:				1996/10/24
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
