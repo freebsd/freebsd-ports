@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	phpGedView
-PORTVERSION=	3.1
+PORTVERSION=	3.2.1
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpgedview
+DISTNAME=	${PORTNAME}-${PORTVERSION}final
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Online genealogy viewer
@@ -22,7 +23,7 @@ NO_BUILD=	yes
 USE_MYSQL=	yes
 
 GEDVIEWDIR?=	www/data/phpGedView
-FULLGWDIR=	${LOCALBASE}/${GEDVIEWDIR}
+FULLGWDIR=	${PREFIX}/${GEDVIEWDIR}
 PLIST_SUB+=	GEDVIEWDIR=${GEDVIEWDIR}
 
 PLIST=		${WRKDIR}/pkg-plist
@@ -33,9 +34,9 @@ FILES_TO_DISTATE=	authentication_index.php \
 			config_download.php \
 			config_gedcom.php
 
-pre-install:
+post-extract:
 .for f in ${FILES_TO_DISTATE}
-	${CP}  ${WRKSRC}/${f} ${WRKSRC}/${f}-dist
+	${MV}  ${WRKSRC}/${f} ${WRKSRC}/${f}-dist
 .endfor
 	${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?%%GEDVIEWDIR%%?g" >${PLIST}
 	${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm %%GEDVIEWDIR%%?g" >> ${PLIST}
@@ -45,7 +46,7 @@ do-install:
 	${CP} -Rnv ${WRKSRC}/* ${FULLGWDIR}
 	${FIND} ${FULLGWDIR} -type d -exec ${CHMOD} a+x {} \;
 .for f in ${FILES_TO_DISTATE}
-	${CHMOD} a+w ${FULLGWDIR}/${f}
+	${CHMOD} a+w ${FULLGWDIR}/${f}-dist
 .endfor
 	${CHMOD} a+w ${FULLGWDIR}/index
 
