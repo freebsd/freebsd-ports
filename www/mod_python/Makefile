@@ -18,7 +18,7 @@ DISTFILES=      mod_python-${PORTVERSION}.tgz ${PYTHON_DISTFILE}
 MAINTAINER=	perky@freebsd-kr.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/bin/${PYTHON_VERSION}:${PORTSDIR}/lang/python
+		${LOCALBASE}/bin/${PYTHON_VERSION}:${PORTSDIR}/lang/python15
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 APXS=			${PREFIX}/sbin/apxs
