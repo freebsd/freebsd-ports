@@ -3383,7 +3383,7 @@ usr/src/linux-2.2.13/include/video/sbusfb.h
 @unexec rm %D/usr/include/asm
 @exec ln -sf ../src/linux/include/linux %D/usr/include/linux
 @unexec rm %D/usr/include/linux
-@exec ln -sf linux-2.2.5 %D/usr/src/linux
+@exec ln -sf linux-2.2.12 %D/usr/src/linux
 @unexec rm %D/usr/src/linux
 @exec ln -sf asm-alpha %D/usr/src/linux-2.2.13/include/asm
 @unexec rm %D/usr/src/linux-2.2.13/include/asm
