@@ -7,6 +7,7 @@
 
 PORTNAME=	gconf
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/GConf
@@ -33,5 +34,10 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/gconf/1/path ]; then \
+		${CP} -p ${PREFIX}/etc/gconf/1/path.example ${PREFIX}/etc/gconf/1/path ; \
+	fi
 
 .include <bsd.port.mk>

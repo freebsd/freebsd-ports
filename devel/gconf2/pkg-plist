@@ -3,7 +3,9 @@ bin/gconf-config-1
 bin/gconfd-1
 bin/gconftool
 bin/gconftool-1
+@unexec if cmp -s %D/etc/gconf/1/path.example %D/etc/gconf/1/path; then rm -f %D/etc/gconf/1/path; fi
 etc/gconf/1/path.example
+@exec if [ ! -f %D/etc/gconf/1/path ] ; then cp -p %D/%F %B/path; fi
 etc/gconf/schemas/desktop.schemas
 include/gconf/1/gconf/gconf-changeset.h
 include/gconf/1/gconf/gconf-client.h
