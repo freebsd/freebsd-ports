@@ -18,7 +18,9 @@ COMMENT=	A suite of OO modules for logging messages to multiple outputs
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+.if !defined(BATCH)
 IS_INTERACTIVE=	yes
+.endif
 
 USE_SUBMAKE=	yes
 PERL_MODBUILD=	yes
