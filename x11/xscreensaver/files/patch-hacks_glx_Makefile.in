@@ -1,0 +1,11 @@
+--- hacks/glx/Makefile.in.Dist	Sun Feb 24 01:56:30 2002
++++ hacks/glx/Makefile.in	Sun Feb 24 23:50:55 2002
+@@ -374,7 +374,7 @@
+ 	$(CC_HACK) -o $@ $@.o	$(HACK_OBJS) $(GRAB_OBJS) $(HACK_LIBS)
+ 
+ glsnake:	glsnake.o	$(HACK_OBJS)
+-	$(CC_HACK) -o $@ $@.o	$(HACK_OBJS) $(HACK_LIBS)
++	$(CC_HACK) -o $@ $@.o	$(HACK_OBJS) $(HACK_LIBS) -lcompat
+ 
+ boxed:		boxed.o		$(HACK_OBJS)
+ 	$(CC_HACK) -o $@ $@.o	$(HACK_OBJS) $(HACK_LIBS)

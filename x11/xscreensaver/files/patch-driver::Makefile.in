@@ -1,7 +1,9 @@
---- driver/Makefile.in.orig	Wed Jan  2 02:15:24 2002
-+++ driver/Makefile.in	Wed Feb 13 13:14:40 2002
-@@ -20,3 +20,3 @@
- GNOME_CCDIR	= $(GNOME_DATADIR)/control-center/Desktop
+--- driver/Makefile.in.orig	Sun Feb 24 01:56:29 2002
++++ driver/Makefile.in	Sun Feb 24 22:48:36 2002
+@@ -19,7 +19,7 @@
+ GNOME_DATADIR	= @GNOME_DATADIR@
+ GNOME_CCDIR_1	= $(GNOME_DATADIR)/control-center/Desktop
+ GNOME_CCDIR_2	= $(GNOME_DATADIR)/control-center/capplets
 -GNOME_PANELDIR	= $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
 +GNOME_PANELDIR	= $(GNOME_DATADIR)/apps/Settings/Desktop
  GNOME_ICONDIR	= $(GNOME_DATADIR)/pixmaps
