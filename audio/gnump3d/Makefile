@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A streaming server for MP3, OGG vorbis, and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		oggenc:${PORTSDIR}/audio/mp32ogg
+		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
