@@ -45,6 +45,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/bulk.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/callback.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/cli-cert.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/get_authenticated_page.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/get_page.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/https-proxy-snif.pl
