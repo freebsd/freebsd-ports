@@ -8,11 +8,11 @@
 PORTNAME=	xgolgo
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.nemoto.ecei.tohoku.ac.jp/pub/X11/misc/
+MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
 DISTNAME=	xeyes-g
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Xgolgo watches what you are doing and whether you're hostile or not
+COMMENT=	Watches what you are doing and whether you're hostile or not
 
 WRKSRC=		${WRKDIR}/xeyes
 USE_IMAKE=	yes
