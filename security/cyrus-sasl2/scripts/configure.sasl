@@ -17,7 +17,11 @@ if [ "${BATCH}" ]; then
 	else
 		OPTIONS="\"NDBM\""
 	fi
-	if [ "${WITH_MYSQL}" ]; then
+	if [ "${WITH_MYSQL41}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL41\""
+	elif [ "${WITH_MYSQL40}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL40\""
+	elif [ "${WITH_MYSQL}" ]; then
 		OPTIONS="${OPTIONS} \"MySQL\""
 	fi
 	if [ "${WITH_LDAP21}" ]; then
@@ -30,42 +34,36 @@ if [ "${BATCH}" ]; then
 		set ${OPTIONS}
 	fi
 else
+	SET_DB41="OFF"
+	SET_DB4="OFF"
+	SET_DB3="OFF"
+	SET_NDBM="OFF"
 	if [ "${WITH_DB41}" -o -f ${PREFIX}/lib/libdb41.so ] ; then
 		SET_DB41="ON"
-		SET_DB4="OFF"
-		SET_DB3="OFF"
-		SET_NDBM="OFF"
 	elif [ "${WITH_DB4}" -o -f ${PREFIX}/lib/libdb4.so ] ; then
-		SET_DB41="OFF"
 		SET_DB4="ON"
-		SET_DB3="OFF"
-		SET_NDBM="OFF"
 	elif [ "${WITH_DB3}" -o -f ${PREFIX}/lib/libdb3.so ] ; then
-		SET_DB41="OFF"
-		SET_DB4="OFF"
 		SET_DB3="ON"
-		SET_NDBM="OFF"
 	else
-		SET_DB41="OFF"
-		SET_DB4="OFF"
-		SET_DB3="OFF"
 		SET_NDBM="ON"
 	fi
-	if [ "${WITH_MYSQL}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
+	SET_MYSQL41="OFF"
+	SET_MYSQL40="OFF"
+	SET_MYSQL="OFF"
+	if [ "${WITH_MYSQL41}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so.14 ] ; then
+		SET_MYSQL41="ON"
+	elif [ "${WITH_MYSQL40}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so.12 ] ; then
+		SET_MYSQL40="ON"
+	elif [ "${WITH_MYSQL}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
 		SET_MYSQL="ON"
-	else
-		SET_MYSQL="OFF"
 	fi
+	SET_LDAP21="OFF"
+	SET_LDAP="OFF"
 	if [ "${WITH_LDAP21}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 \
 		-a -f ${PREFIX}/bin/ldapwhoami ] ; then
 		SET_LDAP21="ON"
-		SET_LDAP="OFF"
 	elif [ "${WITH_LDAP}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 ] ; then
-		SET_LDAP21="OFF"
 		SET_LDAP="ON"
-	else
-		SET_LDAP21="OFF"
-		SET_LDAP="OFF"
 	fi
 
 	/usr/bin/dialog --title "Additional SASL options" --clear \
@@ -75,7 +73,9 @@ NDBM		"ndbm DB" ${SET_NDBM} \
 DB3		"Berkeley DB, revision 3" ${SET_DB3} \
 DB4		"Berkeley DB, revision 4" ${SET_DB4} \
 DB41		"Berkeley DB, revision 4.1" ${SET_DB41} \
-MySQL		"MySQL password Authentication" ${SET_MYSQL} \
+MySQL		"MySQL 3.23 password Authentication" ${SET_MYSQL} \
+MySQL40		"MySQL 4.0 password Authentication" ${SET_MYSQL40} \
+MySQL41		"MySQL 4.1 password Authentication" ${SET_MYSQL41} \
 OpenLDAP	"OpenLDAP 2.0 password Authentication w/TLS" ${SET_LDAP} \
 OpenLDAP21	"OpenLDAP 2.1 password Authentication w/TLS" ${SET_LDAP21} \
 SASLAUTHD       "Use saslauthd for password Authentication" ON \
@@ -151,10 +151,31 @@ while [ "$1" ]; do
 			echo "SASLDB_NAME=	sasldb2"
 			DBLIB=1
 			;;
+		\"MySQL41\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	mysqlclient.14:\${PORTSDIR}/databases/mysql41-client"
+			DEFMYSQL=1
+			;;
+		\"MySQL40\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	mysqlclient.12:\${PORTSDIR}/databases/mysql40-client"
+			DEFMYSQL=1
+			;;
 		\"MySQL\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
-			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}"
-			echo "PLIST_SUB+=	MYSQL=\"\""
 			DEFMYSQL=1
 			;;
 		\"OpenLDAP21\")
@@ -204,6 +225,9 @@ if [ ! "${DBLIB}" ]; then
 	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
 	echo "SASLDB_NAME=	sasldb2.db"
 fi
-if [ ! "${DEFMYSQL}" ]; then
+if [ "${DEFMYSQL}" ]; then
+	echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}"
+	echo "PLIST_SUB+=	MYSQL=\"\""
+else
 	echo "PLIST_SUB+=	MYSQL=\"@comment \""
 fi
