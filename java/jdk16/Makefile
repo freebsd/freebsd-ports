@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -31,7 +30,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.4.1
-JDK_PATCHSET_VERSION=	3
+JDK_PATCHSET_VERSION=	4
 
 SUN_LINUX_JDK_VERSION=	1.4.2
 
@@ -43,6 +42,7 @@ JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
 USE_ZIP=	YES
+USE_REINPLACE=	YES
 EXTRACT_ONLY=	${SRCFILE}
 
 ONLY_FOR_ARCHS=	i386
@@ -73,6 +73,13 @@ PKGNAMESUFFIX=	-nodebug
 .else
 PLIST_SUB+=	DEBUG:=""
 .endif
+
+PTHREAD_FILES=	hotspot/build/bsd/makefiles/gcc.make \
+	hotspot/build/bsd/makefiles/vm.make \
+	j2se/make/common/Defs.gmk \
+	j2se/make/common/Program.gmk \
+	j2se/make/common/Defs-bsd.gmk \
+	j2se/make/java/hpi/native/Makefile
 
 .include <bsd.port.pre.mk>
 
@@ -150,6 +157,11 @@ pre-patch:
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk14.patches
 
+post-patch:
+	@for file in ${PTHREAD_FILES}; do \
+		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g; s:-lc_r:${PTHREAD_LIBS}:g" ${WRKDIR}/$${file}; \
+	done
+
 .if !defined(NATIVE_BOOTSTRAP)
 ECHO_MSG=echo
 pre-build:
@@ -195,6 +207,7 @@ do-build:
 post-build:
 	@# XXX make sure that SwingSet2/resources does not exists
 	@${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
+	@${RM} -rf ${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources
 	@# This file serves no purpose (in case of port)
 	@${RM} -f ${JDKIMAGEDIR}/src.zip
 
@@ -217,5 +230,8 @@ do-install:
 
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
+	@${SED} -e "s:%%JRE_HOME%%:${PREFIX}/jdk${JDK_VERSION}/jre:g" \
+	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
