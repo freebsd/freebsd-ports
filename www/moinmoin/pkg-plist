@@ -159,6 +159,9 @@ bin/moin-dump
 %%PYTHON_SITELIB%%/MoinMoin/i18n/meta.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/meta.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/meta.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/nb.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/nb.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/nb.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.pyo
@@ -198,6 +201,12 @@ bin/moin-dump
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.py
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.pyc
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.pyo
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachInfo.py
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachInfo.pyc
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachInfo.pyo
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachList.py
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachList.pyc
+%%PYTHON_SITELIB%%/MoinMoin/macro/AttachList.pyo
 %%PYTHON_SITELIB%%/MoinMoin/macro/BR.py
 %%PYTHON_SITELIB%%/MoinMoin/macro/BR.pyc
 %%PYTHON_SITELIB%%/MoinMoin/macro/BR.pyo
@@ -396,6 +405,9 @@ bin/moin-dump
 %%PYTHON_SITELIB%%/MoinMoin/util/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/util/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/util/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/util/antispam.py
+%%PYTHON_SITELIB%%/MoinMoin/util/antispam.pyc
+%%PYTHON_SITELIB%%/MoinMoin/util/antispam.pyo
 %%PYTHON_SITELIB%%/MoinMoin/util/dataset.py
 %%PYTHON_SITELIB%%/MoinMoin/util/dataset.pyc
 %%PYTHON_SITELIB%%/MoinMoin/util/dataset.pyo
@@ -489,6 +501,9 @@ bin/moin-dump
 %%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/putClientInfo.py
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/putClientInfo.pyc
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/putClientInfo.pyo
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/xmlrpc
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/wikixml
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/widget
@@ -567,12 +582,14 @@ share/moin/data/text.default/Anv_e4ndarInst_e4llningar
 share/moin/data/text.default/AufgegebeneSeiten
 share/moin/data/text.default/BenutzerEinstellungen
 share/moin/data/text.default/BrugerIndstillinger
+share/moin/data/text.default/BrukerProfil
 share/moin/data/text.default/CastelliDiSabbia
 share/moin/data/text.default/CategoryCategory
 share/moin/data/text.default/CategoryHomepage
 share/moin/data/text.default/CercaPagina
 share/moin/data/text.default/ChangementsR_e9cents
 share/moin/data/text.default/EfterladteSider
+share/moin/data/text.default/EtterspurteSider
 share/moin/data/text.default/EventStats
 share/moin/data/text.default/EventStats_2fHitCounts
 share/moin/data/text.default/EventStats_2fUserAgents
@@ -581,6 +598,7 @@ share/moin/data/text.default/FindPage
 share/moin/data/text.default/FindSide
 share/moin/data/text.default/ForSide
 share/moin/data/text.default/For_e6ldrel_f8seSider
+share/moin/data/text.default/Foreldrel_f8seSider
 share/moin/data/text.default/FortuneCookies
 share/moin/data/text.default/FrontPage
 share/moin/data/text.default/GesuchteSeiten
@@ -721,6 +739,7 @@ share/moin/data/text.default/Hj_e6lpSkabelon
 share/moin/data/text.default/Hj_e6lpTilFormatering
 share/moin/data/text.default/Hj_e6lpTilHenvisninger
 share/moin/data/text.default/Hj_e6lpTilRedigering
+share/moin/data/text.default/HjemmesideSidemal
 share/moin/data/text.default/HjemmesideSkabelon
 share/moin/data/text.default/HomepageImWiki
 share/moin/data/text.default/HomepageTemplate
@@ -735,6 +754,8 @@ share/moin/data/text.default/KategoriHjemmeside
 share/moin/data/text.default/KategoriKategori
 share/moin/data/text.default/KategorieHomepage
 share/moin/data/text.default/KategorieKategorie
+share/moin/data/text.default/KlasseHjemmeside
+share/moin/data/text.default/KlasseKlasse
 share/moin/data/text.default/LocalSpellingWords
 share/moin/data/text.default/ModificheRecenti
 share/moin/data/text.default/MoinMoin
@@ -744,6 +765,7 @@ share/moin/data/text.default/MoinMoin_2fTextFormatting
 share/moin/data/text.default/NavigaIlSito
 share/moin/data/text.default/NavigationSite
 share/moin/data/text.default/NomeWiki
+share/moin/data/text.default/OrdIndeks
 share/moin/data/text.default/OrdListe
 share/moin/data/text.default/OrdRegister
 share/moin/data/text.default/OrphanedPages
@@ -765,6 +787,7 @@ share/moin/data/text.default/PreferenzeUtente
 share/moin/data/text.default/RandomPage
 share/moin/data/text.default/RecentChanges
 share/moin/data/text.default/S_f6kSida
+share/moin/data/text.default/S_f8keSide
 share/moin/data/text.default/SeiteFinden
 share/moin/data/text.default/SeitenGr_f6_dfe
 share/moin/data/text.default/Senaste_c4ndringar
@@ -772,6 +795,8 @@ share/moin/data/text.default/SenesteRettelser
 share/moin/data/text.default/SexCitationsTecken
 share/moin/data/text.default/SidStorlek
 share/moin/data/text.default/SideSt_f8rrelse
+share/moin/data/text.default/SideSt_f8rrelsen
+share/moin/data/text.default/SisteEndringer
 share/moin/data/text.default/SiteNavigation
 share/moin/data/text.default/SiteNavigering
 share/moin/data/text.default/SlideShowHandOutTemplate
@@ -780,6 +805,7 @@ share/moin/data/text.default/SlideTemplate
 share/moin/data/text.default/SlumpvisSida
 share/moin/data/text.default/SommaireAide
 share/moin/data/text.default/StartSeite
+share/moin/data/text.default/StartSide
 share/moin/data/text.default/StructuredText
 share/moin/data/text.default/StruktureradText
 share/moin/data/text.default/SyntaxReference
@@ -790,14 +816,19 @@ share/moin/data/text.default/SystemPagesInEnglishGroup
 share/moin/data/text.default/SystemPagesInFrenchGroup
 share/moin/data/text.default/SystemPagesInGermanGroup
 share/moin/data/text.default/SystemPagesInItalianGroup
+share/moin/data/text.default/SystemPagesInNorwegianBokmalGroup
 share/moin/data/text.default/SystemPagesInSwedishGroup
 share/moin/data/text.default/Tilf_e6ldigSide
+share/moin/data/text.default/TilfeldigSide
 share/moin/data/text.default/TitelIndex
 share/moin/data/text.default/TitelListe
 share/moin/data/text.default/TitelRegister
 share/moin/data/text.default/TitleIndex
+share/moin/data/text.default/TittelIndeks
 share/moin/data/text.default/TrouvePage
 share/moin/data/text.default/UserPreferences
+share/moin/data/text.default/UtdaterteSider
+share/moin/data/text.default/VeiViser
 share/moin/data/text.default/VerwaisteSeiten
 share/moin/data/text.default/WantedPages
 share/moin/data/text.default/WegWeiser
@@ -819,8 +850,11 @@ share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f195_20Actions
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f200_20Wikiquette
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f210_20Organisation_20and_20Structure
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f900_20Exercises
+share/moin/data/text.default/WikiDagensTips
 share/moin/data/text.default/WikiHjemmeSide
+share/moin/data/text.default/WikiHjemmeside
 share/moin/data/text.default/WikiHomePage
+share/moin/data/text.default/WikiLekePlass
 share/moin/data/text.default/WikiName
 share/moin/data/text.default/WikiNamn
 share/moin/data/text.default/WikiNavn
@@ -848,6 +882,7 @@ share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f200_20Wikiquette
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f210_20Organisation_20und_20Struktur
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f900_20_dcbung
 share/moin/data/text.default/WikiTippDesTages
+share/moin/data/text.default/WikiWikiNavn
 share/moin/data/text.default/WikiWikiWeb
 share/moin/data/text.default/WikiWikiWebb
 share/moin/data/text.default/WordIndex
@@ -1052,6 +1087,7 @@ share/moin/htdocs/starshine/img/moin-new.png
 share/moin/htdocs/starshine/img/moin-news.png
 share/moin/htdocs/starshine/img/moin-parent.png
 share/moin/htdocs/starshine/img/moin-print.png
+share/moin/htdocs/starshine/img/moin-raw.png
 share/moin/htdocs/starshine/img/moin-rss.png
 share/moin/htdocs/starshine/img/moin-search.png
 share/moin/htdocs/starshine/img/moin-show.png
