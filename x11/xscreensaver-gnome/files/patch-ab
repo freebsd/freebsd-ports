@@ -1,6 +1,6 @@
---- configure.orig	Thu Mar 25 22:53:53 2004
-+++ configure	Thu Mar 25 22:57:09 2004
-@@ -2574,7 +2574,7 @@
+--- configure.orig	Wed Mar 23 02:35:18 2005
++++ configure	Wed Mar 23 02:36:54 2005
+@@ -2666,7 +2666,7 @@
    if test -n "$GCC"; then
      echo "$as_me:$LINENO: result: Turning on gcc compiler warnings." >&5
  echo "${ECHO_T}Turning on gcc compiler warnings." >&6
@@ -9,24 +9,12 @@
      OBJCC="$OBJCC -Wall"
      # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
      # and then perhaps we can do without -pedantic?
-@@ -19014,13 +19011,13 @@
- # Now that we know whether we have Gnome, we can decide where the XML
- # config files get installed.
- #
--if test -z "$HACK_CONF_DIR" ; then
--  if test -n "$GNOME_DATADIR" ; then
--    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
--  else
--    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
--  fi
--fi
-+#if test -z "$HACK_CONF_DIR" ; then
-+#  if test -n "$GNOME_DATADIR" ; then
-+#    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
-+#  else
-+#    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
-+#  fi
-+#fi
+@@ -14516,7 +14516,7 @@
+   GTK_DATADIR=""
+   if test "$have_gtk" = yes; then
+     GTK_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
+-    GTK_DATADIR="$GTK_DATADIR/share"
++    GTK_DATADIR="$GTK_DATADIR/share/gnome"
+   fi
  
- 
- 
+   if test "$have_gtk" = yes; then
