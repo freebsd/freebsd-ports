@@ -1,7 +1,17 @@
---- ../Xspin3.4/xspin347.tcl.orig	Wed Jun 23 18:29:29 1999
-+++ ../Xspin3.4/xspin347.tcl	Wed Jun 23 18:30:51 1999
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/wish -f
+--- ../Xspin3.5/xspin350.tcl.orig	Sun Sep 29 07:55:34 2002
++++ ../Xspin3.5/xspin350.tcl	Sun Oct  6 18:33:12 2002
+@@ -1,14 +1,4 @@
+-#!/bin/sh
+-# the next line restarts using wish \
+-exec wish c:/cygwin/bin/xspin -- $*
+-
+-# adjust the first argument to wish above with the
+-# location of xspin on your system, if different.
+-#
+-# cygwin: even when xspin is placed in /usr/bin/xspin
+-# the above exec line would not find it there
+-# /usr/bin is a symbolic link to /bin, which really
+-# lives in c:/cygwin, hence the contortions above
 +#!%%LOCALBASE%%/bin/%%WISH%% -f
  
  #======================================================================#
