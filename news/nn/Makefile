@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nn
-PORTVERSION=	6.5.6
+PORTVERSION=	6.6.2
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/nn/
+MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
