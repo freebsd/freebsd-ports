@@ -1,0 +1,38 @@
+--- veneer.c.orig	Sun May 23 13:23:38 1999
++++ veneer.c	Sun May 23 13:24:16 1999
+@@ -6,6 +6,12 @@
+ /*   Part of Inform 6.21                                                     */
+ /*   copyright (c) Graham Nelson 1993, 1994, 1995, 1996, 1997, 1998, 1999    */
+ /*                                                                           */
++/*   Incorporates the patch by Andrew Plotkin/Torbörn Andersson which was    */
++/*   posted on r.a.i.f. on 5 May 1999 by Michael Baum.  This fixes a memory  */
++/*   problem on some platforms and also fixes a bug which occurs when debug  */
++/*   mode is off. Note that you have to turn off strict mode, i.e. -~S, to   */
++/*   turn off the debug mode.                                                */
++/*                                                                           */
+ /* ------------------------------------------------------------------------- */
+ 
+ #include "header.h"
+@@ -243,13 +249,18 @@
+          @check_arg_count 7 ?~A__x;y++;@check_arg_count 8 ?~A__x;y++;.A__x;",
+         "#ifdef INFIX;if (obj has infix__watching) n=1;#endif;\
+          #ifdef DEBUG;if (debug_flag & 1 ~= 0) n=1;#endif;\
+-         if (n==1) { n=debug_flag & 1; debug_flag=debug_flag-n;\
+-         print \"[ ~\", (name) obj, \"~.\", (property) id, \"(\";\
+-     switch(y) { 1: print a; 2: print a,\",\",b; 3: print a,\",\",b,\",\",c;\
++         if (n==1) {\
++           #ifdef DEBUG;n=debug_flag & 1;
++debug_flag=debug_flag-n;#endif;\
++           print \"[ ~\", (name) obj, \"~.\", (property) id, \"(\";\
++     switch(y) { 1: print a; 2: print a,\",\",b; 3: print
++a,\",\",b,\",\",c;\
+      4: print a,\",\",b,\",\",c,\",\",d;\
+      5: print a,\",\",b,\",\",c,\",\",d,\",\",e;\
+      6: print a,\",\",b,\",\",c,\",\",d,\",\",e,\",\",f; }\
+-           print \") ]^\"; debug_flag = debug_flag + n; }"
++           print \") ]^\";\
++           #ifdef DEBUG;debug_flag = debug_flag + n;#endif;\
++           }",
+         "if (id > 0 && id < 64)\
+          { x = obj.&id; if (x==0) { x=$000a-->0 + 2*(id-1); n=2; }\
+          else n = obj.#id; }\
