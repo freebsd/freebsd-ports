@@ -19,23 +19,23 @@ if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
 	mkdir ${FONTDIR}
 fi
 
-# font alias entry here!
-TMPFILE=/tmp/install-fonts-alias-$$
-cat << EOF > ${TMPFILE}
--netscape-fixed-medium-r-normal--16-156-75-75-c-160-jisx0212.1990-0 -misc-fixed-medium-r-normal--16-150-75-75-c-160-jisx0213.2000-1
-EOF
-
-echo "Updating ${FONTDIR}/fonts.alias"
-cd ${FONTDIR}
-touch fonts.alias
-cp fonts.alias fonts.alias.orig
-if [ "$2" = "INSTALL" ] ; then
-	(grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig ; \
-	 cat ${TMPFILE}) > fonts.alias
-elif [ "$2" = "DEINSTALL" ] ; then
-	grep -v -- "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
-fi
-rm -f fonts.alias.orig ${TMPFILE}
+## font alias entry here!
+#TMPFILE=/tmp/install-fonts-alias-$$
+#cat << EOF > ${TMPFILE}
+#-netscape-fixed-medium-r-normal--16-156-75-75-c-160-jisx0212.1990-0 -misc-fixed-medium-r-normal--16-150-75-75-c-160-jisx0213.2000-1
+#EOF
+#
+#echo "Updating ${FONTDIR}/fonts.alias"
+#cd ${FONTDIR}
+#touch fonts.alias
+#cp fonts.alias fonts.alias.orig
+#if [ "$2" = "INSTALL" ] ; then
+#	(grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig ; \
+#	 cat ${TMPFILE}) > fonts.alias
+#elif [ "$2" = "DEINSTALL" ] ; then
+#	grep -v -- "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
+#fi
+#rm -f fonts.alias.orig ${TMPFILE}
 
 echo "**********************************************************"
 echo "You should restart X server or do 'xset fp rehash' command"

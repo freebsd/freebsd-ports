@@ -1,13 +1,15 @@
 #!/bin/sh
 
 if [ "x$2" = "xPOST-DEINSTALL" ]; then
-	cd ${PKG_PREFIX}/%%FONTSDIR%%; ${PKG_PREFIX}/bin/mkfontdir
-	${PKG_PREFIX}/bin/xset fp rehash ||
+	cd ${PKG_PREFIX}/%%FONTSDIR%%; %%X11BASE%%/bin/mkfontdir
+	%%X11BASE%%/bin/xset fp rehash ||
 	(
 	 echo "**********************************************************"
 	 echo "You should restart X server or do 'xset fp rehash' command"
 	 echo "to enable this update."
 	 echo "**********************************************************"
 	)
-	[ `wc -c ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir
+	if [ "`wc -c ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir | awk '{print $1}'`" = 2 ]; then 
+		rm -f ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir
+	fi
 fi

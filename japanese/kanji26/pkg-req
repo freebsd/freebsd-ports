@@ -23,9 +23,21 @@ fi
 TMPFILE=/tmp/install-fonts-alias-$$
 cat << EOF > ${TMPFILE}
 kanji26  -jis-mincho-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+kanji26b  -jis-mincho-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+kanji26i  -jis-mincho-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0
+kanji26bi  -jis-mincho-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0
 -jis-fixed-medium-r-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-medium-r-normal--26-190-100-100-c-260-jisx0208.1983-0
+-jis-fixed-bold-r-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-bold-r-normal--26-190-100-100-c-260-jisx0208.1983-0
+-jis-fixed-medium-i-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-medium-i-normal--26-190-100-100-c-260-jisx0208.1983-0
+-jis-fixed-bold-i-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-bold-i-normal--26-190-100-100-c-260-jisx0208.1983-0
 -jis-fixed-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-fixed-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-fixed-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-fixed-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0
 -jis-mincho-medium-r-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-mincho-bold-r-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-mincho-medium-i-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0
+-jis-mincho-bold-i-normal--26-190-100-100-c-260-jisx0208.1983-0 -jis-mincho-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0
 EOF
 
 echo "Updating ${FONTDIR}/fonts.alias"
