@@ -12,6 +12,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~will/distfiles/
 
 MAINTAINER=	will@FreeBSD.org
 
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
