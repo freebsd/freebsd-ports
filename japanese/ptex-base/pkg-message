@@ -1,13 +1,8 @@
-Character code independent files have been installed.  Now, install
-either japanese/ptex-jis, japanese/ptex-euc or japanese/ptex-sjis.
+Files that are not specific to Japanese pTeX have been installed.
+Now, you need to install japanese/ptex, which provides files necessary
+for Japanese processing.  japanese/ptex-sjis.
 
-Note that name of these packages indicates the character code used for
-the output to the terminal and log files.  The following table shows
-which character code is used for different purposes.
-
-          ptex-euc   ptex-sjis  ptex-jis
-Internal  EUC        SJIS       EUC
-Input     EUC/JIS    SJIS/JIS   JIS/EUC
-Output    EUC        SJIS       JIS
-DVI       JIS        JIS        JIS
-
+Note that the files installed by the ptex port can process all three
+character codes, i.e. EUC, JIS, and Shift-JIS by specifying a
+command-line option at runtime.  You can specify the default character
+code if you are installing it using the port.

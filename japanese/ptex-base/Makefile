@@ -95,5 +95,6 @@ post-install:
 	  ${PREFIX}/bin/texconfig font ro
 	@${SETENV} TEXMFMAIN=${TEXMF_TREE} PATH=${PREFIX}/bin:${PATH} \
 	  ${PREFIX}/bin/texconfig font options appendonlydir varfonts
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
