@@ -222,8 +222,50 @@ sub append_names_to_file {
 
 
 #
-# Summarise the file changes in the commit using 'cvs -Qn status'
-# on each file to extract the info.
+# Use cvs status to obtain the current revision number of a given file.
+#
+sub get_revision_number {
+	my $file = shift;
+
+	my $rcsfile = "";
+	my $revision = "";
+
+	open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
+	while (<RCS>) {
+		if (/^[ \t]*Repository revision/) {
+			chomp;
+			my @revline = split;
+			$revision = $revline[2];
+			$revline[3] =~ m|^$CVSROOT/+(.*),v$|;
+			$rcsfile = $1;
+			last;
+		}
+	}
+	close RCS;
+
+	return($revision, $rcsfile);
+}
+
+#
+# Count the number of lines in a given revision of a file.
+#
+sub count_lines_in_revision {
+	my $file = shift;	# File in repository.
+	my $rev = shift;	# Revision number.
+
+	my $lines = 0;
+	open(RCS, "-|") || exec 'cvs', '-Qn', 'update', '-p', "-r$rev", $file;
+	while (<RCS>) {
+		++$lines;
+	}
+	close RCS;
+
+	return $lines;
+}
+
+
+#
+# Summarise details of the file modifications.
 #
 sub change_summary_changed {
 	my $outfile = shift;		# File name of output file.
@@ -232,22 +274,8 @@ sub change_summary_changed {
 	foreach my $file (@filenames) {
 		next unless $file;
 
-		my $rev = "";
 		my $delta = "";
-		my $rcsfile = "";
-
-		open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
-		while (<RCS>) {
-			if (/^[ \t]*Repository revision/) {
-				chomp;
-				my @revline = split;
-				$rev = $revline[2];
-				$revline[3] =~ m|^$CVSROOT/+(.*),v$|;
-				$rcsfile = $1;
-				last;
-			}
-		}
-		close RCS;
+		my ($rev, $rcsfile) = get_revision_number($file);
 
 		if ($rev and $rcsfile) {
 			open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
@@ -260,14 +288,56 @@ sub change_summary_changed {
 			close RCS;
 		}
 
-		&append_line($outfile, "$rev,$delta,$rcsfile");
+		&append_line($outfile, "$rev,$delta,$rcsfile,");
 	}
 }
 
-# Write these one day.
+#
+# Summarise details of added files.
+#
 sub change_summary_added {
+	my $outfile = shift;		# File name of output file.
+	my @filenames = @_;		# List of files to check.
+
+	foreach my $file (@filenames) {
+		next unless $file;
+
+		my $delta = "";
+		my ($rev, $rcsfile) = get_revision_number($file);
+
+		if ($rev and $rcsfile) {
+			my $lines = count_lines_in_revision($file, $rev);
+			$delta = "+$lines -0";
+		}
+
+		&append_line($outfile, "$rev,$delta,$rcsfile,new");
+	}
 }
+
+#
+# Summarise details of removed files.
+#
 sub change_summary_removed {
+	my $outfile = shift;		# File name of output file.
+	my @filenames = @_;		# List of files to check.
+
+	foreach my $file (@filenames) {
+		next unless $file;
+
+		my $delta = "";
+		my ($rev, $rcsfile) = get_revision_number($file);
+		$rcsfile =~ s|/Attic/|/|;	# Remove 'Attic/' if present.
+
+		if ($rev and $rcsfile) {
+			$rev =~ /(.*)\.([^\.]+)$/;
+			my $oldrev = "$1." . ($2 - 1);
+
+			my $lines = count_lines_in_revision($file, $oldrev);
+			$delta = "+0 -$lines";
+		}
+
+		&append_line($outfile, "$rev,$delta,$rcsfile,dead");
+	}
 }
 
 sub build_header {
@@ -423,16 +493,18 @@ sub format_summaries {
 	my @revs;
 	my @deltas;
 	my @files;
+	my @statuses;
 
 	# Parse the summary file.
 	foreach my $filename (@filenames) {
 		open FILE, $filename or next;
 		while (<FILE>) {
 			chomp;
-			my ($r, $d, $f) = split /,/, $_;
+			my ($r, $d, $f, $s) = split /,/, $_;
 			push @revs, $r;
 			push @deltas, $d;
 			push @files, $f;
+			push @statuses, $s;
 		}
 		close FILE;
 	}    
@@ -445,8 +517,13 @@ sub format_summaries {
 	my @text;
 	my $fmt = "%-" . $r_max . "s%-" . $d_max . "s%s";
 	push @text, sprintf $fmt, "Revision", "Changes", "Path";
-	foreach (0 .. $#revs) {
-		push @text, sprintf $fmt, $revs[$_], $deltas[$_], $files[$_];
+
+	my @order = sort { $files[$a] cmp $files[$b] } (0 .. $#revs);
+	foreach (@order) {
+		my $file = $files[$_];
+		my $status = $statuses[$_];
+		$file .= " ($status)" if $status;
+		push @text, sprintf $fmt, $revs[$_], $deltas[$_], $file;
 	}
 
 	return @text;
