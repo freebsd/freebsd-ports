@@ -15,6 +15,8 @@ COMMENT=	Abfackelns Server Utilities (ASU) for Unreal Tournament Server (Linux)
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		"Checksum mismatch"
+
 NO_WRKSUBDIR=	yes
 DONT_USE_ZIP=	yes
 DO_USE_WRKSUBDIR=	yes
