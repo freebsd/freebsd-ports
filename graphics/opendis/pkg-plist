@@ -1,0 +1,8 @@
+bin/ks
+lib/libods.a
+%%PORTDOCS%%share/doc/opendis/NEWS
+%%PORTDOCS%%share/doc/opendis/AUTHORS
+%%PORTDOCS%%share/doc/opendis/ERRATA
+%%PORTDOCS%%share/doc/opendis/PHILOSOPHY
+%%PORTDOCS%%share/doc/opendis/THUMB
+%%PORTDOCS%%@dirrm share/doc/opendis
