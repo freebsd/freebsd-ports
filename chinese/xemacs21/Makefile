@@ -14,7 +14,7 @@ PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 XEMACS_MAJOR_VER=	21
-WITH_XIM=	xlib
+WITH_XIM=	--with-xim=xlib
 BUILD_INPUT_METHOD=	xcin2.5:${PORTSDIR}/chinese/xcin25
 
 # xemacs21-mule-common needs this.
