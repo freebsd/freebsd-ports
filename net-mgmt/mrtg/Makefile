@@ -1,12 +1,12 @@
 # New ports collection makefile for:	MRTG
-# Version required:			2.1
+# Version required:			2.2
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/04/18 12:08:16 jfitz Exp $
+#   $Id: Makefile,v 1.2 1997/04/21 01:17:14 asami Exp $
 #
 
-DISTNAME=	mrtg-2.1
+DISTNAME=	mrtg-2.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ee.ethz.ch/~oetiker/webtools/mrtg/pub/
 
