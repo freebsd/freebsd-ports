@@ -3,5 +3,6 @@ to be used in conjunction with a primary authentication module, e.g.
 Apache::AuthenDBI and others.
 
 Author: Jason Bodnar <jcbodnar@mail.utexas.edu>
+WWW: http://search.cpan.org/dist/Apache-AuthenCache/
 
 --will
