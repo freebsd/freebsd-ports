@@ -1,38 +1,50 @@
 share/java/classes/cos.jar
 share/java/cos/readme.txt
 share/java/cos/license.txt
-share/java/cos/doc/AllNames.html
-share/java/cos/doc/Package-com.oreilly.servlet.html
-share/java/cos/doc/Package-com.oreilly.servlet.multipart.html
-share/java/cos/doc/com.oreilly.servlet.Base64Decoder.html
-share/java/cos/doc/com.oreilly.servlet.Base64Encoder.html
-share/java/cos/doc/com.oreilly.servlet.CacheHttpServlet.html
-share/java/cos/doc/com.oreilly.servlet.CookieNotFoundException.html
-share/java/cos/doc/com.oreilly.servlet.CookieParser.html
-share/java/cos/doc/com.oreilly.servlet.DaemonHttpServlet.html
-share/java/cos/doc/com.oreilly.servlet.HttpMessage.html
-share/java/cos/doc/com.oreilly.servlet.HttpsMessage.html
-share/java/cos/doc/com.oreilly.servlet.LocaleNegotiator.html
-share/java/cos/doc/com.oreilly.servlet.LocaleToCharsetMap.html
-share/java/cos/doc/com.oreilly.servlet.MailMessage.html
-share/java/cos/doc/com.oreilly.servlet.MultipartFilter.html
-share/java/cos/doc/com.oreilly.servlet.MultipartRequest.html
-share/java/cos/doc/com.oreilly.servlet.MultipartResponse.html
-share/java/cos/doc/com.oreilly.servlet.MultipartWrapper.html
-share/java/cos/doc/com.oreilly.servlet.ParameterNotFoundException.html
-share/java/cos/doc/com.oreilly.servlet.ParameterParser.html
-share/java/cos/doc/com.oreilly.servlet.RemoteDaemonHttpServlet.html
-share/java/cos/doc/com.oreilly.servlet.RemoteHttpServlet.html
-share/java/cos/doc/com.oreilly.servlet.ServletUtils.html
-share/java/cos/doc/com.oreilly.servlet.VersionDetector.html
-share/java/cos/doc/com.oreilly.servlet.multipart.BufferedServletInputStream.html
-share/java/cos/doc/com.oreilly.servlet.multipart.FilePart.html
-share/java/cos/doc/com.oreilly.servlet.multipart.LimitedServletInputStream.html
-share/java/cos/doc/com.oreilly.servlet.multipart.MacBinaryDecoderOutputStream.html
-share/java/cos/doc/com.oreilly.servlet.multipart.MultipartParser.html
-share/java/cos/doc/com.oreilly.servlet.multipart.ParamPart.html
-share/java/cos/doc/com.oreilly.servlet.multipart.Part.html
-share/java/cos/doc/com.oreilly.servlet.multipart.PartInputStream.html
+
+share/java/cos/doc/com/oreilly/servlet/package-tree.html
+share/java/cos/doc/com/oreilly/servlet/package-summary.html
+share/java/cos/doc/com/oreilly/servlet/package-frame.html
+share/java/cos/doc/com/oreilly/servlet/multipart/package-tree.html
+share/java/cos/doc/com/oreilly/servlet/multipart/package-summary.html
+share/java/cos/doc/com/oreilly/servlet/multipart/package-frame.html
+share/java/cos/doc/com/oreilly/servlet/multipart/PartInputStream.html
+share/java/cos/doc/com/oreilly/servlet/multipart/Part.html
+share/java/cos/doc/com/oreilly/servlet/multipart/ParamPart.html
+share/java/cos/doc/com/oreilly/servlet/multipart/MultipartParser.html
+share/java/cos/doc/com/oreilly/servlet/multipart/MacBinaryDecoderOutputStream.html
+share/java/cos/doc/com/oreilly/servlet/multipart/LimitedServletInputStream.html
+share/java/cos/doc/com/oreilly/servlet/multipart/FileRenamePolicy.html
+share/java/cos/doc/com/oreilly/servlet/multipart/FilePart.html
+share/java/cos/doc/com/oreilly/servlet/multipart/DefaultFileRenamePolicy.html
+share/java/cos/doc/com/oreilly/servlet/multipart/BufferedServletInputStream.html
+@dirrm share/java/cos/doc/com/oreilly/servlet/multipart
+
+share/java/cos/doc/com/oreilly/servlet/VersionDetector.html
+share/java/cos/doc/com/oreilly/servlet/ServletUtils.html
+share/java/cos/doc/com/oreilly/servlet/RemoteHttpServlet.html
+share/java/cos/doc/com/oreilly/servlet/RemoteDaemonHttpServlet.html
+share/java/cos/doc/com/oreilly/servlet/ParameterParser.html
+share/java/cos/doc/com/oreilly/servlet/ParameterNotFoundException.html
+share/java/cos/doc/com/oreilly/servlet/MultipartWrapper.html
+share/java/cos/doc/com/oreilly/servlet/MultipartResponse.html
+share/java/cos/doc/com/oreilly/servlet/MultipartRequest.html
+share/java/cos/doc/com/oreilly/servlet/MultipartFilter.html
+share/java/cos/doc/com/oreilly/servlet/MailMessage.html
+share/java/cos/doc/com/oreilly/servlet/LocaleToCharsetMap.html
+share/java/cos/doc/com/oreilly/servlet/LocaleNegotiator.html
+share/java/cos/doc/com/oreilly/servlet/HttpsMessage.html
+share/java/cos/doc/com/oreilly/servlet/HttpMessage.html
+share/java/cos/doc/com/oreilly/servlet/DaemonHttpServlet.html
+share/java/cos/doc/com/oreilly/servlet/CookieParser.html
+share/java/cos/doc/com/oreilly/servlet/CookieNotFoundException.html
+share/java/cos/doc/com/oreilly/servlet/CacheHttpServlet.html
+share/java/cos/doc/com/oreilly/servlet/Base64Encoder.html
+share/java/cos/doc/com/oreilly/servlet/Base64Decoder.html
+@dirrm share/java/cos/doc/com/oreilly/servlet
+@dirrm share/java/cos/doc/com/oreilly
+@dirrm share/java/cos/doc/com
+
 share/java/cos/doc/images/blue-ball-small.gif
 share/java/cos/doc/images/blue-ball.gif
 share/java/cos/doc/images/class-index.gif
@@ -56,11 +68,23 @@ share/java/cos/doc/images/variable-index.gif
 share/java/cos/doc/images/variables.gif
 share/java/cos/doc/images/yellow-ball-small.gif
 share/java/cos/doc/images/yellow-ball.gif
+@dirrm share/java/cos/doc/images
+
 share/java/cos/doc/package-list
 share/java/cos/doc/packages.html
 share/java/cos/doc/stylesheet.css
-share/java/cos/doc/tree.html
+share/java/cos/doc/help-doc.html
+share/java/cos/doc/index-all.html
+share/java/cos/doc/index.html
+share/java/cos/doc/overview-frame.html
+share/java/cos/doc/overview-summary.html
+share/java/cos/doc/overview-tree.html
+share/java/cos/doc/serialized-form.html
+share/java/cos/doc/allclasses-frame.html
+share/java/cos/doc/deprecated-list.html
 share/java/cos/doc/upload.war
-@dirrm share/java/cos/doc/images
 @dirrm share/java/cos/doc
 @dirrm share/java/cos
+
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true
