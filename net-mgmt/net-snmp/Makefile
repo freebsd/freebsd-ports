@@ -7,6 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.8
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= net-snmp
@@ -28,6 +29,7 @@ CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
 		 --with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		 --with-logfile="${NET_SNMP_LOGFILE}" \
 		 --with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
+		 --with-perl-modules \
 		 --with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
@@ -73,6 +75,12 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3
+MAN3PERL=	NetSNMP::default_store.3 NetSNMP::ASN.3 NetSNMP::OID.3 \
+		NetSNMP::agent::default_store.3 \
+		NetSNMP::netsnmp_request_infoPtr.3 \
+		NetSNMP::agent.3 SNMP.3
+MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+_MANPAGES+=     ${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
@@ -95,6 +103,10 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/aclocal.m4
+
+post-configure:
+	@${FIND} ${CONFIGURE_WRKSRC}/perl -name Makefile | \
+	 ${XARGS} ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//'
 
 pre-install:
 	-@[ -f ${STARTUP_FILE} ] && \
