@@ -5,9 +5,9 @@ include/agl.h
 include/agl_gui.h
 include/agl_ios.h
 include/agl_video.h
-lib/libagl-0.1.so.0
 lib/libagl.a
 lib/libagl.so
+lib/libagl.so.0
 share/aclocal/adgali.m4
 %%PORTDOCS%%share/doc/adgali/adgali025.png
 %%PORTDOCS%%share/doc/adgali/adgali150.png

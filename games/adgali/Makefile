@@ -8,6 +8,7 @@
 
 PORTNAME=	adgali
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	games devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,19 +22,24 @@ LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+
 USE_FREETYPE=	yes
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
-		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L/usr/lib -lm"
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-compile-type=optim
 INSTALLS_SHLIB=	yes
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	@${PERL} -pi -e 's|-O3 ||g' ${WRKSRC}/configure
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/doc/html/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
