@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	gma
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
-
-BROKEN=		"Compiler errors"
 
 GNU_CONFIGURE= yes
 
