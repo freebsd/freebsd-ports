@@ -3,7 +3,7 @@
 # Date created:			25 June 1997
 # Whom:				Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.3 1998/01/26 10:01:49 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/02/02 14:29:36 vanilla Exp $
 #
 
 DISTNAME=	mpg123-0.59n
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://homepages.uni-tuebingen.de/student/michael.hipp/mpg123/
 
-MAINTAINER=	mcj@acquiesce.org
+MAINTAINER=	ports@freebsd.org
 
 ALL_TARGET=	freebsd
 MAN1=		mpg123.1
