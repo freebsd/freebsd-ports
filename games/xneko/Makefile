@@ -3,7 +3,7 @@
 # Date created:		22 December 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:26:19 asami Exp $
+# $Id: Makefile,v 1.5 1996/12/17 12:33:15 asami Exp $
 #
 
 DISTNAME=	xneko
@@ -15,5 +15,6 @@ MAINTAINER=	markm@FreeBSD.ORG
 
 USE_X11=	yes
 IGNOREFILES=	${DISTFILES}
+WRKSRC=		${WRKDIR}/pub/bsd-sources/4.4BSD-Lite/usr/src/games/xneko
 
 .include <bsd.port.mk>
