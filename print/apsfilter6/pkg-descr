@@ -1,15 +1,13 @@
-This is the developement snapshot of the new upcoming apsfilter
-release V 6.0.0 for you to test.
+This is the new Apsfilter-STABLE release V 6.0.0
 
-Please report trouble / suggestions / comments to
-apsfilter-current@apsfilter.org
+This version has been in use since several months without trouble.
+So this version completely replaces the old -STABLE version 5.4.2.
 
-Apsfilter V 6.0.0 is a complete rewrite of apsfilter 5.4.2:
-- we kept old functionalities, added new
-- modified configuration
-- enhanced file type support
+As usual report trouble / suggestions / comments to:
 
-apsfilter is a magic printfilter, that allows you to print different document
+	apsfilter-stable@apsfilter.org
+
+Apsfilter is a magic printfilter, that allows you to print different document
 types "automagically" without having to convert them manually into something
 which is understood by your lineprinter. Apsfilter supports lots of file and
 compression types: gzip, bzip, compress, freeze, pack, ASCII, BMP,
