@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -15,42 +14,38 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	se@freebsd.org
 COMMENT=	A generic IP network transaction auditing tool
 
-.if !exists(/usr/include/tcpd.h)
-LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
 .if defined(WITH_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
+RUN_DEPENDS=	${LOCALBASE}/bin/ragrep:${PORTSDIR}/net-mgmt/argus-clients
 
 USE_BISON=	true
 GNU_CONFIGURE=	true
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 .if defined(WITH_SASL)
-CONFIGURE_ARGS+=	--with-sasl=${PREFIX}
-CFLAGS+=	-I${PREFIX}/include/sasl
+CONFIGURE_ARGS+= --with-sasl=${PREFIX}
 .endif
 
-MAN1=	ra.1 racount.1 ragator.1 ramon.1 rasort.1 raxml.1
-MAN5=	argus.5 argus.conf.5 rarc.5
-MAN8=	argus.8
+DOCSDIR?=       ${PREFIX}/share/doc/argus-2.0
 
-pre-install:
+MAN5=		argus.5 argus.conf.5
+MAN8=		argus.8
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus_bpf ${PREFIX}/sbin/argus
 	${MKDIR} ${PREFIX}/argus/archive
-	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
-	${MKDIR} ${PREFIX}/share/examples/argus-2.0
-	${INSTALL_DATA} ${WRKSRC}/support/README ${PREFIX}/share/examples/argus-2.0
-.for i in Archive Config Deployment Startup System Xml
-	${MKDIR} ${PREFIX}/share/examples/argus-2.0/$i
-	${INSTALL_DATA} ${WRKSRC}/support/$i/* ${PREFIX}/share/examples/argus-2.0/$i
-.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/argus-2.0/html/man
-.for i in README COPYING CREDITS doc/CHANGES doc/FAQ doc/HOW-TO
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0
-.endfor
+	${MKDIR} ${DOCSDIR}/html/man
 .for i in  doc/html/man/*.html
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0/html/man
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}/html/man
+.endfor
+.endif
+.if !defined(NOMAN)
+.for i in ${MAN5}
+	${INSTALL_DATA} ${WRKSRC}/man/man5/$i ${PREFIX}/man/man5
+.endfor
+.for i in ${MAN8}
+	${INSTALL_DATA} ${WRKSRC}/man/man8/$i ${PREFIX}/man/man8
 .endfor
 .endif
 
