@@ -1,5 +1,4 @@
 rt3/README
-rt3/bin/ap2mp2-fix.pl
 rt3/bin/mason_handler.fcgi
 rt3/bin/mason_handler.scgi
 rt3/bin/mason_handler.svc
@@ -264,8 +263,8 @@ rt3/share/html/Admin/Elements/SelectRights
 rt3/share/html/Admin/Elements/SelectScrip
 rt3/share/html/Admin/Elements/SelectScripAction
 rt3/share/html/Admin/Elements/SelectScripCondition
-rt3/share/html/Admin/Elements/SelectStage
 rt3/share/html/Admin/Elements/SelectSingleOrMultiple
+rt3/share/html/Admin/Elements/SelectStage
 rt3/share/html/Admin/Elements/SelectTemplate
 rt3/share/html/Admin/Elements/SelectUsers
 rt3/share/html/Admin/Elements/SystemTabs
@@ -331,6 +330,7 @@ rt3/share/html/Edit/Elements/Preamble
 rt3/share/html/Edit/Elements/PushButton
 rt3/share/html/Edit/Elements/SelectCustomFieldType
 rt3/share/html/Edit/Elements/SelectTemplate
+rt3/share/html/Edit/Elements/SelectUsers
 rt3/share/html/Edit/Elements/Tab
 rt3/share/html/Edit/Elements/Tabs
 rt3/share/html/Edit/Global/Basic/Top
