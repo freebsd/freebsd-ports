@@ -1,0 +1,25 @@
+
+
+If you haven't met mysql++ before, please take a look at the documentation
+in ../../doc/mysql++ before trying to play with these examples.  Thank you.
+
+
+To compile a mysql++ program,
+
+  o  you have to have libmysqlclient installed on your system
+     (it's in FreeBSD port mysql-client)
+
+  o  you have to link your programs with the sqlplus library
+
+  o  you have to add "-D_FIX_FOR_BSD_" to your CXXFLAGS environment
+
+
+For example, you can try to compile simple1.cc with something like this 
+
+c++ -D_FIX_FOR_BSD_ -I/usr/local/include/mysql -L/usr/local/lib -lsqlplus simple1.cc -o simple1
+
+
+Happy mysql++'ing.
+
+					-Miklos Niedermayer (mico@bsd.hu)
+
