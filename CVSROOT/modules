@@ -9544,6 +9544,7 @@ wmfsm		ports/sysutils/wmfsm
 wmfstatus	ports/x11/wmfstatus
 wmfuzzy		ports/x11-clocks/wmfuzzy
 wmg		ports/x11-wm/wmg
+wmget		ports/ftp/wmget
 wmglobe		ports/astro/wmglobe
 wmgrabimage	ports/graphics/wmgrabimage
 wmhm		ports/sysutils/wmhm
