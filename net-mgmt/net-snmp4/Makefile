@@ -1,9 +1,9 @@
 # New ports collection makefile for:	ucd-snmp
-# Version required:			3.1
+# Version required:			3.1.3
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.8 1996/12/08 01:45:06 max Exp $
+# $Id: Makefile,v 1.9 1997/03/07 11:33:45 gpalmer Exp $
 #
 
 DISTNAME=	ucd-snmp-3.1.3
