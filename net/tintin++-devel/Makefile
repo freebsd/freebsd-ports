@@ -8,7 +8,8 @@
 PORTNAME=	tintin
 PORTVERSION=	1.8.3
 CATEGORIES=     net games
-MASTER_SITES=	http://mail.newclear.net/tintin/download/
+MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
+		http://freebsd.hanirc.org/~jhp/tintin++/ 
 DISTNAME=	tintin++v1.83
 
 MAINTAINER=	jhp@cocoja.holywar.net
