@@ -1,0 +1,24 @@
+diff -cr spice3f4/src/lib/fte/signal.c src/lib/fte/signal.c
+*** spice3f4/src/lib/fte/signal.c	Thu Jun 17 17:32:59 1993
+--- src/lib/fte/signal.c	Tue Nov  4 22:19:01 1997
+***************
+*** 32,37 ****
+--- 32,39 ----
+   * is true.
+   */
+  
++ /* not using SIGINT with GNU Readline - AV */
++ #ifndef HAS_GNUREADLINE
+  SIGNAL_TYPE
+  ft_sigintr()
+  {
+***************
+*** 58,63 ****
+--- 60,66 ----
+      cp_resetcontrol();
+      longjmp(jbuf, 1);
+  }
++ #endif /* !HAS_GNUREADLINE */
+  
+  /* ARGSUSED */
+  SIGNAL_TYPE

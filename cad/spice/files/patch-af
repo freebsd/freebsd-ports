@@ -1,0 +1,37 @@
+diff -cr spice3f4/src/lib/fte/misccoms.c src/lib/fte/misccoms.c
+*** spice3f4/src/lib/fte/misccoms.c	Thu Jun 17 17:32:53 1993
+--- src/lib/fte/misccoms.c	Tue Nov  4 22:18:54 1997
+***************
+*** 11,16 ****
+--- 11,24 ----
+  #include "hlpdefs.h"
+  #include "suffix.h"
+  
++ #ifdef HAS_GNUREADLINE
++ #include <readline/readline.h>
++ #include <readline/history.h>
++ 
++ extern int gnu_history_lines;
++ extern char gnu_history_file[];
++ #endif
++ 
+  static void byemesg();
+  
+  void
+***************
+*** 299,304 ****
+--- 307,320 ----
+              byemesg();
+      } else
+          byemesg();
++ 
++ #ifdef HAS_GNUREADLINE
++     /* Added GNU Readline Support -- Andrew Veliath <veliaa@rpi.edu> */
++     if (cp_interactive && (cp_maxhistlength > 0)) {
++ 	stifle_history(cp_maxhistlength);
++ 	write_history(gnu_history_file);
++     }
++ #endif /* HAS_GNUREADLINE */
+  
+      exit(EXIT_NORMAL);
+      /* NOTREACHED */
