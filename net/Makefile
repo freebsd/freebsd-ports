@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.247 1999/04/14 06:01:55 mharo Exp $
+# $Id: Makefile,v 1.248 1999/04/15 03:23:41 mharo Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -47,6 +47,7 @@
     SUBDIR += echoping
     SUBDIR += epic4
     SUBDIR += ethereal
+    SUBDIR += ezbounce
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
