@@ -7,7 +7,7 @@
 
 PORTNAME=	DBIx-Password
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -19,6 +19,10 @@ COMMENT=	Allows you to create a global password file for DB passwords
 PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Password.3
+
+.if defined(BATCH)
+EXTRA_PATCHES+=	${FILESDIR}/batch.patch
+.endif
 
 .include <bsd.port.pre.mk>
 
