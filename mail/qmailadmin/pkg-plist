@@ -46,6 +46,7 @@
 %%DATADIR%%/html/sk
 %%DATADIR%%/html/sv
 %%DATADIR%%/html/tr
+%%DATADIR%%/html/xaa
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/qmailadmin
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/delete.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/disabled.png
@@ -68,9 +69,9 @@
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/uppermiddle2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/upperright.png
 @dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images
-@dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%
+@unexec /bin/rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
 @unexec /bin/rmdir %D/%%WEBDATADIR%% 2> /dev/null || true
-@dirrm %%CGIBINDIR%%/%%CGIBINSUBDIR%%
+@unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
 @unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%
