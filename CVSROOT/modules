@@ -906,6 +906,7 @@ cdargs		ports/sysutils/cdargs
 cdb		ports/databases/cdb
 cdbakeoven	ports/sysutils/cdbakeoven
 cdbkup		ports/sysutils/cdbkup
+cdce		ports/comms/cdce
 cdcl		ports/science/cdcl
 cdcl-gtk	ports/science/cdcl-gtk
 cdecl		ports/devel/cdecl
