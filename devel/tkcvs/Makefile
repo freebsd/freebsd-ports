@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkcvs
-# Version required:     6.0
 # Date created:         02 Aug 1996
 # Whom:                 shanee@augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkcvs-6.0
+PORTNAME=	tkcvs
+PORTVERSION=	6.0
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/apps/tkcvs-6.0/ \
 		http://ftp.sunet.se/pub/lang/tcl/sorted/apps/tkcvs-6.0/

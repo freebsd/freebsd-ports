@@ -1,16 +1,15 @@
 # New ports collection makefile for:	robodoc
-# Version required:			3.1e
 # Date created:				15 Dec 1999
 # Whom:					Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	robodoc
-PKGNAME=	robodoc-3.1e
+PORTNAME=	robodoc
+PORTVERSION=	3.1e
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	will@FreeBSD.org
 

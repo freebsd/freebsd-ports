@@ -6,10 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sdcc-2.1.9Ea
-PKGNAME=	sdcc-2.1.9
+PORTNAME=	sdcc
+PORTVERSION=	2.1.9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Forum/1353/
+DISTNAME=	${PORTNAME}-${PORTVERSION}Ea
 
 MAINTAINER=	ambrisko@whistle.com
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tmake
-# Version required:			1.3
 # Date created:				8 March 2000
 # Whom:					jesse@cs.uni-magdeburg.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tmake-1.3
+PORTNAME=	tmake
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.troll.no/freebies/tmake/
 
