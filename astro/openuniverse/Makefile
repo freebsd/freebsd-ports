@@ -3,7 +3,7 @@
 # Date created:				4 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/12/17 09:03:34 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ssystem-1.6

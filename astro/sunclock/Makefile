@@ -3,7 +3,7 @@
 # Date created:		15 September 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1998/09/16 02:24:40 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sunclock-1.4

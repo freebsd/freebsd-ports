@@ -3,7 +3,7 @@
 # Date created:		14 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/12/10 17:24:33 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xphoon
