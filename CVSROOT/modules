@@ -6422,6 +6422,7 @@ p5-Config-Fast	ports/devel/p5-Config-Fast
 p5-Config-General	ports/devel/p5-Config-General
 p5-Config-Ini	ports/devel/p5-Config-Ini
 p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
+p5-Config-Objective	ports/devel/p5-Config-Objective
 p5-Config-Setting	ports/devel/p5-Config-Setting
 p5-Config-Simple	ports/devel/p5-Config-Simple
 p5-Config-Tiny	ports/devel/p5-Config-Tiny
