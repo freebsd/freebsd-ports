@@ -121,6 +121,7 @@ share/gnome/anjuta/stock_libs.anj
 share/gnome/anjuta/system.tags
 share/gnome/anjuta/welcome.txt
 share/gnome/applications/anjuta.desktop
+share/gnome/help/anjuta/C/anjuta-advanced-tutorial.xml
 share/gnome/help/anjuta/C/anjuta-faqs.xml
 share/gnome/help/anjuta/C/anjuta-manual.xml
 share/gnome/help/anjuta/C/anjuta-tutorial.xml
@@ -130,6 +131,14 @@ share/gnome/help/anjuta/C/compileopts.xml
 share/gnome/help/anjuta/C/debugger.xml
 share/gnome/help/anjuta/C/execute.xml
 share/gnome/help/anjuta/C/figures/a2ps.png
+share/gnome/help/anjuta/C/figures/aat_additional_options.png
+share/gnome/help/anjuta/C/figures/aat_config_libraries_lib3ds.png
+share/gnome/help/anjuta/C/figures/aat_config_libraries_libxml2.png
+share/gnome/help/anjuta/C/figures/aat_include_paths.png
+share/gnome/help/anjuta/C/figures/aat_libraries.png
+share/gnome/help/anjuta/C/figures/aat_options_lib3ds.png
+share/gnome/help/anjuta/C/figures/aat_options_libxml2.png
+share/gnome/help/anjuta/C/figures/aat_project_type.png
 share/gnome/help/anjuta/C/figures/arguments.png
 share/gnome/help/anjuta/C/figures/attach.png
 share/gnome/help/anjuta/C/figures/brk_add.png
@@ -300,6 +309,8 @@ share/gnome/help/anjuta/ja/license.xml
 share/gnome/help/anjuta/ja/preferences.xml
 share/gnome/help/anjuta/ja/projects.xml
 share/gnome/mime-info/anjuta.mime
+share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-faqs-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf
@@ -440,10 +451,13 @@ share/locale/cs/LC_MESSAGES/anjuta.mo
 share/locale/da/LC_MESSAGES/anjuta.mo
 share/locale/de/LC_MESSAGES/anjuta.mo
 share/locale/el/LC_MESSAGES/anjuta.mo
+share/locale/en_CA/LC_MESSAGES/anjuta.mo
 share/locale/en_GB/LC_MESSAGES/anjuta.mo
 share/locale/es/LC_MESSAGES/anjuta.mo
 share/locale/fr/LC_MESSAGES/anjuta.mo
+share/locale/ga/LC_MESSAGES/anjuta.mo
 share/locale/hi/LC_MESSAGES/anjuta.mo
+share/locale/hr/LC_MESSAGES/anjuta.mo
 share/locale/it/LC_MESSAGES/anjuta.mo
 share/locale/ja/LC_MESSAGES/anjuta.mo
 share/locale/ko/LC_MESSAGES/anjuta.mo
@@ -485,6 +499,7 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/anjuta
 %%PORTDOCS%%@dirrm share/doc/anjuta
 @dirrm lib/anjuta
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	1.2.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -20,12 +19,17 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		anjuta.1 anjuta_launcher.1
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -Ee \
+		's|-D[^[:space:]_]+_DISABLE_DEPRECATED||g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \

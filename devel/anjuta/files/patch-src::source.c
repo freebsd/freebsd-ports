@@ -1,15 +1,6 @@
---- src/source.c.orig	Wed May 14 14:17:11 2003
-+++ src/source.c	Wed May 14 14:17:23 2003
-@@ -314,7 +314,7 @@
- 		 "fi\n\n");
- 	fprintf (fp,
- 		 "dnl Set PACKAGE DATA & DOC DIR\n"
--		 "packagedatadir=share/${PACKAGE}\n"
-+		 "packagedatadir=share/gnome/${PACKAGE}\n"
- 		 "packagedocdir=doc/${PACKAGE}\n"
- 		 "\n");
- 	
-@@ -332,7 +332,7 @@
+--- src/source.c.orig	Thu Apr  8 00:15:35 2004
++++ src/source.c	Tue Apr 13 13:26:20 2004
+@@ -335,7 +335,7 @@
  	{
  		fprintf (fp,
  			 "dnl Set PACKAGE DIRs in config.h.\n"
