@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tunesbrowser
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
@@ -17,7 +16,7 @@ COMMENT=	Gnome frontend DAAP client
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap
 
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2 gstreamerplugins gnometarget gnomehack
 
