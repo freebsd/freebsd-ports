@@ -12,7 +12,7 @@ MASTER_SITES=	http://wuarchive.wustl.edu/languages/c/unix-c/file-mgmt/
 DISTNAME=	mmv
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	me@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
 
 NO_CDROM=	"No redistribution for charge"
