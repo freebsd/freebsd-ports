@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	libflash
-PORTVERSION=	0.4.10
+PORTVERSION=	0.4.12
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.swift-tools.net/Flash/
-DISTNAME=	flash-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gplflash
+DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Flash (TM) Library
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Lib
+WRKSRC=		${WRKDIR}/${DISTNAME}/lib
+
+USE_BZIP2=	yes
+INSTALLS_SHLIB=	yes
+MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	NOPROFILE=true
-
-pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CXXFLAGS+=	-fno-rtti -DXP_UNIX	\
 		-I${LOCALBASE}/include	\
 		-DCHECK_TEXT_PLAIN
 LDADD=		-lz \
-		-L${LOCALBASE}/lib -ljpeg
+		-L${LOCALBASE}/lib -ljpeg -lmad
 SRCS=		adpcm.cc bitmap.cc button.cc character.cc cxform.cc \
 		displaylist.cc flash.cc font.cc graphic.cc graphic16.cc \
 		graphic24.cc graphic32.cc matrix.cc movie.cc \

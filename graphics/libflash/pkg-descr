@@ -5,4 +5,4 @@ The core of the library is a graphic renderer that is portable is to
 be reused in applications that need to play Flash (TM) movies.
 
 Author:	Olivier Debon <olivier@debon.net>
-WWW:	http://www.swift-tools.net/Flash/
+WWW:	http://gplflash.sourceforge.net/
