@@ -1,0 +1,18 @@
+share/nocat/htdocs/test.html
+share/nocat/htdocs/status.html
+share/nocat/htdocs/splash.html
+share/nocat/htdocs/images/update.gif
+share/nocat/htdocs/images/skip.gif
+share/nocat/htdocs/images/reset.gif
+share/nocat/htdocs/images/register.gif
+share/nocat/htdocs/images/logout.gif
+share/nocat/htdocs/images/login.gif
+share/nocat/htdocs/images/continue.gif
+share/nocat/htdocs/images/auth_logo.gif
+@dirrm share/nocat/htdocs/images
+@dirrm share/nocat/htdocs
+@dirrm share/nocat
+sbin/splashd
+sbin/ghttpd
+@dirrm libexec/nocat
+etc/nocat.conf

@@ -8,6 +8,7 @@
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += NeTraMet
+    SUBDIR += NoCatSplash
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += aget
