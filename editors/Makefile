@@ -77,6 +77,7 @@
     SUBDIR += joe
     SUBDIR += joe-devel
     SUBDIR += jove
+    SUBDIR += kate-plugins
     SUBDIR += kile
     SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
