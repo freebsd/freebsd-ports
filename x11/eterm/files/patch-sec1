@@ -1,0 +1,27 @@
+Index: src/command.c
+===================================================================
+RCS file: /cvs/enlightenment/Eterm/src/command.c,v
+retrieving revision 1.1.1.1.2.7
+diff -u -r1.1.1.1.2.7 command.c
+--- src/command.c	1999/11/02 16:34:35	1.1.1.1.2.7
++++ src/command.c	2000/06/02 02:06:56
+@@ -4694,6 +4694,9 @@
+ 	  return;		/* Make sure there are 2 args left */
+ 	y = args[++i];
+ 	x = args[++i];
++	if (x > scr->width || y > scr->height) {
++	  return;
++        }
+ 	XResizeWindow(Xdisplay, TermWin.parent, x, y);
+ 	break;
+       case 5:
+@@ -4713,6 +4716,9 @@
+ 	  return;		/* Make sure there are 2 args left */
+ 	y = args[++i];
+ 	x = args[++i];
++	if (x > (scr->width / TermWin.fwidth) || y > (scr->height / TermWin.fheight)) {
++	  return;
++        }
+ 	XResizeWindow(Xdisplay, TermWin.parent,
+ 		      Width2Pixel(x) + 2 * TermWin.internalBorder + (scrollbar_visible()? scrollbar_total_width() : 0),
+ 		      Height2Pixel(y) + 2 * TermWin.internalBorder + (menubar_visible()? menuBar_TotalHeight() : 0));
