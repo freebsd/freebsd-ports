@@ -1385,3 +1385,5 @@ x11-wm/xfce4-menueditor||2005-01-30|got obsolete since it is now included in xfc
 databases/postgresql72||2005-01-30|removed, 7.2 branch is retired
 databases/postgresql73|databases/postgresql73-server|2005-01-30|port split into postgresql73-server and -client
 databases/postgresql7|databases/postgresql74-server|2005-01-30|port split into postgresql74-server and -client
+x11-themes/lila-xffm||2005-02-02|don't work with new xfce4
+x11-themes/lila-xfce4-panel||2005-02-02|don't work with new xfce4
