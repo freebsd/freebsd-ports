@@ -3,18 +3,18 @@
 # Date created:				23 Dec 1997
 # Whom:					mjhsieh
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/17 01:22:22 vanilla Exp $
 #
 
-DISTNAME=       hypermail.102
+DISTNAME=       hypermail_1.02
 PKGNAME=        hypermail-1.02
 CATEGORIES=     www
-MASTER_SITES=   http://www.eit.com/software/hypermail/src/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=   ftp://ftp.landfield.com/hypermail/ \
+		ftp://ftp.faqs.org/hypermail/
 
 MAINTAINER=     mjhsieh@life.nthu.edu.tw
 
-WRKSRC=		${WRKDIR}/hypermail
+WRKSRC=		${WRKDIR}/hypermail-1.02.orig
 
 MAN1=		hypermail.1
 
