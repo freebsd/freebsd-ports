@@ -9,7 +9,8 @@ PORTNAME=	utserver
 PORTVERSION=	436
 PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=	http://files.sobservers.com/UnrealTournament/UTServerOnly/
+MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \    
+		http://fileserver.talkware.net/ut/
 DISTNAME=	ut-server-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
