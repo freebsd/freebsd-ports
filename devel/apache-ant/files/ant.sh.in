@@ -36,11 +36,6 @@ if [ -z "${usejikes}" ]; then
 	usejikes=${DEFAULT_JIKES};
 fi
 
-# Determine the JDK home directory
-if [ -z "${JAVA_HOME}" ]; then
-	JAVA_HOME=${DEFAULT_JAVA_HOME}
-fi
-
 # Set ANT_LIB location
 ANT_LIB="${ANT_HOME}/lib"
 
@@ -52,11 +47,11 @@ if [ -z "${JAVACMD}" ]; then
 		JAVACMD=${DEFAULT_JAVACMD}
 	fi
 fi
- 
+
 # Check if 'java' executable can be found
-if [ ! -x "$JAVACMD" ]; then
+if [ ! -x "${JAVACMD}" ]; then
 	echo "Error: JAVA_HOME is not defined correctly: ${JAVA_HOME}"
-	echo "       Unable to find ${JAVACMD}"
+	echo "       Unable to execute ${JAVACMD}"
 	exit 1
 fi
 
@@ -65,23 +60,12 @@ fi
 # Determine CLASSPATH
 #-----------------------------------------------------------------------------
 
-# Initialize the classpath to the existing classpath
-if [ -n "$CLASSPATH" ]; then
-	LOCALCLASSPATH="${CLASSPATH}"
+# Prepend LOCALCLASSPATH variable with ant-launcher.jar
+if [ -z "${LOCALCLASSPATH}" ]; then
+	LOCALCLASSPATH=${ANT_LIB}/ant-launcher.jar
+else
+	LOCALCLASSPATH=${ANT_LIB}/ant-launcher.jar:${LOCALCLASSPATH}
 fi
-
-# Add the dependency .jar files from ${ANT_HOME}/lib
-for JAR_FILE in "${ANT_LIB}"/*.jar; do
-
-	# If the directory is empty, then the input string is returned
-	if [ -f "${JAR_FILE}" ]; then
-		if [ -z "$LOCALCLASSPATH" ]; then
-			LOCALCLASSPATH="${JAR_FILE}"
-		else
-			LOCALCLASSPATH="${JAR_FILE}":"$LOCALCLASSPATH"
-		fi
-	fi
-done
 
 # FreeBSD-specific: Add the .jar files from ${PREFIX}/share/java/classes
 if [ "${ANT_INCLUDE_SHARED_JARS}" = "YES" ]; then
@@ -98,20 +82,6 @@ if [ "${ANT_INCLUDE_SHARED_JARS}" = "YES" ]; then
 	done
 fi
 
-# Add the JDK tools.jar or classes.zip file to the CLASSPATH
-if [ -n "${JAVA_HOME}" ]; then
-	if [ -f "${JAVA_HOME}/lib/tools.jar" ]; then
-		LOCALCLASSPATH="${LOCALCLASSPATH}:${JAVA_HOME}/lib/tools.jar"
-	elif [ -f "${JAVA_HOME}/lib/classes.zip" ]; then
-		LOCALCLASSPATH="${LOCALCLASSPATH}:${JAVA_HOME}/lib/classes.zip"
-	fi
-else
-	echo "Warning: JAVA_HOME environment variable is not set."
-	echo "  If build fails because sun.* classes could not be found"
-	echo "  you will need to set the JAVA_HOME environment variable"
-	echo "  to the installation directory of java."
-fi
-
 
 #-----------------------------------------------------------------------------
 # Determine all Ant options
@@ -122,26 +92,13 @@ if ${usejikes}; then
 	ANT_OPTS="${ANT_OPTS} -Dbuild.compiler=jikes"
 fi
 
-# Add the Jikes path to the options if necessary
+
+#-----------------------------------------------------------------------------
+# Execute Ant
+#-----------------------------------------------------------------------------
+
 if [ -n "${JIKESPATH}" ]; then
-	ANT_OPTS="${ANT_OPTS} -Djikes.class.path=${JIKESPATH}"
+	exec "${JAVACMD}" ${ANT_OPTS} -classpath "${LOCALCLASSPATH}" -Dant.home="${ANT_HOME}" -Djikes.class.path="${JIKESPATH}" org.apache.tools.ant.launch.Launcher ${ANT_ARGS} -lib "${CLASSPATH}" "$@"
+else
+	exec "${JAVACMD}" ${ANT_OPTS} -classpath "${LOCALCLASSPATH}" -Dant.home="${ANT_HOME}"                                   org.apache.tools.ant.launch.Launcher ${ANT_ARGS} -lib "${CLASSPATH}" "$@"
 fi
-
-# Add option for the CLASSPATH
-ANT_OPTS="${ANT_OPTS} -classpath ${LOCALCLASSPATH}"
-
-# Add option for Ant home directory
-ANT_OPTS="${ANT_OPTS} -Dant.home=${ANT_HOME}"
-
-
-#-----------------------------------------------------------------------------
-# Call Ant
-#-----------------------------------------------------------------------------
-
-if [ -n "${VERBOSE_ANT_SCRIPT}" ]; then
-	echo "Java command: ${JAVACMD}"
-	echo "Ant options: ${ANT_OPTS}"
-	echo "Ant arguments: ${ANT_ARGS}"
-fi
-
-${JAVACMD} ${ANT_OPTS} org.apache.tools.ant.Main ${ANT_ARGS} $@
