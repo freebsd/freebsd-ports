@@ -5,7 +5,7 @@
  # MAKE=make
  # set CFLAGS to be -Ipath/to/special/includes if needed
 -CFLAGS= -O 
-+#CFLAGS= -O
++CFLAGS+= -I${LOCALBASE}/include
  #Uncomment the following for Solaris (and similiar SVR4 systems)
  #NETLIBS   = -lsocket -lnsl 
  #Uncomment the following if the previous one does not work
