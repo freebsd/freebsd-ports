@@ -8,8 +8,8 @@
 PORTNAME=	makeself
 PORTVERSION=	1.5.3
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.linuxgames.com/megastep/makeself/
-DISTFILES=	makeself.gz.sh
+MASTER_SITES=	http://linuxberg.tele.net/files/console/file/
+EXTRACT_SUFX=	.gz.sh
 
 MAINTAINER=	ports@FreeBSD.org
 
