@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 HUGS_DATE=	Nov2002
 USE_REINPLACE=	yes
+USE_BISON=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 ALL_TARGET=	default ffihugs
 
