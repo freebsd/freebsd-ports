@@ -4199,6 +4199,7 @@ jove		ports/editors/jove
 jpatch		ports/graphics/jpatch
 jpeg		ports/graphics/jpeg
 jpeg-mmx	ports/graphics/jpeg-mmx
+jpeg2pdf	ports/graphics/jpeg2pdf
 jpeg2ps-a4	ports/graphics/jpeg2ps-a4
 jpeg2ps-letter	ports/graphics/jpeg2ps-letter
 jpeginfo	ports/graphics/jpeginfo
