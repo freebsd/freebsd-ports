@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.8.99a
+PORTVERSION=	0.9.01
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -19,10 +19,11 @@ MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 MAN1=	askmara.1 getzone.1
 MAN8=	maradns.8 zoneserver.8
 
-DOCS=	../TODO.done ../TODO.first ../TODO.problem.hostnames ../TODO.second \
-	../changelog.html ../old.changelog 00Quickstart.es example_csv1 \
-	example_mararc faq.txt
-DDOCS=	0QuickStart RFC1035.compliance cache.poison.protection csv1.format \
+DOCS=	../TODO.0.9.00 ../TODO.done ../TODO.first ../TODO.second \
+	../changelog.html ../old.changelog example_csv1 example_mararc \
+	faq.txt es/00Quickstart.es detailed/0QuickStart \
+	doc-fr/0QuickStart.fr doc-fr/faq-fr.txt
+DDOCS=	RFC1035.compliance cache.poison.protection csv1.format \
 	example_full_mararc faq.html firewall.configuration \
 	handling.compression how.to.support.sql mararc.format \
 	multiple.qdcount recursive-case-insensitive recursive.algorithm \

@@ -3,13 +3,14 @@ etc/mararc.sample
 sbin/getzone
 sbin/maradns
 sbin/zoneserver
+%%PORTDOCS%%share/doc/maradns/00Quickstart.es
+%%PORTDOCS%%share/doc/maradns/0QuickStart
+%%PORTDOCS%%share/doc/maradns/0QuickStart.fr
+%%PORTDOCS%%share/doc/maradns/TODO.0.9.00
 %%PORTDOCS%%share/doc/maradns/TODO.done
 %%PORTDOCS%%share/doc/maradns/TODO.first
-%%PORTDOCS%%share/doc/maradns/TODO.problem.hostnames
 %%PORTDOCS%%share/doc/maradns/TODO.second
-%%PORTDOCS%%share/doc/maradns/00Quickstart.es
 %%PORTDOCS%%share/doc/maradns/changelog.html
-%%PORTDOCS%%share/doc/maradns/detailed/0QuickStart
 %%PORTDOCS%%share/doc/maradns/detailed/RFC1035.compliance
 %%PORTDOCS%%share/doc/maradns/detailed/cache.poison.protection
 %%PORTDOCS%%share/doc/maradns/detailed/csv1.format
@@ -36,13 +37,16 @@ sbin/zoneserver
 %%PORTDOCS%%share/doc/maradns/examples/example_csv1.txt
 %%PORTDOCS%%share/doc/maradns/examples/example_recursive_mararc.txt
 %%PORTDOCS%%share/doc/maradns/faq.txt
+%%PORTDOCS%%share/doc/maradns/faq-fr.txt
 %%PORTDOCS%%share/doc/maradns/old.changelog
 %%PORTDOCS%%share/doc/maradns/tutorial/authoritative.html
 %%PORTDOCS%%share/doc/maradns/tutorial/compile.html
+%%PORTDOCS%%share/doc/maradns/tutorial/convert.html
 %%PORTDOCS%%share/doc/maradns/tutorial/glossary.html
 %%PORTDOCS%%share/doc/maradns/tutorial/man.csv1.html
 %%PORTDOCS%%share/doc/maradns/tutorial/man.maradns.html
 %%PORTDOCS%%share/doc/maradns/tutorial/man.mararc.html
+%%PORTDOCS%%share/doc/maradns/tutorial/recordtypes.html
 %%PORTDOCS%%share/doc/maradns/tutorial/recursive.html
 %%PORTDOCS%%share/doc/maradns/tutorial/tutorial.html
 %%PORTDOCS%%@dirrm share/doc/maradns/tutorial
