@@ -34,10 +34,10 @@ PLIST_SUB+=	INCLUDE_PATH=${INCLUDE_PATH}
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
-PLIST_SUB=	FAKE_SBIN=sbin
+PLIST_SUB+=	FAKE_SBIN=sbin
 .else
 BIND_DESTETC=	${PREFIX}/etc
-PLIST_SUB=	FAKE_SBIN=bin
+PLIST_SUB+=	FAKE_SBIN=bin
 .endif
 
 MAN1=		dig.1 dnskeygen.1 dnsquery.1 host.1
