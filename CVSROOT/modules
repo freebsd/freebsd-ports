@@ -8103,6 +8103,7 @@ wm2		ports/x11-wm/wm2
 wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
 wmapm		ports/sysutils/wmapm
+wmapmload	ports/sysutils/wmapmload
 wmappl		ports/x11/wmappl
 wmavgload	ports/sysutils/wmavgload
 wmbattery	ports/sysutils/wmbattery
