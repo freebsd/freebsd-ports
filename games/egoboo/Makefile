@@ -26,7 +26,7 @@ post-patch:
 	@cd ${WRKSRC}/code && ${GMAKE} clean
 	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g ; \
 		s|/usr/X11/|${X11BASE}/|g ; s|CC=|#CC=|g; \
-		s|-O3|${CFLAGS}|g' ${WRKSRC}/code/Makefile
+		s|-O3|${CFLAGS}|g; s|-ffast-math||g' ${WRKSRC}/code/Makefile
 
 do-build:
 	@cd ${WRKSRC}/code && ${SETENV} ${MAKE_ENV} ${GMAKE}
