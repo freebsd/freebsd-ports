@@ -1,5 +1,5 @@
-*** imap/Makefile.orig	Fri Sep 20 13:44:01 1996
---- imap/Makefile	Fri Sep 20 13:44:43 1996
+*** imap/Makefile.orig	Tue Jan 21 11:08:23 1997
+--- imap/Makefile	Tue Jan 21 11:04:47 1997
 ***************
 *** 47,53 ****
   
@@ -18,14 +18,33 @@
   
   # Non-ANSI compiler ports.
 ***************
-*** 81,86 ****
---- 81,89 ----
-  
+*** 82,87 ****
+--- 82,90 ----
   #bs2:
   #	$(MAKE) build SYSTYPE=ANSI OS=bsi
-+ 
+  
 + bsf:
 + 	$(MAKE) build OS=bsf PROCESS=an
-  
++ 
   pt1:
   	$(MAKE) build SYSTYPE=non-ANSI OS=ptx
+  
+***************
+*** 92,99 ****
+  	$(LN) $(SYSTYPE) systype
+  	cd $(SYSTYPE)/c-client; $(MAKE) $(OS)
+  	cd $(SYSTYPE)/ms;$(MAKE)
+! 	cd $(SYSTYPE)/ipopd;$(MAKE)
+! 	cd $(SYSTYPE)/imapd;$(MAKE)
+  
+  clean:
+  	$(RM) systype
+--- 95,102 ----
+  	$(LN) $(SYSTYPE) systype
+  	cd $(SYSTYPE)/c-client; $(MAKE) $(OS)
+  	cd $(SYSTYPE)/ms;$(MAKE)
+! #       cd $(SYSTYPE)/ipopd;$(MAKE)
+! #       cd $(SYSTYPE)/imapd;$(MAKE)
+  
+  clean:
+  	$(RM) systype
