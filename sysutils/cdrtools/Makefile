@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	1.11.a39
+PORTVERSION?=	1.11.a40
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-1.11a39
+MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/OLD/2.0aX/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/OLD/2.0aX/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/OLD/2.0aX/
+DISTNAME=	cdrtools-1.11a40
 
 MAINTAINER=	dirk@FreeBSD.org
 
