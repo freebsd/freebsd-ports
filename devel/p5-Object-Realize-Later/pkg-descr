@@ -1,0 +1,13 @@
+The Object::Realize::Later class helps with implementing transparent on
+demand realization of object data.  This is related to the tricks on
+autoloading of data, the lesser known cousin of autoloading of
+functionality.
+
+On demand realization is all about performance gain.  Why should you
+spent costly time on realizing an object, when the data on the object is
+never (or not yet) used?  In interactive programs, postponed realization
+may boost start-up: the realization of objects is triggered by the use,
+so spread over time.
+
+Author: Mark Overmeer <Mark@Overmeer.net>
+WWW: http://search.cpan.org/search?dist=Object-Realize-Later
