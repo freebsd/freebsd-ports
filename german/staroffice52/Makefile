@@ -110,7 +110,7 @@ do-install:
 		${ECHO} Bitte schicken Sie ein Mail mit dem Fehlerbeschrieb an mb@imp.ch. Danke ; \
 		${ECHO} ; \
 		${FALSE} ; \
-	endif
+	fi
 .endif
 
 post-install:
