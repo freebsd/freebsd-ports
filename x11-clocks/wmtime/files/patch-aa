@@ -1,0 +1,11 @@
+--- wmtime.c	Wed May 20 06:34:53 1998
++++ wmtime.c2	Sat Nov 28 18:44:59 1998
+@@ -89,7 +89,7 @@
+ char	*ProgName;
+ int		digital = 0;
+ char	day_of_week[7][3] = { "SU", "MO", "TU", "WE", "TH", "FR", "SA" };
+-char	mon_of_year[12][4] = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOW", "DEC" };
++char	mon_of_year[12][4] = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+ 
+ /* functions */
+ void usage(void);
