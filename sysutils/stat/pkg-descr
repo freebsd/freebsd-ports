@@ -1,0 +1,13 @@
+Stat prints out the contents of an inode as they appear to
+stat(2) in a human-readable format.
+
+Here is a sample output from stat:
+
+$ stat /
+  File: "/"
+  Size: 512     Allocated Blocks: 4     Filetype: Directory
+  Mode: (0755/drwxr-xr-x)       Uid: (0/root) Gid: (0/wheel)
+Device: 1024    Inode: 2        Links: 17
+Access: Sun Feb 16 14:50:39 1997
+Modify: Tue Feb  4 16:59:09 1997
+Change: Tue Feb  4 16:59:09 1997
