@@ -1,0 +1,25 @@
+bin/nmbquery
+bin/smbcp
+bin/smbdu
+bin/smblistshare
+lib/%%PYTHON_VERSION%%/site-packages/nmb.py
+lib/%%PYTHON_VERSION%%/site-packages/smb.py
+share/py-smb/NT4_PlainPassword.reg
+share/py-smb/Win2000_PlainPassword.reg
+share/py-smb/Win95_PlainPassword.reg
+share/py-smb/Win98_PlainPassword.reg
+share/py-smb/WinME_PlainPassword.reg
+@dirrm share/py-smb
+%%PORTDOCS%%share/doc/py-smb/README
+%%PORTDOCS%%share/doc/py-smb/index.html
+%%PORTDOCS%%share/doc/py-smb/nmb.html
+%%PORTDOCS%%share/doc/py-smb/nmb_nbhostentry.html
+%%PORTDOCS%%share/doc/py-smb/nmb_nbnodeentry.html
+%%PORTDOCS%%share/doc/py-smb/nmb_netbios.html
+%%PORTDOCS%%share/doc/py-smb/nmb_netbiossession.html
+%%PORTDOCS%%share/doc/py-smb/return.gif
+%%PORTDOCS%%share/doc/py-smb/smb.html
+%%PORTDOCS%%share/doc/py-smb/smb_shareddevice.html
+%%PORTDOCS%%share/doc/py-smb/smb_sharedfile.html
+%%PORTDOCS%%share/doc/py-smb/smb_smb.html
+%%PORTDOCS%%@dirrm share/doc/py-smb

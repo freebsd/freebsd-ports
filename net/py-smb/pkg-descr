@@ -1,0 +1,12 @@
+pysmb is an experimental SMB/CIFS library written in Python.
+The library has been tested to be able to connect Win 98 SE and Samba 2.0
+machines, and upload/download files to and from these machines. Unfortunately,
+some users have reported that pysmb is unable to work with Windows 2000 and
+Windows XP.
+
+Modules
+    smb - Contains all the SMB operations and constants 
+    nmb - Contains some of the NetBIOS over TCP/IP operations which is
+          neccessary for the smb module to operate. 
+
+WWW: http://miketeo.net/projects/pysmb/
