@@ -207,6 +207,7 @@
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += scotty
+    SUBDIR += scotty-current
     SUBDIR += sendfile
     SUBDIR += sharity-light
     SUBDIR += slirp
