@@ -7,6 +7,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cwru.edu/pub/bash/
 
