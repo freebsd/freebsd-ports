@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-$
 DISTNAME=	src
 DIST_SUBDIR=	unison
 
-MAINTAINER=	Dan Pelleg <dpelleg+unison@cs.cmu.edu>
+MAINTAINER=	dpelleg+unison@cs.cmu.edu
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
