@@ -702,6 +702,7 @@
     SUBDIR += pth
     SUBDIR += ptl
     SUBDIR += ptypes
+    SUBDIR += publib
     SUBDIR += py-ansistyle
     SUBDIR += py-ciphon
     SUBDIR += py-coro
