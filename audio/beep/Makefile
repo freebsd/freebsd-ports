@@ -20,4 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	i386
 
+PLIST_FILES=	bin/beep
+
 .include <bsd.port.mk>
