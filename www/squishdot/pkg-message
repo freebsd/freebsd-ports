@@ -1,0 +1,14 @@
+Squishdot
+
+	To complete the installation of Squishdot:
+
+	- Restart Zope.  This may be done from the Zope Control Panel.
+
+	- Verify that the Squishdot product loaded properly by examining it
+	  in Control_Panel/Products.
+
+	You may now create a "Squishdot Site" object.  For further
+	installation and troubleshooting instructions, see:
+
+	  http://squishdot.org/Documentation
+
