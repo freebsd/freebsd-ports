@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 10 02:15:34 2003
++++ Makefile.in	Sat May 10 02:15:43 2003
+@@ -7,7 +7,7 @@
+ CPPFLAGS    = @CPPFLAGS@   
+ LDFLAGS     = @LDFLAGS@
+ LIBS        = @LIBS@  
+-DEFS        = -D_BSD_SOURCE -D__BSD_SOURCE -D__FAVOR_BSD -DHAVE_NET_ETHERNET_H -DLIBNET_LIL_ENDIAN
++DEFS        = -D_BSD_SOURCE -D__BSD_SOURCE -D__FAVOR_BSD -DHAVE_NET_ETHERNET_H
+ INSTALL     = @INSTALL@
+ 
+ prefix      = @prefix@

@@ -1,5 +1,5 @@
---- configure.orig	Wed Apr 23 15:02:33 2003
-+++ configure	Wed Apr 23 15:08:08 2003
+--- configure.orig	Wed Apr 23 20:24:51 2003
++++ configure	Sat May 10 02:19:00 2003
 @@ -252,7 +252,7 @@
  #
  # Initializations.
@@ -42,11 +42,10 @@
      CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
    else
      CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
-@@ -1430,17 +1430,6 @@
- echo "$as_me: WARNING: Your OS seems to be officially unsupported yet" >&2;}
+@@ -1443,17 +1443,6 @@
  	;;
  esac
--
+ 
 -
 -################
 -# Setup prefix #
@@ -57,6 +56,16 @@
 -   prefix="/usr/local"
 -   fi
 -
- 
+-
  #######################
  # Checks for compiler #
+ #######################
+@@ -5354,7 +5343,7 @@
+ O.S. .......... : `uname -rs` (`uname -n`)
+ COMPILER ...... : ${CC}
+ CFLAGS ........ : ${CFLAGS}
+-DEFINES ....... : -D_BSD_SOURCE -D__BSD_SOURCE -D__FAVOR_BSD -DHAVE_NET_ETHERNET_H -DLIBNET_LIL_ENDIAN
++DEFINES ....... : -D_BSD_SOURCE -D__BSD_SOURCE -D__FAVOR_BSD -DHAVE_NET_ETHERNET_H
+ CPPFLAGS ...... : ${CPPFLAGS}
+ LDFLAGS ....... : ${LDFLAGS}
+ LIBS .......... : ${LIBS}
