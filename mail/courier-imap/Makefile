@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.1
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -30,8 +30,11 @@ USE_GMAKE=	YES
 # WITH_VPOPMAIL:		Build in vpopmail support
 # WITH_MYSQL:			Build in mysql support
 # WITH_POSTGRESQL:		Build in postgresql support
-# WITH_LDAP:			Build in ldap support with openldap 2.x
+# WITH_LDAP:			Build in ldap support with openldap 2.1
+# WITH_LDAP21:			Build in ldap support with openldap 2.1
+# WITH_LDAP20:			Build in ldap support with openldap 2.0
 # WITH_LDAP1:			Build in ldap support with openldap 1.x
+# WITH_FAM:			Build in fam support for IDLE command
 #
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
@@ -65,14 +68,21 @@ CONFIGURE_ARGS+= --with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 .endif
 
-.if !defined(WITH_LDAP) && !defined(WITH_LDAP1)
+.if defined(WITH_LDAP)
+WITH_LDAP21=	yes
+.endif
+
+.if !defined(WITH_LDAP1) && !defined(WITH_LDAP20) && !defined(WITH_LDAP21)
 CONFIGURE_ARGS+= --without-authldap
 PLIST_SUB+=	LDAPFLAG="@comment "
 .else
 CONFIGURE_ARGS+= --with-authldap
 PLIST_SUB+=	LDAPFLAG=""
 
-.if defined(WITH_LDAP)
+.if defined(WITH_LDAP21)
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21 \
+		lber.2:${PORTSDIR}/net/openldap21
+.elseif defined(WITH_LDAP20)
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
 		lber.2:${PORTSDIR}/net/openldap20
 .else
@@ -85,6 +95,9 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
 CONFIGURE_ARGS+= --without-authmysql
 PLIST_SUB+=	MYSQLFLAG="@comment "
 .else
+CONFIGURE_ARGS+=--with-authmysql \
+		--with-mysql-libs=${LOCALBASE}/lib/mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 PLIST_SUB+=	MYSQLFLAG=""
 .endif
@@ -108,6 +121,12 @@ CONFIGURE_ARGS+= --without-authpam
 CONFIGURE_ARGS+= --without-authcram
 .else
 CONFIGURE_ARGS+= --with-authcram
+.endif
+
+.if defined(WITH_FAM)
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
 MAN1=		couriertcpd.1 maildirmake.1
