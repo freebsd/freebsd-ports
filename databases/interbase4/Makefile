@@ -9,7 +9,7 @@
 DISTNAME=	IB_4.0_FreeBSD
 PKGNAME=	interbase-4.0
 CATEGORIES=	databases
-MASTER_SITES=	http://iblinux.rios.co.jp/dloadfb/
+MASTER_SITES=	http://iblinux.rios.co.jp/intl/dloadfb/
 
 MAINTAINER=	berend@pobox.com
 
@@ -27,7 +27,7 @@ ARCHIVE=	${WRKSRC}/interbase.tar
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
 		${ECHO_MSG} "Sorry, this package cannot be fetched automagically."; \
-		${ECHO_MSG} "Point your browser to http://iblinux.rios.co.jp/dloadfb."; \
+		${ECHO_MSG} "Point your browser to http://iblinux.rios.co.jp/intl/dloadfb/."; \
 		${ECHO_MSG} "And put the package in ${DISTDIR}."; \
 		exit 1; \
 	fi
