@@ -3,17 +3,18 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.19 1998/11/16 09:45:23 markm Exp $
+# $Id: Makefile,v 1.20 1998/11/17 04:12:10 asami Exp $
 #
 
 DISTNAME=	exim-2.053
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/Testing/
+MASTER_SITES=	ftp://ftp.quite.net/pub/exim/Testing/ \
+		http://www.exim.org/ftp/Testing/ \
+		ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/Testing/ \
+		ftp://ftp.is.co.za/networking/mail/transport/exim/Testing/
 DISTFILES=	exim-testing-2.053.tar.gz exim-texinfo-2.00.tar.gz
 
 MAINTAINER=	axl@iafrica.com
-
-BROKEN=		fetch
 
 USE_PERL5=	YES
 
