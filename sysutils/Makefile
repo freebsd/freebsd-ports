@@ -24,6 +24,7 @@
     SUBDIR += copytape
     SUBDIR += cpbk
     SUBDIR += cpdup
+    SUBDIR += cpuburn
     SUBDIR += crashme
     SUBDIR += cronolog
     SUBDIR += cvsweb-converters

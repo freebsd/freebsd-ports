@@ -1,0 +1,8 @@
+bin/burnBX
+bin/burnK6
+bin/burnMMX
+bin/burnP5
+bin/burnP6
+%%PORTDOCS%%share/doc/cpuburn/README
+%%PORTDOCS%%share/doc/cpuburn/Design
+%%PORTDOCS%%@dirrm share/doc/cpuburn
