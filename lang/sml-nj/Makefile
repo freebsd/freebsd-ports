@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.0.6
+PORTVERSION=	110.0.7
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.6/ \
-		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.6/ \
-		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.6/
-DISTFILES=	110-bin.x86-unix.tar.Z 110-cm.tar.Z 110-cml.tar.Z \
-		110-config.tar.Z 110-eXene.tar.Z \
-		110-ml-burg.tar.Z 110-ml-lex.tar.Z \
-		110-ml-yacc.tar.Z 110-runtime.tar.Z \
-		110-smlnj-c.tar.Z 110-smlnj-lib.tar.Z
-EXTRACT_ONLY=	110-config.tar.Z
+MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/ \
+		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.7/ \
+		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.7/
+DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
+		config.tar.Z eXene.tar.Z \
+		ml-burg.tar.Z ml-lex.tar.Z \
+		ml-yacc.tar.Z runtime.tar.Z \
+		smlnj-c.tar.Z smlnj-lib.tar.Z
+EXTRACT_ONLY=	config.tar.Z
 
 MAINTAINER=	jkoshy@freebsd.org
 
@@ -27,7 +27,7 @@ MAINTAINER=	jkoshy@freebsd.org
 # Mirror sites that keep files around in gzipped format
 # 	ftp://flint.cs.yale.edu/pub/smlnj/release/110.0.6/
 
-DIST_SUBDIR=	sml-nj
+DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 

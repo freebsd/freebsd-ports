@@ -423,6 +423,8 @@ lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/format-sig.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/format.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/getopt-sig.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/getopt.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/graph-scc-sig.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/graph-scc.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/hash-key-sig.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/hash-string.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/hash-table-fn.sml.bin
@@ -432,6 +434,7 @@ lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/hash-table.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/hash2-table-fn.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-binary-map.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-binary-set.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-hash-table.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-inf-sig.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-inf.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/int-list-map.sml.bin
@@ -485,6 +488,9 @@ lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/splaytree.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/time-limit.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/uref-sig.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/uref.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/word-hash-table.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/word-redblack-map.sml.bin
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/word-redblack-set.sml.bin
 lib/sml-nj/src/smlnj-lib/Util/smlnj-lib.cm
 @dirrm lib/sml-nj/bin/.heap
 @dirrm lib/sml-nj/bin/.run
