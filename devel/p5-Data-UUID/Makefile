@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-UUID
-PORTVERSION=	0.06
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -18,7 +18,6 @@ COMMENT=	Module for generating Globally/Universally Unique Identifiers (GUIDs/UU
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Data::UUID.3
 
 .include <bsd.port.mk>
