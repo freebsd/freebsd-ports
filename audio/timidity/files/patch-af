@@ -25,29 +25,3 @@
   /* Win32 on Intel machines */
   #ifdef __WIN32__
   #  define LITTLE_ENDIAN
-***************
-*** 254,266 ****
---- 270,292 ----
-  #ifdef LITTLE_ENDIAN
-  #define LE_SHORT(x) x
-  #define LE_LONG(x) x
-+ #if defined(__FreeBSD__) && !defined(__alpha__)
-+ #define BE_SHORT(x) __byte_swap_word(x)
-+ #define BE_LONG(x) __byte_swap_long(x)
-+ #else
-  #define BE_SHORT(x) XCHG_SHORT(x)
-  #define BE_LONG(x) XCHG_LONG(x)
-+ #endif
-  #else
-  #define BE_SHORT(x) x
-  #define BE_LONG(x) x
-+ #ifdef __FreeBSD__
-+ #define LE_SHORT(x) __byte_swap_word(x)
-+ #define LE_LONG(x) __byte_swap_long(x)
-+ #else
-  #define LE_SHORT(x) XCHG_SHORT(x)
-  #define LE_LONG(x) XCHG_LONG(x)
-+ #endif
-  #endif
-  
-  #define MAX_AMPLIFICATION 800
