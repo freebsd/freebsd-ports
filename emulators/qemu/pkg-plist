@@ -7,5 +7,6 @@ share/qemu/bios.bin
 share/qemu/linux_boot.bin
 share/qemu/vgabios.bin
 share/qemu/vgabios-cirrus.bin
+share/qemu/ppc_rom.bin
 @dirrm share/qemu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
