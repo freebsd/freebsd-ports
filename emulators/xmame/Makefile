@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmame
-PORTVERSION=	0.37b11.1
+PORTVERSION=	0.37b11.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
