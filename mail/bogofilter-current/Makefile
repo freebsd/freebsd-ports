@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.13.6.3
+PORTVERSION=	0.13.7.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb4"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1
+MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 \
+		bogol.1 bogotune.1
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
@@ -38,6 +39,7 @@ post-install::
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/programmer
 	@${MKDIR} ${DOCSDIR}/tuning
+	@${MKDIR} ${DOCSDIR}/tuning/sample.output
 	@${MKDIR} ${DOCSDIR}/xml
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
 	TODO UPGRADE \
@@ -47,21 +49,28 @@ post-install::
 	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in README setR tuning.R
-	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
+.for i in README.bogotune
+	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
 .endfor
-.for i in bogolex.sh distrib mkdb sizes tuning.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
+.for i in bogolex.sh bogol bogotune
+	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
+.endfor
+.for i in bogol.1 bogotune.1
+	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${MAN1PREFIX}/man/man1/${i}
+.endfor
+.for i in tune.nochange tune.normal tune.verbose
+	${INSTALL_SCRIPT} ${WRKSRC}/tuning/sample.output/${i} \
+		${DOCSDIR}/tuning/sample.output/${i}
 .endfor
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
 		contrib/randomtrain contrib/scramble \
 		contrib/mime.get.rfc822 contrib/printmaildir.pl
-	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/contrib
+	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .for i in contrib/README.randomtrain contrib/dot-qmail-bogofilter-default
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/contrib
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_MAN} ${WRKSRC}/doc/programmer/README.* ${DOCSDIR}/programmer
