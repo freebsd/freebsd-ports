@@ -15,7 +15,7 @@ MAINTAINER=	thierry@pompo.net
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2 \
-		${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4
+		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
 
 IS_INTERACTIVE=	'need to build php4 with XML support.'
 NO_BUILD=	yes
