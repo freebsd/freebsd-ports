@@ -1,0 +1,7 @@
+bin/xstow
+bin/xstow-static
+bin/xstow-stow
+share/doc/xstow/xstow.html
+share/doc/xstow/xstow.ini
+share/doc/xstow/xstow.ini.html
+@dirrm share/doc/xstow
