@@ -3,7 +3,7 @@ include/Fnlib.h
 include/Fnlib_types.h
 lib/libFnlib.a
 lib/libFnlib.so
-lib/libFnlib.so.0.4
+lib/libFnlib.so.0.5
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/fnlib_fonts/e/fontinfo
