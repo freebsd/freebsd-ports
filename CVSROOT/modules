@@ -2065,6 +2065,7 @@ head		src/usr.bin/head
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
 hello		ports/misc/hello
+help2man	ports/misc/help2man
 heretic		ports/games/heretic
 heroes		ports/games/heroes
 hesiod		ports/net/hesiod
