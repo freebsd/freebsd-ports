@@ -1,6 +1,15 @@
---- lib/os.c.org	Sat Jul  6 14:18:18 1996
-+++ lib/os.c	Sat Aug 26 23:38:18 1995
-@@ -70,7 +70,11 @@
+--- lib/os.c.orig	Fri Oct 23 06:01:10 1992
++++ lib/os.c	Mon Jan  6 17:47:01 1997
+@@ -26,6 +26,8 @@
+ #include <sys/acct.h>
+ #include <time.h>
+ #include <packet.h>
++#include <sys/socket.h>
++#include <netdb.h>
+ 
+ #ifdef HAVE_UTMPX_H
+ #include <utmpx.h>
+@@ -70,8 +72,12 @@
  
  /* Where the utmp file is located. */
  #ifndef HAVE_GETUTENT
@@ -8,7 +17,46 @@
 +#define UTMP_FILE "/var/run/utmp"
 +#else
  #define UTMP_FILE "/etc/utmp"
-+#endif
  #endif
++#endif
  
  /* A non-null value is the address of the utmp entry which contains the
+    information for the user using the console. */
+@@ -485,6 +491,7 @@
+ 
+   UTMP **result;
+   int result_size = 0;
++  struct hostent *hp; u_long l;
+ 
+ #ifndef HAVE_GETUTENT
+   file = open (UTMP_FILE, O_RDONLY);
+@@ -529,6 +536,19 @@
+ 	continue;
+ #endif /* sun */
+ 
++#ifdef __FreeBSD__
++      if (UT(entry, ut_host)[0]) {
++          if (isdigit(UT(entry, ut_host)[0]) && 
++              (long)(l = inet_addr(UT(entry, ut_host))) != -1 &&
++              (hp = gethostbyaddr((char *)&l, sizeof(l), AF_INET))) {
++              if (hp->h_name) {
++                  strncpy(UT(entry, ut_host), hp->h_name, UT_HOSTSIZE);
++                  UT(entry, ut_host)[UT_HOSTSIZE - 1] = '\0';
++              } /* valid hostname */
++          }  /* IP addr */
++      } /* UTMP */
++#endif
++
+       for (i = 0; result[i]; i++)
+ 	{
+ 	  /* If the same person is logged in more than once, we are
+@@ -552,6 +572,9 @@
+ 	     finding the tty location.  `v0' is what X window terminals
+ 	     use for the console login window. */
+ 	  if ((strcmp (result[i]->ut_line, "console") == 0) ||
++#ifdef  __FreeBSD__
++	      (strstr (result[i]->ut_line, "ttyv") != NULL) ||
++#endif
+ 	      (strcmp (result[i]->ut_line, "v0") == 0))
+ 	    {
+ 	      console_user = result[i];
