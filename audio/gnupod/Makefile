@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.96
+PORTVERSION=	0.98
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://savannah.gnu.org/download/gnupod/ \
 		http://blinkenlights.ch/gnupod-dist/stable/
@@ -39,8 +39,10 @@ CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/gnupodrc.example ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnutunesdb.example ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/mkspl.html ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.texi ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/fdl.texi ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/version.texi ${DOCSDIR}
