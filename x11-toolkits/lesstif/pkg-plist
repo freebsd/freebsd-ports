@@ -325,7 +325,8 @@ lib/libMrm.so
 lib/libMrm.so.1
 lib/libMrm.la
 lib/X11/app-defaults/Mwm
-lib/X11/config/Imake.tmpl
+@comment lib/X11/config/Imake.tmpl <-- needs additional consideration, as it
+@comment tends to broke Imake included with XFree4.0!!!
 lib/X11/config/Motif.rules
 lib/X11/config/Motif.tmpl
 lib/X11/mwm/README
