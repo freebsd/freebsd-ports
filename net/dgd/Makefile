@@ -1,17 +1,17 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.0.9
+# Version required:	1.0.37
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id$
+# $Id: Makefile,v 1.35 1996/02/08 00:30:29 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.37
-DISTFILES=	${DISTNAME}.tar.gz
-#PATCHFILES=	1.0.9-1.0.9.1.gz
-MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
-#PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
 CATEGORIES=	net lang
+MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
+
+#PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
+#PATCHFILES=	1.0.9-1.0.9.1.gz
 
 MAINTAINER=	adam@veda.is
 
