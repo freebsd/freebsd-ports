@@ -57,11 +57,8 @@
     SUBDIR += gyroscope
     SUBDIR += imwheel
     SUBDIR += kb2mb2
-    SUBDIR += kde2
     SUBDIR += kde3
-    SUBDIR += kdebase2
     SUBDIR += kdebase3
-    SUBDIR += kdelibs2
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
     SUBDIR += kgamma

@@ -49,7 +49,6 @@
     SUBDIR += jis2gb
     SUBDIR += joe
     SUBDIR += kcfonts
-    SUBDIR += kde2-i18n
     SUBDIR += kde3-i18n-zh_CN
     SUBDIR += kde3-i18n-zh_TW
     SUBDIR += libtabe
