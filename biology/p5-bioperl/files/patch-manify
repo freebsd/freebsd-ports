@@ -1,0 +1,29 @@
+--- Makefile.PL.orig	Sat Jan 10 00:11:42 2004
++++ Makefile.PL	Sat Jan 10 00:12:15 2004
+@@ -358,16 +358,16 @@
+ );
+ 
+ 
+-sub MY::manifypods {
+-  my $self = shift;
+-  #print STDERR "In manifypods moment\n";
+-  if( 1 ) {
+-    return "\nmanifypods : pure_all\n\t$self->{NOECHO}\$(NOOP)\n"
+-  }
+-  else {
+-    return $self->SUPER::manifypods(@_);
+-  }
+-}
++#sub MY::manifypods {
++#  my $self = shift;
++#  #print STDERR "In manifypods moment\n";
++#  if( 1 ) {
++#    return "\nmanifypods : pure_all\n\t$self->{NOECHO}\$(NOOP)\n"
++#  }
++#  else {
++#    return $self->SUPER::manifypods(@_);
++#  }
++#}
+ 
+ sub MY::clean {
+   package MY;

@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	bioperl
-PORTVERSION=	0.7.2
+PORTVERSION=	1.4
 CATEGORIES=	biology perl5
-MASTER_SITES=	ftp://bioperl.org/pub/DIST/ \
-		http://bioperl.org/Core/Latest/ \
+MASTER_SITES=	http://bioperl.org/DIST/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bio
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of Perl modules for bioinformatics
 
 # These are all run-time dependencies, but listing them in ${BUILD_DEPENDS}
@@ -29,181 +27,603 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/Node.pm:${PORTSDIR}/textproc/p5-XML-Node \
 		${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
+		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+		${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
+		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
+		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/Text/Shellwords.pm:${PORTSDIR}/textproc/p5-Text-Shellwords
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-.if defined(WITH_CORBA)
-WITH_CORBA_CLIENT=	YES
-WITH_CORBA_SERVER=	YES
-.endif
-
-EXT_VERSION=	0.6
-CORBA_CLIENT_VERSION=	0.2
-CORBA_SERVER_VERSION=	0.2
-GUI_VERSION=	0.7
-DISTFILES+=	bioperl-ext-${EXT_VERSION}${EXTRACT_SUFX}
-EXT_WRKSRC=	${WRKDIR}/bioperl-ext-06/Bio/Ext/Align
-
-.if defined(WITH_CORBA_CLIENT)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-.endif
-.if defined(WITH_CORBA_SERVER)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-.endif
-.if defined(WITH_GUI)
-RUN_DEPENDS+=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk
-.endif
-
-.for ext in CORBA_CLIENT CORBA_SERVER GUI
-.if defined(WITH_${ext})
-EXTLIST+=	${ext}
-DISTFILES+=	bioperl-${ext:L:S/_/-/}-${${ext}_VERSION}${EXTRACT_SUFX}
-${ext}_WRKSRC=	${WRKDIR}/bioperl-${ext:L:S/_/-/}
-PLIST_${ext}=	""
-.else
-PLIST_${ext}=	"@comment "
-.endif
-PLIST_SUB+=	PLIST_${ext}=${PLIST_${ext}}
-.endfor
-
-MAN3=		Bio::AlignIO.3 Bio::AlignIO::bl2seq.3 \
-		Bio::AlignIO::clustalw.3 Bio::AlignIO::fasta.3 \
-		Bio::AlignIO::mase.3 Bio::AlignIO::msf.3 Bio::AlignIO::pfam.3 \
-		Bio::AlignIO::prodom.3 Bio::AlignIO::selex.3 \
-		Bio::AlignIO::stockholm.3 Bio::Annotation.3 \
-		Bio::Annotation::Comment.3 Bio::Annotation::DBLink.3 \
-		Bio::Annotation::Reference.3 Bio::DB::Ace.3 Bio::DB::GDB.3 \
-		Bio::DB::GenBank.3 Bio::DB::GenPept.3 Bio::DB::NCBIHelper.3 \
-		Bio::DB::RandomAccessI.3 Bio::DB::SeqI.3 Bio::DB::SwissProt.3 \
-		Bio::DB::UpdateableSeqI.3 Bio::DB::WebDBSeqI.3 \
-		Bio::DBLinkContainerI.3 Bio::Factory::DriverFactory.3 \
+MAN3=		Bio::Align::AlignI.3 \
+		Bio::Align::DNAStatistics.3  \
+		Bio::Align::PairwiseStatistics.3 \
+		Bio::Align::StatisticsI.3 \
+		Bio::Align::Utilities.3 \
+		Bio::AlignIO.3 \
+		Bio::AlignIO::bl2seq.3 \
+		Bio::AlignIO::clustalw.3 \
+  		Bio::AlignIO::emboss.3 \
+		Bio::AlignIO::fasta.3 \
+		Bio::AlignIO::mase.3 \
+  		Bio::AlignIO::mega.3 \
+  		Bio::AlignIO::meme.3 \
+		Bio::AlignIO::msf.3 \
+  		Bio::AlignIO::nexus.3 \
+		Bio::AlignIO::pfam.3 \
+  		Bio::AlignIO::phylip.3 \
+		Bio::AlignIO::prodom.3 \
+  		Bio::AlignIO::psi.3 \
+		Bio::AlignIO::selex.3 \
+		Bio::AlignIO::stockholm.3 \
+  		Bio::AnalysisI.3 \
+  		Bio::AnalysisParserI.3 \
+  		Bio::AnalysisResultI.3 \
+  		Bio::AnnotatableI.3 \
+  		Bio::Annotation::AnnotationFactory.3 \
+  		Bio::Annotation::Collection.3 \
+		Bio::Annotation::Comment.3 \
+		Bio::Annotation::DBLink.3 \
+  		Bio::Annotation::OntologyTerm.3 \
+		Bio::Annotation::Reference.3 \
+  		Bio::Annotation::SimpleValue.3 \
+  		Bio::Annotation::StructuredValue.3 \
+  		Bio::Annotation::TypeManager.3 \
+		Bio::AnnotationCollectionI.3 \
+		Bio::AnnotationI.3 \
+		Bio::Assembly::Contig.3 \
+		Bio::Assembly::ContigAnalysis.3 \
+		Bio::Assembly::IO.3 \
+		Bio::Assembly::IO::ace.3 \
+		Bio::Assembly::IO::phrap.3 \
+		Bio::Assembly::Scaffold.3 \
+		Bio::Assembly::ScaffoldI.3 \
+		Bio::Biblio.3 \
+		Bio::Biblio::Article.3 \
+		Bio::Biblio::BiblioBase.3 \
+		Bio::Biblio::Book.3 \
+		Bio::Biblio::BookArticle.3 \
+		Bio::Biblio::IO.3 \
+		Bio::Biblio::IO::medline2ref.3 \
+		Bio::Biblio::IO::medlinexml.3 \
+		Bio::Biblio::IO::pubmed2ref.3 \
+		Bio::Biblio::IO::pubmedxml.3 \
+		Bio::Biblio::Journal.3 \
+		Bio::Biblio::JournalArticle.3 \
+		Bio::Biblio::MedlineArticle.3 \
+		Bio::Biblio::MedlineBook.3 \
+		Bio::Biblio::MedlineBookArticle.3 \
+		Bio::Biblio::MedlineJournal.3 \
+		Bio::Biblio::MedlineJournalArticle.3 \
+		Bio::Biblio::Organisation.3 \
+		Bio::Biblio::Patent.3 \
+		Bio::Biblio::Person.3 \
+		Bio::Biblio::Proceeding.3 \
+		Bio::Biblio::Provider.3 \
+		Bio::Biblio::PubmedArticle.3 \
+		Bio::Biblio::PubmedBookArticle.3 \
+		Bio::Biblio::PubmedJournalArticle.3 \
+		Bio::Biblio::Ref.3 \
+		Bio::Biblio::Service.3 \
+		Bio::Biblio::TechReport.3 \
+		Bio::Biblio::Thesis.3 \
+		Bio::Biblio::WebResource.3 \
+		Bio::Cluster::ClusterFactory.3 \
+		Bio::Cluster::FamilyI.3 \
+		Bio::Cluster::SequenceFamily.3 \
+		Bio::Cluster::UniGene.3 \
+		Bio::Cluster::UniGeneI.3 \
+		Bio::ClusterI.3 \
+		Bio::ClusterIO.3 \
+		Bio::ClusterIO::dbsnp.3 \
+		Bio::ClusterIO::unigene.3 \
+		Bio::Coordinate::Chain.3 \
+		Bio::Coordinate::Collection.3 \
+		Bio::Coordinate::ExtrapolatingPair.3 \
+		Bio::Coordinate::GeneMapper.3 \
+		Bio::Coordinate::Graph.3 \
+		Bio::Coordinate::MapperI.3 \
+		Bio::Coordinate::Pair.3 \
+		Bio::Coordinate::Result.3 \
+		Bio::Coordinate::Result::Gap.3 \
+		Bio::Coordinate::Result::Match.3 \
+		Bio::Coordinate::ResultI.3 \
+		Bio::Coordinate::Utils.3 \
+		Bio::DB::Ace.3 \
+		Bio::DB::Biblio::biofetch.3 \
+		Bio::DB::Biblio::soap.3 \
+		Bio::DB::BiblioI.3 \
+		Bio::DB::BioFetch.3 \
+		Bio::DB::DBFetch.3 \
+		Bio::DB::EMBL.3 \
+		Bio::DB::Failover.3 \
+		Bio::DB::Fasta.3 \
+		Bio::DB::FileCache.3 \
+		Bio::DB::Flat.3 \
+		Bio::DB::Flat::BDB.3 \
+		Bio::DB::Flat::BDB::embl.3 \
+		Bio::DB::Flat::BDB::fasta.3 \
+		Bio::DB::GDB.3 \
+		Bio::DB::GFF.3 \
+		Bio::DB::GFF::Adaptor::ace.3 \
+		Bio::DB::GFF::Adaptor::biofetch.3 \
+		Bio::DB::GFF::Adaptor::dbi.3 \
+		Bio::DB::GFF::Adaptor::dbi::caching_handle.3 \
+		Bio::DB::GFF::Adaptor::dbi::iterator.3 \
+		Bio::DB::GFF::Adaptor::dbi::mysql.3 \
+		Bio::DB::GFF::Adaptor::dbi::mysqlace.3 \
+		Bio::DB::GFF::Adaptor::dbi::mysqlopt.3 \
+		Bio::DB::GFF::Adaptor::dbi::oracle.3 \
+		Bio::DB::GFF::Adaptor::dbi::oracleace.3 \
+		Bio::DB::GFF::Adaptor::memory.3 \
+		Bio::DB::GFF::Adaptor::memory_iterator.3 \
+		Bio::DB::GFF::Aggregator.3 \
+		Bio::DB::GFF::Aggregator::alignment.3 \
+		Bio::DB::GFF::Aggregator::clone.3 \
+		Bio::DB::GFF::Aggregator::coding.3 \
+		Bio::DB::GFF::Aggregator::match.3 \
+		Bio::DB::GFF::Aggregator::none.3 \
+		Bio::DB::GFF::Aggregator::processed_transcript.3 \
+		Bio::DB::GFF::Aggregator::transcript.3 \
+		Bio::DB::GFF::Aggregator::ucsc_acembly.3 \
+		Bio::DB::GFF::Aggregator::ucsc_ensgene.3 \
+		Bio::DB::GFF::Aggregator::ucsc_genscan.3 \
+		Bio::DB::GFF::Aggregator::ucsc_refgene.3 \
+		Bio::DB::GFF::Aggregator::ucsc_sanger22.3 \
+		Bio::DB::GFF::Aggregator::ucsc_sanger22pseudo.3 \
+		Bio::DB::GFF::Aggregator::ucsc_softberry.3 \
+		Bio::DB::GFF::Aggregator::ucsc_twinscan.3 \
+		Bio::DB::GFF::Aggregator::ucsc_unigene.3 \
+		Bio::DB::GFF::Featname.3 \
+		Bio::DB::GFF::Feature.3 \
+		Bio::DB::GFF::Homol.3 \
+		Bio::DB::GFF::RelSegment.3 \
+		Bio::DB::GFF::Segment.3 \
+		Bio::DB::GFF::Typename.3 \
+		Bio::DB::GFF::Util::Binning.3 \
+		Bio::DB::GFF::Util::Rearrange.3 \
+		Bio::DB::GenBank.3 \
+		Bio::DB::GenPept.3 \
+		Bio::DB::InMemoryCache.3 \
+		Bio::DB::NCBIHelper.3 \
+		Bio::DB::Query::GenBank.3 \
+		Bio::DB::Query::WebQuery.3 \
+		Bio::DB::QueryI.3 \
+		Bio::DB::RandomAccessI.3 \
+		Bio::DB::RefSeq.3 \
+		Bio::DB::Registry.3 \
+		Bio::DB::SeqI.3 \
+		Bio::DB::SwissProt.3 \
+		Bio::DB::Universal.3 \
+		Bio::DB::UpdateableSeqI.3 \
+		Bio::DB::WebDBSeqI.3 \
+		Bio::DB::XEMBL.3 \
+		Bio::DB::XEMBLService.3 \
+		Bio::DBLinkContainerI.3 \
+		Bio::Das::FeatureTypeI.3 \
+		Bio::Das::SegmentI.3 \
+		Bio::DasI.3 \
+		Bio::DescribableI.3 \
+		Bio::Event::EventGeneratorI.3 \
+		Bio::Event::EventHandlerI.3 \
+		Bio::Expression::FeatureGroup.3 \
+		Bio::Expression::FeatureI.3 \
+		Bio::Factory::AnalysisI.3 \
+		Bio::Factory::ApplicationFactoryI.3 \
+		Bio::Factory::DriverFactory.3 \
+		Bio::Factory::FTLocationFactory.3 \
+		Bio::Factory::HitFactoryI.3 \
+		Bio::Factory::LocationFactoryI.3 \
+		Bio::Factory::MapFactoryI.3 \
+		Bio::Factory::ObjectBuilderI.3 \
+		Bio::Factory::ObjectFactory.3 \
+		Bio::Factory::ObjectFactoryI.3 \
+		Bio::Factory::ResultFactoryI.3 \
 		Bio::Factory::SeqAnalysisParserFactory.3 \
 		Bio::Factory::SeqAnalysisParserFactoryI.3 \
-		Bio::Index::Abstract.3 Bio::Index::AbstractSeq.3 \
-		Bio::Index::EMBL.3 Bio::Index::Fasta.3 Bio::Index::GenBank.3 \
-		Bio::Index::SwissPfam.3 Bio::Index::Swissprot.3 \
-		Bio::LiveSeq::AARange.3 Bio::LiveSeq::Chain.3 \
-		Bio::LiveSeq::ChainI.3 Bio::LiveSeq::DNA.3 \
-		Bio::LiveSeq::Exon.3 Bio::LiveSeq::Gene.3 \
-		Bio::LiveSeq::IO::BioPerl.3 Bio::LiveSeq::IO::Loader.3 \
-		Bio::LiveSeq::IO::SRS.3 Bio::LiveSeq::Intron.3 \
-		Bio::LiveSeq::Mutation.3 Bio::LiveSeq::Mutator.3 \
-		Bio::LiveSeq::Prim_Transcript.3 Bio::LiveSeq::Range.3 \
-		Bio::LiveSeq::Repeat_Region.3 Bio::LiveSeq::Repeat_Unit.3 \
-		Bio::LiveSeq::SeqI.3 Bio::LiveSeq::Transcript.3 \
-		Bio::LiveSeq::Translation.3 Bio::LocatableSeq.3 \
+		Bio::Factory::SequenceFactoryI.3 \
+		Bio::Factory::SequenceProcessorI.3 \
+		Bio::Factory::SequenceStreamI.3 \
+		Bio::Factory::TreeFactoryI.3 \
+		Bio::FeatureHolderI.3 \
+		Bio::Graphics.3 \
+		Bio::Graphics::Feature.3 \
+		Bio::Graphics::FeatureFile.3 \
+		Bio::Graphics::Glyph.3 \
+		Bio::Graphics::Glyph::Factory.3 \
+		Bio::Graphics::Glyph::alignment.3 \
+		Bio::Graphics::Glyph::anchored_arrow.3 \
+		Bio::Graphics::Glyph::arrow.3 \
+		Bio::Graphics::Glyph::box.3 \
+		Bio::Graphics::Glyph::cds.3 \
+		Bio::Graphics::Glyph::crossbox.3 \
+		Bio::Graphics::Glyph::diamond.3 \
+		Bio::Graphics::Glyph::dna.3 \
+		Bio::Graphics::Glyph::dot.3 \
+		Bio::Graphics::Glyph::ellipse.3 \
+		Bio::Graphics::Glyph::ex.3 \
+		Bio::Graphics::Glyph::extending_arrow.3 \
+		Bio::Graphics::Glyph::generic.3 \
+		Bio::Graphics::Glyph::graded_segments.3 \
+		Bio::Graphics::Glyph::group.3 \
+		Bio::Graphics::Glyph::heterogeneous_segments.3 \
+		Bio::Graphics::Glyph::line.3 \
+		Bio::Graphics::Glyph::oval.3 \
+		Bio::Graphics::Glyph::pinsertion.3 \
+		Bio::Graphics::Glyph::primers.3 \
+		Bio::Graphics::Glyph::processed_transcript.3 \
+		Bio::Graphics::Glyph::redgreen_box.3 \
+		Bio::Graphics::Glyph::redgreen_segment.3 \
+		Bio::Graphics::Glyph::rndrect.3 \
+		Bio::Graphics::Glyph::ruler_arrow.3 \
+		Bio::Graphics::Glyph::segmented_keyglyph.3 \
+		Bio::Graphics::Glyph::segments.3 \
+		Bio::Graphics::Glyph::span.3 \
+		Bio::Graphics::Glyph::splice_site.3 \
+		Bio::Graphics::Glyph::toomany.3 \
+		Bio::Graphics::Glyph::track.3 \
+		Bio::Graphics::Glyph::transcript.3 \
+		Bio::Graphics::Glyph::transcript2.3 \
+		Bio::Graphics::Glyph::translation.3 \
+		Bio::Graphics::Glyph::triangle.3 \
+		Bio::Graphics::Glyph::xyplot.3 \
+		Bio::Graphics::Panel.3 \
+		Bio::IdCollectionI.3 \
+		Bio::IdentifiableI.3 \
+		Bio::Index::Abstract.3 \
+		Bio::Index::AbstractSeq.3 \
+		Bio::Index::Blast.3 \
+		Bio::Index::EMBL.3 \
+		Bio::Index::Fasta.3 \
+		Bio::Index::Fastq.3 \
+		Bio::Index::GenBank.3 \
+		Bio::Index::SwissPfam.3 \
+		Bio::Index::Swissprot.3 \
+		Bio::LiveSeq::AARange.3 \
+		Bio::LiveSeq::Chain.3 \
+		Bio::LiveSeq::ChainI.3 \
+		Bio::LiveSeq::DNA.3 \
+		Bio::LiveSeq::Exon.3 \
+		Bio::LiveSeq::Gene.3 \
+		Bio::LiveSeq::IO::BioPerl.3 \
+		Bio::LiveSeq::IO::Loader.3 \
+		Bio::LiveSeq::IO::SRS.3 \
+		Bio::LiveSeq::Intron.3 \
+		Bio::LiveSeq::Mutation.3 \
+		Bio::LiveSeq::Mutator.3 \
+		Bio::LiveSeq::Prim_Transcript.3 \
+		Bio::LiveSeq::Range.3 \
+		Bio::LiveSeq::Repeat_Region.3 \
+		Bio::LiveSeq::Repeat_Unit.3 \
+		Bio::LiveSeq::SeqI.3 \
+		Bio::LiveSeq::Transcript.3 \
+		Bio::LiveSeq::Translation.3 \
+		Bio::LocatableSeq.3 \
+		Bio::Location::Atomic.3 \
 		Bio::Location::AvWithinCoordPolicy.3 \
-		Bio::Location::CoordinatePolicyI.3 Bio::Location::Fuzzy.3 \
+		Bio::Location::CoordinatePolicyI.3 \
+		Bio::Location::Fuzzy.3 \
 		Bio::Location::FuzzyLocationI.3 \
-		Bio::Location::NarrowestCoordPolicy.3 Bio::Location::Simple.3 \
-		Bio::Location::Split.3 Bio::Location::SplitLocationI.3 \
-		Bio::Location::WidestCoordPolicy.3 Bio::LocationI.3 \
-		Bio::PrimarySeq.3 Bio::PrimarySeqI.3 Bio::Range.3 \
-		Bio::RangeI.3 Bio::Root::Err.3 Bio::Root::Global.3 \
-		Bio::Root::IO.3 Bio::Root::IOManager.3 Bio::Root::Object.3 \
-		Bio::Root::RootI.3 Bio::Root::Utilities.3 Bio::Root::Vector.3 \
-		Bio::Root::Xref.3 Bio::SearchDist.3 Bio::Seq.3 \
-		Bio::Seq::LargePrimarySeq.3 Bio::Seq::LargeSeq.3 \
-		Bio::Seq::RichSeq.3 Bio::Seq::RichSeqI.3 \
-		Bio::SeqAnalysisParserI.3 Bio::SeqFeature::FeaturePair.3 \
-		Bio::SeqFeature::Gene::Exon.3 Bio::SeqFeature::Gene::ExonI.3 \
+		Bio::Location::NarrowestCoordPolicy.3 \
+		Bio::Location::Simple.3 \
+		Bio::Location::Split.3 \
+		Bio::Location::SplitLocationI.3 \
+		Bio::Location::WidestCoordPolicy.3 \
+		Bio::LocationI.3 \
+		Bio::Map::CytoMap.3 \
+		Bio::Map::CytoMarker.3 \
+		Bio::Map::CytoPosition.3 \
+		Bio::Map::LinkageMap.3 \
+		Bio::Map::LinkagePosition.3 \
+		Bio::Map::MapI.3 \
+		Bio::Map::MappableI.3 \
+		Bio::Map::Marker.3 \
+		Bio::Map::MarkerI.3 \
+		Bio::Map::Microsatellite.3 \
+		Bio::Map::OrderedPosition.3 \
+		Bio::Map::OrderedPositionWithDistance.3 \
+		Bio::Map::Position.3 \
+		Bio::Map::PositionI.3 \
+		Bio::Map::SimpleMap.3 \
+		Bio::MapIO.3 \
+		Bio::MapIO::mapmaker.3 \
+		Bio::Matrix::PhylipDist.3 \
+		Bio::Ontology::GOterm.3 \
+		Bio::Ontology::InterProTerm.3 \
+		Bio::Ontology::Ontology.3 \
+		Bio::Ontology::OntologyEngineI.3 \
+		Bio::Ontology::OntologyI.3 \
+		Bio::Ontology::OntologyStore.3 \
+		Bio::Ontology::Path.3 \
+		Bio::Ontology::PathI.3 \
+		Bio::Ontology::Relationship.3 \
+		Bio::Ontology::RelationshipFactory.3 \
+		Bio::Ontology::RelationshipI.3 \
+		Bio::Ontology::RelationshipType.3 \
+		Bio::Ontology::SimpleGOEngine.3 \
+		Bio::Ontology::SimpleOntologyEngine.3 \
+		Bio::Ontology::Term.3 \
+		Bio::Ontology::TermFactory.3 \
+		Bio::Ontology::TermI.3 \
+		Bio::OntologyIO.3 \
+		Bio::OntologyIO::Handlers::InterProHandler.3 \
+		Bio::OntologyIO::InterProParser.3 \
+		Bio::OntologyIO::dagflat.3 \
+		Bio::OntologyIO::goflat.3 \
+		Bio::OntologyIO::soflat.3 \
+		Bio::Perl.3 \
+		Bio::Phenotype::Correlate.3 \
+		Bio::Phenotype::Measure.3 \
+		Bio::Phenotype::OMIM::MiniMIMentry.3 \
+		Bio::Phenotype::OMIM::OMIMentry.3 \
+		Bio::Phenotype::OMIM::OMIMentryAllelicVariant.3 \
+		Bio::Phenotype::OMIM::OMIMparser.3 \
+		Bio::Phenotype::Phenotype.3 \
+		Bio::Phenotype::PhenotypeI.3 \
+		Bio::PrimarySeq.3 \
+		Bio::PrimarySeqI.3 \
+		Bio::Range.3 \
+		Bio::RangeI.3 \
+		Bio::Root::Err.3 \
+		Bio::Root::Exception.3 \
+		Bio::Root::Global.3 \
+		Bio::Root::HTTPget.3 \
+		Bio::Root::IO.3 \
+		Bio::Root::IOManager.3 \
+		Bio::Root::Object.3 \
+		Bio::Root::Root.3 \
+		Bio::Root::RootI.3 \
+		Bio::Root::Utilities.3 \
+		Bio::Root::Vector.3 \
+		Bio::Root::Xref.3 \
+		Bio::Search::BlastUtils.3 \
+		Bio::Search::DatabaseI.3 \
+		Bio::Search::GenericDatabase.3 \
+		Bio::Search::HSP::BlastHSP.3 \
+		Bio::Search::HSP::FastaHSP.3 \
+		Bio::Search::HSP::GenericHSP.3 \
+		Bio::Search::HSP::HMMERHSP.3 \
+		Bio::Search::HSP::HSPFactory.3 \
+		Bio::Search::HSP::HSPI.3 \
+		Bio::Search::HSP::WABAHSP.3 \
+		Bio::Search::Hit::BlastHit.3 \
+		Bio::Search::Hit::Fasta.3 \
+		Bio::Search::Hit::GenericHit.3 \
+		Bio::Search::Hit::HMMERHit.3 \
+		Bio::Search::Hit::HitFactory.3 \
+		Bio::Search::Hit::HitI.3 \
+		Bio::Search::Processor.3 \
+		Bio::Search::Result::BlastResult.3 \
+		Bio::Search::Result::GenericResult.3 \
+		Bio::Search::Result::HMMERResult.3 \
+		Bio::Search::Result::ResultFactory.3 \
+		Bio::Search::Result::ResultI.3 \
+		Bio::Search::Result::WABAResult.3 \
+		Bio::Search::SearchUtils.3 \
+		Bio::SearchDist.3 \
+		Bio::SearchIO.3 \
+		Bio::SearchIO::EventHandlerI.3 \
+		Bio::SearchIO::FastHitEventBuilder.3 \
+		Bio::SearchIO::SearchResultEventBuilder.3 \
+		Bio::SearchIO::SearchWriterI.3 \
+		Bio::SearchIO::Writer::HSPTableWriter.3 \
+		Bio::SearchIO::Writer::HTMLResultWriter.3 \
+		Bio::SearchIO::Writer::HitTableWriter.3 \
+		Bio::SearchIO::Writer::ResultTableWriter.3 \
+		Bio::SearchIO::Writer::TextResultWriter.3 \
+		Bio::SearchIO::blast.3 \
+		Bio::SearchIO::blastxml.3 \
+		Bio::SearchIO::exonerate.3 \
+  		Bio::SearchIO::fasta.3 \
+  		Bio::SearchIO::hmmer.3 \
+  		Bio::SearchIO::waba.3 \
+		Bio::Seq.3 \
+  		Bio::Seq::BaseSeqProcessor.3 \
+  		Bio::Seq::EncodedSeq.3 \
+		Bio::Seq::LargePrimarySeq.3 \
+		Bio::Seq::LargeSeq.3 \
+  		Bio::Seq::PrimaryQual.3 \
+  		Bio::Seq::PrimedSeq.3 \
+  		Bio::Seq::QualI.3 \
+		Bio::Seq::RichSeq.3 \
+		Bio::Seq::RichSeqI.3 \
+  		Bio::Seq::SeqBuilder.3 \
+  		Bio::Seq::SeqFactory.3 \
+  		Bio::Seq::SeqFastaSpeedFactory.3 \
+  		Bio::Seq::SeqWithQuality.3 \
+  		Bio::Seq::SequenceTrace.3 \
+  		Bio::Seq::TraceI.3 \
+		Bio::SeqAnalysisParserI.3 \
+  		Bio::SeqFeature::AnnotationAdaptor.3 \
+  		Bio::SeqFeature::Collection.3 \
+  		Bio::SeqFeature::CollectionI.3 \
+  		Bio::SeqFeature::Computation.3 \
+		Bio::SeqFeature::FeaturePair.3 \
+		Bio::SeqFeature::Gene::Exon.3 \
+		Bio::SeqFeature::Gene::ExonI.3 \
 		Bio::SeqFeature::Gene::GeneStructure.3 \
 		Bio::SeqFeature::Gene::GeneStructureI.3 \
+  		Bio::SeqFeature::Gene::Intron.3 \
+  		Bio::SeqFeature::Gene::NC_Feature.3 \
+  		Bio::SeqFeature::Gene::Poly_A_site.3 \
+  		Bio::SeqFeature::Gene::Promoter.3 \
 		Bio::SeqFeature::Gene::Transcript.3 \
 		Bio::SeqFeature::Gene::TranscriptI.3 \
-		Bio::SeqFeature::Generic.3 Bio::SeqFeature::Similarity.3 \
-		Bio::SeqFeature::SimilarityPair.3 Bio::SeqFeatureI.3 \
-		Bio::SeqI.3 Bio::SeqIO.3 Bio::SeqIO::FTHelper.3 \
-		Bio::SeqIO::MultiFile.3 Bio::SeqIO::ace.3 Bio::SeqIO::embl.3 \
-		Bio::SeqIO::fasta.3 Bio::SeqIO::game.3 Bio::SeqIO::gcg.3 \
-		Bio::SeqIO::genbank.3 Bio::SeqIO::largefasta.3 \
-		Bio::SeqIO::raw.3 Bio::SeqIO::scf.3 Bio::SeqIO::swiss.3 \
-		Bio::SeqUtils.3 Bio::SimpleAlign.3 Bio::Species.3 \
-		Bio::Tools::AlignFactory.3 Bio::Tools::AnalysisResult.3 \
-		Bio::Tools::BPbl2seq.3 Bio::Tools::BPlite.3 \
-		Bio::Tools::BPlite::Iteration.3 Bio::Tools::BPpsilite.3 \
-		Bio::Tools::Blast.3 Bio::Tools::Blast::HSP.3 \
+  		Bio::SeqFeature::Gene::UTR.3 \
+		Bio::SeqFeature::Generic.3 \
+  		Bio::SeqFeature::PositionProxy.3 \
+  		Bio::SeqFeature::Primer.3 \
+		Bio::SeqFeature::Similarity.3 \
+		Bio::SeqFeature::SimilarityPair.3 \
+		Bio::SeqFeatureI.3 \
+		Bio::SeqI.3 \
+		Bio::SeqIO.3 \
+		Bio::SeqIO::FTHelper.3 \
+		Bio::SeqIO::MultiFile.3 \
+  		Bio::SeqIO::abi.3 \
+		Bio::SeqIO::ace.3 \
+  		Bio::SeqIO::alf.3 \
+  		Bio::SeqIO::bsml.3 \
+  		Bio::SeqIO::chadoxml.3 \
+  		Bio::SeqIO::ctf.3 \
+		Bio::SeqIO::embl.3 \
+  		Bio::SeqIO::exp.3 \
+		Bio::SeqIO::fasta.3 \
+  		Bio::SeqIO::fastq.3 \
+		Bio::SeqIO::game.3 \
+  		Bio::SeqIO::game::seqHandler.3 \
+		Bio::SeqIO::gcg.3 \
+		Bio::SeqIO::genbank.3 \
+		Bio::SeqIO::largefasta.3 \
+  		Bio::SeqIO::locuslink.3 \
+  		Bio::SeqIO::phd.3 \
+  		Bio::SeqIO::pir.3 \
+  		Bio::SeqIO::pln.3 \
+  		Bio::SeqIO::qual.3 \
+		Bio::SeqIO::raw.3 \
+		Bio::SeqIO::scf.3 \
+		Bio::SeqIO::swiss.3 \
+  		Bio::SeqIO::ztr.3 \
+		Bio::SeqUtils.3 \
+		Bio::SimpleAlign.3 \
+		Bio::Species.3 \
+  		Bio::Structure::Atom.3 \
+  		Bio::Structure::Chain.3 \
+  		Bio::Structure::Entry.3 \
+		Bio::Structure::IO.3 \
+		Bio::Structure::IO::pdb.3 \
+		Bio::Structure::Model.3 \
+		Bio::Structure::Residue.3 \
+		Bio::Structure::SecStr::DSSP::Res.3 \
+		Bio::Structure::SecStr::STRIDE::Res.3 \
+		Bio::Structure::StructureI.3 \
+		Bio::Symbol::Alphabet.3 \
+		Bio::Symbol::AlphabetI.3 \
+		Bio::Symbol::DNAAlphabet.3 \
+		Bio::Symbol::ProteinAlphabet.3 \
+		Bio::Symbol::Symbol.3 \
+		Bio::Symbol::SymbolI.3 \
+  		Bio::Taxonomy.3 \
+  		Bio::Taxonomy::Taxon.3 \
+  		Bio::Taxonomy::Tree.3 \
+		Bio::Tools::AlignFactory.3 \
+  		Bio::Tools::Alignment::Consed.3 \
+  		Bio::Tools::Alignment::Trim.3 \
+		Bio::Tools::AnalysisResult.3 \
+		Bio::Tools::BPbl2seq.3 \
+		Bio::Tools::BPlite.3 \
+  		Bio::Tools::BPlite::HSP.3 \
+		Bio::Tools::BPlite::Iteration.3 \
+  		Bio::Tools::BPlite::Sbjct.3 \
+		Bio::Tools::BPpsilite.3 \
+		Bio::Tools::Blast.3 \
+		Bio::Tools::Blast::HSP.3 \
 		Bio::Tools::Blast::HTML.3 \
-		Bio::Tools::Blast::Run::LocalBlast.3 \
-		Bio::Tools::Blast::Run::Webblast.3 Bio::Tools::Blast::Sbjct.3 \
-		Bio::Tools::CodonTable.3 Bio::Tools::ESTScan.3 \
-		Bio::Tools::Fasta.3 Bio::Tools::GFF.3 Bio::Tools::Genscan.3 \
-		Bio::Tools::HMMER::Domain.3 Bio::Tools::HMMER::Results.3 \
-		Bio::Tools::HMMER::Set.3 Bio::Tools::IUPAC.3 \
-		Bio::Tools::MZEF.3 Bio::Tools::OddCodes.3 \
-		Bio::Tools::Prediction::Exon.3 Bio::Tools::Prediction::Gene.3 \
+		Bio::Tools::Blast::Sbjct.3 \
+		Bio::Tools::CodonTable.3 \
+  		Bio::Tools::Coil.3 \
+  		Bio::Tools::ECnumber.3 \
+  		Bio::Tools::EPCR.3 \
+		Bio::Tools::ESTScan.3 \
+  		Bio::Tools::Eponine.3 \
+  		Bio::Tools::Est2Genome.3 \
+  		Bio::Tools::FootPrinter.3 \
+		Bio::Tools::GFF.3 \
+  		Bio::Tools::Gel.3 \
+  		Bio::Tools::Genemark.3 \
+  		Bio::Tools::Genewise.3 \
+  		Bio::Tools::Genomewise.3 \
+		Bio::Tools::Genscan.3 \
+  		Bio::Tools::Grail.3 \
+		Bio::Tools::HMMER::Domain.3 \
+		Bio::Tools::HMMER::Results.3 \
+		Bio::Tools::HMMER::Set.3 \
+  		Bio::Tools::Hmmpfam.3 \
+		Bio::Tools::IUPAC.3 \
+  		Bio::Tools::Lucy.3 \
+		Bio::Tools::MZEF.3 \
+		Bio::Tools::OddCodes.3 \
+  		Bio::Tools::Phylo::Molphy.3 \
+  		Bio::Tools::Phylo::Molphy::Result.3 \
+  		Bio::Tools::Phylo::PAML.3 \
+  		Bio::Tools::Phylo::PAML::Result.3 \
+  		Bio::Tools::Phylo::Phylip::ProtDist.3 \
+		Bio::Tools::Prediction::Exon.3 \
+		Bio::Tools::Prediction::Gene.3 \
+  		Bio::Tools::Primer3.3 \
+  		Bio::Tools::Prints.3 \
+  		Bio::Tools::Profile.3 \
+  		Bio::Tools::Promoterwise.3 \
+  		Bio::Tools::Pseudowise.3 \
+  		Bio::Tools::RepeatMasker.3 \
 		Bio::Tools::RestrictionEnzyme.3 \
-		Bio::Tools::Run::Alignment::Clustalw.3 \
-		Bio::Tools::Run::Alignment::TCoffee.3 \
-		Bio::Tools::Run::StandAloneBlast.3 Bio::Tools::SeqAnal.3 \
-		Bio::Tools::SeqPattern.3 Bio::Tools::SeqStats.3 \
-		Bio::Tools::SeqWords.3 Bio::Tools::Sigcleave.3 \
-		Bio::Tools::Sim4::Exon.3 Bio::Tools::Sim4::Results.3 \
-		Bio::Tools::WWW.3 Bio::Tools::pSW.3 Bio::UnivAln.3 \
-		Bio::Variation::AAChange.3 Bio::Variation::AAReverseMutate.3 \
-		Bio::Variation::Allele.3 Bio::Variation::DNAMutation.3 \
-		Bio::Variation::IO.3 Bio::Variation::IO::flat.3 \
-		Bio::Variation::IO::xml.3 Bio::Variation::RNAChange.3 \
-		Bio::Variation::SeqDiff.3 Bio::Variation::VariantI.3 \
-		bioback.3 biodesign.3 bioperl.3 biostart.3 bptutorial.3
-.if defined(WITH_CORBA_CLIENT)
-MAN3+=		Bio::CorbaClient::PrimarySeq.3 Bio::CorbaClient::Seq.3 \
-		Bio::CorbaClient::SeqFeature.3 Bio::CorbaClient::Base.3 \
-		Bio::SeqIO::biocorba.3 Bio::DB::Biocorba.3 \
-		Bio::CorbaClient::Client.3 Bio::CorbaClient::ORB.3
-.endif
-.if defined(WITH_CORBA_SERVER)
-MAN3+=		Bio::CorbaServer::BioEnv.3 Bio::CorbaServer::AnonymousSeq.3 \
-		Bio::CorbaServer::PrimarySeq.3 Bio::CorbaServer::SeqFeature.3 \
-		Bio::CorbaServer::PrimarySeqDB.3 \
-		Bio::CorbaServer::PrimarySeqIterator.3 \
-		Bio::CorbaServer::PrimarySeqVector.3 \
-		Bio::CorbaServer::Seq.3 \
-		Bio::CorbaServer::SeqDB.3 Bio::CorbaServer::Base.3 \
-		Bio::CorbaServer::SeqFeatureIterator.3 \
-		Bio::CorbaServer::SeqFeatureVector.3 \
-		Bio::CorbaServer::Server.3
-.endif
-.if defined(WITH_GUI)
-MAN3+=		Bio::Tk::HitDisplay.3 Bio::Tk::SeqCanvas.3
-.endif
+  		Bio::Tools::Run::RemoteBlast.3 \
+		Bio::Tools::Run::StandAloneBlast.3 \
+  		Bio::Tools::Run::WrapperBase.3 \
+  		Bio::Tools::Seg.3 \
+		Bio::Tools::SeqAnal.3 \
+		Bio::Tools::SeqPattern.3 \
+		Bio::Tools::SeqStats.3 \
+		Bio::Tools::SeqWords.3 \
+		Bio::Tools::Sigcleave.3 \
+  		Bio::Tools::Signalp.3 \
+		Bio::Tools::Sim4::Exon.3 \
+		Bio::Tools::Sim4::Results.3 \
+  		Bio::Tools::Tmhmm.3 \
+		Bio::Tools::WWW.3 \
+		Bio::Tools::pSW.3 \
+  		Bio::Tree::AlleleNode.3 \
+  		Bio::Tree::Node.3 \
+		Bio::Tree::NodeI.3 \
+		Bio::Tree::NodeNHX.3 \
+		Bio::Tree::RandomFactory.3 \
+		Bio::Tree::Statistics.3 \
+		Bio::Tree::Tree.3 \
+		Bio::Tree::TreeFunctionsI.3 \
+		Bio::Tree::TreeI.3 \
+		Bio::TreeIO.3 \
+		Bio::TreeIO::TreeEventBuilder.3 \
+		Bio::TreeIO::newick.3 \
+		Bio::TreeIO::nhx.3 \
+		Bio::TreeIO::tabtree.3 \
+		Bio::UpdateableSeqI.3 \
+		Bio::Variation::AAChange.3 \
+		Bio::Variation::AAReverseMutate.3 \
+		Bio::Variation::Allele.3 \
+		Bio::Variation::DNAMutation.3 \
+		Bio::Variation::IO.3 \
+		Bio::Variation::IO::flat.3 \
+		Bio::Variation::IO::xml.3 \
+		Bio::Variation::RNAChange.3 \
+		Bio::Variation::SNP.3 \
+		Bio::Variation::SeqDiff.3 \
+		Bio::Variation::VariantI.3 \
+		bptutorial.3
 
-pre-fetch:
-.if !defined(BATCH) && (!defined(WITH_CORBA_CLIENT) || \
-    !defined(WITH_CORBA_SERVER) || !defined(WITH_GUI))
-	@ ${CAT} ${FILESDIR}/ext.msg
-.endif
-
-post-configure:
-	@ cd ${EXT_WRKSRC} && \
-	  ${SETENV} ${CONFIGURE_ENV} \
-	  ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-
-.for ext in ${EXTLIST}
-	@ cd ${${ext}_WRKSRC} && \
-	  ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.endfor
-
-post-build:
-	@ cd ${EXT_WRKSRC} && \
-	  ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-.for ext in ${EXTLIST}
-	@ cd ${${ext}_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	  ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-.endfor
-
+# now install all extra stuff (docs, examples, scripts, models)
 post-install:
-	@ cd ${EXT_WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-	  ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-.for ext in ${EXTLIST}
-	@ cd ${${ext}_WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-	  ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
+
+.for doc in AUTHORS BUGS Changes DEPRECATED FAQ INSTALL LICENSE PLATFORMS README
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
+	${CP} -R   ${WRKSRC}/doc        ${DOCSDIR}
+	${CP} -R   ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} -R   ${WRKSRC}/scripts  	${DATADIR}
+	${CP} -R   ${WRKSRC}/models   	${DATADIR}
+
+.endif
 
 .include <bsd.port.mk>
