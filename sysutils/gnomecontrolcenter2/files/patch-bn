@@ -1,39 +1,16 @@
---- control-center/Makefile.in.orig	Tue Oct  5 16:45:56 1999
-+++ control-center/Makefile.in	Wed Feb 23 13:42:28 2000
-@@ -131,7 +131,7 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
- 
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
- 
- 
- bin_PROGRAMS = gnomecc
-@@ -154,16 +154,16 @@
- 
- EXTRA_DIST = gnomecc.desktop cappletConf.sh.in $(appicon_DATA)
- 
--sysdir = $(datadir)/gnome/apps/Settings
-+sysdir = $(datadir)/apps/Settings
- sys_DATA = gnomecc.desktop
+--- control-center/Makefile.in.orig	Tue Aug  1 22:42:01 2000
++++ control-center/Makefile.in	Tue Aug  1 22:45:47 2000
+@@ -162,3 +162,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = cappletConf.sh
- 
- libcapplet_la_SOURCES =  	capplet-widget.c		capplet-widget-libs.c		capplet-widget-libs.h		$(CORBA_SRCLIST)
- 
+@@ -168,3 +168,3 @@
  
 -libcapplet_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
 +libcapplet_la_LDFLAGS = -version-info 4:0:0
  libcapplet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB) $(GNORBA_LIBS)
- 
- include_HEADERS = capplet-widget.h
-@@ -561,6 +561,7 @@
- 	    -e 's?\@GNOMEUI_LIBS\@?$(GNOMEUI_LIBS)?g' \
- 	    -e 's?\@GNOME_INCLUDEDIR\@?$(GNOME_INCLUDEDIR)?g' \
+@@ -590,2 +590,3 @@
  	    -e 's?\@ORB_LIBS\@?$(ORB_LIBS)?g' \
 +	    -e 's?\@VERSION\@?$(VERSION)?g' \
  	    < $(srcdir)/cappletConf.sh.in > cappletConf.tmp \
- 	  && mv cappletConf.tmp cappletConf.sh
- 
