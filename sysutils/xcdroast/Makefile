@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xcdroast
-PORTVERSION=	0.98.a.14
-PORTREVISION=	1
+PORTVERSION=	0.98.a.15
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/
@@ -23,7 +23,6 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	253
 
@@ -35,6 +34,17 @@ CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		xcdroast.1
+
+.if defined(WITH_GTK2)
+RUN_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS+=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+CONFIGURE_ARGS+=--enable-gtk2
+USE_GNOME=	gtk20
+.else
+CONFIGURE_ARGS+=--disable-gtk2
+USE_GNOME=	gdkpixbuf
+.endif
 
 .if defined(WITH_NONROOT)
 CONFIGURE_ARGS+=--enable-nonrootmode
