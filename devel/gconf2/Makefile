@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-db3-includes=${LOCALBASE}/include \
 		--with-html-dir=${PREFIX}/share/doc \
 		--enable-bdbbackend
