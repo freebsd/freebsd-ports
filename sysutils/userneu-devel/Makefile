@@ -7,6 +7,7 @@
 
 PORTNAME=	userneu
 PORTVERSION=	1.43
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btmdxm.mat.uni-bayreuth.de/~johannes/files/userneu/ \
 		http://home.arcor.de/fehlner/inhalt/download/
@@ -29,8 +30,9 @@ CONFLICTS=	userneu-1.*
 SCRIPTS=	userneu.pl smbrepair.pl
 MAN5=		userneu.conf.5
 MAN8=		userneu.8
-PORTDOCS=	BUGS CHANGES CREDITS REQUIREMENTS TODO \
-		doc/README doc/INSTALL doc/userneu.pod doc/userneu.conf.pod
+LDOCS1=		BUGS CHANGES CREDITS REQUIREMENTS TODO
+LDOCS2=		README INSTALL userneu.pod userneu.conf.pod
+PORTDOCS=	${LDOCS1} ${LDOCS2}
 EXAMPLES=	userlist userneu.conf.example
 
 do-install:
@@ -42,7 +44,8 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LDOCS1} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${LDOCS2} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
