@@ -276,8 +276,8 @@ www/data.default/bugzilla/css/panel.css
 @dirrm www/data.default/bugzilla/template
 @dirrm www/data.default/bugzilla/css
 @dirrm www/data.default/bugzilla
-@unexec rmdir %D/www/data.default || true
-@unexec rmdir %D/www || true
+@unexec rmdir %D/www/data.default 2>/dev/null || true
+@unexec rmdir %D/www 2>/dev/null || true
 %%PORTDOCS%%%%CONTRIB%%@dirrm share/doc/bugzilla/contrib
 %%PORTDOCS%%@dirrm share/doc/bugzilla/xml
 %%PORTDOCS%%@dirrm share/doc/bugzilla/txt
