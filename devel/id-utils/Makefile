@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	id-utils
-PORTVERSION=	3.2
+PORTVERSION=	3.2d
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	id-utils
+MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/
 
 MAINTAINER=	ports@FreeBSD.org
 
