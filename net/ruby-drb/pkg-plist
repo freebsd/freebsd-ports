@@ -9,12 +9,15 @@
 %%RUBY_SITELIBDIR%%/drb/extserv.rb
 %%RUBY_SITELIBDIR%%/drb/extservm.rb
 %%RUBY_SITELIBDIR%%/drb/http.rb
+%%RUBY_SITELIBDIR%%/drb/observer.rb
 %%RUBY_SITELIBDIR%%/drb/rinda.rb
 %%RUBY_SITELIBDIR%%/drb/timeridconv.rb
 @dirrm %%RUBY_SITELIBDIR%%/drb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dbiff.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dcdbiff.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchatc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchats.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasen.rb
@@ -36,6 +39,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/namec.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindac.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindas.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speedc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speeds.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ja/README.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb/ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
