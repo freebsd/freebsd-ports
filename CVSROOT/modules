@@ -1961,6 +1961,7 @@ frozenbubble	ports/games/frozenbubble
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
 fsgs		ports/games/fsgs
 fsh		ports/security/fsh
+fsmgenerator	ports/devel/fsmgenerator
 fspanel		ports/x11/fspanel
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
