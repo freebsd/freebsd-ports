@@ -1,0 +1,12 @@
+--- config/cf/FreeBSD.cf.dist	Wed Jul 19 06:13:11 2000
++++ config/cf/FreeBSD.cf	Wed Jul 19 06:15:46 2000
+@@ -335,3 +335,3 @@
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2i386Opt -O
+ #endif
+@@ -342,3 +342,3 @@
+ #else
+-# define OptimizedCDebugFlags -O2
++# define OptimizedCDebugFlags -O
+ #endif
