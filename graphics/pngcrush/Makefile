@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pngcrush
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/pmt/
 
