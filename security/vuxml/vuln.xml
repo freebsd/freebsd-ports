@@ -543,8 +543,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <bid>10724</bid>
     </references>
     <dates>
-      <discovery>2004-07-14</discovery>
+      <discovery>2007-07-07</discovery>
       <entry>2004-09-27</entry>
+      <modified>2004-10-02</modified>
     </dates>
   </vuln>
 
@@ -606,8 +607,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <bid>10725</bid>
     </references>
     <dates>
-      <discovery>2004-07-14</discovery>
+      <discovery>2007-07-07</discovery>
       <entry>2004-09-27</entry>
+      <modified>2004-10-02</modified>
     </dates>
   </vuln>
 
@@ -2771,60 +2773,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="4764cfd6-d630-11d8-b479-02e0185c0b53">
-    <topic>PHP memory_limit and strip_tags() vulnerabilities</topic>
-    <affects>
-      <package>
-        <name>php4</name>
-        <name>php4-cgi</name>
-        <name>php4-cli</name>
-        <name>php4-dtc</name>
-        <name>php4-horde</name>
-        <name>php4-nms</name>
-        <name>mod_php4-twig</name>
-        <range><lt>4.3.8</lt></range>
-      </package>
-      <package>
-        <name>mod_php4</name>
-        <range><lt>4.3.8,1</lt></range>
-      </package>
-      <package>
-        <name>php5</name>
-        <name>php5-cgi</name>
-        <name>php5-cli</name>
-        <range><lt>5.0.0</lt></range>
-      </package>
-      <package>
-        <name>mod_php5</name>
-        <range><lt>5.0.0,1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Stefan Esser has reported two vulnerabilities in PHP, which can
-          be exploited by malicious people to bypass security functionality
-          or compromise a vulnerable system. An error within PHP's memory_limit
-          request termination allows remote code execution on PHP servers
-          with activated memory_limit. A binary safety problem within PHP's
-          strip_tags() function may allow injection of arbitrary tags in
-          Internet Explorer and Safari browsers.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://www.php.net/ChangeLog-4.php</url>
-      <url>http://www.php.net/ChangeLog-5.php</url>
-      <url>http://security.e-matters.de/advisories/112004.html</url>
-      <url>http://security.e-matters.de/advisories/122004.html</url>
-      <url>http://secunia.com/advisories/12064</url>
-      <url>http://www.osvdb.org/7870</url>
-      <url>http://www.osvdb.org/7871</url>
-      <cvename>CAN-2004-0594</cvename>
-      <cvename>CAN-2004-0595</cvename>
-    </references>
-    <dates>
-      <discovery>2007-07-07</discovery>
-      <entry>2004-07-15</entry>
-      <modified>2004-08-12</modified>
-    </dates>
+    <cancelled superseded="dd7aa4f1-102f-11d9-8a8a-000c41e2cdad" />
   </vuln>
 
   <vuln vid="abe47a5a-e23c-11d8-9b0a-000347a4fa7d">
