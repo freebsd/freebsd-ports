@@ -39,6 +39,9 @@ INSTALLS_SHLIB=	yes
 PKGNAMESUFFIX=	-beta-overwrite-base
 PREFIX=		/usr
 SHLIBVER=	2
+OPENSSLDIR=	/etc/ssl
+.else
+OPENSSLDIR=	${PREFIX}/openssl
 .endif
 
 NO_LATEST_LINK=	yes
@@ -131,7 +134,7 @@ EXTRACONFIGURE=	386
 do-configure:
 	@cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-	./config --prefix=${PREFIX} --openssldir=${PREFIX}/openssl \
+	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
 
 post-install:
