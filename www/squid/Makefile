@@ -54,7 +54,7 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-partial_reload.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
 
 GNU_CONFIGURE=	yes
