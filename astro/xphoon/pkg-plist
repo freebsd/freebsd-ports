@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xphoon
+man/man1/xphoon.1.gz
