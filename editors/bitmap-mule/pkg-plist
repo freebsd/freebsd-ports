@@ -2,6 +2,8 @@
 %%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap.elc
 %%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-bi.el
 %%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-bi.elc
+%%EMACS_LIBDIR%%/site-lisp/bitmap/bm-utils.el
+%%EMACS_LIBDIR%%/site-lisp/bitmap/bm-utils.elc
 %%EMACS_LIBDIR%%/site-lisp/bitmap/gnus-bitmap.el
 %%EMACS_LIBDIR%%/site-lisp/bitmap/gnus-bitmap.elc
 %%EMACS_LIBDIR%%/site-lisp/bitmap/po.el

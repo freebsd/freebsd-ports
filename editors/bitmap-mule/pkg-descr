@@ -5,6 +5,7 @@ Bitmap-mule, Package to use bitmap in MULE or Emacs/mule.
 
 	- bitmap.el:		kernel of bitmap-mule
 	- bitmap-bi.el:		functions for Emacs 20.2 or earlier
+	- bm-utils.el:		utility functions.
 	- po.el:		tiny BDF font editor
 	- smiley-mule.el:	smiley-mark encoder/decoder
 	- x-face-mule.el:	inline X-Face decoder
