@@ -1,0 +1,6 @@
+From the abstract:
+  This Recommendation specifies an abstract modularization of XHTML
+  and an implementation of the abstraction using XML Document Type
+  Definitions (DTDs). This modularization provides a means for
+  subsetting and extending XHTML, a feature needed for extending
+  XHTML's reach onto emerging platforms.
