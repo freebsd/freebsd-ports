@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.3a
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
