@@ -3,22 +3,16 @@
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/11/29 08:20:30 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:59 asami Exp $
 #
 
-DISTNAME=	htmlpp
-PKGNAME=	htmlpp-3.9d
+DISTNAME=	htmlp42a
+PKGNAME=	htmlpp-4.2a
 CATEGORIES=	www
 MASTER_SITES=	http://www.imatix.com/pub/tools/
-EXTRACT_SUFX=	.zip
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-qa
-EXTRACT_AFTER_ARGS=	# empty
 
 USE_PERL5=	YES
 
@@ -31,14 +25,13 @@ do-build:
 	${MV} ${WRKDIR}/htmlpp.temp ${WRKDIR}/htmlpp
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl
+	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${PREFIX}/bin/htmlpp
-	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/lib/perl5/site_perl/htmlpp.d
-	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/lib/perl5/site_perl/$${FILE}; done)
+	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/htmlpp.d
+	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/$${FILE}; done)
 	(cd ${WRKDIR}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${PREFIX}/bin/$${FILE}; done)
 	${INSTALL_DATA} ${WRKDIR}/guru_opt.fmt ${PREFIX}/bin/guru.fmt
-	${INSTALL_DATA} ${WRKDIR}/htmlpp.l ${PREFIX}/bin/htmlpp.l
-	(cd ${WRKDIR}; ${MKDIR} ${PREFIX}/share/doc/htmlpp; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}l; done)
+	(cd ${WRKDIR}; ${MKDIR} ${PREFIX}/share/doc/htmlpp; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
 	(cd ${WRKDIR}; for FILE in *.gif; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
 	(cd ${WRKDIR}; for FILE in *.txt; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
 
