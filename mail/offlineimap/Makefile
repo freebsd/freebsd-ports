@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	3.99.18
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,7 +16,7 @@ COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_PYTHON=	yes
@@ -25,7 +24,8 @@ USE_PYDISTUTILS=	yes
 TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
 
 MAN1=		offlineimap.1
-DOCS=		manual.html manual.pdf manual.ps manual.txt
+DOCS=		COPYRIGHT ChangeLog UPGRADING manual.html manual.pdf \
+		manual.ps manual.txt
 EXAMPLES=	offlineimap.conf offlineimap.conf.minimal
 
 post-install:
