@@ -104,23 +104,6 @@
   # The syslog priority at which successful connections are logged.
   
 ***************
-*** 470,476 ****
-  # still do selective username lookups as documented in the hosts_access.5
-  # and hosts_options.5 manual pages (`nroff -man' format).
-  #
-! #AUTH	= -DALWAYS_RFC931
-  #
-  # The default username lookup timeout is 10 seconds. This may not be long
-  # enough for slow hosts or networks, but is enough to irritate PC users.
---- 471,477 ----
-  # still do selective username lookups as documented in the hosts_access.5
-  # and hosts_options.5 manual pages (`nroff -man' format).
-  #
-! AUTH   = -DALWAYS_RFC931
-  #
-  # The default username lookup timeout is 10 seconds. This may not be long
-  # enough for slow hosts or networks, but is enough to irritate PC users.
-***************
 *** 509,515 ****
   # look for access control information. Watch out for the quotes and
   # backslashes when you make changes.
