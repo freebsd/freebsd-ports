@@ -1,6 +1,6 @@
---- vfs/Makefile.in.orig	Sun Sep 21 23:28:07 1997
-+++ vfs/Makefile.in	Sun Sep 21 23:29:15 1997
-@@ -91,23 +91,23 @@
+--- vfs/Makefile.in.orig	Thu Jan 22 12:01:22 1998
++++ vfs/Makefile.in	Sat Jan 31 16:25:55 1998
+@@ -91,24 +91,24 @@
  
  install: mcserv install.extfs
  	if test x@mcserv@ != x; then \
@@ -12,8 +12,10 @@
  	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
  	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
+-	$(INSTALL_PROGRAM) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
 +	$(INSTALL_DATA) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
++	$(INSTALL_DATA) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
 +	$(INSTALL_DATA) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
  
 -	$(INSTALL_PROGRAM) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
