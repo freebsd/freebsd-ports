@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monopd
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	games
 MASTER_SITES=	http://unixcode.org/downloads/monopd/
 
