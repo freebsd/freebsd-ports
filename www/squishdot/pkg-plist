@@ -1,8 +1,17 @@
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Article.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Article.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Changes.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Credits.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/HTMLParser.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/HTMLParser.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/License.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Posting.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Posting.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/SquishSite.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/SquishSite.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot_editForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot_index_html.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot_mail_html.dtml
@@ -15,7 +24,26 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot_searchForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishdot_searchResults.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishfile.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Squishfile.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/0-3-x_0-4-x.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/0-3-x_0-4-x.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/0-7-x_1-0-0.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/0-7-x_1-0-0.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-0-0_1-1-0.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-0-0_1-1-0.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-1-0_1-2-0.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-1-0_1-2-0.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/README.TXT
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_replies.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_replies.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_threading.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_threading.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/update_indexing.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/update_indexing.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/about.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/addPostingForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/addSquishdotForm.dtml
@@ -29,7 +57,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Images/rtshadow.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Images/sitetitle.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Squishdot_index_html.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Squishdot_mail_html.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Squishdot_posting_html.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Squishdot_previewForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Squishdot_searchForm.dtml
@@ -60,9 +87,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/misc_methods/advertising.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/misc_methods/copyright.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/misc_methods/quotation.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/newtables/bottom_items.tbl
-%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/newtables/leftbox_items.tbl
-%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/newtables/rightbox_items.tbl
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/rightbox_items.tbl
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/rightbox_methods/features.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/rightbox_methods/prevarticles.dtml
@@ -73,7 +97,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/showMessage.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/site_footer.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/site_header.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/doc/Roadmap.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/editPostingForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/moderateArticle.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/posting.gif
@@ -82,15 +105,16 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/squishdot.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/squishfile.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/squishlogo.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/validArticle.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/validComment.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/version.txt
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/doc
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/rightbox_methods
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/newtables
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/misc_methods
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/messages
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/TopicImages
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo/Images
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/demo
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Squishdot
