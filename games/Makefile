@@ -90,6 +90,7 @@
     SUBDIR += freeciv-gtk
     SUBDIR += freesweep
     SUBDIR += frotz
+    SUBDIR += frozenbubble
     SUBDIR += fsgs
     SUBDIR += galaxis
     SUBDIR += garith
