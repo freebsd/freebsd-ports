@@ -1,0 +1,7 @@
+include/fxp.h
+include/millweed/list.h
+include/millweed/misc.h
+include/millweed/net.h
+include/millweed/parse.h
+lib/libfxp.a
+@dirrm include/millweed
