@@ -1445,9 +1445,9 @@
 %%COMPILERDIR%%/include/pmmintrin.h
 %%COMPILERDIR%%/include/proto.h
 %%COMPILERDIR%%/include/sse2mmx.h
-%%COMPILERDIR%%/include/stdarg.h
-%%COMPILERDIR%%/include/sys/cdefs.h
-@dirrm %%COMPILERDIR%%/include/sys
+%%STDARG_H%%%%COMPILERDIR%%/include/stdarg.h
+%%SYS_CDEFS_H%%%%COMPILERDIR%%/include/sys/cdefs.h
+%%SYS_CDEFS_H%%@dirrm %%COMPILERDIR%%/include/sys
 %%COMPILERDIR%%/include/xmm_func.h
 %%COMPILERDIR%%/include/xmm_utils.h
 %%COMPILERDIR%%/include/xmmintrin.h

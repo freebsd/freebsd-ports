@@ -1124,9 +1124,9 @@ intel/%%COMPILERDIR%%/ia32/include/pgouser.h
 intel/%%COMPILERDIR%%/ia32/include/pmmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/proto.h
 intel/%%COMPILERDIR%%/ia32/include/sse2mmx.h
-intel/%%COMPILERDIR%%/ia32/include/stdarg.h
-intel/%%COMPILERDIR%%/ia32/include/sys/cdefs.h
-@dirrm intel/%%COMPILERDIR%%/ia32/include/sys
+%%STDARG_H%%intel/%%COMPILERDIR%%/ia32/include/stdarg.h
+%%SYS_CDEFS_H%%intel/%%COMPILERDIR%%/ia32/include/sys/cdefs.h
+%%SYS_CDEFS_H%%@dirrm intel/%%COMPILERDIR%%/ia32/include/sys
 intel/%%COMPILERDIR%%/ia32/include/typeinfo
 intel/%%COMPILERDIR%%/ia32/include/xmmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/xmtx.h
@@ -1354,5 +1354,5 @@ intel/%%COMPILERDIR%%/ia32/lib/libunwind.a
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/training/templ_im
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/training
 @dirrm intel/%%COMPILERDIR%%
-@unexec rmdir %D/intel/licenses >/dev/null 2>&1 || echo '*** license directory (%D/intel/licenses/) not removed, it may contain a license'
+@unexec rmdir %D/intel/licenses >/dev/null 2>&1 || echo '*** License directory (%D/intel/licenses/) not removed, it may contain a license.'
 @unexec rmdir %D/intel >/dev/null 2>&1 || true
