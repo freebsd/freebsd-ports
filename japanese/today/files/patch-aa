@@ -393,7 +393,7 @@ diff -c old/version.c new/version.c
 *** 28,33 ****
 --- 28,34 ----
   const char	Version[] = "today " __DATE__ " version 2.10B (Àµ¼°ÈÇ)";
-  const char	RCSid[] ="$Id: version.c,v 1.1 1993/07/25 05:39:46 mori Exp $";
+  const char	RCSid[] ="$Id: patch-aa,v 1.1.1.1 1996/10/18 15:04:50 asami Exp $";
   const char	UseLanguage[] =
 + #if !defined(TRANS)
   #if defined(human68k)
