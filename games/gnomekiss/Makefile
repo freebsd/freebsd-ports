@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomekiss
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
 DISTNAME=	gnomekiss-${PORTVERSION}
