@@ -1,0 +1,128 @@
+--- policy.h	Sun Aug 20 21:36:06 1995
++++ policy.h.new	Mon Oct 22 08:47:33 2001
+@@ -65,7 +65,7 @@
+    */
+ #define HAVE_BSD_TTY 0
+ #define HAVE_SYSV_TERMIO 0
+-#define HAVE_POSIX_TERMIOS 0
++#define HAVE_POSIX_TERMIOS 1
+ 
+ /* This code tries to guess which terminal driver to use if you did
+    not make a choice above.  It is in this file to make it easy to
+@@ -105,7 +105,7 @@
+    set to 0 when it should be 1, file transfer will use more CPU time
+    than necessary.  If you are unsure, setting HAVE_UNBLOCKED_WRITES
+    to 0 should always be safe.  */
+-#define HAVE_UNBLOCKED_WRITES 0
++#define HAVE_UNBLOCKED_WRITES 1
+ 
+ /* When the code does do a blocking write, it wants to write the
+    largest amount of data which the kernel will accept as a single
+@@ -118,7 +118,7 @@
+    SINGLE_WRITE is too small, file transfer will use more CPU time
+    than necessary.  If you have no idea, 64 should work on most modern
+    systems.  */
+-#define SINGLE_WRITE 64
++#define SINGLE_WRITE 100
+ 
+ /* Some tty drivers, such as those from SCO and AT&T's Unix PC, have a
+    bug in the implementation of ioctl() that causes CLOCAL to be
+@@ -203,7 +203,7 @@
+    HAVE_SAVED_SETUID to 1, but your system does not have saved set
+    user ID, uucp will fail with an error message whenever anybody
+    other than the uucp user uses it.  */
+-#define HAVE_SAVED_SETUID 1
++#define HAVE_SAVED_SETUID 0
+ 
+ /* On some systems, such as 4.4BSD-Lite, NetBSD, the DG Aviion and,
+    possibly, the RS/6000, the setreuid function is broken.  It should
+@@ -241,7 +241,7 @@
+    the sendmail choice below.  Otherwise, select one of the other
+    choices as appropriate.  */
+ #if 1
+-#define MAIL_PROGRAM "/usr/lib/sendmail -t"
++#define MAIL_PROGRAM "/usr/sbin/sendmail -t"
+ #define MAIL_PROGRAM_TO_BODY 1
+ #define MAIL_PROGRAM_SUBJECT_BODY 1
+ #endif
+@@ -301,7 +301,7 @@
+ /* #define LOCKDIR "/etc/locks" */
+ /* #define LOCKDIR "/usr/spool/locks" */
+ /* #define LOCKDIR "/usr/spool/uucp/LCK" */
+-/* #define LOCKDIR "/var/spool/lock" */
++#define LOCKDIR "/var/spool/lock"
+ 
+ /* You must also specify the format of the lock files by setting
+    exactly one of the following macros to 1.  Check an existing lock
+@@ -348,7 +348,7 @@
+    The format for QNX lock files was made up just for Taylor UUCP.
+    QNX doesn't come with a version of UUCP.  */
+ #define HAVE_V2_LOCKFILES 0
+-#define HAVE_HDB_LOCKFILES 0
++#define HAVE_HDB_LOCKFILES 1
+ #define HAVE_SCO_LOCKFILES 0
+ #define HAVE_SVR4_LOCKFILES 0
+ #define HAVE_SEQUENT_LOCKFILES 0
+@@ -466,7 +466,7 @@
+    configuration files will be read first, followed by the V2
+    configuration files, followed by the HDB configuration files.  */
+ #define HAVE_V2_CONFIG 0
+-#define HAVE_HDB_CONFIG 0
++#define HAVE_HDB_CONFIG 1
+ 
+ /* Exactly one of the following macros must be set to 1.  The exact
+    format of the spool directories is explained in unix/spool.c.
+@@ -566,21 +566,21 @@
+    exist when a new message is written out, it will be created.
+    Setting CLOSE_LOGFILES to 1 will obviously require slightly more
+    processing time.  */
+-#define CLOSE_LOGFILES 0
++#define CLOSE_LOGFILES 1
+ 
+ /* The name of the default spool directory.  If HAVE_TAYLOR_CONFIG is
+    set to 1, this may be overridden by the ``spool'' command in the
+    configuration file.  */
+-#define SPOOLDIR "/usr/spool/uucp"
+-/* #define SPOOLDIR "/var/spool/uucp" */
++/* #define SPOOLDIR "/usr/spool/uucp" */
++#define SPOOLDIR "/var/spool/uucp"
+ 
+ /* The name of the default public directory.  If HAVE_TAYLOR_CONFIG is
+    set to 1, this may be overridden by the ``pubdir'' command in the
+    configuration file.  Also, a particular system may be given a
+    specific public directory by using the ``pubdir'' command in the
+    system file.  */
+-#define PUBDIR "/usr/spool/uucppublic"
+-/* #define PUBDIR "/var/spool/uucppublic" */
++/* #define PUBDIR "/usr/spool/uucppublic" */
++#define PUBDIR "/var/spool/uucppublic"
+ 
+ /* The default command path.  This is a space separated list of
+    directories.  Remote command executions requested by uux are looked
+@@ -643,20 +643,20 @@
+ /* The default log file when using HAVE_TAYLOR_LOGGING.  When using
+    HAVE_TAYLOR_CONFIG, this may be overridden by the ``logfile''
+    command in the configuration file.  */
+-#define LOGFILE "/usr/spool/uucp/Log"
+-/* #define LOGFILE "/var/spool/uucp/Log" */
++/* #define LOGFILE "/usr/spool/uucp/Log" */
++#define LOGFILE "/var/spool/uucp/Log"
+ 
+ /* The default statistics file when using HAVE_TAYLOR_LOGGING.  When
+    using HAVE_TAYLOR_CONFIG, this may be overridden by the
+    ``statfile'' command in the configuration file.  */
+-#define STATFILE "/usr/spool/uucp/Stats"
+-/* #define STATFILE "/var/spool/uucp/Stats" */
++/* #define STATFILE "/usr/spool/uucp/Stats" */
++#define STATFILE "/var/spool/uucp/Stats"
+ 
+ /* The default debugging file when using HAVE_TAYLOR_LOGGING.  When
+    using HAVE_TAYLOR_CONFIG, this may be overridden by the
+    ``debugfile'' command in the configuration file.  */
+-#define DEBUGFILE "/usr/spool/uucp/Debug"
+-/* #define DEBUGFILE "/var/spool/uucp/Debug" */
++/* #define DEBUGFILE "/usr/spool/uucp/Debug" */
++#define DEBUGFILE "/var/spool/uucp/Debug"
+ 
+ #endif /* HAVE_TAYLOR_LOGGING */
+ 
