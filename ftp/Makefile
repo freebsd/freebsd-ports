@@ -81,6 +81,7 @@
     SUBDIR += tnftp
     SUBDIR += tnftpd
     SUBDIR += twoftpd
+    SUBDIR += urlgfe
     SUBDIR += vcheck
     SUBDIR += vsftpd
     SUBDIR += wget

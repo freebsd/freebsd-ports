@@ -1,0 +1,13 @@
+bin/urlgfe
+%%DOCSDIR%%/ABOUT-NLS
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%GNOME:%%share/gnome/apps/Internet/urlgfe.desktop
+%%GNOME:%%share/gnome/pixmaps/urlgfe-icon.png
+share/locale/zh_TW/LC_MESSAGES/urlgfe.mo
+@dirrm %%DOCSDIR%%
