@@ -373,6 +373,7 @@
     SUBDIR += jam
     SUBDIR += java-util-concurrent
     SUBDIR += jclassinfo
+    SUBDIR += jep
     SUBDIR += jrtplib
     SUBDIR += jsap
     SUBDIR += jude-community
