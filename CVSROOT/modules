@@ -5162,6 +5162,7 @@ props		ports/x11/props
 proxy		ports/net/proxy
 proxy-suite	ports/net/proxy-suite
 proxyper	ports/misc/proxyper
+proxytunnel	ports/security/proxytunnel
 pruby		ports/www/pruby
 ps		src/bin/ps
 pscal		ports/print/pscal
