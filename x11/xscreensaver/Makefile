@@ -12,7 +12,7 @@
 #************************************************************************
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.05
+PORTVERSION=	4.06
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -25,8 +25,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
@@ -65,15 +64,13 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	vermiculate.1 vidwhacker.1 vines.1 wander.1 webcollage.1 \
 	whirlwindwarp.1 whirlygig.1 worm.1 xflame.1 xjack.1 xlyap.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
-	endgame.1 \
+	endgame.1 glblur.1 halftone.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-libwarning 15 70 || \
-		/usr/bin/true)
 	@${ECHO} ''
 	@${ECHO} '*** This is the non-gnome version of the port.'
 	@${ECHO} '    If you want gnome support, hit Ctrl-C now,'
