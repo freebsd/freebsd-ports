@@ -270,6 +270,7 @@
     SUBDIR += tinyfugue
     SUBDIR += tn3270
     SUBDIR += tn5250
+    SUBDIR += totd
     SUBDIR += traceroute
     SUBDIR += trafd
     SUBDIR += trafshow
