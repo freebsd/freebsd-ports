@@ -1,0 +1,10 @@
+--- Manager.C.orig	Sat Feb  5 18:09:36 2000
++++ Manager.C	Sat Feb  5 18:10:14 2000
+@@ -526,6 +526,7 @@
+ extern int putenv(char *);	/* not POSIX */
+ }
+ #endif
++extern "C" int putenv(const char*);
+ 
+ void WindowManager::spawn()
+ {
