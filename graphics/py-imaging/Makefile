@@ -3,13 +3,15 @@
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/05 08:02:39 tg Exp $
 #
 
 DISTNAME=	Imaging-0.3b2
 PKGNAME=	py-imaging-0.3b2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.pythonware.com/downloads/
+MASTER_SITES=	http://www.pythonware.com/downloads/ \
+		ftp://www.python.org/pub/python/src/ \
+		ftp://ftp.cwi.nl/pub/python/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pyth151.tgz
 
 MAINTAINER=	tg@FreeBSD.ORG
