@@ -8430,6 +8430,7 @@ sam2p		ports/graphics/sam2p
 samba		ports/net/samba
 samba-devel	ports/net/samba-devel
 samba-libsmbclient	ports/net/samba-libsmbclient
+samba-vscan	ports/security/samba-vscan
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
