@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Qmail/Envelope.pm
+@unexec rmdir %D/%%SITE_PERL%%/Qmail || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qmail/Envelope/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qmail/Envelope
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qmail || true
