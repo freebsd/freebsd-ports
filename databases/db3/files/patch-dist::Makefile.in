@@ -1,14 +1,5 @@
 --- ../dist/Makefile.in.orig	Fri Jul  6 15:53:16 2001
 +++ ../dist/Makefile.in	Tue May 14 12:26:13 2002
-@@ -11,7 +11,7 @@
- bindir=	@bindir@
- includedir=@includedir@
- libdir=	@libdir@
--docdir=	$(prefix)/docs
-+docdir=	$(prefix)/share/doc/db3
- 
- dmode=	755
- emode=	555
 @@ -61,12 +61,12 @@
  LIBSO_LIBS=	@LIBSO_LIBS@
  

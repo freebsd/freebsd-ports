@@ -7,6 +7,7 @@
 
 PORTNAME=	db3
 PORTVERSION=	3.3.11
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
@@ -33,6 +34,14 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3 \
 			--target=${ARCH}-portbld-freebsd${OSREL}
+INSTALL_TARGET=		install_include install_lib install_utilities
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
+PORTDOCS=		*
+
+post-install:
+	${RMDIR} ${DOCSDIR}/ref/splash
+.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
