@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.10.4
+PORTVERSION=	2.11.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -31,15 +31,16 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
 
 DIST_SUBDIR=	timidity
-INSTALL_TARGET=	install install.man
 
 .if !defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x --enable-ncurses --enable-vt100 \
 		--enable-dynamic --enable-server \
-		--enable-network --enable-spectrogram --enable-wrd
+		--enable-network --enable-spectrogram --enable-wrd \
+		--program-transform-name=
 .else
 CONFIGURE_ARGS=	--enable-ncurses --enable-vt100 \
-		--enable-network --disable-spectrogram --disable-wrd
+		--enable-network --disable-spectrogram --disable-wrd \
+		--program-transform-name=
 .endif
 
 MAN1=		timidity.1
@@ -70,10 +71,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 .for lang in ${DOCLANG}
 	@${MKDIR} \
-	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`
+	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
 	for f in ${DOCFILES}; do \
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/$$f \
-	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`; \
+	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++; \
 	done;
 .endfor
 .endif
