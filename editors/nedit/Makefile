@@ -14,7 +14,7 @@ DISTFILES=	nedit-5.1.1-src.tar.gz nedit-5.1.app-defaults
 
 MAINTAINER=	deischen@freebsd.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 EXTRACT_ONLY=	nedit-5.1.1-src.tar.gz

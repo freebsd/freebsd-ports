@@ -14,7 +14,7 @@ MAINTAINER=	handy@physics.montana.edu
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--enable-optimize \

@@ -47,7 +47,7 @@ USE_GTK=	yes
 CONFIGURE_ENV=	SHLD="gcc -shared"
 .elif ${INTERFACE} == "motif"
 LINK=		xmmidi
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 .elif ${INTERFACE} == "slang"
 .if defined(JAPANESE)

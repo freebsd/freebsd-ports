@@ -17,7 +17,7 @@ MAINTAINER=	jseger@FreeBSD.org
 BROKEN=		../../lib/libfwf.a: cannot read symbols
 .endif
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/FWF

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 MAINTAINER=	charnier@lirmm.fr
 
 USE_IMAKE=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 ALL_TARGET=	mpeg2play
 
 do-install:

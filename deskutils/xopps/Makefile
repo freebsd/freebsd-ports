@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 USE_X_PREFIX=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 MAKE_ENV=	'MACH=${OPSYS}'
 
 MAN1=	xopps.1

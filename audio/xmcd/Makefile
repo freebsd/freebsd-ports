@@ -12,7 +12,7 @@ MASTER_SITES=	http://metalab.unc.edu/tkan/download/xmcd/src/
 
 MAINTAINER=	eischen@vigrid.com
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 PLIST_SUB+=	RELEASE=${OSREL:R} ARCH=${ARCH}
 

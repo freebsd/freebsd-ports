@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	mph@freebsd.org
 
-REQUIRES_MOTIF=		yes
-
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes

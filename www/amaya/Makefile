@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 DIST_SUBDIR=	amaya

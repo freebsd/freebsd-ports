@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae
 
 USE_X_PREFIX=	YES
-REQUIRES_MOTIF=	YES
+USE_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \

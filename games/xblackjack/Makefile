@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xblackjack.1
 

@@ -36,7 +36,7 @@ MAN1=		grace.1 xmgrace.1 gracebat.1 grconvert.1
 USE_X_PREFIX=	YES
 USE_XPM=	yes
 USE_GMAKE=	YES
-REQUIRES_MOTIF=	YES
+USE_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include:${LOCALBASE}/include/gd \

@@ -17,7 +17,7 @@ DISTNAME=	Xbae-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
-REQUIRES_MOTIF= yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 

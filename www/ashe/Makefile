@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 MAN1=		xhtml.1
 MANCOMPRESSED=	yes
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 

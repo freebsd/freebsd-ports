@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 
 GLOK_DATADIR=	${PREFIX}/lib/X11/xmbase-grok

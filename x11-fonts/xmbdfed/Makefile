@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 MAN1=		xmbdfed.1
 

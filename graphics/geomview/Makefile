@@ -18,7 +18,7 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Geomview
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 

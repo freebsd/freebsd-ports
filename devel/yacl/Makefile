@@ -20,7 +20,7 @@ MAKE_ENV=		YACLPATH=${WRKDIR}
 MAKEFILE=		gnuc.mak
 ALL_TARGET=		yacl
 
-REQUIRES_MOTIF=		true
+USE_MOTIF=		true
 
 post-build:
 	@(cd ${WRKSRC}/apps/bmpview; ${MAKE} ${MAKE_ENV} -f gnuc.mak)

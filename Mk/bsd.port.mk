@@ -169,6 +169,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  Implies USE_NEWGCC.
 # USE_QT2		- Says that the port uses version 2 of the qt toolkit.
 #				  Implies USE_NEWGCC.
+# USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list above.
@@ -244,20 +245,6 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  (default: ${MASTERDIR}/files)
 # PKGDIR 		- A direction containing any package creation files.
 #				  (default: ${MASTERDIR}/pkg)
-#
-# Motif support:
-#
-# REQUIRES_MOTIF - Set this in your port if it requires Motif.  It will  be
-#				  built only if HAVE_MOTIF is set.
-# HAVE_MOTIF	- If set, means system has Motif.  Typically set in
-#				  /etc/make.conf.
-# MOTIF_STATIC	- If set, link libXm statically; otherwise, link it
-#				  dynamically.  Typically set in /etc/make.conf.
-# MOTIFLIB		- Set automatically to appropriate value depending on
-#				  ${MOTIF_STATIC}.  Substitute references to -lXm with 
-#				  patches to make your port conform to our standards.
-# MOTIF_ONLY	- If set, build Motif ports only.  (Not much use except for
-#				  building packages.)
 #
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
@@ -815,15 +802,9 @@ MAKE_ENV+=		CC=${CC} CXX=${CXX}
 RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
 
-.if defined(REQUIRES_MOTIF)
+.if defined(USE_MOTIF)
 USE_XPM=			yes
-.if defined(MOTIF_OPEN)
 LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
-.else
-.if defined(PARALLEL_PACKAGE_BUILD)
-BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
-.endif
-.endif
 .endif
 
 .if defined(USE_FREETYPE)
@@ -841,7 +822,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_4|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_4)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -853,7 +834,7 @@ USE_XLIB=				yes
 LIB_DEPENDS+=			GLU.1:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					7
-PKG_IGNORE_DEPENDS?=	'Motif-2\.1\.10'
+PKG_IGNORE_DEPENDS?=	'()'
 .endif
 PLIST_SUB+=				XAWVER=${XAWVER}
 
@@ -1088,14 +1069,7 @@ PKG_SUFX?=		.tgz
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
 
-# shared/dynamic motif libs
-.if defined(HAVE_MOTIF)
-.if defined(MOTIF_STATIC) && !defined(MOTIF_OPEN)
-MOTIFLIB?=	${X11BASE}/lib/libXm.a -L${X11BASE}/lib -lXp
-.else
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
-.endif
-.endif
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -1385,9 +1359,6 @@ LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
 # overnight, then come back in the morning and do _only_ the
 # interactive ones that required your intervention.
 #
-# Don't attempt to build ports that require Motif if you don't
-# have Motif.
-#
 # Ignore ports that can't be resold if building for a CDROM.
 #
 # Don't build a port if it's restricted and we don't want to get
@@ -1455,10 +1426,6 @@ IGNORE+=	"and you are running ${ARCH}"
 IGNORE=	"is an interactive port"
 .elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
 IGNORE=	"is not an interactive port"
-.elif (defined(REQUIRES_MOTIF) && !defined(HAVE_MOTIF))
-IGNORE=	"requires Motif.  LessTif is an LGPL implementation of the Motif API.  A port is available in ports/x11-toolkits/lesstif.  Please see /etc/make.conf"
-.elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
-IGNORE=	"does not require Motif"
 .elif (defined(NO_CDROM) && defined(FOR_CDROM))
 IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))

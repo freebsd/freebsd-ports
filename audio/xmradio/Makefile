@@ -18,7 +18,7 @@ MAINTAINER=	runge@rostock.zgdv.de
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 #post-install:
 #              strip ${PREFIX}/bin/xmradio

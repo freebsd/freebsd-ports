@@ -14,10 +14,7 @@ MAINTAINER=	runge@rostock.zgdv.de
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-REQUIRES_MOTIF=	no
-
-# you can build it with a motif interface as well!
-# REQUIRES_MOTIF=	no
+USE_MOTIF=	yes
 
 #post-install:
 #		strip ${PREFIX}/bin/xlupe
