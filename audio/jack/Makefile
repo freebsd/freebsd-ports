@@ -23,6 +23,7 @@ CONFIGURE_ENV=		LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
+INSTALLS_SHLIB=		yes
 USE_GNOME=		pkgconfig gnometarget gnomehack
 
 MAN1=	jackd.1 jackstart.1
