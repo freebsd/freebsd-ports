@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
-DISTNAME=	binkd096
+DISTNAME=	binkd097
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Fidonet TCP/IP mailer
