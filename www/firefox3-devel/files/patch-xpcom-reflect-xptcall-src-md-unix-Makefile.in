@@ -7,7 +7,7 @@ $FreeBSD$
  CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
  endif
 +ifeq (amd64,$(OS_TEST))
-+CPPSRCS		:= xptcinvoke_amd64_freebsd.cpp xptcstubs_amd64_freebsd.cpp
++CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
 +endif
  endif
  #
