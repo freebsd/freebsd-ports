@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
+BROKEN='fetch fails'
+
 WRKSRC=		${WRKDIR}/T1-0.9.1
 
 GNU_CONFIGURE=	yes
