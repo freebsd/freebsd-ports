@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	trn
-PORTVERSION=	4.0.b72
+PORTVERSION=	4.0.b74
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.clari.net/private/trn/ \
-		ftp://ftp.uu.net/private/trn/
-DISTNAME=	trn4-test72
+MASTER_SITES=	ftp://trn.sourceforge.net/pub/trn/
+DISTNAME=	trn4-test74
 
 MAINTAINER=	mph@freebsd.org
 
