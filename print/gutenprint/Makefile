@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GIMP Print Printer Driver
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
@@ -64,9 +65,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=makeinfo|="makeinfo --no-split"|g ; \
-		 s|[\$$][{]CFLAGS:=[}] -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
+		 s|\$${CFLAGS:=} -O|$${CFLAGS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[\$$][(]PACKAGE[)]/doc|doc/\$$\(PACKAGE\)|g ; \
-		 s|[\$$][(]RM[)] -r|\$$\(RM\) -f -r|g'
+		's|\$$(PACKAGE)/doc|doc/$$(PACKAGE)|g ; \
+		 s|\$$(RM) -r|$$(RM) -f -r|g'
 
 .include <bsd.port.mk>
