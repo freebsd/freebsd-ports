@@ -93,6 +93,7 @@ SET3=		postgresql-libs-7.2.3-5.80.i386.rpm \
 		pam-0.75-46.8.0.i386.rpm \
 		krb5-libs-1.2.5-15.i386.rpm
 
+BROKEN=		http://bugzilla.opengroupware.org/bugzilla/show_bug.cgi?id=354
 NGOBJWEB_ADAPTOR= opengroupware.org-mod_ngobjweb-200310102348.tar.gz
 PATCHDIR?=	${MASTERDIR}/files
 USE_LINUX=	yes
