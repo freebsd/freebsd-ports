@@ -1,0 +1,41 @@
+--- netplay.cpp.orig	Fri Oct 13 18:44:41 2000
++++ netplay.cpp	Fri Oct 13 18:56:53 2000
+@@ -682,22 +682,24 @@
+         return;
+     }
+     char fname [L_tmpnam];
+-    FILE *tmp;
+-    if (tmpnam (fname))
++    int tmp;
++    int flen = snprintf(fname, sizeof(fname), "%s/snes9x.XXXXXX",
++      getenv("TMPDIR") ? getenv("TMPDIR") : P_tmpdir);
++    if (flen == -1 || flen >= sizeof(fname) || (tmp = mkstemp(fname)) == -1)
+     {
+-        if ((tmp = fopen (fname, "wb")))
+-        {
+-            if (fwrite (data, 1, len, tmp) == len)
+-            {
+-                fclose (tmp);
+-                if (!S9xUnfreezeGame (fname))
+-                    S9xNPSetError ("Unable to load freeze file just received.");
+-            }
+-            else
+-                fclose (tmp);
+-        }
+-        remove (fname);
++	S9xNPSetError("Unable to open a temporary freeze file.");
++	delete data;
++	return;
+     }
++    if (write(tmp, data, len) == len)
++    {
++        close(tmp);
++        if (!S9xUnfreezeGame (fname))
++            S9xNPSetError ("Unable to load freeze file just received.");
++    }
++    else
++        close(tmp);
++    remove(fname);
+     delete data;
+ }
+ 

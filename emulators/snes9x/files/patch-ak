@@ -1,0 +1,22 @@
+--- server.cpp.orig	Fri Oct 13 18:57:43 2000
++++ server.cpp	Fri Oct 13 19:02:56 2000
+@@ -940,11 +940,18 @@
+ void S9xNPSyncClient (int client)
+ {
+     char fname [L_tmpnam];
++    int fd;
+ 
+     S9xNPWaitForEmulationToComplete ();
+ 
++    int flen = snprintf(fname, sizeof(fname), "%s/snes9x.XXXXXX",
++      getenv("TMPDIR") ? getenv("TMPDIR") : P_tmpdir);
++    if (flen == -1 || flen >= sizeof(fname) || (fd = mkstemp(fname)) == -1)
++	return;
++    close(fd);
++
+     S9xNPSetAction ("SERVER: Freezing game...", TRUE);
+-    if (tmpnam (fname) && S9xFreezeGame (fname))
++    if (S9xFreezeGame (fname))
+     {
+         uint8 *data;
+         uint32 len;

@@ -1,6 +1,14 @@
---- Makefile.orig	Mon Jan 24 16:15:50 2000
-+++ Makefile	Wed Mar 15 02:23:16 2000
-@@ -50,11 +50,6 @@
+--- Makefile.orig	Mon Oct  2 03:36:11 2000
++++ Makefile	Fri Oct 13 20:56:31 2000
+@@ -3,7 +3,6 @@
+ #SPC700ASM=1
+ NETPLAY=1
+ UNZIP=1
+-GLIDE=1
+ #GUI=1
+ THREAD_SOUND=1
+ 
+@@ -60,11 +59,6 @@
  UNZIPDEFINES=-DUNZIP_SUPPORT
  endif
  
@@ -12,29 +20,25 @@
  ifdef GLIDE
  GLIDEOBJS = unix/glide.o
  GLIDEDEFINES = -DUSE_GLIDE -I/usr/include/glide
-@@ -66,24 +61,30 @@
- GLIDENO_DEPENDS=use_glide
+@@ -77,28 +71,26 @@
  endif
  
--CCC = gcc
--CC = gcc
+ MOC = $(QTDIR)/bin/moc
+-CCC = g++ -fno-rtti
 +CCC = $(CXX) -fno-rtti
-+CC ?= gcc
+ CC = gcc
  NASM = nasm
  
 -INCLUDES=-I/usr/X11R6/include -I/usr/local/include
-+ifdef THREAD_SOUND
-+CPUDEFINES += -DUSE_THREADS
-+CC += -pthread
-+CCC += -pthread
-+endif
-+
-+INCLUDES=-I${X11BASE}/include -I${LOCALBASE}/include
+-
+-OPTIMISE=-O6 -mpentium -fno-exceptions -Wall -W -pedantic -pipe -fomit-frame-pointer 
++INCLUDES= -I$(X11BASE)/include -I$(LOCALBASE)/include
  
--OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions
-+OPTIMISE= $(CXXFLAGS)
+ #OPTIMISE=-g -fno-exceptions
+ #-DMITSHM 
  
- CCFLAGS = $(OPTIMISE) -DMITSHM \
+-CCFLAGS = $(OPTIMISE) -DMITSHM \
++CCFLAGS = -fomit-frame-pointer -DMITSHM \
  -Ii386 \
  -I. \
  -Iunzip \
@@ -42,30 +46,26 @@
  -DZLIB \
  -DNO_INLINE_SET_GET \
  -DVAR_CYCLES \
+ -DDEBUGGER \
  -DCPU_SHUTDOWN \
  -DSPC700_SHUTDOWN \
 +-DSOUND \
  $(LINUXDEFINES) \
  $(FXDEFINES) \
  $(CPUDEFINES) \
-@@ -108,7 +109,7 @@
- # system using the egcs compiler get an undefined __register_frame_info
- # symbol error when run on a Redhat box.
+@@ -115,12 +107,12 @@
+ #-DCPU_SHUTDOWN
+ #-DSPC700_SHUTDOWN
  
+-CFLAGS=$(CCFLAGS)
++CFLAGS+=$(CCFLAGS)
+ 
+ .SUFFIXES: .o .cpp .c .cc .h .m .i .S .asm
 -LDLIBS = -L/usr/X11R6/lib frame.o
-+LDLIBS = -L${X11BASE}/lib
++LDLIBS = -L$(X11BASE)/lib
  
- ifdef GLIDE
- ifdef NETPLAY
-@@ -118,9 +119,9 @@
- endif
- else
- ifdef NETPLAY
--all: offsets snes9x ssnes9x s9xserver
-+all: offsets snes9x s9xserver
- else
 -all: offsets snes9x ssnes9x
 +all: offsets snes9x
- endif
- endif
  
+ #ggisnes9x
+ #xf86snes9x

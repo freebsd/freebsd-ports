@@ -1,0 +1,10 @@
+--- apudebug.cpp.orig	Fri Oct 13 18:39:22 2000
++++ apudebug.cpp	Fri Oct 13 18:39:28 2000
+@@ -41,7 +41,6 @@
+ #include "apu.h"
+ #include "soundux.h"
+ #include "cpuexec.h"
+-#include "spctool/spc700.h"
+ 
+ #ifdef DEBUGGER
+ extern int NoiseFreq [32];
