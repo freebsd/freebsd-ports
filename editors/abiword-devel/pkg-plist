@@ -69,6 +69,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/id-ID.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/it-IT.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ja-JP.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/jbo.strings
+share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ku.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/lt-LT.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/lv-LV.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mg-MG.strings
