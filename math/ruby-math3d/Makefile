@@ -20,11 +20,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+BROKEN=		"Does not compile"
 
 pre-patch:
 	cd ${WRKSRC}; ${RUBY} -i -pe 'sub(/\r/, "")' *.[ch]
@@ -36,4 +32,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/manual.jis ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
