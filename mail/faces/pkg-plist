@@ -1,5 +1,4 @@
 bin/faces
-lib/X11/app-defaults/Faces
 bin/compface
 bin/uncompface
 bin/ikon2xbm
@@ -10,6 +9,8 @@ include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1.0
+%%APPDEF%%@cwd %%X11BASE%%
 %%APPDEF%%lib/X11/app-defaults/Faces
+%%APPDEF%%@cwd %%LOCALBASE%%
 share/doc/faces/README
 @dirrm share/doc/faces
