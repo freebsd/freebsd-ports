@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 9e
     SUBDIR += arc
     SUBDIR += bzip
     SUBDIR += bzip2
