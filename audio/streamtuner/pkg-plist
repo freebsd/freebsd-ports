@@ -21,8 +21,6 @@ libdata/pkgconfig/streamtuner.pc
 share/gnome/applications/streamtuner.desktop
 share/gnome/doc/streamtuner/C/documentation-license.xml
 share/gnome/doc/streamtuner/C/figures/main-window.png
-share/gnome/doc/streamtuner/C/figures/search-category.png
-share/gnome/doc/streamtuner/C/figures/search-dialog.png
 share/gnome/doc/streamtuner/C/software-license.xml
 share/gnome/doc/streamtuner/C/streamtuner.xml
 share/gnome/omf/streamtuner/streamtuner-C.omf
@@ -30,6 +28,7 @@ share/gnome/omf/streamtuner/streamtuner-C.omf
 share/gnome/pixmaps/streamtuner.png
 share/locale/de/LC_MESSAGES/streamtuner.mo
 share/locale/fr/LC_MESSAGES/streamtuner.mo
+share/locale/hu/LC_MESSAGES/streamtuner.mo
 share/locale/pt/LC_MESSAGES/streamtuner.mo
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
