@@ -5,11 +5,11 @@
 #
 # $NetBSD: Makefile,v 1.1.1.1 2000/10/15 17:32:11 rh Exp $
 # $FreeBSD$
-# $Id: Makefile,v 1.13 2003/12/31 00:24:30 patrick Exp $
+# $Id: Makefile,v 1.15 2004/01/12 21:58:57 patrick Exp $
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/v2.0/ \
 		http://www.atabersk.de/lilypond/
@@ -66,11 +66,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 #IGNORING portlint 2.5.0 WARN: possible direct use of command "install" found at line 64. use ${INSTALL_foobaa} instead.
 INSTALL_INFO?=	install-info
-
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} Pausing ten seconds--press control-C to cancel the build.
-	@sleep 10
 
 pre-configure:
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=g;s=%%DATADIRVERSION%%=${DATADIR}/${PORTVERSION}=g" \
