@@ -71,6 +71,7 @@
     SUBDIR += eboard
     SUBDIR += empire
     SUBDIR += falconseye
+    SUBDIR += farblazer
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
