@@ -7,6 +7,7 @@
 
 PORTNAME=		jadetex
 PORTVERSION=		3.12
+PORTREVISION=		1
 CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
@@ -21,6 +22,8 @@ MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
 
 MESSAGE=		${PKGDIR}/pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
+
+MAN1=			jadetex.1 pdfjadetex.1
 
 post-patch: patch-makefile patch-message
 
@@ -37,7 +40,10 @@ do-install:
 	@cd ${WRKSRC}; TEXMFMAIN=$$(kpsewhich -expand-var '$$TEXMFMAIN'); \
 	 ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt $$TEXMFMAIN/web2c; \
 	 ${MKDIR} -m 555 $$TEXMFMAIN/tex/jadetex; \
-	 ${INSTALL_DATA} dsssl.def jadetex.ltx $$TEXMFMAIN/tex/jadetex
+	 ${INSTALL_DATA} dsssl.def jadetex.ltx $$TEXMFMAIN/tex/jadetex; \
+	 ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	@${LN} -sf ${PREFIX}/bin/tex ${PREFIX}/bin/jadetex
+	@${LN} -sf ${PREFIX}/bin/pdftex ${PREFIX}/bin/pdfjadetex
 
 post-install: rebuild-tex-database display-message
 
