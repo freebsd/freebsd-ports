@@ -1,35 +1,23 @@
 bin/streamtuner
-include/streamtuner/st_category.h
-include/streamtuner/st_dialog.h
-include/streamtuner/st_handler.h
-include/streamtuner/st_handler_field.h
-include/streamtuner/st_handlers.h
-include/streamtuner/st_programs.h
-include/streamtuner/st_re.h
-include/streamtuner/st_settings.h
-include/streamtuner/st_state.h
-include/streamtuner/st_stream.h
-include/streamtuner/st_transfer.h
-include/streamtuner/st_version.h
+bin/streamtuner-theme-convert
+include/streamtuner/st-category-api.h
+include/streamtuner/st-dialog-api.h
+include/streamtuner/st-handler-api.h
+include/streamtuner/st-handler-field-api.h
+include/streamtuner/st-handlers-api.h
+include/streamtuner/st-programs-api.h
+include/streamtuner/st-re-api.h
+include/streamtuner/st-settings-api.h
+include/streamtuner/st-state-api.h
+include/streamtuner/st-stream-api.h
+include/streamtuner/st-transfer-api.h
+include/streamtuner/st-version-api.h
 include/streamtuner/streamtuner.h
 lib/streamtuner/plugins/shoutcast.a
 lib/streamtuner/plugins/shoutcast.la
 lib/streamtuner/plugins/shoutcast.so
-libdata/pkgconfig/streamtuner.pc
-share/streamtuner/themes/Default/AUTHORS
-share/streamtuner/themes/Default/browse-prelight.png
-share/streamtuner/themes/Default/browse.png
-share/streamtuner/themes/Default/record-prelight.png
-share/streamtuner/themes/Default/record.png
-share/streamtuner/themes/Default/reload-prelight.png
-share/streamtuner/themes/Default/reload.png
-share/streamtuner/themes/Default/stop-prelight.png
-share/streamtuner/themes/Default/stop.png
-share/streamtuner/themes/Default/tune_in-prelight.png
-share/streamtuner/themes/Default/tune_in.png
+share/applications/streamtuner.desktop
+share/pixmaps/streamtuner.png
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
 @dirrm lib/streamtuner
-@dirrm share/streamtuner/themes/Default
-@dirrm share/streamtuner/themes
-@dirrm share/streamtuner

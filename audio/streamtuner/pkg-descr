@@ -1,11 +1,8 @@
-streamtuner is a stream directory browser. It offers an intuitive and
-unified interface to various streaming directories through the use of
-a plugin system.
+streamtuner is a stream directory browser. Through the use of a plugin
+system, it offers an intuitive GTK+ 2.0 interface to Internet radio
+directories such as SHOUTcast and Live365.
 
-streamtuner implements a GTK+ 2.0 graphical user interface, and the
-official distribution ships with the SHOUTcast plugin.
-
-WWW: http://streamtuner.sourceforge.net/
+WWW: http://www.nongnu.org/streamtuner/
 
 - Jean-Yves Lefort
 jylefort@brutele.be
