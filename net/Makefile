@@ -693,6 +693,7 @@
     SUBDIR += ser
     SUBDIR += serveez
     SUBDIR += sharity-light
+    SUBDIR += shmux
     SUBDIR += silc-client
     SUBDIR += silc-server
     SUBDIR += silky
