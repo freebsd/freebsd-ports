@@ -1,4 +1,5 @@
 bin/fvwm95
+bin/fvwm95.find
 bin/xpmroot
 lib/libfvwm95.a
 lib/X11/fvwm95/FvwmAudio
