@@ -1,125 +1,52 @@
 --- PATCHES Dec 2002 17:44:54 -0000	3.6
 +++ PATCHES Feb 2004 13:19:42 -0000
 @@ -0,0 +1 @@
-+patch-1.5.7.ust.maildir-mtime.1
---- browser.c Sep 2003 13:03:25 -0000	3.9
-+++ browser.c Feb 2004 13:19:42 -0000
-@@ -29,2 +29,3 @@
++patch-1.5.7.ust.maildir-mtime.2
+--- browser.c.orig	Wed Jan 26 13:41:04 2005
++++ browser.c	Wed Feb  9 09:20:14 2005
+@@ -27,6 +27,7 @@
+ #ifdef USE_IMAP
+ #include "imap.h"
  #endif
 +#include "mx.h"
  
-@@ -304,4 +305,6 @@ folder_format_str (char *dest, size_t de
- static void add_folder (MUTTMENU *m, struct browser_state *state,
--			const char *name, const struct stat *s, int new)
-+			const char *name, struct stat *s, BUFFY *mbuf)
- {
-+  int new = (mbuf) ? mbuf->new : 0;
-+
-   if (state->entrylen == state->entrymax)
-@@ -317,2 +320,5 @@ static void add_folder (MUTTMENU *m, str
+ #include <stdlib.h>
+ #include <dirent.h>
+@@ -346,6 +347,21 @@
+     menu->data = state->entry;
+ }
  
-+  if (mbuf && mbuf->magic == M_MAILDIR && mbuf->mtime)
-+    s->st_mtime = mbuf->mtime;
++static void check_maildir_times (BUFFY *buf, struct stat *st)
++{
++  char buffer[_POSIX_PATH_MAX + SHORT_STRING];
++  struct stat s;
 +
-   if (s != NULL)
-@@ -411,3 +417,3 @@ static int examine_directory (MUTTMENU *
++  if(!buf || buf->magic != M_MAILDIR)
++    return;
++
++  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
++  if (lstat (buffer, &s) != 0)
++    return;
++
++  st->st_mtime = s.st_mtime;
++}
++
+ static int examine_directory (MUTTMENU *menu, struct browser_state *state,
+ 			      char *d, const char *prefix)
+ {
+@@ -409,6 +425,7 @@
+     tmp = Incoming;
+     while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
--    add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
-+    add_folder (menu, state, de->d_name, &s, tmp);
++    check_maildir_times (tmp, &s);
+     add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
    }
-@@ -435,3 +441,3 @@ static int examine_mailboxes (MUTTMENU *
-     {
--      add_folder (menu, state, tmp->path, NULL, tmp->new);
-+      add_folder (menu, state, tmp->path, NULL, tmp);
-       continue;
-@@ -442,3 +448,3 @@ static int examine_mailboxes (MUTTMENU *
-     {
--      add_folder (menu, state, tmp->path, NULL, tmp->new);
-+      add_folder (menu, state, tmp->path, NULL, tmp);
-       continue;
-@@ -456,3 +462,3 @@ static int examine_mailboxes (MUTTMENU *
+   closedir (dp);  
+@@ -454,6 +471,7 @@
+     strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
+     mutt_pretty_mailbox (buffer);
  
--    add_folder (menu, state, buffer, &s, tmp->new);
-+    add_folder (menu, state, buffer, &s, tmp);
++    check_maildir_times (tmp, &s);
+     add_folder (menu, state, buffer, &s, tmp->new);
    }
---- buffy.c.orig	Sat Oct 30 23:40:07 2004
-+++ buffy.c	Sat Feb  5 13:57:07 2005
-@@ -227,6 +227,7 @@
-     (*tmp)->new = 0;
-     (*tmp)->notified = 1;
-     (*tmp)->newly_created = 0;
-+    (*tmp)->mtime = 0;
- 
- #ifdef BUFFY_SIZE
-     /* for buffy_size, it is important that if the folder is new (tested by
-@@ -258,6 +259,7 @@
- {
-   BUFFY *tmp;
-   struct stat sb;
-+  struct stat smd;
-   struct dirent *de;
-   DIR *dirp;
-   char path[_POSIX_PATH_MAX];
-@@ -297,6 +299,7 @@
-   for (tmp = Incoming; tmp; tmp = tmp->next)
-   {
-     tmp->new = 0;
-+    tmp->mtime = 0;
- 
- #ifdef USE_IMAP
-     if (mx_is_imap (tmp->path))
-@@ -370,21 +373,31 @@
-       case M_MAILDIR:
- 
- 	snprintf (path, sizeof (path), "%s/new", tmp->path);
-+        stat (path, &smd);
-+	tmp->mtime = smd.st_mtime;
- 	if ((dirp = opendir (path)) == NULL)
- 	{
- 	  tmp->magic = 0;
- 	  break;
- 	}
-+
- 	while ((de = readdir (dirp)) != NULL)
- 	{
- 	  char *p;
- 	  if (*de->d_name != '.' && 
- 	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
- 	  {
--	    /* one new and undeleted message is enough */
--	    BuffyCount++;
--	    tmp->new = 1;
--	    break;
-+	    if (!tmp->new)
-+	    {
-+	      /* one new and undeleted message is enough */
-+	      BuffyCount++;
-+	      tmp->new = 1;
-+	    }
-+	    snprintf (path, sizeof (path), "%s/new/%s", tmp->path, de->d_name);
-+	    if (!stat (path, &smd) && smd.st_mtime > tmp->mtime)
-+	    {
-+	      tmp->mtime = smd.st_mtime;
-+	    }
- 	  }
- 	}
- 	closedir (dirp);
-@@ -414,6 +427,12 @@
- #ifdef BUFFY_SIZE
-     else if (Context && Context->path)
-       tmp->size = (long) sb.st_size;	/* update the size */
-+#else
-+    else if(tmp->magic == M_MAILDIR) {
-+	snprintf (path, sizeof (path), "%s/new", tmp->path);
-+        stat (path, &smd);
-+	tmp->mtime = smd.st_mtime;
-+    }
- #endif
- 
-     if (!tmp->new)
---- buffy.h Dec 2002 11:19:39 -0000	3.2
-+++ buffy.h Feb 2004 13:19:42 -0000
-@@ -29,2 +29,3 @@ typedef struct buffy_t
-   struct buffy_t *next;
-+  time_t mtime;			/* for maildirs...time of newest entry */
-   short new;			/* mailbox has new mail */
+   while ((tmp = tmp->next));
