@@ -1,0 +1,10 @@
+--- lib/libtelnet/sslapp.h.orig	Fri Oct 16 21:14:59 1998
++++ lib/libtelnet/sslapp.h	Fri Oct 16 21:15:07 1998
+@@ -53,6 +53,7 @@
+ extern int ssl_disabled_flag;
+ extern int ssl_cert_required;
+ extern int ssl_certsok_flag;
++extern int ssl_quiet_flag;
+ 
+ extern char *ssl_log_file; 
+ extern char *ssl_cert_file; 
