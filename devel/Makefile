@@ -479,6 +479,7 @@
     SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += oniguruma
+    SUBDIR += openthreads
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += ossp-al

@@ -1,0 +1,17 @@
+From the 'overview' section of the official site:
+
+Open Producer (or simply Producer) is a cross-platform C++/OpenGL library
+that is focused on Camera control. Producer's Camera provides projection 1,
+field of view, viewpoint control, and frame control. Further, Producer can
+be used in a multi-tasking environment to allow multiple Camera's to run in
+parallel supporting hardware configurations with multiple display subsystems.
+Threading, Camera synchronization and frame rate control are simplified in
+the Producer programming interface. 
+
+Producer provides a simple, yet powerfully scalable approach for real-time 3D
+applications wishing to run within a single window to large, multidisplay
+systems. 
+
+WWW: http://www.andesengineering.com/Producer/
+
+Maintainer: "Ying-Chieh Chen" <yinjieh@csie.nctu.edu.tw>
