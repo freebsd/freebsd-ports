@@ -7,6 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.21
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 
@@ -14,8 +15,15 @@ MAINTAINER=	simond@irrelevant.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga --disable-ui
+CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
+USE_GTK=	yes
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+
+pre-configure:
+	@${PERL} -pi.orig -e 's:-lpthread:${PTHREAD_LIBS}:g' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uae ${PREFIX}/bin
