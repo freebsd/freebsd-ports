@@ -69,13 +69,15 @@
 --- unarj.h	Wed Dec 28 04:25:07 1994
 ***************
 *** 104,111 ****
---- 104,113 ----
+--- 104,115 ----
   #endif
   
   typedef unsigned char  uchar;   /*  8 bits or more */
 + #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
   typedef unsigned int   uint;    /* 16 - 32 bits or more */
   typedef unsigned short ushort;  /* 16 bits or more */
++ #else
++ #  include <sys/types.h>
 + #endif
   typedef unsigned long  ulong;   /* 32 bits or more */
   
