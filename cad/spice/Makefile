@@ -3,6 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
+# $Id$
 #
 
 DISTNAME=       spice3f4
