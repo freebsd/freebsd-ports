@@ -17,14 +17,12 @@ COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
 PORTDOCS=	TODO ChangeLog
 
-USE_AUTOCONF_VER=	253
 USE_GETOPT_LONG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/wput
 MAN1=		wput.1
