@@ -1,0 +1,7 @@
+xcolors reads the rgb.txt file that defines the color names the X
+server knows and displays the colors found.
+
+This version is taken from the X11R6 contrib tape.
+
+Satoshi
+asami@cs.berkeley.edu
