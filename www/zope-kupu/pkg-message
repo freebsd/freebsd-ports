@@ -1,0 +1,9 @@
+-----------------------------------------------------------------------------
+Kupu is now installed for Zope. It should integrate itself automatically
+with Silva, CMF, and Plone if it detects them the next time you re-start
+your Zope server.
+
+While kupu is theoretically usable with other projects/servers the present
+port was made primarily to support Zope/Silva. If anyone needs the port
+to have more general support... start reading the Porter's Handbook! (-:
+-----------------------------------------------------------------------------
