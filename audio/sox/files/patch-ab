@@ -1,0 +1,123 @@
+autoconf'ed version of patch-aa (make --with-oss-dsp still check to see
+that the header files exist).
+
+--- configure.old	Sat Jul 24 22:15:19 1999
++++ configure	Sat Jul 24 22:15:23 1999
+@@ -1549,23 +1549,24 @@
+ fi
+ 
+ echo "$ac_t""$ac_cv_dev_oss_dsp" 1>&6
+-	if test "$ac_cv_dev_oss_dsp" = yes
+-	then
+-		for ac_hdr in sys/soundcard.h machine/soundcard.h
++fi
++if test "$ac_cv_dev_oss_dsp" = yes -o "$oss_dsp" = yes
++then
++	for ac_hdr in sys/soundcard.h machine/soundcard.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+-echo "configure:1559: checking for $ac_hdr" >&5
++echo "configure:1560: checking for $ac_hdr" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 1564 "configure"
++#line 1565 "configure"
+ #include "confdefs.h"
+ #include <$ac_hdr>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+-{ (eval echo configure:1569: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
++{ (eval echo configure:1570: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+   rm -rf conftest*
+@@ -1588,13 +1589,13 @@
+  oss_dsp=yes
+ else
+   echo "$ac_t""no" 1>&6
++oss_dsp=no
+ fi
+ done
+ 
+-		if test "$oss_dsp" = auto
+-		then
+-			echo "configure: warning: No soundcard.h to compile with OSS /dev/dsp" 1>&2
+-		fi
++	if test "$oss_dsp" = no
++	then
++		echo "configure: warning: No soundcard.h to compile with OSS /dev/dsp" 1>&2
+ 	fi
+ fi
+ if test "$oss_dsp" = yes
+@@ -1607,7 +1608,7 @@
+ if test "$sun_audio" = auto
+ then
+ 	echo $ac_n "checking whether /dev/audio is functional (SUN style)""... $ac_c" 1>&6
+-echo "configure:1611: checking whether /dev/audio is functional (SUN style)" >&5
++echo "configure:1612: checking whether /dev/audio is functional (SUN style)" >&5
+ if eval "test \"`echo '$''{'ac_cv_dev_sun_audio'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1615,7 +1616,7 @@
+   ac_cv_dev_sun_audio=no
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 1619 "configure"
++#line 1620 "configure"
+ #include "confdefs.h"
+ 
+ 			int
+@@ -1631,7 +1632,7 @@
+ 				}
+ 			
+ EOF
+-if { (eval echo configure:1635: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:1636: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ then
+   ac_cv_dev_sun_audio=yes
+ else
+@@ -1651,17 +1652,17 @@
+ 	then
+ 		ac_safe=`echo "sys/audioio.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for sys/audioio.h""... $ac_c" 1>&6
+-echo "configure:1655: checking for sys/audioio.h" >&5
++echo "configure:1656: checking for sys/audioio.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 1660 "configure"
++#line 1661 "configure"
+ #include "confdefs.h"
+ #include <sys/audioio.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+-{ (eval echo configure:1665: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
++{ (eval echo configure:1666: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+   rm -rf conftest*
+@@ -1684,17 +1685,17 @@
+ 
+ 		ac_safe=`echo "sun/audioio.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for sun/audioio.h""... $ac_c" 1>&6
+-echo "configure:1688: checking for sun/audioio.h" >&5
++echo "configure:1689: checking for sun/audioio.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 1693 "configure"
++#line 1694 "configure"
+ #include "confdefs.h"
+ #include <sun/audioio.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+-{ (eval echo configure:1698: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
++{ (eval echo configure:1699: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+   rm -rf conftest*
