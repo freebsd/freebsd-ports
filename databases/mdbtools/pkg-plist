@@ -10,12 +10,20 @@ bin/mdb-ver
 bin/prcat
 bin/prdata
 bin/prdump
+bin/prindex
 bin/prkkd
+bin/prole
 bin/prtable
+bin/updrow
 include/mdbodbc.h
 include/mdbsql.h
 include/mdbtools.h
+lib/libmdbsql.a
+lib/libmdbsql.la
+lib/libmdbsql.so
+lib/libmdbsql.so.0
 lib/libmdb.a
+lib/libmdb.la
 lib/libmdb.so
 lib/libmdb.so.0
 %%PORTDOCS%%share/doc/mdbtools/AUTHORS
@@ -24,5 +32,4 @@ lib/libmdb.so.0
 %%PORTDOCS%%share/doc/mdbtools/NEWS
 %%PORTDOCS%%share/doc/mdbtools/README
 %%PORTDOCS%%share/doc/mdbtools/TODO
-%%PORTDOCS%%share/doc/mdbtools/INSTALL
 %%PORTDOCS%%@dirrm share/doc/mdbtools
