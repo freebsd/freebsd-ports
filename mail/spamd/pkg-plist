@@ -1,0 +1,4 @@
+libexec/spamd
+sbin/spamd-setup
+etc/rc.d/spamd.sh
+etc/spamd.conf.sample

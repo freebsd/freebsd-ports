@@ -319,6 +319,7 @@
     SUBDIR += sortmail
     SUBDIR += spamass-milter
     SUBDIR += spambnc
+    SUBDIR += spamd
     SUBDIR += spamoracle
     SUBDIR += spamprobe
     SUBDIR += spamstats
