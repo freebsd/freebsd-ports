@@ -6,38 +6,28 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.17
 CATEGORIES=	www
-MASTER_SITES=	ftp://www.alobbs.com/cherokee/
+MASTER_SITES=	ftp://laurel.datsi.fi.upm.es/pub/linux/cherokee/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Cherokee is an extremely fast and tiny web server
+COMMENT=	An extremely fast and flexible web server
 
-#USE_AUTOCONF_VER=213
-#USE_AUTOMAKE_VER=14
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
+
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
+USE_INC_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 INSTALLS_SHLIB=	yes
 
-#This is experimental
-#do not expect it to work properly
-.if defined(WITH_PHP)
-CONFIGURE_ARGS+=--with-php=${PREFIX}/include/php
-BUILD_DEPENDS=mod_php4:${PORTSDIR}/www/mod_php4:
-.endif
+MAN1=		cherokee-config.1 cherokee.1
 
-MAN1=		cherokee.1
-
-#pre-everything:
-#	@${ECHO_MSG} "----------------------------"
-#	@${ECHO_MSG} " "
-#	@${ECHO_MSG} "You can add php support"
-#	@${ECHO_MSG} "This is experimental"
-#	@${ECHO_MSG} "builds cherokee with WITH_PHP=yes"
-#	@${ECHO_MSG} "For example,"
-#	@${ECHO_MSG} "make WITH_PHP=yes"
-#	@${ECHO_MSG} " "
-#	@${ECHO_MSG} "----------------------------"
+CPPFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS=	${PTHREAD_LIBS}
 
 pre-install:
 	@if [ ! -f ${PREFIX}/www ]; then \
@@ -49,7 +39,7 @@ pre-install:
 	@${ECHO_MSG} " `pwd` "
 
 post-install:
-	@${INSTALL}  -m 644 ${WRKSRC}/doc/Intro.txt ${PREFIX}/share/cherokee
+	${INSTALL_DATA} ${WRKSRC}/doc/Intro.txt ${DATADIR}
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " Dont forget to read the doc "
 	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"
