@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imlib2.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imlib2/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imlib2/ooimlib.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imlib2/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imlib2/Imlib2.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imlib2/Imlib2.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imlib2/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imlib2
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imlib2
