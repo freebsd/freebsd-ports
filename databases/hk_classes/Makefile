@@ -26,11 +26,10 @@ LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 OPTIONS=	MYSQL "Build MySQL driver" on \
 		POSTGRESQL "Build PostrgreSQL driver" off \
 		ODBC "Build unixODBC driver" off
-WITH_MYSQL?=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-dir=${LOCALBASE} \
 			--with-mysql-incdir=${LOCALBASE}/include/mysql \
