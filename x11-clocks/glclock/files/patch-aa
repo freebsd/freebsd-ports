@@ -1,5 +1,5 @@
 --- makefile.orig	Sat Jun 12 08:37:05 1999
-+++ makefile	Sat Sep 25 15:23:49 1999
++++ makefile	Tue Dec 14 15:34:07 1999
 @@ -3,22 +3,27 @@
  #         June 1998 by Masaki Kawase (g93088@isc.chubu.ac.jp)
  #
@@ -16,12 +16,13 @@
 -       LIB_PATH = -L/usr/local/X11R6/lib
 +    GLCLOCK_DIR = ${PREFIX}/lib/X11/glclock/
  
+-           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm
 +   INCLUDE_PATH = -I${X11BASE}/include
 +       LIB_PATH = -L${X11BASE}/lib -Wl,-rpath,/usr/X11R6/lib 
 +
 +# Link with -lGL on FreeBSD so we use hardware-accelerated GL, when installed.
 +# (see http://www.freebsd.org/~3d)
-            LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm
++           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm -lXi
  
  #                 for Mesa
  #          LIBS = -lglut -lMesatk -lMesaGLU -lMesaGL -lXi -lXext -lXmu -lX11 -lm
