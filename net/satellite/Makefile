@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= system/network
 
 MAINTAINER=	markp@FreeBSD.org
 
-LIB_DEPENDS=    gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=    gdbm.3:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=  CPPFLAGS='-I${LOCALBASE}/include' \

@@ -21,7 +21,7 @@ MAINTAINER=	wjv@FreeBSD.org
 # make use of sysutils/lsof and security/nmap if installed.
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 RUN_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 # ntop will store its runtime database files in ${DBDIR}/ntop/
 DBDIR?=		/var/db

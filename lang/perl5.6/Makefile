@@ -35,7 +35,7 @@ INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=	-Di_gdbm
-LIB_DEPENDS+=		gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	-Ui_gdbm

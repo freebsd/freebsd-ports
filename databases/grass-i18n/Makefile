@@ -22,7 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw.2:${PORTSDIR}/math/fftw \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		gdbm.2:${PORTSDIR}/databases/gdbm \
+		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pq.2:${PORTSDIR}/databases/postgresql7 \
 		odbc.1:${PORTSDIR}/databases/unixODBC \
 		lapack.3:${PORTSDIR}/math/lapack

@@ -17,7 +17,7 @@ MAINTAINER=	petef@FreeBSD.org
 # want these extensions installed, define WITHOUT_GDBM.
 #
 .if !defined(WITHOUT_GDBM)
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 
 INSTALL_TARGET=	install-strip

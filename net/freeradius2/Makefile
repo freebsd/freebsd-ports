@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 
 MAINTAINER=	brian@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

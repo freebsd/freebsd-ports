@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-1.x/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/src
 

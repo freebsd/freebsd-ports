@@ -18,7 +18,7 @@ LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gnet.1:${PORTSDIR}/net/gnet \
-		gdbm.2:${PORTSDIR}/databases/gdbm
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

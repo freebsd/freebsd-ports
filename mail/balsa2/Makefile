@@ -22,7 +22,7 @@ LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
-		gdbm.2:${PORTSDIR}/databases/gdbm
+		gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes

@@ -15,7 +15,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes

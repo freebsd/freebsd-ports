@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	coda@cs.cmu.edu
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.4:${PORTSDIR}/devel/rpc2 \
 		rvm.2:${PORTSDIR}/devel/rvm

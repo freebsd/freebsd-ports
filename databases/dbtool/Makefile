@@ -21,7 +21,7 @@ LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 DB_INC=		-I${LOCALBASE}/include/db3
 CONFIGURE_ARGS=	--with-berkeley
 .else
-LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 
 GNU_CONFIGURE=	yes

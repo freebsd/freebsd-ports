@@ -16,7 +16,7 @@ MAINTAINER=	erik@smluc.org
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
 		${NONEXISTENT}:${PORTSDIR}/${GAUCHE_PORT}:configure
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT}
 
 GAUCHE_PORT=	lang/gauche

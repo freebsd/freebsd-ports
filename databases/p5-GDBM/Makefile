@@ -16,7 +16,7 @@ DISTNAME=	perl5.005_03
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 PERL_CONFIGURE=	yes
 

@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	papowell@astart.com
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\

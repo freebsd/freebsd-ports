@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		gdbm.2:${PORTSDIR}/databases/gdbm \
+		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_REINPLACE=	yes

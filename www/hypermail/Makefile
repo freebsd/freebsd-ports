@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.landfield.com/hypermail/dist/
 
 MAINTAINER=	petef@FreeBSD.org
 
-LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes

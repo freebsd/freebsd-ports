@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		newt.51:${PORTSDIR}/devel/newt
 
 ALL_TARGET=	${DISTNAME}

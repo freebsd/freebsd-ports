@@ -13,7 +13,7 @@ MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
 MAINTAINER=	markp@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_REINPLACE=	yes
 
