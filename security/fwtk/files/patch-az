@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Jun  2 05:12:56 1999
++++ Makefile	Wed Jun  2 05:18:17 1999
+@@ -22,7 +22,11 @@
+ 
+ 
+ # directories to build executables in
+-DIRS=	smap smapd netacl plug-gw ftp-gw tn-gw rlogin-gw http-gw x-gw
++DIRS=	smap smapd netacl plug-gw ftp-gw tn-gw rlogin-gw http-gw
++
++.if !defined(NO_X11)
++DIRS+=	x-gw
++.endif
+ 
+ 
+ all:
