@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.35 1999/02/17 06:40:02 andreas Exp $
+# $Id: Makefile,v 1.36 1999/02/23 19:33:07 andreas Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-02-17_03-02
@@ -12,6 +12,8 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+Y2K=		http://www.isc.org/inn-y2k.html
 
 .if defined(BATCH)
 # in BATCH mode we use the default
