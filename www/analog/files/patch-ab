@@ -1,6 +1,6 @@
---- tree.c.orig	Sun Nov 14 17:17:17 1999
-+++ tree.c	Thu Dec  9 08:23:39 1999
-@@ -781,8 +781,16 @@
+--- tree.c.orig	Fri Dec 17 13:15:19 1999
++++ tree.c	Thu Dec 23 08:02:55 1999
+@@ -781,8 +781,12 @@
      }
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";
@@ -8,10 +8,6 @@
 -      *name = "Unix:BSD";
 +    else if (strstr(whole, "FreeBSD") != NULL || strstr(whole, "freebsd") != NULL)
 +      *name = "Unix:FreeBSD";
-+    else if (strstr(whole, "NetBSD") != NULL || strstr(whole, "netbsd") != NULL)
-+      *name = "Unix:NetBSD";
-+    else if (strstr(whole, "OpenBSD") != NULL || strstr(whole, "openbsd") != NULL)
-+      *name = "Unix:OpenBSD";
 +    else if (strstr(whole, "BSD/OS") != NULL || strstr(whole, "bsd/os") != NULL)
 +      *name = "Unix:BSD/OS";
 +    else if (strstr(whole, "BSD") != NULL || strstr(whole, "bsd") != NULL)
