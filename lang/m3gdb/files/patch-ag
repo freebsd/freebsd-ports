@@ -1,0 +1,28 @@
+--- src/contrib/binutils/libiberty/strsignal.c.orig	Sun Oct 20 17:28:15 2002
++++ src/contrib/binutils/libiberty/strsignal.c	Sun Oct 20 17:29:24 2002
+@@ -16,7 +16,9 @@
+    we could work out the right declaration.  Until, then we just
+    ignore any declaration in the system header files, and always
+    declare it ourselves.  With luck, this will always work.  */
++#ifndef __FreeBSD__
+ #define sys_siglist no_such_symbol
++#endif
+ 
+ #include <stdio.h>
+ #include <signal.h>
+@@ -243,6 +245,7 @@
+ 
+ #else
+ 
++#ifndef __FreeBSD__
+ #ifdef NSIG
+ static int sys_nsig = NSIG;
+ #else
+@@ -251,6 +254,7 @@
+ #endif
+ #endif
+ extern const char * const sys_siglist[];
++#endif
+ 
+ #endif
+ 

@@ -1,0 +1,14 @@
+--- src/contrib/binutils/libiberty/strerror.c.orig	Sun Oct 20 17:27:09 2002
++++ src/contrib/binutils/libiberty/strerror.c	Sun Oct 20 17:27:31 2002
+@@ -461,9 +461,10 @@
+ static const char **sys_errlist;
+ 
+ #else
+-
++#if !defined(__FreeBSD__)
+ extern int sys_nerr;
+ extern char *sys_errlist[];
++#endif
+ 
+ #endif
+ 
