@@ -3,11 +3,11 @@
 @@ -1,6 +1,10 @@
  \input texinfo.tex
  @setfilename mime-ui-en.info
- @settitle{SEMI 1.8 Manual}
+ @settitle{SEMI 1.14 Manual}
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
 +* mime-ui-en: (mime-ui-en).	MIME user interface for GNU Emacs. (English)
 +@end direntry 
  @titlepage
- @title SEMI 1.8 Manual
+ @title SEMI 1.14 Manual
  @author MORIOKA Tomohiko <morioka@@jaist.ac.jp>
