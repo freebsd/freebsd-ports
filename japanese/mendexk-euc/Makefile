@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	mendexk
-PORTVERSION=	2.4d
-PKGNAMESUFFIX=	-euc
+PORTVERSION=	2.5
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/
+PKGNAMESUFFIX=	-euc
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${KPATHSEA_PARENT}${EXTRACT_SUFX}
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 COMMENT=	Index formatter for Japanese (EUC)
 
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/japanese/ptex-base:configure
+
 USE_GMAKE=	yes
-DIST_SUBDIR=	ptex
+DIST_SUBDIR=	teTeX
+WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/${DISTNAME}
+ALL_TARGET=	mendex
+
+TETEX_VERSION=	2.0.2
 
 MANLANG=	ja
 MAN1=		mendex.1
 
-KPATHSEA_PARENT=	web2c-7.2
+post-extract:
+	@${RM} -rf ${WRKSRC}
+	@${MV} ${WRKDIR}/${DISTNAME} ${WRKSRC}
 
-pre-configure:
-	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; \
-	    ./configure --prefix=${PREFIX} )
-
-do-build:
-	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; ${GMAKE} )
-	@( cd ${WRKSRC} ; ${MAKE} kpathsea_parent=../${KPATHSEA_PARENT} )
+pre-build:
+	@(cd ${WRKSRC}/../kpathsea; ${MAKE})
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mendex ${PREFIX}/bin
@@ -41,5 +42,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/mendex
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mendex
 .endif
+
+pre-clean:
+	@${RM} -rf ${WRKSRC}
 
 .include <bsd.port.mk>

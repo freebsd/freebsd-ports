@@ -1,0 +1,28 @@
+--- Makefile.orig	Mon Jan 21 15:12:48 2002
++++ Makefile	Mon Jun 23 16:17:52 2003
+@@ -1,4 +1,3 @@
+-CC = gcc
+ CCLD =$(CC)
+ PROGRAM = mendex
+ 
+@@ -9,16 +8,16 @@
+ # CFLAGS と PROGLINK を kpathsea ライブラリに合わせて選択する
+ #
+ # for kpathsea-3.*
+-#CFLAGS = -O -DKPATHSEA -DKPATHSEA3
+-#PROGLINK = $(kpathsea_link) $(OBJS) $(kpathsea_3)
++CFLAGS = -O -DKPATHSEA -DKPATHSEA3
++PROGLINK = $(kpathsea_link) $(OBJS) $(kpathsea_3)
+ 
+ # for kpathsea-2.6
+ #CFLAGS = -O -DKPATHSEA
+ #PROGLINK = $(CC) $(OBJS) -o $(PROGRAM) $(kpathsea_2)
+ 
+ # for no kpathsea
+-CFLAGS = -O
+-PROGLINK = $(CC) $(OBJS) -o $(PROGRAM)
++#CFLAGS = -O
++#PROGLINK = $(CC) $(OBJS) -o $(PROGRAM)
+ 
+ OBJS = main.o convert.o sort.o fread.o fwrite.o styfile.o pageread.o kp.o
+ LIBTOOL =$(kpathsea_parent)/klibtool
