@@ -1,0 +1,54 @@
+--- ./configure.orig	Wed Mar 11 15:59:28 1998
++++ ./configure	Sat Mar 28 09:19:42 1998
+@@ -2362,7 +2362,41 @@
+ fi
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-   LINUXJOYSTICK=-DHAS_JOYSTICK ;
++   JOYSTICK=-DHAS_JOYSTICK ;
++		    JOY_OBJS='$(ARCHDIR)/joystick.o' 
++else
++  echo "$ac_t""no" 1>&6
++fi
++
++  ac_safe=`echo "machine/joystick.h" | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for machine/joystick.h""... $ac_c" 1>&6
++echo "configure:2374: checking for machine/joystick.h" >&5
++if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  cat > conftest.$ac_ext <<EOF
++#line 2379 "configure"
++#include "confdefs.h"
++#include <machine/joystick.h>
++EOF
++ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
++{ (eval echo configure:2384: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
++ac_err=`grep -v '^ *+' conftest.out`
++if test -z "$ac_err"; then
++  rm -rf conftest*
++  eval "ac_cv_header_$ac_safe=yes"
++else
++  echo "$ac_err" >&5
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_header_$ac_safe=no"
++fi
++rm -f conftest*
++fi
++if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++   JOYSTICK=-DHAS_JOYSTICK ;
+ 		    JOY_OBJS='$(ARCHDIR)/joystick.o' 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -4705,7 +4739,7 @@
+ s%@MAKE2@%$MAKE2%g
+ s%@PERL@%$PERL%g
+ s%@MKDEP@%$MKDEP%g
+-s%@LINUXJOYSTICK@%$LINUXJOYSTICK%g
++s%@JOYSTICK@%$JOYSTICK%g
+ s%@JOY_OBJS@%$JOY_OBJS%g
+ s%@LIBOBJS@%$LIBOBJS%g
+ s%@SUBDIRS@%$SUBDIRS%g

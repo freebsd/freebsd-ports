@@ -1,0 +1,23 @@
+--- ./configure.in.orig	Wed Mar 11 15:59:28 1998
++++ ./configure.in	Sat Mar 28 09:19:42 1998
+@@ -195,7 +195,10 @@
+ 
+ if test "$host_vendor" != "go32" -a "$host_vendor" != "msdos"; then
+   AC_CHECK_HEADER(linux/joystick.h,
+-                  [ LINUXJOYSTICK=-DHAS_JOYSTICK ;
++                  [ JOYSTICK=-DHAS_JOYSTICK ;
++		    JOY_OBJS='$(ARCHDIR)/joystick.o' ], )
++  AC_CHECK_HEADER(machine/joystick.h,
++                  [ JOYSTICK=-DHAS_JOYSTICK ;
+ 		    JOY_OBJS='$(ARCHDIR)/joystick.o' ], )
+   if test "$ac_cv_header_linux_joystick_h" = "yes" ; then
+     AC_MSG_CHECKING(whether linux/joystick.h supports digital joysticks)
+@@ -204,7 +207,7 @@
+ 		   [ LINUXJOYSTICK="$LINUXJOYSTICK -DHAS_DIGITAL_JOYSTICK"
+ 		     AC_MSG_RESULT(yes) ], AC_MSG_RESULT(no))
+   fi
+-  AC_SUBST(LINUXJOYSTICK)
++  AC_SUBST(JOYSTICK)
+   AC_SUBST(JOY_OBJS)
+   AC_CHECK_HEADERS(linux/soundcard.h machine/soundcard.h dmedia/audio.h)
+   AC_CHECK_HEADERS(SDL_audio.h SDL_sleep.h)

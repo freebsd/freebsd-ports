@@ -1,0 +1,11 @@
+--- ../man/vice.man.orig	Sat Mar 28 14:42:29 1998
++++ ../man/vice.man	Sat Mar 28 14:43:01 1998
+@@ -32,7 +32,7 @@
+ .PP
+ The whole documentation for these programs is available in HTML
+ format; the main file should be installed on your system as
+-/usr/local/lib/VICE/doc/MANUAL.html.
++/usr/local/lib/vice/doc/MANUAL.html.
+ .P
+ For up to date news about VICE, have a look at the official home page
+ at
