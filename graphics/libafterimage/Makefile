@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libafterimage
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afterstep
@@ -22,8 +22,6 @@ LIB_DEPENDS=	AfterBase.0:${PORTSDIR}/devel/libafterbase \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.8:${PORTSDIR}/print/freetype2
-
-WRKSRC=		${WRKDIR}/libAfterImage
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -40,12 +38,17 @@ MAN3=	afterimage.3x ascmap.3x asfont.3x asimage.3x asvisual.3x blender.3x \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MMX) && (${ARCH} == "i386")
-CONFIGURE_ARGS+=	--enable--mmx-optimization
+CONFIGURE_ARGS+=	--enable-mmx-optimization
+.else
+CONFIGURE_ARGS+=	--disable-mmx-optimization
 .endif
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install.doc
 .endif
+
+post-extract:
+	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
 
 post-patch:
 	@${PERL} -pi -e 's|-lgif|-lungif|g' ${WRKSRC}/configure
