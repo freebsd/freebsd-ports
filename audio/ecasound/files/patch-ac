@@ -1,0 +1,16 @@
+--- libecasound/eca-chainsetup-position.cpp.orig	Fri Oct  6 18:08:00 2000
++++ libecasound/eca-chainsetup-position.cpp	Wed Dec 20 00:42:14 2000
+@@ -43,11 +43,11 @@
+ }
+ 
+ long int ECA_CHAINSETUP_POSITION::length_in_seconds(void) const {
+-  return(static_cast<double>(length_rep) / srate_rep);
++  return(static_cast<long int>(length_rep) / srate_rep);
+ }
+ 
+ long int ECA_CHAINSETUP_POSITION::position_in_seconds(void) const {
+-  return(static_cast<double>(curpos_rep) / srate_rep);
++  return(static_cast<long int>(curpos_rep) / srate_rep);
+ }
+ 
+ double ECA_CHAINSETUP_POSITION::length_in_seconds_exact(void) const {

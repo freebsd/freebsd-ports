@@ -1,0 +1,14 @@
+--- pyecasound/Makefile.am.orig	Tue Dec  5 20:46:42 2000
++++ pyecasound/Makefile.am	Fri Dec 22 02:53:02 2000
+@@ -6,9 +6,9 @@
+ # ----------------------------------------------------------------------
+ 
+ if INCLUDE_DEBUG
+-ecasound_libs 			= -lecasound_debug
++ecasound_libs 			= -L$(top_builddir)/libecasound/.libs -lecasound_debug
+ else
+-ecasound_libs 			= -lecasound
++ecasound_libs 			= -L$(top_builddir)/libecasound/.libs -lecasound
+ endif
+ 
+ if KVUTILS_INSTALLED
