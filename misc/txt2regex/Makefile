@@ -16,12 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash,g ; \
+	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash,g ; \
 		s,\`seq,\`gseq,g" ${WRKSRC}/${DISTNAME}.sh
-	@${PERL} -pi -e "s,/usr,${LOCALBASE},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,/usr,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.sh ${PREFIX}/bin/txt2regex

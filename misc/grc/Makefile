@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
@@ -22,7 +23,7 @@ MAN1=	grc.1 grcat.1
 
 post-patch:
 .for file in grc grcat
-	@${PERL} -pi -e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g ; \
+	@${REINPLACE_CMD} -e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 

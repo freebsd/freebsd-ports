@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -25,7 +26,7 @@ post-extract:
 
 pre-patch:
 .for file in configure src/Makefile.in
-	@${PERL} -pi -e 's|/moc|/${MOC:T}|g ; \
+	@${REINPLACE_CMD} -e 's|/moc|/${MOC:T}|g ; \
 		 s|-lqt|-l${QTNAME}|g ; \
 		 s|-O2 -Wall|\@CXXFLAGS\@|g' ${WRKSRC}/${file}
 .endfor

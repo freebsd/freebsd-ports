@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -26,10 +27,10 @@ MAN1=		DiscreteHedging.1 EuropeanOption.1 SwapValuation.1 \
 		quantlib-config.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-g -O3|\$$CXXFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-g -O3|\$$CXXFLAGS|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
-		${XARGS} ${PERL} -pi -e 's|-g -O.|\@CXXFLAGS\@|g'
+		${XARGS} ${REINPLACE_CMD} -e 's|-g -O.|\@CXXFLAGS\@|g'
 	@${FIND} ${WRKSRC}/Examples -name "Makefile.in" | \
-		${XARGS} ${PERL} -pi -e 's|-pedantic -Wall|-O0|g'
+		${XARGS} ${REINPLACE_CMD} -e 's|-pedantic -Wall|-O0|g'
 
 .include <bsd.port.mk>

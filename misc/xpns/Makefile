@@ -13,13 +13,14 @@ DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	pns
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xpns ${PREFIX}/bin/xpns

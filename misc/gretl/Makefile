@@ -21,6 +21,7 @@ LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
@@ -43,8 +44,8 @@ CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|`glib-config|`\$$GLIB_CONFIG|g ; \
+	@${REINPLACE_CMD} -e 's|`glib-config|`\$$GLIB_CONFIG|g ; \
 		 s|/share/gretl/|/lib/gretl/|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/gui/gretl.c
+	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/gui/gretl.c
 
 .include <bsd.port.post.mk>
