@@ -1,0 +1,11 @@
+--- xeji.c.orig	Sun May 15 01:31:32 1994
++++ xeji.c	Sun Oct 10 14:55:59 1999
+@@ -10,7 +10,7 @@
+ #include <X11/extensions/shape.h>
+ #ifdef XPM
+ /*#include <X11/xpm.h>*/
+-#include </usr/local/X11R5/include/xpm.h>
++#include <X11/xpm.h>
+ #include "eji.xpm"
+ #endif /* XPM */
+ #include "eji.xbm"

@@ -1,0 +1,12 @@
+--- Imakefile.orig	Sun Oct 10 14:55:09 1999
++++ Imakefile	Sun Oct 10 14:55:29 1999
+@@ -1,7 +1,7 @@
+ LOCAL_LIBRARIES = -lXpm -lXext -lX11 -lm
+ SRCS = xeji.c
+ OBJS = xeji.o
+-CC = gcc     
+-CFLAGS = -O2 -DXPM
++CC ?= gcc     
++CFLAGS += -O2 -DXPM
+ CDEBUGFLAGS =
+ ComplexProgramTarget(xeji)
