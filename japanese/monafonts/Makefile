@@ -7,7 +7,7 @@
 
 PORTNAME=	monafonts
 PORTVERSION=	2.1
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/s42335/mona/dist/
 EXTRACT_SUFX=	.tar.bz2.bin
