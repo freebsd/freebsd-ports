@@ -1,6 +1,11 @@
 www/cgi-bin/wiliki.cgi.dist
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
 share/gauche/site/lib/wiliki.scm
+share/gauche/site/lib/wiliki/db.scm
+share/gauche/site/lib/wiliki/edit.scm
+share/gauche/site/lib/wiliki/format.scm
+share/gauche/site/lib/wiliki/history.scm
+share/gauche/site/lib/wiliki/log.scm
 share/gauche/site/lib/wiliki/macro.scm
 share/gauche/site/lib/wiliki/mcatalog.scm
 share/gauche/site/lib/wiliki/msgs.jp
