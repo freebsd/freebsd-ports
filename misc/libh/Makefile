@@ -28,7 +28,7 @@ DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
 # arbitrary date for now.
-CVS_DATE=	Wed May 23 14:00:00 GMT 2001
+CVS_DATE=	Wed June 12 14:00:00 GMT 2001
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	:pserver:anonymous@usw4.freebsd.org:/home/libh/cvs
 DIRNAME=	${PORTNAME}-${PORTVERSION}
