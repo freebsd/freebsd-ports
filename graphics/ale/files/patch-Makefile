@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 27 00:23:47 2004
-+++ Makefile	Thu Oct 28 12:35:59 2004
-@@ -41,17 +41,17 @@
+--- Makefile.orig	Thu Dec  2 04:55:06 2004
++++ Makefile	Fri Dec  3 12:30:37 2004
+@@ -42,19 +42,19 @@
  DEBUG_CFLAGS:=$(if $(subst 0,,$(DEBUG)),-DDEBUG,-DNDEBUG)
  IMAGEMAGICK_CFLAGS:=$(if $(use_imagemagick),-DUSE_MAGICK $(shell Magick-config --cflags --cppflags),)
  IMAGEMAGICK_LDFLAGS:=$(if $(use_imagemagick),$(shell Magick-config --ldflags --libs),)
@@ -14,14 +14,17 @@
                    $(if $(subst DOUBLE,,$(COORDINATES)),,-DALE_COORDINATES=DOUBLE)
 -FFTW_LDFLAGS:=$(if $(subst 0,,$(FFTW)),-lfftw3,)
 +FFTW_LDFLAGS:=$(if $(subst 0,,$(FFTW)),$(shell pkg-config --libs fftw3),)
+ OPTIMIZATION_CFLAGS:=-DOPTIMIZATIONS=$(OPTIMIZATIONS)
  
  CFLAGS:= $(POSIX_CFLAGS) $(DEBUG_CFLAGS) $(FFTW_CFLAGS) $(PRECISION_CFLAGS) \
--         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS),-Wall -O2) 
-+         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS)) $(CXXFLAGS)
+-         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS),-Wall -O2) \
+-	 $(OPTIMIZATION_CFLAGS)
++         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS)) \
++	 $(OPTIMIZATION_CFLAGS) $(CXXFLAGS)
+ 
  LDFLAGS:=$(if $(use_imagemagick),$(IMAGEMAGICK_LDFLAGS)) $(FFTW_LDFLAGS) -lm
  
- #
-@@ -75,7 +75,7 @@
+@@ -79,7 +79,7 @@
  	find testsuite -name "*.output.*" | xargs rm -rf
  
  ale-phony: ale.cc d2.cc *.h d2/*.h d2/render/*.h d2/render/psf/*.h d3.cc d3/*.h
