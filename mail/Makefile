@@ -318,7 +318,6 @@
     SUBDIR += silkymail
     SUBDIR += sma
     SUBDIR += smail
-    SUBDIR += smapi
     SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed
