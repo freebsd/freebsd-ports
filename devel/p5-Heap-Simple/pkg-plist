@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Heap/Simple/Wrapper.pm
 %%SITE_PERL%%/auto/Heap/Simple/autosplit.ix
 %%SITE_PERL%%/auto/Heap/Simple/extract_min.al
+%%SITE_PERL%%/auto/Heap/Simple/extract_top.al
 %%SITE_PERL%%/auto/Heap/Simple/extract_upto.al
 %%SITE_PERL%%/auto/Heap/Simple/first.al
 %%SITE_PERL%%/auto/Heap/Simple/first_key.al
@@ -22,6 +23,7 @@
 %%SITE_PERL%%/auto/Heap/Simple/key.al
 %%SITE_PERL%%/auto/Heap/Simple/keys.al
 %%SITE_PERL%%/auto/Heap/Simple/min_key.al
+%%SITE_PERL%%/auto/Heap/Simple/top_key.al
 %%SITE_PERL%%/auto/Heap/Simple/user_data.al
 %%SITE_PERL%%/auto/Heap/Simple/values.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/.packlist
