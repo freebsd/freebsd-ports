@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.0.0.p19.6.6
+PORTVERSION=	1.0.0.p19.7.2
 CATEGORIES=	net comms
 MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
 DISTNAME=	rdesktop-1.0.0
 
-PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/
-PATCHFILES=	rdesktop-unified-patch19-6-6.bz2
+PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/ \
+		http://bibl4.oru.se/projects/rdesktop/patch19/
+PATCHFILES=	rdesktop-unified-patch19-7-2.bz2
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	chris@aims.com.au
@@ -31,5 +32,8 @@ do-patch:
 	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:/usr/X11R6/:${X11BASE}/:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' ${WRKSRC}/Makefile
+	@${PERL} -pi.orig -e 's:^install.*:install\: rdesktop:g' ${WRKSRC}/Makefile
+	@${PERL} -pi.orig -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
+	@${PERL} -pi.orig -e 's:<endian.h>:<machine/endian.h>:g' ${WRKSRC}/rdesktop.h
 
 .include <bsd.port.mk>
