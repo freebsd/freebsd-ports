@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	1.20020119
+PORTVERSION=	1.20021101
 CATEGORIES?=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dirk
@@ -28,16 +28,16 @@ PLIST=		${PKGDIR}/pkg-plist.${PHP_LANG}
 PHPDOCDIR=	${PREFIX}/share/doc/${PHP_LANG}-php
 
 .if ${PHP_LANG} == de
-PORTVERSION=	1.20020119
+PORTVERSION=	1.20021103
 .endif
 .if ${PHP_LANG} == es
-PORTVERSION=	1.20020105
+PORTVERSION=	1.20021104
 .endif
 .if ${PHP_LANG} == fr
-PORTVERSION=	1.20020105
+PORTVERSION=	1.20020708
 .endif
 .if ${PHP_LANG} == ja
-PORTVERSION=	1.20020104
+PORTVERSION=	1.20021104
 .endif
 .endif
 
@@ -65,7 +65,7 @@ do-install:
 .if defined(MAINTAINER_MODE)
 LOCAL_DISTDIR?=	/var/tmp/php_doc/php
 LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
-DISTSITE?=	http://www.php.net/distributions/manual/
+DISTSITE?=	http://de.php.net/distributions/manual/
 
 localfetch:
 .for lang in de en es fr ja
