@@ -30,8 +30,7 @@ DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 DB42		"Berkeley DB4.2 (required if SASL also built with DB4.2)" "$status_DB42" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
-PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
-PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
+PgSQL		"PostgreSQL map lookups (choose with DEFAULT_PGSQL_VER)" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
 NIS		"NIS map lookups" "$status_NIS" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
@@ -164,18 +163,10 @@ while [ "$1" ]; do
 			echo "MYSQL_SUFFIX=	+mysql"
 			;;
 		PgSQL)
-			echo "POSTGRESQL_PORT?=	databases/postgresql74-client"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
-			;;
-		PgSQL73)
-			echo "POSTGRESQL_PORT?=	databases/postgresql73-client"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
+			echo "USE_PGSQL=YES"
+			echo "POSTFIX_CCARGS+=  -DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			echo "PGSQL_SUFFIX=     +pgsql"
 			;;
 		OpenLDAP)
 			echo "USE_OPENLDAP=YES"
