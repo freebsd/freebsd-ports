@@ -9,8 +9,9 @@
 PORTNAME=	nbaudit
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/  \
-		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
+MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	NT/scanners
 DISTNAME=	nat10
 
 MAINTAINER=	ports@FreeBSD.org

@@ -9,7 +9,9 @@
 PORTNAME=	flawfinder
 PORTVERSION=	1.21
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.dwheeler.com/flawfinder/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
+		http://www.dwheeler.com/flawfinder/
+MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	jim@corebsd.or.id
 
