@@ -44,10 +44,6 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if ${OSVERSION} > 502101
-EXTRA_PATCHES=  ${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h
-.endif
-
 SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${WRKDIR}/build
