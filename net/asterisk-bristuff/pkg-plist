@@ -124,6 +124,7 @@ etc/asterisk/vpb.conf-dist
 @unexec if cmp -s %D/etc/asterisk/zapata.conf %D/etc/asterisk/zapata.conf-dist; then rm -f %D/etc/asterisk/zapata.conf; fi
 etc/asterisk/zapata.conf-dist
 @exec [ -f %B/zapata.conf ] || cp %B/%f %B/zapata.conf
+etc/rc.d/asterisk.sh
 include/asterisk/acl.h
 include/asterisk/adsi.h
 include/asterisk/aes.h
