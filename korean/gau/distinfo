@@ -1,1 +1,6 @@
-MD5 (gau-0.3.1.tar.gz) = 0c80e552dcebbc99b81cea2b13a62847
+MD5 (gau-0.4.1.tar.gz) = 04dafc12cea7d350ed01285834a882ff
+MD5 (gau-0.4.1.patch) = 3603329947b26d1d37966096b9526f32
+MD5 (gau-0.4.1-rc.patch) = 71aa94ebdfecf7a7ac8e24064f664678
+MD5 (gau-0.4.1-script.patch) = ce0133b5d4283084f36e9d8986932104
+MD5 (gau-0.4.1-warning.patch) = 68b827b82ff157ff094deb88fcc5ae46
+MD5 (gau-0.4.1-grim_show.patch) = 39f10b68560e8d29350eae8280f5fb98
