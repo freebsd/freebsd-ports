@@ -3,6 +3,7 @@
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
+    SUBDIR += adzapper
     SUBDIR += amaya
     SUBDIR += analog
     SUBDIR += apache13
@@ -59,6 +60,7 @@
     SUBDIR += mhonarc
     SUBDIR += momspider
     SUBDIR += mozilla
+    SUBDIR += netscape-remote
     SUBDIR += netscape3
     SUBDIR += netscape3-gold
     SUBDIR += netscape4-communicator
@@ -122,5 +124,6 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xitami
+    SUBDIR += zope
 
 .include <bsd.port.subdir.mk>
