@@ -33,7 +33,7 @@ that these two patches replace was unmaintainable and overly drastic.
   ZLIBDIR		= zlib095
 ! ZLIBINCDIR	= $(ZLIBDIR)
 ! ZLIBLIBDIR	= $(ZLIBDIR)
-! ZLIBDEP		= $(ZLIBINCDIR)/libz.h $(ZLIBLIBDIR)/libz.a
+! ZLIBDEP		= $(ZLIBINCDIR)/zlib.h $(ZLIBLIBDIR)/libz.a
 ! ZLIBLIBS	= -L$(ZLIBLIBDIR) -lz
   
   RSAREFDIR	= rsaref2
