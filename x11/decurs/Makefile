@@ -7,6 +7,7 @@
 
 PORTNAME=	decurs
 PORTVERSION=	0.50.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.hut.fi/~pvsavola/files/
 
@@ -19,14 +20,12 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-# The Makefile doesn't provide a install target
-post-install:
-		@$(INSTALL) $(WRKSRC)/src/decurs $(X11BASE)/bin
-		@$(ECHO) "	################################################"
-		@$(ECHO) "	To use this program, please copy "
-		@$(ECHO) "	$(WRKSRC)/src/fonts/*.bdf"
-		@$(ECHO) "	somewhere else and invoke "$(PORTNAME)
-		@$(ECHO) "	from that directory."
-		@$(ECHO) "	################################################"
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${X11BASE}/bin/decurs-real
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/cursor.bdf ${DATADIR}
+	${SED} -e "s|%%DECURS_DIR%%|${DATADIR}|; s|%%PREFIX%%|${PREFIX}|" \
+		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
+	${INSTALL_SCRIPT} ${WRKSRC}/decurs.exec ${X11BASE}/bin/decurs
 
 .include <bsd.port.mk>
