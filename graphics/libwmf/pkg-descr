@@ -1,0 +1,4 @@
+This is an image format handler. It handles the following image
+formats:
+
+bmp, gif, png, jpeg, tiff, xpm, xbm, and postscript.
