@@ -9,8 +9,8 @@ CLAMAVGROUP=%%CLAMAVGROUP%%
 UID=106
 GID=$UID
 
-CLAMLOG=$DESTDIR/var/log/clamav
 DBDIR=$DESTDIR%%DBDIR%%
+LOGDIR=$DESTDIR%%LOGDIR%%
 RUNDIR=$DESTDIR%%RUNDIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
@@ -39,14 +39,14 @@ if [ "$2" = "PRE-INSTALL" ]; then
 
 elif [ "$2" = "POST-INSTALL" ]; then
 
-	if [ ! -d "$CLAMLOG" ]; then
-		mkdir -p "$CLAMLOG" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMLOG" || exit 1
-	fi
-
 	if [ ! -d "$DBDIR" ]; then
 		mkdir -p "$DBDIR" || exit 1
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DBDIR" || exit 1
+	fi
+
+	if [ ! -d "$LOGDIR" ]; then
+		mkdir -p "$LOGDIR" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$LOGDIR" || exit 1
 	fi
 
 	if [ ! -d "$RUNDIR" ]; then
