@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -20,11 +20,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_XLIB=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-			  -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	# none
+CONFIGURE_ARGS=	--build=${ARCH}-portbld-freebsd${OSREL} \
+		--enable-magick --with-sys-gd=no \
+		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
+		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALLS_SHLIB=	yes
 
 pre-patch:
