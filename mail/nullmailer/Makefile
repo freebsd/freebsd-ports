@@ -8,7 +8,7 @@
 PORTNAME=	nullmailer
 # PORTVERSION=	1.00RC7
 PORTVERSION=	1.00r7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		ftp://mirrors.dataloss.nl/mirrors/bgware/nullmailer/%SUBDIR%/
