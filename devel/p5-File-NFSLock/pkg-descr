@@ -1,0 +1,16 @@
+File::NFSLock - perl module to do NFS (or not) locking.
+
+The module is based of concept of hard linking of files being atomic
+across NFS. This concept was mentioned in Mail::Box::Locker (which was
+originally presented in Mail::Folder::Maildir). Some routine flow is
+taken from there -- particularly the idea of creating a random local
+file, hard linking a common file to the local file, and then checking
+the nlink status. Some ideologies were not complete (uncache mechanism,
+shared locking) and some coding was even incorrect (wrong stat index).
+File::NFSLock was written to be light, generic, and fast.
+
+Authors: Paul T Seamons (paul@seamons.com), Rob B Brown (bbb@cpan.org)
+WWW: http://search.cpan.org/search?dist=File-NFSLock
+
+-Anton
+<tobez@FreeBSD.org>
