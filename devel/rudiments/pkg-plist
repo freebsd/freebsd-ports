@@ -1,0 +1,50 @@
+include/client.h
+include/commandline.h
+include/daemonprocess.h
+include/datetime.h
+include/permissions.h
+include/randomnumber.h
+include/regularexpression.h
+include/semaphoreset.h
+include/sharedmemory.h
+include/server.h
+include/signalclasses.h
+include/text.h
+include/private/client.h
+include/private/commandline.h
+include/private/daemonprocess.h
+include/private/regularexpression.h
+include/private/semaphoreset.h
+include/private/sharedmemory.h
+include/private/server.h
+include/private/signalhandler.h
+include/private/signalset.h
+include/private/datetime.h
+@dirrm include/private
+lib/librudiments.a
+lib/librudiments.so
+lib/librudiments.so.0
+%%PORTDOCS%%share/doc/rudiments/classes/client.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/commandline.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/daemonprocess.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/datetime.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/permissions.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/randomnumber.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/regularexpression.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/semaphoreset.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/server.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/sharedmemory.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/signalclasses.h.html
+%%PORTDOCS%%share/doc/rudiments/classes/text.h.html
+%%PORTDOCS%%share/doc/rudiments/css/styles.css
+%%PORTDOCS%%share/doc/rudiments/guide.html
+%%PORTDOCS%%share/doc/rudiments/index.html
+%%PORTDOCS%%share/doc/rudiments/introduction.html
+%%PORTDOCS%%share/doc/rudiments/invisible.gif
+%%PORTDOCS%%share/doc/rudiments/programming/baseclasses.html
+%%PORTDOCS%%share/doc/rudiments/programming/utilclasses.html
+%%PORTDOCS%%share/doc/rudiments/reference.html
+%%PORTDOCS%%@dirrm share/doc/rudiments/programming
+%%PORTDOCS%%@dirrm share/doc/rudiments/css
+%%PORTDOCS%%@dirrm share/doc/rudiments/classes
+%%PORTDOCS%%@dirrm share/doc/rudiments
