@@ -70,8 +70,8 @@ post-install:
 	cd ${PREFIX}/share/examples/urt; \
 	${TAR} xf $(DISTDIR)/urt-img.tar; \
 	${CHOWN} -R root:wheel . ; \
-	find . -type d -exec ${CHMOD} 775 '{}' \; ; \
-	find . -type f -exec ${CHMOD} 664 '{}' \;
+	find . -type d -exec ${CHMOD} 755 '{}' \; ; \
+	find . -type f -exec ${CHMOD} 644 '{}' \;
 .endif
 
 .include <bsd.port.mk>
