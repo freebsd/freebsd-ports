@@ -144,6 +144,7 @@
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
+    SUBDIR += k3b-i18n
     SUBDIR += kaddressbook-plugins
     SUBDIR += katalog
     SUBDIR += kcd
