@@ -1,9 +1,9 @@
 bin/silc
 etc/silc/silc.conf.sample
-lib/libsilc-1.0.so.1
+lib/libsilc-1.0.so.2
 lib/libsilc.la
 lib/libsilc.so
-lib/libsilcclient-1.0.so.1
+lib/libsilcclient-1.0.so.2
 lib/libsilcclient.la
 lib/libsilcclient.so
 lib/silcsim/client/aes.sim.so
