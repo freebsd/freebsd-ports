@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit/Fixed.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit/LongDouble.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit/LongLong.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit/ULongLong.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit/mapping.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CORBA/ORBit/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CORBA/ORBit/ORBit.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CORBA/ORBit/ORBit.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CORBA/ORBit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CORBA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA/ORBit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/CORBA
