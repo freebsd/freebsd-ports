@@ -7,6 +7,7 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
@@ -15,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alane@FreeBSD.org
 
 USE_PYTHON=	yes
+PYTHON_VERSION=	python2.1
 
 DIST_SUBDIR=	zope
 
