@@ -34,6 +34,7 @@ share/gimageview/doc/text/ja/INSTALL.jp
 share/gimageview/doc/text/ja/README.jp
 share/gimageview/doc/text/ja/TIPS.jp
 share/gimageview/doc/text/ja/gimageview.txt
+share/gimageview/gtkrc
 share/gimageview/pixmaps/default/alert.xpm
 share/gimageview/pixmaps/default/archive.xpm
 share/gimageview/pixmaps/default/back.xpm
@@ -51,9 +52,11 @@ share/gimageview/pixmaps/default/folder48.xpm
 share/gimageview/pixmaps/default/forward.xpm
 share/gimageview/pixmaps/default/fullscreen.xpm
 share/gimageview/pixmaps/default/gimageview.xpm
+share/gimageview/pixmaps/default/gimv_icon.xpm
 share/gimageview/pixmaps/default/home.xpm
 share/gimageview/pixmaps/default/image.xpm
 share/gimageview/pixmaps/default/leftarrow.xpm
+share/gimageview/pixmaps/default/nav_button.xpm
 share/gimageview/pixmaps/default/next_t.xpm
 share/gimageview/pixmaps/default/nfolder.xpm
 share/gimageview/pixmaps/default/no_zoom.xpm
