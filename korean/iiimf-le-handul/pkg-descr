@@ -1,0 +1,10 @@
+IIIMF stands for Internet/Intranet Input Method Framework.
+IIIMF is designed to be the next generation of input method framework
+
+UNIcode Table based generic composition engine with lookup-choice capability,
+originally shipped with Solaris 9 update. Since the Unit started as hile,
+the HIndi LE, this engine comes with Indic scripts tables, but it does not
+mean this engine only supports Indic, it can be enhanced to wider scripts
+coverage.
+
+WWW: http://www.openi18n.org/subgroups/im/IIIMF/
