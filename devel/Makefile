@@ -178,6 +178,7 @@
     SUBDIR += icu
     SUBDIR += id-utils
     SUBDIR += idle
+    SUBDIR += idlefork
     SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += imake-4
