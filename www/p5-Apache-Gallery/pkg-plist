@@ -35,6 +35,7 @@ www/icons/video-mov.png
 www/icons/video-mpeg.png
 www/icons/video-mpg.png
 www/icons/video-wmv.png
+www/icons/folder-apache-gallery.png
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
 @unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
 @dirrm share/Apache-Gallery/templates
