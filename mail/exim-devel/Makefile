@@ -151,7 +151,7 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
 .if defined(WITH_PWCHECK)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+RUN_DEPENDS+=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 SEDLIST+=	-e 's,^\# SUPPORT_CYRUS_PWCHECK=,SUPPORT_CYRUS_PWCHECK=,' \
 		-e 's,^\# CYRUS_PWCHECK_SOCKET=,CYRUS_PWCHECK_SOCKET=,' 
 .endif
