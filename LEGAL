@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.123 1998/12/11 22:37:06 billf Exp $
+# $Id: LEGAL,v 1.124 1999/01/03 13:24:33 markm Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -73,6 +73,7 @@ msql-*			ports/databases/msql	Not free for commercial org.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
+openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 pgp*			ports/security/pgp*	Various locality restrictions
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
