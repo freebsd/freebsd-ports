@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/netscape
 lib/netscape/LICENSE
 lib/netscape/README
@@ -11,22 +10,22 @@ lib/netscape/registry
 lib/netscape/Netscape.ad
 lib/netscape/policyMoz40P1.jar
 lib/netscape/java/classes/ifc11.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/iiop10.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jae40.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/java40.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jio40.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jsd10.jar
-@exec ln -fs java/classes/%f lib/netscape/%f
+@exec ln -fs java/classes/%f %D/lib/netscape/%f
 @unexec rm -f lib/netscape/%f
 lib/netscape/nethelp/Back_dep.gif
 lib/netscape/nethelp/Back_dis.gif
