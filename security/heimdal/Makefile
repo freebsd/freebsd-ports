@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=	0.4b
-PORTREVISION=	1
+PORTVERSION=	0.4c
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -79,8 +78,9 @@ PLIST:=				${WRKDIR}/PLIST
 pre-configure:
 	@(set -e; \
 	cd ${CONFIGURE_WRKSRC}; \
-	find . -type f -name 'Makefile.in' -print | xargs perl -i -pe \
-	's,\$$\(top_builddir\)/lib/com_err/compile_et,compile_et,';)
+	find . -type f -name 'Makefile.in' -print | xargs perl -i -p \
+	-e 's,\$$\(top_builddir\)/lib/com_err/compile_et,compile_et,;' \
+	-e 's,../com_err/libcom_err.la,,;';)
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
