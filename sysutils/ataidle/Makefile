@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
@@ -14,14 +14,15 @@ MAINTAINER=	bruce@cran.org.uk
 COMMENT=	Utility to set spindown timeout for ATA drives
 
 MAN8=		ataidle.8
-DOCS=		COPYING ChangeLog README
+PORTDOCS=	COPYING ChangeLog README
+PLIST_FILES=	sbin/ataidle
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ataidle ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ataidle.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
