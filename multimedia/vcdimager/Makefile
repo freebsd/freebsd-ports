@@ -5,29 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	vcdimager
-PORTVERSION=	0.7.14
-PORTREVISION=	1
+PORTVERSION=	0.7.20
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
 		${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		xml2:${PORTSDIR}/textproc/libxml2
+		xml2:${PORTSDIR}/textproc/libxml2 \
+		cdio.1:${PORTSDIR}/sysutils/libcdio
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
+USE_GNOME=	gnometarget gnomehack pkgconfig
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		cdxa2mpeg.1 vcdimager.1 vcdxminfo.1 vcdxrip.1 vcdxgen.1 \
-		vcdxbuild.1 vcddebug.1 vcddump.1
-INFO=		vcdimager vcddump vcdxrip
+		vcdxbuild.1 vcd-info.1
+INFO=		vcdimager vcdxrip vcd-info
 
 .include <bsd.port.mk>
