@@ -16,7 +16,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 # BUILD_DEPENDS is used instead of USE_LIBTOOL in order to avoid
 # GNU_CONFIGURE being set.
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 #USE_LIBTOOL=	yes

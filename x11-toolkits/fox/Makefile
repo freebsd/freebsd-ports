@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cfdrc.com/pub/FOX/ \
 MAINTAINER?=	knu@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 .if defined(WITH_XUNICODE)
 PKGNAMESUFFIX=	-unicode

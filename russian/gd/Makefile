@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 
 MAINTAINER=	gsm@infosite.ru
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 pre-install:

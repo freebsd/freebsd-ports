@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://ftp.task.gda.pl/pub/games/linuxgames/freesci/ \
 MAINTAINER=		greid@FreeBSD.org
 
 LIB_DEPENDS=		ggi.2:${PORTSDIR}/graphics/libggi \
-			png.4:${PORTSDIR}/graphics/png
+			png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=		yes
 

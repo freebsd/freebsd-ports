@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_net.0:${PORTSDIR}/net/sdl_net \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
