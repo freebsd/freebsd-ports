@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	korean gnome x11
-MASTER_SITES=	http://download.kldp.net/imhangul/
+MASTER_SITES=	http://download.kldp.net/nabi/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
@@ -23,7 +22,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 post-patch:
 	${REINPLACE_CMD} -e 's,#include <malloc.h>,,' ${WRKSRC}/IMdkit/IMConn.c
-	${REINPLACE_CMD} -e '641s,g_free(keyboard_map->map);,,' \
-		${WRKSRC}/src/ui.c
 
 .include <bsd.port.mk>
