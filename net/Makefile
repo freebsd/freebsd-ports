@@ -621,6 +621,7 @@
     SUBDIR += tvark
     SUBDIR += udptunnel
     SUBDIR += unison
+    SUBDIR += unix2tcp
     SUBDIR += urlendec
     SUBDIR += utftpd
     SUBDIR += v6eval
