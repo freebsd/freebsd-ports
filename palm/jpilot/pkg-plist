@@ -60,6 +60,7 @@ share/locale/no/LC_MESSAGES/jpilot.mo
 share/locale/ru/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 share/locale/tr/LC_MESSAGES/jpilot.mo
+share/locale/vi/LC_MESSAGES/jpilot.mo
 share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot/icons
@@ -93,6 +94,8 @@ share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/vi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/vi 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
