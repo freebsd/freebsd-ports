@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.6 1998/10/09 22:27:47 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/16 19:52:58 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}
@@ -11,7 +11,7 @@ CATEGORIES=	japanese www
 MASTER_SITES=	http://www.bres.tsukuba.ac.jp/~yohta/netscape/
 DISTFILES?=	communicator-ja-euc-v407-export.generic-generic-generic.tar.gz
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@freebsd.org
 
 RUN_DEPENDS?= \
 	${PREFIX}/bin/${BROWSER}:${PORTSDIR}/www/netscape4-${BROWSER_NAME} \
@@ -20,7 +20,6 @@ RUN_DEPENDS?= \
 MAN1=		ja-${BROWSER_NAME}.1
 MANLANG=	ja
 NO_BUILD=	yes
-STRIP=
 WRKSRC=		${WRKDIR}/netscape-ja_euc
 
 BROWSER=	${BROWSER_NAME}-${BROWSER_VERSION}
