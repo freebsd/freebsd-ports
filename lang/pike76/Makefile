@@ -10,7 +10,9 @@ PORTVERSION=	7.6.9
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pike/7.6/ \
-		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
+		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/ \
+		ftp://ftp.us.caudium.net/pub/pike/7.6/ \
+		ftp://ftp.us.caudium.net/pub/pike/official_releases/${PORTVERSION}/
 DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
