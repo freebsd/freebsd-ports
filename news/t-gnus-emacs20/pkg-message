@@ -1,0 +1,6 @@
+************************************************************
+* Before using T-gnus, you must set following elisp to     *
+* your own .emacs file.                                    *
+*                                                          *
+* (require 't-gnus-startup)                                *
+************************************************************
