@@ -14,9 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
 MAINTAINER=	fuyuki@mj.0038.net
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
 USE_ZIP=	yes
+USE_JAVA=	1.1+
+NO_BUILD_DEPENDS_JAVA=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
