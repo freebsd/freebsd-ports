@@ -39,7 +39,7 @@ LISPDIR=	share/emacs/site-lisp
 DOCDIR=		share/doc/emacs20-dl-canna
 DLCANNA_VER=	1.4
 # hack to allow parallel build to work
-.if defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	${GMAKE}:${PORTSDIR}/devel/gmake \
 		${AUTOCONF}:${PORTSDIR}/devel/autoconf
 .endif
