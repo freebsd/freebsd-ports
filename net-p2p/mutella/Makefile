@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mutella
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mutella
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	A command line Gnutella client
 
 MAN1=		mutella.1
@@ -22,10 +22,4 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
