@@ -11,6 +11,8 @@ CATEGORIES=	x11-fm gnome
 DISTNAME=	mc-${PORTVERSION}
 USE_X_PREFIX=   yes
 WITHOUT_SLANG=	yes
+WITHOUT_ICONV=	yes
+WITHOUT_ISPELL=	yes
 MASTERDIR=	${.CURDIR}/../../misc/mc
 
 .include "${MASTERDIR}/Makefile"
