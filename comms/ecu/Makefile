@@ -1,15 +1,16 @@
 # New ports collection makefile for:    ecu
-# Version required:     3.33
+# Version required:     3.34beta
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/04/12 04:54:30 asami Exp $
 #
 
-DISTNAME=       ecu-3.33
+DISTNAME=       ecu-3.34beta
 CATEGORIES+=	comms
 MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
 EXTRACT_SUFX=   .cpio.Z
+WRKSRC=         ${WRKDIR}/ecu
 
 MAINTAINER=     ache@FreeBSD.ORG
 

@@ -1,11 +1,5 @@
 @cd /usr/local
 bin/ecu
-lib/ecu/ecuhelp.data
-lib/ecu/ecurz
-lib/ecu/ecusea
-lib/ecu/ecusz
-lib/ecu/funckeymap
-lib/ecu/tty1a.mi
-lib/ecu/tty2d.mi
+lib/ecu
 man/cat1/ecu.1
 man/cat1/proc.1
