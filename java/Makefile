@@ -37,7 +37,6 @@
     SUBDIR += linux-jdk14
     SUBDIR += netrexx
     SUBDIR += openjit
-    SUBDIR += orion
     SUBDIR += perltools
     SUBDIR += shujit
     SUBDIR += tya
