@@ -15,9 +15,9 @@ bin/tpg
 %%PYTHON_SITELIBDIR%%/tpg/parser.pyc
 %%PYTHON_SITELIBDIR%%/tpg/parser.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/tpg
-%%PORTDOCS%%share/doc/tpg/cmmi10-19.gif
-%%PORTDOCS%%share/doc/tpg/cmsy10-21.gif
-%%PORTDOCS%%share/doc/tpg/cmtt10-20.gif
+%%PORTDOCS%%share/doc/tpg/cmmi10-19.png
+%%PORTDOCS%%share/doc/tpg/cmsy10-21.png
+%%PORTDOCS%%share/doc/tpg/cmtt10-20.png
 %%PORTDOCS%%share/doc/tpg/tpg.html
 %%PORTDOCS%%share/doc/tpg/tpg.pdf
 %%PORTDOCS%%share/doc/tpg/tpg11.html

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -29,7 +29,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/tpg.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
