@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Greylist Policy Service for postfix
 
+BROKEN=		Broken dependency
+
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 
