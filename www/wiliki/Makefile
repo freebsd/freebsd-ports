@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	WiLiKi-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight Wiki engine written in Scheme
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

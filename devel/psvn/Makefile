@@ -12,7 +12,7 @@ MASTER_SITES=	http://svn.collab.net/viewcvs/*checkout*/svn/trunk/contrib/client-
 DISTNAME=	psvn.el\?rev=${PORTVERSION}
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion interface for Emacs
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
