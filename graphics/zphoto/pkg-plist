@@ -1,0 +1,19 @@
+bin/zphoto
+share/zphoto/templates/en/index.html
+share/zphoto/templates/en/noflash.html
+share/zphoto/templates/en/zphoto.css
+share/zphoto/templates/ja/index.html
+share/zphoto/templates/ja/noflash.html
+share/zphoto/templates/ja/zphoto.css
+share/zphoto/templates/all/zphoto.css
+share/zphoto/templates/all/noflash.html.ja
+share/zphoto/templates/all/noflash.html.en
+share/zphoto/templates/all/index.html.ja
+share/zphoto/templates/all/index.html.en
+share/zphoto/fonts/Techno.fdb
+@dirrm share/zphoto/templates/en
+@dirrm share/zphoto/templates/ja
+@dirrm share/zphoto/templates/all
+@dirrm share/zphoto/templates
+@dirrm share/zphoto/fonts
+@dirrm share/zphoto

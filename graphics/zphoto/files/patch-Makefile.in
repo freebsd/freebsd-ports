@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jul 21 00:50:36 2002
++++ Makefile.in	Sun Jul 21 00:50:44 2002
+@@ -460,7 +460,7 @@
+ 
+ 
+ Techno.fdb: 
+-	wget http://opaque.net/ming/tutorial/flashdot.tgz
++	fetch http://opaque.net/ming/tutorial/flashdot.tgz
+ 	tar zxf flashdot.tgz Techno.fdb
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
