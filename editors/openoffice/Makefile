@@ -87,6 +87,10 @@ CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
+.if ${OSVERSION} > 500000 && !defined(USE_GCC)
+CONFIGURE_ARGS+=	--enable-gcc3
+.endif
+
 pre-fetch:
 .if !defined(USE_GCC)
 	@${ECHO}
