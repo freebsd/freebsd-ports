@@ -10,8 +10,9 @@ DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+		${MASTER_SITE_PORTS_JP} \
 		http://www.freebsd.org/~shige/ports/kterm/
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITE_SUBDIR=	applications kterm
 
 MAINTAINER=	shige@FreeBSD.org
 
