@@ -24,6 +24,7 @@ PATCHFILES=	patch.9.2.2-P1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
+CONFLICTS?=	bind-8.* bind84-8.* bind9-9.* bind9-sdb-mysql-* host-* skalibs-*
 POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
@@ -34,7 +35,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
 PATCH_STRIP=	-p1
-PATCH_DIST_STRIP=  -p1
+PATCH_DIST_STRIP=	-p1
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -76,7 +77,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 .endif
-
 
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
 EXTRA_PATCHES=	${WRKDIR}/dlz.patch
@@ -146,7 +146,7 @@ pre-configure:
 		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
 		${WRKSRC}/bin/${FILE}
 .endfor
-	${MV} -f ${WRKSRC}/bin/Makefile.in.orig ${WRKSRC}/bin/Makefile.in 
+	${MV} -f ${WRKSRC}/bin/Makefile.in.orig ${WRKSRC}/bin/Makefile.in
 	@${ECHO_CMD} "configure: ${CONFIGURE_ARGS}"
 	${REINPLACE_CMD} -e "s=-lnsl==" \
 		-e 's=-pthread=${PTHREAD_LIBS}=' \
