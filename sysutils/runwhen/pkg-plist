@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+bin/caldelay
+bin/delayrun
+bin/maxinterval
+bin/mininterval
+bin/rw-add
+bin/rw-match
+bin/rw-max
+bin/rw-min
+bin/rw-sleep
+bin/rw-sub
+bin/rw-touch
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

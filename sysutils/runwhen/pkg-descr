@@ -1,0 +1,24 @@
+The biggest difference between runwhen and other schedulers is that
+runwhen doesn't have a single daemon overseeing multiple jobs. 
+The runwhen tools essentially act as a glorified sleep command.  
+Perhaps runwhen does nothing that at(1) doesn't, and there are 
+lots of things at(1) does that runwhen doesn't:
+
+- runwhen doesn't change user IDs - thus it will never run 
+  anything as the wrong user. 
+- It doesn't keep a central daemon running at all times - 
+  thus it won't break if that daemon dies.
+- It doesn't require any modifications to the system boot procedure. 
+- It doesn't log through syslog(3) - thus it won't make a mess 
+  on the console if syslogd(1) isn't running. 
+- It doesn't centralize storage of scheduled jobs (or any other 
+  per-job information) - thus unprivileged users can install and use it 
+  without cooperation from root, and without the use of a setuid program 
+  to handle changes. 
+- It doesn't send output through mail - thus it doesn't break 
+  if there is no mail system installed. 
+- It doesn't check access control files - thus it doesn't gratuitously 
+  deny users.
+
+Author:	Paul Jarc <prj@po.cwru.edu>
+WWW:	http://multivac.cwru.edu/runwhen/
