@@ -27,6 +27,7 @@ EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		zmrx.1 zmtx.1
+PLIST_FILES=	bin/zmrx bin/zmtx
 
 do-install:
 .for f in zmrx zmtx

@@ -15,13 +15,10 @@ COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 WRKSRC=		${WRKDIR}/dbench
 USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/^CFLAGS.+//g' ${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+PLIST_FILES=	dbench tbench tbench_srv
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dbench ${PREFIX}/bin/dbench
-	${INSTALL_PROGRAM} ${WRKSRC}/tbench ${PREFIX}/bin/tbench
-	${INSTALL_PROGRAM} ${WRKSRC}/tbench_srv ${PREFIX}/bin/tbench_srv
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES} ${PREFIX}/bih
 
 .include <bsd.port.mk>
