@@ -1,6 +1,6 @@
 JadeTeX uses quite a lot of TeX's resources.  You may find it
 necessary to increase the size of some of TeX's resource pools by
-editing the file %%LOCALBASE%%/share/texmf/web2c-ptex/texmf.cnf with any text
+editing the file %%LOCALBASE%%/share/texmf/web2c/ptex/texmf.cnf with any text
 editor.
 
 For example, to typeset the FreeBSD Handbook with JadeTeX, change the
