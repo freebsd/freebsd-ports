@@ -1,0 +1,7 @@
+       @${ECHO_MSG}
+       @${ECHO_MSG} "          **** NOTE ****"
+       @${ECHO_MSG} "Before the first use of WordPress-MU, copy wp-inst/wp-config-sample.php to wp-inst/wp-config.php"
+       @${ECHO_MSG} "in ${PREFIX}/${WORDPRESSMU}/wp-inst/"
+       @${ECHO_MSG} "And Modify it to fit your MySQL."
+       @${ECHO_MSG} "Maybe you need 'mysqladmin create wordpress' first"
+       @${ECHO_MSG}
