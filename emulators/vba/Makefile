@@ -28,7 +28,7 @@ TARGET_DIR=	${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 500035)
+.if ( ${OSVERSION} < 500035 )
 CFLAGS+=	-O0
 .endif
 
