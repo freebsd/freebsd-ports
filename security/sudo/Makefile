@@ -11,9 +11,14 @@ PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
+		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
+		http://mirrors.theonlinerecordstore.com/sudo/ \
+		http://core.ring.gr.jp/archives/misc/sudo/ \
+		http://www.ring.gr.jp/archives/misc/sudo/ \
+		http://sudo.tsuren.net/dist/ \
+		http://pluto.cdpa.nsysu.edu.tw/sudo/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
-		ftp://ftp.stikman.com/pub/sudo/ \
-		ftp://ftp.uu.net/pub/security/sudo/
+		ftp://ftp.stikman.com/pub/sudo/
 DISTNAME=	${PORTNAME}-1.6.7p5
 
 MAINTAINER=	mharo@FreeBSD.org
