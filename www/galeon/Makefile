@@ -33,7 +33,7 @@ MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.0"
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.3b"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
 .if ${WITH_MOZILLA}=="mozilla-embedded"
 MOZILLA=	mozilla-embedded
@@ -47,7 +47,6 @@ HEADERS_SUFX=
 .endif
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -57,7 +56,6 @@ CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUF
 		${MOZ_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		galeon.1
 
@@ -82,15 +80,15 @@ NO_WERROR=	yes
 CONFIGURE_ARGS+=	--disable-werror
 .endif
 
-post-extract:
-	@${ECHO_MSG}
+pre-everything::
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} " By default the port uses www/mozilla for html rendering, but you can change"
 	@${ECHO_MSG} " this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} "  mozilla-embedded[-devel|-vendor] "
 	@${ECHO_MSG} "  mozilla-vendor "
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
