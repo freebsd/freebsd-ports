@@ -16,9 +16,13 @@ DISTNAME=	Togl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk OpenGL widget
 
+EXPIRATION_DATE=2005-07-01
+DEPRECATED=	Resulting application unusable, cf. PR ports/76293
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tcl84.1:${PORTSDIR}/lang/tcl84
 
+USE_GMAKE=	yes
 USE_GL=		yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
