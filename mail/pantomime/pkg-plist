@@ -1,0 +1,56 @@
+Local/Headers/Pantomime/Charset.h
+Local/Headers/Pantomime/Constants.h
+Local/Headers/Pantomime/Flags.h
+Local/Headers/Pantomime/Folder.h
+Local/Headers/Pantomime/IMAPCacheManager.h
+Local/Headers/Pantomime/IMAPCacheObject.h
+Local/Headers/Pantomime/IMAPFolder.h
+Local/Headers/Pantomime/IMAPMessage.h
+Local/Headers/Pantomime/IMAPStore.h
+Local/Headers/Pantomime/ISO8859_1.h
+Local/Headers/Pantomime/ISO8859_10.h
+Local/Headers/Pantomime/ISO8859_11.h
+Local/Headers/Pantomime/ISO8859_13.h
+Local/Headers/Pantomime/ISO8859_14.h
+Local/Headers/Pantomime/ISO8859_15.h
+Local/Headers/Pantomime/ISO8859_2.h
+Local/Headers/Pantomime/ISO8859_3.h
+Local/Headers/Pantomime/ISO8859_4.h
+Local/Headers/Pantomime/ISO8859_5.h
+Local/Headers/Pantomime/ISO8859_6.h
+Local/Headers/Pantomime/ISO8859_7.h
+Local/Headers/Pantomime/ISO8859_8.h
+Local/Headers/Pantomime/ISO8859_9.h
+Local/Headers/Pantomime/InternetAddress.h
+Local/Headers/Pantomime/LocalFolder.h
+Local/Headers/Pantomime/LocalMessage.h
+Local/Headers/Pantomime/LocalStore.h
+Local/Headers/Pantomime/Message.h
+Local/Headers/Pantomime/MimeBodyPart.h
+Local/Headers/Pantomime/MimeMultipart.h
+Local/Headers/Pantomime/MimeUtility.h
+Local/Headers/Pantomime/NSStringExtensions.h
+Local/Headers/Pantomime/POP3CacheManager.h
+Local/Headers/Pantomime/POP3CacheObject.h
+Local/Headers/Pantomime/POP3Folder.h
+Local/Headers/Pantomime/POP3Message.h
+Local/Headers/Pantomime/POP3Store.h
+Local/Headers/Pantomime/Parser.h
+Local/Headers/Pantomime/Part.h
+Local/Headers/Pantomime/SMTP.h
+Local/Headers/Pantomime/Sendmail.h
+Local/Headers/Pantomime/Service.h
+Local/Headers/Pantomime/Store.h
+Local/Headers/Pantomime/Transport.h
+Local/Headers/Pantomime/elm_defs.h
+Local/Headers/Pantomime/elm_lib.h
+Local/Headers/Pantomime/parseaddrs.h
+Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so
+Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so.1
+Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so.1.0.0
+@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Libraries/%%GNU_ARCH%%
+@dirrm Local/Libraries
+@dirrm Local/Headers/Pantomime
+@dirrm Local/Headers
