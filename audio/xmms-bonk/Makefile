@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 DISTNAME=	bonk-xmms-${PORTVERSION}
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	XMMS input plugin to play bonk files
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

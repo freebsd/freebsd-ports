@@ -18,6 +18,7 @@ DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 

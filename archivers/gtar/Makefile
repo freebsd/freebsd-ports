@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	GNU version of the traditional tar archiver
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Portable audio output library
 
 USE_GNOMENG=	yes
 WANT_GNOME=	yes

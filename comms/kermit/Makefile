@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 DISTNAME=	cku206
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Serial and network communications package
 
 USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes

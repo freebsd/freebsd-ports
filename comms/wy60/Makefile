@@ -10,6 +10,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://gutschke.com/wy60/html/archive/
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Curses-based emulator for the Wyse 60 terminal
 
 GNU_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jday
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Astronomical julian date calculator
 
 GNU_CONFIGURE=	yes
 

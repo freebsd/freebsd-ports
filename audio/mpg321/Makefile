@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mpg321
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	A free command-line mp3 player, compatible with mpg123
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.1:${PORTSDIR}/audio/mad

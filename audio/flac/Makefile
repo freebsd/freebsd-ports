@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Free lossless audio codec
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/converters/libiconv:extract
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	calcoo
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Gtk-based scientific calculator
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
