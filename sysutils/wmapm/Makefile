@@ -6,28 +6,22 @@
 #
 
 PORTNAME=	wmapm
-PORTVERSION=	3.01
+PORTVERSION=	3.1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	taoka@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wmapm
-USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/wmapm
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+MAN1=		wmapm.1
+
 BINMODE=	2755
 BINGRP=		operator
-
-pre-build:
-	cd ${WRKDIR}/${DISTNAME}/wmapm; ${GMAKE} clean
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmapm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmapm.1 ${PREFIX}/man/man1
-
-MAN1=		wmapm.1
 
 .include <bsd.port.mk>
