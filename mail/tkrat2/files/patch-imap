@@ -1,0 +1,79 @@
+This file  contains the  sequences of  patches that  make TkRat  use the
+standard  c-client library  from instead  of building  and using  it own
+version (based on the now ancient version).
+
+This involved some Makefile hackery,  but most importantly, teaching the
+code in  ratStdMessage.c to not look  for the ``optional'' parts  of the
+ENVELOPE structure,  but take the type  and subtype of the  message from
+the BODY directly.
+
+This changes allow to use the  latest versions of the _standard_ UW-UMAP
+(and they  now have goodies  like SSL support)  and save some  space and
+invocation time by using the shared lib.
+
+	-mi
+
+--- Makefile.in	Fri May 12 16:17:06 2000
++++ Makefile.in	Sun Apr  8 15:56:19 2001
+@@ -19,8 +19,2 @@
+ build:
+-	-cd imap; \
+-	if test "`cat OSTYPE 2>/dev/null`" = "${OSTYPE}" ; then \
+-	    ${MAKE} EXTRACFLAGS="${EXTRACFLAGS}"; \
+-	else \
+-	    ${MAKE} ${OSTYPE} EXTRACFLAGS="${EXTRACFLAGS}"; \
+-	fi
+ 	cd lib; ${MAKE}
+@@ -43,3 +37,2 @@
+ clean:
+-	cd imap; ${MAKE} clean
+ 	cd lib; ${MAKE} clean
+--- lib/Makefile.in	Mon May  1 16:31:01 2000
++++ lib/Makefile.in	Sun Apr  8 16:01:07 2001
+@@ -30,3 +30,3 @@
+ # Pointer to the imap c-client directory
+-      C_CLIENT = ${TOP_DIR}/imap/c-client
++      C_CLIENT = ${prefix}/include/c-client
+ 
+@@ -65,3 +65,3 @@
+ 	 ${SHLIB_CFLAGS} -DVERSION=\"${VERSION}\"
+-C_CLIENT_LIB = ${C_CLIENT}/c-client.a
++C_CLIENT_LIB = -L${prefix}/lib -lc-client4
+ RATLIB = ratatosk${RATLIB_SUFFIX}
+@@ -81,3 +81,3 @@
+ 
+-${RATLIB}: ${OBJ} ${C_CLIENT_LIB}
++${RATLIB}: ${OBJ}
+ 	${SHLIB_LD} -o ${RATLIB} ${OBJ} ${C_CLIENT_LIB} $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
+--- lib/ratDisFolder.c	Fri Jan 12 11:23:20 2001
++++ lib/ratDisFolder.c	Sun Apr  8 16:26:44 2001
+@@ -40,1 +40,0 @@
+-#include "mbx.h"
+--- lib/ratStdMessage.c	Tue Dec 26 05:27:42 2000
++++ lib/ratStdMessage.c	Sun Apr  8 17:44:07 2001
+@@ -584,18 +584,10 @@
+ 	case RAT_FOLDER_TYPE:
+-	    if (stdMsgPtr->envPtr->optional.subtype) {
+-		oPtr = Tcl_NewStringObj(
+-			body_types[stdMsgPtr->envPtr->optional.type], -1);
+-		Tcl_AppendStringsToObj(oPtr, "/",
+-				       stdMsgPtr->envPtr->optional.subtype,
+-				       NULL);
+-	    } else {
+-		if (!stdMsgPtr->bodyPtr) {
+-		    stdMsgPtr->envPtr = mail_fetchstructure_full(
+-			    stdMsgPtr->stream, msgPtr->msgNo+1,
+-			    &stdMsgPtr->bodyPtr, NIL);
+-		}
+-		oPtr =Tcl_NewStringObj(body_types[stdMsgPtr->bodyPtr->type],-1);
+-		Tcl_AppendStringsToObj(oPtr, "/",
+-				       stdMsgPtr->bodyPtr->subtype, NULL);
++	    if (!stdMsgPtr->bodyPtr) {
++		stdMsgPtr->envPtr = mail_fetchstructure_full(
++		    stdMsgPtr->stream, msgPtr->msgNo+1,
++		    &stdMsgPtr->bodyPtr, NIL);
+ 	    }
++	    oPtr = Tcl_NewStringObj(body_types[stdMsgPtr->bodyPtr->type], -1);
++	    Tcl_AppendStringsToObj(oPtr, "/", stdMsgPtr->bodyPtr->subtype,
++			NULL);
+ 	    break;

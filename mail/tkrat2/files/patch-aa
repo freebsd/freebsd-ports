@@ -5,7 +5,7 @@
      tcl_include_dirs="$tcl_include_dirs $i/include"
  done
 -tcl_include_dirs="$tcl_with_include $tcl_include_dirs /usr/include/tcl /usr/include"
-+tcl_include_dirs="$tcl_with_include $tcl_include_dirs /usr/local/include/tcl8.2 /usr/local/include/tk8.2 /usr/include/tcl /usr/include"
++tcl_include_dirs="$tcl_with_include $tcl_include_dirs /usr/local/include/tcl8.3 /usr/local/include/tk8.3 /usr/include/tcl /usr/include"
  tcl_dir=0
  for i in $tcl_include_dirs ; do
      if test -r $i/tcl.h ; then

@@ -7,22 +7,24 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.0.1
-CATEGORIES=	mail tk82
+CATEGORIES=	mail tk83
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82 \
-		tk82:${PORTSDIR}/x11-toolkits/tk82 \
+LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
+		tk83:${PORTSDIR}/x11-toolkits/tk83 \
 		c-client4.8:${PORTSDIR}/mail/cclient
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2 \
-		--with-tk-config=${PREFIX}/lib/tk8.2 \
-		--with-tcl-include=${PREFIX}/include/tcl8.2 \
-		--with-tk-include=${PREFIX}/include/tk8.2
+CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.3 \
+		--with-tk-config=${PREFIX}/lib/tk8.3 \
+		--with-tcl-include=${PREFIX}/include/tcl8.3 \
+		--with-tk-include=${PREFIX}/include/tk8.3
+MAKE_ARGS+=	-j2 -B
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude '*/imap/*'
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example
