@@ -7,11 +7,11 @@ case "$1" in
 start)
 	if [ -x $kmoddir/$kmod ]; then
 	    echo -n ' rtc'
-	    kldload $kmoddir/$kmod
+	    /sbin/kldload $kmoddir/$kmod
 	fi
 	;;
 stop)
-	kldunload $kmod && echo -n ' rtc'
+	/sbin/kldunload $kmod && echo -n ' rtc'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2

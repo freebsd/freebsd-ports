@@ -85,6 +85,14 @@ static d_poll_t		rtc_poll;
 static int rtc_modeevent(module_t mod, int cmd, void *arg);
 
 static struct cdevsw rtc_cdevsw = {
+#if __FreeBSD_version >= 500104
+	.d_open =	rtc_open,
+	.d_close =	rtc_close,
+	.d_ioctl =	rtc_ioctl,
+	.d_poll =	rtc_poll,
+	.d_name =	DEVICE_NAME,
+	.d_maj =	CDEV_MAJOR,
+#else
 	/* open */	rtc_open,
 	/* close */	rtc_close,
 	/* read */	noread,
@@ -104,6 +112,7 @@ static struct cdevsw rtc_cdevsw = {
 #if __FreeBSD_version >= 500018 || __FreeBSD_version >= 430000
 	/* kqfilter */	nokqfilter,
 #endif
+#endif 
 };
 
 /* 
@@ -134,10 +143,6 @@ rtc_attach(dev_t dev)
 
 	if (rtc_sc!=NULL)
 		return NULL;
-
-  	dev = make_dev(&rtc_cdevsw, minor(dev), UID_ROOT, GID_WHEEL, 0600, DEVICE_NAME); 
-	if (dev==NULL)
-		return (NULL);
 
 	MALLOC(sc, struct rtc_softc*, sizeof(*sc), M_DEVBUF, M_WAITOK);
 	if (sc==NULL)
@@ -264,11 +269,18 @@ rtc_poll(dev_t dev, int events, struct proc *p)
 static int
 init_module(void)
 {
-int error;
+	int error = 0;
+	dev_t dev;
 
+#if __FreeBSD_version < 500104
    	error = cdevsw_add(&rtc_cdevsw);
 	if (error) 
 		return error;
+#endif
+
+  	dev = make_dev(&rtc_cdevsw, 0, UID_ROOT, GID_WHEEL, 0600, DEVICE_NAME); 
+	if (dev==NULL)
+		error = ENOMEM;
 
 	return error;
 }
@@ -286,7 +298,9 @@ cleanup_module(void)
 		DLog(Lfail, "%p busy", sc);
 		return error;
 	}
+#if __FreeBSD_version < 500104
 	error = cdevsw_remove(&rtc_cdevsw);
+#endif
 	DLog(Linfo, "return %d", error);
 	return error;
 }
