@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1998/07/13 22:52:30 dburr Exp $
+# $Id: Makefile,v 1.47 1998/07/19 05:06:26 vanilla Exp $
 #
 
     SUBDIR += amp
@@ -30,6 +30,7 @@
     SUBDIR += timidity
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += wmmixer
     SUBDIR += workman
     SUBDIR += x11amp
     SUBDIR += xcd
