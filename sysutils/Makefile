@@ -382,6 +382,7 @@
     SUBDIR += wmavgload
     SUBDIR += wmbattery
     SUBDIR += wmbluecpu
+    SUBDIR += wmbsdbatt
     SUBDIR += wmcpuload
     SUBDIR += wmcube
     SUBDIR += wmcube-gdk
