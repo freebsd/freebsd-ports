@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	trio
-PORTVERSION=	1.3
+PORTVERSION=	1.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.contactor.se/~dast/stuff/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ctrio
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-MANCOMPRESSED=	no
-MAN3=	trio_printf.3 trio_scanf.3 trio_register.3 strio.3
+USE_GMAKE=	yes
 
 post-patch:
 	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
@@ -24,8 +24,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/libtrio.a ${PREFIX}/lib
-.for file in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/man/man3/${file} ${MANPREFIX}/man/man3
-.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+	${CP} -R ${WRKSRC}/html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
