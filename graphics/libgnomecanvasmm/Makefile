@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	bland@mail.ru
+MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomecanvas library
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2

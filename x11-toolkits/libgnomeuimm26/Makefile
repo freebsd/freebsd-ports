@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	bland@mail.ru
+MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomeui library
 
 LIB_DEPENDS=	gnomemm-1.3:${PORTSDIR}/x11/libgnomemm \
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui
+USE_GNOME=	gnomehack libgnomeui
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static

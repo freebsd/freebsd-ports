@@ -13,7 +13,7 @@ DISTFILES=      # empty
 EXTRACT_ONLY=   # empty
 
 
-MAINTAINER=	bland@mail.ru
+MAINTAINER=	bland@FreeBSD.org
 COMMENT=	The "meta-port" for the powerful C++ bindings to the GNOME2 libraries
 
 LIB_DEPENDS=	bonobomm_servers-1.3:${PORTSDIR}/devel/libbonobomm \
