@@ -29,7 +29,8 @@ USE_GMAKE=	yes
 USE_MESA=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ARGS=	-f makefile FREEBSD=1
+MAKEFILE=	makefile
+MAKE_ENV=	FREEBSD=1
 
 # I have no ideas about build status on other platforms
 ONLY_FOR_ARCHS=		i386
@@ -45,11 +46,8 @@ post-extract:
 	@cd ${WRKDIR} && ${MKDIR} bin && \
 	unzip -q ${_DISTDIR}/${WADFILE} -d ${WRKDIR}/bin
 
-do-build:
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} && \
-	${LN} -s ${WRKSRC}/linux_x/sndserv/linux/llsndserv ${WRKDIR}/bin
-
 do-install:
+	${LN} -sf ${WRKSRC}/linux_x/sndserv/linux/llsndserv ${WRKDIR}/bin
 	${INSTALL} -d ${TARGET_DIR} && \
 	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR} && \
 	${INSTALL} ${SGID_ARGS} ${SGID_FILES} ${TARGET_DIR} && \

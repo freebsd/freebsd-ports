@@ -1,0 +1,13 @@
+--- linux_x/sndserv/Makefile.orig	Thu Oct  2 15:42:17 2003
++++ linux_x/sndserv/Makefile	Thu Oct  2 15:42:40 2003
+@@ -21,8 +21,8 @@
+ #
+ #
+ 
+-CC=gcc
+-CFLAGS=-O2 -m486 -Wall -DNORMALUNIX -DLINUX
++CC?=gcc
++CFLAGS+=-Wall -DNORMALUNIX -DLINUX
+ ifdef FREEBSD
+ CFLAGS:=${CFLAGS} -DFREEBSD
+ endif
