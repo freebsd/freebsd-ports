@@ -12,7 +12,7 @@ byte_compile [options] emacs_name port_name [files]
 	emacs_name	: should be one of below
 			  \"emacs\", \"emacs20\", \"mule\", \"xemacs19\", \"xemacs20\",
 			  \"xemacs21\", \"xemacs-mule\"
-	port_name	: port name(replaced *.el when files not specified)
+	port_name	: port name(replaced port_name.el when files not specified)
 	files		: *.el files should be compiled"
 
 while [ -z "`getopts "l: h" opt > /tmp/${tmprfx}:getopt_err.log`" \
@@ -64,34 +64,43 @@ fi
 
 case ${emacs_name} in
     emacs)
-	load_path=${PREFIX}/share/emacs/19.34/${load_el}
+	elispdir=${PREFIX}/share/emacs/site-lisp
+	load_path=${PREFIX}/share/emacs/site-lisp/${load_el}
 	emacscmd=emacs
 	;;
     emacs20)
-	load_path=${PREFIX}/share/emacs/20.3/${load_el}
+	elispdir=${PREFIX}/share/emacs/site-lisp
+	load_path=${PREFIX}/share/emacs/site-lisp/${load_el}
 	emacscmd=emacs20
 	;;
     mule)
-	load_path=${PREFIX}/share/mule/19.34/${load_el}
+	elispdir=${PREFIX}/share/mule/site-lisp
+	load_path=${PREFIX}/share/mule/site-lisp/${load_el}
 	emacscmd=mule
 	;;
     xemacs19)
-	load_path=${PREFIX}/lib/xemacs-19.16/${load_el}
+	elispdir=${PREFIX}/lib/xemacs/site-lisp
+	load_path=${PREFIX}/lib/xemacs/site-lisp/${load_el}
 	emacscmd=xemacs
 	;;
     xemacs20)
-	load_path=${PREFIX}/lib/xemacs-20.4/${load_el}
+	elispdir=${PREFIX}/lib/xemacs/site-lisp
+	load_path=${PREFIX}/lib/xemacs/site-lisp/${load_el}
 	emacscmd=xemacs
 	;;
     xemacs21)
-	load_path=${PREFIX}/lib/xemacs-21.1.4/${load_el}
+	elispdir=${PREFIX}/lib/xemacs/site-packages/lisp/${port_name}
+	load_path=${PREFIX}/lib/xemacs/site-packages/lisp/${load_el}
 	pkg_path=${PREFIX}/lib/xemacs/site-packages
 	emacscmd=xemacs
+	package_install=yes
 	;;
     xemacs-mule)
-	load_path=${PREFIX}/lib/xemacs/xemacs-packages/lisp/${load_el}
+	elispdir=${PREFIX}/lib/xemacs/site-packages/lisp/${port_name}
+	load_path=${PREFIX}/lib/xemacs/site-packages/lisp/${load_el}
 	pkg_path=${PREFIX}/lib/xemacs/site-packages
 	emacscmd=xemacs
+	package_install=yes
 	;;
     *)
 	echo "${Usage}"
@@ -101,31 +110,30 @@ esac
 if [ -n "${load_el}" ]; then
     echo "(setq load-path (cons \"${load_path}\" load-path))" > /tmp/${tmprfx}:load.el
 fi
-cp ${pkg_path}/pkginfo/MANIFEST.${port_name} ${pkg_path}/pkginfo/MANIFEST.${port_name}.bak
 for f in ${files}; do
     if [ -f ${WRKDIR}/${f} ]; then
+	f_elc=`basename ${f} .el`.elc
 	if [ -n "${load_el}" ]; then
 	    ${emacscmd} -batch -l /tmp/${tmprfx}:load.el -q -no-site-file \
 		-f batch-byte-compile ${WRKDIR}/${f}
 	else
 	    ${emacscmd} -batch -q -no-site-file -f batch-byte-compile ${WRKDIR}/${f}
 	fi
-	if [ $? -eq 0 -a -d ${pkg_path}/lisp/${port_name} ]; then
-	    rm -f ${pkg_path}/lisp/${port_name}/${f}.elc
-	    ln -s ${WRKDIR}/${f}.elc ${pkg_path}/lisp/${port_name}/${f}.elc
+	if [ X"${WRKDIR}" != "X${elispdir}" -a -d ${elispdir} ]; then
+	    rm -f ${elispdir}/${f_elc}
+	    ln -sf ${WRKDIR}/${f} ${elispdir}/${f}
+	    install -c -m 444 -g bin -o bin ${WRKDIR}/${f_elc} ${elispdir}/${f_elc}
+	    rm -f ${WRKDIR}/${f_elc}
+	fi
+	if [ $? -eq 0 -a -n "${package_install}" -a -d ${elispdir} ]; then
 	    cp ${pkg_path}/pkginfo/MANIFEST.${port_name} /tmp/${tmprfx}:tempfile
-	    grep -v "${f}.elc" /tmp/${tmprfx}:tempfile \
+	    grep -v "${f_elc}" /tmp/${tmprfx}:tempfile \
 		> ${pkg_path}/pkginfo/MANIFEST.${port_name}
-	    echo "lisp/${port_name}/${f}.elc" >> ${pkg_path}/pkginfo/MANIFEST.${port_name}
-	else
-	    cp ${pkg_path}/pkginfo/MANIFEST.${port_name} /tmp/${tmprfx}:tempfile
-	    grep -v "${f}.elc" /tmp/${tmprfx}:tempfile \
-		> ${pkg_path}/pkginfo/MANIFEST.${port_name}
-	    rm -f ${pkg_path}/lisp/${port_name}/${f}.elc
+	    echo "lisp/${port_name}/${f_elc}" >> ${pkg_path}/pkginfo/MANIFEST.${port_name}
 	fi
     else
 	echo "\"${WRKDIR}/${f}\": file not found!"
     fi
 done
 
-rm -f /tmp/${tmprfx}:load.el ${pkg_path}/pkginfo/MANIFEST.${port_name}.bak
+rm -f /tmp/${tmprfx}:load.el /tmp/${tmprfx}:tempfile
