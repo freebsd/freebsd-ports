@@ -80,6 +80,7 @@
     SUBDIR += libsidplay
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
+    SUBDIR += lopster
     SUBDIR += maplay
     SUBDIR += mikmod
     SUBDIR += mixer.app
