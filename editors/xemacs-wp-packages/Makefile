@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-packages
 PORTVERSION=	1.2
-CATEGORIES=	editors
+CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
