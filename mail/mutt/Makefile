@@ -21,12 +21,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
+PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/ \
+		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/ \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/ \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/
-PATCHFILES=
+PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -62,7 +63,8 @@ CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps
+		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
+		--enable-compressed
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
