@@ -11,4 +11,7 @@ sbin/sshd
 share/Ssh.bin
 libexec/sftp-server
 libexec/ssh-keysign
+@exec mkdir -p %D/empty
 @dirrm empty
+@exec if ! pw groupshow sshd 2>/dev/null; then pw groupadd sshd -g 22; fi
+@exec if ! pw usershow sshd 2>/dev/null; then pw useradd sshd -g smmsp -u 22 -h - -d %D/empty -s /nonexistent -c "sshd privilege separation"; fi
