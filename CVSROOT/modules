@@ -983,6 +983,7 @@ dc3play		ports/graphics/dc3play
 dcc		ports/irc/dcc
 dcdflib		ports/math/dcdflib
 dclock		ports/x11-clocks/dclock
+dctc		ports/net/dctc
 dd		src/bin/dd
 ddc		ports/net/ddc
 ddclient	ports/net/ddclient
