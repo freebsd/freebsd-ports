@@ -9437,5 +9437,6 @@ p5-Test-Manifest	ports/devel/p5-Test-Manifest
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
 rc_subr		ports/sysutils/rc_subr
 openfts		ports/textproc/openfts
+userneu		ports/sysutils/userneu
 usogres		ports/databases/usogres
 erserver	ports/databases/erserver
