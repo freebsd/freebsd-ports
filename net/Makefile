@@ -295,6 +295,7 @@
     SUBDIR += liferea
     SUBDIR += limewire
     SUBDIR += linc
+    SUBDIR += link-monitor-applet
     SUBDIR += linphone
     SUBDIR += linphone-base
     SUBDIR += linpopup

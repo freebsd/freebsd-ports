@@ -1,0 +1,26 @@
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/link-monitor-applet.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/link-monitor-applet.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/link-monitor-applet.schemas > /dev/null || /usr/bin/true
+libdata/bonobo/servers/GNOME_LinkMonitorApplet.server
+libexec/link-monitor-applet
+share/gnome/gnome-2.0/ui/GNOME_LinkMonitorApplet.xml
+share/gnome/help/link-monitor-applet/C/documentation-license.xml
+share/gnome/help/link-monitor-applet/C/figures/link-monitor-applet-5hosts.png
+share/gnome/help/link-monitor-applet/C/figures/link-monitor-applet-empty.png
+share/gnome/help/link-monitor-applet/C/link-monitor-applet.xml
+share/gnome/help/link-monitor-applet/C/software-license.xml
+share/gnome/link-monitor-applet/ui/about-logo.png
+share/gnome/link-monitor-applet/ui/dialog.glade
+share/gnome/link-monitor-applet/ui/link-monitor-applet.png
+share/gnome/link-monitor-applet/ui/preferences.glade
+share/gnome/omf/link-monitor-applet/link-monitor-applet-C.omf
+share/gnome/pixmaps/link-monitor-applet.png
+share/locale/fr/LC_MESSAGES/link-monitor-applet.mo
+@dirrm share/gnome/help/link-monitor-applet/C/figures
+@dirrm share/gnome/help/link-monitor-applet/C
+@dirrm share/gnome/help/link-monitor-applet
+@dirrm share/gnome/link-monitor-applet/ui
+@dirrm share/gnome/link-monitor-applet
+@dirrm share/gnome/omf/link-monitor-applet
+@exec scrollkeeper-install -q %D/share/gnome/omf/link-monitor-applet/link-monitor-applet-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/link-monitor-applet/link-monitor-applet-C.omf 2>/dev/null || /usr/bin/true
