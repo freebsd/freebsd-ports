@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	1.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -44,5 +44,7 @@ do-install:
 	done
 	${TOUCH} -f ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 	${TOUCH} -f ${PREFIX}/etc/gconf/gconf.xml.defaults/apps/%gconf.xml
+	${CHGRP} games ${PREFIX}/share/gnome/games
+	${CHMOD} g=rwXs ${PREFIX}/share/gnome/games
 
 .include <bsd.port.mk>
