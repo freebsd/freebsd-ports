@@ -1,0 +1,19 @@
+GToolKit is a (relatively) small library that implements a simple and easy to
+use Objective-C interface to the GTK+ widget set. Well, the library in itself
+does not do very much, of course. It just allows you to write your favourite
+program in my favourite programming language ;-). 
+
+Currently implemented features: 
+
+- wrapper classes for all classes in GTK+-1.2 (but not GDK) 
+- builds with GNUstep base or libFoundation library 
+- OpenStep-like API naming conventions (example) 
+- OpenStep-like Application class (GTKApplication) 
+- Application and Window delegates 
+- Notifications (ApplicationWillTerminate etc.) 
+- can load user interfaces created with Glade 
+- works in multi-threaded programs (not well tested) 
+
+WWW: http://www.informatik.uni-osnabrueck.de/elmar/projects/gtoolkit/
+
+Miguel Mendez <flynn@energyhq.homeip.net>

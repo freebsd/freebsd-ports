@@ -51,6 +51,7 @@
     SUBDIR += gtkscintilla
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
+    SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
     SUBDIR += icegradient
