@@ -7,6 +7,7 @@
 
 PORTNAME=	tmda
 PORTVERSION=	0.70
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -30,13 +31,11 @@ do-install:
 		${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
-	@${RM} ${WRKSRC}/bin/tmda-gui
-	@${RM} ${WRKSRC}/bin/tmda-manager
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
+	@${MKDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
 .for f in CODENAMES COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
@@ -45,6 +44,13 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/contrib/$f ${DOCSDIR}/contrib
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${DOCSDIR}/htdocs
+	@${MKDIR} ${DOCSDIR}/contrib/cgi
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi/*.py* ${DOCSDIR}/contrib/cgi
+.for f in compile README tmda-cgi.conf tmda-cgi.c
+	@${INSTALL_DATA} ${WRKSRC}/contrib/cgi/$f ${DOCSDIR}/contrib/cgi
+.endfor
+	@${MKDIR} ${DOCSDIR}/contrib/cgi/display
+	@${INSTALL_DATA} ${WRKSRC}/contrib/cgi/display/* ${DOCSDIR}/contrib/cgi/display
 	@${ECHO_MSG}
 	@${ECHO_MSG} See ${DOCSDIR}/INSTALL for configuration instructions
 	@${ECHO_MSG} See ${DOCSDIR}/UPGRADE if upgrading from a previous release
