@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Nov  7 17:26:45 2001
++++ configure	Wed Nov  7 17:38:11 2001
+@@ -8717,7 +8717,7 @@
+ fi
+ 
+ 
+-	     CATOBJEXT=.gmo
++	     CATOBJEXT=.mo
+ 	   fi
+ 	
+ else
+@@ -8924,7 +8924,7 @@
+     fi
+ 
+                 for lang in $ALL_LINGUAS; do
+-      GMOFILES="$GMOFILES $lang.gmo"
++      GMOFILES="$GMOFILES $lang.mo"
+       POFILES="$POFILES $lang.po"
+     done
+ 
