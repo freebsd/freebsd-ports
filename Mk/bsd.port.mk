@@ -660,6 +660,9 @@ RESTRICTED=		"Contains cryptography."
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
+# defaults to 3.3.6; will be changed to 4.0 when it is ready
+XFREE86_VERSION?=	3
+
 .endif
 # End of pre-makefile section.
 
@@ -757,9 +760,6 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
 .endif
-
-# defaults to 3.3.6; will be changed to 4.0 when it is ready
-XFREE86_VERSION?=	3
 
 .if ${XFREE86_VERSION} == 3
 .if defined(USE_XPM)
@@ -946,8 +946,7 @@ EXTRACT_CMD?=			${GZIP_CMD}
 .if ${XFREE86_VERSION} == 3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-#MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 .else
 MTREE_FILE=	/etc/mtree/BSD.local.dist
@@ -990,6 +989,7 @@ PKGMESSAGE?=		${PKGDIR}/MESSAGE
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
+PKG_INFO?=		/usr/sbin/pkg_info
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
@@ -1090,24 +1090,19 @@ MASTER_SITE_BACKUP:=	${MASTER_SITE_BACKUP:S^\${DIST_SUBDIR}/^^}
 
 # If the user has MASTER_SITE_FREEBSD set, go to the FreeBSD repository
 # for everything, but don't search it twice by appending it to the end.
-.if !defined(MASTER_SITE_FREEBSD)
-MASTER_SITES+=	${MASTER_SITE_BACKUP}
-PATCH_SITES+=	${MASTER_SITE_BACKUP}
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
-PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${PATCH_SITES}
-.endif
+.if defined(MASTER_SITE_FREEBSD)
+_MASTER_SITE_OVERRIDE:=	${MASTER_SITE_BACKUP}
+_MASTER_SITE_BACKUP:=	# empty
 .else
-MASTER_SITES:=	${MASTER_SITE_BACKUP} ${MASTER_SITES}
-PATCH_SITES:=	${MASTER_SITE_BACKUP} ${PATCH_SITES}
+_MASTER_SITE_OVERRIDE=	${MASTER_SITE_OVERRIDE}
+_MASTER_SITE_BACKUP=	${MASTER_SITE_BACKUP}
 .endif
 
 # Search CDROM first if mounted, symlink instead of copy if
 # FETCH_SYMLINK_DISTFILES is set
 CD_MOUNTPT?=	/cdrom
 .if exists(${CD_MOUNTPT}/ports/distfiles)
-MASTER_SITES:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${MASTER_SITES}
-PATCH_SITES:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${PATCH_SITES}
+_MASTER_SITE_OVERRIDE:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${_MASTER_SITE_OVERRIDE}
 .if defined(FETCH_SYMLINK_DISTFILES)
 FETCH_BEFORE_ARGS+=	-l
 .endif
@@ -1125,7 +1120,13 @@ MASTER_SORT_AWK= BEGIN { RS = " "; ORS = " "; IGNORECASE = 1 ; gl = "${MASTER_SO
 MASTER_SORT_AWK+= /${srt:S^/^\\/^g}/ { good["${srt}"] = good["${srt}"] " " $$0 ; next; } 
 .endfor
 MASTER_SORT_AWK+= { rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
-SORTED_MASTER_SITES_CMD= echo '${MASTER_SITES}' | ${AWK} '${MASTER_SORT_AWK}'
+SORTED_MASTER_SITES_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites
+SORTED_PATCH_SITES_CMD=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites
+
+master-sites:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${MASTER_SITES}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+patch-sites:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${PATCH_SITES}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
 
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 ALLFILES?=	${DISTFILES} ${PATCHFILES}
@@ -1621,7 +1622,7 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			for site in ${PATCH_SITES}; do \
+			for site in `${SORTED_PATCH_SITES_CMD}`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
@@ -2108,7 +2109,11 @@ reinstall:
 .if !target(deinstall)
 deinstall:
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGNAME}"
-	@${PKG_DELETE} -f ${PKGNAME}
+	@if ${PKG_INFO} -e ${PKGNAME}; then \
+		${PKG_DELETE} -f ${PKGNAME}; \
+	 else \
+		${ECHO_MSG} "===>   ${PKGNAME} not installed, skipping"; \
+	 fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
@@ -2213,7 +2218,7 @@ fetch-list:
 	@(cd ${_DISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			for site in ${PATCH_SITES}; do \
+			for site in ${SORTED_PATCH_SITES_CMD}; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -2510,6 +2515,13 @@ CLEAN-DEPENDS-LIST= \
 clean-depends:
 	@for dir in $$(${CLEAN-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
+	done
+.endif
+
+.if !target(deinstall-depends)
+deinstall-depends:
+	@for dir in $$(${CLEAN-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes deinstall); \
 	done
 .endif
 
