@@ -15,16 +15,15 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Graphical User Interface library for C++
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		sigc.1:${PORTSDIR}/devel/libsigc++ \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
+		sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
+USE_SDL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
 		uta/pixelformat.h uta/rect.h uta/sge_blib.cc uta/sge_blib.h \
