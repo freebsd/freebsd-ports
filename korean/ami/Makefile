@@ -10,7 +10,7 @@ PORTVERSION=	1.0.11
 #PORTREVISION=	1
 CATEGORIES=	korean x11 gnome
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
-		http://master.debian-kr.org/~cwryu/archive/misc/
+		http://master.debian.or.kr/~cwryu/archive/misc/
 DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz ami.dic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 

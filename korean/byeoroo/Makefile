@@ -9,7 +9,7 @@ PORTNAME=	byeoroo
 PORTVERSION=	0.0.19990605.3
 PORTREVISION=	1
 CATEGORIES=	korean x11
-MASTER_SITES=	http://master.debian-kr.org/~cwryu/archive/byeoroo/
+MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/byeoroo/
 
 MAINTAINER=	cjh@FreeBSD.org
 
