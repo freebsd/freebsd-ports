@@ -73,6 +73,17 @@ share/gnome/omf/balsa/balsa-C.omf
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-pgp-signature.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-pkcs7-mime.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-pkcs7-signature.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-pkcs7-signature.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-message-disposition-notification.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-message-external-body.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-message.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-multipart-alternative.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-multipart-encrypted.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-multipart-signed.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-multipart.png
 share/locale/am/LC_MESSAGES/balsa.mo
 share/locale/az/LC_MESSAGES/balsa.mo
 share/locale/bg/LC_MESSAGES/balsa.mo
@@ -133,4 +144,5 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/balsa/hicolor/16x16
 @dirrm share/gnome/balsa/hicolor
 @dirrm share/gnome/balsa
-@unexec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
+@comment @unexec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
+@unexec rm -f %%X11BASE%%/share/icons/hicolor/icon-theme.cache
