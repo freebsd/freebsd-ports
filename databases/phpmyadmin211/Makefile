@@ -7,6 +7,7 @@
 
 PORTNAME=	phpMyAdmin
 PORTVERSION=	2.5.7.1
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -17,11 +18,13 @@ COMMENT=	A set of PHP-scripts to administer MySQL over the web
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
+USE_PHP=	bz2 gd mysql openssl pcre pdf zlib
 
 .if defined(WITH_SUPHP)
 
-RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 PKGNAMESUFFIX=	-suphp
+RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
+WANT_PHP_CGI=	yes
 PKGINST_SKEL=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 PKGDEINST_SKEL=	${PKGDIR}/pkg-deinstall${PKGNAMESUFFIX}
@@ -36,7 +39,6 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g'     \
 
 .else
 
-USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 .endif
