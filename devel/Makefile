@@ -45,7 +45,6 @@
     SUBDIR += avrprog
     SUBDIR += bcc
     SUBDIR += bin86
-    SUBDIR += binutils-m68k
     SUBDIR += bison
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
@@ -78,7 +77,6 @@
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2
     SUBDIR += crossgo32-djgpp2-pdcurses
-    SUBDIR += crossm68k
     SUBDIR += cs
     SUBDIR += cscope
     SUBDIR += cssc
@@ -133,10 +131,8 @@
     SUBDIR += g-wrap
     SUBDIR += gaa
     SUBDIR += gcc-6811
-    SUBDIR += gcc-m68k
     SUBDIR += gconf
     SUBDIR += gcvs
-    SUBDIR += gdb-m68k
     SUBDIR += gdb51
     SUBDIR += gengameng
     SUBDIR += gengetopt
@@ -283,7 +279,6 @@
     SUBDIR += nana
     SUBDIR += nasm
     SUBDIR += ncurses
-    SUBDIR += newlib-m68k
     SUBDIR += newt
     SUBDIR += ngpt
     SUBDIR += noweb
