@@ -19,7 +19,7 @@ USE_GTK=	yes
 USE_X_PREFIX=	yes
 
 post-extract:
-.for i in aclocal.m4 stamp-h.in Makefile.in configure
+.for i in aclocal.m4 stamp-h.in Makefile.in configure src/Makefile.in
 	${TOUCH} ${WRKSRC}/${i}
 .endfor
 
