@@ -8,7 +8,7 @@
 PORTNAME=	pam_pwdfile
 PORTVERSION=	0.95
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cpbotha.net/pub/pam_pwdfile/
+MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
 MAINTAINER=	mschout@gkg.net
 
@@ -16,11 +16,9 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${LOCALBASE}/${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/changelog \
-		${WRKSRC}/INSTALL  ${LOCALBASE}/${DOCDIR}
-DOCDIR=		share/doc/pam_pwdfile
-PLIST_SUB+=	DOCDIR=${DOCDIR}
+		${WRKSRC}/INSTALL  ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
