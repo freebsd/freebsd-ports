@@ -10,7 +10,7 @@ PORTVERSION=	3.1.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mikmod.darkorb.net/libmikmod/
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_ESOUND=	yes
 USE_LIBTOOL=	yes
