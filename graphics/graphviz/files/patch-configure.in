@@ -22,12 +22,3 @@
  if test -f $TKCONFIG; then
      AC_MSG_RESULT([using $TKCONFIG])
      file=${TKCONFIG}
-@@ -561,7 +565,7 @@
- # Checks for header files
- # AC_STDC_HEADERS
- # AC_HAVE_HEADERS(string.h)
--AC_CHECK_HEADERS(malloc.h search.h getopt.h values.h termios.h \
-+AC_CHECK_HEADERS(search.h getopt.h values.h termios.h \
- 	errno.h sys/time.h unistd.h fenv.h fpu_control.h sys/fpu.h strings.h)
- AC_HEADER_TIME
- AC_HEADER_DIRENT

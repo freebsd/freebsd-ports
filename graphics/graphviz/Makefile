@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.10
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -37,7 +37,7 @@ MAKE_ENV=	EXPR_COMPAT=yes
 MAN1=		acyclic.1 ccomps.1 colorize.1 dot.1 dotty.1 gc.1 gpr.1 \
 		lefty.1 neato.1 nop.1 prune.1 sccmap.1 tred.1 \
 		twopi.1 unflatten.1
-MAN3=		agraph.3 cdt.3 expr.3 graph.3 pathplan.3
+MAN3=		agraph.3 cdt.3 expr.3 graph.3 pack.3 pathplan.3
 MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
 PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
