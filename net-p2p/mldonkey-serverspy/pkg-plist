@@ -1,0 +1,7 @@
+bin/mlservspy.pl
+bin/mlservspy.pl-real
+%%PORTDOCS%%share/doc/mldonkey-serverspy/README.txt
+share/mldonkey-serverspy/mlservspy.ini
+share/mldonkey-serverspy/mlservspy.jpg
+@dirrm share/mldonkey-serverspy
+%%PORTDOCS%%@dirrm share/doc/mldonkey-serverspy
