@@ -58,7 +58,7 @@ WITH_DVD=	yes
 WITH_SVGALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.4)
+.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 WITH_SDL=	yes
 .endif
 
