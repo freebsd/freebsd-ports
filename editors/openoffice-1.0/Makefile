@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
+PORTREVISION=	0
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
-		http://niihau.student.utwente.nl/openoffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
@@ -124,7 +123,7 @@ JAVAVM=         ${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
+WRKSRC=	${WRKDIR}/oo_1.0.1_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)

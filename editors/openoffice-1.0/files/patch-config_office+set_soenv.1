@@ -1,5 +1,5 @@
---- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
-+++ set_soenv.1	Thu Jun  6 15:58:56 2002
+--- set_soenv.1.orig	Sun Jun 30 21:51:05 2002
++++ set_soenv.1	Mon Jul 15 14:09:14 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -21,10 +21,10 @@
  # Platform dependent constant values.
  my ( $BIG_SVX, $COM, $CPU, $CPUNAME, $CVER, $DLLSUFFIX, $GLIBC, $GUI, $GUIBASE, $GUIENV, 
 -     $GVER, $GVERDIR, $OS, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
--     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx );
-+     $GVER, $GVERDIR, $OSVERSION, $OS, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
-+     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx, $PTHREAD_CFLAGS,
-+     $PTHREAD_LIBS, $EXCEPTIONS );
+-     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx, $JRELIBDIR, $JRETOOLKITDIR, $JRETHREADDIR );
++     $GVER, $GVERDIR, $OS, $OSVERSION, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
++     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx, $JRELIBDIR,
++     $JRETOOLKITDIR, $JRETHREADDIR, $PTHREAD_CFLAGS, $PTHREAD_LIBS, $EXCEPTIONS);
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
@@ -40,7 +40,7 @@
 @@ -145,7 +146,11 @@
  $STLPORT4	= $ARGV [ 12 ];     # Location of STLport4
  $MINGWIN32	= $ARGV [ 17 ];     # use MINGWIN32
- $use_shell	= $ARGV [ 18 ];     # preferred shell
+ $USE_SHELL	= $ARGV [ 18 ];     # preferred shell
 -$USE_GCC3	= $ARGV [ 19 ];     # use gcc3 (only for unxlngi4 at the moment)
 +$USE_GCC3	= $ARGV [ 19 ];     # use gcc3 (only for unxlngi4 and unxfbsd5i at the moment)
 +$CC		= $ARGV [ 23 ];     # get cc from environment
@@ -50,16 +50,7 @@
  #
  #---------------------------------------------------------------
  # IIIb. Initialising the variables for the system commands, etc.
-@@ -316,7 +321,7 @@
-    $PROSWITCH      = "-DPRODUCT";
-    $XPVERSION      = "3";
-    $SOLAR_JAVA	   = "TRUE"; 
--      $XPVERSION      = "3";
-+   $XPVERSION      = "3";
- } 
- elsif ( $platform eq "$FreeBSD" ) 
- {     print "Setting FreeBSD specific values... ";
-@@ -326,7 +331,14 @@
+@@ -335,7 +340,14 @@
        $COMPATH        = $ARGV[ 0 ]; 
        $CPU            = "I";
        $CPUNAME        = "INTEL";
@@ -74,17 +65,17 @@
        $DLLSUFFIX      = "fi";
        $GUI            = "UNX";
        $GUIBASE        = "unx";
-@@ -339,6 +351,9 @@
+@@ -348,6 +360,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
 +      $OSVERSION      = $ARGV[ 20 ];
 +      $PTHREAD_CFLAGS = $ARGV[ 21 ];
 +      $PTHREAD_LIBS   = $ARGV[ 22 ];
- } 
- elsif ( $platform eq "$Linux" ) 
- {
-@@ -891,7 +906,7 @@
+       $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386";
+       $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."client";
+       $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."green_threads";
+@@ -927,7 +942,7 @@
  			$ps_STLPORT_LIB.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
  }
@@ -93,7 +84,7 @@
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$USR_LOCAL.$LIB.
-@@ -899,6 +914,13 @@
+@@ -935,6 +950,13 @@
  			$ps_STLPORT_LIB.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
  }
@@ -107,7 +98,7 @@
  elsif ($platform eq "$Irix" || $platform eq "$Irix64")
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
-@@ -934,15 +956,16 @@
+@@ -970,15 +992,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -127,7 +118,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -959,7 +982,7 @@
+@@ -995,7 +1018,7 @@
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB.'"';
  }
@@ -136,7 +127,7 @@
  {  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
                          $L.$LIB.
                          $L.$USR.$LIB.
-@@ -969,6 +992,11 @@
+@@ -1005,6 +1028,11 @@
  {  $SOLAREXTRALIB     = '"'.$L.$LIB.
                          $L.$USR.$LIB.'"';
  }
@@ -148,7 +139,7 @@
  # Compiler include search directory paths.
  if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64")) 
  {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
-@@ -1039,7 +1067,7 @@
+@@ -1076,7 +1104,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -157,7 +148,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1058,6 +1086,22 @@
+@@ -1095,6 +1123,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -180,8 +171,8 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1155,7 +1199,7 @@
- 			$L_STLPORT_LIB.
+@@ -1195,7 +1239,7 @@
+                         $L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
 -elsif (($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
@@ -189,8 +180,8 @@
  {  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
  			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
-@@ -1167,6 +1211,15 @@
- 			$L_STLPORT_LIB.
+@@ -1210,6 +1254,15 @@
+                         $L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
 +elsif ($platform eq "$FreeBSD")
@@ -205,7 +196,7 @@
  elsif ($platform eq "$Winnt")
  {  $SOLARLIB          = '"'.$L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1196,7 +1249,7 @@
+@@ -1242,7 +1295,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -214,7 +205,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1210,11 +1263,6 @@
+@@ -1256,11 +1309,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -226,7 +217,7 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1382,6 +1430,9 @@
+@@ -1428,6 +1476,9 @@
  ToFile( "NEW_JAR_PACK",      $NEW_JAR_PACK,      "e" );
  ToFile( "NO_BSYMBOLIC",      $NO_BSYMBOLIC,      "e" );
  ToFile( "TF_FILTER",         "TRUE",             "e" );
@@ -236,7 +227,7 @@
  if ( $platform ne "$Macosx" )
  {  ToFile( "PSPRINT",           "TRUE",             "e" );
  } elsif ( $GUIBASE eq "unx" ) {
-@@ -1407,6 +1458,12 @@
+@@ -1453,6 +1504,12 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
