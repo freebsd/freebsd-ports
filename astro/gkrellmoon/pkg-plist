@@ -1,0 +1,3 @@
+libexec/gkrellm/plugins/gkrellmoon.so
+%%PORTDOCS%%share/doc/gkrellmoon/README
+%%PORTDOCS%%@dirrm share/doc/gkrellmoon
