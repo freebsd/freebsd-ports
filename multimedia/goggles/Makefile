@@ -14,7 +14,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
-LIB_DEPENDS=	FOX-1.1.25:${PORTSDIR}/x11-toolkits/fox-devel
+LIB_DEPENDS=	FOX-1.1.42:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_GMAKE=	yes
@@ -53,5 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|@CPPFLAGS@|${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}|' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lFOX|-lFOX-1.1|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" -or -name "configure" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|include <fox/|include <fox-1.1/|g'
 
 .include <bsd.port.post.mk>
