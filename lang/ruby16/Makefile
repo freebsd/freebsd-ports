@@ -41,7 +41,8 @@ CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-IRB=			${LOCALBASE}/bin/irb
+IRB_WITHOUT_SUFFIX=	${LOCALBASE}/bin/irb
+IRB_WITH_SUFFIX=	${IRB_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
 post-patch:
 	find ${WRKSRC} -name '*.orig' -delete
@@ -57,12 +58,22 @@ post-install:
 	strip ${RUBY}
 .endif
 .if empty(RUBY_SUFFIX)
-	${MV} -f ${RUBY} ${RUBY_WITH_SUFFIX}
-	${LN} -fs ${RUBY_WITH_SUFFIX} ${RUBY}
+	${MV} -f ${RUBY_WITHOUT_SUFFIX} ${RUBY_WITH_SUFFIX}
+	${LN} -fs ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}
 	${MV} ${PREFIX}/man/man1/ruby.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 .else
-	${LN} -fs ${RUBY} ${PREFIX}/bin/ruby
+	${LN} -fs ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}
 .endif
+	${INSTALL_SCRIPT} ${IRB_WITHOUT_SUFFIX} ${IRB_WITH_SUFFIX}
+	${RUBY} ${RUBY_FLAGS} -i -p \
+		-e 'if $$. == 1; ' \
+		-e ' if /^#!/; ' \
+		-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY_WITHOUT_SUFFIX}";' \
+		-e ' else;' \
+		-e '  $$_ = "#!${RUBY_WITHOUT_SUFFIX}\n" + $$_;' \
+		-e ' end;' \
+		-e 'end' \
+		${IRB_WITHOUT_SUFFIX}
 	${RUBY} ${RUBY_FLAGS} -i -p \
 		-e 'if $$. == 1; ' \
 		-e ' if /^#!/; ' \
@@ -71,9 +82,7 @@ post-install:
 		-e '  $$_ = "#!${RUBY_WITH_SUFFIX}\n" + $$_;' \
 		-e ' end;' \
 		-e 'end' \
-		${IRB}
-	${MV} -f ${IRB} ${IRB}${_RUBY_SUFFIX}
-	${LN} -fs ${IRB}${_RUBY_SUFFIX} ${IRB}
+		${IRB_WITH_SUFFIX}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
