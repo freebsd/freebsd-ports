@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_mysql.so:${PORTSDIR}/databases/py-MySQLdb	\
 		${LOCALBASE}/bin/wml:${PORTSDIR}/www/wml	\
 		${PYNUMERIC}
 
+BROKEN=		"Conflicting dependencies: apache 1.x and apache 2.x"
+
 .if !defined(WITHOUT_X11)
 . if !defined(WITHOUT_XPDF)
 RUN_DEPENDS+=	${X11BASE}/bin/pdftotext:${PORTSDIR}/graphics/xpdf
