@@ -32,6 +32,71 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0ff0e9a6-4ee0-11d9-a9e7-0001020eed82">
+    <topic>phpmyadmin -- command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>2.6.0.2</ge><lt>2.6.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4">
+	  <p>Command execution: since phpMyAdmin 2.6.0-pl2, on a
+	    system where external MIME-based transformations are
+	    activated, an attacker can put into MySQL data an
+	    offensive value that starts a shell command when
+	    browsed.</p>
+	</blockquote>
+	<p>Enabling <q>PHP safe mode</q> on the server can be used as
+	  a workaround for this vulnerability.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1147</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4</url>
+      <url>http://www.exaprobe.com/labs/advisories/esa-2004-1213.html</url>
+    </references>
+    <dates>
+      <discovery>2004-12-13</discovery>
+      <entry>2004-12-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9f0a405e-4edd-11d9-a9e7-0001020eed82">
+    <topic>phpmyadmin -- file disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.6.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4">
+          <p>File disclosure: on systems where the UploadDir mecanism
+            is active, read_dump.php can be called with a crafted
+            form; using the fact that the sql_localfile variable is
+            not sanitized can lead to a file disclosure.</p>
+	</blockquote>
+	<p>Enabling <q>PHP safe mode</q> on the server can be used as
+	  a workaround for this vulnerability.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1148</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4</url>
+      <url>http://www.exaprobe.com/labs/advisories/esa-2004-1213.html</url>
+    </references>
+    <dates>
+      <discovery>2004-12-13</discovery>
+      <entry>2004-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06f142ff-4df3-11d9-a9e7-0001020eed82">
     <topic>wget -- multiple vulnerabilities</topic>
     <affects>
