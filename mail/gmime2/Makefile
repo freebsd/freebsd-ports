@@ -31,6 +31,8 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 INSTALLS_SHLIB=		yes
 
+LATEST_LIST=	gmime2
+
 pre-configure:
 .if exists(${X11BASE}/lib/libgmime.so)
 	@${ECHO} ""
