@@ -1,0 +1,9 @@
+Apache::Icon is a perl module that rips out the icon guts of mod_autoindex and
+provides a perl interface for looking up icon images.  The motivation is to
+piggyback the existing *AddIcon* and related directives for mapping file 
+extensions and names to icons, while keeping things as small and fast as
+mod_autoindex does.
+
+Author: Doug MacEachern
+
+--will

@@ -1,0 +1,6 @@
+lib/perl5/%%PERL_VERSION%%/man/man3/Apache::Icon.3
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Icon.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Icon/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Icon/Icon.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Icon/Icon.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Icon
