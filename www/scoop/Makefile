@@ -41,6 +41,9 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 
 NO_BUILD=yes
 
+BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
+DEPRECATED=	"Will be removed on April 16 if still broken at that time."
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/scoop
 	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/www/scoop
