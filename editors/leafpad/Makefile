@@ -7,13 +7,15 @@
 
 PORTNAME=	leafpad
 PORTVERSION=	0.7.3.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://tarot.freeshell.org/leafpad/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight GTK+ Editor similar to notepad.exe
 
-USE_GNOME=	gnomeprefix gtk20
+USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
@@ -31,8 +33,9 @@ PLIST_SUB+=	NLS:="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/share/icons/|/share/gnome/pixmaps/|g' \
+	@${REINPLACE_CMD} -e 's|/icons|/${PORTNAME}|g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/share/icons/|/share/${PORTNAME}/|g' \
 		${WRKSRC}/src/callback.c ${WRKSRC}/src/window.c
 
 .ifndef (NOPORTDOCS)
