@@ -1,16 +1,25 @@
+@comment $FreeBSD$
+@unexec [ ! -f /var/run/clamav/clamd.pid ] || %%RC_DIR%%/clamd%%RC_SUFX%% stop || true
 bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
-%%CLAMAV-MILTER:%%sbin/clamav-milter
+%%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
 lib/libclamav.so.1
 lib/libclamav.so
-lib/libclamav.la
 lib/libclamav.a
-share/clamav/mirrors.txt
-share/clamav/viruses.db
-share/clamav/viruses.db2
-@dirrm share/clamav
-@unexec rmuser -y clamav
+@unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
+etc/clamav.conf.default
+@exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+etc/rc.d/clamd%%RC_SUFX%%
+@owner clamav
+@group clamav
+%%DATADIR%%/mirrors.txt
+%%DATADIR%%/viruses.db
+%%DATADIR%%/viruses.db2
+@exec chown clamav:clamav %B
+@dirrm %%DATADIR%%
+@unexec rmdir /var/run/clamav 2>/dev/null || true
+@unexec rmdir /var/log/clamav 2>/dev/null || true
