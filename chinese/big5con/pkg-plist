@@ -1,33 +1,29 @@
 bin/b5c
 bin/b5cfld
-bin/et
-etc/big5con.cfg
+etc/big5con.cfg.default
 lib/fonts/kc16.smf
 lib/fonts/kc8x16.smf
-lib/xcin/Boshiamy.cin
-lib/xcin/Boshiamy.tab
-lib/xcin/Boshiamy.tab.rev
-lib/xcin/ar30.tab
-lib/xcin/ar30.tab.quick
-lib/xcin/ar30.tab.rev
 lib/xcin/array30.tab
-lib/xcin/changjei.tab
+lib/xcin/array30.tab.rev
 lib/xcin/cj.tab
 lib/xcin/cj.tab.rev
+lib/xcin/dayi3.tab
+lib/xcin/dayi3.tab.rev
 lib/xcin/et.kbm
 lib/xcin/et26.kbm
 lib/xcin/hsu.kbm
+lib/xcin/liu.tab
+lib/xcin/liu.tab.rev
 lib/xcin/pho.sel1st
 lib/xcin/pho.tab
-lib/xcin/pho1st
-lib/xcin/phonetic.tab
-lib/xcin/sample.phs.out
+lib/xcin/phone.tab
+lib/xcin/phone.tab.rev
+lib/xcin/sample.phs.b5c
+lib/xcin/simplex.tab
+lib/xcin/simplex.tab.rev
 lib/xcin/tsin
 lib/xcin/tsin.idx
-lib/xcin/tsin.src
 lib/xcin/xcin.help
-lib/xcin/xusrar30.tbl
 lib/xcin/zo.kbm
-lib/xcin/sample.phs.b5c
-@dirrm lib/fonts
 @dirrm lib/xcin
+@dirrm lib/fonts
