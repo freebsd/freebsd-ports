@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	viewfax
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
