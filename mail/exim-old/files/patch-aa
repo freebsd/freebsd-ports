@@ -1,3 +1,19 @@
+This patch makes four changes to the exim_install script:
+
+1) Changes the test used to determine whether a file should be installed
+   to cope with files which we "touch" to zero bytes for packaging
+   purposes.
+
+2) Causes an exim.sh startup script to be installed in the BSD-style
+   ${PREFIX}/etc/rc.d
+
+3) Causes the configure file to be installed as a sample only.  The
+   administrator needs to rename this file to "activate" exim.
+
+4) Changes the invocation of make-info to be less prone to fail on
+   silly errors.  XXX Check that this is still necessary from time
+   to time.
+
 --- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
 +++ scripts/exim_install	Tue Aug  3 14:31:20 1999
 @@ -142,9 +142,9 @@
