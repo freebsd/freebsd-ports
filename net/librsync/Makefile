@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	librsync
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.5.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rproxy
+MASTER_SITES=	http://rdiff-backup.stanford.edu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for delta compression of streams
