@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.25
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -18,7 +17,6 @@ COMMENT=	A weather monitoring Sensor and Display for gdesklets
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
