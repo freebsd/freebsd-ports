@@ -130,6 +130,7 @@
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
     SUBDIR += psgml-xemacs21-mule
+    SUBDIR += rox-edit
     SUBDIR += sam
     SUBDIR += scite
     SUBDIR += semi
