@@ -1,6 +1,7 @@
 bin/ettercap
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
+share/ettercap/etter.conf
 @dirrm share/ettercap
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/AUTHORS
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/CHANGELOG
