@@ -1,15 +1,15 @@
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/hash.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/objc-list.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/sarray.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/objc.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/objc-api.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/NXConstStr.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/Object.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/Protocol.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/encoding.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/typedstream.h
-lib/gcc-lib/powerpc-rtems/3.2.1/include/objc/thr.h
-lib/gcc-lib/powerpc-rtems/3.2.1/cc1obj
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/hash.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/objc-list.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/sarray.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/objc.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/objc-api.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/NXConstStr.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/Object.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/Protocol.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/encoding.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/typedstream.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/thr.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/cc1obj
 powerpc-rtems/lib/m403/roe/libobjc.la         
 powerpc-rtems/lib/m403/roe/libobjc.a         
 powerpc-rtems/lib/m403/libobjc.la         
@@ -70,4 +70,4 @@ powerpc-rtems/lib/nof/libobjc.la
 powerpc-rtems/lib/nof/libobjc.a
 powerpc-rtems/lib/libobjc.la
 powerpc-rtems/lib/libobjc.a
-@dirrm lib/gcc-lib/powerpc-rtems/3.2.1/include/objc
+@dirrm lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc

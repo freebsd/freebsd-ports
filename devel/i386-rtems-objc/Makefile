@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	objc
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
-		${MASTER_SITE_SOURCEWARE:S/$/:gcc/}
+		${MASTER_SITE_GNU:S/$/:gcc/}
 MASTER_SITE_SUBDIR=	newlib \
-			gcc/releases/${OBJCNAME}/:gcc
+			${PORTNAME}/${GCCNAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${OBJCNAME}.tar.gz:gcc
-PATCHFILES=	${OBJCNAME}-rtems-20021209.diff \
-		${NEWLIBNAME}-rtems-20030120.diff
+PATCHFILES=	${OBJCNAME}-rtems-20030507a.diff \
+		${NEWLIBNAME}-rtems-20030605.diff
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	FSF OBJC-gcc-3.2.1 base-port for RTEMS development
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 LCLTARGET?=	i386-rtems
 
-OBJCNAME=	gcc-3.2.1
+GCCVERSION=	3.2.3
+OBJCNAME=	gcc-${GCCVERSION}
+PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
 NEWLIBNAME=	newlib-1.11.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-objc
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
@@ -37,12 +45,14 @@ RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all
+ALL_TARGET=	all info
 NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
-			--enable-languages="objc"
+			--enable-languages="objc" \
+			--with-libiconv-prefix=${LOCALBASE} \
+			--without-included-gettext
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${OBJCNAME}/configure
 
@@ -65,4 +75,4 @@ do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

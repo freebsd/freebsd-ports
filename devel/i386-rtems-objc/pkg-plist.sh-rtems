@@ -1,15 +1,15 @@
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/hash.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/objc-list.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/sarray.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/objc.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/objc-api.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/NXConstStr.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/Object.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/Protocol.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/encoding.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/typedstream.h
-lib/gcc-lib/sh-rtems/3.2.1/include/objc/thr.h
-lib/gcc-lib/sh-rtems/3.2.1/cc1obj
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/hash.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/objc-list.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/sarray.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/objc.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/objc-api.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/NXConstStr.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/Object.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/Protocol.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/encoding.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/typedstream.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/thr.h
+lib/gcc-lib/sh-rtems/%%GCCVERSION%%/cc1obj
 sh-rtems/lib/ml/m2/libobjc.la
 sh-rtems/lib/ml/m2/libobjc.a            
 sh-rtems/lib/ml/m3e/libobjc.la
@@ -34,4 +34,4 @@ sh-rtems/lib/m4/libobjc.la
 sh-rtems/lib/m4/libobjc.a
 sh-rtems/lib/libobjc.la
 sh-rtems/lib/libobjc.a
-@dirrm lib/gcc-lib/sh-rtems/3.2.1/include/objc
+@dirrm lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc
