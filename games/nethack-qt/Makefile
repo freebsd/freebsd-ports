@@ -3,17 +3,16 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/11/09 08:14:44 jkh Exp $
+# $Id: Makefile,v 1.10 1997/11/10 09:29:54 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.2
 PKGNAME=	nethack-qt-3.2.2
 CATEGORIES=	games x11
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
-		http://www.uq.edu.au/~cswallis/nhqt/ \
-		http://student.uq.edu.au/~s002434/ \
+		http://www.troll.no/~warwick/nethack/ \
 		${MASTER_SITE_GNU}
-QT_PATCH=	nhqt0.9.tar.gz
+QT_PATCH=	nhqt0.93.tar.gz
 QT_SOUND=	nhs.tar.gz
 DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
 
@@ -36,12 +35,12 @@ pre-configure:
 	@ ${ECHO} "!! Don't forget to backup your nethack libdir if it's    !!"
 	@ ${ECHO} "!! important for you                                     !!"
 	@ ${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@ cd ${WRKSRC}/win; tar xvzf ${DISTDIR}/${QT_PATCH}
-	@ cd ${WRKSRC}; ${PATCH} < win/Qt/nhqt.patch
+	@ cd ${WRKSRC}/win; tar xzf ${DISTDIR}/${QT_PATCH}
+	@ cd ${WRKSRC}; ${PATCH} -s < win/Qt/nhqt.patch
 	@ cd ${WRKSRC}/sys/unix; ${SH} setup.sh
-	@ cd ${WRKSRC}/src; ${PATCH} < ${FILESDIR}/src-Makefile.diff
-	@ cd ${WRKSRC}/src; ${PATCH} < ${FILESDIR}/src-sounds.c.diff
-	@ cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/include-unixconf.h.diff
+	@ cd ${WRKSRC}/src; ${PATCH} -s < ${FILESDIR}/src-Makefile.diff
+	@ cd ${WRKSRC}/src; ${PATCH} -s < ${FILESDIR}/src-sounds.c.diff
+	@ cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/include-unixconf.h.diff
 
 post-install:
 	@ cd ${WRKSRC}/doc; chmod 644 *.6
@@ -60,8 +59,8 @@ post-install:
 	@ ${ECHO}  "   setenv AUDIOSERVER `hostname`:0"
 	@ ${ECHO}  "b) Start the NAS audio server"
 	@ ${ECHO}  "   auvoxware -aa &    # -aa allows any host access"
-	@ ${ECHO}  "c) Copy the example nethackrc file from $FILESDIR to your"
+	@ ${ECHO}  "c) Copy the example nethackrc file from \$FILESDIR to your"
 	@ ${ECHO}  "   login directory:"
-	@ ${ECHO}  "   ${CP} $FILESDIR/sample.nethackrc $HOME/.nethackrc"
+	@ ${ECHO}  "   \${CP} \$FILESDIR/sample.nethackrc \$HOME/.nethackrc"
 
 .include <bsd.port.mk>
