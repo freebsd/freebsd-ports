@@ -1,0 +1,16 @@
+--- configure.orig	Fri Mar 31 16:14:55 2000
++++ configure	Fri Mar 31 16:15:45 2000
+@@ -2311,13 +2311,6 @@
+  COREWARSCMD=corewars-cmd
+ else
+   echo "$ac_t""no" 1>&6
+-echo "configure: warning: 
+-
+-   ********************************************************************************
+-   *** glibc >= 2.1 not installed - cannot build command line client without it ***
+-   ***                        (but this is ok if you want the GTK+ client only) ***
+-   ********************************************************************************
+-" 1>&2
+ fi
+ done
+ 
