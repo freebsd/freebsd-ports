@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.7 1995/04/01 14:54:57 asami Exp $
+# $Id: Makefile,v 1.8 1995/04/12 20:31:57 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -24,7 +24,7 @@ SOURCEFILES=	Epistle,README,Imakefile,xfed.man \
 SOURCESITE=	ftp://ftp.cs.orst.edu/pub/src/X11R4/contrib/clients/xfed/
 #EXTRACT_SUFX=	.tar.Z
 
-fetch:	pre-fetch
+do-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
 	@noglob= ; \
 	if [ ! -f ${DISTDIR}/${TARFILE} ]; then \
