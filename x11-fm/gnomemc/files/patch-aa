@@ -1,6 +1,6 @@
---- configure.orig	Tue Feb 16 05:58:53 1999
-+++ configure	Tue Feb 23 00:58:48 1999
-@@ -3269,15 +3269,15 @@
+--- configure.orig	Tue Jul 13 05:57:18 1999
++++ configure	Sun Jul 18 02:09:53 1999
+@@ -3383,15 +3383,15 @@
  fi
  
          
@@ -11,8 +11,8 @@
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
 +	INTLDEPS='-lintl'
-	INTLLIBS=$INTLDEPS
-	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+ 	INTLLIBS=$INTLDEPS
+ 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
 +#        nls_cv_header_intl=intl/libintl.h
@@ -20,7 +20,7 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -10553,7 +10553,7 @@
+@@ -10731,7 +10731,7 @@
          if test -f /usr/include/ncurses.h
  	then
  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
@@ -29,7 +29,7 @@
  	    CURSES_INCLUDEDIR=""
  	    search_ncurses=false
  	    screen_manager="ncurses on /usr/include"
-@@ -10681,6 +10681,8 @@
+@@ -10859,6 +10859,8 @@
  	fi
      fi
  
@@ -38,3 +38,14 @@
  
                  if $search_ncurses 
      then
+@@ -12224,10 +12226,6 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
