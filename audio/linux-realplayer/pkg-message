@@ -1,6 +1,22 @@
 ************************************************************
-After install goto ${PREFIX}/lib/RealPlayer7 directory
-and launch:
-  ./mimeinstall - for install mime types for the mail and browser
-  ./plugininstall - for install plugin for the Linux Netscape
+HINT: 
+
+If you experience crashes, try setting the
+audio driver option under
+
+   view->Preference->Performance->Audio Driver Options
+
+to 
+
+   "Enable support for old OSS drivers"
+ 
+
+Take the following hint  with a grain of salt:
+
+After install goto ${PREFIX}/lib/RealPlayer8 directory
+(as user) and launch:
+  ./mimeinstall.sh - for install mime types for the mail and 
+                     browser
+  ./plugininstall.sh - for install plugin for the Linux 
+                       Netscape
 ************************************************************
