@@ -1,11 +1,2 @@
 #!/bin/sh
-if [ ! -e ~/.thudboard ]
-then
-  mkdir ~/.thudboard
-fi
-if [ ! -e ~/.thudboard/battles ]
-then
-  mkdir ~/.thudboard/battles
-fi
-
 cd %%PREFIX%%/share/thudboard && %%PYTHON_CMD%% thud.pyc $*
