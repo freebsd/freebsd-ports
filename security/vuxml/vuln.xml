@@ -61,6 +61,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <modified>2004-02-19</modified>
     </dates>
   </vuln>
+
+  <vuln vid="3837f462-5d6b-11d8-80e3-0020ed76ef5a">
+    <topic>Buffer overflows in XFree86 servers</topic>
+    <affects>
+      <package>
+	<name>XFree86-Server</name>
+	<range><le>4.3.0_13</le></range>
+	<range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A number of buffer overflows were recently discovered in
+          XFree86, prompted by initial discoveries by iDEFENSE.  These
+          buffer overflows are present in the font alias handling.  An
+	  attacker with authenticated access to a running X server may
+          exploit these vulnerabilities to obtain root privileges on
+          the machine running the X server.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.idefense.com/application/poi/display?id=72</url>
+      <url>http://www.idefense.com/application/poi/display?id=73</url>
+      <cvename>CAN-2004-0083</cvename>
+      <cvename>CAN-2004-0084</cvename>
+      <cvename>CAN-2004-0106</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-10</discovery>
+      <entry>2004-02-12</entry>
+      <modified>2004-02-18</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="87cc48fd-5fdd-11d8-80e3-0020ed76ef5a">
     <topic>mnGoSearch buffer overflow in UdmDocToTextBuf()</topic>
     <affects>
@@ -504,38 +538,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2004-02-09</discovery>
-      <entry>2004-02-12</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="3837f462-5d6b-11d8-80e3-0020ed76ef5a">
-    <topic>Buffer overflows in XFree86 servers</topic>
-    <affects>
-      <package>
-	<name>XFree86-Server</name>
-	<range><le>4.3.0_13</le></range>
-	<range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A number of buffer overflows were recently discovered in
-          XFree86, prompted by initial discoveries by iDEFENSE.  These
-          buffer overflows are present in the font alias handling.  An
-	  attacker with authenticated access to a running X server may
-          exploit these vulnerabilities to obtain root privileges on
-          the machine running the X server.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://www.idefense.com/application/poi/display?id=72</url>
-      <url>http://www.idefense.com/application/poi/display?id=73</url>
-      <cvename>CAN-2004-0083</cvename>
-      <cvename>CAN-2004-0084</cvename>
-      <cvename>CAN-2004-0106</cvename>
-    </references>
-    <dates>
-      <discovery>2004-02-10</discovery>
       <entry>2004-02-12</entry>
     </dates>
   </vuln>
