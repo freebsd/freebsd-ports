@@ -278,7 +278,7 @@ WITH_AALIB=	yes
 WITH_ESOUND=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libvorbis.so.2)
+.if exists(${LOCALBASE}/lib/libvorbis.so.3)
 WITH_VORBIS=	yes
 .endif
 
