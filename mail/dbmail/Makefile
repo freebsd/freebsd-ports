@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 USE_OPENSSL=	YES
 
+CFLAGS += -fPIC
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-pgsql
 LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
