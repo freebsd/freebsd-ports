@@ -3,14 +3,13 @@
 # Date created:		25 February 1999
 # Whom:		 	Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/03 01:45:05 steve Exp $
 #
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.dct.com/pub/WindowMaker/WTerm/ \
-		http://wm.current.nu/files/ \
-		ftp://pong.csh.rit.edu/pub/mirrors/wterm/
+MASTER_SITES=	ftp://beer.dct.com/pub/Applications/ \
+		http://wm.current.nu/files/
 
 MAINTAINER=	cpiazza@home.net
 
