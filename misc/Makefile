@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.151 1998/07/26 15:14:01 alex Exp $
+# $Id: Makefile,v 1.152 1998/07/28 23:44:23 obrien Exp $
 #
 
     SUBDIR += acron
@@ -13,6 +13,7 @@
     SUBDIR += ctk
     SUBDIR += deco
     SUBDIR += dejagnu
+    SUBDIR += diction
     SUBDIR += display
     SUBDIR += dotfile
     SUBDIR += estic
