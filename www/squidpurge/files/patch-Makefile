@@ -1,0 +1,11 @@
+--- Makefile	Thu Sep 21 21:05:31 2000
++++ Makefile.orig	Fri Oct 19 23:47:22 2001
+@@ -16,7 +16,7 @@
+ # === [1] ==================================================== generics section
+ #
+ CXX	= g++ -ffor-scope -DHAS_BOOL -DHAS_PSIGNAL
+-CC	= gcc
++CC	= g++
+ LD	= $(CC)		# yes, I do mean gcc and not g++
+ CXXFLAGS = # -pg -g # -fprofile-arcs -ftest-coverage
+ SYSTEM  = $(shell uname -s | tr '[a-z]' '[A-Z]' | tr -d '_ -/')

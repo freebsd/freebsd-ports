@@ -292,6 +292,7 @@
     SUBDIR += squid24
     SUBDIR += squidclients
     SUBDIR += squidguard
+    SUBDIR += squidpurge
     SUBDIR += squidtimes
     SUBDIR += squirm
     SUBDIR += squishdot
