@@ -13,7 +13,7 @@ DISTFILES=	sb.tar.Z index.shtml
 DIST_SUBDIR=	spambnc-${PORTVERSION}
 EXTRACT_ONLY=	sb.tar.Z
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of procmail recipies which handle known/suspected spam
 
 IGNOREFILES=	index.shtml

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-phone/ \
 		http://people.FreeBSD.org/~brian/uk-phone/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	United Kingdom phone codes
 
 NO_WRKSUBDIR=	yes

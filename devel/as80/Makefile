@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tstrathmann.de/files/
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight 8080/8085 assembler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

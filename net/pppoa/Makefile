@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	speedtouch
 DISTFILES=		${SPEEDTOUCH}.tar.bz2 ${ALCATELDRIVER}
 EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 
-MAINTAINER=		brian@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Run PPP over Alcatel's USB Speedtouch device
 
 HAS_CONFIGURE=		yes

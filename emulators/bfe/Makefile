@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bfe
 DISTNAME=	bfe2-24jan2003
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 GUI for the bochs debugger (revision 2)
 
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
