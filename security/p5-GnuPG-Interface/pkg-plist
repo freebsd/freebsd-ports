@@ -3,6 +3,7 @@ lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Handles.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Interface.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Key.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Options.pm
+lib/perl5/site_perl/%%PERL_VER%%/GnuPG/PrimaryKey.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/PublicKey.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/SecretKey.pm
 lib/perl5/site_perl/%%PERL_VER%%/GnuPG/Signature.pm
