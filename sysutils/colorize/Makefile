@@ -8,7 +8,9 @@
 PORTNAME=	colorize
 PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://nrg.martos.bme.hu/release/colorize/download/gz/
+MASTER_SITES=	http://nrg.martos.bme.hu/release/colorize/download/gz/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	petef
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
