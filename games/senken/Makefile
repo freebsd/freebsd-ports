@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A city simulation game
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GNOME=	gnometarget gtk20
 USE_SDL=	image sdl
 USE_REINPLACE=	yes
