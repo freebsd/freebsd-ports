@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ickle
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	troff@paranoia.ru
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		icq2000.4:${PORTSDIR}/net/libicq2000
+		icq2000.5:${PORTSDIR}/net/libicq2000
 
 WANT_GNOME=	yes
 USE_GTK=	yes
