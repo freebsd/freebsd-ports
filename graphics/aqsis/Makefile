@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	0.6.6
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,19 +15,33 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargparse.a:${PORTSDIR}/devel/libargparse
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	log4cpp.4:${PORTSDIR}/devel/log4cpp \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_REINPLACE=	yes
 USE_MESA=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-static --datadir="${DATADIR}"
 INSTALLS_SHLIB=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|-ldl||g"
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CFLAGS+=	-O0
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g ; \
+		 s|^CPPFLAGS="-D|CPPFLAGS="\$$CPPFLAGS -D|g ; \
+		 s|^CFLAGS=|#CFLAGS=|g ; \
+		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
+
+.include <bsd.port.post.mk>
