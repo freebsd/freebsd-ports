@@ -68,6 +68,7 @@
     SUBDIR += mei
     SUBDIR += memtest
     SUBDIR += mkisofs
+    SUBDIR += mksunbootcd
     SUBDIR += monitord
     SUBDIR += muse
     SUBDIR += no-login
