@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.34
+PORTVERSION=	1.37
 CATEGORIES=	astro
 MASTER_SITES=	http://www.lsw.uni-heidelberg.de/users/rwichman/
 
