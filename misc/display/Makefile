@@ -3,7 +3,7 @@
 # Date created:		25 August 1997
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
-# $Id: Makefile,v 1.3 1998/11/02 03:59:44 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/07 03:37:38 asami Exp $
 #
 
 DISTNAME=		display
@@ -18,8 +18,6 @@ PATCHFILES=		display.pch.Z
 MAINTAINER=		ports@FreeBSD.ORG
 
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
-
-BROKEN=			fetch
 
 NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		zcat
