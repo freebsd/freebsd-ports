@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -32,7 +32,7 @@ DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
-	patch-r128_driver.c patch-mga_driver.c
+	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
