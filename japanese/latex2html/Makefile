@@ -20,6 +20,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
+BROKEN=		"Conflicting dependencies (ja-ptex-base and teTeX)"
+
 RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
