@@ -146,6 +146,7 @@
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-IntSpan
     SUBDIR += p5-Array-PrintCols
+    SUBDIR += p5-Array-RefElem
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISSN
