@@ -144,6 +144,7 @@
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
+    SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
     SUBDIR += gozer
     SUBDIR += gpaint

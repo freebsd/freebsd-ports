@@ -1,0 +1,9 @@
+Local/Library/Libraries/libSlideShow.so
+Local/Library/Libraries/libSlideShow.so.%%MAJORVERSION%%
+Local/Library/Libraries/libSlideShow.so.%%VERSION%%
+Local/Library/Headers/SlideShow/SlideShow.h
+Local/Library/Headers/SlideShow/SlideShowWindow.h
+@dirrm Local/Library/Libraries
+@dirrm Local/Library/Headers/SlideShow
+@dirrm Local/Library/Headers
+@dirrm Local/Library
