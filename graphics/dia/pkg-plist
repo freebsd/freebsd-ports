@@ -1016,9 +1016,12 @@ share/gnome/dia/sheets/civil.sheet
 share/gnome/dia/sheets/jigsaw.sheet
 share/gnome/dia/sheets/network.sheet
 share/gnome/dia/sheets/sybase.sheet
-share/gnome/help/dia/C
-share/gnome/help/dia/en/topic.dat
-share/gnome/help/dia/pl/topic.dat
+%%GNOME:%%share/gnome/help/dia/C
+%%GNOME:%%share/gnome/help/dia/en/topic.dat
+%%GNOME:%%share/gnome/help/dia/pl/topic.dat
+%%NOGNOME:%%share/gnome/dia/help/C
+%%NOGNOME:%%share/gnome/dia/help/en/topic.dat
+%%NOGNOME:%%share/gnome/dia/help/pl/topic.dat
 share/gnome/mime-info/dia.keys
 share/gnome/mime-info/dia.mime
 share/gnome/pixmaps/dia-diagram.png
@@ -1055,9 +1058,12 @@ share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
-@dirrm share/gnome/help/dia/pl
-@dirrm share/gnome/help/dia/en
-@dirrm share/gnome/help/dia
+%%GNOME:%%@dirrm share/gnome/help/dia/pl
+%%GNOME:%%@dirrm share/gnome/help/dia/en
+%%GNOME:%%@dirrm share/gnome/help/dia
+%%NOGNOME:%%@dirrm share/gnome/dia/help/pl
+%%NOGNOME:%%@dirrm share/gnome/dia/help/en
+%%NOGNOME:%%@dirrm share/gnome/dia/help
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/GRAFCET
 @dirrm share/gnome/dia/sheets/ER
