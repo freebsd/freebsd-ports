@@ -13,8 +13,10 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	flash_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
+
+BROKEN=		"Playback not working anymore, reason unknown."
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
