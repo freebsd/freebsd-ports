@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1998/03/28 15:08:14 steve Exp $
+# $Id: Makefile,v 1.58 1998/04/30 08:25:18 tg Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -37,6 +37,7 @@
     SUBDIR += mp
     SUBDIR += mpage
     SUBDIR += musixtex
+    SUBDIR += offix-printer
     SUBDIR += pkfonts
     SUBDIR += psutils
     SUBDIR += rtf2latex
