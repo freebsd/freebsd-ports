@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmcd
-# Version required:	2.1
+# Version required:	2.2
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.6 1996/11/18 09:52:29 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/29 23:39:57 torstenb Exp $
 #
 
-DISTNAME=	xmcd-2.1
+DISTNAME=	xmcd-2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/xmcd

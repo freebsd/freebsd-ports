@@ -31,8 +31,10 @@ lib/X11/xmcd/help/KpCancel.btn
 lib/X11/xmcd/help/KpClear.btn
 lib/X11/xmcd/help/KpEnter.btn
 lib/X11/xmcd/help/KpNum.btn
+lib/X11/xmcd/help/KpSel.btn
 lib/X11/xmcd/help/LsCancel.btn
 lib/X11/xmcd/help/LsOk.btn
+lib/X11/xmcd/help/NextDisc.btn
 lib/X11/xmcd/help/NextIdx.btn
 lib/X11/xmcd/help/NextTrk.btn
 lib/X11/xmcd/help/OpBalCtr.btn
@@ -42,6 +44,7 @@ lib/X11/xmcd/help/OpSave.btn
 lib/X11/xmcd/help/Options.btn
 lib/X11/xmcd/help/PlayPaus.btn
 lib/X11/xmcd/help/Power.btn
+lib/X11/xmcd/help/PrevDisc.btn
 lib/X11/xmcd/help/PrevIdx.btn
 lib/X11/xmcd/help/PrevTrk.btn
 lib/X11/xmcd/help/Rew.btn
@@ -49,6 +52,7 @@ lib/X11/xmcd/help/Sample.btn
 lib/X11/xmcd/help/Stop.btn
 lib/X11/xmcd/help/Time.btn
 lib/X11/xmcd/help/DbMode.lbl
+lib/X11/xmcd/help/Disc.lbl
 lib/X11/xmcd/help/DiscId.lbl
 lib/X11/xmcd/help/DiscTitl.lbl
 lib/X11/xmcd/help/Index.lbl
@@ -76,6 +80,7 @@ lib/X11/xmcd/help/OpExit.rbx
 lib/X11/xmcd/help/OpLoad.rbx
 lib/X11/xmcd/help/OpVolTpr.rbx
 lib/X11/xmcd/help/Main.cbx
+lib/X11/xmcd/help/OpChgr.cbx
 lib/X11/xmcd/help/OpDone.cbx
 lib/X11/xmcd/help/OpEject.cbx
 lib/X11/xmcd/help/OpLoad.cbx
@@ -91,6 +96,7 @@ lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
 lib/X11/xmcd/config/.tbl/Chinon
 lib/X11/xmcd/config/.tbl/Compaq
+lib/X11/xmcd/config/.tbl/Compro
 lib/X11/xmcd/config/.tbl/Creative
 lib/X11/xmcd/config/.tbl/DEC
 lib/X11/xmcd/config/.tbl/Goldstar
@@ -123,3 +129,20 @@ lib/X11/xmcd/config/config.sh
 man/man1/xmcd.1.gz
 man/man1/cda.1.gz
 man/man1/wm2xmcd.1.gz
+@dirrm lib/X11/xmcd/pixmaps
+@dirrm lib/X11/xmcd/help
+@dirrm lib/X11/xmcd/config/.tbl
+@dirrm lib/X11/xmcd/config
+@dirrm lib/X11/xmcd/cddb/soundtrack
+@dirrm lib/X11/xmcd/cddb/rock
+@dirrm lib/X11/xmcd/cddb/reggae
+@dirrm lib/X11/xmcd/cddb/newage
+@dirrm lib/X11/xmcd/cddb/misc
+@dirrm lib/X11/xmcd/cddb/jazz
+@dirrm lib/X11/xmcd/cddb/folk
+@dirrm lib/X11/xmcd/cddb/data
+@dirrm lib/X11/xmcd/cddb/country
+@dirrm lib/X11/xmcd/cddb/classical
+@dirrm lib/X11/xmcd/cddb/blues
+@dirrm lib/X11/xmcd/cddb
+@dirrm lib/X11/xmcd
