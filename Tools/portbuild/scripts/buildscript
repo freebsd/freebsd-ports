@@ -156,6 +156,8 @@ else
 ./root/*
 ./var/*
 ./tmp/*
+./etc/make.conf.bak
+./etc/make.conf
 EOF
   mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
   cd $dir
@@ -173,8 +175,11 @@ EOF
       grep ' missing$' /tmp/list3 > /tmp/list5
       grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
       if [ "x${PLISTCHECK}" != "x" ]; then
-	if grep -qE 'usr/(local|X11R6)/(bin|sbin|share/doc|share/locale/|lib/lib)' /tmp/list4; then
+	if grep -qE 'usr/(local|X11R6)/(bin/|include/|man/|sbin/|share/|share/|lib/|libdata/|libexec/)' /tmp/list4; then
           echo "1" > /tmp/status
+	fi
+	if [ -s /tmp/list5 ]; then
+	  echo "1" > /tmp/status
 	fi
       fi
       echo "================================================================"
