@@ -10,7 +10,7 @@ DISTNAME=	fsv-0.9
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	sobomax@altavista.net
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		GL.14:${PORTSDIR}/graphics/Mesa3 \
