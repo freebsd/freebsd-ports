@@ -68,10 +68,8 @@ lib/bwidget/titleframe.tcl
 lib/bwidget/tree.tcl
 lib/bwidget/utils.tcl
 lib/bwidget/widget.tcl
+lib/bwidget/wizard.tcl
 lib/bwidget/xpm2image.tcl
-@dirrm lib/bwidget/images
-@dirrm lib/bwidget/lang
-@dirrm lib/bwidget
 %%PORTDOCS%%%%DOCSDIR%%/ArrowButton.html
 %%PORTDOCS%%%%DOCSDIR%%/BWidget.html
 %%PORTDOCS%%%%DOCSDIR%%/Button.html
@@ -109,3 +107,6 @@ lib/bwidget/xpm2image.tcl
 %%PORTDOCS%%%%DOCSDIR%%/navtree.html
 %%PORTDOCS%%%%DOCSDIR%%/options.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/bwidget/lang
+@dirrm lib/bwidget/images
+@dirrm lib/bwidget
