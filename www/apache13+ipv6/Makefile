@@ -7,7 +7,7 @@
 #
 
 DISTNAME=       apache_1.3.11
-PKGNAME=        apache-1.3.11
+PKGNAME=        apache+ipv6-1.3.11
 CATEGORIES=	www ipv6
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
