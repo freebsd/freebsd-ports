@@ -1,0 +1,12 @@
+--- 4_1.3/contrib/Makefile.orig	Fri Oct  2 17:33:22 1998
++++ 4_1.3/contrib/Makefile	Fri Oct  2 18:25:46 1998
+@@ -0,0 +1,9 @@
++#
++# This directory contains some DOS and NTU fonts specific utils, so
++# I don't plan to compilethem, for now.
++#
++
++all:
++install:
++clean:
++
