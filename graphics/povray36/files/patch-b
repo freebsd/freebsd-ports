@@ -1,0 +1,24 @@
+*** machine/unix/xwindows.mak	Sat Oct  9 12:39:46 1993
+--- newmachine/unix/xwindows.mak	Wed Dec 28 03:27:46 1994
+***************
+*** 16,25 ****
+  
+  # Added for colorx addition.  You _do_ have $X11 defined by your .cshrc,
+  # don't you?
+! X11 = /usr
+  CFLAGS=		-c -O 
+! LFLAGS =	-O  $(X11)/lib/libXt.a $(X11)/lib/libXext.a -lX11 \
+!                 -o povray
+  CC =		cc
+  
+  OBJ	= o
+--- 16,24 ----
+  
+  # Added for colorx addition.  You _do_ have $X11 defined by your .cshrc,
+  # don't you?
+! X11 = /usr/X11R6
+  CFLAGS=		-c -O 
+! LFLAGS =	-O  -lXt -lXext -lX11 -o povray
+  CC =		cc
+  
+  OBJ	= o

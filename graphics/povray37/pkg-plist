@@ -1,0 +1,4 @@
+@cwd /usr/local
+bin/povray
+lib/povray
+man/man1/povray.1.gz
