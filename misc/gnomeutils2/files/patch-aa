@@ -1,14 +1,14 @@
---- configure.orig	Mon Jan  4 04:26:35 1999
-+++ configure	Tue Jan  5 17:15:09 1999
-@@ -1087,13 +1087,13 @@
+--- configure.orig	Tue Feb  2 09:42:09 1999
++++ configure	Tue Feb  2 09:43:37 1999
+@@ -1108,13 +1108,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1092: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1113: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1092: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1113: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
@@ -19,3 +19,18 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
+@@ -3121,10 +3121,10 @@
+ 
+ if test $OBJECTIVE_C = yes; then
+   
+-        echo $ac_n "checking for obGnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:3126: checking for obGnomeConf.sh file in $gnome_prefix" >&5
+-	if test -f $gnome_prefix/obGnomeConf.sh; then
+-	    . $gnome_prefix/obGnomeConf.sh
++        echo $ac_n "checking for obGnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:3126: checking for obGnomeConf.sh file in $prefix/share/gnome" >&5
++	if test -f $prefix/share/gnome/obGnomeConf.sh; then
++	    . $prefix/share/gnome/obGnomeConf.sh
+ 	    echo "$ac_t""found" 1>&6
+ 	else
+ 	    echo "$ac_t""not found" 1>&6
