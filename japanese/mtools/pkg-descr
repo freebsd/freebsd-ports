@@ -1,13 +1,7 @@
-Mtools is a public domain collection of programs to allow Unix systems
-to read, write, and manipulate files on an MSDOS filesystem (typically
-a diskette).  Each program attempts to emulate the MSDOS equivalent
-command as closely as practical.
-
-The following MSDOS commands are emulated:
-
-Mtool           MSDOS
-name            equivalent      Description
------           ----            -----------
+Mtools is a collection of programs for reading, writing, and manipulating files
+on an DOS FAT filesystem (usually a diskette).  Each one closely emulates
+its DOS analog:
+_Mtool_         _DOS_command_   _Description_
 mattrib         ATTRIB          change MSDOS file attribute flags
 mcd             CD              change MSDOS directory
 mcopy           COPY            copy MSDOS files to/from Unix
@@ -21,21 +15,10 @@ mread           COPY            low level read (copy) an MSDOS file to Unix
 mren            REN/RENAME      rename an existing MSDOS file
 mtype           TYPE            display contents of an MSDOS file
 mwrite          COPY            alias for mcopy, will be removed soon
-
-You should be able to just close your eyes and pretend you're on an MSDOS
-system.  Everything should work the same... except for the added 'm' at
-the beginning of each command.
-
-MSDOS filenames are optionally composed of a drive letter followed by
-a colon, a subdirectory, and a filename.  Sub- directory names can use
-either the '/' or '\' separator.  The use of the '\' separator or
-wildcards will require the names to be enclosed in quotes to protect
-them from the shell.
-
-The regular expression "pattern matching" routines follow the
-Unix-style rules.  For example, '*' matches all MSDOS files in lieu of
-'*.*'.  The archive, hidden, read-only and system attribute bits are
-ignored during pattern matching.
-
-This is support 1232KB Floopy reading/writing for FreeBSD(98),
-SJIS Short File Name and Unicode Long File Name files.
+Filenames may include a drive letter, a colon, subdirectory, and filename, with
+either '/' or '\' directory separator.  To use the '\' separator or wildcards,
+escape the filenames with quotes.  The regular expression "pattern matching"
+routines follow Unix-style rules:  '*' matches all files.  Archive, hidden,
+read-only and system attributes are ignored in pattern matching.  SJIS Short
+File Name and Unicode Long File Name files, and 1232 kB floppies, are supported.
+WWW:  http://mtools.linux.lu/

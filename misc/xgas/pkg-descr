@@ -1,14 +1,13 @@
 Xgas, animated simulation of an ideal gas
 
-Xgas is a physical simulation of an ideal gas in a heated box. 
-Gas molecules move around the box with velocities dependent on
-their temperature. A chamber consisting of two boxes contains 
-the gas molecules collide with the walls, their temperature 
-approarches that of the box.
+Xgas is a physical simulation of an ideal gas in a heated box.  Gas molecules
+move around the box with velocities dependent on their temperature.  A chamber
+consisting of two boxes contains the gas molecules collide with the walls, their
+temperature approaches that of the box.
 
-Use  mouse  button  1 to create molecules one at a time at
-the cursor position.  Use mouse button  2  to  create  the
-maximum number of molecules at the cursor position.
+Use mouse button 1 to create molecules one at a time at the cursor position.
+Use mouse button 2 to create the maximum number of molecules at the cursor
+position.
 
 Usage: xgas [ -options ]
 

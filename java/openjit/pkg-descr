@@ -1,10 +1,9 @@
-The OpenJIT project is an ongoing Java the programming language JIT compiler
-project as a collaborative effort between Tokyo Institute of Technology and
-Fujitsu Laboratory, partly sponsored by the Information Promotion Agency of
+	The OpenJIT project is an ongoing Java the programming language JIT
+compiler project as a collaborative effort between Tokyo Institute of Technology
+and Fujitsu Laboratory, partly sponsored by the Information Promotion Agency of
 Japan.
-
-OpenJIT is a "reflective" JIT compiler in that not only it is almost entirely
-written in Java, but also that it bootstraps and compiles itself during
+	OpenJIT is a "reflective" JIT compiler in that not only it is almost
+entirely written in Java, but also that it bootstraps and compiles itself during
 execution of the user program, and compiler components coexist as first-class
 objects in user heap space. Thus, users can tailor and customize the compilation
 of classes at runtime for variety of purposes such as application-specific
@@ -13,16 +12,13 @@ adaptation of programs, debugging, language extension and experimentation, and
 other types of advanced compiler-based research and applications. OpenJIT even
 allows full dynamic update of itself by loading the compiler classes on the fly
 from the network.
-
-OpenJIT is fully JDK compliant, and plugs into standard JVMs several Unix
-platforms such as Solaris (Sparc), Linux (x86), and FreeBSD (x86).
-
-On Linux/x86 platform, OpenJIT 1.1.14 is faster than the JDK 1.2 classic VM
-compiler, runs more or less the same speed as other commercial JIT compilers on
-classic VM.
-
-OpenJIT is completely free so long as it is used for non-commercial purposes.
-Its source, binaries, etc. can be freely distributed and modified without
-restriction.
+	OpenJIT is fully JDK compliant, and plugs into standard JVMs several
+Unix platforms such as Solaris (Sparc), Linux (x86), and FreeBSD (x86).
+	On Linux/x86 platform, OpenJIT 1.1.14 is faster than the JDK 1.2 classic
+VM compiler, runs more or less the same speed as other commercial JIT compilers
+on classic VM.
+	OpenJIT is completely free so long as it is used for non-commercial
+purposes.  Its source, binaries, etc. can be freely distributed and modified
+without restriction.
 
 WWW: http://www.openjit.org/

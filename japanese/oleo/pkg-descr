@@ -1,51 +1,24 @@
-* ja-oleo-1.6
-	Japanized Spreadsheet program, oleo.
+This is a port of the spreadsheet program oleo, with Japanese support by Kuniaki
+HAYASHIDA.  Documentation in Japanese is in
+${PREFIX}/share/doc/oleo/ja_JP.EUC/USING.eucJP (usually
+/usr/local/share/doc/oleo/ja_JP.EUC/USING.eucJP).
 
-	This ports collection use japanized patch by Kuniaki HAYASHIDA. 
-
-* documentation in Japanese is:
-	     ${PREFIX}/share/doc/oleo/ja_JP.EUC/USING.eucJP
-    useally /usr/local/share/doc/oleo/ja_JP.EUC/USING.eucJP
-
-* Known PROBLEMS
-	 o  enviroment variable LANG is set to C under X11 client mode:
-		(cf)
+If the environment variable LANG is set to C under X11 client mode, as:
 		setenv LANG C
 		setenv DISPLAY localhost:0.0
+when starting oleo, X11 will consume too much memory to operate X clients.  To
+avoid this problem, you can either set LANG to ja_JP.EUC instead (in which case
+you also need the /usr/share/locale/ja_JP.EUC/LC_TIME,LC_COLLATE file), or unset
+the DISPLAY environment variable so oleo does not use X.
 
-	    when start oleo, X11 is too heavy to operate X clients.
+Output to a PostScript file has some problems.
 
-	  ---- So, please use under.... -----
-		A) set enviroment variable LANG ja_JP.EUC and also
-		  need /usr/share/locale/ja_JP.EUC/LC_TIME,LC_COLLATE
-		  file.
-		   If you use before 19971219-version of FreeBSD,
-	  	     1) get these file from current/releng SNAPSHOT
-		     or
-		     2) create symbolic-links as below:
-			cd /usr/share/locale/ja_JP.EUC
-			ln -s /usr/share/locale/lt_LN.ISO_8859-1/LC_COLLATE
-			ln -s /usr/share/locale/en_US.ISO_8859-1/LC_TIME
-	     or
-		B. non window client mode(unset DISPLAY variable)
-
-	o Output PostScript file has some problems.
-
-* Tips
-	  Oleo default editing mode is like Emacs(Ctrl-h is call
-	help mode).
-	  If you want to use Ctrl-h and BS key to delete-char,
-	set to $HOME/.oleorc as below:
-
-bind-key generic-main backward-delete-char ^H
+The default editing mode is like Emacs (Ctrl-h is call help mode).  If you want
+to use Ctrl-h and BS key to delete-char, set to $HOME/.oleorc as below:
+	bind-key generic-main backward-delete-char ^H
 
 WWW: http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
-
-** Acknowledgements to this ports file **
-        Special thanks to:
- 		Kuniaki HAYASHIDA<hh.iij4u.or.jp>
-		Takeshi MUTOH <mutoh@sentinel.info.nara-k.ac.jp>
-
+Acknowledgments:	Kuniaki HAYASHIDA<hh.iij4u.or.jp>
+			Takeshi MUTOH <mutoh@sentinel.info.nara-k.ac.jp>
 ---
-Yoshiro MIHIRA
-(sanpei@sanpei.org)
+Yoshiro MIHIRA (sanpei@sanpei.org)

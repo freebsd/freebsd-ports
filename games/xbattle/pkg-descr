@@ -1,39 +1,23 @@
-This is version 5.4.1 of xbattle, by Greg Lesher, based on the original
-by Steve Lehar released in 1991, and including certain  enhancements,
-modifications, and bug fixes suggested by a number of contributers from
-all over the world.  The extensive changes from version 5.1, the last 
-official xbattle release, are outlined below.  The latest version can be
-obtained by anonymous ftp to cns-ftp.bu.edu in the pub/xbattle direction
-in compressed and gzip-ed tar format (xbattle-5.4.1.tar.Z and
-xbattle-5.4.1.tar.gz).
-
-xbattle is a concurrent multi-player game which combines elements of
-strategy with arcade-like action to capture a wide range of military 
-scenarios.  The game is based on X Windows, which you must have
-installed to run xbattle.  Opponents play from separate displays, with commands
-being executed concurrently -- the players do not take "turns", but rather 
-they all issue their commands simultaneously.  There can be any number of 
-players, with each player assigned to a specific team, indicated by
-marker colors.  The game board is a matrix of cells (square, hexes, etc.) that
-can be occupied by colored troops, with the goal of the game being to
-eliminate the enemy from the board by attacking cells occupied by enemy
-troops.  A wide variety of command line options (and previously configured game
-files) provide an abundance of different scenarios and gaming environments.
-
-If you have never used xbattle before, we strongly suggest you read
-through the online introduction at the Web site specified below.  To get the
-feel of the game, you can run the tutorials (called "tutorial1" and
-"tutorial2") that are supplied with the game. These are shell scripts
-that run on unix systems and start up a series of small example games that
-you can play around with to learn the various options available with the
-game.  If you are not on a unix system, print out the tutorials and type
-in the embedded command lines by hand.  If you are interested in the
-philosophical and game design issues of xbattle, or want to get immediate
-notice of the latest releases, updates, and bug fixes, send email to
-xbattle_request@gnu.ai.mit.edu and we will put you on the xbattle mailing
-list.
+	This is xbattle by Greg Lesher, based on the original by Steve Lehar
+released in 1991, and including enhancements, modifications, and bug fixes by
+contributers from all over the world.
+	It is a concurrent multi-player game which combines elements of strategy
+with arcade-like action to capture a wide range of military scenarios.  The game
+is based on X Windows.  Opponents play from separate displays, with commands
+being executed concurrently--the players do not take "turns", but rather they
+all issue their commands simultaneously.  There can be any number of players,
+with each player assigned to a specific team, indicated by marker colors.  The
+game board is a matrix of cells (square, hexes, etc.) that can be occupied by
+colored troops, with the goal of the game being to eliminate the enemy from the
+board by attacking cells occupied by enemy troops.  A wide variety of command
+line options (and previously configured game files) provide an abundance of
+different scenarios and gaming environments.
+	If you have never used xbattle before, read the introduction on the
+xbattle Web site.  To get the feel of the game, you can run the "tutorial1" and
+"tutorial2" scripts supplied with the game.  These start a series of small
+example games that you can play around with to learn the various options
+available with the game.
 
 WWW: http://cns-web.bu.edu/pub/xpip/html/xbattle.html
-
 - Gregory W. Lesher
 lesher@cns.bu.edu 

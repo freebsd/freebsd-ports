@@ -1,35 +1,24 @@
-Quake Server README
-===================
-
-Ok, this one definately falls into the "I had some time one Sunday
+	Ok, this one definitely falls into the "I had some time one Sunday
 afternoon..." category.
-
-This port allows you to host Quake network games on your FreeBSD machine. 
-
-This installs the v1.01 shareware version of Quake, and the required files
-to automate a server.  If you have purchased the registered version of Quake
-and wish to host a registered server, take the files from the ID1/
-subdirectory of your installed version of Quake, and put them into the id1/
-subdirectory of /usr/local/quakeserver.  Be sure to make the filenames
-lowercase. 
-
-NOTE: I'm not sure how this will work with the v1.06 version of registered
-quake.  Currently, I can't get the intel loader to work with the 1.06 game
-files, so I'm not optimistic.  YMMV.
-
-Credits to iD for creating a great game, and to Dan Nelson
+	This port allows you to host Quake network games on a FreeBSD machine.
+	This installs the v1.01 shareware version of Quake, and the required
+files to automate a server.  If you have purchased the registered version of
+Quake and wish to host a registered server, take the files from the ID1/
+subdirectory of your installed version of Quake, and put them into
+/usr/local/quakeserver/id1.  Be sure to make the filenames lowercase.
+	Note:  I'm not sure how this will work with the v1.06 version of
+registered quake.  Currently, I can't get the intel loader to work with the 1.06
+game files, so I'm not optimistic.  YMMV.
+	Credits to iD for creating a great game, and to Dan Nelson
 <dnelson@emsphone.com> for creating the expect script that wraps around the
 server in case it crashes.
-
-Note that this port can technically be used to play Quake under X, but I
-don't recommend it.  It's slow, small, and prone to crashing.  If you want
-to host a very fast and responsive Quake game, use this.  If you want to
-play it, run DOS.
-
-Shameless plug:  I've also ported qcc, the QuakeC compiler to let server ops
-make their own quake games.  You do need registered Quake to do this, but
+	Note that this port can technically be used to play Quake under X, but I
+don't recommend it.  It's slow, small, and prone to crashing.  If you want to
+host a very fast and responsive Quake game, use this.  If you want to play it,
+run DOS.
+	Shameless plug:  I've also ported qcc, the QuakeC compiler to let server
+ops make their own quake games.  You do need registered Quake to do this, but
 it's well worth it.  Look for qcc in the games collection of FreeBSD's ports
 repository.
-
 --
 j.

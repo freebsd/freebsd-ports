@@ -1,21 +1,19 @@
-dc42wrap was created several years ago to produce open-source
-operating system boot floppies for a PC that couldn't boot from
-CD-ROM, in an environment where the only physically accessible
-machines with floppy disk drives were Apple Macintoshes.
+	Several years ago, dc42wrap was created to produce open-source operating
+system boot floppies for a PC that could not boot from CD-ROM, in an environment
+where the only physically accessible machines with floppy disk drives were Apple
+Macintoshes.
 
 "raw" disk image -> FTP -> dc42wrap
 FTP -> [Macintosh OS 7/8/9] -> physical floppy
 
-When Apple stopped including floppy drives in their hardware,
-this software fell into disuse ... until someone needed to copy
-the contents of an ancient pile of HFS-formatted floppies onto a
-floppy drive-less Macintosh running OS X, and the only physically
-accessible machines with floppy disk drives were PCs running an
-open-source operating system.
-
-Even though Apple now uses NDIF as their preferred disk image
-format, modern software still understands DiskCopy 4.2 files ...
-and OS X will happily mount those old HFS images on the desktop.
+	When Apple stopped including floppy drives in their hardware, this
+software fell into disuse, until someone needed to copy the contents of an
+ancient pile of HFS-formatted floppies onto a floppy drive-less Macintosh
+running OS X, and the only physically accessible machines with floppy disk
+drives were PCs running an open-source operating system.
+	Even though Apple now uses NDIF as their preferred disk image format,
+modern software still understands DiskCopy 4.2 files, and OS X will happily
+mount those old HFS images on the desktop.
 
 physical floppy -> dd -> dc42wrap
 SSH -> [Macintosh OS X] -> mounted filesystem

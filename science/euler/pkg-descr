@@ -1,8 +1,7 @@
 EULER is a program for quickly and interactively computing with real and
 complex numbers and matrices, or with intervals, in the style of MatLab,
 Octave,... It can draw and animate your functions in two and three dimensions.
-
-Euler features :
+It features:
    - real, complex and interval scalars and matrices, 
    - a programming language, with local variables, default values for
      parameters, variable parameter number, passing of functions,

@@ -1,22 +1,18 @@
    AUC TeX is a comprehensive customizable integrated environment for
 writing input files for LaTeX using GNU Emacs.
-
    AUC TeX lets you run TeX/LaTeX and other LaTeX-related tools, such
 as a output filters or post processor from inside Emacs.  Especially
 `running LaTeX' is interesting, as AUC TeX lets you browse through the
 errors TeX reported, while it moves the cursor directly to the reported
 error, and displays some documentation for that particular error.  This
 will even work when the document is spread over several files.
-
    AUC TeX automatically indents your `LaTeX-source', not only as you
 write it -- you can also let it indent and format an entire document.
 It has a special outline feature, which can greatly help you `getting an
 overview' of a document.
-
    Apart from these special features, AUC TeX provides a large range of
 handy Emacs macros, which in several different ways can help you write
 your LaTeX documents fast and painlessly.
-
    All features of AUC TeX are documented using the GNU Emacs online
 documentation system.  That is, documentation for any command is just
 a key click away!  AUC TeX is written entirely in Emacs-Lisp, and hence

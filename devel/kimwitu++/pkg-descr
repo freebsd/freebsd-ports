@@ -1,25 +1,22 @@
-Kimwitu++ is the successor to Kimwitu. Like Kimwitu, it is a tool for
+	Kimwitu++ is the successor to Kimwitu. Like Kimwitu, it is a tool for
 processing trees (i.e. terms). It is a meta tool: Kimwitu++ can be used for
-generating software - especially when building compilers. Kimwitu++ has its
-own input language, which allows the definition fo the tree structure and of
-functions operating on the tree. It uses the input to generate a number of
-C++ files, which are then bound to a program using the C++ compiler.
-
-Kimwitu++ can be easily combined with parser generators like lex and yacc.
-While the parser deals with processing the grammar rules, kimwitu++ deals
-with creating an abstract syntax tree. In further passes, this tree can be
-used to generate target code. These passes can be implemented in the same
-program or a different one - kimwitu++ supports saving the tree into files.
-
-For processing the tree, Kimwitu++ supports two mechanisms: unparse rules
-(for code generation), and rewrite rules (for transformations). Each rule
-can be tailored to a specific node structure using pattern matching; all
-rules together are applied to the tree recursively. To support different
-rules for the same kind of node (in different application contexts),
-Kimwitu++ supports the definition of views.
-
-Inside the rules, Kimwitu++ allows to integrate C++ code; it also provides
-some extensions to C++. For each node type, a class is generated, which can
-be extended with user-defined methods.
+generating software - especially when building compilers.  Kimwitu++ has its own
+input language, which allows the definition fo the tree structure and of
+functions operating on the tree. It uses the input to generate a number of C++
+files, which are then bound to a program using the C++ compiler.
+	Kimwitu++ can be easily combined with parser generators like lex and
+yacc.  While the parser deals with processing the grammar rules, kimwitu++ deals
+with creating an abstract syntax tree. In further passes, this tree can be used
+to generate target code. These passes can be implemented in the same program or
+a different one - kimwitu++ supports saving the tree into files.
+	For processing the tree, Kimwitu++ supports two mechanisms: unparse
+rules (for code generation), and rewrite rules (for transformations).  Each rule
+can be tailored to a specific node structure using pattern matching; all rules
+together are applied to the tree recursively.  To support different rules for
+the same kind of node (in different application contexts), Kimwitu++ supports
+the definition of views.
+	Inside the rules, Kimwitu++ allows to integrate C++ code; it also
+provides some extensions to C++. For each node type, a class is generated, which
+can be extended with user-defined methods.
 
 WWW: http://site.informatik.hu-berlin.de/kimwitu++/

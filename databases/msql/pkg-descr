@@ -1,35 +1,12 @@
-                  README for Mini SQL Version 2.0 Beta 1
--------------------------------------------------------------------------------
-
-Welcome to Mini SQL 2!  It's been a long time coming but we hope the
-wait has been worth it.  As the development of mSQL 2 continues, further
-funtionality will be made available.  This release concentrates on
-adding the underlying performance and data handling features to mSQL.
-
-The software has changed quite a lot since the 1.x version of mSQL.
-Some of the new features are greatly improved support for indexing your
-data, much better performance for complex queries and large data sets,
-the addition of variable length TEXT fields, support for server managed
-numeric sequences, better regular expression handling, and easier
-control over the configuration of the server.
-
-
-FreeBSD-specific port notes
----------------------------
-
-The ports of mSQL 1.x lived in it's own tree, /usr/local/Minerva.  At the
-time, mSQL was a part of a larger project called Minerva, to which other
-tools would be added.  These other tools would also live in
-/usr/local/Minerva.
-
-As of the 2.x release of mSQL, the author of mSQL has put many of these
-tools into the base mSQL distribution, and so it is no longer feasible to
-have the program live in it's own directory.
-
-So, in keeping with the BSD directory tree structure, you will find the
-following changes between the "official" mSQL 2.x distribution and the
-FreeBSD port :
-
+	The port of mSQL 1.x lived in its own tree, /usr/local/Minerva.  At the
+time, mSQL was a part of a larger project called Minerva, to which other tools
+would be added.  These other tools would also live in /usr/local/Minerva.
+	As of the 2.x release of mSQL, the author of mSQL has put many of these
+tools into the base mSQL distribution, so it is no longer feasible to have the
+program live in its own directory.
+	So, in keeping with the BSD directory tree structure, you will find the
+following changes between the "official" mSQL 2.x distribution and the FreeBSD
+port.
 
 Documentation states:			Port uses:
 =====================			==========================
@@ -39,8 +16,5 @@ Documentation states:			Port uses:
 /usr/local/Hughes/msql2.pid             /var/spool/msql/msql2.pid
 /usr/local/Hughes/msql.conf		/usr/local/etc/msql2/msql.conf
 /usr/local/Hughes/msql.acl		/usr/local/etc/msql2/msql.acl
-
---
-j.
 
 WWW: http://www.hughes.com.au/

@@ -1,6 +1,5 @@
 This utility notably decreases the startup time of your X sessions, provided
-that you start a number of X clients automatically during the X session
-startup.
+that you start a number of X clients automatically during the X session startup.
 Most people, for instance, start X clients like xterm, xclock, xconsole and
 xosview from their .xinitrc, .openwin-init, .xtoolplaces or .xsession file.
 

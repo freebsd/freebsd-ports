@@ -1,23 +1,19 @@
-DESCRIPTION
+from the man page:
 
 	gd is a graphics library. It allows your code to quickly draw images
 	complete with lines, arcs, text, multiple colors, cut and paste from
 	other images, and flood fills, and write out the result as a .PNG file.
 	This is particularly useful in World Wide Web applications, where .PNG
-	is the format used for inline images. 
+	is the format used for inline images.
 
-	gd is not a paint program. If you are looking for a paint program, try 
-	xpaint by David Koblas, available by anonymous FTP from ftp.netcom.com
-	in pub/ko/koblas. (That package is for the X Window System; for the Mac
-	and the PC, paint programs are considerably easier to find.) 
+	gd is not a paint program. [...]
 
 	gd does not provide for every possible desirable graphics operation. It
 	is not necessary or desirable for gd to become a kitchen-sink graphics
 	package, but version 1.3 incorporates most of the commonly requested
 	features for an 8-bit 2D package. Support for scalable fonts, and 
 	truecolor images, JPEG and PNG is planned for version 2.0.
-
-AUTHOR
+[...]
 	gd was written by Thomas Boutell and is currently distributed by 
 	boutell.com, Inc. 
 

@@ -1,29 +1,21 @@
-Chart::PNGgraph is a perl5 module to create and display
-PNG output for a graph.  The following classes for graphs
-with axes are defined:
+Chart::PNGgraph is a perl5 module to create and display PNG output for a graph.
+The following classes for graphs with axes are defined:
 
 Chart::PNGgraph::lines
     Create a line chart.
-
 Chart::PNGgraph::bars
     Create a bar chart.
-
 Chart::PNGgraph::points
     Create an chart, displaying the data as points.
-
 Chart::PNGgraph::linespoints
     Combination of lines and points.
-
 Chart::PNGgraph::area
-    Create a graph, representing the data as areas under a
-    line.
-
+    Create a graph, representing the data as areas under a line.
 Chart::PNGgraph::mixed
-    Create a mixed type graph, any combination of the
-    above. At the moment this is fairly limited. Some of
-    the options that can be used with some of the
-    individual graph types won't work very well. Multiple
-    bar graphs in a mixed graph won't display very nicely.
+    Create a mixed type graph, any combination of the above. At the moment this
+    is fairly limited. Some of the options that can be used with some of the
+    individual graph types won't work very well. Multiple bar graphs in a mixed
+    graph won't display very nicely.
 
 Additional types:
 

@@ -1,8 +1,6 @@
 gbscript converts GB simplified Chinese text to PostScript.
 
-Chinese bitmap fonts, which are:
-	o without 'zone gap', and
-	o 16x16 or 24x24 sized
+Chinese bitmap fonts which are without 'zone gap' and 16x16 or 24x24 sized
 
 	Some usable fonts are:
 		Name           Description                 File Size
@@ -16,14 +14,11 @@ Chinese bitmap fonts, which are:
 		[16x16]
 		ncclib.16      (Simplified)                267,712
 
-       NOTE:
-        o  cclib.j24, cclib.f24,  cclib.k24,  cclib.h24  and cclib.n24
-           are a different set of font  files (although  derived  from
-           same origins); they cannot be used with GBscript.
-        o  some  fonts do not include those zones for special  symbols
-           (in order to  save some  disk  space), thus  they  are  not
-           continuous  in zone and there  exist 'zone  gaps'. GBscript
-           currently cannot handle this type of font.
-
-       Location:  Chinese bitmap fonts can be found in
-           /ftp@ifcss.org:/software/fonts/
+NOTES:
+o  cclib.j24, cclib.f24, cclib.k24, cclib.h24 and cclib.n24 are a different set
+   of font files (although derived from same origins); they cannot be used with
+   GBscript.
+o  some fonts do not include zones for special symbols, to save disk space, thus
+   they are not continuous in zone and there exist 'zone gaps'.  GBscript
+   currently cannot handle this type of font.
+o  Chinese bitmap fonts can be found in /ftp@ifcss.org:/software/fonts/

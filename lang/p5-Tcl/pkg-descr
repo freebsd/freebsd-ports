@@ -1,26 +1,20 @@
-The Tcl extension module gives access to the Tcl library
-with functionality and interface similar to the C
-functions of Tcl.  In other words, you can
+The Tcl extension module gives access to the Tcl library with functionality and
+interface similar to the C functions of Tcl.  In other words, you can:
 
 create Tcl interpreters
-        The Tcl interpreters so created are Perl objects
-        whose destructors delete the interpreters cleanly
-        when appropriate.
+	The Tcl interpreters so created are Perl objects whose destructors
+	delete the interpreters cleanly when appropriate.
 
 execute Tcl code in an interpreter
-        The code can come from strings, files or Perl
-        filehandles.
+        The code can come from strings, files or Perl filehandles.
 
 bind in new Tcl procedures
-        The new procedures can be either C code (with
-        addresses presumably obtained using dl_open and
-        dl_find_symbol) or Perl subroutines (by name,
-        reference or as anonymous subs). The (optional)
-        deleteProc callback in the latter case is another
-        perl subroutine which is called when the command
-        is explicitly deleted by name or else when the
-        destructor for the interpreter object is
-        explicitly or implicitly called.
+	The new procedures can be either C code (with addresses presumably
+	obtained using dl_open and dl_find_symbol) or Perl subroutines (by name,
+	reference or as anonymous subs). The (optional) deleteProc callback in
+	the latter case is another perl subroutine which is called when the
+	command is explicitly deleted by name or else when the destructor for
+	the interpreter object is explicitly or implicitly called.
 
 Manipulate the result field of a Tcl interpreter
 
