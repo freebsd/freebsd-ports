@@ -1,0 +1,11 @@
+Boiling egg is a front-end of Egg (Tamago) V4.
+You can convert roma-ji to kana without toggling input method.
+
+Put the expression below into your ~/.emacs.
+
+(autoload 'boiling-rK-trans "boiling-egg" "romaji-kanji conversion" t)
+(autoload 'boiling-rhkR-trans "boiling-egg" "romaji-kana conversion" t)
+(global-set-key "\C-o" 'boiling-rK-trans)
+(global-set-key "\eo" 'boiling-rhkR-trans)
+
+WWW: http://www.gcd.org/sengoku/boiling-egg/

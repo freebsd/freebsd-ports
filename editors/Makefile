@@ -15,6 +15,7 @@
     SUBDIR += biew
     SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-mule
+    SUBDIR += boiling-egg
     SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += chexedit
