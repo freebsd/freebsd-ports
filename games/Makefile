@@ -283,6 +283,7 @@
     SUBDIR += xzip
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
+    SUBDIR += zangband
     SUBDIR += znibbles
     SUBDIR += ztrack
 
