@@ -1,5 +1,5 @@
---- ./Imakefile.org	Fri Jan 13 12:24:01 1995
-+++ ./Imakefile	Wed Jul  5 03:32:57 1995
+--- Imakefile.orig	Thu Aug 27 04:53:33 1998
++++ Imakefile	Thu Aug 27 04:54:22 1998
 @@ -6,13 +6,15 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -18,7 +18,7 @@
  
  
  /* if, for whatever reason, you're unable to get the PDS/VICAR support
-@@ -119,16 +121,30 @@
+@@ -124,16 +126,30 @@
  JPEG = -DDOJPEG
  JPEGDIR = jpeg
  LIBJPEG = $(JPEGDIR)/libjpeg.a
@@ -49,7 +49,7 @@
  #ifdef HavePDS
  PDS = -DDOPDS
  #endif
-@@ -142,8 +158,8 @@
+@@ -149,8 +165,8 @@
  #endif
  
  
@@ -60,3 +60,27 @@
  
  DEFINES= $(SCO) $(UNIX) $(NODIRENT) $(VPRINTF) $(TIMERS) \
  	$(HPUX7) $(JPEG) $(TIFF) $(PDS) $(DXWM) $(RAND) \
+@@ -254,10 +270,10 @@
+ #endif
+ 
+ 
+-NormalProgramTarget(xv,$(OBJS1),$(DEPLIBS),$(LOCAL_LIBRARIES),)
+-NormalProgramTarget(bggen,$(OBJS2),$(DEPLIBS),$(LOCAL_LIBRARIES),)
+-NormalProgramTarget(xcmap,$(OBJS4),$(DEPLIBS),$(LOCAL_LIBRARIES),)
+-NormalProgramTarget(xvpictoppm,$(OBJS5),$(DEPLIBS),$(LOCAL_LIBRARIES),)
++NormalProgramTarget(xv,$(OBJS1),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
++NormalProgramTarget(bggen,$(OBJS2),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
++NormalProgramTarget(xcmap,$(OBJS4),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
++NormalProgramTarget(xvpictoppm,$(OBJS5),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
+ 
+  
+ InstallProgram(xv,$(BINDIR))
+@@ -266,7 +282,7 @@
+ InstallProgram(xvpictoppm,$(BINDIR))
+ 
+ #ifdef HavePDS
+-NormalProgramTarget(vdcomp,$(OBJS3),$(DEPLIBS),$(LOCAL_LIBRARIES),)
++NormalProgramTarget(vdcomp,$(OBJS3),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
+ InstallProgram(vdcomp,$(BINDIR))
+ #endif
+ 
