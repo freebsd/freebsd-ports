@@ -49,5 +49,5 @@ fi
 [ "$ex" = "1" ] && exit 1
 install -dv -m 0755 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/run
 install -dv -m 0700 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/infected
-install -dv -m 0700 -o ${BINOWN} -g ${BINGRP} ${PKG_PREFIX}/drweb/updates
+install -dv -m 0755 -o ${BINOWN} -g ${BINGRP} ${PKG_PREFIX}/drweb/updates
 exit 0
