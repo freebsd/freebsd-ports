@@ -23,6 +23,7 @@
     SUBDIR += ashe           # requires Motif
     SUBDIR += asp2php
     SUBDIR += aswedit
+    SUBDIR += aswiki
     SUBDIR += august
     SUBDIR += auth_ldap
     SUBDIR += awstats
