@@ -7,8 +7,7 @@
 PORTNAME=	fontedit
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.smithurst.org/ben/tarballs/ \
-		ftp://ukug.uk.freebsd.org/pub/mark/fontmake/
+MASTER_SITES=	http://www.smithurst.org/ben/tarballs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for creating and editing console (syscons) font files
