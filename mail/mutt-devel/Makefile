@@ -215,7 +215,7 @@ CFLAGS+=	-I${PREFIX}/include/db42
 WITH_MUTT_IDN=	yes
 .endif
 .if defined(WITH_MUTT_IDN)
-LIB_DEPENDS+=   idn.15:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn.15:${PORTSDIR}/devel/libidn
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -269,7 +269,7 @@ CONFIGURE_ARGS+=	--disable-iconv
 .else
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .endif
-.if defined(WITH_MUTT_IDN) 
+.if defined(WITH_MUTT_IDN)
 CONFIGURE_ARGS+=	--with-idn
 .else
 CONFIGURE_ARGS+=	--without-idn
