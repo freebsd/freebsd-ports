@@ -4872,6 +4872,7 @@ npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
 nqc		ports/lang/nqc
 nroff		src/contrib/groff/nroff
+nrpe		ports/net/nrpe
 ns		ports/net/ns
 nsc		ports/net/nsc
 nscache		ports/www/nscache
