@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spreadmodule
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net python
 MASTER_SITES=	http://www.python.org/other/spread/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joshua@roughtrade.net
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsp.a:${PORTSDIR}/net/spread
+LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 post-patch:
-	@${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
