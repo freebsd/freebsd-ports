@@ -3,10 +3,10 @@
 # Date created:		17 Dec 1998
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1999/04/21 04:59:57 asami Exp $
+# $Id: Makefile,v 1.7 1999/05/20 21:14:22 asami Exp $
 #
 
-DISTNAME=	30upgrade-1998.05.20
+DISTNAME=	30upgrade-1999.05.20
 CATEGORIES=	misc
 DISTFILES=	# empty
 
