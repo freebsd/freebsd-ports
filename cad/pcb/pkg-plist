@@ -3,17 +3,11 @@
 @owner bin
 @group bin
 bin/pcb
-@mode 644
-@owner bin
-@group bin
-man/man1/pcb.1.gz
 @cd /usr/X11R6/lib/X11
 @mode 644
 @owner bin
 @group bin
 pcb/default_font
-pcb/small_font
-pcb/big_font
 pcb/circuits
 pcb/circuits/27512
 pcb/circuits/ti34010_plcc
