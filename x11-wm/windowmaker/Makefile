@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.90.0
-PORTREVISION=	1
+PORTVERSION=	0.91.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	GNUStep-compliant NeXTStep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
@@ -31,15 +30,12 @@ USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LINGUAS="${LINGUAS}"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
-		--enable-vdesktop \
-		--enable-xinerama \
 		--disable-debug
 INSTALLS_SHLIB=	yes
 
@@ -47,21 +43,43 @@ MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-OPTIONS=	XKB_STATUS "XKB STATUS" off
+OPTIONS=	KDE "Add hooks for kde support" off \
+		XINERAMA "Enable xinerama support" off \
+		XKB_STATUS "XKB keyboard language status support" off \
+		WM_LINGUAS "Enable support for additional locales" off \
+		WM_VDESKTOP "Experts only!" off
 
 .include <bsd.port.pre.mk>
 
-LINGUAS!=	${CAT} ${FILESDIR}/LINGUAS
+.if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-kde
+.endif
 
-.if defined(WITH_XKB_STATUS)
+.if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-xinerama
+.endif
+
+.if defined(WITH_XKB_STATUS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-modelock
+.endif
+
+.if defined(WITH_WM_LINGUAS) || defined(PACKAGE_BUILDING)
+LINGUAS!=	${CAT} ${FILESDIR}/LINGUAS
+CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
+PLIST_SUB=	WM_LINGUAS=""
+.else
+PLIST_SUB=	WM_LINGUAS="@comment "
+.endif
+
+.if defined(WITH_WM_VDESKTOP)
+CONFIGURE_ARGS+=	--enable-vdesktop
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|TW\.Big5|TW|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 	@${REINPLACE_CMD} -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
-	@${REINPLACE_CMD} -e "s|-version-info 3:|-version-info 5:|g" ${WRKSRC}/wrlib/Makefile.in
+	@${REINPLACE_CMD} -e "s|-version-info 3:|-version-info 4:|g" ${WRKSRC}/wrlib/Makefile.in
 	@${REINPLACE_CMD} -e "s|Trebuchet MS,Luxi Sans|sans|g" ${WRKSRC}/WindowMaker/Defaults/WMGLOBAL
 	@${REINPLACE_CMD} -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
 		${WRKSRC}/WindowMaker/*menu*
