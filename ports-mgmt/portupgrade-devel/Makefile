@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010627
+PORTVERSION=	20010714
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -28,7 +28,7 @@ MAN1=		pkgdepfix.1 \
 		portupgrade.1 \
 		portversion.1
 MLINKS=		portupgrade.1 portinstall.1
-MANCOMPRESSED=	no
+MANCOMPRESSED=	yes
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
