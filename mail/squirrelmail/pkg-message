@@ -5,8 +5,7 @@ web browser, or create a VirtualHost with DocumentRoot set to that
 directory.
 
 For SquirrelMail to work properly you will need to make sure the
-following options are set in your php.ini file:
-register_globals = On
+following option is set in your php.ini file:
 file_uploads = On
 
 If you have problems with SquirrelMail saying "you must login" after
@@ -16,3 +15,4 @@ session.auto_start = 1
 In order to do your administrative configuration you need to 
 cd %%PREFIX%%/squirrelmail && ./configure
 SquirrelMail will not work until this has been done.
+
