@@ -1,0 +1,14 @@
+HLaTeX(OCF) fonts collection
+============================
+
+This font collection is used by ghostscript, for printing
+Korean documents.
+
+HLaTeX Myoungjo and Gothic is originally included in the HLaTeX
+distribution, by Koaunghi Un <koaunghi.un@student.uni-tuebingen.de>.
+Recomposed to OCF by CHOI Junho <cjh@kr.freebsd.org>.
+
+This fonts collection is free to use.
+
+--
+CHOI Junho <cjh@kr.freebsd.org>
