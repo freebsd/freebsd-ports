@@ -163,6 +163,7 @@
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += licq
+    SUBDIR += licq-qt-gui
     SUBDIR += linpopup
     SUBDIR += macipgw
     SUBDIR += mars_nwe
