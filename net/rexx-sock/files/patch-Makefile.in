@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Jan 27 12:04:50 2004
++++ Makefile.in	Tue Jan 27 12:16:35 2004
+@@ -195,13 +195,13 @@
+ 	-$(INSTALL) -c -m 755 ./$(SHLPRE)$(PACKAGE_NAME)$(SHLPST) $(libdir)/$(SHLPRE)$(PACKAGE_NAME)$(SHLPST)
+ 	$(INSTALL) -c -m 755 ./$(LIBPRE)$(PACKAGE_NAME)$(LIBPST) $(libdir)/$(LIBPRE)$(PACKAGE_NAME)$(LIBPST)
+ 	./$(PACKAGE_NAME) $(basedir)/preinst.rexx $(bindir)/$(PACKAGE_NAME) $(demodir)/tcpc.cmd $(sharedir)/tcpcmd.cmd
+-	-chmod 755 $(sharedir)/tcpc.cmd
++	-chmod 755 $(sharedir)/tcpcmd.cmd
+ 	./$(PACKAGE_NAME) $(basedir)/preinst.rexx $(bindir)/$(PACKAGE_NAME) $(demodir)/tcps.cmd $(sharedir)/tcpsmd.cmd
+-	-chmod 755 $(sharedir)/tcps.cmd
++	-chmod 755 $(sharedir)/tcpsmd.cmd
+ 	./$(PACKAGE_NAME) $(basedir)/preinst.rexx $(bindir)/$(PACKAGE_NAME) $(demodir)/udpc.cmd $(sharedir)/udpcmd.cmd
+-	-chmod 755 $(sharedir)/udpc.cmd
++	-chmod 755 $(sharedir)/udpcmd.cmd
+ 	./$(PACKAGE_NAME) $(basedir)/preinst.rexx $(bindir)/$(PACKAGE_NAME) $(demodir)/udps.cmd $(sharedir)/udpsmd.cmd
+-	-chmod 755 $(sharedir)/udps.cmd
++	-chmod 755 $(sharedir)/udpsmd.cmd
+ 	./$(PACKAGE_NAME) $(basedir)/preinst.rexx $(bindir)/$(PACKAGE_NAME) $(demodir)/davesim.rex $(sharedir)/udpsmd.cmd
+ 	-chmod 755 $(sharedir)/davesim.rex
+ 	$(INSTALL) -c -m 644 $(demodir)/udps.txt $(sharedir)/udps.txt
