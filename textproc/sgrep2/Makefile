@@ -1,24 +1,25 @@
-# New ports collection makefile for: 	sgrep
-# Date created:    			Apr 29 1998
-# Whom: 				<koshy@india.hp.com>
+# ex:ts=8
+# Ports collection makefile for: 	sgrep2
+# Date created:			Oct 31, 2003
+# Whom:				ijliao
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sgrep
-PORTVERSION=	0.99
+PORTNAME=	sgrep2
+PORTVERSION=	1.92a
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
+DISTNAME=	sgrep-${PORTVERSION}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A `grep' for structured text like SGML and HTML
 
-MAN1=		sgrep.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-# Override the install target in the supplied makefile
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sgrep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sgrep.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/sample.sgreprc ${PREFIX}/share/sgreprc
+CONFLICT=	sgrep
+
+MAN1=		sgrep.1
 
 .include <bsd.port.mk>
