@@ -23,6 +23,7 @@ TESTS=		auth.phpt basic.phpt config.php.dist
 EXAMPLES=	basic.php
 _EXAMPLESDIR=	docs/examples
 
+LATEST_LINK=	pear-Net_SMTP
 OPTIONS=	PEAR_AUTH_SASL "PEAR::Auth_SASL support" off
 
 .include <bsd.port.pre.mk>
