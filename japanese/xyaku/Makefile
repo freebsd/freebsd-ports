@@ -7,6 +7,7 @@
 
 PORTNAME=	xyaku
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/xyaku/
 
@@ -15,14 +16,16 @@ MAINTAINER=	knu@idaemons.org
 RUN_DEPENDS=	${EDICT_FILE}:${PORTSDIR}/japanese/edict \
 		${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_RUBY=	yes
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}"
+CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
+		--with-ruby="${RUBY}" \
+		--with-netscape="${LOCALBASE}/bin/netscape"
 
-EDICT_FILE=	${PREFIX}/share/dict/edict/edict
+EDICT_FILE=	${LOCALBASE}/share/dict/edict/edict
 DOCS_EN=	AUTHORS ChangeLog INSTALL NEWS README TODO \
 		addin/ADDIN.ChangeLog addin/ADDIN.txt
 DOCS_JA=	addin/README.searcheb.ja
