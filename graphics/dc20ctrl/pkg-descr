@@ -1,0 +1,6 @@
+dc20ctrl can control your Kodak DC20 digital camera via the embedded serial
+port.  With dc20ctrl you can control any parameter of your camera, as quering
+the current state, taking a photo, downloading the thumbnails and/or the
+pictures (in raw, pgm or ppm format, and eventually others: it depends on
+compilation-time options), erasing the camera memory and changing its
+resolution.
