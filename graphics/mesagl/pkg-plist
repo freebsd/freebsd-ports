@@ -1,21 +1,21 @@
-etc/mesa.conf
-include/GL/gl.h
-include/GL/gl_mangle.h
+%%XFREE3:%%etc/mesa.conf
+%%XFREE3:%%include/GL/gl.h
+%%XFREE3:%%include/GL/gl_mangle.h
 include/GL/glu.h
-include/GL/glu_mangle.h
+%%XFREE3:%%include/GL/glu_mangle.h
 include/GL/glut.h
-include/GL/glx.h
-include/GL/glx_mangle.h
-include/GL/osmesa.h
-include/GL/xmesa.h
-include/GL/xmesa_x.h
-include/GL/xmesa_xf86.h
-lib/libGL.so
-lib/libGL.so.%%GLVER%%
+%%XFREE3:%%include/GL/glx.h
+%%XFREE3:%%include/GL/glx_mangle.h
+%%XFREE3:%%include/GL/osmesa.h
+%%XFREE3:%%include/GL/xmesa.h
+%%XFREE3:%%include/GL/xmesa_x.h
+%%XFREE3:%%include/GL/xmesa_xf86.h
+%%XFREE3:%%lib/libGL.so
+%%XFREE3:%%lib/libGL.so.%%GLVER%%
 lib/libGLU.so
 lib/libGLU.so.%%GLVER%%
 lib/libMesaGL.so
 lib/libMesaGLU.so
 lib/libglut.so
 lib/libglut.so.%%GLUTVER%%
-@dirrm include/GL
+%%XFREE3:%%@dirrm include/GL
