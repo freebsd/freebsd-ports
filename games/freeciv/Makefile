@@ -3,7 +3,7 @@
 # Date created:		Jun 20 1997
 # Whom:			ada@bsd.org
 #
-# $Id: Makefile,v 1.3 1997/10/09 11:35:53 tg Exp $
+# $Id: Makefile,v 1.4 1998/02/06 15:55:03 tg Exp $
 #
 
 DISTNAME=	freeciv-150
@@ -22,6 +22,7 @@ NO_INSTALL_MANPAGES=	yes
 
 post-install:
 	${MKDIR} ${PREFIX}/share/freeciv
-	${INSTALL_DATA} $(WRKSRC)/data/Freeciv $(WRKSRC)/data/*.xpm \
-	  ${PREFIX}/share/freeciv
+	${INSTALL_DATA} $(WRKSRC)/data/helpdata.txt $(WRKSRC)/data/Freeciv \
+		$(WRKSRC)/data/*.xpm ${PREFIX}/share/freeciv
+
 .include <bsd.port.mk>
