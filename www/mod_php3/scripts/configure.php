@@ -47,7 +47,7 @@ while [ "$1" ]; do
 			GD=1
 			;;
 		\"FreeType\")
-			echo "LIB_DEPENDS+=		ttf.2:\${PORTSDIR}/print/freetype" >> ${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype" >> ${CURDIR}/Makefile.inc
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
 			fi
