@@ -1,0 +1,3 @@
+shhopt - library for parsing command line options. It contains
+C-functions for parsing command line options, both traditional
+one-character options, and GNU'ish --long-options.
