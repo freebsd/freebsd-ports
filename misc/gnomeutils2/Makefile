@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomeutils
-# Version required:			1.0.1
+# Version required:			1.0.12
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1999/04/08 18:08:34 steve Exp $
+# $Id: Makefile,v 1.9 1999/05/30 03:51:37 steve Exp $
 #
 
-DISTNAME=	gnome-utils-1.0.1
-PKGNAME=	gnomeutils-1.0.1
+DISTNAME=	gnome-utils-1.0.12
+PKGNAME=	gnomeutils-1.0.12
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-utils
