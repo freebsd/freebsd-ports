@@ -32,29 +32,3 @@
  
  
  
-@@ -138,6 +145,12 @@
-  * Error reporting function for this source module:
-  */
- static void
-+_v_erf(const char *format,va_list ap) {
-+	vsprintf(emsg,format,ap);		/* Capture message into emsg[] */
-+}
-+
-+
-+static void
- err(const char *format,...) {
- 	va_list ap;
-    fprintf(stdout, "error : %s \n",format);
-@@ -146,12 +159,6 @@
- 	va_start(ap,format);
- 	_v_erf(format,ap);			/* Use caller's supplied function */
- 	va_end(ap);
--}
--
--
--static void
--_v_erf(const char *format,va_list ap) {
--	vsprintf(emsg,format,ap);		/* Capture message into emsg[] */
- }
- 
- 
