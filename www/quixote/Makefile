@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
@@ -30,13 +30,14 @@ pre-install:
 post-install:
 	@ PYTHONPATH=${PREFIX}/lib/${PYTHON_VERSION}/site-packages \
 	  ${PYTHON_CMD} ${SCRIPTDIR}/compile_ptl.py \
-	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/pages.ptl \
-	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/form/form_templates.ptl
+	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/*.ptl \
+	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/form/*.ptl
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/demo/demo.* ${EXAMPLESDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/demo/*.cgi ${WRKSRC}/demo/*.conf \
+	  ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ACKS CHANGES LICENSE README TODO doc/*.txt
+.for docfile in ACKS CHANGES LICENSE README TODO doc/*
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
