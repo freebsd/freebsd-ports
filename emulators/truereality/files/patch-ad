@@ -1,0 +1,108 @@
+--- os/bsd/signal.c.orig	Tue Nov 16 15:02:45 1999
++++ os/bsd/signal.c	Sat May 20 13:36:15 2000
+@@ -39,51 +39,37 @@
+ 
+ #include <signal.h>
+ 
+-#include <dispatch.h>
++#include "../../main.h"
++#include "../../N64/registers.h"
+ #include <parser_extern.h>
+ 
+-#include "../os.h"
+-#include "signal.h"
++static void signal_handler(int signum);
+ 
+ 
+ 
+ 
+ 
+-void CatchSignals()
+-{
+-        signal(SIGINT,  stop_signal);           /* CTRL+C pressed -> cpu halt -> debugger */
+-        signal(SIGQUIT, shutdown_signal);
+-        signal(SIGTERM, shutdown_signal);
+-#if DISPLAY_SUPPORT
+-        signal(SIGHUP,  visualkilled_signal);   /* should be sent if display killed */
+-        signal(SIGPIPE, shutdown_signal);       /* when pipe is broken */
+-#endif
+-
+-} /* void CatchSignals() */
+ 
+ 
+ 
+ 
+ 
+-void shutdown_signal()
+-{
+-        dispatch(SHUTDOWN, 0);
+-
+-} /* void shutdown_signal() */
+ 
+ 
+ 
+ 
+ 
+-void stop_signal()
++void tr_signals_catch()
+ {
+-        signal(SIGINT,  SIG_IGN);
+-        
+-        dispatch(CPU_STOP, 0);
++        signal(SIGINT,  signal_handler);   /* CTRL+C pressed -> cpu halt ->
++debugger */
++        signal(SIGQUIT, signal_handler);
++        signal(SIGTERM, signal_handler);
++#ifdef TR_DISPLAY
++        signal(SIGPIPE, signal_handler);   /* when pipe is broken */
++#endif
+ 
+-        signal(SIGINT,  stop_signal);           /* CTRL+C pressed -> cpu halt -> debugger */
+-        
+-} /* void shutdown_signal() */
++} /* void tr_signals_catch() */
+ 
+ 
+ 
+@@ -91,15 +77,36 @@
+ 
+ 
+ 
+-#if DISPLAY_SUPPORT
+-void visualkilled_signal()
++static void signal_handler(int signum)
+ {
+-        prefs.display = NO_DISPLAY;
+-
+-} /* void visualkilled_signal() */
++	signal(signum, SIG_IGN);
++        switch(signum)
++        {
++#ifdef TR_DEBUG
++            case SIGINT:
++            case SIGQUIT:
++                reg.halt = 1;  /* stop cpu */
++                break;
++#else
++            case SIGINT:
++            case SIGQUIT:
+ #endif
++            case SIGTERM:
++                /* ask for shutting down the emulation */
++                tr_shutdown();
++                break;
++
++#ifdef TR_DISPLAY
++            case SIGPIPE:
++                prefs.display = NO_DISPLAY;
++                break;
++#endif
++
++        } /* switch(signum) */
+ 
++	signal(signum,  signal_handler);
+ 
++} /* static void signal_handler(int signum) */
+ 
+ 
+ 
