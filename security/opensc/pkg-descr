@@ -1,0 +1,16 @@
+libopensc is a library for accessing SmartCard devices using PC/SC
+Lite middleware package. It is also the core library of the OpenSC
+project. Basic functionality (e.g. SELECT FILE, READ BINARY) should
+work on any ISO 7816-4 compatible SmartCard. Encryption and decryption
+using private keys on the SmartCard is possible with PKCS #15
+compatible cards, such as the FINEID (Finnish Electronic IDentity)
+card. Swedish Posten eID cards have also been confirmed to work.
+
+WWW: http://www.opensc.org/
+
+I have also included a small patch to allow the 'IBM Smart Card Security Kit'
+to be used out-of-the-box. This kit contains a card which is actually a
+rebranded Gemplus GPK4000 card with a slightly different ATR.
+
+Bruce
+<bms@spc.org>

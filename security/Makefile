@@ -134,6 +134,7 @@
     SUBDIR += nss
     SUBDIR += oidentd
     SUBDIR += op
+    SUBDIR += opensc
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
