@@ -7,17 +7,20 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
 USE_BZIP2=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=	Xdialog.1
 
