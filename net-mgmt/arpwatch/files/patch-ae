@@ -1,0 +1,29 @@
+--- configure.orig	Wed Jul 29 08:16:52 1998
++++ configure	Fri Jun  9 10:12:32 2000
+@@ -646,7 +646,7 @@
+   :
+ fi
+ 
+-    V_CCOPT="-O"
++#    V_CCOPT="-O"
+     V_INCLS=""
+     if test "${srcdir}" != "." ; then
+ 	    V_INCLS="-I\$\(srcdir\)"
+@@ -887,7 +887,7 @@
+ 
+ 		    echo "$ac_t""$ac_cv_lbl_gcc_vers" 1>&6
+ 		    if test $ac_cv_lbl_gcc_vers -gt 1 ; then
+-			    V_CCOPT="-O2"
++#			    V_CCOPT="-O2"
+ 		    fi
+ 	    fi
+     else
+@@ -1154,7 +1154,7 @@
+ fi
+ 
+ 
+-for ac_func in dn_skipname
++for ac_func in dn_skipname mkstemp
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1161: checking for $ac_func" >&5
