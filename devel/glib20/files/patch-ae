@@ -1,6 +1,6 @@
 --- configure.orig	Mon Dec  2 16:34:49 2002
 +++ configure	Tue Dec  3 18:21:22 2002
-@@ -11259,6 +11259,7 @@
+@@ -10176,6 +10176,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -17057,6 +17058,8 @@
+       fi
+     done
+   fi
++  G_THREAD_CFLAGS="${PTHREAD_CFLAGS}"
++  G_THREAD_LIBS="${PTHREAD_LIBS}"
+ 
+   if test x"$G_THREAD_CFLAGS" = x; then
+ 
