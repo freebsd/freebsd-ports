@@ -7,6 +7,7 @@
 
 PORTNAME=	flite
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/${PKGNAME}/
 DISTNAME=	${PKGNAME}-release
@@ -20,4 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+CFLAGS:=	${CFLAGS:N-O:N-O[0123456789]} -O0
+
+.include <bsd.port.post.mk>
