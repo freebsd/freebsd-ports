@@ -1,5 +1,5 @@
---- config/config.mk.orig	Sun Apr  7 00:04:51 2002
-+++ config/config.mk	Sun Apr  7 00:07:14 2002
+--- config/config.mk.orig	Wed Feb  6 08:53:53 2002
++++ config/config.mk	Tue Apr 16 17:46:26 2002
 @@ -35,8 +35,8 @@
  #
  ###############################################################################
@@ -19,6 +19,15 @@
  else
  PTHREAD_LIB:=	-lpthread
  endif
+@@ -118,7 +117,7 @@
+ #		The command to remove files recursively and ignore errors;
+ #		usually "rm -fr" for Unix or "erase" for Windows.
+ 
+-PERL:=		/usr/local/bin/perl
++#PERL:=		/usr/local/bin/perl
+ #		The full path to the Perl 5 executable; usually "/bin/perl" or
+ #		"/usr/local/bin/perl" for Unix or "\Perl\bin\perl" for
+ #		Windows.  You need this only if you intend on using
 @@ -152,7 +151,7 @@
  ifdef DEBUG
  OPTIM:=		-g
