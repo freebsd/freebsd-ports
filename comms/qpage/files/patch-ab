@@ -1,0 +1,11 @@
+--- qpage.doc.orig	Wed Jun  3 23:40:13 1998
++++ qpage.doc	Wed Jun  3 23:40:35 1998
+@@ -608,7 +608,7 @@
+      when it's safe to send dial commands to the modem.
+ 
+ FILES
+-     /etc/qpage.cf
++     /usr/local/etc/qpage.cf
+ 
+ SEE ALSO
+      RFC-1861
