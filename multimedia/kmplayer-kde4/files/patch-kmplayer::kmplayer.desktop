@@ -1,11 +1,11 @@
---- kmplayer/kmplayer.desktop.orig	Sun Apr 13 11:48:14 2003
-+++ kmplayer/kmplayer.desktop	Thu May  1 15:04:46 2003
-@@ -14,6 +14,7 @@
- Terminal=0
- Name=KMPlayer
+--- src/kmplayer.desktop.orig	Sun Jan 18 18:28:05 2004
++++ src/kmplayer.desktop	Thu Feb  5 20:53:34 2004
+@@ -35,7 +35,7 @@
  Name[sv]=Kmplayer
--MimeType=audio/x-mp3;audio/x-vorbis;application/x-mplayer2;application/x-ogg;audio/x-mp2;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;video/x-avi;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;video/quicktime;video/x-flic;
-+MimeType=audio/x-mp3;application/x-ogg;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;application/vnd.ms-asf;video/x-msvi
-+deo;video/quicktime;video/x-flic;
- Terminal=0
+ Name[ta]=KM Å¡º¢ôÀÅ÷
+ Name[xx]=xxKMPlayerxx
+-MimeType=audio/x-mp3;audio/x-pn-realaudio;audio/x-vorbis;application/x-mplayer2;application/x-ogg;audio/x-mp2;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;video/x-avi;video/x-ms-asf;video/x-ms-wmp;video/x-ms-wmv;video/x-msvideo;video/quicktime;video/x-flic;
++MimeType=audio/x-mp3;application/x-ogg;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;application/vnd.ms-asf;video/x-msvideo;video/quicktime;video/x-flic;
  InitialPreference=7
+ Categories=Qt;KDE;AudioVideo
+ GenericName=Media Player
