@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xwrits
-PORTVERSION=	2.11
+PORTVERSION=	2.15
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.pdos.lcs.mit.edu/~eddietwo/xwrits/
+MASTER_SITES=	http://www.lcdf.org/~eddietwo/xwrits/
 
 MAINTAINER=	mab@red-bean.com
 
