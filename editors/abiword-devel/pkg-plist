@@ -150,6 +150,7 @@ share/AbiSuite/AbiWord/system.profile-en-US
 share/AbiSuite/AbiWord/system.profile-en-ZA
 share/AbiSuite/AbiWord/system.profile-es
 share/AbiSuite/AbiWord/system.profile-es-ES
+share/AbiSuite/AbiWord/system.profile-fi-FI
 share/AbiSuite/AbiWord/system.profile-fr
 share/AbiSuite/AbiWord/system.profile-fr-BE
 share/AbiSuite/AbiWord/system.profile-fr-CA
@@ -178,6 +179,7 @@ share/AbiSuite/AbiWord/system.profile-tr-TR
 share/AbiSuite/AbiWord/system.profile-tr-TR.CP1254
 share/AbiSuite/AbiWord/system.profile-zh-CN
 share/AbiSuite/AbiWord/system.profile-zh-TW
+share/AbiSuite/GNOME_AbiWord_Control_1_0.oaf
 share/AbiSuite/README
 share/AbiSuite/clipart/book.png
 share/AbiSuite/clipart/chip.png
