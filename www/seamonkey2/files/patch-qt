@@ -1,15 +1,15 @@
---- configure.orig	Tue Oct 15 19:39:37 2002
-+++ configure	Fri Oct 18 18:20:50 2002
-@@ -10646,7 +10646,7 @@
+--- configure.orig	Thu Feb  6 17:15:12 2003
++++ configure	Tue Feb 11 22:52:48 2003
+@@ -10974,7 +10974,7 @@
      fi
      MOC=$HOST_MOC
  
--    QT_CFLAGS="-I${QTDIR}${QTINCDIR} -DQT_GENUINE_STR"
+-    QT_CFLAGS="-I${QTDIR}${QTINCDIR} -DQT_GENUINE_STR -DQT_NO_STL"
 +    QT_CFLAGS="-I${QTDIR}/include/X11/qt -DQT_GENUINE_STR"
-     QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
- 
-     MOZ_QT_LDFLAGS=$QT_LIBS
-@@ -11402,9 +11402,9 @@
+     if test -z "$MOZ_DEBUG"; then
+       QT_CFLAGS="$QT_CFLAGS -DQT_NO_DEBUG -DNO_DEBUG"
+     fi
+@@ -11840,9 +11840,9 @@
  
  
  
