@@ -150,6 +150,7 @@
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Simple
+    SUBDIR += p5-XML-SimpleObject
     SUBDIR += p5-XML-Stream
     SUBDIR += p5-XML-TreeBuilder
     SUBDIR += p5-XML-Twig
