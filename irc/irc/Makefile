@@ -39,10 +39,6 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ircd.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ip6
 .endif
