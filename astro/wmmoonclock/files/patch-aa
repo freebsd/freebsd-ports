@@ -11,7 +11,7 @@
 --- 1,6 ----
 ! CC     ?= gcc
 ! CFLAGS ?= -O2
-! INCDIR = -I/usr/X11R6/share/include
+! INCDIR = -I/usr/X11R6/include
   DESTDIR= /usr/X11R6
   LIBDIR = -L/usr/X11R6/lib
   
