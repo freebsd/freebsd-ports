@@ -1,6 +1,15 @@
---- configure.orig	Sat Aug 14 00:37:06 2004
-+++ configure	Sat Aug 14 00:37:06 2004
-@@ -26181,14 +26181,14 @@
+--- configure.orig	Mon Jan 24 17:28:13 2005
++++ configure	Mon Jan 24 19:20:14 2005
+@@ -4342,7 +4342,7 @@
+ 
+   case " $CFLAGS " in
+   *[\ \	]-Wfloat-equal[\ \	]*) ;;
+-  *) CFLAGS="$CFLAGS -Wfloat-equal" ;;
++  *) CFLAGS="$CFLAGS" ;;
+   esac
+ 
+   case " $CFLAGS " in
+@@ -26195,14 +26195,14 @@
  echo "${ECHO_T}not found" >&6
  fi
  
