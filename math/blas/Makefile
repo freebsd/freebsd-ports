@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.18 1998/07/09 03:42:14 scrappy Exp $
+# $Id: Makefile,v 1.19 1998/08/09 00:05:49 steve Exp $
 #
 
 DISTNAME=	blas
@@ -23,5 +23,8 @@ pre-build:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libblas.so.1.0 ${PREFIX}/lib/libblas.so; \
+	fi
 
 .include <bsd.port.mk>
