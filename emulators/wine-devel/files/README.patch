@@ -3,11 +3,6 @@ Here are some patches for FreeBSD's kernel that are necessary for wine
 They unfortunately didn't make it into the base distribution in time
 for the 3.3 release code freeze...
 
-patch-3.3-sys-ldtshare:
-make kernel threads (rfork(), which wine uses) share one LDT instead of
-each having its own.  this fixes the same problem that wine also had on
-linux kernels before 2.2.
-
 patch-3.3-sys-sigtrap:
 stop wine's SIGTRAP handler from being called in the sigreturn syscall,
 causing problems for wine's internal debugger.  (it would still
@@ -29,7 +24,6 @@ just hit ^C then...)
 
 Apply as follows:
 
-	(cd /usr/src/sys && patch ) <patch-3.3-sys-ldtshare
 	(cd /usr/src/sys && patch ) <patch-3.3-sys-sigtrap
 
 And if you don't already have it:
@@ -39,27 +33,6 @@ And if you don't already have it:
 then build a new kernel. (don't forget to include the options USER_LDT,
 SYSVSHM, SYSVSEM, and SYSVMSG, wine needs these.)
 
-A note about local patches and ctm, cvsup and friends...
-(if you don't know what those are good for see for example
-http://www.freebsd.org/handbook/stable.html)
-ctm cannot deal with local patches (unless you use it to mirror
-the cvs tree of course, instead of the sources directly), with
-cvsup i'm not sure but in any case the workaround is simple:  use
-patch -R to un-apply any local patches before the update (feeding
-it the patches again as above on stdin), then when the update is
-finished apply them again.  Should they fail on the updated sources
-(and you cannot fix it yourself), look for new versions of the
-patches at the place where you got them, or in this case you
-can also look in my current wine port tree at
-http://www.jelal.kn-bremen.de/freebsd/ports/emulators/wine/files/
-
 -current users:
-A LDT patch for -current is at http://people.FreeBSD.org/~luoqi/
-(well in a recent posting on the -current list,
-http://www.freebsd.org/cgi/mid.cgi?db=&id=199911150745.CAA27884@lor.watermarkgroup.com
-he said that version is outdated, seems you have to mail him to
-get a current one), the sigtrap patch looks like it could also
-apply to -current but i haven't tried.  And the fs/gs patch of course
-already is in -current.
-Late note: the LDT sharing fix just seems to have been committed now...
-(to -current that is.)
+The sigtrap patch looks like it could also apply to -current but i haven't
+tried.  And the fs/gs patch of course already is in -current.
