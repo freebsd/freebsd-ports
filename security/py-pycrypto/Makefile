@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pycrypto
-PORTVERSION=	1.9.a4
+PORTVERSION=	1.9.a6
 CATEGORIES=	security
-MASTER_SITES= 	http://www.amk.ca/files/python/
+MASTER_SITES= 	http://www.amk.ca/files/python/crypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pycrypto-1.9a4
+DISTNAME=	${PORTNAME}-${PORTVERSION:S@.a@a@}
 
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	The Python Cryptography Toolkit
