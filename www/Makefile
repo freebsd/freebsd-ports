@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.129 1999/05/23 21:16:11 peter Exp $
+# $Id: Makefile,v 1.130 1999/06/09 01:44:45 steve Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -27,6 +27,7 @@
     SUBDIR += evg
     SUBDIR += fcgi
     SUBDIR += fxhtml
+    SUBDIR += g-gcl
     SUBDIR += gn
     SUBDIR += grail
     SUBDIR += gwstat
