@@ -1,11 +1,24 @@
 bin/gnome-find
 share/gnome-find/gnome-find.glade
-share/gnome-find/gnome-find.spec
 share/gnome-find/gnome-find.xpm
 share/gnome-find/multiple.xpm
+share/gnome-find/shell.xpm
 share/gnome/apps/Utilities/gnome-find.desktop
+share/gnome/help/gnome-find/C/bugreport.html
+share/gnome/help/gnome-find/C/contacting.html
+share/gnome/help/gnome-find/C/copyright.html
+share/gnome/help/gnome-find/C/faq.html
+share/gnome/help/gnome-find/C/manual.html
+share/gnome/help/gnome-find/C/prefs-0.html
+share/gnome/help/gnome-find/C/prefs-1.html
+share/gnome/help/gnome-find/C/prefs-2.html
+share/gnome/help/gnome-find/C/prefs-3.html
+share/gnome/help/gnome-find/C/prefs-4.html
+share/gnome/help/gnome-find/C/topic.dat
 share/locale/de/LC_MESSAGES/gnome-find.mo
 share/locale/es/LC_MESSAGES/gnome-find.mo
 share/locale/ko/LC_MESSAGES/gnome-find.mo
 share/locale/ru/LC_MESSAGES/gnome-find.mo
+@dirrm share/gnome/help/gnome-find/C
+@dirrm share/gnome/help/gnome-find
 @dirrm share/gnome-find
