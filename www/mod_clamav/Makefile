@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_clamav
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/
 
