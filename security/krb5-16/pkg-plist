@@ -2,6 +2,7 @@
 @unexec install-info --delete %D/info/krb5-admin.info %D/info/dir
 @unexec install-info --delete %D/info/krb5-install.info %D/info/dir
 @unexec install-info --delete %D/info/krb5-user.info %D/info/dir
+bin/compile_et
 bin/ftp
 bin/gss-client
 bin/kdestroy
@@ -25,11 +26,11 @@ include/com_err.h
 include/gssapi/gssapi.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
-include/kerberosIV/des.h
-include/kerberosIV/kadm_err.h
-include/kerberosIV/krb.h
-include/kerberosIV/krb_err.h
-include/kerberosIV/mit-copyright.h
+%%KRB4%%include/kerberosIV/des.h
+%%KRB4%%include/kerberosIV/kadm_err.h
+%%KRB4%%include/kerberosIV/krb.h
+%%KRB4%%include/kerberosIV/krb_err.h
+%%KRB4%%include/kerberosIV/mit-copyright.h
 include/krb5.h
 include/profile.h
 info/krb425.info
@@ -73,6 +74,7 @@ lib/libkrb5.so
 lib/libkrb5.so.3
 sbin/ftpd
 sbin/gss-server
+sbin/k5srvutil
 sbin/kadmin
 sbin/kadmin.local
 sbin/kadmind
@@ -93,9 +95,13 @@ sbin/telnetd
 sbin/uuserver
 sbin/v5passwdd
 share/doc/krb5/README.FreeBSD
+share/et/et_c.awk
+share/et/et_h.awk
 share/gnats/mit
 @dirrm include/gssapi
 @dirrm include/kerberosIV
+@dirrm share/et
+@dirrm share/gnats
 @exec install-info %D/info/krb425.info %D/info/dir
 @exec install-info %D/info/krb5-admin.info %D/info/dir
 @exec install-info %D/info/krb5-install.info %D/info/dir

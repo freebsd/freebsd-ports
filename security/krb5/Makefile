@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.3.1
+PORTREVISION=		1
 CATEGORIES=		security
 # USE_MIT_TARBALL tells the port that the user has fetched the source
 # directly from MIT rather than the default crypto-publish.org.
@@ -23,11 +24,10 @@ EXTRACT_SUFX=		.tar.gz
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
-BROKEN=			"Does not build on 4.x, broken pkg-plist on 5.x; will be removed after Feb 2"
-
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
+USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
@@ -57,14 +57,15 @@ INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 
 MAN1=			krb5-send-pr.1 kpasswd.1 v5passwd.1 klist.1 kinit.1 \
 			kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 rlogin.1     \
-			ftp.1 telnet.1 kerberos.1 kvno.1
+			ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
 .if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
 MAN1+=			v4rcp.1
 .endif
 MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
-			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8
+			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
+			k5srvutil.8
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 
@@ -72,6 +73,8 @@ WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
 HTML_DOCS=		admin.html user-guide.html install.html
 HTML_OUTDIRS=		krb5-admin krb5-install
+
+.include <bsd.port.pre.mk>
 
 .if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 do-fetch:
@@ -102,6 +105,15 @@ post-extract:
 .endif
 .endif
 
+post-patch:
+.if ${OSVERSION} >= 500000
+	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena,#!${LOCALBASE},' \
+		${WRKSRC}/../doc/man2html
+.else
+	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena,#!\/usr,' \
+		${WRKSRC}/../doc/man2html
+.endif
+
 pre-build:
 .if !defined(KRB5_KRB4_COMPAT)
 	@${ECHO} "------------------------------------------------------"
@@ -117,8 +129,6 @@ post-build:
 	@(cd ${WRKSRC}/../doc && \
 	${MAKE} ${HTML_DOCS})
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-install:
 # html documentation
