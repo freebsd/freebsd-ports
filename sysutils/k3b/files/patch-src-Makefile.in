@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Nov  6 09:01:00 2003
++++ src/Makefile.in	Fri Nov  7 12:35:44 2003
+@@ -281,7 +281,7 @@
+ #>+ 1
+ k3b_SOURCES=k3bwelcomewidget.cpp k3bapplication.cpp k3bdiroperator.cpp kdndfileview.cpp k3bfiletreeview.cpp k3bcddbmultientriesdialog.cpp k3baudioplayer.cpp k3bprojecttabbar.cpp k3bprojecttabwidget.cpp k3bsplash.cpp k3bblankingdialog.cpp k3bfileview.cpp k3bdirview.cpp k3btoolbox.cpp k3b.cpp main.cpp k3bstatusbarmanager.cpp k3bfiletreecombobox.cpp k3breadcdreader.cpp k3binterface.cpp  k3bprojectinterface.cpp  k3bsystemproblemdialog.cpp k3binterface_skel.cpp k3bprojectinterface_skel.cpp
+ 
+-k3b_LDADD = ./cdinfo/libcdinfo.la ./option/liboption.la ./rip/librip.la ./cdcopy/libcdcopy.la ./dvdcopy/libdvdcopy.la ./cdclone/libcdclone.la ./videoEncoding/libvideoEncoding.la ./plugin/libk3bplugin.la $(ARTS_LIBS) -lkio -lkparts ./core/libk3bcore.la ./tools/libk3btools.la ./projects/libk3bproject.la ./images/libimagewriting.la
++k3b_LDADD = ./cdinfo/libcdinfo.la ./option/liboption.la ./rip/librip.la ./cdcopy/libcdcopy.la ./dvdcopy/libdvdcopy.la ./cdclone/libcdclone.la ./videoEncoding/libvideoEncoding.la ./plugin/libk3bplugin.la $(ARTS_LIBS) -lkio -lkparts -lcam ./core/libk3bcore.la ./tools/libk3btools.la ./projects/libk3bproject.la ./images/libimagewriting.la
+ 
+ SUBDIRS = core tools plugin projects cddb cdinfo option rip cdcopy cdclone images dvdcopy videoEncoding pics icons konqi mimetypes tests audiodecoding audioencoding sounds $(K3BSETUP1_BUILD)
+ 
