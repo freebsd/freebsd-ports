@@ -10,7 +10,8 @@ PORTVERSION=	1.1.4.${SNAPDATE}
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://people.freebsd.org/~mbr/ooo/:moz \
+		http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.0/src/:moz \
+		${MASTER_SITE_LOCAL}:moz \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
@@ -21,11 +22,13 @@ EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 
-SNAPDATE=	20041024
+SNAPDATE=	20041030
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
+MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
+MOZILLA_SOURCE=		mozilla-source-1.0.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
+DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:moz
 USE_GNOME+=	orbit gtk12
 .endif
 
@@ -163,19 +166,6 @@ pre-fetch:
 	@${ECHO} "OOo debug support."
 	@${ECHO}
 .endif
-.if !defined(WITH_TTF_BYTECODE_ENABLED)
-	@${ECHO}
-	@${ECHO} "You may set WITH_TTF_BYTECODE_ENABLED=YES"
-	@${ECHO} "if you like to use the Freetype library to"
-	@${ECHO} "render TTF fonts. Normally the TTF lib is"
-	@${ECHO} "not used to render fonts."
-	@${ECHO}
-	@${ECHO} "If you have licensed the Apple patents"
-	@${ECHO} "US05155805 US05159668 and US05325479"
-	@${ECHO} "you can enable this option to get better"
-	@${ECHO} "quality of glyphs at small bitmap sizes."
-	@${ECHO}
-.endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
 	@${ECHO}
@@ -188,7 +178,7 @@ pre-fetch:
 	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
 
 pre-everything::
-# really tewak, extremely useful when you build all localized language versions
+# really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
 	@${RM} -f ${WRKDIR}/.PLIST*
@@ -222,32 +212,25 @@ post-extract:
 		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$file | ${GZIP_CMD} -d | ${TAR} xf - ; \
 	done
 .endif
+.if !defined(WITHOUT_MOZILLA)
+	@cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
+	@${MKDIR} ${WRKSRC}/moz/download
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
+	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
-.if defined(WITH_TTF_BYTECODE_ENABLED)
-	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
-		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
-		fi; \
-		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
-	fi
-.endif
 
-.if !defined(WITHOUT_MOZILLA) && ( \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIruntime.zip) || \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIlib.zip) || \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIinc.zip) )
-.include <${FILESDIR}/Makefile.mozilla>
-do-build: mozilla
-.else
 do-build:
+	@cd ${WRKSRC} ; ./bootstrap
+.if !defined(WITHOUT_MOZILLA)
+	@cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; cp unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-.if exists(${WRKDIR}/.Xvfb.pid)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
+	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
 	#
@@ -255,39 +238,18 @@ do-build:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-.endif
-	@cd ${WRKSRC} ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
-.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
-	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-.endif
-.if !defined(DISPLAY)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
-.endif
-do-install:
-.if !defined(DISPLAY)
-	#
-	# UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
-	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
 .endif
 
+do-install:
+	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
+
 install-user:
-	@SAL_IGNOREXERRORS=1 ${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	@${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
