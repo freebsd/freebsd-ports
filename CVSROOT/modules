@@ -628,7 +628,6 @@ bib2html	ports/textproc/bib2html
 bibcard		ports/print/bibcard
 bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
-biblereader	ports/misc/biblereader
 bibletime	ports/misc/bibletime
 bibtex2html	ports/textproc/bibtex2html
 bibview		ports/print/bibview
