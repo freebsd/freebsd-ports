@@ -50,6 +50,7 @@ while getopts ":d:e:r:s:" ARGUMENT ; do
 	*) usage; exit 1 ;;
     esac
 done
+shift $(($OPTIND - 1))
 
 
 #
