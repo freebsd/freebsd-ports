@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	emp
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	www
-MASTER_SITES=	http://www.blarg.net/~abowhill/
+MASTER_SITES=	http://home.blarg.net/~abowhill/ \
+		ftp://userftp.blarg.net/users/abowhill/
 
 MAINTAINER=	allanb@u.washington.edu
 COMMENT=	CGI program to deliver hierarchy of web links
