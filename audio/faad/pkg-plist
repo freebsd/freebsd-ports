@@ -7,12 +7,3 @@ lib/libfaad.so.0
 lib/libmp4ff.a
 lib/libmp4ff.so
 lib/libmp4ff.so.0
-%%PLUGIN%%lib/mp4player_plugin/faad2_plugin.a
-%%PLUGIN%%lib/mp4player_plugin/faad2_plugin.so
-%%PLUGIN%%lib/mp4player_plugin/faad2_plugin.so.0
-%%WITHOUT_MPEG4IP%%include/mp4.h
-%%WITHOUT_MPEG4IP%%include/mpeg4ip.h
-%%WITHOUT_MPEG4IP%%include/systems.h
-%%WITHOUT_MPEG4IP%%lib/libmp4v2.a
-%%WITHOUT_MPEG4IP%%lib/libmp4v2.so
-%%WITHOUT_MPEG4IP%%lib/libmp4v2.so.0
