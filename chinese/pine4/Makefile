@@ -13,6 +13,8 @@ DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 NO_LATEST_LINK= yes
 
 MAN1= 		pine.1 pico.1 pilot.1
