@@ -752,8 +752,6 @@ intel/compiler60/ia32/lib/icrt.link
 intel/compiler60/ia32/lib/libcxa.a
 intel/compiler60/ia32/lib/libcxa.so
 intel/compiler60/ia32/lib/libcxa.so.1
-intel/compiler60/ia32/lib/libguide.a
-intel/compiler60/ia32/lib/libguide.so
 intel/compiler60/ia32/lib/libimf.a
 intel/compiler60/ia32/lib/libirc.a
 intel/compiler60/ia32/lib/libircmt.a

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	6.0.159
-PORTREVISION=	3
+PORTVERSION=	6.0.1.304
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pu_6.0.159
+DISTNAME=	l_cc_p_6.0.1.304
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	netchild@FreeBSD.org
@@ -43,12 +42,12 @@ IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC
 
 post-extract:
 .for i in \
-	intel-icc6-6.0-159.i386.rpm \
-#	intel-ildb6-6.0-228.i386.rpm \
-#	intel-isubh6-6.0-159.i386.rpm \
-#	intel-ecc6-6.0-159.ia64.rpm \
-#	intel-eldb6-6.0-228.ia64.rpm \
-#	intel-esubh6-6.0-159.ia64.rpm
+	intel-icc6-6.0.1-304.i386.rpm \
+#	intel-ildb6-6.0.1-308.i386.rpm \
+#	intel-isubh6-6.0.1-304.i386.rpm \
+#	intel-ecc6-6.0.1-304.ia64.rpm \
+#	intel-eldb6-6.0.1-308.ia64.rpm \
+#	intel-esubh6-6.0.1-304.ia64.rpm
 	@cd ${WRKSRC};  rpm2cpio 2>/dev/null ${i} | cpio -idu --quiet
 .endfor
 
@@ -71,7 +70,7 @@ post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/icc.cfg ia32/bin/iccvars.csh \
 	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg docs/csupport
-	@${REINPLACE_CMD} -i "" -e 's:@@PREFIX@@:${PREFIX}:g; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
+	@${REINPLACE_CMD} -i "" -e 's:@@PREFIX@@:${PREFIX}:g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
 		${WRKSRC}/opt/intel/compiler60/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/${i}
 .endfor
@@ -85,7 +84,8 @@ post-patch:
 	xlocmes xlocmon xlocnum xloctime xmemory xstring xtree xutility ymath.h
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/include/${i}
 .endfor
-.for i in libcprts.a libcprts.so libcprts.so.1 libunwind.so libunwind.so.1
+.for i in libcprts.a libcprts.so libcprts.so.1 libguide.a libguide.so \
+	libunwind.so libunwind.so.1
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/ia32/lib/${i}
 .endfor
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/uninstall \
@@ -124,6 +124,14 @@ post-install:
 	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
 	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add"
 	@${ECHO_CMD} "${PREFIX}/intel/compiler60/ia32/bin to your PATH."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "In order to be able to compile C++ source with icpc you have to install"
+	@${ECHO_CMD} "devel/stlport-icc. (It is a good idea to run 'rehash' before or stlport-icc"
+	@${ECHO_CMD} "probably won't find the compiler.)"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "If you use icc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
+	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
+	@${ECHO_CMD} "if you do not know how to do this), else icc will hang forever."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "WARNING: If you use icc while having linux-devtools installed, icc will use"
 	@${ECHO_CMD} "the wrong includes and therefore will generate bogus binaries!"
