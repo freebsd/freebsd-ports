@@ -18,25 +18,38 @@ EXTRACT_ONLY=	basedebs.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
+CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-gentoo*
+ONLY_FOR_ARCHS=	i386 amd64
+
 BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
 
-CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-8* linux_base-gento*
+BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
+
+PREFIX?=	${LINUXBASE}
+
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
+MACHINE_ARCH=	i386
+ARCH=		${MACHINE_ARCH}
+.endif
+
 DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}
 DISTDATE=	2002-07-18
 WRKSRC=		${WRKDIR}/var/cache/apt/archives
 NO_BUILD=	yes
 NO_MTREE=	yes
 NO_FILTER_SHLIBS=	yes
-ONLY_FOR_ARCHS=	i386
-
-PREFIX?=	${LINUXBASE}
 DPKGDB=		${PREFIX}/var/lib/dpkg
 DPKG_CMD?=	${LOCALBASE}/bin/dpkg
 DPKG_ARGS=	--force-architecture --force-depends
 DPKG=		${BATCHENV} PATH="${PATH}:${LOCALBASE}/sbin" ${DPKG_CMD} \
 		--root=${PREFIX} --admindir=${DPKGDB} ${DPKG_ARGS}
 LIBC6NAME=	libc6_2.2.5-6_${ARCH}
-INSTALL_INFO?=	install-info
+INSTALL_INFO?=	/usr/bin/install-info
 
 .if defined(BATCH)
 BATCHENV=	DEBIAN_FRONTEND=Noninteractive
@@ -56,10 +69,6 @@ BASEPACKAGES=	adduser apt-utils apt base-config base-files base-passwd \
 		psmisc sed shellutils slang1 sysvinit tar tasksel tcpd \
 		telnet textutils util-linux util-linux-locales whiptail
 
-BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-7_all.deb \
 		${WRKSRC}
@@ -68,7 +77,7 @@ do-patch: build-depends
 	cd ${WRKSRC} && \
 	${DPKG_CMD} -x ${LIBC6NAME}.deb ${LIBC6NAME} && \
 	${DPKG_CMD} -e ${LIBC6NAME}.deb ${LIBC6NAME}/DEBIAN && \
-	brandelf -t Linux ${WRKSRC}/${LIBC6NAME}/sbin/ldconfig && \
+	${BRANDELF} -t Linux ${WRKSRC}/${LIBC6NAME}/sbin/ldconfig && \
 	${DPKG_CMD} -b ${LIBC6NAME}
 
 do-install:
@@ -109,4 +118,4 @@ do-install:
 
 	${RM} -rf ${PREFIX}/tmp/* ${PREFIX}/etc/timezone.*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
