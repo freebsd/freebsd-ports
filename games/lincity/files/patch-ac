@@ -1,8 +1,18 @@
---- main.cxx.orig	Thu Feb 25 20:17:54 1999
-+++ main.cxx	Sat Sep 25 17:56:44 1999
-@@ -780,5 +780,4 @@
+--- main.cxx.orig	Fri Feb 26 02:17:54 1999
++++ main.cxx	Tue Nov 19 05:27:27 2002
+@@ -4,6 +4,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #if !defined (WIN32)
+ #include <strings.h>
+ #endif
+@@ -779,7 +780,6 @@
+   DIR *dp;
    if ((dp = opendir (dir)) == NULL)
      {
 -      closedir (dp);
        return 0;
      }
+   closedir (dp);

@@ -1,6 +1,13 @@
---- Imakefile.orig	Sun Feb 14 07:55:02 1999
-+++ Imakefile	Tue Sep 12 02:35:21 2000
-@@ -15,4 +15,4 @@
+--- Imakefile.orig	Sat Feb 13 23:55:02 1999
++++ Imakefile	Tue Nov 19 05:52:36 2002
+@@ -9,10 +9,11 @@
+ LOCAL_LIBRARIES = $(XLIB)
+         DEPLIBS = $(DEPXLIB)
+   SYS_LIBRARIES = -lm
++             CC = $(CXX)
+ 
+            SRCS = main.cxx mouse.cxx screen.cxx mps.cxx typeinit.cxx\
+                   engine.cxx transport.cxx market.cxx help.cxx lcx11.cxx
             OBJS = xmain.o xmouse.o xscreen.o xmps.o xtypeinit.o\
                    xengine.o xtransport.o xmarket.o xhelp.o lcx11.o
  
