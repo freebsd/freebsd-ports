@@ -13,7 +13,7 @@ MASTER_SITES=	http://pknet.com/~joe/
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
