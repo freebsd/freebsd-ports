@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1997/11/05 04:19:54 asami Exp $
+# $Id: Makefile,v 1.4 1998/02/16 11:57:59 asami Exp $
 #
 
 DISTNAME=	kdenetwork-Beta1-2
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt \
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.[67]\\.:${PORTSDIR}/graphics/jpeg \
-		mimelib\\.1\\.:${PORTSDIR}/converters/kdesupport \
-		uulib\\.0\\.:${PORTSDIR}/converters/kdesupport \
 		kdecore\\.0\\.1[1-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.1[0-9]:${PORTSDIR}/x11/kdelibs \
 		jscript\\.0\\.[1-9]:${PORTSDIR}/x11/kdelibs \
