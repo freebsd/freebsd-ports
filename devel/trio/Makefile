@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	trio
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ctrio
@@ -16,11 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
-	${CP} -R ${WRKSRC}/html ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${DOCSDIR}/doc
+	@${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/html/*.* ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>
