@@ -22,6 +22,6 @@ cd /sys/compile/$kernelconfig && make install
 
 cd /
 
-umount /usr/src /usr/obj
+umount -f /usr/src /usr/obj
 
 reboot
