@@ -1,12 +1,12 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
-etc/apache/apache.conf
 etc/apache/apache.conf.default
-etc/apache/magic
+@exec [ ! -f %B/apache.conf ] && cp %B/%f %B/apache.conf
 etc/apache/magic.default
-etc/apache/mime.types
+@exec [ ! -f %B/magic ] && cp %B/%f %B/magic
 etc/apache/mime.types.default
+@exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
 etc/php.ini-dist
 etc/rc.d/apache.sh
 include/apache/alloc.h
@@ -337,7 +337,6 @@ share/doc/apache/LICENSE
 share/doc/apache/README
 share/doc/php/CODING_STANDARDS
 share/doc/php/LICENSE
-@dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
