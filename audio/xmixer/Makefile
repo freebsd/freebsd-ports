@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 
 MAINTAINER=	trevor@jpj.net
 
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
 WRKSRC=		${WRKDIR}/xmixer
 
 GNU_CONFIGURE=	yes
