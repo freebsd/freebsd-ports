@@ -1,4 +1,12 @@
 scmail is a mail filter written in Scheme.  scmail can filter an
 incoming mail when it is received and filter mails in a mailbox.
 
+    * Written simply in Scheme.
+    * scmail supports MH and Maildir mailboxes.
+    * Simple filtering rules can be written in S-expressions.
+    * Advanced filtering rules can be written in Scheme programs.
+    * scmail can filter an incoming mail when it is received (like procmail).
+    * scmail can filter mails in a mailbox.
+    * spam filter (scbayes) is included. (now testing)
+
 WWW: http://www.namazu.org/~satoru/scmail/
