@@ -1,0 +1,416 @@
+*** src/Dir/DirMgr.c.orig	Sat Apr 25 20:23:08 1998
+--- src/Dir/DirMgr.c	Sat Apr 25 20:55:09 1998
+***************
+*** 24,31 ****
+  
+  #include <Xfwf/DirMgr.h>
+  
+! #ifndef NO_REGEXP
+  #include <Xfwf/RegExp.h>
+  #endif
+  
+  #define	DIR_MGR_FSM_SIZE 1024
+--- 24,33 ----
+  
+  #include <Xfwf/DirMgr.h>
+  
+! #ifdef NO_REGEXP
+  #include <Xfwf/RegExp.h>
++ #else
++ #include <regex.h>
+  #endif
+  
+  #define	DIR_MGR_FSM_SIZE 1024
+***************
+*** 43,61 ****
+  {
+  	DirectoryMgr *dm;
+  	PFI f_func,s_func;
+! 	char *f_data;
+  
+  	if (pattern == NULL) pattern = "*";
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern,&f_func,&f_data))
+  	{
+  		return(NULL);
+  	}
+! 	if (!DirectoryMgrSimpleSortingFunc(sort_type,&s_func))
+  	{
+  		free(f_data);
+  		return(NULL);
+  	}
+! 	dm = DirectoryMgrOpen(path,s_func,f_func,f_data,TRUE);
+  	return(dm);
+  } /* End DirectoryMgrSimpleOpen */
+  
+--- 45,63 ----
+  {
+  	DirectoryMgr *dm;
+  	PFI f_func,s_func;
+! 	regex_t *f_data;
+  
+  	if (pattern == NULL) pattern = "*";
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern, &f_func, &f_data))
+  	{
+  		return(NULL);
+  	}
+! 	if (!DirectoryMgrSimpleSortingFunc(sort_type, &s_func))
+  	{
+  		free(f_data);
+  		return(NULL);
+  	}
+! 	dm = DirectoryMgrOpen(path, s_func, f_func, f_data, TRUE);
+  	return(dm);
+  } /* End DirectoryMgrSimpleOpen */
+  
+***************
+*** 65,73 ****
+  char *pattern;
+  {
+  	PFI f_func;
+! 	char *f_data;
+  
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern,&f_func,&f_data))
+  	{
+  		return(FALSE);
+  	}
+--- 67,75 ----
+  char *pattern;
+  {
+  	PFI f_func;
+! 	regex_t *f_data;
+  
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern, &f_func, &f_data))
+  	{
+  		return(FALSE);
+  	}
+***************
+*** 109,118 ****
+  } /* End DirectoryMgrCanOpen */
+  
+  
+! DirectoryMgr *DirectoryMgrOpen(path,c_func,f_func,f_data,free_data)
+  char *path;
+  PFI c_func,f_func;
+! char *f_data;
+  int free_data;
+  {
+  	DirectoryMgr *dm;
+--- 111,120 ----
+  } /* End DirectoryMgrCanOpen */
+  
+  
+! DirectoryMgr *DirectoryMgrOpen(path, c_func, f_func, f_data, free_data)
+  char *path;
+  PFI c_func,f_func;
+! regex_t *f_data;
+  int free_data;
+  {
+  	DirectoryMgr *dm;
+***************
+*** 121,127 ****
+  	if (dm == NULL)
+  	{
+  		fprintf(stderr,"DirectoryMgrOpen: out of memory\n");
+! 		if (free_data && f_data) free(f_data);
+  		return(NULL);
+  	}
+  	if (DirectoryOpen(path,DirectoryMgrDir(dm)) == FALSE)
+--- 123,132 ----
+  	if (dm == NULL)
+  	{
+  		fprintf(stderr,"DirectoryMgrOpen: out of memory\n");
+! 		if (free_data && f_data) {
+! 			regfree(f_data);	
+! 			free(f_data);
+! 		}
+  		return(NULL);
+  	}
+  	if (DirectoryOpen(path,DirectoryMgrDir(dm)) == FALSE)
+***************
+*** 129,135 ****
+  		fprintf(stderr,"DirectoryMgrOpen: can't open dir '%s'\n",
+  			DirectoryMgrDir(dm));
+  		free(dm);
+! 		if (free_data && f_data) free(f_data);
+  		return(NULL);
+  	}
+  	DirectoryMgrCompFunc(dm) = c_func;
+--- 134,143 ----
+  		fprintf(stderr,"DirectoryMgrOpen: can't open dir '%s'\n",
+  			DirectoryMgrDir(dm));
+  		free(dm);
+! 		if (free_data && f_data) { 
+! 			regfree(f_data);
+! 			free(f_data);
+! 		}
+  		return(NULL);
+  	}
+  	DirectoryMgrCompFunc(dm) = c_func;
+***************
+*** 155,165 ****
+  int DirectoryMgrRefilter(dm,f_func,f_data,f_free)
+  DirectoryMgr *dm;
+  PFI f_func;
+! char *f_data;
+  int f_free;
+  {
+  	if (DirectoryMgrFilterData(dm) && DirectoryMgrFreeFilterData(dm))
+  	{
+  		free(DirectoryMgrFilterData(dm));
+  	}
+  	DirectoryMgrFilterFunc(dm) = f_func;
+--- 163,174 ----
+  int DirectoryMgrRefilter(dm,f_func,f_data,f_free)
+  DirectoryMgr *dm;
+  PFI f_func;
+! regex_t *f_data;
+  int f_free;
+  {
+  	if (DirectoryMgrFilterData(dm) && DirectoryMgrFreeFilterData(dm))
+  	{
++ 		regfree(DirectoryMgrFilterData(dm));
+  		free(DirectoryMgrFilterData(dm));
+  	}
+  	DirectoryMgrFilterFunc(dm) = f_func;
+***************
+*** 349,369 ****
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrSimpleFilterFunc(pattern,ff_ptr,fd_ptr)
+  char *pattern;
+  PFI *ff_ptr;
+! char **fd_ptr;
+  {
+! #ifndef	NO_REGEXP
+  	char regexp[2048];
+  
+  	*ff_ptr = DirectoryMgrFilterName;
+! 	*fd_ptr = (char *)malloc(sizeof(char) * DIR_MGR_FSM_SIZE);
+! 	if (*fd_ptr == NULL) return(FALSE);
+! 	RegExpPatternToRegExp(pattern,regexp);
+! 	RegExpCompile(regexp,*fd_ptr,DIR_MGR_FSM_SIZE);
+! #endif
+! 	return(TRUE);
+  } /* End DirectoryMgrSimpleFilterFunc */
+  
+  
+--- 358,379 ----
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrSimpleFilterFunc(pattern, ff_ptr, fd_ptr)
+  char *pattern;
+  PFI *ff_ptr;
+! regex_t **fd_ptr;
+  {
+! #ifdef	NO_REGEXP
+  	char regexp[2048];
++ #endif
+  
+  	*ff_ptr = DirectoryMgrFilterName;
+! 	*fd_ptr = (regex_t *)malloc(sizeof(regex_t));
+! 	if (!*fd_ptr)
+! 		return(FALSE);
+! 	if (!regcomp(*fd_ptr, pattern, REG_EXTENDED | REG_NOSUB))
+! 		return(TRUE);
+! 	return FALSE;
+  } /* End DirectoryMgrSimpleFilterFunc */
+  
+  
+***************
+*** 474,486 ****
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrFilterName(de,fsm)
+  DirEntry *de;
+! char *fsm;
+  {
+! #ifndef	NO_REGEXP
+  	return(RegExpMatch(DirEntryFileName(de),fsm));
+  #else
+! 	return(TRUE);
+  #endif
+  } /* End DirectoryMgrFilterName */
+--- 484,496 ----
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrFilterName(de, fsm)
+  DirEntry *de;
+! regex_t *fsm;
+  {
+! #ifdef	NO_REGEXP
+  	return(RegExpMatch(DirEntryFileName(de),fsm));
+  #else
+! 	return(regexec(fsm, DirEntryFileName(de), 0, NULL, 0));
+  #endif
+  } /* End DirectoryMgrFilterName */
+*** src/Dir/DirMgr.h.orig	Wed Nov 29 12:47:59 1995
+--- src/Dir/DirMgr.h	Sat Apr 25 21:48:24 1998
+***************
+*** 26,31 ****
+--- 26,32 ----
+  #define	_FWF_DIRECTORY_MGR_H_
+  
+  #include <Xfwf/Directory.h>
++ #include <regex.h>
+  
+  /*---------------------------------------------------------------------------*
+  
+***************
+*** 101,107 ****
+  	int total_count;
+  	int filtered_count;
+  	PFI filter_func;
+! 	char *filter_data;
+  	int free_filter_data;
+  	PFI comp_func;
+  	int current_index;
+--- 102,108 ----
+  	int total_count;
+  	int filtered_count;
+  	PFI filter_func;
+! 	regex_t *filter_data;
+  	int free_filter_data;
+  	PFI comp_func;
+  	int current_index;
+***************
+*** 170,179 ****
+  
+  int		DirectoryMgrCanOpen(char *path);
+  DirectoryMgr *	DirectoryMgrOpen(char *path, PFI c_func, PFI f_func,
+! 			char *f_data, int free_data);
+  void		DirectoryMgrClose(DirectoryMgr *dm);
+  int		DirectoryMgrRefilter(DirectoryMgr *dm, PFI f_func,
+! 			char *f_data, int f_free);
+  int		DirectoryMgrRefresh(DirectoryMgr *dm);
+  void		DirectoryMgrResort(DirectoryMgr *dm, PFI c_func);
+  
+--- 171,180 ----
+  
+  int		DirectoryMgrCanOpen(char *path);
+  DirectoryMgr *	DirectoryMgrOpen(char *path, PFI c_func, PFI f_func,
+! 			regex_t *f_data, int free_data);
+  void		DirectoryMgrClose(DirectoryMgr *dm);
+  int		DirectoryMgrRefilter(DirectoryMgr *dm, PFI f_func,
+! 			regex_t *f_data, int f_free);
+  int		DirectoryMgrRefresh(DirectoryMgr *dm);
+  void		DirectoryMgrResort(DirectoryMgr *dm, PFI c_func);
+  
+*** src/Dir/Directory.c.orig	Wed Nov 29 12:47:59 1995
+--- src/Dir/Directory.c	Sat Apr 25 21:48:25 1998
+***************
+*** 24,30 ****
+   */ 
+  
+  #include <Xfwf/Directory.h>
+- #include <Xfwf/RegExp.h>
+  
+  /*--------------------------------------------------------------------------*
+  
+--- 24,29 ----
+*** src/Dir/Imakefile.orig	Thu Apr 18 05:19:51 1996
+--- src/Dir/Imakefile	Sat Apr 25 22:10:55 1998
+***************
+*** 4,18 ****
+  
+  CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(STD_INCLUDES) $(STD_DEFINES) $(PROTO_DEFINES) $(DEFINES) $(COMPATFLAGS)
+  
+- REGH		=	RegExp.h
+- REGSRC		=	RegExp.c
+- REGOBJ		=	RegExp.o
+- REGTESTSRC	=	RegExpT.c
+- REGTESTOBJ	=	RegExpT.o
+- REGTEST		=	$(FWF_BINDIR)/RegExpT
+- REGOBJS		=	$(REGOBJ) $(REGTESTOBJ)
+- REGSRCS		=	$(REGSRC) $(REGTESTSRC)
+- 
+  DIRH		=	Directory.h
+  DIRSRC		=	Directory.c
+  DIROBJ		=	Directory.o
+--- 4,9 ----
+***************
+*** 33,64 ****
+  
+  DIR_LIBNAME	=	libDir.a
+  
+! PROGRAMS = $(REGTEST) $(DIRTEST) $(DIRMGRTEST)
+! LIB_OBJS = $(REGOBJ) $(DIROBJ) $(DIRMGROBJ)
+! EXT_OBJS = $(REGTESTOBJ) $(DIRTESTOBJ) $(DIRMGRTESTOBJ)
+  
+! INCS = $(FWF_INCDIR)/$(REGH) $(FWF_INCDIR)/$(DIRH) $(FWF_INCDIR)/$(DIRMGRH)
+  SRCS = $(REGSRCS) $(DIRSRCS) $(DIRMGRSRCS)
+  
+  LOCALLIBS = $(DIR_LIB)
+  DEPLIBS = $(DIR_LIB)
+  SYSLIBS =
+  
+- AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(REGOBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIROBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIRMGROBJ))
+  
+  ObjectRuleWithFlags($(CFLAGS) $(XPM_INCDIR) -I$(FWF_INCBASE))
+  
+- RequireThisFileForInit($(FWF_INCDIR)/$(REGH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRMGRH))
+  
+- FileCopyWhenNeeded(.,$(REGH),$(FWF_INCDIR),$(REGH))
+  FileCopyWhenNeeded(.,$(DIRH),$(FWF_INCDIR),$(DIRH))
+  FileCopyWhenNeeded(.,$(DIRMGRH),$(FWF_INCDIR),$(DIRMGRH))
+  
+- NormalProgramTarget($(REGTEST),$(REGOBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRTEST),$(DIROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRMGRTEST),$(DIRMGROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  
+--- 24,51 ----
+  
+  DIR_LIBNAME	=	libDir.a
+  
+! PROGRAMS = $(DIRTEST) $(DIRMGRTEST)
+! LIB_OBJS = $(DIROBJ) $(DIRMGROBJ)
+! EXT_OBJS = $(DIRTESTOBJ) $(DIRMGRTESTOBJ)
+  
+! INCS = $(FWF_INCDIR)/$(DIRH) $(FWF_INCDIR)/$(DIRMGRH)
+  SRCS = $(REGSRCS) $(DIRSRCS) $(DIRMGRSRCS)
+  
+  LOCALLIBS = $(DIR_LIB)
+  DEPLIBS = $(DIR_LIB)
+  SYSLIBS =
+  
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIROBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIRMGROBJ))
+  
+  ObjectRuleWithFlags($(CFLAGS) $(XPM_INCDIR) -I$(FWF_INCBASE))
+  
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRMGRH))
+  
+  FileCopyWhenNeeded(.,$(DIRH),$(FWF_INCDIR),$(DIRH))
+  FileCopyWhenNeeded(.,$(DIRMGRH),$(FWF_INCDIR),$(DIRMGRH))
+  
+  NormalProgramTarget($(DIRTEST),$(DIROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRMGRTEST),$(DIRMGROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  
+***************
+*** 81,97 ****
+  	         echo "#include <sys/dir.h>" >> dirent.h;	\ 
+  	         echo "#endif" >> dirent.h;			\ 
+  	         cp dirent.h $(FWF_INCDIR)/dirent.h;		\ 
+- 	    else echo "";					\ 
+- 	    fi; exit 0)
+- 	@rm -f regexp.h
+- 	@rm -f $(FWF_INCDIR)/regexp.h
+- 	@(if [ ! -f /usr/include/regexp.h ];			\ 
+- 	    then echo "Patching because no regexp.h";		\ 
+- 	         echo "#ifndef _BRIREGEXP_H_" > regexp.h;	\ 
+- 	         echo "#define _BRIREGEXP_H_" >> regexp.h;	\ 
+- 	         echo "#define NO_REGEXP 1" >> regexp.h;	\ 
+- 	         echo "#endif" >> regexp.h;			\ 
+- 	         cp regexp.h $(FWF_INCDIR)/regexp.h;		\ 
+  	    else echo "";					\ 
+  	    fi; exit 0)
+  
+--- 68,73 ----

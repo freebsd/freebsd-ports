@@ -1,0 +1,16 @@
+*** src/EzMenu/EzMenu.c.orig	Wed Nov 29 12:47:59 1995
+--- src/EzMenu/EzMenu.c	Sat Apr 25 21:48:25 1998
+***************
+*** 422,430 ****
+--- 422,432 ----
+        SimpleMenuWidget smw = (SimpleMenuWidget) ez_old;
+        SmeObject *entry;
+        
++ #if 0
+        ForAllChildren(smw, entry) {
+  	XtDestroyWidget((Widget)entry);
+        }
++ #endif
+  
+        XfwfEzMenuParseMenu(ez_new, ez_new -> ez_menu.menu, True);
+        ret_val = TRUE;
