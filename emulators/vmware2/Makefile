@@ -60,10 +60,11 @@ BROKEN=         "Kernel source files required"
 .include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
 
-SCRIPTS_ENV+=	LINUX_DIR="${LINUXBASE}" \
+SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
 		VMNET_NETMASK="${VMNET_NETMASK}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
+PLIST_SUB=	LINUXBASE="${LINUXBASE}"
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
@@ -81,14 +82,14 @@ setoptions:
 		${FILESDIR}/config > ${WRKDIR}/config
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUX_DIR@@;${LINUXBASE};' \
+		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
 		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
 		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUX_DIR@@;${LINUXBASE};' \
+		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		${FILESDIR}/vmware > ${WRKDIR}/vmware
 
 pre-install: setoptions

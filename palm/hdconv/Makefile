@@ -13,7 +13,7 @@ DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+USE_LINUX=	yes
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/handbase-${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hd ${PREFIX}/bin/hdconv
-	/compat/linux/usr/bin/strip ${PREFIX}/bin/hdconv
+	${LINUXBASE}/usr/bin/strip ${PREFIX}/bin/hdconv
 	brandelf -t Linux ${PREFIX}/bin/hdconv
 	${MKDIR} ${PREFIX}/share/doc/hdconv/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/hdconv/

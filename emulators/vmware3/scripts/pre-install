@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo Setup Linux compatible /dev directory
-linux_dev=${LINUX_DIR}/dev
+linux_dev=${LINUXBASE}/dev
 if [ ! -d $linux_dev ];  then
     echo Creating $linux_dev
     mkdir $linux_dev

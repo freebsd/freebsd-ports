@@ -25,7 +25,7 @@ start)
     if [ $networking -eq 1 ]; then
 	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
 	kldload if_tap.ko
-	echo -n >@@LINUX_DIR@@/dev/vmnet1
+	echo -n >@@LINUXBASE@@/dev/vmnet1
 	ifconfig vmnet1 $host_ip netmask $netmask
 	if [ _$bridge != _ ]; then
 	    sysctl -w net.link.ether.bridge_refresh=1
