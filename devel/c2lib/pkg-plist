@@ -11,5 +11,5 @@ lib/libc2lib.so
 lib/libc2lib.so.1
 lib/libc2lib.so.%%VERSION%%
 share/rws/symtabs/libc2lib.syms
-@unexec rmdir share/rws/symtabs 2>/dev/null || true
-@unexec rmdir share/rws 2>/dev/null || true
+@unexec rmdir %D/share/rws/symtabs 2>/dev/null || true
+@unexec rmdir %D/share/rws 2>/dev/null || true
