@@ -7,9 +7,10 @@
 
 PORTNAME=	sqwebmail
 PORTVERSION=	3.5.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= courier
+MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
@@ -26,9 +27,9 @@ COMMENT=	CGI Webmail client for Maildirs
 # set IMAGEURL to where on the web server URL the images are found
 #
 
-CGIBINDIR?=	${PREFIX}/www/cgi-bin.default
+CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	sqwebmail
-WEBDATADIR?=	${PREFIX}/www/data.default
+WEBDATADIR?=	www/data.default
 WEBDATASUBDIR?=	sqwebmail
 IMAGEURL?=	${WEBDATASUBDIR}
 
@@ -64,16 +65,15 @@ HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_REINPLACE=	YES
 
-CONFIGURE_ARGS= \
-	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
-	--enable-imagedir=${WEBDATADIR}/${WEBDATASUBDIR} \
-	--without-authmysql \
+CONFIGURE_ARGS=	\
+	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
+	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--libexecdir=${PREFIX}/libexec/sqwebmail \
-	--mandir=${PREFIX}/share/sqwebmail/man \
+	--mandir=${PREFIX}/man \
 	--prefix=${PREFIX}/share/sqwebmail \
-	--enable-imageurl=/${IMAGEURL}/
+	--enable-imageurl=/${IMAGEURL}
 
-PLIST_SUB+=	CGIDIR=${CGIBINDIR} HTDOCSDIR=${WEBDATADIR}
+PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} CGIBINSUBDIR=${CGIBINSUBDIR} WEBDATADIR=${WEBDATADIR} WEBDATASUBDIR=${WEBDATASUBDIR}
 
 .if defined(WITHOUT_CACHEDIR)
 PLIST_SUB+=		CACHE="@comment "
@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=	--without-authldap
 .endif
 
 .if defined(WITH_VCHKPW)
-BUILD_DEPENDS+= ${VCHKPWLOC}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS+=	${VCHKPWLOC}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS+=	${VCHKPWLOC}/bin/vchkpw:${PORTSDIR}/mail/vpopmail
 
 CONFIGURE_ARGS+=	--with-authvchkpw
@@ -173,7 +173,6 @@ CONFIGURE_ARGS+=	--with-maxargsize=${WITH_MAXARGSIZE}
 CONFIGURE_ARGS+=	--with-maxformargsize=${WITH_MAXFORMARGSIZE}
 .endif
 
-MANPREFIX=	${PREFIX}/share/sqwebmail
 MAN1=		maildirmake.1
 MAN7=		authlib.7
 MAN8=		deliverquota.8 makeuserdb.8 userdb.8 userdbpw.8
@@ -196,5 +195,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_TARGET}
 post-patch:
 	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
 		${WRKSRC}/authlib/installlist.in
+
+.if !defined(WITHOUT_AUTHDAEMON)
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/authdaemond.sh ${PREFIX}/etc/rc.d/
+.endif
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+%%AUTHDFLAG%%etc/rc.d/authdaemond.sh
 libexec/sqwebmail/authlib/authcram
 libexec/sqwebmail/authlib/authcustom
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
@@ -6,6 +7,7 @@ libexec/sqwebmail/authlib/authcustom
 %%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond.plain
 %%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
+%%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
 libexec/sqwebmail/authlib/authpam
 libexec/sqwebmail/authlib/authsystem.passwd
 libexec/sqwebmail/authlib/authuserdb
@@ -90,10 +92,6 @@ share/sqwebmail/webgpg
 @dirrm share/sqwebmail/share/locale
 @dirrm share/sqwebmail/share
 @dirrm share/sqwebmail/sbin
-@dirrm share/sqwebmail/man/man8
-@dirrm share/sqwebmail/man/man7
-@dirrm share/sqwebmail/man/man1
-@dirrm share/sqwebmail/man
 @dirrm share/sqwebmail/lib
 @dirrm share/sqwebmail/html/en-us
 @dirrm share/sqwebmail/html
@@ -103,42 +101,40 @@ share/sqwebmail/webgpg
 @dirrm libexec/sqwebmail
 %%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
 %%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true
-@cwd %%CGIDIR%%
-sqwebmail/sqwebmail
-@dirrm sqwebmail
-@unexec cd .. && /bin/rmdir %%CGIDIR%% 2> /dev/null || true
-@cwd %%HTDOCSDIR%%
-sqwebmail/bg.gif
-sqwebmail/bluebottomleft.gif
-sqwebmail/bluebottomright.gif
-sqwebmail/bluetopleft.gif
-sqwebmail/bluetopright.gif
-sqwebmail/calendar.gif
-sqwebmail/cancel.gif
-sqwebmail/folder.gif
-sqwebmail/folder2.gif
-sqwebmail/folders.gif
-sqwebmail/forward.gif
-sqwebmail/forwardatt.gif
-sqwebmail/fullheaders.gif
-sqwebmail/graybottomleft.gif
-sqwebmail/graybottomright.gif
-sqwebmail/graytopleft.gif
-sqwebmail/graytopright.gif
-sqwebmail/left.gif
-sqwebmail/left2.gif
-sqwebmail/logo.gif
-sqwebmail/print.gif
-sqwebmail/reply.gif
-sqwebmail/replyall.gif
-sqwebmail/replylist.gif
-sqwebmail/right.gif
-sqwebmail/right2.gif
-sqwebmail/save.gif
-sqwebmail/sep.gif
-sqwebmail/signin.gif
-sqwebmail/sqwebmail.css
-sqwebmail/trash2.gif
-sqwebmail/uncancel.gif
-@dirrm sqwebmail
-@unexec cd .. && /bin/rmdir %%HTDOCSDIR%% 2> /dev/null || true
+%%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
+@unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bg.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/calendar.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/cancel.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folders.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forward.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forwardatt.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/fullheaders.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/logo.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/print.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/reply.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replyall.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replylist.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/save.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sep.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/signin.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sqwebmail.css
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/trash2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/uncancel.gif
+@unexec /bin/rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%WEBDATADIR%% 2> /dev/null || true
