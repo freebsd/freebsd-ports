@@ -129,7 +129,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The squid patches page notes:</p>
-	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth">
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service">
 	  <p>WCCP_I_SEE_YOU messages contain a 'number of caches'
 	    field which should be between 1 and 32. Values outside
 	    that range may crash Squid if WCCP is enabled, and if an
@@ -141,11 +141,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth</url>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service</url>
     </references>
     <dates>
       <discovery>2005-01-07</discovery>
       <entry>2005-01-12</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
