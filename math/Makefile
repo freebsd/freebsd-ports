@@ -155,6 +155,7 @@
     SUBDIR += snns
     SUBDIR += solitaire
     SUBDIR += spar
+    SUBDIR += spooles
     SUBDIR += ss
     SUBDIR += superlu
     SUBDIR += surf
