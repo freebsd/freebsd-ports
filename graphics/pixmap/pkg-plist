@@ -1,0 +1,20 @@
+@cd /usr/X11R6
+@mode 755
+bin/pixmap
+@mode 444
+lib/X11/app-defaults/Pixmap
+lib/X11/Pixmap/Down
+lib/X11/Pixmap/FlipHoriz 
+lib/X11/Pixmap/FlipVert
+lib/X11/Pixmap/Fold
+lib/X11/Pixmap/Left
+lib/X11/Pixmap/Right
+lib/X11/Pixmap/RotateLeft 
+lib/X11/Pixmap/RotateRight 
+lib/X11/Pixmap/Stipple 
+lib/X11/Pixmap/Up 
+lib/X11/Pixmap/Term 
+lib/X11/Pixmap/Excl
+man/man1/pixmap.1.gz
+@mode 644
+lib/libXgnu.a

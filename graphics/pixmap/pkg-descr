@@ -1,0 +1,3 @@
+The pixmap program is a tool for creating or editing rectangular images
+made up of colored pixels, i.e., pixmaps. Pixmaps are intensively used in
+X to define window backgrounds, icon images, etc.
