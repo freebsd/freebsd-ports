@@ -3830,6 +3830,7 @@ maildirsync	ports/mail/maildirsync
 maildrop	ports/mail/maildrop
 mailfilter	ports/mail/mailfilter
 mailfmt		ports/mail/mailfmt
+mailfront	ports/mail/mailfront
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
 mailman-devel	ports/mail/mailman-devel
