@@ -1,0 +1,13 @@
+--- lib/fs.c.orig	Thu Nov  2 12:54:47 2000
++++ lib/fs.c	Thu Nov  2 12:55:32 2000
+@@ -129,8 +129,10 @@
+ #   if GETMNTENT_ONE || GETMNTENT_TWO
+ 	mtab = fopen(MOUNTED, "r");
+ 	if (!mtab) {
++/*
+ 	    rpmError(RPMERR_MTAB, _("failed to open %s: %s"), MOUNTED, 
+ 		     strerror(errno));
++*/
+ 	    return 1;
+ 	}
+ #   elif HAVE_GETMNTINFO_R
