@@ -445,6 +445,7 @@ baduki		ports/games/baduki
 bakery		ports/x11-toolkits/bakery
 balance		ports/net/balance
 balsa		ports/mail/balsa
+balsa2		ports/mail/balsa2
 banner		src/usr.bin/banner
 barcode		ports/graphics/barcode
 barque		ports/www/barque
