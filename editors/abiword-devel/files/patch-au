@@ -1,0 +1,45 @@
+--- pkg/common/unix/scripts/makewrapper.sh.orig	Tue Oct 10 08:39:31 2000
++++ pkg/common/unix/scripts/makewrapper.sh	Wed Jan  3 13:56:49 2001
+@@ -64,23 +64,31 @@
+ if [ -z \$locale ]
+ then
+     locale=\$LANG
++elif [ -z \$locale ]
++then
++    locale=\$LC_CTYPE
+ fi
+ 
+ if [ ! -z \$locale ]
+ then
+-    #now guess encoding
++    #now guess country/region/encoding
++    country=\`echo \$locale |sed -e 's/\(.*\)_.*\$/\1/'\`
++    region=\`echo \$locale |sed -e 's/^.*_\(.*\)\..*/\1/'\`
+     encoding=\`echo \$locale | sed -e 's/^.*\.\(.*\)\$/\1/'\`
+-    if [ ! -z \$encoding ]
++    if [ ! -z \$country -o ! -z \$region -o ! -z \$encoding ]
+     then
+-	addfontdir=\$ABISUITE_FONT_HOME/\$encoding
+-	if [ ! -z \$addfontdir ]
+-	then
+-	    if [ -d \$addfontdir ]
+-	    then
+-	    	#add directory with locale-specific fonts to font path
+-	    	ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
+-	    fi
+-	fi
++    addfontdirlst="\$ABISUITE_FONT_HOME/\$country \$ABISUITE_FONT_HOME/\${country}-\${region} \$ABISUITE_FONT_HOME/\$encoding \$ABISUITE_FONT_HOME/\${country}-\${region}.\${encoding}"
++    for addfontdir in \$addfontdirlst
++    do
++        if [ ! -z \$addfontdir ]
++        then
++            if [ -d \$addfontdir -a ! -f \$addfontdir/.already-in-fp ]
++            then
++            #add directory with locale-specific fonts to font path
++            ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
++            fi
++        fi
++    done
+     fi
+ fi
+ 
