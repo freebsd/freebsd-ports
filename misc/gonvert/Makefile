@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://webhome.idirect.com/~tekatch/anthony/ucu/
 
