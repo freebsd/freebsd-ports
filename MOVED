@@ -981,3 +981,4 @@ devel/ulex|devel/ocaml-ulex|2004-03-19|port renamed
 textproc/yaxi|textproc/ocaml-yaxi|2004-03-19|port renamed
 devel/camomile|devel/ocaml-camomile|2004-03-19|port renamed
 archivers/gshar+gunshar|archivers/sharutils|2004-03-19|port renamed
+devel/imake|devel/imake-4|2004-03-19|removed, obsoleted by imake-4 long ago
