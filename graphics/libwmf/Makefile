@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.8.2
+PORTVERSION=	0.2.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -42,7 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@LT_CURRENT@|2|g ; \
 		 s|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
 		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \
-		 s|-release $$(LT_RELEASE)||g' ${WRKSRC}/src/Makefile.in
+		 s|-release $$(LT_RELEASE)||g ; \
+		 s|: install-loaderLTLIBRARIES|:|g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
