@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://pgp.iijlab.net/pub/gnupg/ \
@@ -17,7 +17,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-included-gettext
-MAN1=		gpg.1
+MAN1=		gpg.1 gpgv.1
 MLINKS=		gpg.1 gpgm.1
 
 .include <bsd.port.pre.mk>
