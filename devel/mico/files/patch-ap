@@ -1,0 +1,11 @@
+--- coss/time/Makefile.orig	Mon Sep 27 00:12:40 1999
++++ coss/time/Makefile	Mon Sep 27 00:12:55 1999
+@@ -22,7 +22,7 @@
+ 
+ include ../../MakeVars
+ 
+-LDLIBS    = -lmicocoss$(VERSION) -lmico$(VERSION) $(CONFLIBS)
++LDLIBS    = -lmicocoss$(VERSION) -lmico$(VERSION) $(CONFLIBS) -lcompat
+ LDFLAGS  := -L.. -L.. -L../../orb $(LDFLAGS)
+ CXXFLAGS := -I. -I../../include $(CXXFLAGS) $(EHFLAGS)
+ IDLFLAGS := -I../../include --poa --no-boa --relative-paths
