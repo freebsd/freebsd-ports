@@ -1,15 +1,6 @@
---- src/gtkhtml.c.orig	Tue Jul 11 01:52:30 2000
-+++ src/gtkhtml.c	Fri Aug  4 14:35:57 2000
-@@ -1128,7 +1128,7 @@
- 	klass->properties = gtk_html_class_properties_new ();
- #ifdef GTKHTML_HAVE_GCONF
- 	if (gconf_is_initialized ()) {
--		gconf_client = gconf_client_new ();
-+		gconf_client = gconf_client_get_default ();
- 		if (!gconf_client)
- 			g_error ("cannot create gconf_client\n");
- 		gconf_client_add_dir (gconf_client, GTK_HTML_GCONF_DIR, GCONF_CLIENT_PRELOAD_ONELEVEL, &gconf_error);
-@@ -2259,7 +2259,7 @@
+--- src/gtkhtml.c.orig	Thu Aug 10 14:54:13 2000
++++ src/gtkhtml.c	Mon Aug 14 12:52:42 2000
+@@ -2331,7 +2331,7 @@
  
  	if (strcmp (klass->properties->keybindings_theme, "custom")) {
  		base = g_strconcat ("keybindingsrc.", klass->properties->keybindings_theme, NULL);
