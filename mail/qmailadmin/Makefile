@@ -7,6 +7,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -82,6 +83,7 @@ QMAIL_DIR?=	/var/qmail
 # End of user-configurable variables
 
 CONFIGURE_ARGS+=	\
+	--enable-qmaildir=${QMAIL_DIR} \
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \
