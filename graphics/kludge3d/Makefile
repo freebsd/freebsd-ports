@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	kludge3d
-PORTVERSION=	20031224
-PORTREVISION=	2
+PORTVERSION=	20040822
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,15 +18,16 @@ COMMENT=	A simple 3d editor
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds \
 		gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
-PLIST_FILES=	bin/kludge3d
 USE_PYTHON=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-lib-GL
+
+PLIST_FILES=	bin/kludge3d
 
 CPPFLAGS=	-I${LOCALBASE}/include -L${X11BASE}/include \
 		-I${PYTHON_INCLUDEDIR} ${PTHREAD_CFLAGS}
@@ -37,6 +37,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib \
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@EXTRA_CFLAGS@|@CFLAGS@|g ; \
-		 s| install-pixmapsDATA||g'
+		 s| install-pixmapsDATA||g ; \
+		 s|-lpthread||g'
 
 .include <bsd.port.mk>
