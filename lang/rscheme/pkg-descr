@@ -1,0 +1,11 @@
+RScheme is an object-oriented, extended version of the Scheme dialect of Lisp.
+RScheme is freely redistributable, and offers reasonable performance despite
+being extraordinarily portable. RScheme can be compiled to C, and the C can
+then compiled with a normal C compiler to generate machine code. By default,
+however, RScheme compiles to bytecodes which are interpreted by a (runtime)
+virtual machine. This ensures that compilation is fast and keeps code size
+down. In general, we recommend using the (default) bytecode code generation
+system, and only compiling your time-critical code to machine code. This
+allows a nice adjustment of space/time tradeoffs.
+
+WWW: http://www.rscheme.org/

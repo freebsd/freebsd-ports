@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- ../Makefile.orig	Thu Mar 18 17:40:45 1999
++++ ../Makefile	Tue Jul 31 10:48:35 2001
+@@ -123,9 +123,9 @@
+ 
+ stage1::
+ 	cd stage0 ; ./configure --prefix=`pwd`/install $(CONFIG_OPTS)
+-	cd stage0 ; make
++	cd stage0 ; $(MAKE)
+ 	mkdir -p stage0/install/bin
+-	cd stage0 ; make shell
++	cd stage0 ; $(MAKE) shell
+ 	cd stage0 ; ln -s ../../rshell/rs install/bin/rs
+ 	cd stage0 ; ln -s ../../system.img install/resource/system.img
+ 	$(MAKE) RS=`pwd`/stage0/install/bin/rs RSC_FLAGS2=-ccode \

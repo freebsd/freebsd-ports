@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ../stage0/configure	2001/07/31 06:44:55	1.1
++++ ../stage0/configure	2001/07/31 06:45:13
+@@ -2837,7 +2837,7 @@
+ #
+ 
+ if $OPTIMIZE
+-then CFLAGS="$CFLAGS -O2"
++then CFLAGS="$CFLAGS"
+ fi
+ 
+ echo $ac_n "checking if we should use hardware registers""... $ac_c" 1>&6
