@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.4.1b2
 CATEGORIES=	japanese x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
