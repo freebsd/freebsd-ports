@@ -3,11 +3,11 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/20 22:10:18 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.5.3
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Modula-3/release-3.5.3/
 DISTFILES=	boot-FreeBSD2.tar.gz m3cc.tar.gz m3.tar.gz
 
