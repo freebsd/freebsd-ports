@@ -3,7 +3,7 @@
 bin/sxpm
 @mode 644
 lib/libXpm.a
-lib/libXpm.so.4.6
+lib/libXpm.so.4.9
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libXpm.a
 @mode 444
