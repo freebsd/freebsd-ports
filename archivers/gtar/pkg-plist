@@ -10,9 +10,9 @@ share/locale/de/LC_MESSAGES/tar.mo
 share/locale/es/LC_MESSAGES/tar.mo
 share/locale/et/LC_MESSAGES/tar.mo
 share/locale/fr/LC_MESSAGES/tar.mo
+share/locale/id/LC_MESSAGES/tar.mo
 share/locale/it/LC_MESSAGES/tar.mo
 share/locale/ja/LC_MESSAGES/tar.mo
-share/locale/ko/LC_MESSAGES/tar.mo
 share/locale/nl/LC_MESSAGES/tar.mo
 share/locale/no/LC_MESSAGES/tar.mo
 share/locale/pl/LC_MESSAGES/tar.mo
@@ -21,3 +21,4 @@ share/locale/pt_BR/LC_MESSAGES/tar.mo
 share/locale/ru/LC_MESSAGES/tar.mo
 share/locale/sl/LC_MESSAGES/tar.mo
 share/locale/sv/LC_MESSAGES/tar.mo
+share/locale/tr/LC_MESSAGES/tar.mo
