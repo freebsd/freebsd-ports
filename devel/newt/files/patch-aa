@@ -1,7 +1,0 @@
---- grid.c.orig	Sun May  5 00:23:33 2002
-+++ grid.c	Sun May  5 00:23:45 2002
-@@ -1,4 +1,3 @@
--#include <alloca.h>
- #include <stdlib.h>
- #include <string.h>
- 
