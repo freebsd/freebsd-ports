@@ -5,6 +5,8 @@ etc/mc.global
 share/gnome/idl/FileManager.idl
 share/gnome/idl/Makefile.in
 share/gnome/mc/FAQ
+share/gnome/mc/desktop-scripts/README.desktop
+share/gnome/mc/desktop-scripts/startup.links
 share/gnome/mc/extfs/README
 share/gnome/mc/extfs/a
 share/gnome/mc/extfs/deb
@@ -20,6 +22,7 @@ share/gnome/mc/extfs/sfs.ini
 share/gnome/mc/extfs/trpm
 share/gnome/mc/extfs/uar
 share/gnome/mc/extfs/ucpio
+share/gnome/mc/extfs/uha
 share/gnome/mc/extfs/ulha
 share/gnome/mc/extfs/urar
 share/gnome/mc/extfs/uzip
@@ -30,6 +33,22 @@ share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
 share/gnome/mc/mc.lib
 share/gnome/mc/mc.menu
+share/gnome/mc/syntax/c.syntax
+share/gnome/mc/syntax/changelog.syntax
+share/gnome/mc/syntax/diff.syntax
+share/gnome/mc/syntax/diffc.syntax
+share/gnome/mc/syntax/html.syntax
+share/gnome/mc/syntax/java.syntax
+share/gnome/mc/syntax/latex.syntax
+share/gnome/mc/syntax/lsm.syntax
+share/gnome/mc/syntax/makefile.syntax
+share/gnome/mc/syntax/ml.syntax
+share/gnome/mc/syntax/nroff.syntax
+share/gnome/mc/syntax/pascal.syntax
+share/gnome/mc/syntax/perl.syntax
+share/gnome/mc/syntax/python.syntax
+share/gnome/mc/syntax/sh.syntax
+share/gnome/mc/syntax/smalltalk.syntax
 share/gnome/mime-info/mc.keys
 share/gnome/pixmaps/mc/directory.xpm
 share/gnome/pixmaps/mc/gnome-application-encapsulated_postscript.png
@@ -80,6 +99,7 @@ share/gnome/pixmaps/mc/i-directory.png
 share/gnome/pixmaps/mc/i-executable.png
 share/gnome/pixmaps/mc/i-fifo.png
 share/gnome/pixmaps/mc/i-floppy.png
+share/gnome/pixmaps/mc/i-nfs.png
 share/gnome/pixmaps/mc/i-printer.png
 share/gnome/pixmaps/mc/i-regular.png
 share/gnome/pixmaps/mc/i-sock.png
@@ -92,11 +112,15 @@ share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
+share/locale/es_ES/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
 share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
+share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 @dirrm share/gnome/pixmaps/mc
+@dirrm share/gnome/mc/desktop-scripts
 @dirrm share/gnome/mc/extfs
+@dirrm share/gnome/mc/syntax

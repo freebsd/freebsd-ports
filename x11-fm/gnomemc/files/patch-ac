@@ -1,24 +1,28 @@
---- Make.common.in.orig	Thu Feb 25 08:53:30 1999
-+++ Make.common.in	Thu Feb 25 18:29:33 1999
-@@ -19,17 +19,17 @@
+--- Make.common.in.orig	Thu May  6 09:19:55 1999
++++ Make.common.in	Thu May  6 09:22:12 1999
+@@ -19,14 +19,14 @@
  bindir     = @bindir@
  sysconfdir = @sysconfdir@
- corbadir   = $(sysconfdir)/CORBA/servers
--libdir     = $(exec_prefix)/lib/mc
--idldir     = $(prefix)/share/idl
-+libdir     = @localstatedir@/mc
-+idldir     = @localstatedir@/idl
- suppbindir = $(libdir)/bin
--gnewdir	   = $(prefix)/share/mc/templates
-+gnewdir	   = $(libdir)/templates
- tidir      = $(libdir)/term
- extfsdir   = $(libdir)/extfs
- confdir    = $(prefix)/etc
  datadir    = @datadir@
- icondir    = $(datadir)/pixmaps/mc
+-libdir	   = @libdir@
++libdir	   = @localstatedir@
+ mandir     = @mandir@
  gnomeicondir = @gnomeicondir@
+ xv_bindir  = @xv_bindir@
+ corbadir   = $(sysconfdir)/CORBA/servers
+ mclibdir   = $(libdir)/mc
+ desktopdir = $(mclibdir)/desktop-scripts
+-idldir     = $(prefix)/share/idl
++idldir     = @localstatedir@/idl
+ suppbindir = $(mclibdir)/bin
+ gnewdir	   = $(prefix)/share/mc/templates
+ tidir      = $(mclibdir)/term
+@@ -34,7 +34,7 @@
+ confdir    = $(prefix)/etc
+ icondir    = $(datadir)/pixmaps/mc
+ syntaxdir  = $(mclibdir)/syntax
 -localedir  = $(datadir)/locale
 +localedir  = $(prefix)/share/locale
- mandir     = @mandir@
  man1dir    = $(mandir)/man1
  manext     = 1
+ man8dir    = $(mandir)/man8
