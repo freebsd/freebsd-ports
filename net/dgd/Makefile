@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	dgd-1.1p6
-DISTFILES=	dgd-1.1.tar.gz
+DISTNAME=	dgd-1.1
+PKGNAME=	dgd-1.1p6
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
