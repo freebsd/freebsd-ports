@@ -57,6 +57,11 @@ CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=	yes
 .endif
 
+.if defined(WITH_CUPS_LIBPAPER)
+CONFIGURE_ARGS+=	--enable-libpaper
+LIB_DEPENDS+=	paper.2:${PORTSDIR}/print/libpaper
+.endif
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
