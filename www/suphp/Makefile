@@ -6,29 +6,32 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A combination which provides a wrapper for PHP
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/php4-cgi
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFLICTS=	mod_php4-4*
+USE_APACHE=	yes
+CONFLICTS=	mod_php4-4* php-4.*
 
 LOG_PATH?=	/var/log
 PHP_PATH?=	${LOCALBASE}/bin/php
-APACHE_USER?=	www
+APACHE_USER?=	${WWWOWN}
+MIN_UID?=	${WWWOWN}
+MIN_GID?=	${WWWGRP}
+WITH_SETID_MODE?=	owner
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
 			--with-logfile=${LOG_PATH}/suphp.log \
 			--with-apache-user=${APACHE_USER} \
-			--with-min-gid=80 \
-			--with-min-uid=80 \
+			--with-min-gid=${MIN_UID} \
+			--with-min-uid=${MIN_GID} \
 			--with-apxs=${APXS}
 
 ## Available knobs:
@@ -44,21 +47,23 @@ CONFIGURE_ARGS+=	--disable-checkuid
 .if defined(WITHOUT_CHECKGID)
 CONFIGURE_ARGS+=	--disable-checkgid
 .endif
+## WITH_SETID_MODE: Mode to use for setting UID/GID.
+CONFIGURE_ARGS+=	--enable-setid=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/apache2/apr.h)
-BROKEN=			"Doesn't work with Apache 2"
+.if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
+APACHE_PORT=	www/apache2
+PLIST_SUB+=	MODULEDIR="libexec/apache2/"
+.else
+PLIST_SUB+=	MODULEDIR="libexec/apache/"
 .endif
 
 show-options:
-	@${EGREP} '^##' ${.CURDIR}/Makefile | ${SED} 's/##//'
+	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
 pre-everything::
 	@${MAKE} show-options
-
-post-extract:
-	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .if !defined(NOPORTDOCS)

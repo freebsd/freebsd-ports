@@ -1,0 +1,20 @@
+--- configure.orig	Sun Jan 11 15:21:53 2004
++++ configure	Sun Jan 11 15:22:19 2004
+@@ -2253,7 +2253,7 @@
+              if test $withval; then
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define OPT_MIN_UID $withval
++#define OPT_MIN_UID "$withval"
+ _ACEOF
+ 
+              fi
+@@ -2276,7 +2276,7 @@
+              if test $withval; then
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define OPT_MIN_GID $withval
++#define OPT_MIN_GID "$withval"
+ _ACEOF
+ 
+              fi
