@@ -127,6 +127,7 @@
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += pysol-sound-server
+    SUBDIR += quelcom
     SUBDIR += radio
     SUBDIR += raproxy
     SUBDIR += replay

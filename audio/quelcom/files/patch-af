@@ -1,0 +1,10 @@
+--- src/qwavinfo.cc.orig	Tue Dec 26 18:55:30 2000
++++ src/qwavinfo.cc		Wed Dec 27 13:22:42 2000
+@@ -2,6 +2,7 @@
+ # include "qwav.hh"
+ # include "qexception.hh"
+ 
++typedef unsigned long ulong;
+ 
+ void usage () {
+ 

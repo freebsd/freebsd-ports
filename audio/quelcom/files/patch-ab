@@ -1,0 +1,27 @@
+--- src/makefile.orig	Tue Dec 26 18:55:30 2000
++++ src/makefile	Wed Dec 27 13:54:07 2000
+@@ -1,9 +1,11 @@
+ TARGETS=qmp3check qwavsilence qwavinfo qwavjoin qwavcut qmp3info qmp3join qmp3cut 
+ 
++INSTALL_P=/usr/bin/install
++
+ all: $(TARGETS)
+ 	strip $(TARGETS)
+ 
+-BINDIR=/usr/local/bin
++BINDIR=${PREFIX}/bin
+ VERSION=\"0.2.0\"
+ CXX=g++
+ CXXFLAGS=-Wall -DQVERSION=$(VERSION) #-DQVERBOSE# -g -pg -fprofile-ar=cs -ftest-coverage 
+@@ -21,7 +23,10 @@
+ 	$(CXX) $(CXXFLAGS) -c $< -o $*.o
+ 
+ install:
+-	cp $(TARGETS) $(BINDIR)
++	for i in $(TARGETS); \
++	do \
++	$(INSTALL_P) -c -o root -g wheel -m 555 $$i $(BINDIR); \
++	done
+ 
+ qwavinfo: qwavinfo.o $(OBJECTS)
+ 	$(CXX) -o qwavinfo qwavinfo.o $(OBJECTS) $(LDFLAGS)
