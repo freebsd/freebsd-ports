@@ -53,15 +53,13 @@ lib/libgphoto2.so.2
 lib/libgphoto2_port.a
 lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
-lib/pkgconfig/libgphoto2.pc
-share/doc/gphoto2/AUTHORS
-share/doc/gphoto2/FAQ
-share/doc/gphoto2/NEWS
-share/doc/gphoto2/README
-share/doc/gphoto2/gphoto2-cli.txt
-share/doc/gphoto2/gphoto2.txt
-share/doc/gphoto2/linux-hotplug/usbcam.console
-share/doc/gphoto2/linux-hotplug/usbcam.group
+libdata/pkgconfig/libgphoto2.pc
+%%PORTDOCS%%share/doc/gphoto2/AUTHORS
+%%PORTDOCS%%share/doc/gphoto2/FAQ
+%%PORTDOCS%%share/doc/gphoto2/NEWS
+%%PORTDOCS%%share/doc/gphoto2/README
+%%PORTDOCS%%share/doc/gphoto2/gphoto2-cli.txt
+%%PORTDOCS%%share/doc/gphoto2/gphoto2.txt
 share/gphoto2/konica/english
 share/gphoto2/konica/french
 share/gphoto2/konica/german
@@ -92,10 +90,7 @@ share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
 share/locale/zh_CN/LC_MESSAGES/libgphoto2_port.mo
 @dirrm share/gphoto2/konica
 @dirrm share/gphoto2
-@dirrm share/doc/gphoto2/linux-hotplug
-@dirrm share/doc/gphoto2/html/figures
-@dirrm share/doc/gphoto2/html
-@dirrm share/doc/gphoto2
+%%PORTDOCS%%@dirrm share/doc/gphoto2
 @dirrm lib/gphoto2_port/0.0.4
 @dirrm lib/gphoto2_port
 @dirrm lib/gphoto2/2.0
