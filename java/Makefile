@@ -12,6 +12,7 @@
     SUBDIR += infobus
     SUBDIR += jad
     SUBDIR += jaf
+    SUBDIR += janosvm
     SUBDIR += java-cup
     SUBDIR += javamail
     SUBDIR += javavmwrapper
