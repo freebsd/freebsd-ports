@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Finance::QuoteHist::Yahoo.3 \
 		Finance::QuoteHist.3 \
