@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -22,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${PERL} -pi -e "s,Bison ,Bison,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/configure
 
 pre-configure:
 .for file in config.guess config.sub install-sh missing mkinstalldirs

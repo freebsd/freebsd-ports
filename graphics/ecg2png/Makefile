@@ -17,14 +17,15 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 QTCPPFLAGS+=	-I${LOCALBASE}/include/gd
 
 pre-patch:
-	@${PERL} -pi -e 's|-lqt$$|-l${QTNAME}|g' ${WRKSRC}/ecg2png/Makefile.in
-	@find ${WRKSRC} -name '*.cpp' | xargs ${PERL} -pi -e \
+	@${REINPLACE_CMD} -e 's|-lqt$$|-l${QTNAME}|g' ${WRKSRC}/ecg2png/Makefile.in
+	@find ${WRKSRC} -name '*.cpp' | xargs ${REINPLACE_CMD} -e \
 		's|#include <qimageio.h>||g'
 	@${CHMOD} ${BINMODE} ${WRKSRC}/missing
 

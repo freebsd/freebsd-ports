@@ -22,6 +22,7 @@ RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xfig.1
@@ -41,7 +42,7 @@ post-extract:
 
 post-patch:
 .if defined(WITHOUT_GHOSTSCRIPT)
-	@${PERL} -pi -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
+	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.qglviewer.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
@@ -23,7 +24,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-lqt,-lqt2,g ; \
+	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g ; \
 		s,-lqgl,-lqtgl,g ; \
 		s,/moc,/moc2,g" ${WRKSRC}/configure
 

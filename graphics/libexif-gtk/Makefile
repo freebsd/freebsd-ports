@@ -18,12 +18,13 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		exif.5:${PORTSDIR}/graphics/libexif
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>

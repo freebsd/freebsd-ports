@@ -14,13 +14,14 @@ DISTNAME=	xfrac310
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xfractint.1
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|'
 
 .include <bsd.port.mk>

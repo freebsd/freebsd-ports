@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
@@ -23,14 +24,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${PERL} -pi -e 's|Bison |Bison|g ; \
+	@${REINPLACE_CMD} -e 's|Bison |Bison|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|share/pixmaps|share/gnome/pixmaps|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^gsubeditdoc|#gsubeditdoc|g ; \
 		 s|-g -O2|| ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|'
+		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|'
 
 post-install:
 .if !defined(NOPORTDOCS)

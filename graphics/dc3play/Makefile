@@ -18,11 +18,12 @@ RESTRICTED=	"Beta test period, redistribution prohibited"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 
 post-patch:
-	@${PERL} -pi -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
+	@${REINPLACE_CMD} -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
 
 post-install:
 .if !defined(NOPORTDOCS)
