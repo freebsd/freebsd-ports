@@ -8,7 +8,7 @@
 PORTNAME=	epic4
 PORTVERSION=	1.0.1
 # Make these variables overridable for slave ports
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	irc ipv6
 MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
