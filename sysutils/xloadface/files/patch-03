@@ -1,0 +1,29 @@
+--- LabeledPicture.c.orig	Thu Apr  4 05:36:23 1991
++++ LabeledPicture.c	Fri Dec  6 14:27:44 1996
+@@ -153,7 +153,7 @@
+ 	Window rootwin;
+ 	
+ 	lp->label_width = XTextWidth(lp->font,lp->label,strlen(lp->label));
+-	if (lp->pixmap != NULL && lp->pixmap != AiNullPixmap) {
++	if (lp->pixmap != 0 && lp->pixmap != AiNullPixmap) {
+ 		XGetGeometry(XtDisplay(w),lp->pixmap,
+ 			     &rootwin,
+ 			     &x,
+@@ -355,7 +355,7 @@
+ {
+ 	UnSelectIt(w);
+ 	if (w->labeled_picture.sensitive) {
+-		XtCallCallbacks(w, AiNcallback, (caddr_t)event);
++		XtCallCallbacks((Widget)w, AiNcallback, (caddr_t)event);
+ 	}
+ }
+ 
+@@ -391,7 +391,7 @@
+ 	AdjustSize(w,True);
+ 	
+ 	if (width != w->core.width || height != w->core.height) {
+-		XtResizeWidget(w,
++		XtResizeWidget((Widget)w,
+ 			       w->core.width,
+ 			       w->core.height,
+ 			       w->core.border_width);

@@ -1,0 +1,11 @@
+--- xloadface.1.orig	Mon Apr 22 20:03:17 1991
++++ xloadface.1	Fri Dec  6 14:27:45 1996
+@@ -104,7 +104,7 @@
+ グループ名を省略した場合にはこのグループが表示される．
+ .SH FILES
+ .TP
+-.IR /usr/spool/rwho/whod.* 	各ホストの情報
++.IR /var/rwho/whod.* 	各ホストの情報
+ .TP
+ .IR /etc/host_org 	グループ記述ファイル
+ .SH RELATED INFORMATION
