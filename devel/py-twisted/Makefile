@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.99.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://twistedmatrix.com/downloads/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted-${PORTVERSION}
@@ -52,14 +53,16 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-.for docsubdir in api fun howto img legal specifications howto/listings/TwistedQuotes
-	@ ${MKDIR} ${DOCSDIR}/${docsubdir}
-	@ ${FIND} ${WRKSRC}/doc/${docsubdir} -type f -maxdepth 1 | \
-	  ${XARGS} -J %% ${INSTALL_DATA} %% ${DOCSDIR}/${docsubdir}
-.endfor
-.for docfile in CREDITS ChangeLog ERRATA README TODO
+	@ ${MKDIR} ${DOCSDIR}/man
+.for docfile in CREDITS ChangeLog README TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
+.for htmlman in ${MAN1:S/1/html/}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/man/${htmlman} ${DOCSDIR}/man
+.endfor
+	@ cd ${WRKSRC}/doc && \
+	  ${FIND} * -type d -maxdepth 0 \! -name examples \! -name man | \
+	  ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 	@ ${MKDIR} ${EXAMPLESDIR}/scripts ${EXAMPLESDIR}/static
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLESDIR}/scripts
 	@ ${INSTALL_DATA} ${WRKSRC}/static/* ${EXAMPLESDIR}/static
