@@ -1,14 +1,3 @@
---- configs/freebsd-dri.orig	Wed Nov 24 23:14:01 2004
-+++ configs/freebsd-dri	Wed Nov 24 23:14:20 2004
-@@ -11,7 +11,7 @@
- WARN_FLAGS = -Wall
- OPT_FLAGS = -O
- 
--CFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g -std=c99  -Wundef -fPIC -ffast-math -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
-+CFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g -std=c9x -Wundef -fPIC -ffast-math -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
- CXXFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic -fPIC
- 
- ASM_SOURCES = 
 --- src/mesa/drivers/dri/r200/r200_tcl.c.orig	Thu Nov 25 01:38:38 2004
 +++ src/mesa/drivers/dri/r200/r200_tcl.c	Thu Nov 25 01:39:09 2004
 @@ -101,7 +101,7 @@
