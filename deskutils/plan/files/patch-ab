@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jul 27 05:37:12 2000
-+++ Makefile	Thu Jul 27 05:37:12 2000
+--- Makefile.orig	Wed Mar 19 16:22:33 2003
++++ Makefile	Sun Mar 23 12:07:44 2003
 @@ -7,18 +7,26 @@
  # path and the #, or you'll get compile errors. DO NOT put blanks before and
  # after "=", this is parsed and rewritten by the configure script.
@@ -45,10 +45,10 @@
  # 				# used by plan to pre-process holiday files,
  #				# plan will check if this file really exists
  CPP_PATH='/lib/cpp -P -I$(HELP)'
-@@ -49,11 +57,16 @@
+@@ -49,12 +57,17 @@
  #				# uncomment this for Japanese version of plan
  #				# JAPAN requires X11R5 and a Japanese env.
- JAPANDEFS=-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 -DLOCALE_SJIS='ja_JP.SJIS' -DLOCALE_EUC='ja_JP.EUC'
+ JAPANDEFS='-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 -DLOCALE_SJIS=ja_JP.SJIS -DLOCALE_EUC=ja_JP.EUC'
 +.if defined(JAPANESE)
 +JAPAN=-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
 +	-DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
@@ -58,45 +58,37 @@
  #				# default holiday locale
  HOLIDAY=german
  #				# do NOT define -O2 on DEC OSF/1 machines!
--DEBUG=-O2
+ #				# use -O instead of -O2 on HP to avoid warning
+-DEBUG=-O
 +DEBUG=${CFLAGS}
  #				# what to do without make arguments
  DEFTARGET=help
  #------------------------- end of configuration section ----------------------
-@@ -226,8 +239,10 @@
+@@ -224,10 +237,10 @@
  BSDIG_L2= -L/usr/X11/lib -lc
  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
  NBSD_L2	= -L/usr/X11R6/lib -lc
 -FBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11 -lXext -lSM -lICE -lXpm
 -FBSD_L2	= -L/usr/X11R6/lib -lc
-+FBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
-+FBSD_L2 = -lc
-+OBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
-+OBSD_L2 = -lc
+-OBSD_L1	= -L/usr/local/lib -lXm -L/usr/X11R6/lib -lXt -lX11
+-OBSD_L2	= -lc
++FBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++FBSD_L2 =
++OBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++OBSD_L2 =
  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
  LINUX_L2= -lc
  SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
-@@ -295,7 +310,8 @@
+@@ -294,7 +307,7 @@
  	@echo "  make bsdi      BSDI/386"
  	@echo "  make bsdig     BSDI/386 with gcc"
  	@echo "  make netbsd    NetBSD/i386 1.0A (maybe others too)"
 -	@echo "  make freebsd   FreeBSD 2.x"
 +	@echo "  make freebsd   FreeBSD"
-+	@echo "  make openbsd   OpenBSD 2.x"
+ 	@echo "  make openbsd	OpenBSD"
  	@echo "  make svr4      SVR4 Using gcc"
  	@echo "  make news4     Sony NEWS-OS4.x"
- 	@echo "  make news4g    Sony NEWS-OS4.x with gcc"
-@@ -425,6 +441,9 @@
- freebsd:
- 	env CF="$(FBSD_C)" L1F="$(FBSD_L1)" L2F="$(FBSD_L2)" MYCC=${CC} make all
- 
-+openbsd:
-+	env CF="$(OBSD_C)" L1F="$(OBSD_L1)" L2F="$(OBSD_L2)" MYCC=${CC} make all
-+ 
- svr4:
- 	env CF="$(SVR4_C)" L1F="$(SVR4_L1)" L2F="$(SVR4_L2)" MYCC=gcc make all
- 
-@@ -538,7 +557,7 @@
+@@ -538,7 +551,7 @@
  	$(CCLINE) -c -DLIB=\"$(LIB)\" $<
  
  holiday.o: holiday.c $(MAKEFILE)
