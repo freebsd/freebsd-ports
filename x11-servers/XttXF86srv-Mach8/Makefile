@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtt-Mach8
-PORTVERSION= 	${VERSION}.${PATCHLEVEL}
+PORTVERSION=	${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11-servers
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp

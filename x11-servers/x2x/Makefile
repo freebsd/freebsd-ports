@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x2x
-PORTVERSION= 	1.27
+PORTVERSION=	1.27
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://gatekeeper.dec.com/pub/DEC/SRC/x2x/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
