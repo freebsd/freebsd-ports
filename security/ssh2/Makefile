@@ -15,7 +15,7 @@ DISTNAME=	ssh-${PORTVERSION}
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
-RESTRICTED=	"Crypto; export-controlled"
+#RESTRICTED=	"Crypto; export-controlled"
 
 GNU_CONFIGURE=	YES
 
