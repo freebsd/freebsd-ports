@@ -1,0 +1,19 @@
+Avertissement
+=============
+
+Toute personne chargeant le logiciel HOMARD s'engage à ne l'utiliser qu'en
+couplage avec le logiciel Code_ASTER. Pour tout autre usage, un droit de
+licence est nécessaire.
+
+Contacter les administrateurs de HOMARD à l'adresse : <homard@edf.fr>.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Warning
+=======
+
+You can use homard freely in conjunction with Code_Aster (i.e. the FreeBSD
+port french/aster).
+
+If you want to use homard for any other purpose, you have to acquire a
+license: please contact the Homard's administrators at <homard@edf.fr>.
