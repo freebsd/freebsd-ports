@@ -45,3 +45,8 @@ NOTE: These scripts need work and are *NOT* safe to use unless you know
       what they do.  Use at your own risk.  Patches would be great, but
       I'd prefer they pass through me.
 
+----------------------------------------------------------------------
+
+checksum is a script that allows checking of ports to see if their checksums
+match, and if they don't, give a diff against the older version to try and
+discover why the checksum didn't match.
