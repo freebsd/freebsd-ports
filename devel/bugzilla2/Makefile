@@ -74,6 +74,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
 		${WRKSRC}/$i
 .endfor
+	@find ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
 
 pre-install:
 	@find ${WRKSRC}/docs -type d -exec ${CHMOD} 755 {} \;
