@@ -1,0 +1,12 @@
+****************************************************
+NOTES:
+ - You have to configure your anti-virus and anti-spams products!
+ - You HAVE to reinstall this port each time you add or remove one!
+
+Now, you have to modify your qmail startup files to call qmail-scanner.
+In most case, you just need to add:
+  export QMAILQUEUE="${PREFIX}/bin/qmail-scanner-queue.pl"
+to your tcpserver startup file.
+
+You can test installation by running 'make test' in port dir.
+****************************************************

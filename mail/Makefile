@@ -293,6 +293,7 @@
     SUBDIR += qmail-mysql
     SUBDIR += qmail-notify
     SUBDIR += qmail-remove
+    SUBDIR += qmail-scanner
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
