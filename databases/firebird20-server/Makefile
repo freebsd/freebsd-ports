@@ -25,6 +25,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 
 ONLY_FOR_ARCHS=	i386
 
