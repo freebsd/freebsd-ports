@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	desk3d
 MAINTAINER=		adamw@FreeBSD.org
 COMMENT=		3D Virtual Desktop Switcher
 
+LIB_DEPENDS=		Imlib2.1:${PORTSDIR}/graphics/imlib2
+	
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
