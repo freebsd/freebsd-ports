@@ -27,7 +27,13 @@ CONFIGURE_ARGS=	--with-berkeley-db="${LOCALBASE}/include/db3:${LOCALBASE}/lib"
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cDonkey
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-ldb|-ldb3|g" ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
