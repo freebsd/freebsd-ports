@@ -19,4 +19,4 @@ share/sgml/openjade/dsssl.dtd
 share/sgml/openjade/extensions.dsl
 share/sgml/openjade/fot.dtd
 share/sgml/openjade/style-sheet.dtd
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add openjade/catalog
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG openjade/catalog

@@ -5,7 +5,7 @@ share/sgml/docbook/4.1/ChangeLog
 share/sgml/docbook/4.1/cals-tbl.dtd
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/%%DTD_VERSION%%/catalog
 share/sgml/docbook/4.1/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add %%DTD_NAME%%/%%DTD_VERSION%%/catalog
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/%%DTD_VERSION%%/catalog
 share/sgml/docbook/4.1/dbcent.mod
 share/sgml/docbook/4.1/dbgenent.mod
 share/sgml/docbook/4.1/dbhier.mod

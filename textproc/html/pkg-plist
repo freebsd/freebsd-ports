@@ -23,7 +23,7 @@ share/sgml/html/4.01/loose.dtd
 share/sgml/html/4.01/strict.dtd
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
 share/sgml/html/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add %%DTD_NAME%%/catalog
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/catalog
 @dirrm share/sgml/html/2.0
 @dirrm share/sgml/html/3.2
 @dirrm share/sgml/html/4.0
