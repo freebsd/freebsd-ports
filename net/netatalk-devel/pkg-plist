@@ -8,6 +8,7 @@ bin/afppasswd
 bin/apple_cp
 bin/apple_mv
 bin/apple_rm
+bin/asip-status.pl
 bin/cleanappledouble.pl
 bin/cnid2_create
 bin/cnid_maint
@@ -38,6 +39,7 @@ bin/netatalkshorternamelinks.pl
 bin/pap
 bin/papstatus
 bin/psorder
+bin/showppd
 bin/timeout
 bin/uniconv
 @unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
