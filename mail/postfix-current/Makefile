@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20020115
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -78,6 +79,12 @@ do-install:
 	 manpage_directory=${PREFIX}/man \
 	 sample_directory=${PREFIX}/etc/postfix \
 	 readme_directory=${READMEDIR}
+
+	@${INSTALL_DATA} ${WRKSRC}/conf/main.cf \
+		${PREFIX}/etc/postfix/sample-main.cf
+
+	@${INSTALL_DATA} ${WRKSRC}/conf/master.cf \
+		${PREFIX}/etc/postfix/sample-master.cf
 
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/auxiliary/rmail/rmail \
