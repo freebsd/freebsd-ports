@@ -37,23 +37,23 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>exim</name>
-        <range><le>4.43+28_1</le></range>
+        <range><lt>4.43+28_1</lt></range>
       </package>
       <package>
         <name>exim-ldap2</name>
-        <range><le>4.43+28_1</le></range>
+        <range><lt>4.43+28_1</lt></range>
       </package>
       <package>
         <name>exim-mysql</name>
-        <range><le>4.43+28_1</le></range>
+        <range><lt>4.43+28_1</lt></range>
       </package>
       <package>
         <name>exim-postgresql</name>
-        <range><le>4.43+28_1</le></range>
+        <range><lt>4.43+28_1</lt></range>
       </package>
       <package>
         <name>exim-sa-exim</name>
-        <range><le>4.43+28_1</le></range>
+        <range><lt>4.43+28_1</lt></range>
       </package>
     </affects>
     <description>
