@@ -37,6 +37,7 @@
     SUBDIR += librc4
     SUBDIR += librsaintl
     SUBDIR += logcheck
+    SUBDIR += lxnb
     SUBDIR += mhash
     SUBDIR += nbaudit
     SUBDIR += nessus

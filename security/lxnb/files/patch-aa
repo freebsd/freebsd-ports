@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Aug 22 09:03:00 1998
++++ Makefile	Sun Mar  5 02:20:19 2000
+@@ -1,12 +1,17 @@
+ # Makefile for the Linux Netbus Client by noupe@efnet #hack.se
+ 
+-CC = gcc -Wall -O3
++CC ?= gcc
++CFLAGS ?= -O3
++CFLAGS += -Wall
+ OBJEKTFILER = lxnetbus.o lxnbfunc.o lxnbmenu.o
+ 
+-
+ all:   ${OBJEKTFILER} lxnetbus
+ 
+ lxnetbus: ${OBJEKTFILER}  
++	${CC} ${CFLAGS} -o $@ ${OBJEKTFILER}
++
++install:
++	install -c -m 755 lxnetbus ${PREFIX}/bin/lxnb
+ 
+ clean:
+ 	rm -f *.o *~ diskdump.txt screendump.jpg
