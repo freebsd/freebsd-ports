@@ -3352,6 +3352,7 @@ linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linprocfs	src/sys/compat/linprocfs
 linux-bmrt	ports/graphics/linux-bmrt
+linux-eagle	ports/cad/linux-eagle
 linux-esound	ports/audio/linux-esound
 linux-flashplugin	ports/www/linux-flashplugin
 linux-gnomelibs	ports/x11/linux-gnomelibs
