@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/lambdamoo/
 DISTNAME=	LambdaMOO-${PORTVERSION}
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	The most commonly used program to run MOOs
 
 WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	smace@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that provides the red-black balanced tree algorithm
 
 MAN3=		rbcloselist.3 rbdelete.3 rbdestroy.3 rbfind.3 rbinit.3 rblookup.3 \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/libicq/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to add ICQ communication support to your software
 
 USE_GNOME=	glib12

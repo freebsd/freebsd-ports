@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	flathill
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 #RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc

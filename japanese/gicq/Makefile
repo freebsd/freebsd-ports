@@ -19,7 +19,7 @@ PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	${DISTNAME}ja.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based ICQ program
 
 LIB_DEPENDS=	icq.0:${PORTSDIR}/japanese/libicq

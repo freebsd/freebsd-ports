@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
 DISTNAME=	gdb-${PORTVERSION}
 
-MAINTAINER=	mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
 USE_BZIP2=	yes

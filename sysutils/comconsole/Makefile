@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	#
 DISTFILES=
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setup your PC to use serial port COM1 as its console device
 
 NO_BUILD=	yes

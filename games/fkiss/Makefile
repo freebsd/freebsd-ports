@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely enjoy childlike KISS, French-KISS!
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha

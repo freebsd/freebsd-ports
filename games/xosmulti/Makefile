@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	flathill
 DISTNAME=	${PORTNAME}_${PORTVERSION}_tar
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A little girl cartoon on the top of the active window
 
 WRKSRC=		${WRKDIR}/xosmulti

@@ -16,7 +16,7 @@ MASTER_SITES=  ftp://subzero.campus.luth.se/pub/spegla/
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 
-MAINTAINER=	jkh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
 
 MANCOMPRESSED=	yes
