@@ -3,12 +3,13 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.25 1998/09/28 02:06:11 steve Exp $
+# $Id: Makefile,v 1.26 1999/01/27 16:33:50 fenner Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.real-time.com/pub/games/crossfire/ \
+MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/ \
+		ftp://ftp.real-time.com/pub/games/crossfire/ \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.pyramid.com/pub/crossfire/ \
 		ftp://ftp.sunet.se/pub/unix/games/crossfire/ \
