@@ -7,14 +7,12 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	0.99.12.1
+DISTVERSION=	0.99.13
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.99.12
 
 CONFLICTS=	dovecot-1.*
 
