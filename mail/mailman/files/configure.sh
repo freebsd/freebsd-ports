@@ -25,7 +25,7 @@ if pw user show "${USER}" 2>/dev/null; then
 	echo "You already have a user \"${USER}\", so I will use it."
 else
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-		-d ${DB_DIR} -s /sbin/nologin -c "MySQL Daemon"
+		-d ${DB_DIR} -s /sbin/nologin -c "Mailman User"
 	then
 		echo "Added user \"${USER}\"."
 	else
