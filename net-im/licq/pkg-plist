@@ -2,16 +2,21 @@ bin/licq
 lib/licq/licq_qt-gui.so
 lib/licq/licq_qt-gui.la
 @dirrm lib/licq
+share/licq/utilities/BackOrifice.utility
 share/licq/utilities/finger.utility
 share/licq/utilities/ftp.utility
+share/licq/utilities/gftp.utility
 share/licq/utilities/hostname.utility
+share/licq/utilities/mutt.utility
 share/licq/utilities/netscape.utility
 share/licq/utilities/nmap.utility
 share/licq/utilities/pine.utility
 share/licq/utilities/ping.utility
 share/licq/utilities/queso.utility
 share/licq/utilities/talk.utility
+share/licq/utilities/traceroute.utility
 share/licq/utilities/vnc.utility
+share/licq/utilities/xtraceroute.utility
 @dirrm share/licq/utilities
 share/licq/translations/ASCII
 share/licq/translations/CP437
@@ -48,33 +53,115 @@ share/licq/translations/SWISS
 share/licq/translations/UNITED_KINGDOM
 share/licq/translations/UNITED_KINGDOM_COM
 @dirrm share/licq/translations
-share/licq/sounds/icq/chat.wav
-share/licq/sounds/icq/file.wav
-share/licq/sounds/icq/message.wav
-share/licq/sounds/icq/notify.wav
-share/licq/sounds/icq/system.wav
-share/licq/sounds/icq/url.wav
+share/licq/sounds/icq/Auth.wav
+share/licq/sounds/icq/Chat.wav
+share/licq/sounds/icq/Contact.wav
+share/licq/sounds/icq/File.wav
+share/licq/sounds/icq/Message.wav
+share/licq/sounds/icq/Online.wav
+share/licq/sounds/icq/System.wav
+share/licq/sounds/icq/URL.wav
 @dirrm share/licq/sounds/icq
 share/licq/sounds/Monty-Python.wav
-share/licq/sounds/notify.wav
 @dirrm share/licq/sounds
-share/licq/contrib/licq.gicqconvert
-share/licq/contrib/licq.javaconvert
-share/licq/contrib/licq.kicqconvert
-share/licq/contrib/licq.micqconvert
-share/licq/contrib/licq.winconvert
-share/licq/contrib/licq.winconvert98
-share/licq/contrib/licq.winconvert99a
-share/licq/contrib/licq.winconvert99b
-share/licq/contrib/licq.zicqconvert
-share/licq/contrib/RecreateUserList.sh
-share/licq/contrib/gnome-menu-install.sh
-share/licq/contrib/remove-null.sh
-share/licq/contrib/viewurl-lynx.sh
-share/licq/contrib/viewurl-ncftp.sh
-share/licq/contrib/viewurl-netscape.sh
-share/licq/contrib/viewurl-w3m.sh
-@dirrm share/licq/contrib
+share/licq/qt-gui/locale/cs_CZ.qm
+share/licq/qt-gui/locale/de.qm
+share/licq/qt-gui/locale/es.qm
+share/licq/qt-gui/locale/it.qm
+share/licq/qt-gui/locale/pl.qm
+share/licq/qt-gui/locale/pt.qm
+share/licq/qt-gui/locale/ru_RU.KOI8-R.qm
+share/licq/qt-gui/locale/ru.qm
+share/licq/qt-gui/locale/cs.qm
+@dirrm share/licq/qt-gui/locale
+share/licq/qt-gui/dock.console/away.xpm
+share/licq/qt-gui/dock.console/bothmsg.xpm
+share/licq/qt-gui/dock.console/console.dock
+share/licq/qt-gui/dock.console/dnd.xpm
+share/licq/qt-gui/dock.console/ffc.xpm
+share/licq/qt-gui/dock.console/invisible.xpm
+share/licq/qt-gui/dock.console/mask.xpm
+share/licq/qt-gui/dock.console/na.xpm
+share/licq/qt-gui/dock.console/nomsg.xpm
+share/licq/qt-gui/dock.console/occupied.xpm
+share/licq/qt-gui/dock.console/offline.xpm
+share/licq/qt-gui/dock.console/online.xpm
+share/licq/qt-gui/dock.console/regmsg.xpm
+share/licq/qt-gui/dock.console/statusmask.xpm
+share/licq/qt-gui/dock.console/sysmsg.xpm
+@dirrm share/licq/qt-gui/dock.console
+share/licq/qt-gui/dock.flower/away.xpm
+share/licq/qt-gui/dock.flower/bothmsg.xpm
+share/licq/qt-gui/dock.flower/dnd.xpm
+share/licq/qt-gui/dock.flower/ffc.xpm
+share/licq/qt-gui/dock.flower/flower.dock
+share/licq/qt-gui/dock.flower/invisible.xpm
+share/licq/qt-gui/dock.flower/mask.xpm
+share/licq/qt-gui/dock.flower/na.xpm
+share/licq/qt-gui/dock.flower/nomsg.xpm
+share/licq/qt-gui/dock.flower/occupied.xpm
+share/licq/qt-gui/dock.flower/offline.xpm
+share/licq/qt-gui/dock.flower/online.xpm
+share/licq/qt-gui/dock.flower/regmsg.xpm
+share/licq/qt-gui/dock.flower/statusmask.xpm
+share/licq/qt-gui/dock.flower/sysmsg.xpm
+@dirrm share/licq/qt-gui/dock.flower
+share/licq/qt-gui/dock.flower-ns/flower-ns.dock
+share/licq/qt-gui/dock.flower-ns/nomsg-mask.xpm
+share/licq/qt-gui/dock.flower-ns/nomsg.xpm
+share/licq/qt-gui/dock.flower-ns/regmsg-mask.xpm
+share/licq/qt-gui/dock.flower-ns/regmsg.xpm
+@dirrm share/licq/qt-gui/dock.flower-ns
+share/licq/qt-gui/dock.glicq/glicq.dock
+share/licq/qt-gui/dock.glicq/msg.xpm
+share/licq/qt-gui/dock.glicq/nomsg.xpm
+share/licq/qt-gui/dock.glicq/sysmsg.xpm
+@dirrm share/licq/qt-gui/dock.glicq
+share/licq/qt-gui/dock.pli/bothmsg.xpm
+share/licq/qt-gui/dock.pli/iconAway.xpm
+share/licq/qt-gui/dock.pli/iconDND.xpm
+share/licq/qt-gui/dock.pli/iconFFC.xpm
+share/licq/qt-gui/dock.pli/iconInvisible.xpm
+share/licq/qt-gui/dock.pli/iconNA.xpm
+share/licq/qt-gui/dock.pli/iconNoMsg.xpm
+share/licq/qt-gui/dock.pli/iconOccupied.xpm
+share/licq/qt-gui/dock.pli/iconOffline.xpm
+share/licq/qt-gui/dock.pli/iconOnline.xpm
+share/licq/qt-gui/dock.pli/mask.xpm
+share/licq/qt-gui/dock.pli/nomsg.xpm
+share/licq/qt-gui/dock.pli/pli.dock
+share/licq/qt-gui/dock.pli/regmsg.xpm
+share/licq/qt-gui/dock.pli/statusmask.xpm
+share/licq/qt-gui/dock.pli/sysmsg.xpm
+@dirrm share/licq/qt-gui/dock.pli
+share/licq/qt-gui/icons.computer/chat.xpm
+share/licq/qt-gui/icons.computer/chess.xpm
+share/licq/qt-gui/icons.computer/computer.icons
+share/licq/qt-gui/icons.computer/cross.xpm
+share/licq/qt-gui/icons.computer/ffchat.xpm
+share/licq/qt-gui/icons.computer/file.xpm
+share/licq/qt-gui/icons.computer/lock.xpm
+share/licq/qt-gui/icons.computer/message.xpm
+share/licq/qt-gui/icons.computer/offline.xpm
+share/licq/qt-gui/icons.computer/online.xpm
+share/licq/qt-gui/icons.computer/private.xpm
+share/licq/qt-gui/icons.computer/sign.xpm
+share/licq/qt-gui/icons.computer/url.xpm
+@dirrm share/licq/qt-gui/icons.computer
+share/licq/qt-gui/icons.icq2/away.xpm
+share/licq/qt-gui/icons.icq2/chat.xpm
+share/licq/qt-gui/icons.icq2/dnd.xpm
+share/licq/qt-gui/icons.icq2/ffc.xpm
+share/licq/qt-gui/icons.icq2/file.xpm
+share/licq/qt-gui/icons.icq2/icq2.icons
+share/licq/qt-gui/icons.icq2/invisible.xpm
+share/licq/qt-gui/icons.icq2/message.xpm
+share/licq/qt-gui/icons.icq2/na.xpm
+share/licq/qt-gui/icons.icq2/occ.xpm
+share/licq/qt-gui/icons.icq2/offline.xpm
+share/licq/qt-gui/icons.icq2/online.xpm
+share/licq/qt-gui/icons.icq2/url.xpm
+@dirrm share/licq/qt-gui/icons.icq2
 share/licq/qt-gui/icons.dots/away.xpm
 share/licq/qt-gui/icons.dots/dnd.xpm
 share/licq/qt-gui/icons.dots/dots.icons
@@ -110,6 +197,10 @@ share/licq/qt-gui/icons.mark/online.ppm
 share/licq/qt-gui/icons.mark/private.ppm
 share/licq/qt-gui/icons.mark/url.ppm
 @dirrm share/licq/qt-gui/icons.mark
+share/licq/qt-gui/skin.basic/basic.skin
+@dirrm share/licq/qt-gui/skin.basic
+share/licq/qt-gui/skin.basic-ncb/basic-ncb.skin
+@dirrm share/licq/qt-gui/skin.basic-ncb
 share/licq/qt-gui/skin.bheart/Frame.xpm
 share/licq/qt-gui/skin.bheart/MenuButtonDown.png
 share/licq/qt-gui/skin.bheart/MenuButtonUp.png
@@ -141,6 +232,15 @@ share/licq/qt-gui/skin.e/frame.gif
 share/licq/qt-gui/skin.e/msg.xpm
 share/licq/qt-gui/skin.e/status.xpm
 @dirrm share/licq/qt-gui/skin.e
+share/licq/qt-gui/skin.gradient/background.gif
+share/licq/qt-gui/skin.gradient/buttonLowered.xpm
+share/licq/qt-gui/skin.gradient/buttonRaised.xpm
+share/licq/qt-gui/skin.gradient/gradient.skin
+share/licq/qt-gui/skin.gradient/msg.xpm
+share/licq/qt-gui/skin.gradient/status.xpm
+@dirrm share/licq/qt-gui/skin.gradient
+share/licq/qt-gui/skin.icq/icq.skin
+@dirrm share/licq/qt-gui/skin.icq
 share/licq/qt-gui/skin.pli/Frame.gif
 share/licq/qt-gui/skin.pli/MenuButtonDown.xpm
 share/licq/qt-gui/skin.pli/MenuButtonUp.xpm
@@ -153,28 +253,22 @@ share/licq/qt-gui/skin.shale/frame.gif
 share/licq/qt-gui/skin.shale/shale.skin
 share/licq/qt-gui/skin.shale/status.xpm
 @dirrm share/licq/qt-gui/skin.shale
-
-share/licq/qt-gui/skin.basic/basic.skin
-@dirrm share/licq/qt-gui/skin.basic
-share/licq/qt-gui/skin.icq/icq.skin
-@dirrm share/licq/qt-gui/skin.icq
-share/licq/qt-gui/icons.computer/chat.xpm
-share/licq/qt-gui/icons.computer/chess.xpm
-share/licq/qt-gui/icons.computer/computer.icons
-share/licq/qt-gui/icons.computer/cross.xpm
-share/licq/qt-gui/icons.computer/ffchat.xpm
-share/licq/qt-gui/icons.computer/file.xpm
-share/licq/qt-gui/icons.computer/lock.xpm
-share/licq/qt-gui/icons.computer/message.xpm
-share/licq/qt-gui/icons.computer/offline.xpm
-share/licq/qt-gui/icons.computer/online.xpm
-share/licq/qt-gui/icons.computer/private.xpm
-share/licq/qt-gui/icons.computer/sign.xpm
-share/licq/qt-gui/icons.computer/url.xpm
-@dirrm share/licq/qt-gui/icons.computer
-share/licq/qt-gui/locale/de.qm
-share/licq/qt-gui/locale/es.qm
-share/licq/qt-gui/locale/ru_RU.KOI8-R.qm
-@dirrm share/licq/qt-gui/locale
 @dirrm share/licq/qt-gui
+share/licq/contrib/licq.gicqconvert
+share/licq/contrib/licq.javaconvert
+share/licq/contrib/licq.kicqconvert
+share/licq/contrib/licq.micqconvert
+share/licq/contrib/licq.winconvert
+share/licq/contrib/licq.winconvert98
+share/licq/contrib/licq.winconvert99a
+share/licq/contrib/licq.winconvert99b
+share/licq/contrib/licq.zicqconvert
+share/licq/contrib/RecreateUserList.sh
+share/licq/contrib/gnome-menu-install.sh
+share/licq/contrib/remove-null.sh
+share/licq/contrib/viewurl-lynx.sh
+share/licq/contrib/viewurl-ncftp.sh
+share/licq/contrib/viewurl-netscape.sh
+share/licq/contrib/viewurl-w3m.sh
+@dirrm share/licq/contrib
 @dirrm share/licq

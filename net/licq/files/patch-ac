@@ -1,11 +1,11 @@
---- plugins/qt-gui/src/Makefile.in.orig	Tue Feb  8 16:12:30 2000
-+++ plugins/qt-gui/src/Makefile.in	Tue Feb  8 16:12:51 2000
+--- plugins/qt-gui/src/Makefile.in.orig	Wed Mar 29 01:31:47 2000
++++ plugins/qt-gui/src/Makefile.in	Wed Mar 29 01:31:52 2000
 @@ -120,7 +120,7 @@
  
- licq_qt_gui_la_LDFLAGS = $(X_LIBS) $(QT_LDFLAGS) $(KDE_LDFLAGS) 	-s -module -avoid-version -rpath $(libdir)
+ licq_qt_gui_la_LDFLAGS = $(X_LIBS) $(QT_LDFLAGS) $(KDE_LDFLAGS) 	-module -avoid-version -rpath $(libdir) -R$(QT_LIBDIR)
  
--licq_qt_gui_la_LIBADD = $(KDE_LIBS) -lqt $(X_PRE_LIBS) -lX11 -lXext 	$(XSS_LIBS) $(X_EXTRA_LIBS) $(KDE_LIBS)
-+licq_qt_gui_la_LIBADD = $(KDE_LIBS) -lqt2 $(X_PRE_LIBS) -lX11 -lXext 	$(XSS_LIBS) $(X_EXTRA_LIBS) $(KDE_LIBS)
+-licq_qt_gui_la_LIBADD = $(KDE_LIBS) -lqt $(X_PRE_LIBS) -lX11 -lXext 	$(XSS_LIBS) $(X_EXTRA_LIBS) 
++licq_qt_gui_la_LIBADD = $(KDE_LIBS) -lqt2 $(X_PRE_LIBS) -lX11 -lXext 	$(XSS_LIBS) $(X_EXTRA_LIBS)
  
  
  #>- METASOURCES = AUTO
