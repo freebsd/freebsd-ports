@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	Judy
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://judy.sourceforge.net/downloads/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	judy
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	General purpose dynamic array
 
-BROKEN=		Unfetchable
-
-USE_BZIP2=	YES
-HAS_CONFIGURE=	YES
+GNU_CONFIGURE=	YES
+USE_LIBTOOL_VER=15
+USE_GMAKE=	YES
 INSTALLS_SHLIB=	YES
 USE_REINPLACE=	YES
 
 MAN3=	Judy.3x Judy1.3x Judy1_funcs.3x JudyHS.3x JudyHS_funcs.3x \
 	JudyL.3x JudyL_funcs.3x JudySL.3x JudySL_funcs.3x
 
-MLINKS=	Judy1.3x J1T.3x Judy1.3x J1S.3x Judy1.3x J1U.3x Judy1.3x J1F.3x \
-	Judy1.3x J1N.3x Judy1.3x J1L.3x Judy1.3x J1P.3x Judy1.3x J1FE.3x \
-	Judy1.3x J1NE.3x Judy1.3x J1LE.3x Judy1.3x J1PE.3x Judy1.3x J1C.3x \
-	Judy1.3x J1BC.3x Judy1.3x J1FA.3x Judy1.3x J1MU.3x \
+MLINKS=	Judy.3x J1T.3x Judy.3x J1S.3x Judy.3x J1U.3x Judy.3x J1F.3x \
+	Judy.3x J1N.3x Judy.3x J1L.3x Judy.3x J1P.3x Judy.3x J1FE.3x \
+	Judy.3x J1NE.3x Judy.3x J1LE.3x Judy.3x J1PE.3x Judy.3x J1C.3x \
+	Judy.3x J1BC.3x Judy.3x J1FA.3x Judy.3x J1MU.3x \
 	Judy1_funcs.3x Judy1Test.3x Judy1_funcs.3x Judy1Set.3x \
 	Judy1_funcs.3x Judy1Unset.3x Judy1_funcs.3x Judy1First.3x \
 	Judy1_funcs.3x Judy1Next.3x Judy1_funcs.3x Judy1Last.3x \
@@ -62,33 +59,24 @@ MLINKS=	Judy1.3x J1T.3x Judy1.3x J1S.3x Judy1.3x J1U.3x Judy1.3x J1F.3x \
 	JudySL_funcs.3x JudySLNext.3x JudySL_funcs.3x JudySLLast.3x \
 	JudySL_funcs.3x JudySLPrev.3x JudySL_funcs.3x JudySLFreeArray.3x
 
-SHLIB_MAJOR=	0
+SHLIB_MAJOR=	1
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-DLVDIR=		${WRKSRC}/src/bsd_ia32/product/deliver/usr
-
 LIST_DOCS=	COPYRIGHT README *.htm
-LIST_EXAMPLES=	Makefile README *.c
 
-post-patch:
-	@${REINPLACE_CMD} -e 's!%%CC%%!${CC}!' \
-		${WRKSRC}/make_includes/platform.bsd_ia32.mk
-
-do-install:
-	${INSTALL_DATA} ${DLVDIR}/include/Judy.h ${PREFIX}/include
-	${INSTALL_DATA} ${DLVDIR}/lib/libJudy.a ${PREFIX}/lib
-	${INSTALL_DATA} ${DLVDIR}/lib/libJudy.so \
-		${PREFIX}/lib/libJudy.so.${SHLIB_MAJOR}
-	${LN} -sf libJudy.so.${SHLIB_MAJOR} ${PREFIX}/lib/libJudy.so
-	${INSTALL_MAN} ${DLVDIR}/share/man/man3/*.3x ${MANPREFIX}/man/man3
+post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${LIST_DOCS:S!^!${DLVDIR}/share/doc/Judy/!} ${DOCSDIR}
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${LIST_EXAMPLES:S!^!${DLVDIR}/share/doc/Judy/demo/!} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${DLVDIR}/share/doc/Judy/demo/run_demo ${EXAMPLESDIR}
+	${INSTALL_DATA} ${LIST_DOCS:S!^!${WRKSRC}/doc/ext/!} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-32-bit
+.elif ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CONFIGURE_ARGS+=	--enable-64-bit
+.endif
+
+.include <bsd.port.post.mk>
