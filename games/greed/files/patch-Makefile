@@ -1,0 +1,18 @@
+--- Makefile.orig	Mon Apr  2 21:52:50 2001
++++ Makefile	Mon Apr  2 21:54:08 2001
+@@ -13,14 +13,12 @@
+ 
+ # Prepend "c:" (or whatever drive you use) to the following paths for MSDOS
+ # Location of high score file
+-SFILE=/usr/games/lib/greed.hs
++SFILE=/var/games/greed.hs
+ # Location of game executable
+ BIN=/usr/games
+ 
+ # Flags for use with the Linux ncurses package (recommended)
+-CFLAGS = -O -s -DNOTBSD
+ TERMLIB = -lncurses
+-CC = gcc
+ 
+ # Flags for use with stock curses
+ # CFLAGS = -O -s
