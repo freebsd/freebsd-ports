@@ -1,0 +1,10 @@
+#!/bin/sh
+
+dirs="."
+
+for d in ${dirs}; do
+    perl -pi -e '
+	s@^(prefix[ \t]*=).*$@$1\${PREFIX}@;
+	s@^(exec_prefix[ \t]*=).*$@$1\${PREFIX}@;
+	    ' ${WRKSRC}/${d}/Makefile
+done

@@ -1,0 +1,20 @@
+--- configure.in.orig	Fri Nov 20 15:14:25 1998
++++ configure.in	Thu Mar 25 16:30:20 1999
+@@ -111,6 +111,8 @@
+     TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
+ elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl.h; then
+     TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
++elif test -d ${TCL_EXEC_PREFIX}/include/tcl${TCL_VERSION} -a -f ${TCL_EXEC_PREFIX}/include/tcl${TCL_VERSION}/tcl.h; then
++    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include/tcl${TCL_VERSION}
+ else
+     TCL_INC_DIR=$prefix/include
+ fi
+@@ -210,6 +212,8 @@
+     TK_INC_DIR=${TK_EXEC_PREFIX}/include
+ elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk.h; then
+     TK_INC_DIR=${TK_EXEC_PREFIX}/include
++elif test -d ${TK_EXEC_PREFIX}/include/tk${TK_VERSION} -a -f ${TK_EXEC_PREFIX}/include/tk${TK_VERSION}/tk.h; then
++    TK_INC_DIR=${TK_EXEC_PREFIX}/include/tk${TK_VERSION}
+ else
+     TK_INC_DIR=$prefix/include
+ fi
