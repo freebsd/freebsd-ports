@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.89
+PORTVERSION?=	0.90
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -209,6 +209,12 @@ NETWORK=
 NETWORK=\#
 .endif
 
+.if ${MAMEMESS} == "mess"
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile - duplicate symbols in messtest
+.endif
+.endif
+
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 do-configure:
@@ -251,7 +257,8 @@ do-configure:
 	${LN} -s ${WRKSRC}/src/png.h ${WRKSRC}/src/mame_png.h
 
 .if ${MAMEMESS} == "mess"
-	${REINPLACE_CMD} -e "s@-Wl,--allow-multiple-definition@-Wl,-z -Wl,muldefs@" ${WRKSRC}/makefile.mes
+	${REINPLACE_CMD} -e "s@-Wl,--allow-multiple-definition@-Wl,-z -Wl,muldefs@" \
+		${WRKSRC}/makefile.mes ${WRKSRC}/src/unix/unix.mak
 .endif
 
 post-build:
@@ -268,6 +275,8 @@ post-build:
 post-install:
 .if ${MAMEMESS} == "mame"
 	${INSTALL_PROGRAM} ${WRKSRC}/xml2info ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/romcmp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/bin
 .endif
 	${MV} ${PREFIX}/bin/x${MAMEMESS}.${DISPLAY_METHOD} \
 		${PREFIX}/bin/x${MAMEMESS}
