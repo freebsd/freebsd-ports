@@ -1,23 +1,5 @@
---- Premake.make.orig	Tue Feb 24 21:49:57 2004
-+++ Premake.make	Thu Mar 25 21:03:11 2004
-@@ -8,13 +8,13 @@
- TARGET =
- 
- ifeq ($(CONFIG),Debug)
--  CFLAGS += --no-rtti --no-exceptions
--  LDFLAGS += -ldl
-+  CFLAGS += --no-exceptions
-+  LDFLAGS +=
-   TARGET = premake
- endif
- ifeq ($(CONFIG),Release)
--  CFLAGS += --no-rtti --no-exceptions -Os
--  LDFLAGS += -ldl
-+  CFLAGS += --no-exceptions -Os
-+  LDFLAGS +=
-   TARGET = premake
- endif
- CXXFLAGS=$(CFLAGS)
+--- Premake.make.orig	Mon Mar 29 18:33:15 2004
++++ Premake.make	Mon Mar 29 18:33:35 2004
 @@ -23,37 +23,21 @@
  	-@if [ ! -d obj ]; then mkdir obj; fi
  	@echo $(notdir $<)
