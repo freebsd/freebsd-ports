@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	1.11.6
+PORTVERSION=	1.14.0
 CATEGORIES=	devel textproc
-MASTER_SITES=	ftp://astyle.sourceforge.net/pub/astyle/stable/src/\
-		http://www.gelemna.org/ports/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_src
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-q -aa
 
 MAINTAINER=	croyle@gelemna.org
-
-WRKSRC=		${WRKDIR}/astyle_1.11.6
 
 ALL_TARGET=	astyle
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/astyle
-	${INSTALL_DATA} ${WRKSRC}/astyle.html ${PREFIX}/share/doc/astyle
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
