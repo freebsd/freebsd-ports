@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_any
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 
