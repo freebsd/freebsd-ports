@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.11 1997/06/14 19:40:03 andreas Exp $
 
 DISTNAME=	postgresql-v6.1
 PKGNAME=	postgresql-6.1
@@ -46,28 +46,34 @@ pre-install:
 	@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 
 post-install:
-	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
-		echo "PATH=\${PATH}:${PREFIX}/pgsql/bin" \
+		echo "PATH=${PATH}:${PREFIX}/pgsql/bin" \
 			> ${PREFIX}/pgsql/.profile; \
-		echo "MANPATH=\${MANPATH}:${PREFIX}/pgsql/bin" \
+		echo "MANPATH=${MANPATH}:${PREFIX}/pgsql/bin" \
 			>> ${PREFIX}/pgsql/.profile; \
-		echo "PGLIB=${PREFIX}/pgsql/bin" \
+		echo "PGLIB=${PREFIX}/pgsql/lib" \
 			>> ${PREFIX}/pgsql/.profile; \
-		echo "PGDATA=${PREFIX}/pgsql/bin" \
+		echo "PGDATA=${PREFIX}/pgsql/data" \
 			>> ${PREFIX}/pgsql/.profile; \
 		echo "export PATH MANPATH PGLIB PGDATA" \
 			>> ${PREFIX}/pgsql/.profile; \
 	fi
+	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
 	@ echo 'Initializing PostgreSQL Databases - this may take a few minutes...'
+	@ /sbin/ldconfig -m ${PREFIX}/pgsql/lib
 	@ su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ if [ ! -f ${PREFIX}/etc/rc.d/postgresql.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/postgresql.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/postgresql.sh; \
+		echo "[ -d ${PREFIX}/pgsql/lib ] && /sbin/ldconfig -m ${PREFIX}/pgsql/lib" >> ${PREFIX}/etc/rc.d/postgresql.sh; \
 		echo "[ -x ${PREFIX}/pgsql/bin/postmaster ] && su -l pgsql -c '${PREFIX}/pgsql/bin/postmaster -D${PREFIX}/pgsql/data -o -F > ${PREFIX}/pgsql/errlog &' && echo -n ' pgsql'" >> ${PREFIX}/etc/rc.d/postgresql.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/postgresql.sh; \
 	fi
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/pgsql
+	${CP} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/pgsql
+.endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
 .endif
