@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.3.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=  ${MASTER_SITE_LOCAL} \
+MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://people.freebsd.org/~mbr/ooo/:moz \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
@@ -16,18 +16,20 @@ MASTER_SITES+=  ${MASTER_SITE_LOCAL} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
 MASTER_SITE_SUBDIR=	maho/openoffice.org
-DISTFILES+=	OOo_${PORTVERSION}.${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc \
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
-EXTRACT_ONLY=	OOo_${PORTVERSION}.${SNAPDATE}_source.tar.bz2
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
-NO_LATEST_LINK=		yes
+MAINTAINER=	openoffice@FreeBSD.org
+
+SNAPDATE=	20040810
+NO_LATEST_LINK=	yes
 USE_GNOME=	orbit gtk12 gtk20
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-SNAPDATE=	20040729
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
@@ -51,11 +53,10 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 BROKEN=		"Does not compile on 5-current"
 .endif
 
-MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_NR=		645
-RELEASE_NR=		${PORTVERSION}
+RELEASE_NR=		1.1.3
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
@@ -65,7 +66,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX?=		-${LANG_SUFFIX}
 .endif
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -76,7 +77,7 @@ CC=	gcc32
 CXX=	g++32
 .endif
 
-BUILD_DEPENDS+= ${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
+BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -92,7 +93,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 JDKDIR?=	${LOCALBASE}/jdk1.4.2
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 ANT?=		${LOCALBASE}/bin/ant
@@ -116,7 +117,7 @@ LANG_EXT=		01
 .endif
 
 .if defined(ALL_LOCALIZED_LANGS)
-CONFIGURE_ARGS+=        --with-lang=ALL
+CONFIGURE_ARGS+=	--with-lang=ALL
 .endif
 
 .if defined(WITH_DEBUG)
