@@ -3,7 +3,7 @@
 # Date created:        28 March 1997
 # Whom:                Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.8 1998/05/13 15:25:05 mph Exp $
+# $Id: Makefile,v 1.9 1998/05/17 22:54:10 mph Exp $
 #
 
 DISTNAME=	slrn0.9.5.2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/
 
 MAINTAINER=	xaa@xaa.iae.nl
 
-LIB_DEPENDS=	slang\\.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 WRKSRC=		${WRKDIR}/slrn
 GNU_CONFIGURE=	yes
