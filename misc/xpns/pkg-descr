@@ -1,0 +1,29 @@
+PNS
+---
+Is a public domain Petri net simulation tool
+for Unix systems.
+PNS is a graphics tool and requires the X window system.
+see also www-page:
+http://www.informatik.uni-stuttgart.de/ipvr/bv/pns/pns.html
+
+Examples:
+---------
+- simple.net
+  3-2 Reduction
+
+- add.net
+  x = x + y
+
+- sub1.net
+  x >= y : x = x - y
+  x < y  : y = y - x
+
+- sub2.net
+  x = x - y
+  NEGATIVE = 1   <=>   x-y < 0
+
+- mult.net
+  z = x * y
+
+- phil.net
+  Dining Philosophers Problem
