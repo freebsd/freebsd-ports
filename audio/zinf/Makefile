@@ -21,6 +21,7 @@ LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_GTK=	yes
+WANT_ESOUND=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -34,7 +35,7 @@ CFLAGS+=	"-D_M_IX86"
 CFLAGS+=	"-D_M_ALPHA"
 .endif
 
-.if defined(WITH_ESOUND) || defined(WITH_ALL_PLUGINS)
+.if defined(HAVE_ESOUND) || defined(WITH_ALL_PLUGINS)
 USE_ESOUND=	yes
 PLIST_SUB+=	ESOUND=""
 .else
@@ -50,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-arts
 PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
-.if defined(WITH_VORBIS) || defined(WITH_ALL_PLUGINS)
+.if !defined(WITHOUT_VORBIS) || defined(WITH_ALL_PLUGINS)
 LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
@@ -62,9 +63,9 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_ESOUND=yes       build with ESounD outout plugin"
-	@${ECHO_MSG} "WITH_LIBARTS=yes      build with libArts output plugin"
-	@${ECHO_MSG} "WITH_VORBIS=yes       build with Ogg/Vorbis codec plugin"
+	@${ECHO_MSG} "WITH_LIBARTS	build with libArts output plugin"
+	@${ECHO_MSG} "WITHOUT_ESOUND	do NOT build with esd support"
+	@${ECHO_MSG} "WITHOUT_VORBIS	do NOT build with Ogg/Vorbis codec plugin"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
 	@${ECHO_MSG}
