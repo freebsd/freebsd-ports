@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.13
+PORTVERSION=	0.76.17
 CATEGORIES=	www
-MASTER_SITES=	http://65.108.58.129/asp2php/ \
+MASTER_SITES=	http://www.mikekohn.com/asp2php/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
@@ -27,6 +27,7 @@ USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 ALL_TARGET=	default gui
 PLIST_SUB+=	WANT_GTK=""
+HAVE_GTK=	yes
 .else
 ALL_TARGET=	default
 PLIST_SUB+=	WANT_GTK="@comment "
