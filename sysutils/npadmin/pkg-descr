@@ -1,1 +1,20 @@
 An SNMP based command line network printer management tool.
+
+Modern network printers are quite easily managable across a network.
+However, until now, the only tools that make use of these capabilities
+are the vendor supplied products such as Web JetAdmin by HP, Marknet by
+Lexmark, Centreview by Xerox or PhaserLink by Tektronix. The problem is
+that all of these tools are fundamentally GUI based applications and
+there is no way to incorporate their functionality into scripts. This
+program is designed to be called from scripts to find things out about
+printers.
+
+Information you can gather about printers with npadmin:
+    Model and vendor, Location and contact information,
+    Network configuration, Memory and disk usage, Max and min papersize,
+    Engine speed, Duplexer installed, Printer status, Printer languages,
+    Marker technology, Page count, Minimum margins,
+    Size, capacity and level of paper trays, Toner levels, Alert conditions,
+    Resolution, Display information, Cover pages on/off.
+
+WWW: http://npadmin.sourceforge.net/
