@@ -324,6 +324,10 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/psi_start/psi_start.test.pl
 %%EXAMPLESDIR%%/psi_start/Makefile
 %%EXAMPLESDIR%%/psi_start/psi_start.pl
+%%EXAMPLESDIR%%/rhf-lindep1/Makefile.in
+%%EXAMPLESDIR%%/rhf-lindep1/input.dat
+%%EXAMPLESDIR%%/rhf-lindep1/output.ref
+%%EXAMPLESDIR%%/rhf-lindep1/Makefile
 %%EXAMPLESDIR%%/rhf-oeprop/Makefile.in
 %%EXAMPLESDIR%%/rhf-oeprop/input.dat
 %%EXAMPLESDIR%%/rhf-oeprop/mo.cube.ref
@@ -343,6 +347,10 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/rohf-stab/rohf-stab.test.pl
 %%EXAMPLESDIR%%/rohf-stab/Makefile
 %%EXAMPLESDIR%%/rohf-stab/rohf-stab.pl
+%%EXAMPLESDIR%%/rohf-lindep1/Makefile.in
+%%EXAMPLESDIR%%/rohf-lindep1/input.dat
+%%EXAMPLESDIR%%/rohf-lindep1/output.ref
+%%EXAMPLESDIR%%/rohf-lindep1/Makefile
 %%EXAMPLESDIR%%/scf-freq/Makefile.in
 %%EXAMPLESDIR%%/scf-freq/file15.ref
 %%EXAMPLESDIR%%/scf-freq/file17.ref
@@ -439,6 +447,10 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/scf-polar/output.ref
 %%EXAMPLESDIR%%/scf-polar/scf-polar.test.pl
 %%EXAMPLESDIR%%/scf-polar/Makefile
+%%EXAMPLESDIR%%/uhf-lindep1/Makefile.in
+%%EXAMPLESDIR%%/uhf-lindep1/input.dat
+%%EXAMPLESDIR%%/uhf-lindep1/output.ref
+%%EXAMPLESDIR%%/uhf-lindep1/Makefile
 %%EXAMPLESDIR%%/uhf-stab/Makefile.in
 %%EXAMPLESDIR%%/uhf-stab/input.dat
 %%EXAMPLESDIR%%/uhf-stab/output.ref
@@ -457,6 +469,7 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/runtest.pl
 @dirrm %%EXAMPLESDIR%%/uhf-stab-follow
 @dirrm %%EXAMPLESDIR%%/uhf-stab
+@dirrm %%EXAMPLESDIR%%/uhf-lindep1
 @dirrm %%EXAMPLESDIR%%/scf-polar
 @dirrm %%EXAMPLESDIR%%/scf-opt9
 @dirrm %%EXAMPLESDIR%%/scf-opt8
@@ -474,8 +487,10 @@ lib/libPSI_r12.a
 @dirrm %%EXAMPLESDIR%%/scf-freq-numer
 @dirrm %%EXAMPLESDIR%%/scf-freq
 @dirrm %%EXAMPLESDIR%%/rohf-stab
+@dirrm %%EXAMPLESDIR%%/rohf-lindep1
 @dirrm %%EXAMPLESDIR%%/rhf-stab
 @dirrm %%EXAMPLESDIR%%/rhf-oeprop
+@dirrm %%EXAMPLESDIR%%/rhf-lindep1
 @dirrm %%EXAMPLESDIR%%/psi_start
 @dirrm %%EXAMPLESDIR%%/mp2r12-sp1
 @dirrm %%EXAMPLESDIR%%/mp2-sp
