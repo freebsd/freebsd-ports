@@ -107,6 +107,7 @@
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomekeyring
     SUBDIR += gnomekeyringmanager
+    SUBDIR += gnu-crypto
     SUBDIR += gnupg
     SUBDIR += gnupg-devel
     SUBDIR += gnupg-idea
