@@ -1,0 +1,6 @@
+PEAR::DB_Table builds on PEAR DB to abstract datatypes and automate table
+creation, data validation, insert, update, delete, and select; combines
+these with PEAR::HTML_QuickForm to automatically generate input forms
+that match the table column definitions.
+
+WWW: http://pear.php.net/package/DB_Table/
