@@ -40,14 +40,3 @@ $FreeBSD$
  endif
  
  ARCH			= freebsd
-@@ -61,3 +63,10 @@
- MKSHLIB			= $(LD) $(DSO_LDOPTS)
- 
- G++INCLUDES		= -I/usr/include/g++
-+
-+# IPv6 support part of the KAME.
-+ifeq ($(shell test -f /usr/local/v6/lib/libinet6.a && echo kame),kame)
-+OS_LIBS			+= -L/usr/local/v6/lib -linet6
-+endif
-+
-+OS_LIBS			+= -lxpg4
