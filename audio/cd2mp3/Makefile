@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.blackh0le.net/cd2mp3/dist/${PORTVERSION}/
 
-MAINTAINER=	jamie@blackh0le.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
