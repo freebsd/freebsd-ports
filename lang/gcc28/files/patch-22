@@ -6,7 +6,7 @@
     one less case to deal with in the following.  */
 -#if defined (__BSD_NET2__) || defined (____386BSD____) || defined (__FreeBSD__) || defined(__NetBSD__)
 +#if defined (__BSD_NET2__) || defined (____386BSD____) || defined (__FreeBSD__) || defined(__NetBSD__) || defined (__OpenBSD__)
-+#define __NO_GNUC_VA_LIST
++#define __NO_GNUC_VA_LIST	/* <machine/ansi.h> defines __gnuc_va_list */
  #include <machine/ansi.h>
  #endif
  

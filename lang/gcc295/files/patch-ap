@@ -4,7 +4,7 @@
  /* On 4.3bsd-net2, make sure ansi.h is included, so we have
     one less case to deal with in the following.  */
  #if defined (__BSD_NET2__) || defined (____386BSD____) || defined (__FreeBSD__) || defined(__NetBSD__)
-+#define __NO_GNUC_VA_LIST
++#define __NO_GNUC_VA_LIST	/* <machine/ansi.h> defines __gnuc_va_list */
  #include <machine/ansi.h>
  #endif
  
