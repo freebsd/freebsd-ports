@@ -94,6 +94,7 @@
     SUBDIR += freeradius-devel
     SUBDIR += freewais-sf
     SUBDIR += fspclient
+    SUBDIR += fspd
     SUBDIR += fugu
     SUBDIR += furi
     SUBDIR += gabber
