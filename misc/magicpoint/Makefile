@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER?=	itojun@itojun.org
 
+BROKEN=		"Security hole (buffer overflow yielding setgid uucp in xmindpath)"
+
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
 
 USE_IMAKE=	yes
