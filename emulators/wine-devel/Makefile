@@ -50,6 +50,10 @@ pre-extract:
 	@${ECHO} "that when running, only when it has to enter the debugger...)"
 .endif
 
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/wine.sh \
+		> ${WRKSRC}/wine.sh
+
 post-configure:
 	cd ${WRKSRC} && make depend
 
@@ -88,5 +92,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
+
+post-install:
+	@$INSTALL_SCRIPT} ${WRKSRC}/wine.sh > ${PREFIX}/etc/rc.d/000.wine.sh
 
 .include <bsd.port.post.mk>

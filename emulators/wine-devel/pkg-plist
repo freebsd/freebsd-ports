@@ -28,6 +28,7 @@ bin/winewrap
 bin/winhelp
 bin/wmc
 bin/wrc
+etc/rc.d/000.wine.sh
 @unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
 etc/wine.conf.sample
 include/wine/debug.h
