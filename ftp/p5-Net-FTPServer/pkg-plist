@@ -24,6 +24,7 @@ sbin/perlftpd
 %%PORTDOCS%%share/doc/Net-FTPServer/TODO
 %%PORTDOCS%%share/doc/Net-FTPServer/eg1-psql63.sql
 %%PORTDOCS%%share/doc/Net-FTPServer/eg1.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/press1.0.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/rfcs.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/safesignals.txt
 share/examples/Net-FTPServer/ftpd.conf
