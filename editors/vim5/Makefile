@@ -11,7 +11,6 @@ PORTVERSION=	5.8.8
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://relay.nuxi.com/pub/vim/unreleased/unix/ \
-		ftp://ftp.freesoftware.com/pub/vim/unix/ \
 		ftp://ftp.vim.org/pub/vim/unix/  \
 		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \

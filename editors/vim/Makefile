@@ -12,7 +12,6 @@ PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
-		ftp://ftp.freesoftware.com/pub/vim/unreleased/unix/ \
 		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
 		ftp://ftp.is.co.za/applications/editors/unreleased/vim/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unreleased/unix/  \
