@@ -1,0 +1,16 @@
+diff -ruN swarm.orig/files/patch-ae swarm/files/patch-ae
+--- swarm.orig/files/patch-ae	Thu Jan  1 08:00:00 1970
++++ swarm/files/patch-ae	Mon May 20 20:58:48 2002
+@@ -0,0 +1,11 @@
++--- java/c/Makefile.in.orig	Sun Feb 13 01:50:41 2000
+++++ java/c/Makefile.in	Mon May 20 18:27:20 2002
++@@ -71,7 +71,7 @@
++ 	$(LIBTOOL) --mode=link $(OBJC) $(CFLAGS) -o $@ -version-info $(STUBSCURRENT):$(STUBSREVISION):$(STUBSAGE) -rpath $(libdir) $^
++ 
++ $(_LIBJAVASWARM_LA): $(_LIBJAVASWARMSTUBS_LA) $(libjavaswarm_la_OBJECTS)
++-	$(LIBTOOL) --mode=link $(OBJC) $(CFLAGS) -o $@ -version-info $(CURRENT):$(REVISION):$(AGE) -L$(abs_top_builddir)/libobjc -rpath $(libdir) $(libjavaswarm_la_OBJECTS) $(_LIBJAVASWARMSTUBS_LA) -L$(abs_top_builddir)/src $(SWARMLIBS) -lobjc
+++	$(LIBTOOL) --mode=link $(OBJC) $(CFLAGS) -o $@ -version-info $(CURRENT):$(REVISION):$(AGE) -rpath $(libdir) $(javaswarmstubs_OBJECTS) $(javaswarm_OBJECTS) $(foreach module,$(SWARMMODULES),$(top_builddir)/src/$(module)/*.lo) $(filter-out $(top_builddir)/libobjc/nil_method.lo,$(wildcard $(top_builddir)/libobjc/*.lo)) $(SUPPORTLDFLAGS) $(SYSLIBS)
++ 
++ ENTRYCMD=-e @JAVASWARM_DLL_ENTRY@
++ 
+
