@@ -31,6 +31,7 @@ NO_FILTER_SHLIBS=	1
 .if ${OSVERSION} < 500000
 # the problem is a little more subtle, really. It requires gcc 3
 USE_GCC=	3.3
+BROKEN=		"Does not compile"
 .endif
 
 QTDIR?=		${X11BASE}
