@@ -1,5 +1,5 @@
-*** makefile.orig	Fri May 28 17:37:08 1999
---- makefile	Sat Sep  4 07:45:46 1999
+*** makefile.orig	Fri Sep 17 10:53:35 1999
+--- makefile	Tue Sep 21 19:53:01 1999
 ***************
 *** 254,263 ****
   
@@ -24,7 +24,7 @@
   LIBFONT = font
   LIBMAPS = maps
 ***************
-*** 269,283 ****
+*** 269,289 ****
   CHARIN	= 1
   CHAROUT	= 0
   
@@ -40,7 +40,13 @@
   
   RCOPY	= cp -r
   
---- 269,283 ----
+! COPTS	= -ansi -pedantic -Wall
+  
+! CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
+  	  -DOS_DOS=$(OSDOS)					\
+  	  -DOS_MAC=$(OSMAC)					\
+  	  -DDB_FIX=$(DBFIX)					\
+--- 269,289 ----
   CHARIN	= 1
   CHAROUT	= 0
   
@@ -56,13 +62,38 @@
   
   RCOPY	= cp -r
   
+! #COPTS	= -ansi -pedantic -Wall
+  
+! CFLAGS	+= -DOS_UNIX=$(OSUNIX)					\
+  	  -DOS_DOS=$(OSDOS)					\
+  	  -DOS_MAC=$(OSMAC)					\
+  	  -DDB_FIX=$(DBFIX)					\
 ***************
-*** 329,368 ****
+*** 301,307 ****
+  	  -DCHAR_OUT=$(CHAROUT)					\
+  	  -DLOCALE_ON=$(USELOC)					\
+  	  -DASSERT_ON=1 $(COPTS)				\
+! 	  -DDEBUG_ON=1  -g					\
+  	  -DPDF_COMPRESSION=$(PDF_COMPRESSION)			\
+  	  $(ZLIBPATH)
+  
+--- 301,307 ----
+  	  -DCHAR_OUT=$(CHAROUT)					\
+  	  -DLOCALE_ON=$(USELOC)					\
+  	  -DASSERT_ON=1 $(COPTS)				\
+! #	  -DDEBUG_ON=1  -g					\
+  	  -DPDF_COMPRESSION=$(PDF_COMPRESSION)			\
+  	  $(ZLIBPATH)
+  
+***************
+*** 327,368 ****
+  install: lout c2lout
+  	@echo ""
   	@echo "(a) Installing lout and c2lout binaries into BINDIR $(BINDIR)"
-  	cp lout $(BINDIR)/lout
-  	chmod 755 $(BINDIR)/lout
-  	cp c2lout $(BINDIR)/c2lout
-  	chmod 755 $(BINDIR)/c2lout
+! 	cp lout $(BINDIR)/lout
+! 	chmod 755 $(BINDIR)/lout
+! 	cp c2lout $(BINDIR)/c2lout
+! 	chmod 755 $(BINDIR)/c2lout
   	@echo ""
   	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
 ! 	mkdir $(LIBDIR)
@@ -98,14 +129,12 @@
   	@echo ""
   	@echo "(c) Initializing run (should be silent, no errors expected)"
   	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
---- 329,371 ----
+--- 327,367 ----
+  install: lout c2lout
+  	@echo ""
   	@echo "(a) Installing lout and c2lout binaries into BINDIR $(BINDIR)"
-  	cp lout $(BINDIR)/lout
-  	chmod 755 $(BINDIR)/lout
-+ 	chown bin:bin $(BINDIR)/lout
-  	cp c2lout $(BINDIR)/c2lout
-  	chmod 755 $(BINDIR)/c2lout
-+ 	chown bin:bin $(BINDIR)/c2lout
+! 	install -c -s -o bin -g bin lout $(BINDIR)/lout
+! 	install -c -s -o bin -g bin c2lout $(BINDIR)/c2lout
   	@echo ""
   	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
 ! 	-mkdir $(LIBDIR)
@@ -144,7 +173,7 @@
   	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
 ***************
 *** 370,375 ****
---- 373,379 ----
+--- 369,375 ----
   	@echo "(d) Changing mode of files just created by initializing run"
   	chmod 644 $(LIBDIR)/$(LIBDATA)/*
   	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
@@ -177,7 +206,7 @@
   	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
   	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
   	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
---- 382,408 ----
+--- 378,404 ----
   	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
   	man/lout.1 > $(MANDIR)/lout.1
   	chmod 644 $(MANDIR)/lout.1
@@ -216,7 +245,7 @@
   	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
   	cp locale/msgs.de $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/msgs.$(LOC_DE)
   	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/errors.$(LOC_DE)	\
---- 412,420 ----
+--- 408,416 ----
   installde:
   	@echo ""
   	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"

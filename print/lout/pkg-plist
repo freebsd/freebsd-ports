@@ -45,7 +45,6 @@ share/doc/lout/expert/det_prec
 share/doc/lout/expert/det_size
 share/doc/lout/expert/det_sort
 share/doc/lout/expert/det_visi
-share/doc/lout/expert/dop
 share/doc/lout/expert/exa
 share/doc/lout/expert/exa_bibl
 share/doc/lout/expert/exa_chap
@@ -409,15 +408,16 @@ share/lout/include/tbl
 share/lout/include/tblf
 share/lout/include/tblf.lpg
 share/lout/include/ts
+share/lout/locale/.place_holder
 share/lout/maps/00README
 share/lout/maps/Ding.LCM
 share/lout/maps/Latin1.LCM
 share/lout/maps/LtLatin1.LCM
+share/lout/maps/LtLatin2.LCM
 share/lout/maps/Std.LCM
 share/lout/maps/Symb.LCM
 share/lout/maps/koi8r.LCM
 share/lout/maps/null.LCM
-share/lout/locale/.place_holder
 @dirrm share/lout/maps
 @dirrm share/lout/locale
 @dirrm share/lout/include
