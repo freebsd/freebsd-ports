@@ -3946,6 +3946,7 @@ libSM		ports/x11/libSM
 libU77		ports/devel/libU77
 libX11		ports/x11/libX11
 libXau		ports/x11/libXau
+libXcursor	ports/x11/libXcursor
 libXdmcp	ports/x11/libXdmcp
 libXext		ports/x11/libXext
 libXfont	ports/x11/libXfont
