@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.01a21
+PORTVERSION?=	2.01a23
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-2.01a21
+DISTNAME=	cdrtools-2.01a23
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
@@ -25,7 +25,7 @@ MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 DOCS=		README README.compression README.eltorito README.graft_dirs \
 		README.hfs_boot README.hfs_magic README.hide README.joliet \
 		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
-		README.session README.sort README.sparcboot
+		README.session README.sort README.sparcboot README.sunx86boot
 .else
 MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 DOCS=		README README.DiskT@2 README.FreeBSD README.WORM README.cdplus \
