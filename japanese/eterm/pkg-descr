@@ -4,10 +4,7 @@ supports Japanese input with XIM (X Input Method) protocol.
 If you want to input Japanese, use "--input-method" and 
 "--preedit-type" option. 
 
-If you have a comment about Japanese input support for Eterm and
-this port, contact with MANTANI Nobutaka <nobutaka@nobutaka.com>.
-Further information about this port is available at
-http://www.nobutaka.com/programs/Eterm.html .
+WWW: http://eterm.sourceforge.net/
 
-Eterm Main Web Site -- <http://www.tcserv.com/Eterm/>
-Eterm FAQ -- <http://www.tcserv.com/Eterm/FAQ.html>
+--
+MANTANI Nobutaka <nobutaka@nobtaka.com>

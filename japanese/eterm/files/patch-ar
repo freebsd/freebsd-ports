@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sun Jan 23 23:14:37 2000
-+++ src/Makefile.in	Sun Jan 23 23:14:55 2000
-@@ -106,7 +106,7 @@
- libEterm_la_SOURCES = activeconfig.c activeeterm.c activetags.c command.c 		graphics.c grkelot.c menubar.c misc.c netdisp.c options.c 		pixmap.c screen.c scrollbar.c system.c threads.c utmp.c
+--- src/Makefile.in.orig	Mon Feb  7 21:50:25 2000
++++ src/Makefile.in	Mon Feb  7 21:51:29 2000
+@@ -120,7 +120,7 @@
  
- libEterm_la_DEPENDENCIES = $(DIST_ROOT)/libmej/libmej.la feature.h
+ 
+ libEterm_la_DEPENDENCIES = $(top_builddir)/libmej/libmej.la feature.h
 -libEterm_la_LDFLAGS = -release $(VERSION)
-+libEterm_la_LDFLAGS = -version-info 8:8:8
++libEterm_la_LDFLAGS = -version-info 9:9:9
  
  bin_PROGRAMS = Eterm
  Eterm_SOURCES = main.c
