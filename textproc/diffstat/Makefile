@@ -9,7 +9,7 @@ PORTNAME=	diffstat
 PORTVERSION= 	1.28
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
-DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@jpj.net
 
