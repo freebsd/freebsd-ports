@@ -23,5 +23,4 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
-
 .include <bsd.port.mk>
