@@ -6,7 +6,7 @@ Several functions provide saner interfaces than the standard
 libc functions.  libfirestring also provides functions that
 are in most libc's but not provided for by POSIX, enabling
 programmers to write POSIX-compliant code while using such
-safe functions (strcasecmp, strncasecmp, snprintf).
+safe functions (strcasecmp, strncasecmp, snprintf)."
 
 "libfirestring also includes functions for dealing with
 reading configuration files in an easy to program fashion."

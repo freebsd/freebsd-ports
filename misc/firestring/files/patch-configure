@@ -1,78 +1,56 @@
---- configure.old	Thu Aug 22 12:04:27 2002
-+++ configure	Thu Aug 22 12:08:24 2002
-@@ -518,33 +518,33 @@
+--- configure.orig	Sun Sep 22 06:37:40 2002
++++ configure	Tue Oct 15 17:22:58 2002
+@@ -322,7 +322,7 @@
+ $ECHO "INCLUDEDIR ?= \$(PREFIX)/include" >> Makefile
+ $ECHO "MANDIR ?= \$(PREFIX)/man" >> Makefile
+ $ECHO "CONFDIR ?= \$(PREFIX)/etc" >> Makefile
+-$ECHO "INSTALL_GROUP ?= root" >> Makefile
++$ECHO "INSTALL_GROUP ?= wheel" >> Makefile
+ $ECHO "INSTALL_USER ?= root" >> Makefile
  
- $ECHO -n "	adding rule to install binaries..."
- $ECHO "install-binaries: $BINARIES" >> Makefile
--$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(BINDIR)" >> Makefile
-+$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/bin" >> Makefile
+ $ECHO "LIBS := \$(LIBS) $INLIBS" >> Makefile
+@@ -517,7 +517,7 @@
  $ECHO "done"
  for BINARY in $BINARIES; do
  	$ECHO -n "	adding rule to install binary $BINARY..."
--	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $BINARY \$(BINDIR)" >> Makefile
-+	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $BINARY \$(PREFIX)/bin" >> Makefile
+-	$ECHO "	./install.sh $BINARY \$(BINDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
++	$ECHO "	./install.sh $BINARY \$(PREFIX)/bin \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
  	$ECHO "done"
  done;
  $ECHO >> Makefile
- 
- $ECHO -n "	adding rule to install static libraries..."
- $ECHO "install-static: $STATIC" >> Makefile
--$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(LIBDIR)" >> Makefile
-+$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/lib" >> Makefile
+@@ -527,7 +527,7 @@
  $ECHO "done"
  for LIBRARY in $STATIC; do
  	$ECHO -n "	adding rule to install static library $LIBRARY..."
--	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $LIBRARY \$(LIBDIR)" >> Makefile
-+	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $LIBRARY \$(PREFIX)/lib" >> Makefile
+-	$ECHO "	./install.sh $LIBRARY \$(LIBDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
++	$ECHO "	./install.sh $LIBRARY \$(PREFIX)/lib \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
  	$ECHO "done"
  done;
  $ECHO >> Makefile
- 
- $ECHO -n "	adding rule to install shared libraries..."
- $ECHO "install-shared: $STATIC" >> Makefile
--$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(LIBDIR)" >> Makefile
-+$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/lib" >> Makefile
+@@ -537,7 +537,7 @@
  $ECHO "done"
  for LIBRARY in $SHARED; do
  	$ECHO -n "	adding rule to install shared library $LIBRARY..."
--	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $LIBRARY \$(LIBDIR)" >> Makefile
-+	$ECHO "	install -m 0755 -o \$(INSTALL_USER) $LIBRARY \$(PREFIX)/lib" >> Makefile
+-	$ECHO "	./install.sh $LIBRARY \$(LIBDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
++	$ECHO "	./install.sh $LIBRARY \$(PREFIX)/lib \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
  	$ECHO "done"
  done;
  $ECHO >> Makefile
-@@ -561,10 +561,10 @@
- 	$ECHO "no firemake.headers found"
- fi
- $ECHO "install-headers: $HEADERS" >> Makefile
--$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(INCLUDEDIR)" >> Makefile
-+$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/include" >> Makefile
- for HEADER in $HEADERS; do
- 	$ECHO -n "	adding rule to install header $HEADER..."
--	$ECHO "	install -m 0644 -o \$(INSTALL_USER) $HEADER \$(INCLUDEDIR)" >> Makefile
-+	$ECHO "	install -m 0644 -o \$(INSTALL_USER) $HEADER \$(PREFIX)/include" >> Makefile
- 	$ECHO "done"
- done;
- $ECHO >> Makefile
-@@ -576,8 +576,8 @@
- 	LS=`ls man/*.$SECTION 2>>configure.log`
+@@ -569,7 +569,7 @@
  	if test "$LS" != ""; then
- 		$ECHO "man/*.$SECTION" >> Makefile
--		$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(MANDIR)/man$SECTION" >> Makefile
--		$ECHO "	install -m 0644 -o \$(INSTALL_USER) man/*.$SECTION \$(MANDIR)/man$SECTION" >> Makefile
-+		$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/man/man$SECTION" >> Makefile
-+		$ECHO "	install -m 0644 -o \$(INSTALL_USER) man/*.$SECTION \$(PREFIX)/man/man$SECTION" >> Makefile
+ 		$ECHO $LS >> Makefile
+ 		for MANPAGE in $LS; do
+-			$ECHO "	./install.sh $MANPAGE \$(MANDIR)/man$SECTION \$(INSTALL_USER) \$(INSTALL_GROUP) 0644" >> Makefile
++			$ECHO "	./install.sh $MANPAGE \$(PREFIX)/man/man$SECTION \$(INSTALL_USER) \$(INSTALL_GROUP) 0644" >> Makefile
+ 		done;
  		$ECHO "done"
  	else
- 		$ECHO >> Makefile
-@@ -602,9 +602,9 @@
- 		$ECHO -n "conf/$CONF " >> Makefile
+@@ -596,7 +596,7 @@
  	done
  	$ECHO >> Makefile
--	$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(CONFDIR)" >> Makefile
-+	$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/etc" >> Makefile
  	for CONF in $CONFS; do
--		$ECHO "	if test ! -f \$(CONFDIR)/$CONF; then install -m 0644 -o \$(INSTALL_USER) conf/$CONF \$(CONFDIR); fi" >> Makefile
-+		$ECHO "	if test ! -f \$(PREFIX)/$etc; then install -m 0644 -o \$(INSTALL_USER) conf/$CONF \$(PREFIX)/etc; fi" >> Makefile
+-		$ECHO "	if test ! -f \$(CONFDIR)/$CONF; then ./install.sh conf/$CONF \$(CONFDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0644; fi" >> Makefile
++		$ECHO "	if test ! -f \$(PREFIX)/etc/$CONF; then ./install.sh conf/$CONF \$(PREFIX)/etc \$(INSTALL_USER) \$(INSTALL_GROUP) 0644; fi" >> Makefile
  	done
  	$ECHO "done"
  else
