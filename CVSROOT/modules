@@ -687,6 +687,7 @@ blacs		ports/math/blacs
 bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
+bld		ports/net/bld
 blender		ports/graphics/blender
 blender-devel	ports/graphics/blender-devel
 blimitd		ports/sysutils/blimitd
