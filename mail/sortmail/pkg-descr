@@ -1,0 +1,15 @@
+sortmail - sort email messages by date/time
+
+sortmail  is  a  front end for decomposemail(1) and recom-
+posemail(1).  Each mailbox argument is  disassembled  into
+its  component  messages, then these messages are reassem-
+bled into new mailboxes based on  command  line  selection
+criteria.  Some additional functionality is provided, such
+as backup copies, recursion, etc.
+
+Software written by: Daniel E. Singer (a.k.a. Toolman)
+
+WWW: http://www.cs.duke.edu/~des/scripts/sortmail_article.html
+ 
+	Lasse L. Johnsen
+	lasse@freebsdcluster.org
