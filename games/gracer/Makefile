@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
@@ -29,7 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 USE_GMAKE=	yes
 # for plib (sound):
-CONFIGURE_ARGS+= --with-plib=${X11BASE}
+CONFIGURE_ARGS+= --with-plib=${X11BASE}/plib
+
+MAN6=		gracer.6
 
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
