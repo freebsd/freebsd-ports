@@ -8,3 +8,5 @@ example.
 
 A Fortran77 reference implementation of the BLAS is located in the blas
 directory of Netlib.
+
+WWW: http://www.netlib.org/blas/
