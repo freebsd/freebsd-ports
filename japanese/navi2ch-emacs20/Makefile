@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	010901
+PORTVERSION=	010909
 CATEGORIES=	japanese www elisp
-MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/
+MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/lisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	sf@FreeBSD.org
