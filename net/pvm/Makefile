@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dima@Chg.RU
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/pvm3
 MAKE_ENV+=	PVM_ROOT=${WRKSRC}
 MAKE_FLAGS+=	F77=/usr/bin/f77
@@ -79,4 +80,4 @@ do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	@ ${INSTALL_MAN} ${WRKSRC}/man/man3/* ${PREFIX}/man/man3
 
-.include "bsd.port.mk"
+.include <bsd.port.mk>
