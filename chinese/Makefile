@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1998/10/08 15:38:20 vanilla Exp $
+# $Id: Makefile,v 1.29 1999/04/03 01:36:26 steve Exp $
 #
 
     SUBDIR += CJK
@@ -29,5 +29,6 @@
     SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += xcin
+    SUBDIR += zh-aterm
 
 .include <bsd.port.subdir.mk>
