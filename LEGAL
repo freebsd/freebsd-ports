@@ -38,6 +38,7 @@ bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
 bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
 						Use Only
+bitstream-vera		ports/x11-fonts/bitstream-vera Preliminary version not for redistribution
 bnetd			ports/games/bnetd	has been disabled for legal issue
 bro-*			ports/security/bro	No distribution due to
 						alpha status
