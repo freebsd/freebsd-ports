@@ -32,6 +32,7 @@ BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 .if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
 .elif ${ARCH} == "amd64"
+PORTREVISION=	1
 MASTER_SITE_SUBDIR=	obrien
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	cvsup-without-gui.amd64
