@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.10.9
-PORTREVISION=	3
+PORTVERSION=	3.10.11
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A daemon for controlling APC UPS
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	intl.6:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 
@@ -28,8 +27,20 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir --enable-usb \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
-		--with-serial-dev=/dev/usv \
-		--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
+		--with-serial-dev=/dev/usv
+
+# We need this below
+CONF_FILES=apcupsd.conf
+
+.if defined(WITH_CGI)
+CONFIGURE_ARGS+=--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+PLIST_SUB+=	CGI=""
+CONF_FILES+=	multimon.conf hosts.conf
+.else
+PLIST_SUB+=	CGI="@comment "
+.endif
+
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=--enable-net
 .else
@@ -59,13 +70,16 @@ PORTDOCS=	apcupsd.pdf manual.html manual.css \
 		wininstall5.png wininstall6.png wininstall7.png
 
 pre-everything::
-.if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes            if you only want a network client."
+	@${ECHO_MSG} "  WITH_CGI=yes		if you want to build CGI support."
+	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want a network client."
 	@${ECHO_MSG} ""
-.else
+.if defined(WITH_CGI)
+	@${ECHO_MSG} "===> Building with CGI support."
+.endif
+.if defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "===> Building network client."
 .endif
 
@@ -74,7 +88,7 @@ post-configure:
 
 post-install:
 	# Check if the install presaves the configuration files
-	for na in apcupsd.conf hosts.conf multimon.conf; do \
+	for na in ${CONF_FILES}; do \
 		if [ -f ${PREFIX}/etc/apcupsd/$$na.new ]; then \
 			${ECHO_CMD} "etc/apcupsd/$$na.new" >> ${TMPPLIST}; \
 			if cmp -s ${PREFIX}/etc/apcupsd/$$na.new ${PREFIX}/etc/apcupsd/$$na; then \

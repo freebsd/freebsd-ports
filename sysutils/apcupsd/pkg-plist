@@ -13,10 +13,10 @@ etc/apcupsd/mainsback
 etc/apcupsd/masterconnect
 etc/apcupsd/mastertimeout
 etc/apcupsd/onbattery
-etc/apcupsd/cgi/multimon.cgi
-etc/apcupsd/cgi/multimoncss.cgi
-etc/apcupsd/cgi/upsfstats.cgi
-etc/apcupsd/cgi/upsimage.cgi
-etc/apcupsd/cgi/upsstats.cgi
+%%CGI%%etc/apcupsd/cgi/multimon.cgi
+%%CGI%%etc/apcupsd/cgi/multimoncss.cgi
+%%CGI%%etc/apcupsd/cgi/upsfstats.cgi
+%%CGI%%etc/apcupsd/cgi/upsimage.cgi
+%%CGI%%etc/apcupsd/cgi/upsstats.cgi
 etc/rc.d/%%STARTUP_SCRIPT%%
-@dirrm etc/apcupsd/cgi
+%%CGI%%@dirrm etc/apcupsd/cgi
