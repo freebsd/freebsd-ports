@@ -94,4 +94,7 @@ pre-patch:
 		 s|\$\(datadir\)/aclocal|\$\(prefix\)/share/aclocal|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
+post-install:
+	@${MKDIR} ${PREFIX}/share/xmms/Skins
+
 .include <bsd.port.post.mk>

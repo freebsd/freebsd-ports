@@ -74,3 +74,5 @@ share/locale/zh_TW.Big5/LC_MESSAGES/xmms.mo
 @dirrm lib/xmms/Effect
 @dirrm lib/xmms
 @dirrm include/xmms
+@exec mkdir -p %D/share/xmms/Skins
+@unexec rmdir %D/share/xmms/Skins %D/share/xmms 2>/dev/null || echo "If you are permanently removing xmms, do not forget to remove skin files left under %D/share/xmms/Skins. Use \`\`rm -Rf %D/share/xmms/Skins; rmdir %D/share/xmms''" | fmt
