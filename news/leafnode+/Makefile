@@ -16,10 +16,6 @@ MAINTAINER=	tom@FreeBSD.org
 MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 PKGINSTALL=	${WRKDIR}/INSTALL
 
-.if defined(NOPORTDOCS)
-PLIST=	${PKGDIR}/pkg-plist.nodocs
-.endif
-
 LEAFLIBDIR?=	${PREFIX}/lib/leafnode
 LEAFSPOOLDIR?=	/var/spool/leafnode
 REWRITE=	${SED} -e "s:@LIBDIR@:${LEAFLIBDIR}:g" \

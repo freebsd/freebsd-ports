@@ -3,11 +3,11 @@ sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/leaftool
-share/doc/leafnode+/Changes
-share/doc/leafnode+/FAQ
-share/doc/leafnode+/INSTALL
-share/doc/leafnode+/README
-share/doc/leafnode+/config.example
+%%PORTDOCS%%share/doc/leafnode+/Changes
+%%PORTDOCS%%share/doc/leafnode+/FAQ
+%%PORTDOCS%%share/doc/leafnode+/INSTALL
+%%PORTDOCS%%share/doc/leafnode+/README
+%%PORTDOCS%%share/doc/leafnode+/config.example
 @exec if [ ! -d %D/lib/leafnode ]; then mkdir -p %D/lib/leafnode; fi
-@dirrm share/doc/leafnode+
+%%PORTDOCS%%@dirrm share/doc/leafnode+
 @dirrm lib/leafnode
