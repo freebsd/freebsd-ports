@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	makeself
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.megastep.org/makeself/
 EXTRACT_SUFX=	.run
@@ -21,6 +21,14 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+PORTDOCS=	README
+PLIST_FILES=	bin/makeself bin/makeself-header.sh
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|#!/bin/sh|#!${LOCALBASE}/bin/bash|g' ${WRKSRC}/makeself.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makeself.sh ${PREFIX}/bin/makeself
