@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glclock
-PORTVERSION= 	5.0
+PORTVERSION=	5.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/ \
 		http://hp.vector.co.jp/authors/VA013133/archives/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tclock
-PORTVERSION= 	1.0.1
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
 		ftp://ftp.fh-anhalt.de/pub/soft/Xwindow/tools/clocks/	\

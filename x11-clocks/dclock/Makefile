@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dclock
-PORTVERSION= 	pl6
+PORTVERSION=	pl6
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
 DISTNAME=	Dclock

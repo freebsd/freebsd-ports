@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rclock
-PORTVERSION= 	2.7.3
+PORTVERSION=	2.7.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/  \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
