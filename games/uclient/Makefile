@@ -22,6 +22,8 @@ DISTFILES=	uclient-graphics-0.9.2.tar.gz \
 
 MAINTAINER=	lehmann@ans-netz.de
 
+BROKEN=		"Does not find automake"
+
 LIB_DEPENDS=	uta:${PORTSDIR}/devel/libuta \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		xml:${PORTSDIR}/textproc/libxml \
