@@ -7,6 +7,7 @@
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
@@ -20,7 +21,7 @@ MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.2:${PORTSDIR}/ftp/curl \
-		iconv.3:${PORTSDIR}/converters/libiconv \
+		intl.2:${PORTSDIR}/devel/gettext \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
