@@ -18,6 +18,9 @@ USE_RC_SUBR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 STARTUPSCRIPT=	${WRKDIR}/lookupd.sh
 
+MAN5=		lookupd.conf.5
+MAN8=		lookupd.8
+
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/lookupd.sh > ${STARTUPSCRIPT}
 	${INSTALL_SCRIPT} ${STARTUPSCRIPT} ${PREFIX}/etc/rc.d/lookupd.sh

@@ -4,6 +4,8 @@ lib/lkpd_files.so
 lib/lkpd_files.so.1
 lib/lkpd_dns.so
 lib/lkpd_dns.so.1
+lib/nss_lookupd.so
+lib/nss_lookupd.so.1
 include/lookupd/passwd_defs.h
 include/lookupd/group_defs.h
 include/lookupd/host_defs.h
