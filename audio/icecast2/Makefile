@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.icecast.org/releases/
 
 MAINTAINER=	chip@eboai.org
 
+FORBIDDEN=	"Nope, still insecure..lots of tasty buffer overflows"
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-libwrap
 
