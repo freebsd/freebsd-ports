@@ -1,0 +1,12 @@
+Xtic is a board game designed for the X windows environment.
+The game is a two-player game, although for the moment,it
+is only possible to play against the computer. The board is
+composed of 4x4 squares and 16 pieces. Each piece has four
+properties: black or brown, horizontal or vertical, solid or hollow,
+round or square. This makes up 16 possible combinations and there
+is exactly one piece for each possibility.
+
+This is version 1.12.
+
+- Satoshi
+asami@cs.berkeley.edu
