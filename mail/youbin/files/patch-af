@@ -1,0 +1,33 @@
+diff -c xyoubin.c.orig xyoubin.c
+*** xyoubin.c.orig	Sat Apr  8 19:58:20 1995
+--- xyoubin.c	Fri Aug  9 12:50:03 1996
+***************
+*** 285,291 ****
+      }
+      
+      if (!app_data.pipe) {
+!         signal(SIGCLD, sig_cld);
+          sprintf(child_process, "exec %s/%s -s %s",
+                  BINDIR, CHILD_PROGRAM_NAME, app_data.server);
+          if ((pfile = popen(child_process, "r")) == NULL) {
+--- 285,291 ----
+      }
+      
+      if (!app_data.pipe) {
+!         signal(SIGCHLD, sig_cld);
+          sprintf(child_process, "exec %s/%s -s %s",
+                  BINDIR, CHILD_PROGRAM_NAME, app_data.server);
+          if ((pfile = popen(child_process, "r")) == NULL) {
+***************
+*** 386,390 ****
+      if (0 < pid) {
+          exit(EXIT_FAILURE);                 /* Should print child status? */
+      }
+!     signal(SIGCLD, sig_cld);
+  }
+--- 386,390 ----
+      if (0 < pid) {
+          exit(EXIT_FAILURE);                 /* Should print child status? */
+      }
+!     signal(SIGCHLD, sig_cld);
+  }

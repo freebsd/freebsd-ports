@@ -1,0 +1,20 @@
+diff -c sendto.c.orig sendto.c
+*** sendto.c.orig	Mon Aug  1 21:59:07 1994
+--- sendto.c	Wed Aug  7 13:48:46 1996
+***************
+*** 107,113 ****
+      int   len;
+      
+      len = strlen(message);
+!     if (sendto(sockid, message, len, 0, &sa, sizeof(sa)) != len) {
+          sprintf(err_msg, "Error in sending packet");
+          return (err_msg);
+      }
+--- 107,113 ----
+      int   len;
+      
+      len = strlen(message);
+!     if (sendto(sockid, message, len, 0, (struct sockaddr *)&sa, sizeof(sa)) != len) {
+          sprintf(err_msg, "Error in sending packet");
+          return (err_msg);
+      }

@@ -1,0 +1,66 @@
+diff -c youbin_sub.c.orig youbin_sub.c
+*** youbin_sub.c.orig	Sun Mar 26 22:39:04 1995
+--- youbin_sub.c	Fri Aug  9 11:59:58 1996
+***************
+*** 336,342 ****
+      SockAddr    fa;
+      int         len, flen = sizeof(fa);
+      
+!     if ((len = recvfrom(sockid, mess, buflen, 0, &fa, &flen)) < 0) {
+          perror("recvfrom");
+          return (FALSE);
+      }
+--- 336,342 ----
+      SockAddr    fa;
+      int         len, flen = sizeof(fa);
+      
+!     if ((len = recvfrom(sockid, mess, buflen, 0, (struct sockaddr *)&fa, &flen)) < 0) {
+          perror("recvfrom");
+          return (FALSE);
+      }
+***************
+*** 367,373 ****
+      
+      len = strlen(mess);
+      debug("%s: [%s]: Send: \"%s\"\n", LIB_NAME, my_id, mess);
+!     if (sendto(sockid, mess, len, 0, &sa, sizeof(sa)) != len) {
+          fprintf(stderr, "%s: Error in sending packet: %s\n", LIB_NAME, mess);
+      }
+  }
+--- 367,373 ----
+      
+      len = strlen(mess);
+      debug("%s: [%s]: Send: \"%s\"\n", LIB_NAME, my_id, mess);
+!     if (sendto(sockid, mess, len, 0, (struct sockaddr *)&sa, sizeof(sa)) != len) {
+          fprintf(stderr, "%s: Error in sending packet: %s\n", LIB_NAME, mess);
+      }
+  }
+***************
+*** 426,438 ****
+          for (i = (IPPORT_RESERVED - 1); (IPPORT_RESERVED / 2) <= i; i--) {
+              /* Try to find reserved port. */
+              ca->sin_port = htons(i);
+!             if (bind(sockid, ca, sizeof(*ca)) == 0) {
+                  return;
+              }
+          }
+      } else {                                    /* Try to find ordinary port. */
+          ca->sin_port = htons(0);
+!         if (bind(sockid, ca, sizeof(*ca)) == 0) {
+              return;
+          }
+      }
+--- 426,438 ----
+          for (i = (IPPORT_RESERVED - 1); (IPPORT_RESERVED / 2) <= i; i--) {
+              /* Try to find reserved port. */
+              ca->sin_port = htons(i);
+!             if (bind(sockid, (struct sockaddr *)ca, sizeof(*ca)) == 0) {
+                  return;
+              }
+          }
+      } else {                                    /* Try to find ordinary port. */
+          ca->sin_port = htons(0);
+!         if (bind(sockid, (struct sockaddr *)ca, sizeof(*ca)) == 0) {
+              return;
+          }
+      }

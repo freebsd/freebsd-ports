@@ -1,0 +1,20 @@
+diff -c Makefile.dist.orig Makefile.dist
+*** Makefile.dist.orig	Fri Jul  8 17:51:25 1994
+--- Makefile.dist	Fri Aug  9 13:39:57 1996
+***************
+*** 70,76 ****
+  CC = cc
+  # CC = gcc
+  
+! CFLAGS = $(OPTIMIZE) $(DEFINITIONS) $(PB_CFLAGS)
+  
+  # For MIPS.
+  # CFLAGS = -systype bsd43 $(OPTIMIZE) $(DEFINITIONS)
+--- 70,76 ----
+  CC = cc
+  # CC = gcc
+  
+! CFLAGS += $(OPTIMIZE) $(DEFINITIONS) $(PB_CFLAGS)
+  
+  # For MIPS.
+  # CFLAGS = -systype bsd43 $(OPTIMIZE) $(DEFINITIONS)

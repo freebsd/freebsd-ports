@@ -1,0 +1,112 @@
+*** Imakefile.orig	Sat Apr  8 20:47:18 1995
+--- Imakefile	Sun Aug 18 09:49:53 1996
+***************
+*** 17,31 ****
+   */
+  
+  /* Directory for server. */
+! SERVER_BINDIR = /etc
+  
+  /* Directory for clients. */
+! BINDIR = /usr/local/bin
+  
+  /* Select one of them.
+   * If you want to use on-line manual written in Japanese, use DOCDIR_JP. */
+  MANSRC_DIR = $(DOCDIR)
+  /* MANSRC_DIR = $(DOCDIR_JP) */
+  
+  /* 
+   * Architectur depedent configurations.
+--- 17,32 ----
+   */
+  
+  /* Directory for server. */
+! SERVER_BINDIR = ${PREFIX}/sbin
+  
+  /* Directory for clients. */
+! BINDIR = ${PREFIX}/bin
+  
+  /* Select one of them.
+   * If you want to use on-line manual written in Japanese, use DOCDIR_JP. */
+  MANSRC_DIR = $(DOCDIR)
+  /* MANSRC_DIR = $(DOCDIR_JP) */
++ MANPATH = ${PREFIX}/man
+  
+  /* 
+   * Architectur depedent configurations.
+***************
+*** 47,53 ****
+   * If your machine is SVR4, default MAIL_SPOOL is "/usr/mail/".
+   * In other environments, default MAIL_SPOOL is "/usr/spool/mail/".
+   * Select one of them, if you don't like these default values. */
+! /* MAIL_SPOOL = -DMAIL_SPOOL=\"/usr/mail/\" */
+  /* MAIL_SPOOL = -DMAIL_SPOOL=\"/usr/spool/mail/\" */
+  
+  /* Syslog: Comment following lines, if you don't want to use syslog. */
+--- 48,54 ----
+   * If your machine is SVR4, default MAIL_SPOOL is "/usr/mail/".
+   * In other environments, default MAIL_SPOOL is "/usr/spool/mail/".
+   * Select one of them, if you don't like these default values. */
+! MAIL_SPOOL = -DMAIL_SPOOL=\"/var/mail/\"
+  /* MAIL_SPOOL = -DMAIL_SPOOL=\"/usr/spool/mail/\" */
+  
+  /* Syslog: Comment following lines, if you don't want to use syslog. */
+***************
+*** 65,73 ****
+  UNIT_TIME = 180
+  
+  /* XPM: Uncomment following lines, if you want to use pixmap. */
+! /* XPM_DEFS = -DUSE_XPM */
+! /* XPM_LIBS = str_to_pixmap.o locate_pixmap.o */
+! /* XPM_FLAGS = -lXpm */
+  
+  /* 
+   * Other configurations.
+--- 66,74 ----
+  UNIT_TIME = 180
+  
+  /* XPM: Uncomment following lines, if you want to use pixmap. */
+! XPM_DEFS = -DUSE_XPM
+! XPM_LIBS = str_to_pixmap.o locate_pixmap.o
+! XPM_FLAGS = -lXpm
+  
+  /* 
+   * Other configurations.
+***************
+*** 90,96 ****
+   * USE_VARARGS      Use UNIX's native routines.
+   */
+  
+! /* SPECIAL_DEFS = */
+  /* SPECIAL_LIBS = */
+  
+  /* 
+--- 91,97 ----
+   * USE_VARARGS      Use UNIX's native routines.
+   */
+  
+! SPECIAL_DEFS =-DUSE_STDARG -DUSE_POSIX_WAIT
+  /* SPECIAL_LIBS = */
+  
+  /* 
+***************
+*** 169,177 ****
+  install.man::
+  	csh -c "cp $(MANSRC_DIR)/*.man ."
+  
+! InstallManPage(youbin,$(MANDIR))
+! InstallManPage(youbin_sub,$(MANDIR))
+! InstallManPage(youbind,$(MANDIR))
+  
+  DependTarget()
+  LintTarget()
+--- 170,178 ----
+  install.man::
+  	csh -c "cp $(MANSRC_DIR)/*.man ."
+  
+! InstallGenManPage(youbin,$(MANPATH)/man1,1)
+! InstallGenManPage(youbin_sub,$(MANPATH)/man3,3)
+! InstallGenManPage(youbind,$(MANPATH)/man8,8)
+  
+  DependTarget()
+  LintTarget()
