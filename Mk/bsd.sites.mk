@@ -177,21 +177,19 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	http://archive.progeny.com/GNOME/%SUBDIR%/ \
-	http://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	http://fr.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
-	http://planetmirror.com/pub/GNOME/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
-	http://mirror.aarnet.edu.au/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
+	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
+	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
+	http://archive.progeny.com/GNOME/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
