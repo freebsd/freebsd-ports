@@ -1,17 +1,11 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri Sep 28 12:30:28 2001
-+++ Makefile.in	Fri Sep 28 12:37:31 2001
-@@ -141,9 +141,9 @@
+--- Makefile.in.orig	Sun Aug 25 23:54:37 2002
++++ Makefile.in	Sun Aug 25 23:54:47 2002
+@@ -129,7 +129,7 @@
+ cxxflags_set = @cxxflags_set@
  gnomelocaledir = @gnomelocaledir@
- l = @l@
  
--SUBDIRS = gal po intl tests docs art
-+SUBDIRS = gal po intl docs art
+-SUBDIRS = gal tests docs art
++SUBDIRS = gal docs art
  
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = galConf.sh 
- 
- EXTRA_DIST =  	gal.spec.in			galConf.sh.in			MAINTAINERS			AUTHORS				xml-i18n-extract.in		xml-i18n-merge.in		xml-i18n-update.in
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gal-2.0.pc

@@ -24,6 +24,7 @@
     SUBDIR += fox-xunicode
     SUBDIR += gail
     SUBDIR += gal
+    SUBDIR += gal2
     SUBDIR += gdl
     SUBDIR += gevas
     SUBDIR += gnome--
