@@ -7,22 +7,21 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
 MAINTAINER=	freebsd@jdc.parodius.com
-COMMENT=	A combination which provides a wrapper for PHP
+COMMENT=	Securely execute ~user PHP scripts
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PHP=	yes
-WANT_PHP_CGI=	yes
 USE_APACHE=	yes
+WANT_PHP_CGI=	yes
 CONFLICTS=	mod_php4-4* php-4.*
 
-LOGFILE?=	/var/log/suphp.log
+WITH_LOGFILE?=	/var/log/suphp.log
 PHP_PATH?=	${LOCALBASE}/bin/php
-APACHE_USER?=	${WWWOWN}
 MIN_UID?=	80
 MIN_GID?=	80
 WITH_SETID_MODE?=	owner
@@ -31,37 +30,29 @@ MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README apache/LICENSE \
 LANG=		en de
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
-			--with-logfile=${LOGFILE} \
-			--with-apache-user=${APACHE_USER} \
+			--with-logfile=${WITH_LOGFILE} \
+			--with-apache-user=${WWWOWN} \
 			--with-min-gid=${MIN_UID} \
 			--with-min-uid=${MIN_GID} \
 			--with-apxs=${APXS}
 
 ## Available knobs:
-##   WITHOUT_CHECKPATH: disable check if script resides in DOCUMENT_ROOT
+##   WITHOUT_CHECKPATH:    disable check if script resides in DOCUMENT_ROOT
 .if defined(WITHOUT_CHECKPATH)
 CONFIGURE_ARGS+=	--disable-checkpath
 .endif
-##   WITHOUT_CHECKUID: accept UIDs that are not listed in /etc/passwd
+##   WITHOUT_CHECKUID:     accept UIDs that are not listed in /etc/passwd
 .if defined(WITHOUT_CHECKUID)
 CONFIGURE_ARGS+=	--disable-checkuid
 .endif
-##   WITHOUT_CHECKGID: accept GIDs that are not listed in /etc/group
+##   WITHOUT_CHECKGID:     accept GIDs that are not listed in /etc/group
 .if defined(WITHOUT_CHECKGID)
 CONFIGURE_ARGS+=	--disable-checkgid
 .endif
-##   WITH_SETID_MODE: Mode to use for setting UID/GID.
+##   WITH_SETID_MODE:      mode to use for setting UID/GID.
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
-
-##
-## Sanity check; -C flag for make(1) was added in 4.8, but was not
-## fully fixed until shortly before 4.9-RELEASE.  We need -C !
-##
-.if ${OSVERSION} < 490000
-BROKEN=	Please upgrade to FreeBSD 4.9-RELEASE or higher \(see PR bin/50981\).
-.endif
 
 .if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
 APACHE_PORT=	www/apache2

@@ -1,7 +1,7 @@
 sbin/suphp
 %%MODULEDIR%%/mod_suphp.so
 @exec %D/sbin/apxs -e -a -n suphp %D/%f
-@unexec echo "===>  If you do not plan on reinstalling suphp, you must manually remove"; echo "===>  references to it in httpd.conf."
+@unexec %D/sbin/apxs -e -A -n suphp %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/en/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/en/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/en/README

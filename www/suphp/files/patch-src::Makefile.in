@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Mon Aug 25 11:50:48 2003
-+++ src/Makefile.in	Thu Jul 15 22:52:13 2004
-@@ -28,11 +28,13 @@
+--- src/Makefile.in.orig	Tue Jul 13 02:43:41 2004
++++ src/Makefile.in	Wed Aug 11 22:02:44 2004
+@@ -28,37 +28,38 @@
  INCLUDES = -I$(top_srcdir)/src
  RM = rm -f
  
@@ -17,7 +17,18 @@
  
  suphp.mod:
  	@if test "$(APXS)" != "/notfound/"; then \
-@@ -49,7 +51,6 @@
+ 	  if test "$(APACHE_VERSION_2)" = "true"; then \
+ 	    echo "*** INFO: Building mod_suphp for Apache 2.0 ***"; \
+-	    $(MAKE) $(MAKEDEFS) -C apache2; \
++	    cd apache2 && $(MAKE) $(MAKEDEFS); \
+ 	  fi; \
+ 	  if test "$(APACHE_VERSION_1_3)" = "true"; then \
+ 	    echo "*** INFO: Building mod_suphp for Apache 1.3 ***"; \
+-	    $(MAKE) $(MAKEDEFS) -C apache; \
++	    cd apache && $(MAKE) $(MAKEDEFS); \
+ 	  fi; \
+ 	else \
+ 	  echo "*** WARNING: No 'apxs' found. Skipping mod_suphp! ***"; \
  	fi
  
  install: suphp suphp.mod
@@ -25,9 +36,25 @@
  	$(INSTALL_PROGRAM) -m 4755 suphp $(DESTDIR)$(sbindir)/suphp
  	@if test "$(APXS)" != "/notfound/"; then \
  	  if test "$(APACHE_VERSION_2)" = "true"; then \
-@@ -69,6 +70,6 @@
- 	@$(MAKE) $(MAKEDEFS) -C apache clean
- 	@$(MAKE) $(MAKEDEFS) -C apache2 clean
+ 	    echo "*** INFO: Installing mod_suphp for Apache 2.0 ***"; \
+-	    $(MAKE) $(MAKEDEFS) -C apache2 install; \
++	    cd apache2 && $(MAKE) $(MAKEDEFS) install; \
+ 	  fi; \
+ 	  if test "$(APACHE_VERSION_1_3)" = "true"; then \
+ 	    echo "*** INFO: Installing mod_suphp for Apache 1.3 ***"; \
+-	    $(MAKE) $(MAKEDEFS) -C apache install; \
++	    cd apache && $(MAKE) $(MAKEDEFS) install; \
+ 	  fi; \
+ 	else \
+ 	  echo "*** WARNING: No 'apxs' found. Skipping installation of mod_suphp! ***"; \
+@@ -66,9 +67,9 @@
+ 
+ clean:
+ 	$(RM) suphp *.o
+-	@$(MAKE) $(MAKEDEFS) -C apache clean
+-	@$(MAKE) $(MAKEDEFS) -C apache2 clean
++	cd apache && $(MAKE) $(MAKEDEFS) clean
++	cd apache2 && $(MAKE) $(MAKEDEFS) clean
  
 -%.o : %.c
 +${OBJS}: ${SRCS}
