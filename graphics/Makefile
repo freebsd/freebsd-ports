@@ -341,6 +341,7 @@
     SUBDIR += sodipodi
     SUBDIR += spigot
     SUBDIR += splitmpg
+    SUBDIR += springgraph
     SUBDIR += stamp
     SUBDIR += svg2swf
     SUBDIR += svgalib
