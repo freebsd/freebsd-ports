@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Sep 28 13:45:32 1997
-+++ Makefile	Wed Oct 15 02:24:25 1997
-@@ -597,7 +597,7 @@
+--- Makefile.orig	Sun Oct 19 16:11:50 1997
++++ Makefile	Mon Oct 20 09:51:51 1997
+@@ -614,7 +614,7 @@
  MOTIF_DEFS	= -DUSE_GUI_MOTIF $(NARROW_PROTO)
  MOTIF_IPATH	= -I$(GUI_INC_LOC)
  MOTIF_LIBS_DIR	= -L$(GUI_LIB_LOC)
@@ -9,12 +9,62 @@
  MOTIF_TARGETS	= $(BINDIR)/$(GVIMTARGET) \
  				$(BINDIR)/$(GEXTARGET) \
  				$(BINDIR)/$(GVIEWTARGET) \
-@@ -837,7 +837,7 @@
+@@ -857,7 +857,8 @@
  	GUI_INC_LOC="$(GUI_INC_LOC)" GUI_LIB_LOC="$(GUI_LIB_LOC)" \
  		CC="$(CC)" CFLAGS="$(CFLAGS)" TERM_LIB="$(TERM_LIB)" \
  	$(CONF_SHELL) ./configure $(CONF_OPT_GUI) $(CONF_OPT_X) \
 -	$(CONF_OPT_PERL) $(CONF_OPT_PYTHON) $(CONF_ARGS)
-+	$(CONF_OPT_PYTHON) $(CONF_ARGS)
++	$(CONF_OPT_PERL) $(CONF_OPT_PYTHON) $(CONF_ARGS) \
++	--prefix=$(PREFIX)
  
  # When configure.in has changed, run autoconf to produce configure
  # If you don't have autoconf, use the configure that's there
+@@ -999,37 +1000,37 @@
+ installinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(REXTARGET) $(BINDIR)/$(RVIEWTARGET)
+ 
+ $(BINDIR)/$(EXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(BINDIR); ln -sf $(VIMTARGET) $(EXTARGET)
+ 
+ $(BINDIR)/$(VIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(BINDIR); ln -sf $(VIMTARGET) $(VIEWTARGET)
+ 
+ $(BINDIR)/$(GVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMTARGET)
+ 
+ $(BINDIR)/$(GEXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GEXTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GEXTARGET)
+ 
+ $(BINDIR)/$(GVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIEWTARGET)
+ 
+ $(BINDIR)/$(RVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIMTARGET)
+ 
+ $(BINDIR)/$(REXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(REXTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(REXTARGET)
+ 
+ $(BINDIR)/$(RVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIEWTARGET)
+ 
+ $(BINDIR)/$(RGVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIMTARGET)
+ 
+ $(BINDIR)/$(RGEXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RGEXTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGEXTARGET)
+ 
+ $(BINDIR)/$(RGVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
+ 
+ uninstall:
+ 	-rm -f $(BINDIR)/$(VIMTARGET)$(SUFFIX) $(BINDIR)/$(GVIMTARGET)
