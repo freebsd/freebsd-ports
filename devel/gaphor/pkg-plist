@@ -21,18 +21,20 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/action.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/action.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/diagram/actions.py
-%%PYTHON_SITELIBDIR%%/gaphor/diagram/actions.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/actor.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/actor.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/association.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/association.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/attribute.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/attribute.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/classifier.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/classifier.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/comment.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/comment.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/commentline.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/commentline.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/component.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/component.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/dependency.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/dependency.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/diagramitem.py
@@ -41,6 +43,8 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/diagramline.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/elementitem.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/elementitem.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/extend.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/extend.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/extension.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/extension.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/feature.py
@@ -49,6 +53,10 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/flow.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/generalization.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/generalization.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/implementation.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/implementation.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/include.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/include.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/interface.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/interface.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/itemactions.py
@@ -65,6 +73,8 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/operation.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/package.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/package.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/placementactions.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/placementactions.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/placementtool.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/placementtool.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/relationship.py
@@ -79,26 +89,34 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/misc/action.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/aspects.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/aspects.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/misc/command.py
-%%PYTHON_SITELIBDIR%%/gaphor/misc/command.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/conf.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/conf.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/console.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/console.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/misc/errorhandler.py
+%%PYTHON_SITELIBDIR%%/gaphor/misc/errorhandler.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/misc/gidlethread.py
+%%PYTHON_SITELIBDIR%%/gaphor/misc/gidlethread.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/logger.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/logger.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/misc/odict.py
+%%PYTHON_SITELIBDIR%%/gaphor/misc/odict.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/misc/resource.py
+%%PYTHON_SITELIBDIR%%/gaphor/misc/resource.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/signal.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/signal.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/singleton.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/singleton.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/misc/uniqueid.py
 %%PYTHON_SITELIBDIR%%/gaphor/misc/uniqueid.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/misc/weakmethod.py
-%%PYTHON_SITELIBDIR%%/gaphor/misc/weakmethod.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/misc/xmlwriter.py
+%%PYTHON_SITELIBDIR%%/gaphor/misc/xmlwriter.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/parser.py
 %%PYTHON_SITELIBDIR%%/gaphor/parser.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/stock_browser.py
-%%PYTHON_SITELIBDIR%%/gaphor/stock_browser.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/plugin.py
+%%PYTHON_SITELIBDIR%%/gaphor/plugin.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/pluginmanager.py
+%%PYTHON_SITELIBDIR%%/gaphor/pluginmanager.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/storage.py
 %%PYTHON_SITELIBDIR%%/gaphor/storage.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/__init__.py
@@ -127,12 +145,14 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/ui/menufactory.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/namespace.py
 %%PYTHON_SITELIBDIR%%/gaphor/ui/namespace.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/ui/stereotypewindow.py
-%%PYTHON_SITELIBDIR%%/gaphor/ui/stereotypewindow.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/stock.py
 %%PYTHON_SITELIBDIR%%/gaphor/ui/stock.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/ui/toolbox.py
+%%PYTHON_SITELIBDIR%%/gaphor/ui/toolbox.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/wrapbox.py
 %%PYTHON_SITELIBDIR%%/gaphor/ui/wrapbox.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/undomanager.py
+%%PYTHON_SITELIBDIR%%/gaphor/undomanager.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/version.py
 %%PYTHON_SITELIBDIR%%/gaphor/version.pyc
 %%DATADIR%%/icons.xml
@@ -140,9 +160,11 @@ bin/gaphor
 %%DATADIR%%/pixmaps/activityfinalnode24.png
 %%DATADIR%%/pixmaps/actor24.png
 %%DATADIR%%/pixmaps/association24.png
+%%DATADIR%%/pixmaps/attribute24.png
 %%DATADIR%%/pixmaps/class24.png
 %%DATADIR%%/pixmaps/comment24.png
 %%DATADIR%%/pixmaps/commentline24.png
+%%DATADIR%%/pixmaps/component24.png
 %%DATADIR%%/pixmaps/controlflow24.png
 %%DATADIR%%/pixmaps/decisionnode24.png
 %%DATADIR%%/pixmaps/dependency24.png
@@ -150,13 +172,54 @@ bin/gaphor
 %%DATADIR%%/pixmaps/extend24.png
 %%DATADIR%%/pixmaps/extension24.png
 %%DATADIR%%/pixmaps/generalization24.png
+%%DATADIR%%/pixmaps/implementation24.png
 %%DATADIR%%/pixmaps/include24.png
 %%DATADIR%%/pixmaps/initialnode24.png
 %%DATADIR%%/pixmaps/interface24.png
+%%DATADIR%%/pixmaps/logo.png
+%%DATADIR%%/pixmaps/operation24.png
 %%DATADIR%%/pixmaps/package24.png
 %%DATADIR%%/pixmaps/pointer24.png
+%%DATADIR%%/pixmaps/profile24.png
 %%DATADIR%%/pixmaps/stereotype24.png
 %%DATADIR%%/pixmaps/usecase24.png
+%%DATADIR%%/plugins/checkmetamodel/__init__.py
+%%DATADIR%%/plugins/checkmetamodel/__init__.pyc
+%%DATADIR%%/plugins/checkmetamodel/checkmodel.py
+%%DATADIR%%/plugins/checkmetamodel/checkmodel.pyc
+%%DATADIR%%/plugins/checkmetamodel/checkmodelgui.py
+%%DATADIR%%/plugins/checkmetamodel/checkmodelgui.pyc
+%%DATADIR%%/plugins/checkmetamodel/plugin.xml
+%%DATADIR%%/plugins/diagramlayout/__init__.py
+%%DATADIR%%/plugins/diagramlayout/__init__.pyc
+%%DATADIR%%/plugins/diagramlayout/plugin.xml
+%%DATADIR%%/plugins/diagramlayout/toposort.py
+%%DATADIR%%/plugins/diagramlayout/toposort.pyc
+%%DATADIR%%/plugins/liveobjectbrowser/__init__.py
+%%DATADIR%%/plugins/liveobjectbrowser/__init__.pyc
+%%DATADIR%%/plugins/liveobjectbrowser/browser.py
+%%DATADIR%%/plugins/liveobjectbrowser/browser.pyc
+%%DATADIR%%/plugins/liveobjectbrowser/plugin.xml
+%%DATADIR%%/plugins/plugineditor/__init__.py
+%%DATADIR%%/plugins/plugineditor/__init__.pyc
+%%DATADIR%%/plugins/plugineditor/plugin.xml
+%%DATADIR%%/plugins/plugineditor/plugineditor.py
+%%DATADIR%%/plugins/plugineditor/plugineditor.pyc
+%%DATADIR%%/plugins/pynsource/__init__.py
+%%DATADIR%%/plugins/pynsource/__init__.pyc
+%%DATADIR%%/plugins/pynsource/engineer.py
+%%DATADIR%%/plugins/pynsource/engineer.pyc
+%%DATADIR%%/plugins/pynsource/keywords.py
+%%DATADIR%%/plugins/pynsource/keywords.pyc
+%%DATADIR%%/plugins/pynsource/plugin.xml
+%%DATADIR%%/plugins/pynsource/pynsource.py
+%%DATADIR%%/plugins/pynsource/pynsource.pyc
+@dirrm %%DATADIR%%/plugins/pynsource
+@dirrm %%DATADIR%%/plugins/plugineditor
+@dirrm %%DATADIR%%/plugins/liveobjectbrowser
+@dirrm %%DATADIR%%/plugins/diagramlayout
+@dirrm %%DATADIR%%/plugins/checkmetamodel
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gaphor/ui
