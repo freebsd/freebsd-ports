@@ -1,0 +1,146 @@
+--- x11drive/gra2wmf.c.orig	Sun Aug 15 11:43:50 2004
++++ x11drive/gra2wmf.c	Sun Aug 15 11:44:55 2004
+@@ -334,7 +334,7 @@
+   return FALSE;
+ }
+ 
+-int round(double x)
++int iround(double x)
+ {
+   int ix;
+   double dx;
+@@ -831,8 +831,8 @@
+     len2=len=sqrt(dx*dx+dy*dy);
+     while (len2>((dashlist)[dashi]-dashlen)) {
+       dd=(len-len2+(dashlist)[dashi]-dashlen)/len;
+-      gx=gx1+round(dx*dd);
+-      gy=gy1+round(dy*dd);
++      gx=gx1+iround(dx*dd);
++      gy=gy1+iround(dy*dd);
+       if (dotf) LineTo(DC,gx,gy);
+       else MoveTo(DC,gx,gy);
+       dotf=dotf ? FALSE : TRUE;
+@@ -853,22 +853,22 @@
+ 
+ int dot2pixel(int r)
+ {
+-  return round(r*pixel_dot);
++  return iround(r*pixel_dot);
+ }
+ 
+ int dot2pixelx(int x)
+ {
+-  return round(x*pixel_dot+offsetx-scrollx);
++  return iround(x*pixel_dot+offsetx-scrollx);
+ }
+ 
+ int dot2pixely(int y)
+ {
+-  return round(y*pixel_dot+offsety-scrolly);
++  return iround(y*pixel_dot+offsety-scrolly);
+ }
+ 
+ int pixel2dot(int r)
+ {
+-  return round(r/pixel_dot);
++  return iround(r/pixel_dot);
+ }
+ 
+ void draw(char code,int *cpar,char *cstr)
+@@ -1018,10 +1018,10 @@
+                dot2pixely(cpar[2]-cpar[4]),
+                dot2pixelx(cpar[1]+cpar[3]),
+                dot2pixely(cpar[2]+cpar[4]),
+-               dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta1)))-1,
+-               dot2pixely(cpar[2]-round(cpar[4]*sin(Theta1)))-1,
+-               dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta2)))-1,
+-               dot2pixely(cpar[2]-round(cpar[4]*sin(Theta2)))-1);
++               dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta1)))-1,
++               dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta1)))-1,
++               dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta2)))-1,
++               dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta2)))-1);
+       } else {
+         TmpPen=OrgPen;
+         SelectObject(DC,TmpPen);
+@@ -1033,19 +1033,19 @@
+                  dot2pixely(cpar[2]-cpar[4]),
+                  dot2pixelx(cpar[1]+cpar[3]),
+                  dot2pixely(cpar[2]+cpar[4]),
+-                 dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta1)))-1,
+-                 dot2pixely(cpar[2]-round(cpar[4]*sin(Theta1)))-1,
+-                 dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta2)))-1,
+-                 dot2pixely(cpar[2]-round(cpar[4]*sin(Theta2)))-1);
++                 dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta1)))-1,
++                 dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta1)))-1,
++                 dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta2)))-1,
++                 dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta2)))-1);
+         } else {
+           Chord(DC,dot2pixelx(cpar[1]-cpar[3]),
+                    dot2pixely(cpar[2]-cpar[4]),
+                    dot2pixelx(cpar[1]+cpar[3]),
+                    dot2pixely(cpar[2]+cpar[4]),
+-                   dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta1)))-1,
+-                   dot2pixely(cpar[2]-round(cpar[4]*sin(Theta1)))-1,
+-                   dot2pixelx(cpar[1]+round(cpar[3]*cos(Theta2)))-1,
+-                   dot2pixely(cpar[2]-round(cpar[4]*sin(Theta2)))-1);
++                   dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta1)))-1,
++                   dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta1)))-1,
++                   dot2pixelx(cpar[1]+iround(cpar[3]*cos(Theta2)))-1,
++                   dot2pixely(cpar[2]-iround(cpar[4]*sin(Theta2)))-1);
+         }
+         SelectObject(DC,ThePen);
+       }
+@@ -1129,9 +1129,9 @@
+       loadfontf=FALSE;
+       break;
+     }
+-    IDFont.lfHeight=-round(pixel_dot*fontsize);
++    IDFont.lfHeight=-iround(pixel_dot*fontsize);
+     IDFont.lfWidth=0;
+-    IDFont.lfEscapement=IDFont.lfOrientation=round(fontdir*10);
++    IDFont.lfEscapement=IDFont.lfOrientation=iround(fontdir*10);
+     IDFont.lfUnderline=0;
+     IDFont.lfStrikeOut=0;
+     IDFont.lfPitchAndFamily=0;
+@@ -1199,8 +1199,8 @@
+     if (s==NULL) break;
+     x0=cpx;
+     y0=cpy;
+-    TextOut(DC,dot2pixelx(round(x0)),
+-               dot2pixely(round(y0)),s,strlen(s));
++    TextOut(DC,dot2pixelx(iround(x0)),
++               dot2pixely(iround(y0)),s,strlen(s));
+     fontwidth=0;
+     for (i=0;i<strlen(s);i++) {
+       fontwidth+=charwidth((unsigned char)s[i],fontalias,fontsize/25.4*72);
+@@ -1209,15 +1209,15 @@
+     free(s);
+     x0+=fontwidth*fontcos;
+     y0-=fontwidth*fontsin;
+-    cpx=round(x0);
+-    cpy=round(y0);
++    cpx=iround(x0);
++    cpy=iround(y0);
+     break;
+   case 'K':
+     if (!loadfontf) break;
+     x0=cpx;
+     y0=cpy;
+-    TextOut(DC,dot2pixelx(round(x0)),
+-               dot2pixely(round(y0)),cstr,strlen(cstr));
++    TextOut(DC,dot2pixelx(iround(x0)),
++               dot2pixely(iround(y0)),cstr,strlen(cstr));
+     fontwidth=0;
+     for (i=0;i<strlen(s);i+=2) {
+       fontwidth+=charwidth((((unsigned char)cstr[i+1])<<8)+(unsigned char)cstr[i],
+@@ -1226,8 +1226,8 @@
+     }
+     x0+=fontwidth*fontcos;
+     y0-=fontwidth*fontsin;
+-    cpx=round(x0);
+-    cpy=round(y0);
++    cpx=iround(x0);
++    cpy=iround(y0);
+     break;
+   default: break;
+   }
