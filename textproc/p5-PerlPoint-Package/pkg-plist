@@ -1,0 +1,14 @@
+bin/pp2sdf
+%%SITE_PERL%%/PerlPoint/Anchors.pm
+%%SITE_PERL%%/PerlPoint/Backend.pm
+%%SITE_PERL%%/PerlPoint/Constants.pm
+%%SITE_PERL%%/PerlPoint/Parser.pm
+%%SITE_PERL%%/PerlPoint/Tags.pm
+%%SITE_PERL%%/PerlPoint/Tags/Basic.pm
+%%SITE_PERL%%/PerlPoint/Tags/CPPP.pm
+%%SITE_PERL%%/PerlPoint/Tags/SDF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint 2>/dev/null || true
+@dirrm %%SITE_PERL%%/PerlPoint/Tags
+@unexec rmdir %D/%%SITE_PERL%%/PerlPoint 2>/dev/null || true

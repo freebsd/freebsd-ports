@@ -1,0 +1,12 @@
+PerlPoint is both a presentation and a documentation toolset. More precise, its
+a toolset to generate presentations and documentations. You will write a simple
+text and start a converter to make the final documents from this source. The
+final format is your choice, depending on the used converter. So you can make a
+presentation, speaker notes, handouts, an internet documentation and a brochure
+all from the same text source, but looking very individual.
+
+Because of this two step architecture PerlPoint authors deal both with the text
+format and several converters. The text source describes structure and contents
+of your document, while a converter adds layout. Let's start.
+
+WWW: http://search.cpan.org/dist/PerlPoint-Package/
