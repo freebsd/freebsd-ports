@@ -13,11 +13,13 @@ if [ $phase = 1 ]; then
   echo "build started at $(date)"
 
   cd /tmp/depends
+  export PKG_PATH=/tmp/depends
   if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
     echo "adding dependencies"
-    for i in *.tgz; do
+    for i in *.t[bg]z; do
       echo "pkg_add -f $i"
       base=$(basename $i .tgz)
+      base=$(basename $base .tbz)
       if pkg_info -q -e $base; then
 	echo "skipping $base, already added"
       else
