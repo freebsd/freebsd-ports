@@ -35,8 +35,7 @@ LANG=		en
 BASEVERSION?=	7.1
 RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/
+	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/
 STDDIR=		linux/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
 UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}
 .if (${MACHINE_ARCH} == "i386")
