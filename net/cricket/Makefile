@@ -33,7 +33,7 @@ CRICKET_USER=	cricket
 CRICKET_GROUP=	www
 
 do-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
