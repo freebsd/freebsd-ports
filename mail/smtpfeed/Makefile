@@ -1,12 +1,12 @@
 # New ports collection makefile for:	smtpfeed
-# Version required:	0.56
+# Version required:	0.57
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/30 04:53:54 itojun Exp $
+# $Id: Makefile,v 1.2 1998/02/01 02:37:23 itojun Exp $
 #
 
-DISTNAME=	smtpfeed-0.56
+DISTNAME=	smtpfeed-0.57
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/mail/sendmail/ \
