@@ -65,6 +65,7 @@ CONFIGURE_ARGS+=-d -e
 CONFIGURE_ARGS+=	-Dgtkversion=2
 USE_GNOME+=		gtk20
 .else
+BROKEN=	"GTK1 version of 0.93.2 is broken. Fix coming 18/01/04"
 CONFIGURE_ARGS+=	-Dgtkversion=1
 USE_GNOME+=		gtk12
 .endif
