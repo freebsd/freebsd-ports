@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel graphics audio ruby
-MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
+MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -29,6 +29,7 @@ USE_RUBY_EXTCONF=	yes
 .if !defined(NOPORTDOCS)
 USE_RUBY_RD=	yes
 .endif
+RUBY_WITH_PTHREAD=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
 		--enable-opengl --linkoglmodule \
@@ -38,8 +39,10 @@ INSTALL_TARGET=	site-install
 RD_DOCS_EN=	rubysdl_doc.en.rd
 RD_DOCS_JA=	rubysdl_doc.rd
 
-DOCS_EN=	README.en ${RD_DOCS_EN} ${RD_DOCS_EN:S/.rd$/.html/} rubysdl_const_list.txt
-DOCS_JA=	README.ja ${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
+DOCS_EN=	NEWS.en README.en rubysdl_const_list.txt \
+		${RD_DOCS_EN} ${RD_DOCS_EN:S/.rd$/.html/}
+DOCS_JA=	NEWS.ja README.ja \
+		${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
 
 post-extract:
 	dir=`${RUBY_OPENGL_WRKSRC_CMD}`; \
