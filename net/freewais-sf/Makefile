@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced Wide Area Information Server
 
 HAS_CONFIGURE=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	-sde -Dprefix="${PREFIX}" \
@@ -30,10 +31,6 @@ MAN1=	catalog.1 dictionary.1 inverted_file.1 mkfmt.1 waisindex.1 \
 MAN3=	ftw.3 regexp.3 scandir.3
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" || ${OSVERSION} >= 502102
-BROKEN=		"Does not compile"
-.endif
 
 post-extract:
 	${CP} ${FILESDIR}/freebsd.sh ${WRKSRC}/hints
