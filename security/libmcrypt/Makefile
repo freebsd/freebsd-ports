@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 RESTRICTED=	"yes - cryptography"
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
@@ -25,7 +27,10 @@ INSTALLS_SHLIB=	yes
 MAN3=		mcrypt.3
 
 pre-patch:
-	@find ${WRKSRC}/modules -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC}/modules -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
 		's|#ifdef USE_LTDL|#if defined\(USE_LTDL\) && !defined\(__FreeBSD__\)|g'
+
+post-patch:
+	@cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf
 
 .include <bsd.port.mk>
