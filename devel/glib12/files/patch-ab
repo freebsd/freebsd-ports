@@ -1,11 +1,17 @@
---- Makefile.in.orig	Thu Mar 15 09:48:50 2001
-+++ Makefile.in	Mon May 21 21:23:16 2001
-@@ -39,3 +39,3 @@
+--- Makefile.in.orig	Thu Mar 15 10:48:50 2001
++++ Makefile.in	Wed Nov 20 14:39:44 2002
+@@ -37,7 +37,7 @@
+ DESTDIR =
+ 
  pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 +pkglibdir = $(prefix)/libdata/pkgconfig
  pkgincludedir = $(includedir)/@PACKAGE@
-@@ -98,7 +98,7 @@
+ 
+ top_builddir = .
+@@ -96,9 +96,9 @@
+ 
+ AUTOMAKE_OPTIONS = 1.4
  
 -SUBDIRS = . gmodule gthread docs tests
 +SUBDIRS = . gmodule gthread docs
@@ -13,46 +19,44 @@
 -configincludedir = $(pkglibdir)/include
 +configincludedir = $(includedir)
  
--bin_SCRIPTS = glib-config
-+bin_SCRIPTS = glib@LT_RELEASE@-config
+ bin_SCRIPTS = glib-config
  
-@@ -116,3 +116,3 @@
+@@ -114,7 +114,7 @@
+ libglib_la_SOURCES =  	garray.c		gcache.c		gcompletion.c		gdataset.c		gdate.c         	gerror.c		ghash.c			ghook.c			giochannel.c    	giounix.c       	glist.c			gmain.c         	gmem.c			gmessages.c		gmutex.c		gnode.c			gprimes.c		grel.c			gscanner.c		gslist.c		gstrfuncs.c		gstring.c		gtimer.c		gtree.c			gutils.c
+ 
  
 -glibincludedir = $(includedir)/glib-1.2
 +glibincludedir = $(includedir)
  glibinclude_HEADERS =  	glib.h
-@@ -136,3 +136,3 @@
+ 
+ 
+@@ -134,7 +134,7 @@
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = glib.m4
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(pkglibdir)
  pkgconfig_DATA = glib.pc gmodule.pc gthread.pc
-@@ -141,3 +141,3 @@
- CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  glib.spec glib-config glib.pc gmodule.pc \
-+CONFIG_CLEAN_FILES =  glib.spec glib@LT_RELEASE@-config glib.pc gmodule.pc \
- gthread.pc
-@@ -242,3 +242,3 @@
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
--glib-config: $(top_builddir)/config.status glib-config.in
-+glib@LT_RELEASE@-config: $(top_builddir)/config.status glib@LT_RELEASE@-config.in
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
-@@ -576,3 +576,3 @@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -574,7 +574,7 @@
+ 	      || exit 1; \
+ 	  fi; \
  	done
 -	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
 +
  garray.lo garray.o : garray.c glib.h glibconfig.h
-@@ -631,3 +631,3 @@
+ gcache.lo gcache.o : gcache.c glib.h glibconfig.h
+ gcompletion.lo gcompletion.o : gcompletion.c glib.h glibconfig.h
+@@ -629,7 +629,7 @@
+ 		uninstall-configincludeDATA uninstall-m4dataDATA \
+ 		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
  		$(HEADERS) config.h
-@@ -710,3 +710,5 @@
- 
--glib-config: glib-config.in
-+glib@LT_RELEASE@-config.in: glib-config.in
-+	cp glib-config.in glib@LT_RELEASE@-config.in
-+
- glibconfig.h: stamp-gc-h
+ all-redirect: all-recursive-am
+ install-strip:
 --- gmodule/Makefile.in.orig	Fri Mar  2 17:37:21 2001
 +++ gmodule/Makefile.in	Tue Mar  6 09:24:01 2001
 @@ -100,7 +100,7 @@
@@ -93,26 +97,3 @@
  all-redirect: all-am
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- docs/Makefile.in.orig	Tue Mar  6 09:13:07 2001
-+++ docs/Makefile.in	Tue Mar  6 09:14:01 2001
-@@ -94,9 +94,9 @@
- 
- info_TEXINFOS = glib.texi
- 
--man_MANS = glib-config.1
-+man_MANS = glib@LT_RELEASE@-config.1
- 
--EXTRA_DIST = glib-config.1.in		     glib.html 			     glib_toc.html
-+EXTRA_DIST = glib@LT_RELEASE@-config.1.in		     glib.html 			     glib_toc.html
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -132,6 +132,8 @@
- glib.info: glib.texi
- glib.dvi: glib.texi
- 
-+glib@LT_RELEASE@-config.1: glib-config.1
-+	cp glib-config.1 glib@LT_RELEASE@-config.1
- 
- DVIPS = dvips
- 

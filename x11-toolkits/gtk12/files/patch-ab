@@ -1,14 +1,5 @@
 --- gtk-config.in.orig	Sat Oct 21 18:20:40 2000
 +++ gtk-config.in	Tue Mar  6 10:11:59 2001
-@@ -12,7 +12,7 @@
- usage()
- {
- 	cat <<EOF
--Usage: gtk-config [OPTIONS] [LIBRARIES]
-+Usage: gtk@LT_RELEASE@-config [OPTIONS] [LIBRARIES]
- Options:
- 	[--prefix[=DIR]]
- 	[--exec-prefix[=DIR]]
 @@ -91,7 +91,7 @@
  fi
  
