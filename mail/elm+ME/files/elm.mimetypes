@@ -909,12 +909,12 @@ smi		application/x-smil
 smil		application/x-smil
 vcd		application/x-cdlink
 pgn		application/x-chess-pgn
-#		application/x-compress		[-> encoding/x-compress]
+Z		application/x-compress
 dcr		application/x-director
 dir		application/x-director
 #		application/x-director		[-> application/vnd.dxr]
 spl		application/x-futuresplash
-#		application/x-gzip		[-> encoding/x-gzip]
+gz		application/x-gzip
 js		application/x-javascript
 #		application/x-koan		[-> application/vnd.koan]
 php3		application/x-httpd-php3
@@ -1216,7 +1216,7 @@ lws		image/x-lws
 psd		image/x-psd
 svg		image/x-svg
 #		image/x-tga			[-> image/x-targa]
-wmf		image/x-wmf
+#		image/x-wmf			[-> application/x-msmetafile]
 xcf		image/x-xcf
 fig		image/x-xfig
 
@@ -1250,8 +1250,6 @@ dat		video/mpeg
 anim		video/x-anim
 #		video/x-avi			[-> video/x-msvideo]
 #??		video/x-isivideo
-#		video/x-ms-asf			[-> video/vnd.ms-asf]
-asx		video/vnd.ms-asf
 #??		video/x-wavelet
 #		video/x-real-video		[-> video/vnd.rn-realvideo]
 
@@ -1414,6 +1412,105 @@ ra		audio/vnd.rn-realaudio
 rv		video/vnd.rn-realvideo
 
 # ======================================================================
+# Known unregistered MIME types from MS/IIS
+# ======================================================================
+
+# Text types
+# ----------
+
+323		text/h323
+bas		text/plain
+htc		text/x-component
+htt		text/webviewhtml
+sct		text/scriptlet
+uls		text/iuls
+
+# Application types
+# -----------------
+
+acx		application/internet-property-stream
+axs		application/olescript
+cat		application/vnd.ms-pkiseccat
+crt		application/x-x509-ca-cert
+clp		application/x-msclip
+crd		application/x-mscardfile
+dll		application/x-msdownload
+evy		application/enjoy
+hlp		application/winhlp
+hta		applcation/hta
+iii		application/x-iphone
+ins		application/x-internet-signup
+isp		application/x-internet-signup
+m13		application/x-msmediaview
+m14		application/x-msmediaview
+mny		application/x-msmoney
+mvb		application/x-msmediaview
+ods		application/oleobject
+p10		application/pkcs10
+p12		application/x-pkcs12
+pfx		application/x-pkcs12
+p7b		application/x-pkcs7-certificates
+spc		application/x-pkcs7-certificates
+p7r		application/x-pkcs7-certreqresp
+pko		application/vnd.ms-pkipko
+pma		application/x-perfmon
+pmc		application/x-perfmon
+pml		application/x-perfmon
+pmr		application/x-perfmon
+pmw		application/x-perfmon
+prf		application/pics-rules
+pub		application/x-mspublisher
+scd		application/x-msschedule
+setpay		application/set-payment-initiation
+setreg		application/set-registration-initiation
+sst		application/vnd.ms-pkicertstore
+stl		application/vnd.ms-pkistl
+trm		application/x-msterminal
+stl		application/vnd.ms-pkistl
+wcm		application/vnd.ms-works
+wcm		application/vnd.ms-works
+wdb		application/vnd.ms-works
+wps		application/vnd.ms-works
+wmf		application/x-msmetafile
+wri		application/x-mswrite
+
+# Image types
+# -----------
+
+cmx		image/x-cmx
+cod		image/cis-cod
+
+# Audio types
+# -----------
+
+rmi		audio/x-midi
+
+# Video types
+# -----------
+
+#		video/x-ms-asf			[-> video/vnd.ms-asf]
+asr		video/vnd.ms-asf
+asx		video/vnd.ms-asf
+ivf		video/x-ivf
+lsf		video/x-la-asf
+lsx		video/x-la-asf
+m1v		video/mpeg
+
+# Message types
+# -------------
+
+mht		message/rfc822
+mhtml		message/rfc822
+
+# Misc types
+# ----------
+
+flr		x-world/x-vrml
+wrz		x-world/x-vrml
+waf		x-world/x-vrml
+xof		x-world/x-vrml
+
+# ======================================================================
 # Known unregistered MIME types from ShockWave
 # ======================================================================
 
@@ -1515,6 +1612,7 @@ btm		application/octet-stream
 #		application/vnd.stardivision.mail	[-> application/x-smail]
 #		application/vnd.stardivision.writer	[-> application/x-swriter]
 awk		application/x-awk
+qi		application/x-cpan
 ofm		application/x-font-tex-ofm
 ovf		application/x-font-tex-ovf
 ovp		application/x-font-tex-ovp

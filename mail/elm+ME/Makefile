@@ -73,10 +73,10 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 ELM_VERSION=	2.4
 ELM_REVISION=	99
-ELM_PATCHLEVEL=	b
+ELM_PATCHLEVEL=	f
 
 ELM_PATCHDONE=	false
-.for level in _ a b c d e f
+.for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
 _level=${level}
 .if ${_level} != _ && ${ELM_PATCHDONE} == false
 PATCHFILES+=	${DISTNAME:S/+/+PL/}${level}.patch.gz
