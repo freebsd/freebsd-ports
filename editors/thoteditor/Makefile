@@ -3,7 +3,7 @@
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.7 1999/02/12 23:52:49 obrien Exp $
+# $Id: Makefile,v 1.8 1999/03/08 21:19:01 steve Exp $
 #
 
 DISTNAME=	thoteditor
@@ -19,6 +19,8 @@ MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTFILES=	${THOT_SRC} ${EDITOR_SRC}
 
 MAINTAINER=	ports@FreeBSD.org
+
+BROKEN= 'FUBARed'
 
 THOT_SRC=	thot-src-2.1e.tar.gz
 EDITOR_SRC=	thoteditor-src-2.1e.tar.gz
