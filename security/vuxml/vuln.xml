@@ -595,26 +595,4 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="42c50e16-5ce8-11d8-80e3-0020ed76ef5a">
-    <topic>Vulnerable test port</topic>
-    <affects>
-      <package>
-        <name>vulnerability-test-port</name>
-        <range><lt>2004.02.12</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>This is a test entry.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://cvsweb.freebsd.org/ports/security/vulnerability-test-port/</url>
-    </references>
-    <dates>
-      <discovery>2004-02-12</discovery>
-      <entry>2004-02-12</entry>
-    </dates>
-  </vuln>
-
 </vuxml>
