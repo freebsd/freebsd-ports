@@ -17,7 +17,7 @@ $FreeBSD$
 -CFLAGS		= -O2 -fomit-frame-pointer `$(GTK-CONFIG) --cflags` -DG_DISABLE_CHECKS
 +CC		?= gcc -pipe
 +GTK_CFLAGS	!= $(GTK-CONFIG) --cflags
-+CFLAGS		+= $(GTK_CFLAGS) -DG_DISABLE_CHECKS
++CFLAGS		+= $(GTK_CFLAGS) -DG_DISABLE_CHECKS -fPIC
  #CFLAGS		= `$(GTK-CONFIG) --cflags`
 -LIBS		= `$(GTK-CONFIG) --libs`
 +LIBS		!= $(GTK-CONFIG) --libs
