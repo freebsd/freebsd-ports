@@ -101,7 +101,7 @@ date
 diff
 emacs
 execmail
-finger
+gencat
 gpg
 ispell
 line
@@ -177,9 +177,10 @@ col=''
 pack='pack'
 compress='/usr/bin/compress'
 execmail=''
+gencat='/usr/bin/gencat'
 libswanted='sun nls c_s'
 noaddlib='yes'
-c_date='Wed Dec 24 03:02:21 CET 2003'
+c_date='Tue Aug 24 15:05:52 CEST 2004'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -359,9 +360,9 @@ iconv_link='iconv'
 EOF
 
 tee -a ${CONFIG_PATH} >> ${WRKSRC}/shared_libs/tls/config.res << EOF
-tls_dir='system'
-tls_include_dir=''
-tls_lib_dir=''
+tls_dir='${OPENSSLBASE}'
+tls_include_dir='${OPENSSLINC}'
+tls_lib_dir='${OPENSSLLIB}'
 EOF
 
 exit 0
