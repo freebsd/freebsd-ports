@@ -1,0 +1,37 @@
+# New ports collection makefile for:	Ruby/Devel::Logger
+# Date created:		13 April 2002
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	devel-logger
+PORTVERSION=	1.0.0
+CATEGORIES=	sysutils ruby
+MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/Devel__Logger/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+USE_RUBY=	yes
+NO_BUILD=	yes
+
+EXAMPLES=	sample/*
+DOCS=		README
+
+do-install:
+	cd ${WRKSRC}; ${RUBY} ./install.rb
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+.for f in ${EXAMPLES}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
