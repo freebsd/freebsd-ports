@@ -7,6 +7,7 @@
 
 PORTNAME=	lemon
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hwaci.com/sw/lemon/
 DISTFILES=	lemon.c lempar.c
