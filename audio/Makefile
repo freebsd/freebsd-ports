@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1999/04/21 13:54:05 sada Exp $
+# $Id: Makefile,v 1.84 1999/04/21 23:29:47 fenner Exp $
 #
 
     SUBDIR += amp
@@ -18,8 +18,10 @@
     SUBDIR += gqmpeg
     SUBDIR += gsm
     SUBDIR += icecast
+    SUBDIR += id3ren
     SUBDIR += kdemultimedia
     SUBDIR += kdemultimedia11
+    SUBDIR += kmikmod
     SUBDIR += kmpg
     SUBDIR += lamer
     SUBDIR += libaudiofile
@@ -39,6 +41,7 @@
     SUBDIR += radio
     SUBDIR += replay
     SUBDIR += rio
+    SUBDIR += ripenc
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
