@@ -18,6 +18,7 @@ LIB_DEPENDS=	ogg.0:${PORTSDIR}/audio/libogg
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_AUTOMAKE=	yes
 WRKSRC=		${WRKDIR}/vorbis
 
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
