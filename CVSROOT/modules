@@ -1187,8 +1187,8 @@ de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
 de-kde3-i18n	ports/german/kde3-i18n
 de-koffice-i18n	ports/german/koffice-i18n
-de-netscape7	ports/german/netscape7
 de-manpages	ports/german/manpages
+de-netscape7	ports/german/netscape7
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice	ports/german/openoffice
@@ -2075,8 +2075,8 @@ gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellkam2	ports/graphics/gkrellkam2
 gkrellm		ports/sysutils/gkrellm
-gkrellm2	ports/sysutils/gkrellm2
 gkrellm-reminder	ports/misc/gkrellm-reminder
+gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
 gkrellmbgchg	ports/misc/gkrellmbgchg
@@ -2179,7 +2179,6 @@ gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-devel	ports/devel/gnome-devel
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
-gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-pkgview	ports/sysutils/gnome-pkgview
@@ -2187,6 +2186,7 @@ gnome-themes	ports/x11-toolkits/gnome-themes
 gnome-vnc	ports/net/gnome-vnc
 gnome2		ports/x11/gnome2
 gnome2-devel	ports/devel/gnome2-devel
+gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets	ports/x11/gnomeapplets
 gnomeapplets2	ports/x11/gnomeapplets2
@@ -2230,8 +2230,8 @@ gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
-gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnomesword	ports/misc/gnomesword
+gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs	ports/misc/gnomeuserdocs
@@ -2972,7 +2972,6 @@ ja-libjcode	ports/japanese/libjcode
 ja-libjconv	ports/japanese/libjconv
 ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
-ja-netscape7	ports/japanese/netscape7
 ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
@@ -3040,6 +3039,7 @@ ja-nethack32	ports/japanese/nethack32
 ja-nethack34	ports/japanese/nethack34
 ja-netscape48-communicator	ports/japanese/netscape48-communicator
 ja-netscape48-navigator		ports/japanese/netscape48-navigator
+ja-netscape7	ports/japanese/netscape7
 ja-netype	ports/japanese/netype
 ja-netypesv	ports/japanese/netypesv
 ja-newosaka	ports/japanese/newosaka
@@ -3063,9 +3063,9 @@ ja-openoffice	ports/japanese/openoffice
 ja-otojiro-fpw	ports/japanese/otojiro-fpw
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 ja-p5-Jcode	ports/japanese/p5-Jcode
+ja-p5-PDFJ	ports/japanese/p5-PDFJ
 ja-p5-Text-ChaSen	ports/japanese/p5-Text-ChaSen
 ja-p5-Text-Kakasi	ports/japanese/p5-Text-Kakasi
-ja-p5-PDFJ	ports/japanese/p5-PDFJ
 ja-p5-jcode.pl	ports/japanese/p5-jcode.pl
 ja-p5-man	ports/japanese/p5-manual
 ja-p5-mkres	ports/japanese/p5-mkres
@@ -3344,8 +3344,8 @@ jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
 juke		ports/audio/juke
 jump		ports/java/jump
-jumpnbump	ports/games/jumpnbump
 jumpgate	ports/net/jumpgate
+jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
 junit		ports/java/junit
 junkbuster	ports/www/junkbuster
@@ -4966,7 +4966,6 @@ openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
 openquicktime	ports/graphics/openquicktime
-opera		ports/www/opera
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 openssh		src/crypto/openssh
@@ -4980,6 +4979,7 @@ openvpn		ports/security/openvpn
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
+opera		ports/www/opera
 opieinfo	src/usr.bin/opieinfo
 opiekey		src/usr.bin/opiekey
 opiepasswd	src/usr.bin/opiepasswd
@@ -5188,12 +5188,12 @@ p5-Crypt-PGPSimple	ports/security/p5-Crypt-PGPSimple
 p5-Crypt-PassGen	ports/security/p5-Crypt-PassGen
 p5-Crypt-PasswdMD5	ports/security/p5-Crypt-PasswdMD5
 p5-Crypt-Primes	ports/security/p5-Crypt-Primes
-p5-Crypt-RandPasswd	ports/security/p5-Crypt-RandPasswd
 p5-Crypt-RC4	ports/security/p5-Crypt-RC4
 p5-Crypt-RC5	ports/security/p5-Crypt-RC5
 p5-Crypt-RC6	ports/security/p5-Crypt-RC6
 p5-Crypt-RIPEMD160	ports/security/p5-Crypt-RIPEMD160
 p5-Crypt-RSA	ports/security/p5-Crypt-RSA
+p5-Crypt-RandPasswd	ports/security/p5-Crypt-RandPasswd
 p5-Crypt-Random	ports/security/p5-Crypt-Random
 p5-Crypt-Rijndael	ports/security/p5-Crypt-Rijndael
 p5-Crypt-SSLeay	ports/security/p5-Crypt-SSLeay
@@ -6025,9 +6025,9 @@ pidentd		ports/security/pidentd
 piewm		ports/x11-wm/piewm
 pig		src/games/pig
 pike		ports/lang/pike
+pike-gtk	ports/x11-toolkits/pike-gtk
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
-pike-gtk	ports/x11-toolkits/pike-gtk
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
 pilrc		ports/palm/pilrc
@@ -6911,8 +6911,8 @@ ruby-dbi	ports/databases/ruby-dbi
 ruby-devel	ports/lang/ruby-devel
 ruby-devel-logger	ports/sysutils/ruby-devel-logger
 ruby-dialogs	ports/devel/ruby-dialogs
-ruby-drb	ports/net/ruby-drb
 ruby-dict	ports/net/ruby-dict
+ruby-drb	ports/net/ruby-drb
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-erb	ports/textproc/ruby-erb
 ruby-esound	ports/audio/ruby-esound
