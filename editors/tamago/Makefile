@@ -7,7 +7,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20020909.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -35,5 +35,8 @@ PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 pre-configure:
 	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
+
+post-install:
+	${TOUCH} ${ELISPDIR}/egg/egg/.nosearch
 
 .include <bsd.port.mk>
