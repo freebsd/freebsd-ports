@@ -129,36 +129,33 @@ libexec/zonecheck/zc/zonecheck.rb
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%ZONECHECK_CGI%%www/zonecheck/www/html/batch.html.en
-%%ZONECHECK_CGI%%www/zonecheck/www/html/batch.html.fr
-%%ZONECHECK_CGI%%www/zonecheck/www/html/batch.html.jp
-%%ZONECHECK_CGI%%www/zonecheck/www/html/form.html.en
-%%ZONECHECK_CGI%%www/zonecheck/www/html/form.html.fr
-%%ZONECHECK_CGI%%www/zonecheck/www/html/form.html.jp
-%%ZONECHECK_CGI%%www/zonecheck/www/zonecheck.conf.in
-%%ZONECHECK_CGI%%www/zonecheck/www/img/details.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/element.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/fatal.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/gear.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/info.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/light.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/logo.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/loupe.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/notepad.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/ok.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/primary.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/ref.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/secondary.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/warning.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/zc-fav.png
-%%ZONECHECK_CGI%%www/zonecheck/www/img/zone.png
-%%ZONECHECK_CGI%%www/zonecheck/www/js/formvalidation.js
-%%ZONECHECK_CGI%%www/zonecheck/www/js/popupmenu.js
-%%ZONECHECK_CGI%%www/zonecheck/www/js/progress.js
-%%ZONECHECK_CGI%%www/zonecheck/www/style/zc.css
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/www/html
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/www/img
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/www/js
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/www/style
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/www
+%%ZONECHECK_CGI%%www/zonecheck/html/batch.html.en
+%%ZONECHECK_CGI%%www/zonecheck/html/batch.html.fr
+%%ZONECHECK_CGI%%www/zonecheck/html/form.html.en
+%%ZONECHECK_CGI%%www/zonecheck/html/form.html.fr
+%%ZONECHECK_CGI%%www/zonecheck/zonecheck.conf.in
+%%ZONECHECK_CGI%%www/zonecheck/img/details.png
+%%ZONECHECK_CGI%%www/zonecheck/img/element.png
+%%ZONECHECK_CGI%%www/zonecheck/img/fatal.png
+%%ZONECHECK_CGI%%www/zonecheck/img/gear.png
+%%ZONECHECK_CGI%%www/zonecheck/img/info.png
+%%ZONECHECK_CGI%%www/zonecheck/img/light.png
+%%ZONECHECK_CGI%%www/zonecheck/img/logo.png
+%%ZONECHECK_CGI%%www/zonecheck/img/loupe.png
+%%ZONECHECK_CGI%%www/zonecheck/img/notepad.png
+%%ZONECHECK_CGI%%www/zonecheck/img/ok.png
+%%ZONECHECK_CGI%%www/zonecheck/img/primary.png
+%%ZONECHECK_CGI%%www/zonecheck/img/ref.png
+%%ZONECHECK_CGI%%www/zonecheck/img/secondary.png
+%%ZONECHECK_CGI%%www/zonecheck/img/warning.png
+%%ZONECHECK_CGI%%www/zonecheck/img/zc-fav.png
+%%ZONECHECK_CGI%%www/zonecheck/img/zone.png
+%%ZONECHECK_CGI%%www/zonecheck/js/formvalidation.js
+%%ZONECHECK_CGI%%www/zonecheck/js/popupmenu.js
+%%ZONECHECK_CGI%%www/zonecheck/js/progress.js
+%%ZONECHECK_CGI%%www/zonecheck/style/zc.css
+%%ZONECHECK_CGI%%@dirrm www/zonecheck/html
+%%ZONECHECK_CGI%%@dirrm www/zonecheck/img
+%%ZONECHECK_CGI%%@dirrm www/zonecheck/js
+%%ZONECHECK_CGI%%@dirrm www/zonecheck/style
 %%ZONECHECK_CGI%%@dirrm www/zonecheck

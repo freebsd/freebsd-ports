@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	ftp://ftp.nic.fr/pub/mirror/zonecheck/src/ \
@@ -48,7 +47,8 @@ pre-everything::
 do-install:
 	@cd ${INSTALL_WRKSRC} && \
 		${RUBY} ./installer.rb ${ZONECHECK_TARGET} \
-		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}"
+		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}" \
+		-DWWWDIR="${PREFIX}/www/${PORTNAME}"
 
 .if !defined(NOPORTDOCS)
 post-install:
