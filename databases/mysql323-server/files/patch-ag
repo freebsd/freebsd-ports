@@ -1,6 +1,6 @@
---- configure.orig	Sat Dec 16 22:49:12 2000
-+++ configure	Mon Dec 18 12:21:11 2000
-@@ -2950,7 +2950,7 @@
+--- configure.orig	Thu Apr 19 15:18:13 2001
++++ configure	Thu Apr 19 15:22:18 2001
+@@ -2983,7 +2983,7 @@
    ;;
  esac
  fi
@@ -9,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -3078,35 +3078,7 @@
+@@ -3117,38 +3117,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:3080: checking "how to check if pid exists"" >&5
+ echo "configure:3119: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -38,6 +38,9 @@
 -    *darwin*)
 -      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -      ;;
+-    *cygwin*)
+-      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
 -    *)
 -      { echo "configure: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." 1>&2; exit 1; }
 -  esac
@@ -46,7 +49,7 @@
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -5793,7 +5765,6 @@
+@@ -5911,7 +5880,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -54,7 +57,7 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -6017,28 +5988,6 @@
+@@ -6143,28 +6111,6 @@
  fi
  
  
@@ -83,7 +86,7 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -6719,10 +6668,6 @@
+@@ -6845,10 +6791,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
@@ -93,37 +96,37 @@
 -fi
  mysql_cv_btype_last_arg_accept=none
  cat > conftest.$ac_ext <<EOF
- #line 6729 "configure"
-@@ -8736,10 +8681,6 @@
- ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
- cross_compiling=$ac_cv_prog_cxx_cross
- 
--if test "$ac_cv_prog_gxx" = "yes"
+ #line 6855 "configure"
+@@ -8924,10 +8866,6 @@
+ #do not treat warnings as errors if we are linking agaist other libc
+ #this is to work around gcc not being permissive on non-system includes
+ #with respect to ANSI C++
+-if test "$ac_cv_prog_gxx" = "yes" -a "$with_other_libc" = "no" 
 -then
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 8745 "configure"
+ #line 8933 "configure"
  #include "confdefs.h"
-@@ -8804,10 +8745,6 @@
+@@ -8992,10 +8930,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
--if test "$ac_cv_prog_gxx" = "yes"
+-if test "$ac_cv_prog_gxx" = "yes" -a "$with_other_libc" = "no"
 -then
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 8813 "configure"
+ #line 9001 "configure"
  #include "confdefs.h"
-@@ -8871,10 +8808,6 @@
+@@ -9059,10 +8993,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
--if test "$ac_cv_prog_gxx" = "yes"
+-if test "$ac_cv_prog_gxx" = "yes" -a "$with_other_libc" = "no"
 -then
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 8880 "configure"
+ #line 9068 "configure"
  #include "confdefs.h"
