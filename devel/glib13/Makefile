@@ -1,12 +1,12 @@
 # New ports collection makefile for:   glib11-devel
-# Version required:		1.1.11
+# Version required:		1.1.12
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/12/26 19:15:25 vanilla Exp $
+# $Id: Makefile,v 1.11 1998/12/31 15:20:11 vanilla Exp $
 #
 
-DISTNAME=	glib-1.1.11
+DISTNAME=	glib-1.1.12
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
@@ -18,8 +18,15 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib11d
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 300000
+CONFIGURE_ARGS+=	--with-threads=none
+.else
+CONFIGURE_ARGS+=	--with-threads=uthread
+.endif
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

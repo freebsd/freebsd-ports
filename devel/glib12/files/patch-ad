@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Dec 28 17:52:51 1998
-+++ configure.in	Mon Dec 28 17:53:11 1998
-@@ -231,7 +231,6 @@
+--- configure.in.orig	Mon Jan  4 16:57:31 1999
++++ configure.in	Tue Jan  5 06:23:33 1999
+@@ -245,7 +245,6 @@
  AC_CHECK_HEADERS(limits.h, AC_DEFINE(HAVE_LIMITS_H))
  AC_CHECK_HEADERS(pwd.h, AC_DEFINE(HAVE_PWD_H))
  AC_CHECK_HEADERS(sys/param.h, AC_DEFINE(HAVE_SYS_PARAM_H))
@@ -8,8 +8,8 @@
  AC_CHECK_HEADERS(sys/select.h, AC_DEFINE(HAVE_SYS_SELECT_H))
  AC_CHECK_HEADERS(sys/time.h, AC_DEFINE(HAVE_SYS_TIME_H))
  AC_CHECK_HEADERS(sys/times.h, AC_DEFINE(HAVE_SYS_TIMES_H))
-@@ -239,7 +238,7 @@
- AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
+@@ -254,7 +253,7 @@
+ AC_CHECK_HEADER(alloca.h, glib_have_alloca_h=yes, glib_have_alloca_h=no)
  
  # Check for some functions
 -AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll)
@@ -17,3 +17,67 @@
  
  # Check for sys_errlist
  AC_MSG_CHECKING(for sys_errlist)
+@@ -533,7 +532,7 @@
+ dnl *** g_thread checks ***
+ dnl ***********************
+ 
+-AC_ARG_WITH(threads, [  --with-threads=[none/posix/solaris/nspr] specify a thread implementation to use],
++AC_ARG_WITH(threads, [  --with-threads=[none/posix/solaris/nspr/uthread] specify a thread implementation to use],
+ 	if test "x$with_threads" = x; then
+ 		want_threads=yes
+ 	else
+@@ -595,6 +594,11 @@
+ 		AC_CHECK_LIB(nspr21, PRP_NewNakedCondVar, have_threads=nspr)
+ 	fi
+ fi
++if test "x$want_threads" = xyes || test "x$want_threads" = xuthread; then
++        if test "x$have_threads" = xnone; then
++		AC_CHECK_LIB(c_r, pthread_attr_init, have_threads=uthread)
++	fi
++fi
+ 
+ AC_MSG_CHECKING(for thread implementation)
+ 
+@@ -654,6 +658,14 @@
+ 		AC_CHECK_LIB(nspr21, PRP_NewNakedCondVar,
+ 			     G_THREAD_LIBS="-lnspr21")
+ 		;;
++	uthread)
++		AC_CHECK_LIB(c_r, pthread_attr_init,
++			     G_THREAD_LIBS="-pthread")
++		mutex_has_default=yes
++		mutex_default_type='pthread_mutex_t'
++		mutex_default_init='PTHREAD_MUTEX_INITIALIZER'
++		mutex_header_file='pthread.h'
++		;;
+         none)
+                 ;;
+         *)
+@@ -682,6 +694,17 @@
+                 	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
+ 			fi
+ 			;;
++ 	       *-*-freebsd*)
++	       		case $have_threads in
++			posix)
++				G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
++			uthread)
++				G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
++				have_threads=posix
++				have_poll=no
++				;;
++			esac
++			;;
+ 	esac
+ 
+ 	# if we are not finding the ctime_r function, then we probably are 
+@@ -742,6 +765,9 @@
+ dnl ****************************************
+ dnl *** GLib POLL* compatibility defines ***
+ dnl ****************************************
++if test x"$have_poll" != xno; then
++	AC_CHECK_FUNCS(poll)
++fi
+ GLIB_SYSDEFS([#include <sys/types.h>
+ 	#include <sys/poll.h>],
+ 	POLLIN:1 POLLOUT:4 POLLPRI:2 POLLERR:8 POLLHUP:16 POLLNVAL:32,
