@@ -23,6 +23,7 @@
     SUBDIR += fox
     SUBDIR += fox-devel
     SUBDIR += freeglut
+    SUBDIR += gai
     SUBDIR += gal
     SUBDIR += gal2
     SUBDIR += gauche-gtk
