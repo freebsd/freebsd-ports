@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 
+CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE}
+
 MAN1=		xcdroast.1
 
 .if defined(WITH_NONROOT)
@@ -46,10 +48,6 @@ pre-everything::
 	@${ECHO} "          - if you are really in need of it (with the attendant"
 	@${ECHO} "         circumstanceces noticed above) or not."
 	@${ECHO} ""
-
-post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g; \
-	                 s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/xcdroast.h;
 
 post-install:
 .if defined(WITH_NONROOT)
