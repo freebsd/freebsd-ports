@@ -17,6 +17,7 @@
     SUBDIR += code2html
     SUBDIR += cole
     SUBDIR += cost
+    SUBDIR += crimson
     SUBDIR += dico
     SUBDIR += dict
     SUBDIR += diff-mode.el

@@ -1,0 +1,15 @@
+This version of Crimson supports the Java API for XML Processing
+(JAXP) version 1.1 specification by providing implementations for the
+following package hierarchies: javax.xml.parsers, org.w3c.dom,
+org.xml.sax.*. Note that the javax.xml.transform hierarchy is NOT
+supported. One known implementation of the javax.xml.transform
+hierarchy is Xalan 2, which is available as a separate port in
+java/xalan.
+
+More info about JAXP:
+
+WWW: http://www.javasoft.com/xml/
+
+ Crimson home page:
+
+WWW: http://xml.apache.org/crimson/
