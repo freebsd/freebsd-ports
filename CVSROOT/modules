@@ -778,6 +778,7 @@ cheetah		ports/www/cheetah
 chef		ports/misc/chef
 chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
+chemtool-devel	ports/science/chemtool-devel
 cherokee	ports/www/cherokee
 chexedit	ports/editors/chexedit
 chgrep		ports/sysutils/chgrep
