@@ -96,6 +96,9 @@ lib/libguile.so.6
 lib/libguilereadline.a
 lib/libguilereadline.so
 lib/libguilereadline.so.0
+lib/libqthreads.a
+lib/libqthreads.so
+lib/libqthreads.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/guile.m4
