@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- spam/config-freebsd.orig
++++ spam/config-freebsd
+@@ -1,8 +1,8 @@
+ local_cf=.spamassassin/user_prefs
+ spamassassin=spamassassin
+ sa_learn=sa-learn
+-global_procmailrc=/usr/local/etc/procmailrc
+-global_cf=/usr/local/etc/mail/spamassassin
++global_procmailrc=%%PREFIX%%/etc/procmailrc
++global_cf=%%PREFIX%%/etc/mail/spamassassin
+ show_global=0
+ avail_icons=white,score,report,user,header,setup,mail
+ warn_procmail=1

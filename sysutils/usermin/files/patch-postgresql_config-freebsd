@@ -1,0 +1,30 @@
+
+$FreeBSD$
+
+--- postgresql/config-freebsd.orig
++++ postgresql/config-freebsd
+@@ -1,16 +1,16 @@
+ basedb=template1
+ pass=
+-hba_conf=/usr/local/pgsql/data/pg_hba.conf
+-pid_file=/usr/local/pgsql/data/postmaster.pid
+-stop_cmd=/usr/local/etc/rc.d/010.pgsql.sh stop
+-start_cmd=/usr/local/etc/rc.d/010.pgsql.sh start
++hba_conf=%%PREFIX%%/pgsql/data/pg_hba.conf
++pid_file=%%PREFIX%%/pgsql/data/postmaster.pid
++stop_cmd=%%PREFIX%%/etc/rc.d/010.pgsql.sh stop
++start_cmd=%%PREFIX%%/etc/rc.d/010.pgsql.sh start
+ perpage=25
+-psql=/usr/local/bin/psql
++psql=%%PREFIX%%/bin/psql
+ login=pgsql
+-plib=/usr/local/lib
++plib=%%PREFIX%%/lib
+ nodbi=0
+-dump_cmd=/usr/local/bin/pg_dump
+-rstr_cmd=/usr/local/bin/pg_restore
++dump_cmd=%%PREFIX%%/bin/pg_dump
++rstr_cmd=%%PREFIX%%/bin/pg_restore
+ sameunix=0
+ access=*: *
+ blob_mode=0
