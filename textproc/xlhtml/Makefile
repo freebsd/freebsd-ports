@@ -7,6 +7,7 @@
 
 PORTNAME=	xlhtml
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://chicago.sourceforge.net/xlhtml/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

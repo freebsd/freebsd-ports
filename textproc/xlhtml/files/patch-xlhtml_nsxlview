@@ -1,0 +1,15 @@
+--- xlhtml/nsxlview.orig	Sun Jun 22 08:36:31 2003
++++ xlhtml/nsxlview	Sun Jun 22 08:44:57 2003
+@@ -12,10 +12,8 @@
+ #set tmp = /tmp/$com:t.$$
+ #set html = $tmp.html
+ 
+-set tmp = `mktemp -q /tmp/nsxlview.XXXXXX` || exit 1
+-set tmp2 = `mktemp -q $tmp/nsxlview.XXXXXX` || exit 1
+-set html = $tmp2.html
+- 
++set tmp = `mktemp -t nsxlview.XXXXXX` || exit 1
++set html = $tmp.html
+ 
+ xlhtml -a $source > $html
+ if ((!(-r $html)) | ($status)) then
