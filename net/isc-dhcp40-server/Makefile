@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 DISTNAME=	dhcp-3.0b2pl${PORTVERSION:S/3.0.b2.//g}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(USE_FACILITY)
 _USE_FACILITY:=	`${ECHO} ${USE_FACILITY} | ${TR} "[:lower:]" "[:upper:]"`
