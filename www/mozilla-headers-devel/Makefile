@@ -14,13 +14,13 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-devel:configure
 
 USE_X_PREFIX=	yes
 
 NO_LATEST_LINK=	yes
 
-MAINDIR=	${.CURDIR}/../mozilla
+MAINDIR=	${.CURDIR}/../mozilla-devel
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
