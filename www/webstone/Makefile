@@ -3,7 +3,7 @@
 # Date created:        25 March 1997
 # Whom:                Soren Dossing <sauber@netcom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 05:47:00 asami Exp $
 #
 
 DISTNAME=      WebStone-2.0
@@ -32,21 +32,6 @@ do-install:
 .endfor
 
 post-install:
-	@echo ""
-	@echo "Before running webstone make sure that the non-root user"
-	@echo "who runs webstone has rexec access to the webclients and"
-	@echo "the web server. This user must also have write access to"
-	@echo "/usr/local/webstone on webmaster and write access in the"
-	@echo "the web data directory on the web server. Be aware of"
-	@echo "security risks!"
-	@echo ""
-	@echo "To run configure webstones, run it, and see the results:"
-	@echo ""
-	@echo "    cd /usr/local/webstone"
-	@echo "    ${EDITOR} conf/testbed"
-	@echo "    ./webstone -genfiles"
-	@echo "    ./webstone"
-	@echo "    ./webstone -results"
-	@echo ""
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
