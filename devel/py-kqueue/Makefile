@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kqueue
-PORTVERSION=		1.1
+PORTVERSION=		1.2
 CATEGORIES=		devel python
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dwhite
@@ -20,8 +20,8 @@ RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} < 400018 || ${OSVERSION} == 500000 )
-FORBIDDEN= requires kqueue
+.if ( ${OSVERSION} < 400018 || ${OSVERSION} < 500010 )
+#FORBIDDEN="requires new kqueue API"
 .endif
 
 # NO_WRKSUBDIR=		yes
