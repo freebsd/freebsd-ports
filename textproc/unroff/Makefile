@@ -7,51 +7,38 @@
 
 PORTNAME=	unroff
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${UNROFF_SITE}/dist/ \
-		${UNROFF_SITE}/contrib/
-DISTNAME=	${PORTNAME}-1.0
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}
+MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/%SUBDIR%/
+MASTER_SITE_SUBDIR=	dist
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DIST_SUBDIR=	unroff
 
-MAINTAINER=	ports@freebsd.org
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	contrib
+PATCHFILES=	me-misc-patch.gz misc-patch-2.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programmable troff translator with backend for HTML
 
-RUN_DEPENDS=	elk:${PORTSDIR}/lang/elk
-BUILD_DEPENDS=	elk:${PORTSDIR}/lang/elk
-
-BROKEN=		"Does not build; will be removed after Feb 2"
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	unroff
-PATCH_STRIP=	-p1
-
-UNROFF_SITE=	http://www-rn.informatik.uni-bremen.de/software/unroff
-PATCH1=		me-misc-patch
-PATCH2=		misc-patch-2
+LIB_DEPENDS=	elk.0:${PORTSDIR}/lang/elk
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
 MAN1=		unroff.1 unroff-html.1 unroff-html-man.1 \
 		unroff-html-me.1 unroff-html-ms.1
 
-pre-patch:
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@(cd ${_DISTDIR}; \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying distribution patch ${PATCH1}" ; \
-		fi; \
-		${PATCH} ${PATCH_DIST_ARGS} -p0 < ${PATCH1}; \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying distribution patch ${PATCH2}" ; \
-		fi; \
-		${PATCH} ${PATCH_DIST_ARGS} -p1 < ${PATCH2})
-
 do-install:
-	@${MKDIR} ${DATADIR}/misc
-	${INSTALL_PROGRAM} ${WRKSRC}/src/unroff ${PREFIX}/bin/unroff
-	${CP} -R ${WRKSRC}/scm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/tmac.hyper ${WRKSRC}/misc/sample.unroff ${DATADIR}/misc
+	${INSTALL_PROGRAM} ${WRKSRC}/src/unroff ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
+	@${MKDIR} ${DATADIR}/misc
+.for i in doc/tmac.hyper misc/sample.unroff
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}/misc
+.endfor
+	${TAR} -C ${WRKSRC} -cf - scm | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.ms ${DOCSDIR}
