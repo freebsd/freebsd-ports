@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 USE_OPENSSL=	YES
 

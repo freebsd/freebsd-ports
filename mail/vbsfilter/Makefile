@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 

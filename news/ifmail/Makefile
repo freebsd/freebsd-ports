@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.average.org/ifmail/
 MASTER_SITE_SUBDIR=	system/fido
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8

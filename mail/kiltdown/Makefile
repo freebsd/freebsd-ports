@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kiltdown
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 

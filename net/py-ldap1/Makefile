@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://python-ldap.sourceforge.net/pub/python-ldap/
 DISTNAME=	python-ldap-${PORTVERSION}-src
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap2
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
