@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk+licq
 PORTVERSION=	0.50.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://gtk.licq.org/download/
 
@@ -31,9 +31,17 @@ USE_GNOME=	yes
 CONFIGURE_ARGS=	--enable-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
+.endif
+
 post-patch:
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL5} -pi -e \
+		's|-D_REENTRANT|${PTHREAD_CFLAGS} -D_REENTRANT|g ; \
+		s|^localedir =.*|localedir = \$$(prefix)/share/locale| ; \
+		s|^gtklicq_helpdir =.*|gtklicq_helpdir = \
+		\$$(datadir)/help/gtk+licq/C|'
+.if !defined(HAVE_GNOME)
 	@${PERL5} -pi -e \
-		's|^SUBDIRS\ =.*|SUBDIRS\ =\ |' ${WRKSRC}/doc/Makefile.in
+		's|^SUBDIRS =.*|SUBDIRS =|' ${WRKSRC}/doc/Makefile.in
 .endif
 
 post-configure:
