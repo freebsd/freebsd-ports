@@ -14,7 +14,7 @@ MASTER_SITES=	http://cr.yp.to/djbdns/ \
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.if !defined(WITHOUT_MAN) && !defined(LIBDJBDNS_ONLY)
+.if !defined(WITHOUT_MAN)
 MANDATE=	-20031023
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
@@ -29,7 +29,7 @@ MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
 MANCOMPRESSED=	no
 .endif
 
-.if defined(WITH_IPV6) && !defined(LIBDJBDNS_ONLY)
+.if defined(WITH_IPV6)
 PKGNAMESUFFIX=	-ipv6
 PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
 PATCH_SITES+=	http://www.fefe.de/dns/
@@ -37,7 +37,7 @@ PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if defined(WITH_DNSCACHE_DUMPCACHE) && !defined(LIBDJBDNS_ONLY)
+.if defined(WITH_DNSCACHE_DUMPCACHE)
 .if defined(WITH_IPV6)
 BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict.
 .endif
@@ -53,22 +53,11 @@ DJBDNS_V6_VER=	test14
 MAINTAINER?=	roam@FreeBSD.org
 COMMENT?=	A collection of secure and reliable DNS tools
 
-.if !defined(LIBDJBDNS_ONLY)
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
-.endif
 
-.if !defined(LIBDJBDNS_ONLY)
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
-.else
-ALL_TARGET=	it-lib
-INSTALL_TARGET=	setup-lib check-lib
-PLIST=		${MASTERDIR}/pkg-plist.libdjbdns
-DESCR=		${MASTERDIR}/pkg-descr.libdjbdns
-PATCHFILES+=	libdjbdns-${PORTVERSION}${LIBDJBDNS_REV}.patch
-PATCH_SITES+=	http://devel.ringlet.net/net/libdjbdns/
-.endif
 
 NO_PACKAGE=	Forbidden - we have patches to the distribution.
 
@@ -79,7 +68,6 @@ PLIST_SUB+=	WITH_IPV6=""
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
-.if !defined(LIBDJBDNS_ONLY)
 pre-fetch:
 	@${ECHO} "You can define the following variables to configure the djbdns build:"
 	@${ECHO} "- WITH_IPV6               - build with IPv6 support"
@@ -88,19 +76,13 @@ pre-fetch:
 	@${ECHO} "                            http://mapage.noos.fr/efge/djbdns/"
 	@${ECHO} "- WITHOUT_MAN             - do NOT install Gerritt Pape's manual pages"
 	@${ECHO} "                            http://smarden.org/pape/djb/manpages/"
-.endif
-
-.if defined(LIBDJBDNS_ONLY)
-pre-patch:
-	${CP} ${WRKSRC}/hier.c ${WRKSRC}/hier-lib.c
-.endif
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@echo "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
-.if !defined(WITHOUT_MAN) && !defined(LIBDJBDNS_ONLY)
+.if !defined(WITHOUT_MAN)
 post-install:
 	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${PREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${PREFIX}/man/man8/
