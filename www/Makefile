@@ -375,6 +375,7 @@
     SUBDIR += roxen
     SUBDIR += rt2
     SUBDIR += ruboard
+    SUBDIR += ruby-borges
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
     SUBDIR += ruby-http-access

@@ -1,0 +1,32 @@
+%%RUBY_SITELIBDIR%%/borges.rb
+%%RUBY_SITELIBDIR%%/borges/Apache+DRb.rb
+%%RUBY_SITELIBDIR%%/borges/Application.rb
+%%RUBY_SITELIBDIR%%/borges/HTML.rb
+%%RUBY_SITELIBDIR%%/borges/Page.rb
+%%RUBY_SITELIBDIR%%/borges/Renderer.rb
+%%RUBY_SITELIBDIR%%/borges/Session.rb
+%%RUBY_SITELIBDIR%%/borges/Utilities.rb
+%%RUBY_SITELIBDIR%%/borges/Webrick.rb
+%%RUBY_SITELIBDIR%%/borges/console_ask.rb
+%%RUBY_SITELIBDIR%%/borges/template_ask.rb
+%%RUBY_SITELIBDIR%%/borges/web_ask.rb
+@dirrm %%RUBY_SITELIBDIR%%/borges
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pagecounter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/status.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/application.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/ask.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/index.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/patterns
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/renderask.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/renderer.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/respond.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/train.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/webask.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/train
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
