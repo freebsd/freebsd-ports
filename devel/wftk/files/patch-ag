@@ -1,0 +1,14 @@
+--- uta/sound.h.orig	Sat Mar 31 05:25:38 2001
++++ uta/sound.h	Sat Mar 31 05:27:39 2001
+@@ -36,9 +36,9 @@
+ #endif
+ 
+ #ifdef HAVE_MIXER
+-#include <SDL/SDL_mixer.h>
++#include <SDL11/SDL_mixer.h>
+ #else
+-#include <SDL/SDL_types.h>
++#include <SDL11/SDL_types.h>
+ #endif
+ 
+ namespace uta {

@@ -1,0 +1,11 @@
+--- uta/surface.h.orig	Sat Mar 31 05:25:49 2001
++++ uta/surface.h	Sat Mar 31 05:27:49 2001
+@@ -22,7 +22,7 @@
+ #ifndef _SURFACE_H_
+ #define _SURFACE_H_
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ 
+ #include "color.h"
+ #include "point.h"

@@ -1,0 +1,11 @@
+--- uta/sge_draw.cc.orig	Sat Mar 31 05:41:03 2001
++++ uta/sge_draw.cc	Sat Mar 31 05:41:56 2001
+@@ -20,7 +20,7 @@
+ *	John Garrison's PowerPak	
+ */
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #include <math.h>
+ #include <string.h>
+ #include <stdarg.h>

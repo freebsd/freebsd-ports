@@ -1,0 +1,11 @@
+--- uta/sge_blib.cc.orig	Sat Mar 31 05:40:36 2001
++++ uta/sge_blib.cc	Sat Mar 31 05:40:51 2001
+@@ -19,7 +19,7 @@
+ *  This is written by Johan E. Thélin and is slightly modified by me.
+ */
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #include "sge_draw.h"
+ #include "sge_blib.h"
+ 

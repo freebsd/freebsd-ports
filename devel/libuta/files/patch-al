@@ -1,0 +1,11 @@
+--- uta/surface_io.cc.orig	Sat Mar 31 05:41:28 2001
++++ uta/surface_io.cc	Sat Mar 31 05:42:29 2001
+@@ -79,7 +79,7 @@
+ #include <assert.h>
+ 
+ #include <png.h>
+-#include <SDL/SDL_endian.h>
++#include <SDL11/SDL_endian.h>
+ 
+ namespace uta {
+ 

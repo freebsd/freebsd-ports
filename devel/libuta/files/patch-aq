@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Mar 31 06:01:00 2001
++++ configure.in	Sat Mar 31 06:01:12 2001
+@@ -186,7 +186,7 @@
+ 		])   
+ AM_CONDITIONAL(SMPEG_AVAILABLE, test x$have_smpeg = xyes)
+ 
+-AC_CHECK_HEADER(SDL/SDL_mixer.h,AC_CHECK_LIB(SDL_mixer, Mix_SetPostMix, [
++AC_CHECK_HEADER(SDL11/SDL_mixer.h,AC_CHECK_LIB(SDL_mixer, Mix_SetPostMix, [
+ 	MIXLIBS=-lSDL_mixer
+ 	AC_DEFINE(HAVE_MIXER)
+ ]))

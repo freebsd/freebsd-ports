@@ -1,0 +1,11 @@
+--- uta/event.h.orig	Sat Mar 31 05:24:44 2001
++++ uta/event.h	Sat Mar 31 05:26:20 2001
+@@ -21,7 +21,7 @@
+ #ifndef _EVENT_H
+ #define _EVENT_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #include "keysym.h"
+ #include "point.h"
+ 

@@ -1,0 +1,56 @@
+--- aclocal.m4.orig	Wed Mar 21 13:44:06 2001
++++ aclocal.m4	Sat Mar 31 06:09:47 2001
+@@ -618,8 +618,8 @@
+ 	CHECK_LIB_HEADER_VERSION(
+ 	    SDL,
+ 	    SDL_Init,
+-	    SDL/SDL.h,
+-	    SDL/SDL_version.h,
++	    SDL11/SDL.h,
++	    SDL11/SDL_version.h,
+ 	    SDL_MAJOR_VERSION.SDL_MINOR_VERSION.SDL_PATCHLEVEL,
+ 	    $1,
+ 	http://www.devolution.com/~slouken/SDL/SDL-0.10/src/SDL-$1.tar.gz)
+@@ -630,7 +630,7 @@
+ [
+     TEST_SKIP(
+     [
+-      AC_CHECK_HEADER(SDL/SDL_mixer.h,
++      AC_CHECK_HEADER(SDL11/SDL_mixer.h,
+ 	[
+ 		AC_DEFINE(HAVE_MIXER))
+ 		AC_CHECK_LIB([
+@@ -1039,13 +1039,13 @@
+   if test x$sdl_exec_prefix != x ; then
+      sdl_args="$sdl_args --exec-prefix=$sdl_exec_prefix"
+      if test x${SDL_CONFIG+set} != xset ; then
+-        SDL_CONFIG=$sdl_exec_prefix/bin/sdl-config
++        SDL_CONFIG=$sdl_exec_prefix/bin/sdl11-config
+      fi
+   fi
+   if test x$sdl_prefix != x ; then
+      sdl_args="$sdl_args --prefix=$sdl_prefix"
+      if test x${SDL_CONFIG+set} != xset ; then
+-        SDL_CONFIG=$sdl_prefix/bin/sdl-config
++        SDL_CONFIG=$sdl_prefix/bin/sdl11-config
+      fi
+   fi
+ 
+@@ -1079,7 +1079,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ 
+ char*
+ my_strdup (char *str)
+@@ -1153,7 +1153,7 @@
+           LIBS="$LIBS $SDL_LIBS"
+           AC_TRY_LINK([
+ #include <stdio.h>
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ ],      [ return 0; ],
+         [ echo "*** The test program compiled, but did not run. This usually means"
+           echo "*** that the run-time linker is not finding SDL or finding the wrong"

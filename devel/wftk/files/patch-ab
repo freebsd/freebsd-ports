@@ -1,0 +1,11 @@
+--- uta/color.h.orig	Sat Mar 31 05:24:37 2001
++++ uta/color.h	Sat Mar 31 05:26:10 2001
+@@ -22,7 +22,7 @@
+ #define _COLOR_H
+ 
+ #include <iostream>
+-#include <SDL/SDL_version.h>
++#include <SDL11/SDL_version.h>
+ 
+ namespace uta {
+ ///

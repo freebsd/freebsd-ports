@@ -1,0 +1,11 @@
+--- uta/sge_draw.h.orig	Sat Mar 31 05:52:07 2001
++++ uta/sge_draw.h	Sat Mar 31 05:52:34 2001
+@@ -18,7 +18,7 @@
+ #ifndef sge_draw_H
+ #define sge_draw_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #include "sge_internal.h"
+ 
+ 

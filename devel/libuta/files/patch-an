@@ -1,0 +1,11 @@
+--- uta/pixelformat.h.orig	Sat Mar 31 05:51:51 2001
++++ uta/pixelformat.h	Sat Mar 31 05:52:22 2001
+@@ -27,7 +27,7 @@
+ 
+ 
+ //just for typedefs ...
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ 
+ #include <string>
+ #include <stl.h>

@@ -1,0 +1,11 @@
+--- uta/keysym.h.orig	Sat Mar 31 05:24:56 2001
++++ uta/keysym.h	Sat Mar 31 05:26:32 2001
+@@ -20,7 +20,7 @@
+ #ifndef KEYSYM_H
+ #define KEYSYM_H
+ 
+-#include <SDL/SDL_keysym.h>
++#include <SDL11/SDL_keysym.h>
+ 
+ namespace uta {
+ 
