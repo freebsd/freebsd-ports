@@ -31,8 +31,6 @@ MAN8=		stunnel.8
 cert:
 	@(cd ${WRKSRC}; make cert)
 
-	${CP} files/patch-aa patches/
-
 post-build:
 	@${ECHO} ""
 	@${ECHO} "********************************************************************"
