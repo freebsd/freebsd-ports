@@ -1,0 +1,74 @@
+--- check_tmp.c.orig	Fri Sep 24 13:33:35 1999
++++ check_tmp.c	Tue Apr 25 00:57:56 2000
+@@ -38,6 +38,13 @@
+ #endif
+ #endif
+   
++#if __FreeBSD_version >= 500001
++  struct kevent ev;
++  struct kevent *evp;
++  int fd;
++  struct timespec ts = { 0, 0 };
++  int kq = -1;
++#endif
+ 
+   struct listStruct *list = NULL;
+ 
+@@ -178,6 +185,22 @@
+     exit(1);
+   }
+ 
++#if __FreeBSD_version >= 500001
++  /* Set up the KQ on the target directory */
++  fd = dirfd(dirp);
++
++  kq = kqueue();
++  if (kq < 0)
++    err(1, "kqueue");
++
++  ev.ident = fd;
++  ev.filter = EVFILT_VNODE;
++  ev.flags = EV_ADD | EV_ENABLE | EV_CLEAR;
++  ev.fflags = NOTE_WRITE;
++  evp = &ev;
++  kevent(kq, 1, &evp, 0, NULL, &ts);
++#endif
++
+   /* steup the first element of the list */
+   while ((dp = readdir(dirp)) != NULL){
+     if (!list) /* first time */
+@@ -266,6 +289,10 @@
+   rewinddir(dirp);
+ 
+   while (1){
++
++#if __FreeBSD_version >= 500001
++    if (ev.fflags & NOTE_WRITE) {
++#endif
+     while ((dp = readdir(dirp)) != NULL){
+       if (!(checknode(list, watchdir, dp->d_name))){
+         if (replacewatchflag){
+@@ -352,11 +379,22 @@
+       /* closedir(dirp); */
+       }
+     }
+-#ifdef 0
++#if 0
+     walklist(list);
+ #endif
+     list = prunelist(list); 
+     rewinddir(dirp);
++
++#if __FreeBSD_version >= 500001
++    /* Reset event so we don't trigger on the rewinddir */
++    kevent(kq, 1, &evp, 0, NULL, &ts);
++
++    /* Block until the directory changes */
++    if (kevent(kq, 0, NULL, 1, &ev, NULL) < 0)
++      err(1, "kevent");
++
++  }
++#endif
+   }
+ /*   closedir(dirp); */
+ 

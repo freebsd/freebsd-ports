@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Sep 23 10:18:18 1999
-+++ Makefile	Sat Dec  4 00:53:05 1999
++++ Makefile	Tue Apr 25 00:30:11 2000
 @@ -9,12 +9,13 @@
  # debugging
  # DFLAGS = -DTEST -DDEBUG
@@ -21,7 +21,7 @@
  OpenBSD:
  	make -e $(ALL) $(MFLAGS) \
 -	XFLAGS='-DBSD -DREGEX -DREGCOMP_3C' CC="gcc $(CFLAGS)" STATIC=-static
-+	XFLAGS='-DBSD -DREGEX -DREGCOMP_3C' CC="$(CC) $(CFLAGS)" \
++	XFLAGS='-DREGEX -DREGCOMP_3C' CC="$(CC) $(CFLAGS)" \
 +	STATIC=-static
  
  generic:

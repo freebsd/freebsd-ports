@@ -1,0 +1,11 @@
+--- list_utils.c.orig	Tue Apr 25 00:58:27 2000
++++ list_utils.c	Tue Apr 25 00:58:33 2000
+@@ -168,7 +168,7 @@
+ 
+   
+ 
+-#ifdef 0
++#if 0
+   printf("%-11s %-2d %-8s %-8s %-6ld %-10s %-10s\n", filemodes,
+           (int)list->statbuf.st_nlink, username, groupname, 
+           list->statbuf.st_size, timehold, list->filename);
