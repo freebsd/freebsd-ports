@@ -1,0 +1,10 @@
+--- scripts/xinitrc.orig	Sat Aug  2 21:30:18 2003
++++ scripts/xinitrc	Sat Aug  2 21:30:56 2003
+@@ -14,6 +14,7 @@ Xft.hintstyle: hintmedium
+ EOF
+ 
+ # Launch xscreensaver (if available), but only as non-root user
++UID=`id -u`
+ test $UID -gt 0 && xscreensaver -no-splash &
+ 
+ # Run xfce4-session if installed
