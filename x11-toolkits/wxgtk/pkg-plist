@@ -157,7 +157,6 @@ include/wx/gtk/radiobut.h
 include/wx/gtk/region.h
 include/wx/gtk/scrolbar.h
 include/wx/gtk/settings.h
-include/wx/gtk/setup.h
 include/wx/gtk/slider.h
 include/wx/gtk/spinbutt.h
 include/wx/gtk/spinctrl.h
