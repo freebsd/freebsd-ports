@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Remove leftover mimeinfo.cache files.
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+for mdir in %%MIMEDIRS%%; do
+    if [ -f ${mdir}/mimeinfo.cache ]; then
+	rm -f ${mdir}/mimeinfo.cache
+    fi
+done
+
+exit 0
