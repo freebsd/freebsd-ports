@@ -3,16 +3,16 @@ bin/mbm
 bin/ptrans
 bin/uhtrans
 bin/utrans
-share/doc/i18n/tools/fgetu8.html
-share/doc/i18n/tools/fputu8.html
-share/doc/i18n/tools/index.html
-share/doc/i18n/tools/libutf-8.html
-share/doc/i18n/tools/rfc1641.txt
-share/doc/i18n/tools/rfc2277.txt
-share/doc/i18n/tools/rfc2279.txt
-share/doc/i18n/tools/sgetu8.html
-share/doc/i18n/tools/sputu8.html
-share/doc/i18n/tools/utrans.html
+%%PORTDOCS%%share/doc/i18n/tools/fgetu8.html
+%%PORTDOCS%%share/doc/i18n/tools/fputu8.html
+%%PORTDOCS%%share/doc/i18n/tools/index.html
+%%PORTDOCS%%share/doc/i18n/tools/libutf-8.html
+%%PORTDOCS%%share/doc/i18n/tools/rfc1641.txt
+%%PORTDOCS%%share/doc/i18n/tools/rfc2277.txt
+%%PORTDOCS%%share/doc/i18n/tools/rfc2279.txt
+%%PORTDOCS%%share/doc/i18n/tools/sgetu8.html
+%%PORTDOCS%%share/doc/i18n/tools/sputu8.html
+%%PORTDOCS%%share/doc/i18n/tools/utrans.html
 share/i18n/charmaps/binary/ANSI_X3.110-1983
 share/i18n/charmaps/binary/ANSI_X3.4-1968
 share/i18n/charmaps/binary/ASMO_449
@@ -172,8 +172,8 @@ share/i18n/charmaps/binary/T.101-G2
 share/i18n/charmaps/binary/T.61-7BIT
 share/i18n/charmaps/binary/T.61-8BIT
 share/i18n/charmaps/binary/VIDEOTEX-SUPPL
-@dirrm share/doc/i18n/tools
-@dirrm share/doc/i18n
+%%PORTDOCS%%@dirrm share/doc/i18n/tools
+%%PORTDOCS%%@dirrm share/doc/i18n
 @dirrm share/i18n/charmaps/binary
 @dirrm share/i18n/charmaps
 @dirrm share/i18n
