@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xsol
+man/man6/xsol.6.gz
