@@ -17,6 +17,7 @@ MAINTAINER=	mi@aldan.algebra.com
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients \
 		mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+USE_X_PREFIX=	yes
 
 # See WWW for other available encodings
 CYR_RFX_ENCODING?=	koi8-o
