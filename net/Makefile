@@ -190,6 +190,7 @@
     SUBDIR += hagelslag
     SUBDIR += haproxy
     SUBDIR += hawk
+    SUBDIR += hf6to4
     SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd

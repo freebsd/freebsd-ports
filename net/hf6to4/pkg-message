@@ -1,0 +1,7 @@
+===========================================================================
+
+To configure this package, adjust ${PREFIX}/etc/hf6to4.conf from
+${PREFIX}/etc/hf6to4.conf.sample, then start "hf6to4 -v start".
+You should be able to "ping6 www.kame.net" after that.
+
+===========================================================================
