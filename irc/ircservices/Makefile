@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.6
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/
@@ -16,7 +16,7 @@ MAINTAINER=	sysadmin@alexdupre.com
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	-prefix ${PREFIX}
+CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
 post-install:
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."
