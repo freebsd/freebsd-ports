@@ -3,7 +3,7 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.3 1998/06/24 05:17:29 fenner Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:33 asami Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -31,3 +31,7 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
