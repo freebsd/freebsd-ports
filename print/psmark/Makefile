@@ -9,7 +9,7 @@
 PORTNAME=	psmark
 PORTVERSION=	2.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.antitachyon.com/obj/2/14/2/
+MASTER_SITES=	http://www.antitachyon.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
