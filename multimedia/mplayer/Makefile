@@ -175,8 +175,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.92.0
-PORTREVISION=	7
+PORTVERSION=	0.92.1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -188,7 +187,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.92
+DISTNAME=	MPlayer-0.92.1
 
 PATCH_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
 PATCHFILES=	mplayer-0.9.2-v6-20030930.diff.gz
