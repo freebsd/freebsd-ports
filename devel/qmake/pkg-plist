@@ -1,0 +1,180 @@
+bin/qmake
+@comment A bug in pkg_* prevents us from using %D below
+@cwd %%_PREFIX%%/share/qt/mkspecs
+aix-g++/qmake.conf
+aix-g++/qplatformdefs.h
+aix-xlc-64/qmake.conf
+aix-xlc-64/qplatformdefs.h
+aix-xlc/qmake.conf
+aix-xlc/qplatformdefs.h
+bsdi-g++/qmake.conf
+bsdi-g++/qplatformdefs.h
+cygwin-g++/qmake.conf
+cygwin-g++/qplatformdefs.h
+darwin-g++/qmake.conf
+darwin-g++/qplatformdefs.h
+dgux-g++/qmake.conf
+dgux-g++/qplatformdefs.h
+freebsd-g++/qmake.conf
+freebsd-g++/qplatformdefs.h
+hpux-acc-64/qmake.conf
+hpux-acc-64/qplatformdefs.h
+hpux-acc-o64/qmake.conf
+hpux-acc-o64/qplatformdefs.h
+hpux-acc/qmake.conf
+hpux-acc/qplatformdefs.h
+hpux-cc/qmake.conf
+hpux-cc/qplatformdefs.h
+hpux-g++-64/qmake.conf
+hpux-g++-64/qplatformdefs.h
+hpux-g++/qmake.conf
+hpux-g++/qplatformdefs.h
+hpuxi-acc-32/qmake.conf
+hpuxi-acc-32/qplatformdefs.h
+hpuxi-acc-64/qmake.conf
+hpuxi-acc-64/qplatformdefs.h
+hurd-g++/qmake.conf
+hurd-g++/qplatformdefs.h
+irix-cc-64/qmake.conf
+irix-cc-64/qplatformdefs.h
+irix-cc-o32/qmake.conf
+irix-cc-o32/qplatformdefs.h
+irix-cc/qmake.conf
+irix-cc/qplatformdefs.h
+irix-g++/qmake.conf
+irix-g++/qplatformdefs.h
+linux-cxx/qmake.conf
+linux-cxx/qplatformdefs.h
+linux-g++/qmake.conf
+linux-g++/qplatformdefs.h
+linux-icc/qmake.conf
+linux-icc/qplatformdefs.h
+linux-kcc/qmake.conf
+linux-kcc/qplatformdefs.h
+linux-kylix/qmake.conf
+linux-kylix/qplatformdefs.h
+linux-pgcc/qmake.conf
+linux-pgcc/qplatformdefs.h
+lynxos-g++/qmake.conf
+lynxos-g++/qplatformdefs.h
+macx-g++/Info.plist.app
+macx-g++/qmake.conf
+macx-g++/qplatformdefs.h
+macx-mwerks/mwerkstmpl.xml
+macx-mwerks/qmake.conf
+macx-mwerks/qplatformdefs.h
+macx-pbuilder/Info.plist.app
+macx-pbuilder/qmake.conf
+macx-pbuilder/qplatformdefs.h
+netbsd-g++/qmake.conf
+netbsd-g++/qplatformdefs.h
+openbsd-g++/qmake.conf
+openbsd-g++/qplatformdefs.h
+qnx-g++/qmake.conf
+qnx-g++/qplatformdefs.h
+reliant-cds-64/qmake.conf
+reliant-cds-64/qplatformdefs.h
+reliant-cds/qmake.conf
+reliant-cds/qplatformdefs.h
+sco-cc/qmake.conf
+sco-cc/qplatformdefs.h
+sco-g++/qmake.conf
+sco-g++/qplatformdefs.h
+solaris-cc-64/qmake.conf
+solaris-cc-64/qplatformdefs.h
+solaris-cc/qmake.conf
+solaris-cc/qplatformdefs.h
+solaris-g++-64/qmake.conf
+solaris-g++-64/qplatformdefs.h
+solaris-g++/qmake.conf
+solaris-g++/qplatformdefs.h
+tru64-cxx/qmake.conf
+tru64-cxx/qplatformdefs.h
+tru64-g++/qmake.conf
+tru64-g++/qplatformdefs.h
+unixware-cc/qmake.conf
+unixware-cc/qplatformdefs.h
+unixware-g++/qmake.conf
+unixware-g++/qplatformdefs.h
+win32-borland/qmake.conf
+win32-borland/qplatformdefs.h
+win32-g++/qmake.conf
+win32-g++/qplatformdefs.h
+win32-icc/qmake.conf
+win32-icc/qplatformdefs.h
+win32-icc/win32app.dsp
+win32-icc/win32dll.dsp
+win32-icc/win32lib.dsp
+win32-msvc.net/qmake.conf
+win32-msvc.net/qplatformdefs.h
+win32-msvc/qmake.conf
+win32-msvc/qplatformdefs.h
+win32-msvc/win32app.dsp
+win32-msvc/win32dll.dsp
+win32-msvc/win32lib.dsp
+win32-watcom/qmake.conf
+@dirrm aix-g++
+@dirrm aix-xlc
+@dirrm aix-xlc-64
+@dirrm bsdi-g++
+@dirrm cygwin-g++
+@dirrm darwin-g++
+@dirrm dgux-g++
+@dirrm freebsd-g++
+@dirrm hpux-acc
+@dirrm hpux-acc-64
+@dirrm hpux-acc-o64
+@dirrm hpux-cc
+@dirrm hpux-g++
+@dirrm hpux-g++-64
+@dirrm hpuxi-acc-32
+@dirrm hpuxi-acc-64
+@dirrm hurd-g++
+@dirrm irix-cc
+@dirrm irix-cc-64
+@dirrm irix-cc-o32
+@dirrm irix-g++
+@dirrm linux-cxx
+@dirrm linux-g++
+@dirrm linux-icc
+@dirrm linux-kcc
+@dirrm linux-kylix
+@dirrm linux-pgcc
+@dirrm lynxos-g++
+@dirrm macx-g++
+@dirrm macx-mwerks
+@dirrm macx-pbuilder
+@dirrm netbsd-g++
+@dirrm openbsd-g++
+@dirrm qnx-g++
+@dirrm reliant-cds
+@dirrm reliant-cds-64
+@dirrm sco-cc
+@dirrm sco-g++
+@dirrm solaris-cc
+@dirrm solaris-cc-64
+@dirrm solaris-g++
+@dirrm solaris-g++-64
+@dirrm tru64-cxx
+@dirrm tru64-g++
+@dirrm unixware-cc
+@dirrm unixware-g++
+@dirrm win32-borland
+@dirrm win32-g++
+@dirrm win32-icc
+@dirrm win32-msvc
+@dirrm win32-msvc.net
+@dirrm win32-watcom
+@unexec rmdir %%_PREFIX%%/share/qt/mkspecs
+@unexec rmdir %%_PREFIX%%/share/qt || echo %%_PREFIX%%/share/qt is still in use -- probably by the rest of Qt
+%%PORTDOCS%%@cwd %%DOCSDIR%%
+%%PORTDOCS%%html/qmake.dcf
+%%PORTDOCS%%html/qmake-manual.html
+%%PORTDOCS%%html/qmake-manual-1.html
+%%PORTDOCS%%html/qmake-manual-2.html
+%%PORTDOCS%%html/qmake-manual-3.html
+%%PORTDOCS%%html/qmake-manual-4.html
+%%PORTDOCS%%html/qmake-manual-5.html
+%%PORTDOCS%%html/qmake-manual-6.html
+%%PORTDOCS%%html/qmake-manual-7.html
+%%PORTDOCS%%@unexec (rmdir %%DOCSDIR%%/html && rmdir %%DOCSDIR%%) || echo %%DOCSDIR%% is still in use -- by other Qt docs?

@@ -880,6 +880,7 @@
     SUBDIR += pychecker
     SUBDIR += pyrex
     SUBDIR += qextmdi
+    SUBDIR += qmake
     SUBDIR += qssl
     SUBDIR += qt-designer
     SUBDIR += qtez
