@@ -31,6 +31,8 @@ INFO=	NewsCache
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure.in
+
+pre-configure:
 	cd ${WRKSRC}; ${ACLOCAL}
 
 .include <bsd.port.mk>
