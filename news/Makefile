@@ -46,6 +46,7 @@
     SUBDIR += newsfish
     SUBDIR += newsgrab
     SUBDIR += newspost
+    SUBDIR += newsstar
     SUBDIR += newsx
     SUBDIR += nget
     SUBDIR += nn
