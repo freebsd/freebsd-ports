@@ -1,21 +1,19 @@
 bin/gpg
 bin/gpgm
-@exec mkdir %D/lib/gnupg
+lib/gnupg/tiger
+lib/gnupg/twofish
 @dirrm lib/gnupg
 share/gnupg/options.skel
 @dirrm share/gnupg
 share/locale/de/LC_MESSAGES/gnupg.mo
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
 share/locale/es_ES/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/es_ES/LC_MESSAGES
 @dirrm share/locale/es_ES
 share/locale/fr/LC_MESSAGES/gnupg.mo
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
 share/locale/it/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/it
+share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/pt_BR/LC_MESSAGES
 @dirrm share/locale/pt_BR
