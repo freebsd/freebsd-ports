@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.137 1998/09/24 00:29:37 vanilla Exp $
+# $Id: Makefile,v 1.138 1998/09/30 13:50:22 vanilla Exp $
 #
 
     SUBDIR += ElectricFence
@@ -107,6 +107,7 @@
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcre
+    SUBDIR += portcheckout
     SUBDIR += portlint
     SUBDIR += prc-tools
     SUBDIR += prcs
