@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.9 1999/06/12 23:53:28 sada Exp $
+# $Id: Makefile,v 1.10 1999/06/24 20:10:50 sada Exp $
 #
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
@@ -17,7 +17,7 @@ PATCHDIR=	${.CURDIR}/../netscape46-communicator/patches
 
 BROWSER_CMD=	ja-${BROWSER}-46
 BROWSER_VERSION=	4.61
-JAPANIZE_KIT=	communicator-ja-euc-v46-export.generic-generic-generic.tar.gz
+JAPANIZE_KIT=	communicator-ja-euc-v461-export.generic-generic-generic.tar.gz
 NETHELP=	nethelp-v451
 
 .include "${MASTERDIR}/Makefile"
