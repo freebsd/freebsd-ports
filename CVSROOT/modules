@@ -4326,6 +4326,7 @@ p5-Archive-Zip	ports/archivers/p5-Archive-Zip
 p5-Array-Compare	ports/misc/p5-Array-Compare
 p5-Array-IntSpan	ports/misc/p5-Array-IntSpan
 p5-Array-PrintCols	ports/misc/p5-Array-PrintCols
+p5-Array-RefElem	ports/misc/p5-Array-RefElem
 p5-AsciiDB-TagFile	ports/databases/p5-AsciiDB-TagFile
 p5-Astro-MoonPhase	ports/astro/p5-Astro-MoonPhase
 p5-Astro-SunTime	ports/astro/p5-Astro-SunTime
