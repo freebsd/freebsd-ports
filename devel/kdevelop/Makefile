@@ -8,9 +8,8 @@
 PORTNAME=	kdevelop
 PORTVERSION=	1.4
 CATEGORIES=	devel kde
-MASTER_SITES=	ftp://ftp.e-technik.fh-muenchen.de/pub/unix/ide/KDevelop/ \
-		ftp://ftp.chg.ru/pub/X11/kdevelop/ \
-		ftp://gd.tuwien.ac.at/hci/KDevelop/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/2.1/distribution/tar/generic/src
 
 MAINTAINER=	demon@FreeBSD.org
 
