@@ -26,10 +26,6 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
