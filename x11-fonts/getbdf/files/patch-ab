@@ -1,0 +1,19 @@
+*** getbdf.c.orig	Wed Mar  7 17:16:41 1990
+--- getbdf.c	Fri Aug 30 23:39:32 1996
+***************
+*** 33,39 ****
+  
+  XFontStruct *font;
+  
+! #ifdef HP
+  nint(x) double x;
+  {
+      int i;
+--- 33,39 ----
+  
+  XFontStruct *font;
+  
+! #if defined(HP) || defined(__FreeBSD__)
+  nint(x) double x;
+  {
+      int i;
