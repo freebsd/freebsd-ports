@@ -29,6 +29,7 @@
 %%GALLERYDIR%%/classes/postnuke/UserDB.php
 %%GALLERYDIR%%/classes/postnuke0.7.1/User.php
 %%GALLERYDIR%%/classes/postnuke0.7.1/UserDB.php
+%%GALLERYDIR%%/classes/remote/GalleryRemoteProperties.php
 %%GALLERYDIR%%/configure.sh
 %%GALLERYDIR%%/create_user.php
 %%GALLERYDIR%%/css/embedded_style.css.default
@@ -48,6 +49,7 @@
 %%GALLERYDIR%%/errors/reconfigure.php
 %%GALLERYDIR%%/errors/unconfigured.php
 %%GALLERYDIR%%/gallery_remote.php
+%%GALLERYDIR%%/gallery_remote2.php
 %%GALLERYDIR%%/highlight_photo.php
 %%GALLERYDIR%%/html/errorRow.inc
 %%GALLERYDIR%%/html/userData.inc
@@ -118,6 +120,8 @@
 %%GALLERYDIR%%/platform/fs_unix.php
 %%GALLERYDIR%%/platform/fs_win32.php
 %%GALLERYDIR%%/progress_uploading.php
+%%GALLERYDIR%%/publish_xp.php
+%%GALLERYDIR%%/publish_xp_docs.php
 %%GALLERYDIR%%/rename_album.php
 %%GALLERYDIR%%/resize_photo.php
 %%GALLERYDIR%%/rotate_photo.php
@@ -126,6 +130,7 @@
 %%GALLERYDIR%%/secure.sh
 %%GALLERYDIR%%/session.php
 %%GALLERYDIR%%/setup/.htaccess
+%%GALLERYDIR%%/setup/check_imagemagick.php
 %%GALLERYDIR%%/setup/check.inc
 %%GALLERYDIR%%/setup/check_netpbm.php
 %%GALLERYDIR%%/setup/config_data.inc
@@ -146,7 +151,6 @@
 %%GALLERYDIR%%/slideshow.php
 %%GALLERYDIR%%/slideshow_low.php
 %%GALLERYDIR%%/sort_album.php
-%%GALLERYDIR%%/todo
 %%GALLERYDIR%%/upgrade_album.php
 %%GALLERYDIR%%/user_preferences.php
 %%GALLERYDIR%%/util.php
@@ -160,6 +164,7 @@
 @dirrm %%GALLERYDIR%%/classes/nuke5
 @dirrm %%GALLERYDIR%%/classes/postnuke
 @dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
+@dirrm %%GALLERYDIR%%/classes/remote
 @dirrm %%GALLERYDIR%%/classes
 @dirrm %%GALLERYDIR%%/errors
 @dirrm %%GALLERYDIR%%/html
