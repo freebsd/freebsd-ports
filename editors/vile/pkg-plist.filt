@@ -63,6 +63,7 @@ share/vile/perl.keywords
 share/vile/ps.keywords
 share/vile/py.keywords
 share/vile/pot.keywords
+share/vile/rb.keywords
 share/vile/rc.keywords
 share/vile/rcs.keywords
 share/vile/rexx.keywords
@@ -71,10 +72,12 @@ share/vile/sccs.keywords
 share/vile/sh.keywords
 share/vile/sql.keywords
 share/vile/sml.keywords
+share/vile/syntax.keywords
 share/vile/tags.keywords
 share/vile/tbl.keywords
 share/vile/tc.keywords
 share/vile/tcl.keywords
+share/vile/tex.keywords
 share/vile/texi.keywords
 share/vile/ti.keywords
 share/vile/vb.keywords

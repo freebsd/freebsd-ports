@@ -37,10 +37,12 @@ lib/xvile/vile-pl-filt
 lib/xvile/vile-pot-filt
 lib/xvile/vile-ps-filt
 lib/xvile/vile-py-filt
+lib/xvile/vile-rb-filt
 lib/xvile/vile-rc-filt
 lib/xvile/vile-rcs-filt
 lib/xvile/vile-rexx-filt
 lib/xvile/vile-rpm-filt
+lib/xvile/vile-ruby-filt
 lib/xvile/vile-sccs-filt
 lib/xvile/vile-sed-filt
 lib/xvile/vile-sh-filt
@@ -124,6 +126,7 @@ share/xvile/vile/nr.keywords
 share/xvile/vile/perl.keywords
 share/xvile/vile/py.keywords
 share/xvile/vile/pot.keywords
+share/xvile/vile/rb.keywords
 share/xvile/vile/rc.keywords
 share/xvile/vile/rcs.keywords
 share/xvile/vile/rexx.keywords
@@ -131,12 +134,14 @@ share/xvile/vile/rpm.keywords
 share/xvile/vile/sccs.keywords
 share/xvile/vile/sh.keywords
 share/xvile/vile/sml.keywords
+share/xvile/vile/syntax.keywords
 share/xvile/vile/spell.rc
 share/xvile/vile/sql.keywords
 share/xvile/vile/tags.keywords
 share/xvile/vile/tbl.keywords
 share/xvile/vile/tc.keywords
 share/xvile/vile/tcl.keywords
+share/xvile/vile/tex.keywords
 share/xvile/vile/texi.keywords
 share/xvile/vile/ti.keywords
 share/xvile/vile/vb.keywords
