@@ -36,13 +36,13 @@ DOC_FILES+=	HISTORY-BETA
 # Post-patch
 #
 
-post-patch: patch-prefix patch-message
+post-patch: patch-prefix patch-pkgmessage
 
 patch-prefix:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/scripts/upchk ${WRKSRC}/src/Makefile
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Install

@@ -41,7 +41,7 @@ XARGS?=		xargs
 #
 
 post-patch: patch-configure patch-makefiles-in \
-	    patch-seti_applet patch-message
+	    patch-seti_applet patch-pkgmessage
 
 patch-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
@@ -56,7 +56,7 @@ patch-seti_applet:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/seti_applet.c
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Post-install
