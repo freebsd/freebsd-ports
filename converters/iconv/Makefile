@@ -7,7 +7,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
@@ -17,8 +17,8 @@ USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 
 MANCOMPRESSED=	yes
-MAN1=		iconv.1
-MAN3=		iconv.3 iconv_open.3 iconv_close.3
+MAN1=		biconv.1
+MAN3=		biconv.3 biconv_open.3 biconv_close.3
 
 .if defined(NOPROFILE)
 PLIST_SUB=	PROFILE:="@comment "

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ces/Makefile	2002/03/17 11:14:41	1.1
++++ ces/Makefile	2002/03/17 11:15:02
+@@ -5,7 +5,7 @@
+ 
+ .if !defined(ICONVDIR_LIBC)
+ CFLAGS +=	-I/usr/local/include
+-LDADD +=	-L/usr/local/lib -liconv
++LDADD +=	-L/usr/local/lib -lbiconv
+ .endif
+ 
+ INTERNALLIB =

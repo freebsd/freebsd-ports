@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ces/Makefile	2002/03/17 11:07:44	1.1
++++ ces/Makefile	2002/03/17 11:07:56
+@@ -10,7 +10,7 @@
+ LIB=		ces
+ SRCS=		ces_builtin.c ${CHARSETS_C}
+ 
+-LDADD =		-L${.CURDIR}/../lib -liconv
++LDADD =		-L${.CURDIR}/../lib -lbiconv
+ 
+ INTERNALLIB =
+ 

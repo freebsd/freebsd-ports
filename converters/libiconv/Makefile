@@ -7,7 +7,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
@@ -19,7 +19,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 INSTALLS_SHLIB=	yes
 
-MAN1=		giconv.1
-MAN3=		giconv.3 giconv_open.3 giconv_close.3
+MAN1=		iconv.1
+MAN3=		iconv.3 iconv_open.3 iconv_close.3
+
+post-install:
+	@${LN} -sf ${PREFIX}/bin/iconv ${PREFIX}/bin/giconv
+	@${LN} -sf ${PREFIX}/include/iconv.h ${PREFIX}/include/giconv.h
+	@${LN} -sf ${PREFIX}/lib/libiconv.a ${PREFIX}/lib/libgiconv.a
+	@${LN} -sf ${PREFIX}/lib/libiconv.so ${PREFIX}/lib/libgiconv.so
 
 .include <bsd.port.mk>
