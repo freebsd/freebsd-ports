@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.18 1997/11/24 15:12:43 tg Exp $
+# $Id: Makefile,v 1.19 1998/01/06 08:02:48 tg Exp $
 #
 
 DISTNAME=       python1.5
@@ -43,10 +43,9 @@ SETUP_LOCAL=	Setup.tk
 # to 'yes', and you must have the FreeBSD threading c library (libc_r)
 # installed. See 'man 3 pthread' for details on libc_r.
 #
-# This is now turned off by default because it doesn't work
-# with our libc_r.
+# This option is enabled by default.
 #
-WITH_THREADS?=	no
+WITH_THREADS?=	yes
 .if exists(/usr/lib/libc_r.a) && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
 .endif
