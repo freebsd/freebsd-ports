@@ -276,6 +276,7 @@ align		ports/textproc/align
 alisp		ports/lang/alisp
 allegro		ports/devel/allegro
 allegrogl	ports/graphics/allegrogl
+alliance	ports/cad/alliance
 alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
 alsaplayer	ports/audio/alsaplayer
