@@ -1,76 +1,42 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skipd.C skipsrc-1.0/skip/keymgrd/skipd.C
---- skipsrc-1.0.orig/skip/keymgrd/skipd.C	Fri Oct 25 13:12:54 1996
-+++ skipsrc-1.0/skip/keymgrd/skipd.C	Thu Dec  4 18:25:47 1997
-@@ -48,6 +48,7 @@
-  * System includes
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_key.h work.new/skip/include/skip_key.h
+--- skipsrc-1.0.orig/skip/include/skip_key.h	Fri Oct 25 13:12:44 1996
++++ work.new/skip/include/skip_key.h	Tue Mar  9 20:24:01 1999
+@@ -209,24 +209,22 @@
+ 				void *, skip_arg_t *)
+ 		);
+ #endif
+-void		skip_close();
++void		skip_close(void *sd);
+ int		skip_encrypt(void *, SKIP_BUF_T *, SKIP_BUF_T *,
+ 			skip_param_t *, void *);
+ int		skip_decrypt(void *, SKIP_BUF_T *, SKIP_BUF_T *,
+ 			skip_hdr_t *hdr, int, void *);
+ int		skip_key_check(skip_keycb_t *, void *);
+-void		skip_key_iterate(int (*)(), void *);
++void		skip_key_iterate(int (*)(skip_keycb_t *, void *), void *);
+ int		skip_hdr_encode(skip_hdr_t *, unsigned char *);
+ int		skip_iv_encode(skip_hdr_t *, unsigned char *);
+ void		skip_hdr_init(skip_keycb_t *);
+ 
+-void		skip_key_tellkm(enum skip_msgs, skip_keycb_t *);
+-void		skip_key_fromkm(union skip_messages *, unsigned int);
+ void		skip_update_encrypt_key(struct Encrypted_key_rsp *);
+ void		skip_update_decrypt_key(struct Decrypted_key_rsp *);
+ 
+-void		skip_local_keyid_init();
+-void		skip_local_keyid_uninit();
++void		skip_local_keyid_init(void);
++void		skip_local_keyid_uninit(void);
+ void		skip_set_local_keyid(unsigned char , skip_key_var_t *);
+ int		skip_check_keyid(unsigned char , skip_key_var_t *, boolean_t);
+ int		skip_get_default_keyid(unsigned char, unsigned char *);
+@@ -254,8 +252,8 @@
+  * function prototypes
   */
- #include <skip_os.h>
-+#include <err.h>
+ void		skip_key_fromkm(union skip_messages *, unsigned int);
++void		skip_key_tellkm(enum skip_msgs, skip_keycb_t *);
+ #endif
+-
  
  /*
-  * SKIP includes
-@@ -84,8 +85,9 @@
- {
- 	int c;
- 	int errflag = 0;
-+	int noFork = 0;
- 
--	while ((c = getopt(argc, argv, "vV?")) != EOF) {
-+	while ((c = getopt(argc, argv, "nvV?")) != EOF) {
- 		switch(c) {
- 		case 'v':
- 			verbose = 1;
-@@ -95,6 +97,9 @@
- 			verbose = 2;
- 			break;
- 
-+		case 'n':
-+			noFork = 1;
-+			break;
- 		case '?':
- 		default:
- 			errflag++;
-@@ -106,34 +111,18 @@
- 		exit(1);
- 	}
- 
-+	if (!noFork)
- 	{
--		extern FILE *skip_log_fp;
--
--		skip_log_fp = fopen("/var/log/skipd.log", "w+");
-+		extern int skip_log_syslog;
- 
--		// if open fails, skip_log will default to stdout/stderr
-+		/* output to syslog */
-+		openlog("skipd", 0, LOG_DAEMON);
-+		skip_log_syslog = 1;
-+
-+		/* become a background daemon */
-+		if (daemon(0, 0))
-+			err(1, "daemon");
- 	}
--
--
--//  put ourselves into the background
--
--	switch (fork()) {
--	case -1:
--		skip_log(SKIP_ERROR, "fork failed");
--		exit(1);
--
--	case 0:
--		break;
--
--	default:
--		exit(0);
--	}
--
--	setsid();
--
--	freopen("/dev/null", "r", stdin);
--	freopen("/dev/null", "w", stdout);
--	freopen("/dev/null", "w", stderr);
- 
- 	skip_init();
- 	skipd_loop();
+  * external variables

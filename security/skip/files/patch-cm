@@ -1,12 +1,17 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/hash.h skipsrc-1.0/libdb/hash/hash.h
---- skipsrc-1.0.orig/libdb/hash/hash.h	Fri Oct 25 13:12:21 1996
-+++ skipsrc-1.0/libdb/hash/hash.h	Sun Nov 22 21:20:56 1998
-@@ -103,7 +103,7 @@
- 	BUFHEAD 	*cpage;		/* Current page */
- 	int		cbucket;	/* Current bucket */
- 	int		cndx;		/* Index of next item on cpage */
--	int		errno;		/* Error Number -- for DBM 
-+	int		errnum;		/* Error Number -- for DBM 
- 					 * compatability */
- 	int		new_file;	/* Indicates if fd is backing store 
- 					 * or no */
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipif.1m work.new/skip/man/skipif.1m
+--- skipsrc-1.0.orig/skip/man/skipif.1m	Fri Oct 25 13:12:58 1996
++++ work.new/skip/man/skipif.1m	Mon Mar  8 21:33:40 1999
+@@ -104,12 +104,8 @@
+ skipif will advise so.
+ .SH FILES
+ .br
+-.SS Solaris 2.x systems:
+ .P
+-/etc/opt/SUNWicg/skip/acl.<interface>
+-.SS Other systems:
+-.P
+-/etc/skip/acl.<interface>
++@@PREFIX@@/etc/skip/acl.<interface>
+ .P
+ .SH SEE ALSO
+ skiphost(1M), skipstat(1M), skiptool(1M), ifconfig(1M)

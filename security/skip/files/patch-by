@@ -1,24 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipd.1m skipsrc-1.0/skip/man/skipd.1m
---- skipsrc-1.0.orig/skip/man/skipd.1m	Fri Oct 25 13:12:57 1996
-+++ skipsrc-1.0/skip/man/skipd.1m	Wed Nov 26 20:10:11 1997
-@@ -62,17 +62,9 @@
- skipd.conf(4)
- .P
- .SH FILES
--.SH Solaris 2.x systems:
--/etc/opt/SUNWicg/skip/skipd.conf
--.br
--/etc/opt/SUNWicg/skip/CAs/
--.br
--/etc/opt/SUNWicg/skip/localid/
--.P
--.SH Other systems:
- .P
--/etc/skip/skipd.conf
-+@@PREFIX@@/etc/skip/skipd.conf
- .br
--/etc/skip/CAs/
-+@@PREFIX@@/etc/skip/CAs/
- .br
--/etc/skip/localid/
-+@@PREFIX@@/etc/skip/localid/
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skipca.C work.new/skip/keymgrd/skipca.C
+--- skipsrc-1.0.orig/skip/keymgrd/skipca.C	Fri Oct 25 13:12:53 1996
++++ work.new/skip/keymgrd/skipca.C	Mon Mar  8 21:33:38 1999
+@@ -307,7 +307,7 @@
+ 	}
+ 	if (overwrite) {
+ 		int ret;
+-		sprintf(buf,"/usr/bin/rm -rf %s", CA_PATH);
++		sprintf(buf,"/bin/rm -rf %s", CA_PATH);
+ 		ret = system(buf);
+ 		if (ret) {
+ 			fprintf(stderr,"Unable to Clean old directory %s \n",

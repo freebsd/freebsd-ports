@@ -1,12 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skipca.C skipsrc-1.0/skip/keymgrd/skipca.C
---- skipsrc-1.0.orig/skip/keymgrd/skipca.C	Fri Oct 25 13:12:53 1996
-+++ skipsrc-1.0/skip/keymgrd/skipca.C	Fri Dec  5 15:26:53 1997
-@@ -307,7 +307,7 @@
- 	}
- 	if (overwrite) {
- 		int ret;
--		sprintf(buf,"/usr/bin/rm -rf %s", CA_PATH);
-+		sprintf(buf,"/bin/rm -rf %s", CA_PATH);
- 		ret = system(buf);
- 		if (ret) {
- 			fprintf(stderr,"Unable to Clean old directory %s \n",
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_conf.h work.new/skip/include/skip_conf.h
+--- skipsrc-1.0.orig/skip/include/skip_conf.h	Fri Oct 25 13:12:44 1996
++++ work.new/skip/include/skip_conf.h	Mon Mar  8 21:33:38 1999
+@@ -58,7 +58,7 @@
+ #define SKIP_CERTSBASE			SKIP_DIR"certdb"
+ #define SKIP_SECRET_CACHE		SKIP_DIR"secret_cache"
+ #define SKIP_RAW_FILE			SKIP_DIR"raw_keys"
+-#define SKIP_PID			SKIP_DIR"skipd.pid"
++#define SKIP_PID			"/var/run/skipd.pid"
+ 
+ /* 
+  * Key manager Crypt algorithms supported

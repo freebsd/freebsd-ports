@@ -1,17 +1,27 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipif.1m skipsrc-1.0/skip/man/skipif.1m
---- skipsrc-1.0.orig/skip/man/skipif.1m	Fri Oct 25 13:12:58 1996
-+++ skipsrc-1.0/skip/man/skipif.1m	Wed Nov 26 20:11:45 1997
-@@ -104,12 +104,8 @@
- skipif will advise so.
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/install_skip_keys.1m work.new/skip/man/install_skip_keys.1m
+--- skipsrc-1.0.orig/skip/man/install_skip_keys.1m	Fri Oct 25 13:12:56 1996
++++ work.new/skip/man/install_skip_keys.1m	Mon Mar  8 21:33:39 1999
+@@ -41,20 +41,13 @@
+ .RE
+ .P
  .SH FILES
+-.SS Solaris 1.x systems:
+ .P
+-/etc/skip/certdb.dir
++@@PREFIX@@/etc/skip/certdb.dir
  .br
--.SS Solaris 2.x systems:
- .P
--/etc/opt/SUNWicg/skip/acl.<interface>
--.SS Other systems:
+-/etc/skip/localid/..
++@@PREFIX@@/etc/skip/localid/..
+ .br
+-/etc/skip/CAs/...
++@@PREFIX@@/etc/skip/CAs/...
+ .br
 -.P
--/etc/skip/acl.<interface>
-+@@PREFIX@@/etc/skip/acl.<interface>
+-.SS Solaris 2.x systems:
+-.P
+-/etc/opt/SUNWicg/skip/certdb
+-/etc/opt/SUNWicg/skip/localid/...
+-/etc/opt/SUNWicg/skip/CAs/...
  .P
- .SH SEE ALSO
- skiphost(1M), skipstat(1M), skiptool(1M), ifconfig(1M)
+ .SH NOTES
+ Currently the name of the Certificate is hard coded into the code.  We 

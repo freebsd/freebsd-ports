@@ -1,6 +1,6 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/Configure skipsrc-1.0/Configure
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/Configure work.new/Configure
 --- skipsrc-1.0.orig/Configure	Fri Oct 25 13:13:15 1996
-+++ skipsrc-1.0/Configure	Wed Dec 10 15:10:41 1997
++++ work.new/Configure	Mon Mar  8 21:33:38 1999
 @@ -103,8 +103,6 @@
  		echo "$0: failed to install skip/freebsd/Makefile.defs"
  		exit 1

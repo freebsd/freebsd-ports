@@ -1,146 +1,30 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skipsrc-1.0/skip/freebsd/skip_es.c
---- skipsrc-1.0.orig/skip/freebsd/skip_es.c	Fri Oct 25 20:12:42 1996
-+++ skipsrc-1.0/skip/freebsd/skip_es.c	Mon Nov 16 22:55:18 1998
-@@ -81,6 +81,11 @@
- static unsigned short	skip_pktid;
- static skip_softc_t	skip_softc[SKIP_MAX_OPENS];
- 
-+#ifdef NEW_TIMEOUT_INTERFACE
-+static struct callout_handle
-+	skip_timeout_handle = CALLOUT_HANDLE_INITIALIZER(&skip_timeout_handle);
-+#endif
-+
- /*
-  * statistics
-  */
-@@ -252,7 +257,10 @@
- 		for (pr = inetdomain.dom_protosw;
- 			pr < inetdomain.dom_protoswNPROTOSW; pr++) {
- 
--			pr->pr_input = skip_ifinput;
-+			if (pr->pr_protocol == IPPROTO_DIVERT)
-+				continue;
-+			pr->pr_input =
-+				(void (*)(struct mbuf *, int)) skip_ifinput;
- 		}
- 		splx(s);
- 	}
-@@ -788,7 +796,11 @@
- static void
- skip_inittimers()
- {
-+#ifdef NEW_TIMEOUT_INTERFACE
-+	skip_timeout_handle = timeout(skip_timer, NULL, skip_key_tick * hz);
-+#else
- 	timeout(skip_timer, NULL, skip_key_tick * hz);
-+#endif
- }
-  
- /* skip_uninittimers()
-@@ -800,7 +812,12 @@
- static void
- skip_uninittimers()
- {
-+#ifdef NEW_TIMEOUT_INTERFACE
-+	untimeout(skip_timer, NULL, skip_timeout_handle);
-+	callout_handle_init(&skip_timeout_handle);
-+#else
- 	untimeout(skip_timer, NULL);
-+#endif
- }
-  
- /* skip_timer()
-@@ -819,7 +836,11 @@
- 	 * run through the key store
- 	 */
- 	skip_key_iterate(skip_key_check, NULL);
-+#ifdef NEW_TIMEOUT_INTERFACE
-+	skip_timeout_handle = timeout(skip_timer, NULL, skip_key_tick * hz);
-+#else
- 	timeout(skip_timer, NULL, skip_key_tick * hz);
-+#endif
- }
- 
- #ifdef notdef
-@@ -1718,7 +1739,7 @@
- 		 */
- 		decryptbuf->m_data += iphlen;
- 	
--                SKIP_DEBUG2("skip_ifinput: decryptbuf m_len=%d m_data=%d\n",
-+                SKIP_DEBUG2("skip_ifinput: decryptbuf m_len=%d m_data=%p\n",
-                                         decryptbuf->m_len, decryptbuf->m_data);
- 
- 	} 
-@@ -1745,7 +1766,7 @@
- 	ip->ip_id = ntohs(ip->ip_id);
- 	ip->ip_off = ntohs(ip->ip_off);
- pass:
--	m->m_flags &= ~ M_EOR;
-+	m->m_flags &= ~ M_PROTO1;
- 	(*inetsw_default[ip_protox[ip->ip_p]].pr_input)(m, hlen);
- 	return (0);
- }
-@@ -1910,6 +1931,13 @@
- 		 */
-                 IPADDRCOPY(&params.tunnel_addr, &newip->ip_dst);
- 
-+		/* 
-+		 * insert different source address if specified 
-+		 */
-+
-+		if(params.source != 0)
-+			(&newip->ip_src)->s_addr = params.source;
-+
- 		encryptbuf->m_len += sizeof (struct ip);
- 
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/common/skip_keystore.c work.new/skip/common/skip_keystore.c
+--- skipsrc-1.0.orig/skip/common/skip_keystore.c	Fri Oct 25 13:12:41 1996
++++ work.new/skip/common/skip_keystore.c	Tue Mar  9 20:23:43 1999
+@@ -308,7 +308,7 @@
  		/*
-@@ -2005,7 +2033,7 @@
- 			if (params.kp_alg) {
- 				newip->ip_p = SKIP_NEXT_ESP;
- 			} else {
--				newip->ip_p = IPPROTO_ENCAP;
-+				newip->ip_p = IPPROTO_IPIP;
- 			}
- 		}
- 		skip_if->stats.skip_if_raw_out++;
-@@ -2028,6 +2056,13 @@
- 		 * insert tunnel address as destination
- 		 */
- 		IPADDRCOPY(&params.tunnel_addr, &newip->ip_dst);
-+
-+		/* 
-+		 * insert different source address if specified 
-+		 */
-+
-+		if(params.source != 0) 
-+			(&newip->ip_src)->s_addr = params.source;
+ 	 	 * SKIP tunneling mode
+ 	 	 */
+-		params->payload_type = IPPROTO_ENCAP;
++		params->payload_type = IPPROTO_IPIP;
  	}
- 
- 	if (params.s_nsid == 0) {
-@@ -2097,7 +2132,7 @@
- 	register skip_param_t   *params = &res->params;
- 	register struct ip      *ip = mtod(original, struct ip *);
- 	int                     rc, s, iphlen;
--	struct mbuf             *outbuf, *new_hdr;
-+	struct mbuf             *outbuf;
- 
- 	SKIP_PRINT("skip_decrypt_done", params);
- 
-@@ -2125,7 +2160,7 @@
- 	 */
- 	outbuf = (res->modes & SKIP_CRYPT_ON) ? m : original;
- 
--	if (res->proto != IPPROTO_ENCAP) {
-+	if (res->proto != IPPROTO_IPIP) {
- 		/*
- 		 * transport mode, need to copy original IP header
- 		 */
-@@ -2195,7 +2230,7 @@
  	/*
- 	 * tag the start of the header buffer so SKIP can recognise it
- 	 */
--	outbuf->m_flags |= M_EOR | M_PKTHDR;
-+	outbuf->m_flags |= M_PROTO1 | M_PKTHDR;
-     
- 	s = splimp();
- 	if (IF_QFULL(&ipintrq)) {
+ 	 * Return offset of data to decrypt
+@@ -1177,7 +1177,7 @@
+  * Returns: none
+  */
+ void
+-skip_key_iterate(int (*f)(), void *arg)
++skip_key_iterate(int (*f)(skip_keycb_t *, void *), void *arg)
+ {
+ 	skip_keycb_t	*cp, *ncp;
+ 	int		i, rc;
+@@ -1209,7 +1209,7 @@
+ 		for (cp = skip_decrypt_hashtable[i]; cp; cp = ncp) {
+ 			ncp = cp->next;
+ 
+-			rc = (*f)(cp);
++			rc = (*f)(cp, arg);
+ 
+ 			if (rc) {
+ 				skip_hash_remove(cp, skip_decrypt_hashtable,

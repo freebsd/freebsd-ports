@@ -1,13 +1,24 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/t_mem.c skipsrc-1.0/skip/keymgrd/t_mem.c
---- skipsrc-1.0.orig/skip/keymgrd/t_mem.c	Fri Oct 25 13:12:55 1996
-+++ skipsrc-1.0/skip/keymgrd/t_mem.c	Tue Nov 25 19:31:01 1997
-@@ -45,8 +45,7 @@
- #pragma ident "@(#)t_mem.c	1.2 95/11/23 Sun Microsystems"
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/cdp_queue.C work.new/skip/keymgrd/cdp_queue.C
+--- skipsrc-1.0.orig/skip/keymgrd/cdp_queue.C	Fri Oct 25 13:12:47 1996
++++ work.new/skip/keymgrd/cdp_queue.C	Mon Mar  8 21:33:38 1999
+@@ -91,17 +91,17 @@
  
- #include "global.h"
--#include <memory.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include <string.h>
+ 	switch (kind) {
+ 	case RESOLVER_PING:
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(@) (bilateral)");
++		skip_log(SKIP_INFO, "add_cdp_resolver(@) (bilateral)");
+ 		break;
  
- void T_memset(POINTER s, int c, unsigned int n )
+ 	case RESOLVER_TUNNEL:
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(=) (tunnel)");
++		skip_log(SKIP_INFO, "add_cdp_resolver(=) (tunnel)");
+ 		break;
+ 		
+ 	case RESOLVER_HOST:
+ 		if (parse_ip_address(&r.server, arg))
+ 			return;
+-		skip_log(SKIP_NOTICE, "add_cdp_resolver(%s)", arg);
++		skip_log(SKIP_INFO, "add_cdp_resolver(%s)", arg);
+ 		break;
+ 
+ 	default:

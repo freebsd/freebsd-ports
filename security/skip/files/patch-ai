@@ -1,13 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/AuthPolicy.C skipsrc-1.0/certs/lib/AuthPolicy.C
---- skipsrc-1.0.orig/certs/lib/AuthPolicy.C	Fri Oct 25 13:11:37 1996
-+++ skipsrc-1.0/certs/lib/AuthPolicy.C	Fri Nov 21 11:39:11 1997
-@@ -44,7 +44,9 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/hashcert/dh_keygen.C work.new/certs/hashcert/dh_keygen.C
+--- skipsrc-1.0.orig/certs/hashcert/dh_keygen.C	Fri Oct 25 13:11:37 1996
++++ work.new/certs/hashcert/dh_keygen.C	Mon Mar  8 21:33:38 1999
+@@ -54,6 +54,8 @@
  
- #pragma ident "@(#)AuthPolicy.C	1.9 96/05/15"
- 
-+#include <sys/types.h>
- #include <dirent.h>
-+#include <string.h>
- #include "AuthPolicy.h"
- 
- 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
++#include <time.h>
+ #include <sys/types.h>
+ #include "Time.h"
+ #include "Bigint.h"

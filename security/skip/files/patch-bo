@@ -1,21 +1,114 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_msgs.C skipsrc-1.0/skip/keymgrd/skip_msgs.C
---- skipsrc-1.0.orig/skip/keymgrd/skip_msgs.C	Fri Oct 25 13:12:51 1996
-+++ skipsrc-1.0/skip/keymgrd/skip_msgs.C	Tue Dec 23 13:36:10 1997
-@@ -82,7 +82,7 @@
-         set.msgtype	= SKIP_SET_CDP_SERVER_PORT;
-         set.port	= cdp_port;
- 	
-- 	skip_log(SKIP_NOTICE, "Setting CDP port=%d", cdp_port);
-+ 	skip_log(SKIP_INFO, "Setting CDP port=%d", cdp_port);
-         fflush(stdout);
-  
-         if (put_kernel_message(fd, &set, sizeof(set)) < 0) {
-@@ -107,7 +107,7 @@
-         set.version     = version;
-         set.kij_alg     = kij_alg;
- 	
-- 	skip_log(SKIP_NOTICE, "Setting supported kij alg=%d for version %d",
-+ 	skip_log(SKIP_INFO, "Setting supported kij alg=%d for version %d",
-                                                         kij_alg, version);
-         fflush(stdout);
-  
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c work.new/skip/freebsd/skip_wrapper.c
+--- skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c	Fri Oct 25 13:12:43 1996
++++ work.new/skip/freebsd/skip_wrapper.c	Mon Mar  8 23:00:57 1999
+@@ -66,55 +66,69 @@
+ #include <skip_es.h>
+ #include <skip_if.h>
+ 
+-
+-/*
+- * SunOS 4.1.x loadable driver wrapper for the SKIP module
+- */
+-extern char		skip_module_name[];
+-
+-/*
+- * Module linkage information for the kernel.
+- */
+-extern int		nulldev();
+-
+-struct cfdriver skipcd=
+-        { NULL, "skip", NULL, NULL, DV_DULL, 0 };
+-
+ struct cdevsw skipdevsw = {
+         skip_ifopen, skip_ifclose, skip_ifread, skip_ifwrite, skip_ifioctl,
+-	NULL, NULL, NULL, skip_ifselect, NULL, NULL 
++	nullstop, noreset, nodevtotty, skip_ifpoll, nommap, nostrategy,
++	"skip", NULL
+ };
+ 
+-MOD_DEV("skipmod", LM_DT_CHAR, -1, (void *)&skipdevsw)
+-
+-extern int		skip_init(), skip_uninit();
++static struct cdevsw	*old_dev;
++static u_long		skip_major;
+ 
+-/*ARGSUSED*/
+-int
+-skipmod_load(struct lkm_table *lkmtp, int cmd)
++/*
++ * Handle loading and unloading of the SKIP module.
++ */
++static int
++skip_mod_event(module_t mod, int event, void *data)
+ {
++	int error = 0;
++	dev_t dev;
+ 
+-	int rc;
+-	rc = skip_init();
+-	if (rc != 0) {
+-		return (rc);
+-	}
+-	uprintf("skip: driver loaded\n");
+-	return (0);
+-}
++	switch (event) {
++	case MOD_LOAD:
+ 
+-skipmod_unload(struct lkm_table *lkmtp, int cmd)
+-{
+-	
+-	int rc;
+-	rc = skip_uninit();
+-	if (rc == 0) {
+-		uprintf("skip: driver unloaded\n");
++		/* Add character device, getting assigned a major number */
++		dev = (dev_t) -1;
++		if ((error = cdevsw_add(&dev, &skipdevsw, &old_dev)) != 0) {
++			log(LOG_ERR, "skip: can't add device\n");
++			break;
++		}
++		skip_major = major(dev);
++
++		/* Initialize SKIP itself */
++		if ((error = skip_init()) != 0) {
++			/* XXX should remove char device */
++			log(LOG_ERR, "skip: init failed\n");
++			break;
++		}
++		log(LOG_INFO, "skip: device major=%lu, driver loaded\n",
++			skip_major);
++		break;
++
++	case MOD_UNLOAD:
++
++		/* Uninitialize SKIP */
++		if ((error = skip_uninit()) != 0) {
++			log(LOG_INFO, "skip: uninit failed\n");
++			break;
++		}
++
++		/* Replace original device driver (if any) */
++		dev = makedev(skip_major, 0);
++		(void) cdevsw_add(&dev, old_dev, NULL);
++		break;
++
++	default:
++		error = EOPNOTSUPP;
++		break;
+ 	}
+-	return (rc);
++	return(error);
+ }
+ 
+-xxxinit(struct lkm_table *lkmtp, int cmd, int ver)
+-{
+-	DISPATCH(lkmtp, cmd, ver, skipmod_load, skipmod_unload, nosys);
+-}
++static moduledata_t skip_mod = {
++	"skip",
++	skip_mod_event,
++	NULL
++};
++DECLARE_MODULE(skip, skip_mod, SI_SUB_PROTO_END, SI_ORDER_MIDDLE);
++

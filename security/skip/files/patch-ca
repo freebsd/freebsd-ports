@@ -1,19 +1,13 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipd_restart.1m skipsrc-1.0/skip/man/skipd_restart.1m
---- skipsrc-1.0.orig/skip/man/skipd_restart.1m	Fri Oct 25 13:12:57 1996
-+++ skipsrc-1.0/skip/man/skipd_restart.1m	Wed Nov 26 20:11:08 1997
-@@ -9,13 +9,6 @@
- You must be root to run this command.
- .SH FILES
- .P
--.SH Solaris 2.x systems:
--/etc/opt/SUNWicg/skip/skipd.pid
-+/var/run/skipd.pid
- .br
--/opt/SUNWicg/bin/skipd
--.P
--.SH Other systems:
--.P
--/etc/skip/skipd.pid
--.br
--/usr/skip/bin/skipd
-+@@PREFIX@@/bin/skipd
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skiplocal.C work.new/skip/keymgrd/skiplocal.C
+--- skipsrc-1.0.orig/skip/keymgrd/skiplocal.C	Fri Oct 25 13:12:55 1996
++++ work.new/skip/keymgrd/skiplocal.C	Mon Mar  8 21:33:38 1999
+@@ -88,8 +88,7 @@
+ 
+ void
+ usage(char *s){
+-	fprintf(stderr, "%s [add|export|extract|list|keygen|rm"
+-		, s);
++	fprintf(stderr, "%s [add|export|extract|list|keygen|rm]\n", s);
+ 	exit(1);
+ }
+ 

@@ -1,11 +1,11 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/Name.C skipsrc-1.0/certs/lib/Name.C
---- skipsrc-1.0.orig/certs/lib/Name.C	Fri Oct 25 13:11:40 1996
-+++ skipsrc-1.0/certs/lib/Name.C	Fri Nov 21 11:39:11 1997
-@@ -48,6 +48,7 @@
- #include <stdarg.h>
- #include <stdio.h>
- #include <stdlib.h>
-+#include <string.h>
- #include "Time.h"
- #include "Bigint.h"
- #include "Bstream.h"
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/CertInfo.C work.new/certs/lib/CertInfo.C
+--- skipsrc-1.0.orig/certs/lib/CertInfo.C	Fri Oct 25 13:11:39 1996
++++ work.new/certs/lib/CertInfo.C	Mon Mar  8 21:33:38 1999
+@@ -44,6 +44,7 @@
+ 
+ #pragma ident "@(#)CertInfo.C	1.14 96/04/10"
+ 
++#include <time.h>
+ #include "CertInfo.h"
+ #include "X509skip.h"
+ #include "HashCert.h"

@@ -41,4 +41,5 @@ share/doc/skip/usersguide.txt
 share/doc/skip/usersguide.ps
 share/doc/skip/usersguide.html
 share/doc/skip/inet-95.ps
-lkm/skip.o
+modules/skip.ko
+@dirrm share/doc/skip
