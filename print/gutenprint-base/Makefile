@@ -30,7 +30,7 @@ MAN8=	cups-calibrate.8
 PLIST_SUB+=	CUPS="@comment "
 .else
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
-BUILD_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS+=	cups-config:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--with-cups=${PREFIX}
 PLIST_SUB+=	CUPS=""
 .endif
