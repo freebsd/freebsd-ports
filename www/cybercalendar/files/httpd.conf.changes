@@ -1,0 +1,10 @@
+Alias /calendar/ /usr/local/cybercalendar/calendar/
+DirectoryIndex index.html index.pl
+AddHandler cgi-script .cgi .pl
+
+<Location /calendar>
+AllowOverride None
+Options +ExecCGI
+Order allow,deny
+allow from all
+</Location>

@@ -1,0 +1,27 @@
+##############################################################################
+
+===> Cybercalendar post-port installation instructions:
+
+  To complete the installation of this port, please perform following actions
+  as root:
+ 
+  Mysql config: 
+  mysqladmin -u root -p create calendar      # "calendar" is your database name
+  mysql -u root -p mysql < %%LOCALBASE%%/cybercalendar/setup/db/caluser.sql 
+  mysql -u root -p calendar < %%LOCALBASE%%/cybercalendar/setup/db/calendar.sql 
+
+  Apache config:
+  Include %%LOCALBASE%%/cybercalendar/setup/httpd.conf.changes into
+    %%LOCALBASE%%/etc/apache/httpd.conf     
+  apachectl restart                         # restarts the apache server
+
+  Cron config:
+  configure to run following two cronjob:
+  %%LOCALBASE%%/cybercalendar/setup/cron_job/optimize_tables.pl	# every week
+  %%LOCALBASE%%/cybercalendar/setup/cron_job/run_reminder.pl	# every midnight
+
+  Configure Cybercalendar via web:
+  username: admin
+  password: caladmin1
+  
+##############################################################################

@@ -1,0 +1,22 @@
+CyberCalendar is a calendar of events program for the web and
+WAP/PDA devices written entirely in Perl.
+
+FEATURES:
+
+* Creation of an unlimited number of calendars.
+* Receive scheduled event reminders via e-mail.
+* Send events to friends as e-mail messages.
+* Download events in vCalendar format to your personal
+  scheduling software or your handheld device.
+* Supports multiple calendar administrators.
+* Full WAP and Palm/AvantGo browser support.
+* Support for public event submissions.
+* Fully configurable -- including images and HTML colors.
+* Runs on Unix or Windows.
+* Runs as a CGI or as a mod_perl application.
+* 100% Perl application.
+
+
+WWW: http://sourceforge.net/projects/cybercalendar/
+
+- Janos Mohacsi  janos.mohacsi@bsd.hu 
