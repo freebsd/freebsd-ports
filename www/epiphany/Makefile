@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -31,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6b"
 .else
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
