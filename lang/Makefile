@@ -155,6 +155,7 @@
     SUBDIR += tinycobol
     SUBDIR += wamcc
     SUBDIR += yabasic
+    SUBDIR += yap
     SUBDIR += yorick
 
 .include <bsd.port.subdir.mk>
