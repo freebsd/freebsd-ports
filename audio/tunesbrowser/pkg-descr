@@ -1,4 +1,8 @@
 TunesBrowser is a simple music player, capable of playing music found on
-iTunes(R) shares.
+iTunes(R) shares.  Its features are:
+
+  - Play MP3's off other computers running iTunes
+  - Discovery of hosts over Rendezvous
+  - Interface is quite similar to that of iTunes
 
 WWW:	http://craz.net/programs/itunes/tunesbrowser.html

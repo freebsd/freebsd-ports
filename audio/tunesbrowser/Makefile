@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gnome frontend DAAP client
+COMMENT=	Simple iTunes-like music player
 
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap
 
