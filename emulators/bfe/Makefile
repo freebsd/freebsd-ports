@@ -6,36 +6,46 @@
 #
 
 PORTNAME=	bfe2
-PORTVERSION=	20030124
+PORTVERSION=	20030723
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bfe
-DISTNAME=	bfe2-24jan2003
+DISTNAME=	${PORTNAME}-23jul2003
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 GUI for the bochs debugger (revision 2)
 
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
-WRKSRC=		${WRKDIR}/bfe2
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--gtk 2.0
+PKGNAMESUFFIX=	-gtk2
+.else
+USE_GNOME+=	gtk12
+CONFIGURE_ARGS+=	--gtk 1.2
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		-e 's|%%CC%%|${CC}|' -e 's|%%CFLAGS%%|${CFLAGS}|' \
-		-e 's|gtk-config|${GTK_CONFIG}|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-
-do-configure:
-	@cd ${WRKSRC} && ${SH} ${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e \
+		's|%%CFLAGS%%|"${CFLAGS}"|g ; \
+		 s|%%CC%%|"${CC}"|g ; \
+		 s|%%PREFIX%%|"${PREFIX}"|g ; \
+		 s|gtk-config --libs|pkg-config --libs gtk+|g ; \
+		 s|gtk-config --cflags|pkg-config --cflags gtk+|g' \
+				${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bfe2 ${PREFIX}/bin
-	-@${MKDIR} ${PREFIX}/share/bfe
-	${INSTALL_DATA} ${WRKSRC}/README.bferc ${PREFIX}/share/bfe/bferc.sample
-	${INSTALL_DATA} ${WRKSRC}/README.bferc ${PREFIX}/share/bfe
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README.bferc ${DATADIR}/bferc.sample
+	${INSTALL_DATA} ${WRKSRC}/README.bferc ${DATADIR}
 
 .include <bsd.port.mk>
