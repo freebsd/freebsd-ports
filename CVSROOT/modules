@@ -101,6 +101,7 @@ NeTraMet	ports/net/NeTraMet
 ORBacus		ports/devel/ORBacus
 ORBit		ports/devel/ORBit
 ORBit2		ports/devel/ORBit2
+OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
 R-a4		ports/math/R-a4
