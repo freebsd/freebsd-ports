@@ -3,24 +3,27 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/01/14 17:00:22 vanilla Exp $
+# $Id: Makefile,v 1.13 1999/01/27 08:31:50 fenner Exp $
 #
 
 DISTNAME=	libgtop-0.99.2
-CATEGORIES=	devel
+CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.home-of-linux.org/pub/libgtop/0.99.2/
 MASTER_SITE_SUBDIR=	libgtop
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel \
-		gnome.1:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
 
+# implicit dependencies:
+# gettext, glib11-devel
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls
-CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 USE_GMAKE=	yes
 
 post-install:
