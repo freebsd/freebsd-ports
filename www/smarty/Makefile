@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
@@ -18,17 +18,18 @@ DISTFILES+=	Smarty-2.6.0-docs${EXTRACT_SUFX}:manual
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	The PHP compiling template engine
 
-RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
-
 WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
 
 NO_BUILD=	yes
+WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MSG_SRC=${FILESDIR}/pkg-message
+MSG_SRC=	${FILESDIR}/pkg-message
 
 MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
@@ -58,4 +59,4 @@ post-install:
 		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
