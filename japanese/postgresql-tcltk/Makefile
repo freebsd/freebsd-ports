@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1998
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
-# $Id: Makefile,v 1.6 1999/04/16 17:45:02 max Exp $
+# $Id: Makefile,v 1.7 1999/04/17 18:38:44 max Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
@@ -121,7 +121,8 @@ pre-install:
 	@ ${MKDIR} ${PREFIX}/${INSTALL_DIR}
 	@ ${SETENV} INSTALL_DIR=${INSTALL_DIR} \
 	     	    PGSQL_UID=${PGSQL_UID} PGSQL_GID=${PGSQL_GID} \
-		    PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+		    PKG_PREFIX=${PREFIX} \
+			${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 post-install:
 	@ if [ ! -f ${PREFIX}/${INSTALL_DIR}/.profile ]; then \
 		${ECHO} "PATH=${PATH}:${PREFIX}/${INSTALL_DIR}/bin" \
