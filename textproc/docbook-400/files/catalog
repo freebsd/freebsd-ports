@@ -1,0 +1,36 @@
+  -- ...................................................................... --
+  -- Catalog data for DocBook V4.0 ........................................ --
+  -- File docbook.cat ..................................................... --
+
+  -- Please direct all questions, bug reports, or suggestions for
+     changes to the docbook@lists.oasis-open.org mailing list. For more
+     information, see http://www.oasis-open.org/.
+  --
+
+  -- This is the catalog data file for Version 4.0 of the DocBook DTD.
+     It is provided as a convenience in building your own catalog files.
+     You need not use the filenames listed here, and need not use the
+     filename method of identifying storage objects at all.  See the
+     documentation for detailed information on the files associated with
+     the DocBook DTD.  See SGML Open Technical Resolution 9401 for
+     detailed information on supplying and using catalog data.
+  --
+
+  -- ...................................................................... --
+  -- DocBook driver file .................................................. --
+
+PUBLIC "-//OASIS//DTD DocBook V4.0//EN" "docbook.dtd"
+
+  -- ...................................................................... --
+  -- DocBook modules ...................................................... --
+
+PUBLIC "-//USA-DOD//DTD Table Model 951010//EN" "cals-tbl.dtd"
+PUBLIC "-//OASIS//ELEMENTS DocBook Information Pool V4.0//EN" "dbpool.mod"
+PUBLIC "-//OASIS//ELEMENTS DocBook Document Hierarchy V4.0//EN" "dbhier.mod"
+PUBLIC "-//OASIS//ENTITIES DocBook Additional General Entities V4.0//EN" "dbgenent.mod"
+PUBLIC "-//OASIS//ENTITIES DocBook Notations V4.0//EN" "dbnotn.mod"
+PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.0//EN" "dbcent.mod"
+
+
+  -- End of catalog data for DocBook V4.0 ................................. --
+  -- ...................................................................... --
