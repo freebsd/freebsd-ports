@@ -10,7 +10,7 @@ PORTNAME=	g3dviewer
 PORTVERSION=	0.0.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://madsworld.exhome.de/downloads/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D file viewer for GTK+
