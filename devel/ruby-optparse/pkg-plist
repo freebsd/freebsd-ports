@@ -13,9 +13,9 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ChangeLog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.rlog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/rmi.html
