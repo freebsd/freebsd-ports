@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graph
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.4
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rockit.sourceforge.net/subprojects/graphr/
 MASTER_SITE_SUBDIR=	knu
