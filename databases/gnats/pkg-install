@@ -1,0 +1,95 @@
+#!/bin/sh
+# an installation script for GNATS
+
+check_pw()
+{
+    if which -s pw; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  We see that it
+is missing the "pw" utility.  We need this utility.  Please get and
+install it, and try again.  You can get the source from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+Otherwise, just manually create the gnats user.
+
+EOF
+	exit 1
+    fi
+}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} (y/n) [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+case $2 in
+PRE-INSTALL)
+printenv > /tmp/pe
+    ## Hack /etc/master.passwd ##
+    # check
+    id_61=`id -u 61 2> /dev/null`
+    id_gnats=`id -u gnats 2> /dev/null`
+    if [ X"$id_gnats" != X ];then
+	exit 0
+    elif [ X"$id_61" != X ]; then
+	cat <<EOF
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This system already has an account whose name is not 'gnats' and UID
+number is 61.
+
+   '`id 61`'
+
+The new FreeBSD standard userid for the gnats user is 61, however you can
+actually pick and UID number if you create the 'gnats' user by hand.
+
+Please try to install this package again after you manually create a 'gnats'
+account.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EOF
+	exit 1
+    fi
+
+    # add an account 'gnats' to this system
+    echo ""
+    echo "You need to create a user called 'gnats'"
+    if yesno "Would you like to create it automatically?" y; then
+	# We need a command 'pw(8)'
+	check_pw
+	pw useradd gnats -u 61 -g 1 -h - -d ${PKG_PREFIX}/share/gnats/gnats-db \
+		-c 'GNATS database owner' || exit
+	grep -s gnats /etc/ftpusers || echo gnats >>/etc/ftpusers
+    else
+	echo "Please create it, and try again."
+	exit 1
+    fi
+    ;;
+esac
