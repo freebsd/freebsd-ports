@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plruby
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
