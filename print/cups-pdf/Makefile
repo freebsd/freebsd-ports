@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6.5
 CATEGORIES=	print
 MASTER_SITES=	http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
-DISTNAME=	${PORTNAME}_${PORTVERSION}a
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	A virtual printer for CUPS to produce PDF files
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-backenddir=${LOCALBASE}/libexec/cups/backend
-SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs,"
+SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \
+			-e 's,-s /bin/sh,,' \
+			-e 's,/bin/su,/usr/bin/su,' \
+			-e 's,"lp","daemon",' \
+			-e 's,/var/spool/cups-pdf/SPOOL,/var/spool/cups-pdf,'
 
 .ifdef(PDF_VERSION)
 .if ${PDF_VERSION} == 1.2
@@ -40,10 +41,10 @@ SUBST_CMD+=	-e 's,CPPDFVER "1.4",CPPDFVER "${PDF_VERSION}",'
 .endif
 
 .ifdef(HOME_SUBDIR)
-SUBST_CMD+=	-e 's,/var/spool/cups-pdf,$$HOME,' -e 's,CPHOMESUB "cups-pdf",CPHOMESUB "${HOME_SUBDIR}",'
+SUBST_CMD+=	-e 's,CPOUT "/var/spool/cups-pdf",CPOUT "$$HOME",' -e 's,CPHOMESUB "cups-pdf",CPHOMESUB "${HOME_SUBDIR}",'
 .else
 .ifdef(OUTPUT_DIRECTORY)
-SUBST_CMD+=	-e "s,/var/spool/cups-pdf,${OUTPUT_DIRECTORY},"
+SUBST_CMD+=	-e 's,CPOUT "/var/spool/cups-pdf",CPOUT "${OUTPUT_DIRECTORY}",'
 .endif
 .endif
 
@@ -73,6 +74,9 @@ pre-fetch:
 post-configure:
 	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/src/cups-pdf.h
 	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
+
+do-build:
+	cd ${WRKSRC}/src; gcc ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
