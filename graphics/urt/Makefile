@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.11 1998/11/25 09:01:20 asami Exp $
+# $Id: Makefile,v 1.12 1999/01/10 18:11:45 steve Exp $
 #
 
 DISTNAME=	urt
@@ -61,13 +61,13 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/urt ${PREFIX}/share/examples/urt
 	cd ${PREFIX}/share/doc/urt; \
-	${EXTRACT_CMD} xf $(DISTDIR)/urt-doc.tar; \
+	${TAR} xf $(DISTDIR)/urt-doc.tar; \
 	cd doc; \
 	find -d . | cpio -dump ..; \
 	cd ..; \
 	${RM} -rf doc; \
 	cd ${PREFIX}/share/examples/urt; \
-	${EXTRACT_CMD} xf $(DISTDIR)/urt-img.tar; \
+	${TAR} xf $(DISTDIR)/urt-img.tar; \
 	chown -R root:wheel . ; \
 	find . -type d -exec chmod 775 '{}' \; ; \
 	find . -type f -exec chmod 664 '{}' \;

@@ -3,7 +3,7 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.5 1998/11/07 18:04:04 jraynard Exp $
+# $Id: Makefile,v 1.6 1998/11/10 21:00:14 wosch Exp $
 #
 
 DISTNAME=	sfio_1998
@@ -14,6 +14,7 @@ CATEGORIES=	devel
 EXTRACT_SUFX=	.src.unix.cpio
 EXTRACT_CMD=	cpio
 EXTRACT_BEFORE_ARGS=	-idF
+EXTRACT_AFTER_ARGS=	# empty
 
 MAINTAINER=	jraynard@freebsd.org
 

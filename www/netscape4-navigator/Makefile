@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.35 1999/01/06 04:18:14 simokawa Exp $
+# $Id: Makefile,v 1.36 1999/01/13 04:00:09 scrappy Exp $
 #
 
 DISTNAME=       netscape-navigator-4.08
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${NDIR}/java/classes
 	${INSTALL_PROGRAM} ${WRKSRC}/vreg ${NDIR}
 	for i in ${WRKSRC}/*.nif; do \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} -C ${NDIR}; \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} ${EXTRACT_AFTER_ARGS} -C ${NDIR}; \
 	done
 	${WRKSRC}/vreg ${NDIR}/registry ${WRKSRC}/infile
 	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.08.bin

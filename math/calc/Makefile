@@ -3,7 +3,7 @@
 # Date created:         3 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1997/08/25 00:09:35 asami Exp $
+# $Id: Makefile,v 1.11 1998/06/04 17:13:49 smace Exp $
 #
 
 DISTNAME=	calc-2.9.3t6
@@ -14,7 +14,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org
 
+EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 
 MAN1=		calc.1
 IGNOREFILES=	${DISTFILES}	# "on-the-fly" creation of tarball

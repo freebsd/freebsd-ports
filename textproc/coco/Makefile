@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.35 1998/12/02 07:57:11 asami Exp $
+# $Id: Makefile,v 1.36 1999/01/23 14:28:27 simokawa Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -84,10 +84,10 @@ ELC_DIR=	../lisp
 #   MEW_ORG_PATCH: apply mew's patches to original mule (http://www.mew.org)
 #   MEW_PATCH: apply mew's patch after apply Mr. Katayama's patches
 post-extract:
-	${EXTRACT_CMD} -C ${WRKDIR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-2.3-19.34.patch-981002.tar.gz
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-2.3-19.34.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${CP} ${FILESDIR}/unexfreebsd.c ${WRKSRC}/src
 .if !defined(ORIGINAL) && !defined(MEW_ORG_PATCH)
-	${EXTRACT_CMD} -C ${WRKDIR} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-19.34.tar.gz
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-19.34.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${MKDIR} ${WRKSRC}/lisp/its
 	${CP} ${WRKDIR}/lisp/its/* ${WRKSRC}/lisp/its/
 .endif

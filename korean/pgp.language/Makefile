@@ -3,7 +3,7 @@
 # Date created:         22 Jul 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/17 14:14:50 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/16 02:53:04 jseger Exp $
 #
 # This is based on ja-pgp.
 #
@@ -22,7 +22,8 @@ RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 RESTRICTED=	"Crypto"
 
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-q
+EXTRACT_BEFORE_ARGS=	-q
+EXTRACT_AFTER_ARGS=	# empty
 NO_BUILD=	YES
 
 # version and language specifications

@@ -3,7 +3,7 @@
 # Date created:        20 Oct 1996
 # Whom:                Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/04/30 03:18:02 asami Exp $
+# $Id: Makefile,v 1.3 1999/01/12 16:50:29 vanilla Exp $
 #
 
 DISTNAME=	gifmerge
@@ -16,7 +16,9 @@ MAINTAINER=	nacai@iname.com
 
 ALL_TARGET=	gifmerge
 NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gifmerge ${PREFIX}/bin/gifmerge

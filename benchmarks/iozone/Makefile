@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1996/11/18 13:57:01 asami Exp $
+# $Id: Makefile,v 1.19 1998/12/01 23:58:23 billf Exp $
 #
 
 DISTNAME=       iozone-2.01
@@ -17,7 +17,8 @@ FETCH_CMD=      FTP_PASSWORD=portsuser@FreeBSD.org /usr/bin/fetch
 MAINTAINER=	jmz@FreeBSD.org
 
 EXTRACT_CMD=    ( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
-EXTRACT_ARGS=   <
+EXTRACT_BEFORE_ARGS=	<
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=   YES
 MAN1=		iozone.1
 

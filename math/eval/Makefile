@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1997
 # Whom:                 eserte
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/26 03:25:09 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/07 18:55:41 scrappy Exp $
 #
 
 DISTNAME=	Eval113
@@ -17,7 +17,9 @@ MAINTAINER=	eserte@cs.tu-berlin.de
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-EXTRACT_CMD=	lha
+EXTRACT_CMD=		${CAT}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	| lha x -
 
 WRKSRC=		${WRKDIR}/Eval/source
 

@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.5 1997/09/14 21:36:10 max Exp $
+# $Id: Makefile,v 1.6 1997/09/19 11:57:50 max Exp $
 #
 
 DISTNAME=	td210bs
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 
 post-extract:

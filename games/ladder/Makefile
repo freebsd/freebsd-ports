@@ -3,7 +3,7 @@
 # Date created:        18 Feb 1998
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/20 05:46:59 steve Exp $
 #
 
 DISTNAME=	ladder
@@ -18,6 +18,8 @@ MAINTAINER=	sec@42.org
 RESTRICTED=	"possible copyright problems ?"
 
 NO_WRKSUBDIR=	true
-EXTRACT_BEFORE_ARGS=-xf
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 
 .include <bsd.port.mk>

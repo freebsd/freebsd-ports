@@ -3,7 +3,7 @@
 # Date created:         29 September 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.6 1997/10/03 12:25:15 wosch Exp $
+# $Id: Makefile,v 1.7 1998/08/25 01:25:05 asami Exp $
 #
 
 DISTNAME=       de-manpages-1.0
@@ -30,8 +30,8 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/${manpages}; \
-	${EXTRACT_CMD} cf - . | \
-		(cd ${mandir}; ${EXTRACT_CMD} xf - )
+	${TAR} cf - . | \
+		(cd ${mandir}; ${TAR} xf - )
 	find ${WRKSRC}/${manpages} -type f -print | \
 		 ${SED} "s%${WRKSRC}/${manpages}%man/${LANG}%" > \
 	   ${WRKSRC}/PLIST

@@ -3,7 +3,7 @@
 # Date created:				19 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 06:55:54 steve Exp $
 #
 
 DISTNAME=		binkd092
@@ -19,7 +19,8 @@ BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 GNU_CONFIGURE=		yes
 MAN8=			binkd.8
 

@@ -5,7 +5,7 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id: Makefile,v 1.2 1999/01/04 16:00:06 obrien Exp $
+# $Id: Makefile,v 1.3 1999/01/07 02:31:39 simokawa Exp $
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
@@ -32,7 +32,7 @@ IGNORE='The source to this port may not be automatically fetched due to licensin
 .endif
 
 post-extract:
-	@(cd ${WRKDIR} ; for file in b* g* ; do ${EXTRACT_CMD} -xf $$file ; done)
+	@(cd ${WRKDIR} ; for file in b* g* ; do ${TAR} -xf $$file ; done)
 
 post-patch:
 	@${CP} ${WRKDIR}/shared/wpdata ${WRKDIR}/shared/wpdata.old

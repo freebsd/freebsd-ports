@@ -3,7 +3,7 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.12 1998/12/23 01:33:52 steve Exp $
+# $Id: Makefile,v 1.13 1999/01/12 16:51:02 vanilla Exp $
 #
 
 DISTNAME=	mlvwm089
@@ -30,6 +30,7 @@ post-install:
 	${RM} -f ${PREFIX}/lib/X11/mlvwm/*.orig
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/mini-icons.tar.gz \
+		${EXTRACT_AFTER_ARGS} \
 		-C ${PREFIX}/lib/X11/mlvwm/pixmap
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/man/mlvwm.1 ${PREFIX}/man/man1

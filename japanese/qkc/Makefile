@@ -3,7 +3,7 @@
 # Date created:			03 May 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/08/30 20:35:41 max Exp $
+# $Id: Makefile,v 1.9 1998/10/10 05:39:24 steve Exp $
 #
 
 DISTNAME=	qkcc100
@@ -18,7 +18,8 @@ MAINTAINER=	max@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-q
+EXTRACT_BEFORE_ARGS=	-q
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN1=		qkc.1

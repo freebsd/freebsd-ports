@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/03/25 10:53:08 obrien Exp $
 #
 
 DISTNAME=	detex-2.6
@@ -14,7 +14,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=     obrien@FreeBSD.org
 
-EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 MAN1=		detex.1
 

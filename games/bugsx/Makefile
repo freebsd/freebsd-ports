@@ -3,7 +3,7 @@
 # Date created:  7 December 1997
 # Whom:  Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/17 03:13:12 jkoshy Exp $
+# $Id: Makefile,v 1.2 1998/09/28 02:05:15 steve Exp $
 #
 
 DISTNAME=	bugsx108
@@ -18,7 +18,9 @@ MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bugsx
 # isn't really gzipped
+EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 MAN1=		bugsx.1
 
 post-install:

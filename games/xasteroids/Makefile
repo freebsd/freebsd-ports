@@ -3,7 +3,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.9 1998/09/28 02:14:47 steve Exp $
+# $Id: Makefile,v 1.10 1998/10/03 13:39:44 jseger Exp $
 #
 
 DISTNAME=       xasteroids
@@ -18,7 +18,8 @@ MAINTAINER=	swallace@FreeBSD.org
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
-EXTRACT_ARGS=	<
+EXTRACT_BEFORE_ARGS=	<
+EXTRACT_AFTER_ARGS=	# empty
 MAN6=		xasteroids.6
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.6 1998/10/09 01:41:14 asami Exp $
+# $Id: Makefile,v 1.7 1998/12/02 05:57:04 asami Exp $
 #
 
 DISTNAME=	ptex218
@@ -43,7 +43,7 @@ pre-patch:
 	  ${PATCH} ${PATCH_DIST_ARGS}
 
 pre-install:
-	@${EXTRACT_CMD} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4-euc.tar.gz
+	@${TAR} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4-euc.tar.gz
 
 post-install:
 .for bin in ${BINARIES}

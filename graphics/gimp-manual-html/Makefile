@@ -3,7 +3,7 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.7 1998/12/04 22:10:57 billf Exp $
+# $Id: Makefile,v 1.8 1998/12/07 19:26:02 billf Exp $
 #
 
 DISTNAME=	GimpUserManual-1.0.0
@@ -37,14 +37,9 @@ pre-fetch:
 EXTRACT_SUFX=	-html.tar.bz2
 WRKSRC=		${WRKDIR}/GimpUserManaul_v1.0.0
 
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
-
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-
-EXTRACT_CMD=	bzip2
-EXTRACT_BEFORE_ARGS= -cd
-EXTRACT_AFTER_ARGS= | tar -xf -
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp

@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/11/23 07:51:07 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/10 15:10:19 sada Exp $
 #
 
 DISTNAME=	ja-netscape-3.04
@@ -40,7 +40,7 @@ STARTFILE_SRC=	${FILESDIR}/netscape.sh
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/NLS.tar.gz -C ${WRKDIR}
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/NLS.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Netscape-JPfont ${WRKDIR}
 	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/Netscape-v301-ja_euc.ad.gz \
 		| ${GUNZIP_CMD} > ${WRKDIR}/Netscape.jp.ad

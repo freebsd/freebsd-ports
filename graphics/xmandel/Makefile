@@ -3,7 +3,7 @@
 # Date created:         		18 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/15 10:22:03 asami Exp $
+# $Id: Makefile,v 1.2 1998/08/25 20:21:17 asami Exp $
 #
 
 DISTNAME=	xmandel
@@ -15,7 +15,8 @@ EXTRACT_SUFX=   .shar
 # but this has changed apparently.
 
 EXTRACT_CMD=    sh
-EXTRACT_BEFORE_ARGS=
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 USE_IMAKE=      yes
 NO_WRKSUBDIR=   yes
 MAN1=		xmandel.1

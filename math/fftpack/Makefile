@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:			Pedro Giffuni S.
 #
-# $Id: Makefile,v 1.7 1998/10/09 03:36:39 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/14 09:43:22 asami Exp $
 #
 
 DISTNAME=	bihar
@@ -16,7 +16,9 @@ MAINTAINER=	giffunip@asme.org
 
 # ${DISTFILES} is automatically created from the directory contents
 IGNOREFILES=	${DISTFILES}
+EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 
 .include <bsd.port.pre.mk>
 

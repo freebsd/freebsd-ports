@@ -3,7 +3,7 @@
 # Date created:					21 Sep 1996
 # Whom:						Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/07/21 19:28:43 max Exp $
+# $Id: Makefile,v 1.3 1998/11/29 12:43:11 asami Exp $
 #
 
 DISTNAME=		estic-1.40-sources
@@ -20,7 +20,8 @@ BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 
 USE_XLIB=		yes
 EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=#	-q
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=		yes
 
 #			maybe one of them depends on the vga font from pcemu ?

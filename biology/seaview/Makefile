@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.11 1998/11/03 00:51:24 jseger Exp $
+# $Id: Makefile,v 1.12 1999/01/07 08:19:24 simokawa Exp $
 #
 
 DISTNAME=       seaview
@@ -21,7 +21,9 @@ ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	YES
 NO_WRKSUBDIR=	YES
+EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin

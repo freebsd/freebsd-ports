@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.20 1997/08/27 13:06:01 ache Exp $
+# $Id: Makefile,v 1.21 1998/09/25 10:20:21 asami Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -56,12 +56,14 @@ BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS+=   rsaref.2:${PORTSDIR}/security/rsaref
 EXTRACT_CMD=    unzip
-EXTRACT_ARGS=   -q
+EXTRACT_BEFORE_ARGS=	-q
+EXTRACT_AFTER_ARGS=	# empty
 FILESDIR=       ${.CURDIR}/files.usa
 PATCHDIR=       ${.CURDIR}/patches.usa
 
 post-extract:
-	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_ARGS) -aa $(DISTNAME)i
+	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_BEFORE_ARGS) -aa $(DISTNAME)i \
+		$(EXTRACT_AFTER_ARGS)
 	cd ${WRKDIR}; rm -f *.zip
 
 .else

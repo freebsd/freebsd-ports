@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.18 1998/11/14 09:43:20 asami Exp $
+# $Id: Makefile,v 1.19 1998/12/01 09:30:25 asami Exp $
 #
 
 DISTNAME=	eispack
@@ -19,7 +19,8 @@ LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
 EXTRACT_SUFX=	.gz
-EXTRACT_ARGS=	${WRKDIR}
+EXTRACT_BEFORE_ARGS=	${WRKDIR}
+EXTRACT_AFTER_ARGS=	# empty
 
 NO_WRKSUBDIR=	yes
 

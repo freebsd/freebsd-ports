@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.8 1999/01/09 14:45:20 itojun Exp $
+# $Id: Makefile,v 1.9 1999/01/09 14:54:59 itojun Exp $
 #
 
 DISTNAME=	ken_all
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR}

@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.6 1998/12/02 00:32:38 obrien Exp $
+# $Id: Makefile,v 1.7 1999/01/26 02:27:26 steve Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
@@ -108,7 +108,7 @@ pre-extract:
 post-extract:
 	@${ECHO} "===>  Extracting FrontPage install scripts"
 	@cd ${WRKSRC} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${FPINSTALL} ${CHANGESERVER}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS} ${FPINSTALL} ${CHANGESERVER}
 
 post-install:
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."

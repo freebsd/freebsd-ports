@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.2 1997/08/22 11:14:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/07 07:42:12 asami Exp $
 #
 
 DISTNAME=	pdc22
@@ -22,6 +22,7 @@ RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-La
+EXTRACT_AFTER_ARGS=	# empty
 
 # Since were only taking the library and include files we don't
 # actually need to build anything

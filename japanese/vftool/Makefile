@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/08/09 00:58:46 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/24 00:39:46 steve Exp $
 #
 
 DISTNAME=	vftool-1.2
@@ -35,8 +35,10 @@ TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 post-extract:
 	(cd ${WRKDIR}; \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/plib13-euc.tar.gz \
+			${EXTRACT_AFTER_ARGS} \
 			share/texmf/fonts/tfm/ptex; \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/jtex-1.52.tar.gz \
+			${EXTRACT_AFTER_ARGS} \
 			jtex-1.52/JTeXfonts/dnpfonts/mincho/tfm \
 			jtex-1.52/JTeXfonts/dnpfonts/gothic/tfm; \
 	)

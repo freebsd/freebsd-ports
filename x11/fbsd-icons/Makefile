@@ -3,7 +3,7 @@
 # Date created:		Sat Jun 14 09:43:24 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1998/06/27 05:19:51 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:42 asami Exp $
 #
 
 DISTNAME=	fbsd-icons
@@ -19,6 +19,6 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 		${MKDIR} ${X11BASE}/icons
-		( cd ${X11BASE}/icons; ${EXTRACT_CMD} xzf ${DISTDIR}/fbsd-icons.tar.gz )
+		( cd ${X11BASE}/icons; ${TAR} -xzf ${DISTDIR}/fbsd-icons.tar.gz )
 
 .include <bsd.port.mk>
