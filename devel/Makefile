@@ -639,6 +639,7 @@
     SUBDIR += viewcvs
     SUBDIR += vtcl
     SUBDIR += xmake
+    SUBDIR += xparam
     SUBDIR += xtl
     SUBDIR += xwpe
     SUBDIR += xxgdb
