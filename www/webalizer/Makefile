@@ -57,6 +57,21 @@ SUPP_LANG=	catalan chinese croatian czech danish dutch english \
 
 .if defined(WEBALIZER_LANG)
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
+#	The patch file is written by URASHIMA Akira
+#	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
+.if ${WEBALIZER_LANG} == japanese
+EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
+.endif
+.endif
+
+.if defined(WITH_WEBALIZER_CONV)
+USE_ICONV=yes
+# 	The patch file is written by URASHIMA Akira
+#	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
+EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch
+CONFIGURE_ARGS+=	--enable-mininls
+CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
+CFLAGS+=		-I${PREFIX}/include
 .endif
 
 pre-configure:
