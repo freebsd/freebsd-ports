@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
@@ -41,7 +41,7 @@ LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
 
 .if defined(WITH_MUTT_HEADER_CACHE)
 PATCH_SITES+=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/:hcache
-PATCHFILES+=	patch-${VERSION}.tg.hcache.3:hcache
+PATCHFILES+=	patch-${VERSION}.tg.hcache.12:hcache
 PATCH_DIST_STRIP+=	-p1
 
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm

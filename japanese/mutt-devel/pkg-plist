@@ -89,6 +89,7 @@ etc/mime.types
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.linux
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.ja.txt
+%%NLS%%share/locale/bg/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mutt.mo
