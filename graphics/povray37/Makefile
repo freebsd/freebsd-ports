@@ -3,8 +3,9 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id$
+# $Id: Makefile,v 1.5 1996/12/05 12:45:54 jkh Exp $
 #
+
 DISTNAME=       povray3
 PKGNAME=	povray-3.0
 CATEGORIES=	graphics
@@ -12,30 +13,31 @@ MASTER_SITES=	ftp://povray.cdrom.com/pub/povray/Official-3.0/Unix/ \
 	 	ftp://www.hensa.ac.uk/mirrors/povray/povray/Official-3.0/Unix/\
 		ftp://ftp.univ-lille1.fr/pub/povray/Official-3.0/Unix/
 DISTFILES=      povuni_s.tgz povuni_d.tgz
+
+LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png
+
 MAN1=		povray.1
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+
+POVLIB=		${PREFIX}/lib/povray3
 
 do-build:
 	(cd ${WRKSRC}/source/unix; make newxwin)
 
 do-install:
-	@${MKDIR} ${PREFIX}/man/man1; 
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/povray3; 
-	@${MKDIR} ${PREFIX}/lib/povray3/allscene
-	@${INSTALL} -c -m 755 ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray; 
-	@cp -rp  ${WRKSRC}/pov3demo  ${PREFIX}/lib/povray3/pov3demo ;
-	@cp -rp  ${WRKSRC}/docsdemo  ${PREFIX}/lib/povray3/docsdemo
-	@cp -rp  ${WRKSRC}/include  ${PREFIX}/lib/povray3/include 
-	@cp -rp  ${WRKSRC}/povscn  ${PREFIX}/lib/povray3/povscn
-	@cp -rp  ${WRKSRC}/texsamps  ${PREFIX}/lib/povray3/texsamps
-	@cp  ${WRKSRC}/*.ini   ${PREFIX}/lib/povray3/
-	@cp  ${WRKSRC}/*.doc   ${PREFIX}/lib/povray3/
-	@cp  ${WRKSRC}/*.gif  ${WRKSRC}/*.xpm   ${PREFIX}/lib/povray3/
-	@install -c -m 755 ${WRKSRC}/allscene.sh ${PREFIX}/lib/povray3/
-	@rm -f ${PREFIX}/man/man1/povray.1.gz
-	@install -c -m 644 ${WRKSRC}/povray.1 ${PREFIX}/man/man1
-	@chmod -R og-r   ${PREFIX}/lib/povray3
-	@chmod -R a+r   ${PREFIX}/lib/povray3
+	@${MKDIR} ${POVLIB}/allscene
+	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
+	@${CP} -rp ${WRKSRC}/pov3demo ${POVLIB}/pov3demo
+	@${CP} -rp ${WRKSRC}/docsdemo ${POVLIB}/docsdemo
+	@${CP} -rp ${WRKSRC}/include ${POVLIB}/include 
+	@${CP} -rp ${WRKSRC}/povscn ${POVLIB}/povscn
+	@${CP} -rp ${WRKSRC}/texsamps ${POVLIB}/texsamps
+	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
+	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
+	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
+	@${RM} -f ${PREFIX}/man/man1/povray.1*
+	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
+	@chmod -R og-r ${POVLIB}
+	@chmod -R a+r ${POVLIB}
 
 .include <bsd.port.mk>
