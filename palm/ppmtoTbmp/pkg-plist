@@ -1,0 +1,7 @@
+bin/ppmtoTbmp
+bin/Tbmptopnm
+share/ppmtoTbmp/q2.map
+share/ppmtoTbmp/q4.map
+@dirrm share/ppmtoTbmp
+%%PORTDOCS%%share/doc/ppmtoTbmp/README
+%%PORTDOCS%%@dirrm share/doc/ppmtoTbmp
