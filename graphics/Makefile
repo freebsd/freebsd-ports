@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.101 1998/11/21 19:59:20 steve Exp $
+# $Id: Makefile,v 1.102 1998/12/01 21:04:58 billf Exp $
 #
 
     SUBDIR += 4va
@@ -23,6 +23,7 @@
     SUBDIR += gfont
     SUBDIR += giflib
     SUBDIR += gifmerge
+    SUBDIR += gifsicle
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimp-manual-html
