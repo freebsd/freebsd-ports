@@ -4295,6 +4295,7 @@ linux-expat	ports/textproc/linux-expat
 linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
+linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-glib2	ports/devel/linux-glib2
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
@@ -4347,6 +4348,7 @@ linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vsound	ports/audio/linux-vsound
 linux-winetools	ports/emulators/linux-winetools
 linux-xmovie		ports/multimedia/linux-xmovie
+linux-ymessenger	ports/net/linux-ymessenger
 linux_base	ports/emulators/linux_base
 linux_base-6	ports/emulators/linux_base-6
 linux_base-8	ports/emulators/linux_base-8
