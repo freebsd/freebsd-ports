@@ -1,0 +1,73 @@
+lib/ROX-Lib2/.DirIcon
+lib/ROX-Lib2/AppInfo.xml
+lib/ROX-Lib2/AppRun
+lib/ROX-Lib2/Help/COPYING
+lib/ROX-Lib2/Help/Changes
+lib/ROX-Lib2/Help/README
+lib/ROX-Lib2/Help/findrox.py
+lib/ROX-Lib2/Help/findrox.pyc
+lib/ROX-Lib2/Help/findrox.pyo
+lib/ROX-Lib2/Help/python/rox.Menu.html
+lib/ROX-Lib2/Help/python/rox.OptionsBox.html
+lib/ROX-Lib2/Help/python/rox.applet.html
+lib/ROX-Lib2/Help/python/rox.choices.html
+lib/ROX-Lib2/Help/python/rox.debug.html
+lib/ROX-Lib2/Help/python/rox.filer.html
+lib/ROX-Lib2/Help/python/rox.html
+lib/ROX-Lib2/Help/python/rox.i18n.html
+lib/ROX-Lib2/Help/python/rox.loading.html
+lib/ROX-Lib2/Help/python/rox.mime.html
+lib/ROX-Lib2/Help/python/rox.options.html
+lib/ROX-Lib2/Help/python/rox.processes.html
+lib/ROX-Lib2/Help/python/rox.saving.html
+lib/ROX-Lib2/MakeDist
+lib/ROX-Lib2/Messages/dist
+lib/ROX-Lib2/Messages/update-po
+lib/ROX-Lib2/python/make_docs.py
+lib/ROX-Lib2/python/make_docs.pyc
+lib/ROX-Lib2/python/make_docs.pyo
+lib/ROX-Lib2/python/rox/Menu.py
+lib/ROX-Lib2/python/rox/Menu.pyc
+lib/ROX-Lib2/python/rox/Menu.pyo
+lib/ROX-Lib2/python/rox/OptionsBox.py
+lib/ROX-Lib2/python/rox/OptionsBox.pyc
+lib/ROX-Lib2/python/rox/OptionsBox.pyo
+lib/ROX-Lib2/python/rox/__init__.py
+lib/ROX-Lib2/python/rox/__init__.pyc
+lib/ROX-Lib2/python/rox/__init__.pyo
+lib/ROX-Lib2/python/rox/applet.py
+lib/ROX-Lib2/python/rox/applet.pyc
+lib/ROX-Lib2/python/rox/applet.pyo
+lib/ROX-Lib2/python/rox/choices.py
+lib/ROX-Lib2/python/rox/choices.pyc
+lib/ROX-Lib2/python/rox/choices.pyo
+lib/ROX-Lib2/python/rox/debug.py
+lib/ROX-Lib2/python/rox/debug.pyc
+lib/ROX-Lib2/python/rox/debug.pyo
+lib/ROX-Lib2/python/rox/filer.py
+lib/ROX-Lib2/python/rox/filer.pyc
+lib/ROX-Lib2/python/rox/filer.pyo
+lib/ROX-Lib2/python/rox/i18n.py
+lib/ROX-Lib2/python/rox/i18n.pyc
+lib/ROX-Lib2/python/rox/i18n.pyo
+lib/ROX-Lib2/python/rox/loading.py
+lib/ROX-Lib2/python/rox/loading.pyc
+lib/ROX-Lib2/python/rox/loading.pyo
+lib/ROX-Lib2/python/rox/mime.py
+lib/ROX-Lib2/python/rox/mime.pyc
+lib/ROX-Lib2/python/rox/mime.pyo
+lib/ROX-Lib2/python/rox/options.py
+lib/ROX-Lib2/python/rox/options.pyc
+lib/ROX-Lib2/python/rox/options.pyo
+lib/ROX-Lib2/python/rox/processes.py
+lib/ROX-Lib2/python/rox/processes.pyc
+lib/ROX-Lib2/python/rox/processes.pyo
+lib/ROX-Lib2/python/rox/saving.py
+lib/ROX-Lib2/python/rox/saving.pyc
+lib/ROX-Lib2/python/rox/saving.pyo
+@dirrm lib/ROX-Lib2/python/rox
+@dirrm lib/ROX-Lib2/python
+@dirrm lib/ROX-Lib2/Messages
+@dirrm lib/ROX-Lib2/Help/python
+@dirrm lib/ROX-Lib2/Help
+@dirrm lib/ROX-Lib2
