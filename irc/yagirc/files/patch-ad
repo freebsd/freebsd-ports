@@ -1,0 +1,10 @@
+--- src/script.c.orig	Sat Sep  9 02:05:15 2000
++++ src/script.c	Sat Sep  9 02:05:28 2000
+@@ -31,6 +31,7 @@
+ #define bool char
+ #endif
+ 
++#define PERL_POLLUTE
+ #include <EXTERN.h>
+ #include <XSUB.h>
+ 

@@ -14,27 +14,23 @@ MASTER_SITES=	http://bluefish.openoffice.nl/download/ \
 MAINTAINER=	jim@FreeBSD.org
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX= 	yes
+USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish" \
 		--disable-nls
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
 MAN1=		bluefish.1
 
 post-install:
-	@strip ${PREFIX}/bin/bluefish
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
 	@${ECHO} "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
 	@${MKDIR} ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bluefish
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bluefish
 .endif
 
 .include <bsd.port.mk>

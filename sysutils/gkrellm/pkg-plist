@@ -13,3 +13,4 @@ share/doc/gkrellm/COPYRIGHT
 share/doc/gkrellm/README
 share/doc/gkrellm/Themes.html
 @dirrm share/doc/gkrellm
+@dirrm include/gkrellm

@@ -16,15 +16,16 @@ DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=  man2html:${PORTSDIR}/textproc/man2html
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lxpg4"
+USE_IMLIB=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp --enable-multi-charset=kanji \
 		--enable-xim --with-theme-update
+CONFIGURE_ENV=	LIBS="-lxpg4"
+
 MAN1=		Eterm.1
 INSTALLS_SHLIB=	yes
 

@@ -12,17 +12,12 @@ MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-RUN_DEPENDS=	${LOCALBASE}/bin/esdplay:${PORTSDIR}/audio/esound
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
+USE_IMLIB=	yes
+USE_ESOUND=	yes
 USE_XPM=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \

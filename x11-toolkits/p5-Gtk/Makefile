@@ -15,15 +15,14 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
 USE_PERL5=	yes
+USE_IMLIB=	yes
 
 MAN3=		Gtk::GtkColorSelectButton.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-		--with-gdkimlib --without-gnome CC="${CC}" CCFLAGS="${CFLAGS}"
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+	--with-gdkimlib --without-gnome CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

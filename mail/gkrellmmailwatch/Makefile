@@ -13,20 +13,16 @@ DISTNAME=	mailwatch-${PORTVERSION}
 
 MAINTAINER=	treif@mayn.de
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
-USE_X_PREFIX=	yes
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-IMLIB_CONFIG?=	${X11BASE}/bin/imlib-config
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}" IMLIB_CONFIG="${IMLIB_CONFIG}"
-
 WRKSRC=		${WRKDIR}/mailwatch
 
+USE_X_PREFIX=	yes
+USE_IMLIB=	yes
+
 do-install:
-		${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
-		${INSTALL_PROGRAM} ${WRKSRC}/mailwatch.so ${PREFIX}/libexec/gkrellm/plugins
+	${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
+	${INSTALL_PROGRAM} ${WRKSRC}/mailwatch.so ${PREFIX}/libexec/gkrellm/plugins
 
 .include <bsd.port.mk>

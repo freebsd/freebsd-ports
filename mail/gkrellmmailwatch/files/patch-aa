@@ -11,10 +11,8 @@
 -GKRELLM_INCLUDE= -I/usr/local/include
 +GKRELLM_INCLUDE= -I$(PREFIX)/include
  
--IMLIB_INCLUDE = `imlib-config --cflags-gdk`
--IMLIB_LIB = `imlib-config --libs-gdk`
-+IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
-+IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
+ IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+ IMLIB_LIB = `imlib-config --libs-gdk`
  
  INSTALL=install -c -s -m 755
  

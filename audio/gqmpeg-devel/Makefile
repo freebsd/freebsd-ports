@@ -15,9 +15,9 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	nakai@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
+USE_IMLIB=	yes
 ALL_TARGET=	gqmpeg
 
 .include <bsd.port.mk>

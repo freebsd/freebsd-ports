@@ -12,9 +12,9 @@ MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
 
 MAINTAINER=	clive@CirX.ORG
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_IMLIB=	yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

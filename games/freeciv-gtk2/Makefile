@@ -11,24 +11,20 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
-.if defined(WITH_GTK)
-PKGNAMESUFFIX=	-gtk
-.endif
 
 MAINTAINER=	sheldonh@freebsd.org
 
-.if defined(WITH_GTK)
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
-.endif
-
 USE_XPM=	yes
 USE_BZIP2=	yes
+WANT_IMLIB=	yes
 GNU_CONFIGURE=	yes
-.if defined(WITH_GTK)
-GLIB_CONFIG?=	${LOCALBASE}/bin/gtk12-config
-CONFIGURE_ENV=	GTK_CONFIG="${GLIB_CONFIG}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_IMLIB)
+USE_IMLIB=	yes
 .else
 CONFIGURE_ARGS=	--disable-gtktest
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

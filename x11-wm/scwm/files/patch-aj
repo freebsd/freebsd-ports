@@ -1,0 +1,20 @@
+--- src/scwm-snarf.h.orig	Wed Sep 13 01:01:45 2000
++++ src/scwm-snarf.h	Wed Sep 13 01:02:12 2000
+@@ -61,7 +61,7 @@
+ 
+ #ifdef HAVE_SCM_MAKE_HOOK
+ #define SCWM_HOOK(var, name, args, docstring) \
+-%%%     do { var = scm_make_named_hook(name,args); } while (0)
++%%%     do { var = scm_create_hook(name,args); } while (0)
+ #else
+ #define SCWM_HOOK(var, name, args, docstring) \
+ %%%     do { var = scm_sysintern(name, SCM_EOL); } while (0)
+@@ -76,7 +76,7 @@
+ 
+ #if HAVE_SCM_MAKE_HOOK
+ #define SCWM_GLOBAL_HOOK(var, name, args, docstring) \
+-%%%     do { var = scm_make_named_hook(name,args); } while (0)
++%%%     do { var = scm_create_hook(name,args); } while (0)
+ #else
+ #define SCWM_GLOBAL_HOOK(var, name, args, docstring) \
+ %%%     do { var = scm_sysintern(name, SCM_EOL); } while (0)

@@ -15,10 +15,9 @@ MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_IMLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,0 +1,12 @@
+--- src/guile-compat.h.orig	Tue Sep 12 20:55:56 2000
++++ src/guile-compat.h	Tue Sep 12 20:56:42 2000
+@@ -76,8 +76,7 @@
+ 
+ #ifdef HAVE_SCM_THE_LAST_STACK_FLUID
+   /* from libguile/fluids.h --07/01/98 gjb */
+-SCM scm_fluid_ref SCM_P ((SCM fluid));
+-SCM scm_fluid_set_x SCM_P ((SCM fluid, SCM value));
++#include <libguile/fluids.h>
+ #define DEREF_LAST_STACK scm_fluid_ref(gh_cdr(scm_the_last_stack_fluid))
+ #define SET_LAST_STACK(X) scm_fluid_set_x (gh_cdr (scm_the_last_stack_fluid), (X))
+ 
