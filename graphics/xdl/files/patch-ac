@@ -1,0 +1,63 @@
+--- xdl.c.orig	Thu Feb  4 08:14:02 1993
++++ xdl.c	Sat Jan 29 02:13:28 2000
+@@ -20,7 +20,11 @@
+ 
+ #include <stdio.h>
+ #include <signal.h>
++#ifdef __STDC__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <sys/types.h>
+ #ifdef BSDTYPES
+ #include <sys/bsdtypes.h>
+@@ -215,6 +219,16 @@
+ }
+ 
+ 
++void
++freepixmaps(dlinfo)
++    DL_info dlinfo;
++{
++    int i, j;
++    for (j = 0; j < dlinfo.num_screen; j++)
++        for (i = 0; i < dlinfo.images_per_screen; i++)
++            XFreePixmap(x_display, pixmap[j * (dlinfo.format * 3 + 1) + i]);
++}
++
+ static void die(s)char*s;{fprintf(stderr,"%s\n",s);exit(1);}
+ static void dummy(){};
+ 
+@@ -468,6 +482,18 @@
+                     } else if (x_depth == 8) {
+                         x_image->data[pixelcount++] = (u_char)pixels[*src];
+ 
++                    } else if (x_depth == 16) {
++                        if (x_image->byte_order == MSBFirst) {
++                            x_image->data[pixelcount++] 
++                                = (pixels[*src]>>8) & 0xff;
++                            x_image->data[pixelcount++] 
++                                = pixels[*src] & 0xff;
++                        } else {
++                            x_image->data[pixelcount++] 
++                                = pixels[*src] & 0xff;
++                            x_image->data[pixelcount++] 
++                                = (pixels[*src]>>8) & 0xff;
++			}
+                     } else { /* 24 or 32 bits */
+                         if (x_image->byte_order == MSBFirst) {
+                             x_image->data[pixelcount++] = 0;
+@@ -607,8 +633,11 @@
+ #endif 
+ 				    if (x_depth == 8)
+ 					XFreeColormap(x_display, cmap);
++			            freepixmaps(dlinfo);
+ 				    return;
+-			    case 3: exit(0);
++			    case 3:
++			            freepixmaps(dlinfo);
++			            exit(0);
+ 			}
+ 		    }
+ 		}

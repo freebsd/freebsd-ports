@@ -1,0 +1,34 @@
+--- Makefile.orig	Thu Feb  4 07:08:27 1993
++++ Makefile	Sat Jan 29 02:12:57 2000
+@@ -23,15 +23,15 @@
+ 
+ #
+ # Modify these to fit the compiler setup on your system.
+-CC = gcc
+-CFLAGS = -O2
+-LIBS = -lX11 $(IXLIBS)
++CC ?= gcc
++CFLAGS += -I${X11BASE}/include
++LIBS += -L${X11BASE}/lib -lX11 $(IXLIBS)
+ 
+ #
+ # These specify where to install the binary
+ # and the manual.
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/man1
++BINDIR = ${PREFIX}/bin
++MANDIR = ${PREFIX}/man/man1
+ MANEXT = 1
+ 
+ all: xdl
+@@ -40,8 +40,8 @@
+ 	$(CC) $(CFLAGS) $(TIMER) $(BSDT) -o xdl xdl.c $(LIBS)
+ 
+ install: xdl xdl.man
+-	cp xdl $(BINDIR)
+-	cp xdl.man $(MANDIR)/xdl.$(MANEXT)
++	${BSD_INSTALL_PROGRAM} xdl $(BINDIR)
++	${BSD_INSTALL_MAN} xdl.man $(MANDIR)/xdl.$(MANEXT)
+ 
+ clean:
+ 	$(RM) xdl *.o *~ core
