@@ -6,33 +6,81 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	4.2.1.21
-PORTREVISION=	1
+PORTVERSION=	4.2.1.23
 CATEGORIES=	misc
-MASTER_SITES=	http://uptimes.atomicvoid.net/files/ \
-		ftp://ftp.uptimes.net/pub/uptimes/ \
-		http://www.uptimes.net/download/
+MASTER_SITES=	http://uptimes.atomicvoid.net/files/
 
 MAINTAINER=	clefevre@citeweb.net
 
-BROKEN=		The 'uptime' project is closed for an undetermined period of \
-		time. You are advised to shutdown your uptime client until \
-		the new version is ready. See http://www.uptimes.net/ for \
-		details.
+# Global variables
+#
 
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
-post-patch:
-	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/scripts/upchk
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-do-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/upclient.sh ${PREFIX}/etc/rc.d/upclient.sh
-	@${INSTALL_DATA} -m 600 ${WRKSRC}/upclient.conf ${PREFIX}/etc/upclient.conf.sample
+# Local variables
+#
+
+DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
+
+.include <bsd.port.pre.mk>
+
+# Post-patch
+#
+
+post-patch: patch-script patch-message
+
+patch-script:
+	@${PERL} -pi.fbsd -e 's.%%PREFIX%%.${PREFIX}.g' ${WRKSRC}/scripts/upchk
+
+patch-message:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
+
+# Install
+#
+
+do-install: install-program install-sample install-script
+
+install-program:
+	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/upclient \
+		${PREFIX}/sbin/upclient
+
+install-sample:
+	@${INSTALL_DATA} -m 600 ${WRKSRC}/conf/upclient.conf \
+		${PREFIX}/etc/upclient.conf.sample
+
+install-script:
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${PREFIX}/sbin/upchk
-	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/upclient ${PREFIX}/sbin/upclient
 
-post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} 's:/usr/local:${PREFIX}:g'
+# Post-install
+#
 
-.include <bsd.port.mk>
+post-install: install-conf install-startup install-doc display-message
+
+install-conf:
+.if !exists(${PREFIX}/etc/upclient.conf)
+	@${CP} -p ${PREFIX}/etc/upclient.conf.sample \
+		${PREFIX}/etc/upclient.conf
+.endif
+
+install-startup:
+	@${INSTALL_SCRIPT} ${FILESDIR}/upclient.sh \
+		${PREFIX}/etc/rc.d/upclient.sh
+
+install-doc:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+display-message:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+
+.include <bsd.port.post.mk>
