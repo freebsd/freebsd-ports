@@ -175,6 +175,7 @@
     SUBDIR += openh323
     SUBDIR += openldap
     SUBDIR += openldap2
+    SUBDIR += openmcu
     SUBDIR += p0f
     SUBDIR += p5-Archie
     SUBDIR += p5-Mon
