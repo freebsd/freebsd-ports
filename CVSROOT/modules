@@ -1451,7 +1451,6 @@ diffutils	ports/textproc/diffutils
 digest		ports/security/digest
 digger-vgl	ports/games/digger-vgl
 digikam		ports/graphics/digikam
-digikamplugins	ports/graphics/digikamplugins
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
 dinotrace	ports/cad/dinotrace

@@ -60,7 +60,6 @@
     SUBDIR += diacanvas
     SUBDIR += diacanvas2
     SUBDIR += digikam
-    SUBDIR += digikamplugins
     SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += dore
