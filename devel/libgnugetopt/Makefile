@@ -8,7 +8,7 @@
 
 DISTNAME=	libgnugetopt-1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Code/3502/
+MASTER_SITES= 	http://www.freebsd.org/~andy/	
 
 MAINTAINER=	andy@icc.surw.chel.su
 
