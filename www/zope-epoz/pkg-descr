@@ -2,10 +2,10 @@ Epoz is a product for Zope/CMF
 
 Epoz allows you to edit Zope- or Plone-objects with a wysiwyg-editor. No
 plugins are required. You only have to use a recent browser (IE >= 5.5, Mozilla
->= 1.3.1, Netscape >= 7.1) that supports Rich-Text-controls (called Midas for
-Mozilla).
+>= 1.3.1, Netscape >= 7.1, Firefox >= 0.7) that supports Rich-Text-controls
+(called Midas for Mozilla).
 
-WWW: http://www.zope.org/Members/mjablonski/Epoz
+WWW: http://mjablonski.zope.de/Epoz
 
 - Khairil Yusof
 kaeru@inigo-tech.com
