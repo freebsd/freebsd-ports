@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfixadmin
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://high5.net/postfixadmin/download.php/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
