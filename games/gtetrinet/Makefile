@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	gtetrinet
 
 MAINTAINER=	bugg@bugg.strangled.net
 
+FORBIDDEN=	"Remotely exploitable buffer overflows.  See GTetrinet web site."
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
