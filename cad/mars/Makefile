@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/11/26 06:46:40 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/26 10:40:48 obrien Exp $
 #
 
 DISTNAME=	MaRS-2.1
@@ -18,7 +18,7 @@ DISTFILES=	MaRS-2.1.tar.gz MaRS-2-doc.tar.gz
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 NO_WRKSUBDIR=	yes
-EXTRCT_ONLY=	${DISTNAME}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 .if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
 MAKEFILE=       Makefile.XMotif
 .elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
