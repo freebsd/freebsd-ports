@@ -91,6 +91,7 @@
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
+    SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql7
     SUBDIR += pxtools

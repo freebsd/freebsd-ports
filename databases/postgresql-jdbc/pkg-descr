@@ -1,0 +1,6 @@
+This is the implementation of JDBC, the Java Database Connectivity API,
+for accessing PostgreSQL databases from Java.
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/
