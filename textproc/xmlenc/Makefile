@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	textproc java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
@@ -15,6 +15,7 @@ COMMENT=	Light-weight XML encoding library for Java
 
 USE_JAVA=	yes
 USE_ANT=	yes
+USE_REINPLACE=	yes
 
 .if defined(NOPORTDOCS)
 ALL_TARGET=	jar
@@ -24,6 +25,16 @@ PORTDOCS=	*
 .endif
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+
+.include <bsd.port.pre.mk>
+
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+.if ${JDK_API} != ""
+MAKE_ARGS+=	-Djavadoc.srcdir.j2se=${JDK_API}
+
+do-configure:
+	${REINPLACE_CMD} -e 's,http://java.sun.com/j2se/1.3/docs/api,${JDK_API},' ${WRKSRC}/build.xml
+.endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
@@ -39,4 +50,4 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
