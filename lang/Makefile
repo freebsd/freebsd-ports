@@ -52,6 +52,7 @@
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc
     SUBDIR += gpc
+    SUBDIR += gprolog
     SUBDIR += guile
     SUBDIR += guileobjc
     SUBDIR += hugs
