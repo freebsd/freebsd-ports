@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.11
-PORTREVISION=	2
+PORTVERSION=	0.4.12
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -36,10 +35,6 @@ CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
-.if defined(WITH_SSE)
-CONFIGURE_ARGS+=	--enable-sse
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -49,10 +44,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|$$CFLAGS.*$${MACHINE}|$$CFLAGS|g' \
-		 ${WRKSRC}/configure
-.endif
+	@${REINPLACE_CMD} -e \
+		's|="$$CFLAGS -Wall .*"|="$$CFLAGS"|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
 		 s| -lc| $$(LDFLAGS)|g ; \
 		 s|-lrt||g' ${WRKSRC}/Makefile.in
