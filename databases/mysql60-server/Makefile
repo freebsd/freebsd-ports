@@ -3,10 +3,11 @@
 # Date created:				29 Dec 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.12 1997/12/04 11:44:46 asami Exp $
+# $Id: Makefile,v 1.13 1998/01/06 16:18:47 jfitz Exp $
 #
 
 DISTNAME=	mysql-3.21.19-beta
+PKGNAME=	mysql-3.21.19b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Downloads/MySQL-3.21/ \
 		http://www.buoy.com/mysql/ \
