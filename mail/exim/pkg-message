@@ -7,7 +7,7 @@ The following documentation has been installed:
 Postscript, PDF, HTML and plain text versions of these documents, as well
 as a comprehensive FAQ list, are available at http://www.exim.org/ .
 
-To replace sendmail with Exim:
+To run Exim instead of sendmail on startup:
 
 1) Create exim/configure from exim/configure.default .
 2) Stop the sendmail daemon.
