@@ -7792,6 +7792,7 @@ php5-pspell	ports/textproc/php5-pspell
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
 php5-shmop	ports/devel/php5-shmop
+php5-simplexml	ports/textproc/php5-simplexml
 php5-snmp	ports/net-mgmt/php5-snmp
 php5-soap	ports/net/php5-soap
 php5-sockets	ports/net/php5-sockets
