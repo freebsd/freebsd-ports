@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	8 # SR7
+PORTREVISION=	9 # SR7
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -19,7 +19,8 @@ COMMENT=	IBM Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}

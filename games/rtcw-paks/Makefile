@@ -24,6 +24,7 @@ BUILD_DEPENDS=	${PREFIX}/usr/games/rtcw/wolf.x86:${PORTSDIR}/games/rtcw
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 EXTRACT_ONLY=	# Don't extract anything
 STRIP=
 

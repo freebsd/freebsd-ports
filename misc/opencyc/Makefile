@@ -7,13 +7,16 @@
 
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0
-CATEGORIES=	misc
+PORTREVISION=	1
+CATEGORIES=	misc linux
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	General knowledge base and commonsense reasoning engine
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_BUILD=	yes
 USE_LINUX=	yes

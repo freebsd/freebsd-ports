@@ -7,6 +7,7 @@
 
 PORTNAME=	rtcw
 PORTVERSION=	1.1b
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/old/
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
@@ -17,6 +18,7 @@ COMMENT=	Return to Castle Wolfenstein for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

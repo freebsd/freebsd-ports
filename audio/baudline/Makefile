@@ -7,6 +7,7 @@
 
 PORTNAME=	baudline
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
@@ -15,7 +16,8 @@ DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386

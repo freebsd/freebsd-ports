@@ -7,6 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.2.0.a.${SNAPSHOT_DATE:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMEPREFIX=	linux-
@@ -21,7 +22,7 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core \
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=

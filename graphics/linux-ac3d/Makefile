@@ -7,6 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	4.0f
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
@@ -19,6 +20,7 @@ COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 .ifdef(INSTALL_DYNLINKED_VERSION)
 LIB_DEPENDS=	${LINUXBASE}/usr/X11R6/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
 .endif
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX=	yes
 NO_BUILD=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.2 for Linux
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}

@@ -7,9 +7,10 @@
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	0.22.0.11.3.5
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=fedora/fedora/${BASEVERSION}/${MACHINE_ARCH}/RPMS.updates/
+MASTER_SITE_SUBDIR=fedora/fedora/${BASEVERSION}/${MACHINE_ARCH}/RPMS.updates
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
@@ -20,7 +21,10 @@ COMMENT=	Linux version of the graphic library for GTK+
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
+CONFLICTS=	linux-gtk2*
+
 USE_LINUX_PREFIX=yes
+USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	geepee32
 PORTVERSION=	30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://users.skynet.be/firefly/gp32/project/geepee32/
 PKGNAMEPREFIX=	linux-
@@ -15,11 +15,12 @@ DISTNAME=	${PORTNAME}_linux_sdl_${PORTVERSION}
 MAINTAINER=	arundel@h3c.de
 COMMENT=	The only GP32 emulator for i386
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

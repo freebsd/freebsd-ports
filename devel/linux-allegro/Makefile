@@ -7,6 +7,7 @@
 
 PORTNAME=	allegro
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://membres.lycos.fr/ebotcazou/allegro/
 PKGNAMEPREFIX=	linux-
@@ -14,9 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (linux version)
 
+USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 

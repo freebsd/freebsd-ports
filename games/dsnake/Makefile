@@ -7,6 +7,7 @@
 
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
@@ -20,7 +21,8 @@ NO_PACKAGE=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
+USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
 do-install:

@@ -20,16 +20,14 @@ PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
 
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
-
-USE_LINUX=		yes
+USE_LINUX=		7
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes

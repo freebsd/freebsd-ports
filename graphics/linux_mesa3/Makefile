@@ -7,7 +7,7 @@
 
 PORTNAME=		mesa
 PORTVERSION=		3.4.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics linux
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=		linux_
 DISTFILES=		MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 			MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
 USE_BZIP2=		yes
@@ -63,8 +63,10 @@ BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-
 BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-6 \
 		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
 .else
-BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-7
+BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-8 \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 .endif
 
 post-install:

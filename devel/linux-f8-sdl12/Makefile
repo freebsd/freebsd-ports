@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
@@ -17,10 +17,11 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig

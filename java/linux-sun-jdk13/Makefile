@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -16,8 +17,9 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.3 for Linux
 
-EXTRACT_DEPENDS=${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+EXTRACT_DEPENDS=${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"

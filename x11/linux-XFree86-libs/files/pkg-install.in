@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH
+
+if [ "$2" = "POST-INSTALL" ]; then
+	rm -f %%LINUXBASE%%/etc/ld.so.cache
+	( find %%LINUXBASE%% -name lib -type d | sed -e 's:%%LINUXBASE%%::g'; \
+	  find %%PREFIX%% -name lib -type d | sed -e 's:%%PREFIX%%::g' ) \
+		| sort -u >%%LINUXBASE%%/etc/ld.so.conf
+	chroot %%LINUXBASE%% /sbin/ldconfig
+fi

@@ -34,8 +34,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 WRKSRC=		${WRKDIR}/beonex-comm
 
 post-extract:

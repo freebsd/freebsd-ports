@@ -7,7 +7,7 @@
 
 PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://gd.tuwien.ac.at/opsys/linux/java/JDK-${PORTVERSION}/${ARCH}/v3/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/JDK-${PORTVERSION}/i386/v3/ \
@@ -20,7 +20,8 @@ DISTNAME=	jre118_v3-glibc-2.1.3
 MAINTAINER=	sime@logos.hr
 COMMENT=	Blackdown Linux Java Runtime Environment 1.1.8
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=     "License doesn\'t allow binary distributions"

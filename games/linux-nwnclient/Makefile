@@ -7,6 +7,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://content.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-

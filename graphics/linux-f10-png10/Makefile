@@ -7,11 +7,12 @@
 
 PORTNAME=	png
 PORTVERSION=	1.0.16
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://mirrors.xmission.com/fedora/core/3/i386/os/Fedora/RPMS/ \
 		http://fedora.cat.pdx.edu/linux/core/3/i386/os/Fedora/RPMS/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (old 1.0 version)
 
 LATEST_LINK=	linux-png10

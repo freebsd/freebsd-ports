@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
@@ -42,6 +42,7 @@ PLIST_SUB=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
 
 .if !defined(WITHOUT_LINUX)
 USE_LINUX=	yes
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 PLIST_SUB+=	LINUX=""
 .else
 PLIST_SUB+=	LINUX="@comment "

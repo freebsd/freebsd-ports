@@ -7,10 +7,10 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the JPEG lib
 
 RPM_SET=	libjpeg-6b-15.${MACHINE_ARCH}.rpm

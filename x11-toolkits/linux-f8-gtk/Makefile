@@ -9,17 +9,20 @@
 
 PORTNAME?=	gtk
 PORTVERSION?=	1.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	x11-toolkits linux
 MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${RPM_SET}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	freebsd-emulation@FreeBSD.org
 COMMENT?=	RPM of the Gtk lib
 
 BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS?=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 
 ONLY_FOR_ARCHS?=	i386 alpha
 DIST_SUBDIR?=	rpm
@@ -53,5 +56,14 @@ do-install:
 		${ECHO_MSG} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R || true ; \
 	done
+
+new-plist:
+	@${RM} -rf ${WRKSRC}/tmp
+	@${MKDIR} ${WRKSRC}/tmp
+	@cd ${WRKSRC}/tmp; \
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id; \
+		${FIND} * -type f -o -type l > ${PLIST}.new; \
+		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' \
+		>> ${PLIST}.new
 
 .include <bsd.port.mk>

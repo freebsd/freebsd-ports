@@ -6,6 +6,7 @@
 
 PORTNAME=	stvef-server
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://3dgamers.in-span.net/pub/3dgamers/games/stveliteforce/
 DISTFILES=	stveflinuxdedicated120.zip
@@ -16,6 +17,7 @@ COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Linux
 STRIP=

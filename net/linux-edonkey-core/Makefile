@@ -7,6 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.50.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net linux
 MASTER_SITES=	http://www.overnet.com/files/

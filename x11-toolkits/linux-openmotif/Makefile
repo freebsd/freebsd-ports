@@ -6,6 +6,7 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
 MASTER_SITE_SUBDIR=	om2.2.4/redhat-7.3
@@ -14,10 +15,11 @@ EXTRACT_SUFX=	-0.1.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

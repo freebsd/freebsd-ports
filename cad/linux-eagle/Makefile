@@ -9,6 +9,7 @@ PORTNAME=	linux-eagle
 EAGLEVERSION?=	4.13
 EAGLELANG?=	eng
 PORTVERSION=	${EAGLEVERSION:S/r/./}
+PORTREVISION=	1
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME:S/linux-//}-lin-${EAGLELANG}-${EAGLEVERSION}
@@ -16,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER?=	riggs@rrr.de
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
-
-RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
 CONFLICTS?=	de-linux-eagle-*
 
@@ -29,6 +28,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME:S/linux-//}
 RESTRICTED=	"Usage permitted for non-commercial purposes only"
 NO_CDROM=	"Sale for profit is not permitted"
 
+USE_LINUX=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

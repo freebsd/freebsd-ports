@@ -26,7 +26,7 @@ POST-INSTALL)
 		echo 'Re-mounting linprocfs...'
 		mount linprocfs
 	fi
-	if [ -n "`grep -w ^linprocfs /etc/fstab`" ]; then
+	if [ -n "`grep -w ^linproc /etc/fstab`" ]; then
 		echo 'Re-mounting linproc...'
 		mount linproc
 	fi

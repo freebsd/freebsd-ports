@@ -7,6 +7,7 @@
 
 PORTNAME=	divx4linux
 PORTVERSION=	5.0.${RELEASE_DATE}
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/divx/
 PKGNAMEPREFIX=	linux-
@@ -20,6 +21,7 @@ RESTRICTED=	unsure of licensing issues
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${RELEASE_DATE}
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"

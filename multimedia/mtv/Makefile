@@ -7,6 +7,7 @@
 
 PORTNAME=	mtv
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
@@ -14,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance MPEG video player (shareware)
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 NO_PACKAGE=	"No redistribution"
@@ -22,6 +23,7 @@ NO_CDROM=	"No redistribution"
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/mtv
 
 MAN1=	mtv.1

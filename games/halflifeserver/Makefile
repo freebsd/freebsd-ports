@@ -7,6 +7,7 @@
 
 PORTNAME=	hlds
 PORTVERSION=	3.1.1.1.d
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.isis.de/members/~hmenze/cs/server/linux/
 DISTFILES=	hlds_l_3111_full.tar.gz \
@@ -17,6 +18,7 @@ COMMENT=	Half-Life Dedicated Server for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes

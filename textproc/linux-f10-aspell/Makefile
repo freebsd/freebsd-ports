@@ -7,6 +7,7 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.50.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/ximian/ximian-evolution/redhat-80-i386/ \
 		ftp://ftp.ntua.gr/pub/X11/ximian/ximian-evolution/redhat-80-i386/ \
@@ -22,12 +23,13 @@ COMMENT=	Spelling checker with better logic than ispell (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
 		bzip2:${PORTSDIR}/archivers/bzip2
-RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 NO_BUILD=		yes
 USE_REINPLACE=		yes
 ONLY_FOR_ARCHS=		i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=		yes
+USE_GMAKE=		yes
 NO_FILTER_SHLIBS=	yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 

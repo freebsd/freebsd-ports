@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	10.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/801/
 DISTNAME=	RealPlayer-${PORTVERSION}.608-20041214.i586
@@ -17,13 +18,13 @@ COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	\
-	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8 \
 	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
+USE_LINUX=	yes
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.

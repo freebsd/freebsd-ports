@@ -7,6 +7,7 @@
 
 PORTNAME=	runrev
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	ftp://ftp.runrev.com/pub/revolution/ \
 		http://www.runrev.com/revolution/engines11/unix/
@@ -18,7 +19,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	blackend@FreeBSD.org
 COMMENT=	Revolution is a rapid application development environment
 
-RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
+RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim \
+		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_CDROM=	"Sale for profit is not permitted"
 

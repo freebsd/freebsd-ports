@@ -5,6 +5,7 @@
 # $FreeBSD$
 
 PORTVERSION=	3.08
+PORTREVISION=	1
 CATEGORIES=	astro linux
 PKGNAMEPREFIX=	linux-
 

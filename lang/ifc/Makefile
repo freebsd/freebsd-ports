@@ -31,8 +31,7 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*
 
-#USE_LINUX=		yes
-RUN_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
+USE_LINUX=		yes
 USE_REINPLACE=		yes
 NO_FILTER_SHLIBS=	yes
 

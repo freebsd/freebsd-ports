@@ -10,6 +10,10 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041231:
+AUTHOR: netchild@FreeBSD.org
+  USE_LINUX_PREFIX doesn't implies USE_LINUX anymore.
+
 20041209:
 AUTHOR: portmgr@FreeBSD.org
   The following changes were committed:

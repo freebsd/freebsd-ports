@@ -7,26 +7,18 @@
 
 PORTNAME=	atk
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
-PLIST=		${WRKDIR}/plist
-RESTRICTED=	"binary under GNU LGPL without accompanying source"
+PLIST=		${PKGDIR}/pkg-plist
 RPM_SET=	atk-1.2.0-2.i386.rpm
-
-pre-install:
-	${RM} -rf ${WRKSRC}/tmp
-	${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
-		${FIND} * -type f -o -type l > ${PLIST}
-	${ECHO_CMD} @dirrm usr/share/doc/atk-1.2.0 >> ${PLIST}
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
-
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

@@ -7,7 +7,8 @@
 
 PORTNAME=	acu
 PORTVERSION=	2.0
-CATEGORIES=	sysutils
+PORTREVISION=	1
+CATEGORIES=	sysutils linux
 MASTER_SITES=	# fetch manually
 PKGNAMEPREFIX=	linux-
 DISTNAME=	Linux-ACU-Driver-v${PORTVERSION}
@@ -15,8 +16,7 @@ DISTNAME=	Linux-ACU-Driver-v${PORTVERSION}
 MAINTAINER=	matt@peterson.org
 COMMENT=	Aironet Cisco Utilities for 802.11 wireless NIC's
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +30,8 @@ IGNORE=		may not be automatically fetched due to licensing\
 .endif
 
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+USE_LINUX=	yes
+PREFIX?=	${X11BASE}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	"Redistribution not allowed"

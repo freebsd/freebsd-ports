@@ -7,7 +7,7 @@
 
 PORTNAME=		arts
 PORTVERSION=		1.0.3
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		audio kde linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	8.0/en/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -20,8 +20,8 @@ MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Audio system for the KDE integrated X11 desktop
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=		${LINUXBASE}/var/lib/rpm/packages.rpm:${PORTSDIR}/emulators/linux_base-8
 
+USE_LINUX=		yes
 PREFIX?=		${LINUXBASE}
 NO_MTREE=		yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig

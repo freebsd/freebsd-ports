@@ -16,7 +16,7 @@ COMMENT=	Converts HanDBase database to CSV, and vice versa
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/strip:${PORTSDIR}/devel/linux_devtools-7
 
-USE_LINUX=	yes
+USE_LINUX=	7
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	opengroupware
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc www linux
 MASTER_SITES=	http://download.opengroupware.org/packages/freebsd/linux-opengroupware/RPMS/:ogo \
 		http://download.opengroupware.org/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
@@ -21,10 +21,10 @@ EXTRACT_ONLY=	${NGOBJWEB_ADAPTOR}
 MAINTAINER=	frank@opengroupware.org
 COMMENT=	Groupware package including mail, calendar, palm sync and much more
 
+EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 INSTALL_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
-		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake
 
 #BEGINSET1

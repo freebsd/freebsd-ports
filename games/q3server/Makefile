@@ -7,6 +7,7 @@
 
 PORTNAME=	q3ded
 PORTVERSION=	1.32b
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.bluesnews.com/idstuff/quake3/linux/ \
 		ftp://ftp.idsoftware.com/idstuff/quake3/linux/
@@ -18,6 +19,7 @@ COMMENT=	Quake III Arena Dedicated Server for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes

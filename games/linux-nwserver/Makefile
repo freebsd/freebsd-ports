@@ -7,6 +7,7 @@
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-

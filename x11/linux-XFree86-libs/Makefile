@@ -7,6 +7,7 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.99.902
+PORTREVISION=		1
 CATEGORIES=		x11 linux
 MASTER_SITES=	${MASTER_SITE_SUSE} \
 		ftp://ftp.in2p3.fr/pub/linux/suse/update/9.1/rpm/i586/ \
@@ -18,20 +19,22 @@ EXTRACT_SUFX=
 DIST_SUBDIR=	rpm/i386/suse
 EXTRACT_ONLY=
 
-MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	XFree86 libraries, Linux/i386 binary
+MAINTAINER=	freebsd-emulation@FreeBSD.org
+COMMENT=	XFree86 libraries, Linux binary
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo*
+USE_LINUX=	yes
+USE_LINUX_PREFIX=yes
 MD5_FILE=	${MASTERDIR}/distinfo.i386
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
+PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST=		${WRKDIR}/plist
 PLIST_DIRS=	usr/X11R6/lib/X11
-PREFIX=		${LINUXBASE}
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -46,10 +49,9 @@ pre-install:
 		${FIND} -d usr/X11R6/lib/X11/locale -type d  | \
 			${SED} -e 's:^:@dirrm :' >> ${PLIST}
 post-install:
-	@${RM} -f ${LINUXBASE}/etc/ld.so.cache
-	@${FIND} ${LINUXBASE} -name lib -type d | ${SED} 's:${LINUXBASE}::g' \
-		> ${LINUXBASE}/etc/ld.so.conf
-	@chroot ${LINUXBASE} sbin/ldconfig
+	@${SED} -e 's|%%LINUXBASE%%|${LINUXBASE}|g ; s|%%PREFIX%%|${PREFIX}|g' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 do-install:
 	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \

@@ -8,9 +8,9 @@
 PORTNAME=	esound
 CATEGORIES=	audio linux
 PORTVERSION=	0.2.22
-PORTREVISION=	2
+PORTREVISION=	3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile

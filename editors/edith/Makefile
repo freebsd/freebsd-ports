@@ -7,6 +7,7 @@
 
 PORTNAME=	edith
 PORTVERSION=	1.58
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	ftp://ftp.eidetica.com/pub/edith/x11/
 DISTFILES=	edith1.55.common.tar.gz \
@@ -14,6 +15,8 @@ DISTFILES=	edith1.55.common.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A X11 GUI editor for binary and plain text files
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX=	yes
 USE_X_PREFIX=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	peops-softgpu
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://home.t-online.de/home/PeteBernert/
 PKGNAMEPREFIX=	linux-
@@ -19,6 +20,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
 
 ONLY_FOR_ARCHS=	i386
 

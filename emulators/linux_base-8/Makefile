@@ -11,7 +11,8 @@ PORTVERSION=		8.0
 PORTREVISION=		4
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
-			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
+			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
+			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
 MASTER_SITE_SUBDIR=    \
 			${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
 			updates/${PORTVERSION}/${LANG}/os/${ARCH}/:new
@@ -46,17 +47,16 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			sh-utils-2.0.12-3.${ARCH}.rpm \
 			rpm-4.1-1.06.${ARCH}.rpm \
 			libgcc-3.2-7.${ARCH}.rpm \
-			freetype-2.1.2-7.${ARCH}.rpm \
+			freetype-2.1.5-0.ximian.5.1.${ARCH}.rpm:ft \
 			zlib-1.1.4-8.8x.${ARCH}.rpm:new
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gen* \
 		linux_base-rh* linux_base-suse*
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
 PREFIX=			${LINUXBASE}
@@ -120,7 +120,7 @@ do-extract:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES:S/:new//}; do \
+	@for R in ${DISTFILES:S/:new//:S/:ft//}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
@@ -153,7 +153,7 @@ pre-install:
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dlmp ${PREFIX}
+	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dmp ${PREFIX}
 	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
 post-install:

@@ -7,10 +7,10 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of libxml
 
 RPM_SET=	libxml-${PORTVERSION}-1.${MACHINE_ARCH}.rpm

@@ -7,6 +7,7 @@
 
 PORTNAME=	ftree
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	misc linux
 MASTER_SITES=	http://www.vjet.demon.co.uk/ftree/ \
 		http://www.unknown.nu/ports/
@@ -16,9 +17,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	user@unknown.nu
 COMMENT=	An X11 genealogy program
 
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-USE_XLIB=	no
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	Non-commercial use only

@@ -7,7 +7,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	8.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
 
 CDIR=		${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin
