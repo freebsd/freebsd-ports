@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- config/gdm.conf.in.orig	Fri Nov 16 13:42:13 2001
-+++ config/gdm.conf.in	Mon Nov 26 17:53:18 2001
++++ config/gdm.conf.in	Thu Dec 20 11:35:10 2001
 @@ -5,7 +5,7 @@
  # want gdm to kill/restart the server, turn this on
  AlwaysRestartServer=false
@@ -51,8 +51,12 @@ $FreeBSD$
  MaxIconWidth=128
  MaxIconHeight=128
  
-@@ -80,11 +80,11 @@
- DefaultLocale=en_US
+@@ -77,14 +77,14 @@
+ ConfigAvailable=true
+ Browser=false
+ DefaultFace=@EXPANDED_PIXMAPDIR@/nobody.png
+-DefaultLocale=en_US
++DefaultLocale=en_US.ISO_8859-1
  # These are things excluded from the face browser, not from logging in
  Exclude=bin,daemon,adm,lp,sync,shutdown,halt,mail,news,uucp,operator,nobody,gdm,postgres,pvm,rpm
 -Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*,*
