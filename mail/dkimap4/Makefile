@@ -7,6 +7,7 @@
 
 PORTNAME=	dkimap4
 PORTVERSION=	2.36
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbox.handshake.de/download/ \
 		http://www.cs.cmu.edu/~kroening/dbox/
