@@ -20,7 +20,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
-		nss3.1:${PORTSDIR}/security/nss
+		nss3.1:${PORTSDIR}/security/nss \
+		soup.5:${PORTSDIR}/devel/soup
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
