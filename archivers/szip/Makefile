@@ -9,12 +9,15 @@ PORTNAME=	szip
 PORTVERSION=	1.12b
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}_FreeBSD
+DISTNAME=	sz${PORTVERSION:S/.//}_src
 
 MAINTAINER=	tiamat@telegraph.spb.ru
 
-NO_BUILD=	yes
+USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
+
+do-build:
+	${GMAKE} -C ${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
