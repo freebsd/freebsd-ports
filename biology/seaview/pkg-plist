@@ -1,3 +1,4 @@
 bin/seaview
+bin/seaview_align.sh
 lib/X11/seaview/seaview.help
 @dirrm lib/X11/seaview

@@ -1,20 +1,23 @@
---- Makefile.orig	Mon Aug 30 20:54:56 1999
-+++ Makefile	Mon Aug 30 20:55:48 1999
-@@ -0,0 +1,17 @@
-+#matpt.h
-+#seaview.h
-+CC	?= gcc
-+CFLAGS+= -I${X11BASE}/include
-+LIBS	= -L${X11BASE}/lib -lxforms -lX11 -lm
-+SRCS	= align.c comlines.c load_seq.c regions.c seaview.c use_mase_files.c xfmatpt.c
-+OBJS	= align.o comlines.o load_seq.o regions.o seaview.o use_mase_files.o xfmatpt.o
+--- makefile.orig	Wed Sep 25 23:58:15 2002
++++ makefile	Mon Nov 18 11:26:42 2002
+@@ -1,13 +1,15 @@
+-FLTK = ../fltk-1.1.0
++OPT = -O2
+ 
+-OBJECTS = seaview.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o old_file_chooser.o
++OBJECTS = seaview.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o
+ 
+-CFLAGS  = -c $(OPT) -I$(FLTK)
++CFLAGS  = -c $(OPT) -I$(PREFIX)/include
+ 
+-CXX = CC
++CXX = g++
 +
 +all: seaview
-+
-+seaview: $(OBJS)
-+	$(CC) -o seaview $(OBJS) $(LIBS)
-+
-+c.o.: $(SRCS)
-+	$(CC) $(CFLAGS) -c $(SRCS)
-+
-+
+ 
+ seaview : $(OBJECTS) 
+-	$(CXX) -o $@ $(OBJECTS) -L$(FLTK)/lib -lfltk -lX11 -lm
++	$(CXX) -o $@ $(OBJECTS) -L$(PREFIX)/lib -lfltk -lX11 -lMesaGL -lXext -lm
+ 
+ 
+ .SUFFIXES:	.cxx .h .o
