@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.63 1997/06/15 14:20:20 max Exp $
+# $Id: Makefile,v 1.64 1997/06/16 03:05:30 jfitz Exp $
 #
 
     SUBDIR += SWIG
+    SUBDIR += asl
     SUBDIR += autoconf
     SUBDIR += automake
     SUBDIR += bcc
