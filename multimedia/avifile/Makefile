@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.7.20020523
+PORTVERSION=	0.7.11.20020711
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://avifile.sourceforge.net/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/^(.....).(.*)/\1-\2/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	holger@eit.uni-kl.de
@@ -25,7 +25,7 @@ USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:C/^(.{3}).*/\1/}-${PORTVERSION:C/^(.{5}).+$/\1/}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:C/^(.{3}).*/\1/}-${PORTVERSION:C/^(.{6}).+$/\1/}
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	acinclude.m4
@@ -34,6 +34,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib `${ECHO_CMD} ${PTHREAD_LIBS}`"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
+		--program-transform-name='' \
 		--disable-divx4
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
@@ -104,6 +105,9 @@ PLIST_SUB+=	QT="@comment "
 # sdl
 .if !defined(WITHOUT_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+
+CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE} \
+			--with-sdl-exec-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sdl
 .endif
@@ -168,7 +172,14 @@ packet 'pth' is installed.";\
 
 # insure that ports' liba52 is being used
 post-extract:
+.if !defined(WITHOUT_A52)
 	@${RM} -Rf ${WRKSRC}/ffmpeg/libavcodec/liba52
+	@${MKDIR} ${WRKSRC}/ffmpeg/libavcodec/liba52
+	@${TOUCH} ${WRKSRC}/ffmpeg/libavcodec/liba52/Makefile.in
+.endif
+# grab does not work outside Linux for now
+	@${RM} -f ${WRKSRC}/ffmpeg/libav/grab.c
+	@${TOUCH} ${WRKSRC}/ffmpeg/libav/grab.c
 
 post-patch:
 .if !defined(WITHOUT_A52)
@@ -207,21 +218,30 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lmp3lame|-L${LOCALBASE}/lib -lmp3lame|' \
 		${WRKSRC}/configure
 # use portname without version to build dir names
-	@${SED} -E -e 's|^(PACKAGE\s*=\s*avifile).*|\1|' \
-		${WRKSRC}/configure > ${WRKDIR}/configure && \
-		${CP} ${WRKDIR}/configure ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|(PACKAGE[:space:]*=[:space:]*avifile).*|\1|' \
+		${WRKSRC}/configure
 # fix build in -CURRENT
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|#include <malloc.h>|#include <stdlib.h>|g'
+# use correct signal type
+	@${REINPLACE_CMD} -e 's|sighandler_t|sig_t|' \
+		${WRKSRC}/samples/misc/benchmark.cpp
 # fix breakage if either auto{conf,make} are installed
+# do not version library names
 # fix incorrect behavior of configure script
 	@${FIND} ${WRKSRC} \( -name Makefile.in -o -name configure \) | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -e \
+		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
 		's|INSTALL = \@INSTALL\@|INSTALL = ${INSTALL}|; \
+		s!-release[[:space:]]+\$$\(LT_RELEASE\)!!; \
 		s!ACLOCAL =!ACLOCAL = ${TRUE} || !; \
 		s!AUTOCONF =!AUTOCONF = ${TRUE} || !; \
 		s!AUTOHEADER =!AUTOHEADER = ${TRUE} || !; \
 		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !'
+# XXX - fix simple bugs in version.sh script, revise this
+# at EVERY avifile update
+	@${REINPLACE_CMD} -E -e 's|^(last_cvs_update=).+$$|\1|; \
+		s|cp[[:space:]]+-a|cp|' \
+		${WRKSRC}/admin/version.sh
 
 post-configure:
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
@@ -242,7 +262,9 @@ post-install:
 .if ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-CONFIGURE_ARGS+=	--enable-x86opt --with-win32-path=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS+=	--enable-x86opt \
+			--enable-win32 \
+			--with-win32-path=${LOCALBASE}/lib/win32
 
 PLIST_SUB+=	FFMPEG="" WIN32=""
 .else
