@@ -1,14 +1,14 @@
 --- Makefile.in.orig	Thu Feb 25 13:01:50 1999
 +++ Makefile.in	Wed Mar  3 13:15:47 1999
-@@ -94,7 +94,7 @@
+@@ -101,7 +101,7 @@
  
+ lib_LTLIBRARIES = libxml.la
  
- xmlincdir = $(includedir)/gnome-xml
--xmlinc_HEADERS =  		entities.h 		encoding.h 		parser.h 		parserInternals.h 		debugXML.h 		tree.h 		valid.h
-+xmlinc_HEADERS =  		entities.h 		encoding.h 		error.h			parser.h 		parserInternals.h 		debugXML.h 		tree.h 		valid.h
+-libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
++libxml_la_LDFLAGS = -version-info 4:0:0
  
+ libxml_la_SOURCES =  		SAX.c 		entities.c 		encoding.c 		error.c 		parser.c 		HTMLparser.c 		HTMLtree.c 		debugXML.c 		tree.c 		xpath.c 		valid.c
  
- DEPS = $(top_builddir)/libxml.la
 @@ -105,7 +105,7 @@
  tester_DEPENDENCIES = $(DEPS)
  tester_LDADD = $(LDADDS)
@@ -38,17 +38,3 @@
  
  TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -227,10 +227,9 @@
- 
- install-data-local: 
- 	install -d -m 0755 $(TARGET_DIR)
--	-install -m 0644 $(srcdir)/xml.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(TARGET_DIR)
--	-install -m 0644 $(srcdir)/html/*.html $(TARGET_DIR)
--	-install -m 0644 $(srcdir)/html/index.sgml $(TARGET_DIR)
--	-gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR)
-+	-install -c -m 0644 $(srcdir)/xml.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(TARGET_DIR)
-+	-install -c -m 0644 $(srcdir)/html/*.html $(TARGET_DIR)
-+	-install -c -m 0644 $(srcdir)/html/index.sgml $(TARGET_DIR)
- 
- dist-hook:
- 	(cd $(srcdir) ; tar cvf - xml.html structure.gif DOM.gif html/*.html html/*.sgml) | (cd $(distdir); tar xf -)
