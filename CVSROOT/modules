@@ -969,6 +969,7 @@ corkscrew	ports/net/corkscrew
 cos		ports/java/cos
 cosmo		ports/games/cosmo
 cost		ports/textproc/cost
+cotty		ports/sysutils/cotty
 courier		ports/mail/courier
 courier-imap	ports/mail/courier-imap
 cowsay		ports/games/cowsay
