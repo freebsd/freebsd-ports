@@ -19,6 +19,23 @@
   
   main(argc, argv)
 ***************
+*** 271,277 ****
+  # endif
+  #endif
+  	if (daemon) {
+! 		if (setpgrp() < 0)
+  			perror("setpgrp");
+  		if ((c = open(_PATH_TTY, O_RDWR)) >= 0) {
+  			(void)ioctl(c, TIOCNOTTY, (char *)0);
+--- 272,278 ----
+  # endif
+  #endif
+  	if (daemon) {
+! 		if (setpgrp(0, getpid()) < 0)
+  			perror("setpgrp");
+  		if ((c = open(_PATH_TTY, O_RDWR)) >= 0) {
+  			(void)ioctl(c, TIOCNOTTY, (char *)0);
+***************
 *** 416,422 ****
   			    )
   			error("setsockopt (IP_OPTIONS)");
