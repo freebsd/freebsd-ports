@@ -7,7 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	1.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
 .if defined(WITH_GTK2)
@@ -32,7 +32,7 @@ RESTRICTED_FILES= \
 		macopix-mascot-pia2-ja-1.00.tar.gz \
 		macopix-mascot-triangle_heart-ja-1.00.tar.gz \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
-		macopix-mascot-marimite-ja-0.90.tar.gz
+		macopix-mascot-marimite-ja-1.00.tar.gz
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
