@@ -5725,6 +5725,7 @@ p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filter	ports/devel/p5-Filter
 p5-Filter-CBC	ports/devel/p5-Filter-CBC
+p5-Filter-Simple	ports/textproc/p5-Filter-Simple
 p5-Finance-Currency-Convert	ports/misc/p5-Finance-Currency-Convert
 p5-Finance-Quote	ports/misc/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/misc/p5-Finance-QuoteHist
