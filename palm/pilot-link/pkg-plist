@@ -10,6 +10,7 @@ bin/install-memo
 bin/install-todos
 bin/install-user
 bin/memos
+bin/money2qif
 bin/pi-csd
 bin/pi-getram
 bin/pi-getrom
@@ -39,6 +40,7 @@ include/pi-config.h
 include/pi-datebook.h
 include/pi-datebook.hxx
 include/pi-dlp.h
+include/pi-dlp.hxx
 include/pi-expense.h
 include/pi-file.h
 include/pi-iambicExpense.h
@@ -49,15 +51,18 @@ include/pi-macros.h
 include/pi-mail.h
 include/pi-memo.h
 include/pi-memo.hxx
+include/pi-money.h
 include/pi-padp.h
 include/pi-serial.h
 include/pi-slp.h
 include/pi-socket.h
 include/pi-source.h
+include/pi-sockaddr.h
 include/pi-sync.h
 include/pi-syspkt.h
 include/pi-todo.h
 include/pi-todo.hxx
+include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.la
