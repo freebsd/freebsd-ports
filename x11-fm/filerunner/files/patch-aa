@@ -1,6 +1,6 @@
 --- Makefiles/Makefile.freebsd.orig	Fri Aug  8 21:56:08 1997
-+++ Makefiles/Makefile.freebsd	Fri Sep 19 08:59:04 1997
-@@ -2,9 +2,9 @@
++++ Makefiles/Makefile.freebsd	Mon Sep 22 12:03:44 1997
+@@ -2,11 +2,11 @@
  # It has been tested under FreeBSD 2.1.5.
  
  # Change this if you have this stuff somewhere else.
@@ -11,5 +11,8 @@
 +TKINC  = ${PREFIX}/include/tk8.0
 +X11INC = ${X11BASE}/include
  
- CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
+-CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
++CFLAGS += -Wall -fPIC -I$(TCLINC) -I$(TKINC) -I$(X11INC)
+ 
+ CC = gcc
  
