@@ -26,9 +26,9 @@ EXAMPLES_JA=	ncal.rb
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 1.7
-IGNORE=		is part of ruby ${RUBY_VER} distribution
-.endif
+#.if ${RUBY_VER} >= 1.7
+#IGNORE=		is part of ruby ${RUBY_VER} distribution
+#.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
