@@ -31,15 +31,15 @@ lib/mailagent/help/set
 lib/mailagent/help/setauth
 lib/mailagent/help/user
 man/man1/mailhelp.1
-share/examples/mailagent/agent/README
-share/examples/mailagent/agent/daemon
-share/examples/mailagent/agent/mailfolders
-share/examples/mailagent/agent/mchk
-share/examples/mailagent/agent/mhinc
-share/examples/mailagent/agent/nocmds
-share/examples/mailagent/agent/profile
-share/examples/mailagent/agent/rules
-share/examples/mailagent/agent/vacation
+lib/mailagent/examples/README
+lib/mailagent/examples/daemon
+lib/mailagent/examples/mailfolders
+lib/mailagent/examples/mchk
+lib/mailagent/examples/mhinc
+lib/mailagent/examples/nocmds
+lib/mailagent/examples/profile
+lib/mailagent/examples/rules
+lib/mailagent/examples/vacation
 share/examples/mailagent/misc/README
 share/examples/mailagent/misc/fakesend/README
 share/examples/mailagent/misc/fakesend/fakesend.pl
@@ -66,7 +66,8 @@ share/examples/mailagent/misc/unkit/mailagent.cf
 share/examples/mailagent/misc/unkit/newcmd.cf
 share/examples/mailagent/misc/unkit/rules
 share/examples/mailagent/misc/unkit/unkit.pl
-@dirrm share/examples/mailagent/agent
+@exec /bin/ln -sf %D/lib/mailagent/examples %D/share/examples/mailagent/agent
+@unexec /bin/rm -f %D/share/examples/mailagent/agent
 @dirrm share/examples/mailagent/misc/unkit
 @dirrm share/examples/mailagent/misc/shell
 @dirrm share/examples/mailagent/misc/pbounce
@@ -75,5 +76,6 @@ share/examples/mailagent/misc/unkit/unkit.pl
 @dirrm share/examples/mailagent/misc/fakesend
 @dirrm share/examples/mailagent/misc
 @dirrm share/examples/mailagent
+@dirrm lib/mailagent/examples
 @dirrm lib/mailagent/help
 @dirrm lib/mailagent
