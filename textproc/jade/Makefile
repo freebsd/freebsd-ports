@@ -7,7 +7,7 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
@@ -38,7 +38,7 @@ pre-install:
 
 post-install:
 .for i in jade nsgmls sgmlnorm spam spent sx
-	${STRIP} ${PREFIX}/bin/$i
+	${STRIP_CMD} ${PREFIX}/bin/$i
 .endfor
 	${MKDIR} ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
