@@ -445,9 +445,10 @@ define([caposdefs],
 # second: "         " isn't defined so define no lockf
 # we "know" that flock() was hiding in libbsd.a under aix
 define([afposdefs],
-	concat(	ifdef([X_FLOCK],[], ifelse(os,[aix],[],[ -DNOFLOCK])),
+	concat( ifdef([X_FLOCK],[], ifelse(os,[aix],[],[ -DNOFLOCK])),
 		ifdef([X_LOCKF],[],
-		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],[ -DNOLOCKF])])))
+		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],
+		      ifelse(os,[freebsd],[ -DUSEFCNTLLOCK],[ -DNOLOCKF]))])))
 # for aufs
 define([aufsosdefs],
     concat(aufsosdefs,
