@@ -29,16 +29,17 @@ PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-pre-everything::
 .if defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
 USE_GNOME=	yes
 .else
+pre-everything::
 	@${ECHO_MSG}	"Define WITH_GNOME to include GNOME support"
 .endif
 .if defined(WITH_DOCKAPP)
 CONFIGURE_ARGS+=	--enable-dockapp
 .else
+pre-everything::
 	@${ECHO_MSG}	"Define WITH_DOCKAPP to include WindowMaker support"
 .endif
 
