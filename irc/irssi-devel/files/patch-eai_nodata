@@ -1,0 +1,11 @@
+--- src/core/network.c.orig	Sat Feb  7 12:48:34 2004
++++ src/core/network.c	Sat Feb  7 12:49:40 2004
+@@ -607,7 +607,7 @@
+ int net_hosterror_notfound(int error)
+ {
+ #ifdef HAVE_IPV6
+-	return error != 1 && (error == EAI_NONAME || error == EAI_NODATA);
++	return error != 1 && (error == EAI_NONAME);
+ #else
+ 	return error == HOST_NOT_FOUND || error == NO_ADDRESS;
+ #endif
