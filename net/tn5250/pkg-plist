@@ -18,14 +18,14 @@ include/tn5250/session.h
 include/tn5250/slangterm.h
 include/tn5250/stream.h
 include/tn5250/terminal.h
-include/tn5250/transmaps.h
 include/tn5250/utility.h
 include/tn5250/wtd.h
 lib/lib5250.a
 lib/lib5250.so
 lib/lib5250.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+share/aclocal/tn5250.m4
 share/tn5250/XTerm
 share/tn5250/dialogrc
 share/tn5250/uk5250.map
