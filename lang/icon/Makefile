@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icon
-PORTVERSION=	9.4.0
+PORTVERSION=	9.4.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//g}src
@@ -16,7 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	alpha i386
 
-.ifdef WITHOUT_X11
+USE_REINPLACE=	yes
+ALL_TARGET=	All
+
+MAN1=		icont.1
+
+ARCH_NAME=	${OPSYS:L}
+ICONDIR=	${PREFIX}/lib/${PORTNAME}
+
+.if defined(WITHOUT_X11)
 CONFIG_CMD=	Configure
 PLIST_SUB=	WITHOUT_X11="@comment "
 .else
@@ -25,47 +33,40 @@ CFLAGS+=	-I${X11BASE}/include
 CONFIG_CMD=	X-Configure
 PLIST_SUB=	WITHOUT_X11=
 .endif
-USE_REINPLACE=	yes
-ALL_TARGET=	All
 
-MAN1=		icont.1
-
-ARCH_NAME=	${ARCH:S/i386/intel/}_${OPSYS:L}
-ICONDIR=	${PREFIX}/lib/${PORTNAME}
-
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
 		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \
 		 s|^XLIBS.*|XLIBS=-L${X11BASE}/lib -lX11|g" \
 		${WRKSRC}/config/unix/${ARCH_NAME}/Makedefs
 	@${REINPLACE_CMD} -e 's|/opt/icon|${ICONDIR}|g' ${WRKSRC}/ipl/BuildBin
+	@${REINPLACE_CMD} -e 's|ld -Bshareable|\$$CC -shared|g ; \
+		 s|-lc||g' ${WRKSRC}/ipl/cfuncs/mklib.sh
 
 do-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${CONFIG_CMD} name=${ARCH_NAME})
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${ICONDIR}/bin
 .for file in icont iconx patchstr
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${ICONDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${ICONDIR}/bin/${file}
 .endfor
-.ifndef WITHOUT_X11
-.for file in colrbook colrpick fontpick ipatch palette vib wevents xgamma
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${ICONDIR}/bin
-.endfor
-.endif
 .for file in icont iconx
 	@${LN} -sf ${ICONDIR}/bin/${file} ${PREFIX}/bin/${file}
 .endfor
-.ifndef WITHOUT_X11
+	@${MKDIR} ${ICONDIR}/lib
+	cd ${WRKSRC}/lib; ${INSTALL_DATA} *.* ${ICONDIR}/lib
+.if !defined(WITHOUT_X11)
+.for file in colrbook colrpick fontpick ipatch palette vib wevents xgamma
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${ICONDIR}/bin/${file}
+.endfor
 	@${LN} -sf ${ICONDIR}/bin/vib ${PREFIX}/bin/vib
 .endif
-	@${MKDIR} ${ICONDIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${ICONDIR}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${DOCSDIR}
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
