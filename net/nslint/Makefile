@@ -3,10 +3,10 @@
 # Date created:		27 October 1997
 # Whom:			dglo@ssec.wisc.edu
 #
-# $Id: Makefile,v 1.4 1998/04/19 03:41:50 itojun Exp $
+# $Id: Makefile,v 1.5 1998/08/17 00:41:40 steve Exp $
 #
 
-DISTNAME=	nslint-2.0a6
+DISTNAME=	nslint-2.0a7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
