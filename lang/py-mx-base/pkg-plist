@@ -29,6 +29,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/test.pyc
@@ -96,6 +97,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime_Python.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime_Python.pyc
@@ -173,6 +175,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/mxProxy.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/mxProxy.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/test.pyc
@@ -193,6 +196,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/mxQueue.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/mxQueue.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/test.pyc
@@ -271,6 +275,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/mxTextTools.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/mxTextTools.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/test.pyc
@@ -306,6 +311,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/mxTools.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/mxTools.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/test.pyc
