@@ -1,0 +1,11 @@
+--- src/Makefile.in.bak	Tue Apr 23 04:23:33 2002
++++ src/Makefile.in	Sat May 25 18:30:39 2002
+@@ -65,7 +65,7 @@
+ YACC	= @YACC@
+ 
+ CANLIB		= # -L../libcanlock -lcanlock
+-INTL_LIBS	= @INTLDIR_MAKE@ @INTLLIBS@
++INTL_LIBS       = @INTLLIBS@
+ PCRE_LIBS	= @PCREDIR_LIBS@ @PCREDIR_MAKE@ -L../pcre -lpcre
+ LIBS		= $(PCRE_LIBS) $(CANLIB) @LIBS@ @INN_NNTPLIB@ $(INTL_LIBS)
+ 

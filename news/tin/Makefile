@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.11
-PORTREVISION=	1
-CATEGORIES+=	news
+PORTVERSION=    1.5.12
+CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
 		ftp://ftp.nuxi.com/pub/tin/v1.5/
@@ -28,6 +27,7 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--with-defaults-dir=${PREFIX}/etc \
 		--with-editor=/usr/bin/ee \
 		--enable-nls \
+		--enable-ipv6 \
 		--enable-curses \
 		--with-ncurses \
 		--disable-mime-strict-charset \
@@ -57,12 +57,6 @@ post-patch:
 
 pre-configure:
 	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
-
-post-configure:
-	if nm /usr/lib/libc.a | ${GREP} -q strcasestr; then \
-		${ECHO_CMD} "#define HAVE_STRCASESTR 1" \
-			>> ${WRKSRC}/include/autoconf.h; \
-	fi
 
 post-build:
 	cd ${WRKSRC}/po; ${GMAKE}
