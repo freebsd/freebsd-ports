@@ -3,10 +3,10 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1998/11/16 08:54:41 tg Exp $
+# $Id: Makefile,v 1.14 1998/12/29 14:32:06 tg Exp $
 #
 
-DISTNAME=	LLNLPython8
+DISTNAME=	LLNLDistribution11
 PKGNAME=	py-numeric-1.8
 CATEGORIES=	math python
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/python/
@@ -23,9 +23,9 @@ ALL_TARGET=	sharedmods
 MAKE_FLAGS+=	'OPT=${CFLAGS}'
 
 PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/NumPy
-DOCDIR=		${PREFIX}/share/doc/NumPy
-EXAMPLEDIR=	${PREFIX}/share/examples/NumPy
+NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/numerical
+DOCDIR=		${PREFIX}/share/doc/py-numerical
+EXAMPLEDIR=	${PREFIX}/share/examples/py-numerical
 
 do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} python makethis.py)
@@ -34,8 +34,9 @@ post-install:
 	@${MKDIR} ${NUMPYDIR}
 	${INSTALL_DATA} ${WRKSRC}/Lib/* ${NUMPYDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${NUMPYDIR}
-	@${ECHO} "NumPy" > ${NUMPYDIR}/../NumPy.pth
-	${INSTALL_DATA} ${WRKSRC}/Include/*object.h ${PREFIX}/include/python1.5
+	@${ECHO} "numerical" > ${NUMPYDIR}/../numerical.pth
+	@${MKDIR} ${PREFIX}/include/python1.5/numerical
+	${INSTALL_DATA} ${WRKSRC}/Include/*object.h ${PREFIX}/include/python1.5/numerical
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/* ${EXAMPLEDIR}
 .if !defined(NOPORTDOCS)
