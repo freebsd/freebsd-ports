@@ -84,6 +84,7 @@
     SUBDIR += gtkfind
     SUBDIR += gtl
     SUBDIR += gwhich
+    SUBDIR += hb
     SUBDIR += hello
     SUBDIR += heyu
     SUBDIR += histring

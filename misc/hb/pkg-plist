@@ -1,0 +1,8 @@
+bin/hb.py
+share/doc/hb/hb.txt
+share/doc/hb/0-StartHere.txt
+share/doc/hb/1-HB-License.txt
+share/doc/hb/2-HowToUse.txt
+share/doc/hb/3-UnderTheHood.txt
+share/doc/hb/4-Limitations-Enhancements.txt
+@dirrm share/doc/hb
