@@ -24,6 +24,7 @@ lib/xawtv/write-avi.so
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
 lib/X11/fonts/misc/led-iso8859-1.pcf.gz
+lib/X11/fonts/misc/led-iso8859-15.pcf.gz
 lib/X11/fonts/misc/led-iso8859-2.pcf.gz
 lib/X11/fonts/misc/led-koi8-r.pcf.gz
 lib/X11/de/app-defaults/MoTV
