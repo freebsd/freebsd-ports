@@ -425,7 +425,6 @@
     SUBDIR += xsu
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
-    SUBDIR += xw
     SUBDIR += xwatch
     SUBDIR += xwipower
     SUBDIR += yawho
