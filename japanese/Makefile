@@ -57,7 +57,6 @@
     SUBDIR += groff
     SUBDIR += gtkicq
     SUBDIR += gxditview
-    SUBDIR += handbook
     SUBDIR += hex
     SUBDIR += ircII
     SUBDIR += iv
