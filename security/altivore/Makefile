@@ -8,7 +8,7 @@
 PORTNAME=	altivore
 PORTVERSION=	0.9.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.robertgraham.com/altivore/
+MASTER_SITES=	http://samy.kerneled.org/stuff/
 DISTNAME=	altivore
 EXTRACT_SUFX=	.c
 
@@ -17,10 +17,6 @@ COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 
 RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
-
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
