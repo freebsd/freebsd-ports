@@ -1,0 +1,5 @@
+Term::Shell lets you write simple command-line shells. All the boring
+details like command-line parsing, terminal handling, and tab completion
+are handled for you.
+
+WWW:	http://search.cpan.org/search?dist=Term-Shell

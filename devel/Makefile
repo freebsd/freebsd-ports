@@ -937,6 +937,7 @@
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Term-Screen
+    SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Test-Builder-Tester
     SUBDIR += p5-Test-Class
