@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ImageMagick
-# Version required:	3.7.9
+# Version required:	3.8.4
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.14 1996/12/17 07:32:08 tg Exp $
+# $Id: Makefile,v 1.15 1996/12/23 07:19:05 tg Exp $
 #
 
-DISTNAME=	ImageMagick-3.7.9
+DISTNAME=	ImageMagick-3.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
@@ -21,7 +21,6 @@ LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.0\\.:${PORTSDIR}/graphics/png \
 		jbig\\.0\\.:${PORTSDIR}/graphics/jbigkit
 
-PREFIX=		${LOCALBASE}
 WRKSRC=		${WRKDIR}/ImageMagick
 USE_IMAKE=	YES
 
