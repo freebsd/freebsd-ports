@@ -8,7 +8,7 @@
 
 PORTNAME=	libgmp
 PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -19,8 +19,12 @@ COMMENT=	A free library for arbitrary precision arithmetic
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-cxx --enable-mpfr
 INSTALLS_SHLIB=	yes
+
+post-extract:
+	@rm -f ${WRKSRC}/gmp.info*
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
