@@ -8,7 +8,7 @@
 PORTNAME=	sdpa
 PORTVERSION=	6.00
 CATEGORIES=	math
-MASTER_SITES=	http://www.is.titech.ac.jp/~yamashi9/sdpa/
+MASTER_SITES=	http://sdpa.is.titech.ac.jp/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.manual.ps.gz \
