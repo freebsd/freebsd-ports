@@ -1,0 +1,10 @@
+--- scripts/Makefile~	Fri Nov 24 09:43:36 2000
++++ scripts/Makefile	Wed Mar 14 13:24:59 2001
+@@ -4,7 +4,6 @@
+ all:
+ 
+ install:
+-	$(INSTALL) -m 755 rc.radiusd		$(R)$(sbindir)
+ 	$(INSTALL) -m 755 radwatch			$(R)$(sbindir)
+ 	$(INSTALL) -m 755 check-radiusd-config	$(R)$(sbindir)
+ 

@@ -1,0 +1,6 @@
+RADIUS is a protocol which allows network hardware such as remote-access
+concentrators and routers to authenticate and log accounting records
+for logins.  The FreeRADIUS project is developing an Open Source
+alternative to the semi-proprietary Lucent and MERIT servers; it is an
+indirect followon to the Cistron RADIUS server.  This server is
+presently considered ``alpha-quality'' code by its developers.
