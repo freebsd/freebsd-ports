@@ -202,6 +202,9 @@ include/mozilla/content/nsIPrivateDOMImplementation.h
 include/mozilla/content/nsIPrivateTextEvent.h
 include/mozilla/content/nsIPrivateTextRange.h
 include/mozilla/content/nsIRangeUtils.h
+include/mozilla/content/nsISVGAttribute.h
+include/mozilla/content/nsISVGStyleValue.h
+include/mozilla/content/nsISVGValue.h
 include/mozilla/content/nsIScriptElement.h
 include/mozilla/content/nsIScriptLoader.h
 include/mozilla/content/nsIScriptLoaderObserver.h
@@ -224,7 +227,6 @@ include/mozilla/content/nsIXBLDocumentInfo.h
 include/mozilla/content/nsIXBLInsertionPoint.h
 include/mozilla/content/nsIXBLPrototypeBinding.h
 include/mozilla/content/nsIXBLPrototypeHandler.h
-include/mozilla/content/nsIXBLPrototypeProperty.h
 include/mozilla/content/nsIXBLService.h
 include/mozilla/content/nsIXMLContent.h
 include/mozilla/content/nsIXMLContentSink.h
@@ -235,6 +237,8 @@ include/mozilla/content/nsLayoutAtoms.h
 include/mozilla/content/nsMutationEvent.h
 include/mozilla/content/nsRuleNode.h
 include/mozilla/content/nsRuleWalker.h
+include/mozilla/content/nsSVGAtomList.h
+include/mozilla/content/nsSVGAtoms.h
 include/mozilla/content/nsStyleCoord.h
 include/mozilla/content/nsStyleStruct.h
 include/mozilla/content/nsStyleUtil.h
@@ -275,6 +279,7 @@ include/mozilla/docshell/nsIWebNavigation.h
 include/mozilla/dom/domstubs.h
 include/mozilla/dom/nsDOMCID.h
 include/mozilla/dom/nsDOMError.h
+include/mozilla/dom/nsIDOM3Node.h
 include/mozilla/dom/nsIDOMAbstractView.h
 include/mozilla/dom/nsIDOMAttr.h
 include/mozilla/dom/nsIDOMBarProp.h
@@ -397,6 +402,7 @@ include/mozilla/dom/nsIDOMMouseMotionListener.h
 include/mozilla/dom/nsIDOMMutationEvent.h
 include/mozilla/dom/nsIDOMMutationListener.h
 include/mozilla/dom/nsIDOMNSDocument.h
+include/mozilla/dom/nsIDOMNSEvent.h
 include/mozilla/dom/nsIDOMNSHTMLAnchorElement.h
 include/mozilla/dom/nsIDOMNSHTMLAreaElement.h
 include/mozilla/dom/nsIDOMNSHTMLButtonElement.h
@@ -429,6 +435,38 @@ include/mozilla/dom/nsIDOMProcessingInstruction.h
 include/mozilla/dom/nsIDOMRGBColor.h
 include/mozilla/dom/nsIDOMRange.h
 include/mozilla/dom/nsIDOMRect.h
+include/mozilla/dom/nsIDOMSVGAnimPresAspRatio.h
+include/mozilla/dom/nsIDOMSVGAnimTransformList.h
+include/mozilla/dom/nsIDOMSVGAnimatedLength.h
+include/mozilla/dom/nsIDOMSVGAnimatedPathData.h
+include/mozilla/dom/nsIDOMSVGAnimatedPoints.h
+include/mozilla/dom/nsIDOMSVGAnimatedRect.h
+include/mozilla/dom/nsIDOMSVGCircleElement.h
+include/mozilla/dom/nsIDOMSVGDocument.h
+include/mozilla/dom/nsIDOMSVGElement.h
+include/mozilla/dom/nsIDOMSVGEllipseElement.h
+include/mozilla/dom/nsIDOMSVGFitToViewBox.h
+include/mozilla/dom/nsIDOMSVGForeignObjectElem.h
+include/mozilla/dom/nsIDOMSVGGElement.h
+include/mozilla/dom/nsIDOMSVGLength.h
+include/mozilla/dom/nsIDOMSVGLineElement.h
+include/mozilla/dom/nsIDOMSVGLocatable.h
+include/mozilla/dom/nsIDOMSVGMatrix.h
+include/mozilla/dom/nsIDOMSVGPathElement.h
+include/mozilla/dom/nsIDOMSVGPathSeg.h
+include/mozilla/dom/nsIDOMSVGPathSegList.h
+include/mozilla/dom/nsIDOMSVGPoint.h
+include/mozilla/dom/nsIDOMSVGPointList.h
+include/mozilla/dom/nsIDOMSVGPolygonElement.h
+include/mozilla/dom/nsIDOMSVGPolylineElement.h
+include/mozilla/dom/nsIDOMSVGPresAspectRatio.h
+include/mozilla/dom/nsIDOMSVGRect.h
+include/mozilla/dom/nsIDOMSVGRectElement.h
+include/mozilla/dom/nsIDOMSVGSVGElement.h
+include/mozilla/dom/nsIDOMSVGStylable.h
+include/mozilla/dom/nsIDOMSVGTransform.h
+include/mozilla/dom/nsIDOMSVGTransformList.h
+include/mozilla/dom/nsIDOMSVGTransformable.h
 include/mozilla/dom/nsIDOMScreen.h
 include/mozilla/dom/nsIDOMScriptObjectFactory.h
 include/mozilla/dom/nsIDOMScrollListener.h
@@ -454,6 +492,7 @@ include/mozilla/dom/nsIDOMXULImageElement.h
 include/mozilla/dom/nsIDOMXULLabelElement.h
 include/mozilla/dom/nsIDOMXULLabeledControlEl.h
 include/mozilla/dom/nsIDOMXULListener.h
+include/mozilla/dom/nsIDOMXULPopupElement.h
 include/mozilla/dom/nsIDOMXULSelectCntrlEl.h
 include/mozilla/dom/nsIDOMXULSelectCntrlItemEl.h
 include/mozilla/dom/nsIDOMXULTreeElement.h
@@ -502,6 +541,7 @@ include/mozilla/exthandler/nsHelperAppRDF.h
 include/mozilla/exthandler/nsIExternalHelperAppService.h
 include/mozilla/exthandler/nsIExternalProtocolService.h
 include/mozilla/exthandler/nsOSHelperAppService.h
+include/mozilla/filepicker/nsIFileView.h
 include/mozilla/find/nsIWebBrowserFind.h
 include/mozilla/gfx/imgScaler.h
 include/mozilla/gfx/nsColor.h
@@ -590,6 +630,19 @@ include/mozilla/import/nsIImportMimeEncode.h
 include/mozilla/import/nsIImportModule.h
 include/mozilla/import/nsIImportService.h
 include/mozilla/import/nsIImportSettings.h
+include/mozilla/inspector/inIBitmap.h
+include/mozilla/inspector/inIBitmapDepot.h
+include/mozilla/inspector/inIBitmapURI.h
+include/mozilla/inspector/inICSSValueSearch.h
+include/mozilla/inspector/inIDOMUtils.h
+include/mozilla/inspector/inIDOMView.h
+include/mozilla/inspector/inIDeepTreeWalker.h
+include/mozilla/inspector/inIFileSearch.h
+include/mozilla/inspector/inIFlasher.h
+include/mozilla/inspector/inIPNGEncoder.h
+include/mozilla/inspector/inIScreenCapturer.h
+include/mozilla/inspector/inISearchObserver.h
+include/mozilla/inspector/inISearchProcess.h
 include/mozilla/intl/nsIStringBundle.h
 include/mozilla/jar/nsIJAR.h
 include/mozilla/jar/nsIZipReader.h
@@ -725,9 +778,11 @@ include/mozilla/layout/nsIMutableStyleContext.h
 include/mozilla/layout/nsIObjectFrame.h
 include/mozilla/layout/nsIOutlinerBoxObject.h
 include/mozilla/layout/nsIOutlinerColFrame.h
+include/mozilla/layout/nsIOutlinerContentView.h
 include/mozilla/layout/nsIOutlinerSelection.h
 include/mozilla/layout/nsIOutlinerView.h
 include/mozilla/layout/nsIPageSequenceFrame.h
+include/mozilla/layout/nsIPercentHeightObserver.h
 include/mozilla/layout/nsIPopupBoxObject.h
 include/mozilla/layout/nsIPopupSetFrame.h
 include/mozilla/layout/nsIPresContext.h
@@ -739,7 +794,6 @@ include/mozilla/layout/nsIPrintPreviewContext.h
 include/mozilla/layout/nsIRadioControlFrame.h
 include/mozilla/layout/nsIReflowCallback.h
 include/mozilla/layout/nsIReflowCommand.h
-include/mozilla/layout/nsISVGFrame.h
 include/mozilla/layout/nsIScrollBoxObject.h
 include/mozilla/layout/nsIScrollableFrame.h
 include/mozilla/layout/nsIScrollableViewProvider.h
@@ -756,7 +810,9 @@ include/mozilla/layout/nsITreeFrame.h
 include/mozilla/layout/nsLayoutCID.h
 include/mozilla/layout/nsOutlinerBodyFrame.h
 include/mozilla/layout/nsOutlinerColFrame.h
+include/mozilla/layout/nsOutlinerContentView.h
 include/mozilla/layout/nsOutlinerSelection.h
+include/mozilla/layout/nsOutlinerUtils.h
 include/mozilla/layout/nsPIBoxObject.h
 include/mozilla/layout/nsStyleChangeList.h
 include/mozilla/layout/nsStyleConsts.h
@@ -765,6 +821,50 @@ include/mozilla/ldap/disptmpl.h
 include/mozilla/ldap/lber.h
 include/mozilla/ldap/ldap.h
 include/mozilla/ldap/srchpref.h
+include/mozilla/libart_lgpl/art_affine.h
+include/mozilla/libart_lgpl/art_alphagamma.h
+include/mozilla/libart_lgpl/art_bpath.h
+include/mozilla/libart_lgpl/art_config.h
+include/mozilla/libart_lgpl/art_filterlevel.h
+include/mozilla/libart_lgpl/art_gray_svp.h
+include/mozilla/libart_lgpl/art_misc.h
+include/mozilla/libart_lgpl/art_pathcode.h
+include/mozilla/libart_lgpl/art_pixbuf.h
+include/mozilla/libart_lgpl/art_point.h
+include/mozilla/libart_lgpl/art_rect.h
+include/mozilla/libart_lgpl/art_rect_svp.h
+include/mozilla/libart_lgpl/art_rect_uta.h
+include/mozilla/libart_lgpl/art_render.h
+include/mozilla/libart_lgpl/art_render_gradient.h
+include/mozilla/libart_lgpl/art_render_svp.h
+include/mozilla/libart_lgpl/art_rgb.h
+include/mozilla/libart_lgpl/art_rgb_a_affine.h
+include/mozilla/libart_lgpl/art_rgb_affine.h
+include/mozilla/libart_lgpl/art_rgb_bitmap_affine.h
+include/mozilla/libart_lgpl/art_rgb_pixbuf_affine.h
+include/mozilla/libart_lgpl/art_rgb_rgba_affine.h
+include/mozilla/libart_lgpl/art_rgb_svp.h
+include/mozilla/libart_lgpl/art_rgba.h
+include/mozilla/libart_lgpl/art_svp.h
+include/mozilla/libart_lgpl/art_svp_intersect.h
+include/mozilla/libart_lgpl/art_svp_ops.h
+include/mozilla/libart_lgpl/art_svp_point.h
+include/mozilla/libart_lgpl/art_svp_render_aa.h
+include/mozilla/libart_lgpl/art_svp_vpath.h
+include/mozilla/libart_lgpl/art_svp_vpath_stroke.h
+include/mozilla/libart_lgpl/art_svp_wind.h
+include/mozilla/libart_lgpl/art_uta.h
+include/mozilla/libart_lgpl/art_uta_ops.h
+include/mozilla/libart_lgpl/art_uta_rect.h
+include/mozilla/libart_lgpl/art_uta_svp.h
+include/mozilla/libart_lgpl/art_uta_vpath.h
+include/mozilla/libart_lgpl/art_vpath.h
+include/mozilla/libart_lgpl/art_vpath_bpath.h
+include/mozilla/libart_lgpl/art_vpath_dash.h
+include/mozilla/libart_lgpl/art_vpath_svp.h
+include/mozilla/libart_lgpl/config.h
+include/mozilla/libart_lgpl/libart-features.h
+include/mozilla/libart_lgpl/libart.h
 include/mozilla/libreg/NSReg.h
 include/mozilla/libreg/VerReg.h
 include/mozilla/locale/nsCollation.h
@@ -1107,6 +1207,10 @@ include/mozilla/msgnews/nsNewsUtils.h
 include/mozilla/msgnews/nsNntpIncomingServer.h
 include/mozilla/msgnews/nsNntpService.h
 include/mozilla/msgnews/nsNntpUrl.h
+include/mozilla/msgsmime/nsIMsgSMIMECompFields.h
+include/mozilla/msgsmime/nsIMsgSMIMEHeaderSink.h
+include/mozilla/msgsmime/nsMsgComposeSecure.h
+include/mozilla/msgsmime/nsMsgSMIMECID.h
 include/mozilla/necko/mozITXTToHTMLConv.h
 include/mozilla/necko/netCore.h
 include/mozilla/necko/nsHTTPChunkConv.h
@@ -1136,6 +1240,7 @@ include/mozilla/necko/nsIJARChannel.h
 include/mozilla/necko/nsIJARProtocolHandler.h
 include/mozilla/necko/nsIJARURI.h
 include/mozilla/necko/nsILoadGroup.h
+include/mozilla/necko/nsIMultiPartChannel.h
 include/mozilla/necko/nsINetModRegEntry.h
 include/mozilla/necko/nsINetModuleMgr.h
 include/mozilla/necko/nsINetNotify.h
@@ -1349,6 +1454,9 @@ include/mozilla/oji/nsIThreadManager.h
 include/mozilla/oji/nsJVMManager.h
 include/mozilla/oji/nsJVMPluginTagInfo.h
 include/mozilla/oji/nsjvm.h
+include/mozilla/pipboot/nsIBufEntropyCollector.h
+include/mozilla/pipboot/nsISSLStatusProvider.h
+include/mozilla/pipboot/nsISecurityWarningDialogs.h
 include/mozilla/pipnss/nsIBadCertListener.h
 include/mozilla/pipnss/nsICMS.h
 include/mozilla/pipnss/nsICMSSecureMessage.h
@@ -1501,6 +1609,7 @@ include/mozilla/uconv/nsICharRepresentable.h
 include/mozilla/uconv/nsICharsetAlias.h
 include/mozilla/uconv/nsICharsetConverterManager.h
 include/mozilla/uconv/nsICharsetConverterManager2.h
+include/mozilla/uconv/nsIConverterInputStream.h
 include/mozilla/uconv/nsICurrentCharsetListener.h
 include/mozilla/uconv/nsIMappingCache.h
 include/mozilla/uconv/nsIPlatformCharset.h
@@ -1546,7 +1655,6 @@ include/mozilla/util/nsITimeRecorder.h
 include/mozilla/util/nsTimer.h
 include/mozilla/util/stopwatch.h
 include/mozilla/util/xp_obs.h
-include/mozilla/view/nsIClipView.h
 include/mozilla/view/nsICompositeListener.h
 include/mozilla/view/nsIEventProcessor.h
 include/mozilla/view/nsIScrollPositionListener.h
@@ -1903,6 +2011,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/plugin
 @dirrm include/mozilla/pippki
 @dirrm include/mozilla/pipnss
+@dirrm include/mozilla/pipboot
 @dirrm include/mozilla/oji
 @dirrm include/mozilla/nspr/private
 @dirrm include/mozilla/nspr/obsolete
@@ -1912,6 +2021,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/nkcache
 @dirrm include/mozilla/necko2
 @dirrm include/mozilla/necko
+@dirrm include/mozilla/msgsmime
 @dirrm include/mozilla/msgnews
 @dirrm include/mozilla/msglocal
 @dirrm include/mozilla/msgimap
@@ -1930,6 +2040,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/lwbrk
 @dirrm include/mozilla/locale
 @dirrm include/mozilla/libreg
+@dirrm include/mozilla/libart_lgpl
 @dirrm include/mozilla/ldap
 @dirrm include/mozilla/layout
 @dirrm include/mozilla/jsurl
@@ -1939,6 +2050,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/java
 @dirrm include/mozilla/jar
 @dirrm include/mozilla/intl
+@dirrm include/mozilla/inspector
 @dirrm include/mozilla/import
 @dirrm include/mozilla/imglib2
 @dirrm include/mozilla/htmlparser
@@ -1948,6 +2060,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/gfx2
 @dirrm include/mozilla/gfx
 @dirrm include/mozilla/find
+@dirrm include/mozilla/filepicker
 @dirrm include/mozilla/exthandler
 @dirrm include/mozilla/expat
 @dirrm include/mozilla/embedcomponents

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Nov  9 05:13:03 2001
-+++ configure	Wed Nov 21 14:22:13 2001
-@@ -5931,6 +5931,9 @@
+--- configure.orig	Wed Dec 12 10:12:41 2001
++++ configure	Tue Dec 25 15:21:43 2001
+@@ -6186,6 +6186,9 @@
  os2*)
      LIBS=
      ;;
@@ -13,7 +13,7 @@ $FreeBSD$
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
  do
-@@ -6987,8 +6990,6 @@
+@@ -7357,8 +7360,6 @@
  	if test $? -eq 0; then
  		if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
  			ac_cv_have_dash_pthread=yes
@@ -22,7 +22,7 @@ $FreeBSD$
  		fi
  	fi
  	rm -f conftest*
-@@ -7022,7 +7023,7 @@
+@@ -7392,7 +7393,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
@@ -31,15 +31,7 @@ $FreeBSD$
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
-@@ -8365,6 +8366,7 @@
-         ;;
-     *)
-         NSPR_LIBS='`$(DEPTH)/nsprpub/config/nspr-config --prefix=$(DIST) --libs`'
-+        NSPR_LIBS="$NSPR_LIBS $BSD_PTHREAD_LIBS"
-         ;;
-     esac
- fi
-@@ -9421,7 +9423,7 @@
+@@ -9839,7 +9840,7 @@
      fi
      MOC=$HOST_MOC
  
@@ -48,11 +40,11 @@ $FreeBSD$
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -13233,6 +13235,7 @@
-         ;;
-     *)
+@@ -13711,6 +13712,7 @@
+     echo "configure: warning: Recreating autoconf.mk with updated nspr-config output" 1>&2
+     if test ! "$VACPP" && test -z "$_WIN32_MSVC"; then
          NSPR_LIBS=`./nsprpub/config/nspr-config --prefix=$MOZ_BUILD_ROOT/dist --exec-prefix=$MOZ_BUILD_ROOT/dist --libs`
 +	NSPR_LIBS="$NSPR_LIBS $BSD_PTHREAD_LIBS"
          $PERL -pi.bak -e "s {^NSPR_LIBS\s*=.*} {NSPR_LIBS = $NSPR_LIBS }" config/autoconf.mk
-         ;;
-     esac
+     fi
+     if test -z "$_WIN32_MSVC"; then
