@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	efax-gtk
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.11
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
-MAN1=	efax.1 efix.1 efax-gtk.1
+MAN1=		efax.1 efix.1 efax-gtk.1
 
 .include <bsd.port.pre.mk>
 
