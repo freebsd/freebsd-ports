@@ -319,6 +319,7 @@
     SUBDIR += lmule
     SUBDIR += loadd
     SUBDIR += loudmouth
+    SUBDIR += luasocket
     SUBDIR += magictun
     SUBDIR += maradns
     SUBDIR += mars_nwe
