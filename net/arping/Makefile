@@ -8,7 +8,7 @@
 PORTNAME=	arping
 PORTVERSION=	1.00
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.nss.nu/pub/synscan/ \
+MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/netutils/arping/
 
 MAINTAINER=	roman@xpert.com
