@@ -16,7 +16,7 @@ MAINTAINER=	mharo@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-MAN1=		naim.1
+#MAN1=		naim.1
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/examples/naim
