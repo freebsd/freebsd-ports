@@ -7,24 +7,17 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
+MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
+USE_PHP=	gd
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You have to configure PHP with GD support."
-	@${ECHO} ""
-	@${ECHO} "If you have already compiled PHP without GD,"
-	@${ECHO} "press CTRL+C now and rebuild it before installing jpgraph."
-	@${ECHO} ""
+NO_CDROM=	"The free version cannot be used in a commercial context"
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -35,7 +28,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/src/Examples/ ${EXAMPLESDIR}
+	-${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

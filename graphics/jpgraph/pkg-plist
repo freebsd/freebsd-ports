@@ -8,6 +8,9 @@
 %%DATADIR%%/imgdata_pushpins.inc
 %%DATADIR%%/imgdata_squares.inc
 %%DATADIR%%/imgdata_stars.inc
+%%DATADIR%%/jpg-config.inc
+%%DATADIR%%/jpgraph_iconplot.php
+%%DATADIR%%/jpgraph_plotband.php
 %%DATADIR%%/jpgraph.php
 %%DATADIR%%/jpgraph_bar.php
 %%DATADIR%%/jpgraph_canvas.php
@@ -832,14 +835,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/ref/ErrorPlot.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/FieldArrow.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/FieldPlot.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/FlagCache.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/FlagImages.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Footer.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/FuncGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/GB2312toUTF8.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/GanttActivityInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/GanttBar.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/GanttConstraint.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/GanttGraph.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/GanttPlotObject.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/GanttScale.html
@@ -852,7 +851,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/ref/IconImage.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/IconPlot.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Image.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/ImgData.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Legend.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/LineErrorPlot.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/LinePlot.html
@@ -873,7 +871,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/ref/PolarAxis.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/PolarGraph.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/PolarPlot.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/PredefIcons.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Progress.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/RadarAxis.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/RadarGraph.html
@@ -889,7 +886,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/ref/SuperScriptText.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Text.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/TextProperty.html
-%%PORTDOCS%%%%DOCSDIR%%/ref/TextPropertyBelow.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Ticks.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/class_toc.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/index.html
@@ -923,6 +919,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradsmallex5.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradsmallex6.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradsmallex7.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/barimgex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barintex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barintex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/barline_csimex1.php
@@ -938,6 +935,10 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex5.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex6.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex3.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/blueblack400x300grad.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/boxstockcsimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/boxstockex1.php
@@ -1065,6 +1066,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex19.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex30.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/ganttex_slice.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/gantthgridex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/gantthourex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/gantthourminex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/gantticonex1.php
@@ -1116,7 +1118,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/nullvalueex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/partiallyfilledlineex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/penguin.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/penguin.png.OLD
 %%PORTDOCS%%%%EXAMPLESDIR%%/pie3d_csimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/pie3dex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/pie3dex2.php
@@ -1153,6 +1154,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarex8.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarex9.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/pushpinex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/pushpinex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarex3.php
@@ -1166,6 +1168,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarex9.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarlogex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/radarlogex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/radarmarkex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotateex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotex0.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/rotex1.php
