@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -22,6 +23,7 @@ BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
+		aspell:${PORTSDIR}/textproc/aspell \
 		cups.2:${PORTSDIR}/print/cups-base \
 		fam.0:${PORTSDIR}/devel/fam \
 		idn:${PORTSDIR}/devel/libidn \
