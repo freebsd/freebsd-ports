@@ -1,0 +1,14 @@
+--- TextField-1.0/Makefile.orig	Mon Jan 25 00:39:18 1999
++++ TextField-1.0/Makefile	Mon Jan 25 00:40:01 1999
+@@ -1,9 +1,9 @@
+ # Makefile for widget demo programs
+ 
+ ATHENALIBS = -lXaw -lXmu -lXt -lX11 -lm
+-CFLAGS = $(DEFINES) $(CDEBUGFLAGS)
++CFLAGS += $(DEFINES) $(CDEBUGFLAGS)
+ CDEBUGFLAGS =
+-DEFINES =
++DEFINES = -I$(X11BASE)/include
+ RM = rm -f
+ 
+ WIDGET = TextField
