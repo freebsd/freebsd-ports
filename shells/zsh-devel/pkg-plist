@@ -54,6 +54,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_archie
 %%ZSHFUNC_SUBDIR%%/_arg_compile
 %%ZSHFUNC_SUBDIR%%/_arguments
+%%ZSHFUNC_SUBDIR%%/_argument_sets
 %%ZSHFUNC_SUBDIR%%/_arrays
 %%ZSHFUNC_SUBDIR%%/_autoload
 %%ZSHFUNC_SUBDIR%%/_bash_completions
@@ -75,6 +76,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_compalso
 %%ZSHFUNC_SUBDIR%%/_compdef
 %%ZSHFUNC_SUBDIR%%/_complete
+%%ZSHFUNC_SUBDIR%%/_complete_debug
 %%ZSHFUNC_SUBDIR%%/_complete_help
 %%ZSHFUNC_SUBDIR%%/_compress
 %%ZSHFUNC_SUBDIR%%/_condition
@@ -102,12 +104,14 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_echotc
 %%ZSHFUNC_SUBDIR%%/_emulate
 %%ZSHFUNC_SUBDIR%%/_enable
+%%ZSHFUNC_SUBDIR%%/_enscript
 %%ZSHFUNC_SUBDIR%%/_equal
 %%ZSHFUNC_SUBDIR%%/_expand
 %%ZSHFUNC_SUBDIR%%/_expand_word
 %%ZSHFUNC_SUBDIR%%/_fakeroot
 %%ZSHFUNC_SUBDIR%%/_fc
 %%ZSHFUNC_SUBDIR%%/_fg_jobs
+%%ZSHFUNC_SUBDIR%%/_file_descriptors
 %%ZSHFUNC_SUBDIR%%/_files
 %%ZSHFUNC_SUBDIR%%/_find
 %%ZSHFUNC_SUBDIR%%/_finger
@@ -121,16 +125,17 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_gprof
 %%ZSHFUNC_SUBDIR%%/_groups
 %%ZSHFUNC_SUBDIR%%/_gs
-%%ZSHFUNC_SUBDIR%%/_gunzip
 %%ZSHFUNC_SUBDIR%%/_gv
 %%ZSHFUNC_SUBDIR%%/_gzip
 %%ZSHFUNC_SUBDIR%%/_hash
+%%ZSHFUNC_SUBDIR%%/_history
 %%ZSHFUNC_SUBDIR%%/_history_complete_word
 %%ZSHFUNC_SUBDIR%%/_hosts
 %%ZSHFUNC_SUBDIR%%/_ignored
 %%ZSHFUNC_SUBDIR%%/_imagemagick
 %%ZSHFUNC_SUBDIR%%/_ispell
 %%ZSHFUNC_SUBDIR%%/_jobs
+%%ZSHFUNC_SUBDIR%%/_joe
 %%ZSHFUNC_SUBDIR%%/_kill
 %%ZSHFUNC_SUBDIR%%/_killall
 %%ZSHFUNC_SUBDIR%%/_kld
@@ -182,6 +187,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_precommand
 %%ZSHFUNC_SUBDIR%%/_prefix
 %%ZSHFUNC_SUBDIR%%/_print
+%%ZSHFUNC_SUBDIR%%/_printers
 %%ZSHFUNC_SUBDIR%%/_prompt
 %%ZSHFUNC_SUBDIR%%/_ps
 %%ZSHFUNC_SUBDIR%%/_pspdf
@@ -265,6 +271,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_xfig
 %%ZSHFUNC_SUBDIR%%/_xmodmap
 %%ZSHFUNC_SUBDIR%%/_xrdb
+%%ZSHFUNC_SUBDIR%%/_xset
 %%ZSHFUNC_SUBDIR%%/_xt_arguments
 %%ZSHFUNC_SUBDIR%%/_xt_session_id
 %%ZSHFUNC_SUBDIR%%/_xterm
@@ -273,6 +280,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_xwit
 %%ZSHFUNC_SUBDIR%%/_yodl
 %%ZSHFUNC_SUBDIR%%/_yp
+%%ZSHFUNC_SUBDIR%%/_zcat
 %%ZSHFUNC_SUBDIR%%/_zcompile
 %%ZSHFUNC_SUBDIR%%/_zdump
 %%ZSHFUNC_SUBDIR%%/_zftp
