@@ -95,6 +95,7 @@
     SUBDIR += cons-test
     SUBDIR += cook
     SUBDIR += cppadvio
+    SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2

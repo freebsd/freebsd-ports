@@ -1,0 +1,42 @@
+bin/cppunit-config
+include/cppunit/Exception.h
+include/cppunit/NotEqualException.h
+include/cppunit/Portability.h
+include/cppunit/Test.h
+include/cppunit/TestAssert.h
+include/cppunit/TestCaller.h
+include/cppunit/TestCase.h
+include/cppunit/TestFailure.h
+include/cppunit/TestListener.h
+include/cppunit/TestRegistry.h
+include/cppunit/TestResult.h
+include/cppunit/TestSuite.h
+include/cppunit/TextTestResult.h
+include/cppunit/TextTestRunner.h
+include/cppunit/config-auto.h
+include/cppunit/config-bcb5.h
+include/cppunit/config-msvc6.h
+include/cppunit/extensions/AutoRegisterSuite.h
+include/cppunit/extensions/HelperMacros.h
+include/cppunit/extensions/Orthodox.h
+include/cppunit/extensions/RepeatedTest.h
+include/cppunit/extensions/TestDecorator.h
+include/cppunit/extensions/TestFactory.h
+include/cppunit/extensions/TestFactoryRegistry.h
+include/cppunit/extensions/TestSetUp.h
+include/cppunit/extensions/TestSuiteBuilder.h
+include/cppunit/extensions/TestSuiteFactory.h
+include/cppunit/extensions/TypeInfoHelper.h
+lib/libcppunit-1.6.so
+lib/libcppunit-1.6.so.0
+lib/libcppunit.a
+lib/libcppunit.la
+lib/libcppunit.so
+share/aclocal/cppunit.m4
+%%PORTDOCS%%share/doc/cppunit/NEWS
+%%PORTDOCS%%share/doc/cppunit/README
+%%PORTDOCS%%share/doc/cppunit/FAQ
+%%PORTDOCS%%share/doc/cppunit/cookbook.html
+%%PORTDOCS%%@dirrm share/doc/cppunit
+@dirrm include/cppunit/extensions
+@dirrm include/cppunit
