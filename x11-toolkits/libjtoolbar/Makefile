@@ -9,9 +9,9 @@ PORTNAME=	libjtoolbar
 PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/ \
-		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/
+MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
+		ftp://ftp.uniovi.es/pub/unix/mail/ \
+		ftp://ftp.tuwien.ac.at/z10/hci/jx/source-1.5.3/
 DISTNAME=	JToolBar_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
