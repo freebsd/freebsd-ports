@@ -1,0 +1,7 @@
+lib/ocaml/site-lib/pcre/META
+lib/ocaml/site-lib/pcre/dllpcre_stubs.so
+lib/ocaml/site-lib/pcre/libpcre_stubs.a
+lib/ocaml/site-lib/pcre/pcre.cma
+lib/ocaml/site-lib/pcre/pcre.cmi
+lib/ocaml/site-lib/pcre/pcre.mli
+@dirrm lib/ocaml/site-lib/pcre

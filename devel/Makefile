@@ -377,6 +377,7 @@
     SUBDIR += nspr
     SUBDIR += oaf
     SUBDIR += ocaml-findlib
+    SUBDIR += ocaml-pcre
     SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += openzz
