@@ -11,6 +11,7 @@
     SUBDIR += curl
     SUBDIR += downloader
     SUBDIR += emirror
+    SUBDIR += fget
     SUBDIR += ftpcopy
     SUBDIR += ftpcube
     SUBDIR += ftpfind
