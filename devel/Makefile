@@ -228,6 +228,7 @@
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
+    SUBDIR += excalibur-configuration
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp
