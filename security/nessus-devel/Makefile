@@ -11,7 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus-devel
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -60,6 +60,12 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/nessusd.sh > ${PREFIX}/etc/rc.d/nessusd.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/nessusd.sh
+	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.conf \
+		> ${PREFIX}/etc/nessus/nessusd.conf.dist
+	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.rules \
+		> ${PREFIX}/etc/nessus/nessusd.rules.dist
+	@${CHMOD} 644 ${PREFIX}/etc/nessus/nessusd.conf.dist \
+		${PREFIX}/etc/nessus/nessusd.rules.dist
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 .if ! defined(BATCH)
