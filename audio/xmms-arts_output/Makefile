@@ -7,8 +7,7 @@
 
 PKGNAMEPREFIX=	xmms-
 PORTNAME=	arts_output
-PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	http://havardk.xmms.org/plugins/arts_output/
 
@@ -23,6 +22,7 @@ USE_GNOME=	gtk12
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-PLIST_FILES=	lib/xmms/Output/libarts.so
+PLIST_FILES=	lib/xmms/Output/libarts.so \
+		bin/xmms-arts-helper
 
 .include <bsd.port.mk>
