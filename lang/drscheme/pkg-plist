@@ -3674,7 +3674,23 @@ drscheme/collects/xml/xml-sig.ss
 drscheme/collects/xml/xml-snipclass.ss
 drscheme/collects/xml/xml-unit.ss
 drscheme/collects/xml/xml.ss
+drscheme/include/escheme.h
+drscheme/include/ext.exp
+drscheme/include/mzscheme.exp
+drscheme/include/scheme.h
+drscheme/include/schemef.h
+drscheme/include/schemex.h
+drscheme/include/schemexm.h
+drscheme/include/schexn.h
+drscheme/include/schvers.h
+drscheme/include/sconfig.h
+drscheme/include/stypes.h
+drscheme/include/uconfig.h
 drscheme/install
+drscheme/lib/buildinfo
+drscheme/lib/libmzgc.a
+drscheme/lib/libmzscheme.a
+drscheme/lib/mzdyn.o
 drscheme/teachpack/htdp/arrow-gui.ss
 drscheme/teachpack/htdp/arrow.ss
 drscheme/teachpack/htdp/convert.ss
@@ -3878,6 +3894,8 @@ drscheme/teachpack/value-turtles.ss
 @dirrm drscheme/collects/doc/t-y-scheme
 @dirrm drscheme/collects/doc
 @dirrm drscheme/collects
+@dirrm drscheme/include
+@dirrm drscheme/lib
 @dirrm drscheme/teachpack/htdp
 @dirrm drscheme/teachpack
 @dirrm drscheme
