@@ -411,6 +411,7 @@
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += ossp-al
+    SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
     SUBDIR += ossp-l2
     SUBDIR += ossp-val
