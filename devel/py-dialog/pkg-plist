@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/dialog.py
+lib/%%PYTHON_VERSION%%/site-packages/dialog.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dialog.pyo

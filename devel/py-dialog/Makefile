@@ -7,26 +7,20 @@
 #
 
 PORTNAME=	dialog
-PORTVERSION=	1.0
+PORTVERSION=	2.7
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pythondialog
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	dialog
-EXTRACT_SUFX=	.py
+DISTNAME=	pythondialog-${PORTVERSION}
+
+RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python Dialog
+COMMENT=	Python interface to dialog(3)
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dialog.py
+USE_BZIP2=	yes
 USE_PYTHON=	yes
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	${WRKDIR}
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dialog.py ${PYTHON_SITELIBDIR}
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
