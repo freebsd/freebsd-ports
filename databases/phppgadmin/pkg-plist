@@ -1,190 +1,188 @@
-www/data.default/phpPgAdmin/BUGS
-www/data.default/phpPgAdmin/CREDITS
-www/data.default/phpPgAdmin/DEVELOPERS
-www/data.default/phpPgAdmin/FAQ
-www/data.default/phpPgAdmin/HISTORY
-www/data.default/phpPgAdmin/INSTALL
-www/data.default/phpPgAdmin/LICENSE
-www/data.default/phpPgAdmin/TODO
-www/data.default/phpPgAdmin/TRANSLATORS
-www/data.default/phpPgAdmin/all_db.php
-www/data.default/phpPgAdmin/bottombar.php
-www/data.default/phpPgAdmin/browser.php
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/TreeMenu.js
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/TreeMenu.php
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/branch.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/branchbottom.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/branchtop.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/folder-expanded.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/folder.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/line.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/linebottom.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/minus.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/minusbottom.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/minustop.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/plus.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/plusbottom.gif
-www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images/plustop.gif
-www/data.default/phpPgAdmin/classes/Misc.php
-www/data.default/phpPgAdmin/classes/Reports.php
-www/data.default/phpPgAdmin/classes/class.select.php
-www/data.default/phpPgAdmin/classes/database/ADODB_base.php
-www/data.default/phpPgAdmin/classes/database/BaseDB.php
-www/data.default/phpPgAdmin/classes/database/MySQL.php
-www/data.default/phpPgAdmin/classes/database/Postgres.php
-www/data.default/phpPgAdmin/classes/database/Postgres71.php
-www/data.default/phpPgAdmin/classes/database/Postgres72.php
-www/data.default/phpPgAdmin/classes/database/Postgres73.php
-www/data.default/phpPgAdmin/classes/database/Postgres74.php
-www/data.default/phpPgAdmin/conf/.cvsignore
-@unexec if cmp -s %D/www/data.default/phpPgAdmin/conf/config.inc.php %D/www/data.default/phpPgAdmin/conf/config.inc.php-dist; then rm -f %D/www/data.default/phpPgAdmin/conf/config.inc.php; fi
-www/data.default/phpPgAdmin/conf/config.inc.php-dist
+%%PGADMDIR%%/BUGS
+%%PGADMDIR%%/CREDITS
+%%PGADMDIR%%/DEVELOPERS
+%%PGADMDIR%%/FAQ
+%%PGADMDIR%%/HISTORY
+%%PGADMDIR%%/INSTALL
+%%PGADMDIR%%/LICENSE
+%%PGADMDIR%%/TODO
+%%PGADMDIR%%/TRANSLATORS
+%%PGADMDIR%%/all_db.php
+%%PGADMDIR%%/bottombar.php
+%%PGADMDIR%%/browser.php
+%%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.js
+%%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.php
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/branch.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/branchbottom.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/branchtop.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/folder-expanded.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/folder.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/line.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/linebottom.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/minus.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/minusbottom.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/minustop.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/plus.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/plusbottom.gif
+%%PGADMDIR%%/classes/HTML_TreeMenu/images/plustop.gif
+%%PGADMDIR%%/classes/Misc.php
+%%PGADMDIR%%/classes/Reports.php
+%%PGADMDIR%%/classes/class.select.php
+%%PGADMDIR%%/classes/database/ADODB_base.php
+%%PGADMDIR%%/classes/database/BaseDB.php
+%%PGADMDIR%%/classes/database/MySQL.php
+%%PGADMDIR%%/classes/database/Postgres.php
+%%PGADMDIR%%/classes/database/Postgres71.php
+%%PGADMDIR%%/classes/database/Postgres72.php
+%%PGADMDIR%%/classes/database/Postgres73.php
+%%PGADMDIR%%/classes/database/Postgres74.php
+%%PGADMDIR%%/conf/.cvsignore
+@unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
+%%PGADMDIR%%/conf/config.inc.php-dist
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
-www/data.default/phpPgAdmin/constraints.php
-www/data.default/phpPgAdmin/database.php
-www/data.default/phpPgAdmin/databases.php
-www/data.default/phpPgAdmin/display.php
-www/data.default/phpPgAdmin/functions.php
-www/data.default/phpPgAdmin/groups.php
-www/data.default/phpPgAdmin/images/themes/default/database.gif
-www/data.default/phpPgAdmin/images/themes/default/functions.gif
-www/data.default/phpPgAdmin/images/themes/default/operators.gif
-www/data.default/phpPgAdmin/images/themes/default/sequences.gif
-www/data.default/phpPgAdmin/images/themes/default/tables.gif
-www/data.default/phpPgAdmin/images/themes/default/title.gif
-www/data.default/phpPgAdmin/images/themes/default/triggers.gif
-www/data.default/phpPgAdmin/images/themes/default/types.gif
-www/data.default/phpPgAdmin/images/themes/default/views.gif
-www/data.default/phpPgAdmin/index.php
-www/data.default/phpPgAdmin/indexes.js
-www/data.default/phpPgAdmin/indexes.php
-www/data.default/phpPgAdmin/intro.php
-www/data.default/phpPgAdmin/lang/Makefile
-www/data.default/phpPgAdmin/lang/chinese-sim.php
-www/data.default/phpPgAdmin/lang/chinese-tr.php
-www/data.default/phpPgAdmin/lang/czech.php
-www/data.default/phpPgAdmin/lang/dutch.php
-www/data.default/phpPgAdmin/lang/english.php
-www/data.default/phpPgAdmin/lang/french.php
-www/data.default/phpPgAdmin/lang/german.php
-www/data.default/phpPgAdmin/lang/italian.php
-www/data.default/phpPgAdmin/lang/japanese.php
-www/data.default/phpPgAdmin/lang/langcheck
-www/data.default/phpPgAdmin/lang/polish.php
-www/data.default/phpPgAdmin/lang/portuguese-br.php
-www/data.default/phpPgAdmin/lang/recoded/README
-www/data.default/phpPgAdmin/lang/recoded/chinese-sim.php
-www/data.default/phpPgAdmin/lang/recoded/chinese-tr.php
-www/data.default/phpPgAdmin/lang/recoded/czech.php
-www/data.default/phpPgAdmin/lang/recoded/dutch.php
-www/data.default/phpPgAdmin/lang/recoded/english.php
-www/data.default/phpPgAdmin/lang/recoded/french.php
-www/data.default/phpPgAdmin/lang/recoded/german.php
-www/data.default/phpPgAdmin/lang/recoded/italian.php
-www/data.default/phpPgAdmin/lang/recoded/japanese.php
-www/data.default/phpPgAdmin/lang/recoded/polish.php
-www/data.default/phpPgAdmin/lang/recoded/portuguese-br.php
-www/data.default/phpPgAdmin/lang/recoded/russian.php
-www/data.default/phpPgAdmin/lang/recoded/slovak.php
-www/data.default/phpPgAdmin/lang/recoded/spanish.php
-www/data.default/phpPgAdmin/lang/recoded/turkish.php
-www/data.default/phpPgAdmin/lang/russian.php
-www/data.default/phpPgAdmin/lang/slovak.php
-www/data.default/phpPgAdmin/lang/spanish.php
-www/data.default/phpPgAdmin/lang/synch
-www/data.default/phpPgAdmin/lang/turkish.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-connection.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-cryptsession.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-csvlib.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-datadict.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-errorhandler.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-errorpear.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-lib.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-pager.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-pear.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-recordset.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-session.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb-time.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/adodb.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/crypt.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/datadict/datadict-mssql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/datadict/datadict-mysql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/datadict/datadict-oci8.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/datadict/datadict-postgres.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-access.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-ado.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-ado_access.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-ado_mssql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-borland_ibase.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-csv.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-db2.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-fbsql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-firebird.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-ibase.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-informix.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-informix72.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-mssql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-mssqlpo.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-mysql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-mysqlt.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-oci8.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-oci805.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-oci8po.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-odbc.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-odbc_mssql.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-odbc_oracle.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-oracle.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-postgres.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-postgres64.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-postgres7.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-proxy.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-sqlanywhere.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-sybase.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/drivers/adodb-vfp.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/license.txt
-www/data.default/phpPgAdmin/libraries/adodb/pivottable.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/readme.txt
-www/data.default/phpPgAdmin/libraries/adodb/rsfilter.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/server.php
-www/data.default/phpPgAdmin/libraries/adodb/toexport.inc.php
-www/data.default/phpPgAdmin/libraries/adodb/tohtml.inc.php
-www/data.default/phpPgAdmin/libraries/errorhandler.inc.php
-www/data.default/phpPgAdmin/libraries/lib.inc.php
-www/data.default/phpPgAdmin/login.php
-www/data.default/phpPgAdmin/logout.php
-www/data.default/phpPgAdmin/privileges.php
-www/data.default/phpPgAdmin/reports.php
-www/data.default/phpPgAdmin/rules.php
-www/data.default/phpPgAdmin/schema.php
-www/data.default/phpPgAdmin/sequences.php
-www/data.default/phpPgAdmin/sql.php
-www/data.default/phpPgAdmin/sql/reports-pgsql.sql
-www/data.default/phpPgAdmin/tables.php
-www/data.default/phpPgAdmin/tblexport.php
-www/data.default/phpPgAdmin/tblproperties.php
-www/data.default/phpPgAdmin/themes/default/global.css
-www/data.default/phpPgAdmin/topbar.php
-www/data.default/phpPgAdmin/triggers.php
-www/data.default/phpPgAdmin/types.php
-www/data.default/phpPgAdmin/users.php
-www/data.default/phpPgAdmin/views.php
-@dirrm www/data.default/phpPgAdmin/themes/default
-@dirrm www/data.default/phpPgAdmin/themes
-@dirrm www/data.default/phpPgAdmin/sql
-@dirrm www/data.default/phpPgAdmin/libraries/adodb/drivers
-@dirrm www/data.default/phpPgAdmin/libraries/adodb/datadict
-@dirrm www/data.default/phpPgAdmin/libraries/adodb
-@dirrm www/data.default/phpPgAdmin/libraries
-@dirrm www/data.default/phpPgAdmin/lang/recoded
-@dirrm www/data.default/phpPgAdmin/lang
-@dirrm www/data.default/phpPgAdmin/images/themes/default
-@dirrm www/data.default/phpPgAdmin/images/themes
-@dirrm www/data.default/phpPgAdmin/images
-@dirrm www/data.default/phpPgAdmin/conf
-@dirrm www/data.default/phpPgAdmin/classes/database
-@dirrm www/data.default/phpPgAdmin/classes/HTML_TreeMenu/images
-@dirrm www/data.default/phpPgAdmin/classes/HTML_TreeMenu
-@dirrm www/data.default/phpPgAdmin/classes
-@dirrm www/data.default/phpPgAdmin
-@unexec if [ -L %D/www/data.default ]; then rm -f %D/www/data.default; fi
-@unexec if [ -L %D/www ]; then rm -f %D/www; fi
+%%PGADMDIR%%/constraints.php
+%%PGADMDIR%%/database.php
+%%PGADMDIR%%/databases.php
+%%PGADMDIR%%/display.php
+%%PGADMDIR%%/functions.php
+%%PGADMDIR%%/groups.php
+%%PGADMDIR%%/images/themes/default/database.gif
+%%PGADMDIR%%/images/themes/default/functions.gif
+%%PGADMDIR%%/images/themes/default/operators.gif
+%%PGADMDIR%%/images/themes/default/sequences.gif
+%%PGADMDIR%%/images/themes/default/tables.gif
+%%PGADMDIR%%/images/themes/default/title.gif
+%%PGADMDIR%%/images/themes/default/triggers.gif
+%%PGADMDIR%%/images/themes/default/types.gif
+%%PGADMDIR%%/images/themes/default/views.gif
+%%PGADMDIR%%/index.php
+%%PGADMDIR%%/indexes.js
+%%PGADMDIR%%/indexes.php
+%%PGADMDIR%%/intro.php
+%%PGADMDIR%%/lang/Makefile
+%%PGADMDIR%%/lang/chinese-sim.php
+%%PGADMDIR%%/lang/chinese-tr.php
+%%PGADMDIR%%/lang/czech.php
+%%PGADMDIR%%/lang/dutch.php
+%%PGADMDIR%%/lang/english.php
+%%PGADMDIR%%/lang/french.php
+%%PGADMDIR%%/lang/german.php
+%%PGADMDIR%%/lang/italian.php
+%%PGADMDIR%%/lang/japanese.php
+%%PGADMDIR%%/lang/langcheck
+%%PGADMDIR%%/lang/polish.php
+%%PGADMDIR%%/lang/portuguese-br.php
+%%PGADMDIR%%/lang/recoded/README
+%%PGADMDIR%%/lang/recoded/chinese-sim.php
+%%PGADMDIR%%/lang/recoded/chinese-tr.php
+%%PGADMDIR%%/lang/recoded/czech.php
+%%PGADMDIR%%/lang/recoded/dutch.php
+%%PGADMDIR%%/lang/recoded/english.php
+%%PGADMDIR%%/lang/recoded/french.php
+%%PGADMDIR%%/lang/recoded/german.php
+%%PGADMDIR%%/lang/recoded/italian.php
+%%PGADMDIR%%/lang/recoded/japanese.php
+%%PGADMDIR%%/lang/recoded/polish.php
+%%PGADMDIR%%/lang/recoded/portuguese-br.php
+%%PGADMDIR%%/lang/recoded/russian.php
+%%PGADMDIR%%/lang/recoded/slovak.php
+%%PGADMDIR%%/lang/recoded/spanish.php
+%%PGADMDIR%%/lang/recoded/turkish.php
+%%PGADMDIR%%/lang/russian.php
+%%PGADMDIR%%/lang/slovak.php
+%%PGADMDIR%%/lang/spanish.php
+%%PGADMDIR%%/lang/synch
+%%PGADMDIR%%/lang/turkish.php
+%%PGADMDIR%%/libraries/adodb/adodb-connection.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-cryptsession.php
+%%PGADMDIR%%/libraries/adodb/adodb-csvlib.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-datadict.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-errorhandler.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-errorpear.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-lib.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-pager.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-pear.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-recordset.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-session.php
+%%PGADMDIR%%/libraries/adodb/adodb-time.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb.inc.php
+%%PGADMDIR%%/libraries/adodb/crypt.inc.php
+%%PGADMDIR%%/libraries/adodb/datadict/datadict-mssql.inc.php
+%%PGADMDIR%%/libraries/adodb/datadict/datadict-mysql.inc.php
+%%PGADMDIR%%/libraries/adodb/datadict/datadict-oci8.inc.php
+%%PGADMDIR%%/libraries/adodb/datadict/datadict-postgres.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-access.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado_access.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado_mssql.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-borland_ibase.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-csv.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-db2.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-fbsql.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-firebird.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-ibase.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-informix.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-informix72.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-mssql.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-mssqlpo.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-mysql.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-mysqlt.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci8.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci805.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci8po.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc_mssql.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc_oracle.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-oracle.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres64.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres7.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-proxy.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-sqlanywhere.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-sybase.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-vfp.inc.php
+%%PGADMDIR%%/libraries/adodb/license.txt
+%%PGADMDIR%%/libraries/adodb/pivottable.inc.php
+%%PGADMDIR%%/libraries/adodb/readme.txt
+%%PGADMDIR%%/libraries/adodb/rsfilter.inc.php
+%%PGADMDIR%%/libraries/adodb/server.php
+%%PGADMDIR%%/libraries/adodb/toexport.inc.php
+%%PGADMDIR%%/libraries/adodb/tohtml.inc.php
+%%PGADMDIR%%/libraries/errorhandler.inc.php
+%%PGADMDIR%%/libraries/lib.inc.php
+%%PGADMDIR%%/login.php
+%%PGADMDIR%%/logout.php
+%%PGADMDIR%%/privileges.php
+%%PGADMDIR%%/reports.php
+%%PGADMDIR%%/rules.php
+%%PGADMDIR%%/schema.php
+%%PGADMDIR%%/sequences.php
+%%PGADMDIR%%/sql.php
+%%PGADMDIR%%/sql/reports-pgsql.sql
+%%PGADMDIR%%/tables.php
+%%PGADMDIR%%/tblexport.php
+%%PGADMDIR%%/tblproperties.php
+%%PGADMDIR%%/themes/default/global.css
+%%PGADMDIR%%/topbar.php
+%%PGADMDIR%%/triggers.php
+%%PGADMDIR%%/types.php
+%%PGADMDIR%%/users.php
+%%PGADMDIR%%/views.php
+@dirrm %%PGADMDIR%%/themes/default
+@dirrm %%PGADMDIR%%/themes
+@dirrm %%PGADMDIR%%/sql
+@dirrm %%PGADMDIR%%/libraries/adodb/drivers
+@dirrm %%PGADMDIR%%/libraries/adodb/datadict
+@dirrm %%PGADMDIR%%/libraries/adodb
+@dirrm %%PGADMDIR%%/libraries
+@dirrm %%PGADMDIR%%/lang/recoded
+@dirrm %%PGADMDIR%%/lang
+@dirrm %%PGADMDIR%%/images/themes/default
+@dirrm %%PGADMDIR%%/images/themes
+@dirrm %%PGADMDIR%%/images
+@dirrm %%PGADMDIR%%/conf
+@dirrm %%PGADMDIR%%/classes/database
+@dirrm %%PGADMDIR%%/classes/HTML_TreeMenu/images
+@dirrm %%PGADMDIR%%/classes/HTML_TreeMenu
+@dirrm %%PGADMDIR%%/classes
+@dirrm %%PGADMDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +22,14 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
 
+PGADMDIR?=      www/data/phpPgAdmin
+PLIST_SUB+=     PGADMDIR=${PGADMDIR}
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 do-install:
-	${MKDIR} ${PREFIX}/www/data.default/phpPgAdmin/
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/data.default/phpPgAdmin/
+	${MKDIR} ${PREFIX}/${PGADMDIR}
+	${CP} -R ${WRKSRC}/* ${PREFIX}/${PGADMDIR}
 
 .include <bsd.port.post.mk>
