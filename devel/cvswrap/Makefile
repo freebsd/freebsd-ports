@@ -8,7 +8,8 @@
 PORTNAME=       cvswrap
 PORTVERSION=	0.2
 CATEGORIES=     devel
-MASTER_SITES=   http://people.freebsd.org/~alfred/sources/cvswrap/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alfred
 
 MAINTAINER=	alfred@FreeBSD.org
 
