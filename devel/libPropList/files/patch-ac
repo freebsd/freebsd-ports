@@ -1,0 +1,11 @@
+--- work/libPropList-0.10.1/configure.in	Sun Apr  2 00:41:39 2000
++++ configure.in	Wed Jun  7 00:39:07 2000
+@@ -42,7 +42,7 @@
+ AC_FUNC_MEMCMP
+ AC_TYPE_SIGNAL
+ 
+-AC_CHECK_FUNCS(gethostname gettimeofday mkdir rmdir select strstr)
++AC_CHECK_FUNCS(gethostname gettimeofday mkdir mkstemp rmdir select strstr)
+ 
+ AC_CHECK_FUNC(socket,,
+         AC_CHECK_LIB(socket, socket, XTRALIBS="$XTRALIBS -lsocket",))
