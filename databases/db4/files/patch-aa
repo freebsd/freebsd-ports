@@ -1,6 +1,36 @@
---- ../dist/Makefile.in.orig	Sat Jul  7 00:53:16 2001
-+++ ../dist/Makefile.in	Wed Jul 25 23:48:56 2001
-@@ -11,7 +11,7 @@
+--- ../dist/Makefile.in.orig	Thu Nov 30 17:07:33 2000
++++ ../dist/Makefile.in	Tue May 29 11:11:15 2001
+@@ -34,11 +34,11 @@
+ libdb=		libdb.a
+ 
+ libso_base=	libdb
+-libso_linkname=	$(libso_base)-$(SOVERSION).la
+-libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
+-libso_target=	$(libso_base)-$(SOVERSION).la
++libso_linkname=	$(libso_base)$(SOMAJOR).la
++libso=		$(libso_base)$(SOMAJOR).@SOSUFFIX@
++libso_target=	$(libso_base)$(SOMAJOR).la
+ libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
++libso_major=	$(libso_base)$(SOMAJOR).@SOSUFFIX@.2
+ 
+ ##################################################
+ # C++
+@@ -49,10 +49,10 @@
+ ##################################################
+ libcxx=		libdb_cxx.a
+ libxso_base=	libdb_cxx
+-libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
+-libxso_target=	$(libxso_base)-$(SOVERSION).la
++libxso=		$(libxso_base)$(SOMAJOR).@SOSUFFIX@
++libxso_target=	$(libxso_base)$(SOMAJOR).la
+ libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
++libxso_major=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@.2
+ 
+ ##################################################
+ # JAVA
+@@ -115,7 +115,7 @@
  bindir=	@bindir@
  includedir=@includedir@
  libdir=	@libdir@
@@ -9,68 +39,25 @@
  
  dmode=	755
  emode=	555
-@@ -46,6 +46,7 @@
- SOFLAGS=	@SOFLAGS@
- SOMAJOR=	@DB_VERSION_MAJOR@
- SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
-+SOMINOR=	@DB_VERSION_MINOR@
- 
- ##################################################
- # C API.
-@@ -62,11 +63,11 @@
- 
- libdb=		libdb.a
- libso_base=	libdb
--libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
--libso_static=	$(libso_base)-$(SOVERSION).a
--libso_target=	$(libso_base)-$(SOVERSION).la
--libso_default=	$(libso_base).@SOSUFFIX@
--libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
-+libso=		$(libso_base)$(SOMAJOR).@SOSUFFIX@.$(SOMINOR)
-+libso_static=	$(libso_base)$(SOMAJOR).a
-+libso_target=	$(libso_base)$(SOMAJOR).la
-+libso_default=	$(libso_base)$(SOMAJOR).@SOSUFFIX@
-+libso_major=	$(libso_base)$(SOMAJOR).@SOSUFFIX@.3
- 
- ##################################################
- # C++ API.
-@@ -80,11 +81,11 @@
- 
- libcxx=		libdb_cxx.a
- libxso_base=	libdb_cxx
--libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
--libxso_static=	$(libxso_base)-$(SOVERSION).a
--libxso_target=	$(libxso_base)-$(SOVERSION).la
--libxso_default=	$(libxso_base).@SOSUFFIX@
--libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
-+libxso=		$(libxso_base)$(SOMAJOR).@SOSUFFIX@.$(SOMINOR)
-+libxso_static=	$(libxso_base)$(SOMAJOR).a
-+libxso_target=	$(libxso_base)$(SOMAJOR).la
-+libxso_default=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@
-+libxso_major=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@.3
- 
- ##################################################
- # Java API.
-@@ -401,8 +402,8 @@
+@@ -452,8 +452,8 @@
  	@cd $(libdir) && $(rm) -f \
- 	    $(libso) $(libso_target) $(libso_default) $(libso_major)
+ 	    $(libso_target) $(libso) $(libso_default) $(libso_major)
  	@$(INSTALLER) $(libso_target) $(libdir)
 -	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
 -	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
 +	@cd $(libdir) && $(chmod) $(fmode) $(libso_major)
-+#	@cd $(libdir) && $(ln) -s $(libso_major) $(libso_default)
++	@cd $(libdir) && $(ln) -s $(libso_major) $(libso_default)
  	@$(LIBTOOL) --mode=finish $(libdir)
- 	@cd $(libdir) && $(chmod) $(fmode) $(libso) $(libso_target)
  
-@@ -421,9 +422,8 @@
+ install_dynamic_cxx:
+@@ -463,8 +463,8 @@
  	@cd $(libdir) && $(rm) -f \
- 	    $(libxso) $(libxso_target) $(libxso_default) $(libxso_major)
+ 	    $(libxso_target) $(libxso) $(libxso_default) $(libxso_major)
  	@$(INSTALLER) $(libxso_target) $(libdir)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
--	@cd $(libdir) && $(chmod) $(fmode) $(libxso) $(libxso_target)
 +	@cd $(libdir) && $(chmod) $(fmode) $(libxso_major)
-+#	@cd $(libdir) && $(ln) -s $(libxso_major) $(libxso_default)
++	@cd $(libdir) && $(ln) -s $(libxso_major) $(libxso_default)
  
  install_tcl:
  	@echo "Installing DB Tcl library: $(libdir) ..."
