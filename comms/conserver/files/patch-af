@@ -26,6 +26,13 @@
 +	(void)tcsetattr(0, TCSANOW, &o_tios);
  #else
  #if USE_TERMIO
+@@ -478,5 +478,5 @@
+ 
+ 	while (0 != iLen) {
+-		if (-1 == (nr = write(fd, pcBuf, iLen))) {
++		if (0 <= (nr = write(fd, pcBuf, iLen))) {
+ 			c2cooked();
+ 			fprintf(stderr, "%s: lost connection\n", progname);
 @@ -950,5 +950,5 @@
  	iRem = iMax;
  	i = 0;
