@@ -1,0 +1,53 @@
+--- Makefile.orig	Thu Oct  5 21:55:31 2000
++++ Makefile	Thu Oct 19 14:24:35 2000
+@@ -1,4 +1,4 @@
+-CC=gcc
++CC?=gcc
+ 
+ ifndef prefix
+   #prefix=/usr/local
+@@ -10,16 +10,16 @@
+   highscoredir=/var/lib/games
+ endif
+ 
+-CFLAGS=-Wall -O3 $(SDL_CFLAGS) -DDATAPREFIX=\"$(prefix)/share/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
++CFLAGS+=-Wall $(SDL_CFLAGS) -DDATAPREFIX=\"$(prefix)/share/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
+ #CFLAGS=-Wall -pg -g $(SDL_CFLAGS)
+ 
+ SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
+     level.c intro.c text.c status.c transition.c hiscore.c dialog.c
+ 
+-SDL_MIXER=-lSDL_mixer
++SDL_MIXER=-lSDL_mixer -lsmpeg -lgcc_r
+ SDL_LIB=$(SDL_LDFLAGS) $(SDL_MIXER) 
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs)
++SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
++SDL_LDFLAGS := $(shell $(SDL_CONFIG) --libs)
+ 
+ 
+ all:	icebreaker
+@@ -38,15 +38,16 @@
+ 	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB)
+ 
+ install: all
+-	mkdir -p $(prefix)/bin
+-	mkdir -p $(prefix)/share/icebreaker
+-	mkdir -p $(highscoredir)
++	$(MKDIR) $(prefix)/share/icebreaker
++	$(MKDIR) $(highscoredir)
+ 
+-	install -m 644 *.wav *.bmp $(prefix)/share/icebreaker
+-	install -g games -s -m 2755 icebreaker $(prefix)/bin
++	$(BSD_INSTALL_DATA) *.wav *.bmp $(prefix)/share/icebreaker
++	$(BSD_INSTALL_PROGRAM) icebreaker $(prefix)/bin
+ 	touch $(highscoredir)/icebreaker.scores
+-	chown games:games $(highscoredir)/icebreaker.scores
+-	chmod 664 $(highscoredir)/icebreaker.scores
++	$(CHOWN) root:games $(prefix)/bin/icebreaker
++	$(CHMOD) 2755 $(prefix)/bin/icebreaker
++	$(CHOWN) root:games $(highscoredir)/icebreaker.scores
++	$(CHMOD) 664 $(highscoredir)/icebreaker.scores
+ 
+ 
+ include $(SRC:.c=.d)

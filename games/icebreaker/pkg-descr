@@ -1,0 +1,24 @@
+IceBreaker is a game similar to Jezzball or Barrack. So, uh, there's a bunch of
+penguins on an iceberg in Antarctica. You have been selected to catch them so
+they can be shipped to Finland, where they are essential to a secret plot for
+world domination.
+
+In order to trap the penguins, you'll need to break the iceberg into small
+chunks. (They're afraid of water, for no apparent reason.) You do this by
+melting lines in the ice with Special High-Tech GNU Tools.
+
+If a penguin hits a line in progress, however, it vanishes with a loud noise,
+and you lose a life. (Yes, a life. This story is really breaking down, isn't
+it? But never fear -- I'll keep going until it's completely dead.)
+
+Once 80% or more of the iceberg is gone, the remaining chunks are small enough
+for shipping. Of course, if you manage to get rid of more than that, you'll
+save on postage, thus earning you exponential amounts of Geek Cred (a.k.a.
+"score").
+
+After you ship off one batch of penguins, it's time to move on to the next.
+Each subsequent 'berg will have one more penguin, and you'll have one more
+life. This will continue until you lose, or until you exceed level one hundred
+or so, which Ain't Gonna Happen.
+
+WWW: http://www.mattdm.org/icebreaker/
