@@ -1,0 +1,21 @@
+#!/bin/sh
+
+case "$1" in
+start)
+	if [ -x /usr/local/sbin/spampd ]; then
+		/usr/local/sbin/spampd --user=uucp --group=uucp --host 127.0.0.1:10024 --relayhost=127.0.0.1:10025 --dose --tagall --auto-whitelist
+		echo -n ' spampd'
+	fi
+	;;
+stop)
+	if [ -f /var/run/spampd.pid ]; then
+		kill `cat /var/run/spampd.pid`
+		rm -f /var/run/spampd.pid
+		echo -n ' spampd'
+	fi
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+esac

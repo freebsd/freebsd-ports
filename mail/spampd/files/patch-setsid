@@ -1,0 +1,19 @@
+*** spampd.orig	Wed Apr  7 14:32:09 2004
+--- spampd	Wed Apr  7 14:32:17 2004
+*************** my $server = bless {
+*** 831,837 ****
+  				syslog_ident => 'spampd',
+  				syslog_facility => 'mail',
+  				background => 1,
+! 				# setsid => 1,
+  				pid_file => $pidfile,
+  				user => $user,
+  				group => $group,
+--- 831,837 ----
+  				syslog_ident => 'spampd',
+  				syslog_facility => 'mail',
+  				background => 1,
+! 				setsid => 1,
+  				pid_file => $pidfile,
+  				user => $user,
+  				group => $group,
