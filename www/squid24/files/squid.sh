@@ -1,9 +1,6 @@
 #!/bin/sh
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+PREFIX=%%PREFIX%%
 
 case "$1" in
 start)
@@ -18,8 +15,11 @@ stop)
 		#echo "Sleeping for 45 seconds to allow squid to shutdown.."
 		#sleep 45 
 	;;
+restart)
+		${PREFIX}/sbin/squid -k reconfigure
+	;;
 *)
-	echo "Usage: `basename $0` {start|stop}" >&2
+	echo "Usage: `basename $0` {start|stop|restart}" >&2
 	;;
 esac
 
