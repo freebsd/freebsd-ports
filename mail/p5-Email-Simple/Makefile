@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	Email-Simple
-PORTVERSION=	1.90
+PORTVERSION=	1.91
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	Simple, fast mail parser
+COMMENT=	Simple parsing of RFC2822 message format and headers
 
 PERL_CONFIGURE=	yes
 
