@@ -10,15 +10,14 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	noia-full
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	20041102
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
-DISTNAME=	ICON-Noia-full-${PORTVERSION}
+DISTNAME=	ICON-Noia
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
-COMMENT=	Noia-Full Icons for Gnome
+COMMENT=	Noia Icons for Gnome
 
 NO_PACKAGE=	${REASON}
 NO_CDROM=	${REASON}
