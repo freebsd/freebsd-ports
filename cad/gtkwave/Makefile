@@ -19,7 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

@@ -20,7 +20,8 @@ LIB_DEPENDS=	geda.15:${PORTSDIR}/cad/libgeda \
 
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
