@@ -6675,6 +6675,7 @@ replaceit	ports/textproc/replaceit
 replay		ports/audio/replay
 reportmagic	ports/www/reportmagic
 repquota	src/usr.sbin/repquota
+resid		ports/audio/resid
 restore		src/sbin/restore
 resume		ports/textproc/resume
 retawq		ports/www/retawq
