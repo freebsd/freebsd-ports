@@ -1,33 +1,33 @@
 bin/yaws
 etc/yaws.conf.sample
-lib/yaws/ebin/mime_type_c.beam
-lib/yaws/ebin/mime_types.beam
-lib/yaws/ebin/yaws.app
-lib/yaws/ebin/yaws.beam
-lib/yaws/ebin/yaws_404.beam
-lib/yaws/ebin/yaws_api.beam
-lib/yaws/ebin/yaws_app.beam
-lib/yaws/ebin/yaws_cgi.beam
-lib/yaws/ebin/yaws_compile.beam
-lib/yaws/ebin/yaws_config.beam
-lib/yaws/ebin/yaws_ctl.beam
-lib/yaws/ebin/yaws_debug.beam
-lib/yaws/ebin/yaws_html.beam
-lib/yaws/ebin/yaws_log.beam
-lib/yaws/ebin/yaws_log_file_h.beam
-lib/yaws/ebin/yaws_ls.beam
-lib/yaws/ebin/yaws_revproxy.beam
-lib/yaws/ebin/yaws_server.beam
-lib/yaws/ebin/yaws_session_server.beam
-lib/yaws/ebin/yaws_ssl.beam
-lib/yaws/ebin/yaws_sup.beam
-lib/yaws/ebin/yaws_ticker.beam
-lib/yaws/ebin/yaws_vsn.beam
-lib/yaws/ebin/yaws_zlib.beam
-lib/yaws/include/yaws.hrl
-lib/yaws/include/yaws_api.hrl
-lib/yaws/priv/mime.types
-lib/yaws/priv/setuid_drv.so
+lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_type_c.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_types.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws.app
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_404.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_api.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_app.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_cgi.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_compile.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_config.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ctl.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_debug.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ssl.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_vsn.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
+lib/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
+lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
+lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
+lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
 www/yaws/END
 www/yaws/EXHEAD
 www/yaws/HEAD
@@ -219,10 +219,10 @@ www/yaws/ybed.erl
 @dirrm www/yaws/icons/small
 @dirrm www/yaws/icons
 @dirrm www/yaws
-@dirrm lib/yaws/priv
-@dirrm lib/yaws/include
-@dirrm lib/yaws/ebin
-@dirrm lib/yaws
+@dirrm lib/erlang/lib/yaws-%%VERSION%%/priv
+@dirrm lib/erlang/lib/yaws-%%VERSION%%/include
+@dirrm lib/erlang/lib/yaws-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/yaws-%%VERSION%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p /var/log/yaws
 @unexec rmdir /var/log/yaws 2>/dev/null || true

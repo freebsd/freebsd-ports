@@ -7,7 +7,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -17,12 +17,16 @@ COMMENT=	A webserver for dynamic content written in Erlang
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5
+
+APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -43,13 +47,13 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
 	@${INSTALL_DATA} ${FILESDIR}/yaws.conf.sample ${PREFIX}/etc/
-	@${MKDIR} ${PREFIX}/lib/yaws/ebin
-	@${MKDIR} ${PREFIX}/lib/yaws/include
-	@${MKDIR} ${PREFIX}/lib/yaws/priv
+	@${MKDIR} ${APPDIR}/ebin
+	@${MKDIR} ${APPDIR}/include
+	@${MKDIR} ${APPDIR}/priv
 	@${MKDIR} ${PREFIX}/www/yaws
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/yaws/ebin
-	@${INSTALL_DATA} ${WRKSRC}/priv/* ${PREFIX}/lib/yaws/priv
-	@${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/lib/yaws/include
+	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${APPDIR}/ebin
+	@${INSTALL_DATA} ${WRKSRC}/priv/* ${APPDIR}/priv
+	@${INSTALL_DATA} ${WRKSRC}/include/* ${APPDIR}/include
 	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${PREFIX}/www/yaws)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
