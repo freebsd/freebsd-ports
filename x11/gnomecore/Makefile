@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		gnomeprint.7:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
