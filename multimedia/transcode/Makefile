@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=	--enable-theora=no
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.7:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else
