@@ -1,0 +1,13 @@
+--- symfile.c.orig	Sat Feb  6 13:40:02 1999
++++ symfile.c	Sun Feb 28 19:33:48 1999
+@@ -52,6 +52,10 @@
+ #define O_BINARY 0
+ #endif
+ 
++#ifndef bfd_section_lma
++#define bfd_section_lma(bfd, ptr) ((ptr)->lma)
++#endif
++
+ int (*ui_load_progress_hook) PARAMS ((char *, unsigned long));
+ void (*pre_add_symbol_hook) PARAMS ((char *));
+ void (*post_add_symbol_hook) PARAMS ((void));
