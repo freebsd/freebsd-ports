@@ -1,8 +1,0 @@
-The TRM Generator is a small test application that generates Relatable
-TRM acoustic fingerprints. This tool is mainly designed as a test/debugging
-tool for software developers, and is both an application and a developer
-library.
-
-WWW: http://www.musicbrainz.org/products/trmgen/download.html
-
-- Frerich Raabe frerich.raabe@gmx.de
