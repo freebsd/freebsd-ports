@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL_image.9:${PORTSDIR}/graphics/sdl_image \
+LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
