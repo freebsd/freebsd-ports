@@ -1,11 +1,29 @@
---- Makefile.orig	Tue Jul 29 15:36:52 1997
-+++ Makefile	Thu Jul 31 16:17:26 1997
-@@ -35,7 +35,7 @@
- #INSTALL= /usr/ucb/install
- #INSTALL= /usr/local/gnu/bin/install
+--- Makefile.in.orig	Thu Jul  9 15:50:06 1998
++++ Makefile.in	Tue Mar  9 20:33:26 1999
+@@ -51,7 +51,7 @@
+ nwrite: $(OBJECTS)
+ 	$(CC) $(CFLAGS) -o nwrite $(OBJECTS) $(LDFLAGS)
  
--DEST   = /usr/local
-+DEST   = $(PREFIX)
- BIN    = $(DEST)/bin
- MAN    = $(DEST)/man
+-install: Makefile installbin installman$(MANGZ) installrc
++install: Makefile installbin installman$(MANGZ) 
  
+ installbin: nwrite
+ 	-mv $(BIN)/nwrite $(BIN)/nwrite.old
+@@ -59,15 +59,12 @@
+ 	strip $(BIN)/nwrite
+ 
+ installman: nwrite.1
+-	-\rm $(MAN)/cat1/nwrite.1 
+-	$(INSTALL) -c -m 644 nwrite.1 $(MAN)/cat1/nwrite.1
++	-\rm $(MAN)/man1/nwrite.1 
++	$(INSTALL) -c -m 644 nwrite.1 $(MAN)/man1/nwrite.1
+ 
+ installman-gz: installman
+ 	-\rm $(MAN)/cat1/nwrite.1.gz
+ 	gzip $(MAN)/cat1/nwrite.1
+-
+-installrc: nwrite.rc
+-	$(INSTALL) -c -m 644 nwrite.rc $(SYSTEM_NWRITERC)
+ 
+ Makefile: Makefile.in
+ 	sh ./config.status
