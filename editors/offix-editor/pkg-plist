@@ -1,0 +1,4 @@
+bin/editor
+man/man1/editor.1.gz
+share/OffiX/editor.help
+@dirrm share/OffiX
