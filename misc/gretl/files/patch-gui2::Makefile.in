@@ -1,15 +1,33 @@
---- gui2/Makefile.in.orig	Thu Sep 25 22:54:01 2003
-+++ gui2/Makefile.in	Sun Oct  5 20:46:18 2003
+--- gui2/Makefile.in.orig	Wed Nov 26 00:59:06 2003
++++ gui2/Makefile.in	Thu Dec 25 13:25:07 2003
 @@ -4,6 +4,7 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
  libdir = @libdir@
-+datadir= @datadir@
++datadir = @datadir@
  CC = @CC@
  CFLAGS = @CFLAGS@
  MAKE = @MAKE@
-@@ -47,19 +48,18 @@
-   LIBS = $(GNOME_LIBS) $(GTKSOURCEVIEW_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
+@@ -47,7 +48,7 @@
+ 
+ ifeq ($(have_gtksourceview),yes)
+   langbase := $(shell pkg-config --variable=prefix gtksourceview-1.0)
+-  langdir = $(langbase)/share/gtksourceview-1.0/language-specs
++  langdir = $(datadir)/gtksourceview-1.0/language-specs
+   query_install_lang = install-lang
+ endif
+ 
+@@ -56,7 +57,7 @@
+     GTKSOURCEVIEW_CFLAGS = -I$(topsrc)/gui2
+     GTKSOURCEVIEW_LIBS = -L./gtksourceview -lgtksourceview-lite
+     MY_SOURCEVIEW_LIB = gtksourceview/libgtksourceview-lite.a
+-    langdir = $(prefix)/share/gretl/gtksourceview
++    langdir = $(datadir)/gretl/gtksourceview
+     query_install_lang = install-lang
+   endif
+ endif
+@@ -66,14 +67,13 @@
+ 	../lib/libgretl-1.0.la
    GUI_CFLAGS = $(GNOME_CFLAGS) $(GTKSOURCEVIEW_CFLAGS) $(GTK_EXTRA_CFLAGS)
    query_install_gnome = install-gnome
 -  GNOMEDEF = -DGNOME_DISABLE_DEPRECATED -DDATADIR=\"$(gnome_prefix)/share\"
@@ -24,14 +42,8 @@
 +  localedir = $(prefix)/share/locale
    NLSDEF = -DLOCALEDIR=\"$(localedir)\"
  endif
- ifeq ($(have_gtksourceview),yes)
-   langbase := $(shell pkg-config --variable=prefix gtksourceview-1.0)
--  langdir = $(langbase)/share/gtksourceview-1.0/language-specs
-+  langdir = $(datadir)/gtksourceview-1.0/language-specs
-   query_install_lang = install-lang
- endif
  
-@@ -72,7 +72,7 @@
+@@ -87,7 +87,7 @@
  
  # Directories
  bindir	= $(prefix)/bin
@@ -40,16 +52,20 @@
  tooldir = $(topsrc)/tools
  libsrc = $(topsrc)/lib/src
  clisrc = $(topsrc)/cli
-@@ -110,7 +110,7 @@
+@@ -126,10 +126,10 @@
  	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
  
  $(GTKEXTRA_LITE): 
 -	make -C gtkextra-lite
 +	$(MAKE) -C gtkextra-lite
  
- -include $(OBJS:.o=.d)
+ gtksourceview/libgtksourceview-lite.a:
+-	make -C gtksourceview
++	$(MAKE) -C gtksourceview
  
-@@ -122,7 +122,7 @@
+ .deps:
+ 	mkdir $@
+@@ -144,7 +144,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
  
  install-data: installdirs

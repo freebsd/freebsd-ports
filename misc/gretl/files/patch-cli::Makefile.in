@@ -1,5 +1,5 @@
---- cli/Makefile.in.orig	Sun Jun 29 04:06:18 2003
-+++ cli/Makefile.in	Fri Jul 25 20:49:23 2003
+--- cli/Makefile.in.orig	Wed Oct 22 06:22:31 2003
++++ cli/Makefile.in	Sun Oct 26 10:19:56 2003
 @@ -9,12 +9,16 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
@@ -18,7 +18,7 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -39,7 +43,7 @@
+@@ -40,7 +44,7 @@
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
@@ -27,12 +27,12 @@
  
  CLI = gretlcli
  LIBTOOL = ../libtool
-@@ -49,7 +53,7 @@
- 	$(CC) -MM -MG -I$(libsrc) $(DEFS) $< >$*.d 2>/dev/null
+@@ -50,7 +54,7 @@
+ 	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
  
- $(CLI): $(OBJS)
--	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(READLINE_LIBS) 
-+	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS) $(LDFLAGS)
+ $(CLI): .deps $(OBJS)
+-	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) 
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS) $(LDFLAGS)
  
- -include gretlcli.d
- 
+ .deps:
+ 	mkdir $@

@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Tue Sep  9 21:46:20 2003
-+++ lib/Makefile.in	Wed Sep 10 14:28:33 2003
+--- lib/Makefile.in.orig	Thu Dec 11 23:27:53 2003
++++ lib/Makefile.in	Thu Dec 25 13:19:07 2003
 @@ -18,6 +18,11 @@
  
  have_gtk = @have_gtk@
@@ -21,30 +21,32 @@
  
  INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
  
-@@ -48,7 +53,7 @@
+@@ -48,8 +53,8 @@
  
  # hard-coded -L/usr/local/lib is a bodge!!
  
--LIBS = $(LAPACK_LIBS) -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS)
-+LIBS = $(LAPACK_LIBS) -lm -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
+-LIBS = $(LAPACK_LIBS) -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) \
+-	$(GLIB_LIBS) $(GMP_LIBS)
++LIBS = $(LAPACK_LIBS) -lm -lz $(XML_LIBS) \
++	$(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -76,7 +81,7 @@
- 
+@@ -78,7 +83,7 @@
  LIBTOOL = ../libtool
  
--override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) $(GMP_CFLAGS) -DHAVE_CONFIG_H
-+override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) $(GMP_CFLAGS) -DHAVE_CONFIG_H $(CPPFLAGS)
+ override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) \
+-	$(GMP_CFLAGS) -DHAVE_CONFIG_H
++	$(GMP_CFLAGS) -DHAVE_CONFIG_H $(CPPFLAGS)
  
- COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)
+ COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
  
-@@ -86,7 +91,7 @@
+@@ -88,7 +93,7 @@
  
- $(LIBGRETL): $(LOBJS) $(AUX_LOBJ)
+ $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:11:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:11:0 $(LDFLAGS)
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:14:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:14:0 $(LDFLAGS)
  
- -include $(LOBJS:.lo=.d)
- 
+ .deps:
+ 	mkdir $@
