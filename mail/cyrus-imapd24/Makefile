@@ -131,7 +131,7 @@ BDB_SUFFIX=	-4.3
 BDB_MAJOR=	0
 .endif
 BDB_SUFFIX?=	${BDB_VER}
-LIB_DEPENDS=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${BDB_VER}
+LIB_DEPENDS+=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${BDB_VER}
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${BDB_VER} \
 		--with-bdb=db${BDB_SUFFIX}
 
