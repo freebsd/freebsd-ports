@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = German support
+
     SUBDIR += BBBike
     SUBDIR += aspell
     SUBDIR += citrix_ica

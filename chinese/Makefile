@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Chinese support
+
     SUBDIR += CJK
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server

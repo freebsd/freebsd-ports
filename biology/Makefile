@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Biology
+
     SUBDIR += L-Breeder
     SUBDIR += act
     SUBDIR += artemis

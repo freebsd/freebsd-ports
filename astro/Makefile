@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Astronomical ports
+
     SUBDIR += SETIsupport
     SUBDIR += accrete
     SUBDIR += celestia

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Ports related to the World Wide Web
+
     SUBDIR += MT
     SUBDIR += MT-PM
     SUBDIR += Mosaic         # requires Motif

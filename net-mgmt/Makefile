@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Network management tools
+
     SUBDIR += NeTraMet
     SUBDIR += aggregate
     SUBDIR += aguri

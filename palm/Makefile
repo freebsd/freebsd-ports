@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Software support for the 3Com Palm(tm) series
+
     SUBDIR += bibelot
     SUBDIR += coldsync
     SUBDIR += gnomepilot-conduits2

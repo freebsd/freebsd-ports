@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = CAD tools
+
     SUBDIR += admesh
     SUBDIR += astk-client
     SUBDIR += astk-serveur

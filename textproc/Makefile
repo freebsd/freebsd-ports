@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Text processing utilities (does not include desktop publishing)
+
     SUBDIR += 2bsd-diff
     SUBDIR += Ebnf2ps
     SUBDIR += af-aspell

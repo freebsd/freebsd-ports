@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = MBone applications
+
     SUBDIR += imm
     SUBDIR += mcl
     SUBDIR += nte

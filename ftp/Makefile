@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = FTP client and server utilities
+
     SUBDIR += IglooFTP
     SUBDIR += axel
     SUBDIR += axelq

@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = X Windows System themes
+
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla

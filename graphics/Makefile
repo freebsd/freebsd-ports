@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Graphics tools and libraries
+
     SUBDIR += 4va
     SUBDIR += Cgraph
     SUBDIR += Coin

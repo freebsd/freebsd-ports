@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Java language support
+
     SUBDIR += avalon-logkit
     SUBDIR += bluej
     SUBDIR += bouncycastle

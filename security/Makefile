@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Security tools
+
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += IMHear

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 file managers
+
     SUBDIR += FSViewer
     SUBDIR += apotheke
     SUBDIR += asfiles

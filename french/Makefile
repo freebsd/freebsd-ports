@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = French support
+
     SUBDIR += abispell-fr-FR
     SUBDIR += aspell
     SUBDIR += aster

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Scientific ports
+
     SUBDIR += 2dhf
     SUBDIR += at
     SUBDIR += bblimage

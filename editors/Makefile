@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Editors
+
     SUBDIR += AbiWord2
     SUBDIR += MathPlanner
     SUBDIR += aee

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Benchmarking tools
+
     SUBDIR += autobench
     SUBDIR += bonnie
     SUBDIR += bonnie++

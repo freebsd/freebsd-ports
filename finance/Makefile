@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Monetary, financial and related applications
+
     SUBDIR += aqmoney
     SUBDIR += cbb
     SUBDIR += emma

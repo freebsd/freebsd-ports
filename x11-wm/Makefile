@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 window managers
+
     SUBDIR += 9wm
     SUBDIR += aewm
     SUBDIR += aewm++

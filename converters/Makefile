@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Character code converters
+
     SUBDIR += aish
     SUBDIR += asr10
     SUBDIR += base64

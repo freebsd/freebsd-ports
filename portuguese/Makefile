@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Portuguese language support
+
     SUBDIR += aspell
     SUBDIR += frontpage-pt_BR
     SUBDIR += ispell-pt_BR

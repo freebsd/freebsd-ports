@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Multimedia software
+
     SUBDIR += acidrip
     SUBDIR += acme
     SUBDIR += avidemux

@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Polish language support
+
     SUBDIR += aspell
     SUBDIR += ekg
     SUBDIR += gnugadu

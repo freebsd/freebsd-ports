@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Ukrainian support
+
     SUBDIR += aspell
     SUBDIR += gd
     SUBDIR += iceb

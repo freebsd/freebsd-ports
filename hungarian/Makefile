@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Hungarian language support
+
     SUBDIR += hu-phone
     SUBDIR += hu-zipcodes
     SUBDIR += ispell

@@ -1,5 +1,8 @@
 # $FreeBSD$
 #
+
+    COMMENT = Arabic language support
+
     SUBDIR += ae_fonts_mono
     SUBDIR += ae_fonts_ttf
     SUBDIR += kacst_fonts

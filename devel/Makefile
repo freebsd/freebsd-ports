@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Development utilities
+
     SUBDIR += ElectricFence
     SUBDIR += ORBacus
     SUBDIR += ORBit
