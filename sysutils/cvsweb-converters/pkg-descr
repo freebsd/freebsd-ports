@@ -4,7 +4,7 @@ This tool is primarily intended for people tracking the development of
 FreeBSD and other open source projects with a public CVS repository.
 
 This package provides three Perl scripts:
-  + commitlog2cvsweb: converts FreeBSD commitlog files to HTML
+  + commitlog2cvsweb: converts FreeBSD or DragonFlyBSD commitlog files to HTML
   + cvsrdiff2cvsweb:  converts output of "cvs rdiff -s" to HTML
   + cvsuplog2cvsweb:  converts log output of "cvsup" to HTML
 
