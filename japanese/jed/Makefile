@@ -8,7 +8,7 @@
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese editors
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/ \
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/ \
 		http://kondara.sdri.co.jp/~kikutani/slang/
 DISTNAME=	${PORTNAME}-B${VERSION:R}-${VERSION:E}__J${JP_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

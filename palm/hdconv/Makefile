@@ -8,8 +8,7 @@
 PORTNAME=	hdconv
 PORTVERSION=	2.01f
 CATEGORIES=	palm databases linux
-MASTER_SITES=	ftp://ftp.SilberSoft.com/pub/Software/Database/HanDBase/ \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/
+MASTER_SITES=	ftp://ftp.SilberSoft.com/pub/Software/Database/HanDBase/
 DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	knu@FreeBSD.org
