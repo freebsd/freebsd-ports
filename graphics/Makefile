@@ -172,6 +172,7 @@
     SUBDIR += libdivxencore
     SUBDIR += libdjvu++
     SUBDIR += libdv
+    SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
