@@ -1,5 +1,5 @@
---- mime.c.orig	Thu Sep 18 15:26:55 2003
-+++ mime.c	Wed Oct 15 18:38:42 2003
+--- sources/mime.c.orig	Thu Sep 18 15:26:55 2003
++++ sources/mime.c	Wed Oct 15 18:38:42 2003
 @@ -43,8 +43,8 @@
      f = fopen(mimeTypesFileName, "r");
      if (f == NULL)

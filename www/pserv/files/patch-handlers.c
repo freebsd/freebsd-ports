@@ -1,5 +1,5 @@
---- handlers.c.orig	Mon Oct 20 10:27:32 2003
-+++ handlers.c	Tue Oct 21 00:13:59 2003
+--- sources/handlers.c.orig	Mon Oct 20 10:27:32 2003
++++ sources/handlers.c	Tue Oct 21 00:13:59 2003
 @@ -24,6 +24,7 @@
  #endif
  
@@ -295,20 +295,3 @@
          fatal = NO;
          retry = NO;
          while(!feof(inFile) && !fatal)
-@@ -408,11 +659,11 @@
-             if (howMany > 0)
-             {
- #ifdef ON_THE_FLY_CONVERSION
--		 {
--		     int i;
--		     for (i = 0; i < howMany; i++)
--		         if(outBuff[i] == '\r') outBuff[i] = '\n';
--		 }
-+                 {
-+                     int i;
-+                     for (i = 0; i < howMany; i++)
-+                         if(outBuff[i] == '\r') outBuff[i] = '\n';
-+                 }
- #endif
-                 if (send(sock, outBuff, howMany, 0) < 0)
-                 {

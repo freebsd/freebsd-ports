@@ -1,25 +1,25 @@
---- main.h.orig	Sun Oct 19 17:22:03 2003
-+++ main.h	Tue Oct 21 00:19:57 2003
-@@ -27,11 +27,12 @@
+--- sources/main.h.orig	Sat Dec 20 11:16:21 2003
++++ sources/main.h	Thu Jan  8 12:31:15 2004
+@@ -27,12 +27,13 @@
  
  
  /* --- CPP parsing options --- */
 -#define PRINTF_DEBUG          /* enable this to print some debugging messages */
 +#undef PRINTF_DEBUG          /* enable this to print some debugging messages */
  #undef ON_THE_FLY_CONVERSION /* enable this for line ending conversion */
- #undef BRAIN_DEAD_CAST       /* if your compiler is brainwashed and does not cast standard types.h structures */
- #define FORKING_SERVER       /* enables to fork for every request */
- #define AUTO_INDEX           /* enables auto-index of directories */
-+#define PHP                  /* enables transparent PHP support */
+ #define BRAIN_DEAD_CAST       /* if your compiler is brainwashed and does not cast standard types.h structures */
+ #define FORKING_SERVER        /* enables to fork for every request */
+ #define AUTO_INDEX            /* enables auto-index of directories */
+ #define SOCKADDR_REUSE        /* enables reuse oth the socket (quick relaunch) */
++#define PHP                   /* enables transparent PHP support */
+ 
  
  /* --- Configure options --- */
- #define CONFIG_FILE_NAME "pserv.conf"
-@@ -42,19 +43,19 @@
+@@ -44,18 +45,19 @@
  #define MIME_TYPE_DEFAULT "application/octet-stream"
  
  /* configuration file location */
--#define DEFAULT_CONFIG_LOCATION "/home/multix/pserv/"
--//#define DEFAULT_CONFIG_LOCATION "/Users/multix/Documents/code/pserv/"
+-#define DEFAULT_CONFIG_LOCATION "/home/multix/pserv/defaults/"
 +#define DEFAULT_CONFIG_LOCATION "/usr/local/etc/"
  
  /* hard-wired defaults, if loading of config file fails */
@@ -31,9 +31,9 @@
  #define DEFAULT_FILE_NAME "index.html"
  #define DEFAULT_SEC_TO 1
  #define DEFAULT_USEC_TO 100
--#define DEFAULT_LOG_FILE "/export/home/multix/pserv/pserv.log"
--#define DEFAULT_MIME_FILE "/export/home/multix/pserv/mime_types.dat"
--#define DEFAULT_CGI_ROOT "/export/home/multix/public_html/cgi-bin"
+-#define DEFAULT_LOG_FILE "/home/multix/pserv/pserv.log"
+-#define DEFAULT_MIME_FILE "/home/multix/pserv/mime_types.dat"
+-#define DEFAULT_CGI_ROOT "/home/multix/public_html/cgi-bin"
 +#define DEFAULT_LOG_FILE "/var/log/pserv.log"
 +#define DEFAULT_MIME_FILE "/usr/local/etc/mime.types"
 +#define DEFAULT_PHP_FILE "/usr/local/bin/php"
@@ -41,7 +41,7 @@
  #define DEFAULT_SERVER_NAME "localhost"
  
  /* amount of connections queued in listening */
-@@ -123,8 +124,10 @@
+@@ -127,8 +129,10 @@
  #define ADDRESS_LEN 16
  #define METHOD_LEN 16
  #define PROTOCOL_LEN 16
@@ -52,7 +52,7 @@
  
  /* the maximum path name of your system should be available in MAXNAMLEN 
     defined in dirent.h. If not, set a reasonable value like 1024 */
-@@ -139,7 +142,9 @@
+@@ -143,7 +147,9 @@
      char protocolVersion[PROTOCOL_LEN+1];
      int keepAlive;
      char userAgent[USER_AGENT_LEN+1];
