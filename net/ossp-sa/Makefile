@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	sa
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/sa/
 PKGNAMEPREFIX=	ossp-
@@ -16,9 +16,12 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An abstraction library for the Unix socket API
 
+LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
+CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 MAN3+=		sa.3
 

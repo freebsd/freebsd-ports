@@ -3,4 +3,4 @@ include/sa.h
 lib/libsa.a
 lib/libsa.la
 lib/libsa.so
-lib/libsa.so.11
+lib/libsa.so.12
