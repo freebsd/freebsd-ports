@@ -17,15 +17,17 @@ MAINTAINER=	ports@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/battleball ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/battleball
+	@${MKDIR} ${DOCSDIR}
 .for file in CHANGELOG README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/battleball
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

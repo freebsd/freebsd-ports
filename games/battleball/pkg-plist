@@ -1,4 +1,4 @@
 bin/battleball
-share/doc/battleball/CHANGELOG
-share/doc/battleball/README
-@dirrm share/doc/battleball
+%%PORTDOCS%%share/doc/battleball/CHANGELOG
+%%PORTDOCS%%share/doc/battleball/README
+%%PORTDOCS%%@dirrm share/doc/battleball
