@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	tdl
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	To-do list manager
 
+HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-MAN1=	tdl.1
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},; s,gcc,${CC},; \
-		s,^CFLAGS=,CFLAGS+=,' ${WRKSRC}/Makefile
+MAN1=	tdl.1
+MLINKS=	tdl.1 tdla.1 tdl.1 tdll.1 tdl.1 tdld.1 tdl.1 tdlg.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
