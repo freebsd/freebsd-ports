@@ -1,5 +1,5 @@
 --- config/i386/freebsd.h.orig	Fri Dec  5 04:15:34 1997
-+++ config/i386/freebsd.h	Sun Mar 21 17:59:06 1999
++++ config/i386/freebsd.h	Sun Apr 27 15:12:42 2003
 @@ -26,8 +26,18 @@
  
  /* The svr4 ABI for the i386 says that records and unions are returned
@@ -29,3 +29,12 @@
  
  #undef CPP_SPEC
  #define CPP_SPEC "%(cpp_cpu) %[cpp_cpu] %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
+@@ -176,7 +186,7 @@
+    done.  */
+ 
+ #undef	LINK_SPEC
+-#define LINK_SPEC "-m elf_i386 %{shared:-shared} \
++#define LINK_SPEC "%{shared:-shared} \
+   %{!shared: \
+     %{!ibcs: \
+       %{!static: \
