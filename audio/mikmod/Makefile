@@ -3,7 +3,7 @@
 # Date created:        16 November 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.6 1998/11/24 10:12:26 flathill Exp $
+# $Id: Makefile,v 1.7 1998/11/25 00:34:11 asami Exp $
 #
 
 DISTNAME=	mikmod-3.0.4
@@ -11,8 +11,6 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
-
-BROKEN=		patch
 
 pre-patch:
 	@(cd ${WRKSRC} ;\
