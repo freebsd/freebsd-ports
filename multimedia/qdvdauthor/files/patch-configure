@@ -1,0 +1,36 @@
+--- configure.orig	Sat Feb 12 22:46:49 2005
++++ configure	Mon Feb 14 20:39:36 2005
+@@ -295,20 +295,20 @@
+ 		esac;
+ 	done;
+ 	# Sanity check to make sure we have at least one media library ...
+-	if [ $WITH_MPLAYER_SUPPORT$WITH_VLC_SUPPORT$WITH_XINE_SUPPORT == "000" ];
++	if [ $WITH_MPLAYER_SUPPORT$WITH_VLC_SUPPORT$WITH_XINE_SUPPORT -eq "000" ];
+ 	then
+ 		export WITH_XINE_SUPPORT=1
+ 	fi;
+ 	# Here we check for xine, or mplayer
+-	if [ $WITH_XINE_SUPPORT == 1 ];
++	if [ $WITH_XINE_SUPPORT -eq 1 ];
+ 	then
+ 		check_xinelibs;
+ 	fi;
+-	if [ $WITH_VLC_SUPPORT == 1 ];
++	if [ $WITH_VLC_SUPPORT -eq 1 ];
+ 	then
+ 		check_vlclibs;
+ 	fi;
+-	if [ $WITH_MPLAYER_SUPPORT == 1 ];
++	if [ $WITH_MPLAYER_SUPPORT -eq 1 ];
+ 	then
+ 		check_mplayerlibs;
+ 	fi;
+@@ -316,7 +316,7 @@
+ 	# Next we write CONFIG.h
+ 	echo "#ifndef CONFIG_H" > qdvdauthor/CONFIG.h
+ 	echo "#define CONFIG_H" >> qdvdauthor/CONFIG.h
+-	echo "#define PREFIX_DIRECTORY $PREFIX" >> qdvdauthor/CONFIG.h
++	echo "#define PREFIX_DIRECTORY \"$PREFIX\"" >> qdvdauthor/CONFIG.h
+ 	echo "#endif // CONFIG_H" >> qdvdauthor/CONFIG.h
+ 	
+ 	
