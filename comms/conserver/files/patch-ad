@@ -1,5 +1,14 @@
 --- ./conserver/consent.c	Sat Nov 22 20:21:46 1997
 +++ ./conserver/consent.c	Sat Aug 23 18:05:11 1997
+@@ -197,7 +197,7 @@
+ 	 */
+ 	termp.c_iflag = IXON|IXOFF|BRKINT;
+ 	termp.c_oflag = 0;
+-	termp.c_cflag = CREAD;
++	termp.c_cflag = CREAD | (termp.c_cflag & (CLOCAL|CRTSCTS));
+ 	termp.c_cflag |= pCE->pparity->iset;
+ 	termp.c_lflag = 0;
+ 	/*
 @@ -206,5 +206,5 @@
  	 * Don't bother with the control characters as they are not used
  	 */
