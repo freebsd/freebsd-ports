@@ -30,6 +30,10 @@ TCLTKLIB_CATEGORY?=	lang
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} >= 1.7
+MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
+.endif
+
 .if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 .else

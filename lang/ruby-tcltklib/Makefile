@@ -51,6 +51,10 @@ TK_DIR=		`echo "${TK_LIB}"  | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} >= 1.7
+MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
+.endif
+
 .if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 .else
