@@ -32,7 +32,7 @@ if( getgrnam( "msql" ) ) {
 print "msql user using uid $msqlUID\n";
 print "msql user using gid $msqlGID\n";
 
-system( "/usr/bin/chpass -a \"msql:*:$msqlUID:$msqlGID::0:0:mSQL-2 pseudo-user:/var/db/msqldb:/bin/sh\"" );
+system( "/usr/bin/chpass -a \"msql:*:$msqlUID:$msqlGID\::0:0:mSQL-2 pseudo-user:/var/db/msqldb:/bin/sh\"" );
 
 sub append_file {
 	local($file,@list) = @_;
