@@ -1,0 +1,7 @@
+NQS (or more properly Generic NQS) is a Network Queuing System available
+for multiple platforms.
+It provides for configurable limits on jobs on a per queue basis
+as well as for the total queue system.
+As it's name suggests it allows jobs to be submitted on one machine and
+transferred to run on another machine. It can be configured so jobs are
+automatically transferred to the least loaded machine in the cluster.

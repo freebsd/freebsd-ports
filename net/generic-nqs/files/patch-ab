@@ -1,0 +1,21 @@
+--- Source-Tree/nqsdaemon/all-systems/nqs_reqser.c.orig	Wed Sep 11 05:32:26 1996
++++ Source-Tree/nqsdaemon/all-systems/nqs_reqser.c	Sat May  2 11:09:26 1998
+@@ -1746,7 +1746,7 @@
+     char    *cp;
+     
+     environment_file = fopen("/etc/environment",  "r");
+-    if ( environment_file != (FILE *) 0 ) {
++    if ( environment_file > (FILE *) 0 ) {
+ 	while ( (fgets (env_line, sizeof(env_line), environment_file )
+ 		!= (char *) 0) ) {
+ 	    if (env_line[0] == '#') continue;
+@@ -1758,8 +1758,8 @@
+ 		 return (the_path); 
+ 	    }   
+ 	}
++    	fclose ( environment_file );
+     }
+-    fclose ( environment_file );
+     /*
+      * The file was not found, or the path was not in it.
+      */

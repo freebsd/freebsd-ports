@@ -1,0 +1,24 @@
+#!/bin/sh
+qmgr <<eof
+#
+create pipe misc-sched run_limit= 40 destination= batch
+enable queue misc-sched
+start queue misc-sched
+#
+create batch_queue batch    priority = 10 run_limit = 4 user_limit = 2
+set data_limit = (2gb) batch
+set per_process permfile_limit = (2gb) batch
+set STack_limit = ( 8192kb ) batch
+#
+create batch_queue misc     priority = 10 run_limit = 4 user_limit = 1
+set data_limit = (2gb) batch
+set per_process permfile_limit = (50mb) misc
+set STack_limit = ( 8192kb ) misc
+#
+set default batch_request queue batch
+SEt SHell_strategy FIxed = (/bin/csh)
+enable queue batch
+enable queue misc
+start queue batch
+start queue misc
+eof
