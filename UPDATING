@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041121:
+  AFFECTS: users of news/rawdog
+  AUTHOR: tim@bishnet.net
+
+  Rawdog 2.x changes the format of the state file used in 1.x. To
+  upgrade from 1.x to 2.x the rawdog author recommends the following:
+
+    cp -R ~/.rawdog ~/.rawdog-old
+    rm ~/.rawdog/state
+    rawdog -u
+    rawdog --upgrade ~/.rawdog-old ~/.rawdog
+    rawdog -w
+
+  Once you're happy with the new version:
+    rm -r ~/.rawdog-old
+
 20041118:
   AFFECTS: users of sysutils/portupgrade
   AUTHOR: lofi@freebsd.org
