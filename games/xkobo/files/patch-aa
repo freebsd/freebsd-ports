@@ -1,0 +1,11 @@
+--- ./Imakefile.org	Sun Jul  2 19:12:20 1995
++++ ./Imakefile	Thu Jul 27 15:55:15 1995
+@@ -9,7 +9,7 @@
+ WAIT_MSEC   = 20
+ 
+ XCOMM #####  RECORDS
+-HSCORE_DIR  = /usr/games/xkobo-scores
++HSCORE_DIR  = /usr/X11R6/lib/X11/xkobo-scores
+ 
+ XCOMM #####  C++ COMPILER
+ CXX          = g++
