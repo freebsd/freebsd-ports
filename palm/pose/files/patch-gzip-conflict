@@ -1,0 +1,9 @@
+--- ../SrcShared/Gzip/gzip.h.orig	Thu Feb 17 11:34:23 2005
++++ ../SrcShared/Gzip/gzip.h	Thu Feb 17 11:34:50 2005
+@@ -320,4 +320,6 @@
+ //extern voidp xmalloc      OF((unsigned int size));	// POSER
+ 
+ 	/* in inflate.c */
++#define inflate POSE_inflate
++#define inflate_codes POSE_inflate_codes
+ extern int inflate OF((void));
