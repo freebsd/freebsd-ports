@@ -1,0 +1,11 @@
+--- src/db_file.c.orig	Thu Apr 20 05:44:56 2000
++++ src/db_file.c	Thu Jul 13 07:39:36 2000
+@@ -212,7 +212,7 @@
+ 	if((retval=fork())==0){
+ 	  /* The child process */
+ 	  close(pipefd[0]);
+-	  conf->db_gzin=gzdopen(fileno(conf->db_in),"rb");
++	  conf->db_gzin=gzdopen(fileno((FILE *)conf->db_in),"rb");
+ 	  /* WARNING This causes weird problems. Don't do it.
+ 	     fclose(conf->db_in);
+ 	  */
