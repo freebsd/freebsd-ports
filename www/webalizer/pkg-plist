@@ -2,16 +2,16 @@ bin/%%PKGNAMEPREFIX%%webalizer
 @exec ln -f %B/%%PKGNAMEPREFIX%%webalizer %B/%%PKGNAMEPREFIX%%webazolver
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/CHANGES
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/COPYING
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/Copyright
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/DNS.README
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/INSTALL
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/README
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/README.FIRST
-%%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/country-codes.txt
-%%PORTDOCS%%@dirrm share/doc/%%PKGNAMEPREFIX%%webalizer
-%%PORTDOCS%%share/examples/%%PKGNAMEPREFIX%%webalizer/msfree.png
-%%PORTDOCS%%share/examples/%%PKGNAMEPREFIX%%webalizer/sample.conf
-%%PORTDOCS%%share/examples/%%PKGNAMEPREFIX%%webalizer/webalizer.png
-%%PORTDOCS%%@dirrm share/examples/%%PKGNAMEPREFIX%%webalizer
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/DNS.README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/country-codes.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/msfree.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/webalizer.png
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
