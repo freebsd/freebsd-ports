@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.40 1998/10/06 06:49:12 tg Exp $
+# $Id: Makefile,v 1.41 1998/11/11 05:37:26 asami Exp $
 #
 
 DISTNAME=       pyth151
@@ -34,6 +34,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 MAKE_FLAGS=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
+PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
 
 #
@@ -58,7 +59,7 @@ SETUP_LOCAL=	Setup.tk
 # This option is enabled by default.
 #
 WITH_THREADS?=	yes
-LIBC_R!=	/sbin/ldconfig -r | grep c_r
+LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if ${LIBC_R} != "" && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
 CFLAGS+=		-D_THREAD_SAFE
@@ -70,6 +71,7 @@ CONFIGURE_ENV=		LDFLAGS="-pthread ${LDFLAGS}"
 #
 .if exists(/usr/src/contrib/libgmp/gmp-impl.h)
 SETUP_LOCAL+=	Setup.gmp
+PLIST_GMP=	lib/python1.5/lib-dynload/mpzmodule.so
 .endif
 
 post-extract:
@@ -97,9 +99,12 @@ pre-install:
 	${MKDIR} ${PREFIX}/lib/python1.5/plat-freebsd2
 	${INSTALL_DATA} ${WRKSRC}/Lib/plat-freebsd2/* ${PREFIX}/lib/python1.5/plat-freebsd2
 .endif
+	@${ECHO} ${PLIST_GMP} | sort -r -o ${PLIST} - ${PKGDIR}/PLIST
 
 post-install:
 	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd2/regen ${PREFIX}/lib/python1.5/plat-freebsd3
 	strip ${PREFIX}/bin/python
+	@${MKDIR} ${PREFIX}/share/doc/python
+	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
 
 .include <bsd.port.post.mk>
