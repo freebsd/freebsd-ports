@@ -4407,6 +4407,7 @@ myth2_demo	ports/games/myth2_demo
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
+nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
 nag		ports/deskutils/nag
