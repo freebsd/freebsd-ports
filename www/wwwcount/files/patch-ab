@@ -1,0 +1,19 @@
+*** Makefile.in.bak	Fri May  3 06:20:33 1996
+--- Makefile.in	Thu May 16 05:43:27 1996
+***************
+*** 22,28 ****
+  ##
+  ACCESS_AUTH= -DACCESS_AUTH=1
+  DEFINES= $(INCLUDES) $(DEFS) $(ACCESS_AUTH) -D__USE_FIXED_PROTOTYPES__
+! CFLAGS= -O $(DEFINES) -DSYS_UNIX=1 -DDEBUG=1
+  
+  
+  OBJS= main.o parse.o strimage.o
+--- 22,28 ----
+  ##
+  ACCESS_AUTH= -DACCESS_AUTH=1
+  DEFINES= $(INCLUDES) $(DEFS) $(ACCESS_AUTH) -D__USE_FIXED_PROTOTYPES__
+! CFLAGS+= $(DEFINES) -DSYS_UNIX=1 -DDEBUG=1
+  
+  
+  OBJS= main.o parse.o strimage.o

@@ -1,0 +1,22 @@
+@owner nobody
+@group nobody
+www/cgi-bin/Count.cgi
+etc/Counter
+etc/Counter/conf
+etc/Counter/conf/count.cfg
+etc/Counter/data
+etc/Counter/data/sample.dat
+etc/Counter/Log
+etc/Counter/rgb.txt
+etc/Counter/digits
+etc/Counter/digits/A
+etc/Counter/digits/A/strip.gif
+etc/Counter/digits/B
+etc/Counter/digits/B/strip.gif
+etc/Counter/digits/C
+etc/Counter/digits/C/strip.gif
+etc/Counter/digits/D
+etc/Counter/digits/D/strip.gif
+etc/Counter/digits/D/lenna.gif
+etc/Counter/digits/E
+etc/Counter/digits/E/strip.gif
