@@ -13,6 +13,7 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/:fdo \
 MASTER_SITE_SUBDIR=	anholt/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fdo \
 		Wraphelp2.gz:local
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Display Manager Control Protocol library
