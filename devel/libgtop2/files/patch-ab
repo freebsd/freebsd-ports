@@ -1,0 +1,65 @@
+--- lib/Makefile.in.orig	Sun Sep 27 22:28:31 1998
++++ lib/Makefile.in	Wed Sep 30 01:47:05 1998
+@@ -125,7 +125,7 @@
+ LT_CURRENT = @LT_CURRENT@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_VERSION_INFO = @LT_VERSION_INFO@
++LT_VERSION_INFO = --version-info 0:0:0
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+--- sysdeps/common/Makefile.in.orig	Sun Sep 27 22:28:06 1998
++++ sysdeps/common/Makefile.in	Wed Sep 30 01:48:11 1998
+@@ -125,7 +125,7 @@
+ LT_CURRENT = @LT_CURRENT@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_VERSION_INFO = @LT_VERSION_INFO@
++LT_VERSION_INFO = --version-info 0:0:0
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+--- sysdeps/freebsd/Makefile.in.orig	Sun Sep 27 22:28:24 1998
++++ sysdeps/freebsd/Makefile.in	Wed Sep 30 01:48:46 1998
+@@ -124,7 +124,7 @@
+ LT_CURRENT = @LT_CURRENT@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_VERSION_INFO = @LT_VERSION_INFO@
++LT_VERSION_INFO = --version-info 0:0:0
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+--- sysdeps/names/Makefile.in.orig	Sun Sep 27 22:28:15 1998
++++ sysdeps/names/Makefile.in	Wed Sep 30 01:49:10 1998
+@@ -125,7 +125,7 @@
+ LT_CURRENT = @LT_CURRENT@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_VERSION_INFO = @LT_VERSION_INFO@
++LT_VERSION_INFO = --version-info 0:0:0
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+--- Makefile.in.orig	Sun Sep 27 22:27:55 1998
++++ Makefile.in	Wed Sep 30 03:49:17 1998
+@@ -163,8 +163,7 @@
+ @GUILE_TRUE@guile_SUBDIRS = guile
+ @GUILE_FALSE@guile_SUBDIRS =
+ 
+-SUBDIRS = po intl support macros include sysdeps lib src \
+-	  $(examples_SUBDIRS)
++SUBDIRS = po intl macros include sysdeps lib src
+ 
+ DIST_SUBDIRS = po intl support macros include sysdeps src lib guile examples
+ 
+@@ -174,7 +173,7 @@
+ 	LIBGTOP-VERSION features.def perl/Makefile.PL.in perl/perl.awk \
+ 	perl/MANIFEST perl/Changes libgtop-config.in RELNOTES-0.25
+ 
+-confexecdir=$(libdir)
++confexecdir=$(sysconfdir)
+ confexec_DATA = $(top_builddir)/libgtopConf.sh
+ 
+ bin_SCRIPTS = $(top_builddir)/libgtop-config
