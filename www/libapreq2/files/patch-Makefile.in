@@ -1,0 +1,43 @@
+--- Makefile.in.orig	Sat Jun  5 11:37:37 2004
++++ Makefile.in	Sat Jun  5 11:38:18 2004
+@@ -493,7 +493,7 @@
+ 	-rm -rf $(distdir)
+ 	tar xzvf $(distdir).tar.gz
+ 	@cd $(distdir); @PERL@ -M$(EUM) -e "die 'Bogus MANIFEST' if $(EUM)::manicheck"
+-	@cd $(distdir); @PERL@ Makefile.PL -apxs @APACHE2_APXS@ && make test
++	@cd $(distdir); @PERL@ Makefile.PL -apxs @APACHE2_APXS@ && $(MAKE) test
+ 	rm -rf $(distdir)
+ 	@echo "$(distdir).tar.gz is kosher."
+ 
+@@ -534,26 +534,26 @@
+ test: lib_test env_test $(PERL_TEST)
+ 
+ env_test:
+-	cd env; make test
++	cd env; $(MAKE) test
+ 
+ lib_test: check
+ 	t/testall -v
+ 
+ perl_install:
+-	cd glue/perl; make install
++	cd glue/perl; $(MAKE) install
+ 
+ perl_test:
+-	cd glue/perl; make test
++	cd glue/perl; $(MAKE) test
+ 
+ perl_glue:
+ 	cd glue/perl; @PERL@ ../../build/xsbuilder.pl run
+ 	cd glue/perl; @PERL@ Makefile.PL -apxs @APACHE2_APXS@
+-	cd glue/perl; make
++	cd glue/perl; $(MAKE)
+ 
+ @BUILD_HTTPD_TRUE@install-exec-local: httpd_install
+ 
+ @BUILD_HTTPD_TRUE@httpd_install:
+-@BUILD_HTTPD_TRUE@	cd @APACHE2_SRC@; make install
++@BUILD_HTTPD_TRUE@	cd @APACHE2_SRC@; $(MAKE) install
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sun Nov 16 12:04:20 2003
++++ src/Makefile.in	Fri Jun 11 14:15:04 2004
+@@ -110,7 +110,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ INCLUDES = @APR_INCLUDES@ @APU_INCLUDES@
+-LIBS = @APR_LTLIBS@ @APU_LTLIBS@
++LIBS = @APR_LTLIBS@ @APU_LTLIBS@ -L$(prefix)/lib
+ BUILT_SOURCES = @APR_LA@ @APU_LA@
+ lib_LTLIBRARIES = lib@APREQ_LIBNAME@.la
+ lib@APREQ_LIBNAME@_la_SOURCES = apreq.c apreq_version.c apreq_cookie.c \
+@@ -158,7 +158,7 @@
+ 	apreq_config.h.in
+ SOURCES = $(lib@APREQ_LIBNAME@_la_SOURCES)
+ 
+-all: $(BUILT_SOURCES) apreq_config.h
++all: $(lib_LTLIBRARIES) apreq_config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+ .SUFFIXES:
