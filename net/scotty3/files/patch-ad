@@ -1,6 +1,6 @@
---- configure.orig     Wed Feb 16 19:08:00 2000
-+++ configure  Tue Jun  6 03:36:37 2000
-@@ -749,7 +749,7 @@
+--- configure	Wed Feb 16 11:08:00 2000
++++ configure	Thu Mar  8 19:22:52 2001
+@@ -749,9 +749,14 @@
  LD_FLAGS=$TCL_LD_FLAGS
  LD_SEARCH_FLAGS=$TCL_LD_SEARCH_FLAGS
  TCL_EXEC_PREFIX=$TCL_EXEC_PREFIX
@@ -8,8 +8,34 @@
 +TCL_INCLUDES=-I$TCL_PREFIX/include/tcl$TCL_VERSION
  TK_EXEC_PREFIX=$TK_EXEC_PREFIX
  
++if /usr/bin/ldd ${prefix}/bin/tclsh$TCL_VERSION | fgrep -qv libtcl; then
++	CFLAGS="$CFLAGS -DUSE_TCL_STUBS"
++	NEED_TCL_LIB=$TCL_LIB_SPEC
++fi
++
  if test $TCL_SHARED_BUILD -ne 1 ; then
-@@ -842,7 +842,7 @@
+     { echo "configure: error: Tcl is not configured with --enable-shared" 1>&2; exit 1; }
+ fi
+@@ -763,8 +767,8 @@
+ echo $ac_n "checking for tcl version""... $ac_c" 1>&6
+ echo "configure:765: checking for tcl version" >&5
+ echo "$ac_t"""$TCL_VERSION"" 1>&6
+-if test "$TCL_VERSION" != "8.2" ; then
+-    { echo "configure: error: "Tcl version 8.2 needed"" 1>&2; exit 1; }
++if test "$TCL_VERSION" \< "8.2" ; then
++    { echo "configure: error: "Tcl version at least 8.2 needed"" 1>&2; exit 1; }
+ fi
+ 
+ BUILD_TARGETS="$BUILD_TARGETS scotty"
+@@ -821,6 +825,7 @@
+ fi
+ 
+ 
++if test x$tnm_path_tk_config != xno; then
+ dirs="$tnm_path_tk_config $wish_prefix/lib $prefix/lib /usr/local/lib"
+ 
+ found=0
+@@ -842,7 +847,7 @@
      echo "configure: warning: "will not build tkined"" 1>&2
  else
      . $tnm_cv_path_tk_config/tkConfig.sh
@@ -18,3 +44,28 @@
      if test "$TK_INCLUDES" = "$TCL_INCLUDES" ; then
          TK_INCLUDES=""
      fi
+@@ -850,13 +855,14 @@
+     echo $ac_n "checking for tk version""... $ac_c" 1>&6
+ echo "configure:852: checking for tk version" >&5
+     echo "$ac_t"""$TK_VERSION"" 1>&6
+-    if test "$TK_VERSION" != "8.2" ; then
+-        { echo "configure: error: "Tk version 8.2 needed"" 1>&2; exit 1; }
++    if test "$TK_VERSION" \< "8.2" ; then
++        { echo "configure: error: "Tk version at least 8.2 needed"" 1>&2; exit 1; }
+     fi
+ 
+     BUILD_TARGETS="$BUILD_TARGETS tkined"
+     INSTALL_TARGETS="$INSTALL_TARGETS tki-install"
+ fi
++fi	# --with-tk=<something other than ``no''>
+ 
+ #----------------------------------------------------------------------------
+ #       Check for some basic stuff. We don't check for the compiler.
+@@ -3318,6 +3324,7 @@
+ s%@DEFS@%$DEFS%g
+ s%@LDFLAGS@%$LDFLAGS%g
+ s%@LIBS@%$LIBS%g
++s%@NEED_TCL_LIB@%$NEED_TCL_LIB%g
+ s%@exec_prefix@%$exec_prefix%g
+ s%@prefix@%$prefix%g
+ s%@program_transform_name@%$program_transform_name%g
