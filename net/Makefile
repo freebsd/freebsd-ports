@@ -476,6 +476,7 @@
     SUBDIR += tcpmssd
     SUBDIR += tcpreplay
     SUBDIR += tcpshow
+    SUBDIR += tcpslice
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
