@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/11/15 10:52:00 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/17 11:10:08 ache Exp $
 #
 
 DISTNAME=       timidity-0.2i
@@ -13,13 +13,14 @@ MASTER_SITES=   ftp://ftp.cdrom.com/pub/demos/music/samples/ \
 		http://www.clinet.fi/~toivonen/timidity/
 TIINS=          dgguspat.zip
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
-EXTRACT_ONLY=   ${DISTNAME}.tar.gz
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
+EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 INSTALL_TARGET= install.all
+MAN1=           timidity.1
 
 do-configure:
 	@cd ${WRKSRC} && \
@@ -29,7 +30,5 @@ do-configure:
 post-install:
 	cd ${PREFIX}/lib/timidity/patch && \
 	unzip -q -L ${DISTDIR}${TIINS}
-
-MAN1=           timidity.1
 
 .include <bsd.port.mk>
