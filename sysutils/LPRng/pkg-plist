@@ -15,6 +15,7 @@ sbin/lpraccnt
 etc/lpd.conf.sample
 etc/lpd.perms.sample
 etc/lprng.sh
+etc/printcap.sample
 etc/rc.d/lprng.sh
 share/doc/LPRng/CHANGES
 share/doc/LPRng/LISA98.ppt
@@ -149,6 +150,7 @@ share/doc/LPRng/spoolq.htm
 share/doc/LPRng/spoolqueue.htm
 share/doc/LPRng/stalledtime.htm
 share/doc/LPRng/star1.gif
+share/doc/LPRng/start.htm
 share/doc/LPRng/submitting.htm
 share/doc/LPRng/systemspecific.htm
 share/doc/LPRng/testing.htm
