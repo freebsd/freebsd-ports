@@ -53,14 +53,14 @@ if [ ! -e Makefile ]; then
   display_err "Couldn't find Makefile here."
 fi
 
-PORTNAME=`make -V PORTNAME`
-PORTVERSION=`make -V PORTVERSION`
-DISTFILES=`make -V DISTFILES`
+PORTNAME=`make -V PORTNAME 2>/dev/null`
+PORTVERSION=`make -V PORTVERSION 2>/dev/null`
+DISTFILES=`make -V DISTFILES 2>/dev/null`
 if [ x"${PORTNAME}" = x"" -o x"${PORTVERSION}" = x"" -o x"${DISTFILES}" = x"" ]; then
   display_err "Either PORTNAME, PORTVERSION or DISTFILES is undefined in Makefile."
 fi
 
-MASTER_SITES=`env MASTER_SITE_BACKUP=\"\" make -V MASTER_SITES | xargs -n1 echo | grep ^ftp://`
+MASTER_SITES=`env MASTER_SITE_BACKUP=\"\" make -V MASTER_SITES 2>/dev/null | xargs -n1 echo | grep ^ftp://`
 if [ x"${MASTER_SITES}" = x"" ]; then
   display_err "Either MASTER_SITES is undefined in Makefile or it doesn't contain any ftp sites."
 fi
@@ -92,7 +92,7 @@ for MASTER_SITE in ${MASTER_SITES}; do
   for DISTNAME in ${DISTFILES}; do
     DF_PATR=`echo ${DISTNAME} | sed "s=${PV_PATR}=.*=" | \
       sed 's=\.=\\\\.=g ; s=\\\.\*=.*='`
-    for i in `echo ${FTPLIST} | xargs -n1 echo | grep "${DF_PATR}"` ; do
+    for i in `echo ${FTPLIST} | xargs -n1 echo | grep "${DF_PATR}$"` ; do
       if [ "${i}" ">" "${DISTNAME}" ]; then
 	NEW="${NEW} ${MASTER_SITE}${i}"
       fi
