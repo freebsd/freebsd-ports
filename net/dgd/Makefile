@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.42 1996/05/26 17:17:26 adam Exp $
+# $Id: Makefile,v 1.43 1996/06/10 01:13:44 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.56
@@ -50,7 +50,7 @@ post-build:
 
 do-install:
 	@-mv ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
-	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
+	@tar -C ${WRKDIR} -cf - `grep '^dgd/' {PKGDIR}/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
 .if !defined(DO_PACKAGE)
