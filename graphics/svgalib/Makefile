@@ -18,7 +18,7 @@ INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	shared static
 
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
