@@ -108,8 +108,8 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz1.0RC3_includes.tgz
 
-JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
-JAVAVM=         ${JDK13DIR}/bin/java
+JDK13DIR?=	${LOCALBASE}/jdk1.3.1
+JAVAVM=		${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
@@ -213,7 +213,7 @@ pre-fetch:
 	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf.diff"
 	@${ECHO}
 .endif
-.if ${OSVERSION} < 500000 
+.if ${OSVERSION} < 460002
 	@${ECHO}
 	@${ECHO} "OO.org build and also OO.org itself"
 	@${ECHO} "can deadlock. You can work around"
@@ -282,7 +282,7 @@ post-patch:
 do-build:
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
-        @${RM} -f ${WRKDIR}/.Xvfb.pid
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
 .if !defined(DISPLAY)
 	#
@@ -308,7 +308,7 @@ do-build:
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
-	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
+	   > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 
 do-install:
 .if !defined(DISPLAY)
