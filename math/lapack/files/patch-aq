@@ -1,0 +1,19 @@
+--- TIMING/EIG/ctimee.f.orig	Tue Jun 22 13:57:47 1999
++++ TIMING/EIG/ctimee.f	Wed Oct  6 11:04:27 1999
+@@ -299,7 +299,7 @@
+       EXTERNAL           LSAMEN, SECOND
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL           CTIM21, CTIM22, CTIM26, CTIM51
++      EXTERNAL           CTIM21, CTIM22, CTIM26, CTIM51, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       REAL               ITCNT, OPS
+@@ -327,6 +327,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       FATAL = .FALSE.
+       NEP = .FALSE.

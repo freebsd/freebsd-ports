@@ -1,0 +1,19 @@
+--- TESTING/EIG/schkee.f.orig	Tue Jun 22 13:54:38 1999
++++ TESTING/EIG/schkee.f	Wed Oct  6 11:04:27 1999
+@@ -1013,7 +1013,7 @@
+      $                   SCKGLM, SCKGQR, SCKGSV, SCKLSE, SDRGES, SDRGEV,
+      $                   SDRGSX, SDRGVX, SDRVBD, SDRVES, SDRVEV, SDRVGG,
+      $                   SDRVSG, SDRVST, SDRVSX, SDRVVX, SERRBD, SERRED,
+-     $                   SERRGG, SERRHS, SERRST, XLAENV
++     $                   SERRGG, SERRHS, SERRST, XLAENV, FPMCLR
+ *     ..
+ *     .. Intrinsic Functions ..
+       INTRINSIC          LEN, MIN
+@@ -1042,6 +1042,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       FATAL = .FALSE.
+       NUNIT = NOUT

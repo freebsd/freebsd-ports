@@ -1,0 +1,19 @@
+--- TIMING/EIG/stimee.f.orig	Tue Jun 22 13:57:53 1999
++++ TIMING/EIG/stimee.f	Wed Oct  6 12:13:17 1999
+@@ -275,7 +275,7 @@
+       EXTERNAL           LSAMEN, SECOND
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL           STIM21, STIM22, STIM26, STIM51
++      EXTERNAL           STIM21, STIM22, STIM26, STIM51, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       REAL               ITCNT, OPS
+@@ -299,6 +299,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       FATAL = .FALSE.
+       NEP = .FALSE.

@@ -1,0 +1,19 @@
+--- TIMING/EIG/Makefile.orig	Fri Mar 12 15:17:19 1999
++++ TIMING/EIG/Makefile	Wed Oct  6 12:12:00 1999
+@@ -46,13 +46,13 @@
+    dprtbe.o dprtbg.o dprtbr.o dprtbs.o dprtbv.o
+ 
+ SEIGTIM = stimee.o \
+-   slaqzh.o slatm4.o stim21.o stim22.o stim26.o stim51.o seispack.o
++   slaqzh.o slatm4.o stim21.o stim22.o stim26.o stim51.o seispack.o $(FPMCLR)
+ 
+ CEIGTIM = ctimee.o \
+-   claqzh.o clatm4.o ctim21.o ctim22.o ctim26.o ctim51.o ceispack.o
++   claqzh.o clatm4.o ctim21.o ctim22.o ctim26.o ctim51.o ceispack.o $(FPMCLR)
+ 
+ DEIGTIM = dtimee.o \
+-   dlaqzh.o dlatm4.o dtim21.o dtim22.o dtim26.o dtim51.o deispack.o
++   dlaqzh.o dlatm4.o dtim21.o dtim22.o dtim26.o dtim51.o deispack.o $(FPMCLR)
+ 
+ ZEIGTIM = ztimee.o \
+    zlaqzh.o zlatm4.o ztim21.o ztim22.o ztim26.o ztim51.o zeispack.o

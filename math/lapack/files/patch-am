@@ -1,0 +1,19 @@
+--- TESTING/EIG/zchkee.f.orig	Tue Jun 22 13:54:55 1999
++++ TESTING/EIG/zchkee.f	Wed Oct  6 11:04:27 1999
+@@ -1009,7 +1009,7 @@
+      $                   ZCHKST, ZCKGLM, ZCKGQR, ZCKGSV, ZCKLSE, ZDRGES,
+      $                   ZDRGEV, ZDRGSX, ZDRGVX, ZDRVBD, ZDRVES, ZDRVEV,
+      $                   ZDRVGG, ZDRVSG, ZDRVST, ZDRVSX, ZDRVVX, ZERRBD,
+-     $                   ZERRED, ZERRGG, ZERRHS, ZERRST
++     $                   ZERRED, ZERRGG, ZERRHS, ZERRST, FPMCLR
+ *     ..
+ *     .. Intrinsic Functions ..
+       INTRINSIC          LEN, MIN
+@@ -1038,6 +1038,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = DSECND( )
+       FATAL = .FALSE.
+       NUNIT = NOUT

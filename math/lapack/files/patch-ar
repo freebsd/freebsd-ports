@@ -1,0 +1,19 @@
+--- TIMING/EIG/dtimee.f.orig	Tue Jun 22 13:57:50 1999
++++ TIMING/EIG/dtimee.f	Wed Oct  6 11:04:27 1999
+@@ -275,7 +275,7 @@
+       EXTERNAL           LSAMEN, DSECND
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL           DTIM21, DTIM22, DTIM26, DTIM51
++      EXTERNAL           DTIM21, DTIM22, DTIM26, DTIM51, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       DOUBLE PRECISION   ITCNT, OPS
+@@ -299,6 +299,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = DSECND( )
+       FATAL = .FALSE.
+       NEP = .FALSE.

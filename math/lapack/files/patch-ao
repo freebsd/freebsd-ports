@@ -1,0 +1,19 @@
+--- TIMING/LIN/ctimaa.f.orig	Tue Jun 22 13:55:56 1999
++++ TIMING/LIN/ctimaa.f	Wed Oct  6 11:04:27 1999
+@@ -168,7 +168,7 @@
+      $                   CTIMHE, CTIMHP, CTIMHR, CTIMLQ, CTIMLS, CTIMMM,
+      $                   CTIMMV, CTIMPB, CTIMPO, CTIMPP, CTIMPT, CTIMQ3,
+      $                   CTIMQL, CTIMQP, CTIMQR, CTIMRQ, CTIMSP, CTIMSY,
+-     $                   CTIMTB, CTIMTD, CTIMTP, CTIMTR
++     $                   CTIMTB, CTIMTD, CTIMTP, CTIMTR, FPMCLR
+ *     ..
+ *     .. Intrinsic Functions ..
+       INTRINSIC          MAX
+@@ -181,6 +181,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       LDR1 = MAXVAL
+       LDR2 = MAXVAL
