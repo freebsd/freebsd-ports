@@ -866,7 +866,7 @@ MASTER_SITE_XCONTRIB+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.dl.ac.uk/src/X/contrib/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.x.org/contrib/%SUBDIR%/ \
+	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/
 
 MASTER_SITE_XEMACS+= \
