@@ -3,11 +3,11 @@
 # Date created:		15 November 1996
 # Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
 #
-# $Id: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
+# $Id: Makefile,v 1.5 1999/06/12 21:14:30 fenner Exp $
 #
 
-DISTNAME=	gc4.12
-PKGNAME=	boehm-gc-4.12
+DISTNAME=	gc4.14
+PKGNAME=	boehm-gc-4.14
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgi.com/boehm_mti/gc_source/
 
