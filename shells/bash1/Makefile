@@ -13,7 +13,9 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bash
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GNU Bourne Again Shell
+COMMENT=	The GNU Bourne Again Shell -- old version
+
+BROKEN=		"does not compile on 5.x; consider upgrading to shells/bash2"
 
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
