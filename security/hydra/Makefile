@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.thc.org/releases/ \
 MASTER_SITE_SUBDIR=	groups/thc
 
 MAINTAINER=	llevier@argosnet.com
-COMMENT=	Bruce Force Attack Utility working on multiple network services
+COMMENT=	Brute force attack utility working on multiple network services
 
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra
