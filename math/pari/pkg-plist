@@ -1,10 +1,6 @@
 ./lib/libpari.so.2.0.13
 ./lib/libpari.so.2.0
 ./lib/libpari.so
-./lib/pari/pari.elc
-./lib/pari/pari.el
-./lib/pari/pari.menu
-./lib/pari/pariemacs.txt
 ./lib/pari/macros.tex
 ./lib/pari/users.help.tex
 ./lib/pari/usersch2.tex
