@@ -7936,6 +7936,7 @@ wmfmixer	ports/audio/wmfmixer
 wmfortune	ports/games/wmfortune
 wmfsm		ports/sysutils/wmfsm
 wmfstatus	ports/x11/wmfstatus
+wmfuzzy		ports/x11-clocks/wmfuzzy
 wmg		ports/x11-wm/wmg
 wmglobe		ports/astro/wmglobe
 wmgrabimage	ports/graphics/wmgrabimage
