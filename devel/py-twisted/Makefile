@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTVERSION=	0.10.1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ USE_PYTHON=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/twisted
 SCRIPTS=	accepttests cpyrght faucet gnusto im malyon manhole \
 		mapeditor mktap runtests twistd twistd-debug
-MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 tap2deb.1 twistd.1
+MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 twistd.1
 
 post-patch:
 	@ ${PERL} -pi -e 's/from pyunit import/import/g' \
@@ -53,7 +52,7 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/examples/*.py ${EXAMPLESDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
