@@ -3855,6 +3855,7 @@ keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
 keyprint	ports/security/keyprint
+kfreerings	ports/games/kfreerings
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
 kickpim		ports/deskutils/kickpim
