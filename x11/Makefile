@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.163 1997/11/02 00:08:07 se Exp $
+# $Id: Makefile,v 1.164 1997/11/02 11:30:28 se Exp $
 #
 
     SUBDIR += FWF
@@ -35,6 +35,8 @@
     SUBDIR += kdebase
     SUBDIR += kdegames
     SUBDIR += kdelibs
+    SUBDIR += kdenetwork
+    SUBDIR += kdesupport
     SUBDIR += kdeutils
     SUBDIR += lesstif
     SUBDIR += libdnd
