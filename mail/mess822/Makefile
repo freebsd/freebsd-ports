@@ -18,8 +18,6 @@ COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
-BROKEN=		"Changes permissions of system directories"
-
 NO_PACKAGE=	Violates djb\'s license
 USE_REINPLACE=	yes
 
@@ -34,9 +32,9 @@ MAN5=		rewriting.5
 MAN8=		ofmipd.8 ofmipname.8
 
 .if exists(${PREFIX}/qmail/bin/qmail-send)
-QMAIL_DIR?=     ${PREFIX}/qmail
+QMAIL_DIR?=	${PREFIX}/qmail
 .else
-QMAIL_DIR?=     /var/qmail
+QMAIL_DIR?=	/var/qmail
 .endif
 
 NO_MTREE=	yes
