@@ -22,7 +22,7 @@ EXTRACT_SUFX=	-src.tar.gz
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
 PATCHFILES=	
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
 
 DIST_SUBDIR=	squid2.4
