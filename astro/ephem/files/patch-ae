@@ -1,0 +1,36 @@
+*** listing.c.orig	Tue Apr 15 01:07:37 1997
+--- listing.c	Tue Apr 15 01:38:22 1997
+***************
+*** 12,22 ****
+  
+  extern char *strcpy();
+  
+  #ifdef VMS
+  #include <perror.h>
+- #include <errno.h>
+  #else
+  extern char *sys_errlist[];
+  extern errno;
+  #endif
+  
+--- 12,31 ----
+  
+  extern char *strcpy();
+  
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)             
++ #include <sys/param.h>                                                
++ #endif
++ 
++ #if defined(VMS) || defined(unix)
++ #include <errno.h>
++ #endif
++ 
+  #ifdef VMS
+  #include <perror.h>
+  #else
++ #ifndef BSD
+  extern char *sys_errlist[];
++ #endif
+  extern errno;
+  #endif
+  

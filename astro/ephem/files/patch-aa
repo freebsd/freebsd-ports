@@ -1,0 +1,18 @@
+*** Makefile.orig	Sat Mar 14 23:21:45 1992
+--- Makefile	Fri Apr 25 12:30:57 1997
+***************
+*** 1,6 ****
+  # Makefile for ephem, v 4.28
+  
+! CFLAGS = -O
+  
+  EPHEM=	aa_hadec.o altj.o altmenus.o anomaly.o cal_mjd.o circum.o comet.o \
+  	compiler.o constel.o eq_ecl.o flog.o formats.o io.o listing.o main.o \
+--- 1,7 ----
+  # Makefile for ephem, v 4.28
+  
+! #CFLAGS = -O
+! CFLAGS+= -DPREFIX=\"${PREFIX}\"
+  
+  EPHEM=	aa_hadec.o altj.o altmenus.o anomaly.o cal_mjd.o circum.o comet.o \
+  	compiler.o constel.o eq_ecl.o flog.o formats.o io.o listing.o main.o \

@@ -1,0 +1,33 @@
+*** objx.c.orig	Tue Apr 15 01:07:37 1997
+--- objx.c	Tue Apr 15 01:33:17 1997
+***************
+*** 6,12 ****
+  #include <stdio.h>
+  #include <math.h>
+  #include <ctype.h>
+! #ifdef VMS
+  #include <stdlib.h>
+  #endif
+  #include "astro.h"
+--- 6,12 ----
+  #include <stdio.h>
+  #include <math.h>
+  #include <ctype.h>
+! #if defined(VMS) || defined(unix)
+  #include <stdlib.h>
+  #endif
+  #include "astro.h"
+***************
+*** 16,22 ****
+--- 16,26 ----
+  extern char *strcat(), *strcpy(), *strncpy(), *getenv();
+  
+  static char *dbfile;			/* !0 if set by -d option */
++ #ifdef unix
++ static char dbfdef[] = PREFIX "/share/ephem/ephem.db"; 	/* default database file name */
++ #else
+  static char dbfdef[] = "ephem.db"; 	/* default database file name */
++ #endif
+  
+  /* structures to describe objects of various types.
+   */

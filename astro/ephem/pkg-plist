@@ -1,0 +1,4 @@
+bin/ephem
+share/ephem/Man.txt
+share/ephem/ephem.cfg
+share/ephem/ephem.db

@@ -1,0 +1,70 @@
+*** io.c.orig	Wed Apr  3 13:26:53 1996
+--- io.c	Wed Apr  3 15:13:25 1996
+***************
+*** 35,50 ****
+  /* then if you defined UNIX you must use one of these ways to do non-blocking
+   * tty reads
+   */
+! #define USE_FIONREAD
+! /* #define USE_NDELAY */
+  /* #define USE_ATTSELECT */
+  /* #define USE_BSDSELECT */
+  
+  /* and then if you defined UNIX you must also use one of these ways to control
+   * the tty modes.
+   */
+! #define USE_TERMIO
+! /* #define USE_SGTTY */
+  
+  /* if you defined TURBO_C you might want this too if screen io looks garbled */
+  /* #define USE_ANSISYS */
+--- 35,50 ----
+  /* then if you defined UNIX you must use one of these ways to do non-blocking
+   * tty reads
+   */
+! /* #define USE_FIONREAD */
+! #define USE_NDELAY
+  /* #define USE_ATTSELECT */
+  /* #define USE_BSDSELECT */
+  
+  /* and then if you defined UNIX you must also use one of these ways to control
+   * the tty modes.
+   */
+! /* #define USE_TERMIO */
+! #define USE_SGTTY
+  
+  /* if you defined TURBO_C you might want this too if screen io looks garbled */
+  /* #define USE_ANSISYS */
+***************
+*** 199,209 ****
+  	    seqa[0] = c;
+  	    if (l > 1) {
+  		extern unsigned alarm();
+  		/* cautiously read rest of arrow sequence */
+  		got_alrm = 0;
+  		(void) signal (SIGALRM, on_alrm);
+  		alarm(2);
+! 		read (0, seqa+1, l-1);
+  		alarm(0);
+  		if (got_alrm)
+  		    return (c);
+--- 199,217 ----
+  	    seqa[0] = c;
+  	    if (l > 1) {
+  		extern unsigned alarm();
++ 		int ch_read, ch_expected, seqa_i;
+  		/* cautiously read rest of arrow sequence */
+  		got_alrm = 0;
+  		(void) signal (SIGALRM, on_alrm);
+  		alarm(2);
+! 		/* to make the arrow keys work with FreeBSD ... */
+! 		ch_expected = l-1;
+! 		seqa_i = 1;
+! 		while ((ch_read = read (0, seqa+seqa_i, ch_expected)) > 0 &&
+! 			ch_read < ch_expected) {
+! 		    ch_expected -= ch_read;
+! 		    seqa_i += ch_read;
+! 		}
+  		alarm(0);
+  		if (got_alrm)
+  		    return (c);
