@@ -42,7 +42,7 @@ PERFORCE_TARGET?=     perforce:1666
 
 .if ${ARCH} == i386
 VERSION=	02.2
-REVISION=	4
+REVISION=	5
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
