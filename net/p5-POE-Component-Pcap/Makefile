@@ -16,7 +16,7 @@ MAINTAINER=	skv@protey.ru
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/NetPacket/Ethernet:${PORTSDIR}/net/p5-NetPacket
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/NetPacket/Ethernet.pm:${PORTSDIR}/net/p5-NetPacket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
