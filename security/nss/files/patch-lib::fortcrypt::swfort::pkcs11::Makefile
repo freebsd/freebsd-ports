@@ -1,16 +1,16 @@
 
 $FreeBSD$
 
---- lib/fortcrypt/swfort/pkcs11/Makefile	2001/12/18 12:43:20	1.1
-+++ lib/fortcrypt/swfort/pkcs11/Makefile	2001/12/18 12:44:02
-@@ -83,8 +83,8 @@
- PLC_STATIC_LIB = $(DIST)/lib/plc4.$(LIB_SUFFIX)
- PLDS_STATIC_LIB = $(DIST)/lib/plds4.$(LIB_SUFFIX)
- else
--PLC_STATIC_LIB = $(DIST)/lib/libplc4.$(LIB_SUFFIX)
--PLDS_STATIC_LIB = $(DIST)/lib/libplds4.$(LIB_SUFFIX)
-+PLC_STATIC_LIB = -lplc4
-+PLDS_STATIC_LIB = -lplds4
- endif
+--- lib/fortcrypt/swfort/pkcs11/Makefile.orig	Sat Feb 16 00:53:46 2002
++++ lib/fortcrypt/swfort/pkcs11/Makefile	Thu Aug  8 21:27:33 2002
+@@ -76,8 +76,8 @@
+ 	$(DIST)/lib/$(LIB_PREFIX)softokn.$(LIB_SUFFIX) \
+ 	$(CRYPTO_LIB) \
+ 	$(DIST)/lib/$(LIB_PREFIX)secutil.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(LIB_PREFIX)plc4.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(LIB_PREFIX)plds4.$(LIB_SUFFIX) \
++	-lplc4 \
++	-lplds4 \
+ 	$(NULL)
  
- EXTRA_LIBS += \
+ endif
