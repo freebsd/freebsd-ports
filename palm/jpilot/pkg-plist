@@ -2,4 +2,10 @@ bin/jpilot
 share/jpilot/jpilotrc.blue
 share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
+share/jpilot/jpilotrc.purple
+share/jpilot/jpilotrc.steel
+share/jpilot/DatebookDB.pdb
+share/jpilot/AddressDB.pdb
+share/jpilot/ToDoDB.pdb
+share/jpilot/MemoDB.pdb
 @dirrm share/jpilot
