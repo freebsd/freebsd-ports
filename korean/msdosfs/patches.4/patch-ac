@@ -1,0 +1,19 @@
+--- msdosfs_denode.c.orig	Mon Apr 10 04:32:36 2000
++++ msdosfs_denode.c	Wed Oct  4 00:28:00 2000
+@@ -114,6 +114,16 @@
+ {
+ 	dehashtbl = hashinit(desiredvnodes/2, M_MSDOSFSMNT, &dehash);
+ 	simple_lock_init(&dehash_slock);
++	return (0);
++}
++
++int 
++msdosfs_uninit(vfsp)
++	struct vfsconf *vfsp;
++{
++
++	if (dehashtbl)
++		free(dehashtbl, M_MSDOSFSMNT);
+ 	return (0);
+ }
+ 

@@ -1,0 +1,10 @@
+--- msdosfs_fat.c.orig	Mon Apr 10 04:32:36 2000
++++ msdosfs_fat.c	Wed Oct  4 00:53:48 2000
+@@ -55,6 +55,7 @@
+  */
+ #include <sys/param.h>
+ #include <sys/systm.h>
++#include <sys/bio.h>
+ #include <sys/buf.h>
+ #include <sys/mount.h>		/* to define statfs structure */
+ #include <sys/vnode.h>		/* to define vattr structure */

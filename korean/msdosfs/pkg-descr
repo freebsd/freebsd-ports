@@ -1,0 +1,11 @@
+You can mount a Korean FAT file system via "mount_komsdos" command.
+Be sure that "msdos_ko.ko" is already dynamically linked into the
+kernal before you type "mount_komsdos" (see kldstat(8)).
+
+The author is CHOI Junho <cjh@FreeBSD.org>.
+
+Original author of Japanese version is Toshihiko Arai <toshi@FreeBSD.org>.
+
+--
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://www.kr.freebsd.org/~cjh/freebsd/msdosfs-ko/

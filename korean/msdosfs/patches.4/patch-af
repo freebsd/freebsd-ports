@@ -1,0 +1,53 @@
+--- msdosfs_vfsops.c.orig	Mon Apr 10 04:32:37 2000
++++ msdosfs_vfsops.c	Wed Oct  4 00:21:29 2000
+@@ -48,11 +48,6 @@
+  * October 1992
+  */
+ 
+-#include "opt_msdosfs.h"
+-
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+ #include <sys/conf.h>
+@@ -67,9 +62,6 @@
+ #include <sys/stat.h> 				/* defines ALLPERMS */
+ #include <vm/vm_zone.h>
+ 
+-/*
+- * MSDOSFS include files.
+- */
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/bootsect.h>
+ #include <msdosfs/direntry.h>
+@@ -77,6 +69,8 @@
+ #include <msdosfs/msdosfsmount.h>
+ #include <msdosfs/fat.h>
+ 
++#define MSDOSFS_DFLTBSIZE       4096
++
+ #if 1 /*def PC98*/
+ /*
+  * XXX - The boot signature formatted by NEC PC-98 DOS looks like a
+@@ -635,7 +629,7 @@
+ 	if (FAT12(pmp))
+ 		pmp->pm_fatblocksize = 3 * pmp->pm_BytesPerSec;
+ 	else
+-		pmp->pm_fatblocksize = DFLTBSIZE;
++		pmp->pm_fatblocksize = MSDOSFS_DFLTBSIZE;
+ 
+ 	pmp->pm_fatblocksec = pmp->pm_fatblocksize / DEV_BSIZE;
+ 	pmp->pm_bnshift = ffs(DEV_BSIZE) - 1;
+@@ -987,8 +981,8 @@
+ 	msdosfs_checkexp,
+ 	msdosfs_vptofh,
+ 	msdosfs_init,
+-	vfs_stduninit,
++	msdosfs_uninit,
+ 	vfs_stdextattrctl,
+ };
+ 
+-VFS_SET(msdosfs_vfsops, msdos, 0);
++VFS_SET(msdosfs_vfsops, msdos_ko, 0);

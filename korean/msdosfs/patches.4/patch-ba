@@ -1,0 +1,9 @@
+--- ../../mount_msdos/Makefile.orig	Mon Jul  3 02:53:38 2000
++++ ../../mount_msdos/Makefile	Mon Jul  3 02:53:52 2000
+@@ -3,6 +3,6 @@
+ #
+ 
+-PROG=	mount_msdos
++PROG=	mount_komsdos
+ SRCS=	mount_msdos.c getmntopts.c
+ MAN8=	mount_msdos.8

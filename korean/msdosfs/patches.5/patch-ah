@@ -1,0 +1,19 @@
+--- msdosfsmount.h.orig	Mon Apr 10 04:32:37 2000
++++ msdosfsmount.h	Wed Oct  4 00:51:35 2000
+@@ -84,7 +84,7 @@
+ 	u_long pm_fatblocksize;	/* size of fat blocks in bytes */
+ 	u_long pm_fatblocksec;	/* size of fat blocks in sectors */
+ 	u_long pm_fatsize;	/* size of fat in bytes */
+-	u_long pm_fatmask;	/* mask to use for fat numbers */
++	u_int32_t pm_fatmask;	/* mask to use for fat numbers */
+ 	u_long pm_fsinfo;	/* fsinfo block number */
+ 	u_long pm_nxtfree;	/* next free cluster in fsinfo block */
+ 	u_int pm_fatmult;	/* these 2 values are used in fat */
+@@ -198,6 +198,7 @@
+ 	(1024 << ((pmp)->pm_BlkPerSec >> 2))
+ 
+ int msdosfs_init __P((struct vfsconf *vfsp));
++int msdosfs_uninit __P((struct vfsconf *vfsp));
+ int msdosfs_mountroot __P((void));
+ 
+ #endif /* _KERNEL */

@@ -52,6 +52,7 @@
     SUBDIR += mizifont
     SUBDIR += mkisofs
     SUBDIR += mozilla-klp
+    SUBDIR += msdosfs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
     SUBDIR += netscape3

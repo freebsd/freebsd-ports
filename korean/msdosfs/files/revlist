@@ -1,0 +1,20 @@
+$FreeBSD$
+
+This is a table of revisions about this ko-msdosfs.
+
++-------------------+---------------+-----------+
+ BRANCH			RELENG_4	MAIN
++-------------------+---------------+-----------+
+ bootsect.h		1.7		1.7
+ bpb.h			1.7.2.1		1.8
+ denode.h		1.20		1.21
+ direntry.h		1.15		1.15
+ fat.h			1.9		1.9
+ msdosfs_conv.c		1.29		1.29
+ msdosfs_denode.c	1.47.2.1	1.51
+ msdosfs_fat.c		1.23		1.24
+ msdosfs_lookup.c	1.30		1.32
+ msdosfs_vfsops.c	1.60.2.2	1.66
+ msdosfs_vnops.c	1.95.2.1	1.106
+ msdosfsmount.h		1.20.2.2	1.22
++-------------------+---------------+-----------+

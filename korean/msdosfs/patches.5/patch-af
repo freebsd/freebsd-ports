@@ -1,0 +1,132 @@
+--- msdosfs_vfsops.c.orig	Mon Apr 10 04:32:37 2000
++++ msdosfs_vfsops.c	Sun Feb 11 17:01:51 2001
+@@ -50,8 +50,4 @@
+ 
+ #include "opt_msdosfs.h"
+-
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+@@ -62,13 +58,11 @@
+ #include <sys/vnode.h>
+ #include <sys/mount.h>
++#include <sys/bio.h>
+ #include <sys/buf.h>
+ #include <sys/fcntl.h>
+ #include <sys/malloc.h>
+ #include <sys/stat.h> 				/* defines ALLPERMS */
+-#include <vm/vm_zone.h>
++#include <sys/mutex.h>
+ 
+-/*
+- * MSDOSFS include files.
+- */
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/bootsect.h>
+@@ -78,4 +72,6 @@
+ #include <msdosfs/fat.h>
+ 
++#define MSDOSFS_DFLTBSIZE       4096
++
+ #if 1 /*def PC98*/
+ /*
+@@ -181,6 +177,5 @@
+ 		panic("msdosfs_mountroot: can't setup rootvp");
+ 
+-	mp = malloc((u_long)sizeof(struct mount), M_MOUNT, M_WAITOK);
+-	bzero((char *)mp, (u_long)sizeof(struct mount));
++	mp = malloc((u_long)sizeof(struct mount), M_MOUNT, M_WAITOK | M_ZERO);
+ 	mp->mnt_op = &msdosfs_vfsops;
+ 	mp->mnt_flag = 0;
+@@ -469,6 +464,5 @@
+ #endif
+ 
+-	pmp = malloc(sizeof *pmp, M_MSDOSFSMNT, M_WAITOK);
+-	bzero((caddr_t)pmp, sizeof *pmp);
++	pmp = malloc(sizeof *pmp, M_MSDOSFSMNT, M_WAITOK | M_ZERO);
+ 	pmp->pm_mountp = mp;
+ 
+@@ -636,5 +630,5 @@
+ 		pmp->pm_fatblocksize = 3 * pmp->pm_BytesPerSec;
+ 	else
+-		pmp->pm_fatblocksize = DFLTBSIZE;
++		pmp->pm_fatblocksize = MSDOSFS_DFLTBSIZE;
+ 
+ 	pmp->pm_fatblocksec = pmp->pm_fatblocksize / DEV_BSIZE;
+@@ -730,5 +724,5 @@
+ 	mp->mnt_stat.f_fsid.val[1] = mp->mnt_vfc->vfc_typenum;
+ 	mp->mnt_flag |= MNT_LOCAL;
+-	devvp->v_specmountpoint = mp;
++	devvp->v_rdev->si_mountpoint = mp;
+ 
+ 	return 0;
+@@ -766,5 +760,5 @@
+ 		return error;
+ 	pmp = VFSTOMSDOSFS(mp);
+-	pmp->pm_devvp->v_specmountpoint = NULL;
++	pmp->pm_devvp->v_rdev->si_mountpoint = NULL;
+ #ifdef MSDOSFS_DEBUG
+ 	{
+@@ -777,5 +771,5 @@
+ 		    vp->v_id, vp->v_mount, vp->v_op);
+ 		printf("freef %p, freeb %p, mount %p\n",
+-		    vp->v_freelist.tqe_next, vp->v_freelist.tqe_prev,
++		    TAILQ_NEXT(vp, v_freelist), vp->v_freelist.tqe_prev,
+ 		    vp->v_mount);
+ 		printf("cleanblkhd %p, dirtyblkhd %p, numoutput %ld, type %d\n",
+@@ -870,7 +864,7 @@
+ 	 * Write back each (modified) denode.
+ 	 */
+-	simple_lock(&mntvnode_slock);
++	mtx_lock(&mntvnode_mtx);
+ loop:
+-	for (vp = mp->mnt_vnodelist.lh_first; vp != NULL; vp = nvp) {
++	for (vp = LIST_FIRST(&mp->mnt_vnodelist); vp != NULL; vp = nvp) {
+ 		/*
+ 		 * If the vnode that we are about to sync is no longer
+@@ -880,6 +874,6 @@
+ 			goto loop;
+ 
+-		simple_lock(&vp->v_interlock);
+-		nvp = vp->v_mntvnodes.le_next;
++		mtx_lock(&vp->v_interlock);
++		nvp = LIST_NEXT(vp, v_mntvnodes);
+ 		dep = VTODE(vp);
+ 		if (vp->v_type == VNON ||
+@@ -887,11 +881,11 @@
+ 		    (DE_ACCESS | DE_CREATE | DE_UPDATE | DE_MODIFIED)) == 0 &&
+ 		    (TAILQ_EMPTY(&vp->v_dirtyblkhd) || waitfor == MNT_LAZY))) {
+-			simple_unlock(&vp->v_interlock);
++			mtx_unlock(&vp->v_interlock);
+ 			continue;
+ 		}
+-		simple_unlock(&mntvnode_slock);
++		mtx_unlock(&mntvnode_mtx);
+ 		error = vget(vp, LK_EXCLUSIVE | LK_NOWAIT | LK_INTERLOCK, p);
+ 		if (error) {
+-			simple_lock(&mntvnode_slock);
++			mtx_lock(&mntvnode_mtx);
+ 			if (error == ENOENT)
+ 				goto loop;
+@@ -903,7 +897,7 @@
+ 		VOP_UNLOCK(vp, 0, p);
+ 		vrele(vp);
+-		simple_lock(&mntvnode_slock);
++		mtx_lock(&mntvnode_mtx);
+ 	}
+-	simple_unlock(&mntvnode_slock);
++	mtx_unlock(&mntvnode_mtx);
+ 
+ 	/*
+@@ -988,7 +982,7 @@
+ 	msdosfs_vptofh,
+ 	msdosfs_init,
+-	vfs_stduninit,
++	msdosfs_uninit,
+ 	vfs_stdextattrctl,
+ };
+ 
+-VFS_SET(msdosfs_vfsops, msdos, 0);
++VFS_SET(msdosfs_vfsops, msdos_ko, 0);
