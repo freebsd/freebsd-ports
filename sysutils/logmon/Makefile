@@ -8,7 +8,7 @@
 PORTNAME=	logmon
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.edespot.com/plaidhat/code/LogMon/
+MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
 EXTRACT_SUFX=	.src.tgz
 
