@@ -1,6 +1,6 @@
 # New ports collection makefile for: free-libiberty
 # Date created: 	30 October 1999
-# Whom:			James Howard <howardjp@wam.umd.edu>
+# Whom:			James Howard <ports@vocito.com>
 #
 # $FreeBSD$
 #
@@ -8,12 +8,11 @@
 PORTNAME=	freelibiberty
 PORTVERSION=	0.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/libiberty/ \
-		http://www.wam.umd.edu/~howardjp/software/libiberty/ \
-		ftp://dragon.ham.muohio.edu/pub/howardjp/software/libiberty/
+MASTER_SITES=	http://www.vocito.com/downloads/software/libiberty/ \
+		ftp://ftp.vocito.com/pub/vocito.com/software/libiberty/
 DISTNAME=	libiberty-${PORTVERSION}
 
-MAINTAINER=	howardjp@wam.umd.edu
+MAINTAINER=	ports@vocito.com
 
 INSTALLS_SHLIB=	yes
 
