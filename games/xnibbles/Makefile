@@ -15,10 +15,6 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-.if ${MACHINE_ARCH} != "alpha"
-MAKE_ENV+=	SOUND=1
-.endif
-
 ALL_TARGET=	linux
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
