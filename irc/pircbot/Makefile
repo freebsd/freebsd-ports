@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pircbot
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	irc java
 MASTER_SITES=	http://www.jibble.org/files/ \
 		http://www.i-scream.org/downloads/other/
@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${PREFIX}/share/java/classes
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pircbot
-	(cd ${WRKSRC}/javadocs && ${TAR} --exclude CVS -cf - . | ${TAR} -xf - -C ${PREFIX}/share/doc/pircbot)
+	(cd ${WRKSRC}/javadocs && ${TAR} -cf - . | ${TAR} -xf - -C ${PREFIX}/share/doc/pircbot)
 .endif
 
 post-install:
