@@ -1,12 +1,12 @@
 bin/lftp
 bin/lftpget
 etc/lftp.conf.sample
-share/doc/lftp/COPYING
-share/doc/lftp/FAQ
-share/doc/lftp/NEWS
-share/doc/lftp/README
-share/doc/lftp/THANKS
-share/doc/lftp/TODO
+%%NOPORTDOCS%%share/doc/lftp/COPYING
+%%NOPORTDOCS%%share/doc/lftp/FAQ
+%%NOPORTDOCS%%share/doc/lftp/NEWS
+%%NOPORTDOCS%%share/doc/lftp/README
+%%NOPORTDOCS%%share/doc/lftp/THANKS
+%%NOPORTDOCS%%share/doc/lftp/TODO
 share/lftp/import-ncftp
 share/lftp/import-netscape
 share/locale/de/LC_MESSAGES/lftp.mo
@@ -19,5 +19,5 @@ share/locale/pl/LC_MESSAGES/lftp.mo
 share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
+%%NOPORTDOCS%%@dirrm share/doc/lftp
 @dirrm share/lftp
-@dirrm share/doc/lftp
