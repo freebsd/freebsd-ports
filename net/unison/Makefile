@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=		unison
-PORTVERSION= 		2.6.11
-CATEGORIES=		net
-MASTER_SITES=		http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-${PORTVERSION}/
-DISTNAME=		src
-DIST_SUBDIR=		unison
+PORTNAME=	unison
+PORTVERSION=	2.6.11
+CATEGORIES=	net
+MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-${PORTVERSION}/
+DISTNAME=	src
+DIST_SUBDIR=	unison
 
-MAINTAINER=		Dan Pelleg <dpelleg+unison@cs.cmu.edu>
+MAINTAINER=	Dan Pelleg <dpelleg+unison@cs.cmu.edu>
 
-BUILD_DEPENDS=		ocamlc:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -24,7 +24,7 @@ MAN1=	tcpillust.1
 
 DOCS=	README
 
-SAMPLES= tcpclient.log tcpserver.log
+SAMPLES=	tcpclient.log tcpserver.log
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spat
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	net gnome
 MASTER_SITES=	http://spat.codehost.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$/-1/}.src
