@@ -1,14 +1,18 @@
 This is mule-2.2.2, a multilingual editor based on emacs-19.28.
 
-This package is built with Japanese support, using Wnn, as default.  I 
-don't use other language/input methods.  People are welcome to test
-other configurations and report their results.
+This package is built with Japanese support, using Wnn as default.
 
-This package is designed *not* to clobber any existing emacs
-installation.  In particular, the executables and man pages of
-etags/ctags are not installed, and the info pages that come with the
-original emacs don't get installed too.  Remove the file
-patches/patch-ab if you want this package to stand on its own.
+This package *will* clobber any existing emacs installation.  In
+particular, the executables and man pages of etags/ctags are
+installed, and the info pages that come with the original emacs get
+installed too.
+
+Although this shouldn't cause any problems to run both mule and emacs,
+it may cause some confusion when one of them is pkg_delete'd.  If
+someone has a solution to this, please tell me.
+
+Also, it will overwrite itself over another mule using Canna.
+Solutions to this is welcome, too.
 
 A "dir" file is supplied in the files/ subdirectory of the ports
 package.  Copy it into your /usr/local/info to read mule info pages,

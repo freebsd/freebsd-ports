@@ -1,14 +1,16 @@
 This is mule-2.2.2, a multilingual editor based on emacs-19.28.
 
-This package is built with Japanese support, using Wnn, as default.  I 
-don't use other language/input methods.  People are welcome to test
-other configurations and report their results.
+This package is not built with any particular language support.  If
+you want a built-in input method, look into the mule ports in language-
+specific directories.  Currently only Japanese (Wnn and Canna) is
+available.
 
 This package is designed *not* to clobber any existing emacs
 installation.  In particular, the executables and man pages of
 etags/ctags are not installed, and the info pages that come with the
 original emacs don't get installed too.  Remove the file
 patches/patch-ab if you want this package to stand on its own.
+The Japanese version is build to install everything, by the way.
 
 A "dir" file is supplied in the files/ subdirectory of the ports
 package.  Copy it into your /usr/local/info to read mule info pages,
