@@ -30,4 +30,8 @@ post-patch:
 		${WRKSRC}/parser/gapi2xml.pl \
 		${WRKSRC}/parser/gapi_pp.pl
 
+pre-configure:
+	@${FIND} ${WRKSRC} -name '*.config.in' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@LIB_PREFIX@.*@LIB_SUFFIX@|.so|g'
+
 .include <bsd.port.mk>
