@@ -1,11 +1,11 @@
-*** src/xresources.h.orig	Mon Aug  7 19:37:50 1995
---- src/xresources.h	Mon Aug  7 19:38:55 1995
+*** src/xresources.h.orig	Wed Oct 25 10:40:00 1995
+--- src/xresources.h	Tue Dec  5 06:11:22 1995
 ***************
 *** 95,101 ****
         offset (confirm_exit), XtRString, "True" },
     /* THIS USED TO BE mailCommand BUT IS NOW sendmailCommand. */
     { "sendmailCommand", "SendmailCommand", XtRString, sizeof (char *),
-!       offset (sendmail_command), XtRString, "/usr/lib/sendmail" },
+!       offset (sendmail_command), XtRString, "/usr/lib/sendmail -t" },
     /* Ignore this.  Stealth feature. */
     { "mailFilterCommand", "MailFilterCommand", XtRString, sizeof (char *),
         offset (mail_filter_command), XtRString, NULL },
@@ -13,7 +13,7 @@
         offset (confirm_exit), XtRString, "True" },
     /* THIS USED TO BE mailCommand BUT IS NOW sendmailCommand. */
     { "sendmailCommand", "SendmailCommand", XtRString, sizeof (char *),
-!       offset (sendmail_command), XtRString, "/usr/sbin/sendmail" },
+!       offset (sendmail_command), XtRString, "/usr/sbin/sendmail -t" },
     /* Ignore this.  Stealth feature. */
     { "mailFilterCommand", "MailFilterCommand", XtRString, sizeof (char *),
         offset (mail_filter_command), XtRString, NULL },

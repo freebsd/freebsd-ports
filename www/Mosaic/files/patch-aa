@@ -1,9 +1,9 @@
-*** Makefile.orig	Thu Jul  6 15:55:23 1995
---- Makefile	Mon Aug 21 20:51:15 1995
+*** Makefile.orig	Thu Oct 19 01:12:16 1995
+--- Makefile	Tue Dec  5 07:19:09 1995
 ***************
-*** 8,25 ****
+*** 10,22 ****
   
-  # -------------------------- CUSTOMIZABLE OPTIONS ----------------------------
+  prereleaseflags = -DPRERELEASE
   
 ! RANLIB = /bin/true
   #### On non-SGI's, this should be ranlib.
@@ -13,6 +13,24 @@
   #### On Sun's, this should be gcc (ANSI required).
 ! CC = gcc
   
+  #### Linker Flags -- Primarily for linking static on linux-elf.
+  #ldflags = -static
+--- 10,22 ----
+  
+  prereleaseflags = -DPRERELEASE
+  
+! #RANLIB = /bin/true
+  #### On non-SGI's, this should be ranlib.
+  RANLIB = ranlib
+  
+  CC = cc
+  #### On Sun's, this should be gcc (ANSI required).
+! #CC = gcc
+  
+  #### Linker Flags -- Primarily for linking static on linux-elf.
+  #ldflags = -static
+***************
+*** 24,30 ****
   
   #### For a few files in the source, some compilers may need to be kicked
   #### in K&R mode.  E.g., on SGI's, -cckr does this.
@@ -20,27 +38,16 @@
   #### On most systems, no flag is needed.
   knrflag =
   
---- 8,25 ----
-  
-  # -------------------------- CUSTOMIZABLE OPTIONS ----------------------------
-  
-! # RANLIB = /bin/true
-  #### On non-SGI's, this should be ranlib.
-  RANLIB = ranlib
-  
-  CC = cc
-  #### On Sun's, this should be gcc (ANSI required).
-! # CC = gcc
-  
+--- 24,30 ----
   
   #### For a few files in the source, some compilers may need to be kicked
   #### in K&R mode.  E.g., on SGI's, -cckr does this.
-! # knrflag = -cckr
+! #knrflag = -cckr
   #### On most systems, no flag is needed.
   knrflag =
   
 ***************
-*** 35,50 ****
+*** 40,49 ****
   #### For Convex whatever, do -DCONVEX
   #### For SCO ODT 3.0, do -DSCO -DSVR4 -DMOTIF1_2
   #### For Motorola SVR4, do -DSVR4 -DMOTOROLA -DMOTIF1_2
@@ -51,82 +58,53 @@
   #### For AIX 3.2
   # syslibs = -lPW -lbsd
   #### For most other Motif platforms:
-  # syslibs = -lPW
-  #### For Sun's and Ultrix and HP and BSD/386:
-! syslibs =
-  #### For Sun's with no DNS:
-  #  syslibs = -lresolv
-  #### For SCO ODT:
---- 35,50 ----
+--- 40,49 ----
   #### For Convex whatever, do -DCONVEX
   #### For SCO ODT 3.0, do -DSCO -DSVR4 -DMOTIF1_2
   #### For Motorola SVR4, do -DSVR4 -DMOTOROLA -DMOTIF1_2
-! sysconfigflags =  -DMOTIF1_2
+! sysconfigflags = -DMOTIF1_2
   
   #### System libraries.
-! # syslibs = -lPW -lsun -lmalloc
+! #syslibs = -lPW -lsun -lmalloc
   #### For AIX 3.2
   # syslibs = -lPW -lbsd
   #### For most other Motif platforms:
-  # syslibs = -lPW
-  #### For Sun's and Ultrix and HP and BSD/386:
-! # syslibs =
-  #### For Sun's with no DNS:
-  #  syslibs = -lresolv
-  #### For SCO ODT:
 ***************
-*** 55,61 ****
-  # syslibs = -lnsl -lsocket -lgen
-  #### For Motorola SVR4:
-  # syslibs = -lnsl -lsocket -lgen
-! 
-  
-  #### X include file locations -- if your platform puts the X include
-  #### files in a strange place, set this variable appropriately.  Else
---- 55,62 ----
-  # syslibs = -lnsl -lsocket -lgen
-  #### For Motorola SVR4:
-  # syslibs = -lnsl -lsocket -lgen
-! #### For FreeBSD 2.x:
-! syslibs = -lgnumalloc
-  
-  #### X include file locations -- if your platform puts the X include
-  #### files in a strange place, set this variable appropriately.  Else
-***************
-*** 68,78 ****
+*** 73,84 ****
   # xinc = -I/usr/include/X11
   #### BSD/386
   # xinc = -I/usr/X11/include
+! xinc = -I/xdev/mosaic/X11R5/include
   
   #### X library locations.
-! xlibs = -lXm_s -lXmu -lXt_s -lX11_s
+  # xlibs = -lXm_s -lXmu -lXt_s -lX11_s
   #### For Sun's (at least running stock X/Motif as installed on our machines):
-! xlibs = /usr/lib/libXm.a /usr/lib/libXmu.a /usr/lib/libXt.a /usr/lib/libXext.a /usr/lib/libX11.a -lm
+! xlibs = /xdev/mosaic/X11R5/lib/libXm.a /xdev/mosaic/X11R5/lib/libXmu.a /xdev/mosaic/X11R5/lib/libXt.a /xdev/mosaic/X11R5/lib/libXext.a /xdev/mosaic/X11R5/lib/libX11.a -lm
   #### For HP-UX 8.00:
   # xlibs = -L/usr/lib/Motif1.1 -lXm -L/usr/lib/X11R4 -lXmu -lXt -lX11
   #### For HP-UX 9.01: The X11R5 libraries are here on our systems
---- 69,81 ----
+--- 73,85 ----
   # xinc = -I/usr/include/X11
   #### BSD/386
   # xinc = -I/usr/X11/include
-+ #### FreeBSD 2.x
-+ xinc = -I/usr/X11R6/include
+! #xinc = -I/xdev/mosaic/X11R5/include
+! xinc = -I/usr/X11R6/include
   
   #### X library locations.
-! # xlibs = -lXm_s -lXmu -lXt_s -lX11_s
+  # xlibs = -lXm_s -lXmu -lXt_s -lX11_s
   #### For Sun's (at least running stock X/Motif as installed on our machines):
-! # xlibs = /usr/lib/libXm.a /usr/lib/libXmu.a /usr/lib/libXt.a /usr/lib/libXext.a /usr/lib/libX11.a -lm
+! #xlibs = /xdev/mosaic/X11R5/lib/libXm.a /xdev/mosaic/X11R5/lib/libXmu.a /xdev/mosaic/X11R5/lib/libXt.a /xdev/mosaic/X11R5/lib/libXext.a /xdev/mosaic/X11R5/lib/libX11.a -lm
   #### For HP-UX 8.00:
   # xlibs = -L/usr/lib/Motif1.1 -lXm -L/usr/lib/X11R4 -lXmu -lXt -lX11
   #### For HP-UX 9.01: The X11R5 libraries are here on our systems
 ***************
-*** 91,96 ****
---- 94,105 ----
+*** 97,102 ****
+--- 98,109 ----
   # xlibs = -L/usr/X11/lib -lXm -lXmu -lXt -lX11
   #### For Motorola SVR4:
   # xlibs = -lXm -lXmu -lXt -lXext -lX11 -lm
 + #### For FreeBSD 2.x:
-+ .ifdef SHARED_MOTIF
++ .if !exists(/usr/X11R6/lib/libXm.a)
 + xlibs = -L/usr/X11R6/lib -lXm -lXmu -lXt -lXext -lX11 -lm
 + .else
 + xlibs = -L/usr/X11R6/lib /usr/X11R6/lib/libXm.a -lXmu -lXt -lXext -lX11 -lm
@@ -135,86 +113,158 @@
   
   #### DTM AND HDF SUPPORT; READ CAREFULLY
 ***************
-*** 114,131 ****
-  #dtmdirs = libdtm libnet
-  #dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
-  #dtmflags = -DHAVE_DTM -I.. -I../libnet
-! hdfdir = /hdf2/scratch/sxu/4.0b1_SunOS
+*** 116,138 ****
+  #### If your platform is not one of the above, then either do not compile
+  #### with HDF/DTM support or try hacking libdtm/makefile.
+  
+! dtmmachtype = sun
+! dtmdirs = libdtm libnet
+! dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
+! dtmflags = -DHAVE_DTM -I.. -I../libnet
+! hdfdir = /hdf2/install/sun
 ! hdflibs = $(hdfdir)/lib/libnetcdf.a $(hdfdir)/lib/libdf.a
 ! hdfflags = -DHAVE_HDF -DHDF -I$(hdfdir)/include
   
   
-  #### JPEG SUPPORT
-  #### For inline JPEG support, the following should be defined:
-  #### The library used is Independent JPEG Group (IJG's) 5.0a.
+  #### PNG SUPPORT
+  #### For inline PNG support, the following should be defined:
+  #### The libraries currently used are PNGLIB 0.81 and ZLIB 0.95
   
-! jpegdir = /X11/mosaic/libjpeg/sun4
-! jpeglibs = $(jpegdir)/libjpeg.a
-! jpegflags = -I$(jpegdir) -DHAVE_JPEG
+! pngdir = /xdev/mosaic/libpng/sun
+  pnglibdir = $(pngdir)/lib
+  pngincludedir = $(pngdir)/include
+! pnglibs = $(pnglibdir)/libpng.a $(pnglibdir)/libz.a -lm
+  pngflags =  -I$(pngincludedir) -DHAVE_PNG
   
   
-  #### DIRECT WAIS SUPPORT
---- 123,140 ----
-  #dtmdirs = libdtm libnet
-  #dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
-  #dtmflags = -DHAVE_DTM -I.. -I../libnet
-! #hdfdir = /hdf2/scratch/sxu/4.0b1_SunOS
+--- 123,148 ----
+  #### If your platform is not one of the above, then either do not compile
+  #### with HDF/DTM support or try hacking libdtm/makefile.
+  
+! #dtmmachtype = sun
+! #dtmdirs = libdtm libnet
+! #dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
+! #dtmflags = -DHAVE_DTM -I.. -I../libnet
+! #hdfdir = /hdf2/install/sun
 ! #hdflibs = $(hdfdir)/lib/libnetcdf.a $(hdfdir)/lib/libdf.a
 ! #hdfflags = -DHAVE_HDF -DHDF -I$(hdfdir)/include
   
   
-  #### JPEG SUPPORT
+  #### PNG SUPPORT
+  #### For inline PNG support, the following should be defined:
+  #### The libraries currently used are PNGLIB 0.81 and ZLIB 0.95
+  
+! #pngdir = /xdev/mosaic/libpng/sun
+! pngdir = /usr/local
+  pnglibdir = $(pngdir)/lib
+  pngincludedir = $(pngdir)/include
+! #pnglibs = $(pnglibdir)/libpng.a $(pnglibdir)/libz.a -lm
+! #pngflags =  -I$(pngincludedir) -DHAVE_PNG
+! pnglibs = -L$(pnglibdir) -lpng -lz -lm
+  pngflags =  -I$(pngincludedir) -DHAVE_PNG
+  
+  
+***************
+*** 140,147 ****
   #### For inline JPEG support, the following should be defined:
   #### The library used is Independent JPEG Group (IJG's) 5.0a.
   
-! jpegdir = # ../libjpeg
-! jpeglibs = -L/usr/local/lib -ljpeg # $(jpegdir)/libjpeg.a
-! jpegflags = -I/usr/local/include -DHAVE_JPEG # -I$(jpegdir) -DHAVE_JPEG
+! jpegdir = /xdev/mosaic/libjpeg/sun
+! jpeglibs = $(jpegdir)/lib/libjpeg.a
+  jpegflags = -I$(jpegdir)/include -DHAVE_JPEG
   
   
-  #### DIRECT WAIS SUPPORT
+--- 150,159 ----
+  #### For inline JPEG support, the following should be defined:
+  #### The library used is Independent JPEG Group (IJG's) 5.0a.
+  
+! #jpegdir = /xdev/mosaic/libjpeg/sun
+! jpegdir = /usr/local
+! #jpeglibs = $(jpegdir)/lib/libjpeg.a
+! jpeglibs = -L$(jpegdir)/lib -ljpeg
+  jpegflags = -I$(jpegdir)/include -DHAVE_JPEG
+  
+  
 ***************
-*** 143,152 ****
+*** 154,167 ****
+  #### define the KRB-ENCRYPT flag.
   
-  #### -lm is required for freeWAIS 0.1, as ceil() is used.
+  ##krb4dir   = /usr/athena
+! krb4dir   = /xdev/mosaic/libkrb4/sun
+! krb4libs  = $(krb4dir)/lib/libkrb.a $(krb4dir)/lib/libdes.a
+! krb4flags = -DKRB4 -I$(krb4dir)/include
   
-! waisroot = /X11/mosaic/freeWAIS-0.202-sun
-! waisflags = -DDIRECT_WAIS -I$(waisroot)/ir
+  ##krb5dir   = /krb5
+! krb5dir   = /xdev/mosaic/libkrb5/sun
+! krb5libs  = $(krb5dir)/lib/libkrb5.a $(krb5dir)/lib/libcrypto.a $(krb5dir)/util/et/libcom_err.a
+! krb5flags = -DKRB5 -I$(krb5dir)/include -I$(krb5dir)/include/krb5
+  
+  #Do not comment out.
+  krbflags  = $(krb4flags) $(krb5flags)
+--- 166,179 ----
+  #### define the KRB-ENCRYPT flag.
+  
+  ##krb4dir   = /usr/athena
+! #krb4dir   = /xdev/mosaic/libkrb4/sun
+! #krb4libs  = $(krb4dir)/lib/libkrb.a $(krb4dir)/lib/libdes.a
+! #krb4flags = -DKRB4 -I$(krb4dir)/include
+  
+  ##krb5dir   = /krb5
+! #krb5dir   = /xdev/mosaic/libkrb5/sun
+! #krb5libs  = $(krb5dir)/lib/libkrb5.a $(krb5dir)/lib/libcrypto.a $(krb5dir)/util/et/libcom_err.a
+! #krb5flags = -DKRB5 -I$(krb5dir)/include -I$(krb5dir)/include/krb5
+  
+  #Do not comment out.
+  krbflags  = $(krb4flags) $(krb5flags)
+***************
+*** 183,192 ****
+  
+  #### -lm is required for freeWAIS 0.5, as ceil() is used.
+  
+! waisroot = /xdev/mosaic/freeWAIS/sun4
+! waisflags = -DDIRECT_WAIS -I$(waisroot)/include
 ! waislibdir = $(waisroot)/bin
 ! waislibs = $(waislibdir)/inv.a $(waislibdir)/wais.a $(waislibdir)/libftw.a -lm
   
   
-  #### PEM/PGP SUPPORT
---- 152,161 ----
+  #### Customization flags:
+--- 195,204 ----
   
-  #### -lm is required for freeWAIS 0.1, as ceil() is used.
+  #### -lm is required for freeWAIS 0.5, as ceil() is used.
   
-! #waisroot = /X11/mosaic/freeWAIS-0.202-sun
-! #waisflags = -DDIRECT_WAIS -I$(waisroot)/ir
+! #waisroot = /xdev/mosaic/freeWAIS/sun4
+! #waisflags = -DDIRECT_WAIS -I$(waisroot)/include
 ! #waislibdir = $(waisroot)/bin
 ! #waislibs = $(waislibdir)/inv.a $(waislibdir)/wais.a $(waislibdir)/libftw.a -lm
   
   
-  #### PEM/PGP SUPPORT
+  #### Customization flags:
 ***************
-*** 184,191 ****
-  
+*** 203,209 ****
   # ---------------------- END OF CUSTOMIZABLE OPTIONS -------------------------
   
   
-! CFLAGS = -g $(sysconfigflags)
+! CFLAGS = -g $(sysconfigflags) $(prereleaseflags)
   
   # Don't worry about these -- for development purposes only.
   PURIFY = purify
---- 193,203 ----
-  
+--- 215,221 ----
   # ---------------------- END OF CUSTOMIZABLE OPTIONS -------------------------
   
-+ install:
-+ 	install -c -s -g bin -m 0555 -o bin src/Mosaic ${PREFIX}/bin/Mosaic
+  
+! CFLAGS += $(sysconfigflags) $(prereleaseflags)
+  
+  # Don't worry about these -- for development purposes only.
+  PURIFY = purify
+***************
+*** 215,220 ****
+--- 227,235 ----
+  	@echo \*\*\* Welcome to Purify'd NCSA Mosaic.
+  quantifyd: $(dtmdirs) libwww2 libXmx libhtmlw libnut src-quantifyd
+  	@echo \*\*\* Welcome to Quantify'd NCSA Mosaic.
 + 
++ install:
++ 	$(INSTALL) -c -s -g $(BINGRP) -m $(BINMODE) -o $(BINOWN) src/Mosaic ${PREFIX}/bin/Mosaic
   
-! CFLAGS+= $(sysconfigflags)
-  
-  # Don't worry about these -- for development purposes only.
-  PURIFY = purify
+  libXmx::
+  	@echo --- Building libXmx
