@@ -1,0 +1,306 @@
+diff -rc ../radio/Makefile ./Makefile
+*** ../radio/Makefile	Mon May 17 10:46:21 1993
+--- ./Makefile	Tue Jul 11 12:05:29 1995
+***************
+*** 26,38 ****
+  default:
+  		@echo 'You must use "make sun4.0", "make sun4.1",'
+  		@echo '"make next", "make sgi", "make hpux",'
+! 		@echo '"make lofi" or "make audiofile"'
+  		exit 1
+  
+  all:		radio broadcast
+  
+  # Platform-specific entries
+  
+  sun4.0:		# For SunOS 4.x
+  		make all LIBS=-lX11
+  
+--- 26,41 ----
+  default:
+  		@echo 'You must use "make sun4.0", "make sun4.1",'
+  		@echo '"make next", "make sgi", "make hpux",'
+! 		@echo '"make FreeBSD", "make lofi" or "make audiofile"'
+  		exit 1
+  
+  all:		radio broadcast
+  
+  # Platform-specific entries
+  
++ FreeBSD:	# For FreeBSD 2.0.5
++ 		make all CFLAGS='-DHAVE_MCAST -DDEFMCAST=\"radio.multicast\"'
++ 
+  sun4.0:		# For SunOS 4.x
+  		make all LIBS=-lX11
+  
+***************
+*** 82,87 ****
+--- 85,95 ----
+  		make all CFLAGS="-g -Daudiofile $(AFINCLUDE)" \
+  		LIBS="$(AFLIBDIRS) -lAF -lAFUtil -lm"
+  
++ install:	all
++ 		$(INSTALL) -c -o bin -g bin -m 755 broadcast /usr/local/bin/broadcast
++ 		$(INSTALL) -c -o bin -g bin -m 755 radio /usr/local/bin/radio
++ 		$(INSTALL) -c -o bin -g bin -m 644 broadcast.man /usr/local/man/man1/broadcast.1
++ 		$(INSTALL) -c -o bin -g bin -m 644 radio.man /usr/local/man/man1/radio.1
+  
+  # Common programs:
+  
+diff -rc ../radio/broadcast.c ./broadcast.c
+*** ../radio/broadcast.c	Mon May 17 10:46:22 1993
+--- ./broadcast.c	Tue Jul 11 12:05:29 1995
+***************
+*** 490,496 ****
+  			for (i = 0; i < nbcaddr; i++) {
+  				/* Send data packets to all bcast ports */
+  				if (sendto(s, real_buf, HEADERSIZE+n, 0,
+! 					   &bcaddr[i], sizeof bcaddr[i]) !=
+  				                                HEADERSIZE+n) {
+  					perror("sendto");
+  				}
+--- 490,496 ----
+  			for (i = 0; i < nbcaddr; i++) {
+  				/* Send data packets to all bcast ports */
+  				if (sendto(s, real_buf, HEADERSIZE+n, 0,
+! 					   (struct sockaddr *)&bcaddr[i], sizeof bcaddr[i]) !=
+  				                                HEADERSIZE+n) {
+  					perror("sendto");
+  				}
+***************
+*** 522,528 ****
+  			if (select(ctls+1, &inputav, 0, 0, &zerotime) == 1) {
+  				ctlsinsize = sizeof(ctlsin);
+  				n = recvfrom(ctls, buf, BUFFERSIZE, 0,
+! 					     &ctlsin, &ctlsinsize);
+  				if (n < 0) {
+  					perror("recvfrom");
+  					exit(1);
+--- 522,528 ----
+  			if (select(ctls+1, &inputav, 0, 0, &zerotime) == 1) {
+  				ctlsinsize = sizeof(ctlsin);
+  				n = recvfrom(ctls, buf, BUFFERSIZE, 0,
+! 					     (struct sockaddr *)&ctlsin, &ctlsinsize);
+  				if (n < 0) {
+  					perror("recvfrom");
+  					exit(1);
+diff -rc ../radio/radio.c ./radio.c
+*** ../radio/radio.c	Mon May 17 10:46:23 1993
+--- ./radio.c	Tue Jul 11 12:05:30 1995
+***************
+*** 102,107 ****
+--- 102,121 ----
+  void sigpoll_handler();
+  #endif /* USE_SUN */
+  
++ #ifdef __FreeBSD__
++ #include <string.h>
++ #include <machine/soundcard.h>
++ 
++ #define AUDIO_IODEV     "/dev/audio"
++ #define AUDIO_CTLDEV    "/dev/audioctl"
++ 
++ int interruptable = 1;
++ int actlfd = -1;
++ int afd = -1;
++ 
++ void sigpoll_handler();
++ #endif /* __FreeBSD__ */
++ 
+  #ifdef USE_HP
+  #include <netinet/tcp.h>
+  #include <sys/audio.h>
+***************
+*** 380,386 ****
+  		fromlen = sizeof(from);
+  		buf = real_buf;
+  		n = recvfrom(curs, buf, HEADERSIZE + BUFFERSIZE, 0,
+! 			     (struct stockaddr *)&from, &fromlen);
+  		if (n <= 0) {
+  			if (n == 0)
+  				continue; /* Ignore empty packets */
+--- 394,400 ----
+  		fromlen = sizeof(from);
+  		buf = real_buf;
+  		n = recvfrom(curs, buf, HEADERSIZE + BUFFERSIZE, 0,
+! 			     (struct sockaddr *)&from, &fromlen);
+  		if (n <= 0) {
+  			if (n == 0)
+  				continue; /* Ignore empty packets */
+***************
+*** 408,414 ****
+  				case 'e':		/* Echo */
+  					buf[6] = 'E';
+  					sendto(curs, buf, n, 0,
+! 					       &from, fromlen);
+  					break;
+  				case 'S':	/* Status from broadcast */
+  					break;
+--- 422,428 ----
+  				case 'e':		/* Echo */
+  					buf[6] = 'E';
+  					sendto(curs, buf, n, 0,
+! 					       (struct sockaddr *)&from, fromlen);
+  					break;
+  				case 'S':	/* Status from broadcast */
+  					break;
+***************
+*** 452,458 ****
+  							"sending info '%s'\n",
+  							buf);
+  					sendto(curs, buf, strlen(buf), 0,
+! 					       &from, fromlen);
+  					break;
+  #ifndef USE_NX /* XXX I don't know how to close_speaker() on the NeXT */
+  				case 'p':		/* Pause */
+--- 466,472 ----
+  							"sending info '%s'\n",
+  							buf);
+  					sendto(curs, buf, strlen(buf), 0,
+! 					       (struct sockaddr *)&from, fromlen);
+  					break;
+  #ifndef USE_NX /* XXX I don't know how to close_speaker() on the NeXT */
+  				case 'p':		/* Pause */
+***************
+*** 585,590 ****
+--- 599,612 ----
+  				akt_buf = (akt_buf + 1) % NUM_BUFFER;
+  			}
+  #endif /* USE_NX */
++ #ifdef __FreeBSD__
++ 			if (!filter) {
++ 				if (write(afd, buf, n) != n) {
++ 					perror("write afd");
++ 					break;
++ 				}
++ 			}
++ #endif /* __FreeBSD__ */
+  #ifdef USE_SUN
+  			if (!filter) {
+  				if (write(afd, buf, n) != n) {
+***************
+*** 716,721 ****
+--- 738,806 ----
+  
+  #endif /* USE_AL */
+  
++ #ifdef __FreeBSD__
++ 
++ void open_speaker()
++ {	
++ 	char name[30] = "/dev/mixer";
++ 	int foo, bar, baz, dev;
++ 	int devmask = 0, recmask = 0, recsrc = 0;
++ 	char *names[SOUND_MIXER_NRDEVICES] = SOUND_DEVICE_NAMES;
++ 
++ 	/* Write to AUDIO_IODEV */
++ 	if ((afd = open(AUDIO_IODEV, O_WRONLY)) < 0) {
++ 		perror(AUDIO_IODEV);
++ 		exit(1);
++ 	}
++ 
++ 	/* Set the volume */
++ 	if (volume >= 0) {
++ 		if ((baz = open(name, O_RDWR)) < 0) {
++ 			perror(name);
++ 			exit(1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_DEVMASK, &devmask) == -1) {
++ 			perror("SOUND_MIXER_READ_DEVMASK");
++ 			exit(-1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_RECMASK, &recmask) == -1) {
++ 			perror("SOUND_MIXER_READ_RECMASK");
++ 			exit(-1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_RECSRC, &recsrc) == -1) {
++ 			perror("SOUND_MIXER_READ_RECSRC");
++ 			exit(-1);
++ 		}
++ 
++ 		for (foo = 0; foo < SOUND_MIXER_NRDEVICES &&
++ 					strcmp(names[foo],"vol"); foo++);
++ 
++ 		if (foo >= SOUND_MIXER_NRDEVICES) {
++ 			close(baz);
++ 			perror("VOLUME_ERROR");
++ 		} else {
++ 			if (volume < 0) volume = 0;
++ 			if (volume > 100) volume = 100;
++ 			bar = volume | (volume << 8);
++ 			if (pdebug)
++ 				printf("Setting the mixer %s to %d.\n",
++ 						names[foo], volume);
++ 			if (ioctl(baz, MIXER_WRITE(foo), &bar) == -1)
++ 				perror("WRITE_MIXER");
++ 			close(baz);
++ 		}
++ 
++ 	}
++ }
++ 
++ void close_speaker()
++ {
++ 	close(afd);
++ 	afd = actlfd = -1;
++ }
++ 
++ #endif /* __FreeBSD__ */
++ 
+  #ifdef USE_SUN
+  
+  void open_speaker()
+***************
+*** 1000,1006 ****
+  	else
+  	    grpaddr.s_addr = inet_addr(group);
+  
+! 	if (!IN_MULTICAST(grpaddr.s_addr)) {
+  		fprintf(stderr, "Bad multicast group: %s\n", group);
+  		exit(1);
+  	}
+--- 1085,1091 ----
+  	else
+  	    grpaddr.s_addr = inet_addr(group);
+  
+! 	if (!IN_MULTICAST(ntohl(grpaddr.s_addr))) {
+  		fprintf(stderr, "Bad multicast group: %s\n", group);
+  		exit(1);
+  	}
+diff -rc ../radio/socklib.c ./socklib.c
+*** ../radio/socklib.c	Mon May 17 10:46:25 1993
+--- ./socklib.c	Tue Jul 11 12:05:30 1995
+***************
+*** 76,82 ****
+  	}
+  #endif
+  
+! 	if (bind(s, &sin, sizeof sin) < 0) {
+  		sprintf(desc,"bind(%s)", sockdesc);
+  		perror(desc);
+  		close(s);
+--- 76,82 ----
+  	}
+  #endif
+  
+! 	if (bind(s, (struct sockaddr *)&sin, sizeof sin) < 0) {
+  		sprintf(desc,"bind(%s)", sockdesc);
+  		perror(desc);
+  		close(s);
+***************
+*** 88,94 ****
+  		setipaddr(remotename, &sin);
+  		sin.sin_port = htons(remoteport);
+  
+! 		if (connect(s, &sin, sizeof sin) < 0) {
+  			sprintf(desc, "connect(%s)", sockdesc);
+  			perror(desc);
+  			close(s);
+--- 88,94 ----
+  		setipaddr(remotename, &sin);
+  		sin.sin_port = htons(remoteport);
+  
+! 		if (connect(s, (struct sockaddr *)&sin, sizeof sin) < 0) {
+  			sprintf(desc, "connect(%s)", sockdesc);
+  			perror(desc);
+  			close(s);

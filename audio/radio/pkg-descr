@@ -1,0 +1,18 @@
+This is Radio version 2.0, patchlevel 4 (a.k.a. 2.0.4).
+
+If you have a local area network full of workstations with audio
+capabilities and at least one FM/AM radio or other audio source, you
+can broadcast the audio over the network, and let other users listen
+to it.
+
+This software works for Sun Sparcs running SunOS 4.0 or 4.1, for SGI
+Indigo or Personal IRIS 4D/30 or 4D/35 workstations running SGI IRIX
+4.0 or 3.3.2, NeXT workstations (running version 2.1), DECstations
+equipped with DEC lofi, machines running the AudioFile audio server
+from DEC CRL, and HP machines with audio hardware.  At CWI, versions
+of it have been in continuous use on a mix of Sun and SGI system types
+for almost two years; version 1.0 (patchlevel 4) was last tested on a
+NeXT.  (I've heard that the program doesn't work on NeXT 3.1; if you
+fix it please send me the changes!)
+
+Man pages for "radio" and "broadcast" are provided.
