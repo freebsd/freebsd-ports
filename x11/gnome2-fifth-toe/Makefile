@@ -40,9 +40,12 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		gcompris:${PORTSDIR}/games/gcompris2 \
 		galeon:${PORTSDIR}/www/galeon2 \
 		gswitchit-properties-capplet:${PORTSDIR}/x11/gswitchit \
-		totem:${PORTSDIR}/multimedia/totem \
 		seahorse:${PORTSDIR}/security/seahorse \
 		workrave:${PORTSDIR}/x11/workrave
+
+.if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
+RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
+.endif
 
 NO_BUILD=	yes
 
