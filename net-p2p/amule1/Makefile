@@ -17,6 +17,8 @@ COMMENT=	The all-platform eMule p2p client
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		curl.3:${PORTSDIR}/ftp/curl
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS=	aMule-devel-*
 
 USE_X_PREFIX=	yes
