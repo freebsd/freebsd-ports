@@ -5,7 +5,7 @@
  {
  	cat <<EOF
 -Usage: glib-config [OPTIONS] [LIBRARIES]
-+Usage: glib11d-config [OPTIONS] [LIBRARIES]
++Usage: glib12-config [OPTIONS] [LIBRARIES]
  Options:
  	[--prefix[=DIR]]
  	[--exec-prefix[=DIR]]
@@ -21,16 +21,16 @@
  	libsa=""
  	if test "$lib_glib" = "yes"; then
 -		libsp="$libsp -lglib"
-+		libsp="$libsp -lglib11d"
++		libsp="$libsp -lglib12"
  	fi
  	if test "$lib_gthread" = "yes"; then
 -		libsp="-lgthread $libsp"
-+		libsp="-rdynamic -lgthread11d $libsp"
++		libsp="-lgthread12 $libsp"
  		libsa="$libsa @G_THREAD_LIBS@"
  	fi
  	if test "$lib_gmodule" = "yes"; then
 -		libsp="@G_MODULE_LDFLAGS@ -lgmodule $libsp"
-+		libsp="@G_MODULE_LDFLAGS@ -lgmodule11d $libsp"
++		libsp="@G_MODULE_LDFLAGS@ -lgmodule12 $libsp"
  		libsa="$libsa @G_MODULE_LIBS@"
  	fi
  	echo -L@libdir@ $libsp $libsa

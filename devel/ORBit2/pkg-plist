@@ -1,3 +1,4 @@
+bin/libIDL-config
 bin/name-client
 bin/old-name-server
 bin/orbit-config
@@ -5,6 +6,7 @@ bin/orbit-event-server
 bin/orbit-idl
 bin/orbit-ird
 bin/orbit-name-server
+etc/libIDLConf.sh
 include/IIOP/IIOP-config.h
 include/IIOP/IIOP-types.h
 include/IIOP/IIOP.h
@@ -90,6 +92,7 @@ lib/libORBitutil.so.1
 lib/libname-server.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/libIDL.m4
 @dirrm include/IIOP
 @dirrm include/ORBitservices
 @dirrm include/ORBitutil

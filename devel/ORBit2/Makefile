@@ -1,24 +1,24 @@
 # New ports collection makefile for:   orbit
-# Version required:		0.3.98
+# Version required:		0.4.0
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.13 1999/01/31 16:57:13 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/02/18 17:49:05 vanilla Exp $
 #
 
-DISTNAME=	ORBit-0.3.98
+DISTNAME=	ORBit-0.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	ORBit
 
 MAINTAINER=	clkao@CirX.ORG
 
-LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
+LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config"
+CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib12-config"
 CONFIGURE_ARGS= --disable-indent
 
 pre-install:

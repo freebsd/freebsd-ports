@@ -9,6 +9,8 @@ bin/goad-browser
 bin/libart-config
 bin/loadshlib
 bin/new-object
+etc/gnomeConf.sh
+etc/libartConf.sh
 etc/mime-magic
 etc/mime-magic.dat
 etc/paper.config
@@ -16,7 +18,6 @@ etc/sound/events/gnome.soundlist
 etc/sound/events/gtk-events.soundlist
 include/gnome.h
 include/gnomesupport.h
-include/popt-gnome.h
 include/gtk-xmhtml/HTML.h
 include/gtk-xmhtml/XmHTML.h
 include/gtk-xmhtml/XmHTMLI.h
@@ -32,8 +33,8 @@ include/libart_lgpl/art_filterlevel.h
 include/libart_lgpl/art_gray_svp.h
 include/libart_lgpl/art_misc.h
 include/libart_lgpl/art_pathcode.h
-include/libart_lgpl/art_point.h
 include/libart_lgpl/art_pixbuf.h
+include/libart_lgpl/art_point.h
 include/libart_lgpl/art_rect.h
 include/libart_lgpl/art_rect_svp.h
 include/libart_lgpl/art_rect_uta.h
@@ -152,6 +153,7 @@ include/libgnomeui/gtkpixmapmenuitem.h
 include/libgnomeui/libgnomeui.h
 include/libgnorba/gnome-factory.h
 include/libgnorba/gnorba.h
+include/popt-gnome.h
 include/zvt/lists.h
 include/zvt/vt.h
 include/zvt/vtx.h
@@ -190,15 +192,14 @@ lib/libzvt.so
 lib/libzvt.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/gnomeConf.sh
 share/gnome/gtkrc
 share/gnome/gtkrc.ja
 share/gnome/gtkrc.ko
+share/gnome/gtkrc.ru
 share/gnome/idl/Table.idl
 share/gnome/idl/base.idl
 share/gnome/idl/gnome-factory.idl
 share/gnome/idl/name-service.idl
-share/gnome/libartConf.sh
 share/gnome/mime-info/gnome.mime
 share/gnome/pixmaps/calculator-font.png
 share/gnome/pixmaps/gnome-default-dlg.png
@@ -208,6 +209,8 @@ share/gnome/pixmaps/gnome-question.png
 share/gnome/pixmaps/gnome-warning.png
 share/gnome/pixmaps/no.xpm
 share/gnome/pixmaps/yes.xpm
+share/gnome/type-convert/gnome-make-postscript-mimes
+share/gnome/type-convert/postscript.convert
 share/gnome/type-convert/type.convert
 share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
@@ -227,17 +230,18 @@ share/locale/pl/LC_MESSAGES/gnome-libs.mo
 share/locale/pt/LC_MESSAGES/gnome-libs.mo
 share/locale/ru/LC_MESSAGES/gnome-libs.mo
 share/locale/sv/LC_MESSAGES/gnome-libs.mo
+@exec mkdir -p %D/share/gnome/games
+@dirrm share/gnome/type-convert
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome/mime-info
+@dirrm share/gnome/idl
+@dirrm share/gnome/games
+@dirrm share/gnome
+@dirrm include/zvt
+@dirrm include/libgnorba
+@dirrm include/libgnomeui
+@dirrm include/libgnome
+@dirrm include/libart_lgpl
+@dirrm include/gtk-xmhtml
 @dirrm etc/sound/events
 @dirrm etc/sound
-@dirrm include/gtk-xmhtml
-@dirrm include/libart_lgpl
-@dirrm include/libgnome
-@dirrm include/libgnomeui
-@dirrm include/libgnorba
-@dirrm include/zvt
-@dirrm share/gnome/games
-@dirrm share/gnome/idl
-@dirrm share/gnome/mime-info
-@dirrm share/gnome/pixmaps
-@dirrm share/gnome/type-convert
-@dirrm share/gnome

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gnomelibs
-# Version required:			0.99.8.1
+# Version required:			1.0.1
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.31 1999/02/01 20:58:45 vanilla Exp $
+# $Id: Makefile,v 1.32 1999/02/18 17:53:23 vanilla Exp $
 #
 
-DISTNAME=	gnome-libs-0.99.8.1
-PKGNAME=	gnomelibs-0.99.8.1
+DISTNAME=	gnome-libs-1.0.1
+PKGNAME=	gnomelibs-1.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-libs
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	nacai@iname.com
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib \
 		esd.1:${PORTSDIR}/audio/esound
 
 # implicit dependencies:
-# gettext, gtk11-devel, tiff34, jpeg, giflib, png
+# gettext, gtk12, tiff34, jpeg, giflib, png
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -30,9 +30,9 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-gnome-hello \
 		--disable-test-gnome
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-I${LOCALBASE}/include/giflib" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:

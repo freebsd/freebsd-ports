@@ -1,21 +1,24 @@
---- configure.orig	Tue Feb 16 22:50:48 1999
-+++ configure	Fri Feb 19 02:02:47 1999
-@@ -2982,13 +2982,13 @@
- 	    fi
- 	
- 	    if test "$no_gnome_config" = "yes"; then
--              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:2987: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	      if test -f $gnome_prefix/gnomeConf.sh; then
-+              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:2987: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	      if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	        echo "$ac_t""found" 1>&6
- 	        echo "loading gnome configuration from" \
--		     "$gnome_prefix/gnomeConf.sh"
--	        . $gnome_prefix/gnomeConf.sh
-+		     "$prefix/share/gnome/gnomeConf.sh"
-+	        . $prefix/share/gnome/gnomeConf.sh
- 	        gnome_found=yes
- 	      else
- 	        echo "$ac_t""not found" 1>&6
+--- configure.orig	Sun Feb 28 13:10:54 1999
++++ configure	Tue Mar  2 18:33:43 1999
+@@ -965,9 +965,9 @@
+ 
+ # libtool versioning
+ LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
+-LT_CURRENT=`expr $LIBGTOP_MICRO_VERSION - $LIBGTOP_INTERFACE_AGE`
+-LT_REVISION=$LIBGTOP_INTERFACE_AGE
+-LT_AGE=`expr $LIBGTOP_BINARY_AGE - $LIBGTOP_INTERFACE_AGE`
++LT_CURRENT=1
++LT_REVISION=0
++LT_AGE=0
+ LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
+ 
+ 
+@@ -7698,7 +7698,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo

@@ -1,5 +1,14 @@
---- Makefile.in.orig	Wed Feb 17 02:43:25 1999
-+++ Makefile.in	Wed Feb 24 07:42:58 1999
+--- Makefile.in.orig	Thu Feb 25 13:01:50 1999
++++ Makefile.in	Wed Mar  3 13:15:47 1999
+@@ -94,7 +94,7 @@
+ 
+ 
+ xmlincdir = $(includedir)/gnome-xml
+-xmlinc_HEADERS =  		entities.h 		encoding.h 		parser.h 		parserInternals.h 		debugXML.h 		tree.h 		valid.h
++xmlinc_HEADERS =  		entities.h 		encoding.h 		error.h			parser.h 		parserInternals.h 		debugXML.h 		tree.h 		valid.h
+ 
+ 
+ DEPS = $(top_builddir)/libxml.la
 @@ -105,7 +105,7 @@
  tester_DEPENDENCIES = $(DEPS)
  tester_LDADD = $(LDADDS)
@@ -8,8 +17,8 @@
 +confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
  
- EXTRA_DIST = xmlConf.sh.in libxml.spec doc/xml.html doc/structure.gif              doc/DOM.gif
-@@ -513,7 +513,7 @@
+ EXTRA_DIST = xmlConf.sh.in libxml.spec.in
+@@ -518,7 +518,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS \
  		uninstall-confexecDATA uninstall-xmlincHEADERS
  uninstall: uninstall-recursive
@@ -18,3 +27,28 @@
  		$(HEADERS) config.h
  all-redirect: all-recursive-am
  install-strip:
+--- doc/Makefile.in.orig	Thu Feb 25 13:01:51 1999
++++ doc/Makefile.in	Tue Mar  2 20:39:23 1999
+@@ -89,7 +89,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = ..
+ 
+-HTML_DIR = $(datadir)/gnome-xml/html
++HTML_DIR = $(datadir)
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -227,10 +227,9 @@
+ 
+ install-data-local: 
+ 	install -d -m 0755 $(TARGET_DIR)
+-	-install -m 0644 $(srcdir)/xml.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(TARGET_DIR)
+-	-install -m 0644 $(srcdir)/html/*.html $(TARGET_DIR)
+-	-install -m 0644 $(srcdir)/html/index.sgml $(TARGET_DIR)
+-	-gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR)
++	-install -c -m 0644 $(srcdir)/xml.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(TARGET_DIR)
++	-install -c -m 0644 $(srcdir)/html/*.html $(TARGET_DIR)
++	-install -c -m 0644 $(srcdir)/html/index.sgml $(TARGET_DIR)
+ 
+ dist-hook:
+ 	(cd $(srcdir) ; tar cvf - xml.html structure.gif DOM.gif html/*.html html/*.sgml) | (cd $(distdir); tar xf -)

@@ -1,6 +1,6 @@
 --- gtk/gtkrc.c.orig	Mon Jan  4 17:33:28 1999
 +++ gtk/gtkrc.c	Tue Jan  5 07:41:04 1999
-@@ -223,9 +223,9 @@
+@@ -231,9 +231,9 @@
  
    var = getenv("GTK_EXE_PREFIX");
    if (var)
@@ -12,7 +12,7 @@
  
    return path;
  }
-@@ -238,9 +238,9 @@
+@@ -246,9 +246,9 @@
  
    var = getenv("GTK_DATA_PREFIX");
    if (var)
@@ -24,7 +24,7 @@
    
    for (n = 0; pixmap_path[n]; n++) ;
    if (n >= GTK_RC_MAX_PIXMAP_PATHS - 1)
-@@ -274,15 +274,15 @@
+@@ -282,15 +282,15 @@
    
    var = getenv("GTK_EXE_PREFIX");
    if (var)
@@ -43,3 +43,12 @@
    module_path[n++] = g_strdup(path);
    module_path[n] = NULL;
    g_free(path);
+@@ -324,7 +324,7 @@
+     }
+   else
+     {
+-      str = g_strdup_printf ("%s%s", GTK_SYSCONFDIR, "/gtk/gtkrc");
++      str = g_strdup_printf ("%s%s", GTK_SYSCONFDIR, "/gtkrc");
+       gtk_rc_add_default_file (str);
+       g_free (str);
+ 

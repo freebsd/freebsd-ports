@@ -2,20 +2,11 @@ bin/gnomecal
 bin/gnomecard
 etc/CORBA/servers/gnomecard.gnorba
 lib/libversit.a
-share/gnome/apps/Productivity/gncal.desktop
-share/gnome/apps/Productivity/gnomecard.desktop
+share/gnome/apps/Applications/gncal.desktop
+share/gnome/apps/Applications/gnomecard.desktop
 share/gnome/help/cal/C/gnome-cal.html
 share/gnome/help/cal/C/index.html
 share/gnome/help/cal/C/topic.dat
-share/gnome/help/gnomecard/C/description.html
-share/gnome/help/gnomecard/C/dialogs.html
-share/gnome/help/gnomecard/C/display.html
-share/gnome/help/gnomecard/C/docbook.css
-share/gnome/help/gnomecard/C/index.html
-share/gnome/help/gnomecard/C/menubar.html
-share/gnome/help/gnomecard/C/recordview.html
-share/gnome/help/gnomecard/C/toolbar.html
-share/gnome/help/gnomecard/C/topic.dat
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
 share/locale/cs/LC_MESSAGES/gnome-pim.mo
@@ -24,13 +15,13 @@ share/locale/es/LC_MESSAGES/gnome-pim.mo
 share/locale/fi/LC_MESSAGES/gnome-pim.mo
 share/locale/fr/LC_MESSAGES/gnome-pim.mo
 share/locale/ga/LC_MESSAGES/gnome-pim.mo
+share/locale/hu/LC_MESSAGES/gnome-pim.mo
 share/locale/it/LC_MESSAGES/gnome-pim.mo
 share/locale/ja/LC_MESSAGES/gnome-pim.mo
 share/locale/ko/LC_MESSAGES/gnome-pim.mo
 share/locale/no/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
 share/locale/sv/LC_MESSAGES/gnome-pim.mo
+share/locale/ru/LC_MESSAGES/gnome-pim.mo
 @dirrm share/gnome/help/cal/C
 @dirrm share/gnome/help/cal
-@dirrm share/gnome/help/gnomecard/C
-@dirrm share/gnome/help/gnomecard

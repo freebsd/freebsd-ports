@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gnomemc
-# Version required:	4.5.10
+# Version required:	4.5.23
 # Date created:		26 Jnuary 1999
 # Whom:			Jeremy Lea <reg@shale.csir.co.za>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/31 20:57:11 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/02/12 02:33:17 asami Exp $
 #
 
-DISTNAME=	mc-4.5.10
-PKGNAME=	gnomemc-4.5.10
+DISTNAME=	mc-4.5.23
+PKGNAME=	gnomemc-4.5.23
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	mc
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	reg@shale.csir.co.za
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
 # implicit dependencies:
-# gettext, glib11-devel, xpm, gnomelibs
+# gettext, glib12, xpm, gnomelibs
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--without-edit -with-ncurses
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		MAKE="gmake" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 .include <bsd.port.mk>

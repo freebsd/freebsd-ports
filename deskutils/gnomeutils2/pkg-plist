@@ -15,10 +15,11 @@ bin/gw
 bin/splac
 bin/splash
 share/gnome/apps/Applications/ghex.desktop
-share/gnome/apps/Productivity/gtt.desktop
-share/gnome/apps/System/gshutdown.desktop
+share/gnome/apps/Applications/gtt.desktop
+share/gnome/apps/Settings/gshutdown.desktop
 share/gnome/apps/Utilities/gcalc.desktop
 share/gnome/apps/Utilities/gcolorsel.desktop
+share/gnome/apps/Utilities/gdiskfree.desktop
 share/gnome/apps/Utilities/gfontsel.desktop
 share/gnome/apps/Utilities/gless.desktop
 share/gnome/apps/Utilities/gsearchtool.desktop
@@ -39,6 +40,10 @@ share/gnome/help/gstripchart/C/index.html
 share/gnome/help/gstripchart/C/topic.dat
 share/gnome/help/gtt/C/index.html
 share/gnome/help/gtt/C/topic.dat
+share/gnome/help/gtt/de/index.html
+share/gnome/help/gtt/de/topic.dat
+share/gnome/help/gtt/es/index.html
+share/gnome/help/gtt/es/topic.dat
 share/gnome/pixmaps/gnome-ghex.png
 share/locale/cs/LC_MESSAGES/gnome-utils.mo
 share/locale/de/LC_MESSAGES/gnome-utils.mo
@@ -46,20 +51,24 @@ share/locale/es/LC_MESSAGES/gnome-utils.mo
 share/locale/fi/LC_MESSAGES/gnome-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-utils.mo
 share/locale/ga/LC_MESSAGES/gnome-utils.mo
+share/locale/hu/LC_MESSAGES/gnome-utils.mo
 share/locale/it/LC_MESSAGES/gnome-utils.mo
 share/locale/ja/LC_MESSAGES/gnome-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-utils.mo
 share/locale/no/LC_MESSAGES/gnome-utils.mo
 share/locale/pt/LC_MESSAGES/gnome-utils.mo
+share/locale/ru/LC_MESSAGES/gnome-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-utils.mo
-@dirrm share/gnome/gstripchart
-@dirrm share/gnome/help/ghex/C
-@dirrm share/gnome/help/ghex/es
-@dirrm share/gnome/help/ghex
-@dirrm share/gnome/help/gshutdown/C
-@dirrm share/gnome/help/gshutdown/es
-@dirrm share/gnome/help/gshutdown
-@dirrm share/gnome/help/gstripchart/C
-@dirrm share/gnome/help/gstripchart
+@dirrm share/gnome/help/gtt/es
+@dirrm share/gnome/help/gtt/de
 @dirrm share/gnome/help/gtt/C
 @dirrm share/gnome/help/gtt
+@dirrm share/gnome/help/gstripchart/C
+@dirrm share/gnome/help/gstripchart
+@dirrm share/gnome/help/gshutdown/es
+@dirrm share/gnome/help/gshutdown/C
+@dirrm share/gnome/help/gshutdown
+@dirrm share/gnome/help/ghex/es
+@dirrm share/gnome/help/ghex/C
+@dirrm share/gnome/help/ghex
+@dirrm share/gnome/gstripchart

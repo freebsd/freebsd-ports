@@ -42,41 +42,41 @@
  
  
  INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
---- libIDL/Makefile.in.orig	Mon Feb 15 12:59:56 1999
-+++ libIDL/Makefile.in	Thu Feb 18 22:55:15 1999
-@@ -50,7 +50,7 @@
- AUTOMAKE = @AUTOMAKE@
- AUTOHEADER = @AUTOHEADER@
- 
--INSTALL = @INSTALL@
-+INSTALL = @INSTALL_PROGRAM@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
- INSTALL_DATA = @INSTALL_DATA@
- INSTALL_SCRIPT = @INSTALL_SCRIPT@
-@@ -76,7 +76,7 @@
- LEX = @LEX@
- LIBTOOL = @LIBTOOL@
- LN_S = @LN_S@
+--- libIDL/Makefile.in.orig	Thu Feb 25 17:17:07 1999
++++ libIDL/Makefile.in	Mon Mar  1 18:54:57 1999
+@@ -89,7 +89,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  NM = @NM@
  PACKAGE = @PACKAGE@
  RANLIB = @RANLIB@
-@@ -101,7 +101,7 @@
+@@ -120,7 +120,7 @@
  
  libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
  
--libIDL_la_LDFLAGS = -version-info 5:9:5
+-libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
 +libIDL_la_LDFLAGS = -version-info 1:0:0
  
- tstidl_SOURCES = tstidl.c
+ 
+ m4datadir = $(datadir)/aclocal
+@@ -130,7 +130,7 @@
  tstidl_LDFLAGS = -static
-@@ -478,7 +478,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-info \
- 		uninstall-pkgincludeHEADERS
+ tstidl_LDADD = libIDL.la
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = libIDLConf.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -580,7 +580,7 @@
+ 		uninstall-info uninstall-confexecDATA \
+ 		uninstall-m4dataDATA uninstall-pkgincludeHEADERS
  uninstall: uninstall-am
--all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS)
+-all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) \
++all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(SCRIPTS) \
+ 		$(DATA) $(HEADERS)
  all-redirect: all-am
  install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install

@@ -1,5 +1,14 @@
---- configure.orig	Fri May  1 13:48:25 1998
-+++ configure	Thu Dec  3 20:11:52 1998
+--- configure.orig	Fri May  1 07:48:25 1998
++++ configure	Wed Feb 17 02:05:55 1999
+@@ -3958,7 +3958,7 @@
+    fi
+    
+ 
+-      l=
++      l=l
+    
+ 
+          test -d po || mkdir po
 @@ -4004,7 +4004,7 @@
    ;;
  esac

@@ -1,10 +1,19 @@
 --- gtk-config.in.orig	Thu Feb  4 17:06:44 1999
 +++ gtk-config.in	Wed Feb 17 21:22:48 1999
+@@ -12,7 +12,7 @@
+ usage()
+ {
+ 	cat <<EOF
+-Usage: gtk-config [OPTIONS] [LIBRARIES]
++Usage: gtk12-config [OPTIONS] [LIBRARIES]
+ Options:
+ 	[--prefix[=DIR]]
+ 	[--exec-prefix[=DIR]]
 @@ -115,6 +115,6 @@
          fi
        done
  
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
-+      echo $libdirs @x_ldflags@ -lgtk11d -lgdk11d $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
++      echo $libdirs @x_ldflags@ -lgtk12 -lgdk12 $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
  fi      
  

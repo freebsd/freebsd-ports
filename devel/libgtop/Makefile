@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libgtop
-# Version required:		0.99.8
+# Version required:		1.0.1
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1999/02/18 18:56:34 vanilla Exp $
+# $Id: Makefile,v 1.16 1999/02/25 01:17:23 asami Exp $
 #
 
-DISTNAME=	libgtop-0.99.8
+DISTNAME=	libgtop-1.0.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	libgtop
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	nacai@iname.com
 
@@ -17,13 +17,14 @@ LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
 
 # implicit dependencies:
-# gettext, glib11-devel
+# gettext, glib12
 
+USE_PERL5=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
-USE_GMAKE=	yes
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

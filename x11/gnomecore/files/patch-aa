@@ -1,25 +1,6 @@
---- configure.orig	Tue Feb 16 01:45:51 1999
-+++ configure	Fri Feb 19 03:41:47 1999
-@@ -1133,13 +1133,13 @@
- 	    fi
- 	
- 	    if test "$no_gnome_config" = "yes"; then
--              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1138: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	      if test -f $gnome_prefix/gnomeConf.sh; then
-+              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1138: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	      if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	        echo "$ac_t""found" 1>&6
- 	        echo "loading gnome configuration from" \
--		     "$gnome_prefix/gnomeConf.sh"
--	        . $gnome_prefix/gnomeConf.sh
-+		     "$prefix/share/gnome/gnomeConf.sh"
-+	        . $prefix/share/gnome/gnomeConf.sh
- 	        
- 	      else
- 	        echo "$ac_t""not found" 1>&6
-@@ -5071,7 +5071,7 @@
+--- configure.orig	Sun Feb 28 23:24:44 1999
++++ configure	Tue Mar  2 19:12:49 1999
+@@ -5076,7 +5076,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -28,7 +9,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -5333,7 +5333,7 @@
+@@ -5338,7 +5338,7 @@
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat
@@ -37,3 +18,11 @@
  		 INTLDEPS='$(top_builddir)/intl/libintl.a'
  		 INTLLIBS=$INTLDEPS
  		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+@@ -6247,6 +6247,7 @@
+ case "$host" in
+ *linux*) CDROM_HOST=linux;;
+ *solaris*) CDROM_HOST=solaris;;
++*freebsd*) CDROM_HOST=freebsd;;
+ esac
+ 
+ 

@@ -2,10 +2,9 @@
 the Motif "look and feel". It is designed to be small and efficient, but
 still flexible enough to allow the programmer freedom in the interfaces
 created. GTK allows the programmer to use a variety of standard user
-interface widgets (*note Widgets::.) such as push, radio and check
-buttons, menus, lists and frames. It also provides several "container"
-widgets which can be used to control the layout of the user interface
-elements.
+interface widgets such as push, radio and check buttons, menus, lists
+and frames. It also provides several "container" widgets which can be
+used to control the layout of the user interface elements.
 
    GTK provides some unique features. (At least, I know of no other
 widget library which provides them). For example, a button does not

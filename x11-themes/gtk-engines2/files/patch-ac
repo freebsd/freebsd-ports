@@ -1,17 +1,13 @@
---- metal/Theme/gtk/gtkrc.orig	Sun Jan 31 03:04:18 1999
-+++ metal/Theme/gtk/gtkrc	Sun Jan 31 03:11:48 1999
-@@ -13,9 +13,9 @@
- # testgtkrc2 sets all the buttons in the main window to blue by default
- #include "testgtkrc2"
- 
--#module_path ".:/home/raster/themes"
+--- metal/Theme/gtk/gtkrc.orig	Fri Feb 12 05:16:41 1999
++++ metal/Theme/gtk/gtkrc	Wed Feb 17 01:23:21 1999
+@@ -1,3 +1,7 @@
 +#module_path "%%PREFIX%%/share/themes"
- 
--pixmap_path "."
++
 +pixmap_path "%%PREFIX%%/share/themes/Metal/gtk"
- 
++
  style "default"
  {
+   font = "-b&h-lucida-bold-r-normal-sans-12-*-*-*-p-*-iso8859-1"
 --- notif/Theme/gtk/gtkrc.orig	Sun Jan 31 03:05:48 1999
 +++ notif/Theme/gtk/gtkrc	Sun Jan 31 03:11:41 1999
 @@ -13,9 +13,9 @@

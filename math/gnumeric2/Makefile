@@ -1,32 +1,35 @@
 # New ports collection makefile for:	gnumeric
-# Version required:			0.6
+# Version required:			0.15
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1999/01/14 20:58:40 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/01/27 08:31:51 fenner Exp $
 #
 
-DISTNAME=	gnumeric-0.6
-CATEGORIES=	math
+DISTNAME=	gnumeric-0.15
+CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnumeric
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	nacai@iname.com
 
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml \
-		gnome.1:${PORTSDIR}/x11/gnomelibs \
-		guile.4:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		python:${PORTSDIR}/lang/python
+LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml
+
+# implicit dependencies:
+# gettext, xpm, gtk12, guile, gnomelibs
 
 USE_X_PREFIX=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		--with-gnome=${X11BASE} --with-guile
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:

@@ -1,6 +1,6 @@
---- configure.orig	Tue Feb 16 00:40:19 1999
-+++ configure	Fri Feb 19 00:19:26 1999
-@@ -5137,7 +5137,7 @@
+--- configure.orig	Mon Mar  1 21:51:08 1999
++++ configure	Sat Mar  6 13:33:05 1999
+@@ -5149,7 +5149,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,59 +9,17 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -6747,7 +6747,7 @@
+@@ -7233,7 +7233,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff -lm $LIBS"
 +LIBS="-ltiff -ljpeg -lz -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 6753 "configure"
+ #line 7239 "configure"
  #include "confdefs.h"
-@@ -7001,16 +7001,16 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
--echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:7007: checking for gif_lib.h" >&5
-+  ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:7007: checking for giflib/gif_lib.h" >&5
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   cat > conftest.$ac_ext <<EOF
- #line 7012 "configure"
- #include "confdefs.h"
--#include <gif_lib.h>
-+#include <giflib/gif_lib.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:7017: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -7077,16 +7077,16 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
--echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:7083: checking for gif_lib.h" >&5
-+  ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:7083: checking for giflib/gif_lib.h" >&5
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   cat > conftest.$ac_ext <<EOF
- #line 7088 "configure"
- #include "confdefs.h"
--#include <gif_lib.h>
-+#include <giflib/gif_lib.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:7093: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -10218,7 +10218,7 @@
- ZVT_LIBS="-lzvt $GTK_LIBS"
+@@ -10704,7 +10704,7 @@
+ ZVT_LIBS="-lzvt $UTIL_LIBS $GTK_LIBS"
  
  GNOME_LIBDIR='-L${libdir}'
 -GNOME_INCLUDEDIR='-I${includedir} -DNEED_GNOMESUPPORT_H -I${pkglibdir}/include'
@@ -69,3 +27,14 @@
  GNOME_IDLDIR='-I${datadir}/idl'
  
  
+@@ -11548,10 +11548,6 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.

@@ -1,43 +1,49 @@
-# New ports collection makefile for:   gtk11-devel
-# Version required:		1.1.16
+# New ports collection makefile for:   gtk12
+# Version required:		1.2.0
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $Id: Makefile,v 1.44 1999/02/18 04:49:25 vanilla Exp $
 #
 
-DISTNAME=	gtk+-1.1.16
-PKGNAME=	gtk-1.1.16
+DISTNAME=	gtk+-1.2.0
+PKGNAME=	gtk-1.2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
-		http://www.ameth.org/gimp/gtk/v1.1/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
+		http://www.ameth.org/gimp/gtk/v1.2/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
+LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk11d
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gtk-config.1
+MAN1=		gtk12-config.1
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal
-	@${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/gtk11d.m4
+	@${MKDIR} ${PREFIX}/share/themes/engines
 	@if [ ! -f ${PREFIX}/share/info ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@${ECHO} '*********************************************************'
+	@${ECHO} '*                                                       *'
+	@${ECHO} '*     If you want to use autoconf with gtk,             *'
+	@${ECHO} '*     Please copy gtk.m4 to /usr/local/share/aclocal    *'
+	@${ECHO} '*     by yourself, thanks.                              *'
+	@${ECHO} '*                                                       *'
+	@${ECHO} '*********************************************************'
 
 .include <bsd.port.mk>

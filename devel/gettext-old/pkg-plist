@@ -12,6 +12,11 @@ info/gettext.info
 @exec install-info %D/info/gettext.info %D/info/dir
 include/libintl.h
 lib/libintl.a
+lib/libintl.la
+lib/libintl.so
+lib/libintl.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gettext.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
@@ -57,28 +62,6 @@ share/locale/locale.alias
 @dirrm share/gettext/intl
 @dirrm share/gettext/po
 @dirrm share/gettext
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/no@nynorsk/LC_MESSAGES
-@dirrm share/locale/no@nynorsk
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale
+@unexec rm -r %D/share/locale
+@exec mkdir -p %%X11BASE%%/share/locale
+@unexec rm -r %%X11BASE%%/share/locale
