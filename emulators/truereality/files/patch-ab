@@ -1,0 +1,12 @@
+--- Makefile.ORIG	Sat Nov 27 23:06:31 1999
++++ Makefile	Sun Nov 28 15:18:03 1999
+@@ -354,6 +354,9 @@
+ ifeq ($(ARCH),os2)
+ LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU -lglut
+ endif
++ifeq ($(ARCH),bsd)
++LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU
++endif
+ ifeq ($(ARCH),linux)
+ LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU -lglut
+ endif

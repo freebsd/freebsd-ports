@@ -1,0 +1,12 @@
+--- N64/memory.c.ORIG	Sun Nov 28 14:21:18 1999
++++ N64/memory.c	Sun Nov 28 14:23:34 1999
+@@ -346,7 +346,8 @@
+                         mem_shminfo[i].shmid = shmget(IPC_PRIVATE, mem_size[i], IPC_CREAT | 0777);
+                         if(mem_shminfo[i].shmid < 0) 
+                         { 
+-                                printf("alloc_n64_mem: Couldn't get SHM ID [%d]\n\n", i);
++                                printf("alloc_n64_mem: Couldn't get SHM ID [%d]\n", i);
++                                printf("alloc_n64_mem: Try increasing the kernel limits SHMMAX and SHMALL\n\n");
+                                 return(-1); 
+                         }
+ 

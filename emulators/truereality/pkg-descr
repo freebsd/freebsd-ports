@@ -1,0 +1,23 @@
+TrueReality (TR) is a Nintendo N64(tm) emulator developed by 
+Niki W. Waibel <niki.waibel@gmx.net> mainly for learning purposes.
+
+From TR.FAQ:
+
+Anyway - I think that TR does not run commercial ROMs - there is too much
+stuff missing (I've not tested it - I just have heard nothing about that).
+
+What is TR for if it is not for playing commercial ROMs?
+A: 1) TR should be a tool for demo writers.
+   2) TR should be an open emu project where everyone can learn from it.
+   3) TR should be an example (one time) for implementing/learning asm under
+     various machines.
+     If someones hacks out iP-MMX routines you can compare it with the C ones
+     and learn how things are done with MMX.
+
+Where can I get ROMs?
+A: There are demos at http://www.dextrose.com. 
+
+WWW: http://www.emuhq.com/truereality/
+
+- Mario S F Ferreira
+lioux@linf.unb.br

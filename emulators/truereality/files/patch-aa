@@ -1,0 +1,34 @@
+--- Makefile.tmpl.ORIG	Sat Nov 27 22:21:16 1999
++++ Makefile.tmpl	Sun Nov 28 15:40:17 1999
+@@ -39,8 +39,8 @@
+ ###############################################################################
+ 
+ # it might be that you need gmake (in my distribution make is a link to gmake)
+-MAKE            = make
+-#MAKE            = gmake
++#MAKE            = make
++MAKE            = gmake
+ #MAKE            = /usr/local/bin/gmake
+ 
+ 
+@@ -60,7 +60,8 @@
+ HOSTCFLAGS      =
+ #HOSTCFLAGS      = -ansi -pedantic
+ 
+-HOSTCPP         = $(HOSTCC) -E
++HOSTCPP         = $(CXX)
++#HOSTCPP         = $(HOSTCC) -E
+ #HOSTCPP         = cpp
+ 
+ #HOSTLD          = ld
+@@ -188,8 +189,8 @@
+ #                                                                             #
+ ###############################################################################
+ 
+-ARCH = linux
+-#ARCH = bsd
++#ARCH = linux
++ARCH = bsd
+ #ARCH = sunos
+ #ARCH = solaris
+ #ARCH = aix

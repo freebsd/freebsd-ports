@@ -30,6 +30,7 @@
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += tkhfs
+    SUBDIR += truereality
     SUBDIR += vgb
     SUBDIR += vice
     SUBDIR += vMac
