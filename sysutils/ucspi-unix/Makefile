@@ -7,14 +7,14 @@
 
 PORTNAME=	ucspi-unix
 PORTVERSION=	0.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-unix/
 
 MAINTAINER=	patrick@rinke-bochum.de
 COMMENT=	UNIX-domain socket client-server command-line tools
 
-BUILD_DEPENDS=	bglibs.1:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	bglibs.1:${PORTSDIR}/devel/bglibs
 
 USE_REINPLACE=yes
 
