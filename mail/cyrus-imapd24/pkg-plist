@@ -35,6 +35,9 @@ cyrus/bin/notifyd
 cyrus/bin/pop3d
 cyrus/bin/pop3proxyd
 %%MURDER%%cyrus/bin/proxyd
+%%LDAP_PTLOADER%%cyrus/bin/ptdump
+%%LDAP_PTLOADER%%cyrus/bin/ptexpire
+%%LDAP_PTLOADER%%cyrus/bin/ptloader
 cyrus/bin/quota
 cyrus/bin/reconstruct
 cyrus/bin/sievec
