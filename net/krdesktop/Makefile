@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}
 MAINTAINER=	matt@fruitsalad.org
 COMMENT=	KDE GUI for rdesktop and VNC
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop-devel \
+RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 		vncviewer:${PORTSDIR}/net/vnc
 
 USE_KDELIBS_VER=3
