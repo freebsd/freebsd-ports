@@ -1,0 +1,10 @@
+CGoban 2 has two parts:
+* An editor for SGF go files.
+* A client for the Kiseido Go Server.
+
+Have fun.
+
+WWW: http://kgs.kiseido.com/en_US/download.html
+
+-- Steffen Mazanek
+smazanek@steffen-mazanek.de

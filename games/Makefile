@@ -54,6 +54,7 @@
     SUBDIR += burgerspace
     SUBDIR += bzflag
     SUBDIR += cgoban
+    SUBDIR += cgoban2
     SUBDIR += circuslinux
     SUBDIR += civ2demo
     SUBDIR += clanbomber
