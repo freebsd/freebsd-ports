@@ -1,0 +1,44 @@
+--- workloads/include/Makefile.in.orig	Sat Aug  3 14:23:13 2002
++++ workloads/include/Makefile.in	Sat Aug  3 14:24:50 2002
+@@ -45,25 +45,25 @@
+ default: all
+ 
+ benches.pg_install: install_dirs benches.pg
+-	$(INSTALL_DTA) benches.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) benches.pg ${datadir}/polygraph/workloads/include
+ 
+ contents.pg_install: install_dirs contents.pg
+-	$(INSTALL_DTA) contents.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) contents.pg ${datadir}/polygraph/workloads/include
+ 
+ phases.pg_install: install_dirs phases.pg
+-	$(INSTALL_DTA) phases.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) phases.pg ${datadir}/polygraph/workloads/include
+ 
+ pipes.pg_install: install_dirs pipes.pg
+-	$(INSTALL_DTA) pipes.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) pipes.pg ${datadir}/polygraph/workloads/include
+ 
+ polymix-3-guts.pg_install: install_dirs polymix-3-guts.pg
+-	$(INSTALL_DTA) polymix-3-guts.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) polymix-3-guts.pg ${datadir}/polygraph/workloads/include
+ 
+ polymix-4-guts.pg_install: install_dirs polymix-4-guts.pg
+-	$(INSTALL_DTA) polymix-4-guts.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) polymix-4-guts.pg ${datadir}/polygraph/workloads/include
+ 
+ webaxe-4-guts.pg_install: install_dirs webaxe-4-guts.pg
+-	$(INSTALL_DTA) webaxe-4-guts.pg ${prefix}/workloads/include
++	$(INSTALL_DTA) webaxe-4-guts.pg ${datadir}/polygraph/workloads/include
+ 
+ all: all_subdirs benches.pg contents.pg phases.pg pipes.pg polymix-3-guts.pg polymix-4-guts.pg webaxe-4-guts.pg
+ 
+@@ -80,7 +80,7 @@
+ 
+ install: install_subdirs benches.pg contents.pg phases.pg pipes.pg polymix-3-guts.pg polymix-4-guts.pg webaxe-4-guts.pg
+ install_dirs: 
+-	@for d in ${prefix}/workloads/include/; do \
++	@for d in ${datadir}/polygraph/workloads/include/; do \
+ 		if test ! -d $$d; then echo mkdir -p $$d; mkdir -p $$d; fi; \
+ 	done
+ 
