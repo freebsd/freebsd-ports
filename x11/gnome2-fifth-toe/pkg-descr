@@ -1,8 +1,7 @@
-GNOME 2 "Fifth-Toe"
+GNOME 2 "Fifth Toe"
 
-A collection of programs that GNOME 2 users may find useful, all brought
-together with the convenience of a single "meta-port".  Note, this an
-unofficial Fifth Toe.  It is currently comprised of all the applications
-listed on the following web site that have been ported to FreeBSD.
+The Fifth Toe is a collection of stable GNOME 2 applications that 
+many users expect to be part of a usable desktop.  This includes image
+manipulation programs, chat applications, music and multimedia players, etc.
 
-WWW: http://5toe.lyrical.net/
+WWW: http://www.FreeBSD.org/gnome/
