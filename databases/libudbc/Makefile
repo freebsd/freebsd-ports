@@ -53,7 +53,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-BROKEN=		"Systems prior to 4.x are not supported"
+IGNORE=		"Systems prior to 4.x are not supported"
 .endif
 
 .include <bsd.port.post.mk>

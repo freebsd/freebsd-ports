@@ -31,7 +31,7 @@ NO_BUILD=	binary distribution
 NO_CDROM=	interactive install
 
 .if ${OSVERSION} < 400000
-BROKEN=		"currently supports only FreeBSD 4.0 and above"
+IGNORE=		"supports only FreeBSD 4.0 and above"
 .endif
 
 EXTRACT_CMD=	${CAT}
