@@ -11,7 +11,7 @@ CATEGORIES=	java
 DISTNAME=	collections1_1
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 COMMENT=	JDK1.2 Collections' API for JDK1.1 environments
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
