@@ -15,6 +15,9 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		intl.1:${PORTSDIR}/devel/gettext
+.if !exists(/usr/lib/libgmp.so)
+LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
+.endif
 
 PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
 
