@@ -101,3 +101,4 @@ lib/webmin/virtual-server/virtual-server-lib.pl
 @dirrm lib/webmin/virtual-server/images
 @dirrm lib/webmin/virtual-server/help
 @dirrm lib/webmin/virtual-server
+@exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
