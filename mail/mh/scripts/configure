@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Configure MH
-#
-cd $WRKSRC/conf
-make
-./mhconfig FreeBSD
-cd ..
-make clean

@@ -121,7 +121,6 @@
     SUBDIR += mew2-emacs20
     SUBDIR += mew2-xemacs21
     SUBDIR += mew2-xemacs21-mule
-    SUBDIR += mh
     SUBDIR += mimedefang
     SUBDIR += minimalist
     SUBDIR += ml
