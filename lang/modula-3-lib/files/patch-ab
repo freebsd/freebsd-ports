@@ -2,11 +2,14 @@ Fix a const-related compiler warning produced by the "execve" wrapper.
 Move network related wrappers to separate files, for SOCKS support.
 Fix some things so that it will compile under FreeBSD-3.0.
 Add a wrapper for the "chflags" system call.
+Fix numerous argument declarations to agree with their prototypes.
+Fix the wrapper for ftruncate so that it deals properly with the 64-bit
+arguments.
 
 Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 --- RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ RTHeapDepC.c	Wed Mar 26 13:21:39 1997
-@@ -92,6 +92,14 @@
++++ RTHeapDepC.c	Wed Apr 23 10:01:01 1997
+@@ -92,6 +92,16 @@
  #include <sys/uio.h>
  #include <sys/wait.h>
  
@@ -18,10 +21,12 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 +#include <ufs/ufs/ufsmount.h>
 +#endif
 +
++#include <unistd.h>
++
  #ifdef   NULL
  #undef   NULL
  #endif
-@@ -110,20 +118,6 @@
+@@ -110,22 +120,8 @@
  /* Unless otherwise noted, all the following wrappers have the same
     structure. */
  
@@ -40,9 +45,21 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 -}
 -
  int access(path, mode)   /* ok */
- char *path;
+-char *path;
++const char *path;
  int mode;
-@@ -228,19 +222,6 @@
+ { int result;
+ 
+@@ -137,7 +133,7 @@
+ }
+ 
+ int acct(file)   /* ok */
+-char *file;
++const char *file;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -228,19 +224,6 @@
  }
  */
  
@@ -62,7 +79,16 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented
  int cachectl(addr, nbytes, op)
  char *addr;
-@@ -278,6 +259,18 @@
+@@ -268,7 +251,7 @@
+ */
+ 
+ int chdir(path)   /* ok */
+-char *path;
++const char *path;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -278,6 +261,18 @@
    return result;
  }
  
@@ -81,7 +107,25 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int chmod(path, mode)   /* ok */
  char *path;
  mode_t mode;
-@@ -314,19 +307,6 @@
+@@ -291,7 +286,7 @@
+ }
+ 
+ int chown(path, owner, group)   /* ok */
+-char *path;
++const char *path;
+ uid_t owner;
+ gid_t group;
+ { int result;
+@@ -304,7 +299,7 @@
+ }
+ 
+ int chroot(dirname)   /* ok */
+-char *dirname;
++const char *dirname;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -314,19 +309,6 @@
    return result;
  }
  
@@ -101,7 +145,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented (obsolete)
  int creat(name, mode)   
  const char *name;
-@@ -356,8 +336,8 @@
+@@ -356,8 +338,8 @@
      result = syscall(SYS_execve, name, argv, envp);
      if (result == -1 && errno == EFAULT) {
        MAKE_READABLE(name);
@@ -112,7 +156,16 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
      } else {
        return result;
      }
-@@ -513,20 +493,6 @@
+@@ -473,7 +455,7 @@
+ 
+ int getgroups(gidsetsize, grouplist)   /* ok */
+ int gidsetsize;
+-int grouplist[];
++gid_t grouplist[];
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -513,20 +495,6 @@
  }
  */
  
@@ -133,7 +186,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getrlimit(resource, rlp)   /* ok */
  int resource;
  struct rlimit *rlp;
-@@ -551,20 +517,6 @@
+@@ -551,20 +519,6 @@
    return result;
  }
  
@@ -154,7 +207,27 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getsockopt(s, level, optname, optval, optlen)   /* ok */
  int s, level, optname;
  void *optval;
-@@ -821,19 +773,6 @@
+@@ -630,8 +584,8 @@
+ }
+ 
+ int link(name1, name2)   /* ok */
+-char *name1;
+-char *name2;
++const char *name1;
++const char *name2;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -668,7 +622,7 @@
+ }
+ 
+ int mknod(path, mode, dev)   /* ok */
+-char *path;
++const char *path;
+ mode_t mode;
+ dev_t dev;
+ { int result;
+@@ -821,21 +775,8 @@
    return result;
  }
  
@@ -172,9 +245,12 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 -}
 -
  int readlink(path, buf, bufsiz)   /* ok */
- char *path;
+-char *path;
++const char *path;
  char *buf;
-@@ -865,46 +804,6 @@
+ int bufsiz;
+ { int result;
+@@ -865,46 +806,6 @@
    return result;
  }
  
@@ -221,7 +297,16 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int recvmsg(s, msg, flags)   /* ok */
  int s;
  struct msghdr msg[];
-@@ -950,24 +849,6 @@
+@@ -940,7 +841,7 @@
+ }
+ 
+ int rmdir(path)   /* ok */
+-char *path;
++const char *path;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -950,24 +851,6 @@
    return result;
  }
  
@@ -246,7 +331,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int semctl(semid, semnum, cmd, arg)   /* ok ? */
  int semid, cmd;
  int semnum;
-@@ -1012,24 +893,6 @@
+@@ -1012,24 +895,6 @@
    return result;
  }
  
@@ -271,7 +356,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,27 +914,6 @@
+@@ -1051,29 +916,8 @@
    return result;
  }
  
@@ -297,9 +382,78 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 -}
 -
  int setdomainname(name, namelen)   /* ok */
- char *name;
+-char *name;
++const char *name;
  int namelen;
-@@ -1414,19 +1256,6 @@
+ { int result;
+ 
+@@ -1086,7 +930,7 @@
+ 
+ int setgroups(ngroups, gidset)   /* ok */
+ int ngroups;
+-int *gidset;
++const gid_t *gidset;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1097,7 +941,7 @@
+ }
+ 
+ int sethostname(name, namelen)   /* ok */
+-char *name;
++const char *name;
+ int namelen;
+ { int result;
+ #if __FreeBSD__ >= 2
+@@ -1280,7 +1124,7 @@
+ }
+ 
+ int swapon(special)   /* ok */
+-char *special;
++const char *special;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1291,8 +1135,8 @@
+ }
+ 
+ int symlink(name1, name2)   /* ok */
+-char *name1;
+-char *name2;
++const char *name1;
++const char *name2;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1304,14 +1148,14 @@
+ }
+ 
+ int truncate(path, length)   /* ok */
+-char *path;
+-long length;
++const char *path;
++off_t length;
+ { int result;
+-  off_t len = (off_t)length;
+ 
+   ENTER_CRITICAL;
+   MAKE_READABLE(path);
+-  result = syscall(SYS_truncate, path, len);
++  /* The casts below pad "path" out to a 64-bit value as required. */
++  result = __syscall(SYS_truncate, (u_quad_t) (u_int) path, length);
+   EXIT_CRITICAL;
+   return result;
+ }
+@@ -1328,7 +1172,7 @@
+ }
+ 
+ int unlink(path)   /* ok */
+-char *path;
++const char *path;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1414,19 +1258,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
