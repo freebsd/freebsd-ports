@@ -123,6 +123,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/documentation/codingmanual.html
 %%DATADIR%%/documentation/essays.html
 %%DATADIR%%/documentation/essayschapter1.html
+%%DATADIR%%/documentation/essayschapter12.html
 %%DATADIR%%/documentation/essayschapter2.html
 %%DATADIR%%/documentation/essayschapter3.html
 %%DATADIR%%/documentation/essayschapter4.html
@@ -284,6 +285,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/unipoly.h
 %%DATADIR%%/include/unixcommandline.h
 %%DATADIR%%/include/version.h
+%%DATADIR%%/include/vm.h
 %%DATADIR%%/include/win32dll.h
 %%DATADIR%%/include/win32dllresource.h
 %%DATADIR%%/include/win32yacasdll.h
@@ -418,6 +420,10 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/substitute.rep/code.ys.def
 %%DATADIR%%/sums.rep/code.ys
 %%DATADIR%%/sums.rep/code.ys.def
+%%DATADIR%%/sums.rep/taylor.ys
+%%DATADIR%%/sums.rep/taylor.ys.def
+%%DATADIR%%/sums.rep/taylor3.ys
+%%DATADIR%%/sums.rep/taylor3.ys.def
 %%DATADIR%%/tensor.rep/code.ys
 %%DATADIR%%/tensor.rep/code.ys.def
 %%DATADIR%%/testers.rep/code.ys
