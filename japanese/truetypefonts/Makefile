@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	truetypefonts
-PORTVERSION=	2001.08.18.4
+PORTVERSION=	2001.08.18.5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/t/ttf-xtt/
 DISTNAME=	ttf-xtt_0.${PORTVERSION:R:S/.//g}-${PORTVERSION:E}
@@ -14,12 +14,6 @@ DISTNAME=	ttf-xtt_0.${PORTVERSION:R:S/.//g}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 WRKSRC=		${WRKDIR}/ttf-xtt-0.${PORTVERSION:R:S/.//g}
 NO_BUILD=	yes
@@ -42,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias.truetype ${PREFIX}/${FONTSDIR}
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
