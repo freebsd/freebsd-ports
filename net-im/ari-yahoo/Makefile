@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ari-yahoo
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console Yahoo! messenger client
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	253
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
+pre-configure:
+	@(cd ${WRKSRC}/libyahoo && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+		${AUTOCONFARGS})
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ari-yahoo ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
