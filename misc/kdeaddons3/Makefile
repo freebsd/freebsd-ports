@@ -15,8 +15,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14 \
-		objprelink:${PORTSDIR}/devel/objprelink
+		automake14:${PORTSDIR}/devel/automake14
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
+.endif
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia2 \
 		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
@@ -27,7 +29,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_SUB+=	RM=${RM}
 CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-CONFIGURE_ARGS=	--enable-objprelink
+CONFIGURE_ARGS?=
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+CONFIGURE_ARGS+=--enable-objprelink
+.endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
 .endif

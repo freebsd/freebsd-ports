@@ -15,8 +15,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14 \
-		objprelink:${PORTSDIR}/devel/objprelink
+		automake14:${PORTSDIR}/devel/automake14
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
+.endif
 LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 
 USE_KDELIBS_VER=2
@@ -24,9 +26,11 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-objprelink \
-		--with-extra-includes=${LOCALBASE}/pilot/include \
+CONFIGURE_ARGS= --with-extra-includes=${LOCALBASE}/pilot/include \
 		--with-extra-libs=${LOCALBASE}/pilot/lib
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+CONFIGURE_ARGS+=--enable-objprelink
+.endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
 .endif
