@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Text_Wiki
-PORTVERSION=	0.25.0
-CATEGORIES=	www devel pear
+PORTVERSION=	1.0.0
+CATEGORIES=	www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	Abstracts parsing and rendering rules for Wiki markup
@@ -15,83 +15,85 @@ COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-FILES=		Text/Wiki/Render/Plain/Wikilink.php \
-		Text/Wiki.php Text/Wiki/Parse.php Text/Wiki/Parse/Default/Anchor.php \
-		Text/Wiki/Parse/Default/Blockquote.php Text/Wiki/Parse/Default/Bold.php \
-		Text/Wiki/Parse/Default/Break.php Text/Wiki/Parse/Default/Center.php \
-		Text/Wiki/Parse/Default/Code.php Text/Wiki/Parse/Default/Colortext.php \
-		Text/Wiki/Parse/Default/Deflist.php Text/Wiki/Parse/Default/Delimiter.php \
-		Text/Wiki/Parse/Default/Embed.php Text/Wiki/Parse/Default/Emphasis.php \
-		Text/Wiki/Parse/Default/Freelink.php Text/Wiki/Parse/Default/Function.php \
-		Text/Wiki/Parse/Default/Heading.php Text/Wiki/Parse/Default/Horiz.php \
-		Text/Wiki/Parse/Default/Html.php Text/Wiki/Parse/Default/Image.php \
-		Text/Wiki/Parse/Default/Include.php Text/Wiki/Parse/Default/Interwiki.php \
-		Text/Wiki/Parse/Default/Italic.php Text/Wiki/Parse/Default/List.php \
-		Text/Wiki/Parse/Default/Newline.php Text/Wiki/Parse/Default/Paragraph.php \
-		Text/Wiki/Parse/Default/Phplookup.php Text/Wiki/Parse/Default/Prefilter.php \
-		Text/Wiki/Parse/Default/Raw.php Text/Wiki/Parse/Default/Revise.php \
-		Text/Wiki/Parse/Default/Strong.php Text/Wiki/Parse/Default/Superscript.php \
-		Text/Wiki/Parse/Default/Table.php Text/Wiki/Parse/Default/Tighten.php \
-		Text/Wiki/Parse/Default/Toc.php Text/Wiki/Parse/Default/Tt.php \
-		Text/Wiki/Parse/Default/Url.php Text/Wiki/Parse/Default/Wikilink.php \
-		Text/Wiki/Render.php Text/Wiki/Render/Xhtml.php \
-		Text/Wiki/Render/Xhtml/Anchor.php Text/Wiki/Render/Xhtml/Blockquote.php \
-		Text/Wiki/Render/Xhtml/Bold.php Text/Wiki/Render/Xhtml/Break.php \
-		Text/Wiki/Render/Xhtml/Center.php Text/Wiki/Render/Xhtml/Code.php \
-		Text/Wiki/Render/Xhtml/Colortext.php Text/Wiki/Render/Xhtml/Deflist.php \
-		Text/Wiki/Render/Xhtml/Delimiter.php Text/Wiki/Render/Xhtml/Embed.php \
-		Text/Wiki/Render/Xhtml/Emphasis.php Text/Wiki/Render/Xhtml/Freelink.php \
-		Text/Wiki/Render/Xhtml/Function.php Text/Wiki/Render/Xhtml/Heading.php \
-		Text/Wiki/Render/Xhtml/Horiz.php Text/Wiki/Render/Xhtml/Html.php \
-		Text/Wiki/Render/Xhtml/Image.php Text/Wiki/Render/Xhtml/Include.php \
-		Text/Wiki/Render/Xhtml/Interwiki.php Text/Wiki/Render/Xhtml/Italic.php \
-		Text/Wiki/Render/Xhtml/List.php Text/Wiki/Render/Xhtml/Newline.php \
-		Text/Wiki/Render/Xhtml/Paragraph.php Text/Wiki/Render/Xhtml/Phplookup.php \
-		Text/Wiki/Render/Xhtml/Prefilter.php Text/Wiki/Render/Xhtml/Raw.php \
-		Text/Wiki/Render/Xhtml/Revise.php Text/Wiki/Render/Xhtml/Strong.php \
-		Text/Wiki/Render/Xhtml/Superscript.php Text/Wiki/Render/Xhtml/Table.php \
-		Text/Wiki/Render/Xhtml/Tighten.php Text/Wiki/Render/Xhtml/Toc.php \
-		Text/Wiki/Render/Xhtml/Tt.php Text/Wiki/Render/Xhtml/Url.php \
-		Text/Wiki/Render/Xhtml/Wikilink.php Text/Wiki/Render/Latex.php \
-		Text/Wiki/Render/Latex/Anchor.php Text/Wiki/Render/Latex/Blockquote.php \
-		Text/Wiki/Render/Latex/Bold.php Text/Wiki/Render/Latex/Break.php \
-		Text/Wiki/Render/Latex/Center.php Text/Wiki/Render/Latex/Code.php \
-		Text/Wiki/Render/Latex/Colortext.php Text/Wiki/Render/Latex/Deflist.php \
-		Text/Wiki/Render/Latex/Delimiter.php Text/Wiki/Render/Latex/Embed.php \
-		Text/Wiki/Render/Latex/Emphasis.php Text/Wiki/Render/Latex/Freelink.php \
-		Text/Wiki/Render/Latex/Function.php Text/Wiki/Render/Latex/Heading.php \
-		Text/Wiki/Render/Latex/Horiz.php Text/Wiki/Render/Latex/Html.php \
-		Text/Wiki/Render/Latex/Image.php Text/Wiki/Render/Latex/Include.php \
-		Text/Wiki/Render/Latex/Interwiki.php Text/Wiki/Render/Latex/Italic.php \
-		Text/Wiki/Render/Latex/List.php Text/Wiki/Render/Latex/Newline.php \
-		Text/Wiki/Render/Latex/Paragraph.php Text/Wiki/Render/Latex/Phplookup.php \
-		Text/Wiki/Render/Latex/Prefilter.php Text/Wiki/Render/Latex/Raw.php \
-		Text/Wiki/Render/Latex/Revise.php Text/Wiki/Render/Latex/Strong.php \
-		Text/Wiki/Render/Latex/Superscript.php Text/Wiki/Render/Latex/Table.php \
-		Text/Wiki/Render/Latex/Tighten.php Text/Wiki/Render/Latex/Toc.php \
-		Text/Wiki/Render/Latex/Tt.php Text/Wiki/Render/Latex/Url.php \
-		Text/Wiki/Render/Latex/Wikilink.php Text/Wiki/Render/Plain.php \
-		Text/Wiki/Render/Plain/Anchor.php Text/Wiki/Render/Plain/Blockquote.php \
-		Text/Wiki/Render/Plain/Bold.php Text/Wiki/Render/Plain/Break.php \
-		Text/Wiki/Render/Plain/Center.php Text/Wiki/Render/Plain/Code.php \
-		Text/Wiki/Render/Plain/Colortext.php Text/Wiki/Render/Plain/Deflist.php \
-		Text/Wiki/Render/Plain/Delimiter.php Text/Wiki/Render/Plain/Embed.php \
-		Text/Wiki/Render/Plain/Emphasis.php Text/Wiki/Render/Plain/Freelink.php \
-		Text/Wiki/Render/Plain/Function.php Text/Wiki/Render/Plain/Heading.php \
-		Text/Wiki/Render/Plain/Horiz.php Text/Wiki/Render/Plain/Html.php \
-		Text/Wiki/Render/Plain/Image.php Text/Wiki/Render/Plain/Include.php \
-		Text/Wiki/Render/Plain/Interwiki.php Text/Wiki/Render/Plain/Italic.php \
-		Text/Wiki/Render/Plain/List.php Text/Wiki/Render/Plain/Newline.php \
-		Text/Wiki/Render/Plain/Paragraph.php Text/Wiki/Render/Plain/Phplookup.php \
-		Text/Wiki/Render/Plain/Prefilter.php Text/Wiki/Render/Plain/Raw.php \
-		Text/Wiki/Render/Plain/Revise.php Text/Wiki/Render/Plain/Strong.php \
-		Text/Wiki/Render/Plain/Superscript.php Text/Wiki/Render/Plain/Table.php \
-		Text/Wiki/Render/Plain/Tighten.php Text/Wiki/Render/Plain/Toc.php \
-		Text/Wiki/Render/Plain/Tt.php Text/Wiki/Render/Plain/Url.php \
-		Text/Wiki/Parse/.keepme
+USE_REINPLACE=	yes
+
+CATEGORY=	Text
+FILES=		Wiki.php Wiki/Parse.php Wiki/Parse/Default/Anchor.php \
+		Wiki/Parse/Default/Blockquote.php Wiki/Parse/Default/Bold.php \
+		Wiki/Parse/Default/Break.php Wiki/Parse/Default/Center.php \
+		Wiki/Parse/Default/Code.php Wiki/Parse/Default/Colortext.php \
+		Wiki/Parse/Default/Deflist.php Wiki/Parse/Default/Delimiter.php \
+		Wiki/Parse/Default/Embed.php Wiki/Parse/Default/Emphasis.php \
+		Wiki/Parse/Default/Freelink.php Wiki/Parse/Default/Function.php \
+		Wiki/Parse/Default/Heading.php Wiki/Parse/Default/Horiz.php \
+		Wiki/Parse/Default/Html.php Wiki/Parse/Default/Image.php \
+		Wiki/Parse/Default/Include.php Wiki/Parse/Default/Interwiki.php \
+		Wiki/Parse/Default/Italic.php Wiki/Parse/Default/List.php \
+		Wiki/Parse/Default/Newline.php Wiki/Parse/Default/Paragraph.php \
+		Wiki/Parse/Default/Phplookup.php Wiki/Parse/Default/Prefilter.php \
+		Wiki/Parse/Default/Raw.php Wiki/Parse/Default/Revise.php \
+		Wiki/Parse/Default/Strong.php Wiki/Parse/Default/Superscript.php \
+		Wiki/Parse/Default/Table.php Wiki/Parse/Default/Tighten.php \
+		Wiki/Parse/Default/Toc.php Wiki/Parse/Default/Tt.php \
+		Wiki/Parse/Default/Url.php Wiki/Parse/Default/Wikilink.php \
+		Wiki/Render.php Wiki/Render/Xhtml.php Wiki/Render/Xhtml/Anchor.php \
+		Wiki/Render/Xhtml/Blockquote.php Wiki/Render/Xhtml/Bold.php \
+		Wiki/Render/Xhtml/Break.php Wiki/Render/Xhtml/Center.php \
+		Wiki/Render/Xhtml/Code.php Wiki/Render/Xhtml/Colortext.php \
+		Wiki/Render/Xhtml/Deflist.php Wiki/Render/Xhtml/Delimiter.php \
+		Wiki/Render/Xhtml/Embed.php Wiki/Render/Xhtml/Emphasis.php \
+		Wiki/Render/Xhtml/Freelink.php Wiki/Render/Xhtml/Function.php \
+		Wiki/Render/Xhtml/Heading.php Wiki/Render/Xhtml/Horiz.php \
+		Wiki/Render/Xhtml/Html.php Wiki/Render/Xhtml/Image.php \
+		Wiki/Render/Xhtml/Include.php Wiki/Render/Xhtml/Interwiki.php \
+		Wiki/Render/Xhtml/Italic.php Wiki/Render/Xhtml/List.php \
+		Wiki/Render/Xhtml/Newline.php Wiki/Render/Xhtml/Paragraph.php \
+		Wiki/Render/Xhtml/Phplookup.php Wiki/Render/Xhtml/Prefilter.php \
+		Wiki/Render/Xhtml/Raw.php Wiki/Render/Xhtml/Revise.php \
+		Wiki/Render/Xhtml/Strong.php Wiki/Render/Xhtml/Superscript.php \
+		Wiki/Render/Xhtml/Table.php Wiki/Render/Xhtml/Tighten.php \
+		Wiki/Render/Xhtml/Toc.php Wiki/Render/Xhtml/Tt.php \
+		Wiki/Render/Xhtml/Url.php Wiki/Render/Xhtml/Wikilink.php \
+		Wiki/Render/Latex.php Wiki/Render/Latex/Anchor.php \
+		Wiki/Render/Latex/Blockquote.php Wiki/Render/Latex/Bold.php \
+		Wiki/Render/Latex/Break.php Wiki/Render/Latex/Center.php \
+		Wiki/Render/Latex/Code.php Wiki/Render/Latex/Colortext.php \
+		Wiki/Render/Latex/Deflist.php Wiki/Render/Latex/Delimiter.php \
+		Wiki/Render/Latex/Embed.php Wiki/Render/Latex/Emphasis.php \
+		Wiki/Render/Latex/Freelink.php Wiki/Render/Latex/Function.php \
+		Wiki/Render/Latex/Heading.php Wiki/Render/Latex/Horiz.php \
+		Wiki/Render/Latex/Html.php Wiki/Render/Latex/Image.php \
+		Wiki/Render/Latex/Include.php Wiki/Render/Latex/Interwiki.php \
+		Wiki/Render/Latex/Italic.php Wiki/Render/Latex/List.php \
+		Wiki/Render/Latex/Newline.php Wiki/Render/Latex/Paragraph.php \
+		Wiki/Render/Latex/Phplookup.php Wiki/Render/Latex/Prefilter.php \
+		Wiki/Render/Latex/Raw.php Wiki/Render/Latex/Revise.php \
+		Wiki/Render/Latex/Strong.php Wiki/Render/Latex/Superscript.php \
+		Wiki/Render/Latex/Table.php Wiki/Render/Latex/Tighten.php \
+		Wiki/Render/Latex/Toc.php Wiki/Render/Latex/Tt.php \
+		Wiki/Render/Latex/Url.php Wiki/Render/Latex/Wikilink.php \
+		Wiki/Render/Plain.php Wiki/Render/Plain/Anchor.php \
+		Wiki/Render/Plain/Blockquote.php Wiki/Render/Plain/Bold.php \
+		Wiki/Render/Plain/Break.php Wiki/Render/Plain/Center.php \
+		Wiki/Render/Plain/Code.php Wiki/Render/Plain/Colortext.php \
+		Wiki/Render/Plain/Deflist.php Wiki/Render/Plain/Delimiter.php \
+		Wiki/Render/Plain/Embed.php Wiki/Render/Plain/Emphasis.php \
+		Wiki/Render/Plain/Freelink.php Wiki/Render/Plain/Function.php \
+		Wiki/Render/Plain/Heading.php Wiki/Render/Plain/Horiz.php \
+		Wiki/Render/Plain/Html.php Wiki/Render/Plain/Image.php \
+		Wiki/Render/Plain/Include.php Wiki/Render/Plain/Interwiki.php \
+		Wiki/Render/Plain/Italic.php Wiki/Render/Plain/List.php \
+		Wiki/Render/Plain/Newline.php Wiki/Render/Plain/Paragraph.php \
+		Wiki/Render/Plain/Phplookup.php Wiki/Render/Plain/Prefilter.php \
+		Wiki/Render/Plain/Raw.php Wiki/Render/Plain/Revise.php \
+		Wiki/Render/Plain/Strong.php Wiki/Render/Plain/Superscript.php \
+		Wiki/Render/Plain/Table.php Wiki/Render/Plain/Tighten.php \
+		Wiki/Render/Plain/Toc.php Wiki/Render/Plain/Tt.php \
+		Wiki/Render/Plain/Url.php Wiki/Render/Plain/Wikilink.php
 
 post-extract:
-	${TOUCH} ${WRKSRC}/Text/Wiki/Parse/.keepme
+	@${MV} ${WRKSRC}/Text/* ${WRKSRC}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/Wiki.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
