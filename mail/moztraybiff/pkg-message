@@ -1,9 +1,9 @@
-The extension has been installed in /usr/X11R6/share/moztraybiff/
+The extension has been installed in %%DATADIR%%
 
 To use this extension:
 	* Open up Thunderbird
 	* Choose Tools|Extensions from the menu
 	* Click the "Install" button
-	* Navigate to /usr/X11R6/share/moztraybiff/
+	* Navigate to %%DATADIR%%
 	* Select the file that appears in that directory
 	* Restart Thunderbird
