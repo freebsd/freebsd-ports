@@ -16,7 +16,7 @@
 ^doc/.*\.scr
 
 # Skip all ports files except for Makefiles.
-^ports/.*(?<!/)Makefile$
+^ports/.*(?<!\bMakefile)$
 
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
