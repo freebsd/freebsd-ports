@@ -1,0 +1,15 @@
+`disktool' is an XView program to monitor up to 64 filesystems
+simultaneously and alert you when a particular filesystem is low on
+space. disktool is set-up to "un-iconify" when a filesystem it is
+monitoring has reached its' user-definable "critical threshold". A
+unix command can also be initiated when this threshold is reached.
+The command and un-iconifying can be repeated every so many polls,
+configurable from the cmdline or from the Properties pop-up.
+The properties pop-up is obtained by selecting any gauge with the
+right mouse button. The middle mouse button has also been mapped to 
+force a filesystem poll to update the displayed data.
+
+`disktool' is a good sysadmin tool for monitoring diskfull situations
+to avoid datafile corruption.
+
+WWW: http://step.polymtl.ca/~coyote/xview_main.html
