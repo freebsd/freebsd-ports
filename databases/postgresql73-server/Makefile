@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.2.2
+PORTVERSION?=	7.2.3
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	girgen@partitur.se
+MAINTAINER?=	girgen@pingpong.net
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql

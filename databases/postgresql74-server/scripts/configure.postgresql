@@ -83,13 +83,12 @@ if [ ! "${MULTIBYTE}" ]; then
 	echo "WITHOUT_MULTIBYTE=YES" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 else
 	if [ "${BATCH}" ]; then
-		set "nothing"
+		set "SQL_ASCII"
 	else
 		/usr/bin/dialog --title "Default encoding system" --clear \
 						--radiolist "\n\
 Please select the default encoding:" -1 -1 16 \
-nothing       "Default Encoding" ON \
-SQL_ASCII     "SQL_ASCII - ASCII" OFF \
+SQL_ASCII     "SQL_ASCII - ASCII" ON \
 EUC_JP        "Japanese EUC" OFF \
 EUC_CN        "Chinese EUC" OFF \
 EUC_KR        "Korean EUC" OFF \
@@ -128,13 +127,8 @@ ALT           "Windows CP866" OFF \
 		fi
 	fi
 
-    if [ "$1" = "nothing" ]; then
-		echo "MULTIBYTE_ENCODING=yes" \
+	echo "MULTIBYTE_ENCODING=$1" \
 			>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	else
-		echo "MULTIBYTE_ENCODING=$1" \
-			>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	fi
 fi
 
 if [ "${KRB5}" ]; then
