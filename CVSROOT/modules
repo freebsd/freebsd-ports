@@ -1029,7 +1029,7 @@ cnslock		ports/x11/cnslock
 coalesce	ports/biology/coalesce
 cocktail	ports/devel/cocktail
 coco		ports/textproc/coco
-cocoon		ports/textproc/cocoon
+cocoon		ports/www/cocoon
 cocor		ports/lang/cocor
 coda5_client	ports/net/coda5_client
 coda5_doc	ports/net/coda5_doc
