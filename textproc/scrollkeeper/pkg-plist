@@ -246,4 +246,4 @@ share/locale/uk/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
 @exec mkdir -p /var/db/scrollkeeper
-@exec mkdir %D/share/gnome/scrollkeeper/TOC
+@exec mkdir -p %D/share/gnome/scrollkeeper/TOC
