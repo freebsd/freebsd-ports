@@ -7,6 +7,7 @@
 
 PORTNAME=	kermit
 PORTVERSION=	8.0.200
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
@@ -22,7 +23,7 @@ ALL_TARGET=	xermit
 MAKE_ARGS=	KTARGET=freebsd \
 		CFLAGS="${CFLAGS} -DBSD44 -DCK_NCURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DNOCOTFMC -DFREEBSD4 -DUSE_UU_LOCK -DFNFLOAT \
-		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR" \
+		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP" \
 		LIBS="-lncurses -lcrypt -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
