@@ -1177,6 +1177,7 @@ lib/R/library/base/R-ex/ifelse.R
 lib/R/library/base/R-ex/image.R
 lib/R/library/base/R-ex/infert.R
 lib/R/library/base/R-ex/influence.measures.R
+lib/R/library/base/R-ex/integer.R
 lib/R/library/base/R-ex/integrate.R
 lib/R/library/base/R-ex/interaction.R
 lib/R/library/base/R-ex/interaction.plot.R
@@ -3558,12 +3559,10 @@ lib/R/library/boot/data/breslow.rda
 lib/R/library/boot/data/calcium.rda
 lib/R/library/boot/data/cane.rda
 lib/R/library/boot/data/capability.rda
-lib/R/library/boot/data/cats.rda
 lib/R/library/boot/data/catsM.rda
 lib/R/library/boot/data/cav.rda
 lib/R/library/boot/data/cd4.nested.rda
 lib/R/library/boot/data/cd4.rda
-lib/R/library/boot/data/cement.rda
 lib/R/library/boot/data/channing.rda
 lib/R/library/boot/data/city.rda
 lib/R/library/boot/data/claridge.rda
@@ -3580,10 +3579,7 @@ lib/R/library/boot/data/grav.rda
 lib/R/library/boot/data/gravity.rda
 lib/R/library/boot/data/hirose.rda
 lib/R/library/boot/data/islay.rda
-lib/R/library/boot/data/leuk.rda
-lib/R/library/boot/data/mammals.rda
 lib/R/library/boot/data/manaus.rda
-lib/R/library/boot/data/mcycle.rda
 lib/R/library/boot/data/melanoma.rda
 lib/R/library/boot/data/motor.rda
 lib/R/library/boot/data/neuro.rda
@@ -3591,11 +3587,9 @@ lib/R/library/boot/data/nitrofen.rda
 lib/R/library/boot/data/nodal.rda
 lib/R/library/boot/data/nuclear.rda
 lib/R/library/boot/data/paulsen.rda
-lib/R/library/boot/data/phones.rda
 lib/R/library/boot/data/poisons.rda
 lib/R/library/boot/data/polar.rda
 lib/R/library/boot/data/remission.rda
-lib/R/library/boot/data/rock.rda
 lib/R/library/boot/data/salinity.rda
 lib/R/library/boot/data/survival.rda
 lib/R/library/boot/data/tau.rda
@@ -3627,11 +3621,10 @@ lib/R/library/boot/help/breslow
 lib/R/library/boot/help/calcium
 lib/R/library/boot/help/cane
 lib/R/library/boot/help/capability
-lib/R/library/boot/help/cats
+lib/R/library/boot/help/catsM
 lib/R/library/boot/help/cav
 lib/R/library/boot/help/cd4
 lib/R/library/boot/help/cd4.nested
-lib/R/library/boot/help/cement
 lib/R/library/boot/help/censboot
 lib/R/library/boot/help/censboot-internal
 lib/R/library/boot/help/channing
@@ -3665,14 +3658,11 @@ lib/R/library/boot/help/inv.logit
 lib/R/library/boot/help/islay
 lib/R/library/boot/help/jack.after.boot
 lib/R/library/boot/help/k3.linear
-lib/R/library/boot/help/leuk
 lib/R/library/boot/help/linear.approx
 lib/R/library/boot/help/lines.saddle.distn
 lib/R/library/boot/help/logit
 lib/R/library/boot/help/lynx
-lib/R/library/boot/help/mammals
 lib/R/library/boot/help/manaus
-lib/R/library/boot/help/mcycle
 lib/R/library/boot/help/melanoma
 lib/R/library/boot/help/motor
 lib/R/library/boot/help/neuro
@@ -3682,7 +3672,6 @@ lib/R/library/boot/help/norm.ci
 lib/R/library/boot/help/normalize
 lib/R/library/boot/help/nuclear
 lib/R/library/boot/help/paulsen
-lib/R/library/boot/help/phones
 lib/R/library/boot/help/plot.boot
 lib/R/library/boot/help/poisons
 lib/R/library/boot/help/polar
@@ -3691,7 +3680,6 @@ lib/R/library/boot/help/print.bootci
 lib/R/library/boot/help/print.saddle.distn
 lib/R/library/boot/help/print.simplex
 lib/R/library/boot/help/remission
-lib/R/library/boot/help/rock
 lib/R/library/boot/help/saddle
 lib/R/library/boot/help/saddle.distn
 lib/R/library/boot/help/saddle.distn.object
@@ -3734,11 +3722,10 @@ lib/R/library/boot/html/breslow.html
 lib/R/library/boot/html/calcium.html
 lib/R/library/boot/html/cane.html
 lib/R/library/boot/html/capability.html
-lib/R/library/boot/html/cats.html
+lib/R/library/boot/html/catsM.html
 lib/R/library/boot/html/cav.html
 lib/R/library/boot/html/cd4.html
 lib/R/library/boot/html/cd4.nested.html
-lib/R/library/boot/html/cement.html
 lib/R/library/boot/html/censboot-internal.html
 lib/R/library/boot/html/censboot.html
 lib/R/library/boot/html/channing.html
@@ -3772,14 +3759,11 @@ lib/R/library/boot/html/inv.logit.html
 lib/R/library/boot/html/islay.html
 lib/R/library/boot/html/jack.after.boot.html
 lib/R/library/boot/html/k3.linear.html
-lib/R/library/boot/html/leuk.html
 lib/R/library/boot/html/linear.approx.html
 lib/R/library/boot/html/lines.saddle.distn.html
 lib/R/library/boot/html/logit.html
 lib/R/library/boot/html/lynx.html
-lib/R/library/boot/html/mammals.html
 lib/R/library/boot/html/manaus.html
-lib/R/library/boot/html/mcycle.html
 lib/R/library/boot/html/melanoma.html
 lib/R/library/boot/html/motor.html
 lib/R/library/boot/html/neuro.html
@@ -3789,7 +3773,6 @@ lib/R/library/boot/html/norm.ci.html
 lib/R/library/boot/html/normalize.html
 lib/R/library/boot/html/nuclear.html
 lib/R/library/boot/html/paulsen.html
-lib/R/library/boot/html/phones.html
 lib/R/library/boot/html/plot.boot.html
 lib/R/library/boot/html/poisons.html
 lib/R/library/boot/html/polar.html
@@ -3798,7 +3781,6 @@ lib/R/library/boot/html/print.bootci.html
 lib/R/library/boot/html/print.saddle.distn.html
 lib/R/library/boot/html/print.simplex.html
 lib/R/library/boot/html/remission.html
-lib/R/library/boot/html/rock.html
 lib/R/library/boot/html/saddle.distn.html
 lib/R/library/boot/html/saddle.distn.object.html
 lib/R/library/boot/html/saddle.html
@@ -3840,11 +3822,10 @@ lib/R/library/boot/latex/breslow.tex
 lib/R/library/boot/latex/calcium.tex
 lib/R/library/boot/latex/cane.tex
 lib/R/library/boot/latex/capability.tex
-lib/R/library/boot/latex/cats.tex
+lib/R/library/boot/latex/catsM.tex
 lib/R/library/boot/latex/cav.tex
 lib/R/library/boot/latex/cd4.nested.tex
 lib/R/library/boot/latex/cd4.tex
-lib/R/library/boot/latex/cement.tex
 lib/R/library/boot/latex/censboot-internal.tex
 lib/R/library/boot/latex/censboot.tex
 lib/R/library/boot/latex/channing.tex
@@ -3878,14 +3859,11 @@ lib/R/library/boot/latex/inv.logit.tex
 lib/R/library/boot/latex/islay.tex
 lib/R/library/boot/latex/jack.after.boot.tex
 lib/R/library/boot/latex/k3.linear.tex
-lib/R/library/boot/latex/leuk.tex
 lib/R/library/boot/latex/linear.approx.tex
 lib/R/library/boot/latex/lines.saddle.distn.tex
 lib/R/library/boot/latex/logit.tex
 lib/R/library/boot/latex/lynx.tex
-lib/R/library/boot/latex/mammals.tex
 lib/R/library/boot/latex/manaus.tex
-lib/R/library/boot/latex/mcycle.tex
 lib/R/library/boot/latex/melanoma.tex
 lib/R/library/boot/latex/motor.tex
 lib/R/library/boot/latex/neuro.tex
@@ -3895,7 +3873,6 @@ lib/R/library/boot/latex/norm.ci.tex
 lib/R/library/boot/latex/normalize.tex
 lib/R/library/boot/latex/nuclear.tex
 lib/R/library/boot/latex/paulsen.tex
-lib/R/library/boot/latex/phones.tex
 lib/R/library/boot/latex/plot.boot.tex
 lib/R/library/boot/latex/poisons.tex
 lib/R/library/boot/latex/polar.tex
@@ -3904,7 +3881,6 @@ lib/R/library/boot/latex/print.bootci.tex
 lib/R/library/boot/latex/print.saddle.distn.tex
 lib/R/library/boot/latex/print.simplex.tex
 lib/R/library/boot/latex/remission.tex
-lib/R/library/boot/latex/rock.tex
 lib/R/library/boot/latex/saddle.distn.object.tex
 lib/R/library/boot/latex/saddle.distn.tex
 lib/R/library/boot/latex/saddle.tex
@@ -4007,6 +3983,7 @@ lib/R/library/cluster/R-ex/flower.R
 lib/R/library/cluster/R-ex/lower.to.upper.tri.inds.R
 lib/R/library/cluster/R-ex/mona.R
 lib/R/library/cluster/R-ex/pam.R
+lib/R/library/cluster/R-ex/plot.agnes.R
 lib/R/library/cluster/R-ex/plot.diana.R
 lib/R/library/cluster/R-ex/plot.partition.R
 lib/R/library/cluster/R-ex/pluton.R
@@ -4424,8 +4401,8 @@ lib/R/library/grid/R-ex/unit.rep.R
 lib/R/library/grid/R-ex/viewport.R
 lib/R/library/grid/R/grid
 lib/R/library/grid/TITLE
-lib/R/library/grid/doc/changes_0.7-1.txt
-lib/R/library/grid/doc/uguide_0.7-1.pdf
+lib/R/library/grid/doc/changes_0.7-4.txt
+lib/R/library/grid/doc/uguide_0.7-4.pdf
 lib/R/library/grid/help/AnIndex
 lib/R/library/grid/help/Grid
 lib/R/library/grid/help/absolute.size
@@ -4754,6 +4731,7 @@ lib/R/library/lqs/man/lqs.Rd
 lib/R/library/methods/CONTENTS
 lib/R/library/methods/DESCRIPTION
 lib/R/library/methods/INDEX
+lib/R/library/methods/R-ex/GenericFunctions.R
 lib/R/library/methods/R-ex/NextMethod.R
 lib/R/library/methods/R-ex/as.R
 lib/R/library/methods/R-ex/classRepresentation-class.R
@@ -7573,6 +7551,7 @@ lib/R/library/ts/help/stlmethods
 lib/R/library/ts/help/sunspot
 lib/R/library/ts/help/toeplitz
 lib/R/library/ts/help/treering
+lib/R/library/ts/help/ts-defunct
 lib/R/library/ts/help/ts.plot
 lib/R/library/ts/help/ts.union
 lib/R/library/ts/help/tsSmooth
@@ -7633,6 +7612,7 @@ lib/R/library/ts/html/stlmethods.html
 lib/R/library/ts/html/sunspot.html
 lib/R/library/ts/html/toeplitz.html
 lib/R/library/ts/html/treering.html
+lib/R/library/ts/html/ts-defunct.html
 lib/R/library/ts/html/ts.plot.html
 lib/R/library/ts/html/ts.union.html
 lib/R/library/ts/html/tsSmooth.html
@@ -7692,6 +7672,7 @@ lib/R/library/ts/latex/stlmethods.tex
 lib/R/library/ts/latex/sunspot.tex
 lib/R/library/ts/latex/toeplitz.tex
 lib/R/library/ts/latex/treering.tex
+lib/R/library/ts/latex/ts-defunct.tex
 lib/R/library/ts/latex/ts.plot.tex
 lib/R/library/ts/latex/ts.union.tex
 lib/R/library/ts/latex/tsSmooth.tex
