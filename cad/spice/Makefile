@@ -19,7 +19,6 @@ EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
-USE_XLIB=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
@@ -28,6 +27,14 @@ MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 MAKE_ENV+=	STRIP_CMD=${STRIP_CMD}
 
+.ifdef WITHOUT_X11
+COMMENT=	A general-purpose circuit simulation program (non-X11 version)
+PKGNAMESUFFIX=	-without-x11
+MAKE_ARGS+=	-DWITHOUT_X11
+.else
+USE_XLIB=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -35,8 +42,8 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
-	s+@X11BASE@+${X11BASE}+;' \
-	${WRKSRC}/conf/FreeBSD
+	    s+@X11BASE@+${X11BASE}+;' \
+	    ${WRKSRC}/conf/FreeBSD ${WRKSRC}/conf/FreeBSD.without_x11
 
 post-install:
 .if !defined(NOPORTDOCS)
