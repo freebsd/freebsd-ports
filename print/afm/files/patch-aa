@@ -14,7 +14,7 @@
   # lptops program expects them to reside in files without a ".afm"
   # suffix.
   #
-! AFMDIR=/usr/local/lib/afm
+! AFMDIR=${PREFIX}/lib/afm
 ! INSTALL=install
   
   AFMFILES=\
