@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Mar 18 01:09:25 1999
-+++ Makefile.in	Thu Mar 18 01:09:31 1999
-@@ -4,7 +4,7 @@
- CFLAGS = -DVERSION='"v2.4.8"' -O6
+--- Makefile.in.orig	Fri Jun 15 14:29:22 2001
++++ Makefile.in	Fri Jun 15 14:29:40 2001
+@@ -6,7 +6,7 @@
+ STRIP = strip
  CC = gcc
  
 -ALL: bnc mkpasswd
 +all: bnc mkpasswd
- 	@echo "*** Done compiling required files"
- 	@echo "Please read the README.TXT file included"
  
+ mkpasswd:mkpasswd.c
+ 	${CC} ${OPTS} ${COPT} ${LIBS} -o mkpasswd mkpasswd.c
