@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.49 1999/05/27 21:52:21 jkh Exp $
+# $Id: Makefile,v 1.50 1999/05/29 04:01:42 steve Exp $
 #
 
 DISTNAME=	imlib-1.9.4
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/giflib" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
