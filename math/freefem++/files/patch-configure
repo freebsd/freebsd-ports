@@ -1,102 +1,15 @@
---- configure.orig	Wed Jul  7 14:03:35 2004
-+++ configure	Sun Jul 11 14:06:53 2004
-@@ -6947,82 +6947,15 @@
- 	ff_wget=no
- fi
+--- configure.orig	Mon Sep  6 16:00:20 2004
++++ configure	Thu Sep  9 00:14:54 2004
+@@ -7852,7 +7852,7 @@
+ if test "${with_umfpack+set}" = set; then
+   withval="$with_umfpack"
+   ff_umfpack_ok=yes
+-                ff_umfpack_lib="$ff_umfpack_lib ${withval}"
++                ff_umfpack_lib="${withval} $ff_umfpack_lib"
  
--# Looking for the BLAS
--# --------------------
--
--# Trying default locations
- ff_blas_ok=no
--ff_save_libs="$LIBS"
--echo "$as_me:$LINENO: checking for daxpy_ in -lblas" >&5
--echo $ECHO_N "checking for daxpy_ in -lblas... $ECHO_C" >&6
--if test "${ac_cv_lib_blas_daxpy_+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  ac_check_lib_save_LIBS=$LIBS
--LIBS="-lblas  $LIBS"
--cat >conftest.$ac_ext <<_ACEOF
--#line $LINENO "configure"
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--
--/* Override any gcc2 internal prototype to avoid an error.  */
--#ifdef __cplusplus
--extern "C"
--#endif
--/* We use char because int might match the return type of a gcc2
--   builtin and then its argument prototype would still apply.  */
--char daxpy_ ();
--int
--main ()
--{
--daxpy_ ();
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
--  (eval $ac_link) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--         { ac_try='test -s conftest$ac_exeext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  ac_cv_lib_blas_daxpy_=yes
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--ac_cv_lib_blas_daxpy_=no
--fi
--rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
--LIBS=$ac_check_lib_save_LIBS
--fi
--echo "$as_me:$LINENO: result: $ac_cv_lib_blas_daxpy_" >&5
--echo "${ECHO_T}$ac_cv_lib_blas_daxpy_" >&6
--if test $ac_cv_lib_blas_daxpy_ = yes; then
--  LIBS="$LIBS -lblas"
--	ff_blas_ok=yes
--	ff_blas_lib="-lblas"
--else
--  LIBS="$ff_save_libs"
--fi
--
- 
--# Trying Atlas (location corresponding to Debian package)
-+# Trying Atlas (location corresponding to FreeBSD package)
- if test "$ff_blas_ok" = no;
- then
--	echo "$as_me:$LINENO: checking for daxpy_ in /usr/lib/atlas/libblas.a" >&5
--echo $ECHO_N "checking for daxpy_ in /usr/lib/atlas/libblas.a... $ECHO_C" >&6
-+	echo "$as_me:$LINENO: checking for daxpy_ in /usr/local/lib/libatlas" >&5
-+echo $ECHO_N "checking for daxpy_ in /usr/local/libatlas... $ECHO_C" >&6
- 	ff_save_libs="$LIBS"
--	LIBS="$LIBS -L/usr/lib/atlas -lblas"
-+	LIBS="$LIBS -lf2c -lf77blas -latlas -lgslcblas"
- 	cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -7059,7 +6992,7 @@
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
-   ff_blas_ok=yes
--		ff_blas_lib="-L/usr/lib/atlas -lblas"
-+		ff_blas_lib="-lf2c -lf77blas -latlas -lgslcblas"
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
-@@ -7477,7 +7410,7 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBUMFPACK 1
+@@ -7864,7 +7864,7 @@
  
  
  
@@ -105,21 +18,3 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -7690,7 +7623,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lumfpack $ff_umfpack_lib $LIBS"
-+LIBS="$ff_umfpack_lib -lumfpack $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -7744,7 +7677,7 @@
- #define HAVE_LIBUMFPACK 1
- _ACEOF
- 
--			ff_umfpack_lib="$ff_umfpack_lib -lumfpack"
-+			ff_umfpack_lib="-lumfpack $ff_umfpack_lib"
- 			ff_umfpack_ok=yes
- fi
- 

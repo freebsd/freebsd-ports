@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
@@ -16,8 +16,13 @@ COMMENT=	An implementation of a language dedicated to the finite element method
 
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas	\
 		f2c.2:${PORTSDIR}/lang/f2c	\
-		gsl.6:${PORTSDIR}/math/gsl
-BUILD_DEPENDS=	${LOCALBASE}/include/ARPACK++:${PORTSDIR}/math/arpack++
+		gsl.6:${PORTSDIR}/math/gsl	\
+		lapack.3:${PORTSDIR}/math/lapack
+BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
+		dvips:${PORTSDIR}/print/dvipsk-tetex			\
+		pdflatex:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
+		pdflatex:${PORTSDIR}/print/teTeX-base
 
 RESTRICTED=	No resale or commercial use
 
@@ -27,17 +32,40 @@ USE_GMAKE=		yes
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--disable-download
+CONFIGURE_ARGS=		--disable-download					\
+			--with-blas="${LIBBLAS}"				\
+			--with-amd="-lamd"					\
+			--with-umfpack="-lumfpack"				\
+			--with-arpack="${LIBARPACK}"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
+LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
 DOCS=		AUTHORS BUGS COPYING HISTORY README TODO DOC/manual.pdf
 BADSAMPLES=	load/load.link.orig load/myfunction.o tutorial/Makefile.in.orig
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/mpich/bin/mpiCC)
+WITH_MPI=	yes
+.endif
+.if defined(WITH_MPI)
+BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
+RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
+PLIST_SUB+=	MPI=""
+.else
+PLIST_SUB+=	MPI="@comment "
+.endif
+
 pre-configure:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"			\
-		-e "s|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${X11BASE}|g"	\
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
+		-e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"		\
+		-e "s|/usr/X11R6|${X11BASE}|g"				\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
+		${WRKSRC}/src/mpi/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/FreeFem++ ${PREFIX}/bin/FreeFem++-nw
@@ -71,4 +99,4 @@ test:	install
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
