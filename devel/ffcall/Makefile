@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-ONLY_FOR_ARCHS=	i386 aplha ia64
+ONLY_FOR_ARCHS=	i386 alpha ia64
 
 MAN3=		avcall.3 callback.3 trampoline.3 trampoline_r.3 vacall.3
 MANCOMPRESSED=	no
