@@ -16,13 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl interface to iconv() codeset conversion function
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
 MAN3=		Text::Iconv.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
