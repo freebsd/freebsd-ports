@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distribfold
-PORTVERSION=	0.1
+PORTVERSION=	0.1.${RELEASE_DATE}
 CATEGORIES=	misc net
 MASTER_SITES=	ftp://ftp.mshri.on.ca/pub/distribfold/download/
 DISTNAME=	distribfold-current-FreeBSD
@@ -32,8 +32,10 @@ DNETFOLD_GROUP=dnetfold
 # default number of processors
 WITH_NCPU?=	1
 
+RELEASE_DATE=	20021015
+
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}|' \
+	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}/cpu0|' \
 		${WRKSRC}/foldit
 
 pre-install:
@@ -69,7 +71,7 @@ do-install:
 # display package message
 	@${CAT} ${PKGMESSAGE}
 
-post-install: cook-install-plist
+post-install: cook-install-plist fix-startup-scripts
 
 .include <bsd.port.pre.mk>
 
@@ -111,6 +113,17 @@ cook-install-plist: generate-plist
 .for file in plistN plist.end
 	@${CAT} ${WRKDIR}/${file} >> ${TMPPLIST}
 .endfor
+.endif
+
+fix-startup-scripts:
+.if ${WITH_NCPU} > 1
+# for every cpu directory
+	@ncpu=`${CAT} ${WRKDIR}/ncpu` ; \
+	for dir in `${FILESDIR}/number_of_dirs.sh $${ncpu}` ; do \
+		${REINPLACE_CMD} -e "s|cpu0|cpu$${dir}|" \
+			${DESTINATION_DIR}/cpu$${dir}/foldit ; \
+		${RM} -f ${DESTINATION_DIR}/cpu$${dir}/foldit.bak ; \
+	done
 .endif
 
 .include <bsd.port.post.mk>
