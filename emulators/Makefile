@@ -29,6 +29,7 @@
     SUBDIR += ksnes9x
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux_base
+    SUBDIR += linux_base-62
     SUBDIR += linux_base-7
     SUBDIR += mastergear
     SUBDIR += mtools
