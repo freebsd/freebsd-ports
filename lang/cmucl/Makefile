@@ -1,16 +1,18 @@
 # New ports collection makefile for:    CMUCL
-# Version required:     18a
+# Version required:     18a, build 19970824
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.2 1997/07/15 14:49:03 cracauer Exp $
+# $Id: Makefile,v 1.3 1997/07/21 12:13:57 cracauer Exp $
 #
 #
 
-DISTNAME=	cmucl-18a.x86.FreeBSD21
+DISTNAME=	18a-FreeBSD_22
 PKGNAME=	cmucl-18a
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/
+MASTER_SITES=	ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/ \
+		http://www2.cons.org:8000/ftp-area/cmucl/binaries/ \
+		http://www2.cons.org:8000/freebsd-distfiles/
 
 MAINTAINER= 	cracauer@cons.org
 
@@ -20,16 +22,15 @@ NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
 
 do-install:
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} work/bin/lisp ${PREFIX}/bin
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	-${MKDIR} ${PREFIX}/lib/cmucl
-	(cd work && tar fc - lib) | (cd ${PREFIX}/lib/cmucl && tar fx -)
+	(cd ${WRKDIR} && tar fc - lib) | (cd ${PREFIX}/lib/cmucl && tar fx -)
 	-${RMDIR} ${PREFIX}/lib/cmucl/lib/subsystems
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} work/README.1st \
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/README \
 		${PREFIX}/lib/cmucl
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} work/man/man1/cmucl.1 \
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/cmucl.1 \
 		${PREFIX}/man/man1
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} work/man/man1/lisp.1 \
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
 		${PREFIX}/man/man1
 
 .include <bsd.port.mk>
-
