@@ -1,5 +1,5 @@
---- e-table-group.c.orig	Thu Nov 28 13:51:22 2002
-+++ e-table-group.c	Thu Nov 28 22:23:01 2002
+--- gal/e-table/e-table-group.c.orig	Thu Nov 28 13:51:22 2002
++++ gal/e-table/e-table-group.c	Thu Nov 28 22:23:01 2002
 @@ -22,6 +22,7 @@
   */
  
