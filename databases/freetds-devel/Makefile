@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.62
-PORTREVISION=	1
+PORTVERSION=	0.62.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
@@ -19,12 +18,13 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_GONFIGURE=	yes
 USE_LIBTOOL_VER=	13
-WANT_AUTOCONF_VER=	253
+WANT_AUTOCONF_VER=	257
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=5.0
 INSTALLS_SHLIB=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 MAN1=		freebcp.1 tsql.1
 
 .if defined(WITH_IODBC)
@@ -51,9 +51,6 @@ post-extract:
 	@cd ${WRKSRC} && ${LN} -s freetds.conf freetds.conf.dist
 	@cd ${WRKSRC} && ${LN} -s locales.conf locales.conf.dist
 	@cd ${WRKSRC}/src/pool && ${LN} -s pool.conf pool.conf.dist
-.if defined(WITH_EXPERIMENTAL_PATCH)
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/exp-patch-src::tds::read.c
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
