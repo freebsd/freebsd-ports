@@ -9,8 +9,8 @@ PORTNAME=	vje
 PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
-		file:${MOUNT_PT}/source/delta/:source \
+MASTER_SITES=	${CD_MOUNTPTS:S,^,file:,:S,$,/freebsd/,} \
+		${CD_MOUNTPTS:S,^,file:,:S,$,/source/delta/:source,} \
 		${MASTER_SITE_LOCAL:S/$/:update/}
 MASTER_SITE_SUBDIR=	knu/:update
 DISTFILES=	${MAINDIST} \
@@ -28,12 +28,10 @@ RESTRICTED=	"You must purchase a licensed copy from VACS Corporation."
 NO_CDROM=	"You must purchase a licensed copy from VACS Corporation."
 NO_PACKAGE=	"You must purchase a licensed copy from VACS Corporation."
 
-# Specify this!
-MOUNT_PT?=	/cdrom
-
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 
 PLIST_SUB=	BINSTUFF="${BINSTUFF}"
 
@@ -60,27 +58,27 @@ BINSTUFF=	vje	\
 		vjeacc
 
 pre-fetch:
-	@[ -d ${MOUNT_PT}/freebsd ] || ( \
+	@check () { for m; do [ -d $$m/freebsd ] && return 0; done; return 1; }; check ${CD_MOUNTPTS} || ( \
 	${ECHO} "*****************************************************************";	\
 	${ECHO} "To install VJE-Delta 3.0, make sure your purchased CD-ROM is";		\
-	${ECHO} "mounted on at ${MOUNT_PT} or an arbitrary mountpoint that can be";	\
-	${ECHO} "specified by setting MOUNT_PT variable in a make command line.";	\
+	${ECHO} "mounted on at ${CD_MOUNTPTS} or any arbitrary mountpoint that";	\
+	${ECHO} "can be specified using the CD_MOUNTPTS variable.";	\
 	${ECHO} "";									\
 	${ECHO} "e.g.";									\
 	${ECHO} "	mount /dev/cd0c /mnt/cdrom";					\
-	${ECHO} "	make MOUNT_PT=/mnt/cdrom install";				\
+	${ECHO} "	make CD_MOUNTPTS=/mnt/cdrom install";				\
 	${ECHO} "*****************************************************************";	\
 	${FALSE}									\
 	)
 
 post-extract:
-	@${RM} ${_DISTDIR}/${MAINDIST} ${WRKDIR}/vje
+	@${RM} ${DISTDIR}/${DIST_SUBDIR}/${MAINDIST} ${WRKDIR}/vje
 
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
-	@${PERL} -i -pe 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
 .if defined(NOPORTDOCS)
 	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ REQUEST
 .endif
@@ -89,7 +87,7 @@ post-build:
 	@${CP} ${BUILD_WRKSRC}/vje ${WRKSRC}/vje30/bin/
 
 do-install:
-	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
+	@cd ${WRKSRC} && ${TAR} -cf - . | ${TAR} -xf - -C ${PREFIX}
 .for f in ${BINSTUFF}
 	@${LN} -fs ${PREFIX}/vje30/bin/$f ${PREFIX}/bin/$f
 .endfor
