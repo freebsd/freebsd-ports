@@ -16,6 +16,8 @@ PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH SMTP_AUTH+TLS
 
+IGNORE=		is an unfinished repocopy
+
 # not type-safe
 ONLY_FOR_ARCHS=	i386
 
