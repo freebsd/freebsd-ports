@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://grass.baylor.edu/pub/grass/grass5.0beta/source/ \
 		http://www.geog.uni-hannover.de/grass/grass5/source/
 
-MAINTAINER=	reg@freebsd.org
+MAINTAINER=	reg@FreeBSD.org
 
 LIB_DEPENDS=    tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
