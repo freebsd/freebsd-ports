@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Cyrille.Lefevre@laposte.net
 COMMENT=	The Heirloom Toolchest is a collection of standard Unix utilities
 
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
