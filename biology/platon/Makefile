@@ -7,6 +7,7 @@
 
 PORTNAME=	platon
 PORTVERSION=	2001.03.09
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon

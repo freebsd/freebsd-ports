@@ -5,11 +5,11 @@
 TARGET=	platon
 OBJS=	platon.o xdrvr.o
 .if ${OSVERSION} >= 400018
-FOPT=
+FOPT=	${FFLAGS}
 .else
-FOPT=	-Nx800 -NL400 -Nn802
+FOPT=	${FFLAGS} -Nx800 -NL400 -Nn802
 .endif
-COPT=	-I%%X11BASE%%/include
+COPT=	${CFLAGS} -I%%X11BASE%%/include
 LOPT=	-L%%X11BASE%%/lib -lX11
 .if defined(HAVE_G2C)
 LOPT+=	-lg2c
