@@ -324,7 +324,6 @@
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba
-    SUBDIR += samba20
     SUBDIR += sdic
     SUBDIR += sed
     SUBDIR += seizedesktop
