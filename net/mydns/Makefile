@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 MAN5=		mydns.conf.5
-MAN8=		mydns.8
+MAN8=		mydns.8 mydnscheck.8 mydnsdump.8
 
 DOCS=	AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
