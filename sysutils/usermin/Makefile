@@ -7,6 +7,7 @@
 
 PORTNAME=	usermin
 PORTVERSION=	1.100
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +26,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=
+USERMIN_MODULES=fetchmail-1.100-1.wbm.gz
 USERMIN_THEMES=
 
 post-extract:
@@ -37,6 +38,10 @@ post-extract:
 	fi
 
 post-patch:
+.for file in	mysql/config-freebsd postgresql/config-freebsd \
+		spam/config-freebsd
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+.endfor
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
