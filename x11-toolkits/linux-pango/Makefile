@@ -24,14 +24,17 @@ RPM_SET=	pango-1.2.1-3.i386.rpm
 
 pre-install:
 	${RM} -rf ${WRKSRC}/tmp
+	${ECHO_CMD} etc/pango/pango.modules > ${PLIST}
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+		${FIND} * -type f -o -type l >> ${PLIST}; \
+		${FIND} -d * -type d | ${GREP} pango | \
+		${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 post-install:
-	${LINUXBASE}/usr/bin/pango-querymodules >\
-		${LINUXBASE}/etc/pango/pango.modules
+	- chroot ${LINUXBASE} usr/bin/pango-querymodules > \
+		${WRKSRC}/pango.modules
+	${INSTALL_DATA} ${WRKSRC}/pango.modules ${LINUXBASE}/etc/pango/
 
 .include "../linux-gtk/Makefile"
