@@ -7374,6 +7374,7 @@ timidity++-tcltk	ports/audio/timidity++-tcltk
 timidity++-xaw	ports/audio/timidity++-xaw
 timidity++-xskin	ports/audio/timidity++-xskin
 tin		ports/news/tin
+tinc		ports/security/tinc
 tinker		ports/biology/tinker
 tintin++	ports/net/tintin++
 tintin++-devel	ports/net/tintin++-devel
