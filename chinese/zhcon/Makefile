@@ -21,10 +21,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-included-gettext=${LOCALBASE}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS= # empty
-USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		zhcon.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's,${LOCALBASE}/share/locale,${PREFIX}/share/locale,g' \
+		${WRKSRC}/*
 
 .include <bsd.port.mk>
