@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 
 COMMENT=	${.CURDIR}/pkg-comment
 
+EXTRA_PATCHES=	${.CURDIR}/files/patch-*
+
 USE_RUBY=	yes
 
 MAKE_ARGS=	CONF_OPT_RUBY="--enable-rubyinterp" RUBY="${RUBY}"
