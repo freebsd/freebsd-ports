@@ -8,13 +8,16 @@
 PORTNAME=	zsh
 PORTVERSION=	4.0.6
 CATEGORIES=	shells
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.zsh.org/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.zsh.org/%SUBDIR%/ \
 		ftp://ftp.sterling.com/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/shells/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/%SUBDIR%/ \
 		ftp://ftp.ips.oz.au/pub/packages/%SUBDIR%/ \
-		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/
+		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/ \
+		ftp://ftp.iij.ad.jp/pub/misc/%SUBDIR%/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/utils/shell/%SUBDIR%/ \
+		ftp://ftp.icm.edu.pl/vol/wojsyl/%SUBDIR%/ \
+		ftp://ftp.sunsite.auc.dk/disk1/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} zsh-${PORTVERSION}-doc${EXTRACT_SUFX}
