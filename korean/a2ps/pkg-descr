@@ -1,0 +1,8 @@
+a2ps-h does filtering a2ps(not a2ps 4.3, a2ps 4.12 is ok) output
+for Korean text printing. It converts Korean text in a2ps output
+to Korean-printable PS file.
+
+WWW: http://www.kr.FreeBSD.org/~hwang/misc/index.html
+
+--
+CHOI Junho <cjh@FreeBSD.org>
