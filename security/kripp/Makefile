@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kripp
-PORTVERSION=	0.2
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://konst.org.ua/download/
@@ -15,7 +15,9 @@ MASTER_SITE_SUBDIR=	sniffers
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	Lightweight network password sniffer
 
-NO_BUILD=	Yes
+USE_PERL5_RUN=	yes
+
+NO_BUILD=	yes
 MAN1=		kripp.1
 
 do-install:
