@@ -1,7 +1,6 @@
 This is the Squid Internet Object Cache developed by the National
 Laboratory for Applied Networking Research (NLANR) and Internet
 volunteers.  This software is freely available for anyone to use.
-The Squid home page is http://squid.nlanr.net/Squid/.
 
 This software is based on the Harvest Object Cache developed by
 the University of Colorado and the University of Southern California.
@@ -14,3 +13,5 @@ FreeBSD PORTER'S NOTES. To this moment, Squid is not well documented.
 But you aren't lost in space: there is a mailing list,
 <squid-users@nlanr.net>, where you will find some support and help.
 We also _strongly_ suggest you to examine Web pages noted above.
+
+WWW: http://squid.nlanr.net/Squid/
