@@ -20,8 +20,6 @@ DIST_SUBDIR=	mplayer
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
 
-BROKEN=		"Broken pkg-plist"
-
 #
 # When adding a new skin, please make sure to add it after the following
 # comment sections:
