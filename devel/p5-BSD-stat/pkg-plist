@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/stat/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/stat/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/stat/stat.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/stat/stat.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD/stat.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/stat
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD 2>/dev/null || true
