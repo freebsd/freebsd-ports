@@ -1,0 +1,45 @@
+diff -c -N ../faces/main.c ./main.c
+*** ../faces/main.c	Tue Nov 19 05:00:47 1991
+--- ./main.c	Wed Dec 11 09:26:19 1996
+***************
+*** 63,68 ****
+--- 63,69 ----
+    "period",                /* Integer: period in seconds between checks. */
+    "bell",                  /* Integer: number of beeps for new arrival. */
+    "flash",                 /* Integer: number of flashes for new arrival. */
++   "borderWidth",           /* Integer: border width of window. */
+    "lower",                 /* Boolean: lower window if no mail. */
+    "raise",                 /* Boolean: raise window on update? */
+    "button1clear",          /* Boolean: mouse button 1 clear window? */
+***************
+*** 150,155 ****
+--- 151,157 ----
+  int facetype ;          /* Type of face file found. */
+  int firsttime = 1 ;     /* Zeroised after first mail/printer check. */
+  int flashes = 0 ;       /* Number of flashes for arrival of new mail. */
++ int border_width = 2 ;	/* Border width of window. */
+  int fromc_found = 0 ;   /* Set if "From:" line found during processing. */
+  int froms_found = 0 ;   /* Set if "From " line found during processing. */
+  int height ;            /* Height in pixels of faces display. */
+***************
+*** 743,751 ****
+    if (get_str_resource(R_FONT,      str))      read_str(&fontname,      str) ;
+    if (get_str_resource(R_BGICON,    str))      read_str(&bgicon,        str) ;
+  
+!   if (get_int_resource(R_PERIOD,    &intval))  period       = intval ;
+!   if (get_int_resource(R_BELL,      &intval))  beeps        = intval ;
+!   if (get_int_resource(R_FLASH,     &intval))  flashes      = intval ;
+  
+    if (get_bool_resource(R_LOWER,    &boolval)) lowerwindow  = boolval ;
+    if (get_bool_resource(R_RAISE,    &boolval)) raisewindow  = boolval ;
+--- 745,754 ----
+    if (get_str_resource(R_FONT,      str))      read_str(&fontname,      str) ;
+    if (get_str_resource(R_BGICON,    str))      read_str(&bgicon,        str) ;
+  
+!   if (get_int_resource(R_PERIOD,     &intval)) period       = intval ;
+!   if (get_int_resource(R_BELL,       &intval)) beeps        = intval ;
+!   if (get_int_resource(R_FLASH,      &intval)) flashes      = intval ;
+!   if (get_int_resource(R_BORDERWIDTH,&intval)) border_width = intval ;
+  
+    if (get_bool_resource(R_LOWER,    &boolval)) lowerwindow  = boolval ;
+    if (get_bool_resource(R_RAISE,    &boolval)) raisewindow  = boolval ;

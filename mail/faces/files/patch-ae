@@ -1,9 +1,14 @@
---- filters/xbm2ikon.orig	Fri Jul  3 16:22:30 1998
-+++ filters/xbm2ikon	Fri Jul  3 16:23:02 1998
-@@ -23,6 +23,5 @@
- sed -e 1,2d -e '$s/$/,/' |
- tr -d '\011\012' |
- tr ',' '\012' |
--sed 's/^/0x/' |
- pr -l1 -t -w22 -3 -s, |
- sed -e 's/$/,/' -e 's/\(0x....\)\(0x....\)\(0x....\),/\1,\2,\3,/'
+diff -c -N ../faces/faces.sendmail ./faces.sendmail
+*** ../faces/faces.sendmail	Mon Jul  1 03:25:50 1991
+--- ./faces.sendmail	Tue Dec 10 20:19:25 1996
+***************
+*** 37,40 ****
+  	-e ': copy' \
+  	-e p \
+  	-e n \
+! 	-e 'b copy' | /usr/lib/sendmail "$@"
+--- 37,40 ----
+  	-e ': copy' \
+  	-e p \
+  	-e n \
+! 	-e 'b copy' | /usr/sbin/sendmail "$@"

@@ -1,0 +1,107 @@
+diff -c -N ../faces/compface/file.c ./compface/file.c
+*** ../faces/compface/file.c	Wed Jun 19 08:29:13 1991
+--- ./compface/file.c	Wed Dec 11 09:25:17 1996
+***************
+*** 15,20 ****
+--- 15,22 ----
+  
+  #include "compface.h"
+  
++ int xbitmap=0;
++ 
+  void
+  BigRead(fbuf)
+  register char *fbuf;
+***************
+*** 127,136 ****
+--- 129,147 ----
+  {
+  	register char *s, *t;
+  	register int i, bits, digits, words;
++ 	extern int xbitmap;
++ 	int digsperword = DIGSPERWORD;
++ 	int wordsperline = WORDSPERLINE;
+  
+  	s = F;
+  	t = fbuf;
+  	bits = digits = words = i = 0;
++ 	if (xbitmap) {
++ 		sprintf(t,"#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
++ 		while (*t) t++;
++ 		digsperword = 2;
++ 		wordsperline = 15;
++ 	}
+  	while (s < F + PIXELS)
+  	{
+  		if ((bits == 0) && (digits == 0))
+***************
+*** 138,162 ****
+  			*(t++) = '0';
+  			*(t++) = 'x';
+  		}
+! 		if (*(s++))
+! 			i = i * 2 + 1;
+! 		else
+! 			i *= 2;
+  		if (++bits == BITSPERDIG)
+  		{
+! 			*(t++) = *(i + HexDigits);
+  			bits = i = 0;
+! 			if (++digits == DIGSPERWORD)
+  			{
+  				*(t++) = ',';
+  				digits = 0;
+! 				if (++words == WORDSPERLINE)
+  				{
+  					*(t++) = '\n';
+  					words = 0;
+  				}
+  			}
+  		}
+  	}
+  	*(t++) = '\0';
+  }
+--- 149,191 ----
+  			*(t++) = '0';
+  			*(t++) = 'x';
+  		}
+! 		if (xbitmap) {
+! 			if (*(s++))
+! 				i = (i >> 1) | 0x8;
+! 			else
+! 				i >>= 1;
+! 		}
+! 		else {
+! 			if (*(s++))
+! 				i = i * 2 + 1;
+! 			else
+! 				i *= 2;
+! 		}
+  		if (++bits == BITSPERDIG)
+  		{
+! 			if (xbitmap) {
+! 				t++;
+! 				t[-(digits & 1) * 2] = *(i + HexDigits);
+! 			}
+! 			else *(t++) = *(i + HexDigits);
+  			bits = i = 0;
+! 			if (++digits == digsperword)
+  			{
++ 				if (xbitmap && (s >= F + PIXELS)) break;
+  				*(t++) = ',';
+  				digits = 0;
+! 				if (++words == wordsperline)
+  				{
+  					*(t++) = '\n';
++ 					if (xbitmap) *(t++) = ' ';
+  					words = 0;
+  				}
+  			}
+  		}
++ 	}
++ 	if (xbitmap) {
++ 		sprintf(t, "}\n");
++ 		while (*t) t++;
+  	}
+  	*(t++) = '\0';
+  }

@@ -1,0 +1,30 @@
+diff -c -N ../faces/compface/uncmain.c ./compface/uncmain.c
+*** ../faces/compface/uncmain.c	Thu Oct 24 03:28:07 1991
+--- ./compface/uncmain.c	Wed Dec 11 09:27:47 1996
+***************
+*** 18,23 ****
+--- 18,25 ----
+  #include <fcntl.h>
+  #include "compface.h"
+  
++ extern int xbitmap;
++ 
+  /* the buffer is longer than needed to handle sparse input formats */
+  #define FACEBUFLEN 2048
+  char fbuf[FACEBUFLEN];
+***************
+*** 59,64 ****
+--- 61,73 ----
+    while (**argv)
+      if (*((*argv)++) == '/')
+        cmdname = *argv;               /* find the command's basename */
++ 
++   if (argc > 1 && !strcmp(argv[1], "-X"))
++     {
++       xbitmap++;
++       argc--;
++       argv++;
++     }
+  
+    if (argc > 3)
+      {

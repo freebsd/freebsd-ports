@@ -1,0 +1,20 @@
+diff -c -N ../faces/scripts/facesall ./scripts/facesall
+*** ../faces/scripts/facesall	Mon Nov 25 01:30:24 1991
+--- ./scripts/facesall	Tue Dec 10 17:57:49 1996
+***************
+*** 20,26 ****
+  #$olddb = 1;
+  
+  $cols = 15; $rows = 13;
+! $FACEDIR = '/usr/local/faces';
+  
+  # facesall - show all available faces in the given faces bitmap directory
+  # usage: facesall [ -a ] [ bitmap_directory ]
+--- 20,26 ----
+  #$olddb = 1;
+  
+  $cols = 15; $rows = 13;
+! $FACEDIR = '/usr/local/share/faces';
+  
+  # facesall - show all available faces in the given faces bitmap directory
+  # usage: facesall [ -a ] [ bitmap_directory ]
