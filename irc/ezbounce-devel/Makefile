@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.04.a
 CATEGORIES=	irc
-MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
+MASTER_SITES=	http://druglord.freelsd.org/ezbounce/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
-GNU_CONFIGURE= 	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		ezbounce.1
 
@@ -24,6 +24,23 @@ PLIST_SUB+=	MDIDENTD="@comment "
 .else
 PLIST_SUB+=	MDIDENTD=""
 .endif
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	YES
+CONFIGURE_ARGS+=	--with-ssl
+PLIST_SUB+=	SSL=""
+.else
+PLIST_SUB+=	SSL="@comment "
+.endif
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_SSL=yes      Enable SSL support"
+	@${ECHO} "	WITH_MDIDENTD=yes Install the mdidentd binary to"
+	@${ECHO} "                        modify ident replies"
+	@${ECHO} ""
 
 post-patch:
 	@${SED} -e "s:/path/to:${PREFIX}/sbin:" ${WRKSRC}/sample.conf > \
@@ -44,15 +61,18 @@ do-install:
 	fi
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ezbounce
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/ezbounce
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ezbounce
-	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/ezbounce
-	${INSTALL_DATA} ${WRKSRC}/worklog ${PREFIX}/share/doc/ezbounce
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/worklog ${DOCSDIR}
 
 .if defined(WITH_MDIDENTD)
 	${INSTALL_DATA} ${WRKSRC}/mdidentd/README \
-		${PREFIX}/share/doc/ezbounce/mdidentd.README
+		${DOCSDIR}/mdidentd.README
+.endif
+.if defined(WITH_SSL)
+	${INSTALL_DATA} ${WRKSRC}/README.SSL ${DOCSDIR}
 .endif
 
 .endif
