@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 .else
 PORTVERSION=	1.8.0
 PORTREVISION=	1
@@ -42,13 +42,29 @@ PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-openssl
+PLIST_SUB+=	OPENSSL="@comment "
 .else
 USE_OPENSSL=	yes
+.if defined(WITH_GNUSTEP_DEVEL)
+PLIST_SUB+=	OPENSSL="@comment "
+.else
+PLIST_SUB+=	OPENSSL=""
+.endif
+MAKE_APPS=	SSL
+INSTALL_APPS=	SSL
 .endif
 
 .include <bsd.port.pre.mk>
 
 TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
+
+.if defined(WITH_GNUSTEP_DEVEL)
+post-build:
+.for i in ${MAKE_APPS}
+	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+.endfor
+.endif
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" \
@@ -59,8 +75,17 @@ post-install:
 	-@${MKDIR} ${ETCDIR}/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d/GNUstep.sh
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
+.if defined(WITH_GNUSTEP_DEVEL)
+.for i in ${INSTALL_APPS}
+	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+.endfor
+.endif
 
 test:
 	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
 
 .include <bsd.port.post.mk>
+
+# bsd.port.post.mk clobbers MAKE_ENV
+MAKE_ENV+=	PATH=${autotools_path}:$(PREFIX)/System/Tools:${PATH}
