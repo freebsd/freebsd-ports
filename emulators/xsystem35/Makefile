@@ -3,10 +3,10 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.14 1999/04/05 16:33:46 flathill Exp $
+# $Id: Makefile,v 1.15 1999/04/26 02:33:57 mharo Exp $
 #
 
-DISTNAME=	xsystem35-1.0.6
+DISTNAME=	xsystem35-1.0.7
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
