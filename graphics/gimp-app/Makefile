@@ -1,16 +1,16 @@
 # New ports collection makefile for:    Gimp
-# Version required:     1.1.5
+# Version required:     1.1.10
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gimp-1.1.5
+DISTNAME=	gimp-1.1.10
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.5/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.5/ \
-		http://www.ameth.org/gimp/pub/gimp/unstable/v1.1.5/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.10/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.10/ \
+		http://www.ameth.org/gimp/pub/gimp/unstable/v1.1.10/
 
 MAINTAINER=	erich@FreeBSD.org
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

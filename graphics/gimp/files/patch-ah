@@ -1,6 +1,6 @@
---- configure.orig	Tue May  4 06:06:39 1999
-+++ configure	Sat May 22 21:39:37 1999
-@@ -3538,7 +3538,10 @@
+--- configure.orig	Wed Oct  6 14:00:22 1999
++++ configure	Tue Oct 12 13:37:31 1999
+@@ -3471,7 +3471,11 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,10 +9,11 @@
 +		   INTLDEPS='-lintl'
 +		   INTLLIBS=$INTLDEPS
 +		   LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7165,7 +7168,7 @@
+@@ -7108,7 +7112,7 @@
  fi
  
  gimpdatadir=$datadir/gimp
@@ -21,14 +22,14 @@
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
-@@ -8746,10 +8749,6 @@
-       *) # Relative path.
-         ac_sub_cache_file="$ac_dots$cache_file" ;;
-       esac
--  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
+@@ -8513,10 +8517,6 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
  
-       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.
+-  case "$ac_given_INSTALL" in
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
+ 
+   echo creating "$ac_file"
+   rm -f "$ac_file"
