@@ -3795,6 +3795,7 @@ mailagent	ports/mail/mailagent
 mailcrypt	ports/mail/mailcrypt
 maildrop	ports/mail/maildrop
 mailfilter	ports/mail/mailfilter
+mailfmt		ports/mail/mailfmt
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
 mailman-devel	ports/mail/mailman-devel
