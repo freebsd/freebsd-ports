@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.2
@@ -14,7 +14,7 @@ DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Applets components for the Gnome 2.0 Desktop Environment
+COMMENT=	Applets components for the Gnome 2 Desktop Environment
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
@@ -26,7 +26,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel gail
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 

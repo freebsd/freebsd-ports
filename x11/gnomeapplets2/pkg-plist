@@ -104,13 +104,13 @@ share/gnome/gkb/Default.keyprop
 share/gnome/gkb/Dvorak.keyprop
 share/gnome/gkb/EE_Estonian.keyprop
 share/gnome/gkb/EE_Estonian_x.keyprop
-share/gnome/gkb/ES_Spanish.keyprop
 share/gnome/gkb/ES_Spanish-x86.keyprop
+share/gnome/gkb/ES_Spanish.keyprop
 share/gnome/gkb/ES_Spanish_x.keyprop
 share/gnome/gkb/FI_Finnish.keyprop
 share/gnome/gkb/FI_Finnish_x.keyprop
-share/gnome/gkb/FR_French.keyprop
 share/gnome/gkb/FR_French-x86.keyprop
+share/gnome/gkb/FR_French.keyprop
 share/gnome/gkb/FR_French_x.keyprop
 share/gnome/gkb/FrenchCanadian.keyprop
 share/gnome/gkb/FrenchCanadian2.keyprop
@@ -150,6 +150,10 @@ share/gnome/gkb/LT_Lithuanian_x.keyprop
 share/gnome/gkb/LT_Prog.keyprop
 share/gnome/gkb/LT_Standard.keyprop
 share/gnome/gkb/MK_Macedonian.keyprop
+share/gnome/gkb/MN_Mongolian.keyprop
+share/gnome/gkb/MN_Mongolian_x.keyprop
+share/gnome/gkb/MN_Mongolian_x_rev.keyprop
+share/gnome/gkb/MN_Mongolian_x_uni.keyprop
 share/gnome/gkb/Macedonian.keyprop
 share/gnome/gkb/NL_Dutch_x.keyprop
 share/gnome/gkb/NO_Norwegian.keyprop
@@ -183,8 +187,8 @@ share/gnome/gkb/Thai2.keyprop
 share/gnome/gkb/UA_Ukrainian.keyprop
 share/gnome/gkb/UK-x86.keyprop
 share/gnome/gkb/UK.keyprop
-share/gnome/gkb/US-101A-x86.keyprop
 share/gnome/gkb/US-101.keyprop
+share/gnome/gkb/US-101A-x86.keyprop
 share/gnome/gkb/US-84.keyprop
 share/gnome/gkb/US-dec.keyprop
 share/gnome/gkb/US-ibm.keyprop
@@ -234,6 +238,43 @@ share/gnome/help/cdplayer/C/figures/cdplayer_applet_prevtrack.png
 share/gnome/help/cdplayer/C/figures/cdplayer_applet_stop.png
 share/gnome/help/cdplayer/C/legal.xml
 share/gnome/help/cdplayer/C/topic.dat
+share/gnome/help/cdplayer/de/cdplayer.xml
+share/gnome/help/cdplayer/de/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/de/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/de/legal.xml
+share/gnome/help/cdplayer/es/cdplayer.xml
+share/gnome/help/cdplayer/es/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/es/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/es/legal.xml
+share/gnome/help/cdplayer/es/topic.dat
+share/gnome/help/cdplayer/fr/cdplayer.xml
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/fr/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/fr/legal.xml
+share/gnome/help/cdplayer/it/cdplayer.xml
+share/gnome/help/cdplayer/it/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/it/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/it/legal.xml
 share/gnome/help/cdplayer/ja/cdplayer.xml
 share/gnome/help/cdplayer/ja/figures/cdplayer_applet.png
 share/gnome/help/cdplayer/ja/figures/cdplayer_applet_eject.png
@@ -244,19 +285,122 @@ share/gnome/help/cdplayer/ja/figures/cdplayer_applet_prevtrack.png
 share/gnome/help/cdplayer/ja/figures/cdplayer_applet_stop.png
 share/gnome/help/cdplayer/ja/legal.xml
 share/gnome/help/cdplayer/ja/topic.dat
+share/gnome/help/cdplayer/ko/cdplayer.xml
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/ko/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/ko/legal.xml
+share/gnome/help/cdplayer/sv/cdplayer.xml
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/sv/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/sv/legal.xml
+share/gnome/help/cdplayer/zh_CN/cdplayer.xml
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/zh_CN/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/zh_CN/legal.xml
+share/gnome/help/cdplayer/zh_TW/cdplayer.xml
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/zh_TW/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/zh_TW/legal.xml
 share/gnome/help/char-palette/C/char-palette.xml
 share/gnome/help/char-palette/C/figures/charpick_applet.png
 share/gnome/help/char-palette/C/figures/charpick_characters.png
 share/gnome/help/char-palette/C/figures/charpick_chargroup.png
 share/gnome/help/char-palette/C/legal.xml
+share/gnome/help/char-palette/de/char-palette.xml
+share/gnome/help/char-palette/de/figures/charpick_applet.png
+share/gnome/help/char-palette/de/figures/charpick_characters.png
+share/gnome/help/char-palette/de/figures/charpick_chargroup.png
+share/gnome/help/char-palette/de/legal.xml
+share/gnome/help/char-palette/es/char-palette.xml
+share/gnome/help/char-palette/es/figures/charpick_applet.png
+share/gnome/help/char-palette/es/figures/charpick_characters.png
+share/gnome/help/char-palette/es/figures/charpick_chargroup.png
+share/gnome/help/char-palette/es/legal.xml
+share/gnome/help/char-palette/fr/char-palette.xml
+share/gnome/help/char-palette/fr/figures/charpick_applet.png
+share/gnome/help/char-palette/fr/figures/charpick_characters.png
+share/gnome/help/char-palette/fr/figures/charpick_chargroup.png
+share/gnome/help/char-palette/fr/legal.xml
+share/gnome/help/char-palette/it/char-palette.xml
+share/gnome/help/char-palette/it/figures/charpick_applet.png
+share/gnome/help/char-palette/it/figures/charpick_characters.png
+share/gnome/help/char-palette/it/figures/charpick_chargroup.png
+share/gnome/help/char-palette/it/legal.xml
 share/gnome/help/char-palette/ja/char-palette.xml
 share/gnome/help/char-palette/ja/figures/charpick_applet.png
 share/gnome/help/char-palette/ja/figures/charpick_characters.png
 share/gnome/help/char-palette/ja/figures/charpick_chargroup.png
 share/gnome/help/char-palette/ja/legal.xml
+share/gnome/help/char-palette/ko/char-palette.xml
+share/gnome/help/char-palette/ko/figures/charpick_applet.png
+share/gnome/help/char-palette/ko/figures/charpick_characters.png
+share/gnome/help/char-palette/ko/figures/charpick_chargroup.png
+share/gnome/help/char-palette/ko/legal.xml
+share/gnome/help/char-palette/sv/char-palette.xml
+share/gnome/help/char-palette/sv/figures/charpick_applet.png
+share/gnome/help/char-palette/sv/figures/charpick_characters.png
+share/gnome/help/char-palette/sv/figures/charpick_chargroup.png
+share/gnome/help/char-palette/sv/legal.xml
+share/gnome/help/char-palette/zh_CN/char-palette.xml
+share/gnome/help/char-palette/zh_CN/figures/charpick_applet.png
+share/gnome/help/char-palette/zh_CN/figures/charpick_characters.png
+share/gnome/help/char-palette/zh_CN/figures/charpick_chargroup.png
+share/gnome/help/char-palette/zh_CN/legal.xml
+share/gnome/help/char-palette/zh_TW/char-palette.xml
+share/gnome/help/char-palette/zh_TW/figures/charpick_applet.png
+share/gnome/help/char-palette/zh_TW/figures/charpick_characters.png
+share/gnome/help/char-palette/zh_TW/figures/charpick_chargroup.png
+share/gnome/help/char-palette/zh_TW/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/command-line/de/command-line.xml
+share/gnome/help/command-line/de/figures/command-line.png
+share/gnome/help/command-line/de/legal.xml
+share/gnome/help/command-line/es/command-line.xml
+share/gnome/help/command-line/es/figures/command-line.png
+share/gnome/help/command-line/es/legal.xml
+share/gnome/help/command-line/fr/command-line.xml
+share/gnome/help/command-line/fr/figures/command-line.png
+share/gnome/help/command-line/fr/legal.xml
+share/gnome/help/command-line/it/command-line.xml
+share/gnome/help/command-line/it/figures/command-line.png
+share/gnome/help/command-line/it/legal.xml
+share/gnome/help/command-line/ja/command-line.xml
+share/gnome/help/command-line/ja/figures/command-line.png
+share/gnome/help/command-line/ja/legal.xml
+share/gnome/help/command-line/ko/command-line.xml
+share/gnome/help/command-line/ko/figures/command-line.png
+share/gnome/help/command-line/ko/legal.xml
+share/gnome/help/command-line/sv/command-line.xml
+share/gnome/help/command-line/sv/figures/command-line.png
+share/gnome/help/command-line/sv/legal.xml
+share/gnome/help/command-line/zh_CN/command-line.xml
+share/gnome/help/command-line/zh_CN/figures/command-line.png
+share/gnome/help/command-line/zh_CN/legal.xml
+share/gnome/help/command-line/zh_TW/command-line.xml
+share/gnome/help/command-line/zh_TW/figures/command-line.png
+share/gnome/help/command-line/zh_TW/legal.xml
 share/gnome/help/drivemount/C/drivemount.xml
 share/gnome/help/drivemount/C/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/C/figures/drivemount_applet_floppy.png
@@ -267,46 +411,332 @@ share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
 share/gnome/help/geyes/C/topic.dat
+share/gnome/help/geyes/de/figures/geyes_applet.png
+share/gnome/help/geyes/de/geyes.xml
+share/gnome/help/geyes/de/legal.xml
+share/gnome/help/geyes/es/figures/geyes_applet.png
+share/gnome/help/geyes/es/geyes.xml
+share/gnome/help/geyes/es/legal.xml
+share/gnome/help/geyes/es/topic.dat
+share/gnome/help/geyes/fr/figures/geyes_applet.png
+share/gnome/help/geyes/fr/geyes.xml
+share/gnome/help/geyes/fr/legal.xml
+share/gnome/help/geyes/it/figures/geyes_applet.png
+share/gnome/help/geyes/it/geyes.xml
+share/gnome/help/geyes/it/legal.xml
+share/gnome/help/geyes/it/topic.dat
+share/gnome/help/geyes/ja/figures/geyes_applet.png
+share/gnome/help/geyes/ja/geyes.xml
+share/gnome/help/geyes/ja/legal.xml
+share/gnome/help/geyes/ko/figures/geyes_applet.png
+share/gnome/help/geyes/ko/geyes.xml
+share/gnome/help/geyes/ko/legal.xml
+share/gnome/help/geyes/sv/figures/geyes_applet.png
+share/gnome/help/geyes/sv/geyes.xml
+share/gnome/help/geyes/sv/legal.xml
+share/gnome/help/geyes/zh_CN/figures/geyes_applet.png
+share/gnome/help/geyes/zh_CN/geyes.xml
+share/gnome/help/geyes/zh_CN/legal.xml
+share/gnome/help/geyes/zh_TW/figures/geyes_applet.png
+share/gnome/help/geyes/zh_TW/geyes.xml
+share/gnome/help/geyes/zh_TW/legal.xml
 share/gnome/help/gkb/C/figures/gkb_applet.png
 share/gnome/help/gkb/C/gkb.xml
 share/gnome/help/gkb/C/legal.xml
+share/gnome/help/gkb/de/figures/gkb_applet.png
+share/gnome/help/gkb/de/gkb.xml
+share/gnome/help/gkb/de/legal.xml
+share/gnome/help/gkb/es/figures/gkb_applet.png
+share/gnome/help/gkb/es/gkb.xml
+share/gnome/help/gkb/es/legal.xml
+share/gnome/help/gkb/fr/figures/gkb_applet.png
+share/gnome/help/gkb/fr/gkb.xml
+share/gnome/help/gkb/fr/legal.xml
+share/gnome/help/gkb/it/figures/gkb_applet.png
+share/gnome/help/gkb/it/gkb.xml
+share/gnome/help/gkb/it/legal.xml
+share/gnome/help/gkb/ja/figures/gkb_applet.png
+share/gnome/help/gkb/ja/gkb.xml
+share/gnome/help/gkb/ja/legal.xml
+share/gnome/help/gkb/ko/figures/gkb_applet.png
+share/gnome/help/gkb/ko/gkb.xml
+share/gnome/help/gkb/ko/legal.xml
+share/gnome/help/gkb/sv/figures/gkb_applet.png
+share/gnome/help/gkb/sv/gkb.xml
+share/gnome/help/gkb/sv/legal.xml
+share/gnome/help/gkb/zh_CN/figures/gkb_applet.png
+share/gnome/help/gkb/zh_CN/gkb.xml
+share/gnome/help/gkb/zh_CN/legal.xml
+share/gnome/help/gkb/zh_TW/figures/gkb_applet.png
+share/gnome/help/gkb/zh_TW/gkb.xml
+share/gnome/help/gkb/zh_TW/legal.xml
 share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/C/legal.xml
+share/gnome/help/gtik2_applet2/de/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/de/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/de/legal.xml
+share/gnome/help/gtik2_applet2/es/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/es/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/es/legal.xml
+share/gnome/help/gtik2_applet2/fr/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/fr/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/fr/legal.xml
+share/gnome/help/gtik2_applet2/it/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/it/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/it/legal.xml
+share/gnome/help/gtik2_applet2/ja/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/ja/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/ja/legal.xml
+share/gnome/help/gtik2_applet2/ko/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/ko/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/ko/legal.xml
+share/gnome/help/gtik2_applet2/sv/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/sv/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/sv/legal.xml
+share/gnome/help/gtik2_applet2/zh_CN/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/zh_CN/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/zh_CN/legal.xml
+share/gnome/help/gtik2_applet2/zh_TW/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/zh_TW/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/zh_TW/legal.xml
 share/gnome/help/gweather/C/figures/gweather_applet.png
 share/gnome/help/gweather/C/gweather.xml
 share/gnome/help/gweather/C/legal.xml
 share/gnome/help/gweather/C/topic.dat
+share/gnome/help/gweather/de/figures/gweather_applet.png
+share/gnome/help/gweather/de/gweather.xml
+share/gnome/help/gweather/de/legal.xml
+share/gnome/help/gweather/es/figures/gweather_applet.png
+share/gnome/help/gweather/es/gweather.xml
+share/gnome/help/gweather/es/legal.xml
+share/gnome/help/gweather/fr/figures/gweather_applet.png
+share/gnome/help/gweather/fr/gweather.xml
+share/gnome/help/gweather/fr/legal.xml
+share/gnome/help/gweather/ja/figures/gweather_applet.png
+share/gnome/help/gweather/ja/gweather.xml
+share/gnome/help/gweather/ja/legal.xml
+share/gnome/help/gweather/ko/figures/gweather_applet.png
+share/gnome/help/gweather/ko/gweather.xml
+share/gnome/help/gweather/ko/legal.xml
+share/gnome/help/gweather/sv/figures/gweather_applet.png
+share/gnome/help/gweather/sv/gweather.xml
+share/gnome/help/gweather/sv/legal.xml
+share/gnome/help/gweather/zh_CN/figures/gweather_applet.png
+share/gnome/help/gweather/zh_CN/gweather.xml
+share/gnome/help/gweather/zh_CN/legal.xml
+share/gnome/help/gweather/zh_TW/figures/gweather_applet.png
+share/gnome/help/gweather/zh_TW/gweather.xml
+share/gnome/help/gweather/zh_TW/legal.xml
+share/gnome/help/gweather_applet/it/figures/gweather_applet.png
+share/gnome/help/gweather_applet/it/figures/gweather_settings.png
+share/gnome/help/gweather_applet/it/figures/gweather_weather.png
+share/gnome/help/gweather_applet/it/gweather.sgml
+share/gnome/help/gweather_applet/it/gweather_applet.sgml
+share/gnome/help/gweather_applet/it/ln10.html
+share/gnome/help/gweather_applet/it/t1.html
+share/gnome/help/gweather_applet/it/topic.dat
+share/gnome/help/mixer_applet/it/figures/mixer_applet.png
+share/gnome/help/mixer_applet/it/ln10.html
+share/gnome/help/mixer_applet/it/mixer.sgml
+share/gnome/help/mixer_applet/it/mixer_applet.sgml
+share/gnome/help/mixer_applet/it/t1.html
+share/gnome/help/mixer_applet/it/topic.dat
 share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/C/legal.xml
 share/gnome/help/mixer_applet2/C/mixer_applet2.xml
 share/gnome/help/mixer_applet2/C/topic.dat
+share/gnome/help/mixer_applet2/de/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/de/legal.xml
+share/gnome/help/mixer_applet2/de/mixer_applet2.xml
+share/gnome/help/mixer_applet2/es/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/es/legal.xml
+share/gnome/help/mixer_applet2/es/mixer_applet2.xml
+share/gnome/help/mixer_applet2/es/topic.dat
+share/gnome/help/mixer_applet2/fr/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/fr/legal.xml
+share/gnome/help/mixer_applet2/fr/mixer_applet2.xml
+share/gnome/help/mixer_applet2/ja/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/ja/legal.xml
+share/gnome/help/mixer_applet2/ja/mixer_applet2.xml
+share/gnome/help/mixer_applet2/ko/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/ko/legal.xml
+share/gnome/help/mixer_applet2/ko/mixer_applet2.xml
+share/gnome/help/mixer_applet2/sv/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/sv/legal.xml
+share/gnome/help/mixer_applet2/sv/mixer_applet2.xml
+share/gnome/help/mixer_applet2/zh_CN/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/zh_CN/legal.xml
+share/gnome/help/mixer_applet2/zh_CN/mixer_applet2.xml
+share/gnome/help/mixer_applet2/zh_TW/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/zh_TW/legal.xml
+share/gnome/help/mixer_applet2/zh_TW/mixer_applet2.xml
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-install -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-ja.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-install -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/command-line-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/geyes-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gkb-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gweather_applet-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather_applet-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/drivemount-applet.png
@@ -352,13 +782,14 @@ share/gnome/pixmaps/gkb/jp.png
 share/gnome/pixmaps/gkb/km.png
 share/gnome/pixmaps/gkb/kr.png
 share/gnome/pixmaps/gkb/kw.png
-share/gnome/pixmaps/gkb/lam.png
 share/gnome/pixmaps/gkb/la.png
+share/gnome/pixmaps/gkb/lam.png
 share/gnome/pixmaps/gkb/lb.png
 share/gnome/pixmaps/gkb/lt.png
 share/gnome/pixmaps/gkb/ly.png
 share/gnome/pixmaps/gkb/ma.png
 share/gnome/pixmaps/gkb/mk.png
+share/gnome/pixmaps/gkb/mn.png
 share/gnome/pixmaps/gkb/mx.png
 share/gnome/pixmaps/gkb/nl.png
 share/gnome/pixmaps/gkb/no.png
@@ -457,6 +888,10 @@ share/gnome/xmodmap/xmodmap.lt
 share/gnome/xmodmap/xmodmap.lt_b
 share/gnome/xmodmap/xmodmap.lt_p
 share/gnome/xmodmap/xmodmap.mk
+share/gnome/xmodmap/xmodmap.mn
+share/gnome/xmodmap/xmodmap.mn-rev
+share/gnome/xmodmap/xmodmap.mn-uni
+share/gnome/xmodmap/xmodmap.mn-yawerty
 share/gnome/xmodmap/xmodmap.nl
 share/gnome/xmodmap/xmodmap.no
 share/gnome/xmodmap/xmodmap.pl
@@ -480,7 +915,6 @@ share/gnome/xmodmap/xmodmap.tr_q
 share/gnome/xmodmap/xmodmap.uk
 share/gnome/xmodmap/xmodmap.uk_x86
 share/gnome/xmodmap/xmodmap.us
-share/gnome/xmodmap/xmodmap.us101A_x86
 share/gnome/xmodmap/xmodmap.us-101
 share/gnome/xmodmap/xmodmap.us-84
 share/gnome/xmodmap/xmodmap.us-dec
@@ -490,6 +924,7 @@ share/gnome/xmodmap/xmodmap.us-mac
 share/gnome/xmodmap/xmodmap.us-sgi-101
 share/gnome/xmodmap/xmodmap.us-sun
 share/gnome/xmodmap/xmodmap.us.old
+share/gnome/xmodmap/xmodmap.us101A_x86
 share/gnome/xmodmap/xmodmap.us_intl
 share/gnome/xmodmap/xmodmap.yu
 share/locale/am/LC_MESSAGES/gnome-applets-2.0.mo
@@ -520,6 +955,7 @@ share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ml/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
@@ -532,6 +968,8 @@ share/locale/ro/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/sr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-applets-2.0.mo
@@ -540,49 +978,189 @@ share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
-@dirrm share/gnome/xmodmap
 @dirrm share/gnome/wireless-applet
+@dirrm share/gnome/pixmaps/wireless-applet
 @dirrm share/gnome/pixmaps/mixer
-@dirrm share/gnome/pixmaps/mini-commander
-@dirrm share/gnome/pixmaps/gweather
-@dirrm share/gnome/pixmaps/gkb
-@dirrm share/gnome/omf/gnome-applets
+@dirrm share/gnome/help/mixer_applet2/zh_TW/figures
+@dirrm share/gnome/help/mixer_applet2/zh_TW
+@dirrm share/gnome/help/mixer_applet2/zh_CN/figures
+@dirrm share/gnome/help/mixer_applet2/zh_CN
+@dirrm share/gnome/help/mixer_applet2/sv/figures
+@dirrm share/gnome/help/mixer_applet2/sv
+@dirrm share/gnome/help/mixer_applet2/ko/figures
+@dirrm share/gnome/help/mixer_applet2/ko
+@dirrm share/gnome/help/mixer_applet2/ja/figures
+@dirrm share/gnome/help/mixer_applet2/ja
+@dirrm share/gnome/help/mixer_applet2/fr/figures
+@dirrm share/gnome/help/mixer_applet2/fr
+@dirrm share/gnome/help/mixer_applet2/es/figures
+@dirrm share/gnome/help/mixer_applet2/es
+@dirrm share/gnome/help/mixer_applet2/de/figures
+@dirrm share/gnome/help/mixer_applet2/de
 @dirrm share/gnome/help/mixer_applet2/C/figures
 @dirrm share/gnome/help/mixer_applet2/C
 @dirrm share/gnome/help/mixer_applet2
+@dirrm share/gnome/help/mixer_applet/it/stylesheet-images
+@dirrm share/gnome/help/mixer_applet/it/figures
+@dirrm share/gnome/help/mixer_applet/it
+@dirrm share/gnome/help/mixer_applet
+@dirrm share/gnome/help/gweather_applet/it/stylesheet-images
+@dirrm share/gnome/help/gweather_applet/it/figures
+@dirrm share/gnome/help/gweather_applet/it
+@dirrm share/gnome/help/gweather_applet
+@dirrm share/gnome/help/gweather/zh_TW/figures
+@dirrm share/gnome/help/gweather/zh_TW
+@dirrm share/gnome/help/gweather/zh_CN/figures
+@dirrm share/gnome/help/gweather/zh_CN
+@dirrm share/gnome/help/gweather/sv/figures
+@dirrm share/gnome/help/gweather/sv
+@dirrm share/gnome/help/gweather/ko/figures
+@dirrm share/gnome/help/gweather/ko
+@dirrm share/gnome/help/gweather/ja/figures
+@dirrm share/gnome/help/gweather/ja
+@dirrm share/gnome/help/gweather/fr/figures
+@dirrm share/gnome/help/gweather/fr
+@dirrm share/gnome/help/gweather/es/figures
+@dirrm share/gnome/help/gweather/es
+@dirrm share/gnome/help/gweather/de/figures
+@dirrm share/gnome/help/gweather/de
 @dirrm share/gnome/help/gweather/C/figures
 @dirrm share/gnome/help/gweather/C
 @dirrm share/gnome/help/gweather
+@dirrm share/gnome/help/gtik2_applet2/zh_TW/figures
+@dirrm share/gnome/help/gtik2_applet2/zh_TW
+@dirrm share/gnome/help/gtik2_applet2/zh_CN/figures
+@dirrm share/gnome/help/gtik2_applet2/zh_CN
+@dirrm share/gnome/help/gtik2_applet2/sv/figures
+@dirrm share/gnome/help/gtik2_applet2/sv
+@dirrm share/gnome/help/gtik2_applet2/ko/figures
+@dirrm share/gnome/help/gtik2_applet2/ko
+@dirrm share/gnome/help/gtik2_applet2/ja/figures
+@dirrm share/gnome/help/gtik2_applet2/ja
+@dirrm share/gnome/help/gtik2_applet2/it/figures
+@dirrm share/gnome/help/gtik2_applet2/it
+@dirrm share/gnome/help/gtik2_applet2/fr/figures
+@dirrm share/gnome/help/gtik2_applet2/fr
+@dirrm share/gnome/help/gtik2_applet2/es/figures
+@dirrm share/gnome/help/gtik2_applet2/es
+@dirrm share/gnome/help/gtik2_applet2/de/figures
+@dirrm share/gnome/help/gtik2_applet2/de
 @dirrm share/gnome/help/gtik2_applet2/C/figures
 @dirrm share/gnome/help/gtik2_applet2/C
 @dirrm share/gnome/help/gtik2_applet2
+@dirrm share/gnome/help/gkb/zh_TW/figures
+@dirrm share/gnome/help/gkb/zh_TW
+@dirrm share/gnome/help/gkb/zh_CN/figures
+@dirrm share/gnome/help/gkb/zh_CN
+@dirrm share/gnome/help/gkb/sv/figures
+@dirrm share/gnome/help/gkb/sv
+@dirrm share/gnome/help/gkb/ko/figures
+@dirrm share/gnome/help/gkb/ko
+@dirrm share/gnome/help/gkb/ja/figures
+@dirrm share/gnome/help/gkb/ja
+@dirrm share/gnome/help/gkb/it/figures
+@dirrm share/gnome/help/gkb/it
+@dirrm share/gnome/help/gkb/fr/figures
+@dirrm share/gnome/help/gkb/fr
+@dirrm share/gnome/help/gkb/es/figures
+@dirrm share/gnome/help/gkb/es
+@dirrm share/gnome/help/gkb/de/figures
+@dirrm share/gnome/help/gkb/de
+@dirrm share/gnome/help/gkb/C/figures
+@dirrm share/gnome/help/gkb/C
+@dirrm share/gnome/help/gkb
+@dirrm share/gnome/help/geyes/zh_TW/figures
+@dirrm share/gnome/help/geyes/zh_TW
+@dirrm share/gnome/help/geyes/zh_CN/figures
+@dirrm share/gnome/help/geyes/zh_CN
+@dirrm share/gnome/help/geyes/sv/figures
+@dirrm share/gnome/help/geyes/sv
+@dirrm share/gnome/help/geyes/ko/figures
+@dirrm share/gnome/help/geyes/ko
+@dirrm share/gnome/help/geyes/ja/figures
+@dirrm share/gnome/help/geyes/ja
+@dirrm share/gnome/help/geyes/it/figures
+@dirrm share/gnome/help/geyes/it
+@dirrm share/gnome/help/geyes/fr/figures
+@dirrm share/gnome/help/geyes/fr
+@dirrm share/gnome/help/geyes/es/figures
+@dirrm share/gnome/help/geyes/es
+@dirrm share/gnome/help/geyes/de/figures
+@dirrm share/gnome/help/geyes/de
 @dirrm share/gnome/help/geyes/C/figures
 @dirrm share/gnome/help/geyes/C
 @dirrm share/gnome/help/geyes
 @dirrm share/gnome/help/drivemount/C/figures
 @dirrm share/gnome/help/drivemount/C
 @dirrm share/gnome/help/drivemount
+@dirrm share/gnome/help/command-line/zh_TW/figures
+@dirrm share/gnome/help/command-line/zh_TW
+@dirrm share/gnome/help/command-line/zh_CN/figures
+@dirrm share/gnome/help/command-line/zh_CN
+@dirrm share/gnome/help/command-line/sv/figures
+@dirrm share/gnome/help/command-line/sv
+@dirrm share/gnome/help/command-line/ko/figures
+@dirrm share/gnome/help/command-line/ko
+@dirrm share/gnome/help/command-line/ja/figures
+@dirrm share/gnome/help/command-line/ja
+@dirrm share/gnome/help/command-line/it/figures
+@dirrm share/gnome/help/command-line/it
+@dirrm share/gnome/help/command-line/fr/figures
+@dirrm share/gnome/help/command-line/fr
+@dirrm share/gnome/help/command-line/es/figures
+@dirrm share/gnome/help/command-line/es
+@dirrm share/gnome/help/command-line/de/figures
+@dirrm share/gnome/help/command-line/de
 @dirrm share/gnome/help/command-line/C/figures
 @dirrm share/gnome/help/command-line/C
 @dirrm share/gnome/help/command-line
-@dirrm share/gnome/help/char-palette/C/figures
-@dirrm share/gnome/help/char-palette/C
+@dirrm share/gnome/help/char-palette/zh_TW/figures
+@dirrm share/gnome/help/char-palette/zh_TW
+@dirrm share/gnome/help/char-palette/zh_CN/figures
+@dirrm share/gnome/help/char-palette/zh_CN
+@dirrm share/gnome/help/char-palette/sv/figures
+@dirrm share/gnome/help/char-palette/sv
+@dirrm share/gnome/help/char-palette/ko/figures
+@dirrm share/gnome/help/char-palette/ko
 @dirrm share/gnome/help/char-palette/ja/figures
 @dirrm share/gnome/help/char-palette/ja
+@dirrm share/gnome/help/char-palette/it/figures
+@dirrm share/gnome/help/char-palette/it
+@dirrm share/gnome/help/char-palette/fr/figures
+@dirrm share/gnome/help/char-palette/fr
+@dirrm share/gnome/help/char-palette/es/figures
+@dirrm share/gnome/help/char-palette/es
+@dirrm share/gnome/help/char-palette/de/figures
+@dirrm share/gnome/help/char-palette/de
+@dirrm share/gnome/help/char-palette/C/figures
+@dirrm share/gnome/help/char-palette/C
 @dirrm share/gnome/help/char-palette
-@dirrm share/gnome/help/cdplayer/C/figures
-@dirrm share/gnome/help/cdplayer/C
+@dirrm share/gnome/help/cdplayer/zh_TW/figures
+@dirrm share/gnome/help/cdplayer/zh_TW
+@dirrm share/gnome/help/cdplayer/zh_CN/figures
+@dirrm share/gnome/help/cdplayer/zh_CN
+@dirrm share/gnome/help/cdplayer/sv/figures
+@dirrm share/gnome/help/cdplayer/sv
+@dirrm share/gnome/help/cdplayer/ko/figures
+@dirrm share/gnome/help/cdplayer/ko
 @dirrm share/gnome/help/cdplayer/ja/figures
 @dirrm share/gnome/help/cdplayer/ja
+@dirrm share/gnome/help/cdplayer/it/figures
+@dirrm share/gnome/help/cdplayer/it
+@dirrm share/gnome/help/cdplayer/fr/figures
+@dirrm share/gnome/help/cdplayer/fr
+@dirrm share/gnome/help/cdplayer/es/figures
+@dirrm share/gnome/help/cdplayer/es
+@dirrm share/gnome/help/cdplayer/de/figures
+@dirrm share/gnome/help/cdplayer/de
+@dirrm share/gnome/help/cdplayer/C/figures
+@dirrm share/gnome/help/cdplayer/C
 @dirrm share/gnome/help/cdplayer
-%%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
-%%BATTERY%%@dirrm share/gnome/help/battstat/C
 %%BATTERY%%@dirrm share/gnome/help/battstat/ja/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/ja
+%%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/C
 %%BATTERY%%@dirrm share/gnome/help/battstat
-@dirrm share/gnome/gweather
-@dirrm share/gnome/gkb
-@dirrm share/gnome/gen_util
 %%BATTERY%%@dirrm share/gnome/battstat_applet
 @dirrm libexec/gnome-applets
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs
@@ -607,16 +1185,86 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather_applet-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
