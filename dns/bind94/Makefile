@@ -7,7 +7,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
 
 MAN1=	host.1 dig.1
 MAN5=	rndc.conf.5
