@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	axelq
-PORTVERSION=	0.70
+PORTVERSION=	0.80
 CATEGORIES=	ftp
-MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/axelq_releases/
+MASTER_SITES=	http://zephilia.dyndns.org/tsuki_yomi/axelq/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A queue manager for the download accelerator axel
