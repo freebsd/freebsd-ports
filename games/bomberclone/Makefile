@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
-		${PORTNAME}-data-0.6.tar.bz2
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
+		${PORTNAME}-data-0.7.tar.bz2
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
@@ -21,12 +21,12 @@ BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ARGS=	--target=""
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
@@ -34,12 +34,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
 post-extract:
-	${TAR} --directory ${WRKDIR} --bunzip2 --extract --file ${DISTDIR}/${PORTNAME}-data-0.6.tar.bz2
-	${RM} -rf ${WRKDIR}/data/tileset/default/.thumbnails
-
-post-patch:
-	${REINPLACE_CMD} -e 's,@@LOCALBASE@@,${LOCALBASE},' \
-		${WRKSRC}/src/configuration.c
+	${RM} -rf ${WRKDIR}/data/tileset/default/.xvpics
 
 post-install:
 	${MKDIR} ${PREFIX}/share/bomberclone

@@ -1,64 +1,78 @@
 bin/bomberclone
-share/doc/bomberclone/README
-share/doc/bomberclone/COPYING
+
 share/doc/bomberclone/AUTHORS
+share/doc/bomberclone/COPYING
 share/doc/bomberclone/ChangeLog
 share/doc/bomberclone/INSTALL
 share/doc/bomberclone/NEWS
+share/doc/bomberclone/README
 share/doc/bomberclone/TODO
 @dirrm share/doc/bomberclone
 
-share/bomberclone/gfx/font.bmp
+share/bomberclone/gfx/font0.bmp
 share/bomberclone/gfx/font1.bmp
+share/bomberclone/gfx/font2.bmp
 share/bomberclone/gfx/logo.bmp
 share/bomberclone/gfx/logo1.bmp
 share/bomberclone/gfx/menuselect.bmp
 @dirrm share/bomberclone/gfx
 
+share/bomberclone/maps/clean.map
+share/bomberclone/maps/first.map
+share/bomberclone/maps/firstmap.map
+share/bomberclone/maps/fourth.map
+share/bomberclone/maps/kitutou1.map
+share/bomberclone/maps/kitutou2.map
+share/bomberclone/maps/second.map
 share/bomberclone/maps/smal.map
 share/bomberclone/maps/smalfull.map
+share/bomberclone/maps/third.map
 @dirrm share/bomberclone/maps
 
+share/bomberclone/player/dead0.bmp
 share/bomberclone/player/player0.bmp
 share/bomberclone/player/player1.bmp
 share/bomberclone/player/player2.bmp
 share/bomberclone/player/player3.bmp
 share/bomberclone/player/player4.bmp
+share/bomberclone/player/player5.bmp
 share/bomberclone/player/playersick.bmp
 @dirrm share/bomberclone/player
 
 share/bomberclone/tileset/default/background.bmp
 share/bomberclone/tileset/default/block.bmp
 share/bomberclone/tileset/default/bomb.bmp
-share/bomberclone/tileset/default/fieldbomb.bmp
-share/bomberclone/tileset/default/fielddeath.bmp
-share/bomberclone/tileset/default/fieldfire.bmp
-share/bomberclone/tileset/default/fieldshoe.bmp
-share/bomberclone/tileset/default/fire.bmp
+share/bomberclone/tileset/default/pwdeath.bmp
+share/bomberclone/tileset/default/pwbomb.bmp
+share/bomberclone/tileset/default/pwfire.bmp
+share/bomberclone/tileset/default/pwshoe.bmp
+share/bomberclone/tileset/default/sppush.bmp
+share/bomberclone/tileset/default/sprow.bmp
+share/bomberclone/tileset/default/sptrigger.bmp
 share/bomberclone/tileset/default/stone.bmp
+share/bomberclone/tileset/default/dead.wav
+share/bomberclone/tileset/default/drop.wav
+share/bomberclone/tileset/default/explode.wav
+share/bomberclone/tileset/default/powerup.bmp
+share/bomberclone/tileset/default/powerbad.bmp
+share/bomberclone/tileset/default/fire.bmp
+share/bomberclone/tileset/default/powersp.bmp
 @dirrm share/bomberclone/tileset/default
 
-share/bomberclone/tileset/radioactive/background.bmp
-share/bomberclone/tileset/radioactive/block.bmp
-share/bomberclone/tileset/radioactive/bomb.bmp
-share/bomberclone/tileset/radioactive/fieldbomb.bmp
-share/bomberclone/tileset/radioactive/fielddeath.bmp
-share/bomberclone/tileset/radioactive/fieldfire.bmp
-share/bomberclone/tileset/radioactive/fieldshoe.bmp
-share/bomberclone/tileset/radioactive/fire.bmp
-share/bomberclone/tileset/radioactive/stone.bmp
-@dirrm share/bomberclone/tileset/radioactive
+share/bomberclone/tileset/classic/background.bmp
+share/bomberclone/tileset/classic/block.bmp
+share/bomberclone/tileset/classic/stone.bmp
+@dirrm share/bomberclone/tileset/classic
 
 share/bomberclone/tileset/jungle/background.bmp
 share/bomberclone/tileset/jungle/block.bmp
-share/bomberclone/tileset/jungle/bomb.bmp
-share/bomberclone/tileset/jungle/fieldbomb.bmp
-share/bomberclone/tileset/jungle/fielddeath.bmp
-share/bomberclone/tileset/jungle/fieldfire.bmp
-share/bomberclone/tileset/jungle/fieldshoe.bmp
-share/bomberclone/tileset/jungle/fire.bmp
 share/bomberclone/tileset/jungle/stone.bmp
 @dirrm share/bomberclone/tileset/jungle
+
+share/bomberclone/tileset/radioactive/background.bmp
+share/bomberclone/tileset/radioactive/block.bmp
+share/bomberclone/tileset/radioactive/stone.bmp
+@dirrm share/bomberclone/tileset/radioactive
 
 @dirrm share/bomberclone/tileset
 @dirrm share/bomberclone
