@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	3.4
+PORTVERSION=	4.0
 CATEGORIES=	japanese
 DISTFILES=	# none
 
@@ -57,8 +57,6 @@ post-build:
 		done; \
 	 fi; \
 	done|sort|uniq >>${PLIST}
-	@${ECHO} "@exec ${LN} -sf %D/share/man/ja %D/share/man/ja_JP.EUC" >>${PLIST}
-	@${ECHO} "@unexec ${RM} -f %D/share/man/ja_JP.EUC" >>${PLIST}
 
 pre-install:
 .for sec in ${MANSECS}
