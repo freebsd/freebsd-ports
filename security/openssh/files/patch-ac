@@ -32,7 +32,7 @@
 + * Data types.
 + */
 +typedef u_char          sa_family_t;
-+typedef u_int32_t       socklen_t;
++typedef int             socklen_t;
 +
 +/*
 + * bsd-api-new-02a: protocol-independent placeholder for socket addresses
