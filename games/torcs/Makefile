@@ -80,6 +80,11 @@ PLIST_SUB+=	OLETHROS=""
 PLIST_SUB+=	OLETHROS="@comment "
 .endif
 
+BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in	\
+		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in		\
+		src/tools/trackgen/trackgen.in src/modules/telemetry/telemetry.sh	\
+		robotgen Make-default.mk setup_linux.sh
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -107,12 +112,11 @@ pre-everything::
 	@${ECHO_MSG} "	  do not install optional robots."
 	@${ECHO_MSG} ""
 
-post-extract:
-	@${FIND} ${WRKSRC} -name \*\.o -exec ${RM} {} \;
-
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 20 -x				\
-		${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|g"
+.for FILE in ${BASH2FIX}
+	@${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|"	\
+		${WRKSRC}/${FILE}
+.endfor
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/games
