@@ -10,8 +10,8 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-EXTRA_PATCHES=	${.CURDIR}/patches/patch-0a  \
-		${.CURDIR}/patches/patch-init.h  \
+EXTRA_PATCHES=	${.CURDIR}/patches/patch-init.h  \
+		${.CURDIR}/patches/patch-parse.c  \
 		${.CURDIR}/patches/patch-pgp.c  \
 		${.CURDIR}/patches/patch-sendlib.c 
 
