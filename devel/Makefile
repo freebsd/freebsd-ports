@@ -267,6 +267,7 @@
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Curses
+    SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Date-Calc
