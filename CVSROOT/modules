@@ -488,6 +488,7 @@ bjfilter860	ports/print/bjfilter860
 bjfilter870	ports/print/bjfilter870
 bjfiltercom	ports/print/bjfiltercom
 bjfilters600	ports/print/bjfilters600
+bjfilters630	ports/print/bjfilters630
 bjorb		ports/security/bjorb
 bk2site		ports/www/bk2site
 bkmrkconv	ports/www/bkmrkconv
