@@ -14,7 +14,6 @@ COMMENT?=	KDE iconset theme
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
-PLIST_SUB+=	DIRNAME="${PORT_SHAREDIR}"
 
 # default installation directory
 PORT_SHAREDIR?=	${DISTNAME}
