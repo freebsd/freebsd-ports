@@ -16,6 +16,7 @@ EXTRACT_ONLY=	cdict5.tgz
 IGNOREFILES=	cdict5-file.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Chinese-English / English-Chinese dictionary
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 

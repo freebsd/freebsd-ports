@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/asmodem
 DISTNAME=	${PORTNAME}-0.6-1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Displays the modem status, designed to match AfterStep
 
 USE_IMAKE=	yes
 USE_XPM=	yes

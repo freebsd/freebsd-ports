@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK-based GUI frontend for cdrdao, disk-at-once audio CD recorder
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 

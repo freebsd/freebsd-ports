@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/id-utils/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
 # need to byte-compile a .el file
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20

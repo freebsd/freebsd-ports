@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Memory Profiler and Leak Detector
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/Linux/plamo/Plamo-1.4.x/contrib/Electron
 		ftp://sunsite.tus.ac.jp/pub/archives/linux/jp-linux/plamo/Plamo-1.4.x/contrib/Electronic/sources/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 interactive printed circuit board layout system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX

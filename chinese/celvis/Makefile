@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.edu.cn/pub/Chinese/
 DISTNAME=	celvis
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A vi/ex clone that speaks Chinese
 
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1

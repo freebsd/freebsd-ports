@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/pre-releases/
 DISTNAME=	${PORTNAME}-pre
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool for generating translations of strings used in i10 Qt programs
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 

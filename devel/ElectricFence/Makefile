@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 DISTNAME=	ElectricFence-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Debugging malloc() that uses the VM hardware to detect buffer overruns
 
 INSTALLS_SHLIB=
 CFLAGS+=	-D__USE_BSD

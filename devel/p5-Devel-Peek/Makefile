@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 data debugging tool for the XS programmer
 
 PERL_CONFIGURE=	yes
 

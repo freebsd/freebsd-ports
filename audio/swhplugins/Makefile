@@ -11,6 +11,7 @@ MASTER_SITES=		http://plugin.org.uk/releases/${PORTVERSION}/
 DISTNAME=		swh-plugins-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	This is Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=		fftw.2:${PORTSDIR}/math/fftw

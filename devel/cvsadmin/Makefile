@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cooptel.qc.ca/~limitln/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes
 

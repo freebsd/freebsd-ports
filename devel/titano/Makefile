@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An IDE for GNOME desktop
 
 LIB_DEPENDS=	gtkeditor.0:${PORTSDIR}/x11-toolkits/libgtkeditor
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmSun-1.03
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockapp that displays the rise and set time of the sun
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 

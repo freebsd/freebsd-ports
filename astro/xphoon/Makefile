@@ -13,6 +13,7 @@ DISTNAME=	xphoon
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Set the root window to the moon in its current phase
 
 USE_IMAKE=	yes
 

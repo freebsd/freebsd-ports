@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitst
 DISTNAME=	dist10
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MPEG layer I, II and III audio file encoder
 
 RESTRICTED=	Condition is not clear
 

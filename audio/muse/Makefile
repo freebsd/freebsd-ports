@@ -14,6 +14,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/muse/ \
 DISTNAME=	MuSE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multiple Streaming Engine
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.2:${PORTSDIR}/audio/libvorbis

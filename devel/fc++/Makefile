@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cc.gatech.edu/~yannis/fc++/
 DISTNAME=	FC++.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Functional Programming in C++
 
 NO_BUILD=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://radscan.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Network Audio System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes

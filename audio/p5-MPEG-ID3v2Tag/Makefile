@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	MPEG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that provides a way to write/read ID3 v2.3 tags
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pyobjfs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Object Oriented Database Library For Persistent Storage in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

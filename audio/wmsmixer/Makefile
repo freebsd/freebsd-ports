@@ -11,6 +11,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An audio mixer for the WindowMaker dock
 
 USE_XPM=	YES
 USE_IMAKE=	YES

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Alias
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl module that performs aliasing services
 
 PERL_CONFIGURE=	yes
 

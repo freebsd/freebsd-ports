@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A reindenter and reformatter of C++, C and Java source code
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa

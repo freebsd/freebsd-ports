@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 DISTFILES=	gbscript-1.11.tar.gz cclib.24
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts GB simplified Chinese text to PostScript
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	makefile

@@ -16,6 +16,7 @@ DISTNAME=	dialog
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python Dialog
 
 USE_PYTHON=	yes
 EXTRACT_CMD=	${CP}

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.create.ucsb.edu/pub/MixViews/source/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sound file editor/player/recorder/converter for X Window System
 
 BROKEN=		"Does not build"
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.terminatorx.cx/
 DISTNAME=	terminatorX-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

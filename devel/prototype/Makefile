@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.xs4all.nl/~carlo17/prototype/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Prototype Makefiles allows very fast project start ups
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

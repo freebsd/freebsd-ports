@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.reduz.com.ar/cheesetracker/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Impulse Tracker clone
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--

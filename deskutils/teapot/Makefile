@@ -11,6 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Full-screen curses based spread sheet program
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I./.curses.h -DNO_POSIX_SOURCE" \
 		LDFLAGS="" LIBS="-lcurses -mytinfo -lm" MAKEDEPEND=""

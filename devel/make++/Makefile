@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/+/p/g}
 DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A drop-in replacement for GNU make
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 

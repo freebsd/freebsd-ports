@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Religion
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module to install die() and warn() handlers
 
 PERL_CONFIGURE=	YES
 

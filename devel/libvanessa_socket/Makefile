@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	vanessa_socket/${PORTVERSION}
 DISTNAME=	vanessa_socket-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library that provides a simple layer for TCP/IP socket operations
 
 LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
 		popt.0:${PORTSDIR}/devel/popt

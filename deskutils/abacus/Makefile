@@ -16,6 +16,7 @@ PATCH_SITE_SUBDIR=	steve
 PATCHFILES=	${PKGNAME}.patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Spread sheet for X Window System
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82

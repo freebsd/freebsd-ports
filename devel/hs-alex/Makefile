@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Alex is a Lex-like package for generating Haskell scanners
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

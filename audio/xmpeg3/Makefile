@@ -13,6 +13,7 @@ DISTNAME=	xmp3_1.0.0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple TCL interface to the Amp Mpeg-3 player
 
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82

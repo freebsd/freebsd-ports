@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl interface to generate "random" strings
 
 PERL_CONFIGURE=	yes
 

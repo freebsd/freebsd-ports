@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C program cross-referencing & documentation tool
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

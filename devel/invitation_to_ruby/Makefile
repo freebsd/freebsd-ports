@@ -22,6 +22,7 @@ EXTRACT_SUFX=	.tgz
 #EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
 
 NO_BUILD=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Snack Sound Toolkit
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

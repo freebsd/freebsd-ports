@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.smga3000.com/thekompany/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A cross-platform C++ library for developing modular applications
 
 USE_KDELIBS_VER=3
 USE_AUTOMAKE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Serial port pic16c84 programmer
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

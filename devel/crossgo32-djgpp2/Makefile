@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/old/ \
 DISTNAME=	djcrx201
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DJGPP V2 libraries and compatability for crossgo32 crosscompiler
 
 BUILD_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
 RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32

@@ -13,6 +13,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	mpg123 console frontend
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		aumix:${PORTSDIR}/audio/aumix

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://plg.uwaterloo.ca/pub/dmake/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Another hyper make utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES= 	http://members.optushome.com.au/emikulic/code/tn/
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/tn

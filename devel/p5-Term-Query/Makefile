@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive question-response user interface module
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
 

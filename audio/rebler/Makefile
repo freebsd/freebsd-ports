@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to convert mpeg2 and ac3 into DivX with ac3 audio
 
 LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		aviplay.0:${PORTSDIR}/multimedia/avifile \

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://kommos.ucsd.edu/pub/arobert/Chinese/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Chinese character learning-aid program
 
 BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83

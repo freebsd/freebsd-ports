@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl module that processes METAR information from NOAA sources
 
 PERL_CONFIGURE=	yes
 

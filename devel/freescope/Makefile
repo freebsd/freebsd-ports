@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Source code browsing on UNIX-like operating systems
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	libs/db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A relational database library
 
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes

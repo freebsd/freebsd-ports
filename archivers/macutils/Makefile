@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utils/compress
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Utilities for Apple Macintosh files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile

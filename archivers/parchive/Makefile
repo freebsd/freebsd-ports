@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	par-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Parity Archiver - makes multiple parity volumes from a set of files
 
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/par-cmdline

@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.azstarnet.com/~donut/programs/id3ed/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An id3 tag editor for mp3 files
 
 GNU_CONFIGURE=	yes
 

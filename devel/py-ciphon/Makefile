@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pythonsiphon
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A module for python that adds cpan-like functionality
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 

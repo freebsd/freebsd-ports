@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert MP3 files to Ogg Vorbis files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \

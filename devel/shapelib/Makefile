@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C API for reading and writing ArcView Shapefiles
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 

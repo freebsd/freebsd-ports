@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES= 	http://www.mega-nerd.com/SRC/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Secret Rabbit Code is a Sample Rate Converter for audio
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile

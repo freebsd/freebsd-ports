@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	MOD/S3M/MTM tracker that does its own DSP, uses VoxWare v2.90+
 
 MAN1=		nspmod.1
 

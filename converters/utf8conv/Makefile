@@ -12,6 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.fibrespeed.net/~mbabcock/code/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert hexadecimal Unicode character values to UTF-8
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}

@@ -12,6 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://acd188a-005.rit.edu/match/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program for matching star lists
 
 GNU_CONFIGURE=	yes
 

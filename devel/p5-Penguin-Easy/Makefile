@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Penguin
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A quick and easy implemention of the p5-Penguin module
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Penguin.pm:${PORTSDIR}/devel/p5-Penguin
 

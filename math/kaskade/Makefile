@@ -13,6 +13,7 @@ DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
 USE_X_PREFIX=	yes
 

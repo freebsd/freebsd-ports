@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Mac
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module with functions to manipluate pathspecs in Unixish style
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
 
 USE_GNOMENG=	yes
 USE_GNOME=	imlib

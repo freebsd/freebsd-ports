@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ library for reading and generating files in the ELF binary format
 
 GNU_CONFIGURE=	yes
 

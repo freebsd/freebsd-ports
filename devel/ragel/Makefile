@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.essemage.com/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compile regular languages into executable C/C++ code
 
 USE_REINPLACE=	yes
 USE_BISON=	yes

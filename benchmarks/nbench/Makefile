@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	system/benchmark
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
 

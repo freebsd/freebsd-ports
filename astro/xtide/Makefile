@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Harmonic tide clock and tide predictor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

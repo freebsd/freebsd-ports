@@ -13,6 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interactive command line editing facilities
 
 USE_SUBMAKE=	yes
 USE_AUTOCONF=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.copyleft.no/projects/fluxlib/ \
 		ftp://ftp.styx.net/projects/flux/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	High-level C library for development purposes
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Automatic Dia XML - from Source Code and Data
 
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${PERL_SITELIBDIR}/Inline.pm:${PORTSDIR}/devel/p5-Inline \

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gregorian calendar date calculations
 
 PERL_CONFIGURE=	yes
 

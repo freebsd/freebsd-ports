@@ -12,6 +12,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA004474/etc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}u
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Ish/uuencode/Base64 converter
 
 post-install:
 .if !defined(NOPORTDOCS)

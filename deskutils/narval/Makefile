@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.logilab.org/pub/narval/ \
 DISTNAME=	Narval-${PORTVERSION:S/.a.1/a1/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Network Assistant Reasoning with a Validating Agent Language
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/${XMLDIR}/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite \

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Use C++ object API to allow applications to connect to databases
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://pages.cpsc.ucalgary.ca/~aycock/spark/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Scanning, Parsing, and Rewriting Kit
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A small utility used to generate code from a Dia diagram
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

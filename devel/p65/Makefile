@@ -13,6 +13,7 @@ MASTER_SITES=	http://hkn.berkeley.edu/~mcmartin/P65/pl/
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An assembler for the 6502 microprocessor
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

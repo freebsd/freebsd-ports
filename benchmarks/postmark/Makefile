@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	NetApps file system benchmark
 
 NO_WRKSUBDIR=	yes
 

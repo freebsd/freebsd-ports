@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

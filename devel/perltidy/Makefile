@@ -15,6 +15,7 @@ DISTNAME=	Perl-Tidy-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Indents and reformats Perl scripts to make them easier to read
 
 PERL_CONFIGURE=	yes
 

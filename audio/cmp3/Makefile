@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.personal.psu.edu/users/n/k/nkk104/cmp3/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An ncurses based frontend to mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.midimountain.com/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MIDI sequencer
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create simple GUI interfaces for entertainment PC
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.so:${PORTSDIR}/x11-toolkits/sdl_gui
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

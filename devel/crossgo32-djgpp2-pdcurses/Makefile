@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2tk/ \
 DISTNAME=	pdc22
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PD curses for crossgo32 crosscompiler with djgpp v2 libraries
 
 RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 

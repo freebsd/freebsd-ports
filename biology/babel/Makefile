@@ -15,6 +15,7 @@ MASTER_SITES=	http://smog.com/chem/babel/files/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts among various molecular file formats
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

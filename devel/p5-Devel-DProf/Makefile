@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-Devel-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Perl code profiler
 
 PERL_CONFIGURE=	yes
 

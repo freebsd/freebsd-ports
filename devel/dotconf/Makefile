@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple, powerful configuration-file parser
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

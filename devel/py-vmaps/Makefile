@@ -15,6 +15,7 @@ DISTNAME=	Vmaps-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python Arrays on mmap()
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

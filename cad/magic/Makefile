@@ -11,6 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://vlsi.cornell.edu/magic/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive editor for VLSI layouts
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes

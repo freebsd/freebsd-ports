@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	HappyDoc_r${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool for extracting documentation from Python source code
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	benchmarks net
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Measures the throughput of a tcp connection
 
 WRKSRC=		${WRKDIR}/src
 

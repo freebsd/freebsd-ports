@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An curses-based MP3 player
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg
 

@@ -11,6 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://tdc-www.harvard.edu/software/saoimage/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Smithsonian Astrophysical Observatory image utility for X
 
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile

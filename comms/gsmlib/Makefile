@@ -12,6 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.pxh.de/fs/gsmlib/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library to access GSM mobile phones through GSM modems
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

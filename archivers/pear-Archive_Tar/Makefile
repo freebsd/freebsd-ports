@@ -15,6 +15,7 @@ DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR tar file management class
+COMMENT=	PEAR tar file management class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}

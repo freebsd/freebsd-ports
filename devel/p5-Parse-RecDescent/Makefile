@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Parse
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	A recursive descent parsing framework for Perl
 
 PERL_CONFIGURE=	YES
 

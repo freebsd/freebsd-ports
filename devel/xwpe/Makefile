@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/editors/X
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Borland-like IDE programming environment
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes

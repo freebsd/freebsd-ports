@@ -15,6 +15,7 @@ DISTNAME=	PyYaml_23Dec2002
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python YAML parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

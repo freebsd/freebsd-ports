@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple interface to access shared memory
 
 PERL_CONFIGURE=	yes
 

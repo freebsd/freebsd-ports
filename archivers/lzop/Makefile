@@ -11,6 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzop/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast file compressor similar to gzip, using the LZO library
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 

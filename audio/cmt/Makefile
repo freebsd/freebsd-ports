@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Computer Music Toolkit (CMT) is a collection of LADSPA plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 

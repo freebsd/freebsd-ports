@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	../old-gnu/bayonne
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multi-line general purpose voice telephony server
 
 BROKEN=		"Port is outdated and there is no known working Hardware for FreeBSD > 4.4"
 

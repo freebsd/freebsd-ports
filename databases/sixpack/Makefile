@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.santafe.edu/~dirk/sixpack/Download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The SIXPACK Bibliography and Reference Manager
 
 BROKEN=		"Does not package correctly"
 

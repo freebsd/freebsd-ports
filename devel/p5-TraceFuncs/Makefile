@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	traceFunc-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 module to trace function calls as they happen
 
 PERL_CONFIGURE=	YES
 

@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.eskimo.com/~miallen/libmba/dl/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collection of C modules potentially useful to any project
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

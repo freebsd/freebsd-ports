@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Audio converter and library for converting u-law to gsm encoding
 
 WRKSRC=		${WRKDIR}/gsm-1.0-pl10
 

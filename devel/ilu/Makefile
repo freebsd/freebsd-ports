@@ -20,6 +20,7 @@ PATCH_SITE_SUBDIR=	cracauer
 PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CORBA-compatible multi-language Object Request Broker
 
 BROKEN=		"Does not build"
 

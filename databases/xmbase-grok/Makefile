@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/ \
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical Resource Organizer Kit
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 

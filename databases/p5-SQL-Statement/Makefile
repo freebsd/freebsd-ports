@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 module for SQL parsing and processing
 
 PERL_CONFIGURE=	yes
 

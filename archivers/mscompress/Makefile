@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/compress
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
