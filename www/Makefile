@@ -154,6 +154,7 @@
     SUBDIR += squidguard
     SUBDIR += squidtimes
     SUBDIR += squirm
+    SUBDIR += squishdot
     SUBDIR += ssserver
     SUBDIR += surfraw
     SUBDIR += swish-e
