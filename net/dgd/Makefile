@@ -19,7 +19,8 @@ COMMENT=	Dworkin's Generic Driver (network server)
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
 
-OPTIONS=	NETWORKING	"With networking kfuns"	off
+OPTIONS=	NETWORKING	"With networking kfuns"		off \
+		ANSI		"Allow ANSI escape codes"	off
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
@@ -29,14 +30,23 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.ifdef (WITH_NETWORKING)
-PATCH_SITES=		ftp://noname.franken.de/pub/dgd/
-PATCHFILES=		Network-1-DGD-1.2p3-patch.gz
-PATCH_DIST_STRIP=	-p1
-PATCH_STRIP=		-p0 -F 3
+.if defined(WITH_NETWORKING)
+PATCH_SITES+=	ftp://noname.franken.de/pub/dgd/
+PATCHFILES+=	Network-1-DGD-1.2p3-patch.gz
 PLIST_SUB+=	NETWORKING=""
 .else
 PLIST_SUB+=	NETWORKING="@comment "
+.endif
+
+.ifdef (WITH_ANSI)
+PATCH_SITES+=	http://www.eyesbeyond.com/dgd/
+PATCHFILES+=	ansi.diff
+.endif
+
+.if defined(WITH_NETWORKING) || defined(WITH_ANSI)
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
+PATCH_DIST_STRIP=	-p1
+PATCH_STRIP=		-p0 -F 3
 .endif
 
 do-configure:
