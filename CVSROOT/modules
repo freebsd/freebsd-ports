@@ -1002,6 +1002,7 @@ cooledit	ports/editors/cooledit
 coolmail	ports/mail/coolmail
 cops		ports/security/cops
 copytape	ports/sysutils/copytape
+coreutils	ports/sysutils/coreutils
 corewars	ports/games/corewars
 corkscrew	ports/net/corkscrew
 cos		ports/java/cos
