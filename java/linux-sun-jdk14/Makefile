@@ -53,11 +53,11 @@ do-extract:
 	&& ${WRKDIR}/install.sfx > /dev/null
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
+	@${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
 	${MKDIR} ${APP_HOME}
-	cd ${WRKSRC} && ${FIND} . -name '*' -print \
+	cd ${WRKSRC} && ${FIND} . -print \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
 
