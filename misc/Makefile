@@ -67,6 +67,7 @@
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gkrellmaflag
     SUBDIR += gkrellscore
     SUBDIR += gkrellweather
     SUBDIR += gman
