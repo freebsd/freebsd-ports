@@ -1,0 +1,6 @@
+bin/xfstt
+share/doc/xfstt/FAQ
+share/doc/xfstt/CHANGES
+share/doc/xfstt/INSTALL
+share/doc/xfstt/THANKS.txt
+@dirrm share/doc/xfstt

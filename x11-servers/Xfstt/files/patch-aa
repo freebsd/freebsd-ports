@@ -1,0 +1,30 @@
+--- Makefile.orig	Sun Oct 25 11:21:12 1998
++++ Makefile	Wed Dec 23 19:32:02 1998
+@@ -2,13 +2,13 @@
+ MISCOPT =
+ OPT = $(MISCOPT) $(MAXOPT)
+ 
+-CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
++#CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
+ #CFLAGS = -fprofile-arcs -ftest-coverage -DMAGNIFY=0
+ CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
+ #CFLAGS = -O -Wall -pedantic -DDEBUG $(MISCOPT)
+ 
+-LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
+-LFLAGS = -g -L/usr/X11R6/lib
++#LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
++LFLAGS = -g -L$(X11BASE)/lib
+ 
+ CC = c++
+ LD = c++
+@@ -55,8 +55,8 @@
+ 	$(LD) -o $@ $(OBJS) xfstt.o encoding.o $(LFLAGS) -lm
+ 
+ xfstt.o : xfstt.cpp xfstt.h ttf.h arch.h Makefile
+-	$(CC) $(CFLAGS) -c $< -I/usr/X11R6/include/X11/fonts	\
+-		-I/usr/X11R6/include/
++	$(CC) $(CFLAGS) -c $< -I$(X11BASE)/include/X11/fonts	\
++		-I$(X11BASE)/include/
+ 
+ encoding.o : encoding.cpp encoding.h Makefile
+ 	$(CC) $(CFLAGS) -c $<
