@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-ASP
-PORTVERSION=	2.45
+PORTVERSION=	2.49
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -35,6 +35,7 @@ PERL_CONFIGURE=	yes
 MAN1=		asp-perl.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::ASP.3 \
+		Apache::ASP::CGI::Table.3 \
 		Bundle::Apache::ASP.3 \
 		Bundle::Apache::ASP::Extra.3
 
