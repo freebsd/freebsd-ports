@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	cvsps
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
+PORTCOMMENT=	CVS patchsets
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 
@@ -16,7 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 USE_GMAKE=	yes
 ALL_TARGET=	cvsps
 
-MANCOMPRESSED=	no
 MAN1=	cvsps.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cvsps ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cvsps.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
