@@ -4181,10 +4181,6 @@ misc.c:
         <name>{de-,fr-,pt_BR-}netscape7</name>
         <range><le>7.02</le></range>
       </package>
-      <package>
-        <name>ImageMagick{,-nox11}</name>
-        <range><lt>6.0.4.2</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -4213,14 +4209,13 @@ misc.c:
       <url>http://secunia.com/advisories/12219</url>
       <url>http://secunia.com/advisories/12232</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
-      <url>http://secunia.com/advisories/12236</url>
       <uscertta>TA04-217A</uscertta>
       <url>http://dl.sourceforge.net/sourceforge/libpng/ADVISORY.txt</url>
     </references>
     <dates>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-04</entry>
-      <modified>2004-08-09</modified>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -4268,6 +4263,33 @@ misc.c:
       <discovery>2004-07-25</discovery>
       <entry>2004-07-30</entry>
       <modified>2004-08-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a713c0f9-ec54-11d8-9440-000347a4fa7d">
+    <topic>ImageMagick png vulnerability fix</topic>
+    <affects>
+      <package>
+        <name>ImageMagick{,-nox11}</name>
+        <range><lt>6.0.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Glenn Randers-Pehrson has contributed a fix for the png
+          vulnerabilities discovered by Chris Evans.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://studio.imagemagick.org/pipermail/magick-users/2004-August/013218.html</url>
+      <url>http://freshmeat.net/releases/169228</url>
+      <url>http://secunia.com/advisories/12236</url>
+      <url>http://www.freebsd.org/ports/portaudit/f9e3e60b-e650-11d8-9b0a-000347a4fa7d.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-04</entry>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 </vuxml>
