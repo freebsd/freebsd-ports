@@ -251,6 +251,7 @@
     SUBDIR += p5-Text-FormatTable
     SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
+    SUBDIR += p5-Text-MagicTemplate
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-Netstring
     SUBDIR += p5-Text-Query
