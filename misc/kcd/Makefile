@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kcd
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${PREFIX}/share/examples/kcd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/kcd
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/kcd
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/kcd
 .endif
 
