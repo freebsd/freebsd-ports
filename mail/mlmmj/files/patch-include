@@ -1,0 +1,9 @@
+--- src/getaddrsfromfd.c.orig	Mon Jan 24 14:10:45 2005
++++ src/getaddrsfromfd.c	Mon Jan 24 14:10:58 2005
+@@ -1,5 +1,5 @@
+-#include <sys/mman.h>
+ #include <sys/types.h>
++#include <sys/mman.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <string.h>
