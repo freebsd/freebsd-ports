@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	20040621
+PORTVERSION=	20040701
 CATEGORIES=	www
 MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	klammer@webonaut.com
-COMMENT=	Wrapper script for firefox web browser
+COMMENT=	Wrapper scripts for firefox web browser
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,5 +28,8 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+	${LN} -s ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX} \
+		${PREFIX}/bin/thunderbird${PKGNAMESUFFIX}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
