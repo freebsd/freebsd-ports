@@ -8,7 +8,7 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.9.11
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
@@ -20,6 +20,7 @@ MAN1=		dictzip.1
 MAN8=		dictd.8
 
 USE_LIBLTDL=	yes
+USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_LIBTOOL_VER=13
@@ -47,7 +48,8 @@ post-install:
 .for i in example.conf example.dictrc example.site example2.conf example3.conf
 	${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}
 .endfor
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf.sample
+	@[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || ${CP} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.sh > ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${PKGMESSAGE}

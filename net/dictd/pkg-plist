@@ -5,6 +5,8 @@ share/dictd/example.dictrc
 share/dictd/example.site
 share/dictd/example2.conf
 share/dictd/example3.conf
-etc/dictd.conf
+@unexec if cmp -s %D/etc/dictd.conf %D/etc/dictd.conf.sample; then rm -f %D/etc/dictd.conf; fi
+etc/dictd.conf.sample
+@exec [ -f %B/dictd.conf ] || cp %B/%f %B/dictd.conf
 etc/rc.d/dictd.sh
 @dirrm share/dictd
