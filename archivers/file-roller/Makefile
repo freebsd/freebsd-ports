@@ -19,16 +19,22 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		rar:${PORTSDIR}/archivers/rar \
 		lzop:${PORTSDIR}/archivers/lzop
 
+USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=	AUTHORS COPYING NEWS README TODO
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/apps|\$$\(datadir\)/apps|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
