@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.01.28
+PORTVERSION=	2003.02.03a
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -18,6 +18,7 @@ MAINTAINER=	nork@FreeBSD.org
 NO_CDROM=	'dated material'
 
 WRKSRC=		${WRKDIR}/live
+PLIST=		${WRKDIR}/pkg-plist
 
 USE_REINPLACE=	YES
 
@@ -40,6 +41,7 @@ groupsock=		\
 		groupsock/include/GroupsockHelper.hh \
 		groupsock/include/IOHandlers.hh \
 		groupsock/include/NetAddress.hh \
+		groupsock/include/NetCommon.h \
 		groupsock/include/NetInterface.hh \
 		groupsock/include/TunnelEncaps.hh \
 		groupsock/include/groupsock_version.hh
@@ -54,7 +56,6 @@ liveMedia=		\
 		liveMedia/include/FramedFilter.hh \
 		liveMedia/include/FramedSource.hh \
 		liveMedia/include/GSMAudioRTPSink.hh \
-		liveMedia/include/GroupsockHelper.hh \
 		liveMedia/include/H263plusVideoRTPSink.hh \
 		liveMedia/include/H263plusVideoRTPSource.hh \
 		liveMedia/include/HTTPSink.hh \
@@ -107,38 +108,56 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./genMakefiles fixed-${OPSYS:L})
 
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/groupsock
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/liveMedia
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/UsageEnvironment
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/BasicUsageEnvironment
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/groupsock/include
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/liveMedia/include
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/UsageEnvironment/include
+	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/BasicUsageEnvironment/include
+
 do-install::
+	@${ECHO_CMD} bin/playSIP  >> ${PLIST}
+	@${ECHO_CMD} bin/openRTSP >> ${PLIST}
+	@${ECHO_CMD} bin/sapWatch >> ${PLIST}
+	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/playSIP  ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/openRTSP ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/playSIP ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/sapWatch ${PREFIX}/bin/
 
 do-install::
-	@${MKDIR} ${PREFIX}/live
-	@${MKDIR} ${PREFIX}/live/BasicUsageEnvironment
-	@${MKDIR} ${PREFIX}/live/UsageEnvironment
-	@${MKDIR} ${PREFIX}/live/groupsock
-	@${MKDIR} ${PREFIX}/live/liveMedia
+	@${ECHO_CMD} live/BasicUsageEnvironment/libBasicUsageEnvironment.a >> ${PLIST}
+	@${ECHO_CMD} live/UsageEnvironment/libUsageEnvironment.a           >> ${PLIST}
+	@${ECHO_CMD} live/groupsock/libgroupsock.a                         >> ${PLIST}
+	@${ECHO_CMD} live/liveMedia/libliveMedia.a                         >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/BasicUsageEnvironment/libBasicUsageEnvironment.a ${PREFIX}/live/BasicUsageEnvironment/
 	@${INSTALL_DATA} ${WRKSRC}/UsageEnvironment/libUsageEnvironment.a           ${PREFIX}/live/UsageEnvironment/
 	@${INSTALL_DATA} ${WRKSRC}/groupsock/libgroupsock.a                         ${PREFIX}/live/groupsock/
 	@${INSTALL_DATA} ${WRKSRC}/liveMedia/libliveMedia.a                         ${PREFIX}/live/liveMedia/
 
 do-install::
-	@${MKDIR} ${PREFIX}/live/BasicUsageEnvironment/include
-	@${MKDIR} ${PREFIX}/live/UsageEnvironment/include
-	@${MKDIR} ${PREFIX}/live/groupsock/include
-	@${MKDIR} ${PREFIX}/live/liveMedia/include
 .for file in ${BasicUsageEnvironment}
+	@${ECHO_CMD} live/BasicUsageEnvironment/include/${file:T} >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/BasicUsageEnvironment/include/
 .endfor
 .for file in ${UsageEnvironment}
+	@${ECHO_CMD} live/UsageEnvironment/include/${file:T}      >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/UsageEnvironment/include/
 .endfor
 .for file in ${groupsock}
+	@${ECHO_CMD} live/groupsock/include/${file:T}             >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/groupsock/include/
 .endfor
 .for file in ${liveMedia}
+	@${ECHO_CMD} live/liveMedia/include/${file:T}             >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/liveMedia/include/
 .endfor
+
+do-install::
+	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 .include <bsd.port.mk>
