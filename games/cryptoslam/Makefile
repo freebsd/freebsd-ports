@@ -7,29 +7,24 @@
 #
 
 PORTNAME=	cryptoslam
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses-based tool for creating and solving the cryptograms
 
-PLIST_FILES=	bin/cryptoslam
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/cryptoslam
 
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
-		-I${LOCALBASE}/include -I/usr/include
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} cryptogram.cpp cryptoslam.cpp \
+		-o ${PORTNAME} -lcurses
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cryptoslam ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
