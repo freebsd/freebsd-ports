@@ -3,7 +3,7 @@
 # Date created:		11 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/19 08:57:16 cpiazza Exp $
 #
 
 DISTNAME=	blackened-1.6.2
@@ -25,7 +25,7 @@ do-build:
 	INSTALL_IRCFLUSH="${PREFIX}/bin/blackened-ircflush" \
 	INSTALL_WSERV="${PREFIX}/bin/blackened-wserv" \
 	INSTALL_LINK="${PREFIX}/bin/blackened" \
-	IRCLIB="${PREFIX}/bin/blackened")
+	IRCLIB="${PREFIX}/share/blackened")
 
 do-install:
 	@(cd ${WRKSRC} && make prefix="${PREFIX}" \
@@ -33,7 +33,7 @@ do-install:
 	INSTALL_IRCFLUSH="${PREFIX}/bin/blackened-ircflush" \
 	INSTALL_WSERV="${PREFIX}/bin/blackened-wserv" \
 	INSTALL_LINK="${PREFIX}/bin/blackened" \
-	IRCLIB="${PREFIX}/blackened" \
+	IRCLIB="${PREFIX}/share/blackened" \
 	install)
 
 .include <bsd.port.mk>
