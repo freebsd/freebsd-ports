@@ -1,0 +1,11 @@
+This is a perl script that can generate compact, DSC-compliant Postscript out
+of a plain text file and a BDF font. The output can be previewed using
+Ghostscript under most platforms, or with the Windows shareware program
+"ROPS", or printed on Postscript printers, or converted to PDF using "ps2pdf".
+
+The motivation for creating this script was to be able to print texts in
+international character sets. Since it's much easier to create or edit bitmap
+(BDF/PCF) fonts than outline fonts, this script allows to print texts using
+your own fonts.
+
+WWW: http://www.geocities.com/CapeCanaveral/Lab/5735/1/txtbdf2ps.html

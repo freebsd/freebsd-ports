@@ -178,6 +178,7 @@
     SUBDIR += ttf2pt1
     SUBDIR += ttftot42
     SUBDIR += txfonts
+    SUBDIR += txtbdf2ps
     SUBDIR += virtualpaper
     SUBDIR += wmlpq
     SUBDIR += xdvi
