@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsps
-PORTVERSION=	1.3
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 
