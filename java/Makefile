@@ -97,6 +97,7 @@
     SUBDIR += netrexx
     SUBDIR += openjit
     SUBDIR += phpeclipse
+    SUBDIR += phpeclipse_sql
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
