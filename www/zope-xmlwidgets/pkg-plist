@@ -1,0 +1,36 @@
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/CREDITS.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/EditorService.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/HISTORY.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/INSTALL.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetDOM.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetPathScheme.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetRegistry.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/helpers.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorCache.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorService.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_all.py
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorCache.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorService.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_all.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/EditorService.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetDOM.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetPathScheme.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetRegistry.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/helpers.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceAdd.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceInfoTab.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editor_service.gif
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryAdd.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryInfoTab.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_registry.gif
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_service.gif
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets

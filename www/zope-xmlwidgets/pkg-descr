@@ -1,0 +1,6 @@
+XMLWidgets is a Zope Product/Framework to create dynamic translations of
+ParsedXML documents to HTML pages. Each XML node is represented by a widget.
+A widget can display itself (to HTML), and handle user events (clicks, form
+submits) in the same HTML page.
+
+WWW: http://www.zope.org/Members/faassen/XMLWidgets
