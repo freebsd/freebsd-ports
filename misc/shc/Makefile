@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Produces broken binaries"
+
 USE_REINPLACE=	yes
 ALL_TARGET=	shc
 
