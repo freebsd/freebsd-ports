@@ -6608,6 +6608,7 @@ vm-pop3d	ports/mail/vm-pop3d
 vmsbackup	ports/emulators/vmsbackup
 vmstat		src/usr.bin/vmstat
 vmware		ports/emulators/vmware
+vmware-guestd	ports/emulators/vmware-guestd
 vmware-tools	ports/emulators/vmware-tools
 vmware2		ports/emulators/vmware2
 vmware_xf4mod	ports/emulators/vmware_xf4mod
