@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	acroread4
+PORTNAME=	acroread
 PORTVERSION=	4.05
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
@@ -26,6 +26,7 @@ RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 
 ONLY_FOR_ARCHS=	i386 alpha
 
+LATEST_LINK=	acroread4
 NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
@@ -67,6 +68,8 @@ post-install:
 	     ${PREFIX}/bin/acroread4 && ${RM} acroread.orig
 	@${CHOWN} -R -h root:wheel ${PREFIX}/Acrobat4
 	@${CHMOD} +x ${PREFIX}/bin/acroread4
+	[ -e ${PREFIX}/bin/acroread ] \
+	    || (cd ${PREFIX}/bin ; ${LN} -s acroread4 acroread)
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
 
