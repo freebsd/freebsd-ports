@@ -18,31 +18,33 @@ COMMENT=	Java attribute-oriented code generation engine
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA=	yes
 
-CLASSDIR=	${PREFIX}/share/java/classes
 XJAVADOC_VER=	1.0
 
 PLIST_SUB+=	XJAVADOC_VER="${XJAVADOC_VER}"
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 post-extract:
 	${RMDIR} ${WRKSRC}/docs/stylesheets
 
 do-install:
-	${MKDIR} ${CLASSDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${FIND} lib -name '*xdoclet*' -exec \
-	    ${INSTALL_DATA} \{} ${CLASSDIR} \;
+	    ${INSTALL_DATA} \{} ${JAVAJARDIR} \;
 	cd ${WRKSRC}/samples && ${FIND} . -type d -exec \
 	    ${MKDIR} ${EXAMPLESDIR}/\{} \;
 	cd ${WRKSRC}/samples && ${FIND} . -type f -exec \
 	    ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
 	${INSTALL_DATA} \
 	    ${WRKSRC}/xjavadoc-${XJAVADOC_VER}/xjavadoc-${XJAVADOC_VER}.jar \
-	    ${CLASSDIR}
+	    ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/docs && ${FIND} . -type d -exec \
 	    ${MKDIR} ${DOCSDIR}/\{} \;

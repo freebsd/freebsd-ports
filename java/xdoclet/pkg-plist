@@ -1,1034 +1,442 @@
-share/examples/xdoclet/build-dist.properties
-share/examples/xdoclet/build.xml
-share/examples/xdoclet/lib/jboss-j2ee.jar
-share/examples/xdoclet/lib/jmxri.jar
-share/examples/xdoclet/lib/readme.txt
-share/examples/xdoclet/lib/servlet.jar
-share/examples/xdoclet/lib/struts-1.1-beta-2.jar
-share/examples/xdoclet/lib/velocity-1.4-dev.jar
-share/examples/xdoclet/lib/webwork.jar
-share/examples/xdoclet/maven.xml
-share/examples/xdoclet/project.properties
-share/examples/xdoclet/project.xml
-share/examples/xdoclet/readme.txt
-share/examples/xdoclet/src/java/test/dao/CustomerExampleDAO.java
-share/examples/xdoclet/src/java/test/ejb/AccountBean.java
-share/examples/xdoclet/src/java/test/ejb/AddressBean.java
-share/examples/xdoclet/src/java/test/ejb/AllTypesEntityBean.java
-share/examples/xdoclet/src/java/test/ejb/BaseEntityBean.java
-share/examples/xdoclet/src/java/test/ejb/BaseEntityHome.java
-share/examples/xdoclet/src/java/test/ejb/BaseTellerBean.java
-share/examples/xdoclet/src/java/test/ejb/CustomerBMPBean.java
-share/examples/xdoclet/src/java/test/ejb/CustomerBean.java
-share/examples/xdoclet/src/java/test/ejb/FileBean.java
-share/examples/xdoclet/src/java/test/ejb/PersonBean.java
-share/examples/xdoclet/src/java/test/ejb/QueueBean.java
-share/examples/xdoclet/src/java/test/ejb/SecurityOfficerBean.java
-share/examples/xdoclet/src/java/test/ejb/StatefulBean.java
-share/examples/xdoclet/src/java/test/ejb/TellerBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/CityBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/CountryBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/EmployeeAddressBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/EmployeeBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/LanguageBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/LanguageCodeBean.java
-share/examples/xdoclet/src/java/test/ejb/cmr/mysql.txt
-share/examples/xdoclet/src/java/test/ejb/cmr/package.html
-share/examples/xdoclet/src/java/test/ejb/jdo/Manager.java
-share/examples/xdoclet/src/java/test/ejb/jdo/Paycheck.java
-share/examples/xdoclet/src/java/test/ejb/jdo/Staff.java
-share/examples/xdoclet/src/java/test/ejb/jdo/Transaction.java
-share/examples/xdoclet/src/java/test/hibernate/Animal.java
-share/examples/xdoclet/src/java/test/hibernate/CompositeId.java
-share/examples/xdoclet/src/java/test/hibernate/CompositeIdEntity.java
-share/examples/xdoclet/src/java/test/hibernate/Contraband.java
-share/examples/xdoclet/src/java/test/hibernate/Human.java
-share/examples/xdoclet/src/java/test/hibernate/ImportedProduct.java
-share/examples/xdoclet/src/java/test/hibernate/LineItem.java
-share/examples/xdoclet/src/java/test/hibernate/Lizard.java
-share/examples/xdoclet/src/java/test/hibernate/Name.java
-share/examples/xdoclet/src/java/test/hibernate/Order.java
-share/examples/xdoclet/src/java/test/hibernate/Persistent.java
-share/examples/xdoclet/src/java/test/hibernate/Pet.java
-share/examples/xdoclet/src/java/test/hibernate/Product.java
-share/examples/xdoclet/src/java/test/hibernate/Reptile.java
-share/examples/xdoclet/src/java/test/hibernate/Updateable.java
-share/examples/xdoclet/src/java/test/interfaces/ApplicationException.java
-share/examples/xdoclet/src/java/test/interfaces/Identifiable.java
-share/examples/xdoclet/src/java/test/interfaces/SecurityOfficer.java
-share/examples/xdoclet/src/java/test/interfaces/SecurityOfficerHome.java
-share/examples/xdoclet/src/java/test/javabean/SimpleBean.java
-share/examples/xdoclet/src/java/test/javabean/SimpleI18NBean.java
-share/examples/xdoclet/src/java/test/jdo/MapKey.java
-share/examples/xdoclet/src/java/test/jdo/MapValue.java
-share/examples/xdoclet/src/java/test/jdo/Sub.java
-share/examples/xdoclet/src/java/test/jdo/SubChild.java
-share/examples/xdoclet/src/java/test/jdo/Super.java
-share/examples/xdoclet/src/java/test/jdo/SuperChild.java
-share/examples/xdoclet/src/java/test/jmx/JBossXMLExample.java
-share/examples/xdoclet/src/java/test/jmx/SimpleJMX.java
-share/examples/xdoclet/src/java/test/web/SimpleAction.java
-share/examples/xdoclet/src/java/test/web/SimpleListener.java
-share/examples/xdoclet/src/java/test/web/SimpleServlet.java
-share/examples/xdoclet/src/java/test/web/SimpleTag.java
-share/examples/xdoclet/src/java/test/web/StrutsAction.java
-share/examples/xdoclet/src/java/test/web/StrutsDispatchAction.java
-share/examples/xdoclet/src/java/test/web/TimerFilter.java
-share/examples/xdoclet/src/merge/jboss-service.ent
-share/examples/xdoclet/src/merge/weblogic-security-role-assignment.xml
-share/examples/xdoclet/src/web/index.jsp
-share/examples/xdoclet/target/classes/test/dao/CustomerDAO.class
-share/examples/xdoclet/target/classes/test/dao/CustomerExampleDAO.class
-share/examples/xdoclet/target/classes/test/ejb/AccountBean.class
-share/examples/xdoclet/target/classes/test/ejb/AccountCMP.class
-share/examples/xdoclet/target/classes/test/ejb/AddressBean.class
-share/examples/xdoclet/target/classes/test/ejb/AddressCMP.class
-share/examples/xdoclet/target/classes/test/ejb/AllTypesEntityBean.class
-share/examples/xdoclet/target/classes/test/ejb/AllTypesEntityCMP.class
-share/examples/xdoclet/target/classes/test/ejb/BaseEntityBean.class
-share/examples/xdoclet/target/classes/test/ejb/BaseEntityHome.class
-share/examples/xdoclet/target/classes/test/ejb/BaseTellerBean.class
-share/examples/xdoclet/target/classes/test/ejb/CustomerBMPBMP.class
-share/examples/xdoclet/target/classes/test/ejb/CustomerBMPBean.class
-share/examples/xdoclet/target/classes/test/ejb/CustomerBean.class
-share/examples/xdoclet/target/classes/test/ejb/CustomerCMP.class
-share/examples/xdoclet/target/classes/test/ejb/FileBean.class
-share/examples/xdoclet/target/classes/test/ejb/FileCMP.class
-share/examples/xdoclet/target/classes/test/ejb/PersonBean.class
-share/examples/xdoclet/target/classes/test/ejb/QueueBean.class
-share/examples/xdoclet/target/classes/test/ejb/SecurityOfficerBean.class
-share/examples/xdoclet/target/classes/test/ejb/StatefulBean.class
-share/examples/xdoclet/target/classes/test/ejb/StatefulSession.class
-share/examples/xdoclet/target/classes/test/ejb/TellerBean.class
-share/examples/xdoclet/target/classes/test/ejb/TellerSession.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CityUtil.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/CountryUtil.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressUtil.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressValue.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeUtil.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeValue.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeBean.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeCMP.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeUtil.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageData.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageLocal.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageLocalHome.class
-share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageUtil.class
-share/examples/xdoclet/target/classes/test/ejb/jdo/Manager.class
-share/examples/xdoclet/target/classes/test/ejb/jdo/Paycheck.class
-share/examples/xdoclet/target/classes/test/ejb/jdo/Staff.class
-share/examples/xdoclet/target/classes/test/ejb/jdo/Transaction.class
-share/examples/xdoclet/target/classes/test/hibernate/Animal.class
-share/examples/xdoclet/target/classes/test/hibernate/CompositeId.class
-share/examples/xdoclet/target/classes/test/hibernate/CompositeIdEntity.class
-share/examples/xdoclet/target/classes/test/hibernate/Contraband.class
-share/examples/xdoclet/target/classes/test/hibernate/Human.class
-share/examples/xdoclet/target/classes/test/hibernate/ImportedProduct.class
-share/examples/xdoclet/target/classes/test/hibernate/LineItem.class
-share/examples/xdoclet/target/classes/test/hibernate/Lizard.class
-share/examples/xdoclet/target/classes/test/hibernate/Name.class
-share/examples/xdoclet/target/classes/test/hibernate/Order.class
-share/examples/xdoclet/target/classes/test/hibernate/Persistent.class
-share/examples/xdoclet/target/classes/test/hibernate/Pet.class
-share/examples/xdoclet/target/classes/test/hibernate/Product.class
-share/examples/xdoclet/target/classes/test/hibernate/Reptile.class
-share/examples/xdoclet/target/classes/test/hibernate/Updateable.class
-share/examples/xdoclet/target/classes/test/interfaces/Account.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountData.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountHome.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountPK.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/AccountValue.class
-share/examples/xdoclet/target/classes/test/interfaces/AddressData.class
-share/examples/xdoclet/target/classes/test/interfaces/AddressLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/AddressLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/AddressUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/AddressValue.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntity.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityData.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityHome.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityPK.class
-share/examples/xdoclet/target/classes/test/interfaces/AllTypesEntityUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/ApplicationException.class
-share/examples/xdoclet/target/classes/test/interfaces/Customer.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerBMPUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerData.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerHome.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerLightValue.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerNormalValue.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerPK.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/CustomerValue.class
-share/examples/xdoclet/target/classes/test/interfaces/FileData.class
-share/examples/xdoclet/target/classes/test/interfaces/FileLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/FileLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/FileUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/Identifiable.class
-share/examples/xdoclet/target/classes/test/interfaces/Person.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonContactForm.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonData.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonFullForm.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonHome.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/PersonNamesForm.class
-share/examples/xdoclet/target/classes/test/interfaces/SecurityOfficer.class
-share/examples/xdoclet/target/classes/test/interfaces/SecurityOfficerHome.class
-share/examples/xdoclet/target/classes/test/interfaces/Stateful.class
-share/examples/xdoclet/target/classes/test/interfaces/StatefulHome.class
-share/examples/xdoclet/target/classes/test/interfaces/StatefulLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/StatefulLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/StatefulUtil.class
-share/examples/xdoclet/target/classes/test/interfaces/Teller.class
-share/examples/xdoclet/target/classes/test/interfaces/TellerHome.class
-share/examples/xdoclet/target/classes/test/interfaces/TellerLocal.class
-share/examples/xdoclet/target/classes/test/interfaces/TellerLocalHome.class
-share/examples/xdoclet/target/classes/test/interfaces/TellerUtil.class
-share/examples/xdoclet/target/classes/test/javabean/SimpleBean.class
-share/examples/xdoclet/target/classes/test/javabean/SimpleBeanBeanInfo.class
-share/examples/xdoclet/target/classes/test/javabean/SimpleI18NBean.class
-share/examples/xdoclet/target/classes/test/javabean/SimpleI18NBeanBeanInfo.class
-share/examples/xdoclet/target/classes/test/jdo/MapKey.class
-share/examples/xdoclet/target/classes/test/jdo/MapValue.class
-share/examples/xdoclet/target/classes/test/jdo/Sub.class
-share/examples/xdoclet/target/classes/test/jdo/SubChild.class
-share/examples/xdoclet/target/classes/test/jdo/Super.class
-share/examples/xdoclet/target/classes/test/jdo/SuperChild.class
-share/examples/xdoclet/target/classes/test/jmx/JBossXMLExample.class
-share/examples/xdoclet/target/classes/test/jmx/JBossXMLExampleMBean.class
-share/examples/xdoclet/target/classes/test/jmx/SimpleJMX.class
-share/examples/xdoclet/target/classes/test/jmx/SimpleJMXMBean.class
-share/examples/xdoclet/target/classes/test/web/SimpleAction.class
-share/examples/xdoclet/target/classes/test/web/SimpleListener.class
-share/examples/xdoclet/target/classes/test/web/SimpleServlet.class
-share/examples/xdoclet/target/classes/test/web/SimpleTag.class
-share/examples/xdoclet/target/classes/test/web/StrutsAction.class
-share/examples/xdoclet/target/classes/test/web/StrutsDispatchAction.class
-share/examples/xdoclet/target/classes/test/web/TimerFilter.class
-share/examples/xdoclet/target/gen-src/actions.html
-share/examples/xdoclet/target/gen-src/jboss-simple-service.xml
-share/examples/xdoclet/target/gen-src/metadata.jdo
-share/examples/xdoclet/target/gen-src/test/dao/CustomerDAO.java
-share/examples/xdoclet/target/gen-src/test/ejb/AccountCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/AddressCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/AllTypesEntityCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/CustomerBMPBMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/CustomerCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/FileCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/StatefulSession.java
-share/examples/xdoclet/target/gen-src/test/ejb/TellerSession.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityUtil.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryUtil.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressUtil.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressValue.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeUtil.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeValue.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeCMP.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeUtil.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageData.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageLocal.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageLocalHome.java
-share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageUtil.java
-share/examples/xdoclet/target/gen-src/test/hibernate/Animal.hbm.xml
-share/examples/xdoclet/target/gen-src/test/hibernate/CompositeIdEntity.hbm.xml
-share/examples/xdoclet/target/gen-src/test/hibernate/LineItem.hbm.xml
-share/examples/xdoclet/target/gen-src/test/hibernate/Order.hbm.xml
-share/examples/xdoclet/target/gen-src/test/hibernate/Product.hbm.xml
-share/examples/xdoclet/target/gen-src/test/interfaces/Account.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountPK.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AccountValue.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AddressData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AddressLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AddressLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AddressUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AddressValue.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntity.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityPK.java
-share/examples/xdoclet/target/gen-src/test/interfaces/AllTypesEntityUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/Customer.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerBMPUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerLightValue.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerNormalValue.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerPK.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/CustomerValue.java
-share/examples/xdoclet/target/gen-src/test/interfaces/FileData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/FileLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/FileLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/FileUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/Person.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonContactForm.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonData.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonFullForm.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/PersonNamesForm.java
-share/examples/xdoclet/target/gen-src/test/interfaces/Stateful.java
-share/examples/xdoclet/target/gen-src/test/interfaces/StatefulHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/StatefulLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/StatefulLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/StatefulUtil.java
-share/examples/xdoclet/target/gen-src/test/interfaces/Teller.java
-share/examples/xdoclet/target/gen-src/test/interfaces/TellerHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/TellerLocal.java
-share/examples/xdoclet/target/gen-src/test/interfaces/TellerLocalHome.java
-share/examples/xdoclet/target/gen-src/test/interfaces/TellerUtil.java
-share/examples/xdoclet/target/gen-src/test/javabean/SimpleBeanBeanInfo.java
-share/examples/xdoclet/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.java
-share/examples/xdoclet/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.properties
-share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExample-doc.xml
-share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExample.xml
-share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExampleMBean.java
-share/examples/xdoclet/target/gen-src/test/jmx/SimpleJMX-doc.xml
-share/examples/xdoclet/target/gen-src/test/jmx/SimpleJMXMBean.java
-share/examples/xdoclet/target/gen-src/views.properties
-share/examples/xdoclet/target/meta-inf/Schema.dbxmi
-share/examples/xdoclet/target/meta-inf/ejb-jar.xml
-share/examples/xdoclet/target/meta-inf/ibm-ejb-jar-bnd.xmi
-share/examples/xdoclet/target/meta-inf/ibm-ejb-jar-ext.xmi
-share/examples/xdoclet/target/meta-inf/jaws.xml
-share/examples/xdoclet/target/meta-inf/jboss-service.xml
-share/examples/xdoclet/target/meta-inf/jboss.xml
-share/examples/xdoclet/target/meta-inf/jbosscmp-jdbc.xml
-share/examples/xdoclet/target/meta-inf/jonas-ejb-jar.xml
-share/examples/xdoclet/target/meta-inf/jrun-ejb-jar.xml
-share/examples/xdoclet/target/meta-inf/mapping.xml
-share/examples/xdoclet/target/meta-inf/orion-ejb-jar.xml
-share/examples/xdoclet/target/meta-inf/test/interfaces/soap-dds-TellerBean.xml
-share/examples/xdoclet/target/meta-inf/weblogic-cmp-rdbms-jar.xml
-share/examples/xdoclet/target/meta-inf/weblogic-ejb-jar.xml
-share/examples/xdoclet/target/web-inf/jboss-web.xml
-share/examples/xdoclet/target/web-inf/jrun-web.xml
-share/examples/xdoclet/target/web-inf/struts-config.xml
-share/examples/xdoclet/target/web-inf/taglib.tld
-share/examples/xdoclet/target/web-inf/web.xml
-share/examples/xdoclet/target/web-inf/weblogic.xml
-share/java/classes/maven-xdoclet-plugin-1.2b4.jar
-share/java/classes/xdoclet-1.2b4.jar
-share/java/classes/xdoclet-apache-module-1.2b4.jar
-share/java/classes/xdoclet-bea-module-1.2b4.jar
-share/java/classes/xdoclet-borland-module-1.2b4.jar
-share/java/classes/xdoclet-caucho-module-1.2b4.jar
-share/java/classes/xdoclet-ejb-module-1.2b4.jar
-share/java/classes/xdoclet-exolab-module-1.2b4.jar
-share/java/classes/xdoclet-hibernate-module-1.2b4.jar
-share/java/classes/xdoclet-hp-module-1.2b4.jar
-share/java/classes/xdoclet-ibm-module-1.2b4.jar
-share/java/classes/xdoclet-java-module-1.2b4.jar
-share/java/classes/xdoclet-jboss-module-1.2b4.jar
-share/java/classes/xdoclet-jdo-module-1.2b4.jar
-share/java/classes/xdoclet-jmx-module-1.2b4.jar
-share/java/classes/xdoclet-libelis-module-1.2b4.jar
-share/java/classes/xdoclet-macromedia-module-1.2b4.jar
-share/java/classes/xdoclet-mockobjects-module-1.2b4.jar
-share/java/classes/xdoclet-mvcsoft-module-1.2b4.jar
-share/java/classes/xdoclet-mx4j-module-1.2b4.jar
-share/java/classes/xdoclet-objectweb-module-1.2b4.jar
-share/java/classes/xdoclet-oracle-module-1.2b4.jar
-share/java/classes/xdoclet-orion-module-1.2b4.jar
-share/java/classes/xdoclet-pramati-module-1.2b4.jar
-share/java/classes/xdoclet-solarmetric-module-1.2b4.jar
-share/java/classes/xdoclet-sun-module-1.2b4.jar
-share/java/classes/xdoclet-sybase-module-1.2b4.jar
-share/java/classes/xdoclet-tjdo-module-1.2b4.jar
-share/java/classes/xdoclet-web-module-1.2b4.jar
-share/java/classes/xdoclet-webwork-module-1.2b4.jar
-share/java/classes/xdoclet-xdoclet-module-1.2b4.jar
-share/java/classes/xjavadoc-%%XJAVADOC_VER%%.jar
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/ConfigParameter.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/DocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/SubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/TemplateSubTask.OfType.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/TemplateSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/XmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/ant/ReplaceCopy.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/apache/soap/ejb/ApacheSoapSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/apache/struts/StrutsConfigXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/apache/struts/StrutsValidationXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/apache/struts/ejb/StrutsFormSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/bea/wls/ejb/WebLogicSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/bea/wls/web/WeblogicWebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/borland/bes/ejb/BorlandSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/caucho/ResinEjbSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/caucho/ResinWebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/doc/AntdocSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/doc/DocumentDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/doc/DocumentTagsSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/doc/info/InfoSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/EjbDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/dao/DaoSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/dd/EjbDotXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/DataObjectSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/EntityBmpSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/EntityCmpSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/EntityFacadeSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/EntityPkSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/entity/ValueObjectSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/home/HomeInterfaceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/home/LocalHomeInterfaceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/intf/LocalInterfaceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/intf/RemoteInterfaceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/lookup/LookupObjectSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/session/RemoteFacadeSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ejb/session/SessionSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/exolab/castor/ejb/CastorSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/externalizer/ExternalizerSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/externalizer/PropertiesTranslatorSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/hibernate/HibernateDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/hibernate/HibernateSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/hibernate/JBossServiceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/hp/hpas/ejb/HPASSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ibm/websphere/ejb/WebSphereSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/ibm/websphere/web/WebSphereWebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/java/javabean/BeanInfoSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jboss/ejb/JBossSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jboss/jmx/JBossXMBeanDescriptorSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jboss/jmx/JBossXmlDocSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jboss/jmx/JBossXmlServiceTemplateSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jboss/web/JBossWebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jdo/JdoDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jdo/JdoXmlMetadataSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jmx/JMXDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jmx/MBeanInterfaceSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/jmx/MLetSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/libelis/jdo/LidoSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/ejb/JRunSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/web/JRunWebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/maven/MavenpluginSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mockobjects/MockObjectDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mockobjects/MockObjectSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mvcsoft/ejb/MVCSoftSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mx4j/Mx4jDescriptionAdapterSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/ejb/JonasSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/web/JonasWebSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j/ejb/OC4JSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/orion/ejb/OrionSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/pramati/ejb/PramatiSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/solarmetric/jdo/KodoSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/sun/sunone/ejb/SunONESubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver/ejb/EAServerSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/triactive/jdo/TJDOSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/JspTaglibSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/WebDocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/WebXmlSubTask.ContextParam.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/WebXmlSubTask.TagLib.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/WebXmlSubTask.WelcomeFile.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/WebXmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/webwork/WebWorkActionDocsSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/webwork/WebWorkConfigPropertiesSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/tagshandler/PackageTagsHandler.PackageSubstitution.html
-%%PORTDOCS%%share/doc/xdoclet/ant15.html
-%%PORTDOCS%%share/doc/xdoclet/api/allclasses-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/allclasses-noframe.html
-%%PORTDOCS%%share/doc/xdoclet/api/constant-values.html
-%%PORTDOCS%%share/doc/xdoclet/api/deprecated-list.html
-%%PORTDOCS%%share/doc/xdoclet/api/help-doc.html
-%%PORTDOCS%%share/doc/xdoclet/api/index-all.html
-%%PORTDOCS%%share/doc/xdoclet/api/index.html
-%%PORTDOCS%%share/doc/xdoclet/api/overview-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/overview-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/overview-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/package-list
-%%PORTDOCS%%share/doc/xdoclet/api/packages.html
-%%PORTDOCS%%share/doc/xdoclet/api/resources/inherit.gif
-%%PORTDOCS%%share/doc/xdoclet/api/serialized-form.html
-%%PORTDOCS%%share/doc/xdoclet/api/stylesheet.css
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ConfigParamIntrospector.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ConfigParameter.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/DocletContext.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/DocletSupport.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/DocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/GenerationManager.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/SubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/TemplateSubTask.ExtentTypes.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/TemplateSubTask.OfType.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/TemplateSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletException.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletFacade.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletFacadeTest.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletMain.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XDocletTagSupport.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/XmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/AntPropertyTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/ReplaceCopy.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/XDocletAntMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/class-use/AntPropertyTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/class-use/ReplaceCopy.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/class-use/XDocletAntMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/ModulesGrandBuilderTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/class-use/ModulesGrandBuilderTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ant/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/ConfigParamIntrospector.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/ConfigParameter.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/DocletContext.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/DocletSupport.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/DocletTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/GenerationManager.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/SubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/TemplateSubTask.ExtentTypes.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/TemplateSubTask.OfType.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/TemplateSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletException.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletFacade.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletFacadeTest.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletMain.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XDocletTagSupport.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/class-use/XmlSubTask.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/LoaderMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/ModuleFinder.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/SubTaskDefinition.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/TagHandlerDefinition.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/XDocletModule.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/XDocletXmlParserTest.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/LoaderMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/ModuleFinder.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/SubTaskDefinition.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/TagHandlerDefinition.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/XDocletModule.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/class-use/XDocletXmlParserTest.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/loader/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/AbstractProgramElementTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/ClassTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/CommentTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/ConfigTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/ConstructorTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/FieldTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/IdTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/MergeTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/MethodTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/PackageTagsHandler.PackageSubstitution.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/PackageTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/ParameterTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/PropertyTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/TagDefTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/TranslatorTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/TypeTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/XDocletTagshandlerMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/XmlTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/AbstractProgramElementTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/ClassTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/CommentTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/ConfigTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/ConstructorTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/FieldTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/IdTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/MergeTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/MethodTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/PackageTagsHandler.PackageSubstitution.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/PackageTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/ParameterTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/PropertyTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/TagDefTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/TranslatorTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/TypeTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/XDocletTagshandlerMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/class-use/XmlTagsHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/tagshandler/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/PrettyPrintWriter.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/TemplateEngine.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/TemplateException.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/TemplateParser.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/TemplateTagHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/XDocletTemplateMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/PrettyPrintWriter.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/TemplateEngine.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/TemplateException.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/TemplateParser.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/TemplateTagHandler.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/class-use/XDocletTemplateMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/template/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/DocletUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/FileManager.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/LogUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/Translator.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/TypeConversionUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/XDocletUtilMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/XmlValidator.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/DocletUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/FileManager.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/LogUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/Translator.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/TypeConversionUtil.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/XDocletUtilMessages.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/class-use/XmlValidator.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-frame.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-summary.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-tree.html
-%%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-use.html
-%%PORTDOCS%%share/doc/xdoclet/bp.html
-%%PORTDOCS%%share/doc/xdoclet/changelog-report.html
-%%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta1.html
-%%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta2.html
-%%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta3.html
-%%PORTDOCS%%share/doc/xdoclet/changes.txt
-%%PORTDOCS%%share/doc/xdoclet/cvs-usage.html
-%%PORTDOCS%%share/doc/xdoclet/dependencies.html
-%%PORTDOCS%%share/doc/xdoclet/developer-activity-report.html
-%%PORTDOCS%%share/doc/xdoclet/development/architecture.html
-%%PORTDOCS%%share/doc/xdoclet/development/branches.html
-%%PORTDOCS%%share/doc/xdoclet/development/design.html
-%%PORTDOCS%%share/doc/xdoclet/development/dirlayout.html
-%%PORTDOCS%%share/doc/xdoclet/development/index.html
-%%PORTDOCS%%share/doc/xdoclet/development/planning.html
-%%PORTDOCS%%share/doc/xdoclet/dtds/xdoclet-module_1_0.dtd
-%%PORTDOCS%%share/doc/xdoclet/dtds/xtags_1_1.dtd
-%%PORTDOCS%%share/doc/xdoclet/faq.html
-%%PORTDOCS%%share/doc/xdoclet/feedback.html
-%%PORTDOCS%%share/doc/xdoclet/file-activity-report.html
-%%PORTDOCS%%share/doc/xdoclet/ide/idea/xdoclet.html
-%%PORTDOCS%%share/doc/xdoclet/ide/idea/xdoclet.xml
-%%PORTDOCS%%share/doc/xdoclet/ide/index.html
-%%PORTDOCS%%share/doc/xdoclet/images/add.gif
-%%PORTDOCS%%share/doc/xdoclet/images/d1.gif
-%%PORTDOCS%%share/doc/xdoclet/images/d2.gif
-%%PORTDOCS%%share/doc/xdoclet/images/d3.gif
-%%PORTDOCS%%share/doc/xdoclet/images/fix.gif
-%%PORTDOCS%%share/doc/xdoclet/images/help_logo.gif
-%%PORTDOCS%%share/doc/xdoclet/images/icon_alert.gif
-%%PORTDOCS%%share/doc/xdoclet/images/logo.gif
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-bolt.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-brewed.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-build-successfull.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-built.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-bulldozer.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-1.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-2.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-3.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-4.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-5.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-black.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-blue.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-copper.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-green.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-pinky.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-purple.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-teal.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-feather.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-frankenstein.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-mavenfactured.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-petesucks.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-propaganda-2.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-propaganda.png
-%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-redgreen.png
-%%PORTDOCS%%share/doc/xdoclet/images/nw_min.gif
-%%PORTDOCS%%share/doc/xdoclet/images/remove.gif
-%%PORTDOCS%%share/doc/xdoclet/images/sflogo.png
-%%PORTDOCS%%share/doc/xdoclet/images/strich.gif
-%%PORTDOCS%%share/doc/xdoclet/images/sw_min.gif
-%%PORTDOCS%%share/doc/xdoclet/images/tortoisecvs.gif
-%%PORTDOCS%%share/doc/xdoclet/images/update.gif
-%%PORTDOCS%%share/doc/xdoclet/images/xdocletgui-castor.gif
-%%PORTDOCS%%share/doc/xdoclet/images/xdocletgui-ejbselect.gif
-%%PORTDOCS%%share/doc/xdoclet/index.html
-%%PORTDOCS%%share/doc/xdoclet/install.html
-%%PORTDOCS%%share/doc/xdoclet/issue-tracking.html
-%%PORTDOCS%%share/doc/xdoclet/license.html
-%%PORTDOCS%%share/doc/xdoclet/licenses/ant-license.html
-%%PORTDOCS%%share/doc/xdoclet/licenses/xdoclet-license.html
-%%PORTDOCS%%share/doc/xdoclet/licenses/xerces-license.html
-%%PORTDOCS%%share/doc/xdoclet/linkcheck.html
-%%PORTDOCS%%share/doc/xdoclet/log4j.html
-%%PORTDOCS%%share/doc/xdoclet/mail-lists.html
-%%PORTDOCS%%share/doc/xdoclet/maven-plugin.html
-%%PORTDOCS%%share/doc/xdoclet/maven-reports.html
-%%PORTDOCS%%share/doc/xdoclet/merge.html
-%%PORTDOCS%%share/doc/xdoclet/migration.html
-%%PORTDOCS%%share/doc/xdoclet/project-info.html
-%%PORTDOCS%%share/doc/xdoclet/resources.html
-%%PORTDOCS%%share/doc/xdoclet/status.html
-%%PORTDOCS%%share/doc/xdoclet/style/maven.css
-%%PORTDOCS%%share/doc/xdoclet/style/maven_ns4_only.css
-%%PORTDOCS%%share/doc/xdoclet/style/ns4_only.css
-%%PORTDOCS%%share/doc/xdoclet/style/print.css
-%%PORTDOCS%%share/doc/xdoclet/style/tigris.css
-%%PORTDOCS%%share/doc/xdoclet/tags/apache-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/bea-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/borland-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/caucho-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/ejb-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/exolab-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/hibernate-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/hp-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/ibm-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/java-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/jboss-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/jdo-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/jmx-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/libelis-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/macromedia-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/mockobjects-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/mvcsoft-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/mx4j-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/objectweb-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/oracle-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/orion-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/pramati-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/solarmetric-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/sun-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/sybase-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/tjdo-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/web-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/webwork-tags.html
-%%PORTDOCS%%share/doc/xdoclet/tags/xdoclet-tags.html
-%%PORTDOCS%%share/doc/xdoclet/team-list.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Antdoc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Antdoc_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/BesEjbRel.html
-%%PORTDOCS%%share/doc/xdoclet/templates/BesEjbRel_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Castor.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Castor_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Class.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Class_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Collection.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Collection_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Comment.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Comment_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Config.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Config_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Constructor.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Constructor_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Doc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Doc_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Ejb.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbBmp.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbBmp_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbCmp.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbCmp_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbDao.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbDao_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbDataObj.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbDataObj_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbEntity.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbEntity_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbFacade.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbFacade_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbHome.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbHome_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbIntf.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbIntf_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbMdb.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbMdb_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbPersistent.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbPersistent_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbPk.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbPk_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbRef.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbRef_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbRel.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbRel_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbSec.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbSec_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbSession.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbSession_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbUtilObj.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbUtilObj_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbValueObj.html
-%%PORTDOCS%%share/doc/xdoclet/templates/EjbValueObj_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Ejb_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Externalizer.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Externalizer_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Field.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Field_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Hibernate.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Hibernate_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/I18n.html
-%%PORTDOCS%%share/doc/xdoclet/templates/I18n_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Id.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Id_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Info.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Info_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBEjbRel.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBEjbRel_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBoss.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBossWeb.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBossWeb_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JBoss_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JMX.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JMX_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JavaBean.html
-%%PORTDOCS%%share/doc/xdoclet/templates/JavaBean_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Jdo.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Jdo_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/MVCSoft.html
-%%PORTDOCS%%share/doc/xdoclet/templates/MVCSoft_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Mavenplugin.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Mavenplugin_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Merge.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Merge_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Method.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Method_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/MockObject.html
-%%PORTDOCS%%share/doc/xdoclet/templates/MockObject_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Module.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Module_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Package.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Package_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Parameter.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Parameter_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Property.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Property_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Resin.html
-%%PORTDOCS%%share/doc/xdoclet/templates/ResinEjb.html
-%%PORTDOCS%%share/doc/xdoclet/templates/ResinEjb_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Resin_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/StrutsForm.html
-%%PORTDOCS%%share/doc/xdoclet/templates/StrutsForm_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/SunONE.html
-%%PORTDOCS%%share/doc/xdoclet/templates/SunONE_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/TagDef.html
-%%PORTDOCS%%share/doc/xdoclet/templates/TagDef_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Type.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Type_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Validator.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Validator_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Web.html
-%%PORTDOCS%%share/doc/xdoclet/templates/WebWork.html
-%%PORTDOCS%%share/doc/xdoclet/templates/WebWork_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Web_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/WlEjbRel.html
-%%PORTDOCS%%share/doc/xdoclet/templates/WlEjbRel_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Xml.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Xml_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/index.html
-%%PORTDOCS%%share/doc/xdoclet/templates/namespaces.html
-%%PORTDOCS%%share/doc/xdoclet/templates/tags.html
-%%PORTDOCS%%share/doc/xdoclet/templates/tags_toc.html
-%%PORTDOCS%%share/doc/xdoclet/tools.html
-%%PORTDOCS%%share/doc/xdoclet/using.html
-%%PORTDOCS%%share/doc/xdoclet/valueobjects.html
-@dirrm share/examples/xdoclet/target/web-inf
-@dirrm share/examples/xdoclet/target/meta-inf/test/interfaces
-@dirrm share/examples/xdoclet/target/meta-inf/test
-@dirrm share/examples/xdoclet/target/meta-inf
-@dirrm share/examples/xdoclet/target/gen-src/test/jmx
-@dirrm share/examples/xdoclet/target/gen-src/test/javabean
-@dirrm share/examples/xdoclet/target/gen-src/test/interfaces
-@dirrm share/examples/xdoclet/target/gen-src/test/hibernate
-@dirrm share/examples/xdoclet/target/gen-src/test/ejb/cmr
-@dirrm share/examples/xdoclet/target/gen-src/test/ejb
-@dirrm share/examples/xdoclet/target/gen-src/test/dao
-@dirrm share/examples/xdoclet/target/gen-src/test
-@dirrm share/examples/xdoclet/target/gen-src
-@dirrm share/examples/xdoclet/target/classes/test/web
-@dirrm share/examples/xdoclet/target/classes/test/jmx
-@dirrm share/examples/xdoclet/target/classes/test/jdo
-@dirrm share/examples/xdoclet/target/classes/test/javabean
-@dirrm share/examples/xdoclet/target/classes/test/interfaces
-@dirrm share/examples/xdoclet/target/classes/test/hibernate
-@dirrm share/examples/xdoclet/target/classes/test/ejb/jdo
-@dirrm share/examples/xdoclet/target/classes/test/ejb/cmr
-@dirrm share/examples/xdoclet/target/classes/test/ejb
-@dirrm share/examples/xdoclet/target/classes/test/dao
-@dirrm share/examples/xdoclet/target/classes/test
-@dirrm share/examples/xdoclet/target/classes
-@dirrm share/examples/xdoclet/target
-@dirrm share/examples/xdoclet/src/web
-@dirrm share/examples/xdoclet/src/merge
-@dirrm share/examples/xdoclet/src/java/test/web
-@dirrm share/examples/xdoclet/src/java/test/jmx
-@dirrm share/examples/xdoclet/src/java/test/jdo
-@dirrm share/examples/xdoclet/src/java/test/javabean
-@dirrm share/examples/xdoclet/src/java/test/interfaces
-@dirrm share/examples/xdoclet/src/java/test/hibernate
-@dirrm share/examples/xdoclet/src/java/test/ejb/jdo
-@dirrm share/examples/xdoclet/src/java/test/ejb/cmr
-@dirrm share/examples/xdoclet/src/java/test/ejb
-@dirrm share/examples/xdoclet/src/java/test/dao
-@dirrm share/examples/xdoclet/src/java/test
-@dirrm share/examples/xdoclet/src/java
-@dirrm share/examples/xdoclet/src
-@dirrm share/examples/xdoclet/lib
-@dirrm share/examples/xdoclet
-@dirrm share/doc/xdoclet/templates
-@dirrm share/doc/xdoclet/tags
-@dirrm share/doc/xdoclet/style
-@dirrm share/doc/xdoclet/licenses
-@dirrm share/doc/xdoclet/images/logos
-@dirrm share/doc/xdoclet/images
-@dirrm share/doc/xdoclet/ide/idea
-@dirrm share/doc/xdoclet/ide
-@dirrm share/doc/xdoclet/dtds
-@dirrm share/doc/xdoclet/development
-@dirrm share/doc/xdoclet/changelogs
-@dirrm share/doc/xdoclet/api/xdoclet/util/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/util
-@dirrm share/doc/xdoclet/api/xdoclet/template/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/template
-@dirrm share/doc/xdoclet/api/xdoclet/tagshandler/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/tagshandler
-@dirrm share/doc/xdoclet/api/xdoclet/loader/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/loader
-@dirrm share/doc/xdoclet/api/xdoclet/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/ant/modulesbuilder/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/ant/modulesbuilder
-@dirrm share/doc/xdoclet/api/xdoclet/ant/class-use
-@dirrm share/doc/xdoclet/api/xdoclet/ant
-@dirrm share/doc/xdoclet/api/xdoclet
-@dirrm share/doc/xdoclet/api/resources
-@dirrm share/doc/xdoclet/api
-@dirrm share/doc/xdoclet/ant/xdoclet/tagshandler
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/webwork
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/triactive/jdo
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/triactive
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun/sunone/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun/sunone
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/solarmetric/jdo
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/solarmetric
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/pramati/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/pramati
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/orion/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/orion
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/mx4j
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/mvcsoft/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/mvcsoft
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/mockobjects
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/maven
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/libelis/jdo
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/libelis
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jmx
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jdo
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jboss/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jboss/jmx
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jboss/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/jboss
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/java/javabean
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/java
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ibm/websphere/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ibm/websphere/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ibm/websphere
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ibm
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/hp/hpas/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/hp/hpas
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/hp
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/hibernate
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/externalizer
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/exolab/castor/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/exolab/castor
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/exolab
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/session
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/lookup
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/intf
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/home
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/entity
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/dd
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb/dao
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/doc/info
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/doc
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/caucho
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/borland/bes/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/borland/bes
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/borland
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/bea/wls/web
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/bea/wls/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/bea/wls
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/bea
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/apache/struts/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/apache/struts
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/apache/soap/ejb
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/apache/soap
-@dirrm share/doc/xdoclet/ant/xdoclet/modules/apache
-@dirrm share/doc/xdoclet/ant/xdoclet/modules
-@dirrm share/doc/xdoclet/ant/xdoclet/ant
-@dirrm share/doc/xdoclet/ant/xdoclet
-@dirrm share/doc/xdoclet/ant
-@dirrm share/doc/xdoclet
+@comment $FreeBSD$
+%%EXAMPLESDIR%%/build-dist.properties
+%%EXAMPLESDIR%%/build.xml
+%%EXAMPLESDIR%%/lib/jboss-j2ee.jar
+%%EXAMPLESDIR%%/lib/jmxri.jar
+%%EXAMPLESDIR%%/lib/readme.txt
+%%EXAMPLESDIR%%/lib/servlet.jar
+%%EXAMPLESDIR%%/lib/struts-1.1-beta-2.jar
+%%EXAMPLESDIR%%/lib/velocity-1.4-dev.jar
+%%EXAMPLESDIR%%/lib/webwork.jar
+%%EXAMPLESDIR%%/maven.xml
+%%EXAMPLESDIR%%/project.properties
+%%EXAMPLESDIR%%/project.xml
+%%EXAMPLESDIR%%/readme.txt
+%%EXAMPLESDIR%%/src/java/test/dao/CustomerExampleDAO.java
+%%EXAMPLESDIR%%/src/java/test/ejb/AccountBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/AddressBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/AllTypesEntityBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/BaseEntityBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/BaseEntityHome.java
+%%EXAMPLESDIR%%/src/java/test/ejb/BaseTellerBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/CustomerBMPBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/CustomerBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/FileBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/PersonBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/QueueBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/SecurityOfficerBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/StatefulBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/TellerBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/CityBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/CountryBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/EmployeeAddressBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/EmployeeBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/LanguageBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/LanguageCodeBean.java
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/mysql.txt
+%%EXAMPLESDIR%%/src/java/test/ejb/cmr/package.html
+%%EXAMPLESDIR%%/src/java/test/ejb/jdo/Manager.java
+%%EXAMPLESDIR%%/src/java/test/ejb/jdo/Paycheck.java
+%%EXAMPLESDIR%%/src/java/test/ejb/jdo/Staff.java
+%%EXAMPLESDIR%%/src/java/test/ejb/jdo/Transaction.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Animal.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/CompositeId.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/CompositeIdEntity.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Contraband.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Human.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/ImportedProduct.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/LineItem.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Lizard.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Name.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Order.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Persistent.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Pet.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Product.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Reptile.java
+%%EXAMPLESDIR%%/src/java/test/hibernate/Updateable.java
+%%EXAMPLESDIR%%/src/java/test/interfaces/ApplicationException.java
+%%EXAMPLESDIR%%/src/java/test/interfaces/Identifiable.java
+%%EXAMPLESDIR%%/src/java/test/interfaces/SecurityOfficer.java
+%%EXAMPLESDIR%%/src/java/test/interfaces/SecurityOfficerHome.java
+%%EXAMPLESDIR%%/src/java/test/javabean/SimpleBean.java
+%%EXAMPLESDIR%%/src/java/test/javabean/SimpleI18NBean.java
+%%EXAMPLESDIR%%/src/java/test/jdo/MapKey.java
+%%EXAMPLESDIR%%/src/java/test/jdo/MapValue.java
+%%EXAMPLESDIR%%/src/java/test/jdo/Sub.java
+%%EXAMPLESDIR%%/src/java/test/jdo/SubChild.java
+%%EXAMPLESDIR%%/src/java/test/jdo/Super.java
+%%EXAMPLESDIR%%/src/java/test/jdo/SuperChild.java
+%%EXAMPLESDIR%%/src/java/test/jmx/JBossXMLExample.java
+%%EXAMPLESDIR%%/src/java/test/jmx/SimpleJMX.java
+%%EXAMPLESDIR%%/src/java/test/web/SimpleAction.java
+%%EXAMPLESDIR%%/src/java/test/web/SimpleListener.java
+%%EXAMPLESDIR%%/src/java/test/web/SimpleServlet.java
+%%EXAMPLESDIR%%/src/java/test/web/SimpleTag.java
+%%EXAMPLESDIR%%/src/java/test/web/StrutsAction.java
+%%EXAMPLESDIR%%/src/java/test/web/StrutsDispatchAction.java
+%%EXAMPLESDIR%%/src/java/test/web/TimerFilter.java
+%%EXAMPLESDIR%%/src/merge/jboss-service.ent
+%%EXAMPLESDIR%%/src/merge/weblogic-security-role-assignment.xml
+%%EXAMPLESDIR%%/src/web/index.jsp
+%%EXAMPLESDIR%%/target/classes/test/dao/CustomerDAO.class
+%%EXAMPLESDIR%%/target/classes/test/dao/CustomerExampleDAO.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AccountBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AccountCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AddressBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AddressCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AllTypesEntityBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/AllTypesEntityCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/BaseEntityBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/BaseEntityHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/BaseTellerBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/CustomerBMPBMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/CustomerBMPBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/CustomerBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/CustomerCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/FileBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/FileCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/PersonBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/QueueBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/SecurityOfficerBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/StatefulBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/StatefulSession.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/TellerBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/TellerSession.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CityUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/CountryUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeAddressValue.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/EmployeeValue.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeBean.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeCMP.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageCodeUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageData.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageLocal.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/cmr/LanguageUtil.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/jdo/Manager.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/jdo/Paycheck.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/jdo/Staff.class
+%%EXAMPLESDIR%%/target/classes/test/ejb/jdo/Transaction.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Animal.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/CompositeId.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/CompositeIdEntity.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Contraband.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Human.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/ImportedProduct.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/LineItem.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Lizard.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Name.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Order.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Persistent.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Pet.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Product.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Reptile.class
+%%EXAMPLESDIR%%/target/classes/test/hibernate/Updateable.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Account.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountPK.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AccountValue.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AddressData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AddressLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AddressLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AddressUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AddressValue.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntity.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityPK.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/AllTypesEntityUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/ApplicationException.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Customer.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerBMPUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerLightValue.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerNormalValue.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerPK.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/CustomerValue.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/FileData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/FileLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/FileLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/FileUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Identifiable.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Person.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonContactForm.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonData.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonFullForm.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/PersonNamesForm.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/SecurityOfficer.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/SecurityOfficerHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Stateful.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/StatefulHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/StatefulLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/StatefulLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/StatefulUtil.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/Teller.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/TellerHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/TellerLocal.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/TellerLocalHome.class
+%%EXAMPLESDIR%%/target/classes/test/interfaces/TellerUtil.class
+%%EXAMPLESDIR%%/target/classes/test/javabean/SimpleBean.class
+%%EXAMPLESDIR%%/target/classes/test/javabean/SimpleBeanBeanInfo.class
+%%EXAMPLESDIR%%/target/classes/test/javabean/SimpleI18NBean.class
+%%EXAMPLESDIR%%/target/classes/test/javabean/SimpleI18NBeanBeanInfo.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/MapKey.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/MapValue.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/Sub.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/SubChild.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/Super.class
+%%EXAMPLESDIR%%/target/classes/test/jdo/SuperChild.class
+%%EXAMPLESDIR%%/target/classes/test/jmx/JBossXMLExample.class
+%%EXAMPLESDIR%%/target/classes/test/jmx/JBossXMLExampleMBean.class
+%%EXAMPLESDIR%%/target/classes/test/jmx/SimpleJMX.class
+%%EXAMPLESDIR%%/target/classes/test/jmx/SimpleJMXMBean.class
+%%EXAMPLESDIR%%/target/classes/test/web/SimpleAction.class
+%%EXAMPLESDIR%%/target/classes/test/web/SimpleListener.class
+%%EXAMPLESDIR%%/target/classes/test/web/SimpleServlet.class
+%%EXAMPLESDIR%%/target/classes/test/web/SimpleTag.class
+%%EXAMPLESDIR%%/target/classes/test/web/StrutsAction.class
+%%EXAMPLESDIR%%/target/classes/test/web/StrutsDispatchAction.class
+%%EXAMPLESDIR%%/target/classes/test/web/TimerFilter.class
+%%EXAMPLESDIR%%/target/gen-src/actions.html
+%%EXAMPLESDIR%%/target/gen-src/jboss-simple-service.xml
+%%EXAMPLESDIR%%/target/gen-src/metadata.jdo
+%%EXAMPLESDIR%%/target/gen-src/test/dao/CustomerDAO.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/AccountCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/AddressCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/AllTypesEntityCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/CustomerBMPBMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/CustomerCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/FileCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/StatefulSession.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/TellerSession.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CityCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CityData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CityLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CityLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CityUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CountryCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CountryData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CountryLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CountryLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/CountryUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeAddressValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/EmployeeValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCodeCMP.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCodeData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCodeLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCodeLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageCodeUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageData.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr/LanguageUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/hibernate/Animal.hbm.xml
+%%EXAMPLESDIR%%/target/gen-src/test/hibernate/CompositeIdEntity.hbm.xml
+%%EXAMPLESDIR%%/target/gen-src/test/hibernate/LineItem.hbm.xml
+%%EXAMPLESDIR%%/target/gen-src/test/hibernate/Order.hbm.xml
+%%EXAMPLESDIR%%/target/gen-src/test/hibernate/Product.hbm.xml
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/Account.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountPK.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AccountValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AddressData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AddressLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AddressLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AddressUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AddressValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntity.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityPK.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/AllTypesEntityUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/Customer.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerBMPUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerLightValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerNormalValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerPK.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/CustomerValue.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/FileData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/FileLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/FileLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/FileUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/Person.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonContactForm.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonData.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonFullForm.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/PersonNamesForm.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/Stateful.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/StatefulHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/StatefulLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/StatefulLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/StatefulUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/Teller.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/TellerHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/TellerLocal.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/TellerLocalHome.java
+%%EXAMPLESDIR%%/target/gen-src/test/interfaces/TellerUtil.java
+%%EXAMPLESDIR%%/target/gen-src/test/javabean/SimpleBeanBeanInfo.java
+%%EXAMPLESDIR%%/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.java
+%%EXAMPLESDIR%%/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.properties
+%%EXAMPLESDIR%%/target/gen-src/test/jmx/JBossXMLExample-doc.xml
+%%EXAMPLESDIR%%/target/gen-src/test/jmx/JBossXMLExample.xml
+%%EXAMPLESDIR%%/target/gen-src/test/jmx/JBossXMLExampleMBean.java
+%%EXAMPLESDIR%%/target/gen-src/test/jmx/SimpleJMX-doc.xml
+%%EXAMPLESDIR%%/target/gen-src/test/jmx/SimpleJMXMBean.java
+%%EXAMPLESDIR%%/target/gen-src/views.properties
+%%EXAMPLESDIR%%/target/meta-inf/Schema.dbxmi
+%%EXAMPLESDIR%%/target/meta-inf/ejb-jar.xml
+%%EXAMPLESDIR%%/target/meta-inf/ibm-ejb-jar-bnd.xmi
+%%EXAMPLESDIR%%/target/meta-inf/ibm-ejb-jar-ext.xmi
+%%EXAMPLESDIR%%/target/meta-inf/jaws.xml
+%%EXAMPLESDIR%%/target/meta-inf/jboss-service.xml
+%%EXAMPLESDIR%%/target/meta-inf/jboss.xml
+%%EXAMPLESDIR%%/target/meta-inf/jbosscmp-jdbc.xml
+%%EXAMPLESDIR%%/target/meta-inf/jonas-ejb-jar.xml
+%%EXAMPLESDIR%%/target/meta-inf/jrun-ejb-jar.xml
+%%EXAMPLESDIR%%/target/meta-inf/mapping.xml
+%%EXAMPLESDIR%%/target/meta-inf/orion-ejb-jar.xml
+%%EXAMPLESDIR%%/target/meta-inf/test/interfaces/soap-dds-TellerBean.xml
+%%EXAMPLESDIR%%/target/meta-inf/weblogic-cmp-rdbms-jar.xml
+%%EXAMPLESDIR%%/target/meta-inf/weblogic-ejb-jar.xml
+%%EXAMPLESDIR%%/target/web-inf/jboss-web.xml
+%%EXAMPLESDIR%%/target/web-inf/jrun-web.xml
+%%EXAMPLESDIR%%/target/web-inf/struts-config.xml
+%%EXAMPLESDIR%%/target/web-inf/taglib.tld
+%%EXAMPLESDIR%%/target/web-inf/web.xml
+%%EXAMPLESDIR%%/target/web-inf/weblogic.xml
+%%JAVAJARDIR%%/maven-xdoclet-plugin-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-apache-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-bea-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-borland-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-caucho-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-ejb-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-exolab-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-hibernate-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-hp-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-ibm-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-java-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-jboss-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-jdo-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-jmx-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-libelis-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-macromedia-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-mockobjects-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-mvcsoft-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-mx4j-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-objectweb-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-oracle-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-orion-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-pramati-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-solarmetric-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-sun-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-sybase-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-tjdo-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-web-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-webwork-module-1.2b4.jar
+%%JAVAJARDIR%%/xdoclet-xdoclet-module-1.2b4.jar
+%%JAVAJARDIR%%/xjavadoc-%%XJAVADOC_VER%%.jar
+@dirrm %%EXAMPLESDIR%%/target/web-inf
+@dirrm %%EXAMPLESDIR%%/target/meta-inf/test/interfaces
+@dirrm %%EXAMPLESDIR%%/target/meta-inf/test
+@dirrm %%EXAMPLESDIR%%/target/meta-inf
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/jmx
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/javabean
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/interfaces
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/hibernate
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/ejb/cmr
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/ejb
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test/dao
+@dirrm %%EXAMPLESDIR%%/target/gen-src/test
+@dirrm %%EXAMPLESDIR%%/target/gen-src
+@dirrm %%EXAMPLESDIR%%/target/classes/test/web
+@dirrm %%EXAMPLESDIR%%/target/classes/test/jmx
+@dirrm %%EXAMPLESDIR%%/target/classes/test/jdo
+@dirrm %%EXAMPLESDIR%%/target/classes/test/javabean
+@dirrm %%EXAMPLESDIR%%/target/classes/test/interfaces
+@dirrm %%EXAMPLESDIR%%/target/classes/test/hibernate
+@dirrm %%EXAMPLESDIR%%/target/classes/test/ejb/jdo
+@dirrm %%EXAMPLESDIR%%/target/classes/test/ejb/cmr
+@dirrm %%EXAMPLESDIR%%/target/classes/test/ejb
+@dirrm %%EXAMPLESDIR%%/target/classes/test/dao
+@dirrm %%EXAMPLESDIR%%/target/classes/test
+@dirrm %%EXAMPLESDIR%%/target/classes
+@dirrm %%EXAMPLESDIR%%/target
+@dirrm %%EXAMPLESDIR%%/src/web
+@dirrm %%EXAMPLESDIR%%/src/merge
+@dirrm %%EXAMPLESDIR%%/src/java/test/web
+@dirrm %%EXAMPLESDIR%%/src/java/test/jmx
+@dirrm %%EXAMPLESDIR%%/src/java/test/jdo
+@dirrm %%EXAMPLESDIR%%/src/java/test/javabean
+@dirrm %%EXAMPLESDIR%%/src/java/test/interfaces
+@dirrm %%EXAMPLESDIR%%/src/java/test/hibernate
+@dirrm %%EXAMPLESDIR%%/src/java/test/ejb/jdo
+@dirrm %%EXAMPLESDIR%%/src/java/test/ejb/cmr
+@dirrm %%EXAMPLESDIR%%/src/java/test/ejb
+@dirrm %%EXAMPLESDIR%%/src/java/test/dao
+@dirrm %%EXAMPLESDIR%%/src/java/test
+@dirrm %%EXAMPLESDIR%%/src/java
+@dirrm %%EXAMPLESDIR%%/src
+@dirrm %%EXAMPLESDIR%%/lib
+@dirrm %%EXAMPLESDIR%%
