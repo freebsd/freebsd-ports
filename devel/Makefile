@@ -227,7 +227,6 @@
     SUBDIR += gnomebuild
     SUBDIR += gnomecommon
     SUBDIR += gnomecrash
-    SUBDIR += gnomedebug
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs-extras
     SUBDIR += gnomevfs2
