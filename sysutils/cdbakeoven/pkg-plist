@@ -1,0 +1,86 @@
+bin/cdbakeoven
+lib/kde3/libkcm_cdbosettings.la
+lib/kde3/libkcm_cdbosettings.so
+share/applnk/Settings/CDBakeOven/.directory
+share/applnk/Settings/CDBakeOven/cdboaudioopt.desktop
+share/applnk/Settings/CDBakeOven/cdboburnopt.desktop
+share/applnk/Settings/CDBakeOven/cdbocdromdevices.desktop
+share/applnk/Settings/CDBakeOven/cdbodefaultopt.desktop
+share/applnk/Settings/CDBakeOven/cdboinfo.desktop
+share/applnk/Settings/CDBakeOven/cdboisoopt.desktop
+share/applnk/Utilities/cdbakeoven.desktop
+share/apps/cdbakeoven/cdbosettings.desktop
+share/apps/cdbakeoven/info/background.png
+share/apps/cdbakeoven/info/bgtable6.png
+share/apps/cdbakeoven/info/info.html
+share/apps/cdbakeoven/info/kdelogo.png
+share/apps/cdbakeoven/info/konq.css
+share/apps/cdbakeoven/info/lines.png
+share/apps/cdbakeoven/info/lines2.png
+share/apps/cdbakeoven/info/shadow1.png
+share/apps/cdbakeoven/info/top.png
+share/apps/cdbakeoven/toolbar/2vertleftarrow.png
+share/apps/cdbakeoven/toolbar/2vertrightarrow.png
+share/apps/cdbakeoven/toolbar/bookmark_add.png
+share/apps/cdbakeoven/toolbar/bottom.png
+share/apps/cdbakeoven/toolbar/burn.xpm
+share/apps/cdbakeoven/toolbar/cdImage.png
+share/apps/cdbakeoven/toolbar/cdImageLg.png
+share/apps/cdbakeoven/toolbar/cdImageSm.png
+share/apps/cdbakeoven/toolbar/cdImageVerySm.png
+share/apps/cdbakeoven/toolbar/cdcopySm.png
+share/apps/cdbakeoven/toolbar/colapse.xpm
+share/apps/cdbakeoven/toolbar/copyCD.png
+share/apps/cdbakeoven/toolbar/cross.xpm
+share/apps/cdbakeoven/toolbar/erase.png
+share/apps/cdbakeoven/toolbar/eraseCD.png
+share/apps/cdbakeoven/toolbar/eraseSm.png
+share/apps/cdbakeoven/toolbar/error.png
+share/apps/cdbakeoven/toolbar/file_properties.png
+share/apps/cdbakeoven/toolbar/find.png
+share/apps/cdbakeoven/toolbar/imageToCD.png
+share/apps/cdbakeoven/toolbar/info.png
+share/apps/cdbakeoven/toolbar/isoSetup.png
+share/apps/cdbakeoven/toolbar/musicCD.png
+share/apps/cdbakeoven/toolbar/ok.png
+share/apps/cdbakeoven/toolbar/open.png
+share/apps/cdbakeoven/toolbar/package_utilities.png
+share/apps/cdbakeoven/toolbar/process.png
+share/apps/cdbakeoven/toolbar/reload.png
+share/apps/cdbakeoven/toolbar/remove.png
+share/apps/cdbakeoven/toolbar/setUpSm.png
+share/apps/cdbakeoven/toolbar/source.png
+share/apps/cdbakeoven/toolbar/target.png
+share/icons/hicolor/16x16/apps/cdbakeoven.png
+share/icons/hicolor/16x16/mimetypes/cdbo_list.png
+share/icons/hicolor/16x16/mimetypes/cdimage.png
+share/icons/hicolor/32x32/apps/cdbakeoven.png
+share/icons/hicolor/32x32/mimetypes/cdbo_list.png
+share/icons/hicolor/32x32/mimetypes/cdimage.png
+share/icons/hicolor/48x48/apps/cdbakeoven.png
+share/icons/hicolor/48x48/mimetypes/cdimage.png
+share/mimelnk/application/cdbo-file-list.desktop
+share/mimelnk/inode/ISO-image.desktop
+@unexec rmdir %D/share/mimelnk/inode 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/apps/cdbakeoven/toolbar 2>/dev/null || true
+@dirrm share/apps/cdbakeoven/info
+@dirrm share/apps/cdbakeoven
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@dirrm share/applnk/Settings/CDBakeOven
+@unexec rmdir %D/share/applnk/Settings 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
