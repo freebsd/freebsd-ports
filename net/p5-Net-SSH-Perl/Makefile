@@ -27,6 +27,8 @@ BUILD_DEPENDS=	${PERL_BASE}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
 		${PERL_BASE}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble \
 		${PERL_BASE}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA \
 		${PERL_BASE}/${PERL_ARCH}/IO/Socket.pm:${PORTSDIR}/devel/p5-IO \
+		${PERL_BASE}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32 \
+		${PERL_BASE}/${PERL_ARCH}/Math/GMP.pm:${PORTSDIR}/math/p5-Math-GMP \
 		${PERL_BASE}/${PERL_ARCH}/Crypt/IDEA.pm:${PORTSDIR}/security/p5-Crypt-IDEA
 RUN_DEPENDS=	${BUILD_DEPENDS}
 FETCH_DEPENDS=	${BUILD_DEPENDS}
