@@ -1,0 +1,28 @@
+--- pine/makefile.bsf.orig	Thu Aug 27 09:49:51 1998
++++ pine/makefile.bsf	Wed Jul  5 22:10:10 2000
+@@ -50,7 +50,7 @@
+ PROFILE=     # -pg
+ DEBUG=       -DDEBUG # -g
+ 
+-CCLIENTDIR=  ../c-client
++CCLIENTDIR=  $(PREFIX)/include/c-client
+ PICODIR=     ../pico
+ 
+ # Only need to uncomment next two lines if you run make from this directory
+@@ -61,12 +61,11 @@
+ LDAPOFILES=   addrbook.o adrbkcmd.o args.o bldaddr.o init.o \
+ 	      other.o pine.o takeaddr.o
+ 
+-STDLIBS=     -ltermlib
+-LOCLIBS=     $(PICODIR)/libpico.a $(CCLIENTDIR)/c-client.a
+-LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS) \
+-             `cat $(CCLIENTDIR)/LDFLAGS`
++STDLIBS=     -ltermlib -lpam -L$(PREFIX)/lib -lc-client4
++LOCLIBS=     $(PICODIR)/libpico.a
++LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
+ 
+-STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
++STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -I/usr/local/include
+ CFLAGS=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
+ 	     $(STDCFLAGS)
+ 
