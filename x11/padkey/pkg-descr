@@ -1,0 +1,13 @@
+BSD PadKey is a small program for FreeBSD that sends keys to your X display 
+according to which buttons are being pressed on a modified SNES pad connected 
+to the parallel port. 
+
+In short, PadKey allows you to play games on FreeBSD with an authentic SNES 
+controller.
+
+Note: This version only works with ONE pad connected to the parallel port!
+
+WWW: http://www.liquidx.org/padkey/index.html
+
+- Travis Poppe
+tlp@liquidx.org
