@@ -28,6 +28,8 @@ post-patch:
 		${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' \
+		${WRKSRC}/man/*.man
 
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
