@@ -18,6 +18,8 @@ PATCHFILES=     connect-dos.patch realpath.patch
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
 
+CONFLICTS=	wu-ftpd+ipv6-[0-9]* heimdal-[0-9]*
+
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
