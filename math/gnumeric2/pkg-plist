@@ -127,6 +127,7 @@ lib/gnumeric/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.glade
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/pie.so
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.glade
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/xy.so
