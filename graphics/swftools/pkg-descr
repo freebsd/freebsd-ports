@@ -6,9 +6,13 @@ At the moment, this includes:
    - SWFStrings : Scans SWFs for text data.
    - SWFDump : Prints out various informations about SWFs.
    - JPEG2SWF : Takes one or more JPEG pictures and generates a SWF slideshow.
+   - PNG2SWF : Like JPEG2SWF, only for PNGs.
+   - WAV2SWF : Converts WAV audio files to SWFs with MP3 Streams, using the
+     L.A.M.E. MP3 encoder.
+   - Font2SWF : Converts font files (TTF, Type1) to SWF.
+   - SWFBBox : Allows to readjust SWF bounding boxes.
+   - SWFC : A tool for creating SWF files from simple script files.
    - SWFExtract : Allows to extract Movieclips, Sounds, Images etc. from SWF
      files.
-   - RFXSWF Library : A fully featured library which can be used for
-     standalone SWF generation.
 
 WWW: http://www.quiss.org/swftools/

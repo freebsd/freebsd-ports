@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 
@@ -25,8 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGSS="-L${LOCALBASE}/lib"
 
-MAN1=	font2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 swfbbox.1 swfc.1 swfcombine.1 \
-	swfdump.1 swfextract.1 swfstrings.1 wav2swf.1
+MAN1=	font2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 swfbbox.1 swfc.1 \
+	swfcombine.1 swfdump.1 swfextract.1 swfstrings.1 wav2swf.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O | |g' ${WRKSRC}/configure
