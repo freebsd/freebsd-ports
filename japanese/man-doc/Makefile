@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	japanese
 DISTFILES=	# none
 
@@ -14,7 +14,6 @@ MAINTAINER=	horikawa@FreeBSD.org
 COMMENT=	Japanese online manual pages corresponding to /usr/share/man/man*
 
 PREFIX?=	/usr
-NO_CHECKSUM=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/man
 PLIST=		${WRKDIR}/PLIST
