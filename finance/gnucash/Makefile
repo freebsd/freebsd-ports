@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.8
-PORTREVISION=	1
+PORTVERSION=	1.8.9
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -65,5 +64,8 @@ LIB_DEPENDS+=	openhbci.13:${PORTSDIR}/finance/openhbci \
 		ktoblzcheck.1:${PORTSDIR}/finance/ktoblzcheck
 CONFIGURE_ARGS+=--enable-hbci
 .endif
+
+post-configure:
+	@${RM} ${WRKSRC}/src/doc/design/gnucash-design.info
 
 .include <bsd.port.post.mk>

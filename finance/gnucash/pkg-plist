@@ -340,6 +340,22 @@ share/gnome/gnucash/accounts/fr_FR/acctchrt_renter.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_retiremt.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_spouseinc.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_spouseretire.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_business.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_carloan.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_cdmoneymkt.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_checkbook.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_childcare.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_eduloan.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_fixedassets.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_homeloan.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_homeown.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_otherloan.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_renter.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_retiremt.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_spouseinc.gnucash-xea
+share/gnome/gnucash/accounts/hu_HU/acctchrt_spouseretire.gnucash-xea
 share/gnome/gnucash/accounts/it/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/it/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/it/acctchrt_checkbook.gnucash-xea
@@ -719,6 +735,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/accounts/pt_PT
 @dirrm share/gnome/gnucash/accounts/pt_BR
 @dirrm share/gnome/gnucash/accounts/it
+@dirrm share/gnome/gnucash/accounts/hu_HU
 @dirrm share/gnome/gnucash/accounts/fr_FR
 @dirrm share/gnome/gnucash/accounts/es_ES
 @dirrm share/gnome/gnucash/accounts/el_GR
