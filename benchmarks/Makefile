@@ -15,6 +15,7 @@
     SUBDIR += rawio
     SUBDIR += tcpblast
     SUBDIR += tmetric
+    SUBDIR += ubench
     SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
