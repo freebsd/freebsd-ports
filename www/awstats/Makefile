@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.2
+PORTVERSION=	6.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	webmaster@lightningfire.net
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
-
-FORBIDDEN=	http://vuxml.FreeBSD.org/0f5a2b4d-694b-11d9-a9e7-0001020eed82.html
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
@@ -51,7 +49,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.4.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.5.wbm ${PREFIX}/www/awstats/tools/webmin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
