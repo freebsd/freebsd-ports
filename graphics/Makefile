@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.43 1997/02/25 14:22:31 tg Exp $
+# $Id: Makefile,v 1.44 1997/02/28 10:54:04 tg Exp $
 #
 
     SUBDIR += ImageMagick
@@ -7,6 +7,7 @@
     SUBDIR += dore
     SUBDIR += geomview
     SUBDIR += gd
+    SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += giftool
     SUBDIR += giftrans
