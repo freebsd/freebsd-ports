@@ -1,0 +1,13 @@
+include/iiimf/IMArg.h
+include/iiimf/IMProtocolStruct.h
+include/iiimf/iml/SunIMPriv.h
+include/iiimf/iml/SunIM.h
+include/iiimf/iml/SunIMProt.h
+include/iiimf/iml/SunIMPub.h
+include/iiimf/iml/SunIMCore.h
+include/iiimf/iml/SunIMMMan.h
+include/iiimf/iml/SunIMMthd.h
+include/iiimf/syscfg.h
+include/iiimf/threaddef.h
+@dirrm include/iiimf/iml
+@dirrm include/iiimf
