@@ -6,5 +6,7 @@ bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
 bin/gtkdoc-fixxref
+share/gtk-doc/gtk-doc.dcl
 share/gtk-doc/gtk-doc.dsl
+share/gtk-doc/gtkdoc-common.pl
 @dirrm share/gtk-doc
