@@ -3556,6 +3556,7 @@ ksubeditor	ports/multimedia/ksubeditor
 ktextdecode	ports/converters/ktextdecode
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
+kwin_flatcurve	ports/x11-wm/kwin_flatcurve
 kxicq-devel		ports/net/kxicq-devel
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
