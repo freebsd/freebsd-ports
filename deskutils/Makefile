@@ -107,6 +107,7 @@
     SUBDIR += xchm
     SUBDIR += xfce4-calendar
     SUBDIR += xfce4-notes-plugin
+    SUBDIR += xfce4-taskbar-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xopps
