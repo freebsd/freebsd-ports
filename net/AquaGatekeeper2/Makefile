@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	AquaGatekeeper
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	AquaGatekeeper120FreeBSD
+DISTNAME=	AquaGatekeeper121FreeBSD
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eugen@grosbein.pp.ru
@@ -25,6 +25,14 @@ NO_CDROM=	"No commercial redistribution"
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
+.endif
+
+.if !defined(HAS_CRYPTO3)
+HAS_CRYPTO3!=	ldconfig -r | fgrep -q -- -lcrypto.3 && echo yes || echo no
+.endif
+
+.if ${HAS_CRYPTO3} != "yes"
+IGNORE=		This port requires libcrypto.3, upgrade base system or define HAS_CRYPTO3=yes to skip this test
 .endif
 
 do-install:
