@@ -13,8 +13,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-dracd_enable="NO"
-dracd_flags=""
+dracd_enable=${dracd_enable-"NO"}
 
 . %%RC_SUBR%%
 
