@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	fpdns
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.rfc.se/fpdns/distfiles/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	FPDNS - Fingerprinting DNS servers
@@ -18,17 +19,26 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
+MAN1=		fpdns.1
+
+PLIST_FILES=	bin/fpdns
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		"Requires at least Perl version 5.6.0"
 .endif
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKDIR}/fpdns.pl
+pre-extract:
+	@${MKDIR} ${WRKDIR}
+
+post-patch:
+	@${SED} -e 's#\\&\\fIperl\\fR\\|(1), \\fINet::DNS\\fR\\|(1)#&, http://www.rfc.se/fpdns/#' \
+		${WRKDIR}/fpdns.1 > ${WRKDIR}/fpdns.1.sed
+	@${MV} ${WRKDIR}/fpdns.1.sed ${WRKDIR}/fpdns.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/fpdns.pl ${PREFIX}/bin/fpdns
+	${INSTALL_MAN} ${WRKDIR}/fpdns.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
