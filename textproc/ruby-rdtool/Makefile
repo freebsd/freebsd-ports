@@ -7,6 +7,7 @@
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -64,6 +65,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 #	${RUBY_RD} ${RUBY_DOCDIR}/amstd/ja/amstd-ja.rd \
 #		> ${RUBY_DOCDIR}/amstd/ja/amstd-ja.html
+	${RUBY_RD} ${RUBY_DOCDIR}/optparse/optparse.en.rd \
+		> ${RUBY_DOCDIR}/optparse/optparse.en.html
 	${RUBY_RD} ${RUBY_DOCDIR}/optparse/ja/optparse.ja.rd \
 		> ${RUBY_DOCDIR}/optparse/ja/optparse.ja.html
 	${MKDIR} ${RUBY_EXAMPLESDIR}/rd
