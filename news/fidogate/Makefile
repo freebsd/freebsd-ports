@@ -62,7 +62,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 post-patch:
 .for i in ${FIXME}
 	${PERL5} -pi -e "s=([	 ])log[(]=\\1log_fg(=" ${WRKSRC}/${i}
-	@grep "log_fg" ${WRKSRC}/${i}
+	@${GREP} "log_fg" ${WRKSRC}/${i}
 .endfor
 
 pre-configure:

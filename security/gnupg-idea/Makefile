@@ -52,7 +52,7 @@ pre-extract:
 
 post-extract:
 .for i in rsa.c
-	@tr -d '\r' <${_DISTDIR}/${i} >${WRKSRC}/${i}
+	@${TR} -d '\r' <${_DISTDIR}/${i} >${WRKSRC}/${i}
 .endfor
 
 do-patch:

@@ -41,9 +41,9 @@ pre-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog HACKING INSTALL NEWS \
+.for i in AUTHORS ChangeLog HACKING INSTALL NEWS \
 		README README.BINARY TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${PAPERSIZE}
-DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer
@@ -28,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share --sysconfdir=$(PREFIX)/etc --datadir=$(PREFIX)/share --localstatedir=$(PREFIX)/share
+CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=${PREFIX}/share --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share --localstatedir=${PREFIX}/share
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
