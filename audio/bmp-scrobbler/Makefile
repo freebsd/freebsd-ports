@@ -33,4 +33,6 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-prefer-ape
 .endif
 
+PLIST_FILES=	lib/bmp/General/libbmp_scrobbler.so
+
 .include <bsd.port.mk>
