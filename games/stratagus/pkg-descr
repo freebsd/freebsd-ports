@@ -1,0 +1,10 @@
+Stratagus is a free cross-platform real-time strategy gaming engine. It 
+includes support for playing over the internet/LAN, or playing a computer 
+opponent. The engine is configurable and can be used to create games with 
+a wide-range of features specific to your needs. See the data sets page 
+for a list of current games using the stratagus engine.
+
+WWW: http://stratagus.sourceforge.net
+
+- Travis Poppe
+tlp@liquidx.org

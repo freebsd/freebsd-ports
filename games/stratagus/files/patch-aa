@@ -1,0 +1,11 @@
+--- Rules.make.in.orig	Thu Jul  1 00:03:00 2004
++++ Rules.make.in	Thu Jul  1 00:04:55 2004
+@@ -55,7 +55,8 @@
+     @OGG_CFLAGS@ @MAD_CFLAGS@ @FLAC_CFLAGS@ @CDAUDIO_CFLAGS@ \
+     @MIKMOD_CFLAGS@ @LUA_CFLAGS@ $(CCL) \
+     $(COMP_CFLAGS) @PLATFORM@ \
+-    -I/usr/local/include
++    -I/usr/local/include \
++    -I/usr/X11R6/include
+ 
+ CTAGSFLAGS=-i defptvS -a -f 
