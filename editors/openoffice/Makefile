@@ -87,7 +87,6 @@ USE_LANG=	${LANG}
 
 LANG_SORTED=	`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
-.if ${OSVERSION} < 500000
 #
 # OO build is broken with the system gcc on STABLE.
 #
@@ -95,15 +94,6 @@ BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 CC=		gcc32
 CXX=		g++32
 USE_GCC=3.2
-.endif
-
-.if ${OSVERSION} > 500000
-.if defined(USE_GCC) && ${USE_GCC} == 3.2
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
-CC=		gcc32
-CXX=		g++32
-.endif
-.endif
 
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
