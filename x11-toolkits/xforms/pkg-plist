@@ -3,7 +3,7 @@ lib/libxforms.a
 lib/libxforms.so.0.86
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libxforms.a
-include/X11/forms.h
+include/forms.h
 man/man1/fdesign.1.gz
 man/man5/xforms.5.gz
 lib/X11/xforms/arrowbutton
