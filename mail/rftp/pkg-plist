@@ -1,0 +1,4 @@
+bin/rftp
+bin/uucat
+man/man1/rftp.1.gz
+man/man1/uucat.1.gz

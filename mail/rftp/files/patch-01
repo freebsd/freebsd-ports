@@ -1,0 +1,23 @@
+--- Makefile.orig	Tue May  5 03:19:39 1998
++++ Makefile	Tue May  5 11:00:09 1998
+@@ -5,16 +5,16 @@
+ ##
+ 
+ ##  Edit appropriately.
+-CC	= gcc
+-CFLAGS	= -O
++#CC	= gcc
++#CFLAGS	= -O
+ 
+ ##  Where executables should be put.
+ #DESTDIR	= /home/archives/bin
+-DESTDIR	= /usr/local/bin
++DESTDIR	= $(PREFIX)/bin
+ 
+ ##  The manpage for "foo" goes in $(MANDIR)/foo.$1
+ #MANDIR	= /home/archives/man/cat1
+-MANDIR	= /usr/local/man/cat1
++MANDIR	= $(PREFIX)/man/man1
+ 
+ ##
+ ##  END OF CONFIGURATION SECTION
