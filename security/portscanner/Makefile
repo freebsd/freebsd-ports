@@ -9,7 +9,8 @@ PORTNAME=	portscanner
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.ameth.org/~veilleux/PortScan/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/scanners
 DISTNAME=	PortScanner-${PORTVERSION}
 
 MAINTAINER=	billf@FreeBSD.org
