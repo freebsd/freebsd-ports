@@ -54,6 +54,7 @@ lib/tk%%TK_VER%%/demos/dialog1.tcl
 lib/tk%%TK_VER%%/demos/dialog2.tcl
 lib/tk%%TK_VER%%/demos/entry1.tcl
 lib/tk%%TK_VER%%/demos/entry2.tcl
+lib/tk%%TK_VER%%/demos/entry3.tcl
 lib/tk%%TK_VER%%/demos/filebox.tcl
 lib/tk%%TK_VER%%/demos/floor.tcl
 lib/tk%%TK_VER%%/demos/form.tcl
@@ -76,10 +77,13 @@ lib/tk%%TK_VER%%/demos/images/teapot.ppm
 lib/tk%%TK_VER%%/demos/items.tcl
 lib/tk%%TK_VER%%/demos/ixset
 lib/tk%%TK_VER%%/demos/label.tcl
+lib/tk%%TK_VER%%/demos/labelframe.tcl
 lib/tk%%TK_VER%%/demos/license.terms
 lib/tk%%TK_VER%%/demos/menu.tcl
 lib/tk%%TK_VER%%/demos/menubu.tcl
 lib/tk%%TK_VER%%/demos/msgbox.tcl
+lib/tk%%TK_VER%%/demos/paned1.tcl
+lib/tk%%TK_VER%%/demos/paned2.tcl
 lib/tk%%TK_VER%%/demos/plot.tcl
 lib/tk%%TK_VER%%/demos/puzzle.tcl
 lib/tk%%TK_VER%%/demos/radio.tcl
@@ -88,6 +92,7 @@ lib/tk%%TK_VER%%/demos/rolodex
 lib/tk%%TK_VER%%/demos/ruler.tcl
 lib/tk%%TK_VER%%/demos/sayings.tcl
 lib/tk%%TK_VER%%/demos/search.tcl
+lib/tk%%TK_VER%%/demos/spin.tcl
 lib/tk%%TK_VER%%/demos/square
 lib/tk%%TK_VER%%/demos/states.tcl
 lib/tk%%TK_VER%%/demos/style.tcl
@@ -114,12 +119,21 @@ lib/tk%%TK_VER%%/images/pwrdLogo175.gif
 lib/tk%%TK_VER%%/images/pwrdLogo200.gif
 lib/tk%%TK_VER%%/images/pwrdLogo75.gif
 lib/tk%%TK_VER%%/images/tai-ku.gif
+lib/tk%%TK_VER%%/msgs/cs.msg
+lib/tk%%TK_VER%%/msgs/de.msg
+lib/tk%%TK_VER%%/msgs/el.msg
+lib/tk%%TK_VER%%/msgs/en.msg
+lib/tk%%TK_VER%%/msgs/es.msg
+lib/tk%%TK_VER%%/msgs/fr.msg
+lib/tk%%TK_VER%%/msgs/it.msg
+lib/tk%%TK_VER%%/msgs/nl.msg
 lib/tk%%TK_VER%%/listbox.tcl
 lib/tk%%TK_VER%%/menu.tcl
 lib/tk%%TK_VER%%/msgbox.tcl
 lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
+lib/tk%%TK_VER%%/panedwindow.tcl
 lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
@@ -137,6 +151,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 @dirrm lib/tk%%TK_VER%%/demos/images
 @dirrm lib/tk%%TK_VER%%/demos
 @dirrm lib/tk%%TK_VER%%/images
+@dirrm lib/tk%%TK_VER%%/msgs
 @dirrm lib/tk%%TK_VER%%
 @dirrm include/tk%%TK_VER%%/unix
 @dirrm include/tk%%TK_VER%%/generic
