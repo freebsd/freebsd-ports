@@ -6,72 +6,58 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
-		http://cas3.zlin.vutbr.cz/~stehlik/a800/
-DISTNAME=	Atari800-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
+MASTER_SITES=	ftp://ftp.sophics.cz/pub/Atari800/src/ \
+		http://joy.sophics.cz/www/
+DISTFILES=	a800s${PORTVERSION:S/.//g}.zip xf25.zip
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	a800s${PORTVERSION:S/.//g}.zip
 
 MAINTAINER=	ports@FreeBSD.org
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-DIST_SUBDIR=	atari
-EXTRA_FILES=	xf25.zip
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-ALL_TARGET=	freebsd-x11
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 NO_PACKAGE=	${RESTRICTED}
 
-ATARI_DOC=	${PREFIX}/share/doc/atari
-ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
-		demos2.xfd dos25.xfd mydos45d.atr
-ATARI_LIB=	${PREFIX}/share/atari
-SED_CONFIG=	${ATARI_LIB:S/\//\\\//g}
-DOC_FILES=	BUGS CHANGES CREDITS INSTALL README TODO USAGE
+WRKSRC=		${WRKDIR}/Atari800-${PORTVERSION}/src
+USE_ZIP=	yes
+USE_XLIB=	yes
+USE_GMAKE=	yes
+
+.if defined(WITH_SHM)
+ALL_TARGET=	x11-shm
+.else
+ALL_TARGET=	x11
+.endif
 
 MAN1=		atari800.1
 
+ATARI_LIB=	${PREFIX}/share/${PKGBASE}
+ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
+		demos2.xfd dos25.xfd mydos45d.atr
+ATARI_DOC=	${PREFIX}/share/doc/${PKGBASE}
+DOC_FILES=	BUGS CHANGES CREDITS FAQ INSTALL README TODO USAGE
+
 post-extract:
-	@${ECHO_MSG} "===>  Unzipping ROM files"
-	unzip -q -L -o ${_DISTDIR}/${EXTRA_FILES} ${ATARI_XF} -d ${WRKSRC}
-	@${ECHO_MSG} "===>  Processing configuration file"
-	${SED} "s/GUMBY/${SED_CONFIG}/g" < ${FILESDIR}/atari800.cfg \
-		> ${WRKSRC}/atari800.cfg
-
-	@${ECHO_MSG} "===>  Copying config.h to work directory"
-	${CP} ${FILESDIR}/config.h ${WRKSRC}
-
-	@${ECHO_MSG} "===>  Copying UNIX makefile"
-	${CP} ${WRKSRC}/Makefile.unix ${WRKSRC}/Makefile
+	@unzip -q -L -o ${_DISTDIR}/xf25.zip ${ATARI_XF} -d ${WRKSRC}
 
 post-patch:
-	@${ECHO_MSG} "===>  Processing another configuration file"
-	${CP} ${WRKSRC}/rt-config.c ${WRKSRC}/rt-config.c.temp
-	${SED} "s/GUMBY/${SED_CONFIG}/g" <${WRKSRC}/rt-config.c.temp \
-		> ${WRKSRC}/rt-config.c
+	@${LN} -sf Makefile.unix ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/config.h ${WRKSRC}
+	@${TOUCH} ${WRKSRC}/.atari800
+	@${SED} -e 's:GUMBY:${ATARI_LIB}:g' \
+		${FILESDIR}/atari800.cfg > ${WRKSRC}/atari800.cfg
 
-# Install roms, extra docs and config file.
-#
 post-install:
-	@${ECHO_MSG} "===>  Installing files from xf25.zip"
-	-${MKDIR} ${ATARI_LIB}
+	@${MKDIR} ${ATARI_LIB}
+	${INSTALL_DATA} -m 664 ${WRKSRC}/atari800.cfg ${ATARI_LIB}
 .for file in ${ATARI_XF}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${ATARI_LIB}
 .endfor
-
-	@${ECHO_MSG} "===>  Installing configuration file"
-	${INSTALL_DATA} -m 664 ${WRKSRC}/atari800.cfg ${ATARI_LIB}
-
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>  Installing distribution document files"
-	-${MKDIR} ${ATARI_DOC}
+	@${MKDIR} ${ATARI_DOC}
 .for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${ATARI_DOC}
+	${INSTALL_DATA} ${WRKSRC}/../DOC/${file} ${ATARI_DOC}
 .endfor
 	${INSTALL_DATA} ${DESCR} ${ATARI_DOC}/README.FreeBSD
 .endif
