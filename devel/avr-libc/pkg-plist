@@ -51,10 +51,12 @@ avr/include/io8534.h
 avr/include/io8535.h
 avr/include/ioat94k.h
 avr/include/iom103.h
+avr/include/iom128.h
 avr/include/iom161.h
 avr/include/iom163.h
 avr/include/iom32.h
 avr/include/iom603.h
+avr/include/iom8.h
 avr/include/iom83.h
 avr/include/iomacros.h
 avr/include/iotn11.h
@@ -75,6 +77,7 @@ avr/include/timer.h
 avr/include/twi.h
 avr/include/wdt.h
 share/doc/avr-libc/LICENSE
+share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/register-usage.txt
 share/doc/avr-libc/avr-lib.pdf
 share/doc/avr-libc/avr-libc-reference.html
