@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	pchar-1.1
+DISTNAME=	pchar-1.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 
