@@ -28,8 +28,14 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
 		-e "s|gcc|${CC}|g" ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -28,4 +28,10 @@ CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
+.include <bsd.port.post.mk>

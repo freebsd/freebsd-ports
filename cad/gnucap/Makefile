@@ -25,6 +25,12 @@ CFLAGS+=	-DUNIX -DNDEBUG -DNEEDS_IS_INF -DNEEDS_IS_NAN -I..
 
 MAN1=		gnucap-ibis.1 gnucap.1 
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo|true|g' ${WRKSRC}/src/configure
 
@@ -54,4 +60,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

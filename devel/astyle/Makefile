@@ -21,6 +21,12 @@ EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
 
 ALL_TARGET=	astyle
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=         "Does not compile with gcc 3.4.2"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -28,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
