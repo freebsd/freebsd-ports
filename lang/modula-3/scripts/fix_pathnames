@@ -1,6 +1,8 @@
 #! /bin/sh
 #
-# $Id$
+# $Id: fix_pathnames,v 1.1.1.1 1996/03/20 22:10:19 jdp Exp $
+
+umask 022
 
 if [ $# -ne 2 ]; then
     echo "Usage: $0 oldpath newpath" >&2

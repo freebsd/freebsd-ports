@@ -3,10 +3,11 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/20 22:10:18 jdp Exp $
+# $Id: Makefile,v 1.2 1996/03/22 15:46:41 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.5.3
+PKGNAME=	modula-3-3.5.3.1
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Modula-3/release-3.5.3/
 DISTFILES=	boot-FreeBSD2.tar.gz m3cc.tar.gz m3.tar.gz
@@ -14,7 +15,11 @@ DISTFILES=	boot-FreeBSD2.tar.gz m3cc.tar.gz m3.tar.gz
 MAINTAINER=	jdp@polstra.com
 
 NO_WRKSUBDIR=	yes
-EXTRACT_BEFORE_ARGS=	--exclude "*.orig" -xzf
+EXTRACT_BEFORE_ARGS=	--exclude "*.orig" --exclude "*[-~]" -xzf
+
+# Startup script, run an boot time
+startup_dir=	${PREFIX}/etc/rc.d
+startup_script=	${startup_dir}/m3.sh
 
 # The Modula-3 build process insists on installing each individual
 # component immediately after that component is built.  To avoid having
@@ -28,24 +33,36 @@ temp_prefix=	${WRKDIR}/installed
 late_builds=	m3configvars llscan
 
 post-extract:
-	cd ${WRKSRC}/boot-FreeBSD2; ln -sf ../m3cc .
+	@cd ${WRKSRC}/boot-FreeBSD2; ln -sf ../m3cc .
+
+# Make the effects of the patches available to the bootstrap compiler too.
+post-patch:
+	@cd ${WRKSRC}/boot-FreeBSD2/quake/src; \
+	    ln -sf ../../../m3/quake/src/utils.c .
+	@cd ${WRKSRC}/boot-FreeBSD2/m3core/FreeBSD2; \
+	    ln -sf ../../../m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c .
+	@cd ${WRKSRC}/boot-FreeBSD2/m3build/templates; \
+	    ln -sf ../../../m3/m3build/templates/FreeBSD2 .; \
+	    ln -sf ../../../m3/m3build/templates/PLATFORMS .
 
 do-build:
 	@test -d ${temp_prefix} || mkdir -p ${temp_prefix}
 	@echo "Building bootstrap compiler"
-	@cd ${WRKSRC}/boot-FreeBSD2; ./m3boot
+	@cd ${WRKSRC}/boot-FreeBSD2; umask 022; ./m3boot
 	@echo "Shipping bootstrap compiler"
-	@cd ${WRKSRC}/boot-FreeBSD2; ./m3ship
+	@cd ${WRKSRC}/boot-FreeBSD2; umask 022; ./m3ship
 	@echo "Building and shipping the rest of the system"
 	@cd ${WRKSRC}/m3; \
 	    LD_LIBRARY_PATH=${temp_prefix}/lib/m3/FreeBSD2:$$LD_LIBRARY_PATH; \
 	    export LD_LIBRARY_PATH; \
 	    PATH=${temp_prefix}/bin:$$PATH; \
 	    export PATH; \
+	    umask 022; \
 	    m3build
 
 do-install:
-	@test -d ${PREFIX} || mkdir -p ${PREFIX}
+	@echo "Setting owner and group of installed files"
+	@/usr/sbin/chown -R ${BINOWN}.${BINGRP} ${temp_prefix}/*
 	@echo "Copying files to ${PREFIX}"
 	@cp -R -P -p ${temp_prefix}/* ${PREFIX}
 	@echo "Fixing absolute pathnames in installed files"
@@ -56,6 +73,7 @@ do-install:
 	    export LD_LIBRARY_PATH; \
 	    PATH=${PREFIX}/bin:$$PATH; \
 	    export PATH; \
+	    umask 022; \
 	    m3build -T ${PREFIX}/lib/m3/pkg/m3build/templates \
 		-F ${PREFIX}/lib/m3/pkg/m3build/templates/COMMON.BOOT clean; \
 	    m3build -T ${PREFIX}/lib/m3/pkg/m3build/templates \
@@ -69,6 +87,7 @@ do-install:
 	    export LD_LIBRARY_PATH; \
 	    PATH=${PREFIX}/bin:$$PATH; \
 	    export PATH; \
+	    umask 022; \
 	    m3build clean; \
 	    m3build; \
 	    m3ship; \
@@ -84,11 +103,15 @@ do-install:
 	    test ! -f ${PREFIX}/$${i} || gzip -9nf ${PREFIX}/$${i}; \
 	    done
 .endif
-	@echo "Fixing permissions with mtree"
-	@${MTREE_CMD} -e -U -f ${FILESDIR}/mtree.in -p ${PREFIX}
+	@if [ ! -f ${startup_script} ]; then \
+	    echo "Installing ${startup_script} file."; \
+	    test -d ${startup_dir} || mkdir -p ${startup_dir}; \
+	    echo "#!/bin/sh" > ${startup_script}; \
+	    echo "/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2" >> \
+		    ${startup_script}; \
+	    chmod 755 ${startup_script}; \
+	fi
 	@echo "Running ldconfig"
 	@/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2
-	@echo "Be sure to add ${PREFIX}/lib/m3/FreeBSD2 to"
-	@echo "  your ldconfig command in /etc/rc"
 
 .include <bsd.port.mk>
