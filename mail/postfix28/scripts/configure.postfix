@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.19 2002-04-01 18:01:27 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.20 2002-05-06 19:59:29 dwcjr Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -20,7 +20,7 @@ MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
 TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
-IPv6		"IPv6 support (CURRENTLY BROKEN)" OFF \
+IPv6		"IPv6 support (not KAME official)" OFF \
 2> $tempfile
 
 	retval=$?
@@ -55,12 +55,14 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
+			echo "PCRE_SUFFIX=	+pcre"
 			SUB_PCRE=""
 			;;
 		\"SASL\")
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			echo "SASL_SUFFIX=	+sasl"
 			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
 				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
 					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
@@ -79,34 +81,35 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.7-1.1.6-0.9.6c.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.7-1.1.6-0.9.6c/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.7-1.1.7-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.7-1.1.7-0.9.6c/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
+			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
 			;;
 		\"DB3\")
 			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
 			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
+			echo "DB3_SUFFIX=	+db3"
 			;;
 		\"MySQL\")
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql323-client"
 			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			echo "MYSQL_SUFFIX=	+mysql"
 			;;
 		\"OpenLDAP\")
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
+			echo "OPENLDAP_SUFFIX=	+openldap"
 			;;
 		\"Test\")
 			echo "BIN1=		smtp-sink smtp-source"
 			SUB_TEST=""
 			;;
 		\"IPv6\")
-			/usr/bin/dialog --msgbox "IPv6 is currently broken until kame updates patches" 5 60 > /dev/stderr
-			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			exit 1
 			if [ `uname -m` != "i386" ]; then
 				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
@@ -117,10 +120,10 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
-			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
+			echo "PATCH_SITES+=	http://www.cyber-magic.org/~taka/misc/"
+			echo "PATCHFILES+=	postfix-1.1.7+ipv6.patch.gz"
 			echo "PATCH_DIST_STRIP= -p1"
+			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
 			;;
 		*)
@@ -134,3 +137,9 @@ done
 
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
+
+# for some reason, if we alter the pkg name this way, the first build (where
+# we ask the configure questions) doesn't pick up the extensions, but
+# any subsequent build will.  so "make; make install" will build twice.
+# don't do this for now.
+#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB3_SUFFIX}\${MYSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
