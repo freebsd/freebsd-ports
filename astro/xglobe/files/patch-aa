@@ -1,0 +1,60 @@
+--- Makefile.orig	Mon Jul 19 05:56:27 1999
++++ Makefile	Sun May  5 01:53:17 2002
+@@ -4,29 +4,30 @@
+ 
+ ####### Installation directory
+ 
+-XGLOBE_DIR     = /usr/local
+-XGLOBE_LIB_DIR = $(XGLOBE_DIR)/lib/xglobe
++XGLOBE_DIR     = $(PREFIX)
++XGLOBE_LIB_DIR = $(XGLOBE_DIR)/share/xglobe
+ XGLOBE_BIN_DIR = $(XGLOBE_DIR)/bin
+ 
+ ####### Library directories - you may need to modify these
+ 
+-X11_INCLUDE_DIR = /usr/X11R6/include
+-QT_INCLUDE_DIR  = $(QTDIR)/include
++X11_INCLUDE_DIR = $(X11BASE)/include
++QT_INCLUDE_DIR  = $(X11BASE)/include/X11/qt1
+ 
+-QT_LIB_DIR      = $(QTDIR)/lib
+-X11_LIB_DIR     = /usr/X11R6/lib
++QT_LIB_DIR      = $(X11BASE)/lib
++X11_LIB_DIR     = $(X11BASE)/lib
+ 
+ 
+ ####### Compiler and tools
+ 
+-CPP     = g++
+-LINK    = g++
+-MOC     = moc
++CXX    ?= c++
++CPP     = ${CXX} 
++LINK    = ${CXX} 
++MOC     = moc1
+ INSTALL = install
+ 
+ ####### compile and link options
+ 
+-CFLAGS       = $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" $(WITH_QIMGIO) -O2 -Wall
++CFLAGS       += $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" $(WITH_QIMGIO)
+ 
+ LFLAGS       =
+ 
+@@ -34,13 +35,13 @@
+ 
+ LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
+ 
+-LIBS         = -lX11 -lqt -lm
++LIBS         = -lX11 -lqt1 -lm
+ # If you want to use the QImageIO lib (to support jpg and png maps) use the
+ # next two lines and comment the one above
+ #WITH_QIMGIO  = -DWITH_QIMAGEIO
+-#LIBS         = -lX11 -lqt -lm -lqimgio
++#LIBS         = -lX11 -lqt1 -lm -lqimgio
+ # If the linker complains about unresolved references try this:
+-#LIBS         = -lX11 -lqt -lm -lqimgio -lpng -lz -ljpeg
++#LIBS         = -lX11 -lqt1 -lm -lqimgio -lpng -lz -ljpeg
+ 
+ ####### Target
+ 
