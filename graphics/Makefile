@@ -190,6 +190,7 @@
     SUBDIR += libgdgeda
     SUBDIR += libggi
     SUBDIR += libgnomecanvas
+    SUBDIR += libgnomecanvasmm
     SUBDIR += libgphoto2
     SUBDIR += libgrass5
     SUBDIR += libimg
