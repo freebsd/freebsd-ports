@@ -13,7 +13,7 @@ DISTNAME=	pigtk_${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike
+BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes
