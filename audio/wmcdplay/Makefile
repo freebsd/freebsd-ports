@@ -3,12 +3,12 @@
 # Date created:		7 December 1998
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/09 05:44:06 vanilla Exp $
 #
 
 DISTNAME=       wmcdplay-0.8
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.windowmaker.org/pub/contrib/srcs/apps/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
 
 MAINTAINER=	clkao@CirX.ORG
 
