@@ -28,9 +28,7 @@ NO_BUILD=       yes
 
 do-install:
 	${MKDIR} ${PREFIX}/linux-jdk1.2.2
-	(cd ${WRKSRC} && tar -c -f - .) \
+	(cd ${WRKSRC} && tar --exclude "*.orig" -c -f - .) \
 		| (cd ${PREFIX}/linux-jdk1.2.2 && tar fx -)
-	${RM} ${PREFIX}/linux-jdk1.2.2/bin/.java_wrapper.orig
-	${RM} ${PREFIX}/linux-jdk1.2.2/jre/bin/.java_wrapper.orig
 
 .include <bsd.port.mk>
