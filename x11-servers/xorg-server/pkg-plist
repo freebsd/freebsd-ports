@@ -76,6 +76,7 @@ lib/X11/etc/Xinstall.sh
 lib/X11/etc/xmodmap.std
 lib/X11/getconfig/cfg.sample
 lib/X11/getconfig/xorg.cfg
+lib/X11/xorg.conf.eg
 lib/X11/xserver/SecurityPolicy
 %%AMD64_I386%%lib/modules/drivers/apm_drv.o
 %%AMD64_I386%%lib/modules/drivers/ark_drv.o

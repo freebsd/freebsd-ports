@@ -28,6 +28,7 @@ echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF
 if [ X$WITH_DEBUG != X ]; then
 	export CFLAGS="-g $CFLAGS"
 	echo "#define InstPgmFlags"		>> $LOCALDEF
+	echo "#define MakeDllModules YES"	>> $LOCALDEF
 fi
 
 sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen
