@@ -2,43 +2,46 @@
 %%HLDSDIR%%cstrike/as_tundra.wad
 %%HLDSDIR%%cstrike/cached.wad
 %%HLDSDIR%%cstrike/cl_dlls/client.dll
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/ak47.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/arctic.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/aug.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/awp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/deagle.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/defuser.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/elite.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/fiveseven.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/flashbang.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/g3sg1.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/gign.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/glock18.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/gsg9.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/guerilla.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/hegrenade.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/kevlar.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/kevlar_helmet.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/leet.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/m249.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/m3.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/m4a1.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/mac10.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/mp5.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/nightvision.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/p228.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/p90.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/sas.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/scout.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/sg550.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/sg552.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/smokegrenade.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/terror.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/tmp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/ump45.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/urban.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/usp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/classes/xm1014.txt
+%%HLDSDIR%%cstrike/classes/ak47.txt
+%%HLDSDIR%%cstrike/classes/arctic.txt
+%%HLDSDIR%%cstrike/classes/aug.txt
+%%HLDSDIR%%cstrike/classes/autoselect.txt
+%%HLDSDIR%%cstrike/classes/awp.txt
+%%HLDSDIR%%cstrike/classes/deagle.txt
+%%HLDSDIR%%cstrike/classes/defuser.txt
+%%HLDSDIR%%cstrike/classes/elite.txt
+%%HLDSDIR%%cstrike/classes/fiveseven.txt
+%%HLDSDIR%%cstrike/classes/flashbang.txt
+%%HLDSDIR%%cstrike/classes/g3sg1.txt
+%%HLDSDIR%%cstrike/classes/gign.txt
+%%HLDSDIR%%cstrike/classes/glock18.txt
+%%HLDSDIR%%cstrike/classes/gsg9.txt
+%%HLDSDIR%%cstrike/classes/guerilla.txt
+%%HLDSDIR%%cstrike/classes/hegrenade.txt
+%%HLDSDIR%%cstrike/classes/kevlar.txt
+%%HLDSDIR%%cstrike/classes/kevlar_helmet.txt
+%%HLDSDIR%%cstrike/classes/leet.txt
+%%HLDSDIR%%cstrike/classes/m249.txt
+%%HLDSDIR%%cstrike/classes/m3.txt
+%%HLDSDIR%%cstrike/classes/m4a1.txt
+%%HLDSDIR%%cstrike/classes/mac10.txt
+%%HLDSDIR%%cstrike/classes/mp5.txt
+%%HLDSDIR%%cstrike/classes/nightvision.txt
+%%HLDSDIR%%cstrike/classes/p228.txt
+%%HLDSDIR%%cstrike/classes/p90.txt
+%%HLDSDIR%%cstrike/classes/sas.txt
+%%HLDSDIR%%cstrike/classes/scout.txt
+%%HLDSDIR%%cstrike/classes/sg550.txt
+%%HLDSDIR%%cstrike/classes/sg552.txt
+%%HLDSDIR%%cstrike/classes/smokegrenade.txt
+%%HLDSDIR%%cstrike/classes/terror.txt
+%%HLDSDIR%%cstrike/classes/tmp.txt
+%%HLDSDIR%%cstrike/classes/ump45.txt
+%%HLDSDIR%%cstrike/classes/urban.txt
+%%HLDSDIR%%cstrike/classes/usp.txt
+%%HLDSDIR%%cstrike/classes/xm1014.txt
+%%HLDSDIR%%cstrike/commandmenu.txt
+%%HLDSDIR%%cstrike/config.cfg
 %%HLDSDIR%%cstrike/cs_747.wad
 %%HLDSDIR%%cstrike/cs_assault.wad
 %%HLDSDIR%%cstrike/cs_bdog.wad
@@ -46,10 +49,10 @@
 %%HLDSDIR%%cstrike/cs_cbble.wad
 %%HLDSDIR%%cstrike/cs_dust.wad
 %%HLDSDIR%%cstrike/cs_office.wad
-%%HLDSDIR%%cstrike/cs_thunder.wad
 %%HLDSDIR%%cstrike/cstrike.ico
 %%HLDSDIR%%cstrike/cstrike.wad
 %%HLDSDIR%%cstrike/de_aztec.wad
+%%HLDSDIR%%cstrike/de_storm.wad
 %%HLDSDIR%%cstrike/de_vegas.wad
 %%HLDSDIR%%cstrike/decals.wad
 %%HLDSDIR%%cstrike/delta.lst
@@ -59,6 +62,7 @@
 %%HLDSDIR%%cstrike/events/awp.sc
 %%HLDSDIR%%cstrike/events/createsmoke.sc
 %%HLDSDIR%%cstrike/events/deagle.sc
+%%HLDSDIR%%cstrike/events/decal_reset.sc
 %%HLDSDIR%%cstrike/events/elite_left.sc
 %%HLDSDIR%%cstrike/events/elite_right.sc
 %%HLDSDIR%%cstrike/events/fiveseven.sc
@@ -83,8 +87,7 @@
 %%HLDSDIR%%cstrike/itsitaly.wad
 %%HLDSDIR%%cstrike/jos.wad
 %%HLDSDIR%%cstrike/liblist.gam
-%%HLDSDIR%%cstrike/listenserver.cfg
-%%PORTDOCS%%%%HLDSDIR%%cstrike/manual/manual.htm
+%%HLDSDIR%%cstrike/manual/manual.htm
 %%HLDSDIR%%cstrike/mapcycle.txt
 %%HLDSDIR%%cstrike/maps/as_oilrig.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/as_oilrig.txt
@@ -106,8 +109,6 @@
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_office.txt
 %%HLDSDIR%%cstrike/maps/cs_siege.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_siege.txt
-%%HLDSDIR%%cstrike/maps/cs_thunder.bsp
-%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_thunder.txt
 %%HLDSDIR%%cstrike/maps/de_aztec.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_aztec.txt
 %%HLDSDIR%%cstrike/maps/de_cbble.bsp
@@ -122,8 +123,12 @@
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_nuke.txt
 %%HLDSDIR%%cstrike/maps/de_prodigy.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_prodigy.txt
-%%HLDSDIR%%cstrike/maps/de_rotterdam.bsp
-%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_rotterdam.txt
+%%HLDSDIR%%cstrike/maps/de_storm.bsp
+%%HLDSDIR%%cstrike/maps/de_storm.res
+%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_storm.txt
+%%HLDSDIR%%cstrike/maps/de_survivor.bsp
+%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_survivor.txt
+%%HLDSDIR%%cstrike/maps/de_torn.bsp
 %%HLDSDIR%%cstrike/maps/de_train.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_train.txt
 %%HLDSDIR%%cstrike/maps/de_vegas.bsp
@@ -199,6 +204,7 @@
 %%HLDSDIR%%cstrike/models/rshell_big.mdl
 %%HLDSDIR%%cstrike/models/scientist.mdl
 %%HLDSDIR%%cstrike/models/shrapnel.mdl
+%%HLDSDIR%%cstrike/models/skeleton.mdl
 %%HLDSDIR%%cstrike/models/v_ak47.mdl
 %%HLDSDIR%%cstrike/models/v_ak47_r.mdl
 %%HLDSDIR%%cstrike/models/v_aug.mdl
@@ -288,7 +294,10 @@
 %%HLDSDIR%%cstrike/prodigy.wad
 %%PORTDOCS%%%%HLDSDIR%%cstrike/readme.txt
 %%HLDSDIR%%cstrike/server.cfg
-%%HLDSDIR%%cstrike/settings.scr
+%%HLDSDIR%%cstrike/sound/ambience/3dmbridge.wav
+%%HLDSDIR%%cstrike/sound/ambience/3dmeagle.wav
+%%HLDSDIR%%cstrike/sound/ambience/3dmstart.wav
+%%HLDSDIR%%cstrike/sound/ambience/3dmthrill.wav
 %%HLDSDIR%%cstrike/sound/ambience/alarm1.wav
 %%HLDSDIR%%cstrike/sound/ambience/arabmusic.wav
 %%HLDSDIR%%cstrike/sound/ambience/birds1.wav
@@ -341,6 +350,17 @@
 %%HLDSDIR%%cstrike/sound/ambience/waterrun.wav
 %%HLDSDIR%%cstrike/sound/ambience/wolfhowl01.wav
 %%HLDSDIR%%cstrike/sound/ambience/wolfhowl02.wav
+%%HLDSDIR%%cstrike/sound/de_torn/tk_steam.wav
+%%HLDSDIR%%cstrike/sound/de_torn/tk_windStreet.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_AK-47.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_Bomb1.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_Bomb2.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_MGun1.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_Templewind.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_ambience.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_thndrstrike.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_water1.wav
+%%HLDSDIR%%cstrike/sound/de_torn/torn_water2.wav
 %%HLDSDIR%%cstrike/sound/hostage/hos1.wav
 %%HLDSDIR%%cstrike/sound/hostage/hos2.wav
 %%HLDSDIR%%cstrike/sound/hostage/hos3.wav
@@ -489,6 +509,7 @@
 %%HLDSDIR%%cstrike/sound/radio/terwin.wav
 %%HLDSDIR%%cstrike/sound/radio/vip.wav
 %%HLDSDIR%%cstrike/sound/sentences.txt
+%%HLDSDIR%%cstrike/sound/storm/thunder-theme.wav
 %%HLDSDIR%%cstrike/sound/weapons/ak47-1.wav
 %%HLDSDIR%%cstrike/sound/weapons/ak47-2.wav
 %%HLDSDIR%%cstrike/sound/weapons/ak47_boltpull.wav
@@ -649,6 +670,8 @@
 %%HLDSDIR%%cstrike/sprites/320hud1.spr
 %%HLDSDIR%%cstrike/sprites/320hud2.spr
 %%HLDSDIR%%cstrike/sprites/320hud3.spr
+%%HLDSDIR%%cstrike/sprites/3dmflaora.spr
+%%HLDSDIR%%cstrike/sprites/3dmflared.spr
 %%HLDSDIR%%cstrike/sprites/640hud1.spr
 %%HLDSDIR%%cstrike/sprites/640hud10.spr
 %%HLDSDIR%%cstrike/sprites/640hud11.spr
@@ -688,6 +711,11 @@
 %%HLDSDIR%%cstrike/sprites/fexplo1.spr
 %%HLDSDIR%%cstrike/sprites/horizontal.spr
 %%HLDSDIR%%cstrike/sprites/hud.txt
+%%HLDSDIR%%cstrike/sprites/ibackpack.spr
+%%HLDSDIR%%cstrike/sprites/ic4.spr
+%%HLDSDIR%%cstrike/sprites/ihostage.spr
+%%HLDSDIR%%cstrike/sprites/iplayerc4.spr
+%%HLDSDIR%%cstrike/sprites/iplayervip.spr
 %%HLDSDIR%%cstrike/sprites/ledglow.spr
 %%HLDSDIR%%cstrike/sprites/left.spr
 %%HLDSDIR%%cstrike/sprites/left2.spr
@@ -710,6 +738,7 @@
 %%HLDSDIR%%cstrike/sprites/right3.spr
 %%HLDSDIR%%cstrike/sprites/smokepuff.spr
 %%HLDSDIR%%cstrike/sprites/sniper_scope.spr
+%%HLDSDIR%%cstrike/sprites/snow.spr
 %%HLDSDIR%%cstrike/sprites/top.spr
 %%HLDSDIR%%cstrike/sprites/top2.spr
 %%HLDSDIR%%cstrike/sprites/top3.spr
@@ -724,43 +753,47 @@
 %%HLDSDIR%%cstrike/sprites/wall_puff2.spr
 %%HLDSDIR%%cstrike/sprites/wall_puff3.spr
 %%HLDSDIR%%cstrike/sprites/wall_puff4.spr
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_ak47.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_aug.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_awp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_c4.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_deagle.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_elite.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_fiveseven.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_flashbang.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_g3sg1.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_glock18.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_hegrenade.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_knife.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_m249.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_m3.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_m4a1.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_mac10.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_mp5navy.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_p228.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_p90.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_scout.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_sg550.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_sg552.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_shield.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_smokegrenade.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_tmp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_ump45.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_usp.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/sprites/weapon_xm1014.txt
-%%PORTDOCS%%%%HLDSDIR%%cstrike/tswad.wad
+%%HLDSDIR%%cstrike/sprites/weapon_ak47.txt
+%%HLDSDIR%%cstrike/sprites/weapon_aug.txt
+%%HLDSDIR%%cstrike/sprites/weapon_awp.txt
+%%HLDSDIR%%cstrike/sprites/weapon_c4.txt
+%%HLDSDIR%%cstrike/sprites/weapon_deagle.txt
+%%HLDSDIR%%cstrike/sprites/weapon_elite.txt
+%%HLDSDIR%%cstrike/sprites/weapon_fiveseven.txt
+%%HLDSDIR%%cstrike/sprites/weapon_flashbang.txt
+%%HLDSDIR%%cstrike/sprites/weapon_g3sg1.txt
+%%HLDSDIR%%cstrike/sprites/weapon_glock18.txt
+%%HLDSDIR%%cstrike/sprites/weapon_hegrenade.txt
+%%HLDSDIR%%cstrike/sprites/weapon_knife.txt
+%%HLDSDIR%%cstrike/sprites/weapon_m249.txt
+%%HLDSDIR%%cstrike/sprites/weapon_m3.txt
+%%HLDSDIR%%cstrike/sprites/weapon_m4a1.txt
+%%HLDSDIR%%cstrike/sprites/weapon_mac10.txt
+%%HLDSDIR%%cstrike/sprites/weapon_mp5navy.txt
+%%HLDSDIR%%cstrike/sprites/weapon_p228.txt
+%%HLDSDIR%%cstrike/sprites/weapon_p90.txt
+%%HLDSDIR%%cstrike/sprites/weapon_scout.txt
+%%HLDSDIR%%cstrike/sprites/weapon_sg550.txt
+%%HLDSDIR%%cstrike/sprites/weapon_sg552.txt
+%%HLDSDIR%%cstrike/sprites/weapon_shield.txt
+%%HLDSDIR%%cstrike/sprites/weapon_smokegrenade.txt
+%%HLDSDIR%%cstrike/sprites/weapon_tmp.txt
+%%HLDSDIR%%cstrike/sprites/weapon_ump45.txt
+%%HLDSDIR%%cstrike/sprites/weapon_usp.txt
+%%HLDSDIR%%cstrike/sprites/weapon_xm1014.txt
+%%HLDSDIR%%cstrike/titles.txt
+%%HLDSDIR%%cstrike/torntextures.wad
+%%HLDSDIR%%cstrike/tswad.wad
 @dirrm %%HLDSDIR%%cstrike/sprites
 @dirrm %%HLDSDIR%%cstrike/sound/weapons
+@dirrm %%HLDSDIR%%cstrike/sound/storm
 @dirrm %%HLDSDIR%%cstrike/sound/radio
 @dirrm %%HLDSDIR%%cstrike/sound/player
 @dirrm %%HLDSDIR%%cstrike/sound/plats
 @dirrm %%HLDSDIR%%cstrike/sound/misc
 @dirrm %%HLDSDIR%%cstrike/sound/items
 @dirrm %%HLDSDIR%%cstrike/sound/hostage
+@dirrm %%HLDSDIR%%cstrike/sound/de_torn
 @dirrm %%HLDSDIR%%cstrike/sound/ambience
 @dirrm %%HLDSDIR%%cstrike/sound
 @dirrm %%HLDSDIR%%cstrike/models/player/vip
@@ -776,10 +809,10 @@
 @dirrm %%HLDSDIR%%cstrike/models
 @dirrm %%HLDSDIR%%cstrike/media
 @dirrm %%HLDSDIR%%cstrike/maps
-%%PORTDOCS%%@dirrm %%HLDSDIR%%cstrike/manual
+@dirrm %%HLDSDIR%%cstrike/manual
 @dirrm %%HLDSDIR%%cstrike/events
 @dirrm %%HLDSDIR%%cstrike/dlls
-%%PORTDOCS%%@dirrm %%HLDSDIR%%cstrike/classes
+@dirrm %%HLDSDIR%%cstrike/classes
 @dirrm %%HLDSDIR%%cstrike/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%cstrike/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%cstrike/logs 2>/dev/null || true
