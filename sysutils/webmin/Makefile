@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
