@@ -1,29 +1,12 @@
---- configure.orig	Mon May 26 22:56:09 2003
-+++ configure	Tue May 27 17:55:59 2003
-@@ -1712,8 +1712,6 @@
- 
- # Checks for programs.
- # hopefully this prevents -O2
--CXXFLAGS="-g -rdynamic"
--CFLAGS="-g -rdynamic"
- ac_ext=cc
- ac_cpp='$CXXCPP $CPPFLAGS'
- ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -7149,7 +7147,7 @@
+--- configure.orig	Tue Sep  9 00:47:46 2003
++++ configure	Tue Sep  9 00:46:14 2003
+@@ -7540,7 +7540,8 @@
  
    echo "$as_me:$LINENO: checking if wxWindows was linked with GTK2" >&5
  echo $ECHO_N "checking if wxWindows was linked with GTK2... $ECHO_C" >&6
 -  if $WX_CONFIG_NAME --cppflags | grep -q 'gtk2' ; then
++#if $WX_CONFIG_NAME --cppflags | grep -q 'gtk2' ; then
 +  if $WX_CONFIG_NAME --static --libs | grep -q 'glib-2' ; then
       GTK_USEDVERSION=2
       echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
-@@ -7161,7 +7159,7 @@
- 
- 
- 
--if test x$GTK_USEDVERSION == x2 ; then
-+if test x$GTK_USEDVERSION = x2 ; then
-   # Check whether --enable-gtktest or --disable-gtktest was given.
- if test "${enable_gtktest+set}" = set; then
-   enableval="$enable_gtktest"

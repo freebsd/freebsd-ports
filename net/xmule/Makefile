@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -48,6 +47,14 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|||' \
 		${WRKSRC}/src/MD5Sum.cpp
+# do not install a generic named ed2k binary 
+	@${REINPLACE_CMD} -E \
+		-e 's|^(bin_PROGRAMS.+)ed2k|\1|' \
+		${WRKSRC}/src/Makefile.in
+# update documentation regarding aforementioned change
+	@${REINPLACE_CMD} -E \
+		-e 's|/usr/local/bin/ed2k|${PREFIX}/bin/${PORTNAME}-ed2k-handler|' \
+		${WRKSRC}/ED2K-Links.HOWTO
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
@@ -55,8 +62,16 @@ pre-configure:
 		${REINPLACE_CMD} -E \
 		-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
 
+post-build:
+# build the generic named ed2k binary
+# it will installed in an adhoc fashion
+	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ed2k
+
 post-install:
-	@${CAT} ${PKGMESSAGE}
+# do not install a generic named ed2k binary
+# install it under a more specific name
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/ed2k \
+		${PREFIX}/bin/${PORTNAME}-ed2k-handler
 
 .include <bsd.port.pre.mk>
 
