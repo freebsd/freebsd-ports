@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.2.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rubyforge.org/download.php/9/
+MASTER_SITES=	http://rubyforge.org/download.php/35/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	RMagick-${PORTVERSION:R}
+DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-PATCH_SITES=	http://rubyforge.org/download.php/10/
-PATCHFILES=	RMagick-${PORTVERSION}.patch
+#PATCH_SITES=	http://rubyforge.org/download.php/10/
+#PATCHFILES=	RMagick-${PORTVERSION}.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org

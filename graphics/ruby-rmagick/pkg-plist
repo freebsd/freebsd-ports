@@ -1,8 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/RMagick.so
 %%RUBY_SITELIBDIR%%/RMagick.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/.rmagick
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Adispatch.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Adispatch.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Zconstitute.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/adaptive_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/add_noise.rb.html
@@ -51,6 +52,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/emboss.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/enhance.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/equalize.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/.examples
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/Adispatch.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/Zconstitute.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/adaptive_threshold.jpg
@@ -164,6 +167,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/gravity.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/hatchfill.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/hatchfill.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/Ballerina.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/Balloon_Girl.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/Blonde_with_dog.jpg
@@ -275,7 +279,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/pattern1.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/pattern2.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/pattern2.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/pixels.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/pixels-array
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polygon.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polygon.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polyline.gif
@@ -286,6 +290,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_channel_threshold.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_channel_threshold.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rectangle.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rectangle.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/reduce_noise.jpg
@@ -414,6 +420,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/qbezierpath.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/quantize-m.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/raise.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/random_channel_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rectangle.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/reduce_noise.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/roll.rb.html
@@ -458,7 +465,9 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ex/images
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ex
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/describe.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/image_opacity.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/import_export.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pattern_fill.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rotating_text.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
