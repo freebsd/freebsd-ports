@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.262 1999/05/11 01:24:57 flathill Exp $
+# $Id: Makefile,v 1.263 1999/05/27 11:18:36 asami Exp $
 #
 
     SUBDIR += IglooFTP
@@ -69,7 +69,7 @@
     SUBDIR += gicq
     SUBDIR += greed
     SUBDIR += gtksamba
-    SUBDIR += gwget
+    SUBDIR += gtm
     SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += icb
