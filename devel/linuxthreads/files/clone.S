@@ -3,7 +3,9 @@
 #include "DEFS.h"
 #include "SYS.h"
 #define KERNEL
+#define _KERNEL
 #include <sys/errno.h>
+#undef _KERNEL
 #undef KERNEL
 
 #undef DEBUG
