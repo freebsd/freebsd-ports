@@ -1,0 +1,125 @@
+Network Monitoring Dealer http://soft.risp.ru/netmond/
+------------------------------------------------------
+
+Netmond is an essential and flexible tool for network administrators.
+Netmond is a daemon providing an interface between low level network
+stack and a GUI monitoring program or a database.
+
+Netmond accumulates network neighborhood data, periodicaly polling network 
+objects by several methods and collecting SNMP traps. Gathered information
+is parsed so that client programs can comfortably request it via unified
+interface.
+
+Netmond can be used as primary data source and as a notification subsystem
+in a network monitoring framework.
+
+Netmond have a modular architecture. Modules work indepependently but use
+common task scheduler, session multiplexor, topology correlator, variables
+pool and output channels. The unique asynchronous polling algorithm
+does not limit a number of simultaneously controlled objects.
+
+Collected data can be saved by variuos methods periodically or conditionally.
+Also, a client program can request the data dynamically via network.
+
+Netmond considers the network as a collection of objects. All objects to be
+monitored have to be described preliminary in a configuration file. Objects
+polling works in parallel, not sequentially, like in other systems. Polling
+requests are distributed over the poll interval as optimally as possible.
+While executing, Netmond can dynamically determine topological dependences 
+of objects and interfaces and correct polling modes or even block polling for
+subordinate objects.
+
+The Netmond deal the with following object types:
+
+* OBJECT - primary monitoring target, an object with IP address;
+* INTERFACE - network interface, subobject of OBJECT;
+* BGPAS - autonomous system number, subobject of OBJECT;
+* BGPPEER - BGP peer for autonomous system, subobject of BGPAS;
+* ENVTEMP - environment temperature (Cisco only), subobject of OBJECT;
+* SERVICE - arbitrary network service, subobject of OBJECT;
+
+For any OBJECT type instance operator can define:
+
+* METHOD - list of polling methods;
+* TRAP - list of traps methods;
+* POLLING - polling interval (the time between METHOD calls);
+* VARIABLE - list of variables, optional;
+* SAVE - list of data saving methods, optional;
+* SAVING - data saving interval (the time between SAVE methods calls);
+* INTERFACE - list of network interfaces, optional;
+* BGPAS - list of autonomous systems, optional;
+* ENVTEMP - list of thermal sensors, optional;
+* SERVICE - list of arbitrary services, optional;
+
+If BGPPEER list is not defined for a BGPAS instance, Netmond builds
+this list automatically.
+
+The state of OBJECT is a result of execution of all associated methods from
+METHOD and/or TRAP lists. Methods are evaluated sequentially until the first
+error. The order of execution is defined by operator.
+
+VARIABLE values and state of subobjects INTERFACE, BGPPEER, ENVTEMP and SERVICE
+are also evaluated during execution of METHODs and TRAPs. All subobjects have
+their own SAVE list.
+
+Inside a METHOD definition the following protocols can be used:
+
+* PING - ICMP echo õ IP with Route Record option for topology discovery;
+* SNMP - simple SNMP v1 request for specified VARIABLE OID;
+* ROUTER - multiple SNMP v1 requests, indexing of certain tables,
+           extracting internal VARIABLEs values;
+* TCP - simple TCP session with text chat capabilities, extracting
+        VARIABLEs values from answers;
+* UDP - simple UDP sequence with arbitrary chat, extracting
+        VARIABLEs values from answers;
+* DNS - DNS service check;
+* RADIUS - RADIUS service check;
+* TACACS - TACACS+ service check;
+
+TRAP collector expects SNMP v1 traps, with BGP Enterprise (RFC1657),
+Cisco Private Enterprise or an arbitrary Enterprise defined by operator.
+
+The protocols are implemented as separate independent modules. New modules
+could be added in the future.
+
+A VARIABLE instance is reffered to by an unique alphanumeric name. The name
+can be used in the configuration file and for dynamic data request
+via NetState service. Typically, the list and the names of VARIABLEs are
+defined by operator. Several predefined VARIABLEs exist for some METHODs.
+
+A VARIABLE can be of any of the following types:
+
+* integer
+* float
+* IP address
+* string
+* SNMP OID
+
+The actual variable type is automatically determined on value assignment.
+During Netmond execution the number of associated values for every
+VARIABLE is maintained - the current value, previous value as well as
+minimal, maximal, average and delta during the SAVING time interval,
+if applicable.
+
+Netmod provides three SAVE methods to output VARIABLE values:
+
+* writing to a file;
+* pushing to a pipe;
+* passing as an argument for external program.
+
+SAVE methods are evaluated -
+
+* periodically, with SAVING interval
+* on change of VARIABLE value;
+* by condition - when a logical or expression with VARIABLE value become TRUE
+
+NetState service is an independent module of Netmond providing asynchronous
+network access to current VARIABLE values for client programs. The whole
+variables pool is presented as a hierarchy of variables and their owners in
+format: "object!subobject!variable = value". The request could contain an
+optional regular expression to filter the required output. This feature was
+introduced for flexible dynamic data transmission to operator's GUI.
+
+Please, address all questions, proposals and complains regarding Netmond to
+netmon@service.risp.ru mail list. To subscribe send a message with body text
+'subscribe netmon' to majordomo@service.risp.ru.

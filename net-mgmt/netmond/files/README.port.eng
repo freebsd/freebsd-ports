@@ -1,0 +1,130 @@
+
+     	    netmond-2.2-b6-port
+
+This document describe additions & changes relatively original 
+netmon-2.2-b6  source code.
+
+##################################################################
+
+SrcAddress patch
+
+##################################################################
+
+Sometimes you need explisitly set source IP address for packets 
+ejected to some host from multihoming (or multialiasing) host. 
+
+For example:
+
+- you need to check host accessability via predefined route, not 
+   matching default route for this host.
+
+- remote host can have "strange" configured packet filters so only 
+   specific IP addresses accepted.
+
+- traffic priority settings exits somethere on trace to host.
+   This may impact network managenment traffic while 
+   some channels overloaded.  
+    
+Added directive "SrcAddress" in global context and in object contest.
+
+In global context this directive explisitly set source IP address for all 
+objects when source IP not defined inside this object definition.
+If no directive specified, default source address 0.0.0.0 assigned.
+
+Inside object definition this directive set source IP address for this 
+object only. All IP packets ejected to this host have this source address.
+
+When nowhere directive specified, the programm behave like before
+patch applying.
+
+Example:
+
+    SrcAddress "192.168.2.1"
+
+    Object "somehost" {
+	Address "192.168.1.2"
+	SrcAddress "192.168.1.1"
+	....................
+    }
+
+Flaws:
+  No preliminary IP address validity check applied. So until first packet processed
+you can't to know IP address mistaken.
+  NetState server can't report source IP addresses for objects.
+
+##################################################################
+
+UID-GID-ChRoot Patch
+
+##################################################################
+For save methods PIPE or FILE in some cases need to fork daugther process.
+Usally, "netmond" working under "root" privrleges, so daugther processes
+will have "root" privrleges too. This is unsecure. 
+
+Directives "UserName" "GroupName" "ChrootDir" added in global context. 
+When used this directives, before daugther process launching
+(after 'fork' but before 'exec') "chroot" syscall performed for specified 
+directory ( if no direcive - no "chroot") and process GID, UID changes.
+
+By default, no chroot performed, UserName = netmon, GroupName = netmon.
+
+Example:
+
+    UserName   "nobody"
+    GroupName  "nogroup"
+    ChRootDir  "/var/netmon"
+
+However you can set UserName=root GroupName=wheel if needed.
+
+##################################################################
+
+NetState BindAddress Patch
+
+##################################################################
+Sometimes you need explicitly set IP address to bind for NetState 
+server.
+
+Directive "BindAddress" added in "Port" context.
+
+Example:
+
+    Port 3333 {
+	    BindAddress	"192.168.1.1"
+	    ............
+    }
+Or:    
+
+NetState {
+    Port 3333
+    BindAddress "192.168.1.1"
+}
+
+By default, NetState expect incoming TCP connection on all local 
+addresses. 
+
+##################################################################
+
+Trap Patch
+
+##################################################################
+Sometimes you need explicitly set IP Address to accept incoming SNMP 
+traps on.
+
+
+Direcive "TrapBindAddress" added in global context.
+
+Example:  
+    TrapBindAddress	"192.168.1.1"
+
+By default, trap collector expect incoming SNMP traps on all local 
+addresses. 
+
+
+##################################################################
+
+PID-file all the time is written to /var/run/netmond.pid
+
+##################################################################
+
+Possibility added to use russian letters in NetState requests and
+regular expressions.

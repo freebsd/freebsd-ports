@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+PKGNAME=$1
+DATADIR=/var/netmon
+#
+case $2 in
+    PRE-INSTALL)
+	if pw user show netmon 2>/dev/null ; then 
+	    echo "User 'netmon' exists." ; 
+	else 
+	    pw useradd -n netmon -g wheel -c 'Network monitor account' -m ;
+	fi
+	if pw group show netmon 2>/dev/null ; then 
+	    echo "Group 'netmon' exists." ;  
+	else 
+	    pw groupadd netmon -M root,netmon ; 
+	fi
+	if [ ! -d ${DATADIR} ] ; then
+	    mkdir ${DATADIR}
+	    chown root:netmon ${DATADIR}
+	    chmod 750 ${DATADIR}
+	fi 
+	;;
+    POST-INSTALL)
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0

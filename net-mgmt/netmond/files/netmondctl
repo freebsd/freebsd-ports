@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# The exit codes returned are:
+#	0 - operation completed successfully
+#	1 - some error
+#	2 - usage error
+# 
+#
+# the path to your NETMOND binary, including options if necessary
+NETMOND=/usr/local/sbin/netmond
+PIDFILE=/var/run/netmond.pid
+#
+# config file  (default is "/usr/local/etc/netmon.conf")
+#
+TTT=X$2
+if [ $TTT = "X" ]
+then
+    CONFIG=""
+else
+    CONFIG="-c $2"
+    CFILE=$2
+fi
+
+
+ERROR=0
+
+case $1 in
+start)
+	if [ -r $PIDFILE ] ; then		    
+	    PID=`cat $PIDFILE`	    
+	    if kill -0 $PID ;then 
+    		echo "$0 $1: netmond (pid $PID) already running."
+		exit 0;
+	    fi
+	fi
+	if $NETMOND -C $CONFIG >/dev/null 2>&1 ;  then	    
+	    if $NETMOND $CONFIG ; then
+		echo "$0 $1: netmond started"
+	    else
+		echo "$0 $1: netmond could not be started"
+		ERROR=1
+	    fi
+        else
+		echo "$0 $1: configuration broken, ignoring start"
+		echo "$0 $1: (run 'netmond -C' for details)"
+		ERROR=1
+	fi	
+	;;
+stop)
+	if [ ! -r  $PIDFILE ] ; then
+	    exit 0
+	fi
+	PID=`cat $PIDFILE`
+	if kill $PID ; then
+	    echo "$0 $1: netmond stopped"
+	else
+	    echo "$0 $1: netmond could not be stopped"
+	    ERROR=1
+	fi
+	;;
+restart)
+	if [ ! -r $PIDFILE ]  ; then
+	    echo "$0 $1: netmond not running, trying to start"
+	    if $NETMOND $CONFIG ; then
+		echo "$0 $ARG: netmond started"
+	    else
+		echo "$0 $ARG: netmond could not be started"
+		ERROR=1
+	    fi
+	else
+	    PID=`cat $PIDFILE`
+	    if $NETMOND -C $CONFIG >/dev/null 2>&1 ; then
+		if kill -HUP $PID ; then
+		    echo "$0 $1: netmond restarted"
+		else
+		    echo "$0 $1: netmond could not be restarted"
+		    ERROR=1
+		fi
+	    else
+		echo "$0 $1: configuration broken, ignoring restart"
+		echo "$0 $1: (run 'netmond -C' for details)"
+		ERROR=1
+	    fi
+	fi
+	;;
+    *)
+	echo "usage: $0 start|stop|restart"
+	cat <<EOF
+
+start      - start netmond (or do nothing if running)
+stop       - stop netmond
+restart    - restart netmond if running by sending a SIGHUP or start if 
+             not running
+
+
+EOF
+	ERROR=
+    ;;
+esac
+
+exit $ERROR
+

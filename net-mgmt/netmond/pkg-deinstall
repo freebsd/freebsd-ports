@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+PKGNAME=$1
+#
+case $2 in
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	echo ""
+	echo "If you wish to remove this port from your computer complete,"
+	echo "remove user 'netmon' and group 'netmon' manually."
+	echo ""
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0

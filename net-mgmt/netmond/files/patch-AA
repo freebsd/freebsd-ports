@@ -1,0 +1,1133 @@
+--- dns.c.orig	Mon Aug 25 18:19:04 2003
++++ dns.c	Tue Sep 16 23:43:05 2003
+@@ -149,6 +149,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int reqid;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -161,6 +163,14 @@
+ 		return;
+ 	}
+ 
++	/* bind  socket to local source address */
++
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		report(LOG_WARNING, "dns_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}
+ 	/* turn on non-blocking I/O */
+ 	if (set_socket_async(sd->sock, TRUE) < 0) {
+ 		dns_reply(errno, sd, 0);
+@@ -288,7 +298,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("dns_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -303,6 +313,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = dns_send;
+--- netmon.h.orig	Tue Aug 26 10:00:38 2003
++++ netmon.h	Wed Sep 17 00:39:11 2003
+@@ -14,6 +14,9 @@
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ #include <netinet/in.h>
++#include <pwd.h>
++#include <grp.h>
++#include <time.h>
+ #ifdef	DEBUG_MEMORY
+ #include <assert.h>
+ #endif
+@@ -77,7 +80,10 @@
+ #endif
+ 
+ #define	NETMON			"netmon"
+-#define	DEFAULT_CONFIG		"/etc/netmon.conf"
++#define	DEFAULT_CONFIG		"/usr/local/etc/netmon.conf"
++#define USERNAME		"netmon"
++#define GROUPNAME		"netmon"
++#define PIDFILE_PATH		"/var/run"
+ #define	DEFAULT_WATCHDOG	600	/* 10 min */
+ 
+ #define	POLLING_MIN		30	/* 30 sec */
+@@ -385,6 +391,7 @@
+ 	struct method_ent *method;	/* session method */
+ 	int sock;		/* socket file descriptor */
+ 	struct sockaddr peer;	/* address of peer */
++	struct sockaddr me;	/* my source address  */
+ 	long timeout;		/* number of microseconds until first timeout */
+ 	int retries;		/* number of retries before timeout */
+ 	int (*connect) __P((struct session_ent *));
+@@ -530,7 +537,9 @@
+ 	char *descr;		/* object description */
+ 	char *datadir;		/* directory where store data */
+ 	char *address;		/* domain name or dotted IP address */
++	char *srcaddress;	/* domain name or dotted source IP address */
+ 	struct in_addr ip_addr;	/* ip address of peer */
++	struct in_addr ip_srcaddr; /* source ip address */
+ 	int polling;		/* polling period in seconds */
+ 	int saving;		/* saving period in seconds */
+ 	int sync;		/* polling counter to synchronize saving */
+@@ -574,7 +583,14 @@
+ 
+ typedef	struct config_ent {
+ 	char *rootdir;		/* default work directory */
++	char *chrootdir;	/* chroot directory for EXEC children */
++	char *username;		/* username for EXEC children */	
++	uid_t	uid;		/* UID for EXEC children */	
++	char *groupname;	/* groupname for EXEC children */	
++	gid_t	gid;		/* GID for EXEC children */	
+ 	char *timefmt;		/* strftime format of currtime for logging */
++	char *srcaddress;	/* my default source domain name or dotted IP address */
++	struct in_addr ip_srcaddr; /* my default sorce ip address  */
+ 	int polling;		/* default polling interval in seconds */
+ 	int saving;		/* default saving interval in seconds */
+ 	int timeout;		/* default timeout in seconds */
+@@ -582,9 +598,13 @@
+ 
+ 	int enable_traps;	/* enable SNMP traps */
+ 	int source_traps;	/* match src-addr and agent-addr of traps */
++	char *trap_address;	/* Trap bind address */
++	struct in_addr trap_ip_addr;	/*  */	
+ 
+ 	/* netstate server */
+ 	int ns_port;		/* server port number */
++	char *ns_address;	/* NetState bind address */
++	struct in_addr ns_ip_addr;	/*  */	
+ 	int ns_timo;		/* client timeout in seconds */
+ 	GROUP_REF *ns_acl;	/* netstate client access list */
+ 
+--- netmond.c.orig	Fri Aug 22 15:49:23 2003
++++ netmond.c	Tue Sep 16 23:43:05 2003
+@@ -79,7 +79,6 @@
+ static int reconfig_pending;
+ static int watchdog_timeout;
+ static int watchdog_pending;
+-
+ static struct sighandler_ent {
+ 	int sig;
+ 	int flags;
+@@ -254,8 +253,7 @@
+ 	/*
+ 	 * Make pid file.
+ 	 */
+-	(void)strcpy(buf, program_name);
+-	(void)strcat(buf, ".pid");
++	snprintf(buf, sizeof(buf), "%s/%s.pid", PIDFILE_PATH, program_name);
+ 	if ((fp = fopen(buf, "w")) != NULL) {
+ 		fprintf(fp, "%d\n", (int)mypid);
+ 		fclose(fp);
+@@ -831,6 +829,20 @@
+ 		/* make session leader to be able killpg() latter */
+ 		setsid();
+ 
++		if ( cf->chrootdir) {
++		    if ( chroot( cf->chrootdir ) < 0 ) {
++			report(LOG_ERR, "chroot %s: %s", cf->chrootdir,strerror(*(__error())) );
++			_exit(127);
++		    }
++		}
++		if ( setgid(cf->gid) < 0 ) {
++		    report(LOG_ERR, "setgid %s[%d]: %s", cf->groupname, cf->gid, strerror(*(__error())) );
++		    _exit(127);
++		}			
++		if ( (cf->uid != 0) & (setuid(cf->uid) < 0) ) {
++		    report(LOG_ERR, "setuid %s[%d]: %s", cf->username, cf->uid, strerror(*(__error())) );
++		    _exit(127);
++		}		
+ 		execve(file, av, environ);
+ 		report(LOG_ERR, "execve %s: %m", file);
+ 		_exit(127);
+@@ -928,8 +940,7 @@
+ #endif
+ 	{
+ 		char pidfile[100];
+-		(void)strcpy(pidfile, program_name);
+-		(void)strcat(pidfile, ".pid");
++		snprintf(pidfile, sizeof(pidfile), "%s/%s.pid", PIDFILE_PATH, program_name);
+ 		(void)unlink(pidfile);
+ 		report(LOG_CRIT, "aborted by signal %d", sig);
+ 	} else	report(LOG_INFO, "interrupted by signal %d", sig);
+--- netstate.c.orig	Tue Aug 26 10:54:09 2003
++++ netstate.c	Thu Sep 25 15:21:39 2003
+@@ -128,7 +128,7 @@
+ 		memset(&sin, 0, sizeof(sin));
+ 		sin.sin_family = AF_INET;
+ 		sin.sin_port = htons(cf->ns_port);
+-		sin.sin_addr.s_addr = INADDR_ANY;
++		sin.sin_addr = cf->ns_ip_addr;
+ 		if (bind(netstate_sock, (struct sockaddr *)&sin, sizeof(sin)) < 0) {
+ 			report(LOG_ERR, "bind port %d: %m", ntohs(sin.sin_port));
+ 			close(netstate_sock);
+@@ -405,6 +405,14 @@
+ 	_exit(1);
+ }
+ #endif
++int 
++iskoi8(unsigned char ch)
++{
++    if ( ch == 163 ) return 1;
++    if ( ch == 179 ) return 1;
++    if ( ch >= 192 ) return 1;
++    return 0;    
++}
+ 
+ void *
+ netstate_serve(arg)
+@@ -505,9 +513,9 @@
+ 			set_timer(0, interrupt);
+ #endif
+ 		if (!cp) break;
+-		while (isprint(*cp)) cp++;
++		while ( iskoi8(*cp) || isprint(*cp) ) cp++;
+ 		*cp = '\0';
+-
++	    
+ 		next = input;
+ 		if ((cp = my_strsep(&next, " ")) == NULL) {
+ 			bad_input++;
+--- parseconf.y.orig	Tue Aug 26 10:53:30 2003
++++ parseconf.y	Wed Sep 17 00:22:40 2003
+@@ -197,11 +197,36 @@
+ 	BGP_AS *bgp;
+ 	ENV_MON *env;
+ 	char *cp, buf[1024];
++	struct	passwd *pwentry;
++	struct	group  *grentry;
+ 
+ 	if (!config.rootdir) {
+ 		report(LOG_ERR, "%s: rootdir unspecified", config_file);
+ 		return NULL;
+ 	}
++	if (!config.srcaddress)
++    		bzero(&config.ip_srcaddr, sizeof(struct in_addr));
++	if (!config.ns_address)
++    		bzero(&config.ns_ip_addr, sizeof(struct in_addr));
++	if (!config.trap_address)
++    		bzero(&config.trap_ip_addr, sizeof(struct in_addr));
++		
++	if(!config.username) {
++	    config.username = strdup(USERNAME);
++	    if ((pwentry = getpwnam(USERNAME)) == (struct passwd *) NULL) {
++		report(LOG_ERR, "Bad default username: %s.",config.username);
++		return NULL;
++	    }
++	    config.uid = pwentry->pw_uid;
++	}
++	if(!config.groupname) {
++	    config.groupname = strdup(GROUPNAME);
++	    if ((grentry = getgrnam(GROUPNAME)) == (struct group *) NULL) {
++		report(LOG_ERR, "Bad default groupname: %s.",config.groupname);
++		return NULL;
++	    }
++	    config.gid = (gid_t)grentry->gr_gid;
++	}
+ 	if (config.polling) {
+ 		if (!config.timeout)
+ 			config.timeout = TIMEOUT_DEFAULT;
+@@ -273,6 +298,7 @@
+ 
+ 		for (service = target->service; service; service = service->next) {
+ 			service->ip_addr = target->ip_addr;
++			service->ip_srcaddr = target->ip_srcaddr;
+ 			service->parent = target;
+ 
+ 			(void)strcpy(cp, "/");
+@@ -1342,6 +1368,9 @@
+ 
+ /* Lexical analyzer return values */
+ %token TOKEN_ROOTDIR
++%token TOKEN_CHROOTDIR
++%token TOKEN_USERNAME
++%token TOKEN_GROUPNAME
+ %token TOKEN_TIMEFMT
+ %token TOKEN_POLLING
+ %token TOKEN_SAVING
+@@ -1354,6 +1383,7 @@
+ 
+ %token TOKEN_NETSTATE
+ %token TOKEN_PORT
++%token TOKEN_BINDADDRESS
+ 
+ %token TOKEN_SAVE
+ %token TOKEN_FILE
+@@ -1365,6 +1395,7 @@
+ 
+ %token TOKEN_OBJECT
+ %token TOKEN_ADDRESS
++%token TOKEN_SRCADDRESS
+ %token TOKEN_DESCRIPTION
+ %token TOKEN_SERVICE
+ %token TOKEN_INTERFACE
+@@ -1398,6 +1429,7 @@
+ %token TOKEN_V2
+ 
+ %token TOKEN_TRAP
++%token TOKEN_TRAPBINDADDRESS
+ %token TOKEN_SOURCECHECK
+ %token TOKEN_COMMUNITY
+ %token TOKEN_ENTERPRISE
+@@ -1442,6 +1474,60 @@
+ 				YYABORT;
+ 			}
+ 		}
++	|	TOKEN_CHROOTDIR quoted_string
++		{
++			if (config.chrootdir) {
++				yyerror("ChRootDir statement duplicated");
++				YYABORT;
++			}
++			config.chrootdir = $2;
++		}
++	|	TOKEN_USERNAME quoted_string
++		{
++			struct passwd *pwentry;
++			
++			if (config.username) {
++				yyerror("UserName statement duplicated");
++				YYABORT;
++			}
++    			if ((pwentry = getpwnam($2)) == (struct passwd *)NULL) {
++				yyerror("UserName %s unknown.", $2);
++				YYABORT;			    
++			}			
++			config.uid = pwentry->pw_uid;
++			config.username = $2;			
++		}
++
++	|	TOKEN_GROUPNAME quoted_string
++		{
++			struct group *grentry;
++			
++			if (config.groupname) {
++				yyerror("GroupName statement duplicated");
++				YYABORT;
++			}
++    			if ((grentry = getgrnam($2)) == (struct group *)NULL) {
++				yyerror("GroupName %s unknown.", $2);
++				YYABORT;			    
++			}			
++			config.gid = grentry->gr_gid;
++			config.groupname = $2;			
++		}
++
++	|	TOKEN_SRCADDRESS quoted_string
++		{
++			struct in_addr ip_srcaddr;
++
++			if (config.srcaddress) {
++				yyerror("config source address duplicated");
++				YYABORT;
++			}
++			if (!gethostaddr(&ip_srcaddr, $2)) {
++				YYABORT;
++			}
++			config.srcaddress = $2;
++			memcpy(&config.ip_srcaddr, &ip_srcaddr, sizeof(struct in_addr));
++		}	
+ 	|	TOKEN_TIMEFMT quoted_string
+ 		{
+ 			if (config.timefmt) {
+@@ -1531,6 +1617,17 @@
+ 		{
+ 			config.source_traps = 1;
+ 		}
++	|	TOKEN_TRAPBINDADDRESS quoted_string
++		{
++			if (config.trap_address) {
++				yyerror("bindaddress duplicated");
++				YYABORT;
++			}
++    			if (!gethostaddr(&config.trap_ip_addr, $2)) {
++				YYABORT;
++			}
++			config.trap_address = $2;
++		}
+ 	|	TOKEN_TRAP legal_string '{' trap_config '}'
+ 		{
+ 			trap.name = $2;
+@@ -1556,6 +1653,13 @@
+ 				yyerror("object address unspecified");
+ 				YYABORT;
+ 			}
++			if (!object.srcaddress) {
++				if (!config.srcaddress) {
++    				    bzero(&object.ip_srcaddr, sizeof(struct in_addr));
++				} else {
++				    memcpy(&object.ip_srcaddr, &config.ip_srcaddr, sizeof(struct in_addr));
++				}
++			}
+ /*			if ((object.interface || object.ifgroup ||
+ 			     object.bgp || object.env) &&
+ 			    !find_method(object.method_list, "ROUTER")) {
+@@ -1637,6 +1741,17 @@
+ 				YYABORT;
+ 			}
+ 		}
++	|	TOKEN_BINDADDRESS quoted_string
++		{
++			if (config.ns_address) {
++				yyerror("bindaddress duplicated");
++				YYABORT;
++			}
++			if (!gethostaddr(&config.ns_ip_addr, $2)) {
++				YYABORT;
++			}
++			config.ns_address = $2;
++		}
+ 	|	TOKEN_PERMIT quoted_string
+ 		{
+ 			/* for backward compatibility */
+@@ -2095,6 +2210,18 @@
+ 			}
+ 			object.address = $2;
+ 		}
++	|	TOKEN_SRCADDRESS quoted_string
++		{
++			if (object.srcaddress) {
++				yyerror("object source address duplicated");
++				YYABORT;
++			}
++			if (!gethostaddr(&object.ip_srcaddr, $2)) {
++				YYABORT;
++			}
++			object.srcaddress = $2;
++		}
++		
+ 	|	TOKEN_POLLING TOKEN_NUMBER
+ 		{
+ 			if (object.polling) {
+--- ping.c.orig	Fri Aug 22 11:07:53 2003
++++ ping.c	Tue Sep 16 23:43:05 2003
+@@ -368,6 +368,7 @@
+ 	u_char buf[MAX_PACKETSZ];
+ 	struct ip *ip;
+ 	struct icmp *icmp;
++	struct sockaddr_in *from = (struct sockaddr_in *)&sd->me;
+ 	struct sockaddr_in *to = (struct sockaddr_in *)&sd->peer;
+ 	int header_len = sizeof(struct ip);
+ 	int total_len = method->rport ? method->rport : MIN_PACKETSZ;
+@@ -400,7 +401,7 @@
+ #endif
+ 	ip->ip_ttl = IPDEFTTL;
+ 	ip->ip_p = IPPROTO_ICMP;
+-	/* ip->ip_src <-- filled by kernel (hopefulness) */
++	ip->ip_src = from->sin_addr; /* replaced by kernel if=INADDR_ANY (hopefulness) */
+ 	ip->ip_dst = to->sin_addr;
+ 
+ 	if (rr_opt) { /* IP Option: Record Route */
+@@ -423,6 +424,7 @@
+ 	memcpy(icmp->icmp_data, &sd->buf, sizeof(TIMEVAL *));
+ 
+ 	icmp->icmp_cksum = in_cksum((u_short *)icmp, total_len - header_len);
++
+ #ifdef	NO_ICMP_ERRORS
+ 	total_len = send(sd->sock, (char *)buf, total_len, 0);
+ #else
+@@ -600,6 +602,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int tmpval;
++	char	ipaddr[20];
++	struct	sockaddr_in	*from;
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -616,6 +620,13 @@
+ 		echo_reply(errno, sd, 0);
+ 		return;
+ 	}
++	/* bind RAW socket to local source address */
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		report(LOG_WARNING, "echo_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}
+ #ifdef	SO_BSDCOMPAT
+ 	/* The following option is only necessary on Linux machines because
+ 	 * they have the unusual behavior of returning some ICMP errors to
+@@ -701,7 +712,12 @@
+ 				if (sd->pkt_recv > 1) msec /= (double)sd->pkt_recv;
+ 				sprintf(buf, "%g", msec);
+ 				diag = buf;
+-			} else	diag = "0.000";
++			    if ( msec >= 10 ) {
++				sprintf(buf, "%d", (int)msec);
++			    } else {
++				sprintf(buf, "%g", msec);
++			    }
++			} else	diag = "0.0";
+ 		} else {
+ 			op = -1;
+ 			diag = icmp_error(sd->data_int);
+@@ -740,8 +756,9 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 	char varname[100];
++	char ipaddr[20];
+ 
+ 	dprintf(("echo_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -758,6 +775,9 @@
+ 	to = (struct sockaddr_in *)&template.peer;
+ 	to->sin_family = AF_INET;
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = echo_send;
+--- radius.c.orig	Mon Aug 25 18:20:03 2003
++++ radius.c	Tue Sep 16 23:43:05 2003
+@@ -208,6 +208,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int reqid;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -220,6 +222,13 @@
+ 		return;
+ 	}
+ 
++	/* bind  socket to local source address */
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		report(LOG_WARNING, "radius_start : bind failed for %s: %s",
++		    intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}	
+ 	/* turn on non-blocking I/O */
+ 	if (set_socket_async(sd->sock, TRUE) < 0) {
+ 		radius_reply(errno, sd, 0);
+@@ -311,7 +320,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("radius_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -326,6 +335,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = radius_send;
+--- reconfig.c.orig	Tue Aug 26 10:54:37 2003
++++ reconfig.c	Wed Sep 17 00:26:06 2003
+@@ -395,7 +395,7 @@
+ 	OBJECT *parent;
+ 	OBJECT *old, *new;
+ {
+-	void *ip_addr;
++	void *ip_addr, *ip_srcaddr;
+ 	OBJECT *service;
+ 
+ 	object_stop(old);
+@@ -403,9 +403,13 @@
+ 	ptrswap(&old->descr, &new->descr);
+ 	ptrswap(&old->datadir, &new->datadir);
+ 	ptrswap(&old->address, &new->address);
+-	if (parent)
++	if (parent) {
+ 		ip_addr = &parent->ip_addr;
+-	else	ip_addr = &new->ip_addr;
++		ip_srcaddr = &parent->ip_srcaddr;
++	} else {	
++	    ip_addr = &new->ip_addr;
++	    ip_srcaddr = &new->ip_srcaddr;
++	}
+ 	old->parent = parent;
+ 
+ 	if (memcmp(&old->ip_addr, ip_addr, sizeof(old->ip_addr))) {
+@@ -418,6 +422,8 @@
+ 			memset(old->snmpdata, 0, sizeof(SNMP_DATA));
+ 		}
+ 	}
++	if (memcmp(&old->ip_srcaddr, ip_srcaddr, sizeof(old->ip_srcaddr))) 
++		memcpy(&old->ip_srcaddr, ip_srcaddr, sizeof(old->ip_srcaddr));
+ 
+ 	old->polling = new->polling;
+ 	old->saving = new->saving;
+@@ -450,6 +456,7 @@
+ 	service = splice_object_list(old, &old->service, &new->service);
+ 	for (; service; service = service->next) {
+ 		service->ip_addr = old->ip_addr;
++		service->ip_srcaddr = old->ip_srcaddr;
+ 		service->parent = old;
+ 		object_init(service);
+ 	}
+@@ -516,21 +523,41 @@
+ 	}
+ 	if (cf_new->rootdir) free(cf_new->rootdir);
+ 
++	ptrswap(&cf->chrootdir, &cf_new->chrootdir);
++	if (cf_new->chrootdir) free(cf_new->chrootdir);
++
++	ptrswap(&cf->username, &cf_new->username);
++	if (cf_new->username) free(cf_new->username);
++	cf->uid = cf_new->uid;
++
++	ptrswap(&cf->groupname, &cf_new->groupname);
++	if (cf_new->groupname) free(cf_new->groupname);
++	cf->gid = cf_new->gid;
++
+ 	ptrswap(&cf->timefmt, &cf_new->timefmt);
+ 	if (cf_new->timefmt) free(cf_new->timefmt);
+ 
++	ptrswap(&cf->srcaddress, &cf_new->srcaddress);
++	if (cf_new->srcaddress) free(cf_new->srcaddress);
++	memcpy( &cf->ip_srcaddr, &cf_new->ip_srcaddr, sizeof(struct in_addr));
+ 	cf->polling = cf_new->polling;
+ 	cf->saving = cf_new->saving;
+ 	cf->timeout = cf_new->timeout;
+ 	cf->retries = cf_new->retries;
+ 
+-	if (cf->enable_traps != cf_new->enable_traps) {
++	if ((cf->enable_traps != cf_new->enable_traps) || memcmp(&cf->trap_ip_addr, &cf_new->trap_ip_addr, sizeof(struct in_addr)) ) {
++		ptrswap(&cf->trap_address, &cf_new->trap_address);
++		if (cf_new->trap_address) free(cf_new->trap_address);
++		memcpy( &cf->trap_ip_addr, &cf_new->trap_ip_addr, sizeof(struct in_addr));
+ 		cf->enable_traps = cf_new->enable_traps;
+ 		trap_init(cf->enable_traps > 0);
+ 	}
+ 	cf->source_traps = cf_new->source_traps;
+ 
+-	if (cf->ns_port != cf_new->ns_port) {
++	if ((cf->ns_port != cf_new->ns_port) || memcmp(&cf->ns_ip_addr, &cf_new->ns_ip_addr, sizeof(struct in_addr))) {
++		ptrswap(&cf->ns_address, &cf_new->ns_address);
++		if (cf_new->ns_address) free(cf_new->ns_address);
++		memcpy( &cf->ns_ip_addr, &cf_new->ns_ip_addr, sizeof(struct in_addr));
+ 		cf->ns_port = cf_new->ns_port;
+ 		netstate_init(cf->ns_port);
+ 	}
+@@ -576,6 +603,12 @@
+ 	free_object_list(cf_cur->target);
+ 
+ 	if (cf_cur->rootdir) free(cf_cur->rootdir);
++	if (cf_cur->chrootdir) free(cf_cur->chrootdir);
++	if (cf_cur->username) free(cf_cur->username);
++	if (cf_cur->groupname) free(cf_cur->groupname);
++	if (cf_cur->srcaddress) free(cf_cur->srcaddress);
++	if (cf_cur->ns_address) free(cf_cur->ns_address);
++	if (cf_cur->trap_address) free(cf_cur->trap_address);
+ 	if (cf_cur->timefmt) free(cf_cur->timefmt);
+ 
+ 	trap_init(cf_cur->enable_traps > 0);
+@@ -649,6 +682,7 @@
+ 		if (obj->descr) free(obj->descr);
+ 		if (obj->datadir) free(obj->datadir);
+ 		if (obj->address) free(obj->address);
++		if (obj->srcaddress) free(obj->srcaddress);
+ 		free_trap_list(obj->trap_list);
+ 		free_var_list(obj->var_list);
+ 		free_save_list(obj->save_list);
+--- router.c.orig	Mon Aug 25 16:07:07 2003
++++ router.c	Tue Sep 16 23:43:05 2003
+@@ -2214,6 +2214,8 @@
+ 	METHOD *method;
+ {
+ 	SESSION *sd = method->sd;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) {
+@@ -2229,7 +2231,13 @@
+ 		router_reply(errno, sd, 0);
+ 		return;
+ 	}
+-
++	/* bind socket to local source address */
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		report(LOG_WARNING, "router_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}
+ 	/* turn on non-blocking I/O */
+ 	if (set_socket_async(sd->sock, TRUE) < 0) {
+ 		router_reply(errno, sd, 0);
+@@ -2306,7 +2314,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("router_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -2321,6 +2329,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof (struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = snmp_send;
+--- scanconf.l.orig	Fri Aug 22 16:37:41 2003
++++ scanconf.l	Wed Sep 17 00:28:19 2003
+@@ -88,6 +88,9 @@
+ 
+ /* token names */
+ ROOTDIR		[Rr]oot[Dd]ir
++CHROOTDIR	[Cc]h[Rr]oot[Dd]ir
++USERNAME	[Uu]ser[Nn]ame
++GROUPNAME	[Gg]roup[Nn]ame
+ TIMEFMT		[Tt]ime[Ff]mt
+ POLLING		[Pp]olling
+ SAVING		[Ss]aving
+@@ -111,6 +114,8 @@
+ 
+ OBJECT		[Oo]bject
+ ADDRESS		[Aa]ddress
++SRCADDRESS	[Ss]rc[Aa]ddress
++BINDADDRESS	[Bb]ind[Aa]ddress
+ DESCRIPTION	[Dd]escription|[Cc]omment
+ SERVICE		[Ss]ervice
+ INTERFACE	[Ii]nterface
+@@ -144,6 +149,7 @@
+ V2		[Vv]2
+ 
+ TRAP		[Tt]rap
++TRAPBINDADDRESS	[Tt]rap[Bb]ind[Aa]ddress
+ SOURCECHECK	[Ss]ource[Cc]heck
+ COMMUNITY	[Cc]ommunity
+ ENTERPRISE	[Ee]nterprise
+@@ -186,6 +192,12 @@
+ 
+ {ROOTDIR}	{	return TOKEN_ROOTDIR;	}
+ 
++{USERNAME}	{	return TOKEN_USERNAME;	}
++
++{GROUPNAME}	{	return TOKEN_GROUPNAME;	}
++
++{CHROOTDIR}	{	return TOKEN_CHROOTDIR;	}
++
+ {TIMEFMT}	{	return TOKEN_TIMEFMT;	}
+ 
+ {POLLING}	{	return TOKEN_POLLING;	}
+@@ -224,6 +236,10 @@
+ 
+ {ADDRESS}	{	return TOKEN_ADDRESS;	}
+ 
++{SRCADDRESS}	{	return TOKEN_SRCADDRESS; }
++
++{BINDADDRESS}	{	return TOKEN_BINDADDRESS; }
++
+ {DESCRIPTION}	{	return TOKEN_DESCRIPTION; }
+ 
+ {SERVICE}	{	return TOKEN_SERVICE;	}
+@@ -285,6 +301,8 @@
+ {V2}		{	return TOKEN_V2;	}
+ 
+ {TRAP}		{	return TOKEN_TRAP;	}
++
++{TRAPBINDADDRESS}	{	return TOKEN_TRAPBINDADDRESS;	}
+ 
+ {SOURCECHECK}	{	return TOKEN_SOURCECHECK; }
+ 
+--- session.c.orig	Sat Aug  2 11:26:38 2003
++++ session.c	Tue Sep 16 23:43:05 2003
+@@ -59,6 +59,7 @@
+ 	curr_session->method = template->method;
+ 	curr_session->sock = template->sock;
+ 	curr_session->peer = template->peer;
++	curr_session->me = template->me;
+ 	curr_session->timeout = template->timeout;
+ 	curr_session->retries = template->retries;
+ 	curr_session->connect = template->connect;
+--- snmp.c.orig	Tue Jul 20 17:51:25 2004
++++ snmp.c	Thu Aug 12 16:57:35 2004
+@@ -1214,6 +1214,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int reqid;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -1225,7 +1227,13 @@
+ 		snmp_reply(errno, sd, 0);
+ 		return;
+ 	}
+-
++	/* bind datagram socket to local source address */
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		report(LOG_WARNING, "snmp_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}
+ 	/* turn on non-blocking I/O */
+ 	if (set_socket_async(sd->sock, TRUE) < 0) {
+ 		snmp_reply(errno, sd, 0);
+@@ -1290,7 +1298,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("snmp_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -1305,6 +1313,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in ));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = snmp_send;
+--- tacacs.c.orig	Mon Aug 25 18:20:41 2003
++++ tacacs.c	Tue Sep 16 23:43:05 2003
+@@ -302,6 +302,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int reqid;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -314,6 +316,13 @@
+ 		return;
+ 	}
+ 
++	/* bind  socket to local source address */ 
++	from = (struct sockaddr_in *)&sd->me;
++	if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++	    if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++	        report(LOG_WARNING, "tacacs_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	}	
+ 	/* turn on non-blocking I/O before connecting */
+ 	if (set_socket_async(sd->sock, TRUE) < 0) {
+ 		tacacs_reply(errno, sd, 0);
+@@ -415,7 +424,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("tacacs_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -430,6 +439,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.connect = tacacs_connect;
+--- tcp.c.orig	Thu Mar 20 16:16:38 2003
++++ tcp.c	Tue Sep 16 23:43:05 2003
+@@ -319,6 +319,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int tmpval;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -330,17 +332,13 @@
+ 		tcp_close(errno, sd, 0);
+ 		return;
+ 	}
+-
++	from = (struct sockaddr_in *)&sd->me;
+ 	/* allocate local port if required */
+ 	if (method->lport_min) {
+-		struct sockaddr_in sin;
+-
+-		sin.sin_family = AF_INET;
+-		sin.sin_addr.s_addr = htonl(INADDR_ANY);
+ 		tmpval = method->lport_min;
+ 		do {
+-			sin.sin_port = htons((u_short)tmpval);
+-			if (!bind(sd->sock, (struct sockaddr *)&sin, sizeof(sin))) {
++			from->sin_port = htons((u_short)tmpval);
++			if (!bind(sd->sock, &sd->me, sizeof(struct sockaddr))) {
+ 				tmpval = 0;
+ 				break;
+ 			}
+@@ -354,6 +352,13 @@
+ 			tcp_close(EAGAIN, sd, 0);
+ 			return;
+ 		}
++	} else {
++	    /* bind  socket to local source address */
++	    if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++		if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		    report(LOG_WARNING, "tcp_start : bind failed for %s: %s",
++    	        	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	    }	
+ 	}
+ 
+ 	/* turn on non-blocking I/O before connecting */
+@@ -424,7 +429,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("tcp_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -439,6 +444,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.connect = tcp_connect;
+--- trap.c.orig	Wed Sep 17 00:00:56 2003
++++ trap.c	Wed Sep 17 00:35:21 2003
+@@ -40,9 +40,10 @@
+ {
+ 	static struct sockaddr_in sin;
+ 
++	if (trap_sock != -1) /* already enabled */
++		close(trap_sock);
++
+ 	if (enable) {
+-		if (trap_sock != -1) /* already enabled */
+-			return 0;
+ 
+ 		if ((trap_sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+ 			report(LOG_ERR, "socket: %m");
+@@ -51,17 +52,15 @@
+ 		memset(&sin, 0, sizeof(sin));
+ 		sin.sin_family = AF_INET;
+ 		sin.sin_port = htons(SNMPTRAP_PORT);
+-		sin.sin_addr.s_addr = INADDR_ANY;
++		sin.sin_addr = cf->trap_ip_addr;
+ 		if (bind(trap_sock, (struct sockaddr *)&sin, sizeof(sin)) < 0) {
+ 			report(LOG_ERR, "bind port %d: %m", ntohs(sin.sin_port));
+ 			close(trap_sock);
+ 			trap_sock = -1;
+ 			return -1;
+ 		}
+-	} else if (trap_sock != -1) {
+-		close(trap_sock);
++	} else
+ 		trap_sock = -1;
+-	}
+ 	return 0;
+ }
+ 
+--- udp.c.orig	Sat Aug  2 11:40:56 2003
++++ udp.c	Tue Sep 16 23:43:05 2003
+@@ -197,6 +197,8 @@
+ {
+ 	SESSION *sd = method->sd;
+ 	int tmpval;
++	struct sockaddr_in *from;
++	char ipaddr[20];
+ 
+ 	/* sanity check */
+ 	if (!sd) return;
+@@ -208,17 +210,13 @@
+ 		udp_close(errno, sd, 0);
+ 		return;
+ 	}
+-
++	from = (struct sockaddr_in *)&sd->me;
+ 	/* allocate local port if required */
+ 	if (method->lport_min) {
+-		struct sockaddr_in sin;
+-
+-		sin.sin_family = AF_INET;
+-		sin.sin_addr.s_addr = htonl(INADDR_ANY);
+ 		tmpval = method->lport_min;
+ 		do {
+-			sin.sin_port = htons((u_short)tmpval);
+-			if (!bind(sd->sock, (struct sockaddr *)&sin, sizeof(sin))) {
++			from->sin_port = htons((u_short)tmpval);
++			if (!bind(sd->sock, &sd->me, sizeof(struct sockaddr))) {
+ 				tmpval = 0;
+ 				break;
+ 			}
+@@ -232,6 +230,13 @@
+ 			udp_close(EAGAIN, sd, 0);
+ 			return;
+ 		}
++	} else {
++	    /* bind socket to local source address */
++	    if ( from->sin_addr.s_addr != INADDR_ANY ) {		
++		if( bind(sd->sock, &sd->me, sizeof(struct sockaddr) ) == -1 ) 
++		    report(LOG_WARNING, "udp_start : bind failed for %s: %s",
++		    	intoa(ipaddr,from->sin_addr), strerror(*(__error())) );
++	    }
+ 	}
+ 
+ 	/* turn on non-blocking I/O */
+@@ -298,7 +303,7 @@
+ 	METHOD *method;
+ {
+ 	SESSION template;
+-	struct sockaddr_in *to;
++	struct sockaddr_in *to, *from;
+ 
+ 	dprintf(("udp_init(%s/%s)\n", target->name, method->name));
+ 
+@@ -313,6 +318,10 @@
+ 	to->sin_family = AF_INET;
+ 	to->sin_port = htons(method->rport);
+ 	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
++	from = (struct sockaddr_in *)&template.me;
++	bzero((char *)from, sizeof(struct sockaddr_in));
++	from->sin_family = AF_INET;
++	from->sin_addr = target->ip_srcaddr;
+ 	template.timeout = method->timeout * 1000000L; /* make microseconds */
+ 	template.retries = method->retries;
+ 	template.send = udp_send;
+--- util.c.orig	Tue Aug 26 10:53:17 2003
++++ util.c	Wed Sep 17 00:36:47 2003
+@@ -1415,16 +1415,27 @@
+ 	printf("NetState %s\n", cf->ns_port ? "enabled" : "disabled");
+ 	if (cf->ns_port) {
+ 		printf("\tPort = %d\n", cf->ns_port);
++		if (cf->ns_address) 
++    		    printf("\tBindAddress = \"%s\" [%s]\n", cf->ns_address, intoa(ipaddr, cf->ns_ip_addr));		
+ #ifndef	HAVE_PTHREAD
+ 		printf("\tTimeout = %d sec.\n", cf->ns_timo);
+ #endif
+ 		print_group_ref("\t", cf->ns_acl);
+ 	}
++	printf("SrcAddress = \"%s\" [%s]\n", (cf->srcaddress!=NULL ) ? cf->srcaddress : "default",
++	    intoa(ipaddr, cf->ip_srcaddr));
+ 
++	printf("UserName = \"%s\" [%d]\n", cf->username, cf->uid);
++	printf("GroupName = \"%s\" [%d]\n", cf->groupname, cf->gid);
++
++	if (cf->chrootdir) 
++	    printf("ChRootDir = \"%s\"\n", cf->chrootdir );
+ 	printf("Traps ");
+ 	if (cf->enable_traps > 0) {
+ 		printf("enabled");
+ 		if (cf->source_traps > 0) printf(" (sourcecheck)");
++		if (cf->trap_address) 
++		    printf("\n\tTrapBindAddress = \"%s\" [%s]", cf->trap_address, intoa(ipaddr, cf->trap_ip_addr));		
+ 	} else	printf("disabled");
+ 	printf("\n");
+ 
+@@ -1434,6 +1445,8 @@
+ 			printf("\tDescription = \"%s\"\n", target->descr);
+ 		printf("\tAddress = \"%s\" [%s]\n", target->address,
+ 		       intoa(ipaddr, target->ip_addr));
++		printf("\tSrcAddress = \"%s\" [%s]\n", (target->srcaddress!=NULL) ? target->srcaddress : "default",
++		       intoa(ipaddr, target->ip_srcaddr));
+ 		if (target->polling > 0)
+ 			printf("\tPolling = %d sec.\n", target->polling);
+ 		else	printf("\tPolling disabled\n");
+--- regex.h.orig	Wed Sep 24 17:22:56 2003
++++ regex.h	Wed Sep 24 17:37:09 2003
+@@ -21,12 +21,12 @@
+  */
+ #define MAXDFA  1024
+ #define MAXTAG  10
+-#define MAXCHR	128
++#define MAXCHR	256
+ #define CHRBIT	8
+ #define BITBLK	MAXCHR/CHRBIT
+ #define BLKIND	0170
+ #define BITIND	07
+-#define ASCIIB	0177
++#define ASCIIB	0255
+ 
+ typedef /*unsigned*/ char CHAR;
+ 
+--- regex.c.orig	Wed Sep 24 17:09:07 2003
++++ regex.c	Thu Sep 25 15:26:47 2003
+@@ -554,12 +554,12 @@
+  * the bitset form, since we may wish to extend it
+  * in the future for other character classifications. 
+  *
+- *	TRUE for 0-9 A-Z a-z _
++ *	TRUE for 0-9 A-Z a-z _ â-ó Â-Ó
+  */
+ static char chrtyp[MAXCHR] = {
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
+ 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 	0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 
+@@ -569,10 +569,23 @@
+ 	1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+-	1, 1, 1, 0, 0, 0, 0, 0
++	1, 1, 1, 0, 0, 0, 0, 0, 0, 0,	// 120-129
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 130-139
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 140-149
++	0, 0, 0, 1, 0, 0, 0, 0, 0, 0,   // 160-169     163=_
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 1,   // 170-179     179=_
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 180-189
++	0, 0, 1, 1, 1, 1, 1, 1, 1, 1,   // 190-199
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 200-209
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 210-219
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 220-229
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 230-239
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 240-249
++	1, 1, 1, 1, 1, 1                // 250-255
+ 	};
+ 
+-#define inascii(x)	(0177&(x))
++//#define inascii(x)	(0177&(x))
++#define inascii(x)	(0255&(x))
+ #define iswordc(x) 	chrtyp[inascii(x)]
+ #define isinset(x, y) 	((x)[((y)&BLKIND)>>3] & (1<<((y)&BITIND)))
+ 
