@@ -70,9 +70,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-.ifdef USE_LINUX
-.error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+.undef USE_LINUX
 
 .include <bsd.port.pre.mk>
 

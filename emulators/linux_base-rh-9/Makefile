@@ -68,9 +68,7 @@ PLIST=			${WRKDIR}/pkg-plist
 # Red Hat Linux 9 is only available in English.
 LANG=			en
 
-.ifdef USE_LINUX
-.error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+.undef USE_LINUX
 
 .include <bsd.port.pre.mk>
 
