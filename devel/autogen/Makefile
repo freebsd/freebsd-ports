@@ -28,6 +28,6 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
-	optionSaveState.3 optionVersion.3
+	optionSaveFile.3 optionSaveState.3 optionVersion.3
 
 .include <bsd.port.mk>
