@@ -8,12 +8,8 @@
 PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.aladdinsys.com/pub/linux/StuffIt/ \
-		ftp://ftp2.aladdinsys.com/pub/linux/StuffIt/ \
-		ftp://ftp3.aladdinsys.com/pub/linux/StuffIt/ \
-		ftp://ftp4.aladdinsys.com/pub/linux/StuffIt/
+MASTER_SITES=	http://www.aladdinsys.com/downloads/files/
 DISTNAME=	stuffit520.611linux-i386
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stuffit Archive Creator and Expander
@@ -24,7 +20,6 @@ NO_PACKAGE=	Only unmodified original package can be distributed
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
-NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}
 STUFFIT_FILES=	bin/unstuff bin/stuff
@@ -33,13 +28,14 @@ PLIST_FILES=	${STUFFIT_FILES}
 
 MAN1=		stuff.1 unstuff.1
 
-post-fetch:
-	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
+do-build:
+.for sFile in ${STUFFIT_FILES}
+	${BRANDELF} -t Linux ${WRKSRC}/${sFile}
+.endfor
 
 do-install:
 .for sFile in ${STUFFIT_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${sFile} ${PREFIX}/bin
-	${BRANDELF} -t Linux ${PREFIX}/${sFile}
 .endfor
 .for mFile in ${STUFFIT_MAN}
 	${INSTALL_MAN} ${WRKSRC}/${mFile} ${MANPREFIX}/man/man1
