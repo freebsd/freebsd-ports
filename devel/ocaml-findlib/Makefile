@@ -18,6 +18,8 @@ COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Broken pkg-plist
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
