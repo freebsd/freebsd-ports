@@ -275,6 +275,7 @@
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlrelay
+    SUBDIR += slony1
     SUBDIR += sqlite
     SUBDIR += sqlrelay
     SUBDIR += sqsh

@@ -1,0 +1,13 @@
+Slony-I will be a "master to multiple slaves" replication
+system with cascading and failover.
+
+The big picture for the development of Slony-I is to build 
+a master-slave system that includes all features and
+capabilities needed to replicate large databases to a
+reasonably limited number of slave systems.
+
+Slony-I is planned as a system for data centers and backup
+sites, where the normal mode of operation is that all nodes
+are available.
+
+WWW: http://www.slony.org/
