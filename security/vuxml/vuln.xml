@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f3d3f621-38d8-11d9-8fff-000c6e8f12ef">
+    <topic>smbd -- buffer-overrun vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<range><ge>3.*</ge><lt>3.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Caused by improper bounds checking of certain trans2
+	  requests, there is a possible buffer overrun in smbd.
+	  The attacker needs to be able to create files with
+	  very specific Unicode filenames on the share to take
+	  advantage of this issue.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0882</cvename>
+      <mlist msgid="4198AE84.7020509@samba.org>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110055646329581</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-15</discovery>
+      <entry>2004-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4af3ede-36e9-11d9-a9e7-0001020eed82">
     <topic>twiki -- arbitrary shell command execution</topic>
     <affects>
