@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
+NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
