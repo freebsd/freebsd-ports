@@ -8,25 +8,27 @@
 PORTNAME=	ghostscript
 PORTVERSION=	7.04
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,gimp-print/:gprint,} \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,hpinkjet/:hpijs,} \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
-		${MASTER_SITE_PORTS_JP:S,%SUBDIR%/,ghostscript/:ports_jp,} \
+		${MASTER_SITE_PORTS_JP:S/$/:ports_jp/} \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/:gdi \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:fonts \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/ \
+		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper
+MASTER_SITE_SUBDIR=	${PORTNAME} \
+			gimp-print/:gprint \
+			hpinkjet/:hpijs \
+			ghostscript/:ports_jp
 PKGNAMESUFFIX=	-afpl
-DISTFILES=	${GS_SRCS} \
-		${GS_FONTS_STD} \
-		${GS_FONTS_OTHER} \
+DISTFILES=	${GS_SRCS}:DEFAULT,gatekeeper \
+		${GS_FONTS_STD}:DEFAULT,fonts \
+		${GS_FONTS_OTHER}:DEFAULT,fonts,gatekeeper \
 		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
