@@ -1,0 +1,19 @@
+*** pine/pine.h.orig	Mon Feb 22 14:49:07 1999
+--- pine/pine.h	Mon Feb 22 14:49:57 1999
+***************
+*** 2588,2594 ****
+  } ATABLE_S;
+  
+  
+! #define TAG_EMBED	'\377'	/* Announces embedded data in text string */
+  #define	TAG_INVON	'\001'	/* Supported character attributes	  */
+  #define	TAG_INVOFF	'\002'
+  #define	TAG_BOLDON	'\003'
+--- 2588,2594 ----
+  } ATABLE_S;
+  
+  
+! #define TAG_EMBED	'\001'	/* Announces embedded data in text string */
+  #define	TAG_INVON	'\001'	/* Supported character attributes	  */
+  #define	TAG_INVOFF	'\002'
+  #define	TAG_BOLDON	'\003'

@@ -1,0 +1,60 @@
+--- build.orig	Fri Feb 19 18:30:54 1999
++++ build	Wed Oct 13 17:53:42 1999
+@@ -80,8 +80,9 @@
+  pine   The Pine mailer. Once compiled this should work just fine on
+         your system with no other files than this binary, and no
+         modifications to your system. Optionally you may create two
+-        configuration files, /usr/local/lib/pine.conf and 
+-        /usr/local/lib/pine.info. See the documentation for details.
++        configuration files, /usr/local/etc/pine.conf and 
++        /usr/local/etc/pine.info. See the documentation for details.
++
+  
+  pico   The standalone editor similar to the Pine message composer.
+         This is a very simple straight forward text editor.
+@@ -278,10 +279,10 @@
+ 
+         if [ -s c-client ] ; then rm -f c-client ; fi
+         ln -s imap/c-client c-client
+-        if [ -s mtest    ] ; then rm -f mtest    ; fi
+-        ln -s imap/mtest mtest
+-        if [ -s imapd    ] ; then rm -f imapd    ; fi
+-        ln -s imap/imapd imapd
++#        if [ -s mtest    ] ; then rm -f mtest    ; fi
++#        ln -s imap/mtest mtest
++#        if [ -s imapd    ] ; then rm -f imapd    ; fi
++#        ln -s imap/imapd imapd
+         echo "Making c-client library, mtest and imapd"
+         eval echo make "$makeargs" "$K1" "$K2" $ccltarg
+         cd $PHOME/imap
+@@ -303,14 +304,14 @@
+         cd $PHOME/bin
+         rm -f pine mtest imapd pico pilot
+         if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+-        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
+-        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
++#        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
++#        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+         if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+         if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
+         cd $PHOME
+         echo ''
+         echo "Links to executables are in bin directory:"
+-        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
++        size bin/pine bin/pico bin/pilot
+ 	case $maketarg in
+ 	    mnt)    echo "Fixing stacksizes ..."
+ 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
+@@ -325,10 +326,10 @@
+ 	make clean
+         echo "Cleaning Pine"
+         cd $PHOME/pine
+-        make -f makefile.ult clean
++        make -f makefile.bsf clean
+         echo "Cleaning pico"
+         cd $PHOME/pico
+-        make $makeargs -f makefile.ult clean
++        make $makeargs -f makefile.bsf clean
+         echo "Done"
+         cd $PHOME
+         ;;

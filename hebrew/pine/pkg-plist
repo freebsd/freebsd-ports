@@ -1,0 +1,25 @@
+@unexec %D/bin/pine -conf >%D/etc/pine.conf.tmp
+@unexec if cmp -s %D/etc/pine.conf %D/etc/pine.conf.tmp; then rm -f %D/etc/pine.conf; fi
+@unexec rm -f %D/etc/pine.conf.tmp
+bin/pgpdecode
+bin/pgpencrypt
+bin/pgpsign
+bin/pico
+bin/pilot
+bin/pine
+etc/dot.pinerc.pgp.sample
+@exec %D/bin/pine -P %D/etc/pine.conf -conf >%D/etc/pine.conf.tmp
+@exec /bin/mv %D/etc/pine.conf.tmp %D/etc/pine.conf
+share/doc/pine/brochure.txt
+share/doc/pine/tech-notes.txt
+share/doc/pine/tech-notes/background.html
+share/doc/pine/tech-notes/cmd-line.html
+share/doc/pine/tech-notes/config-notes.html
+share/doc/pine/tech-notes/config.html
+share/doc/pine/tech-notes/index.html
+share/doc/pine/tech-notes/installation.html
+share/doc/pine/tech-notes/introduction.html
+share/doc/pine/tech-notes/low-level.html
+share/doc/pine/tech-notes/porting.html
+@dirrm share/doc/pine/tech-notes
+@dirrm share/doc/pine

@@ -1,0 +1,101 @@
+*** pine/pine.hlp.orig	Fri Feb  5 01:07:54 1999
+--- pine/pine.hlp	Tue Feb  9 22:10:02 1999
+***************
+*** 455,463 ****
+  
+   executable     &lt;Unix search path&gt;/pine
+   persnl cfg     ~/.pinerc
+!  global cfg     /usr/local/lib/pine.conf
+!  fixed cfg      /usr/local/lib/pine.conf.fixed
+!  local help     /usr/local/lib/pine.info
+  
+   interrupted    ~/.pine-interrupted-mail
+   debug          ~/.pine-debugN
+--- 455,463 ----
+  
+   executable     &lt;Unix search path&gt;/pine
+   persnl cfg     ~/.pinerc
+!  global cfg     @@PREFIX@@/etc/pine.conf
+!  fixed cfg      @@PREFIX@@/etc/pine.conf.fixed
+!  local help     @@PREFIX@@/etc/pine.info
+  
+   interrupted    ~/.pine-interrupted-mail
+   debug          ~/.pine-debugN
+***************
+*** 469,476 ****
+   postponed#     ~/mail/postponed-msgs
+   sentmail#      ~/mail/sent-mail
+   mailcap#       ~/.mailcap + /etc/mailcap
+!                            + /usr/etc/mailcap + /usr/local/etc/mailcap
+!  mimetypes#     ~/.mime.types + /etc/mime.types + /usr/local/lib/mime.types
+  
+   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+--- 469,476 ----
+   postponed#     ~/mail/postponed-msgs
+   sentmail#      ~/mail/sent-mail
+   mailcap#       ~/.mailcap + /etc/mailcap
+!                            + /usr/etc/mailcap + @@PREFIX@@/etc/mailcap
+!  mimetypes#     ~/.mime.types + /etc/mime.types + @@PREFIX@@/etc/mime.types
+  
+   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+***************
+*** 856,864 ****
+  this link now to send a message to it:<BR>
+  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
+  <!--chtml endif-->
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+  <HR WIDTH="75%">Local Support Contacts:<P>
+! <!--#include file="/usr/local/lib/pine.info"-->
+  <HR WIDTH="75%">
+  <!--chtml endif-->
+  <P> 
+--- 856,864 ----
+  this link now to send a message to it:<BR>
+  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
+  <!--chtml endif-->
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
+  <HR WIDTH="75%">Local Support Contacts:<P>
+! <!--#include file="@@PREFIX@@/etc/pine.info"-->
+  <HR WIDTH="75%">
+  <!--chtml endif-->
+  <P> 
+***************
+*** 945,951 ****
+  <OL>
+    <LI> <A HREF="#intro">Introduction</A>
+    <LI> <A HREF="#pine_help">Pine Help</A>
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+    <LI> <A HREF="#local_support">Local Support Contacts</A>
+  <!--chtml endif-->
+    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
+--- 945,951 ----
+  <OL>
+    <LI> <A HREF="#intro">Introduction</A>
+    <LI> <A HREF="#pine_help">Pine Help</A>
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
+    <LI> <A HREF="#local_support">Local Support Contacts</A>
+  <!--chtml endif-->
+    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
+***************
+*** 1052,1060 ****
+  at your site.)
+  
+  
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+  <H2><A NAME="local_support">Local Support Contacts</A></H2>
+! <!--#include file="/usr/local/lib/pine.info"-->
+  <!--chtml endif-->
+  
+  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
+--- 1052,1060 ----
+  at your site.)
+  
+  
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
+  <H2><A NAME="local_support">Local Support Contacts</A></H2>
+! <!--#include file="@@PREFIX@@/etc/pine.info"-->
+  <!--chtml endif-->
+  
+  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>

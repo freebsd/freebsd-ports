@@ -1,0 +1,44 @@
+*** pine/mailcap.c.orig	Wed Nov 18 20:00:15 1998
+--- pine/mailcap.c	Thu Feb 11 23:43:54 1999
+***************
+*** 61,67 ****
+  
+     Mime types makes mime assign attachment types according
+     to file name extensions found in a system wide file
+!    ``/usr/local/lib/mime.types'' and a user specific file
+     ``~/.mime.types'' . These files specify file extensions
+     that will be connected to a mime type.
+     ******************************************************* 
+--- 61,67 ----
+  
+     Mime types makes mime assign attachment types according
+     to file name extensions found in a system wide file
+!    ``@@PREFIX@@/etc/mime.types'' and a user specific file
+     ``~/.mime.types'' . These files specify file extensions
+     that will be connected to a mime type.
+     ******************************************************* 
+***************
+*** 96,106 ****
+  #define MC_PATH_SEPARATOR ':'
+  #define	MC_USER_FILE	  NULL
+  #define MC_STDPATH         \
+! 		".mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/local/etc/mailcap"
+  #define MT_PATH_SEPARATOR ':'
+  #define	MT_USER_FILE	  NULL
+  #define MT_STDPATH         \
+! 		".mime.types:/etc/mime.types:/usr/local/lib/mime.types"
+  #endif /* !DOS */
+  
+  #ifdef	_WINDOWS
+--- 96,106 ----
+  #define MC_PATH_SEPARATOR ':'
+  #define	MC_USER_FILE	  NULL
+  #define MC_STDPATH         \
+! 		".mailcap:/etc/mailcap:/usr/etc/mailcap:@@PREFIX@@/etc/mailcap"
+  #define MT_PATH_SEPARATOR ':'
+  #define	MT_USER_FILE	  NULL
+  #define MT_STDPATH         \
+! 		".mime.types:/etc/mime.types:@@PREFIX@@/etc/mime.types"
+  #endif /* !DOS */
+  
+  #ifdef	_WINDOWS

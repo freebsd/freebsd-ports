@@ -1,0 +1,27 @@
+*** doc/pine.1.orig	Thu Feb  4 20:42:05 1999
+--- doc/pine.1	Tue Feb  9 22:11:26 1999
+***************
+*** 294,304 ****
+  .br
+  /etc/mime.types	System-wide file ext. to MIME type mapping
+  .br
+! /usr/local/lib/pine.info	Local pointer to system administrator.
+  .br
+! /usr/local/lib/pine.conf	System-wide configuration file.
+  .br
+! /usr/local/lib/pine.conf.fixed	 Non-overridable configuration file.
+  .br
+  /tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
+  .br
+--- 294,304 ----
+  .br
+  /etc/mime.types	System-wide file ext. to MIME type mapping
+  .br
+! @@PREFIX@@/etc/pine.info	Local pointer to system administrator.
+  .br
+! @@PREFIX@@/etc/pine.conf	System-wide configuration file.
+  .br
+! @@PREFIX@@/etc/pine.conf.fixed	 Non-overridable configuration file.
+  .br
+  /tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
+  .br

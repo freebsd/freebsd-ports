@@ -1,0 +1,11 @@
+#!/bin/sh
+# ---------- pgpencrypt ---------
+# 21.03.96 Roland Rosenfeld <roland@spinnaker.rhein.de>
+# Wed 16 Sep 1998 23:46:43 WST Anthony Di Pietro <anthony@dino.omen.com.au>
+# Modified to work with both PGP v2 and PGP v5.
+if [ -x @@PREFIX@@/bin/pgpe ]
+then
+  pgpe -s -a -r $*
+else
+  pgp -feast $*
+fi
