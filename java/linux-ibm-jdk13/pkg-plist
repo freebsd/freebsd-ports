@@ -1,5 +1,3 @@
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/bin/HtmlConverter
 %%T%%/bin/exe/jformat
 %%T%%/bin/exe/jformat_g
@@ -887,6 +885,10 @@
 %%T%%/demo/jfc/TableExample/src/TableExample4.java
 %%T%%/demo/jfc/TableExample/src/TableMap.java
 %%T%%/demo/jfc/TableExample/src/TableSorter.java
+@exec   mkdir -p %D/share/doc/java
+@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-IBM-JDK%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/lib/security
 @dirrm %%T%%/jre/lib/images/ftp
