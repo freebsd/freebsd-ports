@@ -1,0 +1,2 @@
+Image::Grab is a simple way to get images with URLs that are either not
+predictable or are "hidden" by some method.
