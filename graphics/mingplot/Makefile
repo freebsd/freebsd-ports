@@ -13,9 +13,9 @@ MASTER_SITES=	http://namazu.org/~satoru/mingplot/
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A tool to generate a flash-based chart
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/ming.so:${PORTSDIR}/graphics/ruby-ming \
-		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/ming.so:${PORTSDIR}/graphics/ruby-ming
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 
 .include <bsd.port.mk>
