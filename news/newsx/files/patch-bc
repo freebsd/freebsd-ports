@@ -1,0 +1,22 @@
+--- src/active.c.orig	Tue Mar 16 09:12:46 1999
++++ src/active.c	Sun Feb 18 14:26:47 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: active.c,v $
++ *  Revision x.xx  2001/02/18
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.12  1999/03/16 08:12:46  src
+  *  Moved clean_active() to active.c
+  *
+@@ -82,7 +85,8 @@
+     /* BUG: check if already? */
+     n = sizeof(ACTIVE_GRP) + strlen(group);
+ 
+-    ap = xmalloc(n);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    ap = xmalloc(n,"active.c",89);
+ 
+     /* add to list of active groups at that hashindex */
+     ap->seen = 0;

@@ -1,0 +1,12 @@
+--- src/logmsg.c.orig	Tue Mar 30 22:38:28 1999
++++ src/logmsg.c	Sun Jan 21 10:47:05 2001
+@@ -121,7 +121,8 @@
+     return strerror(err);
+ #else
+     static char buf[30];
+-    sprintf("errno %d",err);
++    sprintf(buf,"errno %d",err);
++    return buf;
+ #endif
+ }
+ 

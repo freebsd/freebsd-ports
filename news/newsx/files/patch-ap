@@ -1,0 +1,21 @@
+--- src/main.c.orig	Sun Apr 25 09:00:37 1999
++++ src/main.c	Sat Mar  3 23:06:24 2001
+@@ -20,6 +20,9 @@
+  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  *
+  *  $Log: main.c,v $
++ *  Revision x.xx  2001/02/11
++ *  Use libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.46  1999/04/25 07:00:37  src
+  *  Mellowed error message for missing standard profiles
+  *
+@@ -380,6 +383,8 @@
+ {
+     int c;
+     char *p;
++
++    optind = 0;			/* tell getopt to reset internal variables */
+ 
+     for (;;) {
+ 	option_index = -1;

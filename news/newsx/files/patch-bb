@@ -1,0 +1,22 @@
+--- src/sys.c.orig	Sat Apr 24 20:13:31 1999
++++ src/sys.c	Sun Feb 18 13:39:54 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: sys.c,v $
++ *  Revision x.xx  2001/02/18
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.23  1999/04/24 18:13:31  src
+  *  Allowing '@' in newsfeeds syntax, making a special case of it
+  *  in the group list
+@@ -96,7 +99,8 @@
+ 
+     n = sizeof(SYS_GRP) + strlen(group);
+ 
+-    sp = xmalloc(n);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    sp = xmalloc(n,"sys.c",101);
+ 
+     /* fill in structure */
+     sp->next = 0; 

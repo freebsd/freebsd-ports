@@ -1,0 +1,83 @@
+--- src/pull.c.orig	Mon Mar 15 02:45:13 1999
++++ src/pull.c	Wed Jan 24 15:27:03 2001
+@@ -280,36 +280,71 @@
+ 		}
+ 		fprintf(pull_tmp,":%s\n",t);
+ 	    } else {
++		char c = '\0';
+ 		/* must be a group name */
+ 		where = 0;
+-		if ((n=sscanf(p,"%[^ \n\t!:] %ld",group,&where)) < 1) {
++		if ((n=sscanf(p,"%[^ \n\t!:]%c %ld",group,&c,&where)) < 1) {
+ 		    if (!skip) {
+ 			bad_syntax(p,n,1,"host active");
+ 			fprintf(pull_tmp,"#ERR# %s",buf);
+ 		    }
+ 		} else {
++		    /* If .newsrc used for in.hosts file, and it says the
++		       group isn't being read, treat the group as inactive,
++		       even if it appears in 'active'. */
++		    unsigned int ignore_this_group;
++		    if (c == '!'  ||  c == ':') {
++			ignore_this_group = (c == '!');
++			/* Assume .newsrc format line: get last number and
++			   find the end of (potentially very) long lines */
++			t = p + strlen(p) - 1;	/* n>=1 && c ensure t > p */
++			while (*t != '\n') {
++			    /* .newsrc line (still) longer than BUFSIZ! */
++			    while (isdigit(t[-1]))  --t;
++			    strcpy (buf,t);
++			    n = strlen(buf);
++			    p = buf+n;
++			    if (!fgets(p,BUFSIZ-n,pull_in)) {
++				t = p;  /* EOF instead of EOL */
++				break;
++			    }
++			    t = p + strlen(p) - 1;
++			}
++			while (isdigit(t[-1]))  --t;
++			where = strtol(t,NULL,10);
++		    }
++		    else ignore_this_group = 0;	 /* false */
+ 		    if (!skip) {
+-			if (is_active(group)) {
++			if (!ignore_this_group && is_active(group)) {
++			    unsigned int ok;
+ 			    where0 = where;
+-			    log_msg(L_DEBUGMORE,"pull group %s",group);
+-			    if (!pull_group(group,&where,0)) {
++			    if (where > 0) {
++			        log_msg(L_DEBUGMORE,"pull group %s",group);
++				ok = pull_group(group,&where,0);
++			    } else {
++			        /* treat groups with where = 0 as new groups */
++			        log_msg(L_DEBUGMORE,"pull unseen group %s",group);
++				ok = pull_group(group,&where,1);
++			        if (ok)  ++unseen_groups;
++			    }
++			    if (!ok) {
+ 				fetch_aborted = 1;
+ 				skip = 1;
+ 				/* continue reading active to clean up things */
+ 			    } else if (where0 != where) {
+-				++pull_anything;
++			        ++pull_anything;
+ 				fflush(pull_tmp);
+ 			    }
+ 			} else {
+ 			    if (forget_inactive) {
+-				/* loose all information about groups
++				/* delete information about groups
+ 				   no longer in active file */
+-				log_msg(L_INFO,"group %s no longer active - removed from host list",
+-						group);
++				log_msg(L_INFO,"inactive group %s removed from host list",
++					group);
+ 				group[0] = '\0';
+ 				++removed_groups;
+ 			    } else {
+-				log_msg(L_DEBUGMORE,"group %s not active",group);
++				log_msg(L_DEBUGMORE,"group %s not active or not read",group);
+ 			    }
+ 			}
+ 		    }

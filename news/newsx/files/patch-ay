@@ -1,0 +1,36 @@
+--- src/proto.h.orig	Mon Apr 19 05:32:39 1999
++++ src/proto.h	Sun Feb 11 19:19:59 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: proto.h,v $
++ *  Revision x.xx  2001/02/11
++ *  Use xmalloc, xrealloc and wildmat from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.31  1999/04/19 03:32:39  src
+  *  Standard profile in $PATHETC/newsx.conf
+  *
+@@ -133,10 +136,12 @@
+ text_time(time_t t);
+ char *
+ skipsp(char *p);
++/* See libinn.h
+ void *
+ xmalloc(unsigned int size);
+ void * 
+ xrealloc(void *p,unsigned int size);
++*/
+ char *
+ xstrcpy(const char *str);
+ 
+@@ -289,8 +294,10 @@
+ progtitle2(char *what,char *more);
+ 
+ /* wildmat.c */
++/* from libinn.h
+ int 
+ wildmat(char *text, char *p);
++*/
+ 
+ /* bounce.c */
+ int  

@@ -1,0 +1,11 @@
+--- dbz/Makefile.in.orig	Sun Apr 25 03:08:40 1999
++++ dbz/Makefile.in	Fri Feb  9 05:23:08 2001
+@@ -198,7 +198,7 @@
+ 	$(COMPILE) -c $<
+ 
+ mostlyclean-compile:
+-	-rm -f *.o core *.core
++	-rm -f *.o core *.core endian *.a
+ 
+ clean-compile:
+ 

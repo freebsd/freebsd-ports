@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sun Apr 25 03:08:10 1999
++++ Makefile.in	Fri Feb  9 05:03:35 2001
+@@ -135,12 +135,14 @@
+ CTAGS_ARGS = config.h
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+-CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES =  README newsx.spec
++CONFIG_HEADER = config.h
++CONFIG_STATUS_DEPENDENCIES =
++CONFIGURE_DEPENDENCIES = 
+ DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
+-Makefile.am Makefile.in NEWS README.in TODO acconfig.h aclocal.m4 \
+-config.guess config.h.in configure configure.in install-sh missing \
+-mkinstalldirs newsx.spec.in
++   Makefile.am Makefile.in NEWS README.in TODO acconfig.h aclocal.m4 \
++   config.guess config.h.in configure configure.in install-sh missing \
++   mkinstalldirs newsx.spec.in
+ 
+ 
+ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)

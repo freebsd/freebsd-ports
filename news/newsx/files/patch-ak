@@ -1,0 +1,33 @@
+--- doc/newsx.8.in.orig	Sat Apr 24 13:55:27 1999
++++ doc/newsx.8.in	Mon Jan 22 21:07:25 2001
+@@ -515,16 +515,15 @@
+ .RS
+ This option is particularily useful to specify unsymmetric behaviour, i.e.
+ groups where there will be outgoing traffic, but no incoming articles.
+-For instance,
+-to explicitly avoid fetching of control groups, use:
++For instance, to explicitly avoid fetching of control groups, use:
+ .br
+ 	  --groups '!control.*'
+-.TP
++.PP
+ It can also be useful to specify that only a subset of groups should be
+ fetched for the occasion, e.g:
+ .br
+ 	  --groups 'comp.*,!*.advocacy'
+-.TP
++.PP
+ It is recommended to put the argument for --groups in single quotes.
+ 
+ .SH "GENERAL OPTIONS"
+@@ -552,6 +551,10 @@
+ Do not update the process status display.
+ 
+ .SH "OPTIONS FOR NEWSGROUPS"
++.PP
++NOTE: Unless otherwise specified, these options are IN ADDITION TO the usual
++actions and do NOT imply --no-post or --no-fetch.  Specify those switches if
++desired.
+ .TP
+ \fB--list\fP\fI listname\fP
+ Obtain a list of newsgroups from the newsserver to

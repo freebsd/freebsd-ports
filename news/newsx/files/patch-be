@@ -1,0 +1,42 @@
+--- src/split.c.orig	Sun Apr 25 09:02:03 1999
++++ src/split.c	Sun Feb 18 14:43:14 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: split.c,v $
++ *  Revision x.xx  2001/02/18
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.1  1999/04/25 07:02:03  src
+  *  Added to CVS, it was omitted by mistake
+  *
+@@ -31,7 +34,8 @@
+     char **argv;
+     int argc_max = 100;
+ 
+-    argv = xmalloc(argc_max*sizeof(char *));
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    argv = xmalloc(argc_max*sizeof(char *),"split.c",38);
+ 
+     /* program name */
+     argv[argc++] = pname;
+@@ -46,7 +50,8 @@
+ 	    if (start) {
+ 		if (argc >= argc_max-3) {
+ 		    argc_max += 100;
+-		    argv = xrealloc(argv, argc_max*sizeof(char *));
++/* xmalloc from libinn (<thierry@thomas.as>) */
++		    argv = xrealloc(argv, argc_max*sizeof(char *),"split.c",54);
+ 		}
+ 		argv[argc++] = start;
+ 	    }
+@@ -112,7 +117,8 @@
+ 	exit_cleanup(8);
+     }
+ 
+-    buf = xmalloc(size+1);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    buf = xmalloc(size+1,"split.c",121);
+     buf[size] = '\0';
+ 
+     /* load local sys file */

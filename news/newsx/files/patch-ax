@@ -1,0 +1,34 @@
+--- src/common.h.orig	Sat Apr 17 09:11:26 1999
++++ src/common.h	Sun Feb 18 11:11:13 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: common.h,v $
++ *  Revision x.xx  2001/02/11
++ *  NNTP_PORT already defined in config.h from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.17  1999/04/17 07:11:26  src
+  *  malloc.h inclusion
+  *
+@@ -58,6 +61,10 @@
+ #include <ctype.h>
+ #include <errno.h>
+ 
++#ifndef __LIBINN_H__
++#  include "libinn.h"
++#endif
++
+ #if STDC_HEADERS
+ #  include <stdlib.h>
+ #  include <string.h>
+@@ -131,7 +138,9 @@
+ char *hostport;                 /* port for NNTP server */
+ char *pname;                    /* this program */
+ char *spooldir;                 /* news spool */
+-#define NNTP_PORT "nntp"
++#ifndef NNTP_PORT
++ #define NNTP_PORT "nntp"
++#endif
+ 
+ /* 
+  *  misc status

@@ -1,0 +1,48 @@
+--- src/util.c.orig	Wed Apr  7 10:02:11 1999
++++ src/util.c	Sun Feb 18 13:42:53 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: util.c,v $
++ *  Revision x.xx  2001/02/11
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.14  1999/04/07 08:02:11  src
+  *  Implemented --profile
+  *
+@@ -188,7 +191,6 @@
+ 
+ /*
+  *  memory allocation - never fail
+- */
+ void *
+ xmalloc(unsigned int size)
+ {  
+@@ -200,10 +202,10 @@
+     }
+     return p;
+ }
++ */
+ 
+ /*
+  *  memory reallocation - never fail
+- */
+ void *
+ xrealloc(void *p,unsigned int size)
+ {  
+@@ -213,6 +215,7 @@
+     }
+     return p;
+ }
++ */
+ 
+ /*
+  *  string allocate and copy - never fail
+@@ -220,5 +223,6 @@
+ char *
+ xstrcpy(const char *str)
+ {  
+-    return strcpy(xmalloc(strlen(str)+1),str);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    return strcpy(xmalloc(strlen(str)+1,"util.c", 228),str);
+ }

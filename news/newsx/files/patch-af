@@ -1,0 +1,37 @@
+--- lib/getopt.c.orig	Sun Sep 27 09:34:20 1998
++++ lib/getopt.c	Thu Feb 15 21:30:54 2001
+@@ -23,6 +23,9 @@
+    Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+    $Log: getopt.c,v $
++   Revision x.x  2001/02/14
++   Got rid of another gcc warning (<thierry@thomas.as>)
++
+    Revision 1.2  1998/09/27 07:34:20  src
+    Got rid of gcc warning
+ 
+@@ -554,17 +557,20 @@
+ 	      else
+ 		{
+ 		  if (opterr)
++		   {
+ 		   if (argv[optind - 1][1] == '-')
+ 		    /* --option */
+ 		    fprintf (stderr,
+ 		     gettext ("%s: option `--%s' doesn't allow an argument\n"),
+ 		     argv[0], pfound->name);
+ 		   else
++		     {
+ 		    /* +option or -option */
+-		    fprintf (stderr,
+-		     gettext ("%s: option `%c%s' doesn't allow an argument\n"),
+-		     argv[0], argv[optind - 1][0], pfound->name);
+-
++			fprintf (stderr,
++			gettext ("%s: option `%c%s' doesn't allow an argument\n"),
++			argv[0], argv[optind - 1][0], pfound->name);
++		     }
++		   }
+ 		  nextchar += strlen (nextchar);
+ 		  return '?';
+ 		}

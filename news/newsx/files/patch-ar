@@ -1,0 +1,25 @@
+--- src/putarticle.c.orig	Mon Apr  5 15:01:51 1999
++++ src/putarticle.c	Sun Jan 21 11:27:49 2001
+@@ -85,22 +85,6 @@
+ 
+ static int SM_open = 0;
+ 
+-#ifndef HAVE_STRTOUL
+-/*
+- *  for systems that doesn't have it, assuming base<=10
+- */
+-long 
+-strtoul(char *str,char **endptr,int base)
+-{
+-    long u = 0L;
+-    char c;
+-    while (isspace(*str)) ++str;
+-    while (isdigit(c = *str++)) u = u*base + c-'0';
+-    *endptr = str;
+-    return u;
+-}
+-#endif
+-	
+ /*
+  *  check if header tag
+  */

@@ -25,6 +25,7 @@
     SUBDIR += leafnode+
     SUBDIR += newsfetch
     SUBDIR += newsfish
+    SUBDIR += newsx
     SUBDIR += nn
     SUBDIR += nntp
     SUBDIR += nntpbtr
