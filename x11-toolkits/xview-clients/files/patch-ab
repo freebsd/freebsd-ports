@@ -1,0 +1,14 @@
+diff -c /usr/ports/x11/xview-config/work/xview3.2p1-X11R6/clients/olwm/screen.c screen.c
+*** /usr/ports/x11/xview-config/work/xview3.2p1-X11R6/clients/olwm/screen.c	Tue Oct  8 23:31:04 1996
+--- olwm/screen.c	Mon Jan  1 23:54:12 1996
+***************
+*** 220,225 ****
+--- 220,226 ----
+  		     	case PseudoColor:
+  			case GrayScale:
+  		     	case DirectColor:
++ 			case TrueColor:
+  		    		return True;
+  				/*NOTREACHED*/
+  		    		break;
+
