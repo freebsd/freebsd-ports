@@ -31,7 +31,6 @@ MAN3+=	panda_hidetoolbar.3
 MAN3+=	panda_hidewindowui.3
 MAN3+=	panda_imagebox.3
 MAN3+=	panda_imageboxrot.3
-MAN3+=	panda_imagesize.3
 MAN3+=	panda_init.3
 MAN3+=	panda_insertJPEG.3
 MAN3+=	panda_insertPNG.3

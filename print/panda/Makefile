@@ -6,29 +6,32 @@
 #
 
 PORTNAME=	panda
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	print
-MASTER_SITES=	http://www.stillhq.com/panda/source/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_SAVANNAH} \
+		http://www.stillhq.com/panda/source/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GPL PDF generation library
+COMMENT=	A PDF generation library
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_REINPLACE=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-berkeley-db
 INSTALLS_SHLIB=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include/db41 -I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +41,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -lpanda| \$$(top_srcdir)/libpanda.la|g' \
+	@${REINPLACE_CMD} -e 's| -lpanda| $$(top_srcdir)/libpanda.la|g' \
 		${WRKSRC}/examples/Makefile.in
 
 post-install:

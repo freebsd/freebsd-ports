@@ -1,10 +1,38 @@
---- configure.orig	Fri May 16 13:21:40 2003
-+++ configure	Sat May 17 21:37:09 2003
-@@ -7860,6 +7860,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Tue Apr 13 09:47:26 2004
++++ configure	Fri Apr 16 01:07:19 2004
+@@ -8983,7 +8983,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldb  $LIBS"
++LIBS="-ldb41 $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9042,7 +9042,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_db_db_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_db_db_create" >&6
+ if test $ac_cv_lib_db_db_create = yes; then
+-  LDFLAGS="$LDFLAGS -ldb" DATABASE="db"
++  LDFLAGS="$LDFLAGS -ldb41" DATABASE="db"
+ else
+   echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+@@ -9142,7 +9142,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldb  $LIBS"
++LIBS="-ldb41 $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9201,7 +9201,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_db_db_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_db_db_create" >&6
+ if test $ac_cv_lib_db_db_create = yes; then
+-  LDFLAGS="$LDFLAGS -ldb" DATABASE="db"
++  LDFLAGS="$LDFLAGS -ldb41" DATABASE="db"
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_DB
+ _ACEOF
