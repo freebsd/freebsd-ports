@@ -21,6 +21,7 @@
     SUBDIR += cpbk
     SUBDIR += cpdup
     SUBDIR += daemontools
+    SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
@@ -32,6 +33,7 @@
     SUBDIR += gtar
     SUBDIR += gtop
     SUBDIR += guitar
+    SUBDIR += healthd
     SUBDIR += idled
     SUBDIR += ipsc
     SUBDIR += lavaps
