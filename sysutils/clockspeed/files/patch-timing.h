@@ -17,7 +17,7 @@
 +typedef struct { struct timespec t; } timing;
 +#define timing_now(x) ((void) clock_gettime(CLOCK_REALTIME, &((x)->t)))
 +/* in seconds */
-+#define timing_diff(x,y) (((x)->t.tv_sec - (double) (y)->t.tv_sec) + (4294967296.0*((x)->t.tv_nsec - (double) (y)->t.tv_nsec)))/1e9)
++#define timing_diff(x,y) (((x)->t.tv_sec - (double) (y)->t.tv_sec) + (4294967296.0*((x)->t.tv_nsec - (double) (y)->t.tv_nsec))/1e9)
 +
 +#else
  
