@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JBoss 3, an open-source J2EE application server
 
-BUILD_DEPENDS=	${JAVAJARDIR}/xdoclet-1.2b4.jar:${PORTSDIR}/java/xdoclet
-
 USE_JAVA=	1.3+
 
 USE_REINPLACE=	YES
@@ -53,7 +51,6 @@ MAN1=		${CONTROL_SCRIPT_NAME}.1
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
 
 CPIO?=		/usr/bin/cpio
-
 
 .include <bsd.port.pre.mk>
 
