@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_Flexy
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -69,5 +69,12 @@ RUN_DEPENDS+=	${PEARDIR}/Translation2.php:${PORTSDIR}/sysutils/pear-Translation2
 .endif
 
 .include <bsd.port.pre.mk>
+
+PHP_VERS=	${PHP_VERSION:S/.//g}
+
+.if defined(PHP_VERS) && ${PHP_VERS} < 430
+IGNORE=		"You need PHP 4.3.0 or later to install PEAR::HTML_Template_Flexy"
+.endif
+
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
