@@ -4166,6 +4166,7 @@ metamail	ports/mail/metamail
 metapixel	ports/graphics/metapixel
 metatheme2	ports/misc/metatheme2
 metis		ports/math/metis
+metis-edf	ports/cad/metis-edf
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
 mew-mule	ports/mail/mew-mule
