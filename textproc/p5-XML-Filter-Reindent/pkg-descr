@@ -1,0 +1,8 @@
+XML::Filter::Reindent can be used as a PerlSAX filter to reformat an XML
+document before sending it to a PerlSAX handler that prints it (like
+XML::Handler::Composer.)
+
+WWW: http://search.cpan.org/search?dist=XML-Filter-Reindent
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
