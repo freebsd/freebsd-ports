@@ -1,5 +1,5 @@
---- unix/Config.orig	Fri Apr  4 11:51:58 1997
-+++ unix/Config	Mon Jun 16 18:18:29 1997
+--- unix/Config.orig	Mon Nov 16 16:43:32 1998
++++ unix/Config	Thu Jan 14 04:56:10 1999
 @@ -33,9 +33,12 @@
  #   even if an old version is currently in use.  You can remove
  #   the old version manually later when it is no longer in use.
@@ -27,3 +27,12 @@
  
  
  ### Flags.
+@@ -110,7 +113,7 @@
+ # by removing the leading "#".
+ 
+ # CC=cc
+-# CCFLAGS="-g"
++CCFLAGS=${CFLAGS}
+ 
+ 
+ ### Stripping.
