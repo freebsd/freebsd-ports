@@ -23,6 +23,39 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
+share/doc/mysql/Img/australia.gif
+share/doc/mysql/Img/austria.gif
+share/doc/mysql/Img/bulgaria.gif
+share/doc/mysql/Img/canada.gif
+share/doc/mysql/Img/chile.gif
+share/doc/mysql/Img/czech-republic.gif
+share/doc/mysql/Img/denmark.gif
+share/doc/mysql/Img/estonia.gif
+share/doc/mysql/Img/finland.gif
+share/doc/mysql/Img/france.gif
+share/doc/mysql/Img/germany.gif
+share/doc/mysql/Img/great-britain.gif
+share/doc/mysql/Img/greece.gif
+share/doc/mysql/Img/hungary.gif
+share/doc/mysql/Img/israel.gif
+share/doc/mysql/Img/italy.gif
+share/doc/mysql/Img/japan.gif
+share/doc/mysql/Img/mysql5.gif
+share/doc/mysql/Img/netherlands.gif
+share/doc/mysql/Img/poland.gif
+share/doc/mysql/Img/portugal.gif
+share/doc/mysql/Img/romania.gif
+share/doc/mysql/Img/russia.gif
+share/doc/mysql/Img/singapore.gif
+share/doc/mysql/Img/south-africa.gif
+share/doc/mysql/Img/south-africa1.gif
+share/doc/mysql/Img/south-korea.gif
+share/doc/mysql/Img/sweden.gif
+share/doc/mysql/Img/switzerland.gif
+share/doc/mysql/Img/taiwan.gif
+share/doc/mysql/Img/tcxlogo3.gif
+share/doc/mysql/Img/ukraine.gif
+share/doc/mysql/Img/usa.gif
 share/doc/mysql/include.texi
 share/doc/mysql/manual.html
 share/doc/mysql/manual.ps
@@ -69,6 +102,7 @@ share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
+@dirrm share/doc/mysql/Img
 @dirrm share/doc/mysql
 @dirrm share/mysql/czech
 @dirrm share/mysql/dutch
