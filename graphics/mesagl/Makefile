@@ -7,6 +7,7 @@
 
 PORTNAME=	Mesa
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://iris.ssec.wisc.edu/pub/Mesa/ \

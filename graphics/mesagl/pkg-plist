@@ -4,6 +4,7 @@
 %%XFREE3:%%include/GL/glu.h
 %%XFREE3:%%include/GL/glu_mangle.h
 include/GL/glut.h
+include/GL/glutf90.h
 %%XFREE3:%%include/GL/glx.h
 %%XFREE3:%%include/GL/glx_mangle.h
 %%XFREE3:%%include/GL/glext.h
@@ -17,6 +18,7 @@ include/GL/glut.h
 %%XFREE3:%%lib/libGLU.so.%%GLVER%%
 lib/libMesaGL.so
 lib/libMesaGLU.so
+lib/libglut.a
 lib/libglut.so
 lib/libglut.so.%%GLUTVER%%
 %%XFREE3:%%@dirrm include/GL
