@@ -1,0 +1,10 @@
+--- man/pvm/pvm_error.man.orig	Thu Aug  9 09:31:56 2001
++++ man/pvm/pvm_error.man	Thu Aug  9 10:15:38 2001
+@@ -2,6 +2,5 @@
+ .so ../sci.an
+ .SH NAME
+-pvm_error - Prints  message  describing  an error  returned by a PVM call.
+-group.
++pvm_error - Prints  message  describing  an error  returned by a PVM call. 
+ .SH CALLING SEQUENCE
+ .nf

@@ -1,0 +1,11 @@
+--- scripts/scilab.g.orig	Mon Mar 19 10:27:27 2001
++++ scripts/scilab.g	Mon Jan 21 21:36:25 2002
+@@ -29,7 +29,7 @@
+ export VERSION
+ 
+ if test "$PVM_ROOT" = ""; then
+-  PVM_ROOT=$SCI/pvm3
++  PVM_ROOT="%%PVM_ROOT%%"
+ fi
+ if test "$PVM_ARCH" = ""; then
+   PVM_ARCH=`$PVM_ROOT/lib/pvmgetarch`

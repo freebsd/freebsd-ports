@@ -1,0 +1,5 @@
+--- .pvmd.conf.orig	Mon Jan 21 22:21:01 2002
++++ .pvmd.conf	Mon Jan 21 22:22:11 2002
+@@ -1 +1 @@
+-* dx=$SCI/pvm3/lib/pvmd ep=$SCI/bin:$PVM_ROOT/bin/$PVM_ARCH
++* dx=$PVM_ROOT/lib/pvmd ep=$SCI/bin:$PVM_ROOT/bin/$PVM_ARCH

@@ -1,0 +1,10 @@
+--- man/pvm/pvm_tasks.man.orig	Thu Aug  9 09:31:56 2001
++++ man/pvm/pvm_tasks.man	Thu Aug  9 10:18:46 2001
+@@ -2,6 +2,5 @@
+ .so ../sci.an
+ .SH NAME
+-pvm_tasks - returns information about the tasks running
+-on the virtual machine.
++pvm_tasks - returns information about the tasks running on the virtual machine.
+ .SH CALLING SEQUENCE
+ .nf

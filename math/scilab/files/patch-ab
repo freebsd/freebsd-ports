@@ -1,15 +1,19 @@
---- Makefile.in	Mon Apr 30 21:12:52 2001
-+++ Makefile.in	Mon Apr 30 22:19:49 2001
-@@ -115,8 +115,6 @@
- 	$(SCIBASE)/pvm3/lib/pvmd \
- 	$(SCIBASE)/pvm3/lib/pvmtmparch \
- 	$(SCIBASE)/pvm3/lib/pvmgetarch \
+--- Makefile.in.orig	Mon Mar 26 09:59:13 2001
++++ Makefile.in	Fri Jan 25 16:38:50 2002
+@@ -111,12 +111,6 @@
+ 	$(SCIBASE)/macros \
+ 	$(SCIBASE)/man \
+ 	$(SCIBASE)/maple \
+-	$(SCIBASE)/pvm3/lib/pvm \
+-	$(SCIBASE)/pvm3/lib/pvmd \
+-	$(SCIBASE)/pvm3/lib/pvmtmparch \
+-	$(SCIBASE)/pvm3/lib/pvmgetarch \
 -	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmd3 \
 -	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmgs \
  	$(SCIBASE)/routines/*.h \
  	$(SCIBASE)/routines/Make.lib \
  	$(SCIBASE)/routines/default/FCreate \
-@@ -147,7 +145,7 @@
+@@ -147,7 +141,7 @@
  	cd .. ; tar cvf $(SCIDIR)/$(SCIBASE)-bin.tar $(BINDISTFILES)
  	$(RM) .binary
  
@@ -18,7 +22,7 @@
  
  install:
  	@if test `pwd` != ${LIBPREFIX}/$(SCIBASE); then \
-@@ -159,12 +157,12 @@
+@@ -159,12 +153,12 @@
  		(cd ${LIBPREFIX}/$(SCIBASE); make); \
  		$(RM) .binary; \
  	fi

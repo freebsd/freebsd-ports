@@ -1,0 +1,9 @@
+--- man/nonlinear/derivative.man.orig	Thu Aug  9 09:31:56 2001
++++ man/nonlinear/derivative.man	Thu Aug  9 10:08:41 2001
+@@ -2,5 +2,5 @@
+ .so ../sci.an 
+ .SH NAME
+-derivative- approximate derivative
++derivative - approximate derivative
+ .SH CALLING SEQUENCE
+ .nf
