@@ -2683,6 +2683,7 @@ iw-culmus	ports/hebrew/culmus
 iw-elmar-fonts	ports/hebrew/elmar-fonts
 iw-he2		ports/hebrew/he2
 iw-hspell	ports/hebrew/hspell
+iw-koffice-i18n	ports/hebrew/koffice-i18n
 iw-pine		ports/hebrew/pine
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
