@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ogmtools
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create OGG media streams
@@ -42,9 +41,11 @@ post-patch:
 
 post-configure:
 # malloc.h -> stdlib.h
+# stdint.h -> inttypes.h
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
-		's!malloc.h!stdlib.h!'
+		's!malloc.h!stdlib.h!; \
+		s|stdint.h|inttypes.h|'
 
 .include <bsd.port.pre.mk>
 
