@@ -17,6 +17,7 @@
     SUBDIR += hfsutils
     SUBDIR += ines
     SUBDIR += ksnes9x
+    SUBDIR += linux-vmware-toolbox
     SUBDIR += linux_base
     SUBDIR += kmamerun
     SUBDIR += mastergear
