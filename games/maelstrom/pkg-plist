@@ -1,8 +1,5 @@
 bin/Maelstrom
 bin/Maelstrom-netd
-bin/macres
-bin/playwave
-bin/snd2wav
 share/doc/Maelstrom/Ambrosia_Software,_Inc._FAQ
 share/doc/Maelstrom/COPYING
 share/doc/Maelstrom/COPYING.GPL
