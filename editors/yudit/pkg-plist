@@ -25,6 +25,8 @@ share/yudit/data/KSC5601R.bumap
 share/yudit/data/OLD5601.bumap
 share/yudit/data/VISCII.bumap
 share/yudit/data/Arabic.kmap
+share/yudit/data/ArmenianEast.kmap
+share/yudit/data/ArmenianWest.kmap
 share/yudit/data/Chinese-CJ.kmap
 share/yudit/data/Cyrillic.kmap
 share/yudit/data/Czech.kmap
@@ -33,8 +35,11 @@ share/yudit/data/Dutch.kmap
 share/yudit/data/Esperanto.kmap
 share/yudit/data/Ethiopic.kmap
 share/yudit/data/French.kmap
+share/yudit/data/Georgian.kmap
 share/yudit/data/German.kmap
 share/yudit/data/Greek.kmap
+share/yudit/data/GreekMono.kmap
+share/yudit/data/Guarani.kmap
 share/yudit/data/Hangul.kmap
 share/yudit/data/Hangul2.kmap
 share/yudit/data/Hangul3.kmap
@@ -46,10 +51,14 @@ share/yudit/data/Mnemonic.kmap
 share/yudit/data/Polish.kmap
 share/yudit/data/Russian.kmap
 share/yudit/data/SGML.kmap
+share/yudit/data/TeX.kmap
+share/yudit/data/Troff.kmap
 share/yudit/data/Unicode2.kmap
 share/yudit/data/Vietnamese.kmap
+share/yudit/help/Config-de.help
 share/yudit/help/Config-hu.help
 share/yudit/help/Config.help
+share/yudit/help/General-de.help
 share/yudit/help/General.help
 share/yudit/help/TestPage.help
 share/yudit/config/yuditrc
@@ -57,6 +66,8 @@ share/yudit/locale/hu.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/ja.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/ru.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/it.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/de.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/your.utf8/LC_MESSAGES/messages.mo
 @dirrm share/yudit/locale/hu.utf8/LC_MESSAGES
 @dirrm share/yudit/locale/hu.utf8
@@ -66,6 +77,10 @@ share/yudit/locale/your.utf8/LC_MESSAGES/messages.mo
 @dirrm share/yudit/locale/ru.utf8
 @dirrm share/yudit/locale/zh_TW.utf8/LC_MESSAGES
 @dirrm share/yudit/locale/zh_TW.utf8
+@dirrm share/yudit/locale/it.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/it.utf8
+@dirrm share/yudit/locale/de.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/de.utf8
 @dirrm share/yudit/locale/your.utf8/LC_MESSAGES
 @dirrm share/yudit/locale/your.utf8
 @dirrm share/yudit/data
