@@ -18,13 +18,19 @@ LIB_DEPENDS=	tix4182:${PORTSDIR}/x11-toolkits/tix
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
+USE_REINPLACE=	yes
 USE_BISON=	yes
 
 post-patch:
+.if defined(WITHOUT_X11)
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-src::prelude.h
+.endif
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 .if !defined(WITHOUT_X11)
-	cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/extra-patch-graphics
-.else
-	cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/extra-patch-text
+	@${REINPLACE_CMD} -e 's|#CFLAGS+=|CFLAGS+= -I${PREFIX}/include/tk8.2 \
+	 -I${PREFIX}/include/tcl8.2 -I${PREFIX}/include -I${X11BASE}/include| ; \
+	 s|#LDFLAGS+=|LDFLAGS+=-L${PREFIX}/lib -ltk82 -ltcl82 -ltix4182|' \
+		${WRKSRC}/src/Makefile
 .endif
 
 .include <bsd.port.mk>
