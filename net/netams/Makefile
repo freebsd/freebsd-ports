@@ -7,43 +7,41 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.1
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://www.netams.com/
-DISTNAME=	netams-3.1.1376
+MASTER_SITES=	http://www.netams.com/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.1563
 
 MAINTAINER=	jura@happychance.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
-.if !defined(WITHOUT_MYSQL)
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.endif
+USE_SUBMAKE=	yes
 
-MAN8=           netams.8
-MANCOMPRESSED=  no
+MAN8=		netams.8
+MANCOMPRESSED=	no
 
-WRKSRC=		${WRKDIR}/netams
-
-DEFINE=		-DFREEBSD
-LIB=		-pthread -lpcap -lutil
-
-.if !defined(WITHOUT_MYSQL)
-DEFINE+=	-DUSE_MYSQL
-LIB+=		-l mysqlclient -L${LOCALBASE}/lib/mysql
-.endif
-.if defined(LOG_DROP)
-DEFINE+=	-DLOG_DROP
-.endif
-.if defined(MAX_QUOTA)
-DEFINE+=	-DMAX_QUOTA=${MAX_QUOTA}
-.else
-DEFINE+=	-DMAX_QUOTA=32
-.endif
-
-SCRIPTS_ENV='DEFINE=${DEFINE}' 'LIB=${LIB}'
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		PREFIX="${PREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}" \
+		REALCURDIR="${.CURDIR}" \
+		WITH_MYSQL="${WITH_MYSQL}" \
+		WITH_MYSQL40="${WITH_MYSQL40}" \
+		WITH_MYSQL41="${WITH_MYSQL41}" \
+		WITH_PGSQL="${WITH_PGSQL}" \
+		WITH_DEBUG="${WITH_DEBUG}" \
+		LOG_DROP="${LOG_DROP}"
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500000
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.netams
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+MAKE_ENV+=	DEFINE="${DEFINE}" FLAGS="${FLAGS}" LIB="${LIB}"
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
@@ -56,7 +54,7 @@ do-install:
 .for example in netams-nat-network.cfg netams-netflow.cfg netams.cfg netams-simple.cfg
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/${example} ${EXAMPLESDIR}/
 .endfor
-.for cgi in logo.gif netams_api.pl netams_graph.cgi weblogin.tem lucon.ttf netams_example.cgi weblogin.cgi
+.for cgi in logo.gif netams_api.pl netams_graph.cgi weblogin.tem netams_example.cgi weblogin.cgi
 	 @ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/${cgi} ${EXAMPLESDIR}/cgi-bin/
 .endfor
 .if !defined(NOPORTDOCS)
@@ -68,5 +66,7 @@ do-install:
 
 post-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message|${SED} 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g'
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.post.mk>

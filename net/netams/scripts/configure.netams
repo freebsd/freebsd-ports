@@ -1,0 +1,161 @@
+#!/bin/sh
+
+if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
+        exit
+fi
+
+tempfile=`mktemp -t checklist`
+
+if [ "${BATCH}" ]; then
+	if [ "${WITH_MYSQL41}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL41\""
+	elif [ "${WITH_MYSQL40}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL40\""
+	elif [ "${WITH_MYSQL}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL\""
+	fi
+	if [ "${WITH_POSTGRES}" ]; then
+		OPTIONS="${OPTIONS} \"PgSQL\""
+	fi
+	if [ "${WITH_HASH}" ]; then
+		OPTIONS="$OPTIONS} \"HASH\""
+	fi
+	if [ "${WITH_OPT}" ]; then
+		OPTIONS="${OPTIONS} \"OPTIMIZED\""
+	fi
+	if [ "${LOG_DROP}" ]; then
+		OPTIONS="$OPTIONS} \"LOG_DROP\""
+	fi
+
+else
+	SET_MYSQL41="OFF"
+	SET_MYSQL40="OFF"
+	SET_MYSQL="OFF"
+	if [ "${WITH_MYSQL41}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so.14 ] ; then
+		SET_MYSQL41="ON"
+	elif [ "${WITH_MYSQL40}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so.12 ] ; then
+		SET_MYSQL40="ON"
+	elif [ "${WITH_MYSQL}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
+		SET_MYSQL="ON"
+	fi
+	SET_POSTGRES="OFF"
+	if [ "${WITH_POSTGRES}" -o -f ${PREFIX}/lib/pq.3 ] ; then
+		SET_POSTGRES="ON"
+	fi
+	SET_HASH="OFF"
+	if [ "${WITH_HASH}" ] ; then
+		SET_HASH="ON"
+	fi
+	SET_DEBUG="ON"
+	if [ "${WITH_DEBUG}" ] ; then
+        	SET_DEBUG="ON"
+        fi
+	SET_OPT="OFF"
+	if [ "${WITH_OPT}" ] ; then
+		SET_OPT="ON"
+	fi
+	SET_LOG_DROP="OFF"
+	if [ "${LOG_DROP}" ] ; then
+		SET_LOG_DROP="ON"
+	fi
+
+	/usr/bin/dialog --title "NetAMS options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 8 \
+MySQL		"MySQL 3.23 support" ${SET_MYSQL} \
+MySQL40		"MySQL 4.0 support" ${SET_MYSQL40} \
+MySQL41		"MySQL 4.1 support" ${SET_MYSQL41} \
+PgSQL		"PostgreSQL support" ${SET_POSTGRES} \
+HASH		"Unix HASH support" ${SET_HASH} \
+DEBUG		"Debugging support" ${SET_DEBUG} \
+OPTIMIZED       "Enable optimization" ${SET_OPT} \
+LOG_DROP	"Log dropped packets" ${SET_LOG_DROP} \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
+exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+
+echo "PREFIX=	${PREFIX}"
+
+while [ "$1" ]; do
+	case $1 in
+		\"MySQL41\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	mysqlclient.14:\${PORTSDIR}/databases/mysql41-client"
+			DEFMYSQL=1
+			;;
+		\"MySQL40\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	mysqlclient.12:\${PORTSDIR}/databases/mysql40-client"
+			DEFMYSQL=1
+			;;
+		\"MySQL\")
+			if [ "${DEFMYSQL}" ]; then
+				echo "MySQL 3.23, 4.0 and 4.1 are mutually exclusive." > /dev/stderr
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
+			DEFMYSQL=1
+			;;
+		\"PgSQL\")
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/databases/postgresql7"
+			echo "DEFINE+= -DUSE_POSTGRES"
+			echo "LIB += -lpq -L${LOCALBASE}/lib"
+			;;
+		\"HASH\")
+			echo "DEFINE+= -DUSE_HASH"
+			;;
+		\"DEBUG\")
+			if [ "${DEFOPT}" ]; then
+				echo "DEBUG and OPTIMIZED are mutually exclusive." > /dev/stderr
+				exit 1
+			fi
+			echo "DEFINE += -DDEBUG"
+			echo "FLAGS += -g -Wall"
+			DEFDEBUG=1
+                        ;;
+		\"OPTIMIZED\")
+			if [ "${DEFDEBUG}" ]; then
+				echo "DEBUG and OPTIMIZED are mutually exclusive." > /dev/stderr
+                        	exit 1
+			fi
+			echo "FLAGS += -O"
+			DEFOPT=1
+			;;
+		\"LOG_DROP\")
+			echo "DEFINE += -DLOG_DROP"
+			;;
+	esac
+	shift
+done
+
+if [ "${DEFMYSQL}" ]; then
+echo "LIB += -lmysqlclient -L${LOCALBASE}/lib/mysql"
+echo "DEFINE+= -DUSE_MYSQL"
+else
+fi
