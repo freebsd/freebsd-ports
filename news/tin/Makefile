@@ -6,47 +6,78 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.12
-PORTREVISION=	1
+PORTVERSION=    1.5.16
 CATEGORIES+=	news ipv6
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
-		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
-		ftp://ftp.nuxi.com/pub/tin/v1.5/
+MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.5/snapshots/ \
+		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/snapshots/
 
 MAINTAINER?=    ache@FreeBSD.org
 
 LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+# --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
+# national environment.
 CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--with-spooldir=/var/news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
 		--with-editor=/usr/bin/ee \
 		--enable-nls \
-		--enable-ipv6 \
-		--enable-curses \
-		--with-ncurses \
-		--disable-mime-strict-charset \
-		--enable-forgery \
+		--with-screen=ncurses \
 		--enable-break-long-lines \
-		--with-pgp=${PREFIX}/bin/pgp \
-		--with-ispell=${PREFIX}/bin/ispell \
-		--with-metamail=${PREFIX}/bin/metamail \
+		--with-libiconv-prefix=${LOCALBASE} \
 		--with-mime-default-charset=US-ASCII
 CONFIGURE_ENV=  CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
 		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 ALL_TARGET=	build
-MAN1=		tin.1
-MAN5=		tin.5
+MAN1=           tin.1 w2r.pl.1 opt-case.pl.1
+MAN5=           tin.5 mbox.5 mmdf.5
+MLINKS=         tin.1 rtin.1
 
 .if defined(WITH_TIN_NNTP_ONLY)
-CONFIGURE_ARGS+=	--enable-nntp-only
+CONFIGURE_ARGS+= --enable-nntp-only
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_TIN_PGP_GPG)
+CONFIGURE_ARGS+= --disable-pgp-gpg
+.elif defined(WITH_TIN_GPG) || \
+    (exists(${LOCALBASE}/bin/gpg) && !defined(WITH_TIN_PGP))
+RUN_DEPENDS+= gpg:${PORTSDIR}/security/gnupg
+CONFIGURE_ARGS+= --with-gpg=${PREFIX}/bin/gpg \
+		 --without-pgp --without-pgpk
+.elif defined(WITH_TIN_PGP) || exists(${LOCALBASE}/bin/pgp)
+RUN_DEPENDS+= pgp:${PORTSDIR}/security/pgp6
+CONFIGURE_ARGS+= --with-pgp=${PREFIX}/bin/pgp \
+		 --without-pgpk --without-gpg
+.else
+CONFIGURE_ARGS+= --disable-pgp-gpg
+.endif
+
+.if defined(WITH_TIN_ISPELL) || \
+    (exists(${LOCALBASE}/bin/ispell) && !defined(WITHOUT_TIN_ISPELL))
+RUN_DEPENDS+= ispell:${PORTSDIR}/textproc/ispell
+CONFIGURE_ARGS+= --with-ispell=${PREFIX}/bin/ispell
+.endif
+
+.if defined(WITH_TIN_METAMAIL) || \
+    (exists(${LOCALBASE}/bin/metamail) && !defined(WITHOUT_TIN_METAMAIL))
+RUN_DEPENDS+= metamail:${PORTSDIR}/mail/metamail
+CONFIGURE_ARGS+= --with-metamail=${PREFIX}/bin/metamail
+.endif
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+.else
+CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
 post-patch:
@@ -72,4 +103,4 @@ post-install:
 		${CP} ${PREFIX}/etc/tin.mime.types.dist ${PREFIX}/etc/mime.types; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

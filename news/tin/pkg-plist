@@ -1,6 +1,10 @@
+bin/metamutt
+bin/opt-case.pl
 bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
+bin/url_handler.sh
+bin/w2r.pl
 @unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
 @unexec if cmp -s %D/etc/mime.types %D/etc/tin.mime.types.dist; then rm -f %D/etc/mime.types; fi
 etc/tin.defaults.dist
