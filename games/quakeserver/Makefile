@@ -16,6 +16,8 @@ DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server to host Quake network games under FreeBSD
 
+IGNORE=		uses an unregistered uid.
+
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
 
