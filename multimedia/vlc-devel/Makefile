@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.2.81
-PORTREVISION=	1
+PORTVERSION=	0.2.82
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.2.81/ \
 		ftp://ftp.Awfulhak.org/pub/vlc/ \
@@ -25,9 +24,5 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${PREFIX}/bin/gtk12-config" \
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-
-pre-patch:
-	@${PERL} -pi.orig -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/configure \
-	    ${WRKSRC}/plugins/sdl/vout_sdl.c
 
 .include <bsd.port.mk>
