@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Dec 30 20:17:58 2001
-+++ Makefile	Wed Jan 30 20:59:01 2002
+--- Makefile.orig	Mon Apr  8 00:45:53 2002
++++ Makefile	Sat Apr 27 03:25:35 2002
 @@ -35,7 +35,7 @@
  
  # Installation sites (GNU conventions):
@@ -14,9 +14,9 @@
  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
  #
 -CC       = gcc
--CFLAGS	= -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
+-CFLAGS	= -O2 -m486 -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
 +#CC       = gcc
-+#CFLAGS	= -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
++#CFLAGS	= -O2 -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
  
  #CFLAGS   = +O1 -Aa -D_HPUX_SOURCE -DSYSV -I/usr/include/X11R5 -I/usr/include/X11R4 $(DEFINES)
  
@@ -32,41 +32,12 @@
 -DEFINES   = -DUNIX -DHAS_UNIX_X11 
 +DEFINES   = -DUNIX -DHAS_UNIX_X11 -I${X11BASE}/include -I${LOCALBASE}/include
  PREVIEWER = to_x11
--ALL_LIBS  = -L/usr/lib/X11R6 -lX11 -lm     
+-ALL_LIBS  = -L/usr/lib/X11R6 -lpng -ltiff -ljpeg -lz -lX11 -lm     
 +ALL_LIBS  = -L${X11BASE}/lib -lX11 -lm -L${LOCALBASE}/lib -ltiff -lpng -lz
  #
  # Generic UNIX, no previewer
  #
-@@ -179,19 +179,19 @@
- #
- # Epson Esc/P2 support 
- #
--#EX_SRC	 += to_escp2.c
--#EX_OBJ	 += to_escp2.o
--#EX_DEFS += -DEPSON
-+EX_SRC	 += to_escp2.c
-+EX_OBJ	 += to_escp2.o
-+EX_DEFS += -DEPSON
- #
- # Include PNG support:
--#EX_SRC  += png.c to_png.c
--#EX_OBJ  += png.o to_png.o
--#EX_DEFS += -DPNG
-+EX_SRC  += png.c to_png.c
-+EX_OBJ  += png.o to_png.o
-+EX_DEFS += -DPNG
- #
- # Include TIFF support:
--#EX_SRC  +=  to_tif.c
--#EX_OBJ  += to_tif.o
--#EX_DEFS += -DTIF
-+EX_SRC  +=  to_tif.c
-+EX_OBJ  += to_tif.o
-+EX_DEFS += -DTIF
- #
- # Include ATARI extras:
- # EX_SRC	+= to_pic.c to_pac.c
-@@ -224,7 +224,8 @@
+@@ -228,7 +228,8 @@
  
  $(PROGRAM): $(OBJS)
  	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) -o $(PROGRAM)
@@ -76,7 +47,7 @@
  
  default:
  	@echo "This makefile needs manual configuration! Edit it now!
-@@ -248,9 +249,9 @@
+@@ -252,9 +253,9 @@
  #									#
  #########################################################################
  
@@ -89,7 +60,7 @@
  
  
  #########################################################################
-@@ -307,15 +308,11 @@
+@@ -311,15 +312,11 @@
  install:	install-bin install-info install-man
  
  install-bin:	$(PROGRAM)
