@@ -7,6 +7,7 @@
 
 PORTNAME=	kf
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.habazie.rams.pl/kf/files/ \
 		http://www.jabberstudio.org/projects/kf/releases/
@@ -21,6 +22,9 @@ USE_GNOME=	libglade2
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
