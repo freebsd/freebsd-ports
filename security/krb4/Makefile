@@ -7,7 +7,7 @@
 
 PORTNAME=	krb4
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/krb/src/
 
@@ -18,6 +18,7 @@ COMMENT=	KTH Kerberos 4
 # which have the same name as some in the base system (e.g.
 # ftp, telnet, su).
 PREFIX?=	${LOCALBASE}/krb4
+NO_MTREE=	yes	# Otherwise we end up with dozens of extra directories in ${PREFIX}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 GNU_CONFIGURE=	yes
@@ -30,6 +31,8 @@ CONFIGURE_ENV+=	\
 	"CFLAGS=${CFLAGS}" \
 	"CPPFLAGS=-DOPENSSL_DES_LIBDES_COMPATIBILITY" \
 	"LDFLAGS=-Wl,-rpath,${PREFIX}/lib"
+
+INFO=	kth-krb
 
 post-install:
 	install-info ${PREFIX}/info/kth-krb.info ${PREFIX}/info/dir
