@@ -8,6 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -39,8 +40,7 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			rpm404-python-4.0.4-8x.27.${MACHINE_ARCH}.rpm \
 			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
 			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
-			${RPM_FREETYPE} \
-			${RPM_XFREE86_LIBS}
+			${RPM_FREETYPE}
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
@@ -67,7 +67,8 @@ LANG=			en
 
 UPD_SET1=		glibc-common-2.3.2-4.80.6.${MACHINE_ARCH}.rpm \
 			glibc-2.3.2-4.80.6.${MACHINE_ARCH}.rpm
-UPD_SET2=		zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm
+UPD_SET2=		zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm \
+			XFree86-libs-4.2.1-21.i386.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
@@ -83,7 +84,6 @@ RPM_LIBSTDCXX=
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-7.3-2.96.110.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-9.i386.rpm
 RPM_SETUP=		setup-2.5.20-1.noarch.rpm
-RPM_XFREE86_LIBS=	XFree86-libs-4.2.0-72.i386.rpm
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
