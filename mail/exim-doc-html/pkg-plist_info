@@ -1,3 +1,4 @@
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@unexec install-info --delete %D/info/exim.info %D/info/dir
 %%PORTDOCS%%info/exim.info
 %%PORTDOCS%%@exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/%F %B/dir
