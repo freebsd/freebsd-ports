@@ -1,13 +1,11 @@
-sbin/oopsctl
-sbin/oops
-etc/oops/oops.cfg.sample
-etc/oops/err_template.html.sample
+etc/oops/accel_maps.sample
+etc/oops/acl_local_networks.sample
 etc/oops/auth_template.html.sample
+etc/oops/err_template.html.sample
+etc/oops/oops.cfg.sample
 etc/oops/passwd.sample
 etc/oops/redir_rules.sample
 etc/oops/redir_template.html.sample
-etc/oops/accel_maps.sample
-etc/oops/acl_local_networks.sample
 etc/oops/select.sql.sample
 etc/oops/tables/koi-alt.tab
 etc/oops/tables/koi-iso.tab
@@ -21,6 +19,7 @@ libexec/oops/fastredir.so
 libexec/oops/gigabase_db_api.so
 libexec/oops/lang.so
 libexec/oops/log_dummy.so
+libexec/oops/netflow.so
 libexec/oops/oopsctl_mod.so
 libexec/oops/pam.so
 libexec/oops/passwd_file.so
@@ -30,6 +29,8 @@ libexec/oops/redir.so
 libexec/oops/transparent.so
 libexec/oops/vary_header.so
 libexec/oops/wccp2.so
+sbin/oopsctl
+sbin/oops
 @dirrm libexec/oops
 @dirrm etc/oops/tables
 @dirrm etc/oops
