@@ -719,6 +719,7 @@ camserv		ports/graphics/camserv
 canfield	src/games/canfield
 cap		ports/net/cap
 cap_mkdb	src/usr.bin/cap_mkdb
+cascade		ports/cad/cascade
 cassowary	ports/misc/cassowary
 cat		src/bin/cat
 catdoc		ports/textproc/catdoc
