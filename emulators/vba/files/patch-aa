@@ -1,7 +1,7 @@
-*** src/SDL.cpp.orig	Sat Aug 23 16:19:48 2003
---- src/SDL.cpp	Tue Sep  2 17:59:39 2003
+*** src/SDL.cpp.orig	Sun Jan 11 22:20:00 2004
+--- src/SDL.cpp	Sun Jan 11 22:17:23 2004
 ***************
-*** 619,625 ****
+*** 625,631 ****
     }
   #else
   #define SDL_CALL_STRETCHER \
@@ -9,7 +9,7 @@
   #endif
   #else
   #define SDL_CALL_STRETCHER \
---- 619,625 ----
+--- 625,631 ----
     }
   #else
   #define SDL_CALL_STRETCHER \
