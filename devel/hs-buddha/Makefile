@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buddha
-PORTVERSION=	1.0.r2
+PORTVERSION=	1.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.mu.oz.au/~bjpop/buddha/download/
 PKGNAMEPREFIX=	hs-
