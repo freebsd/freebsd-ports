@@ -4,7 +4,13 @@ bin/suck
 bin/testhost
 %%PORTDOCS%%share/examples/suck/get.news.generic
 %%PORTDOCS%%share/examples/suck/get.news.inn
+%%PORTDOCS%%share/examples/suck/perl_kill.pl
+%%PORTDOCS%%share/examples/suck/perl_xover.pl
+%%PORTDOCS%%share/examples/suck/post_filter.pl
 %%PORTDOCS%%share/examples/suck/put.news
+%%PORTDOCS%%share/examples/suck/put.news.pl
+%%PORTDOCS%%share/examples/suck/put.news.sm
+%%PORTDOCS%%share/examples/suck/put.news.sm.pl
 %%PORTDOCS%%share/examples/suck/suckkillfile.sample
 %%PORTDOCS%%share/examples/suck/sucknewsrc.sample
 %%PORTDOCS%%share/examples/suck/suckothermsgs.sample
