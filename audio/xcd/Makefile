@@ -8,7 +8,7 @@
 PORTNAME=	xcd
 PORTVERSION=	1.7
 CATEGORIES=	audio tk82
-MASTER_SITES=	http://people.FreeBSD.org/~jmz/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
 
 MAINTAINER=	jmz@FreeBSD.org
 

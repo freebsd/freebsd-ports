@@ -8,7 +8,7 @@
 PORTNAME=	cd-write
 PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.FreeBSD.org/~jmz/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
 
 MAINTAINER=	jmz@FreeBSD.org
 
