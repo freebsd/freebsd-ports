@@ -1,0 +1,24 @@
+Equeue contains a generic implementation of queues of events of any type, and a 
+specific implementation of queues of file descriptor events.
+
+The generic module allows to associate an event queue with an event source, and 
+one or several event handlers. The event source generates new events that are 
+triggered from the outer world. The handlers consume events, but it is allowed 
+that handlers also generate events.
+The module for file descriptor events already defines an event source; this 
+source watches registered file descriptors and produces events if a descriptor 
+wants to deliver data, or if a descriptor is ready to accept data. As in the 
+generic module, the handlers consume the events.
+
+The concept of engines is suggested to construct event-driven programs in a 
+systematic way. There are already a number of basic engines (polling, copying, 
+connecting with a network service, accepting connections, SOCKS), and a number 
+of operations for engines (sequential execution, synchronization).  
+
+It is possible to let Equeue cooperate with the event queue implementation of 
+Tcl.  Now, also the Shell library is included in the Equeue distribution. 
+
+WWW: http://www.ocaml-programming.de/programming/equeue.html
+
+- David
+  <david.julien@gmail.com>

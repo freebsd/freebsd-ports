@@ -1,0 +1,197 @@
+lib/ocaml/site-lib/equeue/META
+lib/ocaml/site-lib/equeue-core/META
+lib/ocaml/site-lib/equeue-core/equeue.a
+lib/ocaml/site-lib/equeue-core/equeue.cma
+lib/ocaml/site-lib/equeue-core/equeue.cmi
+lib/ocaml/site-lib/equeue-core/equeue.cmxa
+lib/ocaml/site-lib/equeue-core/equeue.mli
+lib/ocaml/site-lib/equeue-core/unixqueue.cmi
+lib/ocaml/site-lib/equeue-core/unixqueue.mli
+lib/ocaml/site-lib/equeue-core/unixqueue_mt.cmi
+lib/ocaml/site-lib/equeue-core/unixqueue_mt.o
+lib/ocaml/site-lib/equeue-core/unixqueue_mt.cmx
+lib/ocaml/site-lib/equeue-core/unixqueue_mt.cmo
+lib/ocaml/site-lib/equeue-core/unixqueue_mt.mli
+lib/ocaml/site-lib/equeue-core/uq_engines.cmi
+lib/ocaml/site-lib/equeue-core/uq_engines.mli
+lib/ocaml/site-lib/equeue-core/uq_socks5.cmi
+lib/ocaml/site-lib/equeue-core/uq_socks5.mli
+lib/ocaml/site-lib/shell/META
+lib/ocaml/site-lib/shell/dllshell.so
+lib/ocaml/site-lib/shell/libshell.a
+lib/ocaml/site-lib/shell/shell.a
+lib/ocaml/site-lib/shell/shell.cma
+lib/ocaml/site-lib/shell/shell.cmi
+lib/ocaml/site-lib/shell/shell.cmxa
+lib/ocaml/site-lib/shell/shell.mli
+lib/ocaml/site-lib/shell/shell_mt.mli
+lib/ocaml/site-lib/shell/shell_sys.cmi
+lib/ocaml/site-lib/shell/shell_sys.mli
+lib/ocaml/site-lib/shell/shell_uq.cmi
+lib/ocaml/site-lib/shell/shell_uq.mli
+lib/ocaml/site-lib/shell/unix_exts.cmi
+lib/ocaml/site-lib/shell/unix_exts.mli
+@dirrm lib/ocaml/site-lib/equeue
+@dirrm lib/ocaml/site-lib/equeue-core
+@dirrm lib/ocaml/site-lib/shell
+@unexec ocamlfind remove equeue 2>/dev/null || true
+@unexec ocamlfind remove equeue-core 2>/dev/null || true
+@unexec ocamlfind remove shell 2>/dev/null || true
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/META
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/dlltclqueue.so
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue.a
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue.cma
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue.cmi
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue.cmxa
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue.mli
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/libtclqueue.a
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/unixqueue.cmi
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/unixqueue.mli
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_engines.cmi
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_engines.mli
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_socks5.cmi
+%%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_socks5.mli
+%%TCL%%@dirrm lib/ocaml/site-lib/equeue-tcl
+%%TCL%%@unexec ocamlfind remove equeue-tcl 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-FINDLIB
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SHELL
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Equeue.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Unixqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Unixqueue_mt.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.async_out_channel.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.client_socket_connector.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.const_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.copier.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.datagram_socket_provider.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.map_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.output_async_descr.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.poll_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.poll_process_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.receiver.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.seq_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.server_socket_acceptor.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.server_socket_listener.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.sync_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.watchdog.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_engines.wrapped_datagram_socket.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_socks5.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/Uq_socks5.proxy_client.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Equeue.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Unixqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Unixqueue_mt.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.async_out_channel.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.client_socket_connector.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.const_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.copier.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.datagram_socket_provider.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.map_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.output_async_descr.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.poll_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.poll_process_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.receiver.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.seq_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.server_socket_acceptor.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.server_socket_listener.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.sync_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.watchdog.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_engines.wrapped_datagram_socket.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_socks5.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-equeue/html/type_Uq_socks5.proxy_client.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_mt.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_sys.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_uq.call_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_uq.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_uq.job_handler_engine_type.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_uq.system_handler_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Shell_uq.system_handler_engine_type.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/Unix_exts.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_mt.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_sys.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_uq.call_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_uq.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_uq.job_handler_engine_type.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_uq.system_handler_engine.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Shell_uq.system_handler_engine_type.html
+%%PORTDOCS%%%%DOCSDIR%%/refman-shell/html/type_Unix_exts.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/TIMESTAMP
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c140.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c310.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c34.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c483.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c504.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c517.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/c83.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/equeue.css
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x130.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x236.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x338.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x364.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x384.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x446.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/html/x458.html
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/ps/equeue.ps
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/src/equeue.css
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/src/equeue.dsl
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/src/equeue.sgml
+%%PORTDOCS%%%%DOCSDIR%%/users-guide/src/getcode.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/engines/funny_async_buffer.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/engines/http_client.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/filecopy/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/filecopy/filecopy.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/filecopy_labltk/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/filecopy_labltk/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/filecopy_labltk/filecopy.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/multi-threaded/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/multi-threaded/sample.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/preliminary/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/preliminary/pipe-through-conventional.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/preliminary/pipe-through-eventdriven.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/a-and-b.ml
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/preliminary
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multi-threaded
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filecopy_labltk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filecopy
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/engines
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/src
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-shell/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-shell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-equeue/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-equeue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
