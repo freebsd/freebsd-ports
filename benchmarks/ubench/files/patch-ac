@@ -1,0 +1,11 @@
+--- membench.c.orig	Tue Jun  6 14:33:33 2000
++++ membench.c	Tue Jun  6 14:34:29 2000
+@@ -41,7 +41,7 @@
+ #define sys_errlist _sys_errlist
+ #endif
+ 
+-#ifdef SunOS
++#if defined SunOS || defined FreeBSD
+ extern		sigjmp_buf	env;
+ #else
+ extern		jmp_buf	env;

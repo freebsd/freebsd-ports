@@ -1,0 +1,11 @@
+--- signals.c.orig	Tue Jun  6 14:33:33 2000
++++ signals.c	Tue Jun  6 14:35:08 2000
+@@ -22,7 +22,7 @@
+ #include <signal.h>
+ #include <setjmp.h>
+ 
+-#ifdef SunOS
++#if defined SunOS || defined FreeBSD
+ sigjmp_buf	env;
+ #else
+ jmp_buf		env;
