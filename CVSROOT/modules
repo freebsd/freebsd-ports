@@ -10406,6 +10406,7 @@ shuffle		ports/misc/shuffle
 shujit		ports/java/shujit
 sic		ports/irc/sic
 siconv		ports/converters/siconv
+sid-milter	ports/mail/sid-milter
 sidplay		ports/audio/sidplay
 sidplug		ports/www/sidplug
 siege		ports/benchmarks/siege
