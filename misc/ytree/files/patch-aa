@@ -1,0 +1,18 @@
+--- Makefile	Tue Sep  2 20:03:47 1997
++++ /home/andy/tmp/wrk/Makefile	Mon Jan  5 14:04:10 1998
+@@ -39,12 +39,14 @@
+ #LIBS       = -lcurses -ltermcap
+ 
+ ###########################
+-# FreeBSD with ncurses  (Thanks to Peter Brevik)
++# FreeBSD (Thanks to Peter Brevik)
+ ###########################
+ #ADD_INCLUDE = /usr/include/ncurses
+ #ADD_LIB     = /usr/lib
+ #CFLAGS      = -I$(ADD_INCLUDE) -DNCURSES $(ADD_CFLAGS)
+ #LIBS        = -L$(ADD_LIB) -lncurses -lmytinfo -lcompat
++CFLAGS      = -O -DCOLOR_SUPPORT -DNCURSES
++LIBS        = -lncurses -lmytinfo -lcompat
+ 
+ ###########################
+ # NeXT (Thanks to fifi)

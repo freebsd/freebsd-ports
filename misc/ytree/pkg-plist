@@ -1,0 +1,3 @@
+bin/ytree
+etc/ytree.conf.sample
+man/man1/ytree.1.gz
