@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1996/09/17 08:44:10 max Exp $
+# $Id: Makefile,v 1.7 1996/09/17 15:07:33 max Exp $
 #
 
 DISTNAME=	nethack-3.2.1
@@ -31,6 +31,7 @@ pre-install:
 
 post-install:
 .if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man6/dlb.6
 	gzip -9nf ${PREFIX}/man/man6/dgn_comp.6
 	gzip -9nf ${PREFIX}/man/man6/lev_comp.6
 	gzip -9nf ${PREFIX}/man/man6/nethack.6
