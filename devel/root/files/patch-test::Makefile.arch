@@ -1,0 +1,25 @@
+--- test/Makefile.arch.orig	Sat Apr 17 10:25:16 2004
++++ test/Makefile.arch	Sat Apr 17 10:41:58 2004
+@@ -9,7 +9,6 @@
+ ARCH         := $(shell root-config --arch)
+ PLATFORM      = $(ARCH)
+ 
+-CXX           =
+ ObjSuf        = o
+ SrcSuf        = cxx
+ ExeSuf        =
+@@ -426,10 +425,10 @@
+ 
+ ifeq ($(ARCH),freebsd4)
+ # FreeBSD with glibc
+-CXX           = g++
+-CXXFLAGS      = -O -pipe -W -Wall -fPIC
+-LD            = g++
+-LDFLAGS       = -O
++#CXX          = g++
++CXXFLAGS     += -W -Wall -fPIC
++LD            = $(CXX)
++#LDFLAGS      = -O
+ SOFLAGS       = -shared -Wl,-x
+ endif
+ 
