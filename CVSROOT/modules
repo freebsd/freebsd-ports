@@ -6346,6 +6346,7 @@ phalanx		ports/games/phalanx
 pharmacy	ports/devel/pharmacy
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
+pho		ports/graphics/pho
 phoon		ports/astro/phoon
 photo_gallery	ports/www/photo_gallery
 photopc		ports/graphics/photopc
