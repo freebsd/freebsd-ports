@@ -1,0 +1,8 @@
+lib/perl5/man/man3/IO::Scalar.3.gz
+lib/perl5/man/man3/IO::ScalarArray.3.gz
+lib/perl5/man/man3/IO::Wrap.3.gz
+lib/perl5/site_perl/IO/Scalar.pm
+lib/perl5/site_perl/IO/ScalarArray.pm
+lib/perl5/site_perl/IO/Wrap.pm
+lib/perl5/site_perl/i386-freebsd/auto/IO-stringy/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/IO-stringy
