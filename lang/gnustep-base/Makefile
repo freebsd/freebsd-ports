@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	lang devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://ftp.codefactory.se/pub/gnu/gstep/ \
-		http://planetmirror.com/pub/gnustep/core/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+
+BREAKS_IF_PEDANTIC=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +34,7 @@ USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
