@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Pg
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -23,9 +23,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Format::Pg.3
-
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /5.008/' ${WRKSRC}/Makefile.PL
-	@${PERL} -pi -e 's/^our (\$$VERSION)/use vars qw($$1); $$1/;' ${WRKSRC}/lib/DateTime/Format/Pg.pm
 
 .include <bsd.port.mk>
