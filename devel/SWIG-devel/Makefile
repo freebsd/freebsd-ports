@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
+
 VER=		${PORTVERSION:R}
 
 SWIG_LANGUAGES?=	guile perl python ruby tcl
