@@ -7,6 +7,7 @@
 
 PORTNAME=	osiris
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/
 
@@ -41,6 +42,7 @@ PLIST_SUB+=	CLI="@comment "
 
 do-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${MKDIR} ${PREFIX}/osiris
 .if defined(WITH_CLI)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cli/osiris ${PREFIX}/sbin
 .endif
@@ -63,11 +65,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/configs/default.${os} \
 		${PREFIX}/osiris/configs
 .endfor
-	${CHOWN} -R osiris:osiris ${PREFIX}/osiris
 	${INSTALL_PROGRAM} -m 4755 -o osiris -g osiris \
 		${WRKSRC}/src/osirismd/osirismd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh.sample \
 		${PREFIX}/etc/rc.d
 .endif
+	${CHOWN} -R osiris:osiris ${PREFIX}/osiris
 
 .include <bsd.port.post.mk>

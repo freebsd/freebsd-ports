@@ -4,6 +4,8 @@
 %%OSIRISMD%%sbin/osirismd
 %%OSIRISD%%etc/rc.d/osirisd.sh.sample
 %%OSIRISMD%%etc/rc.d/osirismd.sh.sample
+@exec mkdir -p %D/osiris
+@exec chown osiris:osiris %D/osiris
 %%OSIRISMD%%osiris/configs/default.aix
 %%OSIRISMD%%osiris/configs/default.bsdos
 %%OSIRISMD%%osiris/configs/default.darwin
@@ -20,4 +22,4 @@
 %%OSIRISMD%%osiris/configs/default.windowsxp
 %%OSIRISMD%%osiris/configs/default.wrt54g
 %%OSIRISMD%%@dirrm osiris/configs
-%%OSIRISMD%%@dirrm osiris
+@dirrm osiris
