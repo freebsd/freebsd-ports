@@ -1,9 +1,6 @@
-@cwd /usr/X11R6
-@mode 755
 bin/xfm
 bin/xfm.install
 bin/xfmtype
-@mode 444
 man/man1/xfm.1.gz
 man/man1/xfmtype.1.gz
 lib/X11/app-defaults/Xfm

@@ -1,19 +1,12 @@
-@cd ${X11BASE}
-@group bin
-@mode 444
 man/man6/xmris.6.gz
 man/man6/xmsit.6.gz
 man/man6/xmred.6.gz
-@owner games
-@mode 4755
 bin/xmris
 bin/xmsit
-@mode 755
 bin/xmred
 @exec mkdir -p %D/lib/xmris
 @exec chmod  775 %D/lib/xmris
 @unexec rm -rf %D/lib/xmris
-@mode 444
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn

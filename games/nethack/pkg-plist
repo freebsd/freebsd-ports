@@ -1,11 +1,6 @@
-@cwd ${PREFIX}
-@owner games
-@mode 755
 bin/nethack
 lib/nethackdir/save
-@mode 4755
 lib/nethackdir/nethack
-@mode 644
 man/man6/dgn_comp.6.gz
 man/man6/lev_comp.6.gz
 man/man6/nethack.6.gz
