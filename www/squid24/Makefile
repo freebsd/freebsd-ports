@@ -46,8 +46,8 @@ DISTNAME=	squid-2.4.STABLE7
 EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	squid2.4
 
-DEPRECATED=	http://vuxml.freebsd.org/705e003a-7f36-11d8-9645-0020ed76ef5a.html (security)
-EXPIRATION_DATE=November 21, 2004
+DEPRECATED=	This version no longer supported and contains vulnerabilities
+EXPIRATION_DATE=31st October 2004
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
 PATCHFILES=	squid-2.4.STABLE7-url_port.patch \
@@ -66,8 +66,6 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 
 LATEST_LINK=	squid24
-DEPRECATED=	This version of squid-2 is no longer officially supported
-EXPIRATION_DATE=31st October 2004
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
