@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1997/06/27 02:00:31 jfitz Exp $
+# $Id: Makefile,v 1.50 1997/07/15 15:02:29 itojun Exp $
 #
 
     SUBDIR += ImageMagick
@@ -7,8 +7,8 @@
     SUBDIR += camediaplay
     SUBDIR += dc3play
     SUBDIR += dore
-    SUBDIR += geomview
     SUBDIR += gd
+    SUBDIR += geomview
     SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += giftool
@@ -29,8 +29,8 @@
     SUBDIR += mpegedit
     SUBDIR += mplex
     SUBDIR += netpbm
-    SUBDIR += p5-Image-Size
     SUBDIR += p5-GD
+    SUBDIR += p5-Image-Size
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pixmap
