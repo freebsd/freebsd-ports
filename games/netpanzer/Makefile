@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	netpanzer
-PORTVERSION=	0.1.5
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/netpanzer/
 
 MAINTAINER=	mad@madpilot.net
-COMMENT=	Real time, isometric view, tank strategy game(multiplayer)
+COMMENT=	Real time, isometric view, tank multiplayer strategy game
 
 LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-RUN_DEPENDS=	${X11BASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpanzerdata
+RUN_DEPENDS=	${X11BASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpanzer-data
+
+CONFLICTS=	netpanzerdata*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libphysfs=${LOCALBASE} --without-wx-config
@@ -33,6 +35,13 @@ post-patch:
 	@for ff in `${FIND} ${WRKDIR} -type f -name '*.[ch]pp' -exec ${GREP} -q stdint.h {} \; -print`; do \
 		${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' $${ff}; \
 	done
+	@${REINPLACE_CMD} -e "s|##DOCSDIR##|${DOCSDIR}|" ${WRKSRC}/Jamconfig.in
+
+.if defined(NOPORTDOCS)
+post-configure:
+	@(cd ${BUILD_WRKSRC}; \
+	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/noportdocs-patch-Jamfile)
+.endif
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)

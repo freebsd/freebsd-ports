@@ -1,0 +1,11 @@
+--- mk/jam/install.jam.orig	Mon Feb 21 19:58:28 2005
++++ mk/jam/install.jam	Mon Feb 21 20:02:05 2005
+@@ -11,7 +11,7 @@
+ 
+ # set some paths
+ appdatadir ?= [ ConcatDirs $(datadir) $(PACKAGE_NAME) ] ;
+-appdocdir ?= [ ConcatDirs $(datadir) doc $(PACKAGE_NAME)-$(PACKAGE_VERSION) ] ;
++appdocdir ?= $(fbsdocdir) ;
+ appconfdir ?= [ ConcatDirs $(sysconfdir) $(PACKAGE_NAME) ] ;
+ plugindir ?= [ ConcatDirs $(libdir) $(PACKAGE_NAME) ] ;
+ 

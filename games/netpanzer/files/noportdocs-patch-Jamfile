@@ -1,0 +1,10 @@
+--- Jamfile.orig	Mon Feb 21 18:57:00 2005
++++ Jamfile	Mon Feb 21 18:57:19 2005
+@@ -40,6 +40,6 @@
+     }
+ 
+     InstallIcon netpanzer.png netpanzer.xpm ;
+-    InstallDoc ChangeLog README TODO RELNOTES docs/tipofday.txt docs/serverhowto.html ;
++#    InstallDoc ChangeLog README TODO RELNOTES docs/tipofday.txt docs/serverhowto.html ;
+     InstallDesktop netpanzer.desktop ;
+ }

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netpanzerdata
-PORTVERSION=	0.1.3
+PORTNAME=	netpanzer-data
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/netpanzer/
 

@@ -317,7 +317,7 @@
     SUBDIR += nethack34-nox11
     SUBDIR += nethack34-qt
     SUBDIR += netpanzer
-    SUBDIR += netpanzerdata
+    SUBDIR += netpanzer-data
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
