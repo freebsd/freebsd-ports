@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
@@ -28,7 +28,6 @@ MAN1=	afnix.1 axc.1 axd.1 axl.1
 
 do-configure:
 	@${WRKSRC}/cnf/bin/${PORTNAME}-setup -o
-	@rm ${WRKSRC}/src/lib/txt/lib/Digest.[ch]pp
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
