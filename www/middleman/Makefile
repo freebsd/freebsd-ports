@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	middleman
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
@@ -30,24 +30,35 @@ CONFIGURE_ARGS+=	--enable-syslog
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if defined(WITH_MTIME)
+CONFIGURE_ARGS+=	--enable-mtime
+.endif
+
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/bin/mman|${PREFIX}/bin/mman|g' \
-		-e 's|/etc/mman/config.xml|${PREFIX}/etc/mman.xml|g' \
+	@${REINPLACE_CMD} -e \
+	's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
+	s|/etc/mman/config.xml|${PREFIX}/etc/mman.xml|g' \
 		${WRKSRC}/scripts/mman.init
 
 do-install:
 	@${MKDIR} ${MMAN_CACHE}
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/config.xml ${PREFIX}/etc/mman.xml
-	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init ${PREFIX}/etc/rc.d/mman.sh.sample
+	${INSTALL_DATA} ${WRKSRC}/config.xml \
+		${PREFIX}/etc/mman.xml
+	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
+		${PREFIX}/etc/rc.d/mman.sh.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/middleman
-	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl ${PREFIX}/share/doc/middleman/
-	${INSTALL_DATA} ${WRKSRC}/README.html ${PREFIX}/share/doc/middleman/
+	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl \
+		${PREFIX}/share/doc/middleman/
+	${INSTALL_DATA} ${WRKSRC}/README.html \
+		${PREFIX}/share/doc/middleman/
 .endif
 
 .include <bsd.port.mk>
