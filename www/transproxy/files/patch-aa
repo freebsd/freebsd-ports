@@ -1,0 +1,25 @@
+--- Makefile.dist	Mon Feb 17 22:41:07 1997
++++ Makefile	Fri Mar 27 21:57:17 1998
+@@ -11,15 +11,15 @@
+ #	PAY_THE_PENALTY		Slow down if they don't use proxy directly.
+ #
+ 
+-OPTIONS=-DDNS_LOOKUPS #-DUSELESS_DNS_LOOKUPS
++CFLAGS+=-DIPFILTER -DDNS_LOOKUPS #-DUSELESS_DNS_LOOKUPS
+ 
+-CC=gcc
+-CFLAGS=-O2 -m486 -Wall $(OPTIONS)
+-LDFLAGS=-s
+-LIBS= #-lresolv
++#CC=gcc
++#CFLAGS=-O2 -m486 -Wall $(OPTIONS)
++#LDFLAGS=-s
++#LIBS= #-lresolv
+ 
+-RM=rm -f
+-INSTALL=install
++#RM=rm -f
++#INSTALL=install
+ 
+ TARGETNAME=in.tproxyd
+ 

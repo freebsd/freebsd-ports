@@ -1,0 +1,20 @@
+transproxy - transparently proxy HTTP and other requests.
+
+This program is used with Darren Reed's IPFILTER package and used
+to intercept things like http requests and divert them to a www proxy
+server (eg: squid), without requiring user intervention or configuration.
+
+It accepts connections on the redirected port, connects to the real proxy
+server and transports data between the two sockets.
+
+Unlike some other transparent proxy solutions, this does not require the
+proxy run on the machine itself.
+
+Use something like:
+/usr/local/sbin/tproxy -b 127.0.0.1 -s 8081 [squidip] [squidport]
+
+(bind to localhost for safety), and the following ipnat rules:
+
+rdr ppp0 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
+rdr ppp1 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
+[..etc..]
