@@ -49,7 +49,7 @@
   
 ! MAKE = gmake $(MFLAGS) 
 ! 
-! all: default
+! all: config.h lib ir ui bin
   
   #default: config.h lib ir ui bin doc x tags
   default: config.h lib ir ui bin x check
