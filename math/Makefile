@@ -24,7 +24,6 @@
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
     SUBDIR += grace
-    SUBDIR += gtkgraph
     SUBDIR += hexcalc
     SUBDIR += lapack
     SUBDIR += libranlib
