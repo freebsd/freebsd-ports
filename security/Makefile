@@ -57,6 +57,7 @@
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
+    SUBDIR += liedentd
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb

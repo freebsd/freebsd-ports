@@ -1,0 +1,7 @@
+This ident daemon runs as a standalong daemon and lies about users.  By
+default, a random string is returned for each ident request, in order to
+preserve the security of your system.  The name returned and the OS name
+may be specified on the command line.
+
+When run on a NAT router, this server simplifies the problem of using IRC
+through a NAT network.
