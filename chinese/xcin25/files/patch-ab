@@ -1,29 +1,8 @@
---- src/xi.c.orig       Wed Dec  9 22:43:13 1998
-+++ src/xi.c    Thu Jul 22 12:34:14 1999
-@@ -1056,19 +1056,25 @@
-
- void switch_active_client( InmdState *state, Window cli_win )
- {
-+  int refresh = 1;
-   last_win = cli_win;
-
-   if ( ignore_cli_stat )
-       ignore_cli_stat = 0;
-   else
-      if ( state->_CurInMethod )
--      memcpy( &inmdstate, state, sizeof( inmdstate ) );
-+       if(memcmp(&inmdstate, state, sizeof( inmdstate)))
-+           memcpy( &inmdstate, state, sizeof( inmdstate ) );
-+       else
-+           refresh = 0;
-
-   if ( hide_xcin && ( EngChi || HalfFull ) )
-      Show_Xcin();
-   else if ( hide_xcin && !EngChi && !HalfFull )
-      XUnmapWindow( display, main_win );
-
-+  if(!refresh)
-+    return;
-   gotoxy( 0, MROW - 1 );
-
-   ClrShowArea( 0 );
+--- src/lib/Makefile.in.orig	Sun Aug 15 00:23:04 1999
++++ src/lib/Makefile.in	Sun Aug 15 00:23:24 1999
+@@ -30,3 +30,5 @@
+ 	rm -f Makefile
+ 	for d in $(SUBSYS); do ( cd $$d; $(MAKE) distclean ); done
+ 	( cd IMdkit; $(MAKE) clean )
++
++install:

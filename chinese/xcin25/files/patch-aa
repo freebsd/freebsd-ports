@@ -1,62 +1,13 @@
---- script/config.status.orig	Fri Dec 11 09:36:32 1998
-+++ script/config.status	Sun Jan 17 14:42:51 1999
-@@ -14,8 +14,8 @@
- PATH_XCIN_DIR=/usr/local/lib/xcin
- PATH_XCIN_MAN=/usr/local/man
+--- src/util/cin2tab/Makefile.in.orig	Sun Aug 15 00:03:26 1999
++++ src/util/cin2tab/Makefile.in	Sun Aug 15 00:13:01 1999
+@@ -58,7 +58,8 @@
+ distclean: clean
+ 	rm -f Makefile .depend
+ install: $(BIN)
+-	if [ -f $(xcin_binp)/$(BIN) ]; then mv $(xcin_binp)/$(BIN) $(xcin_binp)/$(BIN).old; fi
+-	$(INSTALL_PROGRAM) $(BIN) $(xcin_binp)
++	if [ ! -d $(xcin_libp)/bin ]; then mkdir -p $(xcin_libp)/bin; fi
++	if [ -f $(xcin_libp)/bin/$(BIN) ]; then mv $(xcin_libp)/bin/$(BIN) $(xcin_libp)/bin/$(BIN).old; fi
++	$(INSTALL_PROGRAM) $(BIN) $(xcin_libp)/bin
  
--OPT_XCIN_CFONT=-twmoe-kai-medium-r-normal--24-240-75-75-c-240-big5-1
--OPT_XCIN_EFONT=12x24
-+OPT_XCIN_CFONT=kc15f
-+OPT_XCIN_EFONT=kc8x15
- OPT_UTIL_CIN2TAB=yes
- OPT_UTIL_TSINTOOLS=yes
- OPT_INPTAB_SRC=yes
---- script/configure.makefile.orig	Fri Dec 11 09:18:08 1998
-+++ script/configure.makefile	Sun Jan 17 14:34:16 1999
-@@ -78,7 +78,7 @@
-           : # AIX
-         else
-           INSTALL="$dir/install -c"
--          INSTALL_PROGRAM='$(INSTALL)'
-+          INSTALL_PROGRAM='$(INSTALL) -s'
-           INSTALL_DATA='$(INSTALL) -m 644'
-           INSTALL_DIR='$(INSTALL) -d'
-           break
---- script/configure.menu.orig	Fri Dec 11 09:49:43 1998
-+++ script/configure.menu	Sun Jan 17 14:40:11 1999
-@@ -266,7 +266,7 @@
- {
-     PATH_XCIN_PREFIX=$1
-     PATH_XCIN_BIN=$PATH_XCIN_PREFIX/bin
--    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/xcin
-+    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/X11/xcin
-     PATH_XCIN_MAN=$PATH_XCIN_PREFIX/man
- }
- 
---- src/Makefile.in.orig	Wed Dec  9 22:26:36 1998
-+++ src/Makefile.in	Sun Jan 17 14:34:16 1999
-@@ -149,7 +149,7 @@
- 
- install_xcin: xcin $(KBMS) $(INPUT0) tsintab
- 	if [ ! -d $(PATH_XCIN_BIN) ]; then $(INSTALL_DIR) $(PATH_XCIN_BIN); fi
--	$(INSTALL) xcin $(PATH_XCIN_BIN)
-+	$(INSTALL_PROGRAM) xcin $(PATH_XCIN_BIN)
- 	echo $(PATH_XCIN_BIN)/xcin >> filelist
- 
- 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
-@@ -159,13 +159,13 @@
- 
- install_cin2tab: cin2tab
- 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
--	$(INSTALL) cin2tab $(PATH_XCIN_DIR)
-+	$(INSTALL_PROGRAM) cin2tab $(PATH_XCIN_DIR)
- 	echo $(PATH_XCIN_DIR)/cin2tab >> filelist
- 
- install_tsintools: tsintools
- 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
- 	for f in $(TSINTOOLS); do\
--            $(INSTALL) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
-+            $(INSTALL_PROGRAM) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
- 	done
- 
- install_tsintabsrc:
+ include .depend
