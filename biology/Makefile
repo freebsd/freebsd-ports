@@ -11,6 +11,7 @@
     SUBDIR += kinemage
     SUBDIR += molden
     SUBDIR += mopac
+    SUBDIR += nab
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
     SUBDIR += p5-bioperl
