@@ -1,6 +1,6 @@
---- ile.c.orig	Wed Jun 25 01:54:50 1997
-+++ ile.c	Wed Jun 25 01:55:24 1997
-@@ -65,7 +65,7 @@
+--- dist/ile.c	Wed Jun  9 13:12:33 1993
++++ ile.c	Sat Jan 20 08:23:07 2001
+@@ -51,7 +51,7 @@
  #include <errno.h>
  #include <sys/ioctl.h>
  #include <sys/types.h>
@@ -8,8 +8,8 @@
 +#include <sys/dirent.h>
  #include <sys/file.h>
  #include <sys/time.h>
- /*
-@@ -75,7 +75,6 @@
+ #include <sys/wait.h>
+@@ -63,7 +63,6 @@
  /* Definitions of system stuff.  */
  extern int errno;
  
@@ -17,3 +17,25 @@
  char *malloc();
  char *realloc();
  time_t time();
+@@ -113,7 +112,7 @@
+ struct ltchars tty_ltchars;
+ struct winsize tty_winsize;
+ int expect_exception, ignorestop, new_prompt, output_complete;
+-int childpid;
++pid_t childpid;
+ int tty_ldisc;
+ int tty_mode;
+ 
+@@ -269,8 +268,10 @@
+ void handle_child() {
+     union wait status;
+ 
+-    if (wait3(&status, WUNTRACED, NULL) != childpid) {
++    if (wait3(&status.w_status, WUNTRACED, NULL) != childpid) {
+ 	fprintf(stderr, "ile: notified by unknown process\r\n");
++	/* note the change so that we don't die after select */
++	expect_exception = TRUE;
+ 	return;
+     }
+ 
+
