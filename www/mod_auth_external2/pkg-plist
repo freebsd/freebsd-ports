@@ -1,3 +1,0 @@
-libexec/apache2/mod_auth_external.so
-@exec %D/sbin/apxs -e -a -n auth_external %D/%f
-@unexec echo "===>  If you do not plan on reinstalling mod_auth_external, you must manually remove"; echo "===>  references to it in httpd.conf."
