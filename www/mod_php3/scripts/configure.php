@@ -59,11 +59,7 @@ while [ "$1" ]; do
 			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"MySQL\")
-			echo ".if !exists(\${PREFIX}/lib/mysql/libmysqlclient.a) || exists(\${PREFIX}/lib/mysql/libmysqlclient.so)" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "LIB_DEPENDS+=		mysqlclient.5:\${PORTSDIR}/databases/mysql322" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo ".else" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql321" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo ".endif" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"PostgreSQL\")
