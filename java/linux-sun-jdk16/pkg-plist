@@ -1623,8 +1623,6 @@
 %%T%%/sample/jnlp/webpad/war/app/jlfgr__V1.0.jar
 %%T%%/sample/jnlp/webpad/war/index.html
 %%T%%/sample/jnlp/webpad/GNUmakefile
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%T%%/jre/bin
 @dirrm %%T%%/jre/lib/applet
 @dirrm %%T%%/jre/lib/i386/native_threads
