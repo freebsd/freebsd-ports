@@ -2,6 +2,7 @@ bin/ldapadd
 bin/ldapdelete
 bin/ldapmodify
 bin/ldapmodrdn
+bin/ldappasswd
 bin/ldapsearch
 bin/ud
 etc/openldap/ldap.conf.default
