@@ -3,7 +3,7 @@
 # Date created:         5 December 1998
 # Whom:                 Sean Kelly <kelly@plutotech.com>
 #
-# $Id: Makefile,v 1.2 1999/01/22 00:03:56 nik Exp $
+# $Id: Makefile,v 1.3 1999/04/02 13:24:44 nik Exp $
 #
 # When jadetex-2.3 goes mainstream, it will replace jadetex-2.1
 # currently in the Comprehensive TeX Archive Network (CTAN).  When
@@ -22,8 +22,8 @@ DISTFILES=		Makefile.jadetex jadetex.dtx jadetex.ini jadetex.ins \
 			pdfjadetex.ini
 DIST_SUBDIR=		jadetex
 NO_WRKSUBDIR=   	yes
-BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX-beta
-RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX-beta
+BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-fp
 EXTRACT_AFTER_ARGS=	.
