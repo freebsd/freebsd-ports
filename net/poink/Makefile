@@ -12,6 +12,10 @@ MASTER_SITES=   ${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@freebsd.org
 
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		"Hostname resolution broken on ${MACHINE_ARCH}"
+.endif
+
 MAN1=	poink.1
 
 do-install:
