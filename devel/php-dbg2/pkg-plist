@@ -1,1 +1,2 @@
-%%PHPEXTENSIONS%%/dbg.so
+lib/php/%%PHP_EXT_DIR%%/dbg.so
+@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2>/dev/null || true

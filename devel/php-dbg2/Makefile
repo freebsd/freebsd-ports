@@ -16,42 +16,22 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	Debugger for PHP4
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
-
-USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/dbg
-CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler \
-		--with-php-config=${PREFIX}/bin/php-config
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+USE_PHPIZE=	yes
+CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler
 PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
-
-PHPCONFIG=	${LOCALBASE}/bin/php-config
-.if exists(${PHPCONFIG})
-PHPEXTENSIONS!=	${PHPCONFIG} --extension-dir
-.else
-PHPEXTENSIONS=	${LOCALBASE}/lib/php/extensions
-.endif
-
-post-extract:
-	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PHPEXTENSIONS%%|${PHPEXTENSIONS}|g" \
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} "s|%%PHPEXTENSIONS%%|${PHPEXTENSIONS}|g" < ${.CURDIR}/pkg-plist | \
-		${SED} "s|${LOCALBASE}/||" >${PLIST}
 
 do-install:
-	@${MKDIR} ${PHPEXTENSIONS}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/dbg.so \
-		${PHPEXTENSIONS}
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
