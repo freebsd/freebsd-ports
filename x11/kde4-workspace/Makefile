@@ -14,12 +14,10 @@ MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 
 MOC?=		${X11BASE}/bin/moc2
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_QT2=	yes
 GNU_CONFIGURE=	yes
