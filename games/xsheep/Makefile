@@ -16,6 +16,8 @@ USE_X_PREFIX=	YES
 USE_XPM=	YES
 WRKSRC=		${WRKDIR}/xsheep
 
+BROKEN=		"Author broke the distfile by removing a bunch of required files"
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xsheep ${PREFIX}/bin
 
