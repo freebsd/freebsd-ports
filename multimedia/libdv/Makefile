@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdv
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -67,6 +67,7 @@ post-patch:
 		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
+		${WRKSRC}/libdv/dv.h \
 		${WRKSRC}/libdv/dv_types.h \
 		${WRKSRC}/libdv/headers.c \
 		${WRKSRC}/libdv/encode.c

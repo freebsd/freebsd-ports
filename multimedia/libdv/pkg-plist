@@ -1,3 +1,4 @@
+bin/dvconnect
 bin/encodedv
 bin/playdv
 include/libdv/dv.h
@@ -5,7 +6,7 @@ include/libdv/dv1394.h
 include/libdv/dv_types.h
 lib/libdv.a
 lib/libdv.so
-lib/libdv.so.2
+lib/libdv.so.3
 libdata/pkgconfig/libdv.pc
 %%PORTDOCS%%share/doc/libdv/AUTHORS
 %%PORTDOCS%%share/doc/libdv/COPYING
