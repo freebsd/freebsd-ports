@@ -194,6 +194,7 @@ uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vbsd407e.tar.Z		ports/security/vscan	Commercial software
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
+vmware*			ports/emulators/vmware*	Commercial software
 vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 webfonts-*		ports/x11-fonts/webfonts Restrictive copyright
