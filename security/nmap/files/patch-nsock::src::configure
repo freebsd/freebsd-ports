@@ -1,0 +1,19 @@
+--- nsock/src/configure.orig   Tue Oct  7 07:23:06 2003
++++ nsock/src/configure        Tue Oct  7 07:27:33 2003
+@@ -1287,7 +1287,6 @@
+      fi
+    if test -d /usr/local/include; then
+      CFLAGS="$CFLAGS -I/usr/local/include"
+-     CXXFLAGS="$CFLAGS -I/usr/local/include"
+    fi
+ fi
+
+@@ -3207,7 +3206,7 @@
+     ;;
+   *)
+     specialssldir="$with_openssl"
+-    CXXFLAGS="-I$with_openssl/include $CXXFLAGS"
++    CFLAGS="-I$with_openssl/include $CFLAGS"
+     ;;
+   esac
+
