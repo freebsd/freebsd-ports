@@ -1,5 +1,5 @@
-lib/libfftpack.a
-lib/libfftpack.so.1.0
+lib/libbihar.a
+lib/libbihar.so.1.0
+share/doc/fftpack/fft.doc.gz
 @exec /sbin/ldconfig -m %B
-share/doc/fftlib/doc.gz
-@dirrm share/doc/fftlib
+@dirrm share/doc/fftpack
