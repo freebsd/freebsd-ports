@@ -1,4 +1,4 @@
-bin/httplog
+sbin/httplog
 %%PORTDOCS%%share/doc/httplog/ChangeLog
 %%PORTDOCS%%share/doc/httplog/README
 %%PORTDOCS%%@dirrm share/doc/httplog
