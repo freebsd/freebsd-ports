@@ -3035,6 +3035,7 @@ ipfw-graph	ports/net/ipfw-graph
 iplog		ports/net/iplog
 ipsc		ports/sysutils/ipsc
 ipsorc		ports/net/ipsorc
+ipsumdump	ports/net/ipsumdump
 ipsvd		ports/net/ipsvd
 ipv6calc	ports/net/ipv6calc
 ipv6socket_scrub	ports/net/ipv6socket_scrub
