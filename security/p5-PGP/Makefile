@@ -3,13 +3,14 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/04/20 13:52:59 wosch Exp $
+#   $Id: Makefile,v 1.6 1997/05/24 13:17:14 jfitz Exp $
 #
 
 DISTNAME=	PGP-0.2alpha
 PKGNAME=	p5-PGP-0.2a
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+#MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	
 MASTER_SITE_SUBDIR=	PGP
 
 MAINTAINER=	jfitz@FreeBSD.ORG
