@@ -7,13 +7,19 @@ Local/Applications/GNUMail.app/Resources/Address_bcc.tiff
 Local/Applications/GNUMail.app/Resources/Address_cc.tiff
 Local/Applications/GNUMail.app/Resources/Address_delete.tiff
 Local/Applications/GNUMail.app/Resources/Address_to.tiff
+Local/Applications/GNUMail.app/Resources/Czech.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/English.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/French.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/GNUMail.desktop
 Local/Applications/GNUMail.app/Resources/GNUMail.tiff
 Local/Applications/GNUMail.app/Resources/GNUMail_Full.tiff
+Local/Applications/GNUMail.app/Resources/GNUMail_big.tiff
 Local/Applications/GNUMail.app/Resources/German.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/Info-gnustep.plist
+Local/Applications/GNUMail.app/Resources/ScriptingInfo.plist
+Local/Applications/GNUMail.app/Resources/Spanish.lproj/Localizable.strings
+Local/Applications/GNUMail.app/Resources/Swedish.lproj/Localizable.strings
+Local/Applications/GNUMail.app/Resources/Welcome
 Local/Applications/GNUMail.app/Resources/add.tiff
 Local/Applications/GNUMail.app/Resources/add_bcc_32.tiff
 Local/Applications/GNUMail.app/Resources/add_bcc_48.tiff
@@ -21,44 +27,6 @@ Local/Applications/GNUMail.app/Resources/add_cc_32.tiff
 Local/Applications/GNUMail.app/Resources/add_cc_48.tiff
 Local/Applications/GNUMail.app/Resources/addresses_32.tiff
 Local/Applications/GNUMail.app/Resources/addresses_48.tiff
-Local/Applications/GNUMail.app/Resources/attach_32.tiff
-Local/Applications/GNUMail.app/Resources/attach_48.tiff
-Local/Applications/GNUMail.app/Resources/create_32.tiff
-Local/Applications/GNUMail.app/Resources/create_48.tiff
-Local/Applications/GNUMail.app/Resources/delete_20.tiff
-Local/Applications/GNUMail.app/Resources/delete_32.tiff
-Local/Applications/GNUMail.app/Resources/delete_48.tiff
-Local/Applications/GNUMail.app/Resources/down_15.tiff
-Local/Applications/GNUMail.app/Resources/duplicate.tiff
-Local/Applications/GNUMail.app/Resources/edit.tiff
-Local/Applications/GNUMail.app/Resources/find_32.tiff
-Local/Applications/GNUMail.app/Resources/find_48.tiff
-Local/Applications/GNUMail.app/Resources/forward_32.tiff
-Local/Applications/GNUMail.app/Resources/forward_48.tiff
-Local/Applications/GNUMail.app/Resources/mailbox_add_32.tiff
-Local/Applications/GNUMail.app/Resources/mailbox_copy_32.tiff
-Local/Applications/GNUMail.app/Resources/mailbox_move_32.tiff
-Local/Applications/GNUMail.app/Resources/mailbox_rename_32.tiff
-Local/Applications/GNUMail.app/Resources/mailboxes_32.tiff
-Local/Applications/GNUMail.app/Resources/mailboxes_48.tiff
-Local/Applications/GNUMail.app/Resources/remove_bcc_32.tiff
-Local/Applications/GNUMail.app/Resources/remove_bcc_48.tiff
-Local/Applications/GNUMail.app/Resources/remove_cc_32.tiff
-Local/Applications/GNUMail.app/Resources/remove_cc_48.tiff
-Local/Applications/GNUMail.app/Resources/reply_32.tiff
-Local/Applications/GNUMail.app/Resources/reply_48.tiff
-Local/Applications/GNUMail.app/Resources/retrieve_32.tiff
-Local/Applications/GNUMail.app/Resources/retrieve_48.tiff
-Local/Applications/GNUMail.app/Resources/send_32.tiff
-Local/Applications/GNUMail.app/Resources/send_48.tiff
-Local/Applications/GNUMail.app/Resources/show_all_headers_32.tiff
-Local/Applications/GNUMail.app/Resources/show_all_headers_48.tiff
-Local/Applications/GNUMail.app/Resources/stop_32.tiff
-Local/Applications/GNUMail.app/Resources/stop_48.tiff
-Local/Applications/GNUMail.app/Resources/up_15.tiff
-Local/Applications/GNUMail.app/Resources/Spanish.lproj/Localizable.strings
-Local/Applications/GNUMail.app/Resources/Swedish.lproj/Localizable.strings
-Local/Applications/GNUMail.app/Resources/Welcome
 Local/Applications/GNUMail.app/Resources/anim-logo-1.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-2.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-3.tiff
@@ -68,95 +36,100 @@ Local/Applications/GNUMail.app/Resources/anim-logo-6.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-7.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-8.tiff
 Local/Applications/GNUMail.app/Resources/answered-flag.tiff
+Local/Applications/GNUMail.app/Resources/attach_32.tiff
+Local/Applications/GNUMail.app/Resources/attach_48.tiff
+Local/Applications/GNUMail.app/Resources/closedFolder.tiff
 Local/Applications/GNUMail.app/Resources/common_Unknown.tiff
+Local/Applications/GNUMail.app/Resources/create_16.tiff
+Local/Applications/GNUMail.app/Resources/create_32.tiff
+Local/Applications/GNUMail.app/Resources/create_48.tiff
+Local/Applications/GNUMail.app/Resources/delete_16.tiff
+Local/Applications/GNUMail.app/Resources/delete_20.tiff
+Local/Applications/GNUMail.app/Resources/delete_32.tiff
+Local/Applications/GNUMail.app/Resources/delete_48.tiff
 Local/Applications/GNUMail.app/Resources/down.tiff
+Local/Applications/GNUMail.app/Resources/down_15.tiff
 Local/Applications/GNUMail.app/Resources/drag_mail.tiff
 Local/Applications/GNUMail.app/Resources/drag_mails.tiff
+Local/Applications/GNUMail.app/Resources/duplicate.tiff
+Local/Applications/GNUMail.app/Resources/edit.tiff
+Local/Applications/GNUMail.app/Resources/find_32.tiff
+Local/Applications/GNUMail.app/Resources/find_48.tiff
+Local/Applications/GNUMail.app/Resources/forward_32.tiff
+Local/Applications/GNUMail.app/Resources/forward_48.tiff
+Local/Applications/GNUMail.app/Resources/hand.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_add_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_copy_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_move_32.tiff
+Local/Applications/GNUMail.app/Resources/mailbox_rename_32.tiff
+Local/Applications/GNUMail.app/Resources/mailboxes_16.tiff
+Local/Applications/GNUMail.app/Resources/mailboxes_32.tiff
+Local/Applications/GNUMail.app/Resources/mailboxes_48.tiff
 Local/Applications/GNUMail.app/Resources/mime-flag.tiff
 Local/Applications/GNUMail.app/Resources/new-flag.tiff
+Local/Applications/GNUMail.app/Resources/openFolder.tiff
 Local/Applications/GNUMail.app/Resources/pgp-mail.tiff
 Local/Applications/GNUMail.app/Resources/pgp-mail-small.tiff
+Local/Applications/GNUMail.app/Resources/raw_32.tiff
+Local/Applications/GNUMail.app/Resources/raw_48.tiff
+Local/Applications/GNUMail.app/Resources/remove_bcc_32.tiff
+Local/Applications/GNUMail.app/Resources/remove_bcc_48.tiff
+Local/Applications/GNUMail.app/Resources/remove_cc_32.tiff
+Local/Applications/GNUMail.app/Resources/remove_cc_48.tiff
+Local/Applications/GNUMail.app/Resources/reply_32.tiff
+Local/Applications/GNUMail.app/Resources/reply_48.tiff
+Local/Applications/GNUMail.app/Resources/retrieve_16.tiff
+Local/Applications/GNUMail.app/Resources/retrieve_32.tiff
+Local/Applications/GNUMail.app/Resources/retrieve_48.tiff
+Local/Applications/GNUMail.app/Resources/send_16.tiff
+Local/Applications/GNUMail.app/Resources/send_32.tiff
+Local/Applications/GNUMail.app/Resources/send_48.tiff
+Local/Applications/GNUMail.app/Resources/show_all_headers_32.tiff
+Local/Applications/GNUMail.app/Resources/show_all_headers_48.tiff
+Local/Applications/GNUMail.app/Resources/sort_down.tiff
+Local/Applications/GNUMail.app/Resources/sort_right.tiff
+Local/Applications/GNUMail.app/Resources/sort_up.tiff
+Local/Applications/GNUMail.app/Resources/stop_32.tiff
+Local/Applications/GNUMail.app/Resources/stop_48.tiff
 Local/Applications/GNUMail.app/Resources/up.tiff
+Local/Applications/GNUMail.app/Resources/up_15.tiff
 %%GNUSTEP_STABLE%%Local/Applications/GNUMail.app/%%NOFLAT%%GNUMail
 Local/Applications/GNUMail.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/GNUMail.app/stamp.make
 %%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so
 %%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so.1
 %%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so.1.0.0
-Local/Library/GNUMail/Clock.bundle/%%NOFLAT%%Clock
-Local/Library/GNUMail/Clock.bundle/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Clock.bundle/Resources/Date-0.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-1.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-2.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-3.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-4.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-5.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-6.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-7.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-8.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Date-9.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-0.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-1.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-10.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-11.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-12.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-2.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-3.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-4.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-5.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-6.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-7.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-8.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/LED-9.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Mask.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-1.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-10.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-11.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-12.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-2.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-3.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-4.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-5.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-6.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-7.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-8.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Month-9.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-0.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-1.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-2.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-3.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-4.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-5.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday-6.tiff
-Local/Library/GNUMail/Clock.bundle/Resources/Weekday.tiff
-Local/Library/GNUMail/Clock.bundle/stamp.make
+Local/Library/GNUMail/Account.prefs/%%NOFLAT%%Account
+Local/Library/GNUMail/Account.prefs/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Account.prefs/Resources/account.tiff
+Local/Library/GNUMail/Account.prefs/stamp.make
+Local/Library/GNUMail/Advanced.prefs/%%NOFLAT%%Advanced
+Local/Library/GNUMail/Advanced.prefs/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Advanced.prefs/Resources/advanced.tiff
+Local/Library/GNUMail/Advanced.prefs/stamp.make
+Local/Library/GNUMail/Colors.prefs/%%NOFLAT%%Colors
+Local/Library/GNUMail/Colors.prefs/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Colors.prefs/Resources/colors.tiff
+Local/Library/GNUMail/Colors.prefs/stamp.make
 Local/Library/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
 Local/Library/GNUMail/Compose.prefs/%%NOFLAT%%Compose
 Local/Library/GNUMail/Compose.prefs/stamp.make
+Local/Library/GNUMail/Filtering.prefs/%%NOFLAT%%Filtering
 Local/Library/GNUMail/Filtering.prefs/Resources/Filtering.tiff
 Local/Library/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Filtering.prefs/%%NOFLAT%%Filtering
 Local/Library/GNUMail/Filtering.prefs/stamp.make
+Local/Library/GNUMail/Fonts.prefs/%%NOFLAT%%Fonts
 Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
-Local/Library/GNUMail/Fonts.prefs/%%NOFLAT%%Fonts
 Local/Library/GNUMail/Fonts.prefs/stamp.make
-Local/Library/GNUMail/Mailboxes.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Mailboxes.prefs/Resources/MailIcon_mailboxes.tiff
-Local/Library/GNUMail/Mailboxes.prefs/%%NOFLAT%%Mailboxes
-Local/Library/GNUMail/Mailboxes.prefs/stamp.make
+Local/Library/GNUMail/MIME.prefs/%%NOFLAT%%MIME
 Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
-Local/Library/GNUMail/MIME.prefs/%%NOFLAT%%MIME
 Local/Library/GNUMail/MIME.prefs/stamp.make
-Local/Library/GNUMail/Personal.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Personal.prefs/Resources/personal.tiff
-Local/Library/GNUMail/Personal.prefs/%%NOFLAT%%Personal
-Local/Library/GNUMail/Personal.prefs/stamp.make
+Local/Library/GNUMail/Receiving.prefs/%%NOFLAT%%Receiving
 Local/Library/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
-Local/Library/GNUMail/Receiving.prefs/%%NOFLAT%%Receiving
 Local/Library/GNUMail/Receiving.prefs/stamp.make
 Local/Library/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
@@ -181,16 +154,6 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 %%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Receiving.prefs/Resources
 @dirrm Local/Library/GNUMail/Receiving.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%
-@dirrm Local/Library/GNUMail/Personal.prefs/Resources
-@dirrm Local/Library/GNUMail/Personal.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/
-@dirrm Local/Library/GNUMail/Mailboxes.prefs/Resources
-@dirrm Local/Library/GNUMail/Mailboxes.prefs
 %%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%
 %%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%
@@ -211,11 +174,21 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 %%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Compose.prefs/Resources
 @dirrm Local/Library/GNUMail/Compose.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%
-@dirrm Local/Library/GNUMail/Clock.bundle/Resources
-@dirrm Local/Library/GNUMail/Clock.bundle
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%
+@dirrm Local/Library/GNUMail/Colors.prefs/Resources
+@dirrm Local/Library/GNUMail/Colors.prefs
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%
+@dirrm Local/Library/GNUMail/Advanced.prefs/Resources
+@dirrm Local/Library/GNUMail/Advanced.prefs
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%
+@dirrm Local/Library/GNUMail/Account.prefs/Resources
+@dirrm Local/Library/GNUMail/Account.prefs
 @dirrm Local/Library/GNUMail
 @dirrm Local/Library
 %%GNUSTEP_STABLE%%@dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
@@ -226,6 +199,7 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Applications/GNUMail.app/Resources/German.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/French.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/English.lproj
+@dirrm Local/Applications/GNUMail.app/Resources/Czech.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/CVS
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
