@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
@@ -14,9 +14,8 @@ MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
 		http://www.ash.ne.jp/~mal/mozilla/ \
 		http://dev.jp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${JLP_SRC}
-EXTRACT_SUFX=	# none
-EXTRACT_ONLY=	${JLP_SRC}
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v01a
+EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
@@ -35,8 +34,6 @@ MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
 .endif
-JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp-v1.0.xpi \
-		${PORTNAME}${PORTVERSION}-regjp-v1.0.xpi
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +44,7 @@ MOZILLA_SH=	mozilla.xpg4
 .endif
 
 .if !defined(MOZILLA_IPV6)
-pre-fetch:
+pre-everything:
 	@${ECHO} ""
 	@${ECHO} "If you need IPv6 compliant mozilla, define \"MOZILLA_IPV6\"."
 	@${ECHO} ""
@@ -56,9 +53,6 @@ pre-fetch:
 post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
-
-post-patch:
-	find ${WRKSRC} -name '*.orig' | xargs ${RM}
 
 do-build:
 	${SED} -e "s;@PREFIX@;${PREFIX};g" \
@@ -69,6 +63,7 @@ do-install:
 	${MV} -f all-locales.rdf all-locales.rdf.orig; \
 	${MV} -f all-packages.rdf all-packages.rdf.orig; \
 	${MV} -f all-skins.rdf all-skins.rdf.orig; \
+	${MV} -f user-locales.rdf user-locales.rdf.orig; \
 	${MV} -f user-skins.rdf user-skins.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
