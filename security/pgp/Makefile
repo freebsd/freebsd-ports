@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.17 1996/11/17 07:58:03 obrien Exp $
+# $Id: Makefile,v 1.18 1996/11/18 14:13:26 asami Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -48,11 +48,13 @@ pre-fetch:
 .if ${USA_RESIDENT} == YES
 DISTNAME=       pgp262s
 PKGNAME=	pgp-2.6.2
-MASTER_SITES=   ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
+MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/pgp/unix/ \
+		ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
 EXTRACT_SUFX=   .zip
 WRKSRC=         ${WRKDIR}/src
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS+=   rsaref\\.2\\.0:${PORTSDIR}/security/rsaref
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 FILESDIR=       ${.CURDIR}/files.usa
@@ -60,16 +62,13 @@ PATCHDIR=       ${.CURDIR}/patches.usa
 
 post-extract:
 	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_ARGS) -aa $(DISTNAME)i
-	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_ARGS) -aa rsaref
 	cd ${WRKDIR}; rm -f *.zip
 
-pre-build:
-	cd ${WRKDIR}/rsaref/install/unix; ${GMAKE}
 .else
 DISTNAME=       pgp263is
 PKGNAME=        pgp-2.6.3ia
 MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/src/ \
-		ftp://ftp.kiae.su/unix/crypto/pgp/
+		ftp://ftp.relcom.ru/unix/crypto/pgp/
 WRKSRC=         ${WRKDIR}/src
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
