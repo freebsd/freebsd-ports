@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dgilbert@velocet.ca
 
+BROKEN=		"Configure fails"
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
