@@ -89,8 +89,8 @@ post-patch:
 .endfor
 
 do-install:
-	${MKDIR} ${FHOME}/lib/voices/english/ ${FHOME}/lib/voices/spanish/ \
-		${FHOME}/lib/dicts
+	${MKDIR} ${FHOME}/lib/voices/english/ ${FHOME}/lib/voices/italian/ \
+		${FHOME}/lib/voices/spanish/ ${FHOME}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
