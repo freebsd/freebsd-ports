@@ -1,12 +1,12 @@
---- MUTE/configure.orig	Sat Jan 24 18:19:44 2004
-+++ MUTE/configure	Sat Jan 24 18:21:35 2004
+--- MUTE/configure.orig	Mon Apr  5 20:28:43 2004
++++ MUTE/configure	Mon Apr  5 20:29:47 2004
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  #
  # Modification History
-@@ -37,20 +37,10 @@
+@@ -37,21 +37,10 @@
  
  while [ -z "$userEntry" ]
  do
@@ -22,13 +22,14 @@
  
 -    echo ""
 -    echo -n "> "
- 
+-
 -    read userEntry
-+userEntry=3
  
++userEntry=3
  	
  	if [ "$userEntry" = "q" ]
-@@ -61,12 +51,12 @@
+     then
+@@ -61,12 +50,12 @@
  
      # use ASCII comparison.
  
@@ -43,7 +44,7 @@
      then
          userEntry=""
      fi
-@@ -330,17 +320,9 @@
+@@ -330,18 +319,9 @@
  esac
  
  
@@ -53,12 +54,13 @@
 -echo "   Example:   /usr/bin/wx-config"
 -echo "To us the default setting, or if you do not plan to build the"
 -echo "wxWindows-based GUI, leave this blank."
- 
+-
 -echo ""
 -echo -n "> "
  
 -read userEntry
+ 
 +userEntry=%%WX_CONFIG%%
  
- 
  if [ "$userEntry" = "" ]
+ then
