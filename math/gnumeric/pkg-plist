@@ -661,7 +661,6 @@ share/locale/sv/LC_MESSAGES/gnumeric.mo
 share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
-@dirrm share/gnome/ui
 @dirrm share/gnome/help/gnumeric/C/images
 @dirrm share/gnome/help/gnumeric/C
 @dirrm share/gnome/help/gnumeric
