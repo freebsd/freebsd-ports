@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jan 13 16:03:30 2004
++++ Makefile.in	Tue Jan 13 16:03:57 2004
+@@ -119,6 +119,8 @@
+ hicolor_dirs = \
+ 	$(datadir)/pixmaps		\
+ 	$(datadir)/icons		\
++	%%X11BASE%%/share/icons		\
++	%%X11BASE%%/share/pixmaps	\
+ 	/usr/share/icons		\
+ 	/usr/share/pixmaps
+ 
