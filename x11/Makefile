@@ -38,12 +38,10 @@
     SUBDIR += fbsd-icons
     SUBDIR += finder
     SUBDIR += fspanel
-    SUBDIR += gbackground
     SUBDIR += gdkxft
     SUBDIR += gdm2
     SUBDIR += gmessage
     SUBDIR += gmrun
-    SUBDIR += gnoclip
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
@@ -58,7 +56,6 @@
     SUBDIR += gromit
     SUBDIR += gswitchit
     SUBDIR += gtk-theme-switch
-    SUBDIR += gvid
     SUBDIR += gxset
     SUBDIR += gyroscope
     SUBDIR += idesk
