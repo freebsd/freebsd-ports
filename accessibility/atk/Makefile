@@ -7,6 +7,7 @@
 
 PORTNAME=	atk
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.gtk.org/pub/gtk/v2.2/
