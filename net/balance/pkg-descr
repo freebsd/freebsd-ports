@@ -1,0 +1,9 @@
+Balance is a simple but powerful generic tcp proxy with round robin load
+balancing and failover mechanisms. Its behaviour can be controlled at runtime
+using a simple command line syntax.
+
+The latest release now supports the definition of channel groups and
+connection counting and handling boosting the power and versatility of
+balance one big step further.
+
+WWW: http://balance.sourceforge.net/

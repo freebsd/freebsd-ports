@@ -15,6 +15,7 @@
     SUBDIR += arpwatch
     SUBDIR += arts++
     SUBDIR += ascend-radius
+    SUBDIR += balance
     SUBDIR += bb
     SUBDIR += bind8
     SUBDIR += bind9
