@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -97,6 +97,8 @@ CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_PORT=	www/apache2
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
+#LDFLAGS+=	-rpath ${LOCALBASE}/lib/apache2 -rpath ${LOCALBASE}/libexec/apache2
+#CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .else
 LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr-svn
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
