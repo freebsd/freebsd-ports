@@ -25,6 +25,7 @@ include/namazu/parser.h
 include/namazu/query.h
 include/namazu/re.h
 include/namazu/regex.h
+include/namazu/score.h
 include/namazu/search.h
 include/namazu/util.h
 include/namazu/var.h
