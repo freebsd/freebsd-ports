@@ -19,6 +19,8 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
+MAN1=		eps2png.1
+
 do-install:
 	@cd ${WRKSRC}; ${SETENV} ${INSTALL_ENV} ${MAKE} INSTALLSCRIPT=${PREFIX}/bin install
 
