@@ -47,9 +47,9 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-# calltree is optional. It depends on valgrind, which is i386 only.
+# callgrind is optional. It depends on valgrind, which is i386 only.
 .if defined(WITH_OPTIONAL_DEPENDS) && ${ARCH} == "i386"
-RUN_DEPENDS+=	calltree:${PORTSDIR}/devel/calltree
+RUN_DEPENDS+=	callgrind:${PORTSDIR}/devel/callgrind
 .endif
 
 .include <bsd.port.post.mk>
