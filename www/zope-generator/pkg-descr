@@ -1,0 +1,4 @@
+generator
+
+Widget generator package, originally designed for Archetypes but usable as a
+standalone package.
