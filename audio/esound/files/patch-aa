@@ -1,32 +1,32 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sat Mar  2 00:07:42 2002
-+++ Makefile.in	Mon Mar  4 11:17:52 2002
-@@ -133,7 +133,7 @@
- 	genrand.h
+--- Makefile.in.orig	Tue Apr 23 15:24:15 2002
++++ Makefile.in	Wed Apr 24 18:24:39 2002
+@@ -110,7 +110,7 @@
  
+ lib_LTLIBRARIES = libesd.la $(libesddsp_la)
  
--libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
+-libesd_la_LDFLAGS = -version-info $(ESD_VERSION_INFO)
 +libesd_la_LDFLAGS = -version-info 2:0:0
+ libesd_la_LIBADD = $(AUDIOFILE_LIBS) $(SOUND_LIBS)
  
- libesd_la_LIBADD = @AUDIOFILE_LIBS@ @SOUND_LIBS@
+ libesd_la_SOURCES =  	esdlib.c		esdmgr.c		esdfile.c		esd_config.c		audio.c			genrand.c		genrand.h
+@@ -120,7 +120,7 @@
+ AUDIO_BACKENDS =  	audio_aix.c		audio_alsa.c		audio_alsa09.c  	audio_hpux.c		audio_irix.c		audio_none.c		audio_oss.c		audio_mklinux.c		audio_solaris.c	
  
-@@ -141,7 +141,7 @@
- 	libesddsp.la
  
+-libesddsp_la_LDFLAGS = -version-info $(ESD_VERSION_INFO)
++libesddsp_la_LDFLAGS = -version-info 2:0:0
+ libesddsp_la_LIBADD = $(DL_LIB) -lm
  
--libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
-+libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 2:0:0
- 
- libesddsp_la_LIBADD = @DL_LIB@ -lm
- 
-@@ -239,7 +239,7 @@
- 
- CLEANFILES = esound.spec esound.pc
+ libesddsp_la_SOURCES =  	esddsp.c
+@@ -169,7 +169,7 @@
+ esdconfdir = $(sysconfdir)
+ esdconf_DATA = esd.conf
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = esound.pc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ EXTRA_DIST =  	esddsp			esound.pc.in		esound.spec		esound.spec.in		esd-config.in	        esd.conf        	esd.m4 			TIPS 			test-script 		test.wav 		getopt.h 		TODO			MAINTAINERS		$(AUDIO_BACKENDS)
