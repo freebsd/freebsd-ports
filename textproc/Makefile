@@ -119,6 +119,7 @@
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-Strip
+    SUBDIR += p5-Regexp-Common
     SUBDIR += p5-SVG
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
