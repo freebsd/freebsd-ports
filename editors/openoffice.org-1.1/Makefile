@@ -46,7 +46,7 @@ DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
-		helpcontent_55_unix.tgz	\
+		helpcontent_55_unix.tgz \
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz
 .endif
@@ -95,7 +95,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 JDKDIR?=	${LOCALBASE}/jdk1.4.2
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 ANT?=		${LOCALBASE}/bin/ant
@@ -111,6 +111,9 @@ DISPLAYHACK=localhost:1001
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-jdk-home=${JDKDIR}
+.if defined(WITHOUT_MOZILLA)
+CONFIGURE_ARGS+=	--disable-mozilla
+.endif
 
 .if defined(LANG_EXT)
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
@@ -186,9 +189,6 @@ post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${MAKE} extract-mozilla
-	@${RM} -f ${WRKSRC}/../moz/zipped/*.zip
-	@${CHMOD} +x ${WRKSRC}/../solenv/bin/zipdep.pl
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
@@ -207,7 +207,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/../odk/settings/settings.mk
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/../odk/settings/settings.mk
-	@${MAKE} patch-mozilla
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -221,10 +220,12 @@ post-patch:
 .include <${FILESDIR}/Makefile.mozilla>
 
 do-build:
+.if !defined(WITHOUT_MOZILLA)
 .if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip)
 .if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip)
 .if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
 	@${MAKE} mozilla
+.endif
 .endif
 .endif
 .endif
