@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sketch
-PORTVERSION=	0.6.12
+PORTVERSION=	0.6.13
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,8 @@ SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
 SKETCHEXDIR=	${PREFIX}/share/examples/sketch
-SKETCHSCRIPTS=	finishinst.py sk2ps.py sketch.py skshow.py
+SKETCHSCRIPTS=	finishinst.py sk2ppm.py sk2ps.py skconvert.py sketch.py \
+		skshow.py
 
 do-configure:
 	@(cd ${WRKSRC} && \
@@ -53,8 +54,14 @@ do-install:
 	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${SKETCHEXDIR}; ${TAR} xf -)
 	(cd ${SKETCHDIR}; ${PYTHON_CMD} finishinst.py)
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/sk2ppm.in > ${PREFIX}/bin/sk2ppm
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ppm
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
 		< ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ps
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/skconvert.in > ${PREFIX}/bin/skconvert
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/skconvert
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
 		< ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
