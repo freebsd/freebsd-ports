@@ -1,0 +1,13 @@
+Lockdown is a hardening system written in C++ for FreeBSD
+and released under the BSD license.
+
+Lockdown was designed to harden FreeBSD's base system. It does so
+by editing the systems configuration files and set permissions,
+flags and ownership on SUID, GID and information files.
+Lockdown was meant to be run only once, so you can quickly
+and without forgetting something, get a secure system running.
+
+WWW:	http://lockdown.TruNet.dk/
+
+- Daniel Blankensteiner
+db@TruNet.dk
