@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/10/05 19:32:31 max Exp $
 #
 
 DISTNAME=	pl970702e
@@ -36,5 +36,6 @@ do-install:
 	${MKDIR} ${TEXMF}/tex/platex/base
 	@${CP} ${WRKSRC}/* ${TEXMF}/tex/platex/base
 	${MV} -f ${TEXMF}/tex/platex/base/platex.fmt ${TEXMF}/web2c
+	/bin/ln -fs ptex ${PREFIX}/bin/platex
 
 .include <bsd.port.mk>
