@@ -1,0 +1,42 @@
+--- src/arrowproperties.cc.orig	Mon Feb  7 22:46:26 2000
++++ src/arrowproperties.cc	Mon Feb  7 22:48:41 2000
+@@ -40,7 +40,7 @@
+                                gpointer         user_data)
+ {
+   area=area;
+-  DoDraw(widget,(TArrowStyle)user_data);
++  DoDraw(widget,*(TArrowStyle*)user_data);
+ }
+ 
+ 
+@@ -50,7 +50,7 @@
+                                gpointer         user_data)
+ {
+   event = event;
+-  DoDraw(widget,(TArrowStyle)user_data);
++  DoDraw(widget,*(TArrowStyle *)user_data);
+   return FALSE;
+ }
+ 
+--- src/line.h.orig	Mon Feb  7 22:48:55 2000
++++ src/line.h	Mon Feb  7 22:49:24 2000
+@@ -18,7 +18,7 @@
+ 
+ class TCADLine : public TCADObject, TCADLinePropertiesI {
+ protected:
+-  const unsigned int MAXNUMHANDLES = 10;
++  static const unsigned int MAXNUMHANDLES = 10;
+ 
+   GdkPoint First,Last;
+   TCADHandle Handle[MAXNUMHANDLES];
+--- src/rightangleline.h.orig	Mon Feb  7 22:49:50 2000
++++ src/rightangleline.h	Mon Feb  7 22:50:24 2000
+@@ -11,7 +11,7 @@
+ 
+ class TCADRightAngleLine : public TCADLine {
+ protected:
+-  const int MAXNUMPOINTS = MAXNUMHANDLES+3;
++  static const int MAXNUMPOINTS = MAXNUMHANDLES+3;
+   GdkPoint Points[MAXNUMPOINTS];
+   int NumPoints;
+   int XLPN,YLPN;  // LoadPointNumber - for loading
