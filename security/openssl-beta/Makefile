@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	openssl-0.9.4
-CATEGORIES=	security devel 
+CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
@@ -17,6 +17,9 @@ MAINTAINER=	dirk@FreeBSD.org
 
 RESTRICTED=	"Cryptography"
 USE_PERL5=	yes
+ALL_TARGET=	freebsd-shared all
+SHLIBVER=	1
+MAKE_ENV+=	SHLIBVER=${SHLIBVER}
 
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 pre-fetch:
@@ -39,6 +42,11 @@ do-configure:
 	   ${RSAREF} -L${PREFIX}/lib
 
 post-install:
+.for i in libcrypto libssl
+	@${INSTALL_DATA} ${WRKSRC}/$i.so.${SHLIBVER} ${PREFIX}/lib
+	@${LN} -s $i.so.${SHLIBVER} ${PREFIX}/lib/$i.so
+.endfor
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/openssl
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/openssl

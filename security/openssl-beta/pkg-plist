@@ -52,7 +52,11 @@ include/openssl/x509_vfy.h
 include/openssl/x509v3.h
 lib/libRSAglue.a
 lib/libcrypto.a
+lib/libcrypto.so
+lib/libcrypto.so.1
 lib/libssl.a
+lib/libssl.so
+lib/libssl.so.1
 openssl/misc/CA.pl
 openssl/misc/CA.sh
 openssl/misc/c_hash
