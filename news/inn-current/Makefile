@@ -58,28 +58,27 @@ MAN8=	actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 cnfsheadconf.8 \
 	ovdb_upgrade.8 overchan.8 pgpverify.8 prunehistory.8 pullnews.8 \
 	scanlogs.8 send-uucp.8 sm.8 tally.control.8 writelog.8
 
-EXTRA=	${WRKSRC}/HISTORY ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE 
+EXTRA=	${WRKSRC}/HISTORY ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE
 
 pre-install:
 	${MKDIR} ${INN_NEWSSPOOL}
 
 post-install:
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
-	    echo 'Creating empty history database...' ; \
+	    ${ECHO} 'Creating empty history database...' ; \
 	    cd ${PREFIX}/news/db ; \
-	    touch history ; \
-	    chmod 644 history ; \
-	    chown news:news history ; \
+	    ${TOUCH} history ; \
+	    ${CHMOD} 644 history ; \
+	    ${CHOWN} news:news history ; \
 	    ../bin/makedbz -i ; \
 	    for s in dir hash index ; do \
-		install -o news -g news -m 644 history.n.$${s} history.$${s} ; \
+		${INSTALL} -o news -m 644 history.n.$${s} history.$${s} ; \
 	    done ; \
 	fi)
 	@${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
-		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
-	@${MKDIR} -p ${PREFIX}/share/doc/inn
+	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
+	@${MKDIR} ${PREFIX}/share/doc/inn
 	@${INSTALL_DATA} ${EXTRA} ${PREFIX}/share/doc/inn
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
-
