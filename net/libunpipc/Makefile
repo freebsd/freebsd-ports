@@ -7,7 +7,7 @@
 
 PORTNAME=	libunpipc
 PORTVERSION=	1.0
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://compass.net.edu.cn:8000/programming/
 DISTNAME=	unpv22e
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 post-configure:
-	ln -s ${WRKSRC}/config.h ${WRKSRC}/unpipc_config.h
+	${LN} -s ${WRKSRC}/config.h ${WRKSRC}/unpipc_config.h
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libunpipc.a ${PREFIX}/lib
