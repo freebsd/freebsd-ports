@@ -1,0 +1,11 @@
+--- configure.orig      Mon Nov  1 09:24:55 1999
++++ configure   Mon Nov  1 09:25:14 1999
+@@ -112,7 +112,7 @@
+ datadir='${prefix}/share'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='/var/run'
+ libdir='${exec_prefix}/lib'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
