@@ -95,6 +95,9 @@
 # WITH_LIBDVDNAV
 # default: autodetect
 #
+# WITH_LIBUNGIF
+# default: autodetect
+#
 # WITH_ARTS
 # default: autodetect
 #
@@ -167,7 +170,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -182,7 +185,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 DISTNAME=	MPlayer-0.92
 
 PATCH_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
-PATCHFILES=	mplayer-0.9.1-v6-20030825.diff.gz
+PATCHFILES=	mplayer-0.9.2-v6-20030930.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	riggs@rrr.de
@@ -248,6 +251,10 @@ WITH_DVD=	yes
 
 .if exists(${LOCALBASE}/lib/libdvdnav.so.1)
 WITH_LIBDVDNAV=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libungif.so.5)
+WITH_LIBUNGIF=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libmad.so.1)
@@ -374,6 +381,13 @@ CONFIGURE_ARGS+=	--enable-css \
 			--with-csslibdir=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-css
+.endif
+
+.if defined(WITH_LIBUNGIF)
+LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+CONFIGURE_ARGS+=	--enable-gif
+.else
+CONFIGURE_ARGS+=	--disable-gif
 .endif
 
 .if defined(WITH_LIBDV)
