@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Sun Dec  7 18:11:19 2003
++++ src/Makefile.in	Sun Dec  7 18:12:23 2003
+@@ -154,7 +154,7 @@
+ 
+ htt_SOURCES = watchdog.c
+ 
+-htt_server_LDADD = $(LIB_DIR)/iml/libiml.la $(IM_LIBDIR)/iiimp/libiiimp.la $(SOCKET_LIBS) $(LIBCRYPT_FLAGS) $(LIBPAM_FLAGS) $(LIBWRAP_FLAGS) $(THREAD_LIBS)
++htt_server_LDADD = $(LIB_DIR)/iml/libiml.la -L$(prefix)/lib -liiimp $(SOCKET_LIBS) $(LIBCRYPT_FLAGS) $(LIBPAM_FLAGS) $(LIBWRAP_FLAGS) $(THREAD_LIBS)
+ bin_PROGRAMS = htt_server htt
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/../acfiles/mkinstalldirs
+@@ -180,8 +180,7 @@
+ 	IIIMP_IMState.$(OBJEXT) IIIMP_ICState.$(OBJEXT) \
+ 	IIIMPUtil.$(OBJEXT) IIIMPTrans.$(OBJEXT)
+ htt_server_OBJECTS = $(am_htt_server_OBJECTS)
+-htt_server_DEPENDENCIES = $(LIB_DIR)/iml/libiml.la \
+-	$(IM_LIBDIR)/iiimp/libiiimp.la
++htt_server_DEPENDENCIES = $(LIB_DIR)/iml/libiml.la
+ htt_server_LDFLAGS =
+ 
+ DEFS = @DEFS@
