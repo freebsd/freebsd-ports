@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.osk.3web.ne.jp/~nyasu/software/
 DISTNAME=	ruby-${PORTNAME}${PORTVERSION}
