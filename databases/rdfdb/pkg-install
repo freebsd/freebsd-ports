@@ -9,7 +9,7 @@ case $2 in
 PRE-INSTALL)
 	USER=rdfdb
 	GROUP=${USER}
-	UID=71
+	UID=55
 	GID=${UID}
 
 	if pw group show "${GROUP}" 2>/dev/null; then
