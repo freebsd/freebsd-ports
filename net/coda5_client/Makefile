@@ -3,11 +3,11 @@
 # Date created:				19 June 1998
 # Whom:					hmpierce <hmpierce@cs.cmu.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/05 19:23:42 rvb Exp $
 #
 
-DISTNAME=	coda-4.6.5
-PKGNAME=	coda-client-4.6.5.1
+DISTNAME=	coda-4.6.6
+PKGNAME=	coda-client-4.6.6.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 EXTRACT_SUFX=	.tgz
