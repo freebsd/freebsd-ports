@@ -25,6 +25,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS+=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 .endif
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Broken pkg-plist on FreeBSD >= 5.x"
+.endif
+
 USE_GMAKE=	yes
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.p/pre/}
