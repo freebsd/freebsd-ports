@@ -1,0 +1,24 @@
+--- main/Makefile.linux.orig	Sun Jan 10 04:23:53 1999
++++ main/Makefile.linux	Sat Oct  2 09:31:48 1999
+@@ -1,5 +1,5 @@
+-CC      = gcc
+-CXX     = g++
++CC      ?= gcc
++CXX     ?= g++
+ FORMS   = ../../xforms/FORMS
+ SOUND   = ../sound
+ SPKIT   = ../spkit
+@@ -11,10 +11,10 @@
+ X11DIR  = /usr/X11R6
+ INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I$(X11DIR)/include
+ LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
+-CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall
++CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DUSINGGCC -Wall
+ DEBUG   = -g3
+-OPTIM   = -O1
+-LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lforms -lXpm -lX11 -lm
++OPTIM   = ${CXXFLAGS}
++LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lxforms -lXpm -lX11 -lm
+ 
+ PROGS =	DAP
+ OBJS  = DPTich.o DPTich_cb.o DPTich_DSP.o DPTich_edit_cb.o DPTich_macros.o \
