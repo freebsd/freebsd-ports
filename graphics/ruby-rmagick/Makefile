@@ -15,6 +15,7 @@ DIST_SUBDIR=	ruby
 
 PATCH_SITES=	http://rubyforge.org/download.php/10/
 PATCHFILES=	RMagick-${PORTVERSION}.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
