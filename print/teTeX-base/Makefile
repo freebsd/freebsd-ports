@@ -153,6 +153,7 @@ pre-install:
 		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 .for F in ${OLDCONFIG}
 	if [ -f ${PREFIX}/${TEXMFVARDIR}/${F} ]; then \
+		${RM} -f ${PREFIX}/${TEXMFVARDIR}/${F}; \
 		${ECHO_CMD} "NOTICE: old config file ${F} has been removed.";\
 	fi
 .endfor
