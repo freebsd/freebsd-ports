@@ -8,8 +8,7 @@
 PORTNAME=	yatex
 PORTVERSION=	1.72
 CATEGORIES?=	print elisp
-MASTER_SITES=	http://www.yatex.org/ \
-		http://www.gentei.org/~yuuji/tmp/
+MASTER_SITES=	http://www.yatex.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
