@@ -1,0 +1,7 @@
+GTKFIG is figure-drawing tools. It aims to do what can be done with xfig,
+texcad and SmartDraw (TM) (a scheme drawing tool for MS Windows).
+
+GTKFIG is not:
+  - Bitmap graphic editor
+  - Vector graphic editor (like Corel)
+  - CAD system
