@@ -8,7 +8,7 @@ fi
 
 USER=msql
 GROUP=${USER}
-UID=87
+UID=98
 GID=${UID}
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
