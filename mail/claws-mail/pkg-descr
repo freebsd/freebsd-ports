@@ -1,0 +1,21 @@
+Sylpheed is an e-mail client (and news reader) based on GTK+
+
+Currently, many features are supported including POP3, IMAP, NNTP,
+multiple accounts, threading, filtering, MIME attachments, APOP, SMTP
+AUTH, SSL, IPv6, GnuPG, internalization, and more.
+
+In addition to the above, Sylpheed-claws has the following extra features:
+* A revision of the filtering system
+* allow colour labeling of emails based on filtering rules
+* automatic mailing list reply, allow ignoring of mail threads
+* selectable fonts, compface support, spell checking, SMTP AUTH
+* Revision of the quotation format and forwarding format
+* encryption/decryption of GPG/PGP ascii-armored messages is supported
+* dynamic signatures are enabled
+* folder properties: associate certain options per folder,
+	'Request Return Receipt', 'Default To', and 'Default account'
+and more...
+
+WWW: http://sylpheed-claws.sourceforge.net/
+
+- corecode

@@ -1,0 +1,11 @@
+--- ./configure.orig	Sat Dec 15 14:28:30 2001
++++ ./configure	Fri Dec 21 01:02:01 2001
+@@ -756,7 +756,7 @@
+ fi
+ 
+ 
+-PACKAGE=sylpheed
++PACKAGE=sylpheed-claws
+ 
+ MAJOR_VERSION=0
+ MINOR_VERSION=6
