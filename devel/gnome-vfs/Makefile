@@ -28,20 +28,24 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
+.if !defined(WITHOUT_KDE_MENUS)
+EXTRA_PATCHES=	${FILESDIR}/modules_vfolder_applications-all-users.vfolder-info.in
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
-WITH_CDPARANOIA=        yes
+WITH_CDPARANOIA=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libfam.a)
 WITH_FAM=	yes
 .endif
 
 .if defined(WITH_CDPARANOIA)
-LIB_DEPENDS+=   cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
-PLIST_SUB+=     CDPARANOIA=""
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+PLIST_SUB+=	CDPARANOIA=""
 .else
-PLIST_SUB+=     CDPARANOIA="@comment "
+PLIST_SUB+=	CDPARANOIA="@comment "
 .endif
 .if defined(WITH_FAM)
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
