@@ -1,0 +1,4 @@
+bin/utf8-expand
+bin/utf8-fmt
+bin/utf8-unexpand
+bin/utf8-wc
