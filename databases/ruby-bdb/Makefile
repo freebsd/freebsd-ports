@@ -7,6 +7,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ MAINTAINER=	knu@FreeBSD.org
 .if defined(WITH_BDB4)
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 .else
-LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .endif
 
 USE_RUBY=	yes

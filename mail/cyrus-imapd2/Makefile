@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.1.7
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -18,7 +18,7 @@ PATCHFILES=	${DISTNAME}-ipv6-20020822.diff.gz
 MAINTAINER=	ume@FreeBSD.org
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
-		db3.2:${PORTSDIR}/databases/db3
+		db3.3:${PORTSDIR}/databases/db3
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp

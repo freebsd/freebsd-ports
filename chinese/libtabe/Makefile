@@ -7,13 +7,14 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
 .if !defined(USE_DB2)
-LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .else
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		ftp://ftp.sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \
@@ -20,7 +20,7 @@ MAINTAINER=	gordon@FreeBSD.org
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .endif
 
-LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
