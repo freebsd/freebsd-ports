@@ -11,8 +11,8 @@ include/GTL/embedding.h
 include/GTL/gml_parser.h
 include/GTL/gml_scanner.h
 include/GTL/graph.h
-include/GTL/max_flow.h
-include/GTL/max_flow_mkm.h
+include/GTL/maxflow_ff.h
+include/GTL/maxflow_pp.h
 include/GTL/ne_map.h
 include/GTL/node.h
 include/GTL/node_data.h
