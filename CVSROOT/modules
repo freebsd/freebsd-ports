@@ -4663,7 +4663,6 @@ linux-dislin	ports/math/linux-dislin
 linux-divx4linux	ports/multimedia/linux-divx4linux
 linux-divx4linux4	ports/multimedia/linux-divx4linux4
 linux-divxplayer	ports/multimedia/linux-divxplayer
-linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
 linux-edonkey-core	ports/net/linux-edonkey-core
 linux-edonkey-gui-gtk	ports/net/linux-edonkey-gui-gtk
@@ -7178,7 +7177,6 @@ pango		ports/x11-toolkits/pango
 panorama	ports/graphics/panorama
 pantomime	ports/mail/pantomime
 pantomime-ssl	ports/mail/pantomime-ssl
-papaya		ports/net/papaya
 papercut	ports/news/papercut
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
@@ -8759,7 +8757,6 @@ scm		ports/lang/scm
 scmail		ports/mail/scmail
 scmxx		ports/comms/scmxx
 scons		ports/devel/scons
-scoop		ports/www/scoop
 scorched3d-devel	ports/games/scorched3d-devel
 scotty3		ports/net-mgmt/scotty3
 scout		ports/www/scout
