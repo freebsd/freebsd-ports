@@ -1,7 +1,8 @@
 bin/balsa
 etc/sound/events/balsa.soundlist
 etc/sound/events/email.soundlist
-share/gnome/applications/balsa.desktop
+share/gnome/apps/Internet/balsa.desktop
+share/gnome/help/balsa/C/getting-started.html
 share/gnome/help/balsa/C/images/address-book-ldap.png
 share/gnome/help/balsa/C/images/address-book-modify.png
 share/gnome/help/balsa/C/images/address-book-start.png
@@ -18,7 +19,7 @@ share/gnome/help/balsa/C/images/newmsg-window.png
 share/gnome/help/balsa/C/images/preferences-window.png
 share/gnome/help/balsa/C/images/spell-check.png
 share/gnome/help/balsa/C/index.html
-share/gnome/help/balsa/C/ln7.html
+share/gnome/help/balsa/C/license.html
 share/gnome/help/balsa/C/stylesheet-images/caution.gif
 share/gnome/help/balsa/C/stylesheet-images/home.gif
 share/gnome/help/balsa/C/stylesheet-images/important.gif
@@ -31,10 +32,8 @@ share/gnome/help/balsa/C/stylesheet-images/toc-minus.gif
 share/gnome/help/balsa/C/stylesheet-images/toc-plus.gif
 share/gnome/help/balsa/C/stylesheet-images/up.gif
 share/gnome/help/balsa/C/stylesheet-images/warning.gif
-share/gnome/help/balsa/C/t1.html
 share/gnome/help/balsa/C/topic.dat
-share/gnome/help/balsa/C/x51.html
-share/gnome/help/balsa/C/x81.html
+share/gnome/help/balsa/C/win-main.html
 share/gnome/pixmaps/balsa/attachment.png
 share/gnome/pixmaps/balsa/balsa-logo.png
 share/gnome/pixmaps/balsa/balsa-top.png

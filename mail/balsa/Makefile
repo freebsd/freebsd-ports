@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://balsa.gnome.org/ \
 		http://www.theochem.kth.se/~pawsa/balsa/ \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml
+USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml gnometarget
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 LIBTOOLFILES=	configure libmutt/configure
