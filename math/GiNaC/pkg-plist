@@ -43,7 +43,6 @@ include/ginac/wildcard.h
 info/ginac.info
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
-lib/libginac.la
 lib/libginac.so
 lib/libginac.so.7
 share/aclocal/ginac.m4
