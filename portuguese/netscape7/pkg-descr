@@ -1,9 +1,0 @@
-This is a Brazilian Portuguese, Linux version of the Netscape suite (AOL
-Instant Messenger, Web browser, HTML editor, mail user agent and news reader).
-Using the Linux version on FreeBSD is necessary if you want to use Linux
-versions of plugins.  Many plugins are distributed only as Linux binaries.  The
-Macromedia Flash plugin is available in this port, as are the Brazilian region
-pack, personal security manager, spell-checker, and talkback.  AOL Instant
-Messenger is installed if the browser is selected.
-
-WWW: http://www.aol.com.br/netscape/novo_n7.adp
