@@ -14,7 +14,7 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 PATCH_SITES=	http://www.ruby-lang.org/~knu/
-PATCHFILES=	${RUBY_DISTNAME}-${RUBY_PATCHLEVEL}.patch.gz
+PATCHFILES=	${RUBY_PATCHFILES}
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
@@ -99,7 +99,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
 	${MKDIR} ${RUBY_DOCDIR}/readline
 	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${RUBY_DOCDIR}/readline
-	${CP} -R ${WRKSRC}/doc/irb ${RUBY_DOCDIR}/
+	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
