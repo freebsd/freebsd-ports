@@ -275,7 +275,6 @@ lib/nessus/plugins/webcart.nasl
 lib/nessus/plugins/webdist.nasl
 lib/nessus/plugins/webgais.nasl
 lib/nessus/plugins/websendmail.nasl
-lib/nessus/plugins/webserver_detect_type_nd_version.nasl
 lib/nessus/plugins/webserver_robot.nasl
 lib/nessus/plugins/wftp.nasl
 lib/nessus/plugins/whois_raw.nasl
@@ -296,9 +295,17 @@ lib/nessus/plugins/xitami_overflow.nasl
 lib/nessus/plugins/xtramail_control.nasl
 lib/nessus/plugins/xtramail_helo.nasl
 lib/nessus/plugins/xtramail_pop_overflow.nasl
+lib/nessus/plugins/cgibin_browsable.nasl
+lib/nessus/plugins/csm_helo.nasl
+lib/nessus/plugins/doc_browsable.nasl
+lib/nessus/plugins/http_version.nasl
+lib/nessus/plugins/printenv.nasl
+lib/nessus/plugins/rover_pop3_overflow.nasl
+lib/nessus/plugins/roxen_counter.nasl
+lib/nessus/plugins/w3msql_overflow.nasl
+lib/nessus/plugins/winsatan.nasl
 lib/nessus/plugins/yahoo_dos.nasl
 lib/nessus/plugins_factory/Makefile
 lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
-@dirrm lib/nessus/plugins
 @dirrm lib/nessus/plugins_factory
