@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -36,7 +37,7 @@ USE_RC_SUBR=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-PORTDOCS=	NEWS ChangeLog html
+PORTDOCS=	NEWS ChangeLog
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
