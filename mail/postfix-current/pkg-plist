@@ -31,6 +31,7 @@ etc/postfix/sample-virtual.cf
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
+libexec/postfix/flush
 libexec/postfix/lmtp
 libexec/postfix/local
 libexec/postfix/master
@@ -41,6 +42,7 @@ libexec/postfix/qmgr
 libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
+libexec/postfix/spawn
 libexec/postfix/trivial-rewrite
 sbin/postalias
 sbin/postcat
