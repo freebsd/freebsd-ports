@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	naim-0.9.5-recon4
+DISTNAME=	naim-0.9.5-nicer2
 CATEGORIES=	net
 MASTER_SITES=	http://dev.n.ml.org/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	mharo@FreeBSD.org
 
