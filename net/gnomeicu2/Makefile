@@ -12,7 +12,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gnomeicu
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 

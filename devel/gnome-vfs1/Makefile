@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
 DISTNAME=	gnome-vfs-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf \
 		bz2.1:${PORTSDIR}/archivers/bzip2

@@ -12,7 +12,7 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		gtkhtml.10:${PORTSDIR}/www/gtkhtml

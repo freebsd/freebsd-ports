@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 

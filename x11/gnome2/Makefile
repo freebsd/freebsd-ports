@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
 		gtcd:${PORTSDIR}/audio/gnomemedia \

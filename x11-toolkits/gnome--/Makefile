@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
 
-MAINTAINER=	erich@tacni.net
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 BUILD_DEPENDS=	m4:${PORTSDIR}/devel/m4

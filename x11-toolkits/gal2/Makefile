@@ -11,7 +11,7 @@ CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gal
 
-MAINTAINER?=	ade@FreeBSD.org
+MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		giconv.2:${PORTSDIR}/converters/libiconv

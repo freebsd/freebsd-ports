@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python	
 DISTNAME=	gnome-python-1.4.0
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/libunicode
 DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-applets
 DISTNAME=	gnome-applets-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp \
 		gtop.1:${PORTSDIR}/devel/libgtop
