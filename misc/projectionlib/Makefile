@@ -8,7 +8,8 @@
 PORTNAME=	projectionlib
 PORTVERSION=	3.7
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftpmcmc.er.usgs.gov/release/dlgv32/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftpmcmc.er.usgs.gov/release/dlgv32/
 DISTNAME=	dlgv32v37src
 
 MAINTAINER=	ports@FreeBSD.org
