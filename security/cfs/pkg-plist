@@ -9,3 +9,4 @@ sbin/cfsd
 sbin/cname
 share/doc/cfs/README.install
 share/doc/cfs/notes.ms
+@dirrm share/doc/cfs
