@@ -31,6 +31,9 @@ lib/sasl2/liblogin.so.2
 %%MYSQL%%lib/sasl2/libmysql.a
 %%MYSQL%%lib/sasl2/libmysql.so
 %%MYSQL%%lib/sasl2/libmysql.so.2
+lib/sasl2/libntlm.a
+lib/sasl2/libntlm.so
+lib/sasl2/libntlm.so.2
 %%OTP%%lib/sasl2/libotp.a
 %%OTP%%lib/sasl2/libotp.so
 %%OTP%%lib/sasl2/libotp.so.2
@@ -55,13 +58,13 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/draft-burdis-cat-srp-sasl-06.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-cat-sasl-gssapi-05.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-melnikov-rfc2831bis-02.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-anon-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-plain-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2831bis-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-myers-saslrev-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-nerenberg-sasl-crammd5-03.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-newman-sasl-c-api-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-newman-sasl-c-api-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-sasl-login.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-zeilenga-sasl-anon-01.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-zeilenga-sasl-plain-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1939.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
