@@ -8,17 +8,16 @@ PORTNAME=	phpSysInfo
 PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpsysinfo
-DISTNAME=	phpsysinfo-${PORTVERSION}
-WRKSRC=		${WRKDIR}/phpsysinfo-dev
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	so14k@so14k.com
 COMMENT=	A php script that displays info about the host being accessed
 
-USE_PHP=	yes
+USE_PHP=	pcre xml
 WANT_PHP_WEB=	yes
 
-PREFIX=		${LOCALBASE}
+WRKSRC=		${WRKDIR}/${PORTNAME:L}-dev
 WEBOWN?=	www
 WEBGRP?=	www
 APACHEDIR=	${PREFIX}/www/data
@@ -26,10 +25,10 @@ INSTALLDIR=	${APACHEDIR}/phpSysInfo
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 
-PLIST_SUB+=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
+PLIST_SUB=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
 
 post-patch:
-	rm -f ${PLIST}
+	${RM} -f ${PLIST}
 	cd ${WRKSRC};\
 	${FIND} . ! -type d | ${SORT} | ${SED} "s|^.|%%INSTALLDIR%%|"\
 		>${PLIST};\
