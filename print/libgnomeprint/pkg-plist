@@ -102,3 +102,5 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-2.0.mo
 @dirrm include/libgnomeprint-2.0/libgnomeprint/private
 @dirrm include/libgnomeprint-2.0/libgnomeprint
 @dirrm include/libgnomeprint-2.0
+@dirrm etc/gnome/libgnomeprint-2.0/fonts
+@dirrm etc/gnome/libgnomeprint-2.0
