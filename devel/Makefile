@@ -460,6 +460,7 @@
     SUBDIR += pth
     SUBDIR += pth-devel
     SUBDIR += ptl
+    SUBDIR += py-ansistyle
     SUBDIR += py-coro
     SUBDIR += py-cxx
     SUBDIR += py-game

@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/_ansistyle.so
+lib/%%PYTHON_VERSION%%/site-packages/ansistyle.py
+lib/%%PYTHON_VERSION%%/site-packages/ansistyle.pyc
