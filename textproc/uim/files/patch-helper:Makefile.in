@@ -1,6 +1,6 @@
---- helper/Makefile.in.orig	Mon Dec  8 21:20:55 2003
-+++ helper/Makefile.in	Sun Dec 21 01:36:26 2003
-@@ -180,8 +180,9 @@
+--- helper/Makefile.in.orig	Wed Dec 31 01:27:22 2003
++++ helper/Makefile.in	Thu Jan  1 03:27:05 2004
+@@ -187,8 +187,9 @@
  
  EXTRA_DIST = GNOME_UimApplet.server.in.in 
  
