@@ -72,7 +72,6 @@ while [ "$1" ]; do
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6-nox11
 		;;
 	\"GS_PDF_CRYPT\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
 		echo PDFENCRYPT=YES
 		;;
 	\"PSUTILS\")
