@@ -9,7 +9,7 @@
 PORTNAME=	snowlog
 PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://home.kcore.de/~kiza/software/snowlog/download/
+MASTER_SITES=	http://kiza.kcore.de/software/snowlog/download/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A webserver access log browser/analyzer
