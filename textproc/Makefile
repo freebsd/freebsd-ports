@@ -45,6 +45,7 @@
     SUBDIR += da-aspell
     SUBDIR += dadadodo
     SUBDIR += dbacl
+    SUBDIR += denature
     SUBDIR += dico
     SUBDIR += dict
     SUBDIR += dictfmt

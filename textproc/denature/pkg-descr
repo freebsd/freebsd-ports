@@ -1,0 +1,11 @@
+denature is a perl program that attempts to convert an HTML page into XSL-FO
+which it then passes off to the FOP (Formatted Objects Formatter) to produce a
+PDF document.
+
+denature trys to use any included CSS stylesheets to figure out the properties
+used in the document. The CSS processing in denature is not very mature and
+only handles a limited amount of the available CSS markup. The CSS support
+does not handle the contextual entries in a CSS document, and the CSS::Tiny
+module requires that all the :'s in a document have a space after them.
+
+WWW: http://denature.sourceforge.net/
