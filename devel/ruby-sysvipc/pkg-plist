@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/sysvipc.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sysvipc/sysvipc.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sysvipc/sysvipc.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sysvipc
