@@ -6758,6 +6758,7 @@ qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
 qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
+qscintilla	ports/x11-toolkits/qscintilla
 qslim		ports/graphics/qslim
 qssl		ports/devel/qssl
 qstat		ports/games/qstat
