@@ -1,0 +1,10 @@
+--- src/main.c.orig	Sat Feb 12 22:43:06 2005
++++ src/main.c	Sat Feb 12 22:43:47 2005
+@@ -49,6 +49,7 @@
+    opt.debug_level = 3;
+    D_ENTER(3);
+ 
++   gtk_set_locale();
+    gtk_init(&argc, &argv);
+ 
+    obj_win = geist_create_object_list();
