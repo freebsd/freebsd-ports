@@ -34,13 +34,14 @@ CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 .if defined(PINENTRY_QT)
 USE_QT_VER=	3
 PLIST_SUB+=	WITH_QT=""
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
+
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt
 PLIST_SUB+=	WITH_QT="@comment "
-
-pre-configure:
-	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
-		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
 .endif
 
 .if defined(PINENTRY_GTK)
@@ -90,14 +91,14 @@ PLIST_SUB+=	WITH_CURSES=""
 
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL}
-.endif
 
 run-autotools:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
-	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
+	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>
