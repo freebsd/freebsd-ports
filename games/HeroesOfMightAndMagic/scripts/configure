@@ -53,4 +53,39 @@ echo MUSIC=$answ >> $F
 yesno NO  "Do you want to install Videos (137 MB)           "
 echo VIDEOS=$answ >> $F
 
+. $F
+
+cat ${PKGDIR}/files/pkg-plist.base > ${PLIST}
+
+# Scenario files
+if [ $SCENARIO = YES ]; then
+        cat ${PKGDIR}/files/pkg-plist.scenario >> ${PLIST}
+else
+        echo ${GAMESUBDIR}/maps >> ${PLIST}
+fi
+
+# Neither sound nor Music, make the whole data tree a link
+if [ $GRAPHIC = NO -a $MUSIC = NO ]; then
+	echo ${GAMESUBDIR}/data/video >> ${PLIST}
+else
+	cat ${PKGDIR}/files/pkg-plist.video >> ${PLIST}
+fi
+
+# Videos
+if [ $VIDEOS = YES ]; then
+        cat ${PKGDIR}/files/pkg-plist.video >> ${PLIST}
+fi
+
+
+
+# Music
+if [ $MUSIC = YES ]; then
+	cat ${PKGDIR}/files/pkg-plist.music >> ${PLIST}
+else
+	echo ${GAMESUBDIR}/mp3 >> ${PLIST}	
+fi
+
+echo @dirrm ${GAMESUBDIR}/data >> ${PLIST}
+echo @dirrm ${GAMESUBDIR} >> ${PLIST}
+
 exit 0
