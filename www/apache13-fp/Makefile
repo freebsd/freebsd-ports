@@ -37,7 +37,7 @@ MAINTAINER=	hetzels@westbend.net
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 
-RUN_DEPENDS=	${LOCALBASE}/frontpage/bin/owsadm.exe:${PORTSDIR}/www/frontpage5
+RUN_DEPENDS=	${LOCALBASE}/frontpage/bin/owsadm.exe:${PORTSDIR}/www/frontpage
 
 .ifndef WITHOUT_LIBEXPAT
 LIB_DEPENDS+=	expat.2:${PORTSDIR}/textproc/expat2
