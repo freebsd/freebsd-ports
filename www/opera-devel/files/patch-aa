@@ -1,8 +1,16 @@
---- install.sh.orig	Tue Oct  1 16:20:51 2002
-+++ install.sh	Sat Oct  5 13:37:56 2002
-@@ -1042,8 +1042,9 @@
- 	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
+--- install.sh.orig	Tue Oct 29 16:31:24 2002
++++ install.sh	Mon Nov 11 19:34:42 2002
+@@ -1065,16 +1065,10 @@
+ 	mkdir $mkdirv $mkdirp $plugin_dir/
+ 	chmod $chmodv 755 $plugin_dir
  
+-	cp $cpv $cpf $cpp plugins/operamotifwrapper plugins/operaplugincleaner plugins/libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/
+-        chmod $chmodv 755 $plugin_dir/operamotifwrapper $plugin_dir/operaplugincleaner $plugin_dir/libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release
+-
+-	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so.$plugin_version_major.$plugin_version_minor
+-	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so.$plugin_version_major
+-	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
+-
       # System wide configuration files
 -	config_dir='/usr/local/etc'
 +	config_dir="$prefix/etc"
@@ -11,7 +19,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1070,6 +1071,7 @@
+@@ -1101,6 +1095,7 @@
  			;;
  		esac
  	    done
