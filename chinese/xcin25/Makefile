@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xcin25
-# Version required:	xcin-2.5.2b4
+# Version required:	xcin-2.5.2-p2
 # Date created:		18 Oct 1999
 # Whom:			Keith Jang <keith@freebsd.sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcin-2.5-19991128
-PKGNAME=	zh-xcin-2.5.2b4
+DISTNAME=	xcin-2.5.2-pre2
+PKGNAME=	zh-xcin-2.5.2p2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
 
@@ -41,7 +41,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/internal
-.for INTERNAL in IMdkit gen_inp gui_request module structer
+.for INTERNAL in IMdkit gen_inp greq_menusel module structer
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/${INTERNAL} \
 		${PREFIX}/lib/X11/xcin25/doc/internal
 .endfor
