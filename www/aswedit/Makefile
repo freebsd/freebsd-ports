@@ -9,10 +9,7 @@ PORTNAME=	asWedit
 PORTVERSION=	4.0.1
 PORTREVISION=	1
 CATEGORIES=	www editors linux
-MASTER_SITES=	http://www.advasoft.com/asWedit/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/www/asWedit/ \
-		ftp://sunsite.auc.dk/pub/infosystems/www/asWedit/ \
-		ftp://sunsite.icm.edu.pl/pub/www/asWedit/
+MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/
 DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	brett@peloton.runet.edu
