@@ -10686,6 +10686,7 @@ toshctl		ports/sysutils/toshctl
 tosvcd		ports/multimedia/tosvcd
 totd		ports/dns/totd
 totem		ports/multimedia/totem
+totem-gstreamer	ports/multimedia/totem-gstreamer
 towitoko	ports/devel/towitoko
 tpad		ports/editors/tpad
 tpager		ports/x11-wm/tpager
