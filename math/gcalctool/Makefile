@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.1.9
-PORTREVISION=	1
+PORTVERSION=	4.2.43
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/4.1
+MASTER_SITE_SUBDIR=	fifth-toe/2.1/2.1.99/sources
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomeprefix gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

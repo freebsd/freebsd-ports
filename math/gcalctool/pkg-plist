@@ -1,3 +1,12 @@
 bin/gcalctool
-share/gcalctool/calctool.gif
-@dirrm share/gcalctool
+etc/gconf/gconf.xml.defaults/apps/gcalctool/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
+etc/gconf/schemas/gcalctool.schemas
+share/gnome/gcalctool/calctool.gif
+share/locale/es/LC_MESSAGES/gcalctool.mo
+share/locale/fr/LC_MESSAGES/gcalctool.mo
+share/locale/no/LC_MESSAGES/gcalctool.mo
+share/locale/sv/LC_MESSAGES/gcalctool.mo
+@dirrm share/gnome/gcalctool
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool
+@dirrm etc/gconf/gconf.xml.defaults/apps/gcalctool
