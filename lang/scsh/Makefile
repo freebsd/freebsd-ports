@@ -26,6 +26,8 @@ BROKEN=		"fails to install on ${ARCH}"
 .endif
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lib-dirs-list='("${PREFIX}/lib/scsh/0.6")'
+
 USE_GMAKE=	yes
 ALL_TARGET=	enough
 MAN1=		scsh.1
