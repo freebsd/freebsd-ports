@@ -1,0 +1,22 @@
+The Pathan project grew out of DecisionSoft's work on XMLScript , an 
+XML transformation language.
+
+XPath was adopted as a node selection language by XMLScript when the XPath 
+specification was ratified by the W3C. DecisionSoft's XMLScript processor 
+is based on Xerces-C, a Document Object Model compliant XML parser. Pathan 
+therefore was designed from the base up to be fully compatible with the 
+Xerces parser.
+
+Pathan 1 represents the open sourcing of the XPath component of 
+DecisionSoft's XMLScript processor. Pathan 1 features a full implementation 
+of the XPath 1.0 Specification. Pathan 1 implements the W3C DOM Level 3 
+XPath Specification (Working Draft February 08 2002) providing a powerful 
+and coherent interface between XPath and DOM and hence a standardised 
+interface with Xerces. 
+
+Pathan is provided to the community as we feel that the Pathan module 
+increases the scope and usefulness of the Xerces-C library and will be 
+an aid to other XML developers in their projects.
+
+For information on Pathan 1 please see their homepage
+WWW: http://software.decisionsoft.com/
