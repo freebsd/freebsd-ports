@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-thunderbird
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
-EXTRACT_DEPENDS=${WRKSRC}/Makefile:${LOCAL_SRCDIR}:configure
+EXTRACT_DEPENDS=${LOCAL_SRCDIR}/work/mozilla/Makefile:${LOCAL_SRCDIR}:configure
 RUN_DEPENDS=	thunderbird:${LOCAL_SRCDIR}
 
 MASTERDIR=	${.CURDIR}/../enigmail
