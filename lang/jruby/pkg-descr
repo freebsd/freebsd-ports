@@ -1,0 +1,6 @@
+JRuby is the effort to recreate the Ruby interpreter in Java.
+Currently, the interpreter is written in portable C.  The Java version
+will be tightly integrated with Java to allow both to script any Java
+class and to embed the interpreter into any Java application.
+
+WWW:	http://jruby.sourceforge.net/
