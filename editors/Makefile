@@ -42,6 +42,7 @@
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
     SUBDIR += fte
+    SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += ghex
     SUBDIR += gnotepad+

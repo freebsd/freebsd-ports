@@ -1,0 +1,11 @@
+--- gate.h.orig	Mon Jul 17 23:20:52 2000
++++ gate.h	Mon Jul 17 23:21:15 2000
+@@ -213,7 +213,7 @@
+ 
+ /* FILE.C */
+ void read_file(char *rname, int strip);
+-FILE *copy_file(char *wname);
++FILE *copy_file(char *wname, int fd);
+ void write_file(char *wname);
+ void typefile(char *name);
+ void emptyfile(void);

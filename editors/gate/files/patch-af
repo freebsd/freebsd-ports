@@ -1,0 +1,16 @@
+--- subs.c.orig	Mon Jul 17 23:16:19 2000
++++ subs.c	Mon Jul 17 23:16:45 2000
+@@ -40,10 +40,11 @@
+ {
+ char tmpname[18];
+ FILE *fp;
++int fd;
+ 
+     strcpy(tmpname, "/tmp/gateXXXXXX");
+-    mktemp(tmpname);
+-    fp= copy_file(tmpname);
++    fd = mkstemp(tmpname);
++    fp= copy_file(tmpname, fd);
+     unlink(tmpname);
+     return(fp);
+ }

@@ -1,0 +1,31 @@
+--- file.c.orig	Mon Jul 17 23:05:48 2000
++++ file.c	Mon Jul 17 23:12:29 2000
+@@ -59,12 +59,12 @@
+  * open file descriptor.
+  */
+ 
+-FILE *copy_file(char *wname)
++FILE *copy_file(char *wname, int fd)
+ {
+ FILE *wfp;
+ int ch;
+ 	
+-    if ((wfp= fopen(wname,"w+")) == NULL)
++    if ((wfp= fdopen(fd,"w+")) == NULL)
+     {
+ 	printf("Cannot open file %s\n",wname);
+ 	return(NULL);
+@@ -84,10 +84,12 @@
+ void write_file(char *wname)
+ {
+ FILE *fp;
++int fd;
+   
+     if (expand_tilde(wname)) return;
+ 
+-    if ((fp= copy_file(wname)) == NULL) return;
++    fd = open(wname, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
++    if ((fp= copy_file(wname, fd)) == NULL) return;
+     fclose(fp);
+     printf("Saved in file %s\n",wname);
+ }
