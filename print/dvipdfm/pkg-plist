@@ -12,6 +12,7 @@ share/texmf/doc/dvipdfm/transistor.fig
 share/texmf/doc/dvipdfm/transistor.pdf
 share/texmf/dvipdfm/base/ot1.enc
 share/texmf/dvipdfm/base/ot1alt.enc
+share/texmf/dvipdfm/base/ot1r.enc
 share/texmf/dvipdfm/config/cmr.map
 share/texmf/dvipdfm/config/config
 share/texmf/dvipdfm/config/lw35urw.map

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		dvipdfm
-PORTVERSION=		0.12.7b
+PORTVERSION=		0.13
 CATEGORIES=		print
-MASTER_SITES=		http://odo.kettering.edu/dvipdfm/
+MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
 MAINTAINER=		stephen@math.missouri.edu
 
@@ -19,8 +19,8 @@ RUN_DEPENDS=		kpsewhich:${PORTSDIR}/print/teTeX
 WRKSRC=			${WRKDIR}/dvipdfm
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		CPPFLAGS=-I${PREFIX}/include \
-			CFLAGS=-I${PREFIX}/include\
+CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
+			CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
