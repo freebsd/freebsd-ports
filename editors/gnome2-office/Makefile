@@ -19,8 +19,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		planner:${PORTSDIR}/deskutils/planner \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
-		evolution-1.5:${PORTSDIR}/mail/evolution \
-		AbiWord-2.2:${PORTSDIR}/editors/AbiWord2 \
+		evolution:${PORTSDIR}/mail/evolution \
+		AbiWord-2.0:${PORTSDIR}/editors/AbiWord2 \
 		mergeant:${PORTSDIR}/databases/mergeant
 
 NO_BUILD=	yes
