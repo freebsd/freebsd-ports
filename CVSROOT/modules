@@ -6468,6 +6468,7 @@ quat		ports/graphics/quat
 quat-gui	ports/graphics/quat-gui
 quelcom		ports/audio/quelcom
 queso		ports/net/queso
+queue-repair	ports/mail/queue-repair
 quickpics	ports/graphics/quickpics
 quirc		ports/irc/quirc
 quixote		ports/www/quixote
