@@ -1,7 +1,7 @@
 Portupgrade is a very powerful tool to upgrade installed packages via
-the port.  It upgrades ports without reinstalling dependent packages
-by directly modifying the package info recorded in the files under
-/var/db/pkg.
+the port or the package.  It upgrades ports without reinstalling
+dependent packages by directly modifying the package info recorded in
+the files under /var/db/pkg.
 
 This package also includes:
 
