@@ -1,7 +1,7 @@
 bin/gftp
 %%NOX11:%%bin/gftp-gtk
 bin/gftp-text
-%%NOX11:%%%%GNOME:%%share/gnome/apps/Internet/gftp.desktop
+%%NOX11:%%%%MYGNOME%%share/gnome/apps/Internet/gftp.desktop
 %%NOX11:%%%%DATADIR%%/gftp/COPYING
 %%NOX11:%%%%DATADIR%%/gftp/bookmarks
 %%NOX11:%%%%DATADIR%%/gftp/connect.xpm
@@ -30,7 +30,7 @@ bin/gftp-text
 %%NOX11:%%%%DATADIR%%/gftp/txt.xpm
 %%NOX11:%%%%DATADIR%%/gftp/up.xpm
 %%NOX11:%%%%DATADIR%%/gftp/world.xpm
-%%NOX11:%%%%GNOME:%%share/gnome/pixmaps/gftp.png
+%%NOX11:%%%%MYGNOME%%share/gnome/pixmaps/gftp.png
 share/locale/am/LC_MESSAGES/gftp.mo
 share/locale/ar/LC_MESSAGES/gftp.mo
 share/locale/az/LC_MESSAGES/gftp.mo
