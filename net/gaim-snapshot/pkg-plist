@@ -23,11 +23,13 @@ lib/gaim/spellchk.so
 %%GNOME:%%share/gnome/pixmaps/gaim/msgpend.png
 %%GNOME:%%share/gnome/pixmaps/gaim/offline.png
 %%GNOME:%%share/gnome/pixmaps/gaim/online.png
+share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
+share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
