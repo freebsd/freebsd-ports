@@ -1,5 +1,5 @@
 --- addsearch.orig	Thu Jul  2 03:02:53 1998
-+++ addsearch	Mon Nov  2 14:51:28 1998
++++ addsearch	Tue Nov  3 11:36:24 1998
 @@ -121,12 +121,12 @@
  
  # Initialize variables to avoid warnings
@@ -16,3 +16,12 @@
  
  ### HUH?  What does this code do?  Can we remove it?
  ###       here just in case.
+@@ -155,7 +155,7 @@
+ 
+ # if we don't have to addboxes, just abort!
+ if($addboxes==0) {
+-   print "No search boxes used\n";
++   print "No search boxes used\n" if (!$quiet);
+    exit(0);
+ }
+ 
