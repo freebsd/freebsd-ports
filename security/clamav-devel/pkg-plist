@@ -22,7 +22,6 @@ etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
 @owner %%CLAMAVUSER%%
 @group %%CLAMAVGROUP%%
-%%DATADIR%%/mirrors.txt
 @exec chown %%CLAMAVUSER%%:%%CLAMAVGROUP%% %B
 @unexec [ -s %D/%%DATADIR%%/main.cvd ] || rm -f %D/%%DATADIR%%/main.cvd
 @unexec [ -s %D/%%DATADIR%%/daily.cvd ] || rm -f %D/%%DATADIR%%/daily.cvd
