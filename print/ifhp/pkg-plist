@@ -37,4 +37,5 @@ share/doc/ifhp/IFHP-HOWTO-11.html
 share/doc/ifhp/IFHP-HOWTO-10.html
 share/doc/ifhp/dict
 share/doc/ifhp/updateversion
+@dirrm libexec/filters
 @dirrm share/doc/ifhp
