@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct 23 03:35:51 1998
-+++ Makefile	Fri Dec 25 14:53:40 1998
+--- Makefile.orig	Wed Nov 18 05:19:06 1998
++++ Makefile	Sun Mar 11 13:59:59 2001
 @@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
@@ -43,8 +43,7 @@
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
--	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm -lm
-+	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm -lm
+ 	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm -lm
  
  .c.o:
 -	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC)

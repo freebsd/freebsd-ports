@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Dec  7 12:52:39 1998
-+++ Makefile	Thu Jul  1 16:43:57 1999
++++ Makefile	Sun Mar 11 14:02:11 2001
 @@ -34,7 +34,7 @@
  # This is used by 'make install' command
  #-------------------------------------------------------
@@ -88,7 +88,7 @@
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
 -	$(XLOAD) $(XFORMLIBDIR) -lforms $(LIBS)
 -	./$(PROGRAM)
-+	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm $(LIBS)
++	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm $(LIBS)
  
  .c.o:
  	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(MYSQLDBDIR) $(XINC)
