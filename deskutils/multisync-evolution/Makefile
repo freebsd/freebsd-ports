@@ -13,6 +13,8 @@ BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync \
 		evolution:${PORTSDIR}/mail/evolution
 
+IGNORE=		does not support Evolution 2. New plugin is in the works and can be obtained from Multisync CVS
+
 MD5_FILE=	${MASTERDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
