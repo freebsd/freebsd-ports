@@ -47,7 +47,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/aswiki.conf ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/default.css ${DATADIR}
 	${CP} -R ${WRKSRC}/plugin ${DATADIR}
-	${CP} -R ${WRKSRC}/templete ${DATADIR}
+	${CP} -R ${WRKSRC}/template ${DATADIR}
 	# Setup script
 	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}
 
