@@ -1,0 +1,13 @@
+--- src/Makefile.am.orig	Fri Jul 19 03:41:11 2002
++++ src/Makefile.am	Mon Jul  7 14:19:12 2003
+@@ -73,6 +73,10 @@
+ gfx/terrain/pg/town_snow.bmp
+ 
+ install-data-local:
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/nations
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/units
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/gfx/flags
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/gfx/units
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/sounds/pg
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/maps/pg
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/scenarios/pg
