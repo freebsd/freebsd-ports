@@ -11,4 +11,7 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	sh-rtems
 CONFIGURE_ARGS=	--verbose --enable-sim
+
+MAN1=		${LCLTARGET}-run.1
+
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"

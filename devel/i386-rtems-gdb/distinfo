@@ -1,2 +1,4 @@
-MD5 (gdb-5.0.tar.gz) = 9511b69b6b5a3b38c62ad207b3c94673
-MD5 (gdb-5.0-rtems-20010314.diff) = 97941a78d16763bf401e537062f90dec
+MD5 (gdb-5.2.tar.gz) = afb7d18f72be812ef405f6b271a36e03
+MD5 (gdb-5.2-rtems-base-20020612.diff) = d328e2959b8c83add5e2a3ca60582b03
+MD5 (gdb-5.2-rtems-cg-20020612.diff) = 44f82adae65e657458fde1280a6ac2c9
+MD5 (gdb-5.2-rtems-rdbg-20020612.diff) = 1fffe3010d9e33186497238efa9c3060

@@ -10,4 +10,7 @@ PORTNAME=	gdb
 MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	arm-rtems
+
+MAN1=		${LCLTARGET}-run.1
+
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"
