@@ -18,17 +18,13 @@ COMMENT=	Graph plotting and data analysis program using OpenLook
 BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+BROKEN=		"Broken pkg-plist"
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	OPENWINHOME=${X11BASE}
 WEB_BROWSER?=	mozilla
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
@@ -51,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Demos/*.rob ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
