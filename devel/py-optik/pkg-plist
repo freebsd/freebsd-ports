@@ -1,18 +1,24 @@
-lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/optik/errors.py
-lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyc
-lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyo
-lib/%%PYTHON_VERSION%%/site-packages/optik/help.py
-lib/%%PYTHON_VERSION%%/site-packages/optik/help.pyc
-lib/%%PYTHON_VERSION%%/site-packages/optik/help.pyo
-lib/%%PYTHON_VERSION%%/site-packages/optik/option.py
-lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyc
-lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyo
-lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.py
-lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyc
-lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
+%%PYTHON_SITELIBDIR%%/optparse.py
+%%PYTHON_SITELIBDIR%%/optparse.pyc
+%%PYTHON_SITELIBDIR%%/optparse.pyo
+%%PYTHON_SITELIBDIR%%/optik/__init__.py
+%%PYTHON_SITELIBDIR%%/optik/__init__.pyc
+%%PYTHON_SITELIBDIR%%/optik/__init__.pyo
+%%PYTHON_SITELIBDIR%%/optik/errors.py
+%%PYTHON_SITELIBDIR%%/optik/errors.pyc
+%%PYTHON_SITELIBDIR%%/optik/errors.pyo
+%%PYTHON_SITELIBDIR%%/optik/help.py
+%%PYTHON_SITELIBDIR%%/optik/help.pyc
+%%PYTHON_SITELIBDIR%%/optik/help.pyo
+%%PYTHON_SITELIBDIR%%/optik/option.py
+%%PYTHON_SITELIBDIR%%/optik/option.pyc
+%%PYTHON_SITELIBDIR%%/optik/option.pyo
+%%PYTHON_SITELIBDIR%%/optik/option_parser.py
+%%PYTHON_SITELIBDIR%%/optik/option_parser.pyc
+%%PYTHON_SITELIBDIR%%/optik/option_parser.pyo
+%%PYTHON_SITELIBDIR%%/optik/textwrap.py
+%%PYTHON_SITELIBDIR%%/optik/textwrap.pyc
+%%PYTHON_SITELIBDIR%%/optik/textwrap.pyo
 %%EXAMPLES%%/caseless.py
 %%EXAMPLES%%/required_1.py
 %%EXAMPLES%%/required_2.py
@@ -23,19 +29,8 @@ lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
 %%PORTDOCS%%%%DOCSDIR%%/callbacks.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
 %%PORTDOCS%%%%DOCSDIR%%/tao.txt
-%%PORTDOCS%%%%DOCSDIR%%/test/runall
-%%PORTDOCS%%%%DOCSDIR%%/test/test_basics.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_bool.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_callback.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_choice.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_conflict.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_count.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_extend.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_help.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_manipulate.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_misc.py
-%%PORTDOCS%%%%DOCSDIR%%/test/test_nargs.py
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
+%%PORTDOCS%%%%DOCSDIR%%/test/test_optik.py
+@dirrm %%PYTHON_SITELIBDIR%%/optik
 @dirrm %%EXAMPLES%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/test
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
