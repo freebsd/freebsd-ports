@@ -345,7 +345,7 @@
 + extern void		rgx_init	P((void));
 + extern array	       *rgx_new		P((string*, int));
 + extern array	       *rgx_match	P((value*, string*, int));
-*** doc.rgx/example.c	Thu Jan  1 00:00:00 1970
+*** doc.rgx/rgx_example.c	Thu Jan  1 00:00:00 1970
 --- ../doc/rgx_example.c	Fri Feb  3 03:30:01 1995
 ***************
 *** 0 ****
@@ -399,7 +399,6 @@
 + 
 +   return regexp_match(buffer, subject);
 + }
-diff -crN doc.rgx/kfun/regexp_compile doc/kfun/regexp_compile
 *** doc.rgx/kfun/regexp_compile	Thu Jan  1 00:00:00 1970
 --- ../doc/kfun/regexp_compile	Tue Jul 26 00:02:34 1994
 ***************
