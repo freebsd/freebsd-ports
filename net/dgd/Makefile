@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.2p1
+PORTVERSION=	1.2p2
 CATEGORIES=	net lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		ftp://ftp.dworkin.nl/pub/dgd/ \
