@@ -15,6 +15,8 @@ share/vnc/classes/vncviewer.class
 share/vnc/classes/vncviewer.jar
 share/doc/vnc/Xvnc.gif
 share/doc/vnc/ach.jpg
+share/doc/vnc/alicebobcharlie.gif
+share/doc/vnc/alicecharlie.gif
 share/doc/vnc/announcement.html
 share/doc/vnc/attbutton.gif
 share/doc/vnc/attlogo.gif
@@ -80,7 +82,6 @@ share/doc/vnc/ns1_small.gif
 share/doc/vnc/oldcontribs.html
 share/doc/vnc/oldfaq.html
 share/doc/vnc/platforms.html
-share/doc/vnc/platforms.html.curr
 share/doc/vnc/pmw.jpg
 share/doc/vnc/protocol.html
 share/doc/vnc/qsf.jpg
@@ -96,6 +97,7 @@ share/doc/vnc/sideblank.gif
 share/doc/vnc/sidelogo.gif
 share/doc/vnc/spacer.gif
 share/doc/vnc/sshvnc.html
+share/doc/vnc/sshwin.html
 share/doc/vnc/start.html
 share/doc/vnc/startbutton.gif
 share/doc/vnc/styles.css
