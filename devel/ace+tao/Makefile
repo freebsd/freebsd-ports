@@ -28,7 +28,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 # Code is not 64-bit clean yet
-NOT_FOR_ARCHS=	ia64 amd64 sparc64
+NOT_FOR_ARCHS=	ia64 amd64 sparc64 alpha
 
 TESTS=		"@comment "
 .if defined(WITH_TESTS)
