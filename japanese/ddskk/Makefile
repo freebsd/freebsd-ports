@@ -5,38 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=	skk-elisp
-PORTVERSION=	9.6
+PORTNAME=	ddskk
+PORTVERSION=	11.6.0
 CATEGORIES=	japanese elisp
-MASTER_SITES=	${MASTER_SITE_PORTS_JP}
-DISTNAME=	skk${PORTVERSION}
+MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule \
-		${NONEXISTENT}:${SKK_MASTERDIR}:configure
-RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 
-SKKJISYO_SIZE?=	L
-SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
-SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
-WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}
+EMACS_PORT_NAME?=	emacs21
+.if (${EMACS_PORT_NAME} == emacs21)
+DEPPORT_SUFFIX=	""
+.else
+DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+PLIST=	${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+AMBIGUOUS_ELCS=	skk-jisx0213 skk-lookup
 
-# we cannot use skk-9.6 on emacs20
-EMACS=		mule
-ELISPSUBDIR=	share/${EMACS}/site-lisp/skk
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+ALL_TARGET=	elc info
 
-MAKE_ARGS=	SUBDIRS='lisp' EMACS=${EMACS} ELISPDIR=${PREFIX}/${ELISPSUBDIR}
-PLIST_SUB=	EMACS=${EMACS} ELISPSUBDIR=${ELISPSUBDIR}
-
-# Our makeinfo can't handle files with Japanese characters. :<
-#pre-build:
-#	(cd ${WRKSRC}/doc; \
-#	  /usr/bin/makeinfo --no-split skk.texi)
+SKK_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/skk
+SKK_DOCS=	AUTHORS Codename Contributors FAQ.txt NEWS README
+SKK_EXAMPLES=	etc/Emacs.ad etc/dot.emacs etc/dot.skk
 
 post-install:
-	(cd ${WRKSRC}; make SUBDIRS='doc' install)
-	(cd ${WRKSRC}; make SUBDIRS='etc' install)
-	install-info ${PREFIX}/info/skk.info ${PREFIX}/info/dir
+.for i in ${AMBIGUOUS_ELCS}
+	${RM} -f ${PREFIX}/${SKK_LISPDIR}/${i}.elc
+	${INSTALL_DATA} ${WRKSRC}/${i}.el ${PREFIX}/${SKK_LISPDIR}
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+.for i in ${SKK_EXAMPLES}
+	${INSTALL_DATA}	${WRKSRC}/${i} ${EXAMPLESDIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${SKK_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/READMEs/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
