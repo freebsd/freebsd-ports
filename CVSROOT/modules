@@ -5330,6 +5330,7 @@ newt		ports/devel/newt
 newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
 nfbtrans	ports/textproc/nfbtrans
+ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
 ngircd		ports/irc/ngircd
 ngpt		ports/devel/ngpt
