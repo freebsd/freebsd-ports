@@ -1,0 +1,71 @@
+# New ports collection makefile for:	iv
+# Version required:	3.1
+# Date created:		23.Feb.1996
+# Whom:			sanpei@yy.cs.keio.ac.jp
+#
+# $Id$
+#
+
+DISTNAME=	iv-3.1
+PKGNAME=	jp-iv-3.1
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
+		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
+		ftp://ftp.phys.keio.ac.jp/pub/FreeBSD/local-distfiles/
+DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
+
+MAINTAINER=	sanpei@yy.cs.keio.ac.jp
+
+DIST_SUBDIR=	iv
+WRKSRC=		${WRKDIR}/iv
+PATCH_DIST_STRIP=	-p1
+MAKE_ENV+=	CPU=`make CPU`
+
+MANPREFIX=	${PREFIX}/interviews
+MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
+		BrushCmd.n Button2_6.n CGlue.n CSolver.n Catalog.n \
+		Clipboard.n ColorCmd.n Command.n CompletionEditor.n \
+		Component.n ComponentView.n ConnectTool.n Connector.n \
+		Control.n ControlInfo.n Creator.n Damage.n Data.n \
+		Deck2_6.n Dialog.n Dispatcher.n Editor.n EditorInfo.n \
+		EllipseComp.n ExternView.n FileBrowser.n FileChooser.n \
+		FontCmd.n Frame.n GVUpdater.n Glue2_6.n Graphic.n \
+		GraphicBlock.n GraphicComp.n GraphicCompTool.n \
+		GraphicView.n Grid.n IOCallback.n IOHandler.n \
+		ImportCmd.n Interactor.n Iterator.n KeyMap.n \
+		LineComp.n LinkComp.n MacroCmd.n MagnifyTool.n \
+		Manipulator.n MatchEditor.n Menu2_6.n Message.n \
+		MoveTool.n NOPCmd.n PadComp.n Page.n Painter.n \
+		Panner.n Path.n Pattern.n PatternCmd.n Perspective.n \
+		Picture.n PinComp.n PolygonComp.n PostScriptView.n \
+		RasterComp.n RasterRect.n RectComp.n Regexp.n ReqErr.n \
+		ReshapeTool.n Resource.n RotateTool.n RpcHdr.n \
+		RpcPeer.n RpcReader.n RpcRegistry.n RpcService.n \
+		RpcWriter.n Rubband.n ScaleTool.n Scene.n Scroller.n \
+		SelectTool.n Selection.n Sensor.n Shape.n SlotComp.n \
+		SplineComp.n StateVar.n StateVarView.n StencilComp.n \
+		StrBrowser.n StrChooser.n StretchTool.n StringEditor.n \
+		Subject.n TextBuffer.n TextComp.n TextDisplay.n \
+		TextEditor.n Tool.n TransferFunct.n Tray.n UArray.n \
+		UControl.n UHashTable.n ULabel.n UList.n UMap.n \
+		UStencil.n Unidraw.n UnidrawIntro.n Vertices.n \
+		VerticesComp.n Viewer.n Viewport.n World.n alert.n \
+		align.n catcmds.n classes.n datas.n dclock.n doc.n \
+		edit.n ellipses.n geomobjs.n globals.n ibuild.n \
+		iclass.n idraw.n ifb.n ifc.n iostreamb.n ivmkmf.n \
+		kybd.n lines.n logo.n mailbox.n manips.n polygons.n \
+		pspaint.n remind.n rpcbuf.n rpcstream.n splines.n \
+		statevars.n stateviews.n struct.n transfns.n \
+		transforms.n uctrls.n viewcmds.n
+
+pre-patch:
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/diff-2.0gamma
+
+post-install:
+	@${INSTALL_DATA} ${WRKDIR}/idraw-3_1j.ad ${PREFIX}/interviews/lib/all/app-defaults/idraw 
+# need these in ${PREFIX}/lib so that ldconfig can find them
+	@ln -fs ../interviews/lib/libIV.so.3.1 ${PREFIX}/lib
+	@ln -fs ../interviews/lib/libUnidraw.so.3.1 ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>

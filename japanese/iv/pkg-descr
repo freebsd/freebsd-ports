@@ -1,0 +1,20 @@
+* How to use Interviews / idraw
+
+    Binary files are installed to ${prefix}/interviews/bin directory.
+  Please add ${prefix}/interviews/bin to your path variable.
+
+    For example (with csh or tcsh):
+		% set path = ( $path /usr/local/interviews/bin )
+		% rehash
+		% kinput2 &
+		% idraw
+
+    Enjoy!!
+
+* Acknowledgement
+
+    Special thanks to Akihiro SATO <akisatoh@gallop.ics.nitech.ac.jp>.
+  He created first ports style files of jp-InterViews.
+
+Yoshiro MIHIRA
+<sanpei@yy.cs.keio.ac.jp>

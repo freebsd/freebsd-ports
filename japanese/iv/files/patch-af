@@ -1,0 +1,16 @@
+*** src/lib/InterViews/style.c.orig	Wed Jan 17 10:36:19 1996
+--- src/lib/InterViews/style.c	Wed Jan 17 11:23:13 1996
+***************
+*** 41,47 ****
+--- 41,51 ----
+  #include <OS/ustring.h>
+  #include <ctype.h>
+  #ifdef JIV
++ #ifdef __STDC__
++ #include <stdio.h>
++ #else
+  #include <libc.h>
++ #endif
+  #endif /* JIV */
+  
+  declarePtrList(StyleList,Style)

@@ -1,0 +1,20 @@
+*** src/config/InterViews/local.def.orig	Sat Feb 10 19:56:09 1996
+--- src/config/InterViews/local.def	Sat Feb 10 20:05:38 1996
+***************
+*** 60,65 ****
+--- 60,74 ----
+   */
+  #undef InstalledRoot
+  #define InstalledRoot /usr/local/interviews
++ #define BinDir InstalledRoot/bin
++ #define LibDir InstalledRoot/lib
++ 
++ /*
++  * If we are going to define the above, then, we might as well have it
++  * take effect. (mrs)
++  */
++ #undef InstallRelative
++ #define InstallRelative               NO      /* need absolute pathnames */
+  
+  /*
+   * If the X11 config files are not in /usr/lib/X11/config, the X11
