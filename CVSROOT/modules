@@ -11722,6 +11722,7 @@ xf86ext		ports/x11/xf86ext
 xface.el	ports/graphics/xface.el
 xfce		ports/x11-wm/xfce
 xfce4		ports/x11-wm/xfce4
+xfce4-appfinder	ports/misc/xfce4-appfinder
 xfce4-artwork	ports/misc/xfce4-artwork
 xfce4-battery-plugin	ports/sysutils/xfce4-battery-plugin
 xfce4-calendar	ports/deskutils/xfce4-calendar
