@@ -1,0 +1,21 @@
+*** src/serverlib.h.org	Sat Feb  5 17:20:28 2000
+--- src/serverlib.h	Sat Feb  5 17:20:38 2000
+***************
+*** 19,24 ****
+--- 19,25 ----
+   */
+  
+  
++ #include <sys/types.h>
+  #include <sys/socket.h>
+  #include <netdb.h>
+  #include <netinet/in.h>
+*** src/liveice.h.org	Sat Feb  5 17:25:09 2000
+--- src/liveice.h	Sat Feb  5 17:25:12 2000
+***************
+*** 1,3 ****
+--- 1,4 ----
++ #include <sys/types.h>
+  
+  #define LIVEICE_VERSION "1.0"
+  
