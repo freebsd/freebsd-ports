@@ -1,11 +1,8 @@
-
-$FreeBSD$
-
---- Makefile.orig	Mon May 14 11:45:22 2001
-+++ Makefile	Tue May 15 15:41:54 2001
+--- Makefile.orig	Thu Feb  7 08:34:54 2002
++++ Makefile	Mon Mar 15 04:10:30 2004
 @@ -1,14 +1,16 @@
  NAME = PyGtkScintilla
- VERSION = 0.7.0
+ VERSION = 0.8.2
  
 -CC = gcc
 +CC ?= gcc
@@ -22,7 +19,7 @@ $FreeBSD$
 +GTK_LDFLAGS != $(GTK_CONFIG) --libs
 +GTK_CFLAGS != $(GTK_CONFIG) --cflags
 +LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla
-+CFLAGS += -D_THREAD_SAFE $(GTK_CFLAGS) -I$(PYTHON_INCLUDE) -I${X11BASE}/include/scintilla
++CFLAGS += -D_THREAD_SAFE -fPIC $(GTK_CFLAGS) -I$(PYTHON_INCLUDE) -I${X11BASE}/include/scintilla
  
  all: _gtkscintillamodule.so
  
