@@ -1,7 +1,25 @@
---- configure.orig	Thu Oct  5 16:15:23 2000
-+++ configure	Thu Oct  5 20:41:31 2000
-@@ -4970,4 +4970,4 @@
- echo "configure:4971: checking for GTK >= 1.2.7" >&5
+--- configure.orig	Wed Dec  6 16:02:14 2000
++++ configure	Thu Dec  7 00:51:31 2000
+@@ -4935,5 +4935,5 @@
+ have_iconv=no
+-echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
+-echo "configure:4938: checking for libiconv in -liconv" >&5
+-ac_lib_var=`echo iconv'_'libiconv | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
++echo "configure:4938: checking for iconv in -liconv" >&5
++ac_lib_var=`echo iconv'_'iconv | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+@@ -4949,6 +4949,6 @@
+     builtin and then its argument prototype would still apply.  */
+-char libiconv();
++char iconv();
+ 
+ int main() {
+-libiconv()
++iconv()
+ ; return 0; }
+@@ -5179,4 +5179,4 @@
+ echo "configure:5180: checking for GTK >= 1.2.7" >&5
 -if gtk-config --version > /dev/null 2>&1; then 
 -        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 +if $GTK_CONFIG --version > /dev/null 2>&1; then 
