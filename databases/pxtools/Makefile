@@ -12,11 +12,11 @@ MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
