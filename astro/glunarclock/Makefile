@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gdk-pixbuf libpanel
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf libpanel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
