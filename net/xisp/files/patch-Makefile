@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb  3 04:59:04 2003
-+++ Makefile	Mon Feb  3 04:59:28 2003
+--- Makefile.orig	Tue Jun 10 13:24:04 2003
++++ Makefile	Tue Jun 10 13:48:35 2003
 @@ -13,8 +13,8 @@
  #=====================================================================
  #
@@ -11,3 +11,14 @@
  INCX11     = $(X11PREFIX)/include
  LIBX11     = $(X11PREFIX)/lib
  INCFORMS   = $(X11PREFIX)/include/X11
+@@ -223,8 +223,8 @@
+ GROUP      = dialer
+ CHAT_PATH  = /usr/bin
+ PPPD_PATH  = /usr/sbin
+-CCFLAGS    = -Wall -O
+-EXTRALIBS  = -lcipher
++CCFLAGS    = -Wall -O -DUSE_OPENSSL
++EXTRALIBS  = -lcrypto
+ LINKX11    = -Wl,-R$(LIBX11)
+ LINKFORMS  = -L$(LIBFORMS) -lforms
+ INSTALL    = /usr/bin/install
