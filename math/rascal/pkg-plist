@@ -2,5 +2,17 @@ bin/rascal
 bin/rascal.rc
 share/doc/rascal/rascal.pdf
 share/doc/rascal/rascal.ps
+share/doc/rascal/CHANGES
+share/doc/rascal/TEST
+share/doc/rascal/html/img1.gif
+share/doc/rascal/html/img2.gif
+share/doc/rascal/html/img3.gif
+share/doc/rascal/html/img4.gif
+share/doc/rascal/html/img5.gif
+share/doc/rascal/html/img6.gif
+share/doc/rascal/html/img7.gif
+share/doc/rascal/html/index.html
+share/doc/rascal/html/rascal.css
+share/doc/rascal/html/rascal.html
 @dirrm share/doc/rascal/html
 @dirrm share/doc/rascal
