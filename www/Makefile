@@ -214,6 +214,7 @@
     SUBDIR += mod_color
     SUBDIR += mod_csacek
     SUBDIR += mod_cvs
+    SUBDIR += mod_cvs2
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
     SUBDIR += mod_encoding

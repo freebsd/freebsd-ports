@@ -1,0 +1,10 @@
+mod_cvs recognizes if the files in your webtree are checked out
+from a CVS repository. If so, it checks if the file is up-to-date
+and, if not, updates it.
+
+Another neat feature of mod_cvs is the date-checkout feature. You
+can specify a date in the URI that gets passed to CVS, which checks
+out an older revision of the requested file and sends it to the
+user.
+
+WWW: http://resare.com/noa/mod_cvs/
