@@ -16,13 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ferruccio.vitale@tin.it
 COMMENT=	A platform-independent GUI administration client for the MySQL server
 
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.elseif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
+USE_MYSQL=	yes
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
