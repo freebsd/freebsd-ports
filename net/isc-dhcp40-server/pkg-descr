@@ -1,0 +1,11 @@
+ISC-DHCP (BETA 0) Dynamic Host Configuration Protocol server and client
+
+This is the first Beta release of the Internet Software Consortium
+DHCP Server (ISC dhcpd).  In this Beta release, support for the core
+DHCP protocol is provided.  BOOTP support is also provided for
+backwards compatibility. 
+
+This release of dhcpd does not contain support for DHCPINFORM.
+Support for DHCPINFORM will be present in the next release.
+DHCPINFORM is somewhat tangential to the main purpose of the DHCP
+protocol, so this probably won't be a major problem for most users.
