@@ -90,6 +90,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/Shades.png
 %%PORTDOCS%%share/doc/pfaedit/Shades2.png
 %%PORTDOCS%%share/doc/pfaedit/Shades4.png
+%%PORTDOCS%%share/doc/pfaedit/Shadow.png
 %%PORTDOCS%%share/doc/pfaedit/ShadowWireframe.png
 %%PORTDOCS%%share/doc/pfaedit/ShowGridFit.png
 %%PORTDOCS%%share/doc/pfaedit/Spacem_1.png
@@ -289,6 +290,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/macFeatureSetting.png
 %%PORTDOCS%%share/doc/pfaedit/macfeature.png
 %%PORTDOCS%%share/doc/pfaedit/macformats.html
+%%PORTDOCS%%share/doc/pfaedit/mad.html
 %%PORTDOCS%%share/doc/pfaedit/mergepost.png
 %%PORTDOCS%%share/doc/pfaedit/mergepre.png
 %%PORTDOCS%%share/doc/pfaedit/metricsmenu.html
@@ -331,7 +333,6 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
 %%PORTDOCS%%share/doc/pfaedit/problems.html
 %%PORTDOCS%%share/doc/pfaedit/quadbezier.gif
-%%PORTDOCS%%share/doc/pfaedit/quadbezier.png
 %%PORTDOCS%%share/doc/pfaedit/quadraticspline.png
 %%PORTDOCS%%share/doc/pfaedit/quotations.html
 %%PORTDOCS%%share/doc/pfaedit/realindex.html
@@ -390,7 +391,6 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/ttfinstrs.html
 %%PORTDOCS%%share/doc/pfaedit/ttfinstrs-edit.png
 %%PORTDOCS%%share/doc/pfaedit/ttfinstrs-view.png
-%%PORTDOCS%%share/doc/pfaedit/tutorial.tgz
 %%PORTDOCS%%share/doc/pfaedit/twolines.png
 %%PORTDOCS%%share/doc/pfaedit/typofeat.html
 %%PORTDOCS%%share/doc/pfaedit/viewmenu.html
