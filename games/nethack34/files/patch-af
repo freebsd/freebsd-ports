@@ -1,6 +1,6 @@
---- ./sys/unix/Makefile.doc.orig	Mon Dec 13 14:49:15 1999
-+++ ./sys/unix/Makefile.doc	Mon Dec 13 14:44:53 1999
-@@ -31,7 +31,7 @@
+--- sys/unix/Makefile.doc.orig	Sat Jan 15 05:49:48 2000
++++ sys/unix/Makefile.doc	Sat Aug 11 11:08:33 2001
+@@ -34,15 +34,15 @@
  
  
  GAME	= nethack
@@ -9,7 +9,20 @@
  MANEXT	= 6
  
  # manual installation for most BSD-style systems
-@@ -48,11 +48,11 @@
+-GAMEMANCREATE = cp nethack.6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${BSD_INSTALL_MAN} nethack.6
++LEVMANCREATE = ${BSD_INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${BSD_INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${BSD_INSTALL_MAN} recover.6
++DLBMANCREATE = ${BSD_INSTALL_MAN} dlb.6
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = nroff -man nethack.6 >
+ # LEVMANCREATE = nroff -man lev_comp.6 >
+@@ -51,11 +51,11 @@
  # DLBMANCREATE = nroff -man dlb.6 >
  
  manpages:

@@ -1,5 +1,5 @@
---- ./sys/unix/Makefile.top.orig	Tue Jul  4 10:42:05 2000
-+++ ./sys/unix/Makefile.top	Fri Oct 13 10:13:50 2000
+--- sys/unix/Makefile.top.orig	Tue Jul  4 09:42:05 2000
++++ sys/unix/Makefile.top	Tue Oct  9 22:21:45 2001
 @@ -14,18 +14,17 @@
  # MAKE = make
  
@@ -23,15 +23,28 @@
  
  # GAMEDIR also appears in config.h as "HACKDIR".
  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
-@@ -35,9 +34,9 @@
+@@ -35,12 +34,12 @@
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
-+GAMEDIR  = $(PREFIX)/share/$(GAME)
++GAMEDIR  = $(PREFIX)/lib/$(GAME)
  VARDIR  = $(GAMEDIR)
 -SHELLDIR = $(PREFIX)/games
 +SHELLDIR = $(PREFIX)/bin
  
  # per discussion in Install.X11 and Install.Qt
- VARDATND = 
+-VARDATND = 
++# VARDATND = 
+ # VARDATND = x11tiles pet_mark.xbm
+ # VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # for Atari/Gem
+@@ -48,7 +47,7 @@
+ # for BeOS
+ # VARDATND = beostiles
+ # for Gnome
+-# VARDATND = x11tiles pet_mark.xbm rip.xpm mapbg.xpm
++VARDATND = x11tiles pet_mark.xbm rip.xpm mapbg.xpm
+ 
+ VARDATD = data oracles options quest.dat rumors
+ VARDAT = $(VARDATD) $(VARDATND)

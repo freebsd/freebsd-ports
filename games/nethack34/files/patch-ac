@@ -1,5 +1,5 @@
---- ./include/unixconf.h.orig	Mon Jul 17 11:03:51 2000
-+++ ./include/unixconf.h	Fri Oct 13 10:06:57 2000
+--- include/unixconf.h.orig	Mon Jul 17 11:03:51 2000
++++ include/unixconf.h	Fri Oct 13 10:06:57 2000
 @@ -47,7 +47,7 @@
  			 * job control (note that AIX is SYSV otherwise)
  			 * Also define this for AIX 3.2 */
@@ -14,7 +14,7 @@
   */
  
 -#define MAIL			/* Deliver mail during the game */
-+/* #define MAIL			/* Deliver mail during the game */
++/* #define MAIL */			/* Deliver mail during the game */
  
  /* The Andrew Message System does mail a little differently from normal
   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
