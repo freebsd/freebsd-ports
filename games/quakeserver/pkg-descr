@@ -5,11 +5,6 @@ Ok, this one definately falls into the "I had some time one Sunday
 afternoon..." category.
 
 This port allows you to host Quake network games on your FreeBSD machine. 
-It uses the Intel/Linux version of Quake, so it depends upon the linux
-compatibility libraries, and requires that you are running a fairly recent
-2.2-current with Linux emulation turned on.  For more details about getting
-Linux emulation running in the kernel/OS, refer to chapter 21 of the FreeBSD
-Handbook.
 
 This installs the v1.01 shareware version of Quake, and the required files
 to automate a server.  If you have purchased the registered version of Quake
