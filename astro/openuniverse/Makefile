@@ -1,40 +1,30 @@
-# New ports collection makefile for:	ssystem
+# New ports collection makefile for:	openuniverse
 # Date created:				4 August 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-PORTNAME=		ssystem
-PORTVERSION=		1.6
+PORTNAME=		openuniverse
+PORTVERSION=		1.0beta3
 CATEGORIES=		astro
-MASTER_SITES=		http://plasma.gsfc.nasa.gov/Ssystem/ \
-			http://www.wam.umd.edu/~kamelkev/Ssystem/ \
-			http://www.wam.umd.edu/~kamelkev/
+MASTER_SITES=		http://download.sourceforge.net/openuniverse/
 
 MAINTAINER=		will@FreeBSD.org
 
-LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
+			GL.14:${PORTSDIR}/graphics/Mesa3
 
-MAKEFILE=		Makefile.FreeBSD
-FETCH_BEFORE_ARGS=	-b
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
+		--libdir="${LOCALBASE}/lib" \
+
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"  \
+		LIBS="-lcompat"
+
 USE_X_PREFIX=		yes
-USE_MESA=		yes
-USE_BISON=		yes
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/ssystem ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/ssystem
-	@ ${INSTALL_DATA} ${WRKSRC}/*.jpg ${PREFIX}/share/ssystem
-	@ ${INSTALL_DATA} ${WRKSRC}/stars.dat ${PREFIX}/share/ssystem
-	@ ${INSTALL_DATA} ${WRKSRC}/ssystem.conf ${PREFIX}/etc
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/ssystem
-.for file in CHANGES LEEME LICENSE README README.3D TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ssystem
-.endfor
-.endif
 
 .include <bsd.port.mk>
