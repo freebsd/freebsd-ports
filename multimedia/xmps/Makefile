@@ -7,6 +7,7 @@
 
 PORTNAME=	xmps
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
@@ -26,12 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
@@ -41,4 +36,4 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
