@@ -2,11 +2,11 @@
 +++ tkined.sh.in	Fri Sep 13 09:26:21 1996
 @@ -0,0 +1,3 @@
 +#!/bin/sh
-+export TCLLIBPATH="@PREFIX@/lib/tkined1.4.8 @PREFIX@/lib/tnm2.1.8"
-+exec @PREFIX@/bin/tkined1.4.8 $*
++export TCLLIBPATH="@PREFIX@/lib/tkined1.4.9 @PREFIX@/lib/tnm2.1.9"
++exec @PREFIX@/bin/tkined1.4.9 $*
 --- scotty.sh.in~	Fri Sep 13 09:30:41 1996
 +++ scotty.sh.in	Fri Sep 13 09:26:21 1996
 @@ -0,0 +1,3 @@
 +#!/bin/sh
-+export TCLLIBPATH="@PREFIX@/lib/tnm2.1.8"
-+exec @PREFIX@/bin/scotty2.1.8
++export TCLLIBPATH="@PREFIX@/lib/tnm2.1.9"
++exec @PREFIX@/bin/scotty2.1.9
