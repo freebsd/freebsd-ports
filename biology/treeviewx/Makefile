@@ -7,6 +7,7 @@
 
 PORTNAME=	treeviewx
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/
 DISTNAME=	tv-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	tv-${PORTVERSION}
 MAINTAINER=	tonym@biolateral.com.au
 COMMENT=	A phylogenetic tree viewer
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

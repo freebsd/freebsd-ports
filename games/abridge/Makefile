@@ -6,13 +6,14 @@
 
 PORTNAME=	abridge
 PORTVERSION=	0.4.0
+PORTREVISON=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.abridgegame.org/src/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Bridge game
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 
 GNU_CONFIGURE=	yes
 

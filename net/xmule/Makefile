@@ -7,6 +7,7 @@
 
 PORTNAME=	xmule
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -19,7 +20,7 @@ COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		expat.4:${PORTSDIR}/textproc/expat2 \
-		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes

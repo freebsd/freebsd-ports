@@ -8,7 +8,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	gettext catalogs (.po files) editor
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
 		intl.5:${PORTSDIR}/devel/gettext \
-		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

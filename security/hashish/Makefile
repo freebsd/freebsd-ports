@@ -8,6 +8,7 @@
 
 PORTNAME=	hashish
 PORTVERSION=	0.4b
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www4.ncsu.edu/~jllovela/
@@ -21,7 +22,7 @@ COMMENT=	A file and string hashing utility
 BROKEN=		"Compile fails: cannot find cryptopp/sapphire.h"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/Hashish
