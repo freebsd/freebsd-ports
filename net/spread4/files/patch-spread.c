@@ -1,6 +1,15 @@
---- spread.c	Sun Nov 10 00:17:59 2002
-+++ spread.c	Sun Nov 10 00:18:42 2002
-@@ -65,6 +65,7 @@
+--- spread.c	Thu Jun 19 00:31:23 2003
++++ spread.c	Mon Dec  8 20:55:41 2003
+@@ -48,6 +48,8 @@
+ #include <pwd.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <errno.h>
++#include <stdlib.h>
+ #endif
+ 
+ #ifdef	ARCH_PC_WIN95
+@@ -65,6 +67,7 @@
  
  static	void	Invalid_privilege_decrease(char *user, char *group);
  static	void	Usage(int argc, char *argv[]);
@@ -8,16 +17,19 @@
  
  /* auth-null.c: */
  void null_init(void);
-@@ -144,6 +145,8 @@
+@@ -144,6 +147,11 @@
  
  #endif	/* ARCH_PC_WIN95 */
  
++	if (daemon(0,0) == -1)
++		Alarm( EXIT, "Spread: couldn't daemonise: %d", strerror(errno) );
++
 +	writepidfile();
 +
          /* initialize each valid authentication protocol */
          null_init();
          ip_init();
-@@ -193,6 +196,20 @@
+@@ -193,6 +201,20 @@
  	E_handle_events();
  
  	return 0;

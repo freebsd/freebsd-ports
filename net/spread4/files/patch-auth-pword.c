@@ -1,8 +1,12 @@
 --- auth-pword.c	Sun Sep 22 12:56:52 2002
-+++ auth-pword.c	Wed Nov  6 02:40:23 2002
-@@ -122,8 +122,8 @@
-         if (NULL != (fp = fopen("./spread.access_pword", "r")) )
-             Alarm( PRINT, "pword_init: using file: ./spread.access_pword\n");
++++ auth-pword.c	Tue Aug  5 21:28:50 2003
+@@ -118,12 +118,9 @@
+     /* load spread.access_ip file */
+     if (NULL != (fp = fopen(file_name,"r")) )
+         Alarm( PRINT, "pword_init: using file: %s\n", file_name);
+-    if (fp == NULL) 
+-        if (NULL != (fp = fopen("./spread.access_pword", "r")) )
+-            Alarm( PRINT, "pword_init: using file: ./spread.access_pword\n");
      if (fp == NULL)
 -        if (NULL != (fp = fopen("/etc/spread.access_pword", "r")) )
 -            Alarm( PRINT, "pword_init: using file: /etc/spread.access_pword\n");
