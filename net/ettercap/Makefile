@@ -7,6 +7,7 @@
 
 PORTNAME=       ettercap
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=     net
 MASTER_SITES=   http://ettercap.sourceforge.net/download/
 
