@@ -13,6 +13,7 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += antipolix
+    SUBDIR += asc
     SUBDIR += atomix
     SUBDIR += awele
     SUBDIR += baduki

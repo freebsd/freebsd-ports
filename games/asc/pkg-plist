@@ -1,0 +1,7 @@
+bin/asc
+bin/ascdemount
+bin/ascmap2pcx
+bin/ascmapedit
+bin/ascmount
+share/asc/main.con
+@dirrm share/asc
