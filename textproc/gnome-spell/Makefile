@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomespell
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-spell/1.0
