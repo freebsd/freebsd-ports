@@ -1,0 +1,18 @@
+--- uip/replsbr.c.orig	Fri Sep 10 13:51:41 1999
++++ uip/replsbr.c	Wed Jan 12 12:04:01 2000
+@@ -215,11 +215,9 @@
+ finished:
+     /* drop ending newline */
+     for (i = 0; i < sizeof(wantcomp)/sizeof(wantcomp[0]); i++)
+-	if ((cptr = wantcomp[i]) && cptr->c_text)
+-	    do {
+-		if ((cp = rindex(cptr->c_text, '\n')) && !cp[1])
+-		    *cp = 0;
+-	    } while (cptr = cptr->c_next);
++	for (cptr = wantcomp[i]; cptr; cptr = cptr->c_next)
++	    if (cptr->c_text && (cp = rindex(cptr->c_text, '\n')) && !cp[1])
++		*cp = 0;
+ 
+     /* if there's a "subject" component, strip any "re:"s off it */
+     FINDCOMP (cptr, "subject")
+
