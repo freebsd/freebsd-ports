@@ -1,5 +1,5 @@
 # New ports collection makefile for:	apel for emacs20
-# Version required:	9.20
+# Version required:	9.22
 # Date created:		22 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #

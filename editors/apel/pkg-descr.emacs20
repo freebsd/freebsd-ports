@@ -2,7 +2,7 @@ A Portable Emacs Library.
 
 --- Emacs Library Porting
 
-APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
+APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
 
   APEL stands for "A Portable Emacs Library".  It consists of
   following modules:
@@ -27,6 +27,6 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
 
   APEL is installed the following directory tree:
 	${PREFIX}/share/emacs/site-lisp/apel/		--- apel
-	${PREFIX}/share/emacs/20.3/site-lisp/emu/	--- emu
+	${PREFIX}/share/emacs/20.4/site-lisp/emu/	--- emu
 
 --- Porting by shige <shige@FreeBSD.ORG>.
