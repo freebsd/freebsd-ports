@@ -16,6 +16,7 @@ MAINTAINER=	bruno@tinkerbox.org
 
 LIB_DEPENDS=	geda.15:${PORTSDIR}/cad/libgeda \
 		guile.9:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
