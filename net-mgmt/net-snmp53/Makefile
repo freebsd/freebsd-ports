@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.1
-PORTREVISION=	3
+PORTVERSION=	5.0.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
+DISTFILES=	${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 

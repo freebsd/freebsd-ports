@@ -61,8 +61,11 @@ include/net-snmp/library/asn1.h
 include/net-snmp/library/callback.h
 include/net-snmp/library/check_varbind.h
 include/net-snmp/library/cmu_compat.h
+include/net-snmp/library/container.h
+include/net-snmp/library/container_binary_array.h
 include/net-snmp/library/data_list.h
 include/net-snmp/library/default_store.h
+include/net-snmp/library/factory.h
 include/net-snmp/library/getopt.h
 include/net-snmp/library/int64.h
 include/net-snmp/library/keytools.h
@@ -70,7 +73,6 @@ include/net-snmp/library/lcd_time.h
 include/net-snmp/library/md5.h
 include/net-snmp/library/mib.h
 include/net-snmp/library/mt_support.h
-include/net-snmp/library/oid_array.h
 include/net-snmp/library/oid_stash.h
 include/net-snmp/library/parse.h
 include/net-snmp/library/read_config.h
