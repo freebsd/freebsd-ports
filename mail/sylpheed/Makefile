@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-jconv
 .endif
 .if defined(WITH_JPILOT)
 LIB_DEPENDS+=	pisock.4:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS+=	${LOCALBASE}/pilot/bin/jpilot:${PORTSDIR}/palm/jpilot
+RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
