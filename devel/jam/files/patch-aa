@@ -1,0 +1,11 @@
+--- Makefile.0	Wed Nov 12 01:22:21 1997
++++ Makefile	Mon Jul 13 11:02:39 1998
+@@ -37,7 +37,7 @@
+ 	rules.c scan.c search.c timestamp.c variable.c
+ 
+ all: jam0
+-	jam0
++	./jam0
+ 
+ jam0:
+ 	$(CC) $(TARGET) $(CFLAGS) $(SOURCES) $(LINKLIBS)
