@@ -7,14 +7,12 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
-
-BROKEN=		"Bad pkg-plist"
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
@@ -48,9 +46,9 @@ post-install:
 	@ ${ECHO}
 .endif
 .for file in ${CONFIG_FILES}
-	@ if [ -f ${PREFIX}/rancid/${file}.new ] ; then \
-	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.new"; \
-	${ECHO} "       : *** review ${file} for new/deprecated switches";  \
+	@ if [ -f ${PREFIX}/rancid/${file}.dist ] ; then \
+	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.dist"; \
+	${ECHO} "       : *** review ${file}.dist for new/deprecated switches or install in place ${file}";  \
 	fi
 .endfor
 

@@ -1,5 +1,5 @@
---- bin/Makefile.in.orig	Thu Sep 26 10:46:33 2002
-+++ bin/Makefile.in	Thu Sep 26 10:47:14 2002
+--- bin/Makefile.in.orig	Fri Aug  9 23:59:06 2002
++++ bin/Makefile.in	Mon Mar 17 15:46:42 2003
 @@ -375,13 +375,7 @@
  	for prog in $(BIN_PROGS) ; do \
  	    $(INSTALL) $$prog $(bindir); \
@@ -11,7 +11,7 @@
 -	else \
 -	    $(INSTALL_DATA) env $(bindir); \
 -	fi
-+	    $(INSTALL_DATA) env $(bindir)/env.new
++	    $(INSTALL_DATA) env $(bindir)/env.dist
  # BIN_DATAS are empty at the moment.
  #       for prog in $(BIN_DATAS) ; do \
  #           $(INSTALL_DATA) $$prog $(PREFIX)/bin; \
