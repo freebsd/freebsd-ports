@@ -1,0 +1,7 @@
+bin/cervisia
+share/applnk/Development/Cervisia.kdelnk
+share/doc/HTML/en/cervisia/index.html
+share/doc/HTML/en/cervisia/index-1.html
+share/doc/HTML/en/cervisia/index-2.html
+share/doc/HTML/en/cervisia/index-3.html
+@dirrm share/doc/HTML/en/cervisia
