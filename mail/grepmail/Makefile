@@ -26,5 +26,6 @@ post-extract:
 
 post-patch:
 	@${PERL} -pi -e 's!<STDIN>!"n"!' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail
 
 .include <bsd.port.mk>
