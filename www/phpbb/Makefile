@@ -18,6 +18,8 @@ COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/c551ae17-7f00-11d8-868e-000347dd607f.html
+
 USE_BZIP2=	yes
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
