@@ -1,6 +1,17 @@
 Fetchmail is a full-featured IMAP/POP2/POP3/APOP/KPOP client with easy
-configuration, daemon mode, forwarding via SMTP or local MDA, superior
-reply handling. Not a mail user agent, rather a pipe-fitting that
-seamlessly forwards fetched mail to your local delivery system. Your
-one-stop solution for intermittent email connections. This is the
-lineal descendant of and replacement for the old popclient program.
+configuration, daemon mode, forwarding via SMTP or local MDA, and superior
+reply handling.  It is used to handle intermittent email connections by
+acting as a coupling that seamlessly batch forwards fetched mail from your
+mail server to your local delivery system, allowing you to read your it
+with your favourite mail user agent.  Fetchmail also includes useful spam
+filtering and multi-user functions.
+
+A typical use of fetchmail is to connect to your ISP's POP3 server,
+downloading your mail into the INBOX on your local computer.  You may then
+read the mail, offline if you want, using Pine, mutt, or any standard mail
+user agent.
+
+Fetchmail is the lineal descendant of and replacement for the old
+popclient program.
+
+http://earthspace.net/~esr/fetchmail/
