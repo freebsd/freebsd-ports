@@ -1,0 +1,6 @@
+Datedif is a simple console program that calculates the difference in days 
+between two dates. It has two types of output, the first for scripts and the 
+second for shellprompt use. The default output is the script-output, which is 
+only the difference in days, not even followed by a carriage return. The second
+output can be accessed with the -m option, and it displays an output suitable 
+for shellprompt use.
