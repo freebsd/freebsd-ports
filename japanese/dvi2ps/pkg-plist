@@ -16,7 +16,7 @@ lib/dvi2ps/config
 lib/dvi2ps/defaulttray.ps
 lib/dvi2ps/dvi2.ps
 lib/dvi2ps/dvips.ps
-lib/dvi2ps/lnfonts
+lib/dvi2ps/fontlink
 lib/dvi2ps/macfix.ps
 lib/dvi2ps/mtex
 lib/dvi2ps/old
@@ -65,6 +65,7 @@ lib/dvi2ps/fonts/bikan-rsp
 lib/dvi2ps/fonts/bikan-vfl
 lib/dvi2ps/fonts/bikan-wl
 lib/dvi2ps/fonts/cmps.map
+lib/dvi2ps/fonts/cmps0.map
 lib/dvi2ps/fonts/curdir
 lib/dvi2ps/fonts/efontdef
 lib/dvi2ps/fonts/generate
@@ -85,6 +86,9 @@ lib/dvi2ps/fonts/psfonts2.map
 lib/dvi2ps/fonts/psfonts2.ps
 lib/dvi2ps/fonts/psfonts3
 lib/dvi2ps/fonts/psfonts3.map
+lib/dvi2ps/fonts/psfontsk
+lib/dvi2ps/fonts/psfontsk.ps
+lib/dvi2ps/fonts/psfontsko
 lib/dvi2ps/fonts/vtex
 lib/dvi2ps/fonts/vtex.ps
 lib/dvi2ps/printer/LW16
