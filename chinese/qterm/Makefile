@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,26 +18,20 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--enable-mt --with-pythondir=${LOCALBASE} --prefix=${PREFIX}
+CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX}
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	-2.3
+CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-everything::
-		@${ECHO_MSG} "Define WITHOUT_PYTHON to\
-			disable PYTHON scripts support."
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/qterm/qtermtelnet.cpp
-	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
-		${WRKSRC}/configure
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's,?"":,?QString::null:,' \
-		${WRKSRC}/qterm/qtermconfig.cpp
+.if !defined(WITHOUT_PYTHON)
+	@${ECHO_MSG} "Define WITHOUT_PYTHON to disable Python scripts support."
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
+		${WRKSRC}/configure
+
+.include <bsd.port.mk>
