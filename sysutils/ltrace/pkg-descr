@@ -1,0 +1,4 @@
+ltrace is a dynamic library tracer.  ltrace is a debugging tool, similar to
+strace, but it traces library calls instead of system calls.
+
+WWW: http://utopia.knoware.nl/users/driehuis/
