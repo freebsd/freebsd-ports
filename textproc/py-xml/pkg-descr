@@ -5,8 +5,9 @@ From the README:
   Expat parser itself), and a C helper module that can speed up
   xmllib.py by a factor of 5.  There's even documentation!
 
-Version 0.6.3 is to be considered a beta release.
+Version 0.6.4 is to be considered a beta release.
 
 WWW: http://www.python.org/sigs/xml-sig/
 
--- Jacques Vidrine <nectar@FreeBSD.ORG>
+-- Jacques Vidrine <nectar@FreeBSD.ORG>   (original port)
+-- Johann Visagie  <johann@egenetics.com> (current maintainer)
