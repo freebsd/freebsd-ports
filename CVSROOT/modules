@@ -2593,6 +2593,7 @@ ija		ports/news/ija
 ilmid		src/sbin/atm/ilmid
 ilu		ports/devel/ilu
 im		ports/mail/im
+imageindex	ports/graphics/imageindex
 imagesort	ports/graphics/imagesort
 imake		ports/devel/imake
 imake-4		ports/devel/imake-4
