@@ -1,0 +1,60 @@
+--- Makefile.orig	Thu Sep  3 09:48:01 1998
++++ Makefile	Sun Sep  6 14:59:03 1998
+@@ -1,20 +1,20 @@
+ eyeclock :	eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o eyetime.o
+ 			gcc eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o \
+ 			eyetime.o \
+-			-o eyeclock -O -L/usr/X11R6/lib \
++			-o eyeclock ${CFLAGS} -L/usr/X11R6/lib \
+ 			-lm -lX11 -lXt -lXmu -lXaw -lXpm
+ eyegraph.o :	eyegraph.c
+-		gcc -c eyegraph.c -O -I/usr/X11R6/include
++		gcc -c eyegraph.c ${CFLAGS} -I/usr/X11R6/include
+ eyeinit.o :	eyeinit.c
+-		gcc -c eyeinit.c -O -I/usr/X11R6/include
++		gcc -c eyeinit.c ${CFLAGS} -I/usr/X11R6/include
+ eyemain.o :	eyemain.c
+-		gcc -c eyemain.c -O -I/usr/X11R6/include
++		gcc -c eyemain.c ${CFLAGS} -I/usr/X11R6/include
+ eyequit.o :	eyequit.c
+-		gcc -c eyequit.c -O -I/usr/X11R6/include
++		gcc -c eyequit.c ${CFLAGS} -I/usr/X11R6/include
+ eyestr.o :	eyestr.c
+-		gcc -c eyestr.c -O -I/usr/X11R6/include
++		gcc -c eyestr.c ${CFLAGS} -I/usr/X11R6/include
+ eyetime.o :	eyetime.c
+-		gcc -c eyetime.c -O -I/usr/X11R6/include
++		gcc -c eyetime.c ${CFLAGS} -I/usr/X11R6/include
+ clean :
+ 		rm *.o eyeclock
+ backup :
+@@ -36,19 +36,19 @@
+ 		cp sample2 sample2.bak
+ 		cp sample2.xpm sample2.xpm.bak
+ install :
+-		cp eyeclock /usr/X11R6/bin
+-		chmod 0755 /usr/X11R6/bin/eyeclock
+-		mkdir /usr/X11R6/lib/X11/EyeClock
++		cp eyeclock ${PREFIX}/bin
++		chmod 0755 ${PREFIX}/bin/eyeclock
++		mkdir -p ${PREFIX}/lib/X11/EyeClock
+ 		cp COPYRIGHT.euc Makefile README.euc \
+ 			sample1 sample1.xpm sample2 sample2.xpm \
+-			/usr/X11R6/lib/X11/EyeClock
+-		chmod 0444 /usr/X11R6/lib/X11/EyeClock/*
+-		cp eyeclock.1.gz /usr/X11R6/man/man1
+-		chmod 0444 /usr/X11R6/man/man1/eyeclock.1.gz
++			${PREFIX}/lib/X11/EyeClock
++		chmod 0444 ${PREFIX}/lib/X11/EyeClock/*
++		cp eyeclock.1.gz ${PREFIX}/man/man1
++		chmod 0444 ${PREFIX}/man/man1/eyeclock.1.gz
+ uninstall :
+-		rm /usr/X11R6/bin/eyeclock
+-		rm /usr/X11R6/man/man1/eyeclock.1.gz
+-		rm -f -R /usr/X11R6/lib/X11/EyeClock
++		rm ${PREFIX}/bin/eyeclock
++		rm ${PREFIX}/man/man1/eyeclock.1.gz
++		rm -f -R ${PREFIX}/lib/X11/EyeClock
+ package :
+ 		rm -f eyeclock-1.0/*
+ 		cp eyeclock.man eyeclock.1
