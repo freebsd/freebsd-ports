@@ -1,0 +1,10 @@
+Biggles is a Python module for creating publication-quality 2D scientific
+plots.
+
+It supports multiple output formats (postscript, x11, png, svg, gif),
+understands simple TeX, and sports a high-level, elegant interface. It's
+intended for technical users with sophisticated plotting needs.
+
+The goal is to produce the best scriptable plotting program.
+
+WWW: http://biggles.sourceforge.net/

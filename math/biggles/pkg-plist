@@ -1,0 +1,29 @@
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/renderer.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/renderer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/tex2libplot.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/tex2libplot.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot/libplot.so
+lib/%%PYTHON_VERSION%%/site-packages/biggles/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/_biggles.so
+lib/%%PYTHON_VERSION%%/site-packages/biggles/biggles.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/biggles.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/config.ini
+lib/%%PYTHON_VERSION%%/site-packages/biggles/config.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/config.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/confit.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/confit.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/contour.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/contour.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/func.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/func.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/geometry.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/geometry.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/hammer.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/hammer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/biggles/matlab.py
+lib/%%PYTHON_VERSION%%/site-packages/biggles/matlab.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/biggles/libplot
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/biggles
