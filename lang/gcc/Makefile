@@ -6,17 +6,17 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-05-14
+SNAPDATE=	2003-07-07
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
-PORTVERSION=	3.3
+PORTVERSION=	3.3.1
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
-VERSIONSTRING=	${PORTVERSION}
+VERSIONSTRING=	${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
-MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	snapshots/3.3-${PORTREVISION}
 .if !defined(CVS_DATE)
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -51,15 +51,15 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
-GCC_REV=	${PORTVERSION:C/\.0$//}
+GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
 GCJINC=		${PREFIX}/include/gcj
 GNUINC=		${PREFIX}/include/gnu
 JAVAINC=	${PREFIX}/include/java
 JAVAINC2=	${PREFIX}/include/javax
-PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -135,7 +135,7 @@ pre-patch:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#\(const char version_string.*\)";#\1 [FreeBSD]";#' \
+	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
