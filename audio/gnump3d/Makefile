@@ -7,21 +7,25 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	0.9.9.9.1
+PORTVERSION=	0.9.9.9.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/gnump3d
+INSTALLS_SHLIB=	yes
 
 MAN1=	gnump3d.1 gnump3d.conf.1 gnump3d-config.1 gnump3d-top.1
 
@@ -38,13 +42,14 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|=aclocal|=${TRUE}|g ; \
-		 s|=autoconf|=${TRUE}|g ; \
-		 s|=automake|=${TRUE}|g ; \
-		 s|=autoheader|=${TRUE}|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e \
 		's|#undef socklen_t||g' ${WRKSRC}/src/config.h.in
+
+pre-configure:
+.for dir in . mplib libltdl
+	@cd ${WRKSRC}/${dir} && ${LOCALBASE}/bin/autoconf
+.endfor
 
 .include <bsd.port.mk>
