@@ -7722,6 +7722,7 @@ wmfire		ports/sysutils/wmfire
 wmfirew		ports/misc/wmfirew
 wmfishtime	ports/x11-clocks/wmfishtime
 wmflame		ports/sysutils/wmflame
+wmfmixer	ports/audio/wmfmixer
 wmfortune	ports/games/wmfortune
 wmfsm		ports/sysutils/wmfsm
 wmfstatus	ports/x11/wmfstatus
