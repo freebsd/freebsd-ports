@@ -8,7 +8,7 @@
 PORTNAME=	netshow
 PORTVERSION=	2.00.251
 CATEGORIES=	multimedia linux net
-MASTER_SITES=	http://microsoft.com/netshow/download/en/beta/
+MASTER_SITES=	http://www.microsoft.com/netshow/download/en/beta/
 DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz
 
@@ -16,8 +16,6 @@ MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 ONLY_FOR_ARCHS=	i386
 
