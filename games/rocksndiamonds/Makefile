@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -15,39 +14,40 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" X11_PATH="${X11BASE}" \
+		RO_GAME_DIR=${DATADIR} RW_GAME_DIR=${DATADIR}/scores \
+		X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
+
+MAN1=		rocksndiamonds.1
+
 .if defined(WITH_SDL)
 USE_SDL=	image mixer sdl
-MAKE_ARGS+=	sdl
-.endif
-
+ALL_TARGET=	sdl
+.else
 USE_XLIB=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-MAKE_ENV+=	RO_GAME_DIR=${GAME_DIR} RW_GAME_DIR=${GAME_DIR}/scores \
-		X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
-.if ${MACHINE_ARCH} == "alpha"
-MAKE_ENV+=	JOYSTICK="-DNO_JOYSTICK"
+ALL_TARGET=	x11
 .endif
 
-GAME_DIR=${PREFIX}/share/rocksndiamonds
-DOC_DIR=${PREFIX}/share/doc/rocksndiamonds
-
-.if defined(WITH_SDL)
-pre-patch:
-	@${REINPLACE_CMD} -e 's:sdl-config:sdl11-config:g' ${WRKSRC}/src/Makefile
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's:sdl-config:$${SDL_CONFIG}:g' ${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
-	@${MKDIR} ${GAME_DIR}
-	@cd ${WRKSRC}; ${TAR} cpf - graphics levels scores sounds | \
-		(cd ${GAME_DIR}; ${TAR} xpf -)
-	@${CHMOD} 777 ${GAME_DIR}/scores
+	${INSTALL_MAN} ${WRKSRC}/rocksndiamonds.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${TAR} -C ${WRKSRC} -cf - graphics levels scores sounds | \
+		${TAR} -C ${DATADIR} -xf -
+	@${CHMOD} 777 ${DATADIR}/scores
 .if !defined(NOPPORTDOCS)
-	@${MKDIR} ${DOC_DIR}
+	@${MKDIR} ${DOCSDIR}
 .for docfile in CHANGES CREDITS HARDWARE README TODO
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${DOCSDIR}/elements
+	${INSTALL_DATA} ${WRKSRC}/docs/elements/*.txt ${DOCSDIR}/elements
 .endif
 
 .include <bsd.port.mk>
