@@ -1,6 +1,12 @@
-share/AbiSuite/fonts/Big5/.already-in-fp
-share/AbiSuite/fonts/Big5/fonts.dir
-share/AbiSuite/fonts/GB2312/.already-in-fp
-share/AbiSuite/fonts/GB2312/fonts.dir
-@dirrm share/AbiSuite/fonts/Big5
-@dirrm share/AbiSuite/fonts/GB2312
+share/AbiSuite/fonts/zh-CN/.already-in-fp
+share/AbiSuite/fonts/zh-CN/fonts.dir
+share/AbiSuite/fonts/zh-CN.GBK/.already-in-fp
+share/AbiSuite/fonts/zh-CN.GBK/fonts.dir
+share/AbiSuite/fonts/zh-HK/.already-in-fp
+share/AbiSuite/fonts/zh-HK/fonts.dir
+share/AbiSuite/fonts/zh-TW/.already-in-fp
+share/AbiSuite/fonts/zh-TW/fonts.dir
+@dirrm share/AbiSuite/fonts/zh-CN
+@dirrm share/AbiSuite/fonts/zh-CN.GBK
+@dirrm share/AbiSuite/fonts/zh-HK
+@dirrm share/AbiSuite/fonts/zh-TW
