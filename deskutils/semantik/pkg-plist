@@ -69,6 +69,9 @@ share/mimelnk/application/x-kdissert.desktop
 @dirrm share/icons/crystalsvg/22x22/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/22x22/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@dirrm share/icons/crystalsvg/16x16/actions/kdissert
+@unexec rmdir %D/share/icons/crystalsvg/16x16/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
 @dirrm share/icons/crystalsvg/128x128/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/128x128/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true

@@ -38,6 +38,7 @@ share/mimelnk/application/pgn.desktop
 @dirrm share/doc/HTML/ru/knights
 @dirrm share/doc/HTML/it/knights
 @dirrm share/doc/HTML/fr/knights
+@dirrm share/doc/HTML/fi/knights
 @dirrm share/doc/HTML/et/knights
 @dirrm share/doc/HTML/es/knights
 @dirrm share/doc/HTML/en/knights
