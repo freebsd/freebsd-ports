@@ -7,6 +7,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	1.3.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -38,8 +39,5 @@ pre-patch:
 		xargs ${PERL} -pi -e "s|iconv\.h|giconv.h|g"
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/glibconfig.h ${PREFIX}/include/glib-2.0
 
 .include <bsd.port.mk>
