@@ -1,91 +1,148 @@
-%%PG_PREFIX%%bin/postmaster
-%%PG_PREFIX%%bin/postgres
-%%PG_PREFIX%%bin/ecpg
-%%PG_PREFIX%%bin/initdb
-%%PG_PREFIX%%bin/initlocation
-%%PG_PREFIX%%bin/ipcclean
-%%PG_PREFIX%%bin/pg_ctl
-%%PG_PREFIX%%bin/pg_dump
-%%PG_PREFIX%%bin/pg_restore
-%%PG_PREFIX%%bin/pg_encoding
-%%PG_PREFIX%%bin/pg_dumpall
-%%PG_PREFIX%%bin/pg_id
-%%PG_PREFIX%%bin/pg_passwd
-%%PG_PREFIX%%bin/psql
-%%PG_PREFIX%%bin/psqlj
-%%PG_PREFIX%%bin/createdb
-%%PG_PREFIX%%bin/dropdb
-%%PG_PREFIX%%bin/createuser
-%%PG_PREFIX%%bin/dropuser
-%%PG_PREFIX%%bin/droplang
-%%PG_PREFIX%%bin/vacuumdb
-%%PG_PREFIX%%bin/createlang
-%%PG_PREFIX%%bin/pg_config
-etc/rc.d/010.pgsql.sh
-%%PG_INCLUDE%%/lib/dllist.h
-@dirrm %%PG_INCLUDE%%/lib
-%%PG_INCLUDE%%/libpq/pqcomm.h
-%%PG_INCLUDE%%/libpq/libpq-fs.h
-@dirrm %%PG_INCLUDE%%/libpq
-%%PG_INCLUDE%%/libpq++/pgconnection.h
-%%PG_INCLUDE%%/libpq++/pgdatabase.h
-%%PG_INCLUDE%%/libpq++/pgtransdb.h
-%%PG_INCLUDE%%/libpq++/pgcursordb.h
-%%PG_INCLUDE%%/libpq++/pglobject.h
-@dirrm %%PG_INCLUDE%%/libpq++
-%%PG_INCLUDE%%/c.h
-%%PG_INCLUDE%%/postgres_ext.h
-%%PG_INCLUDE%%/postgres_fe.h
-%%PG_INCLUDE%%/os.h
-%%PG_INCLUDE%%/config.h
-%%PG_INCLUDE%%/libpq-fe.h
-%%PG_INCLUDE%%/libpq-int.h
-%%PG_INCLUDE%%/pqexpbuffer.h
-%%PG_INCLUDE%%/ecpgerrno.h
-%%PG_INCLUDE%%/ecpglib.h
-%%PG_INCLUDE%%/ecpgtype.h
-%%PG_INCLUDE%%/sqlca.h
-%%PG_INCLUDE%%/sql3types.h
-%%PG_INCLUDE%%/libpgeasy.h
-%%PG_INCLUDE%%/libpq++.h
-@dirrm %%PG_INCLUDE%%
-%%PG_PREFIX%%lib/libpq.so
-%%PG_PREFIX%%lib/libpq.a
-%%PG_PREFIX%%lib/libpq.so.2
-%%PG_PREFIX%%lib/libecpg.so
-%%PG_PREFIX%%lib/libecpg.a
-%%PG_PREFIX%%lib/libecpg.so.3
-%%PG_PREFIX%%lib/libpgeasy.so
-%%PG_PREFIX%%lib/libpgeasy.a
-%%PG_PREFIX%%lib/libpgeasy.so.2
-%%PG_PREFIX%%lib/libpq++.so
-%%PG_PREFIX%%lib/libpq++.a
-%%PG_PREFIX%%lib/libpq++.so.3
-%%PG_PREFIX%%lib/plpgsql.so
-share/postgresql/global.bki
-share/postgresql/global.description
-share/postgresql/post-install-notes
-share/postgresql/template1.bki
-share/postgresql/template1.description
-share/postgresql/pg_hba.conf.sample
-share/postgresql/pg_ident.conf.sample
-share/postgresql/postgresql.conf.sample
-@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
-@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
-@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist
-@unexec [ -f ~pgsql/dot.cshrc.dist ] && rm ~pgsql/dot.cshrc.dist
-@exec [ -f %D/share/postgresql/post-install-notes ] && cp %D/share/postgresql/post-install-notes ~pgsql && chown pgsql:pgsql ~pgsql/post-install-notes
-@unexec [ -f ~pgsql/post-install-notes ] && rm ~pgsql/post-install-notes
-share/postgresql/dot.profile.dist
-share/postgresql/dot.cshrc.dist
-@dirrm share/postgresql
-@exec [ -f %D/share/postgresql/dot.profile.dist ] && cp %D/share/postgresql/dot.profile.dist ~pgsql/.
-@exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
-@exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
-@exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
-@unexec rmdir %D/%%PG_PREFIX%%bin 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%lib 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man/man1 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man/manl 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man 2> /dev/null || true
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/pgsql and the pgsql user manually."
+bin/pgtclsh
+include/libpgtcl.h
+lib/tcl%%TCLVERSION%%/Pgtcl1.3/pkgIndex.tcl
+@dirrm lib/tcl%%TCLVERSION%%/Pgtcl1.3
+lib/libpgtcl.a
+lib/libpgtcl.so
+lib/libpgtcl.so.2
+%%TK%%bin/pgtksh
+%%TK%%bin/pgaccess
+%%TK%%share/postgresql/pgaccess/lib/help/abort.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/add_records.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/alter_table.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/alter_user.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/author.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/begin.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/close.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/cluster.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/commit.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/copy.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/copyrights.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_aggregate.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_database.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_function.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_index.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_language.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_operator.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_rule.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_sequence.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_table.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_table_as.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_trigger.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_type.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_user.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/create_view.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/data_types.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/datefunc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/declare.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/delete.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_aggregate.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_database.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_function.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_index.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_language.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_operator.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_rule.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_sequence.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_table.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_trigger.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_type.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_user.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/drop_view.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/explain.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/fetch.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/form_design.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/forms.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/functions.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/geomfunc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/grant.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/history.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/index.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/inheritance.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/insert.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/ipv4func.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/isolation.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/keywords.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/listen.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/load.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/lock.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/mathfunc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/move.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/mvcc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/new_query.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/new_table.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/notify.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/open_query.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/open_table.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/pgfunctions.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/postgresql.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/queries.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/reports.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/reset.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/revoke.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/rollback.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/schema.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/scripts.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/select.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/select_into.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/sequences.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/set.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/show.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/sql_guide.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/sqlfunc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/stringfunc.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/tables.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/unlisten.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/update.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/users.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/vacuum.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/view_table_structure.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/views.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/visual_designer.hlp
+%%TK%%share/postgresql/pgaccess/lib/help/y2k.hlp
+%%TK%%@dirrm share/postgresql/pgaccess/lib/help
+%%TK%%share/postgresql/pgaccess/lib/languages/chinese_big5
+%%TK%%share/postgresql/pgaccess/lib/languages/chinese_gb
+%%TK%%share/postgresql/pgaccess/lib/languages/czech
+%%TK%%share/postgresql/pgaccess/lib/languages/deutsch
+%%TK%%share/postgresql/pgaccess/lib/languages/euskara
+%%TK%%share/postgresql/pgaccess/lib/languages/francais
+%%TK%%share/postgresql/pgaccess/lib/languages/italiano
+%%TK%%share/postgresql/pgaccess/lib/languages/japanese
+%%TK%%share/postgresql/pgaccess/lib/languages/magyar
+%%TK%%share/postgresql/pgaccess/lib/languages/nederlands
+%%TK%%share/postgresql/pgaccess/lib/languages/portugues
+%%TK%%share/postgresql/pgaccess/lib/languages/romana
+%%TK%%share/postgresql/pgaccess/lib/languages/russian.koi8r
+%%TK%%share/postgresql/pgaccess/lib/languages/russian_win
+%%TK%%share/postgresql/pgaccess/lib/languages/spanish
+%%TK%%@dirrm share/postgresql/pgaccess/lib/languages
+%%TK%%share/postgresql/pgaccess/lib/database.tcl
+%%TK%%share/postgresql/pgaccess/lib/forms.tcl
+%%TK%%share/postgresql/pgaccess/lib/functions.tcl
+%%TK%%share/postgresql/pgaccess/lib/help.tcl
+%%TK%%share/postgresql/pgaccess/lib/mainlib.tcl
+%%TK%%share/postgresql/pgaccess/lib/preferences.tcl
+%%TK%%share/postgresql/pgaccess/lib/queries.tcl
+%%TK%%share/postgresql/pgaccess/lib/reports.tcl
+%%TK%%share/postgresql/pgaccess/lib/schema.tcl
+%%TK%%share/postgresql/pgaccess/lib/scripts.tcl
+%%TK%%share/postgresql/pgaccess/lib/sequences.tcl
+%%TK%%share/postgresql/pgaccess/lib/tables.tcl
+%%TK%%share/postgresql/pgaccess/lib/users.tcl
+%%TK%%share/postgresql/pgaccess/lib/views.tcl
+%%TK%%share/postgresql/pgaccess/lib/visualqb.tcl
+%%TK%%@dirrm share/postgresql/pgaccess/lib
+%%TK%%share/postgresql/pgaccess/images/icon_button.gif
+%%TK%%share/postgresql/pgaccess/images/icon_checkbutton.gif
+%%TK%%share/postgresql/pgaccess/images/icon_entry.gif
+%%TK%%share/postgresql/pgaccess/images/icon_frame.gif
+%%TK%%share/postgresql/pgaccess/images/icon_label.gif
+%%TK%%share/postgresql/pgaccess/images/icon_listbox.gif
+%%TK%%share/postgresql/pgaccess/images/icon_query.gif
+%%TK%%share/postgresql/pgaccess/images/icon_radiobutton.gif
+%%TK%%share/postgresql/pgaccess/images/icon_text.gif
+%%TK%%@dirrm share/postgresql/pgaccess/images
+%%TK%%share/postgresql/pgaccess/main.tcl
+%%TK%%@dirrm share/postgresql/pgaccess
+%%TK%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
