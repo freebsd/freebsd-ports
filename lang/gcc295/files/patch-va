@@ -1,0 +1,20 @@
+--- gcc/Makefile.in.orig	Thu Feb 25 12:40:16 1999
++++ gcc/Makefile.in	Mon Mar  1 04:36:40 1999
+@@ -793,7 +793,7 @@
+ 	rm -f config.run
+ 
+ $(srcdir)/configure: $(srcdir)/configure.in
+-	cd $(srcdir); autoconf
++	cd $(srcdir); echo "wants to run autoconf"
+ 
+ # cstamp-h.in controls rebuilding of config.in.
+ # It is named cstamp-h.in and not stamp-h.in so the mostlyclean rule doesn't
+@@ -806,7 +806,7 @@
+ # ??? Newer versions have a maintainer mode that may be useful here.
+ $(srcdir)/config.in: $(srcdir)/cstamp-h.in
+ $(srcdir)/cstamp-h.in: $(srcdir)/configure.in $(srcdir)/acconfig.h
+-	cd $(srcdir) && autoheader
++	cd $(srcdir) && echo "want to run autoheader"
+ 	@rm -f $(srcdir)/cstamp-h.in
+ 	echo timestamp > $(srcdir)/cstamp-h.in
+ auto-host.h: cstamp-h ; @true
