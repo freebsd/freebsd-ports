@@ -8,9 +8,8 @@
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		ftp://ftp.oav.net/pike/7.2/unofficial/ \
-		http://grendel.firewall.com/caudium-pkg/
+MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
+		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
 DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
