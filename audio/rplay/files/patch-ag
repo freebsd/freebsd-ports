@@ -1,0 +1,13 @@
+--- doc/librplay.texi.orig	Wed Jul 15 07:35:23 1998
++++ doc/librplay.texi	Wed Jun 21 22:38:58 2000
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename librplay.info
+ @settitle The rplay Programmer's Manual
++@dircategory Network Audio Systems
++@direntry
++* librplay: (librplay)		The rplay Programmer's Manual
++@end direntry
+ @iftex
+ @finalout
+ @end iftex

@@ -1,0 +1,33 @@
+--- doc/rplayd.8.orig	Wed Jul 15 07:35:23 1998
++++ doc/rplayd.8	Wed Jun 21 22:39:07 2000
+@@ -125,7 +125,7 @@
+ Linux uses cdrom[0-3] -> /dev/cdrom[0-3].
+ .TP
+ .I "\-C FILE, \-\-conf=FILE"
+-Use FILE for rplay.conf (/etc/rplay/rplay.conf).
++Use FILE for rplay.conf.
+ .TP
+ .I "\-T N, \-\-connection\-timeout=N"
+ Close idle RPTP connections after N seconds, disabled with 0 (300).
+@@ -146,10 +146,10 @@
+ Display helpful information.
+ .TP
+ .I "\-\-helpers=FILE"
+-Use FILE for rplay.helpers (/etc/rplay/rplay.helpers).
++Use FILE for rplay.helpers.
+ .TP
+ .I "\-H FILE, \-\-hosts=FILE"
+-Use FILE for rplay.hosts (/etc/rplay/rplay.hosts).
++Use FILE for rplay.hosts.
+ .TP
+ .I "\-\-inetd"
+ Enable inetd mode. (disabled)
+@@ -191,7 +191,7 @@
+ (--other-rptp-port may also be available)
+ .TP
+ .I "\-S FILE, \-\-servers=FILE"
+-Use FILE for rplay.servers (/etc/rplay/rplay.servers).
++Use FILE for rplay.servers.
+ .TP
+ .I "\-t N, \-\-timeout=N"
+ Exit after N idle seconds, disabled with 0 (0).

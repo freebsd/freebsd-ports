@@ -1,0 +1,41 @@
+--- doc/Makefile.in.orig	Wed Jul 15 07:35:23 1998
++++ doc/Makefile.in	Thu Jun 22 00:41:13 2000
+@@ -23,15 +23,15 @@
+ .texi.html:
+ 	$(TEXI2HTML) $(TEXI2HTML_FLAGS) $<
+ 
+-all:
++all: info
+ 
+-info: RPLAY.info RPTP.info librplay.info rplay.info
++info: RPLAY.info RPTP.info librplay.info rplayd.info
+ 
+-dvi: RPLAY.dvi RPTP.dvi librplay.dvi rplay.dvi
++dvi: RPLAY.dvi RPTP.dvi librplay.dvi rplayd.dvi
+ 
+-ps: RPLAY.ps RPTP.ps librplay.ps rplay.ps
++ps: RPLAY.ps RPTP.ps librplay.ps rplayd.ps
+ 
+-html: RPLAY.html RPTP.html librplay.html rplay.html
++html: RPLAY.html RPTP.html librplay.html rplayd.html
+ 
+ man:
+ 	./genman rplay.1.in
+@@ -50,7 +50,7 @@
+ 	-$(INSTALL_DATA) RPLAY.info $(infodir)/RPLAY.info
+ 	-$(INSTALL_DATA) RPTP.info $(infodir)/RPTP.info
+ 	-$(INSTALL_DATA) librplay.info $(infodir)/librplay.info
+-	-$(INSTALL_DATA) rplay.info $(infodir)/rplay.info
++	-$(INSTALL_DATA) rplayd.info $(infodir)/rplayd.info
+ 
+ uninstall:
+ 	-$(RM) $(mandir)/man1/rplay.1
+@@ -63,7 +63,7 @@
+ 	-$(RM) $(infodir)/RPLAY.info
+ 	-$(RM) $(infodir)/RPTP.info
+ 	-$(RM) $(infodir)/librplay.info
+-	-$(RM) $(infodir)/rplay.info
++	-$(RM) $(infodir)/rplayd.info
+ 
+ clean:
+ 	$(RM) *~ *.bak *.orig
