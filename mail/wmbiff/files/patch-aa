@@ -1,77 +1,11 @@
---- Makefile.orig	Mon Oct 29 14:59:12 2001
-+++ Makefile	Mon Nov 12 00:58:11 2001
-@@ -3,22 +3,21 @@
- WMBIFF_VERSION = "0.3.3"
+--- Makefile.orig	Mon Feb  4 07:48:59 2002
++++ Makefile	Sat Feb 23 00:39:56 2002
+@@ -64,7 +64,7 @@
  
- DESTDIR=
--prefix=/usr/local
-+prefix=${PREFIX}
- bindir=${prefix}/bin
--mandir=${prefix}/share/man
--CONF=/etc
-+mandir=${prefix}/man
-+CONF=${PREFIX}/etc
- 
--CC     = gcc
--LIBDIR = -L/usr/X11R6/lib
-+CC     ?= gcc
-+LIBDIR = -L${X11BASE}/lib
-+INCLUDES = -I${X11BASE}/include
- LIBS   = -lXpm -lXext -lX11 
--CFLAGS = -O2 -Wall -Wpointer-arith
-+#CFLAGS = -O2 -Wall -Wpointer-arith
- #CFLAGS = -g -Wall -pedantic 
- 
--EXTRAFLAGS = -DWMBIFF_VERSION='$(WMBIFF_VERSION)' 
-+LIBS+=	-lgnuregex
- 
--# Comment these out if you don't want cryto support.
--EXTRAFLAGS += -DWITH_TLS -DWITH_GCRYPT
--LIBS   += -lgnutls -lgcrypt
-+EXTRAFLAGS = -DWMBIFF_VERSION='$(WMBIFF_VERSION)' 
- 
- #EXTRAFLAGS += -DDEBUG_POP3 -DDEBUG_IMAP4 -DDEBUG_LICQ \
- #	-DDEBUG_MBOX -DDEBUG_MAILDIR -DDEBUG -DDEBUG_MAIL_COUNT \
-@@ -35,24 +34,19 @@
- 	../wmgeneral/list.o \
- 	charutil.o
- 
--INSTALL = /usr/bin/install
--INSTALL_DIR	= $(INSTALL) -p -d -o root -g root -m 755
--INSTALL_PROGRAM	= $(INSTALL) -p -o root -g root -m 755
--INSTALL_FILE 	= $(INSTALL) -p -o root -g root -m 644
--
- all: wmbiff-master.xpm wmbiff
- 
- Imap4Client.o: Imap4Client.c Client.h Makefile
- 
- .c.o:
--	$(CC) $(CFLAGS) $(EXTRAFLAGS) -c $< -o $*.o
-+	$(CC) ${INCLUDES} $(CFLAGS) $(EXTRAFLAGS) -c $< -o $*.o
+ INSTALL?=	/usr/bin/install
+ INSTALL_DIR?=	$(INSTALL) -d -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 755
+-INSTALL_PRG?=	$(INSTALL) -p -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 755 -s
++INSTALL_PROGRAM?=	$(INSTALL) -p -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 755 -s
+ INSTALL_FILE?=	$(INSTALL) -p -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 644
  
  
- wmbiff-master.xpm:
- 	ln -s wmbiff-master-led.xpm wmbiff-master.xpm
- 
- wmbiff:	$(OBJS)
--	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o wmbiff -lX11 -lnsl $^ $(LIBDIR) $(LIBS)
-+	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o wmbiff -lX11  $^ $(LIBDIR) $(LIBS)
- 
- clean:
- 	for i in $(OBJS) ; do \
-@@ -63,12 +57,9 @@
- distclean: clean
- 
- install: wmbiff
--	$(INSTALL_DIR) $(DESTDIR)$(bindir)
--	$(INSTALL_DIR) $(DESTDIR)$(mandir)/man1
--	$(INSTALL_DIR) $(DESTDIR)$(mandir)/man5
--	$(INSTALL_PROGRAM) wmbiff $(DESTDIR)$(bindir)
--	$(INSTALL_FILE) wmbiff.1 $(DESTDIR)$(mandir)/man1
--	$(INSTALL_FILE) wmbiffrc.5 $(DESTDIR)$(mandir)/man5
-+	${BSD_INSTALL_PROGRAM} wmbiff ${PREFIX}/bin/wmbiff
-+	$(BSD_INSTALL_MAN) wmbiff.1 ${PREFIX}/man/man1
-+	$(BSD_INSTALL_MAN) wmbiffrc.5 ${PREFIX}/man/man5
- 
- # CODING STYLE AND INDENTATION [2001-Mar-12]:
- #
