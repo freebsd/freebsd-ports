@@ -1,0 +1,18 @@
+Slash -- Slashdot Like Automated Storytelling Homepage -- is the code
+that runs Slashdot. More than that, however, Slash is an architecture
+for putting together web sites. It comes with functionality for posting
+articles, conducting polls, having discussions, and more; but it can be
+extended in innumerable ways.
+
+Slash is written in Perl, and is built on top of Apache and mod_perl. It
+requires a database backend, though the only well-supported database
+used with it is MySQL (more databases will become well-supported as time
+goes on; PostgreSQL support is already well on its way). Slash is fast,
+scalable, and secure (as evidenced by one of the best test cases you
+could have, running Slashdot itself).
+
+Through a plugin system, developers can add functionality to Slash.
+Through themes and templates (which are written using Template Toolkit),
+the look and feel of a Slash site can be customized.
+
+WWW: http://slashcode.com/

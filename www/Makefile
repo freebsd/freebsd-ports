@@ -482,6 +482,7 @@
     SUBDIR += screem
     SUBDIR += sidplug
     SUBDIR += sitecopy
+    SUBDIR += slash
     SUBDIR += smarty
     SUBDIR += smb2www
     SUBDIR += smb_auth

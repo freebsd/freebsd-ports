@@ -1,0 +1,30 @@
+--- bin/install-slashsite.orig	Mon Mar 18 18:35:35 2002
++++ bin/install-slashsite	Mon Mar 18 18:42:08 2002
+@@ -89,7 +89,7 @@
+ 
+ # THIS IS DANGEROUS ... when run as root on a non-GNU
+ # system, it can blank out the hostname entirely
+-chomp($hostname_f = `hostname -f`);
++chomp($hostname_f = `hostname -f 2> /dev/null` || `hostname 2> /dev/null`);
+ unless ($opts{'H'}) {
+ 	print "
+ What is hostname of your Slash site
+@@ -431,6 +431,7 @@
+ sub apache_site_conf {
+ 	my $host_port = $hostname;
+ 	$host_port .= ":80" unless $host_port =~ /:/;
++	my $log_path = (-d '/usr/local/logs' ? "logs" : "/var/log");
+ 	my $text = qq|
+ # note that if your site's path is a symlink, the
+ # path listed here is most likely the actual path;
+@@ -446,8 +447,8 @@
+     ServerAdmin $email
+     DocumentRoot $prefix_site/$sitename/htdocs
+     ServerName $host_noport
+-    ErrorLog logs/${sitename}_error_log
+-    CustomLog logs/${sitename}_access_log common
++    ErrorLog $log_path/${sitename}_error_log
++    CustomLog $log_path/${sitename}_access_log common
+ 
+     PerlSetupEnv On
+     PerlSetEnv TZ GMT
