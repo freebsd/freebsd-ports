@@ -1,0 +1,19 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Aug 31 14:39:08 2001
++++ Makefile.in	Wed Dec 19 04:19:31 2001
+@@ -1,4 +1,4 @@
+-CC = g++
++CC = ${CXX}
+ 
+ # Commonly used modules that don't require TurfProtocol
+ COMMONMODULES = o/Speedwalk.so o/MudLog.so o/PromptPlugin.so \
+@@ -47,7 +47,7 @@
+ # should select the correct LFLAGS line.
+ ##
+ 
+-C++FLAGS = -I/usr/local/include $(POSTGRES_INC) `glib-config --cflags` `gtk-config --cflags` -fno-exceptions -fno-rtti -fno-inline @DEBUG@ -DUNIX -Wall $(MIDI) -Ih `gnome-config --cflags gnomeui`
++C++FLAGS = -I/usr/local/include $(POSTGRES_INC) `${GLIB_CONFIG} --cflags` `${GTK_CONFIG} --cflags` -fno-exceptions -fno-rtti -fno-inline @DEBUG@ -DUNIX -Wall $(MIDI) -Ih `gnome-config --cflags gnomeui` ${CXXFLAGS}
+ 
+ all: $(MODULES)
+ 
