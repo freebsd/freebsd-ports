@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucblogo
-PORTVERSION=	5.2
+PORTVERSION=	5.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
 .if defined(EMACS_LOGO_MODE)
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs19
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 .endif
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
@@ -33,10 +33,11 @@ ALL_TARGET=	all
 
 .if defined(WITH_FULL_DOCS) || defined(EMACS_LOGO_MODE)
 USE_GMAKE=	yes
-MAKE_ENV+=	LIBLOC="${PREFIX}/lib/logo" BINDIR="${PREFIX}/bin"
+MAKE_ENV+=	LIBLOC="${PREFIX}/lib/logo" BINDIR="${PREFIX}/bin" DOCSDIR="${DOCSDIR}" INFODIR="${PREFIX}/${INFO_PATH}"
 .endif
 
 .if defined(WITH_FULL_DOCS)
+INFO=		ucblogo loops
 ALL_TARGET+=	docs
 PLIST_SUB+=	WITH_FULL_DOCS=""
 .else
@@ -69,19 +70,20 @@ pre-everything::
 
 do-install:
 .for d in lib/logo lib/logo/logolib \
-	lib/logo/helpfiles share/examples/logo/csls
+	lib/logo/helpfiles
 	${MKDIR} ${PREFIX}/$d
 .endfor
+	${MKDIR} ${EXAMPLESDIR}/csls
 	${INSTALL_PROGRAM} ${WRKSRC}/logo ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/logolib/* ${PREFIX}/lib/logo/logolib/
 	${INSTALL_DATA} ${WRKSRC}/helpfiles/* ${PREFIX}/lib/logo/helpfiles/
-	${INSTALL_DATA} ${WRKSRC}/csls/* ${PREFIX}/share/examples/logo/csls/
+	${INSTALL_DATA} ${WRKSRC}/csls/* ${EXAMPLESDIR}/csls/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/usermanual ${DOCSDIR}
 .endif
 .if defined(WITH_FULL_DOCS)
-	cd ${WRKSRC}/emacs/ ;${SETENV} ${MAKE_ENV} ${GMAKE} install-docs
+	cd ${WRKSRC}/docs/ ;${SETENV} ${MAKE_ENV} ${GMAKE} install
 .endif
 .ifdef defined(EMACS_LOGO_MODE)
 	cd ${WRKSRC}/emacs; ${SETENV} ${MAKE_ENV} ${GMAKE} install-emacs
