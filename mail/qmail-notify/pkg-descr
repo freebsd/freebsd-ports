@@ -1,0 +1,4 @@
+This package contains a program to notify senders about email that has been
+held in the qmail queue.
+
+WWW:	http://untroubled.org/qmail-notify/
