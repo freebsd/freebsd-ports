@@ -1,0 +1,65 @@
+#! /bin/sh
+
+# Original: FreeBSD: ports/databases/postgresql7/pkg-install,v 1.8 2003/12/04 12:00:48 seanc Exp
+
+PATH=/bin:/usr/sbin
+
+DB_DIR=${PKG_PREFIX}/pgsql
+
+backupwarning() {
+	echo "
+  =========== BACKUP YOUR DATA! =============
+  As always, backup your data before
+  upgrading. If the upgrade leads to a higher
+  minor revision (e.g. 7.3.x -> 7.4), a dump
+  and restore of all databases is
+  required. This is *NOT* done by the port!
+
+  Press ctrl-C *now* if you need to pg_dump.
+  ===========================================
+"
+	sleep 5
+}
+
+case $2 in
+PRE-INSTALL)
+#	backupwarning
+	USER=pgsql
+	GROUP=${USER}
+	UID=70
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d ${DB_DIR} -c "PostgreSQL Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! [ -x ~pgsql ] ; then 
+		mkdir -p ${DB_DIR}
+		chown pgsql:pgsql ${DB_DIR}
+	fi
+	;;
+
+BACKUPWARNING)
+#	backupwarning
+	;;
+esac

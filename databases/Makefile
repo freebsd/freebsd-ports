@@ -174,6 +174,7 @@
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgbash
+    SUBDIR += pgcluster
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin

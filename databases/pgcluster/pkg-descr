@@ -1,0 +1,4 @@
+PGCluster is a multi-master and synchronous replication system that
+supports load balancing of PostgreSQL.
+
+WWW: http://www.csra.co.jp/~mitani/jpug/pgcluster/

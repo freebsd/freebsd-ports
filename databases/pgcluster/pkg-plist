@@ -1,0 +1,95 @@
+bin/clusterdb
+bin/createdb
+bin/createlang
+bin/createuser
+bin/dropdb
+bin/droplang
+bin/dropuser
+bin/ecpg
+bin/initdb
+bin/initlocation
+bin/ipcclean
+bin/pg_config
+bin/pg_controldata
+bin/pg_ctl
+bin/pg_dump
+bin/pg_dumpall
+bin/pg_encoding
+bin/pg_id
+bin/pg_resetxlog
+bin/pg_restore
+%%PGLB%%bin/pglb
+%%PGRP%%bin/pgreplicate
+bin/postgres
+bin/postmaster
+bin/psql
+bin/vacuumdb
+%%PGLB%%etc/pglb.conf.sample
+%%PGRP%%etc/pgreplicate.conf.sample
+etc/rc.d/pgcluster.sh
+%%PGLB%%etc/rc.d/pglb.sh
+%%PGRP%%etc/rc.d/pgreplicate.sh
+include/ecpgerrno.h
+include/ecpglib.h
+include/ecpgtype.h
+include/libpq-fe.h
+include/libpq/libpq-fs.h
+include/pg_config.h
+include/pg_config_os.h
+include/postgres_ext.h
+include/postgresql/internal/c.h
+include/postgresql/internal/lib/dllist.h
+include/postgresql/internal/libpq-int.h
+include/postgresql/internal/libpq/pqcomm.h
+include/postgresql/internal/postgres_fe.h
+include/postgresql/internal/pqexpbuffer.h
+include/sql3types.h
+include/sqlca.h
+lib/libecpg.a
+lib/libecpg.so
+lib/libecpg.so.3
+lib/libpq.a
+lib/libpq.so
+lib/libpq.so.3
+lib/postgresql/ascii_and_mic.so
+lib/postgresql/cyrillic_and_mic.so
+lib/postgresql/euc_cn_and_mic.so
+lib/postgresql/euc_jp_and_sjis.so
+lib/postgresql/euc_kr_and_mic.so
+lib/postgresql/euc_tw_and_big5.so
+lib/postgresql/latin2_and_win1250.so
+lib/postgresql/latin_and_mic.so
+lib/postgresql/plpgsql.so
+lib/postgresql/utf8_and_ascii.so
+lib/postgresql/utf8_and_big5.so
+lib/postgresql/utf8_and_cyrillic.so
+lib/postgresql/utf8_and_euc_cn.so
+lib/postgresql/utf8_and_euc_jp.so
+lib/postgresql/utf8_and_euc_kr.so
+lib/postgresql/utf8_and_euc_tw.so
+lib/postgresql/utf8_and_gb18030.so
+lib/postgresql/utf8_and_gbk.so
+lib/postgresql/utf8_and_iso8859.so
+lib/postgresql/utf8_and_iso8859_1.so
+lib/postgresql/utf8_and_johab.so
+lib/postgresql/utf8_and_sjis.so
+lib/postgresql/utf8_and_tcvn.so
+lib/postgresql/utf8_and_uhc.so
+lib/postgresql/utf8_and_win1250.so
+lib/postgresql/utf8_and_win1256.so
+lib/postgresql/utf8_and_win874.so
+share/postgresql/cluster.conf.sample
+share/postgresql/conversion_create.sql
+share/postgresql/pg_hba.conf.sample
+share/postgresql/pg_ident.conf.sample
+share/postgresql/postgres.bki
+share/postgresql/postgres.description
+share/postgresql/postgresql.conf.sample
+@dirrm include/libpq
+@dirrm include/postgresql/internal/lib
+@dirrm include/postgresql/internal/libpq
+@dirrm include/postgresql/internal
+@dirrm include/postgresql
+@dirrm lib/postgresql
+@dirrm share/postgresql
+@unexec rmdir %D/pgsql 2>/dev/null || true

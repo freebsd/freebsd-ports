@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pglb
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable pglb:
+#
+# pglb_enable="YES"
+#
+
+pglb_enable="NO"
+pglb_data="%%PREFIX%%/pgsql/data"
+pglb_flags=""
+
+. %%RC_SUBR%%
+
+load_rc_config pglb
+
+name=pglb
+command=%%PREFIX%%/bin/pglb
+pglb_user=pgsql
+stop_cmd="pglb_stop"
+
+pglb_flags="${pglb_flags} -D ${pglb_data}"
+
+pglb_stop()
+{
+    su -m ${pglb_user} -c "exec ${command} -D ${pglb_data} stop"
+}
+
+load_rc_config $name
+run_rc_command "$1"

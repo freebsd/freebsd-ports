@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pgcluster
+# REQUIRE: DAEMON
+# BEFORE:  pgreplicate
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable pgcluster:
+#
+# pgcluster_enable="YES"
+# # optional
+# pgcluster_data="/home/pgsql/data"
+# pgcluster_flags="-w -s"
+#
+
+pgcluster_enable="NO"
+pgcluster_data="%%PREFIX%%/pgsql/data"
+pgcluster_flags="-w -s"
+
+. %%RC_SUBR%%
+
+load_rc_config pgcluster
+
+name=pgcluster
+command=%%PREFIX%%/bin/pg_ctl
+pgcluster_user=pgsql
+extra_commands="initdb recover"
+initdb_cmd="pgcluster_initdb"
+recover_cmd="pgcluster_recover"
+start_cmd="pgcluster_start"
+stop_cmd="pgcluster_stop"
+
+pgcluster_flags="${pgcluster_flags} -D ${pgcluster_data}"
+pidfile="${pgcluster_data}/postmaster.pid"
+
+pgcluster_start()
+{
+    su -m ${pgcluster_user} -c "exec ${command} start ${pgcluster_flags} -o '-i'"
+}
+pgcluster_stop()
+{
+    su -m ${pgcluster_user} -c "exec ${command} stop ${pgcluster_flags} -m i"
+}
+pgcluster_recover()
+{
+    su -m ${pgcluster_user} -c "exec ${command} start ${pgcluster_flags} -o '-i -R'"
+}
+pgcluster_initdb()
+{
+    su -m ${pgcluster_user} -c "exec %%PREFIX%%/bin/initdb -D ${pgcluster_data}"
+}
+
+load_rc_config $name
+run_rc_command "$1"
