@@ -13,6 +13,7 @@ locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/help/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/mozldap/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/forms/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/messenger-smime/
+locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/messenger-mdn/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/chatzilla/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/venkman/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/inspector/
