@@ -60,7 +60,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/ppower4 ${PREFIX}/bin/ppower4
 
 post-install:
-	${SETENV} LOCALBASE=${LOCALBASE} ${SH} ${PKGDIR}/pkg-install \
-		${PKGNAME} POST-INSTALL
+	${SETENV} LOCALBASE=${LOCALBASE} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
