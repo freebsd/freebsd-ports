@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 		ftp://ftp.fu-berlin.de/unix/sound/xmms/plugins/avi-xmms/
 DISTNAME=	avi-xmms-${PORTVERSION}
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		Maintainer is working on a fix
 
