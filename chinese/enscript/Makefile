@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 PAPERSIZE=	a4
 MASTERDIR=	${.CURDIR}/../../print/enscript-letter
 

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../x11/rxvt
 
 .if !defined(NO_MULTIBYTE_CURSOR)

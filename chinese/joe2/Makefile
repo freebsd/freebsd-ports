@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../editors/joe
 
 PATCH_SITES=	http://freebsd.sinica.edu.tw/~statue/

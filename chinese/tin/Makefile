@@ -6,6 +6,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../news/tin
 
 PORTREVISION=	1
