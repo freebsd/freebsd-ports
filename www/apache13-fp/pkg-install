@@ -134,10 +134,10 @@ case $2 in
 	create_user
 	;;
     POST-INSTALL)
+	create_apache_doc_root
+	fix_httpd_conf
 	# If we are not in batch mode
-        if [ "${PKG_BATCH}" = "NO" ]; then
-	    create_apache_doc_root
-	    fix_httpd_conf
+	if [ "${PKG_BATCH}" = "NO" ]; then
 	    ${FPINSTALL}
 	    fix_frontpage_cnf
 	    comment_files

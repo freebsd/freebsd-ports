@@ -1,3 +1,4 @@
+bin/checkgid
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
@@ -645,7 +646,10 @@ www/icons/world2.png
 @dirrm share/doc/apache/manual/vhosts
 @dirrm share/doc/apache/manual
 @dirrm share/doc/apache
+@dirrm www/cgi-bin
 @dirrm www/cgi-bin.default
+@dirrm www/data/images
+@dirrm www/data
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
