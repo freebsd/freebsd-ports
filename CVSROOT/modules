@@ -7462,6 +7462,7 @@ xparam		ports/devel/xparam
 xpat2		ports/games/xpat2
 xpbiff		ports/mail/xpbiff
 xpbiff-youbin	ports/mail/xpbiff-youbin
+xpcd		ports/graphics/xpcd
 xpdf		ports/graphics/xpdf
 xpenguins	ports/games/xpenguins
 xperfmon	ports/sysutils/xperfmon
