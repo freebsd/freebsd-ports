@@ -1,5 +1,5 @@
---- Xmakefile	Fri Jan 31 22:47:59 1997
-+++ /home/andy/tmp/wrk/Xmakefile	Sat Jul  4 19:07:47 1998
+--- Xmakefile.orig	Fri Jan 31 14:47:59 1997
++++ Xmakefile	Sun May  2 00:40:04 1999
 @@ -77,17 +77,27 @@
  #UILFLAGS=-I/usr/include/uil -I/usr/include/Motif1.2/uil
  ###
@@ -12,7 +12,7 @@
 +CXXFLAGS+= $(XINCLUDES)
 +LDFLAGS+=-L$(X11BASE)/lib
 +LDLIBS=
-+MOTIFLIBS=-lXm -lXmu -lXt -lX11
++MOTIFLIBS=-lXm -lXmu -lXt -lX11 ${MOTIFLIB}
 +
  #LDLIBS = -lPW
  # Program configuration
