@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -28,7 +27,7 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	06
+JDK_REVISION=	07
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7163
@@ -57,7 +56,7 @@ pre-extract:
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} +291 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} +293 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
