@@ -1,0 +1,17 @@
+$FreeBSD$
+
+*** configure.h.in.orig	Fri Jul 30 23:51:22 2004
+--- configure.h.in	Fri Jul 30 23:51:27 2004
+***************
+*** 1,10 ****
+  #include "config.h"
+  
+- #ifdef __FreeBSD__
+- #include <sys/syslimits.h>
+- #else
+  #include <limits.h>
+- #endif
+  
+  /* we don't do interhost network communications ! WE use Unix domain sockets! */
+  #define SAME_HOST
+--- 1,6 ----
