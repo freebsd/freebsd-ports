@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.279 1999/06/25 20:21:43 jseger Exp $
+# $Id: Makefile,v 1.280 1999/06/27 17:42:48 cpiazza Exp $
 #
 
     SUBDIR += IglooFTP
@@ -12,9 +12,6 @@
     SUBDIR += beroftpd
     SUBDIR += bing
     SUBDIR += binkd
-    SUBDIR += bitchx
-    SUBDIR += blackened
-    SUBDIR += bnc
     SUBDIR += boclient
     SUBDIR += bounce
     SUBDIR += bpft
@@ -53,7 +50,6 @@
     SUBDIR += epic4
     SUBDIR += etherboot
     SUBDIR += ethereal
-    SUBDIR += ezbounce
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
@@ -80,11 +76,6 @@
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += ipw
-    SUBDIR += irc
-    SUBDIR += ircII
-    SUBDIR += ircd-hybrid
-    SUBDIR += ircii-epic
-    SUBDIR += irssi
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
     SUBDIR += jmirror
@@ -92,7 +83,6 @@
     SUBDIR += kdenetwork11-i18n
     SUBDIR += kdetelnet
     SUBDIR += kicq
-    SUBDIR += kvirc
     SUBDIR += ksamba
     SUBDIR += ldap
     SUBDIR += ldapsdk
@@ -113,7 +103,6 @@
     SUBDIR += mrt
     SUBDIR += mrtg
     SUBDIR += mtr
-    SUBDIR += muh
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += ncftp
@@ -124,7 +113,6 @@
     SUBDIR += netcat
     SUBDIR += netpipes
     SUBDIR += nettest
-    SUBDIR += ninja
     SUBDIR += nocol
     SUBDIR += ns
     SUBDIR += nslint
@@ -167,7 +155,6 @@
     SUBDIR += rinetd
     SUBDIR += ripetools
     SUBDIR += rmsg
-    SUBDIR += roxirc
     SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += rtsp_proxy
@@ -176,8 +163,6 @@
     SUBDIR += scotty
     SUBDIR += sendfile
     SUBDIR += sharity-light
-    SUBDIR += sic
-    SUBDIR += sirc
     SUBDIR += slirp
     SUBDIR += smbtcpdump
     SUBDIR += sniffit
@@ -193,10 +178,8 @@
     SUBDIR += tik
     SUBDIR += tintin++
     SUBDIR += tinyfugue
-    SUBDIR += tkirc
     SUBDIR += traceroute
     SUBDIR += trafshow
-    SUBDIR += trickyirc
     SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += ucd-snmp
@@ -208,19 +191,15 @@
     SUBDIR += wxftp
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
-    SUBDIR += xchat
     SUBDIR += xferstats
-    SUBDIR += xgirc
     SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += xwhois
     SUBDIR += yafc
-    SUBDIR += yagirc
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zephyr
-    SUBDIR += zircon
     SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>
