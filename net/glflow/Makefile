@@ -7,6 +7,7 @@
 
 PORTNAME=	glflow
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://night.rdslink.ro/dudu/glflow/
