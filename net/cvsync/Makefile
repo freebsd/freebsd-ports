@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsync
 PORTVERSION=	0.24.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -22,6 +22,7 @@ DOCS=		doc/COPYRIGHT doc/ChangeLog doc/FAQ doc/TODO
 EXAMPLES=	samples/cvsync.conf samples/cvsyncd.conf \
 		samples/cvsyncd-NetBSD.conf samples/cvsyncd-OpenBSD.conf
 
+MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_FLAGS=	OSVER="${OSVERSION}"
 
 .if defined(WITH_OPENSSL)
