@@ -8,7 +8,7 @@
 PORTNAME=	X11
 PORTVERSION=	3.3
 CATEGORIES=     russian x11
-MASTER_SITES=   http://nagual.pp.ru/~ache/koi8/dist/ \
+MASTER_SITES=   http://koi8.pp.ru/dist/ \
 		ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
 DISTFILES=      x6rus-2.3.1-bin.tgz
 
