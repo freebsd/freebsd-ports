@@ -9,6 +9,10 @@
 %%WWWROOT%%/config/shells
 %%WWWROOT%%/graphics/banner.jpg
 %%WWWROOT%%/graphics/printLogo.jpg
+%%WWWROOT%%/graphics/select.png
+%%WWWROOT%%/graphics/error.png
+%%WWWROOT%%/graphics/info.png
+%%WWWROOT%%/graphics/warn.png
 %%WWWROOT%%/help/extFileExample.php
 %%WWWROOT%%/help/help_numbers.assign
 %%WWWROOT%%/help/help.inc
@@ -64,6 +68,7 @@
 %%WWWROOT%%/templates/profedit/profilehost.php
 %%WWWROOT%%/templates/profedit/profilemain.php
 %%WWWROOT%%/templates/profedit/profileuser.php
+%%WWWROOT%%/templates/profedit/profilegroup.php
 %%WWWROOT%%/templates/config/conflogin.php
 %%WWWROOT%%/templates/config/confmain.php
 %%WWWROOT%%/templates/config/confsave.php
@@ -76,10 +81,13 @@
 %%WWWROOT%%/templates/massdetail.php
 %%WWWROOT%%/templates/domain.php
 %%WWWROOT%%/templates/initsuff.php
-%%WWWROOT%%/templates/account.php
 %%WWWROOT%%/templates/masscreate.php
 %%WWWROOT%%/templates/delete.php
 %%WWWROOT%%/templates/help.php
+%%WWWROOT%%/templates/account/hostedit.php
+%%WWWROOT%%/templates/account/useredit.php
+%%WWWROOT%%/templates/account/groupedit.php
+%%WWWROOT%%/templates/getpdf.php
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -89,6 +97,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.pl
 %%PORTDOCS%%%%DOCSDIR%%/README.openldap
 %%PORTDOCS%%%%DOCSDIR%%/README.shells
+%%PORTDOCS%%%%DOCSDIR%%/README.hosts
+%%PORTDOCS%%%%DOCSDIR%%/README.security
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm %%WWWROOT%%/graphics
 @dirrm %%WWWROOT%%/help
@@ -99,6 +109,7 @@
 @dirrm %%WWWROOT%%/locale/de_DE
 @dirrm %%WWWROOT%%/locale
 @dirrm %%WWWROOT%%/style
+@dirrm %%WWWROOT%%/templates/account
 @dirrm %%WWWROOT%%/templates/lists
 @dirrm %%WWWROOT%%/templates/profedit
 @dirrm %%WWWROOT%%/templates/config
