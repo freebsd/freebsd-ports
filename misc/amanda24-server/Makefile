@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
 
 MAINTAINER=	cwt@FreeBSD.org
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
+BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 WRKSRC=		${WRKDIR}/amanda-2.4.1p1
 NO_LATEST_LINK=	yes

@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
+BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 .include <bsd.port.pre.mk>
 
