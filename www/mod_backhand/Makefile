@@ -17,7 +17,7 @@ RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 APXS?=		${LOCALBASE}/sbin/apxs
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-apxs
+CONFIGURE_ARGS=	--with-apxs="${APXS}"
 
 # mod_backhand's install target is buggered.
 do-install:
