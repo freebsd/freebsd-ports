@@ -1,5 +1,6 @@
 bin/fusenshi
 share/fusenshi/pixmaps/fusenshi.xpm
+share/fusenshi/pixmaps/fusenshi_small.xpm
 share/locale/ja/LC_MESSAGES/fusenshi.mo
 @dirrm share/fusenshi/pixmaps
 @dirrm share/fusenshi

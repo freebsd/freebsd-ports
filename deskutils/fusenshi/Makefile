@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fusenshi
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -18,7 +17,7 @@ COMMENT=	A Post-it(R) like application with network support
 
 USE_XLIB=	yes
 USE_GNOME=	libxml2
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/fusenshi
