@@ -1,0 +1,11 @@
+--- epplets/Emix.c.orig	Mon Dec 27 18:41:49 1999
++++ epplets/Emix.c	Mon Dec 27 18:41:58 1999
+@@ -6,7 +6,7 @@
+ 
+ #include <epplet.h>
+ #include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ int open_mixer(void);
+ int read_volume(int);

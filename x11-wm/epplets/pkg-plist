@@ -1,9 +1,18 @@
+bin/E-Areas.epplet
 bin/E-Biff.epplet
 bin/E-Clock.epplet
 bin/E-Cpu.epplet
+bin/E-Disk.epplet
 bin/E-Load.epplet
+bin/E-MemWatch.epplet
 bin/E-Net.epplet
+bin/E-NetFlame.epplet
+bin/E-Power.epplet
+bin/E-ScreenShoot.epplet
+bin/E-Sys.epplet
 bin/E-Time.epplet
+bin/Emix.epplet
+bin/EppletConfigTest.epplet
 bin/EppletTest.epplet
 include/epplet.h
 lib/libepplet.a
@@ -12,6 +21,7 @@ lib/libepplet.so
 lib/libepplet.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/enlightenment/epplet_icons/7of9.png
 share/enlightenment/epplet_icons/E-Biff.icon
 share/enlightenment/epplet_icons/E-Clock-Image.png
 share/enlightenment/epplet_icons/E-Clock.ABOUT/MAIN
@@ -24,8 +34,48 @@ share/enlightenment/epplet_icons/E-Cpu.ABOUT/bg.png
 share/enlightenment/epplet_icons/E-Cpu.icon
 share/enlightenment/epplet_icons/E-Load.icon
 share/enlightenment/epplet_icons/E-Net.icon
+share/enlightenment/epplet_icons/E-NetFlame.ABOUT/MAIN
+share/enlightenment/epplet_icons/E-NetFlame.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/E-NetFlame.ABOUT/bg.png
+share/enlightenment/epplet_icons/E-NetFlame.icon
+share/enlightenment/epplet_icons/E-Power-Bat-0.png
+share/enlightenment/epplet_icons/E-Power-Bat-10.png
+share/enlightenment/epplet_icons/E-Power-Bat-100.png
+share/enlightenment/epplet_icons/E-Power-Bat-20.png
+share/enlightenment/epplet_icons/E-Power-Bat-30.png
+share/enlightenment/epplet_icons/E-Power-Bat-40.png
+share/enlightenment/epplet_icons/E-Power-Bat-50.png
+share/enlightenment/epplet_icons/E-Power-Bat-60.png
+share/enlightenment/epplet_icons/E-Power-Bat-70.png
+share/enlightenment/epplet_icons/E-Power-Bat-80.png
+share/enlightenment/epplet_icons/E-Power-Bat-90.png
+share/enlightenment/epplet_icons/E-Power.ABOUT/MAIN
+share/enlightenment/epplet_icons/E-Power.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/E-Power.ABOUT/bg.png
+share/enlightenment/epplet_icons/E-Power.icon
+share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT/E_ScreenShoot_buttons.png
+share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT/E_ScreenShoot_cloak.png
+share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT/MAIN
+share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT/bg.png
+share/enlightenment/epplet_icons/E-ScreenShoot.icon
+share/enlightenment/epplet_icons/E-ScreenShoot_col.png
+share/enlightenment/epplet_icons/E-ScreenShoot_minitime.png
+share/enlightenment/epplet_icons/E-ScreenShoot_minitime2.png
+share/enlightenment/epplet_icons/E-ScreenShoot_root.png
+share/enlightenment/epplet_icons/E-ScreenShoot_shoot.png
+share/enlightenment/epplet_icons/E-ScreenShoot_time.png
+share/enlightenment/epplet_icons/E-ScreenShoot_win.png
+share/enlightenment/epplet_icons/Emix.ABOUT/MAIN
+share/enlightenment/epplet_icons/Emix.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/Emix.ABOUT/bg.png
+share/enlightenment/epplet_icons/Emix.icon
 share/enlightenment/epplet_icons/newmail.png
 share/enlightenment/epplet_icons/nomail.png
 @dirrm share/enlightenment/epplet_icons/E-Clock.ABOUT
 @dirrm share/enlightenment/epplet_icons/E-Cpu.ABOUT
+@dirrm share/enlightenment/epplet_icons/E-NetFlame.ABOUT
+@dirrm share/enlightenment/epplet_icons/E-Power.ABOUT
+@dirrm share/enlightenment/epplet_icons/E-ScreenShoot.ABOUT
+@dirrm share/enlightenment/epplet_icons/Emix.ABOUT
 @dirrm share/enlightenment/epplet_icons
