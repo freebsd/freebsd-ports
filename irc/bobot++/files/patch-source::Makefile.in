@@ -1,0 +1,13 @@
+--- source/Makefile.in.orig	Fri Sep  7 21:53:43 2001
++++ source/Makefile.in	Fri Sep  7 21:53:51 2001
+@@ -4,8 +4,8 @@
+ DEFINES=@HAVE_STL_CLEAR@ @DISABLE_CRYPT@ @GUILE_DEFINES@ @TSERVER_DEFINES@
+ 
+ RM=rm -f
+-CXX=@CXX@ -g
+-CXXFLAGS=$(DEFINES)
++CXX=@CXX@
++CXXFLAGS+=$(DEFINES)
+ LDFLAGS=@LDFLAGS@ @GUILE_LIBS@
+ 
+ SOURCES=BanEntry.C \

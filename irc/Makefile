@@ -4,6 +4,7 @@
     SUBDIR += bitchx
     SUBDIR += blackened
     SUBDIR += bnc
+    SUBDIR += bobot++
     SUBDIR += dcc
     SUBDIR += dircproxy
     SUBDIR += epic4

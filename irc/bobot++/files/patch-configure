@@ -1,0 +1,13 @@
+--- configure.orig	Fri Sep  7 21:52:05 2001
++++ configure	Fri Sep  7 21:53:18 2001
+@@ -545,8 +545,8 @@
+   enableval="$enable_script"
+   
+   if test $enableval = "yes"; then
+-    GUILE_DEFINES="-DUSESCRIPTS -DMULTITHREAD"
+-    GUILE_LIBS="-lguile"
++    GUILE_DEFINES="-DUSESCRIPTS -DMULTITHREAD `%%GUILE_CONFIG%% compile` %%PTHREAD_CFLAGS%%"
++    GUILE_LIBS="-lguile `%%GUILE_CONFIG%% link` %%PTHREAD_LIBS%%"
+     GUILE_SOURCES="BotInterp.C Interp.C ScriptCommands.C"
+     GUILE_INCLUDES="BotInterp.H Interp.H ScriptCommands.H"
+   fi
