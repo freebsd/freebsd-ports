@@ -1,14 +1,15 @@
 --- antivirus.c.orig	Tue Jul 15 21:27:14 2003
-+++ antivirus.c	Fri Mar  5 07:56:07 2004
-@@ -85,6 +85,7 @@
++++ antivirus.c	Wed Nov 17 07:19:12 2004
+@@ -85,6 +85,8 @@
  static char *FORMAT=NULL;
  static sfsistat avfailcode=0;
  static int purgevirus=0;
 +static int skipwords=0;
++static int ignorerror2=0;
  static char *avargs[]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
  
  /*
-@@ -128,6 +129,12 @@
+@@ -128,6 +130,12 @@
  #define FORMAT_SOPHOS ">>> Virus '%[^']s' found in file %*s"
  
  /*
@@ -21,7 +22,7 @@
  ** this can be given on the command line
  */
  static char *configfile=NULL;
-@@ -502,6 +509,7 @@
+@@ -502,6 +510,7 @@
    int retval;
    int fd;
    int i;
@@ -29,7 +30,19 @@
    char *p=NULL;
    char *av[]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
  
-@@ -558,7 +566,14 @@
+@@ -552,13 +561,26 @@
+ 	     (int)ctx, retval,priv->workdir);
+     }
+ 
++  if (ignorerror2 > 0 )
++    {
++	if ( retval == 2 )
++		retval = 0;
++    }
++	
+   if (retval>0)
+     {
+       fseek(priv->childfp,0,SEEK_SET);
        memset(viruses,0,sizeof(buf));
        while (fgets(buf,sizeof(buf),priv->childfp)!=NULL)
  	{
@@ -45,7 +58,7 @@
  	    {
  	      if (viruses[0])
  		strncat(viruses," ",sizeof(viruses));
-@@ -1211,6 +1226,7 @@
+@@ -1211,6 +1233,7 @@
    if (AVFAILACTION==NULL) AVFAILACTION=CONF_AVFAILACTION;
    if (VIRUSACTION==NULL) VIRUSACTION=CONF_VIRUSACTION;
  
@@ -53,7 +66,7 @@
    if (strcasecmp(AVPRODUCT,"mcafee")==0)
      {
        FORMAT=FORMAT_MCAFEE;
-@@ -1225,10 +1241,16 @@
+@@ -1225,10 +1248,17 @@
      {
        FORMAT=FORMAT_FSAV;
      }
@@ -62,6 +75,7 @@
 +      FORMAT=FORMAT_CLAMAV;
 +      AVSCANARGS=SCANARGS_CLAMAV;
 +      skipwords = 1;
++      ignorerror2 = 1;
 +    }
    else
      {
