@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.8.11
+PORTVERSION=	0.8.12
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -32,7 +32,7 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 # Please don't remove the comments, as soon as autoconf/libtool get's
 # updated in the ports collection the comments may be removed.
 # They serve as a reminder.
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 #LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 USE_REINPLACE=	yes
