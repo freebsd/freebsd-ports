@@ -1,45 +1,32 @@
-*** ../examples/DeFT	Fri Aug 28 06:35:41 1998
---- ../examples/DeFT.new	Sun May  9 23:41:43 1999
-***************
-*** 1,10 ****
-  #
-! # here is the shell for running DeFT
-  #
-  
-! setenv my_directory $HOME/DeFT_2.2/examples
-! setenv DeFT_directory $HOME/DeFT_2.2
-! setenv temp_directory /scratch/tmp$$
-  
-  mkdir $temp_directory
-  cd $temp_directory
---- 1,11 ----
-+ #!/bin/csh -f
-  #
-! # running DeFT
-  #
-  
-! setenv my_directory $2
-! setenv DeFT_directory /usr/local/share/doc/DeFT
-! setenv temp_directory /usr/tmp/tmp$$
-  
-  mkdir $temp_directory
-  cd $temp_directory
-***************
-*** 19,27 ****
-  
-  chmod u+w $temp_directory/*
-  
-! cp $DeFT_directory/source/DeFT             DeFT
-! 
-! time DeFT < input >& $my_directory/$1.out
-  
-  cp new_restart $my_directory/$1.rst
-  cp espf        $my_directory/$1.espf
---- 20,26 ----
-  
-  chmod u+w $temp_directory/*
-  
-! time DeFT.exec < input >& $my_directory/$1.out
-  
-  cp new_restart $my_directory/$1.rst
-  cp espf        $my_directory/$1.espf
+--- ../examples/DeFT.orig	Thu Aug 27 16:35:41 1998
++++ ../examples/DeFT	Wed May 31 18:40:28 2000
+@@ -1,10 +1,14 @@
++#!/bin/csh -f
+ #
+-# here is the shell for running DeFT
++# running DeFT
+ #
+ 
+-setenv my_directory $HOME/DeFT_2.2/examples
+-setenv DeFT_directory $HOME/DeFT_2.2
+-setenv temp_directory /scratch/tmp$$
++setenv my_directory $2
++if (null$my_directory == null) then
++    setenv my_directory `echo $PWD`
++endif
++setenv DeFT_directory /usr/local/share/DeFT
++setenv temp_directory /usr/tmp/tmp$$
+ 
+ mkdir $temp_directory
+ cd $temp_directory
+@@ -19,9 +23,7 @@
+ 
+ chmod u+w $temp_directory/*
+ 
+-cp $DeFT_directory/source/DeFT             DeFT
+-
+-time DeFT < input >& $my_directory/$1.out
++time DeFT.exec < input >& $my_directory/$1.out
+ 
+ cp new_restart $my_directory/$1.rst
+ cp espf        $my_directory/$1.espf

@@ -2,10 +2,18 @@
 # Makefile for DeFT
 #
 TARGET = DeFT.exec
-.if ${MACHINE_ARCH} != "i386"
-FFLAGS = -O2
-.else
-FFLAGS = -O2 -malign-double -Nn802
+FFLAGS += -w
+CFLAGS += -w
+.if ${MACHINE_ARCH} == "i386"
+FFLAGS += -malign-double
+CFLAGS += -malign-double
+.endif
+F2C = f2c
+F2CFLAGS += -w -Nn802
+.if ${OSVERSION} >= 400005
+#FC = ftn77
+FC = fc
+CFLAGS += -I${PREFIX}/include
 .endif
 LFLAGS = 
 SRCS:sh = ls *.f
@@ -15,6 +23,10 @@ all: ${TARGET}
 
 ${TARGET}: ${OBJS}
 	${FC} ${LFLAGS} ${OBJS} -o $@
+
+cdgrxx.o:
+	${F2C} ${F2CFLAGS} cdgrxx.f
+	${CC} ${CFLAGS} -c cdgrxx.c
 
 clean:
 	rm -f ${OBJS} ${TARGET}
