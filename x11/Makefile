@@ -147,6 +147,7 @@
     SUBDIR += xcut
     SUBDIR += xdialog
     SUBDIR += xdtm
+    SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfedor
     SUBDIR += xfishtank
     SUBDIR += xfree86_xkb_xml
