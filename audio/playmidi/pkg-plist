@@ -3,4 +3,3 @@ lib/midi/std.o3
 lib/midi/std.sb
 lib/midi/drums.o3
 lib/midi/drums.sb
-man/man1/playmidi.1.gz

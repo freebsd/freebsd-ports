@@ -21,5 +21,3 @@ lib/mpegaudio/tables/alloc_2
 lib/mpegaudio/tables/alloc_3
 lib/mpegaudio/tables/dewindow
 lib/mpegaudio/tables/enwindow
-man/man1/mpeg_musicin.1.gz
-man/man1/mpeg_musicout.1.gz

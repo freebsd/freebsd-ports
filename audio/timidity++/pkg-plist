@@ -1,7 +1,6 @@
 bin/timidity
 bin/bag
 bin/wav2pat
-man/man1/timidity.1.gz
 lib/timidity/timidity.cfg
 lib/timidity/gsdrum.cfg
 lib/timidity/gravis.cfg
