@@ -27,7 +27,7 @@ DOCS=	german_readme.txt license.txt readme.txt
 BRANDELF=	/usr/bin/brandelf
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\r\n|\n|;s|email|username|" ${WRKSRC}/*.txt
+	@${REINPLACE_CMD} -e "s|||;s|email|username|" ${WRKSRC}/*.txt
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 
