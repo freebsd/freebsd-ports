@@ -60,7 +60,7 @@ RPM_MAKE=		make-3.79.1-5.i386.rpm
 RPM_X_DEVEL=		XFree86-devel-4.0.3-5.i386.rpm
 UPDATES=		cpp-2.96-85.i386.rpm gcc-2.96-85.i386.rpm \
 			gcc-c++-2.96-85.i386.rpm gcc-g77-2.96-85.i386.rpm \
-			kernel-headers-2.4.9-31.i386.rpm \
+			kernel-headers-2.4.9-34.i386.rpm \
 			libstdc++-devel-2.96-85.i386.rpm
 .else
 RPM_CPP=		cpp-2.96-87.alpha.rpm
