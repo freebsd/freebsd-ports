@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Mar 10 13:43:29 2001
++++ Makefile	Sat Mar 10 13:44:01 2001
+@@ -2,10 +2,10 @@
+ TARGET = mp3chew
+ DEPENDS = main.o CMp3Chew.o CMp3Filter.o CMp3SongList.o CMp3Header.o \
+           CMp3Keys.o CMp3Display.o
+-ARGS = -Wall -lpthread -lncurses 
++ARGS = -Wall -lc_r -lncurses 
+ 
+ $(TARGET) : $(DEPENDS)
+-	$(CC) $(ARGS) -o $(TARGET) $(DEPENDS)
++	$(CC) $(CFLAGS) $(ARGS) -o $(TARGET) $(DEPENDS)
+ 	@echo
+ 	@echo "SUCCESS"
+ 	@echo

@@ -1,0 +1,6 @@
+bin/mp3chew
+%%PORTDOCS%%share/doc/mp3chew/CHANGELOG
+%%PORTDOCS%%share/doc/mp3chew/INSTALL
+%%PORTDOCS%%share/doc/mp3chew/README
+%%PORTDOCS%%share/doc/mp3chew/TODO
+%%PORTDOCS%%@dirrm share/doc/mp3chew

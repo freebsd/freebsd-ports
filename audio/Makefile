@@ -99,6 +99,7 @@
     SUBDIR += mixer.app
     SUBDIR += mp3_check
     SUBDIR += mp3blaster
+    SUBDIR += mp3chew
     SUBDIR += mp3encode
     SUBDIR += mp3info
     SUBDIR += mp3rename
