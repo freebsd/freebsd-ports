@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.3 1995/05/03 02:10:55 asami Exp $
+# $Id: Makefile,v 1.4 1995/11/22 13:06:27 asami Exp $
 #
 
 DISTNAME=	groff-1.09
@@ -27,7 +27,7 @@ pre-fetch:
 	    ${ECHO_MSG} ">> ${PATCHFILES} doesn't seem to exist on this system."; \
 	    for file in ${DISTPATCHES} ; do \
 		for site in ${PATCH_SITES} ; do \
-		    if ${NCFTP} ${NCFTPFLAGS} $${site}$${file}; then \
+		    if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 			break; \
 		    fi \
 		done; \
