@@ -100,6 +100,8 @@ STRIP=
 
 .if ${OSVERSION} >= 502126
 BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.else
+BROKEN=			"Broken dependency"
 .endif
 
 .if defined(ARCH) && \
