@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.3
+PORTVERSION=	1.4.3
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/ \
 		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/ \
@@ -18,13 +18,16 @@ MAINTAINER=	perky@python.or.kr
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
-PYDIST_SETUP=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
+SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-build:
-	${PYDIST_SETUP} build
+	${SETUP_CMD} build
 
 do-install:
-	${PYDIST_SETUP} install
+	${SETUP_CMD} install
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.en ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${DOCSDIR}
 
 .include <bsd.port.mk>
