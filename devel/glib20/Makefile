@@ -3,14 +3,14 @@
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/11/02 15:59:38 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/11/17 15:19:57 vanilla Exp $
 #
 
 DISTNAME=	glib-1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
-		http://www.ameth.org/gimp/pub/gtk/v1.1/
+		http://www.ameth.org/gimp/gtk/v1.1/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
