@@ -12,6 +12,9 @@ MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
+
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
