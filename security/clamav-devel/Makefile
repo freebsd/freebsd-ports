@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040229
+PORTVERSION=	20040313
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
