@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Search-Namazu
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.namazu.org/~knok/
 PKGNAMEPREFIX=	p5-
