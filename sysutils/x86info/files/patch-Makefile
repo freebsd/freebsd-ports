@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Nov 14 13:42:46 2002
++++ Makefile	Thu Nov 14 13:42:58 2002
+@@ -4,7 +4,7 @@
+ #CFLAGS += -mwin32 -DWIN32_LEAN_AND_MEAN
+ SHELL = /bin/sh
+ 
+-all: x86info test
++all: x86info
+ 
+ OBJS =\
+ 	AMD/identify.o\
