@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Tue Jan 29 01:13:35 2002
++++ configure.in	Tue Jan 29 01:15:12 2002
+@@ -130,9 +130,8 @@
+ dnl Formulate proper paths based on prefix
+ test "$prefix" = NONE && prefix=/usr/local
+ dnl We need these seperate to use AC_DEFINED_UNQUOTED
+-test "$libdir" = '${exec_prefix}/lib' && libdir=${prefix}/lib
+-test "$sysconfdir" = '/etc' && sysconfdir=/etc
+-AC_DEFINE_UNQUOTED(PATH_MASTER_RC, "/etc/nail.rc")
++eval sysconfdir="$sysconfdir"
++AC_DEFINE_UNQUOTED(PATH_MASTER_RC, "${sysconfdir}/nail.rc")
+ 
+ dnl Checks for libraries.
+ if test "x$enable_efence" = xyes
+@@ -165,7 +164,7 @@
+ AC_CHECK_FUNCS(mktime strtol tempnam getopt, ,
+ 	echo "A required function was not found" >&2
+ 	exit 1)
+-AC_CHECK_FUNCS(gethostname mkstemp select strcasecmp snprintf uname)
++AC_CHECK_FUNCS(gethostname mkstemp select strcasecmp strcasestr snprintf uname)
+ AC_CHECK_FUNCS(nl_langinfo)
+ AC_FUNC_SELECT_ARGTYPES
+ AC_CHECK_FUNC(gethostent, AC_DEFINE(HAVE_SOCKETS),
