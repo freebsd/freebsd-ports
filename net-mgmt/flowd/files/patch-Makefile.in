@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -95,7 +95,7 @@
+ install-conf: flowd.conf
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+ 	test -f $(DESTDIR)$(sysconfdir)/flowd.conf || \
+-	    $(INSTALL) -m 0600 flowd.conf $(DESTDIR)$(sysconfdir)
++	    $(INSTALL) -m 0600 flowd.conf $(DESTDIR)$(sysconfdir)/flowd.conf.sample
+ 
+ install-lib: libflowd.a
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(libdir)
