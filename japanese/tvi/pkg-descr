@@ -1,0 +1,13 @@
+Tvi is a LaTeX source editor for vi user written in tcl/tk.
+
+The main features are following:
+  - one key compiling to dvi file, previewing and printing.
+  - real time coloring.
+  - checking type missing.
+  - spell checking to use ispell.
+  - customize for each users.
+ 
+This author is motomu@kt.rim.or.jp,
+and his page is http://www.kt.rim.or.jp/~motomu/tvi/.
+
+- SUGIMURA Takashi <sugimura@jp.FreeBSD.ORG>
