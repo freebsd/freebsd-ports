@@ -78,6 +78,7 @@
     SUBDIR += lapack++
     SUBDIR += libgmp-freebsd
     SUBDIR += libgmp4
+    SUBDIR += libmath++
     SUBDIR += libneural
     SUBDIR += libranlib
     SUBDIR += linalg
