@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+	echo "Adding 2 lines to /etc/crontab ..."
+	echo "# bsdsar execution" >> /etc/crontab
+	echo "20,40   8-18    *       *       *       root    $PKG_PREFIX/bin/bsdsar_gather /var/log" >> /etc/crontab
+	echo "0       *       *       *       *       root    $PKG_PREFIX/bin/bsdsar_gather /var/log" >> /etc/crontab
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

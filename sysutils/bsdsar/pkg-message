@@ -1,0 +1,11 @@
+====================================================
+NOTE:
+
+The following lines have been added to /etc/crontab:
+
+20,40 8-18  *     *     *   root  $PREFIX/bin/bsdsar_gather /var/log
+0     *     *     *     *   root  $PREFIX/bin/bsdsar_gather /var/log
+
+Where $PREFIX is typically "/usr/local".
+
+====================================================

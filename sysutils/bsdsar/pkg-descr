@@ -1,0 +1,8 @@
+WWW: http://www.googlebit.com/bsdsar/
+
+System Activity Reporter for FreeBSD 4.x systems.
+Stores/shows information on network, cpu, memory,
+swap, and NFS usage.
+
+Written by Eric Anderson
+http://www.googlebit.com/bsdsar/
