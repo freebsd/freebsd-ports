@@ -1,0 +1,12 @@
+This module is intended to help you automate interaction with a website.
+It bears a not-very-remarkable outwards resemblance to WWW::Chat, on
+which it is based.  The main difference between this module and
+WWW::Chat is that WWW::Chat requires a pre-processing stage before you
+can run your script, whereas WWW::Automate does not.
+
+WWW::Automate is a subclass of LWP::UserAgent, so anything you can do
+with an LWP::UserAgent, you can also do with this.  See LWP::UserAgent
+for more information on the possibilities.
+
+Author: Kirrily 'Skud' Robert <skud@infotrope.net>
+WWW: http://search.cpan.org/search?dist=WWW-Automate
