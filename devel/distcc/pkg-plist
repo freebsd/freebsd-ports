@@ -7,8 +7,7 @@ sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/OLDNEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/distcc.info.gz
-%%PORTDOCS%%%%DOCSDIR%%/distcc.pdf
-%%PORTDOCS%%%%DOCSDIR%%/distcc.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/distcc.sgml
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-2.html
