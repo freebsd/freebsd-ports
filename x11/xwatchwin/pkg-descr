@@ -1,0 +1,23 @@
+xwatchwin allows you to peek at a window on another X server. 
+To use it, you must specify the display name of the machine you want
+to watch, then the name of the window on that machine. 
+Xwatchwin will attempt to connect with the X server
+hostname:0.0, and if successful, will try to retrieve a copy of
+the window in which you specified interest.
+
+You may specify the window you want to watch either by name or by its
+window id, usually a hexidecimal number.  Usually specifying the
+window by name is simpler, although not all windows have names
+associated with them; in that case you must use the window id option.
+
+If the window you want to watch is not in a viewable state,
+xwatchwin will tell you so and exit.  If while you are watching
+a window it becomes 'unviewable', xwatchwin will wait until the
+window becomes 'viewable' again.
+
+xwatchwin was written as an aid to a class for people learning
+to use X.  The idea is that the instructor would type into an xterm
+window on his/her display and the students would use xwatchwin
+to see what the instructor typed.  The students could then type the
+same thing in their own terminal windows.  Hopefully others will find
+equally (if not more) constructive uses.
