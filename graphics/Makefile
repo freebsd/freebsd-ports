@@ -252,6 +252,7 @@
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Imager
     SUBDIR += p5-Imlib2
+    SUBDIR += p5-OpenGL
     SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += panorama
