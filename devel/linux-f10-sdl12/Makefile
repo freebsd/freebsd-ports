@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
