@@ -19,7 +19,7 @@ USE_IMAKE=	yes
 MAN1=		nexfontsel.1
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults
-	${INSTALL_DATA} ${WRKSRC}/NeXFontSel-ja.ad ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults/NeXFontSel
+	${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/NeXFontSel-ja.ad ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/NeXFontSel
 
 .include <bsd.port.mk>
