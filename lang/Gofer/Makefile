@@ -11,10 +11,15 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A lazy functional language
 
 WRKSRC=		${WRKDIR}/src
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUSE_READLINE=1" \
+		LDFLAGS="${LDFLAGS} -lm -lreadline" OPTFLAGS=""
+
+DOCSDIR=	${PREFIX}/share/doc/Gofer
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
@@ -33,8 +38,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
 	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/Gofer
-	${INSTALL_DATA} ${WRKDIR}/docs/* ${PREFIX}/share/doc/Gofer
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/docs/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
