@@ -2,6 +2,7 @@
 #
 
     SUBDIR += IglooFTP
+    SUBDIR += axyftp
     SUBDIR += cftp
     SUBDIR += curl
     SUBDIR += downloader
@@ -30,7 +31,6 @@
     SUBDIR += spegla
     SUBDIR += wget
     SUBDIR += wu-ftpd
-    SUBDIR += wxftp
     SUBDIR += xrmftp
     SUBDIR += yafc
     SUBDIR += yale-tftpd
