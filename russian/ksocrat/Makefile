@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
 		${PORTNAME}-ruen-dic-1.0.1${EXTRACT_SUFX}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KSocrat is the simple English/Russian Russian/English dictionary
 
 USE_BZIP2=	yes
