@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	Sun Grid Engine, a batch queueing system
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.6:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
