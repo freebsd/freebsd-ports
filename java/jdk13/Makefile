@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -44,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/arphic:${PORTSDIR}/chinese/arphi
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
-JDK_PATCHSET_VERSION=	8
+JDK_PATCHSET_VERSION=	9
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
@@ -133,15 +132,6 @@ PTHREAD_FILES=	common/Defs.gmk \
 	../../hotspot1.3.1/build/linux/makefiles/vm.make
 .endif
 
-.if defined(WITH_HOTSPOT) && ${OSVERSION} < 500039
-USE_GCC=	3.2
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-MAKE_ENV+=	ALT_COMPILER_PATH=${LOCALBASE}/bin
-HOTSPOT_BUILD=	../ext/plugin/build/solaris/GNUmakefile \
-	../../hotspot1.3.1/build/linux/makefiles/adlc.make \
-	../../hotspot1.3.1/build/linux/platform_i486
-.endif
-
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			gtar	# Necessary for proper extraction of sources
@@ -196,20 +186,13 @@ pre-everything::
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 < ${WRKDIR}/jdk131.patches
+		${PATCH} -p0 -E < ${WRKDIR}/jdk131.patches
 
 post-patch:
-.if defined(WITH_HOTSPOT)
-.if defined(USE_GCC) && ${USE_GCC} == 3.2
-	@for file in ${HOTSPOT_BUILD}; do \
-        	${REINPLACE_CMD} -e "s:gcc:gcc32:g ; s:g\+\+:g\+\+32:g" ${WRKSRC}/$${file}; \
-	done
-	@${REINPLACE_CMD} -e "s:PATH[)]gcc:PATH)gcc32:g ; s:PATH[)]g\+\+:PATH)g\+\+32:g" ${WRKSRC}/common/Defs-bsd.gmk 
-.endif
-.endif
+	@-${FIND} ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 	@for file in ${PTHREAD_FILES}; do \
-        	${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
+		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
 	done
 .endif
 
@@ -243,10 +226,10 @@ pre-build:
 
 do-build:
 	# Start of jdk build
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .if defined(WITH_HOTSPOT)
 	# Start of HotSpot build
-	@(cd ${WRKDIR}/hotspot1.3.1/build/linux ;  \
+	(cd ${WRKDIR}/hotspot1.3.1/build/linux ;  \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${HOTSPOT_TARGETS})
 .endif
 
