@@ -1,5 +1,5 @@
---- src/Makefile.orig	Sat Jan 22 14:30:26 2000
-+++ src/Makefile	Sat Aug 18 09:09:18 2001
+--- src/Makefile.orig	Sat Jan 22 11:30:04 2000
++++ src/Makefile	Sun Nov 18 02:45:41 2001
 @@ -13,7 +13,7 @@
  # Make all targets...
  #
@@ -9,7 +9,7 @@
  
  #
  # Remove object and target files...
-@@ -24,31 +24,40 @@
+@@ -24,31 +24,39 @@
  	@$(RM) -f *.o core *~ ../FL/*~ ../FL/*.bak
  
  distclean: clean
@@ -25,13 +25,12 @@
 -	@-chmod 644 $(libdir)/$(LIBNAME).a
 -	@echo "Installing include files..."
 +	@rm -f $(libdir)/libflvw.a $(libdir)/libflvw.so*
-+	@-cp ../lib/libflvw.a ../lib/libflvw.so.1 $(libdir)
++	@-$(BSD_INSTALL_DATA) ../lib/libflvw.a ../lib/libflvw.so.1 $(libdir)
 +	@-ln -s libflvw.so.1 $(libdir)/libflvw.so
-+	@-chmod 644 $(libdir)/libflvw.a $(libdir)/libflvw.so.1
 +	@echo "Installing headers..."
  	@-mkdir -p $(includedir)/FL
 -	@-cp -r ../FL/* $(includedir)/FL/
-+	@-cp ../FL/*.H $(includedir)/FL/
++	@-$(BSD_INSTALL_DATA) ../FL/*.H $(includedir)/FL/
  
  #
  # Make the flvw widget library.
