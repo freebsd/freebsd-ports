@@ -1,3 +1,14 @@
+--- stat.fmt.c.orig	Sun Feb 16 05:12:33 1997
++++ stat.fmt.c	Sun Sep 19 09:55:50 1999
+@@ -440,7 +440,7 @@
+ 					break;
+ 
+ 				case 'd':	/* The Device	*/
+-					sprintf(auxbuf, "%ld", ip -> st_dev);
++					sprintf(auxbuf, "%2d,%-2d",  major(ip -> st_dev), minor(ip -> st_dev));
+ 					bufp = fmt_app(auxbuf, bufp);
+ 					break;
+ 
 --- stat.fmt.c.orig	Tue Dec 28 12:14:24 1999
 +++ stat.fmt.c	Tue Dec 28 12:15:20 1999
 @@ -502,2 +502,3 @@
