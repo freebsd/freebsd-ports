@@ -17,7 +17,8 @@
 PORTNAME=	apr
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.apache.org/dist/apr/
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	apr
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
 MAINTAINER=	rodrigc@crodrigues.org
@@ -30,6 +31,7 @@ USE_ICONV=		yes
 USE_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
 WANT_LIBTOOL_VER=	15
+USE_REINPLACE=		yes
 USE_PERL5=		yes
 USE_GMAKE=		yes
 USE_PYTHON=		yes
@@ -124,8 +126,10 @@ pre-extract:
 	@${ECHO_MSG} ""
 
 post-patch:
-	sed -i .orig1 's/OSVERSION/'${OSVERSION}'/g' \
+	${SED} -i .orig1 's/OSVERSION/'${OSVERSION}'/g' \
 		${WRKDIR}/apr-${PORTVERSION}/build/apr_hints.m4
+	${FIND} ${WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 pre-configure:
 .for d in apr apr-util
@@ -160,15 +164,15 @@ do-install:
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
 
 debug_autoconf:
-	@echo "LIBTOOL: ${LIBTOOL_VERSION}" 
-	@echo "AUTOCONF: dev ${dev_acver} cur ${cur_acver} use ${use_acver}" 
-	@echo "AUTOMAKE: dev ${dev_amver} cur ${cur_amver} use ${use_amver}" 
+	@echo "LIBTOOL: ${LIBTOOL_VERSION}"
+	@echo "AUTOCONF: dev ${dev_acver} cur ${cur_acver} use ${use_acver}"
+	@echo "AUTOMAKE: dev ${dev_amver} cur ${cur_amver} use ${use_amver}"
 	@echo "AUTOCONF_DIR: ${AUTOCONF_DIR}"
 	@echo "BUILD_DEPENDS: ${BUILD_DEPENDS}"
 	@echo "ACLOCAL_DIR: ${ACLOCAL_DIR}"
 	@echo "LIBTOOLFILES: ${LIBTOOLFILES}"
-	@echo "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}" 
-	@echo "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}" 
-	@echo "LIBTOOL_M4: ${LIBTOOL_M4}" 
+	@echo "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}"
+	@echo "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}"
+	@echo "LIBTOOL_M4: ${LIBTOOL_M4}"
 
 .include <bsd.port.post.mk>
