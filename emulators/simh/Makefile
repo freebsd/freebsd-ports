@@ -9,7 +9,7 @@ PORTNAME=	sim
 PORTVERSION=	2.3d
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/ \
-		http://people.FreeBSD.org/~jedgar/distfiles/
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jedgar/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
