@@ -26,6 +26,12 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64 or amd64 (tries to link non-shared with shared libraries)"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/projects/ltg/projects/lcontrib|${LOCALBASE}|' ${WRKSRC}/setup.py
 
@@ -36,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
