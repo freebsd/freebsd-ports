@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6.1
 CATEGORIES=	net python
 MASTER_SITES=	http://thegraveyard.org/files/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client that uses the Qt widget-set
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
