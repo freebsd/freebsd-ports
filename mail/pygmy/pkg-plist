@@ -26,6 +26,9 @@ share/pygmy/folder.pyo
 share/pygmy/folderops.py
 share/pygmy/folderops.pyc
 share/pygmy/folderops.pyo
+share/pygmy/fonts.py
+share/pygmy/fonts.pyc
+share/pygmy/fonts.pyo
 share/pygmy/headers.py
 share/pygmy/headers.pyc
 share/pygmy/headers.pyo
