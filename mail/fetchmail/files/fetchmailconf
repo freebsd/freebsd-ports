@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Wrapper for the real fetchmailconf.  Checks whether Python is installed,
+# and runs the real fetchmailconf or alerts the user, as appropriate.
+#
+#	$Id$
+
+PREFIX=@PREFIX@
+
+if [ -e $PREFIX/bin/python ]; then
+	exec $PREFIX/libexec/fetchmailconf.bin
+else
+	cat <<EOF
+The fetchmailconf program requires Python, which does not appear to be
+installed on this system.  Python can be found in the FreeBSD Ports
+Collection under lang/python.
+EOF
+	exit 1
+fi
