@@ -8,10 +8,8 @@
 PORTNAME=	libjparser
 PORTVERSION=	1.1.8
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/glove/source/ \
-		ftp://ftp.newplanetsoftware.com/pub/thx/source/ \
-		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	JParser_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
