@@ -61,7 +61,7 @@ PLIST_SUB+=	DIVX=''
 
 # pre-detection
 # LIBDV
-.if exists(${LOCALBASE}/lib/libdv.so.1)
+.if exists(${LOCALBASE}/lib/libdv.so.2)
 WITH_LIBDV=	yes
 .endif
 # LIBMOVTAR
