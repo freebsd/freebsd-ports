@@ -1,8 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Boxed.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Error.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Flags.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/GenPod.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/doctypes
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl_marshal.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/typemap
@@ -15,8 +17,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Signal.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Type.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Utils.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/devel.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/xsapi.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.020
-PORTREVISION=	1
+PORTVERSION=	1.040
+PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,26 +21,30 @@ COMMENT=	This module provides access to Glib and GObject libraries
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	disable-threadsafe
+USE_GMAKE=	yes
 
 MAN3=		Glib.3 \
 		Glib::Boxed.3 \
+		Glib::Error.3 \
 		Glib::Flags.3 \
 		Glib::GenPod.3 \
 		Glib::Log.3 \
 		Glib::MainLoop.3 \
+		Glib::MakeHelper.3 \
 		Glib::Object.3 \
 		Glib::Object::Subclass.3 \
 		Glib::ParamSpec.3 \
 		Glib::ParseXSDoc.3 \
 		Glib::Signal.3 \
 		Glib::Type.3 \
+		Glib::Utils.3 \
 		Glib::devel.3 \
 		Glib::index.3 \
+		Glib::version.3 \
 		Glib::xsapi.3
 
 .include <bsd.port.pre.mk>
