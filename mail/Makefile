@@ -81,6 +81,7 @@
     SUBDIR += liamail
     SUBDIR += libesmtp
     SUBDIR += liboe
+    SUBDIR += librfc822
     SUBDIR += listar
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp

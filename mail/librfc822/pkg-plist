@@ -1,0 +1,14 @@
+include/rfc822.hh
+lib/librfc822.a
+%%PORTDOCS%%share/doc/librfc822/Makefile
+%%PORTDOCS%%share/doc/librfc822/index.sgml
+%%PORTDOCS%%share/doc/librfc822/peti.css
+%%PORTDOCS%%share/doc/librfc822/peti.dsl
+%%PORTDOCS%%share/doc/librfc822/purpose.inc
+%%PORTDOCS%%share/doc/librfc822/readme.html
+%%PORTDOCS%%share/doc/librfc822/readme.sgml
+%%PORTDOCS%%share/doc/librfc822/readme.txt
+%%PORTDOCS%%share/doc/librfc822/user-manual.html
+%%PORTDOCS%%share/doc/librfc822/user-manual.pdf
+%%PORTDOCS%%share/doc/librfc822/user-manual.sgml
+%%PORTDOCS%%@dirrm share/doc/librfc822
