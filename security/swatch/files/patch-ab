@@ -1,0 +1,20 @@
+--- swatch.pl.orig	Fri May  9 12:03:34 1997
++++ swatch.pl	Fri May  9 12:03:47 1997
+@@ -29,7 +29,7 @@
+ eval 'PERL_BIN_DIR/perl -S $0 ${1+"$@"}'
+     if 0;
+ #
+-$ENV{'PATH'} = '/usr/ucb:/usr/bin:/bin:PERL_BIN_DIR';
++$ENV{'PATH'} = '/usr/bin:/bin:PERL_BIN_DIR';
+ $ENV{'IFS'} = '' if $ENV{'IFS'} ne '';
+ $0 = rindex($0, "/") > -1 ? substr($0, rindex($0, "/")+1) : $0;
+ 
+@@ -44,7 +44,7 @@
+ 
+ # Some defaults
+ $PERL                   = 'PERL_BIN_DIR/perl';
+-$TAIL			= '/usr/ucb/tail -f';
++$TAIL			= '/usr/bin/tail -f';
+ $DEF_INPUT		= "$TAIL /var/log/syslog";
+ $Pipe			= 1;
+ $ConfigFile		= "$ENV{'HOME'}/.swatchrc";
