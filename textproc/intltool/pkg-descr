@@ -1,0 +1,17 @@
+The module contains some utility scripts and assorted auto* magic for
+internationalizing various kinds of XML files. This supersedes the
+earlier scripts that I (Kenneth) distributed to be checked into each
+module. In addition, it has an additional merging feature, currently 
+only for oaf files. This feature might be extented to handle .desktop
+files and MIME files in the future.
+                
+* Features
+
+o Automatically extracts translatable strings from oaf, glade, bonobo
+   ui, nautilus theme and other XML files into the po files.
+  
+o Automatically merges translations from po files back into .oaf files
+   (encoding to be 7-bit clean). I can also extend this merging
+   mechanism to support other types of XML files.
+
+WWW: http://www.gnome.org/
