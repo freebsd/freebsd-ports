@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Valid/Loose/.packlist
+%%SITE_PERL%%/Email/Valid/Loose.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Valid/Loose
+@dirrm %%SITE_PERL%%/Email/Valid
