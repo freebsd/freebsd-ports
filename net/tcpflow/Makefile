@@ -3,7 +3,7 @@
 # Date created:		20 August 1999
 # Whom:			Jose M. Alcaide <jose@we.lc.ehu.es>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/26 23:32:02 cpiazza Exp $
 #
 
 DISTNAME=	tcpflow-0.12
