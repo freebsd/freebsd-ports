@@ -11,10 +11,11 @@ PKGNAME=	pgperl-2.15
 CATEGORIES=     graphics perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGPLOT
+
 MAINTAINER=	jmz@FreeBSD.org
 
 LIB_DEPENDS=    pgplot.5:${PORTSDIR}/graphics/pgplot
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
 
 USE_PERL5=	yes
 ALL_TARGET=	dynamic
