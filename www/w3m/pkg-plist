@@ -1,0 +1,7 @@
+bin/w3m
+share/doc/w3m/w3mhelp-lynx_en.html
+share/doc/w3m/w3mhelp-lynx_ja.html
+share/doc/w3m/w3mhelp.html
+share/doc/w3m/w3mhelp_en.html
+share/doc/w3m/w3mhelp_ja.html
+@dirrm share/doc/w3m
