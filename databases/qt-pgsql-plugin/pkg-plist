@@ -1,0 +1,2 @@
+lib/plugins/sqldrivers/libqsqlpsql.so
+@dirrm lib/plugins/sqldrivers

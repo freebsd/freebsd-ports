@@ -165,6 +165,7 @@
     SUBDIR += py-sqlrelay
     SUBDIR += pydbdesigner
     SUBDIR += qt-mysql-plugin
+    SUBDIR += qt-pgsql-plugin
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += ruby-bdb
