@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+#EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-configure
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
@@ -50,6 +51,11 @@ post-patch:
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 
 PLIST_FILES=	bin/kxineplayer
+.endif
+
+# GCC < 3.1
+.if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::kmplayerplaylist.cpp
 .endif
 
 .include <bsd.port.post.mk>
