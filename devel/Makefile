@@ -603,6 +603,7 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-period
+    SUBDIR += py-plex
     SUBDIR += py-pqueue
     SUBDIR += py-reverse
     SUBDIR += py-ro
