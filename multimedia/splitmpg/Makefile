@@ -8,7 +8,7 @@
 PORTNAME=	splitmpg
 PORTVERSION=	1.0
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ibiblio.org/pub/multimedia/utilities/ms-windows/mpegplay/
+MASTER_SITES=	http://member.netease.com/~inetsoft/downloads/sourcecode/multimedia/mpeg/unix/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
