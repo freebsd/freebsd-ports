@@ -4,13 +4,34 @@
 #
 # $FreeBSD$
 
-vmware_dir=@@PREFIX@@/lib/vmware
+vmware_config_file=@@PREFIX@@/etc/vmware/config
+
+if [ ! -e $vmware_config_file ]; then
+    echo "$vmware_config_file does not exist!" >&2
+    exit 255
+fi
+
+vmware_config() {
+    cat $vmware_config_file | while read var eq value; do
+	if [ "$1" = "$var" ]; then
+	    ret=`expr "$value" : '"\(.*\)"$'`
+	    echo ${ret:-$value}
+	    break
+	fi
+    done
+}
+
+vmware=`vmware_config vmware.fullpath`
+vmware_libdir=`vmware_config libdir`
 networking=@@NETWORKING@@
-host_ip=@@HOST_IP@@
-netmask=@@NETMASK@@
+host_ip=`vmware_config vmnet1.HostOnlyAddress`
+netmask=`vmware_config vmnet1.HostOnlyNetMask`
 dev_vmnet1=@@LINUXBASE@@/dev/vmnet1
 
-[ -x $vmware_dir/bin/vmware ] || exit
+if [ ! -x $vmware ]; then
+    echo "$vmware does not exist!" >&2
+    exit 255
+fi
 
 if [ `sysctl -n hw.ncpu` -eq 1 ]; then
     suffix=up
@@ -22,7 +43,7 @@ exec >/dev/null
 
 case $1 in
 start)
-    kldload ${vmware_dir}/lib/modules/vmmon_${suffix}.ko
+    kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
     if [ $networking -eq 1 ]; then
 	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
 	kldload if_tap.ko

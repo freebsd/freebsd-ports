@@ -8,7 +8,7 @@
 
 PORTNAME=	vmware2
 PORTVERSION=	2.0.2.621
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -84,8 +84,6 @@ setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
 		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
-		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
-		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
