@@ -51,7 +51,7 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 HP8XX_DRV=	gdevcd8.tar.gz
 
 # HPDJ, additional driver for HP PCL3 Printers, by Martin Lottermoser
-# ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/pcl3.html
+# http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 HPDJ_DRV=	hpdj-2.6.tar.gz
 
 # additional driver for HP DeskJet 970, supports duplex printing
