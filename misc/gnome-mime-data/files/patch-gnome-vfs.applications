@@ -1,5 +1,5 @@
---- gnome-vfs.applications.orig	Thu Sep 12 02:02:27 2002
-+++ gnome-vfs.applications	Thu Sep 12 02:03:27 2002
+--- gnome-vfs.applications.orig	Sun Oct  6 15:14:35 2002
++++ gnome-vfs.applications	Sun Feb  9 18:46:01 2003
 @@ -55,7 +55,7 @@
  	mime_types=application/x-deb
  
@@ -8,4 +8,13 @@
 +	command=ElectricEyes
  	name=Electric Eyes
  	can_open_multiple_files=true
+ 	expects_uris=false
+@@ -187,7 +187,7 @@
+ 	mime_types=application/x-gnumeric,application/x-applix-spreadsheet,application/vnd.ms-excel,application/vnd.lotus-1-2-3,application/x-oleo,application/x-xbase,text/spreadsheet,text/x-comma-separated-values,text/tab-separated-values
+ 
+ grecord
+-	command=gnome-sound-recorder -p
++	command=gnome-sound-recorder
+ 	name=Sound Recorder
+ 	can_open_multiple_files=false
  	expects_uris=false
