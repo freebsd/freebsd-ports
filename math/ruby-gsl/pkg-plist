@@ -1,0 +1,217 @@
+%%RUBY_SITEARCHLIBDIR%%/rb_gsl.so
+%%RUBY_SITELIBDIR%%/gsl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/combination.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/diff.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/eigen.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/eigen2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/forward.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/forward.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/radix2.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/radix2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/real-halfcomplex.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/real-halfcomplex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/realradix2.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/realradix2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/multifit.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/multifit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/wlinear.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/function.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/histogram.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/smp.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hyperg.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/integration.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/integration1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/integration2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/integration3.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/integration4.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qag.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qagi.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qagp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qawc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qawf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qawo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qaws.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qng.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/interp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/points
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline-compare.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline-compare.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/HH.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LU.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LU2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QR.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QRPT.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/SV.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/chol.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/matrix.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/min/min.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/monte.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/result-C.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/result-rb.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/tmp.c
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/tmp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multimin/fdfminimizer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multimin/fminimizer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multimin/tmp.c
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fdfsolver.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/expdata.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinear.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinearfit.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinearfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinearfit.rb~
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/oscillator.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/permutation.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/gaussian.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/gaussian.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/gaussian_tail.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/poisson.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/qrng.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randomwalk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/rng.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/bisection.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/brent.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/brent.rb~
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/newton.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/steffenson.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/bessel.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/bessel.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/gamma.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/gamma.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/leg2.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/leg2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/sf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/sphbessel.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/sphbessel.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/statistics.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sum.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/smpv.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/vector.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/view.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/vector
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/stats
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sf
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/roots
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/random
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/odeiv
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/nonlinearfit
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/narray
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/multiroot
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/multimin
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/monte
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/min
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/matrix
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/linalg
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/interp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/integration
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/histogram
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/function
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/fit
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/fft
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/eigen
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/cheb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/combi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/complex.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/const.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/dht.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/diff.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ehandling.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/eigen.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fft.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fit.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/function.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/hist.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/hist2d.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/history.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/integration.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/interp.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/intro.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/linalg.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/math.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/matrix.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/min.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/monte.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/multimin.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/multiroot.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/nonlinearfit.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/notimplemented.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ntuple.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/odeiv.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/perm.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/poly.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/qrng.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/randist.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/rng.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/roots.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/sf.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/siman.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/sort.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/stats.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/sum.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/use.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/vector.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/.DS_Store
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/cheb.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/combi.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/complex.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/const.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/dht.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/diff.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ehandling.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/eigen.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/fft.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/fit.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/function.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/hist.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/hist2d.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/history.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/index.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/integration.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/interp.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/intro.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/linalg.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/math.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/matrix.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/min.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/monte.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/multimin.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/multiroot.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/nonlinearfit.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/notimplemented.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ntuple.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/odeiv.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/perm.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/poly.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/qrng.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/randist.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/rng.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/roots.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/sf.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/siman.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/sort.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/stats.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/sum.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/use.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/vector.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
