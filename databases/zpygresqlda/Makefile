@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 POSTGRESQL_PORT?=	databases/postgresql7
+USE_PYTHON=	yes
 PYTHON_VERSION=	python1.5
 
 # You can change this in the environment
