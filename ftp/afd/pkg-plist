@@ -1,3 +1,4 @@
+bin/afd
 bin/afd_ctrl
 bin/afd_info
 bin/afd_load
@@ -7,6 +8,7 @@ bin/afd_status
 bin/afdcfg
 bin/afdcmd
 bin/afdd
+bin/amg
 bin/archive_watch
 bin/bfc
 bin/cache_spy
@@ -15,10 +17,12 @@ bin/convert_jid
 bin/convert_stat
 bin/current_job_list_spy
 bin/delete_log
+bin/dir_check
 bin/dir_ctrl
 bin/dir_info
 bin/dir_spy
 bin/edit_hc
+bin/fd
 bin/file_dir_check
 bin/force_archive_check
 bin/fra_view
@@ -28,7 +32,9 @@ bin/get_counter
 bin/get_dc_data
 bin/get_file_size
 bin/get_full_date
+bin/gf_ftp
 bin/gts2tiff
+bin/init_afd
 bin/input_log
 bin/job_list_spy
 bin/mafd
@@ -44,6 +50,12 @@ bin/receive_log
 bin/reset_fsa
 bin/rm_job
 bin/set_counter
+bin/sf_ftp
+bin/sf_loc
+bin/sf_map
+bin/sf_scp1
+bin/sf_smtp
+bin/sf_wmo
 bin/show_bench_stat
 bin/show_cmd
 bin/show_dlog
