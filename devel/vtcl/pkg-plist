@@ -153,6 +153,7 @@ lib/vtcl/lib/lib_blt.tcl
 lib/vtcl/lib/lib_core.tcl
 lib/vtcl/lib/lib_itcl.tcl
 lib/vtcl/lib/lib_table.tcl
+lib/vtcl/lib/lib_tablelist.tcl
 lib/vtcl/lib/lib_tix.tcl
 lib/vtcl/lib/lib_vtcl.tcl
 lib/vtcl/lib/loadwidg.tcl
@@ -178,6 +179,7 @@ lib/vtcl/lib/Help/Preferences
 lib/vtcl/lib/Help/PropManager
 lib/vtcl/lib/Help/Tips
 lib/vtcl/lib/Help/WidgetTree
+lib/vtcl/lib/Help/about.ttd
 lib/vtcl/lib/Widgets/blt/Options.wgt
 lib/vtcl/lib/Widgets/blt/barchart.gif
 lib/vtcl/lib/Widgets/blt/barchart.wgt
@@ -217,19 +219,30 @@ lib/vtcl/lib/Widgets/core/Options.wgt
 lib/vtcl/lib/Widgets/core/button.wgt
 lib/vtcl/lib/Widgets/core/canvas.wgt
 lib/vtcl/lib/Widgets/core/checkbutton.wgt
+lib/vtcl/lib/Widgets/core/compoundcontainer.gif
+lib/vtcl/lib/Widgets/core/compoundcontainer.wgt
 lib/vtcl/lib/Widgets/core/entry.wgt
 lib/vtcl/lib/Widgets/core/frame.wgt
 lib/vtcl/lib/Widgets/core/label.wgt
+lib/vtcl/lib/Widgets/core/labelframe.gif
+lib/vtcl/lib/Widgets/core/labelframe.wgt
 lib/vtcl/lib/Widgets/core/listbox.wgt
+lib/vtcl/lib/Widgets/core/megawidget.wgt
 lib/vtcl/lib/Widgets/core/menu.wgt
 lib/vtcl/lib/Widgets/core/menubutton.wgt
 lib/vtcl/lib/Widgets/core/message.wgt
+lib/vtcl/lib/Widgets/core/panedwindow.gif
+lib/vtcl/lib/Widgets/core/panedwindow.wgt
+lib/vtcl/lib/Widgets/core/panedwindowhoriz.gif
 lib/vtcl/lib/Widgets/core/radiobutton.wgt
 lib/vtcl/lib/Widgets/core/scale.wgt
 lib/vtcl/lib/Widgets/core/scrollbar.wgt
+lib/vtcl/lib/Widgets/core/spinbox.gif
 lib/vtcl/lib/Widgets/core/spinbox.wgt
 lib/vtcl/lib/Widgets/core/text.wgt
 lib/vtcl/lib/Widgets/core/toplevel.wgt
+lib/vtcl/lib/Widgets/core/unmanagedframe.gif
+lib/vtcl/lib/Widgets/core/unmanagedframe.wgt
 lib/vtcl/lib/Widgets/itcl/Options.wgt
 lib/vtcl/lib/Widgets/itcl/buttonbox.wgt
 lib/vtcl/lib/Widgets/itcl/calendar.wgt
@@ -253,9 +266,13 @@ lib/vtcl/lib/Widgets/itcl/scrolledhtml.wgt
 lib/vtcl/lib/Widgets/itcl/scrolledlistbox.wgt
 lib/vtcl/lib/Widgets/itcl/scrolledtext.wgt
 lib/vtcl/lib/Widgets/itcl/spinint.wgt
+lib/vtcl/lib/Widgets/itcl/spintime.gif
+lib/vtcl/lib/Widgets/itcl/spintime.wgt
 lib/vtcl/lib/Widgets/itcl/tabnotebook.wgt
 lib/vtcl/lib/Widgets/itcl/toolbar.wgt
 lib/vtcl/lib/Widgets/table/table.wgt
+lib/vtcl/lib/Widgets/tablelist/tablelist.gif
+lib/vtcl/lib/Widgets/tablelist/tablelist.wgt
 lib/vtcl/lib/Widgets/tix/Options.wgt
 lib/vtcl/lib/Widgets/tix/tixComboBox.wgt
 lib/vtcl/lib/Widgets/tix/tixFileEntry.wgt
@@ -345,6 +362,7 @@ lib/vtcl/lib/bwidget/lang/de.rc
 lib/vtcl/lib/bwidget/lang/en.rc
 lib/vtcl/lib/bwidget/lang/es.rc
 lib/vtcl/lib/bwidget/lang/fr.rc
+lib/vtcl/lib/ttd/ttd.tcl
 share/doc/vtcl/tutorial.txt
 @dirrm lib/vtcl/images/edit
 @dirrm lib/vtcl/images
@@ -354,6 +372,7 @@ share/doc/vtcl/tutorial.txt
 @dirrm lib/vtcl/lib/Widgets/core
 @dirrm lib/vtcl/lib/Widgets/itcl
 @dirrm lib/vtcl/lib/Widgets/table
+@dirrm lib/vtcl/lib/Widgets/tablelist
 @dirrm lib/vtcl/lib/Widgets/tix
 @dirrm lib/vtcl/lib/Widgets/user
 @dirrm lib/vtcl/lib/Widgets/vtcl
@@ -361,6 +380,7 @@ share/doc/vtcl/tutorial.txt
 @dirrm lib/vtcl/lib/bwidget/images
 @dirrm lib/vtcl/lib/bwidget/lang
 @dirrm lib/vtcl/lib/bwidget
+@dirrm lib/vtcl/lib/ttd
 @dirrm lib/vtcl/lib
 @dirrm lib/vtcl
 @dirrm share/doc/vtcl
