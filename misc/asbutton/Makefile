@@ -8,8 +8,7 @@
 PORTNAME=	asbutton
 PORTVERSION=	0.3
 CATEGORIES=	misc windowmaker afterstep
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
-MASTER_SITE_SUBDIR=	apps/asbutton
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 
 MAINTAINER=	jim@FreeBSD.org
 
