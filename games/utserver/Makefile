@@ -22,6 +22,7 @@ EXTRACT_ONLY=	ut-server-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	matuska@wu-wien.ac.at
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
@@ -36,7 +37,8 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 SORT?=		/usr/bin/sort
 
 # files which should be installed with executable perms
-EXECUTABLES=	ucc ucc-bin
+EXECUTABLES=	ucc ucc-bin ngStatsUT ngStatsUT.exe ngWorldStats \
+		ngWorldStats.exe
 
 post-extract:
 .for file in ${DISTFILES:S/${EXTRACT_ONLY}//}
