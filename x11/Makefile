@@ -3,6 +3,7 @@
 
     SUBDIR += 3ddesktop
     SUBDIR += 9box
+    SUBDIR += 9menu
     SUBDIR += 9term
     SUBDIR += XFree86
     SUBDIR += XFree86-4
