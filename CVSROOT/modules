@@ -1129,6 +1129,7 @@ crashecho	ports/mail/crashecho
 crashmail	ports/news/crashmail
 crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
+cream		ports/editors/cream
 crescendo	ports/net/crescendo
 cricket		ports/net-mgmt/cricket
 crimap		ports/biology/crimap
