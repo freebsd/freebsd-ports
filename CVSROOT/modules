@@ -4936,6 +4936,7 @@ nl-ispell	ports/textproc/nl-ispell
 nl-ooodict-NL	ports/editors/ooodict-nl_NL
 nl-openoffice	ports/editors/openoffice-nl
 nload		ports/net/nload
+nltk		ports/textproc/nltk
 nmap		ports/security/nmap
 nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
