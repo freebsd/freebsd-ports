@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Nov 27 04:26:47 2001
++++ configure.in	Sun Dec 23 07:26:26 2001
+@@ -316,7 +316,7 @@
+   *-*-linux*)
+     ;;
+   *-*-freebsd*)
+-    EXTRALIBS="$EXTRALIBS -lxpg4"
++    AC_CHECK_LIB(xpg4, _xpg4_setrunelocale, EXTRALIBS="$EXTRALIBS -lxpg4")
+     ;;
+   *-irix*)
+     chk_rgb=yes
