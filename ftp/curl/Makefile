@@ -3,7 +3,7 @@
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.5 1999/05/06 14:09:05 flathill Exp $
+# $Id: Makefile,v 1.6 1999/05/27 12:33:09 kris Exp $
 
 DISTNAME=	curl-5.9
 CATEGORIES=	net www
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
 .endif
 
 .if defined(USE_SSL)
-CONFIGURE_ENV+=	CPPFLAGS='-I${PREFIX}/include' LDFLAGS='-L${PREFIX}/lib'
+CONFIGURE_ENV+=	CPPFLAGS='-I${PREFIX}/include -I${PREFIX}/include/openssl' \
+		LDFLAGS='-L${PREFIX}/lib'
 .endif
 
 GNU_CONFIGURE=	yes
