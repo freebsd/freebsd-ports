@@ -7,6 +7,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.4,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
