@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2:${PORTSDIR}/www/mod_perl2
 
 CONFLICTS=	p5-libapreq
 
+BROKEN=		"Fails to configure"
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-perl-glue
