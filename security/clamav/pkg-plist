@@ -16,9 +16,9 @@ lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.a
 libdata/pkgconfig/libclamav.pc
-@unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
-etc/clamav.conf.default
-@exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+@unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
+etc/clamd.conf.default
+@exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
 @unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
 etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf

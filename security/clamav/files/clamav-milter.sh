@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/clamav-milter
 required_dirs=%%DATADIR%%
-required_files=%%PREFIX%%/etc/clamav.conf
+required_files=%%PREFIX%%/etc/clamd.conf
 
 start_precmd=start_precmd
 
@@ -33,16 +33,13 @@ start_precmd()
 		warn "Stale socket $clamav_milter_socket removed."
 		rm "$clamav_milter_socket"
 	fi
+	rc_flags="${flags:-$clamav_milter_flags} $clamav_milter_socket"
 }
 
-# set defaults
-
-clamav_milter_enable=${clamav_milter_enable:-"NO"}
-clamav_milter_socket=${clamav_milter_socket:-"%%CLAMAV_MILTER_SOCKET%%"}
-clamav_milter_flags=${clamav_milter_flags:-"--postmaster-only --local --outgoing --max-children=50"}
-
+# read settings, set default values
 load_rc_config $name
+: ${clamav_milter_enable="NO"}
+: ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
+: ${clamav_milter_flags="--postmaster-only --local --outgoing --max-children=50"}
 
-# add socket to any given argument
-clamav_milter_flags="${clamav_milter_flags} ${clamav_milter_socket}"
 run_rc_command "$1"
