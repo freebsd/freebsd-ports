@@ -1,0 +1,28 @@
+--- makefile.orig	Wed Jul 14 06:05:14 1993
++++ makefile	Tue Apr  8 11:49:27 1997
+@@ -7,19 +7,19 @@
+ #I 	= -I/usr/include
+ 
+ #------------------------------------------
+-#  OPTIONEN SUN
++#  OPTIONEN FreeBSD
+ #------------------------------------------
+-O	= -O
+-I 	= -I/usr/local/X11R5/include
++O	= -O2 -m486
++I 	= -I/usr/X11R6/include
+ 
+-L 	= -L/usr/local/X11R5/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
++L 	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
+ 
+ 
+ #------------------------------------------
+ #  COMPILER UND LINKER
+ #------------------------------------------
+-B	= gcc-2.3.3 $O -o
+-CC	= gcc-2.3.3 $O $I
++B	= gcc $O -o
++CC	= gcc $O $I
+ 
+ #------------------------------------------
+ #  FUNKTIONEN DIR

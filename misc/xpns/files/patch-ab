@@ -1,0 +1,13 @@
+--- xpns.orig	Tue Apr  8 11:27:14 1997
++++ xpns	Tue Apr  8 11:29:05 1997
+@@ -1,6 +1,7 @@
+-#!/bin/tcsh
+-setenv XAPPLRESDIR $PWD/
+-pns
++#!/bin/csh
++setenv XAPPLRESDIR /usr/X11R6/lib/xpns/
++# Note pns will dump core if environment is not correct
++/usr/X11R6/lib/xpns/pns
+ 
+ 
+ 
