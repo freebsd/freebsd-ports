@@ -1,0 +1,3 @@
+shhmsg - library for displaying messages. It contains
+C-functions for error messages, verbose messages and
+`normal' messages in terminalbased programs.

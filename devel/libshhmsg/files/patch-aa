@@ -1,0 +1,46 @@
+--- Makefile.orig	Tue Oct 13 13:11:42 1998
++++ Makefile	Fri Apr  2 15:33:32 1999
+@@ -6,10 +6,10 @@
+ VERSION		= $(VERMAJ).$(VERMIN).$(VERPAT)
+ 
+ # Define SHARED as 1 for Linux shared ELF library
+-#SHARED		= 1
++SHARED		= 1
+ 
+ ifeq ($(SHARED),1)
+-LIBTARGET	= lib$(DIST).so.$(VERSION)
++LIBTARGET	= lib$(DIST).so.$(VERMAJ)
+ LIBTARGETSO	= lib$(DIST).so
+ LIBTARGETSOMAJ	= $(LIBTARGETSO).$(VERMAJ)
+ CCSHRD		= -fPIC
+@@ -23,8 +23,8 @@
+ INSTBASEDIR	= /usr/local
+ INSTLIBDIR	= $(INSTBASEDIR)/lib
+ INSTINCDIR	= $(INSTBASEDIR)/include
+-INSTALL		= install -m 644
+-INSTALLPROG	= install -m 755
++INSTALL		= install -c -m 644
++INSTALLPROG	= install -c -m 755
+ MKDIRP		= install -d -m 755
+ 
+ CC		= gcc
+@@ -32,7 +32,7 @@
+ 
+ INCDIR		= -I.
+ 
+-CCOPT		= -s -Wall $(OPTIM) $(INCDIR)
++CCOPT		= -s -Wall $(OPTIM) $(INCDIR) -D_POSIX_SOURCE
+ 
+ # Object files to store in the library
+ LIBOBJS		= vars.o streams.o progname.o \
+@@ -59,9 +59,7 @@
+ 	$(INSTALL) $(LIBTARGET) $(INSTLIBDIR)
+ 	$(INSTALL) $(LIBHEAD) $(INSTINCDIR)
+ ifeq ($(SHARED),1)
+-	ln -sf $(LIBTARGET) $(INSTLIBDIR)/$(LIBTARGETSOMAJ)
+-	ln -sf $(LIBTARGETSOMAJ) $(INSTLIBDIR)/$(LIBTARGETSO)
+-	echo "If you use GNU/Linux, remember to run ldconfig"
++	ln -sf $(LIBTARGET) $(INSTLIBDIR)/$(LIBTARGETSO)
+ endif
+ 
+ clean:
