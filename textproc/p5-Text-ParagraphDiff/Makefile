@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-ParagraphDiff
-PORTVERSION=	2.43
+PORTVERSION=	2.60
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -23,12 +23,24 @@ PERL_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+SCRIPTS=	tdiff
+EXAMPLES=	diff.html new.txt old.txt
+EXAMPLESDIR=	${PREFIX}/share/examples/p5-Text-ParagraphDiff
 MAN3=		Text::ParagraphDiff.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/bin && \
+	${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && \
+	${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
