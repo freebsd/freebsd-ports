@@ -1,11 +1,12 @@
---- Makefile.in.orig	Fri May  7 04:20:11 1999
-+++ Makefile.in	Thu Jul 22 10:45:28 1999
-@@ -5,12 +5,12 @@
+--- Makefile.in.orig	Fri Dec 31 03:13:50 1999
++++ Makefile.in	Mon Jan  3 23:54:14 2000
+@@ -5,13 +5,13 @@
  sbindir = @sbindir@
  mandir = @mandir@
  srcdir = @srcdir@
 -libdir = @libdir@/nmap
 +libdir = @libdir@
+ deskdir = $(prefix)/share/gnome/apps/Utilities
  
  CC = @CC@
  CCOPT = 
@@ -15,7 +16,7 @@
  DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
  CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
  # CFLAGS = -g -Wall $(DEFS) $(INCLS)
-@@ -33,7 +33,7 @@
+@@ -36,7 +36,7 @@
  
  all: $(TARGET)
  
