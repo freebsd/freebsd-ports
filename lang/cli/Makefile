@@ -18,8 +18,8 @@ COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 WRKSRC=		${WRKDIR}/sscli
 
 RESTRICTED=	"license terms need to be reviewed"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
+
+BROKEN=		"Does not compile"
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
