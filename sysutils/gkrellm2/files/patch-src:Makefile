@@ -1,13 +1,27 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	Fri Dec 12 03:31:04 2003
-+++ src/Makefile	Sat Dec 13 14:29:56 2003
-@@ -44,7 +44,7 @@
+--- src/Makefile.orig	Wed Dec 17 01:53:06 2003
++++ src/Makefile	Thu Dec 18 04:30:43 2003
+@@ -31,7 +31,7 @@
+ HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
+ 
+ ifeq ($(HAVE_SSL),1)
+-    SSL_LIBS ?= -lssl -lcrypto
++    SSL_LIBS ?= -L$(OPENSSLLIB) -lssl -lcrypto
+ else
+     EXTRAOBJS ?= md5c.o
+ endif
+@@ -45,8 +45,12 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
 -FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
 +FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
  FLAGS+= $(PTHREAD_INC)
++
++ifeq ($(HAVE_SSL),1)
++    FLAGS+= -I$(OPENSSLINC)
++endif
  
  LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS)
+ 
