@@ -4,3 +4,5 @@ www/cgi-bin/npc.cgi
 share/examples/npc/sample1.idx
 share/examples/npc/sample2.idx
 @dirrm share/examples/npc
+@dirrm www/cgi-bin
+@dirrm www
