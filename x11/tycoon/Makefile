@@ -3,7 +3,7 @@
 # Date created:		19 September 1997
 # Whom:			steve@farrell.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/24 05:02:43 fenner Exp $
+# $Id: Makefile,v 1.2 1998/08/07 23:56:55 asami Exp $
 #
 
 DISTNAME=	tycoon-1.07o
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	steve@farrell.org
+
+BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
 

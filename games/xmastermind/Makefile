@@ -3,7 +3,7 @@
 # Date created:				23 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:59 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:22 asami Exp $
 #
 
 DISTNAME=		xmastermind-0.1
@@ -13,7 +13,9 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
+BROKEN_ELF=		xforms is a.out only
+
+LIB_DEPENDS=		xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=		yes
 
