@@ -1666,6 +1666,7 @@ fidogate	ports/news/fidogate
 fifofs		src/sys/fs/fifofs
 figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
+figurine	ports/graphics/figurine
 file		src/usr.bin/file
 file2c		src/usr.bin/file2c
 file_menu_applet	ports/x11-fm/file_menu_applet
