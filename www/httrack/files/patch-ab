@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Thu May 17 08:26:28 2001
++++ Makefile.in	Sun Jun 17 10:52:24 2001
+@@ -22,7 +22,6 @@
+ ### Makefile commands
+ SHELL     = /bin/sh
+ MAIN      =
+-CC        = gcc 
+ CFLAGS    = __CFLAGS__
+ # threads
+ LFLAGS    = __LFLAGS__ __LFLAGS2__
+@@ -344,13 +343,13 @@
+ 
+ # Install docs
+ docinstall :
+-	mkdir -p "$(PREFIX)/doc/httrack"
+-	chmod 755 "$(PREFIX)/doc/httrack"
+-	cp -fR $(DOCS) "$(PREFIX)/doc/httrack/"
++	mkdir -p "$(PREFIX)/share/doc/httrack"
++	chmod 755 "$(PREFIX)/share/doc/httrack"
++	cp -fR $(DOCS) "$(PREFIX)/share/doc/httrack/"
+ 
+ # Uninstall docs
+ docremove :
+-	rm -rf "$(PREFIX)/doc/httrack"
++	rm -rf "$(PREFIX)/share/doc/httrack"
+ 
+ # Install binaries and conf files
+ bininstall :
