@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	0.56
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	gnomeprint.9:${PORTSDIR}/print/gnomeprint \
+LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint \
 		glade.4:${PORTSDIR}/devel/libglade \
 		guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
