@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/15 07:19:43 tg Exp $
 #
 
 DISTNAME=	felt-3.01
@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
 
 WRKSRC=		${WRKDIR}/FElt-3.00
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}"
+GNU_CONFIGURE=	yes
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
