@@ -375,6 +375,7 @@
     SUBDIR += vrrp
     SUBDIR += vtun
     SUBDIR += wais
+    SUBDIR += walker
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
