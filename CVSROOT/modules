@@ -6474,6 +6474,7 @@ phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
+phpwiki		ports/www/phpwiki
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
 physcalc	ports/math/physcalc
