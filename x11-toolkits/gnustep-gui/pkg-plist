@@ -25,7 +25,6 @@ System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
 System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
 System/Library/ColorPickers/WheelPicker.bundle/WheelPicker
 System/Library/ColorPickers/WheelPicker.bundle/stamp.make
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/.cvsignore
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.gsdoc
@@ -42,7 +41,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSTable.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.igsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/MainIndex.html
@@ -56,7 +54,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/General.igsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/OpenStepCompliance.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/dependencies
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/.cvsignore
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ConstantsTOC.gsdoc
@@ -65,7 +62,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Functions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/FunctionsTOC.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/FunctionsTOC.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.igsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/MainIndex.html
@@ -75,6 +71,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSAffineTransform.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSApplication.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSApplication.html
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSAttributedString.gsdoc
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSAttributedString.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBezierPath.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBezierPath.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBitmapImageRep.gsdoc
@@ -173,8 +171,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMenuItemCell.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMenuView.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMenuView.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.gsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSNib.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSNib.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenGL.gsdoc
@@ -281,8 +277,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSWindowController.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.html
-%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.gsdoc
-%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.html
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.gsdoc
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesTOC.gsdoc
@@ -540,6 +536,7 @@ System/Library/Images/GNUstep.tiff
 System/Library/Images/GNUstepMenuImage.tiff
 System/Library/Images/GNUstep_Images_Copyright
 System/Library/Images/NSComboArrow.tiff
+System/Library/Images/MagnifyGlass.tiff
 System/Library/Images/common_2DCheckMark.tiff
 System/Library/Images/common_2DDash.tiff
 System/Library/Images/common_3DArrowDown.tiff
@@ -558,6 +555,7 @@ System/Library/Images/common_Close.tiff
 System/Library/Images/common_CloseBroken.tiff
 System/Library/Images/common_CloseBrokenH.tiff
 System/Library/Images/common_CloseH.tiff
+System/Library/Images/common_ClosedHandCursor.tiff
 System/Library/Images/common_ColorSwatch.tiff
 System/Library/Images/common_ComboBoxEllipsis.tiff
 System/Library/Images/common_DecimalTabStop.tiff
@@ -573,6 +571,7 @@ System/Library/Images/common_MiniaturizeH.tiff
 System/Library/Images/common_MiniWindowTile.tiff
 System/Library/Images/common_Mount.tiff
 System/Library/Images/common_Nibble.tiff
+System/Library/Images/common_OpenHandCursor.tiff
 System/Library/Images/common_Printer.tiff
 System/Library/Images/common_RadioOff.tiff
 System/Library/Images/common_RadioOn.tiff
@@ -635,6 +634,7 @@ System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/o
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/data.classes
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/objects.gorm
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-gui/Info-gnustep.plist
 System/Library/Libraries/Resources/gnustep-gui/Italian.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-gui.so
 System/Library/Libraries/libgnustep-gui.so.%%BASEVERSION%%
