@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://www.instinct.org/w3m/ \
 		http://grilli.net/mirrors/w3m/download/
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER?=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
