@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=
 EXTRACT_SUFX=
 
-MAINTAINER=	jose@nobody.org
+MAINTAINER=	noway@nohow.demon.co.uk
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 
