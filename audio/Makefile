@@ -8,6 +8,7 @@
     SUBDIR += bladeenc
     SUBDIR += cam
     SUBDIR += cd-console
+    SUBDIR += cd2mp3
     SUBDIR += cdd
     SUBDIR += cdindex
     SUBDIR += cdplay
