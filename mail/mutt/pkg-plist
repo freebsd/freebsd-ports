@@ -1,7 +1,7 @@
 bin/mutt
 man/man1/mutt.1.gz
-share/misc/Muttrc
-share/misc/mime.types
+share/Muttrc
+share/mime.types
 share/doc/mutt/manual-1.html
 share/doc/mutt/manual-2.html
 share/doc/mutt/manual-3.html
