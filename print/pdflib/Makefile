@@ -1,38 +1,27 @@
 # New ports collection makefile for:	pdflib
-# Date created:		Mon Jan 18 17:03:33 CET 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
+# Date created:		Wed Jan 9 12:27:54 CET 2002
+# Whom:			Alex Dupre <sysadmin@alexdupre.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	3.03
+PORTVERSION=	4.0.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
-MAINTAINER=	ports@FreeBSD.org
-
-RUN_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+MAINTAINER=	sysadmin@alexdupre.com
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-perl5=${PERL} \
-		--with-jpeg=${PREFIX} \
-		--with-pnglib=${PREFIX} \
-		--enable-shared-pdflib \
-		--enable-cxx \
-		--with-zlib=/usr
+USE_PERL5=	yes
+CONFIGURE_ARGS=	--enable-cxx
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/pdflib/.libs/libpdf.so.3 ${PREFIX}/lib
-	${LN} -s libpdf.so.3 ${PREFIX}/lib/libpdf.so
-	${INSTALL_DATA} ${WRKSRC}/pdflib/pdflib.h ${PREFIX}/include
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pdflib
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/pdflib
+	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
