@@ -121,7 +121,6 @@ share/locale/uk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrm share/idl/bonobo-2.0
-@dirrm share/gnome2
 @dirrm share/doc/libbonobo
 @dirrm lib/orbit-2.0
 @dirrm lib/bonobo-2.0/samples
@@ -130,4 +129,3 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrm include/libbonobo-2.0
 @unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/lib/bonobo 2>/dev/null || /usr/bin/true
-@exec   /bin/mkdir -p %D/share/gnome2
