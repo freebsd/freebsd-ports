@@ -15,7 +15,8 @@ MAINTAINER=	demon@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xferstats
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 
 MAN8=		xferstats.8

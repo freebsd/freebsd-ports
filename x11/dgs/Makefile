@@ -20,7 +20,8 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 

@@ -15,7 +15,8 @@ MAINTAINER?=	vanilla@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
 CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \

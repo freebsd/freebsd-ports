@@ -18,7 +18,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

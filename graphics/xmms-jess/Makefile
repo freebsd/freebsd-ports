@@ -21,7 +21,8 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 GNU_CONFIGURE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

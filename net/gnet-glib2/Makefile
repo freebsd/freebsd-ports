@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.gnetlibrary.org/src/
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

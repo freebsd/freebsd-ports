@@ -15,7 +15,8 @@ MAINTAINER=	lyngbol@wheel.dk
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 
 MAN1=		scli.1
 

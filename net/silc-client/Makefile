@@ -28,7 +28,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=${PREFIX}/share/${PORTNAME}/help
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"

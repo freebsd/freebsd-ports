@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	unstable/sources/libole2
 MAINTAINER=	gnome@FreeBSD.org
 
 USE_GMAKE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

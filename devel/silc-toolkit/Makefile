@@ -26,7 +26,8 @@ RUN_DEPENDS=	silc:${PORTSDIR}/net/silc-client
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME} \
 		--with-docdir=${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX} \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
