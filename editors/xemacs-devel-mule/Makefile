@@ -96,8 +96,8 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-# Undump and malloc do not behave on amd64 at the moment
-.if ${ARCH} == "amd64"
+# Undump and malloc do not behave on amd64 and sparc64
+.if (${ARCH} == "amd64") || (${ARCH} == "sparc64")
 CONFIGURE_ARGS+=--with-system-malloc --pdump
 .endif
 
