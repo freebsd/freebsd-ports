@@ -3,11 +3,11 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.6 1998/05/07 00:29:42 eivind Exp $
+# $Id: Makefile,v 1.7 1998/05/07 21:55:42 eivind Exp $
 #
 
-DISTNAME=	xscavenger-133
-PKGNAME=	xscavenger-1.3.3
+DISTNAME=	xscavenger-135
+PKGNAME=	xscavenger-1.3.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
 EXTRACT_SUFX=	.tgz
