@@ -6,11 +6,11 @@
 # $FreeBSD$
 
 PORTNAME=	awka
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	lang
 MASTER_SITES=	http://awka.sourceforge.net/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
@@ -21,6 +21,6 @@ MAN1=	awka.1
 MAN5=	awka-elm.5 awka-elmref.5
 
 post-install:
-	@strip ${PREFIX}/bin/awka
+	@${STRIP_CMD} ${PREFIX}/bin/awka
 
 .include <bsd.port.mk>
