@@ -1,8 +1,6 @@
 bin/bins
-%%GUI%%bin/bins-edit-gui
 bin/bins_edit
 bin/bins_txt2xml
-%%GUI%%share/bins/bins-edit-gui.glade
 share/bins/binsrc
 share/bins/templates.default/details.html
 share/bins/templates.default/footer.html
@@ -119,7 +117,6 @@ share/bins/templates.joi/tree.html
 %%PORTDOCS%%share/doc/bins/usage_desc_xml.xml
 share/locale/de/LC_MESSAGES/bins.mo
 share/locale/es/LC_MESSAGES/bins.mo
-%%GUI%%share/locale/fr/LC_MESSAGES/bins-edit-gui.mo
 share/locale/fr/LC_MESSAGES/bins.mo
 share/locale/it/LC_MESSAGES/bins.mo
 share/locale/pl/LC_MESSAGES/bins.mo

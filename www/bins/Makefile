@@ -85,26 +85,8 @@ IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
 WITH_I18N=yes
 .endif
 
-##
-## Local options
-##
-# gui
-.ifdef(WITH_GUI)
-RUN_DEPENDS+=	\
-	${PBASE}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
-	${PBASE}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-	${PBASE}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
-	${PBASE}/${PERL_ARCH}/Gtk/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade \
-	${PBASE}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
-	${PBASE}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-	${PBASE}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
-
-PLIST_SUB=	GUI=""
-.else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-install.sh
 
-PLIST_SUB=	GUI="@comment "
-.endif
 # localization support
 .ifdef(WITH_I18N)
 RUN_DEPENDS+=	\
@@ -112,10 +94,6 @@ RUN_DEPENDS+=	\
 .endif
 
 pre-everything::
-.ifndef(WITH_GUI)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_GUI to enable a libglade GUI'
-.endif
 .ifndef(WITH_I18N)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_I18N to enable localization support.'
