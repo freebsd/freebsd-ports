@@ -1,0 +1,29 @@
+--- Makefile.common.orig	Mon Feb 23 17:31:22 1998
++++ Makefile.common	Tue Mar 24 14:17:39 1998
+@@ -2,8 +2,8 @@
+ 
+ # modify starting here
+ 
+-INSTALL_BIN = /usr/local/bin
+-INSTALL_DOC = /usr/local/doc/xgfe-$(VERSION)
++INSTALL_BIN = $(PREFIX)/bin
++INSTALL_DOC = $(PREFIX)/share/doc/xgfe
+ STATIC_TARGET = xgfe-static
+ 
+ # end modifications
+@@ -15,10 +15,11 @@
+ 	strip $(STATIC_TARGET)
+ 
+ install:
+-	cp $(TARGET) $(INSTALL_BIN)
+-	mkdir $(INSTALL_DOC)
+-	cp ../doc/* $(INSTALL_DOC)/
+-	strip $(INSTALL_BIN)/$(TARGET)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_BIN)
++.if !defined(NOPORTDOCS)
++	mkdir -p $(INSTALL_DOC)
++	$(BSD_INSTALL_DATA) ../doc/* $(INSTALL_DOC)/
++.endif
+ 
+ uninstall:
+ 	rm $(INSTALL_BIN)$(TARGET)
