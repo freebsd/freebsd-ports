@@ -1,6 +1,7 @@
 bin/cglame
 bin/glame
 bin/glame-convert.sh
+info/dir
 info/glame-dev.info
 info/glame-dev.info-1
 info/glame-dev.info-2
@@ -12,7 +13,9 @@ info/glame.info-3
 lib/glame/audio_io_esd.so
 lib/glame/audio_io_oss.so
 lib/glame/debug.so
+lib/glame/mixer.so
 lib/glame/normalize.so
+lib/glame/resample.so
 lib/glame/tutorial.so
 share/gnome/apps/Multimedia/glame.desktop
 share/gnome/glame/default-accels
@@ -60,10 +63,14 @@ share/gnome/glame/pixmaps/zoom_out.png
 share/gnome/glame/scripts/bassboost.scm
 share/gnome/glame/scripts/echo2.scm
 share/gnome/glame/scripts/glame.scm
+share/gnome/glame/scripts/glame_testsuite.scm
 share/gnome/glame/scripts/read_mp3.scm
 share/gnome/glame/scripts/resample.scm
+share/gnome/glame/scripts/write_mp3.scm
+share/locale/da/LC_MESSAGES/glame.mo
 share/locale/de/LC_MESSAGES/glame.mo
 share/locale/fr/LC_MESSAGES/glame.mo
+share/locale/it/LC_MESSAGES/glame.mo
 @dirrm share/gnome/glame/scripts
 @dirrm share/gnome/glame/pixmaps
 @dirrm share/gnome/glame
