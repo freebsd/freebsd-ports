@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.1
-PORTREVISION=		beta4
+PORTVERSION=		3.1.b4
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/beta/
 DISTNAME=		cl31beta04
