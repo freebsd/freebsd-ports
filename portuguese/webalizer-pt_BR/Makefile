@@ -4,9 +4,12 @@
 #
 # $FreeBSD$
 
-PKGNAMEPREFIX?=	pt_BR-
-MASTERDIR?=	${.CURDIR}/../../www/webalizer
 CATEGORIES=	portuguese
+PKGNAMEPREFIX?=	pt_BR-
+
+MAINTAINER=	dinoex@FreeBSD.org
+
+MASTERDIR?=	${.CURDIR}/../../www/webalizer
 WEBALIZER_LANG=	portuguese_brazil
 
 .if exists(${.CURDIR}/Makefile.local)
