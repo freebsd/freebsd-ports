@@ -20,6 +20,8 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/editview.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/email.py
 %%PYTHON_SITELIBDIR%%/Lphoto/email.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/export.py
+%%PYTHON_SITELIBDIR%%/Lphoto/export.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/html.py
 %%PYTHON_SITELIBDIR%%/Lphoto/html.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/images/buttonadd.png
@@ -78,9 +80,14 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/printer.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/slideshow.py
 %%PYTHON_SITELIBDIR%%/Lphoto/slideshow.pyc
-%%PYTHON_SITELIBDIR%%/Lphoto/templates/thumb.xsl
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/resources/lphoto.gif
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.py
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.xsl
 %%PYTHON_SITELIBDIR%%/Lphoto/utils.py
 %%PYTHON_SITELIBDIR%%/Lphoto/utils.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/resources
+@dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/images
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto
