@@ -230,6 +230,7 @@
     SUBDIR += wmicons
     SUBDIR += xanim
     SUBDIR += xaos
+    SUBDIR += xawtv
     SUBDIR += xbarcode
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
