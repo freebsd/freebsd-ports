@@ -6,9 +6,9 @@
 PORTNAME=		firebird
 PORTVERSION=		3.0R
 CATEGORIES=		chinese net
-MASTER_SITES=		http://www.firebird.org.tw/download/ \
+MASTER_SITES=		ftp://ftp4.firebird.org.tw/Network/BBS/Firebird/ \
 			ftp://ftp.firebird.org.tw/pub/Firebird/ \
-			ftp://ftp4.firebird.org.tw/network/BBS/Firebird/
+			http://www.firebird.org.tw/download/
 DISTNAME=		3.0-RELEASE
 
 MAINTAINER=		edwardc@firebird.org.tw
