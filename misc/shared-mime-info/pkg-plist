@@ -18,10 +18,13 @@ share/mime/application/postscript.xml
 share/mime/application/rtf.xml
 share/mime/application/smil.xml
 share/mime/application/vnd.corel-draw.xml
+share/mime/application/vnd.hp-hpgl.xml
+share/mime/application/vnd.hp-pcl.xml
 share/mime/application/vnd.lotus-1-2-3.xml
 share/mime/application/vnd.ms-excel.xml
 share/mime/application/vnd.ms-powerpoint.xml
 share/mime/application/vnd.ms-word.xml
+share/mime/application/vnd.palm.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
 share/mime/application/vnd.stardivision.chart.xml
@@ -131,6 +134,7 @@ share/mime/application/x-linguist.xml
 share/mime/application/x-lyx.xml
 share/mime/application/x-lzop.xml
 share/mime/application/x-macbinary.xml
+share/mime/application/x-magicpoint.xml
 share/mime/application/x-mif.xml
 share/mime/application/x-mozilla-bookmarks.xml
 share/mime/application/x-ms-dos-executable.xml
@@ -143,6 +147,7 @@ share/mime/application/x-nes-rom.xml
 share/mime/application/x-netcdf.xml
 share/mime/application/x-netscape-bookmarks.xml
 share/mime/application/x-object.xml
+share/mime/application/x-ole-storage.xml
 share/mime/application/x-oleo.xml
 share/mime/application/x-palm-database.xml
 share/mime/application/x-pef-executable.xml
@@ -185,6 +190,7 @@ share/mime/application/x-troff.xml
 share/mime/application/x-tzo.xml
 share/mime/application/x-ustar.xml
 share/mime/application/x-wais-source.xml
+share/mime/application/x-wpg.xml
 share/mime/application/x-x509-ca-cert.xml
 share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
@@ -200,6 +206,7 @@ share/mime/audio/x-adpcm.xml
 share/mime/audio/x-aifc.xml
 share/mime/audio/x-aiff.xml
 share/mime/audio/x-aiffc.xml
+share/mime/audio/x-flac.xml
 share/mime/audio/x-it.xml
 share/mime/audio/x-mod.xml
 share/mime/audio/x-mp3-playlist.xml
@@ -224,8 +231,10 @@ share/mime/image/fax-g3.xml
 share/mime/image/g3fax.xml
 share/mime/image/gif.xml
 share/mime/image/ief.xml
+share/mime/image/jpeg2000.xml
 share/mime/image/jpeg.xml
 share/mime/image/png.xml
+share/mime/image/rle.xml
 share/mime/image/svg+xml.xml
 share/mime/image/tiff.xml
 share/mime/image/vnd.djvu.xml
@@ -251,14 +260,17 @@ share/mime/image/x-msod.xml
 share/mime/image/x-niff.xml
 share/mime/image/x-pcx.xml
 share/mime/image/x-photo-cd.xml
+share/mime/image/x-pict.xml
 share/mime/image/x-portable-anymap.xml
 share/mime/image/x-portable-bitmap.xml
 share/mime/image/x-portable-graymap.xml
 share/mime/image/x-portable-pixmap.xml
 share/mime/image/x-psd.xml
 share/mime/image/x-rgb.xml
+share/mime/image/x-sgi.xml
 share/mime/image/x-sun-raster.xml
 share/mime/image/x-tga.xml
+share/mime/image/x-win-bitmap.xml
 share/mime/image/x-wmf.xml
 share/mime/image/x-xbitmap.xml
 share/mime/image/x-xcf.xml
@@ -316,9 +328,9 @@ share/mime/text/x-chdr.xml
 share/mime/text/x-comma-separated-values.xml
 share/mime/text/x-copying.xml
 share/mime/text/x-credits.xml
+share/mime/text/x-csharp.xml
 share/mime/text/x-csrc.xml
 share/mime/text/x-dcl.xml
-share/mime/text/x-diff.xml
 share/mime/text/x-dsl.xml
 share/mime/text/x-dtd.xml
 share/mime/text/x-emacs-lisp.xml
@@ -349,6 +361,7 @@ share/mime/text/x-texinfo.xml
 share/mime/text/x-troff-me.xml
 share/mime/text/x-troff-mm.xml
 share/mime/text/x-troff-ms.xml
+share/mime/text/x-uil.xml
 share/mime/text/x-uri.xml
 share/mime/text/x-vcalendar.xml
 share/mime/text/x-vcard.xml
