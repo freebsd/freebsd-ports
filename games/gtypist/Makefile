@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.6
+PORTVERSION=	2.6.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naddy@FreeBSD.org
 
-# requires autoconf 2.5
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -23,9 +22,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		EMACS=no
 
 MAN1=		gtypist.1 typefortune.1
-
-post-patch:
-	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf
 
 # Note:
 # Reformatting the info documentation would require makeinfo 4.2,
