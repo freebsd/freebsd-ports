@@ -1,14 +1,12 @@
---- 2XSAI.CPP.orig	Sun Oct 19 22:52:14 2003
-+++ 2XSAI.CPP	Sun Oct 19 22:52:56 2003
-@@ -81,8 +81,9 @@
+--- 2xsai.cpp.orig	Fri Dec  5 02:03:08 2003
++++ 2xsai.cpp	Sun Jan 25 01:41:08 2004
+@@ -81,7 +81,8 @@
  #include "port.h"
  #include "gfx.h"
  
--#if (!defined(NOASM) && defined (__i386__) || defined (__i486__) || \
--     defined (__i586__) || defined (__WIN32__) || defined (__DJGPP))
-+#if (!defined(NOASM) && !defined (__FreeBSD__) && defined (__i386__) || \
-+     defined (__i486__) || defined (__i586__) || defined (__WIN32__) || \
-+     defined (__DJGPP))
+-#if (defined(USE_X86_ASM) && (defined (__i386__) || defined (__i486__) || \
++#if (defined(USE_X86_ASM) && defined(ASMKREED) && \
++              (defined (__i386__) || defined (__i486__) || \
+                defined (__i586__) || defined (__WIN32__) || defined (__DJGPP)))
  #  ifndef MMX
  #    define MMX
- #  endif
