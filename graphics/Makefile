@@ -247,6 +247,7 @@
     SUBDIR += libgphoto2
     SUBDIR += libgrass5
     SUBDIR += libimg
+    SUBDIR += libkipi
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
