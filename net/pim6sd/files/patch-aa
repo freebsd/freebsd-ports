@@ -1,0 +1,21 @@
+Index: pim6sd/main.c
+diff -u pim6sd/main.c.orig pim6sd/main.c
+--- pim6sd/main.c.orig	Thu Apr  5 00:06:17 2001
++++ pim6sd/main.c	Mon Mar 25 11:52:39 2002
+@@ -100,7 +100,7 @@
+ */
+ static char     	pidfilename[] = _PATH_PIM6D_PID;
+ 
+-FILE			*log_fp = stderr;
++FILE			*log_fp;
+ char           		*progname;
+ 
+ static int		foreground = 0;
+@@ -241,6 +241,7 @@
+     char            c;
+     int             tmpd;
+ 
++    log_fp = stderr;
+     setlinebuf(stderr);
+ 
+     if (geteuid() != 0)
