@@ -13,8 +13,7 @@ MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
@@ -28,10 +27,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	# none
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
-		${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +37,12 @@ LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
 .endif
 
-post-extact:
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LDFLAGS+=	-lgnugetopt
+.endif
+
+post-extract:
 	@${RM} -f ${WRKSRC}/mixkit/src/getopt.h
 
 post-patch:
