@@ -53,6 +53,9 @@ JAR_INSTALL_DEST_DIR=	${JAVA_HOME}/jre/lib/ext
 #
 SYSTEM_JARS=	jaxrpc.jar saaj.jar
 
+pre-install:
+	@${SED} -e 's@PREFIX@${PREFIX}@g' -e s'@WEBAPPS@${WEBAPPDIR}@g' -e 's@JDK_HOME@${JAVA_HOME}/jre@g' < pkg-plist > ${PLIST}
+
 do-install:
 .if !exists(${JAR_INSTALL_DEST_DIR})
 	${MKDIR} ${JAR_INSTALL_DEST_DIR}
@@ -67,6 +70,5 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/axis
 .endif
 	(cd ${WRKSRC}/docs ; tar cf - *) | (cd ${PREFIX}/share/doc/axis ; tar xvf -)
-	${SED} -e 's@PREFIX@${PREFIX}@g' -e s'@WEBAPPS@${WEBAPPDIR}@g' -e 's@JDK_HOME@${JAVA_HOME}/jre@g' < pkg-plist > ${WRKDIR}/pkg-plist
 
 .include <bsd.port.post.mk>
