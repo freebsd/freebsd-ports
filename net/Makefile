@@ -513,6 +513,7 @@
     SUBDIR += pfflowd
     SUBDIR += pfinger
     SUBDIR += phex
+    SUBDIR += php4-ldap
     SUBDIR += phpldapadmin
     SUBDIR += pim6dd
     SUBDIR += pim6sd
