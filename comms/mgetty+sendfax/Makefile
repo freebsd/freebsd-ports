@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1996/11/27 11:53:23 asami Exp $
+# $Id: Makefile,v 1.17 1997/04/05 03:55:58 jmz Exp $
 #
 
 DISTNAME=	mgetty-1.0.0
@@ -21,7 +21,7 @@ MAN5=		faxqueue.5
 MAN8=		sendfax.8 mgetty.8 callback.8
 
 pre-install:
-	@(cd ${WRKSRC}/doc; ${GMAKE} manpages)
+	@(cd ${WRKSRC}/doc; ${MAKE} manpages)
 
 .if !defined(BATCH)
 post-install:
