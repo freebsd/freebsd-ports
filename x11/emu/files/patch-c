@@ -1,0 +1,11 @@
+--- ./include/Imakefile.org	Thu May 26 14:01:17 1994
++++ ./include/Imakefile	Thu Jun 12 09:32:44 1997
+@@ -9,7 +9,7 @@
+ XCOMM you can at least butcher os.h to your heart's content in order to get emu
+ XCOMM to compile without damaging anything permanantly.
+ 
+-all: os.h
++all:: os.h
+ 
+ os.h: os.h_tmpl
+ 	@echo Creating os.h.
