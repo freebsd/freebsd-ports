@@ -1,11 +1,11 @@
---- configure.in.orig	Mon Jan  3 13:50:58 2000
-+++ configure.in	Mon Jan  3 13:50:12 2000
-@@ -42,7 +42,7 @@
+--- configure.in.orig	Thu May 18 19:23:25 2000
++++ configure.in	Sun May 28 08:03:33 2000
+@@ -55,7 +55,7 @@
  
- sawmilldir='${datadir}/sawmill'
- lispdir='${sawmilldir}/${version}/lisp'
--localedir='${sawmilldir}/${version}/locale'
-+localedir='${prefix}/share/locale'
- sawmillexecdir='${libexecdir}/sawmill/${version}/${host_type}'
+ sawfishdir='${datadir}/sawfish'
+ lispdir='${sawfishdir}/${version}/lisp'
+-localedir='${sawfishdir}/${version}/locale'
++localedir='${datadir}/locale'
+ sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'
  
  dnl Checks for programs.
