@@ -29,6 +29,7 @@
     SUBDIR += vpb2
     SUBDIR += xcept
     SUBDIR += yaps
+    SUBDIR += yawmppp
     SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>
