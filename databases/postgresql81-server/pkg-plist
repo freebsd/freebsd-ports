@@ -85,6 +85,7 @@ pgsql/include/utils/geo_decls.h
 pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/libpgtcl.a
+pgsql/lib/libpgtcl.so
 pgsql/lib/libpgtcl.so.1.0
 pgsql/lib/libpq.a
 pgsql/lib/libpq.so
