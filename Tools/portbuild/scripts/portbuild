@@ -253,6 +253,10 @@ if [ "${error}" = 0 ]; then
   scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/logs/${pkgname}.log
   error=$(cat ${chroot}/tmp/status)
 
+  if [ -e ${chroot}/tmp/work.tbz ]; then
+	scp ${chroot}/tmp/work.tbz ${user}@${master}:${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
+  fi
+
   if [ "${error}" = 0 ]; then
     tar -C ${chroot}/tmp -cf - packages | \
       ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch} -xvf -
