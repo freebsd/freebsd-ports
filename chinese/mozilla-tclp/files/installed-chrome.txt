@@ -1,0 +1,15 @@
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/global/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/communicator/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/messenger/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/editor/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/navigator/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/global/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/communicator/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/messenger/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/editor/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/navigator/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/global/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/communicator/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/messenger/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/editor/
+locale,install,url,jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/navigator/

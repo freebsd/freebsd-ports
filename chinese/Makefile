@@ -41,6 +41,7 @@
     SUBDIR += mkisofs
     SUBDIR += moefonts-cid
     SUBDIR += moettf
+    SUBDIR += mozilla-tclp
     SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
