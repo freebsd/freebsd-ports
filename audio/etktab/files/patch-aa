@@ -1,0 +1,10 @@
+--- eTktab	Tue Jul 22 00:53:46 2003
++++ eTktab	Mon Jul 28 23:44:45 2003
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # This line makes the next one a comment in Tcl \
+-exec wish "$0" -- ${1+"$@"}
++exec wish8.4 "$0" -- ${1+"$@"}
+ 
+ # eTKTab by Jason Sonnenschein jes_jm@yahoo.com
+ # based on:
