@@ -117,3 +117,23 @@ diff -udr ../nmh-0.19.ORIG/uip/Makefile.in ./uip/Makefile.in
  	done
  
  # ========== DEPENDENCIES FOR CLEANUP ==========
+diff -udr ../nmh-0.19.ORIG/config/Makefile.in ./config/Makefile.in
+--- ../nmh-0.19.ORIG/config/Makefile.in	Sat Jul 26 06:38:57 1997
++++ ./config/Makefile.in	Mon Jan  5 22:02:45 1998
+@@ -17,6 +17,7 @@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+ libdir      = @libdir@
++libexecdir  = @libexecdir@
+ etcdir      = @sysconfdir@
+ 
+ default_editor = @vipath@
+@@ -26,7 +27,7 @@
+ CFLAGS     = @CFLAGS@
+ DEFS       = @DEFS@
+ INCLUDES   = -I.. -I$(top_srcdir)
+-CONFIGDEFS = -DNMHBINDIR='"$(bindir)"' -DNMHETCDIR='"$(etcdir)"' -DNMHLIBDIR='"$(libdir)"' \
++CONFIGDEFS = -DNMHBINDIR='"$(bindir)"' -DNMHETCDIR='"$(etcdir)"' -DNMHLIBDIR='"$(libdir)"' -DNMHLIBEXECDIR='"$(libexecdir)"' \
+              -DDEFAULT_EDITOR='"$(default_editor)"' -DDEFAULT_PAGER='"$(default_pager)"'
+ 
+ COMPILE  = $(CC) -c $(DEFS) $(INCLUDES) $(CFLAGS)
