@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.10 2003/08/15 17:45:51 marcus Exp $
+# $Id: portlint.pl,v 1.16 2003/08/16 20:36:50 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -72,6 +72,7 @@ my %lang_pref = qw(
 	hungarian	hu
 	japanese	ja
 	korean		ko
+	polish		pl
 	portuguese	pt
 	russian		ru
 	ukrainian	uk
@@ -514,7 +515,7 @@ sub checkplist {
 		}
 
 		if ($autoinfo && $_ =~ /\.info-\d+$/) {
-			&perror("FATAL: $file $.: numbered info files are no longer supported; add info files using the INFO macro in the Makefile.");
+			&perror("FATAL: $file $.: numbered info files are obsolete and not portable; add info files using the INFO macro in the Makefile.");
 		}
 
 		if ($_ =~ /.*\.omf$/) {
@@ -907,22 +908,29 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	$j = $whole;
 	$j =~ s/([ \t][\@-]?)(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
 	foreach my $i (keys %cmdnames) {
-		if ($j =~ /[ \t\/]$i[ \t\n;]/
-		 && $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
-	     && $j !~ /\nCOMMENT(.)?=/) {
-			&perror("WARN: possible direct use of command \"$i\" ".
-				"found. use $cmdnames{$i} instead.");
+		# XXX This is a hack.  Really, we should break $j up into individual
+		# lines, and go through each one.
+		if ($j =~ /(\n[^ \t\/]*[ \t\/]$i[ \t\n;][^\n]*\n?)/) {
+			if ($1 !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
+				&& $1 !~ /\nCOMMENT(.)?=[^\n]+$i/) {
+					&perror("WARN: possible direct use of command \"$i\" ".
+						"found. use $cmdnames{$i} instead.");
+			}
 		}
 	}
 
 	foreach my $i (keys %autocmdnames) {
-		if ($j =~ /[\s\/]($i\d*)[\s;]/
-			&& $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
-			&& $j !~ /\nCOMMENT(.)?=/) {
-				&perror("WARN: possible direct use of command \"$1\" ".
-					"found. Use $autocmdnames{$i} instead and ".
-					"set according USE_*_VER= flag");
+		# XXX Same hack as above.
+		if ($j =~ /(\n[^ \t\/]*[ \t\/]($i\d*)[ \t\n;][^\n]*\n?)/) {
+			my $lm = $1;
+			my $sm = $2;
+			if ($lm !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
+				&& $lm !~ /\nCOMMENT(.)?=[^\n]+($i\d*)/) {
+					&perror("WARN: possible direct use of command \"$sm\" ".
+						"found. Use $autocmdnames{$i} instead and ".
+						"set according USE_*_VER= flag");
 			}
+		}
 	}
 
 	#
