@@ -17,10 +17,10 @@
 -  else
 -    strcat(buf_out, "dyn");
 +    strcat(buf_out, "statdns");
-+  else if (dynamic_flag)
-+    strcat(buf_out, "dyndns");
 +  else if (custom_flag)
 +    strcat(buf_out, "custom");
++  else 
++    strcat(buf_out, "dyndns");
  
 -  strcat(buf_out, "dns&hostname=");
 +
