@@ -1,11 +1,11 @@
---- setup.py.orig	Wed Mar 26 10:28:40 2003
-+++ setup.py	Wed Mar 26 10:29:46 2003
+--- setup.py.orig	Tue Jul  1 15:36:23 2003
++++ setup.py	Tue Jul  1 15:36:54 2003
 @@ -2,7 +2,7 @@
  from distutils.core import setup, Extension
  
- # on some versions of sendmail, smutil is renamed to sm
+ # FIXME: on some versions of sendmail, smutil is renamed to sm
 -libs = ["milter", "smutil"]
 +libs = ["milter"]
  
- setup(name = "milter", version = "0.5.4",
+ setup(name = "milter", version = "0.5.5",
  	description="Python interface to sendmail-8.1x milter API",
