@@ -172,6 +172,7 @@
     SUBDIR += tinycobol
     SUBDIR += treecc
     SUBDIR += wamcc
+    SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap
     SUBDIR += yorick

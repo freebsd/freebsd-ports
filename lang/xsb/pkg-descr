@@ -1,0 +1,14 @@
+XSB is a Logic Programming and Deductive Database system for Unix and
+Windows. It is being developed at The Computer Science Department,
+SUNY Stony Brook (http://www.cs.sunysb.edu/), in collaboration with
+Katholieke Universiteit Leuven (http://www.kuleuven.ac.be/),
+Universidade Nova de Lisboa (http://www.unl.pt/), and Uppsala
+Universitet (http://www.uu.se/).
+
+One innovation of XSB is its use of tabled resolution.  Tabled
+resolution is useful for recursive query computation, allowing
+programs to terminate correctly in many cases where Prolog does
+not. Users interested in Parsing, Program Analysis, Model-checking,
+Data Mining and Diagnosis may benefit from XSB.
+
+WWW: http://xsb.sourceforge.net/

@@ -1,0 +1,58 @@
+--- topMakefile.in.old	Sun Jul 29 16:23:01 2001
++++ topMakefile.in	Sun Jul 29 16:22:28 2001
+@@ -164,9 +164,9 @@
+ 
+ emu: ${src_config_prefix}/xsb_config.h ${src_config_prefix}/xsb_debug.h
+ 	cd ${src_emudir}; \
+-	    make depend; \
++	    gmake depend; \
+ 	    rm -f $(srcdir)/build/.xsb_build_failed; \
+-	    (make EXECUTABLE="$(EXECUTABLE)" $(emumake_goal) || \
++	    (gmake EXECUTABLE="$(EXECUTABLE)" $(emumake_goal) || \
+ 	        $(srcdir)/build/touch.sh $(srcdir)/build/.xsb_build_failed) \
+ 		2>&1 | tee -a ../build/Installation_summary; \
+ 	    (test ! -f $(srcdir)/build/.xsb_build_failed || \
+@@ -174,7 +174,7 @@
+ 
+ gpp:
+ 	@echo ""; echo "Making gpp"
+-	@cd $(srcdir)/gpp; make 2>&1 | tee -a ../build/Installation_summary
++	@cd $(srcdir)/gpp; gmake 2>&1 | tee -a ../build/Installation_summary
+ 
+ # Compiling the interface with sModels.
+ smodels:
+@@ -182,7 +182,7 @@
+ 	  echo "Compiling smodels interface"; \
+ 	  rm -f *.o Makefile *.h *.O *.so 2>/dev/null || echo ""; \
+ 	  ln -s ${src_config_prefix}/smoMakefile ./Makefile; \
+-	  make XSB=$(src_scriptdir)/xsb$(config_tag) @smodels_goal@ 2>&1\
++	  gmake XSB=$(src_scriptdir)/xsb$(config_tag) @smodels_goal@ 2>&1\
+ 		 | tee -a ../../build/Installation_summary
+ 
+ # Goal for making an XSB load module to be linked with external
+@@ -193,10 +193,10 @@
+ # This invokes xsboramod and xsbmod goals in emuMakefile, respectively
+ xsbmod: ${src_config_prefix}/xsb_config.h ${src_config_prefix}/xsb_debug.h
+ 	cd ${src_emudir}; \
+-	    make $(emumake_goal)mod
++	    gmake $(emumake_goal)mod
+ 
+ xsbdll: ${src_config_prefix}/xsb_config.h ${src_config_prefix}/xsb_debug.h
+-	cd ${src_emudir}; make dll
++	cd ${src_emudir}; gmake dll
+ 
+ emu_clean: do_cleaning inform_executable
+ 
+@@ -305,10 +305,10 @@
+ 	  chmod 644  $(install_config_libdir)/xsb_configuration.O
+ 
+ remake_dot_O_files:
+-	cd $(srcdir); make XSB=$(src_scriptdir)/xsb$(config_tag)
++	cd $(srcdir); gmake XSB=$(src_scriptdir)/xsb$(config_tag)
+ 
+ remake_dot_O_files_force:
+-	cd $(srcdir); make force XSB=$(src_scriptdir)/xsb$(config_tag)
++	cd $(srcdir); gmake force XSB=$(src_scriptdir)/xsb$(config_tag)
+ 
+ # clean for this architecture only
+ configclean::

@@ -1,0 +1,23 @@
+--- ../Makefile.orig	Sun Jul 29 17:47:07 2001
++++ ../Makefile	Sun Jul 29 17:47:59 2001
+@@ -38,16 +38,16 @@
+ 
+ syslib::
+ 	@echo ""
+-	cd syslib; make
++	cd syslib; gmake
+ 
+ lib::
+ 	@echo ""
+-	cd lib; make
++	cd lib; gmake
+ 
+ cmplib::
+ 	@echo ""
+-	cd cmplib; make
++	cd cmplib; gmake
+ 
+ packages::
+ 	@echo ""
+-	cd packages; make
++	cd packages; gmake
