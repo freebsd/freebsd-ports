@@ -1,0 +1,11 @@
+--- cucipop.c.bak	Wed May 13 20:57:39 1998
++++ cucipop.c	Sun Mar 28 17:08:28 1999
+@@ -45,7 +45,7 @@
+ #include "hsort.h"
+ 
+ #ifdef APOP
+-#include "md5/md5.h"
++#include <md5.h>
+ #endif
+ 
+ #define MD5_DIGLEN	16
