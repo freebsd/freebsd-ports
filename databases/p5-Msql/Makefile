@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-Msql
-# Version required:			1.11
+# Version required:			1.17
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/02/12 18:48:21 jfitz Exp $
+#   $Id: Makefile,v 1.8 1997/04/20 13:51:47 wosch Exp $
 #
 
-DISTNAME=	MsqlPerl-1.15
-PKGNAME=	p5-Msql-1.15
+DISTNAME=	MsqlPerl-1.17
+PKGNAME=	p5-Msql-1.17
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Msql

@@ -3,12 +3,12 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/04/18 12:10:29 jfitz Exp $
 #
 
 DISTNAME=	perlvision
 PKGNAME=	p5-PV-1.0
-CATEGORIES=	net
+CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PV
 EXTRACT_SUFX=	.tgz
