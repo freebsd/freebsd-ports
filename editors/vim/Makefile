@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	61
+PATCHLEVEL=	72
 PORTVERSION=	6.2.${PATCHLEVEL}
 PORTREVISION?=	1
 CATEGORIES?=	editors
@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES!=    /usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	009 013 019 022 023 024 033 036 038 039 041 042 047 056 057 060
+BADPATCHES=	009 013 019 022 023 024 033 036 038 039 041 042 047 056 057 060 066
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N6.2.${p}}
 .endfor
@@ -132,11 +132,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 
 .if exists(${PREFIX}/lib/libiconv.so)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
-.endif
-
-# Until the bsd.gnome.mk people fix their damned file
-.if defined(WITH_GNOME)
-USE_XLIB=	yes
 .endif
 
 pre-configure:
