@@ -64,7 +64,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 # The new devel/qmake port installs them under LOCALBASE. We can use
 # either one here, but we prefer the newer:
 .for d in ${X11BASE} ${LOCALBASE} ${PREFIX}
-.	if exists($d/share/qt/mkspecs/freebsd-g++)
+.	if exists($d/share/qt/mkspecs/freebsd-g++/qplatformdefs.h)
 QTBASE=$d
 PLATFORM=${QTBASE}/share/qt/mkspecs/freebsd-g++
 .	endif
