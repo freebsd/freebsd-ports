@@ -78,6 +78,7 @@
     SUBDIR += peq
     SUBDIR += pdmenu
     SUBDIR += pinfo
+    SUBDIR += proxyper
     SUBDIR += qclock
     SUBDIR += quotes
     SUBDIR += rc5des
