@@ -1,0 +1,11 @@
+--- kcpuload/Makefile.in.orig	Sun May 23 17:03:46 2004
++++ kcpuload/Makefile.in	Sun May 23 17:10:01 2004
+@@ -265,7 +265,7 @@
+ 
+ kcpuload_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ 
+-kcpuload_LDADD = $(LIB_KDEUI)
++kcpuload_LDADD = $(LIB_KDEUI) $(LIBPTHREAD)
+ 
+ kcpuload_SOURCES = \
+ 	icontoggleaction.cpp \
