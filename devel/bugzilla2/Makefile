@@ -5,17 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bugzilla
-PORTVERSION=	2.16.4
-PORTREVISION=	1
-CATEGORIES=	devel
+PORTNAME?=	bugzilla
+PORTVERSION?=	2.16.5
+CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
@@ -33,7 +32,7 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
 
-CONFLICTS?=	ja-bugzilla-*
+CONFLICTS?=	ja-bugzilla-2.*
 
 .if defined(WITH_CONTRIB)
 PLIST_SUB+=	CONTRIB=""
