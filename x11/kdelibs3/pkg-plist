@@ -1,4 +1,6 @@
 include/bison2cpp.h
+include/bookmark.h
+include/booktoken.h
 include/builtin.h
 include/ckey.h
 include/dither.h
@@ -25,6 +27,7 @@ include/kcharsets.h
 include/kcolorbtn.h
 include/kcolordlg.h
 include/kcolorgroup.h
+include/kcombiview.h
 include/kcombo.h
 include/kconfig.h
 include/kconfigbase.h
@@ -33,7 +36,14 @@ include/kcontrol.h
 include/kdatepik.h
 include/kdatetbl.h
 include/kdebug.h
+include/kdir.h
+include/kdirlistbox.h
 include/keditcl.h
+include/kfiledetaillist.h
+include/kfiledialog.h
+include/kfileinfo.h
+include/kfileinfocontents.h
+include/kfilepreview.h
 include/kfm.h
 include/kfmclient_ipc.h
 include/kfmipc.h
@@ -52,9 +62,11 @@ include/kmsgbox.h
 include/knewpanner.h
 include/kpanner.h
 include/kpopmenu.h
+include/kpreview.h
 include/kprocctrl.h
 include/kprocess.h
 include/kprogress.h
+include/kremotefile.h
 include/krestrictedline.h
 include/krootprop.h
 include/kselect.h
@@ -68,6 +80,7 @@ include/kstdaccel.h
 include/kstring.h
 include/ktabctl.h
 include/ktablistbox.h
+include/ktmainwindow.h
 include/ktoolbar.h
 include/ktopwidget.h
 include/ktreelist.h
@@ -75,27 +88,30 @@ include/kurl.h
 include/kwm.h
 include/kwmmapp.h
 include/mediatool.h
+include/xview.h
 lib/libjscript.la
 lib/libjscript.so.0.90
 lib/libkdecore.la
-lib/libkdecore.so.0.90
+lib/libkdecore.so.0.91
 lib/libkdeui.la
 lib/libkdeui.so.0.91
+lib/libkfile.la
+lib/libkfile.so.0.90
 lib/libkfm.la
 lib/libkfm.so.0.90
 lib/libkhtmlw.la
 lib/libkhtmlw.so.0.91
 lib/libmediatool.la
-lib/libmediatool.so.0.90
+lib/libmediatool.so.0.91
 share/apps/kde/pics/error.xpm
 share/apps/kde/pics/exclamation.xpm
 share/apps/kde/pics/info.xpm
 share/apps/kde/pics/question.xpm
 share/apps/kde/pics/stopsign.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
-share/config/charsets.config
-share/doc/HTML/default
+share/config/charsets
 share/doc/HTML/en/kdelibs/kdebug.html
+share/locale/ca/LC_MESSAGES/kde.mo
 share/locale/cs/LC_MESSAGES/kde.mo
 share/locale/cs/charset
 share/locale/da/LC_MESSAGES/kde.mo
@@ -117,14 +133,22 @@ share/locale/no/LC_MESSAGES/kde.mo
 share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/pl/charset
 share/locale/pt/LC_MESSAGES/kde.mo
+share/locale/pt/charset
 share/locale/ro/LC_MESSAGES/kde.mo
 share/locale/ro/charset
 share/locale/ru/LC_MESSAGES/kde.mo
 share/locale/ru/charset
+share/locale/sk/LC_MESSAGES/kde.mo
 share/locale/sv/LC_MESSAGES/kde.mo
+share/locale/zh/LC_MESSAGES/kde.mo
+share/toolbar/configure.xpm
 @exec /sbin/ldconfig -m %B
+@dirrm share/toolbar
+@dirrm share/locale/zh/LC_MESSAGES
+@dirrm share/locale/zh
 @dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
 @dirrm share/locale/ro/LC_MESSAGES
@@ -134,37 +158,29 @@ share/locale/sv/LC_MESSAGES/kde.mo
 @dirrm share/locale/pl/LC_MESSAGES
 @dirrm share/locale/pl
 @dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
 @dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
 @dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
 @dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
 @dirrm share/locale/fi/LC_MESSAGES
 @dirrm share/locale/fi
 @dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
 @dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
 @dirrm share/locale/de/LC_MESSAGES
 @dirrm share/locale/de
 @dirrm share/locale/da/LC_MESSAGES
 @dirrm share/locale/da
 @dirrm share/locale/cs/LC_MESSAGES
 @dirrm share/locale/cs
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
 @dirrm share/locale
 @dirrm share/doc/HTML/en/kdelibs
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/khtmlw/pics
-@dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
-@dirrm share/apps/kde
-@dirrm share/apps
 @unexec /sbin/ldconfig -R
