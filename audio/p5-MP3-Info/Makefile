@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MP3-Info
-PORTVERSION=	0.80
+PORTVERSION=	0.91
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=MP3
@@ -14,11 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
 
-USE_PERL5=	YES
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
 MAN3=		MP3::Info.3 MPEG::MP3Info.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>
