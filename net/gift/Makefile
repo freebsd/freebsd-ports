@@ -7,6 +7,7 @@
 
 PORTNAME=	giFT
 PORTVERSION=	0.11.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -27,18 +28,28 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	yes
 
 MAN1=	giftd.1
 
 DOC_FILES=	AUTHORS COPYING src/ChangeLog \
 		INSTALL NEWS QUICKSTART README TODO
 
+.include <bsd.port.pre.mk>
+
+SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	${WRKSRC}/lib/Makefile.in
 
+post-build:
+	@${SED} ${SED_SCRIPT} <${FILESDIR}/giftd.sh >${WRKDIR}/giftd.sh
+
 post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/giftd.sh ${PREFIX}/etc/rc.d/
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}
@@ -47,4 +58,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

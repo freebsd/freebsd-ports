@@ -11,3 +11,12 @@ $ gift-setup
 Note that giFT and OpenFT will not work with the default setup, so make sure you
 read and understand all questions before answering or just pressing enter. To
 reconfigure giFT and OpenFT later, just run gift-setup again.
+
+If you want to run giFT from startup tweak and add the folowing variables to your 
+/etc/rc.conf:
+
+giftd_enable="YES"
+# Run gift as (defaults to root, avoid this for security reasons)
+giftd_user=""
+# Path to giftd.conf (defaults to .giFT in the giftd_user home)
+giftd_local_dir=""
