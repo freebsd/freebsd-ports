@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	DBIx-DBSchema
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	An OO-interface to database schemas
 
 BUILD_DEPENDS=	${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw
