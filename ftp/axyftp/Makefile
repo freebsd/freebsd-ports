@@ -3,7 +3,7 @@
 # Date created: 		22 October 1998
 # Whom: 			Antti Kaipila <anttik@iki.fi>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/01 22:11:59 billf Exp $
+# $Id: Makefile,v 1.2 1999/01/18 03:26:43 steve Exp $
 #
 
 DISTNAME=	wxftp-0.4.1.src
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= 	system/network/file-transfer
 
 MAINTAINER=	anttik@iki.fi
 
-LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
 
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
 USE_GMAKE=	yes
