@@ -6,12 +6,3 @@
  ###############################################################
  # parse the command line, and call the appropriate executable #
  #                                                             #
-@@ -17,7 +17,7 @@
- }
- 
- # You can change QHACC_ROOT and QHACC_HOME to fit your needs
--QHACC_ROOT=${QHACC_ROOT:="@QHACCROOT@"}
-+QHACC_ROOT=${QHACC_ROOT:="@QHACCROOT@/lib/qhacc"}
- QHACC_HOME=${QHACC_HOME:="DEFAULT"}
- KHACC_HOME=${KHACC_HOME:=$QHACC_HOME}
- 
