@@ -1,6 +1,14 @@
---- xmrm_mpeg_main.cc.orig	Mon Mar  9 17:00:00 1998
-+++ xmrm_mpeg_main.cc	Tue Mar 28 15:37:11 2000
-@@ -68,7 +68,7 @@
+--- xmrm_mpeg_main.cc.orig	Tue Mar 10 00:00:00 1998
++++ xmrm_mpeg_main.cc	Wed Jul 19 15:43:38 2000
+@@ -8,6 +8,7 @@
+ #include <forms.h>
+ #include <unistd.h>
+ #include "xmrm_mpeg.h"
++#include "const.h"
+ 
+ #define MAX_PIC_NUM 999
+ #define BORDER_WIDTH -1
+@@ -68,7 +69,7 @@
  {
    int count = 0;
  
@@ -9,7 +17,7 @@
  
    while ( !(*ext = strstr(fname_only,backup_class->number_str)) && (count <= MAX_PIC_NUM) )
    {
-@@ -417,7 +417,7 @@
+@@ -417,7 +418,7 @@
        // Check for even picture size
        if ( (tif_w % 2) || (tif_h % 2) )
        {

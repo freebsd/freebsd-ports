@@ -10,7 +10,8 @@ PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cg.tuwien.ac.at/pub/linux/xmrm/ \
 		ftp://ftp.uni-passau.de/mount/common.lib.archive.unix/Graphic/xmrm/
-DISTFILES=	xmrm20_sources.tgz
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_sources
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	treif@mayn.de
 
