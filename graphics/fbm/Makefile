@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuzzy Pixmap Manipulation utilities
 
 NO_WRKSUBDIR=	yes
+LATEST_LINK=	graphics_fbm
 
 MANL=	clr2gray.l fbcat.l fbclean.l fbconv.l fbedge.l fbext.l fbhalf.l \
 	fbham.l fbhist.l fbinfo.l fbm.l fbm2pod.l fbmask.l fbmedian.l \
