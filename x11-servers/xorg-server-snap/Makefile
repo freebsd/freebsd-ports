@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	6.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R6.8.1/tars
@@ -39,29 +39,29 @@ MAN1=		Xorg.1 \
 		pcitweak.1 \
 		xorgcfg.1 \
 		xorgconfig.1
-MAN4=		citron.4 \
-		dmc.4 \
-		dynapro.4 \
-		elographics.4 \
-		fbdevhw.4 \
-		fpit.4 \
-		glint.4 \
-		js_x.4 \
-		kbd.4 \
-		keyboard.4 \
-		mga.4 \
-		microtouch.4 \
-		mouse.4 \
-		mutouch.4 \
-		palmax.4 \
-		penmount.4 \
-		r128.4 \
-		radeon.4 \
-		tdfx.4 \
-		tek4957.4 \
-		vga.4 \
-		void.4 \
-		wacom.4
+MAN4=		citron.4x \
+		dmc.4x \
+		dynapro.4x \
+		elographics.4x \
+		fbdevhw.4x \
+		fpit.4x \
+		glint.4x \
+		js_x.4x \
+		kbd.4x \
+		keyboard.4x \
+		mga.4x \
+		microtouch.4x \
+		mouse.4x \
+		mutouch.4x \
+		palmax.4x \
+		penmount.4x \
+		r128.4x \
+		radeon.4x \
+		tdfx.4x \
+		tek4957.4x \
+		vga.4x \
+		void.4x \
+		wacom.4x
 MAN5=		getconfig.5 \
 		xorg.conf.5
 
@@ -81,7 +81,7 @@ IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
-MAN4+=		vesa.4
+MAN4+=		vesa.4x
 .endif
 		
 .if ${ARCH} == ia64
@@ -93,46 +93,46 @@ PLIST_SUB+=	IA64_NA=""
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
-MAN4+=		sunbw2.4 \
-		suncg14.4 \
-		suncg3.4 \
-		suncg6.4 \
-		sunffb.4 \
-		sunleo.4 \
-		suntcx.4
+MAN4+=		sunbw2.4x \
+		suncg14.4x \
+		suncg3.4x \
+		suncg6.4x \
+		sunffb.4x \
+		sunleo.4x \
+		suntcx.4x
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
-MAN4+=		cirrus.4 \
-		nv.4 \
-		rendition.4 \
-		s3virge.4 \
-		savage.4 \
-		siliconmotion.4
+MAN4+=		cirrus.4x \
+		nv.4x \
+		rendition.4x \
+		s3virge.4x \
+		savage.4x \
+		siliconmotion.4x
 .endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
 MAN1+=		scanpci.1
-MAN4+=		i740.4 \
-		i810.4 \
-		nsc.4 \
-		via.4 \
-		vmware.4
+MAN4+=		i740.4x \
+		nsc.4x \
+		via.4x \
+		vmware.4x
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	AMD64_I386=""
-MAN4+=		apm.4 \
-		chips.4 \
-		cyrix.4 \
-		i128.4 \
-		neomagic.4 \
-		sis.4 \
-		trident.4 \
-		tseng.4
+MAN4+=		apm.4x \
+		chips.4x \
+		cyrix.4x \
+		i128.4x \
+		i810.4x \
+		neomagic.4x \
+		sis.4x \
+		trident.4x \
+		tseng.4x
 .else
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif

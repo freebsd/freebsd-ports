@@ -91,7 +91,7 @@ lib/modules/drivers/atimisc_drv.o
 lib/modules/drivers/glint_drv.o
 %%AMD64_I386%%lib/modules/drivers/i128_drv.o
 %%I386%%lib/modules/drivers/i740_drv.o
-%%I386%%lib/modules/drivers/i810_drv.o
+%%AMD64_I386%%lib/modules/drivers/i810_drv.o
 lib/modules/drivers/mga_drv.o
 %%AMD64_I386%%lib/modules/drivers/neomagic_drv.o
 %%I386%%lib/modules/drivers/nsc_drv.o

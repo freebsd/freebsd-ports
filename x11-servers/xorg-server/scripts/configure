@@ -24,6 +24,11 @@ echo "#define BuildGLXLibrary YES"		>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
 echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF
+echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF
+echo "#define DriverManDir \$(MANSOURCEPATH)4"	>> $LOCALDEF
+echo "#define DriverManSuffix 4x"		>> $LOCALDEF
+echo "#define MiscManDir \$(MANSOURCEPATH)7"	>> $LOCALDEF
+echo "#define MiscManSuffix 7x"			>> $LOCALDEF
 
 if [ X$WITH_DEBUG != X ]; then
 	export CFLAGS="-g $CFLAGS"
