@@ -45,4 +45,9 @@ pre-configure:
 	  ${FALSE} ; \
 	fi
 
+post-install:
+	@${ECHO_CMD} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} ""
+
 .include <bsd.port.post.mk>
