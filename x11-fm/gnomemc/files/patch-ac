@@ -1,0 +1,22 @@
+--- Make.common.in.orig	Tue Jan 26 22:36:55 1999
++++ Make.common.in	Tue Jan 26 22:40:12 1999
+@@ -19,15 +19,15 @@
+ bindir     = @bindir@
+ sysconfdir = @sysconfdir@
+ corbadir   = $(sysconfdir)/CORBA/servers
+-libdir     = $(exec_prefix)/lib/mc
++libdir     = @localstatedir@/mc
+-idldir     = $(prefix)/share/idl
++idldir     = @localstatedir@/idl
+ suppbindir = $(libdir)/bin
+-gnewdir	   = $(prefix)/share/mc/templates
++gnewdir	   = $(libdir)/templates
+ tidir      = $(libdir)/term
+ extfsdir   = $(libdir)/extfs
+ datadir    = @datadir@
+ icondir    = $(datadir)/pixmaps/mc
+-localedir  = $(datadir)/locale
++localedir  = $(prefix)/share/locale
+ basemandir = @mandir@
+ mandir     = $(basemandir)/man1
+ manext     = 1
