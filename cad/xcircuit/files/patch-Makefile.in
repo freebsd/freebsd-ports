@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May 20 00:54:39 2003
-+++ Makefile.in	Mon May 26 21:57:18 2003
-@@ -108,7 +108,7 @@
+--- Makefile.in.orig	Mon Jul 14 23:52:38 2003
++++ Makefile.in	Sun Jul 27 22:04:59 2003
+@@ -168,7 +168,7 @@
  tmpdir = /tmp
  
  # Directory for app-defaults file
@@ -9,8 +9,8 @@
  
  PATHNAMES = -DPROG_VERSION=$(VERSION) \
  	-DCAD_DIR=\"$(prefix)\" \
-@@ -143,7 +143,7 @@
- LDDL_FLAGS = @LDDL_FLAGS@
+@@ -195,7 +195,7 @@
+ INCLUDES = -IXw ${INC_SPECS}
  
  # Library directory and files
 -librarydir = $(datadir)/$(PACKAGE)-$(VERSION)
@@ -18,7 +18,7 @@
  USER_RC_FILE = .xcircuitrc
  PROLOGUE_FILE = xcircps2.pro
  BUILTINS_DEP1 = generic.lps
-@@ -572,11 +572,11 @@
+@@ -746,7 +746,7 @@
  
  lib/tcl/xcircuit${SHDLIB_EXT}: xcwrap.o ${xcircuit_OBJECTS}
  	$(RM) lib/xcircuit${SHDLIB_EXT}
@@ -27,8 +27,3 @@
  		${X_LIBS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS}
  
  tcl:	lib/tcl/xcircuit${SHDLIB_EXT}
--	make lib/tcl/xcircuit${SHDLIB_EXT}
-+	$(MAKE) lib/tcl/xcircuit${SHDLIB_EXT}
- 
- help.c: menudep.h
- menucalls.c: menudep.h
