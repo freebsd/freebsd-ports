@@ -65,10 +65,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: 0 (no effect).
 # PKGNAME		- Always defined as
 #				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
+#				  Do not define this in your Makefile.
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
 # PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
-#				  Do not define this in your Makefile.
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
 # 				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
 # 				  and to ${PKGNAMEPREFIX}${PORTNAME} otherwise.
@@ -179,9 +179,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # ONLY_FOR_ARCHS - Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS  - Only build ports if ${ARCH} doesn't match one of these.
 #
+# These variables control options about how a port gets built and/or
+# are shorthand notations for common sets of dependencies.
 # Use these if your port uses some of the common software packages. By
 # convention these should be set to 'yes', although they only need to be
 # defined.  (Defaults: not set, unless explicitly indicated below.)
+#
+# Note: the distinction between the USE_* and WANT_* variables, and the
+# WITH_* and WITHOUT_* variables, are that the former are restricted to
+# usage inside the ports framework, and the latter are reserved for user-
+# settable options.  (Setting USE_* in /etc/make.conf is always wrong).
 #
 # USE_BZIP2		- Says that the port tarballs use bzip2, not gzip, for
 #				  compression.
@@ -358,7 +365,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_XLIB		- Says that the port uses the X libraries.
 #
 # USE_FREETYPE	- Says that the port uses the freetype print libraries.
-# USE_GL		- Says that the port uses libGL.
+# USE_GL		- Says that the port uses libGL (not needed with XFree86 4.x
+#				  which already includes this functionality).
 # USE_MESA		- Says that the port uses libGL/libglut (deprecated).
 # USE_MOTIF		- Says that the port uses a Motif toolkit.  Implies USE_XPM.
 # NO_OPENMOTIF		- Says that the port uses a custom Motif toolkit
@@ -534,7 +542,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  this is you have two or more ports that share most of the
 #				  files (default: ${.CURDIR}).
 # PORTSDIR		- The root of the ports tree. (default: /usr/ports)
-# DISTDIR 		- Where to get gzip'd, tarballed copies of original sources
+# DISTDIR 		- Where to search for and store copies of original sources
 #				  (default: ${PORTSDIR}/distfiles).
 # PACKAGES		- A top level directory where all packages go (rather than
 #				  going locally to each port). (default: ${PORTSDIR}/packages).
@@ -604,6 +612,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # INFO			- A list of .info files (omitting the trailing ".info");
 #				  only one entry per document!
+# INFO_PATH		- Path, where all .info files will be installed by your
+#			  port, relative to ${PREFIX} (default: "share/info" if
+#			  ${PREFIX} is equal to /usr and "info" otherwise).
 #
 # Set the following to specify all documentation your port installs into
 # ${DOCSDIR}
@@ -1155,17 +1166,14 @@ RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if ${OSVERSION} >= 502100
 PERL_VERSION?=	5.8.2
 PERL_VER?=	5.8.2
-PERL_ARCH?=	mach
 .else
 .if ${OSVERSION} >= 500032
 PERL_VERSION?=	5.6.1
 PERL_VER?=		5.6.1
-PERL_ARCH?=		mach
 .else
 .if ${OSVERSION} >= 500007
 PERL_VERSION?=	5.6.0
 PERL_VER?=		5.6.0
-PERL_ARCH?=		mach
 .else
 .if ${OSVERSION} >= 300000
 PERL_VERSION?=	5.00503
@@ -1173,7 +1181,6 @@ PERL_VERSION?=	5.00503
 PERL_VERSION?=	5.00502
 .endif
 PERL_VER?=		5.005
-PERL_ARCH?=		${ARCH}-freebsd
 .endif
 .endif
 .endif
@@ -1193,6 +1200,12 @@ PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
 .else
 PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
+
+.if ${PERL_LEVEL} >= 500600
+PERL_ARCH?=		mach
+.else
+PERL_ARCH?=		${ARCH}-freebsd
+.endif
 
 .if ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
@@ -1326,7 +1339,7 @@ check-makevars::
 .endif
 .endif
 
-.if defined(USE_IMAKE) && ${OPSYS} != OpenBSD && !defined(NO_INSTALL_MANPAGES)
+.if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 MANCOMPRESSED?=	yes
 .else
 MANCOMPRESSED?=	no
@@ -1593,41 +1606,42 @@ GCCVERSION=		030400
 .endif
 .endif
 
-.if defined(USE_GCC) && ${USE_GCC} == 2.95 && ( ${OSVERSION} < 400012 || ${OSVERSION} > 500034 )
+.if defined(USE_GCC)
+.if ${USE_GCC} == 2.95 && ( ${OSVERSION} < 400012 || ${OSVERSION} > 500034 )
 CC=				gcc295
 CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/gcc295
-MAKE_ENV+=		CC=${CC} CXX=${CXX}
 GCCVERSION=		029500
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.1 && ( ${OSVERSION} < 500035 || ${OSVERSION} > 500038 )
+.if ${USE_GCC} == 3.1 && ( ${OSVERSION} < 500035 || ${OSVERSION} > 500038 )
 CC=				gcc31
 CXX=			g++31
 F77=			g77-31
 BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
-MAKE_ENV+=		CC=${CC} CXX=${CXX}
 GCCVERSION=		030100
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
+.if ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
 CC=				gcc32
 CXX=			g++32
 F77=			g77-32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 GCCVERSION=		030200
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
+.if ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
 CC=				gcc33
 CXX=			g++33
 F77=			g77-33
 BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 GCCVERSION=		030301
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
+.if ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
 CC=				gcc34
 CXX=			g++34
 F77=			g77-34
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 GCCVERSION=		030400
+.endif
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
 .endif
 
 .if defined(USE_OPENLDAP_VER)
@@ -1733,7 +1747,9 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .if defined(PERL_MODBUILD)
 PERL_CONFIGURE=		yes
 CONFIGURE_SCRIPT?=	Build.PL
+.if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
+.endif
 ALL_TARGET?=
 PL_BUILD?=		Build
 CONFIGURE_ARGS+= \
@@ -1970,6 +1986,9 @@ PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH
 PATCH_ARGS+=		--batch
 PATCH_DIST_ARGS+=	--batch
 .endif
+
+# Prevent breakage with VERSION_CONTROL=numbered
+PATCH_ARGS+=	-V simple
 
 .if defined(PATCH_CHECK_ONLY)
 PATCH_ARGS+=	-C
@@ -2538,8 +2557,12 @@ CKSUMFILES=		${ALLFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
+.if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+.endif
+.if defined(IGNOREFILES) && ${IGNOREFILES}!=""
 _IGNOREFILES?=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
+.endif
 .else
 _CKSUMFILES?=	${CKSUMFILES}
 _IGNOREFILES?=	${IGNOREFILES}
@@ -2748,6 +2771,12 @@ __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
 _MANPAGES:=	${_MANPAGES:S%$%.gz%}
 .endif
 
+.endif
+
+.if ${PREFIX} == /usr
+INFO_PATH?=	share/info
+.else
+INFO_PATH?=	info
 .endif
 
 .if ${XFREE86_VERSION} == 3
@@ -3642,7 +3671,7 @@ security-check:
 	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
 	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2> /dev/null > ${WRKDIR}/.PLIST.setuid; \
 	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
-	| ${XARGS} -0 -J % ${FIND} % -prune -perm -0002 2> /dev/null > ${WRKDIR}/.PLIST.writable; \
+	| ${XARGS} -0 -J % ${FIND} % -prune -perm -0002 \! -type l 2> /dev/null > ${WRKDIR}/.PLIST.writable; \
 	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
 	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f -print0 2> /dev/null \
 	| ${XARGS} -0 -n 1 /usr/bin/objdump -R 2> /dev/null > ${WRKDIR}/.PLIST.objdump; \
@@ -3650,11 +3679,12 @@ security-check:
 		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
-	    if [ ! -z "`make www-site`" ]; then \
+		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+	    if [ ! -z "$${www_site}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
 			${ECHO_MSG} "      status of this software, see the following webpage: "; \
-			${MAKE} www-site; \
+			${ECHO_MSG} "$${www_site}"; \
 		fi; \
 	fi
 
@@ -3705,7 +3735,7 @@ security-check:
 			fi; \
 		fi; \
 		if [ ! -L "${PREFIX}/$$i" ]; then \
-			if [ -n "`${FIND} ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
+			if [ -n "`${FIND} ${PREFIX}/$$i -prune -perm -0002 \! -type l 2>/dev/null`" ]; then \
 				 ${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
 			fi; \
 		fi; \
@@ -3744,11 +3774,12 @@ security-check:
 		${ECHO_MSG} "      risk to the system. FreeBSD makes no guarantee about the security of"; \
 		${ECHO_MSG} "      ports included in the Ports Collection. Please type 'make deinstall'"; \
 		${ECHO_MSG} "      to deinstall the port if this is a concern."; \
-	    if [ ! -z "`make www-site`" ]; then \
+		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+	    if [ ! -z "$${www_site}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
 			${ECHO_MSG} "      status of this software, see the following webpage: "; \
-			${MAKE} www-site; \
+			${ECHO_MSG} "$${www_site}"; \
 		fi; \
 	fi
 .endif # !defined(OLD_SECURITY_CHECK)
@@ -4201,7 +4232,8 @@ update-patches:
 
 .if !target(makesum)
 makesum:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes \
+		DISABLE_SIZE=yes
 	@if [ -f ${MD5_FILE} ]; then ${CAT} /dev/null > ${MD5_FILE}; fi
 	@(cd ${DISTDIR}; \
 	 for file in ${_CKSUMFILES}; do \
@@ -4347,12 +4379,17 @@ ${deptype:L}-depends:
 		fi; \
 		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
-				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-					${ECHO_MSG} "       (but building it anyway)"; \
-					notfound=1; \
+				if [ "$$prog" = "${NONEXISTENT}" ]; then \
+					${ECHO_MSG} "Error: ${NONEXISTENT} exists.  Please remove it, and restart the build."; \
+					${FALSE}; \
 				else \
-					notfound=0; \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
+					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+						${ECHO_MSG} "       (but building it anyway)"; \
+						notfound=1; \
+					else \
+						notfound=0; \
+					fi; \
 				fi; \
 			else \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
@@ -4892,7 +4929,7 @@ add-plist-docs:
 		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
 		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
 	fi
-	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} -not -type d 2>/dev/null | \
+	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
 	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
@@ -4907,10 +4944,10 @@ add-plist-docs:
 add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
-	@${ECHO_CMD} "@unexec install-info --delete %D/info/$i.info %D/info/dir" \
+	@${ECHO_CMD} "@unexec install-info --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@${LS} ${PREFIX}/info/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info %D/info/$i.info %D/info/dir" \
+	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .endfor
 
@@ -5030,7 +5067,6 @@ __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 
 .if !target(config)
 config:
-	@${MKDIR} ${WRKDIR}
 .if !defined(OPTIONS)
 	@${ECHO_MSG} "===> No options to configure"
 .else

@@ -70,20 +70,44 @@ index:
 	@rm -f ${.CURDIR}/${INDEXFILE}
 	@cd ${.CURDIR} && make ${.CURDIR}/${INDEXFILE}
 
+INDEX_JOBS?=	2
+
 ${.CURDIR}/${INDEXFILE}:
 	@echo -n "Generating ${INDEXFILE} - please wait.."; \
-	export LOCALBASE=/nonexistentlocal; \
-	export X11BASE=/nonexistentx; \
-	cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
-		perl ${.CURDIR}/Tools/make_index | \
-	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,$${LOCALBASE},/usr/local," -e "s,$${X11BASE},/usr/X11R6," > ${INDEXFILE}
-.if !defined(INDEX_NOSORT)
-	@sed -e 's./..g' ${.CURDIR}/${INDEXFILE} | \
+	if [ "${INDEX_PRISTINE}" != "" ]; then \
+		export LOCALBASE=/nonexistentlocal; \
+		export X11BASE=/nonexistentx; \
+	fi; \
+	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
+	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
+	( cd ${.CURDIR} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
+		ECHO_MSG="echo > /dev/null" describe ) || \
+		(rm -rf $${tmpdir} ; \
+		if [ "${INDEX_QUIET}" = "" ]; then \
+			echo; \
+			echo "********************************************************************"; \
+			echo "Before reporting this error, verify that you are running a supported"; \
+			echo "version of FreeBSD (see http://www.FreeBSD.org/ports/) and that you"; \
+			echo "have a complete and up-to-date ports collection.  If so, then report"; \
+			echo "the failure to ports@FreeBSD.org together with relevant details of"; \
+			echo "your ports configuration (including FreeBSD version, environment and"; \
+			echo "/etc/make.conf settings)."; \
+			echo "********************************************************************"; \
+			echo; \
+		fi; \
+		exit 1); \
+	cat $${tmpdir}/${INDEXFILE}.desc.* | perl ${.CURDIR}/Tools/make_index | \
+		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${.CURDIR}/${INDEXFILE}.tmp; \
-	mv -f ${.CURDIR}/${INDEXFILE}.tmp ${.CURDIR}/${INDEXFILE}
-.endif
-	@echo " Done."
+	if [ "${INDEX_PRISTINE}" != "" ]; then \
+		sed -e "s,$${LOCALBASE},/usr/local," -e "s,$${X11BASE},/usr/X11R6," \
+			${.CURDIR}/${INDEXFILE}.tmp > ${.CURDIR}/${INDEXFILE}; \
+	else \
+		mv ${.CURDIR}/${INDEXFILE}.tmp ${.CURDIR}/${INDEXFILE}; \
+	fi; \
+	rm -rf $${tmpdir}; \
+	echo " Done."
 
 print-index:	${.CURDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }' < ${.CURDIR}/${INDEXFILE}
@@ -95,7 +119,7 @@ parallel: ${.CURDIR}/${INDEXFILE}
 	@false
 .endif
 .for dir in ${SUBDIR}
-	@echo "all: ${dir}-all"
+	@[ -r ${dir}/Makefile ] && echo "all: ${dir}-all" || true
 .endfor
 	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all: " me ".tgz"; print me ": " me ".tgz"; print me ".tgz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tgz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/${INDEXFILE}
 
