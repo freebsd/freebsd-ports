@@ -13,5 +13,7 @@ LCLTARGET=	arm-rtems
 
 MAN1=		${LCLTARGET}-run.1
 
+BROKEN=		Patch fails
+
 MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 .include "${MASTERDIR}/Makefile"
