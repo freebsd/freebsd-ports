@@ -1,0 +1,10 @@
+--- Makefile.orig	Fri Aug 13 11:24:56 2004
++++ Makefile	Fri Aug 13 14:57:56 2004
+@@ -1,5 +1,5 @@
+-CXX=c++
+-CXXFLAGS=-O3 -pipe -include defs.h -D_USE_MD5
++CXX?=c++
++CXXFLAGS+=-include defs.h -D_USE_MD5
+ #add -D_LINUX for compilation on Linux
+ LDFLAGS=-lpcap -lcrypto
+ 
