@@ -1,0 +1,19 @@
+bin/flyway
+lib/%%PYTHON_VERSION%%/site-packages/flyway/apt.dat
+lib/%%PYTHON_VERSION%%/site-packages/flyway/fix.dat
+lib/%%PYTHON_VERSION%%/site-packages/flyway/flycore.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/flyway.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/helpview.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/nav.dat
+lib/%%PYTHON_VERSION%%/site-packages/flyway/option.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/optiondlg.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/printpreview.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/recentfiles.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/searchstr.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/textpaint.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/tmpcontrol.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/units.py
+lib/%%PYTHON_VERSION%%/site-packages/flyway/xpm.py
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/flyway
+%%PORTDOCS%%share/doc/flyway/README.html
+%%PORTDOCS%%@dirrm share/doc/flyway

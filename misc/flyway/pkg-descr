@@ -1,0 +1,8 @@
+Flyway allows the user to find and enter U.S. waypoints (airports, navaids,
+and fixes), then it calculates courses, wind corrections, and travel times.
+Information about the waypoints is provided (including frequencies, elevation,
+fuel availability, and runway descriptions). The route data can also be used
+to fill in an editable FAA Flight Plan form, and a very rough map of the
+route can be displayed.
+
+WWW: http://www.xecu.net/dougbell/flyway/
