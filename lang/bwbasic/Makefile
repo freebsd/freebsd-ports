@@ -8,7 +8,8 @@
 PORTNAME=	bwbasic
 PORTVERSION=	2.20p2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.rahul.net/pub2/rhn/www/files/
+# mastersite disappeared in September 2002
+MASTER_SITES=	# ftp://ftp.rahul.net/pub2/rhn/www/files/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
