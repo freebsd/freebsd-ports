@@ -21,6 +21,7 @@ USE_GMAKE=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_GCC=		3.4
 
 OPTIONS=		MBOX "mbox support" on \
 			MH "MH support" on \
