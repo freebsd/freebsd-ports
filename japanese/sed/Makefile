@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sed
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 PATCH_SITES=	http://member.nifty.ne.jp/wills/program/
 PATCHFILES=	sedmb108.diff.gz
