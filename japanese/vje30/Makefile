@@ -42,7 +42,9 @@ DISTOBJFORMAT=	ELF
 .endif
 
 MAINDIST=	${DISTNAME}${EXTRACT_SUFX}
-UPDATEDIST=	update${EXTRACT_SUFX}
+.if defined(WITH_MINORUPDATE)
+ UPDATEDIST=	update${EXTRACT_SUFX}
+.endif
 
 BINSTUFF=	vje	\
 		vjed	\
@@ -70,6 +72,9 @@ pre-fetch:
 	${ECHO} "*****************************************************************";	\
 	${FALSE}									\
 	)
+.if !defined(WITH_MINORUPDATE)
+	@${ECHO} "If you dare apply the buggy minor update from the vendor, define \"WITH_MINORUPDATE\"."
+.endif
 
 post-extract:
 	@${RM} ${_DISTDIR}/${MAINDIST}
@@ -77,7 +82,9 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
+.if defined(WITH_MINORUPDATE)
 	@${MV} ${WRKDIR}/vje ${WRKSRC}/vje30/bin/
+.endif
 
 do-install:
 	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
@@ -87,9 +94,11 @@ do-install:
 	@${CHMOD} a+x ${PREFIX}/etc/rc.d/vje.sh
 	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
 	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
+.if defined(WITH_MINORUPDATE)
 	@${CP} ${WRKDIR}/vjed.bin /tmp/
 	@${ECHO} '' | ${WRKDIR}/vjesetup
 	@${RM} /tmp/vjed.bin
+.endif
 	@${CP} -Pp /etc/services /etc/services.bak
 	@${GREP} -qw '^vjed' /etc/services || ${ECHO} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
 
