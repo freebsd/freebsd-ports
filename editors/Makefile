@@ -83,6 +83,7 @@
     SUBDIR += thoteditor
     SUBDIR += uemacs
     SUBDIR += uzap
+    SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vilearn
     SUBDIR += vim-lite
