@@ -8,9 +8,9 @@
 PORTNAME=	alisp
 PORTVERSION=	20040924
 CATEGORIES=	lang devel lisp
-MASTER_SITES=	http://t3x.dyndns.org/files/
+MASTER_SITES=	http://www.holm-und-jeschag.de/files/
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	nils@holm-und-jeschag.de
 COMMENT=	A tail-recursive interpreter for purely symbolic LISP
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
