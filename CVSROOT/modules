@@ -1974,6 +1974,7 @@ glade		ports/devel/glade
 glade--		ports/devel/glade--
 glade2		ports/devel/glade2
 glame		ports/audio/glame
+glark		ports/textproc/glark
 glass		ports/graphics/glass
 glasteroids	ports/games/glasteroids
 glbiff		ports/mail/glbiff
