@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	prozilla
-PORTVERSION=	1.3.6
-PORTREVISION=	3
+PORTVERSION=	1.3.7.3
 CATEGORIES=	ftp
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProZilla is a fast download accelerator
-
-FORBIDDEN=	"http://www.vuxml.org/freebsd/1a32e8ee-3edb-11d9-8699-00065be4b5b6.html"
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=	2005-01-17
 
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
