@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/perl -w
 #
 # $FreeBSD$
 
@@ -8,55 +8,67 @@
 # in the log_accum script.  Otherwise your commit messages will be sent
 # to 'cvs-committers@freebsd.org' etc.  This could be highly embarrassing. :-)
 #
-case "`hostname | tr A-Z a-z`" in
-freefall.freebsd.org|internat.freebsd.org)
-	# Sanity check to make sure we've been run through the wrapper and are
-	# now primary group 'ncvs'.
-	#
-	GRP=`/usr/bin/id -gn`
-	if [ "x$GRP" != "xncvs" ]; then
-		echo "You do not have group ncvs!"
-		exit 1
-	fi
-	;;
-*)
-	echo "Please commit on Freefall\!"
-	echo "(and Internat for crypto.)"
-	exit 1
-esac
+
+use strict;
+
+my $CVSROOT = $ENV{CVSROOT} || die "Can't determine CVSROOT (commitcheck)!\n";
+
+my $MINCVSVERSION = "1090900";	# 1.9.9p0
+
+# Check that the user is committing on the right machine.
+#
+use Sys::Hostname;			# get hostname() function
+my $hostname = hostname();
+if ($hostname !~ /^freefall.freebsd.org$/ &&
+    $hostname !~ /^internat.freebsd.org$/) {
+	print "Please commit on Freefall!\n";
+	print "(or Internat for crypto.)\n";
+	exit 1;
+}
+
+# Sanity check to make sure we've been run through the wrapper and are
+# now primary group 'ncvs'.
+#
+my $GRP=`/usr/bin/id -gn`;
+chomp $GRP;
+unless ( $GRP =~ /^ncvs$/ ) {
+	print "You do not have group ncvs (commitcheck)!\n";
+	exit 1;
+}
 
 #
 # Ensure the minimum version of cvs is installed.
 #
-VERS=`/usr/bin/cvs -v | awk '$1 == "Concurrent" { print $5 }' | awk -F. '{printf "%d%02d%02d\n",$1,$2,$3}'`
-if [ "x${VERS}" = "x" -o ${VERS} -lt 10909 ]; then
-	echo "The wrong version of CVS is installed!" 1>&2
-	exit 1
-fi
+my $VERSTR = `/usr/bin/cvs -v`;
+$VERSTR =~ s/.*Concurrent\D*(\S*).*/$1/s;
+$VERSTR =~ s/\D+/./g;
+my $VERSION = sprintf "%d%02d%02d%02d\n", split /\./, $VERSTR;
+unless ( $VERSION && $VERSION >= $MINCVSVERSION ) {
+	print "The wrong version of CVS is installed (commitcheck)!\n";
+	exit 1;
+}
 
 
 #
 # Does the access control list allow them commit access?
 #
-if $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}
-then
-	:	# OK
-else
-	echo "Access control checks failed! (cvs_acls.pl)" 1>&2
-	exit 1
-fi
+system("$CVSROOT/CVSROOT/cvs_acls.pl", @ARGV);
+if ($? >> 8) {
+	print "Access control checks failed! (cvs_acls.pl)\n";
+	exit 1;
+}
 
 #
 # Last minute checks and preparations for log_accum.pl later.  This
 # records the last directory in this commit so that log_accum knows when
 # to finish coalescing commit messages and mail it.
 #
-if $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}
-then
-	:	# OK
-else
-	echo "commit_prep.pl failed!" 1>&2
-	exit 1
-fi
+system("$CVSROOT/CVSROOT/commit_prep.pl", @ARGV);
+if ($? >> 8) {
+	print "commit_prep.pl failed!\n";
+	exit 1;
+}
 
-exit 0		# Lets do it!
+exit 0;		# Lets do it!
+
+#end
