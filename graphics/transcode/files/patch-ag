@@ -1,0 +1,11 @@
+--- configure.org	Tue Dec 18 18:12:10 2001
++++ configure	Tue Dec 18 18:12:31 2001
+@@ -10747,7 +10747,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldv -L$with_dv_l -ldv ${EXTRA_LIBS} $LIBS"
++LIBS="-ldv -L$with_dv_l -ldv ${EXTRA_LIBS} $LIBS -llthread"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 10752 "configure"
+ #include "confdefs.h"

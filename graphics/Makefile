@@ -316,6 +316,7 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
+    SUBDIR += transcode
     SUBDIR += truevision
     SUBDIR += twinlib
     SUBDIR += txtmerge
