@@ -123,6 +123,7 @@
     SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade
     SUBDIR += p5-Gnome
+    SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gtk
     SUBDIR += p5-Gtk2
     SUBDIR += p5-GtkXmHTML

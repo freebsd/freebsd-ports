@@ -1,0 +1,38 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Application.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/ApplicationRegistry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Async.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Async/Handle.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Directory.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Directory/Handle.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/FileInfo.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Handle.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl-gtypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl-version.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Mime.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Mime/Application.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Mime/Monitor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Mime/Type.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Monitor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Monitor/Handle.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/URI.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Xfer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/main.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/VFS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/VFS/VFS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/VFS/VFS.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Async
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Directory
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Mime
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Monitor
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/VFS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2 2>/dev/null || true
