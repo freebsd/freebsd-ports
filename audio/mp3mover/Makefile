@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mp3mover
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.doc.ic.ac.uk/~jsm00/scripts/
 
@@ -24,5 +24,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3mover.pl ${PREFIX}/bin/mp3mover
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 	${CP} ${WRKSRC}/sample-.mp3moverrc ${PREFIX}/share/${PORTNAME}
+	${CP} ${WRKSRC}/shellperfect-.mp3moverrc ${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.mk>
