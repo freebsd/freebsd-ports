@@ -7718,6 +7718,7 @@ php4-mysql	ports/databases/php4-mysql
 php4-ncurses	ports/devel/php4-ncurses
 php4-nms	ports/lang/php4-nms
 php4-odbc	ports/databases/php4-odbc
+php4-openssl	ports/security/php4-openssl
 php4-oracle	ports/databases/php4-oracle
 php4-overload	ports/lang/php4-overload
 php4-pcntl	ports/devel/php4-pcntl
