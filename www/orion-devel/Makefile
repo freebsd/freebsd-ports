@@ -9,6 +9,7 @@ PORTNAME=	orion
 PORTVERSION=	1.5.2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
+		http://www.atlassian.com/software/orion/downloads/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
