@@ -2,6 +2,7 @@ bin/tim-config
 bin/wrap
 lib/gtk-2.0/2.4.0/immodules/im-tim.la
 lib/gtk-2.0/2.4.0/immodules/im-tim.so
+share/locale/zh_CN/LC_MESSAGES/wenju.mo
 %%DATADIR%%/bxm.tim
 %%DATADIR%%/cj.tim
 %%DATADIR%%/erbi.tim
