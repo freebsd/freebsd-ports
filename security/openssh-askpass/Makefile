@@ -23,8 +23,8 @@ MANCOMPRESSED=	yes
 makesrctarball: fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${PKGNAME}.tar.gz\"."; \
-	${TAR} cfz ${PKGNAME}.tar.gz ${PKGNAME}
+	${ECHO_MSG} ">> \"${DISTNAME}.tar.gz\"."; \
+	${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/ssh-askpass
