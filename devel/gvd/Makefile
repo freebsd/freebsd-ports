@@ -13,7 +13,7 @@ MASTER_SITES=		http://libre.act-europe.fr/gvd/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		sam@inf.enst.fr
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		GNU Visual Debugger, a graphical front-end to gdb and jdb
 
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat \
@@ -23,8 +23,8 @@ LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CC=adagcc
-MAKE_ENV=		CC=adagcc
+CONFIGURE_ENV=		CC=adagcc CFLAGS="${CFLAGS:S/-O2 -fno-strict-aliasing/-O/}"
+MAKE_ENV=		CC=adagcc CFLAGS="${CFLAGS:S/-O2 -fno-strict-aliasing/-O/}"
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
