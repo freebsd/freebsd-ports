@@ -80,6 +80,7 @@
     SUBDIR += kplot3d
     SUBDIR += lfview
     SUBDIR += libimg
+    SUBDIR += libungif
     SUBDIR += libwmf
     SUBDIR += linux_glx
     SUBDIR += mpeg-lib
