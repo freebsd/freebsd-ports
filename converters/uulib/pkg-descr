@@ -7,3 +7,5 @@ This library is able to decode files in the following formats:
 
 It is also able to encode files in all of the above formats except
 for BinHex.
+
+http://www.uni-frankfurt.de/~fp/uudeview/

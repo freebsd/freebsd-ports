@@ -4,3 +4,5 @@ formats, and encode in all of those except for BinHex.
 
 Xdeview uses tcl/tk 8.0, but the port can be configured to
 use other tcl/tk versions (see the port Makefile).
+
+http://www.uni-frankfurt.de/~fp/uudeview/
