@@ -67,6 +67,9 @@ GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 
+CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
+		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
+
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
@@ -103,7 +106,14 @@ CONFLICTS=	php4-4* php4-cli-4* php4-cgi-4*
 CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
 
 .if defined(WITHOUT_APACHE)
+.if defined(WITHOUT_CLI)
+.if defined(WITH_FASTCGI)
+CONFIGURE_ARGS+=--enable-fastcgi
+.else
 CONFIGURE_ARGS+=--enable-discard-path
+.endif
+SAPI_FILE=	bin/php
+.endif
 PLIST_SUB+=	APACHE="@comment "
 .else
 PLIST_SUB+=	APACHE=""
@@ -120,9 +130,6 @@ PLIST_SUB+=	PEAR="@comment "
 .endif
 MAN1=		php.1
 PLIST_SUB+=	CLI=""
-.endif
-.if defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
-SAPI_FILE=	"bin/php"
 .endif
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
@@ -692,7 +699,7 @@ test: all
 .endif
 
 post-install:
-.if !defined(WITHOUT_CLI)
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
 	@${INSTALL_SCRIPT} ${WRKSRC}/pear/scripts/pear ${PREFIX}/bin
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc

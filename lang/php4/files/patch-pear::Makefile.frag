@@ -17,6 +17,6 @@
 +		$(INSTALL_ROOT)$(peardir)/bootstrap
 +	@cp $(srcdir)/Archive/*.php $(INSTALL_ROOT)$(peardir)/bootstrap/Archive
 +	@cp $(srcdir)/Console/*.php $(INSTALL_ROOT)$(peardir)/bootstrap/Console
-+	@cp -R $(srcdir)/OS $(INSTALL_ROOT)$(peardir)/bootstrap/OS
-+	@cp -R $(srcdir)/PEAR $(INSTALL_ROOT)$(peardir)/bootstrap/PEAR
++	@cp -R $(srcdir)/OS $(INSTALL_ROOT)$(peardir)/bootstrap
++	@cp -R $(srcdir)/PEAR $(INSTALL_ROOT)$(peardir)/bootstrap
  
