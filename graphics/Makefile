@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1995/09/09 04:23:32 asami Exp $
+# $Id: Makefile,v 1.15 1995/10/03 09:36:49 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -15,6 +15,7 @@
     SUBDIR += tiff
     SUBDIR += vcg
     SUBDIR += xanim
+    SUBDIR += xbmbrowser
     SUBDIR += xdl
     SUBDIR += xfig
     SUBDIR += xfractint
