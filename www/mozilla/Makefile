@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -19,12 +18,14 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

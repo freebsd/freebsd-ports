@@ -5,7 +5,6 @@ lib/mozilla/TestGtkEmbedNotebook
 lib/mozilla/TestGtkEmbedSocket
 lib/mozilla/bloaturls.txt
 lib/mozilla/chrome/US.jar
-lib/mozilla/chrome/chatzilla.jar
 lib/mozilla/chrome/chrome.rdf
 lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
@@ -41,10 +40,12 @@ lib/mozilla/components/autoconfig.xpt
 lib/mozilla/components/bookmarks.xpt
 lib/mozilla/components/caps.xpt
 lib/mozilla/components/chardet.xpt
-lib/mozilla/components/chatzilla-service.js
 lib/mozilla/components/chrome.xpt
+lib/mozilla/components/commandhandler.xpt
+lib/mozilla/components/composer.xpt
 lib/mozilla/components/content.xpt
 lib/mozilla/components/content_base.xpt
+lib/mozilla/components/content_html.xpt
 lib/mozilla/components/content_xsl.xpt
 lib/mozilla/components/cookie.xpt
 lib/mozilla/components/directory.xpt
@@ -196,8 +197,10 @@ lib/mozilla/components/msgsmime.xpt
 lib/mozilla/components/necko.xpt
 lib/mozilla/components/necko_about.xpt
 lib/mozilla/components/necko_cache.xpt
+lib/mozilla/components/necko_cookie.xpt
 lib/mozilla/components/necko_data.xpt
 lib/mozilla/components/necko_dns.xpt
+lib/mozilla/components/necko_file.xpt
 lib/mozilla/components/necko_ftp.xpt
 lib/mozilla/components/necko_http.xpt
 lib/mozilla/components/necko_jar.xpt
@@ -209,8 +212,10 @@ lib/mozilla/components/nsDictionary.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
 lib/mozilla/components/nsLDAPPrefsService.js
+lib/mozilla/components/nsProgressDialog.js
 lib/mozilla/components/nsProxyAutoConfig.js
 lib/mozilla/components/nsSidebar.js
+lib/mozilla/components/nsUpdateNotifier.js
 lib/mozilla/components/nsXmlRpcClient.js
 lib/mozilla/components/oji.xpt
 lib/mozilla/components/pipboot.xpt
@@ -220,6 +225,7 @@ lib/mozilla/components/plugin.xpt
 lib/mozilla/components/pref.xpt
 lib/mozilla/components/prefmigr.xpt
 lib/mozilla/components/profile.xpt
+lib/mozilla/components/progressDlg.xpt
 lib/mozilla/components/proxyObjInst.xpt
 lib/mozilla/components/rdf.xpt
 lib/mozilla/components/regviewer.xpt
@@ -229,6 +235,7 @@ lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
 lib/mozilla/components/signonviewer.xpt
 lib/mozilla/components/smime-service.js
+lib/mozilla/components/timebomb.xpt
 lib/mozilla/components/transformiix.xpt
 lib/mozilla/components/txmgr.xpt
 lib/mozilla/components/txtsvc.xpt
@@ -248,6 +255,8 @@ lib/mozilla/components/widget.xpt
 lib/mozilla/components/windowwatcher.xpt
 lib/mozilla/components/xml-rpc.xpt
 lib/mozilla/components/xmlextras.xpt
+lib/mozilla/components/xmlschema.xpt
+lib/mozilla/components/xmlsoap.xpt
 lib/mozilla/components/xpcom_base.xpt
 lib/mozilla/components/xpcom_components.xpt
 lib/mozilla/components/xpcom_ds.xpt
@@ -293,8 +302,6 @@ lib/mozilla/defaults/wallet/SchemaStrings.tbl
 lib/mozilla/defaults/wallet/StateSchema.tbl
 lib/mozilla/defaults/wallet/VcardSchema.tbl
 lib/mozilla/dirver
-lib/mozilla/dtd/mathml.dtd
-lib/mozilla/dtd/svg.dtd
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
 lib/mozilla/libgkgfx.so
@@ -308,10 +315,14 @@ lib/mozilla/libmoz_art_lgpl.so
 lib/mozilla/libmozjs.so
 lib/mozilla/libmsgbaseutil.so
 lib/mozilla/libnspr4.so
+lib/mozilla/libnss3.so
 lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
+lib/mozilla/libsmime3.so
+lib/mozilla/libsoftokn3.so
+lib/mozilla/libssl3.so
 lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
@@ -333,6 +344,9 @@ lib/mozilla/res/builtin/xbl-forms.css
 lib/mozilla/res/charsetData.properties
 lib/mozilla/res/charsetalias.properties
 lib/mozilla/res/cmessage.txt
+lib/mozilla/res/dtd/mathml.dtd
+lib/mozilla/res/dtd/svg.dtd
+lib/mozilla/res/dtd/xhtml11.dtd
 lib/mozilla/res/entityTables/html40Latin1.properties
 lib/mozilla/res/entityTables/html40Special.properties
 lib/mozilla/res/entityTables/html40Symbols.properties
@@ -357,6 +371,7 @@ lib/mozilla/res/html/gopher-find.gif
 lib/mozilla/res/html/gopher-image.gif
 lib/mozilla/res/html/gopher-menu.gif
 lib/mozilla/res/html/gopher-movie.gif
+lib/mozilla/res/html/gopher-sound.gif
 lib/mozilla/res/html/gopher-telnet.gif
 lib/mozilla/res/html/gopher-text.gif
 lib/mozilla/res/html/gopher-unknown.gif
@@ -500,6 +515,7 @@ lib/mozilla/searchplugins/lxrmozilla.gif
 lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
+lib/mozilla/timebombgen
 lib/mozilla/xpcshell
 lib/mozilla/xpicleanup
 lib/mozilla/xpidl
@@ -518,11 +534,11 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/gfx
 @dirrm lib/mozilla/res/fonts
 @dirrm lib/mozilla/res/entityTables
+@dirrm lib/mozilla/res/dtd
 @dirrm lib/mozilla/res/builtin
 @dirrm lib/mozilla/res
 @dirrm lib/mozilla/plugins
 @dirrm lib/mozilla/icons
-@dirrm lib/mozilla/dtd
 @dirrm lib/mozilla/defaults/wallet
 @dirrm lib/mozilla/defaults/profile/chrome
 @dirrm lib/mozilla/defaults/profile/US/chrome
