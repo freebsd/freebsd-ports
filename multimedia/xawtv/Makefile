@@ -27,6 +27,7 @@ USE_X_PREFIX=	yes
 FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
 		libng libvbi http
 FILES_X11BASE=	configure Make.config.in
+FILES_LOCALBASE=configure
 
 MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 record.1 \
 		rootv.1 scantv.1 showriff.1 \
@@ -40,6 +41,9 @@ PLIST_SUB+=	X11PREFIX=${X11BASE}
 post-patch:
 .for i in ${FILES_X11BASE}
 	${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/$i
+.endfor
+.for i in ${FILES_LOCALBASE}
+	${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/$i
 .endfor
 
 post-configure:
