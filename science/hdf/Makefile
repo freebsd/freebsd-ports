@@ -8,8 +8,20 @@
 PORTNAME=	hdf
 PORTVERSION=	4.2r1
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/src/
+MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/src/:src \
+		ftp://ftp.ncsa.uiuc.edu/HDF/HDF/Documentation/HDF4.2r0/:doc \
+		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
 DISTNAME=	HDF${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
+		${SZIP_DOCFILE}:doc_szip
+DOCFILES=	HDF41r5_SpecDG.pdf \
+		HDF42r0_RefMan.pdf \
+		HDF42r0_UserGd.pdf
+SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
+.for file in $(DOCFILES)
+DISTFILES+=	${file}:doc
+.endfor
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
@@ -39,6 +51,16 @@ BROKEN=		"Does not compile on !i386 and !alpha"
 post-patch:
 	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 		${WRKSRC}/hdf/src/Makefile.in ${WRKSRC}/mfhdf/libsrc/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCFILES} ${SZIP_DOCFILE}
+	@${INSTALL_DATA} ${DISTDIR}/${file} ${DOCSDIR}
+.endfor
+	@cd ${WRKSRC}/release_notes && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
 
 test: build
 	cd ${WRKSRC}/hdf/test && ${MAKE} check
