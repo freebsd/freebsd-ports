@@ -77,7 +77,7 @@ PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
 .endif
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.3:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS+=	xine.8:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--with-xine
 PLIST_SUB+=	WITH_LIBXINE=""
 .else
