@@ -2,6 +2,8 @@ bin/gpg
 lib/gnupg/rndegd
 lib/gnupg/rndunix
 lib/gnupg/tiger
+share/gnupg/FAQ
+share/gnupg/faq.html
 share/gnupg/options.skel
 share/locale/da/LC_MESSAGES/gnupg.mo
 share/locale/de/LC_MESSAGES/gnupg.mo
