@@ -1,6 +1,6 @@
---- goo/gfile.cc.org	Fri Sep  1 14:35:26 2000
-+++ goo/gfile.cc	Fri Sep  1 14:17:34 2000
-@@ -468,6 +468,16 @@
+--- goo/gfile.cc.orig	Fri Feb  1 15:15:45 2002
++++ goo/gfile.cc	Sun Feb 10 17:42:52 2002
+@@ -489,6 +489,16 @@
    int fd;
  
    if (ext) {
@@ -17,7 +17,7 @@
      if (!(s = tmpnam(NULL))) {
        return gFalse;
      }
-@@ -478,6 +488,7 @@
+@@ -499,6 +509,7 @@
      }
      (*name)->append(ext);
      fd = open((*name)->getCString(), O_WRONLY | O_CREAT | O_EXCL, 0600);
