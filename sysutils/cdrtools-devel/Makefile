@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
 DISTNAME=	cdrtools-${CDRTLSVERSION}
 
-MAINTAINER=	marius@alchemy.franken.de
+MAINTAINER=	marius@FreeBSD.org
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
 
 CONFLICTS?=	cdrtools-[0-9]*

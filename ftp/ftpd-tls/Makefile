@@ -12,7 +12,7 @@ CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.runestig.com/pub/ftpd-tls/
 
-MAINTAINER=	marius@alchemy.franken.de
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Ftp server supporting FTP AUTH TLS
 
 GNU_CONFIGURE=	YES

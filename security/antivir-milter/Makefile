@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.antivir.de/dateien/antivir/beta/freebsd/
 DISTNAME=	avfbmlt_beta
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	marius@alchemy.franken.de
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	AntiVir Milter mail virusscanner for Sendmail
 
 RESTRICTED=	H+BEDV Datentechnik GmbH forbids any redistribution
