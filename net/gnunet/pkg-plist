@@ -66,9 +66,15 @@ lib/libgnunettransport_smtp.so.0
 lib/libgnunettransport_tcp.la
 lib/libgnunettransport_tcp.so
 lib/libgnunettransport_tcp.so.0
+%%WITH_IPV6%%lib/libgnunettransport_tcp6.la
+%%WITH_IPV6%%lib/libgnunettransport_tcp6.so
+%%WITH_IPV6%%lib/libgnunettransport_tcp6.so.0
 lib/libgnunettransport_udp.la
 lib/libgnunettransport_udp.so
 lib/libgnunettransport_udp.so.0
+%%WITH_IPV6%%lib/libgnunettransport_udp6.la
+%%WITH_IPV6%%lib/libgnunettransport_udp6.so
+%%WITH_IPV6%%lib/libgnunettransport_udp6.so.0
 lib/libgnunetutil.la
 lib/libgnunetutil.so
 lib/libgnunetutil.so.0

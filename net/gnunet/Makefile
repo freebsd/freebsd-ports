@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.ovmj.org/GNUnet/download/
@@ -58,6 +59,14 @@ CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-bdb
 .endif
 
+.if defined(WITH_IPV6)
+PKGNAMESUFFIX=	-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
+PLIST_SUB+=	WITH_IPV6=""
+.else
+PLIST_SUB+=	WITH_IPV6="@comment "
+.endif
+
 MAN1=		gnunet-chat.1 gnunet-check.1 gnunet-convert.1 \
 		gnunet-delete.1 gnunet-download.1 gnunet-gtk.1 \
 		gnunet-insert-multi.1 gnunet-insert.1 gnunet-search.1 \
@@ -72,6 +81,7 @@ pre-everything::
 	@${ECHO_MSG} "		WITH_TDB=yes		Turn on TDB support"
 	@${ECHO_MSG} "		WITH_BDB41=yes		Turn on Berkely DB library support"
 	@${ECHO_MSG} "		WITH_GDBM=yes		Turn on GNU dbm support"
+	@${ECHO_MSG} "		WITH_IPV6=yes		Turn on to enable IPv6 support"
 	@${ECHO_MSG} ""
 
 post-patch:
