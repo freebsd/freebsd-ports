@@ -44,7 +44,13 @@ post-patch:
 		${WRKSRC}/Makefile
 .endif
 	@${REINPLACE_CMD} -E -e \
-		's@^CC\s.+|\$$\((ARCH|DMALLOCLIB|DMAL|OPTIM|WARNING)\)@@g' \
+		's@\$$\((ARCH|DMALLOCLIB|DMAL|OPTIM|WARNING)\)@@g' \
+		${WRKSRC}/Makefile
+
+post-configure:
+# C{C,FLAGS} safeness
+	@${REINPLACE_CMD} -E -e \
+		's|^(CC[[:space:]]*=).+$$|\1${CC} ${CFLAGS}|' \
 		${WRKSRC}/Makefile
 
 do-install:
