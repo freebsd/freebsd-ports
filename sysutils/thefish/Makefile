@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
 .if defined(WITHOUT_X11) || defined(NO_GUI)
