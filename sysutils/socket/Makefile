@@ -3,11 +3,11 @@
 # Date created:         14 August 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.2 1996/08/25 01:00:25 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/17 08:06:22 obrien Exp $
 #
 
 DISTNAME=       socket-1.1
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils net
 MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=     wosch@FreeBSD.org
