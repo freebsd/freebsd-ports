@@ -3,12 +3,12 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.16 1998/02/24 21:43:08 jseger Exp $
+# $Id: Makefile,v 1.17 1998/03/17 07:29:51 tg Exp $
 #
 
 DISTNAME=	e93-1.2r6X
 PKGNAME=	e93-1.2.6
-CATEGORIES=	editors tcl81
+CATEGORIES=	editors tcl80
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 
