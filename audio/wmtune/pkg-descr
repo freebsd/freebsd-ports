@@ -1,5 +1,10 @@
-Dock app radio program for the BT848/878 cards.
+Dock app radio program for the BT848/878 cards
+and RadioTrack radio cards.
 In particular, this program works with the
-Happauge WinTV cards with onboard FM tuners.
+Happauge WinTV cards with onboard FM tuners
+along with RadioTrack-compatible cards.
 
 WWW: http://soren.org/linux/wmtune/
+
+- Chris D. Faulhaber
+ <jedgar@FreeBSD.org>
