@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firetalk
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.penguinhosting.net/~ian/firetalk/
 
