@@ -3,7 +3,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1997/02/12 10:21:34 obrien Exp $
+# $Id: Makefile,v 1.7 1997/03/24 18:42:48 obrien Exp $
 #
 
 DISTNAME=	lsof_4.02_W
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
