@@ -1,0 +1,7 @@
+You probably know secure HTTP from secure web sites. Say, you want to operate
+a secure web server but have only a normal server. SSL Proxy can be your
+solution: It's plugged into the connection between the client and the server
+and adds Secure Socket Layer (SSL) support. Or the other way around: You have
+an ordinary telnet client but want to connect to a secure site. Just start SSL
+Proxy with the appropriate parameters and -- voila. That's what SSL Proxy can
+do for you. 
