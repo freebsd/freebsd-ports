@@ -14,6 +14,8 @@ MASTER_SITES=	http://members.ferrara.linux.it/calicant/mapagi/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Pagination utility that prints your images/comics in 'in folio' format
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

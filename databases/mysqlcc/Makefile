@@ -16,11 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ferruccio.vitale@tin.it
 COMMENT=	A platform-independent GUI administration client for the MySQL server
 
-BROKEN=		"Does not compile"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-22
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_MYSQL=	yes
+BROKEN_WITH_MYSQL=323
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

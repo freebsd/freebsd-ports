@@ -19,7 +19,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A C++ X GUI toolkit
 
-RUN_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \

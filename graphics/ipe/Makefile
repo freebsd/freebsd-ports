@@ -15,6 +15,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	bremner@unb.ca
 COMMENT=	Extensible drawing editor
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

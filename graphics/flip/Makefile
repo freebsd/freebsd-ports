@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.reptilelabour.com/software/files/flip/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Load a sequence of TIFF files and play them back at a target frame rate
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 

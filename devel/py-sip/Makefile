@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	eugos@gmx.net
 COMMENT=	Python to C and C++ bindings generator
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_PYTHON=	yes
 USE_QT_VER=	3
 

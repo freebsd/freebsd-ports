@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program which uses QT
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build \
+		qmake:${PORTSDIR}/devel/qmake
 
 NOCLEANDEPENDS=	yes
 

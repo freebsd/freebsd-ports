@@ -16,7 +16,8 @@ MASTER_SITE_SUBDIR=	cheesetronic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Impulse Tracker clone
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
+		qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 USE_QT_VER=	3
