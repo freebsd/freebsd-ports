@@ -21,4 +21,7 @@ NO_WRKSUBDIR=	yes
 pre-install:
 	${MKDIR} ${PREFIX}/share/texmf/documentation
 
+post-install:
+	@${LOCALBASE}/bin/texhash
+
 .include <bsd.port.mk>

@@ -222,5 +222,7 @@ share/texmf/tex/musixsty.tex
 share/texmf/tex/musixtex.sty
 share/texmf/tex/musixtex.tex
 share/texmf/tex/musixtri.tex
+@exec %D/bin/texhash
 @dirrm share/texmf/documentation/musixtex.examples
 @unexec rmdir %D/share/texmf/documentation 2>/dev/null || true
+@unexec %D/bin/texhash
