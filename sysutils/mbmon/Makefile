@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmbmon
-PORTVERSION=	107
+PORTVERSION=	107p1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pl/}
 
 MAINTAINER=	kaz@kobe1995.net
 
