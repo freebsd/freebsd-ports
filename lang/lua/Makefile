@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
-DISTNAME=	lua-4.0
 
 MAINTAINER=	richard@homemail.com
 
