@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clo++
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pmade.org/~pjones/software/clo++/download/
 
@@ -15,10 +15,12 @@ COMMENT=	Command line parser generator
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_GCC=	3.1
+USE_GCC=	3.2
 USE_PERL5=	yes
 CONFGARGS=	--prefix ${PREFIX}
 CONFGARGS+=	--xml2-config ${PREFIX}/bin/xml2-config
+
+MAN1=		clo++.1
 
 pre-configure:
 	@(cd ${WRKSRC} && ${ENV} CXX=${CXX} ${PERL5} configure.pl ${CONFGARGS})
