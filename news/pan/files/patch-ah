@@ -1,24 +1,12 @@
---- pan/Makefile.in.orig	Tue Aug  8 17:36:45 2000
-+++ pan/Makefile.in	Tue Aug  8 17:41:04 2000
-@@ -123,10 +123,10 @@
+--- pan/Makefile.in.orig	Fri Sep 15 00:41:44 2000
++++ pan/Makefile.in	Fri Sep 15 13:36:02 2000
+@@ -130,3 +130,3 @@
  
- bin_PROGRAMS = pan
+-pan_LDADD =  	dialogs/libdialogs.a 	$(INTLLIBS) 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(GNOME_LIBS) 	$(GLIB_LIBS) 	$(UNICODE_LIBS) 	$(top_builddir)/libcamel/libcamel.a 	$(top_builddir)/uulib/libuu.a
++pan_LDADD =  	dialogs/libdialogs.a 	$(INTLLIBS) 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(GNOME_LIBS) 	$(GLIB_LIBS) 	$(UNICODE_LIBS) 	$(top_builddir)/libcamel/libcamel.a
  
--pan_SOURCES =  	acache.c acache.h 	article.c article.h 	article-toolbar.c article-toolbar.h 	article-find.c article-find.h 	article-thread.c article-thread.h 	articlelist.c articlelist.h 	date.c date.h 	debug.c debug.h 	decode.c decode.h 	encode.c encode.h 	file-grouplist.c file-grouplist.h 	file-headers.c file-headers.h 	fnmatch.c fnmatch.h 	globals.h 	gnksa.c gnksa.h 	group.c group.h 	grouplist.c grouplist.h 	gui.c gui.h 	gui-headers.c gui-headers.h 	gui-notebook.c gui-notebook.h 	gui-paned.c gui-paned.h 	log.c log.h 	message-check.c message-check.h 	message-filter.c message-filter.h 	message-send.c message-send.h 	message-window.c message-window.h 	msort.c 	nntp.c nntp.h 	newsrc.c newsrc.h 	pan.c pan.h 	pan-callback.c pan-callback.h 	pan-object.c pan-object.h 	prefs.c prefs.h 	print.c print.h 	queue.c queue.h 	task.c task.h 	task-bodies.c task-bodies.h 	task-body.c task-body.h 	task-decode.c task-decode.h 	task-func-ptr.c task-func-ptr.h 	task-grouplist.c task-grouplist.h 	task-headers.c task-headers.h 	task-manager.c task-manager.h 	save.c save.h 	server.c server.h 	smtp.c smtp.h 	sockets.c sockets.h 	status-item.c status-item.h 	status-item-view.c status-item-view.h 	text.c text.h 	util.c util.h
-+pan_LDADD =  	dialogs/libdialogs.a 			$(INTLLIBS) 				$(GNOMEUI_LIBS) 			$(GNOME_LIBDIR) 			$(GLIB_LIBS) 				
- 
- 
--pan_LDADD =  	dialogs/libdialogs.a 	$(INTLLIBS) 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(GNOME_LIBS) 	$(GLIB_LIBS) 	$(top_builddir)/uulib/libuu.a
-+pan_LDADD =  	dialogs/libdialogs.a 	$(INTLLIBS) 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(GNOME_LIBS) 	$(GLIB_LIBS)
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -147,7 +147,7 @@
- task.o task-bodies.o task-body.o task-decode.o task-func-ptr.o \
- task-grouplist.o task-headers.o task-manager.o save.o server.o smtp.o \
- sockets.o status-item.o status-item-view.o text.o util.o
--pan_DEPENDENCIES =  dialogs/libdialogs.a $(top_builddir)/uulib/libuu.a
-+pan_DEPENDENCIES =  dialogs/libdialogs.a 
+@@ -153,3 +153,3 @@
+ pan_DEPENDENCIES =  dialogs/libdialogs.a \
+-$(top_builddir)/libcamel/libcamel.a $(top_builddir)/uulib/libuu.a
++$(top_builddir)/libcamel/libcamel.a
  pan_LDFLAGS = 
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

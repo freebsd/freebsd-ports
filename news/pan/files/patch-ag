@@ -1,8 +1,7 @@
---- Makefile.in.orig	Thu May 18 02:27:35 2000
-+++ Makefile.in	Tue Jun 13 17:15:02 2000
-@@ -111,4 +111,4 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+--- Makefile.in.orig	Fri Sep 15 00:41:26 2000
++++ Makefile.in	Fri Sep 15 13:45:39 2000
+@@ -116,3 +116,3 @@
  
--SUBDIRS = macros po intl uulib pan docs
-+SUBDIRS = macros po pan docs
+-SUBDIRS = macros po uulib libcamel pan docs
++SUBDIRS = macros po libcamel pan docs
+ 
