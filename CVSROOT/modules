@@ -2490,6 +2490,7 @@ gqradio		ports/audio/gqradio
 gqview		ports/graphics/gqview
 gqview-devel	ports/graphics/gqview-devel
 gr-openoffice-1.0	ports/editors/openoffice-1.0-gr
+grabc		ports/x11/grabc
 grace		ports/math/grace
 gracer		ports/games/gracer
 gracetmpl	ports/math/gracetmpl
