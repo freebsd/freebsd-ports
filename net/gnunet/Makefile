@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://www.ovmj.org/GNUnet/download/
+MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	GNUnet-${PORTVERSION}
 
@@ -68,8 +67,11 @@ PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
 MAN1=		gnunet-chat.1 gnunet-check.1 gnunet-convert.1 \
-		gnunet-delete.1 gnunet-download.1 gnunet-gtk.1 \
-		gnunet-insert-multi.1 gnunet-insert.1 gnunet-search.1 \
+		gnunet-delete.1 gnunet-directory.1 gnunet-download.1 \
+		gnunet-gtk.1 gnunet-insert.1 \
+		gnunet-peer-info.1 gnunet-pseudonym-create.1 \
+		gnunet-pseudonym-delete.1 gnunet-pseudonym-list.1 \
+		gnunet-search.1 gnunet-search-sblock.1 gnunet-stats.1 \
 		gnunet-tbench.1 gnunet-tracekit.1 \
 		gnunet-transport-check.1 gnunetd.1
 MAN5=		gnunet.conf.5
