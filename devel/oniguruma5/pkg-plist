@@ -9,6 +9,7 @@ lib/libonig.so.0
 %%PORTDOCS%%%%DOCSDIR%%/RE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/listcap.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/names.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/posix.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.c
