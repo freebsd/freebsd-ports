@@ -57,7 +57,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITHOUT_ICONS=yes   Don't install ecb's icons"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITHOUT_CEDET=yes   Don't use theCEDET library,"
+	@${ECHO_MSG} "  WITHOUT_CEDET=yes   Don't use the CEDET library,"
 	@${ECHO_MSG} "                      use the old version of "
 	@${ECHO_MSG} "                      eieio/semantic/speedbar instead."
 	@${ECHO_MSG} ""
@@ -65,6 +65,7 @@ pre-everything::
 
 post-patch:
 	${REINPLACE_CMD} "s|\./info-help|${PREFIX}/info|" ${WRKSRC}/ecb-help.el
+	${REINPLACE_CMD} "s/^\(@dircategory \)GNU Emacs Lisp/\1The Emacs editor and associated tools/" ${WRKSRC}/ecb.texi
 
 post-build:
 	cd ${WRKSRC} && makeinfo --no-split ecb.texi
@@ -97,6 +98,6 @@ do-install:
 .endif
 
 post-install:
-	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	install-info --dir ${PREFIX}/info/dir ${PREFIX}/info/ecb.info
 
 .include <bsd.port.mk>
