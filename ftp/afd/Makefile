@@ -15,6 +15,8 @@ DISTNAME=	src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Installs 88 setuid root applications; disaster waiting to happen"
+
 USE_MOTIF=	yes
 MAKE_ENV=	BINMODE=${BINMODE} \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
