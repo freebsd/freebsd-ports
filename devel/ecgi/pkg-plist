@@ -1,0 +1,4 @@
+lib/libecgi.a
+lib/libecgi.so
+share/doc/ecgi/ecgitut.txt
+@dirrm share/doc/ecgi

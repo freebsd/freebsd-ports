@@ -1,0 +1,12 @@
+ecgi (easy CGI Libary) is an ANSI C library for the creation of
+CGI-based Web applications. It transparently supports the CGI methods
+GET and POST and also multipart/form-data file uploads. The user
+interface is designed as easy as possible and maintains full
+compatibility to cgic 0.5.
+
+It also contains a library independent introduction to CGI programming
+with C, a .html to .h HTML template preprocessor, and fast,
+block-allocating memory files.
+
+- George Reid
+greid@ukug.uk.freebsd.org

@@ -1,0 +1,56 @@
+--- Makefile.orig	Tue Feb 13 23:46:51 2001
++++ Makefile	Tue Feb 13 23:47:50 2001
+@@ -1,14 +1,14 @@
+ SHAREDOPT = -shared
+-LIBDIR = /usr/lib
+-INCDIR = /usr/include
++LIBDIR = $(PREFIX)/usr/lib
++INCDIR = $(PREFIX)/include
+ AR = ar
+-CC = gcc
++CC?= gcc
+ INCS =  -Iinclude/ -I.
+-FLAGS = -Wall
++CFLAGS += -Wall
+ 
+ all: obj/ecgi.o obj/ecgitk.o libecgi.a
+-	make -C html2h/
+-	make libecgi.so
++	$(MAKE) -C html2h/
++	$(MAKE) libecgi.so
+ 
+ shared: libecgi.so
+ 	cp libecgi.so /usr/lib
+@@ -26,25 +26,25 @@
+ 	cp ecgi.h $(INCDIR)
+ 	cp include/memfile.h $(INCDIR)
+ 	cp ecgitk.h $(INCDIR)
+-	make -C html2h/ install
++	$(MAKE) -C html2h/ install
+ 	cp libecgi.so $(LIBDIR)
+ 
+ tests:	all
+-	$(CC) tests/test.c -o tests/test.cgi $(INCS) $(FLAGS) libecgi.a
+-	$(CC) tests/testload.c -o tests/testload libecgi.a $(INCS) $(FLAGS)
++	$(CC) tests/test.c -o tests/test.cgi $(INCS) $(CFLAGS) libecgi.a
++	$(CC) tests/testload.c -o tests/testload libecgi.a $(INCS) $(CFLAGS)
+ 
+ obj/ecgi.o: src/ecgi.c ecgi.h obj/memfile.o
+-	$(CC) -c src/ecgi.c $(INCS) $(FLAGS) -o obj/ecgi.o
++	$(CC) -c src/ecgi.c $(INCS) $(CFLAGS) -o obj/ecgi.o
+ 
+ obj/memfile.o:  src/memfile.c include/memfile.h
+-	$(CC) -o obj/memfile.o -c src/memfile.c $(INCS) $(FLAGS)
++	$(CC) -o obj/memfile.o -c src/memfile.c $(INCS) $(CFLAGS)
+ 
+ obj/ecgitk.o: src/ecgitk.c ecgitk.h
+-	$(CC) -c src/ecgitk.c $(INCS) $(FLAGS) -o obj/ecgitk.o
++	$(CC) -c src/ecgitk.c $(INCS) $(CFLAGS) -o obj/ecgitk.o
+ 
+ clean:
+ 	rm -f obj/* *.a *.so -f tests/test.cgi tests/testload
+-	make -C html2h/ clean
++	$(MAKE) -C html2h/ clean
+ 
+ zip: clean
+ 	rm -f ../ecgi-0.6.2.zip

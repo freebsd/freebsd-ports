@@ -83,6 +83,7 @@
     SUBDIR += dotconf
     SUBDIR += doxygen
     SUBDIR += dryad
+    SUBDIR += ecgi
     SUBDIR += elftoaout
     SUBDIR += elib-emacs
     SUBDIR += elib-emacs20
