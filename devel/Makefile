@@ -357,6 +357,7 @@
     SUBDIR += py-mxTools
     SUBDIR += py-ncurses
     SUBDIR += qtarch
+    SUBDIR += py-omniorb
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
