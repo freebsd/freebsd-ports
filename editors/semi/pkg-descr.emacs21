@@ -19,6 +19,6 @@ SEMI, Library of MIME feature for GNU Emacs for emacs21.
   MUAs.  They are released as separated packages.
 
   SEMI is installed the following directory tree:
-	${LOCALBASE}/share/emacs/21.1/site-lisp/semi/
+	${LOCALBASE}/share/emacs/21.3/site-lisp/semi/
 
 Ported by shige@FreeBSD.ORG
