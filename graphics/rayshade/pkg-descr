@@ -1,0 +1,3 @@
+Rayshade is a system for generating ray-traced images. Rayshade's main
+function is to read a multi-line ASCII file describing a scene to be
+rendered and produce a file containing the ray traced image.
