@@ -2376,6 +2376,7 @@ ja-ee		ports/japanese/ee
 ja-eijiro-fpw	ports/japanese/eijiro-fpw
 ja-elisa10x8	ports/japanese/elisa10x8
 ja-elisa8x8	ports/japanese/elisa8x8
+ja-elisp-info	ports/japanese/elisp-info
 ja-elisp-manual ports/japanese/elisp-manual
 ja-elvis	ports/japanese/elvis
 ja-emacs-manual	ports/japanese/emacs-manual
