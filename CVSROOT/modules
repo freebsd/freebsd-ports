@@ -6589,6 +6589,7 @@ py-HyperText	ports/textproc/py-HyperText
 py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
 py-PyGreSQL	ports/databases/py-PyGreSQL
+py-PySQLite	ports/databases/py-PySQLite
 py-SQLDict	ports/databases/py-SQLDict
 py-adns		ports/net/py-adns
 py-albatross	ports/www/py-albatross
