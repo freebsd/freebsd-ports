@@ -1,6 +1,0 @@
-bin/ginicon
-bin/ginifeed
-etc/rc.d/gini.sh.sample
-sbin/gini
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
