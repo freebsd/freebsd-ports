@@ -14,17 +14,13 @@ DISTNAME=	divx-player-installer
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	\
-	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-7
-
 ONLY_FOR_ARCHS=	i386
+
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 STRIP=
-
-WRKSRC=	${WRKDIR}/divx-player-installer
-
+WRKSRC=		${WRKDIR}/divx-player-installer
 STRIP_CMD=	${LINUXBASE}/usr/bin/strip
 
 .if exists(/usr/bin/brandelf)

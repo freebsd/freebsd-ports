@@ -13,12 +13,12 @@ DISTNAME=	adom-100-elf
 
 MAINTAINER=	rover@lglobus.ru
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
-
-WRKSRC=		${WRKDIR}/adom
+NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=	Copy of CD must be sent to author
+
+USE_LINUX=	yes
+WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary!
 

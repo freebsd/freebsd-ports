@@ -15,16 +15,13 @@ EXTRACT_SUFX=	.sfx
 
 MAINTAINER=	sf@FreeBSD.org
 
-RUN_DEPENDS=	\
-	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
-
-#USE_LINUX=	yes
-
-NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
 NO_CDROM=	NOFEE: Can not charge for distribution
 NO_PACKAGE=	Only unmodified original package can be distributed
 
+ONLY_FOR_ARCHS=	i386
+
+USE_LINUX=	yes
+NO_BUILD=	yes
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty

@@ -17,18 +17,15 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	\
-	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
-
-#USE_LINUX=	yes
-
-NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
 NO_CDROM=	Shareware -- should not redistribute
 NO_PACKAGE=	Only unmodified original package can be distributed
+
+ONLY_FOR_ARCHS=	i386
+
+USE_LINUX=	yes
+NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}
-
 STUFFIT_FILES=	bin/unstuff bin/stuff
 STUFFIT_MAN=    man/man1/stuff.1 man/man1/unstuff.1
 
