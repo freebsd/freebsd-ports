@@ -15,6 +15,10 @@ share/doc/mutt/manual.txt
 share/doc/mutt/sample.muttrc
 share/doc/mutt/Mush.rc
 share/doc/mutt/Pine.rc
+share/doc/mutt/manual_ja.txt
+share/doc/mutt/manual_ja.tex
+share/doc/mutt/manual_ja.html
+share/doc/mutt/manual_ja.sgml
 @dirrm share/doc/mutt
 share/mutt/charsets/ansi-x3-110-1983
 share/mutt/charsets/ansi-x3-4-1968
