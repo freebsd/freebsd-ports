@@ -148,8 +148,8 @@
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += harvest
+    SUBDIR += horde
     SUBDIR += horde-passwd
-    SUBDIR += horde2
     SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2hdml

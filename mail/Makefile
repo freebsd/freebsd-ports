@@ -123,7 +123,7 @@
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
-    SUBDIR += imp3
+    SUBDIR += imp
     SUBDIR += ingo
     SUBDIR += isoqlog
     SUBDIR += isync
