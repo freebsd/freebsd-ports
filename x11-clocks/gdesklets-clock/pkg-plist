@@ -1,0 +1,42 @@
+share/gnome/gdesklets/Displays/Clock/README
+share/gnome/gdesklets/Displays/Clock/gfx/clock.png
+share/gnome/gdesklets/Displays/Clock/gfx/gnomeclock.png
+share/gnome/gdesklets/Displays/Clock/gfx/gnomeclock.xcf
+share/gnome/gdesklets/Displays/Clock/gfx/osXclock.png
+share/gnome/gdesklets/Displays/Clock/gfx/pocketwatch.png
+share/gnome/gdesklets/Displays/Clock/gfx/pocketwatch.xcf
+share/gnome/gdesklets/Displays/Clock/gfx/rafclock.png
+share/gnome/gdesklets/Displays/Clock/gnomeclock.display
+share/gnome/gdesklets/Displays/Clock/osXclock.display
+share/gnome/gdesklets/Displays/Clock/plainclock.display
+share/gnome/gdesklets/Displays/Clock/pocket-watch.display
+share/gnome/gdesklets/Displays/Clock/rafclock.display
+share/gnome/gdesklets/Sensors/Clock/ChangeLog
+share/gnome/gdesklets/Sensors/Clock/README
+share/gnome/gdesklets/Sensors/Clock/__init__.py
+share/gnome/gdesklets/Sensors/Clock/locale/de/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/fr/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/pt/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/sq/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/sr/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/locale/sv/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/Clock/timezones.dat
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sv/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sv
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sr@Latn/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sr@Latn
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sr/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sr
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sq/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/sq
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/pt/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/pt
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/fr/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/fr
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/de/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale/de
+@dirrm share/gnome/gdesklets/Sensors/Clock/locale
+@dirrm share/gnome/gdesklets/Sensors/Clock
+@dirrm share/gnome/gdesklets/Displays/Clock/gfx
+@dirrm share/gnome/gdesklets/Displays/Clock
