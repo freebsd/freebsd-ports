@@ -1,35 +1,20 @@
 bin/atlas-config
-lib/libAtlas.so.0
-lib/libAtlas.so
-lib/libAtlas.a
-lib/libAtlasObjects.so.0
-lib/libAtlasObjects.so
-lib/libAtlasObjects.a
-lib/libAtlasObjectsEntity.so.0
-lib/libAtlasObjectsEntity.so
-lib/libAtlasObjectsEntity.a
-lib/libAtlasObjectsOperation.so.0
-lib/libAtlasObjectsOperation.so
-lib/libAtlasObjectsOperation.a
-lib/libAtlasMessage.so.0
-lib/libAtlasMessage.so
-lib/libAtlasMessage.a
-lib/libAtlasCodecs.so.0
-lib/libAtlasCodecs.so
-lib/libAtlasCodecs.a
-lib/libAtlasNet.so.0
-lib/libAtlasNet.so
-lib/libAtlasNet.a
-lib/libAtlasFunky.so.0
-lib/libAtlasFunky.so
-lib/libAtlasFunky.a
 include/Atlas/Bridge.h
 include/Atlas/Codec.h
-include/Atlas/Negotiate.h
-include/Atlas/EncoderBase.h
-include/Atlas/Task.h
 include/Atlas/Codec_impl.h
-include/Atlas/Objects/Root.h
+include/Atlas/Codecs/Packed.h
+include/Atlas/Codecs/Utility.h
+include/Atlas/Codecs/XML.h
+include/Atlas/EncoderBase.h
+include/Atlas/Funky/Encoder.h
+include/Atlas/Message/DecoderBase.h
+include/Atlas/Message/Encoder.h
+include/Atlas/Message/Layer.h
+include/Atlas/Message/Object.h
+include/Atlas/Message/QueuedDecoder.h
+include/Atlas/Negotiate.h
+include/Atlas/Net/Loopback.h
+include/Atlas/Net/Stream.h
 include/Atlas/Objects/Decoder.h
 include/Atlas/Objects/Encoder.h
 include/Atlas/Objects/Entity/Account.h
@@ -67,14 +52,40 @@ include/Atlas/Objects/Operation/Sniff.h
 include/Atlas/Objects/Operation/Sound.h
 include/Atlas/Objects/Operation/Talk.h
 include/Atlas/Objects/Operation/Touch.h
-include/Atlas/Message/Object.h
-include/Atlas/Message/Layer.h
-include/Atlas/Message/Encoder.h
-include/Atlas/Message/DecoderBase.h
-include/Atlas/Message/QueuedDecoder.h
-include/Atlas/Net/Stream.h
-include/Atlas/Net/Loopback.h
-include/Atlas/Funky/Encoder.h
+include/Atlas/Objects/Root.h
+include/Atlas/Task.h
+lib/libAtlas.a
+lib/libAtlas.la
+lib/libAtlas.so
+lib/libAtlas.so.1
+lib/libAtlasCodecs.a
+lib/libAtlasCodecs.la
+lib/libAtlasCodecs.so
+lib/libAtlasCodecs.so.1
+lib/libAtlasFunky.a
+lib/libAtlasFunky.la
+lib/libAtlasFunky.so
+lib/libAtlasFunky.so.1
+lib/libAtlasMessage.a
+lib/libAtlasMessage.la
+lib/libAtlasMessage.so
+lib/libAtlasMessage.so.1
+lib/libAtlasNet.a
+lib/libAtlasNet.la
+lib/libAtlasNet.so
+lib/libAtlasNet.so.1
+lib/libAtlasObjects.a
+lib/libAtlasObjects.la
+lib/libAtlasObjects.so
+lib/libAtlasObjects.so.1
+lib/libAtlasObjectsEntity.a
+lib/libAtlasObjectsEntity.la
+lib/libAtlasObjectsEntity.so
+lib/libAtlasObjectsEntity.so.1
+lib/libAtlasObjectsOperation.a
+lib/libAtlasObjectsOperation.la
+lib/libAtlasObjectsOperation.so
+lib/libAtlasObjectsOperation.so.1
 share/aclocal/atlas.m4
 @dirrm include/Atlas/Objects/Entity
 @dirrm include/Atlas/Objects/Operation
@@ -82,4 +93,5 @@ share/aclocal/atlas.m4
 @dirrm include/Atlas/Objects
 @dirrm include/Atlas/Net
 @dirrm include/Atlas/Funky
+@dirrm include/Atlas/Codecs
 @dirrm include/Atlas
