@@ -1,0 +1,10 @@
+Scintilla is a free source code editing component for Win32 and GTK+ developped
+by Neil Hodgson.  For more information about Scintilla, see
+http://www.scintilla.org.
+
+The FOX GUI toolkit is a platform independent GUI library developped by Jeroen
+van der Zijp.  For more information about FOX, see http://fox-toolkit.org.
+
+FXScintilla is an implementation of Scintilla for the FOX GUI Library.
+
+WWW: http://www.nongnu.org/fxscintilla/
