@@ -9190,6 +9190,7 @@ wbd		ports/mbone/wbd
 wcol		ports/www/wcol
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
+web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
 web500gw	ports/www/web500gw
 webalizer	ports/www/webalizer
