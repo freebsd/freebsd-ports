@@ -15,6 +15,7 @@ MAINTAINER=	trevor@FreeBSD.org
 
 DOC_FILES=	COPYING README ChangeLog
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pad ${PREFIX}/bin
