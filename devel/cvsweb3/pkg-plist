@@ -1,4 +1,5 @@
 etc/cvsweb.conf.sample
+share/doc/cvsweb/ChangeLog
 share/doc/cvsweb/INSTALL
 share/doc/cvsweb/README
 share/doc/cvsweb/README.knu
