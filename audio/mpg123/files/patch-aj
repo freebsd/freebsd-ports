@@ -1,0 +1,15 @@
+--- mpg123.c.orig      Tue Aug 21 19:48:17 2001
++++ mpg123.c   Tue Aug 21 19:49:02 2001
+@@ -307,9 +311,9 @@
+                 if (line[0]=='\0' || line[0]=='#')
+                     continue;
+ 		if ((listnamedir) && (line[0]!='/') && (line[0]!='\\')){
+-                    strcpy (linetmp, listnamedir);
+-                    strcat (linetmp, line);
+-		    strcpy (line, linetmp);
++                    strlcpy (linetmp, listnamedir, sizeof(linetmp));
++                    strlcat (linetmp, line, sizeof(linetmp));
++		     strlcpy (line, linetmp, sizeof(linetmp));
+                 }
+                 return (line);
+             }
