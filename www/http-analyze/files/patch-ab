@@ -1,64 +1,12 @@
---- http-analyze.c.orig	Sun Sep 22 15:59:19 1996
-+++ http-analyze.c	Fri Jul 11 06:35:28 1997
-@@ -466,8 +466,12 @@
- 	struct timeval tvs, tve;
- 	u_long asec = 0L, rsec = 0L;
- 
-+#ifdef __FreeBSD__
-+	(void) gettimeofday(&tvs, NULL);	/* measure execution time */
-+#else
- 	(void) gettimeofday(&tvs);		/* measure execution time */
+--- config.h.orig	Fri Apr 10 20:27:39 1998
++++ config.h	Fri Apr 10 20:28:54 1998
+@@ -167,7 +167,7 @@
+ # define HA_LIBDIR	"/usr/local/lib/http-analyze"
  #endif
-+#endif
- 	now = time(NULL);			/* get current time */
  
- 	if ((progname = strrchr(argv[0], '/')) != NULL)
-@@ -679,7 +683,11 @@
- 			}
- #if defined(TIME_STATS)
- 			if (timestats) {
-+#ifdef __FreeBSD__
-+				(void) gettimeofday(&tve, NULL);
-+#else
- 				(void) gettimeofday(&tve);
-+#endif
- 				rsec += (tve.tv_sec-tvs.tv_sec) * TICKS_PER_MSEC;
- 				rsec -= tvs.tv_usec/TICKS_PER_MSEC;
- 				rsec += tve.tv_usec/TICKS_PER_MSEC;
-@@ -714,7 +722,11 @@
- 			mkdtab(&tstart);
- #if defined(TIME_STATS)
- 			if (timestats) {
-+#ifdef __FreeBSD__
-+				(void) gettimeofday(&tvs, NULL);
-+#else
- 				(void) gettimeofday(&tvs);
-+#endif
- 				asec += (tvs.tv_sec-tve.tv_sec) * TICKS_PER_MSEC;
- 				asec -= tve.tv_usec/TICKS_PER_MSEC;
- 				asec += tvs.tv_usec/TICKS_PER_MSEC;
-@@ -844,7 +856,11 @@
+-#define REGID_FILE	HA_LIBDIR "/REGID"
+-#define BUTTON_DIR	HA_LIBDIR "/btn"
++#define REGID_FILE	"HA_LIBDIR/REGID"
++#define BUTTON_DIR	"HA_LIBDIR/btn"
  
- #if defined(TIME_STATS)
- 	if (timestats) {
-+#ifdef __FreeBSD__
-+		(void) gettimeofday(&tve, NULL);
-+#else
- 		(void) gettimeofday(&tve);
-+#endif
- 		rsec += (tve.tv_sec-tvs.tv_sec) * TICKS_PER_MSEC;
- 		rsec -= tvs.tv_usec/TICKS_PER_MSEC;
- 		rsec += tve.tv_usec/TICKS_PER_MSEC;
-@@ -882,7 +898,11 @@
- 
- #if defined(TIME_STATS)
- 	if (timestats) {
--		(void) gettimeofday(&tvs);		/* measure execution time */
-+#ifdef __FreeBSD__
-+		(void) gettimeofday(&tvs, NULL);/* measure execution time */
-+#else
-+		(void) gettimeofday(&tvs);	/* measure execution time */
-+#endif
- 		asec += (tvs.tv_sec-tve.tv_sec) * TICKS_PER_MSEC;
- 		asec -= tve.tv_usec/TICKS_PER_MSEC;
- 		asec += tvs.tv_usec/TICKS_PER_MSEC;
+ /* End of user configuration section. */
