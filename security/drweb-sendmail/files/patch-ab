@@ -1,5 +1,5 @@
 --- dw_filter.c.orig	Thu Sep 27 01:00:46 2001
-+++ dw_filter.c	Wed Oct  3 11:56:41 2001
++++ dw_filter.c	Wed Oct  3 23:05:43 2001
 @@ -606,7 +606,7 @@
          }
          else
@@ -18,7 +18,27 @@
      priv->fname_tmp = strdup( ShareTemplate );
      if( !priv->fname_tmp )
      {
-@@ -983,7 +983,7 @@
+@@ -906,7 +906,8 @@
+         if( plog )
+         {
+             len = snprintf( NotifyMsg, sizeof(NotifyMsg),
+-                            "Message sent from %s infected by virus and has not been delivered.\r\n"
++			    "Message sent from %s\r\n"
++			    "infected by virus and has not been delivered.\r\n"
+                             "Diagnostic:\r\n%s\r\n"
+                             "Original message was stored in the archive.\r\n"
+                             "Archive record: %s\r\n"
+@@ -917,7 +918,8 @@
+         else
+         {
+             len = snprintf( NotifyMsg, sizeof(NotifyMsg),
+-                            "Message sent from %s infected by virus and has not been delivered.\r\n"
++			    "Message sent from %s\r\n"
++			    "infected by virus and has not been delivered.\r\n"
+                             "Original message was stored in the archive.\r\n"
+                             "Archive record: %s\r\n"
+                             "To receive original message please contact postmaster:\r\n%s\r\n\r\n"
+@@ -983,7 +985,7 @@
      }
      else
      {
