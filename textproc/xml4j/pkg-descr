@@ -1,9 +1,24 @@
-IBM's XML for Java parser (XML4J) is a high performance, modular XML
-parser written in 100% Java.  XML4j makes it easy to give an application
-the ability to read and write XML data.  A single JAR file provides classes
-for parsing, generating, manipulating, and validating XML documents.
-XML4J is the most robust XML processor currently available and is most
-faithful to the XML 1.0 Recommendation and associated standards
-(DOM 1.0, SAX 1.0, Namespaces).
+XML Parser for Java is a validating XML parser and processor written in 100%
+pure Java. It is a library for parsing and generating XML documents. This
+parser easily enables an application to read and write XML data. Version 4.3.0
+and above incorporate support for the following:
+
+- Extensible Markup Language (XML) 1.0, Third Edition Recommendation
+- Namespaces in XML Recommendation
+- Extensible Markup Language (XML) 1.1 Recommendation, excluding support for
+  normalization checking
+- Namespaces in XML 1.1 Recommendation
+- Experimental implementation of XML Inclusions (XInclude) 1.0 Working Draft
+  (November 2003) in Last Call, excluding support for XPointer
+- W3C XML Schema 1.0 Structures and Datatypes Recommendations
+- OASIS XML Catalogs
+- SAX 1.0 and 2.0.1
+- DOM Level 1, DOM Level 2, and an experimental implementation of the DOM Level
+  3 Core and Load/Save Proposed Recommendations
+- JAXP 1.2
+- The XML Schema API, which provides access to the post-schema validation
+  "infoset" (PSVI)
+- Use of the "Xerces Native Interface" API throughout the product, allowing
+  unprecedented customizing. 
 
 WWW: http://www.alphaworks.ibm.com/tech/xml4j/
