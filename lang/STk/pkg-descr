@@ -1,0 +1,11 @@
+STk is a Scheme interpreter which can access to the Tk graphical package.
+Concretely it can be seen as the John Ousterhout's Tk package where
+the Tcl language has been replaced by Scheme. 
+
+The Scheme interpreter is now R4RS conformant.
+
+This release provides an efficient object oriented system called STklos. 
+STklos is a full OO system with multi-inheritance, generic functions,
+multi-methods and a true meta object protocol).
+
+Ported to FreeBSD by Josh MacDonald, <jmacd@uclink.berkeley.edu>
