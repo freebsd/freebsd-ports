@@ -17,7 +17,6 @@ LIB_DEPENDS=	mng.0:${PORTSDIR}/graphics/libmng \
 		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-YES?=		/usr/bin/yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
 USE_GMAKE=	yes
@@ -27,7 +26,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng -thread \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
+CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC}
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
 .endif
