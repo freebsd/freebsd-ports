@@ -1,0 +1,26 @@
+# New ports collection makefile for:	sredird
+# Version required:	1.1.7
+# Date created:		19 Dec 1999
+# Whom:			Maxim Sobolev <sobomax@altavista.net>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	sredird-1.1.7
+CATEGORIES=	comms
+MASTER_SITES=	http://metalab.unc.edu/pub/Linux/system/serial/
+
+MAINTAINER=	sobomax@altavista.net
+
+do-build:
+	${CC} ${CFLAGS} -g -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sredird ${PREFIX}/libexec
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/sredird
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/sredird
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/sredird
+.endif
+
+.include <bsd.port.mk>

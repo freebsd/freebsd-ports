@@ -1,0 +1,11 @@
+--- README.orig	Tue Dec 21 10:49:33 1999
++++ README	Tue Dec 21 10:50:59 1999
+@@ -80,7 +80,7 @@
+ Sredird is designed to run under inetd control.  The line in the inetd
+ configuration file (usually /etc/inetd.conf) should look like this:
+ 
+-sredir          stream  tcp     nowait  root    /usr/sbin/tcpd /usr/sbin/sredird 5 /dev/modem /var/lock/LCK..modem
++sredir stream tcp nowait root /usr/local/libexec/sredird sredird 5 /dev/cuaa0 /var/spool/lock/LCK..cuaa0
+ 
+ Of course, "sredir" should be defined in the services file (usually
+ /etc/services, usual values start at port 7000) and "/dev/modem" should
