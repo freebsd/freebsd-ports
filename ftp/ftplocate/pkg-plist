@@ -1,36 +1,36 @@
 bin/ftplocate
-www/cgi-bin.default/ftplocate/dcollect.pl
-www/cgi-bin.default/ftplocate/lang.english
-www/cgi-bin.default/ftplocate/fltrain.pl
-www/cgi-bin.default/ftplocate/fltop.pl
-www/cgi-bin.default/ftplocate/flsummary.pl
-www/cgi-bin.default/ftplocate/flserv.pl
-www/cgi-bin.default/ftplocate/flsearch.pl
-www/cgi-bin.default/ftplocate/flmodule.pl
-www/cgi-bin.default/ftplocate/flmap.pl
-www/cgi-bin.default/ftplocate/flindex.pl
-www/cgi-bin.default/ftplocate/flhistory.pl
-www/cgi-bin.default/ftplocate/flfilter.pl
-www/cgi-bin.default/ftplocate/flcollect.pl
-www/cgi-bin.default/ftplocate/flcatsite.pl
-www/cgi-bin.default/ftplocate/dsearch.pl
-www/cgi-bin.default/ftplocate/dindex.pl
-www/cgi-bin.default/ftplocate/lang.zhtw
-www/cgi-bin.default/ftplocate/config
-www/cgi-bin.default/ftplocate/config.site
-www/cgi-bin.default/ftplocate/indexer.sh
-www/cgi-bin.default/ftplocate/log.map
-www/cgi-bin.default/ftplocate/log.system
-www/cgi-bin.default/ftplocate/log.user
-www/data.default/ftplocate/readme.zhtw.html
-www/data.default/ftplocate/readme.english.html
-www/data.default/ftplocate/index.html
-www/data.default/ftplocate/help.english.html
-www/data.default/ftplocate/help.zhtw.html
-@exec install -d -o nobody -g nobody -m 755 %D/www/cgi-bin.default/ftplocate/cache
-@exec install -d %D/www/cgi-bin.default/ftplocate/filelist %D/www/cgi-bin/ftplocate/desc
-@dirrm www/data.default/ftplocate
-@dirrm www/cgi-bin.default/ftplocate/filelist
-@dirrm www/cgi-bin.default/ftplocate/desc
-@dirrm www/cgi-bin.default/ftplocate/cache
-@dirrm www/cgi-bin.default/ftplocate
+www/cgi-bin/ftplocate/dcollect.pl
+www/cgi-bin/ftplocate/lang.english
+www/cgi-bin/ftplocate/fltrain.pl
+www/cgi-bin/ftplocate/fltop.pl
+www/cgi-bin/ftplocate/flsummary.pl
+www/cgi-bin/ftplocate/flserv.pl
+www/cgi-bin/ftplocate/flsearch.pl
+www/cgi-bin/ftplocate/flmodule.pl
+www/cgi-bin/ftplocate/flmap.pl
+www/cgi-bin/ftplocate/flindex.pl
+www/cgi-bin/ftplocate/flhistory.pl
+www/cgi-bin/ftplocate/flfilter.pl
+www/cgi-bin/ftplocate/flcollect.pl
+www/cgi-bin/ftplocate/flcatsite.pl
+www/cgi-bin/ftplocate/dsearch.pl
+www/cgi-bin/ftplocate/dindex.pl
+www/cgi-bin/ftplocate/lang.zhtw
+www/cgi-bin/ftplocate/config
+www/cgi-bin/ftplocate/config.site
+www/cgi-bin/ftplocate/indexer.sh
+www/cgi-bin/ftplocate/log.map
+www/cgi-bin/ftplocate/log.system
+www/cgi-bin/ftplocate/log.user
+www/data/ftplocate/readme.zhtw.html
+www/data/ftplocate/readme.english.html
+www/data/ftplocate/index.html
+www/data/ftplocate/help.english.html
+www/data/ftplocate/help.zhtw.html
+@exec install -d -o nobody -g nobody -m 755 %D/www/cgi-bin/ftplocate/cache
+@exec install -d %D/www/cgi-bin/ftplocate/filelist %D/www/cgi-bin/ftplocate/desc
+@dirrm www/data/ftplocate
+@dirrm www/cgi-bin/ftplocate/filelist
+@dirrm www/cgi-bin/ftplocate/desc
+@dirrm www/cgi-bin/ftplocate/cache
+@dirrm www/cgi-bin/ftplocate
