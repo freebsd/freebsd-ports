@@ -1,0 +1,9 @@
+Authen::Krb5 is an object-oriented interface to the Kerberos 5 API.
+Both the implementation and documentation are nowhere near complete,
+and may require previous experience with Kerberos 5 programming.  Most
+of the functions here are documented in detail in the Kerberos 5 API
+documentation.
+
+WWW:	http://search.cpan.org/search?module=Authen::Krb5
+
+FreeBSD port by Andrew J. Korty <ajk@iu.edu>
