@@ -22,4 +22,10 @@ RUN_DEPENDS=	pl:${PORTSDIR}/lang/swi-pl
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not build on ia64 or amd64 (can't link shared libraries to static)"
+.endif
+
+.include <bsd.port.post.mk>
