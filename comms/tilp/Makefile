@@ -20,6 +20,8 @@ LIB_DEPENDS=	ticalcs-4.5:${PORTSDIR}/devel/libticalcs \
 		ticables.10:${PORTSDIR}/comms/libticables \
 		tifiles.5:${PORTSDIR}/devel/libtifiles
 
+BROKEN=		"Does not compile"
+
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libglade2
 USE_X_PREFIX=	yes
