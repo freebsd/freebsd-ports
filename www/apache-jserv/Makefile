@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	apache-jserv
-PORTVERSION= 	1.1.1
+PORTVERSION= 	1.1.2
 CATEGORIES=	www java
 MASTER_SITES=	http://java.apache.org/jserv/dist/
-DISTNAME=	ApacheJServ-1.1.1
+DISTNAME=	ApacheJServ-${PORTVERSION}
 
 MAINTAINER=	greg@greg.rim.or.jp
 
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk\
+RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+JAVAVM?=	${LOCALBASE}/bin/javavm
 CONFIGURE_ENV=	MAKE=${LOCALBASE}/bin/${GMAKE}
 CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--libexecdir=${LOCALBASE}/libexec/apache\
