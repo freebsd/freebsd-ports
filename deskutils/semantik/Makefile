@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.3.4.1
+PORTVERSION=	0.3.5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.freehackers.org/~tnagy/kdissert/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/
@@ -63,13 +63,20 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/config.kcfg
 	${INSTALL_DATA} ${WRKSRC}/src/kdissert/kdissert.kcfg \
 		${PREFIX}/share/config.kcfg
-.for lang in en fr
+.for lang in en
 	@${MKDIR} ${PREFIX}/share/doc/HTML/${lang}/kdissert
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/index.cache.bz2 \
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/index.docbook \
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/screenshot.png \
+		${PREFIX}/share/doc/HTML/${lang}/kdissert
+.endfor
+.for lang in fr
+	@${MKDIR} ${PREFIX}/share/doc/HTML/${lang}/kdissert
+	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/index.cache.bz2 \
+		${PREFIX}/share/doc/HTML/${lang}/kdissert
+	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/index.docbook \
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
 .endfor
 .for size in 16 22 32 64 128
