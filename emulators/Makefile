@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1996/10/30 09:41:12 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/15 19:30:55 erich Exp $
 #
 
     SUBDIR += cpmemu
@@ -16,5 +16,6 @@
     SUBDIR += vmsbackup
     SUBDIR += wine
     SUBDIR += x48
+    SUBDIR += xgs
 
 .include <bsd.port.subdir.mk>
