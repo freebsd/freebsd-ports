@@ -8,6 +8,7 @@ files.  Lockdown was meant to be run only once (after a system
 install or upgrade), so you can quickly and without forgetting
 something, get a secure system.
 
+Mirror: http://lockdown.loproc.dk/
 WWW:	http://lockdown.TruNet.dk/
 
 - Daniel Blankensteiner
