@@ -1,2 +1,5 @@
-This is a binary port of the Linux development environment.  It unpacks
-unpacks actual Linux binaries which run under the binary emulation.
+The linux-devel port contains a selection of packages necessary for doing
+development under Linux emulation.
+
+- Marcel
+marcel@FreeBSD.org
