@@ -19,6 +19,6 @@ install the user will be asked to choose which of these will be installed
 with the standalone Phylip application due to the fact that its binaries have
 been renamed.
 
-WWW: http://www.uk.embnet.org/Software/EMBOSS/
+WWW: http://www.emboss.org/
 
--- Johann Visagie <johann@egenetics.com>
+-- Johann Visagie <wjv@FreeBSD.org>

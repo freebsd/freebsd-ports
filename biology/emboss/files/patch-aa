@@ -3,7 +3,7 @@ waiting for this to be incorporated into an official release of EMBOSS.)
 
 The port installs ${PREFIX}/etc/emboss.default.sample
 
--- Johann <johann@egenetics.com>
+-- Johann <wjv@FreeBSD.org>
 
 
 --- ajax/ajnam.c.orig	Thu Aug 17 20:31:30 2000
