@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
-VERSION=	2003-06-21
+VERSION=	2003-07-24
 RESTRICTED=	"Source recipient must acknowledge license"
 
 NO_WRKSUBDIR=	yes
