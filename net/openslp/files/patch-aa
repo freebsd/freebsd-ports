@@ -1,12 +1,12 @@
---- Makefile.in.orig	Mon Dec 17 11:26:53 2001
-+++ Makefile.in	Mon Dec 17 11:27:42 2001
+--- Makefile.in.orig	Mon Jan 28 13:27:17 2002
++++ Makefile.in	Thu Feb  7 13:50:38 2002
 @@ -78,8 +78,7 @@
  VERSION = @VERSION@
  
  SUBDIRS = common libslpattr slpd libslp slptool test
--EXTRA_DIST = win32 doc etc README.W32
+-EXTRA_DIST = win32 doc etc README.W32 FAQ
 -DOC_DIR = $(prefix)/doc/openslp-$(VERSION)
-+EXTRA_DIST = win32 etc README.W32
++EXTRA_DIST = win32 etc README.W32 FAQ
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_CLEAN_FILES =  slp.list

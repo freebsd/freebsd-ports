@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	openslp
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
 
 MAINTAINER=	marcus@marcuscom.com
-
-FIND?=		/usr/bin/find
 
 .if defined(WITH_SLP_SECURITY)
 USE_OPENSSL=	yes
@@ -22,6 +20,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 				--localstatedir=/var
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if defined(WITH_SLP_SECURITY)
 CONFIGURE_ARGS+=	--enable-slpv2-security
@@ -31,7 +30,6 @@ CONFIGURE_ARGS+=	--enable-slpv2-security
 CONFIGURE_ARGS+=	--enable-async-api
 .endif
 
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 post-extract:
