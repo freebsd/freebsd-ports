@@ -1056,6 +1056,7 @@ cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
+cvs+ipv6		ports/devel/cvs+ipv6
 d1489		ports/russian/d1489
 dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
