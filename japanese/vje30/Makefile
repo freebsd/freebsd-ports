@@ -15,8 +15,8 @@ MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
 MASTER_SITE_SUBDIR=	knu/:update
 DISTFILES=	${MAINDIST} \
 		delta.tgz:source \
-		vje-delta-3.0-ELF-update-2002.05.28.tgz:update \
-		vje-delta-3.0-source-update-2002.05.28.tgz:update
+		vje-delta-3.0-ELF-update-2002.05.31.tgz:update \
+		vje-delta-3.0-source-update-2002.05.31.tgz:update
 DIST_SUBDIR=	vje30
 
 MAINTAINER=	knu@FreeBSD.org
