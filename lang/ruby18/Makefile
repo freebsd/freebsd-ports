@@ -27,15 +27,15 @@ MAINTAINER=	knu@FreeBSD.org
 .if defined(WITH_ONIGURUMA)
 ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
 ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
-ONIGURUMA_DISTFILE=		onigd20020424.tar.gz
+ONIGURUMA_DISTFILE=		onigd20021210.tar.gz
 PLIST_SUB+=	ONIGURUMA=""
 .else
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 
-RUBY_VER=	1.7
+RUBY_VER=	1.8
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
@@ -97,6 +97,7 @@ OBSOLETED_MODULES=	dl \
 			uri
 
 post-extract:
+	${RMDIR} ${WRKSRC}/doc/net
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 .if defined(WITH_ONIGURUMA)
 	${TAR} -zxvf ${DISTDIR}/${DIST_SUBDIR}/${ONIGURUMA_DISTFILE} -C ${WRKDIR}
@@ -120,7 +121,7 @@ post-install:
 	${STRIP_CMD} ${RUBY}
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-# Link just installed "ruby" to "ruby17", etc.
+# Link just installed "ruby" to "ruby18", etc.
 	${LN} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
 	${LN} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 	for f in ${INSTALLED_SCRIPTS}; do \

@@ -44,6 +44,9 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/optparse/time.rb
 %%RUBY_SITELIBDIR%%/optparse/uri.rb
 @dirrm %%RUBY_SITELIBDIR%%/optparse
+@comment pp
+%%RUBY_SITELIBDIR%%/pp.rb
+%%RUBY_SITELIBDIR%%/prettyprint.rb
 @comment racc-runtime
 %%RUBY_SITEARCHLIBDIR%%/racc/cparse.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/racc
@@ -55,8 +58,9 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITEARCHLIBDIR%%/strscan.so
 @comment others
 %%RUBY_SITELIBDIR%%/benchmark.rb
+%%RUBY_SITELIBDIR%%/erb.rb
 %%RUBY_SITELIBDIR%%/fileutils.rb
-%%RUBY_SITELIBDIR%%/pp.rb
-%%RUBY_SITELIBDIR%%/prettyprint.rb
+%%RUBY_SITELIBDIR%%/ipaddr.rb
+%%RUBY_SITELIBDIR%%/open-uri.rb
 %%RUBY_SITELIBDIR%%/set.rb
 %%RUBY_SITELIBDIR%%/tsort.rb
