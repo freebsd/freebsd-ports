@@ -1,5 +1,5 @@
 --- ripit.pl.orig	Mon May 22 15:27:36 2000
-+++ ripit.pl	Tue Jun 13 01:27:34 2000
++++ ripit.pl	Sun Sep 24 03:38:07 2000
 @@ -15,25 +15,32 @@
  #	--bitrate [rate] 	- Encode MP3 at this bitrate 
  #	--year [year]		- Tag MP3 with this year (included as CDDB
@@ -30,7 +30,8 @@
  $encoder	= 1; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
  $encopt		= "";			# options for mp3 encoder
  $cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav,
- 					# 2 - tosha, 3 - cdd
+-					# 2 - tosha, 3 - cdd
++					# 2 - tosha, 3 - cdd, 4 - dagrab
  $cdopt		= "";			# options for cdaudio ripper
 +$numcpu		= 1;			# Number of parallel encoders to run
  
@@ -62,7 +63,7 @@
 -                [--device cddevice] [start_track]\n";
 +                [--device cddevice] [--numcpu cpus] [--outputdir dir]
 +                [--cdripper cdripper] [--encoder encoder] [start_track]
-+                CD Rippers: 0 - cdparanoia, 1 - cdda2wav, 2 - tosha, 3 - cdd
++                CD Rippers: 0 - cdparanoia, 1 - cdda2wav, 2 - tosha, 3 - cdd, 4 - dagrab
 +                Encoders:   0 - Bladeenc, 1 - Lame, 2 - Gogo\n";
 +
     exit 1;
@@ -128,7 +129,21 @@
         die "tosha failed on $tracklist[$_ - 1]";
        }
      }
-@@ -379,11 +408,13 @@
+@@ -370,6 +399,13 @@
+         die "cdd failed on $tracklist[$_ - 1]";
+       }
+     }
++    elsif ($cdripper == 4) {
++      if (system("dagrab -d $cddev -f \"$riptrackname.rip\" $riptrackno")) {
++         &printflush(RIPLOG,"dagrab failed on $tracklist[$_ - 1]\n");
++         kill 1, @encoders;
++         die "dagrab failed on $tracklist[$_ - 1]";
++      }
++    }
+     else {
+       die "No CD Ripper defined";
+     }
+@@ -379,11 +415,13 @@
      rename "$riptrackname.rip","$riptrackname.wav";
  
      &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
@@ -145,7 +160,7 @@
      }
  
    }
-@@ -399,24 +430,25 @@
+@@ -399,24 +437,25 @@
  sub enc_cd {
    my($i,$x,$ncount,$enc);
  
@@ -176,7 +191,7 @@
      # Set the encoder we are going to use
      if ($encoder == 0) {
        $enc = "bladeenc $encopt -QUIT -$bitrate \"$riptrackname.wav\" ";
-@@ -427,6 +459,9 @@
+@@ -427,6 +466,9 @@
      elsif ($encoder == 2) {
        $enc = "gogo \"$riptrackname.wav\" \"$riptrackname.mp3\" $encopt -b $bitrate";
      }
@@ -186,11 +201,20 @@
  
      if ( ! system("$enc >$enclog 2>&1 </dev/null")) {
   
-@@ -442,6 +477,7 @@
-     else {
+@@ -443,6 +485,7 @@
        &printflush(RIPLOG,"MP3 Encoder Failed on $tracklist[$_ - 1]\n");
        die "MP3 Encoder Failed on $tracklist[$_ - 1]";
-+    }
      }
++    }
  
    }
+   exit ;
+@@ -457,7 +500,7 @@
+   $file="$artist.m3u";
+   if ($use_underscore == 1) { $file =~ s/ /_/g; }
+ 
+-  system("cd \"$mp3dir\" ; ls -rt *.mp3 >\"$file\"");
++  system("cd \"$mp3dir\" ; ls *.mp3 | sort >\"$file\"");
+ }
+ 
+ # Writes the MP3 tag to the file. The standard is to use the 

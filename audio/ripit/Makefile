@@ -7,6 +7,7 @@
 
 PORTNAME=	ripit
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
 
