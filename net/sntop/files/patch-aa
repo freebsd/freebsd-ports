@@ -1,48 +1,36 @@
-*** Makefile.in.orig	Sat Aug  5 22:01:28 2000
---- Makefile.in	Sat Aug  5 22:03:43 2000
-***************
-*** 31,37 ****
-! CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
-  INCLUDE = .
-  INSTDIR = @bindir@
-! ETCDIR = /etc
-  LIBS = @LIBS@
-  OBJS = @LIBOBJS@
-  DOWENEEDGETOPT = @LIBOBJS@
---- 31,37 ----
-! CFLAGS += -Wall -Wstrict-prototypes -fomit-frame-pointer @DEFS@
-  INCLUDE = .
-  INSTDIR = @bindir@
-! ETCDIR = @sysconfdir@
-  LIBS = @LIBS@
-  OBJS = @LIBOBJS@
-  DOWENEEDGETOPT = @LIBOBJS@
-***************
-*** 64,77 ****
-  	fi
-  	@if [ -d $(ETCDIR) ]; \
-  		then \
-! 		if [ ! -f $(ETCDIR)/sntoprc ]; \
-  			then \
-! 			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc; \
-! 			chmod 644 $(ETCDIR)/sntoprc; \
-! 			echo "sntop: Config installed in $(ETCDIR)"; \
-! 		else \
-! 			echo "sntop: conf file exists at $(ETCDIR)/sntoprc, we wont overwrite it"; \
-! 		fi \
-  	else \
-  		echo "sntop: $(ETCDIR) does not exist"; false; \
-  	fi
---- 64,75 ----
-  	fi
-  	@if [ -d $(ETCDIR) ]; \
-  		then \
-! 		if [ ! -f $(ETCDIR)/sntoprc.sample ]; \
-  			then \
-! 			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc.sample; \
-! 			chmod 644 $(ETCDIR)/sntoprc.sample; \
-! 		fi; \
-+ 		echo "sntop: Sample config exists at $(ETCDIR)/sntoprc.sample"; \
-  	else \
-  		echo "sntop: $(ETCDIR) does not exist"; false; \
-  	fi
+--- Makefile.in.orig	Sun Nov 11 22:54:15 2001
++++ Makefile.in	Sat Apr  6 23:49:08 2002
+@@ -36,7 +36,7 @@
+ MANDIR = @mandir@/man1
+ SNTOPRC = $(ETCDIR)/sntoprc
+ CC = @CC@
+-CFLAGS = -Wall -Wstrict-prototypes -O2 @DEFS@ -DCONF_SFILE=\"$(SNTOPRC)\"
++CFLAGS+= -Wall -Wstrict-prototypes @DEFS@ -DCONF_SFILE=\"$(SNTOPRC)\"
+ 
+ proper: clean sntop
+ 
+@@ -65,12 +65,12 @@
+ 	fi
+ 	@if [ -d $(ETCDIR) ]; \
+ 		then \
+-		if [ ! -f $(ETCDIR)/sntoprc ]; \
++		if [ ! -f $(ETCDIR)/sntoprc.sample ]; \
+ 			then \
+-			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc; \
+-			chmod 644 $(ETCDIR)/sntoprc; \
++			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc.sample; \
++			chmod 644 $(ETCDIR)/sntoprc.sample; \
+ 		fi; \
+-		echo "sntop: Sample config exists at $(ETCDIR)/sntoprc"; \
++		echo "sntop: Sample config exists at $(ETCDIR)/sntoprc.sample"; \
+ 	else \
+ 		echo "sntop: $(ETCDIR) does not exist"; false; \
+ 	fi
+@@ -78,7 +78,6 @@
+ 		then \
+ 		cp sntop.1 $(MANDIR); \
+ 		chmod 644 $(MANDIR)/sntop.1; \
+-		gzip -9 $(MANDIR)/sntop.1; \
+ 		echo "sntop: Man file installed in $(MANDIR)"; \
+ 	else \
+ 		echo "sntop: $(MANDIR) does not exist, not installing man file"; \
