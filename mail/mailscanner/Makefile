@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.36.4
-PORTREVISION=	1
+PORTVERSION=	4.37.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -210,6 +209,8 @@ do-install:
 	   ${ECHO} "Changes in MailScanner.conf found. Please look at \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION}" ; \
 	fi
+.endif
+	# Languages.conf update
 	@for LANG_DIR in ${DATADIR}/reports/*; do \
 		if [ -f $${LANG_DIR}/languages.conf ]; then \
 			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
@@ -220,14 +221,13 @@ do-install:
 				2> /dev/null ; \
 			if diff -b -B -q $${LANG_DIR}/languages.conf \
 				$${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
-			  then  ${ECHO} " no changes"; \
+			  then	${ECHO} " no changes"; \
 				${RM} $${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
-			  else  ${ECHO} " done"; \
+			  else	${ECHO} " done"; \
 				${CP} $${LANG_DIR}/languages.conf.new.${PORTVERSION} $${LANG_DIR}/languages.conf ; \
 			fi; \
 		fi; \
 	done
-.endif
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
@@ -249,5 +249,12 @@ initial-config: renew-wrapper renew-autoupdate renew-reports
 		${PREFIX}/etc/MailScanner
 	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules
+	@${ECHO} "******************************************************************************"
+	@${ECHO} "The provided default configuration requires several directories to be created:"
+	@${ECHO} "/var/spool/MailScanner/incoming"
+	@${ECHO} "/var/spool/MailScanner/quarantine"
+	@${ECHO} "/var/spool/mqueue"
+	@${ECHO} "Either create those directories or change the configuration."
+	@${ECHO} "******************************************************************************"
 
 .include <bsd.port.post.mk>

@@ -1,13 +1,13 @@
---- ../MailScanner-install-4.36.4.orig/docs/man/MailScanner.conf.5.html	Wed Dec 15 20:31:43 2004
-+++ docs/man/MailScanner.conf.5.html	Wed Dec 15 20:32:12 2004
+--- ../MailScanner-install-4.37.7.orig/docs/man/MailScanner.conf.5.html	Mon Jan 17 13:18:55 2005
++++ docs/man/MailScanner.conf.5.html	Mon Jan 17 13:19:11 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Fri Oct 22 08:13:20 2004 -->
-+<!-- CreationDate: Mon Nov  1 18:00:15 2004 -->
++<!-- CreationDate: Mon Jan 17 13:18:36 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
-@@ -397,4 +397,5740 @@
+@@ -397,4 +397,5780 @@
  <td width="3%"></td>
  <td width="72%">
  
@@ -1945,6 +1945,33 @@
 +will only affect archived mail and quarantined spam. If the
 +previous option is on, then this also affects quarantined
 +infections.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Keep Spam And MCP Archive Clean</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>Do you want to stop any virus&minus;infected spam getting
++into the spam or MCP archives? If you have a system where
++users can release messages from the spam or MCP archives,
++then you probably want to stop them being able to release
++any infected messages, so set this to yes. It is set to no
++by default as it causes a small hit in performance, and many
++people don&rsquo;t allow users to access the spam
++quarantine, so don&rsquo;t need it. This can also be the
++filename of a ruleset.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
@@ -4226,8 +4253,8 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;deliver&quot; &minus; the message is delivered to
-+the recipient as normal</p>
++<p>deliver &minus; the message is delivered to the
++recipient as normal</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4238,7 +4265,7 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;delete&quot; &minus; the message is deleted</p>
++<p>delete &minus; the message is deleted</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4249,7 +4276,7 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;store&quot; &minus; the message is stored in the
++<p>store &minus; the message is stored in the
 +quarantine</p>
 +</td>
 +<tr valign="top" align="left">
@@ -4261,8 +4288,8 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;forward&quot; &minus; an email address is
-+supplied, to which the message is forwarded</p>
++<p>forward &minus; an email address is supplied, to which
++the message is forwarded</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4273,10 +4300,10 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;notify&quot; &minus; Send the recipients a short
-+notification that spam addressed to them was not delivered.
-+They can then take action to request retrieval of the
-+orginal message if they think it was not spam.</p>
++<p>notify &minus; Send the recipients a short notification
++that spam addressed to them was not delivered. They can then
++take action to request retrieval of the orginal message if
++they think it was not spam.</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4287,12 +4314,12 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;striphtml&quot; &minus; convert all in&minus;line
-+HTML content in the message to be stripped to plain text,
-+which removes all images and scripts and so can be used to
-+protect your users from offensive spam. Note that using this
-+action on its own does not imply that the message will be
-+delivered, you will need to specify &quot;deliver&quot; or
++<p>striphtml &minus; convert all in&minus;line HTML content
++in the message to be stripped to plain text, which removes
++all images and scripts and so can be used to protect your
++users from offensive spam. Note that using this action on
++its own does not imply that the message will be delivered,
++you will need to specify &quot;deliver&quot; or
 +&quot;forward&quot; to actually deliver the message.</p>
 +</td>
 +<tr valign="top" align="left">
@@ -4304,10 +4331,10 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;attachment&quot; &minus; Convert the original
-+message into an attachment of the message. This means the
-+user has to take an extra step to open the spam, and stops
-+&quot;web bugs&quot; very effectively.</p>
++<p>attachment &minus; Convert the original message into an
++attachment of the message. This means the user has to take
++an extra step to open the spam, and stops &quot;web
++bugs&quot; very effectively.</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4318,9 +4345,22 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;bounce&quot; &minus; bounce the spam message. This
-+option should not be used and must be enabled with the
-+&quot;Enable Spam Bounce&quot; option first.</p>
++<p>bounce &minus; bounce the spam message. This option
++should not be used and must be enabled with the &quot;Enable
++Spam Bounce&quot; option first.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>header &quot;name: value&quot; &minus; Add the header
++&quot;name: value&quot; to the message. name must not
++contain any spaces.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
