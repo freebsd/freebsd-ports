@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -37,6 +38,7 @@ DOC2=		EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
 		FPing.pm ParseConfig.pm Smokeping.pm \
 		base.pm basefork.pm basevars.pm smokeping.cgi \
 		smokeping smokeping_config smokeping_install
+ETC1=		basepage.html config smokemail config-echoping
 
 pre-patch:
 	@${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
@@ -45,11 +47,12 @@ pre-patch:
 		s|/usr/sepp/bin/perl|${PERL}|; \
 		s|/usr/sepp/bin/speedy|${PREFIX}/bin/speedy|; \
 		s|use lib qw\(/usr/pack/rrdtool-1.0.33-to/lib/perl\);\n||; \
+		s|/home/oetiker/data/projects/AADJ-smokeping/dist/etc|${PREFIX}/etc/smokeping|; \
 		s|/home/oetiker/data/projects/AADJ-smokeping/dist|${PREFIX}/smokeping|; \
-		s|/home/oetiker/.smokeping/config|${PREFIX}/smokeping/etc/config|; \
+		s|/home/oetiker/.smokeping/config|${PREFIX}/etc/smokeping/config|; \
 		s|/usr/lib/sendmail|/usr/sbin/sendmail|; \
 		s|/usr/sepp/bin/fping|${PREFIX}/sbin/fping|; \
-		s|piddir  = /usr/local/smokeping/var|piddir  = /var/run|; \
+		s|piddir  = /usr/local/smokeping/var|piddir  = ${PREFIX}/var/smokeping|; \
 		s|imgcache = /home/oetiker/public_html/.simg|imgcache = ${PREFIX}/smokeping/htdocs/img|; \
 		s|imgurl   = ../.simg|imgurl   = /smokeimg|; \
 		' \
@@ -60,17 +63,16 @@ pre-patch:
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-build:
-	@${RM} ${WRKSRC}/doc/.cvsignore
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
-	@${RM} ${WRKSRC}/doc/*.pod
-	@${RM} ${WRKSRC}/Makefile
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
 .for file in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man1
-	@${RM} -f ${WRKSRC}/doc/${file}
 .endfor
 	@${MKDIR} ${DOCDIR}
 .for file in ${DOC1}
@@ -80,14 +82,17 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.txt  ${DOCDIR}
 .endfor
-	@${MKDIR} ${PREFIX}/smokeping
-	@${CP} -Rp ${WRKSRC}/[e-l]* ${PREFIX}/smokeping/
-.for file in config smokemail basepage.html config-echoping
-	@if [ ! -f ${PREFIX}/smokeping/etc/${file} ]; then \
-		${CP} ${PREFIX}/smokeping/etc/${file}.dist ${PREFIX}/smokeping/etc/${file} ; \
+	@${MKDIR} ${PREFIX}/etc/smokeping
+.for file in ${ETC1}
+	@${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist ${PREFIX}/etc/smokeping
+	@if [ ! -f ${PREFIX}/etc/smokeping/${file} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist ${PREFIX}/etc/smokeping/${file} ; \
 	fi
 .endfor
-	@${MKDIR} ${PREFIX}/smokeping/var
+	@${MKDIR} ${PREFIX}/smokeping
+	@${CP} -Rp ${WRKSRC}/[hl]* ${PREFIX}/smokeping/
+	@${MKDIR} ${PREFIX}/var/smokeping
+	@${CHOWN} smokeping:smokeping ${PREFIX}/var/smokeping
 	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
 	@${CHOWN} www:www ${PREFIX}/smokeping/htdocs/img
 	@if [ ! -f ${PREFIX}/etc/rc.d/smokeping.sh ]; then \

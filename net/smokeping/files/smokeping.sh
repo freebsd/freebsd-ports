@@ -7,13 +7,19 @@ fi
 
 case "$1" in
 start)
-        [ -r ${PREFIX}/smokeping/etc/config ] && ${PREFIX}/bin/smokeping > /dev/null && echo -n ' smokeping'
+        [ -r ${PREFIX}/etc/smokeping/config ] && \
+	    su -f -m smokeping -c ${PREFIX}/bin/smokeping > /dev/null && \
+	    echo -n ' smokeping'
         ;;
 restart)
-        [ -r ${PREFIX}/smokeping/etc/config ] && ${PREFIX}/bin/smokeping --restart > /dev/null && echo -n ' smokeping'
+        [ -r ${PREFIX}/etc/smokeping/config ] && \
+	    su -f -m smokeping -c ${PREFIX}/bin/smokeping --restart > /dev/null && \
+	    echo -n ' smokeping'
         ;;
 stop)
-        [ -r /var/run/smokeping.pid ] && kill `cat /var/run/smokeping.pid` > /dev/null && echo -n ' smokeping'
+        [ -r ${PREFIX}/var/smokeping/smokeping.pid ] && \
+	    su -f -m smokeping -c kill `cat ${PREFIX}/var/smokeping/smokeping.pid` > /dev/null && \
+	    echo -n ' smokeping'
         ;;
 *)
         echo "Usage: `basename $0` {start|restart|stop}" >&2
