@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	1.2.2
+PORTVERSION=	2.0
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		ftp://ftp.planetmirror.com/pub/horde/chora/		\
@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/chora/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/	\
 		http://ftp.horde.org/pub/chora/
+DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The Horde CVS web-viewer
@@ -23,26 +24,32 @@ COMMENT=	The Horde CVS web-viewer
 #-----------------------------------------------------------------------
 # You may define these options:
 #
-# - WITHOUT_ENSCRIPT	: if you do not need syntax highlighting;
+# - WITHOUT_SVN		: if you don't need subversion;
+#
+# - WITHOUT_CVSPS	: if you don't need cvsps;
+#
+# - WITHOUT_CVSGRAPH	: if you don't need cvsgraph;
 #
 # - A4 or DJ		: if you run enscript with this paper size.
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
-.if !defined(WITHOUT_ENSCRIPT)
-.if defined(A4)
-RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-a4
-.elif defined(DJ)
-RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letterdj
-.else
-RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+
+.if !defined(WITHOUT_SVN)
+RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 .endif
+
+.if !defined(WITHOUT_CVSPS)
+RUN_DEPENDS+=	${LOCALBASE}/bin/cvsps:${PORTSDIR}/devel/cvsps-devel
+.endif
+
+.if !defined(WITHOUT_CVSGRAPH)
+RUN_DEPENDS+=	${LOCALBASE}/bin/cvsgraph:${PORTSDIR}/devel/cvsgraph
 .endif
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i.beforeChora
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -50,26 +57,46 @@ REINPLACE_ARGS=	-i.beforeChora
 CVSROOT=	/home/cvs
 .endif
 
-DOCS=		COPYING README  docs/BUGS docs/CHANGES docs/CREDITS \
-		docs/GOALS docs/INSTALL docs/RELEASE_NOTES
-CONFFILE=	conf.php cvsroots.php html.php longIntro.txt \
-		mime_drivers.php prefs.php
-SUB_DIRS=	config graphics lib locale po templates
+DOCS=		COPYING README docs/BUGS docs/CHANGES docs/CREDITS \
+		docs/INSTALL docs/RELEASE_NOTES docs/TODO
+CONFFILE=	cvsgraph.conf longIntro.txt mime_drivers.php prefs.php	\
+		sourceroots.php
+SUB_DIRS=	config lib locale po templates themes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LHORDEDIR?=	www/horde
-LCHORADIR?=	${LHORDEDIR}/chora
+LCHORADIR=	${LHORDEDIR}/chora
 
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} CHORADIR=${LCHORADIR}
+PLIST_SUB=	CHORADIR=${LCHORADIR}
 
-HORDEDIR=	${PREFIX}/${LHORDEDIR}
 CHORADIR=	${PREFIX}/${LCHORADIR}
 CONFDIR=	${CHORADIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
-post-patch:
-	@${RM} ${WRKSRC}/config/cvsroots.php.dist.orig
+PATCH2RM=	sourceroots.php.dist.orig sourceroots.php.dist.bak conf.xml.bak
+
+pre-configure:
+	@${SED} -e "s:/home/httpd/html/horde/chora:${CHORADIR}:"	\
+		${FILESDIR}/httpd.conf.chora > ${WRKDIR}/httpd.conf.chora
+	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"		\
+		-e "s|/usr/bin/cvsgraph|${LOCALBASE}/bin/cvsgraph|"	\
+		-e "s|/usr/bin/svn|${LOCALBASE}/bin/svn|"		\
+		${WRKSRC}/config/conf.xml
+	@${REINPLACE_CMD} -e "s|%%CVSROOT%%|${CVSROOT}|"		\
+		-e "s|%%CONFDIR%%|${CONFDIR}|"				\
+		${WRKSRC}/config/sourceroots.php.dist
+.for FILE in ${PATCH2RM}
+	@${RM} ${WRKSRC}/config/${FILE}
+.endfor
+
+pre-install:
+.if !defined(WITHOUT_CVSPS)
+	@if ! pkg_info -I -x cvsps-devel > /dev/null ; then \
+	  ${ECHO_MSG} "Error: cvsps-devel is required, not cvsps." ; \
+	  ${FALSE} ; \
+	fi
+.endif
 
 do-install:
 	@${MKDIR}  ${CHORADIR}
@@ -82,25 +109,9 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${REINPLACE_CMD} -e "s|%%CVSROOT%%|${CVSROOT}|;s|%%CONFDIR%%|${CONFDIR}|" \
-		${CONFDIR}/cvsroots.php
-	@${RM} ${CONFDIR}/cvsroots.php.beforeChora
-	@${CHOWN} -R www:www ${CHORADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${CHORADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${CP} -p ${FILESDIR}/httpd.conf.chora ${HORDE_INC}
-	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/chora:${CHORADIR}:g" \
-		${HORDE_INC}/httpd.conf.chora
-	@${RM} ${HORDE_INC}/httpd.conf.chora.beforeChora
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTCHORA::" \
-		${HORDEDIR}/config/registry.php
-.if !defined(WITHOUT_ENSCRIPT)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTCHORA::" \
-		${HORDEDIR}/config/mime_drivers.php
-.endif
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.afterChora
-	@${CP} -p ${HORDEDIR}/config/mime_drivers.php		\
-		${HORDEDIR}/config/mime_drivers.php.afterChora
+	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.chora ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -110,10 +121,9 @@ do-install:
 .endif
 
 post-install:
+	@${SED} -e "s:%%CHORADIR%%:${CHORADIR}:;s:%%CONFDIR%%:${CONFDIR}:"	\
+		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
-	@${SED} -e "s:%%CHORADIR%%:${CHORADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g" < ${FILESDIR}/pkg-message.in	\
-		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 

@@ -2,12 +2,10 @@
 Chora has been installed in %%CHORADIR%% with your blank
 configuration files.
 
-Horde must be configured; if not, see
-%%PORTSDIR%%/www/horde2/pkg-message.
+Horde must be configured; if not, see `pkg_info -D -x horde'.
 
-Then, you will have to tune the configuration files located in
-%%CONFDIR%%/, specially the files conf.php and
-cvsroots.php.
+Then, you may have to tune the configuration files located in
+%%CONFDIR%%/, specially the file sourceroots.php.
 
 To protect your configuration files, you have to restart Apache.
 ************************************************************************
