@@ -1,4 +1,5 @@
 bin/barrage
+share/applnk/Applications/barrage.desktop
 share/barrage/gfx/ammo.bmp
 share/barrage/gfx/crater.bmp
 share/barrage/gfx/cursors.bmp
@@ -24,6 +25,8 @@ share/barrage/sounds/gunfire.wav
 share/barrage/sounds/highlight.wav
 share/barrage/sounds/scream1.wav
 share/barrage/sounds/scream2.wav
+@dirrm share/applnk/Applications/
+@dirrm share/applnk
 @dirrm share/barrage/sounds
 @dirrm share/barrage/gfx
 @dirrm share/barrage

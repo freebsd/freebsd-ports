@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	barrage
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
@@ -23,9 +23,14 @@ SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
+USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${X11BASE}/include"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|applications|applnk/Applications|g' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${CHMOD} 0755 ${PREFIX}/bin/${PORTNAME}
