@@ -26,8 +26,6 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
-.include <bsd.port.pre.mk>
-
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
@@ -67,4 +65,4 @@ do-install:
 				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
