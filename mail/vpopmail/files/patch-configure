@@ -1,6 +1,6 @@
---- configure.orig	Mon Feb  2 06:24:19 2004
-+++ configure	Wed Feb 11 09:16:18 2004
-@@ -846,6 +846,8 @@
+--- configure.old	Wed Aug 25 09:34:22 2004
++++ configure	Wed Aug 25 09:41:18 2004
+@@ -838,6 +838,8 @@
    --enable-qmail-newu=PATH   Full path to qmail-newu program.
    --enable-qmail-inject=PATH Full path to qmail-inject program.
    --enable-qmail-newmrh=PATH Full path to qmail-newmrh program.
@@ -9,7 +9,7 @@
    --enable-vpopuser=USER     User name allocated to vpopmail vpopmail.
    --enable-vpopgroup=GROUP   Group name allocated to vpopmail vchkpw.
    --enable-roaming-users     Enable POP-before-SMTP functionality.
-@@ -5097,7 +5099,7 @@
+@@ -4694,7 +4696,7 @@
  
  #----------------------------------------------------------------------
  
@@ -18,7 +18,7 @@
  then
    { echo "$as_me:$LINENO: WARNING: === vpopmail must be configured as root. ===" >&5
  echo "$as_me: WARNING: === vpopmail must be configured as root. ===" >&2;}
-@@ -5227,19 +5229,50 @@
+@@ -4824,6 +4826,46 @@
      ;;
  esac
  
@@ -26,8 +26,7 @@
 +if test "${enable_spamassassin+set}" = set; then
 +  enableval="$enable_spamassassin"
 +  spamc="$enableval"
- 
--#----------------------------------------------------------------------
++
 +  case $spamc in
 +  1*|y*|Y*)
 +      spamc="/usr/local/bin/spamc"
@@ -48,19 +47,8 @@
 +  enableval="$enable_spam_threshold"
 +  ENABLE_SPAM_THRESHOLD=$enableval
 +else
-+
-+                        ENABLE_SPAM_THRESHOLD=0
- 
--if test ! -d $vpopmaildir/etc
--then
--  mkdir $vpopmaildir/etc
--  chown $vpopmailuid "$vpopmaildir"/etc
--  chgrp $vpopmailgid "$vpopmaildir"/etc
--  chmod 755 "$vpopmaildir"/etc
--  { echo "$as_me:$LINENO: WARNING: making a vpopmail etc directory " >&5
--echo "$as_me: WARNING: making a vpopmail etc directory " >&2;}
- fi
- 
++  ENABLE_SPAM_THRESHOLD=0
++fi
 +
 +case $ENABLE_SPAM_THRESHOLD in
 +0*|n*|N*)
@@ -74,11 +62,38 @@
 +esac
 +fi
 +
-+
  #----------------------------------------------------------------------
  
  echo "$as_me:$LINENO: checking whether we can locate the qmail directory" >&5
-@@ -5705,28 +5738,8 @@
+@@ -5202,27 +5244,6 @@
+ 
+ #----------------------------------------------------------------------
+ 
+-if test ! -d $vpopmaildir/etc
+-then
+-  if test ! -d $vpopmaildir
+-  then
+-    { echo "$as_me:$LINENO: WARNING: creating $vpopmaildir " >&5
+-echo "$as_me: WARNING: creating $vpopmaildir " >&2;}
+-    mkdir -p $vpopmaildir
+-    chown $vpopmailuid $vpopmaildir
+-    chgrp $vpopmailgid $vpopmaildir
+-    chmod 755 $vpopmaildir
+-  fi
+-  { echo "$as_me:$LINENO: WARNING: making a vpopmail etc directory " >&5
+-echo "$as_me: WARNING: making a vpopmail etc directory " >&2;}
+-  mkdir $vpopmaildir/etc
+-  chown $vpopmailuid "$vpopmaildir"/etc
+-  chgrp $vpopmailgid "$vpopmaildir"/etc
+-  chmod 755 "$vpopmaildir"/etc
+-fi
+-
+-#----------------------------------------------------------------------
+-
+ echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
+ echo $ECHO_N "checking whether roaming-users has been enabled... $ECHO_C" >&6
+ # Check whether --enable-roaming-users or --disable-roaming-users was given.
+@@ -5310,28 +5331,8 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
