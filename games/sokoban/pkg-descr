@@ -1,0 +1,4 @@
+This is port of SOKOBAN - logical game, where U must solve problems
+with pushing packets in labirints.
+The problem is to push packets to saving positions by moving around
+and pushing only one packet at a time if possible.
