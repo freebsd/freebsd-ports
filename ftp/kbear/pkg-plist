@@ -1,0 +1,77 @@
+bin/kbear
+bin/kbearsitemanagerdb
+include/kbear/connection.h
+include/kbear/site.h
+include/kbear/group.h
+include/kbear/siteimportfilterpluginiface.h
+lib/kde3/kio_kbearftp.la
+lib/kde3/libkbeargftpimportfilter.la
+lib/kde3/libkbearncftpimportfilter.la
+lib/kde3/libkbearimportfilter.la
+lib/kde3/libkbearwsftpimportfilter.la
+lib/kde3/libkbearwincommanderimportfilter.la
+lib/kde3/libkbearsitemanager.la
+lib/kde3/libkbeartoolsplugin.la
+lib/kde3/kio_kbearftp.so
+lib/kde3/libkbeargftpimportfilter.so
+lib/kde3/libkbearncftpimportfilter.so
+lib/kde3/libkbearimportfilter.so
+lib/kde3/libkbearwsftpimportfilter.so
+lib/kde3/libkbearwincommanderimportfilter.so
+lib/kde3/libkbearsitemanager.so
+lib/kde3/libkbeartoolsplugin.so
+lib/libkbearfilesyspart.la
+lib/libkbearfilesyspart.so
+lib/libkbear.la
+lib/libkbear.so.2
+lib/libkbear.so
+share/apps/kbear/kbearui.rc
+share/apps/kbear/tips
+share/apps/kbear/icons/hicolor/16x16/actions/kde1.png
+share/apps/kbear/icons/hicolor/16x16/actions/kde2.png
+share/apps/kbear/icons/hicolor/16x16/actions/kde3.png
+share/apps/kbear/icons/hicolor/16x16/actions/kde4.png
+share/apps/kbear/icons/hicolor/16x16/actions/kde5.png
+share/apps/kbear/icons/hicolor/16x16/actions/kde6.png
+share/icons/hicolor/32x32/apps/kbear.png
+share/icons/hicolor/48x48/apps/kbear.png
+share/icons/hicolor/16x16/actions/kbearsitemanager.png
+share/icons/hicolor/22x22/actions/kbearsitemanager.png
+share/icons/hicolor/32x32/actions/kbearsitemanager.png
+share/apps/kbear/kpartplugins/kbearsitemanagerui.rc
+share/apps/kbear/kpartplugins/kbeartoolsplugin.rc
+share/apps/kbear/sitemanager.xml
+share/apps/kbear/toolbar/detailview_thumb.png
+share/apps/kbear/toolbar/iconview_thumb.png
+share/apps/kbear/toolbar/kbear-logo.png
+share/apps/kbearfilesyspart/kbearfilesyspart.rc
+share/applnk/Internet/kbear.desktop
+share/doc/HTML/en/kbear/index.docbook
+share/doc/HTML/en/kbear/index.cache.bz2
+share/doc/HTML/en/kbear/common
+share/doc/HTML/sv/kbear/index.docbook
+share/doc/HTML/sv/kbear/index.cache.bz2
+share/doc/HTML/sv/kbear/common
+share/locale/sv/LC_MESSAGES/kbear.mo
+share/services/kbearftp.protocol
+share/apps/kbearsitemanager/kpartplugins/gftpimportfilterui.rc
+share/apps/kbearsitemanager/kpartplugins/ncftpimportfilterui.rc
+share/apps/kbearsitemanager/kpartplugins/kbearimportfilterui.rc
+share/apps/kbearsitemanager/kpartplugins/ws_ftpimportfilterui.rc
+share/apps/kbearsitemanager/kpartplugins/wincommanderimportfilterui.rc
+share/apps/konqiconview/kpartplugins/kbearsitemanagerui.rc
+share/apps/konqlistview/kpartplugins/kbearsitemanagerui.rc
+@dirrm include/kbear
+@dirrm share/apps/konqiconview/kpartplugins
+@dirrm share/apps/kbearsitemanager/kpartplugins
+@dirrm share/apps/kbearsitemanager
+@dirrm share/apps/kbearfilesyspart
+@dirrm share/apps/kbear/toolbar
+@dirrm share/apps/kbear/kpartplugins
+@dirrm share/apps/kbear/icons/hicolor/16x16/actions
+@dirrm share/apps/kbear/icons/hicolor/16x16
+@dirrm share/apps/kbear/icons/hicolor
+@dirrm share/apps/kbear/icons
+@dirrm share/apps/kbear
+@dirrm share/doc/HTML/en/kbear
+@dirrm share/doc/HTML/sv/kbear

@@ -27,6 +27,7 @@
     SUBDIR += jftpgw
     SUBDIR += jmirror
     SUBDIR += junglemonkey
+    SUBDIR += kbear
     SUBDIR += kmago
     SUBDIR += kwebget
     SUBDIR += lftp
