@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.75 1999/06/15 20:13:49 sada Exp $
+# $Id: Makefile,v 1.76 1999/07/07 15:36:40 max Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -71,6 +71,15 @@ CONFIGURE_ARGS+= --without-x
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
 		make-ssh-known-hosts1.1
 MAN8=		sshd1.8
+MLINKS=		make-ssh-known-hosts1.1 make-ssh-known-hosts.1 \
+		scp1.1 scp.1 \
+		ssh-add1.1 ssh-add.1 \
+		ssh-agent1.1 ssh-agent.1 \
+		ssh-keygen1.1 ssh-keygen.1 \
+		ssh1.1 ssh.1 \
+		ssh.1 slogin.1 \
+		ssh1.1 slogin1.1 \
+		sshd1.8 sshd.8
 
 pre-patch:
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
@@ -94,21 +103,6 @@ post-install:
 		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
 	fi
-.if !defined(NOMANCOMPRESS)
-	for file in make-ssh-known-hosts scp ssh-add ssh-agent \
-	    ssh-keygen ssh; do \
-		${RM} -f ${PREFIX}/man/man1/$${file}.1; \
-		${LN} -sf $${file}1.1.gz ${PREFIX}/man/man1/$${file}.1.gz; \
-	done
-	${RM} -f ${PREFIX}/man/man1/slogin.1
-	${RM} -f ${PREFIX}/man/man1/slogin1.1
-	${RM} -f ${PREFIX}/man/man8/sshd.8
-	${LN} -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
-	${LN} -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
-	${LN} -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
-.else
-	${ECHO} Warning---some manpages not installed.  See port Makefile
-.endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
