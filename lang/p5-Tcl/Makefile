@@ -1,0 +1,27 @@
+# New ports collection makefile for:	p5-Tcl
+# Version required:			b1
+# Date created:				June 15th 1997
+# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+#
+#   $Id$
+
+DISTNAME=	Tcl-b1
+PKGNAME=	p5-Tcl-b1
+CATEGORIES=	lang perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Tcl
+
+MAINTAINER=	jfitz@FreeBSD.ORG
+
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+
+WRKSRC=		${WRKDIR}/Tcl
+
+MANPREFIX=	${PREFIX}/lib/perl5
+MAN3=		Tcl.3
+
+do-configure:
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+
+.include <bsd.port.mk>
