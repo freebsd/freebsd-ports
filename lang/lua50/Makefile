@@ -3,7 +3,7 @@
 # Date created:				27 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/06 01:28:27 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lua-3.1

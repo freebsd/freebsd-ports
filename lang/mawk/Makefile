@@ -3,7 +3,7 @@
 # Date created:		24 Dec 1998
 # Whom:			Pedro F. Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mawk1.3.3

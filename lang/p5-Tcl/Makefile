@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1998/10/14 03:38:48 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Tcl-b2

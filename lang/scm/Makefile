@@ -3,7 +3,7 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.13 1998/08/10 12:11:42 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       scm

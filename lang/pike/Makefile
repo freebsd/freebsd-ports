@@ -3,7 +3,7 @@
 # Date created:		16 Jan 1999
 # Whom:			vns@delta.odessa.ua
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	Pike-v0.6.110

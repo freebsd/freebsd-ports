@@ -3,7 +3,7 @@
 # Date created:        18 December 1997
 # Whom:                andy
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ici-2.1.1

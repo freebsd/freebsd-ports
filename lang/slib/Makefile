@@ -3,7 +3,7 @@
 # Date created:        01 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.3 1999/01/12 16:51:06 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slib2c5

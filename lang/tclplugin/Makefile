@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.12 1998/07/03 23:06:51 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tclplug20-src

@@ -3,7 +3,7 @@
 # Date created:        11 Aug 1999
 # Whom:                kbyanc
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	nqc_src_1_3

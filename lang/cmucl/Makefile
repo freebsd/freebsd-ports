@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.7 1998/11/02 11:10:10 cracauer Exp $
+# $FreeBSD$
 #
 #
 

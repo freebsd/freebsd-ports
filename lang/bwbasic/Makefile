@@ -3,7 +3,7 @@
 # Date created:		16 Jan 1997
 # Whom:			msmith@gsoft.com.au
 #
-# $Id: Makefile,v 1.6 1997/01/16 00:56:10 msmith Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bwbasic-2.20

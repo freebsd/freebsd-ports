@@ -3,7 +3,7 @@
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.17 1999/07/08 11:11:10 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pl-3.2.9

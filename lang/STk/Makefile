@@ -3,7 +3,7 @@
 # Date created:         17 Sep 96 
 # Whom:                 jmacd@cs.berkeley.edu
 #
-# $Id: Makefile,v 1.16 1998/11/11 02:03:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       STk-3.1.1

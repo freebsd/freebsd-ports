@@ -3,7 +3,7 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.14 1996/11/25 03:49:08 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Sather-1.0.5

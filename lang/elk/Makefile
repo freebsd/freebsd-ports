@@ -3,7 +3,7 @@
 # Date created:         08 March 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/11/20 09:04:25 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	elk-3.0

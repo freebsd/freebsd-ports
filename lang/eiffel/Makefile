@@ -3,7 +3,7 @@
 # Date created:         Thu Sep 14 11:10:01 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/01/13 07:03:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	eiffels13a

@@ -4,7 +4,7 @@
 # Date created:		Sat Dec 7, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/27 11:09:48 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lcc-3.6

@@ -3,7 +3,7 @@
 # Date created:        			4 March 1999
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id: Makefile,v 1.10 1999/05/09 15:00:05 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	2.4

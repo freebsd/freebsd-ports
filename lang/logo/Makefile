@@ -3,7 +3,7 @@
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1999/01/27 07:41:21 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ucblogo-4.6

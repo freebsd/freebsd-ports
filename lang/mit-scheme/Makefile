@@ -3,7 +3,7 @@
 # Date created:         Mar 26 1995
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1998/10/14 01:40:04 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mit-scheme

@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.50 1999/07/06 13:27:35 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       py152

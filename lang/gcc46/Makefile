@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.70 1999/07/20 15:30:50 obrien Exp $
+# $FreeBSD$
 #
 
 SNAPDATE=	1999-07-18

@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1998
 # Whom:			Robert Nordier <rnordier@iafrica.com>
 #
-# $Id: Makefile,v 1.8 1999/07/07 22:42:54 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	TenDRA-4.1.2

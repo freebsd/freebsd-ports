@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.30
 #
-# $Id: Makefile,v 1.38 1998/11/14 09:43:17 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	expect
 PKGNAME=	expect-5.30

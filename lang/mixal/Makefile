@@ -4,7 +4,7 @@
 # Date created:		21-Dec-1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/25 12:13:00 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mixal-1.06

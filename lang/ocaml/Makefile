@@ -3,7 +3,7 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/05/31 05:14:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ocaml-2.02

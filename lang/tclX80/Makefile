@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.27 1998/12/13 08:49:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tclX8.0.2

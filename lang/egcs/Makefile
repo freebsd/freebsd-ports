@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.62 1999/08/18 23:58:55 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gcc-2.95.1

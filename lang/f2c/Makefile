@@ -3,7 +3,7 @@
 # Date created:				28 DEC 1998
 # Whom:					Steven G. Kargl
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/24 22:33:14 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	f2c-freebsd.2.0.1

@@ -3,7 +3,7 @@
 # Date created:		12 May 1999
 # Whom:			G. Adam Stanislav
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	intel2gas-1.2

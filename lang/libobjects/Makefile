@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.5 1999/01/27 07:41:21 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libobjects-0.1.19
