@@ -5,18 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9.1
+PORTREVISION=   0
 CATEGORIES=	comms
-MASTER_SITES=   http://people.debian.org/~pa3aba/download/
+MASTER_SITES=   http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	patrick@FreeBSD.org
 COMMENT=	An Amateur Radio station logging application
 
-USE_GTK=	yes
+USE_GNOME=  	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	GTKCONFIG=${GTK_CONFIG}
 
 MAN1=		xlog.1
 
 .include <bsd.port.mk>
+
+.if defined(WITH_HAMLIB)
+LIB_DEPENDS=    hamlib-1.1.4.1:${PORTSDIR}/comms/hamlib
+CONFIGURE_ARGS+=        --enable-hamlib
+PLIST_SUB+=     HAMLIB=""
+CONFIGURE_ENV=	PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+MAKE_ENV=	PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+.endif

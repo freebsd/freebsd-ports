@@ -1,15 +1,10 @@
 bin/xlog
-share/locale/da/LC_MESSAGES/xlog.mo
-share/locale/nl/LC_MESSAGES/xlog.mo
-share/locale/fr/LC_MESSAGES/xlog.mo
-share/locale/es/LC_MESSAGES/xlog.mo
-share/xlog/pixmaps/add.xpm
-share/xlog/pixmaps/cancel.xpm
-share/xlog/pixmaps/del.xpm
+share/xlog
+share/xlog/pixmaps/book.xpm
 share/xlog/pixmaps/mini-clock.xpm
 share/xlog/pixmaps/mini-trx.xpm
 share/xlog/pixmaps/mini-xlog.xpm
-share/xlog/pixmaps/ok.xpm
+share/xlog/pixmaps/s-meter.xpm
 share/xlog/pixmaps/s.xpm
 share/xlog/pixmaps/s0.xpm
 share/xlog/pixmaps/s1.xpm
@@ -21,18 +16,23 @@ share/xlog/pixmaps/s6.xpm
 share/xlog/pixmaps/s7.xpm
 share/xlog/pixmaps/s8.xpm
 share/xlog/pixmaps/s9.xpm
-share/xlog/pixmaps/update.xpm
+share/xlog/pixmaps/xlog-logo.png
 share/xlog/pixmaps/xlog.png
 share/xlog/pixmaps/xlog.xpm
-share/xlog/dxcc/dxcck2di.changes
-share/xlog/dxcc/dxcck2di.txt
+share/xlog/dxcc/cty.dat
+share/xlog/dxcc/xlog.dat
 share/xlog/remote/Makefile
 share/xlog/remote/README
 share/xlog/remote/fromxlog.c
 share/xlog/remote/sendtoxlog.c
-share/xlog/themes/xlogrc
+share/xlog/FAQ
+share/xlog/README
+share/xlog/TODO
+share/xlog/AUTHORS
+share/xlog/THANKS
+share/xlog/MANUAL
+share/xlog/qsllabels.glabels
 @dirrm share/xlog/pixmaps
 @dirrm share/xlog/dxcc
 @dirrm share/xlog/remote
-@dirrm share/xlog/themes
 @dirrm share/xlog
