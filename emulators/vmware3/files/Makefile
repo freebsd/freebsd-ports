@@ -1,5 +1,5 @@
 # $FreeBSD$
 
-SUBDIR=	vmmon-only
+SUBDIR=	vmmon-only vmnet-only
 
 .include <bsd.subdir.mk>

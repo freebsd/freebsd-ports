@@ -1,0 +1,5 @@
+# $FreeBSD: /tmp/pcvs/ports/emulators/vmware3/files/Attic/Makefile.vmnet,v 1.1 2003-04-13 02:59:11 mbr Exp $
+
+SUBDIR= freebsd
+
+.include <bsd.subdir.mk>

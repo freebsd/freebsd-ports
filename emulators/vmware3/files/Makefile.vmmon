@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-MAKE_SMP=	make -f Makefile.FreeBSD SMP=YES
-MAKE_UP=	make -f Makefile.FreeBSD SMP=NO
+MAKE_SMP=	make -f Makefile.freebsd SMP=YES
+MAKE_UP=	make -f Makefile.freebsd SMP=NO
 
 all:	
 	${MAKE_SMP} clean && ${MAKE_SMP}

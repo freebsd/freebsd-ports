@@ -1,46 +1,42 @@
-# ports collection makefile for:	VMware 2.0 for Linux
-# Date created:		Fri 26 Nov 19:16:47 EST 1999
-# Whom:			vns@delta.odessa.ua
+# ports collection makefile for:	VMware 3.2 for Linux
+# Date created:		Fri 13 Apr 04:59:47 CET 2003
+# Whom:			mbr@freebsd.org
 #
 # $FreeBSD$
-# $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.15 2000/07/31 00:54:32 vsilyaev Exp $
 #
 
 PORTNAME=	vmware3
-PORTVERSION=	2.0.4.1142
+PORTVERSION=	3.2.0-2230
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
-DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX} \
-		vmmon-freebsd-0.98${EXTRACT_SUFX} \
-		vmnet-freebsd-0.21${EXTRACT_SUFX}
+DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
+		vmmon-only-3.2.1-20030412${EXTRACT_SUFX}:patch \
+		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	vsilyaev@mindspring.com
+MAINTAINER=	mbr@freebsd.org
 COMMENT=	A virtual machine emulator - a full PC in a window
-
-BROKEN=		"work in progress"
 
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
 VMWARE_MIRROR_SITES=	\
-		http://vmware-svca.www.conxion.com/software/ \
-		http://vmware-chil.www.conxion.com/software/ \
-		http://vmware-heva.www.conxion.com/software/ \
-		http://vmware.wespe.de/software/ \
-		ftp://vmware.wespe.de/pub/software
+		http://vmware-svca.www.conxion.com/software/:vmware \
+		http://vmware-chil.www.conxion.com/software/:vmware \
+		http://vmware-heva.www.conxion.com/software/:vmware \
+		http://vmware.wespe.de/software/:vmware \
+		ftp://vmware.wespe.de/pub/software:vmware
 FREEBSD_MODULE_SITES=	\
-		http://www.mindspring.com/~vsilyaev/vmware/files/ \
-		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
-		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
+		http://people.freebsd.org/~mbr/vmware/:patch \
 
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
+SRC_BASE?=	/usr/src
 
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
@@ -52,15 +48,15 @@ MODULES=	vmmon vmnet
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400013
-BROKEN=		"Systems prior to 400013 is out of support"
+.if ${OSVERSION} < 500000
+BROKEN=		"Systems prior to FreeBSD 5 currently out of support"
 .endif
 
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
 BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
-.if !exists(/sys/Makefile)
+.if !exists(${SRC_BASE}/Makefile)
 BROKEN=		"Kernel source files required"
 .endif
 
@@ -68,11 +64,25 @@ BROKEN=		"Kernel source files required"
 .include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
 
+.if ${OSVERSION} < 500023
+VMNET1_MINOR=	0x00010001
+.else
+VMNET1_MINOR=	0x00800001
+.endif
+
 SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
-		VMNET_NETMASK="${VMNET_NETMASK}"
+		VMNET_NETMASK="${VMNET_NETMASK}" \
+		VMNET1_MINOR="${VMNET1_MINOR}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
-PLIST_SUB=	LINUXBASE="${LINUXBASE}"
+PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "You need a uncommitted kernel patch to run this port:"
+	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
+	@${ECHO} "linux.shm.patch-cvs-freebsd5-20030329"
+	@${ECHO}
 
 post-extract:
 .for m in ${MODULES}
@@ -81,22 +91,13 @@ post-extract:
 	${GUNZIP_CMD} ${WRKSRC}/man/man1/vmware.1.gz
 
 pre-patch:
-	${PERL} -i -ne 'if (m{^Index: vmnet-only/userif\.c$$}..m{^Index: vmnet-only/vm_oui\.h$$}) { next unless m{^Index: vmnet-only/vm_oui\.h$$} } print' ${WRKDIR}/vmnet-freebsd.diff
-.for m in ${MODULES}
-	${CP} -R ${WRKDIR}/${m}-only ${WRKSRC}/
-	${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${m}-freebsd.diff
-.endfor
+	@${MKDIR} ${WRKSRC}/vmnet-only/freebsd
+	@${MKDIR} ${WRKSRC}/vmnet-only/netbsd
+	@${MKDIR} ${WRKSRC}/vmmon-only/freebsd
+	@${MKDIR} ${WRKSRC}/vmmon-only/netbsd
+	@cd ${WRKSRC} && patch < ${WRKDIR}/vmnet-only.diff
+	@cd ${WRKSRC} && patch < ${WRKDIR}/vmmon-only.diff
 
-post-patch:
-.if ${OSVERSION} >= 500023
-	cat ${FILESDIR}/kse.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
-.if ${OSVERSION} >= 500027
-	cat ${FILESDIR}/pmap.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
-	${RM} -rf ${WRKSRC}/vmmon-only/linux/
 .if exists(/sys/compat/linux/linux_ioctl.h)
 	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
 		${WRKSRC}/vmnet-only/freebsd/vmnet_linux.c
@@ -111,21 +112,11 @@ post-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c \
 		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
 .endif
-	cat ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.if ${OSVERSION} >= 500038
-	cat ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
-.if ${OSVERSION} >= 500100
-	cat ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-	cat ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
-.if ${OSVERSION} >= 500104
-	cat ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
-.if ${OSVERSION} >= 500109
-	cat ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-	cat ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-.endif
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
+	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
@@ -159,7 +150,7 @@ pre-install: setoptions
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pl ${VMDIR}/bin
 	for i in \
 		 vmnet-bridge vmnet-dhcpd vmnet-sniffer \
-		 vmware-loop vmware-ping vmware-wizard \
+		 vmware-ping vmware-wizard \
 		 ; do \
 		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
 	done
@@ -167,8 +158,6 @@ pre-install: setoptions
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
 	${MKDIR} ${VMDIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
-	${MKDIR} ${VMDIR}/lib/floppies
-	${INSTALL_DATA} ${WRKSRC}/lib/floppies/* ${VMDIR}/lib/floppies
 	${MKDIR} ${VMDIR}/lib/help
 	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/lib/help
 	${MKDIR} ${VMDIR}/lib/xkeymap
@@ -183,10 +172,11 @@ pre-install: setoptions
 
 post-install:
 	${LN} -sf ${PREFIX}/etc/vmware /etc/
-.if ${OSVERSION} >= 500100
-	${RM} -f ${LINUXBASE}/dev/vmnet1
-	${LN} -sf /dev/vmnet1 ${LINUXBASE}/dev/vmnet1
-.endif
 	@${CAT} ${PKGMESSAGE}
+
+pre-clean:
+.if exists(${WRKSRC})
+	@${FIND} ${WRKSRC} | ${GREP} \@ | ${XARGS} ${RM}
+.endif
 
 .include <bsd.port.post.mk>
