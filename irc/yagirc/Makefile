@@ -1,30 +1,25 @@
 # New ports collection makefile for:   	yagirc
-# Version required:			0.65
+# Version required:			0.65.6
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:44 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/24 07:13:53 asami Exp $
 #
 
-DISTNAME=	yagirc-0.65
+DISTNAME=	yagirc-0.65.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.elpaso.net/~spoon/yagirc/
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	gtk\\.1\\.\[345\]:${PORTSDIR}/x11-toolkits/gtk \
-		Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
-
-BROKEN=		gtk
+LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11 \
+		Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib \
+		esd\\.0\\.0:${PORTSDIR}/audio/esound
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-
-do-configure:
-.if !exists(/usr/lib/libc_r.a)
-	@ ${ECHO_MSG} This port requires the multithreading library libc_r.
-	@ false
-.endif
-	@ perl -pe "s,@LOCALBASE@,${LOCALBASE},g; s,@X11BASE@,${X11BASE},g; s,@PREFIX@,${PREFIX},g;" ${FILESDIR}/config.h > ${WRKSRC}/config.h
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gnome --disable-gtktest
+CONFIGURE_ENV=	PTHREAD_LIB="-lc_r"
 
 .include <bsd.port.mk>
