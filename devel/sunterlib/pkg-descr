@@ -1,0 +1,5 @@
+The Scheme Untergrund library hosts contributed libraries for
+Scheme 48 and scsh. For instance, it includes a module system,
+semaphores and implementations of SRFI-10, SRFI-34 and SRFI-35.
+
+WWW: http://savannah.nongnu.org/projects/sunterlib

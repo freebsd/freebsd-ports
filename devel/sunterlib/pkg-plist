@@ -1,0 +1,285 @@
+lib/scsh/0.6/afs
+lib/scsh/0.6/afs-0.1/doc/COPYING
+lib/scsh/0.6/afs-0.1/doc/NEWS
+lib/scsh/0.6/afs-0.1/doc/README
+lib/scsh/0.6/afs-0.1/load.scm
+lib/scsh/0.6/afs-0.1/scheme/afs-fs.scm
+lib/scsh/0.6/afs-0.1/scheme/packages.scm
+lib/scsh/0.6/banana
+lib/scsh/0.6/banana-0.1/doc/COPYING
+lib/scsh/0.6/banana-0.1/doc/NEWS
+lib/scsh/0.6/banana-0.1/doc/README
+lib/scsh/0.6/banana-0.1/load.scm
+lib/scsh/0.6/banana-0.1/scheme/banana.scm
+lib/scsh/0.6/banana-0.1/scheme/packages.scm
+lib/scsh/0.6/base64
+lib/scsh/0.6/base64-1.0/doc/COPYING
+lib/scsh/0.6/base64-1.0/doc/NEWS
+lib/scsh/0.6/base64-1.0/doc/README
+lib/scsh/0.6/base64-1.0/load.scm
+lib/scsh/0.6/base64-1.0/scheme/base64.scm
+lib/scsh/0.6/base64-1.0/scheme/packages.scm
+lib/scsh/0.6/binary-parse
+lib/scsh/0.6/binary-parse-1.0/doc/COPYING
+lib/scsh/0.6/binary-parse-1.0/doc/NEWS
+lib/scsh/0.6/binary-parse-1.0/doc/README
+lib/scsh/0.6/binary-parse-1.0/load.scm
+lib/scsh/0.6/binary-parse-1.0/scheme/binary-parse.scm
+lib/scsh/0.6/binary-parse-1.0/scheme/packages.scm
+lib/scsh/0.6/bytio
+lib/scsh/0.6/bytio-1.0/doc/COPYING
+lib/scsh/0.6/bytio-1.0/doc/NEWS
+lib/scsh/0.6/bytio-1.0/doc/README
+lib/scsh/0.6/bytio-1.0/load.scm
+lib/scsh/0.6/bytio-1.0/scheme/packages.scm
+lib/scsh/0.6/bytio-1.0/scheme/rw-bytes.scm
+lib/scsh/0.6/cml
+lib/scsh/0.6/cml-1.0/doc/COPYING
+lib/scsh/0.6/cml-1.0/doc/NEWS
+lib/scsh/0.6/cml-1.0/doc/README
+lib/scsh/0.6/cml-1.0/load.scm
+lib/scsh/0.6/cml-1.0/scheme/async-channels.scm
+lib/scsh/0.6/cml-1.0/scheme/channel.scm
+lib/scsh/0.6/cml-1.0/scheme/jar.scm
+lib/scsh/0.6/cml-1.0/scheme/packages.scm
+lib/scsh/0.6/cml-1.0/scheme/placeholder.scm
+lib/scsh/0.6/cml-1.0/scheme/rendezvous.scm
+lib/scsh/0.6/cml-1.0/scheme/trans-id.scm
+lib/scsh/0.6/concurrency
+lib/scsh/0.6/concurrency-0.2/doc/COPYING
+lib/scsh/0.6/concurrency-0.2/doc/NEWS
+lib/scsh/0.6/concurrency-0.2/doc/README
+lib/scsh/0.6/concurrency-0.2/load.scm
+lib/scsh/0.6/concurrency-0.2/scheme/packages.scm
+lib/scsh/0.6/concurrency-0.2/scheme/semaphore.scm
+lib/scsh/0.6/concurrency-0.2/scheme/with-lock.scm
+lib/scsh/0.6/continuation-data-type
+lib/scsh/0.6/continuation-data-type-0.1/doc/COPYING
+lib/scsh/0.6/continuation-data-type-0.1/doc/NEWS
+lib/scsh/0.6/continuation-data-type-0.1/doc/README
+lib/scsh/0.6/continuation-data-type-0.1/load.scm
+lib/scsh/0.6/continuation-data-type-0.1/scheme/continuation-data-type.scm
+lib/scsh/0.6/continuation-data-type-0.1/scheme/packages.scm
+lib/scsh/0.6/dir-streams
+lib/scsh/0.6/dir-streams-1.0/doc/COPYING
+lib/scsh/0.6/dir-streams-1.0/doc/NEWS
+lib/scsh/0.6/dir-streams-1.0/doc/README
+lib/scsh/0.6/dir-streams-1.0/load.scm
+lib/scsh/0.6/dir-streams-1.0/scheme/dir-stream-predicates.scm
+lib/scsh/0.6/dir-streams-1.0/scheme/dir-stream.scm
+lib/scsh/0.6/dir-streams-1.0/scheme/packages.scm
+lib/scsh/0.6/dir-streams-1.0/scheme/stream.scm
+lib/scsh/0.6/exceptions
+lib/scsh/0.6/exceptions-0.1/doc/COPYING
+lib/scsh/0.6/exceptions-0.1/doc/NEWS
+lib/scsh/0.6/exceptions-0.1/load.scm
+lib/scsh/0.6/exceptions-0.1/scheme/packages.scm
+lib/scsh/0.6/exceptions-0.1/scheme/restart.scm
+lib/scsh/0.6/exceptions-0.1/scheme/srfi-34.scm
+lib/scsh/0.6/exceptions-0.1/scheme/srfi-35.scm
+lib/scsh/0.6/file-mode
+lib/scsh/0.6/file-mode-1.0/doc/COPYING
+lib/scsh/0.6/file-mode-1.0/doc/NEWS
+lib/scsh/0.6/file-mode-1.0/doc/README
+lib/scsh/0.6/file-mode-1.0/load.scm
+lib/scsh/0.6/file-mode-1.0/scheme/file-mode.scm
+lib/scsh/0.6/file-mode-1.0/scheme/packages.scm
+lib/scsh/0.6/heap-images
+lib/scsh/0.6/heap-images-1.0/doc/COPYING
+lib/scsh/0.6/heap-images-1.0/doc/NEWS
+lib/scsh/0.6/heap-images-1.0/doc/README
+lib/scsh/0.6/heap-images-1.0/load.scm
+lib/scsh/0.6/heap-images-1.0/scheme/packages.scm
+lib/scsh/0.6/heap-images-1.0/scheme/reinitializer.scm
+lib/scsh/0.6/image-info
+lib/scsh/0.6/image-info-1.0/doc/COPYING
+lib/scsh/0.6/image-info-1.0/doc/NEWS
+lib/scsh/0.6/image-info-1.0/doc/README
+lib/scsh/0.6/image-info-1.0/load.scm
+lib/scsh/0.6/image-info-1.0/scheme/imxize.scm
+lib/scsh/0.6/image-info-1.0/scheme/packages.scm
+lib/scsh/0.6/interaction
+lib/scsh/0.6/interaction-0.2/doc/COPYING
+lib/scsh/0.6/interaction-0.2/doc/NEWS
+lib/scsh/0.6/interaction-0.2/doc/README
+lib/scsh/0.6/interaction-0.2/load.scm
+lib/scsh/0.6/interaction-0.2/scheme/inspect-exception.scm
+lib/scsh/0.6/interaction-0.2/scheme/packages.scm
+lib/scsh/0.6/interaction-0.2/scheme/repl.scm
+lib/scsh/0.6/interaction-0.2/scheme/socket2stdport.scm
+lib/scsh/0.6/intsets
+lib/scsh/0.6/intsets-1.0/doc/COPYING
+lib/scsh/0.6/intsets-1.0/doc/NEWS
+lib/scsh/0.6/intsets-1.0/doc/README
+lib/scsh/0.6/intsets-1.0/load.scm
+lib/scsh/0.6/intsets-1.0/scheme/intsets.scm
+lib/scsh/0.6/intsets-1.0/scheme/packages.scm
+lib/scsh/0.6/krims
+lib/scsh/0.6/krims-0.1/doc/COPYING
+lib/scsh/0.6/krims-0.1/doc/NEWS
+lib/scsh/0.6/krims-0.1/doc/README
+lib/scsh/0.6/krims-0.1/load.scm
+lib/scsh/0.6/krims-0.1/scheme/krims.scm
+lib/scsh/0.6/krims-0.1/scheme/packages.scm
+lib/scsh/0.6/module-system
+lib/scsh/0.6/module-system-1.0/doc/COPYING
+lib/scsh/0.6/module-system-1.0/doc/NEWS
+lib/scsh/0.6/module-system-1.0/doc/README
+lib/scsh/0.6/module-system-1.0/load.scm
+lib/scsh/0.6/module-system-1.0/scheme/overlapping-imports.scm
+lib/scsh/0.6/module-system-1.0/scheme/packages.scm
+lib/scsh/0.6/module-system-1.0/scheme/rt-module.scm
+lib/scsh/0.6/pps
+lib/scsh/0.6/pps-1.0/doc/COPYING
+lib/scsh/0.6/pps-1.0/doc/NEWS
+lib/scsh/0.6/pps-1.0/doc/README
+lib/scsh/0.6/pps-1.0/load.scm
+lib/scsh/0.6/pps-1.0/scheme/packages.scm
+lib/scsh/0.6/pps-1.0/scheme/pps.scm
+lib/scsh/0.6/procedure-tables
+lib/scsh/0.6/procedure-tables-0.1/doc/COPYING
+lib/scsh/0.6/procedure-tables-0.1/doc/NEWS
+lib/scsh/0.6/procedure-tables-0.1/doc/README
+lib/scsh/0.6/procedure-tables-0.1/load.scm
+lib/scsh/0.6/procedure-tables-0.1/scheme/packages.scm
+lib/scsh/0.6/procedure-tables-0.1/scheme/procedure-hash.scm
+lib/scsh/0.6/procedure-tables-0.1/scheme/procedure-tables.scm
+lib/scsh/0.6/profile
+lib/scsh/0.6/profile-0.0/doc/COPYING
+lib/scsh/0.6/profile-0.0/doc/NEWS
+lib/scsh/0.6/profile-0.0/doc/README
+lib/scsh/0.6/profile-0.0/load.scm
+lib/scsh/0.6/profile-0.0/scheme/no-profile.scm
+lib/scsh/0.6/profile-0.0/scheme/packages.scm
+lib/scsh/0.6/profile-0.0/scheme/profile.scm
+lib/scsh/0.6/sequences
+lib/scsh/0.6/sequences-1.0/doc/COPYING
+lib/scsh/0.6/sequences-1.0/doc/NEWS
+lib/scsh/0.6/sequences-1.0/doc/README
+lib/scsh/0.6/sequences-1.0/load.scm
+lib/scsh/0.6/sequences-1.0/scheme/baseqs.scm
+lib/scsh/0.6/sequences-1.0/scheme/composeqs.scm
+lib/scsh/0.6/sequences-1.0/scheme/genseqs.scm
+lib/scsh/0.6/sequences-1.0/scheme/packages.scm
+lib/scsh/0.6/sequences-1.0/scheme/specseqs.scm
+lib/scsh/0.6/sequences-1.0/scheme/uniseqs.scm
+lib/scsh/0.6/sequences-1.0/scheme/vecnames.scm
+lib/scsh/0.6/srfi-10
+lib/scsh/0.6/srfi-10-0.1/doc/COPYING
+lib/scsh/0.6/srfi-10-0.1/doc/NEWS
+lib/scsh/0.6/srfi-10-0.1/doc/README
+lib/scsh/0.6/srfi-10-0.1/load.scm
+lib/scsh/0.6/srfi-10-0.1/scheme/math.scm
+lib/scsh/0.6/srfi-10-0.1/scheme/packages.scm
+lib/scsh/0.6/srfi-10-0.1/scheme/pi.scm
+lib/scsh/0.6/srfi-10-0.1/scheme/srfi-10.scm
+lib/scsh/0.6/srfi-37
+lib/scsh/0.6/srfi-37-0.4/doc/COPYING
+lib/scsh/0.6/srfi-37-0.4/doc/NEWS
+lib/scsh/0.6/srfi-37-0.4/doc/README
+lib/scsh/0.6/srfi-37-0.4/load.scm
+lib/scsh/0.6/srfi-37-0.4/scheme/args-fold.scm
+lib/scsh/0.6/srfi-37-0.4/scheme/packages.scm
+lib/scsh/0.6/sunterlib
+lib/scsh/0.6/sunterlib-0.6/doc/COPYING
+lib/scsh/0.6/sunterlib-0.6/doc/DETAILS
+lib/scsh/0.6/sunterlib-0.6/doc/NEWS
+lib/scsh/0.6/sunterlib-0.6/doc/README
+lib/scsh/0.6/sunterlib-0.6/doc/README.contrib
+lib/scsh/0.6/tiff
+lib/scsh/0.6/tiff-1.1/bsp.tiff
+lib/scsh/0.6/tiff-1.1/doc/COPYING
+lib/scsh/0.6/tiff-1.1/doc/NEWS
+lib/scsh/0.6/tiff-1.1/doc/README
+lib/scsh/0.6/tiff-1.1/gnu-head-sm.tif
+lib/scsh/0.6/tiff-1.1/load.scm
+lib/scsh/0.6/tiff-1.1/scheme/auxies.scm
+lib/scsh/0.6/tiff-1.1/scheme/endian.scm
+lib/scsh/0.6/tiff-1.1/scheme/packages.scm
+lib/scsh/0.6/tiff-1.1/scheme/tiff-prober.scm
+lib/scsh/0.6/tiff-1.1/scheme/tiff.scm
+lib/scsh/0.6/tiff-1.1/scheme/vtiff.scm
+lib/scsh/0.6/treaps
+lib/scsh/0.6/treaps-1.0/doc/COPYING
+lib/scsh/0.6/treaps-1.0/doc/NEWS
+lib/scsh/0.6/treaps-1.0/doc/README
+lib/scsh/0.6/treaps-1.0/load.scm
+lib/scsh/0.6/treaps-1.0/scheme/packages.scm
+lib/scsh/0.6/treaps-1.0/scheme/treap.scm
+@dirrm lib/scsh/0.6/treaps-1.0/scheme
+@dirrm lib/scsh/0.6/treaps-1.0/doc
+@dirrm lib/scsh/0.6/treaps-1.0
+@dirrm lib/scsh/0.6/tiff-1.1/scheme
+@dirrm lib/scsh/0.6/tiff-1.1/doc
+@dirrm lib/scsh/0.6/tiff-1.1
+@dirrm lib/scsh/0.6/sunterlib-0.6/doc
+@dirrm lib/scsh/0.6/sunterlib-0.6
+@dirrm lib/scsh/0.6/srfi-37-0.4/scheme
+@dirrm lib/scsh/0.6/srfi-37-0.4/doc
+@dirrm lib/scsh/0.6/srfi-37-0.4
+@dirrm lib/scsh/0.6/srfi-10-0.1/scheme
+@dirrm lib/scsh/0.6/srfi-10-0.1/doc
+@dirrm lib/scsh/0.6/srfi-10-0.1
+@dirrm lib/scsh/0.6/sequences-1.0/scheme
+@dirrm lib/scsh/0.6/sequences-1.0/doc
+@dirrm lib/scsh/0.6/sequences-1.0
+@dirrm lib/scsh/0.6/profile-0.0/scheme
+@dirrm lib/scsh/0.6/profile-0.0/doc
+@dirrm lib/scsh/0.6/profile-0.0
+@dirrm lib/scsh/0.6/procedure-tables-0.1/scheme
+@dirrm lib/scsh/0.6/procedure-tables-0.1/doc
+@dirrm lib/scsh/0.6/procedure-tables-0.1
+@dirrm lib/scsh/0.6/pps-1.0/scheme
+@dirrm lib/scsh/0.6/pps-1.0/doc
+@dirrm lib/scsh/0.6/pps-1.0
+@dirrm lib/scsh/0.6/module-system-1.0/scheme
+@dirrm lib/scsh/0.6/module-system-1.0/doc
+@dirrm lib/scsh/0.6/module-system-1.0
+@dirrm lib/scsh/0.6/krims-0.1/scheme
+@dirrm lib/scsh/0.6/krims-0.1/doc
+@dirrm lib/scsh/0.6/krims-0.1
+@dirrm lib/scsh/0.6/intsets-1.0/scheme
+@dirrm lib/scsh/0.6/intsets-1.0/doc
+@dirrm lib/scsh/0.6/intsets-1.0
+@dirrm lib/scsh/0.6/interaction-0.2/scheme
+@dirrm lib/scsh/0.6/interaction-0.2/doc
+@dirrm lib/scsh/0.6/interaction-0.2
+@dirrm lib/scsh/0.6/image-info-1.0/scheme
+@dirrm lib/scsh/0.6/image-info-1.0/doc
+@dirrm lib/scsh/0.6/image-info-1.0
+@dirrm lib/scsh/0.6/heap-images-1.0/scheme
+@dirrm lib/scsh/0.6/heap-images-1.0/doc
+@dirrm lib/scsh/0.6/heap-images-1.0
+@dirrm lib/scsh/0.6/file-mode-1.0/scheme
+@dirrm lib/scsh/0.6/file-mode-1.0/doc
+@dirrm lib/scsh/0.6/file-mode-1.0
+@dirrm lib/scsh/0.6/exceptions-0.1/scheme
+@dirrm lib/scsh/0.6/exceptions-0.1/doc
+@dirrm lib/scsh/0.6/exceptions-0.1
+@dirrm lib/scsh/0.6/dir-streams-1.0/scheme
+@dirrm lib/scsh/0.6/dir-streams-1.0/doc
+@dirrm lib/scsh/0.6/dir-streams-1.0
+@dirrm lib/scsh/0.6/continuation-data-type-0.1/scheme
+@dirrm lib/scsh/0.6/continuation-data-type-0.1/doc
+@dirrm lib/scsh/0.6/continuation-data-type-0.1
+@dirrm lib/scsh/0.6/concurrency-0.2/scheme
+@dirrm lib/scsh/0.6/concurrency-0.2/doc
+@dirrm lib/scsh/0.6/concurrency-0.2
+@dirrm lib/scsh/0.6/cml-1.0/scheme
+@dirrm lib/scsh/0.6/cml-1.0/doc
+@dirrm lib/scsh/0.6/cml-1.0
+@dirrm lib/scsh/0.6/bytio-1.0/scheme
+@dirrm lib/scsh/0.6/bytio-1.0/doc
+@dirrm lib/scsh/0.6/bytio-1.0
+@dirrm lib/scsh/0.6/binary-parse-1.0/scheme
+@dirrm lib/scsh/0.6/binary-parse-1.0/doc
+@dirrm lib/scsh/0.6/binary-parse-1.0
+@dirrm lib/scsh/0.6/base64-1.0/scheme
+@dirrm lib/scsh/0.6/base64-1.0/doc
+@dirrm lib/scsh/0.6/base64-1.0
+@dirrm lib/scsh/0.6/banana-0.1/scheme
+@dirrm lib/scsh/0.6/banana-0.1/doc
+@dirrm lib/scsh/0.6/banana-0.1
+@dirrm lib/scsh/0.6/afs-0.1/scheme
+@dirrm lib/scsh/0.6/afs-0.1/doc
+@dirrm lib/scsh/0.6/afs-0.1
