@@ -1,0 +1,29 @@
+- ripewhois 
+
+  The RIPE version of the whois client program.
+  
+  This is intended for European users as it will query a RIPE whois
+  server with extended whois capabilities rather than a standard whois
+  protocol server. The ripewhois program is fully compatible with the
+  standard whois protocol and can thus replace your default whois
+  program.
+  
+  This program is aware of quite some extra flags that the standard whois
+  doesn't support. Just try 'ripewhois' without arguments to see an
+  explanation of these. Please note that most of these flags are NOT
+  supported by non RIPE whois servers. In cases where you use this client
+  to query non RIPE whois servers, you should not use any of these
+  flags.
+
+  This client supports the "-v" option and the argument "all" to
+  "-t" and "-v".
+
+ 
+- networkupdate
+
+  A program that allows updating the RIPE database with the whois
+  protocol instead of the usual E-mail interface. This program can
+  usually only be used by the administrators of the whois server itself.
+  The updating mechanism is too powerfull (for now) to allow the general
+  public to use this mechanism. The server is protected by means of an
+  accesslist.
