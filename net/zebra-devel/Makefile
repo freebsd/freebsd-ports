@@ -7,7 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.93b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -40,16 +40,6 @@ post-clean:
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-PLIST:=		${WRKDIR}/PLIST
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist.v6 ${PKGDIR}/pkg-plist > ${PLIST}
-.else
-CONFIGURE_ARGS+=--disable-ospf6d --disable-ripngd
-.endif
-
 post-install:
 	@( cd ${WRKSRC}/doc; rm -f zebra*info*; ${MAKE} zebra.info install )
 	@${ECHO} "===>     installing zebra startup file..."
@@ -64,4 +54,4 @@ post-install:
 	@${ECHO} "router_flags=\"start\""
 	@${ECHO} "done."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
