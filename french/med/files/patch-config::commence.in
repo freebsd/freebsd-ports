@@ -1,5 +1,5 @@
 --- config/commence.in.orig	Wed Sep 18 18:09:44 2002
-+++ config/commence.in	Wed Jul 23 11:49:48 2003
++++ config/commence.in	Sat Apr 24 21:17:41 2004
 @@ -28,7 +28,7 @@
  CFLAGS=@CFLAGS@
  CPPFLAGS= -I$(top_srcdir)/include -I$(HDF5INC) -D$(MACHINE) @CPPFLAGS@
@@ -17,3 +17,12 @@
  INSTALL_DATA=@INSTALL_DATA@
  RUNSERIAL=@RUNSERIAL@
  RUNPARALLEL=@RUNPARALLEL@
+@@ -49,7 +50,7 @@
+ libdir=@libdir@
+ includedir=@includedir@
+ docdir=@exec_prefix@/doc
+-testdir=@exec_prefix@/tests
++testdir=@exec_prefix@/share/examples/med/tests
+ PUB_LIB=$(LIB)
+ 
+ # Shared libraries

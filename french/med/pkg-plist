@@ -16,5 +16,36 @@ lib/libmed.a
 %%PORTDOCS%%%%DOCSDIR%%/html/reference_guide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/root.html
 %%PORTDOCS%%%%DOCSDIR%%/html/user_guide.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test1.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test1.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test10.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test10.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test11.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test12.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test12.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test13.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test14.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test14.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test15.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test16.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test16.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test17.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test18.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test18.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test2.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test2.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test3.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test3.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test4.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test4.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test5.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test6.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test6.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test7.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test8.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test8.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/test9.c
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -29,16 +29,24 @@ USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}.src
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/config/commence.in
-
 post-extract:
 	@(cd ${WRKDIR} && \
 	${TAR} xfz ${WRKDIR}/${PORTNAME}${PORTVERSION}.src.tar.gz)
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g'	\
+		${WRKSRC}/config/commence.in
+	@${REINPLACE_CMD} -e 's|@PTHREAD_LIBS@|${PTHREAD_LIBS}|'	\
+		 -e 's|@PTHREAD_CFLAGS@|${PTHREAD_CFLAGS}|'		\
+			${WRKSRC}/tests/Makefile.in
+
+pre-install:
+	@${MKDIR} ${EXAMPLESDIR}
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
+	@${RM} -rf ${EXAMPLESDIR}
+.else
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/doc/html ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
