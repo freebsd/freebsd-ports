@@ -34,7 +34,6 @@
 world		-a .
 
 # CVSROOT support
-BillardGL	ports/games/BillardGL
 CVSROOT		CVSROOT
 access		CVSROOT access
 avail		CVSROOT avail
@@ -80,6 +79,7 @@ ADMsmb		ports/security/ADMsmb
 ADMsnmp		ports/security/ADMsnmp
 AbiWord2	ports/editors/AbiWord2
 AquaGatekeeper	ports/net/AquaGatekeeper
+BillardGL	ports/games/BillardGL
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
 Coin		ports/graphics/Coin
@@ -435,9 +435,9 @@ aspathtree	ports/net/aspathtree
 aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
-asr10		ports/converters/asr10
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
+asr10		ports/converters/asr10
 asterisk	ports/net/asterisk
 astime		ports/x11-clocks/astime
 astk-client	ports/cad/astk-client
@@ -794,7 +794,7 @@ caudium-devel	ports/www/caudium-devel
 caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
 cave		ports/misc/cave
-cbb		ports/deskutils/cbb
+cbb		ports/finance/cbb
 cbedic		ports/textproc/cbedic
 cbrowser	ports/devel/cbrowser
 cc65		ports/devel/cc65
@@ -1591,7 +1591,7 @@ emh-xemacs21-mule	ports/mail/emh-xemacs21-mule
 emiclock	ports/x11-clocks/emiclock
 emil		ports/mail/emil
 emirror		ports/ftp/emirror
-emma		ports/misc/emma
+emma		ports/finance/emma
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
@@ -2379,7 +2379,7 @@ gnmm		ports/games/gnmm
 gno3dtet	ports/games/gno3dtet
 gnocatan	ports/games/gnocatan
 gnocl		ports/x11-toolkits/gnocl
-gnofin		ports/deskutils/gnofin
+gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
@@ -2441,7 +2441,7 @@ gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
 gnomepim	ports/deskutils/gnomepim
-gnomepm		ports/misc/gnomepm
+gnomepm		ports/finance/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
@@ -2826,6 +2826,7 @@ hotjava		ports/www/hotjava
 hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
 howl		ports/net/howl
+howm		ports/deskutils/howm
 hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
@@ -4307,7 +4308,7 @@ libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
 libspectrum	ports/emulators/libspectrum
 libstatgrab	ports/devel/libstatgrab
-libstocks	ports/devel/libstocks
+libstocks	ports/finance/libstocks
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
 libsvm		ports/science/libsvm
@@ -4940,7 +4941,7 @@ moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 moleskine	ports/editors/moleskine
 momspider	ports/www/momspider
-moneydance	ports/deskutils/moneydance
+moneydance	ports/finance/moneydance
 monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
@@ -6030,9 +6031,9 @@ p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filter	ports/devel/p5-Filter
 p5-Filter-CBC	ports/devel/p5-Filter-CBC
 p5-Filter-Simple	ports/textproc/p5-Filter-Simple
-p5-Finance-Currency-Convert	ports/misc/p5-Finance-Currency-Convert
-p5-Finance-Quote	ports/misc/p5-Finance-Quote
-p5-Finance-QuoteHist	ports/misc/p5-Finance-QuoteHist
+p5-Finance-Currency-Convert	ports/finance/p5-Finance-Currency-Convert
+p5-Finance-Quote	ports/finance/p5-Finance-Quote
+p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
 p5-Flash-FLAP	ports/www/p5-Flash-FLAP
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
@@ -6458,6 +6459,7 @@ p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl	ports/devel/p5-ReadLine-Perl
 p5-Regex-PreSuf	ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Common	ports/textproc/p5-Regexp-Common
+p5-Regexp-Shellish	ports/devel/p5-Regexp-Shellish
 p5-Religion	ports/devel/p5-Religion
 p5-ResourcePool	ports/devel/p5-ResourcePool
 p5-ResourcePool-Resource-DBI	ports/databases/p5-ResourcePool-Resource-DBI
@@ -6700,6 +6702,7 @@ p5-X11-IdleTime	ports/x11/p5-X11-IdleTime
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
 p5-X500-DN	ports/net/p5-X500-DN
 p5-XML-Atom	ports/textproc/p5-XML-Atom
+p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
 p5-XML-DOM	ports/textproc/p5-XML-DOM
@@ -7735,7 +7738,7 @@ quake2lnx	ports/games/quake2lnx
 quakeforge	ports/games/quakeforge
 quakeserver	ports/games/quakeserver
 quanta		ports/www/quanta
-quantlib	ports/misc/quantlib
+quantlib	ports/finance/quantlib
 quark		ports/multimedia/quark
 quasi88		ports/emulators/quasi88
 quat		ports/graphics/quat
@@ -8682,6 +8685,7 @@ staroffice52	ports/editors/staroffice52
 staroffice60	ports/editors/staroffice60
 starplot	ports/astro/starplot
 stars		ports/astro/stars
+starttls	ports/security/starttls
 startup-notification	ports/x11/startup-notification
 staticcharge	ports/dns/staticcharge
 sted		ports/editors/sted
@@ -9530,7 +9534,7 @@ wmshutdown	ports/sysutils/wmshutdown
 wmsmixer	ports/audio/wmsmixer
 wmsolar		ports/astro/wmsolar
 wmspaceweather	ports/astro/wmspaceweather
-wmstock		ports/misc/wmstock
+wmstock		ports/finance/wmstock
 wmsun		ports/astro/wmsun
 wmthemeinstall	ports/x11-wm/wmthemeinstall
 wmtictactoe	ports/games/wmtictactoe
@@ -9807,7 +9811,7 @@ xinfocom	ports/games/xinfocom
 xinput		ports/x11/xinput
 xinvaders	ports/games/xinvaders
 xinvaders3d	ports/games/xinvaders3d
-xinvest		ports/deskutils/xinvest
+xinvest		ports/finance/xinvest
 xipdump		ports/net/xipdump
 xipmsg		ports/net/xipmsg
 xisola		ports/games/xisola
@@ -10024,7 +10028,7 @@ xpx		ports/graphics/xpx
 xpyraminx	ports/games/xpyraminx
 xqf		ports/games/xqf
 xquarto		ports/games/xquarto
-xquote		ports/misc/xquote
+xquote		ports/finance/xquote
 xracer		ports/games/xracer
 xrender		ports/x11-toolkits/xrender
 xrestop		ports/x11/xrestop
@@ -10373,7 +10377,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-starttls	ports/security/starttls
-howm		ports/deskutils/howm
-p5-Regexp-Shellish	ports/devel/p5-Regexp-Shellish
-p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
