@@ -1,0 +1,7 @@
+lib/perl5/site_perl/w3http.pm
+lib/perl5/site_perl/w3pdfuri.pm
+lib/perl5/site_perl/htmlop.pm
+man/man1/w3mir.1.gz
+man/man1/w3mfix.1.gz
+bin/w3mir
+bin/w3mfix
