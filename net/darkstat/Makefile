@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/
 
