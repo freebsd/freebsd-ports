@@ -16,12 +16,14 @@ MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
 BUILD_DEPENDS=	${PGSQL_SRC}/src/Makefile.global:${PORTSDIR}/databases/postgresql7:configure
-LIB_DEPENDS=	proj.3:${PORTSDIR}/graphics/proj	\
+LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj	\
 		pq:${PORTSDIR}/databases/postgresql7
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 MAKE_ARGS=	PGSQL_SRC=${PGSQL_SRC}
+
+OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off
 
 PGSQL_PORTDIR=	${WRKDIR}/../../../databases/postgresql7
 WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}
