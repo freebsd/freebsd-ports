@@ -27,9 +27,13 @@ USE_GMAKE=	yes
 PLIST_SUB+=	RM=${RM}
 CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin

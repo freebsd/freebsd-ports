@@ -22,6 +22,12 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-configure:
@@ -35,4 +41,4 @@ pre-configure:
 	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

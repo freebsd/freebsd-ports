@@ -26,9 +26,14 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=--without-kamera
 
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 # temporarily disable kamera, it requires gphoto2
 PLIST_SUB+=	KAMERA="@comment "

@@ -24,6 +24,11 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 QTCPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
@@ -55,4 +60,4 @@ pre-configure:
 	find ${WRKSRC}/libical -name Makefile.in | xargs ${PERL} -pi -e \
 		"s|INSTALL = \@INSTALL\@|INSTALL=${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP}|g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

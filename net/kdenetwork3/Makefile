@@ -27,6 +27,12 @@ USE_GMAKE=	yes
 CONFIGURE_ENV+=	PATH=${WRKSRC}/auto-bin:$$PATH
 MAKE_ENV=	${CONFIGURE_ENV}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-configure:
@@ -43,4 +49,4 @@ pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 	${PERL} -pi -e "s@^AC_CHECK_UTMP_FILE@# AC_CHECK_UTMP_FILE@g" ${WRKSRC}/configure.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -32,9 +32,13 @@ CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--without-ldap --disable-closure
 USE_GMAKE=	yes
 
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
