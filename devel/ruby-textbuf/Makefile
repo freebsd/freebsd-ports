@@ -24,7 +24,7 @@ USE_RUBY_SETUP=	yes
 DOCS_EN=	README.en
 DOCS_JA=	README.ja
 
-BROKEN=		"Does not compile"
+RUBY_VER=	1.6
 
 do-install:
 .if !defined(NOPORTDOCS)
