@@ -17,9 +17,12 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #
 # The variables:
 #
+# PYTHONBASE:	Python port's installation prefix.
+#				default: ${LOCALBASE}
+#
 # PYTHON_CMD:	Python's command line file name, including the version
 #				number (used for dependencies).
-#				default: ${LOCALBASE}/bin/${PYTHON_VERSION}
+#				default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
 #
 # PYTHON_DISTFILE:	The ${DISTFILE} for your python version. Needed for
 #					extensions like Tkinter, py-gdbm and py-expat, which
@@ -27,10 +30,10 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #					distribution.
 #
 # PYTHON_INCLUDEDIR:	Location of the Python include files.
-#						default: ${LOCALBASE}/include/${PYTHON_VERSION}
+#						default: ${PYTHONBASE}/include/${PYTHON_VERSION}
 #
 # PYTHON_LIBDIR:	Base of the python library tree
-#					default: ${LOCALBASE}/lib/${PYTHON_VERSION}
+#					default: ${PYTHONBASE}/lib/${PYTHON_VERSION}
 #
 # PYTHON_PKGNAMEPREFIX:	Use this as a ${PKGNAMEPREFIX} to distinguish
 #						packages for different Python versions.
@@ -66,11 +69,20 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #					are built from sources contained in the Python
 #					distribution.
 #
+# There are PREFIX-clean variants of the PYTHON_*DIR variables above.
+# They are meant to be used in the installation targets.
+#
+# PYTHONPREFIX_INCLUDEDIR:	default: ${PREFIX}/include/${PYTHON_VERSION}
+# PYTHONPREFIX_LIBDIR:		default: ${PREFIX}/lib/${PYTHON_VERSION}
+# PYTHONPREFIX_SITELIBDIR:	default: ${PYTHONPREFIX_LIBDIR}/site-packages
+#
 # PYDISTUTILS:	Dependency line for the distutils extension. As of Python-2.0,
 #				the distutils are in the base distribution.
 #
-# PYXML:		Dependency line for the XML entension. As of Python-2.0,
+# PYXML:		Dependency line for the XML extension. As of Python-2.0,
 #				this extension is in the base distribution.
+#
+# USE_PYTHON_PREFIX:	Says that the port installs in ${PYTHONBASE}.
 #
 # USE_PYDISTUTILS:	Use distutils as do-build and do-install target.
 #
@@ -83,17 +95,23 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # PYSETUP:		Name of the setup script used by the distutils package.
 #				default: setup.py
 
-# XXX Ugly hack, but running python is the best way to determine the
-# currently installed version. If Python is not installed, a default 
-# version number is substituted and the corresponding Python distribution
-# will be built through the dependency processing.
+# Determine the currently installed version. If Python is not installed, a
+# default version number is substituted and the corresponding Python
+# distribution will be built through the dependency processing.
+.if defined(PYTHON_CMD)
+_PYTHON_VERSION!=	${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
+.else
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
 					|| echo 2.2
+.endif
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 _PYTHON_PORTVERSION=	2.2.1
 PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
 					|| echo ${_PYTHON_PORTVERSION}
+PYTHONBASE!=		(${PYTHON_VERSION} -c 'import sys; print sys.prefix') \
+						2> /dev/null || echo ${LOCALBASE}
+PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
 
 # Python-2.2
 .if ${PYTHON_VERSION} == "python2.2"
@@ -154,6 +172,20 @@ PYTHON_REL=			152
 PYTHON_SUFFIX=		15
 PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 
+# Python versions in development
+.elif defined(FORCE_PYTHON_VERSION)
+PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+
+PYTHON_DISTFILE=	# empty
+PYTHON_PORTSDIR=	# empty
+PYTHON_NO_DEPENDS=	YES
+PYTHON_REL!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
+						print h[0]+h[2]+h[4]'
+PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
+						print h[0]+h[2]'
+PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
+
 .else
 .BEGIN:
 	@${ECHO} "Error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
@@ -166,12 +198,16 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 	@${FALSE}
 .endif
 
-PYTHON_CMD=				${LOCALBASE}/bin/${PYTHON_VERSION}
-PYTHON_INCLUDEDIR=		${LOCALBASE}/include/${PYTHON_VERSION}
-PYTHON_LIBDIR=			${LOCALBASE}/lib/${PYTHON_VERSION}
+PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
+PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
 PYTHON_PLATFORM!=		expr ${OPSYS:L}${OSREL} : '\(.*\)\.'
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
+
+PYTHONPREFIX_INCLUDEDIR=	${PYTHON_INCLUDEDIR:S;${PYTHONBASE};${PREFIX};}
+PYTHONPREFIX_LIBDIR=		${PYTHON_LIBDIR:S;${PYTHONBASE};${PREFIX};}
+PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
+
 PYSETUP?=				setup.py
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
@@ -183,14 +219,24 @@ PYTHON_NO_DEPENDS?=		NO
 BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 
-.if defined(USE_PYDISTUTILS) && ${PYTHON_REL} < 200
+.if defined(USE_PYDISTUTILS) && defined(PYTHON_REL) && ${PYTHON_REL} < 200
 BUILD_DEPENDS+=	${PYDISTUTILS}
 .endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
-# pkg/PLIST substrings
-PLIST_SUB+=		PYTHON_VERSION=${PYTHON_VERSION} \
-				PYTHON_PLATFORM=${PYTHON_PLATFORM}
+# set $PREFIX as Python's one
+.if defined(USE_PYTHON_PREFIX)
+PREFIX=			${PYTHONBASE}
+.endif
+
+# Substitutions for pkg-plist
+# Use a short form of the PYTHONPREFIX_*DIR variables; we don't need the
+# base directory in the plist file.
+PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
+				PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
+				PYTHON_PLATFORM=${PYTHON_PLATFORM} \
+				PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
+				PYTHON_VERSION=${PYTHON_VERSION}
 
 # XXX Hm, should I export some of the variables above to *_ENV?
 
