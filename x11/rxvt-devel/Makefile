@@ -1,21 +1,18 @@
 # New ports collection Makefile for: rxvt
-# Version required:	2.6.0
+# Version required:	2.6.1
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.23 1999/06/22 23:51:38 mph Exp $
+# $Id: Makefile,v 1.24 1999/07/03 18:02:01 obrien Exp $
 #
 
-# If possible, please consider updating the simple ports/x11-clocks/rclock
-# (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
-# the same distfile.
-
-DISTNAME=	rxvt-2.6.0
+DISTNAME=	rxvt-2.6.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
-		http://wm.current.nu/files/ \
-		ftp://ftp.nstu.ru/pub/sources/x/
+		${MASTER_SITE_SUNSITE}
+
+MASTER_SITE_SUBDIR=	X11/terms
 
 MAINTAINER=	andrews@technologist.com
 
