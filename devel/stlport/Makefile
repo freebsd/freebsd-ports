@@ -8,7 +8,7 @@
 
 PORTNAME=	stlport
 PORTVERSION=	4.5.3
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stlport.com/archive/
 PKGNAMESUFFIX=	-${COMPILER}
@@ -28,9 +28,10 @@ PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
 COMPILER?=	gcc
 MAKEFILE=	${COMPILER}-freebsd.mak
+MAKE_ENV+=	CC=${CC} CXX=${CXX}
 MAKE_ARGS+=	INSTALLDIR=${PREFIX} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-PLIST_SUB=	COMPILER=${COMPILER}
+PLIST_SUB+=	COMPILER=${COMPILER}
 
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
@@ -40,8 +41,13 @@ BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
 .endif
 
 .if ${COMPILER} == icc
-CC=	icc
-CXX=	icpc
+CC=		icc
+CXX=		icpc
+CFLAGS=		-O -ip -axiMKW
+CXXFLAGS=	${CFLAGS}
+.else
+CFLAGS=
+CXXFLAGS=
 .endif
 
 .if ${COMPILER} == gcc && ${OSVERSION} < 460000
@@ -73,9 +79,7 @@ post-build:	test
 .endif
 
 test:	do-build
-	cd ${WRKSRC}/../test/eh && ${SETENV} CC=${CC} CXX=${CXX} \
-	${GMAKE} -f ${MAKEFILE} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-	PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC} CXX=${CXX}
+	@cd ${WRKSRC}/../test/eh && ${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check_d
 
 .include <bsd.port.post.mk>
