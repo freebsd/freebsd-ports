@@ -552,6 +552,7 @@
     SUBDIR += py-period
     SUBDIR += py-pqueue
     SUBDIR += py-reverse
+    SUBDIR += py-ro
     SUBDIR += py-spark
     SUBDIR += py-twisted
     SUBDIR += py-unit
