@@ -4876,6 +4876,7 @@ mule		ports/editors/mule
 mule-common	ports/editors/mule-common
 mule-ucs	ports/converters/mule-ucs
 mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
+multi-aterm	ports/x11/multi-aterm
 multi-backgrounds-daemon	ports/deskutils/multi-backgrounds-daemon
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
 multisuck	ports/news/multisuck
