@@ -101,15 +101,16 @@ include/gtk/gtkvscrollbar.h
 include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
-info/dir
+@unexec install-info --delete %D/info/gdk.info %D/info/dir
+@unexec install-info --delete %D/info/glib.info %D/info/dir
+@unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
 info/glib.info
 info/gtk.info
-info/gtk.info-1
-info/gtk.info-2
-info/gtk.info-3
-info/gtk.info-4
-info/gtk.info-5
+@exec [ -f %D/info/dif ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dif
+@exec install-info %D/info/glib.info %D/info/dif
+@exec install-info %D/info/gtk.info %D/info/dif
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
