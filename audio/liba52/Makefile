@@ -18,6 +18,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .ifndef(WITHOUT_DJBFFT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
