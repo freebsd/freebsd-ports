@@ -1,0 +1,9 @@
+Pathchar finds bandwidth, delay, average queue and loss rate
+of hops between source and destination.
+
+This tool, written by Van Jacobson (author of traceroute), is
+alpha quality. Source code is not available.
+
+See also http://www.caida.org/Pathchar/
+-- 
+Josh Gilliam                    <josh@quick.net>

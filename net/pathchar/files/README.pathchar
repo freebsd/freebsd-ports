@@ -1,0 +1,39 @@
+Pathchar finds bandwidth, delay, average queue and loss rate
+of hops between source and destination.
+
+This tool, written by Van Jacobson (author of traceroute), is
+alpha quality. Source code is not available.
+
+Command line arguments
+	-a:
+	-A:
+	-d:
+	-D: filename for debug output
+	-f: initial hop #
+	-F: probefilter
+	-i: intersampletime
+	-l: max ttl
+	-L: locality
+	-m: maxsize maximum packet size in bytes
+	(if absent, pathchar determines path MTU)
+	-M: minsize default: smallest possible
+	(want large differential between max and min size,
+	o/w a node w/queue will impact later nodes )
+	-n: don't dns-resolve
+	-p: port @@?
+	-q: #queries, default 32
+	-Q: bytes,
+	if (-), packet size increment per query, defaults to 92.
+	if (+), number of sizes, defaults to 32
+	-s: lsrr?
+	-S: fit spacing
+	-t: tos
+	-v: verbose mode
+	-V: verbose?
+	-w: seconds wait time
+
+"Please report problems to pathchar@ee.lbl.gov.  But please
+don't ask questions -- if it doesn't make sense, wait for the
+beta release.  Thanks.  Have fun."
+
+http://www.caida.org/Pathchar/
