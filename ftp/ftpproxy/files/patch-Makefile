@@ -1,0 +1,25 @@
+--- Makefile.orig	Wed Jan 23 23:42:24 2002
++++ Makefile	Wed Jan 23 23:49:22 2002
+@@ -1,20 +1,4 @@
+-
+-CC =		gcc
+-CFLAGS =	-O2 -Wall -ggdb
+-
+ FTPPROXY =	main.o ftp.o ip-lib.o lib.o
+ 
+-TARGETS =	ftp.proxy
+-
+-
+-all:		$(TARGETS)
+-	-ctags *.[ch]
+-
+-
+-ftp.proxy:	$(FTPPROXY)
+-	$(CC) -o $@ $(FTPPROXY)
+-
+-	
+-clean:
+-	rm -f *.o cut out $(TARGETS) $(TAR).tar.gz
+-
++all: $(FTPPROXY)
++	$(CC) $(CFLAGS) -o ftp.proxy $(FTPPROXY)

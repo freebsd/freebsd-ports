@@ -6,7 +6,7 @@ Beside this basic function which makes the program useful on firewall
 or masqueraders it offers fixing the FTP server (e.g. for connections
 into a protected LAN) and proxy authentication. 
 
-WWW: http://ftp.daemons.de/
+WWW: http://www.ftpproxy.org/
 
 -Philippe
 philippe@le-berre.com
