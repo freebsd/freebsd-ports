@@ -1,17 +1,16 @@
---- Makefile.orig	Sun Jan 23 13:53:02 2000
-+++ Makefile	Mon Jan 24 19:36:27 2000
-@@ -1,6 +1,6 @@
+--- Makefile.orig	Sat Jan 29 02:59:52 2000
++++ Makefile	Sat Feb  5 06:35:28 2000
+@@ -1,18 +1,18 @@
  all: game
  
 -CC = gcc
 +CC?= gcc
  XLIB = -L/usr/X11R6/lib -I/usr/X11R6/include
  LIBS = -lm -lX11
- OBJS = main.o game.o aliens.o player.o effects.o \
-@@ -8,12 +8,12 @@
- vec4x1.o mat4x4.o
+ OBJS = game.o aliens.o player.o effects.o \
+ object.o camera.o main-x11.o vec4x1.o mat4x4.o
  DEPENDS = 
- #CFLAGS = -g -Wall -pedantic -ansi
+ #CFLAGS = -pg -Wall -pedantic -ansi
 -CFLAGS = -ansi
 +#CFLAGS = -ansi
  #OPTIONS = -D_GNU_SOURCE -DGAME_LINUX_X11 -DGAME_DEBUG
@@ -19,7 +18,7 @@
  
  .c.o: $(DEPENDS)
 -	$(CC) -c $(CFLAGS) $(OPTIONS) $< -o $@
-+	$(CC) -c $(CFLAGS) $(XLIB) $(OPTIONS) $< -o $@
++	$(CC) -c $(CFLAGS) $(OPTIONS) $(XLIB) $< -o $@
  
  game: $(OBJS) $(DEPENDS)
- 	$(CC) -g -o xinv3d $(OBJS) $(XLIB) $(LIBS) $(OPTIONS)
+ 	$(CC) -o xinv3d $(OBJS) $(XLIB) $(LIBS) $(OPTIONS)
