@@ -1,0 +1,37 @@
+--- Makefile.orig	Fri Nov 13 00:39:24 1998
++++ Makefile	Sun Nov 22 22:31:45 1998
+@@ -1,7 +1,7 @@
+ #-----------------------------------------------------
+ # The locations where this program should be installed
+-INSTALL_X_DIR=/usr/local/bin
+-MAN_DIR=/usr/local/man/man1
++INSTALL_X_DIR=${PREFIX}/bin
++MAN_DIR=${PREFIX}/man/man1
+ 
+ # The location and names of the X11 libraries
+ LDIR = -L/usr/X11R6/lib
+@@ -39,20 +39,20 @@
+ 
+ install: 
+ 	@echo Installing astime in $(INSTALL_X_DIR) ...
+-	-@strip astime
++	-@/usr/libexec/${PORTOBJFORMAT}/strip astime
+ 	-@if [ -e $(INSTALL_X_DIR)/astime ] ; then rm $(INSTALL_X_DIR)/astime; fi
+ 	@cp astime $(INSTALL_X_DIR)/astime
+ 	@chmod 755 $(INSTALL_X_DIR)/astime
+ 	@echo Installing the man page in $(MAN_DIR) ...
+-	@cp astime.man $(MAN_DIR)/astime.1x
+-	@chmod 644 $(MAN_DIR)/astime.1x
++	@cp astime.man $(MAN_DIR)/astime.1
++	@chmod 644 $(MAN_DIR)/astime.1
+ 	@echo Done.
+ 
+ uninstall:
+ 	@echo Uninstalling astime in $(INSTALL_X_DIR) ...
+ 	-@if [ -e $(INSTALL_X_DIR)/astime ] ; then rm $(INSTALL_X_DIR)/astime; fi
+ 	@echo Uninstalling the man page in $(MAN_DIR) ...
+-	-@if [ -e $(MAN_DIR)/astime.1x ] ; then rm $(MAN_DIR)/astime.1x; fi
++	-@if [ -e $(MAN_DIR)/astime.1 ] ; then rm $(MAN_DIR)/astime.1; fi
+ 	@echo Done.
+ 
+ clean:
