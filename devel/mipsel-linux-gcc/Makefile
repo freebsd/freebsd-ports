@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 #MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -19,9 +19,9 @@ COMMENT=	Gcc-2.97 for mipsel-linux cross-development with SNOW ABI
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
-		${LOCALBASE}/${PKGNAMEPREFIX:S/-$//}/include/stdio.h:${PORTSDIR}/devel/agenda-headers \
-		${LOCALBASE}/${PKGNAMEPREFIX:S/-$//}/lib/crti.o:${PORTSDIR}/devel/agenda-static-libs \
-		${LOCALBASE}/${PKGNAMEPREFIX:S/-$//}/lib/libc.a:${PORTSDIR}/devel/agenda-static-libs
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/stdio.h:${PORTSDIR}/devel/agenda-headers \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib/crti.o:${PORTSDIR}/devel/agenda-static-libs \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib/libc.a:${PORTSDIR}/devel/agenda-static-libs
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c,c++ \
 		--enable-soft-float \
 		--enable-multilib \
-		--disable-shared
+		--disable-shared \
+		--disable-nls
 
 ONLY_FOR_ARCHS=	i386 alpha
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
@@ -39,14 +40,15 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_PERL5=	yes
 LIBTOOLFILES=	configure gcc/configure
-MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cpp.1 gcov.1
+MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 \
+		${PKGNAMEPREFIX}cpp.1 ${PKGNAMEPREFIX}gcov.1
 
 GCC_REV=	2.97
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCC_REV}
 
-BINARIES=	gcc g++ c++ cpp
+BINARIES=	gcc g++ c++ cpp gcov
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
