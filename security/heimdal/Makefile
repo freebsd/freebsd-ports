@@ -24,4 +24,8 @@ MAKE_ENV=		INSTALL_TMP="${INSTALL} -m 444"
 PREFIX=			${HEIMDAL_HOME}
 .endif
 
+# XXX  I patched Makefile*, but I want to avoid rerunning automake
+post-patch:
+	find ${WRKSRC} -name Makefile.in -print | xargs ${TOUCH}
+
 .include <bsd.port.mk>
