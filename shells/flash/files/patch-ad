@@ -1,0 +1,10 @@
+--- module.c	Tue Jun 29 05:36:28 1999
++++ module.c.new	Sat Dec 11 01:34:45 1999
+@@ -25,7 +25,6 @@
+ #include<stdlib.h>
+ #include<pwd.h>
+ #include<sys/types.h>
+-#include<sys/resource.h>
+ #include<sys/wait.h>
+ #include<sys/stat.h>
+ #include<fcntl.h>

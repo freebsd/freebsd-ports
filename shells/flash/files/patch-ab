@@ -1,0 +1,10 @@
+--- exec.h	Wed Mar  5 06:59:11 1997
++++ exec.h.new	Sat Dec 11 01:29:48 1999
+@@ -3,6 +3,7 @@
+ 
+ #include<signal.h>
+ #include<termios.h>
++#include <sys/types.h>
+ 
+ #include "parse.h"
+ #include "menu.h"

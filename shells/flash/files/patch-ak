@@ -1,0 +1,12 @@
+--- modules/Makefile	Sat Oct 25 18:59:03 1997
++++ modules/Makefile.new	Sun Jan  2 21:51:53 2000
+@@ -1,7 +1,7 @@
+ CC = gcc
+ DEBUG = #-g
+-CFLAGS = $(DEBUG) -O3 -fpic -shared -Wall
+-LDFLAGS = -shared 
++CFLAGS = $(NCURSES) $(NC_CFLAGS) $(DEBUG) -O3 -fpic -shared -Wall
++LDFLAGS = $(NC_LFLAGS) -lncurses -shared 
+ 
+ OBJECTS = background test alarms countdown
+ 
