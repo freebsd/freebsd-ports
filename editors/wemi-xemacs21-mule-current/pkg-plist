@@ -10,23 +10,20 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-bbdb.el
+@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/semi/mime-bbdb.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.el
-%%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-image.el
-%%EMACS_PACKAGESDIR%%/lisp/semi/mime-image.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-mc.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-mc.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-partial.el
-%%EMACS_PACKAGESDIR%%/lisp/semi/mime-partial.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-pgp.el
-%%EMACS_PACKAGESDIR%%/lisp/semi/mime-pgp.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-play.el
-%%EMACS_PACKAGESDIR%%/lisp/semi/mime-play.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-setup.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-setup.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-w3.el
+@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/semi/mime-w3.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-setup.el
@@ -39,3 +36,6 @@
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-en.texi
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/semi
+share/semi/%%SEMI_COOKIE%%
+share/semi/%%WEMI_COOKIE%%
+@unexec /bin/rmdir %D/share/semi || true
