@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/19 08:50:09 tg Exp $
 #
 
 DISTNAME=	EZWGL-1.38
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+
+BROKEN=		reinstall
 
 ALL_TARGET=	shared clean static
 USE_X11=	yes
