@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,49 +14,62 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_GNOME=	gnomehack
 USE_REINPLACE=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	F77="${FC}" FFLAGS="${FFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GDINCDIR="${LOCALBASE}/include/gd" \
+		GDINCDIR="${LOCALBASE}/include" \
 		GDLIBDIR="${LOCALBASE}/lib" \
-		XINCDIR="${X11BASE}/include" \
-		XLIBDIR="${X11BASE}/lib" \
-		PLPLOT_PREFIX="${DATADIR}" \
-		DEMOS_DIR="${EXAMPLESDIR}" \
-		INFO_DIR="${PREFIX}/info" \
 		M4="${LOCALBASE}/bin/gm4"
-CONFIGURE_ARGS=	--disable-python --disable-octave --with-double
+CONFIGURE_ARGS=	--disable-python --disable-octave --without-qhull
 INSTALLS_SHLIB=	yes
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+MAN1=		plm2gif.1 plplot_libtool.1 plpr.1 pltek.1 pstex2eps.1
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=	X11="@comment "
+.else
+USE_XLIB=	yes
+PLIST_SUB+=	X11=""
+.endif
 
 .if defined(WITH_TCLTK)
+.undef WITHOUT_X11
+PKGNAMESUFFIX=	-tcltk
 LIB_DEPENDS+=	itk32.1:${PORTSDIR}/x11-toolkits/itk
-CONFIGURE_ENV+=	ITCLINCDIR="${LOCALBASE}/include/itcl3.2" \
-		ITCLLIBDIR="${LOCALBASE}/lib" \
-		ITCLLIBSTR="-litcl32" \
-		ITKINCDIR="${LOCALBASE}/include/itk3.2" \
+CONFIGURE_ENV+=	ITKINCDIR="${LOCALBASE}/include/itk3.2" \
 		ITKLIBDIR="${LOCALBASE}/lib" \
-		ITKLIBSTR="-litk32" \
-		TCLINCDIR="${LOCALBASE}/include/tcl8.3" \
-		TCLLIBDIR="${LOCALBASE}/lib" \
-		TCLLIBSTR="-ltcl83" \
 		TKINCDIR="${LOCALBASE}/include/tk8.3" \
+		TKPRIVATEINCDIR="${LOCALBASE}/include/tk8.3/generic" \
 		TKLIBDIR="${LOCALBASE}/lib" \
-		TKLIBSTR="-ltk83"
+		ITCLINCDIR="${LOCALBASE}/include/itcl3.2" \
+		ITCLLIBDIR="${LOCALBASE}/lib" \
+		TCLINCDIR="${LOCALBASE}/include/tcl8.3" \
+		TCLPRIVATEINCDIR="${LOCALBASE}/include/tcl8.3/generic" \
+		TCLLIBDIR="${LOCALBASE}/lib"
 PLIST_SUB+=	TCLTK=""
 .else
 CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
 PLIST_SUB+=	TCLTK="@comment "
+MAN1+=	plrender.1 plserver.1 pltcl.1
 .endif
 
 post-patch:
-.for file in scripts/mktclIndex
-	@${REINPLACE_CMD} -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|-litk$$|-litk32|g ; \
+		 s|-ltk$$|-ltk83|g ; \
+		 s|-litcl$$|-litcl32|g ; \
+		 s|-ltcl$$|-ltcl83|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' \
+		${WRKSRC}/scripts/mktclIndex
 
 .include <bsd.port.mk>

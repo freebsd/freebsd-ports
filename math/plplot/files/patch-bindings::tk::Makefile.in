@@ -1,0 +1,11 @@
+--- bindings/tk/Makefile.in.orig	Mon Apr 21 21:36:35 2003
++++ bindings/tk/Makefile.in	Wed Apr 23 18:28:32 2003
+@@ -341,7 +341,7 @@
+ with_rpath_FALSE = @with_rpath_FALSE@
+ with_rpath_TRUE = @with_rpath_TRUE@
+ 
+-tcldir = ${prefix}/$(DATA_DIR)/../tcl
++@enable_tk_TRUE@tcldir = ${prefix}/$(DATA_DIR)/../tcl
+ 
+ libplplottcltk = ../tcl/libplplottcltk$(LIB_TAG).la
+ 
