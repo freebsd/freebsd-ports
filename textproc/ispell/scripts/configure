@@ -27,6 +27,8 @@ fi
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
 echo "#undef NO8BIT" >> local.h 
 echo "#define LANGUAGES \"{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\""  >>local.h ||exit 1;
+echo "#undef WORDS"  >> local.h 
+echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
