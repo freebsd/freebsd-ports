@@ -1,0 +1,61 @@
+*** examples/generic/makefile.ORIG	Thu Jan 12 23:13:41 1995
+--- examples/generic/makefile	Sat Feb 25 15:30:02 1995
+***************
+*** 17,23 ****
+  PRECISION= SINGLE
+  DORELIB= -ldore
+  
+! INCDIR=/usr/include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR)
+  OFILES= render.o run.o
+  
+--- 17,23 ----
+  PRECISION= SINGLE
+  DORELIB= -ldore
+  
+! INCDIR=../../include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR)
+  OFILES= render.o run.o
+  
+*** examples/util/makefile.ORIG	Thu Jan 12 23:13:44 1995
+--- examples/util/makefile	Sat Feb 25 15:33:09 1995
+***************
+*** 19,25 ****
+  OFILES= copy.o defgroup.o hsvtorgb.o  preview.o \
+  	prsarg.o rectmesh.o replace.o stkgrp.o supermesh.o text.o transform.o 
+  
+! INCDIR=/usr/include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR)
+  
+  all: libdore_util.a
+--- 19,25 ----
+  OFILES= copy.o defgroup.o hsvtorgb.o  preview.o \
+  	prsarg.o rectmesh.o replace.o stkgrp.o supermesh.o text.o transform.o 
+  
+! INCDIR=../../include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR)
+  
+  all: libdore_util.a
+*** examples/programs/simple/makefile.ORIG	Thu Jan 12 23:13:55 1995
+--- examples/programs/simple/makefile	Sat Feb 25 16:56:59 1995
+***************
+*** 15,23 ****
+  # EXPRESS OR IMPLIED.
+   
+  PRECISION= SINGLE
+! DORELIB = -ldore
+  
+! INCDIR=/usr/include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR) 
+  LIBS= $(DORELIB) -lX11 -lm
+  
+--- 15,23 ----
+  # EXPRESS OR IMPLIED.
+   
+  PRECISION= SINGLE
+! DORELIB = -L../../../lib/i386 -ldore
+  
+! INCDIR=../../../include
+  CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR) 
+  LIBS= $(DORELIB) -lX11 -lm
+  
