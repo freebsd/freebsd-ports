@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::DH.3
-PLIST_FILES=	%%SITE_PERL%%/Crypt/DH.pm
+PLIST_FILES=	%%SITE_PERL%%/Crypt/DH.pm \
+				%%SITE_PERL%%/mach/auto/Crypt/DH/.packlist
+PLIST_DIRS=		%%SITE_PERL%%/mach/auto/Crypt/DH
 
 .include <bsd.port.mk>
