@@ -48,7 +48,7 @@ yesno() {
     done
 }
 
-case $1 in
+case $2 in
 PRE-INSTALL)
 
     ## Hack /etc/master.passwd ##
@@ -88,7 +88,7 @@ EOF
     if yesno "Would you like to create it automatically?" y; then
 	# We need a command 'pw(8)'
 	check_pw
-	pw useradd ${PGSQL_UID} -u 70 -g ${PGSQL_GID} -h - -d /usr/local/${INSTALL_DIR} \
+	pw useradd ${PGSQL_UID} -u 70 -g ${PGSQL_GID} -h - -d ${PKG_PREFIX}/${INSTALL_DIR} \
 		-s /bin/sh -c "PostgreSQL pseudo-user" || exit
     else
 	echo "Please create it, and try again."
