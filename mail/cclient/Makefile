@@ -19,11 +19,11 @@ MAINTAINER=	kbyanc@FreeBSD.org
 WRKSRC=		${WRKDIR}/imap-${PORTVERSION}
 
 INSTALLS_SHLIB=	yes
-PAMAUTH?=       yes
+PAMAUTH?=	yes
 .if ${PAMAUTH} != "no"
-ALL_TARGET=     bfp
+ALL_TARGET=	bfp
 .else
-ALL_TARGET=     bsf
+ALL_TARGET=	bsf
 .endif
 
 SHLIBBASE=	c-client4
@@ -35,7 +35,7 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-SHLIBNAME=      lib${SHLIBBASE}.so.${SHLIBMAJ}.0
+SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
 
 post-configure:
@@ -47,7 +47,7 @@ post-configure:
 
 HEADERS=	dummy.h env.h env_unix.h fdstring.h flstring.h fs.h ftl.h \
 		imap4r1.h linkage.c linkage.h mail.h misc.h nl.h nntp.h \
-		osdep.h pop3.h rfc822.h smtp.h tcp.h
+		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h
 
 do-install:
 	${MKDIR} ${PREFIX}/include/c-client

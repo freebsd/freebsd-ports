@@ -17,6 +17,7 @@ include/c-client/pop3.h
 include/c-client/rfc822.h
 include/c-client/smtp.h
 include/c-client/tcp.h
+include/c-client/utf8.h
 lib/libc-client4.a
 lib/libc-client4.so.7
 lib/libc-client4.so
