@@ -12,6 +12,10 @@ etc/nntpcache/cancelmoose.asc-dist
 etc/nntpcache/clewis.asc-dist
 etc/nntpcache/cosmo.roadkill.asc-dist
 etc/nntpcache/dsr.asc-dist
+etc/nntpcache/http/index.html
+etc/nntpcache/innreport.conf-dist
+etc/nntpcache/innreport.pl
+etc/nntpcache/innreport.pm
 etc/nntpcache/jem.asc-dist
 etc/nntpcache/jeremy.asc-dist
 etc/nntpcache/msfc-anti-mmf-2.asc-dist
@@ -30,6 +34,7 @@ etc/rc.d/nntpcached.sh.sample
 include/mmap_results.h
 man/man8/newshound.8.gz
 man/man8/nntpcached.8.gz
+sbin/innreport.sh
 sbin/newshound
 sbin/nntpcached
 share/doc/nntpcache/AUTHORS
@@ -43,6 +48,10 @@ share/doc/nntpcache/NEWS
 share/doc/nntpcache/README
 share/doc/nntpcache/README.INN
 share/doc/nntpcache/VERSION
+@exec mkdir -p %D/etc/nntpcache/http/innreport/pics
+@dirrm etc/nntpcache/http/innreport/pics
+@dirrm etc/nntpcache/http/innreport
+@dirrm etc/nntpcache/http
 @dirrm etc/nntpcache
 @dirrm share/doc/nntpcache
 @unexec rm -rf /var/spool/nntpcache

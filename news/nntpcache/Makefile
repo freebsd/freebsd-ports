@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nntpcache
-# Version required:	2.2b7
+# Version required:	2.3.2
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.7 1997/12/24 01:21:28 alex Exp $
+# $Id: Makefile,v 1.10 1998/01/29 04:04:33 itojun Exp $
 #
 
-DISTNAME=	nntpcache-2.2b7
+DISTNAME=	nntpcache-2.3.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
 		ftp://ftp.ntnu.no/pub/unix/news/ \
@@ -38,12 +38,14 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/nntpcached.sh \
 		${PREFIX}/etc/rc.d/nntpcached.sh.sample
-#	for i in ${PREFIX}/etc/nntpcache/*asc-dist ${PREFIX}/etc/nntpcache/*pgp-dist ; do \
-#		j=`echo $$i | sed -e 's/-dist//'`; \
-#		if [ \! -f $$j ]; then \
-#			ln $$i $$j; \
-#		fi; \
-#	done
 	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+
+hardlink-pgp-files:
+	for i in ${PREFIX}/etc/nntpcache/*asc-dist ${PREFIX}/etc/nntpcache/*pgp-dist ; do \
+		j=`echo $$i | sed -e 's/-dist//'`; \
+		if [ \! -f $$j ]; then \
+			ln $$i $$j; \
+		fi; \
+	done
 
 .include <bsd.port.mk>
