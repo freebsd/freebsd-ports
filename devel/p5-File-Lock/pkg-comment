@@ -1,1 +1,1 @@
-perl5 module for file locking (flock,fcntl).
+Perl5 module for file locking (flock,fcntl)
