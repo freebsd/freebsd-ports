@@ -497,6 +497,8 @@ do-build:
 .endif
 
 pre-install:
+	@${CP} ${FILESDIR}/oo_setup.resp \
+	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
