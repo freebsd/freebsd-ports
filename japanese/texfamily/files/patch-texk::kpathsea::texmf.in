@@ -1,0 +1,288 @@
+--- texk/kpathsea/texmf.in.orig	Tue May  2 17:32:40 2000
++++ texk/kpathsea/texmf.in	Sat Jun 12 22:22:09 2004
+@@ -62,10 +62,10 @@
+ 
+ % If defined, teTeX's texconfig stores modifications here (instead of the
+ % TEXMFMAIN tree).
+-%   VARTEXMF = @texmf@-var
++VARTEXMF = @texmf@-var
+ 
+ % User texmf trees can be catered for like this...
+-%   HOMETEXMF = $HOME/texmf
++HOMETEXMF = $HOME/texmf
+ 
+ % Now, list all the texmf trees. If you have multiple trees you can
+ % use shell brace notation, like this:
+@@ -74,7 +74,8 @@
+ %   - list $VARTEXMF in the TEXMF definition;
+ %   - make sure that $VARTEXMF precedes $TEXMFMAIN in the TEXMF definition.
+ %TEXMF = !!$TEXMFMAIN
+-TEXMF = {!!$TEXMFLOCAL,!!$TEXMFMAIN}
++%TEXMF = {!!$TEXMFLOCAL,!!$TEXMFMAIN}
++TEXMF = {$HOMETEXMF,!!$VARTEXMF,!!$TEXMFLOCAL,!!$TEXMFMAIN}
+ 
+ % The system trees.  These are the trees that are shared by all the users.
+ SYSTEXMF = $TEXMF
+@@ -132,6 +133,14 @@
+ TEXINPUTS.eplain  = .;$TEXMF/tex/{eplain,plain,generic,}//
+ TEXINPUTS.ftex = .;$TEXMF/tex/{formate,plain,generic,}//
+ TEXINPUTS.jadetex = .;$TEXMF/tex/{jadetex,plain,generic,}//
++
++% pTeX.
++ptex_inputs = .;$TEXMF/{ptex,tex}/{plain,generic,}//
++platex209_inputs = .;$TEXMF/{ptex,tex}/{platex209,plain,platex,}//
++platex2e_inputs = .;$TEXMF/{ptex,tex}/{platex,latex,generic,}//
++TEXINPUTS.platex209 = $platex209_inputs
++TEXINPUTS.platex = $platex2e_inputs
++TEXINPUTS.ptex = $ptex_inputs
+ TEXINPUTS.mex = .;$TEXMF/tex/{mex,plain,generic,}//
+ TEXINPUTS.texinfo = .;$TEXMF/tex/{texinfo,plain,generic,}//
+ 
+@@ -150,9 +159,6 @@
+ TEXINPUTS.jlatex209 = .:$TEXMF/{jtex,tex}/{latex209,generic,latex,}//
+ TEXINPUTS.multex = .:$TEXMF/{multex,jtex,tex}/{plain,generic,}//
+ TEXINPUTS.mullatex = .:$TEXMF/{multex,jtex,tex}/{latex,generic,}//
+-TEXINPUTS.ptex = .:$TEXMF/{ptex,tex}/{plain,generic,}//
+-TEXINPUTS.platex = .:$TEXMF/{ptex,tex}/{latex,generic,}//
+-TEXINPUTS.platex209 = .:$TEXMF/{ptex,tex}/{latex209,generic,latex,}//
+ 
+ % Fontinst needs to read afm files.
+ TEXINPUTS.fontinst = .;$TEXMF/tex//;$TEXMF/fonts/afm//
+@@ -177,6 +183,7 @@
+ TEXINPUTS.pdfmex   = .;$TEXMF/{pdftex,tex}/{mex,plain,generic,}//
+ TEXINPUTS.pdftex   = .;$TEXMF/{pdftex,tex}/{plain,generic,}//
+ TEXINPUTS.pdftexinfo = .;$TEXMF/{pdftex,tex}/{texinfo,plain,generic,}//
++TEXINPUTS.pdfamstex = .;$TEXMF/{pdftex,tex}/{amstex,plain,generic,}//
+ 
+ % pdfeTeX.
+ TEXINPUTS.pdfelatex = .;$TEXMF/{pdfetex,pdftex,etex,tex}/{latex,generic,}//
+@@ -192,6 +199,12 @@
+ % odd formats  needing their own paths
+ TEXINPUTS.lamstex  = .;$TEXMF/tex/{lamstex,plain,generic,}//
+ TEXINPUTS.lollipop = .;$TEXMF/tex/{lollipop,plain,generic,}//
++TEXINPUTS.mex-pl = .;$TEXMF/tex/{mex,plain,generic,}//
++TEXINPUTS.platex-pl  = .;$TEXMF/tex/{platex,latex,generic,}//
++TEXINPUTS.pdfplatex = .;$TEXMF/{pdftex,tex}/{platex,latex,generic,}//
++TEXINPUTS.pdfmex-pl = .;$TEXMF/{pdftex,tex}/{mex,plain,generic,}//
++TEXINPUTS.pdfemex   = .;$TEXMF/{pdfetex,pdftex,etex,tex}/{mex,plain,generic,}//
++TEXINPUTS.pdfemex-pl = .;$TEXMF/{pdfetex,pdftex,etex,tex}/{mex,plain,generic,}//
+ 
+ % Earlier entries override later ones, so put this last.
+ TEXINPUTS = .;$TEXMF/tex/{generic,}//
+@@ -204,12 +217,12 @@
+ % and string pools (.pool) for ini{tex,mf,mp}.  It is silly that we have six
+ % paths and directories here (they all resolve to a single place by default),
+ % but historically ...
+-TEXFORMATS = .;$TEXMF/web2c
+-MFBASES = .;$TEXMF/web2c
+-MPMEMS = .;$TEXMF/web2c
+-TEXPOOL = .;$TEXMF/web2c
+-MFPOOL = .;$TEXMF/web2c
+-MPPOOL = .;$TEXMF/web2c
++TEXFORMATS = .;$TEXMF/web2c-jtex;$TEXMF/web2c
++MFBASES = .;$TEXMF/web2c-jtex;$TEXMF/web2c
++MPMEMS = .;$TEXMF/web2c-jtex;$TEXMF/web2c
++TEXPOOL = .;$TEXMF/web2c-jtex;$TEXMF/web2c
++MFPOOL = .;$TEXMF/web2c-jtex;$TEXMF/web2c
++MPPOOL = .;$TEXMF/web2c-jtex;$TEXMF/web2c
+ 
+ % Device-independent font metric files.
+ VFFONTS = .;$TEXMF/fonts/vf//
+@@ -235,6 +248,12 @@
+ % See ftp://ftp.tug.org/tex/fontname.tar.gz.
+ TEXFONTMAPS = .;$TEXMF/fontname
+ 
++% support non"k"-xdvi:
++PKFONTS.XDvi    = .:$TEXMF/%s:$VARTEXFONTS/pk/{%m,modeless}//
++VFFONTS.XDvi    = .:$TEXMF/%s
++PSHEADERS.XDvi  = .:$TEXMF/%q{dvips,fonts/type1}//
++TEXPICTS.XDvi   = .:$TEXMF/%q{dvips,tex}//
++
+ % BibTeX bibliographies and style files.
+ BIBINPUTS = .;$TEXMF/bibtex/{bib,}//
+ BSTINPUTS = .;$TEXMF/bibtex/{bst,}//
+@@ -246,6 +265,7 @@
+ 
+ % PostScript headers, prologues (.pro), encodings (.enc) and fonts.
+ TEXPSHEADERS = .;$TEXMF/{dvips,pdftex,tex,fonts/type1}//
++TEXPSHEADERS.gsftopk = .;$TEXMF/{dvips,pdftex,tex,fonts/{type1,truetype}}//
+ 
+ % PostScript Type 1 outline fonts.
+ T1FONTS = .;$TEXMF/fonts/type1//
+@@ -260,7 +280,7 @@
+ T42FONTS = .;$TEXMF/fonts/type42//
+ 
+ % Dvips' config.* files (this name should not start with `TEX'!).
+-TEXCONFIG = .;$TEXMF/dvips//
++TEXCONFIG = $TEXMF/dvips//
+ 
+ % Makeindex style (.ist) files.
+ INDEXSTYLE = .;$TEXMF/makeindex//
+@@ -279,6 +299,10 @@
+ TEXDOCS = .;$TEXMF/doc//
+ TEXSOURCES = .;$TEXMF/source//
+ 
++% Web and CWeb input paths.
++WEBINPUTS = .;$TEXMF/web//
++CWEBINPUTS = .;$TEXMF/cweb//
++
+ % Omega-related fonts and other files.  The odd construction for OFMFONTS
+ % makes it behave in the face of a definition of TFMFONTS.  Unfortunately
+ % no default substitution would take place for TFMFONTS, so an explicit
+@@ -295,8 +319,12 @@
+ % search formats, you'll want to add their variables here as well.
+ T4HTINPUTS   = .;$TEXMF/tex4ht//
+ 
++% xdvik and dvipdfm can share some files with dvips
++XDVIINPUTS = .;$TEXMF/{xdvi,dvips}//
++DVIPDFMINPUTS = .;$TEXMF/{dvipdfm,dvips}//
++
+ %% The mktex* scripts rely on KPSE_DOT. Do not set it in the environment.
+-KPSE_DOT = .
++% KPSE_DOT = .
+ 
+ % This definition isn't used from this .cnf file itself (that would be
+ % paradoxical), but the compile-time default in paths.h is built from it.
+@@ -308,7 +336,7 @@
+ %
+ % For security reasons, it is better not to have . part of the path.
+ % 
+-TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{.local,}/web2c};$TETEXDIR;$TEXMF/web2c;@web2c@
++TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{-local,}/{web2c-jtex,web2c}};$TETEXDIR;$TEXMF/web2c;@web2c@
+ 
+ 
+ 
+@@ -323,8 +351,9 @@
+ MISSFONT_LOG = missfont.log
+ 
+ % Set to a colon-separated list of words specifying warnings to suppress.
+-% To suppress everything, use TEX_HUSH = all; this is equivalent to
++% To suppress everything, use TEX_HUSH = all; this is currently equivalent to
+ % TEX_HUSH = checksum:lostchar:readable:special
++% To suppress nothing, use TEX_HUSH = none or do not set the variable at all.
+ TEX_HUSH = none
+ 
+ % Enable system commands via \write18{...}?
+@@ -341,7 +370,7 @@
+ 
+ % Allow TeX, MF, and MP to parse the first line of an input file for
+ % the %&format construct.
+-parse_first_line = t
++parse_first_line = f
+ 
+ % Enable the mktex... scripts by default?  These must be set to 0 or 1.
+ % Particular programs can and do override these settings, for example
+@@ -356,6 +385,7 @@
+ % MKTEXPK = 0
+ % MKTEXMF = 0
+ % MKTEXTFM = 0
++% MKTEXFMT = 0
+ % MKOCP = 0
+ % MKOFM = 0
+ 
+@@ -386,36 +416,36 @@
+ % For some xy-pic samples, you may need as much as 700000 words of memory.
+ % For the vast majority of documents, 60000 or less will do.
+ % 
+-main_memory.context = 1100000
+-main_memory = 263000 % words of inimemory available; also applies to inimf&mp
+-extra_mem_top = 0    % extra high memory for chars, tokens, etc.
+-extra_mem_bot = 0    % extra low memory for boxes, glue, breakpoints, etc.
++main_memory = 1000000 % words of inimemory available; also applies to inimf&mp
++extra_mem_top = 0     % extra high memory for chars, tokens, etc.
++extra_mem_bot = 0     % extra low memory for boxes, glue, breakpoints, etc.
++
++% ConTeXt is a memory hog...
++extra_mem_top.context = 2000000
++extra_mem_bot.context = 4000000
++main_memory.context = 1500000
++main_memory.mpost = 1500000
+ 
+ % Words of font info for TeX (total size of all TFM files, approximately). 
+-font_mem_size = 400000
++font_mem_size = 500000
+ 
+ % Total number of fonts. Must be >= 50 and <= 2000 (without tex.ch changes).
+ font_max = 1000
+ 
+ % Extra space for the hash table of control sequences (which allows 10K
+ % names as distributed).
+-hash_extra.context = 25000
+-hash_extra = 0
++hash_extra = 50000
+ 
+ % Max number of characters in all strings, including all error messages,
+ % help texts, font names, control sequences.  These values apply to TeX and MP.
+-pool_size.context = 750000
+-pool_size = 125000		
++pool_size = 1250000
+ % Minimum pool space after TeX/MP's own strings; must be at least
+ % 25000 less than pool_size, but doesn't need to be nearly that large.
+-string_vacancies.context = 45000
+-string_vacancies = 25000
++string_vacancies = 90000
+ % Maximum number of strings.
+-max_strings.context = 55000
+-max_strings = 15000
++max_strings = 100000
+ % min pool space left after loading .fmt
+-pool_free.context = 47500
+-pool_free = 5000
++pool_free = 47500
+ 
+ % Hyphenation trie. As distributed, the maximum is 65535; this should
+ % work unless `unsigned short' is not supported or is smaller than 16
+@@ -428,31 +458,36 @@
+ % German: 14000.
+ % US English: 10000.
+ % 
+-trie_size = 64000
++trie_size = 262000
+ 
+ % Buffer size.  TeX uses the buffer to contain input lines, but macro
+ % expansion works by writing material into the buffer and reparsing the
+ % line.  As a consequence, certain constructs require the buffer to be
+ % very large.  As distributed, the size is 50000; most documents can be
+ % handled within a tenth of this size.
+-buf_size = 50000
++buf_size = 200000
+ 
+ hyph_size = 1000        % number of hyphenation exceptions, >610 and <32767.
+-nest_size.context = 500
+-nest_size = 100		% simultaneous semantic levels (e.g., groups)
++nest_size = 500		% simultaneous semantic levels (e.g., groups)
+ max_in_open = 15	% simultaneous input files and error insertions
+-param_size.context = 1500
+-param_size = 500	% simultaneous macro parameters
+-save_size.context = 5000
+-save_size = 4000	% for saving values outside current group
+-stack_size.context = 1500
+-stack_size = 300	% simultaneous input sources
++param_size = 5000	% simultaneous macro parameters
++save_size = 5000	% for saving values outside current group
++stack_size = 1500	% simultaneous input sources
+ 
+ % These are Omega-specific.
+ ocp_buf_size = 20000	% character buffers for ocp filters.
+ ocp_stack_size = 10000	% stacks for ocp computations.
+ ocp_list_size = 1000	% control for multiple ocps.
+ 
++% Parameter specific to MetaPost.
++% Maximum number of knots between breakpoints of a path.
++% Set to 2000 by default.
++% path_size.mpost = 10000
++
++% These are pdftex-specific.
++obj_tab_size = 300000    % PDF objects
++dest_names_size = 300000 % destinations
++
+ % These work best if they are the same as the I/O buffer size, but it
+ % doesn't matter much.  Must be a multiple of 8.
+ dvi_buf_size = 16384 % TeX
+@@ -469,5 +504,5 @@
+ 
+ % default file code of JTeX and MuLTeX
+ % These override the code specified by TeX command in dumping (making format).
+-%jtex_filetype = jis
++jtex_filetype = euc
+ %ml_input_code = junet

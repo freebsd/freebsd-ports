@@ -1,0 +1,21 @@
+--- texk/web2c-j/Makefile.in.orig	Sun Mar  5 03:01:21 2000
++++ texk/web2c-j/Makefile.in	Sat Jun 12 22:46:47 2004
+@@ -23,7 +23,8 @@
+ ac_include ../make/paths.mk
+ # 
+ texmflcl = @texmflocal@
+-web2c_lcl_dir = $(texmflcl)/web2c
++#web2c_lcl_dir = $(texmflcl)/web2c
++web2c_lcl_dir = $(web2cdir)
+ fmt_lcl_dir = $(web2c_lcl_dir)
+ texpool_lcl_dir = $(web2c_lcl_dir)
+ 
+@@ -137,7 +138,7 @@
+ @MFW@mfw = mf
+ @MFN@mfn = mf
+ @MFW@@MFN@mfw = mfw
+-programs = jtex jbibtex
++programs = jtex # jbibtex
+ 
+ mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
+ mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c

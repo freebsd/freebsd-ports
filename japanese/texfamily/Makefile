@@ -1,0 +1,107 @@
+# New ports collection makefile for:	texfamily
+# Date created:		9 Feb 2004
+# Whom:			hrs
+#
+# $FreeBSD$
+
+PORTNAME=	texfamily
+PORTVERSION=	1.2
+CATEGORIES=	japanese print
+MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/texfam-1.2/
+PKGNAMEPREFIX=	ja-
+PKGNAMESUFFIX=	-tetex
+DISTFILES=	teTeX-src-1.0.7${EXTRACT_SUFX} \
+		texfam-1.2${EXTRACT_SUFX} \
+		texfam-texmf-j1.9${EXTRACT_SUFX} \
+		texfam-texmf-latex209${EXTRACT_SUFX} \
+		web2c-j1.9${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	teTeX-src-1.0.7${EXTRACT_SUFX} \
+		texfam-1.2${EXTRACT_SUFX} \
+		texfam-texmf-j1.9${EXTRACT_SUFX} \
+		texfam-texmf-latex209${EXTRACT_SUFX}
+
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	A Japanese TeX, NTT JTeX (TeXfamily)
+
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		wwwcore.1:${PORTSDIR}/www/libwww \
+		t1.5:${PORTSDIR}/devel/t1lib
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${KANJICODE}
+CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+USE_GMAKE=	yes
+TEXMFTMP=	${WRKDIR}/texmf-tmp
+
+.if make(pre-build) || make(do-build)
+MAKE_ENV=	TEXMFLOCAL=${TEXMFTMP}
+.endif
+ALL_TARGET=	default
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
+		TEXMFDIR=${TEXMFDIR} \
+		TEXMFLOCAL=${TEXMFLOCAL}
+CONFLICTS=	ja-ptex-base*
+
+INSTALL_WRKSRC=	${WRKDIR}/teTeX-1.0/texk/web2c-j
+WRKSRC=		${WRKDIR}/teTeX-1.0
+
+TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+
+KANJICODE?=	euc
+TEXMFDIR?=	share/texmf
+TEXMFCNF_SRC=	${WRKDIR}/teTeX-1.0/texk/kpathsea/texmf.cnf
+TEXMFCNF_DST=	${PREFIX}/${TEXMFDIR}/web2c-jtex/texmf.cnf
+MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
+LIBPNG_PREFIX?=	${LOCALBASE}
+LIBWWW_PREFIX?=	${LOCALBASE}
+LIBT1_PREFIX?=	${LOCALBASE}
+
+INSTDIRS=	doc fonts jbibtex jtex source tex
+DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
+TEXMFLOCAL=	share/texmf-local
+
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-local-texmf=${TEXMFLOCAL} \
+		--disable-multiplatform \
+		--without-texinfo --without-dialog \
+		--with-system-ncurses --with-system-zlib \
+		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
+		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
+		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
+		--with-pnglib-include=${LIBPNG_PREFIX}/include \
+		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
+		--with-t1lib-include=${LIBT1_PREFIX}/include \
+		--without-xdvik --without-oxdvik \
+		--without-dvipsk --without-odvipsk \
+		--without-x11 --without-dvipdfm --without-omega \
+		--without-pdftex --without-pdfetex \
+		--with-etex=no
+post-extract:
+	cd ${WRKSRC}/texk && \
+		${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/web2c-j1.9${EXTRACT_SUFX}
+
+pre-build:
+	${MKDIR} ${TEXMFTMP}
+	cd ${WRKDIR} && \
+		${TAR} cf - ${INSTDIRS} | \
+			(cd ${TEXMFTMP} && ${TAR} xf -) && \
+		${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${TEXMFTMP}
+
+post-install:
+	cd ${WRKDIR} && \
+		${TAR} cf - ${INSTDIRS} | \
+			(cd ${PREFIX}/${TEXMFLOCAL} && ${TAR} xf -)
+	${INSTALL_DATA} ${TEXMFCNF_SRC} ${TEXMFCNF_DST}
+	${MKTEXLSR}
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
