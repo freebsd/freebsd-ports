@@ -16,7 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
-	${LOCALBASE}/shaer/locale/ar/LC_MESSAGES/kword.mo:${PORTSDIR}/arabic/koffice-i18n\
+	${LOCALBASE}/share/locale/ar/LC_MESSAGES/kword.mo:${PORTSDIR}/arabic/koffice-i18n\
 	${LOCALBASE}/share/locale/de/LC_MESSAGES/kword.mo:${PORTSDIR}/german/koffice-i18n\
 	${LOCALBASE}/share/locale/fr/LC_MESSAGES/kword.mo:${PORTSDIR}/french/koffice-i18n\
 	${LOCALBASE}/share/locale/hu/LC_MESSAGES/kword.mo:${PORTSDIR}/hungarian/koffice-i18n\
