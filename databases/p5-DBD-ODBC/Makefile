@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -31,7 +31,7 @@ OPTIONS=	IODBC "Link with libiodbc" on \
 BROKEN=	"Should only select one of ODBC and IODBC"
 .endif
 .if defined(WITH_ODBC) && ${OSVERSION} < 500016
-IGNORE=	"Due to some obscure -pthread things, you can't have this work"
+IGNORE=	Due to some obscure -pthread things, you can not have this work
 .endif
 
 .if !defined(WITHOUT_IODBC)
