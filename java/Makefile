@@ -69,6 +69,7 @@
     SUBDIR += openjit
     SUBDIR += sablevm
     SUBDIR += shujit
+    SUBDIR += trove4j
     SUBDIR += tya
     SUBDIR += xalan-j
     SUBDIR += xdoclet
