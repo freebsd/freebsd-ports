@@ -1,0 +1,9 @@
+A security module for the Apache Web server, supplying
+mandatory access control based upon the client username
+and host. The credentials are obtained using the identd
+(RFC1413) mechanism, so this is of limited usefulness
+if document access is through a proxy or by clients not
+running an RFC1413 server daemon. As a result, this module
+is best suited for intranets. 
+
+WWW: http://MeepZor.Com/packages/

@@ -108,6 +108,7 @@
     SUBDIR += mhonarc
     SUBDIR += mmosaic
     SUBDIR += mnoGoSearch-current
+    SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
     SUBDIR += mod_auth_any
     SUBDIR += mod_auth_mysql
