@@ -1,0 +1,10 @@
+--- ftp-gw/ftp-gw.c.orig	Fri Feb  6 03:05:43 1998
++++ ftp-gw/ftp-gw.c	Mon Sep 28 19:54:10 1998
+@@ -155,6 +155,7 @@
+ 	"stat",		OP_CONN,	/* overload */	cmd_abor,
+ 	"dele",		OP_CONN|OP_XTND,			0,
+ 	"size",		OP_CONN,			0,
++	"mdtm",		OP_CONN,			0,
+ 	0,		0,				0
+ };
+ 
