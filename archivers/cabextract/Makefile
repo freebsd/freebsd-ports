@@ -6,26 +6,14 @@
 #
 
 PORTNAME=	cabextract
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
-EXTRACT_SUFX=	.c.gz
-EXTRACT_ONLY=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-WRKSRC=		${WRKDIR}
+GNU_CONFIGURE=	yes
 
-SRCFILE=	${WRKSRC}/${PORTNAME}.c
-PROGFILE=	${SRCFILE:S/.c$//}
-
-post-extract:
-	@${GZIP_CMD} -d -c ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${SRCFILE}
-
-do-build:
-	${CC} ${CFLAGS} -o ${PROGFILE} ${SRCFILE}
-
-do-install:
-	${INSTALL_PROGRAM} ${PROGFILE} ${PREFIX}/bin
+MAN1=		cabextract.1
 
 .include <bsd.port.mk>
