@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/ \
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
+BROKEN=		"Does not package correctly"
+
 ONLY_FOR_ARCHS=	i386
 
 INSTALLS_SHLIB=	yes
