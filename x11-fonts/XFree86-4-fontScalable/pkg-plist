@@ -21,6 +21,7 @@ lib/X11/fonts/PEX/Roman_M.phont
 %%TYPE1:%%lib/X11/fonts/Type1/UTI_____.pfa
 %%TYPE1:%%lib/X11/fonts/Type1/UTRG____.afm
 %%TYPE1:%%lib/X11/fonts/Type1/UTRG____.pfa
+%%TYPE1:%%lib/X11/fonts/Type1/XftCache
 %%TYPE1:%%lib/X11/fonts/Type1/c0419bt_.afm
 %%TYPE1:%%lib/X11/fonts/Type1/c0419bt_.pfb
 %%TYPE1:%%lib/X11/fonts/Type1/c0582bt_.afm
