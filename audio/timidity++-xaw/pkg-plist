@@ -15,8 +15,8 @@ lib/timidity/bitmaps/repeat.xbm
 lib/timidity/bitmaps/stop.xbm
 lib/timidity/bitmaps/timidity.xbm
 lib/timidity/interface_a.so
-%%PORTDOCS%%%%DOCSDIR%%timidity++/README.xaw
-%%PORTDOCS%%%%DOCSDIR%%ja/timidity++/README.xaw
+%%PORTDOCS%%%%DOCSDIR%%/README.xaw
+%%PORTDOCS%%share/doc/ja/timidity++/README.xaw
 @dirrm lib/timidity/bitmaps
 @cwd /usr/X11R6
 @unexec rmdir %D/lib/X11/%%EUCJP_LOCALE%%/app-defaults 2>/dev/null || true
