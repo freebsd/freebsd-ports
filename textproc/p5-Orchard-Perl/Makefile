@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@protey.ru
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	orchard.0:${PORTSDIR}/textproc/orchard
+LIB_DEPENDS=	orchard.0:${PORTSDIR}/textproc/orchard-c
 
 PERL_CONFIGURE=	yes
 
