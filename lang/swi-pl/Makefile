@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.8
 CATEGORIES=	lang
 MASTER_SITES=	ftp://swi.psy.uva.nl/pub/SWI-Prolog/
-DISTNAME=	pl-3.2.9
+DISTNAME=	pl-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -25,7 +25,7 @@ MAN1=		pl.1 plrc.1 plld.1
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
 post-install:
-.for f in pl pl-bite plld plrc
+.for f in pl plld plrc
 	@strip ${PREFIX}/lib/${DISTNAME}/bin/${PERL_ARCH}/$f
 .endfor
 
