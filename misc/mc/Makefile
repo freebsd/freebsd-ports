@@ -18,7 +18,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 .if defined(USE_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 .elif defined(WITH_SLANG)
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
