@@ -1,10 +1,12 @@
 --- module/Makefile.orig	Wed May 28 23:51:52 2003
 +++ module/Makefile	Sun Jan 25 11:47:48 2004
-@@ -14,6 +14,8 @@
+@@ -14,6 +14,10 @@
  BUILD_DONE=	${.CURDIR}/.build_done
  CLEANFILES+=	${BUILD_DONE}
  
++.if ${OSVERSION} > 500011
 +KMODDIR?=	/boot/modules
++.endif
 +
  #
  # To enable debugging see nvidia_debug.h
