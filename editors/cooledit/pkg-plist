@@ -58,3 +58,4 @@ share/locale/sl/LC_MESSAGES/cooledit.mo
 share/locale/sv/LC_MESSAGES/cooledit.mo
 @dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%
+@dirrm share/coolicon
