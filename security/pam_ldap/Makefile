@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -16,7 +16,7 @@ MAINTAINER=	marcus@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LDAP_V3)
+.if !defined(WITHOUT_LDAP_V3)
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		lber.2:${PORTSDIR}/net/openldap2
 .else
@@ -24,16 +24,14 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
 		lber.1:${PORTSDIR}/net/openldap
 .endif
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 post-extract:
 	@find ${WRKSRC} -type f | xargs ${TOUCH} -f
