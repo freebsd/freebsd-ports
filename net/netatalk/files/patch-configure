@@ -1,13 +1,13 @@
---- configure.orig	Mon Jan  7 11:00:12 2002
-+++ configure	Mon Jan  7 11:00:34 2002
-@@ -8249,14 +8249,14 @@
+--- configure.orig	Sat Jan 26 16:25:38 2002
++++ configure	Sat Jan 26 16:25:51 2002
+@@ -8250,14 +8250,14 @@
  			savedldflags="$LDFLAGS"
  			CFLAGS="$CFLAGS -I$db3dir"
  			LDFLAGS="-L$db3libdir $LDFLAGS"
 -			echo $ac_n "checking for main in -ldb""... $ac_c" 1>&6
--echo "configure:8254: checking for main in -ldb" >&5
+-echo "configure:8255: checking for main in -ldb" >&5
 +			echo $ac_n "checking for main in -ldb3""... $ac_c" 1>&6
-+echo "configure:8254: checking for main in -ldb3" >&5
++echo "configure:8255: checking for main in -ldb3" >&5
  ac_lib_var=`echo db'_'main | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -16,9 +16,9 @@
 -LIBS="-ldb  $LIBS"
 +LIBS="-ldb3  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 8262 "configure"
+ #line 8263 "configure"
  #include "confdefs.h"
-@@ -8283,7 +8283,7 @@
+@@ -8284,7 +8284,7 @@
    
  				db3found=yes
  				DB3_CFLAGS="-I$db3dir"
