@@ -37,6 +37,7 @@ share/swftools/fonts/s050000l.pfb
 share/swftools/swfs/PreLoaderTemplate.swf
 share/swftools/swfs/default_loader.swf
 share/swftools/swfs/default_viewer.swf
+share/swftools/swfs/keyboard_viewer.swf
 share/swftools/swfs/simple_viewer.swf
 share/swftools/swfs/swft_loader.swf
 share/swftools/swfs/tessel_loader.swf
