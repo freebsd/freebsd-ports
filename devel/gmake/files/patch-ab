@@ -1,6 +1,6 @@
---- make.texinfo.orig	Thu Sep 23 13:40:19 1999
-+++ make.texinfo	Wed Dec  1 09:03:16 1999
-@@ -24,9 +24,9 @@
+--- doc/make.texi.orig	Mon Oct  7 22:57:59 2002
++++ doc/make.texi	Mon Oct  7 22:58:03 2002
+@@ -25,9 +25,9 @@
  @c Combine the program and concept indices:
  @syncodeindex pg cp
  
