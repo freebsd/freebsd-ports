@@ -26,6 +26,7 @@
     SUBDIR += moettf
     SUBDIR += mule-wnn4
     SUBDIR += muni
+    SUBDIR += mutt
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
