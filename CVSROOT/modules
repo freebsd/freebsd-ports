@@ -5758,6 +5758,7 @@ ruby-optparse	ports/devel/ruby-optparse
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
 ruby-pcap	ports/net/ruby-pcap
+ruby-pcsc-lite	ports/devel/ruby-pcsc-lite
 ruby-pdflib	ports/print/ruby-pdflib
 ruby-perl	ports/lang/ruby-perl
 ruby-pgplot	ports/graphics/ruby-pgplot
