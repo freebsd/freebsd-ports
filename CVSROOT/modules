@@ -3017,6 +3017,7 @@ grisbi		ports/finance/grisbi
 grn		ports/news/grn
 gromacs		ports/science/gromacs
 gromit		ports/x11/gromit
+groovy		ports/lang/groovy
 groundhog	ports/games/groundhog
 growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
