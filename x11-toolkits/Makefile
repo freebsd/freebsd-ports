@@ -88,6 +88,7 @@
     SUBDIR += pike-gtk
     SUBDIR += plib
     SUBDIR += pmw
+    SUBDIR += py-anygui
     SUBDIR += py-gnome
     SUBDIR += py-gtk
     SUBDIR += py-gtkscintilla
