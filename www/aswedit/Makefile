@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 		ftp://sunsite.auc.dk/pub/infosystems/www/asWedit/ \
 		ftp://sunsite.icm.edu.pl/pub/www/asWedit/
 
-MAINTAINER=	brett@peloton.physics.montana.edu
+MAINTAINER=	brett@peloton.runet.edu
 
 RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 

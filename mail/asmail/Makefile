@@ -11,7 +11,7 @@ CATEGORIES=	mail afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asmail/ \
 		ftp://ftp.afterstep.org/apps/asmail/
 
-MAINTAINER=	brett@peloton.physics.montana.edu
+MAINTAINER=	brett@peloton.runet.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -10,7 +10,7 @@ DISTNAME=	gnotepad+-1.1.4
 CATEGORIES=	editors www
 MASTER_SITES=	http://ack.netpedia.net/gnp/
 
-MAINTAINER=	brett@peloton.physics.montana.edu
+MAINTAINER=	brett@peloton.runet.edu
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
