@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.52 1997/11/29 14:22:27 max Exp $
+# $Id: Makefile,v 1.53 1997/12/15 20:55:27 max Exp $
 #
 
 DISTNAME=       fetchmail-4.3.5
@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 MAINTAINER=	ve@sci.fi
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-opie
-CONFIGURE_ENV+= LDFLAGS="${CFLAGS}"
+CONFIGURE_ARGS= --enable-opie
+CONFIGURE_ENV=  LDFLAGS="${CFLAGS}"
 MAN1=		fetchmail.1
 
 .if exists(/usr/lib/libkrb.a) && (defined(MAKE_EBONES) || defined(MAKE_KERBEROS4))

@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.19 1997/12/09 15:38:48 rse Exp $
+# $Id: Makefile,v 1.20 1997/12/23 09:59:20 rse Exp $
 #
 
 DISTNAME=	eperl-2.2.9
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-perl=${PREFIX}/bin/perl
+CONFIGURE_ARGS= --with-perl=${PREFIX}/bin/perl
 
 MAN1=	eperl.1
 

@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.40 1997/06/05 21:50:05 ache Exp $
+# $Id: Makefile,v 1.41 1997/06/22 07:28:49 ache Exp $
 #
 
 DISTNAME=       elm-2.4ME+32
@@ -21,8 +21,8 @@ MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 
 HAS_CONFIGURE=  Yes
 CONFIGURE_SCRIPT= Configure
-CONFIGURE_ENV+= PREFIX="${PREFIX}"
-CONFIGURE_ARGS+= -S
+CONFIGURE_ENV=  PREFIX="${PREFIX}"
+CONFIGURE_ARGS= -S
 
 post-install:
 	cd ${WRKSRC}/nls; ${MAKE} install

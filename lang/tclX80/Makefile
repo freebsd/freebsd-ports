@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1997/09/12 17:16:18 pst Exp $
+# $Id: Makefile,v 1.19 1997/10/09 08:19:14 tg Exp $
 #
 
 DISTNAME=	tclX7.5.2
@@ -17,8 +17,8 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-shared --with-tk
-CONFIGURE_ENV+=	PREFIX=${PREFIX}
+CONFIGURE_ARGS= --enable-shared --with-tk
+CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN3=		CmdWrite.3 Handles.3 Keylist.3 TclCommandWriting.3 \
 		TclXInit.3 Tcl_HandleAlloc.3 Tcl_HandleFree.3 \
 		Tcl_HandleTblInit.3 Tcl_HandleTblRelease.3 \
