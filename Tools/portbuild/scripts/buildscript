@@ -1,43 +1,122 @@
 #!/bin/sh
 
-# usage: $0 DIRNAME
+# usage: $0 DIRNAME PHASE
+#   PHASE is 1 (checksum) or 2 (package)
 
 dir=$1
+phase=$2
 
-cd /tmp/depends
-if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
-  for i in *.tgz; do
-    pkg_add -f $i >/dev/null 2>&1 || exit 1
-  done
-fi
+if [ $phase = 1 ]; then
 
-cd $dir || exit 1
-echo "maintained by: $(make maintainer)"
-echo "build started at $(date)"
-echo "================================================================"
+  cd $dir || exit 1
+  echo "maintained by: $(make maintainer)"
+  echo "build started at $(date)"
 
-xvfb=0
-if which -s Xvfb; then
-  xvfb=1
-  pid=$$
-  X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
-  Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
-  DISPLAY=:${pid}
-  export DISPLAY
-fi
+  cd /tmp/depends
+  if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
+    echo "adding dependencies"
+    for i in *.tgz; do
+      echo "pkg_add -f $i"
+      if ! pkg_add -f $i; then
+	echo "error in dependency $i, exiting"
+        echo "1" > /tmp/status
+	exit 1
+      fi
+    done
+  fi
 
-if make package; then
-  echo "0" > /tmp/status
+  cd $dir || exit 1
+  echo "================================================================"
+  echo "====================<phase 1: make checksum>===================="
+
+  if make checksum; then
+    echo "0" > /tmp/status
+  else
+    echo "1" > /tmp/status
+    echo "================================================================"
+    echo -n "build ended at "
+    date
+  fi
+
 else
-  echo "1" > /tmp/status
-fi
 
-if [ ${xvfb} = 1 ]; then
-  kill $(jobid %1)
-fi
+  echo "====================<phase 2: make package>====================="
+  xvfb=0
+  if which -s Xvfb; then
+    xvfb=1
+    pid=$(echo $$ % 32768 | bc)
+    X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
+    Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
+    DISPLAY=:${pid}
+    export DISPLAY
+  fi
+  
+  cd $dir || exit 1
+  if make package; then
+    echo "0" > /tmp/status
+    pkgname=$(make package-name)
+    prefix=$(make -V PREFIX)
+    mtreefile=$(make -V MTREE_FILE)
+    echo "================================================================"
+    echo "checking installed files"
+    find ${prefix} -perm -2000 -o -perm -4000 -o -perm -0002 -ls | sort > /tmp/list1
+    echo "pkg_delete ${pkgname}"
+    pkg_delete ${pkgname}
+    find ${prefix} -perm -2000 -o -perm -4000 -o -perm -0002 -ls | sort > /tmp/list2
+    if ! diff -qb /tmp/list1 /tmp/list2 2>/dev/null; then
+      echo "================================================================"
+      echo "found set[ug]id or world-writable files and directories"
+      diff -b /tmp/list2 /tmp/list1 | grep '^>'
+    fi
+    cd /var/db/pkg
+    if [ $(echo $(echo * | wc -c)) != 2 ]; then
+      echo "================================================================"
+      echo "deleting dependencies"
+      prevlist=""
+      count=1
+      while [ $(echo $(echo * | wc -c)) != 2 -a $(echo $(echo * | wc -c)) != $(echo $(echo $prevlist | wc -c)) ]; do
+        echo "== phase $count =="
+        prevlist="$(echo *)"
+        for i in *; do
+          echo "pkg_delete $i"
+          pkg_delete $i
+        done
+	count=$(($count + 1))
+      done
+      if [ $(echo $(echo * | wc -c)) != 2 ]; then
+        echo "leftover packages:" *
+#        for i in *; do
+#          echo "pkg_delete -f $i"
+#          pkg_delete -f $i
+#        done
+      fi
+    fi
+    cd /var/db/pkg
+    if [ "x${mtreefile}" != "x" ]; then
+      mtree -f ${mtreefile} -p ${prefix} > /tmp/list3
+      if [ -s /tmp/list3 ]; then
+        echo "================================================================"
+        echo "list of extra files and directories in ${prefix}"
+        cat /tmp/list3
+        echo "list of all files and directories in ${prefix}"
+	cd ${prefix}
+	find . -exec echo -n 'path: ' \; -exec ls -1d \{} \; | sort
+        echo "ls -lR ${prefix}"
+        ls -lR ${prefix}
+      fi
+    fi
+  else
+    echo "1" > /tmp/status
+  fi
 
-echo "================================================================"
-echo -n "build ended at "
-date
+  if [ ${xvfb} = 1 ]; then
+    kill $(jobid %1)
+  fi
+
+  echo "================================================================"
+  echo -n "build ended at "
+  date
+
+fi
 
 exit 0
