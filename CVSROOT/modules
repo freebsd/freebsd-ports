@@ -4312,6 +4312,7 @@ p5-Cflow	ports/net/p5-Cflow
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Contract	ports/devel/p5-Class-Contract
+p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date	ports/devel/p5-Class-Date
 p5-Class-Delegation	ports/devel/p5-Class-Delegation
 p5-Class-Loader	ports/devel/p5-Class-Loader
