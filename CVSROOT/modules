@@ -3709,6 +3709,7 @@ libtelnet	src/lib/libtelnet
 libtermcap	src/lib/libtermcap
 libtool		ports/devel/libtool
 libudbc		ports/databases/libudbc
+libufs		src/lib/libufs
 libungif	ports/graphics/libungif
 libunicode	ports/devel/libunicode
 libunp		ports/net/libunp
