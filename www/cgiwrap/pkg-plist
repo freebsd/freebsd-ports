@@ -1,25 +1,5 @@
-%%PORTDOCS%%%%DOCSDIR%%/accesscontrol.html
-%%PORTDOCS%%%%DOCSDIR%%/afs.html
-%%PORTDOCS%%%%DOCSDIR%%/changes.html
-%%PORTDOCS%%%%DOCSDIR%%/chroot.html
-%%PORTDOCS%%%%DOCSDIR%%/comments.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/maillist.html
-%%PORTDOCS%%%%DOCSDIR%%/notes.html
-%%PORTDOCS%%%%DOCSDIR%%/pubs.html
-%%PORTDOCS%%%%DOCSDIR%%/quickref.html
-%%PORTDOCS%%%%DOCSDIR%%/setup.html
-%%PORTDOCS%%%%DOCSDIR%%/thanks.html
-%%PORTDOCS%%%%DOCSDIR%%/todo.html
-%%PORTDOCS%%%%DOCSDIR%%/tricks.html
-%%PORTDOCS%%%%DOCSDIR%%/y2k.html
 www/cgi-bin/cgiwrap
 %%CGIWRAPDFLAG%%www/cgi-bin/cgiwrapd
 www/cgi-bin/nph-cgiwrap
 %%CGIWRAPDFLAG%%www/cgi-bin/nph-cgiwrapd
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
