@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://home.houston.rr.com/epasveer/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE crossword puzzle game
 
 USE_KDELIBS_VER=	3

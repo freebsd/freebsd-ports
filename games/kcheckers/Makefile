@@ -9,7 +9,7 @@ PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	http://kcheckers.osdn.org.ua/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
 
 WRKSRC=		${WRKDIR}/kcheckers

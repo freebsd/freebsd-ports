@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.norbs.de/kpicframer/download/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
