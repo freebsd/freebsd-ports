@@ -1,0 +1,8 @@
+bin/tpasm
+libdata/tpasm/8051.inc
+libdata/tpasm/80c390.inc
+libdata/tpasm/p16c505.inc
+libdata/tpasm/picmacros.inc
+@dirrm libdata/tpasm
+%%PORTDOCS%%share/doc/tpasm/MANUAL.TXT
+%%PORTDOCS%%@dirrm share/doc/tpasm

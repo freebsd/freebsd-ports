@@ -878,6 +878,7 @@
     SUBDIR += tkref
     SUBDIR += tmake
     SUBDIR += towitoko
+    SUBDIR += tpasm
     SUBDIR += tpg
     SUBDIR += trio
     SUBDIR += tvision
