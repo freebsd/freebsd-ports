@@ -1,4 +1,4 @@
 bin/conjugue
-lib/br.aff
-lib/br.hash
-lib/verbos
+share/ispell/br.aff
+share/ispell/br.hash
+share/ispell/verbos
