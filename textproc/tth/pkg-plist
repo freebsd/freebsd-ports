@@ -1,8 +1,0 @@
-bin/l2h
-bin/latex2gif
-bin/ps2gif
-bin/ps2png
-bin/tth
-%%PORTDOCS%%share/doc/tth/license.txt
-%%PORTDOCS%%share/doc/tth/tth_manual.html
-%%PORTDOCS%%@dirrm share/doc/tth

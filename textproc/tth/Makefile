@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	2.78
+PORTVERSION=	3.59
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://hutchinson.belmont.ma.us/tth/tth-noncom/
-MASTER_SITE_SUBDIR=	tg
+MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
@@ -23,6 +21,9 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 MAN1=		tth.1
+
+PLIST_FILES=	bin/latex2gif bin/ps2gif bin/ps2png bin/tth
+PORTDOCS=	license.txt tth_manual.html
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -37,7 +38,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tth ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/l2h ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/latex2gif ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ps2gif ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ps2png ${PREFIX}/bin
