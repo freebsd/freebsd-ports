@@ -1,11 +1,12 @@
---- configure.in.orig	Tue Dec 17 05:20:55 2002
-+++ configure.in	Thu Apr 10 13:18:40 2003
-@@ -102,7 +102,7 @@
+--- configure.in.orig	Thu Sep  4 05:05:30 2003
++++ configure.in	Thu Sep  4 05:06:25 2003
+@@ -102,7 +102,8 @@
                  WEBSERVER="apache-2.0"
                	APXSCFLAGS="`${APXS} -q CFLAGS` `${APXS} -q EXTRA_CFLAGS`"
                	APXSCPPFLAGS="`${APXS} -q EXTRA_CPPFLAGS`"
 -                APACHE_CONFIG_VARS=${apache_dir}/build/config_vars.mk
 +                APACHE_CONFIG_VARS=${prefix}/share/apache2/build/config_vars.mk
++		LIBTOOL=`$APXS -q LIBTOOL`
              fi
              AC_MSG_RESULT([building connector for \"$WEBSERVER\"])
      
