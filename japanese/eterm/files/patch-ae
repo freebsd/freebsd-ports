@@ -1,17 +1,17 @@
---- src/command.c.orig	Tue Jan 12 05:33:45 1999
-+++ src/command.c	Sat Jan 30 01:39:34 1999
-@@ -90,6 +90,10 @@
+--- src/command.c.orig	Sat Apr 24 05:56:49 1999
++++ src/command.c	Mon May  3 03:05:33 1999
+@@ -91,6 +91,10 @@
  #  include <X11/Xlocale.h>
  # endif
- #endif	/* NO_XLOCALE */
-+#ifdef KANJI
+ #endif /* NO_XLOCALE */
++#ifdef USE_XIM
 +# undef NO_XLOCALE
 +#include <locale.h>
 +#endif
  #ifdef USE_GETGRNAME
  # include <grp.h>
  #endif
-@@ -251,7 +255,7 @@
+@@ -299,7 +303,7 @@
  
  /* defines: */
  
@@ -20,23 +20,27 @@
  #define STRING_MAX	512	/* max string size for process_xterm_seq() */
  #define ESC_ARGS	32	/* max # of args for esc sequences */
  
-@@ -526,8 +530,10 @@
- #endif	/* OFFIX_DND */
+@@ -584,12 +588,11 @@
  
- #ifndef NO_XLOCALE
+ #endif /* OFFIX_DND */
+ 
+-#ifndef NO_XLOCALE
 -static char *rs_inputMethod = "";	/* XtNinputMethod */
 -static char *rs_preeditType = NULL;	/* XtNpreeditType */
 +#ifdef USE_XIM
-+extern char *rs_inputMethod;
-+extern char *rs_preeditType;
-+#endif
- static XIC Input_Context;		/* input context */
- #endif	/* NO_XLOCALE */
++extern char *rs_inputMethod;	/* XtNinputMethod */
++extern char *rs_preeditType;	/* XtNpreeditType */
+ static XIC Input_Context;	/* input context */
+-
+-#endif /* NO_XLOCALE */
++#endif /* USE_XIM */
  
-@@ -576,9 +582,20 @@
+ /* command input buffering */
  
- #ifndef NO_XLOCALE
- void init_xlocale (void);
+@@ -647,6 +650,16 @@
+ #else
+ # define init_xlocale() ((void)0)
+ #endif
 +#ifdef USE_XIM
 +void IMInstantiateCallback(Display *display, XPointer client_data, XPointer call_data);
 +void IMDestroyCallback(XIM xim, XPointer client_data, XPointer call_data);
@@ -47,238 +51,183 @@
 +void setSize(XRectangle *size);
 +extern void setPosition(XPoint *pos);
 +#endif
- #else
- # define init_xlocale() ((void)0)
- #endif
-+void XProcessEvent(Display *display);
  
  /*for Big Paste Handling */
  static int v_doPending(void);
-@@ -2238,8 +2255,6 @@
-     DndSelection = XInternAtom(Xdisplay, "DndSelection", False);
- #endif	/* OFFIX_DND */
+@@ -2425,8 +2438,6 @@
+   DndSelection = XInternAtom(Xdisplay, "DndSelection", False);
+ #endif /* OFFIX_DND */
  
--    init_xlocale();
--    
-     /* get number of available file descriptors */
+-  init_xlocale();
+-
+   /* get number of available file descriptors */
  #ifdef _POSIX_VERSION
-     num_fds = sysconf(_SC_OPEN_MAX);
-@@ -2273,131 +2288,21 @@
- #ifndef NO_XLOCALE
+   num_fds = sysconf(_SC_OPEN_MAX);
+@@ -2489,135 +2500,20 @@
  void
- init_xlocale (void) {
--    
--    char *p, *s, buf[32], tmp[1024];
--    XIM xim = NULL;
--    XIMStyle input_style = 0;
--    XIMStyles *xim_styles = NULL;
--    int found;
--    
--    Input_Context = NULL;
-+    char *locale;
-     
- # ifdef KANJI
--    setlocale(LC_CTYPE, "");
+ init_xlocale(void)
+ {
++  char *locale;
+ 
+-  char *p, *s, buf[32], tmp[1024];
+-  XIM xim = NULL;
+-  XIMStyle input_style;
+-  XIMStyles *xim_styles = NULL;
+-  int found, i, mc;
+-  XFontSet fontset = 0;
+-  char *fontname, **ml, *ds;
+-  XVaNestedList list;
+-  const char fs_base[] = ",-misc-fixed-*-r-*-*-*-120-*-*-*-*-*-*";
+-
+-  D_X11(("Initializing X locale and Input Method...\n"));
+-  Input_Context = NULL;
+-  if (rs_inputMethod && strlen(rs_inputMethod) >= sizeof(tmp)) {
+-    print_error("Input Method too long, ignoring.");
+-    rs_inputMethod = NULL;
+-  }
+-# ifdef KANJI
+-  setlocale(LC_CTYPE, "");
+-# else
+-  if (rs_inputMethod && !*rs_inputMethod) {
+-    rs_inputMethod = NULL;
+-  }
 -# endif
--    
--    if (rs_inputMethod == NULL
--# ifndef KANJI
--	|| !*rs_inputMethod	/* required ? */
-+    locale = setlocale(LC_CTYPE, "");
- # endif
--	) {
--	if ((p = XSetLocaleModifiers("@im=none")) != NULL && *p)
--	  xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
+-
+-  if (rs_inputMethod == NULL) {
+-    if ((p = XSetLocaleModifiers("@im=none")) != NULL && *p) {
+-      xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
+-    }
+-  } else {
+-    strcpy(tmp, rs_inputMethod);
+-    for (s = tmp; *s; /*nil */ ) {
+-
+-      char *end, *next_s;
+-
+-      for (; *s && isspace(*s); s++);
+-      if (!*s)
+-	break;
+-      end = s;
+-      for (; *end && (*end != ','); end++);
+-      next_s = end--;
+-      for (; (end >= s) && isspace(*end); end--);
+-      *(end + 1) = '\0';
+-
+-      if (*s) {
+-	snprintf(buf, sizeof(buf), "@im=%s", s);
+-	if ((p = XSetLocaleModifiers(buf)) != NULL && *p && (xim = XOpenIM(Xdisplay, NULL, NULL, NULL)) != NULL) {
+-	  break;
+-	}
 +#ifdef USE_XIM
++  locale = setlocale(LC_CTYPE, "");
 +    if (locale == NULL) {
 +      print_error("Setting locale failed.");
-     } else {
--	strcpy(tmp, rs_inputMethod);
--	for (s = tmp; *s; /*nil*/) {
--	    
--	    char *end, *next_s;
--	    
--	    for (; *s && isspace(*s); s++);
--	    if (!*s) break;
--	    end = s;
--	    for (; *end && (*end != ','); end++);
--	    next_s = end--;
--	    for (; (end >= s) && isspace(*end); end--);
--	    *(end + 1) = '\0';
--	    
--	    if (*s) {
--		strcpy(buf, "@im=");
--		strcat(buf, s);
--		if ((p = XSetLocaleModifiers(buf)) != NULL && *p
--		    && (xim = XOpenIM(Xdisplay, NULL, NULL, NULL)) != NULL)
--		  break;
--	    }
--	    if (!*next_s) break;
--	    s = (next_s + 1);
--	}
--    }
--    
--    if (xim == NULL && (p = XSetLocaleModifiers("")) != NULL && *p)
--      xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
--    
--    if (xim == NULL) {
--# ifdef DEBUG_X11
--	print_error("Failed to open input method");
--# endif
--	return;
--    }
--    
--    if (XGetIMValues(xim, XNQueryInputStyle, &xim_styles, NULL) || !xim_styles) {
--# ifdef DEBUG_X11
--	print_error("input method doesn't support any style");
--# endif
--	XCloseIM(xim);
--	return;
--    }
--    
--    strcpy(tmp, (rs_preeditType ? rs_preeditType : "Root"));
--    for (found = 0, s = tmp; *s && !found; /*nil*/) {
--	
--	unsigned short i;
--	char *end, *next_s;
--	
--	while (*s && isspace(*s)) s++;
--	if (!*s) break;
--	end = s;
--	while (*end && (*end != ',')) end++;
--	next_s = end--;
--	while ((end >= s) && isspace(*end)) *end-- = 0;
--	
--	if (!strcmp(s, "OverTheSpot")) input_style = (XIMPreeditPosition | XIMStatusArea);
--	else if (!strcmp(s, "OffTheSpot")) input_style = (XIMPreeditArea | XIMStatusArea);
--	else if (!strcmp(s, "Root"))
--	  input_style = (XIMPreeditNothing | XIMStatusNothing);
--	
--	for (i = 0; i < xim_styles->count_styles; i++) {
--	    if (input_style == xim_styles->supported_styles[i]) {
--		found = 1;
--		break;
--	    }
--	}
--	s = next_s;
--    }
--    XFree(xim_styles);
--    
--    if (found == 0) {
--# ifdef DEBUG_X11
--	print_error ("input method doesn't support my preedit type");
--# endif
--	XCloseIM(xim);
--	return;
--    }
--    
--    /*
--     * This program only understands the Root preedit_style yet
--     * Then misc.preedit_type should default to:
--     *		"OverTheSpot,OffTheSpot,Root"
--     *	/MaF
--     */
--    if (input_style != (XIMPreeditNothing | XIMStatusNothing)) {
--# ifdef DEBUG_X11
--	print_error ("This program only supports the \"Root\" preedit type");
--# endif
--	XCloseIM(xim);
--	return;
--    }
--    
--    Input_Context = XCreateIC(xim, XNInputStyle, input_style,
--			      XNClientWindow, TermWin.parent,
--			      XNFocusWindow, TermWin.parent,
--			      NULL);
--    
--    if (Input_Context == NULL) {
--# ifdef DEBUG_X11
--	print_error("Failed to create input context");
--# endif
--	XCloseIM(xim);
++    } else {
 +      if (strcmp(locale, "C") != 0) {
 +        setTermFontSet();
 +        XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL, IMInstantiateCallback, NULL);
-+      }
+       }
+-      if (!*next_s)
+-	break;
+-      s = (next_s + 1);
+-    }
+-  }
+-
+-  if (xim == NULL && (p = XSetLocaleModifiers("")) != NULL && *p) {
+-    xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
+-  }
+-  if (xim == NULL) {
+-    D_X11(("Error:  Failed to open Input Method\n"));
+-    return;
+-  } else {
+-    D_X11(("Opened X Input Method.  xim == 0x%08x\n", xim));
+-  }
+-
+-  if (XGetIMValues(xim, XNQueryInputStyle, &xim_styles, NULL) || !xim_styles) {
+-    D_X11(("Error:  Input Method doesn't support any style\n"));
+-    XCloseIM(xim);
+-    return;
+-  } else {
+-    D_X11((" -> Input Method supports %d styles.\n", xim_styles->count_styles));
+-  }
+-
+-  /* We only support the Root preedit type */
+-  input_style = (XIMPreeditNothing | XIMStatusNothing);
+-  D_X11((" -> input_style == 0x%08x\n", input_style));
+-
+-  for (i = 0, found = 0; i < xim_styles->count_styles; i++) {
+-    D_X11((" -> Supported style flags:  0x%08x %s\n", xim_styles->supported_styles[i], get_input_style_flags(xim_styles->supported_styles[i])));
+-    D_X11(("     -> 0x%08x %s\n", xim_styles->supported_styles[i] & input_style,
+-	   get_input_style_flags(xim_styles->supported_styles[i] & input_style)));
+-    if ((xim_styles->supported_styles[i] & input_style) == (xim_styles->supported_styles[i])) {
+-      input_style = xim_styles->supported_styles[i];
+-      found = 1;
+-      break;
      }
+-  }
+-  XFree(xim_styles);
+-
+-  if (!found) {
+-    D_X11(("Error:  " APL_NAME " " VERSION " only supports the \"Root\" preedit type, which the Input Method does not support.\n"));
+-    XCloseIM(xim);
+-    return;
+-  }
+-  /* Create Font Set */
 +#endif
+ 
+-#ifdef KANJI
+-  fontname = MALLOC(strlen(rs_font[0]) + strlen(rs_kfont[0]) + sizeof(fs_base) + 2);
+-  if (fontname) {
+-    strcpy(fontname, rs_font[0]);
+-    strcat(fontname, fs_base);
+-    strcat(fontname, ",");
+-    strcat(fontname, rs_kfont[0]);
+-  }
+-#else
+-  fontname = MALLOC(strlen(rs_font[0]) + sizeof(fs_base) + 1);
+-  if (fontname) {
+-    strcpy(fontname, rs_font[0]);
+-    strcat(fontname, fs_base);
+-  }
+-#endif
+-  if (fontname) {
+-    setlocale(LC_ALL, "");
+-    fontset = XCreateFontSet(Xdisplay, fontname, &ml, &mc, &ds);
+-    FREE(fontname);
+-    if (mc) {
+-      XFreeStringList(ml);
+-      fontset = 0;
+-      return;
+-    }
+-  }
+-  list = XVaCreateNestedList(0, XNFontSet, fontset, NULL);
+-  Input_Context = XCreateIC(xim, XNInputStyle, input_style, XNClientWindow, TermWin.parent, XNFocusWindow, TermWin.parent,
+-			    XNPreeditAttributes, list, XNStatusAttributes, list, NULL);
+-  if (Input_Context == NULL) {
+-    D_X11(("Error:  Unable to create Input Context\n"));
+-    XCloseIM(xim);
+-  }
  }
- #endif	/* NO_XLOCALE */
- /**/
-@@ -2459,22 +2364,21 @@
- 	numlock_state = (ev->xkey.state & Mod5Mask);	/* numlock toggle */
- 	PrivMode((!numlock_state), PrivMode_aplKP);
-     }
--    
--#ifndef NO_XLOCALE
--    if (!XFilterEvent(ev, *(&ev->xkey.window))) {
--	if (Input_Context != NULL) {
--	    Status status_return;
--	    
--	    len = XmbLookupString(Input_Context, &ev->xkey, kbuf,
--				  sizeof(kbuf), &keysym,
--				  &status_return);
--	} else {
--	    len = XLookupString(&ev->xkey, kbuf,
--				sizeof(kbuf), &keysym,
--				&compose);
--	}
--    } else len = 0;
--#else	/* NO_XLOCALE */
-+#ifdef USE_XIM
-+    len = 0;
-+    if (Input_Context != NULL) {
-+      Status status_return;
-+
-+      kbuf[0] = '\0';
-+      len = XmbLookupString(Input_Context, &ev->xkey, kbuf,
-+                            sizeof(kbuf), &keysym,
-+                            &status_return);
-+    } else {
-+      len = XLookupString(&ev->xkey, kbuf,
-+                          sizeof(kbuf), &keysym,
-+                          &compose);
-+    }
-+#else	/* USE_XIM */
-     len = XLookupString(&ev->xkey, kbuf, sizeof(kbuf), &keysym, &compose);
-     /*
-      * have unmapped Latin[2-4] entries -> Latin1
-@@ -2484,7 +2388,7 @@
- 	len = 1;
- 	kbuf[0] = (keysym & 0xFF);
-     }
--#endif	/* NO_XLOCALE */
-+#endif	/* USE_XIM */
-     
-     if (len && (Options & Opt_homeOnInput)) TermWin.view_start = 0;
-     
-@@ -3087,6 +2991,9 @@
- #else
-     scr_refresh(refresh_type);
+ #endif /* NO_XLOCALE */
+ 
+@@ -3160,6 +3056,9 @@
+     if (greek_mode)
+       len = greek_xlat(kbuf, len);
  #endif
 +#ifdef USE_XIM
 +    IMSendSpot();
 +#endif
    }
  
+   if (len <= 0)
+@@ -3344,6 +3243,7 @@
+ #else
+     scr_refresh(refresh_type);
+ #endif
++    IMSendSpot();
+   }
    /* characters already read in */
-@@ -3096,14 +3003,10 @@
- 
-     v_doPending();
-     while (XPending(Xdisplay)) {	/* process pending X events */
--	    
--      XEvent          ev;
--	    
-       refreshed = 0;
--      XNextEvent(Xdisplay, &ev);
-+      XProcessEvent(Xdisplay);
- 
-       D_X11("cmd_getc(): process_x_event();\n");
--      process_x_event(&ev);
- 	    
-       /* in case button actions pushed chars to cmdbuf */
-       if CHARS_READ() RETURN_CHAR();
-@@ -3178,6 +3081,9 @@
+   if (CHARS_READ()) {
+@@ -3444,6 +3344,9 @@
  	scr_refresh(refresh_type);
  	if (scrollbar_visible())
  	  scrollbar_show(1);
@@ -288,60 +237,51 @@
        }
      }
    }
-@@ -3867,6 +3773,9 @@
- 	    refresh_count = refresh_limit = 0;
- 	    scr_refresh(refresh_type);
- 	    scrollbar_show(mouseoffset);
+@@ -4157,6 +4060,9 @@
+ 	refresh_count = refresh_limit = 0;
+ 	scr_refresh(refresh_type);
+ 	scrollbar_show(mouseoffset);
 +#ifdef USE_XIM
-+	    IMSendSpot();
++	IMSendSpot();
 +#endif
  #endif
- 	} else if ((ev->xany.window == scrollBar.win) && scrollbar_isMotion()) {
- 	    Window          unused_root, unused_child;
-@@ -3884,6 +3793,9 @@
- 	    refresh_count = refresh_limit = 0;
- 	    scr_refresh(refresh_type);
- 	    scrollbar_show(mouseoffset);
+       } else if ((ev->xany.window == scrollBar.win) && scrollbar_isMotion()) {
+ 	Window unused_root, unused_child;
+@@ -4174,6 +4080,9 @@
+ 	refresh_count = refresh_limit = 0;
+ 	scr_refresh(refresh_type);
+ 	scrollbar_show(mouseoffset);
 +#ifdef USE_XIM
-+	    IMSendSpot();
++	IMSendSpot();
 +#endif
- 	}
+       }
  #ifdef PROFILE_X_EVENTS
- 	P_SETTIMEVAL(motion_stop);
-@@ -4626,6 +4538,9 @@
- 	}
+       P_SETTIMEVAL(motion_stop);
+@@ -5065,6 +4974,9 @@
      }
-     Gr_do_graphics(cmd, nargs, args, text);
+   }
+   Gr_do_graphics(cmd, nargs, args, text);
 +#ifdef USE_XIM
-+    IMSendSpot();
++  IMSendSpot();
 +#endif
  #endif
  }
  
-@@ -5864,6 +5779,9 @@
- 	
- 	XResizeWindow (Xdisplay, TermWin.parent, width, height);
- 	resize_window1 (width, height);
-+#ifdef USE_XIM
-+	IMSetStatusPosition();
-+#endif
-     }
- }
+@@ -6311,6 +6223,9 @@
+   /* parent already resized */
  
-@@ -5897,6 +5815,9 @@
-     /* parent already resized */
-     
-     resize_window1 (width, height);
+   resize_window1(width, height);
 +#ifdef USE_XIM
-+    IMSetStatusPosition();
++  IMSetStatusPosition();
 +#endif
  }
  
  /* xterm sequences - title, iconName, color (exptl) */
-@@ -6505,3 +6426,340 @@
- #undef FNUM_RANGE
+@@ -6893,6 +6808,328 @@
+   free(orig_tnstr);
+ #endif
  }
- 
++
 +#ifdef USE_XIM
 +void
 +setSize(XRectangle *size)
@@ -571,7 +511,6 @@
 +					 XNForeground,       fg,
 +					 XNBackground,       bg,
 +					 XNFontSet, TermWin.fontset,
-+					 XNLineSpace,        0,
 +					 NULL);
 +    } else if (input_style & XIMPreeditArea) {
 +      setColor(&fg, &bg);
@@ -580,14 +519,12 @@
 +					 XNForeground, fg,
 +					 XNBackground, bg,
 +					 XNFontSet, TermWin.fontset,
-+					 XNLineSpace, 0,
 +					 NULL);
 +
 +      status_attr = XVaCreateNestedList(0,
 +					XNForeground, fg,
 +					XNBackground, bg,
 +					XNFontSet, TermWin.fontset,
-+					XNLineSpace, 0,
 +					NULL);
 +    }
 +
@@ -666,16 +603,6 @@
 +    XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL, IMInstantiateCallback, NULL);
 +}
 +#endif /* USE_XIM */
-+
-+void
-+XProcessEvent(Display *display)
-+{
-+    XEvent xev;
-+    XNextEvent(display, &xev);
-+#ifndef NO_XLOCALE
-+    if( !XFilterEvent( &xev, xev.xany.window ) )
-+      process_x_event( &xev ) ;
-+#else
-+    process_x_event( &xev ) ;
-+#endif
-+}
+ 
+ /* change_font() - Switch to a new font */
+ /*
