@@ -15,6 +15,7 @@ sbin/dovecot
 %%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
 %%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
 %%PORTDOCS%%%%DOCSDIR%%/dovecot-pgsql.conf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-mysql.conf
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/mail-storages.txt
 %%PORTDOCS%%%%DOCSDIR%%/mkcert.sh
