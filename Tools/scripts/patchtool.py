@@ -558,7 +558,7 @@ def generate(args, automatic, force, ignoremtime):
 			if os.path.isdir(patchdir):
 				patches.adddir(patchdir, wrksrc)
 
-			extra_patches = querymakevar('EXTRA_PATCHES', portdir, True)
+			extra_patches = querymakevar('EXTRA_PATCHES', portdir, False)
 			for extra_patch in extra_patches.split():
 				if os.path.isfile(extra_patch):
 					patches.addpatchfile(extra_patch, wrksrc)
