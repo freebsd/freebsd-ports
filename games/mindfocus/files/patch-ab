@@ -1,0 +1,8 @@
+--- Imakefile.orig	Fri Nov 27 02:19:33 1998
++++ Imakefile	Thu Dec  3 06:17:15 1998
+@@ -18,3 +18,5 @@
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+ 
+ MakeSubdirs($(SUBDIRS))
++
++depend:

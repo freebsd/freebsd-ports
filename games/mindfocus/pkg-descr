@@ -1,0 +1,11 @@
+MindFocus version 0.86.1 by Takashi TOYOSHIMA
+                           University of Tokyo Microcomputer Club
+
+MindFocus is a mascot on X Window System.
+Lovely(*) characters stay on top of active window.
+
+(*) Your favorite character(s) can do (Not only lovely ones :-) ).
+
+More information -> /usr/X11R6/share/doc/ja/mindfocus/*.euc (Japanese only)
+
+Package Maintainer: S. Sugimoto < ixtl@utmc.or.jp >
