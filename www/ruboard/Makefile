@@ -9,7 +9,7 @@ PORTNAME=	ruboard
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	www russian
-MASTER_SITES=	ftp://ftp.amsoft.ru/software/ruboard/
+MASTER_SITES=	http://amsoft.ru/pub/ruboard/
 
 MAINTAINER=	am@amsoft.ru
 COMMENT=	A web based discussion board
