@@ -14,7 +14,6 @@ MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		acpica-unix-20011120.tar.gz
 NO_WRKSUBDIR=	yes
-NO_MTREE=	yes
 
 MAINTAINER=	iwasaki@FreeBSD.org
 
