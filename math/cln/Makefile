@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
@@ -35,6 +35,10 @@ STRIP=		# none
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -48,5 +52,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 .endif
+	@${FIND} ${PREFIX}/include/cln -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/cln ! -type f | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
