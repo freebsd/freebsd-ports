@@ -8,9 +8,7 @@
 PORTNAME=	siod
 PORTVERSION=	3.4
 CATEGORIES=	lang
-MASTER_SITES=	http://people.delphi.com/gjc/\
-		http://siag.nu/online-docs/siod/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jkoshy
 DISTNAME=	siod
 EXTRACT_SUFX=	.tgz
