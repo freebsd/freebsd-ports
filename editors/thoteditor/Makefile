@@ -47,6 +47,6 @@ post-install:
 	$(SED) -e "s&%%PREFIX%%&$(PREFIX)&" < $(FILESDIR)/thoteditor > $(WRKDIR)/thoteditor
 	$(INSTALL_SCRIPT) $(WRKDIR)/thoteditor $(PREFIX)/bin
 	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextrc.5 $(PREFIX)/man/man5
-	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextract.1 $(PREFIX)/man/man1/cextract.1
+	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextract.man $(PREFIX)/man/man1/cextract.1
 
 .include <bsd.port.mk>
