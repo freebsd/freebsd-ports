@@ -6398,6 +6398,7 @@ p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
 p5-Class-NamedParms	ports/devel/p5-Class-NamedParms
 p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB	ports/devel/p5-Class-ObjectTemplate-DB
+p5-Class-Observable	ports/devel/p5-Class-Observable
 p5-Class-ParmList	ports/devel/p5-Class-ParmList
 p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
 p5-Class-Roles	ports/devel/p5-Class-Roles
