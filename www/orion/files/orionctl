@@ -1,118 +1,160 @@
 #!/bin/sh
 
 # Set some variables
-VERSION=%%PORTVERSION%%
 APP_HOME=%%APP_HOME%%
-USER_NAME=%%USER_NAME%%
-LOG=%%LOG_DIR%%/%%APP_SHORTNAME%%.log
-PID_FILE=/var/run/%%PORTNAME%%.pid
-JAR_FILE=${APP_HOME}/%%APP_SHORTNAME%%.jar
+STDOUT_LOG=%%STDOUT_LOG%%
+STDERR_LOG=%%STDERR_LOG%%
+JAR_FILE=${APP_HOME}/orion.jar
 MYSELF=`basename $0`
 
-# Check if we're being run as a shell script or as an rc script
-if [ ${MYSELF} = "%%RC_SCRIPT_NAME%%" ]; then
-	AS_RC_SCRIPT=yes
-else
-	AS_RC_SCRIPT=no
-fi
+# Set the CLASSPATH
+unset CLASSPATH
+for i in ${APP_HOME}/lib/* ; do
+	if [ "$CLASSPATH" != "" ]; then
+		CLASSPATH=${CLASSPATH}:$i
+	else
+		CLASSPATH=$i
+	fi
+done
 
 # Check if the JAVA_HOME directory is defined, otherwise set it to the
 # fallback default
 if [ "${JAVA_HOME}a" = "a" ]; then
 	JAVA_HOME=%%JAVA_HOME%%
 fi
+if [ -f ${JAVA_HOME}/lib/tools.jar ] ; then
+	CLASSPATH=${CLASSPATH}:${JAVA_HOME}/lib/tools.jar
+fi
 JAVA_CMD=${JAVA_HOME}/bin/java
 
-# Function that starts the application
-start() {
-	# Make sure the application is not started previously
-	if [ -e ${PID_FILE} ]; then
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo ""
-		fi
-		echo "%%APP_SHORTNAME%%: ERROR: Found %%APP_TITLE%% PID file at ${PID_FILE}. It is probably already running."
-		exit 1
-	fi
 
+##############################################################################
+# Function that shows an error message
+#
+# This function is called by the 'checks' function
+#
+# Parameters:
+#     1: The message to be displayed.
+
+error() {
+	echo -n "%%APP_SHORTNAME%%: ERROR: "
+	echo $1
+}
+
+
+##############################################################################
+# Function that performs all checks necessary for starting or stopping the
+# application.
+#
+# This function is called by the 'start' and 'stop' functions
+#
+# This function expects no parameters
+
+checks() {
 	# Make sure the application directory does exist
 	if [ ! -d ${APP_HOME} ]; then
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo ""
-		fi
-		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
+		error "Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
 		exit 2
 	fi
 
 	# Make sure the application JAR file exists
 	if [ ! -r ${JAR_FILE} ]; then
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo ""
-		fi
-		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
+		error "Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
 		exit 3
 	fi
 
 	# Make sure the Java VM can be found
 	if [ ! -x ${JAVA_CMD} ]; then
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo ""
-		fi
-		echo "%%APP_SHORTNAME%%: ERROR: Unable to find Java VM at ${JAVA_HOME}."
+		error "Unable to find Java VM at ${JAVA_HOME}."
 		exit 4
 	fi
+}
+
+
+##############################################################################
+# Functions that calls the application with the specified parameter
+#
+# Parameters:
+#    1: The argument to pass to the application (optional)
+
+app() {
+	(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -jar ${JAR_FILE} $1 &) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}
+}
+
+
+##############################################################################
+# Function that starts the application
+#
+# This function is called from the main function
+#
+# This function expects no parameters
+
+start() {
+	# Make sure the application is not started previously
+	if [ -e %%PID_FILE%% ]; then
+		error "Found %%APP_TITLE%% PID file at %%PID_FILE%%. It is probably already running."
+		exit 1
+	fi
+
+	# Perform the checks that apply to stopping as well
+	checks
 
 	# Create the process ID file
-	rm -f ${PID_FILE}
-	touch ${PID_FILE}
-	chown ${USER_NAME} ${PID_FILE}
-	chmod 600 ${PID_FILE}
-
-	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-		echo -n " %%APP_SHORTNAME%%"
-	fi
-	touch ${PID_FILE}
-	chown ${USER_NAME} ${PID_FILE}
-	chmod 600 ${PID_FILE}
-	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -jar ${JAR_FILE} & echo \$! > ${PID_FILE}) > ${LOG} 2>&1"
+	rm -f %%PID_FILE%%
+	touch %%PID_FILE%%
+	chown %%USER_NAME%%:%%GROUP_NAME%% %%PID_FILE%%
+	chmod 600 %%PID_FILE%%
+	(cd ${APP_HOME} && ${JAVA_CMD} -jar ${JAR_FILE} & echo $! > %%PID_FILE%%) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}
 }
 
+
+##############################################################################
 # Function that stops the application
+#
+# This function is called from the main function
+#
+# This function expects no parameters
+
 stop() {
-	if [ ! -e ${PID_FILE} ]; then
+	# Perform the checks
+	checks
 
-		# If run as an rc script, die silently...
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			exit 0
-
-		# ...otherwise complain
-		else
-			echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% PID file at ${PID_FILE}. It is probably not running."
-			exit 16
-		fi
-	else
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo -n " %%APP_SHORTNAME%%"
-		fi
-		/bin/kill `cat ${PID_FILE}`
-		rm -f ${PID_FILE}
+	# Kill the running program
+	if [ ! -e %%PID_FILE%% ]; then
+		error "Unable to find %%APP_TITLE%% PID file at %%PID_FILE%%. It is probably not running."
+		exit 16
 	fi
+	/bin/kill `cat %%PID_FILE%%`
+	rm -f %%PID_FILE%%
 }
 
-case "$1" in
-	start)
-		start
-		;;
-	stop)
-		stop
-		;;
-	restart)
-		stop
-		start
-		;;
-	*)
-		echo ""
-		echo "Usage: ${MYSELF} { start | stop | restart }"
-		echo ""
-		exit 64
-		;;
-esac
+
+##############################################################################
+# Main function. This function calls the 'start' and 'stop' functions.
+#
+# Parameters:
+#    1: The argument to this shell script
+
+main() {
+	case "$1" in
+		start)
+			start
+			;;
+		stop)
+			stop
+			;;
+		restart)
+			stop
+			start
+			;;
+		*)
+			echo "Usage: ${MYSELF} { start | stop | restart }"
+			exit 64
+			;;
+	esac
+}
+
+
+# Call the main function and exit
+main $1
+exit 0

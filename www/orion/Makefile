@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -30,10 +30,10 @@ LOG_DIR=	${APP_HOME}/log
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Orion Server
 APP_SHORTNAME=	${PORTNAME}
-APPCTL_NAME=	${APP_SHORTNAME}ctl
-CTL_SCRIPT=	${PREFIX}/bin/${APPCTL_NAME}
+CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
+CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 STARTUP_ORDER=	020
-RC_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
 JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
 JAVA_PORT?=	${PORTSDIR}/java/jdk13
 JIKES_LOCATION=	${LOCALBASE}/bin/jikes
@@ -46,13 +46,16 @@ GROUP_NAME=	www
 PW?=		/usr/sbin/pw
 HTTP_PORT?=	8090
 RMI_PORT?=	23791
+STDOUT_LOG=	${LOG_DIR}/stdout.log
+STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
+PID_FILE=	/var/run/orion.pid
 
 pre-install:
 	@${ECHO} "Installation settings:"
 	@${ECHO} "   Destination directory:   ${APP_HOME}"
-	@${ECHO} "   Control script location: ${CTL_SCRIPT}"
-	@${ECHO} "   Startup script location: ${RC_SCRIPT}"
+	@${ECHO} "   Control script location: ${CONTROL_SCRIPT}"
+	@${ECHO} "   Startup script location: ${STARTUP_SCRIPT}"
 	@${ECHO} "   Location of JDK:         ${JAVA_HOME}"
 	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
@@ -61,7 +64,6 @@ pre-install:
 	@${ECHO} "   RMI port:                ${RMI_PORT}"
 	@${ECHO} "   Starting after install:  ${AUTO_START}"
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
-
 
 do-install:
 	@# Create the destination directory
@@ -91,7 +93,7 @@ do-install:
 	> ${APP_HOME}/config/rmi.xml
 
 	@# Install the control script
-	${CAT} ${FILESDIR}/${APPCTL_NAME} \
+	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME} \
 	| ${SED} "/%%PORTNAME%%/s//${PORTNAME}/" \
 	| ${SED} "/%%PORTVERSION%%/s//${PORTVERSION}/" \
 	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
@@ -101,11 +103,20 @@ do-install:
 	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
 	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
 	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
-	> ${CTL_SCRIPT}
-	${CHMOD} 755 ${CTL_SCRIPT}
+	| ${SED} "/%%GROUP_NAME%%/s//${GROUP_NAME}/" \
+	| ${SED} "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
+	| ${SED} "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
+	| ${SED} "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
+	> ${CONTROL_SCRIPT}
+	${CHMOD} 755 ${CONTROL_SCRIPT}
 
 	@# Install the startup script
-	${LN} -sf ${CTL_SCRIPT} ${RC_SCRIPT}
+	${CAT} ${FILESDIR}/${PORTNAME}.sh \
+	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
+	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
+	| ${SED} "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
+	> ${STARTUP_SCRIPT}
+	${CHMOD} 0554 ${STARTUP_SCRIPT}
 
 	@# Create the directories that the application will create it at the
 	@# first run
@@ -119,20 +130,23 @@ do-install:
 
 	@# Install the man page
 .if !defined(NOPORTDOCS)
-	${CAT} ${FILESDIR}/${APPCTL_NAME}.1 \
+	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
+	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
 	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
-	> ${WRKDIR}/${APPCTL_NAME}.1
-	${INSTALL_MAN} ${WRKDIR}/${APPCTL_NAME}.1 ${MANPREFIX}/man/man1
+	| ${SED} "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
+	| ${SED} "/%%STARTUP_ORDER%%/s//${STARTUP_ORDER}.sh/" \
+	> ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1
+	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
 .endif
 
 post-install:
 	@${ECHO} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 .if !defined(NOPORTDOCS)
-	@${ECHO} "Use 'man ${APPCTL_NAME}' for information about starting and stopping ${APP_TITLE}."
+	@${ECHO} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
 .if ${AUTO_START} == "YES"
 	@${ECHO} "Starting ${APP_TITLE}..."
-	@${CTL_SCRIPT} start || true
+	@${CONTROL_SCRIPT} start || true
 .endif
 
 .include <bsd.port.mk>
