@@ -1,0 +1,6 @@
+libdbi implements a database-independent abstraction layer in C, similar
+to the DBI/DBD layer in Perl. Writing one generic set of code, programmers
+can leverage the power of multiple databases and multiple simultaneous
+database connections by using this framework.
+
+WWW: http://libdbi.sourceforge.net/
