@@ -17,7 +17,6 @@ share/micq/ru.i18n
 share/micq/se.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
-%%PORTDOCS%%share/doc/micq/commands.txt
 %%PORTDOCS%%share/doc/micq/icq091.txt
 %%PORTDOCS%%share/doc/micq/icqv7.txt
 @dirrm share/micq
