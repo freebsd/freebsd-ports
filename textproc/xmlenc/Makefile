@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlenc
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmlenc
@@ -20,18 +21,28 @@ USE_JAVA=	1.1+
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
+.if defined(NOPORTDOCS)
+ANT_TARGET=	jar
+.else
 ANT_TARGET=	jar apidocs
+.endif
+JAVASHAREDIR=	${PREFIX}/share/java
+JARDIR=		${JAVASHAREDIR}/classes
+JARFILE=	${PORTNAME}.jar
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
-	@${MKDIR} ${TARGET_DIR}
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
+	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/
 	@${ECHO} " [ DONE ]"
 
-	@${ECHO} -n ">> Copying files..."
-	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+.if !defined(NOPORTDOCS)
+	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/apidocs/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
+.endif
 
 .include <bsd.port.mk>
