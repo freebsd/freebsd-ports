@@ -1763,6 +1763,7 @@ f-prot-sig	ports/security/f-prot-sig
 f2py		ports/lang/f2py
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
+faac		ports/audio/faac
 faad		ports/audio/faad
 faces		ports/mail/faces
 fakebo		ports/security/fakebo
