@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.14
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -21,9 +21,9 @@ MAN5=	mararc.5
 MAN8=	maradns.8 zoneserver.8
 
 post-patch:
-	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
 		's|/etc/mara|${PREFIX}/etc/mara|g'
-	@find ${WRKSRC} -name '*Makefile*' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*Makefile*' | ${XARGS} ${PERL} -pi -e \
 		's|make|\$$\{MAKE\}|g ; \
 		 s|^FLAGS =|#FLAGS =|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'
