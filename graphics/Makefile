@@ -146,8 +146,6 @@
     SUBDIR += guilib
     SUBDIR += gview
     SUBDIR += gwenview
-    SUBDIR += hdf
-    SUBDIR += hdf5
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hpoj
     SUBDIR += hppsmtools

@@ -16,6 +16,8 @@
     SUBDIR += ghemical
     SUBDIR += glens
     SUBDIR += gramps
+    SUBDIR += hdf
+    SUBDIR += hdf5
     SUBDIR += kmovisto
     SUBDIR += libctl
     SUBDIR += libsvm
