@@ -1,9 +1,16 @@
---- gdk_imlib/Makefile.in.orig	Tue Mar 27 22:21:26 2001
-+++ gdk_imlib/Makefile.in	Tue Apr  3 13:14:15 2001
-@@ -153,4 +153,4 @@
+
+$FreeBSD$
+
+--- gdk_imlib/Makefile.in.orig	Wed Aug  1 02:34:50 2001
++++ gdk_imlib/Makefile.in	Thu Aug  2 20:16:59 2001
+@@ -175,8 +175,8 @@
+ 	modules.c
  
--libgdk_imlib_la_LDFLAGS = -version-info 10:10:9
+ 
+-libgdk_imlib_la_LDFLAGS = -version-info 10:11:9
 -libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
-+libgdk_imlib_la_LDFLAGS = -export-dynamic -version-info 5:0:0
++libgdk_imlib_la_LDFLAGS = -version-info 5:0:0
 +libgdk_imlib_la_LIBADD = $(GTK_LIBS) $(SUPPORT_LIBS)
+ 
+ include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
  
