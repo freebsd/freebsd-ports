@@ -110,6 +110,7 @@
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-EN-Gender
+    SUBDIR += p5-Lingua-EN-Infinitive
     SUBDIR += p5-Lingua-EN-Inflect
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
     SUBDIR += p5-Lingua-EN-Sentence

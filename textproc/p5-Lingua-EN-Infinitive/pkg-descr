@@ -1,0 +1,8 @@
+Determine the infinitive form of a conjugated word. Also,
+determine the suffix used to identify which rule to apply to
+transform the conjugated word into the infinitive form.
+
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Infinitive
+
+Seamus Venasse <svenasse@polaris.ca>
