@@ -3,4 +3,15 @@ share/amy/Book.db
 share/amy/Eco.db
 @dirrm share/amy
 %%PORTDOCS%%share/doc/amy/README
-%%PORTDOCS%%@dirrm share/doc/amy
+share/doc/amy/index.html
+share/doc/amy/amy.css
+share/doc/amy/ch01.html
+share/doc/amy/ch01s02.html
+share/doc/amy/ch01s03.html
+share/doc/amy/ch02.html
+share/doc/amy/ch03.html
+share/doc/amy/ch03s02.html
+share/doc/amy/ch03s03.html
+share/doc/amy/ch03s04.html
+share/doc/amy/ch04.html
+@dirrm share/doc/amy

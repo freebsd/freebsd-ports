@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amy
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.stethojupi.de/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
@@ -16,6 +16,8 @@ MAINTAINER=	thorsten.greiner@web.de
 COMMENT=	A chess program for playing and analyzing games
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
+
+MAN6=           Amy.6
 
 HAS_CONFIGURE=	yes
 
