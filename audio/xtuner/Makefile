@@ -3,7 +3,7 @@
 # Date created:		19 December 96
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.5 1998/09/26 23:18:02 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/03 00:38:26 jseger Exp $
 #
 
 DISTNAME=	Xtuner-2.1
@@ -15,6 +15,9 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
+
+# depends on xforms
+ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	YES
 NO_INSTALL_MANPAGES=	YES

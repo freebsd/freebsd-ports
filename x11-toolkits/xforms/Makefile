@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.21 1998/11/11 05:37:39 asami Exp $
+# $Id: Makefile,v 1.22 1998/12/27 18:43:33 dirk Exp $
 #
 
 USE_X_PREFIX=	yes
@@ -24,6 +24,8 @@ CATEGORIES=	graphics x11-toolkits
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
+
+ONLY_FOR_ARCHS=	i386
 
 PATCH_STRIP=	-p0 -t
 WRKSRC=		${WRKDIR}/xforms

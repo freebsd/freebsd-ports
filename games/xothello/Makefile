@@ -3,7 +3,7 @@
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/09/26 23:18:05 steve Exp $
+# $Id: Makefile,v 1.6 1998/12/07 20:46:40 billf Exp $
 #
 
 DISTNAME=	xothello
@@ -16,6 +16,8 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
+# depends on xforms
+ONLY_FOR_ARCHS=	i386
 NO_CDROM=	Possible trademark infringement
 
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1998/09/26 23:18:10 steve Exp $
+# $Id: Makefile,v 1.9 1998/12/07 20:46:38 billf Exp $
 #
 
 DISTNAME=	dfm-0.9.10
@@ -14,6 +14,9 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms
+
+# depends on xforms
+ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
 
