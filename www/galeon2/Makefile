@@ -12,9 +12,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} #\
-#		libmpfilelocprovider_s.a-1.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -46,7 +43,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} -pthread -lgcc_r"
 
 post-extract:
-#	@${GZCAT} ${DISTDIR}/libmpfilelocprovider_s.a-1.gz > ${WRKSRC}/libmpfilelocprovider_s.a
 .if !defined(WITH_FULL_MOZILLA)
 	@${ECHO_MSG}
 	@${ECHO_MSG} " By default the port uses mozilla-embedded for html rendering, but if you are"
