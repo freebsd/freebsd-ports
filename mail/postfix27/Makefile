@@ -110,7 +110,15 @@ pre-install:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
+.include <bsd.port.pre.mk>
+
 replace:
+.if ${OSVERSION} >= 400014
+	@${ECHO_MSG} "===> Activating postfix in /etc/mail/mailer.conf"
+	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
+	${SED} -e 's|/usr/libexec/sendmail|${PREFIX}/sbin|' \
+		< /etc/mail/mailer.conf.bak > /etc/mail/mailer.conf
+.else
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
 		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF; \
@@ -135,5 +143,6 @@ replace:
 	@if [ -e ${PREFIX}/sbin/sendmail ]; then \
 		${LN} -s ${PREFIX}/sbin/sendmail /usr/bin/newaliases; \
 	fi
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
