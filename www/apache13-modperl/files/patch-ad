@@ -1,0 +1,11 @@
+--- src/support/dbmmanage.bak	Thu Mar 14 00:05:37 2002
++++ src/support/dbmmanage	Mon Jun  2 23:05:27 2003
+@@ -338,6 +338,8 @@
+     } elsif (substr($chkpass, 0, 5) eq '{SHA}') {
+         need_sha1_crypt;
+         $crypt_method = "sha1";
++    } elsif (substr($chkpass, 0, 3) eq '$1$') {
++	$crypt_method = "crypt";
+     } elsif (length($chkpass) == 13 && $chkpass ne $testpass) {
+         $crypt_method = "crypt";
+     } else {

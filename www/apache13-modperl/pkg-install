@@ -1,0 +1,89 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+USER=www
+GROUP=${USER}
+UID=80
+GID=${UID}
+TMPDIR=${TMPDIR:=/tmp}
+PKG_TMPDIR=${PKG_TMPDIR:=${TMPDIR}}
+
+apxscmd=${PKG_PREFIX}/sbin/apxs
+perlmod=${PKG_PREFIX}/libexec/apache/libperl.so
+tmpdir=${PKG_TMPDIR}/instmod_perl.$$
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "World Wide Web Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
+if [ ! -x ${apxscmd} ]; then
+        echo Can\'t find the apxs program: ${apxscmd}.
+        exit 1
+fi
+
+confdir=`${apxscmd} -q SYSCONFDIR`
+
+if [ ! -d ${confdir} ]; then
+        echo Can\'t find Apache conf dir: ${confdir}
+        exit 1
+fi
+
+if [ ! -f ${confdir}/httpd.conf ]; then
+        if [ ! -f ${confdir}/httpd.conf.default ]; then
+                echo Can\'t find either of ${confdir}/httpd.conf nor
+                echo ${confdir}/httpd.conf.default.
+                exit 1
+        fi
+
+        if ! mkdir ${tmpdir}; then
+                echo Can\'t create temporary directory: ${tmpdir}
+                exit 1
+        fi
+
+        cp ${confdir}/httpd.conf.default ${tmpdir}/httpd.conf
+        if ${apxscmd} -e -S SYSCONFDIR=${tmpdir} -a -n perl ${perlmod}; then
+                echo Updating httpd.conf.default in config dir: ${confdir}
+                cat ${tmpdir}/httpd.conf > ${confdir}/httpd.conf.default
+                rm -rf ${tmpdir}
+                exit 0
+        else
+                rm -rf ${tmpdir}
+                echo The apxs command failed to activate mod_perl in the config
+                echo file: ${tmpdir}/httpd.conf.
+                exit 1
+        fi
+elif ${apxscmd} -e -a -n perl ${perlmod}; then
+        exit 0
+else
+        echo The apxs command failed to activate mod_perl in the config
+        echo file: ${confdir}/httpd.conf
+        exit 1
+fi
+
+exit 0
