@@ -312,7 +312,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  The available sections chars are "123456789LN".
 # MLINKS		- A list of <source, target> tuples for creating links
 #				  for manpages.  For example, "MLINKS= a.1 b.1 c.3 d.3"
-#				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 and d.3" in
+#				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 d.3" in
 #				  appropriate directories.  (Use this even if the port
 #				  installs its own manpage links so they will show up
 #				  correctly in ${PLIST}.)
@@ -1254,7 +1254,11 @@ PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
 .if !defined(PKG_ARGS)
+.if exists(${COMMENT})
 PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
+.else
+PKG_ARGS=		-v -c -"${PORTCOMMENT}" -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
+.endif
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
@@ -1308,11 +1312,11 @@ _PATCH_SITES_DEFAULT?=
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if ${_group}==all || ${_group}==ALL || ${_group}==default
-.			BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO_CMD} "in group definitions."
-				@${ECHO_CMD} "Please fix your MASTER_SITES"
+_G_TEMP=	${_group}
+.			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.BEGIN:
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+				@${ECHO_CMD} "used in group definitions. Please fix your MASTER_SITES"
 				@${FALSE}
 .			endif
 _MASTER_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
@@ -1325,11 +1329,11 @@ _MASTER_SITES_DEFAULT+=	${_S:C@^(.*/):[^/:]+$@\1@}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if ${_group}==all || ${_group}==ALL || ${_group}==default
-.			BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO_CMD} "in group definitions."
-				@${ECHO_CMD} "Please fix your MASTER_SITES"
+_G_TEMP=	${_group}
+.			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.BEGIN:
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+				@${ECHO_CMD} "used in group definitions. Please fix your PATCH_SITES"
 				@${FALSE}
 .			endif
 _PATCH_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
@@ -1347,11 +1351,11 @@ _PATCH_SITES_DEFAULT+=	${_S:C@^(.*/):[^/:]+$@\1@}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if ${_group}==all || ${_group}==ALL || ${_group}==default
-.			BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO_CMD} "in group definitions."
-				@${ECHO_CMD} "Please fix your MASTER_SITE_SUBDIR"
+_G_TEMP=	${_group}
+.			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.BEGIN:
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+				@${ECHO_CMD} "used in group definitions. Please fix your MASTER_SITE_SUBDIR"
 				@${FALSE}
 .			endif
 .			if defined(_MASTER_SITES_${_group})
@@ -1368,11 +1372,11 @@ _MASTER_SITE_SUBDIR_DEFAULT+=	${_S:C@^(.*)/:[^/:]+$@\1@}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if ${_group}==all || ${_group}==ALL || ${_group}==default
-.			BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be used"
-				@${ECHO_CMD} "in group definitions."
-				@${ECHO_CMD} "Please fix your PATCH_SITE_SUBDIR"
+_G_TEMP=	${_group}
+.			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.BEGIN:
+				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+				@${ECHO_CMD} "used in group definitions. Please fix your PATCH_SITE_SUBDIR"
 				@${FALSE}
 .			endif
 .			if defined(_PATCH_SITES_${_group})
@@ -1392,23 +1396,47 @@ _PATCH_SITE_SUBDIR_DEFAULT+=	${_S:C@^(.*)/:[^/:]+$@\1@}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if defined(_MASTER_SITE_SUBDIR_${_group})
-MASTER_SITES_TMP=
-.				for dir in ${_MASTER_SITE_SUBDIR_${_group}}
-MASTER_SITES_TMP+=	${_MASTER_SITES_${_group}:S^%SUBDIR%^${dir}^}
-.				endfor
-.			else
+.			if !defined(_MASTER_SITE_SUBDIR_${_group})
 MASTER_SITES_TMP=	${_MASTER_SITES_${_group}:S^%SUBDIR%/^^}
+.			else
+_S_TEMP_TEMP=		${_MASTER_SITES_${_group}:M*%SUBDIR%/*}
+.				if empty(_S_TEMP_TEMP)
+MASTER_SITES_TMP=	${_MASTER_SITES_${_group}}
+.				else
+MASTER_SITES_TMP=
+.					for site in ${_MASTER_SITES_${_group}}
+_S_TEMP_TEMP=	${site:M*%SUBDIR%/*}
+.						if empty(_S_TEMP_TEMP)
+MASTER_SITES_TMP+=	${site}
+.						else
+.							for dir in ${_MASTER_SITE_SUBDIR_${_group}}
+MASTER_SITES_TMP+=	${site:S^%SUBDIR%^\${dir}^}
+.							endfor
+.						endif
+.					endfor
+.				endif
 .			endif
 _MASTER_SITES_${_group}:=	${MASTER_SITES_TMP}
 .		endfor
 .	endif
 .endfor
 .if defined(_MASTER_SITE_SUBDIR_DEFAULT)
+_S_TEMP=	${_MASTER_SITES_DEFAULT:M*%SUBDIR%/*}
+.	if empty(_S_TEMP)
+MASTER_SITES_TMP=	${_MASTER_SITES_DEFAULT}
+.	else
 MASTER_SITES_TMP=
-.	for dir in ${_MASTER_SITE_SUBDIR_DEFAULT}
-MASTER_SITES_TMP+=	${_MASTER_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
-.	endfor
+.		for site in ${_MASTER_SITES_DEFAULT}
+_S_TEMP_TEMP=		${site:M*%SUBDIR%/*}
+.			if empty(_S_TEMP_TEMP)
+MASTER_SITES_TMP+=	${site}
+.			else
+.				for dir in ${_MASTER_SITE_SUBDIR_DEFAULT}
+MASTER_SITES_TMP+=	${site:S^%SUBDIR%^\${dir}^}
+.				endfor
+.			endif
+.		endfor
+.	endif
 .else
 MASTER_SITES_TMP=	${_MASTER_SITES_DEFAULT:S^%SUBDIR%/^^}
 .endif
@@ -1418,23 +1446,47 @@ MASTER_SITES_TMP=
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
-.			if defined(_PATCH_SITE_SUBDIR_${_group})
-PATCH_SITES_TMP=
-.				for dir in ${_PATCH_SITE_SUBDIR_${_group}}
-PATCH_SITES_TMP+=	${_PATCH_SITES_${_group}:S^%SUBDIR%^${dir}^}
-.				endfor
-.			else
+.			if !defined(_PATCH_SITE_SUBDIR_${_group})
 PATCH_SITES_TMP=	${_PATCH_SITES_${_group}:S^%SUBDIR%/^^}
+.			else
+_S_TEMP_TEMP=		${_PATCH_SITES_${_group}:M*%SUBDIR%/*}
+.				if empty(_S_TEMP_TEMP)
+PATCH_SITES_TMP=	${_PATCH_SITES_${_group}}
+.				else
+PATCH_SITES_TMP=
+.					for site in ${_PATCH_SITES_${_group}}
+_S_TEMP_TEMP=	${site:M*%SUBDIR%/*}
+.						if empty(_S_TEMP_TEMP)
+PATCH_SITES_TMP+=	${site}
+.						else
+.							for dir in ${_PATCH_SITE_SUBDIR_${_group}}
+PATCH_SITES_TMP+=	${site:S^%SUBDIR%^\${dir}^}
+.							endfor
+.						endif
+.					endfor
+.				endif
 .			endif
 _PATCH_SITES_${_group}:=	${PATCH_SITES_TMP}
 .		endfor
 .	endif
 .endfor
 .if defined(_PATCH_SITE_SUBDIR_DEFAULT)
+_S_TEMP=	${_PATCH_SITES_DEFAULT:M*%SUBDIR%/*}
+.	if empty(_S_TEMP)
+PATCH_SITES_TMP=	${_PATCH_SITES_DEFAULT}
+.	else
 PATCH_SITES_TMP=
-.	for dir in ${_PATCH_SITE_SUBDIR_DEFAULT}
-PATCH_SITES_TMP+=	${_PATCH_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
-.	endfor
+.		for site in ${_PATCH_SITES_DEFAULT}
+_S_TEMP_TEMP=		${site:M*%SUBDIR%/*}
+.			if empty(_S_TEMP_TEMP)
+PATCH_SITES_TMP+=	${site}
+.			else
+.				for dir in ${_PATCH_SITE_SUBDIR_DEFAULT}
+PATCH_SITES_TMP+=	${site:S^%SUBDIR%^\${dir}^}
+.				endfor
+.			endif
+.		endfor
+.	endif
 .else
 PATCH_SITES_TMP=	${_PATCH_SITES_DEFAULT:S^%SUBDIR%/^^}
 .endif
@@ -1473,26 +1525,44 @@ FETCH_BEFORE_ARGS+=	-l
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 _MASTER_SITES_ALL=	${_MASTER_SITES_DEFAULT}
 _PATCH_SITES_ALL=	${_PATCH_SITES_DEFAULT}
+_G_TEMP=	DEFAULT
 .for _D in ${DISTFILES}
 _D_TEMP=	${_D:S/^${_D:C/:[^:]+$//}//}
-.	if !empty(_D_TEMP) && defined(_MASTER_SITES_${_D_TEMP:S/^://})
-#_MASTER_SITES_ALL+=	${MASTER_SITES_${_D_TEMP:S/^://}}
-_MASTER_SITES_ALL+=	${_MASTER_SITES_${_D:S/^${_D:C/:[^:]+$//}://}}
-#_DISTFILES+=	${_D:S/:${_D_TEMP:S/^://}$//}
+.	if !empty(_D_TEMP)
+.		for _group in ${_D_TEMP:S/^://:S/,/ /g}
+.			if !defined(_MASTER_SITES_${_group})
+_G_TEMP_TEMP=	${_G_TEMP:M/${_group}/}
+.				if empty(_G_TEMP_TEMP)
+_G_TEMP+=	${_group}
+_MASTER_SITES_ALL+=	${_MASTER_SITES_${_group}}
+.				endif
+.			endif
+.		endfor
 _DISTFILES+=	${_D:C/:[^:]+$//}
 .	else
 _DISTFILES+=	${_D}
 .	endif
 .endfor
+_G_TEMP=	DEFAULT
 .for _P in ${PATCHFILES}
 _P_TEMP=	${_P:S/^${_P:C/:[^:]+$//}//}
-.	if !empty(_P_TEMP) && defined(_PATCH_SITES_${_P_TEMP:S/^://})
-_PATCH_SITES_ALL+=	${_PATCH_SITES_${_P:S/^${_P:C/:[^:]+$//}://}}
+.	if !empty(_P_TEMP)
+.		for _group in ${_P_TEMP:S/^://:S/,/ /g}
+.			if !defined(_PATCH_SITES_${_group})
+_G_TEMP_TEMP=	${_G_TEMP:M/${_group}/}
+.				if empty(_G_TEMP_TEMP)
+_G_TEMP+=	${_group}
+_PATCH_SITES_ALL+=	${_PATCH_SITES_${_group}}
+.				endif
+.			endif
+.		endfor
 _PATCHFILES+=	${_P:C/:[^:]+$//}
 .	else
 _PATCHFILES+=	${_P}
 .	endif
 .endfor
+_G_TEMP=
+_G_TEMP_TEMP=
 ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 
 #
@@ -1727,7 +1797,7 @@ __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
 		else \
 			{ print "broken"; exit; } \
 	} \
-  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1.gzg' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
+  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
 .BEGIN:
 	@${ECHO_CMD} "${PKGNAME}: Unable to parse MLINKS."
@@ -2105,7 +2175,7 @@ do-fetch:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2150,7 +2220,7 @@ do-fetch:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2284,7 +2354,7 @@ do-configure:
 			 ${ECHO_CMD} "      attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including"; \
 			 ${ECHO_CMD} "      the output of the failure of your make command. Also, it might"; \
 			 ${ECHO_CMD} "      be a good idea to provide an overview of all packages installed"; \
-			 ${ECHO_CMD} "      on your system (e.g. an \`ls ${PKG_DBDIR}\`).") | /usr/bin/fmt 79 79 ; \
+			 ${ECHO_CMD} "      on your system (e.g. an \`ls ${PKG_DBDIR}\`).") | /usr/bin/fmt 75 79 ; \
 			 ${FALSE}; \
 		fi)
 .endif
@@ -2476,24 +2546,74 @@ run-ldconfig:
 
 .if !target(security-check)
 security-check:
-# Scan PLIST for setugid files and startup scripts
-	-@for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
-		${FIND} ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
-	done > ${WRKDIR}/.PLIST.setuid; \
+# Scan PLIST for:
+#   1.  setugid files
+#   2.  accept()/recvfrom() which indicates network listening capability
+#   3.  insecure functions (gets/mktemp/tempnam/[XXX])
+#   4.  startup scripts, in conjunction with 2.
+#
+#  TODO:  world-writable files/dirs
+#
+	-@rm -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.stupid \
+		${WRKDIR}/.PLIST.network; \
+	if [ -n "$$PORTS_AUDIT" ]; then \
+		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam|strcpy|strcat|sprintf)$$'; \
+	else \
+		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam)$$'; \
+	fi; \
+	for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
+		if [ ! -L ${PREFIX}/$$i -a -f ${PREFIX}/$$i ]; then \
+			/usr/bin/objdump -R ${PREFIX}/$$i > \
+				${WRKDIR}/.PLIST.objdump 2> /dev/null; \
+			if [ -s ${WRKDIR}/.PLIST.objdump ] ; then \
+				${EGREP} " $$stupid_functions_regexp" \
+					${WRKDIR}/.PLIST.objdump | awk '{print " " $$3}' | tr -d '\n' \
+					> ${WRKDIR}/.PLIST.stupid; \
+				if [ -n "`${EGREP} ' (accept|recvfrom)$$' ${WRKDIR}/.PLIST.objdump`" ] ; then \
+					if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
+						echo -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.network; \
+						cat ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.network; \
+						echo ")" >> ${WRKDIR}/.PLIST.network; \
+					else \
+						echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.network; \
+					fi; \
+				fi; \
+			fi; \
+			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
+				if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
+					echo -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.setuid; \
+					cat ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.setuid; \
+					echo ")" >> ${WRKDIR}/.PLIST.setuid; \
+				else \
+					echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.setuid; \
+				fi; \
+			fi; \
+		fi; \
+	done; \
 	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
-	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.startup ]; then \
-		echo "===>  SECURITY NOTE: "; \
+	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network ]; then \
+		if [ -n "$$PORTS_AUDIT" ]; then \
+			echo "===>  SECURITY REPORT (PARANOID MODE): "; \
+		else \
+			echo "===>  SECURITY REPORT: "; \
+		fi; \
 		if [ -s ${WRKDIR}/.PLIST.setuid ] ; then \
 			echo "      This port has installed the following binaries which execute with"; \
 			echo "      increased privileges."; \
 			${CAT} ${WRKDIR}/.PLIST.setuid; \
 			echo; \
 		fi; \
-		if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
-			echo "      This port has installed the following startup scripts which may cause"; \
-			echo "      network services to be started at boot time."; \
-			${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
+		if [ -s ${WRKDIR}/.PLIST.network ] ; then \
+			echo "      This port has installed the following files which may act as network"; \
+			echo "      servers and may therefore pose a remote security risk to the system."; \
+			${CAT} ${WRKDIR}/.PLIST.network; \
 			echo; \
+			if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
+				echo "      This port has installed the following startup scripts which may cause"; \
+				echo "      these network services to be started at boot time."; \
+				${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
+				echo; \
+			fi; \
 		fi; \
 		echo "      If there are vulnerabilities in these programs there may be a security"; \
 		echo "      risk to the system. FreeBSD makes no guarantee about the security of"; \
@@ -2799,7 +2919,7 @@ fetch-list:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2831,7 +2951,7 @@ fetch-list:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -3237,6 +3357,8 @@ describe:
 			$$_ = <COMMENT>; \
 			chomp; \
 			print; \
+		} elsif (not // =~ q{${PORTCOMMENT}}) { \
+			print q{${PORTCOMMENT}}; \
 		} else { \
 			print q{** No Description}; \
 		} \
@@ -3340,14 +3462,14 @@ pretty-print-run-depends-list:
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `dirname ${TMPPLIST}`
-	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing package files for ${PKGNAME}."; exit 1; fi
+	@if [ ! -f ${PLIST} -o ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing package files for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
 	@for man in ${__MANPAGES}; do \
 		${ECHO_CMD} $${man} >> ${TMPPLIST}; \
 	done
 .for _PREFIX in ${PREFIX}
 .if ${_TMLINKS:M${_PREFIX}*}x != x
-	@for i in ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,}; do \
+	@for i in ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g}; do \
 		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
 .endif
@@ -3358,6 +3480,9 @@ generate-plist:
 	done
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
+	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
+		${ECHO} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
+	done
 .if ${XFREE86_HTML_MAN} == "yes"
 .for mansect in 1 2 3 4 5 6 7 8 9 L N
 .for man in ${MAN${mansect}}
@@ -3438,7 +3563,11 @@ fake-pkg:
 		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		${CP} ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		if [ -f ${COMMENT} ]; then \
+			${CP} ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		else \
+			${ECHO_CMD} ${PORTCOMMENT} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		fi; \
 		if [ -f ${PKGINSTALL} ]; then \
 			${CP} ${PKGINSTALL} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
