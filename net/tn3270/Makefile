@@ -8,7 +8,7 @@
 PORTNAME=	tn3270
 PORTVERSION=	4.4
 CATEGORIES=	net
-MASTER_SITES=	http://freefall.freebsd.org/~markm/ \
+MASTER_SITES=	http://people.freebsd.org/~markm/ \
 		ftp://ftp.za.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/distfiles/
 DISTNAME=	tn3270
