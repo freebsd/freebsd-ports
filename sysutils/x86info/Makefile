@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.11
+PORTVERSION=	1.12b
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.codemonkey.org.uk/x86info/ \
-		ftp://ftp.suse.com/pub/people/davej/x86info/ \
+MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
