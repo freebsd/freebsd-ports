@@ -14,12 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Uucp Analyzer
 
 GNU_CONFIGURE=	yes
+USE_GCC=	2.95
+
 MAN1=		tua.1
+INFO=		tua
+PLIST_FILES=	bin/tua lib/tua.pcd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
