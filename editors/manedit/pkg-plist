@@ -1,14 +1,14 @@
 bin/manedit
 bin/manview
 bin/manwrap
-share/manedit/help/manpage_writing_procedures
-share/manedit/help/manpage_xml_referance
-share/manedit/icons/manedit.xpm
-share/manedit/templates/api.mpt
-share/manedit/templates/config.mpt
-share/manedit/templates/intro.mpt
-share/manedit/templates/program.mpt
-@dirrm share/manedit/templates
-@dirrm share/manedit/icons
-@dirrm share/manedit/help
-@dirrm share/manedit
+%%DATADIR%%/help/manpage_writing_procedures
+%%DATADIR%%/help/manpage_xml_referance
+%%DATADIR%%/icons/manedit.xpm
+%%DATADIR%%/templates/api.mpt
+%%DATADIR%%/templates/config.mpt
+%%DATADIR%%/templates/intro.mpt
+%%DATADIR%%/templates/program.mpt
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
