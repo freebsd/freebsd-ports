@@ -1,6 +1,5 @@
-This WindowMaker-dockable program is a simple remote control for xmms. It
-can be configured to start and hide xmms on its startup, completely replacing
-the interface for xmms if desired.
+wmusic is a dockapp that remote-controls xmms. Features include VCR-style
+controls, Time and Playlist display, supa stylee rotating arrow, hiding of the
+xmms windows and reactive interface.
 
-Eric Melville
-eric@osd.bsdi.com
+WWW: http://hadess.net/code.shtml

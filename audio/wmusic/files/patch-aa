@@ -1,22 +1,26 @@
---- src/Makefile.in.orig	Wed Oct 25 07:48:35 2000
-+++ src/Makefile.in	Mon Feb 26 23:55:00 2001
-@@ -4,14 +4,16 @@
+--- Makefile.in.orig	Sat Apr  7 21:24:40 2001
++++ Makefile.in	Sat Apr  7 21:24:57 2001
+@@ -3,18 +3,18 @@
+ all:	wmusic
  
- PREFIX = @prefix@
+ wmusic:
+-	cd src && make wmusic
++	cd src && gmake wmusic
  
--SRCS = wmusic.c ../libdockapp/dacallback.c ../libdockapp/dacolor.c \
--	../libdockapp/daevent.c ../libdockapp/damain.c \
--	../libdockapp/dapixmap.c ../libdockapp/darect.c
-+SRCS = wmusic.c dacallback.c dacolor.c \
-+	daevent.c damain.c \
-+	dapixmap.c darect.c
- OBJS = $(SRCS:.c=.o)
+ clean:
+ 	rm -f *~ *.o core wmusic.spec
+-	cd src && make clean
++	cd src && gmake clean
  
- CFLAGS = -Wall -O2 -I. -I../libdockapp `@PATH_XMMSCONFIG@ --cflags` \
- 	-DDATA_DIR=\"`@PATH_XMMSCONFIG@ --data-dir`\"
- LDFLAGS = @LIBS@ -lXpm `@PATH_XMMSCONFIG@ --libs` @DGA_LIBS@ @VM_LIBS@
-+
-+.PATH:	../libdockapp
+ distclean:	clean
+ 	rm -f config.status config.log Makefile config.cache
+-	cd src && make distclean
++	cd src && gmake distclean
  
- all:		wmusic
+ install:
+-	cd src && make install
++	cd src && gmake install
  
+ uninstall:
+-	cd src && make uninstall
++	cd src && gmake uninstall
