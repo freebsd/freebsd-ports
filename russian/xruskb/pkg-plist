@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/xrus
 bin/xrusmodmap
 lib/X11/app-defaults/Xrus
@@ -39,7 +40,12 @@ share/xruskb/yawerty-deru-iso5.xmm
 share/xruskb/yawerty-deru-koi8.xmm
 share/xruskb/yawerty-iso5.xmm
 share/xruskb/yawerty-koi8.xmm
-%%PORTDOCS%%share/doc/xruskb/xrus.doc-english
-%%PORTDOCS%%share/doc/xruskb/xrus.doc-koi8
-%%PORTDOCS%%@dirrm share/doc/xruskb
 @dirrm share/xruskb
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.WindowMaker
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/xrus.doc-english
+%%PORTDOCS%%%%DOCSDIR%%/xrus.doc-koi8
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
