@@ -1,30 +1,35 @@
---- src/Makefile-linux.orig	Thu Jan  2 14:30:30 2003
-+++ src/Makefile-linux	Thu Oct 23 23:42:32 2003
-@@ -1,16 +1,15 @@
+--- src/Makefile-linux.orig	Fri Jan  9 09:17:19 2004
++++ src/Makefile-linux	Sat Jan 10 17:52:42 2004
+@@ -1,18 +1,18 @@
+-LIBLOCAL = -ldl # for dlopen (see load.cpp and man dlopen)
 -LIBX11= -L/usr/X11R6/lib -lX11 -lm 
 -INCLUDEX11 = /usr/X11R6/include
 -CXX=g++      #C++ compiler 
 -CXXMPI=mpiCC   # compilation with mpi
 -OOPTFLAGS= -O  # compilation with optimisation
 +# $FreeBSD$
-+LIBX11= -L$(X11BASE)/lib -lX11 -lm 
++#LIBLOCAL = -ldl # for dlopen (see load.cpp and man dlopen)
++LIBX11= -L$(X11BASE)/lib -lX11 -lm
 +INCLUDEX11 = $(X11BASE)/include
 +OOPTFLAGS= -Wno-deprecated
  GOPTFLAGS= -g  # compilation with debugging 
  #--------------------------------------------------
  #  the flag of eigen value part with arpack++ tools
  #-------------------------------------------------
+-ARPACKDIR=../../arpack/ARPACK  #  here the arpack dir is at same level of FreeFem++v... dir
  EIGEN= eigenvalue.o
--LIBARPACK= -L../../arpack/ARPACK -larpack_linux -llapack -lblas
+-LIBARPACK= -L$(ARPACKDIR) -larpack_linux -llapack -lblas
 -LIBF77= -lg2c
--INCARPACKPP = -DEIGENVALUE -I../../arpack/arpack++/include
+-INCARPACKPP = -DEIGENVALUE -I../arpack/include # the FreeFem++ arpack++ files (in freefem tree)
 +LIBARPACK= -L$(LOCALBASE)/lib ${LOCALBASE}/lib/libarpack.a -lalapack -lf77blas -lcblas -latlas
 +LIBF77= -lg2c -lm
-+INCARPACKPP = -DEIGENVALUE -I$(LOCALBASE)/include/ARPACK++
++INCARPACKPP = -DEIGENVALUE -I$(LOCALBASE)/include/ARPACK++ 
++IUMFPACK= -DUMFPACK -I$(LOCALBASE)/include/UMFPACK -I$(LOCALBASE)/include/AMD
++LIBUMFPACK= -L$(LOCALBASE)/lib -lumfpack -lamd
  # ------------------------------
  # compilation flags of FreeFem++ 
  # ------------------------------
-@@ -29,7 +28,7 @@
+@@ -31,7 +31,7 @@
  # ---------------------------
  #  install and compile dir.
  # ----------------------

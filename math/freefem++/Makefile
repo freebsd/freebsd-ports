@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	math science
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
+		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
 DISTNAME=	FreeFem++v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -42,7 +43,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
-.for direx in "" -bug -eigen -tutorial
+.for direx in "" -bug -eigen -load -mpi -tutorial
 	@${MKDIR} ${EXAMPLESDIR}/${direx:S/-//}
 	@for sample in `${LS} ${WRKSRC}/examples++${direx}` ; do	\
 		${INSTALL_DATA} ${WRKSRC}/examples++${direx}/$$sample	\
