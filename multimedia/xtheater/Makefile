@@ -9,7 +9,7 @@
 PORTNAME=	xtheater
 PORTVERSION=	1.0.0.p1
 PORTEPOCH=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Xtheater-${PORTVERSION:S/.p/-pre/}
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/graphics/smpeg
+		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

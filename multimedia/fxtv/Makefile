@@ -7,7 +7,7 @@
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rhh
 EXTRACT_SUFX=	.tgz
@@ -23,8 +23,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 #RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 #		mpg123:${PORTSDIR}/audio/mpg123 \
 #		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
-#		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
-#		mplex:${PORTSDIR}/graphics/mplex
+#		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
+#		mplex:${PORTSDIR}/multimedia/mplex
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

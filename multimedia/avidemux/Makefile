@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	0.9.0.101
-CATEGORIES=	graphics multimedia
+CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
 DISTNAME=	avidemux-0.9rc1
 EXTRACT_SUFX=	.tgz
@@ -43,7 +43,7 @@ WITH_XVID=	yes
 .endif
 
 .if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/graphics/xvid
+LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-as-decoder
 .endif
 

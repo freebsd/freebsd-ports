@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg2play
 PORTVERSION=	1.1b
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 
 MAINTAINER=	charnier@lirmm.fr

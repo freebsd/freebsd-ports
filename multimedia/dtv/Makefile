@@ -7,7 +7,7 @@
 
 PORTNAME=	dtv
 PORTVERSION=	0.50
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=   http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	dillon@backplane.com

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg
 PORTVERSION=	1.2.2
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
 		ftp://ftp.mni.mcgill.ca/pub/mpeg/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/mpeg/mni.mcgill.ca/

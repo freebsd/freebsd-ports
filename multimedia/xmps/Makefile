@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps
 PORTVERSION=	0.2.0
-CATEGORIES=	graphics gnome
+CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
-CATEGORIES=	graphics
+CATEGORIES=	multimedia graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/:main \
 		http://www.go.dlr.de/fresh/unix/src/misc/:main \
 		ftp://xanim.va.pubnix.com/dlls/ \

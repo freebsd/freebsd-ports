@@ -8,7 +8,7 @@
 
 PORTNAME=	avinfo
 PORTVERSION=	0.7.1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://anime.org.ru/soft/avinfo/
 
 MAINTAINER=	ports@FreeBSD.org

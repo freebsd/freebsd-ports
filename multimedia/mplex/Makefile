@@ -7,7 +7,7 @@
 
 PORTNAME=	mplex
 PORTVERSION=	1.1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/general/graphics/mpeg/mplex/
 
 MAINTAINER=	ports@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	netshow
 PORTVERSION=	2.00.251
-CATEGORIES=	graphics net linux
+CATEGORIES=	multimedia linux net
 MASTER_SITES=	http://microsoft.com/netshow/download/en/beta/
 DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz

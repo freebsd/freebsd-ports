@@ -8,7 +8,7 @@
 
 PORTNAME=	dumpmpeg
 PORTVERSION=	0.6
-CATEGORIES=	graphics
+CATEGORIES=	multimedia graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -16,7 +16,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Dump frames from mpeg movies
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg:${PORTSDIR}/graphics/smpeg
+		smpeg:${PORTSDIR}/multimedia/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes

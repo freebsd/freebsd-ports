@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.4.4
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		ftp://ftp.Awfulhak.org/pub/vlc/ \
 		http://people.FreeBSD.org/~brian/vlc/

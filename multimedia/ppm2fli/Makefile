@@ -7,7 +7,7 @@
 
 PORTNAME=	ppm2fli
 PORTVERSION=	2.1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia graphics
 MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
 
 MAINTAINER=	ports@FreeBSD.org
