@@ -1,15 +1,15 @@
-*** krn/Makefile.in~	Sun Feb 22 17:19:33 1998
---- krn/Makefile.in	Sun Feb 22 17:19:43 1998
+*** krn/Makefile.in.orig	Sat May  9 20:38:24 1998
+--- krn/Makefile.in	Sat May  9 20:38:34 1998
 ***************
-*** 123,127 ****
+*** 129,133 ****
   INCLUDES = $(all_includes)
   
-! LDADD = $(LIBCOMPAT) $(LIBSOCKET) $(all_libraries) -lkfm -lkhtmlw -ljscript -lkdeui -lkdecore $(LIBJPEG) -lgif -lqt -lXext -lX11 -lmimelib -luulib -lgdbm $(KDE_RPATH)
+! LDADD = $(LIBCOMPAT) $(LIBSOCKET) $(all_libraries) -lkfm -lkhtmlw -ljscript -lkdeui -lkdecore -lkfile $(LIBJPEG) -lqt -lXext -lX11 -lmimelib -luulib -lgdbm $(KDE_RPATH)
   
   ICONDIR = $(kde_icondir)
---- 123,127 ----
+--- 129,133 ----
   INCLUDES = $(all_includes)
   
-! LDADD = $(LIBCOMPAT) $(LIBSOCKET) $(all_libraries) -lkfm -lkhtmlw -ljscript -lkdeui -lkdecore $(LIBJPEG) -lgif -lqt -lXext -lX11 -lmimelib -luu -lgdbm $(KDE_RPATH)
+! LDADD = $(LIBCOMPAT) $(LIBSOCKET) $(all_libraries) -lkfm -lkhtmlw -ljscript -lkdeui -lkdecore -lkfile $(LIBJPEG) -lqt -lXext -lX11 -lmimelib -luu -lgdbm $(KDE_RPATH)
   
   ICONDIR = $(kde_icondir)
