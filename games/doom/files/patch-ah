@@ -1,0 +1,22 @@
+--- linuxdoom-1.10/m_bbox.h~	Mon Dec 22 21:12:16 1997
++++ linuxdoom-1.10/m_bbox.h	Mon Dec 14 03:31:32 1998
+@@ -23,7 +23,7 @@
+ #ifndef __M_BBOX__
+ #define __M_BBOX__
+ 
+-#include <values.h>
++#include <limits.h>
+ 
+ #include "m_fixed.h"
+ 
+--- linuxdoom-1.10/doomtype.h~	Mon Dec 22 21:05:27 1997
++++ linuxdoom-1.10/doomtype.h	Mon Dec 14 03:31:14 1998
+@@ -39,7 +39,7 @@
+ 
+ // Predefined with some OS.
+ #ifdef LINUX
+-#include <values.h>
++#include <limits.h>
+ #else
+ #define MAXCHAR		((char)0x7f)
+ #define MAXSHORT	((short)0x7fff)

@@ -1,7 +1,4 @@
-This package contains all of the items you'll need to play DOOM
-under Linux/FreeBSD, except for an X server if you want to use the X
-version.  These files are for Linux DOOM version 1.8.
-
-doom1.wad is the shareware DOOM wad for version 1.8.  If you have
-DOOM or DOOM II for MS-DOS, then you can use those files instead.
-
+Here it is, at long last.  The DOOM source code is released for your
+non-profit use.  You still need real DOOM data to work with this code.
+If you don't actually own a real copy of one of the DOOMs, you should
+still be able to find them at software stores.

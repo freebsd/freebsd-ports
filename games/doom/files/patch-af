@@ -1,0 +1,11 @@
+--- linuxdoom-1.10/r_data.c~	Mon Dec 22 21:57:47 1997
++++ linuxdoom-1.10/r_data.c	Mon Dec 14 03:27:49 1998
+@@ -42,7 +42,7 @@
+ #include "r_sky.h"
+ 
+ #ifdef LINUX
+-#include  <alloca.h>
++//#include  <alloca.h>
+ #endif
+ 
+ 

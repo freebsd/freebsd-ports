@@ -1,12 +1,2 @@
 bin/doom
-share/doom/doom1.wad
-share/doom/README
-share/doom/README.config
-share/doom/README.linuxx
-libexec/doom/xdoom
-libexec/doom/sndserver
-libexec/doom/musserver.bin
-libexec/doom/musserver
-libexec/doom/joystick4xdoom
-@dirrm share/doom
-@dirrm libexec/doom
+bin/sndserver
