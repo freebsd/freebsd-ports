@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AntiSpam.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AntiSpam/HTMLEncode.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AntiSpam/NoSpam.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AntiSpam/Heuristic.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AntiSpam/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AntiSpam
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/AntiSpam
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true

@@ -241,6 +241,7 @@
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-AddHostPath
     SUBDIR += p5-Apache-Admin-Config
+    SUBDIR += p5-Apache-AntiSpam
     SUBDIR += p5-Apache-Archive
     SUBDIR += p5-Apache-AuthCookie
     SUBDIR += p5-Apache-AuthTicket
