@@ -1,0 +1,95 @@
+etc/rc.d/ircservices.sh.sample
+lib/services/convert-db
+lib/services/example-ircservices.conf
+lib/services/example-modules.conf
+lib/services/helpfiles/help
+lib/services/languages/de
+lib/services/languages/en_us
+lib/services/languages/es
+lib/services/languages/fr
+lib/services/languages/hu
+lib/services/languages/it
+lib/services/languages/ja_euc
+lib/services/languages/ja_sjis
+lib/services/languages/nl
+lib/services/languages/pt
+lib/services/languages/tr
+lib/services/modules/chanserv/access-levels.so
+lib/services/modules/chanserv/access-xop.so
+lib/services/modules/chanserv/main.so
+lib/services/modules/chanserv/sendpass.so
+lib/services/modules/database/version4.so
+lib/services/modules/encryption/md5.so
+lib/services/modules/httpd/auth-ip.so
+lib/services/modules/httpd/auth-password.so
+lib/services/modules/httpd/dbaccess.so
+lib/services/modules/httpd/debug.so
+lib/services/modules/httpd/main.so
+lib/services/modules/httpd/redirect.so
+lib/services/modules/httpd/top-page.so
+lib/services/modules/mail/main.so
+lib/services/modules/mail/sendmail.so
+lib/services/modules/mail/smtp.so
+lib/services/modules/memoserv/forward.so
+lib/services/modules/memoserv/ignore.so
+lib/services/modules/memoserv/main.so
+lib/services/modules/misc/devnull.so
+lib/services/modules/misc/helpserv.so
+lib/services/modules/misc/xml-export.so
+lib/services/modules/misc/xml-import.so
+lib/services/modules/nickserv/access.so
+lib/services/modules/nickserv/autojoin.so
+lib/services/modules/nickserv/link.so
+lib/services/modules/nickserv/mail-auth.so
+lib/services/modules/nickserv/main.so
+lib/services/modules/nickserv/oldlink.so
+lib/services/modules/nickserv/sendpass.so
+lib/services/modules/operserv/akill.so
+lib/services/modules/operserv/main.so
+lib/services/modules/operserv/news.so
+lib/services/modules/operserv/sessions.so
+lib/services/modules/operserv/sline.so
+lib/services/modules/protocol/bahamut.so
+lib/services/modules/protocol/dalnet.so
+lib/services/modules/protocol/dreamforge.so
+lib/services/modules/protocol/monkey.so
+lib/services/modules/protocol/rfc1459.so
+lib/services/modules/protocol/trircd.so
+lib/services/modules/protocol/ts8.so
+lib/services/modules/protocol/undernet-p9.so
+lib/services/modules/protocol/unreal.so
+lib/services/modules/statserv/main.so
+sbin/ircservices
+sbin/ircservices-chk
+%%PORTDOCS%%share/doc/ircservices/0.html
+%%PORTDOCS%%share/doc/ircservices/1.html
+%%PORTDOCS%%share/doc/ircservices/2.html
+%%PORTDOCS%%share/doc/ircservices/3.html
+%%PORTDOCS%%share/doc/ircservices/4.html
+%%PORTDOCS%%share/doc/ircservices/5.html
+%%PORTDOCS%%share/doc/ircservices/6.html
+%%PORTDOCS%%share/doc/ircservices/7.html
+%%PORTDOCS%%share/doc/ircservices/COPYING.html
+%%PORTDOCS%%share/doc/ircservices/a.html
+%%PORTDOCS%%share/doc/ircservices/b.html
+%%PORTDOCS%%share/doc/ircservices/c.html
+%%PORTDOCS%%share/doc/ircservices/copyright.html
+%%PORTDOCS%%share/doc/ircservices/faq.html
+%%PORTDOCS%%share/doc/ircservices/index.html
+%%PORTDOCS%%share/doc/ircservices/upgrade.html
+@dirrm lib/services/helpfiles
+@dirrm lib/services/languages
+@dirrm lib/services/modules/chanserv
+@dirrm lib/services/modules/database
+@dirrm lib/services/modules/encryption
+@dirrm lib/services/modules/httpd
+@dirrm lib/services/modules/mail
+@dirrm lib/services/modules/memoserv
+@dirrm lib/services/modules/misc
+@dirrm lib/services/modules/nickserv
+@dirrm lib/services/modules/operserv
+@dirrm lib/services/modules/protocol
+@dirrm lib/services/modules/statserv
+@dirrm lib/services/modules
+@dirrm lib/services
+%%PORTDOCS%%@dirrm share/doc/ircservices
