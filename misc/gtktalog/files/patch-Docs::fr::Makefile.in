@@ -1,7 +1,7 @@
---- Docs/fr/Makefile.in.orig	Fri Jul 11 00:36:37 2003
-+++ Docs/fr/Makefile.in	Fri Jul 11 00:37:45 2003
-@@ -326,9 +326,6 @@
- 	-rm -rf man
+--- Docs/fr/Makefile.in.orig	Tue Sep  2 06:57:10 2003
++++ Docs/fr/Makefile.in	Mon Dec 13 14:14:17 2004
+@@ -387,9 +387,6 @@
+ 	-rm -rf man.junk
  
  gtktalog/gtktalog.html: $(SGML_FILES)
 -	-db2html gtktalog.sgml
@@ -10,3 +10,12 @@
  
  dist-hook: gtktalog/gtktalog.html
  	mkdir -p $(distdir)/gtktalog
+@@ -397,7 +394,7 @@
+ 	-cp gtktalog/stylesheet-images/* $(distdir)/gtktalog
+ 
+ install-data-local: gtktalog/gtktalog.html
+-	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)/images
++	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)
+ 	-for file in $(srcdir)/gtktalog/*.html $(srcdir)/gtktalog/*.css $(srcdir)/gtktalog/*.gif; do \
+ 	basefile=`basename $$file`; \
+ 	$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(gtktalog_helpdir)/$$basefile; \
