@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.8
-PORTREVION=	1
+PORTREVISON=	1
 PORTEPOCH=	1
 PKGNAMESUFFIX=	+ipv6
 CATEGORIES=	www ipv6
@@ -46,8 +46,8 @@ CONFIGURE_ARGS=					\
 		--disable-xterm-updates		\
 		--enable-crypto			\
 		--enable-double-buffer		\
-		--enable-editor			\
-		--enable-mailnews		\
+		--disable-editor			\
+		--disable-mailnews		\
 		--enable-mathml			\
 		--enable-optimize="${CFLAGS}"	\
 		--enable-pics			\
