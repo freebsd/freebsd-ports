@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION= 	1.31
+PORTVERSION= 	1.32
 CATEGORIES= 	security www
 
 MAINTAINER=	jan@atstake.com
@@ -14,8 +14,6 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 MASTER_SITES=	http://www.cirt.net/nikto/ \
 		http://packetstormsecurity.org/UNIX/cgi-scanners/
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 RUN_DEPENDS = 	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/libwhisker/LW.pm:${PORTSDIR}/security/libwhisker
