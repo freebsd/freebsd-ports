@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ResourcePool-Resource-DBI
-PORTVERSION=	1.0000
+PORTVERSION=	1.0100
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		ResourcePool::Resource::DBI.3 ResourcePool::Factory::DBI.3
+MAN3=		ResourcePool::Resource::DBI.3 ResourcePool::Factory::DBI.3 \
+		ResourcePool::Command::DBI::Execute.3 ResourcePool::Command::DBI::Select.3 \
+		ResourcePool::Command::DBI::SelectRow.3
 
 .include <bsd.port.mk>
