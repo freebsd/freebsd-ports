@@ -1,0 +1,26 @@
+--- pop_apop.c.orig	Fri Jul 10 00:44:07 1998
++++ pop_apop.c	Tue Sep 14 23:02:05 2004
+@@ -180,17 +180,18 @@
+ 	return(pop_auth_fail(p, POP_FAILURE, "not authorized"));
+     }
+ 
+-#ifdef GDBM
+-	gdbm_close (db);
+-#else
+-    dbm_close (db);
+-#endif
+     (void) close(f);
+ 
+     MD5Init(&mdContext);
+     MD5Update(&mdContext, (unsigned char *)p->md5str, strlen(p->md5str));
+     MD5Update(&mdContext, (unsigned char *)obscure(ddatum.dptr), (ddatum.dsize - 1));
+     MD5Final(digest, &mdContext);
++
++#ifdef GDBM
++    gdbm_close (db);
++#else
++    dbm_close (db);
++#endif
+ 
+     cp = buffer;
+     for (ep = (dp = digest) + sizeof digest / sizeof digest[0];
