@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.4 1998/03/04 16:18:42 itojun Exp $
+# $Id: Makefile,v 1.5 1998/03/05 01:54:33 itojun Exp $
 #
 
 DISTNAME=	smtpfeed-0.58
@@ -22,7 +22,7 @@ NO_PACKAGE=	"complex configuration for sendmail.cf needed"
 
 SENDMAIL=	sendmail.8.8.8
 SENDMAILDIR=	sendmail-8.8.8
-SENDMAILPATCH=	sendmail888+3.0Wb11
+SENDMAILPATCH=	sendmail888+3.0Wb13
 WRKSRC_SMTPFEED=	${WRKSRC}
 WRKSRC_SENDMAIL=	${WRKDIR}/${SENDMAILDIR}/src
 
