@@ -6,8 +6,8 @@
  
 -echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
-+echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_exit in ${PTHREAD_LIBS}" >&5
++echo $ECHO_N "checking for pthread_exit in ${PTHREAD_LIBS}... $ECHO_C" >&6
  if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else

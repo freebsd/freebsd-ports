@@ -53,9 +53,11 @@ include/simgear/scene/material/mat.hxx
 include/simgear/scene/material/matlib.hxx
 include/simgear/scene/material/matmodel.hxx
 include/simgear/scene/model/animation.hxx
+include/simgear/scene/model/custtrans.hxx
 include/simgear/scene/model/location.hxx
 include/simgear/scene/model/model.hxx
 include/simgear/scene/model/modellib.hxx
+include/simgear/scene/model/personality.hxx
 include/simgear/scene/model/placement.hxx
 include/simgear/scene/sky/cloud.hxx
 include/simgear/scene/sky/clouds3d/SkySceneLoader.hpp
@@ -80,8 +82,9 @@ include/simgear/screen/tr.h
 include/simgear/serial/serial.hxx
 include/simgear/sg_inlines.h
 include/simgear/sg_traits.hxx
-include/simgear/sound/sound.hxx
-include/simgear/sound/soundmgr.hxx
+include/simgear/sound/sample_openal.hxx
+include/simgear/sound/soundmgr_openal.hxx
+include/simgear/sound/xmlsound.hxx
 include/simgear/structure/callback.hxx
 include/simgear/structure/commands.hxx
 include/simgear/structure/event_mgr.hxx

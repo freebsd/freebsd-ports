@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.7
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
@@ -20,15 +20,14 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Internal compiler error in gcc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
