@@ -1,4 +1,8 @@
+# $FreeBSD$
+#
 # mime.types for Elm 2.4PL24 ME8 (or greater)
+#
+# Written by Cyrille Lefevre <clefevre@poboxes.com>
 #
 # Format of this file:
 # <suffix> <content-type>
