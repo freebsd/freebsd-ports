@@ -39,6 +39,7 @@ bin/mkdepend
 %%MICO_SERVICE%%bin/timed
 %%MICO_SERVICE%%bin/traderd
 %%MICO_SERVICE%%bin/traversald
+%%FLEX%%include/FlexLexer.h
 include/CORBA-SMALL.h
 include/CORBA.h
 include/coss/CompoundExternalization_impl.h

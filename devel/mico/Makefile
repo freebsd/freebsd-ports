@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--enable-csiv2 --enable-csl2
 
 PLIST_SUB+=	MICO_X11=${MICO_X11} MICO_QT=${MICO_QT} MICO_GTK=${MICO_GTK} \
 		MICO_TCL=${MICO_TCL} MICO_SSL=${MICO_SSL} \
-		MICO_SERVICE=${MICO_SERVICE}
+		MICO_SERVICE=${MICO_SERVICE} FLEX=${FLEX}
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
@@ -124,6 +124,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure.in
 .if ${OSVERSION} < 500035
 	@${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
+FLEX=	""
+.else
+FLEX=	"@comment "
 .endif
 
 post-configure:
