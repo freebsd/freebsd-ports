@@ -10,6 +10,7 @@
     SUBDIR += 32upgrade
     SUBDIR += 34upgrade
     SUBDIR += 40upgrade
+    SUBDIR += 41upgrade
     SUBDIR += 44bsd-more
     SUBDIR += Howto
     SUBDIR += aclgen
