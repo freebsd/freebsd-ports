@@ -1,10 +1,10 @@
 # ex:ts=8
 # Ports collection makefile for:	gcc
-# Version required:			2.8.0
+# Version required:			2.8.1
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.15 1998/09/27 04:25:56 obrien Exp $
+# $Id: Makefile,v 1.16 1998/10/08 01:19:19 asami Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -13,17 +13,25 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN_ELF=	"/usr/lib/aout/crt0.o: file not recognized: File format not recognized"
-PLIST_SUB=	GNUHOST=${GNUHOST}
+ARE_WE_ELF!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+.if ${ARE_WE_ELF} == "elf"
+GNUHOST=	i386-unknown-freebsdelf${OSREL}
+.else
 GNUHOST=	i386-unknown-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
+.endif
+
+PLIST_SUB=	GNUHOST=${GNUHOST}
+CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++ 
+.if ${ARE_WE_ELF} == "elf"
+CONFIGURE_ARGS+=	--host=${GNUHOST}
+.endif
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
 
 pre-fetch:
-	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}"
+	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${ARE_WE_ELF}"
 
 pre-configure:
 	@(cd ${WRKSRC}/config/i386/ ; \
