@@ -1,0 +1,20 @@
+--- aclocal.m4.orig	Tue Oct  9 23:54:02 2001
++++ aclocal.m4	Wed Feb 20 14:18:56 2002
+@@ -103,11 +103,15 @@
+ dnl
+ AC_DEFUN(ICE_CHECK_CONVERSION, [
+   AC_MSG_CHECKING([whether iconv converts from $1 to $2])
++  LIBS="-lgiconv $LIBS"
+   AC_TRY_RUN([
+-    #include <iconv.h>
++    #include <giconv.h>
++    #include <locale.h>
+     
+     int main() {
+-        iconv_t cd = iconv_open("$2", "$1");
++        iconv_t cd;
++	setlocale(LC_ALL, "");
++        cd = iconv_open("$2", "$1");
+ 	iconv_close(cd);
+ 	return ((iconv_t) -1 == cd);
+     }],

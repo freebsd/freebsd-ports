@@ -1,0 +1,20 @@
+--- src/ylocale.h.orig	Tue Oct  9 23:54:04 2001
++++ src/ylocale.h	Wed Feb 20 15:08:20 2002
+@@ -9,14 +9,16 @@
+ #define __YLOCALE_H
+ 
+ #ifdef CONFIG_I18N
+-#include <iconv.h>
++#include <giconv.h>
+ 
++/*
+ #if defined(CONFIG_LIBICONV) && !defined (_LIBICONV_VERSION)
+ #error libiconv in use but included iconv.h not from libiconv
+ #endif
+ #if !defined(CONFIG_LIBICONV) && defined (_LIBICONV_VERSION)
+ #error libiconv not in use but included iconv.h is from libiconv
+ #endif
++*/
+ 
+ #endif
+ 

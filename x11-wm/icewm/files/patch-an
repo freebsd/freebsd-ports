@@ -1,0 +1,15 @@
+--- src/aapm.h.orig	Tue Feb 19 14:08:56 2002
++++ src/aapm.h	Tue Feb 19 14:09:30 2002
+@@ -2,6 +2,12 @@
+ #include "ywindow.h"
+ #include "ytimer.h"
+ 
++#ifdef __FreeBSD__
++#define APMDEV "/dev/apm"
++#else
++#define APMDEV "/proc/apm"
++#endif
++
+ #ifdef CONFIG_APPLET_APM
+ class YApm: public YWindow, public YTimerListener {
+ public:
