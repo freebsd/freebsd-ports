@@ -51,6 +51,7 @@
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += jewel
+    SUBDIR += kahakai
     SUBDIR += kappdock
     SUBDIR += kdeartwork3
     SUBDIR += kwin_flatcurve
