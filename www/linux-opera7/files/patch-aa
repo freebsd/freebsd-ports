@@ -1,6 +1,6 @@
---- install.sh.orig	Thu May 23 13:34:04 2002
-+++ install.sh	Mon May 27 14:25:51 2002
-@@ -737,6 +737,16 @@
+--- install.sh.orig	Wed Jul  3 18:05:43 2002
++++ install.sh	Wed Jul  3 18:06:06 2002
+@@ -751,6 +751,16 @@
      /usr/lib/j2re1.3/plugin/i386/netscape4 \\"
  	;;
  
@@ -17,7 +17,7 @@
  	mips*:Linux)
  	    wrapper_plugin_paths=''
  	;;
-@@ -799,7 +809,7 @@
+@@ -813,7 +823,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -26,3 +26,49 @@
      /usr/lib/Acrobat[45]/bin \\
      /usr/X11R6/lib/Acrobat[45]/bin \\
      /opt/Acrobat[45]/bin \\
+@@ -938,39 +948,15 @@
+ 	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
+ 
+      # System wide configuration files
+-	if can_write_to "/etc"; then
+-	    echo
+-	    echo "System wide configuration files:"
+-	    echo "  /etc/opera6rc"
+-	    echo "  /etc/opera6rc.fixed"
+-	    echo " cannot be prefixed"
+-	    echo "Do you want to install them [y,n | yes,no]?"
+-	    while true; do
+-		read install_config
+-		case "${install_config}" in
+-
+-		    ''|y|Y|yes|YES)
+-			backup /etc/opera6rc opera6rc config
+-			backup /etc/opera6rc.fixed opera6rc.fixed config
+-			cp $cpv $cpf $cpp config/opera6rc /etc
+-			cp $cpv $cpf $cpp config/opera6rc.fixed /etc
+-			break
+-			;;
+-
+-		    n|N|no|NO)
+-			break
+-			;;
+-		    *)
+-			echo 'Invalid answer, try again:'
+-			;;
+-		esac
+-	    done
++	if can_write_to "%%PREFIX%%/etc"; then
++			cp $cpv $cpf $cpp config/opera6rc %%PREFIX%%/etc
++			cp $cpv $cpf $cpp config/opera6rc.fixed %%PREFIX%%/etc
+ 	else
+ 	    echo
+-	    echo "User \"${USERNAME}\" does not have write access to /etc"
++	    echo "User \"${USERNAME}\" does not have write access to %%PREFIX%%/etc"
+ 	    echo " System wide configuration files:"
+-	    echo "  /etc/opera6rc"
+-	    echo "  /etc/opera6rc.fixed"
++	    echo "  %%PREFIX%%/etc/opera6rc"
++	    echo "  %%PREFIX%%/etc/opera6rc.fixed"
+ 	    echo " were not installed"
+ 	fi
+ 

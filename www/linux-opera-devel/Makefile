@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	6.01.20020523
+PORTVERSION=	6.02.20020701
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/601/final/en/qt_static/ \
-		ftp://ftp.opera.com/pub/opera/linux/601/final/en/qt_static/
+MASTER_SITES=	http://opera.online.no/linux/602/final/en/qt_static/ \
+		ftp://ftp.opera.com/pub/opera/linux/602/final/en/qt_static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/01./01-/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/02./02-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -20,13 +20,15 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linu
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 do-configure:
-	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
+	${REINPLACE_CMD} -e \
+	    's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
 	    ${WRKSRC}/install.sh
 
 do-install:
