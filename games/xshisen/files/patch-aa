@@ -1,51 +1,69 @@
-*** Makefile.in.orig	Tue Jan 23 08:35:21 1996
---- Makefile.in	Fri Oct 11 08:19:53 1996
+*** configure.orig	Tue Feb 27 21:29:29 1996
+--- configure	Sat Feb 22 23:12:20 1997
 ***************
-*** 39,52 ****
-  SCF   = xshisen-scores
+*** 9,17 ****
   
-  LIBS      = @LIBS@ 
-! CODECONV  = ./$(exec_name) -KCONV jis
+  # Defaults:
+  ac_help=
+! ac_default_prefix=/usr/local
+  # Any additions from configure.in:
+! ac_default_prefix=/usr/local
+  ac_help="$ac_help
+    --with-x                use the X Window System"
+  ac_help="$ac_help
+--- 9,17 ----
   
-  all: $(PROGS)
-  
-  $(exec_name): $(OBJS)
-  	$(CXX) $(LDFLAGS) $(OBJS) $(LIBS) -o $(exec_name)
-  
-! install: $(PROGS) $(AD) $(ADJ)
-  	@echo "XShisen executable directory is " $(bindir)
-  	@$(MKDIR) $(bindir)
-  	@chmod 755 $(bindir)
---- 39,52 ----
-  SCF   = xshisen-scores
-  
-  LIBS      = @LIBS@ 
-! CODECONV  = ./$(exec_name) -KCONV euc
-  
-  all: $(PROGS)
-  
-  $(exec_name): $(OBJS)
-  	$(CXX) $(LDFLAGS) $(OBJS) $(LIBS) -o $(exec_name)
-  
-! install: $(PROGS) $(AD) $(ADJ) install.man
-  	@echo "XShisen executable directory is " $(bindir)
-  	@$(MKDIR) $(bindir)
-  	@chmod 755 $(bindir)
+  # Defaults:
+  ac_help=
+! ac_default_prefix=/usr/X11R6
+  # Any additions from configure.in:
+! ac_default_prefix=/usr/X11R6
+  ac_help="$ac_help
+    --with-x                use the X Window System"
+  ac_help="$ac_help
 ***************
-*** 63,73 ****
---- 63,77 ----
-  	for file in pixmaps/*.xpm; do \
-  		$(INSTALLD) $$file $(XSHISENLIB)/`basename $$file`; \
-  	done
-+ 	@$(MKDIR) $(XAD_DIR)/$(class_name)
-+ 	@$(MKDIR) $(JXAD_DIR)/$(class_name)
-  	$(INSTALLD) $(AD) $(XAD_DIR)/$(class_name)
-  	$(INSTALLD) $(ADJ) $(JXAD_DIR)/$(class_name)
+*** 53,59 ****
+  bindir='${exec_prefix}/bin'
+  sbindir='${exec_prefix}/sbin'
+  libexecdir='${exec_prefix}/libexec'
+! datadir='${prefix}/share'
+  sysconfdir='${prefix}/etc'
+  sharedstatedir='${prefix}/com'
+  localstatedir='${prefix}/var'
+--- 53,59 ----
+  bindir='${exec_prefix}/bin'
+  sbindir='${exec_prefix}/sbin'
+  libexecdir='${exec_prefix}/libexec'
+! datadir='${prefix}/lib/X11'
+  sysconfdir='${prefix}/etc'
+  sharedstatedir='${prefix}/com'
+  localstatedir='${prefix}/var'
+***************
+*** 1577,1589 ****
   
-  install.man: $(exec_name).jman $(exec_name).man
-+ 	mkdir -p $(MANDIR)/man6
-  	$(INSTALLD) $(exec_name).man $(MANDIR)/man6/$(exec_name).6
-+ 	mkdir -p $(MANDIR)/$(JAPANESE)/man6
-  	$(INSTALLD) $(exec_name).jman $(MANDIR)/$(JAPANESE)/man6/$(exec_name).6
   
-  clean:
+  # Check whether --enable-japanese or --disable-japanese was given.
+! if test "${enable_japanese+set}" = set; then
+!   enableval="$enable_japanese"
+!   cat >> confdefs.h <<EOF
+  #define KANJICODE "${enable_japanese}"
+! EOF
+  
+! fi
+  
+  
+  cat >> confdefs.h <<\EOF
+--- 1577,1589 ----
+  
+  
+  # Check whether --enable-japanese or --disable-japanese was given.
+! #if test "${enable_japanese+set}" = set; then
+! #  enableval="$enable_japanese"
+! #  cat >> confdefs.h <<EOF
+  #define KANJICODE "${enable_japanese}"
+! #EOF
+  
+! #fi
+  
+  
+  cat >> confdefs.h <<\EOF
