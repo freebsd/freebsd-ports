@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.8
+PORTVERSION=	0.8.3
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -38,7 +38,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${MOZHEADERS}" \
 		--with-mozilla-libs="${MOZLIBS}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib -pthread -lgcc_r"
 
 CFLAGS+=	-D_REENTRANT -D_THREAD_SAFE -fno-rtti
 
