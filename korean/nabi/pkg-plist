@@ -1,4 +1,5 @@
 bin/nabi
+share/gnome/nabi/candidate/nabi.txt
 share/gnome/nabi/compose/default
 share/gnome/nabi/keyboard/2qwerty
 share/gnome/nabi/keyboard/32qwerty
@@ -12,9 +13,9 @@ share/gnome/nabi/themes/KingSejong/none.png
 share/gnome/nabi/themes/MSWindows/english.png
 share/gnome/nabi/themes/MSWindows/hangul.png
 share/gnome/nabi/themes/MSWindows/none.png
-share/gnome/nabi/themes/MSWindows2000/english.png
-share/gnome/nabi/themes/MSWindows2000/hangul.png
-share/gnome/nabi/themes/MSWindows2000/none.png
+share/gnome/nabi/themes/MSWindowsXP/english.png
+share/gnome/nabi/themes/MSWindowsXP/hangul.png
+share/gnome/nabi/themes/MSWindowsXP/none.png
 share/gnome/nabi/themes/Mac/README
 share/gnome/nabi/themes/Mac/english.png
 share/gnome/nabi/themes/Mac/hangul.png
@@ -35,10 +36,11 @@ share/locale/ko/LC_MESSAGES/nabi.mo
 @dirrm share/gnome/nabi/themes/SimplyRed
 @dirrm share/gnome/nabi/themes/Onion
 @dirrm share/gnome/nabi/themes/Mac
-@dirrm share/gnome/nabi/themes/MSWindows2000
+@dirrm share/gnome/nabi/themes/MSWindowsXP
 @dirrm share/gnome/nabi/themes/MSWindows
 @dirrm share/gnome/nabi/themes/KingSejong
 @dirrm share/gnome/nabi/themes
 @dirrm share/gnome/nabi/keyboard
 @dirrm share/gnome/nabi/compose
+@dirrm share/gnome/nabi/candidate
 @dirrm share/gnome/nabi
