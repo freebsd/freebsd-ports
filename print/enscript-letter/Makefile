@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	enscript-${PAPERSIZE}
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.4
 CATEGORIES+=	print
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	enscript
+MASTER_SITES=	http://people.ssh.com/mtr/genscript/
 DISTNAME=	enscript-${PORTVERSION}
 
 MAINTAINER=	kline@thought.org
 COMMENT=	ASCII-to-PostScript filter
 
+# Work around configure issue
+CC=
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_FLAGS=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 
+INFO=		enscript
 MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1
 STRIP=
 
@@ -28,7 +31,7 @@ STRIP=
 #LDFLAGS+=-static
 
 PAPERSIZE?=	letter
-PS!=		echo ${PAPERSIZE} | tr l L | tr a A
+PS!=		${ECHO} ${PAPERSIZE} | tr l L | tr a A
 
 .if ${PAPERSIZE} == a4
 WIDTH=8.27
