@@ -1,0 +1,140 @@
+Index: webmagick.in
+===================================================================
+RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
+retrieving revision 1.103
+diff -u -r1.103 webmagick.in
+--- webmagick.in	28 Aug 2002 21:42:32 -0000	1.103
++++ webmagick.in	5 Sep 2002 17:28:04 -0000
+@@ -302,7 +302,7 @@
+ $opt_serversidemap = 0;         # Enable server-side maps writting
+ 				
+ $perlVarsVersion = 0; # default this to 0 for it to be overidden by appropriate status files				
+-$requiredPerlVarsVersion = 2.2; # need this version to avoid regeneration of files
++$requiredPerlVarsVersion = 2.3; # need this version to avoid regeneration of files
+ 
+ #
+ # RC files
+@@ -1214,6 +1214,8 @@
+     #	close LOCKFILE;
+     #}	
+ 
++    # XXX: lowres implemented for javascript only
++    $opt_lowres = 0 if !$opt_javascript;
+ 
+     $currentDate = strftime ($opt_msg_date_format, localtime);
+ 
+@@ -1597,7 +1599,6 @@
+ 	 'anonymous'		=> $opt_anonymous,
+ 	 'backgroundimg'	=> $opt_icons{'background'},
+ 	 'cachedir'             => $opt_cachedir,
+-	 'lowresdir'             => $opt_lowresdir,
+ 	 'coloralink'		=> $opt_coloralink,
+ 	 'colorback'		=> $opt_colorback,
+ 	 'colorfore'		=> $opt_colorfore,
+@@ -1634,6 +1635,12 @@
+ 	 'jsfunctions'          => !$opt_javascript ? "" : $fileNames{'jsFunctions'},
+ 	 'jspageindex'          => !$opt_javascript ? "" : $fileNames{'jsPageIndex'},
+ 	 'jsvariables'          => !$opt_javascript ? "" : $fileNames{'jsVariables'},
++	 'lowres'               => $opt_lowres,
++	 'lowresdir'            => !$opt_lowres ? "" : $opt_lowresdir,
++	 'lowresformat'         => !$opt_lowres ? "" : $opt_lowresformat,
++	 'lowresgeom'           => !$opt_lowres ? "" : $opt_lowresgeom,
++	 'lowresgeometry'       => !$opt_lowres ? "" : $opt_lowresgeometry,
++	 'lowresmin'            => !$opt_lowres ? 0 : $opt_lowresmin,
+ 	 'metaauthor'		=> $opt_metaauthor,
+ 	 'metacharset'          => $opt_metacharset,
+ 	 'metaclassification'	=> $opt_metaclassification,
+@@ -1904,14 +1911,13 @@
+     # Clean up cached thumbnails
+     #
+     if( $opt_cache && -d $opt_cachedir ) {
++        my @extra;
++        my %tarray;
++
+         opendir( CACHEDIR, "$opt_cachedir")
+             || die("$0: Failed to open directory $opt_cachedir\n$@\n");
+         @cacheFiles = grep(!/$excludeRegex/io,readdir( CACHEDIR ));
+         closedir( CACHEDIR );
+-    }
+-    {
+-        my @extra;
+-        my %tarray;
+ 
+         grep( $tarray{$_}++, @imgfiles );
+         @extra = grep( $_ = "$opt_cachedir/$_", grep( ! $tarray{$_}, @cacheFiles ));
+@@ -1922,14 +1928,13 @@
+     # Clean up cached low resolution images
+     #
+     if( $opt_lowres && -d $opt_lowresdir ) {
++        my @extra;
++        my %tarray;
++
+         opendir( LOWRESDIR, "$opt_lowresdir")
+             || die("$0: Failed to open directory $opt_lowresdir\n$@\n");
+         @lowresFiles = grep(!/$excludeRegex/io,readdir( LOWRESDIR ));
+         closedir( LOWRESDIR );
+-    }
+-    {
+-        my @extra;
+-        my %tarray;
+ 
+         grep( $tarray{$_}++, @imgfiles );
+         @extra = grep( $_ = "$opt_lowresdir/$_", grep( ! $tarray{$_}, @lowresFiles ));
+@@ -2889,12 +2894,12 @@
+     #
+     # If caching thumbnails then ensure that directory exists
+     #
+-    mkdir( $opt_cachedir, 0755 ) if ! -d $opt_cachedir;
++    mkdir( $opt_cachedir, 0755 ) if $opt_cache && ! -d $opt_cachedir;
+ 
+     #
+     # If caching low resolution images then ensure that directory exists
+     #
+-    mkdir( $opt_lowresdir, 0755 ) if ! -d $opt_lowresdir;
++    mkdir( $opt_lowresdir, 0755 ) if $opt_lowres && ! -d $opt_lowresdir;
+ 
+     # Read images into PerlMagick object
+     print( STDERR "\nReading images: ", join(' ', @{$imageNames[$pageNumber - 1]}), "\n" )
+@@ -2925,18 +2930,20 @@
+ 				$filesize,	# Image file size
+ 				$magick);
+ 
++		if ($opt_lowres) {
+ #PMF: resize images using createLowResolutionImage()
+-		#first do the low resolution image
+-		($rc, $filesize, $width, $height, $magick) = 
+-			&createLowResolutionImage ($image, $opt_lowresdir, $imagename, 0, $opt_lowres, 0,
+-																 $opt_forcelowres, $opt_lowresgeometry, 
+-																 $opt_lowresformat, $opt_lowresmin, 
+-																 0, 0);
+-		if ($rc == -1) {
+-			next READ;
+-		}
++			#first do the low resolution image
++			($rc, $filesize, $width, $height, $magick) =
++				&createLowResolutionImage ($image, $opt_lowresdir, $imagename, 0, 1, 0,
++																	 $opt_forcelowres, $opt_lowresgeometry,
++																	 $opt_lowresformat, $opt_lowresmin,
++																	 0, 0);
++			if ($rc == -1) {
++				next READ;
++			}
+ 
+-		undef @$image; # Only delete image data, not object
++			undef @$image; # Only delete image data, not object
++		}
+ 
+ 		#then do the thumbnail
+ 		($rc, $filesize, $width, $height, $magick) = 
+@@ -3910,7 +3917,10 @@
+ 		# the size specified (it returns a number of standard
+ 		# scaled sizes) but not smaller.
+ 		# This uses a feature available in PerlMagick 1.12 and beyond
+-		$status = $image->Set(size=>$a_geometry);
++
++		# subrange 1: read only first image from animated GIFs, etc.
++
++		$status = $image->Set(size=>$a_geometry,subrange=>1);
+ 		handleMagickError( __FILE__, __LINE__, "$a_geometry", $status) if "$status";
+ 		
+ 		# Read image
