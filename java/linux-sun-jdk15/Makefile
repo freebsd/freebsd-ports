@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	jdk
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	${DL_JDK_VERSION:S/_/./g}
 PORTEPOCH=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
-DISTNAME=	jdk-1_5_0-linux-i586
+DISTNAME=	jdk-${DL_JDK_VERSION:S/./_/g}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	java@FreeBSD.org
@@ -26,14 +25,15 @@ NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 LATEST_LINK=	linux-sun-jdk15
 
-WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
+WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.5.0
-DL_JDK_VERSION=	"${JDK_VERSION}"
+JDK_REVISION=	01
+DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://java.sun.com/j2se/1.5.0/download.jsp
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
