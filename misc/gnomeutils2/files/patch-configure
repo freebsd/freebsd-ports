@@ -1,11 +1,11 @@
---- configure.orig	Sun May 12 01:05:15 2002
-+++ configure	Sun May 12 01:08:20 2002
-@@ -8258,7 +8258,7 @@
- 	< $srcdir/po/POTFILES.in > po/POTFILES
+--- configure.orig	Mon Jan 13 06:31:59 2003
++++ configure	Mon Jan 13 19:40:06 2003
+@@ -10323,7 +10323,7 @@
  
- cat >>confdefs.h <<EOF
+ 
+ cat >>confdefs.h <<_ACEOF
 -#define GNOME_ICONDIR "${prefix}/share/pixmaps"
 +#define GNOME_ICONDIR "${datadir}/pixmaps"
- EOF
+ _ACEOF
  
- ac_config_files="$ac_config_files Makefile gnome-utils.spec po/Makefile.in idl/Makefile gcalc/Makefile gcalc/help/Makefile gcalc/help/C/Makefile logview/Makefile logview/gnome-system-log-security logview/pixmaps/Makefile logview/help/Makefile logview/help/C/Makefile gcharmap/Makefile gcharmap/src/Makefile gcharmap/pixmaps/Makefile gcharmap/help/Makefile gcharmap/help/C/Makefile gsearchtool/Makefile gsearchtool/help/Makefile gsearchtool/help/C/Makefile gdialog/Makefile gdialog/help/Makefile gdialog/help/C/Makefile gdictsrc/Makefile gdictsrc/help/Makefile gdictsrc/help/C/Makefile gfloppy/Makefile gfloppy/doc/Makefile gfloppy/doc/C/Makefile gfloppy/src/Makefile meat-grinder/Makefile meat-grinder/help/Makefile meat-grinder/help/C/Makefile"
+ 
