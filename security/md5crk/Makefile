@@ -20,6 +20,8 @@ COMMENT=	Distributed project to generate MD5 collisions (i386 binary)
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
+BROKEN=		"Unfetchable"
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/md5crk

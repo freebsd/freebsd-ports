@@ -24,6 +24,7 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
+BROKEN=		"Unfetchable"
 RESTRICTED=	"unsure distribution condition"
 
 USE_REINPLACE=	yes
