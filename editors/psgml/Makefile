@@ -14,7 +14,7 @@ DISTNAME=	psgml-${PSGML_VER}
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-PSGML_VER=		1.2.0
+PSGML_VER=		1.2.1
 PSGML_STARTUPEL=	psgml-startup.el
 CATALOG=		${PREFIX}/share/sgml/catalog
 
