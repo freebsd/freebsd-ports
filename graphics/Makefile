@@ -72,6 +72,7 @@
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes
+    SUBDIR += enblend
     SUBDIR += enfle
     SUBDIR += entice
     SUBDIR += eog2
