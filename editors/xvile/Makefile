@@ -1,13 +1,13 @@
 # New ports collection makefile for:    xvile
-# Version required:     7.2
+# Version required:     7.3
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.12 1997/06/17 20:11:58 gj Exp $
+# $Id: Makefile,v 1.13 1997/09/06 19:58:03 gj Exp $
 #
 
-DISTNAME=	vile-7.2
-PKGNAME=	xvile-7.2
+DISTNAME=	vile-7.3
+PKGNAME=	xvile-7.3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.clark.net/pub/dickey/vile/ \
 		ftp://id.wing.net/pub/pgf/vile/
@@ -19,6 +19,7 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-screen=${SCREEN_TYPE}
 MAN1=		xvile.1
+NO_PATCH=	yes
 
 pre-configure:
 	@echo "To use xvile with menus, set the environment variable USE_MENUS"
