@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.3/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	DougB@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/src
 
