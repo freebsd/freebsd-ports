@@ -4,7 +4,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.27 1998/11/13 18:27:17 ache Exp $
+# $Id: Makefile,v 1.28 1998/11/15 15:36:06 ache Exp $
 #
 
 DISTNAME=       libwww-perl-5.36
@@ -59,6 +59,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 do-configure:
 		@ cd ${WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
-				     INSTALLMAN1DIR=${PREFIX}/man/man1
+				     INSTALLMAN1DIR=${PREFIX}/man/man1 \
+				     INSTALLSCRIPT=${PREFIX}/bin
 
 .include <bsd.port.mk>
