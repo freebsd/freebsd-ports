@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1998/07/20 23:56:17 dburr Exp $
+# $Id: Makefile,v 1.28 1998/08/30 02:35:31 max Exp $
 #
 
     SUBDIR += agrep
@@ -17,6 +17,7 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += latex2html
+    SUBDIR += libxml
     SUBDIR += linuxdoc
     SUBDIR += mgdiff
     SUBDIR += nfbtrans
