@@ -1,3 +1,6 @@
+%%PYTHON_SITELIBDIR%%/curl/__init__.py
+%%PYTHON_SITELIBDIR%%/curl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/curl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pycurl.so
 share/doc/py-curl/ChangeLog
 share/doc/py-curl/COPYING
@@ -5,13 +8,12 @@ share/doc/py-curl/INSTALL
 share/doc/py-curl/README
 share/doc/py-curl/TODO
 share/doc/py-curl/html/callbacks.html
-share/doc/py-curl/html/curlmultiobjects.html
+share/doc/py-curl/html/curlmultiobject.html
 share/doc/py-curl/html/curlobject.html
 share/doc/py-curl/html/pycurl.html
 share/doc/py-curl/tests/test.py
 share/doc/py-curl/tests/test_cb.py
 share/doc/py-curl/tests/test_debug.py
-share/doc/py-curl/tests/test_fileupload.py
 share/doc/py-curl/tests/test_getinfo.py
 share/doc/py-curl/tests/test_gtk.py
 share/doc/py-curl/tests/test_internals.py
@@ -29,8 +31,8 @@ share/doc/py-curl/tests/test_stringio.py
 share/doc/py-curl/tests/test_xmlrpc.py
 share/doc/py-curl/tests/util.py
 share/examples/py-curl/basicfirst.py
-share/examples/py-curl/curl.py
 share/examples/py-curl/gtkhtml_demo.py
+share/examples/py-curl/linksys.py
 share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
 share/examples/py-curl/sfquery.py
@@ -39,3 +41,4 @@ share/examples/py-curl/xmlrpc_curl.py
 @dirrm share/doc/py-curl/tests
 @dirrm share/doc/py-curl/html
 @dirrm share/doc/py-curl
+@dirrm %%PYTHON_SITELIBDIR%%/curl
