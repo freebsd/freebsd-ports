@@ -59,29 +59,32 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
 CXXFLAGS+=	-fno-exceptions
 .endif
 
+# MySQL-Server part
+.if !defined(CLIENT_ONLY)
+RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
+
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "	WITH_CHARSET=charset	define the primary built-in charset (latin1);"
 	@${ECHO} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
-	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files."
+	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
+	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "				This is _NOT_ recommended for production"
+	@${ECHO} "				servers. Expect problems when enabled."
 	@${ECHO} "	SKIP_INSTALL_DB=yes	Skip mysql_install_db"
 	@${ECHO} "				(i. e. leave ${DB_DIR} alone)."
 	@${ECHO} "				This is useful for upgrades."
 	@${ECHO} "				Be sure to know what you are doing!"
-	@${ECHO} "	INSTALL_DB_FORCE=yes	don't run resolveip to do some additional"
-	@${ECHO} "				DNS checks before inserting local hostname to"
+	@${ECHO} "	SKIP_DNS_CHECK=yes	don't run resolveip to do an additional"
+	@${ECHO} "				DNS check before inserting local hostname to"
 	@${ECHO} "				mysql database."
 	@${ECHO} "				Use if your machine has no offical DNS entry."
 	@${ECHO} ""
-
-# MySQL-Server part
-.if !defined(CLIENT_ONLY)
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
-
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
 post-patch:
 	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
@@ -108,7 +111,7 @@ pre-install:
 post-install:
 .if !defined(PACKAGE_BUILDING)
 .if !defined(SKIP_INSTALL_DB)
-.if defined(INSTALL_DB_FORCE)
+.if defined(SKIP_DNS_CHECK)
 	${PREFIX}/bin/mysql_install_db --force
 .else
 	${PREFIX}/bin/mysql_install_db
