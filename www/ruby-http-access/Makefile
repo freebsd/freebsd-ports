@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.G
+PORTVERSION=	2.H
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/http-access/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,9 +21,9 @@ NO_BUILD=	yes
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
-.endif
+#.if !defined(NOPORTDOCS)
+#	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+#	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+#.endif
 
 .include <bsd.port.mk>
