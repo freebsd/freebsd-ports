@@ -6,6 +6,7 @@ lib/libgpg-error.so
 lib/libgpg-error.la
 lib/libgpg-error.a
 share/aclocal/gpg-error.m4
+share/locale/de/LC_MESSAGES/libgpg-error.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

@@ -7,6 +7,7 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/${PORTNAME}
@@ -15,6 +16,7 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
 USE_GPG=	yes
+USE_GETTEXT=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
