@@ -1,22 +1,25 @@
---- saferpay/saferpay.mk.orig	Fri Dec 15 02:54:13 2000
-+++ saferpay/saferpay.mk	Wed Sep 12 07:07:34 2001
-@@ -7,13 +7,13 @@
+--- saferpay/saferpay.mk.orig	Tue Feb 18 16:58:08 2003
++++ saferpay/saferpay.mk	Tue Feb 18 16:58:50 2003
+@@ -7,18 +7,11 @@
  
  ####### Compiler, tools and options
  
+-#CC	=	/project/gcc31/bin/gcc
+-#CXX	=	/project/gcc31/bin/g++
+-
 -CC	=	gcc
 -CXX	=	g++
--CFLAGS	=	-pipe -O2
--CXXFLAGS=	-pipe -O2
-+#CC	=	gcc
-+#CXX	=	g++
-+#CFLAGS	=	-pipe -O2
-+#CXXFLAGS=	-pipe -O2
- INCPATH	=	
+-
+-CFLAGS	=	-pipe -fPIC -O2
+-CXXFLAGS=	-pipe -fPIC -O2
++CFLAGS	+=	-fPIC
++CXXFLAGS +=	-fPIC
++LFLAGS	=	-fPIC -Lout
+ INCPATH	=		
+-#LINK	=	/project/gcc31/bin/g++
 -LINK	=	g++
--LFLAGS	=	
+-LFLAGS	=	-fPIC
 +LINK	=	$(CXX)
-+LFLAGS	=	-Lout
  LIBS	=	-lidpapp
  MOC	=	$(QTDIR)/bin/moc
  
