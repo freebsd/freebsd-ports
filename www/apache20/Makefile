@@ -111,6 +111,8 @@ BROKEN=				"apr is installed and may conflict with apache one\
 .   endif
 .endif
 
+WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
+
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
 
