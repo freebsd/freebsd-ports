@@ -7,13 +7,10 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
-		http://www.ameth.org/gimp/%SUBDIR%/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.gimp.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/gtk+
 DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

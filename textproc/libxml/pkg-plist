@@ -21,6 +21,7 @@ include/gnome-xml/xpath.h
 lib/libxml.a
 lib/libxml.so
 lib/libxml.so.5
+libdata/pkgconfig/libxml.pc
 share/gnome-xml/html/gnome-xml/DOM.gif
 share/gnome-xml/html/gnome-xml/book1.html
 share/gnome-xml/html/gnome-xml/gnome-xml-debugxml.html

@@ -7,13 +7,16 @@
 
 PORTNAME=	ORBit
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
 USE_GLIB=	yes

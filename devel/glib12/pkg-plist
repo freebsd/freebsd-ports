@@ -14,5 +14,8 @@ lib/libgmodule12.so.3
 lib/libgthread12.a
 lib/libgthread12.so
 lib/libgthread12.so.3
+libdata/pkgconfig/glib.pc
+libdata/pkgconfig/gmodule.pc
+libdata/pkgconfig/gthread.pc
 share/aclocal/glib.m4
 @dirrm include/glib12
