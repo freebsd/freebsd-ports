@@ -1,5 +1,5 @@
-PGPLOT_LIB = -L/usr/local/lib -lpgplot
-CPGPLOT_LIB = -L/usr/local/lib  -lcpgplot
+PGPLOT_LIB = -L/usr/local/lib -lpgplot -lpng
+CPGPLOT_LIB = -L/usr/local/lib  -lcpgplot -lpng
 LIBS= -L/usr/X11R6/lib -lX11 -lm
 
 OSVERSION!=	/sbin/sysctl -n kern.osreldate
@@ -8,7 +8,8 @@ FFLAGS+=	-fno-backslash
 .endif
 
 all: cpgdemo pgdemo1 pgdemo2 pgdemo3 pgdemo4 pgdemo5 pgdemo6 pgdemo7 pgdemo8 \
-	pgdemo9 pgdemo10 pgdemo11 pgdemo12 pgdemo13 pgdemo14
+	pgdemo9 pgdemo10 pgdemo11 pgdemo12 pgdemo13 pgdemo14 pgdemo15 \
+	pgdemo16 pgdemo17
 		
 pgdemo1: pgdemo1.f libpgplot.a
 	$(FC) $(FFLAGS) -o pgdemo1 pgdemo1.f $(PGPLOT_LIB) $(LIBS)
@@ -39,7 +40,7 @@ pgdemo13: pgdemo13.f libpgplot.a
 pgdemo14: pgdemo14.f libpgplot.a
 	$(FC) $(FFLAGS) -o pgdemo14 pgdemo14.f $(PGPLOT_LIB) $(LIBS)
 pgdemo15: pgdemo15.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo15 pgdemo16.f $(PGPLOT_LIB) $(LIBS)
+	$(FC) $(FFLAGS) -o pgdemo15 pgdemo15.f $(PGPLOT_LIB) $(LIBS)
 pgdemo16: pgdemo16.f libpgplot.a
 	$(FC) $(FFLAGS) -o pgdemo16 pgdemo16.f $(PGPLOT_LIB) $(LIBS)
 pgdemo17: pgdemo17.f libpgplot.a
