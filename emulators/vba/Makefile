@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vba
-PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTVERSION=	1.7.2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,16 +32,20 @@ CFLAGS+=	-O0
 .endif
 
 .ifndef(PROFILING)
-CONFIGURE_ARGS= --without-profiling --disable-dev
+CONFIGURE_ARGS+=	--without-profiling
 .endif
 
+CONFIGURE_ARGS+=	LIBS=-L${LOCALBASE}/lib
+
 DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
-PROG_FILES=	${WRKSRC}/src/VisualBoyAdvance ${WRKSRC}/src/TestEmu
+PROG_FILES=	${WRKSRC}/src/sdl/VisualBoyAdvance ${WRKSRC}/src/sdl/TestEmu
 DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 pre-everything::
+.ifndef(PROFILING)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can enable profiling by defining PROFILING."
+.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Due to a bug in gcc2 optimsations other than -O0 will be ignored on"
 	@${ECHO_MSG} "FreeBSD releases that didn't ship with gcc3 (prior 500035)."
