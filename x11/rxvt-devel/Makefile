@@ -10,6 +10,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.8
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
@@ -119,6 +120,10 @@ pre-everything::
 	@${ECHO_MSG} '==> For example, "WITH_ENCODING=gb" for GB encoding'
 	@${ECHO_MSG}
 .endif
+
+post-patch:
+	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
+		${WRKSRC}/src/ptytty.c
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
