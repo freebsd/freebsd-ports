@@ -7,6 +7,8 @@
     SUBDIR += abiword
     SUBDIR += acroread-chsfont
     SUBDIR += acroread-chtfont
+    SUBDIR += acroread5-chsfont
+    SUBDIR += acroread5-chtfont
     SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += auto-tw-l10n
