@@ -1,0 +1,19 @@
+Checkbot -- a WWW link verifier
+
+Checkbot is a perl5 script which can verify links within a region of
+the World Wide Web. It checks all pages within an identified region,
+and all links within that region. After checking all links within the
+region, it will also check all links which point outside of the
+region, and then stop.
+
+Checkbot regularly writes reports on its findings, including all
+servers found in the region, and all links with problems on those
+servers.
+
+Checkbot was written originally to check a number of servers at
+once. This has implied some design decisions, so you might want to
+keep that in mind when making suggestions. Speaking of which, be sure
+to check the TODO file for things which have been suggested for
+Checkbot.
+
+http://www.xs4all.nl/~graaff/checkbot/
