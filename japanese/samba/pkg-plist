@@ -70,7 +70,7 @@ etc/codepages/unicode_map.KOI8-R
 @dirrm etc/codepages
 etc/rc.d/samba.sh.sample
 etc/smb.conf.default
-private/smbpasswd.default
+private/smbpasswd.sample
 sbin/nmbd
 sbin/smbd
 sbin/swat
@@ -666,7 +666,6 @@ share/doc/samba/ja/yodldocs/smbrun.1.yo
 share/doc/samba/ja/yodldocs/smbspool.8.yo
 share/doc/samba/ja/yodldocs/smbstatus.1.yo
 share/doc/samba/ja/yodldocs/smbtar.1.yo
-share/doc/samba/ja/yodldocs/testprns.1.yo
 share/doc/samba/manpages/findsmb.1
 share/doc/samba/manpages/ja/Makefile
 share/doc/samba/manpages/ja/findsmb.1.man
@@ -1479,7 +1478,6 @@ share/swat/using_samba/ja/status.html
 share/swat/using_samba/ja/this_edition.html
 share/swat/using_samba/licenseinfo.html
 share/swat/using_samba/this_edition.html
-@dirrm share/swat/ja/help/HowToUseSamba
 @dirrm share/swat/ja/help/BrowsingFAQ/image
 @dirrm share/swat/ja/help/BrowsingFAQ
 @dirrm share/swat/ja/help/HowToUseSamba2.2
