@@ -4,13 +4,14 @@
 #
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+BATCH=${BATCH:=no}
 
 ask() {
     local question default answer
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
         read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
