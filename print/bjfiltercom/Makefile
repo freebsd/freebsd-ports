@@ -61,9 +61,9 @@ do-build:
 
 do-install:
 	cd ${WRKDIR}; \
-	${TAR} cf - usr | ${TAR} xfp - -C /compat/linux
+	${TAR} cf - usr | ${TAR} xf - -C /compat/linux
 .for i in ${BIN_FILES}
-	${MV} /compat/linux/usr/local/bin/$i ${PREFIX}/bin
+	${MV} -f /compat/linux/usr/local/bin/$i ${PREFIX}/bin
 .endfor
 .if defined(SLAVE_PORT)
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
