@@ -7,6 +7,7 @@
 
 LANG_PKGNAME=	nl
 LANG_EXT=	31
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	DTCH
 MASTERDIR=	${.CURDIR}/../openoffice-1.1
 
