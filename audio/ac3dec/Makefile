@@ -8,7 +8,7 @@
 PORTNAME=	ac3dec
 PORTVERSION=	0.6.1
 CATEGORIES=	audio
-MASTER_SITES=	http://gusnet.cx/aaron/codecs/tarballs/
+MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 
 MAINTAINER=	3d@FreeBSD.org
 
