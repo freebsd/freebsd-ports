@@ -1,0 +1,49 @@
+--- util/wsetfont.orig	Sat Jun  5 20:48:34 1999
++++ util/wsetfont	Sat Jun  5 20:53:16 1999
+@@ -58,6 +58,9 @@
+     exit
+ fi
+ 
++# set default value
++MultiByteText="NO"
++
+ case $1 in
+    default)
+ 	SystemFont=\"-*-helvetica-medium-r-normal-*-%d-*-*-*-*-*-*-*\"
+@@ -118,6 +121,7 @@
+ 	IconTitleFont=\"-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*,-*-*-medium-r-normal-*-*-*\"
+ 	ClipTitleFont=\"-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*,-*-*-medium-r-normal-*-*-*\"
+ 	DisplayFont=\"-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-14-*,-*-*-medium-r-normal-*-*-*\"
++	MultiByteText=\"YES\";
+ 	;;
+    korean)
+ 	SystemFont=\"-*-helvetica-medium-r-normal-*-%d-*-*-*-*-*-*-*,-*-kodig-medium-r-normal--%d-*-*-*-*-*-*-*,*-*-medium-r-normal-*-%d-*-*-*-*-*-*-*,*-*-*-*-*--%d-*-*-*-*-*-*-*,*\"
+@@ -162,10 +166,13 @@
+ 
+ $WDWRITE WMGLOBAL SystemFont "$SystemFont"
+ $WDWRITE WMGLOBAL BoldSystemFont "$BoldSystemFont"
++$WDWRITE WMGLOBAL MultiByteText "$MultiByteText"
++
+ 
+ echo
+ echo "    SystemFont=$SystemFont"
+ echo "    BoldSystemFont=$BoldSystemFont"
++echo "    MultiByteText=$MultiByteText"
+ echo
+ echo "Setting up  ~/GNUstep/Defaults/WindowMaker..."
+ 
+@@ -175,6 +182,7 @@
+ $WDWRITE WindowMaker IconTitleFont "$IconTitleFont"
+ $WDWRITE WindowMaker ClipTitleFont "$ClipTitleFont"
+ $WDWRITE WindowMaker DisplayFont "$DisplayFont"
++$WDWRITE WindowMaker MultiByteText "$MultiByteText"
+ 
+ echo
+ echo "WindowTitleFont=$WindowTitleFont"
+@@ -183,5 +191,6 @@
+ echo "IconTitleFont=$IconTitleFont"
+ echo "ClipTitleFont=$ClipTitleFont"
+ echo "DisplayFont=$DisplayFont"
++echo "MultiByteText=$MultiByteText"
+ echo
+ echo "Done."
