@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -16,7 +17,8 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		tk84.1:${PORTSDIR}/x11-toolkits/tk84
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_XPM=	yes
 USE_GMAKE=	yes
@@ -31,7 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I
 		AUTOCONF=${LOCALBASE}/bin/autoconf213 \
 		AUTOMAKE=${LOCALBASE}/bin/automake14 \
 		ACLOCAL=${LOCALBASE}/bin/aclocal14
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
+CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
+		--with-iconvlibdir=${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/graphviz
 MAKE_ENV=	EXPR_COMPAT=yes
@@ -45,13 +48,6 @@ MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
 		neatoguide.pdf tcldot.html Dot.ref FAQ.html
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/iconv.h) || defined(WITH_ICONV)
-LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
-CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -60,4 +56,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
