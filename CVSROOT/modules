@@ -6876,7 +6876,7 @@ stackless_python	ports/lang/stackless_python
 stallion	src/usr.sbin/stallion
 stamp		ports/graphics/stamp
 stan		ports/misc/stan
-star		ports/sysutils/star
+star		ports/archivers/star
 starlanes	ports/games/starlanes
 starlogo	ports/lang/starlogo
 staroffice5	ports/editors/staroffice5

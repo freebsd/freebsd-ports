@@ -45,6 +45,7 @@
     SUBDIR += ruby-zip
     SUBDIR += ruby-zlib
     SUBDIR += sectar
+    SUBDIR += star
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += ucl
