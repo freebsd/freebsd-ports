@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.17 1994/10/31 04:38:27 smace Exp $
+# $Id: Makefile,v 1.18 1994/10/31 16:03:01 jkh Exp $
 #
-SUBDIR=	emu fvwm ghostview iv ivs olvwm pcb tk xarchie xcdplayer xdvi \
+SUBDIR=	emu fvwm ghostview iv ivs jpeg olvwm pcb tk xarchie xcdplayer xdvi \
 	xearth xpm xtexshell xv
 
 #
