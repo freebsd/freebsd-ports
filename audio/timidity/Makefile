@@ -1,16 +1,16 @@
 # New ports collection makefile for:    timidity
-# Homepage: http://www.clinet.fi/~toivonen/timidity/
+# Homepage: http://www.cgs.fi/~tt/timidity/
 # Version required:     0.2i
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/12/05 06:14:26 asami Exp $
+# $Id: Makefile,v 1.4 1997/06/14 11:04:19 jkh Exp $
 #
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/demos/music/samples/ \
-		http://www.clinet.fi/~toivonen/timidity/
+		http://www.cgs.fi/~tt/timidity/
 TIINS=          dgguspat.zip
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 
