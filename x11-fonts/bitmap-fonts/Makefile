@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/18 14:00:03 shige Exp $
 #
 
 DISTNAME=	bitmap-mule-${BITMAP_VER}
@@ -17,6 +17,8 @@ MAINTAINER=	shige@FreeBSD.org
 BITMAP_VER=	7.18
 BITMAP_FONT=	etl8x16-bitmap
 FONTSDIR=	lib/X11/fonts/local
+PKGINSTALL=     ${WRKDIR}/INSTALL
+PKGDEINSTALL=   ${WRKDIR}/DEINSTALL
 
 USE_X_PREFIX=	yes
 
@@ -29,6 +31,11 @@ do-build:
 	  bdftopcf ${BITMAP_FONT}.bdf > ${BITMAP_FONT}.pcf ; \
 	  ${GZIP_CMD} ${BITMAP_FONT}.pcf ; \
 	)
+	@for file in INSTALL DEINSTALL; do \
+		${SED} -e 's,%%FONTSDIR%%,${FONTSDIR},g' \
+			< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+	done
+
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
@@ -38,5 +45,9 @@ do-install:
 	@(cd ${WRKSRC}; \
 	  ${INSTALL_DATA} ${BITMAP_FONT}.pcf.gz ${PREFIX}/${FONTSDIR} ; \
 	)
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

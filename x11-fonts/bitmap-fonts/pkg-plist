@@ -1,3 +1,1 @@
 %%FONTSDIR%%/%%BITMAP_FONT%%.pcf.gz
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
