@@ -28,7 +28,6 @@ GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 
 CONFIGURE_ARGS=		--disable-fbdev-dga
-
 CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}" \
 			GLIB_CONFIG="${GLIB_CONFIG}" \
 			ESD_CONFIG="${ESD_CONFIG}" \
@@ -38,7 +37,13 @@ CFLAGS+=		-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 
 MAN1=			BasiliskII.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 400012
+CFLAGS+=		-fpermissive
+.endif
+
 post-install:
 			@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
