@@ -1641,6 +1641,7 @@ eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
 eclipse-langpack	ports/java/eclipse-langpack
+eclipse-log4e	ports/java/eclipse-log4e
 eclipse-lomboz	ports/java/eclipse-lomboz
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-quantum	ports/java/eclipse-quantum
