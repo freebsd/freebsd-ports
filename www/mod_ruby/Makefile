@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	${RELEASE_VER}.${SNAPSHOT_DATE}
+PORTVERSION=	0.1.9
 CATEGORIES=	www ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.ruby-lang.org/~shugo/mod_ruby/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -20,9 +19,6 @@ RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
 		ruby:${PORTSDIR}/lang/ruby
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-RELEASE_VER=	0.1.8
-SNAPSHOT_DATE=	2000.08.04
 
 APXS=		${LOCALBASE}/sbin/apxs
 
