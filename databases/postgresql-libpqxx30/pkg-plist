@@ -4,7 +4,6 @@ include/pqxx/all.h
 include/pqxx/binarystring
 include/pqxx/binarystring.hxx
 include/pqxx/cachedresult.h
-include/pqxx/compiler.h
 include/pqxx/connection
 include/pqxx/connection.hxx
 include/pqxx/connection.h
@@ -21,7 +20,6 @@ include/pqxx/dbtransaction.h
 include/pqxx/except
 include/pqxx/except.hxx
 include/pqxx/except.h
-include/pqxx/internalconfig.h
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/isolation.h
@@ -29,7 +27,6 @@ include/pqxx/largeobject
 include/pqxx/largeobject.hxx
 include/pqxx/largeobject.h
 include/pqxx/libcompiler.h
-include/pqxx/libconfig.h
 include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
 include/pqxx/nontransaction.h
@@ -66,6 +63,8 @@ include/pqxx/trigger.h
 include/pqxx/util
 include/pqxx/util.hxx
 include/pqxx/util.h
+include/pqxx/config-public-compiler.h
+include/pqxx/config-public-libpq.h
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
