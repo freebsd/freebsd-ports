@@ -1,0 +1,9 @@
+REOBack (pronounced as ray-o-back), is a backup solution designed for
+Linux or FreeBSD users/system admins. It supports scheduled full/incremental
+backups, remote transfers via NFS or FTP as well as auto-deletion of old
+backups.
+
+WWW: http://sourceforge.net/projects/reoback/
+
+- Alex Kiesel
+kiesel@schlund.de

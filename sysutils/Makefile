@@ -245,6 +245,7 @@
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += readlink
+    SUBDIR += reoback
     SUBDIR += rlogview
     SUBDIR += rmonitor
     SUBDIR += roottail
