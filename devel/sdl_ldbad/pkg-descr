@@ -1,0 +1,8 @@
+This is a SDL Linux Developer's BandAiD - a package, which when combined
+with a FreeBSD SDL package creates development environment more similar to 
+SDL development environment on other platforms (mostly Linux).
+
+Please note that this package is only for developer's use - no package should
+use it as a dependency!
+
+WWW: http://www.libsdl.org/

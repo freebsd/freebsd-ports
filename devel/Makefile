@@ -625,6 +625,7 @@
     SUBDIR += scons
     SUBDIR += sdcc
     SUBDIR += sdl12
+    SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += semantic
