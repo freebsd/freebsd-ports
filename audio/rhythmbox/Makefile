@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -18,7 +17,8 @@ COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		FLAC.5:${PORTSDIR}/audio/flac \
-		mad.2:${PORTSDIR}/audio/mad
+		mad.2:${PORTSDIR}/audio/libmad \
+		id3tag.2:${PORTSDIR}/audio/libid3tag
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -27,6 +27,14 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+
+.ifdef (WITH_XINE)
+LIB_DEPENDS+=		xine.7:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ARGS+=	--enable-xine
+.else
+#USE_GNOME+=		gstreamerplugins
+LIB_DEPENDS+=		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -38,13 +46,6 @@ WITH_VORBIS=	yes
 LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
-.endif
-
-.ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.7:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=	--enable-xine
-.else
-LIB_DEPENDS+=		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
 .endif
 
 pre-everything::
