@@ -1,0 +1,10 @@
+LiveJournal is an open source content management system, written
+mainly in Perl and utilizing MySQL as a database backend. By itself,
+it serves as a powerful content updating system. In other uses, it
+is the framework application behind many successful online communities,
+including LiveJournal.com and DeadJournal.com.
+
+ljdeps is a meta-port which installs all of the perl modules needed
+by LiveJournal.
+
+WWW: http://www.livejournal.com/code/
