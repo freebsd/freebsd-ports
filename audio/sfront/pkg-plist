@@ -1,0 +1,178 @@
+bin/sfront
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/README.HTML
+%%EXAMPLESDIR%%/bach/Makefile
+%%EXAMPLESDIR%%/bach/bach.mid
+%%EXAMPLESDIR%%/bach/bach.saol
+%%EXAMPLESDIR%%/bach/bach.sasl
+%%EXAMPLESDIR%%/beat/Makefile
+%%EXAMPLESDIR%%/beat/beat.saol
+%%EXAMPLESDIR%%/beat/beat.sasl
+%%EXAMPLESDIR%%/claps/Makefile
+%%EXAMPLESDIR%%/claps/claps.saol
+%%EXAMPLESDIR%%/claps/claps.sasl
+%%EXAMPLESDIR%%/claps/samp_1.aif
+%%EXAMPLESDIR%%/elpelele/Makefile
+%%EXAMPLESDIR%%/elpelele/elpelele.mid
+%%EXAMPLESDIR%%/elpelele/elpelele.saol
+%%EXAMPLESDIR%%/elpelele/elpelele.sasl
+%%EXAMPLESDIR%%/elpelele/samp_1.aif
+%%EXAMPLESDIR%%/elpelele/samp_11.aif
+%%EXAMPLESDIR%%/elpelele/samp_13.aif
+%%EXAMPLESDIR%%/elpelele/samp_3.aif
+%%EXAMPLESDIR%%/elpelele/samp_5.aif
+%%EXAMPLESDIR%%/elpelele/samp_7.aif
+%%EXAMPLESDIR%%/elpelele/samp_9.aif
+%%EXAMPLESDIR%%/gliss/Makefile
+%%EXAMPLESDIR%%/gliss/gliss.saol
+%%EXAMPLESDIR%%/gliss/samp_1.aif
+%%EXAMPLESDIR%%/in/Makefile
+%%EXAMPLESDIR%%/in/in.saol
+%%EXAMPLESDIR%%/min/Makefile
+%%EXAMPLESDIR%%/min/min.saol
+%%EXAMPLESDIR%%/min/min.sasl
+%%EXAMPLESDIR%%/pc/Makefile
+%%EXAMPLESDIR%%/pc/pc.saol
+%%EXAMPLESDIR%%/pc/pc.sasl
+%%EXAMPLESDIR%%/perc/Makefile
+%%EXAMPLESDIR%%/perc/bd.wav
+%%EXAMPLESDIR%%/perc/cb.wav
+%%EXAMPLESDIR%%/perc/ch.wav
+%%EXAMPLESDIR%%/perc/cl.wav
+%%EXAMPLESDIR%%/perc/cp.wav
+%%EXAMPLESDIR%%/perc/cr.wav
+%%EXAMPLESDIR%%/perc/cy.wav
+%%EXAMPLESDIR%%/perc/hc.wav
+%%EXAMPLESDIR%%/perc/ht.wav
+%%EXAMPLESDIR%%/perc/lc.wav
+%%EXAMPLESDIR%%/perc/lt.wav
+%%EXAMPLESDIR%%/perc/ma.wav
+%%EXAMPLESDIR%%/perc/mc.wav
+%%EXAMPLESDIR%%/perc/mt.wav
+%%EXAMPLESDIR%%/perc/oh.wav
+%%EXAMPLESDIR%%/perc/perc.mid
+%%EXAMPLESDIR%%/perc/perc.saol
+%%EXAMPLESDIR%%/perc/perc.sasl
+%%EXAMPLESDIR%%/perc/rs.wav
+%%EXAMPLESDIR%%/perc/sd.wav
+%%EXAMPLESDIR%%/rtime/aatest/Makefile
+%%EXAMPLESDIR%%/rtime/aatest/Makefile.linux
+%%EXAMPLESDIR%%/rtime/aatest/Makefile.osx
+%%EXAMPLESDIR%%/rtime/aatest/README
+%%EXAMPLESDIR%%/rtime/aatest/aatest.mid
+%%EXAMPLESDIR%%/rtime/aatest/aatest.saol
+%%EXAMPLESDIR%%/rtime/aatest/aatest.sasl
+%%EXAMPLESDIR%%/rtime/ascii/Makefile
+%%EXAMPLESDIR%%/rtime/ascii/Makefile.linux
+%%EXAMPLESDIR%%/rtime/ascii/Makefile.osx
+%%EXAMPLESDIR%%/rtime/ascii/README
+%%EXAMPLESDIR%%/rtime/ascii/ascii.saol
+%%EXAMPLESDIR%%/rtime/ascii/ascii.sasl
+%%EXAMPLESDIR%%/rtime/linain/Makefile
+%%EXAMPLESDIR%%/rtime/linain/Makefile.osx
+%%EXAMPLESDIR%%/rtime/linain/README
+%%EXAMPLESDIR%%/rtime/linain/linain.saol
+%%EXAMPLESDIR%%/rtime/linain/linain.sasl
+%%EXAMPLESDIR%%/rtime/linbuzz/Makefile
+%%EXAMPLESDIR%%/rtime/linbuzz/Makefile.linux
+%%EXAMPLESDIR%%/rtime/linbuzz/Makefile.osx
+%%EXAMPLESDIR%%/rtime/linbuzz/README
+%%EXAMPLESDIR%%/rtime/linbuzz/linbuzz.saol
+%%EXAMPLESDIR%%/rtime/linbuzz/linbuzz.sasl
+%%EXAMPLESDIR%%/rtime/linmidi/Makefile
+%%EXAMPLESDIR%%/rtime/linmidi/Makefile.linux
+%%EXAMPLESDIR%%/rtime/linmidi/Makefile.osx
+%%EXAMPLESDIR%%/rtime/linmidi/README
+%%EXAMPLESDIR%%/rtime/linmidi/linmidi.saol
+%%EXAMPLESDIR%%/rtime/linmidi/linmidi.sasl
+%%EXAMPLESDIR%%/rtime/linvoc/Makefile
+%%EXAMPLESDIR%%/rtime/linvoc/Makefile.osx
+%%EXAMPLESDIR%%/rtime/linvoc/README
+%%EXAMPLESDIR%%/rtime/linvoc/linvoc.saol
+%%EXAMPLESDIR%%/rtime/linvoc/linvoc.sasl
+%%EXAMPLESDIR%%/rtime/mirror/Makefile
+%%EXAMPLESDIR%%/rtime/mirror/Makefile.osx
+%%EXAMPLESDIR%%/rtime/mirror/README
+%%EXAMPLESDIR%%/rtime/mirror/mirror.saol
+%%EXAMPLESDIR%%/rtime/mirror/mirror.sasl
+%%EXAMPLESDIR%%/rtime/nmp_audio/Makefile
+%%EXAMPLESDIR%%/rtime/nmp_audio/Makefile.linux
+%%EXAMPLESDIR%%/rtime/nmp_audio/Makefile.osx
+%%EXAMPLESDIR%%/rtime/nmp_audio/README
+%%EXAMPLESDIR%%/rtime/nmp_audio/nmp.saol
+%%EXAMPLESDIR%%/rtime/nmp_audio/nmp.sasl
+%%EXAMPLESDIR%%/rtime/nmp_null/Makefile
+%%EXAMPLESDIR%%/rtime/nmp_null/README
+%%EXAMPLESDIR%%/rtime/nmp_null/silence.saol
+%%EXAMPLESDIR%%/rtime/nmp_null/silence.sasl
+%%EXAMPLESDIR%%/rtime/nmp_stream/Makefile
+%%EXAMPLESDIR%%/rtime/nmp_stream/Makefile.osx
+%%EXAMPLESDIR%%/rtime/nmp_stream/README
+%%EXAMPLESDIR%%/rtime/nmp_stream/bach.mid
+%%EXAMPLESDIR%%/rtime/nmp_stream/stream.saol
+%%EXAMPLESDIR%%/rtime/nmp_stream/stream.sasl
+%%EXAMPLESDIR%%/scr1/Makefile
+%%EXAMPLESDIR%%/scr1/samp_1.aif
+%%EXAMPLESDIR%%/scr1/scr1.mid
+%%EXAMPLESDIR%%/scr1/scr1.saol
+%%EXAMPLESDIR%%/scr1/scr1.sasl
+%%EXAMPLESDIR%%/speedt/Makefile
+%%EXAMPLESDIR%%/speedt/bass.wav
+%%EXAMPLESDIR%%/speedt/noise.wav
+%%EXAMPLESDIR%%/speedt/speedt.saol
+%%EXAMPLESDIR%%/speedt/speedt.sasl
+%%EXAMPLESDIR%%/torvalds/Makefile
+%%EXAMPLESDIR%%/torvalds/english.wav
+%%EXAMPLESDIR%%/torvalds/swedish.wav
+%%EXAMPLESDIR%%/torvalds/torvalds.saol
+%%EXAMPLESDIR%%/vowels/Makefile
+%%EXAMPLESDIR%%/vowels/vowels.saol
+%%EXAMPLESDIR%%/vowels/vowels.sasl
+@dirrm %%EXAMPLESDIR%%/vowels/core
+@dirrm %%EXAMPLESDIR%%/vowels
+@dirrm %%EXAMPLESDIR%%/torvalds/core
+@dirrm %%EXAMPLESDIR%%/torvalds
+@dirrm %%EXAMPLESDIR%%/speedt/core
+@dirrm %%EXAMPLESDIR%%/speedt
+@dirrm %%EXAMPLESDIR%%/scr1/core
+@dirrm %%EXAMPLESDIR%%/scr1
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_stream/core
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_stream
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_null/core
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_null
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_audio/core
+@dirrm %%EXAMPLESDIR%%/rtime/nmp_audio
+@dirrm %%EXAMPLESDIR%%/rtime/mirror/core
+@dirrm %%EXAMPLESDIR%%/rtime/mirror
+@dirrm %%EXAMPLESDIR%%/rtime/linvoc/core
+@dirrm %%EXAMPLESDIR%%/rtime/linvoc
+@dirrm %%EXAMPLESDIR%%/rtime/linmidi/core
+@dirrm %%EXAMPLESDIR%%/rtime/linmidi
+@dirrm %%EXAMPLESDIR%%/rtime/linbuzz/core
+@dirrm %%EXAMPLESDIR%%/rtime/linbuzz
+@dirrm %%EXAMPLESDIR%%/rtime/linain/core
+@dirrm %%EXAMPLESDIR%%/rtime/linain
+@dirrm %%EXAMPLESDIR%%/rtime/ascii/core
+@dirrm %%EXAMPLESDIR%%/rtime/ascii
+@dirrm %%EXAMPLESDIR%%/rtime/aatest/core
+@dirrm %%EXAMPLESDIR%%/rtime/aatest
+@dirrm %%EXAMPLESDIR%%/rtime
+@dirrm %%EXAMPLESDIR%%/perc/core
+@dirrm %%EXAMPLESDIR%%/perc
+@dirrm %%EXAMPLESDIR%%/pc/core
+@dirrm %%EXAMPLESDIR%%/pc
+@dirrm %%EXAMPLESDIR%%/min/core
+@dirrm %%EXAMPLESDIR%%/min
+@dirrm %%EXAMPLESDIR%%/in/core
+@dirrm %%EXAMPLESDIR%%/in
+@dirrm %%EXAMPLESDIR%%/gliss/core
+@dirrm %%EXAMPLESDIR%%/gliss
+@dirrm %%EXAMPLESDIR%%/elpelele/core
+@dirrm %%EXAMPLESDIR%%/elpelele
+@dirrm %%EXAMPLESDIR%%/claps/core
+@dirrm %%EXAMPLESDIR%%/claps
+@dirrm %%EXAMPLESDIR%%/beat/core
+@dirrm %%EXAMPLESDIR%%/beat
+@dirrm %%EXAMPLESDIR%%/bach/core
+@dirrm %%EXAMPLESDIR%%/bach
+@dirrm %%EXAMPLESDIR%%
