@@ -7,20 +7,17 @@
 #
 
 PORTNAME=	CDB_File
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	databases perl5
 MASTER_SITES=	$(MASTER_SITE_PERL_CPAN)
 MASTER_SITE_SUBDIR=	CDB_File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nistor@snickers.org
-COMMENT=	"Perl5 interface to the CDB package"
+COMMENT=	Perl5 interface to the CDB package
 
 PERL_CONFIGURE=	yes
-INSTALLS_SHLIB= YES
-ALL_TARGET=	all test
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CDB_File.3
 
 .include <bsd.port.mk>
