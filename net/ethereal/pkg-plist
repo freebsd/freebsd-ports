@@ -17,6 +17,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/enttec.so
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
 lib/ethereal/plugins/%%PORTVERSION%%/irda.so
 lib/ethereal/plugins/%%PORTVERSION%%/lwres.so
+lib/ethereal/plugins/%%PORTVERSION%%/mate.so
 lib/ethereal/plugins/%%PORTVERSION%%/megaco.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
 lib/ethereal/plugins/%%PORTVERSION%%/opsi.so
