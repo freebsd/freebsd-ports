@@ -1,0 +1,11 @@
+Chimera is a program which allows a user to access World-Wide Web servers
+and other information servers.  It presents the user with a point-and-click
+graphical interface using the X Window System and the Athena Widgets.
+
+This is version 1.65 with a kanji patch to display Japanese.  It
+understands JIS/EUC by default: if you want to see Shift-JIS, add
+"-xnllanguage ja_JP.SJIS" to the command line option.  Or you can use
+the X resource "xnlLanguage".
+
+- Satoshi
+(asami@cs.berkeley.edu)

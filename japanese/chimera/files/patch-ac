@@ -1,0 +1,11 @@
+--- ./Common.tmpl.dist.org	Fri Sep 22 02:22:01 1995
++++ ./Common.tmpl.dist	Fri Sep 22 03:03:57 1995
+@@ -109,7 +109,7 @@
+ XRELEASE = 0
+ #endif
+ 
+-KANJI_DEFINES = -DKANJI -DL10N -DNAIST
++KANJI_DEFINES = -DKANJI -DL10N -DNAIST -DSETLOCALE
+ 
+ #define MyNull
+ CBINDIR = /usr/X11R6/bin

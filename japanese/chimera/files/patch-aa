@@ -1,0 +1,11 @@
+--- ./Common.tmpl.dist.org	Sat Apr  1 19:20:24 1995
++++ ./Common.tmpl.dist	Tue Apr  4 07:51:01 1995
+@@ -80,7 +80,7 @@
+ #define NEED_STRCASECMP 0
+ 
+ CEXTRA_DEFINES = -DHAVE_MKTIME -DHAVE_STDLIB_H -DHAVE_STRING_H \
+-                 -DHAVE_UNISTD_H -DHAVE_MALLOC_H
++                 -DHAVE_UNISTD_H
+ 
+ /*
+  * OSF1 needs -D_BSD

@@ -1,0 +1,9 @@
+--- ./Imakefile.org	Sat Apr  1 19:38:56 1995
++++ ./Imakefile	Tue Apr  4 07:52:03 1995
+@@ -1,5 +1,5 @@
+ #define IHaveSubDirs
+-#define PassCDebugFlags 'CDEBUGFLAGS='
++#define PassCDebugFlags 'CDEBUGFLAGS=-O2 -m486'
+ 
+ SUBDIRS = compat libhtmlw mxw xloadimage common src lib util
+ 
