@@ -1,0 +1,5 @@
+xmms-a52dec is an A52 (aka AC3) decoder plugin for XMMS based on
+liba52.  AC3 files can be extracted from a DVD using extract_a52
+provided with liba52.
+
+WWW: http://xmms-a52dec.sourceforge.net/

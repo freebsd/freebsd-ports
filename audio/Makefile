@@ -276,6 +276,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms
+    SUBDIR += xmms-a52dec
     SUBDIR += xmms-bonk
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
