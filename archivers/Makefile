@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1996/09/27 11:24:00 andreas Exp $
+# $Id: Makefile,v 1.15 1996/10/24 00:03:46 jfitz Exp $
 #
 
     SUBDIR += arc
@@ -16,6 +16,7 @@
     SUBDIR += unzip.with_encryption
     SUBDIR += uudeview
     SUBDIR += uudx
+    SUBDIR += xdeview
     SUBDIR += zip
     SUBDIR += zip.with_encryption
     SUBDIR += zoo
