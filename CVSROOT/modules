@@ -3824,6 +3824,7 @@ libgnomeui	ports/x11-toolkits/libgnomeui
 libgnugetopt	ports/devel/libgnugetopt
 libgnumalloc	src/lib/libgnumalloc
 libgrass5	ports/graphics/libgrass5
+libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtop		ports/devel/libgtop
