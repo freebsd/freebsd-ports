@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/circuits/
 
 MAINTAINER=	kaveman@magna.com.au
 
-# export restrictions
-NO_CDROM=	yes
+RESTRICTED=	"export restrictions"
 
 post-install:
 	chmod a+rx ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg \
