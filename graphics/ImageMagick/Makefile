@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.0.6.2
+PORTVERSION=	6.1.6.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -27,7 +27,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
 
-FORBIDDEN=	"http://www.vuxml.org/freebsd/eeb1c128-33e7-11d9-a9e7-0001020eed82.html"
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes

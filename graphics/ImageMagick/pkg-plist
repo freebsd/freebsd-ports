@@ -49,7 +49,7 @@ include/magick/deprecate.h
 include/magick/draw.h
 include/magick/effect.h
 include/magick/enhance.h
-include/magick/error.h
+include/magick/exception.h
 include/magick/fx.h
 include/magick/gem.h
 include/magick/geometry.h
@@ -78,6 +78,7 @@ include/magick/registry.h
 include/magick/resize.h
 include/magick/resource_.h
 include/magick/segment.h
+include/magick/semaphore.h
 include/magick/shear.h
 include/magick/signature.h
 include/magick/stream.h
@@ -88,20 +89,21 @@ include/magick/transform.h
 include/magick/type.h
 include/magick/utility.h
 include/magick/version.h
+include/magick/widget.h
 include/magick/xwindow.h
 include/wand/drawing_wand.h
 include/wand/magick_wand.h
 include/wand/pixel_iterator.h
 include/wand/pixel_wand.h
-lib/ImageMagick/config/colors.mgk
-lib/ImageMagick/config/configure.mgk
-lib/ImageMagick/config/delegates.mgk
-lib/ImageMagick/config/english.mgk
-lib/ImageMagick/config/locale.mgk
-lib/ImageMagick/config/type.mgk
-lib/ImageMagick/config/type-ghostscript.mgk
-lib/ImageMagick/config/type-solaris.mgk
-lib/ImageMagick/config/type-windows.mgk
+lib/ImageMagick/config/colors.xml
+lib/ImageMagick/config/configure.xml
+lib/ImageMagick/config/delegates.xml
+lib/ImageMagick/config/english.xml
+lib/ImageMagick/config/locale.xml
+lib/ImageMagick/config/type.xml
+lib/ImageMagick/config/type-ghostscript.xml
+lib/ImageMagick/config/type-solaris.xml
+lib/ImageMagick/config/type-windows.xml
 lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/art.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/art.so
@@ -300,13 +302,13 @@ lib/ImageMagick/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/filters/analyze.so
 lib/libMagick++.a
 lib/libMagick++.so
-lib/libMagick++.so.6
+lib/libMagick++.so.7
 lib/libMagick.a
 lib/libMagick.so
-lib/libMagick.so.6
+lib/libMagick.so.7
 lib/libWand.a
 lib/libWand.so
-lib/libWand.so.6
+lib/libWand.so.7
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/ImageMagick.pc
 libdata/pkgconfig/Wand.pc
@@ -315,13 +317,12 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
-share/ImageMagick/config/coder.mgk
-share/ImageMagick/config/log.mgk
-share/ImageMagick/config/magic.mgk
+share/ImageMagick/config/coder.xml
+share/ImageMagick/config/log.xml
+share/ImageMagick/config/magic.xml
 share/ImageMagick-%%PORTVERSION%%/LICENSE
-share/ImageMagick-%%PORTVERSION%%/Magick.pdf
-share/ImageMagick-%%PORTVERSION%%/NOTICE
-share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
+share/ImageMagick-%%PORTVERSION%%/ChangeLog
+share/ImageMagick-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%share/doc/ImageMagick/images/ImageMagick.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/devlib.gif
@@ -333,56 +334,6 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/magick-icon.png
 %%PORTDOCS%%share/doc/ImageMagick/images/networkeleven.png
 %%PORTDOCS%%share/doc/ImageMagick/images/pair.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/bricks.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/checkerboard.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/circles.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/crosshatch.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/crosshatch30.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/crosshatch45.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/fishscales.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray0.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray10.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray100.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray15.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray20.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray25.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray30.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray35.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray40.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray45.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray5.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray50.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray55.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray60.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray65.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray70.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray75.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray80.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray85.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray90.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/gray95.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hexagons.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/horizontal.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/horizontalsaw.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_bdiagonal.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_cross.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_diagcross.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_fdiagonal.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_horizontal.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/hs_vertical.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/left30.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/left45.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/leftshingle.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/octagons.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/right30.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/right45.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/rightshingle.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/smallfishscales.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/vertical.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/verticalbricks.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/verticalleftshingle.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/verticalrightshingle.png
-%%PORTDOCS%%share/doc/ImageMagick/images/patterns/verticalsaw.png
 %%PORTDOCS%%share/doc/ImageMagick/images/promote.png
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.png
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle_option.png
@@ -444,6 +395,7 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-framed.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-plain.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/News.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Notice.html
 %%PORTDOCS%%share/doc/ImageMagick/www/QuickStart.html
 %%PORTDOCS%%share/doc/ImageMagick/www/README.html
 %%PORTDOCS%%share/doc/ImageMagick/www/animate.html
@@ -466,7 +418,7 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/drawing_wand.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/effect.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/enhance.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/error.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/exception.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/fx.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/image.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/list.html
@@ -524,7 +476,6 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/Magick++
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www
-%%PORTDOCS%%@dirrm share/doc/ImageMagick/images/patterns
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/images
 %%PORTDOCS%%@dirrm share/doc/ImageMagick
 @dirrm share/ImageMagick-%%PORTVERSION%%
