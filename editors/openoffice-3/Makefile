@@ -150,20 +150,14 @@ do-build:
 .endif
 	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 
-OOOFILES1=	openofficeorg-calc.sw openofficeorg-core01.sw openofficeorg-core02.sw openofficeorg-core03.sw openofficeorg-core04.sw openofficeorg-core05.sw
-OOOFILES2=	openofficeorg-core06.sw openofficeorg-core07.sw openofficeorg-core08.sw
-OOOFILES3=	openofficeorg-draw.sw openofficeorg-graphicfilter.sw openofficeorg-impress.sw
-OOOFILES4=	openofficeorg-javafilter.sw openofficeorg-math.sw openofficeorg-spellcheck.sw openofficeorg-testtool.sw openofficeorg-writer.sw openofficeorg-xsltfilter.sw
-
 do-install:
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.sw > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
-.for i in ${OOOFILES1} ${OOOFILES2} ${OOOFILES3} ${OOOFILES4}
-	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/${i} ${WRKDIR}/tmp
-.endfor
-.for i in ${OOOFILES1} ${OOOFILES2} ${OOOFILES3} ${OOOFILES4}
-	@cd ${WRKDIR}/tmp ; ${TAR} xf ${WRKDIR}/tmp/${i}
-.endfor
+	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
+		${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xf ${WRKDIR}/tmp/$$i ; \
+	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 
