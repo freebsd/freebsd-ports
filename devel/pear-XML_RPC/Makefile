@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-DISTVERSION=	1.2.0RC1
+DISTVERSION=	1.2.0RC2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
