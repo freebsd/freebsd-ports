@@ -3,12 +3,12 @@
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/24 10:52:08 max Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:49 asami Exp $
 #
 
 DISTNAME=	wmx-4
 PKGNAME=        wmx-4.0
-CATEGORIES=	x11
+CATEGORIES=	x11-wm
 MASTER_SITES=   http://www.netcomuk.co.uk/~cannam/
 
 MAINTAINER=	sec@42.org

@@ -3,11 +3,11 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.22 1997/10/28 21:59:55 gj Exp $
+# $Id: Makefile,v 1.23 1998/04/04 07:36:46 asami Exp $
 #
 
 DISTNAME=	fvwm-1.24r
-CATEGORIES=	x11
+CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
 

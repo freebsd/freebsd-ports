@@ -3,12 +3,12 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.22 1998/06/29 03:46:27 mph Exp $
+# $Id: Makefile,v 1.23 1998/07/14 02:42:18 mph Exp $
 #
 
 DISTNAME=	AfterStep-1.4.5.0
 PKGNAME=	afterstep-1.4.5.3
-CATEGORIES=     x11
+CATEGORIES=     x11-wm
 MASTER_SITES=   ftp://peloton.physics.montana.edu/pub/distfiles/
 EXTRACT_SUFX=   .tgz
 

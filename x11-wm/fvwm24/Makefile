@@ -3,11 +3,11 @@
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.11 1997/10/11 02:19:50 max Exp $
+# $Id: Makefile,v 1.12 1997/10/11 10:42:43 jkh Exp $
 #
 
 DISTNAME=	fvwm-2.0.46
-CATEGORIES=	x11
+CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/2.0.x/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/kits/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/sources/2.0.x/ \

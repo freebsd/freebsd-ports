@@ -1,28 +1,17 @@
-# $Id: Makefile,v 1.225 1998/08/07 22:42:53 asami Exp $
+# $Id: Makefile,v 1.226 1998/08/07 22:56:12 asami Exp $
 #
 
     SUBDIR += XFree86
     SUBDIR += XFree86-contrib
-    SUBDIR += afterstep
-    SUBDIR += afterstep-devel
-    SUBDIR += amiwm
-    SUBDIR += blackbox
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += camltk41
-    SUBDIR += ctwm
     SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += emu
-    SUBDIR += enlightenment
     SUBDIR += eterm
     SUBDIR += fbsd-icons
-    SUBDIR += fvwm
-    SUBDIR += fvwm2
-    SUBDIR += fvwm95
     SUBDIR += gtk
-    SUBDIR += gwm
-    SUBDIR += icewm
     SUBDIR += kb2mb2
     SUBDIR += kde
     SUBDIR += kdebase
@@ -32,26 +21,17 @@
     SUBDIR += libhelp
     SUBDIR += libsx
     SUBDIR += lupe
-    SUBDIR += lwm
-    SUBDIR += mlvwm
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
-    SUBDIR += olvwm
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
-    SUBDIR += piewm
     SUBDIR += props
     SUBDIR += pythonqt
-    SUBDIR += qvwm
     SUBDIR += rxvt
     SUBDIR += sxpc
     SUBDIR += tkgoodstuff
-    SUBDIR += tvtwm
     SUBDIR += tycoon
-    SUBDIR += windowmaker
-    SUBDIR += wm2
-    SUBDIR += wmx
     SUBDIR += x3270
     SUBDIR += xaniroc
     SUBDIR += xantfarm

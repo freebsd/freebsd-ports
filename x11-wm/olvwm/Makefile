@@ -3,12 +3,12 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $Id: Makefile,v 1.10 1996/11/18 13:06:09 asami Exp $
 #
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.1
-CATEGORIES=	x11
+CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
