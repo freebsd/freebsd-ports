@@ -1,16 +1,5 @@
 --- gdb/config/i386/tm-fbsd.h	Sat Jul 28 10:03:38 2001
 +++ gdb/config/i386/tm-fbsd.h	Fri Jun  7 08:32:14 2002
-@@ -24,6 +24,10 @@
- #define HAVE_I387_REGS
- #include "i386/tm-i386.h"
- 
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
- /* FreeBSD/ELF uses stabs-in-ELF with the DWARF register numbering
-    scheme by default, so we must redefine STAB_REG_TO_REGNUM.  This
-    messes up the floating-point registers for a.out, but there is not
 @@ -41,38 +45,42 @@
  /* Support for longjmp.  */
  

@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	5.2
-PORTREVISION=	2
+PORTVERSION=	5.2.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
@@ -17,7 +17,7 @@ MAINTAINER=	mp@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-suffix=52
+CONFIGURE_ARGS=	--program-suffix=521
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
