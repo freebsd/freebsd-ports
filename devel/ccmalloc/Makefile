@@ -23,7 +23,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 CC=		gcc -g -Wall
 CXX=		g++
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500000
+PATCH_FILES+=	${FILESDIR}/patch5-configure
+.endif
+
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
