@@ -10,6 +10,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-bbdb.el
+@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/semi/mime-bbdb.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-image.el
@@ -27,6 +28,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/mime-w3.el
+@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/semi/mime-w3.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/semi-setup.el
