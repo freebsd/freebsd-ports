@@ -433,8 +433,6 @@ pike/%%PORTVERSION%%/include/pike/lexer0.h
 pike/%%PORTVERSION%%/include/pike/lexer1.h
 pike/%%PORTVERSION%%/include/pike/lexer2.h
 pike/%%PORTVERSION%%/include/pike/aclocal.m4
-pike/%%PORTVERSION%%/man/man1/hilfe.1
-pike/%%PORTVERSION%%/man/man1/pike.1
 @unexec rm -rf %D/pike/%%PORTVERSION%%/lib/modules
 @dirrm pike/%%PORTVERSION%%/lib/include
 @unexec rm -rf %D/pike/%%PORTVERSION%%/lib/0.6
