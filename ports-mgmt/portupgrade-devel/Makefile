@@ -21,8 +21,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
-		${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1 \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1 \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/sysutils/pkg_tarup
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
 #		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
@@ -56,7 +55,8 @@ INSTALL_TARGET+=	install-doc
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
+		${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
 pre-install:
