@@ -1,0 +1,6 @@
+bin/fujiplay
+bin/yycc2ppm
+share/doc/fujiplay/README
+share/doc/fujiplay/fujiplay.lsm
+share/doc/fujiplay/mx700-commands.html
+@dirrm share/doc/fujiplay
