@@ -1,7 +1,7 @@
 lib/FileRunner/FAQ
 lib/FileRunner/HISTORY
 lib/FileRunner/QuickStart.txt
-lib/FileRunner/Tips
+lib/FileRunner/Tips.txt
 lib/FileRunner/Users_Guide.txt
 lib/FileRunner/chmod.tcl
 lib/FileRunner/cmd.tcl
