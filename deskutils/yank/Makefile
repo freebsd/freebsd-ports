@@ -8,7 +8,8 @@
 PORTNAME=	yank
 PORTVERSION=	0.2.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://home.ins.de/~m.hussmann/software/yank/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	yank
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	A simple notekeeper and todo-list manager for GNOME
