@@ -46,8 +46,8 @@ share/cfengine/cfengine.el
 share/cfengine/cfrc.example
 share/cfengine/cfrun.hosts.example
 share/cfengine/start-cfd
+@dirrm share/cfengine
 %%PORTDOCS%%share/doc/cfengine/cf-security.html
 %%PORTDOCS%%share/doc/cfengine/cfengine-Reference.html
 %%PORTDOCS%%share/doc/cfengine/cfengine-Tutorial.html
 %%PORTDOCS%%@dirrm share/doc/cfengine
-@dirrm share/cfengine

@@ -1,0 +1,15 @@
+This patch only makes sense if you subscribe to the FreeBSD port model.
+Basically this only works if you have installed BerkleyDB from the ports
+collection.
+
+--- src/misc.c.orig	Wed Jan 24 07:28:01 2001
++++ src/misc.c	Wed Mar 28 12:41:06 2001
+@@ -39,7 +39,7 @@
+ 
+ 
+ #ifdef HAVE_DB_H
+-# include <db.h>
++#include <db3/db.h>
+ #endif
+ 
+ /*******************************************************************/
