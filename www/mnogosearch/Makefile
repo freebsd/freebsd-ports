@@ -16,9 +16,6 @@ COMMENT=	Full featured SQL-based hypertext search engine
 
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
-APXS?=          ${LOCALBASE}/sbin/apxs
-APACHE_PORT?=   ${PORTSDIR}/www/apache13
-
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
