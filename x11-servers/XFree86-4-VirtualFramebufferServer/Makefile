@@ -21,6 +21,7 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
+SCRIPTS_ENV=		HasXdmAuth=${HasXdmAuth}
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET=		installXvfb installXserver.man
 MAKE_ENV=		MAN_INSTALL_TARGET=installXvfb.man
