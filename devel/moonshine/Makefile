@@ -8,7 +8,7 @@
 PORTNAME=	moonshine
 PORTVERSION=	1.1.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.suite3220.com/pub/Moonshine/1.1/src/
+MASTER_SITES=	ftp://planetmirror.com/pub/moonshine/1.1/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
