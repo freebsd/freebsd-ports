@@ -1,4 +1,4 @@
-# New ports collection makefile for:	String:LRC
+# New ports collection makefile for:	String::LRC
 # Date created:				24 October 2002
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
