@@ -1,27 +1,30 @@
---- Makefile.orig	Wed Sep 10 23:04:51 1997
-+++ Makefile	Sun Dec 28 02:03:35 1997
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Tue Dec  2 05:49:07 1997
++++ Makefile	Wed Feb 18 01:30:17 1998
+@@ -1,12 +1,12 @@
  
 -PREFIX      = /usr/local
 +PREFIX      = $(X11BASE)
  BINDIR      = $(PREFIX)/bin
  LIBDIR      = $(PREFIX)/lib/X11/icewm
 -ETCDIR      = /etc/X11/icewm
-+ETCDIR      = ${LIBDIR}
++ETCDIR      = $(LIBDIR)
  
 -INSTALL     = install
 -INSTALLDIR  = $(INSTALL) -m 755 -d
+-INSTALLBIN  = $(INSTALL) -m 555
 +INSTALL     = install -c
 +INSTALLDIR  = mkdir -p
- INSTALLBIN  = $(INSTALL) -m 555
++INSTALLBIN  = $(INSTALL) $(STRIP) -m 555
  INSTALLLIB  = $(INSTALL) -m 444
  #INSTALLETC  = $(INSTALL) -m 644
-@@ -17,7 +17,7 @@
+ 
+@@ -16,8 +16,7 @@
+ XPMDIRS     = themes/nice themes/motif themes/win95 themes/warp3 themes/warp4 themes/win31 ledclock taskbar icons
  
  all:
- 	(cd doc ; make)
+-	(cd doc ; make)
 -	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR))
-+	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX) )
++	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX))
  
  clean:
  	(cd doc ; make clean)

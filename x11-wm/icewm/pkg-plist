@@ -35,6 +35,7 @@ lib/X11/icewm/ledclock/n9.xpm
 lib/X11/icewm/ledclock/nc.xpm
 lib/X11/icewm/menu
 lib/X11/icewm/preferences
+lib/X11/icewm/taskbar/bsd-daemon.xpm
 lib/X11/icewm/taskbar/linux.xpm
 lib/X11/icewm/taskbar/mail.xpm
 lib/X11/icewm/taskbar/newmail.xpm
@@ -65,6 +66,55 @@ lib/X11/icewm/themes/warp4/hide.xpm
 lib/X11/icewm/themes/warp4/maximize.xpm
 lib/X11/icewm/themes/warp4/minimize.xpm
 lib/X11/icewm/themes/warp4/restore.xpm
+lib/X11/icewm/themes/win31/close.xpm
+lib/X11/icewm/themes/win31/default.theme
+lib/X11/icewm/themes/win31/dframeAB.xpm
+lib/X11/icewm/themes/win31/dframeABL.xpm
+lib/X11/icewm/themes/win31/dframeABR.xpm
+lib/X11/icewm/themes/win31/dframeAL.xpm
+lib/X11/icewm/themes/win31/dframeAR.xpm
+lib/X11/icewm/themes/win31/dframeAT.xpm
+lib/X11/icewm/themes/win31/dframeATL.xpm
+lib/X11/icewm/themes/win31/dframeATR.xpm
+lib/X11/icewm/themes/win31/dframeIB.xpm
+lib/X11/icewm/themes/win31/dframeIBL.xpm
+lib/X11/icewm/themes/win31/dframeIBR.xpm
+lib/X11/icewm/themes/win31/dframeIL.xpm
+lib/X11/icewm/themes/win31/dframeIR.xpm
+lib/X11/icewm/themes/win31/dframeIT.xpm
+lib/X11/icewm/themes/win31/dframeITL.xpm
+lib/X11/icewm/themes/win31/dframeITR.xpm
+lib/X11/icewm/themes/win31/frameAB.xpm
+lib/X11/icewm/themes/win31/frameABL.xpm
+lib/X11/icewm/themes/win31/frameABR.xpm
+lib/X11/icewm/themes/win31/frameAL.xpm
+lib/X11/icewm/themes/win31/frameAR.xpm
+lib/X11/icewm/themes/win31/frameAT.xpm
+lib/X11/icewm/themes/win31/frameATL.xpm
+lib/X11/icewm/themes/win31/frameATR.xpm
+lib/X11/icewm/themes/win31/frameIB.xpm
+lib/X11/icewm/themes/win31/frameIBL.xpm
+lib/X11/icewm/themes/win31/frameIBR.xpm
+lib/X11/icewm/themes/win31/frameIL.xpm
+lib/X11/icewm/themes/win31/frameIR.xpm
+lib/X11/icewm/themes/win31/frameIT.xpm
+lib/X11/icewm/themes/win31/frameITL.xpm
+lib/X11/icewm/themes/win31/frameITR.xpm
+lib/X11/icewm/themes/win31/maximize.xpm
+lib/X11/icewm/themes/win31/menuButtonA.xpm
+lib/X11/icewm/themes/win31/menuButtonI.xpm
+lib/X11/icewm/themes/win31/minimize.xpm
+lib/X11/icewm/themes/win31/restore.xpm
+lib/X11/icewm/themes/win31/titleAB.xpm
+lib/X11/icewm/themes/win31/titleAL.xpm
+lib/X11/icewm/themes/win31/titleAM.xpm
+lib/X11/icewm/themes/win31/titleAR.xpm
+lib/X11/icewm/themes/win31/titleAT.xpm
+lib/X11/icewm/themes/win31/titleIB.xpm
+lib/X11/icewm/themes/win31/titleIL.xpm
+lib/X11/icewm/themes/win31/titleIM.xpm
+lib/X11/icewm/themes/win31/titleIR.xpm
+lib/X11/icewm/themes/win31/titleIT.xpm
 lib/X11/icewm/themes/win95/close.xpm
 lib/X11/icewm/themes/win95/default.theme
 lib/X11/icewm/themes/win95/maximize.xpm
@@ -78,6 +128,7 @@ lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/themes/nice
 @dirrm lib/X11/icewm/themes/warp3
 @dirrm lib/X11/icewm/themes/warp4
+@dirrm lib/X11/icewm/themes/win31
 @dirrm lib/X11/icewm/themes/win95
 @dirrm lib/X11/icewm/themes
 @dirrm lib/X11/icewm
