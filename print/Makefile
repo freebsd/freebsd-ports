@@ -9,6 +9,7 @@
     SUBDIR += acroread
     SUBDIR += acroread-commfont
     SUBDIR += acroread4
+    SUBDIR += adobe-cmaps
     SUBDIR += afm
     SUBDIR += amspsfnt
     SUBDIR += apsfilter
