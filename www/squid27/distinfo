@@ -1,3 +1,2 @@
-MD5 (squid2.0/squid-2.0.RELEASE-src.tar.gz) = dc2da8400c003b1d16848ae4674b6f8e
-MD5 (squid2.0/diff-2.0.RELEASE-2.0.PATCH1.gz) = 959a410616b3604b384ad3522e4d6c28
-MD5 (squid2.0/diff-2.0.PATCH1-2.0.PATCH2.gz) = 8bd597ab342ec5db7d14dae88a52798c
+MD5 (squid2.1/squid-2.1.PATCH2-src.tar.gz) = 71c6b2437e562224d43dcde5765001f8
+MD5 (squid2.1/squid-2.1.PATCH2-clientHandleIMSReply-leak.patch) = c5416dc4a2c0fa09a27790b575a19d9c
