@@ -5,7 +5,7 @@ diff -ur cf/m4/cfhead.m4 src/contrib/sendmail/cf/m4/cfhead.m4
  # forth in the LICENSE file which can be found at the top level of
  # the sendmail distribution.
  #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $
  #
  
  ######################################################################
@@ -27,7 +27,7 @@ diff -ur cf/ostype/bsd4.4.m4 src/contrib/sendmail/cf/ostype/bsd4.4.m4
  # the sendmail distribution.
  #
 -#
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $
  #
  
  divert(0)
@@ -43,7 +43,7 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  #
  #	$Id: makeinfo.sh,v 8.14 1999/02/07 07:26:25 gshapiro Exp $
  #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $
 +#
  
  usewhoami=0
@@ -58,26 +58,26 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  echo '#####' using $1 as configuration include directory | sed 's/\/tmp_mnt//'
  echo "define(\`__HOST__', $host)dnl"
 diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
---- mail.local/mail.local.8	Sun Sep 17 19:04:25 2000
-+++ src/contrib/sendmail/mail.local/mail.local.8	Mon Nov  6 11:23:41 2000
+--- mail.local/mail.local.8.orig	Fri Dec 29 19:12:16 2000
++++ mail.local/mail.local.8	Sun Dec 31 10:27:40 2000
 @@ -10,13 +10,15 @@
  .\"
- .\"	$Id: mail.local.8,v 8.14.14.3 2000/09/17 17:04:25 gshapiro Exp $
+ .\"	$Id: mail.local.8,v 8.14.14.5 2000/12/29 18:12:16 gshapiro Exp $
  .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $
++.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $
 +.\"
- .TH MAIL.LOCAL 8 "$Date: 2000/09/17 17:04:25 $"
+ .TH MAIL.LOCAL 8 "$Date: 2000/12/29 18:12:16 $"
  .SH NAME
- .B mail.local
+ mail.local
  \- store mail in a mailbox
  .SH SYNOPSIS
  .B mail.local
--.RB [ \-7 "] [" \-b "] [" \-d "] [" \-l "] [" \-f 
-+.RB [ \-7 "] [" \-B "] [" \-b "] [" \-d "] [" \-l "] [" \-s "] [" \-f 
+-.RB [ \-7 "] [" \-b "] [" \-d "] [" \-l "] [" \-f
++.RB [ \-7 "] [" \-B "] [" \-b "] [" \-d "] [" \-l "] [" \-s "] [" \-f
+ .IR from "] "
+ .RB [ \-r 
  .IR from "] " "user ..."
- .SH DESCRIPTION
- .B Mail.local
-@@ -32,6 +34,11 @@
+@@ -34,6 +36,11 @@
  .B \-7
  Do not advertise 8BITMIME support in LMTP mode.
  .TP 
@@ -89,7 +89,7 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .B \-b
  Return a permanent error instead of a temporary error
  if a mailbox exceeds quota.
-@@ -44,6 +51,13 @@
+@@ -46,6 +53,13 @@
  .TP
  .B \-l
  Turn on LMTP mode.
@@ -103,7 +103,7 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .TP 
  .BI \-r " from"
  Specify the sender's name (for backward compatibility).
-@@ -91,7 +105,6 @@
+@@ -93,7 +107,6 @@
  .PD
  .SH SEE ALSO
  mail(1), 
@@ -118,7 +118,7 @@ diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
  static char id[] = "@(#)$Id: mail.local.c,v 8.143.4.37 2000/09/22 00:49:10 doug Exp $";
  #endif /* ! lint */
  
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $ */
 +
  /*
  **  This is not intended to work on System V derived systems
@@ -251,7 +251,7 @@ diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
  static char id[] = "@(#)$Id: rmail.c,v 8.39.4.8 2000/09/16 22:20:25 gshapiro Exp $";
  #endif /* ! lint */
  
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $ */
 +
  /*
   * RMAIL -- UUCP mail server.
@@ -269,27 +269,27 @@ diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
  
  	/* set from system and protocol used */
 diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
---- smrsh/smrsh.8	Tue Jun 15 06:50:19 1999
-+++ src/contrib/sendmail/smrsh/smrsh.8	Wed Oct  4 23:19:47 2000
+--- smrsh/smrsh.8.orig	Sat Dec 16 00:18:40 2000
++++ smrsh/smrsh.8	Sun Dec 31 10:37:02 2000
 @@ -11,6 +11,8 @@
  .\"
- .\"     $Id: smrsh.8,v 8.11 1999/06/09 16:51:07 ca Exp $
+ .\"     $Id: smrsh.8,v 8.11.16.2 2000/12/15 19:50:46 gshapiro Exp $
  .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.1 2000-12-21 07:32:18 will Exp $
++.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.2 2001-01-05 03:15:41 jeh Exp $
 +.\"
- .TH SMRSH 8 11/02/93
+ .TH SMRSH 8 "$Date: 2000/12/15 19:50:46 $"
  .SH NAME
  smrsh \- restricted shell for sendmail
-@@ -38,7 +40,7 @@
- Briefly,
+@@ -39,7 +41,7 @@
  .I smrsh
- limits programs to be in the directory
+ limits programs to be in a single directory,
+ by default
 -/usr/adm/sm.bin,
 +/usr/libexec/sm.bin,
  allowing the system administrator to choose the set of acceptable commands,
  and to the shell builtin commands ``exec'', ``exit'', and ``echo''.
  It also rejects any commands with the characters
-@@ -49,16 +51,15 @@
+@@ -50,13 +52,12 @@
  ``"|exec /usr/local/bin/procmail -f- /etc/procmailrcs/user || exit 75"''
  .PP
  Initial pathnames on programs are stripped,
@@ -304,12 +304,8 @@ diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
 +``/usr/libexec/sm.bin/vacation''.
  .PP
  System administrators should be conservative about populating
--/usr/adm/sm.bin.
-+/usr/libexec/sm.bin.
- Reasonable additions are
- .IR vacation (1),
- .IR procmail (1),
-@@ -77,11 +78,11 @@
+ the sm.bin directory.
+@@ -78,11 +79,11 @@
  Compilation should be trivial on most systems.
  You may need to use \-DPATH=\e"\fIpath\fP\e"
  to adjust the default search path

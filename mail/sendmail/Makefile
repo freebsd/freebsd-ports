@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.11.1
-PORTREVISION=	1
+PORTVERSION=	8.11.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -17,6 +16,7 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 NO_PACKAGE=	"sendmail included in base system"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WCONF=		${WRKSRC}/devtools/Site
 PLIST=		${WRKDIR}/.PLIST.more
 
 .if defined(SENDMAIL_WITH_TSL)
@@ -26,18 +26,17 @@ USE_OPENSSL=	yes
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-	${FILESDIR}/site.config.m4 >${WRKSRC}/devtools/Site/site.config.m4
+		${FILESDIR}/site.config.m4 > ${WCONF}/site.config.m4
 .if defined(SENDMAIL_WITH_TSL)
-	${CAT} ${FILESDIR}/site.config.m4.tls \
-		>> ${WRKSRC}/devtools/Site/site.config.m4
+	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
 .endif
 .else
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-	${FILESDIR}/site.config.m4.pre4 >${WRKSRC}/devtools/Site/site.config.m4
+		${FILESDIR}/site.config.m4.pre4 > ${WCONF}/site.config.m4
 .if defined(SENDMAIL_WITH_TSL)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" ${FILESDIR}/site.config.m4.ssl \
-		>> ${WRKSRC}/devtools/Site/site.config.m4
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
 .endif
 
 PREFIX?=	${DESTDIR}/usr
