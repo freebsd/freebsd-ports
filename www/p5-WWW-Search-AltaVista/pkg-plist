@@ -1,11 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Web.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/NL.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedNews.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedWeb.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet3.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/News.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista
+%%SITE_PERL%%/WWW/Search/AltaVista.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/AdvancedNews.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/AdvancedWeb.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/DE.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/Intranet.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/Intranet3.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/NL.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/News.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/Web.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@dirrm %%SITE_PERL%%/WWW/Search/AltaVista
+@unexec rmdir %D/%%SITE_PERL%%/WWW/Search 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
