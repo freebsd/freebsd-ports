@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/10/22 17:06:47 max Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:36:09 asami Exp $
 #
 
 DISTNAME=	rsync-1.6.2
@@ -19,7 +19,7 @@ MAN1=		rsync.1
 post-install:
 	strip ${PREFIX}/bin/rsync
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/rsync
+	${MKDIR} ${PREFIX}/share/doc/rsync
 	${INSTALL_DATA} ${WRKSRC}/tech_report.ps ${PREFIX}/share/doc/rsync
 .endif
 
