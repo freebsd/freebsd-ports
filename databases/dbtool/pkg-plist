@@ -1,1 +1,12 @@
 bin/dbtool
+%%PORTDOCS%%%%EXAMPLESDIR%%/account-db/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/account-db/accdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/locate/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/locate/locate
+%%PORTDOCS%%%%EXAMPLESDIR%%/locate/updatedb
+%%PORTDOCS%%%%EXAMPLESDIR%%/uback/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/account-db
+@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/locate
+@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/uback
+@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%

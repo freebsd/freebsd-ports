@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dbtool
-PORTVERSION=	1.5
-PORTREVISION=	0
+PORTVERSION=	1.6
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 
@@ -24,6 +23,9 @@ CONFIGURE_ARGS=	--with-berkeley
 .else
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
+.if !defined(NOPORTDOCS)
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" \
@@ -31,8 +33,12 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" \
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 MAN1=	dbtool.1
+
+SH2BASH=	samples/account-db/accdb
+UB2PFX=		samples/locate/locate samples/locate/updatedb
 
 post-extract:
 .if !defined(WITH_BERKELEY_DB)
@@ -47,5 +53,22 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,stdin,input,g" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s,==,=,g" ${WRKSRC}/configure
+.if !defined(NOPORTDOCS)
+.for file in ${SH2BASH}
+	@${REINPLACE_CMD} -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ${WRKSRC}/${file}
+.endfor
+.for file in ${UB2PFX}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
+	@${RM} ${WRKSRC}/${file}.orig
+.endfor
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.mk>
