@@ -62,15 +62,15 @@ post-install:
 	${INSTALL_DATA} *.gif *.png ${DOCSDIR}/Img
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/milter-sender.sh ] ; then \
-	cp ${PREFIX}/etc/rc.d/milter-sender.sh-dist ${PREFIX}/etc/rc.d/milter-sender.sh; \
-	chmod ug+x ${PREFIX}/etc/rc.d/milter-sender.sh; \
+	${CP} ${PREFIX}/etc/rc.d/milter-sender.sh-dist ${PREFIX}/etc/rc.d/milter-sender.sh; \
+	${CHMOD} ug+x ${PREFIX}/etc/rc.d/milter-sender.sh; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
 	@if [ -f ${PREFIX}/etc/rc.d/milter-sender.sh ] && \
 	cmp -s ${PREFIX}/etc/rc.d/milter-sender.sh ${PREFIX}/etc/rc.d/milter-sender.sh-dist; then \
-	rm -f ${PREFIX}/etc/rc.d/milter-sender.sh; \
+	${RM} -f ${PREFIX}/etc/rc.d/milter-sender.sh; \
 	fi
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Do not forget to delete the filter description from /etc/mail/YOUR-CONF.mc"
