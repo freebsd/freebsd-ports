@@ -17,6 +17,7 @@ COMMENT=	A finite element program
 
 LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext:install
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
@@ -24,5 +25,10 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=	pdnmesh.1
 MAN5=	pdnmesh_input.5
+
+post-patch:
+.for FILE in ${DISTNAME}/src/contour.c
+	@${REINPLACE_CMD} -e "s/^\#include <GL\/glut.h>//g" ${WRKSRC}/${FILE}
+.endfor
 
 .include <bsd.port.mk>
