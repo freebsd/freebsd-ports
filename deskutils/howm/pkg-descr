@@ -1,0 +1,7 @@
+howm: Write fragmentarily and read collectively.
+
+Howm is a note-taking tool on Emacs.  It is similar to emacs-wiki;
+you can enjoy hyperlinks and full-text search easily. It is not
+similar to emacs-wiki; it can be combined with any format.
+
+WWW: http://www.me.ics.saitama-u.ac.jp/~hira/emacs/howm/index.html

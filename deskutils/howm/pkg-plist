@@ -1,0 +1,23 @@
+%%EMACS_SITE_LISPDIR%%/action-lock.el
+%%EMACS_SITE_LISPDIR%%/action-lock.elc
+%%EMACS_SITE_LISPDIR%%/howm-font-lock.el
+%%EMACS_SITE_LISPDIR%%/howm-font-lock.elc
+%%EMACS_SITE_LISPDIR%%/howm-menu.el
+%%EMACS_SITE_LISPDIR%%/howm-menu.elc
+%%EMACS_SITE_LISPDIR%%/howm-mode.el
+%%EMACS_SITE_LISPDIR%%/howm-mode.elc
+%%EMACS_SITE_LISPDIR%%/howm-view.el
+%%EMACS_SITE_LISPDIR%%/howm-view.elc
+%%EXAMPLESDIR%%/en/0000-00-00-000000.howm
+%%EXAMPLESDIR%%/ja/0000-00-00-000000.howm
+%%DOCSDIR%%/README-j.html
+%%DOCSDIR%%/index-j.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/s-cat.png
+%%DOCSDIR%%/s-menu.png
+%%DOCSDIR%%/s-screen-shot.png
+%%DOCSDIR%%/s-search.png
+@dirrm %%EXAMPLESDIR%%/en
+@dirrm %%EXAMPLESDIR%%/ja
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
