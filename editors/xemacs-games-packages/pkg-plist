@@ -109,3 +109,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.misc-games
 @dirrm lib/xemacs/xemacs-packages/lisp/games
 @dirrm lib/xemacs/xemacs-packages/lisp/cookie
 @dirrm lib/xemacs/xemacs-packages/etc/mine
+@unexec rmdir %D/lib/xemacs/xemacs-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true

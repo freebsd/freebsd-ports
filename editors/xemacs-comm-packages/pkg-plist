@@ -1066,3 +1066,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 @dirrm lib/xemacs/xemacs-packages/etc/bbdb/tex
 @dirrm lib/xemacs/xemacs-packages/etc/bbdb
 @unexec rmdir %D/lib/xemacs/xemacs-packages/etc/sounds 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true

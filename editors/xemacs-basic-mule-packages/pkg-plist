@@ -252,3 +252,6 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/fr
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/de
 @dirrm lib/xemacs/mule-packages/etc/app-defaults
+@unexec rmdir %D/lib/xemacs/mule-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true
