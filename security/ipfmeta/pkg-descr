@@ -1,0 +1,11 @@
+ipfmeta is used to simplify the maintenance of your IPfilter ruleset.
+It does this through the use of 'objects'. A matching object gets
+replaced by its values at runtime. This is similar to what a macro
+processor like m4 does.
+
+ipfmeta is specifically geared towards IPfilter. It is line oriented:
+if an object has multiple values, the line with the object is
+duplicated and substituted for each value. It is also recursive: an
+object may have another object as a value.
+
+WWW: http://www.sentia.org/projects/ipfmeta/

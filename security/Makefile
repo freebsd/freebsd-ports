@@ -41,6 +41,7 @@
     SUBDIR += identify
     SUBDIR += inflex
     SUBDIR += integrit
+    SUBDIR += ipfmeta
     SUBDIR += its4
     SUBDIR += john
     SUBDIR += keynote
