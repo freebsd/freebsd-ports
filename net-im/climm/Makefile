@@ -30,7 +30,7 @@ pre-configure:
 	@${ECHO_MSG} "Currently supported <your_lang> values are:"
 	@${ECHO} "  "${SUP_LANGS} | /usr/bin/fmt
 .else
-	@${ECHO} "#define ${WITH_MICQ_LANG}_LANG" >> \
+	@/usr/bin/printf "#define ${WITH_MICQ_LANG}_LANG\n#undef ENGLISH_LANG" >> \
 		${WRKSRC}/../include/config.h
 	@${ECHO_MSG} "Compiling ${PORTNAME} with ${WITH_MICQ_LANG}."
 .endif
