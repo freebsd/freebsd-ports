@@ -39,7 +39,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dropsite.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/examples.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/foursplit.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/glcanvas-scroll.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gltest.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/glviewer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/groupbox.rb
@@ -79,6 +78,8 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/fox.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/foxicon.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/frontview.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/gem_big.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/gem_small.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/hello2.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/help.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icons/indent.png
@@ -149,7 +150,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch02s05.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch03s02.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch03s03.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch03s04.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch04s02.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/ch04s03.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/changes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/clipboardtut.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/cvs.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/differences.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dragdroptut.html
