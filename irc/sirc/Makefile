@@ -15,7 +15,7 @@ PORTNAME=	sirc
 PORTVERSION=	2.211
 CATEGORIES=	irc
 MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
-		http://freebsd.simplenet.com/Downloads/
+		http://dougbarton.net/FreeBSD/Downloads/
 
 MAINTAINER=	DougB@FreeBSD.org
 
