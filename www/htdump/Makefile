@@ -7,13 +7,16 @@
 
 PORTNAME=	htdump
 PORTVERSION=	0.9x
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://arak.cs.hro.nl/~ren/linux/htdump/bin/
 
 MAINTAINER=	mux@FreeBSD.org
 COMMENT=	A tool to retrieve WWW data
 
-LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
+CFLAGS+=	${CPPFLAGS}
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	yes
