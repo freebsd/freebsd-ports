@@ -3,16 +3,18 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/27 18:18:48 jfitz Exp $
+# $Id: Makefile,v 1.2 1997/07/01 17:41:02 jfitz Exp $
 #
 
-DISTNAME=	MHonArc2.1
-PKGNAME=	mhonarc-2.1
+DISTNAME=	MHonArc2.2.0
+PKGNAME=	mhonarc-2.2.0
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/
 
 MAINTAINER=	koshy@india.hp.com
+
+USE_PERL5=	YES
 
 INSTALL_TARGET=	install-batch
 
@@ -21,4 +23,3 @@ pre-install:
 		${MKDIR} ${PREFIX}/lib/MHonArc/doc/resources
 
 .include <bsd.port.mk>
-
