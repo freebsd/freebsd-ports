@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+BATCH=${BATCH:=no}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local question default answer
+
+    question=$1
+    default=$2
+    while :; do
+        answer=$(ask "${question}" "${default}")
+        case "${answer}" in
+        [Yy]*)	return 0;;
+        [Nn]*)	return 1;;
+        esac
+        echo "Please answer yes or no."
+    done
+}
+
+if [ x"$2" = xPRE-INSTALL ]; then
+    USER=distcc
+    GROUP=distcc
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+        echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+        if /usr/sbin/pw groupadd ${GROUP} -h -
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+    if /usr/sbin/pw usershow "${USER}" 2>/dev/null; then
+        echo "You already have a user \"${USER}\", so I will use it."
+    else
+        if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
+           -s /sbin/nologin \
+           -c "Distcc"
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+fi

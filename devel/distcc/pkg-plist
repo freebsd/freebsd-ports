@@ -2,21 +2,13 @@ bin/distcc
 bin/distccmon-text
 %%WITH_GNOME%%bin/distccmon-gnome
 sbin/distccd
+etc/rc.d/distccd.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FDL
-%%PORTDOCS%%%%DOCSDIR%%/DEPENDENCIES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/distcc.sgml
 %%PORTDOCS%%%%DOCSDIR%%/protocol-1.txt
 %%PORTDOCS%%%%DOCSDIR%%/status-1.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/distcc-5.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
