@@ -40,15 +40,15 @@ If you are not satisfied with 3 or 4, you will need to edit $prefix/lib/texmf/ps
 
 END
 
-echo -n "do you want to install the package ? [y] "
-read answ; if [ "$answ" = "" ]; then answ=y; fi
-case $answ in
-  y*|Y*) break;;
-  *) exit 1;;
-esac
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  echo -n "do you want to install the package ? [y] "
+  read answ; if [ "$answ" = "" ]; then answ=y; fi
+  case $answ in
+    y*|Y*) break;;
+    *) exit 1;;
+  esac
+fi
 
 mkdir -p $prefix/lib/texmf/fonts/pk; chmod 1777 $prefix/lib/texmf/fonts/pk
 
 exit 0
-
-
