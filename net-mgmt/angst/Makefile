@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An active sniffer
 
+BROKEN=		"Changes ownership of system directories"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
