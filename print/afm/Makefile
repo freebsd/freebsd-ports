@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.7 1996/11/17 08:44:24 obrien Exp $
+# $Id: Makefile,v 1.8 1999/08/23 04:23:48 mharo Exp $
 #
 
 DISTNAME=	afm
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=   -tar.Z
 
 pre-patch:
-	@rm -rf ${WRKSRC}/RCS
+	@${RM} -rf ${WRKSRC}/RCS
 
 do-build:
 	@${TRUE}

@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.27 1999/08/23 04:23:54 mharo Exp $
+# $Id: Makefile,v 1.28 1999/08/27 22:30:09 mharo Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -59,7 +59,7 @@ PATCHDIR=       ${.CURDIR}/patches.usa
 post-extract:
 	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_BEFORE_ARGS) -aa $(DISTNAME)i \
 		$(EXTRACT_AFTER_ARGS)
-	cd ${WRKDIR}; rm -f *.zip
+	cd ${WRKDIR}; ${RM} -f *.zip
 
 .else
 DISTNAME=       pgp263is
@@ -72,7 +72,7 @@ PATCHDIR=       ${.CURDIR}/patches.non_usa
 
 post-extract:
 	cd ${WRKDIR}; $(TAR) -xf pgp263ii.tar; \
-		rm -f pgp263ii.tar
+		${RM} -f pgp263ii.tar
 
 .endif
 .endif

@@ -3,7 +3,7 @@
 # Date created:		17 July 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/24 02:11:20 steve Exp $
+# $Id: Makefile,v 1.2 1999/03/01 09:38:29 shige Exp $
 #
 
 DISTNAME=	wcolEpre.980713_100245
@@ -24,8 +24,8 @@ DEFAULT_POOLDIR?=/var/spool/wcol
 MAKE_ENV+=DEFAULT_POOLDIR=${DEFAULT_POOLDIR}
 
 pre-patch:
-	@rm -f ${WRKSRC}/../admin/killwcol.in
-	@mv -f ${WRKSRC}/../admin/killwcol ${WRKSRC}/../admin/killwcol.in
+	@${RM} -f ${WRKSRC}/../admin/killwcol.in
+	@${MV} -f ${WRKSRC}/../admin/killwcol ${WRKSRC}/../admin/killwcol.in
 
 post-install:
 	@if [ ! -d ${DEFAULT_POOLDIR} ]; then \

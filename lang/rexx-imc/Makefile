@@ -25,7 +25,7 @@ UGLY_PATCH=	rexx.c rxfn.c util.c
 post-patch:
 .for c in ${UGLY_PATCH}
 	@${ECHO_MSG} "Changing struct fileinfo member errno to ferrno in ${c}"
-	@mv ${WRKSRC}/${c} ${WRKSRC}/${c}.old
+	@${MV} ${WRKSRC}/${c} ${WRKSRC}/${c}.old
 	@${SED} 's/->errno/->ferrno/g;' ${WRKSRC}/${c}.old > ${WRKSRC}/${c}
 	@${RM} ${WRKSRC}/${c}.old
 .endfor

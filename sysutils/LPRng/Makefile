@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.6 1999/08/22 19:00:01 mharo Exp $
+# $Id: Makefile,v 1.7 1999/08/22 23:33:26 mharo Exp $
 #
 
 DISTNAME=	LPRng-3.5.1
@@ -37,7 +37,7 @@ post-install:
 		${CP} ${DISTDIR}/$$file ${PREFIX}/share/doc/LPRng; \
 		cd ${PREFIX}/share/doc/LPRng; \
 		tar xvfz $$file; \
-		rm ${PREFIX}/share/doc/LPRng/$$file; \
+		${RM} ${PREFIX}/share/doc/LPRng/$$file; \
 	done
 	@${CAT} ${PKGDIR}/MESSAGE
 

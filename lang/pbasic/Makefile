@@ -20,7 +20,7 @@ MAKEFILE=	makefile
 MAN1=		pbasic.1
 
 do-configure:
-	-cd ${WRKSRC} ; rm -rf termio m68000 msdos vax pyramid ns32000 \
+	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
 			pdp11 cursor/cursor.dos cursor/cursor.ukc 
 
 do-install:

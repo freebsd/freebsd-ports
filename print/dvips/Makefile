@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1997/12/02 03:25:43 jmz Exp $
+# $Id: Makefile,v 1.18 1998/09/25 19:42:58 jmz Exp $
 #
 
 DISTNAME=	dvips576
@@ -28,6 +28,6 @@ post-install:
 	@install -c  -m 644 ${WRKDIR}/dvips576/PSvfs/*.vf ${PREFIX}/share/texmf/fonts/vf
 
 pre-clean:
-	@rm -f ${SCRIPTDIR}/post-install
+	@${RM} -f ${SCRIPTDIR}/post-install
 
 .include <bsd.port.mk>

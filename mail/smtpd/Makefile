@@ -20,7 +20,7 @@ MAINTAINER=    jonny@jonny.eng.br
 SPOOLBASE=	/var/smtpd
 
 post-patch:
-	@mv ${WRKSRC}/Makefile ${WRKSRC}/Makefile.tmp
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.tmp
 	@${SED} s+!!SPOOLBASE!!+${SPOOLBASE}+g < ${WRKSRC}/Makefile.tmp \
 	                                    > ${WRKSRC}/Makefile
 

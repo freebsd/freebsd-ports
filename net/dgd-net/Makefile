@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.32 1999/08/23 04:23:35 mharo Exp $
+# $Id: Makefile,v 1.33 1999/08/28 01:57:43 mharo Exp $
 #
 
 DISTNAME=	dgd-net-1.1p6
@@ -45,14 +45,14 @@ pre-patch:
 
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
-	@mv ${WRKDIR}/dgd/bin/driver ${WRKDIR}/dgd/bin/driver.net
-	@mv ${WRKDIR}/dgd/bin/precomp ${WRKDIR}/dgd/bin/precomp.net
-	@mv ${WRKDIR}/dgd/doc/Introduction ${WRKDIR}/dgd/doc/Introduction.NET
-	@mv ${WRKDIR}/dgd/doc/kfun/send_message ${WRKDIR}/dgd/doc/kfun/send_message.NET
+	@${MV} ${WRKDIR}/dgd/bin/driver ${WRKDIR}/dgd/bin/driver.net
+	@${MV} ${WRKDIR}/dgd/bin/precomp ${WRKDIR}/dgd/bin/precomp.net
+	@${MV} ${WRKDIR}/dgd/doc/Introduction ${WRKDIR}/dgd/doc/Introduction.NET
+	@${MV} ${WRKDIR}/dgd/doc/kfun/send_message ${WRKDIR}/dgd/doc/kfun/send_message.NET
 	@${CHMOD} o+r ${WRKDIR}/dgd/doc/kfun/*
 
 do-install:
-	@-mv ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
+	@-${MV} ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
 	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PKGDIR}/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 

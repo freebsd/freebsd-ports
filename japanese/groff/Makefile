@@ -27,7 +27,7 @@ DESCS=		${WRKSRC}/devnippon/DESC.proto ${WRKSRC}/devps/DESC.in
 #for not writing "/usr/local" explicitly in the patch
 post-patch:
 	@for f in ${DESCS}; do \
-	  /bin/mv -f $${f} $${f}.tmp; \
+	  ${MV} -f $${f} $${f}.tmp; \
 	  ${SED} -e '$$d' $${f}.tmp > $${f}; \
 	  case $${f} in \
   	    */devnippon/*) \

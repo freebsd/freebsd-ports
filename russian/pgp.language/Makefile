@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.24 1999/08/23 04:23:40 mharo Exp $
+# $Id: Makefile,v 1.25 1999/08/28 02:17:28 mharo Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -27,7 +27,7 @@ OBJS=           language.txt ru.hlp
 do-install:
 	[ -d ${PGPLIB} ] || ${MKDIR} ${PGPLIB}
 	cd ${WRKSRC}; install -c -o bin -g bin -m 444 ${OBJS} ${PGPLIB}
-	cd ${WRKSRC}; tr -d '\015' < NOTES.ru > ${PGPLIB}/NOTES.ru
+	cd ${WRKSRC}; ${TR} -d '\015' < NOTES.ru > ${PGPLIB}/NOTES.ru
 	cd ${PGPLIB}; ${GREP} -l -q '^Language.*=.*ru' config.txt || { \
 		${CP} config.txt config.txt.bak; \
 		${SED} 's/^Language.*=.*$$/Language = ru/' < config.txt.bak > config.txt; }

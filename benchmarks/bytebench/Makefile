@@ -32,6 +32,6 @@ do-install:
 	${CHMOD} 755 $(PREFIX)/lib/bytebench/pgms/*
 	${CHMOD} 755 $(PREFIX)/lib/bytebench/results
 	${CHMOD} 755 $(PREFIX)/lib/bytebench/testdir
-	@rm -f ${PREFIX}/lib/bytebench/pgms/*.orig
+	@${RM} -f ${PREFIX}/lib/bytebench/pgms/*.orig
 
 .include <bsd.port.mk>

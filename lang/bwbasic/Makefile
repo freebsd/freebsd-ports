@@ -25,7 +25,7 @@ pre-patch:
 	cd ${WRKSRC}/tmp; \
 	uudecode ${DISTDIR}/bwb-2.20-patch01.tar.Z.uu.txt; \
 	tar xzf bwb-2.20-patch01.tar.Z; \
-	mv bwb-2.20-patch01/* ${WRKSRC}
+	${MV} bwb-2.20-patch01/* ${WRKSRC}
 	${RM} -rf ${WRKSRC}/tmp
 
 # This puts the documentation in ${PREFIX}/share/bwbasic, and the 

@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.22 1999/08/22 18:59:49 mharo Exp $
+# $Id: Makefile,v 1.23 1999/08/22 23:33:18 mharo Exp $
 #
 
 DISTNAME=       ru-X11-3.3
@@ -32,7 +32,7 @@ CYRF = ${XLIB}/fonts/cyrillic
 #Be careful to not delete embedded tab characters
 do-install:
 	-if [ ! -d ${CYRF}.old ]; then \
-		mv ${CYRF} ${CYRF}.old; \
+		${MV} ${CYRF} ${CYRF}.old; \
 	fi
 	-${MKDIR} ${CYRF}/100dpi
 	-${MKDIR} ${CYRF}/75dpi

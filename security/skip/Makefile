@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.10 1999/08/23 04:23:42 mharo Exp $
+# $Id: Makefile,v 1.11 1999/08/28 02:17:28 mharo Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -53,7 +53,7 @@ post-patch:
 	FILES=`find . -type f -print | xargs ${GREP} -l @@PREFIX@@`; \
 	for FILE in $$FILES; do \
 	  ${SED} 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
-	  mv $$FILE.new $$FILE; \
+	  ${MV} $$FILE.new $$FILE; \
 	done
 
 .include <bsd.port.pre.mk>

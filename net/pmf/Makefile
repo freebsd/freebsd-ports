@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.11 1999/06/06 12:51:53 jseger Exp $
+# $Id: Makefile,v 1.12 1999/08/22 18:59:29 mharo Exp $
 #
 
 DISTNAME=       pmf-1.13.1
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/pmfdir/src
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/pmf
 	@find ${WRKSRC}/../system_dir -name '*.orig' -exec ${RM} {} \;
-	@-mv ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
+	@-${MV} ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
 	@tar -C ${WRKSRC}/../system_dir -cf - . \
 		| tar -C ${PREFIX}/lib/pmf -xf -
 	@${CHOWN} -R bin.bin ${PREFIX}/lib/pmf

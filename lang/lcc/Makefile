@@ -34,7 +34,7 @@ pre-configure:
 		#${PKGDIR}/PLIST.in > ${PKGDIR}/PLIST
 	@${SED} -e "s:%%OPSYS%%:${OPSYS}:g"  \
 		${WRKSRC}/makefile > ${WRKSRC}/makefile.configured
-	@/bin/mv -f ${WRKSRC}/makefile.configured ${WRKSRC}/makefile
+	@${MV} -f ${WRKSRC}/makefile.configured ${WRKSRC}/makefile
 
 do-install:
 	@(umask 022 ; ${MKDIR} ${PREFIX}/${LCCDESTDIR})

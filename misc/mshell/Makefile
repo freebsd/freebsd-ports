@@ -18,7 +18,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		mshell.1
 
 do-extract:
-	@rm -rf ${WRKDIR}
+	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	${AWK} '{if (/^#!/) x++} {if(x) print $$0'}| ${SH})

@@ -40,7 +40,7 @@ pre-fetch:
 	    done; \
 	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
 		${SED} -e '1,/-----8</d' -e '/-----8</,/-----8</d' | uudecode; \
-	    rm -f ${DISTPATCHES};\
+	    ${RM} -f ${DISTPATCHES};\
 	 fi)
 .endif
 

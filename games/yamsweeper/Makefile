@@ -16,7 +16,7 @@ USE_IMAKE=	yes
 MAN1=		yamsweeper.1
 
 pre-configure:
-	@mv ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.old
+	@${MV} ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.old
 	@${CP} ${FILESDIR}/Imakefile ${WRKSRC}
 
 post-install:

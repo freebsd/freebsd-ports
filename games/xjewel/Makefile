@@ -24,7 +24,7 @@ pre-install:
 		${PREFIX}/lib/X11/xjewel)
 
 post-install:
-	@(mv ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
+	@(${MV} ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
 	$(ECHO) "#!/bin/sh" >${PREFIX}/bin/xjewel; \
 	$(ECHO) "xset +fp ${PREFIX}/lib/X11/xjewel" >>${PREFIX}/bin/xjewel; \
 	$(ECHO) "${PREFIX}/bin/xjewel_" >>${PREFIX}/bin/xjewel; \

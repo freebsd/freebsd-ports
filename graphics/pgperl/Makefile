@@ -31,7 +31,7 @@ F2CLIB=	-lf2c
 .endif
 
 post-patch:
-	(cd ${WRKSRC}/ExtUtils; mv -f F77.pm F77.pm~; ${SED} -e \
+	(cd ${WRKSRC}/ExtUtils; ${MV} -f F77.pm F77.pm~; ${SED} -e \
 	    's/@F2CLIB@/${F2CLIB}/g' F77.pm~ > F77.pm)
 
 post-install:
