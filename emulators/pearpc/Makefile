@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pearpc
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,20 +22,25 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		ppc.1
 
+PLIST_FILES=	bin/ppc etc/ppccfg.example %%DATADIR%%/video.x
+PLIST_DIRS=	%%DATADIR%%
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .else
 CONFIGURE_ARGS+=	--disable-fpo
 .endif
 
-.if defined(WITH_QT)
-CONFIGURE_ARGS+=	--enable-gui=qt
-USE_QT_VER=	3
-QTDIR?=		${X11BASE}
-CONFIGURE_ENV+=	QTDIR="${QTDIR}"
-.else
-CONFIGURE_ARGS+=	--enable-gui=nogui
-.endif
+# GTK and QT ui are broken in this version
+#
+#.if defined(WITH_QT)
+#CONFIGURE_ARGS+=	--enable-ui=qt
+#USE_QT_VER=	3
+#QTDIR?=		${X11BASE}
+#CONFIGURE_ENV+=	QTDIR="${QTDIR}"
+#.else
+#CONFIGURE_ARGS+=	--enable-ui=nogui
+#.endif
 
 .include <bsd.port.pre.mk>
 
@@ -64,7 +69,7 @@ pre-everything::
 
 post-patch:
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/system/posix/types.h
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/system/osapi/posix/types.h
 .endif
 
 post-configure:
