@@ -1,0 +1,29 @@
+#!/bin/sh
+[ "x$1" = "x" ] && exit 1
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	cat <<'EOF' >/boot.config
+-P
+EOF
+	mv -f /etc/ttys /etc/ttys.last
+	awk -f - /etc/ttys.last <<'EOF' >/etc/ttys
+/^console/ {
+	print "console	\"/usr/libexec/getty std.9600\"	vt100	on  secure"
+	next
+}
+{
+	print
+}
+EOF
+fi
+if [ "x$2" = "xDEINSTALL" ]; then
+	mv -f /etc/ttys /etc/ttys.last
+	awk -f - /etc/ttys.last <<'EOF' >/etc/ttys
+/^console/ {
+	print "console	none				unknown	off secure"
+	next
+}
+{
+	print
+}
+EOF
+fi
