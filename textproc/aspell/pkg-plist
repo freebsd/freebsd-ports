@@ -109,6 +109,7 @@ lib/libpspell.so.16
 %%NLS%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ga/LC_MESSAGES 2>/dev/null || true
