@@ -3,13 +3,13 @@
 # Date created:			29 July 1998
 # Whom:				Joe Jih-Shian Lu <jslu@dns.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1998/08/25 03:48:00 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/26 06:40:27 asami Exp $
 #
 
 DISTNAME=	xamp-0.8-7
 PKGNAME=	xamp-0.8.7
 CATEGORIES=	audio
-MASTER_SITES=	http://elan.rulez.org/~xopy/
+MASTER_SITES=	ftp://ftp.simcb.ru/pub/unix/x11/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jslu@dns.ntu.edu.tw
