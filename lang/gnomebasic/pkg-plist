@@ -6,10 +6,12 @@ include/gb/gb-main.h
 include/gb/gb-mmap-lex.h
 include/gb/gb-object.h
 include/gb/gb-project.h
+include/gb/gb-statement.h
 include/gb/gb-value.h
 include/gb/gb.h
 include/gb/libgb.h
 include/gbrun/gbrun-eval.h
+include/gbrun/gbrun-file.h
 include/gbrun/gbrun-object.h
 include/gbrun/gbrun-project.h
 include/gbrun/gbrun.h
