@@ -8,7 +8,8 @@
 PORTNAME=	textedit
 PORTVERSION=	1.0
 CATEGORIES=	editors
-MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	alex@FreeBSD.org
 

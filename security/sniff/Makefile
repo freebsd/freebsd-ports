@@ -8,7 +8,8 @@
 PORTNAME=		sniff
 PORTVERSION=		1.0
 CATEGORIES=		security
-MASTER_SITES=		http://people.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=		veraldi@cs.unibo.it
 

@@ -8,7 +8,8 @@
 PORTNAME=	props
 PORTVERSION= 	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	ports@FreeBSD.org
 
