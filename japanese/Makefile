@@ -212,6 +212,7 @@
     SUBDIR += ming
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
+    SUBDIR += motoya-ttfonts
     SUBDIR += mozilla-jlp
     SUBDIR += mozilla-jlp-devel
     SUBDIR += mplusfonts
