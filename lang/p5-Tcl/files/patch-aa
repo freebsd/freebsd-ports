@@ -6,6 +6,6 @@
      VERSION => "b2",
 -    LIBS => ["-ltcl -lm"],
 -    INC => "-I/usr/local/include -I/usr/include/tcl"
-+    LIBS => ["-L$ENV{PREFIX}/lib -ltcl82 -lm"],
-+    INC => "-I$ENV{PREFIX}/include -I$ENV{PREFIX}/include/tcl8.2"
++    LIBS => ["-L\${PREFIX}/lib -ltcl82 -lm"],
++    INC => "-I\${PREFIX}/include -I\${PREFIX}/include/tcl8.2"
  );
