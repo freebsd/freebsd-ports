@@ -51,6 +51,7 @@ bin/xscreensaver-hacks/forest
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/gflux
+bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glforestfire
 bin/xscreensaver-hacks/glplanet
 bin/xscreensaver-hacks/glsnake
@@ -58,6 +59,7 @@ bin/xscreensaver-hacks/gltext
 bin/xscreensaver-hacks/goop
 bin/xscreensaver-hacks/grav
 bin/xscreensaver-hacks/greynetic
+bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hopalong
@@ -209,6 +211,7 @@ share/xscreensaver/config/forest.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
 share/xscreensaver/config/gflux.xml
+share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glforestfire.xml
 share/xscreensaver/config/glplanet.xml
 share/xscreensaver/config/glsnake.xml
@@ -217,6 +220,7 @@ share/xscreensaver/config/goban.xml
 share/xscreensaver/config/goop.xml
 share/xscreensaver/config/grav.xml
 share/xscreensaver/config/greynetic.xml
+share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hopalong.xml
