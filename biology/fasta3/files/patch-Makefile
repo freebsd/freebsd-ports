@@ -1,0 +1,49 @@
+--- Makefile.orig	Mon Jan 29 13:44:28 2001
++++ Makefile	Mon Jan 29 14:08:43 2001
+@@ -12,13 +12,13 @@
+ 
+ # use -DBIG_LIB64 to generate 64-bit offsets in map_db .xin files
+ 
+-CC= cc -O -std1
++#CC= cc -O -std1
+ #CC= insure -g -DDEBUG
+ #CC= cc -g -DDEBUG -std1
+ #CC= gcc -g -Wall
+ #
+ # standard line for normal searching
+-CFLAGS= -DM10_CONS -DUNIX -DTIMES -DHZ=60 -DBIGMEM -DMAX_WORKERS=4 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"fasta.bioch.virginia.edu/fasta/cgi"' -DIS_LITTLE_ENDIAN
++CFLAGS+= -DM10_CONS -DUNIX -DTIMES -DHZ=60 -DBIGMEM -DMAX_WORKERS=4 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"fasta.bioch.virginia.edu/fasta/cgi"' -DIS_LITTLE_ENDIAN
+ # -I/usr/local/include/mysql -DMYSQL_DB 
+ #(for mySQL databases)  (also requires change to Makefile33.common)
+ 
+@@ -32,11 +32,15 @@
+ HFLAGS= -o
+ NFLAGS= -o
+ 
+-#for DEC Unix V4.0 
+ THR_SUBS = pthr_subs
+-THR_LIBS = -threads
++THR_LIBS = -pthread
+ THR_CC =
+ 
++#for DEC Unix V4.0 
++#THR_SUBS = pthr_subs
++#THR_LIBS = -threads
++#THR_CC =
++
+ #for Sun
+ #THR_SUBS = uthr_subs
+ #THR_LIBS = -lthread
+@@ -53,9 +57,9 @@
+ #THR_LIBS = -lpthreads
+ #THR_CC =
+ 
+-XDIR = /seqprg/slib/bin
++XDIR = ${PREFIX}/bin
+ 
+ # renamed (fasta33)  programs
+-include Makefile33.common
++# include Makefile33.common
+ # conventional (fasta3) names
+-#include Makefile.common
++include Makefile.common
