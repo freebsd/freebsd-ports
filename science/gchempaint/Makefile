@@ -6,6 +6,7 @@
 
 PORTNAME=	gchempaint
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
 MAINTAINER=	pav@oook.cz
 COMMENT=	2D chemical structures editor for GNOME 2
 
-LIB_DEPENDS=	gcu.1:${PORTSDIR}/science/gchemutils
+LIB_DEPENDS=	gcu.2:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
