@@ -1,6 +1,18 @@
---- configure.orig	Thu Apr 13 09:53:31 2000
-+++ configure	Mon Apr 17 20:09:51 2000
-@@ -2422,7 +2422,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Oct 29 06:19:47 2001
++++ configure	Thu Jan 24 17:54:12 2002
+@@ -4659,7 +4659,7 @@
+     ;;
+   esac
+ fi
+-need_lc=${lt_cv_archive_cmds_need_lc-yes}
++need_lc=no
+ 
+ # The second clause should only fire when bootstrapping the
+ # libtool distribution, otherwise you forgot to ship ltmain.sh
+@@ -6136,7 +6136,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
