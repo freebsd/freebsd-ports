@@ -10,7 +10,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
 USE_APACHE=	yes

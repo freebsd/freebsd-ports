@@ -14,7 +14,7 @@ MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 #                   ftp://ftp.cohprog.com/pub/apache/module/cleanlink.pl
 DIST_SUBDIR=	apache
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Bandwidth management module for the Apache webserver
 
 USE_APACHE=	YES

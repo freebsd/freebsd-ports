@@ -8,7 +8,7 @@ PORTVERSION=	0.8.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System librairies
 
 USE_REINPLACE=		yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A combination which provides a wrapper for PHP
 
 RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/php4-cgi

@@ -12,7 +12,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$//}

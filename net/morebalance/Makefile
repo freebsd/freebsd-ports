@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://mindx.dyndns.org/morebalance/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A modular open source user-space load balancing system
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

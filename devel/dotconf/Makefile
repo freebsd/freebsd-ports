@@ -11,7 +11,7 @@ PORTVERSION=	1.0.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
 
 USE_REINPLACE=	yes

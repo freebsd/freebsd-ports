@@ -21,7 +21,7 @@ PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
 PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
 PATCHFILES=		no_zombies.patch
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
 CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
