@@ -4,13 +4,7 @@ bin/gozer
 %%PORTDOCS%%share/doc/gozer/ChangeLog
 %%PORTDOCS%%share/doc/gozer/README
 %%PORTDOCS%%share/doc/gozer/TODO
-share/gozer/fonts/20thcent.ttf
-share/gozer/fonts/cinema.ttf
-share/gozer/fonts/goodtime.ttf
-share/gozer/fonts/joystix.ttf
-share/gozer/fonts/morpheus.ttf
-share/gozer/fonts/notepad.ttf
-share/gozer/fonts/soulpapa.ttf
+share/gozer/fonts/helmetr.ttf
 %%PORTDOCS%%@dirrm share/doc/gozer
 @dirrm share/gozer/fonts
 @dirrm share/gozer

@@ -1,16 +1,13 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Tue Oct 16 17:15:37 2001
-+++ src/Makefile.in	Sun Nov 18 17:55:34 2001
-@@ -79,8 +79,8 @@
+--- src/Makefile.in.orig	Sat Jan 26 10:59:12 2002
++++ src/Makefile.in	Sat Jan 26 11:28:32 2002
+@@ -75,8 +75,8 @@
  
  SUBDIRS = fonts
  
 -LDFLAGS = -L/usr/X11R6/lib
--INCLUDES = -g -O3 -Wall -I/usr/X11R6/include \
+-INCLUDES = -g -O3 -Wall -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix)/include -I$(includedir) -I. -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
 +LDFLAGS =
-+INCLUDES = -Wall -I/usr/X11R6/include \
- $(X_CFLAGS) -I$(prefix)/include -I$(includedir) -I. \
- -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
++INCLUDES = -Wall -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix)/include -I$(includedir) -I. -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
+ 
+ LIBOBJS = @LIBOBJS@
  

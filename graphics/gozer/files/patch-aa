@@ -1,28 +1,25 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Tue Oct 16 17:15:36 2001
-+++ Makefile.in	Sun Nov 18 18:01:13 2001
-@@ -86,7 +86,7 @@
+--- Makefile.in.orig	Sat Jan 26 10:59:10 2002
++++ Makefile.in	Sat Jan 26 11:29:23 2002
+@@ -82,7 +82,7 @@
  man_MANS = gozer.1
  
  docs_DATA = README AUTHORS ChangeLog TODO
 -docsdir = $(prefix)/doc/@PACKAGE@
 +docsdir = $(datadir)/doc/@PACKAGE@
  
- EXTRA_DIST = \
- gozer.spec gozer.1 $(docs_DATA)
-@@ -175,6 +175,7 @@
- 	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
- 	done
+ EXTRA_DIST =  gozer.spec gozer.1 $(docs_DATA)
+ 
+@@ -195,6 +195,7 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ 
  install-docsDATA: $(docs_DATA)
 +.if !defined(NO_DOC)
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(docsdir)
  	@list='$(docs_DATA)'; for p in $$list; do \
-@@ -183,6 +184,7 @@
- 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docsdir)/$$f"; \
- 	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docsdir)/$$f; \
+@@ -206,6 +207,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(docsdir)/$$p; \
+ 	  fi; fi; \
  	done
 +.endif
  
