@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	ExtUtils-PkgConfig
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	ExtUtils
+MASTER_SITE_SUBDIR=	../../authors/id/T/TS/TSCH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Simplistic interface to pkg-config
 
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
-BROKEN=		Configure fails
-
+USE_GNOME=	pkgconfig
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::PkgConfig.3
