@@ -13,7 +13,6 @@ MAINTAINER=	mike@LITech.lviv.ua
 LIB_DEPENDS=	gd.2:${PORTSDIR}/ukrainian/gd
 
 WEBALIZER_LANG=	ukrainian
-EXTRA_PATCHES+=	${.CURDIR}/files/patch-ba ${.CURDIR}/files/patch-bb \
-		${.CURDIR}/files/patch-ukrainian
+EXTRA_PATCHES+=	${.CURDIR}/files/patch-ba ${.CURDIR}/files/patch-bb
 
 .include "${MASTERDIR}/Makefile"
