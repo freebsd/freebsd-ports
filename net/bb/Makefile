@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1996/11/26 09:15:36 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/01 01:22:46 obrien Exp $
 #
 
 DISTNAME=	bb
@@ -15,7 +15,7 @@ EXTRACT_SUFX=   -src.tgz
 MAINTAINER=	andreas@klemm.gtn.com
 
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
-RUN_DEPENDS=	lyx:${PORTSDIR}/print/lyx
+RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape3
 
 post-configure:
 	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
