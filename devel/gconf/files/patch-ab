@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar  9 14:41:56 2000
++++ Makefile.in	Wed Jul  5 14:45:58 2000
+@@ -131,7 +131,7 @@
+ 
+ bin_SCRIPTS = gconf-config
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = gconf.m4
+ 
+ EXTRA_DIST = gconf-config.in gconf.m4
