@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.19
+PORTVERSION=	1.20.p
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	nt-${PORTVERSION}
+DISTNAME=	nt-1.20pre
 
 MAINTAINER=	andrew@chg.ru
 
