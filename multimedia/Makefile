@@ -26,6 +26,7 @@
     SUBDIR += gtksubtitler
     SUBDIR += gxanim
     SUBDIR += gxine
+    SUBDIR += kaffeine
     SUBDIR += kdemultimedia3
     SUBDIR += kmplayer
     SUBDIR += kplayer
