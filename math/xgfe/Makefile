@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xgfe
-# Version required:    1.2
+# Version required:    1.3
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/10 05:00:51 hoek Exp $
 #
 
-DISTNAME=	xgfe-1.2
+DISTNAME=	xgfe-1.3
 CATEGORIES=	math
 MASTER_SITES=	http://www2.msstate.edu/~dmi1/xgfe/download/
 
@@ -25,6 +25,6 @@ MAKE_ENV+=	NOPORTDOCS=$(NOPORTDOCS)
 WRKSRC=		$(WRKDIR)/$(DISTNAME)/source
 
 post-extract:
-	cd $(WRKSRC) && ${RM} Makefile && ${LN} -s Makefile.freebsd.gcc Makefile
+	cd $(WRKSRC) && ${RM} Makefile && ${LN} -s Makefile.freebsd-gcc Makefile
 
 .include <bsd.port.mk>
