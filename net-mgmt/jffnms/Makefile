@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jffnms
-PORTVERSION=	0.7.9
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	asa@agava.com
 COMMENT=	Very advanced network monitoring and control system
 
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
@@ -29,13 +29,6 @@ CRONTAB?=	/usr/bin/crontab
 PLIST_SUB=	JFFNMSDIR=${JFFNMSDIR}
 
 do-build:
-	@${REINPLACE_CMD} -e 's|/opt/jffnms|${PREFIX}/${JFFNMSDIR}|g' \
-		-e 's|/usr/bin/php|${LOCALBASE}/bin/php|g' \
-		-e 's|/usr/bin/rrdtool|${LOCALBASE}/bin/rrdtool|g' \
-		-e 's|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g' \
-		-e 's|/usr/bin/neato|${LOCALBASE}/bin/neato|g' \
-		-e 's| /jffnms| /htdocs|g' \
-		${WRKSRC}/conf/config.ini
 
 do-install:
 	@-${RM} ${WRKSRC}/engine/tmpwatch.sh.orig > /dev/null 2>&1
