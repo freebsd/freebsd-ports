@@ -1,0 +1,4 @@
+#!/bin/sh
+JAVAVM_CALL="%%JAVAVM%%"
+JARFILE="%%JARFILE%%"
+${JAVAVM_CALL} -jar ${JARFILE} "$@"

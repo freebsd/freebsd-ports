@@ -1,0 +1,6 @@
+PPower4 is used to post process presentations in PDF format which were
+prepared using (La)TeX  to add dynamic effects. The PDF files can be
+created with pdf(la)tex, v(la)tex or with standard LaTeX and then
+converted to PDF with dvipdfm.
+
+WWW: http://www-sp.iti.informatik.tu-darmstadt.de/software/ppower4/
