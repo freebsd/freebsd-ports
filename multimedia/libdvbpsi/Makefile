@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 
 USE_REINPLACE=	yes
