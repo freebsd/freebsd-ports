@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_GNOME=	gnomehack pkgconfig
