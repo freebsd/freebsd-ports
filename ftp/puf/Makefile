@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	puf
-PORTVERSION=	0.93.2a
-CATEGORIES=	ftp
+PORTVERSION=	0.93.3
+CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	A parallel HTTP downloader similar to wget
 
 GNU_CONFIGURE=	yes
