@@ -50,6 +50,7 @@
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += csv2latex
+    SUBDIR += csv2txt
     SUBDIR += ctpp
     SUBDIR += cwtext
     SUBDIR += cy-aspell
