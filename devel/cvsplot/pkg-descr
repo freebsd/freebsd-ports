@@ -1,0 +1,5 @@
+Cvsplot is used for collecting statistics from CVS controlled files. Simple
+statistics such as how the total number of files and lines of code change
+against time.
+
+WWW: http://cvsplot.sourceforge.net/
