@@ -148,10 +148,13 @@ do-install:
 	@brandelf -t Linux ${LINUXBASE}/sbin/ldconfig
 	@${LINUXBASE}/sbin/ldconfig
 	@${TOUCH} ${LINUXBASE}/etc/ld.so.conf
-	@for R in ${UPDATES} ${RPM_SET2}; do \
-		${ECHO} $$R; \
-		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
-	done
+	@for R in ${RPM_GLIBC} \
+		zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
+		${RPM_SET2} \
+		XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm; do \
+			${ECHO} $$R; \
+			${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
+		done
 	@${ECHO} ${RPM_RPM}
 	@${RPM} -U ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_RPM}
 	@brandelf -t Linux ${LINUXBASE}/bin/rpm
