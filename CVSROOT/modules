@@ -10221,6 +10221,7 @@ ucspi-unix	ports/sysutils/ucspi-unix
 ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
 udmsearch	ports/www/udmsearch
+udpcast		ports/mbone/udpcast
 udptunnel	ports/net/udptunnel
 uebimiau	ports/mail/uebimiau
 uemacs		ports/editors/uemacs
