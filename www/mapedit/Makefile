@@ -1,9 +1,9 @@
 # New ports collection makefile for:    mapedit
 # Version required:     1.5
 # Date created:         Sun Mar 17 17:59:48 MET 1996
-# Whom:                 Andreas Klemm <andreas@knobel.gun.de>
+# Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/17 22:45:47 asami Exp $
 #
 
 DISTNAME=       mapedit1.5
@@ -12,7 +12,7 @@ CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andreas@knobel.gun.de
+MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
 
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	fvwm95-2
 # Version required:	2.0.41f
 # Date created:		Wed Apr 10 21:57:17 MET DST 1996
-# Whom:			Andreas Klemm <andreas@knobel.gun.de>
+# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1996/05/27 02:05:20 asami Exp $
+# $Id: Makefile,v 1.3 1996/06/14 20:31:19 asami Exp $
 #
 
 DISTNAME=	fvwm95-2.0.41f
@@ -11,7 +11,7 @@ CATEGORIES+=	x11
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andreas@knobel.gun.de
+MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
