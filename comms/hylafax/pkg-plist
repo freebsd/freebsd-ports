@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/faxalter
 bin/faxcover
 bin/faxmail
@@ -16,6 +15,7 @@ lib/fax/typerules
 sbin/choptest
 sbin/cqtest
 sbin/dialtest
+sbin/edit-faxcover
 sbin/faxabort
 sbin/faxaddmodem
 sbin/faxadduser
