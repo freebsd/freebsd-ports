@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scmxx
@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 
 MAN1=		scmxx.1
-MANLANG=	"" ru
+MANLANG=	"" ru de
 
 .ifndef(NOPORTDOCS)
 post-install:
