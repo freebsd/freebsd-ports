@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	4.7c
+PORTVERSION=	4.8
 CATEGORIES=	mail devel
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/old/ \
-		http://mirror.nucba.ac.jp/mirror/imap/old/
-DISTNAME=	imap-${PORTVERSION}2
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		http://mirror.nucba.ac.jp/mirror/%SUBDIR%/
+MASTER_SITE_SUBDIR= . old
+DISTNAME=	imap-2000a
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/imap-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 INSTALLS_SHLIB=	yes
-PAMAUTH?=	yes
-.if ${PAMAUTH} != "no"
-ALL_TARGET=	bfp
-.else
 ALL_TARGET=	bsf
-.endif
 
 SHLIBBASE=	c-client4
-SHLIBMAJ=	7
+SHLIBMAJ=	8
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
@@ -40,14 +36,10 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
-.if ${PAMAUTH} != "no"
-	@${ECHO_MSG} ">> Building with PAM support"
-	@${ECHO_MSG} ">> You can disable PAM support building with \"PAMAUTH=no\""
-.endif
 
 HEADERS=	dummy.h env.h env_unix.h fdstring.h flstring.h fs.h ftl.h \
 		imap4r1.h linkage.c linkage.h mail.h misc.h nl.h nntp.h \
-		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h
+		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h c-client.h
 
 do-install:
 	${MKDIR} ${PREFIX}/include/c-client
@@ -61,8 +53,5 @@ do-install:
 		${PREFIX}/lib/lib${SHLIBBASE}.a
 
 post-install:
-.if ${PAMAUTH} != "no"
-	@${CAT} ${FILESDIR}/MESSAGE.PAM
-.endif
 
 .include <bsd.port.post.mk>

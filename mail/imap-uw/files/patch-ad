@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Nov 15 12:20:34 1999
-+++ Makefile	Fri Jul  7 00:35:00 2000
-@@ -49,6 +49,7 @@
+--- Makefile.orig	Thu Nov  2 13:04:11 2000
++++ Makefile	Mon Dec 18 01:13:25 2000
+@@ -43,6 +43,7 @@
  # art	AIX 2.2.1 for RT
  # asv	Altos SVR4
  # aux	A/UX
@@ -8,7 +8,7 @@
  # bs3	BSD/i386 3.0 and higher
  # bsd	generic BSD 4.3 (as in ancient 1980s version)
  # bsf	FreeBSD
-@@ -244,12 +245,12 @@
+@@ -272,12 +273,12 @@
  #	gradually-increasing intervals, starting at 2800-2900, and becoming
  #	permanent at 48,300.
  
@@ -23,24 +23,18 @@
  
  
  # Special make flags (e.g. to override make environment variables)
-@@ -285,15 +286,15 @@
+@@ -314,13 +315,7 @@
  
- all:	c-client rebuild bundled
+ # Make the IMAP Toolkit
  
+-all:	c-client rebuild bundled
+-
 -c-client:
 -	@echo Not processed yet.  In a first-time build, you must specify
 -	@echo the system type so that the sources are properly processed.
 -	@false
-+#c-client:
-+#	@echo Not processed yet.  In a first-time build, you must specify
-+#	@echo the system type so that the sources are properly processed.
-+#	@false
- 
+-
++all:	rebuild bundled
  
  # Note on SCO you may have to set LN to "ln".
  
--a32 a41 aix bs3 bsf bsi bso d-g d54 do4 drs epx gas gh9 ghp gs5 gso gsu gul hpp hpx lnp lyn mct mnt neb nxt nx3 osf os4 ptx qnx sc5 sco sgi sg6 shp sl4 sl5 slx snx sol sos uw2: an
-+a32 a41 aix bfp bs3 bsf bsi bso d-g d54 do4 drs epx gas gh9 ghp gs5 gso gsu gul hpp hpx lnp lyn mct mnt neb nxt nx3 osf os4 ptx qnx sc5 sco sgi sg6 shp sl4 sl5 slx snx sol sos uw2: an
- 	$(BUILD) OS=$@
- 
- # If you use sv4, you may find that it works to move it to use the an process.

@@ -1,7 +1,7 @@
---- src/imapd/Makefile.orig	Wed Nov  3 23:50:56 1999
-+++ src/imapd/Makefile	Fri Jul  7 00:31:53 2000
-@@ -31,9 +31,9 @@
- # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+--- src/imapd/Makefile.orig	Tue Oct 24 16:54:32 2000
++++ src/imapd/Makefile	Sun Dec 17 23:44:22 2000
+@@ -18,30 +18,25 @@
+ # CPYRIGHT, included with this Distribution.
  
  
 -ALERT=/etc/imapd.alert
@@ -11,16 +11,15 @@
 +ANO=$(PREFIX)/etc/anonymous.newsgroups
  SHELL= /bin/sh
  
- #  The "Manage Mail" menu item of Netscape Messager puts up an error message
-@@ -54,21 +54,16 @@
+ 
  # Get local definitions from c-client directory
  
  C = ../c-client
 -CCLIENTLIB = $C/c-client.a
 +#CCLIENTLIB = $C/c-client.a
  CC = `cat $C/CCTYPE`
--CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
-+CFLAGS = `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
+-CFLAGS = -I$C `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
++CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
  	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`

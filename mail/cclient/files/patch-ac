@@ -1,19 +1,11 @@
---- Makefile.orig	Mon Nov 15 22:20:34 1999
-+++ Makefile	Sun Dec 19 14:52:58 1999
-@@ -49,6 +49,7 @@
- # art	AIX 2.2.1 for RT
- # asv	Altos SVR4
- # aux	A/UX
-+# bfp	FreeBSD with Pluggable Authentication Modules (PAM)
- # bs3	BSD/i386 3.0 and higher
- # bsd	generic BSD 4.3 (as in ancient 1980s version)
- # bsf	FreeBSD
-@@ -293,7 +294,7 @@
+--- Makefile.orig	Sun Dec 17 23:09:44 2000
++++ Makefile	Sun Dec 17 23:08:58 2000
+@@ -314,7 +314,7 @@
  
- # Note on SCO you may have to set LN to "ln".
+ # Make the IMAP Toolkit
  
--a32 a41 aix bs3 bsf bsi bso d-g d54 do4 drs epx gas gh9 ghp gs5 gso gsu gul hpp hpx lnp lyn mct mnt neb nxt nx3 osf os4 ptx qnx sc5 sco sgi sg6 shp sl4 sl5 slx snx sol sos uw2: an
-+a32 a41 aix bfp bs3 bsf bsi bso d-g d54 do4 drs epx gas gh9 ghp gs5 gso gsu gul hpp hpx lnp lyn mct mnt neb nxt nx3 osf os4 ptx qnx sc5 sco sgi sg6 shp sl4 sl5 slx snx sol sos uw2: an
- 	$(BUILD) OS=$@
+-all:	c-client rebuild bundled
++all:	c-client rebuild
  
- # If you use sv4, you may find that it works to move it to use the an process.
+ c-client:
+ 	@echo Not processed yet.  In a first-time build, you must specify
