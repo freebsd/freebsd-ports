@@ -12,13 +12,17 @@ MASTER_SITES=	ftp://ftp.innet.be/pub/staff/carl/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+MAKE_ARGS=	CC="${CC}" CCOPTS="${CFLAGS}"
+
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/mserver
 	${INSTALL_PROGRAM} ${WRKSRC}/mserver ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpconn ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/mserver.conf ${PREFIX}/etc/mserver.conf.default
 	${INSTALL_SCRIPT} ${WRKSRC}/mserver.sh.sample ${PREFIX}/etc/rc.d/mserver.sh.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/mserver
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mserver
 	${INSTALL_MAN} ${WRKSRC}/README.tcpconn ${PREFIX}/share/doc/mserver
+.endif
 
 .include <bsd.port.mk>
