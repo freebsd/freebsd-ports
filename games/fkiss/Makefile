@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.2 1998/11/17 04:15:49 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/18 09:29:47 flathill Exp $
 #
 
 DISTNAME=	fkiss028
@@ -11,7 +11,7 @@ PKGNAME=	fkiss-0.28
 CATEGORIES=	games
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 
-MAINTAINER=	flathill@flathill.gr.jp
+MAINTAINER=	flathill@FreeBSD.ORG
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
