@@ -55,6 +55,7 @@
     SUBDIR += ficl-devel
     SUBDIR += forth
     SUBDIR += fpc
+    SUBDIR += fpc-demo
     SUBDIR += fpc-devel
     SUBDIR += fpc-docs
     SUBDIR += freetxl
