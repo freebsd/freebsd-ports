@@ -2,14 +2,18 @@ bin/MOPAC7
 bin/rmopac
 share/doc/mopac/mopac.tex
 share/doc/mopac/mopac.dvi
-share/doc/mopac/h2o.dat
-share/doc/mopac/test_cos.dat
-share/doc/mopac/test_cos.out
-share/doc/mopac/test_ef_.dat
-share/doc/mopac/test_ef_.out
-share/doc/mopac/test_gre.dat
-share/doc/mopac/test_gre.end
-share/doc/mopac/test_gre.out
-share/doc/mopac/test_pol.dat
-share/doc/mopac/test_pol.out
+share/examples/mopac/h2o.dat
+share/mopac/test/test_cos.dat
+share/mopac/test/test_cos.out
+share/mopac/test/test_ef_.dat
+share/mopac/test/test_ef_.out
+share/mopac/test/test_gre.dat
+share/mopac/test/test_gre.end
+share/mopac/test/test_gre.out
+share/mopac/test/test_pol.dat
+share/mopac/test/test_pol.out
+share/mopac/test/test.csh
+@dirrm share/examples/mopac
 @dirrm share/doc/mopac
+@dirrm share/mopac/test
+@dirrm share/mopac
