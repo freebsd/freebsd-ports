@@ -9,7 +9,7 @@ PORTNAME=	console
 PORTVERSION=	${CONSOLE_LICQ_VER}
 CATEGORIES=	net
 
-MAINTAINER=	licq@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 USE_AUTOMAKE=	yes
 
