@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.19 1998/04/12 17:58:37 jseger Exp $
+# $Id: Makefile,v 1.20 1998/04/13 10:59:30 jseger Exp $
 #
 
 DISTNAME=	unix_19980408
@@ -17,7 +17,6 @@ MAINTAINER=	jseger@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/ns
 USE_GMAKE=	yes
-NO_INSTALL_MANPAGES=yes
 DIST_SUBDIR=	mozilla
 MAKE_ENV=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1 \
 	LD_LIBRARY_PATH=${LOCALBASE}/lib
