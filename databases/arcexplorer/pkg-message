@@ -1,0 +1,11 @@
+To use ArcExplorer4.0, add the following to your environment:
+
+  AEJHOME=%%PREFIX%%/lib/aej40exe
+  PATH=$PATH:$AEJHOME/bin
+
+and execute:
+
+  $ aejava
+
+Please read %%PREFIX%%/lib/aej40exe/License.txt for licensing
+information.

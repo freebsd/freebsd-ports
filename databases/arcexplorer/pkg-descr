@@ -1,0 +1,10 @@
+Lightweight java-based GIS data viewer providing an easy way to perform
+basic GIS functions. ArcExplorer may be used for a variety of display,
+query, and data retrieval applications and supports a wide variety of
+standard data sources. It can be used on its own with local data sets
+or as a client to Internet data and map servers.
+
+
+WWW: http://www.esri.com/software/arcexplorer/index.html
+- Chris D. Faulhaber
+ <jedgar@FreeBSD.org>
