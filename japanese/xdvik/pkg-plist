@@ -6,8 +6,9 @@ share/texmf/xdvi/xdvipaper.dvips
 share/texmf/xdvi/xdvipaper.jdvi2kps
 share/doc/xdvi/FAQ
 share/doc/xdvi/xdvi.icon
+share/doc/xdvi/CHANGES.xdvik-jp
 share/doc/xdvi/README
-share/doc/xdvi/README.xdvik-22.x-jp
+share/doc/xdvi/README.xdvik-jp
 share/doc/xdvi/ChangeLog.xdvik20a-j1.1
 share/doc/xdvi/ChangeLog.xdvik20c-j1.0
 share/doc/xdvi/HEADERS.DOC
@@ -24,43 +25,5 @@ share/doc/xdvi/README.xdvik18f-j1.1p5.patch
 share/doc/xdvi/README.xdvik20a-j1.1.patch
 share/doc/xdvi/README.xdvik20c-j1.0+hal2+dvisel
 share/doc/xdvi/README.xdvik20c-j1.0p1.patch 
-share/fonts/tfm/ptex/goth10.tfm
-share/fonts/tfm/ptex/goth5.tfm
-share/fonts/tfm/ptex/goth6.tfm
-share/fonts/tfm/ptex/goth7.tfm
-share/fonts/tfm/ptex/goth8.tfm
-share/fonts/tfm/ptex/goth9.tfm
-share/fonts/tfm/ptex/min10.tfm
-share/fonts/tfm/ptex/min5.tfm
-share/fonts/tfm/ptex/min6.tfm
-share/fonts/tfm/ptex/min7.tfm
-share/fonts/tfm/ptex/min8.tfm
-share/fonts/tfm/ptex/min9.tfm
-share/fonts/tfm/ptex/ngoth10.tfm
-share/fonts/tfm/ptex/ngoth5.tfm
-share/fonts/tfm/ptex/ngoth6.tfm
-share/fonts/tfm/ptex/ngoth7.tfm
-share/fonts/tfm/ptex/ngoth8.tfm
-share/fonts/tfm/ptex/ngoth9.tfm
-share/fonts/tfm/ptex/nmin10.tfm
-share/fonts/tfm/ptex/nmin5.tfm
-share/fonts/tfm/ptex/nmin6.tfm
-share/fonts/tfm/ptex/nmin7.tfm
-share/fonts/tfm/ptex/nmin8.tfm
-share/fonts/tfm/ptex/nmin9.tfm
-share/fonts/tfm/ptex/tgoth10.tfm
-share/fonts/tfm/ptex/tgoth5.tfm
-share/fonts/tfm/ptex/tgoth6.tfm
-share/fonts/tfm/ptex/tgoth7.tfm
-share/fonts/tfm/ptex/tgoth8.tfm
-share/fonts/tfm/ptex/tgoth9.tfm
-share/fonts/tfm/ptex/tmin10.tfm
-share/fonts/tfm/ptex/tmin5.tfm
-share/fonts/tfm/ptex/tmin6.tfm
-share/fonts/tfm/ptex/tmin7.tfm
-share/fonts/tfm/ptex/tmin8.tfm
-share/fonts/tfm/ptex/tmin9.tfm
 @dirrm share/texmf/xdvi
-@dirrm share/fonts/tfm/ptex
-@dirrm share/fonts/tfm
 @dirrm share/doc/xdvi
