@@ -3,7 +3,7 @@
 # Date created:         26 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/18 20:53:42 steve Exp $
 #
 
 DISTNAME=	gplot
@@ -18,6 +18,7 @@ NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	drawcgm gtex gplot
 MAN1=		gplot.1
+DOCS=		gplot.hlp gplot.txt gtex.doc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gplot ${PREFIX}/bin
@@ -26,10 +27,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/gplot.man ${PREFIX}/man/man1/gplot.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/Gplot
-	${GZIP_CMD} ${WRKSRC}/gplot.hlp
-	${GZIP_CMD} ${WRKSRC}/gplot.txt
-	${GZIP_CMD} ${WRKSRC}/gtex.doc
-	${INSTALL_DATA} ${WRKSRC}/*.gz ${PREFIX}/share/doc/Gplot
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/Gplot
+	${GZIP_CMD} ${PREFIX}/share/doc/Gplot/$f
+.endfor
 .endif
 
 .include <bsd.port.mk>
