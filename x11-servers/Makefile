@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += Xatm
     SUBDIR += Xfstt
     SUBDIR += XttXF86srv-3DLabs
     SUBDIR += XttXF86srv-8514
