@@ -1,0 +1,11 @@
+--- plugins/perl/Makefile.in	Sat Mar 11 15:10:46 2000
++++ plugins/perl/Makefile.in.new	Fri May 19 20:36:24 2000
+@@ -240,7 +240,7 @@
+ 	cd xs && if [ ! -f Makefile ]; then $(perlpath) Makefile.PL; fi && $(MAKE) && cd ..
+ 
+ install-exec-local:
+-	cd xs && make install && cd ..
++	${MAKE} -C xs install
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
