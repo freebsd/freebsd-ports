@@ -1,0 +1,7 @@
+*** ../bench/crambin.run.orig  Sat Aug 29 21:54:06 1998
+--- ../bench/crambin.run       Sat Aug 29 21:54:20 1998
+***************
+*** 1 ****
+! ../bin/timer < crambin.input
+--- 1 ----
+! timer < crambin.input

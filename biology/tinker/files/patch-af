@@ -1,0 +1,11 @@
+*** ../bench/water.run.orig    Sat Aug 29 21:56:44 1998
+--- ../bench/water.run Sat Aug 29 21:56:58 1998
+***************
+*** 1,3 ****
+  cp water.dyn0 water.dyn
+! time ../bin/dynamic < water.input
+  rm water.dyn
+--- 1,3 ----
+  cp water.dyn0 water.dyn
+! time dynamic < water.input
+  rm water.dyn

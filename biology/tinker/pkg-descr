@@ -1,0 +1,12 @@
+Tinker is a set of small programs for doing general purpose molecular
+modeling. Tools are included for energy minimizations, geometry
+calculations, and molecular analysis calculations. Tools for
+converting coordinate sets are also provided.
+
+Tinker employs several force fields and minimizaation techniques.
+Simulated annealing and molecular dynamics can be performed with
+Tinker.
+
+For more information visit the web page at:
+
+http://dasher.wustl.edu/tinker/
