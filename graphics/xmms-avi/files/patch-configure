@@ -1,0 +1,12 @@
+--- configure.orig	Wed Feb  7 22:07:08 2001
++++ configure	Wed Feb  7 22:08:06 2001
+@@ -2192,7 +2192,8 @@
+     no_sdl=yes
+   else
+     SDL_CFLAGS=`$SDL_CONFIG $sdlconf_args --cflags`
+-    SDL_LIBS=`$SDL_CONFIG $sdlconf_args --libs`
++# Having Xxf86vm and friends makes libtool unhappy and unable to create .so
++    SDL_LIBS=`$SDL_CONFIG $sdlconf_args --libs | sed 's/-lXxf86vm -lXxf86dga -lXv//'`
+ 
+     sdl_major_version=`$SDL_CONFIG $sdl_args --version | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
