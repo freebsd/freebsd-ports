@@ -23,6 +23,13 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/html ${EXAMPLESDIR}
@@ -33,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
