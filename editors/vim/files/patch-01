@@ -4,11 +4,6 @@
  #CONF_ARGS = --exec-prefix=/usr
 +CONF_ARGS = --prefix=$(PREFIX)
  
-@@ -457,3 +458,3 @@
- # as root: sysctl -w vm.max_proc_mmap=30000
--EXTRA_LIBS = /usr/local/lib/libefence.a
-+#EXTRA_LIBS = /usr/local/lib/libefence.a
- 
 @@ -1589,24 +1590,24 @@
  $(BINDIR)/$(EXTARGET):
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
