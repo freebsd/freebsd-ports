@@ -907,6 +907,7 @@
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
+    SUBDIR += p5-ParseLex
     SUBDIR += p5-PatchReader
     SUBDIR += p5-Path-Class
     SUBDIR += p5-Penguin
