@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinker
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
@@ -23,6 +23,7 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 USE_REINPLACE=	yes
 RESTRICTED=	author requests no distribution except from his FTP site
+BROKEN=		"fails to compile the interface between TINKER Fortran code and FFE Java objects"
 
 pre-fetch:
 	@${ECHO_MSG} ""
