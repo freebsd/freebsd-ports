@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1998/05/21 22:37:46 mph Exp $
+# $Id: Makefile,v 1.63 1998/06/08 11:12:38 dburr Exp $
 #
 
     SUBDIR += adcomplain
@@ -16,6 +16,7 @@
     SUBDIR += glbiff
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += kbiff
     SUBDIR += mailagent
     SUBDIR += majorcool
     SUBDIR += majordomo
