@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.3.4
+PORTVERSION=	8.3.5
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
@@ -20,14 +20,18 @@ DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	The Berkeley Internet Name Daemon, an implementation of DNS
+COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
 
 .if defined(PORT_REPLACES_BASE_BIND8)
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
+INCLUDE_PATH=	include
+PLIST_SUB=	INCLUDE_PATH=${INCLUDE_PATH} FAKE_SBIN=sbin
 .else
 BIND_DESTETC=	${PREFIX}/etc
+INCLUDE_PATH=	include/bind
+PLIST_SUB=	INCLUDE_PATH=${INCLUDE_PATH} FAKE_SBIN=bin
 .endif
 
 WRKSRC=		${WRKDIR}/src
@@ -51,6 +55,26 @@ post-patch:
 		${WRKSRC}/port/freebsd/Makefile.set.sed
 	@${MV} ${WRKSRC}/port/freebsd/Makefile.set.sed \
 		${WRKSRC}/port/freebsd/Makefile.set
+
+	@${SED} -e "s#{DESTEXEC}#{DESTBIN}#g" \
+		${WRKSRC}/bin/dnskeygen/Makefile > \
+		${WRKSRC}/bin/dnskeygen/Makefile.sed
+	@${MV} ${WRKSRC}/bin/dnskeygen/Makefile.sed \
+		${WRKSRC}/bin/dnskeygen/Makefile
+
+.if defined(PORT_REPLACES_BASE_BIND8)
+	@${SED} -e "s#\'DESTINC=.*#'DESTINC=${PREFIX}/include'#" \
+		${WRKSRC}/port/freebsd/Makefile.set > \
+		${WRKSRC}/port/freebsd/Makefile.set.sed
+	@${MV} ${WRKSRC}/port/freebsd/Makefile.set.sed \
+		${WRKSRC}/port/freebsd/Makefile.set
+.for dir in nslookup nsupdate
+	@${SED} -e "s#{DESTBIN}#{DESTSBIN}#g" \
+	${WRKSRC}/bin/${dir}/Makefile > ${WRKSRC}/bin/${dir}/Makefile.sed
+	@${MV} ${WRKSRC}/bin/${dir}/Makefile.sed ${WRKSRC}/bin/${dir}/Makefile
+.endfor
+.endif
+
 .for file in named.conf.5 named.8
 	@${SED} -e "s#/etc/named.conf#${BIND_DESTETC}/named.conf#g" \
 		${WRKDIR}/doc/man/${file} > ${WRKDIR}/doc/man/${file}.sed
@@ -60,6 +84,10 @@ post-patch:
 post-install:
 	cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} clean all ${INSTALL_TARGET}
+
+	${INSTALL_DATA} ${WRKSRC}/include/isc/ctl.h \
+		${PREFIX}/${INCLUDE_PATH}/isc
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${DOCSDIR}/html

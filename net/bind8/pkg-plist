@@ -1,33 +1,34 @@
 bin/addr
 bin/dig
+bin/dnskeygen
 bin/dnsquery
 bin/host
 bin/mkservdb
-bin/nslookup
-bin/nsupdate
-include/bind/arpa/inet.h
-include/bind/arpa/nameser.h
-include/bind/arpa/nameser_compat.h
-include/bind/hesiod.h
-include/bind/irp.h
-include/bind/irs.h
-include/bind/isc/assertions.h
-include/bind/isc/dst.h
-include/bind/isc/eventlib.h
-include/bind/isc/heap.h
-include/bind/isc/irpmarshall.h
-include/bind/isc/list.h
-include/bind/isc/logging.h
-include/bind/isc/memcluster.h
-include/bind/isc/misc.h
-include/bind/isc/tree.h
-include/bind/netdb.h
-include/bind/res_update.h
-include/bind/resolv.h
-include/bind/sys/bitypes.h
+%%FAKE_SBIN%%/nslookup
+%%FAKE_SBIN%%/nsupdate
+%%INCLUDE_PATH%%/arpa/inet.h
+%%INCLUDE_PATH%%/arpa/nameser.h
+%%INCLUDE_PATH%%/arpa/nameser_compat.h
+%%INCLUDE_PATH%%/hesiod.h
+%%INCLUDE_PATH%%/irp.h
+%%INCLUDE_PATH%%/irs.h
+%%INCLUDE_PATH%%/isc/assertions.h
+%%INCLUDE_PATH%%/isc/ctl.h
+%%INCLUDE_PATH%%/isc/dst.h
+%%INCLUDE_PATH%%/isc/eventlib.h
+%%INCLUDE_PATH%%/isc/heap.h
+%%INCLUDE_PATH%%/isc/irpmarshall.h
+%%INCLUDE_PATH%%/isc/list.h
+%%INCLUDE_PATH%%/isc/logging.h
+%%INCLUDE_PATH%%/isc/memcluster.h
+%%INCLUDE_PATH%%/isc/misc.h
+%%INCLUDE_PATH%%/isc/tree.h
+%%INCLUDE_PATH%%/netdb.h
+%%INCLUDE_PATH%%/res_update.h
+%%INCLUDE_PATH%%/resolv.h
+%%INCLUDE_PATH%%/sys/bitypes.h
 lib/libbind.a
 lib/libbind_r.a
-libexec/dnskeygen
 libexec/named-xfer
 sbin/irpd
 sbin/named
@@ -74,10 +75,10 @@ sbin/ndc
 %%PORTDOCS%%share/doc/bind/misc/rfc2317-notes.txt
 %%PORTDOCS%%share/doc/bind/misc/style.txt
 share/misc/nslookup.help
-@dirrm include/bind/arpa
-@dirrm include/bind/isc
-@dirrm include/bind/sys
-@dirrm include/bind
+@unexec rmdir %D/%%INCLUDE_PATH%%/arpa 2>/dev/null || true
+@unexec rmdir %D/%%INCLUDE_PATH%%/isc 2>/dev/null || true
+@unexec rmdir %D/%%INCLUDE_PATH%%/sys 2>/dev/null || true
+@unexec rmdir %D/%%INCLUDE_PATH%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/bind/conf/recursive/pri
 %%PORTDOCS%%@dirrm share/doc/bind/conf/recursive
 %%PORTDOCS%%@dirrm share/doc/bind/conf/workstation/pri
