@@ -3,13 +3,13 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/20 19:59:59 jkh Exp $
+# $Id: Makefile,v 1.2 1997/08/25 16:40:13 jkh Exp $
 #
 
 DISTNAME=	tk8.0
 PKGNAME=	tk-8.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/ 
+MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 
 MAINTAINER=	jkh@Freebsd.ORG
 
