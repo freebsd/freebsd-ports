@@ -4900,7 +4900,6 @@ mdw		ports/www/mdw
 megapov		ports/graphics/megapov
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
-memcached-net	ports/net/memcached
 memcheck	ports/devel/memcheck
 memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
