@@ -1,6 +1,6 @@
 Index: SOCKS-SOURCE/h/socksdef.h
---- socksdef.h.orig	Wed Aug  7 19:25:31 1996
-+++ socksdef.h	Wed Oct 30 21:05:37 1996
+--- SOCKS-SOURCE/h/socksdef.h.orig	Wed Aug  7 19:25:31 1996
++++ SOCKS-SOURCE/h/socksdef.h	Wed Oct 30 21:05:37 1996
 @@ -15,9 +15,11 @@
  #define P_(x) ()
  #endif /* ! ANSI C */
