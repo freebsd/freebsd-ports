@@ -46,7 +46,9 @@ configure () {
 	echo "#define XInputDrivers mouse" >> $LOCALDEF	
     fi
     echo "#define BuildXF86DRI ${BuildXF86DRI}" >> $LOCALDEF
-    echo "#define BuildXF86DRM ${BuildXF86DRM}" >> $LOCALDEF
+    echo "#define BuildXF86DRM NO" >> $LOCALDEF
+    echo "#define HasGlide3 ${HasGlide3}" >> $LOCALDEF
+    echo "#define Glide3IncDir glide3" >> $LOCALDEF
 
     # Matrox driver support
     echo "#define HaveMatroxHal $HaveMatroxHal" >> $LOCALDEF

@@ -7,9 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.0
-.if defined(WITH_MATROX_GXX_DRIVER)
-PORTREVISION=	1
-.endif
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -34,7 +32,7 @@ SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			HasPam=${HasPam} \
 			ExtendedInputDevices=${ExtendedInputDevices} \
 			BuildXF86DRI=${BuildXF86DRI} \
-			BuildXF86DRM=${BuildXF86DRM} \
+			HasGlide3=${HasGlide3} \
 			HaveMatroxHal=${HaveMatroxHal}
 MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man WORLDOPTS=
 MAKE_ARGS=		WORLDOPTS=
@@ -88,23 +86,24 @@ HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
-.if ${ARCH} == i386  && (exists(/sys) || exists(/usr/src/sys))
+
+.if ${ARCH} == i386
 BuildXF86DRI=		YES
-BuildXF86DRM=		YES
 PLIST_SUB+=		DRI=""
-PLIST_SUB+=		DRI_KMOD=""
+MASTER_SITES+=		http://gladstone.uoregon.edu/~eanholt/dri/:glide
+DISTFILES+=		freebsd-glide3headers.tar.gz:glide
+HasGlide3=		YES
+
+post-extract:
+	@(cd ${WRKSRC}/lib/GL/mesa/src/drv/tdfx/ ; \
+		tar xfpz ${DISTDIR}/${DIST_SUBDIR}/freebsd-glide3headers.tar.gz)
 .else
 pre-fetch::
-.if ${ARCH} == i386
-	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
-.else
 	@${ECHO_MSG} "DRI only built on i386"
-.endif # i386
 BuildXF86DRI=		NO
-BuildXF86DRM=		NO
+HasGlide3=		NO
 PLIST_SUB+=		DRI="@comment "
-PLIST_SUB+=		DRI_KMOD="@comment "
-.endif	# have /sys
+.endif # i386
 
 # Some things are not applicable if this machine is an alpha
 .if ${ARCH} == alpha
@@ -197,16 +196,8 @@ PLIST_SUB+=		MATROX="@comment "
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
-.if ${BuildXF86DRM} == "YES"
-pre-install:
-	${MKDIR} ${PREFIX}/lib/X11/kernel
-.endif
-
 post-build:
 	@${RM} -f ${PKGMESSAGE}
-.if ${BuildXF86DRM} == "YES"
-	@${CAT} ${.CURDIR}/pkg-message-drm > ${PKGMESSAGE}
-.endif
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
 
 post-install::
