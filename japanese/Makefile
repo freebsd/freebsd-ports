@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1996/07/10 09:34:49 asami Exp $
+# $Id: Makefile,v 1.32 1996/08/09 07:34:47 asami Exp $
 #
 
     SUBDIR += Canna
@@ -23,6 +23,7 @@
     SUBDIR += mh
     SUBDIR += mimekit
     SUBDIR += mule-canna
+    SUBDIR += mule-sj3
     SUBDIR += mule-wnn
     SUBDIR += nethack
     SUBDIR += netscape.language
@@ -35,6 +36,9 @@
     SUBDIR += ptex2
     SUBDIR += qkc
     SUBDIR += sed
+    SUBDIR += sj3
+    SUBDIR += sjxa
+    SUBDIR += skk
     SUBDIR += tcl
     SUBDIR += tcl75
     SUBDIR += tgif
