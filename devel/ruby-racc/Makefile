@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www9.xdsl.ne.jp/~aamine/soft/ \
-		http://www.xdsl.ne.jp/Cd/aamine/soft/
+MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
