@@ -30,12 +30,12 @@
     SUBDIR += pose
     SUBDIR += ppmtoTbmp
     SUBDIR += prc-tools
-    SUBDIR += rapip
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += syncal
     SUBDIR += synce-dccm
     SUBDIR += synce-gnomevfs
+    SUBDIR += synce-kde
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
     SUBDIR += synce-rra
