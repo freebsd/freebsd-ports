@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sun Feb 16 15:47:35 2003
++++ Makefile.in	Sun Feb 16 15:48:54 2003
+@@ -94,7 +94,7 @@
+ VERSION = @VERSION@
+ pthread_libs = @pthread_libs@
+ 
+-SUBDIRS = src examples tests doc 
++SUBDIRS = src doc 
+ 
+ EXTRA_DIST = TODO HACKING BUGS  README.macosx gnetconfig.h.in 	README.win32 GNET.DSP config.h.win32 gnet.def gnet.m4 	gnet.spec gnet.spec.in gnet.pc.in 	examples/makefile.mingw src/makefile.mingw 	src/gnet-private.h src/socks-private.h 	tests/makefile.mingw
