@@ -207,6 +207,7 @@
     SUBDIR += p5-IO-Stty
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-stringy
+    SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
     SUBDIR += p5-Locale-Maketext
