@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
+
+  if [ -z "%%USER%%" -o \
+       -z "%%GROUP%%" ]; then
+    echo "ERROR: A required pragma was empty"
+    exit 1
+  fi
+
+  if pw showgroup "%%GROUP%%" 2>/dev/null; then
+    echo "---> Using existing group \"%%GROUP%%\""
+  else
+    echo "---> Adding group \"%%GROUP%%\""
+    pw addgroup %%GROUP%% -h - || exit 1
+  fi
+
+  # Create user if required
+  if pw showuser "%%USER%%" 2>/dev/null; then
+    echo "---> Using existing user \"%%USER%%\""
+  else
+    echo "---> Adding user \"%%USER%%\""
+    pw adduser %%USER%% -g %%GROUP%% -h - \
+      -s "/sbin/nologin" -c "ifGraph User" || exit 1
+  fi
+
+  ;;
+
+POST-INSTALL)
+  echo "---> Starting post-install script:"
+
+  if [ -z "%%USER%%" -o \
+       -z "%%PREFIX%%" ]; then
+    echo "ERROR: A required pragma was empty"
+    exit 1
+  fi
+
+  echo "---> Creating crontab(5) file for user \"%%USER%%\""
+  crontab -u "%%USER%%" "%%PREFIX%%/ifgraph/crontab.in" || exit 1
+
+  ;;
+
+esac
