@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.2.90
+PORTVERSION=	0.2.92
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		ftp://ftp.Awfulhak.org/pub/vlc/ \
@@ -25,16 +25,11 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+PLIST_SUB=	LIB_DATE="${LIB_DATE}"
+
+LIB_DATE!=	date +%Y-%m-%d
 
 post-patch:
 	${PERL} -pi.orig -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-PLIST_SUB=	XF4=""
-.else
-PLIST_SUB=	XF4="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
