@@ -1,6 +1,5 @@
---- configure.orig	Mon Oct 11 16:00:00 1999
-+++ configure	Sat Jul  1 17:06:30 2000
-@@ -1714,7 +1714,7 @@
+Index: configure
+@@ -1720,7 +1720,7 @@
      if test "$gtk_config_major_version" = "1" -a "$gtk_config_minor_version" = 0 ; then
        GTK_OBJS_STATIC="$GTK_PREFIX/lib/libgtk.a $GTK_PREFIX/lib/libgdk.a $GTK_PREFIX/lib/libglib.a"
      else
@@ -9,12 +8,12 @@
        GTK_OBJS_STATIC="$GTK_PREFIX/lib/libgtk.a $GTK_PREFIX/lib/libgdk.a $GLIB_PREFIX/lib/libglib.a $GLIB_PREFIX/lib/libgmodule.a"
      fi
  
-@@ -2393,7 +2393,7 @@
- echo "Configuration complete."
+@@ -2795,7 +2795,7 @@
  echo ""
- 
--echo "Ol-Irc will use GTK+ version : `gtk-config --version`"
-+echo "Ol-Irc will use GTK+ version : `$GTK_CONFIG --version`"
+ echo "Ol-Irc configuration :"
+ echo ""
+-echo "GTK+ version                 `gtk-config --version`"
++echo "GTK+ version                 `$GTK_CONFIG --version`"
+ echo "TCL scripting                $TCL_SUP"
  
  echo ""
- 
