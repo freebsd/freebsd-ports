@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../j2se/src/solaris/native/java/net/net_util_md.c.orig	Tue Jan 27 17:31:03 2004
++++ ../../j2se/src/solaris/native/java/net/net_util_md.c	Tue Jan 27 17:31:38 2004
+@@ -166,6 +166,10 @@
+     int fd;
+     void *ipv6_fn;
+
++#ifdef __FreeBSD__
++    return JNI_FALSE;
++#endif
++
+     fd = JVM_Socket(AF_INET6, SOCK_STREAM, 0) ;
+     if (fd < 0) {
+	/*

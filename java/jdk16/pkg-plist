@@ -2,7 +2,7 @@ jdk%%JDK_VERSION%%/COPYRIGHT
 jdk%%JDK_VERSION%%/LICENSE
 jdk%%JDK_VERSION%%/README
 jdk%%JDK_VERSION%%/README.html
-jdk%%JDK_VERSION%%/bin/HtmlConverter
+%%MINIMAL:%%jdk%%JDK_VERSION%%/bin/HtmlConverter
 jdk%%JDK_VERSION%%/bin/appletviewer
 jdk%%JDK_VERSION%%/bin/extcheck
 jdk%%JDK_VERSION%%/bin/idlj
@@ -28,854 +28,854 @@ jdk%%JDK_VERSION%%/bin/rmiregistry
 jdk%%JDK_VERSION%%/bin/serialver
 jdk%%JDK_VERSION%%/bin/servertool
 jdk%%JDK_VERSION%%/bin/tnameserv
-jdk%%JDK_VERSION%%/demo/applets/Animator/Animation.class
-jdk%%JDK_VERSION%%/demo/applets/Animator/AnimationFrame.class
-jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.class
-jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.java
-jdk%%JDK_VERSION%%/demo/applets/Animator/DescriptionFrame.class
-jdk%%JDK_VERSION%%/demo/applets/Animator/ParseException.class
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/0.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/1.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/2.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/3.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/4.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/5.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/6.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/7.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/8.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/9.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/spacemusic.au
-jdk%%JDK_VERSION%%/demo/applets/Animator/example1.html
-jdk%%JDK_VERSION%%/demo/applets/Animator/example2.html
-jdk%%JDK_VERSION%%/demo/applets/Animator/example3.html
-jdk%%JDK_VERSION%%/demo/applets/Animator/example4.html
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T1.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T10.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T2.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T3.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T4.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T5.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T6.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T7.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T8.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T9.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T1.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T2.gif
-jdk%%JDK_VERSION%%/demo/applets/Animator/images/loading-msg.gif
-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcCanvas.class
-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcControls.class
-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.class
-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.java
-jdk%%JDK_VERSION%%/demo/applets/ArcTest/example1.html
-jdk%%JDK_VERSION%%/demo/applets/BarChart/BarChart.class
-jdk%%JDK_VERSION%%/demo/applets/BarChart/BarChart.java
-jdk%%JDK_VERSION%%/demo/applets/BarChart/example1.html
-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink$1.class
-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.class
-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.java
-jdk%%JDK_VERSION%%/demo/applets/Blink/example1.html
-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardPanel.class
-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.class
-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.java
-jdk%%JDK_VERSION%%/demo/applets/CardTest/example1.html
-jdk%%JDK_VERSION%%/demo/applets/Clock/Clock.class
-jdk%%JDK_VERSION%%/demo/applets/Clock/Clock.java
-jdk%%JDK_VERSION%%/demo/applets/Clock/example1.html
-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherCanvas.class
-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherControls.class
-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.class
-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.java
-jdk%%JDK_VERSION%%/demo/applets/DitherTest/example1.html
-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawControls.class
-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawPanel.class
-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.class
-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.java
-jdk%%JDK_VERSION%%/demo/applets/DrawTest/example1.html
-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.class
-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.java
-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSRule.class
-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSTurtle.class
-jdk%%JDK_VERSION%%/demo/applets/Fractal/ContextLSystem.class
-jdk%%JDK_VERSION%%/demo/applets/Fractal/example1.html
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Edge.class
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.class
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.java
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/GraphPanel.class
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Node.class
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/computer.au
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/drip.au
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/gong.au
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example1.html
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example2.html
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example3.html
-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example4.html
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.java
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcCard.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcDegreePanel.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcPanel.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ColorUtils.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsCards.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsPanel.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.java
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/OvalShape.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/PolygonShape.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RectShape.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RoundRectShape.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/Shape.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ShapeTest.class
-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/example1.html
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.class
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.java
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/chirp1.au
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/hi.au
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/example1.html
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/imagemapcheat.html
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/images/jim.graham.gif
-jdk%%JDK_VERSION%%/demo/applets/ImageMap/sources.html
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/JumpingBox.class
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/JumpingBox.java
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/example1.html
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/danger.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/ip.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/that.hurts.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/thin.bell.au
-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Atom.class
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.class
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.java
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.class
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.java
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZChemModel.class
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example1.html
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example2.html
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example3.html
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/benzene.xyz
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/cyclohexane.xyz
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/ethane.xyz
-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/water.xyz
-jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.class
-jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.java
-jdk%%JDK_VERSION%%/demo/applets/NervousText/example1.html
-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.class
-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.java
-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/example1.html
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.class
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.java
-jdk%%JDK_VERSION%%/demo/applets/SortDemo/example1.html
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Cell.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/CellUpdater.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/InputField.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Node.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.java
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheetInput.class
-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/example1.html
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.class
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.java
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/beep.au
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/ding.au
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/return.au
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo1.au
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo2.au
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/example1.html
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/cross.gif
-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/not.gif
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/FileFormatException.class
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.class
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.java
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Model3D.class
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.class
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.java
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example1.html
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example2.html
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example3.html
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example4.html
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/cube.obj
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/dinasaur.obj
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/hughes_500.obj
-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/knoxS.obj
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.html
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.jar
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/Font2DTest.java
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/Font2DTestApplet.java
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/FontPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/RangeMenu.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.html
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.jar
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/AnimatingSurface.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CloningFeature.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/ControlsSurface.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CustomControls.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CustomControlsContext.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoFonts.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoGroup.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoImages.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/GlobalControls.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/GlobalPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Intro.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Java2Demo.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Java2DemoApplet.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/MemoryMonitor.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/PerformanceMonitor.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/RunWindow.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Surface.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/TextureChooser.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Tools.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Arcs.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/BezierAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Curves.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Ellipses.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Areas.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/ClipAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Intersection.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Text.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/BullsEye.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/ColorConvert.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/Rotator3D.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/ACimages.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/ACrules.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/FadeAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/AllFonts.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/AttributedStr.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Highlighting.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Outline.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Tree.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/DukeAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/ImageOps.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/JPEGFlip.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/WarpImage.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Caps.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Dash.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Joins.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/LineAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/Balls.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/BezierScroller.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/Stars3D.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/GradAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/Gradient.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/Texture.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/TextureAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/Append.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/CurveQuadTo.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/FillStroke.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/WindingRule.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/back.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/credits.html
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/duke.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metal.html
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/swing.html
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/toc.html
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/Metalworks.jar
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/MyTheme.theme
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_crop.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_draw.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_hand.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_select.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_text.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_zoom.gif
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/Metalworks.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksFrame.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksHelp.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksInBox.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/UISwitchListener.java
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/Notepad.jar
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad.properties
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_fr.properties
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_sv.properties
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/copy.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/cut.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/new.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/open.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/paste.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/save.gif
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/ElementTreePanel.java
-jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/Notepad.java
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/SampleTree.jar
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/collapsed.gif
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/expanded.gif
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleData.java
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTree.java
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeModel.java
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/Stylepad.jar
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/alice.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bold.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bullets.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/caterpillar.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/center.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/copy.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/cut.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/fg.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/hatter.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/italic.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/left.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/new.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/open.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/paste.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit2.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/right.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/save.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/underline.gif
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/ElementTreePanel.java
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/HelloWorld.java
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Notepad.java
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Stylepad.java
-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Wonderland.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.html
-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.jar
-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src/SwingApplet.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.html
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.jar
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/AquaTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ButtonDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CharcoalTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CodeViewer.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ColorChooserDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ComboBoxDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ContrastTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DemoModule.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DirectionPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileView.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/HtmlDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/InternalFrameDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/LayoutControlPanel.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ListDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/OptionPaneDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/Permuter.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ProgressBarDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/RubyTheme.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ScrollPaneDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SliderDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SplitPaneDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2Applet.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TableDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TreeDemo.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/README.txt
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/TableExample.jar
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/JDBCAdapter.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/OldJTable.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample2.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample3.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample4.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableMap.java
-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableSorter.java
-jdk%%JDK_VERSION%%/demo/jpda/examples.jar
-jdk%%JDK_VERSION%%/demo/plugin/applets.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animation.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/AnimationFrame.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animator.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animator.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/DescriptionFrame.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/ParseException.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/0.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/1.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/2.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/3.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/4.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/5.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/6.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/7.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/8.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/9.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/spacemusic.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example2.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example3.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example4.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T1.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T10.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T2.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T3.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T4.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T5.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T6.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T7.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T8.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T9.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation/T1.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation/T2.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/loading-msg.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcCanvas.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcControls.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/BarChart.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/BarChart.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink$1.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardPanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/Clock.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/Clock.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherCanvas.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherControls.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawControls.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawPanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSFractal.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSFractal.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSRule.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSTurtle.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/ContextLSystem.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Edge.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Graph.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Graph.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/GraphPanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Node.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/computer.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/drip.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/gong.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example2.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example3.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example4.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/AppletFrame.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/AppletFrame.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcCard.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcDegreePanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcPanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ColorUtils.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsCards.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsPanel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/OvalShape.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/PolygonShape.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/RectShape.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/RoundRectShape.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/Shape.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ShapeTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/AniArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/AniArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ButtonFilter.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ButtonFilter.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ClickArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ClickArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/DelayedSoundArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/DelayedSoundArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightFilter.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightFilter.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HrefButtonArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HrefButtonArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMap.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMap.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMapArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMapArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/LinkArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/LinkArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/NameArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/NameArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundButtonFilter.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundButtonFilter.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundHrefButtonArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundHrefButtonArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/SoundArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/SoundArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/TickerArea.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/TickerArea.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio/chirp1.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio/hi.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/imagemapcheat.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images/jim.graham.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/sources.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/JumpingBox.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/JumpingBox.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/adapt-or-die.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/cannot.be.completed.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/danger.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/ip.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/that.hurts.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/thin.bell.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Atom.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Matrix3D.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Matrix3D.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZApp.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZApp.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZChemModel.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example2.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example3.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/HyaluronicAcid.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/benzene.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/buckminsterfullerine.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/cyclohexane.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/ethane.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/water.xyz
-jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/NervousText.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/NervousText.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/GraphApplet.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/GraphApplet.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BidirBubbleSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BidirBubbleSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BubbleSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BubbleSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/QSortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/QSortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortAlgorithm.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortAlgorithm.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortItem.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortItem.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/Cell.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/CellUpdater.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/InputField.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/Node.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheetInput.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/beep.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/ding.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/return.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/yahoo1.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/yahoo2.au
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images/cross.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images/not.gif
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/FileFormatException.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Matrix3D.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Matrix3D.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Model3D.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/ThreeD.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/ThreeD.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example2.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example3.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example4.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/cube.obj
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/dinasaur.obj
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/hughes_500.obj
-jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/knoxS.obj
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/FileChooserDemo.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images/gifIcon.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images/jpgIcon.jpg
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileFilter.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileView.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/FileChooserDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/Font2DTest.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/Font2DTest.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/Font2DTest.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/Font2DTestApplet.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/FontPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/RangeMenu.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/Java2Demo.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/Java2Demo.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingSurface.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CloningFeature.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/ControlsSurface.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CustomControls.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CustomControlsContext.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoFonts.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoGroup.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoImages.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/GlobalControls.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/GlobalPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Intro.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Java2Demo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Java2DemoApplet.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/MemoryMonitor.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/PerformanceMonitor.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/RunWindow.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Surface.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/TextureChooser.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Tools.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Arcs.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/BezierAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Curves.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Ellipses.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Areas.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/ClipAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Intersection.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Text.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/BullsEye.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/ColorConvert.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/Rotator3D.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/ACimages.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/ACrules.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/FadeAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/AllFonts.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/AttributedStr.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Highlighting.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Outline.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Tree.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/DukeAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/ImageOps.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/JPEGFlip.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/WarpImage.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Caps.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Dash.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Joins.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/LineAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/Balls.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/BezierScroller.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/Stars3D.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/GradAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/Gradient.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/Texture.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/TextureAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/Append.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/CurveQuadTo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/FillStroke.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/WindingRule.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/back.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/credits.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/duke.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/javalogo.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/metal.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/metalworks.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/swing.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/toc.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/Metalworks.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/MyTheme.theme
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_crop.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_draw.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_hand.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_select.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_text.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_zoom.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/AquaMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/BigContrastMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/ContrastMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/DemoMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/GreenMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/KhakiMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalThemeMenu.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/Metalworks.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksDocumentFrame.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksFrame.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksHelp.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksInBox.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksPrefs.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/PropertiesMetalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/UISwitchListener.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/Notepad.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_fr.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_sv.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/copy.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/cut.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/new.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/open.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/paste.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/save.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src/ElementTreePanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src/Notepad.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/SampleTree.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images/collapsed.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images/expanded.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/DynamicTreeNode.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleData.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTree.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTreeCellRenderer.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTreeModel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/Stylepad.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_fr.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_sv.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad_sv.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad_zh_CN.properties
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/alice.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/bold.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/bullets.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/caterpillar.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/center.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/copy.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/cut.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/fg.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/hatter.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/italic.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/left.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/new.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/open.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/paste.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/rabbit.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/rabbit2.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/right.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/save.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/underline.gif
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/ElementTreePanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/HelloWorld.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Notepad.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Stylepad.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Wonderland.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/SwingApplet.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/SwingApplet.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src/SwingApplet.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/SwingSet2.html
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/SwingSet2.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/AquaTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/BezierAnimationPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ButtonDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/CharcoalTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/CodeViewer.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ColorChooserDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ComboBoxDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ContrastTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/DemoModule.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/DirectionPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/EmeraldTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ExampleFileFilter.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ExampleFileView.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/FileChooserDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/HtmlDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/InternalFrameDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/LayoutControlPanel.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ListDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/OptionPaneDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/Permuter.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ProgressBarDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/RubyTheme.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ScrollPaneDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SliderDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SplitPaneDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SwingSet2.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SwingSet2Applet.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TabbedPaneDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TableDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ToolTipDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TreeDemo.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/README.txt
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/TableExample.jar
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/JDBCAdapter.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/OldJTable.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample2.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample3.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample4.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableMap.java
-jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableSorter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/Animation.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/AnimationFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/DescriptionFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/ParseException.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/0.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/2.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/3.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/4.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/5.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/6.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/7.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/8.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/9.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/audio/spacemusic.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T1.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T10.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T3.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T4.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T5.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T6.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T7.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T8.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T9.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T1.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Animator/images/loading-msg.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcCanvas.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ArcTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/BarChart/BarChart.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/BarChart/BarChart.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/BarChart/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Blink/Blink$1.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Blink/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/CardTest/CardPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/CardTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Clock/Clock.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Clock/Clock.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Clock/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherCanvas.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DitherTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/DrawTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSRule.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSTurtle.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/ContextLSystem.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/Fractal/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Edge.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/GraphPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Node.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/computer.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/drip.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/gong.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcCard.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcDegreePanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ColorUtils.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsCards.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/OvalShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/PolygonShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RectShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RoundRectShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/Shape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ShapeTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/chirp1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/hi.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/imagemapcheat.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/images/jim.graham.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/ImageMap/sources.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/JumpingBox.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/JumpingBox.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/danger.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/ip.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/that.hurts.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/thin.bell.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Atom.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZChemModel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/benzene.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/cyclohexane.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/ethane.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/water.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/NervousText/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SortDemo/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Cell.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/CellUpdater.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/InputField.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Node.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheetInput.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/beep.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/ding.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/return.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo2.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/cross.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/not.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/FileFormatException.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/Model3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/cube.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/dinasaur.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/hughes_500.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/knoxS.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/Font2DTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/Font2DTestApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/FontPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/RangeMenu.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/AnimatingSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CloningFeature.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/ControlsSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CustomControls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/CustomControlsContext.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoFonts.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoGroup.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoImages.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/DemoPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/GlobalControls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/GlobalPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Intro.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Java2Demo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Java2DemoApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/MemoryMonitor.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/PerformanceMonitor.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/RunWindow.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Surface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/TextureChooser.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/Tools.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Arcs.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/BezierAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Curves.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves/Ellipses.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Areas.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/ClipAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Intersection.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping/Text.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/BullsEye.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/ColorConvert.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors/Rotator3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/ACimages.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/ACrules.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite/FadeAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/AllFonts.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/AttributedStr.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Highlighting.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Outline.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts/Tree.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/DukeAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/ImageOps.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/JPEGFlip.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images/WarpImage.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Caps.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Dash.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/Joins.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines/LineAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/Balls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/BezierScroller.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix/Stars3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/GradAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/Gradient.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/Texture.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint/TextureAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/Append.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/CurveQuadTo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/FillStroke.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths/WindingRule.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/back.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/credits.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/duke.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metal.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/swing.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/toc.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/Metalworks.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/MyTheme.theme
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_crop.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_draw.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_hand.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_select.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_text.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_zoom.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/Metalworks.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksHelp.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksInBox.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/UISwitchListener.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/Notepad.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_fr.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/copy.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/cut.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/new.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/open.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/paste.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/save.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/ElementTreePanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/Notepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/SampleTree.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/collapsed.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/expanded.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleData.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTree.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeModel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/Stylepad.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/alice.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bold.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bullets.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/caterpillar.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/center.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/copy.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/cut.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/fg.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/hatter.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/italic.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/left.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/new.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/open.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/paste.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/right.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/save.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/underline.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/ElementTreePanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/HelloWorld.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Notepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Stylepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Wonderland.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src/SwingApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/AquaTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ButtonDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CharcoalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CodeViewer.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ColorChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ComboBoxDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ContrastTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DemoModule.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DirectionPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileView.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/HtmlDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/InternalFrameDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/LayoutControlPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ListDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/OptionPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/Permuter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ProgressBarDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/RubyTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ScrollPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SliderDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SplitPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2Applet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TableDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TreeDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/TableExample.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/JDBCAdapter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/OldJTable.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample2.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample3.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample4.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableMap.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableSorter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/jpda/examples.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animation.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/AnimationFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animator.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animator.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/DescriptionFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/ParseException.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/0.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/2.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/3.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/4.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/5.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/6.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/7.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/8.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/9.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio/spacemusic.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T1.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T10.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T3.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T4.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T5.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T6.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T7.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T8.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans/T9.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation/T1.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation/T2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/loading-msg.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcCanvas.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/ArcTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/BarChart.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/BarChart.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink$1.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/Blink.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Blink/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/CardTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/Clock.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/Clock.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Clock/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherCanvas.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/DitherTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawControls.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/DrawTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSFractal.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSFractal.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSRule.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/CLSTurtle.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/ContextLSystem.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Edge.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Graph.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Graph.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/GraphPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/Node.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/computer.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/drip.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio/gong.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/AppletFrame.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/AppletFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcCard.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcDegreePanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ArcPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ColorUtils.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsCards.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsPanel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/GraphicsTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/OvalShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/PolygonShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/RectShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/RoundRectShape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/Shape.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/ShapeTest.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/AniArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/AniArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ButtonFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ButtonFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ClickArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ClickArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/DelayedSoundArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/DelayedSoundArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HighlightFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HrefButtonArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/HrefButtonArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMap.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMap.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMapArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/ImageMapArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/LinkArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/LinkArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/NameArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/NameArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundButtonFilter.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundButtonFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundHrefButtonArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/RoundHrefButtonArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/SoundArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/SoundArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/TickerArea.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/TickerArea.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio/chirp1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio/hi.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/imagemapcheat.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images/jim.graham.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/sources.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/JumpingBox.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/JumpingBox.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/adapt-or-die.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/cannot.be.completed.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/danger.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/ip.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/that.hurts.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/thin.bell.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Atom.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Matrix3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/Matrix3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZApp.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZApp.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/XYZChemModel.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/HyaluronicAcid.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/benzene.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/buckminsterfullerine.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/cyclohexane.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/ethane.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models/water.xyz
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/NervousText.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/NervousText.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/GraphApplet.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/GraphApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BidirBubbleSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BidirBubbleSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BubbleSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/BubbleSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/QSortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/QSortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortAlgorithm.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortAlgorithm.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortItem.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/SortItem.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/Cell.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/CellUpdater.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/InputField.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/Node.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheetInput.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/beep.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/ding.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/return.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/yahoo1.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/yahoo2.au
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images/cross.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images/not.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/FileFormatException.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Matrix3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Matrix3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/Model3D.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/ThreeD.class
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/ThreeD.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example1.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example3.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/example4.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/cube.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/dinasaur.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/hughes_500.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models/knoxS.obj
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/FileChooserDemo.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images/gifIcon.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images/jpgIcon.jpg
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileView.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/Font2DTest.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/Font2DTest.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/Font2DTest.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/Font2DTestApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/FontPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src/RangeMenu.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/Java2Demo.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/Java2Demo.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CloningFeature.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/ControlsSurface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CustomControls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/CustomControlsContext.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoFonts.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoGroup.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoImages.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/DemoPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/GlobalControls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/GlobalPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Intro.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Java2Demo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Java2DemoApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/MemoryMonitor.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/PerformanceMonitor.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/RunWindow.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Surface.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/TextureChooser.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/Tools.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Arcs.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/BezierAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Curves.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves/Ellipses.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Areas.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/ClipAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Intersection.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping/Text.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/BullsEye.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/ColorConvert.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors/Rotator3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/ACimages.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/ACrules.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite/FadeAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/AllFonts.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/AttributedStr.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Highlighting.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Outline.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts/Tree.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/DukeAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/ImageOps.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/JPEGFlip.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images/WarpImage.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Caps.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Dash.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/Joins.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines/LineAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/Balls.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/BezierScroller.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix/Stars3D.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/GradAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/Gradient.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/Texture.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint/TextureAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/Append.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/CurveQuadTo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/FillStroke.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths/WindingRule.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/back.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/credits.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/duke.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/javalogo.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/metal.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/metalworks.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/swing.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles/toc.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/Metalworks.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/MyTheme.theme
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_crop.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_draw.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_hand.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_select.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_text.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images/palette_zoom.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/AquaMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/BigContrastMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/ContrastMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/DemoMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/GreenMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/KhakiMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalThemeMenu.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/Metalworks.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksDocumentFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksFrame.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksHelp.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksInBox.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/MetalworksPrefs.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/PropertiesMetalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src/UISwitchListener.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/Notepad.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_fr.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/Notepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/copy.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/cut.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/new.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/open.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/paste.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources/save.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src/ElementTreePanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src/Notepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/SampleTree.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images/collapsed.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images/expanded.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/DynamicTreeNode.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleData.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTree.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTreeCellRenderer.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src/SampleTreeModel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/Stylepad.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_fr.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Notepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/Stylepad_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/alice.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/bold.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/bullets.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/caterpillar.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/center.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/copy.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/cut.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/fg.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/hatter.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/italic.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/left.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/new.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/open.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/paste.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/rabbit.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/rabbit2.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/right.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/save.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources/underline.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/ElementTreePanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/HelloWorld.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Notepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Stylepad.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src/Wonderland.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/SwingApplet.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/SwingApplet.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src/SwingApplet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/SwingSet2.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/SwingSet2.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/AquaTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/BezierAnimationPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ButtonDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/CharcoalTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/CodeViewer.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ColorChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ComboBoxDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ContrastTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/DemoModule.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/DirectionPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/EmeraldTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ExampleFileFilter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ExampleFileView.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/FileChooserDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/HtmlDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/InternalFrameDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/LayoutControlPanel.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ListDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/OptionPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/Permuter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ProgressBarDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/RubyTheme.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ScrollPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SliderDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SplitPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SwingSet2.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/SwingSet2Applet.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TabbedPaneDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TableDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/ToolTipDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src/TreeDemo.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/README.txt
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/TableExample.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/JDBCAdapter.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/OldJTable.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample2.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample3.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableExample4.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableMap.java
+%%MINIMAL:%%jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src/TableSorter.java
 jdk%%JDK_VERSION%%/include/freebsd/jawt_md.h
 jdk%%JDK_VERSION%%/include/freebsd/jni_md.h
 jdk%%JDK_VERSION%%/include/jawt.h
@@ -886,13 +886,13 @@ jdk%%JDK_VERSION%%/jre/.systemPrefs/.system.lock
 jdk%%JDK_VERSION%%/jre/.systemPrefs/.systemRootModFile
 jdk%%JDK_VERSION%%/jre/CHANGES
 jdk%%JDK_VERSION%%/jre/COPYRIGHT
-jdk%%JDK_VERSION%%/jre/ControlPanel.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/ControlPanel.html
 jdk%%JDK_VERSION%%/jre/LICENSE
 jdk%%JDK_VERSION%%/jre/README
 jdk%%JDK_VERSION%%/jre/Welcome.html
-jdk%%JDK_VERSION%%/jre/bin/ControlPanel
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/bin/ControlPanel
 jdk%%JDK_VERSION%%/jre/bin/java
-jdk%%JDK_VERSION%%/jre/bin/java_vm
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/bin/java_vm
 jdk%%JDK_VERSION%%/jre/bin/keytool
 jdk%%JDK_VERSION%%/jre/bin/kinit
 jdk%%JDK_VERSION%%/jre/bin/klist
@@ -903,37 +903,37 @@ jdk%%JDK_VERSION%%/jre/bin/rmid
 jdk%%JDK_VERSION%%/jre/bin/rmiregistry
 jdk%%JDK_VERSION%%/jre/bin/servertool
 jdk%%JDK_VERSION%%/jre/bin/tnameserv
-jdk%%JDK_VERSION%%/jre/javaws/cacerts
-jdk%%JDK_VERSION%%/jre/javaws/javalogo52x88.gif
-jdk%%JDK_VERSION%%/jre/javaws/javaws
-jdk%%JDK_VERSION%%/jre/javaws/javaws-l10n.jar
-jdk%%JDK_VERSION%%/jre/javaws/javaws.jar
-jdk%%JDK_VERSION%%/jre/javaws/javaws.policy
-jdk%%JDK_VERSION%%/jre/javaws/javawsbin
-jdk%%JDK_VERSION%%/jre/javaws/readme.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_de.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_es.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_fr.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_it.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_ja.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_ko.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_sv.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_zh_CN.html
-jdk%%JDK_VERSION%%/jre/javaws/readme_zh_TW.html
-jdk%%JDK_VERSION%%/jre/javaws/resources/copyright.jpg
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_de.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_es.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_fr.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_it.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ja.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ko.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_sv.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_CN.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_TW.properties
-jdk%%JDK_VERSION%%/jre/javaws/resources/miniSplash.jpg
-jdk%%JDK_VERSION%%/jre/javaws/resources/splash.jpg
-jdk%%JDK_VERSION%%/jre/javaws/sunlogo64x30.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/cacerts
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javalogo52x88.gif
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javaws
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javaws-l10n.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javaws.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javaws.policy
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/javawsbin
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_de.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_es.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_fr.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_it.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_ja.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_ko.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_sv.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_zh_CN.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/readme_zh_TW.html
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/copyright.jpg
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_de.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_es.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_fr.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_it.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ja.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ko.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_sv.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_CN.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_TW.properties
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/miniSplash.jpg
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/resources/splash.jpg
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/javaws/sunlogo64x30.gif
 jdk%%JDK_VERSION%%/jre/lib/audio/soundbank.gm
 jdk%%JDK_VERSION%%/jre/lib/charsets.jar
 jdk%%JDK_VERSION%%/jre/lib/cmm/CIEXYZ.pf
@@ -979,7 +979,7 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libhprof.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libioser12.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjaas_unix.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so
-jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni.so
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjawt.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjcov.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp.so
@@ -1010,20 +1010,20 @@ jdk%%JDK_VERSION%%/jre/lib/jce.jar
 jdk%%JDK_VERSION%%/jre/lib/jsse.jar
 jdk%%JDK_VERSION%%/jre/lib/jvm.hprof.txt
 jdk%%JDK_VERSION%%/jre/lib/jvm.jcov.txt
-jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 jdk%%JDK_VERSION%%/jre/lib/logging.properties
-jdk%%JDK_VERSION%%/jre/lib/plugin.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/lib/plugin.jar
 jdk%%JDK_VERSION%%/jre/lib/psfont.properties.ja
 jdk%%JDK_VERSION%%/jre/lib/psfontj2d.properties
 jdk%%JDK_VERSION%%/jre/lib/rt.jar
@@ -1435,12 +1435,12 @@ jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wallis
 jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Yap
 jdk%%JDK_VERSION%%/jre/lib/zi/WET
 jdk%%JDK_VERSION%%/jre/lib/zi/ZoneInfoMappings
-jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.desktop
-jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.png
-jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin.so
-jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji.so
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.desktop
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.png
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin.so
+%%MINIMAL:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji.so
 jdk%%JDK_VERSION%%/lib/dt.jar
-jdk%%JDK_VERSION%%/lib/htmlconverter.jar
+%%MINIMAL:%%jdk%%JDK_VERSION%%/lib/htmlconverter.jar
 jdk%%JDK_VERSION%%/lib/ir.idl
 jdk%%JDK_VERSION%%/lib/orb.idl
 jdk%%JDK_VERSION%%/lib/tools.jar
@@ -1533,170 +1533,170 @@ jdk%%JDK_VERSION%%/src.zip
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjvm_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjsig_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/plugin_g.jar
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji_g.so
+%%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/plugin_g.jar
+%%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin_g.so
+%%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/lib/htmlconverter_g.jar
 @exec	mkdir -p %D/share/doc/java
 @unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
 @unexec	%D/bin/unregistervm FREEBSD-JDK%%JDK_VERSION%%
 @dirrm jdk%%JDK_VERSION%%/bin
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/audio
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator
-@dirrm jdk%%JDK_VERSION%%/demo/applets/ArcTest
-@dirrm jdk%%JDK_VERSION%%/demo/applets/BarChart
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Blink
-@dirrm jdk%%JDK_VERSION%%/demo/applets/CardTest
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Clock
-@dirrm jdk%%JDK_VERSION%%/demo/applets/DitherTest
-@dirrm jdk%%JDK_VERSION%%/demo/applets/DrawTest
-@dirrm jdk%%JDK_VERSION%%/demo/applets/Fractal
-@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio
-@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphLayout
-@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphicsTest
-@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio
-@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap/images
-@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap
-@dirrm jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds
-@dirrm jdk%%JDK_VERSION%%/demo/applets/JumpingBox
-@dirrm jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models
-@dirrm jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer
-@dirrm jdk%%JDK_VERSION%%/demo/applets/NervousText
-@dirrm jdk%%JDK_VERSION%%/demo/applets/SimpleGraph
-@dirrm jdk%%JDK_VERSION%%/demo/applets/SortDemo
-@dirrm jdk%%JDK_VERSION%%/demo/applets/SpreadSheet
-@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio
-@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images
-@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe
-@dirrm jdk%%JDK_VERSION%%/demo/applets/WireFrame/models
-@dirrm jdk%%JDK_VERSION%%/demo/applets/WireFrame
-@dirrm jdk%%JDK_VERSION%%/demo/applets
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Font2DTest
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingApplet
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingSet2
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/TableExample/src
-@dirrm jdk%%JDK_VERSION%%/demo/jfc/TableExample
-@dirrm jdk%%JDK_VERSION%%/demo/jfc
-@dirrm jdk%%JDK_VERSION%%/demo/jpda
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Blink
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Clock
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc
-@dirrm jdk%%JDK_VERSION%%/demo/plugin
-@dirrm jdk%%JDK_VERSION%%/demo
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/ArcTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/BarChart
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Blink
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/CardTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Clock
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/DitherTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/DrawTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Fractal
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphLayout
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/GraphicsTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/ImageMap
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/JumpingBox
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/NervousText
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/SimpleGraph
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/SortDemo
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/SpreadSheet
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/WireFrame/models
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/WireFrame
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Font2DTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Clipping
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Colors
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Composite
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Fonts
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Lines
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Mix
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paint
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Paths
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos/Transforms
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d/demos
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/java2d
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Java2D
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Metalworks
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Notepad
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SampleTree
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/Stylepad
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingApplet
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/SwingSet2
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/TableExample/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc/TableExample
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jfc
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/jpda
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Blink
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Clock
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/plugin
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo
 @dirrm jdk%%JDK_VERSION%%/include/freebsd
 @dirrm jdk%%JDK_VERSION%%/include
 @dirrm jdk%%JDK_VERSION%%/jre/.systemPrefs
 @dirrm jdk%%JDK_VERSION%%/jre/bin
-@dirrm jdk%%JDK_VERSION%%/jre/javaws/resources
-@dirrm jdk%%JDK_VERSION%%/jre/javaws
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/javaws/resources
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/javaws
 @dirrm jdk%%JDK_VERSION%%/jre/lib/applet
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
 @dirrm jdk%%JDK_VERSION%%/jre/lib/cmm
@@ -1709,31 +1709,31 @@ jdk%%JDK_VERSION%%/src.zip
 @dirrm jdk%%JDK_VERSION%%/jre/lib/im
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images/cursors
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale
 @dirrm jdk%%JDK_VERSION%%/jre/lib/security
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi/Africa
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana
@@ -1750,11 +1750,11 @@ jdk%%JDK_VERSION%%/src.zip
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi/Pacific
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi
 @dirrm jdk%%JDK_VERSION%%/jre/lib
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/desktop
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns610
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386
-@dirrm jdk%%JDK_VERSION%%/jre/plugin
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/desktop
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns610
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386
+%%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin
 @dirrm jdk%%JDK_VERSION%%/jre
 @dirrm jdk%%JDK_VERSION%%/lib
 @dirrm jdk%%JDK_VERSION%%/man/man1
