@@ -8,12 +8,16 @@
 PORTNAME=	jasper
 PORTVERSION=	1.500.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/
+MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
+		${MASTER_SITE_IMAGEMAGICK}
+MASTER_SITE_SUBDIR=	ImageMagick/delegates
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+MASTER_SITE_IMAGEMAGICK=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
+				${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 USE_ZIP=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
