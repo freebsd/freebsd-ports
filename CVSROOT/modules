@@ -9497,6 +9497,7 @@ znavigator	ports/www/znavigator
 znibbles	ports/games/znibbles
 zodb		ports/databases/zodb
 zodb3		ports/databases/zodb3
+zoinks		ports/editors/zoinks
 zombiezapper	ports/security/zombiezapper
 zonecheck	ports/dns/zonecheck
 zoo		ports/archivers/zoo
