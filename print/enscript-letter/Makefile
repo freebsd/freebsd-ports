@@ -3,7 +3,7 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/27 03:31:33 chuckr Exp $
+# $Id: Makefile,v 1.2 1997/08/05 06:37:19 asami Exp $
 #
 
 DISTNAME=       enscript-1.5.0
@@ -13,6 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 
 MAINTAINER=	kline@thought.org
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-nls

@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/10/05 21:20:42 max Exp $
+# $Id: Makefile,v 1.3 1997/10/05 21:36:11 max Exp $
 #
 
 DISTNAME=	pl970702s
@@ -39,5 +39,7 @@ do-install:
 	@${CP} ${WRKSRC}/* ${TEXMF}/tex/platex/base
 	${MV} -f ${TEXMF}/tex/platex/base/platex.fmt ${TEXMF}/web2c
 	/bin/ln -fs ptex ${PREFIX}/bin/platex
+
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>

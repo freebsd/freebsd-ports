@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.19 1997/10/05 21:07:13 max Exp $
+# $Id: Makefile,v 1.20 1997/10/05 21:33:09 max Exp $
 #
 
 DISTNAME=	base-9706
@@ -48,5 +48,7 @@ do-install:
 	${CP} ${WRKDIR}/ec/src/* ${TEXMF}/fonts/source/public/ec
 	@/bin/ln -fs tex ${PREFIX}/bin/latex
 	@/bin/ln -s latex ${PREFIX}/bin/platex-common
+
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.4 1997/01/29 13:20:05 obrien Exp $
+# $Id: Makefile,v 1.5 1997/10/10 06:53:32 obrien Exp $
 #
 
 DISTNAME=	mp-3.0.1
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
 WRKSRC=		${WRKDIR}/mp
 USE_GMAKE=	yes
 MAN1=		mp.1

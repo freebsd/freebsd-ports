@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/05/25 04:35:44 obrien Exp $
+# $Id: Makefile,v 1.3 1997/10/10 06:53:28 obrien Exp $
 #
 
 DISTNAME=	lprps-2.5
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
 MAKE_FLAGS?=	PAPERSIZE=${PAPERSIZE} -f
 MAN1=		psrev.1 textps.1
 MAN8=		lprps.8 psif.8 psof.8

@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.28 1997/02/24 21:56:16 jmz Exp $
+# $Id: Makefile,v 1.29 1997/02/25 09:00:31 asami Exp $
 #
 
 DISTNAME=	web2c-7.0
@@ -14,6 +14,7 @@ DISTFILES=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	has to be built with latex port
 IGNOREFILES=	tex_base.tar.gz cm_tfm.tar.gz mf_lib.tar.gz cm_mf.tar.gz
 EXTRACT_ONLY=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
