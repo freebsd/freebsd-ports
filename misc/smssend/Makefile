@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	smssend
-PORTVERSION=	2.9
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://zekiller.skytech.org/fichiers/smssend/
 
 MAINTAINER=	mico@bsd.hu
 COMMENT=	A tool to send a SMS to any GSM
+
+LIB_DEPENDS=	skyutils-2.6.6:${PORTSDIR}/misc/skyutils
 
 MAN1=	smssend.1 smssend.scripting.1 email2smssend.1
 
