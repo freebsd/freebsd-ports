@@ -8,4 +8,3 @@
 +2) Create a writeable directory /usr/X11R6/lib/X11/fonts/TrueType, copy some truetype *.ttf
     files or create soflinks to truetype directories in there, then run
  	xfstt --sync
- 
