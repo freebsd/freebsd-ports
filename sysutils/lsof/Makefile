@@ -4,12 +4,12 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.33 1999/02/02 06:44:18 obrien Exp $
+# $Id: Makefile,v 1.34 1999/02/11 12:53:03 obrien Exp $
 #
 
-DISTNAME=	lsof_4.41H.freebsd
+DISTNAME=	lsof_4.41I.freebsd
 #DISTNAME=	lsof_4.40_W
-PKGNAME=	lsof-4.40h
+PKGNAME=	lsof-4.40i
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/  \
@@ -49,7 +49,7 @@ post-extract:
 	)
 	@( cd ${WRKSRC} ; echo "y" | ./Inventory || exit 1 )
 .else
-WRKSRC=${WRKDIR}/lsof_4.41H.freebsd
+WRKSRC=${WRKDIR}/lsof_4.41I.freebsd
 .endif
 
 #pre-patch:
