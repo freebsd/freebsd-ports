@@ -3,7 +3,7 @@
 # Date created:		20 Aug 1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	upclient-3.04
