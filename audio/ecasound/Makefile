@@ -1,18 +1,18 @@
 # New ports collection makefile for:	ecasound
 # Date created:		22 dec 2000
-# Whom:			The Anarcat <anarcat@tao.ca>
+# Whom:			The Anarcat <anarcat@anarcat.dyndns.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	1.9dev5
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ecawave
+MASTER_SITE_SUBDIR=	ecasound
 
-MAINTAINER=	anarcat@tao.ca
+MAINTAINER=	anarcat@anarcat.dyndns.org
 
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
@@ -39,18 +39,32 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 CONFIGURE_ARGS+=	--disable-audiofile
 .endif
 
-.if defined(WITH_PYECASOUND)
-USE_PYTHON=	yes
-PLIST_SUB+=	WITH_PYECASOUND=""
-.else
-CONFIGURE_ARGS+=	--disable-pyecasound
-PLIST_SUB+=	WITH_PYECASOUND="@comment "
-.endif
+#.if defined(WITH_PYECASOUND)
+#USE_PYTHON=	yes
+#PLIST_SUB+=	WITH_PYECASOUND=""
+#.else
+#CONFIGURE_ARGS+=	--disable-pyecasound
+#PLIST_SUB+=	WITH_PYECASOUND="@comment "
+#.endif
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1
 MAN5=		ecasoundrc.5
 
 #post-install:
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ecasound
+	${MKDIR} ${PREFIX}/share/doc/ecasound/programmers_guide
+	${MKDIR} ${PREFIX}/share/doc/ecasound/users_guide
+	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html \
+		${WRKSRC}/Documentation/*.txt \
+		${PREFIX}/share/doc/ecasound
+	${INSTALL_MAN} ${WRKSRC}/Documentation/programmers_guide/*.html \
+		${PREFIX}/share/doc/ecasound/programmers_guide
+	${INSTALL_MAN} ${WRKSRC}/Documentation/users_guide/*.html \
+		${PREFIX}/share/doc/ecasound/users_guide
+.endif
+
 #	strip ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
 #${PREFIX}/bin/ecanormalize ${PREFIX}/bin/ecaplay ${PREFIX}/bin/ecasignalview \
 #${PREFIX}/bin/ecasound ${PREFIX}/bin/ecasound-config ${PREFIX}/bin/ecasoundc-config

@@ -79,8 +79,8 @@ include/ecasound/ecasoundc.h
 include/ecasound/file-preset.h
 include/ecasound/finite-envelope.h
 include/ecasound/generic-controller.h
+include/ecasound/generic-linear-envelope.h
 include/ecasound/global-preset.h
-include/ecasound/ladspa.h
 include/ecasound/layer.h
 include/ecasound/linear-envelope.h
 include/ecasound/midi-cc.h
@@ -126,15 +126,27 @@ lib/libecasound.so
 lib/libecasound.so.7
 lib/libecasoundc.a
 lib/libecasoundc.so
-lib/libecasoundc.so.0
+lib/libecasoundc.so.1
 lib/libkvutils.a
 lib/libkvutils.so
 lib/libkvutils.so.2
 share/ecasound/effect_presets
 share/ecasound/generic_oscillators
-%%WITH_PYECASOUND%%lib/%%PYTHON_VERSION%%/site-packages/libpyecasound.so
-%%WITH_PYECASOUND%%lib/%%PYTHON_VERSION%%/site-packages/pyeca.py
-@dirrm share/ecasound
-@dirrm lib/ecasound-plugins
+%%PORTDOCS%%share/doc/ecasound/ecasound-iam_manpage.html
+%%PORTDOCS%%share/doc/ecasound/ecasound_faq.html
+%%PORTDOCS%%share/doc/ecasound/ecasound_faq.txt
+%%PORTDOCS%%share/doc/ecasound/ecasound_manpage.html
+%%PORTDOCS%%share/doc/ecasound/ecasoundrc_manpage.html
+%%PORTDOCS%%share/doc/ecasound/ecatools_manpage.html
+%%PORTDOCS%%share/doc/ecasound/examples.html
+%%PORTDOCS%%share/doc/ecasound/index.html
+%%PORTDOCS%%share/doc/ecasound/programmers_guide/eci_doc.html
+%%PORTDOCS%%share/doc/ecasound/programmers_guide/programmers_guide.html
+%%PORTDOCS%%share/doc/ecasound/users_guide/users_guide.html
+%%PORTDOCS%%@dirrm share/doc/ecasound/programmers_guide
+%%PORTDOCS%%@dirrm share/doc/ecasound/users_guide
+%%PORTDOCS%%@dirrm share/doc/ecasound/
 @dirrm include/ecasound
 @dirrm include/kvutils
+@dirrm lib/ecasound-plugins
+@dirrm share/ecasound
