@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x2vnc
-PORTVERSION=	1.6
+PORTVERSION=	1.60
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.hubbe.net/~hubbe/x2vnc/
 
