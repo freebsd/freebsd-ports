@@ -7,6 +7,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libodbcxx
@@ -32,6 +33,8 @@ CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .else	# assume we're using unixODBC
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CXXFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 PORTDOCS=	INSTALL progref
