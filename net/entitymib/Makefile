@@ -19,7 +19,7 @@ COMMENT=Display the Entity MIB of an SNMP agent
 RUN_DEPENDS=	${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
 		${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net/net-snmp
 
-USE_PERL=	yes
+USE_PERL5_RUN=	yes
 MAN1=		entitymib.1
 
 NO_BUILD=	nope
