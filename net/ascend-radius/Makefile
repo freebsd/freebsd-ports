@@ -3,7 +3,7 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1996/12/01 01:22:40 obrien Exp $
+#   $Id: Makefile,v 1.7 1997/01/24 10:19:18 jfitz Exp $
 #
 
 #DISTNAME=	radius-961029
@@ -37,9 +37,9 @@ do-install:
 		done
 		for file in ChangeLog README README.cexample README.dict; do \
 			${INSTALL_DATA} ${WRKDIR}/${WRKPREFIX}/$$file ${PREFIX}/share/doc/ascend-radius; \
+		done
 		${INSTALL_DATA} ${DISTDIR}/radius-961029.ps ${PREFIX}/share/doc/ascend-radius
 		${INSTALL_DATA} ${DISTDIR}/radius-961029.pdf ${PREFIX}/share/doc/ascend-radius
-		done
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
 		@ chown root.wheel ${PREFIX}/etc/raddb
