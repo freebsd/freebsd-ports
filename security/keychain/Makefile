@@ -29,7 +29,7 @@ DOCS=		ChangeLog README
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
