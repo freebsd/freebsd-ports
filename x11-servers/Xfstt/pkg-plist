@@ -1,9 +1,9 @@
+@comment $FreeBSD$
 etc/rc.d/xfstt.sh
 bin/xfstt
-%%PORTDOCS%%share/doc/xfstt/FAQ
 %%PORTDOCS%%share/doc/xfstt/CHANGES
 %%PORTDOCS%%share/doc/xfstt/INSTALL
-%%PORTDOCS%%share/doc/xfstt/THANKS.txt
+%%PORTDOCS%%share/doc/xfstt/THANKS
 %%PORTDOCS%%@dirrm share/doc/xfstt
 @exec mkdir -p %D/lib/X11/fonts/TrueType
 @unexec rm -f %D/lib/X11/fonts/TrueType/ttname.dir
