@@ -16,7 +16,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} image/${SQUEAK_SRC}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
-ALLFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 USE_XLIB=	yes
@@ -40,7 +39,7 @@ do-install:
 .for f in Squeak2.4.changes Squeak2.4.image
 	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
 .endfor
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/image/${SQUEAK_SRC} \
 		${PREFIX}/share/squeak/${SQUEAK_SRC}
 
 .include <bsd.port.mk>
