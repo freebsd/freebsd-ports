@@ -1,0 +1,11 @@
+--- lib/CmdLineApp.cxx.orig	Mon May 31 10:10:43 1999
++++ lib/CmdLineApp.cxx	Mon May 31 10:13:03 1999
+@@ -170,7 +170,7 @@
+ 
+ int CmdLineApp::init(int, AppChar **argv)
+ {
+-#ifndef SP_ANSI_LIB
++#if !defined(SP_ANSI_LIB) && (__FreeBSD_cc_version < 400002)
+   set_new_handler(outOfMemory);
+ #endif
+ #ifdef SP_HAVE_LOCALE
