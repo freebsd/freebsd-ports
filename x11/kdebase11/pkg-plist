@@ -2513,7 +2513,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/apps/kappfinder
 @dirrm share/applnk/Settings/Windows
 @dirrm share/applnk/Settings/Sound
-@dirrm share/applnk/Settings/Network
 @dirrm share/applnk/Settings/Keys
 @dirrm share/applnk/Settings/Input_Devices
 @dirrm share/applnk/Settings/Information

@@ -320,7 +320,7 @@ share/toolbar/viewzoom.xpm
 @exec mkdir -p %D/share/applnk/Internet
 @exec mkdir -p %D/share/applnk/Multimedia
 @exec mkdir -p %D/share/applnk/Network
-@exec mkdir -p %D/share/applnk/Settings
+@exec mkdir -p %D/share/applnk/Settings/Network
 @exec mkdir -p %D/share/applnk/System
 @exec mkdir -p %D/share/applnk/Utilities
 @exec mkdir -p %D/share/doc/HTML/cs
@@ -466,6 +466,7 @@ share/toolbar/viewzoom.xpm
 @dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/System
+@dirrm share/applnk/Settings/Network
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Network
 @dirrm share/applnk/Multimedia
