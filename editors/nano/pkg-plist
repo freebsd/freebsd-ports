@@ -1,4 +1,5 @@
 bin/nano
+info/nano.info
 share/locale/es/LC_MESSAGES/nano.mo
 share/locale/de/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
