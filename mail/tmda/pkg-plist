@@ -11,6 +11,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
@@ -19,6 +21,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/COPYRIGHT
