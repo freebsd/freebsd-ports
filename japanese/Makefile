@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.144 1998/09/08 22:03:29 kuriyama Exp $
+# $Id: Makefile,v 1.145 1998/09/10 14:18:15 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -6,6 +6,7 @@
     SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
     SUBDIR += a2ps
+    SUBDIR += ack
     SUBDIR += bookview
     SUBDIR += camltk41
     SUBDIR += cdrom2
