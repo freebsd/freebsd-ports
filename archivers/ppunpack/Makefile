@@ -8,15 +8,13 @@
 PORTNAME=	ppunpack
 PORTVERSION=	1.0
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
-		ftp://us.aminet.net/pub/aminet/misc/unix/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry
 DISTNAME=	ppsmall-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompresses Amiga PowerPacker files
-
-BROKEN=		Unfetchable
 
 RESTRICTED=	"No commercial redistribution"
 NO_CDROM=	${RESTRICTED}
