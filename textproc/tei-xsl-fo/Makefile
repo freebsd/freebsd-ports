@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	tei
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Stylesheets/
 PKGNAMESUFFIX=	-xsl-fo
 DISTNAME=	teixsl-fo
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	XSLT Stylesheets to convert TEI to XSL Formatting Objects
 
 USE_ZIP=	yes
