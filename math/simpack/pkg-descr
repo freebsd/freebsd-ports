@@ -1,0 +1,17 @@
+It is huge set of libraries and tools for simulation modelling.
+
+Sim++ is an object-oriented C++ library, compatible with SimPack
+queuing is C library, simular to simpack and SMPL
+Xsimcode is graphical generator of SimPack models
+sdsmt    is graphical tool for slice modelling
+fsa      is finite state automaton simulator
+markov   is marcov chain simulator
+petri    is petri net simulator
+
+An WWW-page and mailing list devoted to SimPack exists.
+
+SimPack is copyrighted by GPL license, version 2 or later.  We recommend
+you copy this License from where you can find to /usr/local/share/SimPack.
+
+For more detailed information about SimPack, please refer to 
+/usr/local/share/SimPack/README.

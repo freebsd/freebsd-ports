@@ -1,0 +1,506 @@
+diff -udr func/slice/sdsmt/do.tcl /usr/local/lib/SimPack/func/slice/sdsmt/do.tcl
+--- func/slice/sdsmt/do.tcl	Fri Aug 25 01:01:09 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/do.tcl	Mon May 19 13:16:58 1997
+@@ -94,16 +94,19 @@
+ #	Purpose: redraw objects on the canvas.
+ #-------------------------------------------------------
+ proc redraw_object {w type x y text} {
+-  global obj
++  global obj sdsmlib
+ 
+   switch -exact -- $type {
+   	1 {set oid [$w create rectangle [expr $x-25] [expr $y-10] [expr $x+25]\
+         	[expr $y+10] -width 1 ]}
+-	2 {set oid [$w create bitmap $x $y -bitmap @./XBM/rate.bmp ]}
++	2 {set oid [$w create bitmap $x $y \
++                  -bitmap @[file join $sdsmlib XBM rate.bmp] ]}
+ 	3 {set oid [$w create oval [expr $x-20] [expr $y-20] [expr $x+20]\
+ 		[expr $y+20] -width 1 ]}
+-	4 {set oid [$w create bitmap $x $y -bitmap @./XBM/const.bmp]}
+-	5 {set oid [$w create bitmap $x $y -bitmap @./XBM/source.bmp]}
++	4 {set oid [$w create bitmap $x $y \
++                  -bitmap @[file join $sdsmlib XBM const.bmp] ]}
++	5 {set oid [$w create bitmap $x $y \
++                  -bitmap @[file join $sdsmlib XBM source.bmp] ]}
+   }
+   set text_id [show_text $w $type $x $y $text]
+   set obj($oid) [list $oid $type $x $y $text $text_id]
+@@ -116,7 +119,7 @@
+ #	Purpose: redraw the links between objects on the canvas.
+ #-------------------------------------------------------
+ proc redraw_link {w type x y sid tid} {
+-  global obj
++  global obj sdsmlib
+ 
+   puts "object #$sid (source) : $obj($sid)"
+   puts "object #$tid (target) : $obj($tid)"
+@@ -142,7 +145,8 @@
+     }
+   } else {
+     set oid [$w create line $sx $sy $x $y $tx $ty -width 1 -arrow last \
+-      -smooth true -capstyle projecting -stipple @./bitmaps/grey.5 ]
++      -smooth true -capstyle projecting \
++      -stipple @[file join $sdsmlib bitmaps grey.5] ]
+   }
+   set obj($oid) [list $oid $type $x $y $sid $tid]
+   puts "link object $oid: $obj($oid) loaded"
+diff -udr func/slice/sdsmt/draw.tcl /usr/local/lib/SimPack/func/slice/sdsmt/draw.tcl
+--- func/slice/sdsmt/draw.tcl	Fri Aug 25 01:01:09 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/draw.tcl	Mon May 19 13:16:58 1997
+@@ -26,7 +26,7 @@
+ #       Purpose: draw a level node object 
+ #-------------------------------------------------------
+ proc draw_level {w x y} {
+-  global mode text_data input_data
++  global mode text_data input_data sdsmlib
+ 
+   set oid [$w create rectangle [expr $x-25] [expr $y-10] [expr $x+25] \
+ 	[expr $y+10] -width 1 ]
+@@ -84,7 +84,7 @@
+ 
+   if {$entry_flg == 1} {
+     entry $w.top.e1 -relief sunken -textvariable input_data\
+-         -scroll "$w.top.s1 set"
++         -xscrollcommand "$w.top.s1 set"
+     scrollbar $w.top.s1 -relief sunken -orient horiz -command \
+             "$w.top.e1 view"
+   }
+@@ -117,9 +117,9 @@
+ #       Purpose: draw a rate node object 
+ #-------------------------------------------------------
+ proc draw_rate {w x y} {
+-  global mode text_data input_data
++  global mode text_data input_data sdsmlib
+ 
+-  set oid [$w create bitmap $x $y -bitmap @./XBM/rate.bmp ]
++  set oid [$w create bitmap $x $y -bitmap @[file join $sdsmlib XBM rate.bmp] ]
+   get_text_input $mode
+   set text_data $input_data
+   add_object $w $oid $mode $x $y $text_data
+@@ -144,9 +144,9 @@
+ #       Purpose: draw an constant node object 
+ #-------------------------------------------------------
+ proc draw_const {w x y} {
+-  global mode text_data input_data
++  global mode text_data input_data sdsmlib
+ 
+-  set oid [$w create bitmap $x $y -bitmap @./XBM/const.bmp]
++  set oid [$w create bitmap $x $y -bitmap @[file join $sdsmlib XBM const.bmp] ]
+   get_text_input $mode
+   set text_data $input_data
+   add_object $w $oid $mode $x $y $text_data
+@@ -157,9 +157,9 @@
+ #       Purpose: draw a source/sink node object 
+ #-------------------------------------------------------
+ proc draw_source {w x y} {
+-  global mode text_data input_data
++  global mode text_data input_data sdsmlib
+ 
+-  set oid [$w create bitmap $x $y -bitmap @./XBM/source.bmp]
++  set oid [$w create bitmap $x $y -bitmap @[file join $sdsmlib XBM source.bmp] ]
+ #  get_text_input $mode
+ #  set text_data $input_data
+   set text_data ""
+@@ -229,6 +229,7 @@
+ proc moving {w x y} {
+   global oldx oldy
+   global obj mode selected_id new_link_id link_flg
++  global sdsmlib
+ 
+   if {$selected_id != -1} {
+     # moving an object 
+@@ -263,7 +264,8 @@
+ 	  }
+         } else {
+           set s_id [$w create line $sx $sy $x $y $tx $ty -width 1 -arrow last \
+-	    -smooth true -capstyle projecting -stipple @./bitmaps/grey.5 ]
++	    -smooth true -capstyle projecting \
++            -stipple @[file join $sdsmlib bitmaps grey.5 ] ]
+         }
+ 	set new_link_id $s_id
+         $w addtag selected withtag $s_id
+@@ -284,7 +286,8 @@
+         set s_id [$w create line $oldx $oldy $x $y -width 1 -arrow last]
+       } else {
+         set s_id [$w create line $oldx $oldy $x $y -width 1 -arrow last \
+-	    -capstyle projecting -stipple @./bitmaps/grey.5 ]
++	    -capstyle projecting \
++            -stipple @[file join $sdsmlib bitmaps grey.5] ]
+       }
+       $w addtag selected withtag $s_id
+     }
+@@ -297,6 +300,7 @@
+ #-------------------------------------------------------
+ proc move_end {w x y} {
+   global selected_id obj mode oldx oldy new_link_id link_flg
++  global sdsmlib
+  
+   if {$selected_id != -1} {
+     puts "move end"
+@@ -348,7 +352,8 @@
+ 	  }
+ 	} else {
+           set oid [$w create line $oldx $oldy $x $y -width 1 -arrow last \
+-	    -capstyle projecting -stipple @./bitmaps/grey.5 ]
++	    -capstyle projecting \
++ 	    -stipple @[file join $sdsmlib bitmaps grey.5] ]
+ 	}
+         add_link $w $oid $mode [expr ($oldx+$x)/2] [expr ($oldy+$y)/2] \
+ 		$selected_id $t_id
+@@ -499,7 +504,7 @@
+ #		 links are moved 
+ #-------------------------------------------------------
+ proc move_asso_links {w} {
+-  global selected_id obj
++  global selected_id obj sdsmlib
+ 
+   $w delete label
+   foreach i [array names obj] {
+@@ -535,7 +540,8 @@
+ 	  }
+         } else {
+           set s_id [$w create line $sx $sy $x $y $tx $ty -width 1 -arrow last \
+-            -smooth true -capstyle projecting -stipple @./bitmaps/grey.5 ]
++            -smooth true -capstyle projecting \
++            -stipple @[file join $sdsmlib bitmaps grey.5] ]
+         }
+         $w addtag object withtag $s_id
+ 	change_link_id $i $s_id
+@@ -602,7 +608,7 @@
+ #		 the user's input
+ #-------------------------------------------------------
+ proc show_grid_selection {{w .grid}} {
+-  global grid_mode
++  global grid_mode sdsmlib
+ 
+     catch {destroy $w}
+     toplevel $w -class Dialog
+@@ -617,13 +623,17 @@
+             -font -Adobe-times-medium-r-normal--*-180*  
+     pack $w.top.msg
+ 
+-    button $w.bot.s0 -bitmap @./XBM/grid0.bmp -command {destroy .grid
++    button $w.bot.s0 -bitmap @[file join $sdsmlib XBM grid0.bmp] \
++                     -command {destroy .grid
+ 				set grid_mode 0}
+-    button $w.bot.s1 -bitmap @./XBM/grid1.bmp -command {destroy .grid
++    button $w.bot.s1 -bitmap @[file join $sdsmlib XBM grid1.bmp] \
++                     -command {destroy .grid
+ 				set grid_mode 1} 
+-    button $w.bot.s2 -bitmap @./XBM/grid2.bmp -command {destroy .grid
++    button $w.bot.s2 -bitmap @[file join $sdsmlib XBM grid2.bmp] \
++                     -command {destroy .grid
+ 				set grid_mode 2} 
+-    button $w.bot.sc -bitmap @./XBM/cancel.bmp -command {destroy .grid
++    button $w.bot.sc -bitmap @[file join $sdsmlib XBM cancel.bmp] \
++                     -command {destroy .grid
+ 				return -1} 
+     pack $w.bot.s0 $w.bot.s1 $w.bot.s2 $w.bot.sc -side left
+ 
+@@ -634,18 +644,21 @@
+ #       Purpose: change grid mode
+ #-------------------------------------------------------
+ proc change_grid_mode {} {
+-  global grid_mode
++  global grid_mode sdsmlib
+ 
+   catch {destroy .plate.left.b14}
+   puts "grid_mode = $grid_mode"
+   switch -exact -- $grid_mode {
+-        0 {button .plate.left.b14 -bitmap @./XBM/grid0.xbm -padx 16 \
++        0 {button .plate.left.b14 \
++                -bitmap @[file join $sdsmlib XBM grid0.xbm] -padx 16 \
+ 		-command "grid_select"
+ 	  }
+-        1 {button .plate.left.b14 -bitmap @./XBM/grid1.xbm -padx 16 \
++        1 {button .plate.left.b14 \
++                -bitmap @[file join $sdsmlib XBM grid1.xbm] -padx 16 \
+ 		-command "grid_select"
+ 	  }
+-        2 {button .plate.left.b14 -bitmap @./XBM/grid2.xbm -padx 16 \
++        2 {button .plate.left.b14 \
++                -bitmap @[file join $sdsmlib XBM grid2.xbm] -padx 16 \
+ 		-command "grid_select"
+ 	  }
+   }
+@@ -691,6 +704,7 @@
+ #       Purpose: show grid on the canvas
+ #-------------------------------------------------------
+ proc show_grid {mode {w .plate.right.board}} {
++  global sdsmlib
+   set max_x 1417
+   set max_y 1417
+   set dp 10
+@@ -704,12 +718,12 @@
+     }
+     for {set x 0} {$x <= $max_x} {set x [expr $x+$step]} {
+        set oid [$w create line $x 0 $x $max_y -width 1 \
+-            -stipple @./bitmaps/grey.05 ]
++            -stipple @[file join $sdsmlib bitmaps grey.05] ]
+        $w addtag grid_tag withtag $oid
+     }
+     for {set y 0} {$y <= $max_y} {set y [expr $y+$step]} {
+        set oid [$w create line 0 $y $max_x $y -width 1 \
+-            -stipple @./bitmaps/grey.05 ]
++            -stipple @[file join $sdsmlib bitmaps grey.05] ]
+        $w addtag grid_tag withtag $oid
+     }
+   }
+diff -udr func/slice/sdsmt/equ.tcl /usr/local/lib/SimPack/func/slice/sdsmt/equ.tcl
+--- func/slice/sdsmt/equ.tcl	Fri Aug 25 01:01:10 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/equ.tcl	Mon May 19 13:16:58 1997
+@@ -257,13 +257,13 @@
+   }
+  
+ 
+-  if {[tk colormodel $w] == "color"} {
++#  if {[tk colormodel $w] == "color"} {
+       set bold "-foreground red"
+       set normal "-foreground {}"
+-  } else {
+-      set bold "-foreground white -background black"
+-      set normal "-foreground {} -background {}"
+-  }
++#  } else {
++#      set bold "-foreground white -background black"
++#      set normal "-foreground {} -background {}"
++#  }
+ 
+   if {$complete != 1} {
+     $w.t1.b insert 0.0 { Based on the flow graph, the following\
+@@ -891,3 +891,4 @@
+   }
+   return 1
+ }
++
+diff -udr func/slice/sdsmt/file.tcl /usr/local/lib/SimPack/func/slice/sdsmt/file.tcl
+--- func/slice/sdsmt/file.tcl	Fri Aug 25 01:01:10 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/file.tcl	Mon May 19 13:16:58 1997
+@@ -464,10 +464,10 @@
+ proc FSBoxBindSelectOne { fsBoxW fsBoxY} {
+ 
+   set fsBoxNearest [$fsBoxW nearest $fsBoxY]
+-  if {$fsBoxNearest >= 0} {
+-    $fsBoxW select from $fsBoxNearest
+-    $fsBoxW select to $fsBoxNearest
+-  }
++#  if {$fsBoxNearest >= 0} {
++#    $fsBoxW select from $fsBoxNearest
++#    $fsBoxW select to $fsBoxNearest
++#  }
+ }
+ 
+ 
+diff -udr func/slice/sdsmt/help.tcl /usr/local/lib/SimPack/func/slice/sdsmt/help.tcl
+--- func/slice/sdsmt/help.tcl	Fri Aug 25 01:01:02 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/help.tcl	Mon May 19 13:16:58 1997
+@@ -15,7 +15,7 @@
+     $w.t tag configure bold -font -Adobe-Courier-Bold-O-Normal-*-120-*
+     $w.t tag configure big -font -Adobe-Courier-Bold-R-Normal-*-140-*
+     $w.t tag configure verybig -font -Adobe-Helvetica-Bold-R-Normal-*-240-*
+-    if {[tk colormodel $w] == "color"} {
++#    if {[tk colormodel $w] == "color"} {
+         $w.t tag configure color1 -background #eed5b7
+         $w.t tag configure color2 -foreground red
+         $w.t tag configure color3 -foreground blue
+@@ -23,14 +23,14 @@
+                 -borderwidth 1
+         $w.t tag configure sunken -background #eed5b7 -relief sunken \
+                 -borderwidth 1
+-    } else {
+-        $w.t tag configure color1 -background black -foreground white
+-        $w.t tag configure color2 -background black -foreground white
+-        $w.t tag configure raised -background white -relief raised \
+-                -borderwidth 1
+-        $w.t tag configure sunken -background white -relief sunken \
+-                -borderwidth 1
+-    }
++#    } else {
++#        $w.t tag configure color1 -background black -foreground white
++#        $w.t tag configure color2 -background black -foreground white
++#        $w.t tag configure raised -background white -relief raised \
++#                -borderwidth 1
++#        $w.t tag configure sunken -background white -relief sunken \
++#                -borderwidth 1
++#    }
+     $w.t tag configure bgstipple -background black -borderwidth 0 \
+             -bgstipple gray25
+     $w.t tag configure fgstipple -fgstipple gray50
+@@ -140,7 +140,7 @@
+     $w1.t tag configure bold -font -Adobe-Courier-Bold-O-Normal-*-120-*
+     $w1.t tag configure big -font -Adobe-Courier-Bold-R-Normal-*-140-*
+     $w1.t tag configure verybig -font -Adobe-Helvetica-Bold-R-Normal-*-240-*
+-    if {[tk colormodel $w1] == "color"} {
++#    if {[tk colormodel $w1] == "color"} {
+         $w1.t tag configure color1 -background #eed5b7
+         $w1.t tag configure color2 -foreground red
+         $w1.t tag configure color3 -foreground blue
+@@ -148,14 +148,14 @@
+                 -borderwidth 1
+         $w1.t tag configure sunken -background #eed5b7 -relief sunken \
+                 -borderwidth 1
+-    } else {
+-        $w1.t tag configure color1 -background black -foreground white
+-        $w1.t tag configure color2 -background black -foreground white
+-        $w1.t tag configure raised -background white -relief raised \
+-                -borderwidth 1
+-        $w1.t tag configure sunken -background white -relief sunken \
+-                -borderwidth 1
+-    }
++#    } else {
++#        $w1.t tag configure color1 -background black -foreground white
++#        $w1.t tag configure color2 -background black -foreground white
++#        $w1.t tag configure raised -background white -relief raised \
++#                -borderwidth 1
++#        $w1.t tag configure sunken -background white -relief sunken \
++#                -borderwidth 1
++#    }
+     $w1.t tag configure bgstipple -background black -borderwidth 0 \
+             -bgstipple gray25
+     $w1.t tag configure fgstipple -fgstipple gray50
+@@ -326,21 +326,21 @@
+     $w.t tag configure bold -font -Adobe-Courier-Bold-O-Normal-*-120-*
+     $w.t tag configure big -font -Adobe-Courier-Bold-R-Normal-*-140-*
+     $w.t tag configure verybig -font -Adobe-Helvetica-Bold-R-Normal-*-240-*
+-    if {[tk colormodel $w] == "color"} {
++#    if {[tk colormodel $w] == "color"} {
+         $w.t tag configure color1 -background #eed5b7
+         $w.t tag configure color2 -foreground red
+         $w.t tag configure raised -background #eed5b7 -relief raised \
+                 -borderwidth 1
+         $w.t tag configure sunken -background #eed5b7 -relief sunken \
+                 -borderwidth 1
+-    } else {
+-        $w.t tag configure color1 -background black -foreground white
+-        $w.t tag configure color2 -background black -foreground white
+-        $w.t tag configure raised -background white -relief raised \
+-                -borderwidth 1
+-        $w.t tag configure sunken -background white -relief sunken \
+-                -borderwidth 1
+-    }
++#    } else {
++#        $w.t tag configure color1 -background black -foreground white
++#        $w.t tag configure color2 -background black -foreground white
++#        $w.t tag configure raised -background white -relief raised \
++#                -borderwidth 1
++#        $w.t tag configure sunken -background white -relief sunken \
++#                -borderwidth 1
++#    }
+     $w.t tag configure bgstipple -background black -borderwidth 0 \
+             -bgstipple gray25
+     $w.t tag configure fgstipple -fgstipple gray50
+@@ -414,7 +414,7 @@
+     $w1.t tag configure bold -font -Adobe-Courier-Bold-O-Normal-*-120-*
+     $w1.t tag configure big -font -Adobe-Courier-Bold-R-Normal-*-140-*
+     $w1.t tag configure verybig -font -Adobe-Helvetica-Bold-R-Normal-*-240-*
+-    if {[tk colormodel $w1] == "color"} {
++#    if {[tk colormodel $w1] == "color"} {
+         $w1.t tag configure color1 -background #eed5b7
+         $w1.t tag configure color2 -foreground red
+         $w1.t tag configure color3 -foreground blue
+@@ -422,14 +422,14 @@
+                 -borderwidth 1
+         $w1.t tag configure sunken -background #eed5b7 -relief sunken \
+                 -borderwidth 1
+-    } else {
+-        $w1.t tag configure color1 -background black -foreground white
+-        $w1.t tag configure color2 -background black -foreground white
+-        $w1.t tag configure raised -background white -relief raised \
+-                -borderwidth 1
+-        $w1.t tag configure sunken -background white -relief sunken \
+-                -borderwidth 1
+-    }
++#    } else {
++#        $w1.t tag configure color1 -background black -foreground white
++#        $w1.t tag configure color2 -background black -foreground white
++#        $w1.t tag configure raised -background white -relief raised \
++#                -borderwidth 1
++#        $w1.t tag configure sunken -background white -relief sunken \
++#                -borderwidth 1
++#    }
+     $w1.t tag configure bgstipple -background black -borderwidth 0 \
+             -bgstipple gray25
+     $w1.t tag configure fgstipple -fgstipple gray50
+@@ -508,6 +508,9 @@
+   bind $w1 <Any-Enter> "focus $w1.t"
+ 
+ 
++}
++
++proc help_about {} {
+ }
+ 
+ proc insertWithTags {w text args} {
+diff -udr func/slice/sdsmt/sdsmt /usr/local/lib/SimPack/func/slice/sdsmt/sdsmt
+--- func/slice/sdsmt/sdsmt	Fri Aug 25 01:01:04 1995
++++ /usr/local/lib/SimPack/func/slice/sdsmt/sdsmt	Mon May 19 13:16:58 1997
+@@ -12,7 +12,9 @@
+ #
+ #=========================================================================
+ 
+-set auto_path "./ $auto_path"
++global sdsmlib
++set sdsmlib $env(SDSMTLIB)
++set auto_path "$sdsmlib $auto_path"
+ wm title . "System Dynamics Simulation Modeling Tools"
+ wm geometry . +50+50
+ 
+@@ -98,30 +100,34 @@
+ frame .plate.right
+ pack .plate.left .plate.right -side left 
+ 
+-radiobutton .plate.left.b1 -bitmap @./XBM/level.xbm \
++radiobutton .plate.left.b1 -bitmap @[file join $sdsmlib XBM level.xbm] \
+             -variable letters -command "set_level $c"
+-radiobutton .plate.left.b2 -bitmap @./XBM/rate.xbm \
++radiobutton .plate.left.b2 -bitmap @[file join $sdsmlib XBM rate.xbm] \
+             -variable letters -command "set_rate $c"
+-radiobutton .plate.left.b3 -bitmap @./XBM/aux.xbm \
++radiobutton .plate.left.b3 -bitmap @[file join $sdsmlib XBM aux.xbm] \
+             -variable letters -command "set_aux $c"
+-radiobutton .plate.left.b4 -bitmap @./XBM/const.xbm \
++radiobutton .plate.left.b4 -bitmap @[file join $sdsmlib XBM const.xbm] \
+             -variable letters -command "set_const $c"
+-radiobutton .plate.left.b5 -bitmap @./XBM/source.xbm \
++radiobutton .plate.left.b5 -bitmap @[file join $sdsmlib XBM source.xbm] \
+             -variable letters -command "set_source $c"
+-radiobutton .plate.left.b6 -bitmap @./XBM/flow.xbm \
++radiobutton .plate.left.b6 -bitmap @[file join $sdsmlib XBM flow.xbm] \
+             -variable letters -command "set_flow $c"
+-radiobutton .plate.left.b7 -bitmap @./XBM/celink.xbm \
++radiobutton .plate.left.b7 -bitmap @[file join $sdsmlib XBM celink.xbm] \
+             -variable letters -command "set_celink $c"
+-radiobutton .plate.left.b8 -bitmap @./XBM/move.xbm \
++radiobutton .plate.left.b8 -bitmap @[file join $sdsmlib XBM move.xbm] \
+             -variable letters -command "set_move $c"
+-radiobutton .plate.left.b9 -bitmap @./XBM/delete.xbm \
++radiobutton .plate.left.b9 -bitmap @[file join $sdsmlib XBM delete.xbm] \
+             -variable letters -command "set_delete $c"
+-radiobutton .plate.left.b10 -bitmap @./XBM/edit.xbm \
++radiobutton .plate.left.b10 -bitmap @[file join $sdsmlib XBM edit.xbm] \
+             -variable letters -command "set_edit $c"
+-button .plate.left.b11 -bitmap @./XBM/undo.xbm -padx 16 -command "puts 11"
+-button .plate.left.b12 -bitmap @./XBM/equ.xbm -padx 16 -command "equ_generation"
+-button .plate.left.b13 -bitmap @./XBM/exec.xbm -padx 16 -command "equ_execution"
+-button .plate.left.b14 -bitmap @./XBM/grid0.xbm -padx 16 -command "grid_select"
++button .plate.left.b11 -bitmap @[file join $sdsmlib XBM/undo.xbm] \
++            -padx 16 -command "puts 11"
++button .plate.left.b12 -bitmap @[file join $sdsmlib XBM equ.xbm] \
++            -padx 16 -command "equ_generation"
++button .plate.left.b13 -bitmap @[file join $sdsmlib XBM exec.xbm] \
++            -padx 16 -command "equ_execution"
++button .plate.left.b14 -bitmap @[file join $sdsmlib XBM grid0.xbm] \
++            -padx 16 -command "grid_select"
+ 
+ pack .plate.left.b1 .plate.left.b2 .plate.left.b3 .plate.left.b4 \
+ 	.plate.left.b5 .plate.left.b6 .plate.left.b7 .plate.left.b8 \
+@@ -130,7 +136,8 @@
+ 
+ canvas .plate.right.board -scrollregion {0c 0c 40c 40c} \
+ 	 -relief raised -width 800 -height 500 \
+-        -xscroll ".plate.right.hscroll set" -yscroll ".plate.right.vscroll set"
++	-xscrollcommand ".plate.right.hscroll set" \
++	-yscrollcommand ".plate.right.vscroll set"
+ scrollbar .plate.right.vscroll  -relief sunken \
+ 	-command ".plate.right.board yview"
+ scrollbar .plate.right.hscroll -orient horiz -relief sunken \

@@ -1,0 +1,59 @@
+#!/bin/sh
+cat <<! 
+
+
+                                   LICENSE
+
+    SimPack Version 3.01 (SimPack3), a software toolkit supporting a variety
+    of kinds of simulations, including, but not limited to: declarative,
+    constraint-based, spatial, event-scheduling and queuing 
+    model, and multimodel simulations, developed at the CISE Department,
+    University of Florida, Gainesville FL  USA, is the property of Dr.
+    Paul A. Fishwick, copyright (c) 1995.  Title to and ownership of
+    SimPack3 remains in Paul Fishwick.
+
+    SimPack3 is copyrighted by its author named above with the exception of
+    certain packages built by others, which packages are distributed with 
+    SimPack3 and which bear attributions identifying those other authors.
+
+    You are granted a nonexclusive license to use SimPack3 in
+    accordance with the provisions of the GNU General Public License,
+    version 2 (or at your option any later version), which is hereby
+    incorporated by reference.  The GNU General Public License is published
+    by the Free Software Foundation.  A copy of the GNU License appears in
+    the same directory as this License, under the filename \`\`License.gnu".
+    The GNU license is also available from Free Software Foundation, Inc., 
+    675 Massachusetts Avenue, Cambridge MA 02139 USA.
+
+    In a nutshell, you are free to use SimPack3 for research, teaching,
+    or private purposes, but you must not sell, lease, rent, or otherwise
+    convey any interest in SimPack3, except that you may redistribute 
+    SimPack3 as long as any redistribution is free of charge
+    and includes all original source code and accompanying documentation, 
+    as well as this License.  If you modify SimPack3 and/or incorporate it 
+    into another software product, distribution of any such derived product
+    must be under the same terms and conditions as those in this SimPack3 
+    License.
+
+    Source code as used above includes (as applicable and without limitation) 
+    shell scripts, makefiles, header files (.h), C and C++ program files, 
+    (whatever their file extension may be), Tcl/Tk program files, and (for 
+    the DOS environment) .bat files.  Documentation as used above means 
+    LaTeX files (.tex), as well as associated and derived files such as .dvi
+    and .ps files, and all readme files.
+
+    You may terminate your SimPack3 License at any time by erasing all
+    copies of all files in your possession which constitute the
+    SimPack3 distribution, and by erasing all copies of all files in
+    your possession which constitute any derived product(s).  We may
+    terminate your License upon notice, in the event that you violate its
+    terms and conditions.
+
+    SimPack3 is distributed in the hope that it will be useful, but
+    without any warranty, and without any implied warranty of
+    merchantability or fitness for a particular purpose.
+    Under no circumstances shall the owner of SimPack3 be liable to any
+    person for any indirect, special, incidental, or consequential
+    damages arising from the use or misuse of this software.
+!
+exit 0
