@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.29 1999/05/24 07:06:31 asami Exp $
+# $Id: Makefile,v 1.30 1999/05/24 11:58:45 andreas Exp $
 #
 
 DISTNAME=	apsfilter-5.1.1
@@ -19,7 +19,8 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		anytopnm:${PORTSDIR}/graphics/netpbm \
 		bunzip2:${PORTSDIR}/archivers/bzip2 \
 		recode:${PORTSDIR}/converters/recode \
-		a2ps:${PORTSDIR}/print/a2ps-letter
+		a2ps:${PORTSDIR}/print/a2ps-letter \
+		psnup:${PORTSDIR}/print/psutils-letter
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
