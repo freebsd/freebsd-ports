@@ -1,0 +1,40 @@
+bin/tkscope
+bin/morse
+bin/dial
+bin/pplay
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Play/freebsd/freebsd.so
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Play/freebsd/freebsd.bs
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Play/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Data/Data.so
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Data/Data.bs
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/mach/Tk/Scope.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/typemap
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Audio_f.h
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Audio.t
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Audio.h
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Audio.m
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Play.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Play/freebsd.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.9.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.star.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.0.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.5.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.3.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.1.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.6.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.4.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.2.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.8.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.7.au
+lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data/touchtone.pound.au
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Data
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/Audio/Play
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/Audio
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/Tk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Data
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Play/freebsd
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio/Play
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Audio
