@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.40 1997/02/13 14:58:38 tg Exp $
+# $Id: Makefile,v 1.41 1997/02/16 01:56:21 obrien Exp $
 #
 
     SUBDIR += ImageMagick
@@ -31,6 +31,7 @@
     SUBDIR += pixmap
     SUBDIR += png
     SUBDIR += povray
+    SUBDIR += sced
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += tgif
