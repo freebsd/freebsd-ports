@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.155 1998/07/12 23:53:47 steve Exp $
+# $Id: Makefile,v 1.156 1998/07/12 23:58:18 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -10,6 +10,7 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += awele
+    SUBDIR += battalion
     SUBDIR += blackjack
     SUBDIR += block
     SUBDIR += blue
