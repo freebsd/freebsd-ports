@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-USE_GCC=	3.4
+USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
 
