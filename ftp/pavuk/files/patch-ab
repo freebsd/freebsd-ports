@@ -1,0 +1,22 @@
+--- src/net.c	Sun Feb  1 10:53:47 1998
++++ /home/andy/tmp/wrk/src/net.c	Fri Mar 20 22:00:21 1998
+@@ -129,7 +129,9 @@
+ 			
+ 		}
+ 
++#ifndef __FreeBSD__
+ 		fcntl(sock , F_SETFL , O_SYNC);
++#endif
+ 		if ((connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) &&
+ 		     (errno && (errno != EISCONN)))
+ 		{
+@@ -259,7 +261,9 @@
+ 			}
+ 		}
+ 
++#ifndef __FreeBSD__
+ 		fcntl(sock , F_SETFL , O_SYNC);
++#endif
+ 	}
+ #endif
+ 	if ((rsock < 0) && ((rsock = accept(sock, (struct sockaddr*)&caller, &p)) == -1))

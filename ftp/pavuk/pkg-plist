@@ -1,0 +1,10 @@
+bin/pavuk
+etc/pavukrc.sample
+etc/pavuk_authinfo.sample
+share/doc/pavuk/AUTHORS
+share/doc/pavuk/COPYING
+share/doc/pavuk/ChangeLog
+share/doc/pavuk/README
+share/doc/pavuk/THANK_TO
+share/doc/pavuk/TODO
+@dirrm share/doc/pavuk
