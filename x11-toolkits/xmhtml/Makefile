@@ -17,6 +17,7 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_LIBTOOL=	yes
+GNU_CONFIGURE=	no
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
