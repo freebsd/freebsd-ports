@@ -4218,6 +4218,7 @@ mpeg		ports/graphics/mpeg
 mpeg-lib	ports/graphics/mpeg-lib
 mpeg2codec	ports/graphics/mpeg2codec
 mpeg2play	ports/graphics/mpeg2play
+mpeg4ip		ports/graphics/mpeg4ip
 mpeg_encode	ports/graphics/mpeg_encode
 mpeg_play	ports/graphics/mpeg_play
 mpeg_stat	ports/graphics/mpeg_stat
