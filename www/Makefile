@@ -6,6 +6,7 @@
     SUBDIR += adzapper
     SUBDIR += amaya
     SUBDIR += analog
+    SUBDIR += aolserver
     SUBDIR += apache13
     SUBDIR += apache13-fp
     SUBDIR += apache13-modssl
