@@ -6776,6 +6776,7 @@ quakeforge	ports/games/quakeforge
 quakeserver	ports/games/quakeserver
 quanta		ports/www/quanta
 quantlib	ports/misc/quantlib
+quark		ports/multimedia/quark
 quasi88		ports/emulators/quasi88
 quat		ports/graphics/quat
 quat-gui	ports/graphics/quat-gui
