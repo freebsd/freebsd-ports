@@ -4428,6 +4428,7 @@ ldapbrowser	ports/net/ldapbrowser
 ldapdiff	ports/net/ldapdiff
 ldapdns		ports/dns/ldapdns
 ldapsdk		ports/net/ldapsdk
+ldapsh		ports/net/ldapsh
 ldmud		ports/games/ldmud
 le		ports/editors/le
 leafnode	ports/news/leafnode
