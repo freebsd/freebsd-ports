@@ -4,3 +4,8 @@ UI's posessed by the NeXT STEP(tm) operating system. It has many qualities
 that make it superior to AfterStep, although it is still in development, and
 does lack features. When it is completed, it will be a GNUSTEP compliant
 Windowmanager that requires no editing of messy configuration files.
+
+This port based on x11-wm/windowmaker ports skelton, enhanced i18n. 
+If use first, execute "wmaker.inst" and "setlinguas you_choosed_language".
+you_choosed_language is example "japanese", "korean", etc. More info about 
+setlinguas, see help of setlinguas.
