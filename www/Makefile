@@ -591,6 +591,7 @@
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xpath2rss
+    SUBDIR += yaws
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-FileSystemSite
