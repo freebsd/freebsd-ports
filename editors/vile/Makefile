@@ -1,14 +1,15 @@
 # New ports collection makefile for:    vile
-# Version required:     7.3
+# Version required:     8.0
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.13 1997/09/06 19:55:09 gj Exp $
+# $Id: Makefile,v 1.14 1997/12/10 20:26:37 gj Exp $
 #
 
-DISTNAME=	vile-7.3
+DISTNAME=	vile-8.0
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.clark.net/pub/dickey/vile/ \
+		ftp://ftp.phred.org./pub/vile/ \
 		ftp://id.wing.net/pub/pgf/vile/
 EXTRACT_SUFX=	.tgz
 
@@ -18,8 +19,27 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 MAN1=		vile.1
 
+.if defined(USE_PERL)
+CONFIGURE_ARGS=	--with-perl
+PLIST=		${PKGDIR}/PLIST.perl
+BUILD_DEPENDS=	perl5:${PORTSDIR}/lang/perl5
+.endif
+
+pre-configure:
+.if ! defined(USE_PERL)
+	@echo "Define USE_PERL if you want to make a vile which includes"
+	@echo "PERL functionality"
+.endif
+
 post-install:
-	@echo "You might want to copy the *.rc files from the source tree before"
-	@echo "doing \`make clean'."
+.if !defined(NOPORTDOCS)
+	@if ! [ -d ${PREFIX}/share/doc/vile ]; then ${MKDIR} ${PREFIX}/share/doc/vile; fi
+	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/vile
+.endif
+	@if ! [ -d ${PREFIX}/share/vile/macros ]; then ${MKDIR} ${PREFIX}/share/vile/macros; fi
+	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/vile/macros
+	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/vile/macros
+	@echo "Look in ${PREFIX}/share/doc/vile for documentation."
+	@echo "Look in ${PREFIX}/share/vile/macros for macros."
 
 .include <bsd.port.mk>
