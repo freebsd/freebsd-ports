@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Nov  7 15:22:19 1999
-+++ Makefile.in	Fri Dec 24 13:50:02 1999
-@@ -6,7 +6,7 @@
+--- Makefile.in.orig	Fri Dec 31 07:47:00 1999
++++ Makefile.in	Sun Jan  2 21:44:26 2000
+@@ -6,10 +6,10 @@
  # including flex and yacc translations.
  
  # define location where yabasic will search for libraries
@@ -8,7 +8,11 @@
 +library_path = $(PREFIX)/lib/yabasic
  
  # flags for cc or gcc  (-g for debugging)
- ccflags = -DUNIX -DLIBRARY_PATH=\"$(library_path)\"
+-ccflags = -DUNIX -DLIBRARY_PATH=\"$(library_path)\"
++ccflags = -DUNIX -DLIBRARY_PATH=\"$(library_path)\" $(CFLAGS)
+ 
+ yab: main.o graphic.o function.o symbol.o io.o bison.o flex.o
+ 	@CC@ @CCOPTIONS@ $(ccflags) @X_CFLAGS@ \
 @@ -63,8 +63,8 @@
  
  # install yabasic on a linux system, need to be root
@@ -17,7 +21,7 @@
 -	install -m 644 -d -o 0 -g 0 /usr/doc/yabasic
 -	install -m 644 -o 0 -g 0 yabasic.htm /usr/doc/yabasic
 +	install -c -s -m 755 -o 0 -g 0 yabasic $(PREFIX)/bin/yabasic
-+	install -m 644 -d -o 0 -g 0 $(PREFIX)/doc/yabasic
-+	install -c -m 644 -o 0 -g 0 yabasic.htm $(PREFIX)/doc/yabasic
++	install -m 644 -d -o 0 -g 0 $(PREFIX)/share/doc/yabasic
++	install -c -m 644 -o 0 -g 0 yabasic.htm $(PREFIX)/share/doc/yabasic
  
  
