@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.9
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
