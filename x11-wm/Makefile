@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.9 1999/01/09 03:19:34 asami Exp $
+# $Id: Makefile,v 1.10 1999/01/17 03:03:43 billf Exp $
 #
 
     SUBDIR += 9menu
@@ -11,6 +11,7 @@
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += enlightenment
+    SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm2
     SUBDIR += fvwm95
