@@ -8,16 +8,14 @@
 PORTNAME=	iiimf-le-xcin
 PORTVERSION=	0.1.7
 CATEGORIES=	chinese textproc
-MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/
-EXTRACT_SUFX=	-2.src.rpm
+MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
+EXTRACT_SUFX=	-11.src.rpm
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
