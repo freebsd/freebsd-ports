@@ -978,6 +978,7 @@ coda_intro	ports/net/coda_intro
 code2000	ports/x11-fonts/code2000
 code2html	ports/textproc/code2html
 codecrusader	ports/devel/codecrusader
+codeworker	ports/devel/codeworker
 coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
 collections	ports/java/collections
