@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rvb@cs.cmu.edu
 COMMENT=	An experimental, replicated, high-performance network file system
 
+BROKEN=		"Changes permissions on system directories"
+
 MAN1=		cfs.1 \
 		clog.1 \
 		cmon.1 \
