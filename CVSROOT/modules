@@ -4323,6 +4323,7 @@ mastergear	ports/emulators/mastergear
 match		ports/astro/match
 matchbox	ports/x11-wm/matchbox
 math_atlas	ports/math/atlas
+math_fbm	ports/math/fbm
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
@@ -6775,6 +6776,7 @@ prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
 preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
+print_rubber	ports/print/rubber
 prips		ports/sysutils/prips
 privman		ports/devel/privman
 privoxy		ports/www/privoxy
@@ -7744,6 +7746,7 @@ seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec		
+security_hydra	ports/security/hydra
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
