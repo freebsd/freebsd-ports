@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	less
-PORTVERSION=	374
+PORTVERSION=	376
 CATEGORIES=	misc
 MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
