@@ -5,6 +5,7 @@ share/smssend/banana.sms
 share/smssend/billiger.sms
 share/smssend/eurotel.sms
 share/smssend/free-sms.sms
+share/smssend/ingyensms.sms
 share/smssend/kiwee-inter.sms
 share/smssend/kiwee-pseudo.sms
 share/smssend/kiwee.sms
@@ -18,13 +19,14 @@ share/smssend/mts.sms
 share/smssend/oskar.sms
 share/smssend/paegas.sms
 share/smssend/passagen.sms
+share/smssend/quick.sms
+share/smssend/rekom.sms
 share/smssend/sfr.sms
 share/smssend/smsboy.sms
 share/smssend/smspress.sms
 share/smssend/totalise.sms
 share/smssend/unimobile.sms
 share/smssend/vlf.sms
-share/smssend/ingyensms.sms
-share/smssend/rekom.sms
 share/smssend/w777.sms
+share/smssend/w777f.sms
 @dirrm share/smssend
