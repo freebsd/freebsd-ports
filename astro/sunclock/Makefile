@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}v2
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_XPM=	YES
 USE_IMAKE=	YES
 
 MAN1=		sunclock.1
