@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=		fpconst
-PORTVERSION=		0.6.0
+PORTVERSION=		0.7.1
 CATEGORIES=		math python
-MASTER_SITES=		http://www.analytics.washington.edu/downloads/fpconst/
+MASTER_SITES=		http://research.warnes.net/~warnes/fpconst/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		rui@ruilopes.com
