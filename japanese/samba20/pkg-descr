@@ -1,0 +1,13 @@
+Samba Japanese Edition 
+
+Samba Japanese Edition is based on Samba 2.0.10, implemented the
+experimental internationalized SWAT and fixed several problems around
+functions for Japanese support.
+
+The main features of Samba Japanese Edition are
+(1)Internationalization of SWAT (Samba Web Administration Tool),
+(2)Inclusion of the Samba documents in various languages and
+(3)Supporting for Japanese machine dependent characters and user
+   define characters.
+
+WWW: http://www.samba.gr.jp/

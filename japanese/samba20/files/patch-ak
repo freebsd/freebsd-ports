@@ -1,0 +1,20 @@
+--- script/installswat.sh.orig	Sat Oct 27 16:35:54 2001
++++ script/installswat.sh	Mon Nov 26 12:08:58 2001
+@@ -16,7 +16,7 @@
+   langdir=$SWATDIR/$ln
+   for d in $SWATDIR $langdir $langdir/help $langdir/images $langdir/include; do
+     if [ ! -d $d ]; then
+-        mkdir $d
++        mkdir -p $d
+         if [ ! -d $d ]; then
+             echo Failed to make directory $d, does $USER have privileges?
+             exit 1
+@@ -84,7 +84,7 @@
+ 
+     for d in $BOOKDIR $BOOKDIR/$ln $BOOKDIR/$ln/figs $BOOKDIR/$ln/gifs; do
+         if [ ! -d $d ]; then
+-            mkdir $d
++            mkdir -p $d
+             if [ ! -d $d ]; then
+                 echo Failed to make directory $d, does $USER have privileges?
+                 exit 1

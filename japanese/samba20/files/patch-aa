@@ -1,0 +1,47 @@
+--- Makefile.in.orig	Wed Apr 26 02:06:11 2000
++++ Makefile.in	Thu Apr 27 11:08:08 2000
+@@ -25,7 +25,7 @@
+ BINDIR = @bindir@
+ # we don't use sbindir because we want full compatibility with
+ # the previous releases of Samba
+-SBINDIR = @bindir@
++SBINDIR = @sbindir@
+ LIBDIR = @libdir@
+ VARDIR = @localstatedir@
+ MANDIR = @mandir@
+@@ -37,12 +37,13 @@
+ # set these to where to find various files
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+-SMBLOGFILE = $(VARDIR)/log.smb
+-NMBLOGFILE = $(VARDIR)/log.nmb
++LOGDIR=$(VARDIR)/log
++SMBLOGFILE = $(LOGDIR)/log.smb
++NMBLOGFILE = $(LOGDIR)/log.nmb
+ CONFIGFILE = $(LIBDIR)/smb.conf
+ LMHOSTSFILE = $(LIBDIR)/lmhosts
+ DRIVERFILE = $(LIBDIR)/printers.def
+-PASSWD_PROGRAM = /bin/passwd
++PASSWD_PROGRAM = /usr/bin/passwd
+ # This is where smbpasswd et al go
+ PRIVATEDIR = @privatedir@
+ 
+@@ -54,6 +55,9 @@
+ # the directory where lock files go
+ LOCKDIR = @lockdir@
+ 
++# the directory where pid files go
++PIDFILEDIR = $(VARDIR)/run
++
+ # The directory where code page definition files go
+ CODEPAGEDIR = $(LIBDIR)/codepages
+ 
+@@ -71,7 +75,7 @@
+ PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\"
+ FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
+ FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
+-FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
++FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
+ FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
+ FLAGS  = $(ISA) $(FLAGS5) $(PASSWD_FLAGS)
