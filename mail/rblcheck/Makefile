@@ -25,7 +25,7 @@ post-configure:
 	@${ECHO} "             SITE(\"another.rbl.site\")"
 .endif
 
-pre-build
+pre-build:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/local.sites)
 	${CAT} ${WRKDIRPREFIX}${.CURDIR}/local.sites >> ${WRKSRC}/rblsites.h
 .endif
