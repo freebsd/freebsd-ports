@@ -6,11 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnofin-0.5.10
+DISTNAME=	gnofin-0.7.1
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://jagger.berkeley.edu/pub/darin/gnofin/source/
+MASTER_SITES=	http://download.sourceforge.net/gnofin/
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 
