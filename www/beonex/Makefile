@@ -45,14 +45,15 @@ CONFIGURE_ARGS=					\
 		--disable-debug			\
 		--enable-default-toolkit=gtk	\
 		--enable-double-buffer		\
-		--enable-dtd-debug		\
-		--enable-jsd			\
+		--disable-dtd-debug		\
+		--disable-jsd			\
 		--enable-mathml			\
 		--disable-md			\
 		--disable-optimize		\
 		--disable-pedantic		\
 		--disable-plaintext-editor-only	\
 		--enable-strip			\
+		--enable-strip-libs		\
 		--disable-tests			\
 		--disable-xterm-updates		\
 		--enable-xinerama		\
@@ -81,7 +82,8 @@ CONFIGURE_ARGS+=	--enable-extensions=cookie,wallet,content-packs,pref,transformi
 .else
 CONFIGURE_ARGS+=	--enable-extensions=cookie,wallet,content-packs,pref,transformiix,spellcheck,xmlterm
 .endif
-CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 ${CC}=${CXX}
+CONFIGURE_ENV=	BUILD_OFFICIAL=1 MOZILLA_OFFICIAL=1 MOZ_INTERNAL_LIBART_LGPL=1 \
+		${CC}=${CXX}
 
 .include <bsd.port.pre.mk>
 
