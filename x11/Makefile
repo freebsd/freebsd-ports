@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.197 1998/04/28 20:16:32 andreas Exp $
+# $Id: Makefile,v 1.198 1998/04/29 21:20:59 vanilla Exp $
 #
 
     SUBDIR += FWF
@@ -79,7 +79,6 @@
     SUBDIR += windowmaker
     SUBDIR += workplace
     SUBDIR += wm2
-    SUBDIR += x-files
     SUBDIR += x3270
     SUBDIR += xalarm
     SUBDIR += xaniroc
