@@ -13,8 +13,10 @@ DISTFILES=		xracer-0.94.tar.gz xracer-data.tar.gz
 
 MAINTAINER=		troll@digitalspark.net
 
-LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
+			GL.14:${PORTSDIR}/graphics/Mesa3
 
+USE_XLIB=		yes
 MAKEFILE=		Makefile
 WRKSRC=			${WRKDIR}/xracer-0.94
 
