@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tcsh
-PORTVERSION=	6.09.03
-PORTREVISION=	1
+PORTVERSION=	6.10.00
 CATEGORIES=	shells
-MASTER_SITES=	${MASTER_SITE_TCSH}
-DISTNAME=	${DISTNAME_TCSH}
+MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,32 +17,30 @@ Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400021
+DISTFILES=	# empty
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.nobuild
-DISTFILES=	# empty
-
-do-patch:
 .else
-GNU_CONFIGURE=	yes
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-host.defs
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+GNU_CONFIGURE=	yes
 ALL_TARGET=	all catalogs
-INSTALL_TARGET=	install install.man
 MAN1=		tcsh.1
-MASTER_SITE_TCSH=	http://www2.wbs.ne.jp/~znc/tcsh/
-DISTNAME_TCSH=	${PORTNAME}-${PORTVERSION}
+BINOWN=		bin
+BINGRP=		bin
 .endif
 
 .if ${OSVERSION} >= 400021
-pre-fetch:
+pre-everything:
 	@${ECHO_MSG} "This port is just for making symlink from /bin/tcsh"
 	@${ECHO_MSG} "to ${PREFIX}/bin/tcsh and updating /etc/shells."
 
 do-install:
 	${LN} -sf /bin/tcsh ${PREFIX}/bin/tcsh
 .else
-post-install:
-	${CHOWN} bin.bin ${PREFIX}/bin/tcsh
-	${CHOWN} bin.bin ${PREFIX}/man/man1/tcsh.1
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
+	${INSTALL_MAN} ${WRKSRC}/tcsh.man ${MANPREFIX}/man/man1/tcsh.1
 	${INSTALL_DATA} ${WRKSRC}/tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.german.cat ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat
 	${LN} -sf ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/de_AT.ISO_8859-1/tcsh.cat
@@ -58,6 +55,8 @@ post-install:
 	${LN} -sf ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/fr_CH.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.italian.cat ${PREFIX}/share/nls/it_IT.ISO_8859-1/tcsh.cat
 .endif
+
+post-install:
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; \
