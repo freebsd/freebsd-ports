@@ -1,0 +1,10 @@
+--- fbsd_vid.c	2000/11/28 13:05:23	1.1
++++ fbsd_vid.c	2000/11/28 13:05:27
+@@ -1,4 +1,6 @@
+-#include <machine/console.h>
++#include <sys/fbio.h>
++#include <sys/consio.h>
++#include <sys/kbio.h>
+ #include <vgl.h>
+ #include <signal.h>
+ #include <osreldate.h>
