@@ -1,0 +1,31 @@
+$FreeBSD$
+
+Add ${JAVA_HOME}/lib/tools.jar to the CLASSPATH.
+
+NOTE: JAVA_HOME is overridable but the default value is selected by bsd.java.mk
+when isntalling the port.
+
+--- bin/NetRexxC.sh.orig	Sun Aug 20 12:47:22 2000
++++ bin/NetRexxC.sh	Tue Apr  5 23:52:45 2005
+@@ -29,6 +29,8 @@
+ # -----------------------------------------------------------------
+ #  2000.08.20 -- initial version derived from NetRexxC.bat
+ 
++JAVA_HOME="${JAVA_HOME:-"%%JAVA_HOME%%"}"
++
+ if test $# -eq 0; then
+   echo 'Usage:' $0 '[-run] [other options] filename'
+   echo ' '
+@@ -40,10 +42,10 @@
+   netrexx_run=yes
+ fi
+ 
+-java -ms4M $NETREXX_JAVA COM.ibm.netrexx.process.NetRexxC $*
++"${JAVA_HOME}/bin/java" -ms4M $NETREXX_JAVA -cp "${JAVA_HOME}/lib/tools.jar":"%%JAVAJARDIR%%/NetRexxC.jar" COM.ibm.netrexx.process.NetRexxC $*
+ if test $? -eq 0; then
+   if test "$netrexx_run" = "yes"; then
+     echo "Running $1..."
+-    java $1
++    "${JAVA_HOME}/bin/java" $1
+   fi
+ fi

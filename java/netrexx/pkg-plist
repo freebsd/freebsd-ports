@@ -1,7 +1,6 @@
+@comment $FreeBSD$
 bin/NetRexxC.sh
 bin/nrc
-bin/NetRexxC.rexx
-bin/nrc.rexx
 %%PORTDOCS%%%%DOCSDIR%%/netrexx/lang/RexxWords.class
 %%PORTDOCS%%%%DOCSDIR%%/netrexx/lang/BadColumnException.class
 %%PORTDOCS%%%%DOCSDIR%%/netrexx/lang/BadNumericException.class
@@ -134,8 +133,8 @@ bin/nrc.rexx
 %%PORTDOCS%%%%DOCSDIR%%/wordclock.html
 %%PORTDOCS%%%%DOCSDIR%%/ArchText.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/hello.nrx
-share/java/classes/NetRexxC.jar
-share/java/classes/NetRexxR.jar
+%%JAVAJARDIR%%/NetRexxC.jar
+%%JAVAJARDIR%%/NetRexxR.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/netrexx/lang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/netrexx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
