@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
-		http://josefsson.org/libidn/releases/
+MASTER_SITES=	http://josefsson.org/libidn/releases/ \
+		${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	krion@FreeBSD.org
