@@ -1,0 +1,44 @@
+%%RUBY_SITEARCHLIBDIR%%/shout.so
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Shout.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/ShoutError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/example_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/extconf_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/shout_c.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Shout.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
