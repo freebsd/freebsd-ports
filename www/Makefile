@@ -125,6 +125,7 @@
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetty
+    SUBDIR += jonah
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += knowledgekit
