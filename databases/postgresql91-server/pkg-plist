@@ -1,95 +1,90 @@
-@unexec if cmp -s %D/pgsql/.profile %D/pgsql/dot.profile.dist; then rm -f %D/pgsql/.profile; fi
+%%PG_PREFIX%%bin/postmaster
+%%PG_PREFIX%%bin/postgres
+%%PG_PREFIX%%bin/ecpg
+%%PG_PREFIX%%bin/initdb
+%%PG_PREFIX%%bin/initlocation
+%%PG_PREFIX%%bin/ipcclean
+%%PG_PREFIX%%bin/pg_ctl
+%%PG_PREFIX%%bin/pg_dump
+%%PG_PREFIX%%bin/pg_restore
+%%PG_PREFIX%%bin/pg_encoding
+%%PG_PREFIX%%bin/pg_dumpall
+%%PG_PREFIX%%bin/pg_id
+%%PG_PREFIX%%bin/pg_passwd
+%%PG_PREFIX%%bin/psql
+%%PG_PREFIX%%bin/createdb
+%%PG_PREFIX%%bin/dropdb
+%%PG_PREFIX%%bin/createuser
+%%PG_PREFIX%%bin/dropuser
+%%PG_PREFIX%%bin/droplang
+%%PG_PREFIX%%bin/vacuumdb
+%%PG_PREFIX%%bin/createlang
+%%PG_PREFIX%%bin/pg_config
 etc/rc.d/010.pgsql.sh
-pgsql/dot.profile.dist
-@exec [ -f %D/pgsql/.profile ] || (cp %D/pgsql/dot.profile.dist %D/pgsql/.profile && chown pgsql:pgsql %D/pgsql/.profile)
-pgsql/bin/createdb
-pgsql/bin/createlang
-pgsql/bin/createuser
-pgsql/bin/dropdb
-pgsql/bin/droplang
-pgsql/bin/dropuser
-pgsql/bin/ecpg
-pgsql/bin/initdb
-pgsql/bin/initlocation
-pgsql/bin/ipcclean
-pgsql/bin/pg_ctl
-pgsql/bin/pg_dump
-pgsql/bin/pg_dumpall
-pgsql/bin/pg_encoding
-pgsql/bin/pg_id
-pgsql/bin/pg_passwd
-pgsql/bin/pg_upgrade
-pgsql/bin/pg_version
-pgsql/bin/postgres
-pgsql/bin/postmaster
-pgsql/bin/psql
-pgsql/bin/vacuumdb
-pgsql/include/access/attnum.h
-pgsql/include/c.h
-pgsql/include/commands/trigger.h
-pgsql/include/config.h
-pgsql/include/ecpgerrno.h
-pgsql/include/ecpglib.h
-pgsql/include/ecpgtype.h
-pgsql/include/executor/spi.h
-pgsql/include/fmgr.h
-pgsql/include/lib/dllist.h
-pgsql/include/libpgeasy.h
-pgsql/include/libpq/libpq-fs.h
-pgsql/include/libpq/pqcomm.h
-pgsql/include/libpq++/pgconnection.h
-pgsql/include/libpq++/pgcursordb.h
-pgsql/include/libpq++/pgdatabase.h
-pgsql/include/libpq++/pglobject.h
-pgsql/include/libpq++/pgtransdb.h
-pgsql/include/libpq++.h
-pgsql/include/libpq-fe.h
-pgsql/include/libpq-int.h
-pgsql/include/os.h
-pgsql/include/postgres.h
-pgsql/include/postgres_ext.h
-pgsql/include/pqexpbuffer.h
-pgsql/include/sql3types.h
-pgsql/include/sqlca.h
-pgsql/include/utils/elog.h
-pgsql/include/utils/geo_decls.h
-pgsql/include/utils/mcxt.h
-pgsql/include/utils/palloc.h
-pgsql/lib/global1.bki.source
-pgsql/lib/global1.description
-pgsql/lib/libecpg.a
-pgsql/lib/libecpg.so
-pgsql/lib/libecpg.so.3
-pgsql/lib/libpgeasy.a
-pgsql/lib/libpgeasy.so
-pgsql/lib/libpgeasy.so.2
-pgsql/lib/libpq++.a
-pgsql/lib/libpq++.so
-pgsql/lib/libpq++.so.3
-pgsql/lib/libpq.a
-pgsql/lib/libpq.so
-pgsql/lib/libpq.so.2
-pgsql/lib/local1_template1.bki.source
-pgsql/lib/local1_template1.description
-pgsql/lib/pg_geqo.sample
-pgsql/lib/pg_hba.conf.sample
-pgsql/lib/pg_ident.conf.sample
-pgsql/lib/pg_options.sample
-pgsql/lib/plpgsql.so
-pgsql/lib/postmaster.opts.default.sample
-@exec chown -R root:wheel %D/pgsql/lib
-pgsql/post-install-notes
-@dirrm pgsql/bin
-@dirrm pgsql/include/access
-@dirrm pgsql/include/commands
-@dirrm pgsql/include/executor
-@dirrm pgsql/include/lib
-@dirrm pgsql/include/libpq
-@dirrm pgsql/include/libpq++
-@dirrm pgsql/include/utils
-@dirrm pgsql/include
-@dirrm pgsql/lib
-@dirrm pgsql/man/man1
-@dirrm pgsql/man/manl
-@dirrm pgsql/man
-@dirrm pgsql
+%%PG_INCLUDE%%/lib/dllist.h
+@dirrm %%PG_INCLUDE%%/lib
+%%PG_INCLUDE%%/libpq/pqcomm.h
+%%PG_INCLUDE%%/libpq/libpq-fs.h
+@dirrm %%PG_INCLUDE%%/libpq
+%%PG_INCLUDE%%/libpq++/pgconnection.h
+%%PG_INCLUDE%%/libpq++/pgdatabase.h
+%%PG_INCLUDE%%/libpq++/pgtransdb.h
+%%PG_INCLUDE%%/libpq++/pgcursordb.h
+%%PG_INCLUDE%%/libpq++/pglobject.h
+@dirrm %%PG_INCLUDE%%/libpq++
+%%PG_INCLUDE%%/c.h
+%%PG_INCLUDE%%/postgres_ext.h
+%%PG_INCLUDE%%/postgres_fe.h
+%%PG_INCLUDE%%/os.h
+%%PG_INCLUDE%%/config.h
+%%PG_INCLUDE%%/libpq-fe.h
+%%PG_INCLUDE%%/libpq-int.h
+%%PG_INCLUDE%%/pqexpbuffer.h
+%%PG_INCLUDE%%/ecpgerrno.h
+%%PG_INCLUDE%%/ecpglib.h
+%%PG_INCLUDE%%/ecpgtype.h
+%%PG_INCLUDE%%/sqlca.h
+%%PG_INCLUDE%%/sql3types.h
+%%PG_INCLUDE%%/libpgeasy.h
+%%PG_INCLUDE%%/libpq++.h
+@dirrm %%PG_INCLUDE%%
+%%PG_PREFIX%%lib/libpq.so
+%%PG_PREFIX%%lib/libpq.a
+%%PG_PREFIX%%lib/libpq.so.2
+%%PG_PREFIX%%lib/libecpg.so
+%%PG_PREFIX%%lib/libecpg.a
+%%PG_PREFIX%%lib/libecpg.so.3
+%%PG_PREFIX%%lib/libpgeasy.so
+%%PG_PREFIX%%lib/libpgeasy.a
+%%PG_PREFIX%%lib/libpgeasy.so.2
+%%PG_PREFIX%%lib/libpq++.so
+%%PG_PREFIX%%lib/libpq++.a
+%%PG_PREFIX%%lib/libpq++.so.3
+%%PG_PREFIX%%lib/plpgsql.so
+share/postgresql/global.bki
+share/postgresql/global.description
+share/postgresql/post-install-notes
+share/postgresql/template1.bki
+share/postgresql/template1.description
+share/postgresql/pg_hba.conf.sample
+share/postgresql/pg_ident.conf.sample
+share/postgresql/postgresql.conf.sample
+@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
+@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
+@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist
+@unexec [ -f ~pgsql/dot.cshrc.dist ] && rm ~pgsql/dot.cshrc.dist
+@exec [ -f %D/share/postgresql/post-install-notes ] && cp %D/share/postgresql/post-install-notes ~pgsql && chown pgsql:pgsql ~pgsql/post-install-notes
+@unexec [ -f ~pgsql/post-install-notes ] && rm ~pgsql/post-install-notes
+share/postgresql/dot.profile.dist
+share/postgresql/dot.cshrc.dist
+@dirrm share/postgresql
+@exec [ -f %D/share/postgresql/dot.profile.dist ] && cp %D/share/postgresql/dot.profile.dist ~pgsql/.
+@exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
+@exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
+@exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
+@unexec rmdir %D/%%PG_PREFIX%%bin 2> /dev/null || true
+@unexec rmdir %D/%%PG_PREFIX%%lib 2> /dev/null || true
+@unexec rmdir %D/%%PG_PREFIX%%man/man1 2> /dev/null || true
+@unexec rmdir %D/%%PG_PREFIX%%man/manl 2> /dev/null || true
+@unexec rmdir %D/%%PG_PREFIX%%man 2> /dev/null || true
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/pgsql and the pgsql user manually."

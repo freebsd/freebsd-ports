@@ -37,6 +37,10 @@ PRE-INSTALL)
 		fi
 	fi
 
+	if ! [ -x ~pgsql ] ; then 
+		mkdir -p ${DB_DIR}
+		chown pgsql:pgsql ${DB_DIR}
+	fi
 	;;
 
 esac

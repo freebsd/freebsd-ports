@@ -1,6 +1,6 @@
-pgsql/bin/pgtclsh
-pgsql/include/libpgtcl.h
-pgsql/lib/libpgtcl.a
-pgsql/lib/libpgtcl.so
-pgsql/lib/libpgtcl.so.2
-pgsql/lib/pltcl.so
+%%PG_PREFIX%%bin/pgtclsh
+%%PG_INCLUDE%%/libpgtcl.h
+%%PG_PREFIX%%lib/libpgtcl.a
+%%PG_PREFIX%%lib/libpgtcl.so
+%%PG_PREFIX%%lib/libpgtcl.so.2
+%%PG_PREFIX%%lib/pltcl.so

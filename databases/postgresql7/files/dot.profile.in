@@ -1,10 +1,12 @@
-PATH=${PATH}:%%PREFIX%%/pgsql/bin
-PGLIB=%%PREFIX%%/pgsql/lib
+# both new and old layout's paths, but new path first...
+PATH=%%PREFIX%%/%%PG_PREFIX%%bin:${PATH}
+
+PGLIB=%%PREFIX%%/%%PG_PREFIX%%lib
 
 # note: PGDATA can be overridden by the -D startup option
-PGDATA=%%PREFIX%%/pgsql/data
+PGDATA=${HOME}/data
 
-export PATH MANPATH PGLIB PGDATA
+export PATH PGLIB PGDATA
 
 #You might want to set some locale stuff here
 #PGDATESTYLE=ISO

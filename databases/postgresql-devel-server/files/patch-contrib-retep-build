@@ -1,0 +1,10 @@
+--- contrib/retep/build.xml~	Fri Mar 16 22:50:36 2001
++++ contrib/retep/build.xml	Wed Apr 18 09:24:20 2001
+@@ -38,6 +38,7 @@
+   <target name="compile" depends="checks,prepare">
+     <javac srcdir="${src}" destdir="${dest}">
+       <include name="${package}/**" />
++      <exclude name="${package}/**" unless="jdk1.2+" />
+     </javac>
+   </target>
+ 
