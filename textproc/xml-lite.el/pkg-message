@@ -1,0 +1,4 @@
+To use xml-lite-mode, add to your ~/.emacs the following lines:
+
+(autoload 'xml-lite-mode "xml-lite" "XML-Lite mode" t)
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . xml-lite-mode))
