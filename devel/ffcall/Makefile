@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ffcall
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	devel
-#MASTER_SITES=  ftp://ftp.santafe.edu/pub/gnu/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=  ftp://ftp.santafe.edu/pub/gnu/
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
