@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.8 1998/05/04 20:23:10 jseger Exp $
+# $Id: Makefile,v 1.9 1998/09/15 11:45:58 asami Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -67,6 +67,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
