@@ -1,0 +1,3 @@
+bin/vicq
+share/examples/vicq/vicqrc.example
+@dirrm share/examples/vicq

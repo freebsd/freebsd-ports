@@ -455,6 +455,7 @@
     SUBDIR += unison
     SUBDIR += urlendec
     SUBDIR += vchat
+    SUBDIR += vicq
     SUBDIR += vnc
     SUBDIR += vnc-tight
     SUBDIR += vomit
