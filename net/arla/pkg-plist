@@ -55,6 +55,7 @@ include/pts.h
 include/pts.ss.h
 include/resolve.h
 include/roken.h
+include/rtbl.h
 include/rx/rx.h
 include/rx/rx_clock.h
 include/rx/rx_event.h
@@ -103,4 +104,4 @@ sbin/rxperf
 @dirrm include/afs
 @dirrm include/rx
 @dirrm include/ss
-
+@dirrm cache
