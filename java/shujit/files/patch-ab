@@ -1,0 +1,8 @@
+--- def.mk.orig	Wed Jun  9 22:05:03 1999
++++ def.mk	Wed Jun  9 22:05:18 1999
+@@ -1,4 +1,4 @@
+-J_HOME = /usr/local/jdk1.1.7
++J_HOME = /usr/local/jdk1.1.8
+ #J_HOME = /usr/local/jdk117_v1a
+ 
+ # for GCC 2.7.X or older

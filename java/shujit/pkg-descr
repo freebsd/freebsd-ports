@@ -1,0 +1,8 @@
+ShuJIT is a Just In Time bytecode compiler (JIT) which
+works with Sun Microsystems' Java(tm) Virtual Machine
+(JVM) such as JDK and JRE on Intel x86 processors.
+
+http://www.shudo.net/jit/index.html
+
+- Jake
+jake@checker.org
