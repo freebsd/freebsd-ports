@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -40,7 +40,7 @@ pre-patch:
 		 s|-liconv|-lgiconv|g ; s|iconv_open|libiconv_open|g ; \
 		 s|([^g])iconv.h|\1giconv.h|g' \
 			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|\$\(gnomedatadir\)/gnome|\$\(gnomedatadir\)|g'

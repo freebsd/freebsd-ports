@@ -63,6 +63,7 @@ share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
 share/locale/az/LC_MESSAGES/balsa.mo
+share/locale/bg/LC_MESSAGES/balsa.mo
 share/locale/ca/LC_MESSAGES/balsa.mo
 share/locale/cs/LC_MESSAGES/balsa.mo
 share/locale/da/LC_MESSAGES/balsa.mo
