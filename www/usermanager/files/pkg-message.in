@@ -1,0 +1,8 @@
+*****************************************************************
+
+    Please check %%PREFIX%%/www/data/UserManager/readme.txt
+    You will need script.mysql to create MySQL tables and
+    to edit config.php. To use this manager, you will need to
+    compile your pure-ftpd with -DWITH_MYSQL
+
+*****************************************************************

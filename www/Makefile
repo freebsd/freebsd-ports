@@ -689,6 +689,7 @@
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += urchin5
+    SUBDIR += usermanager
     SUBDIR += visitors
     SUBDIR += w3
     SUBDIR += w3-4

@@ -1,0 +1,47 @@
+www/data/UserManager/admin.php
+www/data/UserManager/CHANGELOG
+www/data/UserManager/config.php
+www/data/UserManager/index.php
+www/data/UserManager/readme.txt
+www/data/UserManager/script.mysql
+www/data/UserManager/images/arrow_right.gif
+www/data/UserManager/images/connect.gif
+www/data/UserManager/images/delete.gif
+www/data/UserManager/images/edit.gif
+www/data/UserManager/images/ftpuser.gif
+www/data/UserManager/images/info.gif
+www/data/UserManager/images/key.gif
+www/data/UserManager/images/left.gif
+www/data/UserManager/images/left_bottom.gif
+www/data/UserManager/images/left_top.gif
+www/data/UserManager/images/login.gif
+www/data/UserManager/images/new_ftpuser.gif
+www/data/UserManager/images/right.gif
+www/data/UserManager/images/right_bottom.gif
+www/data/UserManager/images/right_top.gif
+www/data/UserManager/images/top.gif
+www/data/UserManager/images/user.gif
+www/data/UserManager/language/chinese.php
+www/data/UserManager/language/danish.php
+www/data/UserManager/language/dutch.php
+www/data/UserManager/language/english.php
+www/data/UserManager/language/french.php
+www/data/UserManager/language/german.php
+www/data/UserManager/language/hungarian.php
+www/data/UserManager/language/index.php
+www/data/UserManager/language/italian.php
+www/data/UserManager/language/japanese.php
+www/data/UserManager/language/korean.php
+www/data/UserManager/language/norwegian.php
+www/data/UserManager/language/polish.php
+www/data/UserManager/language/portuguese.php
+www/data/UserManager/language/russian.php
+www/data/UserManager/language/spanish.php
+www/data/UserManager/language/swedish.php
+www/data/UserManager/language/turkish.php
+www/data/UserManager/style/default.css
+www/data/UserManager/style/orange.css
+@dirrm www/data/UserManager/images
+@dirrm www/data/UserManager/language
+@dirrm www/data/UserManager/style
+@dirrm www/data/UserManager
