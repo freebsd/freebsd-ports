@@ -1,8 +1,8 @@
 --- src/fe-text/gui-entry.c.orig	Sun Mar  4 02:04:10 2001
-+++ src/fe-text/gui-entry.c	Thu Nov  1 23:38:28 2001
-@@ -148,10 +148,35 @@
- 	entry_update();
- }
++++ src/fe-text/gui-entry.c	Mon Nov  5 01:40:11 2001
+@@ -29,6 +29,26 @@
+ static int prompt_hidden;
+ static char *prompt;
  
 +#ifdef WANT_BIG5
 +int gui_is_big5(char *str, int pos)
@@ -24,7 +24,25 @@
 +}
 +#endif WANT_BIG5
 +
- void gui_entry_erase(int size)
+ static void entry_screenpos(void)
+ {
+ 	if (pos-scrstart < COLS-2-promptlen && pos-scrstart > 0) {
+@@ -42,6 +62,14 @@
+ 	} else {
+ 		scrpos = (COLS-promptlen)*2/3;
+ 		scrstart = pos-scrpos;
++#ifdef WANT_BIG5
++		if((scrstart > 0) &&
++		   gui_is_big5(entry->str, scrstart - 1))
++		{
++		  scrstart --;
++		  scrpos ++;
++		}
++#endif WANT_BIG5
+ 	}
+ }
+ 
+@@ -152,6 +180,11 @@
  {
  	if (pos < size) return;
  
@@ -36,7 +54,7 @@
  	pos -= size;
  	g_string_erase(entry, pos, size);
  
-@@ -217,6 +242,13 @@
+@@ -217,6 +250,13 @@
  
  void gui_entry_move_pos(int p)
  {
