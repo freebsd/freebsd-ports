@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.10
+PORTVERSION=	1.23
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@oven.org
 COMMENT=	Perl module for creation and manipulation of tar files
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib
+RUN_DEPENDS=	${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib \
+		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
