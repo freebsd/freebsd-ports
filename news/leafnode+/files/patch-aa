@@ -1,0 +1,42 @@
+--- Makefile.orig	Tue Nov 10 03:50:23 1998
++++ Makefile	Thu Nov 19 19:49:05 1998
+@@ -1,11 +1,8 @@
+ # -*- makefile -*-
+ # $Orig-Id: Makefile,v 1.16 1997/07/20 00:28:31 agulbra Exp $
+-CC = gcc
+ DEBUG = -g -Wall -Wformat -Wstrict-prototypes -Wmissing-prototypes 
+-CFLAGS = $(DEBUG)
+ LIBS =
+-BINDIR = /usr/local/sbin
+-MANDIR = /usr/local/man
++BINDIR = $(PREFIX)/sbin
+ VERSION = 1.2
+ #
+ # if you want to use Socks, use following
+@@ -27,14 +24,14 @@
+ #
+ # this is the directory where the configuration and group information is
+ # kept.  It should preferably not be on the same partition as spooldir
+-LIBDIR = /usr/lib/leafnode
++LIBDIR = $(PREFIX)/lib/leafnode
+ 
+-all: nntpd fetch texpire checkgroups leaftool
++all: leafnode fetch-news texpire checkgroups leaftool
+ 
+-nntpd: nntpd.o util.o config.o
++leafnode: nntpd.o util.o config.o
+ 	$(CC) -g -o $@ nntpd.o util.o config.o $(LIBS)
+ 
+-fetch: fetch.o util.o config.o
++fetch-news: fetch.o util.o config.o
+ 	$(CC) -o $@ fetch.o util.o config.o $(LIBS)
+ 
+ texpire: texpire.o util.o config.o
+@@ -90,7 +87,6 @@
+ 				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
+ 				$${a}$${b}9 ; \
+ 			done ; done
+-	cp config.example $(LIBDIR)
+ 	chown -R news.news $(LIBDIR)/. $(SPOOLDIR)/.
+ 	chmod 2750 $(SPOOLDIR)
+ 	@echo edit /etc/inetd.conf to start $(BINDIR)/leafnode

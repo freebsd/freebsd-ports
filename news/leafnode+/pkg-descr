@@ -1,0 +1,10 @@
+Leafnode+ is a simple NNTP server designed for small sites, derived from
+the Leafnode package.
+
+Leafnode+ only downloads those newsgroups which have been recently
+accessed by users, reducing the amount of bandwidth required
+considerably.
+
+Leafnode+ contains several enhancements from the original Leafnode.
+
+For more information, see http://www.io.com/~kazushi/freeware/leafnode+.html
