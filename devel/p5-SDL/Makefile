@@ -10,34 +10,34 @@ MASTER_SITES=	http://bloodgate.com/perl/sdl/pub/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	SDL_perl-${PORTVERSION}
 
-MAINTAINER=	philip@paeps.cx
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl Bindings for SDL
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_SDL=	yes
+USE_SDL=	sdl
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SDL_TTF)
-USE_SDL=	ttf sdl
+USE_SDL+=	ttf
 .endif
 
 .if !defined(WITHOUT_SDL_NET)
-USE_SDL=	net sdl
+USE_SDL+=	net
 .endif
 
 .if !defined(WITHOUT_SDL_GFX)
-USE_SDL=	gfx sdl
+USE_SDL+=	gfx
 .endif
 
 .if !defined(WITHOUT_SDL_IMAGE)
-USE_SDL=	image sdl
+USE_SDL+=	image
 .endif
 
 .if !defined(WITHOUT_SDL_MIXER)
-USE_SDL=	mixer sdl
+USE_SDL+=	mixer
 .endif
 
 .if ${PERL_LEVEL} < 500600
