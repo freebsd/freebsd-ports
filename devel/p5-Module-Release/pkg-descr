@@ -1,0 +1,7 @@
+This program automates Perl module releases.  It makes the distribution,
+tests it, checks that CVS is up to date, tags CVS, uploads it to the
+PAUSE anonymous FTP directory and to the incoming directory for
+SourceForge.net, claims it on PAUSE for your CPAN account, and releases
+it on SourceForge.net.
+
+WWW: http://search.cpan.org/dist/release/
