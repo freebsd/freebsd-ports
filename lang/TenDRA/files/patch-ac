@@ -1,20 +1,25 @@
---- src/installers/80x86/common/instr386.c.orig	Sun Mar 15 18:00:20 1998
-+++ src/installers/80x86/common/instr386.c	Sat Jun  6 13:43:25 1998
-@@ -5459,7 +5459,7 @@
-     if (sz == 64) {
-       int riu = regsinuse;
-       regsinuse |= 0x2;
--      move (shb, bottom, reg2);
-+      move (ulongsh, bottom, reg2);	/* can only be a simple constant */
-       regsinuse = riu;
-     }
-     else
-@@ -5727,7 +5727,7 @@
-     if (sz == 64) {
-       int riu = regsinuse;
-       regsinuse |= 0x2;
--      move (shb, bottom, reg2);
-+      move (ulongsh, bottom, reg2);	/* can only be a simple constant */
-       regsinuse = riu;
-     }
-     else
+Index: src/installers/80x86/common/instr386.c
+===================================================================
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/installers/80x86/common/instr386.c,v
+retrieving revision 1.4
+diff -u -r1.4 instr386.c
+--- src/installers/80x86/common/instr386.c	21 Dec 2002 21:31:56 -0000	1.4
++++ src/installers/80x86/common/instr386.c	14 May 2003 17:14:29 -0000
+@@ -5250,7 +5250,7 @@
+ 		if (sz == 64) {
+ 			int riu = regsinuse;
+ 			regsinuse |= 0x2;
+-			move (shb, bottom, reg2);
++			move (ulongsh, bottom, reg2);	/* can only be a simple constant */
+ 			regsinuse = riu;
+ 		}
+ 		else
+@@ -5515,7 +5515,7 @@
+ 		if (sz == 64) {
+ 			int riu = regsinuse;
+ 			regsinuse |= 0x2;
+-			move (shb, bottom, reg2);
++			move (ulongsh, bottom, reg2);	/* can only be a simple constant */
+ 			regsinuse = riu;
+ 		}
+ 		else

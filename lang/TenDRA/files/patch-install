@@ -1,0 +1,12 @@
+--- mk/base/tendra.install.mk.orig	Mon Mar 31 10:00:01 2003
++++ mk/base/tendra.install.mk	Mon May 12 21:20:53 2003
+@@ -60,6 +60,9 @@
+ 	for i in ${.OBJDIR}.api/*.h; do \
+ 		${INSTALL} $$i ${INSTALL_PREFIX}/lib/include/${API}.api; \
+ 	done
++	for i in `${FIND} ${.OBJDIR}.api/ -type d -mindepth 1` ; do \
++		${CP} -pR $$i ${INSTALL_PREFIX}/lib/include/${API}.api; \
++	done
+ 	for i in ${.OBJDIR:C/apis/apis\/shared/}.api/*.h; do \
+ 		${INSTALL} $$i ${INSTALL_PREFIX}/lib/include/shared/${API}.api; \
+ 	done
