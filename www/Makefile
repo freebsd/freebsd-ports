@@ -114,10 +114,6 @@
     SUBDIR += sitecopy
     SUBDIR += smb_auth
     SUBDIR += snarf
-    SUBDIR += squid11
-    SUBDIR += squid11-novm
-    SUBDIR += squid20
-    SUBDIR += squid21
     SUBDIR += squid22
     SUBDIR += squid23
     SUBDIR += squidclients
