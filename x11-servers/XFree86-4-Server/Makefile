@@ -34,7 +34,7 @@ COMMENT=	XFree86-4 X server and related programs
 	patch-bus-Imakefile \
 	patch-compiler.h patch-os-support_Imakefile patch-bsd_Imakefile \
 	patch-freebsdPci.c patch-bus_Imakefile patch-xf86Sbus.h patch-loader.c \
-	patch-Sbus.c patch-elfloader.c patch-xfree86.cf patch-FreeBSD.cf \
+	patch-Sbus.c patch-elfloader.c patch-FreeBSD.cf \
 	patch-sunffb_Imakefile patch-xf86sym.c patch-xf86Events.c patch-ftfuncs.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
