@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-basic-mule-packages
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -20,7 +20,7 @@ DISTFILES=	\
 		elib-1.06-pkg.tar.gz \
 		locale-1.16-pkg.tar.gz \
 		mule-base-1.34-pkg.tar.gz \
-		skk-1.15-pkg.tar.gz
+		skk-1.16-pkg.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -17,34 +17,34 @@ MASTER_SITES=	\
 
 DISTFILES=	\
 		apel-1.18-pkg.tar.gz \
-		auctex-1.19-pkg.tar.gz \
+		auctex-1.21-pkg.tar.gz \
 		c-support-1.14-pkg.tar.gz \
-		cc-mode-1.17-pkg.tar.gz \
+		cc-mode-1.20-pkg.tar.gz \
 		debug-1.11-pkg.tar.gz \
 		dired-1.07-pkg.tar.gz \
-		edit-utils-1.50-pkg.tar.gz \
-		efs-1.19-pkg.tar.gz \
+		edit-utils-1.52-pkg.tar.gz \
+		efs-1.20-pkg.tar.gz \
 		fsf-compat-1.07-pkg.tar.gz \
 		hm--html-menus-1.14-pkg.tar.gz \
-		ispell-1.18-pkg.tar.gz \
+		ispell-1.19-pkg.tar.gz \
 		mail-lib-1.30-pkg.tar.gz \
 		mailcrypt-2.04-pkg.tar.gz \
 		net-utils-1.13-pkg.tar.gz \
-		os-utils-1.20-pkg.tar.gz \
-		pcl-cvs-1.47-pkg.tar.gz \
-		prog-modes-1.28-pkg.tar.gz \
+		os-utils-1.23-pkg.tar.gz \
+		pcl-cvs-1.49-pkg.tar.gz \
+		prog-modes-1.29-pkg.tar.gz \
 		ps-print-nomule-1.03-pkg.tar.gz \
-		psgml-1.18-pkg.tar.gz \
+		psgml-1.19-pkg.tar.gz \
 		sgml-1.06-pkg.tar.gz \
-		sh-script-1.11-pkg.tar.gz \
+		sh-script-1.12-pkg.tar.gz \
 		texinfo-1.19-pkg.tar.gz \
 		text-modes-1.25-pkg.tar.gz \
 		time-1.09-pkg.tar.gz \
 		vc-1.23-pkg.tar.gz \
 		viper-1.21-pkg.tar.gz \
 		w3-1.15-pkg.tar.gz \
-		xemacs-base-1.42-pkg.tar.gz \
-		xemacs-devel-1.26-pkg.tar.gz
+		xemacs-base-1.43-pkg.tar.gz \
+		xemacs-devel-1.28-pkg.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-comm-packages
-PORTVERSION=	1.1
+PORTVERSION=	2.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -17,16 +17,17 @@ MASTER_SITES=	\
 
 DISTFILES=	\
 		bbdb-1.09-pkg.tar.gz \
+		eicq-1.01-pkg.tar.gz \
 		eudc-1.31-pkg.tar.gz \
 		footnote-1.12-pkg.tar.gz \
 		gnats-1.10-pkg.tar.gz \
-		gnus-1.45-pkg.tar.gz \
+		gnus-1.50-pkg.tar.gz \
 		mew-1.10-pkg.tar.gz \
 		mh-e-1.12-pkg.tar.gz \
 		rmail-1.11-pkg.tar.gz \
-		supercite-1.14-pkg.tar.gz \
+		supercite-1.15-pkg.tar.gz \
 		tm-1.23-pkg.tar.gz \
-		vm-1.22-pkg.tar.gz \
+		vm-1.24-pkg.tar.gz \
 		zenirc-1.07-pkg.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp

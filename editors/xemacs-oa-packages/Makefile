@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-oa-packages
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -22,7 +22,7 @@ DISTFILES=	\
 		frame-icon-1.08-pkg.tar.gz \
 		pc-1.17-pkg.tar.gz \
 		slider-1.11-pkg.tar.gz \
-		speedbar-1.14-pkg.tar.gz \
+		speedbar-1.16-pkg.tar.gz \
 		strokes-1.06-pkg.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp

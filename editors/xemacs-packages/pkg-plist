@@ -133,15 +133,6 @@ lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/isotech.ent
 lib/xemacs/xemacs-packages/etc/psgml/ISOlat1.ent
 lib/xemacs/xemacs-packages/etc/psgml/README.cdtd
 lib/xemacs/xemacs-packages/etc/psgml/cals-tbl.dtd
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3-r
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3.2
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4.01frame
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4.01s
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4frame
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4s
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-r
 lib/xemacs/xemacs-packages/etc/psgml/datatypes.dtd
 lib/xemacs/xemacs-packages/etc/psgml/dbcent.mod
 lib/xemacs/xemacs-packages/etc/psgml/dbgenent.mod
@@ -389,7 +380,6 @@ lib/xemacs/xemacs-packages/info/w3.info-1
 lib/xemacs/xemacs-packages/info/w3.info-2
 lib/xemacs/xemacs-packages/info/w3.info-3
 lib/xemacs/xemacs-packages/info/w3.info-4
-lib/xemacs/xemacs-packages/info/w3.info-5
 lib/xemacs/xemacs-packages/lisp/apel/ChangeLog
 lib/xemacs/xemacs-packages/lisp/apel/README.en
 lib/xemacs/xemacs-packages/lisp/apel/README.ja
@@ -726,6 +716,8 @@ lib/xemacs/xemacs-packages/lisp/edit-utils/tree-menu.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/tree-menu.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/uniquify.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/uniquify.elc
+lib/xemacs/xemacs-packages/lisp/edit-utils/vertical-mode.el
+lib/xemacs/xemacs-packages/lisp/edit-utils/vertical-mode.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/where-was-i-db.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/where-was-i-db.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/winring.el
@@ -968,6 +960,8 @@ lib/xemacs/xemacs-packages/lisp/os-utils/ledit.el
 lib/xemacs/xemacs-packages/lisp/os-utils/ledit.elc
 lib/xemacs/xemacs-packages/lisp/os-utils/lpr.el
 lib/xemacs/xemacs-packages/lisp/os-utils/lpr.elc
+lib/xemacs/xemacs-packages/lisp/os-utils/mchat.el
+lib/xemacs/xemacs-packages/lisp/os-utils/mchat.elc
 lib/xemacs/xemacs-packages/lisp/os-utils/rlogin.el
 lib/xemacs/xemacs-packages/lisp/os-utils/rlogin.elc
 lib/xemacs/xemacs-packages/lisp/os-utils/spell.el
@@ -1041,6 +1035,8 @@ lib/xemacs/xemacs-packages/lisp/prog-modes/m4-mode.el
 lib/xemacs/xemacs-packages/lisp/prog-modes/m4-mode.elc
 lib/xemacs/xemacs-packages/lisp/prog-modes/make-mode.el
 lib/xemacs/xemacs-packages/lisp/prog-modes/make-mode.elc
+lib/xemacs/xemacs-packages/lisp/prog-modes/mode-compile.el
+lib/xemacs/xemacs-packages/lisp/prog-modes/mode-compile.elc
 lib/xemacs/xemacs-packages/lisp/prog-modes/modula2.el
 lib/xemacs/xemacs-packages/lisp/prog-modes/modula2.elc
 lib/xemacs/xemacs-packages/lisp/prog-modes/pascal.el
@@ -1533,7 +1529,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.viper
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.w3
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-base
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
-@dirrm lib/xemacs/xemacs-packages/pkginfo
 @dirrm lib/xemacs/xemacs-packages/man/w3
 @dirrm lib/xemacs/xemacs-packages/man/viper
 @dirrm lib/xemacs/xemacs-packages/man/psgml
@@ -1544,7 +1539,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/man/efs
 @dirrm lib/xemacs/xemacs-packages/man/cc-mode
 @dirrm lib/xemacs/xemacs-packages/man/auctex
-@unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages/man 2>/dev/null || true
 @dirrm lib/xemacs/xemacs-packages/lisp/xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/xemacs-base
 @dirrm lib/xemacs/xemacs-packages/lisp/w3
@@ -1574,11 +1568,8 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/c-support
 @dirrm lib/xemacs/xemacs-packages/lisp/auctex
 @dirrm lib/xemacs/xemacs-packages/lisp/apel
-@unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages/lisp 2>/dev/null || true
-@unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages/info 2>/dev/null || true
 @dirrm lib/xemacs/xemacs-packages/etc/w3
 @dirrm lib/xemacs/xemacs-packages/etc/time
-@dirrm lib/xemacs/xemacs-packages/etc/psgml/cdtd
 @dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities
 @dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986
 @dirrm lib/xemacs/xemacs-packages/etc/psgml
@@ -1587,6 +1578,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/etc/hm--html-menus
 @dirrm lib/xemacs/xemacs-packages/etc/auctex/style
 @dirrm lib/xemacs/xemacs-packages/etc/auctex
-@unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages/etc 2>/dev/null || true
-@unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages 2>/dev/null || true
-@unexec rmdir %%PREFIX%%/lib/xemacs 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true
