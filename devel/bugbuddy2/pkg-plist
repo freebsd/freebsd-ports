@@ -1,0 +1,31 @@
+bin/bug-buddy
+share/gnome/apps/Utilities/bug-buddy.desktop
+share/gnome/bug-buddy/bug-anim.png
+share/gnome/bug-buddy/bug-buddy.glade
+share/gnome/bug-buddy/bug-core.png
+share/gnome/bug-buddy/bug-flower.png
+share/gnome/bug-buddy/debian-packages
+share/gnome/bug-buddy/gdb-cmd
+share/gnome/bug-buddy/gnome-packages
+share/gnome/bug-buddy/gnome.appmap
+share/gnome/bug-buddy/kde-packages
+share/gnome/bug-buddy/xml/Debian.bts
+share/gnome/bug-buddy/xml/GNOME.bts
+share/gnome/bug-buddy/xml/KDE.bts
+share/gnome/mime-info/bug-buddy.keys
+share/gnome/mime-info/bug-buddy.mime
+share/gnome/pixmaps/bug-buddy.png
+share/locale/da/LC_MESSAGES/bug-buddy.mo
+share/locale/el/LC_MESSAGES/bug-buddy.mo
+share/locale/es/LC_MESSAGES/bug-buddy.mo
+share/locale/fr/LC_MESSAGES/bug-buddy.mo
+share/locale/gl/LC_MESSAGES/bug-buddy.mo
+share/locale/ja/LC_MESSAGES/bug-buddy.mo
+share/locale/nl/LC_MESSAGES/bug-buddy.mo
+share/locale/no/LC_MESSAGES/bug-buddy.mo
+share/locale/ru/LC_MESSAGES/bug-buddy.mo
+share/locale/sv/LC_MESSAGES/bug-buddy.mo
+share/locale/tr/LC_MESSAGES/bug-buddy.mo
+share/locale/uk/LC_MESSAGES/bug-buddy.mo
+@dirrm share/gnome/bug-buddy/xml
+@dirrm share/gnome/bug-buddy
