@@ -1,0 +1,38 @@
+--- configure.orig	Wed Mar 29 11:40:54 2000
++++ configure		Fri Jun  2 08:44:14 2000
+@@ -1085,7 +1085,7 @@
+     fi
+   done
+   IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_LYNX" && ac_cv_path_LYNX="/bin/false"
++  test -z "$ac_cv_path_LYNX" && ac_cv_path_LYNX="/usr/bin/false"
+   ;;
+ esac
+ fi
+@@ -1217,14 +1217,14 @@
+ LDFLAGS="$LDFLAGS $db_lib"
+ 
+ 
+-echo $ac_n "checking for db_version in -ldb""... $ac_c" 1>&6
+-echo "configure:1222: checking for db_version in -ldb" >&5
++echo $ac_n "checking for db_version in -ldb2""... $ac_c" 1>&6
++echo "configure:1222: checking for db_version in -ldb2" >&5
+ ac_lib_var=`echo db'_'db_version | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldb  $LIBS"
++LIBS="-ldb2  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1230 "configure"
+ #include "confdefs.h"
+@@ -1258,7 +1258,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-ldb $LIBS"
++  LIBS="-ldb2 $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
