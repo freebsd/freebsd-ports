@@ -3,7 +3,7 @@
 # Date created:		11 December 1998
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.31 1999/01/27 07:41:25 fenner Exp $
+# $Id: Makefile,v 1.32 1999/02/03 11:11:56 asami Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -39,8 +39,8 @@ PCL3_DRV=	hpdj-2.5.tar.gz
 DECRYPT_PDF=	pdf_sec.ps
 
 post-extract:
-	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
 	# additional PCL3  driver
 	$(TAR) -xvf ${WRKDIR}/hpdj-2.5/hpdj.tar -C $(WRKSRC)
 	${PATCH} --directory=${WRKSRC} <${WRKSRC}/devs.mak-5.10.diff
