@@ -3,54 +3,48 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1996/11/11 10:12:28 max Exp $
+# $Id: Makefile,v 1.7 1996/12/18 07:59:43 max Exp $
 #
 
-DISTNAME=	mnews119
-PKGNAME=	jp-mnews-1.19.2
+DISTNAME=	mnews120
+PKGNAME=	jp-mnews-1.20
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
-DISTFILES=	mnews119.tar.gz mnews119_119PL1.tar.gz mnews119PL1_PL2.tar.gz
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	kiroh@kh.rim.or.jp
 
-NO_WRKSUBDIR=	yes
-PATCH_DIST_STRIP= -p1
+WRKSRC=		${WRKDIR}/mnews-1.20/build
 MAN1=		mnews.1
 MANLANG=	ja_JP.EUC
 
-DOCS=		FAQ.doc board.doc mnews.doc prerel.doc		\
-		present.doc read1ST.doc readme.doc update.doc 
-SAMPLES=	jnames.fj jnames.jp jnames.smp jnames.tnn
-
-pre-patch:
-	@for f in mnews119PL1.patch mnews119PL2.patch; do \
-	  ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/$$f ; done
+DOCS=		FAQ.doc board.doc gnspool.doc mnews.doc prerel.doc	\
+		present.doc read1ST.doc readme.doc update.doc youbin.doc
+SAMPLES=	_mnews.smp jnames.fj jnames.jp jnames.smp jnames.tnn
 
 do-configure:
 	@for f in Makefile site_dep.h ; do \
-	  sed s+@PREFIX@+${PREFIX}+ ${FILESDIR}/$$f.in > ${WRKSRC}/$$f ; done
+	  ${SED} s+@PREFIX@+${PREFIX}+ ${FILESDIR}/$$f.in > ${WRKSRC}/$$f ; done
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mnews ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/mnews
-	${INSTALL_DATA} ${WRKSRC}/jnames.fj ${PREFIX}/lib/mnews/jnames
+	${INSTALL_DATA} ${WRKSRC}/../etc/jnames.fj ${PREFIX}/lib/mnews/jnames
 	${MKDIR} ${PREFIX}/share/examples/mnews
 .for f in ${SAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/examples/mnews
+	${INSTALL_DATA} ${WRKSRC}/../etc/$f ${PREFIX}/share/examples/mnews
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/mnews.1 ${PREFIX}/man/ja_JP.EUC/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/mnews.1 ${PREFIX}/man/ja_JP.EUC/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mnews
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/mnews
+	${INSTALL_DATA} ${WRKSRC}/../doc/$f ${PREFIX}/share/doc/mnews
 .endfor
 .endif
 
 post-install:
 .if !defined(BATCH)
 	@(while [ X$$domain = X ]; do					\
-	    echo -n "Enter the domain name of this host>"; read domain ;	\
+	    read -p "Enter the domain name of this host>" domain ;	\
 	  done;								\
 	echo $$domain > ${PREFIX}/lib/mnews/default-domain)
 .else
