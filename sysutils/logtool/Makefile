@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 
