@@ -1,0 +1,13 @@
+%%SITE_PERL%%/POE/Component/Server/HTTP.pm
+%%SITE_PERL%%/POE/Component/Server/HTTP/Connection.pm
+%%SITE_PERL%%/POE/Component/Server/HTTP/Request.pm
+%%SITE_PERL%%/POE/Component/Server/HTTP/Response.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Component/Server/HTTP
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
