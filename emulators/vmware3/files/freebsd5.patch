@@ -1,0 +1,71 @@
+--- vmnet-only/freebsd/vmnet.c	Sun Feb 29 11:17:28 2004
++++ vmnet-only/freebsd/vmnet.c	Sun Feb 29 10:52:01 2004
+@@ -104,6 +104,10 @@
+ 
+ static struct cdevsw vmnet_cdevsw = {
+ #if __FreeBSD_version >= 500104
++#if __FreeBSD_version >= 502104
++       .d_version =    D_VERSION,
++       .d_flags =      D_PSEUDO | D_NEEDGIANT,
++#endif
+        .d_open =       vmnet_open,
+        .d_close =      vmnet_close,
+        .d_read =       vmnet_read,
+@@ -111,7 +115,9 @@
+        .d_ioctl =      vmnet_ioctl,
+        .d_poll =       vmnet_poll,
+        .d_name =       DEVICE_NAME,
++#if __FreeBSD_version > 502104
+        .d_maj =        CDEV_MAJOR
++#endif
+ #else
+ 	/* open */	vmnet_open,
+ 	/* close */	vmnet_close,
+--- vmmon-only/Makefile.freebsd	Sun Feb 29 11:17:26 2004
++++ vmmon-only/Makefile.freebsd	Sun Feb 29 11:02:20 2004
+@@ -9,6 +9,13 @@
+ KMOD=		${DEVNAME}_${MODEL}
+ CDEV_MAJOR =	200
+ SRCS=		
++.if !defined(OSVERSION)
++.if exists(/sbin/sysctl)
++OSVERSION!=     /sbin/sysctl -n kern.osreldate
++.else
++OSVERSION!=     /usr/sbin/sysctl -n kern.osreldate
++.endif
++.endif
+ 
+ # For 4.0-STABLE
+ # KMODDEPS=	linux
+@@ -32,6 +39,8 @@
+ 
+ device:
+ 	rm -f /compat/linux/dev/${DEVNAME}
++.if ${OSVERSION} >= 502104
+ 	mknod /compat/linux/dev/${DEVNAME} c ${CDEV_MAJOR} 0
++.endif
+ 
+ .include <bsd.kmod.mk>
+--- vmmon-only/freebsd/driver.c	Sun Feb 29 11:17:28 2004
++++ vmmon-only/freebsd/driver.c	Sun Feb 29 10:58:11 2004
+@@ -163,6 +163,10 @@
+ 
+ static struct cdevsw vmmon_cdevsw = {
+ #if __FreeBSD_version >= 500104
++#if __FreeBSD_version >= 502104
++	.d_version =    D_VERSION,
++	.d_flags =      D_NEEDGIANT,
++#endif
+ 	.d_open =       FreeBSD_Driver_Open,
+ 	.d_name =       DEVICE_NAME,
+ 	.d_maj =        CDEV_MAJOR
+@@ -172,7 +176,9 @@
+         /* read */      noread,
+         /* psize */     nopsize,
+         /* flags */     0,
++#if __FreeBSD_version > 502104
+         /* bmaj */      -1
++#endif
+ #endif
+ };
+ 
