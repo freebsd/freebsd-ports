@@ -1,24 +1,6 @@
-InterNetNews is a complete Usenet system. The cornerstone of the package
+InterNetNews is a complete Usenet system.  The cornerstone of the package
 is innd, an NNTP server that multiplexes all I/O. Newsreading is handled
 by a separate server, nnrpd, that is spawned for each client.  Both innd
-and nnrpd have some slight variances from the NNTP protocol. It's also
-possible to have UUCP and NNTP feeds and clients.
+and nnrpd have some slight variances from the NNTP protocol.
 
-Some statements to meet the COPYRIGHT:
-- This is the new version, maintained by the ISC
-- This product includes software developed by Rich Salz
-- The only changes that have been made are a post-install target in the
-  Makefile of the FreeBSD port, so that the news spool area is created
-  automatically for ease of use of our inn2 port in the FreeBSD ports collection
-
-Installation is relatively complex but nicely explained in the file INSTALL,
-see the inn2 sources under the work directory.
-Year 2000:			http://www.isc.org/inn-y2k.html
-Support Contracts:		http://www.isc.org/support.html
-
-Final note for UUCP users. The path of the rnews executeable has changed !
-Add this to /etc/uucp/sys:
-	command-path /bin /usr/bin /usr/local/bin /usr/local/news/bin
-	commands rmail uucp rnews
-
-WWW: http://www.isc.org/inn.html
+WWW: http://www.isc.org/products/INN/
