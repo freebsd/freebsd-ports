@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.20.20030925
+PORTVERSION=	7.21.20031002
 CATEGORIES=	www
-MASTER_SITES=	http://snapshot.opera.com/unix/7.20-Beta-13/intel-freebsd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0./0-/}.1-static-qt.i386.freebsd
+MASTER_SITES=	http://snapshot.opera.com/unix/7.21-Preview-1/intel-freebsd/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/1./1-/}.1-static-qt.i386.freebsd
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
