@@ -1,0 +1,47 @@
+*** makefile	Sun Aug 10 16:52:24 1997
+--- /home/andy/tmp/wrk/makefile	Sat Sep 13 18:42:12 1997
+***************
+*** 12,17 ****
+--- 12,21 ----
+  CONF=djgpp
+  endif
+  
++ ifeq "$(OSTYPE)" "FreeBSD"
++ CONF=FreeBSD
++ endif
++ 
+  ifeq "$(OSTYPE)" "Linux"
+  CONF=linux
+  endif
+***************
+*** 53,58 ****
+--- 57,85 ----
+  CCCC_BIN =       ## the name of the cccc binary
+  INSTALL_BINDIR = ## the location where the binary is to be installed
+  INSTALL_LIBDIR = ## the location where the .dat files are to be installed
++ endif
++ 
++ ifeq "$(CONF)" "FreeBSD"
++ 
++ ## preferred directories for FreeBSD is under /usr/local tree
++ ## we need pccts installed from package
++ PCCTS =         $(PREFIX)
++ PCCTS_H =       $(PCCTS)/include/pccts
++ PCCTS_BIN =     $(PCCTS)/bin
++ 
++ ## using the GNU C++ compiler
++ ## we need working templates - I use version 2.7.2, I am not sure whether
++ ## versions earlier than 2.7 are OK
++ CCC=g++
++ LD=g++ 
++ CFLAGS+=	-I/usr/include/g++-include -I. -I$(PCCTS_H) 
++ CPPEXT=cpp
++ 
++ COPY =           cp
++ CCCC_BIN =       cccc
++ INSTALL_BINDIR = $(PREFIX)/bin
++ INSTALL_LIBDIR = $(PREFIX)/share/cccc
++ 
+  endif
+  
+  ifeq "$(CONF)" "linux"
