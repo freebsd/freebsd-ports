@@ -22,16 +22,16 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
+PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEX_BIN=	${LOCALBASE}/bin/tex
 YES_CMD=	/usr/bin/yes
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	arydshln.dtx arydshln.ins arydshln.sty arydshln-man.tex
 DOC_FILES=	README arydshln.pdf
 
@@ -41,6 +41,18 @@ do-extract:
 
 do-build:
 	cd ${WRKSRC} && ${YES_CMD} | ${TEX_BIN} arydshln.ins
+	(for F in ${CLASS_FILES}; do \
+			${ECHO_CMD} "${CLASSDIR}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${CLASSDIR}" ) > ${PLIST}
+.if !defined(NOPORTDOCS)
+	(for F in ${DOC_FILES}; do \
+			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
+.endif
+	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
