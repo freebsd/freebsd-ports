@@ -2,7 +2,7 @@ JC is a Java virtual machine implementation that converts class
 files into C source files using the Soot Java bytecode analysis
 framework, compiles them with GCC, and loads them using a built-in
 ELF object file loader. JC utilizes the GNU Classpath class library
-and provides support for most features you would expect such as
-reflection, user class loaders, etc.
+and provides a fairly complete Java runtime including sophisticated
+optimizations to increase runtime performance.
 
 WWW: http://jcvm.sourceforge.net/
