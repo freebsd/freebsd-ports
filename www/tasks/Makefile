@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A web based, hierarchical task manager
 
+RESTRICTED=	No redistribution or repackaging allowed
+
 USE_APACHE=	yes
 USE_MYSQL=	yes
 USE_PHP=	yes

@@ -5,5 +5,5 @@ Tasks is installed, now you must configure it
 
 2: Open %%WWW_DIR%%/tasks/database.inc.php and Edit the settings to match your need
 
-3: Point your web browser to http://localhost/tasks/install/index.php
+3: Point your web browser to http://localhost/tasks/index.php
    And follow the instructions
