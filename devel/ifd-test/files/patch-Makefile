@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed Aug 28 14:26:32 2002
++++ Makefile	Wed Aug 28 14:27:06 2002
+@@ -1,10 +1,12 @@
+ # Makefile for utilities
+ # David Corcoran <corcoran@linuxnet.com>
+ 
++PREFIX?= /usr/local
++
+ CC      = gcc
+ CFLAGS  = -g -w
+-INCLUDE = -I/usr/local/pcsc/include
+-LIBS    = -L/usr/local/pcsc/lib -lpcsclite
++INCLUDE = -I${PREFIX}/include
++LIBS    = -L${PREFIX}/lib -lpcsclite
+ OBJS = testIBM.o testAMMI.o testSCHL.o testSIEMENS.o testBULL.o testGD.o commands.o testA.o testB.o
+ 
+ 

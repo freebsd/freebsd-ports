@@ -1,0 +1,18 @@
+From the README:-
+
+This program provides a driver validation sequence for validating drivers
+on Unix OS's and PC/SC Lite.
+
+To use this tester you must have a set of PC/SC test suite cards.  This
+test is nearly identical to that which is done by Microsoft's WHQL Group
+and can be used to verify the quality of your driver for use with
+pcsc-lite.  For those familiar with IFDTEST.EXE this will be no different.
+
+Feel free to contact me with questions: corcoran@linuxnet.com
+
+Author: David Corcoran
+
+WWW: http://www.linuxnet.com/sourcedrivers.html
+
+Bruce
+bms@spc.org
