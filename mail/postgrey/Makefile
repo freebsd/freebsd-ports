@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
@@ -16,8 +16,6 @@ COMMENT=	Greylisting policy server for Postfix
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
-
-BROKEN=		Unfetchable
 
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
@@ -51,7 +49,7 @@ pre-extract:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE= Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
+IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
 .endif
 
 pre-install:
