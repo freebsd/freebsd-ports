@@ -22,6 +22,7 @@ BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
