@@ -1,0 +1,45 @@
+--- Makefile.orig	Sat Jul  7 09:08:52 2001
++++ Makefile	Wed Mar  5 19:10:28 2003
+@@ -19,25 +19,25 @@
+ 
+ 
+ soxfuncs.o: soxfuncs.c
+-	$(CC) $(COPTS) -O3 -funroll-loops -finline-functions -c soxfuncs.c
++	$(CC) $(COPTS) -c soxfuncs.c
+ 
+ 
+ resample.o: resample.c
+-	$(CC) $(COPTS) -O3 -funroll-loops -finline-functions -c resample.c
++	$(CC) $(COPTS) -c resample.c
+ 
+ 
+ minilzo.o: minilzo.c minilzo.h
+-	$(CC) $(COPTS) -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c minilzo.c
++	$(CC) $(COPTS) -c minilzo.c
+ 
+ 
+ yuv2rgb_mmx.o: yuv2rgb_mmx.c yuv2rgb.h
+-	$(CC) $(COPTS) -O3 -funroll-loops -finline-functions -c yuv2rgb_mmx.c
++	$(CC) $(COPTS) -c yuv2rgb_mmx.c
+ 
+ areaDeinterlace.o: areaDeinterlace.h areaDeinterlace.c
+-	$(CC) $(COPTS) -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c areaDeinterlace.c
++	$(CC) $(COPTS) -c areaDeinterlace.c
+ 
+ rtjpeg_plugin.o: rtjpeg_plugin.c rtjpeg_plugin.h
+-	$(CC) $(COPTS) -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c rtjpeg_plugin.c
++	$(CC) $(COPTS) -c rtjpeg_plugin.c
+ 
+ nuvrec:	nuvrec.c RTjpegN.h RTjpegN.o minilzo.o
+ 	$(CC) $(COPTS) -o nuvrec minilzo.o RTjpegN.o nuvrec.c
+@@ -52,8 +52,8 @@
+ 	$(CC) $(COPTS) -static -o nuvrec minilzo.o RTjpegN.o nuvrec.c
+ 
+ install: nuvrec nuvplay
+-	 strip nuvrec nuvplay
+-	 install -m 755 nuvrec nuvplay nuvedit nuv2mpg nuv2vbr /usr/local/bin
++	 @${BSD_INSTALL_PROGRAM} nuvrec nuvplay ${PREFIX}/bin
++	 @${BSD_INSTALL_SCRIPT} nuvedit nuv2mpg nuv2vbr ${PREFIX}/bin
+ 
+ clean:	
+ 	rm -f *.o nuvplay nuvrec 

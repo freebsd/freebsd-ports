@@ -1,0 +1,6 @@
+NuppelVideo is a simple low consuming and fast capture program for
+bktr. It is based on the RTjpeg2.0 test3* programs from Justin
+Schoemann who wrote the both very fast and fine RTjpeg2.0 codec
+(improved by Joerg Walter and Wim Taymans).
+
+WWW: http://frost.htu.tuwien.ac.at/~roman/nuppelvideo/
