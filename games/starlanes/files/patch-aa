@@ -1,0 +1,19 @@
+*** starlanes.c	Sun Mar 30 01:42:18 1997
+--- /home/andy/tmp/wrk/starlanes.c	Sat May 10 15:33:29 1997
+***************
+*** 26,32 ****
+  #include <ctype.h>
+  #include <time.h>
+  #include <unistd.h>
+! #include <curses.h>
+  #include <termios.h>
+  
+  /* color stuff: */
+--- 26,32 ----
+  #include <ctype.h>
+  #include <time.h>
+  #include <unistd.h>
+! #include <ncurses.h>
+  #include <termios.h>
+  
+  /* color stuff: */
