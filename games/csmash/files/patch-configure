@@ -1,0 +1,15 @@
+--- configure.orig	Sat Aug 16 14:54:31 2003
++++ configure	Mon Nov 24 02:29:33 2003
+@@ -5515,9 +5515,9 @@
+ fi
+ 
+ 
+-CFLAGS="-I $x_includes"
+-LDFLAGS="-L/usr/local/lib -L$x_libraries -L$libdir"
+-CXXFLAGS="$CFLAGS -Wall"
++CFLAGS="$CFLAGS -I$x_includes"
++LDFLAGS="$LDFLAGS -L$x_libraries -L$libdir"
++CXXFLAGS="$CXXFLAGS -I$x_includes"
+ 
+ 
+ echo "$as_me:$LINENO: checking for main in -lXmu" >&5
