@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1996/12/30 21:33:31 max Exp $
+# $Id: Makefile,v 1.9 1997/01/03 07:48:22 obrien Exp $
 #
 
 DISTNAME=	oneko-1.2
@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.asahi-net.or.jp/~ZW6T-KND/oneko/
 MAINTAINER=	candy@fct.kgc.co.jp
 
 USE_IMAKE=	yes
-MANCOMPRESSED=	yes
 MAN6=		oneko.6
 
 pre-configure:
