@@ -1,9 +1,17 @@
 %%RUBY_SITEARCHLIBDIR%%/rb_gsl.so
 %%RUBY_SITELIBDIR%%/gsl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level3.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb/cheb.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb/cheb.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/combination.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/add.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/coerce.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/functions.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/mul.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/set.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/diff.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/eigen.rb
@@ -41,13 +49,30 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/SV.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/chol.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/complex.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/const.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/elementary.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/inf_nan.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/minmax.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/power.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/add.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/iterator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/matrix.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/minmax.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/mul.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/read.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/rowcol.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/set.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/write.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/min/min.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/miser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/monte.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/plain.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/result-C.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/result-rb.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/vegas.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multimin/fdfminimizer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multimin/fminimizer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fdfsolver.rb
@@ -55,6 +80,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver3.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/narray2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinearfit.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit/nonlinearfit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ntuple/create.rb
@@ -68,9 +94,11 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/oscillator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/permutation/ex1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/permutation/permutation.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/cubic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/poly.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/quadratic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/gaussian.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/generator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/poisson.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/qrng.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randist.rb
@@ -91,17 +119,25 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/sphbessel.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sf/sphbessel.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/siman.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort/sort.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort/sort2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/statistics.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sum.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/add.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/minmax.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/mul.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/read.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/set.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/smpv.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/vector.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/write.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/vector
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/stats
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sort
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sf
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/roots
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/random
@@ -116,6 +152,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/monte
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/min
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/matrix
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/linalg
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/interp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/integration
@@ -124,9 +161,12 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/fit
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/fft
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/eigen
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/complex
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cheb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/blas
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/blas.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/cheb.html
@@ -142,7 +182,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/function.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/hist.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/hist2d.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/history.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/integration.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/interp.html
@@ -185,7 +224,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/function.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/hist.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/hist2d.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/history.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/index.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/integration.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/interp.rd
