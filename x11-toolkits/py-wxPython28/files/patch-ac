@@ -1,6 +1,9 @@
---- setup.py	2000/12/12 14:56:17	1.1
-+++ setup.py	2000/12/12 15:22:46
-@@ -68,6 +68,19 @@
+
+$FreeBSD$
+
+--- setup.py.orig	Tue May 22 19:02:54 2001
++++ setup.py	Mon May 28 19:58:15 2001
+@@ -86,6 +86,16 @@
  
  
  #----------------------------------------------------------------------
@@ -10,9 +13,6 @@
 +try: gtk_config = os.environ['GTK_CONFIG']
 +except KeyError: gtk_config = 'gtk-config'
 +
-+try: wx_config = os.environ['WX_CONFIG']
-+except KeyError: wx_config = 'wx-config'
-+
 +try: sys_libs = string.split(os.environ['LIBS'])
 +except KeyError: sys_libs = []
 +
@@ -20,20 +20,15 @@
  # Check for build flags on the command line
  #----------------------------------------------------------------------
  
-@@ -172,12 +185,13 @@
+@@ -229,9 +239,10 @@
                 ]
      libdirs = []
      libs = []
 +    libs.extend(sys_libs)
  
--    cflags = os.popen('wx-config --cflags', 'r').read()[:-1] + ' ' + \
+     cflags = os.popen(WX_CONFIG + ' --cflags', 'r').read()[:-1] + ' ' + \
 -             os.popen('gtk-config --cflags', 'r').read()[:-1]
-+    cflags = os.popen(wx_config + ' --cflags', 'r').read()[:-1] + ' ' + \
 +             os.popen(gtk_config + ' --cflags', 'r').read()[:-1]
      cflags = string.split(cflags)
  
--    lflags = os.popen('wx-config --libs', 'r').read()[:-1]
-+    lflags = os.popen(wx_config + ' --libs', 'r').read()[:-1]
-     lflags = string.split(lflags)
- 
- 
+     lflags = os.popen(WX_CONFIG + ' --libs', 'r').read()[:-1]
