@@ -161,11 +161,16 @@ END {
 	}
 }
 
-
 if ($dir eq "") {
 	warnx("Please specify a directory to import a new port from.");
 	usage();
 	exit 1;
+}
+
+# account for special case
+if ($dir eq ".") {
+	chomp(local $pwd = `pwd`);
+	$dir = `basename $pwd`;
 }
 
 $dir = "$pwd/$dir" if ($dir !~ m,^/,);
