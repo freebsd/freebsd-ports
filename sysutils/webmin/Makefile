@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.050
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -30,6 +30,7 @@ WEBMIN_MODULES=	apache-1.050-3.wbm.gz \
 		fsdump-1.050-4.wbm.gz \
 		mysql-1.050-7.wbm.gz \
 		postgresql-1.050-6.wbm.gz \
+		proc-1.050-7.wbm.gz \
 		quota-1.050-1.wbm.gz \
 		sshd-1.050-3.wbm.gz \
 		status-1.050-4.wbm.gz
