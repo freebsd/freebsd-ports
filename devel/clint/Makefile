@@ -25,10 +25,16 @@ INSTALLS_SHLIB=	yes
 
 INFO=		clint
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-pedantic||g ; \
 		 s|-ldl||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

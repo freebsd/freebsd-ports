@@ -33,6 +33,12 @@ PLIST_SUB+=	SSL=""
 PLIST_SUB+=	SSL="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -78,4 +84,4 @@ do-install:
 .endif
 	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -63,6 +63,10 @@ CONFIGURE_ARGS+=--enable-select
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not compile on amd64"
 .endif

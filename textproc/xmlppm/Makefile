@@ -27,6 +27,12 @@ USE_ICONV=	yes
 MAKE_ARGS=	CC="${CXX}" OPT_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmlppm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xmlunppm ${PREFIX}/bin
@@ -35,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

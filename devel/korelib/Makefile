@@ -22,9 +22,15 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|include kore demo|include kore|g ; \
 		 s|= -g -O2 -Wall|= @CXXFLAGS@|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

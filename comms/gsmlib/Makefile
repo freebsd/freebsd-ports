@@ -39,8 +39,14 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
