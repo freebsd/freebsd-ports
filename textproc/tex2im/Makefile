@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tex2im
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
@@ -25,8 +25,8 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tex2im ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/tex2im
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/tex2im
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
