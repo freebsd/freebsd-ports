@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nethack
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,47 +32,34 @@ HACKNAME?=	nethack
 HACKDIR?=	lib/${HACKNAME}
 HACKDOCSDIR?=	share/doc/${HACKNAME}
 
-.if defined(WITH_GNOME_GRAPHICS)
+.if !defined(PKGNAMESUFFIX)
+USE_XPM=	yes
+GRAPHICS=	X11_GRAPHICS
+.else
+.if ${PKGNAMESUFFIX} == "-gnome"
 CATEGORIES=	games gnome
-PKGNAMESUFFIX=	-gnome
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomelibs
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GRAPHICS=	GNOME_GRAPHICS
-.elif defined(WITH_QT_GRAPHICS)
-PKGNAMESUFFIX=	-qt
+.elif ${PKGNAMESUFFIX} == "-nox11"
+GRAPHICS=	# none
+.elif ${PKGNAMESUFFIX} == "-qt"
 USE_QT_VER=	3
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
 		MOC="${MOC}" LIBQT="-lqt-mt"
 GRAPHICS=	QT_GRAPHICS
-.elif defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-.else
-USE_XPM=	yes
-GRAPHICS=	X11_GRAPHICS
+.endif
 .endif
 
 pre-everything::
-.if defined(WITH_GNOME_GRAPHICS) || defined(WITH_QT_GRAPHICS) \
-		|| defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
 	@${ECHO_MSG} " But ${PKGBASE} read your prior nethack scores           "
 	@${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      "
 	@${ECHO_MSG} " important for you                                       "
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-.else
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} " You may use the following build options:                "
-	@${ECHO_MSG} " WITH_GNOME_GRAPHICS=yes            build with GNOME GUI "
-	@${ECHO_MSG} " WITH_QT_GRAPHICS=yes               build with Qt GUI    "
-	@${ECHO_MSG} " WITH_TTY_GRAPHICS=yes              build with no GUI    "
-	@${ECHO_MSG} " WITHOUT_X11=yes                    same as above        "
-	@${ECHO_MSG} "                                                         "
-	@${ECHO_MSG} " By default, nethack port is built with X11 GUI.         "
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-.endif
 
 post-patch:
 .for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top

@@ -9,6 +9,6 @@ MASTERDIR=	${.CURDIR}/../nethack34
 
 MAINTAINER=	yoshi@parodius.com
 
-WITH_TTY_GRAPHICS=	yes
+PKGNAMESUFFIX=	-nox11
 
 .include "${MASTERDIR}/Makefile"
