@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
-USE_BZIP2=      yes
+USE_BZIP2=	yes
 IS_INTERACTIVE=	YES
 PORTDOCS=	Manual.htm tutor-jp.htm tutor-en.htm
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
@@ -23,7 +23,7 @@ PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/delegated.sh \
-	   ${PREFIX}/etc/rc.d/delegated.sh-dist 
+	   ${PREFIX}/etc/rc.d/delegated.sh-dist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
