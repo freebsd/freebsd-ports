@@ -1,0 +1,9 @@
+HTML::MagicTemplate is a collection of handlers for Text::MagicTemplate useful 
+when used in a HTML environment. It adds a couple of magic HTML specific value 
+handlers to Text::MagicTemplate default value handlers. Just create and use the 
+MagicTemplate object as usual, to have a trasparent interface to 
+HTML::TableTiler and HTML::FillInForm too.
+
+WWW: http://search.cpan.org/~domizio/HTML-MagicTemplate-3.03/
+
+Author: Domizio Demichelis <dd@4pro.net>
