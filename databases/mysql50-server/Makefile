@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.28
+PORTVERSION=	3.23.29a
 CATEGORIES=	databases
 MASTER_SITES=	http://www.wipol.uni-bonn.de/MySQL/Downloads/MySQL-3.23/ \
 		http://www.mysql.net/Downloads/MySQL-3.23/ \
