@@ -1,0 +1,12 @@
+Frontline provides a gtk+/gnome based GUI frontend for
+autotrace (http://autotrace.sourceforge.net) in 4 ways.
+
+1. Stand alone program. A command `frontline' runs as a stand alone
+   program. It will work well with Gnome desktop and nautilus.
+
+2. Reusable library. A library `libfrontline.a' could be used as a
+   building block of your application that needs the autotrace function.
+   APIs are listed in frontline.h.  The stand alone program frontline
+   itself uses libfrontline.a.
+
+WWW: http://autotrace.sourceforge.net/frontline/

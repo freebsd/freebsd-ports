@@ -1,0 +1,22 @@
+bin/frontline
+bin/frontline-config
+include/frontline/fl_ask.h
+include/frontline/fl_dialog.h
+include/frontline/fl_ext.h
+include/frontline/fl_fsel.h
+include/frontline/fl_opt.h
+include/frontline/fl_preview.h
+include/frontline/fl_prog.h
+include/frontline/frontline.h
+include/gundo/gundo.h
+include/gundo/gundo_ui.h
+lib/libfrontline.a
+lib/libgundo.a
+libdata/pkgconfig/frontline.pc
+share/aclocal/frontline.m4
+share/gnome/apps/Graphics/frontline.desktop
+share/gnome/mime-info/frontline.keys
+share/gnome/mime-info/frontline.mime
+share/gnome/pixmaps/frontline.png
+@dirrm include/gundo
+@dirrm include/frontline
