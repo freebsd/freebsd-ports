@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	1.7.6.1
+PORTVERSION=	2.0.3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/migrate/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
