@@ -933,6 +933,7 @@ cowsay		ports/games/cowsay
 cp2fwb		ports/security/cp2fwb
 cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
+cphone		ports/net/cphone
 cplay		ports/audio/cplay
 cpmemu		ports/emulators/cpmemu
 cpmtools	ports/emulators/cpmtools
