@@ -51,7 +51,7 @@ fi
 # R_PAPERSIZE="a4"
 # R_PAPERSIZE="letter"
 # R_PAPERSIZE="none"
-R_PAPERSIZE=a4
+R_PAPERSIZE=DEFAULTPAPER
 export R_PAPERSIZE
 
 # Default Print Command
