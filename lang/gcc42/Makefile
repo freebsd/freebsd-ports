@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-01-28
+SNAPDATE=	2004-02-11
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
@@ -140,8 +140,8 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-post-install:
-.for f in c++ f77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+post-install: fake-manpages
+.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -150,8 +150,8 @@ post-install:
 		${PREFIX}/man/man1/${f}${SUFFIX}.1 ); \
 	fi
 .endfor
-	${MV} -f ${PREFIX}/bin/g7734 ${PREFIX}/bin/g77-34
-	${MV} -f ${PREFIX}/man/man1/g7734.1 ${PREFIX}/man/man1/g77-34.1
+	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
+	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
@@ -161,11 +161,6 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-# I am sick and tired of the anonyance that man pages can only be generated if
-# perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
 	# Handle target libraries and GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
@@ -190,3 +185,10 @@ cklatest:
 .endfor
 
 .include <bsd.port.post.mk>
+
+fake-manpages:
+	# man pages can only be generated if Perl >= 5.6 is installed, so
+	# fake them on 4.x systems.
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
