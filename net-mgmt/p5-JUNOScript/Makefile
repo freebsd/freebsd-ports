@@ -8,8 +8,9 @@
 PORTNAME=		JUNOScript
 PORTVERSION=		5.3R2.4
 CATEGORIES=		net perl5
-MASTER_SITES=		https://download.juniper.net/public/junoscript/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
+			http://e.wheel.dk/~jesper/
+MASTER_SITE_SUBDIR=	jesper
 PKGNAMEPREFIX=		p5-
 DISTNAME=		junoscript-perl-${PORTVERSION}-domestic
 
@@ -64,12 +65,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-# http://www.juniper.net/footerlegal.html
-RESTRICTED=	"Redistribution not allowed"
-NO_PACKAGE=	"Redistribution not allowed"
-NO_CDROM=	"Redistribution not allowed"
-
-WRKSRC=		${WRKDIR}/junoscript-${PORTVERSION}
+WRKSRC=		${WRKDIR}/junoscript-perl-${PORTVERSION}
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		JUNOS::Access.3 \
@@ -86,15 +82,4 @@ MAN3=		JUNOS::Access.3 \
 		JUNOS::Access::ssh.3 \
 		JUNOS::Device.3
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		may not be automatically fetched due to licensing\
-		restrictions. You MUST manually fetch the ${DISTNAME}${EXTRACT_SUFX} file\
-		from http://www.juniper.net/support/junoscript/ or\
-		https://download.juniper.net/public/junoscript/5.3R2.4/junoscript-perl-5.3R2.4-domestic.tar.gz\
-		- once ${DISTFILES} has been downloaded, move it to\
-		${DISTDIR} and then restart this build.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
