@@ -16,7 +16,7 @@ COMMENT=	GTK-based GUI frontend for cdrdao, disk-at-once audio CD recorder
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
-USE_GNOME=	gnomeprefix gnomelibs
+USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/gdrdao
 

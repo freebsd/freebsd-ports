@@ -19,7 +19,7 @@ COMMENT=	A front end to GCC from Liberty Basic source code
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomelibs
+USE_GNOME=	gnomelibs
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
