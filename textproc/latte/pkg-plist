@@ -107,6 +107,7 @@ share/latte/tests/varref.exp
 share/latte/tests/varref.latte
 share/latte/tests/while.exp
 share/latte/tests/while.latte
+share/emacs/site-lisp/latte.el
 @dirrm include/latte
 @dirrm share/latte/tests
 @dirrm share/latte
