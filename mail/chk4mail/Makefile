@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	chk4mail
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/chk4mail/ \
-	ftp://mud.stack.nl/pub/chk4mail/
+		ftp://mud.stack.nl/pub/chk4mail/
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	A utility to quickly check multiple folders for new email
 
-MAN1=	chk4mail.1 chkimap.1
+PLIST_FILES=	bin/chk4mail bin/chkimap
+
+MAN1=		chk4mail.1 chkimap.1
 
 GNU_CONFIGURE=	yes
 
