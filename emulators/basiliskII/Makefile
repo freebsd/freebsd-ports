@@ -17,6 +17,8 @@ DISTNAME=	BasiliskII_src_15012002
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
