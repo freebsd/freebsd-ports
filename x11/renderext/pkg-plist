@@ -3,4 +3,4 @@ include/X11/extensions/renderproto.h
 libdata/pkgconfig/render.pc
 %%DOCSDIR%%/library
 %%DOCSDIR%%/protocol
-@dirrm %%DOCSDIR
+@dirrm %%DOCSDIR%%
