@@ -86,8 +86,6 @@ lib/ggi/display/Xlib.la
 lib/ggi/display/Xlib.so
 %%WITH_AALIB%%lib/ggi/display/aa.la
 %%WITH_AALIB%%lib/ggi/display/aa.so
-lib/ggi/display/file.la
-lib/ggi/display/file.so
 lib/ggi/display/mansync.la
 lib/ggi/display/mansync.so
 lib/ggi/display/memory.la
