@@ -1,6 +1,7 @@
 bin/subsql
 include/fastdb/array.h
 include/fastdb/class.h
+include/fastdb/cli.h
 include/fastdb/cursor.h
 include/fastdb/database.h
 include/fastdb/datetime.h
