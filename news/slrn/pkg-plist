@@ -8,5 +8,18 @@ share/examples/slrn/slrnpull/score
 share/examples/slrn/slrnpull/slrn.rc
 share/examples/slrn/slrnpull/slrnpull.conf
 share/examples/slrn/slrnpull/slrnpull.sh
+%%PORTDOCS%%share/doc/slrn/FAQ
+%%PORTDOCS%%share/doc/slrn/README.GroupLens
+%%PORTDOCS%%share/doc/slrn/README.SSL
+%%PORTDOCS%%share/doc/slrn/README.macros
+%%PORTDOCS%%share/doc/slrn/README.multiuser
+%%PORTDOCS%%share/doc/slrn/SCORE_FAQ
+%%PORTDOCS%%share/doc/slrn/help.txt
+%%PORTDOCS%%share/doc/slrn/manual.txt
+%%PORTDOCS%%share/doc/slrn/pc-keys.txt
+%%PORTDOCS%%share/doc/slrn/score.txt
+%%PORTDOCS%%share/doc/slrn/slrnfuns.txt
+%%PORTDOCS%%share/doc/slrn/slrn-doc.html
+%%PORTDOCS%%@dirrm share/doc/slrn
 @dirrm share/examples/slrn/slrnpull
 @dirrm share/examples/slrn
