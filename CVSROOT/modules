@@ -4672,6 +4672,7 @@ muse		ports/sysutils/muse
 musicbox	ports/audio/musicbox
 musicbrainz	ports/audio/musicbrainz
 musiccontrol	ports/audio/musiccontrol
+musicpd		ports/audio/musicpd
 musixtex	ports/print/musixtex
 mussh		ports/security/mussh
 mutella		ports/net/mutella
