@@ -8,10 +8,11 @@
 PORTNAME=	lesstif
 PORTVERSION=	0.91.8
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
-		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
-		ftp://ftp.fu-berlin.de/unix/X11/gui/lesstif/srcdist/ \
-		ftp://ftp.win.or.jp/pub/X11/misc/lesstif/srcdist/
+MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
+		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
+		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
+		http://gd.tuwien.ac.at/hci/lesstif/srcdist/ \
+		ftp://linux.sarang.net/mirror/development/widget/lesstif/srcdist/
 
 MAINTAINER=	ports@freebsd.org
 
