@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.50
+PORTVERSION=	4.52
 CATEGORIES=	databases www
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
@@ -77,6 +77,8 @@ LANG=	adodb-bg.inc.php adodb-bgutf8.inc.php \
 	adodb-pl.inc.php adodb-pt-br.inc.php adodb-ro.inc.php \
 	adodb-ru1251.inc.php adodb-sv.inc.php
 
+PEAR=	readme.Auth.txt Auth/Container/ADOdb.php
+
 PERF=	perf-db2.inc.php perf-informix.inc.php perf-mssql.inc.php \
 	perf-mysql.inc.php perf-oci8.inc.php perf-postgres.inc.php
 
@@ -88,9 +90,10 @@ SESSION=adodb-compress-bzip2.php adodb-compress-gzip.php \
 	old/adodb-cryptsession.php old/adodb-session-clob.php \
 	old/adodb-session.php old/crypt.inc.php
 
-XSL=	convert-0.1-0.2.xsl convert-0.2-0.1.xsl
+XSL=	convert-0.1-0.2.xsl convert-0.2-0.1.xsl remove-0.2.xsl
 
-TESTS=	benchmark.php client.php test-datadict.php test.php test2.php \
+TESTS=	benchmark.php client.php pdo.php test-datadict.php test-perf.php \
+	test-pgblob.php test-php5.php test-xmlschema.php test.php test2.php \
 	test3.php test4.php test5.php test_rs_array.php testcache.php \
 	testdatabases.inc.php testgenid.php testmssql.php testoci8.php \
 	testoci8cursor.php testpaging.php testpear.php testsessions.php \
@@ -100,7 +103,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/${ADODB_DIR} ${PREFIX}/${ADODB_DIR}/contrib \
 		${PREFIX}/${ADODB_DIR}/datadict ${PREFIX}/${ADODB_DIR}/drivers \
 		${PREFIX}/${ADODB_DIR}/lang ${PREFIX}/${ADODB_DIR}/perf \
-		${PREFIX}/${ADODB_DIR}/session/old ${PREFIX}/${ADODB_DIR}/xsl
+		${PREFIX}/${ADODB_DIR}/session/old ${PREFIX}/${ADODB_DIR}/xsl \
+		${PREFIX}/${ADODB_DIR}/pear/Auth/Container
 .for FILE in ${BASE}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}/${FILE}
 .endfor
@@ -115,6 +119,9 @@ do-install:
 .endfor
 .for FILE in ${LANG}
 	${INSTALL_DATA} ${WRKSRC}/lang/${FILE} ${PREFIX}/${ADODB_DIR}/lang/${FILE}
+.endfor
+.for FILE in ${PEAR}
+	${INSTALL_DATA} ${WRKSRC}/pear/${FILE} ${PREFIX}/${ADODB_DIR}/pear/${FILE}
 .endfor
 .for FILE in ${PERF}
 	${INSTALL_DATA} ${WRKSRC}/perf/${FILE} ${PREFIX}/${ADODB_DIR}/perf/${FILE}
