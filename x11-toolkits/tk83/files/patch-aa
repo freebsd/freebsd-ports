@@ -1,10 +1,10 @@
---- configure.orig	Fri Aug 13 18:06:14 1999
-+++ configure	Sat Sep  4 15:22:21 1999
+--- configure.orig	Wed Nov  3 21:38:44 1999
++++ configure	Sun Nov 21 15:55:12 1999
 @@ -1756,7 +1756,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
  	    ;;
--	NetBSD-*|FreeBSD-[12].*|OpenBSD-*)
+-	NetBSD-*|FreeBSD-[1-2].*|OpenBSD-*)
 +	NetBSD-*|FreeBSD-*|OpenBSD-*)
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
