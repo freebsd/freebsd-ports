@@ -1,0 +1,5 @@
+--- config.guess.orig	Thu Oct 21 02:10:44 1999
++++ config.guess	Thu Mar  8 05:14:29 2001
+@@ -516 +516 @@
+-		echo ${UNAME_MACHINE}-unknown-freebsdelf`echo${UNAME_RELEASE}|sed -e 's/[-_].*//'`
++		echo ${UNAME_MACHINE}-unknown-freebsdelf`echo ${UNAME_RELEASE}|sed -e 's/[-_].*//'`
