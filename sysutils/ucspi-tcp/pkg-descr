@@ -3,6 +3,6 @@ client/server applications.  They are compliant to UCSPI, the
 UNIX Client-Server Program Interface.  UCSPI tools are available
 for several different types of networks.
 
-See http://pobox.com/~djb/daemontools.html for info and updates.
+See http://pobox.com/~djb/ucspi-tcp.html for info and updates.
 
 -Dom <dom@myrddin.demon.co.uk>
