@@ -1,0 +1,26 @@
+--- Mailman/Defaults.py.in.orig	Thu Nov 16 06:23:52 2000
++++ Mailman/Defaults.py.in	Tue Feb 19 17:18:39 2002
+@@ -47,8 +47,8 @@
+ 
+ # Don't change MAILMAN_URL, unless you want to point it at the list.org
+ # mirror.
+-MAILMAN_URL = 'http://www.gnu.org/software/mailman/mailman.html'
+-#MAILMAN_URL = 'http://www.list.org/'
++#MAILMAN_URL = 'http://www.gnu.org/software/mailman/mailman.html'
++MAILMAN_URL = 'http://www.list.org/'
+ 
+ # Site-specific settings
+ DEFAULT_HOST_NAME   = '@FQDN@'
+@@ -59,6 +59,12 @@
+ 
+ HOME_PAGE         = 'index.html'
+ MAILMAN_OWNER     = 'mailman-owner@%s' % DEFAULT_HOST_NAME
++
++# Should the operating system logo (and link) in the footer of Mailman's
++# web pages be for GNU or FreeBSD.  Options are 'GNU' or 'FreeBSD', with
++# 'GNU' being the default.  Note:  This is not a standard Mailman
++# configuration option;  it has been added by the FreeBSD port.
++LOGO_OS = 'FreeBSD'
+ 
+ 
+ 
