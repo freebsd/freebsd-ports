@@ -3,15 +3,19 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.8 1995/05/04 23:29:05 adam Exp $
+# $Id: Makefile,v 1.9 1995/05/05 20:07:55 adam Exp $
 #
 
-DISTNAME=       gn-2.22
+DISTNAME=       gn-2.23
 CATEGORIES+=	networking
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
-DEPENDS=	${PORTSDIR}/net/wais
+WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.3
+BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
+
 IS_INTERACTIVE=	yes
+# This quaint mechanism is for forcing package creation from a staging area.
+# There is normally no package creation, because of compiled-in defaults.
 .if !defined(YES_PACKAGE)
 YES_INSTALL=
 NO_PACKAGE=
@@ -21,8 +25,8 @@ INETD_CONF=	/etc/inetd.conf
 CONF=	'	stream	tcp	nowait	nobody	/usr/local/libexec/gn	gn'
 
 pre-build:
-	@ln -fs ${PORTSDIR}/net/wais/work/freeWAIS-0.3/ir ${WRKSRC}/waisgn
-	@ln -fs ${PORTSDIR}/net/wais/work/freeWAIS-0.3/bin ${WRKSRC}/waisgn
+	@ln -fs ${WAISDIR}/ir ${WRKSRC}/waisgn
+	@ln -fs ${WAISDIR}/bin ${WRKSRC}/waisgn
 
 pre-install:
 	@mkdir -p ${WRKSRC}/etc ${WRKSRC}/libexec ${WRKSRC}/gnroot
@@ -45,7 +49,7 @@ post-install:
 		exit 0; \
 	    }; \
 	  fi; \
-	  tar -cf - -C ${WRKSRC} gnroot | tar xpf - && \
+	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
 	  awk '$$1 == "gopher" { exit 1 }' ${INETD_CONF} || { \
 		echo gopher${CONF} >>${INETD_CONF}; \
