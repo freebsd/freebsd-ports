@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	objc
-PORTVERSION=	3.1.32
+PORTVERSION=	3.2.6
 CATEGORIES=	lang
 MASTER_SITES=	http://users.pandora.be/stes/
-DISTFILES=	objc-bootstrap-${PORTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
+DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
 HAS_CONFIGURE=	yes
+BOOTVERSION=	3.1.33
 
 ALL_TARGET=	default
 MAKE_ENV=	PATH=$(WRKDIR)/bin:$(PATH)
@@ -28,7 +29,7 @@ BROKEN=		"Does not compile"
 .endif
 
 pre-configure:
-	cd $(WRKDIR)/${PORTNAME}-bootstrap-$(PORTVERSION);\
+	cd $(WRKDIR)/${PORTNAME}-bootstrap-$(BOOTVERSION);\
 	./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install
 
 pre-install:
