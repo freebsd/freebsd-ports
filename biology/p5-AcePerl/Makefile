@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	AcePerl
-PORTVERSION=	1.82
+PORTVERSION=	1.83
 CATEGORIES=	biology databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Ace
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bio@freebsd.net
+MAINTAINER=	philip@p6m7g8.com
 COMMENT=	Perl5 interface to the ACEDB genome database system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
