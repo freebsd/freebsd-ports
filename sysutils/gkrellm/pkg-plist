@@ -1,0 +1,5 @@
+bin/gkrellm
+share/doc/gkrellm/COPYRIGHT
+share/doc/gkrellm/README
+share/doc/gkrellm/Themes
+@dirrm share/doc/gkrellm
