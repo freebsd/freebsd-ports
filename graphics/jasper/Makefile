@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jasper
-PORTVERSION=	1.700.2
+PORTVERSION=	1.700.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -23,7 +23,8 @@ USE_ZIP=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=  --disable-ltlibs --release-ignore
-CONFIGURE_ARGS=	--enable-shared --enable-static
+CONFIGURE_ARGS=	--enable-shared --enable-static \
+		--program-transform-name=q	# Tells sed(1) to quit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
