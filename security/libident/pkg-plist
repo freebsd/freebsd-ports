@@ -1,5 +1,4 @@
 include/ident.h
-lib/libident.la
 lib/libident.a
 lib/libident.so
 lib/libident.so.0
