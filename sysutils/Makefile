@@ -78,6 +78,7 @@
     SUBDIR += disktool
     SUBDIR += disktype
     SUBDIR += diskusage
+    SUBDIR += dmidecode
     SUBDIR += doconfig
     SUBDIR += du2ps
     SUBDIR += dump9660
