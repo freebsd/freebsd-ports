@@ -56,8 +56,8 @@ $NoName = "
 %s - The ID line should contain only \"\$\FreeBSD\$\" for a newly created file.\n";
 
 $BadName = "
-%s - The file name '%s' in the ID line does not match
-    the actual filename.\n";
+%s - The pathname '%s'
+    in the \$\FreeBSD\$ line does not match the actual filename.\n";
 
 $BadVersion = "
 %s - How dare you!!  You replaced your copy of the file '%s',
@@ -84,7 +84,7 @@ sub check_version {
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
-    for ($i = 1; $i < 30; $i++) {
+    for ($i = 1; $i < 50; $i++) {
 	$pos = -1;
 	last if eof(FILE);
 	$line = <FILE>;
@@ -111,10 +111,12 @@ sub check_version {
 	return(0);
     }
 
-#    if ($rname ne "$directory/$filename,v") {
-#	printf($BadName, $filename, substr($rname, 0, length($rname)-2));
-#	return(1);
-#    }
+print "rname:$rname, dir/file:$directory/$filename,v.\n";
+
+    if ($rname ne "$directory/$filename,v" && $rname ne "$filename,v") {
+	printf($BadName, "$directory/$filename,v", $rname);
+	return(1);
+    }
     if ($cvsversion{$filename} < $version) {
 	printf($BadVersion, $filename, $filename, $cvsversion{$filename},
 	       "newer", $version, $filename);
@@ -134,6 +136,7 @@ sub check_version {
 #
 ############################################################
 
+$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 $id = getpgrp();
 #print("ARGV - ", join(":", @ARGV), "\n");
 #print("id   - ", id, "\n");
@@ -167,7 +170,11 @@ if ($directory =~ /src\/contrib\//) {
 if ($directory =~ /src\/crypto\//) {
 	$check_id = 3;
 }
+if ($login eq "peter") {
+	print "directory:$directory, check_id:$check_id\n";
+} else {
 	$check_id = 0;
+}
 if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
 	$check_id = 0;
 	print "CVS VERSION CHECK BYPASSED!\n";
