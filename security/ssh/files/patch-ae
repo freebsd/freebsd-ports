@@ -1,0 +1,19 @@
+*** server_config.sample.bak	Fri Oct  4 17:00:43 1996
+--- server_config.sample	Sat Nov  2 03:15:57 1996
+***************
+*** 15,21 ****
+  FascistLogging no
+  PrintMotd yes
+  KeepAlive yes
+! SyslogFacility DAEMON
+  RhostsAuthentication no
+  RhostsRSAAuthentication yes
+  RSAAuthentication yes
+--- 15,21 ----
+  FascistLogging no
+  PrintMotd yes
+  KeepAlive yes
+! SyslogFacility AUTH
+  RhostsAuthentication no
+  RhostsRSAAuthentication yes
+  RSAAuthentication yes
