@@ -8,9 +8,9 @@
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR} \
-		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR} \
-		ftp://ftp.tux.org/pub/java/${DOWNLOAD_DIR}
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR}/ \
+		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
+		ftp://ftp.tux.org/pub/java/${DOWNLOAD_DIR}/
 PKGNAMEPREFIX=	linux-blackdown-
 DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-${ARCH}
 EXTRACT_SUFX=	.bin
@@ -31,7 +31,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
 JDK_VER_SUFFIX=	-02b-FCS
-DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/FCS-02b/
+DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/FCS-02b
 ONLY_FOR_ARCHS=	arm i386 ppc sparc
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
