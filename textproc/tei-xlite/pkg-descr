@@ -1,0 +1,12 @@
+The DTD of the Text Encoding Initiative allows encoding of a wide range
+of document types in the domain of humanities. If focuses on, but is not 
+restricted to, the needs of the scholarly research and education community.
+
+This port contains the XML version of the TEI Lite DTD, a small
+customization of the TEI DTD that should meet 90% of the needs of 90%
+of users.
+
+WWW: http://www.tei-c.org/
+
+-- Henrik Motakef
+   <henrik.motakef@web.de>
