@@ -26,9 +26,9 @@ sbin/perlftpd
 %%PORTDOCS%%share/doc/Net-FTPServer/eg1.sql
 %%PORTDOCS%%share/doc/Net-FTPServer/rfcs.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/safesignals.txt
-%%PORTDOCS%%@dirrm share/doc/Net-FTPServer
 share/examples/Net-FTPServer/ftpd.conf
 @dirrm share/examples/Net-FTPServer
+%%PORTDOCS%%@dirrm share/doc/Net-FTPServer
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO
