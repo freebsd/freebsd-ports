@@ -191,6 +191,7 @@
     SUBDIR += xenon
     SUBDIR += xvile
     SUBDIR += yudit
+    SUBDIR += zed
     SUBDIR += zile
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,4 @@
+bin/zed
+etc/zedrc
+share/doc/zed/zed.doc
+@dirrm share/doc/zed
