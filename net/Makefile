@@ -381,6 +381,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-Telnet-Cisco
+    SUBDIR += p5-Tie-DNS
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-URI
     SUBDIR += p5-XPC
