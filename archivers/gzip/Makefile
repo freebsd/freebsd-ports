@@ -29,6 +29,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=	gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 \
 	zgrep.1 zless.1 zmore.1 znew.1
+INFO=	gzip
 
 DOC_FILES=	AUTHORS COPYING INSTALL NEWS README README-alpha \
 		THANKS TODO
