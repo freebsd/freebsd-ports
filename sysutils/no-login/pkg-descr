@@ -1,0 +1,4 @@
+This program will refuse login to a user, and make a note of it in the
+system logs (syslog).  This is suitable for use as a "login shell" for
+a user that you want to temporarily deny access to.  Just set that user's
+shell to /usr/local/sbin/nologin.
