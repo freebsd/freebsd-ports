@@ -1,45 +1,40 @@
-*** makefile.orig	Thu Jan 18 04:42:36 1996
---- makefile	Sat Feb 19 11:06:55 2000
-***************
-*** 79,85 ****
-  	@echo "where <system> can be:"
-  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
-  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
-! 	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
-  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
-  	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
-  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
---- 79,85 ----
-  	@echo "where <system> can be:"
-  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
-  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
-! 	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386}, hpux-68k(*), hpux-68k-ansi,"
-  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
-  	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
-  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-***************
-*** 171,179 ****
-  	$(MAKE) all CC=gcc LD=gcc \
-  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
-  
-! freebsd:
-  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
-! 	CFLAGS="$(RSAINCDIR) -O2 -fno-strength-reduce -DUNIX -DIDEA32 -DASM \
-  	-DMAX_NAMELEN=255"
-  
-  386bsd:
---- 171,184 ----
-  	$(MAKE) all CC=gcc LD=gcc \
-  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
-  
-! freebsd-i386:
-  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
-! 	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DUNIX -DIDEA32 -DASM \
-! 	-DMAX_NAMELEN=255"
-! 
-! freebsd-alpha:
-! 	$(MAKE) all LD="$(CC) -s" \
-! 	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
-  	-DMAX_NAMELEN=255"
-  
-  386bsd:
+--- makefile	Thu Jan 18 05:42:36 1996
++++ makefile.new	Wed Jun 11 20:50:13 2003
+@@ -50,7 +50,8 @@
+ # -DUSE_SELECT to use select() system call
+ # -DUSE_NBIO   to use non-blocking read()
+ 
+-CFLAGS= -O -DUNIX -DPORTABLE $(BYTEORDER)
++PREFIX	?=/usr/local
++CFLAGS= -O -DUNIX -DPORTABLE $(BYTEORDER) -DPREFIX=\"$(PREFIX)\"
+ 
+ # must set byte order for targets "sysv" and "bsd"
+ # BYTEORDER= -DHIGHFIRST
+@@ -79,7 +80,7 @@
+ 	@echo "where <system> can be:"
+ 	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
+ 	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
+-	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
++	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386}, hpux-68k(*), hpux-68k-ansi,"
+ 	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
+ 	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
+ 	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
+@@ -171,10 +172,15 @@
+ 	$(MAKE) all CC=gcc LD=gcc \
+ 	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
+ 
+-freebsd:
++freebsd-i386:
+ 	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
+-	CFLAGS="$(RSAINCDIR) -O2 -fno-strength-reduce -DUNIX -DIDEA32 -DASM \
+-	-DMAX_NAMELEN=255"
++	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS) -DUNIX \
++		-DIDEA32 -DASM -DMAX_NAMELEN=255"
++
++freebsd-alpha:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS)
++		-DPORTABLE -DUNIX -DIDEA32 -DMAX_NAMELEN=255"
+ 
+ 386bsd:
+ 	$(MAKE) all CC=gcc LD=gcc OBJS_EXT="_80386.o _zmatch.o" \
