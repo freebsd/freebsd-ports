@@ -1,7 +1,7 @@
 LIB=cpgplot
 
 SHLIB_MAJOR=    5
-SHLIB_MINOR=    1
+SHLIB_MINOR=    2
 NOPROFILE=     no_way
 
 CFLAGS+=-DPG_PPU
