@@ -77,6 +77,7 @@
     SUBDIR += kdelibdocs-i18n
     SUBDIR += kdevelop
     SUBDIR += kdevelop-i18n
+    SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint
     SUBDIR += libPropList
