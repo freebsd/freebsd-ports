@@ -29,6 +29,12 @@ EXAMPLES=	Dussel.txt	getwords.rb \
 		test3.rb	test4.rb
 DOCS=		README
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to link against shared libraries)"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
@@ -41,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
