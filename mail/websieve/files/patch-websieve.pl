@@ -1,5 +1,23 @@
 --- websieve.pl.orig	Mon Sep 17 01:23:49 2001
 +++ websieve.pl	Fri Apr 25 19:49:30 2003
+@@ -98,7 +98,7 @@
+ 	$encode_params=&encode_base64($encode_params) if $userc4;
+ 	$auth_cookie=cookie(-name => 'websieve',
+ 			-value=>$encode_params,
+-			-path=>"$program_url",
++			-path=>"/",
+ 			-expires => 'now');
+ 	print header(-cookie=> $auth_cookie);
+ 	param('op','');
+@@ -193,7 +193,7 @@
+ 	$encode_params=&encode_base64($encode_params) if $userc4;	
+ 	$auth_cookie=cookie(-name => 'websieve',
+ 			-value=>$encode_params,
+-			-path=>"$program_url",
++			-path=>"/",
+ 			-expires => $expires);
+ 	if ($uid ne "" && $pass ne "")
+ 	{
 @@ -301,7 +301,7 @@
  	}
  
