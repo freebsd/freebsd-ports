@@ -38,7 +38,6 @@ RESTRICTED=		"binaries under GNU GPL without accompanying source"
 
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools-*
-USE_LINUX=		yes
 DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
