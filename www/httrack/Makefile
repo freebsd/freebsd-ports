@@ -6,35 +6,22 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.20.2
-PORTREVISION=	1
+PORTVERSION=	3.30
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk
-DISTNAME=	httrack-3.20-2
+MASTER_SITES=	http://httrack.free.fr/mirror/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/httrack-3.20/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.01
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--nouseftime --noinaddrt
-CONFIGURE_ENV=	PREFIX=${PREFIX} BINPATH=${PREFIX}/bin
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=	bininstall libinstall config
-.else
-INSTALL_TARGET=	install config
-.endif
 
-.include <bsd.port.pre.mk>
+MAN1=		htsserver.1 httrack.1 webhttrack.1
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|>&6,|>\&6|g; s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-post-install:
-	${LN} -sf libhttrack.so.1 ${PREFIX}/lib/libhttrack.so
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
