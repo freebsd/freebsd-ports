@@ -20,21 +20,13 @@ NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/man/ja_JP.ujis
+SCRIPTS_ENV+=	MANSECS="${MANSECS}"
 
 MANSECS=	1 3 5
 
 post-extract:
 .for i in Makefile Makefile.inc
 	@${CP} ${FILESDIR}/$i ${WRKSRC}
-.endfor
-.for i in ${MANSECS}
-	@cd ${WRKSRC}/man$i; \
-	ls *.$ix|${AWK} 'BEGIN{printf"MAN$i ="}{printf"\\\n\t%s",$$0}' >Makefile; \
-	${ECHO} >>Makefile; \
-	${ECHO} pages-list: >>${WRKSRC}/man$i/Makefile; \
-	${ECHO} "	@\$${ECHO} \$${MAN$i}" >>${WRKSRC}/man$i/Makefile; \
-	${ECHO} >>Makefile; \
-	${ECHO} '.include "bsd.prog.mk"' >>Makefile
 .endfor
 
 post-build:
