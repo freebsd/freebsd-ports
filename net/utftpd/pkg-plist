@@ -1,0 +1,8 @@
+bin/utftp
+man/man1/utftp.1.gz
+man/man5/utftpd.conf.5.gz
+man/man8/utftpd.8.gz
+man/man8/utftpd_make.8.gz
+sbin/utftpd
+sbin/utftpd_dump
+sbin/utftpd_make
