@@ -15,7 +15,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	seanc@FreeBSD.org
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 
