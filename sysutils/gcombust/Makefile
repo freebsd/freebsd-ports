@@ -19,7 +19,7 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
