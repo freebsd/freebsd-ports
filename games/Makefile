@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.128 1998/05/02 18:03:19 mph Exp $
+# $Id: Makefile,v 1.129 1998/05/03 23:27:41 mph Exp $
 #
 
     SUBDIR += 3dc
@@ -49,6 +49,7 @@
     SUBDIR += tank
     SUBDIR += tksol
     SUBDIR += tvp
+    SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xbat
     SUBDIR += xbattle
