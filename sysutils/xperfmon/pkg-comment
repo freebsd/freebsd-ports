@@ -1,4 +1,1 @@
-xperfmon++: Version 1.33. A graphical X11 system performance monitor dispaying 
-            user/system/idle CPU  time, free  swap, disk IO, network traffic
-            and nfs server/client calls.
-
+A graphical X11 system performance monitor.
