@@ -1,6 +1,6 @@
---- configure.orig	Fri Nov  1 06:34:11 2002
-+++ configure	Sat Nov  9 02:15:02 2002
-@@ -7964,6 +7964,7 @@
+--- configure.orig	Mon Aug 11 15:31:05 2003
++++ configure	Mon Aug 11 15:31:06 2003
+@@ -19070,6 +19070,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,12 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8335,7 +8336,7 @@
- 
- 
-   case $host in
--  *-linux-gnu | *-irix6*)
-+  *-linux-gnu | *-irix6* | *-freebsd*)
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_MAN_WHEREIS 1
- _ACEOF
