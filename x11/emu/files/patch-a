@@ -1,0 +1,56 @@
+*** client/aux_wdg.c.orig	Wed May 22 03:05:00 1996
+--- client/aux_wdg.c	Wed May 22 03:15:09 1996
+***************
+*** 186,192 ****
+  	  XtSetArg(args[i], XtNheight, o_height);	i++;
+  	  XtSetValues((Widget)self, args, i);
+  #else
+! 	  XtMakeResizeRequest(self, o_width, o_height, NULL, NULL);
+  #endif 
+  
+  	  if (Mmapped) {
+--- 186,192 ----
+  	  XtSetArg(args[i], XtNheight, o_height);	i++;
+  	  XtSetValues((Widget)self, args, i);
+  #else
+! 	  XtMakeResizeRequest((Widget)self, o_width, o_height, NULL, NULL);
+  #endif 
+  
+  	  if (Mmapped) {
+***************
+*** 253,258 ****
+--- 253,259 ----
+  Export void
+  flip_decorations(TermWidget term, String str)
+  {
++ #ifdef DECORATIONS
+       if (strcmp(str, "MBar") == 0) {
+  	  /*
+  	   * The Menubar
+***************
+*** 291,297 ****
+  	       /*
+  		* Update the thumb
+  		*/
+! 	       ScrollbarAdjust(NULL, 0., 0.);
+  	  }
+       }
+  
+--- 292,298 ----
+  	       /*
+  		* Update the thumb
+  		*/
+! 	       ScrollbarAdjust(SBar, 0.0, 0.0);
+  	  }
+       }
+  
+***************
+*** 299,304 ****
+--- 300,306 ----
+        * call the layout routine by hand 
+        */
+       do_layout(term, (Widget)Canvas, WidthOf(Canvas), HeightOf(Canvas));
++ #endif	/* DECORATIONS */
+  }
+  
+  /*
