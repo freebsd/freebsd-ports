@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat >> Makefile << END
+
+BINDIR = $PREFIX/bin
+CDDIR  = $PREFIX/lib/xcd
+MANDIR = $PREFIX/man/man1
+
+END
+
+exit 0;
