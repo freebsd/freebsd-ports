@@ -1,15 +1,15 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Aug 20 17:43:49 2003
-+++ Makefile.in	Sat Aug 23 01:36:29 2003
-@@ -158,8 +158,8 @@
+--- Makefile.in.orig	Thu Nov 20 19:41:33 2003
++++ Makefile.in	Fri Nov 21 11:04:35 2003
+@@ -156,8 +156,8 @@
  
  @BUILD_TRUESPEECH_TRUE@WIN32ACM_DIR = win32acm
  
--SUBDIRS = pixmaps ffmpeg po macros debian ipkg oRTP gsmlib lpc10-1.5 \
+-SUBDIRS = support pixmaps ffmpeg po macros debian ipkg oRTP gsmlib lpc10-1.5 \
 -                speex $(WIN32ACM_DIR) mediastreamer \
-+SUBDIRS = pixmaps ffmpeg po macros debian ipkg oRTP lpc10-1.5 \
++SUBDIRS = support pixmaps ffmpeg po macros debian ipkg oRTP lpc10-1.5 \
 +                $(WIN32ACM_DIR) mediastreamer \
  		media_api osipua coreapi console gnome share developer-docs
  

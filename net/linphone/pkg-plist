@@ -1,8 +1,6 @@
 bin/linphone
 bin/linphonec
-bin/osipua_tester
 bin/sipomatic
-bin/test_sdphandler
 include/linphone/config.h
 include/linphone/linphonecore.h
 include/linphone/sndcard.h
@@ -10,6 +8,7 @@ include/ortp/ortp-config.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
 include/ortp/port_fct.h
+include/ortp/rtcp.h
 include/ortp/rtp.h
 include/ortp/rtpmod.h
 include/ortp/rtpport.h
@@ -66,6 +65,7 @@ share/doc/mediastreamer/msfilterimplementations.html
 share/doc/mediastreamer/userapi.html
 share/doc/ortp/book1.html
 share/doc/ortp/index.sgml
+share/doc/ortp/ortp-library-management-functions.html
 share/doc/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
 share/doc/ortp/ortp-rtp-payloads-and-profiles.html
 share/doc/ortp/ortp-rtpsession-api.html
@@ -84,108 +84,82 @@ share/doc/osipua/osipua.html
 share/doc/osipua/registrationctxt.html
 share/gnome/apps/Internet/linphone.desktop
 share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
-share/gnome/help/linphone/C/manual/CVS/Entries
-share/gnome/help/linphone/C/manual/CVS/Repository
-share/gnome/help/linphone/C/manual/CVS/Root
-share/gnome/help/linphone/C/manual/docbook.css
-share/gnome/help/linphone/C/manual/index.html
-share/gnome/help/linphone/C/manual/params.html
-share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Entries
-share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Repository
-share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Root
-share/gnome/help/linphone/C/manual/t1.html
-share/gnome/help/linphone/C/manual/x118.html
-share/gnome/help/linphone/C/manual/x121.html
-share/gnome/help/linphone/C/manual/x137.html
-share/gnome/help/linphone/C/manual/x143.html
-share/gnome/help/linphone/C/manual/x167.html
-share/gnome/help/linphone/C/manual/x172.html
-share/gnome/help/linphone/C/manual/x188.html
-share/gnome/help/linphone/C/manual/x26.html
-share/gnome/help/linphone/C/manual/x36.html
-share/gnome/help/linphone/fr/manual/CVS/Entries
-share/gnome/help/linphone/fr/manual/CVS/Repository
-share/gnome/help/linphone/fr/manual/CVS/Root
-share/gnome/help/linphone/fr/manual/docbook.css
-share/gnome/help/linphone/fr/manual/params.html
-share/gnome/help/linphone/fr/manual/registering.html
-share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Entries
-share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Repository
-share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Root
-share/gnome/help/linphone/fr/manual/t1.html
-share/gnome/help/linphone/fr/manual/x116.html
-share/gnome/help/linphone/fr/manual/x134.html
-share/gnome/help/linphone/fr/manual/x140.html
-share/gnome/help/linphone/fr/manual/x164.html
-share/gnome/help/linphone/fr/manual/x170.html
-share/gnome/help/linphone/fr/manual/x188.html
-share/gnome/help/linphone/fr/manual/x24.html
-share/gnome/help/linphone/fr/manual/x34.html
-share/gnome/help/linphone/it/manual/CVS/Entries
-share/gnome/help/linphone/it/manual/CVS/Repository
-share/gnome/help/linphone/it/manual/CVS/Root
-share/gnome/help/linphone/it/manual/docbook.css
-share/gnome/help/linphone/it/manual/params.html
-share/gnome/help/linphone/it/manual/registering.html
-share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Entries
-share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Repository
-share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Root
-share/gnome/help/linphone/it/manual/t1.html
-share/gnome/help/linphone/it/manual/x116.html
-share/gnome/help/linphone/it/manual/x134.html
-share/gnome/help/linphone/it/manual/x140.html
-share/gnome/help/linphone/it/manual/x164.html
-share/gnome/help/linphone/it/manual/x170.html
-share/gnome/help/linphone/it/manual/x189.html
-share/gnome/help/linphone/it/manual/x24.html
-share/gnome/help/linphone/it/manual/x34.html
-share/gnome/help/linphone/ja/manual/CVS/Entries
-share/gnome/help/linphone/ja/manual/CVS/Repository
-share/gnome/help/linphone/ja/manual/CVS/Root
-share/gnome/help/linphone/ja/manual/params.html
-share/gnome/help/linphone/ja/manual/t1.html
-share/gnome/help/linphone/ja/manual/x112.html
-share/gnome/help/linphone/ja/manual/x115.html
-share/gnome/help/linphone/ja/manual/x131.html
-share/gnome/help/linphone/ja/manual/x137.html
-share/gnome/help/linphone/ja/manual/x161.html
-share/gnome/help/linphone/ja/manual/x166.html
-share/gnome/help/linphone/ja/manual/x182.html
-share/gnome/help/linphone/ja/manual/x25.html
-share/gnome/help/linphone/ja/manual/x35.html
+share/gnome/help/linphone/C/docbook.css
+share/gnome/help/linphone/C/index.html
+share/gnome/help/linphone/C/params.html
+share/gnome/help/linphone/C/t1.html
+share/gnome/help/linphone/C/x118.html
+share/gnome/help/linphone/C/x121.html
+share/gnome/help/linphone/C/x137.html
+share/gnome/help/linphone/C/x143.html
+share/gnome/help/linphone/C/x167.html
+share/gnome/help/linphone/C/x172.html
+share/gnome/help/linphone/C/x188.html
+share/gnome/help/linphone/C/x26.html
+share/gnome/help/linphone/C/x36.html
+share/gnome/help/linphone/fr/docbook.css
+share/gnome/help/linphone/fr/params.html
+share/gnome/help/linphone/fr/registering.html
+share/gnome/help/linphone/fr/t1.html
+share/gnome/help/linphone/fr/x116.html
+share/gnome/help/linphone/fr/x134.html
+share/gnome/help/linphone/fr/x140.html
+share/gnome/help/linphone/fr/x164.html
+share/gnome/help/linphone/fr/x170.html
+share/gnome/help/linphone/fr/x188.html
+share/gnome/help/linphone/fr/x24.html
+share/gnome/help/linphone/fr/x34.html
+share/gnome/help/linphone/it/docbook.css
+share/gnome/help/linphone/it/params.html
+share/gnome/help/linphone/it/registering.html
+share/gnome/help/linphone/it/t1.html
+share/gnome/help/linphone/it/x116.html
+share/gnome/help/linphone/it/x134.html
+share/gnome/help/linphone/it/x140.html
+share/gnome/help/linphone/it/x164.html
+share/gnome/help/linphone/it/x170.html
+share/gnome/help/linphone/it/x189.html
+share/gnome/help/linphone/it/x24.html
+share/gnome/help/linphone/it/x34.html
+share/gnome/help/linphone/ja/params.html
+share/gnome/help/linphone/ja/t1.html
+share/gnome/help/linphone/ja/x112.html
+share/gnome/help/linphone/ja/x115.html
+share/gnome/help/linphone/ja/x131.html
+share/gnome/help/linphone/ja/x137.html
+share/gnome/help/linphone/ja/x161.html
+share/gnome/help/linphone/ja/x166.html
+share/gnome/help/linphone/ja/x182.html
+share/gnome/help/linphone/ja/x25.html
+share/gnome/help/linphone/ja/x35.html
 share/gnome/linphonec/linphonec
 share/gnome/pixmaps/linphone/linphone.png
 share/gnome/pixmaps/linphone/linphone2.png
 share/gnome/pixmaps/linphone/linphone2.xpm
 share/gnome/sounds/linphone/hello16000.wav
 share/gnome/sounds/linphone/hello8000.wav
-share/gnome/sounds/linphone/ring.wav
 share/gnome/sounds/linphone/ringback.wav
+share/gnome/sounds/linphone/rings/bigben.wav
+share/gnome/sounds/linphone/rings/oldphone.wav
+share/gnome/sounds/linphone/rings/orig.wav
+share/gnome/sounds/linphone/rings/rock.wav
+share/gnome/sounds/linphone/rings/sweet.wav
+share/gnome/sounds/linphone/rings/synth.wav
+share/gnome/sounds/linphone/rings/tapping.wav
+share/gnome/sounds/linphone/rings/toy.wav
 share/locale/de/LC_MESSAGES/linphone.mo
 share/locale/es/LC_MESSAGES/linphone.mo
 share/locale/fr/LC_MESSAGES/linphone.mo
 share/locale/it/LC_MESSAGES/linphone.mo
 share/locale/ja/LC_MESSAGES/linphone.mo
+share/locale/pl/LC_MESSAGES/linphone.mo
+@dirrm share/gnome/sounds/linphone/rings
 @dirrm share/gnome/sounds/linphone
 @dirrm share/gnome/pixmaps/linphone
 @dirrm share/gnome/linphonec
-@dirrm share/gnome/help/linphone/ja/manual/CVS
-@dirrm share/gnome/help/linphone/ja/manual
 @dirrm share/gnome/help/linphone/ja
-@dirrm share/gnome/help/linphone/it/manual/stylesheet-images/CVS
-@dirrm share/gnome/help/linphone/it/manual/stylesheet-images
-@dirrm share/gnome/help/linphone/it/manual/CVS
-@dirrm share/gnome/help/linphone/it/manual
 @dirrm share/gnome/help/linphone/it
-@dirrm share/gnome/help/linphone/fr/manual/stylesheet-images/CVS
-@dirrm share/gnome/help/linphone/fr/manual/stylesheet-images
-@dirrm share/gnome/help/linphone/fr/manual/CVS
-@dirrm share/gnome/help/linphone/fr/manual
 @dirrm share/gnome/help/linphone/fr
-@dirrm share/gnome/help/linphone/C/manual/stylesheet-images/CVS
-@dirrm share/gnome/help/linphone/C/manual/stylesheet-images
-@dirrm share/gnome/help/linphone/C/manual/CVS
-@dirrm share/gnome/help/linphone/C/manual
 @dirrm share/gnome/help/linphone/C
 @dirrm share/gnome/help/linphone
 @dirrm share/doc/osipua

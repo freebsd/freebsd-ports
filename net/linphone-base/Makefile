@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://simon.morlat.free.fr/download/%SUBDIR%/
@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-platform-gnome-2 --disable-ipv6
+INSTALLS_SHLIB=	yes
 
 MAN1=		linphone.1 linphonec.1 sipomatic.1
 
