@@ -1,0 +1,11 @@
+--- Makefile.~1~	Sat Feb 26 10:20:56 2000
++++ Makefile	Mon Jun 19 13:10:21 2000
+@@ -14,7 +14,7 @@
+ PACKAGE = wordnet-1.6-fpw1.1.2
+ PACKAGEEXTRA = README.pkg=README
+ ARCHIVEEXTRA = README.pkg
+-DIR = wordnet
++DIR = wordnet-fpw
+ 
+ SRCDIR = .
+ FPWPARSER = fpwwordnet
