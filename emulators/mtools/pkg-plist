@@ -47,6 +47,9 @@ bin/mxtar
 bin/xcopy
 bin/mcomp
 info/mtools.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/mtools.info %D/info/dir
+@unexec install-info --delete %D/info/mtools.info %D/info/dir
 etc/mtools.conf
 man/man1/mattrib.1.gz
 man/man1/mbadblocks.1.gz
@@ -68,4 +71,5 @@ man/man1/mtoolstest.1.gz
 man/man1/mtools.1.gz
 man/man1/mtype.1.gz
 man/man1/mwrite.1.gz
+man/man1/mzip.1.gz
 man/man5/mtools.5.gz
