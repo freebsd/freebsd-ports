@@ -1352,6 +1352,7 @@
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += simgear
+    SUBDIR += simpletest
     SUBDIR += simulavr
     SUBDIR += skalibs
     SUBDIR += smc
