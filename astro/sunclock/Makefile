@@ -3,7 +3,7 @@
 # Date created:		15 September 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1996/11/15 22:34:59 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/18 09:50:48 asami Exp $
 #
 
 DISTNAME=	sunclock1.3
@@ -11,6 +11,7 @@ PKGNAME=	sunclock-1.3
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.org
 
