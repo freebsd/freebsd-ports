@@ -1,5 +1,5 @@
---- session.c.orig	Fri Mar 21 02:15:18 2003
-+++ session.c	Mon Mar 31 16:10:35 2003
+--- session.c.orig	Thu Mar 20 19:18:09 2003
++++ session.c	Wed Sep 17 11:05:26 2003
 @@ -64,6 +64,11 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -237,7 +237,35 @@
  	return 0;
  }
  
-@@ -952,6 +1095,10 @@
+@@ -844,7 +987,7 @@
+ child_set_env(char ***envp, u_int *envsizep, const char *name,
+ 	const char *value)
+ {
+-	u_int i, namelen;
++	u_int i, namelen, envsize;
+ 	char **env;
+ 
+ 	/*
+@@ -862,12 +1005,14 @@
+ 		xfree(env[i]);
+ 	} else {
+ 		/* New variable.  Expand if necessary. */
+-		if (i >= (*envsizep) - 1) {
+-			if (*envsizep >= 1000)
++		envsize = *envsizep;
++		if (i >= envsize - 1) {
++			if (envsize >= 1000)
+ 				fatal("child_set_env: too many env vars,"
+ 				    " skipping: %.100s", name);
+-			(*envsizep) += 50;
+-			env = (*envp) = xrealloc(env, (*envsizep) * sizeof(char *));
++			envsize += 50;
++			env = (*envp) = xrealloc(env, envsize * sizeof(char *));
++			*envsizep = envsize;
+ 		}
+ 		/* Need to set the NULL pointer at end of array beyond the new slot. */
+ 		env[i + 1] = NULL;
+@@ -952,6 +1097,10 @@
  	char buf[256];
  	u_int i, envsize;
  	char **env, *laddr;
@@ -248,7 +276,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -959,6 +1106,9 @@
+@@ -959,6 +1108,9 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -258,7 +286,7 @@
  #ifdef HAVE_CYGWIN
  	/*
  	 * The Windows environment contains some setting which are
-@@ -1003,9 +1153,21 @@
+@@ -1003,9 +1155,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -282,7 +310,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1219,7 +1381,7 @@
+@@ -1219,7 +1383,7 @@
  		setpgid(0, 0);
  # endif
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -291,7 +319,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1382,7 +1544,7 @@
+@@ -1382,7 +1546,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -300,7 +328,7 @@
  		close(i);
  
  	/*
-@@ -1412,6 +1574,31 @@
+@@ -1412,6 +1576,31 @@
  			exit(1);
  #endif
  	}
