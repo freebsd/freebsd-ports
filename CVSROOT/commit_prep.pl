@@ -88,6 +88,9 @@ sub check_version {
     local($id, $rname, $version, $bareid);
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
+    if (! -f $filename) {
+	return(0);	# not present - either removed or let cvs deal with it.
+    }
     open(FILE, $filename) || die("Cannot open $filename, stopped");
     # requiring the header within the first 'n' lines isn't useful.
     while (1) {
