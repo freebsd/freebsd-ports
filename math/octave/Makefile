@@ -1,12 +1,12 @@
 # New ports collection makefile for:	octave
-# Version required:	2.0.8
+# Version required:	2.0.9
 # Date created:		28 June 1997
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.8 1997/06/28 02:32:20 chuckr Exp $
+# $Id: Makefile,v 1.9 1997/07/17 15:12:57 max Exp $
 #
 
-DISTNAME=	octave-2.0.8
+DISTNAME=	octave-2.0.9
 CATEGORIES=	math 
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAN1=		octave.1
 
 post-configure:
-	(cd $(WRKDIR)/octave-2.0.8/scripts; ./configure)
+	(cd $(WRKDIR)/octave-2.0.9/scripts; ./configure)
 
 OCTAVE-INFO= octave.info octave.info-1 octave.info-10 octave.info-11 octave.info-12 octave.info-2 octave.info-3 octave.info-4 octave.info-5 octave.info-6 octave.info-7 octave.info-8 octave.info-9
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
