@@ -5,7 +5,7 @@ include/glib/gmodule.h
 lib/libglib11.a
 lib/libglib11.la
 lib/libglib11.so
-lib/libglib11.so.0.3
+lib/libglib11.so.0.0
 lib/libgmodule11.a
 lib/libgmodule11.la
 lib/libgmodule11.so
