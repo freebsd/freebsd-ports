@@ -7,7 +7,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/
 EXTRACT_SUFX=	.tar.bz2
