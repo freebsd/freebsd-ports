@@ -19,8 +19,8 @@ bin/ssh-keyscan
 %%NOTBASE%%@exec [ -f %D/etc/ssh_host_dsa_key.pub ] && [ ! -f %D/etc/ssh/ssh_host_dsa_key.pub ] && ln %D/etc/ssh_host_dsa_key.pub %D/etc/ssh/ssh_host_dsa_key.pub
 %%NOTBASE%%@unexec if cmp -s %D/etc/ssh/ssh_config %D/etc/ssh/ssh_config-dist; then rm -f %D/etc/ssh/ssh_config; fi
 %%NOTBASE%%@unexec if cmp -s %D/etc/ssh/sshd_config %D/etc/ssh/sshd_config-dist; then rm -f %D/etc/ssh/sshd_config; fi
-etc/ssh/ssh_config-dist
-etc/ssh/sshd_config-dist
+%%NOTBASE%%etc/ssh/ssh_config-dist
+%%NOTBASE%%etc/ssh/sshd_config-dist
 %%NOTBASE%%@exec [ ! -f %D/etc/ssh/ssh_config ] && cp %D/etc/ssh/ssh_config-dist %D/etc/ssh/ssh_config
 %%NOTBASE%%@exec [ ! -f %D/etc/ssh/sshd_config ] && cp %D/etc/ssh/sshd_config-dist %D/etc/ssh/sshd_config
 %%NOTBASE%%@dirrm etc/ssh

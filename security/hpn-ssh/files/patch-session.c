@@ -1,5 +1,5 @@
---- session.c.orig	Mon May 13 02:48:58 2002
-+++ session.c	Thu May 23 14:10:44 2002
+--- session.c.orig	Fri Jun 21 03:09:47 2002
++++ session.c	Wed Jun 26 14:15:41 2002
 @@ -64,6 +64,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -14,7 +14,7 @@
  /* func */
  
  Session *session_new(void);
-@@ -383,6 +390,13 @@
+@@ -474,6 +481,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -28,7 +28,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -497,6 +511,14 @@
+@@ -588,6 +602,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -43,7 +43,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -623,6 +645,18 @@
+@@ -714,6 +736,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -62,7 +62,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -656,6 +690,72 @@
+@@ -747,6 +781,72 @@
  	}
  #endif
  
@@ -135,7 +135,7 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -668,7 +768,17 @@
+@@ -759,7 +859,17 @@
  		printf("%s\n", aixloginmsg);
  #endif /* WITH_AIXAUTHENTICATE */
  
@@ -154,7 +154,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -679,7 +789,30 @@
+@@ -770,7 +880,30 @@
  			    s->hostname);
  	}
  
@@ -186,7 +186,7 @@
  }
  
  /*
-@@ -695,9 +828,9 @@
+@@ -786,9 +919,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -198,7 +198,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -724,10 +857,10 @@
+@@ -815,10 +948,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -211,7 +211,18 @@
  	return 0;
  }
  
-@@ -856,6 +989,10 @@
+@@ -931,6 +1064,10 @@
+ 	char buf[256];
+ 	u_int i, envsize;
+ 	char **env;
++#ifdef HAVE_LOGIN_CAP
++	extern char **environ;
++	char **senv;
++#endif
+ 	struct passwd *pw = s->pw;
+ 
+ 	/* Initialize the environment. */
+@@ -947,13 +1084,30 @@
  #endif
  
  	if (!options.use_login) {
@@ -222,9 +233,17 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -863,6 +1000,12 @@
+ 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
  #ifdef HAVE_LOGIN_CAP
- 		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
+-		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
++		senv = environ;
++		environ = xmalloc(sizeof(char *));
++		*environ = NULL;
++		(void) setusercontext(lc, pw, pw->pw_uid,
++		    LOGIN_SETENV|LOGIN_SETPATH);
++		copy_environment(environ, &env, &envsize);
++		xfree(environ);
++		environ = senv;
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
 +		var= login_getcapstr(lc, "lang", NULL, NULL);
 +		if ( var ) child_set_env(&env, &envsize, "LANG", var);
@@ -235,7 +254,16 @@
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  		/*
-@@ -1221,7 +1364,7 @@
+@@ -1162,7 +1316,7 @@
+ #endif /* HAVE_SETPCRED */
+ #ifdef HAVE_LOGIN_CAP
+ 		if (setusercontext(lc, pw, pw->pw_uid,
+-		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
++		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
+ 			perror("unable to set user context");
+ 			exit(1);
+ 		}
+@@ -1312,7 +1466,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -244,7 +272,7 @@
  		close(i);
  
  	/*
-@@ -1251,6 +1394,31 @@
+@@ -1342,6 +1496,31 @@
  			exit(1);
  #endif
  	}

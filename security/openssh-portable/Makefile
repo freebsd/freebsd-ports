@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -98,7 +98,11 @@ post-configure:
 		${FILESDIR}/sshd.sh > ${WRKSRC}/sshd.sh
 
 pre-install:
+.if defined(OPENSSH_OVERWRITE_BASE)
+	-${MKDIR} ${EMPTYDIR}
+.else
 	-${MKDIR} ${PREFIX}/empty
+.endif
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
 		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
@@ -110,7 +114,7 @@ pre-install:
 .endfor
 
 post-install:
-.if defined(OPENSSH_OVERWRITE_BASE)
+.if !defined(OPENSSH_OVERWRITE_BASE)
 	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
 .endif
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
