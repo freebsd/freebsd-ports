@@ -33,7 +33,7 @@ UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 
-USE_GNOME=	orbit gtk12
+USE_GNOME=	orbit gtk12 gtk20
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
@@ -110,7 +110,6 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14 \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		${ANT}:${PORTSDIR}/devel/apache-ant \
-		${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
 		${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
