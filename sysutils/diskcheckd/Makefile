@@ -8,7 +8,7 @@
 
 PORTNAME=	diskcheckd
 PORTVERSION=	20010823
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
@@ -30,8 +30,6 @@ CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Not tested on anything less than 5.0, use at discretion"
-.else
-IGNORE=		"Does not work on 5.x, see PR ports/45911"
 .endif
 
 do-extract:
