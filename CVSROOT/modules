@@ -5298,6 +5298,7 @@ postgresql-jdbc	ports/databases/postgresql-jdbc
 postgresql-odbc	ports/databases/postgresql-odbc
 postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
+postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
 postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
