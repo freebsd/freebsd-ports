@@ -77,7 +77,6 @@
     SUBDIR += sapphire-themes
     SUBDIR += sawfish2
     SUBDIR += scwm
-    SUBDIR += spager
     SUBDIR += swm
     SUBDIR += toolbox
     SUBDIR += tvtwm

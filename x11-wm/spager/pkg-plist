@@ -1,7 +1,0 @@
-bin/spager
-share/spager/merlin/message.jl
-share/spager/merlin/util.jl
-share/spager/sample.rc
-share/spager/spager.jl
-@dirrm share/spager/merlin
-@dirrm share/spager
