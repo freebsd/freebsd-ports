@@ -26,7 +26,7 @@
      AUDIO_INCLUDE 		=
      AUDIO_LIB 			=
 -	CDEBUGFLAGS         = -g
-+    CDEBUGFLAGS			= -O2 -m486 -pipe
++    CDEBUGFLAGS			= -O2 -pipe
  
  XCOMM Uncomment this if you want to use ANY of the AUDIO sound systems
  #define COMPILE_IN_AUDIO    
