@@ -6,4 +6,6 @@ human readable format, totals the output and shows available
 space left on partitions.  Assumes user's home directory is
 /home/$USER and that user's mail directory is /var/mail/$USER
 
+WWW: http://www.maske.org/apps/diskusage/
+
 - Douglas A. Maske <support@maske.org>
