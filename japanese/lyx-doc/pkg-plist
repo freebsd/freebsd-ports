@@ -6,5 +6,5 @@ share/lyx/doc/ja_Tutorial.lyx
 share/lyx/doc/ja_UserGuide.lyx
 share/lyx/doc/mobius.eps
 share/lyx/doc/platypus.eps
-@dirrm share/lyx/doc
-@dirrm share/lyx
+@unexec rmdir %D/share/lyx/doc 2>/dev/null || true
+@unexec rmdir %D/share/lyx 2>/dev/null || true
