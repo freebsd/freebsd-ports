@@ -22,13 +22,13 @@ PATCHFILES=	linux-mozilla-${PORTVERSION}b-generated-files.tar.gz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
+USE_ZIP=	yes
 USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-mozilla
