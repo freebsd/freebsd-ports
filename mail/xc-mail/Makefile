@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	xc-mail
-PORTVERSION=	20001216
+PORTVERSION=	1.3
+PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-# ftp://trilug.fh-trier.de/pub/XCmail/cvs-snapshot/
-MASTER_SITE_SUBDIR=	trevor/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}-1.3devel
+MASTER_SITES=	http://js.zet.net/XCmail/download/ \
+		ftp://trier.linux.de/pub/XCmail/ \
+		ftp://ftp.myth.co.uk/pub/mirrors/xcmail/
 
 MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	Xclasses.1:${PORTSDIR}/x11-toolkits/xclasses
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS=	\
 		--includedir=${X11BASE}/include/ \
 		--libdir=${X11BASE}/lib/ \
 		--x-includes=${X11BASE}/include/ \
