@@ -58,6 +58,7 @@
     SUBDIR += ezmlm-web
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += filtermail
     SUBDIR += flink
     SUBDIR += ftrack
     SUBDIR += gbiff
