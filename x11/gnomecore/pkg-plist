@@ -276,6 +276,10 @@ share/gnome/help/help-browser/no/default-page.html
 share/gnome/help/help-browser/no/help-browser.html
 share/gnome/help/help-browser/no/index.html
 share/gnome/help/help-browser/no/topic.dat
+share/gnome/help/help-browser/wa/default-page.html
+share/gnome/help/help-browser/wa/help-browser.html
+share/gnome/help/help-browser/wa/index.html
+share/gnome/help/help-browser/wa/topic.dat
 share/gnome/help/mini-commander_applet/C/change-log.html
 share/gnome/help/mini-commander_applet/C/clock.html
 share/gnome/help/mini-commander_applet/C/command-completion.html
@@ -300,6 +304,8 @@ share/gnome/idl/help-browser.idl
 share/gnome/mc/templates/GIMP.desktop
 share/gnome/panelrc
 share/gnome/pixmaps/another_clock.xpm
+share/gnome/pixmaps/apple-green.png
+share/gnome/pixmaps/apple-red.png
 share/gnome/pixmaps/emacs.png
 share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/fish/oldwanda.png
@@ -391,6 +397,7 @@ share/gnome/pixmaps/gnome-unknown.png
 share/gnome/pixmaps/gnome-word.png
 share/gnome/pixmaps/kterm.xpm
 share/gnome/pixmaps/launcher-program.png
+share/gnome/pixmaps/mailcheck/email-eclouds.png
 share/gnome/pixmaps/mailcheck/email-e.png
 share/gnome/pixmaps/mailcheck/email.png
 share/gnome/pixmaps/mailcheck/tux-anim.png
@@ -483,6 +490,7 @@ share/locale/no/LC_MESSAGES/gnome-core.mo
 share/locale/pl/LC_MESSAGES/gnome-core.mo
 share/locale/pt/LC_MESSAGES/gnome-core.mo
 share/locale/ru/LC_MESSAGES/gnome-core.mo
+share/locale/sk/LC_MESSAGES/gnome-core.mo
 share/locale/sv/LC_MESSAGES/gnome-core.mo
 share/locale/wa/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/xmodmap
@@ -495,6 +503,7 @@ share/locale/wa/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/mc
 @dirrm share/gnome/help/mini-commander_applet/C
 @dirrm share/gnome/help/mini-commander_applet
+@dirrm share/gnome/help/help-browser/wa
 @dirrm share/gnome/help/help-browser/no
 @dirrm share/gnome/help/help-browser/ko
 @dirrm share/gnome/help/help-browser/it

@@ -483,6 +483,17 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
+--- help-browser/help/wa/Makefile.in.orig	Wed Jun 23 17:38:49 1999
++++ help-browser/help/wa/Makefile.in	Mon Jul 12 14:34:30 1999
+@@ -159,7 +159,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/wa
++help_browser_helpdir = $(datadir)/help/help-browser/wa
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
 --- panel/Makefile.in.orig	Tue Mar  2 01:53:16 1999
 +++ panel/Makefile.in	Sat Mar  6 17:59:42 1999
 @@ -160,7 +160,7 @@
