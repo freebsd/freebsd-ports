@@ -115,7 +115,7 @@ rtc_attach(dev_t dev)
 	struct rtc_softc *sc;
 	int unit;
 
-	unit = lminor(dev);
+	unit = dev2unit(dev);
 	DLog(Lenter, "%d %p", unit, dev);
 	if (dev->si_drv1) {
 		DLog(Lexit, "old %p, %p", dev, dev->si_drv1);
