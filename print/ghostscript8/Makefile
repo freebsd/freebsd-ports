@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	3
+PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		http://hp.sourceforge.net/:hp2200 \
@@ -39,6 +39,7 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${BJC250_SRCS}:bjc250 \
 		${CPCA_SRCS}:cpca \
 		${LIPS_SRCS}:lips \
+		${DMPRT_SRCS}:ports_jp_gs \
 		${EPAG_SRCS}:epag \
 		${EPLASER_SRCS}:eplaser \
 		${MJC_SRCS}:ports_jp \
@@ -67,7 +68,8 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}"
 
-SCRIPTS_ENV=	GS_OPTIONS="${GS_OPTIONS}" WITHOUT_X11="${WITHOUT_X11}" \
+SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
+		WITHOUT_X11="${WITHOUT_X11}" \
 		WITH_SVGALIB="${WITH_SVGALIB}"
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 pdf2dsc.1 pdf2ps.1 \
@@ -168,6 +170,12 @@ LIPS=		lips
 LIPS_VERS=	2.4.0
 LIPS_NAME=	gdevlips-${LIPS_VERS}
 LIPS_SRCS=	${LIPS_NAME}.tar.gz
+
+# DMPRT - additional driver for generic dot matrix printers
+DMPRT=		dmprt
+DMPRT_VERS=	2.01
+DMPRT_NAME=	${DMPRT}-${DMPRT_VERS}
+DMPRT_SRCS=	${DMPRT_NAME}.tar.gz
 
 # EPAG - additional driver for Epson ESC/Page printers
 # http://www.humblesoft.com/gdevepag.html
@@ -270,6 +278,9 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
 	${LN} -sf ${LIPS_NAME} ${WRKSRC}/${LIPS}
+# for DMPRT driver
+	${ECHO_MSG} ">>>   extracting ${DMPRT_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${DMPRT_SRCS}
 # for EPAG driver
 	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
@@ -306,6 +317,12 @@ post-patch:
 		${WRKSRC}/src/unix-gcc.mak
 	${REINPLACE_CMD} -e 's|\. de|\.|g' \
 		${WRKSRC}/src/unixinst.mak
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/lib/gs_res.ps
+# for DMPRT driver
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
+		 s|%%GS_VERSION%%|${GS_VERSION}|g' \
+			${WRKSRC}/src/dmp_site.ps
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
@@ -342,6 +359,10 @@ pre-configure:
 # for LIPS driver
 	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for DMPRT driver
+	${ECHO_MSG} ">>>   adding ${DMPRT} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/src/gdevdmpr.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for EPAG driver
 	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
@@ -466,6 +487,12 @@ post-install:
 .else
 	${STRIP_CMD} ${PREFIX}/bin/gs
 .endif
+# for DMPRT driver
+	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
+.for i in dmp_init.ps dmp_site.ps escp_24.src
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${DATADIR}/${GS_VERSION}/lib
+.endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
@@ -508,6 +535,13 @@ post-install:
 .for i in Gdevlips.htm
 	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${LIPS}
+.endfor
+# for DMPRT driver
+	${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${DMPRT}
+.for i in gdevdmpr.sj
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${DOCSDIR}/${GS_VERSION}/${DMPRT}
 .endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
