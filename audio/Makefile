@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.27 1996/08/06 17:39:25 chuckr Exp $
+# $Id: Makefile,v 1.28 1996/08/16 13:45:53 erich Exp $
 #
 
+    SUBDIR += cam
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += maplay
