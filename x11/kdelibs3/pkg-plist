@@ -1003,7 +1003,7 @@ share/apps/dcopidlng/kdocLib.pm
 share/apps/dcopidlng/kdocParseDoc.pm
 share/apps/dcopidlng/kdocUtil.pm
 share/apps/kabc/countrytransl.map
-share/apps/kabc/formats/binary.desktop/binary.desktop
+share/apps/kabc/formats/binary.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
 share/apps/katepart/syntax/ada.xml
