@@ -21,6 +21,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	js@jeannot.org
 COMMENT=	A high performance Smalltalk environment
 
+BROKEN=		Does not fetch
+
 USE_LINUX=	yes
 
 ONLY_FOR_ARCHS= i386
