@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.06
+PORTVERSION=	2.09
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.armstrong.com/pub/siege/ \
 		http://nerf-herder.net/siege/
