@@ -1,0 +1,20 @@
+--- telnet/Makefile.orig	Sat Aug  2 14:30:16 1997
++++ telnet/Makefile	Thu Aug  5 03:54:01 1999
+@@ -6,14 +6,12 @@
+ PROG=	telnet
+ 
+ 
+-CFLAGS= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
+-	-DFILIO_H \
+-	-I../lib/libbsd/include -I../lib \
+-	-I$(SSLTOP)/include
++CFLAGS+= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
++	-DFILIO_H -I../lib -I../lib/libbsd/include \
++	-I$(SSLTOP)/include -I$(SSLTOP)/include/openssl
+ 
+ 
+ LIBS=   ../lib/libtelnet/libtelnet.a \
+-	../lib/libbsd/libbsd.a \
+         $(SSLTOP)/lib/libssl.a \
+ 	$(SSLTOP)/lib/libcrypto.a 
+ #	$(SSLTOP)/lib/libdes.a

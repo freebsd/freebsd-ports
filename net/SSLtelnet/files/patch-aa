@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Sep 24 23:50:59 1998
-+++ Makefile	Wed Mar 24 19:07:12 1999
++++ Makefile	Thu Aug  5 08:57:44 1999
 @@ -47,7 +47,7 @@
  
  # the location where SSLeay is installed ... 
@@ -26,7 +26,7 @@
  #LDADD = -ltermcap $(sockslib) 
 +
 +#BSD386
-+CC = gcc -DTERMCAP $(socksflags)
++CC += -DTERMCAP $(socksflags)
 +LDADD = -ltermcap $(sockslib) 
    
  all:
@@ -51,23 +51,14 @@
  
  certificate:
  	(\
-+	[ -f $(INSTALLTOP)/certs/telnetd.pem ] && exit; \
- 	cd $(INSTALLTOP)/certs; \
+-	cd $(INSTALLTOP)/certs; \
 -	ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
 -	ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ;\
+-	chmod 600 $(INSTALLTOP)/certs/telnetd.pem; \
++	[ -f $(INSTALLTOP)/openssl/certs/telnetd.pem ] && exit; \
++	cd $(INSTALLTOP)/openssl/certs; \
 +	openssl req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
 +	ln -s telnetd.pem `openssl x509 -noout -hash < telnetd.pem`.0 ;\
- 	chmod 600 $(INSTALLTOP)/certs/telnetd.pem; \
++	chmod 600 $(INSTALLTOP)/openssl/certs/telnetd.pem; \
  	)
-
---- lib/Makefile.orig	Wed Sep  2 13:11:39 1998
-+++ lib/Makefile	Wed Sep  2 13:11:49 1998
-@@ -1,7 +1,7 @@
- #SUBDIRS= gmp-1.2 kerberosIV/krb libbsd libdes/des libpk libtelnet libutil
- SUBDIRS= gmp-1.3.2 libbsd libpk libtelnet libutil
  
--SUBDIRS= libbsd libtelnet libutil
-+SUBDIRS= libtelnet
- 
- all:
- 	@for i in $(SUBDIRS); \

@@ -12,22 +12,3 @@
  	if (f & MODE_OUTBIN) {
  		tmp_tc.c_cflag &= ~(CSIZE|PARENB);
  		tmp_tc.c_cflag |= CS8;
---- telnet/Makefile.orig	Sat Aug  2 13:30:16 1997
-+++ telnet/Makefile	Fri Oct 16 20:42:09 1998
-@@ -6,14 +6,12 @@
- PROG=	telnet
- 
- 
--CFLAGS= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
--	-DFILIO_H \
--	-I../lib/libbsd/include -I../lib \
-+CFLAGS+= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
-+	-DFILIO_H -I../lib -I../lib/libbsd/include \
- 	-I$(SSLTOP)/include
- 
- 
- LIBS=   ../lib/libtelnet/libtelnet.a \
--	../lib/libbsd/libbsd.a \
-         $(SSLTOP)/lib/libssl.a \
- 	$(SSLTOP)/lib/libcrypto.a 
- #	$(SSLTOP)/lib/libdes.a

@@ -3,15 +3,13 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1999/01/10 14:11:16 dirk Exp $
+# $Id: Makefile,v 1.7 1999/03/26 08:44:57 dirk Exp $
 
 DISTNAME=		SSLtelnet-0.13
 CATEGORIES=		net security
 MASTER_SITES=		ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
 
 MAINTAINER=		issei@jp.FreeBSD.ORG
-
-BROKEN=			does not work with openssl-0.9.2b at the moment
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 pre-fetch:
