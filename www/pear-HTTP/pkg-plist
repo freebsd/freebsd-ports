@@ -1,0 +1,3 @@
+%%PEARDIR%%/HTTP.php
+%%PKGREGDIR%%/package.xml
+@dirrm %%PKGREGDIR%%
