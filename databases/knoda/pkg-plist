@@ -1,4 +1,5 @@
 bin/knoda
+bin/knoda-rt
 include/hk_kdeboolean.h
 include/hk_kdecombobox.h
 include/hk_kdegrid.h
@@ -138,6 +139,7 @@ share/icons/hicolor/16x16/apps/knoda.png
 share/icons/hicolor/32x32/apps/knoda.png
 share/icons/locolor/16x16/apps/knoda.png
 share/icons/locolor/32x32/apps/knoda.png
+share/locale/bg/LC_MESSAGES/knoda.mo
 share/locale/de/LC_MESSAGES/knoda.mo
 share/locale/es/LC_MESSAGES/knoda.mo
 share/locale/fr/LC_MESSAGES/knoda.mo

@@ -1,35 +1,30 @@
---- utilities/Makefile.in.orig	Sun Mar 14 20:49:52 2004
-+++ utilities/Makefile.in	Sun Apr  4 01:58:38 2004
-@@ -150,25 +150,25 @@
- 		hk_importcsv hk_report 
- 
- 
+--- utilities/Makefile.in.orig	Sun Mar 13 19:46:30 2005
++++ utilities/Makefile.in	Fri Apr  1 20:52:27 2005
+@@ -221,20 +221,20 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ INCLUDES = -I../hk_classes
 -hk_report_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_report_LDFLAGS = -lhk_classes -L../hk_classes
++hk_report_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_report_SOURCES = hk_reportutility.cpp
- 
  
 -#hk_webform_LDFLAGS = -lhk_classes -ldl -L../hk_classes
 +#hk_webform_LDFLAGS = -lhk_classes -L../hk_classes
  #hk_webform_SOURCES = hk_webformutility.cpp
 -hk_actionquery_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_actionquery_LDFLAGS = -lhk_classes -L../hk_classes
++hk_actionquery_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_actionquery_SOURCES = hk_actionqueryutility.cpp
- 
 -hk_exportxml_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exportxml_LDFLAGS = -lhk_classes -L../hk_classes
++hk_exportxml_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_exportxml_SOURCES = hk_exportxmlutility.cpp
- 
 -hk_exportcsv_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exportcsv_LDFLAGS = -lhk_classes -L../hk_classes
++hk_exportcsv_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_exportcsv_SOURCES = hk_exportcsvutility.cpp
- 
 -hk_exporthtml_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exporthtml_LDFLAGS = -lhk_classes -L../hk_classes
++hk_exporthtml_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_exporthtml_SOURCES = hk_exporthtmlutility.cpp
- 
 -hk_importcsv_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_importcsv_LDFLAGS = -lhk_classes -L../hk_classes
++hk_importcsv_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_importcsv_SOURCES = hk_importcsvutility.cpp
- 
  man_MANS = hk_report.1man hk_actionquery.1man hk_exportxml.1man hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man
+ EXTRA_DIST = $(man_MANS)
