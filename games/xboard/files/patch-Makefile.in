@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 29 17:40:14 2004
++++ Makefile.in	Sun Feb 29 17:40:20 2004
+@@ -60,7 +60,7 @@
+ 
+ default: xboard zic2xpm
+ 
+-all: default pseudosource info FAQ html dvi ps
++all: default pseudosource info FAQ html
+ 
+ install: installdirs default
+ 	$(INSTALL_PROGRAM) -s xboard $(bindir)/xboard
