@@ -26,5 +26,6 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${PREFIX}/bin
+	@${CHMOD} u=rxs ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
