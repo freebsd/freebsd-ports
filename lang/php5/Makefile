@@ -21,7 +21,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.a4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -86,11 +86,6 @@ CONFIGURE_ARGS+=--with-regex=apache
 
 EXT_DIR=	20020429
 SAPI_FILE=	"@comment "
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-EXT_DIR:=	${EXT_DIR}-debug
-.endif
 
 CONFLICTS=	php5-cli-5* mod_php5-5* php5-cgi-5*
 .if defined(WITHOUT_APACHE)
@@ -527,11 +522,16 @@ CONFIGURE_ARGS+=--with-zlib
 APXS?=		${LOCALBASE}/sbin/apxs
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes
+APACHE_MPM!=	${APXS} -q MPM_NAME
 .endif
 .if defined(WITH_APACHE2)
+APACHE_MPM?=	${WITH_MPM}
 APACHE_PORT?=	www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp5.so
+.if ${APACHE_MPM} == "worker"
+EXT_DIR:=	${EXT_DIR}-zts
+.endif
 .else
 APACHE_PORT?=	www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
@@ -539,6 +539,11 @@ SAPI_FILE=	libexec/apache/libphp5.so
 .endif
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+EXT_DIR:=	${EXT_DIR}-debug
 .endif
 
 PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
