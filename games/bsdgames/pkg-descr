@@ -1,0 +1,6 @@
+This is a port of the FreeBSD "standard" games as they were just
+before they were removed from the base system.
+
+This source was formerly a part of the FreeBSD base system, and this
+package is based on the final version of that source code, so it
+includes all previous FreeBSD customizations.
