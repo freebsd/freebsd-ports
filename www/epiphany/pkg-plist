@@ -35,16 +35,16 @@ libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/pkgconfig/epiphany-1.6.pc
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
-%%DOCSDIR%%/EphyEmbedPersist.html
-%%DOCSDIR%%/EphyEmbedSingle.html
 %%DOCSDIR%%/EphyNodeDb.html
-%%DOCSDIR%%/EphyPermissionManager.html
 %%DOCSDIR%%/EphyTab.html
 %%DOCSDIR%%/EphyWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/epiphany-EphyEmbedFactory.html
 %%DOCSDIR%%/epiphany-EphyExtensionsManager.html
+%%DOCSDIR%%/epiphany-EphyEmbedPersist.html
+%%DOCSDIR%%/epiphany-EphyEmbedSingle.html
+%%DOCSDIR%%/epiphany-EphyPermissionManager.html
 %%DOCSDIR%%/epiphany-EphyGlade.html
 %%DOCSDIR%%/epiphany-ephy-cookie-manager.html
 %%DOCSDIR%%/epiphany-ephy-password-manager.html
@@ -56,6 +56,7 @@ libdata/pkgconfig/epiphany-1.6.pc
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
@@ -174,6 +175,7 @@ share/locale/pt/LC_MESSAGES/epiphany.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany.mo
 share/locale/ro/LC_MESSAGES/epiphany.mo
 share/locale/ru/LC_MESSAGES/epiphany.mo
+share/locale/rw/LC_MESSAGES/epiphany.mo
 share/locale/sk/LC_MESSAGES/epiphany.mo
 share/locale/sl/LC_MESSAGES/epiphany.mo
 share/locale/sq/LC_MESSAGES/epiphany.mo
