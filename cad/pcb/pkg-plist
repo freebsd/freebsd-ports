@@ -1,47 +1,47 @@
 bin/pcb
 lib/X11/app-defaults/Pcb
-lib/X11/pcb/default_font
-lib/X11/pcb/pcblib
-lib/X11/pcb/pcblib.contents
-lib/X11/pcb/CreateLibrary.sh
-lib/X11/pcb/CreateLibraryContents.sh
-lib/X11/pcb/ListLibraryContents.sh
-lib/X11/pcb/QueryLibrary.sh
-lib/X11/pcb/m4/TTL_74xx_DIL.m4
-lib/X11/pcb/m4/crystal.m4
-lib/X11/pcb/m4/connector.m4
-lib/X11/pcb/m4/generic.m4
-lib/X11/pcb/m4/linear.m4
-lib/X11/pcb/m4/logic.m4
-lib/X11/pcb/m4/lsi.m4
-lib/X11/pcb/m4/memory.m4
-lib/X11/pcb/m4/optical.m4
-lib/X11/pcb/m4/resistor_array.m4
-lib/X11/pcb/m4/resistor_0.25W.m4
-lib/X11/pcb/m4/texas_inst_amplifier.m4
-lib/X11/pcb/m4/texas_inst_voltage_reg.m4
-lib/X11/pcb/m4/transistor.m4
-lib/X11/pcb/m4/TTL_74xx_DIL.list
-lib/X11/pcb/m4/crystal.list
-lib/X11/pcb/m4/connector.list
-lib/X11/pcb/m4/generic.list
-lib/X11/pcb/m4/linear.list
-lib/X11/pcb/m4/logic.list
-lib/X11/pcb/m4/lsi.list
-lib/X11/pcb/m4/memory.list
-lib/X11/pcb/m4/optical.list
-lib/X11/pcb/m4/common.m4
-lib/X11/pcb/m4/resistor_array.list
-lib/X11/pcb/m4/resistor_0.25W.list
-lib/X11/pcb/m4/texas_inst_amplifier.list
-lib/X11/pcb/m4/texas_inst_voltage_reg.list
-lib/X11/pcb/m4/transistor.list
-lib/X11/pcb/m4/connector.inc
-lib/X11/pcb/m4/dil.inc
-lib/X11/pcb/m4/misc.inc
-lib/X11/pcb/m4/qfp.inc
-lib/X11/pcb/m4/plcc.inc
-lib/X11/pcb/m4/to.inc
+lib/pcb/default_font
+lib/pcb/pcblib
+lib/pcb/pcblib.contents
+lib/pcb/CreateLibrary.sh
+lib/pcb/CreateLibraryContents.sh
+lib/pcb/ListLibraryContents.sh
+lib/pcb/QueryLibrary.sh
+lib/pcb/m4/TTL_74xx_DIL.m4
+lib/pcb/m4/crystal.m4
+lib/pcb/m4/connector.m4
+lib/pcb/m4/generic.m4
+lib/pcb/m4/linear.m4
+lib/pcb/m4/logic.m4
+lib/pcb/m4/lsi.m4
+lib/pcb/m4/memory.m4
+lib/pcb/m4/optical.m4
+lib/pcb/m4/resistor_array.m4
+lib/pcb/m4/resistor_0.25W.m4
+lib/pcb/m4/texas_inst_amplifier.m4
+lib/pcb/m4/texas_inst_voltage_reg.m4
+lib/pcb/m4/transistor.m4
+lib/pcb/m4/TTL_74xx_DIL.list
+lib/pcb/m4/crystal.list
+lib/pcb/m4/connector.list
+lib/pcb/m4/generic.list
+lib/pcb/m4/linear.list
+lib/pcb/m4/logic.list
+lib/pcb/m4/lsi.list
+lib/pcb/m4/memory.list
+lib/pcb/m4/optical.list
+lib/pcb/m4/common.m4
+lib/pcb/m4/resistor_array.list
+lib/pcb/m4/resistor_0.25W.list
+lib/pcb/m4/texas_inst_amplifier.list
+lib/pcb/m4/texas_inst_voltage_reg.list
+lib/pcb/m4/transistor.list
+lib/pcb/m4/connector.inc
+lib/pcb/m4/dil.inc
+lib/pcb/m4/misc.inc
+lib/pcb/m4/qfp.inc
+lib/pcb/m4/plcc.inc
+lib/pcb/m4/to.inc
 @unexec install-info --delete %D/info/pcb.info %D/info/dir
 info/pcb.info
 @exec install-info --section="Utilities" --entry="* PCB: (pcb).		Interactive printed circuit board layout system for X11" %D/info/pcb.info %D/info/dir
@@ -50,5 +50,5 @@ share/doc/pcb/pcb.html
 share/doc/pcb/pcb.ps
 share/doc/pcb/refcard.ps
 @dirrm share/doc/pcb
-@dirrm lib/X11/pcb/m4
-@dirrm lib/X11/pcb
+@dirrm lib/pcb/m4
+@dirrm lib/pcb

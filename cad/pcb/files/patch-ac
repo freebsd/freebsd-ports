@@ -1,15 +1,16 @@
---- config.h.orig	Wed Jan 28 17:28:11 1998
-+++ config.h	Wed Jan 28 17:29:04 1998
-@@ -36,7 +36,7 @@
+--- config.h.orig	Sun Jun  8 05:24:52 2003
++++ config.h	Sun Jun  8 05:26:54 2003
+@@ -36,15 +36,15 @@
   * (LIBDIR is defined by imake)
   *
   */
 -INFODIR = /usr/info
+-PCBLIBDIR = $(LIBDIR)/pcb
 +INFODIR = ${PREFIX}/info
- PCBLIBDIR = $(LIBDIR)/pcb
++PCBLIBDIR = ${PREFIX}/lib/pcb
  DEFAULTFONT = default_font
  DEFAULTLIBRARY = pcblib
-@@ -44,7 +44,7 @@
+ 
  /* ----------------------------------------------------------------------
   * the name of GNU m4 (you MUST use GNU m4)
   */

@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Thu Jan 14 02:52:36 1999
-+++ src/Imakefile	Sun Dec 10 17:17:07 2000
+--- src/Imakefile.orig	Sun Jun  8 04:21:06 2003
++++ src/Imakefile	Sun Jun  8 04:21:19 2003
 @@ -67,7 +67,7 @@
  
  depend:: parse_l.c parse_y.c

@@ -1,0 +1,17 @@
+--- src/error.h.orig	Sun Jun  8 19:04:52 2003
++++ src/error.h	Sun Jun  8 19:06:16 2003
+@@ -37,14 +37,8 @@
+ #define	STATUS_BREAK	1
+ #define	STATUS_ERROR	-1
+ 
+-#if (!defined(__GLIBC__) || (__GLIBC__ < 2) || \
+-((__GLIBC__ == 2) && defined(__powerpc__) && (__GLIBC_MINOR__ == 0)))
+-void	Message();
+-void	MyFatal();
+-#else
+ void	Message(char *Format, ...);
+ void	MyFatal(char *Format, ...);
+-#endif
+ void	OpenErrorMessage(char *);
+ void	PopenErrorMessage(char *);
+ void	OpendirErrorMessage(char *);
