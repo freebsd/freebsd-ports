@@ -1,0 +1,47 @@
+*shared*
+
+# The _tkinter module.
+#
+# The TKPATH variable is always enabled, to save you the effort.
+TKPATH=:lib-tk
+
+# The command for _tkinter is long and site specific.  Please
+# uncomment and/or edit those parts as indicated.  If you don't have a
+# specific extension (e.g. Tix or BLT), leave the corresponding line
+# commented out.  (Leave the trailing backslashes in!  If you
+# experience strange errors, you may want to join all uncommented
+# lines and remove the backslashes -- the backslash interpretation is
+# done by the shell's "read" command and it may not be implemented on
+# every system.
+
+# *** Always uncomment this (leave the leading underscore in!):
+_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT -I${X11BASE}/include -I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2 -L${PREFIX}/lib -ltk82 -ltcl82 -L${X11BASE}/lib -lX11
+
+# *** Uncommend and edit to reflect where your X11 header files are:
+#	-I/usr/X11R6/include \
+# *** Or uncomment this for Solaris:
+#	-I/usr/openwin/include \
+# *** Uncomment and edit to reflect where your Tcl/Tk headers are:
+#	-I/usr/local/include/tcl8.1 -I/usr/local/include/tk8.1 \
+# *** Uncomment and edit for Tix extension only:
+#	-DWITH_TIX -ltix4.1.8.0 \
+# *** Uncomment and edit for BLT extension only:
+#	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
+# *** Uncomment and edit for PIL (TkImaging) extension only:
+#	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
+# *** Uncomment and edit for Mesa (what's Mesa?):
+#	-lGL -lGLU -lMesatk -lMesaaux \
+# *** Uncomment and edit for TOGL extension only:
+#	-DWITH_TOGL togl.c \
+# *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
+#	-L/usr/local/lib \
+# *** Uncomment and edit to reflect your Tcl/Tk versions:
+#	-ltk80 -ltcl80 \
+# *** Uncomment and edit to reflect where your X11 libraries are:
+#	-L/usr/X11R6/lib \
+# *** Or uncomment this for Solaris:
+#	-L/usr/openwin/lib \
+# *** Always uncomment this; X11 libraries to link with:
+#	-lX11 -lXext -lXmu
+
+
