@@ -8,6 +8,7 @@
 
 PORTNAME=	cscope
 PORTVERSION=	15.1
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/cscope/  \
 MASTER_SITES=	http://download.sourceforge.net/cscope/
