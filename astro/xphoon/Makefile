@@ -3,13 +3,13 @@
 # Date created:		14 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1996/10/31 10:45:45 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/15 22:35:10 obrien Exp $
 #
 
 DISTNAME=	xphoon
 PKGNAME=	xphoon-91.9.18
 CATEGORIES=	astro x11
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11//R5-contrib/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	asami@FreeBSD.ORG
