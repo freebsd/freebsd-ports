@@ -30,10 +30,10 @@
  
  ifdef DEBUGALLEG
 -	LDLIBS += `allegro-config --libs debug` $(LIBS)
-+	LDLIBS += `/usr/local/bin/allegro-config --libs debug` $(LIBS)
++	LDLIBS += `%%ALLEGRO_CONFIG%% --libs debug` $(LIBS)
  else
 -	LDLIBS += `allegro-config --libs` $(LIBS)
-+	LDLIBS += `/usr/local/bin/allegro-config --libs` $(LIBS)
++	LDLIBS += `%%ALLEGRO_CONFIG%% --libs` $(LIBS)
  endif
  
  ifdef MESABUILD
