@@ -1,111 +1,124 @@
-*** freebsd.c.orig	Fri Oct 21 03:07:37 1994
---- src/kernel/freebsd.c	Tue Apr 11 19:30:45 1995
+*** src/kernel/freebsd.c.orig	Fri Oct 21 01:07:37 1994
+--- src/kernel/freebsd.c	Sun Apr 16 21:21:02 1995
 ***************
-*** 1,5 ****
-  /*
-! ** kernel/other.c	Low level kernel access functions for FreeBSD 2.x
-  **
-  ** This program is in the public domain and may be used freely by anyone
-  ** who wants to. 
---- 1,5 ----
-  /*
-! ** kernel/other.c	Low level kernel access functions for FreeBSD 2.1
-  **
-  ** This program is in the public domain and may be used freely by anyone
-  ** who wants to. 
+*** 53,58 ****
+--- 53,61 ----
+  #include "identd.h"
+  #include "error.h"
+  
++ #ifdef INPLOOKUP_SETLOCAL
++ #define	_HAVE_OLD_INPCB
++ #endif
+  
+  extern void *calloc();
+  extern void *malloc();
 ***************
 *** 76,82 ****
+--- 79,89 ----
   
   static int nfile;
   
-! static struct inpcb tcb;
-  
-  int k_open()
-  {
---- 76,82 ----
-  
-  static int nfile;
-  
-! static struct inpcbhead tcb;
++ #ifdef _HAVE_OLD_INPCB
+  static struct inpcb tcb;
++ #else
++ static struct inpcbhead tcb;
++ #endif
   
   int k_open()
   {
 ***************
-*** 127,158 ****
+*** 127,148 ****
   ** Returns NULL if no match.
   */
   static struct socket *
-!     getlist(pcbp, faddr, fport, laddr, lport)
-!   struct inpcb *pcbp;
+      getlist(pcbp, faddr, fport, laddr, lport)
+    struct inpcb *pcbp;
     struct in_addr *faddr;
     int fport;
     struct in_addr *laddr;
     int lport;
   {
-!   struct inpcb *head;
+    struct inpcb *head;
   
-!   if (!pcbp)
+    if (!pcbp)
       return NULL;
   
--   
--   head = pcbp->inp_prev;
+!   
+    head = pcbp->inp_prev;
     do 
     {
-!     if ( pcbp->inp_faddr.s_addr == faddr->s_addr &&
-! 	 pcbp->inp_laddr.s_addr == laddr->s_addr &&
-! 	 pcbp->inp_fport        == fport &&
-! 	 pcbp->inp_lport        == lport )
-!        return pcbp->inp_socket;
-!   } while (pcbp->inp_next != head &&
-! 	   getbuf((long) pcbp->inp_next,
-! 		  pcbp,
-! 		  sizeof(struct inpcb),
-! 		  "tcblist"));
-  
-    return NULL;
-  }
---- 127,159 ----
+      if ( pcbp->inp_faddr.s_addr == faddr->s_addr &&
+  	 pcbp->inp_laddr.s_addr == laddr->s_addr &&
+  	 pcbp->inp_fport        == fport &&
+--- 134,173 ----
   ** Returns NULL if no match.
   */
   static struct socket *
-!     getlist(pcbphead, faddr, fport, laddr, lport)
-!   struct inpcbhead *pcbphead;
++ #ifdef _HAVE_OLD_INPCB
+      getlist(pcbp, faddr, fport, laddr, lport)
+    struct inpcb *pcbp;
++ #else
++     getlist(pcbhead, faddr, fport, laddr, lport)
++   struct inpcbhead *pcbhead;
++ #endif
     struct in_addr *faddr;
     int fport;
     struct in_addr *laddr;
     int lport;
   {
-!   struct inpcb *head, pcbp;
++ #ifdef _HAVE_OLD_INPCB
+    struct inpcb *head;
++ #else
++   struct inpcb *head, pcbp;
++ #endif
   
-!   head = pcbphead->lh_first;
-!   if (!head)
++ #ifdef _HAVE_OLD_INPCB
+    if (!pcbp)
       return NULL;
++ #else
++   head = pcbhead->lh_first;
++   if (!head)
++     return NULL;
++ #endif
++  
   
+! #ifdef _HAVE_OLD_INPCB
+    head = pcbp->inp_prev;
++ #endif
     do 
     {
-!     if (!getbuf((long) head,
-! 	   &pcbp,
-! 	   sizeof(struct inpcb),
-! 	   "tcblist"))
-! 	break;
-!     if ( pcbp.inp_faddr.s_addr == faddr->s_addr &&
-! 	 pcbp.inp_laddr.s_addr == laddr->s_addr &&
-! 	 pcbp.inp_fport        == fport &&
-! 	 pcbp.inp_lport        == lport )
-!        return pcbp.inp_socket;
-!     head = pcbp.inp_list.le_next;
-!   } while (head != NULL);
++ #ifdef _HAVE_OLD_INPCB
+      if ( pcbp->inp_faddr.s_addr == faddr->s_addr &&
+  	 pcbp->inp_laddr.s_addr == laddr->s_addr &&
+  	 pcbp->inp_fport        == fport &&
+***************
+*** 153,158 ****
+--- 178,193 ----
+  		  pcbp,
+  		  sizeof(struct inpcb),
+  		  "tcblist"));
++ #else
++     if (!getbuf((long) head, &pcbp, sizeof(struct inpcb), "tcblist"))
++        break;
++     if (pcbp.inp_faddr.s_addr == faddr->s_addr &&
++ 	pcbp.inp_fport        == fport &&
++ 	pcbp.inp_lport        == lport )
++ 	return(pcbp.inp_socket);
++     head = pcbp.inp_list.le_next;
++   } while (head != NULL);
++ #endif
   
     return NULL;
   }
 ***************
-*** 185,192 ****
-    /* -------------------- TCP PCB LIST -------------------- */
+*** 186,192 ****
+--- 221,229 ----
     if (!getbuf(nl[N_TCB].n_value, &tcb, sizeof(tcb), "tcb"))
       return -1;
--   
--   tcb.inp_prev = (struct inpcb *) nl[N_TCB].n_value;
+    
++ #ifdef _HAVE_OLD_INPCB
+    tcb.inp_prev = (struct inpcb *) nl[N_TCB].n_value;
++ #endif
     sockp = getlist(&tcb, faddr, fport, laddr, lport);
    
     if (!sockp)
---- 186,191 ----
