@@ -24,5 +24,10 @@ mach=$(cat ${buildroot}/ulist)
 num=$(echo $(echo $mach | wc -w))
 set $mach
 shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
-echo "dispatching: ssh -a $1 ${command} ${branch} $args"
-ssh -a $1 ${command} ${branch} $args
+if [ "x$NOCLEAN" != "x" ]; then
+  echo "dispatching: ssh -a $1 ${command} ${branch} -noclean $args"
+  ssh -a $1 ${command} ${branch} -noclean $args
+else
+  echo "dispatching: ssh -a $1 ${command} ${branch} $args"
+  ssh -a $1 ${command} ${branch} $args
+fi
