@@ -1,50 +1,19 @@
-*** libdi_d/fbioc.c.orig	Sat Feb  5 02:26:26 2000
---- libdi_d/fbioc.c	Sat May  6 08:26:53 2000
+*** util_d/Imakefile.orig	Wed May 16 15:59:16 2001
+--- util_d/Imakefile	Sat Jul  7 03:15:11 2001
 ***************
-*** 123,129 ****
-   *	FALSE - ioctl failed
+*** 43,49 ****
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
    */
-  STATIC bool_t
-! fbioc_send(int cmd, void *arg, bool_t prnerr)
-  {
-  	int		i,
-  			ret;
---- 123,129 ----
-   *	FALSE - ioctl failed
+! LOCAL_LIBRARIES= XmClientLibs
+  
+  
+  /**** Optional defines:  Change as you see fit. *****************************
+--- 43,49 ----
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
    */
-  STATIC bool_t
-! fbioc_send(unsigned int cmd, void *arg, bool_t prnerr)
-  {
-  	int		i,
-  			ret;
-***************
-*** 135,148 ****
-  	if (app_data.debug) {
-  		for (i = 0; iname[i].name != NULL; i++) {
-  			if (iname[i].cmd == cmd) {
-! 				(void) fprintf(errfp, "\nIOCTL: %s arg=0x%x ",
-! 					       iname[i].name, (int) arg);
-  				break;
-  			}
-  		}
-  		if (iname[i].name == NULL)
-! 			(void) fprintf(errfp, "\nIOCTL: 0x%x arg=0x%x ",
-! 				       cmd, (int) arg);
-  	}
+! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
   
-  	ret = ioctl(fbioc_fd, cmd, arg);
---- 135,148 ----
-  	if (app_data.debug) {
-  		for (i = 0; iname[i].name != NULL; i++) {
-  			if (iname[i].cmd == cmd) {
-! 				(void) fprintf(errfp, "\nIOCTL: %s arg=0x%lx ",
-! 					       iname[i].name, (long) arg);
-  				break;
-  			}
-  		}
-  		if (iname[i].name == NULL)
-! 			(void) fprintf(errfp, "\nIOCTL: 0x%x arg=0x%lx ",
-! 				       cmd, (long) arg);
-  	}
   
-  	ret = ioctl(fbioc_fd, cmd, arg);
+  /**** Optional defines:  Change as you see fit. *****************************
