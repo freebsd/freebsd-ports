@@ -12,7 +12,8 @@ MASTER_SITES=	http://ulli.linuxbox.com/gnome2wmaker/
 
 MAINTAINER=     reg@FreeBSD.org
 
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		wmaker:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		wmaker:${PORTSDIR}/x11-wm/windowmaker
 
