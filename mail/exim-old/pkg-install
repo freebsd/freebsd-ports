@@ -13,17 +13,20 @@
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
-user=exim
+uid=26
+gid=6
+user=mailnull
 group=mail
 
 if [ "$2" = "PRE-INSTALL" ]; then
-	if /usr/bin/id ${user} 2>/dev/null; then
-		echo "You already have a user '${user}', so Exim will use it."
-	else
-		echo "You need a user '${user}'..."
-		/usr/sbin/pw useradd ${user} -c "Mail Transfer Agent" \
-		    -g ${group} -d /nonexistent -s /sbin/nologin || exit 1
-		echo "Added user '${user}', Exim will use it."
+	# uid=26(mailnull) gid=26(mailnull) groups=26(mailnull)
+	if ! /usr/bin/id ${uid} | /usr/bin/grep "uid=${uid}(${user})"; then
+		echo "Exim requires user ${user} (UID ${uid}).  Please update your system." 1>&2
+		exit 1
+	fi
+	if ! /usr/bin/grep "^${group}:[^:]*:${gid}:" < /etc/group; then
+		echo "Exim requires group ${group} (GID ${gid}).  Please update your system." 1>&2
+		exit 1
 	fi
 fi
 
