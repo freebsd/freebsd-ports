@@ -1,2 +1,3 @@
 %%SITE_PERL%%/BFD.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/BFD 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BFD/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BFD

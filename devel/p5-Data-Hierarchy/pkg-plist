@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Data/Hierarchy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy/.packlist
 @dirrm %%SITE_PERL%%/Data
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true

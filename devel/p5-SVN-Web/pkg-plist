@@ -12,8 +12,9 @@ bin/svnweb-install
 %%SITE_PERL%%/SVN/Web/I18N/en.po
 %%SITE_PERL%%/SVN/Web/I18N/zh_cn.po
 %%SITE_PERL%%/SVN/Web/I18N/zh_tw.po
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
 @dirrm %%SITE_PERL%%/SVN/Web/I18N
 @dirrm %%SITE_PERL%%/SVN/Web
 @unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN 2>/dev/null || true
