@@ -2274,6 +2274,7 @@ gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
 gnome2		ports/x11/gnome2
 gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
+gnome2-lite	ports/x11/gnome2-lite
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
