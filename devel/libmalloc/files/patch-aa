@@ -1,164 +1,25 @@
-*** Makefile.orig	Mon Jan  9 08:34:51 1995
---- Makefile	Sun Jan 29 14:16:10 1995
-***************
-*** 11,18 ****
-  # puts malloc.h in $INCDIR.
-  #
-  
-! LIBDIR=$(HOME)/lib/$(ARCH)
-! INCDIR=$(HOME)/include
-  
-  # neutralize SystemV genius
-  SHELL=/bin/sh
---- 11,18 ----
-  # puts malloc.h in $INCDIR.
-  #
-  
-! LIBDIR=${PREFIX}/lib
-! INCDIR=${PREFIX}/include
-  
-  # neutralize SystemV genius
-  SHELL=/bin/sh
-***************
-*** 46,52 ****
-  # -DHAVE_MMAP can be defined for SunOS4.x and other systems
-  # that have a general purpose mmap call that allows memory-mapped files.
-  #
-! NORMALDEFS=-DHAVE_MMAP # -DSTDHEADERS -DSHORTNAMES -DUSESTDIO
-  
-  # CC = gcc -ansi -Wall -O # -pedantic # add -pedantic if you fixed your includes.
-  # SGI needs cc -xansi -D__STDC__ on Irix4.0.5.
---- 46,52 ----
-  # -DHAVE_MMAP can be defined for SunOS4.x and other systems
-  # that have a general purpose mmap call that allows memory-mapped files.
-  #
-! NORMALDEFS=-DHAVE_MMAP -DSTDHEADERS # -DSHORTNAMES -DUSESTDIO
-  
-  # CC = gcc -ansi -Wall -O # -pedantic # add -pedantic if you fixed your includes.
-  # SGI needs cc -xansi -D__STDC__ on Irix4.0.5.
-***************
-*** 62,72 ****
---- 62,75 ----
-  RANLIB = ranlib
-  
-  LDFLAGS=#-Bstatic
-+ VERSION=1.18
-  
-  # only developers should have to change stuff below this line
-  
-  EXT=_d
-  LIBMALLOC=libmalloc$(EXT).a
-+ LIBSMALLOC=libmalloc${EXT}.so.${VERSION}
-+ 
-  PROGS=testmalloc$(EXT) simumalloc$(EXT) teststomp$(EXT) maltrace$(EXT)
-  
-  DEFINES= $(NORMALDEFS) $(DEBUGDEFS)
-***************
-*** 108,116 ****
-  
-  CFLAGS = $(CDEBUGFLAGS) $(INCLUDES) $(DEFINES)
-  
-! all: pass clean libmalloc
-  
-! pass: $(LIBMALLOC) $(PROGS) out$(EXT)
-  
-  libmalloc:
-  	$(MAKE) -f Makefile $(MFLAGS) CC="$(CC)" DEBUGDEFS="$(FASTDEFS)" \
---- 111,126 ----
-  
-  CFLAGS = $(CDEBUGFLAGS) $(INCLUDES) $(DEFINES)
-  
-! .c.o:
-! 	${CC} -c ${CFLAGS} $< -o $@
-! 	${CC} -c -fpic ${CFLAGS} $< -o shared/$@
-! 
-! all: mkdir pass clean libmalloc
-  
-! mkdir:
-! 	@mkdir -p shared
-! 
-! pass: $(LIBMALLOC) $(LIBSMALLOC) $(PROGS) out$(EXT)
-  
-  libmalloc:
-  	$(MAKE) -f Makefile $(MFLAGS) CC="$(CC)" DEBUGDEFS="$(FASTDEFS)" \
-***************
-*** 134,139 ****
---- 144,155 ----
-  	-$(RANLIB) $(LIBMALLOC)
-  	touch .lib$(EXT)
-  
-+ $(LIBSMALLOC): $(OBJS)
-+ 	rm -f $(LIBSMALLOC) ${SPLAYOBJ}
-+ 	cd splay; $(MAKE) $(MFLAGS) DEFINES="$(DEFINES)" \
-+ 		LIBMALLOC=../$(LIBMALLOC) CC="$(CC) -fpic"
-+ 	(cd shared; ld -Bshareable -o ../$(LIBSMALLOC) $(OBJS) ../${SPLAYOBJ})
-+ 
-  $(SPLAYOBJ): .foo
-  	cd splay; $(MAKE) $(MFLAGS) DEFINES="$(DEFINES)" \
-  		LIBMALLOC=../$(LIBMALLOC) CC="$(CC)"
-***************
-*** 149,155 ****
-  onefile.c: $(SRCS) $(SPLAYSRC)
-  	rm -f onefile.c
-  	cat $(SRCS) $(SPLAYSRC) | sed '/RCSID/d' > onefile.c
-! 	
-  .lint: $(SRCS)
-  	($(LINT) $(LINTFLAGS) $(DEFINES) $(INCLUDES) $(SRCS); \
-  		$(LINT) $(LINTFLAGS) $(DEFINES) $(INCLUDES) -I.. $(SPLAYSRC)) \
---- 165,171 ----
-  onefile.c: $(SRCS) $(SPLAYSRC)
-  	rm -f onefile.c
-  	cat $(SRCS) $(SPLAYSRC) | sed '/RCSID/d' > onefile.c
-! 
-  .lint: $(SRCS)
-  	($(LINT) $(LINTFLAGS) $(DEFINES) $(INCLUDES) $(SRCS); \
-  		$(LINT) $(LINTFLAGS) $(DEFINES) $(INCLUDES) -I.. $(SPLAYSRC)) \
-***************
-*** 163,169 ****
-  
-  clean:
-  	-rm -f *.o \#* *~ core a.out gmon.out mon.out onefile.c *.sL prof.out
-! 	cd splay; $(MAKE) clean
-  
-  veryclean: clean cleanprogs
-  	make EXT= cleanprogs
---- 179,186 ----
-  
-  clean:
-  	-rm -f *.o \#* *~ core a.out gmon.out mon.out onefile.c *.sL prof.out
-! 	-(cd shared; rm -f *.o \#* *~)
-! 	(cd splay; $(MAKE) clean)
-  
-  veryclean: clean cleanprogs
-  	make EXT= cleanprogs
-***************
-*** 174,181 ****
-  	-$(RANLIB) $(LIBDIR)/libmalloc.a
-  	install -c -m 644 libmalloc_d.a $(LIBDIR)
-  	-$(RANLIB) $(LIBDIR)/libmalloc_d.a
-  	install -c -m 644 malloc.h $(INCDIR)
-! 	
-  .id: $(SRCS)
-  	mkid $(SRCS) $(SPLAYSRC) $(HDRS) $(SPLAYHDR)
-  	touch .id
---- 191,199 ----
-  	-$(RANLIB) $(LIBDIR)/libmalloc.a
-  	install -c -m 644 libmalloc_d.a $(LIBDIR)
-  	-$(RANLIB) $(LIBDIR)/libmalloc_d.a
-+ 	install -c -m 644 ${LIBSMALLOC} $(LIBDIR)
-  	install -c -m 644 malloc.h $(INCDIR)
-! 
-  .id: $(SRCS)
-  	mkid $(SRCS) $(SPLAYSRC) $(HDRS) $(SPLAYHDR)
-  	touch .id
---- externs.h.orig	Fri Jul 12 13:00:12 1996
-+++ externs.h	Fri Jul 12 13:01:21 1996
-@@ -39,7 +39,7 @@
+--- externs.h.orig	Mon Apr  3 10:55:34 1995
++++ externs.h	Tue Dec  1 02:04:28 1998
+@@ -39,7 +39,10 @@
  
  extern int fputs proto((const char *, FILE *));
  extern int fflush proto((FILE *));
--extern int setvbuf proto((FILE *, char *, int, memsize_t));
-+extern int setvbuf proto((FILE *, char *, int, size_t));
++/* Get declarations from system headers for BSD -- obrien@freebsd.org */
++#if !(defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__))
+ extern int setvbuf proto((FILE *, char *, int, memsize_t));
++#endif
  
  /* Character Handling: <string.h> */
  
+@@ -106,8 +109,11 @@
+ extern univptr_t _mal_mmap proto((size_t));
+ 
+ #ifdef HAVE_MMAP
++/* Get declarations from system headers for BSD -- obrien@freebsd.org */
++#if !(defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__))
+ extern int madvise proto((caddr_t, size_t, int));
+ extern caddr_t mmap proto((caddr_t, size_t, int, int, int, off_t));
++#endif
+ #endif
+ 
+ #endif /* EXTERNS_H__ */ /* Do not add anything after this line */
