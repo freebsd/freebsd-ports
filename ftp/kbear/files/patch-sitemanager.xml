@@ -1,19 +1,19 @@
---- kbear/plugins/sitemanager/sitemanager.xml.orig	Thu Jul 18 18:00:11 2002
-+++ kbear/plugins/sitemanager/sitemanager.xml	Thu Jul 18 21:28:50 2002
+--- kbear/plugins/sitemanager/sitemanager.xml.orig	Fri Jul 18 13:00:26 2003
++++ kbear/plugins/sitemanager/sitemanager.xml	Fri Jul 18 13:00:27 2003
 @@ -345,16 +345,957 @@
-  <group label="Imported Bookmarks" />
-  <group label="Personal" />
-  <group label="BSD Sites" >
--  <site label="FreeBSD" >
--   <protocol>ftp</protocol>
--   <host>ftp.freebsd.org</host>
--   <port>21</port>
--   <remote_path>/pub/FreeBSD</remote_path>
--   <description/>
--   <anonymous/>
--   <mark_partial/>
--   <auto_reconnect sleep="30" count="10" />
--  </site>
+ <group label="Imported Bookmarks" />
+ <group label="Personal" />
+ <group label="BSD Sites" >
+-<site label="FreeBSD" >
+-<protocol>ftp</protocol>
+-<host>ftp.freebsd.org</host>
+-<port>21</port>
+-<remote_path>/pub/FreeBSD</remote_path>
+-<description/>
+-<anonymous/>
+-<mark_partial/>
+-<auto_reconnect sleep="30" count="10" />
+-</site>
 +  <group label="FreeBSD">
 +   <site label="FreeBSD" >
 +    <protocol>ftp</protocol>
@@ -68,7 +68,7 @@
 +   </site>
 +
 +   </group>
-+   <group label="FreeBSD mirrors in Asia">
++   <group label="FreeBSD Mirrors in Asia">
 +   <site label="China" >
 +    <protocol>ftp</protocol>
 +    <host>ftp.cn.freebsd.org</host>
@@ -965,6 +965,6 @@
 +   </site>
 +   </group>
 +  </group>
-   <site label="NetBSD" >
-    <protocol>ftp</protocol>
-    <host>ftp.netbsd.org</host>
+ <site label="NetBSD" >
+ <protocol>ftp</protocol>
+ <host>ftp.netbsd.org</host>
