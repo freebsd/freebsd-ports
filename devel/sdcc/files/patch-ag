@@ -1,0 +1,21 @@
+*** sdcdb/Makefile.in.orig	Mon Nov 29 19:38:51 1999
+--- sdcdb/Makefile.in	Mon Nov 29 19:39:26 1999
+***************
+*** 53,60 ****
+  # ---------------------------------------------------
+  install: all installdirs
+  	$(INSTALL) -s $(TARGET) $(bindir)/sdcdb
+! 	cp $(PRJDIR)/sdcdb/sdcdb.el $(bindir)/sdcdb.el
+! 	cp $(PRJDIR)/sdcdb/sdcdbsrc.el $(bindir)/sdcdbsrc.el
+  
+  
+  # Deleting all the installed files
+--- 53,60 ----
+  # ---------------------------------------------------
+  install: all installdirs
+  	$(INSTALL) -s $(TARGET) $(bindir)/sdcdb
+! 	$(INSTALL) -c $(PRJDIR)/sdcdb/sdcdb.el $(bindir)/sdcdb.el
+! 	$(INSTALL) -c $(PRJDIR)/sdcdb/sdcdbsrc.el $(bindir)/sdcdbsrc.el
+  
+  
+  # Deleting all the installed files

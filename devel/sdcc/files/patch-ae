@@ -1,0 +1,36 @@
+*** sdcc51inc/Makefile.in.orig	Mon Oct 18 09:39:07 1999
+--- sdcc51inc/Makefile.in	Fri Nov 12 17:21:47 1999
+***************
+*** 37,43 ****
+  # Compiling and installing everything and runing test
+  # ---------------------------------------------------
+  install: all installdirs
+! 	$(CP) *.h $(datadir)/sdcc51inc/
+  
+  
+  # Deleting all the installed files
+--- 37,43 ----
+  # Compiling and installing everything and runing test
+  # ---------------------------------------------------
+  install: all installdirs
+! 	$(INSTALL) -m 644 *.h $(datadir)/sdcc51inc/
+  
+  
+  # Deleting all the installed files
+***************
+*** 59,65 ****
+  # Creating installation directories
+  # ---------------------------------
+  installdirs:
+! 	[ -d $(datadir)/sdcc51inc ] || mkdir -p $(datadir)/sdcc51inc
+  
+  
+  # Creating dependencies
+--- 59,65 ----
+  # Creating installation directories
+  # ---------------------------------
+  installdirs:
+! 	[ -d $(datadir)/sdcc51inc ] || $(INSTALL) -d -m 755 $(datadir)/sdcc51inc
+  
+  
+  # Creating dependencies

@@ -1,5 +1,5 @@
-*** sdcc51lib/Makefile.in.orig	Thu Aug 26 18:55:13 1999
---- sdcc51lib/Makefile.in	Thu Aug 26 18:57:01 1999
+*** sdcc51lib/Makefile.in.orig	Mon Nov 22 15:49:50 1999
+--- sdcc51lib/Makefile.in	Mon Nov 29 19:28:44 1999
 ***************
 *** 63,69 ****
   
@@ -8,7 +8,7 @@
 ! 	  mkdir $$model; \
   	  $(MAKE) CFLAGS="$(CFLAGS) --model-$$model" objects; \
   	  mv *.rel $$model; \
-  	done
+  	  mv *.asm $$model; \
 --- 63,69 ----
   
   models:
@@ -16,9 +16,9 @@
 ! 	  $(INSTALL) -d -m 755 $$model; \
   	  $(MAKE) CFLAGS="$(CFLAGS) --model-$$model" objects; \
   	  mv *.rel $$model; \
-  	done
+  	  mv *.asm $$model; \
 ***************
-*** 71,80 ****
+*** 73,84 ****
   # Compiling and installing everything and runing test
   # ---------------------------------------------------
   install: installdirs
@@ -26,22 +26,26 @@
   	for model in $(MODELS); do \
   	 [ -d $$model ] || $(MAKE) all; \
 ! 	 $(CP) $$model/*.rel *.lib $(datadir)/sdcc51lib/$$model/; \
+! 	 $(CP) $$model/*.asm $(datadir)/sdcc51lib/$$model/; \
+! 	 $(CP) $$model/*.cdb $(datadir)/sdcc51lib/$$model/; \
   	done
   
   
---- 71,80 ----
+--- 73,84 ----
   # Compiling and installing everything and runing test
   # ---------------------------------------------------
   install: installdirs
-! 	$(INSTALL) -c -m 644 *.c $(datadir)/sdcc51lib/
+! 	$(INSTALL) *.c $(datadir)/sdcc51lib/
   	for model in $(MODELS); do \
   	 [ -d $$model ] || $(MAKE) all; \
-! 	 $(INSTALL) -c -m 644 $$model/*.rel *.lib $(datadir)/sdcc51lib/$$model/; \
+! 	 $(INSTALL) $$model/*.rel *.lib $(datadir)/sdcc51lib/$$model/; \
+! 	 $(INSTALL) $$model/*.asm $(datadir)/sdcc51lib/$$model/; \
+! 	 $(INSTALL) $$model/*.cdb $(datadir)/sdcc51lib/$$model/; \
   	done
   
   
 ***************
-*** 100,109 ****
+*** 104,113 ****
   # Creating installation directories
   # ---------------------------------
   installdirs:
@@ -52,7 +56,7 @@
   	done
   
   
---- 100,109 ----
+--- 104,113 ----
   # Creating installation directories
   # ---------------------------------
   installdirs:
