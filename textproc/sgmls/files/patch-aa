@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jun  2 19:18:37 2000
++++ configure	Fri Jun  2 19:18:50 2000
+@@ -605,7 +605,7 @@
+ edit="$edit -e 's/^typedef .*VOID;/typedef $void_ret VOID;/'"
+ edit="$edit -e 's/^typedef .*UNIV;/typedef ${void_star}UNIV;/'"
+ 
+-if test "X$(PREFIX)" != "X/usr/local"
++if test "X$PREFIX" != "X/usr/local"
+ then
+ 	edit="$edit -e '/DEFAULT_PATH/s;/usr/local;$PREFIX;g'"
+ fi

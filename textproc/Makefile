@@ -70,6 +70,7 @@
     SUBDIR += sarep
     SUBDIR += se-ispell
     SUBDIR += sgmlformat
+    SUBDIR += sgmls
     SUBDIR += sgmltools
     SUBDIR += sgrep
     SUBDIR += sp
