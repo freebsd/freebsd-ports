@@ -1,0 +1,5 @@
+Class::DBI::AutoLoader scans the tables in a given database, and auto-generates
+the Class::DBI classes. These are loaded into your package when you import
+Class::DBI::AutoLoader.
+
+WWW: http://search.cpan.org/dist/Class-DBI-AutoLoader/
