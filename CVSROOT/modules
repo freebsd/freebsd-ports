@@ -5434,6 +5434,7 @@ p5-HTML-Webmake	ports/www/p5-HTML-Webmake
 p5-HTML-Widgets-SelectLayers	ports/www/p5-HTML-Widgets-SelectLayers
 p5-HTTP-DAV	ports/www/p5-HTTP-DAV
 p5-HTTP-GHTTP	ports/www/p5-HTTP-GHTTP
+p5-HTTP-WebTest	ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-Tools	ports/www/p5-HTTPD-Tools
 p5-Heap		ports/devel/p5-Heap
