@@ -6,6 +6,7 @@ info/recode.info-2
 info/recode.info-3
 info/recode.info-4
 info/recode.info-5
+info/recode.info-6
 @exec install-info --delete %D/info/recode.info %D/info/dir
 lib/librecode.a
 lib/librecode.so
