@@ -8,6 +8,7 @@
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
     SUBDIR += cftp
+    SUBDIR += cmdftp
     SUBDIR += curl
     SUBDIR += curlpp
     SUBDIR += dmachine
