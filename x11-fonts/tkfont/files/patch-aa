@@ -1,0 +1,32 @@
+--- /usr/local/bin/tkfont	Tue Oct 12 13:37:45 1999
++++ tkfont	Tue Oct 12 14:27:43 1999
+@@ -33,11 +33,4 @@
+-proc GetFontDirs { } {
+-	global FontDirList
+-	set TempFileName "/tmp/dirs.list.[pid]"
+-	exec /usr/local/lib/tkfont/GetFontDirs > $TempFileName
+-	list FontDirList_a
+-
+-	set Chan [open $TempFileName r]
+-	set chars 1
+-	while {$chars > 0} {
+-		set chars [gets $Chan onedirname]
+-		lappend FontDirList_a $onedirname
++proc GetFontDirs {} {
++	global FontDirList errorCode
++	if {[catch {exec xset -q} result] && $errorCode != "NONE"} {
++		error $result
+@@ -45,5 +38,8 @@
+-	close $Chan
+-	exec rm $TempFileName
+-	set FontDirList [lreplace $FontDirList_a 0 0 \
+-		[string trim [lindex $FontDirList_a 0]]]
+-	set FontDirList [lreplace $FontDirList end end]
++	set lines [split $result \n]
++	set i [lsearch -exact $lines "Font Path:"]
++	if {$i == -1} {
++		error "Output of `xset -q' did not contain\
++			`Font Path:'\n$result"
++	}
++	set dirLine [string trim [lindex $lines [incr i]]]
++	set FontDirList [split $dirLine ,]
