@@ -133,6 +133,4 @@ bin/opera-devel
 %%GNOMELNK%%share/gnome/apps/Internet/opera-devel.desktop
 %%GNOME%%share/gnome/pixmaps/opera.xpm
 %%KDE2%%@dirrm share/applnk/Networking/WWW
-@cwd /etc/X11
-wmconfig/opera-devel
 %%APPLNK%%applnk/Internet/opera-devel.desktop

@@ -1,5 +1,5 @@
---- install.sh.orig	Wed Feb 18 13:42:04 2004
-+++ install.sh	Thu Feb 19 21:45:56 2004
+--- install.sh.orig	Wed Apr 14 12:49:50 2004
++++ install.sh	Thu Apr 15 12:11:26 2004
 @@ -108,8 +108,8 @@
  
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
@@ -85,7 +85,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1115,7 +1108,7 @@
+@@ -1121,7 +1114,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -94,7 +94,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1248,29 +1241,6 @@
+@@ -1254,31 +1247,8 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -122,9 +122,12 @@
 -	fi
 -
       # Shorcuts and Icons
- 	icons
+-	icons
++	#icons
  	gnome
-@@ -1305,13 +1275,13 @@
+ 	kde 3
+ 	kde 2
+@@ -1311,13 +1281,13 @@
  {
      # arg1 = location
  
@@ -141,7 +144,7 @@
  opera group "Internet"'
  
      echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1322,12 +1292,12 @@
+@@ -1328,12 +1298,12 @@
  {
      # arg1 = location
  
@@ -157,7 +160,7 @@
  Icon=opera.xpm
  Terminal=0
  Type=Application'
-@@ -1361,22 +1331,22 @@
+@@ -1367,22 +1337,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -192,7 +195,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1442,33 +1412,33 @@
+@@ -1448,33 +1418,33 @@
        fi
        # end /opt/gnome share
  
@@ -247,7 +250,7 @@
            fi
  	fi
  	# end /usr/share/gnome link
-@@ -1508,12 +1478,12 @@
+@@ -1514,12 +1484,12 @@
  
      fi  
      
@@ -265,7 +268,7 @@
      fi
  }
  
-@@ -1537,8 +1507,8 @@
+@@ -1543,8 +1513,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  

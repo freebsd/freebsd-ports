@@ -15,11 +15,9 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
 OPERA_VER=	7.50
-OPERA_REL=	Preview-3
-OPERA_DATE=	20040309
+OPERA_REL=	Preview-4
+OPERA_DATE=	20040414
 
 CONFLICTS=	linux-opera-devel-*
 
