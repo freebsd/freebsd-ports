@@ -1,15 +1,15 @@
 sbin/trafd
 sbin/trafstatd
-bin/trafstart
-bin/trafstop
-bin/trafsave
 bin/trafdump
-bin/trafstat
 bin/traflog
-etc/traflog.format
+bin/trafsave
+bin/trafstart
+bin/trafstat
+bin/trafstop
 etc/rc.d/trafd.sh
+etc/traflog.format
 share/doc/bpft/README
 share/doc/bpft/WhatsNew
 @dirrm var/bpft
-@dirrm var
+@unexec rmdir %%PREFIX%%/var 2>/dev/null || true
 @dirrm share/doc/bpft

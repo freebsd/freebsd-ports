@@ -1,15 +1,6 @@
---- Makefile.orig	Sun Dec  2 11:44:35 2001
-+++ Makefile	Wed Feb  5 04:24:20 2003
-@@ -43,8 +43,6 @@
- #
- 
- 
--PREFIX=/usr/local
--
- # Man pages prefix
- PREFIX_MANPAGES=${PREFIX}/man/man
- PREFIX_CATMANPAGES=${PREFIX}/man/cat
-@@ -59,7 +57,7 @@
+--- Makefile.orig	Sun Mar 30 17:45:30 2003
++++ Makefile	Sun Mar 30 17:46:23 2003
+@@ -31,7 +31,7 @@
  PATH_SBINDIR=${PREFIX}/sbin
  
  # Trailing slash directory, summary traffic log files will be put there.

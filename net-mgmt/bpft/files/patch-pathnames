@@ -1,6 +1,6 @@
---- include/pathnames.h.orig	Mon Aug 26 11:24:39 2002
-+++ include/pathnames.h	Mon Aug 26 11:25:09 2002
-@@ -49,12 +49,12 @@
+--- include/pathnames.h.orig	Fri Oct 18 10:28:27 2002
++++ include/pathnames.h	Sun Mar 30 17:48:50 2003
+@@ -33,12 +33,12 @@
  
  /* where unerased tmp directory */
  #ifndef	_PATH_VARTMP
