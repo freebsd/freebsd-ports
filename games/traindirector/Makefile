@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	traindirector
-PORTVERSION=	1.19
+PORTVERSION=	1.19c
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/119/
+MASTER_SITES=	http://xtsl.free.fr/119c/
 DISTNAME=	traindir-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
+USE_BZIP2=	yes
 
 post-extract:
 .for file in Makefile field.c loadsave.c run.c setup_trdir.sh tgraph.c track.c track1.c trsim.c
