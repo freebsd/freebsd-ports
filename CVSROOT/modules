@@ -1326,6 +1326,7 @@ danamics	ports/net/danamics
 dancer		ports/irc/dancer
 dancer-ircd	ports/irc/dancer-ircd
 dancer-services	ports/irc/dancer-services
+danpei		ports/graphics/danpei
 dansguardian	ports/www/dansguardian
 dansguardian-devel	ports/www/dansguardian-devel
 dante		ports/net/dante
