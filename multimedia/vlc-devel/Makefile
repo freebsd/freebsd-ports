@@ -51,7 +51,7 @@
 # WITHOUT_FLAC=yes
 #  Flac Support
 #
-# WITHOUT_LAME=yes
+# WITH_LAME=yes
 #  Mp3 encoder Support
 #
 # WITHOUT_LIBA52=yes
@@ -281,6 +281,10 @@ WITH_FRIBIDI=	yes
 WITH_GGI=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libmp3lame.a) && !defined(WITHOUT_LAME)
+WITH_LAME=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITHOUT_LIBTHEORA)
 WITH_LIBTHEORA=	yes
 .endif
@@ -481,7 +485,7 @@ CONFIGURE_ARGS+=--enable-ggi
 CONFIGURE_ARGS+=--disable-ggi
 .endif
 
-.if !defined(WITHOUT_LAME)
+.if defined(WITH_LAME) && !defined(WITHOUT_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-mp3lame
 .else
