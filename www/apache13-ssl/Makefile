@@ -63,8 +63,7 @@ SUEXEC_CONF=\
 	--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
 	--suexec-logfile=${APACHE_SUEXEC_LOG} \
 	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
-	--suexec-safepath=${DEFAULT_PATH} \
-	--target=httpsd
+	--suexec-safepath=${DEFAULT_PATH}
 
 .if defined(APACHE_SUEXEC_UMASK)
 SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
@@ -102,6 +101,7 @@ CONFIGURE_ARGS=	\
 		--datadir=${PREFIX}/www \
 		--proxycachedir=${PREFIX}/www/proxy \
 		--libexecdir=${PREFIX}/libexec/apache \
+		--target=httpsd \
 		${SUEXEC_CONF}
 
 OPTIM=		-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT} \
@@ -125,7 +125,7 @@ MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8 \
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/${DIST_SUBDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
+	@cd ${WRKSRC} && ${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
