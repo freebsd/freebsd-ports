@@ -6,34 +6,49 @@
 #
 
 PORTNAME=	cups-pstoraster
-PORTVERSION=	7.05.6
+PORTVERSION=	7.07
 PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
-MASTER_SITE_SUBDIR=	espgs
-DISTNAME=		espgs-${PORTVERSION}-source
+MASTER_SITE_SUBDIR=	ghostscript espgs
+DISTFILES=	ghostscript-${PORTVERSION}${EXTRACT_SUFX} \
+		espgs-7.05.6-source${EXTRACT_SUFX}
+DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
 
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/fonts.scale:${PORTSDIR}/print/ghostscript-gnu
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps:${PORTSDIR}/print/ghostscript-gnu
 
-WRKSRC=		${WRKDIR}/espgs-${PORTVERSION}
+WRKSRC=		${WRKDIR}/ghostscript-${PORTVERSION}
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-x --without-ijs --without-gimp-print \
-		--with-drivers=cups --with-gs=espgs \
-		--with-fontpath=${LOCALBASE}/share/ghostscript/fonts \
-		--enable-compiled-inits --without-omni
+		--with-gs=espgs
+MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
+		DEVICE_DEVS="\$$(DD)cups.dev"
 
-USE_REINPLACE=	yes
+ESPGS_WRKSRC=	${WRKDIR}/espgs-7.05.6/pstoraster
+
+post-patch:
+	${LN} -sf ${ESPGS_WRKSRC}/gdevcups.c ${WRKSRC}/src
+	${CAT} ${FILESDIR}/cups.contrib.mak >> ${WRKSRC}/src/contrib.mak
+	${SED} -e 's:@prefix@:${PREFIX}:g ; \
+		 s:@exec_prefix@:${PREFIX}:g ; \
+		 s:@bindir@:${PREFIX}/bin:g ; \
+		 s:@GS@:espgs:g' \
+		${ESPGS_WRKSRC}/pstoraster.in > ${ESPGS_WRKSRC}/pstoraster
+	${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS=@CPPFLAGS@ |g ; \
+		 s|^LDFLAGS=|LDFLAGS=@LDFLAGS@ |g ; \
+		 s|^DEVICE_DEVS|#DEVICE_DEVS|g' ${WRKSRC}/Makefile.in
 
 pre-build:
 	${MKDIR} ${WRKSRC}/bin
@@ -41,9 +56,9 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/espgs ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/pstoraster/pstoraster.convs \
+	${INSTALL_DATA} ${ESPGS_WRKSRC}/pstoraster.convs \
 		${PREFIX}/etc/cups
-	${INSTALL_SCRIPT} ${WRKSRC}/pstoraster/pstoraster \
+	${INSTALL_SCRIPT} ${ESPGS_WRKSRC}/pstoraster \
 		${PREFIX}/libexec/cups/filter
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} \
 		${PREFIX}/etc/cups ${PREFIX}/libexec/cups/filter
