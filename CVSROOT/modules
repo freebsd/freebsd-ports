@@ -7298,7 +7298,6 @@ py-sgrep	ports/textproc/py-sgrep
 py-sip		ports/devel/py-sip
 py-smb		ports/net/py-smb
 py-snmp		ports/net/py-snmp
-py-soap		ports/net/py-soap
 py-soapy	ports/net/py-soapy
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
