@@ -15,7 +15,6 @@ MAINTAINER=	ixtl@utmc.or.jp
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 RESTRICTED=    'contains commercial character data'
 
 post-install:
