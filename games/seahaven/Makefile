@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seahaven
-PORTVERSION=	1.41
+PORTVERSION=	1.43
 CATEGORIES=	games
 MASTER_SITES=	http://seahaven.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
