@@ -614,11 +614,8 @@
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
-    SUBDIR += ruby-dl
     SUBDIR += ruby-filelock
-    SUBDIR += ruby-fileutils
     SUBDIR += ruby-flex_rb
-    SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gconf
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gettext
@@ -635,14 +632,12 @@
     SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
-    SUBDIR += ruby-racc-runtime
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
     SUBDIR += ruby-slang
-    SUBDIR += ruby-strscan
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-testunit
     SUBDIR += ruby-textbuf
