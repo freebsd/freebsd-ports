@@ -8833,6 +8833,7 @@ pmars		ports/games/pmars
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
 pmw		ports/x11-toolkits/pmw
+pmwiki		ports/www/pmwiki
 pnet		ports/lang/pnet
 pnet-base	ports/lang/pnet-base
 pnetc		ports/lang/pnetc
