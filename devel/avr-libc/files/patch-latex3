@@ -1,0 +1,67 @@
+--- doc/api/doxygen.config.in.orig	Mon Dec 20 22:47:48 2004
++++ doc/api/doxygen.config.in	Fri Mar 11 22:20:37 2005
+@@ -679,7 +679,7 @@
+ # contain links (just like the HTML output) instead of page references 
+ # This makes the output suitable for online browsing using a pdf viewer.
+ 
+-PDF_HYPERLINKS         = YES
++PDF_HYPERLINKS         = NO
+ 
+ # If the USE_PDFLATEX tag is set to YES, pdflatex will be used instead of 
+ # plain latex in the generated Makefile. Set this option to YES to get a 
+--- doc/api/Makefile.am.orig	Mon Dec 20 22:47:48 2004
++++ doc/api/Makefile.am	Fri Mar 11 22:21:14 2005
+@@ -144,7 +144,7 @@
+ 	doxygen doxygen.config
+ 	cd latex_src && \
+ 		sed -e '/tocdepth/s/1/2/' \
+-		-e '/usepackage{times}/s/$$/\\usepackage{longtable}/' \
++		-e '/usepackage{doxygen}/s/$$/\\usepackage{longtable}/' \
+ 		refman.tex > tmp.$$ && \
+ 		mv -f tmp.$$ refman.tex
+ 	cd latex_src && \
+@@ -164,7 +164,7 @@
+ 	doxygen doxygen-pdf.config
+ 	cd latex_pdf_src && \
+ 		sed -e '/tocdepth/s/1/3/' \
+-		-e '/usepackage{times}/s/$$/\\usepackage{longtable}/' \
++		-e '/usepackage{doxygen}/s/$$/\\usepackage{longtable}/' \
+ 		refman.tex > tmp.$$ && \
+ 		mv -f tmp.$$ refman.tex
+ 	cd latex_pdf_src && \
+@@ -190,6 +190,7 @@
+ 		-e '/LATEX_OUTPUT/s/latex_src/latex_pdf_src/' \
+ 		-e '/GENERATE_HTML/s/YES/NO/' \
+ 		-e '/GENERATE_MAN/s/YES/NO/' \
++		-e '/PDF_HYPERLINKS/s/NO/YES/' \
+ 		doxygen.config > doxygen-pdf.config
+ 
+ # XXX currently, HTML and LaTeX documentation will always be built
+--- doc/api/Makefile.in.orig	Tue Feb 15 15:58:15 2005
++++ doc/api/Makefile.in	Fri Mar 11 22:21:24 2005
+@@ -331,7 +331,7 @@
+ 	doxygen doxygen.config
+ 	cd latex_src && \
+ 		sed -e '/tocdepth/s/1/2/' \
+-		-e '/usepackage{times}/s/$$/\\usepackage{longtable}/' \
++		-e '/usepackage{doxygen}/s/$$/\\usepackage{longtable}/' \
+ 		refman.tex > tmp.$$ && \
+ 		mv -f tmp.$$ refman.tex
+ 	cd latex_src && \
+@@ -351,7 +351,7 @@
+ 	doxygen doxygen-pdf.config
+ 	cd latex_pdf_src && \
+ 		sed -e '/tocdepth/s/1/3/' \
+-		-e '/usepackage{times}/s/$$/\\usepackage{longtable}/' \
++		-e '/usepackage{doxygen}/s/$$/\\usepackage{longtable}/' \
+ 		refman.tex > tmp.$$ && \
+ 		mv -f tmp.$$ refman.tex
+ 	cd latex_pdf_src && \
+@@ -377,6 +377,7 @@
+ 		-e '/LATEX_OUTPUT/s/latex_src/latex_pdf_src/' \
+ 		-e '/GENERATE_HTML/s/YES/NO/' \
+ 		-e '/GENERATE_MAN/s/YES/NO/' \
++		-e '/PDF_HYPERLINKS/s/NO/YES/' \
+ 		doxygen.config > doxygen-pdf.config
+ 
+ # XXX currently, HTML and LaTeX documentation will always be built
