@@ -3,7 +3,7 @@
 ;;                                            --  by shige@FreeBSD.ORG
 
 (setq load-path (append '(
-	"@@LOCALBASE@@/@@EMACS_LIBDIR@@/site-lisp/apel"
-	"@@LOCALBASE@@/@@EMACS_LIBDIR_WITH_VER@@/site-lisp/emu"
+	"@@LOCALBASE@@/@@EMACS_VERSION_SITE_LISPDIR@@/apel"
+	"@@LOCALBASE@@/@@EMACS_VERSION_SITE_LISPDIR@@/emu"
  ) load-path))
 (provide 'apel-setupel)
