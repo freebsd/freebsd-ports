@@ -370,6 +370,7 @@
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib
+    SUBDIR += tagtool
     SUBDIR += tap-plugins
     SUBDIR += tclmidi
     SUBDIR += teamspeak_client
