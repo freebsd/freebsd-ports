@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	${PORTNAME}-1.0-beta1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rneswold@enteract.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
 PLIST_FILES=		bin/wmmixer
