@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2-1-b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 USE_BISON=	yes
 
 CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
