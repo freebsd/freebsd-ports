@@ -11,6 +11,6 @@ MAINTAINER=	knu@FreeBSD.org
 
 CONFIGURE_ARGS=	--enable-japanese-conv
 
-MASTERDIR=	${.CURDIR}/../../x11/gnomecore
+MASTERDIR=	${.CURDIR}/../../irc/xchat
 
 .include "${MASTERDIR}/Makefile"
