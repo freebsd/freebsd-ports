@@ -1,0 +1,53 @@
+--- Makefile.in.orig	Fri Feb 18 10:28:06 2005
++++ Makefile.in	Fri Feb 18 10:27:08 2005
+@@ -217,8 +217,6 @@
+ 	@echo ""
+ 	@echo "modules made:"
+ 	@ls -l modules/*.$(MOD_EXT)
+-	@$(MAKE) finish_install
+-	@$(installed_msg)
+ 
+ static: @LIBZ@ EvangelineTest
+ 	@echo ""
+@@ -233,9 +231,6 @@
+ 	@echo ""
+ 	@$(test_run)
+ 	@ls -l $(EVANGELINEEXEC)
+-	@$(MAKE) finish_install
+-	@$(installed_msg)
+-
+ 
+ debug: @LIBZ@ DebugEvangeline
+ 
+@@ -251,8 +246,6 @@
+ 	@echo ""
+ 	@echo "modules made:"
+ 	@ls -l modules/*.$(MOD_EXT)
+-	@$(MAKE) finish_install
+-	@$(installed_msg)
+ 
+ sdebug: @LIBZ@ EvangelineTest
+ 	@echo ""
+@@ -267,8 +260,6 @@
+ 	@echo ""
+ 	@$(test_run)
+ 	@ls -l $(EVANGELINEEXEC)
+-	@$(MAKE) finish_install
+-	@$(installed_msg)
+ 
+ EvangelineTest: conftest
+ 	@if test -f EVANGELINEMOD.stamp; then \
+@@ -290,8 +281,12 @@
+ 	fi
+ 	@echo "stamp" >EVANGELINEMOD.stamp
+ 
++install:
++	@$(MAKE) finish_install
++	@$(installed_msg)
++
+ finish_install:
+-	@mv ifiles/starter starter
++	@mv ifiles/starter /usr/local/bin/evangeline
+ 	@mv ifiles/MyHttp.tcl .data/.scripts/MyHttp.tcl
+ 	@rm -rf modules/*.mod modules/EvangelineMod.* modules/Makefile* modules/mod.xlibs modules/autoconf modules/*.h modules/*.o
+ 	@rm -rf src/ tmp/ Makefile* config* disabled_modules lush.h
