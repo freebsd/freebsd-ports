@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pinentry
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/pinentry/ \
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/ \
 		http://tigress.com/lofi/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		common.tar.gz \
@@ -38,6 +38,8 @@ CONFIGURE_ARGS+=--with-included-gettext=no
 .if defined(WITH_QT)
 #USE_QT_VER=	3
 BROKEN=	The QT pinentry-helper is currently non-functional
+.else
+CONFIGURE_ARGS+=--disable-pinentry-qt
 .endif
 
 .if defined(HAVE_GTK)
