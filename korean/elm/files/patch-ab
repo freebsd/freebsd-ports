@@ -1,0 +1,15 @@
+*** nls/LANGS.old	Sun Jun 28 04:32:25 1992
+--- nls/LANGS	Fri Jul 28 06:48:31 1995
+***************
+*** 1,5 ****
+  # LANGS file
+  
+! C/C/C			/usr/local/nls/msg/C
+! english/us/ascii	/usr/local/nls/msg/english
+! french/canada/8859	/usr/local/nls/msg/french
+--- 1,5 ----
+  # LANGS file
+  
+! C/C/C                   /usr/local/share/nls/C
+! english/us/ascii        /usr/local/share/nls/en_US.ISO_8859-1
+! french/canada/8859      /usr/local/share/nls/fr_FR.ISO_8859-1

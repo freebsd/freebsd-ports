@@ -1,0 +1,34 @@
+*** nls/Makefile.old	Tue Apr  1 22:31:44 1997
+--- nls/Makefile	Tue Apr  1 22:32:15 1997
+***************
+*** 1,6 ****
+  LANGFILE=LANGS
+  CATNAME=elm2.4.cat
+! GENCAT=	nls/gencat
+  
+  HDIR=	../hdrs
+  SDIR=	C/C/C
+--- 1,6 ----
+  LANGFILE=LANGS
+  CATNAME=elm2.4.cat
+! GENCAT=	gencat
+  
+  HDIR=	../hdrs
+  SDIR=	C/C/C
+***************
+*** 39,45 ****
+  	./Install $(LANGFILE) $(GENCAT) $(CATNAME)
+  
+  $(HFILES): $(MFILES)
+! 	gencat/gencat $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
+  
+  clean: FRC
+  	/bin/rm -f $(MSGCAT)
+--- 39,45 ----
+  	./Install $(LANGFILE) $(GENCAT) $(CATNAME)
+  
+  $(HFILES): $(MFILES)
+! 	$(GENCAT) $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
+  
+  clean: FRC
+  	/bin/rm -f $(MSGCAT)

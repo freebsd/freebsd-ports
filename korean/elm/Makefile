@@ -1,0 +1,29 @@
+# New ports collection makefile for:    elm-2.4h4.1
+# Version required:     2.4pl25.h4.1
+# Date created:         1 Apr 1997
+# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
+#
+# $Id$
+#
+
+DISTNAME=       elm2.4h4.1
+PKGNAME=	kr-elm-2.4h4.1
+CATEGORIES=	korean mail
+MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/mail/Others/ \
+		ftp://sunsite.kren.nm.kr/pub/packages/hangul/mail/Others/
+
+MAINTAINER=	junker@jazz.snu.ac.kr
+
+MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1\
+		frm.1 listalias.1 messages.1 newalias.1 printmail.1 readmsg.1\
+	newmail.1
+
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT= elm-config
+CONFIGURE_ENV+= PREFIX="${PREFIX}"
+
+post-install:
+	ln -fs ${PREFIX}/man/man1/newmail.1.gz ${PREFIX}/man/man1/wnewmail.1.gz
+	ln -fs ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
+
+.include <bsd.port.mk>

@@ -1,0 +1,19 @@
+*** utils/Makefile.SH.orig	Fri Mar 11 02:20:29 1994
+--- utils/Makefile.SH	Sun Apr 27 06:05:04 1997
+***************
+*** 67,73 ****
+  LIB2		= 	$libs
+  LIBS		=	$termlib $dbm
+  LINT		=	$lint
+! LN		=	$ln
+  MAKE		=	$make
+  MV		=	$mv
+  OPTIMIZE	=	$optimize
+--- 67,73 ----
+  LIB2		= 	$libs
+  LIBS		=	$termlib $dbm
+  LINT		=	$lint
+! LN		=	$ln -fs
+  MAKE		=	$make
+  MV		=	$mv
+  OPTIMIZE	=	$optimize
