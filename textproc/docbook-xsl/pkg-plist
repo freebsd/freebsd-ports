@@ -1,14 +1,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/book.xsl
-%%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/ch05.html
-%%PORTDOCS%%%%DOCSDIR%%/ch06.html
 %%PORTDOCS%%%%DOCSDIR%%/ch06s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch06s03.html
 %%PORTDOCS%%%%DOCSDIR%%/common/ChangeLog
@@ -114,6 +110,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.rule.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/headers.on.blank.pages.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.verbatim.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ignore.image.scaling.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.on.role.html
@@ -131,9 +128,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.use.xref.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/label.from.part.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3924.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3985.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e4044.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e4191.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -168,6 +163,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.width.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.width.portrait.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/paper.type.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/param.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/part.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/passivetex.extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/pr01.html
@@ -260,6 +256,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/shade.verbatim.style.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/show.comments.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/sidebar.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/simplesect.in.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/subscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/superscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/symbol.font.family.html
@@ -455,6 +452,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.on.role.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.on.type.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.prefer.titleabbrev.html
 %%PORTDOCS%%%%DOCSDIR%%/html/inherit.keywords.html
 %%PORTDOCS%%%%DOCSDIR%%/html/insert.olink.page.number.html
 %%PORTDOCS%%%%DOCSDIR%%/html/insert.olink.pdf.frag.html
@@ -495,6 +493,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.resolver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.sysid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/para.propagates.style.html
+%%PORTDOCS%%%%DOCSDIR%%/html/param.html
 %%PORTDOCS%%%%DOCSDIR%%/html/part.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phrase.propagates.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pixels.per.inch.html
@@ -562,6 +561,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/shade.verbatim.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/show.comments.html
 %%PORTDOCS%%%%DOCSDIR%%/html/show.revisionflag.html
+%%PORTDOCS%%%%DOCSDIR%%/html/simplesect.in.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/spacing.paras.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.footer.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.header.navigation.html
@@ -608,6 +608,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pi/dbhtml.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/dbhtml.filename.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pi/pi.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/rn01.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/rn02.html
@@ -711,11 +712,14 @@ share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/TextFactory.java
 share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/UnwrapLinks.java
 share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/UnwrapLinksEmitter.java
 share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Verbatim.java
+share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Windows1252.java
 share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/package.html
 share/xsl/docbook/extensions/saxon643/prj.el
 share/xsl/docbook/extensions/saxon644.jar
 share/xsl/docbook/extensions/saxon65.jar
 share/xsl/docbook/extensions/saxon651.jar
+share/xsl/docbook/extensions/saxon652.jar
+share/xsl/docbook/extensions/saxon653.jar
 share/xsl/docbook/extensions/xalan2/ChangeLog
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/CVS.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Callout.java
@@ -733,10 +737,6 @@ share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Text.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Verbatim.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/package.html
 share/xsl/docbook/extensions/xalan25.jar
-share/xsl/docbook/extensions/xsltproc/python/ChangeLog
-share/xsl/docbook/extensions/xsltproc/python/README
-share/xsl/docbook/extensions/xsltproc/python/docbook.py
-share/xsl/docbook/extensions/xsltproc/python/xslt.py
 share/xsl/docbook/fo/ChangeLog
 share/xsl/docbook/fo/admon.xsl
 share/xsl/docbook/fo/autoidx-ng.xsl
@@ -1117,11 +1117,13 @@ share/xsl/docbook/params/htmlhelp.show.toolbar.text.xml
 share/xsl/docbook/params/htmlhelp.title.xml
 share/xsl/docbook/params/htmlhelp.use.hhk.xml
 share/xsl/docbook/params/htmlhelp.window.geometry.xml
+share/xsl/docbook/params/hyphenate.verbatim.xml
 share/xsl/docbook/params/hyphenate.xml
 share/xsl/docbook/params/ignore.image.scaling.xml
 share/xsl/docbook/params/img.src.path.xml
 share/xsl/docbook/params/index.on.role.xml
 share/xsl/docbook/params/index.on.type.xml
+share/xsl/docbook/params/index.prefer.titleabbrev.xml
 share/xsl/docbook/params/index.preferred.page.properties.xml
 share/xsl/docbook/params/informal.object.properties.xml
 share/xsl/docbook/params/informalequation.properties.xml
@@ -1264,6 +1266,7 @@ share/xsl/docbook/params/shade.verbatim.xml
 share/xsl/docbook/params/show.comments.xml
 share/xsl/docbook/params/show.revisionflag.xml
 share/xsl/docbook/params/sidebar.properties.xml
+share/xsl/docbook/params/simplesect.in.toc.xml
 share/xsl/docbook/params/spacing.paras.xml
 share/xsl/docbook/params/subscript.properties.xml
 share/xsl/docbook/params/superscript.properties.xml
@@ -1317,6 +1320,7 @@ share/xsl/docbook/params/variablelist.as.blocks.xml
 share/xsl/docbook/params/variablelist.as.table.xml
 share/xsl/docbook/params/variablelist.max.termlength.xml
 share/xsl/docbook/params/verbatim.properties.xml
+share/xsl/docbook/params/wordml.template.xml
 share/xsl/docbook/params/xep.extensions.xml
 share/xsl/docbook/params/xep.index.item.properties.xml
 share/xsl/docbook/params/xref.label-page.separator.xml
@@ -1396,8 +1400,6 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/htmlhelp
 @dirrm share/xsl/docbook/html
 @dirrm share/xsl/docbook/fo
-@dirrm share/xsl/docbook/extensions/xsltproc/python
-@dirrm share/xsl/docbook/extensions/xsltproc
 @dirrm share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan
 @dirrm share/xsl/docbook/extensions/xalan2/com/nwalsh
 @dirrm share/xsl/docbook/extensions/xalan2/com
@@ -1407,8 +1409,14 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/extensions/saxon643/com
 @dirrm share/xsl/docbook/extensions/saxon643
 @dirrm share/xsl/docbook/extensions
+@dirrm share/xsl/docbook/common
+@dirrm share/xsl/docbook
+@unexec rmdir %D/share/xsl || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
