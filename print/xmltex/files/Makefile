@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-TEX_CMD?=	tex
+TEX_CMD?=	etex
 LATEX_FMT?=	latex
 PDFTEX_CMD?=	pdftex
 PDFLATEX_FMT?=	pdflatex
