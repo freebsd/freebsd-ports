@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.82 1997/10/30 08:28:30 tg Exp $
+# $Id: Makefile,v 1.83 1997/11/03 10:04:54 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -82,6 +82,7 @@
     SUBDIR += prcs
     SUBDIR += sawt
     SUBDIR += scogdb
+    SUBDIR += sfio
     SUBDIR += tclcheck
     SUBDIR += tkcvs
     SUBDIR += tkref
