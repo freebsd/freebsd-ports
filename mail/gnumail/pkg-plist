@@ -145,10 +145,11 @@ Local/Library/GNUMail/Fonts.prefs/stamp.make
 Local/Library/GNUMail/Mailboxes.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Mailboxes.prefs/Resources/MailIcon_mailboxes.tiff
 Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Mailboxes
-Local/Library/GNUMail/MIME.prefs/stamp.make
+Local/Library/GNUMail/Mailboxes.prefs/stamp.make
 Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
 Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/MIME
+Local/Library/GNUMail/MIME.prefs/stamp.make
 Local/Library/GNUMail/Personal.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Personal.prefs/Resources/personal.tiff
 Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Personal
