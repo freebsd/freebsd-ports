@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmbibtex
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	print databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/tex
@@ -21,9 +21,5 @@ USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
-.endif
 
 .include <bsd.port.post.mk>
