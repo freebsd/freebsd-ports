@@ -6,34 +6,38 @@
 #
 
 PORTNAME=	webstone
-PORTVERSION= 	2.0.1
+PORTVERSION= 	2.5
 CATEGORIES=	www benchmarks
-#WebStone no longer distributed by SGi
-#MASTER_SITES=	http://www.sgi.com/Products/WebFORCE/WebStone/
-DISTNAME=	WebStone-2.0
+MASTER_SITES=	ftp://ftp.mindcraft.com/webstone/ \
+		ftp://ftp.mindcraft.com/anonymous/webstone/ \
+		ftp://ftp.mindcraft.com/pub/webstone/
+DISTNAME=	ws25_src
+EXTRACT_SUFX=	.tgz 
 
 MAINTAINER=	sauber@netcom.com
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/WebStone/src
+WRKSRC=		${WRKDIR}/WebStone2.5/src
 ALL_TARGET=	install
 NO_INSTALL_MANPAGES=	yes
 
-post-extract:
-	( cd ${WRKSRC}; make clobber )
-
-# otherwise these files will be installed by do-install target below
-post-patch:
-	find ${WRKSRC}/.. -name '*.orig' | xargs rm -f
-
 do-install:
+	@${RM} ${WRKSRC}/../bin/runs/keepme
+	@${RMDIR} ${WRKSRC}/../bin/runs
 	@${MKDIR} ${PREFIX}/webstone/bin
 	@${MKDIR} ${PREFIX}/webstone/conf
+	@${MKDIR} ${PREFIX}/webstone/lgm
 	${INSTALL_SCRIPT} ${WRKSRC}/../bin/* ${PREFIX}/webstone/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/../lgm/* ${PREFIX}/webstone/lgm
 	${INSTALL_DATA} ${WRKSRC}/../conf/* ${PREFIX}/webstone/conf
 	${INSTALL_SCRIPT} ${WRKSRC}/../webstone  ${PREFIX}/webstone
+	@${MKDIR} ${WRKSRC}/../bin/runs
+	@${TOUCH} ${WRKSRC}/../bin/runs/keepme
 .for file in webclient webmaster genrand
 	strip ${PREFIX}/webstone/bin/${file}
+.endfor
+.for file in ws20_cgi ws25_cgi
+	strip ${PREFIX}/webstone/lgm/${file}
 .endfor
 
 post-install:
