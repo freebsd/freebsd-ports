@@ -49,6 +49,7 @@ echo ab=y:ai=0.3:bkai00mp.ttf -ar-kai-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >
 
 
 # Update fonts.alias, font size ranges from 8 to 128.
+# Medium/Bold & Roman/Italic variations are also added.
 touch fonts.alias
 sed -e '/^-ar-/d' -e '/^-arphic-/d' fonts.alias > fonts.alias.tmp
 mv -f fonts.alias.tmp fonts.alias
@@ -57,32 +58,56 @@ mv -f fonts.alias.tmp fonts.alias
 
 # bkai00mp.ttf (Big5)
 SIZE=8
-while [ ${SIZE} -le 128 ]
+for WEIGHT in medium bold
 do
-  echo -arphic-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
-  SIZE=`expr ${SIZE} + 1`;
-done
+  (for SLANT in r i
+   do
+     (while [ ${SIZE} -le 128 ]
+      do
+        echo -arphic-kai-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-kai-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
+        SIZE=`expr ${SIZE} + 1`;
+      done)   # SIZE
+   done)   # SLANT
+done   # WEIGHT
 
 # bsmi00lp.ttf (Big5)
 SIZE=8
-while [ ${SIZE} -le 128 ]
+for WEIGHT in medium bold
 do
-  echo -arphic-ming-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-ming-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
-  SIZE=`expr ${SIZE} + 1`;
-done
+  (for SLANT in r i
+   do
+     (while [ ${SIZE} -le 128 ]
+      do
+        echo -arphic-ming-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-ming-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
+      SIZE=`expr ${SIZE} + 1`;
+      done)   # SIZE
+   done)   # SLANT
+done   # WEIGHT
 
 # gbsn00lp.ttf (GB)
 SIZE=8
-while [ ${SIZE} -le 128 ]
+for WEIGHT in medium bold
 do
-  echo -arphic-sung-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-sung-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
-  SIZE=`expr ${SIZE} + 1`;
-done
+  (for SLANT in r i
+   do
+     (while [ ${SIZE} -le 128 ]
+      do
+        echo -arphic-sung-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-sung-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
+        SIZE=`expr ${SIZE} + 1`;
+      done)   # SIZE
+   done)   # SLANT
+done   # WEIGHT
 
 # gkai00mp.ttf (GB)
 SIZE=8
-while [ ${SIZE} -le 128 ]
+for WEIGHT in medium bold
 do
-  echo -arphic-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
-  SIZE=`expr ${SIZE} + 1`;
-done
+  (for SLANT in r i
+   do
+     (while [ ${SIZE} -le 128 ]
+      do
+        echo -arphic-kai-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-kai-${WEIGHT}-${SLANT}-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
+        SIZE=`expr ${SIZE} + 1`;
+      done)   # SIZE
+   done)   # SLANT
+done   # WEIGHT
