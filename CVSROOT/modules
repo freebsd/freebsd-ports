@@ -6439,6 +6439,7 @@ puredb		ports/databases/puredb
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
+pwd_unmkdb	ports/sysutils/pwd_unmkdb
 pwg		ports/sysutils/pwg
 pwgen		ports/sysutils/pwgen
 pwm		ports/x11-wm/pwm
