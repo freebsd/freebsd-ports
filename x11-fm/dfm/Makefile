@@ -3,11 +3,11 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/11 03:41:58 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:40 asami Exp $
 #
 
 DISTNAME=	dfm-0.9.8
-CATEGORIES=	x11
+CATEGORIES=	x11-fm
 MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
 
 MAINTAINER=	andy@icc.surw.chel.su

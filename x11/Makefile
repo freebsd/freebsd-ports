@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.222 1998/08/07 22:17:47 asami Exp $
+# $Id: Makefile,v 1.223 1998/08/07 22:27:41 asami Exp $
 #
 
     SUBDIR += FWF
@@ -8,7 +8,6 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-devel
     SUBDIR += amiwm
-    SUBDIR += asfiles
     SUBDIR += auis
     SUBDIR += blackbox
     SUBDIR += blast
@@ -16,16 +15,13 @@
     SUBDIR += bricons
     SUBDIR += camltk41
     SUBDIR += ctwm
-    SUBDIR += dfm
     SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += emu
     SUBDIR += enlightenment
     SUBDIR += eterm
     SUBDIR += etlfonts
-    SUBDIR += explorer
     SUBDIR += fbsd-icons
-    SUBDIR += filerunner
     SUBDIR += freefonts
     SUBDIR += fvwm
     SUBDIR += fvwm2
@@ -50,7 +46,6 @@
     SUBDIR += neXtaw
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
-    SUBDIR += offix-files
     SUBDIR += olvwm
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
@@ -60,7 +55,6 @@
     SUBDIR += props
     SUBDIR += pygtk
     SUBDIR += pythonqt
-    SUBDIR += q3dmenu
     SUBDIR += qt
     SUBDIR += qt133
     SUBDIR += qt140
@@ -74,7 +68,6 @@
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tk81
-    SUBDIR += tkdesk
     SUBDIR += tkfont
     SUBDIR += tkgoodstuff
     SUBDIR += tkstep80
@@ -82,7 +75,6 @@
     SUBDIR += tycoon
     SUBDIR += v
     SUBDIR += windowmaker
-    SUBDIR += workplace
     SUBDIR += wm2
     SUBDIR += wmx
     SUBDIR += x3270
@@ -99,7 +91,6 @@
     SUBDIR += xfed
     SUBDIR += xfedor
     SUBDIR += xfishtank
-    SUBDIR += xfm
     SUBDIR += xforms
     SUBDIR += xgrab
     SUBDIR += xkeycaps

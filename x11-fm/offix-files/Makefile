@@ -3,12 +3,12 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/06 12:27:04 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:44 asami Exp $
 #
 
 DISTNAME=	Files-2.4
 PKGNAME=	offix-files-2.4
-CATEGORIES=	x11 offix
+CATEGORIES=	x11-fm offix
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 

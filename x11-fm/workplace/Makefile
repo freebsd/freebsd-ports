@@ -3,12 +3,12 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/04/14 07:59:03 tg Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:49 asami Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
 PKGNAME=	workplace-1.0a3
-CATEGORIES=	x11
+CATEGORIES=	x11-fm
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~hideki70/src/
 
 MAINTAINER=	andy@icc.surw.chel.su

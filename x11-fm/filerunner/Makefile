@@ -3,12 +3,12 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.13 1998/03/09 07:04:36 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/06/23 09:54:01 vanilla Exp $
 #
 
 DISTNAME=	FileRunner-2.5
 PKGNAME=	filerunner-2.5
-CATEGORIES=	x11 tk81
+CATEGORIES=	x11-fm tk81
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
