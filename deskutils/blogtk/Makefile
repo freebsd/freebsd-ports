@@ -24,8 +24,6 @@ USE_GNOME=	pygtk2 pygnome2
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
 
-BROKEN=		Incomplete pkg-plist
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/shar,${PREFIX}/shar,' ${WRKSRC}/src/BloGTK.py
 
@@ -37,7 +35,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${DATADIR}
 	@${LN} -fs ${PYTHON_SITELIBDIR}/blogtk/BloGTK.py ${PREFIX}/bin/blogtk
-.for dir in ${PYTHON_SITELIBDIR}/blogtk ${DATADIR}
+.for dir in ${PYTHON_SITELIBDIR}/blogtk ${PREFIX}/share/${PORTNAME}
 	@${FIND} ${dir} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${dir} -type d | ${SORT} -r | \
