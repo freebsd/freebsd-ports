@@ -6,11 +6,12 @@
 #
 
 PORTNAME=		gnomeicu
-PORTVERSION=		0.90.b
+PORTVERSION=		0.93
 CATEGORIES=		net gnome
-MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/          \
-			http://www.nectar.cc/distfiles/
-DISTNAME=		${PORTNAME}-0.90b
+MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/ \
+			ftp://ftp.vision.net.au/ftp7/linuxberg/files/gnome/com/ \
+			ftp://ftp.datacomm.ch/.3/linuxberg/files/gnome/com/ \
+			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/gnome/com/
 
 MAINTAINER=		nectar@FreeBSD.org
 
