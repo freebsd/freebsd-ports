@@ -1,5 +1,3 @@
-set path = ( %%PREFIX%%/bin $path )
-
 setenv PGLIB %%PREFIX%%/lib
 
 # note: PGDATA can be overridden by the -D startup option

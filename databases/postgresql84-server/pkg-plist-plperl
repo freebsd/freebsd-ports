@@ -1,0 +1,2 @@
+lib/postgresql/plperl.so
+@unexec rmdir %D/lib/postgresql 2>/dev/null || true

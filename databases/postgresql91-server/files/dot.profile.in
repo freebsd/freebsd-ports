@@ -1,6 +1,3 @@
-# both new and old layout's paths, but new path first...
-PATH=%%PREFIX%%/bin:${PATH}
-
 PGLIB=%%PREFIX%%/lib
 
 # note: PGDATA can be overridden by the -D startup option

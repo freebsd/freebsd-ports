@@ -1,0 +1,11 @@
+bin/pgtclsh
+include/libpgtcl.h
+lib/tcl%%TCLVERSION%%/Pgtcl1.3/pkgIndex.tcl
+@dirrm lib/tcl%%TCLVERSION%%/Pgtcl1.3
+@unexec rmdir %D/lib/tcl%%TCLVERSION%% 2>/dev/null || true
+lib/libpgtcl.a
+lib/libpgtcl.so
+lib/libpgtcl.so.2
+%%TK%%bin/pgtksh
+share/postgresql/README-tcltk
+@unexec rmdir %D/share/postgresql 2>/dev/null || true
