@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 1998/12/11 22:37:07 billf Exp $
+# $Id: Makefile,v 1.109 1998/12/22 23:00:38 billf Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -33,6 +33,7 @@
     SUBDIR += http-analyze
     SUBDIR += hypermail
     SUBDIR += ijb
+    SUBDIR += libghttp
     SUBDIR += libpics
     SUBDIR += libwww
     SUBDIR += linbot
