@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -30,9 +30,9 @@ LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
 # Remark: pear-XML_sql2xml is included, but never used.
 RUN_DEPENDS=	${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
-		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date		\
-		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select	\
-		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log	\
+		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date			\
+		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select_Common \
+		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
 NO_BUILD=	yes
@@ -42,7 +42,8 @@ LDD=		/usr/bin/ldd
 
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
-		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL
+		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
+		docs/TRANSLATIONS
 CONFFILE=	html.php lang.php mime_drivers.php mime_mapping.php \
 		motd.php prefs.php registry.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
@@ -76,6 +77,12 @@ pre-install:
 	@if [ -f ${HORDEDIR}/index.php3 ]; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please deinstall the port www/horde." ; \
+	    ${ECHO_MSG} "" ; \
+	    ${FALSE} ; \
+	fi
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libxml2.so"; then \
+	    ${ECHO_MSG} "" ; \
+	    ${ECHO_MSG} "Please configure PHP with DOM XML support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi

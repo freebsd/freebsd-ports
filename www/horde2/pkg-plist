@@ -237,6 +237,7 @@
 %%HORDEDIR%%/po/sl_SI.po
 %%HORDEDIR%%/po/sv_SE.po
 %%HORDEDIR%%/po/translation.php
+%%HORDEDIR%%/po/translation.php.orig
 %%HORDEDIR%%/po/uk_UA.po
 %%HORDEDIR%%/po/xgettext.sh
 %%HORDEDIR%%/po/zh_CN.po
@@ -246,6 +247,7 @@
 %%HORDEDIR%%/scripts/.htaccess
 %%HORDEDIR%%/scripts/SCRIPTS
 %%HORDEDIR%%/scripts/db/README
+%%HORDEDIR%%/scripts/db/README.orig
 %%HORDEDIR%%/scripts/db/auth.sql
 %%HORDEDIR%%/scripts/db/category.sql
 %%HORDEDIR%%/scripts/db/category_mysql.sql
@@ -320,6 +322,7 @@ etc/horde/httpd.conf.horde
 %%PORTDOCS%%share/doc/horde/HACKING
 %%PORTDOCS%%share/doc/horde/INSTALL
 %%PORTDOCS%%share/doc/horde/README
+%%PORTDOCS%%share/doc/horde/TRANSLATIONS
 %%PORTDOCS%%@dirrm share/doc/horde
 @dirrm %%HORDEDIR%%/config
 @dirrm %%HORDEDIR%%/graphics/alerts
