@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.16 1999/07/31 04:09:30 asami Exp $
+# $Id: Makefile,v 1.17 1999/08/13 04:45:52 cpiazza Exp $
 #
 
     SUBDIR += 9menu
@@ -28,6 +28,7 @@
     SUBDIR += piewm
     SUBDIR += qvwm
     SUBDIR += scwm
+    SUBDIR += toolbox
     SUBDIR += tvtwm
     SUBDIR += vtwm
     SUBDIR += windowmaker
