@@ -1,0 +1,12 @@
+This module will parse a Zone File and put all the Resource Records (RRs) into
+an anonymous hash structure. At the moment, the following types of RRs are
+supported: SOA, NS, MX, A, CNAME, TXT, PTR. It could be useful for maintaining
+DNS zones, or for transferring DNS zones to other servers. If you want to
+generate an XML-friendly version of your zone files, it is easy to use
+XML::Simple with this module once you have parsed the zonefile.
+
+DNS::ZoneParse scans the DNS zonefile - removes comments and seperates the file
+into it's constituent records. It then parses each record and stores the
+records internally. See below for information on the accessor methods.
+
+WWW: http://search.cpan.org/dist/DNS-ZoneParse/
