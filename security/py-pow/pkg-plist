@@ -1,3 +1,20 @@
-lib/%%PYTHON_VERSION%%/site-packages/POW.so
-%%PORTDOCS%%share/doc/pow/POW.pdf
-%%PORTDOCS%%@dirrm share/doc/pow
+%%PYTHON_SITELIBDIR%%/POW/__init__.py
+%%PYTHON_SITELIBDIR%%/POW/_der.py
+%%PYTHON_SITELIBDIR%%/POW/_objects.py
+%%PYTHON_SITELIBDIR%%/POW/_oids.py
+%%PYTHON_SITELIBDIR%%/POW/_simpledb.py
+%%PYTHON_SITELIBDIR%%/POW/pkix.py
+%%PYTHON_SITELIBDIR%%/POW/_POW.so
+%%PYTHON_SITELIBDIR%%/POW/__init__.pyc
+%%PYTHON_SITELIBDIR%%/POW/_der.pyc
+%%PYTHON_SITELIBDIR%%/POW/_objects.pyc
+%%PYTHON_SITELIBDIR%%/POW/_oids.pyc
+%%PYTHON_SITELIBDIR%%/POW/_simpledb.pyc
+%%PYTHON_SITELIBDIR%%/POW/pkix.pyc
+%%PYTHON_SITELIBDIR%%/POW/__init__.pyo
+%%PYTHON_SITELIBDIR%%/POW/_der.pyo
+%%PYTHON_SITELIBDIR%%/POW/_objects.pyo
+%%PYTHON_SITELIBDIR%%/POW/_oids.pyo
+%%PYTHON_SITELIBDIR%%/POW/_simpledb.pyo
+%%PYTHON_SITELIBDIR%%/POW/pkix.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/POW
