@@ -1,0 +1,11 @@
+--- conf.h.orig	Sat Jun 29 23:29:13 1996
++++ conf.h	Sat Jun 29 23:29:25 1996
+@@ -155,7 +155,7 @@
+    undefined. If the required define is not supplied by the compiler
+    (e.g. SVR4, SVR3) then you will need to include it yourself here. */
+ 
+-#define SVR4
++/* #define SVR4 */
+ 
+ 
+ /* The facility name which syslog reports errors and stats under. If
