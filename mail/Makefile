@@ -1,6 +1,6 @@
 #
-# $Id: Makefile,v 1.4 1994/10/23 02:32:59 torstenb Exp $
+# $Id: Makefile,v 1.5 1994/10/29 22:11:28 pst Exp $
 #
-SUBDIR=	elm metamail mh pine popper procmail smail
+SUBDIR= elm metamail mh pine pgpsendmail popper procmail smail
 
 .include <bsd.port.subdir.mk>
