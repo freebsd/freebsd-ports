@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
 post-extract:
-	@find ${WRKSRC}/../.. | xargs ${CHOWN} root:wheel
 	@find ${WRKSRC}/../.. -type f | grep -v eazel-engine | xargs ${CHMOD} 644
 	@find ${WRKSRC}/../.. -type d | xargs ${CHMOD} 755
 
