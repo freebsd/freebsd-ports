@@ -10,7 +10,7 @@ bin/rcs-checkin
 bin/xemacs-20.4
 @exec ln -s %D/%F %B/xemacs
 @unexec rm %B/xemacs
-etc/rc.d/xemacs.sh
+etc/rc.d/xemacs20.sh
 man/man1/ctags.1.gz
 man/man1/etags.1.gz
 man/man1/gnuattach.1.gz
