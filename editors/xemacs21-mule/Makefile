@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
-COMMENT?=	XEmacs(gamma version) text editor with mule(Only the executables)
+COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
 .include <bsd.port.pre.mk>
 
