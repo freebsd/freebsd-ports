@@ -1,0 +1,4 @@
+Config::General handles configuration files of a format inspired by
+Apache's httpd.conf file format.  It features some enhancements such
+as here-documents, C-style commends and multiline options.  Both
+reading and writing of configuration files is supported.
