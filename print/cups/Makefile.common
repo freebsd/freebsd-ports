@@ -57,8 +57,8 @@ CONFIGURE_ARGS+=	--localstatedir=/var		\
 			--with-rcdir=${PREFIX}/etc/rc.d
 
 CONFIGURE_ARGS+=	CPPFLAGS="-I${PREFIX}/include"
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
-CONFIGURE_ARGS+=	CXXFLAGS="${CFLAGS} -I${PREFIX}/include"
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -I.. -I${PREFIX}/include"
+CONFIGURE_ARGS+=	CXXFLAGS="${CFLAGS} -I.. -I${PREFIX}/include"
 CONFIGURE_ARGS+=	DSOFLAGS="-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
 CONFIGURE_ARGS+=	LDFLAGS="-L${PREFIX}/lib"
 
