@@ -79,6 +79,11 @@ post-install:
 	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
 	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
 		> ${DESTDIR}/etc/services
+.if !defined(BATCH)
+	@if test "$$(pw usershow uucp)" != "uucp:*:66:66::0:0:UUCP pseudo-user:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico"; then \
+	pw usermod uucp -s ${PREFIX}/libexec/uucp/uucico; fi
+	@pw usershow uucp
+.endif 
 	@${ECHO_MSG} "Use the 'make upgrade' command to copy your old configuration"
 	@${ECHO_MSG} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
 	@${ECHO_MSG}
