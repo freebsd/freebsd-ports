@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogg
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES= 	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
