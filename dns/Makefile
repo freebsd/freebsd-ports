@@ -16,6 +16,7 @@
     SUBDIR += dhid
     SUBDIR += dhisd
     SUBDIR += djbdns
+    SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
     SUBDIR += dns_balance

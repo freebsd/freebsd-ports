@@ -1,0 +1,10 @@
+This port contains a subset of the DJBDNS package.
+It includes several useful Domain Name System (DNS) tools:
+
+- dnsfilter: a parallel IP-address-to-host-name converter
+- dnsip, dnsipq, dnsname, dnstxt, and dnsmx: simple
+  command-line interfaces to DNS
+- dnsq, dnstrace, dnstracesort: DNS debugging tools
+
+Author:	Daniel J. Bernstein <djb@cr.yp.to>
+WWW:	http://cr.yp.to/djbdns.html
