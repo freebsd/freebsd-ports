@@ -7,6 +7,7 @@
 
 PORTNAME=	moleskine
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
