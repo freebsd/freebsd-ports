@@ -7,6 +7,7 @@
 
 PORTNAME=	mmosaic
 PORTVERSION=	3.7.2
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \
@@ -36,14 +37,19 @@ post-patch:
 
 pre-install:
 	${ECHO_CMD} bin/mmosaic > ${PLIST}
+.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/Copyrights; for i in `${FIND} * -type f`; do \
-		${ECHO_CMD} share/doc/mmosaic/$${i} >> ${PLIST}; \
+		${ECHO_CMD} %%DOCSDIR%%/$${i} >> ${PLIST}; \
 	done
+	${ECHO_CMD} @dirrm %%DOCSDIR%% >> ${PLIST}
+.endif
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/mmosaic/
-	${INSTALL_DATA} ${WRKSRC}/Copyrights/* ${PREFIX}/share/doc/mmosaic/
-#	${INSTALL_DATA} ${WRKSRC}/app-def/app-defaults.color ${PREFIX}/lib/X11/app-defaults/mMosaic
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mMosaic ${PREFIX}/bin/mmosaic
+#	${INSTALL_DATA} ${WRKSRC}/app-def/app-defaults.color ${PREFIX}/lib/X11/app-defaults/mMosaic
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Copyrights/* ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
