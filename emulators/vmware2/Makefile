@@ -7,23 +7,19 @@
 #
 
 PORTNAME=	vmware2
+.if defined(WANT_BETA)
+PORTVERSION=	2.0.3.786	# 2.0.3 RC1
+.else
 PORTVERSION=	2.0.2.621
 PORTREVISION=	3
+.endif
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
-		http://vmware-svca.www.conxion.com/software/ \
-		http://vmware-chil.www.conxion.com/software/ \
-		http://vmware-heva.www.conxion.com/software/ \
-		http://www.vmware.co.uk/software/ \
-		http://mirror.aarnet.edu.au/pub/vmware/software/ \
-		ftp://mirror.aarnet.edu.au/pub/vmware/software/
-DISTNAME=	VMware-${PORTVERSION:R}-${PORTVERSION:E}
-
-PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
-		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
-		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
-PATCHFILES=	vmmon-freebsd-0.98.tar.gz \
-		vmnet-freebsd-0.21.tar.gz
+		${FREEBSD_MODULE_SITES} \
+		${VMARE_MIRROR_SITES}
+DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX} \
+		vmmon-freebsd-0.98${EXTRACT_SUFX} \
+		vmnet-freebsd-0.21${EXTRACT_SUFX}
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
@@ -33,6 +29,18 @@ RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
+VMARE_MIRROR_SITES=	\
+		http://vmware-svca.www.conxion.com/software/ \
+		http://vmware-chil.www.conxion.com/software/ \
+		http://vmware-heva.www.conxion.com/software/ \
+		http://www.vmware.co.uk/software/ \
+		http://mirror.aarnet.edu.au/pub/vmware/software/ \
+		ftp://mirror.aarnet.edu.au/pub/vmware/software/
+FREEBSD_MODULE_SITES=	\
+		http://www.mindspring.com/~vsilyaev/vmware/files/ \
+		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
+		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
+
 USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
 
@@ -41,6 +49,8 @@ USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/vmware-distrib
 GZCAT=		${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/extract
 MAN1=		vmware.1
+
+MODULES=	vmmon vmnet
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +75,23 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_NETMASK="${VMNET_NETMASK}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}"
+
+post-extract:
+.for m in ${MODULES}
+	${TAR} -xf ${WRKSRC}/lib/modules/source/${m}.tar -C ${WRKSRC}
+.endfor
+.if defined(WANT_BETA)
+	${GUNZIP_CMD} ${WRKSRC}/man/man1/vmware.1.gz
+.endif
+
+pre-patch:
+.if defined(WANT_BETA)
+	${PERL} -i -ne 'if (m{^Index: vmnet-only/userif\.c$$}..m{^Index: vmnet-only/vm_oui\.h$$}) { next unless m{^Index: vmnet-only/vm_oui\.h$$} } print' ${WRKDIR}/vmnet-freebsd.diff
+.endif
+.for m in ${MODULES}
+	${CP} -R ${WRKDIR}/${m}-only ${WRKSRC}/
+	${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${m}-freebsd.diff
+.endfor
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
