@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
 MAINTAINER=	lehmann@ans-netz.de
 
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
