@@ -1,5 +1,5 @@
---- support/apxs.in.orig	Thu Mar 14 05:48:05 2002
-+++ support/apxs.in	Sun Apr  7 08:47:34 2002
+--- support/apxs.in.orig	Tue Apr 30 03:09:02 2002
++++ support/apxs.in	Wed May  8 19:41:06 2002
 @@ -66,7 +66,7 @@
  
  # read the configuration variables once
@@ -9,7 +9,16 @@
  
  my $exec_prefix    = get_vars("exec_prefix");
  my $CFG_TARGET     = get_vars("progname");
-@@ -415,7 +415,7 @@
+@@ -223,7 +223,7 @@
+ my $httpd = get_vars("sbindir") . "/" . get_vars("progname");
+ $httpd = eval qq("$httpd");
+ $httpd = eval qq("$httpd");
+-my $envvars = get_vars("bindir") . "/envvars";
++my $envvars = get_vars("sbindir") . "/envvars";
+ $envvars = eval qq("$envvars");
+ $envvars = eval qq("$envvars");
+ 
+@@ -418,7 +418,7 @@
          $la =~ s|\.c$|.la|;
          my $o = $s;
          $o =~ s|\.c$|.o|;
@@ -18,7 +27,7 @@
          unshift(@objs, $lo);
      }
  
-@@ -440,7 +440,7 @@
+@@ -443,7 +443,7 @@
          $opt .= " -l$opt_l";
      }
  
@@ -27,7 +36,7 @@
  
      #   execute the commands
      &execute_cmds(@cmds);
-@@ -471,8 +471,8 @@
+@@ -474,8 +474,8 @@
          $t =~ s|^.+/([^/]+)$|$1|;
          $t =~ s|\.la$|\.so|;
          if ($opt_i) {

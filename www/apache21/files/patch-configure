@@ -1,12 +1,21 @@
---- configure.orig	Sat Apr  6 15:19:30 2002
-+++ configure	Sun Apr  7 09:13:07 2002
-@@ -12087,6 +12087,9 @@
+--- configure.orig	Thu May  2 05:53:00 2002
++++ configure	Wed May  8 16:12:46 2002
+@@ -1503,7 +1503,7 @@
+       $srcdir/config.layout > $pldconf
+   layout_name=$LAYOUT
+   . $pldconf
+-  rm $pldconf
++  rm -f $pldconf
+   for var in prefix exec_prefix bindir sbindir libexecdir mandir \
+              sysconfdir datadir errordir iconsdir htdocsdir cgidir \
+              includedir localstatedir runtimedir logfiledir libdir \
+@@ -15077,6 +15077,9 @@
  
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
  #define SERVER_CONFIG_FILE "${rel_sysconfdir}/${progname}.conf"
 +#define DEFAULT_ERRORLOG "${rel_logfiledir}/httpd-error.log"
 +#define AP_TYPES_CONFIG_FILE "${rel_sysconfdir}/mime.types"
 +#define DOCUMENT_LOCATION "${rel_htdocsdir}"
- EOF
+ _ACEOF
  
- cat >> confdefs.h <<EOF
+ 

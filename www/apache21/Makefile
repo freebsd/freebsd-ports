@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.35
-PORTREVISION=	1
+PORTVERSION=	2.0.36
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -42,7 +41,7 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 SHARED_MODULES= all cgid charset_lite ext_filter case_filter case_filter_in \
 		deflate bucketeer
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g' -e 's,@@DESTDIR@@,${DESTDIR},g'
-MAKE_ENV+=	DESTDIR=${DESTDIR}
+MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 PLIST_SUB+=	DESTDIR=${DESTDIR}
 
 .if defined(NOPORTDOCS)
@@ -115,13 +114,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
-.if ${OSVERSION} >= 500032
-.for ltfile in srclib/pcre/ltmain.sh srclib/apr/build/ltmain.sh \
-		srclib/apr-util/xml/expat/conftools/ltmain.sh
-	@${PERL} -pi.orig -e 's|expr|expr --|' \
-		${WRKSRC}/${ltfile}
-.endfor
-.endif
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
@@ -131,7 +123,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
-	[ -d ${DESTDIR}/var/log ] || ${MKDIR} ${DESTDIR}/var/log
-	[ -d ${DESTDIR}/var/run ] || ${MKDIR} ${DESTDIR}/var/run
+	@[ -d ${DESTDIR}/var/log ] || ${MKDIR} ${DESTDIR}/var/log
+	@[ -d ${DESTDIR}/var/run ] || ${MKDIR} ${DESTDIR}/var/run
 
 .include <bsd.port.post.mk>
