@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--noninteractive
 
 .if defined(NOPORTDOCS)
-PLIST=			${PKGDIR}/PLIST.nodocs
+PLIST=			${PKGDIR}/pkg-plist.nodocs
 .else
 CONFIGURE_ARGS+=	--with-HTML --with-DIR_HTML=${PREFIX}/share/doc/tiff
 .endif
