@@ -3,7 +3,7 @@
 # Date created:		18th February 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.3 1998/12/02 20:36:04 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	prodosemu.v0.1

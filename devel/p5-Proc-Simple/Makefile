@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.2 1998/08/12 09:57:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Proc-Simple-1.12

@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.12 1999/05/10 11:13:24 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ups-3.34beta

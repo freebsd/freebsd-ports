@@ -3,7 +3,7 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.14 1999/01/01 16:34:07 alex Exp $
+# $FreeBSD$
 #
 
 VGABIOS=	VGABIOS-elpin-2.20

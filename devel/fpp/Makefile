@@ -3,7 +3,7 @@
 # Date created:		30 January 1996
 # Whom:		 	vazquez@iqm.unicamp.br	
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/16 19:43:06 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fdfpp

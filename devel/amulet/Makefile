@@ -3,7 +3,7 @@
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
-# $Id: Makefile,v 1.6 1998/10/20 01:32:14 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	amulet
 PKGNAME=	amulet-3.0

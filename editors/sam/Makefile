@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1998/11/28 09:07:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sam

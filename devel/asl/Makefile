@@ -3,7 +3,7 @@
 # Date created:         18 June 1997
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/06/26 21:36:56 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       asl-1.41r7

@@ -3,7 +3,7 @@
 # Date created:		21 Mar 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/11 05:17:43 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	flick-src-1.1

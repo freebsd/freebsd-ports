@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.23 1999/08/17 19:36:52 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	OB-3.1.3

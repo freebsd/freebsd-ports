@@ -5,7 +5,7 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id: Makefile,v 1.5 1999/07/21 14:55:30 marcel Exp $
+# $FreeBSD$
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0

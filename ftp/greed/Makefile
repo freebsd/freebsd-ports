@@ -3,7 +3,7 @@
 # Date created:		13 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1999/08/02 10:43:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	greed-0.801

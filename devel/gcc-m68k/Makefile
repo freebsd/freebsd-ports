@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.6 1998/11/24 03:36:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gcc-2.8.1

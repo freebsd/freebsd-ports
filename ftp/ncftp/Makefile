@@ -3,7 +3,7 @@
 # Date created:         20 Jun 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.9 1998/04/04 07:36:38 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ncftp-1.9.5

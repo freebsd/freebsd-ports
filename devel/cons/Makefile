@@ -3,7 +3,7 @@
 # Date created:		11 December 1998
 # Whom:			rv@fore.com
 #
-# $Id: Makefile,v 1.3 1999/05/01 03:17:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cons-1.6a3

@@ -3,7 +3,7 @@
 # Date created:		26 May 1999
 # Whom:			kuriyama
 #
-# $Id$
+# $FreeBSD$
 #
 
 MAINTAINER=	kuriyama@FreeBSD.ORG

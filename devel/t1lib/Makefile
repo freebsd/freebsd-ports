@@ -3,7 +3,7 @@
 # Date created:			13, May, 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1999/06/08 21:59:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	t1lib-0.9.1

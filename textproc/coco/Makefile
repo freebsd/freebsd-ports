@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.42 1999/07/01 23:15:54 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mule-2.3

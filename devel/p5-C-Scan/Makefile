@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/08/12 09:57:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	C-Scan-0.5

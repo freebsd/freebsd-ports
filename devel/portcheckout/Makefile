@@ -3,7 +3,7 @@
 # Date created:         1 November 1998
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1998/11/22 03:52:56 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       portcheckout-1.0

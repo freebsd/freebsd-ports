@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1999/01/26 02:16:00 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcoral-3.2

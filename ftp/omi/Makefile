@@ -4,7 +4,7 @@
 # Date created:		19 August 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1998/12/19 15:39:19 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       omi-alpha-9

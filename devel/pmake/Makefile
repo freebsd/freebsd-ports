@@ -3,7 +3,7 @@
 # Date created:		12 November 1998
 # Whom:			steve
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	pmake-2.1.33

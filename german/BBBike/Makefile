@@ -3,7 +3,7 @@
 # Date created:		Fri Aug 14 15:32:26 CEST 1998
 # Whom:			Slaven Rezic <eserte@cs.tu-berlin.de>
 #
-# $Id: Makefile,v 1.3 1998/08/29 10:20:20 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	BBBike-2.48

@@ -3,7 +3,7 @@
 # Date created:				18 August 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/22 03:54:24 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libglade-0.3

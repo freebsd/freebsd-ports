@@ -3,7 +3,7 @@
 # Date created:		11 Dez 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:49 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1

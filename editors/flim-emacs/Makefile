@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/05/23 15:34:57 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	flim-${FLIM_VER}

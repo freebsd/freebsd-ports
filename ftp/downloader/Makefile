@@ -3,7 +3,7 @@
 # Date Created:		23 June 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.3 1999/08/02 10:43:38 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nt-0.98

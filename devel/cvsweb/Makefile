@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1999
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/07/26 18:21:22 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cvsweb-1.0

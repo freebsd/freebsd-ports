@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1998/08/12 09:57:55 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Religion-1.04

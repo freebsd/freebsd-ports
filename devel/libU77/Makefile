@@ -3,7 +3,7 @@
 # Date Created:                8 October 1998
 # Whom:                        Glenn Johnson
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=      libU77-2.6

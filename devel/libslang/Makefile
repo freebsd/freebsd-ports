@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1998/05/17 22:38:22 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slang1.2.2

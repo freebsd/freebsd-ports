@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.4 1999/05/04 22:35:26 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libtool-1.3

@@ -4,7 +4,7 @@
 # Date created:         Mon Oct 28, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/10/10 06:53:35 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	spim5.9

@@ -3,7 +3,7 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.10 1999/03/11 21:47:09 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       m4-1.4

@@ -3,7 +3,7 @@
 # Date created:				17 Oct 1998
 # Whom:					Frank Gruender
 #
-# $Id: Makefile,v 1.2 1999/05/09 16:49:41 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qtarch-1.4-4

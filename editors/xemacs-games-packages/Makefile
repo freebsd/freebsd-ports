@@ -3,7 +3,7 @@
 # Date created:		24 Apr 1999
 # Whom:			Michael Elbel (me@FreeBSD.org)
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xemacs-packages

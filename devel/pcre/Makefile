@@ -3,7 +3,7 @@
 # Date created:				08 July 1998
 # Whom:					dom
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 22:59:19 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pcre-2.05

@@ -3,7 +3,7 @@
 # Date created:		28 December 1994
 # Whom:			jc@irbs.com John Capo
 #
-# $Id: Makefile,v 1.4 1996/11/11 05:06:43 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aXe-6.1.2

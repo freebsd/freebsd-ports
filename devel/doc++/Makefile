@@ -3,7 +3,7 @@
 # Whom:			Ruslan@Shevchenko.Kiev.UA
 # Version required:	3.3.13
 #
-# $Id: Makefile,v 1.3 1999/08/01 02:36:33 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	doc++-3.3.13

@@ -3,7 +3,7 @@
 # Date created:				1 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	shhmsg-1.4.0

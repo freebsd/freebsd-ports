@@ -3,7 +3,7 @@
 # Date created:				16 February 1997
 # Whom:					Sandro Sigala
 #
-# $Id: Makefile,v 1.9 1999/06/05 18:59:57 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tvision-0.7

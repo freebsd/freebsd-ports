@@ -3,7 +3,7 @@
 # Date created:			Jun 22 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1999/06/22 02:19:54 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtksheet-7.6

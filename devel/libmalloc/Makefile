@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1998/12/01 10:13:02 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	malloc-1.18

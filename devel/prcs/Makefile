@@ -3,7 +3,7 @@
 # Date created:         17 Sep 96
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.12 1998/06/08 22:38:57 jmacd Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	prcs-1.2.8

@@ -3,7 +3,7 @@
 # Date created:				29 Jul 1998
 # Whom:					rom
 #
-# $Id: Makefile,v 1.25 1999/06/23 23:58:09 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	gIDE-0.1.2

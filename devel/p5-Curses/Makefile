@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/08/12 09:57:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Curses-1.02

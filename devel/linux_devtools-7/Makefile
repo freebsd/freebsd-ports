@@ -3,7 +3,7 @@
 # Date created:         Jul 9, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id: Makefile,v 1.12 1999/08/18 12:49:53 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		linux_devtools

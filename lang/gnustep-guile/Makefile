@@ -3,7 +3,7 @@
 # Date created:         03 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/08/17 19:36:55 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gstep-core-0.5.5

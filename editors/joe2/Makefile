@@ -3,7 +3,7 @@
 # Date created:		01 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1996/11/17 07:01:28 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	joe2.8

@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.7 1999/03/08 07:28:23 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emacs-20.4

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1999/08/18 01:02:50 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += AbiWord

@@ -3,7 +3,7 @@
 # Date created:		1998-11-21
 # Whom:			Castor Fu
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/13 17:15:54 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cscope-13.7

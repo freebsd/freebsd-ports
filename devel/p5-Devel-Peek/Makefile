@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1998/08/12 09:57:48 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Devel-Peek-0.94

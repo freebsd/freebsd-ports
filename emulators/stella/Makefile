@@ -3,7 +3,7 @@
 # Date created:				March 4, 1999
 # Whom:					Jacques Vidrine <nectar@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/04/07 15:52:58 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	stella-1.1-src

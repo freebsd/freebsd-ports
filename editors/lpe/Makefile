@@ -3,7 +3,7 @@
 # Date created:		12 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/06/19 05:26:23 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=     	lpe-1.2.2

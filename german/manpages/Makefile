@@ -3,7 +3,7 @@
 # Date created:         29 September 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.7 1998/08/25 01:25:05 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       de-manpages-1.0

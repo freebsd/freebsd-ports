@@ -3,7 +3,7 @@
 # Date created:         3 Mar 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/05/12 05:20:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	abi-0.5.5-src

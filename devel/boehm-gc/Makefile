@@ -3,7 +3,7 @@
 # Date created:		15 November 1996
 # Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
 #
-# $Id: Makefile,v 1.5 1999/06/12 21:14:30 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gc4.14

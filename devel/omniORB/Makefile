@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	2.2.0
 #
-# $Id: Makefile,v 1.3 1998/06/06 17:41:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	omniORB_2.2.0

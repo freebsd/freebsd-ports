@@ -3,7 +3,7 @@
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.5 1998/01/10 16:01:04 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	avon-1996

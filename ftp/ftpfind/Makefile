@@ -3,7 +3,7 @@
 # Date created:		Feb 21 1998
 # Whom:			Tomokazu ISHII <t-ishii@tryplanet.com>
 #
-# $Id: Makefile,v 1.3 1999/01/10 18:13:18 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ftpfind-0.996

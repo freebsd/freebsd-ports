@@ -3,7 +3,7 @@
 # Date created:		28 Sept 1995
 # Whom:			dchapes@zeus.leitch.com
 #
-# $Id: Makefile,v 1.4 1998/06/25 22:26:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cflow-2.0

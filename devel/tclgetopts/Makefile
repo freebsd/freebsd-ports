@@ -3,7 +3,7 @@
 # Date created:				Mar 18, 1999
 # Whom:					mi
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 03:22:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tclGetOpts

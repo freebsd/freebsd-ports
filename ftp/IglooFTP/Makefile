@@ -3,7 +3,7 @@
 # Date created:				3 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1999/05/29 03:55:07 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		IglooFTP-0.6.1.src

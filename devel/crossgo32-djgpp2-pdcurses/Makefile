@@ -3,7 +3,7 @@
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:41 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pdc22

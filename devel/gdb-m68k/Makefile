@@ -3,7 +3,7 @@
 # Date created:         7 Jul 98
 # Whom:                 Jerry Hicks <Jerry.Hicks@Glenayre.com>
 #
-# $Id: Makefile,v 1.7 1999/01/27 07:41:09 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gdb-4.18

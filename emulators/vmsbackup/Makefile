@@ -3,7 +3,7 @@
 # Date created:		18 Apr 1994
 # Whom:			Jonathan M. Bresler (jmb)
 #
-# $Id: Makefile,v 1.7 1997/09/24 00:55:46 jmb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vmsbackup

@@ -3,7 +3,7 @@
 # Date created:         30th May 1999
 # Whom:                 Phil Maker <pjm@gnu.org>
 #
-# $Id: Makefile,v 1.3 1999/06/05 22:29:07 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nana-2.4

@@ -3,7 +3,7 @@
 # Date created:				11 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	shhopt-1.1.4

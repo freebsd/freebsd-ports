@@ -3,7 +3,7 @@
 # Date created:				August 15th 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.2 1997/12/15 05:53:44 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14

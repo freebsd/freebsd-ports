@@ -3,7 +3,7 @@
 # Date created:				July 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/08/18 02:54:05 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Storable-0.6@3

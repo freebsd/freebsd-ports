@@ -3,7 +3,7 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1999/05/01 12:34:09 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	s9x119asrc

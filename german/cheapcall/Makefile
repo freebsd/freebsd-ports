@@ -3,7 +3,7 @@
 # Date created:         9 Jun 1999
 # Whom:                 Peter Cornelius <pcc@gmx.net>
 #
-# $Id$
+# $FreeBSD$
 
 DISTNAME=	cheap-call-${LONGVER}.tcl
 PKGNAME=	cheapcall-0.7e

@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1999/01/21 17:51:49 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Data-ShowTable-3.3

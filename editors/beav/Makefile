@@ -3,7 +3,7 @@
 # Date created:		01 July 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/08/23 02:10:57 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	beav_1.40-13

@@ -3,7 +3,7 @@
 # Date created: 	13 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.4 1998/05/03 14:57:26 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ElectricFence-2.0.5

@@ -3,7 +3,7 @@
 # Date created:			28 June 1997
 # Whom:				Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/21 16:09:00 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tclCheck-1.1.11

@@ -3,7 +3,7 @@
 # Date created:				2 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 03:20:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libgnugetopt-1.1

@@ -3,7 +3,7 @@
 # Date created:         3 August 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.7 1998/07/27 23:24:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkref-1.01

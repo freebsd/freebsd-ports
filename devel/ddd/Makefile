@@ -4,7 +4,7 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.19 1999/08/20 10:21:06 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ddd-3.1.6

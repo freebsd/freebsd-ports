@@ -3,7 +3,7 @@
 # Date created:			Mon Sep  1 17:03:41 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1998/08/12 09:57:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	TimeDate-1.08

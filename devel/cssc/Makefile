@@ -3,7 +3,7 @@
 # Date created:         31 Mar 1999
 # Whom:                 Oliver Fromme
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/31 05:33:17 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	CSSC-0.10beta.pl1

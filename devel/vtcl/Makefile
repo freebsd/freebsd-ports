@@ -3,7 +3,7 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.16 1999/05/09 04:00:12 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vtcl-1.2.0

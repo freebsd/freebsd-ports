@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/09/15 11:13:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmame-0.33b6.1

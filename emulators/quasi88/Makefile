@@ -3,7 +3,7 @@
 # Date created:		22 May 1999
 # Whom:				Nishika <nishika@cheerful.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	quasi88-0.2.4

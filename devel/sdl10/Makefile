@@ -3,7 +3,7 @@
 # Date created:				8 August 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		SDL-0.10.0

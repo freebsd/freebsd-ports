@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/08/12 09:57:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Devel-Symdump-2.00

@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.65 1999/06/11 11:42:40 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ncftp-3.0beta19-src

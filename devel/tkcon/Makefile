@@ -3,7 +3,7 @@
 # Date created:         28 Jun 1999
 # Whom:                 wghicks@bellsouth.net
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	tkcon-1.6

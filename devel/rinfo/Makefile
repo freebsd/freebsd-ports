@@ -3,7 +3,7 @@
 # Date created:         23th March 1998
 # Whom:                 Mark Chapman <markc@ctgi.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	rinfo-1.2

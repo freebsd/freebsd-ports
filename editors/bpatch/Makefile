@@ -3,7 +3,7 @@
 # Date created:         18 March 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.5 1998/08/23 02:24:37 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bpatch

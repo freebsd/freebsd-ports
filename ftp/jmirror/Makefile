@@ -3,7 +3,7 @@
 # Date Created:		4 Febuary 1999
 # Whom:			Justin Robinson
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/02 00:58:51 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jmirror-1.0b

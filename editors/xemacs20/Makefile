@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.28 1999/08/22 18:57:45 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xemacs-20.4

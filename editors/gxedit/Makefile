@@ -3,7 +3,7 @@
 # Date created:				01 Jul 1998
 # Whom:					Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.20 1999/04/16 10:38:30 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GXedit1.23

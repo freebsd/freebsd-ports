@@ -3,7 +3,7 @@
 # Date created:         3 Jul 1998
 # Whom:                 kchowksey@hss.hns.com
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	elftoaout-2.0

@@ -3,7 +3,7 @@
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.9 1998/08/12 06:29:26 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	QtEZ.current-src

@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.14 1999/04/04 17:12:43 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ncurses-4.2

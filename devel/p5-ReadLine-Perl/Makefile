@@ -3,7 +3,7 @@
 # Date created:				20 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1998/04/22 21:39:13 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Term-ReadLine-Perl-0.9904

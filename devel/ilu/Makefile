@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.18 1998/12/22 07:58:33 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ilu-2.0alpha13

@@ -3,7 +3,7 @@
 # Date created:		10 January 1999
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/19 07:08:30 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ftpmirror-1.95

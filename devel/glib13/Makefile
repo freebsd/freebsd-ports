@@ -3,7 +3,7 @@
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.21 1999/05/06 19:59:12 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	glib-1.2.3

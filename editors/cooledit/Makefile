@@ -3,7 +3,7 @@
 # Date created:		18 November 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.15 1999/06/19 06:01:50 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cooledit-3.11.3

@@ -3,7 +3,7 @@
 # Date created:				19 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.6 1998/09/15 21:31:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Term-ReadLine-Gnu-1.01

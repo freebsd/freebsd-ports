@@ -4,7 +4,7 @@
 #
 # Whom: Dima Ruban <dima@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/02/21 21:44:32 dima Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	latest_xftp

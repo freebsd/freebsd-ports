@@ -3,7 +3,7 @@
 # Date created:		02 November 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.11 1999/01/12 16:50:52 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	iNES10-FreeBSD-80x86-bin

@@ -3,7 +3,7 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.15 1998/11/19 18:05:31 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hfsutils-3.2.6

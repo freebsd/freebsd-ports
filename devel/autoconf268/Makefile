@@ -3,7 +3,7 @@
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.17 1999/02/11 12:04:27 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       autoconf-2.13

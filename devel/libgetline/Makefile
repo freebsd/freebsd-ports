@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 16:53:48 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	getline-39-src
