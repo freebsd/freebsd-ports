@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	libsidplay
-PORTVERSION=	1.36.54
+PORTVERSION=	1.36.55
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_NEWGCC=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
 .if (${ARCH} == i386)
-CONFIGURE_ARGS+= --enable-optendian --enable-optfixpoint
+CONFIGURE_ARGS+=	--enable-optendian --enable-optfixpoint
 .endif
 
+.include <bsd.port.post.mk>
