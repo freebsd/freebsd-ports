@@ -210,10 +210,17 @@ post-configure:
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-post-install:
-	@${MKDIR} ${PREFIX}/etc/apache21/Includes
+install-startup-script:
+.if !exists(${WRKDIR}/apache21.sh)
+	@${MKDIR} ${WRKDIR}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache21.sh
+.endif
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache21.sh startup script."
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache21.sh ${PREFIX}/etc/rc.d/apache21.sh
+	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache21.sh ${PREFIX}/etc/rc.d/apache21.sh
+
+post-install: install-startup-script
+	@${MKDIR} ${PREFIX}/etc/apache21/Includes
 	@@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

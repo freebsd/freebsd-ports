@@ -49,7 +49,7 @@ checkyesno apache2ssl_enable && \
 apache2_checkconfig()
 {
 	echo "Performing sanity check on apache2 configuration:"
-	${command} -t
+	${command} ${apache2_flags} -t
 }
 
 apache2_precmd() 
