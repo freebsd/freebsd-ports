@@ -1,0 +1,21 @@
+Pmw is a framework for building high-level compound widgets, or
+megawidgets, constructed using other widgets as component parts. It
+promotes consistent look and feel within and between graphical
+applications, is highly configurable to your needs and is easy to use.
+
+Pmw consists of:
+  * A few base classes, providing a framework for building megawidgets.
+  * A library of flexible and extensible megawidgets built on the base
+    classes, such as ButtonBox, ComboBox, MessageDialog, etc.
+
+The interface to Pmw megawidgets is similar to basic Tk widgets, so it
+is easy for developers to include both megawidgets and basic Tk
+widgets in their graphical applications. In addition, all Pmw
+megawidgets may themselves be extended, using either inheritance or
+composition.
+
+The use of the Pmw framework and megawidgets replaces common widget
+combinations with higher level abstractions. This simplifies code,
+making it more readable and maintainable and more easily modifiable.
+The ability to extend Pmw megawidgets enables developers to create new
+megawidgets based on previous work.
