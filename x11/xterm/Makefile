@@ -17,8 +17,6 @@ COMMENT=	Terminal emulator for the X Window System
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	XFree86-clients-*
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
