@@ -9,7 +9,8 @@
 DISTNAME=	plp_1_8
 PKGNAME=	plp-1.8
 CATEGORIES=	comms
-MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/
+MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/ \
+		http://www.freebsd.org/~kris/distfiles/
 
 MAINTAINER=	maurice@serc.rmit.edu.au
 
