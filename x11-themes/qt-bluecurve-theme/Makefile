@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	qt-bluecurve-theme
-PORTVERSION=	0.73
-PORTREVISION=	1
+PORTVERSION=	0.88
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	9/en/os/i386/SRPMS
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	fedora/fedora/1/i386/SRPMS.os
 DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 
 MAINTAINER=	rzheka@users.sourceforge.net
-COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
+COMMENT=	Bluecurve unified-look theme for QT3 from Fedora
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -52,7 +51,7 @@ do-build:
 		(cd $$theme_dir; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}); \
 	done
 do-install:
-	@${MKDIR} ${PREFIX}/plugins/styles && ${CHMOD} a+rx ${PREFIX}/plugins/styles
-	@${INSTALL_PROGRAM} ${WRKSRC}/art/qt/Bluecurve/.libs/bluecurve.so ${PREFIX}/plugins/styles
+	@${MKDIR} ${PREFIX}/lib/plugins/styles && ${CHMOD} a+rx ${PREFIX}/lib/plugins/styles
+	@${INSTALL_PROGRAM} ${WRKSRC}/art/qt/Bluecurve/.libs/bluecurve.so ${PREFIX}/lib/plugins/styles
 
 .include <bsd.port.mk>
