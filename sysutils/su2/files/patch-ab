@@ -1,5 +1,5 @@
---- su2.c.orig	Sun Mar  2 20:17:16 1997
-+++ su2.c	Sun Mar  2 20:21:41 1997
+--- su2.c.orig	Sun Aug 15 17:59:03 2004
++++ su2.c	Sun Aug 15 18:00:37 2004
 @@ -113,9 +113,9 @@
  #ifndef NOSU2RC
  char   *UsersNameFile = ".su2rc";
@@ -12,7 +12,7 @@
  
  #ifndef PATH
  # ifdef BSD
-@@ -182,13 +182,15 @@
+@@ -182,17 +182,18 @@
  
  char   *malloc ();
  
@@ -30,7 +30,11 @@
  struct passwd  *getpwuid ();
  struct passwd  *getpwnam ();
  void    endpwent ();
-@@ -570,7 +572,7 @@
+-int     chmod ();
+ #endif
+ 
+ struct passwd  *pw;
+@@ -570,7 +571,7 @@
  	}
      }
  
