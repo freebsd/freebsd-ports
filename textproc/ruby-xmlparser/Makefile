@@ -74,6 +74,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${RUBY_DOCDIR}/xmlparser/
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
