@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.FreeBSD.org/~andreas/apsfilter/download/
 MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
-		html2ps:${PORTSDIR}/print/html2ps \
+		html2ps:${PORTSDIR}/print/html2ps-letter \
 		transfig:${PORTSDIR}/print/transfig \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		anytopnm:${PORTSDIR}/graphics/netpbm \
