@@ -1,0 +1,5 @@
+This is htmlsplit.rb, a Ruby library to split an HTML document into an
+array of tags and contents.
+
+Author:	MoonWolf <moonwolf-ruby@moonwolf.com>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=htmlsplit
