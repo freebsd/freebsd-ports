@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kot@premierbank.dp.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam

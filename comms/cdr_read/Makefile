@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.gamma.ru/~avk/
 DISTNAME=	cdrr109
 
-MAINTAINER=	kot@premierbank.dp.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for reading of the call detail records from PBX
 
 NO_WRKSUBDIR=	yes
