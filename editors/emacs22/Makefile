@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.30 1997/12/14 02:03:53 asami Exp $
+# $Id: Makefile,v 1.31 1998/04/04 07:36:40 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+EMACS_VERSION=	19.34
+PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION}
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
