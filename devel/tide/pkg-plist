@@ -1,46 +1,68 @@
+bin/sdfmt
 bin/tide
-t3x/r7/classes/config.cls
-t3x/r7/classes/config.dir
-t3x/r7/classes/editor.cls
-t3x/r7/classes/editor.dir
-t3x/r7/classes/filebox.cls
-t3x/r7/classes/filebox.dir
-t3x/r7/classes/form.cls
-t3x/r7/classes/form.dir
-t3x/r7/classes/menu.cls
-t3x/r7/classes/menu.dir
-t3x/r7/classes/prompt.cls
-t3x/r7/classes/prompt.dir
-t3x/r7/classes/tblio.cls
-t3x/r7/classes/tblio.dir
-t3x/r7/classes/vedit.cls
-t3x/r7/classes/vedit.dir
-t3x/r7/doc/tide.sd
-t3x/r7/doc/tools.sd
-t3x/r7/tide.rc
-t3x/r7/tide/default.cs
-t3x/r7/tide/examples/apfel.t
-t3x/r7/tide/examples/fac.t
-t3x/r7/tide/examples/hello.t
-t3x/r7/tide/examples/hello2.t
-t3x/r7/tide/examples/hello3.t
-t3x/r7/tide/examples/permute.t
-t3x/r7/tide/examples/primes.t
-t3x/r7/tide/examples/ttt.t
-t3x/r7/tide/helpfile
-t3x/r7/tide/monochrm.cs
-t3x/r7/tide/tide
-@exec echo 'config:t3x,iostream,string,ttyctl' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'editor:t3x,string' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'tblio:t3x,string,iostream' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'filebox:t3x,string,system,ttyctl' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'form:t3x,ttyctl,menu,prompt' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'menu:t3x,string,ttyctl' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'prompt:t3x,string,ttyctl' >>%D/t3x/r7/classes/CLASSNDX
-@exec echo 'vedit:t3x,string,ttyctl,editor' >>%D/t3x/r7/classes/CLASSNDX
-@exec sh -c 'if ! grep -q tools.sd %D/t3x/r7/doc/sdv-config; then echo "file		=	tools.sd [THE T3XTOOLS CLASSES]">>%D/t3x/r7/doc/sdv-config; fi'
-@exec sh -c 'if ! grep -q tide.sd %D/t3x/r7/doc/sdv-config; then echo "file		=	tide.sd [TIDE DOCUMENTATION]" >>%D/t3x/r7/doc/sdv-config; fi'
-@unexec cp %D/t3x/r7/doc/sdv-config %D/t3x/r7/sdv.tmp && grep -v 'tools\.sd' %D/t3x/r7/sdv.tmp | grep -v 'tide\.sd' >%D/t3x/r7/doc/sdv-config && rm -f %D/t3x/r7/sdv.tmp
-@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r7/classes/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r7/classes/CLASSNDX
-@dirrm t3x/r7/tide/examples
-@dirrm t3x/r7/tide
+t3x/r8/bin/sdfmt
+t3x/r8/classes/2/config.cls
+t3x/r8/classes/2/editor.cls
+t3x/r8/classes/2/filebox.cls
+t3x/r8/classes/2/filesrv.cls
+t3x/r8/classes/2/form.cls
+t3x/r8/classes/2/menu.cls
+t3x/r8/classes/2/prompt.cls
+t3x/r8/classes/2/pstruct.cls
+t3x/r8/classes/2/tblio.cls
+t3x/r8/classes/2/vedit.cls
+t3x/r8/classes/config.cls
+t3x/r8/classes/config.dir
+t3x/r8/classes/editor.cls
+t3x/r8/classes/editor.dir
+t3x/r8/classes/filebox.cls
+t3x/r8/classes/filebox.dir
+t3x/r8/classes/filesrv.cls
+t3x/r8/classes/filesrv.dir
+t3x/r8/classes/form.cls
+t3x/r8/classes/form.dir
+t3x/r8/classes/menu.cls
+t3x/r8/classes/menu.dir
+t3x/r8/classes/prompt.cls
+t3x/r8/classes/prompt.dir
+t3x/r8/classes/pstruct.cls
+t3x/r8/classes/pstruct.dir
+t3x/r8/classes/tblio.cls
+t3x/r8/classes/tblio.dir
+t3x/r8/classes/vedit.cls
+t3x/r8/classes/vedit.dir
+t3x/r8/doc/tide.sd
+t3x/r8/doc/tool-changes.sd
+t3x/r8/doc/tool-classes.sd
+t3x/r8/doc/tool-commands.sd
+t3x/r8/examples/apfel.t
+t3x/r8/examples/bottles.t
+t3x/r8/examples/fac.t
+t3x/r8/examples/hello.t
+t3x/r8/examples/hello2.t
+t3x/r8/examples/hello3.t
+t3x/r8/examples/hello4.t
+t3x/r8/examples/permute.t
+t3x/r8/examples/primes.t
+t3x/r8/examples/ttt.t
+t3x/r8/examples/ttt_oo.t
+t3x/r8/examples/ttt_plain.t
+t3x/r8/tide.rc
+t3x/r8/tide/default.cs
+t3x/r8/tide/helpfile
+t3x/r8/tide/monochrm.cs
+t3x/r8/tide/tide
+@exec echo 'config:t3x,iostream,string,ttyctl' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'editor:t3x,string' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'tblio:t3x,string,iostream' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'filebox:t3x,string,system,ttyctl' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'filesrv:t3x,string' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'form:t3x,ttyctl,menu,prompt' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'menu:t3x,string,ttyctl' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'prompt:t3x,string,ttyctl' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'pstruct:t3x,char,string,iostream' >>%D/t3x/r8/classes/CLASSNDX
+@exec echo 'vedit:t3x,string,ttyctl,editor' >>%D/t3x/r8/classes/CLASSNDX
+@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r8/classes/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r8/classes/CLASSNDX
+@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r8/classes/2/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r8/classes/2/CLASSNDX
+@dirrm t3x/r8/examples
+@dirrm t3x/r8/tide
