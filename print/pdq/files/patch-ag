@@ -1,0 +1,34 @@
+--- src/xpdq_wizard.c.orig	Sat May 15 11:45:15 1999
++++ src/xpdq_wizard.c	Sat May 15 11:50:44 1999
+@@ -29,6 +29,8 @@
+ #include "printer.h"
+ #include "argument.h"
+ 
++#define PRINTRC "/usr/local/etc/printrc"
++
+ pwizard_state *new_pwizard() {
+ 
+    pwizard_state *wizard;
+@@ -315,6 +317,7 @@
+    driver *d;
+    int i, row;
+    char *dname;
++   char *error;
+ 
+    panel = gtk_vbox_new (FALSE, 0);
+    gtk_container_border_width (GTK_CONTAINER (panel), 10);
+@@ -348,9 +351,11 @@
+    gtk_clist_set_selection_mode (GTK_CLIST(widget), GTK_SELECTION_BROWSE);
+    list = first_list_element (rc->driver_list);
+    if (list == NULL) {
+-      xpdq_error ("This system has no drivers.  Please make sure\n"
+-         "that there are drivers defined in /etc/printrc, ~/.printrc,\n"
+-	 "or in files included by /etc/printrc or ~/.printrc.");
++      error = malloc(256);
++      sprintf(error, "This system has no drivers.  Please make sure\n"
++         "that there are drivers defined in %s, ~/.printrc,\n"
++	 "or in files included by %s or ~/.printrc.", PRINTRC, PRINTRC);
++      xpdq_error(error);
+    }
+    while (list != NULL) {
+       d = (driver *) list->data;

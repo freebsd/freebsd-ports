@@ -1,0 +1,88 @@
+--- src/parse_rc.c.orig	Sat May 15 01:03:20 1999
++++ src/parse_rc.c	Sat May 15 07:06:17 1999
+@@ -23,7 +23,6 @@
+ #include <glob.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <values.h>
+ 
+ 
+ #include "parse.h"
+@@ -35,6 +34,8 @@
+ #include "driver.h"
+ #include "interface.h"
+ 
++#define PRINTRC "/usr/local/etc/printrc"
++
+ void try_parse_rc_glob (char *rc_glob, rc_items *rc) {
+ 
+    glob_t globbuf;
+@@ -46,12 +47,8 @@
+    i = glob (d, 0, NULL, &globbuf); 
+    free (d);
+    if (i != 0) {
+-      if (i == GLOB_NOMATCH) {
+-	 /* Keep on going */
+-      } else {
+-	 fprintf (stderr, "Died while globbing %s\n", d);
+-	 my_exit (1);
+-      }
++      fprintf (stderr, "Died while globbing %s\n", d);
++      my_exit (1);
+    } else {
+       /* Globbed something real */
+       for (i = 0; i < globbuf.gl_pathc; i++) {
+@@ -71,11 +68,7 @@
+ 
+    i = glob (d, 0, NULL, &globbuf); 
+    if (i != 0) {
+-      if (i == GLOB_NOMATCH) {
+-	 fprintf (stderr, "No files match %s\n", d);
+-      } else {
+-	 fprintf (stderr, "Died while globbing %s\n", d);
+-      }
++      fprintf (stderr, "Died while globbing %s\n", d);
+       free (d);
+       my_exit (1);
+    } else {
+@@ -258,7 +251,7 @@
+    int trouble_flag;
+ 
+    rc_locs = NULL;
+-   find_rc_glob_locations (type, name, "/etc/printrc",  &rc_locs);
++   find_rc_glob_locations (type, name, PRINTRC,  &rc_locs);
+    find_rc_glob_locations (type, name, "~/.printrc",  &rc_locs);
+ 
+    set_flag = 0;
+@@ -282,7 +275,7 @@
+    }
+ 
+    if (  (set_flag == 0) || (trouble_flag == 1)  ) {
+-      if (0 != append_to_rc_file ("/etc/printrc", buf) ) {
++      if (0 != append_to_rc_file (PRINTRC, buf) ) {
+          append_to_rc_file ("~/.printrc", buf);  /* Return code not checked.
+ 	                                          * What else can we do?
+ 						  */
+@@ -299,7 +292,7 @@
+    int trouble_flag;
+ 
+    rc_locs = NULL;
+-   find_rc_glob_locations (type, name, "/etc/printrc",  &rc_locs);
++   find_rc_glob_locations (type, name, PRINTRC,  &rc_locs);
+    find_rc_glob_locations (type, name, "~/.printrc",  &rc_locs);
+ 
+    trouble_flag = 0;
+@@ -315,11 +308,11 @@
+ 
+    /* In this case, buf should have been set to some commands that
+     * indicate to delete the object.  For example, say printer foo is
+-    * defined in /etc/printrc.  Ordinary  users cannot delete it, but
++    * defined in /usr/local/etc/printrc.  Ordinary  users cannot delete it, but
+     * they may add the command "printer foo delete" to their own rc file.
+     */
+    if (trouble_flag == 1)  {
+-      if (0 != append_to_rc_file ("/etc/printrc", buf) ) {
++      if (0 != append_to_rc_file (PRINTRC, buf) ) {
+          append_to_rc_file ("~/.printrc", buf);  /* Return code not checked.
+ 	                                          * What else can we do?
+ 						  */

@@ -1,0 +1,11 @@
+--- lpd/lpd_interface.c.orig	Sat May 15 02:26:06 1999
++++ lpd/lpd_interface.c	Sat May 15 02:26:25 1999
+@@ -80,7 +80,7 @@
+ 
+ 	MESSAGE (2, connecting...);
+ 
+-	if ( connect(sckt, &serv_addr, sizeof(serv_addr)) != 0 ) { 
++	if ( connect(sckt, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) != 0 ) { 
+ 	   perror ("connect");
+ 	   exit (1);
+ 	} 
