@@ -1,6 +1,5 @@
---- Makefile.orig	Wed Sep 16 09:26:41 1998
-+++ Makefile	Wed Sep 16 09:26:41 1998
-@@ -0,0 +1,81 @@
+Index: Makefile
+@@ -0,0 +1,83 @@
 +BACKDIR = ./bak
 +HOMEDIR = $(HOME)
 +
@@ -8,8 +7,10 @@
 +
 +DAP: 
 +	(cd tooltips; make -f Makefile);
-+	(cd spkit/spkit; make -f Makefile.freebsd);
-+	(cd main; make -f Makefile.freebsd);
++	(cd libaudio; make -f Makefile.linux);
++	(cd libaudiofile; make -f Makefile.linux);
++	(cd spkit/spkit; make -f Makefile.linux);
++	(cd main; make -f Makefile.linux);
 +
 +release: DAP
 +	strip main/DAP
