@@ -1,11 +1,11 @@
---- tcpdump.1.orig	Sun Jul 14 19:45:04 1996
-+++ tcpdump.1	Mon Sep 14 20:03:37 1998
+--- tcpdump.1.orig	Mon Jun 30 16:32:09 1997
++++ tcpdump.1	Wed Jan  6 13:23:11 1999
 @@ -20,12 +20,12 @@
  .\" WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  .\" MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  .\"
--.TH TCPDUMP 1  "14 July 1996"
-+.TH SMBTCPDUMP 1  "14 July 1996"
+-.TH TCPDUMP 1  "30 June 1997"
++.TH SMBTCPDUMP 1  "30 June 1997"
  .SH NAME
 -tcpdump \- dump traffic on a network
 +smbtcpdump \- dump traffic on a network (supports SMB related protocols)
@@ -14,9 +14,9 @@
 -.B tcpdump
 +.B smbtcpdump
  [
- .B \-deflnNOpqStvx
+ .B \-adeflnNOpqStvx
  ] [
-@@ -65,11 +65,20 @@
+@@ -65,12 +65,20 @@
  .ad
  .SH DESCRIPTION
  .LP
@@ -32,16 +32,16 @@
 +\fBsmbtcpdump -s 1500 'port 139 and host foo'\fR
 +.fi
 +.in -.5i
-+.LP
+ .LP
  .B Under SunOS with nit or bpf:
  To run
 -.I tcpdump
 +.I smbtcpdump
  you must have read access to
- .I /dev/net
+ .I /dev/nit
  or
-@@ -86,7 +95,7 @@
- promiscuous-mode operation using
+@@ -88,7 +96,7 @@
+ Once the super-user has enabled promiscuous-mode operation using
  .IR pfconfig (8),
  any user may run
 -.BR tcpdump .
@@ -49,7 +49,7 @@
  .B Under BSD:
  You must have read access to
  .IR /dev/bpf* .
-@@ -122,7 +131,7 @@
+@@ -127,7 +135,7 @@
  .TP
  .B \-i
  Listen on \fIinterface\fP.
@@ -58,7 +58,7 @@
  lowest numbered, configured up interface (excluding loopback).
  Ties are broken by choosing the earliest match.
  .TP
-@@ -130,15 +139,15 @@
+@@ -135,15 +143,15 @@
  Make stdout line buffered.  Useful if you want to see the data
  while capturing it.  E.g.,
  .br
@@ -77,16 +77,7 @@
  instead of ``nic.ddn.mil''.
  .TP
  .B \-O
-@@ -430,7 +439,7 @@
- [In the case of FDDI (e.g., `\fBfddi protocol arp\fR'), the
- protocol identification comes from the 802.2 Logical Link Control
- (LLC) header, which is usually layered on top of the FDDI header.
--\fITcpdump\fP assumes, when filtering on the protocol identifier,
-+\fIsmbTcpdump\fP assumes, when filtering on the protocol identifier,
- that all FDDI packets include an LLC header, and that the LLC header
- is in so-called SNAP format.]
- .IP "\fBdecnet src \fIhost\fR"
-@@ -462,7 +471,7 @@
+@@ -467,7 +475,7 @@
  .in -.5i
  where \fIp\fR is one of the above protocols.
  Note that
@@ -95,7 +86,7 @@
  .IP  "\fBtcp\fR, \fBudp\fR, \fBicmp\fR"
  Abbreviations for:
  .in +.5i
-@@ -541,7 +550,7 @@
+@@ -546,7 +554,7 @@
  .fi
  .in -.5i
  .LP
@@ -104,7 +95,7 @@
  or as multiple arguments, whichever is more convenient.
  Generally, if the expression contains Shell metacharacters, it is
  easier to pass it as a single, quoted argument.
-@@ -551,21 +560,21 @@
+@@ -556,21 +564,21 @@
  To print all packets arriving at or departing from \fIsundown\fP:
  .RS
  .nf
@@ -129,7 +120,7 @@
  .fi
  .RE
  .LP
-@@ -573,7 +582,7 @@
+@@ -578,7 +586,7 @@
  .RS
  .nf
  .B
@@ -138,7 +129,7 @@
  .fi
  .RE
  .LP
-@@ -583,7 +592,7 @@
+@@ -588,7 +596,7 @@
  .RS
  .nf
  .B
@@ -147,7 +138,7 @@
  .fi
  .RE
  .LP
-@@ -593,7 +602,7 @@
+@@ -598,7 +606,7 @@
  .RS
  .nf
  .B
@@ -156,7 +147,7 @@
  .fi
  .RE
  .LP
-@@ -602,7 +611,7 @@
+@@ -607,7 +615,7 @@
  .RS
  .nf
  .B
@@ -165,7 +156,7 @@
  .fi
  .RE
  .LP
-@@ -610,7 +619,7 @@
+@@ -615,7 +623,7 @@
  .RS
  .nf
  .B
@@ -174,7 +165,7 @@
  .fi
  .RE
  .LP
-@@ -620,7 +629,7 @@
+@@ -625,7 +633,7 @@
  .RS
  .nf
  .B
@@ -183,7 +174,7 @@
  .fi
  .RE
  .LP
-@@ -629,12 +638,12 @@
+@@ -634,12 +642,12 @@
  .RS
  .nf
  .B
@@ -198,7 +189,7 @@
  gives a brief description and examples of most of the formats.
  .de HD
  .sp 1.5
-@@ -647,7 +656,7 @@
+@@ -652,7 +660,7 @@
  On ethernets, the source and destination addresses, protocol,
  and packet length are printed.
  .LP
@@ -207,7 +198,7 @@
  the `frame control' field,  the source and destination addresses,
  and the packet length.  (The `frame control' field governs the
  interpretation of the rest of the packet.  Normal packets (such
-@@ -707,7 +716,7 @@
+@@ -712,7 +720,7 @@
  replies with its ethernet address (in this example, ethernet addresses
  are in caps and internet addresses in lower case).
  .LP
@@ -216,7 +207,7 @@
  .RS
  .nf
  .sp .5
-@@ -716,7 +725,7 @@
+@@ -721,7 +729,7 @@
  .fi
  .RE
  .LP
@@ -225,7 +216,7 @@
  broadcast and the second is point-to-point would be visible:
  .RS
  .nf
-@@ -734,7 +743,7 @@
+@@ -739,7 +747,7 @@
  .LP
  \fI(N.B.:The following description assumes familiarity with
  the TCP protocol described in RFC-793.  If you are not familiar
@@ -234,7 +225,7 @@
  be of much use to you.)\fP
  .LP
  The general format of a tcp protocol line is:
-@@ -794,7 +803,7 @@
+@@ -799,7 +807,7 @@
  flags were set.
  The packet contained no data so there is no data sequence number.
  Note that the ack sequence
@@ -243,7 +234,26 @@
  tcp `conversation', it prints the sequence number from the packet.
  On subsequent packets of the conversation, the difference between
  the current packet's sequence number and this initial sequence number
-@@ -982,7 +991,7 @@
+@@ -819,15 +827,15 @@
+ On the 8th and 9th lines,
+ csam sends two bytes of urgent, pushed data to rtsg.
+ .LP
+-If the snapshot was small enough that \fBtcpdump\fP didn't capture
++If the snapshot was small enough that \fBsmbtcpdump\fP didn't capture
+ the full TCP header, it interprets as much of the header as it can
+ and then reports ``[|\fItcp\fP]'' to indicate the remainder could not
+ be interpreted.  If the header contains a bogus option (one with a length
+-that's either too small or beyond the end of the header), tcpdump reports
++that's either too small or beyond the end of the header), smbtcpdump reports
+ it as ``[\fIbad opt\fP]'' and does not interpret any further options (since
+ it's impossible to tell where they start).  If the header length indicates
+ options are present but the IP datagram length is not long enough for the
+-options to actually be there, tcpdump reports it as ``[\fIbad hdr length\fP]''.
++options to actually be there, smbtcpdump reports it as ``[\fIbad hdr length\fP]''.
+ .HD
+ .B
+ UDP Packets
+@@ -997,7 +1005,7 @@
  NFS traffic.
  .LP
  NFS reply packets do not explicitly identify the RPC operation.  Instead,
@@ -252,32 +262,16 @@
  replies using the transaction ID.  If a reply does not closely follow the
  corresponding request, it might not be parsable.
  .HD
-@@ -1170,12 +1179,13 @@
- Steven McCanne (mccanne@ee.lbl.gov), all of the
- Lawrence Berkeley Laboratory, University of California, Berkeley, CA.
- .SH BUGS
--Please send bug reports to tcpdump@ee.lbl.gov or libpcap@ee.lbl.gov.
-+This is a modified version of tcpdump.  Please do not bother the tcpdump
-+authors with bug reports.
- .LP
- NIT doesn't let you watch your own outbound traffic, BPF will.
- We recommend that you use the latter.
- .LP
--\fItcpdump\fP for Ultrix requires Ultrix version 4.0 or later; the kernel
-+\fIsmbtcpdump\fP for Ultrix requires Ultrix version 4.0 or later; the kernel
- has to have been built with the \fIpacketfilter\fP pseudo-device driver
- (see
- .IR packetfilter (4)).
-@@ -1190,7 +1200,7 @@
- you're monitoring a busy network.
- .LP
- On Sun systems prior to release 3.2, NIT is very buggy.
--If run on an old system, tcpdump may crash the machine.
-+If run on an old system, smbtcpdump may crash the machine.
- .LP
- Some attempt should be made to reassemble IP fragments or, at least
- to compute the right length for the higher level protocol.
-@@ -1198,7 +1208,7 @@
+@@ -1178,7 +1186,7 @@
+ ethernet interface removed the packet from the wire and when the kernel
+ serviced the `new packet' interrupt.
+ .SH "SEE ALSO"
+-traffic(1C), nit(4P), bpf(4), pcap(3)
++tcpdump(1), traffic(1C), nit(4P), bpf(4), pcap(3)
+ .SH AUTHORS
+ Van Jacobson,
+ Craig Leres and
+@@ -1202,7 +1210,7 @@
  Name server inverse queries are not dumped correctly: The (empty)
  question section is printed rather than real query in the answer
  section.  Some believe that inverse queries are themselves a bug and
