@@ -3,7 +3,7 @@
 # Date created:		30 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.4 1996/11/18 13:38:46 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 13:56:53 asami Exp $
 #
 
 DISTNAME=	xmix-2.1
@@ -18,6 +18,8 @@ MAINTAINER=	janek@gaja.ipan.lublin.pl
 
 USE_IMAKE=	yes
 WRKSRC=		$(WRKDIR)/xmix
+
+MAN1=		xmix.1
 
 pre-install:
 	${CP} ${WRKSRC}/xmix.1 ${WRKSRC}/xmix.man
