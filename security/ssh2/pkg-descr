@@ -93,4 +93,7 @@ FEATURES
  o  Automatically executes conventional rsh (after displaying a
     warning) if the server machine is not running sshd.
 
+ o  Optional compression of all data with gzip (including forwarded X11
+    and TCP/IP port data), which may result in significant speedups on
+    slow connections.
 
