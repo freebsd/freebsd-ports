@@ -1063,13 +1063,18 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/cg-textfield.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/cg-toolbar.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/cg-tooltip.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/cg-tree.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/dt-spinner.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/indprogressbar.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/layeredPaneLayers.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/mac-spinner.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/metal-Error.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/metal-Inform.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/metal-Question.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/metal-Warn.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/metal-spinner.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/object.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/positions.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/progressbar.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/scrollarchitecture.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/scrollbarparts.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/scrollpanecorners.gif
@@ -1083,6 +1088,7 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/smpanel.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/smrootpane.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/tablemodel.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/tree.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/components/windows-spinner.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/converting/13ui11.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/converting/AWTConverter.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/converting/ButtonDemoApplet.gif
@@ -2633,6 +2639,7 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/components/example-swing/tutorial.htm
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/example-swing/tutorialcont.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/example-swing/vm.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/filechooser.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/components/formattedtextfield.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/frame.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/generaltext.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/index.html
@@ -2651,6 +2658,7 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/components/scrollpane.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/simpletext.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/slider.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/splitpane.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/components/spinner.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/tabbedpane.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/table.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/components/text.html
