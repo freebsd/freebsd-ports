@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.canonware.com/download/canonware/
 MAINTAINER=	jasone@FreeBSD.org
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook \
-		libstash:${PORTSDIR}/devel/libstash
+		${LOCALBASE}/lib/libstash.a:${PORTSDIR}/devel/libstash
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
