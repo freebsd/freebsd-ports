@@ -24,12 +24,14 @@ LIBS=		`${LIBNET_CONFIG} --libs`
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
-USE_SIZE=	yes
 AUTOMAKE_ARGS=	--add-missing
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		pixilate.1
+
+PORTDOCS=	README
+PLIST_FILES=	bin/pixilate
 
 post-install:
 .if !defined(NOPORTDOCS)
