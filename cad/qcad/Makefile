@@ -7,6 +7,8 @@
 
 PORTNAME=	qcad
 PORTVERSION=	2.0.3.3.1
+PORTREVISION=	1
+
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$/-1/}.src
