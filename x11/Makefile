@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.212 1998/06/16 03:06:36 mph Exp $
+# $Id: Makefile,v 1.213 1998/06/24 10:54:30 max Exp $
 #
 
     SUBDIR += FWF
@@ -41,6 +41,7 @@
     SUBDIR += kde
     SUBDIR += kdebase
     SUBDIR += kdelibs
+    SUBDIR += kworldwatch
     SUBDIR += lesstif
     SUBDIR += libdnd
     SUBDIR += libhelp
