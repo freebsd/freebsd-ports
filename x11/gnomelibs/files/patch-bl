@@ -1,6 +1,9 @@
---- libgnomeui/gnome-init.c.orig	Sat May  6 10:30:31 2000
-+++ libgnomeui/gnome-init.c	Tue Sep 12 11:34:20 2000
-@@ -200,32 +200,8 @@
+
+$FreeBSD$
+
+--- libgnomeui/gnome-init.c.orig	Thu Aug 16 21:15:48 2001
++++ libgnomeui/gnome-init.c	Wed Aug 22 16:15:00 2001
+@@ -205,32 +205,8 @@
  	switch(reason) {
  	case POPT_CALLBACK_REASON_PRE:
                  {
@@ -26,7 +29,7 @@
 -                                        setme = g_strconcat ("LC_CTYPE=", old_ctype, NULL);
 -                                        g_free(old_ctype);
 -                                } else
--                                        setme = "LC_CTYPE";
+-                                        setme = "LC_CTYPE=";
 -
 -                                putenv (setme);
 -                        }
