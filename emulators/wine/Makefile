@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2001.02.16
+PORTVERSION=	2001.03.05
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -88,10 +88,6 @@ do-install:
 		${WRKSRC}/programs/regapi/regFixer.pl \
 		${WRKSRC}/programs/regapi/regRestorer.pl \
 		${PREFIX}/lib/wine/reg
-	${INSTALL_DATA} ${FILESDIR}/README.patch \
-		${PREFIX}/lib/wine
-	${INSTALL_DATA} ${FILESDIR}/install-patch-3.3-sys-sigtrap \
-		${PREFIX}/lib/wine/patch-3.3-sys-sigtrap
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
