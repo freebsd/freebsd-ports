@@ -1,7 +1,7 @@
 # New ports collection makefile for:	xgrasp
-# Version required:     1.7d
-# Date created:         23 July 1995
-# Whom:                 asami
+# Version required:	1.7d
+# Date created:		23 July 1995
+# Whom:			asami
 #
 # $FreeBSD$
 #
@@ -9,8 +9,8 @@
 DISTNAME=	xgrasp.1.7d
 PKGNAME=	xgrasp-1.7d
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	../R5contrib
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
