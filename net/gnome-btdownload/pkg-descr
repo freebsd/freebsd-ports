@@ -2,4 +2,4 @@ Gnome interface for 'executing' BitTorrent files. It is designed as a mime-sink
 for BitTorrent files. Not a front-end, more-or-less just a session dialog. See
 net/py-bittorrent for more information.
 
-WWW: http://omapi.sourceforge.net/extra/gnome-btdownload/
+WWW: http://gnome-bt.sourceforge.net/

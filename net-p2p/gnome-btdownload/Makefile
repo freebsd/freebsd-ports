@@ -8,7 +8,8 @@
 PORTNAME=	gnome-btdownload
 PORTVERSION=	0.0.6
 CATEGORIES=	net gnome
-MASTER_SITES=	http://omapi.sourceforge.net/extra/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnome-bt
 
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A simple Gnome interface designed as a mime-sink for BitTorrent files
