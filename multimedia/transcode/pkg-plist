@@ -71,7 +71,7 @@ lib/transcode/filter_decimate.so
 lib/transcode/filter_denoise3d.so
 lib/transcode/filter_detectclipping.so
 lib/transcode/filter_detectsilence.so
-lib/transcode/filter_dilyuvmmx.so
+%%I386%%lib/transcode/filter_dilyuvmmx.so
 lib/transcode/filter_divxkey.so
 lib/transcode/filter_doublefps.so
 lib/transcode/filter_dnr.so
