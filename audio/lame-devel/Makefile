@@ -38,7 +38,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/-devel//}-${PORTVERSION:S/b//}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-nasm \
-		--enable-mp3x \
 		--enable-mp3rtp
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -52,8 +51,11 @@ NO_LATEST_LINK=	yes
 
 .if defined(HAVE_GTK)
 USE_GTK=	yes
+CONFIGURE_ARGS+=	--enable-mp3x
+PLIST_SUB+=		GTK=
 .else
 CONFIGURE_ARGS+=	--disable-gtktest
+PLIST_SUB+=		GTK="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS)
