@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig	Thu Jan 16 18:31:58 1997
-+++ Makefile	Tue Aug 14 11:16:57 2001
+--- Makefile.orig	Thu Jan 16 08:31:58 1997
++++ Makefile	Thu Nov  6 14:56:38 2003
 @@ -23,7 +23,7 @@
  # (the program should compile with no warning messages - if you
  #  see a warning message please let me know about it)
@@ -12,15 +9,6 @@ $FreeBSD$
  
  
  # STEP 2: IF YOU WANT TO COMPILE WITH THE MESA LIBRARIES THEN
-@@ -39,7 +39,7 @@
- # ------------------------------------------------------------
- #GLIB = -lMesaGL -lMesaGLU
- # or
--GLIB =  -lGL -lGLU
-+GLIB =  -lMesaGL -lMesaGLU
- 
- 
- # STEP 4: CHOOSE WHICH HARDWARE / OS YOU ARE RUNNING
 @@ -51,9 +51,9 @@
  #         with the other Makefile.)
  #
