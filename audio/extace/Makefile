@@ -13,6 +13,7 @@ MASTER_SITES=		http://download.sourceforge.net/eXtace/
 MAINTAINER=		sobomax@FreeBSD.org
 
 LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+			gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 			esd.2:${PORTSDIR}/audio/esound \
 			fftw.2:${PORTSDIR}/math/fftw
 
