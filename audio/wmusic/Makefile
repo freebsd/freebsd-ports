@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.9
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://hadess.net/files/
+MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	eric@FreeBSD.org
 
