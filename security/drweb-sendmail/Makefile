@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/00drwebd.sh:${PORTSDIR}/security/drweb
+RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
