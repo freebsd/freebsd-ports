@@ -7,17 +7,8 @@ bin/cfdprotos
 bin/cfdtos
 bin/flowdump
 bin/flowwatch
-sbin/cfdcollect
-sbin/cflowd
-sbin/cflowdmux
 etc/cfdcollect.conf.example
 etc/cflowd.conf.example
-lib/cflowd/libCfd.a
-lib/cflowd/libCfd.la
-lib/cflowd/libCfd.so.0
-lib/cflowd/libsnmp++.a
-lib/cflowd/libsnmp++.la
-lib/cflowd/libsnmp++.so.0
 include/cflowd/CflowdAsMatrix.hh
 include/cflowd/CflowdAsMatrixKey.hh
 include/cflowd/CflowdAsMatrixTrafficCounter.hh
@@ -82,8 +73,19 @@ include/cflowd/snmp++/timetick.h
 include/cflowd/snmp++/userdefined.h
 include/cflowd/snmp++/usertimeout.h
 include/cflowd/snmp++/vb.h
-@unexec /bin/rm -f /usr/local/lib/cflowd/libCfd.so
-@unexec /bin/rm -f /usr/local/lib/cflowd/libsnmp++.so
+lib/cflowd/libCfd.a
+lib/cflowd/libCfd.la
+lib/cflowd/libCfd.so
+lib/cflowd/libCfd.so.0
+lib/cflowd/libsnmp++.a
+lib/cflowd/libsnmp++.la
+lib/cflowd/libsnmp++.so
+lib/cflowd/libsnmp++.so.0
+sbin/cfdcollect
+sbin/cflowd
+sbin/cflowdmux
+@dirrm include/cflowd/snmp++
+@dirrm include/cflowd
+@dirrm lib/cflowd
 @unexec /usr/bin/env /sbin/ldconfig -R
-@dirrm /usr/local/lib/cflowd
 @exec /usr/bin/env /sbin/ldconfig -m %B
