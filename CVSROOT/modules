@@ -5345,6 +5345,7 @@ mftrace		ports/print/mftrace
 mg		ports/editors/mg
 mgapdesk	ports/x11/mgapdesk
 mgdiff		ports/textproc/mgdiff
+mgen		ports/net/mgen
 mget		ports/ftp/mget
 mgetty+sendfax	ports/comms/mgetty+sendfax
 mgetty_sendfax	ports/comms/mgetty+sendfax
