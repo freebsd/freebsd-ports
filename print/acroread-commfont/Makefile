@@ -3,7 +3,7 @@
 # Date created:		99/06/16
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/07/09 13:17:16 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME?=	commfont # dummy

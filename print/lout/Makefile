@@ -3,7 +3,7 @@
 # Date created:      10/22/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.5 1999/03/19 18:53:19 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lout-3.13

@@ -3,7 +3,7 @@
 # Date created:         Sat Apr 10 22:30:36 EEST 1999
 # Whom:                 vns@delta.odessa.ua
 #
-# $Id: Makefile,v 1.4 1999/08/22 23:33:20 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	apache_1.3.6

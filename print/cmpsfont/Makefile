@@ -3,7 +3,7 @@
 # Date created:		11 September 1998
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/13 16:15:33 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cmps

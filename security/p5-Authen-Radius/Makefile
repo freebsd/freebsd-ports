@@ -3,7 +3,7 @@
 # Date created:				September 11th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1998/09/15 21:31:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	RadiusPerl-0.05

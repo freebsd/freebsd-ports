@@ -3,7 +3,7 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.9 1999/08/22 18:59:58 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nlxb318e

@@ -3,7 +3,7 @@
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1998/12/03 19:12:28 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	PortScanner-1.0

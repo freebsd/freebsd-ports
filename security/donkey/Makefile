@@ -3,7 +3,7 @@
 # Date created:			17 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/19 11:33:48 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	donkey-0.5

@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.3 1999/04/16 10:21:50 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nat10

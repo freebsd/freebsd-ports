@@ -3,7 +3,7 @@
 # Date created:		January 2, 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.6 1999/04/19 04:00:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	PGP-Sign-0.15

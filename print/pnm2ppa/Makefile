@@ -3,7 +3,7 @@
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
-# $Id: Makefile,v 1.5 1999/08/23 04:23:52 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ppa-0.8.6

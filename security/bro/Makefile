@@ -4,7 +4,7 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.9 1999/02/13 20:03:59 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vp-bro-0.5-alpha

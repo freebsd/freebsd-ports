@@ -3,7 +3,7 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.28 1999/06/05 22:31:58 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       zsh-3.0.5

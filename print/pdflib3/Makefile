@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 18 17:03:33 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/07/30 21:03:54 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pdflib-2.0

@@ -3,7 +3,7 @@
 # Date created:		Sun Aug 13 12:36:14 CDT 1995
 # Whom:			erich@rrnet.com
 #
-# $Id: Makefile,v 1.7 1999/03/15 04:34:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rc-1.6

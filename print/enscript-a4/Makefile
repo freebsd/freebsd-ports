@@ -3,7 +3,7 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id$
+# $FreeBSD$
 #
 
 PAPERSIZE=	a4

@@ -3,7 +3,7 @@
 # Date created:        6 January 1999
 # Whom:                mwm
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 03:03:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	t1utils-1.11

@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.25 1999/08/28 02:17:28 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pgp26ru

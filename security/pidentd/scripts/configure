@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.4 1996/02/09 12:01:48 adam Exp $
+# $FreeBSD$
 #
 
 for i in src/paths.h identd.man idecrypt.man ; do

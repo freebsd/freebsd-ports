@@ -3,7 +3,7 @@
 # Date created:		Mon Aug  2 12:04:08 CEST 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/02 10:14:10 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	snort-1.2.1

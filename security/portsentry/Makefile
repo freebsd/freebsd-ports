@@ -3,7 +3,7 @@
 # Date created:		3 January 1998
 # Whom:			chris@still.whet.org
 #
-# $Id: Makefile,v 1.3 1999/04/19 19:49:32 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	portsentry-0.90

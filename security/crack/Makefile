@@ -5,7 +5,7 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/08/27 22:30:08 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crack5.0

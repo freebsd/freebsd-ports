@@ -3,7 +3,7 @@
 # Date created:		11 February 1999
 # Whom:			Alex Le Heux
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:49:44 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sslproxy.1998_Jun_14

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1999/05/03 03:59:22 steve Exp $
+# $FreeBSD$
 #
 
     SUBDIR += X.language

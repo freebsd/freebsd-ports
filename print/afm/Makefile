@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.8 1999/08/23 04:23:48 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	afm

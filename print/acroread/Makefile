@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1999/07/21 14:55:38 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ar302lin

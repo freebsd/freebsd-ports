@@ -4,7 +4,7 @@
 # Date created:         2 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1998/12/18 17:58:23 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rsaref20.1996

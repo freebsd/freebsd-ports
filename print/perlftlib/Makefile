@@ -3,7 +3,7 @@
 # Date created:		98/12/22
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/03/31 16:41:30 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perlftlib-1.2

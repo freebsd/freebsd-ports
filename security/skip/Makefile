@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.11 1999/08/28 02:17:28 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security

@@ -3,7 +3,7 @@
 # Date created:			15 June, 1998
 # Whom:				kline
 #
-# $Id: Makefile,v 1.2 1998/11/20 01:12:26 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	enscript_fonts-0.75

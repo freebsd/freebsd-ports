@@ -3,7 +3,7 @@
 # Date created:		11 April 1999
 # Whom:			Mikhail Teterin
 #
-# $Id: Makefile,v 1.3 1999/08/22 18:59:46 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=	rlpr-2.00
 CATEGORIES=	print net

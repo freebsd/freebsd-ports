@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1998/09/14 21:08:53 smace Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tcp_wrappers_7.6

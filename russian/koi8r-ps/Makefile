@@ -3,7 +3,7 @@
 # Date created:         22 July 1999
 # Whom:                 mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.2 1999/08/23 04:23:49 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=	koi8rPS-1.0
 CATEGORIES=	russian print

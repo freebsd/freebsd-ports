@@ -3,7 +3,7 @@
 # Date created:         25 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1999/05/04 08:43:34 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tr2latex

@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.37 1999/08/22 18:59:45 mharo Exp $
+# $FreeBSD$
 #
 
 VERSION=	99.06

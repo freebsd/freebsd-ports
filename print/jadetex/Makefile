@@ -3,7 +3,7 @@
 # Date created:         5 December 1998
 # Whom:                 Sean Kelly <kelly@plutotech.com>
 #
-# $Id: Makefile,v 1.3 1999/04/02 13:24:44 nik Exp $
+# $FreeBSD$
 #
 # When jadetex-2.3 goes mainstream, it will replace jadetex-2.1
 # currently in the Comprehensive TeX Archive Network (CTAN).  When

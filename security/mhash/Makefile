@@ -3,7 +3,7 @@
 # Date created:		Mon Jun 28 17:59:13 PDT 1999
 # Whom:			nsayer@freebsd.org
 #
-# $Id: Makefile,v 1.2 1999/06/29 01:00:49 nsayer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mhash-0.5.0

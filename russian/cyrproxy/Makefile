@@ -3,7 +3,7 @@
 # Date created:				20 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1997/10/23 13:38:44 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		cyrproxy-1.4.2

@@ -3,7 +3,7 @@
 # Date created:		31 May 1999
 # Whom:			Warren Toomey <wkt@cs.adfa.edu.au>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	pktsuckers1_2

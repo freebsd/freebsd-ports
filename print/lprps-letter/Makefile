@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1998/10/30 08:35:36 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lprps-2.5

@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1999/08/23 04:23:38 mharo Exp $
+# $FreeBSD$
 #
 
 PKGNAME=        ru-elm-2.4ME

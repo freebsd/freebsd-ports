@@ -3,7 +3,7 @@
 # Date created:		January 24, 1998
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.10 1998/12/14 15:39:26 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	freetype-1.2

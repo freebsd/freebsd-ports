@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.17 1998/10/30 08:35:29 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	a2ps

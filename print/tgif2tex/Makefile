@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/13 03:36:35 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tgif2tex

@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1998/10/20 01:48:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ghostview-1.5

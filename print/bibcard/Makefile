@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.7 1998/10/20 01:48:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bibcard.6.4

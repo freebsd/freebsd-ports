@@ -3,7 +3,7 @@
 # Date created:			  Sun May 3, 1999
 # Whom:                 	shipley@dis.org
 #
-# $Id: Makefile,v 1.2 1999/05/09 17:53:12 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slush-0.1.1

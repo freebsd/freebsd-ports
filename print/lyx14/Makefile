@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.30 1999/06/08 22:14:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lyx-1.0.3

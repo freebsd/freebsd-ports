@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/03/17 06:57:38 taoka Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	yatex-xemacs-mule-1.66

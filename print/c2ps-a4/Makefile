@@ -3,7 +3,7 @@
 # Date created:        19 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 PAPERSIZE=	a4

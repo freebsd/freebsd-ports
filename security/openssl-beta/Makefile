@@ -3,7 +3,7 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.33 1999/08/09 18:48:11 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	openssl-0.9.4

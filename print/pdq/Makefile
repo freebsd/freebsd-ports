@@ -3,7 +3,7 @@
 # Date created:		15 May 1999
 # Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/17 10:32:38 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pdq-2.1.1

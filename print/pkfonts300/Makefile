@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.14 1998/12/10 17:24:32 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pkfonts

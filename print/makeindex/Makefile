@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/02/18 16:57:16 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	makeindex-3.0.8

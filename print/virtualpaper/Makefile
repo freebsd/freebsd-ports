@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1999/08/22 18:59:48 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	virtualpaper-1.4

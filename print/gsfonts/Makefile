@@ -3,7 +3,7 @@
 # Date created:		11 September 1997
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.2 1999/01/27 07:41:26 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gsfonts-5.10

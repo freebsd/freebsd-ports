@@ -3,7 +3,7 @@
 # Date created:		16 August 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.4 1998/10/13 02:48:49 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asprint

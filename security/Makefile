@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1999/06/28 22:55:58 nsayer Exp $
+# $FreeBSD$
 #
 
     SUBDIR += bjorb

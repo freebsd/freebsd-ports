@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1997
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.3 1999/06/21 17:23:53 jdp Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cfs-1.3.3bf

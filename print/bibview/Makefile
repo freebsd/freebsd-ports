@@ -3,7 +3,7 @@
 # Date created:		21 July 1997
 # Whom:			dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.4 1998/04/19 18:03:26 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bibview-2.2

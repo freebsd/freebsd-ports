@@ -3,7 +3,7 @@
 # Date created:		Sat May 29 02:05:00 PDT 1999
 # Whom:			mharo@FreeBSD.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       keyprint-1.0

@@ -3,7 +3,7 @@
 # Date created:		23 May 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.18 1998/04/29 07:56:42 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pdksh-5.2.14

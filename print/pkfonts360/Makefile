@@ -3,7 +3,7 @@
 # Date created:		06 Nov 1998
 # Whom:			Satoshi Asami <asami@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/12/02 09:07:19 obrien Exp $
+# $FreeBSD$
 #
 
 RESOLUTION=	360

@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id$
+# $FreeBSD$
 #
 
 PAPERSIZE=	a4

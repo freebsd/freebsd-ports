@@ -5,7 +5,7 @@
 # Date created:         10 Feb 1998
 # Whom:                 markm
 #
-# $Id: Makefile,v 1.28 1999/04/08 19:05:45 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pgp50i

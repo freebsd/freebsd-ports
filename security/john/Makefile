@@ -4,7 +4,7 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.7 1998/12/07 08:59:21 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	john-1.6

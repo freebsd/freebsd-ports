@@ -3,7 +3,7 @@
 # Date created:		11 March 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/05/29 03:55:46 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkportscan-1.1

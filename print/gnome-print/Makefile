@@ -3,7 +3,7 @@
 # Date created:				15 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/05/30 03:52:57 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-print-0.4

@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id$
+# $FreeBSD$
 #
 
 PAPERSIZE=	letterdj

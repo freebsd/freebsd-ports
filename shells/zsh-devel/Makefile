@@ -3,7 +3,7 @@
 # Date created:			31 October 1998
 # Whom:				shige
 #
-# $Id: Makefile,v 1.31 1999/06/05 22:31:54 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zsh-3.1.6

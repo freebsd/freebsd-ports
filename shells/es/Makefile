@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:39:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       es-0.9-beta1

@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1998/09/25 19:42:58 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dvips576

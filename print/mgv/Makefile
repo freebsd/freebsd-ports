@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.12 1998/10/20 01:46:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mgv-3.1.5

@@ -3,7 +3,7 @@
 # Date created:				28 June 1996
 # Whom:					markm
 #
-# $Id: Makefile,v 1.9 1999/08/22 18:59:59 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xinetd-2.1.8.6b6

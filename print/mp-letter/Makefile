@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.9 1998/10/30 08:35:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mp-3.0.1

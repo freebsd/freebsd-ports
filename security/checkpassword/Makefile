@@ -3,7 +3,7 @@
 # Date created:		05 August 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1999/03/31 16:41:31 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	checkpassword-0.81

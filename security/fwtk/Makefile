@@ -4,7 +4,7 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.12 1998/12/31 22:15:37 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fwtk2.1

@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.5 1998/09/27 03:16:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Printer-2.4

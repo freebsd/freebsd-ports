@@ -3,7 +3,7 @@
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.24 1998/04/24 14:01:33 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pidentd-2.8.5

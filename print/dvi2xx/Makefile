@@ -3,7 +3,7 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1996/12/17 12:33:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dvi2xx

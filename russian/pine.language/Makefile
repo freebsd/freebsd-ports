@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1999/08/22 23:33:23 mharo Exp $
+# $FreeBSD$
 #
 
 PKGNAME=        ru-pine-3.96

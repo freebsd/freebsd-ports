@@ -3,7 +3,7 @@
 # Date created:				1999/04/07
 # Whom:					ache
 #
-# $Id: Makefile,v 1.2 1999/04/12 08:24:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Digest-MD5-2.08

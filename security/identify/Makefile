@@ -3,7 +3,7 @@
 # Date created:		13 March 1999
 # Whom:			nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.3 1999/04/11 22:42:07 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	identify-0.7
