@@ -28,6 +28,8 @@ USE_REINPLACE=	yes
 
 MAN1=		zenity.1
 
+CONFLICTS=	gtkada-1.2.*
+
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
