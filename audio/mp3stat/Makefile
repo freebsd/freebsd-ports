@@ -10,8 +10,7 @@ PORTNAME=	mp3stat
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://safemode.homeip.net/ \
-		ftp://ftp.cronyx.ru/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://ftp.cronyx.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

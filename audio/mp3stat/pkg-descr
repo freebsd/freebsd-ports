@@ -9,5 +9,3 @@ give just as much info as the gui version but now defaults to a configurable
 output of 3 pieces of info, name, runtime, avgerage bitrate. The batch mode
 can take mp3s and oggs in the same directory but it cannot (not yet at least)
 recursively run into subdirectories.
-
-WWW: http://safemode.homeip.net/
