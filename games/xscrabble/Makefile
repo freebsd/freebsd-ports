@@ -3,7 +3,7 @@
 # Date created:		27 July 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/04 11:45:49 tg Exp $
 #
 
 DISTNAME=	xscrabble
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes

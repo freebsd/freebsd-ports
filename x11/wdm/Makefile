@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/07 06:57:08 tg Exp $
+# $Id: Makefile,v 1.3 1998/09/11 07:51:58 tg Exp $
 
 DISTNAME=	wdm-0.90
 CATEGORIES=	x11
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \

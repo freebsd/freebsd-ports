@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/06 06:34:19 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/09/14 10:07:36 asami Exp $
 #
 
 DISTNAME=	gnome-libs-0.27
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 LIB_DEPENDS+=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	gif\\.3\\.:${PORTSDIR}/graphics/giflib
 LIB_DEPENDS+=	png\\.2\\.:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS+=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

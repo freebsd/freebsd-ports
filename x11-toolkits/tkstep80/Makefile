@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1998/08/07 22:56:47 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/07 23:56:53 asami Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -18,7 +18,7 @@ PATCHFILES=	tk8.0p2-to-TkStep8.0p2-1.patch.gz
 MAINTAINER=	tg@FreeBSD.ORG
 
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		Xpm.5:${PORTSDIR}/graphics/xpm \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 

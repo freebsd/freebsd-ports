@@ -3,7 +3,7 @@
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.13 1998/07/24 03:12:51 asami Exp $
+# $Id: Makefile,v 1.14 1998/08/05 09:31:51 asami Exp $
 #
 
 DISTNAME=	xscreensaver-2.24
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 BROKEN=		libkrb
 

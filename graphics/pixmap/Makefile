@@ -3,7 +3,7 @@
 # Date created:		19 February 1995
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.7 1995/04/11 02:00:42 jmz Exp $
+# $Id: Makefile,v 1.8 1996/11/18 09:53:36 asami Exp $
 #
 
 DISTNAME=	pixmap2.6
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications/pixmap
 
 MAINTAINER=	jmz@FreeBSD.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/pixmap
 USE_IMAKE=	yes

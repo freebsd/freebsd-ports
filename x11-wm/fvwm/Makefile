@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.23 1998/04/04 07:36:46 asami Exp $
+# $Id: Makefile,v 1.24 1998/08/07 23:01:38 asami Exp $
 #
 
 DISTNAME=	fvwm-1.24r
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 
 MAINTAINER=	me@FreeBSD.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.20 1998/07/06 08:45:11 thepish Exp $
+# $Id: Makefile,v 1.21 1998/08/07 23:56:27 asami Exp $
 #
 
 DISTNAME=	xfig.3.2.2
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		Xaw3d\\.6\\.:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig

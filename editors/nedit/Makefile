@@ -3,7 +3,7 @@
 # Date created:				7 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.12 1998/07/28 06:34:31 hoek Exp $
+# $Id: Makefile,v 1.13 1998/08/05 09:30:49 asami Exp $
 #
 
 DISTNAME=	nedit-5.0.2
@@ -14,7 +14,7 @@ DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 
 MAINTAINER=	deischen@iworks.InterWorks.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 REQUIRES_MOTIF=	yes
 USE_X_PREFIX=	yes

@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1997/11/17 18:47:51 max Exp $
+# $Id: Makefile,v 1.9 1998/03/14 20:29:39 vanilla Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -19,7 +19,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 BUILD_DEPENDS= 	${X11BASE}/lib/libaudio.a:${PORTSDIR}/audio/nas
 LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+		Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	YES
 

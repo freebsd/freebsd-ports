@@ -3,7 +3,7 @@
 # Date created:		09 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1997/02/21 15:41:27 tg Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:30:59 asami Exp $
 #
 
 DISTNAME=	xminehunter-0.4
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	tg@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xminehunter

@@ -6,7 +6,7 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.4 1997/08/10 23:23:46 ache Exp $
+# $Id: Makefile,v 1.5 1997/08/10 23:24:59 ache Exp $
 #
 
 DISTNAME=       xfedor
@@ -14,7 +14,7 @@ PKGNAME=        xfedor-1.0
 CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 MAINTAINER=     ache@FreeBSD.ORG
 

@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.18 1997/09/14 21:35:22 max Exp $
+# $Id: Makefile,v 1.19 1997/11/29 15:48:14 max Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -16,7 +16,7 @@ PATCHFILES=	jnethack-1.0.5.19970924.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	yes
 MAN6=		dlb.6 dgn_comp.6 lev_comp.6 nethack.6 recover.6

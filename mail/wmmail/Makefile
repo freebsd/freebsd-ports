@@ -3,7 +3,7 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/08 10:58:00 dburr Exp $
 #
 
 DISTNAME=	wmmail-0.59
@@ -12,7 +12,7 @@ MASTER_SITES=	http://earth.gaianet.net/~scorpio/
 
 MAINTAINER=	rom_glsa@ein-hashofet.co.il
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 

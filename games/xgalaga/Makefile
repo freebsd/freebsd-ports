@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1998/05/28 07:39:14 tg Exp $
+# $Id: Makefile,v 1.8 1998/08/05 09:30:59 asami Exp $
 #
 
 DISTNAME=	xgalaga-2.0
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes

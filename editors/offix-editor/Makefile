@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/06 12:18:24 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:30:49 asami Exp $
 #
 
 DISTNAME=	Editor-2.4
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 MAINTAINER=	ruslan@shevchenko.kiev.ua
 
 LIB_DEPENDS=	Dnd\\.1\\.:${PORTSDIR}/x11/libdnd \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+		Xpm.5:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

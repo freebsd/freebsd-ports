@@ -3,7 +3,7 @@
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:14:12 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/07 22:28:04 asami Exp $
 #
 
 DISTNAME=	wmtime-1.0b2
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.xs4all.nl/~warp/files/
 
 MAINTAINER=	rneswold@mcs.net
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USE_IMAKE=	yes

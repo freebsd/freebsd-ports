@@ -3,7 +3,7 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/20 12:38:49 asami Exp $
+# $Id: Makefile,v 1.3 1998/04/18 12:45:08 itojun Exp $
 #
 
 DISTNAME=	xsokoban-3.3c
@@ -12,7 +12,7 @@ MASTER_SITES=   ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
 MAINTAINER=     Nakai@technologist.com
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xsokoban

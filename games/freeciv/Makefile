@@ -3,7 +3,7 @@
 # Date created:		Jun 20 1997
 # Whom:			ada@bsd.org
 #
-# $Id: Makefile,v 1.9 1998/06/10 18:54:36 mph Exp $
+# $Id: Makefile,v 1.10 1998/08/19 03:27:11 jseger Exp $
 #
 
 DISTNAME=	freeciv-1.7.0
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www.freeciv.org/pub/freeciv/
 
 MAINTAINER=	ada@bsd.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=      	yes
 NO_INSTALL_MANPAGES=	yes

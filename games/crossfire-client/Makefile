@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1998/05/08 13:59:14 andreas Exp $
+# $Id: Makefile,v 1.22 1998/08/31 18:58:30 andreas Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
@@ -21,7 +21,7 @@ DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 EXTRACT_ONLY=	${CF_SOURCES} ${CF_DOC}
 USE_PERL5=	yes
