@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cdrdao
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	lebel@lebel.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
 		dlg:${PORTSDIR}/devel/pccts
