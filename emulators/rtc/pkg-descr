@@ -1,0 +1,4 @@
+This is a kernel module for /dev/rtc device support.
+Some apps such as VMware for Linux would be happy with it.
+
+The code was originally written by Vladimir N. Silyaev.
