@@ -84,28 +84,28 @@ PLIST_SUB+=	DEBUG:=""
 .endif
 
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
-PLIST_SUB+=    NATIVE:=""
-MAKE_ARGS+=    HPIS="green native"
-USE_REINPLACE= yes
+PLIST_SUB+=	NATIVE:=""
+MAKE_ARGS+=	HPIS="green native"
+USE_REINPLACE=	yes
 .else
-PLIST_SUB+=    NATIVE:="@comment "
+PLIST_SUB+=	NATIVE:="@comment "
 .endif
 
 .if defined(WITHOUT_PLUGIN)
-PLIST_SUB+=    PLUGIN:="@comment "
+PLIST_SUB+=	PLUGIN:="@comment "
 .else
-PLIST_SUB+=    PLUGIN:=""
+PLIST_SUB+=	PLUGIN:=""
 .endif
 
 .if defined(WITH_HOTSPOT)
-PLIST_SUB+=    HOTSPOT:=""
+PLIST_SUB+=	HOTSPOT:=""
 .if defined(NODEBUG)
 HOTSPOT_TARGETS=product1 product
 .else
 HOTSPOT_TARGETS=compiler1 compiler2
 .endif
 .else
-PLIST_SUB+=    HOTSPOT:="@comment "
+PLIST_SUB+=	HOTSPOT:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
