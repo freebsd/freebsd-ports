@@ -1,36 +1,75 @@
 # New ports collection makefile for:	BitchX ircII client
-# Version required:	75p3
+# Version required:	1.0c15
 # Date created:		26 Jan 1998
 # Whom:			griffin
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ircii-pana-75p3
-PKGNAME=	bitchx-75p3
+DISTNAME=	BitchX-1.0c15
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
-		ftp://ftp.buk.net/pub/software/bitchx/source/
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/ \
+		ftp://bitchx.dimension6.com/pub/
 
-MAINTAINER=	griffin@blackhole.iceworld.org
+MAINTAINER=	calle.madestrand@norrgarden.se
 
-GNU_CONFIGURE=	yes
+.if defined(USE_GNOME)
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+.endif
 
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 WRKSRC=		${WRKDIR}/BitchX
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+.if defined(USE_GNOME)
+CONFIGURE_ARGS+=	--with-plugins --with-gtk --enable-sound
+.else
+CONFIGURE_ARGS+=	--with-plugins --without-gtk
+.endif
+CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share"	\
+			--bindir="${PREFIX}/bin" \
+			--datadir="${PREFIX}/share" \
+			--libdir="${PREFIX}/share"
 
-MAN1=		BitchX.1
-MANCOMPRESSED=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}"
 
+MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
+
+.if !defined(USE_GNOME)
+pre-extract:
+	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
+.endif
+
+# Horrible hack to remove bogus CR's at the end of this file
 post-patch:
-	@${SED} -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/include/config.h > $(WRKSRC)/include/config.h.new
-	@${MV} $(WRKSRC)/include/config.h.new $(WRKSRC)/include/config.h
+	@${PERL} -pi -e 's,\r$$,,' ${WRKSRC}/script/menu.bx
 
-do-install:
-	${MKDIR} ${PREFIX}/lib/bx
-	${INSTALL_PROGRAM} ${WRKSRC}/source/BitchX ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/source/scr-bx ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/source/wserv ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/BitchX.help ${PREFIX}/lib/bx
-	${INSTALL_MAN} ${WRKSRC}/BitchX.1.gz ${PREFIX}/man/man1
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/bx/help
+	${MKDIR} ${PREFIX}/share/doc/bitchx
+	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . --exclude CVS | \
+		${TAR} --directory ${PREFIX}/share/bx/help -xf -
+	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
+.endif
+.if defined(USE_GNOME)
+	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
+	@${ECHO} bin/gtkBitchX-1.0c15 >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}
+.else
+	@${ECHO} bin/BitchX >> ${TMPPLIST}
+	@${ECHO} bin/BitchX-1.0c15 >> ${TMPPLIST}
+	@${ECHO} bin/scr-bx >> ${TMPPLIST}
+	@${ECHO} share/bx/wserv >> ${TMPPLIST}
+.endif
+	@${ECHO} @dirrm share/bx/help >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx/plugins >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx/script >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx/translation >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx >> ${TMPPLIST}
 
 .include <bsd.port.mk>
