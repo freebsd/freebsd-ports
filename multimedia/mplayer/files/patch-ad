@@ -1,5 +1,5 @@
---- configure.orig	Sat Sep 27 16:27:23 2003
-+++ configure	Sat Sep 27 16:34:14 2003
+--- configure.orig	Sat Aug  9 16:12:30 2003
++++ configure	Tue Dec 23 18:52:29 2003
 @@ -300,7 +300,7 @@
  
  
@@ -9,7 +9,15 @@
  _ranlib=ranlib
  _cc=gcc
  test "$CC" && _cc="$CC"
-@@ -539,19 +539,10 @@
+@@ -392,6 +392,7 @@
+       i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
+       ia64) host_arch=ia64 ;;
+       x86_64) host_arch=x86_64 ;;
++      amd64) host_arch=x86_64 ;;
+       ppc) host_arch=ppc ;;
+       alpha) host_arch=alpha ;;
+       sparc*) host_arch=sparc ;;
+@@ -539,19 +540,10 @@
  
  # Try to find the available options for the current CPU
  if x86 || ppc; then
@@ -29,7 +37,7 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1423,8 +1414,8 @@
+@@ -1423,8 +1415,8 @@
      ;;
  
    *)
@@ -40,7 +48,7 @@
      ;;
  
    esac
-@@ -1434,7 +1425,7 @@
+@@ -1434,7 +1426,7 @@
  test -z "$_bindir" && _bindir="$_prefix/bin"
  test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
  test -z "$_mandir" && _mandir="$_prefix/man"
@@ -49,7 +57,7 @@
  test -z "$_libdir" && _libdir="$_prefix/lib"
  test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
  
-@@ -1866,13 +1857,7 @@
+@@ -1866,13 +1858,7 @@
  
  
  echocheck "memalign()"
@@ -63,7 +71,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -1961,31 +1946,7 @@
+@@ -1961,31 +1947,7 @@
  
  
  echocheck "pthread"
@@ -96,7 +104,7 @@
  echores "yes (using $_ld_pthread)"
  
  
-@@ -4848,7 +4809,7 @@
+@@ -4848,7 +4810,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
