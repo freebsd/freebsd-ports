@@ -1019,6 +1019,7 @@ de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
 de-kde2-i18n	ports/german/kde2-i18n
+de-koffice-i18n	ports/german/koffice-i18n
 de-manpages	ports/german/manpages
 de-phone	ports/german/phone
 de-staroffice52	ports/german/staroffice52
@@ -1499,6 +1500,7 @@ fpp		ports/devel/fpp
 fpr		src/usr.bin/fpr
 fr-ispell	ports/french/ispell
 fr-kde2-i18n	ports/french/kde2-i18n
+fr-koffice-i18n	ports/french/koffice-i18n
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 fractorama	ports/graphics/fractorama
@@ -2472,6 +2474,7 @@ ja-kinput2-sj3+wnn7	ports/japanese/kinput2-sj3+wnn7
 ja-kinput2-wnn6	ports/japanese/kinput2-wnn6
 ja-kinput2-wnn7	ports/japanese/kinput2-wnn7
 ja-kochi-ttfonts	ports/japanese/kochi-ttfonts
+ja-koffice-i18n	ports/japanese/koffice-i18n
 ja-kon2-14dot	ports/japanese/kon2-14dot
 ja-kon2-16dot	ports/japanese/kon2-16dot
 ja-kpcal	ports/japanese/kpcal
