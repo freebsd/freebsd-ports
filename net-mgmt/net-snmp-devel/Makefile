@@ -3,14 +3,14 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.20 1998/08/26 21:20:40 asami Exp $
+# $Id: Makefile,v 1.21 1998/08/30 15:51:13 steve Exp $
 #
 
-DISTNAME=	ucd-snmp-3.5
+DISTNAME=	ucd-snmp-3.5.3
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
-                ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
+		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
@@ -34,18 +34,29 @@ BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN=		snmpd snmptrapd
 
+STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
+
 post-install:
-	( cd ${PREFIX}/bin; strip ${BIN} )
-	( cd ${PREFIX}/sbin; strip ${SBIN} )
-	(cd ${PREFIX}/lib && ${LN} -f libsnmp.so libsnmp.so.3.5)
+	( cd ${PREFIX}/bin && strip ${BIN} )
+	( cd ${PREFIX}/sbin && strip ${SBIN} )
+	( cd ${PREFIX}/lib && ${LN} -f libsnmp.so libsnmp.so.${SHLIB_VERSION} )
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/etc/* ; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
-	@if [ ! -f ${PREFIX}/etc/rc.d/snmpd.sh ]; then \
-		echo "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/snmpd.sh; \
-		echo "[ -x /usr/local/sbin/snmpd ] && /usr/local/sbin/snmpd && echo -n ' snmpd'" >> ${PREFIX}/etc/rc.d/snmpd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/snmpd.sh; \
+	@if [ ! -f ${STARTUP_FILE} ]; then \
+		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${STARTUP_FILE}; \
+		${ECHO} "[ -x ${PREFIX}/sbin/snmpd ] && ${PREFIX}/sbin/snmpd && ${ECHO} -n ' snmpd'" >> ${STARTUP_FILE}; \
+		chmod 751 ${STARTUP_FILE}; \
 	 fi
+	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if (${PORTOBJFORMAT} == "aout")
+SHLIB_VERSION=3.5
+PATCHDIR=patches.aout
+.else
+SHLIB_VERSION=3
+.endif
+MAKE_ENV+= SHLIB_VERSION=${SHLIB_VERSION}

@@ -1,0 +1,14 @@
+--- snmplib/Makefile.in.orig	Mon Sep  7 16:19:24 1998
++++ snmplib/Makefile.in	Mon Oct 19 16:16:19 1998
+@@ -23,7 +23,10 @@
+ all: $(TARG)
+ 
+ libsnmp.$(SHLIB_EXTENSION):    ${OBJS}
+-	$(SHLIB_LD_CMD) libsnmp.$(SHLIB_EXTENSION) ${OBJS}
++	ld -Bshareable -soname libsnmp.$(SHLIB_EXTENSION).$(SHLIB_VERSION) \
++		-o libsnmp.$(SHLIB_EXTENSION) ${OBJS}
++	ln -f libsnmp.$(SHLIB_EXTENSION) \
++		libsnmp.$(SHLIB_EXTENSION).$(SHLIB_VERSION)
+ 	$(RANLIB) libsnmp.$(SHLIB_EXTENSION)
+ 
+ installdirs:
