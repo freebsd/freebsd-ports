@@ -1,14 +1,15 @@
 --- include/faac.h.orig	Mon Nov 24 13:10:32 2003
-+++ include/faac.h	Fri Oct 22 20:03:09 2004
-@@ -36,7 +36,6 @@
++++ include/faac.h	Thu Oct 28 20:01:36 2004
+@@ -36,7 +36,7 @@
  # endif
  #endif
  
 -#pragma pack(push, 1)
++#include <sys/types.h>
  
  typedef struct {
    void *ptr;
-@@ -76,17 +75,16 @@
+@@ -76,17 +76,16 @@
  int FAACAPI faacEncGetDecoderSpecificInfo(faacEncHandle hEncoder, unsigned char **ppBuffer,
  					  unsigned long *pSizeOfDecoderSpecificInfo);
  
@@ -30,7 +31,7 @@
  #ifdef __cplusplus
  }
 --- include/faaccfg.h.orig	Wed Oct 29 05:31:24 2003
-+++ include/faaccfg.h	Fri Oct 22 19:59:53 2004
++++ include/faaccfg.h	Thu Oct 28 20:01:13 2004
 @@ -45,7 +45,6 @@
  #define SHORTCTL_NOSHORT   1
  #define SHORTCTL_NOLONG    2
