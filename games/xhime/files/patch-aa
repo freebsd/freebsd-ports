@@ -1,0 +1,16 @@
+--- Imakefile.orig	Wed Dec 18 14:54:18 1996
++++ Imakefile	Tue Aug 11 18:28:28 1998
+@@ -5,7 +5,7 @@
+ #define	USE_SHAPE
+ #undef	NO_SIGACTION
+ 
+-MAILSPOOL_PATH	= /usr/spool/mail/
++MAILSPOOL_PATH	= /var/mail/
+ AUDIO_DEVICE	= /dev/audio
+ 
+ /*-------------*/
+@@ -39,3 +39,4 @@
+         DEFINES = $(DEF_SHAPE) $(DEF_NOSIG) -DAUDIO_DEVICE=\"$(AUDIO_DEVICE)\"  -DMAILSPOOL_PATH=\"$(MAILSPOOL_PATH)\" Flags
+ 
+ SimpleProgramTarget(xhime)
++MANSUFFIX=6

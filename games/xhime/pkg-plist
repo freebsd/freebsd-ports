@@ -1,0 +1,6 @@
+bin/xhime
+share/doc/ja/xhime/xhime-doc.euc
+share/doc/ja/xhime/xhime.doc
+share/doc/ja/xhime/rh110-doc.euc
+share/doc/ja/xhime/rh110.xhm
+@dirrm share/doc/ja/xhime
