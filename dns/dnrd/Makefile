@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		dnrd
-PORTVERSION=		2.17.2
+PORTVERSION=		2.18
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dnrd
@@ -35,8 +35,6 @@ DOCS=			AUTHORS ChangeLog INSTALL README \
 EXAMPLES=		doc/master.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/dnrd|${PREFIX}/etc/dnrd|g' \
-		${WRKSRC}/doc/master.sample ${WRKSRC}/doc/README-master
 	@${SED} -e 's|%%RC_SUBR%%|${RC_SUBR}|g' -e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/dnrd.sh > ${WRKDIR}/dnrd.sh
 
