@@ -10,7 +10,9 @@ share/doc/xine/README.freebsd
 share/doc/xine/README.syncfb
 share/doc/xine/bug_report_form
 share/xine/skins/default/arrowdn.png
+share/xine/skins/default/arrowdn2.png
 share/xine/skins/default/arrowup.png
+share/xine/skins/default/arrowup2.png
 share/xine/skins/default/bg.png
 share/xine/skins/default/button.png
 share/xine/skins/default/close.png
@@ -65,7 +67,9 @@ share/xine/skins/lcd/slider_pad.png
 share/xine/skins/lcd/smallbtn.png
 share/xine/skins/lcd/stop.png
 share/xine/skins/metal/arrowdn.png
+share/xine/skins/metal/arrowdn2.png
 share/xine/skins/metal/arrowup.png
+share/xine/skins/metal/arrowup2.png
 share/xine/skins/metal/bg.png
 share/xine/skins/metal/button.png
 share/xine/skins/metal/close.png
