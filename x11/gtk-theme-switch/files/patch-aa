@@ -1,0 +1,24 @@
+--- Makefile.orig	Mon Jul 24 19:42:17 2000
++++ Makefile	Mon Jul 24 19:46:23 2000
+@@ -1,7 +1,6 @@
+-GCC = gcc
+-PREFIX=/usr/local
+-CFLAGS = -I/usr/lib/glib/include -I/usr/X11R6/include
+-LIBS = -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXi -lXext -lX11 -lm
++GCC = ${CC}
++CFLAGS += `${X11BASE}/bin/gtk12-config --cflags`
++LIBS = `${X11BASE}/bin/gtk12-config --libs`
+ VERSION = 0.3
+ all : gthemeswitch
+ 
+@@ -12,8 +11,8 @@
+ 	-rm gthemeswitch *~
+ install: all
+        
+-	install -c gthemeswitch ${PREFIX}/bin
+-	install -c switch ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} gthemeswitch ${PREFIX}/bin
++	${BSD_INSTALL_SCRIPT} switch ${PREFIX}/bin
+ 
+ dist: clean
+ 	rm -rf /tmp/gtk-theme-switch-$(VERSION)
