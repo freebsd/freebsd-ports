@@ -24,9 +24,12 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-samba --with-configdir=${LOCALBASE}/etc \
-		--with-codepagedir=${LOCALBASE}/etc/codepages
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+.if !defined(WITHOUT_SAMBA)
+CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \
+		--with-codepagedir=${LOCALBASE}/etc/codepages
+.endif
 
 .if !defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--enable-charset
