@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1997/05/04 23:23:09 jfitz Exp $
+# $Id: Makefile,v 1.53 1997/05/07 21:02:17 max Exp $
 #
 
     SUBDIR += SWIG
@@ -10,6 +10,7 @@
     SUBDIR += crosssco
     SUBDIR += cutils
     SUBDIR += cxref
+    SUBDIR += ddd
     SUBDIR += dmake
     SUBDIR += fpp
     SUBDIR += gcc11
