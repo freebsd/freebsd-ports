@@ -987,3 +987,4 @@ multimedia/ffmpeg045|multimedia/ffmpeg|2004-03-20|latest stable version is bette
 editors/emacs|editors/emacs19|2004-03-20|emacs 19.x moved to a non-default port location
 editors/emacs21|editors/emacs|2004-03-20|emacs 21.x moved to default port location
 editors/openoffice-1.1-gr|editors/openoffice-1.1-el|2004-03-20|correct ISO code
+print/rubber|textproc/rubber|2004-03-22|remove duplicate port

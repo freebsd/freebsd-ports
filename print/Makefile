@@ -194,7 +194,6 @@
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex
-    SUBDIR += rubber
     SUBDIR += ruby-clibpdf
     SUBDIR += ruby-panda
     SUBDIR += ruby-pdflib
