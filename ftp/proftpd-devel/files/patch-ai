@@ -1,0 +1,11 @@
+--- contrib/mod_ratio.c.orig	Sun Oct 20 13:49:21 2002
++++ contrib/mod_ratio.c	Sun Oct 20 13:50:11 2002
+@@ -606,7 +606,7 @@
+       add_response(R_214,
+ 		   "Bytes: %s  Down: %imb  Up: %imb  CR: %i Mbytes",
+ 		   stats.btext, (stats.bretr / 1024), (stats.bstor / 1024),
+-		   (stats.bytes / 1024), stats.bytes);
++		   (stats.bytes / 1024));
+     return HANDLED(cmd);
+   }
+   
