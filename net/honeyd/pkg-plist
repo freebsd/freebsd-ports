@@ -1,4 +1,8 @@
 bin/honeyd
+include/honeyd/hooks.h
+include/honeyd/plugins.h
+include/honeyd/plugins_config.h
+include/honeyd/debug.h
 share/honeyd/README
 share/honeyd/nmap.assoc
 share/honeyd/nmap.prints
@@ -7,4 +11,4 @@ share/honeyd/config.sample
 @dirrm share/honeyd
 lib/honeyd/libhoneyd.so
 @dirrm lib/honeyd
-
+@dirrm include/honeyd
