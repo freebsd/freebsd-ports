@@ -1,6 +1,37 @@
---- Makefile.in.orig	Mon Mar 24 16:31:17 2003
-+++ Makefile.in	Mon Mar 24 16:32:01 2003
-@@ -872,6 +872,7 @@
+--- Makefile.in.orig	Wed Jul  2 02:30:46 2003
++++ Makefile.in	Sun Jul 20 14:09:49 2003
+@@ -132,7 +132,7 @@
+ EXTRA_DIST = 00README.NOW.OR.SUFFER README README.cygwin automake.fix COPYING.GPL sysconftool
+ 
+ sysconf_DATA = imapd.dist imapd-ssl.dist pop3d.dist pop3d-ssl.dist \
+-	imapd.cnf pop3d.cnf quotawarnmsg.example
++	quotawarnmsg.example
+ 
+ libexec_SCRIPTS = imapd.rc imapd-ssl.rc pop3d.rc pop3d-ssl.rc
+ 
+@@ -351,8 +351,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
++	  echo " %%INSTALL_MAN%% $$file $(DESTDIR)$(man1dir)/$$inst"; \
++	  %%INSTALL_MAN%% $$file $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
+ uninstall-man1:
+ 	@$(NORMAL_UNINSTALL)
+@@ -394,8 +394,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man8dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man8dir)/$$inst; \
++	  echo " %%INSTALL_MAN%% $$file $(DESTDIR)$(man8dir)/$$inst"; \
++	  %%INSTALL_MAN%% $$file $(DESTDIR)$(man8dir)/$$inst; \
+ 	done
+ uninstall-man8:
+ 	@$(NORMAL_UNINSTALL)
+@@ -873,6 +873,7 @@
  
  install-data-local: install-man
  	for f in `cat authlib/modulelist ; . authlib/authdaemonrc ; echo $$authmodulelist ` ; do \

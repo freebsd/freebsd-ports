@@ -160,14 +160,14 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^	imapd.cnf pop3d.cnf //' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
 		${WRKSRC}/authlib/configure
 	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
 		${WRKSRC}/authlib/installlist.in
+	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/authlib/Makefile.in
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
