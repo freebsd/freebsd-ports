@@ -145,4 +145,4 @@ lib/libgrace_np.a
 @dirrm lib/X11/grace/lib
 @dirrm lib/X11/grace/templates
 @dirrm lib/X11/grace
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%
