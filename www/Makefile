@@ -164,6 +164,7 @@
     SUBDIR += mod_ticket
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
+    SUBDIR += mod_watch
     SUBDIR += mod_zap
     SUBDIR += momspider
     SUBDIR += mozilla
