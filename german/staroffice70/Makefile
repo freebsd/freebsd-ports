@@ -11,9 +11,9 @@ PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
-DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-02.tar.Z
+DISTFILES=	so-6_0-ga-bin-linux-en.bin 112887-02.tar.Z
 .if defined(WITH_ADABAS)
-DISTFILES+=     soa-6_0-ga-bin-linux-en.bin
+DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
 .endif
 
 EXTRACT_ONLY=	112887-02.tar.Z
