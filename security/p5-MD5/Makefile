@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/05/24 13:17:13 jfitz Exp $
+# $Id: Makefile,v 1.7 1997/06/24 18:43:23 jfitz Exp $
 #
 
 DISTNAME=	MD5-1.7
