@@ -1,0 +1,13 @@
+lib/kde3/kfile_desktop.la
+lib/kde3/kfile_desktop.so
+lib/kde3/kfile_folder.la
+lib/kde3/kfile_folder.so
+lib/kde3/kfile_html.la
+lib/kde3/kfile_html.so
+lib/kde3/kfile_txt.la
+lib/kde3/kfile_txt.so
+share/applications/kdeaddons-kfile-plugins-3.2.1
+share/services/kfile_desktop.desktop
+share/services/kfile_folder.desktop
+share/services/kfile_html.desktop
+share/services/kfile_txt.desktop
