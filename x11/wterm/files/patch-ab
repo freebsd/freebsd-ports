@@ -1,0 +1,17 @@
+--- src/wterm.h.orig	Thu Aug 10 03:12:22 2000
++++ src/wterm.h	Thu Aug 10 03:12:47 2000
+@@ -408,11 +408,13 @@
+ #else
+ # define COLORTERMENVFULL COLORTERMENV
+ #endif
++
++#undef TERMENV
+ #ifndef TERMENV
+ # ifdef KANJI
+ #  define TERMENV	"kterm"
+ # else
+-#  define TERMENV	"xterm"
++#  define TERMENV	"xterm-color"
+ # endif
+ #endif
+ 
