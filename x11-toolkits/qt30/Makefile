@@ -7,6 +7,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-2.2.0
@@ -28,7 +29,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
-CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
+CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
 
 .if defined(QT_GIF_AVAILABLE) || defined(HAVE_UNISYS_LICENSE)
 CONFIGURE_ARGS+=-gif
@@ -39,14 +40,24 @@ RESTRICTED=	"Requires a license from UNISYS"
 .include "${.CURDIR}/files/manpages"
 .endif
 
+.if defined(WANT_STATIC)
+STATIC=static
+CONFIGURE_ARGS+=-static
+.else
+STATIC=shared
+INSTALLS_SHLIB=yes
+.endif
+
 pre-fetch:
 .if exists(${X11BASE}/lib/libqt2.so.3)
+.if !defined(WANT_STATIC)
 	@${ECHO} "An older version of QT2 is installed.  To avoid clobbering"
 	@${ECHO} "that installation, deinstall it and then install this port."
 	@${ECHO} "Note that this port contains beta-quality source code and"
 	@${ECHO} "must be used only wherever absolutely needed, such as for"
 	@${ECHO} "KDE2 snapshot 20000829A and later."
 	@${FALSE}
+.endif
 .endif
 
 pre-configure:
@@ -62,7 +73,7 @@ pre-configure:
 	${PERL} -pi -e "s@-L../lib@-L${WRKSRC}/lib@g" ${WRKSRC}/tools/designer/uic/Makefile.in
 
 post-configure:
-	@(cd ${WRKSRC} ; ${GMAKE} symlinks)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)
 
 do-install:
 	${MKDIR} ${PREFIX}/include/qt2
@@ -90,6 +101,14 @@ do-install:
 	${INSTALL_DATA} doc/html/designer/*.html ${PREFIX}/share/doc/qt2/html/designer ; \
 	${INSTALL_DATA} doc/html/designer/figures/* ${PREFIX}/share/doc/qt2/html/designer/figures ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
+.endif
+
+.if defined(WANT_STATIC)
+post-install:
+	@${PERL} -pi -e 's/libqt2\.so/libqt2.a/' ${TMPPLIST}
+	@${PERL} -pi -e 's/.*libqt2\.a\.\d\n//' ${TMPPLIST}
+	@${PERL} -pi -e 's/libqutil\.so/libqutil.a/' ${TMPPLIST}
+	@${PERL} -pi -e 's/.*libqutil\.a\.\d\n//' ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
