@@ -7,7 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	2.53
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
 DISTNAME=	${PORTNAME}${PORTVERSION}
