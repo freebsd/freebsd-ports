@@ -1,0 +1,5 @@
+bin/mu-conference
+etc/muc.xml-dist
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
