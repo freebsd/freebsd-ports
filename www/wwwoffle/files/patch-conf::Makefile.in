@@ -1,0 +1,11 @@
+--- conf/Makefile.in-	Fri Mar 29 16:40:55 2002
++++ conf/Makefile.in	Fri Mar 29 16:39:51 2002
+@@ -49,7 +49,7 @@
+ 	  echo "WWWOFFLE: There is already a config file $(CONFDIR)/wwwoffle.conf." ;\
+ 	  echo "WWWOFFLE: Run 'conf/upgrade-config.pl $(CONFDIR)/wwwoffle.conf' to upgrade it." ;\
+ 	  echo "WWWOFFLE: " )
+-	[  ! -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
++	$(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
+ 	[    -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf
+ 
+ ######## CONF FILE ########
