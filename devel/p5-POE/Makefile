@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.28
+PORTVERSION=	0.2802
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Multitasking and networking framework for perl
-
-IS_INTERACTIVE=	yes
 
 BUILD_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
@@ -26,7 +24,7 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	</dev/null
+CONFIGURE_ARGS=	--default
 
 MAN3=		POE.3 POE::API::ResLoader.3 POE::Component.3 \
 		POE::Component::Client::TCP.3 POE::Component::Server::TCP.3 \
