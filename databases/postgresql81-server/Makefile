@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	7.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
@@ -89,14 +89,14 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		NO_OPENSSL="${NO_OPENSSL}" \
 		DISTNAME="${DISTNAME}"
 
-pre-extract:
-	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
-
-# We must .include here because we need the Makefile.inc @ pre-install,
-# but it is created @ pre-extract
+# We must .include here because we need the Makefile.inc @ pre-install
+# to determine the correct plist.
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+pre-everything:
+	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
