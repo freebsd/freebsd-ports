@@ -2329,6 +2329,7 @@ goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
 gok		ports/sysutils/gok
 golddig		ports/games/golddig
+golded+		ports/news/golded+
 goldstr		ports/misc/goldstr
 golem		ports/x11-wm/golem
 gomoku.app	ports/games/gomoku.app
