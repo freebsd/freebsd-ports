@@ -38,4 +38,3 @@ LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .include <bsd.port.post.mk>
-
