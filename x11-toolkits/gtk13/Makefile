@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.23 1998/08/12 10:38:28 vanilla Exp $
+# $Id: Makefile,v 1.24 1998/08/14 11:16:49 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.1
@@ -17,11 +17,20 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	glib11\\.0\\.:${PORTSDIR}/devel/glib
 
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk11
 
+MAN1=		gtk11-config.1
+
+pre-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
+
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
