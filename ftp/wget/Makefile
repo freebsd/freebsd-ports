@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/01/27 07:41:25 fenner Exp $
+# $Id: Makefile,v 1.12 1999/03/20 17:18:04 nectar Exp $
 #
 
 DISTNAME=	wget-1.5.3
@@ -21,10 +21,14 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 
+INFOFILES=	wget.info
+
 post-install:
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
-	-install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
+.for i in ${INFOFILES}
+	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
+.endfor
 
 .include <bsd.port.mk>
