@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1996/11/01 19:17:48 markm Exp $
+# $Id: Makefile,v 1.9 1996/11/17 08:44:24 obrien Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
@@ -18,7 +18,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript4 \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 NO_CONFIGURE=	yes
-NO_PACKAGE=	yes	# too many questions
+NO_PACKAGE=	"Too many questions."
 IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 
