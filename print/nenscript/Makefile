@@ -8,25 +8,30 @@
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3
 CATEGORIES=	print
-MASTER_SITES=	http://risacher.posixnap.net/nenscript/ \
+MASTER_SITES=	http://www.risacher.org/nenscript/ \
 		ftp://netsw.org/system/tools/print/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the proprietary enscript program from Adobe Systems
 
 USE_BZIP2=	yes
 
 MAKEFILE=	makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		nenscript.1
 
-pre-fetch:
-	@${ECHO_MSG} "To build the Non-US version type:"
-	@${ECHO_MSG} "    make NON_US=yes"
+.include <bsd.port.pre.mk>
+
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES"
+CFLAGS+=	-DUS_VERSION
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nenscript ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nenscript.1 ${MANPREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/nenscript
-	${INSTALL_MAN} ${WRKSRC}/readme ${PREFIX}/share/doc/nenscript
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/readme ${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
