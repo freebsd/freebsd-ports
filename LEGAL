@@ -166,7 +166,7 @@ rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be dist
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
-rp7_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
+rp*_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
 sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
