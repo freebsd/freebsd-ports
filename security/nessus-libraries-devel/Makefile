@@ -1,12 +1,13 @@
 # Ports collection makefile for:	nessus-libraries
-# Date created:				07 Noevmber 1999
+# Date created:				07 November 1999
 # Whom:					Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	nessus-libraries
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
