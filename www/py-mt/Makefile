@@ -1,0 +1,26 @@
+# ex:ts=8
+# Ports collection makefile for:	PyMT
+# Date created:			Dec 8, 2003
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mt
+PORTVERSION=	1.0
+CATEGORIES=	www python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pymt
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyMT-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python module which provides Movable Type XML-RPC connectivity
+
+USE_PYTHON=	yes
+NO_BUILD=	yes
+
+do-install:
+	@${INSTALL_DATA} ${WRKSRC}/PyMT.py ${PYTHON_SITELIBDIR}
+
+.include <bsd.port.mk>

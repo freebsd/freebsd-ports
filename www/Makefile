@@ -461,6 +461,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
     SUBDIR += py-fcgi
+    SUBDIR += py-mt
     SUBDIR += py-scgi
     SUBDIR += py-websvcs
     SUBDIR += pyweblib
