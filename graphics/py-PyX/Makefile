@@ -18,6 +18,8 @@ COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
+BROKEN=		"Unfetchable"
+
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
 
