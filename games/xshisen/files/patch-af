@@ -1,0 +1,47 @@
+--- score.C.orig	Sun Dec 12 14:41:24 1999
++++ score.C	Sun Dec 12 14:42:58 1999
+@@ -4,31 +4,31 @@
+ 
+ XtResource Score::resources[] = {
+     { "scoreTitle",  "ScoreTitle",  XtRString, sizeof(char *),
+-      0*sizeof(char *), XtRString, "XShisen High Score\n\n" },
++      0*sizeof(char *), XtRString, (XtPointer)"XShisen High Score\n\n" },
+     { "scoreFormat", "ScoreFormat", XtRString, sizeof(char *),
+-      1*sizeof(char *), XtRString, "%2d  %2.2d:%2.2d:%2.2d  %-28s  %s %s\n" },
++      1*sizeof(char *), XtRString, (XtPointer)"%2d  %2.2d:%2.2d:%2.2d  %-28s  %s %s\n" },
+     { "strPeriod", "StrPeriod", XtRString, sizeof(char *),
+-      2*sizeof(char *), XtRString, "Last %d days" },
++      2*sizeof(char *), XtRString, (XtPointer)"Last %d days" },
+     { "averagePeriod", "AveragePeriod", XtRString, sizeof(char *),
+-      3*sizeof(char *), XtRString, "14" },
++      3*sizeof(char *), XtRString, (XtPointer)"14" },
+     { "strPlayed", "StrPlayed", XtRString, sizeof(char *),
+-      4*sizeof(char *), XtRString, "Played" },
++      4*sizeof(char *), XtRString, (XtPointer)"Played" },
+     { "strCompleted", "StrCompleted", XtRString, sizeof(char *),
+-      5*sizeof(char *), XtRString, "Completed" },
++      5*sizeof(char *), XtRString, (XtPointer)"Completed" },
+     { "strTedumari", "StrTedumari", XtRString, sizeof(char *),
+-      6*sizeof(char *), XtRString, "Deadlocked" },
++      6*sizeof(char *), XtRString, (XtPointer)"Deadlocked" },
+     { "strSearched", "StrSearched", XtRString, sizeof(char *),
+-      7*sizeof(char *), XtRString, "Seach used" },
++      7*sizeof(char *), XtRString, (XtPointer)"Search used" },
+     { "strGiveUp", "StrGiveUp", XtRString, sizeof(char *),
+-      8*sizeof(char *), XtRString, "Gaven up" },
++      8*sizeof(char *), XtRString, (XtPointer)"Given up" },
+     { "strTotal", "StrTotal", XtRString, sizeof(char *),
+-      9*sizeof(char *), XtRString, "Total" },
++      9*sizeof(char *), XtRString, (XtPointer)"Total" },
+     { "strAverage", "StrAverage", XtRString, sizeof(char *),
+-      10*sizeof(char *), XtRString, "Whole Average" },
++      10*sizeof(char *), XtRString, (XtPointer)"Whole Average" },
+     { "strGames", "StrGames", XtRString, sizeof(char *),
+-      11*sizeof(char *), XtRString, "games" },
++      11*sizeof(char *), XtRString, (XtPointer)"games" },
+     { "personalTitle", "PersonalTitle", XtRString, sizeof(char *),
+-      12*sizeof(char *), XtRString, "Personal Statistics for %s" }
++      12*sizeof(char *), XtRString, (XtPointer)"Personal Statistics for %s" }
+ };
+ 
+ void
