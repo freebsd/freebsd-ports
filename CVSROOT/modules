@@ -7633,6 +7633,7 @@ sdl_image	ports/graphics/sdl_image
 sdl_ldbad	ports/devel/sdl_ldbad
 sdl_mixer	ports/audio/sdl_mixer
 sdl_net		ports/net/sdl_net
+sdl_sound	ports/audio/sdl_sound
 sdl_ttf		ports/graphics/sdl_ttf
 sdlmm		ports/devel/sdlmm
 sdlroids	ports/games/sdlroids
