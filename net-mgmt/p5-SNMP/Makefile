@@ -19,8 +19,14 @@ LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/net-snmp4
 
 PERL_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not build with perl >=5.8"
+.endif
+
 post-install:
 		@${INSTALL_DATA} ${WRKSRC}/README \
 			${PREFIX}/lib/perl5/site_perl/README.SNMP
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
