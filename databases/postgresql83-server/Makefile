@@ -141,7 +141,7 @@ post-install:
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
 		${ECHO} "PATH=${PATH}:${PREFIX}/pgsql/bin" \
 			> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/bin" \
+		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/man" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "PGLIB=${PREFIX}/pgsql/lib" \
 			>> ${PREFIX}/pgsql/.profile; \
