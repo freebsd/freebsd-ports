@@ -145,6 +145,7 @@ pre-install:
 .for ii in firefox Firefox firefox-config ${EXTRA_SCRIPTS}
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
+	@${ECHO_CMD} lib/firefox/lib/mozilla-1.6/libnspr4.so.1 >> ${PLIST}
 	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
 		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
@@ -173,6 +174,8 @@ post-install:
 	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
 		's|${FAKEDIR}|${PREFIX}|g'
+	${LN} -sf ${LOCAL_PREFIX}/lib/mozilla-1.6/libnspr4.so \
+		${LOCAL_PREFIX}/lib/mozilla-1.6/libnspr4.so.1
 	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
