@@ -1,0 +1,43 @@
+bin/jinfo
+bin/jmakeinfo
+bin/jinstall-info
+bin/jtexindex
+bin/jtexi2dvi
+@unexec install-info --delete %D/info/info.info %D/info/dir
+@unexec install-info --delete %D/info/info-stnd.info %D/info/dir
+@unexec install-info --delete %D/info/texinfo %D/info/dir
+info/info.info
+info/texinfo
+info/texinfo-1
+info/texinfo-2
+info/texinfo-3
+info/texinfo-4
+info/texinfo-5
+info/texinfo-6
+info/texinfo-7
+info/texinfo-8
+info/texinfo-9
+info/texinfo-10
+info/texinfo-11
+info/texinfo-12
+info/texinfo-13
+info/info-stnd.info
+info/info-stnd.info-1
+info/info-stnd.info-2
+@exec install-info %D/info/info.info %D/info/dir
+@exec install-info %D/info/texinfo %D/info/dir
+@exec install-info %D/info/info-stnd.info %D/info/dir
+share/texmf/tex/generic/dvips/epsf.tex
+share/texmf/tex/texinfo/texinfo.tex
+share/texmf/tex/texinfo/txi-cs.tex
+share/texmf/tex/texinfo/txi-de.tex
+share/texmf/tex/texinfo/txi-no.tex
+share/texmf/tex/texinfo/txi-ja.tex
+share/locale/de/LC_MESSAGES/texinfo.mo
+share/locale/fr/LC_MESSAGES/texinfo.mo
+share/locale/nl/LC_MESSAGES/texinfo.mo
+share/locale/no/LC_MESSAGES/texinfo.mo
+share/locale/cs/LC_MESSAGES/texinfo.mo
+share/locale/de_AT/LC_MESSAGES/texinfo.mo
+share/locale/eo/LC_MESSAGES/texinfo.mo
+share/locale/ru/LC_MESSAGES/texinfo.mo

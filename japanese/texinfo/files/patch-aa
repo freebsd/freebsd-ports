@@ -1,0 +1,11 @@
+--- info/Makefile.in.dist	Mon Aug 16 13:44:59 1999
++++ info/Makefile.in	Mon Aug 16 13:51:35 1999
+@@ -98,7 +98,7 @@
+ # we need to override it, so include them ourselves.
+ INCLUDES = -I. -I$(top_srcdir)/lib -I../intl -I.. -I$(srcdir)
+ DEFS = -DINFODIR=\"$(infodir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
+-LDADD = ../lib/libtxi.a @TERMLIBS@ @INTLLIBS@
++LDADD = ../lib/libtxi.a -ltermcap @INTLLIBS@
+ 
+ EXTRA_DIST = README pcterm.c
+ 
