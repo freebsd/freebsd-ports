@@ -7,6 +7,7 @@
 
 PORTNAME=	cvs+ipv6
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://ftp.cvshome.org/cvs-1.11.2/
 #		${MASTER_SITE_GNU}

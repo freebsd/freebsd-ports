@@ -1,36 +1,42 @@
---- lib/Makefile.in.orig	Sun Aug 25 05:41:20 2002
-+++ lib/Makefile.in	Sun Aug 25 05:42:30 2002
-@@ -126,7 +126,6 @@
+--- lib/Makefile.in.orig	Mon Aug 26 20:50:59 2002
++++ lib/Makefile.in	Mon Aug 26 20:51:12 2002
+@@ -126,8 +126,6 @@
  	getline.c \
  	getopt.c \
  	getopt1.c \
 -	md5.c \
- 	regex.c \
+-	regex.c \
  	savecwd.c \
  	sighandle.c \
-@@ -162,7 +161,7 @@
+ 	stripslash.c \
+@@ -162,7 +160,7 @@
  libcvs_a_DEPENDENCIES = @LIBOBJS@
  am_libcvs_a_OBJECTS = argmatch.$(OBJEXT) ftruncate.$(OBJEXT) \
  	getdate.$(OBJEXT) getline.$(OBJEXT) getopt.$(OBJEXT) \
 -	getopt1.$(OBJEXT) md5.$(OBJEXT) regex.$(OBJEXT) \
-+	getopt1.$(OBJEXT) regex.$(OBJEXT) \
++	getopt1.$(OBJEXT) \
  	savecwd.$(OBJEXT) sighandle.$(OBJEXT) stripslash.$(OBJEXT) \
  	xgetwd.$(OBJEXT) yesno.$(OBJEXT)
  libcvs_a_OBJECTS = $(am_libcvs_a_OBJECTS)
-@@ -179,7 +178,7 @@
+@@ -179,8 +177,8 @@
  @AMDEP_TRUE@	$(DEPDIR)/getdate.Po $(DEPDIR)/getline.Po \
  @AMDEP_TRUE@	$(DEPDIR)/getnameinfo.Po $(DEPDIR)/getopt.Po \
  @AMDEP_TRUE@	$(DEPDIR)/getopt1.Po $(DEPDIR)/hostname.Po \
 -@AMDEP_TRUE@	$(DEPDIR)/md5.Po $(DEPDIR)/memmove.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/mkdir.Po $(DEPDIR)/regex.Po \
 +@AMDEP_TRUE@	$(DEPDIR)/memmove.Po \
- @AMDEP_TRUE@	$(DEPDIR)/mkdir.Po $(DEPDIR)/regex.Po \
++@AMDEP_TRUE@	$(DEPDIR)/mkdir.Po \
  @AMDEP_TRUE@	$(DEPDIR)/rename.Po $(DEPDIR)/savecwd.Po \
  @AMDEP_TRUE@	$(DEPDIR)/sighandle.Po $(DEPDIR)/strerror.Po \
-@@ -239,7 +238,6 @@
+ @AMDEP_TRUE@	$(DEPDIR)/stripslash.Po $(DEPDIR)/strstr.Po \
+@@ -239,10 +237,8 @@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt1.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/hostname.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/md5.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/memmove.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mkdir.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/regex.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/regex.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rename.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/savecwd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/sighandle.Po@am__quote@

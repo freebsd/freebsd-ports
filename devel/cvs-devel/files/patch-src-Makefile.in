@@ -1,5 +1,14 @@
 --- src/Makefile.in.orig	Fri Apr 19 00:55:55 2002
-+++ src/Makefile.in	Sun Aug 25 05:44:36 2002
++++ src/Makefile.in	Mon Aug 26 20:51:29 2002
+@@ -98,7 +98,7 @@
+ # some namespace hackery going on that maybe shouldn't be.  Long term fix is to
+ # try and remove naming ocnflicts and fix Automake to allow particular includes
+ # to be attached only to particular object files.  Short term fix is either or.
+-INCLUDES = -I$(top_srcdir)/lib -I$(top_srcdir)/diff -I$(top_srcdir)/zlib $(includeopt)
++INCLUDES = -I$(top_srcdir)/lib -I$(top_srcdir)/diff $(includeopt)
+ 
+ bin_PROGRAMS = cvs
+ bin_SCRIPTS = cvsbug
 @@ -139,6 +139,7 @@
  	no_diff.c \
  	parseinfo.c \
@@ -8,7 +17,17 @@
  	rcs.c \
  	rcscmds.c \
  	recurse.c \
-@@ -216,6 +217,7 @@
+@@ -179,8 +180,7 @@
+ 
+ cvs_LDADD = \
+ 	../diff/libdiff.a \
+-	../lib/libcvs.a \
+-	../zlib/libz.a
++	../lib/libcvs.a
+ 
+ 
+ # extra clean targets
+@@ -216,6 +216,7 @@
  	main.$(OBJEXT) mkmodules.$(OBJEXT) modules.$(OBJEXT) \
  	myndbm.$(OBJEXT) no_diff.$(OBJEXT) parseinfo.$(OBJEXT) \
  	patch.$(OBJEXT) rcs.$(OBJEXT) rcscmds.$(OBJEXT) \
@@ -16,16 +35,16 @@
  	recurse.$(OBJEXT) release.$(OBJEXT) remove.$(OBJEXT) \
  	repos.$(OBJEXT) root.$(OBJEXT) run.$(OBJEXT) scramble.$(OBJEXT) \
  	server.$(OBJEXT) status.$(OBJEXT) subr.$(OBJEXT) tag.$(OBJEXT) \
-@@ -231,7 +233,7 @@
+@@ -231,7 +232,7 @@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir) -I.
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
-+LIBS = @LIBS@ -lmd
++LIBS = @LIBS@ -lmd -lgnuregex -lz
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/add.Po $(DEPDIR)/admin.Po \
  @AMDEP_TRUE@	$(DEPDIR)/annotate.Po $(DEPDIR)/buffer.Po \
-@@ -250,7 +252,8 @@
+@@ -250,7 +251,8 @@
  @AMDEP_TRUE@	$(DEPDIR)/main.Po $(DEPDIR)/mkmodules.Po \
  @AMDEP_TRUE@	$(DEPDIR)/modules.Po $(DEPDIR)/myndbm.Po \
  @AMDEP_TRUE@	$(DEPDIR)/no_diff.Po $(DEPDIR)/parseinfo.Po \
