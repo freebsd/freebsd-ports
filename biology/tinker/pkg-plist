@@ -202,14 +202,12 @@ share/tinker/test/crambin.pdb
 share/tinker/test/crambin.seq
 share/tinker/test/crambin.xyz
 share/tinker/test/crambinx.key
-share/tinker/test/crambinx.ray
 share/tinker/test/crambinx.xyz
 share/tinker/test/crown.int
 share/tinker/test/crown.key
 share/tinker/test/crown.xyz
 share/tinker/test/cychept.int
 share/tinker/test/cychept.key
-share/tinker/test/cychept.pdb
 share/tinker/test/cychept.xyz
 share/tinker/test/cyclo.int
 share/tinker/test/cyclo.key
@@ -223,7 +221,6 @@ share/tinker/test/diene.xyz
 share/tinker/test/dimethane.key
 share/tinker/test/dimethane.xyz
 share/tinker/test/diwater.key
-share/tinker/test/diwater.min
 share/tinker/test/diwater.xyz
 share/tinker/test/enkephalin.int
 share/tinker/test/enkephalin.key
