@@ -18,17 +18,17 @@
  
 -           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm
 +   INCLUDE_PATH = -I${X11BASE}/include
-+       LIB_PATH = -L${X11BASE}/lib -Wl,-rpath,/usr/X11R6/lib 
++       LIB_PATH = -L${X11BASE}/lib -Wl,-rpath,/usr/X11R6/lib
 +
 +# Link with -lGL on FreeBSD so we use hardware-accelerated GL, when installed.
 +# (see http://people.FreeBSD.org/~3d)
-+           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm -lXi
++           LIBS = -lglut -lGLU -lGL -lXext -lXmu -lX11 -lm -lXi ${PTHREAD_LIBS}
  
  #                 for Mesa
  #          LIBS = -lglut -lMesatk -lMesaGLU -lMesaGL -lXi -lXext -lXmu -lX11 -lm
  
 -         CFLAGS = -c
-+         CFLAGS += -w -DGLCLOCK_DIR=\"${GLCLOCK_DIR}\"
++         CFLAGS += -w -DGLCLOCK_DIR=\"${GLCLOCK_DIR}\" ${PTHREAD_CFLAGS}
           LFLAGS =
  
 -COMPILE = $(CC) $(CFLAGS) $(OPT) $(INCLUDE_PATH)
