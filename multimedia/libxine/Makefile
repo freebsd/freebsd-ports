@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.b6
+PORTVERSION=	1.0.b9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-beta6
+DISTNAME=	${PORTNAME}-lib-1-beta9
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
-		a52.0:${PORTSDIR}/audio/liba52 \
+LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		mad.1:${PORTSDIR}/audio/mad \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		intl.4:${PORTSDIR}/devel/gettext \

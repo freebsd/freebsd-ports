@@ -1,5 +1,5 @@
---- src/liba52/xine_decoder.c.orig	Mon Nov 25 06:08:51 2002
-+++ src/liba52/xine_decoder.c	Sat Nov 30 11:38:41 2002
+--- src/liba52/xine_decoder.c.orig	Tue Feb 18 07:15:22 2003
++++ src/liba52/xine_decoder.c	Tue Mar 25 00:39:52 2003
 @@ -37,8 +37,8 @@
  
  #include "xine_internal.h"
