@@ -18,4 +18,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 
 NO_MAN=
 
+post-extract:
+	@${RM} -f ${WRKSRC}/*.o
+
 .include <bsd.port.mk>
