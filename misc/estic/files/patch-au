@@ -1,0 +1,20 @@
+--- spunk/make/freebsd-x.mak.orig	Sat Feb 26 18:19:20 2000
++++ spunk/make/freebsd-x.mak	Sat Feb 26 18:26:26 2000
+@@ -31,7 +31,7 @@
+ 
+ # Flags for the gnu compiler (use the second one for gcc >= 2.6.0)
+ #CFLAGS = -DFREEBSD -g -Wall -x c++ -I /usr/X11/include
+-CFLAGS	= -DFREEBSD -g -Wall -x c++ -I /usr/X11/include -fno-implicit-templates -DEXPLICIT_TEMPLATES
++CFLAGS	= -DFREEBSD -g -Wall -x c++ -I ${X11BASE}/include -fno-implicit-templates -DEXPLICIT_TEMPLATES
+ 
+ LIB	= spunk.a
+ ZIPFILE = spunk.zip
+@@ -206,7 +206,7 @@
+ # Dummy targets
+ 
+ xresed:		$(LIB) $(RESEDITOBJS) $(HDRS)
+-	$(CC) -g -o xresed $(RESEDITOBJS) $(LIB) -lg++ -L/usr/X11R6/lib -lX11
++	$(CC) -g -o xresed $(RESEDITOBJS) $(LIB) -L/usr/X11R6/lib -lX11
+ 
+ lib:	$(LIB)
+ 

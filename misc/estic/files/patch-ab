@@ -8,26 +8,6 @@
 # ovb@swissmail.com does not use -DUSE_OLD_TTY
 # neither does jhs@freebsd.org need it
 
-*** estic/make/freebsd-x.mak.orig	Sat Sep 14 15:40:16 1996
---- estic/make/freebsd-x.mak	Mon Nov 18 03:08:27 1996
-***************
-*** 35,41 ****
-  # Both configurations of CFLAGS will probably work since FreeBSD has a
-  # smart linker...
-  #CFLAGS = -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib
-! CFLAGS	= -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
-  
-  
-  # ------------------------------------------------------------------------------
---- 35,42 ----
-  # Both configurations of CFLAGS will probably work since FreeBSD has a
-  # smart linker...
-  #CFLAGS = -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib
-! #CFLAGS	= -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
-! CFLAGS	= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
-  
-  
-  # ------------------------------------------------------------------------------
 *** estic/make/freebsd.mak.orig	Sat Sep 14 15:40:16 1996
 --- estic/make/freebsd.mak	Mon Nov 18 03:08:31 1996
 ***************
