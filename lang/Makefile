@@ -117,6 +117,7 @@
     SUBDIR += rotfl
     SUBDIR += ruby
     SUBDIR += ruby-man
+    SUBDIR += ruby-mode.el
     SUBDIR += ruby-perl
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-python

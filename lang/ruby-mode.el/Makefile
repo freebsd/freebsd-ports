@@ -1,0 +1,43 @@
+# New ports collection makefile for:	ruby-mode.el
+# Date created:		6 May 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ruby-mode.el
+PORTVERSION=	${RUBY_PORTVERSION}
+CATEGORIES=	lang ruby elisp
+MASTER_SITES=	# none
+DISTFILES=	# none
+
+MAINTAINER=	knu@FreeBSD.org
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+
+USE_RUBY=	yes
+
+WRKSRC=		${WRKDIR}/elisp
+NO_BUILD=	yes
+
+ELISP_FILES=	inf-ruby.el ruby-mode.el rubydb3x.el
+
+EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
+XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT} && ${MAKE} -V WRKSRC`/misc ${WRKSRC}
+
+do-install:
+	${MKDIR} ${RUBY_EXAMPLESDIR}/elisp
+	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_EXAMPLESDIR}/elisp
+	${MKDIR} ${EMACSLISPDIR}
+	${MKDIR} ${XEMACSLISPDIR}
+.for f in ${ELISP_FILES}
+	${LN} -sf ${RUBY_EXAMPLESDIR}/elisp/${f} ${EMACSLISPDIR}/
+	${LN} -sf ${RUBY_EXAMPLESDIR}/elisp/${f} ${XEMACSLISPDIR}/
+.endfor
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
