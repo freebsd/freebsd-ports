@@ -22,6 +22,8 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
+CONFLICTS=	qt-3.*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
 USE_GMAKE=	yes

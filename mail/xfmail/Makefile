@@ -21,6 +21,8 @@ COMMENT=	An X Window System application for receiving electronic mail
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
+CONFLICTS=	qt-3.*
+
 USE_AUTOMAKE_VER=	15
 USE_AUTOCONF=	yes
 USE_BZIP2=	yes
@@ -29,6 +31,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+INSTALLS_SHLIB=	yes
 
 # XXX: Disable patching for libtool until we can generate the files
 LIBTOOLFILES=
