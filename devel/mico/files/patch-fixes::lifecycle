@@ -462,3 +462,16 @@
  	    usage(progName);
  	    return 1;
  	}
+--- include/coss/CosLifeCycle.idl.orig	Tue Oct 14 04:25:27 2003
++++ include/coss/CosLifeCycle.idl	Tue Oct 14 04:21:38 2003
+@@ -24,8 +24,8 @@
+   //     The purpose of the life cycle service is to 
+   
+   typedef CosNaming::Name Key; 
+-  typedef Object Factory;
+-  typedef sequence <Factory> Factories;
++  typedef Object Factory_;
++  typedef sequence <Factory_> Factories;
+ 
+   typedef struct NVP 
+   {
