@@ -771,6 +771,7 @@ crossfire/lib/def_keys
 crossfire/lib/dm_file
 crossfire/lib/esrv_xpm.eric
 crossfire/lib/faces
+crossfire/lib/forbid
 crossfire/lib/formulae
 crossfire/lib/fsconfig
 crossfire/lib/help/apply
@@ -1496,6 +1497,7 @@ crossfire/lib/maps/world/world_e2
 crossfire/lib/messages
 crossfire/lib/motd
 crossfire/lib/races
+crossfire/lib/shutdown
 crossfire/lib/skill_params
 crossfire/lib/sounds
 crossfire/lib/spell_params
