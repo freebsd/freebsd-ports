@@ -2,5 +2,7 @@ lib/X11/fonts/local/kc8x15.pcf.gz
 lib/X11/fonts/local/kc12x24.pcf.gz
 lib/X11/fonts/local/kc15f.pcf.gz
 lib/X11/fonts/local/kc24f.pcf.gz
-@exec cd %D/lib/X11/fonts/local ; mkfontdir
-@unexec cd %D/lib/X11/fonts/local ; mkfontdir
+lib/X11/fonts/local/kc_fonts.alias
+@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@exec cd %D/lib/X11/fonts/local ; cat kc_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..
+@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
