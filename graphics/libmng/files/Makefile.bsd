@@ -5,8 +5,7 @@ NOPROFILE=	yes
 SHLIB_MAJOR?=	1
 SHLIB_MINOR?=	0
 
-LOBJS!=		${MAKE} -f ${.CURDIR}/Makefile.in -V libmng_la_OBJECTS
-SRCS=		${LOBJS:.lo=.c}
+SRCS!=		${MAKE} -f ${.CURDIR}/makefiles/makefile.unix -V SOURCES
 
 CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS -DMNG_BUILD_SO
 

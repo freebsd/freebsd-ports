@@ -1,7 +1,0 @@
---- libmng_types.h	Sat Mar  1 11:08:45 2003
-+++ libmng_types.h	Mon Mar 24 13:47:52 2003
-@@ -157,3 +157,3 @@
- #endif
--#if defined(WIN32) || defined(linux)   /* different header locations */
-+#if defined(WIN32) || defined(linux) || defined(__FreeBSD__)
- #include "lcms.h"
