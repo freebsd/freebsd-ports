@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
 		http://www.freebsd.org/java/
 
-MAINTAINER=	nate@freebsd.org
+MAINTAINER=	nate@FreeBSD.org
 
 NO_CDROM=	"License doesn't allow distribution with fee"
 
@@ -25,9 +25,9 @@ NO_BUILD=       yes
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-DISTFILES=	jdk${JDK_VERSION}_AOUT.V99-9-22.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_AOUT.V1999-11-9.tar.gz
 .else
-DISTFILES=	jdk${JDK_VERSION}_ELF.V99-9-22.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 .endif
 
 do-install:
