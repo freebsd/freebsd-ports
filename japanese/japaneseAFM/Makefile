@@ -3,7 +3,7 @@
 # Date created:		11 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/14 08:22:02 max Exp $
+# $Id: Makefile,v 1.2 1998/08/24 00:42:25 steve Exp $
 #
 
 DISTNAME=	japaneseAFM
@@ -20,7 +20,10 @@ AFMDIR=		${PREFIX}/share/fonts/afm
 
 do-install:
 	@${MKDIR} ${AFMDIR}
-	@${INSTALL_DATA} ${WRKSRC}/* ${AFMDIR}
-	@rm -f ${AFMDIR}/PLIST.mktmp
+.for font in GothicBBB-Medium Ryumin-Light
+.for dir in H V
+	${INSTALL_DATA} ${WRKSRC}/${font}-${dir} ${AFMDIR}
+.endfor
+.endfor
 
 .include <bsd.port.mk>
