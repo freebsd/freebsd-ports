@@ -2194,6 +2194,7 @@ ipfmeta		ports/security/ipfmeta
 ipfstat		src/usr.sbin/ipfstat
 ipftest		src/usr.sbin/ipftest
 ipfw		src/sbin/ipfw
+ipfw-graph	ports/net/ipfw-graph
 iplog		ports/net/iplog
 ipmon		src/usr.sbin/ipmon
 ipnat		src/usr.sbin/ipnat
