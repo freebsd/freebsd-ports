@@ -25,7 +25,9 @@ create_user() {
 	GROUP=${CYRUS_GROUP}
 	PW=/usr/sbin/pw
 
-	if [ -x /sbin/nologin ]; then
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
 		shell=/sbin/nologin
 	else
 		shell=/nonexistent
