@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/.1//}.latest${EXTRACT_SUFX} \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
-EXTRACT_DEPENDS?=	${WRKSRC}/Makefile:${LOCAL_SRCDIR}:configure
+EXTRACT_DEPENDS?=	${LOCAL_SRCDIR}/work/mozilla/Makefile:${LOCAL_SRCDIR}:configure
 RUN_DEPENDS?=	mozilla:${LOCAL_SRCDIR}
 
 USE_X_PREFIX=	yes
@@ -32,9 +32,10 @@ CHROME=		enigmail.jar enigmail-skin.jar enigmail-skin-tbird.jar
 
 PLIST_SUB=	LOCAL_SUBDIR=${LOCAL_SUBDIR}
 
-MAKE:=		${MAKE} WRKDIR=${WRKDIR}
-
 do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CP} -R ${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
 	@for file in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
 	done
