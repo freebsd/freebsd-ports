@@ -7312,6 +7312,7 @@ p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-TabularDisplay	ports/textproc/p5-Text-TabularDisplay
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
+p5-Text-VimColor	ports/textproc/p5-Text-VimColor
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
 p5-Tie-Cache	ports/devel/p5-Tie-Cache
