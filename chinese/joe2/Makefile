@@ -7,11 +7,11 @@
 
 MASTERDIR=	${.CURDIR}/../../editors/joe
 
-PATCH_SITES=	ftp://mail.elife.idv.tw/pub/work/collection/cjoe/
+PATCH_SITES=	http://freebsd.sinica.edu.tw/~statue/
 PATCHFILES=	zh-joe-2.8_3-patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	statue@mail.elife.idv.tw
+MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 MD5_FILE=	${.CURDIR}/distinfo
 
