@@ -1,0 +1,21 @@
+*** Makefile.orig	Sun Sep 17 06:18:20 1995
+--- Makefile	Tue Jun  3 02:48:46 1997
+***************
+*** 25,32 ****
+  
+  #}
+  
+! CFLAGS	= $(CFLAGS_OS) $(CFLAGS_OPT) $(CFLAGS_EXT)
+! CFLAGS_HIOPT_ = $(CFLAGS_OS) $(CFLAGS_HIOPT) $(CFLAGS_EXT)
+  LDFLAGS	= $(LDFLAGS_OS) $(LDFLAGS_EXT)
+  LIBS	= $(LIBS_EXT) $(LIBS_OS)
+  
+--- 25,32 ----
+  
+  #}
+  
+! #CFLAGS	= $(CFLAGS_OS) $(CFLAGS_OPT) $(CFLAGS_EXT)
+! CFLAGS_HIOPT_ = $(CFLAGS) $(CFLAGS_HIOPT)
+  LDFLAGS	= $(LDFLAGS_OS) $(LDFLAGS_EXT)
+  LIBS	= $(LIBS_EXT) $(LIBS_OS)
+  
