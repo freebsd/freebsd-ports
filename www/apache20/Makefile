@@ -17,8 +17,6 @@ MAINTAINER=     ache@freebsd.org
 # VERS_ID = mods-1.0/me
 
 post-patch:
-	@cp /usr/include/md5.h ${WRKSRC}/src/main/freebsd_md5.h
-	@cp /usr/include/fnmatch.h ${WRKSRC}/src/main/freebsd_fnmatch.h
 	@cd ${WRKSRC}/conf && \
 	for I in access.conf-dist srm.conf-dist; do \
 	    sed -e "s#@@ServerRoot@@#${PREFIX}/www#g" < $${I} > $${I}.new; \
