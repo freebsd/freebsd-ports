@@ -1,13 +1,13 @@
 # New ports collection makefile for:   qstat
-# Version required:    2.3d
+# Version required:    2.3g
 # Date created:        28 May 1998
 # Whom:                Daniel O'Connor <darius@dons.net.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qstat23d
-PKGNAME=	qstat-2.3d
+DISTNAME=	qstat23g
+PKGNAME=	qstat-2.3g
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.activesw.com/pub/quake/
 
