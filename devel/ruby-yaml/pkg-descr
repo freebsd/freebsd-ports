@@ -1,0 +1,24 @@
+"YAML(tm) (rhymes with 'camel') is a
+straightforward machine parsable data serialization format designed for
+human readability and interaction with scripting languages such as Perl
+and Python. YAML is optimized for data serialization, formatted
+dumping, configuration files, log files, Internet messaging and
+filtering. This specification describes the YAML information model and
+serialization format. Together with the Unicode standard for characters, it
+provides all the information necessary to understand YAML Version 1.0
+and construct computer programs to process it."
+
+For Ruby developers, YAML is a natural fit for object serialization and
+general data storage.  Really, it's quite fantastic.  Spreads right on
+your Rubyware like butter on bread!
+
+The possible uses for YAML are innumerable.  Configuration files,
+custom internet protocols, documentation, the list goes on and on.
+Also, with YAML readers popping up for other languages (see YAML.pm
+and others), you can pass data easily to colleagues in distant lands,
+swamped in their archaic languages.
+
+WWW: http://yaml4r.sourceforge.net/
+
+- Stanislav Grozev
+tacho@daemonz.org
