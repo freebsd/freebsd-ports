@@ -1,0 +1,33 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/mattrib 
+bin/mcd 
+bin/mcopy 
+bin/mdel 
+bin/mdir 
+bin/mformat 
+bin/mlabel 
+bin/mmd 
+bin/mrd 
+bin/mread 
+bin/mren 
+bin/mtype 
+bin/mwrite 
+bin/mkmanifest
+@mode 644
+man/man1/mattrib.1
+man/man1/mcd.1
+man/man1/mcopy.1
+man/man1/mdel.1
+man/man1/mdir.1
+man/man1/mformat.1
+man/man1/mlabel.1
+man/man1/mmd.1
+man/man1/mrd.1
+man/man1/mread.1
+man/man1/mren.1
+man/man1/mtools.1
+man/man1/mtype.1
+man/man1/mwrite.1
+man/man1/mkmanifest.1
