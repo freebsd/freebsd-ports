@@ -1,27 +1,58 @@
-bin/gbf-am-build
 bin/gbf-am-parse
-bin/gbf-am-project
-bin/gbf-controls-server
-bin/gnome-build-clean.sh
-etc/gnome_buildConf.sh
-include/gbf/gbf-build-info.h
-include/gbf/gbf-project-client.h
-include/gbf/gbf-project-tree.h
-include/gbf/gbf-target-tree.h
-include/gbf/gbf-widgets.h
-include/gbf/gbf.h
-include/gbf/gnome-build.h
-lib/libgbf-widgets.a
-lib/libgbf-widgets.so
-lib/libgbf-widgets.so.0
-lib/libgbf.a
-lib/libgbf.so
-lib/libgbf.so.0
-share/gnome/idl/gbf-project.idl
-share/gnome/idl/gnome-build.idl
-share/gnome/oaf/GNOME_Development_BuildControls.oaf
-share/gnome/oaf/GNOME_Development_Project_Automake.oaf
+include/gnome-build-1.0/gbf/gbf-backend.h
+include/gnome-build-1.0/gbf/gbf-build-info.h
+include/gnome-build-1.0/gbf/gbf-project-model.h
+include/gnome-build-1.0/gbf/gbf-project-util.h
+include/gnome-build-1.0/gbf/gbf-project-view.h
+include/gnome-build-1.0/gbf/gbf-project.h
+include/gnome-build-1.0/gbf/gbf-tree-data.h
+include/gnome-build-1.0/gbf/gbf-widgets.h
+include/gnome-build-1.0/gbf/glue-plugin.h
+lib/gnome-build-1.0/backends/gbf-am.server
+lib/gnome-build-1.0/backends/libgbf-am.a
+lib/gnome-build-1.0/backends/libgbf-am.so
+lib/gnome-build-1.0/backends/libgbf-am.so.0
+lib/libgbf-1.a
+lib/libgbf-1.so
+lib/libgbf-1.so.0
+lib/libgbf-widgets-1.a
+lib/libgbf-widgets-1.so
+lib/libgbf-widgets-1.so.0
+libdata/pkgconfig/gnome-build-1.0.pc
+share/gnome/gnome-build/GBF/AmFiles.pm
+share/gnome/gnome-build/GBF/General.pm
+share/gnome/gnome-build/glade/create_dialogs.glade
 share/gnome/pixmaps/gbf-build.png
 share/gnome/pixmaps/gbf-install.png
-share/gnome/ui/gbf-tree.xml
-@dirrm include/gbf
+share/locale/am/LC_MESSAGES/gbf-1.mo
+share/locale/az/LC_MESSAGES/gbf-1.mo
+share/locale/be/LC_MESSAGES/gbf-1.mo
+share/locale/ca/LC_MESSAGES/gbf-1.mo
+share/locale/cs/LC_MESSAGES/gbf-1.mo
+share/locale/de/LC_MESSAGES/gbf-1.mo
+share/locale/el/LC_MESSAGES/gbf-1.mo
+share/locale/es/LC_MESSAGES/gbf-1.mo
+share/locale/fr/LC_MESSAGES/gbf-1.mo
+share/locale/it/LC_MESSAGES/gbf-1.mo
+share/locale/ja/LC_MESSAGES/gbf-1.mo
+share/locale/lv/LC_MESSAGES/gbf-1.mo
+share/locale/mk/LC_MESSAGES/gbf-1.mo
+share/locale/ml/LC_MESSAGES/gbf-1.mo
+share/locale/nl/LC_MESSAGES/gbf-1.mo
+share/locale/no/LC_MESSAGES/gbf-1.mo
+share/locale/pl/LC_MESSAGES/gbf-1.mo
+share/locale/pt/LC_MESSAGES/gbf-1.mo
+share/locale/pt_BR/LC_MESSAGES/gbf-1.mo
+share/locale/ru/LC_MESSAGES/gbf-1.mo
+share/locale/sk/LC_MESSAGES/gbf-1.mo
+share/locale/sr/LC_MESSAGES/gbf-1.mo
+share/locale/sr@Latn/LC_MESSAGES/gbf-1.mo
+share/locale/sv/LC_MESSAGES/gbf-1.mo
+share/locale/vi/LC_MESSAGES/gbf-1.mo
+@dirrm share/gnome/gnome-build/glade
+@dirrm share/gnome/gnome-build/GBF
+@dirrm share/gnome/gnome-build
+@dirrm lib/gnome-build-1.0/backends
+@dirrm lib/gnome-build-1.0
+@dirrm include/gnome-build-1.0/gbf
+@dirrm include/gnome-build-1.0
