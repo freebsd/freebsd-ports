@@ -22,5 +22,6 @@ LOCALBASE?=	/usr/local
 LIBDIR=		${PREFIX}/lib
 INCSDIR=	${PREFIX}/include
 INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
+SHLIB_MAJOR=	1
 
 .include <bsd.lib.mk>
