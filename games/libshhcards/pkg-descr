@@ -1,0 +1,3 @@
+shhcards is a library for displaying game cards on X11.
+It provides pixmaps for card games, and functions for
+using the cards in X11 programs.
