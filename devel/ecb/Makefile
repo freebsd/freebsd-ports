@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:   ecb
 # Date created:                25 January 2002
 # Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
@@ -8,6 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.24
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecb
@@ -22,9 +22,6 @@ EMACS_PORT_NAME?=	emacs21
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic${PORTNAMESUFFIX}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
 ICONDIR=	${LISPDIR}/ecb-images
@@ -33,23 +30,36 @@ ICONSUBDIRS=	height-10 height-15 height-16 height-17 height-18 height-19 \
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CEDET=""
 ALL_TARGET=	ecb
 
-.if defined(WITH_ICONS)
-PLIST_SUB+=     ICONS=""
+.if defined(WITHOUT_CEDET)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic${PORTNAMESUFFIX}
+MAKE_ARGS=	CEDET=""
 .else
-PLIST_SUB+=     ICONS="@comment "
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet
+MAKE_ARGS=	CEDET=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet
+.endif
+
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
+.if defined(WITHOUT_ICONS)
+PLIST_SUB+=	ICONS="@comment "
+.else
+PLIST_SUB+=	ICONS=""
 .endif
 
 INFO=		ecb
 
 pre-everything::
-.if !defined(WITH_ICONS)
+.if !defined(WITHOUT_ICONS)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_ICONS=yes   Install also ecb's icons"
+	@${ECHO_MSG} "  WITHOUT_ICONS=yes   Don't install ecb's icons"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WITHOUT_CEDET=yes   Don't use theCEDET library,"
+	@${ECHO_MSG} "                      use the old version of "
+	@${ECHO_MSG} "                      eieio/semantic/speedbar instead."
 	@${ECHO_MSG} ""
 .endif
 
@@ -66,7 +76,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/ecb.info ${PREFIX}/info
 
-.if defined(WITH_ICONS)
+.if !defined(WITHOUT_ICONS)
 .for i in ${ICONSUBDIRS}
 	${MKDIR} ${ICONDIR}/default/${i}
 	${INSTALL_DATA} ${ICONSRC}/default/${i}/*.xpm ${ICONDIR}/default/${i}
@@ -87,6 +97,6 @@ do-install:
 .endif
 
 post-install:
-	${ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
