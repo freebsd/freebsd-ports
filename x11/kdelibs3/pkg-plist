@@ -820,6 +820,8 @@ lib/kde3/klauncher.la
 lib/kde3/klauncher.so
 lib/kde3/knotify.la
 lib/kde3/knotify.so
+lib/kde3/kspell_aspell.la
+lib/kde3/kspell_aspell.so
 lib/kde3/kspell_ispell.la
 lib/kde3/kspell_ispell.so
 lib/kde3/ktexteditor_autobookmarker.la
@@ -4598,6 +4600,7 @@ share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
 share/services/kresources/kabc/net.desktop
+share/services/kspell_aspell.desktop
 share/services/kspell_ispell.desktop
 share/services/ktexteditor_autobookmarker.desktop
 share/services/ktexteditor_docwordcompletion.desktop
