@@ -149,6 +149,7 @@ lib/exmh-2.0.2/seditSel.tcl
 lib/exmh-2.0.2/select.tcl
 lib/exmh-2.0.2/send.tcl
 lib/exmh-2.0.2/sound.tcl
+lib/exmh-2.0.2/source.tcl
 lib/exmh-2.0.2/tclIndex
 lib/exmh-2.0.2/text.tcl
 lib/exmh-2.0.2/textButton.tcl
