@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=		${PORTNAME}-${PORTVERSION:S/./b/}-src.zip \
 			${PORTNAME}-${PORTVERSION:S/./b/}-common.zip
 
-MAINTAINER=		mail@gelf.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A full-featured text editor for X11
 
 BUILD_DEPENDS=  	unzip:${PORTSDIR}/archivers/unzip
