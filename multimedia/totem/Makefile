@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.99.15.1
-PORTREVISION=	1
+PORTVERSION=	0.99.19
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/.....$//}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/...$//}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A Xine-based video player for the Gnome 2 Desktop
+
+LIB_DEPENDS=	nautilus-burn.0:${PORTSDIR}/sysutils/nautilus-cd-burner
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
@@ -29,6 +30,8 @@ OPTIONS=	GSTREAMER_OVERRIDE "Use GStreamer instead of xine" off \
 		DVDNAV "Enable DVD support" on
 
 MAN1=	totem.1
+GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
+		totem.schemas
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +57,6 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 .endif
 
-.if defined(WITH_GSTREAMER_OVERRIDE)
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
@@ -64,24 +66,20 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "===> The default CDROM device is ${DEFAULT_CDROM_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_CDROM_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_CDROM_DEVICE=\"/dev/somedevice\"'"
 	@${ECHO_MSG} "===>"
-.if defined(WITH_GSTREAMER_OVERRIDE)
 	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${WRKSRC}/src/cd-drive.c \
 		${WRKSRC}/src/totem-preferences.c \
-		${WRKSRC}/src/bacon-cd-selection.c
+		${WRKSRC}/src/bacon-video-widget-gst.c
 .if defined(WITH_GSTREAMER_OVERRIDE)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/bacon-video-widget-gst.c

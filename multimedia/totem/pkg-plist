@@ -1,11 +1,5 @@
 bin/totem
 bin/totem-video-thumbnailer
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/totem-video-thumbnail.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/totem-video-thumbnail.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/totem-video-thumbnail.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/totem.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/totem.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/totem.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/Totem_properties.server
 libexec/totem-properties-page
 share/gnome/application-registry/totem.applications
@@ -94,6 +88,7 @@ share/locale/eu/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
+share/locale/gu/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
 share/locale/hu/LC_MESSAGES/totem.mo
@@ -106,6 +101,7 @@ share/locale/lv/LC_MESSAGES/totem.mo
 share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
+share/locale/nb/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
 share/locale/no/LC_MESSAGES/totem.mo
 share/locale/pl/LC_MESSAGES/totem.mo
@@ -114,6 +110,7 @@ share/locale/pt_BR/LC_MESSAGES/totem.mo
 share/locale/ro/LC_MESSAGES/totem.mo
 share/locale/ru/LC_MESSAGES/totem.mo
 share/locale/sk/LC_MESSAGES/totem.mo
+share/locale/sq/LC_MESSAGES/totem.mo
 share/locale/sr/LC_MESSAGES/totem.mo
 share/locale/sr@Latn/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
