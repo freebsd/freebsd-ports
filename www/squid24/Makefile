@@ -27,6 +27,7 @@ MAINTAINER=	adrian@freebsd.org
 DIST_SUBDIR=	squid2.4
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid \
@@ -96,7 +97,8 @@ MAKEFILE=	makefile
 #CONFIGURE_ARGS+= --enable-heap-replacement
 
 post-extract:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 post-install:
 #	I don't think many people use the pinger nowadays, and if you
