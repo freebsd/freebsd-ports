@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.14
+PORTVERSION=	0.6.16
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
+MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -20,44 +20,17 @@ BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse strscan
+USE_RUBY_SETUP=	yes
 
 RUBY_MODNAME=	rd
 
-RUBY_SHEBANG_FILES=	 ${WRKSRC}/rmi2html.rb
-
-EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
-
-DOCS_EN=	README.html	doc/rd-draft.rd		doc/rd-draft.html
-DOCS_JA=	README.ja.html	doc/rd-draft.rd.ja	doc/rd-draft.ja.html
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} rdtoolconf.rb
-
-post-patch:
-	${RUBY} -i -pe 'gsub %r"/usr/local\b", "${PREFIX}"' ${WRKSRC}/utils/rdswap.rb
-
-pre-build:
-	@cd ${WRKSRC}; \
-	${LN} -s missing/strscan.rb
-
-.if !defined(NOPORTDOCS)
-post-build:
-.for f in README.rd.ja doc/rd-draft.rd doc/rd-draft.rd.ja
-	cd ${WRKSRC}; ${RUBY} -I. rd2 -r rd/rd2html-lib.rb ${f} \
-		> ${f:S/.rd.ja$/.ja.html/:S/.rd$/.html/}
-.endfor
-.endif
+DOCS_EN=	README.rd	README.html	doc/rd-draft.rd
+DOCS_JA=	README.rd.ja	README.ja.html	doc/rd-draft.rd.ja
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/
-	${LN} -sf rmi2html.rb ${PREFIX}/bin/rmi2html
-	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/rd/dot.rd2rc ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/

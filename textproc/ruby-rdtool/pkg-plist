@@ -1,12 +1,9 @@
 bin/rd2
-bin/rdswap
-bin/rmi2html
-bin/rmi2html.rb
+bin/rdswap.rb
 %%RUBY_SITELIBDIR%%/rd/block-element.rb
 %%RUBY_SITELIBDIR%%/rd/complex-list-item.rb
 %%RUBY_SITELIBDIR%%/rd/desclist.rb
 %%RUBY_SITELIBDIR%%/rd/document-struct.rb
-%%RUBY_SITELIBDIR%%/rd/dot.rd2rc
 %%RUBY_SITELIBDIR%%/rd/element.rb
 %%RUBY_SITELIBDIR%%/rd/filter.rb
 %%RUBY_SITELIBDIR%%/rd/inline-element.rb
@@ -38,10 +35,10 @@ bin/rmi2html.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dot.rd2rc
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
