@@ -17,7 +17,7 @@ BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL_BUILD=	yes
+USE_PERL5_BUILD=yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
