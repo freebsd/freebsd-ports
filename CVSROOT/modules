@@ -4556,6 +4556,7 @@ libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
 libtlen		ports/polish/libtlen
+libtomcrypt	ports/security/libtomcrypt
 libtool13	ports/devel/libtool13
 libtool14	ports/devel/libtool14
 libtool15	ports/devel/libtool15
