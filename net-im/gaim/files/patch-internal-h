@@ -1,0 +1,13 @@
+--- src/internal.h.orig	Thu Jul 17 10:20:34 2003
++++ src/internal.h	Thu Jul 17 10:21:02 2003
+@@ -88,9 +88,9 @@
+ #endif
+ 
+ #ifndef _WIN32
+-# include <arpa/inet.h>
+ # include <netinet/in.h>
+ # include <sys/socket.h>
++# include <arpa/inet.h>
+ # include <sys/un.h>
+ # include <sys/utsname.h>
+ # include <gdk/gdkx.h>

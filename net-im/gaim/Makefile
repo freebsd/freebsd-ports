@@ -5,15 +5,10 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.64
-PORTREVISION=	2	
+PORTVERSION=	0.65
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=		http://www.chipx86.com/
-PATCHFILES=		${DISTNAME}-msncrashes-20030705-0044.diff
-PATCH_DIST_STRIP=	-p0
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
@@ -23,7 +18,9 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

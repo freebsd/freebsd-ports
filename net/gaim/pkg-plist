@@ -1,7 +1,10 @@
 bin/gaim
 bin/gaim-remote
+include/gaim-remote/remote-socket.h
+include/gaim-remote/remote.h
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
+lib/gaim/gaim-remote.so
 lib/gaim/gestures.so
 lib/gaim/history.so
 lib/gaim/iconaway.so
@@ -15,12 +18,14 @@ lib/gaim/liboscar.so
 lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
-lib/gaim/notify.so
 lib/gaim/perl.so
 lib/gaim/spellchk.so
 lib/gaim/statenotify.so
 lib/gaim/ticker.so
 lib/gaim/timestamp.so
+lib/libgaim-remote.a
+lib/libgaim-remote.so
+lib/libgaim-remote.so.0
 share/gnome/applications/gaim.desktop
 share/gnome/pixmaps/gaim.png
 share/gnome/pixmaps/gaim/buttons/about_menu.png
@@ -31,6 +36,8 @@ share/gnome/pixmaps/gaim/buttons/edit.png
 share/gnome/pixmaps/gaim/buttons/insert-image-small.png
 share/gnome/pixmaps/gaim/buttons/insert-link-small.png
 share/gnome/pixmaps/gaim/buttons/insert-smiley-small.png
+share/gnome/pixmaps/gaim/buttons/pause.png
+share/gnome/pixmaps/gaim/buttons/send-im.png
 share/gnome/pixmaps/gaim/buttons/text_bigger.png
 share/gnome/pixmaps/gaim/buttons/text_normal.png
 share/gnome/pixmaps/gaim/buttons/text_smaller.png
@@ -132,6 +139,8 @@ share/gnome/pixmaps/gaim/smileys/default/yahoo_chicken.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_clap.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_clown.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_coffee.gif
+share/gnome/pixmaps/gaim/smileys/default/yahoo_cow.gif
+share/gnome/pixmaps/gaim/smileys/default/yahoo_cowboy.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_cry.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_dance.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_devil.gif
@@ -185,6 +194,7 @@ share/gnome/pixmaps/gaim/status/default/aol.png
 share/gnome/pixmaps/gaim/status/default/away.png
 share/gnome/pixmaps/gaim/status/default/dnd.png
 share/gnome/pixmaps/gaim/status/default/extendedaway.png
+share/gnome/pixmaps/gaim/status/default/female.png
 share/gnome/pixmaps/gaim/status/default/freeforchat.png
 share/gnome/pixmaps/gaim/status/default/gadu-gadu.png
 share/gnome/pixmaps/gaim/status/default/game.png
@@ -194,12 +204,14 @@ share/gnome/pixmaps/gaim/status/default/irc.png
 share/gnome/pixmaps/gaim/status/default/jabber.png
 share/gnome/pixmaps/gaim/status/default/login.png
 share/gnome/pixmaps/gaim/status/default/logout.png
+share/gnome/pixmaps/gaim/status/default/male.png
 share/gnome/pixmaps/gaim/status/default/msn.png
 share/gnome/pixmaps/gaim/status/default/na.png
 share/gnome/pixmaps/gaim/status/default/napster.png
 share/gnome/pixmaps/gaim/status/default/notauthorized.png
 share/gnome/pixmaps/gaim/status/default/occupied.png
 share/gnome/pixmaps/gaim/status/default/offline.png
+share/gnome/pixmaps/gaim/status/default/trepia.png
 share/gnome/pixmaps/gaim/status/default/wireless.png
 share/gnome/pixmaps/gaim/status/default/yahoo.png
 share/gnome/pixmaps/gaim/tb_drag_arrow_down.xpm
@@ -222,6 +234,7 @@ share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
+share/locale/he/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
@@ -229,6 +242,7 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
+share/locale/pt_BR/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
