@@ -1,0 +1,4 @@
+This is Japanese meta-port of GNOME desktop environment.
+
+Use this port before the /usr/ports/x11/gnome.
+Use the packages from this port after the original packages.
