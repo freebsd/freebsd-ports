@@ -11,12 +11,21 @@ MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 
 SRC_DIST=	ghc-${PORTVERSION}-src-1${EXTRACT_SUFX} 
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}
+BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}
 
-DISTFILES=	${SRC_DIST} ${BOOT_DIST}
+USE_BZIP2=	yes
+.include <bsd.port.pre.mk>
+
+DISTFILES=	${SRC_DIST}
+
+.if ${OSVERSION} < 500000
+DISTFILES+=	${BOOT_DIST}
+.else
+DISTFILES+=	${BOOT_DIST5}
+.endif
 
 MAINTAINER=	simonmar@microsoft.com
 
-USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -44,4 +53,4 @@ pre-configure:
 pre-build:
 	@${MKDIR} ${TMPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
