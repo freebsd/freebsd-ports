@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.14 2001-10-01 20:37:44 knu Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.15 2001-10-23 17:14:25 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -79,6 +79,17 @@ EMACS_MAJOR_VER=	20
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs20
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
+
+# Emacs-21.x
+.elif (${EMACS_PORT_NAME} == "emacs21")
+EMACS_NAME=		emacs
+EMACS_VER=		21.1
+EMACS_MAJOR_VER=	21
+EMACS_LIBDIR?=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs21
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
 
