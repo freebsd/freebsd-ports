@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmfuzzy
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
