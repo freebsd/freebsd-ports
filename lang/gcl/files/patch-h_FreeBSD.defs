@@ -2,9 +2,9 @@ Index: h/FreeBSD.defs
 ===================================================================
 RCS file: /cvsroot/gcl/gcl/h/FreeBSD.defs,v
 retrieving revision 1.2.6.1.4.1
-diff -u -d -b -B -r1.2.6.1.4.1 FreeBSD.defs
+diff -u -d -r1.2.6.1.4.1 FreeBSD.defs
 --- h/FreeBSD.defs	15 Jul 2004 16:28:43 -0000	1.2.6.1.4.1
-+++ h/FreeBSD.defs	19 Jul 2004 13:19:30 -0000
++++ h/FreeBSD.defs	18 Aug 2004 16:29:43 -0000
 @@ -1,12 +1,16 @@
 -# Machine dependent makefile definitions for intel 386,486 running 386bsd
 +# Machine dependent makefile definitions for 386bsd
@@ -20,7 +20,7 @@ diff -u -d -b -B -r1.2.6.1.4.1 FreeBSD.defs
 -#LIBS    = -lm -L/usr/local/lib
 +#CFLAGS	= @@.CFLAGS@@
 +CFLAGS	= @@CFLAGS@@
-+CFLAGS	+= -fwritable-strings -fomit-frame-pointer -fsigned-char -DVOL=volatile -I$(GCLDIR)/o -I${prefix}/include
++CFLAGS	+= -fomit-frame-pointer -fsigned-char -DVOL=volatile -I$(GCLDIR)/o -I${prefix}/include
 +#LIBS = @@.LOCALLIBS@@
 +LIBS = @@LOCALLIBS@@
  #ODIR_DEBUG=

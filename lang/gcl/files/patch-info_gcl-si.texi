@@ -2,9 +2,9 @@ Index: info/gcl-si.texi
 ===================================================================
 RCS file: /cvsroot/gcl/gcl/info/gcl-si.texi,v
 retrieving revision 1.3
-diff -u -d -b -B -r1.3 gcl-si.texi
+diff -u -d -r1.3 gcl-si.texi
 --- info/gcl-si.texi	19 Feb 2002 19:21:19 -0000	1.3
-+++ info/gcl-si.texi	19 Jul 2004 13:19:50 -0000
++++ info/gcl-si.texi	18 Aug 2004 16:29:48 -0000
 @@ -19,6 +19,10 @@
  
  @setchapternewpage odd

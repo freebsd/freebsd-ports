@@ -2,9 +2,9 @@ Index: makedefc.in
 ===================================================================
 RCS file: /cvsroot/gcl/gcl/makedefc.in,v
 retrieving revision 1.15.6.3
-diff -u -d -b -B -r1.15.6.3 makedefc.in
+diff -u -d -r1.15.6.3 makedefc.in
 --- makedefc.in	10 Mar 2004 22:51:36 -0000	1.15.6.3
-+++ makedefc.in	19 Jul 2004 13:19:14 -0000
++++ makedefc.in	18 Aug 2004 16:29:20 -0000
 @@ -16,13 +16,18 @@
  prefix=@prefix@
  

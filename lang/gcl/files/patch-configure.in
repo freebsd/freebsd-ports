@@ -1,11 +1,11 @@
 Index: configure.in
 ===================================================================
 RCS file: /cvsroot/gcl/gcl/configure.in,v
-retrieving revision 1.112.4.1.2.2.2.47.2.3.2.1
-diff -u -d -b -B -r1.112.4.1.2.2.2.47.2.3.2.1 configure.in
---- configure.in	15 Jul 2004 16:27:09 -0000	1.112.4.1.2.2.2.47.2.3.2.1
-+++ configure.in	19 Jul 2004 13:19:10 -0000
-@@ -1637,15 +1637,15 @@
+retrieving revision 1.112.4.1.2.2.2.47.2.3.2.1.4.2
+diff -u -d -r1.112.4.1.2.2.2.47.2.3.2.1.4.2 configure.in
+--- configure.in	13 Aug 2004 16:15:26 -0000	1.112.4.1.2.2.2.47.2.3.2.1.4.2
++++ configure.in	18 Aug 2004 16:29:18 -0000
+@@ -1657,15 +1657,15 @@
  if test -f ${TK_CONFIG_PREFIX}/../include/tk.h ; then
    TK_INCLUDE=-I${TK_CONFIG_PREFIX}/../include
    else

@@ -37,6 +37,8 @@ lib/gcl-%%GCL_VER%%/gcl-tk/tinfo.o
 lib/gcl-%%GCL_VER%%/gcl-tk/tk-package.lsp
 lib/gcl-%%GCL_VER%%/gcl-tk/tkl.o
 lib/gcl-%%GCL_VER%%/h/cmpinclude.h
+lib/gcl-%%GCL_VER%%/info/gcl-si.info
+lib/gcl-%%GCL_VER%%/info/gcl-tk.info
 lib/gcl-%%GCL_VER%%/lsp/gcl_auto_new.lsp
 lib/gcl-%%GCL_VER%%/lsp/gcl_autoload.lsp
 lib/gcl-%%GCL_VER%%/lsp/gcl_export.lsp
@@ -64,6 +66,7 @@ share/emacs/site-lisp/sshell.el
 @dirrm lib/gcl-%%GCL_VER%%/gcl-tk/demos
 @dirrm lib/gcl-%%GCL_VER%%/gcl-tk
 @dirrm lib/gcl-%%GCL_VER%%/h
+@dirrm lib/gcl-%%GCL_VER%%/info
 @dirrm lib/gcl-%%GCL_VER%%/lsp
 @dirrm lib/gcl-%%GCL_VER%%/pcl
 @dirrm lib/gcl-%%GCL_VER%%/unixport
