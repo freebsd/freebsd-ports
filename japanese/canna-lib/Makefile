@@ -54,7 +54,6 @@ pre-install:
 		>${WRKDIR}/canna.sh
 
 post-install:
-#	@${LDCONFIG} -m ${PREFIX}/lib
 	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\
