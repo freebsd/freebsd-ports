@@ -203,6 +203,7 @@
     SUBDIR += xbl
     SUBDIR += xblackjack
     SUBDIR += xblast
+    SUBDIR += xblast-beta
     SUBDIR += xblood
     SUBDIR += xbloody
     SUBDIR += xboard

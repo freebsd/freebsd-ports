@@ -1,0 +1,208 @@
+--- /dev/null	Tue Dec 26 14:53:01 2000
++++ level/Imakefile	Tue Dec 26 15:03:29 2000
+@@ -0,0 +1,205 @@
++/* 
++ * Program XBLAST V2.6 
++ * 1993-1999 (C) by Oliver Vogel (e-mail: vogel@ikp.uni-koeln.de)
++ *
++ * File: level/Imakefile
++ * December 26th, 2000
++ * started August 1993
++ */
++
++/*
++ * common part 
++ */
++
++XBLASTDIR=$(LIBDIR)/xblast
++LEVELDIR=$(XBLASTDIR)/level
++
++/*
++ * install rule	
++ */
++
++XALFILES = \
++		all_good_things.xal \
++		anti_gravity.xal \
++		anti_mitch.xal \
++		anti_personnal_mines.xal \
++		arrgghh.xal \
++		asteroids.xal \
++		asymmetrix.xal \
++		beamania.xal \
++		black_zone.xal \
++		blast_o_morph.xal \
++		bomb_a_la_surprise.xal \
++		bomb_junk.xal \
++		bomb_laboratory.xal \
++		bombing.xal \
++		born_to_be_killed.xal \
++		boum.xal \
++		bouncy_bouncy.xal \
++		bricklayer_s_anger.xal \
++		bricks_with_extra_fries.xal \
++		butterfly.xal \
++		candy_land.xal \
++		castle.xal \
++		castle_death_part_1.xal \
++		cave_in.xal \
++		chain_reaction.xal \
++		chaos.xal \
++		clockwise_but_you_walk_wrong.xal \
++		close_quarters.xal \
++		closet_psycho.xal \
++		contact_sports.xal \
++		creeping_death.xal \
++		cross_of_doom.xal \
++		crual_rebounds.xal \
++		d_oh.xal \
++		deep_forest.xal \
++		deep_forest_2_graal_quest.xal \
++		desert_storm.xal \
++		dig_dug_nostalgy.xal \
++		double_crown.xal \
++		duel_in_the_sun.xal \
++		dungeon_master.xal \
++		eraser.xal \
++		fantasy_land.xal \
++		fast_boum.xal \
++		firecracker_surprise.xal \
++		five.xal \
++		footwork.xal \
++		four_corners.xal \
++		fourfold.xal \
++		full_power_level.xal \
++		full_power_level_ii.xal \
++		fungus_fun.xal \
++		g_force.xal \
++		get_your_kit_out.xal \
++		graal_quest.xal \
++		gravitation.xal \
++		gravitation_is_back.xal \
++		gravitational_rotation.xal \
++		gravity.xal \
++		grenada.xal \
++		grenade_duel.xal \
++		hall_of_snooker.xal \
++		hallowe_en.xal \
++		hallways.xal \
++		haunted_house.xal \
++		hell_diver.xal \
++		hexagon_excitation.xal \
++		hexagon_flowers.xal \
++		hide_n_seek.xal \
++		hot_stuff.xal \
++		iceberg_droit_devant.xal \
++		illusion.xal \
++		indiana_jones.xal \
++		inv_x_ible.xal \
++		invisible_man.xal \
++		j_ai_froid_aux_pieds.xal \
++		je_m_appelle_rico.xal \
++		jedi_power.xal \
++		jedi_power_ii.xal \
++		judgement_day.xal \
++		kaboum_contact_party.xal \
++		keep_your_eye_on_the_bomb.xal \
++		la_boom.xal \
++		la_mine.xal \
++		la_ruee_vers_l_or.xal \
++		labyrinth_blast.xal \
++		legoland.xal \
++		level_sue.xal \
++		life_race.xal \
++		lives.xal \
++		long_way.xal \
++		losange_losange.xal \
++		losange_over_excitation.xal \
++		mac_donald_s.xal \
++		magic.xal \
++		mayhem.xal \
++		maze_runner.xal \
++		metal_world.xal \
++		mind_games.xal \
++		moonwalking.xal \
++		mr_beam.xal \
++		napalm_justice.xal \
++		ninja_warriors.xal \
++		nooo_f_ing_walls.xal \
++		nothing_short_of_warfare.xal \
++		nowhere_to_run.xal \
++		nowhere_to_run_ii.xal \
++		open_warfare.xal \
++		out_of_control.xal \
++		out_of_the_frying_pan.xal \
++		pandemonium.xal \
++		paradise_city.xal \
++		parallel_world.xal \
++		peppercorn.xal \
++		plus.xal \
++		plus_plus_2.xal \
++		plus_plus_3.xal \
++		popcorn.xal \
++		pot_luck.xal \
++		psychological_warfare.xal \
++		pyramid.xal \
++		random.xal \
++		random_field.xal \
++		remote_quest.xal \
++		renew.xal \
++		renovation_master.xal \
++		rubber_bombs.xal \
++		running_man.xal \
++		running_man_ii.xal \
++		save_your_dream.xal \
++		scottie.xal \
++		screw_him.xal \
++		seek_n_destroy.xal \
++		shrinking_arena.xal \
++		shrinking_world.xal \
++		sky_show.xal \
++		smile.xal \
++		smile_and_die.xal \
++		snapshot_level.xal \
++		snooker.xal \
++		snow_brothers.xal \
++		snowflake.xal \
++		space_head.xal \
++		sphere.xal \
++		spider_web.xal \
++		spindizzy.xal \
++		spiral_ways.xal \
++		split_decision.xal \
++		star_hazzard.xal \
++		stormy.xal \
++		stunning.xal \
++		stunning_renovation.xal \
++		suicide.xal \
++		survival_of_the_fittest.xal \
++		survivor.xal \
++		take_care_of_yourself.xal \
++		temple_of_doom.xal \
++		tetris_land.xal \
++		the_fundamental_error.xal \
++		the_great_escape.xal \
++		the_holy_grail.xal \
++		tic_tac_toe.xal \
++		tornado.xal \
++		tous_aux_abris.xal \
++		toutencarton.xal \
++		treasure_hunt.xal \
++		trench_warfare.xal \
++		trop_puissant.xal \
++		try_it_and_see.xal \
++		tv_star_wannabe.xal \
++		two_be_two.xal \
++		virus.xal \
++		walls_or_not.xal \
++		watch_that_banana.xal \
++		what_the_f_is_this.xal \
++		when_i_was_your_age.xal \
++		would_ya_likes_t_be_some_junkie.xal \
++		xblast_2000.xal \
++		xblast_3000.xal \
++		zero_infinity.xal
++
++InstallMultiple($(XALFILES),$(LEVELDIR))
++
++
