@@ -1,5 +1,5 @@
---- src/network.c.orig	Mon Dec 27 15:30:04 2004
-+++ src/network.c	Mon Dec 27 15:30:07 2004
+--- src/network.c.orig	Thu Oct 14 18:03:49 2004
++++ src/network.c	Wed Dec 29 14:16:06 2004
 @@ -125,7 +125,7 @@
      int retval;
  
@@ -9,18 +9,20 @@
              /* no timeout -> main loop */
          if(timeout<0 && retval>0 && s_poll_canread(fds, signal_pipe[0]))
              signal_pipe_empty();
-@@ -416,8 +416,10 @@
+@@ -416,8 +416,12 @@
              return "Temporary failure in name resolution (EAI_AGAIN)";
          case EAI_FAIL:
              return "Non-recoverable failure in name resolution (EAI_FAIL)";
 +#ifdef EAI_NODATA
++#if EAI_NODATA != EAI_NONAME
          case EAI_NODATA:
              return "No address associated with nodename (EAI_NODATA)";
++#endif
 +#endif
          case EAI_FAMILY:
              return "ai_family not supported (EAI_FAMILY)";
          case EAI_SOCKTYPE:
-@@ -562,10 +564,13 @@
+@@ -562,10 +566,13 @@
  /* getnameinfo() version */
  char *s_ntop(char *text, SOCKADDR_UNION *addr) {
      char host[20], port[6];
