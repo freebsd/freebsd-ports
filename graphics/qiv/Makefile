@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
