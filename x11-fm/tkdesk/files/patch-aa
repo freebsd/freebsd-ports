@@ -18,24 +18,7 @@
   # Else: Just change the options below.
   
 ***************
-*** 35,71 ****
-  # --------------------------------
-  
-  # Location of the Tcl include files:
-! TCLINCDIR = /usr/include/tcl       # Linux with Slackware 3.0
-! #TCLINCDIR = /usr/local/include
-  #TCLINCDIR = /usr/local/include/tcl7.5
-  #TCLINCDIR = $(HOME)/include
-  
-  # Location of the Tcl library:
-! TCLLIBDIR = /usr/lib
-! #TCLLIBDIR = /usr/local/lib
-  #TCLLIBDIR = $(HOME)/lib
-  
-  # Flag for linking the Tcl library to TkDesk:
-! TCLLIB = -ltcl
-  #TCLLIB = -ltcl7.4
-! #TCLLIB = -ltcl7.5
+*** 52,71 ****
   #TCLLIB = -ltcl7_4
   
   # Location of the Tk include files:
@@ -56,24 +39,7 @@
   #TKLIB = -ltk4_0
   
   # --------------------------------
---- 35,71 ----
-  # --------------------------------
-  
-  # Location of the Tcl include files:
-! #TCLINCDIR = /usr/include/tcl       # Linux with Slackware 3.0
-! TCLINCDIR = /usr/local/include
-  #TCLINCDIR = /usr/local/include/tcl7.5
-  #TCLINCDIR = $(HOME)/include
-  
-  # Location of the Tcl library:
-! #TCLLIBDIR = /usr/lib
-! TCLLIBDIR = /usr/local/lib
-  #TCLLIBDIR = $(HOME)/lib
-  
-  # Flag for linking the Tcl library to TkDesk:
-! #TCLLIB = -ltcl
-  #TCLLIB = -ltcl7.4
-! TCLLIB = -ltcl75
+--- 52,71 ----
   #TCLLIB = -ltcl7_4
   
   # Location of the Tk include files:
