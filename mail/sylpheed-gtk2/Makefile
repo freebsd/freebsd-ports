@@ -29,10 +29,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--enable-ssl
 
-OPTIONS=		GPGME "GnuPG support (using GPGME)" no \
-			COMPFACE "X-Face support (using compface)" no \
-			JPILOT "JPilot support" no \
-			LDAP "LDAP support" no
+OPTIONS=		GPGME "GnuPG support (using GPGME)" off \
+			COMPFACE "X-Face support (using compface)" off \
+			JPILOT "JPilot support" off \
+			LDAP "LDAP support" off
 
 CONFLICTS=		sylpheed-0.*
 
