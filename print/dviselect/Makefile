@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/08/19 18:05:02 jmz Exp $
+# $Id: Makefile,v 1.12 1998/10/12 12:45:44 jseger Exp $
 #
 
 DISTNAME=	dviselect
@@ -15,7 +15,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
-BROKEN_ELF=	lib/lib.a
+USE_GMAKE=	yes
 
 MAN1=		dviselect.1
 
