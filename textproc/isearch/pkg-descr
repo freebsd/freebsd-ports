@@ -4,7 +4,3 @@ available that contain certain words. Unlike older search systems, Isearch
 does not use a list of keywords or an abstract; every word of every 
 document can be checked. This allows greatly improved chances of 
 discovering new information in old collections.
-
-WWW: http://www.cnidr.org/ir/isearch.html
-
-Nassib Nassar
