@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.hacom.nl/~richard/software/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid22 \
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24 \
 		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
 
 ALL_TARGET=	smb_auth
