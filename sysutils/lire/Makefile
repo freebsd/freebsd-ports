@@ -123,21 +123,16 @@ RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 .ifdef(WITH_PDF)
 RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils-a4 \
 		gs:${PORTSDIR}/print/ghostview \
-		jade:${PORTSDIR}/textproc/jade
+		jade:${PORTSDIR}/textproc/jade \
+		jadetex:${PORTSDIR}/print/jadetex \
+		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
+
 .endif
 .ifdef(WITH_EXCEL95)
 BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
 .endif
 
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-
-pdf:
-	@${ECHO} "If you want to have PDF output, install print/teTeX first."
-	@${ECHO} "Then, symlink ${LOCALBASE}/bin/pdftex to ${LOCALBASE}/bin/pdfjadetex:"
-	@${ECHO} "    ln -fs ${LOCALBASE}/bin/pdftex ${LOCALBASE}/bin/pdfjadetex"
-	@${ECHO} "As last, in ${LOCALBASE}/share/texmf/web2c/texmf.cnf,"
-	@${ECHO} "increase the poolsize of pdfjadetex:"
-	@${ECHO} "    pool_size.pdfjadetex = 500000"
 
 post-install:
 	@${CAT} pkg-message
