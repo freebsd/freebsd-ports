@@ -1,6 +1,6 @@
 # New ports collection makefile for:	PicMonger
 # Date created:			23 July 2000
-# Whom:				Donald Burr <dburr@FreeBSD.ORG>
+# Whom:				Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	news graphics
 MASTER_SITES=	http://download.sourceforge.net/PicMonger/
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	An automated USENET (NNT) picture decoding client
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
