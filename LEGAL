@@ -160,6 +160,7 @@ homard-*		ports/french/homard	Only free for use in conjunction with
 						french/aster. For any other purpose,
 						you have to acquire a license
 hptools*		ports/devel/hptools	Not made or distributed for resale
+invitation-to-ruby	ports/devel/invitation_to_ruby	no commercial use
 j2sdkee-*		ports/java/j2sdkee	For development and testing use
 						only; redistribution prohibited
 jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
