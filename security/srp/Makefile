@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		srp
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=		security net
 MASTER_SITES=	http://www-cs-students.stanford.edu/~tjw/srp/source/
 
