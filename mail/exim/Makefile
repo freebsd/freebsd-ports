@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
@@ -60,7 +60,7 @@ MAN8=		exim.8
 
 EXIM_VERSION=		4.20
 EXIM_DOCVERSION=	4.20
-EXISCAN_ACL_VERSION=	${EXIM_VERSION}-08
+EXISCAN_ACL_VERSION=	${EXIM_VERSION}-09
 EXISCAN_VERSION=	${EXIM_VERSION}-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
@@ -135,10 +135,12 @@ DB_LIB_VERSION?=1
 #WITHOUT_MAILSTORE=	yes
 #WITHOUT_MBX=		yes
 #
-# Define WITHOUT_CDB, WITHOUT_DSEARCH and WITHOUT_NIS to disable support for
-# CDB-style, directory-list and NIS lookups respectively.
+# Define WITHOUT_CDB, WITHOUT_DSEARCH, WILD_LSEARCH and WITHOUT_NIS to
+# disable support for CDB-style, directory-list, wildcarded-file and NIS
+# lookups respectively.
 #WITHOUT_CDB=		yes
 #WITHOUT_DSEARCH=	yes
+#WITHOUT_WILDLSEARCH=	yes
 #WITHOUT_NIS=		yes
 #
 # Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
@@ -157,7 +159,7 @@ PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
 		dbm.discuss.txt filter.txt pcrepattern.txt pcretest.txt \
 		spec.txt
 .if defined(WITH_EXISCAN_ACL)
-PORTDOC_FILES+=	exiscan-acl-spec.txt
+PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
 PLIST_SUB+=             EXISCAN_ACL=""
 PLIST_SUB+=             EXISCAN="@comment "
 .elif !defined(WITHOUT_EXISCAN)
@@ -324,6 +326,10 @@ SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
 SEDLIST+=	-e 's,^\# LOOKUP_DSEARCH=,LOOKUP_DSEARCH=,'
 .endif
 
+.if !defined(WITHOUT_WILDLSEARCH)
+SEDLIST+=	-e 's,^\# LOOKUP_WILDLSEARCH=,LOOKUP_WILDLSEARCH=,'
+.endif
+
 .if !defined(WITHOUT_NIS)
 SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
 .endif
@@ -372,5 +378,6 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
