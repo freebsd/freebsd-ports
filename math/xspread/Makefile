@@ -10,7 +10,6 @@ CATEGORIES+=	math
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/slackware/source/xap/xspread/ \
 	ftp://ftp.icm.edu.pl/pub2/linux/distributions/slackware/source/xap/xspread/
 
-NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 
