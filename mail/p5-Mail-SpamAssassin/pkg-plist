@@ -2,12 +2,16 @@ bin/spamassassin
 bin/spamc
 bin/spamd
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/AuditMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Conf.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ConfSourceSQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Dns.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EncappedMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EvalTests.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ExposedMessage.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locales.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/MyMailAudit.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PerMsgStatus.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Replier.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Reporter.pm
