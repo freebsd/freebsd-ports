@@ -1,3 +1,5 @@
+%%RUBY_SITELIBDIR%%/apache/cgi-support.rb
+%%RUBY_SITELIBDIR%%/apache/erb-run.rb
 %%RUBY_SITELIBDIR%%/apache/eruby-run.rb
 %%RUBY_SITELIBDIR%%/apache/rd2html.rb
 %%RUBY_SITELIBDIR%%/apache/ruby-run.rb
