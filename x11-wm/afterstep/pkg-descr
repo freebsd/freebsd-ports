@@ -1,7 +1,7 @@
 AfterStep is a continuation of the BowMan window manager which was
 originally put together by Bo Yang. BowMan was based on the fvwm window
 manager, written by Robert Nation. Fvwm was based on code from twm. And so
-on... It is designed to emulate some of the look and feel of the NEXTSTEP®
+on... It is designed to emulate some of the look and feel of the NEXTSTEP
 user interface, while adding useful, requested, and neat features. The
 changes which comprise AfterStep's personality were originally part of
 BowMan development, but due to a desire to move past simple emulation and
@@ -18,4 +18,3 @@ Major changes from fvwm are:
   applications; they are more of pop-up service lists on the root window.
 - NEXTSTEP style icons. These styles are hard-coded in the program, which is
   good for the consistent look of the NEXTSTEP interface.
-
