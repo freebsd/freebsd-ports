@@ -14,8 +14,8 @@
   # or add your own line.
   #
 ! BIN_DIR       =       $(PREFIX)/bin
-! OPT =         -O -s
-! CLIENT =      rdist6
+! OPT =         $(BUILD_OPT)
+! CLIENT =      $(BUILD_CLIENT)
   
   #
   # Add any local definitions you want pass to the compiler to DEFS_LOCAL
