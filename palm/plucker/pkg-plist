@@ -1,6 +1,6 @@
 bin/plucker-build
-bin/plucker-dump
 bin/plucker-decode
+bin/plucker-dump
 %%PYTHON_SITELIBDIR%%/PyPlucker/AliasList.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/ConfigFiles.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/ConversionParser.py
@@ -28,31 +28,39 @@ bin/plucker-decode
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/gettext.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/prc.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/timeoutsocket.py
+%%DATADIR%%/fonts/AllStandard.prc
+%%DATADIR%%/fonts/AllSystem.prc
+%%DATADIR%%/fonts/SonyLargeBold.prc
+%%DATADIR%%/fonts/SonySmallBold.prc
+%%DATADIR%%/ppi/ppi_ca.prc
+%%DATADIR%%/ppi/ppi_cs.prc
+%%DATADIR%%/ppi/ppi_da.prc
+%%DATADIR%%/ppi/ppi_de.prc
+%%DATADIR%%/ppi/ppi_en.prc
+%%DATADIR%%/ppi/ppi_es.prc
+%%DATADIR%%/ppi/ppi_fo.prc
+%%DATADIR%%/ppi/ppi_fr.prc
+%%DATADIR%%/ppi/ppi_it.prc
+%%DATADIR%%/ppi/ppi_ja.prc
+%%DATADIR%%/ppi/ppi_no.prc
+%%DATADIR%%/ppi/ppi_pl.prc
+%%DATADIR%%/ppi/ppi_ru.prc
+%%DATADIR%%/ppi/ppi_th.prc
+%%DATADIR%%/ppi/ppi_tr.prc
+%%DATADIR%%/ppi/ppi_zh_CN.prc
+%%DATADIR%%/xlit/plucker-xlit.pdb
 %%DATADIR%%/PluckerUserGuide.pdb
 %%DATADIR%%/SysZLib.prc
-%%DATADIR%%/viewer_cs.prc
-%%DATADIR%%/viewer_da.prc
-%%DATADIR%%/viewer_de.prc
 %%DATADIR%%/viewer_en.prc
-%%DATADIR%%/viewer_es.prc
-%%DATADIR%%/viewer_fo.prc
-%%DATADIR%%/viewer_fr.prc
-%%DATADIR%%/viewer_it.prc
-%%DATADIR%%/viewer_ja.prc
-%%DATADIR%%/viewer_pl.prc
-%%DATADIR%%/viewer_ru.prc
-%%DATADIR%%/viewer_th.prc
-%%DATADIR%%/viewer_tr.prc
-%%DATADIR%%/viewer_zh_CN.prc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGREPORT
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/REQUIREMENTS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/manual/Autoscroll.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual/Bookmarks.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual/Category.gif
@@ -171,6 +179,10 @@ bin/plucker-decode
 %%PORTDOCS%%%%DOCSDIR%%/manual/node8.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node80.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node81.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node82.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node83.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node84.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node85.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node9.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.gif
@@ -184,4 +196,7 @@ etc/plucker/pluckerrc.sample
 @dirrm etc/plucker
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/ppi
+@dirrm %%DATADIR%%/xlit
 @dirrm %%DATADIR%%
