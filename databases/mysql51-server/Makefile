@@ -7,6 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.30
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.wipol.uni-bonn.de/MySQL/Downloads/MySQL-3.23/ \
 		http://www.mysql.net/Downloads/MySQL-3.23/ \
@@ -37,6 +38,9 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
+# without including these flags mysqld may crash under heavy load
+# and multiple connections at the same time
+CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
