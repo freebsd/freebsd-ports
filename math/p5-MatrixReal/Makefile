@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	MatrixReal
-PORTVERSION=	1.3a5
+PORTVERSION=	1.9
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -17,7 +17,6 @@ COMMENT=	A perl module implementing a Matrix of Reals
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::MatrixReal.3 Math::Kleene.3
 
 .include <bsd.port.mk>
