@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jan 14 20:31:37 2002
-+++ configure	Mon Jan 14 20:51:03 2002
-@@ -8877,7 +8877,7 @@
+--- configure.orig	Mon Mar  4 10:42:41 2002
++++ configure	Mon Mar  4 10:47:57 2002
+@@ -8876,7 +8876,7 @@
  		PERL_CC=`perl -MConfig -e 'print $Config{cc},"\n";'`
  		PERL_LD=`perl -MConfig -e 'print $Config{ld},"\n";'`
  		PERL_CCOPTS=`perl -MExtUtils::Embed -e ccopts`
@@ -12,3 +12,12 @@ $FreeBSD$
  		
  		
  		
+@@ -8906,7 +8906,7 @@
+ 
+ GNOMEDB_CFLAGS="`gda-config --cflags client` `gnome-config --cflags xml oaf bonobox print gdk_pixbuf`"
+ GNOMEDB_LIBS="`gda-config --libs client` `gnome-config --libs xml oaf bonobox print gdk_pixbuf`"
+-GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${datadir}/locale\\\""
++GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${prefix}/share/locale\\\""
+ 
+ 
+ 
