@@ -43,7 +43,6 @@
     SUBDIR += rubytk
     SUBDIR += slingshot
     SUBDIR += tix
-    SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tk82
     SUBDIR += tk83
