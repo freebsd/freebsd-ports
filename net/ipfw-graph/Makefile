@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipfw-graph
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -16,5 +16,8 @@ USE_GTK=	yes
 MAKE_ENV+=	MANPREFIX="${MANPREFIX}"
 
 MAN8=		ipfw-al.8 ipfw-graph.8
+
+pre-patch:
+	@${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/ipfw-graph.h
 
 .include <bsd.port.mk>
