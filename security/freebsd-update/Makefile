@@ -20,7 +20,7 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 
 # The RSA code has been tested and works on these platforms.  On other
 # platforms, it either doesn't work or hasn't been tested.
-ONLY_FOR_ARCHS=	i386 amd64 alpha
+ONLY_FOR_ARCHS=	i386 amd64 alpha sparc64
 
 MAN5=		freebsd-update.conf.5
 MAN8=		freebsd-update.8
