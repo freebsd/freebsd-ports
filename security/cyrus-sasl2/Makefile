@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -178,7 +178,7 @@ post-install:
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
 	${MKDIR} -m 770 /var/state/saslauthd
-	${CHOWN} ${CYRUS_USER}:${CYRUS_GROUP} /var/state/saslauthd
+	${CHOWN} ${CYRUS_USER}:mail /var/state/saslauthd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
