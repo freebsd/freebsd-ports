@@ -3,7 +3,7 @@
 # Date created:         Sat Dec 7, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1997/11/03 21:07:11 obrien Exp $
+# $Id: Makefile,v 1.5 1997/11/03 21:08:24 obrien Exp $
 #
 
 DISTNAME=	vnpstext
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
+
+BROKEN_ELF=	yes
 
 CFLAGS+=	-I../../include
 MAN1=		vnpstext.1
