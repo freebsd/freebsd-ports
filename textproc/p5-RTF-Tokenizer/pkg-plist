@@ -4,4 +4,5 @@ bin/rtfdump
 %%SITE_PERL%%/RTF/Tokenizer.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Tokenizer
 @dirrm %%SITE_PERL%%/RTF
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/RTF 2>/dev/null || true
