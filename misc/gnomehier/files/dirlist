@@ -123,6 +123,7 @@ share/gnome/help/gpl
 share/gnome/help/gpl/C
 share/gnome/help/lgpl
 share/gnome/help/lgpl/C
+share/gnome/icons
 share/gnome/idl
 share/gnome/images
 share/gnome/mc
@@ -170,6 +171,7 @@ share/gnome/sgml
 share/gnome/sgml/docbook
 share/gnome/sgml/docbook/gnome-customization-0.1
 share/gnome/sounds
+share/gnome/themes
 share/gnome/ui
 share/gnome/vfolders
 share/gnome/wm-properties
