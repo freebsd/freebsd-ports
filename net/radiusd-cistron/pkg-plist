@@ -9,6 +9,7 @@ sbin/radwatch
 etc/raddb/clients
 etc/raddb/dictionary
 etc/raddb/dictionary.ascend
+etc/raddb/dictionary.cisco
 etc/raddb/dictionary.compat
 etc/raddb/dictionary.livingston
 etc/raddb/dictionary.tunnel
@@ -24,6 +25,7 @@ share/doc/radiusd-cistron/COPYRIGHT.Livingston
 share/doc/radiusd-cistron/ChangeLog
 share/doc/radiusd-cistron/INSTALL.OLD
 share/doc/radiusd-cistron/README
+share/doc/radiusd-cistron/README.Y2K
 share/doc/radiusd-cistron/README.cisco
 share/doc/radiusd-cistron/README.pam
 share/doc/radiusd-cistron/README.proxy
