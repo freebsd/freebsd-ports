@@ -9800,6 +9800,7 @@ sing		ports/net-mgmt/sing
 siod		ports/lang/siod
 sipcalc		ports/net-mgmt/sipcalc
 sipp		ports/net/sipp
+siproxd		ports/net/siproxd
 sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
