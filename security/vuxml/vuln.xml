@@ -4072,4 +4072,46 @@ misc.c:
       <entry>2004-07-15</entry>
     </dates>
   </vuln>
+
+  <vuln vid="730db824-e216-11d8-9b0a-000347a4fa7d">
+    <topic>Mozilla / Firefox user interface spoofing vulnerability</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><le>0.9.1_1</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><le>1.7.1</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><le>1.7.1</le></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><le>1.7.1,2</le></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><le>1.7.1_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A vulnerability has been reported in Mozilla and Firefox,
+          allowing malicious websites to spoof the user interface.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=252198</url>
+      <url>http://www.nd.edu/~jsmith30/xul/test/spoof.html</url>
+      <url>http://secunia.com/advisories/12188</url>
+    </references>
+    <dates>
+      <discovery>2004-07-19</discovery>
+      <entry>2004-07-30</entry>
+    </dates>
+  </vuln>
 </vuxml>
