@@ -3,7 +3,7 @@
 # Date created:		Fri Mar  1 19:43:52 MET 1996
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:41:01 asami Exp $
+# $Id: Makefile,v 1.5 1997/05/28 16:02:39 fenner Exp $
 #
 
 DISTNAME=	harvest-1.4.pl2
@@ -15,5 +15,8 @@ MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/distribs/harvest/ \
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	andreas@klemm.gtn.com
+
+pre-install:
+	${MKDIR} ${PREFIX}/harvest
 
 .include <bsd.port.mk>
