@@ -7,22 +7,22 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	5.6.70
+PORTVERSION=	5.7a
 CATEGORIES=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.freesoftware.com/pub/vim/unix/ \
-		ftp://ftp.vim.org/pub/vim/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/
-DISTNAME=	vim-5.6
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
+		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
+		ftp://ftp.freesoftware.com/pub/vim/unreleased/unix/ \
+		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
+		ftp://ftp.is.co.za/applications/editors/unreleased/vim/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unreleased/unix/  \
+		ftp://ftp.progsoc.uts.edu.au/pub/unreleased/vim/
+DISTNAME=	vim-5.7a
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
-PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 05 06 10 11 12 13 14 15 16 17 18 19 21 22 25 27 28 29 30 31 32 33 35 36 37 38 39 40 41 42 46 47 48 49 50 51 52 53 54 55 58 60 61 62 63 64 65 66 67 68 69 70
-PATCHFILES+=	5.6.0${p}
-.endfor
+#PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
+#.for p in 01
+#PATCHFILES+=	5.6.0${p}
+#.endfor
 
 MAINTAINER=	obrien@FreeBSD.org
 
