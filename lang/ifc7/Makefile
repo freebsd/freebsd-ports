@@ -41,7 +41,7 @@ IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, e.g. from ${IFC
 .endif
 
 .if exists(${PREFIX}/intel/compiler60/bin/icc)
-BROKEN= Can not coexist with icc
+BROKEN= Cannot coexist with icc
 .endif
 
 post-extract:
