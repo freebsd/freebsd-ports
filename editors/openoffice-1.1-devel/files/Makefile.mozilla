@@ -32,9 +32,9 @@ build-mozilla:
 .endif
 
 install-mozilla:
-	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
-	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
-	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/moz/zipped/
 
 register-mozilla:
 .if exists(${WRKDIR}/mozilla-runtime)

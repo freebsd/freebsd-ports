@@ -5,8 +5,8 @@ Index: configure.pl
 RCS file: /cvs/api/odk/configure.pl,v
 retrieving revision 1.4.12.3
 diff -u -r1.4.12.3 configure.pl
---- ../odk/configure.pl	18 May 2004 10:02:00 -0000	1.4.12.3
-+++ ../configure.pl	11 Aug 2004 08:21:04 -0000
+--- odk/configure.pl.orig	18 May 2004 10:02:00 -0000	1.4.12.3
++++ odk/configure.pl	11 Aug 2004 08:21:04 -0000
 @@ -19,7 +19,7 @@
  chop ($main::OFFICE_HOME_SUGGESTION);
  
