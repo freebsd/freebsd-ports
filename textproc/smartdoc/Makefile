@@ -19,8 +19,6 @@ RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
 		javavm:${PORTSDIR}/java/javavmwrapper
 
 SCRIPTS_ENV=	JAVALIBDIR=${JAVALIBDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION} MKCATALOG=${MKCATALOG}
-
 WRKSRC=		${WRKDIR}/sdoc
 NO_BUILD=	yes
 USE_ZIP=	yes
@@ -49,7 +47,7 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sdoc ${PREFIX}/bin
-	${MKDIR} ${JAVALIBDIR}
+	${MKDIR} ${JAVALIBDIR}/classes
 .for jar in ${JARS}
 	${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVALIBDIR}/classes
 .endfor
