@@ -1413,6 +1413,7 @@ docproj-jadetex	ports/textproc/docproj-jadetex
 docproj-nojadetex	ports/textproc/docproj-nojadetex
 docsis		ports/net/docsis
 doctorj		ports/devel/doctorj
+documancer	ports/misc/documancer
 dog		ports/misc/dog
 domc		ports/textproc/domc
 domtools	ports/dns/domtools
