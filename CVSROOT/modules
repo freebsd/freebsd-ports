@@ -1191,6 +1191,7 @@ drbl		ports/mail/drbl
 drgenius	ports/math/drgenius
 dri-devel	ports/graphics/dri-devel
 driftnet	ports/net/driftnet
+driglide	ports/x11-servers/driglide
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
 drscheme	ports/lang/drscheme
