@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.0
@@ -16,8 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
-WRKSRC=	${WRKDIR}/${DISTNAME:S/0$/1/}
 
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
@@ -40,6 +38,7 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/GDL.nl \
 		Documentation/GDL Documentation/VAR \
 		Documentation/UNODE Documentation/Vshare \
+		Documentation/Vshare.nl \
 		Documentation/commands \
 		Documentation/programs.nl \
 		Documentation/programs.pl \
@@ -57,7 +56,7 @@ post-patch:
 	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-post-configure:
+pre-build:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h

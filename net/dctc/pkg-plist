@@ -11,6 +11,7 @@ bin/dctc
 %%PORTDOCS%%share/doc/dctc/Documentation/UNODE
 %%PORTDOCS%%share/doc/dctc/Documentation/VAR
 %%PORTDOCS%%share/doc/dctc/Documentation/Vshare
+%%PORTDOCS%%share/doc/dctc/Documentation/Vshare.nl
 %%PORTDOCS%%share/doc/dctc/Documentation/commands
 %%PORTDOCS%%share/doc/dctc/Documentation/output
 %%PORTDOCS%%share/doc/dctc/Documentation/programs
