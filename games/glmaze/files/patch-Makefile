@@ -1,6 +1,8 @@
 --- Makefile.orig	Wed Jan 23 06:44:46 2002
-+++ Makefile	Thu Jun  5 19:54:58 2003
-@@ -2,16 +2,16 @@
++++ Makefile	Tue Jun 17 23:14:54 2003
+@@ -1,17 +1,17 @@
+-CC = gcc -O2 -ffast-math -Wall
++#CC = gcc -O2 -ffast-math -Wall
  
  VERSION = "1.1a"
  
@@ -26,11 +28,11 @@
  
  .c.o:
 -	$(CC) -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
-+	$(CC) -I${X11BASE}/include -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -I${X11BASE}/include -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
  
  glmaze: $(OBJECTS)
 -	$(CC) $(OBJECTS) -o $@ $(SDL_LIBS) -lGL -lGLU -lm 
-+	$(CC) $(OBJECTS) -o $@ -L${X11BASE}/lib $(SDL_LIBS) -lGL -lGLU -lm 
++	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ -L${X11BASE}/lib $(SDL_LIBS) -lGL -lGLU -lm 
  
  clean:
  	@echo Cleaning up...
