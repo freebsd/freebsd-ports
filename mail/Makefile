@@ -57,6 +57,7 @@
     SUBDIR += isync
     SUBDIR += junkfilter
     SUBDIR += kbiff
+    SUBDIR += kiltdown
     SUBDIR += knewmail
     SUBDIR += lbdb
     SUBDIR += libesmtp
