@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 DISTNAME?=	commfont # dummy
 DIST_SUBDIR=	Acrobat5
 
-MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+MAINTAINER=	koma2@ms.u-tokyo.ac.jp
 COMMENT?=	Asian Font Packs for Acrobat Reader 5.0 (for common files)
 
 NO_BUILD=	yes
