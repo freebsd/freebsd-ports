@@ -1,0 +1,26 @@
+bin/nam
+share/examples/nam/README
+share/examples/nam/adc.README
+share/examples/nam/adc.nam.gz
+share/examples/nam/dynamics-demo.nam
+share/examples/nam/dynamics-demo.txt
+share/examples/nam/lan.nam
+share/examples/nam/lantest2.nam
+share/examples/nam/losspatterns.README
+share/examples/nam/losspatterns.nam
+share/examples/nam/mobigen.nam
+share/examples/nam/rbp_demo.README
+share/examples/nam/rbp_demo.nam
+share/examples/nam/rpm-vs-srm.nam
+share/examples/nam/sample.nam.tcl
+share/examples/nam/session.README
+share/examples/nam/session.nam.gz
+share/examples/nam/simple_mcast.nam
+share/examples/nam/srm-example.nam
+share/examples/nam/tcpecn.nam.gz
+share/examples/nam/tcpsrm.nam.gz
+share/examples/nam/test.nam.gz
+share/examples/nam/ts100.nam.gz
+share/examples/nam/ts20.nam.gz
+share/examples/nam/webcache.nam
+@dirrm share/examples/nam
