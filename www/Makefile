@@ -322,6 +322,7 @@
     SUBDIR += squishdot
     SUBDIR += ssserver
     SUBDIR += surfraw
+    SUBDIR += swish++
     SUBDIR += swish-e
     SUBDIR += tclhttpd
     SUBDIR += thttpd

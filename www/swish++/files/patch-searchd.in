@@ -1,0 +1,11 @@
+--- searchd.in.orig	Sun Jan 13 12:00:35 2002
++++ searchd.in	Sun Jan 13 12:00:53 2002
+@@ -27,7 +27,7 @@
+ SEARCH="search"
+ SEARCH_PATH="%%I_BIN%%/$SEARCH"
+ SEARCHMONITOR="%%I_BIN%%/searchmonitor"
+-CONF_FILE="/etc/swish++.conf"
++CONF_FILE="%%PREFIX%%/etc/swish++.conf"
+ PID_FILE_DEFAULT="/var/run/search.pid"
+ 
+ ##

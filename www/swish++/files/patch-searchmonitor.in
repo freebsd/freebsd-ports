@@ -1,0 +1,11 @@
+--- searchmonitor.in.orig	Sun Jan 13 12:01:32 2002
++++ searchmonitor.in	Sun Jan 13 12:01:47 2002
+@@ -63,7 +63,7 @@
+     CONF_FILE="swish++.conf"
+     if [ ! -f "$CONF_FILE" ]
+     then
+-        CONF_FILE="/etc/$CONF_FILE"
++        CONF_FILE="%%PREFIX%%/etc/$CONF_FILE"
+         [ -f "$CONF_FILE" ] ||
+             { echo "$ME: no configuration file found" >&2; exit 3; }
+     fi

@@ -1,0 +1,10 @@
+bin/extract
+bin/httpindex
+bin/index
+bin/search
+bin/searchc
+bin/searchmonitor
+bin/splitmail
+etc/swish++.conf
+etc/rc.d/swish++.sh
+lib/perl5/site_perl/%%PERL_VER%%/WWW.pm
