@@ -1,0 +1,63 @@
+--- MODULES.orig	Sun Nov  4 21:51:27 2001
++++ MODULES	Sun Nov  4 21:51:19 2001
+@@ -14,8 +14,9 @@
+ to update DNS, to update a tunneling service, to update a firewall, etc ... 
+ based on a dynamically changing IP address from its clients.
+ 
+-The new server has an additional database (by default /etc/dhis/db/services.db)
+-containing the list of support services (modules).
++The new server has an additional database (by default 
++__PREFIX__/etc/dhis/services.db) containing the list of 
++support services (modules).
+ 
+ In order to run dhisd >= 5 you will need to create and configure this
+ file first.
+@@ -24,13 +25,14 @@
+ ---------------------------------------
+ 
+ When executed the DHIS server reads its client's database (by default from
+-/etc/dhis/db/dhis.db) into memory and proceeds to listening mode on a UDP
+-port (by default 58800). When messages arrive the server responds accordingly,
+-authenticates the clients (based on the keys and information loaded from the
+-database) and marks them online. Furthermore the server keeps sending periodic
+-checks to each and every client in order to verify that these are still 
+-connected. If a particular client fails to reply the server will consider it 
+-offline and mark it accordingly.
++__PREFIX__/etc/dhis/db/dhis.db) into memory and proceeds to listening 
++mode on a UDP port (by default 58800). When messages arrive the server
++responds accordingly, authenticates the clients (based on the keys and
++information loaded from the database) and marks them online. Furthermore
++the server keeps sending periodic checks to each and every client in
++order to verify that these are still connected. If a particular client
++fails to reply the server will consider it offline and mark it
++accordingly.
+ 
+ Each client is identified to a server by a single ID number called the HostID.
+ The new modular structure implements a means to mark these hosts online and 
+@@ -61,11 +63,10 @@
+ command - the module engine process command to be executed
+ 
+ 
+-Example of /etc/dhis/db/services.db
+------------------------------------
+-
+-Before executing dhisd ensure to have created a valid /etc/dhis/db/services.db 
+-file.
++Example of __PREFIX__/etc/dhis/db/services.db
++-------------------------------------------------------------------------------
++Before executing dhisd ensure to have created a valid 
++__PREFIX__/etc/dhis/services.db file.
+ 
+ The syntax for the file is as follows:
+ 
+@@ -76,8 +77,8 @@
+ 
+ ;------------------------------------------------------------------------------
+ ; This is a comment line
+-dns 4 /etc/dhis/bin/dhis-dns-engine
+-fw  2 /etc/dhis/bin/dhis-fw-engine
++dns 4 __PREFIX__/etc/dhis/dhis-dns-engine
++fw  2 __PREFIX__/etc/dhis/dhis-fw-engine
+ ;------------------------------------------------------------------------------
+ 
+ Inter-process communication for modules:

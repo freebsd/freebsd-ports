@@ -5,66 +5,64 @@
 # $FreeBSD$
 #
 
-PORTNAME=		dhisd
-PORTVERSION=		4.0.3
-CATEGORIES=		net
-MASTER_SITES=		http://bsltwr.dhis.org/ftp/pub/dhis/ \
-			ftp://ftp.dhis.org/pub/dhis/
+PORTNAME=	dhisd
+PORTVERSION=	5.1
+CATEGORIES=	net
+MASTER_SITES=	http://bsltwr.dhis.org/ftp/pub/dhis/ \
+		ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=		baskruit@bsltwr.dhis.org
+MAINTAINER=	baskruit@bsltwr.dhis.org
 
-DHISBASE=		${PREFIX}/dhis
-DIRS=			dhis dhis/bin dhis/pid dhis/db dhis/log dhis/script
-RDIRS=			dhis/bin dhis/pid dhis/db dhis/log dhis/script dhis
+DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
 post-patch:
-	@${ECHO} "===>   Patching Makefile"
-	${PERL} -i -p -e "s^__PREFIX__^${DHISBASE}^g" ${WRKSRC}/Makefile
-	@${ECHO} "===>   Patching documentation..."
-	${PERL} -i -p -e "s^__PREFIX__^${DHISBASE}^g" ${WRKSRC}/INSTALL
-	${PERL} -i -p -e "s^__PREFIX__^${DHISBASE}^g" ${WRKSRC}/README
-	@${ECHO} "===>   Patching dhisd.h"
-	${PERL} -i -p -e "s^__PREFIX__^${DHISBASE}^g" ${WRKSRC}/dhisd.h
-	@${ECHO} "===>   Patching dhisd.sh"
-	@${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}
-	${PERL} -i -p -e "s^__PREFIX__^${PREFIX}^g" ${WRKSRC}/dhisd.sh
+	cd ${WRKSRC} && ${PERL} -i -p -e "s^__PREFIX__^${PREFIX}^g" \
+		Makefile dhisd.h ${DOCFILES}
 
 do-install:
 
 post-install:
-.for dir in ${DIRS}
-	@${MKDIR} ${PREFIX}/${dir}
-	@${CHMOD} 700 ${PREFIX}/${dir}
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${DHISBASE}/bin
-	@${INSTALL_DATA} ${FILESDIR}/dhis.db ${DHISBASE}/db/dhis.db.sample
-	@${ECHO} "dhis/bin/dhisd" >> ${TMPPLIST}
-	@${ECHO} "dhis/db/dhis.db.sample" >> ${TMPPLIST}
-	@${CHMOD} 600 ${PREFIX}/dhis/db/*
+	${ECHO} "===>   Installing ${PREFIX}/bin/dhisd."
+	${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${PREFIX}/bin
+	@${ECHO} "bin/dhisd" >> ${TMPPLIST}
+	${ECHO} "===>   Installing ${PREFIX}/bin/genkeys."
+	${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/bin
+	@${ECHO} "bin/genkeys" >> ${TMPPLIST}
+	${ECHO} "===>   Creating ${PREFIX}/etc/dhis and installing sample db files."
+	@${MKDIR} ${PREFIX}/etc/dhis
+	@${CHMOD} 700 ${PREFIX}/etc/dhis
+	@${INSTALL_DATA} ${WRKSRC}/dhis.db.sample ${PREFIX}/etc/dhis/dhis.db.sample
+	@${ECHO} "etc/dhis/dhis.db.sample" >> ${TMPPLIST}
+	@${INSTALL_DATA} ${WRKSRC}/services.db.sample ${PREFIX}/etc/dhis/services.db.sample
+	@${ECHO} "etc/dhis/services.db.sample" >> ${TMPPLIST}
+	@${CHMOD} 600 ${PREFIX}/etc/dhis/*
+	@${ECHO} "@dirrm etc/dhis" >> ${TMPPLIST}
 .if !exists(${PREFIX}/etc/rc.d/dhisd.sh)
 	${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh startup file."
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
 	@${ECHO} "etc/rc.d/dhisd.sh" >> ${TMPPLIST}
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DHISBASE}/doc
-	@${INSTALL_DATA} ${WRKSRC}/README ${DHISBASE}/doc
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DHISBASE}/doc
-	@${CHMOD} 755 ${DHISBASE}/doc
-	@${ECHO} "dhis/doc/README" >> ${TMPPLIST}
-	@${ECHO} "dhis/doc/INSTALL" >> ${TMPPLIST}
-	@${ECHO} "@dirrm dhis/doc" >> ${TMPPLIST}
-.endif
-.for dir in ${RDIRS}
-	@${ECHO} "@dirrm ${dir}" >> ${TMPPLIST}
+	${ECHO} "===>   Installing documentation in ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${CHMOD} 755 ${DOCSDIR}
+.for DOCFILE in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+	@${ECHO} "share/doc/${PORTNAME}/${DOCFILE}" >> ${TMPPLIST}
 .endfor
+	${INSTALL_DATA} ${FILESDIR}/INSTALL.bsd ${DOCSDIR}
+	@${ECHO} "share/doc/${PORTNAME}/INSTALL.bsd" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
+.endif
 	@${ECHO} "--------------------------------------------------------------------------"
 	@${ECHO} "Before dhisd can run, you will need configure BIND."
 	@${ECHO} ""
 	@${ECHO} "For more information, see the following site:"
-	@${ECHO} "http://www.dhis.org/dhis/r4/server.html"
+	@${ECHO} "http://www.dhis.org/dhis/r5/"
 .if !defined(NOPORTDOCS)
-	@${ECHO} "or ${DHISBASE}/doc/"
+	@${ECHO} ""
+	@${ECHO} "or the files in ${DOCSDIR}"
+	@${ECHO} "Read INSTALL and INSTALL.bsd at least for the setup information of dhisd."
 .endif
 	@${ECHO} ""
 	@${ECHO} "For information on this port, check the following site:"
