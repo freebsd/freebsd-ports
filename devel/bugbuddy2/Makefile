@@ -14,7 +14,8 @@ DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
+		glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
