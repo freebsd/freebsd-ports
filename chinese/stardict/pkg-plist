@@ -1,17 +1,25 @@
-bin/cdict
-share/chinese/cdict/back.gif
-share/chinese/cdict/exit.gif
-share/chinese/cdict/exitmask.xbm
-share/chinese/cdict/help.gif
-share/chinese/cdict/helpmask.xbm
-share/chinese/cdict/hzfont/fonts.dir
-share/chinese/cdict/hzfont/hz16.pcf
-share/chinese/cdict/hzfont/yb10x20.pcf
-share/chinese/cdict/icon.gif
-share/chinese/cdict/iconmask.xbm
-share/chinese/cdict/license
-share/chinese/cdict/readme
-share/chinese/cdict/transdic
-share/chinese/cdict/yblib
-@dirrm share/chinese/cdict/hzfont
-@dirrm share/chinese/cdict
+bin/stardict
+share/stardict/hzfont/hz16.pcf
+share/stardict/hzfont/hz16ft.pcf
+share/stardict/hzfont/yb10x20.pcf
+share/stardict/hzfont/fonts.dir
+share/stardict/images/back.gif
+share/stardict/images/chinabyte.gif
+share/stardict/images/help.gif
+share/stardict/images/icon.gif
+share/stardict/images/joyo.gif
+share/stardict/images/last.gif
+share/stardict/images/next.gif
+share/stardict/images/sina.gif
+share/stardict/images/wri.gif
+share/stardict/images/wuhan.gif
+share/stardict/images/exitmask.xbm
+share/stardict/images/helpmask.xbm
+share/stardict/images/iconmask.xbm
+share/stardict/images/lastmask.xbm
+share/stardict/images/nextmask.xbm
+share/stardict/stardict.db
+share/stardict/yblib
+@dirrm share/stardict/hzfont
+@dirrm share/stardict/images
+@dirrm share/stardict
