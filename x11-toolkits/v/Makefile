@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/05/30 12:36:21 dburr Exp $
+# $Id: Makefile,v 1.4 1998/07/19 06:56:14 dburr Exp $
 #
 
 DISTNAME=	v-1.19
@@ -11,6 +11,8 @@ CATEGORIES=	x11 devel graphics
 MASTER_SITES=	ftp://objectcentral.com/
 
 MAINTAINER=	dburr@FreeBSD.ORG
+
+BROKEN=		fetch
 
 WRKSRC=		${WRKDIR}/v
 
