@@ -3,14 +3,15 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.23 1998/07/02 11:09:58 vanilla Exp $
+# $Id: Makefile,v 1.24 1998/07/03 14:47:31 jmz Exp $
 #
 
 DISTNAME=	mtools-3.9.1
+PKGNAME=	mtools-3.9.1.3110
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
 
-PATCHFILES=	mtools-3.9.1-2906.diff.gz
+PATCHFILES=	mtools-3.9.1-3110.diff.gz
 PATCH_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
 PATCH_DIST_STRIP=	-p1
 
