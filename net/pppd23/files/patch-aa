@@ -17,7 +17,7 @@ diff -rNu ../../0/ppp-2.3.11/configure ./configure
        2.2.[2-7]*) state="late"; ksrc="freebsd-2.0";;
        2.2.8*)   state="known"; ksrc="freebsd-2.2.8";;
 -      3.[0-1]*)	state="known"; ksrc="freebsd-3.0";;
-+      [345].*)	state="known"; ksrc="freebsd-3.0";;
++      *)	state="known"; ksrc="freebsd-3.0";;
      esac;;
    NeXTStep)
      makext="NeXT";
