@@ -60,3 +60,5 @@ share/cows/wtf2.cow
 share/cows/zig.cow
 @unexec rmdir %D/share/cows 2>/dev/null || true
 share/irssi/scripts/insub.pl
+@unexec rmdir %D/share/irssi/scripts 2>/dev/null || true
+@unexec rmdir %D/share/irssi 2>/dev/null || true
