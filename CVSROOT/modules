@@ -4552,6 +4552,7 @@ mule-ucs	ports/converters/mule-ucs
 mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
 multisuck	ports/news/multisuck
+multivideo	ports/graphics/multivideo
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
 musicbrainz	ports/audio/musicbrainz
