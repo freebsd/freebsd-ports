@@ -25,7 +25,10 @@ lib/libmsql.a
 lib/libmsql.so.1
 @exec ln -sf %f %B/libmsql.so
 @unexec rm -f %B/libmsql.so
-lib/lite_lex.o
+lib/msql/lite_lex.o
+lib/msql/mod_lite.o
+lib/msql/mod_msql.o
+lib/msql/mod_std.o
 libexec/msql/mod_lite.so
 libexec/msql/mod_msql.so
 libexec/msql/mod_std.so
@@ -101,6 +104,8 @@ share/msql/www/graphics/user.gif
 share/msql/www/graphics/view.gif
 @dirrm etc/msql2
 @dirrm include/common
+@dirrm lib/msql
+@dirrm libexec/msql
 @dirrm share/doc/msql/manual-html
 @dirrm share/doc/msql
 @dirrm share/msql/makegen
