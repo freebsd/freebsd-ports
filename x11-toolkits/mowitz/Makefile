@@ -6,6 +6,7 @@
 
 PORTNAME=	Mowitz
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/mowitz/
 
