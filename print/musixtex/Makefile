@@ -3,11 +3,11 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/15 23:13:58 jmz Exp $
+# $Id: Makefile,v 1.2 1995/09/23 20:24:13 jmz Exp $
 #
 PKGNAME=        musixtex-3.96
 DISTFILES=      musixtex-T396.tar.gz musixexa-0375.tar.gz
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk//tex-archive/macros/musixtex/taupin/
 NO_WRKSUBDIR=	yes
 

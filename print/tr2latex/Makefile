@@ -5,7 +5,7 @@
 #
 
 DISTNAME=	tr2latex-2.2
-CATEGORIES+=	printing
+CATEGORIES+=	print
 KEYWORDS+=	TeX LaTeX troff
 MASTER_SITES=	ftp://sol.cs.ruu.nl/pub/TEX/TOOLS/
 

@@ -3,13 +3,13 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/04/21 00:21:36 jmz Exp $
+# $Id: Makefile,v 1.7 1995/09/23 20:23:56 jmz Exp $
 #
 
 DISTNAME=	texinfo
 PKGNAME=	texinfo-2.124
 DISTFILES=	texinfo.tex lcircle10.tfm
-CATEGORIES+=	printing
+CATEGORIES+=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
 		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/

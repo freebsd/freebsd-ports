@@ -3,11 +3,11 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/15 04:34:04 asami Exp $
 #
 
 DISTNAME=	psutils-1.13
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.sunet.se/pub/text-processing/postscript/utilities/psutils/
 
 MAINTAINER=	jmz@FreeBSD.org
