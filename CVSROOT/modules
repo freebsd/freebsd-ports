@@ -6025,6 +6025,7 @@ py-distutils	ports/misc/py-distutils
 py-dsv		ports/textproc/py-dsv
 py-exif		ports/graphics/py-exif
 py-expat	ports/textproc/py-expat
+py-fcgi		ports/www/py-fcgi
 py-fchksum	ports/security/py-fchksum
 py-fileutils	ports/devel/py-fileutils
 py-fngrab	ports/net/py-fngrab
