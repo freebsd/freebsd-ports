@@ -11,7 +11,7 @@ CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=		http://www.chipx86.com/
+PATCH_SITES=		ftp://ftp.nuug.no/pub/anders/distfiles/
 PATCHFILES=		${DISTNAME}-msncrashes.diff
 PATCH_DIST_STRIP=	-p1
 
