@@ -1,18 +1,34 @@
---- src/reader.hpp.orig	Fri Feb 13 13:28:32 2004
-+++ src/reader.hpp	Sat Dec 18 01:46:26 2004
-@@ -34,9 +34,13 @@
+
+$FreeBSD$
+
+--- src/reader.hpp.orig
++++ src/reader.hpp
+@@ -33,12 +33,6 @@
+ 
  #include "local.h"
  
- #ifdef DEBUG
+-#ifdef DEBUG
 -#define INLINE
-+#  define INLINE
- #else
+-#else
 -#define INLINE inline
-+#  if defined(__GNUC__) && __GNUC__ == 3 && __GNUC_MINOR__ >= 1
-+#    define INLINE __attribute__((always_inline))
-+#  else
-+#    define INLINE inline
-+#  endif
- #endif
- 
+-#endif
+-
  typedef vector<uchar> ReadBuffer;
+ 
+ #ifdef __GNUC__
+@@ -54,12 +48,12 @@
+   bool open(const string& filename);
+   bool close();
+   bool eof();
+-  INLINE bool is_open() const;
++  bool is_open() const;
+   
+   size_t read( ReadBuffer& v, size_t numBytes );
+   off_t  seek( off_t offset );
+-  INLINE off_t tell() const; // returns the current offset or -1 if !open
+-  INLINE off_t size() const;
++  off_t tell() const; // returns the current offset or -1 if !open
++  off_t size() const;
+   const char* lastError() const;
+   const char* filename() const;
+ 
