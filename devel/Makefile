@@ -90,6 +90,7 @@
     SUBDIR += byaccj
     SUBDIR += c2lib
     SUBDIR += c2man
+    SUBDIR += c2mdoc
     SUBDIR += c4
     SUBDIR += c_c++_reference
     SUBDIR += c_parser
