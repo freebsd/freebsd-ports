@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	python-irclib
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-irclib-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pywordnet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pywordnet-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 RUN_DEPENDS=	${WORDNETBASE}/lexnames:${PORTSDIR}/textproc/wordnet
 

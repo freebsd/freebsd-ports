@@ -12,7 +12,7 @@ MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
 		http://cvsup3.kr.freebsd.org/~perky/distfiles/
 PKGNAMESUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}

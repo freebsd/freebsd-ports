@@ -11,7 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	soriuzoo
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

@@ -16,7 +16,7 @@ DISTNAME=	moin-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz twikidraw.jar:twiki
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

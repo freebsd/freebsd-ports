@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms

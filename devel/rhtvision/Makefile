@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
 DISTNAME=	rhtvision-${PORTVERSION}.src
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/tvision
 USE_GMAKE=	yes

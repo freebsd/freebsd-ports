@@ -11,7 +11,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	http://object-craft.com.au/projects/paint/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .if defined(WITH_XMMS)

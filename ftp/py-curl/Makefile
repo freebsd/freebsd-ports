@@ -12,7 +12,7 @@ MASTER_SITES=	http://pycurl.sourceforge.net/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://fallin.lv/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-freebsd-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

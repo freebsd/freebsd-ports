@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.csse.monash.edu.au/hons/projects/1999/Andrew.Snare/
 PKGNAMEPREFIX=	py-
 DISTNAME=	PQueue-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
