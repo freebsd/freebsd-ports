@@ -46,6 +46,7 @@
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
+    SUBDIR += gnome2-lite
     SUBDIR += gnomeapplets2
     SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
