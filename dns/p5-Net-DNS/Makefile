@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	dns net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -36,7 +36,7 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
 		Net::DNS::FAQ.3 Net::DNS::RR::TKEY.3 \
 		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3 \
-		Net::DNS::Resolver::Win32.3 \
+		Net::DNS::Resolver::Win32.3 Net::DNS::RR::SSHFP.3 \
 		Net::DNS::Resolver::Base.3 Net::DNS::Resolver::UNIX.3 \
 		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
 		Net::DNS::Resolver::Cygwin.3
