@@ -300,7 +300,6 @@
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
-    SUBDIR += memcached
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey
