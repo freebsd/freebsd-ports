@@ -35,6 +35,7 @@ RESTRICTED_FILES= \
 		macopix-mascot-marimite-ja-1.20.tar.gz
 
 USE_GETTEXT=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
@@ -53,11 +54,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 
 MAN1=		macopix.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+post-extract:
+	@${REINPLACE_CMD} -e 's/_MAIL } MailStatus/_MAIL } MailStatus2/' ${WRKSRC}/src/main.h
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/macopix
@@ -113,4 +111,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/NKR.README.jp ${PREFIX}/share/doc/macopix
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
