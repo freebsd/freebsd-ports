@@ -1,0 +1,9 @@
+This module overloads hashes so that the key can be a subnet as in
+NetAddr::IP. When looking values up, an interpretation will be made to
+find the given key within the subnets specified in the hash.
+
+Care must be taken, as only strings that can be parsed as an IP address
+by NetAddr::IP can be used as keys for this hash.
+
+-Anton
+<tobez@tobez.org>
