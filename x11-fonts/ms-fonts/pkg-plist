@@ -1,0 +1,26 @@
+%%INST_DIR%%/ariblk.ttf
+%%INST_DIR%%/comic.ttf
+%%INST_DIR%%/comicbd.ttf
+%%INST_DIR%%/georgia.ttf
+%%INST_DIR%%/georgiab.ttf
+%%INST_DIR%%/georgiai.ttf
+%%INST_DIR%%/georgiaz.ttf
+%%INST_DIR%%/impact.ttf
+%%INST_DIR%%/monotype.ttf
+%%INST_DIR%%/times.ttf
+%%INST_DIR%%/timesb.ttf
+%%INST_DIR%%/timesi.ttf
+%%INST_DIR%%/timesz.ttf
+%%INST_DIR%%/trebuc.ttf
+%%INST_DIR%%/trebucbd.ttf
+%%INST_DIR%%/trebucbi.ttf
+%%INST_DIR%%/trebucit.ttf
+%%INST_DIR%%/verdana.ttf
+%%INST_DIR%%/verdanab.ttf
+%%INST_DIR%%/verdanai.ttf
+%%INST_DIR%%/verdanaz.ttf
+%%INST_DIR%%/webdings.ttf
+%%INST_DIR%%/eula.txt
+%%INST_DIR%%/fonts.dir
+%%INST_DIR%%/fonts.scale
+@dirrm %%INST_DIR%%
