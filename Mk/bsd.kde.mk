@@ -110,7 +110,7 @@ QTCGFLIBS?=
 
 # Qt 3.x common stuff
 MOC?=			${X11BASE}/bin/moc
-LIB_DEPENDS+=	qt:${PORTSDIR}/x11-toolkits/qt
+LIB_DEPENDS+=	qt:${PORTSDIR}/x11-toolkits/qt-copy
 USE_NEWGCC=		yes
 QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${X11BASE}/include/qt
