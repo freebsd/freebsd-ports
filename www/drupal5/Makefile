@@ -16,6 +16,8 @@ COMMENT=	CMS that supports pgsql and mysql
 
 RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
+BROKEN=		"Checksum mismatch"
+
 NO_BUILD=	yes
 DRUPDIR=	www/data/drupal
 DOCS=		CHANGELOG INSTALL LICENSE MAINTAINERS
