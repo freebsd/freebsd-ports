@@ -24,9 +24,9 @@ PLIST=			${WRKDIR}/PLIST
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} == "python1.5"
-PLISTS=			${PKGDIR}/PLIST.${PYTHON_VERSION}
+PLISTS=			${PKGDIR}/pkg-plist.${PYTHON_VERSION}
 .endif
-PLISTS+=		${PKGDIR}/PLIST
+PLISTS+=		${PKGDIR}/pkg-plist
 
 .if !defined(NOPORTDOCS)
 DOCDIR=			share/doc/py-xml
