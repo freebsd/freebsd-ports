@@ -8,6 +8,7 @@
 
 PORTNAME=	hpoj
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
@@ -48,8 +49,8 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
 
 GNU_CONFIGURE=	yes
 # Necessary hacks to find libsnmp:
-CONFIGURE_ENV=	CFLAGS="-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
-CONFIGURE_ENV+=	LDFLAGS="-lcipher -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lcipher -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .ifdef(WITHOUT_X11)
 CONFIGURE_ARGS=	--without-qt
@@ -65,7 +66,7 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/scripts/ptal-init.in
 	@${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/scripts/ptal-init.in
-.for f in lib/ptal apps/cmdline lib/sane lib/hpojip
+.for f in lib/ptal lib/sane lib/hpojip
 	@${REINPLACE_CMD} -e 's,CFLAGS=-O,CFLAGS+= @CFLAGS@,' ${WRKSRC}/${f}/Makefile.in
 .endfor
 

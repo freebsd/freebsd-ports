@@ -1,0 +1,11 @@
+--- apps/cmdline/Makefile.in.bak	Fri Jun 14 03:49:49 2002
++++ apps/cmdline/Makefile.in	Fri Jul  4 09:40:18 2003
+@@ -5,7 +5,7 @@
+ DISTCLEANS=Makefile
+ INCLUDES=Makefile ../../include/ptal.h ../../include/hpojip.h
+ 
+-CFLAGS=-O -Wall -g @DEFINES_CMDLINE@ @INCLUDE_CMDLINE@ @LIBRARY_CMDLINE@ @VAR_RUN_PREFIX_CFLAGS@
++CFLAGS+= @CFLAGS@ @DEFINES_CMDLINE@ @INCLUDE_CMDLINE@ @LIBRARY_CMDLINE@ @LIBSNMP_CMDLINE@ @VAR_RUN_PREFIX_CFLAGS@
+ 
+ all:		$(GOALS)
+ 
