@@ -8,6 +8,7 @@
 
 PORTNAME=	lunar
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \

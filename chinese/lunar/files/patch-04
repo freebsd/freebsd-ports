@@ -1,0 +1,44 @@
+--- lunar.1.orig	Tue Aug 11 12:14:48 1992
++++ lunar.1	Tue Feb 26 21:00:38 2002
+@@ -4,13 +4,15 @@
+ .SH SYNTAX
+ .B lunar
+ [
+-.B\-h
++.B \-h
+ ] [
+-.B\-b
++.B \-5
+ ] [
+-.B\-i
++.B \-b
+ ] [
+-.B\-l
++.B \-i
++] [
++.B \-l
+ ]
+ .I year month day
+ [
+@@ -56,14 +58,16 @@
+ The ganzhi of the j-th leap month is the same as that of the j-th month.
+ 
+ The possible options are
+-.IP b
++.IP \-b
+ output ganzhi in special "bitmap" characters.
+-.IP h
+-output hanzi or Chinese characters encoded in (highest-bit-set) GB code.
+-.IP i
++.IP \-h
++output hanzi or Simplified Chinese characters encoded in (highest-bit-set) GB code.
++.IP \-5
++output Traditional Chinese characters encoded in (highest-bit-set) BIG5 code.
++.IP \-i
+ convert a lunar date to solar date.
+ The default is to convert a solar date to a lunar date.
+-.IP l
++.IP \-l
+ indicate the month is a lunar leap month.
+ This option is meaningful only when the "-i" option is used.
+ .SH COPYRIGHT
