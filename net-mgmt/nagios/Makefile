@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.netsaint.org/download/
 DISTNAME=	${PORTNAME}-0.0.5-2
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
