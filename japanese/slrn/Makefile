@@ -30,8 +30,8 @@ MANLANG=	'' ja
 MAN1=		slrn.1
 
 pre-install:
-	strip ${WRKSRC}/src/i386objs/slrn
-	strip ${WRKSRC}/src/i386objs/slrnpull
+	strip ${WRKSRC}/src/${MACHINE_ARCH}objs/slrn
+	strip ${WRKSRC}/src/${MACHINE_ARCH}objs/slrnpull
 
 post-install:
 	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${PREFIX}/man/ja/man1
