@@ -214,6 +214,7 @@ share/netsaint/sbin/status.cgi
 share/netsaint/sbin/statusmap.cgi
 share/netsaint/sbin/statuswrl.cgi
 share/netsaint/side.html
+@dirrm etc/netsaint
 @dirrm share/netsaint/sbin
 @dirrm share/netsaint/images/logos
 @dirrm share/netsaint/images
