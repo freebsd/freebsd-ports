@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jul 11 07:15:47 2002
-+++ Makefile.in	Sat Aug  3 17:53:46 2002
+--- Makefile.in.orig	Tue Sep 10 15:27:25 2002
++++ Makefile.in	Thu Sep 19 10:54:38 2002
 @@ -22,7 +22,6 @@
  ### Makefile commands
  SHELL     = /bin/sh
@@ -18,22 +18,22 @@
  HTSSYSTEM = htssystem.h
  BINPATH   = __BINPATH__
 @@ -346,7 +345,8 @@
- 	chmod a+rx $(BOUTPUT)
+ 	chmod 755 $(BOUTPUT)
  
  build_binso : $(SOBINARIES)
 -	$(CC) $(CFLAGS) -shared -Wl,-x,-soname,$(BOUTPUTSO) -o $(BOUTPUTSO) $(SOBINARIES) -lc $(LFLAGS)
 +	$(CC) $(CFLAGS) -shared -Wl,-x,-soname,$(BOUTPUTSO) -o $(BOUTPUTSO) $(SOBINARIES) $(LFLAGS)
 +	/bin/ln -sf $(BOUTPUTSO) libhttrack.so
  	$(CC) -L. -lhttrack $(MAINBIN) -o $(BOUTPUT)
- 	chmod a+rx $(BOUTPUT)
+ 	chmod 755 $(BOUTPUT)
  
-@@ -377,12 +377,12 @@
+@@ -378,12 +378,12 @@
  
  # Install docs
  docinstall :
--	mkdir -p "$(PREFIX)/doc/httrack" && chmod a+rx "$(PREFIX)/doc/httrack"
+-	(mkdir -p "$(PREFIX)/doc/httrack" && chmod 755 "$(PREFIX)/doc/httrack") || true
 -	cp -fR $(DOCS) "$(PREFIX)/doc/httrack/"
-+	mkdir -p "$(PREFIX)/share/doc/httrack" && chmod a+rx "$(PREFIX)/share/doc/httrack"
++	(mkdir -p "$(PREFIX)/share/doc/httrack" && chmod 755 "$(PREFIX)/share/doc/httrack") || true
 +	cp -fR $(DOCS) "$(PREFIX)/share/doc/httrack/"
  
  # Uninstall docs
@@ -43,10 +43,10 @@
  
  # Install binaries and conf files
  bininstall :
-@@ -399,7 +399,7 @@
- 	test ! -d  "$(LIBPATH)" && (mkdir -p "$(LIBPATH)" && chmod a+rx "$(LIBPATH)") || true
+@@ -401,7 +401,7 @@
+ 	test ! -d  "$(LIBPATH)" && (mkdir -p "$(LIBPATH)" && chmod 755 "$(LIBPATH)") || true
  	cp -f $(BOUTPUTSO) $(LIBPATH)/
- 	chmod a+rx $(LIBPATH)/$(BOUTPUTSO)
+ 	chmod 644 $(LIBPATH)/$(BOUTPUTSO)
 -	ln -sf "$(BOUTPUTSO)" "$(PREFIX)/lib/$(BOUTPUTSO).1"
 +	ln -sf "$(BOUTPUTSO)" "$(PREFIX)/lib/libhttrack.so"
  

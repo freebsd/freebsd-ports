@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.20.b.7
+PORTVERSION=	3.20.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
-DISTNAME=	httrack-3.20RC7
+DISTNAME=	httrack-3.20-2
 
 MAINTAINER=	dirk@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/httrack-3.20/src
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--nouseftime
+CONFIGURE_ARGS=	--nouseftime --noinaddrt
 CONFIGURE_ENV=	PREFIX=${PREFIX} BINPATH=${PREFIX}/bin
 INSTALLS_SHLIB=	yes
 .if defined(NOPORTDOCS)
-INSTALL_TARGET=	bininstall
+INSTALL_TARGET=	bininstall libinstall config
+.else
+INSTALL_TARGET=	install config
 .endif
 
 post-install:
