@@ -88,7 +88,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>samba</name>
-	<range><ge>3.0</ge><lt>3.0.2</lt></range>
+	<range><ge>3.0,1</ge><lt>3.0.1_2,1</lt></range>
       </package>
     </affects>
     <description>
