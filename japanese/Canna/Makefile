@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	Canna
-PORTVERSION=	3.6p1
+PORTVERSION=	3.6p3
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/canna/1722/
+MASTER_SITES=	http://downloads.sourceforge.jp/canna/2181/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	max@FreeBSD.org
@@ -28,14 +28,13 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 	RkCvtRoma.3 RkCvtZen.3 RkDefineDic.3 RkDeleteDic.3 RkEndBun.3 \
 	RkEnlarge.3 RkFinalize.3 RkGetDicList.3 RkGetKanji.3 RkGetLex.3 \
 	RkGetStat.3 RkGetYomi.3 RkGoto.3 RkInitialize.3 RkIntro.3 RkLeft.3 \
-	RkMapPhonogram.3 RkMapRoma.3 RkMountD.3 RkNext.3 RkNfer.3 \
+	RkMapPhonogram.3 RkMapRoma.3 RkMountDic.3 RkNext.3 RkNfer.3 \
 	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkBgnBun.3 RkRight.3 \
 	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
-
 MLINKS=		uilib.3 XKanjiControl.3  uilib.3 XLookupKanjiString.3 \
 		uilib.3 jrKanjiControl.3  uilib.3 jrKanjiString.3
+MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
 
 post-build:
 	@${SED} -e "s,@RM@,${RM},g; s,@TOUCH@,${TOUCH},g; \
