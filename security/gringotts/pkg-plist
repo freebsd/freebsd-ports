@@ -4,5 +4,14 @@ share/locale/de/LC_MESSAGES/gringotts.mo
 share/locale/fr/LC_MESSAGES/gringotts.mo
 share/locale/it/LC_MESSAGES/gringotts.mo
 @unexec rmdir -p %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-%%GNOME:%%share/gnome/apps/Utilities/gringotts.desktop
-%%GNOME:%%@unexec rmdir -p %D/share/gnome/apps 2>/dev/null || true
+%%GNOMEHIER%%share/gnome/apps/Utilities/gringotts.desktop
+%%GNOMEHIER%%@unexec rmdir -p %D/share/gnome/apps/Utilities 2>/dev/null || true
+%%PORTDOCS%%share/doc/gringotts/AUTHORS
+%%PORTDOCS%%share/doc/gringotts/BUGS
+%%PORTDOCS%%share/doc/gringotts/COPYING
+%%PORTDOCS%%share/doc/gringotts/ChangeLog
+%%PORTDOCS%%share/doc/gringotts/FAQ
+%%PORTDOCS%%share/doc/gringotts/NEWS
+%%PORTDOCS%%share/doc/gringotts/README
+%%PORTDOCS%%share/doc/gringotts/TODO
+%%PORTDOCS%%@dirrm share/doc/gringotts
