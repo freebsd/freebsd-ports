@@ -1,6 +1,6 @@
---- aclocal.m4.orig	Tue Dec 14 22:18:56 1999
-+++ aclocal.m4	Wed Apr 26 19:36:35 2000
-@@ -424,7 +424,11 @@
+--- aclocal.m4.orig	Thu Jun 14 16:55:42 2001
++++ aclocal.m4	Thu Jun 14 16:56:07 2001
+@@ -377,7 +377,11 @@
  	g=g
  else
  	AC_MSG_RESULT(no)
@@ -11,5 +11,5 @@
 +		g=
 +	fi
  fi
- AC_SUBST(g)
- ])dnl
+ AC_SUBST(g)])dnl
+ dnl
