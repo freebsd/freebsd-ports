@@ -31,9 +31,9 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/sol
 	@ ${INSTALL_DATA} ${WRKSRC}/CREDITS ${PREFIX}/share/doc/sol
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sol
-	@ ${CHOWN} games:games ${PREFIX}/bin/sol
-	@ ${CHOWN} games:games ${PREFIX}/share/sol/sol.score
-	@ ${CHMOD} 6755 ${PREFIX}/bin/sol
+	@ ${CHOWN} root:games ${PREFIX}/bin/sol
+	@ ${CHOWN} root:games ${PREFIX}/share/sol/sol.score
+	@ ${CHMOD} 2755 ${PREFIX}/bin/sol
 	@ ${CHMOD} 770 ${PREFIX}/share/sol
 	@ ${CHMOD} 660 ${PREFIX}/share/sol/sol.score
 
