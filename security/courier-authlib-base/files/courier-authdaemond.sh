@@ -24,7 +24,8 @@ command="%%PREFIX%%/sbin/authdaemond"
 start_cmd="authdaemond_cmd start"
 stop_cmd="authdaemond_cmd stop"
 restart_cmd="authdaemond_cmd stop && authdaemond_cmd start"
-pidfile="/var/run/authdaemond/pid"
+rundir=/var/run/authdaemond
+pidfile="${rundir}/pid"
 procname="%%PREFIX%%/sbin/courierlogger"
 
 load_rc_config $name
@@ -32,6 +33,13 @@ load_rc_config $name
 authdaemond_cmd () {
 	case $1 in
 	start)
+		if [ ! -d "${rundir}" ] ; then
+			mkdir -p -m 0750 "${rundir}" && chown %%MAILUSER%%:%%MAILGROUP%% "${rundir}"
+			if [ $? -ne 0 ] ; then
+				echo "creating ${rundir} with the correct permissions was not possible!"
+				return 1
+			fi
+		fi
 		echo "Starting ${name}."
 		${command} start
 		;;
@@ -39,9 +47,9 @@ authdaemond_cmd () {
 		echo "Stopping ${name}."
 		${command} stop
 		if [ $? -eq 0 ] ; then
-			[ -f "$pidfile" ] && rm -f "$pidfile"
-			[ -f "$pidfile".lock ] && rm -f "$pidfile".lock
-			[ -S /var/run/authdaemond/socket ] && rm -f /var/run/authdaemond/socket
+			[ -f "${pidfile}" ]       && rm -f "$pidfile"
+			[ -f "${pidfile}.lock" ]  && rm -f "${pidfile}.lock"
+			[ -S "${rundir}/socket" ] && rm -f "${rundir}/socket"
 			return 0
 		fi
 		;;

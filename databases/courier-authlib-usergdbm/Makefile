@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.55
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -56,8 +56,6 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--with-mailuser=${WITH_MAILUSER} \
 		--with-mailgroup=${WITH_MAILGROUP} \
 		--with-authdaemonvar=/var/run/authdaemond
-
-PLIST_SUB=	MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
 
 .include <bsd.port.pre.mk>
 
@@ -124,7 +122,7 @@ PLIST_SUB+=     AUTHUSERDBFLAG="@comment "
 PLIST_SUB+=     AUTHUSERDBFLAG=""
 .endif
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
 
 MAN1=		courierlogger.1
 
