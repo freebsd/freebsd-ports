@@ -847,6 +847,7 @@ cl-asdf-cmucl	ports/devel/cl-asdf-cmucl
 cl-asdf-sbcl	ports/devel/cl-asdf-sbcl
 cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
+cl-lml-cmucl	ports/www/cl-lml-cmucl
 cl-lml-sbcl	ports/www/cl-lml-sbcl
 cl-meta		ports/textproc/cl-meta
 cl-meta-cmucl	ports/textproc/cl-meta-cmucl
