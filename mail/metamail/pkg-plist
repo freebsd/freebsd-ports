@@ -1,11 +1,27 @@
 @cwd /usr/local
+bin/audiocompose
+bin/audiosend
+bin/extcompose
+bin/getfilename
+bin/mailserver
+bin/mailto-hebrew
 bin/mailto
 bin/metamail
+bin/metasend
 bin/mimencode
 bin/mmencode
 bin/richtext
 bin/richtoatk
+bin/showaudio
+bin/showexternal
+bin/shownonascii
+bin/showpartial
+bin/showpicture
+bin/sndAppleSingle
 bin/splitmail
+bin/sun-audio-file
+bin/sun-message.csh
+bin/sun2mime
 etc/mailcap
 man/man1/audiocompose.1
 man/man1/audiosend.1
