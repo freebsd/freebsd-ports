@@ -1,13 +1,13 @@
 # New ports collection makefile for: SWI-Prolog
-# Version required:		3.2.8
+# Version required:		3.2.9
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.16 1999/06/07 10:57:41 simokawa Exp $
+# $Id: Makefile,v 1.17 1999/07/08 11:11:10 max Exp $
 #
 
-DISTNAME=	pl-3.2.8
-PKGNAME=	swi-pl-3.2.8
+DISTNAME=	pl-3.2.9
+PKGNAME=	swi-pl-3.2.9
 CATEGORIES=	lang
 MASTER_SITES=	ftp://swi.psy.uva.nl/pub/SWI-Prolog/
 
