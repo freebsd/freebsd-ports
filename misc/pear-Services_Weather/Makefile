@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	misc www pear
 
 MAINTAINER=	ports@FreeBSD.org
