@@ -16,7 +16,7 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libpanelapplet library
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-                gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
+		gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
 		gnomemm-2.6.1:${PORTSDIR}/x11/libgnomemm26
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
