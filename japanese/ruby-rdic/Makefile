@@ -16,6 +16,8 @@ COMMENT=	A search tool for Eijiro by ruby
 
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mmap.so:${PORTSDIR}/devel/ruby-mmap
 
+NOT_FOR_ARCHS=	amd64
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_SHEBANG_FILES=	rdic \
@@ -48,7 +50,7 @@ DOCS_ETC=	eliminate.default \
 
 .include <bsd.port.pre.mk>
 
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install: rb-install doc-install
 
