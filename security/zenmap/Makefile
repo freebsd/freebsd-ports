@@ -7,11 +7,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nmap-2.3BETA5
-PKGNAME=	nmapfe-19990907
+DISTNAME=	nmapfe-0.9.5
 CATEGORIES=	security net
-MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
-		ftp://relay.nuxi.com/pub/misc/
+MASTER_SITES=	http://codebox.net/download/  \
+		http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -24,7 +23,7 @@ RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
-WRKSRC:=	${WRKDIR}/${DISTNAME}/nmapfe
+WRKSRC:=	${WRKDIR}/nmapfe
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nmapfe ${PREFIX}/bin
