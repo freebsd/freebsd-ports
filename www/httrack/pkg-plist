@@ -12,6 +12,10 @@ lib/libhttrack.so.1
 %%PORTDOCS%%share/doc/httrack/HelpHtml/faq.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/fcguide.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/filters.html
+%%PORTDOCS%%share/doc/httrack/HelpHtml/httrack.css
+%%PORTDOCS%%share/doc/httrack/HelpHtml/images/bg_rings.gif
+%%PORTDOCS%%share/doc/httrack/HelpHtml/images/header_title_4.gif
+%%PORTDOCS%%share/doc/httrack/HelpHtml/images/screenshot_01.jpg
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/addurl1.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/addurl2.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/addurl3.gif
@@ -79,15 +83,15 @@ lib/libhttrack.so.1
 %%PORTDOCS%%share/doc/httrack/greetings.txt
 %%PORTDOCS%%share/doc/httrack/history.txt
 %%PORTDOCS%%share/doc/httrack/httrack-doc.html
-%%PORTDOCS%%share/doc/httrack/httrack/index-body.html
-%%PORTDOCS%%share/doc/httrack/httrack/index-footer.html
-%%PORTDOCS%%share/doc/httrack/httrack/index-header.html
-%%PORTDOCS%%share/doc/httrack/httrack/topindex-body.html
-%%PORTDOCS%%share/doc/httrack/httrack/topindex-footer.html
-%%PORTDOCS%%share/doc/httrack/httrack/topindex-header.html
 %%PORTDOCS%%share/doc/httrack/license.txt
-%%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/img
+%%PORTDOCS%%share/doc/httrack/templates/index-body.html
+%%PORTDOCS%%share/doc/httrack/templates/index-footer.html
+%%PORTDOCS%%share/doc/httrack/templates/index-header.html
+%%PORTDOCS%%share/doc/httrack/templates/topindex-body.html
+%%PORTDOCS%%share/doc/httrack/templates/topindex-footer.html
+%%PORTDOCS%%share/doc/httrack/templates/topindex-header.html
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/div
+%%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/images
+%%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/img
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml
-%%PORTDOCS%%@dirrm share/doc/httrack/httrack
-%%PORTDOCS%%@dirrm share/doc/httrack
+%%PORTDOCS%%@dirrm share/doc/httrack/templates

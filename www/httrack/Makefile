@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.16.2
+PORTVERSION=	3.20.b.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
-DISTNAME=	httrack-3.16-2
+DISTNAME=	httrack-3.20RC6E
 
 MAINTAINER=	dirk@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/httrack-3.16/src
+WRKSRC=		${WRKDIR}/httrack-3.20/src
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--nouseftime
 CONFIGURE_ENV=	PREFIX=${PREFIX} BINPATH=${PREFIX}/bin
 INSTALLS_SHLIB=	yes
 .if defined(NOPORTDOCS)
