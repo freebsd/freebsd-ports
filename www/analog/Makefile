@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       analog3.3
-PKGNAME=        analog-3.3
+DISTNAME=       analog3.32
+PKGNAME=        analog-3.32
 CATEGORIES=	www
 MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://brendanr.simplenet.com/analog/ \
