@@ -1,0 +1,11 @@
+--- src/programs.c.orig	Sat Aug 14 11:32:24 1999
++++ src/programs.c	Sat Aug 14 11:38:08 1999
+@@ -1167,7 +1167,7 @@
+   	  {
+ 	  f=fopen(tmp1,"w");
+ 	  fprintf(f,"#!/bin/sh\n");
+-	  fprintf(f,"%s tar vtf %s >%s 2>%s",pipe,fn,tmp2,tmp3);
++	  fprintf(f,"%s tar vtf %s |bsdtar2gnutar >%s 2>%s",pipe,fn,tmp2,tmp3);
+       fclose(f);
+ 
+ 	  chmod(tmp1,S_IRUSR | S_IWUSR | S_IXUSR);

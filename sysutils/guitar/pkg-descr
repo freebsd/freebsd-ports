@@ -1,0 +1,15 @@
+guiTAR is a generic archive tool, written in GTK+/Gnome, supporting plain
+tarballs, tar.gz, tar.bz2, slp, zip, lzh, arj, and rar format. 
+
+Some features currently implemented: 
+
+  Get a list of files inside an archive 
+  View one or more files inside an archive (at the same time) 
+  Create an archive 
+  Add a file into an archive 
+  Delete a file from an archive 
+  Extract one or more files inside an archive to a selected directory 
+  Multiple document interface 
+
+WWW: http://disq.bir.net.tr/guitar/
+Mirror: http://artemis.efes.net/disq/guitar/
