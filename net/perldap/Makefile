@@ -17,18 +17,14 @@ COMMENT=	Perl interface to LDAP
 
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk
 
-BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
+PERL_CONFIGURE=	yes
+CONFIGURE_ENV+=	LDAPSDKDIR=${PREFIX} LDAPV3ON=yes LDAPSDKSSL=no
+MAKE_ENV=	${CONFIGURE_ENV}
 
-WRKSRC=		${WRKDIR}/$(PORTNAME)-$(PORTVERSION)
-MAN3=		Mozilla::LDAP::Conn.3 \
-			Mozilla::LDAP::LDIF.3 \
-			Mozilla::LDAP::Utils.3 \
-			Mozilla::LDAP::Entry.3 \
-			Mozilla::LDAP::API.3
-
-MAKE_ENV+= LDAPSDKDIR=${PREFIX} LDAPV3ON=yes LDAPSDKSSL=no
-
-do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+MAN3=	Mozilla::LDAP::Conn.3 \
+	Mozilla::LDAP::LDIF.3 \
+	Mozilla::LDAP::Utils.3 \
+	Mozilla::LDAP::Entry.3 \
+	Mozilla::LDAP::API.3
 
 .include <bsd.port.mk>
