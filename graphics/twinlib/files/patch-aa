@@ -1,0 +1,17 @@
+--- Makefile	Mon Jan  3 21:53:07 2000
++++ Makefile.new	Tue Jan  4 13:27:24 2000
+@@ -1,6 +1,11 @@
+-QT = /usr/local/qt/include
+-LIBS = -L/usr/X11R6/lib -lqt -lqimgio -lpng -ljpeg 
+-LIBPATH = /usr/X11R6/lib
++CXX ?= g++
++QT = $(PREFIX)/include/qt2 -I$(PREFIX)/include
++LIBS = -L$(PREFIX)/lib -lqt2 -lpng -ljpeg 
++LIBPATH = $(PREFIX)/lib
++LIBRARY = libPaintLib.so.%%VERSION%%
++
++all: Image.o
++	$(CXX) -shared -Wl,-soname,libPaintLib.so -o $(LIBRARY)
+ 
+ install: Image.o PaintLib.h
+ 	clear

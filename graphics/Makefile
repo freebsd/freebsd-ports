@@ -103,6 +103,7 @@
     SUBDIR += p5-GD
     SUBDIR += p5-Image-Size
     SUBDIR += p5-chart
+    SUBDIR += paintlib
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc

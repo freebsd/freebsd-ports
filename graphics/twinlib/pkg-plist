@@ -1,0 +1,5 @@
+include/PaintLib.h
+lib/libPaintLib.so
+lib/libPaintLib.so.%%VERSION%%
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
