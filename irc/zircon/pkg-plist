@@ -112,6 +112,7 @@ lib/zircon/lib/tcl76.tcl
 lib/zircon/lib/tcl80.tcl
 lib/zircon/lib/tcl81.tcl
 lib/zircon/lib/tcl82.tcl
+lib/zircon/lib/tcl83.tcl
 lib/zircon/lib/upgrade.tcl
 lib/zircon/lib/userCmds.tcl
 lib/zircon/lib/zircon.tcl

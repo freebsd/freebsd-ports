@@ -9,12 +9,3 @@
      catch {set CFlags $cflags($Type)}
      switch BSDI $Type {
  	set CC gcc2
-@@ -220,7 +220,7 @@
- proc findWish {} {
-     global env
-     foreach x [split $env(PATH) :] {
--	foreach y {wish8.1 wish8.0 wish4.2 wish4.1 wish wishx} {
-+	foreach y {wish8.2 wish8.1 wish8.0 wish4.2 wish4.1 wish wishx} {
- 	    if {[file exists [set f [file join $x $y]]]} {
- 		return $f
- 	    }
