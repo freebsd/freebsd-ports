@@ -3332,6 +3332,7 @@ libss		src/lib/libss
 libstand	src/lib/libstand
 libstdc++	src/gnu/lib/libstdc++
 libstrfunc	ports/devel/libstrfunc
+libsvm		ports/science/libsvm
 libsx		ports/x11/libsx
 libtacplus	src/lib/libtacplus
 libtai		ports/devel/libtai
