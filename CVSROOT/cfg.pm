@@ -121,26 +121,68 @@ $MAIL_BRANCH_HDR  = "X-CVS-Branch";
 # element per email line, with no trailing line feeds.  This function
 # shouldn't add them.  If $DEBUG is switched on the log_accum.pl
 # script will show the before and after on stdout at commit time.
+#
+# The example below shows a way of inserting links to cvsweb.
 $MAIL_TRANSFORM = "";
-###$MAIL_TRANSFORM = sub {
-###	my @input = @_;
-###	my @output = ();
-###
-###	while (1) {
-###		my $line = shift @input;
-###		last if $line =~ /^$/;
-###
-###		push @output, $line;
-###	}
-###
-###	push @output, "";
-###
-###	foreach my $line (@input) {
-###		push @output, "Q: $line";
-###	}
-###
-###	return @output;
-###};
+#$MAIL_TRANSFORM = sub {
+#	add_cvsweb_entry("http://www.example.org/cgi-bin/cvsweb.cgi", @_);
+#};
+
+
+
+# A function for post-processing a log message
+# and outputing it with URLs to a cvsweb.cgi in.
+sub add_cvsweb_entry {
+	my $url_to_cvsweb = shift;
+	my @input = @_;
+	my @output = ();
+
+	# Skip down to the revision summary.
+	while (1) {
+		my $line = shift @input;
+		last unless defined($line);
+		last if $line =~ /^\s*Revision\s*Changes\s*Path\s*$/;
+
+		push @output, $line;
+	}
+
+	# Add the url links
+	foreach (@input) {
+		# Skip any trailing blank lines.
+		unless ($_) {
+			push @output, $_;
+			next;
+		}
+
+		my ($rev, $add, $sub, $file, $status) = split;
+
+		$rev =~ /(?:(.*)\.)?([^\.]+)\.([^\.]+)$/;
+		my ($base, $r1, $r2) = ($1, $2, $3);
+		my $prevrev = "";
+		if ($r2 == 1) {
+			$prevrev = $base;
+		} else {
+			$prevrev = "$base." if $base;
+			$prevrev .= "$r1." . ($r2 - 1);
+		}
+
+		my $baseurl = "$url_to_cvsweb/$file";
+		my $extra;
+		if (defined($status)) {
+			$rev = $prevrev if $status =~ /dead/;
+			$extra = "?rev=$rev&content-type=text/plain";
+		} else {
+			$extra = ".diff?r1=$prevrev&r2=$rev";
+		}
+		push @output, $_;
+		push @output, "$baseurl$extra";
+	}
+	    
+	return @output;
+};
+
+
+
 
 
 
