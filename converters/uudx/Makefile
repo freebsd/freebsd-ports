@@ -3,7 +3,7 @@
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.4 1997/04/26 23:55:24 asami Exp $
+# $Id: Makefile,v 1.5 1997/09/14 17:17:04 max Exp $
 #
 
 DISTNAME=	uudx_299
@@ -18,13 +18,13 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
 
 EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xw=${WRKDIR}
+EXTRACT_BEFORE_ARGS=	xqw=${WRKDIR}
 NO_WRKSUBDIR=	yes
 MANLANG=	ja_JP.EUC
 MAN1=		uudx.1
 
 pre-patch:
-	@echo "===>  Installing custom Makefile for ${DISTNAME}"
+	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"
 	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
 .include <bsd.port.mk>
