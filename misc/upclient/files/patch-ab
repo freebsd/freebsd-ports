@@ -1,13 +1,11 @@
---- conf/upclient.conf.orig	Sat Jun 16 18:33:54 2001
-+++ conf/upclient.conf	Sun Nov 18 17:33:13 2001
-@@ -8,8 +8,8 @@
+--- src/conf/upclient.conf.orig	Thu Oct 10 04:36:24 2002
++++ src/conf/upclient.conf	Sat Oct 19 19:41:36 2002
+@@ -9,7 +9,7 @@
  
- AuthKey = <your_authkey>		# Your Authorization key
+ AuthKey = <your_authkey>	# Your Authorization key
  
--Interval	= 120			# Transmit interval
--UptimeServer	= data.uptimes.net	# Uptimes Project's data server
-+Interval	= 550			# Transmit interval
-+UptimeServer	= uptimes.wonko.com	# Uptimes Project's data server
+-Interval     = 300			# Transmit interval
++Interval     = 550			# Transmit interval
+ UptimeServer = @UPTIMES_SERVER@	# Uptimes Project's data server
  
- SendIdleTime	= 1			# Send your idle time
- SendLoadAvg	= 1			# Send load average
+ SendIdleTime = 1	# Send your idle time

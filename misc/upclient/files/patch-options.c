@@ -1,15 +1,11 @@
---- src/options.c.orig	Sat Jun 16 21:15:04 2001
-+++ src/options.c	Sun Nov 18 17:40:06 2001
-@@ -16,9 +16,9 @@
-  * These are the configuration options available.
+--- src/options.c.orig	Wed Oct  2 06:50:49 2002
++++ src/options.c	Sat Oct 19 22:54:06 2002
+@@ -55,7 +55,7 @@
   */
  char cfg_authkey[AUTHKEY_REQUIRED_LEN+1]	= "";
--char cfg_upserver[UPSERVER_MAXLEN+1]		= "data.uptimes.net";
--int  cfg_interval				= 120;
--char cfg_pidfile[PIDFILE_MAXLEN+1]		= ".upclient.pid";
-+char cfg_upserver[UPSERVER_MAXLEN+1]		= "uptimes.wonko.com";
+ char cfg_upserver[UPSERVER_MAXLEN+1]		= "uptimes.wonko.com";
+-int  cfg_interval				= 300;
 +int  cfg_interval				= 550;
-+char cfg_pidfile[PIDFILE_MAXLEN+1]		= "/var/run/upclient.pid";
+ char cfg_pidfile[PIDFILE_MAXLEN+1]		= PIDFILE;
  char cfg_proxyserver[PROXYSERVER_MAXLEN+1]	= "";
- int  cfg_proxyport				= 8080;
- char cfg_proxyuser[PROXYUSER_MAXLEN+1]		= "";
+ int  cfg_udpport				= 49153;

@@ -1,20 +1,20 @@
---- src/Makefile.orig	Sun Jun 17 00:48:35 2001
-+++ src/Makefile	Sun Nov 18 15:58:37 2001
-@@ -9,7 +9,7 @@
- ####
- # Location of config file (for example /etc/upclient.conf)
- #
--CONFIGFILE = upclient.conf
-+CONFIGFILE = $(PREFIX)/etc/upclient.conf
+--- src/Makefile.orig	Thu Oct 10 04:36:35 2002
++++ src/Makefile	Sat Oct 19 23:21:49 2002
+@@ -44,7 +44,7 @@
  
  
- ####
-@@ -113,7 +113,7 @@
- 		CFLAGS='-DPLATFORM_WINNT -DCONFIGFILE=\"$(CONFIGFILE)\"' \
- 		upclient
+ # System directories
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ #prefix = /sw
+ #prefix = /opt/${PROGRAMNAME}
  
--upclient: upclient.h
-+upclient: upclient.h $(OBJECTS)
- 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJECTS) upclient.c -o $(BINNAME)
+@@ -55,7 +55,7 @@
+ sbindir = ${exec_prefix}/sbin
+ datadir = ${prefix}/share
+ sysconfdir = ${prefix}/etc
+-localstatedir = ${prefix}/var
++localstatedir = /var
  
- clean:
+ # Further Reading
+ # Filesystem Hierarchy Standard 2.2 May 24, 2001

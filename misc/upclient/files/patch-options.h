@@ -1,6 +1,6 @@
---- src/options.h.orig	Sat Jun 16 17:45:50 2001
-+++ src/options.h	Sun Nov 18 16:08:56 2001
-@@ -34,11 +34,7 @@
+--- src/options.h.orig	Mon Sep 30 02:58:36 2002
++++ src/options.h	Sat Oct 19 22:55:19 2002
+@@ -60,11 +60,7 @@
  extern char cfg_proxyuser[PROXYUSER_MAXLEN+1];
  extern char cfg_proxypass[PROXYPASS_MAXLEN+1];
  extern int  cfg_sendidle;

@@ -9,6 +9,7 @@ sbin/upclient
 %%PORTDOCS%%share/doc/upclient/COPYING
 %%PORTDOCS%%share/doc/upclient/FAQ
 %%PORTDOCS%%share/doc/upclient/HISTORY
+%%PORTDOCS%%share/doc/upclient/HISTORY-BETA
 %%PORTDOCS%%share/doc/upclient/INSTALL
 %%PORTDOCS%%share/doc/upclient/README
 %%PORTDOCS%%share/doc/upclient/TODO
