@@ -18,7 +18,6 @@ share/locale/fr/LC_MESSAGES/grisbi.mo
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
 share/pixmaps/grisbi.png
-share/pixmaps/logo_grisbi.xpm
 @dirrm share/gnome/help/grisbi/C
 @dirrm share/gnome/help/grisbi/fr
 @dirrm share/gnome/help/grisbi
