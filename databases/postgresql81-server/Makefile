@@ -1,12 +1,12 @@
 # New ports collection makefile for:	PostgreSQL
-# Version required:	6.2.1
-# Date created:		April 2, 1997
+# Version required:	6.4
+# Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.27 1998/10/12 04:12:35 jseger Exp $
+# $Id: Makefile,v 1.28 1998/10/16 02:42:29 jseger Exp $
 #
 
-DISTNAME=	postgresql-6.3.2
+DISTNAME=	postgresql-v6.4
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
@@ -15,9 +15,11 @@ MAINTAINER=	andreas@FreeBSD.ORG
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
 .if defined(USE_TCL)
-MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-WITH_TCL=	--with-tcl
+TCL_INCDIR=	${PREFIX}/include/tcl8.0
+TK_INCDIR=	${PREFIX}/include/tk8.0
+MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR}
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 tk80.1:${PORTSDIR}/x11-toolkits/tk80
+WITH_TCL=	--with-tcl --with-tclconfig="${PREFIX}/lib/tcl8.0 ${PREFIX}/lib/tk8.0"
 .endif
 
 NO_PACKAGE=	"Requires pgsql uid"
@@ -29,15 +31,17 @@ HAS_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes=/usr/local/include ${WITH_TCL} \
+		--with-includes="/usr/local/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
 		--with-libraries=/usr/local/lib
 
+INSTALL_TARGET= install install-man
+
 MAN1=		cleardbdir.1 createdb.1 createuser.1 destroydb.1 \
-		destroyuser.1 ecpg.1 initdb.1 ipcclean.1 initlocation.1 \
-		pg_dump.1 pg_dumpall.1 pg_passwd.1 pgintro.1 postgres.1 \
-		postmaster.1 psql.1
-MAN3=		catalogs.3 large_objects.3 libpq.3 oracle_compat.3 pgbuiltin.3
-MAN5=		bki.5 page.5 pg_hba.conf.5
+		destroyuser.1 ecpg.1 initdb.1 initlocation.1 \
+		ipcclean.1 pg_dump.1 pg_dumpall.1 pg_passwd.1 \
+		pg_upgrade.1 postgres.1 postmaster.1 psql.1
+MAN3=		catalogs.3 libpq.3
+MAN5=		pg_hba.conf.5
 MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 		commit.l copy.l create_aggregate.l create_database.l \
 		create_function.l create_index.l create_language.l \
@@ -48,8 +52,8 @@ MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 		drop_language.l drop_operator.l drop_rule.l drop_sequence.l \
 		drop_table.l drop_trigger.l drop_type.l drop_user.l \
 		drop_view.l end.l explain.l fetch.l grant.l insert.l listen.l \
-		load.l lock.l move.l notify.l reset.l revoke.l \
-		rollback.l select.l set.l show.l sql.l update.l vacuum.l
+		load.l lock.l move.l notify.l reset.l revoke.l rollback.l \
+		select.l set.l show.l sql.l update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/pgsql
 

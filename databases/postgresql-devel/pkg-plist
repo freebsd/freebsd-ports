@@ -13,6 +13,7 @@ pgsql/bin/pg_dump
 pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
+pgsql/bin/pg_upgrade
 pgsql/bin/pg_version
 pgsql/bin/postgres
 pgsql/bin/postmaster
@@ -35,6 +36,7 @@ pgsql/data/base/template1/pg_class_relname_index
 pgsql/data/base/template1/pg_description
 pgsql/data/base/template1/pg_description_objoid_index
 pgsql/data/base/template1/pg_index
+pgsql/data/base/template1/pg_indexes
 pgsql/data/base/template1/pg_inheritproc
 pgsql/data/base/template1/pg_inherits
 pgsql/data/base/template1/pg_internal.init
@@ -46,19 +48,21 @@ pgsql/data/base/template1/pg_operator
 pgsql/data/base/template1/pg_parg
 pgsql/data/base/template1/pg_proc
 pgsql/data/base/template1/pg_proc_oid_index
-pgsql/data/base/template1/pg_proc_proname_index
+pgsql/data/base/template1/pg_proc_proname_narg_type_index
 pgsql/data/base/template1/pg_proc_prosrc_index
 pgsql/data/base/template1/pg_relcheck
 pgsql/data/base/template1/pg_relcheck_rcrelid_index
 pgsql/data/base/template1/pg_rewrite
+pgsql/data/base/template1/pg_rules
 pgsql/data/base/template1/pg_statistic
+pgsql/data/base/template1/pg_tables
 pgsql/data/base/template1/pg_trigger
 pgsql/data/base/template1/pg_trigger_tgrelid_index
 pgsql/data/base/template1/pg_type
 pgsql/data/base/template1/pg_type_oid_index
 pgsql/data/base/template1/pg_type_typname_index
 pgsql/data/base/template1/pg_user
-pgsql/data/base/template1/pg_version
+pgsql/data/base/template1/pg_views
 pgsql/data/pg_database
 pgsql/data/pg_geqo.sample
 pgsql/data/pg_group
@@ -71,12 +75,21 @@ pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
 pgsql/include/config.h
+pgsql/include/ecpgerrno.h
 pgsql/include/ecpglib.h
 pgsql/include/ecpgtype.h
 pgsql/include/executor/spi.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
+pgsql/include/libpq++.h
+pgsql/include/libpq++/pgconnection.h
+pgsql/include/libpq++/pgcursordb.h
+pgsql/include/libpq++/pgdatabase.h
+pgsql/include/libpq++/pgenv.h
+pgsql/include/libpq++/pglobject.h
+pgsql/include/libpq++/pgtransdb.h
 pgsql/include/libpq-fe.h
+pgsql/include/libpq-int.h
 pgsql/include/libpq/libpq-fs.h
 pgsql/include/libpq/pqcomm.h
 pgsql/include/os.h
@@ -89,30 +102,36 @@ pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
+pgsql/lib/libecpg.so.2.6.2
+pgsql/lib/libecpg.so.2.3
 pgsql/lib/libecpg.so
-pgsql/lib/libecpg.so.1.1
+pgsql/lib/libpq++.a
+pgsql/lib/libpq++.so
+pgsql/lib/libpq++.so.2.0
+pgsql/lib/libpq++.so.2
 pgsql/lib/libpq.a
 pgsql/lib/libpq.so
-pgsql/lib/libpq.so.1.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+pgsql/lib/libpq.so.2.0
+pgsql/lib/libpq.so.2
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
+pgsql/lib/plpgsql.so
 pgsql/post-install-notes
 share/doc/pgsql/FAQ
+share/doc/pgsql/FAQ_CVS
+share/doc/pgsql/FAQ_DEV
 share/doc/pgsql/FAQ_FreeBSD
 share/doc/pgsql/FAQ_Irix
 share/doc/pgsql/FAQ_Linux
 share/doc/pgsql/Makefile
-share/doc/pgsql/README.GEQO
 share/doc/pgsql/README.fsync
+share/doc/pgsql/README.inet
+share/doc/pgsql/README.locale
 share/doc/pgsql/README.mb
 share/doc/pgsql/README.mb.jp
-share/doc/pgsql/README.support
 share/doc/pgsql/TODO
-share/doc/pgsql/TODO.GEQO
 share/doc/pgsql/admin.ps.gz
 share/doc/pgsql/admin.tar.gz
 share/doc/pgsql/bug.template
@@ -121,6 +140,7 @@ share/doc/pgsql/programmer.ps.gz
 share/doc/pgsql/programmer.tar.gz
 share/doc/pgsql/src/Makefile
 share/doc/pgsql/src/graphics/catalogs.gif
+share/doc/pgsql/src/graphics/catalogs.ps
 share/doc/pgsql/src/graphics/clientserver.ag
 share/doc/pgsql/src/graphics/clientserver.gif
 share/doc/pgsql/src/graphics/connections.ag
@@ -128,6 +148,7 @@ share/doc/pgsql/src/graphics/connections.gif
 share/doc/pgsql/src/graphics/layout.ag
 share/doc/pgsql/src/graphics/layout.gif
 share/doc/pgsql/src/sgml/Makefile
+share/doc/pgsql/src/sgml/about.sgml
 share/doc/pgsql/src/sgml/admin.sgml
 share/doc/pgsql/src/sgml/advanced.sgml
 share/doc/pgsql/src/sgml/arch-dev.sgml
@@ -135,8 +156,11 @@ share/doc/pgsql/src/sgml/arch-pg.sgml
 share/doc/pgsql/src/sgml/arch.sgml
 share/doc/pgsql/src/sgml/array.sgml
 share/doc/pgsql/src/sgml/biblio.sgml
+share/doc/pgsql/src/sgml/bki.sgml
 share/doc/pgsql/src/sgml/compiler.sgml
+share/doc/pgsql/src/sgml/config.sgml
 share/doc/pgsql/src/sgml/contacts.sgml
+share/doc/pgsql/src/sgml/current.sgml
 share/doc/pgsql/src/sgml/datatype.sgml
 share/doc/pgsql/src/sgml/dfunc.sgml
 share/doc/pgsql/src/sgml/docguide.sgml
@@ -144,18 +168,31 @@ share/doc/pgsql/src/sgml/ecpg.sgml
 share/doc/pgsql/src/sgml/environ.sgml
 share/doc/pgsql/src/sgml/extend.sgml
 share/doc/pgsql/src/sgml/func-ref.sgml
+share/doc/pgsql/src/sgml/func.sgml
 share/doc/pgsql/src/sgml/geqo.sgml
 share/doc/pgsql/src/sgml/gist.sgml
+share/doc/pgsql/src/sgml/history.sgml
+share/doc/pgsql/src/sgml/indices.sgml
+share/doc/pgsql/src/sgml/info.sgml
 share/doc/pgsql/src/sgml/inherit.sgml
 share/doc/pgsql/src/sgml/install.sgml
+share/doc/pgsql/src/sgml/installation.sgml
+share/doc/pgsql/src/sgml/intro-ag.sgml
 share/doc/pgsql/src/sgml/intro-pg.sgml
 share/doc/pgsql/src/sgml/intro.sgml
 share/doc/pgsql/src/sgml/jdbc.sgml
+share/doc/pgsql/src/sgml/keys.sgml
+share/doc/pgsql/src/sgml/legal.sgml
 share/doc/pgsql/src/sgml/libpgtcl.sgml
+share/doc/pgsql/src/sgml/libpq++.sgml
 share/doc/pgsql/src/sgml/libpq.sgml
 share/doc/pgsql/src/sgml/lobj.sgml
 share/doc/pgsql/src/sgml/manage.sgml
+share/doc/pgsql/src/sgml/notation.sgml
 share/doc/pgsql/src/sgml/odbc.sgml
+share/doc/pgsql/src/sgml/oper.sgml
+share/doc/pgsql/src/sgml/page.sgml
+share/doc/pgsql/src/sgml/pg_options.sgml
 share/doc/pgsql/src/sgml/pgaccess.sgml
 share/doc/pgsql/src/sgml/ports.sgml
 share/doc/pgsql/src/sgml/postgres.sgml
@@ -165,48 +202,128 @@ share/doc/pgsql/src/sgml/psql.sgml
 share/doc/pgsql/src/sgml/query-ug.sgml
 share/doc/pgsql/src/sgml/query.sgml
 share/doc/pgsql/src/sgml/recovery.sgml
+share/doc/pgsql/src/sgml/ref/abort.sgml
+share/doc/pgsql/src/sgml/ref/allfiles.sgml
+share/doc/pgsql/src/sgml/ref/alter_table.sgml
+share/doc/pgsql/src/sgml/ref/alter_user.sgml
+share/doc/pgsql/src/sgml/ref/begin.sgml
+share/doc/pgsql/src/sgml/ref/close.sgml
+share/doc/pgsql/src/sgml/ref/cluster.sgml
+share/doc/pgsql/src/sgml/ref/commands.sgml
+share/doc/pgsql/src/sgml/ref/commit.sgml
+share/doc/pgsql/src/sgml/ref/copy.sgml
+share/doc/pgsql/src/sgml/ref/create_aggregate.sgml
+share/doc/pgsql/src/sgml/ref/create_database.sgml
+share/doc/pgsql/src/sgml/ref/create_function.sgml
+share/doc/pgsql/src/sgml/ref/create_index.sgml
+share/doc/pgsql/src/sgml/ref/create_language.sgml
+share/doc/pgsql/src/sgml/ref/create_operator.sgml
+share/doc/pgsql/src/sgml/ref/create_rule.sgml
+share/doc/pgsql/src/sgml/ref/create_sequence.sgml
+share/doc/pgsql/src/sgml/ref/create_table.sgml
+share/doc/pgsql/src/sgml/ref/create_trigger.sgml
+share/doc/pgsql/src/sgml/ref/create_type.sgml
+share/doc/pgsql/src/sgml/ref/create_user.sgml
+share/doc/pgsql/src/sgml/ref/create_view.sgml
+share/doc/pgsql/src/sgml/ref/createdb.sgml
+share/doc/pgsql/src/sgml/ref/createuser.sgml
+share/doc/pgsql/src/sgml/ref/current_date.sgml
+share/doc/pgsql/src/sgml/ref/current_time.sgml
+share/doc/pgsql/src/sgml/ref/current_timestamp.sgml
+share/doc/pgsql/src/sgml/ref/current_user.sgml
+share/doc/pgsql/src/sgml/ref/declare.sgml
+share/doc/pgsql/src/sgml/ref/delete.sgml
+share/doc/pgsql/src/sgml/ref/destroydb.sgml
+share/doc/pgsql/src/sgml/ref/destroyuser.sgml
+share/doc/pgsql/src/sgml/ref/drop_aggregate.sgml
+share/doc/pgsql/src/sgml/ref/drop_database.sgml
+share/doc/pgsql/src/sgml/ref/drop_function.sgml
+share/doc/pgsql/src/sgml/ref/drop_index.sgml
+share/doc/pgsql/src/sgml/ref/drop_language.sgml
+share/doc/pgsql/src/sgml/ref/drop_operator.sgml
+share/doc/pgsql/src/sgml/ref/drop_rule.sgml
+share/doc/pgsql/src/sgml/ref/drop_sequence.sgml
+share/doc/pgsql/src/sgml/ref/drop_table.sgml
+share/doc/pgsql/src/sgml/ref/drop_trigger.sgml
+share/doc/pgsql/src/sgml/ref/drop_type.sgml
+share/doc/pgsql/src/sgml/ref/drop_user.sgml
+share/doc/pgsql/src/sgml/ref/drop_view.sgml
+share/doc/pgsql/src/sgml/ref/explain.sgml
+share/doc/pgsql/src/sgml/ref/fetch.sgml
+share/doc/pgsql/src/sgml/ref/grant.sgml
+share/doc/pgsql/src/sgml/ref/initdb.sgml
+share/doc/pgsql/src/sgml/ref/initlocation.sgml
+share/doc/pgsql/src/sgml/ref/insert.sgml
+share/doc/pgsql/src/sgml/ref/listen.sgml
+share/doc/pgsql/src/sgml/ref/load.sgml
+share/doc/pgsql/src/sgml/ref/lock.sgml
+share/doc/pgsql/src/sgml/ref/move.sgml
+share/doc/pgsql/src/sgml/ref/notify.sgml
+share/doc/pgsql/src/sgml/ref/pg_dump.sgml
+share/doc/pgsql/src/sgml/ref/pg_dumpall.sgml
+share/doc/pgsql/src/sgml/ref/pg_upgrade.sgml
+share/doc/pgsql/src/sgml/ref/psql-ref.sgml
+share/doc/pgsql/src/sgml/ref/reset.sgml
+share/doc/pgsql/src/sgml/ref/revoke.sgml
+share/doc/pgsql/src/sgml/ref/rollback.sgml
+share/doc/pgsql/src/sgml/ref/select.sgml
+share/doc/pgsql/src/sgml/ref/set.sgml
+share/doc/pgsql/src/sgml/ref/show.sgml
+share/doc/pgsql/src/sgml/ref/unlisten.sgml
+share/doc/pgsql/src/sgml/ref/update.sgml
+share/doc/pgsql/src/sgml/ref/vacuum.sgml
+share/doc/pgsql/src/sgml/reference.sgml
 share/doc/pgsql/src/sgml/regress.sgml
 share/doc/pgsql/src/sgml/release.sgml
 share/doc/pgsql/src/sgml/rules.sgml
+share/doc/pgsql/src/sgml/runtime.sgml
+share/doc/pgsql/src/sgml/security.sgml
+share/doc/pgsql/src/sgml/signals.sgml
 share/doc/pgsql/src/sgml/spi.sgml
 share/doc/pgsql/src/sgml/start-ag.sgml
 share/doc/pgsql/src/sgml/start.sgml
 share/doc/pgsql/src/sgml/storage.sgml
+share/doc/pgsql/src/sgml/syntax.sgml
 share/doc/pgsql/src/sgml/trigger.sgml
 share/doc/pgsql/src/sgml/tutorial.sgml
+share/doc/pgsql/src/sgml/typeconv.sgml
 share/doc/pgsql/src/sgml/user.sgml
 share/doc/pgsql/src/sgml/xaggr.sgml
 share/doc/pgsql/src/sgml/xfunc.sgml
 share/doc/pgsql/src/sgml/xindex.sgml
 share/doc/pgsql/src/sgml/xoper.sgml
+share/doc/pgsql/src/sgml/xplang.sgml
 share/doc/pgsql/src/sgml/xtypes.sgml
+share/doc/pgsql/src/sgml/y2k.sgml
 share/doc/pgsql/tutorial.ps.gz
 share/doc/pgsql/tutorial.tar.gz
 share/doc/pgsql/user.ps.gz
 share/doc/pgsql/user.tar.gz
-share/doc/pgsql/userguide.ps
-@dirrm share/doc/pgsql/src/graphics
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm share/doc/pgsql/src/sgml/ref
 @dirrm share/doc/pgsql/src/sgml
+@dirrm share/doc/pgsql/src/graphics
 @dirrm share/doc/pgsql/src
 @dirrm share/doc/pgsql
-@dirrm pgsql/bin
+@dirrm pgsql/man/manl
+@dirrm pgsql/man/man5
+@dirrm pgsql/man/man3
+@dirrm pgsql/man/man1
+@dirrm pgsql/man
+@dirrm pgsql/lib
+@dirrm pgsql/include/utils
+@dirrm pgsql/include/port/freebsd
+@dirrm pgsql/include/port
+@dirrm pgsql/include/libpq++
+@dirrm pgsql/include/libpq
+@dirrm pgsql/include/lib
+@dirrm pgsql/include/executor
+@dirrm pgsql/include/commands
+@dirrm pgsql/include/access
+@dirrm pgsql/include
 @dirrm pgsql/data/base/template1
 @dirrm pgsql/data/base
 @dirrm pgsql/data
-@dirrm pgsql/include/access
-@dirrm pgsql/include/commands
-@dirrm pgsql/include/executor
-@dirrm pgsql/include/include
-@dirrm pgsql/include/lib
-@dirrm pgsql/include/libpq
-@dirrm pgsql/include/port/bsd
-@dirrm pgsql/include/port
-@dirrm pgsql/include/utils
-@dirrm pgsql/include
-@dirrm pgsql/lib
-@dirrm pgsql/man/man1
-@dirrm pgsql/man/man3
-@dirrm pgsql/man/man5
-@dirrm pgsql/man/manl
-@dirrm pgsql/man
+@dirrm pgsql/bin
 @dirrm pgsql
