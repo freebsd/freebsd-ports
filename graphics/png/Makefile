@@ -7,6 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
@@ -20,7 +21,8 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=       ${WRKSRC}/scripts/makefile.freebsd
-ALL_TARGET=	all test
+ALL_TARGET=	all libpng-config test
+MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	5
 
