@@ -73,7 +73,8 @@ pre-fetch:
 .endif
 
 post-extract:
-	@${LN} -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
+	@${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6b \
+		${WRKSRC}/jpeg
 	@cd ${WRKSRC}/src; ${TAR} -xzf ${DISTDIR}/${HP8XX_DRV}
 
 do-configure:
