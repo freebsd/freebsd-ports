@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
-CONFLICTS=	bison-[0-9]+
+CONFLICTS=	bison-[0-9]*
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
