@@ -1,0 +1,11 @@
+--- xdvik/Makefile.in.orig	Fri Jan 30 00:37:19 1998
++++ xdvik/Makefile.in	Fri Jan 30 00:45:39 1998
+@@ -16,7 +16,7 @@
+ # define NOVFONTMAP when you don't use "vfontmap"
+ # define VI_KEY when you use VI_KEY
+ # define SMALL_PANEL when you use SMALL_PANEL
+-XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR
++XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR -DSMALL_PANEL -DSHRINK=\"7\" -DBDPI=300
+ 
+ FILTOPTTBLDIR = $(texmf)/xdvi
+ 

@@ -1,0 +1,11 @@
+
+min	min     # for ASCII
+nmin	min     # for ASCII
+goth	goth    # for ASCII
+ngoth	goth    # for ASCII
+dm	min     # for NTT
+dg	goth    # for NTT
+
+mgoth	maru
+fmin	fmin
+fgoth	goth
