@@ -15,9 +15,9 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Intel's Fortran compiler, set up to produce native FreeBSD binaries
 
 PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
@@ -115,11 +115,11 @@ post-patch:
 		${WRKSRC}/opt/${COMPILERDIR}/doc/fsupport
 .endif
 .for i in ifc.orig ifort.orig
-	@${RM} ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in ifc.cfg ifort.cfg
-	@${ECHO} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n-nothreads\n\n-D__FreeBSD__=${IFCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n-nothreads\n\n-D__FreeBSD__=${IFCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s ifc.cfg ifcbin.cfg \
@@ -150,8 +150,7 @@ do-build:
 		${FILESDIR}/sysconf.c    \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
 .if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
