@@ -1,0 +1,11 @@
+--- krogue/kinvwnd.cpp	Mon Dec 27 17:11:42 1999
++++ krogue/kinvwnd.cpp.new	Tue Feb 22 00:48:16 2000
+@@ -315,7 +315,7 @@
+   {"food", NULL, false, 0, FOOD},
+   {"potion", id_potions, true, POTIONS, POTION},
+   {"scroll", id_scrolls, true, SCROLLS, SCROLL},
+-  {_T("weapon"), id_weapons, false, WEAPONS, WEAPON},
++  {msgQuote("weapon"), id_weapons, false, WEAPONS, WEAPON},
+   {"armor", id_armors, false, ARMORS, ARMOR},
+   {"wand", id_wands, true, WANDS, WAND},
+   {"ring", id_rings, true, RINGS, RING},

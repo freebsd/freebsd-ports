@@ -1,0 +1,11 @@
+--- krogue/rogue/Makefile.in	Sun Jan  9 16:42:12 2000
++++ krogue/rogue/Makefile.in.new	Tue Feb 22 00:33:12 2000
+@@ -180,7 +180,7 @@
+ # in curses.c for more info.
+ 
+ #CFLAGS = -g -c -DUNIX -DUNIX_SYS5
+-CFLAGS = -c -O2 -DUNIX -DUNIX_SYS5
++CFLAGS = $(PCFLAGS) -c -DUNIX -DUNIX_SYS5
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 

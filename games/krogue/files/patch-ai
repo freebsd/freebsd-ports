@@ -1,0 +1,20 @@
+--- krogue/rogue/use.c	Sat Aug 28 17:49:55 1999
++++ krogue/rogue/use.c.new	Sun Nov 21 23:06:33 1999
+@@ -21,7 +21,7 @@
+ boolean see_invisible = 0;
+ short extra_hp = 0;
+ boolean detect_monster = 0;
+-char *strange_feeling = _T("you have a strange feeling for a moment, then it passes");
++char *strange_feeling = msgQuote("you have a strange feeling for a moment, then it passes");
+ 
+ extern short bear_trap;
+ extern char hunger_str[];
+@@ -196,7 +196,7 @@
+ 			ccmd=CMD_IDENTIFY;
+ 			cmd_ask=2+256;
+ 			cmd_mask=ALL_OBJECTS;
+-			cmd_q=_T("what would you like to identify");
++			cmd_q=msgQuote("what would you like to identify");
+ 			break;
+ 		case TELEPORT:
+ 			tele();

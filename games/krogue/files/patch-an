@@ -1,0 +1,11 @@
+--- krogue/kcmdr.h.orig	Sun Oct 10 09:15:43 1999
++++ krogue/kcmdr.h	Wed Dec 15 15:26:29 1999
+@@ -26,7 +26,7 @@
+ 
+ struct cmd
+ {
+-  int cmd, ask;
++  int thecmd, ask;
+   int mask;
+   char *q;
+ };
