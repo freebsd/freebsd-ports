@@ -35,7 +35,7 @@
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm porteasy
-.Op Fl abCceFfhikluVv
+.Op Fl abCceFfhikLluVv
 .Op Fl D Ar date
 .Op Fl d Ar dir
 .Op Fl p Ar dir
@@ -77,6 +77,8 @@ Show a summary of options and parameters.
 Describe the selected ports.
 .It Fl k
 Build packages for the selected ports.
+.It Fl L
+List the packing lists for the selected ports.
 .It Fl l
 List the selected ports.
 .It Fl p Ar dir
@@ -160,6 +162,11 @@ If the
 option was specified, the fully qualified name and package name of all
 selected ports are listed.
 Explicitly selected ports are indicated with a star.
+.It Show packing lists
+If the
+.Fk L
+option was specified, the packing lists for all explicitly selected
+ports are shown.
 .It Describe selected ports
 If the
 .Fl i
