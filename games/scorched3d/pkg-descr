@@ -1,0 +1,22 @@
+Scorched is a game based loosely on the classic DOS game Scorched
+Earth "The Mother Of All Games".
+
+	"Scorched Earth is a simple, yet exciting artillery combat
+	game, based on an auspicious history of artillery games."
+
+	(Review of Scorched Earth at ClassicGaming.com)
+
+In its simplest form Scorched is an artillery game. Tanks take turns
+to earn money by destroying opponents in an arena. Scorched attempts
+to recreate the simple yet addictive game play of the original game,
+adding amongst other new features a 3D island environment and LAN and
+internet play.
+
+NOTE:
+
+	This is a work in progress port of the Win32 game by
+	Gavin C. <gcamp@cisco.com>.  The port is done by
+	red.zebra@pandora.be for Linux.  Network play does
+	not work yet.
+
+WWW: http://www.scorched3d.co.uk/

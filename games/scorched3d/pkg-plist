@@ -1,0 +1,136 @@
+bin/scorched3d
+games/scorched3d/scorched3d
+games/scorched3d/data/talk/talk2.cfg
+games/scorched3d/data/talk/talk1.cfg
+games/scorched3d/data/meshes/wind.ase
+games/scorched3d/data/help/help.txt
+games/scorched3d/data/fonts/font.bmp
+games/scorched3d/data/fonts/font.bmp.new
+games/scorched3d/data/fonts/font.bmp.orig
+games/scorched3d/data/windows/scorched.bmp
+games/scorched3d/data/windows/logotiled.bmp
+games/scorched3d/data/maps/Wide Area.bmp
+games/scorched3d/data/maps/coolLevel.bmp
+games/scorched3d/data/maps/Four_Big_Mountains.bmp
+games/scorched3d/data/maps/heightmap1.bmp
+games/scorched3d/data/maps/Land_of_Shadows.bmp
+games/scorched3d/data/maps/Little_River.bmp
+games/scorched3d/data/maps/port.bmp
+games/scorched3d/data/maps/River_One.bmp
+games/scorched3d/data/maps/River_Two.bmp
+games/scorched3d/data/maps/Rocks_and_Water.bmp
+games/scorched3d/data/maps/Rough_Hill.bmp
+games/scorched3d/data/maps/The_Big_One.bmp
+games/scorched3d/data/maps/The_Island.bmp
+games/scorched3d/data/maps/The_Island2.bmp
+games/scorched3d/data/maps/The_Three_Isles.bmp
+games/scorched3d/data/maps/Two_Big_Mountains.bmp
+games/scorched3d/data/maps/1st_Nice_Mountain.bmp
+games/scorched3d/data/textures/bordershield/grid.bmp
+games/scorched3d/data/textures/bordershield/grid2.bmp
+games/scorched3d/data/textures/bordershield/grid22.bmp
+games/scorched3d/data/textures/bordershield/hit.bmp
+games/scorched3d/data/textures/surround/spheremap1.bmp
+games/scorched3d/data/textures/surround/spheremap2.bmp
+games/scorched3d/data/textures/surround/spheremap3.bmp
+games/scorched3d/data/textures/surround/spheremap4.bmp
+games/scorched3d/data/textures/explode/explode_fire_9.bmp
+games/scorched3d/data/textures/explode/explode_fire_1.bmp
+games/scorched3d/data/textures/explode/explode_fire_10.bmp
+games/scorched3d/data/textures/explode/explode_fire_11.bmp
+games/scorched3d/data/textures/explode/explode_fire_12.bmp
+games/scorched3d/data/textures/explode/explode_fire_13.bmp
+games/scorched3d/data/textures/explode/explode_fire_14.bmp
+games/scorched3d/data/textures/explode/explode_fire_2.bmp
+games/scorched3d/data/textures/explode/explode_fire_3.bmp
+games/scorched3d/data/textures/explode/explode_fire_4.bmp
+games/scorched3d/data/textures/explode/explode_fire_5.bmp
+games/scorched3d/data/textures/explode/explode_fire_6.bmp
+games/scorched3d/data/textures/explode/explode_fire_7.bmp
+games/scorched3d/data/textures/explode/explode_fire_8.bmp
+games/scorched3d/data/textures/explode/explode_fire_0.bmp
+games/scorched3d/data/textures/ground/Texture4.bmp
+games/scorched3d/data/textures/ground/magma.bmp
+games/scorched3d/data/textures/ground/rockside.bmp
+games/scorched3d/data/textures/ground/scorch.bmp
+games/scorched3d/data/textures/ground/shore.bmp
+games/scorched3d/data/textures/ground/Texture0.bmp
+games/scorched3d/data/textures/ground/Texture1.bmp
+games/scorched3d/data/textures/ground/Texture2.bmp
+games/scorched3d/data/textures/ground/Texture3.bmp
+games/scorched3d/data/textures/ground/magma-small.bmp
+games/scorched3d/data/textures/lensflare/Shine9.bw
+games/scorched3d/data/textures/lensflare/Flare1.bw
+games/scorched3d/data/textures/lensflare/Flare2.bw
+games/scorched3d/data/textures/lensflare/Flare3.bw
+games/scorched3d/data/textures/lensflare/Flare4.bw
+games/scorched3d/data/textures/lensflare/Flare5.bw
+games/scorched3d/data/textures/lensflare/Shine0.bw
+games/scorched3d/data/textures/lensflare/Shine1.bw
+games/scorched3d/data/textures/lensflare/Shine2.bw
+games/scorched3d/data/textures/lensflare/Shine3.bw
+games/scorched3d/data/textures/lensflare/Shine4.bw
+games/scorched3d/data/textures/lensflare/Shine5.bw
+games/scorched3d/data/textures/lensflare/Shine6.bw
+games/scorched3d/data/textures/lensflare/Shine7.bw
+games/scorched3d/data/textures/lensflare/Shine8.bw
+games/scorched3d/data/textures/lensflare/Flare0.bw
+games/scorched3d/data/textures/smoke01.bmp
+games/scorched3d/data/textures/cubemap.bmp
+games/scorched3d/data/textures/talk.bmp
+games/scorched3d/data/wav/explosions/medium.wav
+games/scorched3d/data/wav/explosions/gloop.wav
+games/scorched3d/data/wav/explosions/large.wav
+games/scorched3d/data/wav/explosions/crunch.wav
+games/scorched3d/data/wav/explosions/small.wav
+games/scorched3d/data/wav/explosions/tank.wav
+games/scorched3d/data/wav/explosions/xlarge.wav
+games/scorched3d/data/wav/misc/splash.wav
+games/scorched3d/data/wav/movement/elevate.wav
+games/scorched3d/data/wav/movement/movement.wav
+games/scorched3d/data/wav/movement/turn.wav
+games/scorched3d/data/wav/shield/activate.wav
+games/scorched3d/data/wav/shield/activateforce.wav
+games/scorched3d/data/wav/shield/hit.wav
+games/scorched3d/data/wav/shield/hit2.wav
+games/scorched3d/data/wav/shoot/medium.wav
+games/scorched3d/data/wav/shoot/large.wav
+games/scorched3d/data/wav/shoot/laser.wav
+games/scorched3d/data/wav/shoot/flare.wav
+games/scorched3d/data/wav/shoot/small.wav
+games/scorched3d/data/wav/shoot/tracer.wav
+games/scorched3d/data/wav/shoot/xlarge.wav
+games/scorched3d/data/tanks/tank2.ase
+games/scorched3d/data/tanks/tank3.ase
+games/scorched3d/data/tanks/tank4.ase
+games/scorched3d/data/tanks/tank3.bmp
+games/scorched3d/data/tanks/tank5.ase
+games/scorched3d/data/tanks/tank4.bmp
+games/scorched3d/data/tanks/tank5.bmp
+games/scorched3d/data/tanks/tank5a.bmp
+games/scorched3d/data/tanks/tank6.ase
+games/scorched3d/data/tanks/tank6.bmp
+games/scorched3d/data/tanks/tank2.bmp
+games/scorched3d/data/svrlist.txt
+games/scorched3d/data/motd.txt
+@dirrm games/scorched3d/data/tanks
+@dirrm games/scorched3d/data/wav/shoot
+@dirrm games/scorched3d/data/wav/shield
+@dirrm games/scorched3d/data/wav/movement
+@dirrm games/scorched3d/data/wav/misc
+@dirrm games/scorched3d/data/wav/explosions
+@dirrm games/scorched3d/data/wav
+@dirrm games/scorched3d/data/textures/lensflare
+@dirrm games/scorched3d/data/textures/ground
+@dirrm games/scorched3d/data/textures/explode
+@dirrm games/scorched3d/data/textures/surround
+@dirrm games/scorched3d/data/textures/bordershield
+@dirrm games/scorched3d/data/textures
+@dirrm games/scorched3d/data/maps
+@dirrm games/scorched3d/data/windows
+@dirrm games/scorched3d/data/fonts
+@dirrm games/scorched3d/data/help
+@dirrm games/scorched3d/data/meshes
+@dirrm games/scorched3d/data/talk
+@dirrm games/scorched3d/data
+@dirrm games/scorched3d
