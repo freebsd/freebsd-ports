@@ -1,0 +1,8 @@
+*****************************************************************************
+
+To automatically load the installed extension add the following line to
+your php.ini configuration file:
+
+extension="panda.so"
+
+*****************************************************************************
