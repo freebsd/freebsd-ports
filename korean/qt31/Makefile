@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt31
+MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt32
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 CATEGORIES=	korean x11-toolkits
 
