@@ -165,6 +165,7 @@
     SUBDIR += installwatch
     SUBDIR += ipa
     SUBDIR += ipsc
+    SUBDIR += jailadmin
     SUBDIR += jailer
     SUBDIR += jailutils
     SUBDIR += jdiskreport
