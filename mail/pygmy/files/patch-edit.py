@@ -2,7 +2,34 @@
 $FreeBSD$
 
 --- edit.py.orig	Fri May 11 16:44:12 2001
-+++ edit.py	Fri May 11 19:30:04 2001
++++ edit.py	Fri May 11 21:01:18 2001
+@@ -350,9 +350,9 @@
+             for a in self.prefs.accounts.keys():
+                 username, emailaddr, sigfile, replyaddr = self.prefs.accounts[a]
+                 if emailaddr != '':
+-                    ownaddrs.append(emailaddr)
++                    ownaddrs.append(emailaddr.lower())
+                 if replyaddr != '':
+-                    ownaddrs.append(replyaddr)
++                    ownaddrs.append(replyaddr.lower())
+ 
+             # Get all the target addresses
+             to = rfc822.AddressList(rt) + \
+@@ -361,12 +361,12 @@
+             tostr = []
+ 
+             for i in to.addresslist:
+-                if i[1] not in ownaddrs and i[1] != None:
++                if i[1].lower() not in ownaddrs and i[1] != None:
+                     tostr.append(i[1])
+             ccstr = []
+ 
+             for i in cc.addresslist:
+-                if i[1] not in ownaddrs and i[1] != None:
++                if i[1].lower() not in ownaddrs and i[1] != None:
+                     ccstr.append(i[1])
+                     
+             self.e1.set_text(mimify.mime_decode_header(string.join(tostr, ', ')))
 @@ -444,9 +444,8 @@
      ##
      ##
