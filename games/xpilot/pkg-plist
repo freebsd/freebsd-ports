@@ -1,10 +1,8 @@
 @cwd /usr/X11R6
 bin/xpilot
-bin/xpilot-3.3.1
 bin/xpilots
-bin/xpilots-3.3.1
 bin/xp-replay
-bin/xp-replay-3.3.1
-man/man6/xpilot.6
-man/man6/xpilots.6
+man/man6/xpilot.6.gz
+man/man6/xpilots.6.gz
+man/man6/xp-replay.6.gz
 lib/xpilot
