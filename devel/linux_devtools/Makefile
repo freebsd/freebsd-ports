@@ -91,17 +91,10 @@ NEEDLOADLINK=		true
 do-patch:
 	@${DO_NADA}
 
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
-	@if [ -z "`kldstat -v | ${GREP} -E 'linux(aout|elf)'`" ]; then \
-		${ECHO} 'Linux mode is not enabled.\
-			Loading linux kernel module...' | fmt; \
-		linux || { \
-		${ECHO} 'The linux kernel module could not be loaded.\
-			Please manually load the module and retry.\
-			See "man linux" for details.' | fmt; \
-		${FALSE}; \
-		};\
-	fi
 #
 # Setup a chroot'able environment
 #
