@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.04
+PORTVERSION=	2.10
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	plsrc${PORTVERSION:S/.//}
@@ -15,29 +15,25 @@ DISTNAME=	plsrc${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		png:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-ALL_TARGET=	# empty
-MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"
+ALL_TARGET=	${PORTNAME}
 
 MAN1=	pl.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/../prefabs/* ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/../man/man1/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/../prefabs/* ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/../man/man1/${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
