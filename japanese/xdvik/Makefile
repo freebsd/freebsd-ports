@@ -7,27 +7,35 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
+PKGNAMEPREFIX=	ja-
+PKGNAMESUFFIX=	-tetex
 DISTNAME=	xdvik-${VERSION_XDVIK}
 
 PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
-PATCHFILES=	xdvik-${VERSION_XDVIK}-j${VERSION_JPATCH}.patch.gz
+PATCHFILES=	${PORTNAME}-${VERSION_XDVIK}-j${VERSION_JPATCH}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
+COMMENT=	DVI Previewer(kpathsearch) for X. + freetype support
 
-.if defined(WITH_VF2FT)
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-PKGNAMESUFFIX=	-ft
-.else
-LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib
-PKGNAMESUFFIX=	-vflib
-.endif
-LIB_DEPENDS+=	wwwcore.1:${PORTSDIR}/www/libwww \
+.include <bsd.port.pre.mk>
+
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
+		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/kochi-ttfonts \
+		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/kochi-ttfonts
+
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 DIST_SUBDIR=	xdvik
@@ -35,25 +43,25 @@ USE_XLIB=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-a4 --enable-shrink=${SHRINK} \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMF:S,texmf$,,} \
+		--enable-a4 --enable-shrink=${SHRINK} \
 		--with-dvifilter=${DVIPS} \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint \
 		--enable-smallpanel --enable-zoombutton \
+		--enable-gf \
 		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
 		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include \
-		--enable-vikey --disable-multiplatform
-.if defined(WITH_VF2FT)
-CONFIGURE_ARGS+=	--with-vflib=vf2ft
-.endif
+		--enable-vikey --disable-multiplatform \
+		--with-vflib=vf2ft
 CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_MAN="${INSTALL_MAN}" \
 		XDEFS='-DMFMODE=\"${MF_MODE}\"'
 SCRIPTS_ENV=	MV=${MV} SED=${SED}
-#MAKE_ENV=	'XDEFS=${XDEFS}'
 PATCH_STRIP=	-p1
 MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 
@@ -61,136 +69,88 @@ VERSION_XDVIK=	22.40y1
 VERSION_JPATCH=	1.21
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
-TEXMF=		${PREFIX}/share/texmf
-#VARTEXFONTS=	/var/tmp/texfonts
+
+TEXMF=		share/texmf
 XDVIDIR=	${TEXMF}/xdvi
-APPDEFAULTSDIR?=	lib/X11/app-defaults
-CIDFONTDIR?=	${TEXMF}/dvipdfm/CIDFont
+TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 
-PLIST_SUB+=	APPDEFAULTSDIR=${APPDEFAULTSDIR}
+CIDFONTDIR=	${TEXMF}/dvipdfm/CIDFont
+TTFMINCHO=	lib/X11/fonts/TrueType/kochi-mincho-subst.ttf
+TTFGOTHIC=	lib/X11/fonts/TrueType/kochi-gothic-subst.ttf
 
-#VFFONTS=	.:${MAKEJVFDIR}/vf//
-#XDEFS+=		-DDEFAULT_VFFONTS=\"\\\"${VFFONTS}\\\"\"
-#TFMFONTS=	.:${MAKEJVFDIR}/tfm/ptex//
-#XDEFS+=		-DDEFAULT_TFMFONTS=\"\\\"${TFMFONTS}\\\"\"
-#PKFONTS=	.:${PREFIX}/lib/fonts/pk{118:240:300:360:400:600}//
-#XDEFS+=		-DDEFAULT_PKFONTS=\"\\\"${PKFONTS}\\\"\"
+VFONTCAPFT_SRC=	${WRKSRC}/vfontmap.freetype
+VFONTCAPFT_SUB=	CIDFONTDIR=${LOCALBASE}/${CIDFONTDIR} \
+		TTFMINCHO=${X11BASE}/${TTFMINCHO} \
+		TTFGOTHIC=${X11BASE}/${TTFGOTHIC}
 
-DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp.html \
-		README.xdvik-jp \
-		README.src-specials \
-		README.t1fonts \
-		README.t1mapper \
-		READMEs/ChangeLog.xdvik20a-j1.1 \
-		READMEs/ChangeLog.xdvik20c-j1.0 \
-		READMEs/HEADERS.DOC \
-		READMEs/InternalVars \
-		READMEs/README.jp+toc+hal2 \
-		READMEs/README.jp-patch \
-		READMEs/README.markpage+toc+printdvi \
-		READMEs/README.markpage+toc+printdvi+paper \
-		READMEs/README.miyu-beta6 \
-		READMEs/README.ptex \
-		READMEs/README.tasai-ussy \
-		READMEs/README.xdvik18f-j1.0.patch \
-		READMEs/README.xdvik18f-j1.1p5.patch \
-		READMEs/README.xdvik20a-j1.1.patch \
-		READMEs/README.xdvik20c-j1.0+hal2+dvisel \
-		READMEs/README.xdvik20c-j1.0p1.patch \
-		READMEs/README.vf2ft \
-		READMEs/README.xdvik-22.15-j1.04.patch
+PKGINSTALL=	${WRKDIR}/pkg-install.sh
+PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MKTEXLSR=${MKTEXLSR}
 
-# ******************
-# USEPK_MODE:
-#  Mode name of Metafont to give to print/pkfonts* is set.
-#  It is care-and-attention to the other program how MetaFont wants to
-#  be executed that do not use modeless. Kpathsea always searches
-#  modeless because even if you specify any kind of mode.
-# MAKETEX_MODE:
-#  It is mode name of default at executing MetaFont. The default is ljfour.
-#  This needs not to be changed. It can be changed with an option or resource.
-# DVIPS:
-#  Specification of `dvi -> ps' conversion program to use.
-#  You can set following one: dvips, dvipsk-vflib, dvi2ps.
-#  Other way... After installation if you change script
-#  ${PREFIX}/libexec/xdviprint, any kind of program can be used.
-# ******************
-FONTTYPE?=	metafont
-USEPK_MODE?=	cx
-MAKETEX_MODE?=	cx
+PLIST_SUB=	TEXMF=${TEXMF}
+
+BDPI?=		600
 SHRINK?=	6
-BDPI?=		300
 DVIPS?=		dvips
-
-.if ${FONTTYPE} == metafont
-RUN_DEPENDS+=	mktexpk:${PORTSDIR}/japanese/ptex-base
-MF_MODE=	${MAKETEX_MODE}
-.else
-MF_MODE=	${USEPK_MODE}
-CONFIGURE_ARGS+=--without-mktexpk-default
-.if ${FONTTYPE} == pkall
-PKGNAMESUFFIX=	-${FONTTYPE}
-.else
-PKGNAMESUFFIX=	-pk${BDPI}
-.endif
+.if !defined(MF_MODE) || empty(MF_MODE)
+MF_MODE!=	case ${BDPI} in\
+		118) ${ECHO_CMD} bitgraph ;;\
+		240) ${ECHO_CMD} canonlbp ;;\
+		300) ${ECHO_CMD} cx ;;\
+		360) ${ECHO_CMD} canonbjc ;;\
+		400) ${ECHO_CMD} nexthi ;;\
+		600) ${ECHO_CMD} ljfour ;;\
+		*) ${ECHO_CMD} cx ;;\
+		esac
 .endif
 
-.BEGIN:
-.if ${FONTTYPE} != metafont && \
-	${FONTTYPE} != pkfont && ${FONTTYPE} != pkall
-	@${ECHO} "Error: invalid value for FONTTYPE: \"${FONTTYPE}\""
-	@${ECHO} "Possible values are: metafont, pkall and pkfont."
-	@${FALSE}
-.endif
-.if ${BDPI} != 118 && ${BDPI} != 240 && \
-	${BDPI} != 300 && ${BDPI} != 360 && \
-	${BDPI} != 400  && ${BDPI} != 600
-	@${ECHO} "Error: invalid value for BDPI: \"${BDPI}\""
-	@${ECHO} "Possible values are: all, 118, 240, 300, 360, 400 and 600."
-	@${FALSE}
-.endif
-.if ${DVIPS} != dvi2ps && ${DVIPS} != dvips
-	@${ECHO} "Error: invalid value for DVIPS: \"${DVIPS}\""
-	@${ECHO} "Possible values are: dvi2ps and dvips."
-	@${FALSE}
-.endif
-
-.include <bsd.port.pre.mk>
-
-pre-fetch:
-	@( \
-	${ECHO} "**************************************************************"; \
-	${ECHO} "*            japanese/dvipsk is used in default.             *"; \
-	${ECHO} "*          Please refer to Makefile about a change.          *"; \
-	${ECHO} "*           or, after installation, please change            *"; \
-	${ECHO} "*                ${PREFIX}/libexec/xdviprint.                *"; \
-	${ECHO} "**************************************************************")
+DOCS=	FAQ xdvi.icon CHANGES.xdvik-jp.html \
+	README.xdvik-jp README.src-specials \
+	README.t1fonts README.t1mapper \
+	READMEs/ChangeLog.xdvik20a-j1.1 READMEs/ChangeLog.xdvik20c-j1.0 \
+	READMEs/HEADERS.DOC READMEs/InternalVars \
+	READMEs/README.jp+toc+hal2 READMEs/README.jp-patch \
+	READMEs/README.markpage+toc+printdvi \
+	READMEs/README.markpage+toc+printdvi+paper \
+	READMEs/README.miyu-beta6 READMEs/README.ptex \
+	READMEs/README.tasai-ussy READMEs/README.xdvik18f-j1.0.patch \
+	READMEs/README.xdvik18f-j1.1p5.patch \
+	READMEs/README.xdvik20a-j1.1.patch \
+	READMEs/README.xdvik20c-j1.0+hal2+dvisel \
+	READMEs/README.xdvik20c-j1.0p1.patch READMEs/README.vf2ft \
+	READMEs/README.xdvik-22.15-j1.04.patch
 
 pre-build:
-	@(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
-	${SED} -e 's,%%CIDFONTDIR%%,${CIDFONTDIR},'\
-		< ${FILESDIR}/vfontmap.freetype > ${WRKSRC}/vfontmap.freetype
-	${CP} ${FILESDIR}/vfontmap.vflib ${WRKSRC}/vfontmap.vflib
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${CHMOD} 0755 ${PKGINSTALL}
+	@(cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
+	${SED} ${VFONTCAPFT_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/vfontmap.freetype \
+		> ${VFONTCAPFT_SRC}
 
 do-install:
 	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/vfontmap.freetype ${XDVIDIR}
-	@${INSTALL_DATA} ${WRKSRC}/vfontmap.vflib ${XDVIDIR}
-.if defined(WITH_VF2FT)
-	@${INSTALL_DATA} ${WRKSRC}/vfontmap.freetype ${XDVIDIR}/vfontmap
-.else
-	@${INSTALL_DATA} ${WRKSRC}/vfontmap.vflib ${XDVIDIR}/vfontmap
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/texk/xdvik/texmf/XDvi ${X11BASE}/${APPDEFAULTSDIR}
+	${RM} -f ${PREFIX}/${XDVIDIR}/vfontmap.freetype
+	${RM} -f ${PREFIX}/${XDVIDIR}/vfontmap.vflib
+	${INSTALL_DATA} \
+		${VFONTCAPFT_SRC} \
+		${PREFIX}/${XDVIDIR}/vfontmap.dist
+	${INSTALL_DATA} \
+		${VFONTCAPFT_SRC} \
+		${PREFIX}/${XDVIDIR}/vfontmap
+	${INSTALL_DATA} \
+		${WRKSRC}/texk/xdvik/texmf/XDvi \
+		${PREFIX}/${XDVIDIR}/XDvi.ptex-tetex
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@for i in ${DOCS} ; do \
-	    ${INSTALL_DATA} ${WRKSRC}/texk/xdvik/$$i ${DOCSDIR}; \
-	done
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/texk/xdvik/,} ${DOCSDIR}
 .endif
-	@[ -x ${PREFIX}/bin/mktexlsr ] && ${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
