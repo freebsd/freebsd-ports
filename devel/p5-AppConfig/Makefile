@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	AppConfig
-PORTVERSION=	1.55
+PORTVERSION=	1.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App/ABW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@thegler.dk
 COMMENT=	A Perl module for reading configuration files
 
 PERL_CONFIGURE=	YES
