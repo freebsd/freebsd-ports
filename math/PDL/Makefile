@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	PDL pdl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Data Language
 
-BROKEN=		"Does not compile"
-
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${PERL_SITELIBDIR}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
 		${PERL_SITELIBDIR}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
@@ -49,6 +47,9 @@ pre-extract:
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
+.if ${PERL_LEVEL} < 500601
+IGNORE=   Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif # ${PERL_LEVEL} < 500601
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
