@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dailystrips
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.17
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,6 @@ USE_PERL5=	yes
 
 post-patch:
 	@${PERL} -pi -e 's|^#!/usr/bin/perl|#!${PERL}|; \
-		s!%-e!%e!; \
 		s!/usr/share/dailystrips/strips.def!${DATADIR}/strips.def!' \
 		${WRKSRC}/dailystrips.pl
 
