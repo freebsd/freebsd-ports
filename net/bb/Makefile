@@ -3,11 +3,11 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1997/01/24 12:16:53 asami Exp $
+# $Id: Makefile,v 1.13 1997/01/26 18:44:35 andreas Exp $
 #
 
 DISTNAME=	bb
-PKGNAME=	bb-1.0
+PKGNAME=	bb-1.04
 CATEGORIES=	net
 MASTER_SITES=	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
 EXTRACT_SUFX=   -src.tgz
@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 # from the author, but others who wish to do likewise will have to
 # contact Sean MacGuire <sean@iti.qc.ca>.
 #NO_CDROM=	"It can't be sold"
+
+DIST_SUBDIR=	bb-1.04
 
 post-configure:
 	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
