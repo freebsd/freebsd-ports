@@ -1,12 +1,12 @@
---- local/snmpconf.orig	Thu May 29 05:30:19 2003
-+++ local/snmpconf	Thu May 29 05:34:45 2003
+--- local/snmpconf.orig	Wed Feb 11 01:33:42 2004
++++ local/snmpconf	Fri Apr  2 23:42:35 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!%%PERL%% -w
  
  #
  # A simple configuration file builder based on questions listed in
-@@ -16,7 +16,7 @@
+@@ -17,7 +17,7 @@
  %arrayitems=qw(question 1 validanswer 1);
  
  #defaults
@@ -15,7 +15,7 @@
  
  # read the argument string
  getopts("qadhfc:piI:r:R:g:G", \%opts);
-@@ -26,7 +26,7 @@
+@@ -27,7 +27,7 @@
      print "$0 [options] [FILETOCREATE...]\n";
      print "options:\n";
      print "  -f           overwrite existing files without prompting\n";
@@ -24,7 +24,7 @@
      print "  -p           install created files into $ENV{HOME}/.snmp.\n";
      print "  -I DIR       install created files into DIR.\n";
      print "  -a           Don't ask any questions, just read in current\n";
-@@ -62,7 +62,7 @@
+@@ -63,7 +63,7 @@
  #
  # Find existing files to possibly read in.
  #
@@ -33,16 +33,16 @@
  push @searchpath, $opts{I} if ($opts{I});
  foreach my $i (@searchpath) {
      debug("searching $i\n");
-@@ -159,7 +159,7 @@
+@@ -160,7 +160,7 @@
  foreach my $i (@didfiles) {
      if ($didfile{$i} ne "1") {
  	if ($opts{'i'} || $opts{'I'}) {
--	    $opts{'I'} = "/usr/local/share/snmp" if (!$opts{'I'});
-+	    $opts{'I'} = "%%PREFIX%%/share/snmp" if (!$opts{'I'});
- 	    system("mv $opts{'I'}/$i $opts{'I'}/$i.bak") if (-f "$opts{'I'}/$i");
- 	    system("mv $didfile{$i} $opts{'I'}");
- 	    Print("  $didfile{$i} installed in $opts{'I'}\n");
-@@ -180,7 +180,7 @@
+-	  $opts{'I'} = "/usr/local/share/snmp" if (!$opts{'I'});
++	  $opts{'I'} = "%%PREFIX%%/share/snmp" if (!$opts{'I'});
+ 	  
+ 	  move ("$opts{'I'}/$i", "$opts{'I'}/$i.bak") if (-f "$opts{'I'}/$i");
+ 	  if (move ("$didfile{$i}", "$opts{'I'}")) {
+@@ -198,7 +198,7 @@
  }
  
  if (!$opts{'p'} && !$opts{'i'} && !$opts{'I'}) {

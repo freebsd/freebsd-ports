@@ -61,7 +61,6 @@ include/net-snmp/agent/table_array.h
 include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
-include/net-snmp/agent/table_mfd.h
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
@@ -118,6 +117,7 @@ include/net-snmp/library/tools.h
 include/net-snmp/library/transform_oids.h
 include/net-snmp/library/ucd_compat.h
 include/net-snmp/library/vacm.h
+include/net-snmp/library/winpipe.h
 include/net-snmp/library/winservice.h
 include/net-snmp/machine/generic.h
 include/net-snmp/mib_api.h
@@ -144,6 +144,7 @@ include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
 include/net-snmp/system/linux.h
+include/net-snmp/system/mingw32.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
@@ -231,6 +232,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.int_watch.conf
 %%DATADIR%%/mib2c.iterate.conf
 %%DATADIR%%/mib2c.iterate_access.conf
+%%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
 %%DATADIR%%/mib2c.scalar.conf
 %%DATADIR%%/mibs/AGENTX-MIB.txt
