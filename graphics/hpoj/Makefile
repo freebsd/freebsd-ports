@@ -18,12 +18,26 @@ MAINTAINER=	vs@FreeBSD.org
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
-		snmp.4:${PORTSDIR}/net-mgmt/net-snmp4 \
 		usb:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
+OPTIONS=	CUPS "CUPS support" on \
+		SNMP "SNMP support (required for JetDirect)" on
+
+.if defined(WITH_X11)
+USE_QT_VER=	3
+USE_XLIB=	yes
+PLIST_SUB+=	X11=""
+.endif
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_CUPS)
 WITH_CUPS=	yes
+.endif
+
+.if !defined(WITHOUT_SNMP)
+WITH_SNMP=	yes
 .endif
 
 .if defined(WITH_CUPS)
@@ -31,7 +45,15 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=--with-cups-backend=${LOCALBASE}/libexec/cups/backend
 PLIST_SUB+=	CUPS=""
 .else
+CONFIGURE_ARGS+=--without-cups
 PLIST_SUB+=	CUPS="@comment "
+.endif
+
+.if defined(WITH_SNMP)
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}/include/ucd-snmp
+.else
+CONFIGURE_ARGS+=--without-snmp
 .endif
 
 INSTALLS_SHLIB=	yes
@@ -40,24 +62,6 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-.ifndef(WITHOUT_X11)
-USE_QT_VER=	3
-USE_XLIB=	yes
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${OSVERSION} > 500000
-BROKEN=	"ffs() clash, see i386/41930"
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=	"Configure fails on !i386"
-.endif
-
 .if ${ARCH} == "alpha"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
 		${FILESDIR}/extra-patch-mlcd-ParPort.h
@@ -65,21 +69,16 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
 
 GNU_CONFIGURE=	yes
 # Necessary hacks to find libsnmp:
-.if ${OSVERSION} < 510000
+.if ${OSVERSION} < 501000
 EXTRALDFLAGS=   -lcipher
 .endif
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${EXTRALDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}/include/ucd-snmp
 
-.ifdef(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-qt
+pre-everything::
+.if !defined(WITH_X11)
+	@${ECHO} "You can enable building of xojpanel (QT) through -DWITH_X11"
 .endif
-
-pre-fetch:
-	@${ECHO} You can disable building \'xojpanel\' and avoid the dependency on X11 and QT3 \
-		by restarting the build with WITHOUT_X11
-	@${ECHO} You can disable CUPS support with WITHOUT_CUPS
 
 post-patch:
 .for f in doc/info-devname.html doc/libptal.html doc/ptal-init.html doc/setup-photo-details.html \
