@@ -17,5 +17,6 @@ PLIST_FILES=	bin/sfas
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
