@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -99,16 +99,21 @@ http://www.eyesbeyond.com/freebsddom/java/jdk14.html.\n\
 Please place the patchset in ${DISTDIR}.\n
 .endif
 
-# JDK 1.4.1 require recent version of FreeBSD due to recent libc_r updates.
-# These checks are not prefect but it's better than nothing.
-.if (${OSVERSION} < 470101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500043 ))
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-You must have a version of FreeBSD later than 4.7-STABLE February 2003\n\
-or 5-CURRENT February 2003 to compile and use JDK 1.4.1.\n
+.if ${OSVERSION} > 500000
+LINKIT=	-lc_r
+.else
+LINKIT=	-pthread
 .endif
 
-pre-fetch:
+# JDK 1.4.1 require recent version of FreeBSD due to recent libc_r updates.
+check-os:
+.if !defined(SKIP_OS_TEST)
+	@mkdir -p ${WRKDIR} ; \
+	gcc ${LINKIT} -o ${WRKDIR}/testos ${FILESDIR}/testos.c > /dev/null 2>&1 ; \
+	${WRKDIR}/testos 2>/dev/null
+.endif
+
+pre-fetch:	check-os
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have at least"
 	@${ECHO_MSG} "1.5Gb of disk space!"
