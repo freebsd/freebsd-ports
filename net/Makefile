@@ -155,6 +155,7 @@
     SUBDIR += sniffit
     SUBDIR += socks5
     SUBDIR += sup
+    SUBDIR += tac_plus
     SUBDIR += tcpflow
     SUBDIR += tcpshow
     SUBDIR += tcptrace
