@@ -58,13 +58,13 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
 		${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/fltk
+	@ ${MKDIR} ${DICSDIR}
 	for ext in html gif jpg ; do \
 		${INSTALL_DATA} ${WRKSRC}/documentation/*.$$ext \
-		${PREFIX}/share/doc/fltk; \
+		${DOCSDIR}; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/documentation/README \
-		${PREFIX}/share/doc/fltk
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

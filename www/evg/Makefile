@@ -35,7 +35,7 @@ do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/evg ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/evg
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/evg
+	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

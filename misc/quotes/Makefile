@@ -28,9 +28,9 @@ do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotesmailer ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/sample.quotesrc ${PREFIX}/etc/quotesrc.sample
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/quotes
-	@ ${INSTALL_DATA} ${WRKSRC}/quotes.txt ${PREFIX}/share/doc/quotes
-	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${PREFIX}/share/doc/quotes
+	@ ${MKDIR} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/quotes.txt ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

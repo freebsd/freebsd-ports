@@ -41,13 +41,13 @@ pre-configure:
 post-install:
 	@${CHOWN} -R :${USERNAME} ${MAILMANDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mailman
+	@${MKDIR} ${DOCSDIR}
 .for f in BUGS FAQ INSTALL NEWS README* UPGRADING
-	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/mailman
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 .endif
 	@echo All related binaries have been installed in ${MAILMANDIR}/bin
-	@echo See ${PREFIX}/share/doc/mailman/INSTALL for installation instructions \(prefix == ${MAILMANDIR}\).
+	@echo See ${DOCSDIR}/INSTALL for installation instructions \(prefix == ${MAILMANDIR}\).
 	@echo 'Sample entry for httpd.conf for Apache:'
 	@echo '  ScriptAlias /mailman/ ${MAILMANDIR}/cgi-bin/'
 	@echo '  <Directory ${MAILMANDIR}/cgi-bin/>'
