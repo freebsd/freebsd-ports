@@ -1,0 +1,10 @@
+--- recbin.h.orig	Thu Oct  7 01:19:47 1999
++++ recbin.h	Thu Oct  7 13:52:49 1999
+@@ -15,7 +15,6 @@
+ extern int errno;
+ #include <unistd.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <time.h>
+ extern char *tzname[2];

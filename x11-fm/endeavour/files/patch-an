@@ -1,0 +1,10 @@
+--- wfbrowser.c.orig	Thu Oct  7 01:19:46 1999
++++ wfbrowser.c	Thu Oct  7 13:52:49 1999
+@@ -62,7 +62,6 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <fnmatch.h>
+ #include <sys/stat.h>
+ 

@@ -1,0 +1,11 @@
+--- object.h.orig	Thu Oct  7 01:19:47 1999
++++ object.h	Thu Oct  7 13:52:49 1999
+@@ -11,7 +11,7 @@
+         char *link_dest;    /* Destination if this is a symlink. */
+  
+         ino_t inode;        /* Inode. */
+-        umode_t mode;       /* Mode/permissions/type. */
++        unsigned short mode;       /* Mode/permissions/type. */
+  
+         nlink_t nlink;      /* Number of hard links. */
+         uid_t uid;          /* User ID of owner */
