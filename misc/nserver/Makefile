@@ -7,7 +7,7 @@
 
 PORTNAME=	nserver
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.version6.net/misc/
 
@@ -18,6 +18,12 @@ COMMENT=	Nserver for the Nokia 9000 and 9110 Communicator
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+
+PLIST_FILES=	sbin/nserver
+.ifndef(NOPORTDOCS)
+PLIST_FILES+=	share/doc/nserver/README
+PLIST_DIRS=	share/doc/nserver
+.endif
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|g; \
