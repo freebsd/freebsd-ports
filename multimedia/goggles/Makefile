@@ -7,7 +7,7 @@
 
 PORTNAME=	goggles
 PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/ \
 		${MASTER_SITE_LOCAL}
@@ -54,7 +54,7 @@ PLIST_FILES=	\
 		bin/ogle_gui_goggles
 #
 .ifndef(NOPORTDOCS)
-PLIST_DOCS=	\
+PORTDOCS=	\
 		goggles_manual.pdf
 .endif
 
