@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Thu Aug 19 21:50:04 2004
++++ Makefile.am	Thu Aug 19 21:50:17 2004
+@@ -56,7 +56,7 @@
+ 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.files
+ 
+ install-data-local:
+-	chmod 755 $(DESTDIR)$(kde_datadir)/bibletime -R
++	chmod -R 755 $(DESTDIR)$(kde_datadir)/bibletime
+ 	$(mkinstalldirs) $(kde_appsdir)/Applications
+ 	$(INSTALL_DATA) $(srcdir)/bibletime.desktop $(kde_appsdir)/Applications/bibletime.desktop
+ 
