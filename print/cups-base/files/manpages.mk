@@ -1,7 +1,7 @@
 MAN1+=	backend.1
+MAN1+=	cups-config.1
 MAN1+=	cupstestppd.1
 MAN1+=	filter.1
-MAN3+=	cups-config.3
 MAN5+=	classes.conf.5
 MAN5+=	cupsd.conf.5
 MAN5+=	mime.convs.5
