@@ -8,11 +8,6 @@ bin/gcov30
 bin/%%GNU_HOST%%-gcc30
 bin/%%GNU_HOST%%-g++30
 bin/gccbug-%%GCC_REV%%
-bin/gcj
-bin/gcjh
-bin/jar
-bin/jv-scan
-bin/jcf-dump
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
@@ -22,7 +17,6 @@ bin/jcf-dump
 @unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/gcj.info %D/info/dir
 @comment	info/c-tree.info
 @comment	info/c-tree.info-1
 @comment	info/c-tree.info-2
@@ -31,9 +25,7 @@ info/cpp.info
 info/cppinternals.info
 info/g77.info
 info/gcc.info
-info/gcj.info
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/cppinternals.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/gcj.info %D/info/dir
