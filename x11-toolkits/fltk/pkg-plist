@@ -189,8 +189,8 @@ include/FL/x.h
 lib/libfltk.a
 lib/libfltk.so
 lib/libfltk.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 share/doc/fltk/FL.gif
 share/doc/fltk/Fl_Adjuster.html
 share/doc/fltk/Fl_Box.html
@@ -322,5 +322,5 @@ share/doc/fltk/valuators.gif
 share/doc/fltk/value_slider.gif
 share/doc/fltk/widgets.html
 @dirrm include/FL
-@unexec rmdir %D/include/Fl 2>/dev/null || true
+include/Fl
 @dirrm share/doc/fltk
