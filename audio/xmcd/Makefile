@@ -8,7 +8,7 @@
 PORTNAME=	xmcd
 PORTVERSION=	3.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/src/
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.1.1/src/
 DISTNAME=	xmcd-3.1.1
 
 MAINTAINER=	eischen@vigrid.com
