@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1998/02/22 08:34:53 fenner Exp $
+# $Id: Makefile,v 1.6 1998/02/24 21:43:06 jseger Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.2
@@ -46,15 +46,15 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/cyrus/html
 .endif
 		${INSTALL_DATA} ${FILESDIR}/imapd.conf ${PREFIX}/etc
-		${MKDIR} -p -m 750 /var/spool/imap
+		${MKDIR} -m 750 /var/spool/imap
 		/usr/sbin/chown cyrus.cyrus /var/spool/imap
-		${MKDIR} -p -m 700 /var/pwcheck
+		${MKDIR} -m 700 /var/pwcheck
 		/usr/sbin/chown cyrus.cyrus /var/pwcheck
-		${MKDIR} -p -m 750 ${PREFIX}/etc/imap
+		${MKDIR} -m 750 ${PREFIX}/etc/imap
 		/usr/sbin/chown cyrus.cyrus ${PREFIX}/etc/imap
 		/usr/bin/touch ${PREFIX}/etc/imap/mailboxes
 		/bin/chmod 640 ${PREFIX}/etc/imap/mailboxes
-		/bin/mkdir -m 750 \
+		${MKDIR} -m 750 \
 			${PREFIX}/etc/imap/user \
 			${PREFIX}/etc/imap/quota \
 			${PREFIX}/etc/imap/proc \
