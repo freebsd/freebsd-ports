@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -72,6 +72,11 @@ CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-ssl
 .endif
+.if defined(WITHOUT_THEMES)
+PLIST_SUB+=	THEMES="@comment "
+.else
+PLIST_SUB+=	THEMES=""
+.endif
 
 pre-everything::
 	@${ECHO} ""
@@ -88,11 +93,14 @@ pre-everything::
 	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
+	@${ECHO} "      WITHOUT_THEMES Don't install additional themes"
 	@${ECHO} ""
 
 post-extract:
+.if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${WRKSRC}/themes
 	@cd ${WRKSRC}/themes && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${THEMEFILE} ${EXTRACT_AFTER_ARGS}
+.endif
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -106,7 +114,7 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README README.LDAP README.jp README.claws TODO TODO.jp tools/README.sylprint
+.for i in NEWS README README.jp README.claws ReleaseNotes.claws TODO TODO.jp tools/README.sylprint
 	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
@@ -115,10 +123,12 @@ post-install:
 .for i in eud2gc.py filter_conv.pl gif2xface.pl ldif-to-xml.py newscache_clean.pl
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${i} ${DATADIR}
 .endfor
+.if !defined(WITHOUT_THEMES)
 	@for d in `${FIND} ${WRKSRC}/themes`; do \
 		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/$${d#${WRKSRC}/}; else \
 		${INSTALL_DATA} $${d} ${DATADIR}/$${d#${WRKSRC}}; fi; \
 	done
+.endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
