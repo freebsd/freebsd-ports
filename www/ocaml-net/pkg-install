@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if ! grep "${PKG_PREFIX}/lib/ocaml/site-lib/netstring" ${PKG_PREFIX}/lib/ocaml/ld.conf >/dev/null 2>&1; then
+  echo "${PKG_PREFIX}/lib/ocaml/site-lib/netstring" >> ${PKG_PREFIX}/lib/ocaml/ld.conf
+fi

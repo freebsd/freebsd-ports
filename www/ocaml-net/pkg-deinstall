@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mv ${PKG_PREFIX}/lib/ocaml/ld.conf ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
+grep -v netstring ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp > ${PKG_PREFIX}/lib/ocaml/ld.conf
+rm -f ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
