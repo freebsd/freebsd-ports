@@ -27,6 +27,8 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libXbae.so.6.2 ${PREFIX}/lib/libXbae.so
 .endif
+	${RM} -rf ${PREFIX}/include/Xbae
+	${LN} -sf Xbae-4.7 ${PREFIX}/include/Xbae
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
