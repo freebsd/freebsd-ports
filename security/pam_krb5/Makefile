@@ -7,6 +7,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		1.3.r7
+PORTREVISION=	1
 CATEGORIES=		security
 MASTER_SITE_SOURCEFORGE+=	http://unc.dl.sourceforge.net/%SUBDIR%/ \
 			http://umn.dl.sourceforge.net/%SUBDIR%/ \

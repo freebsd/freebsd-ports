@@ -7,7 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.3.4
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://kadu.net/releases/

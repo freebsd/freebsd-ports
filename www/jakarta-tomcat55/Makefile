@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	5.0.18
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
 		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \

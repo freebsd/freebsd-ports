@@ -7,6 +7,7 @@
 
 PORTNAME=	txt2pdbdoc
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	palm converters
 MASTER_SITES=	http://tirian.magd.ox.ac.uk/~dom/palm/files/
 

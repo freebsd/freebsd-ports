@@ -6,6 +6,7 @@
 
 PORTNAME=	kannel
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.3glab.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}

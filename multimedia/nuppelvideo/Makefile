@@ -7,6 +7,7 @@
 
 PORTNAME=	NuppelVideo
 PORTVERSION=	0.52.a
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://frost.htu.tuwien.ac.at/~roman/nuppelvideo/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.)$/\1/}

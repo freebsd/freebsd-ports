@@ -7,6 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.0.20
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
 DISTNAME=	avidemux-2.0.20

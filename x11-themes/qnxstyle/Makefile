@@ -7,6 +7,7 @@
 
 PORTNAME=	qnxstyle
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	${KDELOOKITEM}-${PORTNAME}-${PORTVERSION}

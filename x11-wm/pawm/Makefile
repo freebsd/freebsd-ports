@@ -7,6 +7,7 @@
 
 PORTNAME=	pawm
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pleyades.net/pawm/files/
 

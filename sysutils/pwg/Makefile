@@ -7,6 +7,7 @@
 
 PORTNAME=	pwg
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.8ung.at/tuxsoft/pwg/
 

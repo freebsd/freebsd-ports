@@ -7,6 +7,7 @@
 
 PORTNAME=	libSM
 PORTVERSION=	6.0.1.p2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	larbin
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/ \
 		http://prdownloads.sourceforge.net/larbin/

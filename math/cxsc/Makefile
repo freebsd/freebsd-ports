@@ -8,6 +8,7 @@
 
 PORTNAME=	cxsc
 PORTVERSION=	2.0b
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.math.uni-wuppertal.de/wrswt/xsc/cxsc/
 DISTNAME=	${PORTNAME}-2-0-beta

@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:enlightenment/} \
 		ftp://freebsd.sinica.edu.tw/pub/clive/:ethemes

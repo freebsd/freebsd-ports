@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/503src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src

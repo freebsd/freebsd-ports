@@ -7,7 +7,7 @@
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://multignometerm.sourceforge.net/

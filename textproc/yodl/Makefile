@@ -7,6 +7,7 @@
 
 PORTNAME=	yodl
 PORTVERSION=	1.31.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.lilypond.org/pub/yodl/development/ \
 					http://www.foad.org/zsh/zsh/ \

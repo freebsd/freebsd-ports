@@ -6,6 +6,7 @@
 
 PORTNAME=	howl
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 

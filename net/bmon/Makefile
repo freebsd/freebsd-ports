@@ -7,6 +7,7 @@
 
 PORTNAME=	bmon
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://trash.net/~reeler/bmon/files/
 

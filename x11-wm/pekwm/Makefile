@@ -7,7 +7,7 @@
 
 PORTNAME=	pekwm
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.pekdon.net/files/source/
 

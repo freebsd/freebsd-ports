@@ -6,6 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.freedesktop.org/software/shared-mime-info/releases/
 DISTNAME=	shared-mime-info-${PORTVERSION}

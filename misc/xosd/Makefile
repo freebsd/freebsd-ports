@@ -7,6 +7,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}

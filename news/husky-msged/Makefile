@@ -7,7 +7,7 @@
 
 PORTNAME=	msged
 PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news mail
 MASTER_SITES=	http://www.physcip.uni-stuttgart.de:8080/fidosoft.husky/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

@@ -6,6 +6,7 @@
 
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://ypwong.org/hotkeys/${PORTVERSION}/	\
 		${MASTER_SITE_XCONTRIB}

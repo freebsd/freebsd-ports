@@ -7,6 +7,7 @@
 
 PORTNAME?=	kbedic
 PORTVERSION?=	2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://kbedic.search.bg/download/

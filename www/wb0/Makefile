@@ -7,6 +7,7 @@
 
 PORTNAME=	wb0
 PORTVERSION=	000324
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/wb0/
 EXTRACT_SUFX=	.tgz

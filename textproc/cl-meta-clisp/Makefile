@@ -6,6 +6,7 @@
 
 PORTNAME=		meta
 PORTVERSION=		20011114.1
+PORTREVISION=	1
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 			ftp://ftp.ntnu.no/pub/lisp/cclan/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	prc-tools
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR= prc-tools binutils/releases gcc/releases/gcc-2.95.3 gdb/old-releases

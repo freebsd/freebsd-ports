@@ -6,6 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.14
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
 		${MASTER_SITE_GNU_ALPHA}

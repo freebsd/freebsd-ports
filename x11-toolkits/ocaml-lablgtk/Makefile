@@ -7,6 +7,7 @@
 
 PORTNAME=	lablgtk
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/

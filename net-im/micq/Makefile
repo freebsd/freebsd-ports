@@ -7,6 +7,7 @@
 
 PORTNAME=	micq
 PORTVERSION=	0.4.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \

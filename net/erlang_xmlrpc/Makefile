@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gleipnir.com/xmlrpc/
 DISTNAME=	xmlrpc-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmwork
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 

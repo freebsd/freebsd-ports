@@ -7,7 +7,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre7

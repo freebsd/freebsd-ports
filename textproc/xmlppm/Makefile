@@ -8,6 +8,7 @@
 
 PORTNAME=	xmlppm
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/

@@ -7,7 +7,7 @@
 
 PORTNAME=	ltxml
 PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 

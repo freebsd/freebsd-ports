@@ -7,6 +7,7 @@
 
 PORTNAME=	gutenfetch
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://oak.cats.ohiou.edu/~rf358197/gutenfetch/download/ \
 		${MASTER_SITE_LOCAL}

@@ -6,6 +6,7 @@
 
 PORTNAME=	gutenbook
 PORTVERSION=	0.1.10
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.gutenbook.org/download/
 

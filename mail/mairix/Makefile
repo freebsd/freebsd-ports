@@ -7,6 +7,7 @@
 
 PORTNAME=	mairix
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/mairix/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	mktool
 PORTVERSION=	0.0.25
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.io.com/~manoj/file/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xerces_c
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://archive.apache.org/dist/xml/%SUBDIR%/ \
 		http://document-root.de/xerces-c-mirror/

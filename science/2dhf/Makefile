@@ -7,6 +7,7 @@
 
 PORTNAME=	2dhf
 PORTVERSION=	2003.02
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://staff.csc.fi/~laaksone/2d/admin/
 DISTNAME=	${PORTNAME}_02.03

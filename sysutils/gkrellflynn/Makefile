@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	alevt
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://user.exit.mytoday.de/froese/alevt/

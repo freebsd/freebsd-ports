@@ -7,6 +7,7 @@
 
 PORTNAME=		ssh_askpass_gtk2
 PORTVERSION=		0.3
+PORTREVISION=	1
 CATEGORIES=		security
 MASTER_SITES=		http://www.cgabriel.org/sw/gtk2-ssh-askpass/
 DISTNAME=		gtk2-ssh-askpass-0.3

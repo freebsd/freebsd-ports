@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
                 ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \

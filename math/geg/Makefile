@@ -7,6 +7,7 @@
 
 PORTNAME=	geg
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.infolaunch.com/~daveb/

@@ -7,6 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://jabberd.jabberstudio.org/downloads/ \
 		http://download.jabber.org/dists/1.4/final/

@@ -7,6 +7,7 @@
 
 PORTNAME=	rubber
 PORTVERSION=	0.99.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.beffara.org/pub/ \
 		http://www.beffara.org/pub/old/

@@ -7,7 +7,7 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 

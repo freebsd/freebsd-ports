@@ -17,6 +17,7 @@ RPM_SET=	e2fsprogs-1.19-4.${MACHINE_ARCH}.rpm
 .endif
 .if ${MACHINE_ARCH} == "alpha"
 PORTVERSION=	1.19.5
+PORTREVISION=	1
 RPM_SET=	e2fsprogs-1.19-5.${MACHINE_ARCH}.rpm
 .endif
 

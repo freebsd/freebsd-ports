@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ircnet.de/home/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-urlslave

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmcliphist
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
 

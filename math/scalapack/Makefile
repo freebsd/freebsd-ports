@@ -7,6 +7,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTNAME=	SCALAPACK

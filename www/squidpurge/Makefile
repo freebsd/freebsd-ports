@@ -7,7 +7,7 @@
 
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.cache.dfn.de/DFN-Cache/Development/Purge/ \
 		http://www.wa.apana.org.au/~dean/sources/ \

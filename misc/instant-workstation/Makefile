@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-workstation
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 

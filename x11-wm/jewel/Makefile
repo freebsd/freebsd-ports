@@ -8,6 +8,7 @@
 
 PORTNAME=	jewel
 PORTVERSION=	0.12.40
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	tsocks
 PORTVERSION=	1.8.b5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp1.sourceforge.net/tsocks/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	flash
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
 		ftp://ftp.netsoc.ucd.ie/pub/computing/flash/

@@ -6,6 +6,7 @@
 
 PORTNAME=	liblrdf
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://plugin.org.uk/releases/lrdf/
 

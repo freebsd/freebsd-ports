@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 

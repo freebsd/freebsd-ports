@@ -7,7 +7,7 @@
 
 PORTNAME=		skip
 PORTVERSION=		1.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 # Note: the original source comes from Sun, via this web page:
 #    http://skip.incog.com/src-form.html

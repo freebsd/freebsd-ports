@@ -7,7 +7,7 @@
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://bonehunter.rulez.org/pub/ccze/stable/
 

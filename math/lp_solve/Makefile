@@ -7,6 +7,7 @@
 
 PORTNAME=	lp_solve
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/lp_solve/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

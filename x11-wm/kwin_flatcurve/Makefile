@@ -6,6 +6,7 @@
 
 PORTNAME=	kwin_flatcurve
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://kde-look.org/content/files/
 DISTNAME=	4365-flatcurve-${PORTVERSION}

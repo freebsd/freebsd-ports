@@ -7,6 +7,7 @@
 
 PORTNAME=	yalias
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	keylaunch
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.mired.org/downloads/
 

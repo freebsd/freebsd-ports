@@ -7,6 +7,7 @@
 
 PORTNAME=	xrestop
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.freedesktop.org/Software/${PORTNAME}/
 

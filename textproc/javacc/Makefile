@@ -7,6 +7,7 @@
 
 PORTNAME=	javacc
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://javacc.dev.java.net/files/documents/17/685/
 

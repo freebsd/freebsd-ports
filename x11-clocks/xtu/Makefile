@@ -7,6 +7,7 @@
 
 PORTNAME=	xtu
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://core.de/~coto/projects/xtu/
 

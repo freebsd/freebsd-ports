@@ -7,6 +7,7 @@
 
 PORTNAME=	ifd-gempc410
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/ifd-GemPC/
 DISTNAME=	ifd-gempc-${PORTVERSION}

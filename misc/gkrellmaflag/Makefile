@@ -7,6 +7,7 @@
 
 PORTNAME=	aflag
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.geocities.com/saintdead/
 PKGNAMEPREFIX=	gkrellm

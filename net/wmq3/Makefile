@@ -7,6 +7,7 @@
 
 PORTNAME=	wmq3
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://www.soberart.de/down/
 

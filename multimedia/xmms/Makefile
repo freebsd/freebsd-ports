@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	t-gnus
 PORTVERSION=	${TGNUSVERSION:S/_/./g:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	news mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.16/snapshots/ \
 		http://cvs.m17n.org/archives/gnus/

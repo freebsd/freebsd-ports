@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomelibs
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	x11 linux
 
 MAINTAINER=	taoka@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	carthage
 PORTVERSION=	1.0 # Cannot find any version information
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Software/carthage/
 DISTNAME=	${PORTNAME}

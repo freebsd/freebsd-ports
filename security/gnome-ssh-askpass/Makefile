@@ -6,6 +6,7 @@
 
 PORTNAME=	gnome-ssh-askpass
 PORTVERSION=	3.6p1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/

@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		${MASTER_SITE_NETSCAPE}

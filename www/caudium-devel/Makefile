@@ -7,6 +7,7 @@
 
 PORTNAME=	caudium-devel
 PORTVERSION=	1.3.21.20031129
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	libXcursor
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 

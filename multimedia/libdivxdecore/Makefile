@@ -7,6 +7,7 @@
 
 PORTNAME=	libdivxdecore
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 

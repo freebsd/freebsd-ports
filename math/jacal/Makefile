@@ -7,6 +7,7 @@
 
 PORTNAME=	jacal
 PORTVERSION=	1b2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	jacal1b2

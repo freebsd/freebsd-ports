@@ -7,6 +7,7 @@
 
 PORTNAME=	papaya
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gtk-papaya.org/downloads/source/
 DISTNAME=	papaya-src-${PORTVERSION}

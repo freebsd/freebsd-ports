@@ -6,6 +6,7 @@
 
 PORTNAME=	chemtool
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 DISTNAME=	ct161gtk2

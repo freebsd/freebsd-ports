@@ -7,7 +7,7 @@
 
 PORTNAME=	libjtree
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
 		ftp://ftp.uniovi.es/pub/unix/mail/

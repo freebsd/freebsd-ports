@@ -7,6 +7,7 @@
 
 PORTNAME=	ggsd
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 DISTNAME=	ggsd

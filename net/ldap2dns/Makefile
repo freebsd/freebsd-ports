@@ -7,6 +7,7 @@
 
 PORTNAME=       ldap2dns
 PORTVERSION=    0.3.1
+PORTREVISION=	1
 CATEGORIES=     net
 MASTER_SITES=   http://ldap2dns.tiscover.com/
 

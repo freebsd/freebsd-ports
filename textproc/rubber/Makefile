@@ -8,6 +8,7 @@
 
 PORTNAME=	rubber
 PORTVERSION=	0.99.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ebeffara.free.fr/pub/
 

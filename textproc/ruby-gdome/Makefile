@@ -7,7 +7,7 @@
 
 PORTNAME=	gdome
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://download.berlios.de/libgdome-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

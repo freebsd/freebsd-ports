@@ -7,6 +7,7 @@
 
 PORTNAME=		cryptlib
 PORTVERSION=		3.1
+PORTREVISION=	1
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl31

@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.esiee.fr/~puffin/musicindex/
 DISTNAME=	libapache-mod-musicindex_${PORTVERSION}

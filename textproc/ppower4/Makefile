@@ -7,6 +7,7 @@
 
 PORTNAME=	ppower4
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www-sp.iti.informatik.tu-darmstadt.de/software/ppower4/
 DISTFILES=	pp4sty.zip pp4p.jar manual.pdf leveldemo.zip

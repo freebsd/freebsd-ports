@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/gnome/
 

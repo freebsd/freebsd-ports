@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-swallow
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www-unix.oit.umass.edu/~tetron/technology/swallow/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	conference
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.jabber.org/dists/1.4/final/old/
 PKGNAMEPREFIX=	jabber-

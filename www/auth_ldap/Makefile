@@ -7,7 +7,7 @@
 
 PORTNAME=	auth_ldap
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 

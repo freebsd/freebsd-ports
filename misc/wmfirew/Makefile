@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfirew
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 

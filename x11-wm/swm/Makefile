@@ -7,6 +7,7 @@
 
 PORTNAME=	swm
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz

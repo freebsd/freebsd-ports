@@ -7,7 +7,7 @@
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 

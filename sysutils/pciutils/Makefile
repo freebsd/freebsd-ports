@@ -7,6 +7,7 @@
 
 PORTNAME=	pciutils
 PORTVERSION=	2.1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kerneled.com/freebsd/ports/ \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \

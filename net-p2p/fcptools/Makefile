@@ -7,6 +7,7 @@
 
 PORTNAME=	fcptools
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://freenetproject.org/snapshots/
 EXTRACT_SUFX=	.tgz

@@ -7,6 +7,7 @@
 
 PORTNAME=	velocity
 PORTVERSION=	0.1.0b
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://homepages.ius.edu/kydavis/velocity/
 DISTNAME=	velocity-0.1.0beta

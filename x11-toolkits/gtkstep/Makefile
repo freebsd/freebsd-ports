@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkstep
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gtk-engines-gtkstep

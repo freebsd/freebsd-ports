@@ -5,6 +5,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 

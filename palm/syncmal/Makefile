@@ -7,6 +7,7 @@
 
 PORTNAME=	syncmal
 PORTVERSION=	0.71
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/syncmal/
 DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}

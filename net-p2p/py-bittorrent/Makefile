@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://bitconjurer.org/BitTorrent/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -6,6 +6,7 @@
 
 PORTNAME=	gchempaint
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://jean.brefort.free.fr/info/gcp/download/

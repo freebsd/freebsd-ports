@@ -8,6 +8,7 @@
 
 PORTNAME=	enjoympeg
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freenet.de/for_Ki/
 

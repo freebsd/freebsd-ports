@@ -6,6 +6,7 @@
 
 PORTNAME=	jabber-msn
 PORTVERSION=	1.2.8.rc1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://msn-transport.jabberstudio.org/
 DISTNAME=	msn-transport-${PORTVERSION:S/.rc/rc/}

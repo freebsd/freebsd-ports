@@ -7,6 +7,7 @@
 
 PORTNAME=	hinfo
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net perl5
 # note: the "true" MASTER_SITE is http://www.blars.org, but
 # due to policies on that site, it is not reachable from the

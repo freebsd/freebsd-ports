@@ -7,6 +7,7 @@
 
 PORTNAME=	gnometelnet
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	bamg
 PORTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/bamg/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

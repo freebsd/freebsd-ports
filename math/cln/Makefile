@@ -8,6 +8,7 @@
 
 PORTNAME=	cln
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		ftp://ftp.santafe.edu/pub/gnu/ \

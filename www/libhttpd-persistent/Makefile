@@ -7,6 +7,7 @@
 
 PORTNAME=	libhttpd
 PORTVERSION=	${VERSION}${LEVEL}
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 PKGNAMESUFFIX=	-persistent

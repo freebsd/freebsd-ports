@@ -8,6 +8,7 @@
 
 PORTNAME=	xloops-ginac
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 PORTREVISOIN=	3
 CATEGORIES=	science
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/

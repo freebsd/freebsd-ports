@@ -7,7 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	2.3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/tripwire/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]*$/-&/:C/-\./-/}

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.98.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/ \
 		# http://www.gnomemeeting.org/downloads/0.98.0/sources/

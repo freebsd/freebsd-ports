@@ -6,7 +6,7 @@
 
 PORTNAME=	opengroupware
 PORTVERSION=	1.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc www linux
 MASTER_SITES=	http://www.opengroupware.org/packages/rpm/:ogo \
 		http://www.opengroupware.org/sources/:ngo \

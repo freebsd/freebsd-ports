@@ -7,7 +7,7 @@
 
 PORTNAME=	stuphead
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://stuphead.asplinux.ru/stuphead/
 

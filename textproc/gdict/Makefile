@@ -7,6 +7,7 @@
 
 PORTNAME=	gdict
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	smb2www
 PORTVERSION=	0.0.980804
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://us1.samba.org/samba/smb2www/ \
 		http://us2.samba.org/samba/smb2www/ \

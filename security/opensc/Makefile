@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc.org/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	jonah
 PORTVERSION=	0.0.3.020629
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pompo.net/horde/jonah/
 

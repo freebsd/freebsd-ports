@@ -7,7 +7,7 @@
 
 PORTNAME=	dhcpconf
 PORTVERSION=	0.7.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	http://dhcp-conf.sourceforge.net/
 DISTNAME=	dhcp-conf

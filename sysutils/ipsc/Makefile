@@ -7,6 +7,7 @@
 
 PORTNAME=	ipsc
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://ipsc.sourceforge.net/dist/ipsc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

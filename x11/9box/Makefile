@@ -7,6 +7,7 @@
 
 PORTNAME=	9box
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freesoftware.fsf.org/download/9box/ \
 		http://savannah.nongnu.org/download/9box/

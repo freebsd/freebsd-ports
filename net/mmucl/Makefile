@@ -7,6 +7,7 @@
 
 PORTNAME=	mmucl
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/mmucl/
 

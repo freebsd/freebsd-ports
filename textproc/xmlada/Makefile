@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlada
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libre.act-europe.fr/xmlada/
 DISTNAME=	XmlAda-${PORTVERSION}

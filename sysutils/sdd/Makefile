@@ -6,6 +6,7 @@
 
 PORTNAME=	sdd
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 

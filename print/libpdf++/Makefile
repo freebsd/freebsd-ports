@@ -8,6 +8,7 @@
 
 PORTNAME=	libpdf++
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://libpdfxx.sourceforge.net/

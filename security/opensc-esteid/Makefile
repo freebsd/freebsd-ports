@@ -7,6 +7,7 @@
 
 PORTNAME=	esteid
 PORTVERSION=	0.7.0.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://marie.vtl.ee/esteid/
 PKGNAMEPREFIX=	opensc-

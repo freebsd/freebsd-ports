@@ -7,6 +7,7 @@
 
 PORTNAME=	emc2
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/emc2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}c

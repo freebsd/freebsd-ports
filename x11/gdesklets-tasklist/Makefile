@@ -7,6 +7,7 @@
 
 PORTNAME=	tasklist
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

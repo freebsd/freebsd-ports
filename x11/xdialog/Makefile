@@ -8,6 +8,7 @@
 
 PORTNAME=	xdialog
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	udmsearch
 PORTVERSION=	3.0.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/	\
 		http://udmsearch.real-time.com/Download/	\

@@ -6,6 +6,7 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.1.30
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.redhat.com/pub/%SUBDIR%/ \
 		ftp://ftp.sourceforge.net/pub/mirrors/redhat/%SUBDIR%/ \

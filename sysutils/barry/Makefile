@@ -7,6 +7,7 @@
 
 PORTNAME=	barry
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 		http://freebsd.so14k.com/barry/

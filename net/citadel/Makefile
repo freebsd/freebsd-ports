@@ -7,7 +7,7 @@
 
 PORTNAME=	citadel
 PORTVERSION=	5.80
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://uncensored.citadel.org/pub/citadel/ \
 		ftp://ftp.tux.org/pub/net/citadel/ \

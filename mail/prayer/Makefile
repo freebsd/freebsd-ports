@@ -7,6 +7,7 @@
 
 PORTNAME=	prayer
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 # ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/prayer-1.0.8.tar.gz

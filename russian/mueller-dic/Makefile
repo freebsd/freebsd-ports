@@ -7,6 +7,7 @@
 
 PORTNAME=	mueller-dic
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	http://mueller-dic.chat.ru/
 DISTFILES=	Mueller7accentGPL.tgz yusupov_mf.tgz

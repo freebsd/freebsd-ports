@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=   http://www.river-bank.demon.co.uk/download/PyKDE2/ \
 		http://www.river-bank.demon.co.uk/download/PyQt/:qt

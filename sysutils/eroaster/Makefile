@@ -7,7 +7,7 @@
 
 PORTNAME=	eroaster
 PORTVERSION=	2.2.0.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/

@@ -6,6 +6,7 @@
 
 PORTNAME=	smunge
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.i2pi.com/smunge/
 

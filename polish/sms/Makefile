@@ -7,6 +7,7 @@
 
 PORTNAME=	sms
 PORTVERSION=	1.9.2d
+PORTREVISION=	1
 CATEGORIES=	polish
 MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	spooles
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

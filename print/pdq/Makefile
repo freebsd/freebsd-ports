@@ -7,6 +7,7 @@
 
 PORTNAME=	pdq
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://pdq.sourceforge.net/ftp/
 EXTRACT_SUFX=	.tgz

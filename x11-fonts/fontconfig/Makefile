@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.90
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://pdx.freedesktop.org/software/fontconfig/releases/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	xalan-c
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xalan-c/source xalan-c/binaries

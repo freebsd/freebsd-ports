@@ -6,6 +6,7 @@
 
 PORTNAME=	krdesktop
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.fruitsalad.org/people/mdouhan/krdesktop/
 DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}

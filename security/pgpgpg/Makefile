@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://www.nessie.de/mroth/%SUBDIR%/

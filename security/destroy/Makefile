@@ -7,6 +7,7 @@
 
 PORTNAME=	destroy
 PORTVERSION=	20030307
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.freebsdhackers.net/destroy/
 

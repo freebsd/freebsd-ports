@@ -7,7 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \

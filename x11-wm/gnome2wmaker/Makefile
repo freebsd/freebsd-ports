@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2wmaker
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ulli.on.openave.net/gnome2wmaker/
 

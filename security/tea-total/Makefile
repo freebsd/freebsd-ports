@@ -7,7 +7,7 @@
 
 PORTNAME=	tea-total
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.alexholden.net/pub/${PORTNAME}/
 

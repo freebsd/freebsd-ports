@@ -8,6 +8,7 @@
 
 PORTNAME=	xmlpp
 PORTVERSION=	0.7a
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.root.at/download/gpl/
 

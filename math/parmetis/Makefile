@@ -7,6 +7,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/parmetis/files/
 

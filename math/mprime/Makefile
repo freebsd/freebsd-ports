@@ -7,6 +7,7 @@
 
 PORTNAME=	mprime
 PORTVERSION=	0.0.${SOURCE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math benchmarks
 MASTER_SITES=	ftp://mersenne.org/gimps/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}

@@ -6,6 +6,7 @@
 
 PORTNAME=		ksig
 PORTVERSION=		0.1
+PORTREVISION=	1
 CATEGORIES=		mail kde
 MASTER_SITES=		http://www.slackorama.net/oss/ksig/
 

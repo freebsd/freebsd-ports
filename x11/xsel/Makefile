@@ -8,6 +8,7 @@
 
 PORTNAME=	xsel
 PORTVERSION=	0.04.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.niksula.cs.hut.fi/~vherva/xsel/
 DISTFILES=	xsel.c xsel.man

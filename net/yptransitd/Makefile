@@ -7,6 +7,7 @@
 
 PORTNAME=	yptransitd
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://unc.dl.sourceforge.net/sourceforge/yptransitd/
 
