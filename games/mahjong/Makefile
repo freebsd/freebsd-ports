@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	games net
 MASTER_SITES=	http://www.dcs.ed.ac.uk/home/jcb/stevens-bradfield/MahJong/Downloads/
 DISTNAME=	mj-${PORTVERSION}-src
@@ -21,9 +21,5 @@ USE_GMAKE=	yes
 INSTALL_TARGET=	install install.man
 
 MAN1=		xmj.1 mj-player.1 mj-server.1
-
-post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s|%%GTK_CONFIG%%|${GTK_CONFIG}|g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
  # for Windows.)
  # The binaries go into  $(DESTDIR)$(BINDIR)
 -DESTDIR = /usr/local/
-+DESTDIR = %%PREFIX%%/
++DESTDIR = ${PREFIX}/
  BINDIR = bin
  # The man pages go into $(DESTDIR)$(MANDIR)
  MANDIR = man/man1
@@ -24,8 +24,8 @@
  # Not Windows. If gtk+ is properly installed, this is all that's needed.
 -EXTRA_INCLUDES=`gtk-config --cflags`
 -GUILIBS=`gtk-config --libs`
-+EXTRA_INCLUDES=`%%GTK_CONFIG%% --cflags`
-+GUILIBS=`%%GTK_CONFIG%% --libs`
++EXTRA_INCLUDES=`${GTK_CONFIG} --cflags`
++GUILIBS=`${GTK_CONFIG} --libs`
  endif
  
  # We use gcc to link as well
