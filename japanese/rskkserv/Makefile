@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.94.0
-PORTREVISION=	1
+PORTVERSION=	2.94.12
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
@@ -26,7 +25,9 @@ CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
 		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \
 		--with-cachedir="${SKKJISYO_BASE}" \
 		--with-logdir="/var/log" \
+		--with-piddir="/var/run" \
 		--sbindir="${PREFIX}/libexec"
+MAKE_ARGS=	SKKSERV=rskkserv
 
 SKKJISYO_SIZE?=	L
 SKKJISYO_BASE=	${LOCALBASE}/share/skk
@@ -34,12 +35,12 @@ SKKJISYO=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
-MAKE_ARGS=	SKKSERV=rskkserv
 
 DOCS_EN=	ChangeLog
 DOCS_JA=	README		TODO
 
 post-patch:
+	${RUBY} -i -ne 'if $$. == 1 then puts "#!@RUBY@" else puts $$_ end' ${WRKSRC}/skkserv.rb.in
 	${RUBY} -i -p \
 		-e 'gsub %r:/usr/share/skk:, %q:${SKKJISYO_BASE}:' \
 		-e 'gsub %r:/opt/epwing/(\w+):, %q:${LOCALBASE}/share/dict/\\1-fpw:' \
@@ -54,22 +55,26 @@ post-install:
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		( \
 		${ECHO} "#!/bin/sh"; \
-		${ECHO} 'case $$1 in'; \
+		${ECHO} "case \$$1 in"; \
 		${ECHO} "start)"; \
 		${ECHO} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then"; \
-		${ECHO} "		${ECHO} -n ' rskkserv';"; \
-		${ECHO} "		if [ ${SKKJISYO_BASE}/${SKKJISYO} -nt ${SKKJISYO_BASE}/${SKKJISYO}.a ]; then"; \
-		${ECHO} "			${ECHO} -n ' (updading index cache..)'; "; \
-		${ECHO} "		fi; "; \
-		${ECHO} "		${PREFIX}/libexec/rskkserv"; \
+		${ECHO} "		${ECHO} -n ' rskkserv: '"; \
+		${ECHO} "		${PREFIX}/libexec/rskkserv --verbose"; \
 		${ECHO} "	fi"; \
 		${ECHO} "	;;"; \
 		${ECHO} "stop)"; \
+		${ECHO} "	pidfile=/var/run/rskkserv.pid"; \
+		${ECHO} "	if [ -f \$$pidfile ]; then"; \
+		${ECHO} "	    kill \`cat \$$pidfile\` && echo -n ' rskkserv'"; \
+		${ECHO} "	    ${RM} \$$pidfile"; \
+		${ECHO} "	else"; \
+		${ECHO} "	    ${ECHO} ' rskkserv: not running'"; \
+		${ECHO} "	fi"; \
 		${ECHO} "	;;"; \
 		${ECHO} "*)"; \
-		${ECHO} '	${ECHO} "usage: $$0 {start|stop}" 1>&2'; \
+		${ECHO} "	${ECHO} \"usage: \$$0 {start|stop}\" 1>&2"; \
 		${ECHO} "	;;"; \
-		${ECHO} 'esac'; \
+		${ECHO} "esac"; \
 		) > ${STARTUP_SCRIPT}; \
 		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi
