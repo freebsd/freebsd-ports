@@ -8,7 +8,7 @@
 PORTNAME=	ntp
 PORTVERSION=	4.2.0
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
@@ -19,23 +19,32 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 LATEST_LINK=	${PORTNAME}
-# ntp's configure script created by autoconf 2.14.1 doesn't work
-# if GNU_CONFIGURE is defined
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(ENABLE_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
 .endif
 
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--without-crypto
+PLIST_SUB+=		SSL="@comment "
+.else
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
+			--with-openssl-libdir=${OPENSSLLIB}
+PLIST_SUB+=		SSL=""
+.endif
+
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ntp
-	${TAR} -C ${WRKSRC}/html -cf - . | \
-		${TAR} -C ${PREFIX}/share/doc/ntp --unlink -xf -
-	${FIND} ${PREFIX}/share/doc/ntp | \
-		${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	${FIND} ${PREFIX}/share/doc/ntp -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${MKDIR} ${DOCSDIR}
+	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@cd ${WRKSRC}/html && ${FIND} . -print | \
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
