@@ -59,7 +59,7 @@ while [ "$1" ]; do
 			echo "GD is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
-			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
+			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd"
 			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			GD=1
 			;;
