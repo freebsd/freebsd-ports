@@ -93,5 +93,7 @@ post-patch:
 		${WRKSRC}/hacks/glx/klein.c
 	@${REINPLACE_CMD} -E -e 's|^[[:space:]]*GL_LIBS="${PTHREAD_LIBS}"|#|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD}  -e 's|<util.h>|<libutil.h>|' \
+		${WRKSRC}/hacks/phosphor.c ${WRKSRC}/hacks/apple2-main.c
 
 .include <bsd.port.post.mk>
