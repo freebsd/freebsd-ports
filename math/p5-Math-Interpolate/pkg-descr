@@ -1,24 +1,24 @@
-This module contains several useful routines for interpolating data
-sets and finding where a given value lies in a sorted list.
-The first is a subroutine used to locate a position in an array of
-values where a given value would fit using bisection. It has been
-designed to be efficient in the common situation that it is called
-repeatedly. The user can supply a different set of comparison
-operators to replace the standard < and <=. For example, given a
-list (1, 2, 5, 8, 15) and the number 9.5 it would return 3.
+* This module contains several useful routines for interpolating
+  data sets and finding where a given value lies in a sorted list.
+  The first is a subroutine used to locate a position in an array
+  of values where a given value would fit using bisection. It has
+  been designed to be efficient in the common situation that it is
+  called repeatedly. The user can supply a different set of comparison
+  operators to replace the standard < and <=. For example, given a
+  list (1, 2, 5, 8, 15) and the number 9.5 it would return 3.
+* The remaining routines all are related to interpolating sets of
+  (x,y) data pairs. They all take a list of (x,y) data pairs given
+  another x value, return a sensible y value using the list of (x,y)
+  data pairs. Three different interpolating functions are provided.
+  The first, called a constant interpolator, assumes that the
+  function being interpolated moves in non-linear jumps from one
+  value to another. The interpolated value for some value x is the
+  y value of the neighboring (x,y) to the left of the given x. The
+  second interpolator performs a linear interpolation between the
+  neighboring points. The third interpolator is called the robust
+  interpolator and interpolates a smooth curve between all of the
+  (x,y) pairs. To do the interpolation, it first calculates some
+  reasonable derivatives at the (x,y) pairs. The robust interpolator
+  can also use derivative information supplied by the user.
 
-The remaining routines all are related to interpolating sets of
-(x,y) data pairs. They all take a list of (x,y) data pairs given
-another x value, return a sensible y value using the list of (x,y)
-data pairs. Three different interpolating functions are provided.
-The first, called a constant interpolator, assumes that the function
-being interpolated moves in non-linear jumps from one value to
-another. The interpolated value for some value x is the y value of
-the neighboring (x,y) to the left of the given x. The second
-interpolator performs a linear interpolation between the neighboring
-points. The third interpolator is called the robust interpolator
-and interpolates a smooth curve between all of the (x,y) pairs.
-To do the interpolation, it first calculates some reasonable
-derivatives at the (x,y) pairs. If you have measured your own
-derivative information, you can supply it to the robust interpolator
-and it will use it.
+WWW: http://search.cpan.org/search?dist=Math-Interpolate
