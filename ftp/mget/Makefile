@@ -7,23 +7,26 @@
 #
 
 PORTNAME=	mget
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://www.cse.iitk.ac.in/users/dbera/
+MASTER_SITES=	http://cs-people.bu.edu/dbera/activities/projects/mget/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Multi Threaded Wget
+COMMENT=	Multithreaded commandline web-download manager
 
-PLIST_FILES=	bin/mget
 USE_GETOPT_LONG=	yes
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
-		${PTHREAD_CFLAGS:S/"//g}
-LDFLAGS+=	${PTHREAD_LIBS:S/"//g}
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+
+MAN1=		mget.1
+PLIST_FILES=	bin/mget
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o mget *.c ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mget ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mget.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
