@@ -44,7 +44,6 @@ cvs_acls	CVSROOT cvs_acls.pl
 cvsedit		CVSROOT cvsedit
 cvswrappers	CVSROOT cvswrappers
 editinfo	CVSROOT editinfo
-log4sh		ports/devel/log4sh
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
 modules		CVSROOT modules
@@ -5305,6 +5304,7 @@ log4cplus	ports/devel/log4cplus
 log4cpp		ports/devel/log4cpp
 log4cxx		ports/devel/log4cxx
 log4j		ports/devel/log4j
+log4sh		ports/devel/log4sh
 log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
 login.app	ports/x11/login.app
