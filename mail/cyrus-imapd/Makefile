@@ -24,6 +24,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
 USE_PERL5=	yes
+USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
@@ -60,9 +61,8 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 		notes os overview questions readme sieve-protocol sieve specs
 
 post-patch:
-		@${SED} -e "s|/etc/|${PREFIX}/etc/|" ${WRKSRC}/tools/mkimap \
-			> ${WRKSRC}/tools/mkimap.new
-		@${MV} ${WRKSRC}/tools/mkimap.new ${WRKSRC}/tools/mkimap
+		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
+			${WRKSRC}/tools/mkimap
 
 pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8

@@ -24,6 +24,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2
 
 USE_PERL5=	yes
+USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-user=${CYRUS_USER} \
@@ -92,17 +93,13 @@ post-patch:
 			${.CURDIR}/pkg-install > ${PKGINSTALL}
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
 			${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-		@${SED} -e "s|/etc/|${PREFIX}/etc/|" \
-			-e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
-			-e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
-			${WRKSRC}/tools/mkimap > ${WRKSRC}/tools/mkimap.new
-		@${MV} ${WRKSRC}/tools/mkimap.new ${WRKSRC}/tools/mkimap
+		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
+				  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+				  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
+			${WRKSRC}/tools/mkimap
 		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 .if ${PERL_LEVEL} < 500600
-		@${SED} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
-			${WRKSRC}/perl/sieve/scripts/sieveshell.pl \
-			> ${WRKSRC}/perl/sieve/scripts/sieveshell.pl.new
-		@${MV} ${WRKSRC}/perl/sieve/scripts/sieveshell.pl.new \
+		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
 
