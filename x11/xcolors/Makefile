@@ -3,13 +3,13 @@
 # Date created:		10 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:44:10 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/17 12:33:51 asami Exp $
 #
 
 DISTNAME=	xcolors
 PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.x.org/pub/R6untarred/contrib/programs/
+MASTER_SITES=	ftp://ftp.tut.ac.jp/pub/X11/X11R6/contrib/programs/
 
 MAINTAINER=	asami@FreeBSD.ORG
 
