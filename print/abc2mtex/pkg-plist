@@ -9,3 +9,4 @@ share/texmf/doc/abc2mtex/examples/Strspys.abc
 share/texmf/tex/abc2mtex_header.tex
 @dirrm share/texmf/doc/abc2mtex/examples
 @dirrm share/texmf/doc/abc2mtex
+@dirrm share/texmf/doc
