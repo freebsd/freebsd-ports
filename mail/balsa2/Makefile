@@ -10,6 +10,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
+DISTNAME=	balsa-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
