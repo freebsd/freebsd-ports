@@ -3,7 +3,7 @@
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/11/12 02:17:29 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/18 13:55:48 asami Exp $
 #
 
 DISTNAME=       hpack79src
@@ -14,7 +14,7 @@ EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-RESTRICTED=	"Using this code inside USA will violate RSA copyright."
+RESTRICTED=	"Using this code inside USA will violate RSA copyright"
 NO_WRKSUBDIR=	yes
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd

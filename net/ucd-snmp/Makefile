@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.6 1996/12/01 01:20:15 obrien Exp $
+# $Id: Makefile,v 1.7 1996/12/07 11:26:43 max Exp $
 #
 
 DISTNAME=	ucd-snmp-3.1
@@ -12,7 +12,7 @@ MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
-NO_PACKAGE=	"Asks too many questions."
+NO_PACKAGE=	"Asks too many questions"
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE= yes
 MAN1=		snmpget.1 snmpset.1 snmpwalk.1 snmpbulkwalk.1 \

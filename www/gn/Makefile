@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.17 1996/11/18 11:40:56 asami Exp $
+# $Id: Makefile,v 1.18 1996/12/07 11:26:57 max Exp $
 #
 
 DISTNAME=       gn-2.24
@@ -15,7 +15,7 @@ MAINTAINER=	adam@veda.is
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=	"Compiled in hostnames."
+NO_PACKAGE=	"Compiled in hostnames"
 WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
 
 INETD_CONF=	/etc/inetd.conf

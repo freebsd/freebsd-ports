@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.17 1996/11/18 11:37:39 asami Exp $
+# $Id: Makefile,v 1.18 1996/12/07 11:26:46 max Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -17,7 +17,7 @@ PATCHFILES=	select-loop-bug.patch innxmit-long-lines.patch
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-NO_PACKAGE=	"Too many compile-time options."
+NO_PACKAGE=	"Too many compile-time options"
 NO_WRKSUBDIR=	yes
 
 pre-configure:
