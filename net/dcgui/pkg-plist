@@ -1,1 +1,23 @@
-bin/dcgui
+bin/dcgui-qt
+share/dcgui/emoticons/emotes.xml
+share/dcgui/emoticons/emoticons.xpm
+share/dcgui/translation/dcgui.cs.qm
+share/dcgui/translation/dcgui.da.qm
+share/dcgui/translation/dcgui.de.qm
+share/dcgui/translation/dcgui.en_GB.qm
+share/dcgui/translation/dcgui.es.qm
+share/dcgui/translation/dcgui.fi.qm
+share/dcgui/translation/dcgui.fr.qm
+share/dcgui/translation/dcgui.hu.qm
+share/dcgui/translation/dcgui.is.qm
+share/dcgui/translation/dcgui.it.qm
+share/dcgui/translation/dcgui.lv.qm
+share/dcgui/translation/dcgui.nb.qm
+share/dcgui/translation/dcgui.nl.qm
+share/dcgui/translation/dcgui.pl.qm
+share/dcgui/translation/dcgui.ro.qm
+share/dcgui/translation/dcgui.sk.qm
+share/dcgui/translation/dcgui.sv.qm
+@dirrm share/dcgui/translation
+@dirrm share/dcgui/emoticons
+@dirrm share/dcgui

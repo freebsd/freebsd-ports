@@ -1,0 +1,7 @@
+**********************************************************************
+
+ dcgui might dump core when being closed. However this has no impact
+ on functionality as well as saving settings. This is a known problem
+ and being worked on.
+
+**********************************************************************
