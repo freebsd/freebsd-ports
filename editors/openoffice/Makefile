@@ -61,7 +61,12 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
-LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
+.if defined(WITH_DEBUG)
+DMAKE=		"dmake debug=true"
+.else
+DMAKE=		"dmake strip=true"
+.endif
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -201,13 +206,8 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
-.if defined(WITH_DEBUG)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && dmake debug=true'
-.else
-	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && dmake strip=true'
-.endif
+		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
