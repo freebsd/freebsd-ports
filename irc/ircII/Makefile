@@ -3,13 +3,14 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:48:07 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/15 05:41:36 asami Exp $
 #
 
-DISTNAME=	ircii-2.8
+DISTNAME=	ircii-2.8.2
 CATEGORIES+=	networking
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
-DISTFILES=	ircii-2.8.tar.gz ircii-2.8help.tar.gz
+DISTFILES=	ircii-2.8.2.tar.gz ircii-2.8help.tar.gz
+MAINTAINER=	torstenb@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 
