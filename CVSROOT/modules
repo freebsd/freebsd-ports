@@ -3675,6 +3675,7 @@ libcam		src/lib/libcam
 libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
+libchk		ports/sysutils/libchk
 libcii		ports/devel/libcii
 libcipher	src/secure/lib/libcipher
 libcom_err	src/lib/libcom_err
