@@ -27,17 +27,14 @@ CTYPE		"ctype functions" ${WITH_CTYPE:-OFF} \
 CURL		"CURL support" ${WITH_CURL:-OFF} \
 DBASE		"dBase library support" ${WITH_DBASE:-OFF} \
 DBX		"dbx support" ${WITH_DBX:-OFF} \
-DOMXML		"DOM support" ${WITH_DOMXML:-OFF} \
-DOMXSLT		"DOM XSLT and EXSLT support (implies DOMXML)" ${WITH_DOMXSLT:-OFF} \
+DOM		"DOM support" ${WITH_DOM:-OFF} \
 EXIF		"EXIF support" ${WITH_EXIF:-OFF} \
 FILEPRO		"filePro support" ${WITH_FILEPRO:-OFF} \
-FRIBIDI		"FriBidi support" ${WITH_FRIBIDI:-OFF} \
 FTP		"FTP support" ${WITH_FTP:-OFF} \
 GD		"GD library support" ${WITH_GD:-OFF} \
 GDBM		"GDBM database support (dba)" ${WITH_GDBM:-OFF} \
 GETTEXT		"gettext library support" ${WITH_GETTEXT:-OFF} \
 GMP		"GNU MP support" ${WITH_GMP:-OFF} \
-HYPERWAVE	"Hyperwave support" ${WITH_HYPERWAVE:-OFF} \
 ICONV		"iconv support" ${WITH_ICONV:-OFF} \
 IMAP		"IMAP support" ${WITH_IMAP:-OFF} \
 INIFILE		"INI file support (dba)" ${WITH_INIFILE:-OFF} \
@@ -54,7 +51,6 @@ NCURSES		"ncurses support (CLI only)" ${WITH_NCURSES:-OFF} \
 OPENLDAP	"OpenLDAP support" ${WITH_OPENLDAP:-OFF} \
 OPENSSL		"OpenSSL support" ${WITH_OPENSSL:-OFF} \
 ORACLE		"Oracle support" ${WITH_ORACLE:-OFF} \
-OVERLOAD	"user-space object overloading support" ${WITH_OVERLOAD:-OFF} \
 PCNTL		"pcntl support (CLI only)" ${WITH_PCNTL:-OFF} \
 PCRE		"Perl Compatible Regular Expression support" ${WITH_PCRE:-OFF} \
 PDFLIB		"PDFlib support" ${WITH_PDFLIB:-OFF} \
@@ -65,8 +61,10 @@ READLINE	"readline support (CLI only)" ${WITH_READLINE:-OFF} \
 RECODE		"recode support" ${WITH_RECODE:-OFF} \
 SESSION		"session support" ${WITH_SESSION:-OFF} \
 SHMOP		"shmop support" ${WITH_SHMOP:-OFF} \
+SIMPLEXML	"simplexml support" ${WITH_SIMPLEXML:-OFF} \
 SNMP		"SNMP support (implies OPENSSL)" ${WITH_SNMP:-OFF} \
 SOCKETS		"sockets support" ${WITH_SOCKETS:-OFF} \
+SQLITE		"sqlite support" ${WITH_SQLITE:-OFF} \
 SYBASEDB	"Sybase/MS-SQL database support (DB-lib)" ${WITH_SYBASEDB:-OFF} \
 SYBASECT	"Sybase/MS-SQL database support (CT-lib)" ${WITH_SYBASECT:-OFF} \
 SYSVSEM		"System V semaphore support" ${WITH_SYSVSEM:-OFF} \
@@ -75,11 +73,10 @@ TOKENIZER	"tokenizer support" ${WITH_TOKENIZER:-OFF} \
 UNIXODBC	"unixODBC support" ${WITH_UNIXODBC:-OFF} \
 WDDX		"WDDX support (implies XML)" ${WITH_WDDX:-OFF} \
 XML		"XML support" ${WITH_XML:-OFF} \
-XMLRPC		"XMLRPC-EPI support" ${WITH_XMLRPC:-OFF} \
-XSLT		"XSLT Sablotron support" ${WITH_XSLT:-OFF} \
+XMLRPC		"XMLRPC-EPI support (implies ICONV)" ${WITH_XMLRPC:-OFF} \
+XML		"XSL support" ${WITH_XSL:-OFF} \
 YAZ		"YAZ support (ANSI/NISO Z39.50)" ${WITH_YAZ:-OFF} \
 YP		"YP/NIS support" ${WITH_YP:-OFF} \
-ZIP		"ZIP support" ${WITH_ZIP:-OFF} \
 ZLIB		"ZLIB support" ${WITH_ZLIB:-OFF} \
 2> $tempfile
 fi

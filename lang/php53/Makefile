@@ -21,7 +21,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.a1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://it.php.net/distributions/ \
