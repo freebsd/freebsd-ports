@@ -1,0 +1,3 @@
+This is a very small (7 Kb) HTTP server. It runs from inetd, which means
+its performance is poor. But for low-traffic sites, it's quite adequate.
+It implements all the basic features of an HTTP server.
