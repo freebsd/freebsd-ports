@@ -1,6 +1,21 @@
 --- autogen.sh.orig	Mon Feb  5 17:40:21 2001
-+++ autogen.sh	Mon Jun 25 01:02:54 2001
-@@ -42,15 +42,4 @@
++++ autogen.sh	Thu Jul  5 20:06:50 2001
+@@ -14,14 +14,6 @@
+ 	DIE=1
+ }
+ 
+-(libtool --version) < /dev/null > /dev/null 2>&1 || {
+-	echo
+-	echo "You must have libtool installed to compile xfmail."
+-	echo "Get ftp://alpha.gnu.org/gnu/libtool-1.0h.tar.gz"
+-	echo "(or a newer version if it is available)"
+-	DIE=1
+-}
+-
+ (automake --version) < /dev/null > /dev/null 2>&1 || {
+ 	echo
+ 	echo "You must have automake installed to compile xfmail."
+@@ -42,15 +34,4 @@
  automake --gnu --add-missing
  cd "$THEDIR"
  
