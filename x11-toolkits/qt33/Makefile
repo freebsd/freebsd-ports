@@ -148,7 +148,7 @@ post-build:
 		-e "s,${PLATFORM},,"
 
 # Work around qmake generated dependencies
-pre-install:
+pre-su-install:
 	${MKDIR} ${PREFIX}/lib ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/findtr ${PREFIX}/bin
