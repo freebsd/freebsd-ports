@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	cwtex
-PORTVERSION=	16.3
+PORTVERSION=	16.6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://192.192.110.1/cwtex/cwTeX_linux/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/cwtex/
-DISTFILES=	cwtexmain.tgz cwtex_freebsd.tgz
+DISTFILES=	cwtexmain.tgz cwtexbin-16.6.tgz
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 BUILD_DEPENDS=  latex:${PORTSDIR}/print/teTeX
 
-WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/addfont ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/cwbibtex ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/cwmkidx ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/cwtex ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tex2xtc ${PREFIX}/bin/
-	${CP} -R ${WRKSRC}/texmf/ ${PREFIX}/share/texmf/
+	${TAR} -xzf ${DISTDIR}/cwtexmain.tgz -C ${PREFIX}/share/
+	${TAR} -xzf ${DISTDIR}/cwtexbin-16.6.tgz -C ${PREFIX}/bin/
 	${CAT} ${FILESDIR}/config.ps  >> ${PREFIX}/share/texmf/dvips/config/config.ps
 	mktexlsr
 
