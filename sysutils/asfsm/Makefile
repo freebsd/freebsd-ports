@@ -7,7 +7,7 @@
 PORTNAME=	asfsm
 PORTVERSION=	1.0.p15
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asfsm/
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asfsm/
 DISTNAME=	asfsm-1.0pre15
 
 MAINTAINER=	jack@germanium.xtalwind.net
