@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Tmpl/Tmpl.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Tmpl/Tmpl.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Tmpl/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Tmpl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/template_syntax.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/libtmpl.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/template_extend.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/Tmpl.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Tmpl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text 2>/dev/null || true
