@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	knocker
-PORTVERSION=	0.3.0
+PORTVERSION=	0.6.6
 CATEGORIES=	security net x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,5 +21,8 @@ USE_XPM=	yes
 USE_GTK=	yes
 
 MAN1=		gtk-knocker.1
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
