@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.10 2000-08-25 19:50:45 asami Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.11 2000-09-18 04:14:56 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -180,11 +180,11 @@ RUN_DEPENDS+=	${EMACS_CMD}:${EMACS_PORTSDIR}
 .endif
 
 # environments for build
-MAKE_FLAGS+=    EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
-SCRIPTS_ENV+=   EMACS_LIBDIR=${EMACS_LIBDIR} \
+MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
+SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} \
 		EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
 # pkg/PLIST substrings
-PLIST_SUB+=     EMACS_LIBDIR=${EMACS_LIBDIR} \
+PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} \
 		EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
