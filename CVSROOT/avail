@@ -16,7 +16,7 @@ avail||distrib
 avail||doc
 avail||ports
 avail||projects
-avail|scottl|src
+avail||src
 unavail||src/contrib/binutils,src/contrib/file
 avail|obrien|src/contrib/binutils,src/contrib/file
 unavail||src/contrib/tcpdump
