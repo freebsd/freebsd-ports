@@ -24,8 +24,10 @@ COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		vga:${PORTSDIR}/graphics/svgalib
+		jpeg:${PORTSDIR}/graphics/jpeg
+.if (${MACHINE_ARCH} == "i386")
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.50c
 USE_XLIB=	yes
