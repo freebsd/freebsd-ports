@@ -550,7 +550,6 @@ bottlerocket	ports/misc/bottlerocket
 bounce		ports/net/bounce
 boxes		ports/misc/boxes
 bpatch		ports/editors/bpatch
-bpft		ports/net/bpft
 bpl+		ports/comms/bpl+
 br-ispell	ports/textproc/br-ispell
 brandelf	src/usr.bin/brandelf
