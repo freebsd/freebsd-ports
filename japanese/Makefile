@@ -443,6 +443,7 @@
     SUBDIR += xshodou
     SUBDIR += xv
     SUBDIR += xvi-euc
+    SUBDIR += xvi-sjis
     SUBDIR += xyagamo
     SUBDIR += xyaku
     SUBDIR += yc.el
