@@ -7,7 +7,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.1r5
-CATEGORIES=	graphics
+CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/tar/
 DISTNAME=	HDF${PORTVERSION}
 
