@@ -17,9 +17,11 @@ sbin/cqtest
 sbin/dialtest
 sbin/faxabort
 sbin/faxaddmodem
+sbin/faxadduser
 sbin/faxanswer
 sbin/faxconfig
 sbin/faxcron
+sbin/faxdeluser
 sbin/faxgetty
 sbin/faxinfo
 sbin/faxmodem
@@ -35,6 +37,7 @@ sbin/faxsetup.linux
 sbin/faxstate
 sbin/faxwatch
 sbin/hfaxd
+sbin/hylafax
 sbin/lockname
 sbin/ondelay
 sbin/pagesend
@@ -45,7 +48,7 @@ sbin/textfmt
 sbin/tiffcheck
 sbin/tsitest
 sbin/typetest
-sbin/xferstats
+sbin/xferfaxstats
 @dirrm lib/fax
 @cwd /var/spool
 fax/COPYRIGHT
@@ -105,9 +108,9 @@ fax/etc/dialrules
 fax/etc/dialrules.europe
 fax/etc/dialrules.sf-ba
 fax/etc/dpsprinter.ps
-fax/etc/hosts
+fax/etc/hosts.hfaxd
 fax/etc/lutRS18.pcf
-fax/etc/xferlog
+fax/etc/xferfaxlog
 @exec chown uucp:dialer %D/fax
 @comment pkg_* can't deal with fifos if specified as a file
 @exec mkfifo %D/fax/FIFO

@@ -1,0 +1,73 @@
+diff -ruN config/skel.orig config/skel
+--- config/skel.orig	Sun Jan 10 01:09:38 1999
++++ config/skel	Mon Jun 12 21:59:13 2000
+@@ -41,8 +41,8 @@
+ SessionTracing:		11		# log server-related operations
+ RecvFileMode:		0600		# recvd facsimile are not public
+ LogFileMode:		0600		# private log files
+-DeviceMode:		0600		# device is accessible only to uucp/fax
+-GettyArgs:		"-h %l dx_%s"	# requires modem to auto-detect fax/data
++DeviceMode:		0660		# device is accessible only to uucp/fax
++GettyArgs:		"std.%s"	# requires modem to auto-detect fax/data
+ QualifyTSI:		""		# do not restrict inbound facsimile
+ SpeakerVolume:		off		# machine's are already too loud
+ RingsBeforeAnswer:	1		# answer on first ring
+diff -ruN configure.orig configure
+--- configure.orig	Mon Jul 26 07:57:29 1999
++++ configure	Mon Jun 12 22:07:43 2000
+@@ -247,7 +247,7 @@
+ test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
+ test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
+ test -d /usr/5bin && PATH=/usr/5bin:$PATH:/usr/etc	# Sun and others
+-test -d /usr/local/bin && PATH=/usr/local/bin:$PATH	# for GNU stuff
++test -d /usr/local/bin && PATH=$PATH:/usr/local/bin	# for GNU stuff
+ PATH=$PATH:$OPATH
+ 
+ POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
+@@ -2312,6 +2312,8 @@
+ 	case $TARGET in
+ 	# XXX fill in for busted systems
+ 	*-univel-*)	CONFIG_SOCKARGLENTYPE=size_t;;
++	*-freebsd4*)	CONFIG_SOCKARGLENTYPE=u_int32_t;;
++	*-freebsd5*)	CONFIG_SOCKARGLENTYPE=u_int32_t;;
+ 	*sysv4.2uw2*)	CONFIG_SOCKARGLENTYPE=size_t;;
+ 	*-UnixWare*)	CONFIG_SOCKARGLENTYPE=size_t;;
+ 	*-aix4*)	CONFIG_SOCKARGLENTYPE=size_t;;
+@@ -2865,7 +2867,7 @@
+ 	printf("old include files: version %u\n", TIFFLIB_VERSION);
+         exit(-1);
+     }
+-    if (strncmp(TIFFGetVersion(), "LIBTIFF, Version 3.4", 20) != 0) {
++    if (strncmp(TIFFGetVersion(), "LIBTIFF, Version 3.5", 20) != 0) {
+ 	printf("old library: version %s\n", TIFFGetVersion());
+ 	exit(-1);
+     } else
+@@ -3591,10 +3593,14 @@
+ 	return 0
+ }
+ 
+-if [ -z "$FONTMAP" ]; then
+-	FONTMAP=`getGSFonts`
+-fi
+-Note "Setting the Fontmap path to $FONTMAP"
++case $TARGET in
++	*-freebsd*)	PATH_AFM=/usr/local/lib/afm ;;
++	*)	if [ -z "$FONTMAP" ]; then
++			FONTMAP=`getGSFonts`;
++		fi
++		Note "Setting the Fontmap path to $FONTMAP";;
++esac
++
+ 
+ #
+ # Location of Adobe Font Metric files.
+@@ -4044,7 +4050,8 @@
+ 	printConfig
+ 	checkForExecutable $PATH_SENDMAIL
+ 	checkForExecutable $PATH_GETTY
+-	prompt "Are these ok [yes]?"; read ok
++	#prompt "Are these ok [yes]?"; read ok
++	ok=yes
+ 	test -z "$ok" && ok=yes
+ 	case "$ok" in
+ 	[1-9]|1[0-6])	promptForParameter $ok;;

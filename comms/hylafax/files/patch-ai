@@ -1,0 +1,12 @@
+diff -ruN sgi2fax/imgtofax.c.orig sgi2fax/imgtofax.c
+--- sgi2fax/imgtofax.c.orig	Mon Oct 12 13:47:50 1998
++++ sgi2fax/imgtofax.c	Mon Jun 12 21:52:42 2000
+@@ -214,7 +214,7 @@
+     TIFFSetField(tif, TIFFTAG_PAGENUMBER, pn, npages);
+     TIFFSetField(tif, TIFFTAG_CLEANFAXDATA, CLEANFAXDATA_CLEAN);
+     { char buf[1024];
+-      sprintf(buf, "Ditherered B&W version of %s", input);
++      snprintf(buf, sizeof(buf), "Ditherered B&W version of %s", input);
+       TIFFSetField(tif, TIFFTAG_IMAGEDESCRIPTION, buf);
+     }
+     TIFFSetField(tif, TIFFTAG_SOFTWARE, "sgi2fax");

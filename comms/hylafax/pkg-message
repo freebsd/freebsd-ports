@@ -2,7 +2,9 @@ Hylafax was installed.  You'll need manual configurations to actually
 activate it.
 
 Setting up: (for impatients)
-	Invoke /usr/local/sbin/faxsetup, and answer what she asks.
+	Invoke /usr/local/sbin/faxsetup, and answer the questions.
+	Mostly, accepting the defaults should work well.
+
 	When you are asked to specify the name of tty device, use "cuaa1"
 	instead of "ttyd1".  Otherwise it does not work well.
 
@@ -15,4 +17,4 @@ Setting up: (for impatients)
 
 Documentation:
 	On Line Manuals: 	man hylafax.
-	World Wide Web site:	http://www.vix.com/flexfax/
+	World Wide Web site:	http://www.hylafax.org/

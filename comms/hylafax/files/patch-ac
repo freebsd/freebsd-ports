@@ -1,0 +1,12 @@
+diff -ruN faxalter/faxalter.c++.orig faxalter/faxalter.c++
+--- faxalter/faxalter.c++.orig	Sun Jun 13 00:40:58 1999
++++ faxalter/faxalter.c++	Mon Jun 12 21:52:37 2000
+@@ -185,7 +185,7 @@
+     va_list ap;
+     va_start(ap, fmt0);
+     char fmt[1024];
+-    sprintf(fmt, "%s %s\n", groups ? "JGPARM" : "JPARM", fmt0);
++    snprintf(fmt, sizeof(fmt), "%s %s\n", groups ? "JGPARM" : "JPARM", fmt0);
+     script.append(fxStr::vformat(fmt, ap));
+     va_end(ap);
+ }
