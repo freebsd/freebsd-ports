@@ -14,7 +14,7 @@ MAINTAINER=	shige@FreeBSD.org
 
 DOCDIR=		share/doc/eblook
 
-LIB_DEPENDS=    eb.3:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=    eb.3:${PORTSDIR}/japanese/eb2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-eb-includes=${PREFIX}/include \
