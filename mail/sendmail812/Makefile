@@ -71,7 +71,7 @@ post-install:
 		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
-	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGDIR}/pkg-message
+	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
 mailer.conf:
 	${SED} \
