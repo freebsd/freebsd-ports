@@ -161,6 +161,7 @@
     SUBDIR += mad
     SUBDIR += maplay
     SUBDIR += mbrola
+    SUBDIR += mbrolavox
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
     SUBDIR += mhwaveedit
