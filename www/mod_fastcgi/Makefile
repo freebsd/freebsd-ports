@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_fastcgi
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		http://www.fastcgi.com/dist/
