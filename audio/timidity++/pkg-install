@@ -5,5 +5,4 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 [ "x$1" = "x" ] && exit 1
 if [ "x$2" = "xPOST-INSTALL" ]; then
 	mkdir -p ${PREFIX}/lib/timidity
-	mkdir -p ${PREFIX}/share/timidity
 fi
