@@ -8,39 +8,36 @@
 PORTNAME=	logkit
 PORTVERSION=	1.2
 PORTREVISION=	1
-CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/avalon/${PORTNAME:S,-,/,}/binaries/
+CATEGORIES=	java devel
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	avalon/${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	avalon-
 DISTNAME=	LogKit-${PORTVERSION}-bin
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java toolkit designed for secure performance oriented logging
 
-USE_JAVA=	1.3+
+USE_JAVA=	YES
+JAVA_VERSION=	1.3+
 NO_BUILD=	YES
 
-WRKSRC=			${WRKDIR}/LogKit-${PORTVERSION}
-PORT_JARFILE=		${PORTNAME}-${PORTVERSION}.jar
-DEST_JARFILE=		${PORTNAME}.jar
-JAVA_WRKDOCSDIR=	${WRKSRC}/docs
-PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+WRKSRC=		${WRKDIR}/LogKit-${PORTVERSION}
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	api changes.html css features.html images index.html whitepaper.html
 .endif
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR file..."
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORT_JARFILE} ${JAVAJARDIR}/${DEST_JARFILE}
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation..."
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing documentation..."
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [DONE]"
 .endif
-
-post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${PORT_JARFILE}"
 
 .include <bsd.port.mk>
