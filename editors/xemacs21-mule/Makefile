@@ -100,7 +100,6 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--with-system-malloc --pdump
-BROKEN=		"Incomplete pkg-plist"
 .endif
 
 pre-fetch:
