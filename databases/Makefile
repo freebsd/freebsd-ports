@@ -215,6 +215,7 @@
     SUBDIR += php4-odbc
     SUBDIR += php4-oracle
     SUBDIR += php4-pgsql
+    SUBDIR += php4-sybase
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
