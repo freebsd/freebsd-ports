@@ -7,7 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://mirrors.xmission.com/fedora/core/3/i386/os/Fedora/RPMS/ \
 		http://fedora.cat.pdx.edu/linux/core/3/i386/os/Fedora/RPMS/
@@ -20,8 +20,19 @@ DIST_SUBDIR=	rpm/i386/fc3
 ONLY_FOR_ARCHS=	i386
 RPM_SET=	libpng-${PORTVERSION}-1.i386.rpm
 
-PLIST_FILES=	usr/lib/libpng12.so.0.1.2.7 \
+PLIST_FILES=	\
+		usr/lib/libpng.so.3 \
+		usr/lib/libpng.so.3.1.2.7 \
+		usr/lib/libpng12.so.0 \
+		usr/lib/libpng12.so.0.1.2.7 \
+		usr/share/doc/libpng-1.2.7/CHANGES \
+		usr/share/doc/libpng-1.2.7/LICENSE \
+		usr/share/doc/libpng-1.2.7/README \
+		usr/share/doc/libpng-1.2.7/TODO \
+		usr/share/doc/libpng-1.2.7/example.c \
+		usr/share/doc/libpng-1.2.7/libpng.txt \
 		usr/share/man/man5/png.5.gz
+PLIST_DIRS=	usr/share/doc/libpng-1.2.7
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng-1.2.27
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
 
