@@ -3,7 +3,7 @@
 # Date created:				6/25/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.4 1998/07/20 11:41:31 asami Exp $
+# $Id: Makefile,v 1.5 1998/07/22 22:33:19 nectar Exp $
 #
 
 DISTNAME=		PyGreSQL-2.1
@@ -25,6 +25,7 @@ GNU_CONFIGURE=		YES
 PY_PREFIX=		python -c "import sys; print sys.prefix"
 PY_EXEC_PREFIX=		python -c "import sys; print sys.exec_prefix"
 PY_SITE_PYTHON=		python -c "import sys; import string; print (filter(lambda a: string.find(a, 'site-python') >= 0, sys.path) or [''])[0]"
+PY_HAVE_THREAD=		python -c "import thread"
 
 CHOWN?=			chown
 CHMOD?=			chmod
@@ -49,16 +50,21 @@ do-configure:
 .endfor
 	${INSTALL} -c -m 0555 ${SCRIPTDIR}/install-sh ${WRKSRC}
 	${INSTALL} -c -m 0555 ${SCRIPTDIR}/configure.local ${WRKSRC}/configure
-	@(cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" ac_cv_path_CC="${CC}" \
-	CFLAGS="${CFLAGS}" \
-	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
-	INSTALL_DATA="${INSTALL_DATA}"       \
-	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-	INSTALL_SCRIPT="${INSTALL_SCRIPT}"   \
-	PY_EXEC_PREFIX=`${PY_EXEC_PREFIX}`   \
-	PY_SITE_PYTHON=`${PY_SITE_PYTHON}`   \
-	LDFLAGS="-L`${PY_PREFIX}`/lib/python1.5/config -L${PREFIX}/pgsql/lib" \
-	CPPFLAGS="-I`${PY_PREFIX}`/include/python1.5 -I${PREFIX}/pgsql/include" \
+	@(if ${PY_HAVE_THREAD}; then                                  \
+		PTHREAD="-pthread";                                   \
+	fi;                                                           \
+	cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" ac_cv_path_CC="${CC}" \
+	CFLAGS="${CFLAGS}"                                            \
+	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"             \
+	INSTALL_DATA="${INSTALL_DATA}"                                \
+	INSTALL_PROGRAM="${INSTALL_PROGRAM}"                          \
+	INSTALL_SCRIPT="${INSTALL_SCRIPT}"                            \
+	PY_EXEC_PREFIX=`${PY_EXEC_PREFIX}`                            \
+	PY_SITE_PYTHON=`${PY_SITE_PYTHON}`                            \
+	LDFLAGS="$$PTHREAD -L`${PY_PREFIX}`/lib/python1.5/config      \
+          -L${PREFIX}/pgsql/lib"                                      \
+	CPPFLAGS="-I`${PY_PREFIX}`/include/python1.5                  \
+          -I${PREFIX}/pgsql/include"                                  \
 	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 post-install:
