@@ -2,3 +2,4 @@ include/mad.h
 lib/libmad.a
 lib/libmad.so
 lib/libmad.so.2
+libdata/pkgconfig/mad.pc
