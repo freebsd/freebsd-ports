@@ -13,12 +13,13 @@ MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-ldl,,g ; s,\(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
+	@${REINPLACE_CMD} -E -e "s,-ldl,,g ; s,\(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

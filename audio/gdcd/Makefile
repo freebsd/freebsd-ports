@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_AUTOMAKE_VER=	15
@@ -25,7 +26,7 @@ pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${X11BASE}/share/aclocal
 
 pre-build:
-	@${PERL} -pi -e "s/autoheader/${AUTOHEADER}/" \
+	@${REINPLACE_CMD} -e "s/autoheader/${AUTOHEADER}/" \
 		${BUILD_WRKSRC}/Makefile
 
 .include <bsd.port.mk>

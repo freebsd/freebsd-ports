@@ -21,6 +21,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
@@ -30,7 +31,7 @@ MAN1=	rawrec.1
 MLINKS=	rawrec.1 rawplay.1
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<linux/soundcard.h>|<sys/soundcard.h>|g'
 
 do-install:

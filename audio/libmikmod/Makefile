@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/sound/libs
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_ESOUND=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -26,7 +27,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/docs/mikmod.info-*
 
 post-patch:
-	@${PERL} -pi -e 's|\$$CFLAGS -pthread|\$$CFLAGS ${PTHREAD_CFLAGS}|g ; \
+	@${REINPLACE_CMD} -e 's|\$$CFLAGS -pthread|\$$CFLAGS ${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread \$$REENTRANT|\$$REENTRANT ${PTHREAD_CFLAGS}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
 		 s|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure

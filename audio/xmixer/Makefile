@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_AUTOCONF=	yes
 
@@ -21,6 +22,6 @@ MAN1=		xmixer.1
 MLINKS=		xmixer.1 xgmixer.1
 
 pre-patch:
-	@find ${WRKSRC} -type f | xargs  ${PERL} -pi -e 's|rxvt -e|xterm -e|g'
+	@find ${WRKSRC} -type f | xargs  ${REINPLACE_CMD} -e 's|rxvt -e|xterm -e|g'
 
 .include <bsd.port.mk>
