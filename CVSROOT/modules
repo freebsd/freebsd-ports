@@ -2682,6 +2682,7 @@ isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
+it-aspell	ports/textproc/it-aspell
 it-ooodict-IT	ports/editors/ooodict-it_IT
 it-openoffice	ports/editors/openoffice-it
 itcl		ports/lang/itcl
