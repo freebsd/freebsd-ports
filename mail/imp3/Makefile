@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 
@@ -118,12 +118,13 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .endif
 .endif
 
-IS_INTERACTIVE=	'need to build mod_php4 with mcrypt option set.'
+IS_INTERACTIVE=	'need to build mod_php4 with mcrypt, cclient with SSL.'
 NO_BUILD=	yes
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php filter.txt header.txt html.php menu.php \
 		mime_drivers.php motd.php prefs.php servers.php \
 		trailer.txt
+SUB_DIRS=	config graphics lib locale scripts templates po
 
 LHORDEDIR?=	www/horde
 LIMPDIR?=	${LHORDEDIR}/imp
@@ -227,9 +228,9 @@ pre-install:
 
 do-install:
 	@${MKDIR}  ${IMPDIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${IMPDIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${IMPDIR}
-	@${CP} -Rp ${WRKSRC}/po ${IMPDIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${IMPDIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${IMPDIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
