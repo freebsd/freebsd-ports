@@ -10,7 +10,8 @@ PORTVERSION=	0.6.5.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://clanlib.org/~sphair/download/
+MASTER_SITES=	http://clanlib.org/~sphair/download/ \
+		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	jylefort@brutele.be
