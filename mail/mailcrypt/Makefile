@@ -6,14 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mailcrypt-3.4
+DISTNAME=	mailcrypt-3.5.5
 CATEGORIES=	mail
-MASTER_SITES=	http://cag-www.lcs.mit.edu/mailcrypt/
-MASTER_SITE_SUBDIR=	mailcrypt
+MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/mailcrypt/
 
 MAINTAINER=	murray@cdrom.com
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 
 GNU_CONFIGURE=	yes
 
