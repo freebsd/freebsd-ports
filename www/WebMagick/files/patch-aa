@@ -1,5 +1,5 @@
 *** webmagick.in.orig	Tue Mar 24 07:45:45 1998
---- webmagick.in	Fri May 22 20:44:59 1998
+--- webmagick.in	Thu Aug 13 01:26:44 1998
 ***************
 *** 130,135 ****
 --- 130,136 ----
@@ -115,6 +115,23 @@
   		'prefixpath=s'		=> \$opt_prefixpath,
   		'readme=s'		=> \$opt_readme,
   		'readmevisible!'	=> \$opt_readmevisible,
+***************
+*** 900,906 ****
+  sub wanted {
+      my($dev,$ino,$mode,$nlink,$uid,$gid);
+      ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_);
+!     if ( -d $_ && !/^\..+/ ) {
+          if( $_ ne '.' && get_rc_var('.', 'opt_prune', 0) ) {
+              $File::Find::prune=1;
+  	    # following funny logic is to avoid warnings about $prune
+--- 924,930 ----
+  sub wanted {
+      my($dev,$ino,$mode,$nlink,$uid,$gid);
+      ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_);
+!     if ( -d $_ && -w $_ && !/^\..+/ ) {
+          if( $_ ne '.' && get_rc_var('.', 'opt_prune', 0) ) {
+              $File::Find::prune=1;
+  	    # following funny logic is to avoid warnings about $prune
 ***************
 *** 1386,1397 ****
 --- 1410,1423 ----
