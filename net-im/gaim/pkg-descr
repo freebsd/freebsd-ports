@@ -3,8 +3,9 @@ client using the GTK+ toolkit. It features most of the functionality
 of the official AIM client while being much smaller and faster.  It
 features multiple groups, group chat, user information fetching and
 registration, time stamping, sound (for when you really do want to be
-interrupted), multiple away messages, and probably a few other things. 
+interrupted), multiple away messages, and more.
 
-WWW: http://www.marko.net/gaim/
+GAIM also has support for other IM protocols such as Yahoo!, MSN, ICQ,
+Jabber, Napster, IRC, and Zephyr via included plugins.
 
-- Jim <jim@FreeBSD.org>
+WWW: http://gaim.sourceforge.net/
