@@ -69,6 +69,12 @@ EMPTY_DIRS=	generic hppa ia64 m68k power sparc
 EMPTY_DIRS+=	4stack 6502 8086 avr c165 h8 misc sharc shboom
 ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502108 && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 # Post-extract
 #
 
@@ -115,6 +121,6 @@ remove-empty-dirs:
 	@${RMDIR} ${ARCH_DIR}/${dir}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
