@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xdvik-vflib
-PORTVERSION=	22.40.w.1.17
+PORTVERSION=	22.40w.1.17
 CATEGORIES=	japanese print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,xdvi,}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xdvi
 DISTNAME=	xdvik-22.40w
 
 PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
@@ -21,13 +22,13 @@ COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
 LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
-#RUN_DEPENDS+=	makejvf:${PORTSDIR}/japanese/makejvf
 
 DIST_SUBDIR=	xdvik
+USE_XLIB=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-a4 --enable-bdpi=${BDPI} --enable-shrink=${SHRINK} \
+CONFIGURE_ARGS=	--enable-a4 --enable-shrink=${SHRINK} \
 		--with-dvifilter=${DVIPS} \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint \
 		--enable-smallpanel --enable-zoombutton \
@@ -51,6 +52,9 @@ LIBT1_PREFIX?=	${LOCALBASE}
 TEXMF=		${PREFIX}/share/texmf
 #VARTEXFONTS=	/var/tmp/texfonts
 XDVIDIR=	${TEXMF}/xdvi
+APPDEFAULTSDIR?=	lib/X11/app-defaults
+
+PLIST_SUB+=	APPDEFAULTSDIR=${APPDEFAULTSDIR}
 
 #VFFONTS=	.:${MAKEJVFDIR}/vf//
 #XDEFS+=		-DDEFAULT_VFFONTS=\"\\\"${VFFONTS}\\\"\"
@@ -149,12 +153,6 @@ pre-fetch:
 	${ECHO} "*                ${PREFIX}/libexec/xdviprint.                *"; \
 	${ECHO} "**************************************************************")
 
-pre-patch:
-.for i in FTP.c Host.c String.c String.h
-	@${PERL} -pi -e 's|strcasestr|HTStrCaseStr|g' \
-		${WRKSRC}/libs/libwww/HT${i}
-.endfor
-
 pre-build:
 	@(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
 
@@ -163,13 +161,14 @@ do-install:
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
-	@$(INSTALL_DATA) $(FILESDIR)/vfontmap $(XDVIDIR)
+	@${INSTALL_DATA} ${FILESDIR}/vfontmap ${XDVIDIR}
+	@${INSTALL_DATA} ${WRKSRC}/texk/xdvik/texmf/XDvi ${X11BASE}/${APPDEFAULTSDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xdvi
+	@${MKDIR} ${DOCSDIR}
 	@for i in ${DOCS} ; do \
-	    ${INSTALL_DATA} ${WRKSRC}/texk/xdvik/$$i \
-		${PREFIX}/share/doc/xdvi ; \
+	    ${INSTALL_DATA} ${WRKSRC}/texk/xdvik/$$i ${DOCSDIR}; \
 	done
 .endif
+	@${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
 
 .include <bsd.port.post.mk>
