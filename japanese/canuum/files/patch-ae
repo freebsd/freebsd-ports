@@ -1,0 +1,87 @@
+--- jhlp.c.orig	Thu Jan 21 21:52:56 1999
++++ jhlp.c	Thu Jan 21 21:56:35 1999
+@@ -76,6 +76,9 @@
+ 
+ jmp_buf kk_env;
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ #ifdef SYSVR2
+ #	include <sys/param.h>
+ #endif /* SYSVR2 */
+@@ -285,9 +288,11 @@
+ 
+ 
+ #if defined(BSD42) && !defined(DGUX)
++#if !(defined(BSD) && (BSD >= 199306))
+     if (saveutmp() < 0) {
+ 	puts("Can't save utmp\n");
+     }
++#endif
+ #endif /* BSD42 */
+ 
+ 
+@@ -781,7 +786,12 @@
+ #endif
+     int pid;
+ 
+-    if ((pid = wait3(&status, WNOHANG | WUNTRACED, NULL)) == child_id) {
++/*
++ * Remove warning.
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
++/*  if ((pid = wait3(&status, WNOHANG | WUNTRACED, NULL)) == child_id) { */
++    if ((pid = wait3((int *)&status, WNOHANG | WUNTRACED, NULL)) == child_id) {
+ 	if (WIFSTOPPED(status)) {
+ #ifdef SIGCONT
+ 	    kill(pid, SIGCONT);
+@@ -1174,9 +1184,11 @@
+ 	setpgrp(0, pid);
+ #endif /* BSD42 */
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ 	if (setutmp(ttypfd) == ERROR) {
+ 	    puts("Can't set utmp.");
+ 	} 
++#endif
+ 
+ #ifdef linux
+ 	setsid();
+@@ -1634,9 +1646,11 @@
+ 	perror(prog);
+     }
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+     if (resetutmp(ttypfd) == ERROR) {
+ 	printf("Can't reset utmp.");
+     }
++#endif
+ #ifdef TIOCSSIZE
+     pty_rowcol.ts_lines = 0;
+     pty_rowcol.ts_cols = 0;
+@@ -1706,11 +1720,24 @@
+ char *b, *pty;
+ int no;
+ {
++/*
++ * Change pseudo-devices.
++ * Because FreeBSD's master pseudo-devices are pty[p-sP-S][0-9a-v].
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
+   if (no < 0x10 * ('z' - 'p' + 1)) {
++#if (defined(BSD) && (BSD >= 199306)) /* 4.4BSD-Lite by Taoka */
++    sprintf(b, "%s%1c%1c", pty, "pqrsPQRS"[(no >> 5)], ((no & 0x1f > 9)? 'a' : '0') + (no & 0x1f));
++#else /* ! 4.4BSD-Lite */
+     sprintf(b, "%s%1c%1x", pty, 'p' + (no >> 4), no & 0x0f);
++#endif /* ! 4.4BSD-Lite */
+   } else {
+     no -= 0x10 * ('z' - 'p' + 1);
++#if (defined(BSD) && (BSD >= 199306)) /* 4.4BSD-Lite by Taoka */
++    sprintf(b, "%s%1c%1c", pty, "pqrsPQRS"[(no >> 5)], ((no & 0x1f > 9)? 'a' : '0') + (no & 0x1f));
++#else /* ! 4.4BSD-Lite */
+     sprintf(b, "%s%1c%1x", pty, 'P' + (no >> 4), no & 0x0f);
++#endif /* ! 4.4BSD-Lite */
+   }
+ }
+ 
