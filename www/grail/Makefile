@@ -8,15 +8,14 @@
 PORTNAME=	grail
 PORTVERSION= 	0.6
 CATEGORIES=	www python
-MASTER_SITES=	http://grail.sourceforge.net/source/ \
-		http://grail.cnri.reston.va.us/grail/source/
+MASTER_SITES=	ftp://ftp.python.org/pub/grail/
 DISTFILES=	${PORTNAME}-06.tgz
 
 MAINTAINER=	nectar@freebsd.org
 
-USE_PYTHON=	yes
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+USE_PYTHON=	yes
 GRAILSUBDIR=	share/grail
 GRAILDIR=	${PREFIX}/${GRAILSUBDIR}
 DIRS_CMD=	${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
