@@ -17,6 +17,7 @@ MAINTAINER=	oleg@pobox.com
 WRKSRC=		${WRKDIR}/cppadvio
 ALL_TARGET=	lib
 USE_GMAKE=	yes
+USE_GCC=	2.95
 
 post-patch:
 	@( cd ${WRKSRC}; ${MV} c++ c++.orig; \
