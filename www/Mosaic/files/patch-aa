@@ -1,0 +1,220 @@
+*** Makefile.orig	Thu Jul  6 15:55:23 1995
+--- Makefile	Mon Aug 21 20:51:15 1995
+***************
+*** 8,25 ****
+  
+  # -------------------------- CUSTOMIZABLE OPTIONS ----------------------------
+  
+! RANLIB = /bin/true
+  #### On non-SGI's, this should be ranlib.
+  RANLIB = ranlib
+  
+  CC = cc
+  #### On Sun's, this should be gcc (ANSI required).
+! CC = gcc
+  
+  
+  #### For a few files in the source, some compilers may need to be kicked
+  #### in K&R mode.  E.g., on SGI's, -cckr does this.
+! knrflag = -cckr
+  #### On most systems, no flag is needed.
+  knrflag =
+  
+--- 8,25 ----
+  
+  # -------------------------- CUSTOMIZABLE OPTIONS ----------------------------
+  
+! # RANLIB = /bin/true
+  #### On non-SGI's, this should be ranlib.
+  RANLIB = ranlib
+  
+  CC = cc
+  #### On Sun's, this should be gcc (ANSI required).
+! # CC = gcc
+  
+  
+  #### For a few files in the source, some compilers may need to be kicked
+  #### in K&R mode.  E.g., on SGI's, -cckr does this.
+! # knrflag = -cckr
+  #### On most systems, no flag is needed.
+  knrflag =
+  
+***************
+*** 35,50 ****
+  #### For Convex whatever, do -DCONVEX
+  #### For SCO ODT 3.0, do -DSCO -DSVR4 -DMOTIF1_2
+  #### For Motorola SVR4, do -DSVR4 -DMOTOROLA -DMOTIF1_2
+! sysconfigflags = 
+  
+  #### System libraries.
+! syslibs = -lPW -lsun -lmalloc
+  #### For AIX 3.2
+  # syslibs = -lPW -lbsd
+  #### For most other Motif platforms:
+  # syslibs = -lPW
+  #### For Sun's and Ultrix and HP and BSD/386:
+! syslibs =
+  #### For Sun's with no DNS:
+  #  syslibs = -lresolv
+  #### For SCO ODT:
+--- 35,50 ----
+  #### For Convex whatever, do -DCONVEX
+  #### For SCO ODT 3.0, do -DSCO -DSVR4 -DMOTIF1_2
+  #### For Motorola SVR4, do -DSVR4 -DMOTOROLA -DMOTIF1_2
+! sysconfigflags =  -DMOTIF1_2
+  
+  #### System libraries.
+! # syslibs = -lPW -lsun -lmalloc
+  #### For AIX 3.2
+  # syslibs = -lPW -lbsd
+  #### For most other Motif platforms:
+  # syslibs = -lPW
+  #### For Sun's and Ultrix and HP and BSD/386:
+! # syslibs =
+  #### For Sun's with no DNS:
+  #  syslibs = -lresolv
+  #### For SCO ODT:
+***************
+*** 55,61 ****
+  # syslibs = -lnsl -lsocket -lgen
+  #### For Motorola SVR4:
+  # syslibs = -lnsl -lsocket -lgen
+! 
+  
+  #### X include file locations -- if your platform puts the X include
+  #### files in a strange place, set this variable appropriately.  Else
+--- 55,62 ----
+  # syslibs = -lnsl -lsocket -lgen
+  #### For Motorola SVR4:
+  # syslibs = -lnsl -lsocket -lgen
+! #### For FreeBSD 2.x:
+! syslibs = -lgnumalloc
+  
+  #### X include file locations -- if your platform puts the X include
+  #### files in a strange place, set this variable appropriately.  Else
+***************
+*** 68,78 ****
+  # xinc = -I/usr/include/X11
+  #### BSD/386
+  # xinc = -I/usr/X11/include
+  
+  #### X library locations.
+! xlibs = -lXm_s -lXmu -lXt_s -lX11_s
+  #### For Sun's (at least running stock X/Motif as installed on our machines):
+! xlibs = /usr/lib/libXm.a /usr/lib/libXmu.a /usr/lib/libXt.a /usr/lib/libXext.a /usr/lib/libX11.a -lm
+  #### For HP-UX 8.00:
+  # xlibs = -L/usr/lib/Motif1.1 -lXm -L/usr/lib/X11R4 -lXmu -lXt -lX11
+  #### For HP-UX 9.01: The X11R5 libraries are here on our systems
+--- 69,81 ----
+  # xinc = -I/usr/include/X11
+  #### BSD/386
+  # xinc = -I/usr/X11/include
++ #### FreeBSD 2.x
++ xinc = -I/usr/X11R6/include
+  
+  #### X library locations.
+! # xlibs = -lXm_s -lXmu -lXt_s -lX11_s
+  #### For Sun's (at least running stock X/Motif as installed on our machines):
+! # xlibs = /usr/lib/libXm.a /usr/lib/libXmu.a /usr/lib/libXt.a /usr/lib/libXext.a /usr/lib/libX11.a -lm
+  #### For HP-UX 8.00:
+  # xlibs = -L/usr/lib/Motif1.1 -lXm -L/usr/lib/X11R4 -lXmu -lXt -lX11
+  #### For HP-UX 9.01: The X11R5 libraries are here on our systems
+***************
+*** 91,96 ****
+--- 94,105 ----
+  # xlibs = -L/usr/X11/lib -lXm -lXmu -lXt -lX11
+  #### For Motorola SVR4:
+  # xlibs = -lXm -lXmu -lXt -lXext -lX11 -lm
++ #### For FreeBSD 2.x:
++ .ifdef SHARED_MOTIF
++ xlibs = -L/usr/X11R6/lib -lXm -lXmu -lXt -lXext -lX11 -lm
++ .else
++ xlibs = -L/usr/X11R6/lib /usr/X11R6/lib/libXm.a -lXmu -lXt -lXext -lX11 -lm
++ .endif
+  
+  
+  #### DTM AND HDF SUPPORT; READ CAREFULLY
+***************
+*** 114,131 ****
+  #dtmdirs = libdtm libnet
+  #dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
+  #dtmflags = -DHAVE_DTM -I.. -I../libnet
+! hdfdir = /hdf2/scratch/sxu/4.0b1_SunOS
+! hdflibs = $(hdfdir)/lib/libnetcdf.a $(hdfdir)/lib/libdf.a
+! hdfflags = -DHAVE_HDF -DHDF -I$(hdfdir)/include
+  
+  
+  #### JPEG SUPPORT
+  #### For inline JPEG support, the following should be defined:
+  #### The library used is Independent JPEG Group (IJG's) 5.0a.
+  
+! jpegdir = /X11/mosaic/libjpeg/sun4
+! jpeglibs = $(jpegdir)/libjpeg.a
+! jpegflags = -I$(jpegdir) -DHAVE_JPEG
+  
+  
+  #### DIRECT WAIS SUPPORT
+--- 123,140 ----
+  #dtmdirs = libdtm libnet
+  #dtmlibs = ../libnet/libnet.a ../libdtm/libdtm.a
+  #dtmflags = -DHAVE_DTM -I.. -I../libnet
+! #hdfdir = /hdf2/scratch/sxu/4.0b1_SunOS
+! #hdflibs = $(hdfdir)/lib/libnetcdf.a $(hdfdir)/lib/libdf.a
+! #hdfflags = -DHAVE_HDF -DHDF -I$(hdfdir)/include
+  
+  
+  #### JPEG SUPPORT
+  #### For inline JPEG support, the following should be defined:
+  #### The library used is Independent JPEG Group (IJG's) 5.0a.
+  
+! jpegdir = # ../libjpeg
+! jpeglibs = -L/usr/local/lib -ljpeg # $(jpegdir)/libjpeg.a
+! jpegflags = -I/usr/local/include -DHAVE_JPEG # -I$(jpegdir) -DHAVE_JPEG
+  
+  
+  #### DIRECT WAIS SUPPORT
+***************
+*** 143,152 ****
+  
+  #### -lm is required for freeWAIS 0.1, as ceil() is used.
+  
+! waisroot = /X11/mosaic/freeWAIS-0.202-sun
+! waisflags = -DDIRECT_WAIS -I$(waisroot)/ir
+! waislibdir = $(waisroot)/bin
+! waislibs = $(waislibdir)/inv.a $(waislibdir)/wais.a $(waislibdir)/libftw.a -lm
+  
+  
+  #### PEM/PGP SUPPORT
+--- 152,161 ----
+  
+  #### -lm is required for freeWAIS 0.1, as ceil() is used.
+  
+! #waisroot = /X11/mosaic/freeWAIS-0.202-sun
+! #waisflags = -DDIRECT_WAIS -I$(waisroot)/ir
+! #waislibdir = $(waisroot)/bin
+! #waislibs = $(waislibdir)/inv.a $(waislibdir)/wais.a $(waislibdir)/libftw.a -lm
+  
+  
+  #### PEM/PGP SUPPORT
+***************
+*** 184,191 ****
+  
+  # ---------------------- END OF CUSTOMIZABLE OPTIONS -------------------------
+  
+  
+! CFLAGS = -g $(sysconfigflags)
+  
+  # Don't worry about these -- for development purposes only.
+  PURIFY = purify
+--- 193,203 ----
+  
+  # ---------------------- END OF CUSTOMIZABLE OPTIONS -------------------------
+  
++ install:
++ 	install -c -s -g bin -m 0555 -o bin src/Mosaic ${PREFIX}/bin/Mosaic
++ 
+  
+! CFLAGS+= $(sysconfigflags)
+  
+  # Don't worry about these -- for development purposes only.
+  PURIFY = purify
