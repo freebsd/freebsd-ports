@@ -4,8 +4,8 @@
  	fprintf(fp, "delete_tmp_files=ON\n");
  	fprintf(fp, "followup_to=poster\n\n");
  
-+	fprintf(fp, _("# in tw* set charset to Big5\n"));
-+	fprintf(fp, "scope=tw*\n");
++	fprintf(fp, _("# set charset to Big5 in all newsgroups\n"));
++	fprintf(fp, "scope=*\n");
 +	fprintf(fp, "mm_network_charset=Big5\n");
 +	fprintf(fp, "undeclared_charset=Big5\n");
 +
