@@ -1,6 +1,7 @@
-The linux_base port contains a selection of the packages from a minimal
-Red Hat Linux installation. These packages, in conjunction with the linux
-module, form the basis of the linux compatibility environment.
+This port contains Linux binary packages from Red Hat Linux 7.3.  These
+packages, in conjunction with the linux.ko kernel module, form the basis of the
+Linux compatibility environment.
 
-- Marcel
-marcel@FreeBSD.org
+This port is available for the i386 architecture and experimentally for amd64.
+If you use an Alpha computer, please install the linux_base-debian or
+linux_base-gentoo-stage1 port instead.
