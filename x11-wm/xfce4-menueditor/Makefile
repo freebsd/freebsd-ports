@@ -10,6 +10,7 @@ PORTVERSION=	1.05
 PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://users.skynet.be/p0llux/files/ \
+		http://matt.nerim.net/xfce-goodies/ \
 		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net

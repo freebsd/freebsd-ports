@@ -9,7 +9,10 @@ PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	0.2.0
 PORTREVISION=	2
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
+		http://matt.nerim.net/xfce-goodies/ \
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/ \
+		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
