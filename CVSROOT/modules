@@ -1517,6 +1517,7 @@ fastcrc		ports/devel/fastcrc
 fastdb		ports/databases/fastdb
 fastdnaml	ports/biology/fastdnaml
 fastjar		ports/archivers/fastjar
+fastresolve	ports/sysutils/fastresolve
 fb		ports/editors/fb
 fbbi		ports/lang/fbbi
 fbm		ports/graphics/fbm
