@@ -228,6 +228,7 @@
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-Query
+    SUBDIR += p5-Text-Quoted
     SUBDIR += p5-Text-Reflow
     SUBDIR += p5-Text-Repository
     SUBDIR += p5-Text-SimpleTemplate

@@ -1,0 +1,5 @@
+Text::Quoted examines the structure of some text which
+may contain multiple different levels of quoting, and
+turns the text into a nested data structure.
+
+WWW: http://search.cpan.org/dist/Text-Quoted/

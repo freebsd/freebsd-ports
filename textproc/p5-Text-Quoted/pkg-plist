@@ -1,0 +1,4 @@
+%%SITE_PERL%%/mach/auto/Text/Quoted/.packlist
+%%SITE_PERL%%/Text/Quoted.pm
+@dirrm %%SITE_PERL%%/mach/auto/Text/Quoted
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
