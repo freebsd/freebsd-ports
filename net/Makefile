@@ -49,6 +49,7 @@
     SUBDIR += boclient
     SUBDIR += boinc-client
     SUBDIR += bounce
+    SUBDIR += brutecopy
     SUBDIR += bsdproxy
     SUBDIR += btqueue
     SUBDIR += c3270

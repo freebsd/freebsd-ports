@@ -1,0 +1,54 @@
+--- bcpc.c.orig	Sat Dec 29 15:03:13 2001
++++ bcpc.c	Tue Jan 11 18:49:25 2005
+@@ -80,24 +80,23 @@
+ void
+ print_help(void)
+ {
+- fprintf(stderr,"bcpc -- a Brutalcopy client half
+-Brutalcopy (c) 2000 Karel Kulhavy, Clocksoft
+-
+-Brutalcopy is a program for transferring rather large files by means of UDP
+-protocol in order to bypass TCP tendency to screw up on bad lines. Brutalcopy is
+-based on manual flow control.
+-
+-Usage: bcpc -l <server hostname> -p <server port> [-h] [-i
+-<filename>] [-s <payload_size>] [-r <sot_retransmit_time>] [-b <bytes_per_sec>]
+-
+--l <server>    DNS name or IP address (in dot notation) of the server.
+--p <dist_port> Port must be some high number (>=1024). Default is 1235.
+--h             Prints out help and ends.
+--i <filename>  File to dump the received data from. Default is bcp.dat.
+--s <payload>   Number of bytes as a data payload in a single packet.
+--r <srt>       Number of microsecond after which is SOT retransmitted.
+--b <Bps>      Bytes of payload per second
+-");
++ fprintf(stderr,"bcpc -- a Brutalcopy client half\n"
++"Brutalcopy (c) 2000 Karel Kulhavy, Clocksoft\n"
++"\n"
++"Brutalcopy is a program for transferring rather large files by means of UDP\n"
++"protocol in order to bypass TCP tendency to screw up on bad lines. Brutalcopy is\n"
++"based on manual flow control.\n"
++"\n"
++"Usage: bcpc -l <server hostname> -p <server port> [-h] [-i\n"
++"<filename>] [-s <payload_size>] [-r <sot_retransmit_time>] [-b <bytes_per_sec>]\n"
++"-l <server>    DNS name or IP address (in dot notation) of the server.\n"
++"-p <dist_port> Port must be some high number (>=1024). Default is 1235.\n"
++"-h             Prints out help and ends.\n"
++"-i <filename>  File to dump the received data from. Default is bcp.dat.\n"
++"-s <payload>   Number of bytes as a data payload in a single packet.\n"
++"-r <srt>       Number of microsecond after which is SOT retransmitted.\n"
++"-b <Bps>       Bytes of payload per second\n"
++"\n");
+ }
+ 
+ void
+@@ -289,8 +288,7 @@
+ 
+  if (n>=n_packets)
+  {
+-  fprintf(stderr,"Invalid packet seq# of %u from %lu came! It means data are
+-corrupted. Quitting immediately.\n",n,n_packets);
++  fprintf(stderr,"Invalid packet seq# of %u from %lu came! It means data are\ncorrupted. Quitting immediately.\n",n,n_packets);
+   die();
+  } 
+  if ((bitmap[byte]>>bit)&1) return;

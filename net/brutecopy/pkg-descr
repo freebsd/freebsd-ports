@@ -1,0 +1,14 @@
+It's an application that pushes data using UDP protocol through rotten,
+overloaded and otherwise disgusting lines. It should work well even on lines
+on which TCP completely chokes. The transmission is performed at
+user-preprogrammed fixed data rate with no flow control, only with lost-packet
+retransmits. Brutalcopy always transfers the file without error, even on
+erroneous lines. It uses a CRC-32 checksum algorithm together with the checksum
+in the UDP packets.
+
+Warning: using this utility can cause total line congestion. Don't use it on
+with high transfer rates unless you know what you do. On some routers, the
+UDP is artificially throttled in order to prevent such practices. Use
+FSP for more user and bandwidth friendly file transfers.
+
+WWW: http://atrey.karlin.mff.cuni.cz/~clock/twibright/bcp/

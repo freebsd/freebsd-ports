@@ -1,0 +1,53 @@
+--- bcps.c.orig	Sat Dec 29 15:03:13 2001
++++ bcps.c	Tue Jan 11 18:44:43 2005
+@@ -99,28 +99,28 @@
+ void
+ print_help(void)
+ {
+- fprintf(stderr,"bcps -- a Brutalcopy server half
+-Brutalcopy (c) 2000 Karel Kulhavy, Clocksoft
+-
+-Brutalcopy is a program for transferring rather large files by means of UDP
+-protocol in order to bypass TCP tendency to screw up on bad lines. Brutalcopy
+-is based on manual flow control.
+-
+-Usage: bcps -p <number_of_port_to_listen on> [-h] [-o
+-<filename>] [-s] [-e <number_of_eots>] [-r <eot_period>] [-1] [-2]
+-[-q <info_retransmit_timeout>]
+-
+--p <port>      Port must be some high number. Default is 1235.
+--h             Prints out help and ends.
+--o <filename>  File to dump the received data to. Default is bcp.dat.
+--s             Print tickers
+--e <n_eots>    Number of EOT packets sent at the end. Default is 3.
+--r <eot_p>     Time distance between consecutive EOT packets in microseconds.
+-               Default is 100,000.
+--q             Info packet retransmit timeout in usec.
+--1             Do not print tickers
+--2             Print nothing
+-");
++ fprintf(stderr,"bcps -- a Brutalcopy server half\n"
++"Brutalcopy (c) 2000 Karel Kulhavy, Clocksoft\n"
++"\n"
++"Brutalcopy is a program for transferring rather large files by means of UDP\n"
++"protocol in order to bypass TCP tendency to screw up on bad lines. Brutalcopy\n"
++"is based on manual flow control.\n"
++"\n"
++"Usage: bcps -p <number_of_port_to_listen on> [-h] [-o\n"
++"<filename>] [-s] [-e <number_of_eots>] [-r <eot_period>] [-1] [-2]\n"
++"[-q <info_retransmit_timeout>]\n"
++"\n"
++"-p <port>      Port must be some high number. Default is 1235.\n"
++"-h             Prints out help and ends.\n"
++"-o <filename>  File to dump the received data to. Default is bcp.dat.\n"
++"-s             Print tickers\n"
++"-e <n_eots>    Number of EOT packets sent at the end. Default is 3.\n"
++"-r <eot_p>     Time distance between consecutive EOT packets in microseconds.\n"
++"               Default is 100,000.\n"
++"-q             Info packet retransmit timeout in usec.\n"
++"-1             Do not print tickers\n"
++"-2             Print nothing\n"
++"\n");
+ }
+ 
+ void
