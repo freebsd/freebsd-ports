@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 
-#BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13 \
-#		${LOCALBASE}/include/apache/modules/perl/mod_perl.h:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13 \
+		${LOCALBASE}/include/apache/modules/perl/mod_perl.h:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
