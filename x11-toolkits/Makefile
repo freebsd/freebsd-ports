@@ -160,7 +160,6 @@
     SUBDIR += render
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
-    SUBDIR += ruby-fltk
     SUBDIR += ruby-fox
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
