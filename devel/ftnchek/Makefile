@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 DISTFILES=	${PORTNAME}.tgz
 
-MAINTAINER=	kargl@apl.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		dcl2inc.1 ftnchek.1
 
