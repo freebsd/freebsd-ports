@@ -28,8 +28,6 @@ MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
 
 do-configure:
 	@${CP} ${FILESDIR}/config-sys ${WRKSRC}/
-	${REINPLACE_CMD} "s,libusb.h,libusbhid.h,g" \
-		${WRKSRC}/src/platform/XWindow.h
 	${REINPLACE_CMD} "s,malloc.h,stdlib.h,g" \
 		${WRKSRC}/src/bzflag/HUDRenderer.cxx
 
