@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
@@ -22,8 +22,9 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_SDL=	image mixer ttf
 
-DIRS=		bgm map-mym map-putt map-rlk mtrl png shot-mym shot-putt \
-		shot-rlk snd sol-mym sol-putt sol-rlk ttf
+DOCS=		CHANGES COPYING README
+DIRS=		bgm map-back map-mym map-putt map-rlk mtrl obj png shot-mym \
+		shot-putt shot-rlk snd ttf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \
@@ -39,5 +40,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/*.txt ${DATADIR}/data/
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/neverputt ${PREFIX}/bin/
+
+.ifndef (NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

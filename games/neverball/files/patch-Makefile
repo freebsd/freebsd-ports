@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Apr 18 13:24:48 2004
-+++ Makefile	Sun Apr 18 13:24:54 2004
+--- Makefile.orig	Sat Jul  3 21:30:28 2004
++++ Makefile	Sat Jul  3 21:32:17 2004
 @@ -3,20 +3,20 @@
  
  # Maybe you need one of these.  Maybe you don't.
@@ -14,10 +14,10 @@
  
  #------------------------------------------------------------------------------
  
--CFLAGS= -Wall -O3 -ansi $(shell sdl-config --cflags)
+-CFLAGS= -Wall -Werror -O3 -ansi $(shell sdl-config --cflags)
 +CFLAGS+= -Wall -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
- #CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
- #CFLAGS= -Wall -pg -ansi $(shell sdl-config --cflags)
+ #CFLAGS= -Wall -Werror -g -ansi $(shell sdl-config --cflags)
+ #CFLAGS= -Wall -Werror -pg -ansi $(shell sdl-config --cflags)
  
 -SDL_LIBS= $(shell sdl-config --libs)
 -FT2_LIBS= $(shell freetype-config --libs)
