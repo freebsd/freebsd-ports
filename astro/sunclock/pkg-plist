@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/sunclock
+man/man1/sunclock.1.gz
