@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
@@ -7,7 +8,7 @@ fi
 
 case "$1" in
 start)
-	cd ${PREFIX}; [ -x sbin/bnetd -a -f bnetd/conf/bnetd.conf ] && sbin/bnetd -c bnetd/conf/bnetd.conf > /dev/null && echo -n ' bnetd'
+	cd ${PREFIX}; [ -x sbin/bnetd -a -f etc/bnetd/bnetd.conf ] && sbin/bnetd -c etc/bnetd/bnetd.conf > /dev/null && echo -n ' bnetd'
 	;;
 stop)
 	killall bnetd && echo -n ' bnetd'
