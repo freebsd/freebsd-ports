@@ -86,6 +86,7 @@
     SUBDIR += ffsrecov
     SUBDIR += file
     SUBDIR += filedupe
+    SUBDIR += filelight
     SUBDIR += fileutils
     SUBDIR += finfo
     SUBDIR += flasher
