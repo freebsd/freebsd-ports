@@ -21,6 +21,8 @@ USE_X_PREFIX=	yes
 
 MAN1=		etherape.1
 
+CFLAGS+=	`${X11BASE}/bin/libglade-config --cflags`
+
 post-patch:
 	@${PERL} -pi -e 's!^confdir = .*!confdir = ${PREFIX}/share/etherape!' \
 		${WRKSRC}/Makefile.in
