@@ -21,4 +21,6 @@ PLIST_FILES=	bin/nvidia-settings
 
 MAKE_ENV=	ROOT=${PREFIX}
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.mk>
