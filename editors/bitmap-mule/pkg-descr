@@ -3,9 +3,13 @@ Bitmap-mule, Package to use bitmap in MULE or Emacs/mule.
    Bitmap-mule is a package to use bitmap in MULE or Emacs/mule.
   Bitmap-mule has following modules:
 
-	- bitmap.el:	kernel of bitmap-mule
-	- po.el:	tiny BDF font editor
-	- smiley-mule.el: smiley-mark encoder/decoder
+	- bitmap.el:		kernel of bitmap-mule
+	- bitmap-ci.el:		functions for Emacs 20.3 or later
+	- po.el:		tiny BDF font editor
+	- smiley-mule.el:	smiley-mark encoder/decoder
+	- x-face-mule.el:	inline X-Face decoder
+	- gnus-bitmap.el:	Gnus/gnus related functions for x-face-mule.el
+	- vm-bitmap.el:		VM related functions for x-face-mule.el
 
   Bitmap-mule is installed the following directory tree:
 	${PREFIX}/share/mule/site-lisp/bitmap/	--- Bitmap-mule
@@ -13,6 +17,7 @@ Bitmap-mule, Package to use bitmap in MULE or Emacs/mule.
 To use bitmap-mule, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
+	(require 'flim-setupel)
 	(require 'bitmap-setupel)
 
 --- Porting by shige <shige@FreeBSD.org>

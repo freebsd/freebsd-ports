@@ -1,23 +1,15 @@
---- BITMAP-CFG.orig	Sun Dec 27 23:11:27 1998
-+++ BITMAP-CFG	Sun Dec 27 23:16:00 1998
-@@ -16,11 +16,15 @@
- (add-to-list 'load-path
- 	     (expand-file-name "../../site-lisp/apel" data-directory))
+--- BITMAP-CFG.orig	Wed Jul 28 20:10:09 1999
++++ BITMAP-CFG	Sat Oct  9 20:43:07 1999
+@@ -20,6 +20,12 @@
+       (add-to-list 'load-path (expand-file-name "flim" LISPDIR))
+       ))
  
--(when (boundp 'LISPDIR)
--  (add-to-list 'default-load-path LISPDIR)
--  (add-to-list 'load-path LISPDIR)
--  (add-to-list 'load-path (expand-file-name "apel" LISPDIR))
--  )
-+(if (boundp 'LISPDIR)
-+  (progn
-+    (add-to-list 'default-load-path LISPDIR)
-+    (add-to-list 'load-path LISPDIR)
-+    (add-to-list 'load-path (expand-file-name "apel" LISPDIR))
-+   ))
-+
 +(if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
-+    (require 'apel-setupel))
- 
- (require 'install)
++    (progn 
++      (require 'apel-setupel)
++      (require 'flim-setupel)
++      ))
++
+ (if (boundp 'VERSION_SPECIFIC_LISPDIR)
+     (add-to-list 'load-path VERSION_SPECIFIC_LISPDIR))
  
