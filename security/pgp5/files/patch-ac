@@ -1,0 +1,30 @@
+--- apps/pgp/Makefile.in.orig	Sat Feb  7 21:54:56 1998
++++ apps/pgp/Makefile.in	Sun Feb 14 13:59:04 1999
+@@ -7,7 +7,9 @@
+ #
+ 
+ PROG = pgp
+-INSTALLPROGS = $(PROG)
++# Set this to "pgp5" if you want the keep old and new versions in parallel
++INSTPGP = pgp5
++INSTALLPROGS =
+ 
+ COMMON=../common
+ LOCALINCLUDES = -I$(COMMON) -I$(srcdir)/$(COMMON)
+@@ -21,11 +23,11 @@
+ 
+ install:: $(PROG)
+ 	(						\
+-	    $(INSTALL) -m 755 pgp $(DESTDIR)$(bindir);	\
++	    $(INSTALL) -m 755 pgp $(DESTDIR)$(bindir)/$(INSTPGP);	\
+ 	    cd $(DESTDIR)$(bindir);			\
+ 	    $(RM) pgpe pgps pgpv pgp_old;		\
+-	    $(LN_S) pgp pgpe;				\
+-	    $(LN_S) pgp pgps;				\
+-	    $(LN_S) pgp pgpv;				\
+-	    $(LN_S) pgp pgp_old				\
++	    $(LN_S) $(INSTPGP) pgpe;			\
++	    $(LN_S) $(INSTPGP) pgps;			\
++	    $(LN_S) $(INSTPGP) pgpv;			\
++	    $(LN_S) $(INSTPGP) pgp_old			\
+ 	)

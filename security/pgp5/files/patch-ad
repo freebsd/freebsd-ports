@@ -1,0 +1,11 @@
+--- lib/ttyui/pgpKBUnix.c.orig	Sun Feb 14 15:07:55 1999
++++ lib/ttyui/pgpKBUnix.c	Sun Feb 14 15:08:32 1999
+@@ -167,7 +167,7 @@
+ int kbOpenKbd(int flags, int InBatchmode) {
+     int lkbFD = -1;
+ 
+-    if(!InBatchmode) {
++    if(!InBatchmode && 0) {
+ 	if((lkbFD = open("/dev/tty", flags)) < 0) {
+ 	    lkbFD = STDIN_FILENO;
+ 	}
