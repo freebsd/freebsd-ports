@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME_DESKTOP=1
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gnomeprefix gnomehack libpanel gnomevfs gnomecanvas libghttp
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
