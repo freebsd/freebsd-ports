@@ -117,6 +117,7 @@
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc
+    SUBDIR += piddle
     SUBDIR += pixmap
     SUBDIR += plotmtv
     SUBDIR += plotutils
