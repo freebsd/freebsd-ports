@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ecartis
-PORTVERSION=	1.0.0b
+PORTVERSION=	1.0.0-bm1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
-DISTNAME=	ecartis-1.0.0-snap20020427
+DISTNAME=	ecartis-1.0.0-snap20020508
 
 MAINTAINER=	trish@bsdunix.net
 
