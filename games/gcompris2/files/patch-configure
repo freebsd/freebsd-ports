@@ -1,15 +1,7 @@
---- configure.orig	Thu Feb  6 14:45:02 2003
-+++ configure	Wed Apr 23 10:27:26 2003
-@@ -8769,6 +8769,7 @@
+--- configure.orig	Sat Feb 28 08:33:22 2004
++++ configure	Sat Feb 28 11:14:06 2004
+@@ -12767,7 +12767,7 @@
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11192,14 +11193,14 @@
- PACKAGE_SOUNDS_DIR="sounds"
  
  cat >>confdefs.h <<_ACEOF
 -#define PACKAGE_SOUNDS_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/sounds"
@@ -17,11 +9,35 @@
  _ACEOF
  
  
- PACKAGE_DATA_DIR="boards"
+@@ -12775,7 +12775,7 @@
+ 
  
  cat >>confdefs.h <<_ACEOF
 -#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/boards"
 +#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/boards"
+ _ACEOF
+ 
+ 
+@@ -12795,7 +12795,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define GNOME_ICONDIR "${myprefix}/${DATADIRNAME}/pixmaps"
++#define GNOME_ICONDIR "${myprefix}/${DATADIRNAME}/gnome/pixmaps"
+ _ACEOF
+ 
+ 
+@@ -13372,11 +13372,11 @@
+ 
+ 
+ 
+-ASSETML_DIR=assetml
++ASSETML_DIR=gnome/assetml
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/${ASSETML_DIR}"
++#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/gnome/${ASSETML_DIR}"
  _ACEOF
  
  

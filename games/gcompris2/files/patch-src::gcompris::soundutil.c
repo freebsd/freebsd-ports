@@ -1,13 +1,18 @@
-
-$FreeBSD$
-
---- src/gcompris/soundutil.c	2002/03/20 10:35:57	1.1
-+++ src/gcompris/soundutil.c	2002/03/20 10:36:14
-@@ -19,6 +19,7 @@
-  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-  */
+--- src/gcompris/soundutil.c.orig	Sun Dec  7 07:12:51 2003
++++ src/gcompris/soundutil.c	Mon Feb  2 21:44:57 2004
+@@ -22,6 +22,7 @@
+ #endif
+ #include <dirent.h>
  
 +#include <signal.h>
  #include "gcompris.h"
+ #include <signal.h>
+ #include <pthread.h>
+@@ -176,6 +177,7 @@
+ 	{
+ 	  int err;
  
- static GList *pending_queue = NULL;
++	  pthread_mutex_lock( &lock );
+ 	  err = pthread_cond_wait (&cond, &lock);
+ 	  if (err)
+ 	    printf ("cond_wait  : %s\n", strerror (err));

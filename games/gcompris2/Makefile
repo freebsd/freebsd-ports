@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris2
-PORTVERSION=	2.1
-PORTREVISION=	5
+PORTVERSION=	5.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -17,14 +16,17 @@ MAINTAINER=	gnome@freebsd.org
 COMMENT=	A simple Gnome2-based education game for children starting at 3
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		ao.3:${PORTSDIR}/audio/libao
+		ao.3:${PORTSDIR}/audio/libao \
+		assetml.0:${PORTSDIR}/devel/libassetml
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=      gnomehack gnomeprefix libgnomeui
+USE_PYTHON=	yes
+USE_GNOME=	gnomehack lthack gnomeprefix libgnomeui pygnome2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="${PTHREAD_LIBS} -lm"
 
 INFO=		gcompris
 
