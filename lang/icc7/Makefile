@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	icc
-PORTVERSION=	7.1.034
-PORTREVISION=	1
+PORTNAME=	icc7
+PORTVERSION=	7.1.035
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -51,9 +50,11 @@ ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
+.for file in ${DISTNAME}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${file}${EXTRACT_SUFX})
 IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${ICC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
 .endif
+.endfor
 
 .if exists(${LINUXBASE}/boot/kernel.h) || \
 	exists(${PREFIX}/intel/compiler60/bin/ifc) || \
@@ -69,8 +70,8 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.1-37.i386.rpm
-#	intel-iidb7-7.2.2-75.i386.rpm
+	intel-icc7-7.1-38.i386.rpm
+#	intel-iidb7-7.2.2-77.i386.rpm
 	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
@@ -93,7 +94,8 @@ pre-patch:
 post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/iccvars.csh ia32/bin/iccvars.sh ia32/bin/icpc
-	@${REINPLACE_CMD} -i "" -e 's:@@PREFIX@@:${PREFIX}:g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@man -w@manpath -q@g' \
+	@${REINPLACE_CMD} -i "" -e 's:%%ICC_LOCALBASE%%:${LOCALBASE}:g; \
+		s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@man -w@manpath -q@g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/${COMPILERDIR}/${i}
 .endfor

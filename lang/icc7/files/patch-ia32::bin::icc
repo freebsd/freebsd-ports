@@ -4,8 +4,8 @@
  #!/bin/sh
  
 -if [ -z INTEL_LICENSE_FILE ]
-+PREFIX=@@PREFIX@@
-+export PREFIX;
++ICC_LOCALBASE=%%ICC_LOCALBASE%%
++export ICC_LOCALBASE;
 +
 +if [ -z "$INTEL_LICENSE_FILE" ]
  then
