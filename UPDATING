@@ -25,7 +25,7 @@ upgrades.
   3) Reinstall ruby 1.8 (because the previous step kills symlinks)
         portupgrade -f lang/ruby18
 
-  4) Deinstall ruby 1.6 stuff (if you are paranoia)
+  4) Deinstall ruby 1.6 stuff (if you are paranoid)
         pkg_deinstall -ri lang/ruby16
 
 
