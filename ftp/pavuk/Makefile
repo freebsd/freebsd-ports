@@ -3,7 +3,7 @@
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/16 22:37:40 billf Exp $
 #
 
 DISTNAME=		pavuk-0.9pl3
@@ -18,7 +18,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		andy@icc.surw.chel.su
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
-			gtk.1:${PORTSDIR}/x11-toolkits/gtk11
+			gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_XLIB=		yes
 GNU_CONFIGURE=		yes
