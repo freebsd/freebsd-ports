@@ -23,9 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/DateTime/Calendar/Christian.pm:${PORTSDIR}/devel/p5-DateTime-Calendar-Christian \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Event::NameDay.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>

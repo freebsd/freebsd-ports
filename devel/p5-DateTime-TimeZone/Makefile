@@ -20,12 +20,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 		DateTime::TimeZone::Local.3 DateTime::TimeZone::OffsetOnly.3 \
 		DateTime::TimeZone::OlsonDB.3 DateTime::TimeZone::UTC.3 \
 		DateTime::TimeZoneCatalog.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>

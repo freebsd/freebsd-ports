@@ -15,16 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Checks if the documentation of a module is comprehensive
 
-BUILD_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Pod::Coverage.3 \
 		Pod::Coverage::CountParents.3 \
 		Pod::Coverage::ExportOnly.3 \
 		Pod::Coverage::Overloader.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>

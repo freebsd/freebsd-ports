@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Calculate the day or week of the Fiscal Year with an arbitrary start date
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Fiscal::Year.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>

@@ -22,9 +22,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/DateTime/Span.pm:${PORTSDIR}/devel/p5-DateTime-Set \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Format::ICal.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>

@@ -18,10 +18,9 @@ COMMENT=	Localization support for DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Locale.3 DateTime::Locale::Alias::ISO639_2.3 \
 		DateTime::Locale::Base.3 DateTime::LocaleCatalog.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>
