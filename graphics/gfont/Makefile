@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	gfont
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics print www
 MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
-		ftp://ftp.engelschall.com/sw/gfont/ \
-		http://www.hyperreal.org/software/engelschall/gfont/
+		ftp://ftp.engelschall.com/sw/gfont/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics Font - Create GIF image rendered with TeX-available Font
 
-RUN_DEPENDS=	mf:${PORTSDIR}/print/teTeX \
-		gftopk:${PORTSDIR}/print/teTeX \
-		gsftopk:${PORTSDIR}/print/teTeX
-
-.include <bsd.port.pre.mk>
+BUILD_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gfont.1
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${PERL} -pi -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
