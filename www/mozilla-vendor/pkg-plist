@@ -1,5 +1,4 @@
 bin/mozilla
-lib/mozilla/CvtURL
 lib/mozilla/DumpColors
 lib/mozilla/FilesTest
 lib/mozilla/OutTestData/doctype.xif
@@ -55,6 +54,7 @@ lib/mozilla/TestObserverService
 lib/mozilla/TestOutSinks.pl
 lib/mozilla/TestOutput
 lib/mozilla/TestPageLoad
+lib/mozilla/TestPerf
 lib/mozilla/TestPermanentAtoms
 lib/mozilla/TestPipes
 lib/mozilla/TestProtocols
@@ -64,9 +64,11 @@ lib/mozilla/TestSocketIO
 lib/mozilla/TestSocketInput
 lib/mozilla/TestSocketTransport
 lib/mozilla/TestSpaceManager
+lib/mozilla/TestStandardURL
 lib/mozilla/TestStreamConv
 lib/mozilla/TestTXMgr
 lib/mozilla/TestThreads
+lib/mozilla/TestURLParser
 lib/mozilla/TestVoidBTree
 lib/mozilla/TestXMLExtras
 lib/mozilla/TestXPC
@@ -75,33 +77,31 @@ lib/mozilla/TestXPTCInvoke
 lib/mozilla/UnicharSelfTest
 lib/mozilla/bloaturls.txt
 lib/mozilla/chrome/US.jar
-lib/mozilla/chrome/all-locales.rdf
-lib/mozilla/chrome/all-packages.rdf
-lib/mozilla/chrome/all-skins.rdf
+@unexec rm %D/lib/mozilla/chrome/chrome.rdf
 lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
 lib/mozilla/chrome/comm.jar
 lib/mozilla/chrome/content-packs.jar
-lib/mozilla/chrome/embed.jar
+lib/mozilla/chrome/embed-sample.jar
 lib/mozilla/chrome/en-US.jar
 lib/mozilla/chrome/en-mac.jar
 lib/mozilla/chrome/en-unix.jar
 lib/mozilla/chrome/en-win.jar
 lib/mozilla/chrome/help.jar
+lib/mozilla/chrome/inspector.jar
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/messenger.jar
 lib/mozilla/chrome/modern.jar
 lib/mozilla/chrome/overlayinfo/communicator/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/editor/content/overlays.rdf
+lib/mozilla/chrome/overlayinfo/inspector/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/messenger/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/navigator/content/overlays.rdf
 lib/mozilla/chrome/pipnss.jar
 lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
-@unexec rm -f %D/lib/mozilla/chrome/user-locales.rdf
-lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/chrome/venkman.jar
-lib/mozilla/component.reg
+@unexec rm %D/lib/mozilla/component.reg
 lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
 lib/mozilla/components/addrbook.xpt
@@ -124,6 +124,7 @@ lib/mozilla/components/dom_events.xpt
 lib/mozilla/components/dom_html.xpt
 lib/mozilla/components/dom_range.xpt
 lib/mozilla/components/dom_stylesheets.xpt
+lib/mozilla/components/dom_svg.xpt
 lib/mozilla/components/dom_traversal.xpt
 lib/mozilla/components/dom_views.xpt
 lib/mozilla/components/dom_xbl.xpt
@@ -131,6 +132,7 @@ lib/mozilla/components/dom_xul.xpt
 lib/mozilla/components/editor.xpt
 lib/mozilla/components/embed_base.xpt
 lib/mozilla/components/exthandler.xpt
+lib/mozilla/components/filepicker.xpt
 lib/mozilla/components/find.xpt
 lib/mozilla/components/gfx.xpt
 lib/mozilla/components/gfx2.xpt
@@ -138,6 +140,7 @@ lib/mozilla/components/helperAppDlg.xpt
 lib/mozilla/components/history.xpt
 lib/mozilla/components/imglib2.xpt
 lib/mozilla/components/import.xpt
+lib/mozilla/components/inspector.xpt
 lib/mozilla/components/intl.xpt
 lib/mozilla/components/jar.xpt
 lib/mozilla/components/jsconsole-clhandler.js
@@ -160,6 +163,7 @@ lib/mozilla/components/libcookie.so
 lib/mozilla/components/libdocshell.so
 lib/mozilla/components/libeditor.so
 lib/mozilla/components/libembedcomponents.so
+lib/mozilla/components/libfileview.so
 lib/mozilla/components/libgfx2.so
 lib/mozilla/components/libgfx_gtk.so
 lib/mozilla/components/libgfxps.so
@@ -177,6 +181,7 @@ lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
 lib/mozilla/components/libimpText.so
 lib/mozilla/components/libimport.so
+lib/mozilla/components/libinspector.so
 lib/mozilla/components/libjar50.so
 lib/mozilla/components/libjsd.so
 lib/mozilla/components/libjsdom.so
@@ -196,6 +201,7 @@ lib/mozilla/components/libmsgcompose.so
 lib/mozilla/components/libmsgdb.so
 lib/mozilla/components/libmsgimap.so
 lib/mozilla/components/libmsgnews.so
+lib/mozilla/components/libmsgsmime.so
 lib/mozilla/components/libnecko.so
 lib/mozilla/components/libnecko2.so
 lib/mozilla/components/libnkcache.so
@@ -204,6 +210,7 @@ lib/mozilla/components/libnsappshell.so
 lib/mozilla/components/libnslocale.so
 lib/mozilla/components/libnsprefm.so
 lib/mozilla/components/liboji.so
+lib/mozilla/components/libpipboot.so
 lib/mozilla/components/libpipnss.so
 lib/mozilla/components/libpippki.so
 lib/mozilla/components/libpref.so
@@ -212,7 +219,6 @@ lib/mozilla/components/librdf.so
 lib/mozilla/components/libregviewer.so
 lib/mozilla/components/libsample.so
 lib/mozilla/components/libshistory.so
-lib/mozilla/components/libsmimestb.so
 lib/mozilla/components/libstrres.so
 lib/mozilla/components/libtestdynamic.so
 lib/mozilla/components/libtimer_gtk.so
@@ -256,6 +262,7 @@ lib/mozilla/components/msgimap.xpt
 lib/mozilla/components/msglocal.xpt
 lib/mozilla/components/msgnews.xpt
 lib/mozilla/components/msgsearch.xpt
+lib/mozilla/components/msgsmime.xpt
 lib/mozilla/components/necko.xpt
 lib/mozilla/components/necko_about.xpt
 lib/mozilla/components/necko_cache.xpt
@@ -278,6 +285,7 @@ lib/mozilla/components/nsSample.js
 lib/mozilla/components/nsSidebar.js
 lib/mozilla/components/nsXmlRpcClient.js
 lib/mozilla/components/oji.xpt
+lib/mozilla/components/pipboot.xpt
 lib/mozilla/components/pipnss.xpt
 lib/mozilla/components/pippki.xpt
 lib/mozilla/components/plugin.xpt
@@ -294,6 +302,7 @@ lib/mozilla/components/search.xpt
 lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
 lib/mozilla/components/signonviewer.xpt
+lib/mozilla/components/smime-service.js
 lib/mozilla/components/transformiix.xpt
 lib/mozilla/components/txmgr.xpt
 lib/mozilla/components/txtsvc.xpt
@@ -322,7 +331,7 @@ lib/mozilla/components/xpcom_xpti.xpt
 lib/mozilla/components/xpconnect.xpt
 lib/mozilla/components/xpconnect_tests.xpt
 lib/mozilla/components/xpinstall.xpt
-lib/mozilla/components/xpti.dat
+@unexec rm %D/lib/mozilla/components/xpti.dat
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
@@ -330,20 +339,22 @@ lib/mozilla/defaults/pref/all.js
 lib/mozilla/defaults/pref/config.js
 lib/mozilla/defaults/pref/editor.js
 lib/mozilla/defaults/pref/initpref.js
+lib/mozilla/defaults/pref/inspector.js
 lib/mozilla/defaults/pref/mailnews.js
 lib/mozilla/defaults/pref/security-prefs.js
+lib/mozilla/defaults/pref/smime.js
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/pref/xpinstall.js
 lib/mozilla/defaults/profile/US/bookmarks.html
-lib/mozilla/defaults/profile/US/chrome/userChrome.css
-lib/mozilla/defaults/profile/US/chrome/userContent.css
+lib/mozilla/defaults/profile/US/chrome/userChrome-example.css
+lib/mozilla/defaults/profile/US/chrome/userContent-example.css
 lib/mozilla/defaults/profile/US/localstore.rdf
 lib/mozilla/defaults/profile/US/mimeTypes.rdf
 lib/mozilla/defaults/profile/US/panels.rdf
 lib/mozilla/defaults/profile/US/search.rdf
 lib/mozilla/defaults/profile/bookmarks.html
-lib/mozilla/defaults/profile/chrome/userChrome.css
-lib/mozilla/defaults/profile/chrome/userContent.css
+lib/mozilla/defaults/profile/chrome/userChrome-example.css
+lib/mozilla/defaults/profile/chrome/userContent-example.css
 lib/mozilla/defaults/profile/localstore.rdf
 lib/mozilla/defaults/profile/mimeTypes.rdf
 lib/mozilla/defaults/profile/panels.rdf
@@ -368,6 +379,7 @@ lib/mozilla/libgtkxtbin.so
 lib/mozilla/libjsj.so
 lib/mozilla/liblber40.so
 lib/mozilla/libldap40.so
+lib/mozilla/libmoz_art_lgpl.so
 lib/mozilla/libmozjs.so
 lib/mozilla/libmsgbaseutil.so
 lib/mozilla/libnspr4.so
@@ -395,6 +407,7 @@ lib/mozilla/regExport
 lib/mozilla/regchrome
 lib/mozilla/regxpcom
 lib/mozilla/res/arrow.gif
+lib/mozilla/res/broken-image.gif
 lib/mozilla/res/builtin/htmlBindings.xml
 lib/mozilla/res/builtin/platformHTMLBindings.xml
 lib/mozilla/res/builtin/xbl-forms.css
@@ -419,7 +432,6 @@ lib/mozilla/res/forms.css
 lib/mozilla/res/gfx/icon_0.gif
 lib/mozilla/res/gfx/icon_1.gif
 lib/mozilla/res/html.css
-lib/mozilla/res/html/broken-image.gif
 lib/mozilla/res/html/gopher-audio.gif
 lib/mozilla/res/html/gopher-binary.gif
 lib/mozilla/res/html/gopher-find.gif
@@ -429,11 +441,13 @@ lib/mozilla/res/html/gopher-movie.gif
 lib/mozilla/res/html/gopher-telnet.gif
 lib/mozilla/res/html/gopher-text.gif
 lib/mozilla/res/html/gopher-unknown.gif
-lib/mozilla/res/html/loading-image.gif
+lib/mozilla/res/inspector/search-registry.rdf
+lib/mozilla/res/inspector/viewer-registry.rdf
+lib/mozilla/res/jarlist.dat
 lib/mozilla/res/langGroups.properties
 lib/mozilla/res/language.properties
+lib/mozilla/res/loading-image.gif
 lib/mozilla/res/mathml.css
-lib/mozilla/res/nssifail.txt
 lib/mozilla/res/quirk.css
 lib/mozilla/res/rdf/article.gif
 lib/mozilla/res/rdf/document.gif
@@ -579,6 +593,8 @@ lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
 lib/mozilla/splash.xpm
+lib/mozilla/testart
+lib/mozilla/testuta
 lib/mozilla/urltest
 lib/mozilla/viewer
 lib/mozilla/viewer_gtk
@@ -592,6 +608,7 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/samples/sampleimages
 @dirrm lib/mozilla/res/samples
 @dirrm lib/mozilla/res/rdf
+@dirrm lib/mozilla/res/inspector
 @dirrm lib/mozilla/res/html
 @dirrm lib/mozilla/res/gfx
 @dirrm lib/mozilla/res/fonts
@@ -613,6 +630,8 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/overlayinfo/navigator
 @dirrm lib/mozilla/chrome/overlayinfo/messenger/content
 @dirrm lib/mozilla/chrome/overlayinfo/messenger
+@dirrm lib/mozilla/chrome/overlayinfo/inspector/content
+@dirrm lib/mozilla/chrome/overlayinfo/inspector
 @dirrm lib/mozilla/chrome/overlayinfo/editor/content
 @dirrm lib/mozilla/chrome/overlayinfo/editor
 @dirrm lib/mozilla/chrome/overlayinfo/communicator/content

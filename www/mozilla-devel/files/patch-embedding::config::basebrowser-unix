@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- embedding/config/basebrowser-unix	2001/12/26 07:19:52	1.1
++++ embedding/config/basebrowser-unix	2001/12/26 07:24:15
+@@ -119,6 +119,7 @@
+ 
+ ; layout
+ components/libgkcontent.so
++libmoz_art_lgpl.so                   
+ components/libgklayout.so                   
+ components/libhtmlpars.so                 
+ components/libgkview.so                   
