@@ -3,15 +3,17 @@
 # Date created:        18 March 1999
 # Whom:                Zenin <zenin@archive.rhps.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/31 06:33:48 taoka Exp $
 #
 
-DISTNAME=       wmeyes-1.0
-CATEGORIES=     games
-MASTER_SITES=   ftp://thrush.omix.com/pub/misc/
+DISTNAME=	wmeyes-1.0
+CATEGORIES=	games
+MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
 
-MAINTAINER=     zenin@archive.rhps.org
+MAINTAINER=	zenin@archive.rhps.org
 
-USE_IMAKE=     yes
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
+
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>
