@@ -7,7 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	2.8015.469
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -41,9 +41,7 @@ BINDIR=		${PREFIX}/distributed.net
 LIBDIR=		${PREFIX}/etc/rc.d
 
 CLIENTUSER=	dnetc
-CLIENTUID=	26
 CLIENTGROUP=	${CLIENTUSER}
-CLIENTGID=	${CLIENTUID}
 
 SBINMODE=	700
 BINMODE=	700
@@ -57,7 +55,7 @@ do-configure:
 
 pre-install:
 	@${ECHO} "==>  Creating custom user to run dnetc..."
-	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTUID}" "${CLIENTGROUP}" "${CLIENTGID}"
+	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTGROUP}" 
 
 do-install:
 	@if [ ! -d ${BINDIR} ]; then \

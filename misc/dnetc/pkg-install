@@ -5,12 +5,10 @@ if [ "$2" != "PRE-INSTALL" ]; then
 fi
 
 CLIENTUSER=$3
-CLIENTUID=$4
-CLIENTGROUP=$5
-CLIENTGID=$6
+CLIENTGROUP=$4
 
 if ! pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
-	if pw groupadd $CLIENTGROUP -g $CLIENTGID; then
+	if pw groupadd $CLIENTGROUP; then
 		echo "=> Added group \"$CLIENTGROUP\"."
 	else
                 echo "=> Adding group \"$CLIENTGROUP\" failed..."
@@ -19,7 +17,7 @@ if ! pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
 fi
 
 if ! pw usershow "$CLIENTUSER" 2>/dev/null 1>&2; then
-        if pw useradd $CLIENTUSER -u $CLIENTUID -g $CLIENTGROUP -h - \
+        if pw useradd $CLIENTUSER -g $CLIENTGROUP -h - \
                 -s "/sbin/nologin" -d "/nonexistent" \
                 -c "distributed.net client and proxy pseudo-user"; \
         then
