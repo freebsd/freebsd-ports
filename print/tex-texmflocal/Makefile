@@ -68,8 +68,8 @@ pre-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/tetex-modesw.in ${PREFIX}/bin/tetex-modesw
-.for D in TEXMFDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR
-	${MKDIR} ${DIRS:S,^,${PREFIX}/${${D}}/,}
+.for D in TEXMF TEXMFLOCAL TEXMFVAR TEXMFCONFIG
+	${MKDIR} ${DIRS:S,^,${PREFIX}/${${D}DIR}/,}
 	${LSRMAGIC} > ${${D}_LSR}
 	${CHMOD} 0644 ${${D}_LSR}
 .endfor
