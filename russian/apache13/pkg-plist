@@ -220,6 +220,7 @@ libexec/apache/mod_digest.so
 libexec/apache/mod_expires.so
 libexec/apache/mod_headers.so
 libexec/apache/mod_info.so
+libexec/apache/mod_log_forensic.so
 libexec/apache/mod_mime_magic.so
 libexec/apache/mod_mmap_static.so
 libexec/apache/mod_rewrite.so
@@ -269,6 +270,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/index.html.es
 %%DOCSDIR%%/index.html.fr
 %%DOCSDIR%%/index.html.he.iso8859-8
+%%DOCSDIR%%/index.html.hu
 %%DOCSDIR%%/index.html.it
 %%DOCSDIR%%/index.html.ja.jis
 %%DOCSDIR%%/index.html.kr.iso-kr
@@ -289,7 +291,6 @@ sbin/rotatelogs
 %%DOCSDIR%%/index.html.ru.utf8
 %%DOCSDIR%%/index.html.se
 %%DOCSDIR%%/index.html.zh-tw.big5
-%%DOCSDIR%%/manual/FAQ.html
 %%DOCSDIR%%/manual/LICENSE
 %%DOCSDIR%%/manual/bind.html.en
 %%DOCSDIR%%/manual/bind.html.fr
@@ -360,7 +361,9 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/keepalive.html.en
 %%DOCSDIR%%/manual/keepalive.html.html
 %%DOCSDIR%%/manual/keepalive.html.ja.jis
-%%DOCSDIR%%/manual/location.html
+%%DOCSDIR%%/manual/location.html.en
+%%DOCSDIR%%/manual/location.html.html
+%%DOCSDIR%%/manual/location.html.ja.jis
 %%DOCSDIR%%/manual/logs.html
 %%DOCSDIR%%/manual/man-template.html
 %%DOCSDIR%%/manual/misc/API.html
@@ -429,7 +432,9 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/mod/mod_auth_db.html
 %%DOCSDIR%%/manual/mod/mod_auth_dbm.html
 %%DOCSDIR%%/manual/mod/mod_auth_digest.html
-%%DOCSDIR%%/manual/mod/mod_autoindex.html
+%%DOCSDIR%%/manual/mod/mod_autoindex.html.en
+%%DOCSDIR%%/manual/mod/mod_autoindex.html.html
+%%DOCSDIR%%/manual/mod/mod_autoindex.html.ja.jis
 %%DOCSDIR%%/manual/mod/mod_browser.html
 %%DOCSDIR%%/manual/mod/mod_cern_meta.html
 %%DOCSDIR%%/manual/mod/mod_cgi.html.en
@@ -458,6 +463,8 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/mod/mod_log_config.html.en
 %%DOCSDIR%%/manual/mod/mod_log_config.html.html
 %%DOCSDIR%%/manual/mod/mod_log_config.html.ja.jis
+%%DOCSDIR%%/manual/mod/mod_log_forensic.html.en
+%%DOCSDIR%%/manual/mod/mod_log_forensic.html.html
 %%DOCSDIR%%/manual/mod/mod_log_referer.html
 %%DOCSDIR%%/manual/mod/mod_mime.html.en
 %%DOCSDIR%%/manual/mod/mod_mime.html.html
@@ -530,7 +537,6 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/programs/suexec.html.html
 %%DOCSDIR%%/manual/programs/suexec.html.ja.jis
 %%DOCSDIR%%/manual/readme-tpf.html
-%%DOCSDIR%%/manual/search/manual-index.cgi
 %%DOCSDIR%%/manual/sections.html.en
 %%DOCSDIR%%/manual/sections.html.html
 %%DOCSDIR%%/manual/sections.html.ja.jis
@@ -576,6 +582,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/win_service.html.html
 %%DOCSDIR%%/manual/win_service.html.ja.jis
 %%DOCSDIR%%/manual/windows.html.en
+%%DOCSDIR%%/manual/windows.html.html
 %%DOCSDIR%%/manual/windows.html.ja.jis
 www/cgi-bin.default/printenv
 www/cgi-bin.default/test-cgi
@@ -816,7 +823,6 @@ www/icons/world2.png
 @dirrm %%DOCSDIR%%/manual/misc
 @dirrm %%DOCSDIR%%/manual/mod
 @dirrm %%DOCSDIR%%/manual/programs
-@dirrm %%DOCSDIR%%/manual/search
 @dirrm %%DOCSDIR%%/manual/vhosts
 @dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%
