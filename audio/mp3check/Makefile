@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3check
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/mp3check/
 EXTRACT_SUFX=
