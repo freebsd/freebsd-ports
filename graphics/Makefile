@@ -183,7 +183,6 @@
     SUBDIR += libaux
     SUBDIR += libdjvu++
     SUBDIR += libdvbpsi
-    SUBDIR += libdvdnav
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfame
@@ -205,7 +204,6 @@
     SUBDIR += libv3d
     SUBDIR += libwmf
     SUBDIR += libwpcg
-    SUBDIR += libxine
     SUBDIR += linplasma
     SUBDIR += linux-bmrt
     SUBDIR += linux-imlib
@@ -411,7 +409,6 @@
     SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xgrasp
-    SUBDIR += xine
     SUBDIR += xine_d4d_plugin
     SUBDIR += xine_d5d_plugin
     SUBDIR += xli
