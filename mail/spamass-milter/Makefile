@@ -7,6 +7,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://freesoftware.fsf.org/download/spamass-milt/
 
