@@ -1,0 +1,299 @@
+# 1 "temp.c"
+ 
+
+
+
+
+SHELL		= /bin/sh
+ARCH		= _386BSD
+WHEN		= date
+WHO		= whoami
+WHERE		= hostname
+CC		= /usr/bin/cc
+LIBS		= 
+RANLIB		= ranlib
+INSTALL		= 
+CC_FLAG		= -O -DDONT_HAVE_FTIME
+BIN_DIR		= @PREFIX@/bin
+LIB_DIR		= @PREFIX@/lib
+MAN_DIR		= @PREFIX@/man/ja_JP.EUC/
+
+VERSION		= 1.20
+NET_OPT		=  -DNSPL -DMTAP -DPOP3 -DMSPL
+CONS_OPT	= -DNEWSPOST -DMAILSEND -DJNAMES -DMH -DUCBMAIL -DRMAIL -DMIME -DPAGER -DFCC
+CONF_OPT	= -DCTRL_L -DCOMPLETION -DREF_SORT -DLARGE -DDISPLAY_CTRL -DLOCAL_POST
+MOD_OPT		= 
+SRC_DIR		= ../src
+COMPAT_DIR	= ../compat
+TCP_DIR		= ../tcplib
+NNTP_DIR	= ../nntplib
+SMTP_DIR	= ../smtplib
+POP3_DIR	= ../pop3lib
+KANJI_DIR	= ../kanjilib
+TERM_DIR	= ../termlib
+MIME_DIR	= ../mimelib
+DOC_DIR		= ../doc
+ETC_DIR		= ../etc
+BUILD_DIR	= ../build
+ARC_DIR		= mnews-${VERSION}
+INC_FLAG	= -I. -I${COMPAT_DIR} -I${TCP_DIR} 		-I${NNTP_DIR} -I${SMTP_DIR} -I${POP3_DIR} 		-I${KANJI_DIR} -I${MIME_DIR} -I${TERM_DIR} -I${SRC_DIR}
+
+
+CPP_FLAG1	= ${INC_FLAG} -DMNEWS -DJIS_INPUT ${CONF_OPT} -D${ARCH}
+CPP_FLAG2	= ${CONS_OPT} ${CPP_FLAG1}
+C_FLAG1		= ${CPP_FLAG1} ${CC_FLAG}
+C_FLAG2		= ${CPP_FLAG2} ${CC_FLAG}
+RM		= rm
+RM_FLAG		= -f
+EXE		= mnews
+
+
+NEWSPOST_OBJ	= newspost.o
+
+
+MAILSEND_OBJ	= mailsend.o
+
+
+
+
+
+JNAMES_OBJ	= jnames.o
+
+
+
+MH_OBJ		= mh.o
+
+
+UCBMAIL_OBJ	= ucbmail.o
+
+
+RMAIL_OBJ	= rmail.o
+
+
+
+
+
+PAGER_OBJ	= pager.o
+
+
+FCC_OBJ		= fcc.o
+
+
+MIME_OBJ	= mimelib.o
+
+
+
+
+BASE_OBJ	= mnews.o group.o article.o mark.o compat.o 		tcplib.o nntplib.o smtplib.o pop3lib.o kanjilib.o termlib.o
+
+OPT_OBJ		= ${NEWSPOST_OBJ} ${MAILSEND_OBJ} ${JNAMES_OBJ} 		${MH_OBJ} ${UCBMAIL_OBJ} ${RMAIL_OBJ} ${BOARD_OBJ} 		${PAGER_OBJ} ${FCC_OBJ} ${MIME_OBJ} 		${YOUBIN_OBJ}
+
+
+
+OBJ		= ${BASE_OBJ} ${OPT_OBJ}
+C_OBJ   	= config.o
+COMPAT_INC	= ${COMPAT_DIR}/compat.h
+COMPAT_SRC	= ${COMPAT_DIR}/compat.c
+TCP_INC		= ${TCP_DIR}/tcplib.h  ${TCP_DIR}/field.h
+TCP_SRC		= ${TCP_DIR}/tcplib.c
+NNTP_INC	= ${NNTP_DIR}/nntplib.h
+NNTP_SRC	= ${NNTP_DIR}/nntplib.c
+SMTP_INC	= ${SMTP_DIR}/smtplib.h
+SMTP_SRC	= ${SMTP_DIR}/smtplib.c
+POP3_INC	= ${POP3_DIR}/pop3lib.h
+POP3_SRC	= ${POP3_DIR}/pop3lib.c
+KANJI_INC	= ${KANJI_DIR}/kanjilib.h
+KANJI_SRC	= ${KANJI_DIR}/kanjilib.c
+TERM_INC	= ${TERM_DIR}/termlib.h
+TERM_SRC	= ${TERM_DIR}/termlib.c
+TERM_SRC2	= ${TERM_DIR}/termdos.c
+MIME_INC	= ${MIME_DIR}/mimelib.h
+MIME_SRC	= ${MIME_DIR}/mimelib.c
+SRC		= ${COMPAT_SRC} 		${TCP_SRC} 		${NNTP_SRC} 		${SMTP_SRC} 		${POP3_SRC} 		${KANJI_SRC} 		${TERM_SRC} 		${TERM_SRC2} 		${MIME_SRC} 		${SRC_DIR}/mnews.c 		${SRC_DIR}/group.c 		${SRC_DIR}/article.c 		${SRC_DIR}/mark.c 		${SRC_DIR}/mh.c 		${SRC_DIR}/ucbmail.c 		${SRC_DIR}/rmail.c 		${SRC_DIR}/board.c 		${SRC_DIR}/newspost.c 		${SRC_DIR}/mailsend.c 		${SRC_DIR}/pager.c 		${SRC_DIR}/fcc.c 		${SRC_DIR}/inetbios.c 		${SRC_DIR}/jnames.c 		${SRC_DIR}/jnhash.c 		${SRC_DIR}/youbin.c
+# 136 "temp.c"
+INC		= ${COMPAT_INC} 		${TCP_INC} 		${NNTP_INC} 		${SMTP_INC} 		${POP3_INC} 		${KANJI_INC} 		${TERM_INC} 		${MIME_INC} 		${SRC_DIR}/mnews.h 		${SRC_DIR}/group.h 		${SRC_DIR}/article.h 		${SRC_DIR}/mark.h 		${SRC_DIR}/mh.h 		${SRC_DIR}/ucbmail.h 		${SRC_DIR}/rmail.h 		${SRC_DIR}/board.h 		${SRC_DIR}/newspost.h 		${SRC_DIR}/mailsend.h 		${SRC_DIR}/pager.h 		${SRC_DIR}/fcc.h 		${SRC_DIR}/inetbios.h 		${BUILD_DIR}/site_DOS.h 		${BUILD_DIR}/site_X68.h
+# 159 "temp.c"
+C_SRC		= ${SRC_DIR}/config.c
+C_INC		= ${SRC_DIR}/config.h
+SITE		= ${BUILD_DIR}/site_dep.h
+DOC1		= ${DOC_DIR}/mnews.doc 		${DOC_DIR}/mnews.1 		${DOC_DIR}/read1ST.doc 		${DOC_DIR}/readme.doc 		${DOC_DIR}/update.doc 		${DOC_DIR}/FAQ.doc 		${DOC_DIR}/board.doc 		${DOC_DIR}/present.doc
+
+
+
+
+
+
+
+DOC2		= ${DOC_DIR}/prerel.doc
+ETC		= ${ETC_DIR}/board.sh 		${ETC_DIR}/board.csh 		${ETC_DIR}/combine.sh 		${ETC_DIR}/_mnews.smp 		${ETC_DIR}/nemacs-3.3.2.patch 		${ETC_DIR}/mule-2.3@19.28.patch 		${ETC_DIR}/kterm-color.termcap 		${ETC_DIR}/kterm-color.terminfo 		${ETC_DIR}/jnames.smp 		${ETC_DIR}/jnames.fj 		${ETC_DIR}/jnames.jp 		${ETC_DIR}/jnames.tnn
+# 183 "temp.c"
+INFO		= inst_inf.h
+MAKE1		= config.sh config.jsh Makefile.obj
+MAKE2		= Makefile.src Makefile.MSC Makefile.GCC Makefile.X68 		Makefile.TCC Makefile.B16 Makefile.B32
+
+SRC_DIST	= mnews_src.tar
+OBJ_DIST	= mnews_${ARCH}_obj.tar
+EXE_DIST	= mnews_${ARCH}_exe.tar
+
+all: ${EXE}
+
+obj: ${OBJ}
+
+${EXE}: ${BASE_OBJ} ${OPT_OBJ} ${C_OBJ}
+	${CC} ${CC_FLAG} -o $@ ${BASE_OBJ} ${OPT_OBJ} ${C_OBJ} ${LIBS}
+	strip $@
+	chmod 755 $@
+	chmod 644 ${DOC1} ${DOC2}
+
+.c.o: ${INC}
+	${CC} ${C_FLAG2} -c $*.c
+
+${C_OBJ}: ${C_SRC} ${C_INC} ${SITE} ${INFO}
+	${CC} ${C_FLAG2} ${NET_OPT} -c ${C_SRC}
+
+${INFO}: ${C_SRC} ${C_INC} ${SITE} ${SRC} ${INC}
+	-${RM} ${RM_FLAG} ${INFO}
+	@echo "Making "'"'${INFO}'"'
+	touch ${INFO}
+	@echo "/*"                                         >> ${INFO}
+	@echo " * Mini News Reader Install Information"    >> ${INFO}
+	@echo " */"                                        >> ${INFO}
+	@echo ""                                           >> ${INFO}
+	@echo "#define	NET_OPT	"'"'${NET_OPT}'"'          >> ${INFO}
+	@echo "#define	CONS_OPT	"'"'${CONS_OPT}'"' >> ${INFO}
+	@echo "#define	CONF_OPT	"'"'${CONF_OPT}'"' >> ${INFO}
+	@echo "#define	ARCH_OPT	"'"'${ARCH}'"'     >> ${INFO}
+	@echo "#define	INSTALL_HOST	"'"'`${WHERE}`'"'  >> ${INFO}
+	@echo "#define	INSTALL_USER	"'"'`${WHO}`'"'    >> ${INFO}
+	@echo "#define	INSTALL_DATE	"'"'`${WHEN}`'"'   >> ${INFO}
+
+${SITE}:
+	@echo "You must run config.sh or config.jsh first."
+
+compat.o: ${INC} ${COMPAT_SRC}
+	${CC} ${C_FLAG2} -c ${COMPAT_SRC}
+
+tcplib.o: ${COMPAT_INC} ${TCP_INC} ${TCP_SRC}
+	${CC} ${C_FLAG1} ${NET_OPT} -c ${TCP_SRC}
+
+nntplib.o: ${COMPAT_INC} ${TCP_INC} ${NNTP_INC} ${NNTP_SRC}
+	${CC} ${C_FLAG1} ${NET_OPT} -c ${NNTP_SRC}
+
+smtplib.o: ${COMPAT_INC} ${TCP_INC} ${SMTP_INC} ${SMTP_SRC}
+	${CC} ${C_FLAG1} ${NET_OPT} -c ${SMTP_SRC}
+
+pop3lib.o: ${COMPAT_INC} ${TCP_INC} ${POP3_INC} ${POP3_SRC}
+	${CC} ${C_FLAG1} ${NET_OPT} -c ${POP3_SRC}
+
+kanjilib.o: ${COMPAT_INC} ${KANJI_INC} ${KANJI_SRC}
+	${CC} ${C_FLAG1} -DDELETE_X0212 -c ${KANJI_SRC}
+
+termlib.o: ${COMPAT_INC} ${TERM_INC} ${TERM_SRC}
+	${CC} ${C_FLAG2} -c ${TERM_SRC}
+
+mimelib.o: ${INC} ${MIME_SRC}
+	${CC} ${C_FLAG2} -c ${MIME_SRC}
+
+jnames.o: ${SRC_DIR}/jnames.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/jnames.c
+
+jnhash.o: ${COMPAT_INC} ${KANJI_INC} ${SRC_DIR}/jnhash.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/jnhash.c
+
+youbin.o: ${INC} ${SRC_DIR}/youbin.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/youbin.c
+
+mnews.o: ${INC} ${SRC_DIR}/mnews.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/mnews.c
+
+group.o: ${INC} ${SRC_DIR}/group.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/group.c
+
+article.o: ${INC} ${SRC_DIR}/article.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/article.c
+
+mark.o: ${INC} ${SRC_DIR}/mark.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/mark.c
+
+mh.o: ${INC} ${SRC_DIR}/mh.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/mh.c
+
+ucbmail.o: ${INC} ${SRC_DIR}/ucbmail.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/ucbmail.c
+
+rmail.o: ${INC} ${SRC_DIR}/rmail.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/rmail.c
+
+board.o: ${INC} ${SRC_DIR}/board.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/board.c
+
+newspost.o: ${INC} ${SRC_DIR}/newspost.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/newspost.c
+
+mailsend.o: ${INC} ${SRC_DIR}/mailsend.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/mailsend.c
+
+pager.o: ${INC} ${SRC_DIR}/pager.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/pager.c
+
+fcc.o: ${INC} ${SRC_DIR}/fcc.c
+	${CC} ${C_FLAG2} -c ${SRC_DIR}/fcc.c
+
+install: all
+	cp ${EXE} ${BIN_DIR}
+	chmod 755 ${BIN_DIR}/${EXE}
+	@if [ -f default-domain ] ; then 		cp default-domain ${LIB_DIR} ; 		chmod 644 ${LIB_DIR}/default-domain ; 	fi
+
+
+
+	@if [ -f "/sbin/i860" ] ; then 		"/sbin/i860" ; 		if [ $? -eq 0 ]; then 			echo "Change group & permission." ; 			chgrp mail ${BIN_DIR}/${EXE} ; 			chmod g+s ${BIN_DIR}/${EXE} ; 		fi ; 	fi
+
+
+
+
+
+
+
+	@if [ -d ${MAN_DIR}/japanese/man1 ] ; then 		cp ${DOC_DIR}/mnews.1 ${MAN_DIR}/japanese/man1 ; 		chmod 644 ${MAN_DIR}/japanese/man1/mnews.1 ; 	fi
+
+
+
+	@if [ -d ${MAN_DIR}/man1 ] ; then 		cp ${DOC_DIR}/mnews.1 ${MAN_DIR}/man1 ; 		chmod 644 ${MAN_DIR}/man1/mnews.1 ; 	fi
+
+
+
+
+help:
+	@echo "--- Mini News Reader Makefile [Source Version] ---"
+	@echo "make          --- make executable file"
+	@echo "make install  --- install executable & manual file"
+	@echo "make clean    --- remove backup & object file"
+	@echo "make remove   --- remove object file"
+	@echo "make help     --- print help message"
+	@echo "make src_dist --- archive source & document file"
+	@echo "make obj_dist --- archive object & document file"
+	@echo "make bin_dist --- archive executable & document file"
+
+clean:
+	-${RM} ${RM_FLAG} ${EXE} ${OBJ} ${C_OBJ} ${INFO} *~ \#* *\#
+
+remove:
+	-${RM} ${RM_FLAG} ${EXE} ${OBJ} ${C_OBJ} ${INFO}
+
+src_dist:
+	(cd ../.. ; tar cvfh ${SRC_DIST} 		${ARC_DIR}/build/Makefile.* 		${ARC_DIR}/build/site_DOS.h 		${ARC_DIR}/build/site_X68.h 		${ARC_DIR}/build/config.sh 		${ARC_DIR}/build/config.jsh 		${ARC_DIR}/compat ${ARC_DIR}/doc ${ARC_DIR}/etc 		${ARC_DIR}/kanjilib ${ARC_DIR}/mimelib ${ARC_DIR}/termlib 		${ARC_DIR}/nntplib ${ARC_DIR}/smtplib ${ARC_DIR}/pop3lib 		${ARC_DIR}/tcplib ${ARC_DIR}/src ; 	gzip -f ${SRC_DIST} )
+# 348 "temp.c"
+
+obj_dist: ${OBJ}
+	(cd ../.. ; tar cvfh ${OBJ_DIST} 		${ARC_DIR}/build/Makefile.obj 		${ARC_DIR}/build/site_DOS.h 		${ARC_DIR}/build/site_X68.h 		${ARC_DIR}/build/config.sh 		${ARC_DIR}/build/config.jsh 		${ARC_DIR}/build/mnews.o 		${ARC_DIR}/build/group.o 		${ARC_DIR}/build/article.o 		${ARC_DIR}/build/mark.o 		${ARC_DIR}/build/compat.o 		${ARC_DIR}/build/tcplib.o 		${ARC_DIR}/build/nntplib.o 		${ARC_DIR}/build/smtplib.o 		${ARC_DIR}/build/pop3lib.o 		${ARC_DIR}/build/kanjilib.o 		${ARC_DIR}/build/termlib.o 		${ARC_DIR}/build/newspost.o 		${ARC_DIR}/build/mailsend.o 		${ARC_DIR}/build/jnames.o 		${ARC_DIR}/build/jnhash.o 		${ARC_DIR}/build/mh.o 		${ARC_DIR}/build/ucbmail.o 		${ARC_DIR}/build/rmail.o 		${ARC_DIR}/build/board.o 		${ARC_DIR}/build/pager.o 		${ARC_DIR}/build/fcc.o 		${ARC_DIR}/build/mimelib.o 		${ARC_DIR}/compat/compat.h 		${ARC_DIR}/doc ${ARC_DIR}/etc 		${ARC_DIR}/termlib/termlib.h 		${ARC_DIR}/src/config.[ch] ; 	gzip -f ${OBJ_DIST} )
+# 383 "temp.c"
+
+bin_dist: ${EXE}
+	(cd ../.. ; tar cvfh ${EXE_DIST} 		${ARC_DIR}/doc ${ARC_DIR}/etc 		${ARC_DIR}/build/${EXE} ; 	gzip -f ${EXE_DIST} )
+
+
+
+
+touch:
+	touch ${SRC} ${INC} ${C_SRC} ${C_INC} ${ETC} 		${DOC1} ${DOC2} ${MAKE1} ${MAKE2}
+
