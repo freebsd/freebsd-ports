@@ -31,7 +31,7 @@ STD_PATCH=	textline.cc recognize2.cc bitmap.cc main.cc
 
 .include <bsd.port.pre.mk>
 post-patch:
-.if (${OSVERSION} < 500000) && ! (defined(USE_GCC) && ${GCCVERSION} > 30000)
+.if ${OSVERSION} < 500000
 .for file in ${STD_PATCH}
 	@${REINPLACE_CMD} -e 's/std::isspace/isspace/g; s/std::getc/getc/g' \
 		-e 's/std::ungetc/ungetc/g; s/std::feof/feof/g' \
