@@ -5,10 +5,8 @@ share/xdrawchem/adenine.cml
 share/xdrawchem/alanine.cml
 share/xdrawchem/anthracene.cml
 share/xdrawchem/arginine.cml
-share/xdrawchem/aromatic.txt
 share/xdrawchem/asparagine.cml
 share/xdrawchem/aspartic_acid.cml
-share/xdrawchem/atomtyp.txt
 share/xdrawchem/back.xpm
 share/xdrawchem/benzene.cml
 share/xdrawchem/benzene.png
@@ -79,8 +77,6 @@ share/xdrawchem/doc/toolmenu.html
 share/xdrawchem/doc/underlinetool.png
 share/xdrawchem/doc/uptool.png
 share/xdrawchem/edans.cml
-share/xdrawchem/element.txt
-share/xdrawchem/extable.txt
 share/xdrawchem/fmoc.cml
 share/xdrawchem/forward.xpm
 share/xdrawchem/glutamic_acid.cml
@@ -99,11 +95,9 @@ share/xdrawchem/methionine.cml
 share/xdrawchem/naphthalene.cml
 share/xdrawchem/nitrophenylalanine.cml
 share/xdrawchem/phenylalanine.cml
-share/xdrawchem/phmodel.txt
 share/xdrawchem/proline.cml
 share/xdrawchem/purine.cml
 share/xdrawchem/pyrimidine.cml
-share/xdrawchem/resdata.txt
 share/xdrawchem/ribose.cml
 share/xdrawchem/serine.cml
 share/xdrawchem/statine.cml
@@ -111,7 +105,6 @@ share/xdrawchem/steroid.cml
 share/xdrawchem/threonine.cml
 share/xdrawchem/thymine.cml
 share/xdrawchem/tryptophan.cml
-share/xdrawchem/types.txt
 share/xdrawchem/tyrosine.cml
 share/xdrawchem/uracil.cml
 share/xdrawchem/valine.cml
