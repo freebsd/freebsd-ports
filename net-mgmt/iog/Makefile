@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	iog
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	net
 MASTER_SITES=	http://www.dynw.com/iog/
 DISTNAME=	iog-${PORTVERSION}
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Graphs Byte Counts for switches/routers/etc
