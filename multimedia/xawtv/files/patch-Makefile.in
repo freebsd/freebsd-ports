@@ -1,24 +1,27 @@
---- Makefile.in.orig	Thu Nov 14 17:07:24 2002
-+++ Makefile.in	Tue Nov 19 23:59:02 2002
-@@ -65,20 +65,9 @@
+--- Makefile.in.orig	Tue Jan  7 16:17:13 2003
++++ Makefile.in	Sat Jan 18 00:43:02 2003
+@@ -65,23 +65,11 @@
  USE_MMX		:= @USE_MMX@
  
  # build final cflags
--CFLAGS	:= @CFLAGS@
--CFLAGS	+= $(WARN_FLAGS)
--CFLAGS	+= $(LFS_FLAGS)
--CFLAGS	+= $(X11_FLAGS)
--CFLAGS	+= $(LIB_FLAGS)
--CFLAGS	+= -DCONFIGFILE='"$(config)"'
--CFLAGS	+= -DLIBDIR='"$(libdir)"'
--CFLAGS	+= -DDATADIR='"$(datadir)"'
--CFLAGS	+= -DVERSION='"$(VERSION)"'
-+CFLAGS += @CFLAGS@ $(WARN_FLAGS) $(LFS_FLAGS) $(X11_FLAGS) $(LIB_FLAGS) -DCONFIGFILE='"$(config)"' -DLIBDIR='"$(libdir)"' -DDATADIR='"$(datadir)"' -DVERSION='"$(VERSION)"' -fPIC
- CXXFLAGS = $(CFLAGS)
+-CFLAGS   := @CFLAGS@
+-CFLAGS   += $(WARN_FLAGS)
+-CFLAGS   += $(LFS_FLAGS)
+-CFLAGS   += $(X11_FLAGS)
+-CFLAGS   += $(LIB_FLAGS)
+-CFLAGS   += -DCONFIGFILE='"$(config)"'
+-CFLAGS   += -DLIBDIR='"$(libdir)"'
+-CFLAGS   += -DDATADIR='"$(datadir)"'
+-CFLAGS   += -DVERSION='"$(VERSION)"'
++CFLAGS   += @CFLAGS@ $(WARN_FLAGS) $(LFS_FLAGS) $(X11_FLAGS) $(LIB_FLAGS) -DCONFIGFILE='"$(config)"' -DLIBDIR='"$(libdir)"' -DDATADIR='"$(datadir)"' -DVERSION='"$(VERSION)"' -fPIC
+ CXXFLAGS := $(CFLAGS)
  
--# shared objects need -fPIC
--%.so : CFLAGS += -fPIC
+ # for gcc3
+ #CFLAGS   += -std-gnu99
 -
+-# shared objects need -fPIC
+-%.so : CFLAGS   += -fPIC
+-%.so : CXXFLAGS += -fPIC
+ 
  # libraries
  LDLIBS  := @LDLIBS@
- 
