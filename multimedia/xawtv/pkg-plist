@@ -12,7 +12,7 @@ bin/showqt
 bin/showriff
 bin/streamer
 bin/subtitles
-bin/ttv
+%%AA%%bin/ttv
 bin/v4lctl
 bin/webcam
 bin/xawtv
