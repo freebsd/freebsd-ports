@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
-RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 
