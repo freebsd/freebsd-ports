@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Tue Aug 21 04:21:48 2001
++++ docs/Makefile.in	Sat Aug 25 19:42:51 2001
+@@ -102,7 +102,7 @@
+ docs_DATA =  ferite_language_def.pdf
+ 
+ 
+-docsdir = $(prefix)/share/ferite/docs
++docsdir = $(prefix)/share/doc/ferite
+ 
+ EXTRA_DIST = $(docs_DATA)
+ 

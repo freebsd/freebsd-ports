@@ -1,0 +1,11 @@
+--- libs/Makefile.in.orig	Tue Aug 21 04:21:24 2001
++++ libs/Makefile.in	Sat Aug 25 19:11:20 2001
+@@ -104,7 +104,7 @@
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = 
+ 
+-SUBDIRS = ltdl
++SUBDIRS = 
+ 
+ EXTRA_DIST = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

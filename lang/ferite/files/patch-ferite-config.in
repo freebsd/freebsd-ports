@@ -1,0 +1,11 @@
+--- ferite-config.in.orig	Wed Jul 25 15:47:03 2001
++++ ferite-config.in	Sat Aug 25 19:13:09 2001
+@@ -46,7 +46,7 @@
+       ;;
+     --libs)
+       libdirs=-L@libdir@
+-      echo $libdirs -lferite -lm -lpcre
++      echo $libdirs -lferite %%PTHREAD_LIBS%% -lm -lpcre
+       ;;
+     --module-path)
+       echo @libdir@/ferite/modules
