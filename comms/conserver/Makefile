@@ -9,7 +9,9 @@
 PORTNAME=	conserver
 PORTVERSION=	8.5
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
+MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
+		http://www.komquats.com/distfiles/ \
+		http://people.freebsd.org/~cy/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
