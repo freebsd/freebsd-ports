@@ -1,3 +1,6 @@
+First, check if $LANG is set in your environment. Set
+it to the appropriate value.
+
 Now, start up OpenOffice.org, and go to:
 
 Tools->Options->LanguageSettings->WritingAids
