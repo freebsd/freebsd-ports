@@ -230,6 +230,7 @@
     SUBDIR += qconfirm
     SUBDIR += qmHandle
     SUBDIR += qmail
+    SUBDIR += qmail-conf
     SUBDIR += qmail-contrib
     SUBDIR += qmail-ldap
     SUBDIR += qmail-mysql
