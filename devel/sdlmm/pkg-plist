@@ -1,21 +1,24 @@
 bin/sdlmm-config
 include/SDLmm/sdlmm.h
 include/SDLmm/sdlmm_audio.h
+include/SDLmm/sdlmm_autoconfig.h
 include/SDLmm/sdlmm_basesurface.h
 include/SDLmm/sdlmm_cd.h
+include/SDLmm/sdlmm_color.h
+include/SDLmm/sdlmm_config.h
 include/SDLmm/sdlmm_display.h
 include/SDLmm/sdlmm_event.h
 include/SDLmm/sdlmm_eventhandler.h
 include/SDLmm/sdlmm_global.h
 include/SDLmm/sdlmm_joystick.h
+include/SDLmm/sdlmm_pixelformat.h
+include/SDLmm/sdlmm_spoint.h
 include/SDLmm/sdlmm_srect.h
 include/SDLmm/sdlmm_surface.h
 include/SDLmm/sdlmm_timer.h
 include/SDLmm/sdlmm_videoinfo.h
-lib/libSDLmm-0.1.so
-lib/libSDLmm-0.1.so.4
 lib/libSDLmm.a
-lib/libSDLmm.la
 lib/libSDLmm.so
+lib/libSDLmm.so.8
 share/aclocal/sdlmm.m4
 @dirrm include/SDLmm
