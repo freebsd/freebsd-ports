@@ -22,6 +22,7 @@
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-xunicode
+    SUBDIR += frantk
     SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gdl
