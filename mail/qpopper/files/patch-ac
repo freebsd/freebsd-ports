@@ -1,5 +1,5 @@
---- popper.8.orig	Fri May 17 03:59:25 1996
-+++ popper.8	Fri Dec  6 17:10:00 1996
+--- popper.8.orig	Fri Jul 10 08:44:08 1998
++++ popper.8	Tue Feb 16 13:17:13 1999
 @@ -16,7 +16,7 @@
  .SH NAME
  popper \- pop 3 server
@@ -27,12 +27,13 @@
  .PP
  XTND XLIST header [num]: Extracts and returns the specified header line
  for the specified message number. If the "num" parameter is missing, 
-@@ -178,7 +178,7 @@
+@@ -178,7 +178,8 @@
  marked for deletion.
  .SH FILES
  .nf
 -/usr/spool/mail         mail files
-+/var/mail         mail files
++/var/mail               mail files
++/etc/ftpusers           list of unwelcome/restricted users
  /etc/inetd.conf         pop program invocation
  /etc/syslog.conf        logging specifications
  ~/.popbull              largest bulletin number seen by user
