@@ -9,11 +9,11 @@ PORTNAME=	m2crypto
 PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	security python
-MASTER_SITES=	http://www.post1.com/home/ngps/m2/
+MASTER_SITES=	# http://www.post1.com/home/ngps/m2/ unfetchable
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ngps@post1.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
