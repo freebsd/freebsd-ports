@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Imlib2 bindings for Ruby
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 

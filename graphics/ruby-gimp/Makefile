@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-snapshot-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby extension library to write GIMP plugins in Ruby (Ruby-Fu)
 
 BUILD_DEPENDS=	gimptool:${.CURDIR}/../gimp1
 LIB_DEPENDS=	gimp.2:${.CURDIR}/../gimp1

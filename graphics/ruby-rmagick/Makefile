@@ -14,6 +14,7 @@ DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby binding for ImageMagick
 
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 

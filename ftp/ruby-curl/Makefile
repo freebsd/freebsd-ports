@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to libcurl
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 

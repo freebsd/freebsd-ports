@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}-2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library to draw Tgif graphics
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

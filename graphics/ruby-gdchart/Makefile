@@ -13,6 +13,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION:S/b$/-beta/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension to use the GDCHART library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 
