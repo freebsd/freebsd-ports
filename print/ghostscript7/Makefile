@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	6.52
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -98,7 +98,7 @@ PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
 # http://www.harsch.net/Ghostscript/ghostscript.html
 HP970_DRV=	gdevdj9.c.gz
 
-# gimp-print - very high quality driver for Epson, HPs,...
+# Gimp-Print - very high quality driver for Epson, HPs,...
 # http://gimp-print.sourceforge.net/
 GPRINT=		gimp-print
 GPRINT_VERS=	4.2.0
@@ -108,7 +108,7 @@ GPRINT_SRC=	${GPRINT_NAME}.tar.gz
 # HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
 # http://hpinkjet.sourceforge.net/
 HPIJS=		hpijs
-HPIJS_VERS=	1.0.1
+HPIJS_VERS=	1.0.2
 HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
 HPIJS_SRC=	${HPIJS_NAME}.tar.gz
 
@@ -168,8 +168,8 @@ post-patch:
 	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
 			${WRKSRC}/${HPIJS_NAME}/configure
-	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
-		's|#include <malloc.h>||g'
+	${PERL} -pi -e 's|#include <malloc.h>||g' \
+		${WRKSRC}/${HPIJS_NAME}/platform.h
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
