@@ -19,6 +19,11 @@ WRKSRC=		${WRKDIR}/velocity-0.1.0
 USE_LIBTOOL_VER=13
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+			${WRKSRC}/configure
 
 .include <bsd.port.mk>
