@@ -3,7 +3,7 @@
 # Date created:		Mon Jun 28 18:02:04 PDT 1999
 # Whom:			nsayer@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/28 22:54:48 nsayer Exp $
+# $Id: Makefile,v 1.2 1999/06/29 01:03:45 nsayer Exp $
 #
 
 DISTNAME=	libmcrypt-2.2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/
 MAINTAINER=	nsayer@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-posix-threads
 
 MAN3=		mcrypt.3
 
