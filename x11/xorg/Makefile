@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	6.7.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -25,6 +26,7 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
 		${FONTT1}:${PORTSDIR}/x11-fonts/xorg-fonts-type1 \
 		${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server \
 		${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/xorg-fontserver \
+		${X11BASE}/bin/Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
 		${X11BASE}/bin/Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/xorg-printserver \
 		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
