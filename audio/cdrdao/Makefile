@@ -22,7 +22,8 @@ BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts\
 
 WRKSRC=         	${WRKDIR}/cdrdao-1.1.2
 
-GNU_CONFIGURE=		yes
+USE_NEWGCC=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		cdrdao.1
 
@@ -40,12 +41,6 @@ XCDRDAO=		yes
 LIB_DEPENDS+=		gtkmm-1.0.5:${PORTSDIR}/x11-toolkits/gtk--
 .else
 CONFIGURE_ARGS= 	--disable-gtkmmtest
-.endif
-
-.if defined(XCDRDAO) && ${OSVERSION} < 400004
-BUILD_DEPENDS+=		eg++:${PORTSDIR}/lang/egcs
-CC=			egcc
-CXX=			eg++
 .endif
 
 .if defined(DONT_USE_SCGLIB) && ${OSVERSION} > 300000
