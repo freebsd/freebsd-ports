@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
-MAN1=		dict.1
+MAN1=		dict.1 dictl.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
