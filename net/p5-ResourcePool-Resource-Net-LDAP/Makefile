@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ResourcePool-Resource-Net-LDAP
-PORTVERSION=	1.0001
+PORTVERSION=	1.0002
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
