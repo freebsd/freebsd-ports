@@ -1,0 +1,15 @@
+--- plugins/platform-launcher/library/eclipseShm.c.orig	Wed Apr 21 03:55:49 2004
++++ plugins/platform-launcher/library/eclipseShm.c	Wed Apr 21 03:55:57 2004
+@@ -178,11 +178,11 @@
+ 
+ #else /* Unix like platforms */
+ 
++#include <sys/types.h>
+ #include <sys/shm.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ 
+ int createSharedData(char** id, int size) {

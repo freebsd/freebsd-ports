@@ -12,12 +12,12 @@ copy_dir()
 
 	if [ -d "$dstdir" ]
 	then
-	    find "$dstdir" -name \*.so -delete
-	    find "$dstdir" -name \*.so.\* -delete
-	    find "$dstdir" -type f -print0 | \
+		find "$dstdir" -name \*.so -delete
+		find "$dstdir" -name \*.so.\* -delete
+		find "$dstdir" -type f -print0 | \
 		xargs -0 sed -i '.bak'  's/linux/freebsd/g; s/Linux/FreeBSD/g'
-	    find "$dstdir" -name \*.bak -delete
-	fi
+		find "$dstdir" -name \*.bak -delete 
+	fi 
 }
 
 configure()
@@ -30,44 +30,74 @@ configure()
 		copy_dir ${WRKSRC}/$src ${WRKSRC}/$dst
 	done
 
-	# Use our owm makefile to drive the build
+	# Determine the toolkit we must use
+	if [ "${ECLIPSE_WS}" = "motif" ]; then
+		ln -sf "${SWTMOTIF}" ${SWTSHORT}   || exit 1
+		ln -sf "${SWTMOTIFGTK}"/* ${SWTSHORT} || exit 1
+	else
+		ln -sf "${SWTGTK}" ${SWTSHORT}   || exit 1
+	fi
+	ln -sf "${SWTCOMMON}"/* ${SWTSHORT} || exit 1
+	ln -sf "${SWTAWT}"/* ${SWTSHORT} || exit 1
+	ln -sf "${SWTMOZ}"/* ${SWTSHORT} || exit 1
+	ln -sf "${SWTPROG}"/* ${SWTSHORT} || exit 1
+
+
+	# Use our own files to drive the build
 	cp ${FILESDIR}/Makefile ${WRKSRC} || exit 1
+	cp ${FILESDIR}/assemble.org.eclipse.sdk.freebsd.gtk.x86.xml ${WRKSRC} \
+		|| exit 1
+	cp ${FILESDIR}/assemble.org.eclipse.sdk.freebsd.motif.x86.xml ${WRKSRC} \
+		|| exit 1
 
 	# Copy a schell script template
 	cp ${FILESDIR}/eclipse.in ${WRKSRC} || exit 1
 
-	# Makefile has problems with spaces in file names
-	# Implement an ugly workaround
-	# Also link common swt sources into gtk directory
-	ln -sf "${SWTSOURCE}" ${SWTSHORT}   || exit 1
-	ln -sf "${SWTCOMMON}"/* ${SWTSHORT} || exit 1
+	# Avoid the spaces-in-path patching problem by copying directly
+	cp ${FILESDIR}/make_gtk.mak "${SWTGTK}" || exit 1
+	cp ${FILESDIR}/make_gtk.xml "${SWTGTK}" || exit 1
+	cp ${FILESDIR}/build.sh "${SWTGTK}" || exit 1
+	cp ${FILESDIR}/make_freebsd.mak "${SWTMOTIF}" || exit 1
+	cp ${FILESDIR}/make_motif.xml "${SWTMOTIF}" || exit 1
+	cp ${FILESDIR}/swt-motif-build.sh "${SWTMOTIF}/build.sh" || exit 1
 
-	find ${WRKSRC} -type dir -name \*linux\* -print0 | xargs -0 rm -rf
+	# Avoid a patching problem by copying directly
+	cp ${FILESDIR}/update-build.xml "${WRKSRC}/plugins/org.eclipse.update.core.freebsd/src/build.xml" || exit 1
+
 	find ${WRKSRC} -name \*.so -delete
 	find ${WRKSRC} -name \*.so.\* -delete
 }
 
 COPY_LIST="
-	features/org.eclipse.platform.linux.gtk-feature \
-	features/org.eclipse.platform.linux.gtk.source-feature \
-	features/org.eclipse.platform.linux.motif-feature \
-	features/org.eclipse.platform.linux.motif.source-feature \
-	features/org.eclipse.sdk.linux.gtk-feature \
-	features/org.eclipse.sdk.linux.motif-feature \
+plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux.properties
+plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux_gtk.properties
+plugins/platform-launcher/library/motif/make_linux.mak
+assemble.org.eclipse.sdk.linux.motif.x86.xml
+assemble.org.eclipse.sdk.linux.gtk.x86.xml
 
-	plugins/org.eclipse.platform.linux.gtk
-	plugins/org.eclipse.platform.linux.gtk.source
-	plugins/org.eclipse.sdk.linux.gtk
-	plugins/org.eclipse.update.core.linux
-	plugins/org.eclipse.sdk.linux.motif
-	plugins/org.eclipse.core.resources.linux
-	plugins/org.eclipse.platform.linux.motif
-	plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux_gtk.properties
-	plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux.properties
+plugins/org.eclipse.pde.source.linux.gtk.x86
+plugins/org.eclipse.pde.source.linux.motif.x86
+plugins/org.eclipse.platform.source.linux.motif.x86
+plugins/org.eclipse.swt.motif/os/linux
+plugins/org.eclipse.jdt.source.linux.motif.x86
+plugins/org.eclipse.platform.source.linux.gtk.x86
+plugins/org.eclipse.jdt.source.linux.gtk.x86
+plugins/org.eclipse.update.core.linux
+plugins/org.eclipse.update.core.linux/os/linux
+plugins/org.eclipse.core.resources.linux
+plugins/org.eclipse.core.resources.linux/os/linux
+plugins/org.eclipse.swt.gtk/os/linux
+plugins/platform-launcher/bin/linux
+features/org.eclipse.platform/linux.motif
 "
 
-SWTSOURCE="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"
+SWTGTK="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"
+SWTMOTIF="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif/library"
+SWTMOTIFGTK="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif_gtk/library"
 SWTCOMMON="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT/common/library"
+SWTAWT="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT AWT/gtk/library"
+SWTMOZ="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library"
+SWTPROG="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Program/gnome/library"
 SWTSHORT="${WRKSRC}/plugins/org.eclipse.swt/Eclipse_SWT"
 
 configure

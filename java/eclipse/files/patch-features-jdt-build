@@ -1,0 +1,21 @@
+--- features/org.eclipse.jdt/build.xml.orig	Thu Jun  3 00:23:02 2004
++++ features/org.eclipse.jdt/build.xml	Thu Jun  3 00:24:29 2004
+@@ -162,6 +162,18 @@
+ 			<fileset dir="${basedir}/rootfiles" includes="**"			/>
+ 		</copy>
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"      />
++		</copy>
++	</target>
++	<target name="rootFilesfreebsd_motif_x86">
++		<mkdir dir="${feature.base}/freebsd.motif.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.motif.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"      />
++		</copy>
++	</target>
+ 	<target name="rootFilessolaris_motif_sparc">
+ 		<mkdir dir="${feature.base}/solaris.motif.sparc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/solaris.motif.sparc/${collectingFolder}" failonerror="true">

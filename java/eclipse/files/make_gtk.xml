@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="build_gtk_freebsd_lib" basedir="../../..">
+
+<target name="init">
+	<tstamp/>
+    <property name="lib_destdir" value="${basedir}/../org.eclipse.swt.gtk/os/freebsd/x86" />
+</target>
+
+<!-- Build swt.so for GTK -->
+<!-- Output .so for this platform into the org.eclipse.swt.gtk/os directory -->
+<target name="build_gtk_freebsd_lib" depends="init">
+	<mkdir dir="${lib_destdir}" />
+	<exec dir="./bin/library" executable="sh">
+		<arg line="${basedir}/bin/library/build.sh"/>
+	</exec>
+	<copy todir="${lib_destdir}">
+		<fileset dir="${basedir}/bin/library/" includes="*.so"/>
+	</copy>
+	<eclipse.refreshLocal resource="org.eclipse.swt.gtk" depth="infinite" />	
+</target>
+
+<target name="clean"  depends="init">
+	<tstamp/>
+	<exec dir="./bin/library" executable="sh">
+		<arg line="${basedir}/bin/library/build.sh"/>
+		<arg line="clean"/>
+	</exec>
+</target>
+
+</project>

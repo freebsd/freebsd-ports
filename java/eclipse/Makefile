@@ -5,58 +5,78 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	3.0
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-2.1.3-200403101828
-
-DISTNAME=	eclipse-sourceBuild-srcIncluded-${PORTVERSION}
-DIST_SUBDIR=	eclipse
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200406251208
 
 MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		pkg-config:${PORTSDIR}/devel/pkgconfig \
-		unzip:${PORTSDIR}/archivers/unzip
+DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
+DIST_SUBDIR=	eclipse
+
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 ONLY_FOR_ARCHS=	i386
+USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_JAVA=	1.3+
+USE_GCC=	3.3
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
+PLIST_SUB=	BUILD=${ECLIPSE_BUILD} WS=${ECLIPSE_WS}
+
+ECLIPSE_BUILD=	3062
+ECLIPSE_OS=	freebsd
+ECLIPSE_ARCH=	x86
+
+.if defined(WITH_MOTIF)
+ECLIPSE_WS=	motif
+USE_ICONV=	yes
+USE_MOTIF=	yes
+PLIST_SUB+=	GTK:="@comment "
+PLIST_SUB+=	MOTIF:=""
+.else
+ECLIPSE_WS=	gtk
+BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
+PLIST_SUB+=	GTK:=""
+PLIST_SUB+=	MOTIF:="@comment "
+.endif
+
+.if defined(WITHOUT_GNOMEVFS)
+MAKE_GNOME=
+USE_GNOME=	gtk20 pkgconfig
+PLIST_SUB+=	GNOME:="@comment "
+.else
+MAKE_GNOME=	make_gnome
+USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
+PLIST_SUB+=	GNOME:=""
+.endif
 
 MAKE_ARGS=	ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 		ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		ECLIPSE_OS=${ECLIPSE_OS} \
 		ECLIPSE_WS=${ECLIPSE_WS} \
-		JAVA_HOME=${JAVA_HOME}
-MAKE_ENV=	ANT_OPTS=-Xmx256M
+		JAVA_HOME=${JAVA_HOME} \
+		MAKE_GNOME=${MAKE_GNOME}
 
-ECLIPSE_BUILD=	2136
-ECLIPSE_OS=	freebsd
-ECLIPSE_WS=	gtk
-ECLIPSE_ARCH=	x86
+SCRIPTS_ENV=	ECLIPSE_WS="${ECLIPSE_WS}"
 
-# Here we must work around a bug that pops up when building from sources. A
-# certain "run" method must be made visible in the whole class hierarchy by
-# changing making it public, as documented here:
-#
-#   https://bugs.eclipse.org/bugs/show_bug.cgi?id=37846
-#
-# This access change has roots in patch-SelectionDispatchAction.java.
+.include <bsd.port.pre.mk>
 
-post-patch:
-		@${REINPLACE_CMD} -e '/GTK_DISABLE_DEPRECATED/d' '${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/swt.c'
-		@${FIND} ${WRKSRC} -name build.xml | ${XARGS} ${REINPLACE_CMD} 's@verbose="true"@verbose="false"@g'
+# The Motif version builds a KDE/Qt library if kdebase is around
+.if defined(WITH_MOTIF)
+BUILD_KDE=`${PKG_INFO} -xc kdebase | ${GREP} "no packages match"`
+.if empty(${BUILD_KDE})
+PLIST_SUB+=	KDE:=""
+.else
+PLIST_SUB+=	KDE:="@comment *${BUILD_KDE}*"
+.endif
+.endif
 
-		# "refactoring" begins here
-		@${LN} -sf "ui refactoring" ${WRKSRC}/plugins/org.eclipse.jdt.ui/ui_refactoring
-		@for FILE in $$(${FIND} -L ${WRKSRC} -print0 | ${XARGS} -0 ${GREP} -l -E "extends (SelectionDispatchAction|ReorgDestinationAction)" | grep -v " "); do \
-			${REINPLACE_CMD} -e "s@protected void run(@public void run(@" \
-			-e "s@protected final void run(@public final void run(@" $$FILE; \
-		done
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
