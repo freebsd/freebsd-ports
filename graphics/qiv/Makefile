@@ -8,8 +8,7 @@
 PORTNAME=	qiv
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.klografx.de/software/files/ \
-		ftp://ftp.klografx.de/pub/
+MASTER_SITES=	http://www.klografx.de/software/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
