@@ -1,0 +1,20 @@
+--- configure	Sat Jan  4 16:54:22 2003
++++ configure.patched	Mon Jan  5 19:16:14 2004
+@@ -18245,7 +18245,7 @@
+ 		ss_save_LIBS="$LIBS"
+ 		CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR $CPPFLAGS $X_CFLAGS"
+ 		CXXFLAGS="-O2 -Wall $CXXFLAGS"
+-		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11"
++		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11 -pthread"
+ 		LDFLAGS="-s $LDFLAGS"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+@@ -18586,7 +18586,7 @@
+ 		ss_save_LIBS="$LIBS"
+ 		CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR -I$SS_KDE_INCDIR $CPPFLAGS $X_CFLAGS"
+ 		CXXFLAGS="-O2 -Wall $CXXFLAGS"
+-		LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR"
++		LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR -pthread"
+ 		if test "$SS_LINK_TO_LIBDL" = "yes"; then
+ 			LIBS="$LIBS -ldl";
+ 		fi
