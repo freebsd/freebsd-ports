@@ -1,7 +1,6 @@
-diff -ur Inline-0.43.orig/C/Makefile.PL Inline-0.43/C/Makefile.PL
---- Inline-0.43.orig/C/Makefile.PL	Fri Dec 14 18:34:37 2001
-+++ Inline-0.43/C/Makefile.PL	Fri Dec 14 18:44:57 2001
-@@ -51,26 +51,9 @@
+--- C/Makefile.PL.orig	Mon Oct 28 19:26:08 2002
++++ C/Makefile.PL	Tue May 13 11:52:47 2003
+@@ -55,25 +55,7 @@
  # '
  }
  
@@ -15,8 +14,7 @@ diff -ur Inline-0.43.orig/C/Makefile.PL Inline-0.43/C/Makefile.PL
 -if ($answer =~ /^(y|yes)$/i) {
      WriteMakefile(
  	 	  NAME => 'Inline::C',
- 		  VERSION_FROM => 'C.pm',
- 		  clean => {FILES => '_Inline_test/'},
+                   clean => {FILES => '_Inline_test'},
  		 )
 -}
 -else {
@@ -28,4 +26,3 @@ diff -ur Inline-0.43.orig/C/Makefile.PL Inline-0.43/C/Makefile.PL
 -END
 -    close MF;
 -}
-+;
