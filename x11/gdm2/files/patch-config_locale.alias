@@ -1,5 +1,5 @@
---- config/locale.alias.orig	Sat Aug 31 14:19:53 2002
-+++ config/locale.alias	Sat Aug 31 14:33:32 2002
+--- config/locale.alias.orig	Thu Aug 22 18:47:35 2002
++++ config/locale.alias	Wed Sep 18 22:18:10 2002
 @@ -14,54 +14,36 @@
  #
  #		- George
@@ -17,15 +17,7 @@
 -Danish			da_DK.utf8,da_DK
 -Dutch			nl_NL.utf8,nl_NL
 -Estonian		et_EE.utf8,et_EE
-+Bulgarian		bg_BG.utf8,bg_BG.CP1251
-+Chinese(simplified)	zh_CN.utf8,zh_CN.EUC
-+Chinese(traditional)	zh_TW.utf8,zh_TW.Big5
-+Croatian		hr_HR.utf8,hr_HR.ISO_8859-2
-+Czech			cs_CZ.utf8,cs_CZ.ISO_8859-2
-+Danish			da_DK.utf8,da_DK.ISO_8859-1
-+Dutch			nl_NL.utf8,nl_NL.ISO_8859-1
-+Estonian		et_EE.utf8,et_EE.ISO_8859-15
- English(American)	en_US.utf8,en_US
+-English(American)	en_US.utf8,en_US
 -English(Australian)	en_AU.utf8,en_AU
 -English(British)	en_GB.utf8,en_GB
 -English(Ireland)	en_IE.utf8,en_IE
@@ -63,6 +55,15 @@
 -Ukrainian		uk_UA.utf8,uk_UA
 -Vietnamese		vi_VN.utf8,vi_VN
 -Walloon			wa_BE.utf8,wa_BE
++Bulgarian		bg_BG.utf8,bg_BG.CP1251
++Chinese(simplified)	zh_CN.utf8,zh_CN.EUC
++Chinese(traditional)	zh_TW.utf8,zh_TW.Big5
++Croatian		hr_HR.utf8,hr_HR.ISO_8859-2
++Czech			cs_CZ.utf8,cs_CZ.ISO_8859-2
++Danish			da_DK.utf8,da_DK.ISO_8859-1
++Dutch			nl_NL.utf8,nl_NL.ISO_8859-1
++Estonian		et_EE.utf8,et_EE.ISO_8859-15
++English(American)	en_US.utf8,en_US.ISO_8859-1
 +English(Australian)	en_AU.utf8,en_AU.ISO_8859-1
 +English(British)	en_GB.utf8,en_GB.ISO_8859-1
 +Finnish			fi_FI.utf8,fi_FI.ISO_8859-1

@@ -9,7 +9,7 @@ start)
 	${PREFIX}/bin/gdm
 	;;
 stop)
-	/usr/bin/killall gdm 2>/dev/null
+	/usr/bin/killall -m gdm 2>/dev/null
 	;;
 *)
 	echo "Usage: `basename $0` start | stop"
