@@ -29,6 +29,7 @@ share/gnome/gchempaint/glade/text.xpm
 share/gnome/gchempaint/glade/tools.glade
 share/gnome/gchempaint/glade/upbond.xpm
 share/gnome/gchempaint/glade/xbond.xpm
+share/gnome/gnome-2.0/ui/gchempaint.xml
 share/gnome/help/gchempaint/C/gchempaint.xml
 share/gnome/help/gchempaint/C/legal.xml
 share/gnome/help/gchempaint/C/figures/bond.png
@@ -50,7 +51,6 @@ share/gnome/omf/gchempaint/gchempaint-C.omf
 share/gnome/pixmaps/gchempaint.png
 share/gnome/pixmaps/gchempaint_logo.png
 @exec scrollkeeper-install -q %D/share/gnome/omf/gchempaint/gchempaint-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/ui/gchempaint.xml
 share/locale/de/LC_MESSAGES/gchempaint.mo
 share/locale/fr/LC_MESSAGES/gchempaint.mo
 share/locale/it/LC_MESSAGES/gchempaint.mo
