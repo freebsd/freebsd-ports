@@ -1,11 +1,14 @@
---- util/mpiinstall.in.orig	Sun Jul 26 14:52:49 1998
-+++ util/mpiinstall.in	Sun Jul 26 14:53:02 1998
-@@ -611,7 +611,7 @@
- if [ "$DEVICE" = "ch_p4" ] ; then
-     if [ ! -x mpid/server/server ] ; then
- 	echo "Attempting to build alternate ch_p4 secure server"
--	$Show "( cd mpid/server ; configure ; $MAKE server )"
-+	$Show "( cd mpid/server ; ./configure ; $MAKE server )"
-     fi
-     if [ -x mpid/server/server ] ; then 
- 	CopyFile mpid/server/server $PREFIX/bin $XMODE
+--- romio/adio/common/ad_fstype.c.orig	Mon Jun 15 13:45:25 1998
++++ romio/adio/common/ad_fstype.c	Mon Oct 19 16:23:55 1998
+@@ -91,7 +91,11 @@
+ 
+     if (err) *error_code = MPI_ERR_UNKNOWN;
+     else {
++#if (__FreeBSD_version>300004)
++	if ( !strncmp("nfs",fsbuf.f_fstypename,3) ) *fstype = ADIO_NFS;
++#else
+ 	if (fsbuf.f_type == MOUNT_NFS) *fstype = ADIO_NFS;
++#endif
+ 	else *fstype = ADIO_UFS;
+ 	*error_code = MPI_SUCCESS;
+     }
