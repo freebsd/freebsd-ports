@@ -3,12 +3,12 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1999/01/31 19:03:49 vanilla Exp $
+# $Id: Makefile,v 1.15 1999/02/18 18:56:34 vanilla Exp $
 #
 
 DISTNAME=	libgtop-0.99.8
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	libgtop
 
 MAINTAINER=	nacai@iname.com
