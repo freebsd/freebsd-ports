@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	totd
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
-DISTNAME=	totd-1.1p5
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
