@@ -1,8 +1,10 @@
 --- Imakefile.orig	Wed Feb 19 10:59:43 1992
-+++ Imakefile	Wed Nov  1 21:03:59 2000
-@@ -11,4 +11,4 @@
++++ Imakefile	Wed Jan 10 13:17:54 2001
+@@ -10,5 +10,5 @@
+ LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
  SYS_LIBRARIES = -lm
  
- ComplexProgramTarget(xloadface)
+-ComplexProgramTarget(xloadface)
 -InstallManPage(xloadface.1,$(MANDIR)/xalive.n)
++ComplexProgramTargetNoMan(xloadface)
 +InstallManPage(xloadface,$(MANPATH)/ja/man1)
