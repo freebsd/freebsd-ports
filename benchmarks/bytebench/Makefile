@@ -3,7 +3,7 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.8 1999/07/18 06:02:55 cpiazza Exp $
+# $Id: Makefile,v 1.9 1999/08/22 18:57:21 mharo Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -24,14 +24,14 @@ do-install:
 	${ECHO} "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
 	${ECHO} "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
 	${CHMOD} 755 $(PREFIX)/bin/bytebench
-	chmod 644 $(PREFIX)/lib/bytebench/Makefile
-	chmod 644 $(PREFIX)/lib/bytebench/README
-	chmod 755 $(PREFIX)/lib/bytebench/Run
-	chmod 755 $(PREFIX)/lib/bytebench/doc
-	chmod 755 $(PREFIX)/lib/bytebench/pgms
-	chmod 755 $(PREFIX)/lib/bytebench/pgms/*
-	chmod 755 $(PREFIX)/lib/bytebench/results
-	chmod 755 $(PREFIX)/lib/bytebench/testdir
+	${CHMOD} 644 $(PREFIX)/lib/bytebench/Makefile
+	${CHMOD} 644 $(PREFIX)/lib/bytebench/README
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/Run
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/doc
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/pgms
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/pgms/*
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/results
+	${CHMOD} 755 $(PREFIX)/lib/bytebench/testdir
 	@rm -f ${PREFIX}/lib/bytebench/pgms/*.orig
 
 .include <bsd.port.mk>
