@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.2.7
+PORTVERSION=	4.2.8
 CATEGORIES=	games
 MASTER_SITES=	ftp://empire.idlpaper.com/pub/empire/server/
 DISTNAME=	empire${PORTVERSION}
 
 MAINTAINER=	darius@dons.net.au
 
+.if !defined(BATCH)
 IS_INTERACTIVE=	yes     # configure script asks questions
+.endif
 WRKSRC=		${WRKDIR}/emp4
 ALL_TARGET=	freebsd
 

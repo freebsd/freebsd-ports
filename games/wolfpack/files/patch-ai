@@ -1,0 +1,10 @@
+--- Make.sysdefs.orig	Sun Dec 17 00:09:26 2000
++++ Make.sysdefs	Sun Dec 17 00:09:13 2000
+@@ -32,7 +32,7 @@
+ #
+ 
+ FREEBSDRANLIB = /usr/bin/ranlib
+-FREEBSDCFLAGS = -DRel4 -DFBSD -ansi -pedantic #-Wall
++FREEBSDCFLAGS = $(CFLAGS) -DRel4 -DFBSD -ansi -pedantic #-Wall
+ FREEBSDLFLAGS = 
+ FREEBSDMASTER = GLOBALCFLAGS="$(FREEBSDCFLAGS)" GLOBALLFLAGS="$(FREEBSDLFLAGS)" RANLIB="$(FREEBSDRANLIB)"

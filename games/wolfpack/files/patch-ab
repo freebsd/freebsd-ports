@@ -1,12 +1,14 @@
-diff -u -r ./include/misc.h ../emp4.patched/include/misc.h
---- ./include/misc.h	Wed Nov 18 10:12:29 1998
-+++ ../emp4.patched/include/misc.h	Tue Oct 26 10:55:54 1999
-@@ -181,7 +181,7 @@
- extern	char *calloc();
- #endif
- #else
--#if !defined(ALPHA) && !defined(__osf__) && !defined(ultrix) && !defined(hpux) && !defined(FBSD)
-+#if !defined(ALPHA) && !defined(__osf__) && !defined(ultrix) && !defined(hpux) && !defined(__FreeBSD__)
- extern	char *malloc();
- extern	char *calloc();
- #endif
+--- src/lib/lwp/lwp.c.orig	Sat Dec 16 22:53:35 2000
++++ src/lib/lwp/lwp.c	Sat Dec 16 22:54:05 2000
+@@ -23,7 +23,11 @@
+ 
+ #include <stdio.h>
+ #include <signal.h>
++#if defined(__FreeBSD__)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include "lwp.h"
+ #include "lwpint.h"

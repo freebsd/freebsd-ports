@@ -1,0 +1,13 @@
+--- src/doconfig/Makefile.orig	Sat Dec 16 22:57:15 2000
++++ src/doconfig/Makefile	Sat Dec 16 22:58:25 2000
+@@ -53,7 +53,10 @@
+ 	@echo 'globalcflags = $(GLOBALCFLAGS)'
+ 	@echo 'globallflags = $(GLOBALLFLAGS)'
+ 	$(CC) $(GLOBALCFLAGS) $(DALL) doconfig.c -o doconfig $(GLOBALLFLAGS)
+-	./doconfig
++	./doconfig config
++
++install: doconfig
++	./doconfig install
+ 
+ nt: ntdoconfig
