@@ -16,6 +16,8 @@ DISTNAME=	3952-Geramik-${PORTVERSION}
 MAINTAINER=	haesu@TowardEX.com
 COMMENT=	A Keramik KDE styled theme for GTK
 
+BROKEN=		"Bad pkg-plist"
+
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
 USE_LIBTOOL=	yes

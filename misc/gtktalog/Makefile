@@ -13,6 +13,8 @@ MASTER_SITES=	http://savannah.nongnu.org/download/gtktalog/gtktalog/sources/
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
+BROKEN=		"Bad pkg-plist"
+
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
