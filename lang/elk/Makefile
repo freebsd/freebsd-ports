@@ -3,7 +3,7 @@
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.11 1996/11/08 07:32:48 tg Exp $
+# $Id: Makefile,v 1.12 1996/11/12 02:18:06 obrien Exp $
 #
 
 DISTNAME=	elk-3.0
@@ -17,6 +17,7 @@ MAINTAINER=	tg@freebsd.org
 
 PATCH_STRIP=	-p1
 ALL_TARGET=	default
+MAN1=		elk.1
 
 #
 # we install the scheme binary as ${PREFIX}/bin/elk
@@ -24,17 +25,14 @@ ALL_TARGET=	default
 #
 
 pre-install:
-	@mkdir -p ${PREFIX}/share/elk
+	@${MKDIR} ${PREFIX}/share/elk
 
 post-install:
 	@(cd ${PREFIX}/share/elk; \
-	  cp bin/scheme ${PREFIX}/bin/elk; \
-	  mkdir -p ${PREFIX}/include/elk; \
-	  cp -R include/* ${PREFIX}/include/elk; \
+	  ${CP} bin/scheme ${PREFIX}/bin/elk; \
+	  ${MKDIR} ${PREFIX}/include/elk; \
+	  ${CP} -R include/* ${PREFIX}/include/elk; \
 	  rm -rf bin include)
-	@install -c -o bin -g bin -m 444 ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man1/elk.1
-.endif
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         4 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/11/22 13:12:58 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/12 02:18:46 obrien Exp $
 #
 
 DISTNAME=	p2c-1.21alpha-07.Dec.93
@@ -14,6 +14,8 @@ DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
+MAN1=		p2cc.1
+
 pre-install: build
 	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib
@@ -22,4 +24,3 @@ pre-install: build
 	@${INSTALL_MAN} ${WRKSRC}/src/p2cc.man ${PREFIX}/man/man1/p2cc.1
 
 .include <bsd.port.mk>
-
