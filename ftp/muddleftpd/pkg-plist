@@ -1,0 +1,21 @@
+bin/ftpwho
+bin/muddleftpd
+bin/mudpasswd
+@unexec install-info --delete %D/info/muddleftpd.info %D/info/dir
+info/muddleftpd.info
+@exec install-info %D/info/muddleftpd.info %D/info/dir
+share/examples/muddleftpd/README
+share/examples/muddleftpd/anon-only.conf
+share/examples/muddleftpd/anon-reigon.conf
+share/examples/muddleftpd/ratios.conf
+share/examples/muddleftpd/standard.conf
+share/examples/muddleftpd/vserver-host.conf
+share/examples/muddleftpd/vserver.conf
+share/examples/muddleftpd/vserverbig.conf
+@dirrm share/examples/muddleftpd
+%%PORTDOCS%%share/doc/muddleftpd/cookie.txt
+%%PORTDOCS%%share/doc/muddleftpd/ftpcmds.txt
+%%PORTDOCS%%share/doc/muddleftpd/muddleftpd.txt
+%%PORTDOCS%%share/doc/muddleftpd/mudpasswd.txt
+%%PORTDOCS%%share/doc/muddleftpd/reference.txt
+%%PORTDOCS%%@dirrm share/doc/muddleftpd
