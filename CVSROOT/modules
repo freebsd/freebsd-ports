@@ -6013,6 +6013,7 @@ sic		ports/irc/sic
 sicontrol	src/usr.sbin/sicontrol
 siconv		ports/converters/siconv
 sidplay		ports/audio/sidplay
+sidplug		ports/www/sidplug
 siege		ports/benchmarks/siege
 sigit		ports/mail/sigit
 sigrot		ports/mail/sigrot
