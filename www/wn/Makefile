@@ -3,10 +3,10 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.12 1996/05/26 18:10:21 adam Exp $
+# $Id: Makefile,v 1.13 1996/08/16 01:27:23 adam Exp $
 #
 
-DISTNAME=       wn-1.14.5
+DISTNAME=       wn-1.14.6
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
@@ -18,11 +18,13 @@ pre-patch:
 	@cp ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
 
 post-install:
-	@mkdir -p ${PREFIX}/wn/wnlogs
+	@mkdir -p ${PREFIX}/wn/wnlogs ${PREFIX}/wn/bin
 	@cp -PR ${WRKSRC}/docs ${PREFIX}/wn
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wndex ${PREFIX}/bin
+	@install -c -o bin -g bin  ${WRKSRC}/bin/mkpasswd ${PREFIX}/wn/bin
+	@install -c -o bin -g bin  ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
 	@if [ -s ${PREFIX}/etc/wn_mime.types ]; then \
 	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || \
 		echo Warning: new ${PREFIX}/etc/wn_mime.types not installed; \
