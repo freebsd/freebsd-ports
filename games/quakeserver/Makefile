@@ -6,13 +6,13 @@
 # $FreeBSD$
 #
 
-PKGNAME=	quakeserver-1.0
+DISTNAME=	quakeserver-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/quake/planetquake/threewave/unix/ \
 		ftp://ftp.idsoftware.com/idstuff/quake/
 DISTFILES=	unixded-1.0-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
- 
+
 MAINTAINER=	jfitz@freebsd.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
@@ -34,7 +34,7 @@ do-configure:
 		@ ${CP} ${FILESDIR}/readme.port ${WRKSRC}
 		@ ${CP} ${FILESDIR}/qserver.sh ${WRKSRC}
 		@ ${CP} ${FILESDIR}/stopserver.sh ${WRKSRC}
-		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
+		@ ${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
 
 do-install:
 		@ ${MKDIR} ${PREFIX}/quakeserver
@@ -47,7 +47,7 @@ do-install:
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
 		@ ${RM} -f ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
-		/usr/bin/touch ${PREFIX}/quakeserver/quakeserver.log
+		${TOUCH} ${PREFIX}/quakeserver/quakeserver.log
 		@ ${CHMOD} 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
 		@ ${CHOWN} -R nobody.nobody ${PREFIX}/quakeserver
 		@ ${ECHO} "Installing ${PREFIX}/etc/rc.d/quakeserver.sh startup script"
@@ -62,5 +62,5 @@ do-install:
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
 .endif
-		
+
 .include <bsd.port.mk>
