@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1997/03/11 22:13:45 se Exp $
+# $Id: Makefile,v 1.63 1997/04/06 02:46:48 andreas Exp $
 #
 
     SUBDIR += acm
@@ -17,6 +17,7 @@
     SUBDIR += lincity
     SUBDIR += nethack
     SUBDIR += nethack-qt
+    SUBDIR += netris
     SUBDIR += oneko
     SUBDIR += qcc
     SUBDIR += quakeserver
