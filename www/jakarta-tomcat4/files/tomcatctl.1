@@ -1,0 +1,96 @@
+.Dd May 26, 2001
+.Dt TOMCATCTL 1
+.Os FreeBSD
+.Sh NAME
+.Nm tomcatctl
+.Nd Tomcat server control interface
+.Sh SYNOPSIS
+.Nm
+.Op Ar start | Ar stop
+.Sh DESCRIPTION
+The
+.Nm
+shell script provides an interface to the Tomcat application server.
+.Pp
+This script has 2 modes of operation, One is
+.Em shell script mode
+and the other is
+.Em rc script mode .
+If run as
+.Nm
+shell script mode is used, otherwise rc script mode is used. Shell script mode
+assumes that the script is used as a normal shell script, while rc script mode
+assumes the script is used to start or stop Tomcat at boot time.
+.Pp
+The script expects exactly one argument, either
+.Ar start
+or
+.Ar stop .
+If more than one argument is given, then all arguments but the first are
+ignored.
+.Bl -tag -width indent
+.It Ar start
+Start Tomcat, if it is not already running. The ID of the started process will
+be saved in a PID file.
+.It Ar stop
+Stop Tomcat, if it is actually running. The process with the ID stored in
+the PID file will be killed.
+.El
+.Sh ERRORS
+The following error conditions are detected. They will be checked in the
+specified order. In every case where an error message is printed it will be
+prepended by the name of the script
+.Em ( basename $0 ) .
+.Pp
+If no argument is passed, or if an argument other than
+.Ar start
+or
+.Ar stop
+is passed as the first argument, then a simple help message is printed and the
+script is exited with error code 64.
+.Pp
+In 
+.Em rc script mode
+a newline will be printed before any error message.
+.Pp
+When using the argument
+.Ar start
+the following errors conditions can be triggered:
+.Bl -tag -width indent
+.It Em The Tomcat PID file already exists.
+Tomcat is probably already running. Prints an error message and exits the
+script with error code 1.
+.It Em Tomcat home directory cannot be found
+Prints an error message and exits the script with error code 2.
+.It Em Tomcat script cannot be found
+Prints an error message and exits the script with error code 3.
+.It Em Java VM cannot be found
+Prints an error message and exits the script with error code 4.
+.El
+.Pp
+When using the argument
+.Ar stop
+the following error condition can be triggered:
+.Bl -tag -width indent
+.It Em The Tomcat PID file cannot be found
+Tomcat is probably not running. Prints an error message and exits the script
+with error code 16.
+.El
+.Sh FILES
+.Bl -tag -width -indent
+.It Pa /var/run/jakarta-tomcat.pid
+The Tomcat PID file that is used to store the process ID of the currently
+running Tomcat process in. It is deleted as soon as Tomcat is stopped and
+recreated when Tomcat is started. It should never be writable for anyone but
+.Em root ,
+.It Pa %%PREFIX%%/etc/rc.d/jakarta-tomcat.sh
+A symlink to the
+.Nm
+script. This causes Tomcat to be started at boot time. When called from this
+location the
+.Nm
+script will use
+.Em rc script mode .
+.El
+.Sh AUTHORS
+.An Ernst de Haan Aq ernst@jollem.com

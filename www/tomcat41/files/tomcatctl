@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# Set some variables
+VERSION=%%PORTVERSION%%
+APP_HOME=%%APP_HOME%%
+USER_NAME=%%USER_NAME%%
+STDOUT_LOG=%%STDOUT_LOG%%
+STDERR_LOG=%%STDERR_LOG%%
+JAR_FILE=${APP_HOME}/lib/webserver.jar
+MYSELF=`basename $0`
+
+# Set the CLASSPATH
+unset CLASSPATH
+for i in ${APP_HOME}/lib/* ; do
+	if [ "$CLASSPATH" != "" ]; then
+		CLASSPATH=${CLASSPATH}:$i
+	else
+		CLASSPATH=$i
+	fi
+done
+if [ -f ${JAVA_HOME}/lib/tools.jar ] ; then
+	CLASSPATH=${CLASSPATH}:${JAVA_HOME}/lib/tools.jar
+fi
+
+# Check if we're being run as a shell script or as an rc script
+if [ ${MYSELF} = "%%RC_SCRIPT_NAME%%" ]; then
+	AS_RC_SCRIPT=yes
+else
+	AS_RC_SCRIPT=no
+fi
+
+# Check if the JAVA_HOME directory is defined, otherwise set it to the
+# fallback default
+if [ "${JAVA_HOME}a" = "a" ]; then
+	JAVA_HOME=%%JAVA_HOME%%
+fi
+JAVA_CMD=${JAVA_HOME}/bin/java
+
+# Function that starts the application
+start() {
+	# Make sure the application directory does exist
+	if [ ! -d ${APP_HOME} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
+		exit 2
+	fi
+
+	# Make sure the application JAR file exists
+	if [ ! -r ${JAR_FILE} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
+		exit 3
+	fi
+
+	# Make sure the Java VM can be found
+	if [ ! -x ${JAVA_CMD} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find Java VM at ${JAVA_HOME}."
+		exit 4
+	fi
+
+	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+		echo -n " %%APP_SHORTNAME%%"
+	fi
+	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -Dtomcat.home=${APP_HOME} org.apache.tomcat.startup.Tomcat) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}"
+}
+
+# Function that stops the application
+stop() {
+	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+		echo -n " %%APP_SHORTNAME%%"
+	fi
+	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -cp ${CLASSPATH} -Dtomcat.home=${APP_HOME} org.apache.tomcat.startup.Tomcat -stop) >> ${STDOUT_LOG} 2>> ${STDERR_LOG}"
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		;;
+	*)
+		echo ""
+		echo "Usage: ${MYSELF} { start | stop | restart }"
+		echo ""
+		exit 64
+		;;
+esac
