@@ -1,0 +1,7 @@
+todos/fromdos: point-to-point AltCodes<->koi8-r decoder with CR/LF
+	       translation
+
+a2kfcnv: EGA/VGA raw screen fonts converter: AltCodes font -> koi8-r font
+
+Both programs written according to RFC 1489
+
