@@ -46,7 +46,6 @@ etc/mime.types.dist
 %%EXAMPLESDIR%%/iconv/iconv.solaris-2.6.rc
 %%EXAMPLESDIR%%/iconv/iconv.solaris-2.7.rc
 %%EXAMPLESDIR%%/pgp2.rc
-%%EXAMPLESDIR%%/pgp5.rc
 %%EXAMPLESDIR%%/pgp6.rc
 %%EXAMPLESDIR%%/sample.mailcap
 %%EXAMPLESDIR%%/sample.muttrc

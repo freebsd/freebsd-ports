@@ -1,0 +1,11 @@
+--- contrib/Makefile.in.orig	Mon Jun  4 19:14:31 2001
++++ contrib/Makefile.in	Mon Mar 21 08:12:59 2005
+@@ -20,7 +20,7 @@
+ 
+ subdir = contrib
+ 
+-SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
++SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
+ 	sample.muttrc  sample.mailcap sample.muttrc-tlr
+ 
+ DISTFILES = Makefile.in language.txt language50.txt  \
