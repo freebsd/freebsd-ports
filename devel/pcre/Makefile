@@ -9,6 +9,7 @@ PORTNAME=	pcre
 PORTVERSION=	4.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
+		http://dl.droso.net/FreeBSD/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
