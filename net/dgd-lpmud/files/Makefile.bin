@@ -1,0 +1,7 @@
+all: oconv hname
+
+oconv: convert.c
+	cc -o oconv convert.c
+
+hname: hname.c
+	cc -o hname hname.c
