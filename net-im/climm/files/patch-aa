@@ -1,0 +1,13 @@
+--- Makefile.orig	Sat Jun 27 13:25:53 1998
++++ Makefile	Sat Jun 27 13:26:38 1998
+@@ -1,8 +1,8 @@
+ # Anyone who knows how to make Makefiles please help out.
+ # I have no clue but this appears to work fairly well
+ # be sure to use gmake
+-CC = gcc
+-CFLAGS = -Wall -DUNIX
++# CC = gcc
++CFLAGS += -DUNIX
+ # Uncomment the below line for humorous messages
+ #CFLAGS += -DFUNNY_MSGS 
+ # uncomment the line below for debuging info
