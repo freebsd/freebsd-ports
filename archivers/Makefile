@@ -39,6 +39,7 @@
     SUBDIR += rpm2cpio
     SUBDIR += ruby-zlib
     SUBDIR += sectar
+    SUBDIR += stuffit
     SUBDIR += ucl
     SUBDIR += unace
     SUBDIR += unadf

@@ -1,0 +1,12 @@
+Command-line utilities to:
+
+* create StuffIt (.sit) and Zip (.zip) archives
+* encode files into uuencode, BinHex, and MacBinary formats
+* expand StuffIt and Zip archives
+* expand encrypted StuffIt archives
+* decode or expand: Compact Pro, zip, arc, arj, lha (lzh),
+  rar, gzip, UNIX compress, uuencode, BinHex, btoa, MIME,
+  tar, MacBinary, segmented StuffIt, PrivateFile, bzip2,
+  and AppleSingle.
+
+WWW: http://www.aladdinsys.com/expander/
