@@ -38,10 +38,10 @@ do-configure:
 		CPPFLAGS="$$CPPFLAGS -I${LOCALBASE}/include" ./configure \
 		--disable-shared --enable-static
 	@cd ${WRKSRC}/binutils/libiberty/ && \
-                ${SETENV} LDFLAGS="$$LDFLAGS -L${LOCALBASE}/lib" \
-                CFLAGS="$$CFLAGS -I./../include" \
-                CPPFLAGS="$$CPPFLAGS -I./../include" ./configure \
-                --disable-shared --enable-static
+		${SETENV} LDFLAGS="$$LDFLAGS -L${LOCALBASE}/lib" \
+		CFLAGS="$$CFLAGS -I./../include" \
+		CPPFLAGS="$$CPPFLAGS -I./../include" ./configure \
+		--disable-shared --enable-static
 
 do-build:
 .for DIR in bfd libiberty
