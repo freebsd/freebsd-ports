@@ -1,0 +1,11 @@
+This is a port of Taskjuggler, a project management tool for Linux and UNIX
+system-based operating systems. Instead of clicking yourself painfully through
+hundreds of dialog boxes you specify your Taskjuggler project in a simple text
+format. You simply list all your tasks and their dependencies. The information
+is sent through Taskjuggler and you will get all sorts of reports in HTML or
+XML format.
+
+WWW: http://www.taskjuggler.org/
+
+- Dean Povey
+povey@wedgetail.com

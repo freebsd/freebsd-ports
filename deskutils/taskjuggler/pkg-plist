@@ -1,0 +1,44 @@
+bin/taskjuggler
+share/doc/taskjuggler/Examples/FirstProject/Accounting.html
+share/doc/taskjuggler/Examples/FirstProject/Calendar.html
+share/doc/taskjuggler/Examples/FirstProject/Staff-Details.html
+share/doc/taskjuggler/Examples/FirstProject/Staff-Overview.html
+share/doc/taskjuggler/Examples/FirstProject/Status-Report.html
+share/doc/taskjuggler/Examples/FirstProject/Tasks-Details.html
+share/doc/taskjuggler/Examples/FirstProject/Tasks-Overview.html
+share/doc/taskjuggler/Examples/FirstProject/AccountingSoftware.tjp
+share/doc/taskjuggler/Examples/FirstProject/AccountingSoftware.tjx
+share/doc/taskjuggler/Examples/BigProject/Common/Resources.tjsp
+share/doc/taskjuggler/Examples/BigProject/Project1/Project1.html
+share/doc/taskjuggler/Examples/BigProject/Project1/Project1.tjp
+share/doc/taskjuggler/Examples/BigProject/Project1/Project1-Interface.tjsp
+share/doc/taskjuggler/Examples/BigProject/Project2/Project2.html
+share/doc/taskjuggler/Examples/BigProject/Project2/Project2.tjp
+share/doc/taskjuggler/Examples/BigProject/README
+share/doc/taskjuggler/Examples/ShiftSchedule/Calendar-anders.html
+share/doc/taskjuggler/Examples/ShiftSchedule/Calendar-joe.html
+share/doc/taskjuggler/Examples/ShiftSchedule/Calendar-khaled.html
+share/doc/taskjuggler/Examples/ShiftSchedule/Calendar-paul.html
+share/doc/taskjuggler/Examples/ShiftSchedule/Calendar-sally.html
+share/doc/taskjuggler/Examples/ShiftSchedule/ResourceUsage-Jun.html
+share/doc/taskjuggler/Examples/ShiftSchedule/ShiftTimes-06-03.html
+share/doc/taskjuggler/Examples/ShiftSchedule/ShiftTimes-06-10.html
+share/doc/taskjuggler/Examples/ShiftSchedule/TaskCoverage-Jun.html
+share/doc/taskjuggler/Examples/ShiftSchedule/ShiftSchedule.tjp
+bin/tjx2gantt
+share/doc/taskjuggler/tjx2gantt/README
+share/doc/taskjuggler/tjx2gantt/BUGS
+share/doc/taskjuggler/tjx2gantt/TODO
+share/doc/taskjuggler/tjx2gantt/testProject.tjp
+share/doc/taskjuggler/Examples/FirstProject/acso.eps
+share/doc/taskjuggler/Examples/FirstProject/acso_poster.eps
+@dirrm share/doc/taskjuggler/Examples/FirstProject
+@dirrm share/doc/taskjuggler/Examples/BigProject/Common
+@dirrm share/doc/taskjuggler/Examples/BigProject/Project1
+@dirrm share/doc/taskjuggler/Examples/BigProject/Project2
+@dirrm share/doc/taskjuggler/Examples/BigProject
+@dirrm share/doc/taskjuggler/Examples/ShiftSchedule
+@dirrm share/doc/taskjuggler/Examples
+@dirrm share/doc/taskjuggler/manual
+@dirrm share/doc/taskjuggler/tjx2gantt
+@dirrm share/doc/taskjuggler

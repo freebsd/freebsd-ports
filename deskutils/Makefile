@@ -90,6 +90,7 @@
     SUBDIR += sliderule
     SUBDIR += splashsetter
     SUBDIR += superkaramba
+    SUBDIR += taskjuggler
     SUBDIR += teapot
     SUBDIR += tuxcards
     SUBDIR += wmpinboard
