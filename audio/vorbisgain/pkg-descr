@@ -12,5 +12,3 @@ the comments (tags) in the file a suggestion on how the volume should be
 changed during playback, to get a uniform sound level. However, this only
 solves half the problem; the player application needs to act on that
 suggestion for it to be any useful.
-
-WWW: http://sjeng.sourceforge.net/vorbisgain.html
