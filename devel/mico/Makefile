@@ -9,9 +9,10 @@ PORTNAME=	mico
 PORTVERSION=	2.3.10
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.mico.org/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		doc-html.tar.gz
+MASTER_SITES=	http://www.mico.org/:src \
+		http://www.ciam.ru/~sem/FreeBSD/:docs
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
+		doc-html.tar.gz:docs
 
 MAINTAINER=	sem@ciam.ru
 COMMENT=	Fully compliant implementation of CORBA2 with some CORBA3 features
