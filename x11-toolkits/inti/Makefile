@@ -28,10 +28,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-configure:
 	@${TOUCH} ${WRKSRC}/inti-config.h.in
 
