@@ -1,0 +1,10 @@
+--- splashsetter.desktop.orig	Thu Mar 17 18:07:21 2005
++++ splashsetter.desktop	Thu Mar 17 18:08:20 2005
+@@ -4,6 +4,6 @@
+ Exec=splashsetter
+ Terminal=false
+ Type=Application
+-Icon=splashsetter/splashsetter_icon.svg
++Icon=splashsetter.svg
+ Categories=Application;
+ StartupNotify=true
