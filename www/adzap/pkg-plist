@@ -1,0 +1,15 @@
+libexec/adzap
+libexec/squid_redirect
+share/examples/adzap/adzap.conf
+share/examples/adzap/proxy-cisra.pac
+share/examples/adzap/proxy-home.pac
+share/examples/adzap/proxy-zip.pac
+share/examples/adzap/closepopup-clear.html
+share/examples/adzap/no-op-clear.html
+share/examples/adzap/closepopup.html
+share/examples/adzap/no-op.html
+share/examples/adzap/no-op-clear.js
+share/examples/adzap/no-op.js
+share/examples/adzap/ad-clear.gif
+share/examples/adzap/ad.gif
+@dirrm share/examples/adzap
