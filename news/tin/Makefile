@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.21 1997/01/20 22:43:16 ache Exp $
+# $Id: Makefile,v 1.22 1997/01/31 11:59:32 ache Exp $
 #
 
 DISTNAME=       tin1.3-unoff-BETA-970127
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+= --with-nntp-default-server=news  \
 		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=US-ASCII \
 		 --enable-forgery \
+		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
 		 --with-metamail=${PREFIX}/bin/metamail
