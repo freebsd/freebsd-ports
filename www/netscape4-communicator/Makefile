@@ -67,7 +67,7 @@ RESTRICTED=	"Contains strong cryptography"
 RUN_DEPENDS+=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif
 
-.if (${ARCH} == "i386") && !defined(USE_LINUX_LIB) && !defined(WITHOUT_AOUT)
+.if (${ARCH} == "i386") && !defined(USE_LINUX) && !defined(WITHOUT_AOUT)
 USE_AOUT_LIB=	yes
 PKGREQ=		${MASTERDIR}/pkg-req.aout
 RUN_DEPENDS+=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs

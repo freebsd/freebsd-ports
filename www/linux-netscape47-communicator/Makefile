@@ -12,8 +12,6 @@ CATEGORIES=	www linux
 
 MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 
 NETSCAPE_DIST_ARCH=	supported/linux22
@@ -22,7 +20,7 @@ NETSCAPE_DIST_TAG=	x86-unknown-linux2.2
 # don't overwrite the native FreeBSD port's shell script wrapper in ${PREFIX}/bin
 BROWSER_ARC=	${BROWSER_NAME}-linux
 
-USE_LINUX_LIB=	yes
+USE_LINUX=	yes
 
 MAILCAP=	${.CURDIR}/../linux-netscape47-communicator/files/mailcap
 NSUBDIR=	lib/netscape-linux
