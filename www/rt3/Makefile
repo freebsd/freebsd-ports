@@ -107,7 +107,6 @@ DB_DBA_PASSWORD?=
 WEB_USER?=	www
 WEB_GROUP?=	www
 LIBS_GROUP?=	wheel
-RT_GROUP?=	rt
 
 pre-fetch:
 	@${ECHO} ""
@@ -123,8 +122,11 @@ pre-fetch:
 	@${ECHO} ""
 
 post-extract:
-	-@pw groupadd ${RT_GROUP}
-	-@cd ${WRKSRC} && chmod a+x configure
+	-@${CHMOD} a+x ${WRKSRC}/configure
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
+		${PKGNAME} PRE-INSTALL
 
 do-install:
 	@cd ${WRKSRC} && ${MAKE} install
