@@ -5,24 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Business-OnlinePayment-WorldPay-Junior
-PORTVERSION=	1.03
-CATEGORIES=	misc perl5
+PORTNAME=	Business-WorldPay-Junior
+PORTVERSION=	1.06
+CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Business::OnlinePayment backend module for a WorldPay Select Junior service
+COMMENT=	Perl module to handle WorldPay Junior for payment services
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/misc/p5-Business-CreditCard \
-		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/misc/p5-Business-OnlinePayment
+BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/finance/p5-Business-CreditCard \
+		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
+		$${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-MAN3=		Business::OnlinePayment::WorldPay::Junior.3
+MAN3=		Business::WorldPay::Junior.3
+
+post-patch:
+	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+		-e '$$_="" if /use 5/;' \
+		-e '$$_="" if /use warnings/;' \
+		${WRKSRC}/Junior.pm
 
 .include <bsd.port.mk>
