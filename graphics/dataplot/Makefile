@@ -7,7 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20030530
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc
