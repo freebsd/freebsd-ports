@@ -24,15 +24,6 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -3699,7 +3699,7 @@
- 	    # Added by Martin Baulig 12/15/98 for libc5 systems
- 	    if test "$gt_cv_func_dgettext_libc" != "yes" \
- 	       && test "$gt_cv_func_dgettext_libintl" = "yes"; then
--	       INTLLIBS=-lintl
-+	       INTLLIBS="-lintl -lxpg4"
- 	       LIBS=`echo $LIBS | sed -e 's/-lintl//'`
- 	    fi
- 	
 @@ -4446,6 +4446,7 @@
    glib_thread_cflags="$GLIB_CFLAGS"
    glib_libs=`$GLIB_CONFIG glib gmodule --libs`
