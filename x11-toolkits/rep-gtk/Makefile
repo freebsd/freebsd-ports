@@ -25,7 +25,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	${ARCH}-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
