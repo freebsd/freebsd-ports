@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	8.2.4-T2B
+PORTVERSION=	8.2.4.T2B
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/testing/t2b/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
