@@ -2,7 +2,6 @@ bin/gnumeric
 etc/CORBA/servers/gnumeric.gnorba
 etc/gnumericConf.sh
 lib/gnumeric/%%VERSION%%/plugins/gnum_dif.so
-lib/gnumeric/%%VERSION%%/plugins/gnum_gb.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_guile.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_html.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_lotus.so
@@ -569,7 +568,7 @@ share/gnome/help/gnumeric/C/tutorials.html
 share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
-share/gnome/oaf/gnumeric.oafinfo
+share/gnome/oaf/GNOME_Gnumeric.oafinfo
 share/gnome/pixmaps/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnome-application-x-xls.png
 share/gnome/pixmaps/gnome-gnumeric.png
