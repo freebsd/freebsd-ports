@@ -9,7 +9,7 @@
  
  XCOMM This specifies where the XmHTML header files will be installed
 -#define XmHTMLIncDir $(INCROOT)/XmHTML
-+#define XmHTMLIncDir /usr/X11R6/include
++#define XmHTMLIncDir /usr/X11R6/include/XmHTML
  
  XCOMM You may need to modify the following DEFINES as follows:
  XCOMM if your system doesn't provide str[n]casecmp, add -DNEED_STRCASECMP
