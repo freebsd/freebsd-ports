@@ -1,6 +1,5 @@
 bin/newsx
 bin/newsq
-bin/testfilter
 %%PORTDOCS%%share/doc/newsx/AUTHORS
 %%PORTDOCS%%share/doc/newsx/COPYING
 %%PORTDOCS%%share/doc/newsx/ChangeLog
