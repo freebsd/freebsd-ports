@@ -9,9 +9,7 @@
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
-		ftp://www.hensa.ac.uk/mirrors/linpack/ \
-		ftp://elib.zib-berlin.de/pub/linpack/
+MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/
 
 DIST_SUBDIR=	${DISTNAME}
 
@@ -53,7 +51,7 @@ DISTFILES=	${SRCS:.f=.f.gz}
 .include <bsd.port.pre.mk>
 
 pre-build:
-	${CP} Makefile.lib ${WRKDIR}/Makefile
+	${CP} ${FILESDIR}/Makefile.lib ${WRKDIR}/Makefile
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
