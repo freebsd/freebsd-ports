@@ -5,8 +5,10 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-img
 CATEGORIES=	japanese
+PKGNAMESUFFIX=	-img
+
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A pager/text-based WWW browser with Japanese and inline image support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m

@@ -8,32 +8,26 @@
 PORTNAME=	w3m
 PORTVERSION=	${W3M_VERSION}
 CATEGORIES+=	www ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nobutaka
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	w3m-${W3M_VERSION}.${SNAPDATE}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A pager/text-based WWW browser
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
+		intl.5:${PORTSDIR}/devel/gettext
 
-W3M_VERSION=			0.4.1
-M17N_VERSION=			20030308
-M17N_BASE_W3M_VERSION=		0.4.1
+W3M_VERSION=	0.4.2
+SNAPDATE=	20040111
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	-nonstop --prefix=${PREFIX} \
-			--libdir=${PREFIX}/libexec/w3m \
-			--helpdir=${PREFIX}/share/doc/w3m \
-			--gc-includedir=${LOCALBASE}/include \
-			--gc-libdir=${LOCALBASE}/lib \
-			-cflags="${CFLAGS}"
-HOSTNAME!=	/bin/hostname
-SCRIPTS_ENV=	HOSTNAME=${HOSTNAME} WRKSRC=${WRKSRC} PREFIX=${PREFIX} \
-		CC=${CC} LOCALBASE=${LOCALBASE} JAPANESE=${JAPANESE} \
-		USE_OPENSSL="${USE_OPENSSL}" SSL_CFLAGS="${SSL_CFLAGS}" \
-		SSL_LIBS="${SSL_LIBS}" EXTRA_SSL_LIBS="${EXTRA_SSL_LIBS}" \
-		INLINE_IMAGE=${INLINE_IMAGE} M17N=${M17N}
+
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
+WRKSRC=		${WRKDIR}/w3m
 
 MAN1=		w3m.1 w3mman.1
 MANLANG=	"" ja
@@ -44,42 +38,33 @@ DOCS=		FAQ.html HISTORY MANUAL.html README \
 
 .if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
 USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if defined(M17N)
-PORTVERSION:=	${M17N_BASE_W3M_VERSION}+${M17N_VERSION}
-PKGNAMESUFFIX=	-m17n
-
-MASTER_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-DISTNAME=	${PORTNAME}-${M17N_BASE_W3M_VERSION}-m17n-${M17N_VERSION}
-CONFIGURE_ARGS+=	--suffix=""
-
-PLIST_SUB+=	M17N="" NO_M17N="@comment "
+CONFIGURE_ARGS+=	--enable-m17n
+PLIST_SUB+=	M17N=""
 .else
-PLIST_SUB+=	M17N="@comment " NO_M17N=""
+.if !defined(JAPANESE)
+CONFIGURE_ARGS+=	--disable-m17n
+PLIST_SUB+=	M17N="@comment "
+.endif
 .endif
 
 .if defined(JAPANESE)
+CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
 
-PLIST_SUB+=	JAPANESE=""
+PLIST_SUB+=	JAPANESE="" M17N=""
 .else
 PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
-.if defined(USE_OPENSSL)
-SSL_CFLAGS=	-I${OPENSSLINC}/openssl -I${OPENSSLINC} ${OPENSSL_CFLAGS}
-SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
-
-MAKE_FLAGS+=	DEFS="${SSL_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${SSL_LIBS} ${EXTRA_SSL_LIBS} -L${LOCALBASE}/lib"
-.else
-MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-.endif
-
 .if defined(INLINE_IMAGE)
 USE_GNOME=	gdkpixbuf
+CONFIGURE_ARGS+=	--with-imagelib=gdk-pixbuf
 
 DOCS+=		README.img
 DOCS_JP+=	README.img
@@ -87,14 +72,11 @@ PLIST_SUB+=	INLINE_IMAGE=""
 
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 .else
+CONFIGURE_ARGS+=	--enable-image=no
 PLIST_SUB+=	INLINE_IMAGE="@comment "
 
 # Don't use pkg-message
 PKGMESSAGE=	${NONEXISTENT}
-.endif
-
-.if defined(M17N)
-.undef EXTRA_PATCHES
 .endif
 
 pre-everything::
@@ -139,7 +121,7 @@ post-install:
 	for i in ${DOCS} ; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
 	done
-.if defined(M17N)
+.if defined(M17N) || defined(JAPANESE)
 	@${INSTALL_DATA} ${WRKSRC}/doc/README.m17n ${PREFIX}/share/doc/w3m
 .endif
 .endif
