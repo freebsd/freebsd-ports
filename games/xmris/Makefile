@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1996/12/06 00:48:16 swallace Exp $
+# $Id: Makefile,v 1.13 1996/12/06 23:25:56 asami Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
@@ -17,5 +17,6 @@ MAINTAINER=	jmz@FreeBSD.org
 USE_GMAKE=	yes
 USE_IMAKE=      yes
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
+ALL_TARGET=	xmris
 
 .include <bsd.port.mk>
