@@ -1,17 +1,15 @@
 bin/cob-config
 bin/cobc
 bin/cobpp
-etc/open-cobol/libcob.conf
+etc/libcob.conf
 include/libcob.h
 include/libcob/call.h
-include/libcob/cobconfig.h
 include/libcob/common.h
 include/libcob/fileio.h
 include/libcob/move.h
 include/libcob/numeric.h
 include/libcob/screenio.h
 include/libcob/strings.h
-include/libcob/support.h
 include/libcob/termio.h
 @unexec install-info --delete %D/info/open-cobol.info %D/info/dir
 info/open-cobol.info
@@ -19,7 +17,6 @@ info/open-cobol.info
 lib/libcob.a
 lib/libcob.so
 lib/libcob.so.0
-share/aclocal/cob.m4
+libdata/pkgconfig/cob.pc
 share/locale/ja/LC_MESSAGES/open-cobol.mo
 @dirrm include/libcob
-@dirrm etc/open-cobol
