@@ -1,0 +1,10 @@
+xco uses the database of standard X11 named colors to display
+name-color pairs.  Appearance is based on the X10 xcolors program.  To
+change the foreground color, click the left mouse button in the color
+window you want.  To change the background color, click the right
+mouse button in the color window you want.  Clicking the middle mouse
+button sets the colors back to the original foreground and background.
+You can switch quickly through colors by holding down the left or
+right button and sliding the cursor through the colored windows.  More
+colors can be seen by clicking on the arrows at the bottom of the
+screen.
