@@ -1,16 +1,13 @@
---- conf/generic.orig	Mon Mar 29 01:02:41 1999
-+++ conf/generic	Fri Sep 10 16:10:36 1999
-@@ -17,11 +17,11 @@
- ###############################
- # Misc optimization flags
- #
--OPTIMIZE="-O"
-+#OPTIMIZE="-O"
- ###############################
- 
- ###############################
- # Flags used for debugging
- #
--DEBUG="-g"
-+#DEBUG="-g"
- ###############################
+*** src/pdfdrv.c.org	Thu Apr 20 22:34:34 2000
+--- src/pdfdrv.c	Thu Aug  3 21:23:05 2000
+***************
+*** 57,62 ****
+--- 57,64 ----
+  #  include "motifinc.h"
+  #endif
+  
++ #define PDF_set_fillrule(handle, rule) PDF_set_parameter(handle, "fillrule", rule)
++ 
+  static void pdf_error_handler(PDF *p, int type, const char* msg);
+  
+  static unsigned long page_scale;
