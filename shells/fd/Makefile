@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03r
-PORTREVISION=	1
+PORTVERSION=	1.03s
 CATEGORIES=	misc
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/
 MASTER_SITE_SUBDIR=	steve
 DISTNAME=	FD-${PORTVERSION}
 
