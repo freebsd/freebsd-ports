@@ -1,0 +1,97 @@
+bin/asclock
+share/asclock/Freeamp/beats.xpm
+share/asclock/Freeamp/clock.xpm
+share/asclock/Freeamp/config
+share/asclock/Freeamp/date.xpm
+share/asclock/Freeamp/hour.xpm
+share/asclock/Freeamp/led.xpm
+share/asclock/Freeamp/minute.xpm
+share/asclock/Freeamp/month.xpm
+share/asclock/Freeamp/old.clock.xpm
+share/asclock/Freeamp/second.xpm
+share/asclock/Freeamp/weekday.xpm
+share/asclock/Newstone/beats.xpm
+share/asclock/Newstone/clock.xpm
+share/asclock/Newstone/config
+share/asclock/Newstone/date.xpm
+share/asclock/Newstone/hour.xpm
+share/asclock/Newstone/led.xpm
+share/asclock/Newstone/minute.xpm
+share/asclock/Newstone/month.xpm
+share/asclock/Newstone/second.xpm
+share/asclock/Newstone/weekday.xpm
+share/asclock/Orb/beats.xpm
+share/asclock/Orb/clock.xpm
+share/asclock/Orb/config
+share/asclock/Orb/date.xpm
+share/asclock/Orb/hour.xpm
+share/asclock/Orb/led.xpm
+share/asclock/Orb/minute.xpm
+share/asclock/Orb/month.xpm
+share/asclock/Orb/second.xpm
+share/asclock/Orb/weekday.xpm
+share/asclock/Stone/beats.xpm
+share/asclock/Stone/clock.xpm
+share/asclock/Stone/config
+share/asclock/Stone/date.xpm
+share/asclock/Stone/hour.xpm
+share/asclock/Stone/led.xpm
+share/asclock/Stone/minute.xpm
+share/asclock/Stone/month.xpm
+share/asclock/Stone/second.xpm
+share/asclock/Stone/weekday.xpm
+share/asclock/analog/beats.xpm
+share/asclock/analog/clock.xpm
+share/asclock/analog/config
+share/asclock/analog/date.xpm
+share/asclock/analog/hour.xpm
+share/asclock/analog/led.xpm
+share/asclock/analog/minute.xpm
+share/asclock/analog/month.xpm
+share/asclock/analog/second.xpm
+share/asclock/analog/weekday.xpm
+share/asclock/beats/beats.xpm
+share/asclock/beats/clock.xpm
+share/asclock/beats/config
+share/asclock/beats/date.xpm
+share/asclock/beats/hour.xpm
+share/asclock/beats/led.xpm
+share/asclock/beats/minute.xpm
+share/asclock/beats/month.xpm
+share/asclock/beats/second.xpm
+share/asclock/beats/weekday.xpm
+share/asclock/classic/beats.xpm
+share/asclock/classic/clock.xpm
+share/asclock/classic/config
+share/asclock/classic/date.xpm
+share/asclock/classic/hour.xpm
+share/asclock/classic/led.xpm
+share/asclock/classic/minute.xpm
+share/asclock/classic/month.xpm
+share/asclock/classic/second.xpm
+share/asclock/classic/weekday.xpm
+share/asclock/penguin/clock.xpm
+share/asclock/penguin/config
+share/asclock/penguin/date.xpm
+share/asclock/penguin/led.xpm
+share/asclock/penguin/month.xpm
+share/asclock/shaped/beats.xpm
+share/asclock/shaped/clock.xpm
+share/asclock/shaped/config
+share/asclock/shaped/date.xpm
+share/asclock/shaped/hour.xpm
+share/asclock/shaped/led.xpm
+share/asclock/shaped/minute.xpm
+share/asclock/shaped/month.xpm
+share/asclock/shaped/second.xpm
+share/asclock/shaped/weekday.xpm
+@dirrm share/asclock/Freeamp
+@dirrm share/asclock/Newstone
+@dirrm share/asclock/Orb
+@dirrm share/asclock/Stone
+@dirrm share/asclock/analog
+@dirrm share/asclock/beats
+@dirrm share/asclock/classic
+@dirrm share/asclock/penguin
+@dirrm share/asclock/shaped
+@dirrm share/asclock
