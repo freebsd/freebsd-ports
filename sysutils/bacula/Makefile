@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -70,6 +70,7 @@ PLIST_SUB+=		GNOMECONS="@comment "
 .if defined(WITH_WXCONSOLE)
 CONFIGURE_ARGS+=	--enable-wx-console
 LIB_DEPENDS+=		wx_gtk-2.4:${PORTSDIR}/x11-toolkits/wxgtk
+CONFIGURE_ENV+=		WXCONFIG=${X11BASE}/bin/wxgtk-2.4-config
 PLIST_SUB+=		WXCONS=""
 .else
 # We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
