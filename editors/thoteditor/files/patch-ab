@@ -1,0 +1,24 @@
+--- ../batch/Makefile.in.orig	Sat Sep 25 11:11:53 1999
++++ ../batch/Makefile.in	Sat Sep 25 11:26:34 1999
+@@ -202,14 +202,14 @@
+ 	$(RM) -f *.o dns_daemon
+ 
+ install : all
+-	@(if test ! -d $(datadir) ; then $(MKDIR) $(datadir) ; fi)
+-	@(if test ! -d $(datadir)/thot ; then $(MKDIR) $(datadir)/thot ; fi)
+-	@(if test ! -d $(datadir)/thot/batch ; then $(MKDIR) $(datadir)/thot/batch ; fi)
+-	@(if test ! -d $(datadir)/thot/applis ; then $(MKDIR) $(datadir)/thot/applis ; fi)
+-	@(if test ! -d $(datadir)/thot/applis/bin ; then $(MKDIR) $(datadir)/thot/applis/bin ; fi)
+-	@(for i in $(COMPILERS) ; do \
++	@(set -x;if test ! -d $(datadir) ; then $(MKDIR) $(datadir) ; fi)
++	@(set -x;if test ! -d $(datadir)/thot ; then $(MKDIR) $(datadir)/thot ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/batch ; then $(MKDIR) $(datadir)/thot/batch ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/applis ; then $(MKDIR) $(datadir)/thot/applis ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/applis/bin ; then $(MKDIR) $(datadir)/thot/applis/bin ; fi)
++	@(set -x;for i in $(COMPILERS) ; do \
+ 	  $(INSTALL_BIN) $$i $(datadir)/thot/applis/bin ; done)
+-	(for i in $(LANGUAGES) ; do \
++	@(set -x;for i in $(LANGUAGES) ; do \
+ 	  for file in `$(ECHO) $(THOTDIR)/batch/$$i` ; do \
+ 	    $(INSTALL_DATA) $$file $(datadir)/thot/batch ; \
+ 	  done ; done)

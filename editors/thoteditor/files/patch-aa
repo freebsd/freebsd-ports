@@ -1,24 +1,11 @@
---- ../configure.orig	Wed Sep 22 00:01:33 1999
-+++ ../configure	Wed Sep 22 00:04:04 1999
-@@ -5261,7 +5261,7 @@
-     build_amaya="no"
+--- ../configure.orig	Fri Sep 24 20:16:20 1999
++++ ../configure	Fri Sep 24 20:17:39 1999
+@@ -5200,7 +5200,7 @@
+     esac    
+   fi
  fi
+-
++MOTIF_LIBRARIES="$(MOTIFLIB)"
  
--if test ! -f $srcdir/thot/Makefile.in ; then
-+if test ! -f $srcdir/Thot/Makefile.in ; then
-     echo "configure: warning: Thot editor sources not found" 1>&2
-     build_thot="no"
- fi
-@@ -5594,10 +5594,10 @@
  
- if test "$build_thot" = "yes" ; then
- 
--    make_output="$make_output thot/Makefile \
-+    make_output="$make_output Thot/Makefile \
- drawlib/Makefile indexlib/Makefile"
-     EXTRA_MAKEFILE_IN="$EXTRA_MAKEFILE_IN \
--$srcdir/thot/Makefile.in \
-+$srcdir/Thot/Makefile.in \
- $srcdir/drawlib/Makefile.in \
- $srcdir/indexlib/Makefile.in"
  

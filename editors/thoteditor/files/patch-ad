@@ -1,0 +1,11 @@
+--- ../tools/Makefile.in.orig	Fri May 16 10:00:20 1997
++++ ../tools/Makefile.in	Sat Sep 25 12:16:00 1999
+@@ -24,7 +24,7 @@
+ 	  cd .. ; fi ;done )
+ 
+ install :
+-	@(for dir in $(SUBDIRS) ;\
++	@(set -x;for dir in $(SUBDIRS) ;\
+ 	  do if test -d $$dir ; then cd $$dir ; \
+ 	  $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" install ; \
+ 	  cd .. ; fi ;done )

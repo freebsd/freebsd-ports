@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	thoteditor
-PKGNAME=	thoteditor-2.1e
+DISTNAME=	thoteditor-src-2.1e
+PKGNAME=	thoteditor-2.1
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		${MASTER_SITE_SUNSITE} \
@@ -16,30 +16,24 @@ MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/editors/opera.inrialpes.fr/sources/thot/ \
 		ftp://ftp.agix.net/pub/infosystems/www/clients/amaya/thot/
 MASTER_SITE_SUBDIR=	apps/editors/X/thot
-DISTFILES=	${THOT_SRC} ${EDITOR_SRC}
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-BROKEN= 'FUBARed'
-WRKSRC=		$(WRKDIR)/Thot/objects
+THOT_SUBDIR=	Target
+REQUIRES_MOTIF=	yes
+WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
 
-THOT_SRC=	thot-src-2.1e.tar.gz
-EDITOR_SRC=	thoteditor-src-2.1e.tar.gz
-
-EXTRACT_ONLY=	${THOT_SRC}
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
 USE_GMAKE=	yes
 ALL_TARGET=	all schemas
 
 do-configure:
-	(cd $(WRKDIR)/Thot/objects;../configure $(CONFIGURE_ARGS))
+	(cd $(WRKSRC);../configure $(CONFIGURE_ARGS))
 
 post-extract:
-	(${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EDITOR_SRC} ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/Thot)
-	(cd $(WRKDIR)/Thot;$(MKDIR) objects)
+	(cd $(WRKDIR)/Thot;$(MKDIR) $(THOT_SUBDIR))
 
 post-install:
 	${MKDIR} ${PREFIX}/share/thot/doc

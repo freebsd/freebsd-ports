@@ -1,0 +1,19 @@
+--- ../Makefile.in.orig	Wed Oct  8 04:13:58 1997
++++ ../Makefile.in	Sat Sep 25 13:24:41 1999
+@@ -17,6 +17,7 @@
+ 
+ SUBDIRS	= tools tablelib thotlib batch drawlib indexlib thot amaya
+ EXTRA_SUBDIRS= misc classes javalib
++BINS = bin/app bin/grm bin/printstr bin/str bin/tra bin/cextract bin/print bin/prs bin/thot
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -76,6 +77,8 @@
+ 	  do if test -d $$dir ; then cd $$dir ; \
+ 	  $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" install ; \
+ 	  cd .. ; fi ;done )
++	@(set -x;for file in $(BINS);\
++	  do $(INSTALL_BIN) $$file ${bindir}; done )
+ 
+ uninstall : 
+ 	@(for dir in $(SUBDIRS) ;\
