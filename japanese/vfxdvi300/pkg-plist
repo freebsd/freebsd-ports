@@ -1,6 +1,0 @@
-@cwd /usr/X11R6
-bin/xdvi
-@cwd /usr/local
-share/tex/xdvipaper.dvi2ps-j
-share/tex/xdvipaper.dvips
-share/tex/xdvipaper.jdvi2kps

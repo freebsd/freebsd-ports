@@ -3566,12 +3566,6 @@ ja-uim		ports/japanese/uim
 ja-vera-fpw	ports/japanese/vera-fpw
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
-ja-vfxdvi118	ports/japanese/vfxdvi118
-ja-vfxdvi240	ports/japanese/vfxdvi240
-ja-vfxdvi300	ports/japanese/vfxdvi300
-ja-vfxdvi360	ports/japanese/vfxdvi360
-ja-vfxdvi400	ports/japanese/vfxdvi400
-ja-vfxdvi600	ports/japanese/vfxdvi600
 ja-vje30	ports/japanese/vje30
 ja-vje30-trial	ports/japanese/vje30-trial
 ja-w3		ports/japanese/w3
