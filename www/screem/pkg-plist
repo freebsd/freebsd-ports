@@ -1,43 +1,208 @@
 bin/screem
+share/gnome/apps/Development/screem.desktop
 share/gnome/mc/templates/screem.desktop
 share/gnome/mime-info/screem.keys
 share/gnome/mime-info/screem.mime
 share/gnome/pixmaps/screem.png
+share/gnome/pixmaps/screem/broken.xpm
+share/gnome/pixmaps/screem/browser.xpm
+share/gnome/pixmaps/screem/button.xpm
+share/gnome/pixmaps/screem/checkbutton.xpm
+share/gnome/pixmaps/screem/dir-close.xpm
+share/gnome/pixmaps/screem/dir-open.xpm
+share/gnome/pixmaps/screem/entry.xpm
+share/gnome/pixmaps/screem/fixed.xpm
+share/gnome/pixmaps/screem/gallery.xpm
+share/gnome/pixmaps/screem/gnome-fileentry.xpm
+share/gnome/pixmaps/screem/image.xpm
+share/gnome/pixmaps/screem/link.xpm
+share/gnome/pixmaps/screem/noicon.xpm
+share/gnome/pixmaps/screem/optionmenu.xpm
+share/gnome/pixmaps/screem/preview.xpm
+share/gnome/pixmaps/screem/radiobutton.xpm
+share/gnome/pixmaps/screem/splash/1.png
+share/gnome/pixmaps/screem/splash/2.png
+share/gnome/pixmaps/screem/splash/3.png
+share/gnome/pixmaps/screem/splash/4.png
+share/gnome/pixmaps/screem/text.xpm
 share/locale/de/LC_MESSAGES/screem.mo
 share/locale/fr/LC_MESSAGES/screem.mo
+share/locale/it/LC_MESSAGES/screem.mo
+share/locale/ja/LC_MESSAGES/screem.mo
 share/locale/pl/LC_MESSAGES/screem.mo
+share/locale/ru/LC_MESSAGES/screem.mo
+share/screem/frames/style1.html
 share/screem/glade/css.glade
-share/screem/glade/extern_browsers.glade
+share/screem/glade/entityWizard.glade
+share/screem/glade/formWizard.glade
+share/screem/glade/frameWizard.glade
 share/screem/glade/imageWizard.glade
 share/screem/glade/linkWizard.glade
-share/screem/glade/pagedruid.glade
-share/screem/glade/preferences.glade
-share/screem/glade/site_settings.glade
-share/screem/glade/sitedruid.glade
-share/screem/glade/sitetemplate.glade
-share/screem/glade/todo.glade
+share/screem/glade/screem.glade
+share/screem/glade/uploadwizard.glade
+share/screem/hints/screem_hints.txt
+share/screem/htmlhelp/alist.html
+share/screem/htmlhelp/attrs.html
+share/screem/htmlhelp/aural.css
+share/screem/htmlhelp/block.html
+share/screem/htmlhelp/block/address.html
+share/screem/htmlhelp/block/blockquote.html
+share/screem/htmlhelp/block/center.html
+share/screem/htmlhelp/block/div.html
+share/screem/htmlhelp/block/h1.html
+share/screem/htmlhelp/block/h2.html
+share/screem/htmlhelp/block/h3.html
+share/screem/htmlhelp/block/h4.html
+share/screem/htmlhelp/block/h5.html
+share/screem/htmlhelp/block/h6.html
+share/screem/htmlhelp/block/hr.html
+share/screem/htmlhelp/block/index.html
+share/screem/htmlhelp/block/isindex.html
+share/screem/htmlhelp/block/noscript.html
+share/screem/htmlhelp/block/p.html
+share/screem/htmlhelp/block/pre.html
+share/screem/htmlhelp/deprecated.html
+share/screem/htmlhelp/entities/index.html
+share/screem/htmlhelp/entities/latin1.html
+share/screem/htmlhelp/entities/special.html
+share/screem/htmlhelp/entities/symbols.html
+share/screem/htmlhelp/fontstyle/b.html
+share/screem/htmlhelp/fontstyle/big.html
+share/screem/htmlhelp/fontstyle/i.html
+share/screem/htmlhelp/fontstyle/index.html
+share/screem/htmlhelp/fontstyle/s.html
+share/screem/htmlhelp/fontstyle/small.html
+share/screem/htmlhelp/fontstyle/strike.html
+share/screem/htmlhelp/fontstyle/tt.html
+share/screem/htmlhelp/fontstyle/u.html
+share/screem/htmlhelp/forms/button.html
+share/screem/htmlhelp/forms/fieldset.html
+share/screem/htmlhelp/forms/form.html
+share/screem/htmlhelp/forms/index.html
+share/screem/htmlhelp/forms/input.html
+share/screem/htmlhelp/forms/label.html
+share/screem/htmlhelp/forms/legend.html
+share/screem/htmlhelp/forms/optgroup.html
+share/screem/htmlhelp/forms/option.html
+share/screem/htmlhelp/forms/select.html
+share/screem/htmlhelp/forms/textarea.html
+share/screem/htmlhelp/frames/frame.html
+share/screem/htmlhelp/frames/frameset.html
+share/screem/htmlhelp/frames/index.html
+share/screem/htmlhelp/frames/noframes.html
+share/screem/htmlhelp/head/base.html
+share/screem/htmlhelp/head/head.html
+share/screem/htmlhelp/head/index.html
+share/screem/htmlhelp/head/link.html
+share/screem/htmlhelp/head/meta.html
+share/screem/htmlhelp/head/style.html
+share/screem/htmlhelp/head/title.html
+share/screem/htmlhelp/html/body.html
+share/screem/htmlhelp/html/doctype.html
+share/screem/htmlhelp/html/html.html
+share/screem/htmlhelp/html/index.html
+share/screem/htmlhelp/index.html
+share/screem/htmlhelp/inline.html
+share/screem/htmlhelp/lists/dd.html
+share/screem/htmlhelp/lists/dir.html
+share/screem/htmlhelp/lists/dl.html
+share/screem/htmlhelp/lists/dt.html
+share/screem/htmlhelp/lists/index.html
+share/screem/htmlhelp/lists/li.html
+share/screem/htmlhelp/lists/menu.html
+share/screem/htmlhelp/lists/ol.html
+share/screem/htmlhelp/lists/ul.html
+share/screem/htmlhelp/new.html
+share/screem/htmlhelp/olist.html
+share/screem/htmlhelp/phrase/abbr.html
+share/screem/htmlhelp/phrase/acronym.html
+share/screem/htmlhelp/phrase/cite.html
+share/screem/htmlhelp/phrase/code.html
+share/screem/htmlhelp/phrase/del.html
+share/screem/htmlhelp/phrase/dfn.html
+share/screem/htmlhelp/phrase/em.html
+share/screem/htmlhelp/phrase/index.html
+share/screem/htmlhelp/phrase/ins.html
+share/screem/htmlhelp/phrase/kbd.html
+share/screem/htmlhelp/phrase/samp.html
+share/screem/htmlhelp/phrase/strong.html
+share/screem/htmlhelp/phrase/var.html
+share/screem/htmlhelp/special/a.html
+share/screem/htmlhelp/special/applet.html
+share/screem/htmlhelp/special/area.html
+share/screem/htmlhelp/special/basefont.html
+share/screem/htmlhelp/special/bdo.html
+share/screem/htmlhelp/special/br.html
+share/screem/htmlhelp/special/font.html
+share/screem/htmlhelp/special/iframe.html
+share/screem/htmlhelp/special/img.html
+share/screem/htmlhelp/special/index.html
+share/screem/htmlhelp/special/map.html
+share/screem/htmlhelp/special/object.html
+share/screem/htmlhelp/special/param.html
+share/screem/htmlhelp/special/q.html
+share/screem/htmlhelp/special/script.html
+share/screem/htmlhelp/special/span.html
+share/screem/htmlhelp/special/sub.html
+share/screem/htmlhelp/special/sup.html
+share/screem/htmlhelp/structure.html
+share/screem/htmlhelp/style.css
+share/screem/htmlhelp/tables/caption.html
+share/screem/htmlhelp/tables/col.html
+share/screem/htmlhelp/tables/colgroup.html
+share/screem/htmlhelp/tables/index.html
+share/screem/htmlhelp/tables/table.html
+share/screem/htmlhelp/tables/tbody.html
+share/screem/htmlhelp/tables/td.html
+share/screem/htmlhelp/tables/tfoot.html
+share/screem/htmlhelp/tables/th.html
+share/screem/htmlhelp/tables/thead.html
+share/screem/htmlhelp/tables/tr.html
+share/screem/htmlhelp/values.html
+share/screem/htmlhelp/wdglogo-small.gif
+share/screem/htmlhelp/wdglogo1.gif
 share/screem/plugins/colourWizard.so
 share/screem/plugins/cssWizard.so
 share/screem/plugins/entityWizard.so
-share/screem/plugins/externBrowsers.so
+share/screem/plugins/formWizard.so
+share/screem/plugins/frameWizard.so
 share/screem/plugins/galleryWizard.so
 share/screem/plugins/imageWizard.so
 share/screem/plugins/linkWizard.so
 share/screem/plugins/mailWizard.so
+share/screem/plugins/script.scm
 share/screem/plugins/ssiWizard.so
 share/screem/plugins/tableWizard.so
 share/screem/plugins/uploadWizard.so
+share/screem/resources/Images/made.jpg
 share/screem/screem.tagtree
-share/screem/splash/1.png
-share/screem/splash/2.png
-share/screem/splash/3.png
-share/screem/splash/4.png
-@dirrm share/screem/glade
-@dirrm share/screem/plugins
-@dirrm share/screem/resources/Applets
-@dirrm share/screem/resources/Images
-@dirrm share/screem/resources/Javascript
+share/screem/syntax/html.screem.syntax
+share/screem/syntax/perl.screem.syntax
+share/screem/syntax/php3_functions
+share/screem/syntax/screemsyntax.screem.syntax
+@dirrm share/screem/syntax
 @dirrm share/screem/resources/PHP3
+@dirrm share/screem/resources/Javascript
+@dirrm share/screem/resources/Images
+@dirrm share/screem/resources/HTML
+@dirrm share/screem/resources/Applets
 @dirrm share/screem/resources
-@dirrm share/screem/splash
+@dirrm share/screem/plugins
+@dirrm share/screem/htmlhelp/tables
+@dirrm share/screem/htmlhelp/special
+@dirrm share/screem/htmlhelp/phrase
+@dirrm share/screem/htmlhelp/lists
+@dirrm share/screem/htmlhelp/html
+@dirrm share/screem/htmlhelp/head
+@dirrm share/screem/htmlhelp/frames
+@dirrm share/screem/htmlhelp/forms
+@dirrm share/screem/htmlhelp/fontstyle
+@dirrm share/screem/htmlhelp/entities
+@dirrm share/screem/htmlhelp/block
+@dirrm share/screem/htmlhelp
+@dirrm share/screem/hints
+@dirrm share/screem/glade
+@dirrm share/screem/frames
 @dirrm share/screem
+@dirrm share/gnome/pixmaps/screem/splash
+@dirrm share/gnome/pixmaps/screem

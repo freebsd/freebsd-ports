@@ -1,74 +1,34 @@
---- configure	Mon Jan  3 09:33:01 2000
-+++ configure.new	Sat Mar 18 16:23:46 2000
-@@ -1922,8 +1922,8 @@
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
-+${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
- 
- # Reload cache, that may have been modified by ltconfig
-@@ -1937,7 +1937,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -2405,6 +2405,7 @@
-   fi
- 
- 
-+if false; then
- 	PTHREAD_LIB=""
- 	echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
- echo "configure:2411: checking for pthread_create in -lpthread" >&5
-@@ -2482,6 +2483,9 @@
+--- configure.orig	Mon Jul 17 21:51:46 2000
++++ configure	Fri Jul 21 12:13:37 2000
+@@ -2763,14 +2763,14 @@
    PTHREAD_LIB="-lpthreads"
  else
    echo "$ac_t""no" 1>&6
-+fi
-+fi
-+fi
- echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
- echo "configure:2487: checking for pthread_create in -lc_r" >&5
+-echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
+-echo "configure:2768: checking for pthread_create in -lc_r" >&5
++echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:2768: checking for pthread_create in -pthread" >&5
  ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
-@@ -2489,7 +2493,7 @@
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lc_r  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2495 "configure"
+ #line 2776 "configure"
  #include "confdefs.h"
-@@ -2517,7 +2521,7 @@
+@@ -2798,7 +2798,8 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  PTHREAD_LIB="-lc_r"
 +  PTHREAD_LIB="-pthread"
++  CFLAGS="$CFLAGS -D_REENTRANT -D_THREAD_SAFE"
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -2571,11 +2575,6 @@
- 		    
- fi
- 
--		
--fi
--
--	
--fi
- 
- 	
- 	
-@@ -5882,7 +5881,7 @@
+@@ -6296,7 +6297,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
