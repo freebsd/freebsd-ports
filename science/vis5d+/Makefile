@@ -23,22 +23,17 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_MESA=	yes
-USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_GL=		yes
+USE_GNOME=	gnometarget gtk12
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-mesa --with-netcdf \
+CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-netcdf \
 		--with-mixkit=${LOCALBASE}/lib/libmix.a --with-x
 INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_FLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} 
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
