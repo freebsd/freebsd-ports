@@ -654,26 +654,26 @@ print/pktrace|print/mftrace|2003-11-05|program renamed
 databases/mysql-jdbc-mm|databases/mysql-connector-java|2003-11-05|renamed
 sysutils/prune|sysutils/fileprune|2003-11-06|renamed because of conflict with graphviz
 graphics/Mesa3|graphics/libglut|2003-11-06|split into graphics/mesagl and graphics/libglut
-japanese/openoffice|japanese/openoffice-1.0|2003-01-07|renamed
-japanese/openoffice-devel|japanese/openoffice-1.1|2003-01-07|renamed
-editors/openoffice|editors/openoffice-1.0|2003-01-07|renamed
-editors/openoffice-devel|editors/openoffice-1.1|2003-01-07|renamed
-editors/openoffice-ar|editors/openoffice-1.0-ar|2003-01-07|renamed
-editors/openoffice-dk|editors/openoffice-1.0-dk|2003-01-07|renamed
-editors/openoffice-es|editors/openoffice-1.0-es|2003-01-07|renamed
-editors/openoffice-gr|editors/openoffice-1.0-gr|2003-01-07|renamed
-editors/openoffice-it|editors/openoffice-1.0-it|2003-01-07|renamed
-editors/openoffice-nl|editors/openoffice-1.0-nl|2003-01-07|renamed
-editors/openoffice-se|editors/openoffice-1.0-se|2003-01-07|renamed
-editors/openoffice-tr|editors/openoffice-1.0-tr|2003-01-07|renamed
-chinese/openoffice-zh_CN|chinese/openoffice-1.0-zh_CN|2003-01-07|renamed
-chinese/openoffice-zh_TW|chinese/openoffice-1.0-zh_TW|2003-01-07|renamed
-french/openoffice|french/openoffice-1.0|2003-01-07|renamed
-german/openoffice|german/openoffice-1.0|2003-01-07|renamed
-korean/openoffice|korean/openoffice-1.0|2003-01-07|renamed
-polish/openoffice|polish/openoffice-1.0|2003-01-07|renamed
-portuguese/openoffice|portuguese/openoffice-1.0|2003-01-07|renamed
-russian/openoffice|russian/openoffice-1.0|2003-01-07|renamed
+japanese/openoffice|japanese/openoffice-1.0|2003-11-07|renamed
+japanese/openoffice-devel|japanese/openoffice-1.1|2003-11-07|renamed
+editors/openoffice|editors/openoffice-1.0|2003-11-07|renamed
+editors/openoffice-devel|editors/openoffice-1.1|2003-11-07|renamed
+editors/openoffice-ar|editors/openoffice-1.0-ar|2003-11-07|renamed
+editors/openoffice-dk|editors/openoffice-1.0-dk|2003-11-07|renamed
+editors/openoffice-es|editors/openoffice-1.0-es|2003-11-07|renamed
+editors/openoffice-gr|editors/openoffice-1.0-gr|2003-11-07|renamed
+editors/openoffice-it|editors/openoffice-1.0-it|2003-11-07|renamed
+editors/openoffice-nl|editors/openoffice-1.0-nl|2003-11-07|renamed
+editors/openoffice-se|editors/openoffice-1.0-se|2003-11-07|renamed
+editors/openoffice-tr|editors/openoffice-1.0-tr|2003-11-07|renamed
+chinese/openoffice-zh_CN|chinese/openoffice-1.0-zh_CN|2003-11-07|renamed
+chinese/openoffice-zh_TW|chinese/openoffice-1.0-zh_TW|2003-11-07|renamed
+french/openoffice|french/openoffice-1.0|2003-11-07|renamed
+german/openoffice|german/openoffice-1.0|2003-11-07|renamed
+korean/openoffice|korean/openoffice-1.0|2003-11-07|renamed
+polish/openoffice|polish/openoffice-1.0|2003-11-07|renamed
+portuguese/openoffice|portuguese/openoffice-1.0|2003-11-07|renamed
+russian/openoffice|russian/openoffice-1.0|2003-11-07|renamed
 chinese/chitex||2003-11-07|port was broken for >3 months with no fix submitted
 comms/bayonne||2003-11-07|port was broken for >3 months with no fix submitted
 emulators/xpinmame||2003-11-07|port was broken for >3 months with no fix submitted
