@@ -18,6 +18,7 @@ COMMENT=	A fork of mysql++ C++ API for MySQL
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
+USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -35,8 +36,6 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e '/^pkgconfigdir =/s,\$$(libdir),$$(prefix)/libdata,g' \
-		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} s/libmysqlcppapi-1.9/libmysqlcppapi/g \
 		${WRKSRC}/mysqlcppapi/Makefile.in ${WRKSRC}/examples/Makefile.in
 	${FIND} ${WRKSRC}/mysqlcppapi -name Makefile.in \
