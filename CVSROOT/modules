@@ -543,6 +543,7 @@ biggles		ports/math/biggles
 bigyear		ports/deskutils/bigyear
 bin		src/bin
 bin86		ports/devel/bin86
+bins		ports/www/bins
 bind8		ports/net/bind8
 bind9		ports/net/bind9
 bind9-dlz	ports/net/bind9-dlz
