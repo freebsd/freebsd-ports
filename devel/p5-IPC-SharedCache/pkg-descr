@@ -1,0 +1,11 @@
+This module provides a shared memory cache accessed as a
+tied hash.
+Shared memory is an area of memory that is available to
+all processes.  It is accessed by choosing a key, the
+ipc_key arguement to tie.  Every process that accesses
+shared memory with the same key gets access to the same
+region of memory.  In some ways it resembles a file
+system, but it is not hierarchical and it is resident in
+memory.  This makes it harder to use than a filesystem but
+much faster.  The data in shared memory persists until the
+machine is rebooted or it is explicitely deleted.

@@ -360,6 +360,7 @@
     SUBDIR += p5-IPC-Run
     SUBDIR += p5-IPC-ShareLite
     SUBDIR += p5-IPC-Shareable
+    SUBDIR += p5-IPC-SharedCache
     SUBDIR += p5-Include
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
