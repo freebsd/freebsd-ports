@@ -33,6 +33,7 @@ APXS=		${PREFIX}/sbin/apxs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
+		--enable-versioning \
 		--with-system-regex \
 		--with-config-file-path=${PREFIX}/etc \
 		--disable-debug \
