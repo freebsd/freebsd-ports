@@ -104,7 +104,7 @@ BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.2.7
+VERSION_MODSSL=	2.2.8
 
 RESTRICTED=	"Contains cryptography"
 
