@@ -7,7 +7,7 @@
 
 PORTNAME=	gdome
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://download.berlios.de/libgdome-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gdome.6:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
