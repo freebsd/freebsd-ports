@@ -7,6 +7,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/  \
 		${MASTER_SITE_LOCAL}
