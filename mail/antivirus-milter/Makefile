@@ -7,6 +7,7 @@
 
 PORTNAME=	antivirus
 PORTVERSION=	3.30
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nmt.edu/~wcolburn/antivirus/
 
@@ -63,8 +64,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/antivirus-milter.sh \
 		${PREFIX}/etc/rc.d/antivirus-milter.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/antivirus.conf ${PREFIX}/etc/antivirus.conf-dist
-	${MKDIR} /var/antivirus/spool /var/antivirus/run /var/antivirus/quarantine
-	${CHOWN} -R nobody:nobody /var/antivirus/
+	${MKDIR} ${ANTIVIRUS_DIR}/spool ${ANTIVIRUS_DIR}/run ${ANTIVIRUS_DIR}/quarantine
+	${CHOWN} -R nobody:nobody ${ANTIVIRUS_DIR}/
 	@${ECHO_MSG} "Add to your *.mc configfile:"
 	@${ECHO_MSG} "INPUT_MAIL_FILTER(\`antivirus', \`S=local:${ANTIVIRUS_DIR}/antivirus.sock, F=')"
 
