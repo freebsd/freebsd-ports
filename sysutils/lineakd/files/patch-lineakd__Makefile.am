@@ -1,0 +1,11 @@
+--- lineakd/Makefile.am.orig	Wed Dec 29 12:07:27 2004
++++ lineakd/Makefile.am	Wed Dec 29 12:07:41 2004
+@@ -5,7 +5,7 @@
+ ## INCLUDES were found outside kdevelop specific part
+ 
+ lineakd_SOURCES = lineakd_core_functions.cpp cmdprefs.cpp main.cpp 
+-lineakd_LDADD   = -lpthread -llineak -lXext -lX11 -ldl
++lineakd_LDADD   = -lpthread -llineak -lXext -lX11
+ 
+ EXTRA_DIST = main.cpp eakprocs.h cmdprefs.cpp cmdprefs.h lineakkb.def lineakd.1.bz2 OLDCODE lineakd_core_functions.h lineakd_core_functions.cpp 
+ #man_MANS = lineakd.1.gz
