@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 23 10:51:33 2002
-+++ configure	Tue Jul 23 15:46:26 2002
-@@ -1172,7 +1172,7 @@
+--- configure.orig	Tue Jul 30 22:54:16 2002
++++ configure	Mon Aug  5 17:24:04 2002
+@@ -1170,7 +1170,7 @@
  PATH_SEPARATOR="$ac_path_separator"
  rm -f conftest.sh
  
@@ -9,7 +9,7 @@
  
  MAJOR_VERSION=0
  MINOR_VERSION=8
-@@ -1653,7 +1653,7 @@
+@@ -1651,7 +1651,7 @@
  
  fi
  
@@ -18,35 +18,7 @@
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -7054,7 +7054,7 @@
- fi
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9862,6 +9862,7 @@
- #line 9862 "configure"
- #include "confdefs.h"
- #include <libintl.h>
-+#define _nl_domain_bindings	libintl_nl_domain_bindings /* configure is retarded. */
- extern int _nl_msg_cat_cntr;
- extern int *_nl_domain_bindings;
- extern
-@@ -9967,8 +9968,8 @@
-                 INTLOBJS="\$(GETTOBJS)"
-         BUILD_INCLUDED_LIBINTL=yes
-         USE_INCLUDED_LIBINTL=yes
--        LIBINTL="\${top_builddir}/intl/libintl.a $LIBICONV"
--        LTLIBINTL="\${top_builddir}/intl/libintl.a $LTLIBICONV"
-+        LIBINTL="$LIBICONV"
-+        LTLIBINTL="$LTLIBICONV"
-         LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
-       fi
- 
-@@ -10054,9 +10055,9 @@
+@@ -9829,9 +9829,9 @@
  
  localedir='${prefix}/${DATADIRNAME}/locale'
  
@@ -58,12 +30,3 @@
  
  if test "x${datadir}" = 'x${prefix}/share'; then
    if test "x${prefix}" = "xNONE"; then
-@@ -14555,7 +14556,7 @@
- fi
- done
- 
--ac_config_files="$ac_config_files Makefile sylpheed.spec intl/Makefile ac/Makefile po/Makefile.in src/version.h src/Makefile faq/Makefile faq/de/Makefile faq/en/Makefile faq/es/Makefile faq/fr/Makefile faq/it/Makefile man/Makefile manual/Makefile manual/de/Makefile manual/en/Makefile manual/es/Makefile manual/fr/Makefile manual/ja/Makefile tools/Makefile"
-+ac_config_files="$ac_config_files Makefile sylpheed.spec ac/Makefile po/Makefile.in src/version.h src/Makefile faq/Makefile faq/de/Makefile faq/en/Makefile faq/es/Makefile faq/fr/Makefile faq/it/Makefile man/Makefile manual/Makefile manual/de/Makefile manual/en/Makefile manual/es/Makefile manual/fr/Makefile manual/ja/Makefile tools/Makefile"
- cat >confcache <<\_ACEOF
- # This file is a shell script that caches the results of configure
- # tests run on this system so they can be shared between configure
