@@ -1,0 +1,10 @@
+--- ./src/IconBox/IconBoxT.c.org	Wed Apr 23 00:21:28 1997
++++ ./src/IconBox/IconBoxT.c	Wed Apr 23 00:34:26 1997
+@@ -5,6 +5,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <dirent.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
