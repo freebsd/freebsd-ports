@@ -1,0 +1,4 @@
+A Perl module for examining and modifying the strings that qmail uses
+to represend a message's envelope sender and recipients.
+
+WWW: http://search.cpan.org/dist/Qmail-Envelope/

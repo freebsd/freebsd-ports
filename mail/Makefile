@@ -289,6 +289,7 @@
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-Server-Mail
     SUBDIR += p5-POE-Component-SMTP
+    SUBDIR += p5-Qmail-Envelope
     SUBDIR += p5-Sendmail-Milter
     SUBDIR += p5-vpopmail
     SUBDIR += pantomime
