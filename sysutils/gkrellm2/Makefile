@@ -7,8 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.1.28
-PORTREVISION=	1
-#PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -26,6 +25,8 @@ LATEST_LINK=	${PORTNAME}2
 USE_RC_SUBR=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
+
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-property
 
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
