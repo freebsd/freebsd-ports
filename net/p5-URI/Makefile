@@ -1,12 +1,12 @@
 # New ports collection makefile for:    p5-URI
 # Version required:                     1.*
 #
-# $Id: Makefile,v 1.11 1998/09/15 21:31:52 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/07 20:56:04 ache Exp $
 #
 
 DISTNAME=       URI-1.02
 PKGNAME=        p5-URI-1.02
-CATEGORIES=	security perl5
+CATEGORIES=     net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     URI
 
