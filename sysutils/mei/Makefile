@@ -3,13 +3,13 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.5 1998/06/06 03:48:12 itojun Exp $
+# $Id: Makefile,v 1.6 1999/04/25 08:14:57 itojun Exp $
 #
 
 DISTNAME=	mei-1.53
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vector.co.jp/authors/VA001240/archive/ \
-		http://freefall.freebsd.org/~itojun/distfiles/
+		http://www.freebsd.org/~itojun/distfiles/
 DISTFILES=	mei153s.tgz mei153d.tgz
 
 MAINTAINER=	itojun@itojun.org
