@@ -12,6 +12,7 @@
     SUBDIR += biggles
     SUBDIR += blas
     SUBDIR += calc
+    SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += ccmath
     SUBDIR += cln
