@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xxgdb
-# Version required:     1.11
+# Version required:     1.12
 # Date created:		2 May 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/03 05:39:09 asami Exp $
+# $Id: Makefile,v 1.2 1995/06/20 08:01:29 asami Exp $
 #
 
-DISTNAME=	xxgdb-1.11
+DISTNAME=	xxgdb-1.12
 CATEGORIES+=	development programming
 MASTER_SITES=   ftp://ftp.x.org/contrib/utilities/ \
 		ftp://crl.dec.com/pub/X11/contrib/utilities/
