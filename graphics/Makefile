@@ -152,6 +152,7 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
+    SUBDIR += twinlib
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += vcdgear
