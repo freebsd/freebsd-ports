@@ -246,6 +246,7 @@
     SUBDIR += userlist
     SUBDIR += usermin
     SUBDIR += uwatch
+    SUBDIR += vcp
     SUBDIR += videogen
     SUBDIR += vobcopy
     SUBDIR += wait_on
