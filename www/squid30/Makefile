@@ -7,13 +7,13 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
+		ftp://ftp.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
-		ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
+		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
 DISTNAME=	squid-2.5.STABLE4
@@ -53,7 +53,8 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-redirlog.patch \
 		squid-2.5.STABLE4-pinger.patch \
 		squid-2.5.STABLE4-partial_reload.patch \
-		squid-2.5.STABLE4-ldap_tls.patch
+		squid-2.5.STABLE4-ldap_tls.patch \
+		squid-2.5.STABLE4-ldap_group_bufsize.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
