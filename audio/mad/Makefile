@@ -1,6 +1,6 @@
 # New ports collection makefile for:  mad
 # Date created:        18 November 2000
-# Whom:                Jason R. Mastaler <jason-freebsd@mastaler.com> et al.
+# Whom:                Jason R. Mastaler <jason@mastaler.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
 MASTER_SITE_SUBDIR=	mad
 
-MAINTAINER=	jason-freebsd@mastaler.com
+MAINTAINER=	jason@mastaler.com
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
