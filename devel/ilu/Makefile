@@ -21,6 +21,8 @@ PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	cracauer@cons.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 # The FreeBSD port uses its own shared library patches. The native

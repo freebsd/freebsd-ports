@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	demon@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 WRKSRC=		${WRKDIR}/polygraph
 
 GNU_CONFIGURE=	YES
