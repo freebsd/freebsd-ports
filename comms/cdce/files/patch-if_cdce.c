@@ -3,15 +3,6 @@ $FreeBSD$
 
 --- if_cdce.c
 +++ if_cdce.c
-@@ -32,7 +32,7 @@
-  */
- 
- #include <sys/cdefs.h>
--__FBSDID("$Id: if_cdce.c,v 1.1 2005/02/27 08:06:48 root Exp root $");
-+__FBSDID("$Id: if_cdce.c 148 2005-01-16 02:20:53Z craig $");
- 
- /* USB Communication Device Class (Ethernet Networking Control Model)
-  *
 @@ -158,11 +158,12 @@
      usb_interface_descriptor_t *id;
      usb_endpoint_descriptor_t *ed;
