@@ -1,0 +1,10 @@
+Str - Generic String Library
+Copyright (c) 1999-2000 Ralf S. Engelschall <rse@engelschall.com>
+
+The Str library is a generic string library written in ANSI C which
+provides functions for handling, matching, parsing, searching and
+formatting of C strings. So it can be considered as a superset of POSIX
+string(3), but its main intention is to provide a more convinient and
+compact API plus a more generalized functionality.
+
+WWW: http://www.engelschall.com/sw/str/
