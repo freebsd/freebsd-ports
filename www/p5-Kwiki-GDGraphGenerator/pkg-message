@@ -1,0 +1,11 @@
+/* ================================================================= */
+Note: 
+	Kwiki-GDGraphGenerator plugin installed! Now you should add
+	to your kwiki in kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::GDGraphGenerator
+$ chmod 777 plugin/graphgenerator
+
+	Use `perldoc Kwiki::GDGraphGenerator` to see examples
+/* ================================================================= */

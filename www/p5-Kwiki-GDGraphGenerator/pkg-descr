@@ -1,0 +1,7 @@
+Kwiki::GDGraphGenerator - put pretty graphs into your Kwiki pages
+
+Kwiki::GDGraphGenerator turns graph WAFL blocks into pretty graph
+(bars/lines/pie graph) using GD::Graph
+
+Author:	Ian Langworth <langworth.com>
+WWW:	http://search.cpan.org/~ian/Kwiki-GDGraphGenerator/
