@@ -17,8 +17,7 @@ MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
-		pnmtopng:${PORTSDIR}/graphics/pnmtopng
+RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 MAN1=		tgif.1

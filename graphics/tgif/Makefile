@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 
 MAINTAINER=	bmc@WillsCreek.COM
 
-RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
-		pnmtopng:${PORTSDIR}/graphics/pnmtopng
+RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 MAN1=		tgif.1

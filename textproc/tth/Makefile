@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6 \
 		latex:${PORTSDIR}/print/teTeX \
-		pnmtopng:${PORTSDIR}/graphics/pnmtopng \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 MAN1=		tth.1
