@@ -5115,6 +5115,7 @@ oregano		ports/cad/oregano
 orion		ports/www/orion
 oroborus	ports/x11-wm/oroborus
 ortep3		ports/biology/ortep3
+ortp		ports/net/ortp
 orville-write	ports/misc/orville-write
 osalp		ports/audio/osalp
 osf1_base	ports/emulators/osf1_base
