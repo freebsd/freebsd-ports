@@ -12,7 +12,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
-		ftp://mrrl.lut.ac.uk/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
