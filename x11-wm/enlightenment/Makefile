@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION= 	0.16.4
+PORTVERSION= 	0.16.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
