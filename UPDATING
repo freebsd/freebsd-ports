@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050122:
+  AFFECTS: users of PostgreSQL
+  AUTHOR: seanc@FreeBSD.org
+
+  The -devel port has been updated to contain 8.0 release since
+  postgresql80-server can not be updated until 4.11 is released and the
+  changes in PR ports/75344 are committed.  Users who need 8.0 now can
+  use the -devel port, however, once postgresql80-server has been
+  committed, -devel will begin tracking 8.1.  Please be smart about
+  tracking ports and if used in production, update to
+  databases/postgresql80-server as soon as it becomes available.  No
+  dump/reload will be required when changing from -devel to
+  postgresql80-server.
+
 20050117:
   AFFECTS: users of mail/spambnc
   AUTHOR: thierry@FreeBSD.org

@@ -6,9 +6,11 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.rc5.2005.01.16
+PORTVERSION?=	8.0.0
+PORTEPOCH=	1
 CATEGORIES?=	databases
-MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/pgsql/
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 PATCH_SITES=	http://people.FreeBSD.org/~seanc/patches/pgsql/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	postgresql
@@ -22,6 +24,41 @@ USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
+
+MAN1=	ecpg.1 clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 \
+	droplang.1 dropuser.1 initdb.1 ipcclean.1 pg_config.1 pg_controldata.1 \
+	pg_ctl.1 pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 postgres.1 \
+	postmaster.1 psql.1 vacuumdb.1
+
+MAN7=	reset.7 set.7 abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
+	alter_domain.7 alter_function.7 alter_group.7 alter_index.7 alter_language.7 \
+	alter_operator.7 alter_operator_class.7 alter_schema.7 alter_sequence.7 \
+	alter_table.7 alter_tablespace.7 alter_trigger.7 alter_type.7 alter_user.7 \
+	analyze.7 begin.7 checkpoint.7 close.7 cluster.7 comment.7 commit.7 copy.7 \
+	create_aggregate.7 create_cast.7 create_constraint_trigger.7 \
+	create_conversion.7 create_database.7 create_domain.7 create_function.7 \
+	create_group.7 create_index.7 create_language.7 create_operator.7 \
+	create_operator_class.7 create_rule.7 create_schema.7 end.7 create_sequence.7 \
+	create_table.7 create_table_as.7 create_tablespace.7 create_trigger.7 \
+	create_type.7 create_user.7 create_view.7 deallocate.7 declare.7 delete.7 \
+	drop_aggregate.7 drop_cast.7 drop_conversion.7 drop_database.7 drop_domain.7 \
+	drop_function.7 drop_group.7 drop_index.7 drop_language.7 drop_rule.7 \
+	drop_operator.7 drop_operator_class.7 drop_schema.7 drop_sequence.7 \
+	drop_table.7 drop_tablespace.7 drop_trigger.7 drop_type.7 drop_user.7 \
+	drop_view.7 execute.7 explain.7 fetch.7 grant.7 insert.7 listen.7 load.7 \
+	lock.7 move.7 notify.7 prepare.7 reindex.7 release_savepoint.7 revoke.7 \
+	rollback.7 rollback_to_savepoint.7 savepoint.7 select.7 select_into.7 \
+	set_constraints.7 set_session_authorization.7 set_transaction.7 show.7 \
+	spi_connect.7 spi_copytuple.7 spi_cursor_close.7 spi_cursor_fetch.7 \
+	spi_cursor_find.7 spi_cursor_move.7 spi_cursor_open.7 spi_exec.7 spi_execp.7 \
+	spi_execute.7 spi_execute_plan.7 spi_finish.7 spi_fname.7 spi_fnumber.7 \
+	spi_freeplan.7 spi_freetuple.7 spi_freetuptable.7 spi_getargcount.7 \
+	spi_getargtypeid.7 spi_getbinval.7 spi_getrelname.7 spi_gettype.7 \
+	spi_gettypeid.7 spi_getvalue.7 spi_is_cursor_plan.7 spi_modifytuple.7 \
+	spi_palloc.7 spi_pfree.7 spi_pop.7 spi_prepare.7 spi_push.7 spi_repalloc.7 \
+	spi_returntuple.7 spi_saveplan.7 start_transaction.7 truncate.7 unlisten.7 \
+	update.7 vacuum.7
+
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 .if defined(POSTGRESQL_SUBPORT)
@@ -175,6 +212,14 @@ pre-everything::
 	@${ECHO} "	WITHOUT_SPINLOCKS	Builds without spin locks"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
 	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} "	*** IMPORTANT NOTE FOR USERS OF 8.0 via -devel ***"
+	@${ECHO} ""
+	@${ECHO} "	The -devel port will begin tracking 8.1 after PR ports/75344"
+	@${ECHO} "	has been committed.  Please be smart about tracking ports and"
+	@${ECHO} "	move to using databases/postgresql80-server when appropriate"
+	@${ECHO} "	(no dump/reload will be required when changing from -devel to"
+	@${ECHO} "	postgresql80-server)."
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
 	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
