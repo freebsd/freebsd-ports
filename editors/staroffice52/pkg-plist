@@ -1,6 +1,5 @@
 office52/LICENSE
 office52/README
-office52/README.109939-02
 office52/README.109939-03
 office52/help/01/database.svh
 office52/help/01/desktop.svh
@@ -189,7 +188,6 @@ office52/program/resource/iso56901.res
 office52/program/resource/iwz56901.res
 office52/program/resource/jvm56901.res
 office52/program/resource/ofa56901.res
-office52/program/resource/ofa56901.res
 office52/program/resource/ofa56903.res
 office52/program/resource/ofa56907.res
 office52/program/resource/ofa56931.res
@@ -199,6 +197,7 @@ office52/program/resource/ofa56939.res
 office52/program/resource/ofa56945.res
 office52/program/resource/ofa56946.res
 office52/program/resource/ofa56948.res
+office52/program/resource/ofa56949.res
 office52/program/resource/ofs56901.res
 office52/program/resource/oic56901.res
 office52/program/resource/rts56901.res
@@ -206,7 +205,6 @@ office52/program/resource/san56901.res
 office52/program/resource/sba56901.res
 office52/program/resource/sc56901.res
 office52/program/resource/sch56901.res
-office52/program/resource/sd56901.res
 office52/program/resource/sd56901.res
 office52/program/resource/sd56903.res
 office52/program/resource/sd56907.res
@@ -217,9 +215,9 @@ office52/program/resource/sd56939.res
 office52/program/resource/sd56945.res
 office52/program/resource/sd56946.res
 office52/program/resource/sd56948.res
+office52/program/resource/sd56949.res
 office52/program/resource/sdb56901.res
 office52/program/resource/set56901.res
-office52/program/resource/sfx56901.res
 office52/program/resource/sfx56901.res
 office52/program/resource/sfx56903.res
 office52/program/resource/sfx56907.res
@@ -230,6 +228,7 @@ office52/program/resource/sfx56939.res
 office52/program/resource/sfx56945.res
 office52/program/resource/sfx56946.res
 office52/program/resource/sfx56948.res
+office52/program/resource/sfx56949.res
 office52/program/resource/sim56901.res
 office52/program/resource/sj56901.res
 office52/program/resource/sm56901.res
@@ -237,7 +236,6 @@ office52/program/resource/spa56901.res
 office52/program/resource/ss56901.res
 office52/program/resource/svs56901.res
 office52/program/resource/svt56901.res
-office52/program/resource/svx56901.res
 office52/program/resource/svx56901.res
 office52/program/resource/svx56903.res
 office52/program/resource/svx56907.res
@@ -248,6 +246,7 @@ office52/program/resource/svx56939.res
 office52/program/resource/svx56945.res
 office52/program/resource/svx56946.res
 office52/program/resource/svx56948.res
+office52/program/resource/svx56949.res
 office52/program/resource/sw56901.res
 office52/program/resource/tfu56901.res
 office52/program/resource/tpl56901.res
