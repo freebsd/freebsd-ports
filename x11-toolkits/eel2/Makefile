@@ -7,6 +7,7 @@
 
 PORTNAME=	eel2
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
