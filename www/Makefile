@@ -294,6 +294,7 @@
     SUBDIR += peacock
     SUBDIR += pgdriver
     SUBDIR += php-templates
+    SUBDIR += phpSysInfo
     SUBDIR += phpnuke
     SUBDIR += plugger
     SUBDIR += pruby
