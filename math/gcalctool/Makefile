@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.3.42
-PORTREVISION=	1
+PORTVERSION=	4.3.44
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/4.3
@@ -21,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
