@@ -3515,6 +3515,7 @@ ipfw-graph	ports/net/ipfw-graph
 ipfw2dshield	ports/security/ipfw2dshield
 ipgrab		ports/net/ipgrab
 iplog		ports/net/iplog
+ipmitool	ports/sysutils/ipmitool
 ipplan		ports/net-mgmt/ipplan
 ipsc		ports/sysutils/ipsc
 ipsorc		ports/net/ipsorc
