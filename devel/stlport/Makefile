@@ -19,8 +19,8 @@ COMMENT?=	Adaptation of SGI's Standard Template Library
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Segfault during build on alpha and amd64"
+.if ${ARCH} == "alpha" 
+BROKEN=		"Segfault during build on alpha"
 .endif
 
 .if !exists(/usr/include/wchar.h)
