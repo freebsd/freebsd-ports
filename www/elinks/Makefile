@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	www
-MASTER_SITES=	http://elinks.or.cz/download/
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
+		http://elinks.or.cz/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_OPENSSL=	yes
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5
