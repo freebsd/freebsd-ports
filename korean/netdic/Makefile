@@ -12,7 +12,7 @@ MASTER_SITES=	http://user.chollian.net/~tadboy/source/NetDic/
 DISTNAME=	netdic
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	rapzzard@rapzzard.pe.kr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network English dictionary utility for Korean
 
 do-extract:
