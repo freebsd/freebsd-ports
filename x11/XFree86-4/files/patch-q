@@ -1,0 +1,19 @@
+--- lib/X11/omGeneric.c.orig	Mon Oct 16 17:01:11 2000
++++ lib/X11/omGeneric.c	Mon Oct 16 19:57:59 2000
+@@ -1128,6 +1128,7 @@
+ 						(sizeof(VRotateRec) * sub_num);
+ 		if(font_set->vrotate == (VRotate)NULL)
+ 		    return (-1);
++		memset(vrotate, '\0', sizeof(VRotateRec) * sub_num);
+ 
+ 		for(i = 0 ; i < sub_num ; i++) {
+ 		    vrotate[i].charset_name = font_set->substitute[i].name;
+@@ -1137,7 +1138,7 @@
+ 		}
+ 		vrotate_num = font_set->vrotate_num = sub_num;
+ 	    } else {
+-		font_set->vrotate = (VRotate)NULL;
++		vrotate = font_set->vrotate = (VRotate)NULL;
+ 	    }
+ 
+ 	    ret = parse_fontdata(oc, font_set, (FontData) vrotate, vrotate_num,
