@@ -7,16 +7,23 @@
 
 PORTNAME=	apache-ant
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/ \
-		http://apache.proserve.nl/dist/ant/binaries/ \
-		http://apache.cs.uu.nl/dist/ant/binaries/ \
-		http://dist.apache.easynet.nl/ant/binaries/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/:bin \
+		http://apache.proserve.nl/dist/ant/binaries/:bin \
+		http://apache.cs.uu.nl/dist/ant/binaries/:bin \
+		http://dist.apache.easynet.nl/ant/binaries/:bin \
+		http://www.esil.univ-mrs.fr/~hquiroz/:man
+DISTFILES=	${ANT_DISTFILE}:bin \
+		${MANPAGE_DISTFILE}:man
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
+ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
+MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
+MANPAGE_VERSION=	20030908
+EXTRACT_ONLY=	${ANT_DISTFILE}
 USE_BZIP2=	yes
 USE_JAVA=	1.2+
 
@@ -31,6 +38,12 @@ DATADIRS=	lib
 DATADIRS+=	docs
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MANPAGE_SUBDIR=	apache-ant-manpage
+MANPAGE_WRKSRC=	${WRKSRC}/${MANPAGE_SUBDIR}
+
+MAN1=		ant.1
+MAN5=		build.xml.5
 
 do-patch:
 	@${CP} ${FILESDIR}/ant ${WRKSRC}/bin/ant
@@ -50,6 +63,9 @@ post-patch:
 	@${RM} -f ${WRKSRC}/lib/parser.jar
 	@${ECHO_CMD} " [ DONE ]"
 
+post-extract:
+	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${MANPAGE_DISTFILE}
+
 do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
 	@${MKDIR} ${PORTDESTDIR}/bin
@@ -66,6 +82,13 @@ do-install:
 	@cd ${INSTALL_WRKSRC}; \
 		${INSTALL_DATA} ${READMES} ${PORTDESTDIR};
 	@${ECHO_CMD} " [ DONE ]"
+
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} ">> Installing manpages..."
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${PREFIX}/man/man5
+	@${ECHO_CMD} " [ DONE ]"
+.endif
 
 .if defined(DATADIRS)
 .for DIR in ${DATADIRS}
