@@ -1,0 +1,19 @@
+*** src/gnomemeeting.cpp.orig	Tue Jan  8 10:32:05 2002
+--- src/gnomemeeting.cpp	Tue Jan  8 10:32:35 2002
+*************** gint gnome_idle_timer (void)
+*** 74,80 ****
+      gtk_main_iteration(); 
+    gdk_threads_leave ();
+  
+!   usleep (100);
+    return TRUE;
+  }
+  
+--- 74,80 ----
+      gtk_main_iteration(); 
+    gdk_threads_leave ();
+  
+!   usleep (100000);
+    return TRUE;
+  }
+  
