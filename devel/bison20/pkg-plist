@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/bison
+bin/bison1875
 bin/yacc
 @unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
