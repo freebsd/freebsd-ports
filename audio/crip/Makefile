@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://bach.dynet.com/crip/src/
 
-MAINTAINER=	philip@paeps.cx
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Terminal-based ripper/encoder/tagger
 
 RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get \
