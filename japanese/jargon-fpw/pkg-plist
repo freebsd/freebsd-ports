@@ -1,0 +1,10 @@
+share/dict/jargon-fpw/jargon/data/honmon
+share/dict/jargon-fpw/jargon/gaiji/gai16h
+share/dict/jargon-fpw/catalogs
+share/doc/jargon-fpw/readme.1st
+share/doc/jargon-fpw/readme.txt
+@dirrm share/dict/jargon-fpw/jargon/data
+@dirrm share/dict/jargon-fpw/jargon/gaiji
+@dirrm share/dict/jargon-fpw/jargon
+@dirrm share/dict/jargon-fpw
+@dirrm share/doc/jargon-fpw
