@@ -1,0 +1,14 @@
+**********************************************************************
+To use ri from Emacs, add the following to your startup file.
+(e.g. ~/.emacs)
+
+	(autoload 'ruby-index "ri.el" "ri utility" t)
+	(autoload 'ri "ri.el" "ri utility" t)
+	(autoload 'ri-show-term-at-point "ri.el" "ri utility" t)
+	(autoload 'ri-show-term-composite-at-point "ri.el" "ri utility" t)
+
+	(global-set-key "\C-c\C-c\C-r" 'ri-show-term-at-point)
+	(global-set-key "\C-c\C-c\C-t" 'ri-show-term-composite-at-point)
+
+For details, refer to the comment section of ri.el.
+**********************************************************************

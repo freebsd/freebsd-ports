@@ -1,0 +1,23 @@
+ri--Ruby Interactive reference
+
+ri displays descriptions of Ruby's built-in methods, classes, and
+modules.  Run "ri each_with_index" and you get:
+
+	--------------------------------------------------------
+	  enumObj.each_with_index {| obj, i | block }  -> nil
+	--------------------------------------------------------
+
+	  Calls block with two arguments, the item and its index,
+	  for each item in enumObj.
+
+	     hash = Hash.new
+	     %w(cat dog wombat).each_with_index {|item, index|
+	       hash[item] = index
+	     }
+	     hash   #=> {"dog"=>1, "wombat"=>2, "cat"=>0}
+
+Emacs interface by David Alan Black <dblack@candle.superlink.net> is
+also bundled.
+
+WWW:	http://www.pragmaticprogrammer.com/ruby/downloads/ri.html
+Author:	The Pragmatic Programmers, LLC

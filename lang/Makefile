@@ -115,6 +115,7 @@
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-python
     SUBDIR += ruby-reference
+    SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
     SUBDIR += ruby14
