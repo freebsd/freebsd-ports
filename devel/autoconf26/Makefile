@@ -49,6 +49,16 @@ MAN1=		autoconf.1	\
 		config.sub.1	\
 		ifnames.1
 
+.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
+pre-everything:
+	@${ECHO} ===========================================================
+	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
+	@${ECHO} "defined either in environment or in make(1) arguments."
+	@${ECHO} "Please undefine them and try again."
+	@${ECHO} ===========================================================
+	@${FALSE}
+.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
+
 post-install:
 .for FILE in ${GENERIC_TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf
