@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	mpgtx
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A command line MPEG audio/video/system file toolbox
 
 USE_REINPLACE=	yes
@@ -29,10 +28,6 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 	mpgtx.1 mpgsplit.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 600000
-CFLAGS+=	-fno-unit-at-a-time
-.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
