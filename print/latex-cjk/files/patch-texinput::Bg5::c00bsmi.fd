@@ -1,0 +1,12 @@
+--- texinput/Bg5/c00bsmi.fd.orig	Sun Jun 23 00:28:10 2002
++++ texinput/Bg5/c00bsmi.fd	Sun Jun 23 00:29:05 2002
+@@ -19,7 +19,7 @@
+ 
+ \DeclareFontFamily{C00}{bsmi}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C00}{bsmi}{m}{n}{<-> CJK * bsmilp}{}
+-\DeclareFontShape{C00}{bsmi}{bx}{n}{<-> CJKb * bsmilp}{\CJKbold}
++\DeclareFontShape{C00}{bsmi}{m}{n}{<-> CJK * arb5sung}{}
++\DeclareFontShape{C00}{bsmi}{bx}{n}{<-> CJKb * arb5sung}{\CJKbold}
+ 
+ \endinput
