@@ -117,11 +117,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvenames>CAN-2004-0916</cvenames>
       <url>http://www.kyz.uklinux.net/cabextract.php#changes</url>
     </references>
     <dates>
       <discovery>2004-10-18</discovery>
       <entry>2004-10-20</entry>
+      <modified>2004-10-22</modified>
     </dates>
   </vuln>
 
