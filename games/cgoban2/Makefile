@@ -5,17 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cgoban
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTNAME=	cgoban2
+PORTVERSION=	2.5.6
 CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
-DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
+DISTNAME=	cgoban-unix-${PORTVERSION}
 
 MAINTAINER=	smazanek@steffen-mazanek.de
 COMMENT=	Internet Go Server client and game editor
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/cgoban
 INSTALLDIR=	${PREFIX}/share/java/cgoban2
 
 USE_JAVA=	1.3+
