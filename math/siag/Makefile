@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BROKEN='only siag-3.1.19.tar.gz available'
+BROKEN=		'only siag-3.1.22.tar.gz available'
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
 		Xpm.4:${PORTSDIR}/graphics/xpm
@@ -39,9 +39,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libt1.a:${PORTSDIR}/devel/t1lib
 
 .if !defined(NOTCL)
 # Feel free to try other versions of TCL here:
-LIB_DEPENDS+=	tcl80:${PORTSDIR}/lang/tcl80
-CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.0
-CONFIGURE_ARGS+=--with-tcl=tcl80
+LIB_DEPENDS+=	tcl82:${PORTSDIR}/lang/tcl82
+CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.2
+CONFIGURE_ARGS+=--with-tcl=tcl82
 .endif
 
 CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
