@@ -5,6 +5,3 @@ perl routines or classes which can be used to automate and integrate
 nmap scans elegantly into new and existing perl scripts.
 
 WWW: http://search.cpan.org/dist/Nmap-Scanner/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

@@ -8,9 +8,11 @@
 %%SITE_PERL%%/Nmap/Scanner/ExtraPorts.pm
 %%SITE_PERL%%/Nmap/Scanner/Host.pm
 %%SITE_PERL%%/Nmap/Scanner/HostList.pm
+%%SITE_PERL%%/Nmap/Scanner/Hostname.pm
 %%SITE_PERL%%/Nmap/Scanner/Hosts.pm
 %%SITE_PERL%%/Nmap/Scanner/NmapRun.pm
 %%SITE_PERL%%/Nmap/Scanner/OS.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/Class.pm
 %%SITE_PERL%%/Nmap/Scanner/OS/IPIdSequence.pm
 %%SITE_PERL%%/Nmap/Scanner/OS/Match.pm
 %%SITE_PERL%%/Nmap/Scanner/OS/PortUsed.pm
