@@ -4588,6 +4588,7 @@ libmad		ports/audio/libmad
 libmaitretarot	ports/games/libmaitretarot
 libmal		ports/palm/libmal
 libmath++	ports/math/libmath++
+libmatheval	ports/devel/libmatheval
 libmatroska	ports/multimedia/libmatroska
 libmba		ports/devel/libmba
 libmcal		ports/misc/libmcal
