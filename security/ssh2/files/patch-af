@@ -1,11 +1,12 @@
---- apps/ssh/Makefile.in.orig	Mon Nov 16 21:24:45 1998
-+++ apps/ssh/Makefile.in	Tue Nov 24 19:06:58 1998
-@@ -133,9 +133,9 @@
+--- apps/ssh/Makefile.in.orig	Tue May 11 17:35:06 1999
++++ apps/ssh/Makefile.in	Fri Jun 18 16:04:37 1999
+@@ -140,9 +140,10 @@
  
- INCLUDES = -I. -I$(srcdir) -I../.. -I$(srcdir) -I../../include \
+ INCLUDES = -I. -I$(srcdir) -I../.. -I$(srcdir) \
  	   -I$(top_builddir) -I$(top_srcdir) \
--	   -I$(srcdir)/../../include 
-+	   -I$(srcdir)/../../include -I${PREFIX}/include
+-	   -I../../include -I$(srcdir)/../../include
++ 	   -I$(srcdir)/../../include -I${PREFIX}/include \
++	   -I${PREFIX}/include
  
 -LDADD = -L. -L../../lib -lssh2 -lssh
 +LDADD = -L. -L../../lib -lssh2 -lssh -lz

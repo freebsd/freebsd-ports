@@ -1,6 +1,6 @@
---- lib/sshcrypt/Makefile.in.orig	Fri Jan 29 14:30:22 1999
-+++ lib/sshcrypt/Makefile.in	Fri Feb  5 08:42:04 1999
-@@ -176,7 +176,6 @@
+--- lib/sshcrypt/Makefile.in.orig	Tue May 11 17:35:02 1999
++++ lib/sshcrypt/Makefile.in	Fri Jun 18 16:02:38 1999
+@@ -179,7 +179,6 @@
  	-I$(top_builddir) -I$(top_srcdir) \
  	-I../sshutil -I$(srcdir)/../sshutil \
  	-I../sshmath -I$(srcdir)/../sshmath \

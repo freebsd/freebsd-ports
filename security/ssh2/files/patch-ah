@@ -1,6 +1,6 @@
---- apps/ssh/sshchsession.c.orig	Mon Jan 18 13:32:24 1999
-+++ apps/ssh/sshchsession.c	Sat Feb  6 04:20:26 1999
-@@ -80,6 +80,11 @@
+--- apps/ssh/sshchsession.c.orig	Fri May  7 20:02:03 1999
++++ apps/ssh/sshchsession.c	Sat Jun 19 03:51:31 1999
+@@ -81,6 +81,11 @@
  #include <ulimit.h>
  #endif /* ULIMIT_H */
  
@@ -12,7 +12,7 @@
  #define SSH_DEBUG_MODULE "Ssh2ChannelSession"
  
  #define SSH_SESSION_INTERACTIVE_WINDOW                 10000
-@@ -405,6 +410,62 @@
+@@ -406,6 +411,67 @@
    if (getenv("TZ"))
      ssh_child_set_env(envp, envsizep, "TZ", getenv("TZ"));
  
@@ -50,14 +50,19 @@
 +	    }
 +	  strcat(s, SSH_BINDIR);
 +
-+	  *envp = environ;
-+	  environ = tmpenv; /* Restore parent environment */
-+	  for (*envsizep = 0; (*envp)[*envsizep] != NULL; (*envsizep)++)
-+	    ;
-+	  (*envsizep)++;
-+          (*envsizep) += 50;
-+	  (*envp) = ssh_xrealloc(*envp, (*envsizep) * sizeof(char *));
++	  /* copy enviroment variables to (*envp) */
++	  for (i = 0; environ[i] != NULL; i++)
++	      ;
++	  (*envp) = ssh_xmalloc((i + 51) * sizeof(char *));
++          (*envsizep) = i + 50;
 +
++	  for (i = 0; environ[i] != NULL; ++i) {
++	      (*envp)[i] = ssh_xmalloc((strlen(environ[i]) + 1) * sizeof(char));
++	      strcpy((*envp)[i], environ[i]);
++	  }
++	  (*envp)[i] = NULL;
++
++	  environ = tmpenv; /* Restore parent environment */
 +	  ssh_child_set_env(envp, envsizep, "PATH", s);
 +	  ssh_xfree(s);
 +	}
@@ -75,7 +80,7 @@
    /* Set SSH_CLIENT. */
    snprintf(buf, sizeof(buf), "%s %s %s %s",
             session->common->remote_ip, session->common->remote_port,
-@@ -628,12 +689,20 @@
+@@ -633,12 +699,20 @@
    char buff[100], *time_string;
    
    /* Check /etc/nologin. */
@@ -96,15 +101,15 @@
        while (fgets(buf, sizeof(buf), f))
          fputs(buf, stderr);
        fclose(f);
-@@ -754,7 +823,11 @@
-           {
-             struct stat mailbuf;
-             if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
+@@ -789,7 +863,11 @@
+                   {
+                     struct stat mailbuf;
+                     if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
 +#ifndef __FreeBSD__
-               printf("No mail.\n");
+                       printf("No mail.\n");
 +#else
-+	      ;
++                      ;
 +#endif
-             else if (mailbuf.st_atime > mailbuf.st_mtime)
-               printf("You have mail.\n");
-             else
+                     else if (mailbuf.st_atime > mailbuf.st_mtime)
+                       printf("You have mail.\n");
+                     else

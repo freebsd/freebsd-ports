@@ -1,23 +1,23 @@
---- lib/Makefile.in.orig	Fri Jan 29 14:30:20 1999
-+++ lib/Makefile.in	Fri Feb  5 08:38:26 1999
-@@ -98,14 +98,14 @@
+--- lib/Makefile.in.orig	Tue May 11 17:35:00 1999
++++ lib/Makefile.in	Fri Jun 18 16:01:12 1999
+@@ -99,14 +99,14 @@
  
  AUTOMAKE_OPTIONS = 1.0 foreign dist-zip no-dependencies
  
--SUBDIRS = zlib sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
-+SUBDIRS = sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
+-SUBDIRS = zlib sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession sshpgp
++SUBDIRS = sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession sshpgp
  
  # sshtest testsuite
  
  lib_LIBRARIES = libssh.a
  # libsshcrypt.kpure.a
  
--SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
-+SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
+-SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a sshpgp/libsshpgp.a
++SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a sshpgp/libsshpgp.a
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../sshconf.h
  CONFIG_CLEAN_FILES = 
-@@ -368,11 +368,6 @@
+@@ -369,11 +369,6 @@
  all-local: includes
  includes:
  	-if test '!' -d ../include; then mkdir ../include; fi
