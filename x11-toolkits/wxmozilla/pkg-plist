@@ -12,5 +12,4 @@ libdata/pkgconfig/wxmozilla.pc
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.py
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/mozillac.a
 %%PYTHON_SITELIBDIR%%/wxPython/mozillac.so
