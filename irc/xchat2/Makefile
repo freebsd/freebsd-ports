@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xchat
-# Version required:		0.9.6
+# Version required:		0.9.9
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.11 1999/05/29 03:56:06 steve Exp $
+# $Id: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 #
 
-DISTNAME=	xchat-0.9.6
+DISTNAME=	xchat-0.9.9
 CATEGORIES=	net
 MASTER_SITES=	http://xchat.linuxpower.org/files/ \
 		http://www.ozemail.com.au/~peterzelezny/xchat/ \
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnome --disable-panel
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" 
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
 	strip ${PREFIX}/bin/xchat
