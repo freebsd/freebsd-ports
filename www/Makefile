@@ -581,6 +581,7 @@
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfforum
+    SUBDIR += zope-exuserfolder
     SUBDIR += zope-formulator
     SUBDIR += zope-guf
     SUBDIR += zope-parsedxml

@@ -1,0 +1,8 @@
+Zope Extensible User Folder
+
+    To complete the installation of the Zope Extensible User Folder:
+
+    - Restart Zope.  This may be done from the Zope Control Panel.
+
+    - Verify that the exUserFolder product is loaded properly by 
+      examining them in Control_Panel/Products.
