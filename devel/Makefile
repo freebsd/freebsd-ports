@@ -12,6 +12,7 @@
     SUBDIR += adabroker
     SUBDIR += allegro
     SUBDIR += amulet
+    SUBDIR += anjuta
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-aout-gcc295
     SUBDIR += arm-elf-binutils

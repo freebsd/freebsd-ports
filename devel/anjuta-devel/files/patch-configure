@@ -1,0 +1,49 @@
+--- configure.orig	Sat Mar 31 19:18:57 2001
++++ configure	Sat Mar 31 19:19:59 2001
+@@ -8,6 +8,7 @@
+ # gives unlimited permission to copy, distribute and modify it.
+ 
+ # Defaults:
++GLIB_CONFIG="$GLIB_CONFIG"
+ ac_help=
+ ac_default_prefix=/usr/local
+ # Any additions from configure.in:
+@@ -4551,10 +4552,10 @@
+ PACKAGE_PIXMAPS_DIR="`gnome-config --datadir`/pixmaps/${PACKAGE}"
+ 
+ 
+-PACKAGE_HELP_DIR="`gnome-config --datadir`/gnome/help/${PACKAGE}"
++PACKAGE_HELP_DIR="`gnome-config --datadir`/help/${PACKAGE}"
+ 
+ 
+-PACKAGE_MENU_DIR="`gnome-config --datadir`/gnome/apps"
++PACKAGE_MENU_DIR="`gnome-config --datadir`/apps"
+ 
+ 
+ trap '' 1 2 15
+@@ -4663,8 +4664,6 @@
+ intl/Makefile
+ po/Makefile.in
+ macros/Makefile
+-scintilla/Makefile
+-scintilla/include/Makefile
+ anjuta.spec
+ src/Makefile
+ pixmaps/Makefile
+@@ -4743,6 +4742,7 @@
+ s%@GNOME_CAPPLET_LIBS@%$GNOME_CAPPLET_LIBS%g
+ s%@cflags_set@%$cflags_set%g
+ s%@GTK_CONFIG@%$GTK_CONFIG%g
++s%@GLIB_CONFIG@%$GLIB_CONFIG%g
+ s%@GTK_CFLAGS@%$GTK_CFLAGS%g
+ s%@GTK_LIBS@%$GTK_LIBS%g
+ s%@XPM_LIBS@%$XPM_LIBS%g
+@@ -4818,8 +4818,6 @@
+ intl/Makefile
+ po/Makefile.in
+ macros/Makefile
+-scintilla/Makefile
+-scintilla/include/Makefile
+ anjuta.spec
+ src/Makefile
+ pixmaps/Makefile

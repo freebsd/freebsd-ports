@@ -1,0 +1,25 @@
+--- Makefile.in.orig	Sat Mar 31 19:36:17 2001
++++ Makefile.in	Sat Mar 31 19:37:04 2001
+@@ -110,10 +110,10 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-SUBDIRS = intl po macros scintilla src pixmaps data help doc launcher
++SUBDIRS = intl po macros src pixmaps data help doc launcher
+ 
+ anjutadocdir = ${prefix}/doc/anjuta
+-anjutadoc_DATA =  	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO 	ABOUT-NLS
++anjutadoc_DATA =
+ 
+ 
+ EXTRA_DIST = anjuta.prj $(anjutadoc_DATA)
+@@ -384,8 +384,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-anjutadocDATA install-gnomemenuDATA \
+-		install-data-local
++install-data-am: install-anjutadocDATA install-gnomemenuDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sat Mar 31 00:14:22 2001
++++ doc/Makefile.in	Sat Mar 31 00:24:25 2001
+@@ -112,7 +112,7 @@
+ 
+ anjuta_docdir = ${prefix}/doc/anjuta
+ 
+-anjuta_doc_DATA =  	ScintillaDoc.html
++anjuta_doc_DATA =
+ 
+ 
+ EXTRA_DIST = $(anjuta_doc_DATA)

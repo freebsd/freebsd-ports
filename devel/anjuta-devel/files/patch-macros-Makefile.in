@@ -1,0 +1,11 @@
+--- macros/Makefile.in.orig	Sat Mar 31 18:51:20 2001
++++ macros/Makefile.in	Sat Mar 31 18:51:11 2001
+@@ -189,7 +189,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-gnome_aclocalDATA
++install-data-am:
+ install-data: install-data-am
+ 
+ install-am: all-am
