@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.3.18
+PORTVERSION=	0.3.20
 CATEGORIES=	mail
-MASTER_SITES=	http://www.kcn.ne.jp/~hiro-y/sylpheed/
+MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
 MAINTAINER=	shigeri@m10.alpha-net.ne.jp
 
