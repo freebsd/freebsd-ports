@@ -3,6 +3,7 @@ share/java/classes/sax.jar
 share/java/classes/xt.jar
 share/java/xt/copying.txt
 share/java/xt/demo/date.xsl
+share/java/xt/demo/multiout.xsl
 share/java/xt/demo/nxml.xsl
 share/java/xt/demo/slides.xsl
 share/java/xt/demo/split.xsl
