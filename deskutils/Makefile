@@ -23,6 +23,7 @@
     SUBDIR += moneydance
     SUBDIR += notebook
     SUBDIR += offix-trash
+    SUBDIR += phpgroupware
     SUBDIR += plan
     SUBDIR += sliderule
     SUBDIR += teapot
