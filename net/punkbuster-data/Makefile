@@ -31,7 +31,7 @@ DESCR=		${PUNKBUSTER_PORT}/pkg-descr
 PKGMESSAGE=		${PUNKBUSTER_PORT}/pkg-message
 
 USE_LINUX_PREFIX=	yes
-PUNKBUSTER_PORT=   ../punkbuster
+PUNKBUSTER_PORT=   ${.CURDIR}/../punkbuster
 # the later is not working, hummm. Help?
 #PUNKBUSTER_DIR!=	cd ${PUNKBUSTER_PORT} && ${MAKE} -V PUNKBUSTER_DIR
 PUNKBUSTER_DIR=	/usr/games/punkbuster
