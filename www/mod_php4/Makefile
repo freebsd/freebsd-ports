@@ -25,7 +25,7 @@ MAINTAINER=	dirk@FreeBSD.org
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 .if defined(WITH_APACHE2)
-LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 .endif
 
 PHP_DISTDIR=	distributions

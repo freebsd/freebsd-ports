@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gpgme
 MAINTAINER=	markun@onohara.to
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-gpgsm
