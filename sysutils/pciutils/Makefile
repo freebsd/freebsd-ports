@@ -18,6 +18,7 @@ COMMENT=	PCI configuration utilities
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	LANG=C
 
 MAN8=		lspci.8 setpci.8 update-pciids.8
 

@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	lib
+MAKE_ENV=	LANG=C
 
 pre-everything::
 	@${ECHO_MSG} ""
