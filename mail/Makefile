@@ -75,6 +75,7 @@
     SUBDIR += ezmlm-web
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += fetchyahoo
     SUBDIR += filtermail
     SUBDIR += ftrack
     SUBDIR += gbuffy
