@@ -33,7 +33,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
   <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
-    <topic></topic>
+    <topic>metamail format string bugs and buffer overflows</topic>
     <affects>
       <package>
 	<name>metamail</name>
@@ -58,6 +58,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-18</discovery>
       <entry>2004-02-18</entry>
+      <modified>2004-02-19</modified>
     </dates>
   </vuln>
   <vuln vid="87cc48fd-5fdd-11d8-80e3-0020ed76ef5a">
