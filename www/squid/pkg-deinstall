@@ -8,8 +8,15 @@ pkgname=$1
 
 case $2 in
 DEINSTALL)
+	cd ${PKG_PREFIX}/etc/squid || exit 1
+	for f in squid.conf mime.conf msntauth.conf; do
+		cmp -s -z ${f} ${f}.default && rm ${f}
+	done
 	;;
 POST-DEINSTALL)
+	rmdir ${PKG_PREFIX}/etc/squid 2>/dev/null
+	rmdir ${PKG_PREFIX}/squid/cache 2>/dev/null
+	rmdir -p ${PKG_PREFIX}/squid/logs 2>/dev/null
 	echo "===> post-deinstallation information for ${pkgname}"
 	echo ""
 	echo "     Please note that ${pkgname} was not completely removed"

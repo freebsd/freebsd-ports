@@ -4,12 +4,7 @@
 #
 # $FreeBSD$
 #
-# Tunables:
-# WITH_SQUID_PINGER
-#   install the external icmp helper program (`pinger') for hierarchy stats and
-#   selection
-# WITH_SQUID_LDAP_AUTH
-#   install external modules for authentication against LDAP servers
+# Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
 #   Which user/group squid should run as (default: squid/squid).
 #   The user and group will be created if they do not already exist.
@@ -28,7 +23,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -92,7 +87,29 @@ SQUID_UID?=	squid
 SQUID_GID?=	squid
 
 MAN8=		squid.8
-DOCS=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
+docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${docs:T}
+.endif
+
+OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+		SQUID_DELAY_POOLS "Enable delay pools" off \
+		SQUID_SNMP "Enable SNMP support" off \
+		SQUID_CARP "Enable CARP support" off \
+		SQUID_SSL "Enable SSL support for reverse proxies" off \
+		SQUID_PINGER "Install the icmp helper" off \
+		SQUID_DNS_HELPER "Use the old 'dnsserver' helper" off \
+		SQUID_HTCP "Enable HTCP support" off \
+		SQUID_VIA_DB "Enable forward/via database" off \
+		SQUID_CACHE_DIGESTS "Enable cache digests" off \
+		SQUID_WCCP "Enable Web Cache Coordination Protocol" on \
+		SQUID_STRICT_HTTP "Be strictly HTTP compliant" off \
+		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
+		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off
+
+PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
+		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
+		sbin/RunAccel sbin/RunCache sbin/squidclient sbin/squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--datadir=${PREFIX}/etc/squid \
@@ -102,9 +119,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--enable-removal-policies="lru heap" \
 		--enable-underscores
 
-.if defined(WITH_SQUID_PINGER)
-CONFIGURE_ARGS+=	--enable-icmp
-.endif
+.include <bsd.port.pre.mk>
 
 # Authentication methods and modules:
 
@@ -125,6 +140,48 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB winbind"
 
+# Options set via 'make config':
+
+.if defined(WITH_SQUID_DELAY_POOLS)
+CONFIGURE_ARGS+=	--enable-delay-pools
+.endif
+.if defined(WITH_SQUID_SNMP)
+CONFIGURE_ARGS+=	--enable-snmp
+.endif
+.if defined(WITH_SQUID_CARP)
+CONFIGURE_ARGS+=	--enable-carp
+.endif
+.if defined(WITH_SQUID_SSL)
+CONFIGURE_ARGS+=	--enable-ssl
+.endif
+.if defined(WITH_SQUID_PINGER)
+CONFIGURE_ARGS+=	--enable-icmp
+.endif
+.if defined(WITH_SQUID_DNS_HELPER)
+CONFIGURE_ARGS+=	--disable-internal-dns
+.endif
+.if defined(WITH_SQUID_HTCP)
+CONFIGURE_ARGS+=	--enable-htcp
+.endif
+.if defined(WITH_SQUID_VIA_DB)
+CONFIGURE_ARGS+=	--enable-forw-via-db
+.endif
+.if defined(WITH_SQUID_CACHE_DIGESTS)
+CONFIGURE_ARGS+=	--enable-cache-digests
+.endif
+.if defined(WITHOUT_SQUID_WCCP)
+CONFIGURE_ARGS+=	--disable-wccp
+.endif
+.if defined(WITH_SQUID_STRICT_HTTP)
+CONFIGURE_ARGS+=	--disable-http-violations
+.endif
+.if defined(WITHOUT_SQUID_IDENT)
+CONFIGURE_ARGS+=	--disable-ident-lookups
+.endif
+.if defined(WITH_SQUID_USERAGENT_LOG)
+CONFIGURE_ARGS+=	--enable-useragent-log
+.endif
+
 # Languages:
 #
 # If you do not define SQUID_LANGUAGES yourself, all available language files
@@ -139,7 +196,7 @@ SQUID_DEFAULT_LANG?=	English
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
 
-# Other configure options you might want to set using SQUID_CONFIGURE_ARGS:
+# Other not so common configure options you can set via SQUID_CONFIGURE_ARGS:
 # Please see the configure script in the squid source distribution for a
 # complete list.
 #
@@ -149,43 +206,10 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 #  Compile and use the supplied GNUregex routines instead of BSD regex.
 # --enable-xmalloc-statistics
 #  Show malloc statistics in status page
-# --enable-carp
-#  Enable CARP support
-# --enable-delay-pools
-#  Enable delay pools to limit bandwidth usage
-# --enable-useragent-log
-#  Enable logging of the User-Agent header
-# --disable-wccp
-#  Disable Web Cache Coordination Protocol
-# --enable-snmp
-#  Turn on SNMP server support
-# --enable-ssl
-#  Turn on SSL server support for reverse proxies
 # --enable-time-hack
 #  Optimize time updates to one per second rather than calling gettimeofday()
 # --enable-cachemgr-hostname=some.hostname
 #  Set an explicit hostname in cachemgr.cgi
-# --enable-arp-acl
-#  Enable ACL based on ethernet address (eg: for machines with dynamic DHCP
-#  assigned IP addresses)
-# --enable-htcp
-#  Enable HTCP protocol
-# --enable-forw-via-db
-#  Enable Forw/Via database
-# --enable-cache-digests
-#  Use Cache Digests - see http://www.squid-cache.org/Doc/FAQ/FAQ-16.html
-# --disable-http-violations
-#  Strict HTTP compliance
-# --enable-ipf-transparent
-#  Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
-#  (Note: this is currently broken due to ipf headers not being installed to
-#  the base system, see PRs ports/60700 and misc/44148 for details)
-#  Note: see http://www.squid-cache.org/Doc/FAQ/FAQ-17.html for information
-#  about how to do transparent proxying with ipfw(8).
-# --disable-ident-lookups
-#  Compile out code that does optional Ident (RFC931) lookups
-# --disable-internal-dns
-#  Install the old external "dnsserver" binary
 # --enable-truncate
 #  Use truncate() rather than unlink()
 # --disable-hostname-checks
@@ -198,6 +222,18 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 #  Do not use "unlinkd"
 # --enable-stacktraces
 #  Enable automatic call backtrace on fatal errors
+#
+# These options do not yet work on FreeBSD:
+#
+# --enable-arp-acl
+#  Enable ACL based on ethernet address (eg: for machines with dynamic DHCP
+#  assigned IP addresses)
+# --enable-ipf-transparent
+#  Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
+#  (IPFilter headers are not currently installed to the base system,
+#  PRs ports/60700 and misc/44148 describe the problem; see
+#  http://www.squid-cache.org/Doc/FAQ/FAQ-17.html for information
+#  about how to do transparent proxying with ipfw)
 
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
@@ -229,29 +265,28 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/squid.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
 .endif
 
-.if exists(${PREFIX}/etc/squid/errors/Lithuanian)
 # Work around the fact that the errorpages.patch creates files in
 # an "Attic" subdir:
+.if exists(${PREFIX}/etc/squid/errors/Lithuanian)
 	@${FIND} ${WRKSRC}/errors/Lithuanian/Attic -type f \
    	    -exec ${INSTALL_DATA} {} ${PREFIX}/etc/squid/errors/Lithuanian/ \;
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# Generate parts of pkg-plist on the fly:
-	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l | sort \
-	    >${WRKDIR}/plist.dynamic
-	@${ECHO_CMD} "@dirrm libexec/squid" >>${WRKDIR}/plist.dynamic
-# Only register what we should have installed, there may be local additions
-# present:
+# Create package list:
+	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l | ${SORT} \
+	    >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm libexec/squid" >>${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} etc/squid/icons -type f -o -type l | ${SORT} \
+	    >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm etc/squid/icons" >>${TMPPLIST}
 .for d in ${SQUID_LANGUAGES}
-	@cd ${PREFIX} && ${FIND} etc/squid/errors/${d} -type f | sort \
-	    >>${WRKDIR}/plist.dynamic
-	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${WRKDIR}/plist.dynamic
+	@cd ${PREFIX} && ${FIND} etc/squid/errors/${d} -type f | ${SORT} \
+	    >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${TMPPLIST}
 .endfor
-	@${REINPLACE_CMD} -e \
-	    '/@comment Start of dynamically generated plist/r${WRKDIR}/plist.dynamic' \
-	    ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm etc/squid/errors" >>${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
