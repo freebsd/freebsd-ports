@@ -1,19 +1,20 @@
-*** support/makefiles/Makefile.fbs.orig	Mon Oct  4 22:44:08 1999
---- support/makefiles/Makefile.fbs	Wed Oct 20 20:32:42 1999
-***************
-*** 33,39 ****
-  LIBC   = /usr/lib/libc.a
-  IFLAGS = 
-  LFLAGS = 
-! CFLAGS = -O ${IFLAGS} ${LFLAGS}
-  
-  SRCS   = strcasestr.c authuser.c ftw.c
-  OBJS   = strcasestr.o authuser.o ftw.o
---- 33,39 ----
-  LIBC   = /usr/lib/libc.a
-  IFLAGS = 
-  LFLAGS = 
-! CFLAGS += ${IFLAGS} ${LFLAGS}
-  
-  SRCS   = strcasestr.c authuser.c ftw.c
-  OBJS   = strcasestr.o authuser.o ftw.o
+--- support/makefiles/Makefile.fbs.orig	Sat Jul  1 22:22:55 2000
++++ support/makefiles/Makefile.fbs	Wed Oct 10 07:11:36 2001
+@@ -33,7 +33,14 @@
+ LIBC   = /usr/lib/libc.a
+ IFLAGS = 
+ LFLAGS = 
+-CFLAGS = -O ${IFLAGS} ${LFLAGS}
++CFLAGS += ${IFLAGS} ${LFLAGS}
+ 
+-SRCS   = strcasestr.c authuser.c ftw.c
+-OBJS   = strcasestr.o authuser.o ftw.o
++SRCS   = authuser.c ftw.c
++OBJS   = authuser.o ftw.o
++
++HAVE_STRSTR!=   (nm ${LIBC} | grep -q strcasestr) || echo "NO"
++
++.if ${HAVE_STRSTR} == "NO"
++SRCS += strcasestr.c
++OBJS += strcasestr.o
++.endif

@@ -1,0 +1,8 @@
+--- src/proto.h.bak	Sat Jul  1 22:17:39 2000
++++ src/proto.h	Wed Oct 10 07:15:39 2001
+@@ -292,4 +292,4 @@
+ /*
+    ** support/strcasestr.c
+  */
+-char *strcasestr(register char *s, register char *find);
++char *strcasestr(const char *s, const char *find);

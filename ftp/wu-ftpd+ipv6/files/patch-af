@@ -1,0 +1,29 @@
+--- support/strcasestr.c.orig	Sat Jul  1 22:36:29 2000
++++ support/strcasestr.c	Wed Oct 10 07:18:17 2001
+@@ -24,22 +24,24 @@
+   $Id: strcasestr.c,v 1.5 2000/07/01 18:36:29 wuftpd Exp $
+  
+ ****************************************************************************/
++#include <ctype.h>
+ #include <string.h>
+ /*
+  * Find the first occurrence of find in s.
+  */
+-char *strcasestr(register char *s, register char *find)
++char *strcasestr(const char *s, const char *find)
+ {
+     register char c, sc;
+     register size_t len;
+ 
+     if ((c = *find++) != 0) {
++	c = tolower((unsigned char)c);
+ 	len = strlen(find);
+ 	do {
+ 	    do {
+ 		if ((sc = *s++) == 0)
+ 		    return (NULL);
+-	    } while (sc != c);
++	    } while ((char)tolower((unsigned char)sc) != c);
+ 	} while (strncasecmp(s, find, len) != 0);
+ 	s--;
+     }
