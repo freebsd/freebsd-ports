@@ -1,9 +1,9 @@
-@cd /usr/X11R6
+@cd ${X11BASE}
 @mode 755
 @owner bin
 @group bin
 bin/pcb
-@cd /usr/X11R6/lib/X11
+@cd lib/X11
 @mode 644
 @owner bin
 @group bin
