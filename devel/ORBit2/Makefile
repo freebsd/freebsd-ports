@@ -7,6 +7,7 @@
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.3.103
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
@@ -30,6 +31,10 @@ CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+pre-patch:
+	@find ${WRKSRC} -type f | xargs ${GREP} -l LINC_THREADSAFE | \
+		xargs ${PERL} -pi -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
 
 post-install:
 	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbit2rc.default
