@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomba
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomba
@@ -15,10 +15,8 @@ MASTER_SITE_SUBDIR=	gnomba
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	GNOME compliant browser of SMB shares
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomehier
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
