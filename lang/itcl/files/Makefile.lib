@@ -1,0 +1,32 @@
+NOPROFILE=	yes
+LIB=		itcl30
+ITCL_LIBRARY=	${PREFIX}/lib/itcl3.0
+CFLAGS+=	-I. -I./../generic \
+		-I${TCL_PREFIX}/include/tcl8.0/generic \
+		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
+		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
+		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\
+		-DNEED_MATHERR=1 -DHAVE_SIGNED_CHAR=1 -DHAVE_SYS_IOCTL_H=1\
+		-DTCL_SHLIB_EXT=\".so\" \
+		-DHAVE_SYS_FILIO_H=1 \
+		-DRETSIGTYPE=void \
+		-DITCL_LIBRARY=\"${ITCL_LIBRARY}\" \
+
+
+GENERIC_DIR=	../generic
+UNIX_DIR=	.
+
+SRCS=	\
+		$(GENERIC_DIR)/itcl_bicmds.c \
+		$(GENERIC_DIR)/itcl_class.c \
+		$(GENERIC_DIR)/itcl_cmds.c \
+		$(GENERIC_DIR)/itcl_ensemble.c \
+		$(GENERIC_DIR)/itcl_linkage.c \
+		$(GENERIC_DIR)/itcl_methods.c \
+		$(GENERIC_DIR)/itcl_migrate.c \
+		$(GENERIC_DIR)/itcl_objects.c \
+		$(GENERIC_DIR)/itcl_obsolete.c \
+		$(GENERIC_DIR)/itcl_parse.c \
+		$(GENERIC_DIR)/itcl_util.c
+
+.include <bsd.lib.mk>

@@ -1,42 +1,43 @@
---- tcl7.5/unix/Makefile.in.orig	Fri Jun 28 18:24:04 1996
-+++ tcl7.5/unix/Makefile.in	Thu Oct 17 20:29:25 1996
-@@ -44,7 +44,7 @@
- SCRIPT_INSTALL_DIR =	$(INSTALL_ROOT)$(TCL_LIBRARY)
+--- configure~	Mon Oct 19 21:14:58 1998
++++ configure	Thu Jan 14 19:57:33 1999
+@@ -873,15 +873,8 @@
+ DL_LIBS=$TCL_DL_LIBS
+ LD_FLAGS=$TCL_LD_FLAGS
+ LD_SEARCH_FLAGS=$TCL_LD_SEARCH_FLAGS
++TCL_INC_DIR=${TCL_PREFIX}/include/tcl${TCL_VERSION}
  
- # Directory in which to install libtcl.so or libtcl.a:
--LIB_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/lib/itcl
-+LIB_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/lib
+-#--------------------------------------------------------------------
+-#   Make sure that we can find the Tcl sources, so we can include
+-#   the "tclInt.h" file.
+-#--------------------------------------------------------------------
+-
+-if test ! -d "$TCL_SRC_DIR"; then
+-    { echo "configure: error: Can't find Tcl source directory "$TCL_SRC_DIR".  Itcl can't be built without this directory." 1>&2; exit 1; }
+-fi
  
- # Directory in which to install the program tclsh:
- BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
-@@ -53,7 +53,7 @@
- INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/itcl
- 
- # Top-level directory in which to install manual entries:
--MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man/itcl
-+MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/share/itcl/tcl7.5/man
- 
- # Directory in which to install manual entry for tclsh:
- MAN1_INSTALL_DIR =	$(MAN_INSTALL_DIR)/man1
-@@ -539,12 +539,6 @@
- 	@echo "Installing ${TCL_UNSHARED_LIB_FILE} (with standalone capability)"
- 	@$(INSTALL_DATA) ${TCL_UNSHARED_LIB_FILE} $(LIB_INSTALL_DIR)/${TCL_UNSHARED_LIB_FILE}
- 	@$(RANLIB) $(LIB_INSTALL_DIR)/${TCL_UNSHARED_LIB_FILE}
--	@if test -f $(LIB_INSTALL_DIR)/libtcl.a -a ! -h $(LIB_INSTALL_DIR)/libtcl.a; then \
--	    echo "Renaming your old libtcl.a to libtcl.a.old" ; \
--	    mv $(LIB_INSTALL_DIR)/libtcl.a $(LIB_INSTALL_DIR)/libtcl.a.old ; \
--	fi
--	@rm -f $(LIB_INSTALL_DIR)/libtcl.a
--	@$(LN_S) $(TCL_UNSHARED_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl.a
- 	@if test "$(TCL_LIB_FILE)" != "${TCL_UNSHARED_LIB_FILE}"; then \
- 	    echo "Installing $(TCL_LIB_FILE)" ; \
- 	    $(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR) ; \
-@@ -562,8 +556,6 @@
- 	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
- 	@echo "Installing tclConfig.sh"
- 	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
--	@rm -f $(LIB_INSTALL_DIR)/tcl
--	$(LN_S) $(SCRIPT_INSTALL_DIR) $(LIB_INSTALL_DIR)/tcl
- 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c; \
- 	    do \
- 	    echo "Installing $$i"; \
+ #--------------------------------------------------------------------
+ #   If this is gcc, add some extra compile flags.
+@@ -1011,13 +1004,13 @@
+         { echo "configure: error: Tcl was not built with --enable-shared" 1>&2; exit 1; }
+     fi
+     SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+-    eval "ITCL_LIB_FILE=libitcl${VERSION}${SHLIB_SUFFIX}"
++    eval "ITCL_LIB_FILE=${ITCL_LIB_FILE}"
+     ITCL_PKG_FILE="[file join [file dirname \$dir] ${ITCL_LIB_FILE}]"
+     MAKE_LIB="\$(SHLIB_LD) -o ${ITCL_LIB_FILE} \$(OBJS) ${SHLIB_LD_LIBS} \$(LD_SEARCH_FLAGS)"
+     RANLIB=":"
+ else
+     SHLIB_CFLAGS=""
+-    eval "ITCL_LIB_FILE=libitcl${VERSION}.a"
++    eval "ITCL_LIB_FILE=${ITCL_LIB_FILE}"
+     ITCL_PKG_FILE=""
+     MAKE_LIB="ar cr ${ITCL_LIB_FILE} \${OBJS}"
+ fi
+@@ -1212,6 +1205,7 @@
+ s%@LD_SEARCH_FLAGS@%$LD_SEARCH_FLAGS%g
+ s%@TCL_VERSION@%$TCL_VERSION%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
++s%@TCL_INC_DIR@%$TCL_INC_DIR%g
+ s%@TCL_LIB_DIR@%$TCL_LIB_DIR%g
+ s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g
