@@ -1,8 +1,12 @@
 bin/gnome-cups-add
 bin/gnome-cups-icon
 bin/gnome-cups-manager
+include/libgnomecups-1/libgnomecups/gnome-cups-permission.h
+include/libgnomecups-1/libgnomecups/gnome-cups-ui-connection.h
+include/libgnomecups-1/libgnomecups/gnome-cups-ui-driver.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-init.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-print.h
+include/libgnomecups-1/libgnomecups/gnome-cups-ui-util.h
 lib/libgnomecupsui-1.0.a
 lib/libgnomecupsui-1.0.so
 lib/libgnomecupsui-1.0.so.1
@@ -11,7 +15,10 @@ libdata/pkgconfig/libgnomecupsui-1.0.pc
 sbin/gnome-cups-switch
 share/gnome/applications/gnome-cups-manager.desktop
 share/gnome/gnome-cups-manager/gnome-cups-add.glade
+share/gnome/gnome-cups-manager/gnome-cups-add-druid.png
 share/gnome/gnome-cups-manager/gnome-cups-manager.glade
+share/gnome/gnome-cups-manager/gnome-cups-ui-connection.glade
+share/gnome/gnome-cups-manager/gnome-cups-ui-driver.glade
 share/gnome/gnome-cups-manager/xd2-testpage-a4.eps
 share/gnome/gnome-cups-manager/xd2-testpage-letter.eps
 share/gnome/pixmaps/gnome-cups-manager/printer-tray-normal.png
@@ -19,8 +26,9 @@ share/gnome/pixmaps/gnome-cups-manager/printer-tray-stopped.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer-network.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer-new.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer.png
-share/icons/hicolor/48x48/emblems/emblem-default.png
-share/icons/hicolor/48x48/emblems/emblem-paused.png
+share/icons/hicolor/48x48/stock/data/emblem-default.png
+share/icons/hicolor/48x48/stock/data/emblem-paused.png
+share/locale/bg/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/de/LC_MESSAGES/gnome-cups-manager.mo
@@ -32,18 +40,23 @@ share/locale/fi/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/fr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/he/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/hr/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/hu/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/it/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/nb/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/nl/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/no/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pt/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/sq/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sv/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/tr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/uk/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-cups-manager.mo
 @dirrm share/gnome/pixmaps/gnome-cups-manager
 @dirrm share/gnome/gnome-cups-manager
