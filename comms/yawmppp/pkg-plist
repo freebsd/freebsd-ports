@@ -1,13 +1,10 @@
+bin/yagetmodemspeed
 bin/yawmppp
 bin/yawmppp.log
 bin/yawmppp.pref
 bin/yawmppp.thin
-share/doc/yawmppp-%%PORTVERSION%%/CHANGELOG
-share/doc/yawmppp-%%PORTVERSION%%/COPYING
-share/doc/yawmppp-%%PORTVERSION%%/FAQ
-share/doc/yawmppp-%%PORTVERSION%%/INSTALL
-share/doc/yawmppp-%%PORTVERSION%%/README
-share/icons/pppdoc.xpm
-share/icons/stepphone.xpm
-@dirrm share/doc/yawmppp-%%PORTVERSION%%
-@dirrm share/icons
+%%PORTDOCS%%share/doc/yawmppp/CHANGELOG
+%%PORTDOCS%%share/doc/yawmppp/FAQ
+%%PORTDOCS%%share/doc/yawmppp/README
+%%PORTDOCS%%share/doc/yawmppp/TODO
+%%PORTDOCS%%@dirrm share/doc/yawmppp
