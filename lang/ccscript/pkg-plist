@@ -3,11 +3,13 @@ include/cc++2/cc++/script.h
 lib/libccscript2.a
 lib/libccscript2.la
 lib/libccscript2.so
-lib/libccscript2-0.4.so
-lib/libccscript2-0.4.so.0
+lib/libccscript2-0.5.so
+lib/libccscript2-0.5.so.3
 lib/ccscript2/date.pkg
 lib/ccscript2/digits.pkg
 lib/ccscript2/file.pkg
+lib/ccscript2/manip.pkg
+lib/ccscript2/math.pkg
 lib/ccscript2/random.pkg
 lib/ccscript2/scale.pkg
 lib/ccscript2/sort.pkg
