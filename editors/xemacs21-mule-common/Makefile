@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/26 15:02:10 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/10 15:28:21 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -19,6 +19,13 @@ DISTFILES=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		ps-print-jp.el.gz
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+
+# from xemacs-mule
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.2:${PORTSDIR}/graphics/png \
+		compface.1:${PORTSDIR}/mail/faces
+USE_AUTOCONF=	yes
 
 EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
@@ -38,18 +45,22 @@ WRKDIR?=	${.CURDIR}/../../${dir}/work
 .endfor
 WRKSRC= ${WRKDIR}/xemacs-20.4
 
-.if !defined(WRKDIR) && !defined(PACKAGE_BUILDING)
+.if !defined(WRKDIR)
+.if defined(PACKAGE_BUILDING)
+# XXX
+pre-build:
+	@cd ${.CURDIR}/../xemacs-mule; make
+.else
 BROKEN=		You should build install one of the other xemacs ports first
+.endif
 .endif
 
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 
-USE_GMAKE=	no
-
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	no
 CONFIGURE_ARGS=	i386-unknown-freebsd \
 		--with-x11 \
 		--with-mule \
@@ -75,6 +86,7 @@ pre-install:
 
 post-install:
 # install xemacs-mule.sh into ${PREFIX}/etc/rc.d
+	@${MKDIR} /var/run/emacs/lock
 	chmod 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
