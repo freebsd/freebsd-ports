@@ -19,5 +19,6 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
 MAN1=		workman.1
+MAN5=		workmandb.5
 
 .include <bsd.port.mk>
