@@ -6,15 +6,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mutt-1.0pre3i
-PKGNAME=	ja-mutt-1.0b3.j0
+DISTNAME=	mutt-1.0i
+PKGNAME=	ja-mutt-1.0.j0
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/
 
 PATCH_SITES=	http://kondara.sdri.co.jp/~kikutani/slang/
-PATCHFILES=	mutt-1.0pre3i.jp0.pat.gz
+PATCHFILES=	mutt-1.0i-jp0.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
@@ -28,7 +28,7 @@ RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/mutt-1.0pre3
+WRKSRC=		${WRKDIR}/mutt-1.0
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix --with-included-gettext \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/share/mutt \
@@ -42,6 +42,8 @@ pre-configure:
 	(cd ${WRKSRC}; autoconf)
 
 post-install:
+	strip ${PREFIX}/bin/mutt
+	strip ${PREFIX}/bin/mutt_dotlock
 	${INSTALL_DATA} ${WRKSRC}/contrib/sample.muttrc ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKSRC}/contrib/Mush.rc ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKSRC}/contrib/Pine.rc ${PREFIX}/share/doc/mutt

@@ -1,7 +1,7 @@
-*** configure.in.orig	Thu Oct 28 01:14:22 1999
---- configure.in	Thu Oct 28 01:14:24 1999
+*** configure.in.orig	Sat Jan 22 22:24:10 2000
+--- configure.in	Sat Jan 22 22:32:13 2000
 ***************
-*** 112,129 ****
+*** 114,131 ****
   	
   	AC_MSG_CHECKING(for S-Lang)
   	if test $withval = yes; then
@@ -20,7 +20,7 @@
   	else
   		dnl ---Check to see if $withval is a source directory
   		if test -f $withval/src/slang.h; then
---- 112,122 ----
+--- 114,124 ----
   	
   	AC_MSG_CHECKING(for S-Lang)
   	if test $withval = yes; then
