@@ -97,6 +97,7 @@
     SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
+    SUBDIR += surf
     SUBDIR += thx_1138
     SUBDIR += topaz
     SUBDIR += umatrix

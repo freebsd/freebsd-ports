@@ -1,0 +1,14 @@
+surf is a tool to visualize some real algebraic geometry: plane algebraic
+curves, algebraic surfaces and hyperplane sections of surfaces. surf is
+script driven and has (optionally) a nifty GUI using the Gtk widget set. 
+
+The algorithms should be stable enough not to be confused by curve/surface
+singularities in codimension greater than one and the degree of the surface
+or curve. This has been achieved quite a bit. We have drawn curves of degree
+up to 30 and surfaces of degree up to 20 successfully. However, there are
+examples of curves/surfaces of lower degree where surf fails to produce
+perfect images. This happens especially if the equation of the curve/surface
+is not reduced. Best results are achieved using reduced equations. On the
+other hand, surf displays the Fermat-curves accurately for degree up to 98. 
+
+WWW: http://surf.sourceforge.net/
