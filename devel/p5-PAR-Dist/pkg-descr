@@ -1,0 +1,14 @@
+This module creates and manipulates PAR distributions.  They are
+architecture-specific PAR files, containing everything under blib/
+of CPAN distributions after their "make" or "Build" stage, a META.yml
+describing metadata of the original CPAN distribution, and a MANIFEST
+detailing all files within it.  Digitally signed PAR distributions
+will also contain a SIGNATURE file.
+
+The naming convention for such distributions is:
+
+    $NAME-$VERSION-$ARCH-$PERL_VERSION.par
+
+For example, "PAR-Dist-0.01-i386-freebsd-5.8.0.par" corresponds to the
+0.01 release of "PAR-Dist" on CPAN, built for perl 5.8.0 running on
+"i386-freebsd".
