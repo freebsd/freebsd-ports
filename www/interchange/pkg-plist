@@ -710,78 +710,75 @@ interchange/lib/UI/vars/UI_STD_FOOTER
 interchange/lib/UI/vars/UI_STD_HEAD
 @dirrm interchange/lib/UI/vars
 @dirrm interchange/lib/UI
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Business/Fedex.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Business/UPS.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Business
-interchange/lib/perl5/site_perl/%%PERL_VER%%/File/CounterFile.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/File
-interchange/lib/perl5/site_perl/%%PERL_VER%%/HTML/Entities.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/HTML
-interchange/lib/perl5/site_perl/%%PERL_VER%%/IniConf.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Tie/ShadowHash.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Tie
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Cart.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Config.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Control.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Data.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/DbSearch.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Document.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/ECML.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Error.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/External.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Glimpse.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Imagemap.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Interpolate.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/MakeCat.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Order.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Page.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Parse.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Parser.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/AuthorizeNet.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/BoA.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/CCVS.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/CyberCash.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/Signio.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/Skipjack.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment/iTransact.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Payment
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/SOAP.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/SOAP/Transport.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/SOAP
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Scan.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Search.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Server.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Session.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/SessionDB.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/SessionFile.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/Common.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/DBI.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/DB_File.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/GDBM.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/InMemory.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/LDAP.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table/SDBM.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Table
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Tags.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/TextSearch.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Track.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/UserDB.pm
-interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend/Util.pm
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/Vend
-interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Business/UPS/autosplit.ix
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Business/UPS
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Business
-interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Vend/SOAP/autosplit.ix
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Vend/SOAP
-interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Vend/Tags/autosplit.ix
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Vend/Tags
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto/Vend
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%/auto
-interchange/lib/perl5/site_perl/%%PERL_VER%%/hints.pl
-@dirrm interchange/lib/perl5/site_perl/%%PERL_VER%%
-@dirrm interchange/lib/perl5/site_perl
-@dirrm interchange/lib/perl5
+interchange/lib/Business/Fedex.pm
+interchange/lib/Business/UPS.pm
+@dirrm interchange/lib/Business
+interchange/lib/File/CounterFile.pm
+@dirrm interchange/lib/File
+interchange/lib/HTML/Entities.pm
+@dirrm interchange/lib/HTML
+interchange/lib/IniConf.pm
+interchange/lib/Tie/ShadowHash.pm
+@dirrm interchange/lib/Tie
+interchange/lib/Vend/Cart.pm
+interchange/lib/Vend/Config.pm
+interchange/lib/Vend/Control.pm
+interchange/lib/Vend/Data.pm
+interchange/lib/Vend/DbSearch.pm
+interchange/lib/Vend/Document.pm
+interchange/lib/Vend/ECML.pm
+interchange/lib/Vend/Error.pm
+interchange/lib/Vend/External.pm
+interchange/lib/Vend/Glimpse.pm
+interchange/lib/Vend/Imagemap.pm
+interchange/lib/Vend/Interpolate.pm
+interchange/lib/Vend/MakeCat.pm
+interchange/lib/Vend/Order.pm
+interchange/lib/Vend/Page.pm
+interchange/lib/Vend/Parse.pm
+interchange/lib/Vend/Parser.pm
+interchange/lib/Vend/Payment.pm
+interchange/lib/Vend/Payment/AuthorizeNet.pm
+interchange/lib/Vend/Payment/BoA.pm
+interchange/lib/Vend/Payment/CCVS.pm
+interchange/lib/Vend/Payment/CyberCash.pm
+interchange/lib/Vend/Payment/Signio.pm
+interchange/lib/Vend/Payment/Skipjack.pm
+interchange/lib/Vend/Payment/iTransact.pm
+@dirrm interchange/lib/Vend/Payment
+interchange/lib/Vend/SOAP.pm
+interchange/lib/Vend/SOAP/Transport.pm
+@dirrm interchange/lib/Vend/SOAP
+interchange/lib/Vend/Scan.pm
+interchange/lib/Search.pm
+interchange/lib/Vend/Server.pm
+interchange/lib/Vend/Session.pm
+interchange/lib/Vend/SessionDB.pm
+interchange/lib/Vend/SessionFile.pm
+interchange/lib/Vend/Table/Common.pm
+interchange/lib/Vend/Table/DBI.pm
+interchange/lib/Vend/Table/DB_File.pm
+interchange/lib/Vend/Table/GDBM.pm
+interchange/lib/Vend/Table/InMemory.pm
+interchange/lib/Vend/Table/LDAP.pm
+interchange/lib/Vend/Table/SDBM.pm
+@dirrm interchange/lib/Vend/Table
+interchange/lib/Vend/Tags.pm
+interchange/lib/Vend/TextSearch.pm
+interchange/lib/Vend/Track.pm
+interchange/lib/Vend/UserDB.pm
+interchange/lib/Vend/Util.pm
+@dirrm interchange/lib/Vend
+interchange/lib/auto/Business/UPS/autosplit.ix
+@dirrm interchange/lib/auto/Business/UPS
+@dirrm interchange/lib/auto/Business
+interchange/lib/auto/Vend/SOAP/autosplit.ix
+@dirrm interchange/lib/auto/Vend/SOAP
+interchange/lib/auto/Vend/Tags/autosplit.ix
+@dirrm interchange/lib/auto/Vend/Tags
+@dirrm interchange/lib/auto/Vend
+@dirrm interchange/lib/auto
+interchange/lib/hints.pl
 @dirrm interchange/lib
 interchange/locale.error
 interchange/perllocal.pod

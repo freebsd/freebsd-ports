@@ -39,7 +39,7 @@ USE_REINPLACE=	yes
 
 MAKE_ARGS+=	NOCPANINSTALL=1 \
 		INSTALLARCHLIB=${PREFIX}/interchange \
-		INSTALLPRIVLIB=${PREFIX}/interchange/lib/perl5/site_perl/${PERL_VER} \
+		INSTALLPRIVLIB=${PREFIX}/interchange/lib/ \
 		INSTALLMAN1DIR=${PREFIX}/man/man1 \
 		INSTALLMAN3DIR=${PREFIX}/man/man7
 
@@ -56,13 +56,16 @@ pre-configure:
 	@${ECHO_CMD} -e "This port needs a specific user account ('interch') at configure time.\n\nIf it is ok for you to add a new user at configure time of this port\nadd '-DCHECK_FOR_IC_USER' as an option for 'make'.\n"
 	@exit 1
 .endif
-	@PKG_PREFIX=${PREFIX} ${.CURDIR}/pkg-install ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/interchange.sh \
 	    ${PREFIX}/etc/rc.d/interchange.sh.sample
 	@${REINPLACE_CMD} -i "" -e 's:%%PREFIX%%:${PREFIX}:' \
 	    ${PREFIX}/etc/rc.d/interchange.sh.sample
-	@${REINPLACE_CMD} -i "" -e "s:${PREFIX}:${PREFIX}/interchange:g; s:${PREFIX}/interchange/lib:${PREFIX}/interchange/lib/perl5/site_perl/${PERL_VER}:g; s:${PREFIX}/interchange/bin: ${PREFIX}/bin:g" ${PREFIX}/bin/interchange
+.for i in compile_link config_prog configdump dump expire expireall interchange localize makecat offline restart update
+	@${REINPLACE_CMD} -i "" -e "s:${PREFIX}:${PREFIX}/interchange:g; s:${PREFIX}/interchange/bin: ${PREFIX}/bin:g" ${PREFIX}/bin/${i}
+.endfor
+	@${CHOWN} -R interch:interch ${PREFIX}/interchange/src
 
 .include <bsd.port.mk>
