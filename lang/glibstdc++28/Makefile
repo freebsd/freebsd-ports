@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.13 1998/11/11 05:37:25 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/27 07:41:21 fenner Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -25,9 +25,9 @@ RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 CC=		gcc28
 CXX=		g++28
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=        i386-unknown-freebsdelf${OSREL}
-.else
 GNUHOST=        i386-unknown-freebsd${OSREL}
+.else
+GNUHOST=        i386-unknown-freebsdaout${OSREL}
 .endif
 GCC28DIR=	lib/gcc-lib/${GNUHOST}/2.8.1
 CONFIGURE_ARGS= --host=${GNUHOST}
