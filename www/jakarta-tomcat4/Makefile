@@ -55,7 +55,6 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
 

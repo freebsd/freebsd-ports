@@ -51,7 +51,6 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample

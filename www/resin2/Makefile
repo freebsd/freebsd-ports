@@ -43,7 +43,6 @@ PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 PKGMESSAGE=		${WRKDIR}/pkg-message
 # We need WRKSRC and WRKDIR right now so define them "manually"
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 REINPLACE_FILES=	${WRKSRC}/src/c/plugin/apache/Makefile.in \
 			${WRKSRC}/src/c/plugin/apache2/Makefile.in
 REPLACE_FILES=		${FILESDIR}/pkg-install \
