@@ -1,3 +1,4 @@
+bin/CDE2Xfcepal
 bin/startxfce
 bin/xfbd
 bin/xfce
@@ -7,6 +8,7 @@ bin/xfclock
 bin/xfgnome
 bin/xfhelp
 bin/xflock
+bin/xfmountdev
 bin/xfmouse
 bin/xfpager
 bin/xfplay
@@ -16,13 +18,34 @@ bin/xfterm
 bin/xftrash
 bin/xftree
 bin/xfwm
+etc/xfce/README.xfdefs.py
+etc/xfce/Xclients
+etc/xfce/fvwm2rc
+etc/xfce/fvwmrc
+etc/xfce/xfbdrc
+etc/xfce/xfce3rc
+etc/xfce/xfce3rc.hu
+etc/xfce/xfce3rc.ja
+etc/xfce/xfce3rc.ko
+etc/xfce/xfce3rc.zh_CN.GB2312
+etc/xfce/xfce3rc.zh_TW.Big5
+etc/xfce/xfclockrc
+etc/xfce/xfdefs.py
+etc/xfce/xfmouserc
+etc/xfce/xfsoundrc
+etc/xfce/xfwmrc
+etc/xfce/xinitrc
+etc/xfce/xinitrc.mwm
+etc/xfce/xsession
+etc/xfce/xtree.reg
 share/xfce/COPYING
-share/xfce/README.xfdefs.py
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
 share/xfce/backdrops/A-Little-Exercise.jpg
 share/xfce/backdrops/Anneaux.xpm
 share/xfce/backdrops/Arena.xpm
+share/xfce/backdrops/BlueSatin.xpm
+share/xfce/backdrops/BlueSea.xpm
 share/xfce/backdrops/BlueStucco.xpm
 share/xfce/backdrops/Bluedrops.xpm
 share/xfce/backdrops/Bluefalls.xpm
@@ -318,7 +341,9 @@ share/xfce/locale/gl/LC_MESSAGES/xfce.mo
 share/xfce/locale/hu/LC_MESSAGES/xfce.mo
 share/xfce/locale/it/LC_MESSAGES/xfce.mo
 share/xfce/locale/ja/LC_MESSAGES/xfce.mo
+share/xfce/locale/nl/LC_MESSAGES/xfce.mo
 share/xfce/locale/pl/LC_MESSAGES/xfce.mo
+share/xfce/locale/ro/LC_MESSAGES/xfce.mo
 share/xfce/locale/ru/LC_MESSAGES/xfce.mo
 share/xfce/locale/sk/LC_MESSAGES/xfce.mo
 share/xfce/locale/sv/LC_MESSAGES/xfce.mo
@@ -355,6 +380,7 @@ share/xfce/palettes/Salmon2
 share/xfce/palettes/Sand
 share/xfce/palettes/Silver
 share/xfce/palettes/Spring
+share/xfce/palettes/Standard
 share/xfce/palettes/Stellar
 share/xfce/palettes/Stripe
 share/xfce/palettes/Sunny
@@ -367,22 +393,6 @@ share/xfce/palettes/Typhoon
 share/xfce/palettes/Win
 share/xfce/palettes/Xfce-1
 share/xfce/palettes/Xfce-2
-share/xfce/sample.Xclients
-share/xfce/sample.fvwm2rc
-share/xfce/sample.fvwmrc
-share/xfce/sample.mwm.xinitrc
-share/xfce/sample.xfbdrc
-share/xfce/sample.xfce3rc
-share/xfce/sample.xfce3rc.ja
-share/xfce/sample.xfce3rc.ko
-share/xfce/sample.xfce3rc.zh_CN.GB2312
-share/xfce/sample.xfce3rc.zh_TW.Big5
-share/xfce/sample.xfmouserc
-share/xfce/sample.xfsoundrc
-share/xfce/sample.xfwmrc
-share/xfce/sample.xinitrc
-share/xfce/sample.xsession
-share/xfce/sample.xtree.reg
 share/xfce/sounds/alert01.wav
 share/xfce/sounds/beep01.wav
 share/xfce/sounds/beep02.wav
@@ -434,7 +444,6 @@ share/xfce/sounds/zap01.wav
 share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
-share/xfce/system.xfwmrc
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
 share/xfce/textures/ground.xpm
@@ -445,7 +454,6 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-share/xfce/xfdefs.py
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/help
 @dirrm share/xfce/icons
@@ -471,8 +479,12 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/it
 @dirrm share/xfce/locale/ja/LC_MESSAGES
 @dirrm share/xfce/locale/ja
+@dirrm share/xfce/locale/nl/LC_MESSAGES
+@dirrm share/xfce/locale/nl
 @dirrm share/xfce/locale/pl/LC_MESSAGES
 @dirrm share/xfce/locale/pl
+@dirrm share/xfce/locale/ro/LC_MESSAGES
+@dirrm share/xfce/locale/ro
 @dirrm share/xfce/locale/ru/LC_MESSAGES
 @dirrm share/xfce/locale/ru
 @dirrm share/xfce/locale/sk/LC_MESSAGES
@@ -486,3 +498,4 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/sounds
 @dirrm share/xfce/textures
 @dirrm share/xfce
+@dirrm etc/xfce

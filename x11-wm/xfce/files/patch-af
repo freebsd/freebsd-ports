@@ -1,0 +1,22 @@
+--- configure.orig	Mon Jun  5 11:35:55 2000
++++ configure	Mon Jun  5 13:54:52 2000
+@@ -2698,6 +2698,8 @@
+ if eval "test \"`echo '$''{'gt_cv_func_gettext_libintl'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
++  ac_save_LIBS="$LIBS"
++  LIBS="-lintl  $LIBS"
+   cat > conftest.$ac_ext <<EOF
+ #line 2703 "configure"
+ #include "confdefs.h"
+@@ -6116,8 +6118,8 @@
+ 
+ 
+ 
+-
+-
++XFCE_DIR=`eval echo $XFCE_DIR`
++XFCE_CONFDIR=`eval echo $XFCE_CONFDIR`
+ sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/xfce_setup.in > scripts/xfce_setup
+ sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/xfhelp.in > scripts/xfhelp
+ sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/startxfce.in > scripts/startxfce
