@@ -1,15 +1,6 @@
---- /home/edwin/smm5r0/Install.unix/Makefile	Fri Jun 15 07:05:56 2001
-+++ Makefile	Sun Jul 15 19:20:06 2001
-@@ -12,7 +12,7 @@
- #     usual unix environment (if you have root access).
- BIN=/usr/local/bin
- SRC=/usr/local/lib/smm
--DOC=/usr/local/doc/smm
-+DOC=/usr/local/share/doc/smm
- 
- # --- If you don't have root access, you could choose to install
- #     SMM++ locally in your home directory. Therefore use the
-@@ -60,6 +60,8 @@
+--- Makefile.orig	Tue Jan 22 18:45:51 2002
++++ Makefile	Tue Jan 22 18:46:40 2002
+@@ -58,6 +58,8 @@
  #      this Makefile. If you can read Makefiles, feel free
  #      to do whatever you like.
  
@@ -18,27 +9,3 @@
  smm: Makefile
  	@echo "--- Building startup file."
  	@if [ -z ${ITKWISH} ] ; then \
-@@ -89,9 +91,9 @@
- install-src:
- 	@echo "--- Installing libraries to ${SRC}."
- 	@install -d ${SRC}
--	@cp -au ../sources/ ${SRC}
--	@cp -au ../images/ ${SRC}
--	@cp -au ../config/ ${SRC}
-+	@cp -Rp ../sources ${SRC}
-+	@cp -Rp ../images ${SRC}
-+	@cp -Rp ../config ${SRC}
- uninstall-src:
- 	@echo "--- Uninstalling libraries from ${SRC}."
- 	@rm -rf ${SRC}
-@@ -100,8 +102,8 @@
- 	@echo "    Documentation is installed in ${DOC}."
- 	@echo "    The html manual starts at file:${DOC}/man/index.html."
- 	@install -d ${DOC}
--	@cp -au ../docu/* ${DOC}
--	@cp -au ../man/ ${DOC}
-+	@cp -Rp ../docu/* ${DOC}
-+	@cp -Rp ../man/ ${DOC}
- uninstall-doc:
- 	@echo "--- Uninstalling documentation from ${DOC}."
- 	@rm -rf ${DOC}
