@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.7
-PORTREVISION=	3
+PORTVERSION=	4.9.8
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
@@ -17,8 +17,6 @@ COMMENT=	A text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
@@ -33,8 +31,22 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
-.if !defined(WITH_MSN)
-CONFIGURE_ARGS+=	--disable-msn
+.if defined(WITH_MSN)
+CONFIGURE_ARGS+=	--enable-msn
+EXTRA_PATCHES=		${.CURDIR}/files/msn-*
+pre-patch:
+	@${ECHO_CMD} "========================================================="
+	@${ECHO_CMD} "=====================Important !!!======================="
+	@${ECHO_CMD} "========================================================="
+	@${ECHO_CMD} "There may be some sticky legal issues with the new"
+	@${ECHO_CMD} "version of this protocol. Users should be aware that they"
+	@${ECHO_CMD} "might be in violation of the DMCA or other laws. If this"
+	@${ECHO_CMD} "is unacceptable, hit Ctrl-C now and remove WITH_MSN from"
+	@${ECHO_CMD} "your make flags. The FreeBSD group assumes no"
+	@${ECHO_CMD} "responsibility or liability for any losses or damages"
+	@${ECHO_CMD} "sustained by use or disuse of software in the ports tree."
+	@${ECHO_CMD} "========================================================="
+	@sleep 5
 .endif
 
 .if !defined(WITH_YAHOO)
@@ -61,7 +73,7 @@ CONFIGURE_ARGS+=	--disable-rss
 CONFIGURE_ARGS+=	--disable-lj
 .endif
 
-MAN1=	centericq.1 cicqconv.1 cicqsync.1
+MAN1=	cicqconv.1 cicqsync.1
 
 post-patch:
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
