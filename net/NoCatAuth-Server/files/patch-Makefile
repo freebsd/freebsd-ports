@@ -1,0 +1,33 @@
+--- Makefile.orig	Sat May 17 15:35:14 2003
++++ Makefile	Wed Nov 19 15:51:41 2003
+@@ -1,6 +1,6 @@
+ ### Install somewhere else if you've a mind (or aren't root).
+ 
+-PREFIX	    = /usr/local/nocat
++PREFIX	    ?= /usr/local/nocat
+ 
+ ### DESTDIR allows packagers to temporarily install somewhere else.
+ 
+@@ -35,7 +35,7 @@
+ 
+ check_fw:
+ 	@echo -n "Checking for firewall compatibility: "
+-	@bin/detect-fw.sh bin || ( echo "Can't seem to find supported firewall software. Check your path?" && exit 255 )
++	@bin/detect-fw.sh ${FIREWALL} bin || ( echo "Can't seem to find supported firewall software. Check your path?" && exit 255 )
+ 	
+ check_gpg:
+ 	@echo "Looking for gpg..."
+@@ -62,10 +62,10 @@
+ 	$(INSTALL) $(INST_GW) $(TARGET)
+ 
+ wrapper: check_fw
+-	FW_BIN=`bin/detect-fw.sh | cut -d' ' -f1`; \
+-	ln -sf fw-wrap bin/`basename $$FW_BIN`; \
++	FW_BIN=`bin/detect-fw.sh ${FIREWALL} bin | cut -d' ' -f1`; \
++	ln -sf fw-wrap bin/`basename ${FW_BIN}`; \
+ 	gcc -o bin/fw-wrap -Wall -DALLOWED_UID=\"$(WRAP_USER)\" \
+-	    -DFW_BINARY=\"$$FW_BIN\" \
++	    -DFW_BINARY=\"${FW_BINARY}\" \
+ 	    etc/fw-wrap.c
+ 	chmod u+s bin/fw-wrap
+ 
