@@ -27,6 +27,8 @@ USE_REINPLACE=	YES
 CONFIGURE_SCRIPT=	genMakefiles
 CONFIGURE_ARGS=		fixed-${OPSYS:L}
 
+INSTALL_DATADIR=	${INSTALL} -d ${_SHROWNGRP} -m 755
+
 BasicUsageEnvironment=	\
 		BasicUsageEnvironment/include/BasicHashTable.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment.hh \
@@ -112,21 +114,18 @@ liveMedia=		\
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
 
-#do-configure:
-#	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./genMakefiles fixed-${OPSYS:L})
-
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/groupsock
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/liveMedia
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/UsageEnvironment
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/BasicUsageEnvironment
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/groupsock/include
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/liveMedia/include
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/UsageEnvironment/include
-	@${INSTALL} -d ${_SHROWNGRP} -m ${SHAREMODE} ${PREFIX}/live/BasicUsageEnvironment/include
+	@${INSTALL_DATADIR} ${PREFIX}/live
+	@${INSTALL_DATADIR} ${PREFIX}/live/groupsock
+	@${INSTALL_DATADIR} ${PREFIX}/live/liveMedia
+	@${INSTALL_DATADIR} ${PREFIX}/live/UsageEnvironment
+	@${INSTALL_DATADIR} ${PREFIX}/live/BasicUsageEnvironment
+	@${INSTALL_DATADIR} ${PREFIX}/live/groupsock/include
+	@${INSTALL_DATADIR} ${PREFIX}/live/liveMedia/include
+	@${INSTALL_DATADIR} ${PREFIX}/live/UsageEnvironment/include
+	@${INSTALL_DATADIR} ${PREFIX}/live/BasicUsageEnvironment/include
 
 do-install::
 	@${ECHO_CMD} bin/playSIP  >> ${PLIST}
