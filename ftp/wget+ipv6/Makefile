@@ -7,7 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -30,6 +30,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -49,7 +50,7 @@ post-patch:
 	${MV} po/zh_TW.po po/zh_TW.po.utf-8; \
 	${LOCALBASE}/bin/iconv -f UTF-8 -t BIG5 po/zh_TW.po.utf-8 |\
 		${SED} -e 's,utf-8,big5,' |\
-		${SED} -Ee 's,([^[:print:]])\\,\1\\\\,g' |\
+		${ENV} LANG=C ${SED} -Ee 's,([^[:print:]])\\,\1\\\\,g' |\
 		${SED} -Ee 's,\\\\([nt"]),\\\1,g' \
 		    > po/zh_TW.po)
 
