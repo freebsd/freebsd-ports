@@ -3365,6 +3365,7 @@ jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
 kaffe		ports/java/kaffe
+kaffe-devel	ports/java/kaffe-devel
 kaffeine	ports/multimedia/kaffeine
 kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
