@@ -6,10 +6,15 @@
 #
 
 PORTNAME?=	netscape-${BROWSER_ARC}
-PORTVERSION?=	4.76
+PORTVERSION?=	${DEFAULT_PORTVERSION}
 
 .if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
+.endif
+.if ${ARCH} == "alpha"
+DEFAULT_PORTVERSION?=	4.77
+.else
+DEFAULT_PORTVERSION?=	4.76
 .endif
 
 MASTER_SITES=	ftp://ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/
