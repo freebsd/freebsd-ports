@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
 
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn
@@ -23,6 +23,7 @@ SHAREOWN=	news
 SHAREGRP=	news
 USE_REINPLACE=	yes
 INSTALL+=	-b
+PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
@@ -37,6 +38,8 @@ do-install:
 .for f in bad_adult_paths bad_cancel_paths bad_hosts bad_paths cleanfeed cleanfeed.local.sample
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${LOCALBASE}/news/bin/filter
 .endfor
-	@cd ${LOCALBASE}/news/bin/filter; ${LN} -f cleanfeed filter_innd.pl
+
+post-install:
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PKGNAME=$1
+[ ! -n "${PKG_PREFIX}" ] && exit 1
+
+case $2 in
+    POST-INSTALL)
+	cd ${PKG_PREFIX}/news/bin/filter \
+		&& mv filter_innd.pl filter_innd.pl.orig \
+		&& ln -s cleanfeed filter_innd.pl
+	;;
+    POST-DEINSTALL)
+	cd ${PKG_PREFIX}/news/bin/filter \
+		&& mv filter_innd.pl.orig filter_innd.pl
+	;;
+esac
+exit 0
