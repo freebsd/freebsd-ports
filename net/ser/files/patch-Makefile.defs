@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- Makefile.defs.orig	Mon Sep  1 20:47:57 2003
-+++ Makefile.defs	Wed Sep 10 19:39:20 2003
++++ Makefile.defs	Thu Sep 25 10:57:58 2003
 @@ -114,10 +114,11 @@
  INSTALL-TOUCH = touch          # used to create the file first (good to 
                                 #  make solaris install work)
@@ -80,3 +80,16 @@ $FreeBSD$
  					-Wall   \
  			#if gcc 3.0
  ifeq			($(CC_SHORTVER), 3.0)
+@@ -638,9 +639,11 @@
+ 	ifneq ($(found_lock_method), yes)
+ 		DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
+ 		found_lock_method=yes
++		LIBS= -pthread -lfl  #dlopen is in libc
++	else
++		LIBS= -lfl  #dlopen is in libc
+ 	endif
+ 	YACC=yacc
+-	LIBS= -lfl  #dlopen is in libc
+ endif
+ 
+ ifeq ($(OS), openbsd)
