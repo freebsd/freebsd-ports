@@ -3,7 +3,7 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.8 1999/03/15 01:15:57 steve Exp $
+# $Id: Makefile,v 1.9 1999/04/02 03:30:03 steve Exp $
 #
 
 DISTNAME=	WMMail.app-0.63a
@@ -11,7 +11,7 @@ PKGNAME=	wmmail-0.63a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		PropList.1:${PORTSDIR}/devel/libPropList
