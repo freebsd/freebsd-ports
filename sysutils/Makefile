@@ -255,6 +255,7 @@
     SUBDIR += ndir
     SUBDIR += no-login
     SUBDIR += npadmin
+    SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
     SUBDIR += nut
     SUBDIR += nvclock
