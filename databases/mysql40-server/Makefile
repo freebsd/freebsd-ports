@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.21
+PORTVERSION=	4.0.22
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
@@ -30,6 +30,7 @@ PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
@@ -164,7 +165,7 @@ post-install:
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
+	@${SED} "s|%%RC_SUBR%%|${RC_SUBR}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/Flags
