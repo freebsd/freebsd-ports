@@ -455,7 +455,6 @@ share/WindowMaker/Pixmaps/xpdf.tif
 share/WindowMaker/Pixmaps/xterm.tif
 share/WindowMaker/Themes/Checker.themed/checker.xpm
 share/WindowMaker/Themes/Checker.themed/style
-@dirrm share/WindowMaker/Themes/Checker.themed
 share/WindowMaker/Themes/LeetWM.themed/LeetWM.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb2.jpg
@@ -463,13 +462,10 @@ share/WindowMaker/Themes/LeetWM.themed/LeetWMTile1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMtb1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMtb2.jpg
 share/WindowMaker/Themes/LeetWM.themed/style
-@dirrm share/WindowMaker/Themes/LeetWM.themed
 share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
-@dirrm share/WindowMaker/Themes/Night.themed
 share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
 share/WindowMaker/Themes/STEP2000.themed/style
-@dirrm share/WindowMaker/Themes/STEP2000.themed
 share/doc/wmicons/.README.swp
 share/doc/wmicons/CREDITS
 share/doc/wmicons/README.NeXT.XEmacs
@@ -479,3 +475,7 @@ share/doc/wmicons/README.vf_tif
 share/doc/wmicons/dwiconpack1.README
 share/doc/wmicons/dwiconpack2.README
 @dirrm share/doc/wmicons
+@dirrm share/WindowMaker/Themes/STEP2000.themed
+@dirrm share/WindowMaker/Themes/Night.themed
+@dirrm share/WindowMaker/Themes/LeetWM.themed
+@dirrm share/WindowMaker/Themes/Checker.themed
