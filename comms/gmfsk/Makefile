@@ -6,27 +6,40 @@
 #
 
 PORTNAME=	gmfsk
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	comms audio
-MASTER_SITES=	http://hes.iki.fi/pub/ham/unix/linux/hfmodems/
+MASTER_SITES=	http://gmfsk.connect.fi/
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	The Gnome MFSK terminal program
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 # This is pure evil but it looks like autoconf 2.53 has a bug in linking the
-# preprocessor include tests.  This is a work around.
-CONFIGURE_ARGS=		LDFLAGS="-L${LOCALBASE}/lib"
-# There is a bug in the code that causes the compile to fail if -O is not set.
-CFLAGS+=		-O -I${LOCALBASE}/include
-USE_GMAKE=		yes
-USE_AUTOCONF_VER=	253
-USE_GNOME=		libgnomeui
+# preprocessor include tests.  The following line is a work around.
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+USE_GMAKE=	yes
+USE_GNOME=	libgnomeui gnomehack gnomeprefix
+USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
+
+OPTIONS=	HAMLIB "Enable HAMLIB Support" On
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_HAMLIB)
+LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
+CONFIGURE_ARGS+=	--enable-hamlib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[$$][(]localstatedir[)]/lib/scrollkeeper|${SCROLLKEEPER_DIR}|g' \
+		${WRKSRC}/omf.make ${WRKSRC}/help/gmfsk/C/Makefile.in
 
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
