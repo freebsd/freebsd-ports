@@ -15,6 +15,7 @@ DISTNAME=	MOMspider-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	WWW Spider for multi-owner maintenance
 
 NO_BUILD=	yes
 momdir=		${PREFIX}/momspider

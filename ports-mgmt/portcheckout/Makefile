@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	Checkout and build ports and all depending ports
 
 USE_PERL5=	yes
 MAN1=		portcheckout.1
