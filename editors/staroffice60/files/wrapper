@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/editors/staroffice60/files/Attic/wrapper,v 1.1 2003-02-05 14:11:27 mbr Exp $
+
+sopath=%%PREFIX%%/staroffice6.0/program/
+program=`echo $0 | sed -e 's|.*-||'`
+
+case $program in
+$0)
+	exec $sopath/soffice "$@"
+	;;
+	*)
+	exec $sopath/$program "$@"
+	;;
+esac
