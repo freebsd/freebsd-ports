@@ -539,7 +539,6 @@ share/java/biojava-1.01/demos/seqviewer/TestSequencePanel.java
 %%PORTDOCS%%share/doc/biojava-1.01/api/overview-tree.html
 %%PORTDOCS%%share/doc/biojava-1.01/api/stylesheet.css
 %%PORTDOCS%%share/doc/biojava-1.01/api/index-all.html
-@dirrm share/java/classes
 @dirrm share/java/biojava-1.01/demos/acedb
 @dirrm share/java/biojava-1.01/demos/gff
 @dirrm share/java/biojava-1.01/demos/seq/db
