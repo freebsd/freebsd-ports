@@ -7,4 +7,4 @@ interpreters, and  additionally provide an easy  interface to on-the-fly
 generation of code too. No need to set  or append to a string, just do a
 simple puts.
 
-WWW:	http://www.oche.de/~akupries/soft/memchan/
+WWW:	http://memchan.sourceforge.net/

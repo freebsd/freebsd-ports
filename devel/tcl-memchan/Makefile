@@ -6,43 +6,38 @@
 #
 
 PORTNAME=	memchan
-PORTVERSION=	2.1p3
+PORTVERSION=	2.2a2
 CATEGORIES=	devel tcl83
-MASTER_SITES=	http://www.oche.de/~akupries/soft/memchan/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	memchan${PORTVERSION}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BUILD_DEPENDS=	tclsh${TCLV}:${PORTSDIR}/lang/tcl${TCLVND}
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
+BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
 USE_BZIP2=	yes
-USE_OPENSSL=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ARGS+=	-j2
 
-GNU_CONFIGURE=	yes
-PLIST_SUB+=	TCLV=${TCLV} TCLVND=${TCLVND}
-CONFIGURE_ARGS=	--with-tcl-include-dir=${PREFIX}/include/tcl${TCLV} \
-		--with-tcl-lib-dir=${PREFIX}/lib/tcl${TCLV}
+TCL_VER?=		8.3
+DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
 
-#ALL_TARGET=	library
+MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
-TCLV?=		8.3
-TCLVND=		${TCLV:S/.//}
-DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
+# Too bad, n is no longer an acceptable section for bsd.man.mk
+MANN=	memchan.n fifo.n fifo2.n null.n
 
-do-install:
-	${MKDIR} ${PREFIX}/lib/tcl${TCLV}/memchan
-	${INSTALL_DATA} ${WRKSRC}/libmemchan.so.1 ${PREFIX}/lib/
-	${SED} 's@%%PREFIX%%@${PREFIX}@g' < ${FILESDIR}/pkgIndex.tcl \
-		> ${PREFIX}/lib/tcl${TCLV}/memchan/pkgIndex.tcl
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/memchan
-	${CP} -pR ${WRKSRC}/../doc/html/* ${PREFIX}/share/doc/memchan/
-.endif
+post-install:
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
+#.ifndef(NOPORTDOCS)
+#	${MKDIR} ${DOCSDIR}
+#	${CP} -pR ${WRKSRC}/doc/html/* ${DOCSDIR}
+#.endif
 
 .include <bsd.port.mk>
+
+PLIST_SUB!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} env
