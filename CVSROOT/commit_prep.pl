@@ -101,7 +101,7 @@ sub check_version {
 	printf($NoId, $filename);
 	return(1);
     }
-    $bareid = (index($line, "\$\FreeBSD: \$") >= 0 &&
+    $bareid = (index($line, "\$\FreeBSD: \$") >= 0 ||
 		index($line, "\$\FreeBSD\$") >= 0);
     if (!$bareid && $line !~ /\$\FreeBSD: .* \$/) {
 	printf($BadId, $filename);
