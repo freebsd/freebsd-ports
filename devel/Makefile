@@ -126,6 +126,7 @@
     SUBDIR += p5-Curses
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
+    SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Peek
