@@ -1,0 +1,208 @@
+--- app/autodialog.c.old	Fri Nov 22 15:46:44 1996
++++ app/autodialog.c	Fri Nov 22 18:08:40 1996
+@@ -49,7 +49,7 @@
+ /*  Local functions  */
+ static AutoDialogItem dialog_find_item (AutoDialog, int);
+ static void dialog_delete_children (AutoDialog, AutoDialogItem);
+-static GtkWidget *dialog_create_image_menu (AutoDialog, char *, gpointer,
++static GtkWidget *dialog_create_image_menu (AutoDialog, AutoDialogItem, char *, gpointer,
+ 					    GtkWidget **, GtkWidget **);
+ 
+ /*  Callback and Update functions  */
+@@ -171,7 +171,8 @@
+ 	{
+ 	  dlgitem = tmplink->data;
+ 	  tmplink = tmplink->next;
+-
++    if (dlgitem->additional_data!=NULL)
++      xfree(dlgitem->additional_data);
+ 	  xfree (dlgitem);
+ 	}
+       free_list (dlg->items);
+@@ -206,6 +207,7 @@
+   item->item_ID = dlg->next_item_ID++;
+   item->item_type = type;
+   memset (item->data, 0, 32);
++  item->additional_data=NULL;
+   item->parent = parent_item;
+   item->children = NULL;
+   item->gtk_data = NULL;
+@@ -276,7 +278,7 @@
+       break;
+ 
+     case ITEM_IMAGE_MENU:
+-      item_widget = dialog_create_image_menu (dlg, data, extra, &option_menu, &menu);
++      item_widget = dialog_create_image_menu (dlg, item, data, extra, &option_menu, &menu);
+       break;
+ 
+     case ITEM_SCALE:
+@@ -500,7 +502,8 @@
+ 	}
+       else
+ 	gtk_widget_destroy (item->widget);
+-
++      if (item->additional_data!=NULL)
++        xfree(item->additional_data);
+       xfree (item);
+     }
+ }
+@@ -577,9 +580,32 @@
+     free_list (item->children);
+ }
+ 
++typedef struct {
++  GtkWidget *widget;
++  long data[2];
++} _MenuItemData;
++
++gint CheckConstrains(GImage *gimage,GImage *constrain,guchar constraint)
++{
++  if (((constraint & IMAGE_CONSTRAIN_RGB) &&
++       (gimage_type (gimage) == RGB_GIMAGE ||
++	      gimage_type (gimage) == RGBA_GIMAGE)) ||
++	    ((constraint & IMAGE_CONSTRAIN_GRAY) &&
++	     (gimage_type (gimage) == GRAY_GIMAGE ||
++	      gimage_type (gimage) == GRAYA_GIMAGE)) ||
++	    ((constraint & IMAGE_CONSTRAIN_INDEXED) &&
++	     (gimage_type (gimage) == INDEXED_GIMAGE ||
++	      gimage_type (gimage) == INDEXEDA_GIMAGE)))
++    if ((gimage->width == constrain->width) &&
++	      (gimage->height == constrain->height))
++      return(TRUE);
++  return(FALSE); 
++}
++
+ static GtkWidget *
+-dialog_create_image_menu (dlg, title, image, option_menu, menu)
++dialog_create_image_menu (dlg, item, title, image, option_menu, menu)
+      AutoDialog dlg;
++     AutoDialogItem item;
+      char *title;
+      void *image;
+      GtkWidget **option_menu;
+@@ -597,8 +623,8 @@
+   char constraint;
+   link_ptr tmp;
+   long ID;
+-  long *data;
+   int num_items = 0;
++  _MenuItemData *ItemData;
+ 
+   hbox = gtk_hbox_new (FALSE, 4);
+   gtk_container_set_border_width (hbox, 0);
+@@ -614,43 +640,55 @@
+   constrain = (ID == 0) ? image : gimage_get_ID (ID);
+ 
+   tmp = image_list;
++
++  /* Check how many images fit the criteria */
++  /* ====================================== */
++
+   while (tmp)
+     {
+       gimage = tmp->data;
+       tmp = next_item (tmp);
+-
+-      if (((constraint & IMAGE_CONSTRAIN_RGB) &&
+-	   (gimage_type (gimage) == RGB_GIMAGE ||
+-	    gimage_type (gimage) == RGBA_GIMAGE)) ||
+-	  ((constraint & IMAGE_CONSTRAIN_GRAY) &&
+-	   (gimage_type (gimage) == GRAY_GIMAGE ||
+-	    gimage_type (gimage) == GRAYA_GIMAGE)) ||
+-	  ((constraint & IMAGE_CONSTRAIN_INDEXED) &&
+-	   (gimage_type (gimage) == INDEXED_GIMAGE ||
+-	    gimage_type (gimage) == INDEXEDA_GIMAGE)))
+-	if ((gimage->width == constrain->width) &&
+-	    (gimage->height == constrain->height))
+-	  {
+-	    image_name = prune_filename (gimage_filename (gimage));
+-	    menu_item_label = (char *) xmalloc (strlen (image_name) + 15);
+-	    sprintf (menu_item_label, "%s-%d", image_name, gimage->ID);
+-	    menu_item = gtk_menu_item_new_with_label (menu_item_label);
+-	    gtk_callback_add (gtk_menu_item_get_state (menu_item),
+-			      dialog_image_menu_callback, dlg);
+-	    gtk_container_add (*menu, menu_item);
+-	    gtk_widget_show (menu_item);
+-
+-	    data = xmalloc (sizeof (long) * 2);
+-	    data[0] = dlg->next_item_ID - 1;
+-	    data[1] = (gimage->ID == constrain->ID) ? 0 : gimage->ID;
+-	    dlg->additional_data = data;
+-
+-	    xfree (menu_item_label);
+-	    num_items ++;
+-	  }
++      if (CheckConstrains(gimage,constrain,constraint)==TRUE)
++        num_items++;      
+     }
+ 
+-  if (!num_items)
++  /* If we found any matches, allocate memory to hold      */
++  /* callback data. Put a pointer in "item" to avoid leak. */
++  /* ===================================================== */
++  
++  if (num_items>0)
++    {
++      ItemData=(_MenuItemData *)xmalloc(sizeof(_MenuItemData)*(size_t)num_items);
++      item->additional_data=ItemData;
++
++      tmp=image_list;
++      num_items=0;
++      while (tmp)
++        {
++          gimage = tmp->data;
++          tmp = next_item (tmp);
++          if (CheckConstrains(gimage,constrain,constraint)==TRUE)
++	          {
++	            image_name = prune_filename (gimage_filename (gimage));
++	            menu_item_label = (char *) xmalloc (strlen (image_name) + 15);
++	            sprintf (menu_item_label, "%s-%d", image_name, gimage->ID);
++      
++              ItemData[num_items].widget=hbox;
++              ItemData[num_items].data[0] = dlg->next_item_ID - 1;
++              ItemData[num_items].data[1] = (gimage->ID == constrain->ID) ? 0 : gimage->ID;
++      
++	            menu_item = gtk_menu_item_new_with_label (menu_item_label);
++	            gtk_callback_add (gtk_menu_item_get_state (menu_item),dialog_image_menu_callback,
++                (gpointer)&ItemData[num_items]);
++	            gtk_container_add (*menu, menu_item);
++	            gtk_widget_show (menu_item);
++      
++	            xfree (menu_item_label);
++	            num_items ++;
++	          }
++        }
++    }
++  else
+     {
+       menu_item = gtk_menu_item_new_with_label ("none");
+       gtk_container_add (*menu, menu_item);
+@@ -669,14 +707,14 @@
+      gpointer client_data;
+      gpointer call_data;
+ {
++  _MenuItemData *ItemData;
+   AutoDialog dlg;
+-  long *data;
+ 
+-  dlg = client_data;
+-  data = (long *) dlg->additional_data;
++  ItemData=(_MenuItemData *)client_data;
++  dlg = (AutoDialog) gtk_widget_get_user_data (ItemData->widget);
+ 
+   if (dlg->callback)
+-    (* dlg->callback) (dlg->dialog_ID, data[0], dlg->callback_data, &data[1]);
++    (* dlg->callback) (dlg->dialog_ID,ItemData->data[0],dlg->callback_data,&ItemData->data[1]);
+ }
+ 
+ static void
+--- app/autodialog.h.old	Fri Nov 22 15:46:47 1996
++++ app/autodialog.h	Fri Nov 22 17:21:19 1996
+@@ -49,6 +49,7 @@
+   int             item_ID;
+   int             item_type;
+   char            data[32];
++  void           *additional_data;
+   AutoDialogItem  parent;
+   link_ptr        children;
+   GtkWidget      *widget;
