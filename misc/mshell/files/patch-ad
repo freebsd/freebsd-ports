@@ -45,3 +45,32 @@
  			}
  			else {
  				tmpword[0] = EOS;
+--- mshell.c~	Tue Aug 19 16:42:36 2003
++++ mshell.c	Tue Aug 19 16:47:53 2003
+@@ -46,7 +46,7 @@
+ 	signal (SIGQUIT, SIG_IGN);	/* ignore all ^\ interrupts */
+ 	signal (SIGTSTP, SIG_IGN);	/* ignore all ^Z interrupts */
+ 	signal (SIGPIPE, SIG_IGN);	/* ignore dead pipes */
+-	log("enter", m);
++	Log("enter", m);
+ 
+ 	while (TRUE) {
+ 
+@@ -85,7 +85,7 @@
+ 				printf ("\tSelect choice [or help, x, top, bye]: ");
+ 			opt[0] = 0;
+ 			read_input_line (opt);
+-			log("	", opt);
++			Log("	", opt);
+ 			invalid_option = FALSE;
+ 			putchar('\n');
+ 
+@@ -170,7 +170,7 @@
+ 			for (i = 0; i < LINES; i++)
+ 				if (menu_array[i])
+ 					free(menu_array[i]);
+-			log("exit", m);
++			Log("exit", m);
+ 			return;
+ 		}
+ 		else if (strcmp(opt, "T") == 0 || strcmp(opt, "top") == 0) {
