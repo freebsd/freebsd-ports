@@ -692,6 +692,7 @@ camediaplay	ports/graphics/camediaplay
 caml-light	ports/lang/caml-light
 camlp4		ports/devel/camlp4
 camserv		ports/multimedia/camserv
+cantus		ports/audio/cantus
 cap		ports/net/cap
 carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
