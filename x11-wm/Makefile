@@ -67,6 +67,7 @@
     SUBDIR += sapphire
     SUBDIR += sapphire-themes
     SUBDIR += sawfish
+    SUBDIR += sawfish2
     SUBDIR += scwm
     SUBDIR += spager
     SUBDIR += swm

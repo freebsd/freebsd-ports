@@ -106,6 +106,8 @@ share/rep/%%VERSION%%/lisp/rep/data/string-util.jl
 share/rep/%%VERSION%%/lisp/rep/data/string-util.jlc
 share/rep/%%VERSION%%/lisp/rep/data/symbol-table.jl
 share/rep/%%VERSION%%/lisp/rep/data/symbol-table.jlc
+share/rep/%%VERSION%%/lisp/rep/data/trie.jl
+share/rep/%%VERSION%%/lisp/rep/data/trie.jlc
 share/rep/%%VERSION%%/lisp/rep/i18n/xgettext.jl
 share/rep/%%VERSION%%/lisp/rep/i18n/xgettext.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers.jl
@@ -175,6 +177,8 @@ share/rep/%%VERSION%%/lisp/rep/threads/message-port.jl
 share/rep/%%VERSION%%/lisp/rep/threads/message-port.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/mutex.jl
 share/rep/%%VERSION%%/lisp/rep/threads/mutex.jlc
+share/rep/%%VERSION%%/lisp/rep/threads/proxy.jl
+share/rep/%%VERSION%%/lisp/rep/threads/proxy.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/utils.jl
 share/rep/%%VERSION%%/lisp/rep/threads/utils.jlc
 share/rep/%%VERSION%%/lisp/rep/user.jl

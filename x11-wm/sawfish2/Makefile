@@ -5,50 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sawfish
-PORTVERSION=	1.0.1
+PORTNAME=	sawfish2
+PORTVERSION=	2002.05.02
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/sawfish
-#DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+DISTNAME=	sawfish-${PORTVERSION:S/./-/g}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
-BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
-RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep2
+BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
+RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
+PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=2.0.pre1
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \
-		--datadir=${PREFIX}/share
+		--datadir=${PREFIX}/share \
+		--enable-capplet \
+		--disable-themer
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_GNOME
-.undef WITHOUT_ALL
-WITH_GNOME=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-CONFIGURE_ARGS+=--enable-capplet
-.else
-CONFIGURE_ARGS+=--disable-capplet \
-		--disable-gnome-widgets \
-		--without-gdk-pixbuf
-.endif
 
 pre-patch:
 	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
@@ -65,4 +51,4 @@ post-install:
 	--entry="* sawfish: (sawfish).           sawfish programming manual" \
 	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
