@@ -164,6 +164,7 @@
     SUBDIR += kdegraphics3
     SUBDIR += kisomandel
     SUBDIR += kludge3d
+    SUBDIR += kpovmodeler
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
