@@ -1,5 +1,5 @@
---- Makefile	Tue May 23 04:17:09 2000
-+++ Makefile.new	Fri Jun  2 11:03:55 2000
+--- Makefile.orig	Tue May 23 03:17:09 2000
++++ Makefile	Sun Aug  6 21:52:07 2000
 @@ -1,8 +1,9 @@
  # Makefile for mp3_check
  
@@ -8,7 +8,7 @@
 -OPT_FLAGS = -O3 
 +CC ?= gcc
 +LOCALBASE ?= /usr/local
-+CFLAGS += -Wall -Werror -I${LOCALBASE}/include
++CFLAGS += -Wall -I${LOCALBASE}/include
 +OPT_FLAGS = -L${LOCALBASE}/lib -lgnugetopt
  OBJS = 	mp3_check.o \
  	mp3_check_misc.o
