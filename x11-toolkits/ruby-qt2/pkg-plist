@@ -13,9 +13,24 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/application_ruby/fileopen.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/application_ruby/fileprint.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/application_ruby/filesave.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/box/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/box/box.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/box/glbox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/box/globjwin.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/buttongroups/README.orig
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/buttongroups/buttongroups_lib.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/buttongroups/buttongroups.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/blend.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/blendshadow.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/butterfly.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/canvas.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/canvas_lib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/in.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/makeimg.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/out.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/outshade.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/qt-trans.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/canvas/qtlogo.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/classtree.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows3.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows4.rb
@@ -31,26 +46,41 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test3.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/forever/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/domexample/domtest1.cc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/domexample/domtest1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/domexample/quotes.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/forever/forever.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/forever/readme
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/gear/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/gear/gear.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/gear/gear2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/glpixmap/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/glpixmap/glbox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/glpixmap/globjwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/glpixmap/glpixmap.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/hello/README.orig
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/hello/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/hello_ruby/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/hello_ruby/hello_orig.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/hello_ruby/hellojp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/.history
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/.bookmarks
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/back.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/forward.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/home.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/helpwindow_lib.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/helpwindow.h.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/helpviewer.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlviewer.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlwindow_lib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files/logo52.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files/ycount(1).gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files/ycount(2).gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files/ycount(3).gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files/ycount.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.html
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/iconview/iconview.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/layout/layout.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/listview/flag_ja.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/listview/listview.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/NewFile
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/document.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/fileopen.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/fileprint.xpm
@@ -60,8 +90,43 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/mdi.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/movies/trolltech.gif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/movies/movies.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/popup/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/popup/popup.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/popup/readme
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qtable/table.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example1/ex1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example1/ex1win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example1/example1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example1/example1.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/ex2jwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/ex2win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/ex2win2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/example2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/example2.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/example2j.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/example2j.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2/jplabel.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example3/ex3win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example3/example3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example3/example3.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example4/ex4win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example4/example4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example4/example4.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example5/ex5win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example5/example5.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example5/example5.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/ex6.cpp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/ex6.h
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/ex6.obj
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/ex6win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/ex6win2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/example6.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/example6.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/temp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6/wx6win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/formmaker.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/readme.jp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/readme.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/qui2rb/ui2rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/richtext/marble.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/richtext/richtext.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/richtext/richtext_lib.rb
@@ -73,10 +138,48 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/filesave.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/rubyedit2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/rubyedit2_lib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/saxsample/sample.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/saxsample/sample1.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/saxsample/sax.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble_win.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sharedbox/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sharedbox/glbox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sharedbox/globjwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sharedbox/sharedbox.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal_jp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/record
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/sound.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/sounds/1.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/sounds/2.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/sounds/3.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/sound/sounds/4.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/table/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/table/qtlogo.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/table/table.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/gllogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/globjwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/gltexobj.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/qtlogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/gllogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/globjwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/gltexobj.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/qtlogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/book.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/book.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/book.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/gllogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/globjwin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/gltexobj.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/qtlogo.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby/texture.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/dclock_lib.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/dclock_sub.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/iqt2_lib.rb
@@ -103,9 +206,23 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/image.any
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/picture.any
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/xform.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader-with-features/fnord.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader-with-features/structureparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader-with-features/tagreader.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader/animals.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader/structureparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader/tagreader.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/marble.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/quoteparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/quotes.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/richtext.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xmlquotes/xmlquotes.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/aclock
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/action
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/application_ruby
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/box
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/canvas
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/buttongroups
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/classbrows
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/codec
@@ -113,23 +230,49 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/cursor
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/dclock
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/domexample
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/forever
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/gear
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/glpixmap/
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello_ruby
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/helpviewer/pc5409a.files
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/helpviewer
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/iconview
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/layout
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/listview
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/mdi
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/movies
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/popup
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qtable
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example1
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example2
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example3
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example4
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example5
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples/example6
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb/examples
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qui2rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/richtext
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/rubyedit
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/saxsample
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/scribble2
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/sharedbox
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/signal
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/sound/sounds
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/sound
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/table
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture_ruby
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/texture
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/thread
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/translate
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/widgets
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xform
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader-with-features
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xml/tagreader
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xml
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xmlquotes
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2
 %%PORTDOCS%%%%RUBY_DOCDIR%%/qt2/tutorial/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/qt2/tutorial/t1/t1.rb

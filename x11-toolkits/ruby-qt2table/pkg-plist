@@ -1,8 +1,1 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2table.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2table/qtable/table.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2table/table/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2table/table/table.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2table/table/qtlogo.xpm 
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2table/qtable
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2table/table
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2table

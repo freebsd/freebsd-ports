@@ -29,11 +29,5 @@ CONFIGURE_ARGS=	${RUBY_QT2_CONFIGURE_ARGS}
 MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-.endif
-
 .include "${.CURDIR}/../ruby-qt2/Makefile.common"
 .include <bsd.port.mk>
