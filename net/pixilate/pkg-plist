@@ -1,1 +1,3 @@
 bin/pixilate
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
