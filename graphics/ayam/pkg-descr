@@ -1,0 +1,12 @@
+Ayam is a free 3D modeling environment for the RenderMan Interface
+(formerly known as "The Mops"). Ayam is primarily aimed at the
+platforms BMRT (Blue Moon Rendering Tools, a RenderMan compliant
+renderer by Larry Gritz (Exluna) runs on. As BMRT are available
+in FreeBSD only as Linux binaries, Ayam will be compiled with code
+from the Affine Toolkit with limited functionality.
+No parsing of slc compiled shaders will be possible.
+
+WWW: http://www.ayam3d.org/
+
+- Igor Pokrovsky
+tiamat@comset.net
