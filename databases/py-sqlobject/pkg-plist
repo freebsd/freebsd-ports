@@ -19,12 +19,6 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/dbmconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/dbmconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/dbm/dbmconnection.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyo
@@ -37,6 +31,9 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/include/validators.py
 %%PYTHON_SITELIBDIR%%/sqlobject/include/validators.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/include/validators.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/index.py
+%%PYTHON_SITELIBDIR%%/sqlobject/index.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/index.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.py
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.pyo
@@ -81,17 +78,18 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/Authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/DeveloperGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/DeveloperGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/News.html
 %%PORTDOCS%%%%DOCSDIR%%/News.txt
-%%PORTDOCS%%%%DOCSDIR%%/Plan06.html
-%%PORTDOCS%%%%DOCSDIR%%/Plan06.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.html
 %%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.txt
 %%PORTDOCS%%%%DOCSDIR%%/SQLObject.html
 %%PORTDOCS%%%%DOCSDIR%%/SQLObject.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.html
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/default.css
 %%PORTDOCS%%%%EXAMPLESDIR%%/codebits.py
@@ -113,5 +111,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/maxdb
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/include
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/firebird
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/dbm
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject
