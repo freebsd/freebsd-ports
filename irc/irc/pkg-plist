@@ -1,0 +1,9 @@
+@cwd /usr/local
+bin/chkconf
+bin/irc
+bin/ircd
+lib/ircd/example.conf
+lib/ircd/ircd.m4
+lib/ircd/ircd.motd
+man/man1/irc.1
+man/man8/ircd.8
