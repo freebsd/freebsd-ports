@@ -4429,6 +4429,7 @@ merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
 mesg		src/usr.bin/mesg
 mesgui		ports/x11-toolkits/mesgui
+meshviewer	ports/graphics/meshviewer
 mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
 messarge	ports/russian/messarge
