@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- po/Makefile.in	2001/07/24 08:40:08	1.1
++++ po/Makefile.in	2001/07/24 08:40:37
+@@ -215,10 +215,10 @@
+ 
+ 
+ .po.mo: 
+-	msgfmt -o $@ $<
++	msgfmt-new -o $@ $<
+ 
+ WindowMaker.pot: $(POTFILES)
+-	xgettext --default-domain=WindowMaker \
++	$(XGETTEXT) --default-domain=WindowMaker \
+ 	--add-comments --keyword=_ $(POTFILES)
+ 	if cmp -s WindowMaker.po WindowMaker.pot; then \
+ 	    rm -f WindowMaker.po; \

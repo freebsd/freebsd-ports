@@ -257,6 +257,7 @@ share/WindowMaker/plmenu.fi
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
+share/WindowMaker/plmenu.ja
 share/WindowMaker/plmenu.ko
 share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
@@ -298,6 +299,7 @@ share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
+share/locale/sk/LC_MESSAGES/WINGs.mo
 share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
 share/locale/sv/LC_MESSAGES/WindowMaker.mo
@@ -306,6 +308,7 @@ share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
+@exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
