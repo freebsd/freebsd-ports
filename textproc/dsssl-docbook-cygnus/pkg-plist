@@ -1,0 +1,12 @@
+bin/db2dvi
+bin/db2html
+bin/db2pdf
+bin/db2ps
+bin/db2rtf
+share/sgml/docbook/dsssl/cygnus/ChangeLog
+share/sgml/docbook/dsssl/cygnus/bosak-db3.dsl
+share/sgml/docbook/dsssl/cygnus/catalog
+share/sgml/docbook/dsssl/cygnus/cygnus-both.dsl
+share/sgml/docbook/dsssl/cygnus/dbtohtml.dsl
+@dirrm share/sgml/docbook/dsssl/cygnus
+@unexec rmdir %D/share/sgml/docbook/dsssl 2>/dev/null || true
