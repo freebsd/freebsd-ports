@@ -4,6 +4,11 @@ You now need to add an alias to apache's httpd.conf pointing to
 web browser, or create a VirtualHost with DocumentRoot set to that
 directory.
 
+For SquirrelMail to work properly you will need to make sure the
+following options are set in your php.ini file:
+register_globals = On
+file_uploads = On
+
 In order to do your administrative configuration you need to 
 cd %%PREFIX%%/squirrelmail && ./configure
 SquirrelMail will not work until this has been done.
