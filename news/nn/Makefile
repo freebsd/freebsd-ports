@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.6 1995/04/11 23:29:43 asami Exp $
+# $Id: Makefile,v 1.7 1995/04/15 03:11:37 ache Exp $
 #
 
 DISTNAME=	nn-6.5.0.b3
@@ -21,5 +21,8 @@ pre-build:
 pre-install:
 	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
 	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+
+post-install:
+	@echo Put your NNTP host into ${PREFIX}/lib/news/nntp_server file
 
 .include <bsd.port.mk>
