@@ -129,7 +129,7 @@ post-install:
 .for file in ${DOC2}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/SASL
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${PREFIX}/share/doc
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${PREFIX}/share/doc/SASL
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
 .endfor
