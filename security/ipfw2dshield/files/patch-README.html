@@ -1,0 +1,25 @@
+--- README.html.orig	Tue Jun  1 23:51:53 2004
++++ README.html	Wed Jun  9 12:46:58 2004
+@@ -38,9 +38,22 @@
+ /usr/local/bin/ipaddr<br>
+ ~/.ipfw2dshield.rc.sample
+ </dd></dl>
++<b>Note:</b> For the FreeBSD ports version the sample configuration file is
++instead
++<dl><dt><dt>
++<dd>
++/usr/local/etc/ipfw2dshield.rc.sample
++</dd></dl>
+ Copy or rename the sample configuration file to <em>~/.ipfw2dshield.rc</em>
+ and edit this latter file to fit your local demands. Please read section 2
+ below for an explanation of the configuration entries.
++<p>
++
++<b>Note:</b> The FreeBSD ports version does also accept
++<nobr><em>/usr/local/etc/ipfw2dshield.rc</em></nobr>
++as its configuration file. However, the preference is for
++<nobr><em>~/.ipfw2dshield.rc</em></nobr>
++in case that both these files exist.
+ <p>
+ 
+ The script creates a stampfile in <em>/var/tmp</em> where it stores date 
