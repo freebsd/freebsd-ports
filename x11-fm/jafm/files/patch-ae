@@ -1,0 +1,20 @@
+--- deskicon.cc.orig	Sat Feb 26 19:45:43 2000
++++ deskicon.cc	Sat Feb 26 19:46:48 2000
+@@ -90,7 +90,7 @@
+ 		     ShapeSet) ; 
+   //  setGeometry (icon->rect()) ; // Qt doesn't know we used XShape!
+   // make room for label
+-  QRect *r = &icon->get_label_rect () ;
++  QRect *r = (QRect *)&icon->get_label_rect () ;
+   QBitmap bm (r->width(), r->height()) ;
+   QPainter p (&bm) ;
+   p.fillRect (0,0,r->width(),r->height(), color1) ;
+@@ -177,7 +177,7 @@
+ {
+   // if WId is us, act accordingly
+   if (winId() == w) {
+-    icon->drag_drop_action (diList) ;
++    icon->drag_drop_action ((QListT<DeskIcon> &)diList) ;
+     icon->set_drag_drop (false) ;
+     repaint () ;
+   }

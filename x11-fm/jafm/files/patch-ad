@@ -1,0 +1,37 @@
+--- icondesk.cc.orig	Sat Feb 26 19:43:45 2000
++++ icondesk.cc	Sat Feb 26 19:45:22 2000
+@@ -29,6 +29,7 @@
+ #include <iostream.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <ctype.h>
+ #include <errno.h>
+ #include <dirent.h>
+ 
+@@ -526,7 +527,7 @@
+ 	it.current()->set_embossed (false) ;
+     } 
+     
+-    dragDropIcon->drag_drop_action (dic_list) ; // do it
++    dragDropIcon->drag_drop_action ((QListT<DeskIcon> &)dic_list) ; // do it
+     unHighlightDragDrop () ;
+     
+     emit signal_refresh () ; // unnecessary, but can make things look zippier
+@@ -831,7 +832,7 @@
+   // ok, now has a file been added?
+   
+   dir_pointer = opendir (".") ;
+-  while (dp = readdir (dir_pointer)) {
++  while ((dp = readdir (dir_pointer))) {
+     if (!strcmp (".", dp->d_name) || 
+ 	!strcmp ("..", dp->d_name)) 
+       continue ;
+@@ -925,7 +926,7 @@
+     QListIterator<Icon> it (*icon_list) ;
+     for ( ; it.current() ; ++it) {
+       if (it.current()->get_label() == f.fileName()) {
+-	it.current()->new_file_info (newf) ;
++	it.current()->new_file_info ((QFileInfo &)newf) ;
+ 	single_repaint (it.current()) ;
+ 	return ;
+       }

@@ -1,0 +1,82 @@
+--- Makefile.orig	Thu Oct 23 21:44:05 1997
++++ Makefile	Fri May 24 04:44:50 2002
+@@ -5,12 +5,13 @@
+ # requires GNU make
+ 
+ 
+-INSTALLDIR=/usr/local
++INSTALLDIR=${PREFIX}
+ #INSTALLDIR=/nb/rupert
+ 
+-JAFMDIR=$(INSTALLDIR)/lib/jafm
++JAFMDIR=$(INSTALLDIR)/share/jafm
+ ZICDIR=$(JAFMDIR)/zic
+ APPLDIR=$(JAFMDIR)/appl
++QTDIR=${X11BASE}
+ 
+ 
+ .SUFFIXES: .cc .o .cc.o
+@@ -26,15 +27,15 @@
+ M%.cc:	%.hh
+ 	$(MOC) $< -o $@
+ 
+-CC  = gcc
+-MOC = ${QTDIR}/bin/moc
+-Cxx =g++ 
+-
+-INCFLAGS=-I${QTDIR}/include
+-CxxFLAGS= -Wall #-pipe
+-CFLAGS= -Wall #-pipe
+-OPT=-g
+-DEFINES=
++CC  ?= gcc
++MOC = ${QTDIR}/bin/moc1
++Cxx ?= g++ 
++
++INCFLAGS = -I${QTDIR}/include/X11/qt1 -I${QTDIR}/include
++CxxFLAGS ?= -Wall #-pipe
++CFLAGS ?= -Wall #-pipe
++#OPT = -g
++#DEFINES =
+ # FILES
+ 
+ HEADERS= iconview.hh menus.hh icon.hh dirbar.hh icondesk.hh deskicon.hh
+@@ -50,28 +51,21 @@
+ 
+ MOBJS=  Miconview.o Mmenus.o Micon.o Mdirbar.o Micondesk.o Msfm.o Mdeskicon.o
+ 
+-LIBDIR=-L${QTDIR}/lib -L/usr/X11/lib
++LIBDIR=-L${QTDIR}/lib
+ 
+ jafm	: $(OBJS) $(MOBJS)
+-	$(Cxx) $(CxxLFAGS) -o jafm $(OBJS) $(MOBJS) $(LIBDIR) -lqt -lX11 -lXext
++	$(Cxx) $(CxxLFAGS) -o jafm $(OBJS) $(MOBJS) $(LIBDIR) -lqt1 -lX11 -lXext
+ 
+ # must do this properly next time...
+ install: jafm
+-	mkdir -p -m 755 $(JAFMDIR)
+-	mkdir -p -m 755 $(INSTALLDIR)/bin
+-	mkdir -p -m 755 $(APPLDIR)
+-	mkdir -p -m 755 $(ZICDIR) 
+-	cp system.jafmrules $(JAFMDIR)/system.jafmrules
+-	chmod 755 $(JAFMDIR)/system.jafmrules
+-	cp jafm $(INSTALLDIR)/bin/jafm
+-	chmod 755 $(INSTALLDIR)/bin/jafm
+-	cp zic/*.zic $(ZICDIR)
+-	chmod 644 $(ZICDIR)/*
+-	cp  appl/* $(APPLDIR)
+-	chmod 644 $(APPLDIR)/*
+-	mkdir -p -m 755 $(INSTALLDIR)/man/man8
+-	cp jafm.8 $(INSTALLDIR)/man/man8
+-	chmod 644 $(INSTALLDIR)/man/man8/jafm.8
++	mkdir -p $(JAFMDIR)
++	mkdir -p $(APPLDIR)
++	mkdir -p $(ZICDIR) 
++	${BSD_INSTALL_DATA} system.jafmrules $(JAFMDIR)/system.jafmrules
++	${BSD_INSTALL_PROGRAM} jafm $(INSTALLDIR)/bin/jafm
++	${BSD_INSTALL_DATA} zic/*.zic $(ZICDIR)
++	${BSD_INSTALL_DATA} appl/* $(APPLDIR)
++	${BSD_INSTALL_MAN} jafm.8 $(INSTALLDIR)/man/man8
+ 
+ dep: $(MSOURCES)
+ 	makedepend -I. -I$(QTDIR)/include $(SOURCES) $(MSOURCES) >/dev/null 2>&1

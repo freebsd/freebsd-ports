@@ -1,0 +1,21 @@
+--- zicon.y.orig	Wed Sep 24 00:09:52 1997
++++ zicon.y	Sat Feb 26 19:51:35 2000
+@@ -3,6 +3,7 @@
+ /* we pass a pointer to the painter into the  */
+ #define YYPARSE_PARAM p
+ 
++#include <stdlib.h>
+ #include "icon.hh"
+ 
+ #define PROGRAM	((IconProgram *)p)
+@@ -13,6 +14,10 @@
+ int bufAlloc = 160 ;
+ short int *buffer = new short int[bufAlloc] ;
+ 
++extern int yyerror(char *);
++extern "C" {
++	extern int yylex(void);
++};
+ 
+ %}	
+ 

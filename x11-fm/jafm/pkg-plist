@@ -1,0 +1,30 @@
+bin/jafm
+share/jafm/appl/Applications
+share/jafm/zic/core.zic
+share/jafm/zic/trash.zic
+share/jafm/zic/targz.zic
+share/jafm/zic/skip.zic
+share/jafm/zic/rubbish.zic
+share/jafm/zic/printer2.zic
+share/jafm/zic/printer.zic
+share/jafm/zic/print.zic
+share/jafm/zic/people.zic
+share/jafm/zic/pencil.zic
+share/jafm/zic/old-exec.zic
+share/jafm/zic/object.zic
+share/jafm/zic/null.zic
+share/jafm/zic/netscape.zic
+share/jafm/zic/netsc.zic
+share/jafm/zic/nav.zic
+share/jafm/zic/mail.zic
+share/jafm/zic/folder.zic
+share/jafm/zic/exec.zic
+share/jafm/zic/edit.zic
+share/jafm/zic/doc.zic
+share/jafm/zic/dir.zic
+share/jafm/zic/cswap.zic
+share/jafm/zic/try.zic
+share/jafm/system.jafmrules
+@dirrm share/jafm/zic
+@dirrm share/jafm/appl
+@dirrm share/jafm

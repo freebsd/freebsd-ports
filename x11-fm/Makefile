@@ -13,6 +13,7 @@
     SUBDIR += gentoo
     SUBDIR += gnome-commander
     SUBDIR += gnomemc
+    SUBDIR += jafm
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
     SUBDIR += nautilus2
