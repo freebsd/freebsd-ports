@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://httpd.apache.org/dist/httpd/ \
 		http://www.cybernic.com/mirror/dist/httpd/ \
