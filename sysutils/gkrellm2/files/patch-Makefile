@@ -1,0 +1,23 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Fri Aug  2 11:56:08 2002
++++ Makefile	Fri Aug 30 01:12:10 2002
+@@ -74,13 +74,13 @@
+ #GTOP_LIBS_D = -L$(GTOP_PREFIX)/lib -lgtop -lgtop_common -lgtop_sysdeps
+ #export GTOP_INCLUDE GTOP_LIBS GTOP_LIBS_D
+ 
+-INSTALLDIR = /usr/local/bin
+-SINSTALLDIR = $(INSTALLDIR)
+-MANDIR = /usr/local/share/man/man1
+-SMANDIR = $(MANDIR)
++INSTALLDIR ?= /usr/local/bin
++SINSTALLDIR ?= $(INSTALLDIR)
++MANDIR ?= /usr/local/share/man/man1
++SMANDIR ?= $(MANDIR)
+ MANMODE = 644
+ MANDIRMODE = 755
+-INCLUDEDIR = /usr/local/include
++INCLUDEDIR ?= /usr/local/include
+ INCLUDEMODE = 644
+ INCLUDEDIRMODE = 755
+ 

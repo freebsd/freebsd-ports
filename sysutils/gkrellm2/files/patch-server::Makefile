@@ -1,0 +1,16 @@
+Index: server/Makefile
+diff -u server/Makefile.orig server/Makefile
+--- server/Makefile.orig	Tue Aug  6 21:56:11 2002
++++ server/Makefile	Thu Aug 29 17:03:46 2002
+@@ -13,9 +13,9 @@
+ GLIB12_INCLUDE = `glib-config --cflags gthread`
+ GLIB12_LIB = `glib-config --libs gthread`
+ 
+-FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE) -I$(LOCALBASE)/include
+ ifeq ($(glib12),1)
+-FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE) -I$(LOCALBASE)/include
+ endif
+ 
+ FLAGS+= $(PTHREAD_INC)

@@ -1,12 +1,11 @@
 GKrellM - GNU (or Gtk) Krell Monitors (or Meters)
-          (with an understood 'I' somewhere in appreciation for Imlib)
 =======================================================================
 
 Author:	Bill Wilson
 Email:  bill@gkrellm.net
 WWW:    http://gkrellm.net
 
-Copyright (c) 1999-2000 by Bill Wilson.  This program is free software
+Copyright (c) 1999-2002 by Bill Wilson.  This program is free software
 which I release under the GNU General Public License.
 Read the COPYRIGHT file for more info.
 
@@ -29,7 +28,7 @@ GKrellM Features
 	* Clock/calendar and hostname display.
 	* APM laptop battery monitor.
 	* CPU/motherboard temperature/fan/voltages display if lm_sensors modules
-	  installed.
+	  installed.  Warnings and alarms can be set.
 
 	* Multiple monitors managed by a single process to reduce system load.
 	* A timer button that can execute PPP or ISDN logon/logoff scripts.
@@ -40,6 +39,7 @@ GKrellM Features
 	  is used for CPU sys time, disk write, load, and net transmit data.
 	* Commands can be configured to run when monitor labels are clicked.
 	* GKrellM is plugin capable so special interest monitors can be created.
+	* Data can be collected from a gkrellmd server running on a remote machine.
 	* Many themes are available.
 
 
