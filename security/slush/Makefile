@@ -9,9 +9,8 @@ PORTNAME=	slush
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/kris/ \
-		http://violet.ibs.com.au/slush/files/ \
-		ftp://www.dis.org/pub/Security/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	crypt/SSL/slush
 
 MAINTAINER=	shipley@dis.org
 COMMENT=	A telnet-like application which uses a secure SSL channel
