@@ -3,7 +3,7 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/28 12:42:08 andreas Exp $
+# $Id: Makefile,v 1.2 1998/07/30 13:23:24 andreas Exp $
 
 DISTNAME=	webalizer-1.12-09-src
 PKGNAME=	webalizer-1.12
@@ -18,6 +18,38 @@ BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 BIN1=		webalizer
 WRKSRC=		${WRKDIR}
+
+.if defined(BATCH)
+WEBALIZER_LANG=english
+.endif
+
+pre-fetch:
+.if !defined(WEBALIZER_LANG)
+	@${ECHO_MSG} "You can customize the language by typing"
+	@${ECHO_MSG} "make WEBALIZER_LANG=english"
+	@${ECHO_MSG} "make WEBALIZER_LANG=german"
+	@${ECHO_MSG} "make WEBALIZER_LANG=french"
+	@${ECHO_MSG} "make WEBALIZER_LANG=spanish"
+	@${ECHO_MSG} "make WEBALIZER_LANG=dutch"
+.endif
+
+post-configure:
+.if defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == english
+	@${ECHO_MSG} "===> customizing for english"
+	${LN} -sf ${WRKSRC}/webalizer_lang.english ${WRKSRC}/webalizer_lang.h
+.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == german
+	@${ECHO_MSG} "===> customizing for german"
+	${LN} -sf ${WRKSRC}/webalizer_lang.german ${WRKSRC}/webalizer_lang.h
+.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == french
+	@${ECHO_MSG} "===> customizing for french"
+	${LN} -sf ${WRKSRC}/webalizer_lang.french ${WRKSRC}/webalizer_lang.h
+.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == spanish
+	@${ECHO_MSG} "===> customizing for spanish"
+	${LN} -sf ${WRKSRC}/webalizer_lang.spanish ${WRKSRC}/webalizer_lang.h
+.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == dutch
+	@${ECHO_MSG} "===> customizing for dutch"
+	${LN} -sf ${WRKSRC}/webalizer_lang.dutch ${WRKSRC}/webalizer_lang.h
+.endif
 
 do-install:
 .for i in ${BIN1}
