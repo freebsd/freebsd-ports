@@ -1,7 +1,9 @@
 LAME stands for LAME Ain't an Mp3 Encoder. 
 
-The dist10patch is totally incapable of producing an mp3
-stream. It is incapable of even being compiled by itself. 
-It is patch for dist10 ISO distribution.
+This is a patch agains the ISO MPEG1 demonstration source.  The
+modifications are distributed under the GNU GENERAL PUBLIC LICENSE
+(see the file COPYING for details).
 
-WWW: http://www.cryogen.com/mikecheng/
+The graphical frame analyzer uses the MPGLIB decoding engine, written by:
+Michael Hipp (email: Michael.Hipp@student.uni-tuebingen.de) 
+and released under a more restrictive agreement.  

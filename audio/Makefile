@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1999/06/01 10:49:57 tg Exp $
+# $Id: Makefile,v 1.92 1999/06/11 08:56:42 taoka Exp $
 #
 
     SUBDIR += amp
@@ -26,7 +26,7 @@
     SUBDIR += kmikmod
     SUBDIR += kmp3
     SUBDIR += kmpg
-    SUBDIR += lamer
+    SUBDIR += lame
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
