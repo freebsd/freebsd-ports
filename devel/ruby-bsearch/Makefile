@@ -9,6 +9,7 @@ PORTNAME=	bsearch
 PORTVERSION=	1.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://namazu.org/~satoru/ruby-bsearch/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
