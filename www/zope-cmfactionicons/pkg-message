@@ -1,0 +1,6 @@
+To complete the installation of CMFActionIcons:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+Please read README.txt in the CMFActionIcons Product directory for more
+information to complete installation.

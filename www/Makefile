@@ -602,6 +602,7 @@
     SUBDIR += zope-btreefolder2
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
+    SUBDIR += zope-cmfactionicons
     SUBDIR += zope-cmfforum
     SUBDIR += zope-cmfphoto
     SUBDIR += zope-cmfphotoalbum
