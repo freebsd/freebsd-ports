@@ -1,4 +1,5 @@
 etc/rc.d/caudium.sh.sample
+bin/caudiumctl
 bin/pixsl
 bin/ultrasum
 bin/htpasswd
