@@ -1,37 +1,51 @@
-# New ports collection makefile for:	msql
-# Version required:	1.0.16
-# Date created:		14 January 1995
-# Whom:			mr (original)
+# New ports collection makefile for:	msql2
+# Version required:	2.0b3
+# Date created:		December 17th 1996
+# Whom:			jfitz
 #
-# $Id: Makefile,v 1.14 1996/11/17 03:18:30 obrien Exp $
+# $Id$
 #
 
-DISTNAME=	msql-1.0.16
+DISTNAME=	msql-2.0-B3
+PKGNAME=	msql-2.0b3
 CATEGORIES=	databases
-MASTER_SITES=	http://hughes.com.au/software/msql1/
+MASTER_SITES=	ftp://ftp.worldone.com/pub/msql/ \
+		http://www2.nerosworld.com/msql/ \
+		http://hughes.com.au/software/msql2/
 
 MAINTAINTER=	jfitz@FreeBSD.ORG
 
-#IS_INTERACTIVE=	yes
+# Not free for commercial use.  Must create a user on the local system
+NO_PACKAGE=	YES
 RESTRICTED=	"restrictive copyright (no commercial use)"
-NO_MTREE=	yes
+
+MAKE_ENV+=	WRKSRC=${WRKSRC}
+
+do-configure:
+		cd ${WRKSRC}; make target
+		cd ${WRKSRC}/targets/freebsd; sh setup
+		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/customize_scripts
+
+pre-install:
+		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 
 post-install:
-.for file in Commercial License mSQL-Invoice.txt msql-pwr.README msql-pwr.gif msql-pwr2.gif
-		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/Minerva/doc
-.endfor
-.if !defined(NOPORTDOCS)
-.for file in HISTORY acl.txt mSQL-1.0.11.ps
-		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/Minerva/doc
-.endfor
-.endif
-		${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/Minerva
-		@ ${MKDIR} ${PREFIX}/etc/rc.d
-		@ if [ ! -f ${PREFIX}/etc/rc.d/msql.sh ]; then \
-			echo "Installing ${PREFIX}/etc/rc.d/msql.sh startup file."; \
-			echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/msql.sh; \
-			echo "[ -x ${PREFIX}/Minerva/bin/msqld ] && ${PREFIX}/Minerva/bin/msqld & && echo -n ' msql'" >> ${PREFIX}/etc/rc.d/msql.sh; \
-			chmod 751 ${PREFIX}/etc/rc.d/msql.sh; \
+		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
+		@${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/msql
+		@for file in msql2d msqladmin msqlimport msqlexport; do\
+			/usr/bin/chgrp msql ${PREFIX}/bin/$$file; \
+		done
+		@/bin/chmod 751 ${PREFIX}/etc/msql2/
+		@/usr/sbin/chown -R msql.msql ${PREFIX}/etc/msql2/
+		@${MKDIR} -p ${PREFIX}/etc/rc.d
+		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
+			echo "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
+			echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/msql2.sh; \
+			echo "[ -x ${PREFIX}/bin/run_daemon ] && su -l msql -c '${PREFIX}/bin/run_daemon msql2d' & && echo -n ' msql2'" >> ${PREFIX}/etc/rc.d/msql2.sh; \
+			chmod 751 ${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
+.if !defined(BATCH)
+		@ /usr/bin/more -e ${FILESDIR}/post-install-notes
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- src/msql/msqld.c.orig	Mon Jan 13 10:16:03 1997
++++ src/msql/msqld.c	Sun Jan 19 14:12:08 1997
+@@ -506,7 +506,7 @@
+ 
+ 	if (*confFile == 0)
+ 	{
+-		sprintf(confFile,"%s/msql.conf", INST_DIR);
++		sprintf(confFile,"%s/etc/msql2/msql.conf", INST_DIR);
+ 	}
+ 	printf("Loading configuration from '%s'.\n",confFile);
+ 	msqlLoadConfigFile(confFile);

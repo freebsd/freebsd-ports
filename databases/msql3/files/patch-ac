@@ -1,21 +1,20 @@
---- scripts/run_daemon.orig	Mon Dec 18 20:27:42 1995
-+++ scripts/run_daemon	Thu Oct  3 20:08:24 1996
-@@ -9,8 +9,8 @@
+--- src/conf/site.mm.in.orig	Mon Jan 13 10:15:08 1997
++++ src/conf/site.mm.in	Sun Jan 19 13:56:52 1997
+@@ -4,7 +4,7 @@
+ 
+ 
+ CC= @CC@
+-INST_DIR= /usr/local/Hughes
++INST_DIR= /usr/local
+ 
+ 
  #
- #					bambi@Bond.edu.au
+@@ -30,7 +30,7 @@
+ EXTRA_LIB= @LIBS@
  
--INST_DIR=/usr/local/Minerva
--ADMIN="you@some.machine"
-+INST_DIR=@@PREFIX@@
-+ADMIN="root@@@HOSTNAME@@"
- PROG=$1
+ # Any other CFlags required
+-EXTRA_CFLAGS= @DEFS@ $(SSIZE_T) $(U_INT) $(BITTYPES)
++EXTRA_CFLAGS= @DEFS@ $(SSIZE_T) $(U_INT) $(BITTYPES) -fpic
  
- if test ! -d "${INST_DIR}/debug"
-@@ -34,6 +34,6 @@
- 
- " > mail.tmp
- 	cat output >> mail.tmp
--	/usr/ucb/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
-+	/usr/bin/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
- 	sleep 15
- done
+ # Directory for pid file
+ PID_DIR= @PID_DIR@
