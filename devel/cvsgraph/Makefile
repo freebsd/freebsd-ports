@@ -1,0 +1,45 @@
+# New ports collection makefile for:	cvsgraph
+# Date created:				2001-02-21
+# Whom:					trevor
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cvsgraph
+PORTVERSION=	1.0.0
+CATEGORIES=	devel graphics
+MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/
+
+MAINTAINER=	trevor@FreeBSD.org
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
+
+ALL_TARGET=	cvsgraph
+DOCDIR=		share/doc/${PORTNAME}
+DOCS=		LICENCE README
+PLIST=		${WRKDIR}/pkg-plist
+
+pre-install:
+	${ECHO} bin/cvsgraph > ${PLIST}
+	${ECHO} etc/cvsgraph.conf >> ${PLIST}
+.if !defined(NOPORTDOCS)
+.for i in ${DOCS}
+	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+.endfor
+	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${PREFIX}/etc
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/${DOCDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

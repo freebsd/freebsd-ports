@@ -66,6 +66,7 @@
     SUBDIR += cutils
     SUBDIR += cvs2cl
     SUBDIR += cvs2html
+    SUBDIR += cvsgraph
     SUBDIR += cvsmapfs
     SUBDIR += cvsutils
     SUBDIR += cvsweb
