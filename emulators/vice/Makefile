@@ -8,9 +8,7 @@ PORTNAME=	vice
 PORTVERSION=	1.14
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
-.if defined(VICE_WITH_GNOME)
-PKGNAMESUFFIX=	-gnome
-.endif
+PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore's C64, C128, VIC20, PET, and CBM-II
@@ -27,6 +25,7 @@ MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 USE_GCC=	3.2
 
 .if defined(VICE_WITH_GNOME)
+GNOME_SUFFIX=	-gnome
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--enable-gnomeui
 CONFLICTS?=	vice-1.*
