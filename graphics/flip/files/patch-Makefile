@@ -5,7 +5,7 @@
  CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
  CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
 -INCPATH	=	-I/usr/X11R6/include -I$(QTDIR)/include
-+INCPATH	=	-I/usr/X11R6/include -I$(QTDIR)/include/qt2
++INCPATH	=	-I/usr/X11R6/include -I$(QTDIR)/include
  LINK	=	g++
  LFLAGS	=	
 -LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -ltiff -lqt -lXext -lX11 -lm
