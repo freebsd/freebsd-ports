@@ -139,3 +139,11 @@ share/doc/ftp4all/noframes/faq_index.html
 share/doc/ftp4all/noframes/faq_start.html
 share/doc/ftp4all/noframes/faq_system.html
 share/doc/ftp4all/noframes/concepts.html
+@dirrm etc/ftp4all/msg/grp
+@dirrm etc/ftp4all/msg/usr
+@dirrm etc/ftp4all/msg
+@dirrm etc/ftp4all
+@dirrm share/doc/ftp4all/f4adp
+@dirrm share/doc/ftp4all/frames
+@dirrm share/doc/ftp4all/noframes
+@dirrm share/doc/ftp4all
