@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mod_watch
-PORTVERSION=	3.10
+PORTVERSION=	3.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.snert.com/Software/mod_watch/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-DISTNAME=	${PORTNAME}310
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
@@ -38,9 +38,11 @@ do-install:
 	${APXS} -i -A -n watch ${WRKSRC}/mod_watch.so
 	${INSTALL_SCRIPT} ${WRKSRC}/apache2mrtg.pl ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/mod_watch.pl ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/nfields.pl ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -m 0755 ${DOCSDIR}/html/Img
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.TXT ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${DOCSDIR}/
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/html/
 .endfor

@@ -1,5 +1,6 @@
 sbin/apache2mrtg.pl
 sbin/mod_watch.pl
+sbin/nfields.pl
 libexec/apache/mod_watch.so
 @exec %D/sbin/apxs -e -A -n watch %D/%F
 @unexec %D/sbin/apxs -e -A -n watch %D/%F
@@ -14,6 +15,7 @@ libexec/apache/mod_watch.so
 %%PORTDOCS%%share/doc/mod_watch/html/mod_watch.html
 %%PORTDOCS%%share/doc/mod_watch/html/style.css
 %%PORTDOCS%%share/doc/mod_watch/CHANGES.TXT
+%%PORTDOCS%%share/doc/mod_watch/LICENSE.TXT
 %%PORTDOCS%%@dirrm share/doc/mod_watch/html/Img
 %%PORTDOCS%%@dirrm share/doc/mod_watch/html
 %%PORTDOCS%%@dirrm share/doc/mod_watch
