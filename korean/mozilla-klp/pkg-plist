@@ -1,36 +1,45 @@
 @exec mv %D/bin/mozilla %D/bin/mozilla.orig
-@exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
-@exec mv %D/lib/mozilla/chrome/all-packages.rdf %D/lib/mozilla/chrome/all-packages.rdf.orig
-@exec mv %D/lib/mozilla/chrome/all-skins.rdf %D/lib/mozilla/chrome/all-skins.rdf.orig
-@exec mv %D/lib/mozilla/chrome/user-locales.rdf %D/lib/mozilla/chrome/user-locales.rdf.orig
-@exec mv %D/lib/mozilla/chrome/user-skins.rdf %D/lib/mozilla/chrome/user-skins.rdf.orig
+@exec mv %D/lib/mozilla/chrome/chrome.rdf %D/lib/mozilla/chrome/chrome.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
-@exec mv %D/lib/mozilla/defaults/pref/all.js %D/lib/mozilla/defaults/pref/all.js.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
+@exec mv %D/lib/mozilla/components/xpti.dat %D/lib/mozilla/xpti.dat.orig
 bin/mozilla
-lib/mozilla/chrome/all-locales.rdf
-lib/mozilla/chrome/all-packages.rdf
-lib/mozilla/chrome/all-skins.rdf
+lib/mozilla/chrome/KR.jar
+lib/mozilla/chrome/chrome.rdf
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/ko-KR.jar
-lib/mozilla/chrome/user-locales.rdf
-lib/mozilla/chrome/user-skins.rdf
-lib/mozilla/defaults/pref/all.js
+lib/mozilla/chrome/ko_mac.jar
+lib/mozilla/chrome/ko_unix.jar
+lib/mozilla/chrome/ko_win.jar
+lib/mozilla/components/xpti.dat
 lib/mozilla/defaults/pref/unix.js
-lib/mozilla/defaults/profile/ko-KR/bookmarks.html
-lib/mozilla/defaults/profile/ko-KR/localstore.rdf
-lib/mozilla/defaults/profile/ko-KR/mimeTypes.rdf
-lib/mozilla/defaults/profile/ko-KR/panels.rdf
-lib/mozilla/defaults/profile/ko-KR/search.rdf
-lib/mozilla/searchplugins/google-kr.gif
-lib/mozilla/searchplugins/google-kr.src
+lib/mozilla/defaults/profile/KR/chrome/userChrome-example.css
+lib/mozilla/defaults/profile/KR/chrome/userContent-example.css
+lib/mozilla/defaults/profile/KR/bookmarks.html
+lib/mozilla/defaults/profile/KR/localstore.rdf
+lib/mozilla/defaults/profile/KR/mimeTypes.rdf
+lib/mozilla/defaults/profile/KR/panels.rdf
+lib/mozilla/defaults/profile/KR/search.rdf
+lib/mozilla/searchplugins/bugzilla.gif  
+lib/mozilla/searchplugins/bugzilla.src  
+lib/mozilla/searchplugins/dmoz.gif  
+lib/mozilla/searchplugins/dmoz.src  
+lib/mozilla/searchplugins/google.gif  
+lib/mozilla/searchplugins/google.src  
+lib/mozilla/searchplugins/google_en.gif  
+lib/mozilla/searchplugins/google_en.src  
+lib/mozilla/searchplugins/google_ko.gif  
+lib/mozilla/searchplugins/google_ko.src  
+lib/mozilla/searchplugins/lxrmozilla.gif  
+lib/mozilla/searchplugins/lxrmozilla.src  
+lib/mozilla/searchplugins/mozilla.gif  
+lib/mozilla/searchplugins/mozilla.src  
+lib/mozilla/searchplugins/NetscapeSearch.gif  
+lib/mozilla/searchplugins/NetscapeSearch.src  
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
-@unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
-@unexec mv %D/lib/mozilla/chrome/all-packages.rdf.orig %D/lib/mozilla/chrome/all-packages.rdf
-@unexec mv %D/lib/mozilla/chrome/all-skins.rdf.orig %D/lib/mozilla/chrome/all-skins.rdf
-@unexec mv %D/lib/mozilla/chrome/user-locales.rdf.orig %D/lib/mozilla/chrome/user-locales.rdf
-@unexec mv %D/lib/mozilla/chrome/user-skins.rdf.orig %D/lib/mozilla/chrome/user-skins.rdf
+@unexec mv %D/lib/mozilla/chrome/chrome.rdf.orig %D/lib/mozilla/chrome/chrome.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
-@unexec mv %D/lib/mozilla/defaults/pref/all.js.orig %D/lib/mozilla/defaults/pref/all.js
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
-@dirrm lib/mozilla/defaults/profile/ko-KR
+@unexec mv %D/lib/mozilla/xpti.dat.orig %D/lib/mozilla/components/xpti.dat
+@dirrm lib/mozilla/defaults/profile/KR/chrome
+@dirrm lib/mozilla/defaults/profile/KR
