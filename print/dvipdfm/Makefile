@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=		dvipdfm-0.12.7
+DISTNAME=		dvipdfm-0.12.7b
+PKGNAME=		dvipdfm-0.12.7
 CATEGORIES=		print
 MASTER_SITES=		http://odo.kettering.edu/dvipdfm/
 
@@ -14,7 +15,6 @@ MAINTAINER=		stephen@math.missouri.edu
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX \
 			${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
-
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/print/teTeX
 
 WRKSRC=			${WRKDIR}/dvipdfm
@@ -31,7 +31,7 @@ post-install:
 	mktexlsr
 	${MKDIR} ${PREFIX}/share/dvipdfm
 	${INSTALL_DATA} ${WRKSRC}/latex-support/dvipdfm.def ${PREFIX}/share/dvipdfm
-	${INSTALL_DATA} ${WRKSRC}/latex-support/hdvipdfm.def ${PREFIX}/share/dvipdfm
+#	${INSTALL_DATA} ${WRKSRC}/latex-support/hdvipdfm.def ${PREFIX}/share/dvipdfm
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/texmf/doc/dvipdfm
 	${INSTALL_DATA} ${WRKSRC}/doc/dvipdfm.tex ${PREFIX}/share/texmf/doc/dvipdfm

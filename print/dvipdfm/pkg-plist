@@ -2,7 +2,6 @@ bin/dvipdfm
 bin/dvipdft
 bin/ebb
 share/dvipdfm/dvipdfm.def
-share/dvipdfm/hdvipdfm.def
 share/texmf/doc/dvipdfm/dvipdfm.pdf
 share/texmf/doc/dvipdfm/dvipdfm.tex
 share/texmf/doc/dvipdfm/mwicks.bb
