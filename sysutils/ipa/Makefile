@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/ \
+		http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
 		ftp://ftp.mirrors.wiretapped.net/pub/security/network-monitoring/ipa/ \
 		http://www.outloud.org/ipa/ \
