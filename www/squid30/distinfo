@@ -34,3 +34,4 @@ MD5 (squid2.5/squid-2.5.STABLE4-partial_reload.patch) = 6d8fa663f46ffc2272b7d18a
 MD5 (squid2.5/squid-2.5.STABLE4-ldap_tls.patch) = dcd6b4ec46e252833a54c4bfd155c284
 MD5 (squid2.5/squid-2.5.STABLE4-ldap_group_bufsize.patch) = e42207a45232ca739a64f2ac3901263c
 MD5 (squid2.5/squid-2.5.STABLE4-http_workarounds.patch) = 69d958d5120116de3e5efd2b9e30c3ac
+MD5 (squid2.5/squid-2.5.STABLE4-empty_proxy_auth.patch) = ff55a2c7a718868ad245fd6de07018c9
