@@ -1,0 +1,25 @@
+bin/imgcmp
+bin/imginfo
+bin/jasper
+include/jasper/jas_debug.h
+include/jasper/jas_fix.h
+include/jasper/jas_getopt.h
+include/jasper/jas_image.h
+include/jasper/jas_init.h
+include/jasper/jas_malloc.h
+include/jasper/jas_math.h
+include/jasper/jas_seq.h
+include/jasper/jas_stream.h
+include/jasper/jas_string.h
+include/jasper/jas_tvp.h
+include/jasper/jas_types.h
+include/jasper/jas_version.h
+include/jasper/jasper.h
+lib/libjasper.a
+lib/libjasper.so
+lib/libjasper.so.3
+share/doc/jasper/README
+share/doc/jasper/jasper.html
+share/doc/jasper/jasper_small.gif
+@dirrm share/doc/jasper
+@dirrm include/jasper
