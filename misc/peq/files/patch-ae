@@ -1,0 +1,13 @@
+--- read.cpp.orig	Fri Mar 26 01:47:31 1999
++++ read.cpp	Sat Feb 12 11:12:10 2000
+@@ -1,8 +1,8 @@
+ 
+ #include "config.h"
+ 
+-extern cho;
+-extern qnum;
++extern int cho;
++extern long qnum;
+ extern char comp_time[30];
+ extern char quote[1500];
+ extern FILE *pql;
