@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.31 1997/05/25 16:28:50 obrien Exp $
+# $Id: Makefile,v 1.32 1997/05/31 04:53:05 obrien Exp $
 
 DISTNAME=	${PKGNAME}e
 PKGNAME=	mutt-0.75
@@ -26,9 +26,7 @@ MAINTAINER=     obrien@FreeBSD.org
 
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
-#PATCH_DIST_STRIP=	-p2
 PATCH_DIST_STRIP=	-p1
-#PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-8bitmime --enable-flock \
 		--disable-fcntl
@@ -36,8 +34,7 @@ MAN1=		mutt.1
 
 
 post-install:
-	@####   don't strip until out of beta peroid
-	@#strip ${PREFIX}/bin/mutt
+	@strip ${PREFIX}/bin/mutt
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt
