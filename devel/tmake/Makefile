@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmake
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.troll.no/freebies/tmake/
 
@@ -14,7 +14,6 @@ MAINTAINER=	jesse@cs.uni-magdeburg.de
 
 USE_PERL5=	yes
 NO_BUILD=       yes
-WRKSRC=		${WRKDIR}/tmake
 TMAKE_BIN=	progen tmake
 
 do-install:
@@ -25,6 +24,7 @@ do-install:
 .endfor
 
 post-install:
+	@${ECHO}
 	@${ECHO} "Make sure to set your TMAKEPATH environment variable"
 	@${ECHO} "to ${PREFIX}/share/tmake/freebsd-g++."
 	@${ECHO}

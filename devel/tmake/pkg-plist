@@ -1,158 +1,188 @@
 bin/progen
 bin/tmake
-share/tmake/aix-g++/subdirs.t
 share/tmake/aix-g++/app.t
 share/tmake/aix-g++/lib.t
+share/tmake/aix-g++/subdirs.t
 share/tmake/aix-g++/tmake.conf
-share/tmake/aix-xlc/subdirs.t
 share/tmake/aix-xlc/app.t
 share/tmake/aix-xlc/lib.t
+share/tmake/aix-xlc/subdirs.t
 share/tmake/aix-xlc/tmake.conf
-share/tmake/bsdi-g++/subdirs.t
 share/tmake/bsdi-g++/app.t
 share/tmake/bsdi-g++/lib.t
+share/tmake/bsdi-g++/subdirs.t
 share/tmake/bsdi-g++/tmake.conf
-share/tmake/dgux-g++/subdirs.t
 share/tmake/dgux-g++/app.t
 share/tmake/dgux-g++/lib.t
+share/tmake/dgux-g++/subdirs.t
 share/tmake/dgux-g++/tmake.conf
-share/tmake/freebsd-g++/subdirs.t
 share/tmake/freebsd-g++/app.t
 share/tmake/freebsd-g++/lib.t
+share/tmake/freebsd-g++/subdirs.t
 share/tmake/freebsd-g++/tmake.conf
-share/tmake/gnu-g++/subdirs.t
+share/tmake/freebsd-g++/tmake.conf.orig
 share/tmake/gnu-g++/app.t
 share/tmake/gnu-g++/lib.t
+share/tmake/gnu-g++/subdirs.t
 share/tmake/gnu-g++/tmake.conf
-share/tmake/hpux-acc/subdirs.t
 share/tmake/hpux-acc/app.t
 share/tmake/hpux-acc/lib.t
+share/tmake/hpux-acc/subdirs.t
 share/tmake/hpux-acc/tmake.conf
-share/tmake/hpux-cc/subdirs.t
 share/tmake/hpux-cc/app.t
 share/tmake/hpux-cc/lib.t
+share/tmake/hpux-cc/subdirs.t
 share/tmake/hpux-cc/tmake.conf
-share/tmake/hpux-g++/subdirs.t
 share/tmake/hpux-g++/app.t
 share/tmake/hpux-g++/lib.t
+share/tmake/hpux-g++/subdirs.t
 share/tmake/hpux-g++/tmake.conf
-share/tmake/irix-64/subdirs.t
+share/tmake/hpux-n64/app.t
+share/tmake/hpux-n64/lib.t
+share/tmake/hpux-n64/subdirs.t
+share/tmake/hpux-n64/tmake.conf
+share/tmake/hpux-o64/app.t
+share/tmake/hpux-o64/lib.t
+share/tmake/hpux-o64/subdirs.t
+share/tmake/hpux-o64/tmake.conf
 share/tmake/irix-64/app.t
 share/tmake/irix-64/lib.t
+share/tmake/irix-64/subdirs.t
 share/tmake/irix-64/tmake.conf
-share/tmake/irix-dcc/subdirs.t
 share/tmake/irix-dcc/app.t
 share/tmake/irix-dcc/lib.t
+share/tmake/irix-dcc/subdirs.t
 share/tmake/irix-dcc/tmake.conf
-share/tmake/irix-g++/subdirs.t
 share/tmake/irix-g++/app.t
 share/tmake/irix-g++/lib.t
+share/tmake/irix-g++/subdirs.t
 share/tmake/irix-g++/tmake.conf
-share/tmake/irix-n32/subdirs.t
 share/tmake/irix-n32/app.t
 share/tmake/irix-n32/lib.t
+share/tmake/irix-n32/subdirs.t
 share/tmake/irix-n32/tmake.conf
-share/tmake/irix-o32/subdirs.t
 share/tmake/irix-o32/app.t
 share/tmake/irix-o32/lib.t
+share/tmake/irix-o32/subdirs.t
 share/tmake/irix-o32/tmake.conf
-share/tmake/linux-g++/subdirs.t
+share/tmake/linux-cxx/app.t
+share/tmake/linux-cxx/lib.t
+share/tmake/linux-cxx/subdirs.t
+share/tmake/linux-cxx/tmake.conf
 share/tmake/linux-g++/app.t
 share/tmake/linux-g++/lib.t
+share/tmake/linux-g++/subdirs.t
 share/tmake/linux-g++/tmake.conf
-share/tmake/netbsd-g++/subdirs.t
+share/tmake/linux-qws-g++/app.t
+share/tmake/linux-qws-g++/lib.t
+share/tmake/linux-qws-g++/subdirs.t
+share/tmake/linux-qws-g++/tmake.conf
 share/tmake/netbsd-g++/app.t
 share/tmake/netbsd-g++/lib.t
+share/tmake/netbsd-g++/subdirs.t
 share/tmake/netbsd-g++/tmake.conf
-share/tmake/openbsd-g++/subdirs.t
 share/tmake/openbsd-g++/app.t
 share/tmake/openbsd-g++/lib.t
+share/tmake/openbsd-g++/subdirs.t
 share/tmake/openbsd-g++/tmake.conf
-share/tmake/osf1-cxx/subdirs.t
 share/tmake/osf1-cxx/app.t
 share/tmake/osf1-cxx/lib.t
+share/tmake/osf1-cxx/subdirs.t
 share/tmake/osf1-cxx/tmake.conf
-share/tmake/osf1-g++/subdirs.t
 share/tmake/osf1-g++/app.t
 share/tmake/osf1-g++/lib.t
+share/tmake/osf1-g++/subdirs.t
 share/tmake/osf1-g++/tmake.conf
-share/tmake/qnx-g++/subdirs.t
 share/tmake/qnx-g++/app.t
 share/tmake/qnx-g++/lib.t
+share/tmake/qnx-g++/subdirs.t
 share/tmake/qnx-g++/tmake.conf
-share/tmake/sco-g++/subdirs.t
+share/tmake/reliant-cds/app.t
+share/tmake/reliant-cds/lib.t
+share/tmake/reliant-cds/subdirs.t
+share/tmake/reliant-cds/tmake.conf
 share/tmake/sco-g++/app.t
 share/tmake/sco-g++/lib.t
+share/tmake/sco-g++/subdirs.t
 share/tmake/sco-g++/tmake.conf
-share/tmake/solaris-cc/subdirs.t
-share/tmake/solaris-cc/app.t
-share/tmake/solaris-cc/lib.t
-share/tmake/solaris-cc/tmake.conf
-share/tmake/solaris-cc-gcc/subdirs.t
+share/tmake/solaris-64/app.t
+share/tmake/solaris-64/lib.t
+share/tmake/solaris-64/subdirs.t
+share/tmake/solaris-64/tmake.conf
 share/tmake/solaris-cc-gcc/app.t
 share/tmake/solaris-cc-gcc/lib.t
+share/tmake/solaris-cc-gcc/subdirs.t
 share/tmake/solaris-cc-gcc/tmake.conf
-share/tmake/solaris-g++/subdirs.t
+share/tmake/solaris-cc/app.t
+share/tmake/solaris-cc/lib.t
+share/tmake/solaris-cc/subdirs.t
+share/tmake/solaris-cc/tmake.conf
 share/tmake/solaris-g++/app.t
 share/tmake/solaris-g++/lib.t
+share/tmake/solaris-g++/subdirs.t
 share/tmake/solaris-g++/tmake.conf
-share/tmake/sunos-g++/subdirs.t
 share/tmake/sunos-g++/app.t
 share/tmake/sunos-g++/lib.t
+share/tmake/sunos-g++/subdirs.t
 share/tmake/sunos-g++/tmake.conf
-share/tmake/ultrix-g++/subdirs.t
 share/tmake/ultrix-g++/app.t
 share/tmake/ultrix-g++/lib.t
+share/tmake/ultrix-g++/subdirs.t
 share/tmake/ultrix-g++/tmake.conf
-share/tmake/unix/generic.t
 share/tmake/unix/app.t
-share/tmake/unix/subdirs.t
+share/tmake/unix/generic.t
 share/tmake/unix/lib.t
-share/tmake/unixware-g++/subdirs.t
+share/tmake/unix/subdirs.t
+share/tmake/unix/generic.t.orig
 share/tmake/unixware-g++/app.t
 share/tmake/unixware-g++/lib.t
+share/tmake/unixware-g++/subdirs.t
 share/tmake/unixware-g++/tmake.conf
-share/tmake/unixware7-cc/subdirs.t
 share/tmake/unixware7-cc/app.t
 share/tmake/unixware7-cc/lib.t
+share/tmake/unixware7-cc/subdirs.t
 share/tmake/unixware7-cc/tmake.conf
-share/tmake/unixware7-g++/subdirs.t
 share/tmake/unixware7-g++/app.t
 share/tmake/unixware7-g++/lib.t
+share/tmake/unixware7-g++/subdirs.t
 share/tmake/unixware7-g++/tmake.conf
-share/tmake/win32/subdirs.t
-share/tmake/win32-borland/generic.t
 share/tmake/win32-borland/app.t
-share/tmake/win32-borland/subdirs.t
+share/tmake/win32-borland/generic.t
 share/tmake/win32-borland/lib.t
+share/tmake/win32-borland/subdirs.t
 share/tmake/win32-borland/tmake.conf
-share/tmake/win32-g++/generic.t
 share/tmake/win32-g++/app.t
-share/tmake/win32-g++/subdirs.t
+share/tmake/win32-g++/generic.t
 share/tmake/win32-g++/lib.t
+share/tmake/win32-g++/subdirs.t
 share/tmake/win32-g++/tmake.conf
-share/tmake/win32-msvc/generic.t
 share/tmake/win32-msvc/app.t
-share/tmake/win32-msvc/subdirs.t
+share/tmake/win32-msvc/generic.t
 share/tmake/win32-msvc/lib.t
+share/tmake/win32-msvc/subdirs.t
 share/tmake/win32-msvc/tmake.conf
 share/tmake/win32-msvc/vcapp.t
+share/tmake/win32-msvc/vcgeneric.t
 share/tmake/win32-msvc/vclib.t
-share/tmake/win32-symantec/generic.t
+share/tmake/win32-msvc/win32app.dsp
+share/tmake/win32-msvc/win32dll.dsp
+share/tmake/win32-msvc/win32lib.dsp
 share/tmake/win32-symantec/app.t
-share/tmake/win32-symantec/subdirs.t
+share/tmake/win32-symantec/generic.t
 share/tmake/win32-symantec/lib.t
+share/tmake/win32-symantec/subdirs.t
 share/tmake/win32-symantec/tmake.conf
-share/tmake/win32-visage/generic.t
 share/tmake/win32-visage/app.t
-share/tmake/win32-visage/subdirs.t
+share/tmake/win32-visage/generic.t
 share/tmake/win32-visage/lib.t
+share/tmake/win32-visage/subdirs.t
 share/tmake/win32-visage/tmake.conf
-share/tmake/win32-watcom/generic.t
 share/tmake/win32-watcom/app.t
-share/tmake/win32-watcom/subdirs.t
+share/tmake/win32-watcom/generic.t
 share/tmake/win32-watcom/lib.t
+share/tmake/win32-watcom/subdirs.t
 share/tmake/win32-watcom/tmake.conf
+share/tmake/win32/subdirs.t
 @dirrm share/tmake/aix-g++
 @dirrm share/tmake/aix-xlc
 @dirrm share/tmake/bsdi-g++
@@ -162,20 +192,26 @@ share/tmake/win32-watcom/tmake.conf
 @dirrm share/tmake/hpux-acc
 @dirrm share/tmake/hpux-cc
 @dirrm share/tmake/hpux-g++
+@dirrm share/tmake/hpux-n64
+@dirrm share/tmake/hpux-o64
 @dirrm share/tmake/irix-64
 @dirrm share/tmake/irix-dcc
 @dirrm share/tmake/irix-g++
 @dirrm share/tmake/irix-n32
 @dirrm share/tmake/irix-o32
+@dirrm share/tmake/linux-cxx
 @dirrm share/tmake/linux-g++
+@dirrm share/tmake/linux-qws-g++
 @dirrm share/tmake/netbsd-g++
 @dirrm share/tmake/openbsd-g++
 @dirrm share/tmake/osf1-cxx
 @dirrm share/tmake/osf1-g++
 @dirrm share/tmake/qnx-g++
+@dirrm share/tmake/reliant-cds
 @dirrm share/tmake/sco-g++
-@dirrm share/tmake/solaris-cc
+@dirrm share/tmake/solaris-64
 @dirrm share/tmake/solaris-cc-gcc
+@dirrm share/tmake/solaris-cc
 @dirrm share/tmake/solaris-g++
 @dirrm share/tmake/sunos-g++
 @dirrm share/tmake/ultrix-g++
@@ -183,11 +219,11 @@ share/tmake/win32-watcom/tmake.conf
 @dirrm share/tmake/unixware-g++
 @dirrm share/tmake/unixware7-cc
 @dirrm share/tmake/unixware7-g++
-@dirrm share/tmake/win32
 @dirrm share/tmake/win32-borland
 @dirrm share/tmake/win32-g++
 @dirrm share/tmake/win32-msvc
 @dirrm share/tmake/win32-symantec
 @dirrm share/tmake/win32-visage
 @dirrm share/tmake/win32-watcom
+@dirrm share/tmake/win32
 @dirrm share/tmake
