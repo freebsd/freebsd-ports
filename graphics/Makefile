@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.79 1998/06/12 06:28:45 dburr Exp $
+# $Id: Makefile,v 1.80 1998/06/20 03:11:36 chuckr Exp $
 #
 
     SUBDIR += EZWGL
@@ -13,6 +13,7 @@
     SUBDIR += dore
     SUBDIR += fbm
     SUBDIR += fli2gif
+    SUBDIR += fnlib
     SUBDIR += fxtv
     SUBDIR += gd
     SUBDIR += geomview
