@@ -3,7 +3,7 @@
 # Date created:        6 May 1996
 # Whom:                joerg
 #
-# $Id: Makefile,v 1.5 1998/08/07 22:17:54 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/27 03:44:38 steve Exp $
 #
 
 DISTNAME=      xpostit3.3.1
@@ -14,7 +14,7 @@ CATEGORIES=    deskutils
 # servers only have the comp.sources.x version, with its distfile named
 # `part01.gz'.
 #
-MASTER_SITES=  ftp://ftp.hrz.th-darmstadt.de/pub/X11/R5contrib/
+MASTER_SITES=  ftp://ftp.hrz.tu-darmstadt.de/pub/X11/R5contrib/
 EXTRACT_SUFX=  .tar.Z
 
 MAINTAINER=    joerg@FreeBSD.ORG
