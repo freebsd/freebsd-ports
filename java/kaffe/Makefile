@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	kaffe-1.0.b4
+DISTNAME=	kaffe-1.0.5
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		png.3:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/kaffe-1.0b4
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1
 

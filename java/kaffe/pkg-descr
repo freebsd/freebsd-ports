@@ -1,5 +1,5 @@
-Kaffe is a virtual machine used to run Java bytecode.  It includes
-its own implementation of the Java standard classes, including the
+Kaffe is multi-platform Java virtual machine.  It includes its own
+implementation of the Java JDK 1.2 standard classes, including the
 AWT classes. Kaffe also does "just-in-time" compilation of Java
 bytecode into machine code for increased execution speed.
 

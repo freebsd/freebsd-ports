@@ -9,14 +9,13 @@ bin/javap
 bin/jdb
 bin/kaffe
 bin/kaffeh
+bin/kjc
 bin/native2ascii
-bin/pizza
-bin/pizzadoc
-bin/report-kaffe-bug
 bin/rmic
 bin/rmiregistry
 bin/serialver
 include/kaffe/Arrays.h
+include/kaffe/errors.h
 include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
 include/kaffe/java_lang_Thread.h
@@ -28,28 +27,35 @@ include/kaffe/jni_cpp.h
 include/kaffe/jsyscall.h
 include/kaffe/jtypes.h
 include/kaffe/native.h
-lib/kaffe/libawt-1.0b4.so
+lib/kaffe/libawt-1.0.5.so
 lib/kaffe/libawt.la
 lib/kaffe/libawt.so
-lib/kaffe/libio-1.0b4.so
+lib/kaffe/libio-1.0.5.so
 lib/kaffe/libio.la
 lib/kaffe/libio.so
-lib/kaffe/libmanagement-1.0b4.so
+lib/kaffe/libmanagement-1.0.5.so
 lib/kaffe/libmanagement.la
 lib/kaffe/libmanagement.so
-lib/kaffe/libmath-1.0b4.so
+lib/kaffe/libmath-1.0.5.so
 lib/kaffe/libmath.la
 lib/kaffe/libmath.so
-lib/kaffe/libnative-1.0b4.so
+lib/kaffe/libmicrosoft-1.0.5.so
+lib/kaffe/libmicrosoft.la
+lib/kaffe/libmicrosoft.so
+lib/kaffe/libnative-1.0.5.so
 lib/kaffe/libnative.la
 lib/kaffe/libnative.so
-lib/kaffe/libnet-1.0b4.so
+lib/kaffe/libnet-1.0.5.so
 lib/kaffe/libnet.la
 lib/kaffe/libnet.so
-lib/kaffe/libzip-1.0b4.so
+lib/kaffe/libsecurity-1.0.5.so
+lib/kaffe/libsecurity.la
+lib/kaffe/libsecurity.so
+lib/kaffe/libzip-1.0.5.so
 lib/kaffe/libzip.la
 lib/kaffe/libzip.so
-lib/libkaffevm-1.0b4.so
+lib/kaffe/security/java.security
+lib/libkaffevm-1.0.5.so
 lib/libkaffevm.la
 lib/libkaffevm.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
@@ -58,10 +64,14 @@ libexec/Kaffe
 share/kaffe/BUILD_ENVIRONMENT
 share/kaffe/Klasses.jar
 share/kaffe/comm.jar
+share/kaffe/kjc.jar
 share/kaffe/license.terms
-share/kaffe/pizza.jar
+share/kaffe/microsoft.jar
 share/kaffe/pjava.jar
+share/kaffe/rmi.jar
 share/kaffe/servlet.jar
+share/kaffe/tools.jar
 @dirrm include/kaffe
+@dirrm lib/kaffe/security
 @dirrm lib/kaffe
 @dirrm share/kaffe
