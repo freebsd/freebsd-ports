@@ -20,9 +20,12 @@ NO_BUILD=	yes
 
 DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 
+CPIO?=		/usr/bin/cpio
+
 do-install:
 	${MKDIR} ${DOCDIR}
-	(cd ${WRKSRC}/docs && tar cf - . | tar --unlink -xpf - -C ${DOCDIR})
+	cd ${WRKSRC}/docs && ${FIND} . \
+	    | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar \
 	    ${PREFIX}/share/java/classes/${PORTNAME}.jar
 
