@@ -99,6 +99,10 @@ CONFIGURE_ARGS+=	--with-db --enable-cache=flatfile
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} NAME=milter_sender
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-extract:
 	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/milter-sender.sh > ${WRKSRC}/milter-sender.sh.freebsd
