@@ -8,7 +8,7 @@
 
 DISTNAME=	newsfish-1.1
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.philosophysw.com/software/
+MASTER_SITES=	http://www.philosophysw.com/download/
 
 MAINTAINER=	asaddi@philosophysw.com
 
