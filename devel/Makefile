@@ -238,6 +238,7 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glade2
+    SUBDIR += glademm
     SUBDIR += glg
     SUBDIR += glib12
     SUBDIR += glib20
