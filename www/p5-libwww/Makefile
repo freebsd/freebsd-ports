@@ -7,6 +7,7 @@
 
 PORTNAME=	p5-libwww
 PORTVERSION=	5.65
+PORTREVISION=	1
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	LWP
@@ -22,6 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	GET.1 HEAD.1 POST.1 lwp-download.1 lwp-mirror.1 lwp-request.1 lwp-rget.1
 
@@ -35,5 +37,9 @@ MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Cookies.3 \
 	lwpcook.3
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/lib/sendmail,/usr/sbin/sendmail," \
+		${WRKSRC}/lib/LWP/Protocol/mailto.pm
 
 .include <bsd.port.mk>
