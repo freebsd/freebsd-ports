@@ -510,6 +510,7 @@
     SUBDIR += noweb
     SUBDIR += nspr
     SUBDIR += oaf
+    SUBDIR += ocaml-camomile
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-pcre
