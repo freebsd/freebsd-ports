@@ -1,0 +1,10 @@
+--- webalizer.c.bak	Tue Apr 18 07:34:50 2000
++++ webalizer.c	Tue Apr 18 07:38:58 2000
+@@ -61,6 +61,7 @@
+ #endif
+ 
+ #ifdef USE_DNS
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #ifdef HAVE_DB_185_H
