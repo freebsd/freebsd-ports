@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/12 05:12:17 itojun Exp $
 #
 
 DISTNAME=	ken_all
@@ -16,6 +16,8 @@ MAINTAINER=	itojun@itojun.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
+
+BROKEN=		checksum
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
