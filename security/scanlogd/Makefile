@@ -24,6 +24,7 @@ ALL_TARGET=	libnids
 .else
 ALL_TARGET=	libpcap
 .endif
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c" LD="${CC}"
 
 MAN8=		scanlogd.8
 PLIST_FILES=	bin/scanlogd
