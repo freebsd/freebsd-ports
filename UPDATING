@@ -35,7 +35,7 @@ upgrades.
 
   2.) Now update the remaining KDE ports.
 
-      	portupgrade arts\* kde\*
+      	portupgrade -O arts\* kde\*
 
       or, if you want to update KDE along with other updated ports:
 
