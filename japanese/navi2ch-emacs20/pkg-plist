@@ -37,4 +37,3 @@
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch.el
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/navi2ch
-%%XEMACS%%@unexec rmdir %D/%%EMACS_LIBDIR%%/site-lisp 2>/dev/null || true
