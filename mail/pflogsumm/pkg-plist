@@ -1,1 +1,5 @@
 bin/pflogsumm
+%%PORTDOCS%%share/doc/pflogsumm/README
+%%PORTDOCS%%share/doc/pflogsumm/ToDo
+%%PORTDOCS%%share/doc/pflogsumm/pflogsumm-faq.txt
+%%PORTDOCS%%@dirrm share/doc/pflogsumm

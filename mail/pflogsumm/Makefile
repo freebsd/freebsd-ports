@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	pflogsumm
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 		ftp://jimsun.LinxNet.com/pub/postfix_contrib/
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Postfix Log Entry Summarizer
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 
@@ -25,5 +26,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/pflogsumm
+.for i in README ToDo pflogsumm-faq.txt
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/pflogsumm
+.endfor
+.endif
 
 .include <bsd.port.mk>
