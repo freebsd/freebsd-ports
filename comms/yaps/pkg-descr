@@ -1,0 +1,5 @@
+Send messages to pager devices (incl. cellular phones via SMS) using a
+modem gateway provided by the service company. This software is highly
+configurable, a sample configuration is included for German pager and 
+mobile phone services (D1, D2, E+, Telmi, Telmi-Fun, Telmi-Family, 
+Telmi-Top, Telmi-Pro, Skyper, Quix).

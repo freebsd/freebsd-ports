@@ -1,0 +1,7 @@
+bin/yaps
+@exec mkdir %D/lib/yaps
+etc/yaps.rc.sample
+share/doc/yaps/yaps.doc
+share/doc/yaps/yaps.html
+@dirrm share/doc/yaps
+@dirrm lib/yaps
