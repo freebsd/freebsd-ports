@@ -4,4 +4,3 @@ etc/pdmenurc
 %%DATADIR%%/showdir.pl
 @dirrm %%DATADIR%%
 @dirrm lib/pdmenu
-
