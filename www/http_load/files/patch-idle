@@ -1,0 +1,42 @@
+--- http_load.c	Thu Apr  5 21:07:27 2001
++++ http_load.c	Thu Apr 26 16:11:40 2001
+@@ -139,2 +139,3 @@
+ static int do_checksum, do_throttle, do_verbose, do_jitter, do_proxy;
++static int idle_secs = IDLE_SECS;
+ static float throttle;
+@@ -311,2 +312,12 @@
+ 	    }
++	else if ( strncmp( argv[argn], "-timeout", sizeof("-timeout") ) == 0 && argn + 1 < argc )
++	    {
++	    idle_secs = atoi( argv[++argn] );
++	    if ( idle_secs < 1 )
++		{
++		(void) fprintf(
++		    stderr, "%s: timeout seconds must be at least 1\n", argv0 );
++		exit( 1 );
++		}
++	    }
+ 	else
+@@ -459,2 +470,4 @@
+     (void) fprintf( stderr,
++	"            -timeout N\n" );
++    (void) fprintf( stderr,
+ 	"            -fetches N | -seconds N\n" );
+@@ -629,3 +642,3 @@
+     connections[cnum].idle_timer = tmr_create(
+-	nowP, idle_connection, client_data, IDLE_SECS * 1000L, 0 );
++	nowP, idle_connection, client_data, idle_secs * 1000L, 0 );
+     connections[cnum].wakeup_timer = (Timer*) 0;
+--- http_load.1	Fri Mar 30 22:42:13 2001
++++ http_load.1	Thu Apr 26 16:27:09 2001
+@@ -10,2 +10,4 @@
+ .RB [ -verbose ]
++.RB [ -timeout
++.IR seconds ]
+ .RI (
+@@ -48,2 +50,5 @@
+ The -proxy flag lets you run http_load through a web proxy.
++.PP
++The -timeout flag specifies the amount of seconds to wait for request.
++Default is a compile-time define. (Usually -- 60 seconds).
+ .PP

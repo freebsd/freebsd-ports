@@ -1,0 +1,12 @@
+PROG	 =	http_load
+SRCS	 =	http_load.c timers.c
+
+.ifndef NO_OPENSSL
+CFLAGS	+=	-DUSE_SSL -I${OPENSSLBASE}/include ${OPENSSL_CFLAGS}
+LDADD	+=	-L${OPENSSLBASE}/lib -lssl -lcrypto
+.endif
+
+BINDIR	 =	${LOCALBASE}/bin
+MANDIR	 =	${LOCALBASE}/man/man
+
+.include <bsd.prog.mk>
