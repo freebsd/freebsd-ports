@@ -145,6 +145,7 @@
     SUBDIR += snowflake
     SUBDIR += splitvt
     SUBDIR += sshbuddy
+    SUBDIR += stan
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += tet
