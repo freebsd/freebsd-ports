@@ -1,7 +1,4 @@
 bin/lexter
 share/lexter/dict.en
 share/lexter/dict.fr
-@mode 664
-share/lexter/lexter.scores
-@mode
 @dirrm share/lexter
