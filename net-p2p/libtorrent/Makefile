@@ -7,6 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -16,47 +17,19 @@ COMMENT=	BitTorrent Library written in C++
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+USE_GCC=	3.3+
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
-pre-everything::
-.if !defined(WITH_CLIENT) && ${OSVERSION} >= 500000
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_CLIENT to build libtorrent client'
-	@${ECHO_MSG} '===>'
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s#\(pkgconfigdir =\).*#\1 ${PREFIX}/libdata/pkgconfig#" \
 			${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s#-Wall -O3 -g#${CFLAGS} -fpermissive#" \
-			${WRKSRC}/client/Makefile2
 # uphold CXXFLAGS
 	@${REINPLACE_CMD} -E \
 			-e 's#^(CXXFLAGS[[:space:]]*=[[:space:]]*).*-O.*$$#\1${CXXFLAGS}#' \
 			-e 's#^(CFLAGS[[:space:]]*=[[:space:]]*).*-O.*$$#\1${CFLAGS}#' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.if defined(WITH_CLIENT)
-.if ${OSVERSION} < 500000
-BROKEN=	"Client doesn't compile on 4.x"
-.endif
-
-PLIST_FILES=	bin/rtorrent
-
-post-build:
-	@(cd ${WRKSRC}/client; make -f Makefile2)
-
-post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/client/rtorrent ${PREFIX}/bin
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
