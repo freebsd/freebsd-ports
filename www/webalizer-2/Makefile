@@ -7,6 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=    2.1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.mrunix.net/pub/webalizer/
 DISTNAME=       ${PORTNAME}-2.01-06-src
