@@ -3,13 +3,13 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1998/08/10 12:10:07 steve Exp $
+# $Id: Makefile,v 1.12 1998/08/31 16:09:19 max Exp $
 #
 
 DISTNAME=	okphone-1.2
 PKGNAME=	ja-okphone-1.2
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.kyushu-u.ac.jp/pub/utils/
+MASTER_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/
 
 PATCH_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/patch/
 PATCHFILES=	okphone-1.2.FreeBSD-patch.rev2.gz
