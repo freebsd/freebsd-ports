@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Tk
-PORTVERSION=	804.025.b16
+PORTVERSION=	804.027
 CATEGORIES=	x11-toolkits tk84 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta16
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A re-port of a perl5 interface to Tk8.4
@@ -22,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		ptked.1 \
 		ptksh.1 \
+		tkjpeg.1 \
 		widget.1
 
 MAN3=		Tie::Watch.3 \
@@ -146,6 +146,24 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .if ${PERL_LEVEL} < 500800
 IGNORE=		"This port needs Perl 5.8.0 or greater, please upgrade your Perl!"
 .endif
+
+.if defined(WITH_XFT)
+CONFIGURE_ARGS=	XFT=1
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+.endif
+
+.if !defined(WITH_XFT)
+pre-everything::
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> An experimental implementation of client side fonts"
+	@${ECHO_MSG} "===> and anti-aliased fonts via Xft"
+	@${ECHO_MSG} "===> can be enabled by defining WITH_XFT"
+	@${ECHO_MSG} "===>"
+.endif
+
+post-patch:
+	@${PERL} -i -p -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/pTk/Makefile.PL
 
 post-configure:
 	@${PERL} -i -p \

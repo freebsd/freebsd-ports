@@ -51,8 +51,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Dirlist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/Common.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/KDEDrop.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/KDESite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/LocalDrop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/Rect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/SunConst.pm
@@ -351,7 +349,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/ks_names.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/mkVFunc
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/moredefs.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/patchlevel.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/port.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclMath.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tcl.h
