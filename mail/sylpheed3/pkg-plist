@@ -9,6 +9,7 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed/TODO
 %%PORTDOCS%%share/doc/sylpheed/TODO.jp
 share/locale/cs/LC_MESSAGES/sylpheed.mo
+share/locale/da/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
 share/locale/el/LC_MESSAGES/sylpheed.mo
 share/locale/es/LC_MESSAGES/sylpheed.mo
@@ -25,7 +26,8 @@ share/locale/pl/LC_MESSAGES/sylpheed.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
 share/locale/ru/LC_MESSAGES/sylpheed.mo
 share/locale/sv/LC_MESSAGES/sylpheed.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/sylpheed.mo
+share/locale/tr/LC_MESSAGES/sylpheed.mo
+share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
 share/sylpheed/manual/en/sylpheed-1.html
 share/sylpheed/manual/en/sylpheed-10.html
