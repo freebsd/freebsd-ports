@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/man_sources/package_name_conf.5.in.orig	Sat Apr 19 14:18:37 2003
++++ doc/man_sources/package_name_conf.5.in	Sat Apr 19 14:19:06 2003
+@@ -152,7 +152,7 @@
+ .IX Header "DESCRIPTION"
+ .RS 4
+ \&\fI@PACKAGE_NAME@.conf\fR contains configuration directives for
+-\&\fB@PACKAGE_NAME@\fR.  It is usually located in \fI/usr/local/etc\fR.
++\&\fB@PACKAGE_NAME@\fR.  It is usually located in \fI@sysconfdir@\fR.
+ .Sp
+ All directives are upper case, followed by whitespace, followed by the
+ value.  If a directive is not specified in the file, the compile time default

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/man_sources/package_name.1.in.orig	Sat Apr 19 14:12:16 2003
++++ doc/man_sources/package_name.1.in	Sat Apr 19 14:13:07 2003
+@@ -215,7 +215,7 @@
+ .IP "\fB@PACKAGE_NAME@ \-\-print\-config\fR > \fI@PACKAGE_NAME@.conf\fR" 4
+ .IX Item "@PACKAGE_NAME@ --print-config > @PACKAGE_NAME@.conf"
+ This would print out the current configuration, saving it to
+-\&\fI@PACKAGE_NAME.conf\fR.
++\&\fI@PACKAGE_NAME@.conf\fR.
+ .RE
+ .RS 4
+ .RE

@@ -153,6 +153,7 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
+    SUBDIR += man2web
     SUBDIR += mapedit
     SUBDIR += mathopd
     SUBDIR += mdw

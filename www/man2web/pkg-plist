@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%CGIDIR%%/man2web
+etc/man2web.conf.default
