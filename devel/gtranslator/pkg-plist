@@ -30,6 +30,7 @@ share/gnome/help/gtranslator/C/colorschemes.html
 share/gnome/help/gtranslator/C/commandlinearguments.html
 share/gnome/help/gtranslator/C/docbook.css
 share/gnome/help/gtranslator/C/features.html
+share/gnome/help/gtranslator/C/gtranslator.sgml
 share/gnome/help/gtranslator/C/index.html
 share/gnome/help/gtranslator/C/resources.html
 share/gnome/help/gtranslator/C/thanks.html
@@ -44,8 +45,9 @@ share/gnome/help/gtranslator/ja/topic.dat
 share/gnome/help/gtranslator/ja/use-of-gtranslator.html
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
+share/gnome/pixmaps/gnome-application-x-gmo.png
+share/gnome/pixmaps/gnome-application-x-po.png
 share/gnome/pixmaps/gtranslator.png
-share/gnome/pixmaps/mc/application-x-po.png
 share/locale/az/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
