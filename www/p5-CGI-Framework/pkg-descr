@@ -1,0 +1,13 @@
+CGI::Framework is a simple and lightweight framework for building web-based CGI
+applications. It features complete code-content separation (templating) by
+utilizing the HTML::Template library, stateful file or database-based sessions
+by utilizing the CGI::Session library, form parsing by utilizing the CGI
+library, (optional) multi-lingual templates support, and an extremely easy to
+use methodology for the validation, pre-preparation and post-cleanup associated
+with each template. It also provides easy logging mechanisms, graceful fatal
+error handling, including special templates and emails to admins.
+
+WWW: http://search.cpan.org/dist/CGI-Framework/
+
+-- 
+mat
