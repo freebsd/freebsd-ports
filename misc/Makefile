@@ -62,6 +62,7 @@
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDIR += gonvert
     SUBDIR += gplbp
     SUBDIR += granulate
     SUBDIR += grc

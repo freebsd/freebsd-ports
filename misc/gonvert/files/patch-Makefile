@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Apr  9 02:43:10 2001
++++ Makefile	Mon Apr  9 02:43:36 2001
+@@ -20,8 +20,8 @@
+ 	install --mode=644 pixmaps/gonvert_icon.png $(DESTDIR)/$(DATADIR)/pixmaps	#copy gnome pictures over
+ 	install --directory $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities			#create a directory for gnome menu description
+ 	install --mode=644 gonvert.desktop $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities	#copy the gnome menu description
+-	install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
+-	install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
++#	install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
++#	install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)

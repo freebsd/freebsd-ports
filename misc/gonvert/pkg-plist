@@ -1,0 +1,9 @@
+bin/gonvert
+share/gnome/gnome/apps/Utilities/gonvert.desktop
+@dirrm share/gnome/gnome/apps/Utilities
+share/gnome/gonvert/gonvert.glade
+share/gnome/gonvert/pixmaps/gonvert.png
+share/gnome/gonvert/pixmaps/gonvert_icon.png
+@dirrm share/gnome/gonvert/pixmaps
+@dirrm share/gnome/gonvert
+share/gnome/pixmaps/gonvert_icon.png
