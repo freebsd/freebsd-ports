@@ -1,10 +1,13 @@
 bin/argouml
 %%DATADIR%%/antlrall.jar
 %%DATADIR%%/argouml.jar
+%%DATADIR%%/commons-logging.jar
 %%DATADIR%%/gef.jar
 %%DATADIR%%/i18n.jar
+%%DATADIR%%/jmi.jar
 %%DATADIR%%/log4j.jar
 %%DATADIR%%/nsuml.jar
 %%DATADIR%%/ocl-argo.jar
+%%DATADIR%%/toolbar.jar          
 %%DATADIR%%/xerces.jar
 @dirrm %%DATADIR%%
