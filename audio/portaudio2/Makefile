@@ -25,10 +25,6 @@ NO_FILTER_SHLIBS=yes
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SHLIB_VERSION=	0
 
-.if ${MACHINE_ARCH:L} == amd64
-CFLAGS+=	-fPIC
-.endif
-
 pre-everything::
 .if !defined(WITH_PATESTS)
 	@${ECHO_MSG}

@@ -1,0 +1,18 @@
+--- configure.orig	Mon Mar 15 15:52:38 2004
++++ configure	Mon Mar 15 15:53:00 2004
+@@ -1972,6 +1972,7 @@
+ fi
+ 
+ 	OTHER_OBJS="pa_unix_oss/pa_unix_oss.o pa_unix_oss/pa_unix.o";
++	OTHER_SHOBJS="pa_unix_oss/pa_unix_oss.So pa_unix_oss/pa_unix.So";
+ 	LIBS="-lm -lpthread";
+ 	PADLL="libportaudio.so";
+ 	SHARED_FLAGS="-shared";
+@@ -2404,6 +2405,7 @@
+ s,@INSTALL_DATA@,$INSTALL_DATA,;t t
+ s,@AR@,$AR,;t t
+ s,@OTHER_OBJS@,$OTHER_OBJS,;t t
++s,@OTHER_SHOBJS@,$OTHER_SHOBJS,;t t
+ s,@PADLL@,$PADLL,;t t
+ s,@SHARED_FLAGS@,$SHARED_FLAGS,;t t
+ s,@DLL_LIBS@,$DLL_LIBS,;t t
