@@ -6370,6 +6370,7 @@ p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-Manifest	ports/devel/p5-Test-Manifest
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
 p5-Test-Pod	ports/devel/p5-Test-Pod
+p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
