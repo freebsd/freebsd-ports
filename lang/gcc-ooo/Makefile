@@ -4,7 +4,7 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.12 1998/03/17 21:10:40 jdp Exp $
+# $Id: Makefile,v 1.14 1998/04/07 01:18:07 obrien Exp $
 #
 
 DISTNAME=	egcs-980315
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-03-15/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-03-15/
 
 MAINTAINER=	obrien@FreeBSD.org
+
+BROKEN=	"used to build on my system, now doesn't.  use 'cvs co -regcs_102 egcs' if you want a working version before the next upgrade"
 
 MANUAL_PACKAGE_BUILD=	installs libstdc++.a which conflicts with system version
 
