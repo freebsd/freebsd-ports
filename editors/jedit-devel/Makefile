@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g:S/p/pre/}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Powerful programmer\'s text editor written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
