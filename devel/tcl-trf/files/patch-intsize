@@ -1,0 +1,33 @@
+--- generic/haval.1996/haval.h	Fri Jul 11 12:07:36 1997
++++ generic/haval.1996/haval.h	Sun Jul 11 13:43:41 2004
+@@ -47,9 +47,6 @@
+  */
+ 
+-#ifdef __alpha /* aku, Sep 23, 1996 */
+-typedef unsigned int      haval_word; /* a HAVAL word = 32 bits */
+-#else
+-typedef unsigned long int haval_word; /* a HAVAL word = 32 bits */
+-#endif
++#include <sys/types.h>
++typedef uint32_t	haval_word;	/* a HAVAL word = 32 bits */
+ 
+ typedef struct {
+--- generic/ripemd/rmd128.h	Mon May 19 16:53:18 1997
++++ generic/ripemd/rmd128.h	Sun Jul 11 13:48:54 2004
+@@ -33,12 +33,8 @@
+ /* adapt these, if necessary, 
+    for your operating system and compiler */
++#include <sys/types.h>
+-typedef    unsigned char        byte;   /* unsigned 8-bit type */
+-typedef    unsigned short       word;   /* unsigned 16-bit type */
+-
+-#ifdef __alpha
+-typedef    unsigned int         dword;  /* unsigned 32-bit integer (AXP) */ 
+-#else
+-typedef    unsigned long        dword;  /* unsigned 32-bit type */
+-#endif
++typedef uint8_t 	byte;   /* unsigned 8-bit type */
++typedef uint16_t	word;   /* unsigned 16-bit type */
++typedef uint32_t	dword;  /* unsigned 32-bit type */
+ 
+ /********************************************************************/

@@ -22,7 +22,6 @@ BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//} \
 USE_BZIP2=	yes
 
 ALL_TARGET=	all test
-#MAKE_ARGS+=	-j2
 
 TCL_VER?=	8.4
 DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
@@ -83,7 +82,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+.if ${ARCH} == "sparc64"
 BROKEN=		"Fails testsuite during build"
 .endif
 
