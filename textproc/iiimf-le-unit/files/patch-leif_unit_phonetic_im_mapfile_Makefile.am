@@ -1,0 +1,17 @@
+--- unit/phonetic_im/mapfile/Makefile.am.orig	Wed Sep  8 03:11:55 2004
++++ unit/phonetic_im/mapfile/Makefile.am	Wed Sep  8 03:47:23 2004
+@@ -57,10 +57,10 @@
+ 	-e "s/^# define unput(c).*/# define unput(c) (\*--global_ptr=c)/g" \
+ 	-e "s/^#define unput(c).*/#define unput(c) (\*--global_ptr=c)/g" \
+ 	-e "/^#line/d" \
+-	-e "/^static char \*global_ptr\;/i\
+-#define YY_NO_INPUT" -e "/^static char \*global_ptr\;/i\
+-#define YY_NO_UNPUT" -e "/^static char \*global_ptr\;/i\
+-#define input() (\*global_ptr++)" $*.tc > $*.c
++	$*.tc | (echo '\
++#define YY_NO_INPUT'; echo '\
++#define YY_NO_UNPUT'; echo '\
++#define input() (*global_ptr++)'; cat ) > $*.c
+ 	rm -f  $*.tc
+ 
+ noinst_LTLIBRARIES = libphonetic_temp.la

@@ -1,0 +1,9 @@
+--- unit/xaux_common/Makefile.am.orig	Thu Jun 12 19:41:27 2003
++++ unit/xaux_common/Makefile.am	Wed Sep  8 02:22:47 2004
+@@ -1,4 +1,5 @@
+-libxaux_common_la_CFLAGS = -I../include
++libxaux_common_la_CFLAGS = -I../include -I${LOCALBASE}/include $(X_CFLAGS)
++libxaux_common_la_LIBADD = -L${LOCALBASE}/lib -liconv
+ libxaux_common_la_SOURCES = logf.c encode.c
+ noinst_LTLIBRARIES = libxaux_common.la
+ 

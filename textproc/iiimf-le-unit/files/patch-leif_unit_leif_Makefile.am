@@ -1,0 +1,10 @@
+--- unit/leif/Makefile.am.orig	Wed Sep  8 02:23:43 2004
++++ unit/leif/Makefile.am	Wed Sep  8 02:24:01 2004
+@@ -1,6 +1,6 @@
+ LE_FILES = unitle.so
+ unitle_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) \
+-                    -I$(IM_INCLUDEDIR)/iml -I../include
++                    -I$(IM_INCLUDEDIR)/iml -I../include $(X_CFLAGS)
+ unitle_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
+ unitle_la_LIBADD = $(THREAD_LIBS) ../xaux_common/libxaux_common.la
+ unitle_la_SOURCES = define.c unit_input.c le.c \
