@@ -7,8 +7,9 @@
 
 PORTNAME=	dsbl-testers
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://firestuff.org/projects/ \
+MASTER_SITES=	http://www.firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
@@ -19,8 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} ${PTHREAD_LIBS}" PREFIX="${PREFIX}"
 INSTALL_SHLIBS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -31,6 +30,8 @@ MAN5=	dsbl.conf.5
 
 post-patch:
 	@-${RM} ${WRKSRC}/firemake/*.orig
+	@-${RM} ${WRKSRC}/firedns/firemake/*.orig
+	@-${RM} ${WRKSRC}/firestring/firemake/*.orig
 
 # install ourselves to insure proper ownership/permissions
 # as dictated by port's rules
