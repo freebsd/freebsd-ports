@@ -32,6 +32,77 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20c9bb14-81e6-11d9-a9e7-0001020eed82">
+    <topic>opera -- "data:" URI handler spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>7.54.20050131</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/13818/">
+	  <p>Michael Holzt has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to trick users
+	    into executing malicious files.</p>
+	  <p>The vulnerability is caused due to an error in the
+	    processing of "data:" URIs, causing wrong information to
+	    be shown in a download dialog. This can be exploited by
+	    e.g. a malicious website to trick users into executing a
+	    malicious file by supplying a specially crafted "data:"
+	    URI.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0456</cvename>
+      <certvu>882926</certvu>
+      <url>http://secunia.com/advisories/13818/</url>
+      <url>http://www.opera.com/freebsd/changelogs/754u2/</url>
+    </references>
+    <dates>
+      <discovery>2005-01-12</discovery>
+      <entry>2005-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d8e55d65-81d6-11d9-a9e7-0001020eed82">
+    <topic>opera -- kfmclient exec command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>7.54.20050131</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Giovanni Delvecchio reports:</p>
+	<blockquote cite="http://www.zone-h.org/advisories/read/id=6503">
+	  <p>Opera for linux uses "kfmclient exec" as "Default
+	    Application" to handle saved files.	 This could be used by
+	    malicious remote users to execute arbitrary shell commands
+	    on a target system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1491</cvename>
+      <url>http://secunia.com/advisories/13447/</url>
+      <url>http://www.opera.com/freebsd/changelogs/754u2/</url>
+      <url>http://www.zone-h.org/advisories/read/id=6503</url>
+    </references>
+    <dates>
+      <discovery>2004-12-12</discovery>
+      <entry>2005-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b4b0b3f-8127-11d9-a9e7-0001020eed82">
     <topic>postgresql -- multiple buffer overflows in PL/PgSQL
       parser</topic>
@@ -988,7 +1059,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>opera</name>
 	<name>opera-devel</name>
 	<name>linux-opera</name>
-	<range><lt>7.54.20041210</lt></range>
+	<range><lt>7.54.20050131</lt></range>
       </package>
     </affects>
     <description>
@@ -1034,6 +1105,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-08</discovery>
       <entry>2005-01-24</entry>
+      <modified>2005-02-18</modified>
     </dates>
   </vuln>
 
