@@ -7,7 +7,7 @@
 
 PORTNAME=	vfghostscript
 PORTVERSION=	5.50a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.humblesoft.com/pub/ \
 		http://www6.vc-net.ne.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/\
+		http://www.epkowa.on.arena.ne.jp/pips/data/9400/\
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/hpinkjet/g}
 # first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
 # third for ${MASTER_SITE_PORTS_JP}
@@ -66,7 +66,7 @@ GS_DRIVERS+=	epag-3.09.tar.gz
 GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.4.tar.gz
-GS_DRIVERS+=	eplaser-2.0.2-550.tgz
+GS_DRIVERS+=	eplaser-2.0.6-550.tgz
 GS_DRIVERS+=	hpijs0.97.tar.gz
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
@@ -87,7 +87,7 @@ post-extract:
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevalps-0.21.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevrpdl-1.4.tar.gz ; \
-	  ${TAR} --unlink -xzf ${_DISTDIR}/eplaser-2.0.2-550.tgz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/eplaser-2.0.6-550.tgz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/hpijs0.97.tar.gz ; \
 	)
 
