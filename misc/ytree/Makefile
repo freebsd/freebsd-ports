@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ytree
-# Version required:	1.61
+# Version required:	1.63
 # Date created:		5 Jan 1998
 # Whom:			Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/02 01:00:54 jseger Exp $
 #
 
-DISTNAME=		ytree-1.61
+DISTNAME=		ytree-1.63
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers
