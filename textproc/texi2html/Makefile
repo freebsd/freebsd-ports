@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	texi2html
-PORTVERSION=	1.64
+PORTVERSION=	1.66
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/Distrib/
+MASTER_SITES=	http://www.cvshome.org/files/70/10/
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Texinfo to HTML converter"
+COMMENT=	Texinfo to HTML converter
 
-USE_AUTOMAKE=	yes
-USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_AUTOMAKE_VER=	15
+AUTOMAKE_ARGS=	-a
+USE_GMAKE=	yes
 
 MAN1=		texi2html.1
+INFO=		texi2html
 
 .include <bsd.port.mk>
