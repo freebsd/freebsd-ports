@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.13 1999/04/08 19:05:44 billf Exp $
+# $Id: Makefile,v 1.14 1999/04/21 00:39:27 scrappy Exp $
 #
 
 DISTNAME=	majordomo-1.94.4
@@ -35,7 +35,7 @@ pre-install:
 post-install:
 		@ ln -sf archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
-			${MKDIR} -p ${PREFIX}/majordomo/$$dir; \
+			${MKDIR} ${PREFIX}/majordomo/$$dir; \
 		done
 		@ /usr/sbin/chown majordom.majordom ${PREFIX}/majordomo/tmp
 		@ /bin/chmod 700 ${PREFIX}/majordomo/tmp
