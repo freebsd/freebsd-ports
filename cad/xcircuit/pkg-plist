@@ -1,15 +1,47 @@
 bin/xcircuit
-lib/xcircuit/builtins.lps
-lib/xcircuit/xcircps.pro
-lib/xcircuit/analog.lps
-lib/xcircuit/avlsi.lps
-lib/xcircuit/digital.lps
-lib/xcircuit/lgf.lps
-lib/xcircuit/signal.lps
-lib/xcircuit/musiclib.lps
+lib/X11/app-defaults/XCircuit
+lib/X11/app-defaults/XSchema
+lib/X11/xcircuit/analog.lps
+lib/X11/xcircuit/avlsi.lps
+lib/X11/xcircuit/builtins.lps
+lib/X11/xcircuit/digital.lps
+lib/X11/xcircuit/fonts/courier.lps
+lib/X11/xcircuit/fonts/courier.xfe
+lib/X11/xcircuit/fonts/courieriso.xfe
+lib/X11/xcircuit/fonts/courieriso2.lps
+lib/X11/xcircuit/fonts/courieriso2.xfe
+lib/X11/xcircuit/fonts/courieriso5.lps
+lib/X11/xcircuit/fonts/courieriso5.xfe
+lib/X11/xcircuit/fonts/helvetica.lps
+lib/X11/xcircuit/fonts/helvetica.xfe
+lib/X11/xcircuit/fonts/helveticaiso.xfe
+lib/X11/xcircuit/fonts/helveticaiso2.lps
+lib/X11/xcircuit/fonts/helveticaiso2.xfe
+lib/X11/xcircuit/fonts/helveticaiso5.lps
+lib/X11/xcircuit/fonts/helveticaiso5.xfe
+lib/X11/xcircuit/fonts/myfont.lps
+lib/X11/xcircuit/fonts/myfont.xfe
+lib/X11/xcircuit/fonts/symbol.lps
+lib/X11/xcircuit/fonts/symbol.xfe
+lib/X11/xcircuit/fonts/times_roman.lps
+lib/X11/xcircuit/fonts/times_roman.xfe
+lib/X11/xcircuit/fonts/times_romaniso.xfe
+lib/X11/xcircuit/fonts/times_romaniso2.lps
+lib/X11/xcircuit/fonts/times_romaniso2.xfe
+lib/X11/xcircuit/fonts/times_romaniso5.lps
+lib/X11/xcircuit/fonts/times_romaniso5.xfe
+lib/X11/xcircuit/lgf.lps
+lib/X11/xcircuit/musiclib.lps
+lib/X11/xcircuit/signal.lps
+lib/X11/xcircuit/xcircps2.pro
 share/examples/xcircuit/USAflag.ps
 share/examples/xcircuit/border.ps
+share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
+share/examples/xcircuit/systemd1.lgf
+share/examples/xcircuit/test.ps
+share/examples/xcircuit/threestage.ps
 share/examples/xcircuit/vcoblock.ps
 @dirrm share/examples/xcircuit
-@dirrm lib/xcircuit
+@dirrm lib/X11/xcircuit/fonts
+@dirrm lib/X11/xcircuit
