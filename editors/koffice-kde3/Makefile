@@ -19,7 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		art_lgpl.5:${PORTSDIR}/graphics/libart_lgpl2
+		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
 
 _NO_KDE_PATCHUP=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}
