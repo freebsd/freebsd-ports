@@ -1,14 +1,14 @@
---- perldl.conf.orig	Mon Feb  8 18:21:45 1999
-+++ perldl.conf	Mon Feb  8 20:04:29 1999
+--- perldl.conf.orig	Tue Apr  4 12:38:33 2000
++++ perldl.conf	Tue Apr  4 12:39:29 2000
 @@ -14,7 +14,7 @@
  # 0 -> don't use
  # true -> force use
  
 -	WITH_POSIX_THREADS => undef,  	
-+	WITH_POSIX_THREADS => 0,  	
++	WITH_POSIX_THREADS => 0,
  
  # Try to build Graphics/TriD
- 	WITH_3D => 1,	
+ 	WITH_3D => undef,
 @@ -22,14 +22,14 @@
  #  You can use e.g. '-lMesaGL -lMesaGLU' with the correct -L directory
  #  to use Mesa.
@@ -23,7 +23,7 @@
  # Whether or not to build the Karma interface module
  
 -        WITH_KARMA => undef,    # Leave it up to PDL to decide
-+        WITH_KARMA => 0,        # Leave it up to PDL to decide
-         WHERE_KARMA => undef,   # Can specific explicit directory location
++        WITH_KARMA => 0,    # Leave it up to PDL to decide
+         WHERE_KARMA => undef,   # you may explicitly specify directory location
  	
  # Whether or not to build the PDL::Slatec module

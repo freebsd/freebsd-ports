@@ -6,20 +6,35 @@
 #
 
 PORTNAME=	PDL
-PORTVERSION=	2.0
+PORTVERSION=	2.005
 CATEGORIES=	math perl5
-MASTER_SITES=	http://www.fastlane.net/~jcerney/%SUBDIR%/ \
-		${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PDL
 
 MAINTAINER=	tobez@plab.ku.dk
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 USE_PERL5=	yes
 SCRIPTS_ENV=	PERL=${PERL}
+
+.if defined(KITCHEN_SINK)
+BUILD_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
+		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
+		saoimage:${PORTSDIR}/astro/saoimage
+.endif
+
+.SILENT:
+
+.if !defined(KITCHEN_SINK)
+pre-extract:
+	${ECHO} "You can build additional functionality into PDL by defining KITCHEN_SINK"
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -29,12 +44,12 @@ BROKEN=	test script t/flexraw.t fails all 26 tests
 
 MAN1=	PDL::Philosophy.1 PDL::Internals.1 PDL::PP.1 PDL::Tips.1 \
 	PDL::Dataflow.1 PDL::Indexing.1 PDL::FAQ.1 PDL::Delta.1 \
-	PDL::Objects.1 PDL::Impatient.1 pdl.1 pod2usage.1 podselect.1 \
-	perldl.1
+	PDL::Objects.1 PDL::Impatient.1 pdl.1 perldl.1
 MAN3=	PDL::PP::Dump.3 PDL::PP::Signature.3 PDL::Types.3 PDL::Dbg.3 \
-	PDL::Exporter.3 PDL::Core.3 PDL::Basic.3 PDL::Ops.3 PDL::Primitive.3 \
+	PDL::Exporter.3 PDL::Core.3 PDL::Basic.3 PDL::Lite.3 PDL::LiteF.3 \
+        PDL::Ops.3 PDL::Options.3 PDL::Primitive.3 \
 	PDL::Slices.3 PDL::Tests.3 PDL::Math.3 PDL::AutoLoader.3 \
-	PDL::Pod::Usage.3 PDL::Pod::Parser.3 PDL::Pod::Html.3 \
+	PDL::Pod::Usage.3 PDL::Pod::Parser.3 \
 	PDL::Pod::Select.3 PDL::Doc.3 PDL::Doc::Perldl.3 \
 	PDL::Graphics::PGPLOT.3 PDL::Graphics::IIS.3 PDL::Graphics::OpenGLQ.3 \
 	PDL::Graphics::TriD::Rout.3 PDL::Graphics::TriD::MathGraph.3 \
