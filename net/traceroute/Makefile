@@ -3,7 +3,7 @@
 # Date created:		20 February 1997
 # Whom:			chris@vader.org
 #
-# $Id: Makefile,v 1.2 1998/12/04 21:53:42 billf Exp $
+# $Id: Makefile,v 1.3 1999/03/08 16:42:48 foxfair Exp $
 #
 
 DISTNAME=	traceroute_${RELEASEDATE}
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@Chg.RU
 
-RELEASEDATE=	990207
+RELEASEDATE=	990522
 NO_WRKSUBDIR=	yes
 MAN8=		traceroute.8
 
