@@ -6427,6 +6427,7 @@ ttf2pt1		ports/print/ttf2pt1
 ttftot42	ports/print/ttftot42
 tth		ports/textproc/tth
 ttmkfdir	ports/x11-fonts/ttmkfdir
+ttraffic	ports/games/ttraffic
 ttt		ports/net/ttt
 tty		src/usr.bin/tty
 ttyrec		ports/misc/ttyrec
