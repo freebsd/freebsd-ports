@@ -179,6 +179,7 @@
     SUBDIR += libxine
     SUBDIR += linplasma
     SUBDIR += linux-bmrt
+    SUBDIR += linux-divxplayer
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
     SUBDIR += linux-png
