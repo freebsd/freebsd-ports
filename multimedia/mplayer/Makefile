@@ -148,18 +148,19 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.105
-PORTREVISION=	2
+PORTVERSION=	0.90.0.110
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
 		http://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www4.mplayerhq.hu/MPlayer/releases/ \
+		http://mirrors.xmission.com/MPlayer/releases/ \
 		ftp://ftp1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
+		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90rc5
+DISTNAME=	MPlayer-0.90
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
