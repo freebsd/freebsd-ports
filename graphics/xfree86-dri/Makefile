@@ -7,7 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	5.0.2
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XORG}
 DISTFILES=	X11R6.7.0-src1.tar.gz \
@@ -31,5 +31,10 @@ XINSTALL_DIRS=		lib/GL/mesa/src/drv
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
+.endif
+.if ${ARCH} == amd64
+PLIST_SUB+=	NO_AMD64="@comment "
+.else
+PLIST_SUB+=	NO_AMD64=""
 .endif
 .include <bsd.port.post.mk>
