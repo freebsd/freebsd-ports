@@ -1,0 +1,11 @@
+--- ftp.c.orig	Sun Jun 20 21:12:30 1999
++++ ftp.c	Sun Jun 20 21:13:33 1999
+@@ -63,7 +63,7 @@
+ #endif
+ 
+ 
+-extern int      pipe_broken;
++extern sig_atomic_t      pipe_broken;
+ extern int      errno;
+ 
+ 
