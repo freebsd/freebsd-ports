@@ -3,7 +3,7 @@ It works by bringing up a couple dialog boxes that look strangely
 like they're created using ncurses but really newt - and then checking
 your options and generating a dhcpd.conf.
 
-WWW: http://members.xoom.com/vschade/dhcp-conf/
+WWW: http://dhcp-conf.sourceforge.net
 Author: Vee Schade <vschade@mindless.com>
 
 --Will <andrews@technologist.com>
