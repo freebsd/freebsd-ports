@@ -1,0 +1,78 @@
+# New ports collection makefile for:    gnat-doc
+# Date created:         4 Sept 2001
+# Whom:                 John Merryweather Cooper <jmcoopr@webmail.bmi.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnat-doc
+PORTVERSION=	3.13p
+CATEGORIES=	lang
+MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/%SUBDIR%/ \
+		ftp://ftp.cdrom.com/pub/languages/ada/compiler/gnat/%SUBDIR%/ \
+		ftp://wuarchive.wustl.edu/languages/ada/compiler/gnat/%SUBDIR%/ \
+		ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/mirrors/cs.nyu.edu/pub/gnat/%SUBDIR%/ \
+		ftp://ftp.cs.tu-berlin.de/pub/gnat/%SUBDIR%/ \
+		ftp://ftp.informatik.rwth-aachen.de/pub/mirror/cs.nyu.edu/pub/gnat/%SUBDIR%/ \
+		ftp://ftp.lip6.fr/pub/gnat/%SUBDIR%/ \
+		ftp://ftp.cnam.fr/pub/Ada/PAL/compiler/gnat/%SUBDIR%/ \
+		ftp://ftp.fss.bme.hu/pub/ada/gnat/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+PKGNAMESUFFIX=	-${DOCFORMAT}
+DISTNAME=	gnat-${PORTVERSION}-docs
+
+MAINTAINER=	jmcoopr@webmail.bmi.net
+
+WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-unx-docs
+NO_BUILD=	yes
+PLIST=		${MASTERDIR}/pkg-plist_${DOCFORMAT}
+PKGMESSAGE=	${MASTERDIR}/pkg-message_${DOCFORMAT}
+
+DOCFORMAT?=	html
+DOCSDIR=	${PREFIX}/share/doc/gnat/${DOCFORMAT}
+
+SEC_LABEL=	"Programming & development tools."
+INSTALL_INFO=	install-info --section=${SEC_LABEL}
+ARM_LABEL=	"* ARM95: (arm95).                  Ada 95 Annotated Reference Manual."
+GCC_LABEL=	"* Adagcc: (gcc).                   GNAT gcc 2.8.1 compiler reference."
+RM_LABEL=	"* Gnat_rm: (gnat_rm).              GNAT Reference Manual."
+UG_LABEL=	"* Gnat_ug: (gnat_ug).              GNAT User Guide."
+
+.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "info" && ${DOCFORMAT} != "ps" && ${DOCFORMAT} != "texi" && ${DOCFORMAT} != "txt"
+.BEGIN:
+	@${ECHO} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
+	@${ECHO} "Possible values are:  html, info, ps, texi,"
+	@${ECHO} "and txt."
+	@${FALSE}
+.endif
+
+pre-install:
+	@${CP} ${PKGDIR}/pkg-plist_${DOCFORMAT} ${WRKDIR}
+	@${CP} ${PKGDIR}/pkg-message_${DOCFORMAT} ${WRKDIR}
+
+do-install:
+.if !defined(NOPORTDOCS)
+
+.if ${DOCFORMAT} == "info"
+	@${MKDIR} ${PREFIX}/info
+	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${PREFIX}/info
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+		${SED} -ne '1,/Menu:/p' \/usr\/share\/info/dir > ${PREFIX}/info/dir; \
+	fi
+	@${INSTALL_INFO} --item=${ARM_LABEL} ${PREFIX}/info/arm95.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} --item=${GCC_LABEL} ${PREFIX}/info/gcc.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} --item=${RM_LABEL} ${PREFIX}/info/gnat_rm.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} --item=${UG_LABEL} ${PREFIX}/info/gnat_ug.info ${PREFIX}/info/dir
+.else
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${DOCSDIR}
+.endif
+
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:/usr/local:${PREFIX}:'
+.endif
+
+.include <bsd.port.mk>

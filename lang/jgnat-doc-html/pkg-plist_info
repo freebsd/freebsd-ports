@@ -1,0 +1,6 @@
+info/jgnat_ug.info
+info/jgnat_ug.info-1
+info/jgnat_ug.info-2
+info/jgnat_ug.info-3
+@unexec install-info --delete %D/info/jgnat_ug.info %D/info/dir
+@exec install-info --section="%%SEC_LABEL%%" --entry="%%UG_LABEL%%" %D/info/jgnat_ug.info %D/info/dir

@@ -1,0 +1,8 @@
+share/doc/gnat/html/arm95.html
+share/doc/gnat/html/gcc.html
+share/doc/gnat/html/gdb.html
+share/doc/gnat/html/gdbtk.html
+share/doc/gnat/html/gnat_rm.html
+share/doc/gnat/html/gnat_ug.html
+@dirrm share/doc/gnat/html
+@unexec rmdir %D/share/doc/gnat 2>/dev/null || true
