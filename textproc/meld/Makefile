@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	meld
@@ -46,9 +46,7 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO_CMD} 'Compiling files...'
-	@(cd ${INSTALLDIR} && \
-		${PYTHON_CMD} -c "import compileall; compileall.compile_dir('.', 0)" && \
-		${PYTHON_CMD} -O -c "import compileall; compileall.compile_dir('.', 0)")
+	@cd ${INSTALLDIR} && \
+		${PYTHON_CMD} -c "import compileall; compileall.compile_dir('.', 0)"
 
 .include <bsd.port.mk>
