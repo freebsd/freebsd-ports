@@ -8,7 +8,7 @@
 PORTNAME=	pan
 PORTVERSION=	0.7.6
 CATEGORIES=	news gnome
-MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/ \
+MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/${PORTVERSION}/ \
 		ftp://source.rebelbase.com/pub/pan/obsolete/
 
 MAINTAINER=	jedgar@FreeBSD.org
