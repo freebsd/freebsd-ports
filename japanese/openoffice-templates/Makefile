@@ -18,6 +18,8 @@ MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	OpenOffice.org 1.1.0 Impress Templates
 PLIST=		${WRKDIR}/pkg-plist
 
+BROKEN=		"Checksum mismatch"
+
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
 OPENOFFICE=	OpenOffice.org1.1.0
