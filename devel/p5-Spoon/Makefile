@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spoon
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -30,13 +30,15 @@ MAN3=		Spoon.3 \
 		Spoon::Cookie.3 \
 		Spoon::DataObject.3 \
 		Spoon::Formatter.3 \
+		Spoon::Hook.3 \
 		Spoon::Hub.3 \
 		Spoon::Installer.3 \
 		Spoon::MetadataObject.3 \
+		Spoon::Plugin.3 \
+		Spoon::Registry.3 \
 		Spoon::Template.3 \
 		Spoon::Template::TT2.3 \
-		Spoon::Registry.3 \
-		Spoon::Plugin.3
+		Spoon::Utils.3
 
 .include <bsd.port.pre.mk>
 

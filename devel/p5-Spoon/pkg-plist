@@ -6,6 +6,8 @@
 %%SITE_PERL%%/Spoon/Cookie.pm
 %%SITE_PERL%%/Spoon/DataObject.pm
 %%SITE_PERL%%/Spoon/Formatter.pm
+%%SITE_PERL%%/Spoon/Headers.pm
+%%SITE_PERL%%/Spoon/Hook.pm
 %%SITE_PERL%%/Spoon/Hub.pm
 %%SITE_PERL%%/Spoon/Installer.pm
 %%SITE_PERL%%/Spoon/MetadataObject.pm
@@ -13,6 +15,8 @@
 %%SITE_PERL%%/Spoon/Registry.pm
 %%SITE_PERL%%/Spoon/Template.pm
 %%SITE_PERL%%/Spoon/Template/TT2.pm
+%%SITE_PERL%%/Spoon/Trace.pm
+%%SITE_PERL%%/Spoon/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon
 @dirrm %%SITE_PERL%%/Spoon/Template
