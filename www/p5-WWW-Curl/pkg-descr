@@ -1,0 +1,10 @@
+WWW-Curl is the Perl binding interface to libcurl (ports/ftp/curl)
+
+WWW-Curl has formerly been known as Curl-easy
+
+Author: Chris Bailiff
+
+WWW: http://curl.haxx.se/libcurl/perl/
+
+-- Chris Larsen
+ <darth@vader.dk>
