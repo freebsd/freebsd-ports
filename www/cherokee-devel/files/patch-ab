@@ -1,0 +1,11 @@
+--- configure.orig	Mon Apr  7 13:28:00 2003
++++ configure	Mon Apr  7 13:27:40 2003
+@@ -6331,7 +6331,7 @@
+   withval="$with_php"
+   
+    CHEROKEE_PHP_CFLAGS="-I$withval -I$withval/main -I$withval/Zend -I$withval/regex -I$withval/TSRM"
+-   CHEROKEE_PHP_LIBADD="$withval/libphp4.la"
++   CHEROKEE_PHP_LIBADD="/usr/local/libexec/apache/libphp4.so"
+    
+    
+    php_support="yes"
