@@ -1,0 +1,7 @@
+A GNU implementation of the UNIX spell utility using Ispell.
+
+Provides a flexible, non-interactive interface to the Ispell utility.
+
+WWW:	http://www.gnu.org/
+
+brian@quynh-and-brian.org

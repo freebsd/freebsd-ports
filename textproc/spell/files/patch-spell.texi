@@ -1,0 +1,14 @@
+--- spell.texi.orig	Tue Apr  9 21:20:14 1996
++++ spell.texi	Wed Apr 24 08:47:57 2002
+@@ -9,6 +9,11 @@
+ @set UPDATED April 6, 1996
+ @c %**end of header
+ 
++@dircategory GNU Packages
++@direntry
++* Spell: (spell).		A GNU implementation of the UNIX spell utility using Ispell.
++@end direntry
++
+ @ifinfo
+ This file documents GNU Spell, a clone of Unix @code{spell}.
+ 

@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/spell
+@unexec install-info --delete %D/info/spell.info %D/info/dir
+info/spell.info
+@exec install-info %D/info/spell.info %D/info/dir
