@@ -42,3 +42,5 @@ share/bwbasic/bwbtest/term.bas
 share/bwbasic/bwbtest/whilwend.bas
 share/bwbasic/bwbtest/width.bas
 share/bwbasic/bwbtest/writeinp.bas
+@dirrm share/bwbasic/bwbtest
+@dirrm share/bwbasic
