@@ -6,23 +6,42 @@
 #
 
 PORTNAME=	mp3info
-PORTVERSION=	0.2.16
+PORTVERSION=	0.8.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://bimbo.hive.no/pub/mp3info/
-MASTER_SITE_SUBDIR=	apps/sound/editors
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/mp3-utils/mp3info
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
-GNU_CONFIGURE=	yes
+WANT_GTK=	yes
 
 MAN1=		mp3info.1
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mp3info
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/mp3info
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mp3info
+.include <bsd.port.pre.mk>
+
+ALL_TARGET=	doc mp3info
+
+.if defined(HAVE_GTK)
+ALL_TARGET+=	gmp3info
+PLIST_SUB+=	WITH_GTK=""
+.else
+PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
-.include <bsd.port.mk>
+MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
+.if defined(HAVE_GTK)
+	${INSTALL_PROGRAM} ${WRKSRC}/gmp3info ${PREFIX}/bin
+.endif
+	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/mp3info.txt ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
