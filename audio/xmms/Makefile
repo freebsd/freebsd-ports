@@ -96,5 +96,6 @@ pre-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmms/Skins
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
