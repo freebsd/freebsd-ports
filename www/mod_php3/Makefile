@@ -64,6 +64,12 @@ AP_LIBEXEC=	${PREFIX}/libexec/apache
 
 PLIST_SUB=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
@@ -105,4 +111,4 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
