@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shttpd
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	shttpd
@@ -24,7 +24,7 @@ MAN1=		shttpd.1
 .if defined(WITHOUT_SSL)
 PKGNAMESUFFIX=	-nossl
 .else
-CFLAGS+=	-DWITH_SSL -I/usr/include/openssl -lssl -lcrypto
+CFLAGS+=	-DWITH_SSL -lssl -lcrypto
 .endif
 
 PLIST_FILES=	bin/shttpd
