@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.man.szczecin.pl/pub7/security/network-mapping/siphon/ \
 DISTFILES=	siphon-v.666.tar.gz siphon-report.pl
 EXTRACT_ONLY=	siphon-v.666.tar.gz
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive host OS identifier using characteristics of sniffed traffic
 
 WRKSRC=		${WRKDIR}/siphon-v.666
