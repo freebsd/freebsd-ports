@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gettext package
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
@@ -31,8 +29,10 @@ CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
 		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
+.if !defined(NO_GETTEXT_OPTIONS)
 OPTIONS=	EXAMPLES "install example files" off \
 		HTMLMAN "install man pages in HTML format" off
+.endif
 PLIST=		${WRKDIR}/plist
 PLISTU=		${WRKDIR}/plist-unsorted
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
