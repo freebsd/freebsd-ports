@@ -1,2 +1,4 @@
-MD5 (apache_1.3.29.tar.gz) = e97fe9bf51dc2c9c233d53f63b1347e3
-MD5 (patches_1.3.29rusPL30.19.tar.gz) = 58d4c5305cc80cf76d744a9722958320
+MD5 (apache_1.3.31.tar.gz) = bd548a06ac48dda496b4e613572bb020
+SIZE (apache_1.3.31.tar.gz) = 2467371
+MD5 (patches_1.3.31rusPL30.20.tar.gz) = da983bb4a4e983cba55390afe4569f04
+SIZE (patches_1.3.31rusPL30.20.tar.gz) = 138924
