@@ -1,3 +1,1 @@
-MD5 (glib-2.0-docs.tar.gz) = be3442d65f897313b3f1c4160a240c41
-MD5 (gtk-2.0-docs.tar.gz) = e34aae6fd6c2b410aa33a984d0d71764
-MD5 (gdk-2.0-docs.tar.gz) = 465e24e6a805af91745d529e3b0eddc7
+dummy to keep portlint happy
