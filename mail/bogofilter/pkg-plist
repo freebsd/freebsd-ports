@@ -4,11 +4,13 @@ bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.trio
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.10
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.11
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.12
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.13
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.14
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.15
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/METHODS
@@ -21,6 +23,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.12
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.13
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.14
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.15
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-SA-2002-01
@@ -41,9 +44,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/html/bogoutil.html
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-postfix
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-qmail
-%%PORTDOCS%%%%DOCSDIR%%/programmer/README.dcdflib
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.freebsd
-%%PORTDOCS%%%%DOCSDIR%%/programmer/README.hp-ux
 %%PORTDOCS%%%%DOCSDIR%%/tuning/README.bogotune
 %%PORTDOCS%%%%DOCSDIR%%/tuning/bogol
 %%PORTDOCS%%%%DOCSDIR%%/tuning/bogotune
