@@ -28,7 +28,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd June 29, 2004
+.Dd August 12, 2004
 .Os
 .Dt PORTAUDIT \&1 "FreeBSD ports collection"
 .
@@ -54,7 +54,7 @@
 .Nm
 checks installed packages for known vulnerabilities and generates reports
 including references to security advisories.
-Its audience are system administrators or individual users.
+Its intended audience is system administrators and individual users.
 .Pp
 .Nm
 uses a database maintained by port committers and the FreeBSD security team
@@ -103,6 +103,10 @@ Test whether
 .Ar pkg-name
 is listed in the audit database.
 .El
+.Pp
+If no options are given,
+.Nm
+prints a vulnerability report for all installed packages.
 .
 .
 .Sh EXAMPLES
@@ -116,6 +120,10 @@ Fetch the current database and print its creation date:
 Print a vulnerability report for all installed packages:
 .Pp
 .Dl "portaudit -a"
+.It
+Print a vulnerability report for a remote machine:
+.Pp
+.Dl "ssh remote.example pkg_info | awk '{ print $1 }' | xargs portaudit"
 .It
 Print a vulnerability report for the local INDEX:
 .Pp

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	security
 DISTFILES=
 
@@ -38,8 +38,14 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 492000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502120
+.if !defined(DFOSVERSION)
+.if ${OSVERSION} < 491101 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502120
 RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
+.endif
+.else
+.if ${DFOSVERSION} < 110000
+RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
+.endif
 .endif
 
 .if defined(BZIP2DEPENDS)
