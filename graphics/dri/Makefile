@@ -7,13 +7,13 @@
 
 PORTNAME=	dri
 PORTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt
-DISTFILES=	Mesa-6.2-20041124.tar.bz2	\
-		drm-20041124.tar.bz2
+DISTFILES=	Mesa-6.2-20050109.tar.bz2	\
+		drm-20050109.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
@@ -42,6 +42,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/unichrome_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
+.elif ${ARCH} == amd64
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mach64_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
@@ -53,9 +55,15 @@ do-install:
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+PLIST_SUB+=	I386_AMD64=""
 ALL_TARGET=	freebsd-dri-x86
+.elif ${ARCH} == amd64
+PLIST_SUB+=	I386="@comment "
+PLIST_SUB+=	I386_AMD64=""
+ALL_TARGET=	freebsd-dri
 .else
 PLIST_SUB+=	I386="@comment "
+PLIST_SUB+=	I386_AMD64="@comment "
 ALL_TARGET=	freebsd-dri
 .endif
 .include <bsd.port.post.mk>
