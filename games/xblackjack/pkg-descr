@@ -1,0 +1,21 @@
+From The README:
+
+  Xblackjack is a MOTIF/OLIT based tool constructed to get you ready for the
+  casino.  It was inspired by a book called "Beat the Dealer" by Edward O.
+  Thorp, Ph.D. of UCLA.  A number of important statistics are maintained for
+  display, and used by the program to implement Thorp's "Complete Point System"
+  (high-low system).
+
+  Beginners can learn a basic strategy which doesn't require counting.  The
+  best strategy employs a simple card counting technique which can be used to
+  distinguish favorable situations.  Avid players can learn to compute Thorp's
+  high-low index, which takes the number of unseen cards into account.
+
+  The index is used by the program to suggest a bet, indicate when you should
+  buy insurance, and whether you should stand or hit, etc.  You can test the
+  strategy using a slider to control "autoplay mode".  Pressing the message
+  button below the playing area provides hints; the current count, index
+  and strategy table are revealed.
+
+eric.
+erich@FreeBSD.org
