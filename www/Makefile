@@ -144,6 +144,7 @@
     SUBDIR += mod_php3
     SUBDIR += mod_php4
     SUBDIR += mod_proxy_add_forward
+    SUBDIR += mod_put
     SUBDIR += mod_python
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
