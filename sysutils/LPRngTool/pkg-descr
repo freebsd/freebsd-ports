@@ -1,0 +1,10 @@
+LPRngTool is a configuration tool for LPRng.  It provides a simple
+Graphical User Interface that allows users to:
+
+- create printer definitions and edit printcap files
+- display the status of print queues and the printing system
+- perform printing administration functions
+    start, stop and abort print jobs
+    enable and disable spooling to print queues
+- configure print filters such as IFHP and the RedHat
+    print filters
