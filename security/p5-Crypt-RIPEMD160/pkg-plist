@@ -1,9 +1,9 @@
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Crypt/RIPEMD160/RIPEMD160.so
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Crypt/RIPEMD160/RIPEMD160.bs
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Crypt/RIPEMD160/autosplit.ix
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Crypt/RIPEMD160/.packlist
-lib/perl5/site_perl/5.005/i386-freebsd/Crypt/RIPEMD160.pm
-lib/perl5/site_perl/5.005/i386-freebsd/Crypt/RIPEMD160/MAC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/RIPEMD160.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/RIPEMD160.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RIPEMD160.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RIPEMD160/MAC.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RIPEMD160
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
