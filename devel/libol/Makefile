@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libol
-PORTVERSION=	0.2.24
+PORTVERSION=	0.3.9
 CATEGORIES=	devel
-MASTER_SITES=	http://www.balabit.hu/downloads/libol/0.2/
+MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
 MAINTAINER=	vince@blue-box.net
 COMMENT=	Library needed by syslog-ng
 
+GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
