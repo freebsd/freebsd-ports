@@ -18,7 +18,7 @@
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
 -	ADDITIONAL_PROGS="db_dump185 $ADDITIONAL_PROGS"
-+	ADDITIONAL_PROGS="db4_dump185 $ADDITIONAL_PROGS"
++	ADDITIONAL_PROGS="db41_dump185 $ADDITIONAL_PROGS"
  fi
  
  # Checks for system/compiler characteristics.

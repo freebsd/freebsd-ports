@@ -1,6 +1,6 @@
-Revision 4 of the Berkeley DB library. This version uses an incompatible
+Version 4.1 of the Berkeley DB library. This version uses an incompatible
 underlying database format than revision 1 and a different standard API.
-Utilities are included in the distribution to convert v1.85 databases to v4
+Utilities are included in the distribution to convert v1.85 databases to v4.1
 databases, and a backwards compatible API is provided to maintain
 compatibility with programs using the v1.85 interface.
 
