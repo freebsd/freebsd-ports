@@ -37,8 +37,6 @@ lib/libdbus-glib-1.so.0
 %%QT%%lib/libdbus-qt-1.so.0
 libdata/pkgconfig/dbus-1.pc
 libdata/pkgconfig/dbus-glib-1.pc
-@dirrm lib/dbus-%%VERSION%%/services
-@dirrm lib/dbus-%%VERSION%%
 @dirrm include/dbus-%%VERSION%%/include/dbus
 @dirrm include/dbus-%%VERSION%%/include
 @dirrm include/dbus-%%VERSION%%/dbus

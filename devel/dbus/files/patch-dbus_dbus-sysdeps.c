@@ -1,6 +1,6 @@
---- dbus/dbus-sysdeps.c.orig	Mon Aug  9 23:03:37 2004
-+++ dbus/dbus-sysdeps.c	Fri Dec 17 19:39:34 2004
-@@ -738,12 +738,40 @@
+--- dbus/dbus-sysdeps.c.orig	Tue Jan 11 17:35:58 2005
++++ dbus/dbus-sysdeps.c	Fri Jan 21 19:45:12 2005
+@@ -740,12 +740,40 @@
  {
    int bytes_written;
    char buf[1] = { '\0' };
@@ -41,7 +41,7 @@
  
    if (bytes_written < 0 && errno == EINTR)
      goto again;
-@@ -797,8 +825,10 @@
+@@ -799,8 +827,10 @@
    char buf;
  
  #ifdef HAVE_CMSGCRED 
@@ -54,7 +54,7 @@
  #endif
  
    _DBUS_ASSERT_ERROR_IS_CLEAR (error);
-@@ -833,9 +863,9 @@
+@@ -835,9 +865,9 @@
    msg.msg_iovlen = 1;
  
  #ifdef HAVE_CMSGCRED
@@ -67,7 +67,7 @@
  #endif
  
   again:
-@@ -858,9 +888,10 @@
+@@ -860,9 +890,10 @@
      }
  
  #ifdef HAVE_CMSGCRED
@@ -80,7 +80,7 @@
        _dbus_verbose ("Message from recvmsg() was not SCM_CREDS\n");
        return FALSE;
      }
-@@ -886,13 +917,9 @@
+@@ -888,13 +919,9 @@
  		       cr_len, (int) sizeof (cr), _dbus_strerror (errno));
        }
  #elif defined(HAVE_CMSGCRED)
@@ -97,30 +97,3 @@
  #else /* !SO_PEERCRED && !HAVE_CMSGCRED */
      _dbus_verbose ("Socket credentials not supported on this OS\n");
  #endif
-@@ -3417,21 +3444,21 @@
-       exit (1);
-     }
- 
--  _dbus_string_init_const (&str, "0xff");
-+  _dbus_string_init_const (&str, "255");
-   if (!_dbus_string_parse_double (&str,
- 				  0, &val, &pos))
-     {
-       _dbus_warn ("Failed to parse double");
-       exit (1);
-     }
--  if (val != 0xff)
-+  if (val != 255)
-     {
--      _dbus_warn ("Failed to parse 0xff correctly, got: %f", val);
-+      _dbus_warn ("Failed to parse 255 correctly, got: %f", val);
-       exit (1);
-     }
--  if (pos != 4)
-+  if (pos != 3)
-     {
--      _dbus_warn ("_dbus_string_parse_double of \"0xff\" returned wrong position %d", pos);
-+      _dbus_warn ("_dbus_string_parse_double of \"255\" returned wrong position %d", pos);
-       exit (1);
-     }
-   
