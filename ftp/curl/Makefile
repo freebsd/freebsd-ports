@@ -9,10 +9,11 @@ PORTNAME=	curl
 PORTVERSION=	7.10.3
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
-		http://download.sourceforge.net/curl/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
+MASTER_SITE_SUBDIR=	curl
 
 MAINTAINER=	roam@FreeBSD.org
 
