@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTNAME=		${PKGNAME}-src
 
-MAINTAINER=	freebsd-ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		This port is broken and needs a new maintainer
 
