@@ -1,15 +1,15 @@
 # New ports collection makefile for:    nxedit
-# Version required:    3.00p17
+# Version required:    3.04
 # Date created:        15 Nov 1999
 # Whom:                SASAKI Shunsuke <ele@pop17.odn.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ne-3.00pre17
-PKGNAME=	ja-ne-3.00p17
+DISTNAME=	ne-3.04
+PKGNAME=	ja-ne-3.04
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://www3.justnet.ne.jp/~ele/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA018758/archive/
 
 MAINTAINER=	ele@pop17.odn.ne.jp
 
@@ -17,18 +17,15 @@ WRKSRC=		${WRKDIR}/ne
 GNU_CONFIGURE=	yes
 MAN1=		ne.1
 MANLANG=	ja
-MANCOMPRESSED=	no
-DOCS=		BUGS.jp HISTORY.jp INSTALL.jp README.jp
+DOCS=		BUGS.jp CHANGES.jp HISTORY.jp INSTALL.jp README.jp TODO.jp
 MAKE_ENV=	LANG=${MANLANG}
 
 post-install:
-	strip ${PREFIX}/bin/ne
-
-.if !defined(NOPORTDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ne
-	@for i in $(DOCS); do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ne; \
-	done
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/ne
+.endfor
 .endif
 
 .include <bsd.port.mk>
