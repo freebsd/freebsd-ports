@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qico
-PORTVERSION=	0.48.2
+PORTVERSION=	0.48.3
 CATEGORIES=	comms
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/0.48/
 
