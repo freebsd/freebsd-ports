@@ -2,17 +2,23 @@
 bin/gtkwave
 bin/vcd2lxt
 lib/gtkwave/reader_hhh.a
+lib/gtkwave/reader_hhh.la
 lib/gtkwave/reader_hhh.so
 lib/gtkwave/reader_hhh.so.0
 lib/gtkwave/reader_lxt.a
+lib/gtkwave/reader_lxt.la
 lib/gtkwave/reader_lxt.so
 lib/gtkwave/reader_lxt.so.0
 lib/gtkwave/reader_out.a
+lib/gtkwave/reader_out.la
 lib/gtkwave/reader_out.so
 lib/gtkwave/reader_out.so.0
 lib/gtkwave/reader_vcd.a
+lib/gtkwave/reader_vcd.la
 lib/gtkwave/reader_vcd.so
 lib/gtkwave/reader_vcd.so.0
+lib/gtkwave/libformat.la
+lib/gtkwave/libformat.a
 @dirrm lib/gtkwave
 %%PORTDOCS%%%%DOCSDIR%%/data_format.png
 %%PORTDOCS%%%%DOCSDIR%%/edit_menu.png
