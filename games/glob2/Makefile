@@ -1,0 +1,31 @@
+# New ports collection makefile for:	glob2
+# Date created:		Wed 21 apr 2004
+# Whom:			thierry@pompo.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=		glob2
+PORTVERSION=		0.8.5
+CATEGORIES=		games
+MASTER_SITES=		http://www.ysagoon.com/glob2/data/
+
+MAINTAINER=		thierry@FreeBSD.org
+COMMENT=		Globulation 2 - a free and innovative strategy game
+
+LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis	\
+			freetype.9:${PORTSDIR}/print/freetype2
+
+USE_SDL=		image net sdl
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+USE_GCC=		3.3
+
+PLIST_FILES=		bin/glob2
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/glob2 ${PREFIX}/bin
+
+.include <bsd.port.mk>
