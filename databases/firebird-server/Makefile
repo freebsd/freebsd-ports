@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.5.r7
+PORTVERSION=	1.5.r8
 CATEGORIES=	databases
-MASTER_SITES=	http://www.aims.net.au/chris/firebird/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+		http://www.aims.net.au/chris/firebird/
 MASTER_SITE_SUBDIR=firebird
-DISTNAME=	firebird15-rc7
+DISTNAME=	firebird15-rc8
 
 MAINTAINER=	chris@e-easy.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -26,7 +27,6 @@ USE_GCC=	3.3
 LD=	gcc
 
 CONFLICTS=	firebird-devel-*
-NOPACKAGE=	pkg-install not finished
 
 WRKSRC=		${WRKDIR}/firebird15
 INSTALLS_SHLIB=	yes
@@ -57,13 +57,21 @@ patch-libtool:
 	@${DO_NADA}
 
 do-configure:
-	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE} ./autogen.sh --prefix=${PREFIX}/firebird --with-lock-manager --with-editline)
+	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
+	LIBTOOL=libtool13 LIBTOOLIZE=libtoolize13 ./autogen.sh		\
+	--prefix=${PREFIX}/firebird --with-lock-manager --with-editline)
 
 do-build:
 	@(								\
 	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE};	\
 	cd ${WRKSRC};							\
-	${ENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
+	${SETENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
+	)
+
+post-install:
+	@(								\
+	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${PREFIX}/firebird;	\
+	${CAT} ${PKGMESSAGE};						\
 	)
 
 .include <bsd.port.post.mk>
