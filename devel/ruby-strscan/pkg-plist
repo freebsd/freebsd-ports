@@ -1,5 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/strscan.so
 %%RUBY_SITELIBDIR%%/scanner.rb
+%%RUBY_SITELIBDIR%%/strscan.rb
 %%RUBY_DOCDIR%%/strscan/README.en
 %%RUBY_DOCDIR%%/strscan/changes.html
 %%RUBY_DOCDIR%%/strscan/index.html
