@@ -1,0 +1,38 @@
+--- librplay/Makefile.in.orig	Tue Mar 23 11:38:38 1999
++++ librplay/Makefile.in	Thu Jun 22 00:07:42 2000
+@@ -19,11 +19,12 @@
+ 		$(CC) -c -fPIC $(CPPFLAGS) $(CFLAGS) -o $@ $<
+ 
+ TARGET=		$(LIBRPLAY_NAME)
++SOVER=		1
+ SRCS=		rplay.c rptp.c async.c
+ OBJS=		rplay.o rptp.o async.o
+ SHAREDOBJS=	rplay.lo rptp.lo async.lo
+ 
+-all:		$(TARGET) librplay.so
++all:		$(TARGET) librplay.so.$(SOVER)
+ 
+ #
+ # Use the following for SunOS 4.1.x, Solaris 2.x, Linux, NetBSD
+@@ -32,8 +33,9 @@
+ 		$(AR) rcv $@ $?
+ 		$(RANLIB) $@
+ 
+-librplay.so:	$(SHAREDOBJS)
+-		$(CC) -o $@ $(SHAREDOBJS) $(LDFLAGS)
++librplay.so.$(SOVER):	$(SHAREDOBJS)
++		$(CC) -o $@ -Wl,-soname,$@ $(SHAREDOBJS) $(LDFLAGS)
++		ln -sf $@ librplay.so
+ 
+ #
+ # For HP-UX comment above and uncomment below.
+@@ -50,7 +52,8 @@
+ install:	all
+ 		$(MKINSTALLDIRS) $(libdir)
+ 		$(INSTALL_DATA) $(TARGET) $(libdir)
+-		$(INSTALL_DATA) librplay.so $(libdir)
++		$(INSTALL_DATA) librplay.so.$(SOVER) $(libdir)
++		ln -sf librplay.so.$(SOVER) $(libdir)/librplay.so
+ 
+ uninstall:
+ 		$(RM) $(libdir)/$(TARGET)

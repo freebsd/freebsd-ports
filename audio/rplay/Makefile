@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rplay
-PORTVERSION=	3.2.0b6
+PORTVERSION=	3.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
@@ -14,20 +14,32 @@ MAINTAINER=	rmallory@csusb.edu
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAN1=		rplay.1 xrplay.1 rplayd.1 rptp.1
-MAN5=		rplay.conf.5 rplay.hosts.5 rplay.servers.5
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		rplay.1 rptp.1
+MAN5=		rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplay.servers.5
+MAN8=		rplayd.8
+
+INFO_FILES=	RPLAY.info RPTP.info librplay.info rplayd.info
+
+post-extract:
+	@${CP} ${WRKSRC}/doc/rplay.texi ${WRKSRC}/doc/rplayd.texi
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/rplayd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && ${ECHO} -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/rplayd.sh; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/rplay.hosts ]; then \
-		${ECHO} localhost > ${PREFIX}/etc/rplay.hosts; \
-	fi
+.for info in ${INFO_FILES}
+	@install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.endfor
+.if !exists(${PREFIX}/etc/rc.d/rplayd.sh)
+	@${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file"
+	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh
+	@${ECHO} "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && ${ECHO} -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh
+	@${CHMOD} 751 ${PREFIX}/etc/rc.d/rplayd.sh
+.endif
+.if !exists(${PREFIX}/etc/rplay.hosts)
+	@${ECHO} localhost > ${PREFIX}/etc/rplay.hosts
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- Makefile.config.in.orig	Thu Aug 13 15:12:59 1998
++++ Makefile.config.in	Wed Jun 21 22:26:35 2000
+@@ -43,6 +43,7 @@
+ #CC_OPTIONS=	-O -cckr			# SGI 
+ #CC_OPTIONS=	-O				# generic
+ #CC_OPTIONS=	-g				# debug 
++CC_OPTIONS=	@CPPFLAGS@
+ 
+ ##
+ ## Extra linker options.

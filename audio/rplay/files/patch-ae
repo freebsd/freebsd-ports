@@ -1,0 +1,13 @@
+--- doc/RPLAY.texi.orig	Wed Jul 15 07:35:23 1998
++++ doc/RPLAY.texi	Wed Jun 21 22:38:54 2000
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename RPLAY.info
+ @settitle The RPLAY Protocol
++@dircategory Network Audio Systems
++@direntry
++* RPLAY Protocol: (RPLAY)	The RPLAY Protocol
++@end direntry
+ @iftex
+ @finalout
+ @end iftex

@@ -1,0 +1,50 @@
+--- doc/rplayd.texi.orig	Wed Jul 15 07:35:23 1998
++++ doc/rplayd.texi	Thu Jun 22 01:20:50 2000
+@@ -1,7 +1,11 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename rplay.info
++@setfilename rplayd.info
+ @settitle rplay
++@dircategory Network Audio Systems
++@direntry
++* rplayd: (rplayd)		RPlay
++@end direntry
+ @iftex
+ @finalout
+ @end iftex
+@@ -71,7 +75,6 @@
+ * rplayd::                      The rplay audio server.
+ * rplay::                       A sample RPLAY client.
+ * rptp::                        A sample RPTP client.
+-* xrplay::                      A X Windows rplay audio control panel.
+ @end menu
+ 
+ @node Overview, rplayd, Top, Top
+@@ -162,25 +165,12 @@
+ attempt to determine whether or not the server has the sound before
+ using the network.
+ 
+-@node rptp, xrplay, rplay, Top
++@node rptp,  , rplay, Top
+ @chapter rptp
+ rptp is a simple RPTP client that communicates with rplayd using the
+ RPTP protocol.  Several commands can be issued to control rplayd and
+ report its status.  See the output of the rptp help command for a list
+ of available commands.
+-
+-@node xrplay,  , rptp, Top
+-@chapter xrplay
+-rplay control panel which includes CD player-like buttons, volume
+-control, a simple vu meter, and a sound progess bar.  Sounds can be
+-played, paused, continued, and stopped using the appropriate buttons.
+-
+-xrplay is also useful as a sound file player and can be used with web
+-browsers and other applications that use external programs to play
+-sounds.
+-
+-xrplay communicates with the local (or remote) rplayd using the RPTP
+-protocol.
+ 
+ @bye
+ 

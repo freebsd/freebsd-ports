@@ -1,0 +1,13 @@
+--- doc/RPTP.texi.orig	Wed Jul 15 07:35:23 1998
++++ doc/RPTP.texi	Wed Jun 21 22:38:56 2000
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename RPTP.info
+ @settitle The RPTP Protocol
++@dircategory Network Audio Systems
++@direntry
++* RPTP: (RPTP)			RPTP Protocol
++@end direntry
+ @defindex ev
+ @iftex
+ @finalout

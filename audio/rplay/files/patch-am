@@ -1,0 +1,19 @@
+--- rx/Makefile.in.orig	Wed Jun 21 22:57:55 2000
++++ rx/Makefile.in	Wed Jun 21 22:59:43 2000
+@@ -64,11 +64,11 @@
+ all: librx.a
+ 
+ install: all
+-	test -d $(libdir) || mkdir $(libdir)
+-	test -d $(includedir) || mkdir $(includedir)
+-	$(INSTALL) librx.a $(libdir)/librx.a
+-	$(RANLIB) $(libdir)/librx.a
+-	$(INSTALL) $(srcdir)/inst-rxposix.h $(includedir)/rxposix.h
++#	test -d $(libdir) || mkdir $(libdir)
++#	test -d $(includedir) || mkdir $(includedir)
++#	$(INSTALL) librx.a $(libdir)/librx.a
++#	$(RANLIB) $(libdir)/librx.a
++#	$(INSTALL) $(srcdir)/inst-rxposix.h $(includedir)/rxposix.h
+ 
+ 
+ uninstall:
