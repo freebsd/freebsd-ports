@@ -1,10 +1,5 @@
 @comment $FreeBSD$
 bin/seti-applet-2
-@comment etc/gconf/gconf.xml.defaults/apps/seti_applet/%gconf.xml
-@comment etc/gconf/gconf.xml.defaults/apps/seti_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seti_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seti_applet/prefs/%gconf.xml
-etc/gconf/schemas/seti_applet.schemas
 libdata/bonobo/servers/GNOME_SetiApplet_Factory.server
 share/gnome/gnome-2.0/ui/GNOME_SetiApplet.xml
 share/gnome/help/seti_applet/C/configuration.html
@@ -35,5 +30,3 @@ share/locale/fr/LC_MESSAGES/seti-applet.mo
 @dirrm share/gnome/help/seti_applet/C/images
 @dirrm share/gnome/help/seti_applet/C
 @dirrm share/gnome/help/seti_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seti_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seti_applet
