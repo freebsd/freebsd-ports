@@ -16,7 +16,7 @@ MAINTAINER=	obraun@informatik.unibw-muenchen.de
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BUILD_DEPENDS+= ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -32,8 +32,7 @@ CONFIGURE_ARGS+=	--buildwith=ghc
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/nhc98 +docs
 .endif
 
-MAN1=		harch.1 hmake.1	hp2graph.1 nhc98.1 \
-		hat-detect.1 hat-observe.1 hat-stack.1 hat-trail.1
+MAN1=		harch.1 hmake.1 hp2graph.1 nhc98.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
