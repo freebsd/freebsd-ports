@@ -331,3 +331,6 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/templates/search
 @dirrm %%IMPDIR%%/templates
 @dirrm %%IMPDIR%%
+@unexec if cmp -s %D/www/horde/config/mime_drivers.php %D/www/horde/config/mime_drivers.php.afterIMP; then rm -f %D/www/horde/config/mime_drivers.php.afterIMP; mv %D/www/horde/config/mime_drivers.php.beforeIMP %D/www/horde/config/mime_drivers.php; fi
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterIMP; then rm -f %D/www/horde/config/registry.php.afterIMP; mv %D/www/horde/config/registry.php.beforeIMP %D/www/horde/config/registry.php; fi
+@unexec if cmp -s %D/www/horde/turba/config/conf.php %D/www/horde/turba/config/conf.php.afterIMP; then rm -f %D/www/horde/turba/config/conf.php.afterIMP; mv %D/www/horde/turba/config/conf.php.beforeIMP %D/www/horde/turba/config/conf.php; fi
