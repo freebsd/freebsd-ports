@@ -1,5 +1,5 @@
---- include/c++/yvals.h.orig	Wed Mar 17 14:35:06 2004
-+++ include/c++/yvals.h	Wed Mar 17 14:40:46 2004
+--- include/c++/yvals.h.orig	Thu Mar 18 20:22:51 2004
++++ include/c++/yvals.h	Sat Mar 27 13:32:51 2004
 @@ -7,24 +7,10 @@
  
  _ABRCPP -- to turn ON Abridged C++ dialect (implies _ECPP)
@@ -168,7 +168,7 @@
  		/* NAMESPACE CONTROL */
   #if defined(_ECPP) && defined(__cplusplus)
    #define _STD_USING 1 /* To be compatible with QNX, where _STD_USING defined for C++ only */
-@@ -283,217 +146,13 @@
+@@ -283,229 +146,13 @@
    #define _END_EXTERN_C
   #endif /* __cplusplus */
  
@@ -322,7 +322,11 @@
 -#define _EXFAIL	1	/* EXIT_FAILURE */
 -
 -_EXTERN_C
+-#ifdef __QNX__
 -void __Atexit(void (*)(void));
+-#else
+-void _Atexit(void (*)(void));
+-#endif
 -_END_EXTERN_C
 -
 -		/* stdio PROPERTIES */
@@ -345,7 +349,11 @@
 -_C_STD_END
 -
 -		/* MULTITHREAD PROPERTIES */
+-#ifdef __QNX__
 -_STD_BEGIN
+-#else
+-_EXTERN_C
+-#endif
 - #if _MULTI_THREAD
 -void _Locksyslock(int);
 -void _Unlocksyslock(int);
@@ -354,7 +362,11 @@
 -  #define _Locksyslock(x)	(void)0
 -  #define _Unlocksyslock(x)	(void)0
 - #endif /* _MULTI_THREAD */
+-#ifdef __QNX__
 -_STD_END
+-#else
+-_END_EXTERN_C
+-#endif
 -		/* LOCK MACROS */
 - #define _LOCK_LOCALE	0
 - #define _LOCK_MALLOC	1
