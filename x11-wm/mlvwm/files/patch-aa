@@ -1,22 +1,21 @@
---- configure.h.orig	Fri Dec 27 09:17:07 1996
-+++ configure.h	Sun Feb 16 23:15:49 1997
-@@ -17,8 +17,8 @@
- 
- XCOMM The directory name of bindir and libdir.
- 
--#define MlvwmBinDir /usr/local/X11R6/bin
--#define MlvwmLibDirk /usr/local/X11R6/lib/X11/mlvwm
-+#define MlvwmBinDir /usr/X11R6/bin
-+#define MlvwmLibDir /usr/X11R6/lib/X11/mlvwm
- 
- XCOMM
- XCOMM Cannot modify as follows:
-@@ -71,7 +71,7 @@
- XCOMM     DEBUG_OPTIONS =  -D_DEBUG_
- XCOMM       CDEBUGFLAGS = -g -Wall -Wshadow
- XCOMM            CDEBUGFLAGS = -O2 -Wall
--            CDEBUGFLAGS = -g -Wall
-+            CDEBUGFLAGS = -pipe -O2
- 
- MLVWMDEFINES = $(CDEBUGFLAGS) $(Locale_DEFINES)
- MLVWMLIBRARIES = $(Locale_LIBRARIES)
+*** configure.h.orig	Sun May 25 18:23:55 1997
+--- configure.h	Sun May 25 18:25:07 1997
+***************
+*** 17,24 ****
+  
+  XCOMM The directory name of bindir and libdir.
+  
+! #define MlvwmBinDir /home/tak/bin
+! XCOMM #define MlvwmLibDir /home2/tak/bin/mlvwm-lib
+  
+  XCOMM
+  XCOMM Cannot modify as follows:
+--- 17,24 ----
+  
+  XCOMM The directory name of bindir and libdir.
+  
+! #define MlvwmBinDir /usr/X11R6/bin
+! #define MlvwmLibDir /usr/X11R6/lib/X11/mlvwm
+  
+  XCOMM
+  XCOMM Cannot modify as follows:
