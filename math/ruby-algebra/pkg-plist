@@ -1,3 +1,4 @@
+%%RUBY_SITELIBDIR%%/algebraic-equation.rb
 %%RUBY_SITELIBDIR%%/algebraic-parser.rb
 %%RUBY_SITELIBDIR%%/algebraic-system.rb
 %%RUBY_SITELIBDIR%%/array-supplement.rb
@@ -5,6 +6,7 @@
 %%RUBY_SITELIBDIR%%/gaussian-elimination.rb
 %%RUBY_SITELIBDIR%%/groebner-basis-coeff.rb
 %%RUBY_SITELIBDIR%%/groebner-basis.rb
+%%RUBY_SITELIBDIR%%/linear-algebra.rb
 %%RUBY_SITELIBDIR%%/localized-ring.rb
 %%RUBY_SITELIBDIR%%/m-index.rb
 %%RUBY_SITELIBDIR%%/m-polynomial.rb
@@ -22,6 +24,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-algebraicfield01.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-algebraicfield02.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-cayleyhamilton01.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-diagonalization01.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-divmod01.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-factorize01.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/algebra/sample-factorize02.rb
