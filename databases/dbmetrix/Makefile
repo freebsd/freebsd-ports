@@ -10,7 +10,9 @@ PORTVERSION=	0.1.9
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.tamos.net/pub/dbMetrix/ \
-		ftp://linux.gmu.edu/archive/dbMetrix/
+		ftp://ftp.upc.es/pub/linux/sunsite/X11/gtkbuffet/apps/dbmetrix/ \
+		ftp://ftp.netsw.org/database/rdbms/mysql-addon/ \
+		ftp://ftp.sai.msu.su/pub/unix/database/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Another GTK+ frontend for mysql
