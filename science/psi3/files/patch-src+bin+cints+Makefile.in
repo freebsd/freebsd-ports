@@ -1,0 +1,23 @@
+--- src/bin/cints/Makefile.in.old	Thu Mar 18 22:20:26 2004
++++ src/bin/cints/Makefile.in	Thu Mar 18 22:41:41 2004
+@@ -92,17 +92,17 @@
+ 
+ #Need do remove -DAIX because I have a variable named AIX
+ CDEF_NOAIX = $(CDEF:-DAIX=)
+-CFLAGS = $(CDBG) $(COPT) $(CDEF_NOAIX) $(COTH) $(CINC)
++CFLAGS = $(CDBG) $(COPT) $(CDEF_NOAIX) $(COTH) $(CINC) %%PTHREAD_CFLAGS%%
+ CINC += -I$(srcdir) $(DIRS:%=-I$(srcdir)/%)
+ CDEF += $(OPTIONS)
+ 
+ CXXDEF_NOAIX = $(CXXDEF:-DAIX=)
+-CXXFLAGS = $(CXXDBG) $(CXXOPT) $(CXXDEF_NOAIX) $(CXXOTH) $(CXXINC)
++CXXFLAGS = $(CXXDBG) $(CXXOPT) $(CXXDEF_NOAIX) $(CXXOTH) $(CXXINC) %%PTHREAD_CFLAGS%%
+ CXXINC += -I$(srcdir) $(DIRS:%=-I$(srcdir)/%)
+ CXXDEF += $(OPTIONS)
+ 
+ LD = $(CXX)
+-LDLIBS += $(BLAS) -lpthread
++LDLIBS += $(BLAS) %%PTHREAD_LIBS%%
+ PSILIBS = -lPSI_qt -lPSI_chkpt $(INTLIBS) -lPSI_iwl \
+           -lPSI_psio -lPSI_ciomr -lPSI_ipv1
+ ifeq ($(findstring CC,$(SUBDIRS)),CC)

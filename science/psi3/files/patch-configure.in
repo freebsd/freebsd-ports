@@ -1,0 +1,23 @@
+--- configure.in.orig	Thu Jan  1 05:22:57 2004
++++ configure.in	Fri Mar 19 17:15:40 2004
+@@ -25,7 +25,7 @@
+ AC_PREFIX_DEFAULT(/usr/local/psi)
+ 
+ incdir=$includedir
+-docdir='$(prefix)/doc'
++docdir='%%TMPDOC%%'
+ mandir='$(docdir)/man'
+ txtdir='$(docdir)/txt'
+ htmldir='$(docdir)/html'
+@@ -506,6 +506,11 @@
+     fi
+     ;;
+ esac
++# from ports
++FOPT="%%FFLAGS%%"
++COPT="%%CFLAGS%%"
++CXXOPT="%%CXXFLAGS%%"
++
+ AC_MSG_RESULT([C optimization flags: $COPT])
+ AC_MSG_RESULT([C++ optimization flags: $CXXOPT])
+ 

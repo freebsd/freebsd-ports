@@ -1,0 +1,13 @@
+--- src/bin/detci/Makefile.in.old	Thu Mar 18 22:48:57 2004
++++ src/bin/detci/Makefile.in	Thu Mar 18 22:50:12 2004
+@@ -4,7 +4,9 @@
+ include ../MakeVars
+ 
+ LD = $(CXX)
+-LDLIBS += $(BLAS) -lpthread
++LDLIBS += $(BLAS) %%PTHREAD_LIBS%%
++COPT += %%PTHREAD_CFLAGS%%
++CXXOPT += %%PTHREAD_CFLAGS%%
+ 
+ PSILIBS = libPSI_qt.a libPSI_chkpt.a libPSI_iwl.a libPSI_psio.a libPSI_ciomr.a \
+ libPSI_psio.a libPSI_ipv1.a

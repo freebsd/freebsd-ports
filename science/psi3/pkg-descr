@@ -1,0 +1,21 @@
+The PSI3 suite of quantum chemical programs is designed for efficient,
+high-accuracy calculations of properties of small to medium-sized molecules.
+The package's current capabilities include a variety of Hartree-Fock,
+coupled cluster, complete-active-space self-consistent-field, and
+multi-reference configuration interaction models. Molecular point-group
+symmetry is utilized throughout to maximize efficiency.
+
+    * Arbitrarily high angular momentum levels in integrals
+       and derivative integrals. (Up to k-type functions have been tested.)
+    * Coupled cluster methods including CCSD and CCSD(T) with 
+      RHF, ROHF, UHF, and Brueckner orbitals.
+    * Determinant-based CI including CASSCF, RAS-CI, and Full CI.
+    * Multithreaded integral-direct SCF, MP2, and MP2-R12.
+    * Excited state methods: CIS, CIS(D), RPA, and EOM-CCSD.
+    * Analytic energy gradients for CCSD with RHF, ROHF, and UHF orbitals.
+    * Coupled cluster linear response methods for static and
+       dynamic polarizabilities and optical rotation.
+    * Diagonal Born-Oppenheimer correction (DBOC) for 
+       RHF, ROHF, UHF, and CI wave functions. 
+
+WWW: http://www.psicode.org/

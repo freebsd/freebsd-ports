@@ -1,0 +1,11 @@
+--- src/util/tocprint/Makefile.in.org	Fri Mar 19 17:32:31 2004
++++ src/util/tocprint/Makefile.in	Fri Mar 19 17:33:46 2004
+@@ -18,4 +18,4 @@
+ 
+ install_man:: tocprint.1
+ 	$(MKDIRS) $(mandir)/man1
+-	$(INSTALL_PROGRAM) $(srcdir)/tocprint.1 $(mandir)/man1
++	$(INSTALL_INCLUDE) $^ $(mandir)/man1
+
+
+        
