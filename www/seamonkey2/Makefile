@@ -122,6 +122,10 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=	 	"Segfault during build on amd64"
+.endif
+
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=--enable-xft
