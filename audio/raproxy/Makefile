@@ -7,6 +7,7 @@
 
 PORTNAME=	raproxy
 PORTVERSION=	3.0b1
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://docs.real.com/proxykit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -31,6 +32,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
 		${PREFIX}/share/doc/raproxy
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
