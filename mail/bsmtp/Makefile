@@ -6,7 +6,7 @@
 
 PORTNAME=	bsmtp
 PORTVERSION=	1.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
 
