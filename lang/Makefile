@@ -209,6 +209,7 @@
     SUBDIR += tensile
     SUBDIR += tinycobol
     SUBDIR += treecc
+    SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += wxbasic
     SUBDIR += xsb
