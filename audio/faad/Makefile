@@ -7,6 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://faac.sourceforge.net/files/
 
