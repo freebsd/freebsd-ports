@@ -1,7 +1,6 @@
---- Makefiles/Makefile.freebsd.orig	Fri Aug  8 21:56:08 1997
-+++ Makefiles/Makefile.freebsd	Mon Sep 22 12:03:44 1997
-@@ -2,11 +2,11 @@
- # It has been tested under FreeBSD 2.1.5.
+--- Makefiles/Makefile.freebsd_gcc.orig	Mon Mar  9 14:17:58 1998
++++ Makefiles/Makefile.freebsd_gcc	Mon Mar  9 14:19:07 1998
+@@ -1,10 +1,10 @@
  
  # Change this if you have this stuff somewhere else.
 -TCLINC = /usr/local/lib/tcl8.0
