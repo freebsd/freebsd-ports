@@ -208,3 +208,6 @@ lib/trans/iso10646
 lib/trans/trans.c
 lib/trans/trans.h
 lib/trans/trans.man
+lib/trans/utimbuf.h
+lib/trans/utf.c
+lib/trans/utf.h
