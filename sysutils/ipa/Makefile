@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/
 
@@ -21,12 +21,5 @@ MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
 MAN5=		ipa.5 ipa.conf.5
 MAN8=		ipa.8 ipastat.8
 MANLANG=	"" ru_RU.KOI8-R
-
-post-patch:
-	@${PERL} -pi -ne "s|/usr/local/|${PREFIX}/|" \
-		${WRKSRC}/Makefile
-
-post-install:
-	${CHMOD} 0400 ${PREFIX}/etc/ipa.conf.default
 
 .include <bsd.port.mk>
