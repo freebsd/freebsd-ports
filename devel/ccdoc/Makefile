@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ccdoc
-PORTVERSION=	0.8r40
+PORTVERSION=	0.8r41
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://www.joelinoff.com/ccdoc/downloads/
+MASTER_SITES=	http://ccdoc.sourceforge.net/downloads/
 DISTNAME=	src
 DIST_SUBDIR=	ccdoc
 
@@ -18,7 +18,7 @@ COMMENT=	Extracting comments from C++ source and generating HTML
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/ccdocv08r40/src
+WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
 MAKEFILE=	mkopt_gcc.mk
 ALL_TARGET=	bld
 MAN1=		ccdoc.1
