@@ -23,18 +23,16 @@ NO_CDROM=	"Uses copyrighted patches"
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
 MAN1=		timidity.1
+USE_REINPLACE=	yes
 
 post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/linux_a.c > ${WRKSRC}/linux_a.c.new
-	@${MV} ${WRKSRC}/linux_a.c.new ${WRKSRC}/linux_a.c
+	${REINPLACE_CMD} -e 's,machine/soundcard.h,sys/soundcard.h,' \
+		${WRKSRC}/linux_a.c
 
 post-install:
 	cd ${PREFIX}/lib/timidity && \
-	${TAR} zxf ${DISTDIR}/${TIINS} && \
-	${CP} goemon.cfg goemon.cfg.bak && \
-	${SED} 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
-	   < goemon.cfg.bak > goemon.cfg && \
-	${RM} goemon.cfg.bak
+	${TAR} --no-same-owner --no-same-permissions -zxf ${DISTDIR}/${TIINS} && \
+	${REINPLACE_CMD} -i "" -e 's,dir goemon,dir ${PREFIX}/lib/timidity/goemon,' \
+		goemon.cfg
 
 .include <bsd.port.mk>
