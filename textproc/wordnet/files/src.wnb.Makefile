@@ -1,5 +1,5 @@
 PREFIX?=	/usr/local
-TCL_DVER?=	8.2
+TCL_DVER?=	8.3
 TCL_VER=	${TCL_DVER:S/.//g}
 TCL_INCDIR?=	${PREFIX}/include/tcl${TCL_DVER}
 
