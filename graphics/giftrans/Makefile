@@ -3,7 +3,7 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/30 11:12:25 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp $
 #
 
 DISTNAME=	giftrans
@@ -17,7 +17,7 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}
 MAN1=		giftrans.1
 
 do-build:
-	(cd ${WRKSRC}; cc -O2 -m486 giftrans.c -o giftrans)
+	(cd ${WRKSRC}; cc -O2 giftrans.c -o giftrans)
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/giftrans ${PREFIX}/bin
