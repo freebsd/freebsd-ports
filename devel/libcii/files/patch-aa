@@ -1,5 +1,14 @@
---- src/thread.c.orig	Thu Nov  6 06:03:00 1997
-+++ src/thread.c	Tue Jun  8 21:37:09 1999
+--- src/thread.c.orig	Wed Nov  5 22:03:00 1997
++++ src/thread.c	Sun Jan 30 18:09:03 2000
+@@ -118,7 +118,7 @@
+ 	&& scp->sc_pc <= (unsigned long)_ENDMONITOR)
+ 		return 0;
+ 	put(current, &ready);
+-	sigsetmask(scp->sc_mask);
++	sigprocmask(SIG_SETMASK, NULL, &(scp->sc_mask));
+ 	run();
+ 	return 0;
+ }
 @@ -243,13 +243,13 @@
  		critical--; } while (0);
  		args = t->sp;
