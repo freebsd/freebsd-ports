@@ -132,6 +132,7 @@ share/irssi/help/unload
 share/irssi/help/unnotify
 share/irssi/help/unquery
 share/irssi/help/unsilence
+share/irssi/help/upgrade
 share/irssi/help/uping
 share/irssi/help/ver
 share/irssi/help/userhost
