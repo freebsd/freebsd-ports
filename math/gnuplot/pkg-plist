@@ -1,6 +1,6 @@
 bin/gnuplot
 bin/gnuplot_x11
 bin/lasergnu
-lib/gnuplot.gih
+share/gnuplot.gih
 man/man1/gnuplot.1.gz
 man/man1/lasergnu.1.gz
