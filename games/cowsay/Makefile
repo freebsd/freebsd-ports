@@ -20,5 +20,6 @@ MAN1=		cowsay.1
 
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${PREFIX}
+	@${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${PREFIX}/share/cows
 
 .include <bsd.port.mk>
