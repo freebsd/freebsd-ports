@@ -19,7 +19,7 @@ MAINTAINER=	perky@python.or.kr
 BUILD_DEPENDS=	${JAVA}:${PORTSDIR}/java/linux-jdk13
 RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/linux-jdk13
 
-JAVA?=		${LOCALBASE}/linux-jdk1.3.0/bin/java
+JAVA?=		${LOCALBASE}/linux-jdk1.3.1/bin/java
 NO_BUILD=	yes
 
 INST_PACKAGES?=	demo lib source
