@@ -29,7 +29,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		xvidcore.4:${PORTSDIR}/multimedia/xvid
+		xvidcore.4:${PORTSDIR}/multimedia/xvid \
+		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 FFMPEG_SNAP=	20041113
 FFMPEG_DIST=	ffmpeg-${FFMPEG_SNAP}.tar.bz2
