@@ -7,7 +7,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/
 DISTNAME=	mm${PORTVERSION}
