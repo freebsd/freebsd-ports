@@ -1,0 +1,5 @@
+bin/avijoin
+bin/dv2jpg
+%%PORTDOCS%%share/doc/dv2jpg/README.avilib
+%%PORTDOCS%%share/doc/dv2jpg/README.dv2jpg.html
+%%PORTDOCS%%@dirrm share/doc/dv2jpg

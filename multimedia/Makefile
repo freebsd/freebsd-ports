@@ -2,6 +2,7 @@
 #
     SUBDIR += acme
     SUBDIR += avifile
+    SUBDIR += dv2jpg
     SUBDIR += dvdrip
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045
