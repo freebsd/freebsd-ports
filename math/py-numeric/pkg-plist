@@ -1,3 +1,9 @@
+lib/python1.4/sharedmodules/fast_umathmodule.so
+lib/python1.4/sharedmodules/fftpack.so
+lib/python1.4/sharedmodules/lapack_litemodule.so
+lib/python1.4/sharedmodules/multiarraymodule.so
+lib/python1.4/sharedmodules/ranlibmodule.so
+lib/python1.4/sharedmodules/umathmodule.so
 share/python1.4/NumPy/ArrayPrinter.py
 share/python1.4/NumPy/ArrayPrinter.pyc
 share/python1.4/NumPy/FFT.py
@@ -16,12 +22,6 @@ share/python1.4/NumPy/RandomArray.py
 share/python1.4/NumPy/RandomArray.pyc
 share/python1.4/NumPy/UserArray.py
 share/python1.4/NumPy/UserArray.pyc
-share/python1.4/NumPy/fast_umathmodule.so
-share/python1.4/NumPy/fftpack.so
-share/python1.4/NumPy/lapack_litemodule.so
-share/python1.4/NumPy/multiarraymodule.so
-share/python1.4/NumPy/ranlibmodule.so
-share/python1.4/NumPy/umathmodule.so
 @dirrm share/python1.4/NumPy
 share/doc/NumPy/contributions.html
 share/doc/NumPy/doc.html

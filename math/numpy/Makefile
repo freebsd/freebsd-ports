@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/28 09:22:59 tg Exp $
+# $Id: Makefile,v 1.2 1997/05/05 12:27:10 tg Exp $
 #
 
 DISTNAME=	NumPy
@@ -22,8 +22,9 @@ LIB_DEPENDS=	lapack\\.2\\.:${PORTSDIR}/math/lapack \
 ALL_TARGET=	sharedmods
 MAKE_FLAGS+=	'OPT=${CFLAGS}'
 
-PYTHONDIR=	${PREFIX}/share/python1.4
-NUMPYDIR=	${PYTHONDIR}/${DISTNAME}
+PYTHONSCRIPTDIR=	${PREFIX}/share/python1.4
+PYTHONLIBDIR=	${PREFIX}/lib/python1.4/sharedmodules
+NUMPYDIR=	${PYTHONSCRIPTDIR}/${DISTNAME}
 DOCDIR=		${PREFIX}/share/doc/${DISTNAME}
 
 do-configure:
@@ -31,10 +32,10 @@ do-configure:
 
 do-install:
 	@${MKDIR} ${NUMPYDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.so ${NUMPYDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.so ${PYTHONLIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}/*.py ${NUMPYDIR}
-	@PYTHONPATH=${PYTHONDIR}:${NUMPYDIR} \
-		${PREFIX}/bin/python ${PYTHONDIR}/compileall.py ${NUMPYDIR}
+	@PYTHONPATH=${PYTHONSCRIPTDIR}:${NUMPYDIR} \
+		${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${NUMPYDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
