@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1998/07/12 22:49:49 steve Exp $
+# $Id: Makefile,v 1.38 1998/07/15 09:58:15 dburr Exp $
 #
 
     SUBDIR += LPRng
@@ -41,5 +41,6 @@
     SUBDIR += xperfmon
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
+    SUBDIR += xwatch
 
 .include <bsd.port.subdir.mk>
