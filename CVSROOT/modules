@@ -2207,6 +2207,8 @@ gtkextra	ports/x11-toolkits/gtkextra
 gtkextra--	ports/x11-toolkits/gtkextra--
 gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
+gtkglarea	ports/x11-toolkits/gtkglarea
+gtkglareamm	ports/x11-toolkits/gtkglarea--
 gtkgraph	ports/graphics/gtkgraph
 gtkhtml		ports/www/gtkhtml
 gtkhx		ports/net/gtkhx
