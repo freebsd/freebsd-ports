@@ -118,6 +118,7 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla+ipv6
+    SUBDIR += mozilla-headers
     SUBDIR += neon
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
