@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wmGrabImage
-PORTVERSION=	0.70
+PORTVERSION=	0.72
 CATEGORIES=	graphics windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
