@@ -4,6 +4,7 @@
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += althea
+    SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += arrow
     SUBDIR += asmail
