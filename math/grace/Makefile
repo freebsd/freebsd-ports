@@ -1,15 +1,15 @@
 # New ports collection makefile for: grace
 # Date created:		Dec 28 1998
-# Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
+# Whom:			Lars Koeller <Lars.Köller@Uni-Bielefeld.de>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.0.3g
+PORTVERSION=	5.1.2
 CATEGORIES=	math print
 #
-# You never know when and why this caotic team moves it to ../src/old/   :-)
+# You never know when and why it is moved to ../src/old/   :-)
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://plasma-gate.weizmann.ac.il/pub/grace/src/old/ \
@@ -17,33 +17,29 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://abragam.med.utoronto.ca/pub/mirrors/grace/src/old/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/old/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/
-DISTNAME=	grace-5.0.3gamma
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-BUILD_DEPENDS=  ${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp
-LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae 	\
+LIB_DEPENDS=	Xbae.8:${PORTSDIR}/x11-toolkits/xbae 	\
 		netcdf.1:${PORTSDIR}/math/netcdf	\
 		fftw.2:${PORTSDIR}/math/fftw		\
-		pdf.2:${PORTSDIR}/print/pdflib		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.4:${PORTSDIR}/graphics/png		\
-		t1.1:${PORTSDIR}/devel/t1lib
+		t1.1:${PORTSDIR}/devel/t1lib		\
+		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
+		pdf.3:${PORTSDIR}/print/pdflib3
 
 MAN1=		grace.1 xmgrace.1 gracebat.1 grconvert.1
 
 USE_X_PREFIX=	YES
-USE_XPM=	yes
 USE_GMAKE=	YES
 USE_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
-	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include:${LOCALBASE}/include/gd \
-	--enable-libhelp \
-	--enable-extra-ldpath=${LOCALBASE}/lib \
-	--enable-grace-home=${X11BASE}/lib/X11/grace \
-	--enable-config=generic
+	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
+	--with-extra-ldpath=${LOCALBASE}/lib \
+	--enable-grace-home=${X11BASE}/lib/X11/grace
 
 ALL_TARGET=
 INSTALL_TARGET= install links
@@ -54,6 +50,10 @@ post-patch:
 	${RM} -f ${WRKSRC}/configure.input
 
 post-install:
-	${LN} -s ${X11BASE}/lib/X11/grace/doc ${X11BASE}/share/doc/grace
+.if !defined(NOPORTDOCS)
+	if [ ! -e ${X11BASE}/share/doc/grace ]; then \
+	    ${LN} -s ${X11BASE}/lib/X11/grace/doc ${X11BASE}/share/doc/grace; \
+	fi
+.endif
 
 .include <bsd.port.mk>

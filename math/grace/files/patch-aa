@@ -1,40 +1,18 @@
-*** configure.orig	Sun Aug 22 12:11:35 1999
---- configure	Fri Sep 10 16:22:17 1999
+*** configure.orig	Mon May 22 19:54:43 2000
+--- configure	Mon May 22 19:54:47 2000
 ***************
-*** 1096,1106 ****
-  
-  if test "x${GCC}" = "xyes"
-  then
--     case "${host}" in
--     i?86-*-linux-*) CFLAGS="-m486 -malign-double $CFLAGS";;
--     i?86-*) CFLAGS="-m486 $CFLAGS";;
--   esac
-- 
-      echo $ac_n "checking "for gcc strength-reduce bug"""... $ac_c" 1>&6
-  echo "configure:1106: checking "for gcc strength-reduce bug"" >&5
-  if eval "test \"`echo '$''{'ac_cv_c_gcc_strength_bug'+set}'`\" = set"; then
---- 1096,1101 ----
-***************
-*** 1832,1838 ****
+*** 2590,2596 ****
   # It thinks the first close brace ends the variable substitution.
   test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-  
+
 ! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
-  
+
   test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
-  
---- 1827,1833 ----
+
+--- 2590,2596 ----
   # It thinks the first close brace ends the variable substitution.
   test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-  
+
 ! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
-  
+
   test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
-  
-***************
-*** 8939,8942 ****
-  chmod +x $CONFIG_STATUS
-  rm -fr confdefs* $ac_clean_files
-  test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
-- 
---- 8934,8936 ----

@@ -1,19 +1,11 @@
-*** conf/Make.conf.in.org	Fri Sep 10 09:32:03 1999
---- conf/Make.conf.in	Fri Sep 10 09:32:27 1999
+*** ac-tools/Make.conf.in.orig	Mon May 22 19:57:32 2000
+--- ac-tools/Make.conf.in	Mon May 22 19:57:36 2000
 ***************
-*** 93,98 ****
---- 93,99 ----
+*** 90,95 ****
+--- 90,96 ----
   # BSD install
   INSTALL=@INSTALL@
   INSTALL_PROGRAM=@INSTALL_PROGRAM@
 + INSTALL_SCRIPT=@INSTALL_SCRIPT@
   INSTALL_DATA=@INSTALL_DATA@
   MKINSTALLDIRS=@MKINSTALLDIRS@
-  
-***************
-*** 119,122 ****
-  
-  # HTML help viewer command
-  HELPVIEWER=@HELPVIEWER@
-- 
---- 120,122 ----
