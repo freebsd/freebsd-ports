@@ -20,7 +20,7 @@ LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
-
+USE_GETOPT_LONG=yes
 AUTOCONF=	autoconf
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
