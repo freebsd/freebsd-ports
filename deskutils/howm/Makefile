@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	howm
-PORTVERSION=	1.1.0.3
+PORTVERSION=	1.1.0.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.me.ics.saitama-u.ac.jp/~hira/emacs/howm/
+MASTER_SITES=	http://howm.sourceforge.jp/a/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Write fragmentarily and read collectively
