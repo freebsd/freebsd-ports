@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.0//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <!--
 Copyright 2003, 2004 Jacques Vidrine and contributors
 
@@ -28,10 +29,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
-<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.0//EN"
-  "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-
   <vuln vid="cad045c0-81a5-11d8-9645-0020ed76ef5a">
     <topic>zebra/quagga denial of service vulnerability</topic>
     <affects>
@@ -126,38 +124,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="ce46b93a-80f2-11d8-9645-0020ed76ef5a">
-    <topic>Buffer overflows and format string bugs in Emil</topic>
-    <affects>
-      <package>
-	<name>emil</name>
-	<range><le>2.1b9</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf Härnhammar reports multiple buffer overflows in
-	  Emil, some of which are triggered during the parsing
-	  of attachment filenames.  In addition, some format string bugs
-	  are present in the error reporting code.</p>
-        <p>Depending upon local configuration, these vulnerabilities
-	  may be exploited using specially crafted messages in order
-	  to execute arbitrary code running with the privileges of
-	  the user invoking Emil.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</url>
-      <url>http://www.debian.org/security/2004/dsa-468</url>
-      <cvename>CAN-2004-0152</cvename>
-      <cvename>CAN-2004-0153</cvename>
-    </references>
-    <dates>
-      <discovery>2004-03-24</discovery>
-      <entry>2004-03-28</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
     <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
     <affects>
@@ -183,32 +149,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <modified>2004-03-29</modified>
     </dates>
   </vuln>
-
-  <vuln vid="70f5b3c6-80f0-11d8-9645-0020ed76ef5a">
-    <topic>Critical SQL injection in phpBB</topic>
-    <affects>
-      <package>
-	<name>phpbb</name>
-	<range><le>2.0.8</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Anyone can get admin's username and password's md5 hash via a
-	  single web request.
-	  A working example is provided in the advisory.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
-      <bid>9984</bid>
-    </references>
-    <dates>
-      <discovery>2004-03-26</discovery>
-      <entry>2004-03-28</entry>
-    </dates>
-  </vuln>
-
 
   <vuln vid="cdf18ed9-7f4a-11d8-9645-0020ed76ef5a">
     <topic>multiple vulnerabilities in ethereal</topic>
@@ -237,8 +177,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  by Jonathan Heusser.</p>
 	<p>Finally, there is one uncredited vulnerability described by the
 	   Ethereal team as:</p>
-	<blockquote
-	  cite="http://www.ethereal.com/appnotes/enpa-sa-00013.html">
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00013.html">
 	    <p>A zero-length Presentation protocol selector could make
 	    Ethereal crash.</p>
 	</blockquote>
@@ -258,39 +197,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
-    <topic>squid ACL bypass due to URL decoding bug</topic>
-    <affects>
-      <package>
-	<name>squid</name>
-	<range><lt>squid-2.5.5</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the Squid advisory:</p>
-	<blockquote
-	  cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
-          <p>Squid versions 2.5.STABLE4 and earlier contain a bug
-          in the "%xx" URL decoding function.  It may insert a NUL
-          character into decoded URLs, which may allow users to bypass
-          url_regex ACLs.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
-      <cvename>CVE-2004-0189</cvename>
-    </references>
-    <dates>
-      <discovery>2004-02-29</discovery>
-      <entry>2004-03-26</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="fde53204-7ea6-11d8-9645-0020ed76ef5a">
-    <topic>insecure temporary file creation in xine-check,
-      xine-bugreport</topic>
+    <topic>insecure temporary file creation in xine-check, xine-bugreport</topic>
     <affects>
       <package>
 	<name>xine</name>
@@ -401,32 +309,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="6c7661ff-7912-11d8-9645-0020ed76ef5a">
-    <topic>uudeview buffer overflows</topic>
-    <affects>
-      <package>
-	<name>uulib</name>
-	<name>uudeview</name>
-	<name>xdeview</name>
-	<range><lt>0.5.20</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The authors of UUDeview report repairing two buffer
-	  overflows in their software.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://www.fpx.de/fp/Software/UUDeview/HISTORY.txt</url>
-    </references>
-    <dates>
-      <discovery>2004-03-01</discovery>
-      <entry>2004-03-18</entry>
-      <modified>2004-03-25</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="68233cba-7774-11d8-89ed-0020ed76ef5a">
     <topic>OpenSSL ChangeCipherSpec denial-of-service vulnerability</topic>
     <affects>
@@ -489,37 +371,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
-    <topic>mod_python denial-of-service vulnerability in parse_qs</topic>
-    <affects>
-      <package>
-        <name>mod_python</name>
-	<range><ge>2.7</ge><lt>2.7.10</lt></range>
-	<range><ge>3.0</ge><lt>3.0.4</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>An attacker may cause Apache with mod_python to crash
-          by using a specially constructed query string.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0973</cvename>
-      <bid>9129</bid>
-      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
-      <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
-    </references>
-    <dates>
-      <discovery>2003-11-28</discovery>
-      <entry>2004-03-03</entry>
-      <modified>2004-03-11</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="3b7c7f6c-7102-11d8-873f-0020ed76ef5a">
-    <topic>wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive
-      may be bypassed</topic>
+    <topic>wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive may be bypassed</topic>
     <affects>
       <package>
 	<name>wu-ftpd</name>
@@ -553,55 +406,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-02-17</discovery>
       <entry>2004-03-08</entry>
       <modified>2004-03-29</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="09d418db-70fd-11d8-873f-0020ed76ef5a">
-    <topic>Apache 1.3 IP address access control failure on some 64-bit
-      platforms</topic>
-    <affects>
-      <package>
-	<name>apache</name>
-	<range><lt>1.3.29_2</lt></range>
-      </package>
-      <package>
-	<name>apache+mod_ssl</name>
-	<range><lt>1.3.29+2.8.16_1</lt></range>
-      </package>
-      <package>
-	<name>apache+ssl</name>
-	<range><lt>1.3.29.1.53_1</lt></range>
-      </package>
-      <package>
-	<name>ru-apache</name>
-	<range><lt>1.3.29+30.19_1</lt></range>
-      </package>
-      <package>
-	<name>ru-apache+mod_ssl</name>
-	<range><lt>1.3.29+30.19+2.8.16_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Henning Brauer discovered a programming error in Apache
-          1.3's mod_access that results in the netmasks in IP address
-          access control rules being interpreted incorrectly on
-          64-bit, big-endian platforms.  In some cases, this could
-          cause a `deny from' IP address access control rule including
-          a netmask to fail.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0993</cvename>
-      <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
-      <url>http://www.apacheweek.com/features/security-13</url>
-      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
-      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</url>
-    </references>
-    <dates>
-      <discovery>2004-03-07</discovery>
-      <entry>2004-03-08</entry>
-      <modified>2004-03-12</modified>
     </dates>
   </vuln>
 
@@ -639,37 +443,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="9fccad5a-7096-11d8-873f-0020ed76ef5a">
-    <topic>mpg123 vulnerabilities</topic>
-    <affects>
-      <package>
-	<name>mpg123</name>
-	<name>mpg123-esound</name>
-	<range><le>0.59r_12</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>In 2003, two vulnerabilities were discovered in mpg123
-	  that could result in remote code execution when using
-	  untrusted input or streaming from an untrusted server.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0577</cvename>
-      <cvename>CAN-2003-0865</cvename>
-      <bid>6629</bid>
-      <bid>8680</bid>
-    </references>
-    <dates>
-      <discovery>2003-01-16</discovery>
-      <entry>2004-03-07</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="8471bb85-6fb0-11d8-873f-0020ed76ef5a">
-    <topic>GNU Anubis buffer overflows and format string
-      vulnerabilities</topic>
+    <topic>GNU Anubis buffer overflows and format string vulnerabilities</topic>
     <affects>
       <package>
 	<name>anubis</name>
@@ -736,38 +511,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-02-10</discovery>
       <entry>2004-02-12</entry>
       <modified>2004-03-29</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
-    <topic>fetchmail denial-of-service vulnerability</topic>
-    <affects>
-      <package>
-        <name>fetchmail</name>
-        <range><lt>6.2.5</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Dave Jones discovered a denial-of-service vulnerability
-	  in fetchmail. An email message containing a very long line
-	  could cause fetchmail to segfault due to missing NUL
-	  termination in transact.c.</p>
-        <p>Eric Raymond decided not to mention this issue in the
-          release notes for fetchmail 6.2.5, but it was fixed
-          there.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0792</cvename>
-      <bid>8843</bid>
-      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
-      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
-    </references>
-    <dates>
-      <discovery>2003-10-16</discovery>
-      <entry>2004-02-25</entry>
-      <modified>2004-03-05</modified>
     </dates>
   </vuln>
 
@@ -848,9 +591,256 @@ misc.c:
     </dates>
   </vuln>
 
+  <vuln vid="ce46b93a-80f2-11d8-9645-0020ed76ef5a">
+    <topic>Buffer overflows and format string bugs in Emil</topic>
+    <affects>
+      <package>
+	<name>emil</name>
+	<range><le>2.1b9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar reports multiple buffer overflows in
+	  Emil, some of which are triggered during the parsing
+	  of attachment filenames.  In addition, some format string bugs
+	  are present in the error reporting code.</p>
+        <p>Depending upon local configuration, these vulnerabilities
+	  may be exploited using specially crafted messages in order
+	  to execute arbitrary code running with the privileges of
+	  the user invoking Emil.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</url>
+      <url>http://www.debian.org/security/2004/dsa-468</url>
+      <cvename>CAN-2004-0152</cvename>
+      <cvename>CAN-2004-0153</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-24</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70f5b3c6-80f0-11d8-9645-0020ed76ef5a">
+    <topic>Critical SQL injection in phpBB</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Anyone can get admin's username and password's md5 hash via a
+	  single web request.
+	  A working example is provided in the advisory.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
+      <bid>9984</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-26</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
+    <topic>squid ACL bypass due to URL decoding bug</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>squid-2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Squid advisory:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
+          <p>Squid versions 2.5.STABLE4 and earlier contain a bug
+          in the "%xx" URL decoding function.  It may insert a NUL
+          character into decoded URLs, which may allow users to bypass
+          url_regex ACLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
+      <cvename>CVE-2004-0189</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-29</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c7661ff-7912-11d8-9645-0020ed76ef5a">
+    <topic>uudeview buffer overflows</topic>
+    <affects>
+      <package>
+	<name>uulib</name>
+	<name>uudeview</name>
+	<name>xdeview</name>
+	<range><lt>0.5.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The authors of UUDeview report repairing two buffer
+	  overflows in their software.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.fpx.de/fp/Software/UUDeview/HISTORY.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-03-01</discovery>
+      <entry>2004-03-18</entry>
+      <modified>2004-03-25</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="09d418db-70fd-11d8-873f-0020ed76ef5a">
+    <topic>Apache 1.3 IP address access control failure on some 64-bit platforms</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>1.3.29_2</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl</name>
+	<range><lt>1.3.29+2.8.16_1</lt></range>
+      </package>
+      <package>
+	<name>apache+ssl</name>
+	<range><lt>1.3.29.1.53_1</lt></range>
+      </package>
+      <package>
+	<name>ru-apache</name>
+	<range><lt>1.3.29+30.19_1</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><lt>1.3.29+30.19+2.8.16_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Henning Brauer discovered a programming error in Apache
+          1.3's mod_access that results in the netmasks in IP address
+          access control rules being interpreted incorrectly on
+          64-bit, big-endian platforms.  In some cases, this could
+          cause a `deny from' IP address access control rule including
+          a netmask to fail.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0993</cvename>
+      <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
+      <url>http://www.apacheweek.com/features/security-13</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</url>
+    </references>
+    <dates>
+      <discovery>2004-03-07</discovery>
+      <entry>2004-03-08</entry>
+      <modified>2004-03-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
+    <topic>mod_python denial-of-service vulnerability in parse_qs</topic>
+    <affects>
+      <package>
+        <name>mod_python</name>
+	<range><ge>2.7</ge><lt>2.7.10</lt></range>
+	<range><ge>3.0</ge><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker may cause Apache with mod_python to crash
+          by using a specially constructed query string.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0973</cvename>
+      <bid>9129</bid>
+      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
+      <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2004-03-03</entry>
+      <modified>2004-03-11</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="9fccad5a-7096-11d8-873f-0020ed76ef5a">
+    <topic>mpg123 vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mpg123</name>
+	<name>mpg123-esound</name>
+	<range><le>0.59r_12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In 2003, two vulnerabilities were discovered in mpg123
+	  that could result in remote code execution when using
+	  untrusted input or streaming from an untrusted server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0577</cvename>
+      <cvename>CAN-2003-0865</cvename>
+      <bid>6629</bid>
+      <bid>8680</bid>
+    </references>
+    <dates>
+      <discovery>2003-01-16</discovery>
+      <entry>2004-03-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
+    <topic>fetchmail denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+        <name>fetchmail</name>
+        <range><lt>6.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Dave Jones discovered a denial-of-service vulnerability
+	  in fetchmail. An email message containing a very long line
+	  could cause fetchmail to segfault due to missing NUL
+	  termination in transact.c.</p>
+        <p>Eric Raymond decided not to mention this issue in the
+          release notes for fetchmail 6.2.5, but it was fixed
+          there.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0792</cvename>
+      <bid>8843</bid>
+      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
+      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
+    </references>
+    <dates>
+      <discovery>2003-10-16</discovery>
+      <entry>2004-02-25</entry>
+      <modified>2004-03-05</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="b0e76877-67a8-11d8-80e3-0020ed76ef5a">
-    <topic>mailman denial-of-service vulnerability in
-      MailCommandHandler</topic>
+    <topic>mailman denial-of-service vulnerability in MailCommandHandler</topic>
     <affects>
       <package>
         <name>mailman</name>
@@ -980,8 +970,7 @@ misc.c:
   </vuln>
 
   <vuln vid="ad4f6ca4-6720-11d8-9fb5-000a95bc6fae">
-    <topic>lbreakout2 vulnerability in environment variable
-      handling</topic>
+    <topic>lbreakout2 vulnerability in environment variable handling</topic>
     <affects>
       <package>
         <name>lbreakout2</name>
@@ -1036,8 +1025,7 @@ misc.c:
   </vuln>
 
   <vuln vid="c7cad0f0-671a-11d8-bdeb-000a95bc6fae">
-    <topic>Darwin Streaming Server denial-of-service
-      vulnerability</topic>
+    <topic>Darwin Streaming Server denial-of-service vulnerability</topic>
     <affects>
       <package>
         <name>DarwinStreamingServer</name>
@@ -1133,8 +1121,7 @@ misc.c:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a
-            href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
+        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
           developed a test suite for the H.323 protocol.  This test
           suite has uncovered vulnerabilities in several H.323
           implementations with impacts ranging from denial-of-service
@@ -1183,7 +1170,7 @@ misc.c:
             a buffer overflow can be triggered by indexing a large
             enough document.</p>
           <p>'len' is fixed to 10K [in UdmDocToTextBuf] in searchd.c
-            . S->val length depends on the length of the original
+            . S-&gt;val length depends on the length of the original
             document and on the indexer settings (the sample
             configuration file has low limits that work around the
             bug, though).</p>
@@ -1668,8 +1655,7 @@ misc.c:
   </vuln>
 
   <vuln vid="96ba2dae-4ab0-11d8-96f2-0020ed76ef5a">
-    <topic>L2TP, ISAKMP, and RADIUS parsing vulnerabilities in
-      tcpdump</topic>
+    <topic>L2TP, ISAKMP, and RADIUS parsing vulnerabilities in tcpdump</topic>
     <affects>
       <package>
         <name>tcpdump</name>
@@ -1763,8 +1749,7 @@ misc.c:
   </vuln>
 
   <vuln vid="cf0fb426-3f96-11d8-b096-0020ed76ef5a">
-    <topic>ProFTPD ASCII translation bug resulting in remote root
-      compromise</topic>
+    <topic>ProFTPD ASCII translation bug resulting in remote root compromise</topic>
     <affects>
       <package>
         <name>proftpd</name>
@@ -1789,6 +1774,7 @@ misc.c:
       <entry>2004-01-05</entry>
     </dates>
   </vuln>
+
   <vuln vid="f04cc5cb-2d0b-11d8-beaf-000a95c4d922">
     <topic>bind8 negative cache poison attack</topic>
     <affects>
@@ -1833,8 +1819,7 @@ misc.c:
   </vuln>
 
   <vuln vid="81313647-2d03-11d8-9355-0020ed76ef5a">
-    <topic>ElGamal sign+encrypt keys created by GnuPG can be
-      compromised</topic>
+    <topic>ElGamal sign+encrypt keys created by GnuPG can be compromised</topic>
     <affects>
       <package>
         <name>gnupg</name>
@@ -1929,6 +1914,33 @@ misc.c:
     </dates>
   </vuln>
 
+  <vuln vid="ebdf65c7-2ca6-11d8-9355-0020ed76ef5a">
+    <topic>qpopper format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>qpopper</name>
+        <range><lt>2.53_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An authenticated user may trigger a format string
+          vulnerability present in qpopper's UIDL code, resulting
+          in arbitrary code execution with group ID `mail'
+          privileges.</p>
+      </body>
+    </description>
+    <references>
+      <bid>1241</bid>
+      <cvename>CVE-2000-0442</cvename>
+      <url>http://www.netsys.com/suse-linux-security/2000-May/att-0137/01-b0f5-Qpopper.txt</url>
+    </references>
+    <dates>
+      <discovery>2000-05-23</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af0296be-2455-11d8-82e5-0020ed76ef5a">
     <topic>Fetchmail address parsing vulnerability</topic>
     <affects>
@@ -2004,32 +2016,4 @@ misc.c:
       <modified>2003-10-25</modified>
     </dates>
   </vuln>
-
-  <vuln vid="ebdf65c7-2ca6-11d8-9355-0020ed76ef5a">
-    <topic>qpopper format string vulnerability</topic>
-    <affects>
-      <package>
-        <name>qpopper</name>
-        <range><lt>2.53_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>An authenticated user may trigger a format string
-          vulnerability present in qpopper's UIDL code, resulting
-          in arbitrary code execution with group ID `mail'
-          privileges.</p>
-      </body>
-    </description>
-    <references>
-      <bid>1241</bid>
-      <cvename>CVE-2000-0442</cvename>
-      <url>http://www.netsys.com/suse-linux-security/2000-May/att-0137/01-b0f5-Qpopper.txt</url>
-    </references>
-    <dates>
-      <discovery>2000-05-23</discovery>
-      <entry>2003-12-12</entry>
-    </dates>
-  </vuln>
-
 </vuxml>
