@@ -289,6 +289,7 @@
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += trm
     SUBDIR += trommler
     SUBDIR += umix
     SUBDIR += vorbis-tools
