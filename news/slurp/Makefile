@@ -7,7 +7,7 @@
 
 PORTNAME=	slurp
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
@@ -24,6 +24,9 @@ pre-install:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slurp ${PREFIX}/news/bin
 	${INSTALL_MAN} ${WRKSRC}/slurp.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/slurp.sys ${PREFIX}/news/lib
+	${INSTALL_DATA} ${WRKSRC}/slurp.sys ${PREFIX}/news/lib/slurp.sys.sample
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
