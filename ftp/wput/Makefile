@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wput
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.6d
 CATEGORIES=	ftp
 MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/
+DISTNAME=	wput-0.3.6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
