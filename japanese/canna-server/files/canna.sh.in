@@ -1,0 +1,10 @@
+#!/bin/sh
+canna=@PREFIX@/sbin/cannaserver
+if [ -f $canna ]; then
+	rm -f /var/run/canna/Canna.pid
+	mkdir -p /var/run/canna
+	touch /var/log/CANNA0msgs
+	chown bin:bin /var/run/canna /var/log/CANNA0msgs
+	echo -n ' Canna'
+	$canna
+fi
