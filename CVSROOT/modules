@@ -1351,6 +1351,7 @@ doxygen		ports/devel/doxygen
 dpt		src/usr.sbin/dpt
 drac		ports/mail/drac
 drbl		ports/mail/drbl
+drgenius	ports/math/drgenius
 dri-devel	ports/graphics/dri-devel
 driftnet	ports/net/driftnet
 drm		ports/games/drm
