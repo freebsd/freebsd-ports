@@ -774,6 +774,7 @@ chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
 cherokee	ports/www/cherokee
 chexedit	ports/editors/chexedit
+chgrep		ports/sysutils/chgrep
 chicken		ports/lang/chicken
 chimera		ports/www/chimera
 chimera2	ports/www/chimera2
