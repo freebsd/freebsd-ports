@@ -1,30 +1,29 @@
---- configure.orig	Sun Sep 20 04:25:10 1998
-+++ configure	Fri Oct 23 00:17:09 1998
-@@ -48,6 +48,8 @@
+--- /usr/ports/security/sudo/work2/sudo.v1.5.7p4/configure	Tue Nov 24 05:40:24 1998
++++ configure	Sat Jan  2 04:07:08 1999
+@@ -22,6 +22,8 @@
  ac_help="$ac_help
    --with-csops            add CSOps standard options"
  ac_help="$ac_help
 +  --with-fbsdops          add FreeBSD standard options"
 +ac_help="$ac_help
-   --enable-log-host       Log the hostname in the log file
-   --disable-log-host      Do not log hostname in the log file (default)"
+   --with-skey             enable S/Key support "
  ac_help="$ac_help
-@@ -579,8 +581,8 @@
+   --with-opie             enable OPIE support "
+@@ -665,8 +667,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
  test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
--test "$sbindir" = '${exec_prefix}/sbin' && sbindir='$(exec_prefix)/etc'
+-test "$sbindir" = '${exec_prefix}/sbin' && sbindir='$(exec_prefix)/sbin'
 -test "$sysconfdir" = '${prefix}/etc' && sysconfdir='/etc'
-+test "$sbindir" = '${exec_prefix}/sbin' || sbindir='$(exec_prefix)/etc'
++test "$sbindir" = '${exec_prefix}/sbin' || sbindir='$(exec_prefix)/sbin'
 +test "$sysconfdir" = '${prefix}/etc' || sysconfdir='/etc'
  
  
  # Check whether --with-CC or --without-CC was given.
-@@ -940,7 +942,20 @@
- 
+@@ -2068,6 +2070,20 @@
+   echo "$ac_t""no" 1>&6
  fi
  
--
 +# Check whether --with-fbsdops or --without-fbsdops was given.
 +if test "${with_fbsdops+set}" = set; then
 +  withval="$with_fbsdops"
@@ -39,10 +38,10 @@
 +  esac
 +fi
 +    
+ 
  # Extract the first word of "egrep", so it can be a program name with args.
  set dummy egrep; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -5008,7 +5023,7 @@
+@@ -7000,7 +7016,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
