@@ -179,8 +179,6 @@ def getrelpath(path, wrksrc):
 # "FreeBSD" cvs id.
 #
 def gendiff(path, wrksrc, outfile = ''):
-	IDGEN_CMD = '%s "\\n\\$%s\\$\\n\\n"' % (Vars.PRINTF_CMD, Vars.CVS_ID)
-
 	fullpath = os.path.join(wrksrc, path)
 	if not os.path.isfile(fullpath):
 		raise IOError(errno.ENOENT, fullpath)
@@ -188,20 +186,18 @@ def gendiff(path, wrksrc, outfile = ''):
 
 	cmdline = ''
 	if os.path.isfile(fullpath + Vars.DIFF_SUFX):		# Normal diff
-		cmdline = '%s %s %s%s %s' % (Vars.DIFF_CMD, Vars.DIFF_ARGS, path, \
-		  Vars.DIFF_SUFX, path)
+		path_orig = path + Vars.DIFF_SUFX
+		cmdline = '%s %s %s %s' % (Vars.DIFF_CMD, Vars.DIFF_ARGS, path_orig, path)
 	elif os.path.isfile(fullpath + Vars.RCSDIFF_SUFX):	# RCS diff
+		path_orig = path
 		cmdline = '%s %s %s' % (Vars.RCSDIFF_CMD, Vars.DIFF_ARGS, path)
-	else:												# New file
-		cmdline = '%s %s %s %s' % (Vars.DIFF_CMD, Vars.DIFF_ARGS, \
-          Vars.DEV_NULL, path)
-
-	if outfile != '':
-		cmdline = '( %s && %s ) 2>%s' % (IDGEN_CMD, cmdline, Vars.DEV_NULL)
+	else:							# New file
+		path_orig = Vars.DEV_NULL
+		cmdline = '%s %s %s %s' % (Vars.DIFF_CMD, Vars.DIFF_ARGS, path_orig, path)
 
 	savedir = os.getcwd()
 	os.chdir(wrksrc)
-	pipe = popen2.Popen3(cmdline)
+	pipe = popen2.Popen3(cmdline, True)
 	outbuf = pipe.fromchild.readlines()
 	for stream in (pipe.fromchild, pipe.tochild):
 		stream.close()
@@ -212,6 +208,11 @@ def gendiff(path, wrksrc, outfile = ''):
 			  'version of "%s"' % fullpath
 	elif exitval == 1:  # Some differences  were  found
 		if (outfile != ''):
+			outbuf[0] = '--- %s\n' % path_orig
+			outbuf[1] = '+++ %s\n' % path
+			outbuf.insert(0, '\n')
+			outbuf.insert(0, '$%s$\n' % Vars.CVS_ID)
+			outbuf.insert(0, '\n')
 			open(outfile, 'w').writelines(outbuf)
 		else:
 			sys.stdout.writelines(outbuf)
