@@ -17,7 +17,7 @@
     close(F);
   
     for $k (@elem) {
-!     if ($k =~ /^$INSTALL_DIR\/bin/jail/) {
+!     if ($k =~ /^$INSTALL_DIR\/bin\/jail/) {
         $found = 1;
         last;
       }
