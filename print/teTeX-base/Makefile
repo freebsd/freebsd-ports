@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_XLIB=	yes
-MANUAL_PACKAGE_BUILD=	can only build with empty /usr/local
 DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/teTeX-1.0
 EXTRACT_ONLY=	${TETEX_SRC}
