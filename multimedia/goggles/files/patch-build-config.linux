@@ -1,0 +1,43 @@
+--- build/config.linux.orig	Mon May 17 06:08:59 2004
++++ build/config.linux	Mon Jun 28 01:03:04 2004
+@@ -1,17 +1,17 @@
+ # General Settings
+ #-------------------------------------------------------------------------------
+-CONFIG_DEVICE="/dev/dvd"                  # Initial default dvd device       
++CONFIG_DEVICE="%%DVDDEVICE%%"                  # Initial default dvd device       
+ CONFIG_XV=1                               # Include XV Support 
+ CONFIG_DXR3=0                             # Include DXR3 Support
+ 
+ 
+ # Search and Install Directories
+ #-------------------------------------------------------------------------------
+-FOX_PREFIX="/usr"                         # FOX Installation dir.
+-OGLE_PREFIX="/usr"                        # Ogle Installation dir
+-GOGGLES_PREFIX="$OGLE_PREFIX"             # Goggles Installation dir -
++FOX_PREFIX="%%LOCALBASE%%"                         # FOX Installation dir.
++OGLE_PREFIX="%%LOCALBASE%%"                        # Ogle Installation dir
++GOGGLES_PREFIX="%%PREFIX%%"             # Goggles Installation dir -
+                                           # Should be the same as ogle 
+-X11_PREFIX="/usr/X11R6"                   # X Server Installation dir.
++X11_PREFIX="%%X11BASE%%"                   # X Server Installation dir.
+ 
+ # Build Tools
+ #-------------------------------------------------------------------------------
+@@ -24,7 +24,7 @@
+ #-------------------------------------------------------------------------------
+ #CXXFLAGS="-O2 -Wall -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations"
+ CXXFLAGS="-Wall -g"
+-CPPFLAGS="-I../include -I$FOX_PREFIX/include/fox-1.2 -I$OGLE_PREFIX/include"
++CPPFLAGS="-I../include -I$FOX_PREFIX/include/fox-1.2 -I$OGLE_PREFIX/include -I$X11_PREFIX/include"
+ 
+ OGLE_LIBS="-L$OGLE_PREFIX/lib/ogle -Wl,-rpath $OGLE_PREFIX/lib/ogle -ldvdcontrol -lmsgevents"
+ OGLE_DEFS=""
+@@ -53,7 +53,7 @@
+ 
+ LIBS="$LIBS -lXext -lX11"
+ 
+-#LIBS="$LIBS -lpthread"
++LIBS="$LIBS %%PTHREADLIBS%%"
+ 
+ 
+ 

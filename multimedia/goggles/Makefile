@@ -5,32 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Goggles
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTNAME=	goggles
+PORTVERSION=	0.7.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
-BROKEN=		"Conflicts with x11-toolkits/fox-devel version 1.2.1"
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.2.5:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-dvdcontrol=${LOCALBASE} \
-		--with-fox=${LOCALBASE} \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
-WRKSRC=		${WRKDIR}/${PORTNAME:S/G/g/}-${PORTVERSION}
 
 pre-everything::
 .ifndef(WITH_DVD_DEVICE)
@@ -56,10 +45,26 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ./gb clean
+
 post-patch:
-# point to specific device
-	@${REINPLACE_CMD} -E -e \
-		's|\"/dev/acd0c\"|\"${DEFAULT_DVD_DEVICE}\"|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/gb
+
+do-configure:
+	@${REINPLACE_CMD} -e 's|%%DVDDEVICE%%|${DEFAULT_DVD_DEVICE}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%X11BASE%%|${X11BASE}|g' \
+		-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%PTHREADLIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/build/config.linux
+
+do-build:
+	@cd ${WRKSRC} && ./gb
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ogle_gui_goggles ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/goggles ${PREFIX}/bin
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/desktop/goggles_manual.pdf ${DOCSDIR}
 
 .include <bsd.port.post.mk>
