@@ -9,7 +9,7 @@
 
 PORTNAME=	wu-ftpd+ipv6
 PORTVERSION=    2.6.2
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 DISTNAME=	wu-ftpd-${PORTVERSION}
