@@ -6,22 +6,17 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.10.1
-PORTREVISION=	1
+PORTVERSION=	1.1.11.1
+PORTREVISION=	0
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
-		ftp://ftp.lastik.ru/clip/		\
-		ftp://ftp.itk.ru/pub/clip/
+MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/
 DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz \
 		patch.tgz
 DIST_SUBDIR=	clip
-
 EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 
@@ -86,6 +81,7 @@ USE_XPM=		yes
 USE_GNOME=		gtk12 gtk20
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
+INSTALLS_SHLIB=		yes
 ALL_TARGET=		local
 MAKE_ENV=		HOME=${WRKDIR} LANG=C
 
@@ -126,6 +122,10 @@ pre-configure:
 	-e "s|/usr/X11R6|${X11BASE}|g"
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|"		\
 	-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" ${WRKSRC}/cliplibs/clip-odbc/configure
+	@${REINPLACE_CMD} -e 's|;;|;|g' \
+		${WRKSRC}/cliplibs/clip-gtk2/toolbutton.c \
+		${WRKSRC}/cliplibs/clip-gtk2/cellrenderer.c \
+		${WRKSRC}/cliplibs/clip-gtk2/action.c
 
 post-build: # don't include emppty directories
 	@cd ${WRKDIR}/cliproot && ${RMDIR} include/memdebug doc/clip-oasis/nanfor doc/clip-oasis

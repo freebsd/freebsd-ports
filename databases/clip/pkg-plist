@@ -407,6 +407,7 @@ clip/doc/example/clip-gtk2/basket.bmp
 clip/doc/example/clip-gtk2/clip.xpm
 clip/doc/example/clip-gtk2/clipgtktest.prg
 clip/doc/example/clip-gtk2/container.prg
+clip/doc/example/clip-gtk2/drag_and_drop.prg
 clip/doc/example/clip-gtk2/fonttest.prg
 clip/doc/example/clip-gtk2/note.prg
 clip/doc/example/clip-gtk2/simple.prg
@@ -417,6 +418,7 @@ clip/doc/example/clip-gtk2/test_dnd.prg
 clip/doc/example/clip-gtk2/test_gtk.prg
 clip/doc/example/clip-gtk2/test_image.prg
 clip/doc/example/clip-gtk2/test_stock.prg
+clip/doc/example/clip-gtk2/test_text.prg
 clip/doc/example/clip-gtk2/test_tree.prg
 clip/doc/example/clip-gtk2/text.prg
 clip/doc/example/clip-gtk2/winpic.prg
@@ -522,6 +524,7 @@ clip/include/clipcfg.sh
 clip/include/clr_html.ch
 clip/include/cobra.ch
 clip/include/codb.ch
+clip/include/codb_dbf.ch
 clip/include/codbcfg.ch
 clip/include/color.ch
 clip/include/common.ch
