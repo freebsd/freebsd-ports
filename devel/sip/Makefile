@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 DISTNAME=	sip-x11-gpl-${PORTVERSION}
