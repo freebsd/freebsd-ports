@@ -1,0 +1,25 @@
+--- src/search.c.old	Wed Feb 28 15:28:10 2001
++++ src/search.c	Thu Apr 19 18:02:10 2001
+@@ -1269,7 +1269,8 @@
+ 		strcpy(template,env);
+ 
+ 	if((env=getenv("QUERY_STRING"))){
+-		strcpy(query_string,env);
++		strncpy(query_string,env,UDMSTRSIZ-1);
++		query_string[UDMSTRSIZ-1] = '\0';
+ 		if((env=getenv("REDIRECT_STATUS"))){
+ 
+ 			/* Check Apache internal redirect  */
+@@ -1316,8 +1317,10 @@
+ 		/* or under server which do not   */
+ 		/* pass an empty QUERY_STRING var */
+ 
+-		if(argv[1])
+-			sprintf(query_string,"q=%s",argv[1]);
++		if(argv[1]) {
++			strcpy(query_string, "q=");
++			strncat(query_string, argv[1], UDMSTRSIZ-1-2);
++		}
+ 		if(!template[0])
+ 			sprintf(template,"%s/%s", UDM_CONF_DIR,"search.htm");
+ 	}
