@@ -36,6 +36,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/${PORTNAME} \
 MAKE_ENV+=	NETCDFHOME=${LOCALBASE}
 INSTALL_TARGET=	install install-data install-man install-wrapper
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	@for file in ${EXTRACT_SUB}; do \
 		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
@@ -89,4 +95,4 @@ PLIST_SUB+=	SUPPL="@comment "
 
 MANL=		GMT.l
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
