@@ -1,9 +1,9 @@
 %%GDBM%%bin/makegdbm
 %%BDB%%bin/makebdb
-%%OPENLDAP%%bin/perditiondb_ldap_makedb
-%%ODBC%%bin/perditiondb_odbc_makedb
-%%MYSQL%%bin/perditiondb_mysql_makedb
-%%PGSQL%%bin/perditiondb_postgresql_makedb
+%%OPENLDAP%%sbin/perditiondb_ldap_makedb
+%%ODBC%%sbin/perditiondb_odbc_makedb
+%%MYSQL%%sbin/perditiondb_mysql_makedb
+%%PGSQL%%sbin/perditiondb_postgresql_makedb
 %%POSIXREGEX%%etc/perdition/popmap.re-dist
 etc/perdition/perdition.conf-dist
 etc/perdition/popmap-dist
