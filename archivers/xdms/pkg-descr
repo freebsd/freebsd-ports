@@ -1,0 +1,6 @@
+xDMS is an archiver unpacker for the Amiga DMS file format. It supports
+decompression of files compressed using all known DMS compression modes,
+including old and obsolete ones, and also encrypted files, for 100%
+compatibility.
+
+WWW: http://www.ee.tut.fi/~o159219/xdms/

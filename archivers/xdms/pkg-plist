@@ -1,0 +1,3 @@
+bin/xdms
+%%PORTDOCS%%share/doc/xdms/xdms.txt
+%%PORTDOCS%%@dirrm share/doc/xdms
