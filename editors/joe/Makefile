@@ -3,7 +3,7 @@
 # Date created:		01 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/05 15:08:49 torstenb Exp $
+# $Id: Makefile,v 1.2 1996/06/11 21:55:48 asami Exp $
 #
 
 DISTNAME=	joe2.8
@@ -14,10 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/joe.1
-.endif
+MAN1=		joe.1
 
 .include <bsd.port.mk>

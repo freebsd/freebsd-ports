@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.7 1996/09/11 04:11:57 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/11 05:07:03 obrien Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -21,11 +21,11 @@ IS_INTERACTIVE=	yes	# asks "ok?" about license
 pre-install:
 	@/usr/bin/env PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
 do-install:
-	mkdir -p ${PREFIX}/lib/e93 ${PREFIX}/share/doc/e93
+	${MKDIR} ${PREFIX}/lib/e93 ${PREFIX}/share/doc/e93
 	(cd ${WRKSRC}; \
-	  install -c -s e93 ${PREFIX}/bin; \
-	  install -c .e93rc ${PREFIX}/lib/e93; \
-	  install -c LICENSE.TXT ${PREFIX}/share/doc/e93/LICENSE.TXT; \
+	  ${INSTALL_PROGRAM} e93 ${PREFIX}/bin; \
+	  ${INSTALL_DATA} .e93rc ${PREFIX}/lib/e93; \
+	  ${INSTALL_DATA} LICENSE.TXT ${PREFIX}/share/doc/e93/LICENSE.TXT; \
 	)
 
 .include <bsd.port.mk>
