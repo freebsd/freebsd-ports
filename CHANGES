@@ -10,6 +10,40 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040217:
+	Mozilla will now default to using GTK2, and will only compile
+	against Gtk+-1.2 if explicitly requested.  This is in exact
+	opposite to the old behaviour.
+
+	The valid values of WITH_MOZILLA are now:
+		mozilla			(www/mozilla, GTK2)
+		mozilla-devel		(www/mozilla-devel, GTK2)
+		mozilla-gtk1		(www/mozilla-gtk1, GTK1)
+		mozilla-devel-gtk1	(www/mozilla-devel-gtk1, GTK1)
+	
+	As before, WITH_MOZILLA can be set in /etc/make.conf, but doing
+	so is not advised unless you desire the development versions.
+	GTK2 browsers will automatically compile against GTK2 mozilla,
+	and GTK1 browsers (galeon1, galeon1, and galeon1) will
+	automatically compile against GTK1.
+
+	Again, the only people who will need to take action are those
+	who desire development versions (which are inactive at this time
+	anyway).  Those who want GTK1 mozilla-devel must set
+	WITH_MOZILLA=mozilla-devel-gtk1 or they will be pleasantly
+	surprised with their very own GTK2 installation on the next
+	update.
+
+	WITH_MOZILLA=mozilla-gtk2 and WITH_MOZILLA=mozilla-devel-gtk2
+	are still honoured for the time being, but their use is
+	now deprecated.  Any new ports are not required to consider
+	their values, and so eventually WITH_MOZILLA _will_ have to
+	be changed.
+
+	Hopefully galeon2 can catch up to peoples' expectations from
+	galeon1 soon, and we can remove the GTK1 ports altogether.
+
+	
 20040204:
 	The bsd.php.mk file has been moved out of the lang/php4 port
 	into the Mk directory.  This will make it much easier to include
