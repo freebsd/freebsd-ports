@@ -1,0 +1,11 @@
+bin/module-starter
+%%SITE_PERL%%/Module/Starter.pm
+%%SITE_PERL%%/Module/Starter/Plugin.pod
+%%SITE_PERL%%/Module/Starter/Plugin/Template.pm
+%%SITE_PERL%%/Module/Starter/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter
+@dirrm %%SITE_PERL%%/Module/Starter/Plugin
+@dirrm %%SITE_PERL%%/Module/Starter
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
