@@ -368,7 +368,6 @@
     SUBDIR += tdiary
     SUBDIR += texinfo
     SUBDIR += tgif
-    SUBDIR += tgif2tex
     SUBDIR += timidity++-slang
     SUBDIR += timidity++-tcltk
     SUBDIR += tk42
