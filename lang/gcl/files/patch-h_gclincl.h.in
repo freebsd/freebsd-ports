@@ -1,0 +1,17 @@
+--- h/gclincl.h.in.orig	Wed Feb 26 15:26:41 2003
++++ h/gclincl.h.in	Mon Sep 15 17:18:53 2003
+@@ -119,7 +119,14 @@
+ #include <ieeefp.h>
+ #define ISNORMAL(a) (fpclass(a)>=FP_NZERO)
+ #else
++#define HAVE_FLOAT_H 1
++#ifdef HAVE_FLOAT_H
++#include <float.h>
++#define ISNORMAL(a) \
++	((DBL_MIN<=(a) && (a)<=DBL_MAX) || (DBL_MIN<=(-a) && (-a)<=DBL_MAX))
++#else
+ #error "No isnormal found"
++#endif
+ #endif
+ #endif
+ #endif
