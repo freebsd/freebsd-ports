@@ -9,7 +9,7 @@
 
 DISTNAME=	jpilot-0.98
 CATEGORIES=	palm comms
-MASTER_SITES=	http://jpilot.linuxbox.com/
+MASTER_SITES=	http://jpilot.linuxave.net/
 
 MAINTAINER?=	varju@webct.com
 
