@@ -7,10 +7,11 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.mostang.com/pub/sane/
-MASTER_SITE_SUBDIR=	apps/graphics/capture
+MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
+		ftp://ftp.de.mostang.com/pub/sane/ \
+		ftp://ftp.no.mostang.com/pub/sane/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
