@@ -275,6 +275,7 @@
     SUBDIR += paicc
     SUBDIR += pciutils
     SUBDIR += pdumpfs
+    SUBDIR += pdumpfs-clean
     SUBDIR += pear-Cache
     SUBDIR += pear-File
     SUBDIR += pear-File_Find
