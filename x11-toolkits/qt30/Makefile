@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	20000829A
+PORTVERSION=	2.2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
+DISTNAME=	qt-x11-2.2.0
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
-USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -54,16 +55,14 @@ pre-configure:
 		${SED} -e "s,/usr/X11R6,${X11BASE},g" | ${SED} -e "s,-pipe -O2,${CXXFLAGS},g" > ${CONFIG}
 	${PERL} -pi -e "s@VER_MAJ = 2@VER_MAJ = 4@g" ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET	= qt@TARGET = qt2@g" ${WRKSRC}/src/Makefile.in
-	${PERL} -pi -e "s@TARGET  = moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
-	${PERL} -pi -e "s@cp src/moc/moc bin/moc@cp src/moc/moc  bin/moc2@g" ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@symlinks  moc src-mt src tools tutorial examples@symlinks moc src-mt src tools@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@TARGET\t= moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
+	${PERL} -pi -e "s@rm -f bin/moc@rm -f bin/moc2@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@cp src/moc/moc bin/moc@cp src/moc/moc2  bin/moc2@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples@symlinks src-moc src-mt sub-src sub-tools@g" ${WRKSRC}/Makefile
 	${PERL} -pi -e "s@-L../lib@-L${WRKSRC}/lib@g" ${WRKSRC}/tools/designer/uic/Makefile.in
 
 post-configure:
 	@(cd ${WRKSRC} ; ${GMAKE} symlinks)
-
-pre-install:
-	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 do-install:
 	${MKDIR} ${PREFIX}/include/qt2
@@ -87,9 +86,8 @@ do-install:
 	${INSTALL_DATA} PORTING ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} doc/html/*.html doc/html/*.png doc/html/*.jpg ${PREFIX}/share/doc/qt2/html ; \
+	${INSTALL_DATA} doc/html/*.html doc/html/*.png ${PREFIX}/share/doc/qt2/html ; \
 	${INSTALL_DATA} doc/html/designer/*.html ${PREFIX}/share/doc/qt2/html/designer ; \
-	${INSTALL_DATA} doc/html/designer/stylesheet-images/* ${PREFIX}/share/doc/qt2/html/designer/stylesheet-images ; \
 	${INSTALL_DATA} doc/html/designer/figures/* ${PREFIX}/share/doc/qt2/html/designer/figures ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
 .endif

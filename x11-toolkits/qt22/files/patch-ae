@@ -1,14 +1,14 @@
---- configure	Mon Aug  7 19:31:32 2000
-+++ configure.new	Mon Aug  7 22:25:11 2000
-@@ -49,6 +49,7 @@
- MODULES=`$MAKE -f src/Makefile.in listallmodules`
+--- configure	Sun Sep  3 12:41:17 2000
++++ configure.new	Sun Sep 10 15:16:38 2000
+@@ -56,6 +56,7 @@
+ 
  
  # Free edition - may only be used under the terms of the QPL.
 +if false; then
- if [ -f LICENSE.QPL ]
+ if [ -f LICENSE.QPL -a -f LICENSE.GPL ]
  then
-     Licensee=you
-@@ -164,6 +165,7 @@
+     Edition=free
+@@ -184,6 +185,7 @@
  	echo
  	exit 0
      fi
