@@ -1,24 +1,38 @@
 tomcat/LICENSE
 tomcat/bin/ant
+tomcat/bin/ant.bat
 tomcat/bin/antRun
+tomcat/bin/antRun.bat
+tomcat/bin/cpappend.bat
+tomcat/bin/jspc.bat
 tomcat/bin/jspc.sh
+tomcat/bin/shutdown.bat
 tomcat/bin/shutdown.sh
+tomcat/bin/startup.bat
 tomcat/bin/startup.sh
+tomcat/bin/tomcat.bat
 tomcat/bin/tomcat.sh
+tomcat/bin/tomcatEnv.bat
 tomcat/conf/build.xml
 tomcat/conf/jni_server.xml
 tomcat/conf/jni_workers.properties
 tomcat/conf/manifest.servlet
+tomcat/conf/mod_jk.conf
 tomcat/conf/obj.conf
-tomcat/conf/server.dtd
 tomcat/conf/server.xml
+tomcat/conf/test-tomcat.xml
 tomcat/conf/tomcat-users.xml
 tomcat/conf/tomcat.conf
+tomcat/conf/tomcat.policy
 tomcat/conf/tomcat.properties
 tomcat/conf/uriworkermap.properties
 tomcat/conf/web.dtd
 tomcat/conf/web.xml
 tomcat/conf/workers.properties
+tomcat/conf/wrapper.properties
+tomcat/doc/JDBCRealm.howto
+tomcat/doc/NT-Service-howto.html
+tomcat/doc/Tomcat-Workers-HowTo.html
 tomcat/doc/appdev/build.xml.txt
 tomcat/doc/appdev/contents.html
 tomcat/doc/appdev/deployment.html
@@ -28,7 +42,8 @@ tomcat/doc/appdev/index.html
 tomcat/doc/appdev/installation.html
 tomcat/doc/appdev/introduction.html
 tomcat/doc/appdev/processes.html
-tomcat/doc/appdev/sample/build
+tomcat/doc/appdev/sample/build.bat
+tomcat/doc/appdev/sample/build.sh
 tomcat/doc/appdev/sample/build.xml
 tomcat/doc/appdev/sample/etc/web.xml
 tomcat/doc/appdev/sample/src/Hello.java
@@ -38,31 +53,41 @@ tomcat/doc/appdev/sample/web/index.html
 tomcat/doc/appdev/source.html
 tomcat/doc/appdev/tomcat.gif
 tomcat/doc/appdev/web.xml.txt
+tomcat/doc/faq
+tomcat/doc/in-process-howto.html
+tomcat/doc/index.html
+tomcat/doc/mod_jk-howto.html
 tomcat/doc/readme
+tomcat/doc/tomcat-apache-howto.html
+tomcat/doc/tomcat-iis-howto.html
+tomcat/doc/tomcat-netscape-howto.html
+tomcat/doc/tomcat-ssl-howto.html
 tomcat/doc/uguide/images/banner.gif
+tomcat/doc/uguide/images/tomcat.gif
 tomcat/doc/uguide/style.css
+tomcat/doc/uguide/tomcat-security.html
 tomcat/doc/uguide/tomcat_ug.html
 tomcat/lib/ant.jar
 tomcat/lib/jasper.jar
+tomcat/lib/jaxp.jar
+tomcat/lib/parser.jar
 tomcat/lib/servlet.jar
 tomcat/lib/webserver.jar
-tomcat/lib/xml.jar
 tomcat/webapps/ROOT.war
 tomcat/webapps/admin.war
 tomcat/webapps/examples.war
 tomcat/webapps/test.war
 @dirrm tomcat/webapps
-@dirrm tomcat/doc/appdev/sample/web/images
-@dirrm tomcat/doc/appdev/sample/web
-@dirrm tomcat/doc/appdev/sample/src
-@dirrm tomcat/doc/appdev/sample/etc
-@dirrm tomcat/doc/appdev/sample
-@dirrm tomcat/lib
 @dirrm tomcat/doc/uguide/images
 @dirrm tomcat/doc/uguide
-@dirrm tomcat/doc/faq
+@dirrm tomcat/doc/appdev/sample/web/images
+@dirrm tomcat/doc/appdev/sample/web
+@dirrm tomcat/doc/appdev/sample/etc
+@dirrm tomcat/doc/appdev/sample/src
+@dirrm tomcat/doc/appdev/sample
 @dirrm tomcat/doc/appdev
 @dirrm tomcat/doc
+@dirrm tomcat/lib
 @dirrm tomcat/conf
 @dirrm tomcat/bin
 @dirrm tomcat
