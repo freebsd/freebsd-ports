@@ -47,7 +47,10 @@ static const char rcsid[] =
 #define DKTYPENAMES
 #include <sys/disklabel.h>
 
-#define	_PATH_CONF	"/etc/diskcheckd.conf"
+#ifndef _PATH_CONF
+#define	_PATH_CONF	"/usr/local/etc/diskcheckd.conf"
+#endif
+
 #define	_PATH_SAVE	_PATH_VARDB"diskcheckd.offsets"
 
 #define	READ_SIZE (64 << 10)

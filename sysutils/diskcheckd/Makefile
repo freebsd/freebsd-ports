@@ -8,6 +8,7 @@
 
 PORTNAME=	diskcheckd
 PORTVERSION=	20010823
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
@@ -17,20 +18,35 @@ MAINTAINER=	ports@FreeBSD.org
 
 STARTUP=	diskcheckd.sh
 MAN8=		diskcheckd.8
+MLINKS=		diskcheckd.8 diskcheckd.conf.5
+
+MANCOMPRESSED=	no
 
 NO_WRKSUBDIR=	yes
 
+CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc\"'
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Not tested on anything less than 5.0, use at discretion"
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@(cd ${FILESDIR} && pax -r -w * ${WRKSRC})
 
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -DCONFPATH=\"${PREFIX}/etc\" -o diskcheckd diskcheckd.c
+.for file in Makefile diskcheckd.c diskcheckd.8
+	@(cd ${WRKSRC} ; ${LN} -f ${FILESDIR}/${file} .)
+.endfor
+
+do-patch:
+	@${PERL} -pi.fbsd -e 's|/usr/local/sbin|${PREFIX}/sbin|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diskcheckd ${PREFIX}/sbin
-	${INSTALL_DATA}	${WRKSRC}/diskcheckd.conf ${PREFIX}/etc/diskcheckd.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/diskcheckd.sh ${PREFIX}/etc/rc.d
+	${INSTALL_DATA}	${FILESDIR}/diskcheckd.conf ${PREFIX}/etc/diskcheckd.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/diskcheckd.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${PREFIX}/man/man8
+	${LN} -sf ${PREFIX}/man/man8/diskcheckd.8 ${PREFIX}/man/man5/diskcheckd.conf.5
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
