@@ -379,6 +379,8 @@ do-install:
 	  ${MKDIR} ${DVIPSCONFDIR}; fi
 	@(for i in ${DVIPS}; do \
 	  ${INSTALL_DATA} ${TXDIST}/dvips/$$i ${DVIPSCONFDIR}/ ; done)
+	@if [ ! -d ${DVIPDFMCONFDIR} ]; then \
+	  ${MKDIR} ${DVIPDFMCONFDIR}; fi
 	@(for i in ${DVIPDFM}; do \
 	  ${INSTALL_DATA} ${TXDIST}/dvipdfm/$$i ${DVIPDFMCONFDIR}/ ; done)
 	@(for i in ${TXPATCH_NAME}; do \
