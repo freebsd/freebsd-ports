@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.6 1998/12/02 06:37:33 obrien Exp $
+# $Id: Makefile,v 1.7 1999/02/18 22:57:42 obrien Exp $
 #
 
 DISTNAME=	super-3.11.8
