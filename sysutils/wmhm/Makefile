@@ -1,4 +1,5 @@
 # New ports collection makefile for:   wmhm
+# Version required:    1.45
 # Date created:        21 September 1999
 # Whom:                Mike Muir <mmuir@es.co.nz>
 #
@@ -6,9 +7,9 @@
 #
 
 PORTNAME=	wmhm
-PORTVERSION=	1.43
+PORTVERSION=	1.45
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://muir.yi.org/wmhm/ \
+MASTER_SITES=	ftp://muir.yi.org/pub/wmhm/ \
 		http://www.es.co.nz/~mmuir/
 
 MAINTAINER=	mmuir@es.co.nz
