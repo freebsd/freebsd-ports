@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed Mar 30 00:56:10 2005
++++ configure.in	Thu Mar 31 08:38:27 2005
+@@ -532,8 +532,6 @@
+ 
+ AC_CONFIG_FILES([\
+ Makefile \
+-autopackage/default.apspec \
+-autopackage/Makefile \
+ scripts/Makefile \
+ scripts/autoconf/Makefile \
+ scripts/FreeBSD/Makefile \

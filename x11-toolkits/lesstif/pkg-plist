@@ -147,6 +147,7 @@ LessTif/doc/SyntheticResources.txt
 LessTif/doc/UIL.txt
 LessTif/doc/XmStrings.txt
 LessTif/doc/thread.html
+bin/motif-config
 bin/mwm
 bin/mxmkmf
 bin/uil
