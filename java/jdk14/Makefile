@@ -17,7 +17,6 @@ MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		gtar:${PORTSDIR}/archivers/gtar \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(NATIVE_BOOTSTRAP)
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13
@@ -63,7 +62,6 @@ ALL_TARGET=	all plugin images
 .else
 ALL_TARGET=	all images
 .endif
-TAR=		gtar	# Necessary for proper extraction of sources
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i386/jdk-image-i386
@@ -97,6 +95,11 @@ IGNORE=		"You can not legally distribute pre-compiled binaries"
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
+BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+TAR=		gtar	# Necessary for proper extraction of sources
+.endif
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${file})
