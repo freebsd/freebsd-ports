@@ -1350,6 +1350,7 @@ downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
 dpkg		ports/archivers/dpkg
 drac		ports/mail/drac
+dragstack	ports/deskutils/dragstack
 drbl		ports/mail/drbl
 drgeo		ports/math/drgeo
 dri-devel	ports/graphics/dri-devel
