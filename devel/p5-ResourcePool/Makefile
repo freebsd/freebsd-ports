@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ResourcePool
-PORTVERSION=	1.0100
+PORTVERSION=	1.0102
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
@@ -17,12 +17,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@lansing.dk
 COMMENT=	A generic way to use connection caching for any kind of resources
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	ResourcePool.3 \
 	ResourcePool::BigPicture.3 \
 	ResourcePool::Command.3 \
