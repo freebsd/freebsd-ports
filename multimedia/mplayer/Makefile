@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -79,6 +79,10 @@ WITH_XANIM=	yes
 WITH_REALPLAYER=	yes
 .endif
 
+.if exists(${LOCALBASE}/live/liveMedia/libliveMedia.a)
+WITH_LIVEMEDIA=	yes
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -122,6 +126,13 @@ CONFIGURE_ARGS+=	--enable-real \
 RUN_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
 .endif
+
+.if defined(WITH_LIVEMEDIA)
+CONFIGURE_ARGS+=	--enable-live \
+			--with-livelibdir=${LOCALBASE}/live
+RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+ .endif
 
 .if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
