@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.11 1997/06/03 22:11:37 asami Exp $
+# $Id: Makefile,v 1.12 1997/10/13 09:14:51 tg Exp $
 #
 
 DISTNAME=       DHCPD-BETA-5.16
@@ -17,5 +17,8 @@ HAS_CONFIGURE=	yes
 
 MAN5=		dhcpd.conf.5
 MAN8=		dhcpd.8
+
+post-install:
+	touch /var/db/dhcpd.leases
 
 .include <bsd.port.mk>
