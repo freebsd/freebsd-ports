@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.4
+PORTREVISION=	3
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -29,9 +30,9 @@ MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
-		s|/usr/local/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
-		${WRKSRC}/src/defines.h
-	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
+	        @${REINPLACE_CMD} -e "s|/usr/local/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
+			s|/usr/local/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
+			${WRKSRC}/src/defines.h
+		@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
