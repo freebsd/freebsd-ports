@@ -7,6 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	lang ruby python
 MASTER_SITES=	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,13 +16,15 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	${NONEXISTENT}:${PYTHON_PORTSDIR}:-DWITHOUT_THREADS
+
 PYTHON_VERSION?=	python1.5
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-python="${PYTHON_VERSION}" --with-pthread
+CONFIGURE_ARGS=	--with-python-lib=`cd ${PYTHON_PORTSDIR} && ${MAKE} -V WRKSRC`
 INSTALL_TARGET=	site-install
 
 post-install:
