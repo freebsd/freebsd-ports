@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gtoaster
-PORTVERSION=	1.0.Beta6
-PORTEPOCH=	1
+PORTVERSION=	1.0.b6
+PORTEPOCH=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gnometoaster.rulez.org/archive/
-DISTNAME=	${PORTNAME}1.0Beta6
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b/Beta/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,17 +19,42 @@ COMMENT=	Graphical cd cooking interface
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
-WRKSRC=		${WRKDIR}/gtoaster
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE}
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
-
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnometarget gtk12
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-configure:
-	@${RM} ${WRKSRC}/config.guess
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomelibs
+.else
+CONFIGURE_ARGS+=	--without-gnome
+.endif
+
+.if ${HAVE_GNOME:Morbit}!=""
+USE_GNOME+=	orbit
+.else
+CONFIGURE_ARGS+=	--without-orbit
+.endif
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=	--without-esd
+.endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/config.guess
+	@${TOUCH} ${WRKSRC}/config.guess
+
+post-patch:
+	${REINPLACE_CMD} -e 's, -pthread, ${PTHREAD_LIBS},g' \
+		${WRKSRC}/configure
+.include <bsd.port.post.mk>
