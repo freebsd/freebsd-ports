@@ -298,6 +298,7 @@
     SUBDIR += sls
     SUBDIR += smssend
     SUBDIR += snowflake
+    SUBDIR += spamcalc
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += stan
