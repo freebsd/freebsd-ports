@@ -1,0 +1,7 @@
+--- pan.desktop.in.orig	Sun Feb 27 16:13:23 2005
++++ pan.desktop.in	Sun Feb 27 16:14:07 2005
+@@ -6,3 +6,4 @@
+ Icon=pan.png
+ Terminal=false
+ Type=Application
++Categories=Application;Network;News;
