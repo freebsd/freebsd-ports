@@ -1,16 +1,5 @@
-*** mirror.pl.orig	Fri May 29 21:01:42 1998
---- mirror.pl	Mon Jun  8 14:36:52 1998
-***************
-*** 1,4 ****
-! #!/usr/bin/perl
-  # Make local directories mirror images of a remote sites
-  #
-  #
---- 1,4 ----
-! #!/usr/local/bin/perl5
-  # Make local directories mirror images of a remote sites
-  #
-  #
+*** mirror.pl.orig	Mon Jun  8 12:55:27 1998
+--- mirror.pl	Fri Sep 10 10:41:25 1999
 ***************
 *** 104,110 ****
   # Try to find the default location of various programs via
