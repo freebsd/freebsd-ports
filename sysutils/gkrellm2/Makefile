@@ -22,10 +22,12 @@ INCLUDES=	gkrellm.h gkrellm_public_proto.h
 MAN1=		gkrellm.1
 DOCS=		COPYRIGHT README Themes.html
 
-# You should aware that GKrellM must be setuid root to obtain
-# temperatures.  If your motherboard doesn't support LM78/79 feature,
-# you may not want this.
-# WITHOUT_SENSOR=yes
+# If you want to support LM78/79 feature, set this to `yes'.  You
+# should aware that GKrellM must be setuid root to obtain
+# temperatures.  Furthermore, this causes problem on some
+# motherboards.  If your motherboard doesn't support LM78/79 feature,
+# you should not enable this.
+# WITH_SENSOR=yes
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +38,7 @@ ALL_TARGET=	freebsd
 .endif
 
 BINGRP=		kmem
-.if !defined(WITHOUT_SENSOR)
+.if defined(WITH_SENSOR)
 BINOWN=		root
 BINMODE=	4111
 .else
@@ -67,7 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gkrellm
 .endfor
 .endif
-.if !defined(WITHOUT_SENSOR)
+.if !defined(WITH_SENSOR)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
