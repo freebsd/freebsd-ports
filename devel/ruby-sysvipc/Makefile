@@ -27,7 +27,7 @@ DOCS=		sysvipc.html	sysvipc.rd
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} sysvipc.rd > sysvipc.html
+	cd ${WRKSRC}; ${RUBY_RD} sysvipc.rd > sysvipc.html
 .endif
 
 post-install:

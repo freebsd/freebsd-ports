@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} tzfile.rb > tzfile.html
+	cd ${WRKSRC}; ${RUBY_RD} tzfile.rb > tzfile.html
 .endif
 
 do-install:

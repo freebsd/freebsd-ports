@@ -22,7 +22,7 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 RUBY_OPENGL_PORTDIR=	${.CURDIR}/../../graphics/ruby-opengl
-RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR} && ${MAKE} -V WRKSRC
+RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -54,7 +54,7 @@ post-patch:
 post-build:
 .if !defined(NOPORTDOCS)
 .for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
-	@cd ${WRKSRC} && ${RUBY_RD} ${f} > ${f:S/.rd$/.html/}
+	@cd ${WRKSRC}; ${RUBY_RD} ${f} > ${f:S/.rd$/.html/}
 .endfor
 .endif
 
