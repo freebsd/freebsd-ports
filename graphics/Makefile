@@ -288,6 +288,7 @@
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vlc
+    SUBDIR += vterrain-apps
     SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
     SUBDIR += win32-codecs
