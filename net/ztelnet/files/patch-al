@@ -1,7 +1,24 @@
-diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telnet/commands.c
---- work.old/ztelnet/telnet/commands.c	Wed Sep 20 09:03:45 1995
-+++ work/ztelnet/telnet/commands.c	Tue Jun 20 22:58:31 2000
-@@ -93,6 +93,10 @@
+--- work/ztelnet/telnet/commands.c.orig	Wed Sep 20 02:03:45 1995
++++ work/ztelnet/telnet/commands.c	Sun May 30 01:37:06 2004
+@@ -40,7 +40,7 @@
+ #include <netdb.h>
+ #include <ctype.h>
+ #include <pwd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <errno.h>
+ 
+ #include <arpa/telnet.h>
+@@ -79,8 +79,6 @@
+ extern char **genget();
+ extern int Ambiguous();
+ 
+-static call();
+-
+ typedef struct {
+ 	char	*name;		/* command name */
+ 	char	*help;		/* help string (NULL for no help) */
+@@ -93,6 +91,10 @@
  static int margc;
  static char *margv[20];
  
@@ -12,7 +29,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
      static void
  makeargv()
  {
-@@ -230,10 +234,8 @@
+@@ -230,10 +232,8 @@
      int		nbyte;		/* Number of bytes to send this command */
      int		what;		/* Character to be sent (<0 ==> special) */
  };
@@ -24,7 +41,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  static int
  	send_esc P((void)),
  	send_help P((void)),
-@@ -370,7 +372,6 @@
+@@ -370,7 +370,6 @@
  send_docmd(name)
      char *name;
  {
@@ -32,7 +49,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
      return(send_tncmd(send_do, "do", name));
  }
  
-@@ -378,21 +379,18 @@
+@@ -378,21 +377,18 @@
  send_dontcmd(name)
      char *name;
  {
@@ -54,7 +71,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
      return(send_tncmd(send_wont, "wont", name));
  }
  
-@@ -590,11 +588,8 @@
+@@ -590,11 +586,8 @@
      return 1;
  }
  
@@ -67,7 +84,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  #if	defined(AUTHENTICATE)
  extern int auth_togdebug P((int));
  #endif
-@@ -828,12 +823,8 @@
+@@ -828,12 +821,8 @@
   */
  
  #ifdef	USE_TERMIO
@@ -80,7 +97,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  
  struct setlist {
      char *name;				/* name */
-@@ -1559,9 +1550,6 @@
+@@ -1559,9 +1548,6 @@
  	int	arg;
  };
  
@@ -90,7 +107,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  static void slc_help();
  
  struct slclist SlcList[] = {
-@@ -1640,15 +1628,13 @@
+@@ -1640,15 +1626,13 @@
  
  extern struct env_lst *
  	env_define P((unsigned char *, unsigned char *));
@@ -109,7 +126,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  
  struct envlist EnvList[] = {
      { "define",	"Define an environment variable",
-@@ -2232,7 +2218,7 @@
+@@ -2232,7 +2216,7 @@
      register struct hostent *host = 0;
      struct sockaddr_in sin;
      struct servent *sp = 0;
@@ -118,7 +135,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
      extern char *inet_ntoa();
  #if	defined(IP_OPTIONS) && defined(IPPROTO_IP)
      char *srp = 0, *strrchr();
-@@ -2489,11 +2475,7 @@
+@@ -2489,11 +2473,7 @@
  	envhelp[] =	"change environment variables ('environ ?' for more)",
  	modestring[] = "try to enter line or character mode ('mode ?' for more)";
  
@@ -131,3 +148,25 @@ diff -uNr --exclude=*.orig work.old/ztelnet/telnet/commands.c work/ztelnet/telne
  
  static Command cmdtab[] = {
  	{ "close",	closehelp,	bye,		1 },
+@@ -2548,18 +2528,14 @@
+  */
+ 
+     /*VARARGS1*/
+-    static
+-call(va_alist)
+-    va_dcl
++typedef int (*intrtn_t)();
++static call(intrtn_t routine, ...)
+ {
+     va_list ap;
+-    typedef int (*intrtn_t)();
+-    intrtn_t routine;
+     char *args[100];
+     int argno = 0;
+ 
+-    va_start(ap);
+-    routine = (va_arg(ap, intrtn_t));
++    va_start(ap, routine);
+     while ((args[argno++] = va_arg(ap, char *)) != 0) {
+ 	;
+     }
