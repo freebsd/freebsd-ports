@@ -17,7 +17,7 @@ MAINTAINER=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
 NO_BUILD=	yes
-PLIST=		${PKGDIR}/PLIST_${DOCFORMAT}
+PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
 DOCDIR=		${PREFIX}/share/doc/python
 
