@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mergeant
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Provide uniform access to data sources for the GNOME 2.0 environment
+COMMENT=	Provide uniform access to data sources for the GNOME 2 environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -23,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomedb libgnomeprintui
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

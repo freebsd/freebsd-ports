@@ -23,6 +23,7 @@ include/libgnomedb/gnome-db-error.h
 include/libgnomedb/gnome-db-form.h
 include/libgnomedb/gnome-db-gray-bar.h
 include/libgnomedb/gnome-db-grid.h
+include/libgnomedb/gnome-db-i18n.h
 include/libgnomedb/gnome-db-icon-list.h
 include/libgnomedb/gnome-db-list.h
 include/libgnomedb/gnome-db-login-dialog.h
@@ -37,7 +38,6 @@ include/libgnomedb/gnome-db-window.h
 include/libgnomedb/libgnomedb.h
 lib/bonobo/monikers/libmoniker_database.so
 lib/gnome-vfs-2.0/modules/libdatabase.so
-lib/libglade/2.0/libgnomedb.so
 lib/libgnomedb-2.a
 lib/libgnomedb-2.so
 lib/libgnomedb-2.so.2
@@ -101,8 +101,10 @@ share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-commit_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-connect_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-database-login_48x48.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-database_48x48.png
 share/gnome/pixmaps/libgnomedb/gnome-db-designer_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-disconnect_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-indexes_16x16.png
@@ -133,6 +135,7 @@ share/locale/da/LC_MESSAGES/libgnomedb-2.mo
 share/locale/de/LC_MESSAGES/libgnomedb-2.mo
 share/locale/el/LC_MESSAGES/libgnomedb-2.mo
 share/locale/es/LC_MESSAGES/libgnomedb-2.mo
+share/locale/fa/LC_MESSAGES/libgnomedb-2.mo
 share/locale/fi/LC_MESSAGES/libgnomedb-2.mo
 share/locale/fr/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ga/LC_MESSAGES/libgnomedb-2.mo

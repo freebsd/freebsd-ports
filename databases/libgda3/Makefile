@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgda2
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.11
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.12
 DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -28,6 +27,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier glib20 libxslt
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-odbc # iODBC support seems broken
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
@@ -35,34 +35,34 @@ MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-PLIST_SUB=	MYSQL=""
+PLIST_SUB=		MYSQL=""
 .else
 CONFIGURE_ARGS+=	--without-mysql
-PLIST_SUB=	MYSQL="@comment "
+PLIST_SUB=		MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRES)
 POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
-PLIST_SUB+=	POSTGRES=""
+PLIST_SUB+=		POSTGRES=""
 .else
 CONFIGURE_ARGS+=	--without-postgres
-PLIST_SUB+=	POSTGRES="@comment "
+PLIST_SUB+=		POSTGRES="@comment "
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
-PLIST_SUB+=	LDAP=""
+PLIST_SUB+=		LDAP=""
 .else
 CONFIGURE_ARGS+=	--without-ldap
-PLIST_SUB+=	LDAP="@comment "
+PLIST_SUB+=		LDAP="@comment "
 .endif
 
-pre-extract:
+pre-everything::
 .if !defined(WITH_MYSQL)
 	@${ECHO_MSG} "You can enable support for MySQL databases by defining WITH_MYSQL."
 .endif
