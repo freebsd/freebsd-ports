@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	Wed Nov  8 10:21:59 2000
++++ include/Makefile.in	Wed Nov  8 10:22:07 2000
+@@ -199,8 +199,6 @@
+ 	asn1.h		\
+ 	asn1_err.h	\
+ 	base64.h	\
+-	com_err.h	\
+-	com_right.h	\
+ 	der.h		\
+ 	des.h		\
+ 	editline.h	\

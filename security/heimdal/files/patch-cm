@@ -1,0 +1,12 @@
+--- lib/roken/roken-common.h.orig	Fri Nov  3 11:31:42 2000
++++ lib/roken/roken-common.h	Fri Nov  3 11:57:01 2000
+@@ -276,6 +276,9 @@
+ socket_set_port (struct sockaddr *sa, int port);
+ 
+ void
++socket_set_portrange (int sock, int restrict, int af);
++
++void
+ socket_set_debug (int sock);
+ 
+ void

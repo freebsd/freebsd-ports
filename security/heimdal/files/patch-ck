@@ -1,0 +1,25 @@
+--- appl/ftp/ftpd/ftpd.8.orig	Tue Feb 16 14:14:08 1999
++++ appl/ftp/ftpd/ftpd.8	Fri Nov  3 12:07:47 2000
+@@ -43,7 +43,7 @@
+ .Sh SYNOPSIS
+ .Nm ftpd
+ .Op Fl a Ar authmode
+-.Op Fl dilv
++.Op Fl dilvU
+ .Op Fl g Ar umask
+ .Op Fl p Ar port 
+ .Op Fl T Ar maxtimeout
+@@ -127,6 +127,13 @@
+ seconds (the default is 15 minutes).
+ .It Fl u
+ Set the initial umask to something else than the default 027.
++.It Fl U
++In previous versions of
++.Nm ftpd ,
++when a passive mode client requested a data connection to the server, the 
++server would use data ports in the range 1024..4999.  Now, by default, the 
++server will use data ports in the range 49152..65535.  Specifying this option
++will revert to the old behavior.  
+ .It Fl v
+ Verbose mode.
+ .El
