@@ -110,4 +110,4 @@ System/Makefiles/gtk-tool.make
 @dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/GToolKit
 @dirrm %%LOCALLIBRARY%%/Headers
-%%GNUSTEP_DEVEL%%@@dirrm %%LOCALLIBRARY%%
+%%GNUSTEP_DEVEL%%@dirrm %%LOCALLIBRARY%%
