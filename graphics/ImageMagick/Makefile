@@ -120,7 +120,8 @@ INSTALL_TARGET=	install install-data-html
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+# Do not use PTHREAD_LIBS here
+	@${REINPLACE_CMD} -e 's|-lpthread|-lc_r|g ; \
 		s|^tagnames=|#tagnames=|g ; \
 		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
 		s|INCLTDL=.*$$|INCLTDL=|g ; \
@@ -128,13 +129,12 @@ post-patch:
 		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|top_builddir)/ltdl/libltdlc.la|LIBLTDL)|g ; \
+		s|ltdl magick|magick|g ; \
 		 s|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
 		 s| install-data-html||g'
 	@${REINPLACE_CMD} -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 	@${REINPLACE_CMD} -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
-	@${REINPLACE_CMD}-e 's|^tagnames.*\$$|#&|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
