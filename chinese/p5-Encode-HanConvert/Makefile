@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Encode-HanConvert
-PORTVERSION=	0.26
-CATEGORIES=	chinese
+PORTVERSION=	0.28
+CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	LWP/AUTRIJUS
+MASTER_SITE_SUBDIR=	Encode
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
@@ -17,8 +17,16 @@ COMMENT=	Traditional and Simplified Chinese mappings
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		b2g.pl.1 g2b.pl.1
-MAN3=		Encode::HanConvert.3 Encode::HanConvert::Perl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+MAN3=		Encode::HanConvert.3 Encode::HanConvert::Perl.3
+PLIST_SUB+=	OLD="" NEW="@comment "
+.else
+PLIST_SUB+=	NEW="" OLD="@comment "
+.endif
+
+
+.include <bsd.port.post.mk>

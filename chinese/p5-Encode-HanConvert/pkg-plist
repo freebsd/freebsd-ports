@@ -1,11 +1,17 @@
 bin/b2g.pl
 bin/g2b.pl
-%%SITE_PERL%%/Encode/HanConvert.pm
-%%SITE_PERL%%/Encode/HanConvert.pm.orig
-%%SITE_PERL%%/Encode/HanConvert/Perl.pm
-%%SITE_PERL%%/Encode/HanConvert/Perl.pm-orig
+%%OLD%%%%SITE_PERL%%/Encode/HanConvert.pm
+%%OLD%%%%SITE_PERL%%/Encode/HanConvert/Perl.pm
+%%OLD%%%%SITE_PERL%%/Encode/HanConvert/Perl.pm-orig
+%%NEW%%%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert.pm
+%%NEW%%%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm
+%%NEW%%%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm-orig
+%%NEW%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/HanConvert.bs
+%%NEW%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/HanConvert.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert
-@dirrm %%SITE_PERL%%/Encode/HanConvert
-@dirrm %%SITE_PERL%%/Encode
-@dirrm %%SITE_PERL%%/auto/Encode
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode 2>/dev/null || true
+%%OLD%%@dirrm %%SITE_PERL%%/Encode/HanConvert
+%%OLD%%@unexec rmdir %D/%%SITE_PERL%%/Encode 2>/dev/null || true
+%%NEW%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert
+%%NEW%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
