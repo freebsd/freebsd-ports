@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -53,4 +52,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Bundle::Slash.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
