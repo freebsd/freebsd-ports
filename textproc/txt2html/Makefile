@@ -1,6 +1,6 @@
 # New ports collection makefile for:    txt2html
 # Date created:         29 Jun 1998
-# Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
+# Whom:                 Don Croyle <croyle@gelemna.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION= 	1.27
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.aigeek.com/txt2html/
 
-MAINTAINER=	croyle@gelemna.ft-wayne.in.us
+MAINTAINER=	croyle@gelemna.org
 
 WRKSRC=		${WRKDIR}/txt2html
 NO_BUILD=	yes

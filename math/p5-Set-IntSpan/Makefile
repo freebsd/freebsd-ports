@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Set-IntSpan
 # Date created:		February 7, 1998
-# Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
+# Whom:			Don Croyle <croyle@gelemna.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	croyle@gelemna.ft-wayne.in.us
+MAINTAINER=	croyle@gelemna.org
 
 USE_PERL5=	yes
 

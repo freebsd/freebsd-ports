@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-News-Newsrc
 # Date created:		February 7, 1998
-# Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
+# Whom:			Don Croyle <croyle@gelemna.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	croyle@gelemna.ft-wayne.in.us
+MAINTAINER=	croyle@gelemna.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan
 
