@@ -1,0 +1,4 @@
+libexec/apache2/mod_limitipconn.so
+@exec %D/sbin/apxs -e -A -n limitipconn %D/%f
+@unexec %D/sbin/apxs -e -A -n limitipconn %D/%f
+@unexec echo "===>  If you do not plan on reinstalling mod_limitipconn, you must manually remove"; echo "===>  references to it in httpd.conf."
