@@ -7110,6 +7110,7 @@ xinstall	src/usr.bin/xinstall
 xinvaders	ports/games/xinvaders
 xinvaders3d	ports/games/xinvaders3d
 xinvest		ports/deskutils/xinvest
+xipdump		ports/net/xipdump
 xipmsg		ports/net/xipmsg
 xisola		ports/games/xisola
 xisp		ports/net/xisp
