@@ -91,6 +91,10 @@ else
       else
 	reason="missing header"; tag="header"
       fi
+    elif grep -q "pnohang: killing make checksum" $1; then
+      reason="fetch timeout"; tag="fetch-timeout"
+    elif grep -q "pnohang: killing make package" $1; then
+      reason="runaway process"; tag="runaway"
     elif grep -q "cd: can't cd to" $1; then
       reason="NFS"; tag="nfs"
     elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
