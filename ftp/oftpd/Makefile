@@ -41,10 +41,10 @@ do-install:
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${MANPREFIX}/man/man8
-	@${ECHO} "================================================================================"
-	@${ECHO} "oftpd only runs standalone, not from inetd."
-	@${ECHO} "Create a README file in the root anonymous FTP dir to have it displayed to"
-	@${ECHO} "users upon login."
-	@${ECHO} "================================================================================"
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "oftpd only runs standalone, not from inetd."
+	@${ECHO_MSG} "Create a README file in the root anonymous FTP dir to have it displayed to"
+	@${ECHO_MSG} "users upon login."
+	@${ECHO_MSG} "================================================================================"
 
 .include <bsd.port.mk>

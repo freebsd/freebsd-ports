@@ -34,13 +34,13 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO} "*******************************************************************************"
-	@${ECHO} "Neverwinter Nights Dedicated Server requires original game data to run."
-	@${ECHO} "Consult ${DOCSDIR}/readme.linuxserver.txt"
-	@${ECHO} "for more information about required data directories."
-	@${ECHO} "From directory, where you will have installed game data you can run:"
-	@${ECHO} "${PREFIX}/bin/fixinstall - to check installation"
-	@${ECHO} "and ${PREFIX}/bin/nwserver - to start server"
-	@${ECHO} "*******************************************************************************"
+	@${ECHO_MSG} "*******************************************************************************"
+	@${ECHO_MSG} "Neverwinter Nights Dedicated Server requires original game data to run."
+	@${ECHO_MSG} "Consult ${DOCSDIR}/readme.linuxserver.txt"
+	@${ECHO_MSG} "for more information about required data directories."
+	@${ECHO_MSG} "From directory, where you will have installed game data you can run:"
+	@${ECHO_MSG} "${PREFIX}/bin/fixinstall - to check installation"
+	@${ECHO_MSG} "and ${PREFIX}/bin/nwserver - to start server"
+	@${ECHO_MSG} "*******************************************************************************"
 
 .include <bsd.port.mk>

@@ -54,7 +54,7 @@ do-install:
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
-		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
+		${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file.";	\
 		${INSTALL_SCRIPT} ${WRKDIR}/ircd.sh ${STARTUP_SCRIPT};\
 	fi
 

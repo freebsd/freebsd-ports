@@ -48,9 +48,9 @@ PLIST_SUB=	WITH_DEMOS="@comment "
 PLIST_SUB=	WITH_DEMOS=""
 .endif
 
-.ifndef (WITH_DEMOS)
 pre-everything::
-	@${ECHO} "You can define WITH_DEMOS=yes to fetch and install available demos"
+.ifndef (WITH_DEMOS)
+	@${ECHO_MSG} "You can define WITH_DEMOS=yes to fetch and install available demos"
 .endif
 
 post-patch:

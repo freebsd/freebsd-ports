@@ -54,14 +54,14 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "This port relies on a number of configuration files in ${PREFIX}/etc."
-	@${ECHO} "At the very least, create a ftpusers file with the usernams of users you don't"
-	@${ECHO} "want to connect (root, toor, etc.). This will allow non-listed users to log in."
-	@${ECHO} "Copying /etc/ftpusers to ${PREFIX}/etc/ftpusers should be sufficient."
-	@${ECHO}
-	@${ECHO} "See the man files for more information. The man- and configuration files for"
-	@${ECHO} "FreeBSD's built-in ftpd can also be of use as examples/additional info."
-	@${ECHO} "================================================================================"
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "This port relies on a number of configuration files in ${PREFIX}/etc."
+	@${ECHO_MSG} "At the very least, create a ftpusers file with the usernams of users you don't"
+	@${ECHO_MSG} "want to connect (root, toor, etc.). This will allow non-listed users to log in."
+	@${ECHO_MSG} "Copying /etc/ftpusers to ${PREFIX}/etc/ftpusers should be sufficient."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "See the man files for more information. The man- and configuration files for"
+	@${ECHO_MSG} "FreeBSD's built-in ftpd can also be of use as examples/additional info."
+	@${ECHO_MSG} "================================================================================"
 
 .include <bsd.port.mk>

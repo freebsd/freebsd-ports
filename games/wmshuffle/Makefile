@@ -21,6 +21,6 @@ USE_XPM=	yes
 post-install:
 	@${MKDIR} ${DATADIR}
 	@${CP} ${WRKSRC}/skin-*.xpm ${DATADIR}
-	@${ECHO} "===>   Run 'wmshuffle --help' for the available options"
+	@${ECHO_MSG} "===>   Run 'wmshuffle --help' for the available options"
 
 .include <bsd.port.mk>
