@@ -16,7 +16,7 @@ PATCHFILES=	diclookup-mule-${PORTVERSION}-wave-patch.gz
 MAINTAINER=	mita@jp.FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts
-BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn4
+BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-freewnn
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/dserver/doc
