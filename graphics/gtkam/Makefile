@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.9
-PORTREVISION=	1
+PORTVERSION=	0.1.10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -15,7 +14,8 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
-		gphoto2.2:${PORTSDIR}/graphics/gphoto2
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
+		bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -24,6 +24,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-gnome
+
+MAN1=		gtkam.1
 
 .if defined(WITH_GIMP)
 LIB_DEPENDS+=	gimp-1.3:${PORTSDIR}/graphics/gimp-devel
@@ -51,8 +54,9 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL ${DOCSDIR}
+.for file in AUTHORS NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 bin/gtkam
 %%GIMP%%libexec/gimp/1.3/plug-ins/gtkam-gimp
 %%PORTDOCS%%share/doc/gtkam/AUTHORS
-%%PORTDOCS%%share/doc/gtkam/MANUAL
+%%PORTDOCS%%share/doc/gtkam/NEWS
+%%PORTDOCS%%share/doc/gtkam/README
 share/gtkam/images/gtkam-audio.png
 share/gtkam/images/gtkam-camera.png
 share/gtkam/images/gtkam-folder-camera.png
