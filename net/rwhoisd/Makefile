@@ -9,8 +9,7 @@ PORTNAME=	rwhois
 PORTVERSION=	1.5.7.3
 PORTREVISION=	1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.ayamura.org/pub/rwhois/ \
-		ftp://ftp.jp.pgpi.org/pub/rwhois/
+MASTER_SITES=	http://www.rwhois.net/ftp/older_releases/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
