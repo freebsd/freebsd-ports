@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1997/11/05 04:19:59 asami Exp $
+# $Id: Makefile,v 1.5 1997/11/27 00:29:55 se Exp $
 #
 
 DISTNAME=	kdebase-Beta2-1
@@ -28,8 +28,7 @@ LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		mediatool\\.0\\.[6-9]:${PORTSDIR}/x11/kdelibs
 
 HAS_CONFIGURE=	yes
-#CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)/kde" \
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-inc=$(X11BASE)/include -I$(PREFIX)/include -I$(PREFIX)/include/giflib" \
 		"--x-lib=$(X11BASE)/lib -L$(PREFIX)/lib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
