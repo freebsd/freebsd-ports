@@ -46,6 +46,7 @@
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += braincurses
+    SUBDIR += briquolo
     SUBDIR += bs
     SUBDIR += bsdtris
     SUBDIR += bsp
