@@ -20,7 +20,7 @@ RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/tcltklib.so:${PORTSDIR}/${TCLTKLIB_CATEGORY}/rub
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-MD5_FILE=	${PORTSDIR}/lang/ruby/files/md5
+MD5_FILE=	${PORTSDIR}/lang/ruby/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tk
 

@@ -21,6 +21,7 @@ RUN_DEPENDS+=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 ONLY_FOR_ARCHS= i386
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	BASE_NAME=${BASE_NAME} PRTYPE=${PRTYPE}
+MD5_FILE=	${.CURDIR}/distinfo
 
 BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
@@ -55,14 +56,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme${PRTYPE} ${PREFIX}/share/doc/${BASE_NAME}
 .endif
 
-.include <bsd.port.post.mk>
-
-MD5_FILE=	${.CURDIR}/files/md5
-
 # target for maintainer
 _MAKE_COMMENT_DESCR:
 .if ${PRTYPE} != 800
-.for file in pkg/COMMENT pkg/DESCR
+.for file in pkg-comment pkg-descr
 .if ${PRTYPE} == 820_3300
 	${SED}	-e 's/PM-800C/PM-820C PM-3300C/g' \
 		-e 's/pm800c/pm820c_3300c/g' \
@@ -74,3 +71,5 @@ _MAKE_COMMENT_DESCR:
 .endif
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
