@@ -1,0 +1,18 @@
+--- GNUmakefile.orig	Wed Dec 19 12:24:07 2001
++++ GNUmakefile	Sun Jan 13 12:04:59 2002
+@@ -192,13 +192,13 @@
+ 	cd $(I_BIN) && $(STRIP) $(CPP_TARGET)
+ 
+ install_lib: $(I_LIB)
+-	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)
++	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)/perl5/site_perl/${PERL_VER}
+ 
+ install_man:
+ 	@$(MAKE) -C man install
+ 
+ install_conf:
+-	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) swish++.conf /etc
++	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) swish++.conf ${PREFIX}/etc
+ 
+ $(I_BIN) $(I_LIB):
+ 	$(MKDIR) $@
