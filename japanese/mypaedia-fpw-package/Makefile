@@ -16,7 +16,7 @@ MAINTAINER=	taoka@FreeBSD.org
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		timidity:${PORTSDIR}/audio/timidity++ \
 		xanim:${PORTSDIR}/graphics/xanim
-# I want to depend on the next port, but it depends on non-japanized GS :-<
+# This suhould depend on the next port, but it depends on non-japanized GS :-<
 #		display:${PORTSDIR}/graphics/ImageMagick
 
 NO_BUILD=	yes
