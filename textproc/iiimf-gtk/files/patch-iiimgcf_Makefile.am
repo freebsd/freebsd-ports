@@ -1,0 +1,12 @@
+--- Makefile.am.orig	Tue Sep  7 22:44:25 2004
++++ Makefile.am	Tue Sep  7 22:45:11 2004
+@@ -15,8 +15,7 @@
+                      gtkimcontextiiim.c gtkimcontextiiim.h \
+                      imiiim.c imswitcher.c imaux.c
+ im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS) \
+-                    $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-                    $(IM_LIBDIR)/iiimp/libiiimp.la
++		    -L$(prefix)/lib -liiimcf -liiimp
+ 
+ module_LTLIBRARIES = im-iiim.la
+ 
