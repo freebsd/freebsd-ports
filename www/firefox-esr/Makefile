@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.4
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -45,7 +45,10 @@ LIBS+=			${PTHREAD_LIBS}
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
-LOCAL_PREFIX=		${PREFIX}/lib/${PORTNAME}
+LOCAL_SUBDIR=		lib/${PORTNAME}
+LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
+JREDIR=			${LOCALBASE}/jdk1.3.1/jre
+PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-1.2b/plugins/
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +58,9 @@ BROKEN=	"Phoenix only supports the ports versions of Perl."
 BROKEN+="If you have installed a Perl port, and are getting this message,"
 BROKEN+="please make sure you have issued the command 'use.perl port'"
 .endif # ${PERL_LEVEL} < 500601
+
+SORT?=/usr/bin/sort
+PLIST=${WRKDIR}/plist
 
 pre-extract::
 	@${ECHO_MSG}
@@ -77,6 +83,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g'	\
 		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
+pre-install:
+	${RM} -f ${PLIST}
+	${TOUCH} ${PLIST}
+
 post-install:
 	@${RM} -f ${PREFIX}/bin/phoenix
 	@${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
@@ -87,7 +97,23 @@ post-install:
 	@${CAT} ${PKGMESSAGE} 2>/dev/null
 	@${RM} -fr ${LOCAL_PREFIX}/share/idl
 	@${RM} -fr ${LOCAL_PREFIX}/include
+	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
+	-${LN} -sf \
+	  ${JREDIR}/plugin/i386/ns600/libjavaplugin_oji.so \
+	  ${PLUGINSDIR}/libjavaplugin_oji.so
+	-${RM} -f ${PLIST}
+	${ECHO_CMD} bin/phoenix >>${PLIST}
+	${ECHO_CMD} bin/phoenix-config >>${PLIST}
+	cd ${PREFIX}; \
+	${FIND} ${LOCAL_SUBDIR} ! -type d | ${SORT} >>${PLIST}; \
+	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
+	  | ${SED} -e "s:^:@exec /bin/mkdir -p %D/:" -e "s:$$: || true:" \
+	  >> ${PLIST}; \
+	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r \
+	  | ${SED} -e "s:^:@unexec /bin/rmdir %D/:" -e "s:$$: || true:" \
+	  >> ${PLIST}; \
+	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
+		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
 .include <bsd.port.post.mk>
-
 #EOF

@@ -1,10 +1,18 @@
 ======================================================================
+0.4_9:
+Install link to java plugin.
+Build plist after install using find/sed.
+
+0.4_8:
+Add patch to fix network ops on -CURRENT.
+
 As of version 0.4_7, this port appears to be stable *again*. It will work
 with either of the port versions of perl, provided you do "use.perl port".
+It will NOT work with the -STABLE base-system versions of Perl.
 
-NOTE: if you use the lang/perl5.8 port, please remove the File::Spec
-package with the command "pkg_deinstall -f p5-File-Spec". If you are
-updating to the 5.8 version of perl, please do this *first*.
+If you use the lang/perl5.8 port, please remove the File::Spec package with
+the command "pkg_deinstall -f p5-File-Spec". If you are updating to the 5.8
+version of perl, please do this *first*.
 
 Any bug reports should be addressed to the maintainers at:
 	phoenix@freebsd.org
@@ -12,20 +20,15 @@ You may also Cc: freebsd-ports@freebsd.org. Please do not send
 bug reports to any other addresses. 
 
 Please include the following information with any bug report:
-
 * Output from 'uname -a'.
 * Date/time stamp from www/phoenix/Makefile.
 * Perl version used (/usr/bin/perl --version or 
 	/usr/local/bin/perl --version for -current).
-* If perl 5.8, did you remove the p5-File-Spec port? If no, why
-	didn't you follow the instructions provided?
 * Where/when did the problem occur: configuring, building, or
 	running phoenix?
-* Can you reproduce the problem? If so, how? If not, why do you
-	think we can fix it?
+* How can you reproduce the problem?
 
 Thank you for your help in testing and reporting bugs, and we hope you
 enjoy using Phoenix.
 The Maintainers (alane@ & trevor@)
 ======================================================================
-
