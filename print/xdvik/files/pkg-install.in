@@ -3,34 +3,31 @@
 
 PAPERSIZE=%%PAPERSIZE%%
 XDVIDIR=%%XDVIDIR%%
-XDVIVARDIR=%%XDVIVARDIR%%
+XDVICONFDIR=%%XDVICONFDIR%%
 MKTEXLSR=%%MKTEXLSR%%
-TEXCONFIG=%%TEXCONFIG%%
+TEXCONFIGBIN=%%TEXCONFIGBIN%%
 PATH=${PATH}:%%LOCALBASE%%/bin
 
 case $2 in
 POST-INSTALL)
-	cp -v ${XDVIDIR}/XDvi.xdvik-tetex ${XDVIDIR}/XDvi
-	if [ -f ${XDVIVARDIR}/XDvi ]; then
-		echo "======"
-		echo "NOTICE: you have to merge "\
-			"${XDVIVARDIR}/XDvi from ${XDVIDIR}/XDvi."
-		echo "======"
-	fi
+	${MKTEXLSR}
 	case ${PAPERSIZE} in
 	letter)
-		${TEXCONFIG} xdvi us
+		${TEXCONFIGBIN} xdvi paper us
 	;;
 	*)
-		${TEXCONFIG} xdvi a4
+		${TEXCONFIGBIN} xdvi paper a4
 	;;
 	esac
 	${MKTEXLSR}
+	echo "======"
+	echo "NOTICE: Before upgrading, you may want to make " \
+		"a backup of the following file(s):"
+	echo "    ${XDVICONFDIR}/XDvi"
+	echo "======"
 ;;
 DEINSTALL)
-	rm -f ${XDVIVARDIR}/XDvi
-	cp -v ${XDVIDIR}/XDvi.tetex ${XDVIDIR}/XDvi
+	# do nothing
 	${MKTEXLSR}
 ;;
 esac
-
