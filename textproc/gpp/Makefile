@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	gpp
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.math.polytechnique.fr/cmat/auroux/prog/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	josb@cncdsl.com
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		gpp.1
 
 post-patch:
-		${PERL} -pi -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/Makefile
+		${PERL} -pi -e "s|/usr/local|${PREFIX}|g; \
+			s|gcc -O2 -Wall|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
