@@ -3,13 +3,17 @@
 # Date created:				04/17/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/17 17:34:02 nectar Exp $
+# $Id: Makefile,v 1.2 1999/05/01 02:20:34 nectar Exp $
 #
 
 DISTNAME=		xml-0.5.1
 PKGNAME=		py-xml-0.5.1
-CATEGORIES=		textproc
-MASTER_SITES=		http://www.python.org/sigs/xml-sig/files/
+CATEGORIES=		textproc python
+MASTER_SITES=		http://www.python.org/sigs/xml-sig/files/      \
+			ftp://ftp.cdrom.com/pub/python/www.python.org/sigs/xml-sig/files/ \
+			ftp://ftp.kddlabs.co.jp/pub/lang/python/www.python.org/sigs/xml-sig/files/ \
+			ftp://unix.hensa.ac.uk/mirrors/ftp.python.org/pub/www.python.org/sigs/xml-sig/files/ \
+			http://www.nectar.cc/distfiles/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
