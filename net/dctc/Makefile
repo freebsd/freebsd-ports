@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.77
+PORTVERSION=	0.79
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.0
@@ -15,16 +15,20 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gthread-2.0.0:${PORTSDIR}/devel/glib20
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+WRKSRC=	${WRKDIR}/${DISTNAME:S/0$/1/}
+
+USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS} \
-		-I${LOCALBASE}/include/glib-2.0" \
+		${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt \
-		${PTHREAD_LIBS} \
-		-lgthread-2.0"
+		${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-manual-db-detect
+MANCOMPRESSED=	no
+
+MAN1=	dctc.1
 
 DOC_DIRS=	Documentation Documentation/DCextensions
 DOC_FILES=      COPYING ChangeLog INSTALL README \
@@ -35,6 +39,7 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/DCextensions/search_by_content \
 		Documentation/GDL.nl \
 		Documentation/GDL Documentation/VAR \
+		Documentation/UNODE Documentation/Vshare \
 		Documentation/commands \
 		Documentation/programs.nl \
 		Documentation/programs.pl \
@@ -47,13 +52,10 @@ post-patch:
 	@${PERL} -pi -e 's/(CK?\(std)(out\))/\1_\2/' ${WRKSRC}/src/*
 	@${PERL} -pi -e 's/(CK?\()inet_ntoa(\))/\1shared_info\2/' ${WRKSRC}/src/*
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${PERL} -pi -e \
-		's|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_CFLAGS} -lgthread-1.3 ${PTHREAD_LIBS}|; \
-		s|ldb-4.0|ldb4|' \
+		's|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|; \
+		s|<(db.h>)|<db4/\1|'
+	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.for file in bdb.c main.c user_manage.c
-	@${PERL} -pi -e 's|<(db.h>)|<db4/\1|' ${WRKSRC}/src/${file}
-.endfor
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
@@ -75,6 +77,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
 .endfor
 .endif
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hublist ${PREFIX}/bin/dc_hublist
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/dctc ${PREFIX}/bin
 
