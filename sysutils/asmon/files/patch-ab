@@ -1,6 +1,6 @@
 --- asmon/asmon.c.orig	Sun Jun 27 15:38:26 1999
-+++ asmon/asmon.c	Wed Dec 29 21:08:33 1999
-@@ -21,6 +21,19 @@
++++ asmon/asmon.c	Sun Jul 16 16:30:18 2000
+@@ -21,6 +21,21 @@
  #include "asmon-master.xpm"
  #include "asmon-mask.xbm"
  
@@ -8,19 +8,21 @@
 +#include <err.h>
 +#include <kvm.h>
 +#include <nlist.h>
-+#include <sys/rlist.h>
 +#include <sys/conf.h>
 +#include <sys/user.h>
 +#include <sys/vmmeter.h>
 +#include <sys/sysctl.h>
 +#include <vm/vm_param.h>
 +#include <sys/time.h>
++#if __FreeBSD_version < 400000
++#include <sys/rlist.h>
++#endif
 +#endif
 +
  #ifdef __solaris__
  #include <utmp.h>
  #endif
-@@ -47,6 +60,39 @@
+@@ -47,6 +62,56 @@
  #define B_RED   (1)
  #define B_GREEN (2)
  
@@ -37,6 +39,7 @@
 +      warnx("cannot read %s: %s", msg, kvm_geterr(kd))
 +
 +struct nlist nl[] = {
++#if __FreeBSD_version < 400000
 +#define VM_SWAPLIST 0
 +  { "_swaplist" },/* list of free swap areas */
 +#define VM_SWDEVT   1
@@ -55,12 +58,28 @@
 +  { "_cp_time" },
 +  { "" }
 +};
++#else
++#define X_CCPU      0
++    { "_ccpu" },
++#define X_CP_TIME   1
++	{ "_cp_time" },
++#define X_AVENRUN   2
++	{ "_averunnable" },
++#define X_BUFSPACE  3
++	{ "_bufspace" },		/* K in buffer cache */
++#define X_CNT       4
++	{ "_cnt" },				/* struct vmmeter cnt */
++#define X_LASTPID   5
++	{ "_nextpid" },			/* Last pid */
++	{ 0 }
++};
++#endif
 +#endif
 +
  /* Evil globals I haven't removed yet */
  long last_pageins=0, last_pageouts=0;
  long last_swapins=0, last_swapouts=0;
-@@ -77,6 +123,11 @@
+@@ -77,6 +142,11 @@
  float DrawMemSwap(float total, int allmem);
  #endif
  
@@ -72,7 +91,7 @@
  int main(int argc, char *argv[]) 
  {
  	FILE *fp;
-@@ -151,7 +202,17 @@
+@@ -151,7 +221,17 @@
  #endif
  	/* Open 64x64 window */
  	openXwindow(argc, argv, asmon_master_xpm, asmon_mask_bits, asmon_mask_width, asmon_mask_height);
@@ -90,7 +109,7 @@
  	return(0);
  }
  
-@@ -160,7 +221,11 @@
+@@ -160,7 +240,11 @@
  void usage(void) {
      fprintf(stderr, "\nasmon %s - by Brad Hall (brad@rio.dhs.org)\n\t\toriginally based on Timecop's wmcpu\n\n", ASMON_VERSION);
      fprintf(stderr, "The top bar: left is the CPU usage, right is the load average\n");
@@ -102,7 +121,7 @@
      fprintf(stderr, "The lower bar: the left swap usage and the number of megs swappedd avg\n");
      fprintf(stderr, "The bottom: the left is a set of LED's marking page's and swap's, the right is\n\t\t a bar representing the amount of memory that the X server \n\t\t is taking up, and the exact megs\n\n usage:\n");
      fprintf(stderr, "\t-display <display name>\n");
-@@ -168,8 +233,13 @@
+@@ -168,8 +252,13 @@
      fprintf(stderr, "\t-v\tprint the version number\n");
  #ifndef __solaris__
      fprintf(stderr, "\t-u\tforce asmon to show uptime, rather than X mem use\n");
@@ -116,7 +135,7 @@
  #ifdef EXEC_ON_CLICK
      fprintf(stderr, "\t-e cmd\texecute 'cmd' on mouse click\n");
  #endif
-@@ -229,6 +299,10 @@
+@@ -229,6 +318,10 @@
  #if 0
  				fprintf(stderr,"system(%s)\n",Command);
  #endif
@@ -127,7 +146,7 @@
  				if (Command[ 0 ]) system(Command);
  				break;
  #endif
-@@ -323,12 +397,13 @@
+@@ -323,12 +416,13 @@
  /* CPU Usage Meter */
  void DrawCPU(void)
  {
@@ -143,7 +162,7 @@
  
  	if( (fp = fopen("/proc/stat", "r")) != NULL)
  	{
-@@ -345,7 +420,15 @@
+@@ -345,7 +439,15 @@
      		    sscanf(buf, "swap %ld %ld", &swapins, &swapouts);
  	    } 
  	    fclose(fp);
@@ -160,7 +179,7 @@
  	    // Calculate CPU stuff
  	    for(i = 0; i < 4; i++)
  	    { 
-@@ -365,6 +448,13 @@
+@@ -365,6 +467,13 @@
  	    }
  
  	    // Page In/Out
@@ -174,7 +193,7 @@
  	    if (pageins > last_pageins)
  	    {
      	        DrawLite(B_RED, 5, 48);
-@@ -414,12 +504,19 @@
+@@ -414,12 +523,19 @@
  #ifdef __solaris__
      if (getLoad(&ftmp) != -1)
      {
@@ -195,7 +214,7 @@
  #endif
  	if(oldv != ftmp)
  	{
-@@ -540,6 +637,7 @@
+@@ -540,6 +656,7 @@
  /* Mem/Swap Meter */
  float DrawMemSwap(float total, int allmem)
  {
@@ -203,27 +222,63 @@
      FILE *fp;
      if( (fp = fopen("/proc/meminfo", "r")) != NULL)
      {
-@@ -553,6 +651,112 @@
+@@ -553,6 +670,149 @@
  	fgets(junk, 80, fp);
  	fscanf(fp, "Mem: %f %f %f %f %f %f\nSwap: %f %f %f",  &total, &used, &freeM, &shared, &buffers, &cached, &swaptotal, &swapused, &swapfreeM);
  	fclose(fp);
 +#else
 +	{
 +	static float stotal=0.0, sshared=0.0, sbuffers=0.0, scached=0.0;
++#if __FreeBSD_version >= 400000
++    float used, active, inactive, wired, buffers, cached, shared;
++	static float swaptotal, swapused;
++	static u_int swappgsin= - 1, swappgsout = -1;
++	int n, bufspace = 0;
++	int pagesize = getpagesize();
++	struct kvm_swap swapary[1];
++#else
 +	float used, active, inactive, wired, buffers, cached, swaptotal, 
 +		swapused, shared;
-+	unsigned long MEMactive,MEMinactive,MEMwired,MEMbuff,MEMcach, MEMswap;
-+	int tempy, tempa;
 +	int nswap, nswdev, dmmax;
 +	int i, avail, nfree, kmemused, bufspace = 0;
 +	struct swdevt *sw;
 +	long *perdev;
-+	struct vmmeter sum;
 +	struct rlist head;
 +	struct rlisthdr swaplist;
 +	struct rlist *swapptr;
 +	u_long ptr;
++#endif
++	struct vmmeter sum;
++	int tempy, tempa;
++	unsigned long MEMactive,MEMinactive,MEMwired,MEMbuff,MEMcach, MEMswap;
 + 
++#if __FreeBSD_version >= 400000
++#define CONVERT(v)  ((quad_t)(v) * pagesize / 1024)
++    KGET(X_CNT, sum);
++	KGET(X_BUFSPACE, bufspace);
++	if(swappgsin < 0 || swappgsin != sum.v_swappgsin ||
++							swappgsout != sum.v_swappgsout){
++		n = kvm_getswapinfo(kd, swapary, 1, 0);
++		if (n < 0 || swapary[0].ksw_total == 0){
++			swaptotal = 0;
++			swapused = 0;
++		} else {
++			swaptotal = CONVERT(swapary[0].ksw_total);
++			swapused = CONVERT(swapary[0].ksw_used);
++			swaptotal *= 1024;
++			swapused *= 1024;
++		}
++		swappgsin = sum.v_swappgsin;
++		swappgsout = sum.v_swappgsout;
++	}
++	total = sum.v_page_size * sum.v_page_count;
++	cached = sum.v_page_size * sum.v_cache_count;
++	used = sum.v_page_size * (sum.v_page_count - sum.v_free_count);
++	buffers = bufspace;
++	active = sum.v_page_size * sum.v_active_count;
++	inactive = sum.v_page_size * sum.v_inactive_count;
++	wired = sum.v_page_size * sum.v_wire_count;
++#else
 +	KGET(VM_NSWAP, nswap);
 +	KGET(VM_NSWDEV, nswdev);
 +	KGET(VM_DMMAX, dmmax);
@@ -301,6 +356,10 @@
 +	KGET(X_BUFSPACE, bufspace);
 +	free(sw);
 +	free(perdev);
++ 
++	swaptotal = avail * 512;
++	swapused = kmemused * 512;
++#endif
 +   
 +	total = sum.v_page_size * sum.v_page_count;
 +	cached = sum.v_page_size * sum.v_cache_count;
@@ -309,14 +368,11 @@
 +	active = sum.v_page_size * sum.v_active_count;
 +	inactive = sum.v_page_size * sum.v_inactive_count;
 +	wired = sum.v_page_size * sum.v_wire_count;
-+ 
-+	swaptotal = avail * 512;
-+	swapused = kmemused * 512;
 +#endif
  
  	if ( allmem == 1) {
  	/* All mem areas */
-@@ -561,11 +765,23 @@
+@@ -561,11 +821,23 @@
  			stotal = total; sshared = shared; sbuffers = buffers; scached = cached;
  			if ( (total/101048576) >= 1) 
  			{
@@ -340,7 +396,7 @@
  			    MEMbuff=(buffers/total)*33;
  			    MEMcach=(cached/total)*33;
  			}
-@@ -579,9 +795,15 @@
+@@ -579,9 +851,15 @@
  				copyXPMArea(3,75,((used/total)*34),9,5,19);
  			}
  			// Separators
@@ -356,7 +412,7 @@
  			// Numbers			
  			tempa=used/1048576;
  			tempy=tempa%10;
-@@ -601,6 +823,16 @@
+@@ -601,6 +879,16 @@
  		if(stotal != total || sshared != shared)
  		{
  			stotal = total; sshared = shared; sbuffers = buffers; scached = cached;
@@ -373,7 +429,7 @@
  			if ( (total/101048576) >= 1) {
  			    MEMshar=(shared/total)*27;
  			} else {
-@@ -609,8 +841,13 @@
+@@ -609,8 +897,13 @@
  			// Bar
  			copyXPMArea(3,75,MEMshar,9,5,19);
  			copyXPMArea(15,105,(36-(shared/total)*36),9,(5+(shared/total)*36),19);
@@ -387,7 +443,7 @@
  			tempy=tempa%10;
      			copyXPMArea(3+(tempy*6),66,6,9,50,19);
  			tempy=(tempa/10)%10;
-@@ -662,10 +899,11 @@
+@@ -662,10 +955,11 @@
  /* X Mem Usage */
  void DrawXmem(int Xpid, float total) 
  {
@@ -401,7 +457,7 @@
  
      sprintf(XFileName, "/proc/%d/status", Xpid);
  
-@@ -676,6 +914,15 @@
+@@ -676,6 +970,15 @@
      	    if (strstr(buf, "VmSize"))
          	sscanf(buf, "VmSize: %ld", &Xsize);
  	}
@@ -417,7 +473,7 @@
          if(old_Xsize!=Xsize)
  	{
      	    int tempy, tempa;
-@@ -692,7 +939,9 @@
+@@ -692,7 +995,9 @@
  	    copyXPMArea(3,84,((ratio)*22),11,18,47);
  	    copyXPMArea(15,105,(23-((ratio)*22)),11,(18+(ratio*22)),47);
  	}
@@ -427,7 +483,7 @@
      }
  }
  
-@@ -713,10 +962,28 @@
+@@ -713,10 +1018,28 @@
          pUtmp = getutid(&idUtmp);
          upt = (time(0) - pUtmp->ut_time);
  #else
@@ -456,7 +512,7 @@
  #endif
  	mins=(upt/60)%60;
  	hours=(upt/3600)%24;
-@@ -777,6 +1044,31 @@
+@@ -777,6 +1100,31 @@
          break;
      }
  
