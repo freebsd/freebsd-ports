@@ -17,13 +17,11 @@ share/locale/sv/LC_MESSAGES/gnubiff.mo
 %%SHAREDIR%%/gnubiff/gnubiff.png
 %%SHAREDIR%%/gnubiff/logo.png
 %%SHAREDIR%%/gnubiff/mail.wav
-%%SHAREDIR%%/gnubiff/menu_about.png
-%%SHAREDIR%%/gnubiff/menu_mail_read.png
-%%SHAREDIR%%/gnubiff/menu_mail_start.png
 %%SHAREDIR%%/gnubiff/popup.glade
 %%SHAREDIR%%/gnubiff/preferences.glade
 %%SHAREDIR%%/gnubiff/properties.glade
 %%SHAREDIR%%/gnubiff/tux-awake.png
+%%SHAREDIR%%/gnubiff/tux-big.png
 %%SHAREDIR%%/gnubiff/tux-jump(64x64).png
 %%SHAREDIR%%/gnubiff/tux-sleep(64x64).png
 %%SHAREDIR%%/gnubiff/tux-sleep.png
