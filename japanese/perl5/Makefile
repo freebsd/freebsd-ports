@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
@@ -34,7 +35,7 @@ PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/authors/id/WATANABE/
-PATCHFILES=	j${DISTNAME}-990822.pat.gz
+PATCHFILES=	j${DISTNAME}-20000401.pat.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@FreeBSD.org
