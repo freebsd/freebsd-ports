@@ -16,9 +16,6 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 MAINTAINER=	dinoex@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-.if exists(/usr/lib/libssl.a) && ${OSVERSION} >= 460000
-FORBIDDEN=	"OpenSSL is already in the base system"
-.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
