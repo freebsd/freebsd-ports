@@ -711,6 +711,7 @@ cdindex		ports/audio/cdindex
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdpd		ports/net/cdpd
+cdpr		ports/net/cdpr
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
 cdrdao		ports/audio/cdrdao
