@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.47 1999/02/28 12:18:36 obrien Exp $
+# $Id: Makefile,v 1.48 1999/03/08 07:28:27 asami Exp $
 #
 
 DISTNAME=	egcs-1.1.2-pre2
@@ -21,6 +21,8 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/snapshots/egcs-1.1.2-p
 		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
 
 MAINTAINER=	obrien@FreeBSD.org
+
+WWW_SITE=	http://egcs.cygnus.com
 
 #USE_BZIP2=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1998/12/13 08:49:06 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/17 14:06:44 ejc Exp $
 #
 
 DISTNAME=	tcl8.1b1
@@ -12,6 +12,10 @@ CATEGORIES=	lang tcl81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
 MAINTAINER=	jseger@FreeBSD.ORG
+
+Y2K=            http://www.scriptics.com/Y2K.html
+WWW_SITE=       http://www.scriptics.com  
+
 
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
 

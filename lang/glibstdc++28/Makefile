@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.15 1999/02/09 18:59:11 obrien Exp $
+# $Id: Makefile,v 1.16 1999/03/08 07:28:30 asami Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -14,6 +14,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libstdc++
 
 MAINTAINER=	obrien@FreeBSD.org
+
+Y2K=		http://www.gnu.org/software/year2000.html
 
 BUILD_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28

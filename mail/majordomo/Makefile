@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1997/04/29 10:55:56 jfitz Exp $
+# $Id: Makefile,v 1.11 1997/09/10 02:52:38 itojun Exp $
 #
 
 DISTNAME=	majordomo-1.94.4
@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.4/ \
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+Y2K=		http://www.greatcircle.com/majordomo/majordomo-faq.html#1.8
+WWW_SITE=	http://www.greatcircle.com/majordomo
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes

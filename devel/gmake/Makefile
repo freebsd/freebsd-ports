@@ -3,7 +3,7 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1999/01/27 07:41:07 fenner Exp $
+# $Id: Makefile,v 1.21 1999/01/29 21:51:44 sada Exp $
 #
 
 DISTNAME=       make-3.77
@@ -13,6 +13,8 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
 
 MAINTAINER=	jseger@freebsd.org
+
+Y2K=		http://www.gnu.org/software/year2000.html
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

@@ -3,7 +3,7 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.8 1998/07/02 10:50:50 vanilla Exp $
+# $Id: Makefile,v 1.9 1999/01/27 07:41:08 fenner Exp $
 #
 
 DISTNAME=       m4-1.4
@@ -12,6 +12,8 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+Y2K=		http://www.gnu.org/software/year2000.html
 
 GNU_CONFIGURE=yes
 CONFIGURE_ARGS= --program-prefix=g
