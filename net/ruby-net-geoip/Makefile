@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-geoip
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.rubynet.org/modules/net/geoip/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	seanc@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		GeoIP.1:${PORTSDIR}/net/GeoIP
+		GeoIP.2:${PORTSDIR}/net/GeoIP
 
 USE_BZIP2=      yes
 USE_RUBY=	yes
