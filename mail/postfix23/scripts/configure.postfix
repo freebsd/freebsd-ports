@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.38 2003-08-15 00:49:26 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.39 2003-08-17 12:54:27 kuriyama Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -63,6 +63,7 @@ echo "PREFIX=	${PREFIX}"
 
 SUB_TLS="@comment "
 SUB_TEST="@comment "
+SUB_IPV6="@comment "
 
 while [ "$1" ]; do
 	case $1 in
@@ -207,6 +208,7 @@ while [ "$1" ]; do
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
 			IPv6SELECTED=YES
+			SUB_IPV6=""
 			;;
 		IPv6TLS)
 			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
@@ -223,6 +225,7 @@ while [ "$1" ]; do
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
+			SUB_IPV6=""
 			;;
 		*)
 			echo "Unknown option(s): $*" > /dev/stderr
@@ -235,6 +238,7 @@ done
 
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
+echo "PLIST_SUB+=	SUB_IPV6=\"${SUB_IPV6}\""
 
 # for some reason, if we alter the pkg name this way, the first build (where
 # we ask the configure questions) doesn't pick up the extensions, but
