@@ -1,0 +1,8 @@
+newmail looks at mailboxes and determines if any new mail has arrived.
+The mailboxes to be examined are specified as comand line arguments. A
+directory can be specified and newmail will check every mailbox inside.
+
+newmail is designed to be run every 15 minutes or so by a user's shell.
+
+Andrew Stevenson
+andrew@ugh.net.au
