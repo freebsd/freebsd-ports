@@ -1,0 +1,11 @@
+--- contrib/Makefile.in.orig	Wed Aug 19 07:15:49 1998
++++ contrib/Makefile.in	Wed Aug 19 07:16:06 1998
+@@ -28,7 +28,7 @@
+ 	${MKINSTALLDIR} ${sbindir}
+ 	for x in $?; \
+ 	do \
+-	${INSTALL_PROGRAM} $$x ${sbindir}; \
++	${INSTALL_SCRIPT} $$x ${sbindir}; \
+ 	done
+ 
+ clean:
