@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	# manual fetch
 DISTNAME=	IB_4.0_FreeBSD
 
-MAINTAINER=	berend@pobox.com
+MAINTAINER=	ports@FreeBSD.org
 
 FORBIDDEN=	"Backdoored by Borland, http://www.cert.org/advisories/CA-2001-01.html for more information"
 ONLY_FOR_ARCHS=	i386
