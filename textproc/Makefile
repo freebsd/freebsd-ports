@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1999/04/17 17:34:42 nectar Exp $
+# $Id: Makefile,v 1.50 1999/05/03 02:56:05 steve Exp $
 #
 
     SUBDIR += agrep
@@ -47,7 +47,6 @@
     SUBDIR += texi2html
     SUBDIR += textutils
     SUBDIR += tth
-    SUBDIR += tuc
     SUBDIR += txt2html
     SUBDIR += unroff
     SUBDIR += urlview

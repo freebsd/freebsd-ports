@@ -3,11 +3,11 @@
 # Date created:				30 March 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/16 23:30:53 steve Exp $
 #
 
 DISTNAME=	tuc-1.10
-CATEGORIES=	textproc
+CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net

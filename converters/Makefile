@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1999/05/11 02:18:17 sada Exp $
+# $Id: Makefile,v 1.20 1999/05/11 03:12:48 asami Exp $
 #
 
     SUBDIR += aish
@@ -15,6 +15,7 @@
     SUBDIR += p5-MIME-Base64
     SUBDIR += recode
     SUBDIR += trans
+    SUBDIR += tuc
     SUBDIR += unix2dos
     SUBDIR += uudeview
     SUBDIR += uudx
