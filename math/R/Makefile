@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.4 1998/07/02 06:27:40 asami Exp $
+# $Id: Makefile,v 1.5 1998/07/17 20:41:38 steve Exp $
 #
 
 DISTNAME=	R-0.62.2
@@ -21,6 +21,8 @@ MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
+
+BROKEN=		package
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
