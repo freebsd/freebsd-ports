@@ -15,7 +15,7 @@ EXTRACT_ONLY=	olvwm4.tar.Z
 NO_WRKSUBDIR=	yes
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
-pre-configure:
+pre-patch:
 	@echo "Applying olvwm4 Patch01"
 	@zcat ${DISTDIR}/olvwm4.Patch01.Z | patch -E -d ${WRKSRC} --quiet
 
