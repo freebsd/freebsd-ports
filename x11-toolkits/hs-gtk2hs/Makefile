@@ -18,7 +18,7 @@ COMMENT=	A GTK2 Binding for Haskell
 BUILD_DEPENDS=	ghc-6.2.1:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc-6.2.1:${PORTSDIR}/lang/ghc
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libglade gtksourceview
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-c2hs=no
 USE_GMAKE=	yes
