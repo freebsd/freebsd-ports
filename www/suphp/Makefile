@@ -7,6 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
@@ -23,8 +24,8 @@ CONFLICTS=	mod_php4-4* php-4.*
 LOG_PATH?=	/var/log
 PHP_PATH?=	${LOCALBASE}/bin/php
 APACHE_USER?=	${WWWOWN}
-MIN_UID?=	${WWWOWN}
-MIN_GID?=	${WWWGRP}
+MIN_UID?=	80
+MIN_GID?=	80
 WITH_SETID_MODE?=	owner
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
