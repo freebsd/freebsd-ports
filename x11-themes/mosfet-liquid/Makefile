@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	mosfet-liquid
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.mosfet.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	michiel.dewilde@rug.ac.be
+MAINTAINER=	ports@geeksrus.net
 
 BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf213:${PORTSDIR}/devel/autoconf213
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_KDEBASE_VER=2
+USE_KDEBASE_VER=3
 INSTALLS_SHLIB=	yes
 
+MAKE_ENV+=	PATH=${WRKDIR}/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${WRKDIR}/bin:${PATH}
+
+pre-everything::
+	${MKDIR} ${WRKDIR}/bin
+	-$(LN) -sf ${LOCALBASE}/bin/aclocal14 ${WRKDIR}/bin/aclocal
+	-$(LN) -sf ${LOCALBASE}/bin/autoconf213  ${WRKDIR}/bin/autoconf
+	-$(LN) -sf ${LOCALBASE}/bin/autoheader213  ${WRKDIR}/bin/autoheader
+	-$(LN) -sf ${LOCALBASE}/bin/automake14  ${WRKDIR}/bin/automake
+
 pre-configure:
-	cd ${WRKSRC}; ${GMAKE} -f Makefile.cvs
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.cvs
 
 .include <bsd.port.mk>
