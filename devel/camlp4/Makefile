@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	camlp4
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/camlp4/ \
 		http://cristal.inria.fr/~ddr/Camlp4/ftp/ \

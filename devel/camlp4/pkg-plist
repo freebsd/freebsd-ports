@@ -10,7 +10,12 @@ lib/camlp4/camlp4_top.cma
 lib/camlp4/camlp4o.cma
 lib/camlp4/camlp4r.cma
 lib/camlp4/crc.cmo
-lib/camlp4/extract_crc
+lib/camlp4/extfun.cmi
+lib/camlp4/extfun.cmx
+lib/camlp4/extfun.mli
+lib/camlp4/fstream.cmi
+lib/camlp4/fstream.cmx
+lib/camlp4/fstream.mli
 lib/camlp4/gramext.cmi
 lib/camlp4/gramext.cmx
 lib/camlp4/gramext.mli
@@ -28,9 +33,12 @@ lib/camlp4/odyl.cma
 lib/camlp4/odyl.cmo
 lib/camlp4/pa_extend.cmo
 lib/camlp4/pa_extend_m.cmo
+lib/camlp4/pa_extfun.cmo
 lib/camlp4/pa_format.cmo
+lib/camlp4/pa_fstream.cmo
 lib/camlp4/pa_ifdef.cmi
 lib/camlp4/pa_ifdef.cmo
+lib/camlp4/pa_lisp.cmo
 lib/camlp4/pa_o.cmi
 lib/camlp4/pa_o.cmo
 lib/camlp4/pa_olabl.cmo
@@ -48,6 +56,7 @@ lib/camlp4/plexer.mli
 lib/camlp4/pr_depend.cmo
 lib/camlp4/pr_dump.cmo
 lib/camlp4/pr_extend.cmo
+lib/camlp4/pr_extfun.cmo
 lib/camlp4/pr_null.cmo
 lib/camlp4/pr_o.cmo
 lib/camlp4/pr_op.cmo
@@ -57,6 +66,8 @@ lib/camlp4/q_MLast.cmo
 lib/camlp4/q_phony.cmo
 lib/camlp4/quotation.cmi
 lib/camlp4/quotation.mli
+lib/camlp4/spretty.cmi
+lib/camlp4/spretty.mli
 lib/camlp4/stdpp.cmi
 lib/camlp4/stdpp.cmx
 lib/camlp4/stdpp.mli
