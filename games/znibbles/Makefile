@@ -20,12 +20,13 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
+CONFIGURE_ARGS=	--without-motif \
+		--disable-motif
 
 MAN6=	nibbles.6 znibbles.6 gznibbles.6 znibblesX.6
 
 post-install:
 	@strip ${PREFIX}/bin/nibbles
-	@strip ${PREFIX}/bin/znibbles
 	@strip ${PREFIX}/bin/znibblesX
 	@strip ${PREFIX}/bin/gznibbles
 

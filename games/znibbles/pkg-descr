@@ -10,13 +10,13 @@ SunOS, Solaris and Irix. The game can run either directly on top of X11, use
 the GTK+ toolkit (get it on the GTK+ site) or use the Motif toolkit (get a good
 Motif free implementation called LessTif) 
 
-From the README file:
+Once compiled, you get the files:
 
- - Once compiled, you get the files
-     src/nibbles   : the ZNibbles server
-     src/znibbles  : the ZNibbles Motif client
-     src/gznibbles : the ZNibbles GTK+ client
-     src/znibblesX : the ZNibbless X11-only client (poor)
+   nibbles   : the ZNibbles server
+   gznibbles : the ZNibbles GTK+ client
+   znibblesX : the ZNibbless X11-only client (poor)
+
+Run "nibbles" first as the ZNibbles server, and then run its clients to play.
 
 WWW: http://www.stud.enst.fr/~vmallet/archives/
 
