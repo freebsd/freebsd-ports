@@ -2,7 +2,7 @@
 +++ examples/dia2code.kaptn	Fri Dec 20 13:17:45 2002
 @@ -1,17 +1,20 @@
 -#!/usr/bin/kaptain
-+#!/usr/local/bin/kaptain
++#!%%PREFIX%%/bin/kaptain
  start "Dia2Code" -> dia2code buttons;
  dia2code :tabbed -> main about;
  
