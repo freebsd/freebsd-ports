@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Dec  5 20:01:08 2002
-+++ Makefile.in	Sat Dec  7 06:11:52 2002
-@@ -101,7 +101,7 @@
+--- Makefile.in.orig	Tue Dec  9 23:38:07 2003
++++ Makefile.in	Mon Feb 23 09:03:36 2004
+@@ -115,7 +115,7 @@
  noinst_LTLIBRARIES = libfoolam.la
  libfoolam_la_SOURCES = foolam.c
  
--SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc doc tutorial spe pat
-+SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc
+-SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc doc examples spe pat libxml incxml pgmxml genxml spexml
++SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc libxml incxml pgmxml genxml spexml
  
- EXTRA_DIST = CHANGELOG LICENSE bootstrap util windows
+ EXTRA_DIST = LICENSE bootstrap util windows libc++
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
