@@ -19,8 +19,7 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 Y2K=		http://www.gnu.org/software/year2000.html
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g \
-		--without-included-gettext
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
