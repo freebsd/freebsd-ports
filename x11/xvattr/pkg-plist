@@ -1,4 +1,2 @@
+bin/gxvattr
 bin/xvattr
-%%PORTDOCS%%share/doc/xvattr/ChangeLog
-%%PORTDOCS%%share/doc/xvattr/README
-%%PORTDOCS%%@dirrm share/doc/xvattr
