@@ -13,13 +13,7 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
 
 MAINTAINER=	alexlh@funk.org
 
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
-MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
-.endif
+USE_OPENSSL=	RSA
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslproxy ${PREFIX}/bin/sslproxy
