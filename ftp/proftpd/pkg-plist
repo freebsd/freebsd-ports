@@ -1,8 +1,7 @@
 bin/ftpcount
+bin/ftpwho
 etc/proftpd.conf.default
 etc/rc.d/proftpd.sh.sample
 @exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
 libexec/proftpd
 sbin/ftpshut
-@exec /bin/mkdir /var/run/proftpd
-@unexec /bin/rmdir /var/run/proftpd

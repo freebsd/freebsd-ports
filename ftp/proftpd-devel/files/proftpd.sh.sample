@@ -3,6 +3,7 @@
 case "$1" in
 
 start)
+	/bin/mkdir -p /var/run/proftpd
 	if [ -x /usr/local/libexec/proftpd ]; then
 		/usr/local/libexec/proftpd && echo -n ' proftpd'
 	fi
