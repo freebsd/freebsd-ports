@@ -25,7 +25,7 @@ if [ ! -f @PREFIX@/usr/share/locale/zh_TW.Big5/LC_CTYPE ] && \
 fi
 
 if [ -f @PREFIX@/usr/share/locale/zh_TW.Big5/LC_CTYPE ] && \
-     [ ! -f @PREFIX@/CLE-0.9-PRE2 ]; then
+     [ ! -f @PREFIX@/CLE-0.9p1 ]; then
   echo --------------------------------------------------------------------
   echo You have previous release of zh-linux_base or zh-CLE_base installed!
   echo Please remove it before install this version.
