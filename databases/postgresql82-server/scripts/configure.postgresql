@@ -17,7 +17,7 @@ and restore of all databases is
 required. This is *NOT* done by the port!
 
 Select 'Yes' to continue the installation." -1 -1
-	if [ $1 -eq 1 ] ; then exit 1; fi
+	if [ $? -eq 1 ] ; then exit 1; fi
 fi
 
 if [ "${BATCH}" ]; then
