@@ -1,0 +1,21 @@
+DROP TABLE affix\g
+DROP TABLE spell\g
+
+CREATE TABLE affix (
+  flag char(1)  NOT NULL,
+  type char(1)  NOT NULL,
+  lang char(3)  NOT NULL,
+  mask char(32) NOT NULL,
+  find char(32) NOT NULL,
+  repl char(32) NOT NULL
+) \g
+
+CREATE TABLE spell (
+  word char(64) NOT NULL,
+  flag text(32) NOT NULL,
+  lang char(3) NOT NULL
+) \g
+
+
+CREATE  INDEX affix_flag ON affix (flag)\g
+CREATE  INDEX spell_word ON spell (word)\g

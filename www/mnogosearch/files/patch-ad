@@ -1,0 +1,92 @@
+--- src/sql.c.bak	Wed Jan 24 13:35:58 2001
++++ src/sql.c	Tue Jan 30 22:11:34 2001
+@@ -2205,8 +2205,13 @@
+ }
+ int UdmMarkForReindex(UDM_AGENT *Indexer){
+ char qbuf[UDMSTRSIZ];
++#ifdef HAVE_MSQL
++	sprintf(qbuf,"UPDATE url SET next_index_time=%d WHERE rec_id<>0 %s%s%s%s%s",(int)now(),
++		Indexer->Conf->tagstr,Indexer->Conf->urlstr,Indexer->Conf->statusstr,Indexer->Conf->langstr,Indexer->Conf->catstr);
++#else
+ 	sprintf(qbuf,"UPDATE url SET next_index_time=%d WHERE 1=1 %s%s%s%s%s",(int)now(),
+ 		Indexer->Conf->tagstr,Indexer->Conf->urlstr,Indexer->Conf->statusstr,Indexer->Conf->langstr,Indexer->Conf->catstr);
++#endif
+ 	sql_query(Indexer,qbuf);
+ 	if(UdmDBErrorCode(Indexer->db))return(IND_ERROR);
+ 	return(IND_OK);
+@@ -3136,6 +3141,18 @@
+ 	char qbuf[UDMSTRSIZ];
+ 
+ 	if(query->Conf->tagstr[0] || query->Conf->statusstr[0] || query->Conf->urlstr[0] || query->Conf->langstr[0] || query->Conf->timestr[0] || query->Conf->catstr[0]){
++#ifdef HAVE_MSQL
++		sprintf(qbuf,"\
++SELECT rec_id \
++FROM url \
++WHERE rec_id<>0 %s%s%s%s%s%s",
++		query->Conf->tagstr,
++		query->Conf->statusstr,
++		query->Conf->urlstr,
++		query->Conf->langstr,
++		query->Conf->timestr,
++		query->Conf->catstr);
++#else
+ 		sprintf(qbuf,"\
+ SELECT rec_id \
+ FROM url \
+@@ -3146,7 +3163,7 @@
+ 		query->Conf->langstr,
+ 		query->Conf->timestr,
+ 		query->Conf->catstr);
+-
++#endif
+ 		((DB*)(query->db))->res=sql_query(query,qbuf);
+ 		if(UdmDBErrorCode(query->db))return(NULL);
+ 		num=SQL_NUM_ROWS(((DB*)(query->db))->res);
+@@ -3595,13 +3612,21 @@
+ 	}
+ 	SQL_FREE(((DB*)(Indexer->db))->res);
+ #elif (HAVE_IBASE||HAVE_MSQL || HAVE_IODBC || HAVE_UNIXODBC || HAVE_SOLID || HAVE_VIRT || HAVE_EASYSOFT)
++#ifdef HAVE_MSQL
++	sprintf(qbuf,"SELECT status,next_index_time FROM url WHERE rec_id<>0 %s%s%s%s%s",
++		Indexer->Conf->tagstr,
++		Indexer->Conf->urlstr,
++		Indexer->Conf->statusstr,
++		Indexer->Conf->langstr,
++		Indexer->Conf->catstr);
++#else
+ 	sprintf(qbuf,"SELECT status,next_index_time FROM url WHERE 1=1 %s%s%s%s%s",
+ 		Indexer->Conf->tagstr,
+ 		Indexer->Conf->urlstr,
+ 		Indexer->Conf->statusstr,
+ 		Indexer->Conf->langstr,
+ 		Indexer->Conf->catstr);
+-
++#endif
+ 	((DB*)(Indexer->db))->res=sql_query(Indexer,qbuf);
+ 	if(UdmDBErrorCode(Indexer->db))return(IND_ERROR);
+ 	if(SQL_NUM_ROWS(((DB*)(Indexer->db))->res)){
+@@ -3698,6 +3723,15 @@
+ #ifdef HAVE_SQL_LIMIT
+ 			sprintf(limit," LIMIT %d",URL_DELETE_CACHE);
+ #endif
++#ifdef HAVE_MSQL
++			sprintf(qbuf,"SELECT rec_id FROM url WHERE rec_id<>0 %s%s%s%s%s%s",
++				Indexer->Conf->tagstr,
++				Indexer->Conf->urlstr,
++				Indexer->Conf->statusstr,
++				Indexer->Conf->langstr,
++				Indexer->Conf->catstr,
++				limit);
++#else
+ 			sprintf(qbuf,"SELECT rec_id FROM url WHERE 1=1 %s%s%s%s%s%s",
+ 				Indexer->Conf->tagstr,
+ 				Indexer->Conf->urlstr,
+@@ -3705,7 +3739,7 @@
+ 				Indexer->Conf->langstr,
+ 				Indexer->Conf->catstr,
+ 				limit);
+-
++#endif
+ 			((DB*)(Indexer->db))->res=sql_query(Indexer,qbuf);
+ 			if(UdmDBErrorCode(Indexer->db))return(IND_ERROR);
+ 			if(SQL_NUM_ROWS(((DB*)(Indexer->db))->res)){
