@@ -16,6 +16,7 @@ RM=/bin/rm
 LOGGER=/usr/bin/logger
 KILL=/bin/kill
 KILLALL=/usr/bin/killall
+HEAD=/usr/bin/head
 
 PRIORITY=local5.info
 TAG=${NULLMAILUSER}
@@ -26,7 +27,7 @@ start)
 	if [ ! -r ${PIDFILE} ] ; then
 		[ -x ${PREFIX}/sbin/nullmailer-send ] && su -l ${NULLMAILUSER} -c "${PREFIX}/sbin/nullmailer-send 2>&1 | ${LOGGER} -i -p ${PRIORITY} -t ${TAG} &" 
 		JUNK=`${PS} -ax`
-		PID=`${PS} awx | ${GREP} -v awk | ${AWK} '/nullmailer-send/ {print $1}'`
+		PID=`${PS} awx | ${GREP} -v awk | ${AWK} '/nullmailer-send/ {print $1}' | ${HEAD} -1`
 		echo $PID > ${PIDFILE}
 	else
 		echo ' already running'
