@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latex2e
-PORTVERSION=	2001.09
+PORTVERSION=	2003.12
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -16,6 +16,8 @@ DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	TeX macro package
+
+DIST_SUBDIR=    tex
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
