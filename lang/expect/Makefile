@@ -1,22 +1,19 @@
 # New ports collection makefile for:	expect
 # Date created:		20 November 1994
 # Whom:			pst
-# Version required:	5.25
+# Version required:	5.26
 #
-# $Id: Makefile,v 1.29 1998/01/27 01:11:47 fenner Exp $
+# $Id: Makefile,v 1.30 1998/02/18 06:28:34 asami Exp $
 #
 # Note this file is included from japanese/extract/Makefile
 
-DISTNAME=	expect
-PKGNAME?=	expect-5.25
-CATEGORIES?=	lang tcl80 tk80
-MASTER_SITES=	http://expect.nist.gov/
+DISTNAME=	expect-5.26
+CATEGORIES=	lang tcl80 tk80
+MASTER_SITES=	http://peloton.physics.montana.edu/handy/
 
-MAINTAINER?=	ports@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS?=	tk80\\.1:${PORTSDIR}/x11/tk80
-
-WRKSRC=		${WRKDIR}/expect-5.25
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --enable-shared \
