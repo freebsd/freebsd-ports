@@ -1,0 +1,12 @@
+bin/makerandom
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/rand.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/devurandom.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/egd.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/devrandom.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Generator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Random/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Random
