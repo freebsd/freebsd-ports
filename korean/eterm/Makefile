@@ -8,12 +8,8 @@
 PORTNAME=	eterm
 PORTVERSION=	0.8.9
 CATEGORIES=	korean x11
-MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
-		ftp://ftp.holywar.net/pub/FreeBSD/ \
+MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
-		http://www.tcserv.com/archive/E/ \
-		http://eterm.is.nontoxic.org/download/ \
-		http://www.tcserv.com/archive/E/old/
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	hollywar@mail.holywar.net

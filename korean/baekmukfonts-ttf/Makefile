@@ -8,11 +8,11 @@
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
 CATEGORIES=	korean
-MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/
+MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	baekmuk${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Baekmuk family Korean TrueType Fonts
 
 USE_X_PREFIX=	yes

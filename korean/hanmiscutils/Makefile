@@ -8,7 +8,7 @@
 PORTNAME=	hanmiscutils
 PORTVERSION=	0.1.1
 CATEGORIES=	korean
-MASTER_SITES=	http://kldp.org/~bangjy/hangul/
+MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.ORG
 COMMENT=	Collection of various Hangul-related sources

@@ -9,9 +9,8 @@ PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/ \
+MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		http://zinc.skku.ac.kr/~wkpark/baekmuk/
 PKGNAMESUFFIX=	-bdf
 DISTNAME=	baekmuk-${PORTVERSION}
 DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
