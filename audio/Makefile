@@ -69,6 +69,7 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
+    SUBDIR += sdl_mixer
     SUBDIR += shorten
     SUBDIR += sidplay
     SUBDIR += snowstar

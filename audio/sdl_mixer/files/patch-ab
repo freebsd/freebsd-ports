@@ -1,0 +1,13 @@
+--- configure.orig	Mon Apr 24 12:40:12 2000
++++ configure	Mon Apr 24 12:43:53 2000
+@@ -2232,8 +2232,8 @@
+ fi
+ 
+ if test x$enable_music_mod = xyes; then
+-    CFLAGS="$CFLAGS -DMOD_MUSIC -I\$(top_srcdir)/mikmod"
+-    MUSIC_SUBDIRS="$MUSIC_SUBDIRS mikmod"
++    CFLAGS="$CFLAGS -DMOD_MUSIC"
++#    MUSIC_SUBDIRS="$MUSIC_SUBDIRS mikmod"
+ fi
+ # Check whether --enable-music-midi or --disable-music-midi was given.
+ if test "${enable_music_midi+set}" = set; then
