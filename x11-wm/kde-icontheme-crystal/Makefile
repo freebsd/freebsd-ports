@@ -1,4 +1,4 @@
-# New ports collection makefile for:	crystal
+# New ports collection makefile for:	kde-icontheme-crystal
 # Date Created:				22 July 2002
 # Whom:				 	olgeni@FreeBSD.org
 #
