@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	avidemux
-PORTVERSION=	0.9.0.12
+PORTVERSION=	0.9.0.13
 CATEGORIES=	graphics
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
-DISTNAME=	avidemux-0.9pre12
+DISTNAME=	avidemux-0.9pre13
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amistry@am-productions.biz
