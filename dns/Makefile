@@ -68,7 +68,6 @@
     SUBDIR += totd
     SUBDIR += updatedd
     SUBDIR += walker
-    SUBDIR += weedns_sc
     SUBDIR += zonecheck
 
 .include <bsd.port.subdir.mk>
