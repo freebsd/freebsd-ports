@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD4.0-i386
+DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD${VER}-i386
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An optimizer for PHP code
@@ -19,15 +19,16 @@ USE_PHP=	yes
 BROKEN_WITH_PHP=5
 
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
-NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
 # Check for FreeBSD version
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} < 500000
+VER=		4.0
+.else
+VER=		5.1
 .endif
 .if ${OSVERSION} < 400000
 IGNORE=		"This port is for FreeBSD 4 or above"
@@ -38,7 +39,7 @@ ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
 manually.\n\
-Please access http://www.zend.com/store/getfreefile.php?pid=13&zbid=713\n\
+Please access http://www.zend.com/store/free_download.php?pid=13\n\
 with a web browser, read the license and click the \"I ACCEPT\" button.\n\
 Download the source file, ${DISTNAME}${EXTRACT_SUFX},\n\
 and place it in ${DISTDIR}.\n
