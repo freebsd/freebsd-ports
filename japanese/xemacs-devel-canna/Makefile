@@ -8,7 +8,7 @@
 CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
-COMMENT=	${.CURDIR}/../../japanese/xemacs-devel-canna/pkg-comment
+COMMENTFILE=	${.CURDIR}/../../japanese/xemacs-devel-canna/pkg-comment
 
 CANNA=		yes
 

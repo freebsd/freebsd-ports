@@ -14,7 +14,7 @@ PATCHFILES+=	${DISTNAME}-pinmame-${PINMAMEVERSION}.patch.gz
 MAINTAINER=	stijn@win.tue.nl
 
 MASTERDIR=	${.CURDIR}/../xmame
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	pinmame

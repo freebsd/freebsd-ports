@@ -16,7 +16,7 @@ SKK_JISYO_SUFFIX=	.cdb
 MASTERDIR=	${.CURDIR}/../skk-jisyo
 
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

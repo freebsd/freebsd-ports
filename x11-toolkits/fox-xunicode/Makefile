@@ -12,7 +12,7 @@ PORTREVISION=	1
 
 MAINTAINER=	ports@FreeBSD.org
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 WITH_XUNICODE=	yes
 

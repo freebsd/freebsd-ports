@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../fltk
 
 MAINTAINER=	knu@FreeBSD.org
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 WITH_XUNICODE=	yes
 

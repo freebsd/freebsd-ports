@@ -11,7 +11,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../irc/epic4
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 

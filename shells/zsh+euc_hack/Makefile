@@ -13,7 +13,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

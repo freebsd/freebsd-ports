@@ -11,7 +11,7 @@ PORTVERSION=	0.61.1
 MAINTAINER=	stijn@win.tue.nl
 
 MASTERDIR=	${.CURDIR}/../xmame
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess

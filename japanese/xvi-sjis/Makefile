@@ -15,7 +15,7 @@ PATCHDIR=	${.CURDIR}/files
 
 EXTRA_PATCHES=	${MASTERDIR}/files/patch-unix.h
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 
 PROG=		sxvi

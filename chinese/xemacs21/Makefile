@@ -9,7 +9,7 @@ CATEGORIES=	chinese editors
 
 MAINTAINER=	keith@FreeBSD.org
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 

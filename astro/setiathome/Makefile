@@ -72,7 +72,7 @@ MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 PKGNAMEPREFIX=	${PORT_OSNAME}-
 PKGNAMESUFFIX=	-${PORT_CPU}
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .if ${PORT_OSNAME} == linux
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXaw.so.7)

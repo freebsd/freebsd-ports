@@ -93,7 +93,7 @@ certificate-req:
 # Local overrides
 MASTERDIR=	${QMAIL_PORT}
 PKGDIR_LOCAL=	${.CURDIR}
-COMMENT=	${PKGDIR_LOCAL}/pkg-comment
+COMMENTFILE=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
 PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
 PLIST=		${PKGDIR_LOCAL}/pkg-plist

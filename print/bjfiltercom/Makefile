@@ -40,7 +40,7 @@ EXTRACT_AFTER_ARGS=	| cpio -id --quiet
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}${_SUF1}${_SUF2}
 DIST_SUBDIR=	bjfilter
 PLIST=		${.CURDIR}/pkg-plist
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386

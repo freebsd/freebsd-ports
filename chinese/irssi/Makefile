@@ -21,4 +21,4 @@ MAINTAINER=	vanilla@FreeBSD.org
 .include "${MASTERDIR}/Makefile"
 
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment

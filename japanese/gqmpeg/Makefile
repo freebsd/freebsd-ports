@@ -14,7 +14,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-*
 .endif
 
 MASTERDIR=	${.CURDIR}/../../audio/gqmpeg
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 CONFIGURE_ARGS=	--enable-japanese

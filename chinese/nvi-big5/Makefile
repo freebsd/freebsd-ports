@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
 MAINTAINER=	ports@freebsd.org
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n
 
 .include "${MASTERDIR}/Makefile"

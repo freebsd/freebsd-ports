@@ -13,6 +13,6 @@ MASTERDIR=	${.CURDIR}/../../converters/mule-ucs
 
 EMACS_PORT_NAME=	emacs20
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 .include <${MASTERDIR}/Makefile>

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-COMMENT=		${.CURDIR}/pkg-comment
+COMMENTFILE=		${.CURDIR}/pkg-comment
 
 XEMACS_MAJOR_VER=	21
 WNN6=			yes

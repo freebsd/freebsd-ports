@@ -13,6 +13,6 @@ MAINTAINER=	ports@freebsd.org
 CONFIGURE_ARGS+=	--enable-multibyte=euc-tw --program-prefix=n
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 .include "${MASTERDIR}/Makefile"

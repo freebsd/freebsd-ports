@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../netscape48-communicator
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 
 BROWSER_NAME=	navigator
