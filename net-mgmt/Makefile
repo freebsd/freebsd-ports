@@ -16,6 +16,7 @@
     SUBDIR += aspathtree
     SUBDIR += bandwidthd
     SUBDIR += bgpq
+    SUBDIR += bigsister
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsd-airtools
