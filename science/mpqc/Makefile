@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	science parallel
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 DISTFILES=      mpqc-${PORTVERSION}.tar.gz mpqc-val-2.1.0.tar.gz
@@ -35,14 +35,22 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 USE_PERL5=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
+PLIST_SUB+=	VERSION=${PORTVERSION}
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
 .include "${MASTERDIR}/files/manpages"
 
+.if defined(WITH_OPTIMIZED_FLAGS)
+CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CXXFLAGS+=      -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
+.if (${MACHINE_ARCH} == "i386")
+CFLAGS+=        -mcpu=i686 -march=i686 -mfancy-math-387
+CXXFLAGS+=      -mcpu=i686 -march=i686 -mfancy-math-387
+.endif # i386
+.endif
+
 pre-configure:
-	@${ECHO} "You can override and CFLAGS on the command line."
-	@${ECHO} "Following is a recommended one."
-	@${ECHO} "make CFLAGS=\"-malign-double -fexpensive-optimizations -O4 -ffast-math -funroll-loops\""
+	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
