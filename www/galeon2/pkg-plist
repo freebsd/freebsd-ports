@@ -66,6 +66,7 @@ share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks-find.glade
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bug.png
+share/gnome/galeon/certificate-dialogs.glade
 share/gnome/galeon/debian.png
 share/gnome/galeon/default-bookmarks.xbel
 share/gnome/galeon/default-prefs.js
@@ -110,7 +111,6 @@ share/gnome/galeon/new_separator.xpm
 share/gnome/galeon/new_separator_small.xpm
 share/gnome/galeon/prefs-dialog.glade
 share/gnome/galeon/print.glade
-share/gnome/galeon/prompts.glade
 share/gnome/galeon/rpm.png
 share/gnome/galeon/slack.png
 share/gnome/galeon/smart-bm-fold.png
