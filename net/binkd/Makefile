@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://ftp.sut.ru/pub/FidoNet/BinkD/092/ \
 			ftp://ftp.aanet.ru/pub/Linux/system/Fido/ \
 			http://www.corbina.net/~maloff/binkd/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		dsh@vlink.ru
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 USE_ZIP=		yes
