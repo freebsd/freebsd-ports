@@ -7,6 +7,6 @@ There are only few desklets in the ports tree at the moment. To help porting
 more desklets please visit http://gdesklets.gnomedesktop.org/ and port
 some desklets. Those ports should have a PKGNAMEPREFIX of "gdesklets-".
 If the port only provides a sensor or a display the name should have a
--sensor or -display appended, so it would be e.g.
-"gdesklets-<name>-sensor".
+sensor- or display- appended, so it would be e.g.
+"gdesklets-sensor-<name>".
 ##
