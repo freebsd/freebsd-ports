@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -75,6 +75,9 @@ CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
 .if defined(WITH_SA_PLUG) || defined(WITH_ALL)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin-plugin
+PLIST_SUB+=		SA_PLUG=""
+.else
+PLIST_SUB+=		SA_PLUG="@comment "
 .endif
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=		yes
