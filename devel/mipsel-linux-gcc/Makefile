@@ -8,7 +8,10 @@
 PORTNAME=	gcc
 PORTVERSION=	2.97
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
+#MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
+
 PKGNAMEPREFIX=	mipsel-linux-
 
 MAINTAINER=	lev@serebryakov.spb.ru
