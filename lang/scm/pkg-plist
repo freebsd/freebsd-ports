@@ -54,6 +54,7 @@ share/scm/slib/glob.scm
 share/scm/slib/hash.scm
 share/scm/slib/hashtab.scm
 share/scm/slib/htmlform.scm
+share/scm/slib/http-cgi.scm
 share/scm/slib/lineio.scm
 share/scm/slib/logical.scm
 share/scm/slib/macrotst.scm
@@ -73,6 +74,7 @@ share/scm/slib/obj2str.scm
 share/scm/slib/object.scm
 share/scm/slib/paramlst.scm
 share/scm/slib/plottest.scm
+share/scm/slib/pnm.scm
 share/scm/slib/pp.scm
 share/scm/slib/ppfile.scm
 share/scm/slib/prec.scm

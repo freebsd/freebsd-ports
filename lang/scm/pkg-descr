@@ -14,11 +14,11 @@ SLIB-PSD is a portable debugger for Scheme (requires emacs editor).
 -------------------Readme.FreeBSD------------------------
 
 1.  Pathname dependencies:
-	The init file is hardcoded as /usr/local/libdata/scm/Init.scm.
+	The init file is hardcoded as /usr/local/share/scm/Init.scm.
 	Alternatively, one can set the environment variable SCM_INIT_PATH to
 	the pathname of Init.scm.
 
-	The library files are in /usr/local/libdata/slib.  Alternatively,
+	The library files are in /usr/local/share/scm/slib.  Alternatively,
 	one can set the environment variable SCHEME_LIBRARY_PATH to
 	the slib directory.  Remember to use a trailing / on the
 	pathname.
