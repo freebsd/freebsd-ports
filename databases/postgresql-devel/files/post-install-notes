@@ -1,8 +1,6 @@
 
-Now that postgres95 is installed, you should read the documentation and
-implementation guides.  These can be found at
+Now that PostgreSQL is installed, you should read the documentation and
+implementation guides.  These can be found at:
 
-http://www.PostgreSQL.org/docs/
+		http://www.PostgreSQL.org/docs
 
---
-mat.
