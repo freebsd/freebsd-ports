@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.13 1995/10/03 09:36:17 asami Exp $
+# $Id: Makefile,v 1.14 1995/10/04 05:36:29 asami Exp $
 #
 
+    SUBDIR += autoconf
     SUBDIR += bcc
     SUBDIR += bison
     SUBDIR += cflow
