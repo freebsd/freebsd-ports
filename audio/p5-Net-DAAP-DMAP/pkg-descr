@@ -1,0 +1,4 @@
+Net::DAAP::DMAP is a Perl module for reading and writing DMAP
+structures, the binary structure used in Apple's DAAP protocol.
+
+WWW: http://search.cpan.org/dist/Net-DAAP-DMAP/
