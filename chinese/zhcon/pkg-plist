@@ -1,5 +1,5 @@
 bin/zhcon
-etc/zhcon.conf.sample
+etc/zhcon.conf
 lib/zhcon/font/asc12.bpsf
 lib/zhcon/font/asc12x.bpsf
 lib/zhcon/font/asc14.bpsf
