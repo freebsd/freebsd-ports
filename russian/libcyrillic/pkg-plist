@@ -1,0 +1,5 @@
+include/cyrillic.h
+include/cyrillic_export.h
+lib/libcyrillic.a
+lib/libcyrillic.so
+lib/libcyrillic.so.1

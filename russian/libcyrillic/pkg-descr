@@ -1,0 +1,9 @@
+This C library allows to convert cyrillic text from any to any of the following
+cyrillic charsets: windows-1251, koi8-r, koi8-u, iso-8859-5, x-mac-cyrillic and
+ibm866. Automatic detection of charset is possible for any of those.
+
+The library also contains a number of automation features and useful service
+wrappers that are ready to be easily plugged into any application whenever one
+needs more wise features instead of just dumb converting.
+
+WWW: http://ext.by/libcyrillic/

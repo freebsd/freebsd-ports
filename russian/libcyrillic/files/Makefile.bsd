@@ -1,0 +1,36 @@
+SRCS=		cyrillic.c cyrillic.h cyrillic_export.c cyrillic_export.h
+INCS=		cyrillic.h cyrillic_export.h
+LIB=		cyrillic
+
+MAKEDIR=	/usr/share/mk
+
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	9
+
+SHLIB_NAME!=	${MAKE} -V SHLIB_NAME LIB=${LIB} \
+		SHLIB_MAJOR=${SHLIB_MAJOR} \
+		SHLIB_MINOR=${SHLIB_MINOR} \
+		-f ${MAKEDIR}/bsd.lib.mk
+
+all: lib${LIB}.a ${SHLIB_NAME}
+
+lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
+	${MAKE} LIB=${LIB} \
+	SRCS="${SRCS}" \
+	CFLAGS="${CFLAGS}" \
+        NOPROFILE=true \
+        NOOBJ=true \
+	SHLIB_MAJOR=${SHLIB_MAJOR} \
+	SHLIB_MINOR=${SHLIB_MINOR} \
+	-f ${MAKEDIR}/bsd.lib.mk
+
+install:
+	mkdir -p ${PREFIX}/include
+	${MAKE} LIB=${LIB} \
+	LIBDIR=${PREFIX}/lib \
+	NOPROFILE=true \
+        NOOBJ=true \
+	SHLIB_MAJOR=${SHLIB_MAJOR} \
+	SHLIB_MINOR=${SHLIB_MINOR} \
+	-f ${MAKEDIR}/bsd.lib.mk install
+	cd ${.CURDIR} && ${BSD_INSTALL_DATA} ${INCS} ${PREFIX}/include
