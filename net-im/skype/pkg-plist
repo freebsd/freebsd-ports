@@ -8,3 +8,4 @@ bin/skype
 %%DATADIR%%/LICENSE
 @dirrm %%DATADIR%%
 %%GNOME%%share/gnome/applications/skype.desktop
+%%GNOME%%share/gnome/pixmaps/skype.png
