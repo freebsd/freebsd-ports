@@ -29,7 +29,7 @@ LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		png.5:${PORTSDIR}/graphics/png		\
 		t1:${PORTSDIR}/devel/t1lib		\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
-		pdf.4:${PORTSDIR}/print/pdflib4
+		pdf.5:${PORTSDIR}/print/pdflib
 
 MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--enable-grace-home=${X11BASE}/lib/X11/grace
 
 ALL_TARGET=
-INSTALL_TARGET= install links
+INSTALL_TARGET=	install links
 
 post-patch:
 	${CP} ${WRKSRC}/configure ${WRKSRC}/configure.input
