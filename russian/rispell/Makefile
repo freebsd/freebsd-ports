@@ -2,7 +2,7 @@
 # Date created:         16 Dec 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1997/12/17 04:17:08 ache Exp $
+# $Id: Makefile,v 1.3 1997/12/21 12:07:17 ache Exp $
 #
 
 DISTNAME=       rispell
@@ -11,11 +11,11 @@ CATEGORIES=     textproc russian
 MASTER_SITES=   http://www.ispras.ru/~knizhnik/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 
+MAINTAINER=     ache@FreeBSD.org
+
 BUILD_DEPENDS=  ispell:${PORTSDIR}/textproc/ispell
 
 WRKSRC=         ${WRKDIR}/russian-ispell
-
-MAINTAINER=     ache@FreeBSD.org
 
 do-install:
 	cd ${WRKSRC} && \
