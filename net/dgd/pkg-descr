@@ -1,9 +1,6 @@
-This is Dworkin's Generic Driver, a versatile general purpose server program
-for building MUDs and other network server applications.
-The language implementation is an improved and simplified dialect of LPC,
-it is suitable for simulating existing Gamedriver models, or inventing new
-ones. Its usefulness is not limited to the world of MUDs and MUDding.
+DGD is a rewrite from scratch of the LPMud server.  It runs on Windows, MacOS,
+BeOS and many versions of Unix.
 
-Please send all reports, comments and suggestions to:
+Please report bugs to <felix@dworkin.nl>.
 
-        dworkin@hippolytos.cd.chalmers.se
+WWW: http://www.dworkin.nl/dgd/

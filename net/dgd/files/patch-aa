@@ -1,5 +1,7 @@
---- Makefile.orig	Wed Dec 20 02:13:29 2000
-+++ Makefile	Mon Mar 12 00:27:18 2001
+$FreeBSD$
+
+--- Makefile.orig	Wed Dec 20 03:13:29 2000
++++ Makefile	Fri May 17 10:02:48 2002
 @@ -3,13 +3,12 @@
  #
  HOST=	NETBSD
@@ -25,7 +27,11 @@
  a.out:	$(OBJ) always
  	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
  	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -41,7 +42,11 @@
+@@ -38,10 +39,15 @@
+ 	@rm -f a.out
+ 
+ $(BIN)/driver: a.out
++	-mkdir $(BIN)
  	-mv $(BIN)/driver $(BIN)/driver.old
  	cp a.out $(BIN)/driver
  
@@ -38,7 +44,7 @@
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -67,7 +72,7 @@
+@@ -67,7 +73,7 @@
  
  comp/a.out:
  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
