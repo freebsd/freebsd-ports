@@ -107,6 +107,7 @@
     SUBDIR += wmanager
     SUBDIR += wmconfig
     SUBDIR += wmg
+    SUBDIR += wmi
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
     SUBDIR += xfce
