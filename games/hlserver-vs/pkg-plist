@@ -7,16 +7,20 @@
 %%HLDSDIR%%VS/512_textscheme.txt
 %%HLDSDIR%%VS/640_textscheme.txt
 %%HLDSDIR%%VS/800_textscheme.txt
+%%HLDSDIR%%VS/Street.wad
 %%HLDSDIR%%VS/Titles.txt
+%%HLDSDIR%%VS/VS.wad
+%%HLDSDIR%%VS/VS2.wad
+%%HLDSDIR%%VS/VS3.wad
 %%HLDSDIR%%VS/autoexec.cfg
 %%HLDSDIR%%VS/bots/bot.cfg
-%%HLDSDIR%%VS/bots/changes.txt
-%%HLDSDIR%%VS/bots/chat.txt
+%%HLDSDIR%%VS/bots/bots.txt
+%%HLDSDIR%%VS/bots/chat.poo
 %%HLDSDIR%%VS/bots/names.txt
-%%PORTDOCS%%%%HLDSDIR%%VS/bots/readme.txt
 %%HLDSDIR%%VS/cached.wad
 %%HLDSDIR%%VS/cl_dlls/client.dll
 %%HLDSDIR%%VS/classes/short_EDGAR.txt
+%%HLDSDIR%%VS/classes/short_EIGHTBALL.txt
 %%HLDSDIR%%VS/classes/short_FATHER_D.txt
 %%HLDSDIR%%VS/classes/short_LOUIS.txt
 %%HLDSDIR%%VS/classes/short_MOLLY.txt
@@ -26,9 +30,13 @@
 %%HLDSDIR%%VS/delta.lst
 %%HLDSDIR%%VS/dlls/mp.dll
 %%HLDSDIR%%VS/dlls/vs_i386.so
+%%HLDSDIR%%VS/donummortis.wad
 %%HLDSDIR%%VS/events/effects.txt
 %%HLDSDIR%%VS/events/standard.efx
+%%HLDSDIR%%VS/events/vs_blizzard.efx
+%%HLDSDIR%%VS/events/vs_ehb_ctc.efx
 %%HLDSDIR%%VS/events/vs_lynch.efx
+%%HLDSDIR%%VS/events/vs_mummy.efx
 %%HLDSDIR%%VS/events/vs_raven.efx
 %%HLDSDIR%%VS/events/vsburn.sc
 %%HLDSDIR%%VS/events/vsclaw_fire1.sc
@@ -36,8 +44,10 @@
 %%HLDSDIR%%VS/events/vsclaw_ir.sc
 %%HLDSDIR%%VS/events/vscolt_fire1.sc
 %%HLDSDIR%%VS/events/vscolt_fire2.sc
+%%HLDSDIR%%VS/events/vscolt_reload.sc
 %%HLDSDIR%%VS/events/vscrossbow_fire1.sc
 %%HLDSDIR%%VS/events/vscrossbow_fire2.sc
+%%HLDSDIR%%VS/events/vscrossbow_reload.sc
 %%HLDSDIR%%VS/events/vscue_fire1.sc
 %%HLDSDIR%%VS/events/vscue_fire2.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_close.sc
@@ -51,11 +61,21 @@
 %%HLDSDIR%%VS/events/vsmp5_reload.sc
 %%HLDSDIR%%VS/events/vsshotgun_fire1.sc
 %%HLDSDIR%%VS/events/vsshotgun_fire2.sc
+%%HLDSDIR%%VS/events/vsshotgun_idle.sc
 %%HLDSDIR%%VS/events/vsshotgun_pump.sc
 %%HLDSDIR%%VS/events/vsshotgun_reload.sc
 %%HLDSDIR%%VS/events/vsstake_fire1.sc
 %%HLDSDIR%%VS/events/vsstake_fire2.sc
-%%HLDSDIR%%VS/fishbulb2.wad
+%%HLDSDIR%%VS/events/vsthunderfive_fire1.sc
+%%HLDSDIR%%VS/events/vsthunderfive_fire2.sc
+%%HLDSDIR%%VS/events/vsthunderfive_pump.sc
+%%HLDSDIR%%VS/events/vsthunderfive_reload.sc
+%%HLDSDIR%%VS/events/vswinchester_fire1.sc
+%%HLDSDIR%%VS/events/vswinchester_fire2.sc
+%%HLDSDIR%%VS/events/vswinchester_pump.sc
+%%HLDSDIR%%VS/events/vswinchester_reload.sc
+%%HLDSDIR%%VS/events/vswinchester_spin.sc
+%%HLDSDIR%%VS/fatherbrandon's.wad
 %%HLDSDIR%%VS/game.cfg
 %%HLDSDIR%%VS/gfx/env/Hallowed Ground.nfo
 %%HLDSDIR%%VS/gfx/env/bwbk.bmp
@@ -77,8 +97,6 @@
 %%HLDSDIR%%VS/gfx/env/bwup.pcx
 %%HLDSDIR%%VS/gfx/env/bwup.tga
 %%HLDSDIR%%VS/gfx/env/c2nite.txt
-%%HLDSDIR%%VS/gfx/env/c2nite_hw.jpg
-%%HLDSDIR%%VS/gfx/env/c2nite_sw.jpg
 %%HLDSDIR%%VS/gfx/env/c2nitebk.bmp
 %%HLDSDIR%%VS/gfx/env/c2nitebk.pcx
 %%HLDSDIR%%VS/gfx/env/c2nitebk.tga
@@ -116,6 +134,24 @@
 %%HLDSDIR%%VS/gfx/env/fullmoonup.bmp
 %%HLDSDIR%%VS/gfx/env/fullmoonup.pcx
 %%HLDSDIR%%VS/gfx/env/fullmoonup.tga
+%%HLDSDIR%%VS/gfx/env/fulltreesbk.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreesbk.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreesbk.tga
+%%HLDSDIR%%VS/gfx/env/fulltreesdn.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreesdn.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreesdn.tga
+%%HLDSDIR%%VS/gfx/env/fulltreesft.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreesft.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreesft.tga
+%%HLDSDIR%%VS/gfx/env/fulltreeslf.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreeslf.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreeslf.tga
+%%HLDSDIR%%VS/gfx/env/fulltreesrt.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreesrt.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreesrt.tga
+%%HLDSDIR%%VS/gfx/env/fulltreesup.bmp
+%%HLDSDIR%%VS/gfx/env/fulltreesup.pcx
+%%HLDSDIR%%VS/gfx/env/fulltreesup.tga
 %%HLDSDIR%%VS/gfx/env/hg256_bk.bmp
 %%HLDSDIR%%VS/gfx/env/hg256_bk.pcx
 %%HLDSDIR%%VS/gfx/env/hg256_bk.tga
@@ -198,6 +234,7 @@
 %%HLDSDIR%%VS/gfx/env/tsccity_up.pcx
 %%HLDSDIR%%VS/gfx/env/tsccity_up.tga
 %%HLDSDIR%%VS/gfx/shell/btns_main.bmp
+%%HLDSDIR%%VS/gfx/shell/btns_main1.bmp
 %%HLDSDIR%%VS/gfx/shell/colors.lst
 %%HLDSDIR%%VS/gfx/shell/divider.bmp
 %%HLDSDIR%%VS/gfx/shell/dnarrowf.bmp
@@ -238,6 +275,7 @@
 %%HLDSDIR%%VS/gfx/shell/uparrowp.bmp
 %%HLDSDIR%%VS/gfx/shell/won_logo.bmp
 %%HLDSDIR%%VS/gfx/vgui/640_edgar.tga
+%%HLDSDIR%%VS/gfx/vgui/640_eightball.tga
 %%HLDSDIR%%VS/gfx/vgui/640_father_d.tga
 %%HLDSDIR%%VS/gfx/vgui/640_louis.tga
 %%HLDSDIR%%VS/gfx/vgui/640_molly.tga
@@ -246,10 +284,14 @@
 %%HLDSDIR%%VS/liblist.gam
 %%HLDSDIR%%VS/listenserver.cfg
 %%HLDSDIR%%VS/magilla.wad
-%%PORTDOCS%%%%HLDSDIR%%VS/manual/banner.jpg
-%%PORTDOCS%%%%HLDSDIR%%VS/manual/clearpixel.gif
 %%PORTDOCS%%%%HLDSDIR%%VS/manual/commands.txt
-%%PORTDOCS%%%%HLDSDIR%%VS/manual/index.html
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/index.htm
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/templates/banner_top.jpg
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/templates/cf_m_mrbl1.jpg
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/templates/mod.jpg
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/templates/spacer.gif
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/templates/vs.jpg
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/vsstyle.css
 %%HLDSDIR%%VS/mapcycle.txt
 %%HLDSDIR%%VS/maps/vs_asylum.bsp
 %%HLDSDIR%%VS/maps/vs_asylum.txt
@@ -259,6 +301,10 @@
 %%HLDSDIR%%VS/maps/vs_blade.txt
 %%HLDSDIR%%VS/maps/vs_blade.wp1
 %%HLDSDIR%%VS/maps/vs_blade.wpt
+%%HLDSDIR%%VS/maps/vs_blizzard.bsp
+%%HLDSDIR%%VS/maps/vs_blizzard.txt
+%%HLDSDIR%%VS/maps/vs_blizzard.wp1
+%%HLDSDIR%%VS/maps/vs_blizzard.wpt
 %%HLDSDIR%%VS/maps/vs_capitol.bsp
 %%HLDSDIR%%VS/maps/vs_capitol.txt
 %%HLDSDIR%%VS/maps/vs_capitol.wp1
@@ -275,18 +321,18 @@
 %%HLDSDIR%%VS/maps/vs_church.txt
 %%HLDSDIR%%VS/maps/vs_church.wp1
 %%HLDSDIR%%VS/maps/vs_church.wpt
+%%HLDSDIR%%VS/maps/vs_ehb_ctc.bsp
+%%HLDSDIR%%VS/maps/vs_ehb_ctc.res
+%%HLDSDIR%%VS/maps/vs_ehb_ctc.txt
+%%HLDSDIR%%VS/maps/vs_ehb_ctc.wp1
+%%HLDSDIR%%VS/maps/vs_ehb_ctc.wpt
 %%HLDSDIR%%VS/maps/vs_feint.bsp
 %%HLDSDIR%%VS/maps/vs_feint.txt
 %%HLDSDIR%%VS/maps/vs_feint.wp1
 %%HLDSDIR%%VS/maps/vs_feint.wpt
-%%HLDSDIR%%VS/maps/vs_hunt.bsp
-%%HLDSDIR%%VS/maps/vs_hunt.txt
-%%HLDSDIR%%VS/maps/vs_hunt.wp1
-%%HLDSDIR%%VS/maps/vs_hunt.wpt
 %%HLDSDIR%%VS/maps/vs_jailhouse.bsp
 %%HLDSDIR%%VS/maps/vs_jailhouse.txt
 %%HLDSDIR%%VS/maps/vs_jailhouse.wp1
-%%HLDSDIR%%VS/maps/vs_jailhouse.wp2
 %%HLDSDIR%%VS/maps/vs_jailhouse.wpt
 %%HLDSDIR%%VS/maps/vs_lynch.bsp
 %%HLDSDIR%%VS/maps/vs_lynch.txt
@@ -296,6 +342,10 @@
 %%HLDSDIR%%VS/maps/vs_millstreet.txt
 %%HLDSDIR%%VS/maps/vs_millstreet.wp1
 %%HLDSDIR%%VS/maps/vs_millstreet.wpt
+%%HLDSDIR%%VS/maps/vs_mummy.bsp
+%%HLDSDIR%%VS/maps/vs_mummy.txt
+%%HLDSDIR%%VS/maps/vs_mummy.wp1
+%%HLDSDIR%%VS/maps/vs_mummy.wpt
 %%HLDSDIR%%VS/maps/vs_niteclub.bsp
 %%HLDSDIR%%VS/maps/vs_niteclub.txt
 %%HLDSDIR%%VS/maps/vs_niteclub.wp1
@@ -309,6 +359,10 @@
 %%HLDSDIR%%VS/maps/vs_raven.txt
 %%HLDSDIR%%VS/maps/vs_raven.wp1
 %%HLDSDIR%%VS/maps/vs_raven.wpt
+%%HLDSDIR%%VS/maps/vs_redlight.bsp
+%%HLDSDIR%%VS/maps/vs_redlight.txt
+%%HLDSDIR%%VS/maps/vs_redlight.wp1
+%%HLDSDIR%%VS/maps/vs_redlight.wpt
 %%HLDSDIR%%VS/maps/vs_school.bsp
 %%HLDSDIR%%VS/maps/vs_school.txt
 %%HLDSDIR%%VS/maps/vs_school.wp1
@@ -335,37 +389,56 @@
 %%HLDSDIR%%VS/media/launch_upmenu1.wav
 %%HLDSDIR%%VS/media/logo.avi
 %%HLDSDIR%%VS/models/crossbow_bolt.mdl
+%%HLDSDIR%%VS/models/dancer.mdl
+%%HLDSDIR%%VS/models/feuerschale1.mdl
+%%HLDSDIR%%VS/models/feuerschale2.mdl
+%%HLDSDIR%%VS/models/flagslayer.mdl
+%%HLDSDIR%%VS/models/flagvampire.mdl
+%%HLDSDIR%%VS/models/horse1.mdl
 %%HLDSDIR%%VS/models/p_claw.mdl
 %%HLDSDIR%%VS/models/p_colt.mdl
 %%HLDSDIR%%VS/models/p_crossbow.mdl
+%%HLDSDIR%%VS/models/p_cue.mdl
 %%HLDSDIR%%VS/models/p_dbshotgun.mdl
 %%HLDSDIR%%VS/models/p_shotgun.mdl
 %%HLDSDIR%%VS/models/p_stake.mdl
+%%HLDSDIR%%VS/models/p_thunderfive.mdl
 %%HLDSDIR%%VS/models/p_uzi.mdl
+%%HLDSDIR%%VS/models/p_winchester.mdl
+%%HLDSDIR%%VS/models/player.mdl
 %%HLDSDIR%%VS/models/player/edgar/edgar.mdl
+%%HLDSDIR%%VS/models/player/eightball/eightball.mdl
 %%HLDSDIR%%VS/models/player/fatherd/fatherd.mdl
 %%HLDSDIR%%VS/models/player/louis/louis.mdl
 %%HLDSDIR%%VS/models/player/molly/molly.mdl
 %%HLDSDIR%%VS/models/player/nina/nina.mdl
+%%HLDSDIR%%VS/models/ruestung1.mdl
 %%HLDSDIR%%VS/models/shell.mdl
+%%HLDSDIR%%VS/models/stuhl1.mdl
 %%HLDSDIR%%VS/models/uziclip.mdl
-%%HLDSDIR%%VS/models/v_9mmar.mdl
 %%HLDSDIR%%VS/models/v_claw.mdl
 %%HLDSDIR%%VS/models/v_colt.mdl
 %%HLDSDIR%%VS/models/v_crossbow.mdl
+%%HLDSDIR%%VS/models/v_cue.mdl
 %%HLDSDIR%%VS/models/v_dbshotgun.mdl
 %%HLDSDIR%%VS/models/v_shotgun.mdl
 %%HLDSDIR%%VS/models/v_stake.mdl
+%%HLDSDIR%%VS/models/v_thunderfive.mdl
 %%HLDSDIR%%VS/models/v_uzi.mdl
+%%HLDSDIR%%VS/models/v_winchester.mdl
 %%HLDSDIR%%VS/models/vsghost.mdl
+%%HLDSDIR%%VS/models/w_eh.mdl
 %%HLDSDIR%%VS/models/w_fdh.mdl
 %%HLDSDIR%%VS/models/w_mh.mdl
 %%HLDSDIR%%VS/models/w_weaponbox.mdl
 %%HLDSDIR%%VS/motd.txt
+%%HLDSDIR%%VS/mummy.wad
 %%HLDSDIR%%VS/overviews/vs_asylum.bmp
 %%HLDSDIR%%VS/overviews/vs_asylum.txt
 %%HLDSDIR%%VS/overviews/vs_blade.bmp
 %%HLDSDIR%%VS/overviews/vs_blade.txt
+%%HLDSDIR%%VS/overviews/vs_blizzard.bmp
+%%HLDSDIR%%VS/overviews/vs_blizzard.txt
 %%HLDSDIR%%VS/overviews/vs_capitol.bmp
 %%HLDSDIR%%VS/overviews/vs_capitol.txt
 %%HLDSDIR%%VS/overviews/vs_carpark.bmp
@@ -374,22 +447,26 @@
 %%HLDSDIR%%VS/overviews/vs_cemetery.txt
 %%HLDSDIR%%VS/overviews/vs_church.bmp
 %%HLDSDIR%%VS/overviews/vs_church.txt
+%%HLDSDIR%%VS/overviews/vs_ehb_ctc.bmp
+%%HLDSDIR%%VS/overviews/vs_ehb_ctc.txt
 %%HLDSDIR%%VS/overviews/vs_feint.bmp
 %%HLDSDIR%%VS/overviews/vs_feint.txt
-%%HLDSDIR%%VS/overviews/vs_hunt.bmp
-%%HLDSDIR%%VS/overviews/vs_hunt.txt
 %%HLDSDIR%%VS/overviews/vs_jailhouse.bmp
 %%HLDSDIR%%VS/overviews/vs_jailhouse.txt
 %%HLDSDIR%%VS/overviews/vs_lynch.bmp
 %%HLDSDIR%%VS/overviews/vs_lynch.txt
 %%HLDSDIR%%VS/overviews/vs_millstreet.bmp
 %%HLDSDIR%%VS/overviews/vs_millstreet.txt
+%%HLDSDIR%%VS/overviews/vs_mummy.bmp
+%%HLDSDIR%%VS/overviews/vs_mummy.txt
 %%HLDSDIR%%VS/overviews/vs_niteclub.bmp
 %%HLDSDIR%%VS/overviews/vs_niteclub.txt
 %%HLDSDIR%%VS/overviews/vs_quaint.bmp
 %%HLDSDIR%%VS/overviews/vs_quaint.txt
 %%HLDSDIR%%VS/overviews/vs_raven.bmp
 %%HLDSDIR%%VS/overviews/vs_raven.txt
+%%HLDSDIR%%VS/overviews/vs_redlight.bmp
+%%HLDSDIR%%VS/overviews/vs_redlight.txt
 %%HLDSDIR%%VS/overviews/vs_school.bmp
 %%HLDSDIR%%VS/overviews/vs_school.txt
 %%HLDSDIR%%VS/overviews/vs_station.bmp
@@ -399,38 +476,56 @@
 %%HLDSDIR%%VS/overviews/vs_yamamansion.bmp
 %%HLDSDIR%%VS/overviews/vs_yamamansion.txt
 %%PORTDOCS%%%%HLDSDIR%%VS/readme.txt
+%%HLDSDIR%%VS/redlight.wad
 %%HLDSDIR%%VS/server.cfg
 %%HLDSDIR%%VS/settings.scr
+%%HLDSDIR%%VS/sound/ambience/FatherBrandon.wav
 %%HLDSDIR%%VS/sound/ambience/avem-short.wav
 %%HLDSDIR%%VS/sound/ambience/bark.wav
 %%HLDSDIR%%VS/sound/ambience/belltoll.wav
+%%HLDSDIR%%VS/sound/ambience/burning16a.wav
+%%HLDSDIR%%VS/sound/ambience/burning3.wav
 %%HLDSDIR%%VS/sound/ambience/c-organ1.wav
 %%HLDSDIR%%VS/sound/ambience/caralarm.wav
-%%HLDSDIR%%VS/sound/ambience/carnival.wav
 %%HLDSDIR%%VS/sound/ambience/chicken10_31b.wav
 %%HLDSDIR%%VS/sound/ambience/church bells32_06.wav
+%%HLDSDIR%%VS/sound/ambience/cinema.wav
 %%HLDSDIR%%VS/sound/ambience/cougar10_18b.wav
 %%HLDSDIR%%VS/sound/ambience/crow13_5.wav
+%%HLDSDIR%%VS/sound/ambience/des_wind1.wav
+%%HLDSDIR%%VS/sound/ambience/des_wind2.wav
+%%HLDSDIR%%VS/sound/ambience/des_wind3.wav
 %%HLDSDIR%%VS/sound/ambience/disco.wav
+%%HLDSDIR%%VS/sound/ambience/drips.wav
 %%HLDSDIR%%VS/sound/ambience/evilaf1.wav
 %%HLDSDIR%%VS/sound/ambience/evillaugh.wav
+%%HLDSDIR%%VS/sound/ambience/explode.wav
+%%HLDSDIR%%VS/sound/ambience/fan4.wav
 %%HLDSDIR%%VS/sound/ambience/floor.wav
+%%HLDSDIR%%VS/sound/ambience/fool.wav
 %%HLDSDIR%%VS/sound/ambience/ghost-short.wav
 %%HLDSDIR%%VS/sound/ambience/growl.wav
 %%HLDSDIR%%VS/sound/ambience/heavy19.wav
 %%HLDSDIR%%VS/sound/ambience/horse1.wav
+%%HLDSDIR%%VS/sound/ambience/lap.wav
 %%HLDSDIR%%VS/sound/ambience/laugh1.wav
 %%HLDSDIR%%VS/sound/ambience/laugh2.wav
 %%HLDSDIR%%VS/sound/ambience/monitor.wav
 %%HLDSDIR%%VS/sound/ambience/monky1.wav
+%%HLDSDIR%%VS/sound/ambience/mummy/ghostly.wav
+%%HLDSDIR%%VS/sound/ambience/mummy/howl2.wav
+%%HLDSDIR%%VS/sound/ambience/mummy/howl4.wav
+%%HLDSDIR%%VS/sound/ambience/mummy/howl5.wav
+%%HLDSDIR%%VS/sound/ambience/mummy/howl6.wav
 %%HLDSDIR%%VS/sound/ambience/nightclub1.wav
 %%HLDSDIR%%VS/sound/ambience/nightclub2.wav
 %%HLDSDIR%%VS/sound/ambience/organ.wav
 %%HLDSDIR%%VS/sound/ambience/owl1.wav
 %%HLDSDIR%%VS/sound/ambience/piano.wav
 %%HLDSDIR%%VS/sound/ambience/piejusu.wav
-%%HLDSDIR%%VS/sound/ambience/popcorn.wav
 %%HLDSDIR%%VS/sound/ambience/projector.wav
+%%HLDSDIR%%VS/sound/ambience/rascheln1.wav
+%%HLDSDIR%%VS/sound/ambience/rascheln2.wav
 %%HLDSDIR%%VS/sound/ambience/rwater1.wav
 %%HLDSDIR%%VS/sound/ambience/scream1.wav
 %%HLDSDIR%%VS/sound/ambience/scream3.wav
@@ -441,13 +536,24 @@
 %%HLDSDIR%%VS/sound/ambience/thunder1.wav
 %%HLDSDIR%%VS/sound/ambience/train1.wav
 %%HLDSDIR%%VS/sound/ambience/tvnoise.wav
+%%HLDSDIR%%VS/sound/ambience/waterrun.wav
+%%HLDSDIR%%VS/sound/ambience/weird1.wav
+%%HLDSDIR%%VS/sound/ambience/wind1.wav
 %%HLDSDIR%%VS/sound/ambience/wind2.wav
 %%HLDSDIR%%VS/sound/ambience/wolfhowl01.wav
 %%HLDSDIR%%VS/sound/doors/doormove11.wav
 %%HLDSDIR%%VS/sound/items/draw.wav
 %%HLDSDIR%%VS/sound/items/feed.wav
+%%HLDSDIR%%VS/sound/items/intermission.wav
+%%HLDSDIR%%VS/sound/items/intro1.wav
 %%HLDSDIR%%VS/sound/items/messiah.wav
+%%HLDSDIR%%VS/sound/items/sdrop.wav
+%%HLDSDIR%%VS/sound/items/spickup.wav
+%%HLDSDIR%%VS/sound/items/sreturn.wav
 %%HLDSDIR%%VS/sound/items/toccata.wav
+%%HLDSDIR%%VS/sound/items/vdrop.wav
+%%HLDSDIR%%VS/sound/items/vpickup.wav
+%%HLDSDIR%%VS/sound/items/vreturn.wav
 %%HLDSDIR%%VS/sound/materials.txt
 %%HLDSDIR%%VS/sound/player/evilaugh.wav
 %%HLDSDIR%%VS/sound/player/flap-long2.wav
@@ -460,6 +566,9 @@
 %%HLDSDIR%%VS/sound/sentences.txt
 %%HLDSDIR%%VS/sound/weapons/cbar_hit1.wav
 %%HLDSDIR%%VS/sound/weapons/cbar_hit2.wav
+%%HLDSDIR%%VS/sound/weapons/cbar_hitbod1.wav
+%%HLDSDIR%%VS/sound/weapons/cbar_hitbod2.wav
+%%HLDSDIR%%VS/sound/weapons/cbar_hitbod3.wav
 %%HLDSDIR%%VS/sound/weapons/dbarrel1.wav
 %%HLDSDIR%%VS/sound/weapons/dbclose.wav
 %%HLDSDIR%%VS/sound/weapons/dbopen.wav
@@ -474,6 +583,8 @@
 %%HLDSDIR%%VS/sound/weapons/reload3.wav
 %%HLDSDIR%%VS/sound/weapons/sbarrel1.wav
 %%HLDSDIR%%VS/sound/weapons/scock1.wav
+%%HLDSDIR%%VS/sound/weapons/scock2.wav
+%%HLDSDIR%%VS/sound/weapons/t5fire.wav
 %%HLDSDIR%%VS/sound/weapons/uzi-1.wav
 %%HLDSDIR%%VS/sound/weapons/uzi-2.wav
 %%HLDSDIR%%VS/sound/weapons/uzireload.wav
@@ -489,6 +600,9 @@
 %%HLDSDIR%%VS/sound/weapons/vhit1.wav
 %%HLDSDIR%%VS/sound/weapons/vhit2.wav
 %%HLDSDIR%%VS/sound/weapons/vmiss.wav
+%%HLDSDIR%%VS/sound/weapons/winchester1.wav
+%%HLDSDIR%%VS/sound/weapons/winchester2.wav
+%%HLDSDIR%%VS/sound/weapons/winchesterspin.wav
 %%HLDSDIR%%VS/sound/weapons/xbow_reload1.wav
 %%HLDSDIR%%VS/sound/yamazaki/clockbell12.wav
 %%HLDSDIR%%VS/sound/yamazaki/clockchime.wav
@@ -496,6 +610,8 @@
 %%HLDSDIR%%VS/sound/yamazaki/moonlightsonata.wav
 %%HLDSDIR%%VS/sound/yamazaki/stormloop.wav
 %%HLDSDIR%%VS/sound/yamazaki/thunder_clap.wav
+%%HLDSDIR%%VS/spectatormenu.txt
+%%HLDSDIR%%VS/spectcammenu.txt
 %%HLDSDIR%%VS/sprites/320hud1.spr
 %%HLDSDIR%%VS/sprites/320hud2.spr
 %%HLDSDIR%%VS/sprites/320hud3.spr
@@ -509,24 +625,32 @@
 %%HLDSDIR%%VS/sprites/640hud7.spr
 %%HLDSDIR%%VS/sprites/640hud8.spr
 %%HLDSDIR%%VS/sprites/640hud9.spr
+%%HLDSDIR%%VS/sprites/ballsmoke.spr
+%%HLDSDIR%%VS/sprites/black_smoke1.spr
 %%HLDSDIR%%VS/sprites/bw_fire.spr
+%%HLDSDIR%%VS/sprites/candel2_pu.spr
+%%HLDSDIR%%VS/sprites/candel_pu.spr
 %%HLDSDIR%%VS/sprites/crosshairs.spr
 %%HLDSDIR%%VS/sprites/fire.spr
+%%HLDSDIR%%VS/sprites/fire_pu.spr
 %%HLDSDIR%%VS/sprites/flake.spr
 %%HLDSDIR%%VS/sprites/hud.txt
 %%HLDSDIR%%VS/sprites/iplayerblue.spr
+%%HLDSDIR%%VS/sprites/smoke_pu.spr
 %%HLDSDIR%%VS/sprites/vssmoke.spr
-%%HLDSDIR%%VS/sprites/weapon_claw.txt
 %%HLDSDIR%%VS/sprites/weapon_vsclaw.txt
 %%HLDSDIR%%VS/sprites/weapon_vscolt.txt
 %%HLDSDIR%%VS/sprites/weapon_vscrossbow.txt
+%%HLDSDIR%%VS/sprites/weapon_vscue.txt
 %%HLDSDIR%%VS/sprites/weapon_vsdbshotgun.txt
 %%HLDSDIR%%VS/sprites/weapon_vsmp5.txt
 %%HLDSDIR%%VS/sprites/weapon_vsshotgun.txt
 %%HLDSDIR%%VS/sprites/weapon_vsstake.txt
+%%HLDSDIR%%VS/sprites/weapon_vsthunderfive.txt
+%%HLDSDIR%%VS/sprites/weapon_vswinchester.txt
 %%HLDSDIR%%VS/street.wad
 %%HLDSDIR%%VS/user.scr
-%%HLDSDIR%%VS/voice_ban.dt
+%%HLDSDIR%%VS/vs.fgd
 %%PORTDOCS%%%%HLDSDIR%%VS/vs.ico
 %%HLDSDIR%%VS/vs.wad
 %%HLDSDIR%%VS/vs2.wad
@@ -537,6 +661,7 @@
 @dirrm %%HLDSDIR%%VS/sound/player
 @dirrm %%HLDSDIR%%VS/sound/items
 @dirrm %%HLDSDIR%%VS/sound/doors
+@dirrm %%HLDSDIR%%VS/sound/ambience/mummy
 @dirrm %%HLDSDIR%%VS/sound/ambience
 @dirrm %%HLDSDIR%%VS/sound
 @dirrm %%HLDSDIR%%VS/overviews
@@ -544,11 +669,13 @@
 @dirrm %%HLDSDIR%%VS/models/player/molly
 @dirrm %%HLDSDIR%%VS/models/player/louis
 @dirrm %%HLDSDIR%%VS/models/player/fatherd
+@dirrm %%HLDSDIR%%VS/models/player/eightball
 @dirrm %%HLDSDIR%%VS/models/player/edgar
 @dirrm %%HLDSDIR%%VS/models/player
 @dirrm %%HLDSDIR%%VS/models
 @dirrm %%HLDSDIR%%VS/media
 @dirrm %%HLDSDIR%%VS/maps
+%%PORTDOCS%%@dirrm %%HLDSDIR%%VS/manual/templates
 %%PORTDOCS%%@dirrm %%HLDSDIR%%VS/manual
 @dirrm %%HLDSDIR%%VS/gfx/vgui/fonts
 @dirrm %%HLDSDIR%%VS/gfx/vgui
