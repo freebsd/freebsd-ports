@@ -32,6 +32,7 @@ etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
+%%NDB%%include/mysql/ndb/ndb_init.h
 %%NDB%%include/mysql/ndb/ndb_types.h
 %%NDB%%include/mysql/ndb/ndb_version.h
 %%NDB%%include/mysql/ndb/ndbapi/Ndb.hpp
