@@ -348,6 +348,7 @@
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Glade-Perl
     SUBDIR += p5-Heap
