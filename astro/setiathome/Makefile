@@ -3,14 +3,14 @@
 # Whom:                 stb@freebsd.org
 #
 # $FreeBSD$
-#
 
 PORTNAME=	setiathome
-PORTVERSION=	1.2
+PORTVERSION=	2.4
 CATEGORIES=	astro
-MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
-		ftp://ftp.cdrom.com/pub/setiathome/ \
-		http://people.FreeBSD.org/~stb/mirror/setiathome.ssl.berkeley.edu/software/
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/setiathome/ \
+		ftp://alien.ssl.berkeley.edu/pub/ \
+		ftp://setidata.ssl.berkeley.edu/pub/ \
+		ftp://serendip.ssl.berkeley.edu/pub/
 
 MAINTAINER=	stb@freebsd.org
 
@@ -20,40 +20,23 @@ EXTRACT_CMD=		tar
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=
 
-MAN1=		setiathome.1
+MAN1=		setiathome.1 xsetiathome.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400000
-PORTVERSION=	1.1
-DISTFILES=      setiathome-1.1.i386-unknown-freebsd4.0.tar
-WRKSRC=         setiathome-1.1.i386-unknown-freebsd4.0
-.elif ${OSVERSION} >= 320000
-DISTFILES=      setiathome-1.2.i386-unknown-freebsd3.2.tar
-WRKSRC=         setiathome-1.2.i386-unknown-freebsd3.2
-.elif ${OSVERSION} >= 310000
-DISTFILES=      setiathome-1.2.i386-unknown-freebsd3.1.tar
-WRKSRC=         setiathome-1.2.i386-unknown-freebsd3.1
-.elif ${OSVERSION} >= 228000
-DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.8.tar
-WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.8
-.elif ${OSVERSION} >= 227000
-DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.7.tar
-WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.7
+.if ${OSVERSION} >= 310000
+DISTFILES=	setiathome-2.4.i386-unknown-freebsd3.3.tar
+WRKSRC=		setiathome-2.4.i386-unknown-freebsd3.3
 .elif ${OSVERSION} >= 226000
-DISTFILES=      setiathome-1.2.i386-unknown-freebsd2.2.6.tar
-WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.6
+DISTFILES=	setiathome-2.4.i386-unknown-freebsd2.2.8.tar
+WRKSRC=		setiathome-2.4.i386-unknown-freebsd2.2.8
 .else
 DISTFILES=
 .endif
 
 .if make(makesum) || defined(FETCH_ALL)
-DISTFILES=	setiathome-1.2.i386-unknown-freebsd2.2.6.tar	\
-			setiathome-1.2.i386-unknown-freebsd2.2.7.tar	\
-			setiathome-1.2.i386-unknown-freebsd2.2.8.tar	\
-			setiathome-1.2.i386-unknown-freebsd3.1.tar	\
-			setiathome-1.2.i386-unknown-freebsd3.2.tar	\
-			setiathome-1.1.i386-unknown-freebsd4.0.tar
+DISTFILES=	setiathome-2.4.i386-unknown-freebsd2.2.8.tar	\
+		setiathome-2.4.i386-unknown-freebsd3.3.tar
 .endif
 
 NO_BUILD=	"binary distribution"
@@ -76,9 +59,10 @@ pre-fetch:
 	fi;
 
 do-install:
-	${INSTALL_PROGRAM}	${WRKDIR}/${WRKSRC}/setiathome ${PREFIX}/bin
-	${INSTALL_SCRIPT}	${FILESDIR}/setiathome.sh ${PREFIX}/etc/rc.d
-	${INSTALL_MAN}		${FILESDIR}/setiathome.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKDIR}/${WRKSRC}/setiathome ${PREFIX}/bin
+	${INSTALL_SCRIPT}  ${FILESDIR}/setiathome.sh ${PREFIX}/etc/rc.d
+	${INSTALL_MAN}     ${FILESDIR}/setiathome.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN}     ${FILESDIR}/xsetiathome.1 ${MAN1PREFIX}/man/man1
 
 post-install:
 	@PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \

@@ -1,4 +1,3 @@
-.\" Copyright status unkown
 .\" $FreeBSD$
 .Dd May 19, 1999
 .Dt setiathome 1 LOCAL
@@ -11,40 +10,46 @@
 .Op Ar options
 .Sh DESCRIPTION
 .Nm
-is the 
+is the
 .Ux
-version of the 
+version of the
 .Tn SETI@home
-client. It downloads radio telescope data from a network server, analyzes
-the data looking for signals of extraterrestrial origin, and uploads results
-to the server, repeating this cycle indefinitely. See
-http://setiahome.ssl.berkeley.edu/ for more information.
+client.
+It downloads radio telescope data from a network server,
+analyzes the data looking for signals of extraterrestrial origin,
+and uploads results to the server, repeating this cycle indefinitely.
+See
+.Li http://setiathome.berkeley.edu
+for more information.
 .Pp
 The first time you run
 .Nm
-it will interactively ask you for email address, name, country etc. This
-info is stored in a file and no interaction is needed when you run the
-program subsequently.
+it will interactively
+ask you for E-mail address, name, country etc.
+This info is stored in a file and no interaction is
+needed when you run the program subsequently.
 .Pp
 After this you can run
 .Nm
-in the background, and direct its output to
+in the background,
+and direct its output to
 .Pa /dev/null
 if you like.
 .Pp
 .Nm
-can be freely aborted and restarted. It saves its state in files,
-and will pick up where it left off.
+can be freely aborted and restarted.
+It saves its state in files, and will pick up where it left off.
 .Pp
-If you want to run multiple instances of setiathome
+If you want to run multiple instances of
+.Nm
 (on a multiprocessor machine, or on multiple machines
-that share a filesystem) each one must be run
-in a different directory.
+that share a filesystem) each one must be run in a different directory.
 .Pp
 .Nm
 requires about 0.5\ MBytes of disk space per working directory, and about
-12\ MBytes of memory per instance. If you have ample physical memory, it's work load
-should be almost undetectable. Additionally,
+15\ MBytes of memory per instance.
+If you have ample physical memory, its work load should be almost undetectable.
+Additionally,
 .Nm
 requires a permanent or
 .Dq dial on demand
@@ -119,56 +124,88 @@ to
 .Va working directory 
 .Li && setiathome -email >/dev/null
 .Ed
+.Pp
 to the user's crontab.
 .Sh OPTIONS
 .Bl -tag -width countries
 .It Fl countries
-Show list of country codes (a numeric country code must be entered during
-registration).
+Show list of country codes.
 .It Fl email
-Send email (to the email address registered with
-.Tn SETI@home )
-on errors. Useful if you run 
-.Nm
-in the background with the output directed to
+Send E-mail (to login E-mail address) on errors.
+Useful if you run in background directed to
 .Pa /dev/null .
+.It Fl graphics
+Generate a data stream for the
+.Xr xsetiathome 1
+graphical interface.
 .It Fl login
-Log in to or register with
-.Tn SETI@home .
+Login or create new account.
 .It Fl nice Ar N
-Set 
+Set
 .Xr nice 1
-priority to 
+priority to
 .Ar N
 (default 1).
-.It Fl proxy Va hostname Ns Xo
-.Op Li : Ns Va port
-.Xc
-Use the HTTP proxy server
-.Ar hostname
-at port
-.Ar port
-to download work units and upload results. Alternatively, you can set the
-environment variable
-.Ev HTTP_PROXY .
+.It Fl nolock
+Omit the multiple-instance check, which uses file locking
+(not available on some NFS systems).
+.It Fl proxy Ar hostname : Ns Ar port
+Connect to
+.Tn SETI@home
+server via specified HTTP proxy server and port.
+.It Fl socks_passwd Ar password
+SOCKS
+.Ar password .
+.It Fl socks_server Ar hostname : Ns Ar port
+Connect to
+.Tn SETI@home
+server via specified SOCKS server and port.
+Overrides
+.Ev SOCKS_SERVER .
+SOCKS versions 4 and 5 are supported.
+.It Fl socks_user Ar name
+SOCKS user
+.Ar name .
 .It Fl stop_after_process
-Process the current work unit and exit before uploading the result.
+Stop after processing current work unit.
+Do not send result.
 .It Fl stop_after_xfer
-Process the current work unit and upload the result, then exit.
+Stop after current work unit has been sent to the SETI
+server and a new work unit has been obtained.
+(See also
+.Pa stop_after_send.sah
+mentioned in
+.Sx FILES
+below.)
+.It Fl verbose
+Print a running summary of the work being done.
 .It Fl version
 Show software version.
 .El
 .Sh ENVIRONMENT
-.Bl -tag -width HTTP_PROXY
+.Bl -tag -width SOCKS_SERVER
 .It Ev HTTP_PROXY
-The address (in the form
-.Do Va hostname Ns
+If defined,
+.Nm
+will connect through a proxy server, specified as
+.Do Ns Va hostname Ns
 .Op Li : Ns Va port
-.Dc )
-of a HTTP proxy server to download work units and upload results via.
+.Dc .
+.It Ev SOCKS_SERVER
+If defined,
+.Nm
+will connect through a SOCKS server, specified as
+.Do Ns Va hostname Ns
+.Op Li : Ns Va port
+.Dc .
+.It Ev SOCKS_USER , Ev SOCKS_PASSWD
+If defined, these will be used as the login name and password
+for the SOCKS server.
+Otherwise
+.Nm
+will query you.
 .El
 .Sh FILES
-.Pp
 .Bl -tag -width /var/db -compact
 .It Pa /usr/local/etc/setiathome.conf
 Optional configuration file for the start-up script.
@@ -176,7 +213,7 @@ Optional configuration file for the start-up script.
 Start-up script.
 .It Pa /var/db/setiathome/
 Primary working directory.
-.It Pa /var/db/setiathome/user_info.txt
+.It Pa /var/db/setiathome/user_info.sah
 Registration data.
 .It Pa /var/db/setiathome/ Ns Va n Ns Pa /
 Working directories for additional process
@@ -184,30 +221,38 @@ Working directories for additional process
 (when running more than one instance).
 .It Pa /var/db/setiathome/ Ns Xo
 .Op Ns Va n Ns Pa / Ns 
-.Pa lock.txt
+.Pa lock.sah
 .Xc
 Lock file to prevent multiple instances to work on the same data.
 .It Pa /var/db/setiathome/ Ns Xo
 .Op Ns Va n Ns Pa / Ns 
-.Pa *.txt
+.Pa *.sah
 .Xc
 Working files.
+These should not be modified.
+.It Pa /var/db/setiathome/ Ns Xo
+.Op Ns Va n Ns Pa / Ns 
+.Pa pid.sah
+.Xc
+The process ID of the current instance.
+.It Pa /var/db/setiathome/ Ns Xo
+.Op Ns Va n Ns Pa / Ns 
+.Pa stop_after_send.sah
+.Xc
+While the client is running, touch this file in the working directory
+to finish up your current work unit, return your result, and not
+download a new work unit.
+When the processing is finished, and the result sent, the client will stop.
 .El
-.Sh BUGS
-As of version 1.1, the proxy setting ignores the
-.Va port
-argument in both the option and the environment variable.
-.Pp
-There is currently no easy way to run
-.Nm
-continuosly if you don't have a permanent or
-.Dq dial on demand
-Internet connection.
+.Sh SEE ALSO
+.Xr xsetiathome 1
 .Sh AUTHORS
 .Tn SETI@home
 was developed by David Anderson, Jeff Cobb, Charles Congdon, Charlie Fenton,
 David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky, Peter Leiser, Brad
 Silen, Woody Sullivan, and Dan Werthimer.
 .Pp
-.An Stefan Bethke <stb@freebsd.org>
-amended the original manual page for this FreeBSD port.
+.An Stefan Bethke Aq stb@freebsd.org
+amended the original manual page for this
+.Fx
+port.

@@ -51,7 +51,7 @@ case $2 in
 
 		${RCD} register
 
-		if [ ! -f ${DBDIR}/user_info.txt ]; then
+		if [ ! -f ${DBDIR}/user_info.sah ]; then
 			echo "unable to start setiathome: it seems registration or login failed."
 			exit 0
 		fi
