@@ -4,7 +4,7 @@
 #    The first token in a configuration line represents a mime type.
 #    A mime type is of the form "SubGroup/Item" and either token
 #    can be replaced by the wildcard character "*"
-# 
+#
 #    the second token is the command that you would run
 #    when the specified mime type is encountered.  An example
 #    would be "xv %s" where %s will be replaced by a filename
@@ -44,7 +44,7 @@
 # FreeBSD /dev/audio is sun compliant
 audio/basic; cat %s > /dev/audio
 
-# use this to play MPEG audio if you have maplay installed  
+# use this to play MPEG audio if you have maplay installed
 audio/x-mpeg; maplay -; stream-buffer-size=2000
 
 # use this to play MPEG video files if you have mpeg_play installed
@@ -57,7 +57,7 @@ video/*; xanim %s > /dev/null 2>&1
 application/postscript; ghostview %s
 
 # use this to display pdf files
-application/pdf; xpdf %s 2>/dev/null
+application/pdf; acroread %s 2>/dev/null
 
 # this is the default for non GIF or JPEG images
 image/*; xv %s

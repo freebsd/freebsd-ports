@@ -1,44 +1,23 @@
-# New ports collection makefile for:    linux-netscape4
-# Version required:     4.08
-# Date created:         24 Feb 1997
-# Whom:                 ache
+# New ports collection makefile for: netscape-communcator-linux-4.61
+# Version required:		4.61
+# Date created:			27 June 1999
+# Whom:				girgen@partitur.se
+# Based on work by:		thepish
 #
-# $Id: Makefile,v 1.8 1999/02/22 04:31:40 steve Exp $
+# $Id:$
 #
 
-DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5
-PKGNAME=	linux-netscape-4.08
-CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
-		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
-		ftp://ftp.sunsite.auc.dk/disk4/mirrorsite.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/
+MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/supported/linux20_libc5/complete_install/
+DISTFILES?=	communicator-v461-export.x86-unknown-linux2.0.tar.gz
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
-BROKEN=		"Repository copied, not truth contents yet"
-ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}/${BROWSER}-v461.x86-unknown-linux2.0
 
-WRKSRC=		${WRKDIR}/communicator-v408.x86-unknown-linux2.0
-NO_BUILD=	Yes
+BROWSER_VER=	linux-4.61
+MAILCAP=	${.CURDIR}/files/mailcap
+NSUBDIR?=	lib/netscape-linux
 
-NDIR=		${PREFIX}/lib/netscape
-BINDIR=		${PREFIX}/bin
-
-do-install:
-	cd ${WRKSRC} && yes "" | \
-	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	${MV} -f ${NDIR}/netscape ${NDIR}/netscape.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}
-	if [ ! -f ${NDIR}/mailcap ] ; then \
-	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
-	fi
-	${RM} -rf ${NDIR}/nls ${NDIR}/movemail-src ${NDIR}/XKeysymDB
-	chown -R ${BINOWN}.${BINGRP} ${NDIR}
-
-post-install:
-	@${CAT} ${PKGDIR}/DESCR
-
-.include <bsd.port.mk>
+.include "../netscape46-communicator/Makefile"
