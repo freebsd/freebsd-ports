@@ -100,7 +100,6 @@
     SUBDIR += vmware-tools4
     SUBDIR += vmware2
     SUBDIR += vmware3
-    SUBDIR += vmware_xf4mod
     SUBDIR += vpce
     SUBDIR += vx68k
     SUBDIR += vxtools

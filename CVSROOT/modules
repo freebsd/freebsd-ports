@@ -10582,7 +10582,6 @@ vmware-tools3	ports/emulators/vmware-tools3
 vmware-tools4	ports/emulators/vmware-tools4
 vmware2		ports/emulators/vmware2
 vmware3		ports/emulators/vmware3
-vmware_xf4mod	ports/emulators/vmware_xf4mod
 vnc		ports/net/vnc
 vnc2swf		ports/net/vnc2swf
 vncrypt		ports/security/vncrypt
