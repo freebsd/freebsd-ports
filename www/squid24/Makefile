@@ -117,10 +117,14 @@ post-install:
 		strip ${PREFIX}/libexec/${file} ; \
 	fi
 .endfor
-	${MKDIR} ${PREFIX}/squid/logs
-	${CHOWN} nobody:nogroup ${PREFIX}/squid/logs
-	${MKDIR} ${PREFIX}/squid/cache
-	${CHOWN} nobody:nogroup ${PREFIX}/squid/cache
+	@if [ ! -d ${PREFIX}/squid/logs ]; then			\
+		${MKDIR} ${PREFIX}/squid/logs;		  	\
+		${CHOWN} nobody:nogroup ${PREFIX}/squid/logs;   \
+	fi
+	@if [ ! -d ${PREFIX}/squid/cache ]; then		\
+		${MKDIR} ${PREFIX}/squid/cache;			\
+		${CHOWN} nobody:nogroup ${PREFIX}/squid/cache;  \
+	fi
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
