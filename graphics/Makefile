@@ -77,6 +77,7 @@
     SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gd
+    SUBDIR += gd-nox11
     SUBDIR += gd2
     SUBDIR += gdal
     SUBDIR += gdchart
