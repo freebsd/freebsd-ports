@@ -361,6 +361,7 @@
     SUBDIR += tractorgen
     SUBDIR += traindirector
     SUBDIR += trojka
+    SUBDIR += tt
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart

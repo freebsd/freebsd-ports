@@ -1,0 +1,12 @@
+tt is an implementation of the well-known game tetris.  Quadominoes
+(groups of four squares joined orthogonally together) fall slowly down
+the screen, accumulating at the bottom, and when the pile reaches the
+top of the screen the game is over.  The pieces may be moved to the left
+or right, and rotated as they fall, with the aim of making them
+tessellate with the pieces already at the bottom of the game area.  The
+height of the stack of pieces can be reduced by filling a complete row
+of ten squares, at which point that row will disappear, and those above
+will fall down into its place.  It is possible (and desirable) to destroy
+multiple rows at once.
+
+WWW: http://www.miketaylor.org.uk/tech/tt/
