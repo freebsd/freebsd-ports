@@ -205,7 +205,6 @@
     SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
-    SUBDIR += ldapmodule
     SUBDIR += ldapsdk
     SUBDIR += libfreenet
     SUBDIR += libicq
@@ -376,6 +375,8 @@
     SUBDIR += py-adns
     SUBDIR += py-ipy
     SUBDIR += py-jabber
+    SUBDIR += py-ldap1
+    SUBDIR += py-ldap2
     SUBDIR += py-libnet
     SUBDIR += py-pcap
     SUBDIR += py-smb
