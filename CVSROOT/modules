@@ -8126,6 +8126,7 @@ spamass-milter	ports/mail/spamass-milter
 spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
 spamd		ports/mail/spamd
+spamguard	ports/mail/spamguard
 spamoracle	ports/mail/spamoracle
 spamprobe	ports/mail/spamprobe
 spamstats	ports/mail/spamstats
