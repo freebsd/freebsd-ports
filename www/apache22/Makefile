@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://ftp.epix.net/apache/dist/httpd/ \
 		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
 		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/
-DISTNAME=	httpd-${PORTVERSION}-beta
+DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
