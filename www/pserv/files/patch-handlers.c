@@ -1,6 +1,6 @@
---- sources/handlers.c.orig	Fri May 21 16:58:26 2004
-+++ sources/handlers.c	Wed Sep 15 14:47:49 2004
-@@ -24,6 +24,7 @@
+--- sources/handlers.c.orig	Fri Nov  5 23:04:15 2004
++++ sources/handlers.c	Wed Nov 24 15:12:55 2004
+@@ -25,6 +25,7 @@
  #endif
  
  extern char cgiRoot[MAX_PATH_LEN+1];         /* root for CGI scripts exec */
@@ -8,7 +8,7 @@
  extern int  port;                            /* server port */
  extern char defaultFileName[MAX_PATH_LEN+1]; /* default name for index, default or similar file */
  
-@@ -263,6 +264,14 @@
+@@ -323,6 +324,14 @@
          
          i = 0;
  	/* beware of not overfilling this array, check MAX_ENVP_LEN */
@@ -23,7 +23,7 @@
          strcpy(newEnvp[i], "SERVER_SOFTWARE=");
          strcat(newEnvp[i], SERVER_SOFTWARE_STR);
          strcat(newEnvp[i], "/");
-@@ -285,6 +294,11 @@
+@@ -345,6 +354,11 @@
  	strcat(newEnvp[i++], req.userAgent);
  	strcpy(newEnvp[i], "SCRIPT_FILENAME=");
  	strcat(newEnvp[i++], completedPath);
@@ -35,7 +35,7 @@
          newEnvp[i] = NULL;
          
          /* we change the current working directory to the scripts one */
-@@ -317,8 +331,252 @@
+@@ -377,8 +391,237 @@
      return 0;
  }
  
@@ -120,24 +120,9 @@
 +            else if (!howMany)
 +                printf("Nothing read from script pipe.\n");
 +            else {
-+                pipeReadBuf[howMany] = '\0';
-+                if (send(sock, pipeReadBuf, howMany, 0) < 0)
-+                {
-+                    printf("error during CGI sock writing! %d\n", errno);
-+                    if (errno == EAGAIN)
-+                        printf("output resource temporarily not available\n");
-+                    else if (errno == EPIPE)
-+                    {
-+                        printf("broken pipe during CGI out.\n");
-+                        fatal = YES;
-+                    } else if (errno == EBADF)
-+                    {
-+#ifdef PRINTF_DEBUG
-+                        printf("invalid out descriptor.\n");
-+#endif
-+                        fatal = YES;
-+                    }
-+                } else
++                if (sendChunk(sock, pipeReadBuf, howMany) < 0)
++                    fatal = YES;
++                else
 +                    totalSentFromPipe += howMany;
 +            }
 +        }
