@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/03 19:27:57 gj Exp $
 #
 
 DISTNAME=	xemacs-20.2
@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 STRIP=
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
+		--statedir=/var/run \
 		--with-sound=native \
 		--site-includes=/usr/local/include \
 		--site-libraries=/usr/local/lib \
@@ -52,5 +53,9 @@ post-install:
 	gnudoit xemacs-20.2
 	strip ${PREFIX}/bin/${file}
 .endfor
+# ``make install'' does not set the permissions like pkg_add does.
+	chmod 1777 /var/run/xemacs/lock
+	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
+	chmod 755 ${PREFIX}/share/xemacs/site-lisp
 
 .include <bsd.port.mk>
