@@ -1,0 +1,121 @@
+*** ./docs/reference.tmpl.orig	Mon Nov  7 15:50:52 1994
+--- ./docs/reference.tmpl	Mon Aug  5 06:34:20 1996
+***************
+*** 988,994 ****
+       let String = "new.file"
+       let x = (String == "new.file")
+       let y = ("file1" == "file2")
+!      let Bing = "\a\a\a"
+       let Here = Cwd        # Store the value of the current working directory
+       let Input = Read()                       # Read from stdin
+       let Test = FileName(ReadFile) - ".data"
+--- 988,994 ----
+       let String = "new.file"
+       let x = (String == "new.file")
+       let y = ("file1" == "file2")
+!      let Bing = "\verb+\a+\verb+\a+\verb+\a+"
+       let Here = Cwd        # Store the value of the current working directory
+       let Input = Read()                       # Read from stdin
+       let Test = FileName(ReadFile) - ".data"
+***************
+*** 996,1002 ****
+       let y = scan(Read(), "%lf")
+       let File = "STRING_23.4"
+       let number = scan("%*[_A-Z]%lf", File)
+!      let Message = "A tab \t and a newline\n"
+  \end{verbatim}
+  @ifhelp
+  
+--- 996,1002 ----
+       let y = scan(Read(), "%lf")
+       let File = "STRING_23.4"
+       let number = scan("%*[_A-Z]%lf", File)
+!      let Message = "A tab \verb+\t+ and a newline\verb+\n+"
+  \end{verbatim}
+  @ifhelp
+  
+***************
+*** 1800,1806 ****
+  
+              /* You have full use of math and stdio libraries too!!! */
+              fprintf(stderr,
+!             "BTW, Did you know that %lf is the sqrt(pi)?\n", sqrt(M_PI));
+  
+              half_n = n >>1;  /* half of n */
+              for (i=0;i<half_n;i++) { /* Standard C: indices from 0 to data-1 */
+--- 1800,1806 ----
+  
+              /* You have full use of math and stdio libraries too!!! */
+              fprintf(stderr,
+!             "BTW, Did you know that %lf is the sqrt(pi)?\verb+\n+", sqrt(M_PI));
+  
+              half_n = n >>1;  /* half of n */
+              for (i=0;i<half_n;i++) { /* Standard C: indices from 0 to data-1 */
+***************
+*** 2800,2806 ****
+  \nopagebreak\begin{verbatim}
+       set output stdout
+       cmode
+!          print x, y, "\n"
+  \end{verbatim}
+  @ifhelp
+  
+--- 2800,2806 ----
+  \nopagebreak\begin{verbatim}
+       set output stdout
+       cmode
+!          print x, y, "\verb+\n+"
+  \end{verbatim}
+  @ifhelp
+  
+***************
+*** 2830,2836 ****
+       cmode
+           print x+2
+           print String, x, y, z
+!          print "Warning \a\a\a", "x = ", x, "\n"
+  \end{verbatim}
+  
+  \Seealso
+--- 2830,2836 ----
+       cmode
+           print x+2
+           print String, x, y, z
+!          print "Warning \verb+\a+\verb+\a+\verb+\a+", "x = ", x, "\verb+\n+"
+  \end{verbatim}
+  
+  \Seealso
+***************
+*** 2876,2882 ****
+                   b += a 
+                   a = c 
+               } 
+!              print "\n"
+           } 
+           # The following 'for' loop is equivalent to the preceding fib()
+           proc fib2(x) {
+--- 2876,2882 ----
+                   b += a 
+                   a = c 
+               } 
+!              print "\verb+\n+"
+           } 
+           # The following 'for' loop is equivalent to the preceding fib()
+           proc fib2(x) {
+***************
+*** 2885,2891 ****
+               for(a=0,b=1;b<x;c=b,b+=a,a=c) {
+                   print b
+               }
+!              print "\n"
+           }
+           fib(1000)  # A procedure as called from C-calculator mode.
+      fmode
+--- 2885,2891 ----
+               for(a=0,b=1;b<x;c=b,b+=a,a=c) {
+                   print b
+               }
+!              print "\verb+\n+"
+           }
+           fib(1000)  # A procedure as called from C-calculator mode.
+      fmode
