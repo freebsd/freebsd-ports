@@ -493,6 +493,7 @@
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Request-WithApacheSession
     SUBDIR += p5-Maypole
+    SUBDIR += p5-Maypole-Authentication-UserSessionCookie
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-POE-Component-Server-HTTP
     SUBDIR += p5-ParallelUA
