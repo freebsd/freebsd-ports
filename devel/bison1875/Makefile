@@ -28,8 +28,8 @@ MAN1=			bison.1
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-		's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g'
+	@${PERL} -pi -e 's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g' \
+		${WRKSRC}/configure ${WRKSRC}/intl/gettextP.h
 
 post-install:
 	install-info ${PREFIX}/info/bison.info ${PREFIX}/info/dir
