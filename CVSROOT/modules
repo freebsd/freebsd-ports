@@ -1338,6 +1338,7 @@ falconseye	ports/games/falconseye
 false		src/usr.bin/false
 fam		ports/devel/fam
 fampp		ports/devel/fampp
+farblazer	ports/games/farblazer
 fasta		ports/biology/fasta
 fasta3		ports/biology/fasta3
 fastboot	src/sbin/fastboot
