@@ -3,12 +3,12 @@
 # Date created:		03 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.11 1995/08/14 11:52:36 asami Exp $
+# $Id: Makefile,v 1.12 1996/07/17 03:57:57 asami Exp $
 #
 
 DISTNAME=	pine3.95
 PKGNAME=	pine-3.95
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
 post-install:

@@ -3,11 +3,11 @@
 # Date created:		23 June 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.2 1996/07/09 21:24:41 asami Exp $
+# $Id: Makefile,v 1.3 1996/10/31 19:25:50 markm Exp $
 #
 
 DISTNAME=	exim-0.57
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
 DISTFILES=	exim-0.57.tar.gz exim-texinfo-0.57.tar.gz
 

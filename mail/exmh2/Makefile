@@ -3,11 +3,11 @@
 # Date released:		10 Oct 96
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1996/10/15 11:27:26 peter Exp $
 #
 
 DISTNAME=	exmh-1.6.9
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 

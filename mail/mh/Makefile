@@ -3,12 +3,12 @@
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.8 1996/04/26 08:42:49 asami Exp $
+# $Id: Makefile,v 1.9 1996/04/27 19:16:34 pst Exp $
 #
 
 DISTNAME=	mh-6.8.3
 PKGNAME=	mh-6.8.4
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 EXTRACT_SUFX=	.tar.Z
 

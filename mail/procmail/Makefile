@@ -3,12 +3,12 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.19 1995/06/26 05:00:44 ache Exp $
+# $Id: Makefile,v 1.20 1995/12/28 16:02:43 ache Exp $
 #
 
 DISTNAME=       procmail-3.11pre4
 PKGNAME=        procmail-3.11p4
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
 INSTALL_TARGET= install-suid install.man
 

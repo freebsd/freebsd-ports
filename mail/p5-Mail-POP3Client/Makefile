@@ -3,12 +3,12 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:58:34 jfitz Exp $
+#   $Id: Makefile,v 1.1.1.1 1996/10/24 13:44:50 jfitz Exp $
 #
 
 DISTNAME=	POP3Client-1_14
 PKGNAME=	p5-Mail-POP3Client-1.14
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Mail/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Mail/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Mail/ \

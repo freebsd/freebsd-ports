@@ -3,17 +3,16 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id $
+# $Id$
 #
 
 DISTNAME=	fetchmail-1.9
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
-
-GNU_CONFIGURE=	yes
 
 MAINTAINER=	ve@sci.fi
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${CFLAGS}"
 
 post-install:
