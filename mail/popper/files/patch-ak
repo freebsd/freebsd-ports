@@ -1,0 +1,72 @@
+*** pop_parse.c.old	Wed Nov 19 14:20:38 1997
+--- pop_parse.c	Sat Jun 27 22:58:17 1998
+*************** char        *   buf;        /*  Pointer 
+*** 26,31 ****
+--- 26,32 ----
+  {
+      char            *   mp;
+      register int        i;
++     register int        parmlen;
+      
+      /*  Loop through the POP command array */
+      for (mp = buf, i = 0; ; i++) {
+*************** char        *   buf;        /*  Pointer 
+*** 45,52 ****
+          /*  Point to the start of the token */
+          p->pop_parm[i] = mp;
+  
+          /*  Search for the first space character (end of the token) */
+!         while (!isspace(*mp) && *mp) mp++;
+  
+          /*  Delimit the token with a null */
+          if (*mp) *mp++ = 0;
+--- 46,75 ----
+          /*  Point to the start of the token */
+          p->pop_parm[i] = mp;
+  
++         /*  Start counting the length of this token */
++         parmlen = 0;
++ 
+          /*  Search for the first space character (end of the token) */
+!         while (!isspace(*mp) && *mp) {
+!             mp++;
+!             parmlen++;
+!             if (parmlen > MAXPARMLEN) {
+!                 /* Truncate parameter to the max. allowable size */
+!                 *mp = '\0';
+! 
+!                 /* Fail with an appropriate message */
+!                 if (i == 0) {
+!                     pop_msg(p,POP_FAILURE,
+!                             "Command \"%s\" (truncated) exceedes maximum permitted size.",
+!                             p->pop_command);
+!                 } else {
+!                     pop_msg(p,POP_FAILURE,
+!                             "Argument %d \"%s\" (truncated) exceeds maximum permitted size.",
+!                             i, p->pop_parm[i]);
+!                 }
+!                 return(-1);
+!             }
+!         }
+  
+          /*  Delimit the token with a null */
+          if (*mp) *mp++ = 0;
+*** popper.h.old	Sun Jun 28 12:58:15 1998
+--- popper.h	Sun Jun 28 11:56:10 1998
+***************
+*** 59,65 ****
+  #define MAXMSGLINELEN   MAXLINELEN
+  #define MAXCMDLEN       4
+  #define MAXPARMCOUNT    5
+! #define MAXPARMLEN      10
+  #define ALLOC_MSGS  20
+  
+  #ifndef OSF1
+--- 59,65 ----
+  #define MAXMSGLINELEN   MAXLINELEN
+  #define MAXCMDLEN       4
+  #define MAXPARMCOUNT    5
+! #define MAXPARMLEN      32      /*  Large enough for 32-byte APOP parm. */
+  #define ALLOC_MSGS  20
+  
+  #ifndef OSF1
