@@ -1,0 +1,7 @@
+bin/cpu
+etc/cpu.conf
+lib/libcputil.a
+lib/libcputil.la
+lib/libcputil.so.0
+%%DATADIR%%/cpu.conf.doc
+%%DATADIR%%/test.ldif

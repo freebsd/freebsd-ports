@@ -1,0 +1,7 @@
+CPU is an LDAP user management tool written in C and loosely based
+on FreeBSD's pw(8). The goal of CPU is to be a suitable replacement
+of the useradd/usermod/userdel utilities for administrators using
+an LDAP backend and wishing to have a suite of command line tools
+for doing the administration.
+
+WWW: http://cpu.sourceforge.net/

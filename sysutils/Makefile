@@ -61,6 +61,7 @@
     SUBDIR += cotty
     SUBDIR += cpbk
     SUBDIR += cpdup
+    SUBDIR += cpu
     SUBDIR += cpuburn
     SUBDIR += crashme
     SUBDIR += cronolog
