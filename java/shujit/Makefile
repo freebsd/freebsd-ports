@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/10 23:56:44 steve Exp $
 #
 
 DISTNAME=	shujit-0.2.10
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/lang/jdk
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400002
-BUILD_DEPENDS=	${PREFIX}/bin/egcc:${PORTSDIR}/lang/egcs
+BUILD_DEPENDS+=	${PREFIX}/bin/egcc:${PORTSDIR}/lang/egcs
 .endif
 
 WRKSRC=		${WRKDIR}/shujit
