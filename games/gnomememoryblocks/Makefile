@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gnomememoryblocks
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	games gnome
-# This should be ${MASTER_SITE_SOURCEFORGE} but doesn't appear to be
-# linked in the right places at the moment
-MASTER_SITES=	http://gnome-memblocks.sourceforge.net/downloads/ \
-		ftp://gnome-memblocks.sourceforge.net/pub/gnome-memblocks/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnome-memblocks
 DISTNAME=	gnome-memblocks-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
@@ -23,13 +21,20 @@ RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
