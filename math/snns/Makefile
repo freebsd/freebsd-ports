@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/SNNS/ \
 DISTNAME=	SNNSv${PORTVERSION}
 DISTNAME=	SNNSv${PORTVERSION}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
 
 USE_XLIB=	yes
