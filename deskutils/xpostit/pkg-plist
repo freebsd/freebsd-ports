@@ -1,0 +1,4 @@
+bin/xpostit
+lib/X11/app-defaults/XPostit
+lib/X11/app-defaults/XPostit-color
+man/man1/xpostit.1.gz
