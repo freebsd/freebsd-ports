@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libXv
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
