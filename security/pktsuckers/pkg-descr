@@ -1,0 +1,7 @@
+The two programs tcpsuck and udpsuck run out of the Inetd daemon on
+unused ports. They log the contents of packets or connections to these
+ports. This allows you to read the contents of the network strobe
+attacks on your machine. It also slows the strobes down, as they think
+you're actually running a service on several ports when you aren't.
+
+Warren Toomey, wkt@cs.adfa.edu.au

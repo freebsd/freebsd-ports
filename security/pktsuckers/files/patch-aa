@@ -1,0 +1,26 @@
+--- Makefile.orig	Mon May 31 20:32:49 1999
++++ Makefile	Tue Jun  1 13:17:49 1999
+@@ -3,8 +3,8 @@
+ # $Date: 1999/06/01 03:32:48 $
+ #
+ 
+-DESTDIR= /usr/local/libexec
+-CFLAGS= -Wall
++DESTDIR= ${PREFIX}/libexec
++CFLAGS?= -Wall
+ LDFLAGS= -static
+ 
+ all:	tcpsuck udpsuck
+@@ -16,10 +16,10 @@
+ 	@echo ''
+ 
+ tcpsuck: tcpsuck.o dump_pkt.o
+-	cc -o tcpsuck $(LDFLAGS) tcpsuck.o dump_pkt.o
++	${CC} ${CFLAGS} -o tcpsuck $(LDFLAGS) tcpsuck.o dump_pkt.o
+ 
+ udpsuck: udpsuck.o dump_pkt.o
+-	cc -o udpsuck $(LDFLAGS) udpsuck.o dump_pkt.o
++	 ${CC} ${CFLAGS} -o udpsuck $(LDFLAGS) udpsuck.o dump_pkt.o
+ 
+ clean:
+ 	rm -f *.o *.BAK *.core tcpsuck udpsuck
