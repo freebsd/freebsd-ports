@@ -66,6 +66,10 @@ PKGMESSIN=	pkg-message.in
 BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
