@@ -1,7 +1,7 @@
-*** server_config.sample.orig	Wed Oct 30 15:27:55 1996
---- server_config.sample	Thu Jan 30 23:00:04 1997
+*** server_config.sample.orig	Thu Mar 27 09:04:06 1997
+--- server_config.sample	Fri Mar 28 15:45:53 1997
 ***************
-*** 15,21 ****
+*** 16,22 ****
   FascistLogging no
   PrintMotd yes
   KeepAlive yes
@@ -9,7 +9,7 @@
   RhostsAuthentication no
   RhostsRSAAuthentication yes
   RSAAuthentication yes
---- 15,21 ----
+--- 16,22 ----
   FascistLogging no
   PrintMotd yes
   KeepAlive yes

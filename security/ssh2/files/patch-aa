@@ -1,7 +1,7 @@
-*** make-ssh-known-hosts.pl.in.orig	Wed Oct 30 15:27:47 1996
---- make-ssh-known-hosts.pl.in	Thu Jan 30 23:00:02 1997
+*** make-ssh-known-hosts.pl.in.orig	Thu Mar 27 09:04:06 1997
+--- make-ssh-known-hosts.pl.in	Fri Mar 28 15:11:19 1997
 ***************
-*** 81,87 ****
+*** 84,90 ****
   $debug = 5;
   $defserver = '';
   $bell='\a';
@@ -9,7 +9,7 @@
   $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
   $timeout = 60;
   $ping_timeout = 3;
---- 81,87 ----
+--- 84,90 ----
   $debug = 5;
   $defserver = '';
   $bell='\a';

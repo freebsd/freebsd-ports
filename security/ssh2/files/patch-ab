@@ -1,7 +1,7 @@
-*** configure.orig	Wed Oct 30 15:27:56 1996
---- configure	Thu Jan 30 23:03:12 1997
+*** configure.orig	Thu Mar 27 09:04:06 1997
+--- configure	Fri Mar 28 15:18:56 1997
 ***************
-*** 1331,1342 ****
+*** 1634,1645 ****
   
   export CFLAGS CC
   
@@ -13,36 +13,36 @@
 - 
   
   echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
-  if test "$cross_compiling" = yes; then
---- 1331,1336 ----
+  echo "configure:1646: checking that the compiler works" >&5
+--- 1634,1639 ----
 ***************
-*** 2264,2270 ****
+*** 2632,2638 ****
   
   fi
   
 ! for ac_hdr in unistd.h rusage.h sys/time.h lastlog.h utmp.h shadow.h
   do
-  ac_safe=`echo "$ac_hdr" | tr './\055' '___'`
+  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
   echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
---- 2258,2264 ----
+--- 2626,2632 ----
   
   fi
   
 ! for ac_hdr in unistd.h rusage.h sys/time.h lastlog.h login_cap.h utmp.h shadow.h
   do
-  ac_safe=`echo "$ac_hdr" | tr './\055' '___'`
+  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
   echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
 ***************
-*** 5140,5146 ****
-  EOF
+*** 6696,6702 ****
+  
   cat >> $CONFIG_STATUS <<EOF
   
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.3/Makefile"}
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.4/Makefile"}
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 5134,5140 ----
-  EOF
+--- 6690,6696 ----
+  
   cat >> $CONFIG_STATUS <<EOF
   
 ! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl"}
@@ -50,16 +50,13 @@
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
 ***************
-*** 5332,5338 ****
---- 5326,5336 ----
+*** 6900,6905 ****
+--- 6894,6901 ----
     done
   
     for ac_config_dir in gmp-2.0.2-ssh-2; do
 +   
 + continue # XXX don't configure gmp
   
-+       # Do not complain, so a configure script can configure whichever
-+       # parts of a large source tree are present.
       # Do not complain, so a configure script can configure whichever
       # parts of a large source tree are present.
-      if test ! -d $srcdir/$ac_config_dir; then
