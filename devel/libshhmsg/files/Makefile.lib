@@ -9,7 +9,8 @@ NOPROFILE=	yes
 NOOBJ=	yes
 
 INCS=	shhmsg.h
-INCDIR=	${PREFIX}/include
+INCSDIR=${PREFIX}/include
+INCDIR=	${PREFIX}		# for 4.x bsd.lib.mk
 
 CFLAGS+=	-DHAVE_STRERROR
 
