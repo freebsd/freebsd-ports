@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	patrick@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to listen to your own MP3's away from home
 
 GNU_CONFIGURE=	yes

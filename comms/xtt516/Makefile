@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tux.org/~bball/tt516/
 DISTNAME=	xtt516-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	patrick@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	GUI for TenTec Argonaut V
 
 LIB_DEPENDS=	xclass.0:${PORTSDIR}/x11-toolkits/xclass

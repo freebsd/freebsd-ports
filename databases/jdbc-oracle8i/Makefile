@@ -14,7 +14,7 @@ DISTNAME=	classes111_01.
 EXTRACT_SUFX=	zip
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	patrick@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	The JDBC drivers for Oracle 8.1.6
 
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11

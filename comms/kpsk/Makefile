@@ -11,7 +11,7 @@ CATEGORIES=	comms kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kpsk
 
-MAINTAINER=	patrick@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSK31 digital radio communications application for the KDE 3.x 
 
 LIB_DEPENDS=    db4:${PORTSDIR}/databases/db4
