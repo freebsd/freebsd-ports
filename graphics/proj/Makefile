@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=       proj
-PORTVERSION=	4.4.5
-PORTREVISION=	1
+PORTVERSION=	4.4.9
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${NADFILES}
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Cartographic Projections library
 
-NADFILES=	proj-nad27-1.1.tar.gz
+NADFILES=	proj-nad27-1.2.tar.gz
 
 USE_INC_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
