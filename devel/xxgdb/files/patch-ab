@@ -1,0 +1,13 @@
+--- Imakefile.orig	Tue Jun 20 07:20:55 1995
++++ Imakefile	Fri Nov 17 21:27:09 2000
+@@ -79,6 +79,10 @@
+ # Add to open all windows at startup
+ #DEFINES+=-DOPEN_ALL_WINDOWS
+ 
++#ifdef FreeBSDArchitecture
++DEFINES = $(DEFGDB)
++#endif
++
+ mallocc = #malloc.c
+ malloco = #malloc.o
+ 
