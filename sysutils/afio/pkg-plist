@@ -1,5 +1,4 @@
 bin/afio
-man/man1/afio.1.gz
 share/doc/afio/README
 share/doc/afio/SCRIPTS
 share/example/afio/afiodump.example

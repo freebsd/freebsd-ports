@@ -1,5 +1,4 @@
 sbin/lsof
-man/man1/lsof.1.gz
 share/lsof/00MANIFEST
 share/lsof/00README
 share/lsof/big_brother.perl5
