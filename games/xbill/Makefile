@@ -3,7 +3,7 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1995/04/11 00:20:20 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/09/12 10:29:41 asami Exp $
 #
 
 DISTNAME=	xbill-1.1
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/games/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	asami@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xbill
