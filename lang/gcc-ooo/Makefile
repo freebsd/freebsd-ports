@@ -24,8 +24,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	openoffice@FreeBSD.org
 COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
-BROKEN=		Incomplete pkg-plist
-
 NO_LATEST_LINK=	yes
 
 USE_BISON=	yes
@@ -49,12 +47,14 @@ SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${WRKDIR}/build
 SUFFIX=		-ooo
-TARGLIB=	${PREFIX}/lib/gcc-ooo/${CONFIGURE_TARGET}/${PORTVERSION}
+TARGLIB=	${PREFIX}/gcc-ooo/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
+		--libdir=${TARGLIB}/lib \
+		--libexecdir=${TARGLIB}/libexec \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -104,24 +104,13 @@ post-install: fake-manpages
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
-	# These libraries are moved from PREFIX/lib to avoid conflicts with
-	# the stock compiler.
-.for f in libstdc++ libsupc++ ${EXTRA_SHLIB}
-	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
-.endfor
-#	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	${RM} -f ${PREFIX}/lib/libiberty.a
-	${RM} -f ${TARGLIB}/*.la
-	# Handle target libraries.
-	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} include/gnu
+.for d in gcc-ooo
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-ooo/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-ooo 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
