@@ -8,7 +8,6 @@ for more information.
 --
 
 This port will not work on FreeBSD 2.0, nor will it work on earlier snapshots.
-This is due to a bug in vprintf in the C library. On FreeBSD earlier than
-2.0.5, setuid scrips may be insecure or may not work.
+This is due to a bug in vprintf in the C library.
 
 - MarkM
