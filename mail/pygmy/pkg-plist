@@ -43,5 +43,9 @@ share/pygmy/prefs.pyo
 share/pygmy/pygmy
 share/pygmy/pygmymailbox.pyc
 share/pygmy/pygmymailbox.pyo
+share/pygmy/sendmail.pyc
+share/pygmy/sendmail.pyo
+share/pygmy/smileys.pyc
+share/pygmy/smileys.pyo
 @dirrm share/pygmy/icons
 @dirrm share/pygmy
