@@ -2100,7 +2100,6 @@ gnome-themes-extras	ports/x11-toolkits/gnome-themes-extras
 gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
 gnome2		ports/x11/gnome2
-gnome2-devel	ports/devel/gnome2-devel
 gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets2	ports/x11/gnomeapplets2
