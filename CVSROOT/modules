@@ -1864,6 +1864,7 @@ epstool		ports/graphics/epstool
 epydoc		ports/devel/epydoc
 erc		ports/irc/erc
 eric		ports/devel/eric
+eris		ports/devel/eris
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
 erlang_xmlrpc	ports/net/erlang_xmlrpc
