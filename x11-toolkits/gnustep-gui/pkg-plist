@@ -84,6 +84,8 @@ System/Headers/AppKit/NSMenuView.h
 System/Headers/AppKit/NSNibConnector.h
 System/Headers/AppKit/NSNibDeclarations.h
 System/Headers/AppKit/NSNibLoading.h
+%%DEVEL%%System/Headers/AppKit/NSOpenGL.h
+%%DEVEL%%System/Headers/AppKit/NSOpenGLView.h
 System/Headers/AppKit/NSOpenPanel.h
 System/Headers/AppKit/NSOutlineView.h
 System/Headers/AppKit/NSPageLayout.h
@@ -532,6 +534,7 @@ System/Libraries/Resources/PrinterTypes/English.lproj/Xerox_DocuTech_90.ppd
 System/Libraries/Resources/PrinterTypes/English.lproj/Xerox_MajestiK_5765.ppd
 System/Libraries/Resources/PrinterTypes/French.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/German.lproj/Linotronic_300.ppd
+%%DEVEL%%System/Libraries/Resources/PrinterTypes/GSProlog.ps
 System/Libraries/Resources/PrinterTypes/Italian.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/Printers
 System/Libraries/Resources/PrinterTypes/Spanish.lproj/Linotronic_300.ppd
@@ -541,37 +544,29 @@ System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj/Localizable.strin
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
-System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Info.plist
-@exec ln -sf ../Resources %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
-@unexec rm -f %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
+%%NODEVEL%%System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Info.plist
+%%NODEVEL%%@exec ln -sf ../Resources %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
+%%NODEVEL%%@unexec rm -f %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info.plist
+%%NODEVEL%%System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info.plist
 System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RTFConverter
-System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
-@exec ln -sf ../Resources %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
-@unexec rm -f %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
+%%NODEVEL%%System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
+%%NODEVEL%%@exec ln -sf ../Resources %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
+%%NODEVEL%%@unexec rm -f %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
+%%NODEVEL%%System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
 System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
-%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Contents/Info.plist
-%%DEVEL%%@exec ln -sf ../Resources %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
-%%DEVEL%%@unexec rm -f %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
-%%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Info.plist
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
 %%DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
-%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Contents/Info.plist
-%%DEVEL%%@exec ln -sf ../Resources %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
-%%DEVEL%%@unexec rm -f %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
 %%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
 %%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
-%%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/Resources/Info.plist
 %%DEVEL%%System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
 System/Library/Model/ColorPanel.gmodel
 System/Library/Model/SavePanel.gmodel
@@ -603,26 +598,24 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 %%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
 %%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
 %%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
-%%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Contents
 %%DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle
 %%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
 %%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
 %%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
-%%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/Contents
 %%DEVEL%%@dirrm System/Library/ColorPickers/WheelPicker.bundle
 %%DEVEL%%@dirrm System/Library/ColorPickers
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/libgmodel.bundle/Resources
-@dirrm System/Library/Bundles/libgmodel.bundle/Contents
+%%NODEVEL%%@dirrm System/Library/Bundles/libgmodel.bundle/Contents
 @dirrm System/Library/Bundles/libgmodel.bundle
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
-@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents
+%%NODEVEL%%@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
 @dirrm System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj
