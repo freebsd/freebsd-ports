@@ -102,7 +102,24 @@
   		    continue;	/* else fall */
   	    case '>': 
 ***************
-*** 1312,1330 ****
+*** 818,824 ****
+      if (utmped)
+  	return utmped;
+  
+!     if ((uf = fopen ("/etc/utmp", "r")) == NULL)
+  	return NOTOK;
+  
+      while (fread ((char *) &ut, sizeof ut, 1, uf) == 1)
+--- 859,865 ----
+      if (utmped)
+  	return utmped;
+  
+!     if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
+  	return NOTOK;
+  
+      while (fread ((char *) &ut, sizeof ut, 1, uf) == 1)
+***************
+*** 1314,1332 ****
   		    fl.l_whence = 0;
   		    fl.l_start = 0;
   		    fl.l_len = 0;
@@ -122,7 +139,7 @@
   		    advise (file, "unable to perform flock on");
   		    goto out;
   		}
---- 1353,1371 ----
+--- 1355,1373 ----
   		    fl.l_whence = 0;
   		    fl.l_start = 0;
   		    fl.l_len = 0;
