@@ -16,7 +16,7 @@ DISTNAME=	kenny.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://freefall.homeip.net/code/envelope/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

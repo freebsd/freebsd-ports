@@ -10,7 +10,7 @@ PORTVERSION=	5.0792
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

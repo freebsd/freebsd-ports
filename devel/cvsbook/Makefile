@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
