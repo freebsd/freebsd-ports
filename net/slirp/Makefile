@@ -1,9 +1,9 @@
 # New ports collection makefile for:	slirp
 # Version required:	0.95f
 # Date created:		25 Aug 1995
-# Whom:			Alain Kalker <alain@Wit401402.student.utwente.nl>
+# Whom:			Alain Kalker <A.C.P.M.Kalker@student.utwente.nl>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/08/26 07:47:36 asami Exp $
 #
 
 DISTNAME=	slirp-0.95f
@@ -11,7 +11,7 @@ CATEGORIES+=	networking
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 
-MAINTAINER=	alain@Wit401402.student.utwente.nl
+MAINTAINER=	A.C.P.M.Kalker@student.utwente.nl
 
 WRKSRC=		${WRKDIR}/slirp-0.95f/src
 HAS_CONFIGURE=	yes
