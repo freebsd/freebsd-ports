@@ -3,7 +3,7 @@
 # Date created:		15 November 1996
 # Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
 #
-# $Id: Makefile,v 1.1 1996/11/16 01:51:25 jdp Exp $
+# $Id: Makefile,v 1.2 1998/04/20 11:53:25 obrien Exp $
 #
 
 DISTNAME=	gc4.12
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.parc.xerox.com/pub/gc/ \
 		http://reality.sgi.com/employees/boehm_mti/gc_source/
 
 MAINTAINER=	mmcg@cs.monash.edu.au
+
+BROKEN_ELF=	fbsd-libgc.a
 
 WRKSRC=		${WRKDIR}/gc
 MAN3=		gc.3
