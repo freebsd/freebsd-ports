@@ -1,0 +1,11 @@
+--- mew-key.el~	Wed Jul 18 08:19:11 2001
++++ mew-key.el	Fri Aug  3 11:30:10 2001
+@@ -507,7 +507,7 @@
+ ;;;
+ 
+ (defvar mew-icon-directory (if (fboundp 'locate-data-directory)
+-			       (locate-data-directory "mew") nil))
++			       (locate-data-directory "mew%%MEW_MAJOR_VER%%") nil))
+ 
+ (defvar mew-icon-separate nil)
+ (defvar mew-icon-blank nil)

@@ -1,45 +1,88 @@
---- info/Makefile~	Wed Oct 27 08:55:12 1999
-+++ info/Makefile	Tue Jul 10 01:25:05 2001
-@@ -33,6 +33,7 @@
+--- info/Makefile.orig	Wed Jul 18 08:20:40 2001
++++ info/Makefile	Fri Aug  3 22:19:55 2001
+@@ -28,9 +28,9 @@
+ #INSTALLINFO_OPTIONS = --section Emacs Emacs
+ #INSTALLINFO_JOPTIONS =
+ #infodir = 
+-INSTALLINFO_ARGS  = mew.info $(infodir)/dir
++INSTALLINFO_ARGS  = mew${MEW_MAJOR_VER}.info $(infodir)/dir
+ #INSTALLINFO_ARGS  = mew.info 
+-INSTALLINFO_JARGS = mew.jis.info $(infodir)/dir
++INSTALLINFO_JARGS = mew${MEW_MAJOR_VER}.jis.info $(infodir)/dir
  
- INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
- JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2
+ 
+ RM = rm -f
+@@ -44,50 +44,60 @@
+ ## DO NOT EDIT THE FOLLOWINGS
+ ##
+ 
+-INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
+-JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2
++INFO  = mew${MEW_MAJOR_VER}.info mew${MEW_MAJOR_VER}.info-1 mew${MEW_MAJOR_VER}.info-2 mew${MEW_MAJOR_VER}.info-3
++JINFO = mew${MEW_MAJOR_VER}.jis.info mew${MEW_MAJOR_VER}.jis.info-1 mew${MEW_MAJOR_VER}.jis.info-2
 +MANUALS= 00readme mew.texi
  
- info::
- 	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
-@@ -57,22 +58,32 @@
- 		$(MKDIR) $(INFODIR); \
+ all: info
+ info:
+-	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
++	sed -e "s/@setfilename mew${MEW_MAJOR_VER}\.jis\.info/@setfilename mew${MEW_MAJOR_VER}\.info/" \
+ 	    -e 's/@set jp/@set us/' mew.texi > tmp.texi
+ 	mv tmp.texi mew.texi
+-	$(RM) mew.info*
+-	$(TOUCH) mew.info
++	$(RM) mew${MEW_MAJOR_VER}.info*
++	$(TOUCH) mew${MEW_MAJOR_VER}.info
+ 	$(EMACS) -batch -q -no-site-file -l texinfmt \
+ 		-f batch-texinfo-format mew.texi
+ 
+ jinfo:
+-	sed -e 's/@setfilename mew.info/@setfilename mew.jis.info/' \
++	sed -e "s/@setfilename mew${MEW_MAJOR_VER}\.info/@setfilename mew${MEW_MAJOR_VER}\.jis.info/" \
+ 	    -e 's/@set us/@set jp/' mew.texi > tmp.texi
+ 	mv tmp.texi mew.texi
+-	$(RM) mew.jis.info*
+-	$(TOUCH) mew.jis.info
++	$(RM) mew${MEW_MAJOR_VER}.jis.info*
++	$(TOUCH) mew${MEW_MAJOR_VER}.jis.info
+ 	$(EMACS) -batch -q -no-site-file -l texinfmt \
+ 		-f batch-texinfo-format mew.texi
+ 
+ install: install-info
+ install-info:
+-	-@if [ ! -d $(infodir) ]; then \
++	-if [ ! -d $(infodir) ]; then \
+ 		$(MKDIR) $(infodir); \
  	fi; \
- 	cp $(INFO) $(INFODIR)
+-	cp $(INFO) $(infodir)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
--		$(INSTALLINFO) mew.info $(INFODIR)/dir; \
+-		$(INSTALLINFO) $(INSTALLINFO_OPTIONS) $(INSTALLINFO_ARGS); \
 -	else \
--		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
-+	${BSD_INSTALL_DATA} $(INFO) $(INFODIR)
-+	-@if [ -z "${XEMACS_VER_OVER20}" ]; then \
+-		echo "Don't forget to edit $(infodir)/dir for Mew."; \
++	${BSD_INSTALL_DATA} $(INFO) $(infodir)/
++	-if [ -z "${XEMACS_VER_OVER20}" ]; then \
 +		if [ -x "$(INSTALLINFO)" ]; then \
-+			$(INSTALLINFO) mew.info $(INFODIR)/dir; \
++			$(INSTALLINFO) $(INSTALLINFO_OPTIONS) $(INSTALLINFO_ARGS); \
 +		else \
-+			echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
++			echo "Don't forget to edit $(infodir)/dir for Mew."; \
 +		fi; \
  	fi
  
  install-jinfo:
- 	-@if [ ! -d $(INFODIR) ]; then \
- 		$(MKDIR) $(INFODIR); \
+-	-@if [ ! -d $(infodir) ]; then \
++	-if [ ! -d $(infodir) ]; then \
+ 		$(MKDIR) $(infodir); \
  	fi; \
--	cp $(JINFO) $(INFODIR)
+-	cp $(JINFO) $(infodir)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
--		$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
+-		$(INSTALLINFO) $(INSTALLINFO_JOPTIONS) $(INSTALLINFO_JARGS); \
 -	else \
--		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
-+	${BSD_INSTALL_DATA} $(JINFO) $(INFODIR)
-+	-@if [ -z "${XEMACS_VER_OVER20}" ]; then \
+-		echo "Don't forget to edit $(infodir)/dir for Mew."; \
++	${BSD_INSTALL_DATA} $(JINFO) $(infodir)/
++	-if [ -z "${XEMACS_VER_OVER20}" ]; then \
 +		if [ -x "$(INSTALLINFO)" ]; then \
-+			$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
++			$(INSTALLINFO) $(INSTALLINFO_JOPTIONS) $(INSTALLINFO_JARGS); \
 +		else \
-+			echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
++			echo "Don't forget to edit $(infodir)/dir for Mew."; \
 +		fi; \
  	fi
 +
