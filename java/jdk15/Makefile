@@ -19,7 +19,7 @@ MAINTAINER=	glewis@FreeBSD.org
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		gtar:${PORTSDIR}/archivers/gtar \
-		${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-jdk13 \
+		${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13 \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(WITHOUT_PLUGIN)
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
@@ -67,6 +67,9 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i386/jdk-image-i386
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i386/jdk-debug-image-i386
 
+SORT?=		/usr/bin/sort
+CPIO?=		/usr/bin/cpio
+
 .if defined(NODEBUG)
 PLIST_SUB+=	DEBUG:="@comment "
 PKGNAMESUFFIX=	-nodebug
@@ -102,22 +105,22 @@ IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DI
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
-		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
-		${MKDIR} -p j2sdk1.3.1/src/bsd/doc/man && \
-		${MKDIR} -p hotspot1.3.1/build/bsd && \
-		${MKDIR} -p hotspot1.3.1/build/bsd/makefiles && \
-		${MKDIR} -p hotspot1.3.1/build/bsd/package && \
-		${MKDIR} -p hotspot1.3.1/src/os/bsd/launcher && \
-		${MKDIR} -p hotspot1.3.1/src/os/bsd/vm && \
-		${MKDIR} -p hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
+		${MKDIR} j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
+		${MKDIR} j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
+		${MKDIR} j2sdk1.3.1/src/bsd/doc/man && \
+		${MKDIR} hotspot1.3.1/build/bsd && \
+		${MKDIR} hotspot1.3.1/build/bsd/makefiles && \
+		${MKDIR} hotspot1.3.1/build/bsd/package && \
+		${MKDIR} hotspot1.3.1/src/os/bsd/launcher && \
+		${MKDIR} hotspot1.3.1/src/os/bsd/vm && \
+		${MKDIR} hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
 			${PATCH} < ${WRKDIR}/jdk131.patches
 
 post-build:
 	# Prune empty dirs
-	${FIND} ${JDKIMAGEDIR} -type d | /usr/bin/sort -r | \
+	${FIND} ${JDKIMAGEDIR} -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
-	${FIND} ${JDKIMAGEDIR_G} -type d | /usr/bin/sort -r | \
+	${FIND} ${JDKIMAGEDIR_G} -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 .if !defined(NODEBUG)
@@ -130,11 +133,11 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	cd ${JDKIMAGEDIR} && /usr/bin/find . \
-	  | /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	cd ${JDKIMAGEDIR} && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(NODEBUG)
-	cd ${JDKIMAGEDIR_G} && /usr/bin/find . \
-	  | /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	cd ${JDKIMAGEDIR_G} && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}/jre/lib/ext
 
