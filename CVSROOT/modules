@@ -6070,6 +6070,7 @@ smb2www		ports/www/smb2www
 smb_auth	ports/www/smb_auth
 smbfs		src/sys/fs/smbfs
 smbtcpdump	ports/net/smbtcpdump
+smiley		ports/games/smiley
 sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
 sml-nj-devel	ports/lang/sml-nj-devel
