@@ -1,14 +1,14 @@
 bin/rexx
-bin/rxque
-bin/rxstack
 bin/rxmathfn.rxfn
 bin/rxmathfn.rxlib
-lib/librexx.a
-lib/librexx.so.2.0
-lib/librexx.so
+bin/rxque
+bin/rxstack
 include/rexxsaa.h
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/librexx.a
+lib/librexx.so
+lib/librexx.so.2
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/rexx-imc/README
 share/doc/rexx-imc/README.bugreport
 share/doc/rexx-imc/README.docs
@@ -20,4 +20,4 @@ share/doc/rexx-imc/rexx.info
 share/doc/rexx-imc/rexx.ref
 share/doc/rexx-imc/rexx.summary
 share/doc/rexx-imc/rexx.tech
-@dirrm share/doc/rexx-imc/
+@dirrm share/doc/rexx-imc
