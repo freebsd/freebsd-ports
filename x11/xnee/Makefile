@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	0.7.a2
+PORTVERSION=	0.7.2
 CATEGORIES=	x11
-MASTER_SITES=	http://xnee.sourceforge.net/tars/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_/}
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	@${PERL} -pi -e 's,^CFLAGS =,CFLAGS +=,' ${WRKSRC}/src/cli/Makefile.in \
-		${WRKSRC}/src/lib/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CFLAGS = |CFLAGS = @CFLAGS@ |g'
 
 .include <bsd.port.mk>
