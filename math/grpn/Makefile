@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grpn
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	math gnome
 MASTER_SITES=	http://wilkins.ne.mediaone.net/grpn/
 
