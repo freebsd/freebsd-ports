@@ -1,3 +1,4 @@
+bin/vqadmin
 @cwd %%CGIBINDIR%%
 vqadmin/.htaccess
 vqadmin/html/add_alias_domain.html
@@ -17,6 +18,7 @@ vqadmin/html/fi
 vqadmin/html/fr
 vqadmin/html/info_user.html
 vqadmin/html/init_error.html
+vqadmin/html/hu
 vqadmin/html/it
 vqadmin/html/ja
 vqadmin/html/main.html
