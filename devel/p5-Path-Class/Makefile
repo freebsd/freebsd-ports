@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KW/KWILLIAMS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform path specification manipulation
 
 PERL_CONFIGURE=	yes
