@@ -1,8 +1,10 @@
 %%RUBY_SITELIBDIR%%/borges.rb
-%%RUBY_SITELIBDIR%%/borges/Apache+DRb.rb
+%%RUBY_SITELIBDIR%%/borges/ApacheDRbClient.rb
+%%RUBY_SITELIBDIR%%/borges/ApacheDRbServer.rb
 %%RUBY_SITELIBDIR%%/borges/Application.rb
 %%RUBY_SITELIBDIR%%/borges/HTML.rb
 %%RUBY_SITELIBDIR%%/borges/Page.rb
+%%RUBY_SITELIBDIR%%/borges/Radical.rb
 %%RUBY_SITELIBDIR%%/borges/Renderer.rb
 %%RUBY_SITELIBDIR%%/borges/Session.rb
 %%RUBY_SITELIBDIR%%/borges/Utilities.rb
@@ -11,6 +13,8 @@
 %%RUBY_SITELIBDIR%%/borges/template_ask.rb
 %%RUBY_SITELIBDIR%%/borges/web_ask.rb
 @dirrm %%RUBY_SITELIBDIR%%/borges
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/apache/borges.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/apache/counters.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pagecounter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/status.rb
@@ -25,6 +29,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/train.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/webask.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/train
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/apache
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
