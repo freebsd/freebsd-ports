@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	automake
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
 
+DEPRECATED=	Please use devel/automake18 instead
+EXPIRATION_DATE=31st December 2004
+
 BUILD_VERSION=	15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}

@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	ade/gnu
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms
 
+DEPRECATED=	Please use devel/autoconf259 instead
+EXPIRATION_DATE=31st December 2004
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4

@@ -16,6 +16,9 @@ DISTNAME=	automake-1.4-p5
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (legacy version 1.4)
 
+DEPRECATED=	Please use devel/automake18 instead
+EXPIRATION_DATE=31st December 2004
+
 BUILD_VERSION=	14
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
