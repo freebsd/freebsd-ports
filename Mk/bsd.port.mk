@@ -793,11 +793,11 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
 .if defined(USE_AUTOMAKE)
 USE_AUTOCONF=	yes
-BUILD_DEPENDS+=		${AUTOMAKE}:${PORTSDIR}/devel/${AUTOMAKE}
+BUILD_DEPENDS+=		automake14:${PORTSDIR}/devel/automake14
 .endif
 .if defined(USE_AUTOCONF)
 GNU_CONFIGURE=	yes
-BUILD_DEPENDS+=		${AUTOCONF}:${PORTSDIR}/devel/${AUTOCONF}
+BUILD_DEPENDS+=		autoconf213:${PORTSDIR}/devel/autoconf213
 .endif
 .if defined(USE_LIBTOOL)
 GNU_CONFIGURE=	yes
