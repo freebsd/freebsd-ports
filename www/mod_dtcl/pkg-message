@@ -7,4 +7,8 @@
 
 	Note, that the dtcl.tcl mentioned in the instructions is
 	installed as /usr/local/share/doc/mod_dtcl/dtcl.tcl .
+
+	The mentioning of mod_dtcl is already in the Apache's config
+	file, but it is commented out -- you have to uncomment it
+	manually.
 -

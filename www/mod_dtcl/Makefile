@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	libapache-mod-dtcl_0.6.4-2
-PKGNAME=	mod_dtcl-0.6.4.2
+DISTNAME=	libapache-mod-dtcl_0.7.3-1
+PKGNAME=	mod_dtcl-0.7.3.1
 CATEGORIES=	www tcl82
 MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
 
@@ -43,6 +43,5 @@ do-install:
 	# but the comment in it suggests it should not be used
 	# in a "production environment"...
 .endif
-	@ ${SH} ${PKGINSTALL}
 
 .include <bsd.port.mk>
