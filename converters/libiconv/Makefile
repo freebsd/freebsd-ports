@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.7
-PORTREVISION=	5
+PORTVERSION=	1.7.0.1
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
@@ -25,6 +24,7 @@ MAN3=		iconv.3 iconv_open.3 iconv_close.3
 
 .include <bsd.port.pre.mk>
 
+# gperf 2.7.2 required
 .if ${OSVERSION} < 430000
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 GPERF=	${LOCALBASE}/bin/gperf
