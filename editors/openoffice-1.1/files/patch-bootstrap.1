@@ -1,0 +1,11 @@
+--- config_office/bootstrap.1.orig	Mon Sep 18 09:13:24 2000
++++ config_office/bootstrap.1	Fri Oct 13 17:51:37 2000
+@@ -9,6 +9,8 @@
+    make linux
+ else if ($platform == "Darwin") then
+    make macosx
++else if ($platform == "FreeBSD") then
++   make linux
+ endif
+ 
+ if "$?" != "0" exit
