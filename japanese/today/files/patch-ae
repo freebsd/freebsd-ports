@@ -1,8 +1,8 @@
---- calendar.c.orig	Fri Sep 19 20:27:37 1997
-+++ calendar.c	Fri Sep 19 20:27:00 1997
-@@ -37,7 +37,14 @@
- #include "common.h"
- #include "config.h"
+--- main.c.orig	Fri Sep 19 20:27:37 1997
++++ main.c	Fri Sep 19 20:27:01 1997
+@@ -18,7 +18,14 @@
+ #include "date.h"
+ #include "event.h"
  #include "getfile.h"
 -#include "getopt.h"
 +#ifdef __FreeBSD__
@@ -13,21 +13,21 @@
 +#else
 +  #include "getopt.h"
 +#endif
- #include "getsb.h"
+ #include "history.h"
  #include "kyureki.h"
- #include "main.h"
-@@ -909,7 +916,7 @@
+ #include "machine.h"
+@@ -710,7 +717,7 @@
  
  	va_start(ap, fmt);
  
--	fprintf(stderr, "calendar: ", func);
-+	fprintf(stderr, "calendar: %s", func);
+-	fprintf(stderr, "today: ", func);
++	fprintf(stderr, "today: %s", func);
  	if (level != ERR_INFO) {
  		fprintf(stderr, "%s: ", statname[level - ERR_WARN]);
  	}
-@@ -960,7 +967,11 @@
+@@ -726,7 +733,11 @@
  /*
-  * エラーによるプログラム中断処理
+  * インタラプトやエラーによるプログラム中断処理
   */
 +#ifndef __FreeBSD__
  void	terminate_program(int sig, int subcode)
@@ -36,4 +36,4 @@
 +#endif
  {
  	switch (sig) {
- 	case TERM_MEMERROR:
+ 	case SIGINT:

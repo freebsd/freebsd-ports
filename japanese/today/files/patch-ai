@@ -1,0 +1,24 @@
+--- today.cnf.orig	Fri Sep 19 20:27:37 1997
++++ today.cnf	Fri Sep 19 20:27:22 1997
+@@ -109,10 +109,10 @@
+ #
+ pager = 			# 外部ページャーの指定
+ 				# 指定しなければ、内蔵ページャー使用
+-pause = yes			# 内蔵ページャー 表示一時停止制御
++pause = no			# 内蔵ページャー 表示一時停止制御
+ 				#   yes 一時停止
+ 				#  *no  停止しない
+-pause_last = yes		# 内蔵ページャー 表示終了後一時停止制御
++pause_last = no			# 内蔵ページャー 表示終了後一時停止制御
+ 				#   yes 一時停止
+ 				#  *no  停止しない
+ #outputfile = %y%m%d.tdy	# 出力ファイル名 (デフォルト:%y%m%d.tdy/%p.tdy)
+@@ -214,7 +214,7 @@
+ #
+ $common				# 以降 共通環境定義部
+ 
+-#table_path = c:/tbl		# 各テーブルの検索パス名
++table_path = /usr/local/share/today	# 各テーブルの検索パス名
+ 				# ';' で区切り複数指定可能
+ 				# 未定義の場合、環境変数 TODAYTBL の場所
+ 

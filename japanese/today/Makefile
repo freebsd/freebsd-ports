@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.4 1997/09/14 17:47:20 max Exp $
+# $Id: Makefile,v 1.5 1997/09/14 21:36:10 max Exp $
 #
 
 DISTNAME=	td210bs
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
 NO_WRKSUBDIR=	yes
-PATCH_STRIP=	-p1
 
 post-extract:
 	@${ECHO_MSG} "===>  Extracting tbl file for ${DISTNAME}"
@@ -36,7 +35,6 @@ post-extract:
 		 gengo.tbl hist??.tbl history.tbl holiday.tbl magazin.tbl \
 		 monthly.tbl week.tbl; \
 	do \
-		echo $$i ; \
 		${SED} 's/.$$//' $$i | nkf -e > $$i.tmp ;\
 		${MV} -f $$i.tmp $$i ; \
 	done)
