@@ -3,7 +3,7 @@
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/04 12:15:34 tg Exp $
 
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18
@@ -35,7 +35,7 @@ post-patch:
 		${WRKSRC}/xtem
 
 post-install:
-	@${CP} ${FILESDIR}/xtem_locals_german/* \
+	@${CP} ${FILESDIR}/xtem_locals_german/[a-z]* \
 		${PREFIX}/share/xtem_locals_german
 # clean up left-overs...
 	@${RM} ${PREFIX}/share/xtem_locals_*/.nfs*
