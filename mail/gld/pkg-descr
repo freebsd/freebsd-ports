@@ -1,0 +1,10 @@
+Gld is a standalone greylisting server for Postfix.
+
+Greylisting is a new weapon to use against spam. For more information on
+this technique, see http://www.greylisting.org.
+
+This implementation listens on a TCP port and uses MySQL for storing data.
+The server supports whitelists based on sender, sender domain and client IP.
+It also supports light greylisting.
+
+WWW: http://www.gasmi.net/gld.html

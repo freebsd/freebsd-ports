@@ -1,0 +1,8 @@
+etc/gld.conf-dist
+etc/rc.d/gld.sh
+sbin/gld
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/tables.sql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
