@@ -1,3 +1,8 @@
+# $FreeBSD$
+#
+# for each PKGNAME or user option change an entry should be added in this file
+# each entry 
+
 This file documents some of the problems you may encounter when
 upgrading dspam port.  I will try my best to minimize these disruptions,
 but sometimes they are unavoidable.
@@ -9,6 +14,16 @@ This file concetrate on the FreeBSD / port specific changes and one should read
 also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
+
+#############################################################################
+# dspam-3.2.6.20050128.1500
+#
+
+- disable ORACLE DB back-end; it's unmaintained and hasn't work on FreeBSD
+- (added post-factum) Fix mysql/neural-combination
+- (added post-factum) change POSTGRESQL* to POSTGRESQL because of "Split the 
+postgresql ports into a server and a client part"
+
 
 #############################################################################
 # dspam-3.2.6

@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+# Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
+# or user variables (WITH*) changes please and an entry in ${FILESDIR}/UPDATING and
+# modify UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
+# else the port will be broken. Thanks.
+
 PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
 PORTREVISION=	0
@@ -15,10 +20,9 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
 PORTVER_MAJ=	3.2.6
-#SNAP_DATE=	.20041229.1945
+SNAP_DATE=	.20050128.1500
 
 .ifdef(SNAP_DATE)
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
 .endif
 
@@ -28,7 +32,7 @@ MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
 NO_CHECKSUM=	yes
 .	ifdef(SNAP_DATE)
 DISTFILES=	snapshot-stable.tar.gz
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .	endif
 .endif
 
@@ -57,7 +61,7 @@ OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" off
-OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
+#OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" on
 OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
@@ -80,7 +84,6 @@ OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
 
-USE_GNOME=	pkgconfig
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -94,7 +97,7 @@ CFLAGS+=	-g -DDEBUG
 
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
 
-UPD_LINE_NO=	13
+UPD_LINE_NO=	9
 
 CONFLICTS=	dspam-2* dspam-devel-[0-9]*
 
@@ -188,7 +191,7 @@ CONFIGURE_ARGS+=	--enable-homedir
 CONFIGURE_ARGS+=	--disable-trusted-user-security
 .endif
 
-DBDRV_TOTAL_COUNT=	oooooooo # 8
+DBDRV_TOTAL_COUNT=	ooooooo # 7
 DBDRV_COUNT=	${DBDRV_TOTAL_COUNT}
 
 .ifdef(WITH_MYSQL40)
@@ -411,6 +414,7 @@ post-fetch:
 .endif
 
 pre-extract:
+	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SIGNATURE_LIFE=${SIGNATURE_LIFE} (default 15)"
@@ -433,7 +437,8 @@ pre-extract:
 .for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES SPAM_SUBJ \
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST
+	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST \
+	POSTGRESQL73 POSTGRESQL74 ORACLE
 .	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
