@@ -1,0 +1,11 @@
+--- Xdefaults.orig	Sun May  9 23:01:45 1999
++++ Xdefaults	Sun May  9 23:01:10 1999
+@@ -94,7 +94,7 @@
+ 
+ ! Network Meter Resources
+ 
+-xosview*net:		False
++xosview*net:		True
+ !  Suitable for people with 28.8Kbaud with no compression, or 14.4
+ !    with compression:
+ !xosview*netBandwidth: 2000
