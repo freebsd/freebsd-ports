@@ -16,4 +16,4 @@ Much of Gwave's user interface is written in the Guile extension
 language and is therefore easily extensible for custom applications
 without recompilation.
 
-WWW: http://geda.seul.org/tools/gwave
+WWW: http://www.telltronics.org/software/gwave
