@@ -1,0 +1,10 @@
+--- agrep/agrep.c.orig	Mon May 20 14:05:35 1996
++++ agrep/agrep.c	Mon May 20 14:06:00 1996
+@@ -3,6 +3,7 @@
+  * bgopal: (1993-4) added a library interface and removed some bugs: also
+  * selectively modified many routines to work with our text-compression algo.
+  */
++#include <sys/types.h>
+ #include <sys/stat.h>
+ #include "agrep.h"
+ #include "checkfile.h"
