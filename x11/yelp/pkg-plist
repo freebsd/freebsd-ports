@@ -1,7 +1,7 @@
 bin/gnome-help
 bin/yelp
-bin/yelp-db2html
 libdata/bonobo/servers/GNOME_Yelp.server
+libexec/yelp-db2html
 share/gnome/applications/yelp.desktop
 share/gnome/images/yelp/bcg.png
 share/gnome/images/yelp/empty.png
@@ -144,6 +144,7 @@ share/locale/es/LC_MESSAGES/yelp.mo
 share/locale/et/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
+share/locale/hu/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
