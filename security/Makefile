@@ -295,6 +295,7 @@
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
+    SUBDIR += samhain
     SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += secpanel

@@ -1,0 +1,13 @@
+%%YULE%%etc/yulerc.sample
+%%YULE%%sbin/yule_setpwd
+%%YULE%%sbin/yule
+%%YULE%%etc/rc.d/yule.sh.sample
+%%YULE%%@unexec rmdir /var/lib/yule 2>/dev/null || true
+%%SAMHAIN%%sbin/samhain
+%%SAMHAIN%%etc/rc.d/samhain.sh.sample
+%%SAMHAIN%%@unexec rmdir /var/lib/samhain 2>/dev/null || true
+%%SETPWD%%sbin/samhain_setpwd
+%%PORTDOCS%%share/doc/samhain/MANUAL-1_7.ps
+%%PORTDOCS%%share/doc/samhain/MANUAL-1_7.html.tar
+%%PORTDOCS%%share/doc/samhain/HOWTO-client+server.html
+%%PORTDOCS%%@dirrm share/doc/samhain
