@@ -5,6 +5,16 @@
 -htdocsdir = $(SERVER_ROOT)/htdocs
 +htdocsdir = $(prefix)/share/@PACKAGE@@VERSION@
  
+@@ -183,3 +183,3 @@
+ TCL_GENERIC_DIR_NATIVE = @TCL_GENERIC_DIR_NATIVE@
+-TCLSH_PROG = @TCLSH_PROG@
++TCLSH_PROG ?= tclsh8.3
+ SHARED_BUILD = @SHARED_BUILD@
+@@ -198,3 +198,3 @@
+ CONFIGDIR = @CONFIGDIR@
+-mkinstalldirs = $(SHELL) $(CONFIGDIR)/mkinstalldirs
++mkinstalldirs = mkdir -p
+ CONFIG_CLEAN_FILES =
 @@ -220,3 +220,3 @@
  
 -all: binaries libraries doc
