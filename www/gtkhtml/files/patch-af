@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Sun Jun 16 16:45:03 2002
-+++ configure	Sun Jun 16 16:45:40 2002
-@@ -7012,6 +7012,7 @@
+--- configure.orig	Mon Oct  7 15:12:16 2002
++++ configure	Sat Oct 12 20:42:50 2002
+@@ -7679,6 +7679,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,12 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9321,7 +9322,7 @@
+@@ -10215,7 +10216,7 @@
  
  if test "x$enable_xim" = "xyes"; then
  	BACKUP_LDFLAGS=$LDFLAGS
 -	LDFLAGS="$LDFLAGS `gtk-config --libs`"
 +	LDFLAGS="$LDFLAGS `$GTK_CONFIG --libs`"
- 	echo "$as_me:9325: checking for gdk_im_begin" >&5
+ 	echo "$as_me:$LINENO: checking for gdk_im_begin" >&5
  echo $ECHO_N "checking for gdk_im_begin... $ECHO_C" >&6
  if test "${ac_cv_func_gdk_im_begin+set}" = set; then

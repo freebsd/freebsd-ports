@@ -1,7 +1,11 @@
---- src/gtkhtml.c.orig	Thu Oct 19 04:04:22 2000
-+++ src/gtkhtml.c	Fri Oct 20 10:40:47 2000
-@@ -2625,3 +2625,3 @@
+--- src/gtkhtml.c.orig	Wed Sep  4 20:00:35 2002
++++ src/gtkhtml.c	Wed Sep 18 21:40:55 2002
+@@ -4353,7 +4353,7 @@
+ {
+ 	gchar *rcfile;
  
--	rcfile = g_strconcat ((from_share ? PREFIX "/share/gtkhtml/" : gnome_util_user_home ()),
-+	rcfile = g_strconcat ((from_share ? PREFIX "/share/gnome/gtkhtml/" : gnome_util_user_home ()),
+-	rcfile = g_strconcat ((from_share ? PREFIX "/share/gtkhtml-" GTKHTML_RELEASE "/" : gnome_util_user_home ()),
++	rcfile = g_strconcat ((from_share ? PREFIX "/share/gnome/gtkhtml-" GTKHTML_RELEASE "/" : gnome_util_user_home ()),
  			      (from_share ? "" : "/.gnome/"), name, NULL);
+ 
+ 	if (g_file_test (rcfile, G_FILE_TEST_ISFILE))
