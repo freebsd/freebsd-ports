@@ -3,10 +3,10 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.13 1998/10/26 13:55:03 steve Exp $
+# $Id: Makefile,v 1.14 1998/11/26 05:37:10 asami Exp $
 #
 
-DISTNAME=	tkrat-1.1
+DISTNAME=	tkrat-1.2
 CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/

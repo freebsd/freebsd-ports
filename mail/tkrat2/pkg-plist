@@ -43,6 +43,10 @@ lib/tkratlib/vfolder.tcl
 lib/tkratlib/vfolderdef.tcl
 lib/tkratlib/watcher.tcl
 lib/ratatosk/ratatoskrc
+lib/tkratlib/text_balText_fr.tcl
+lib/tkratlib/text_changes_fr.tcl
+lib/tkratlib/text_help_fr.tcl
+lib/tkratlib/text_t_fr.tcl
 share/doc/tkrat/CONFIGURATION
 share/doc/tkrat/COPYRIGHT
 share/doc/tkrat/README
