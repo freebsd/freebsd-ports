@@ -56,6 +56,7 @@
     SUBDIR += jx
     SUBDIR += lesstif
     SUBDIR += libbonoboui
+    SUBDIR += libgnomeprintui
     SUBDIR += libgnomeui
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
