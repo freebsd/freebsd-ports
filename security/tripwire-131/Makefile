@@ -16,7 +16,6 @@ MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
 NO_CDROM=	"cannot be redistributed for more than the cost of duplication"
 NO_PACKAGE=	"requires local database to be built"
-RESTRICTED=	"contains crypto class algorithms"
 WRKSRC=		${WRKDIR}/tw_ASR_1.3.1_src
 
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2

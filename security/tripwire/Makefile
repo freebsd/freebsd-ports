@@ -17,7 +17,6 @@ MAINTAINER=	cy@FreeBSD.org
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
 NO_PACKAGE=	"requires local database to be built"
-RESTRICTED=	"contains crypto class algorithms"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 USE_GMAKE=	yes

@@ -18,8 +18,6 @@ MAINTAINER=	cjh@kr.freebsd.org
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
-RESTRICTED=	"Crypto"
-
 USE_ZIP=	YES
 NO_BUILD=	YES
 

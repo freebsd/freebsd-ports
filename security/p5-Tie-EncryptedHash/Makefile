@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
 		${PERLBASE}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

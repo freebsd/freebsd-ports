@@ -20,8 +20,6 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-RESTRICTED=	"Contains DES cryptography."
-
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.freebsd ${WRKSRC}/Makefile.freebsd
 

@@ -16,8 +16,6 @@ MAINTAINER=	scrappy@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

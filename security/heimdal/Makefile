@@ -24,8 +24,6 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
 
-RESTRICTED=		"Crypto; export-controlled"
-
 USE_LIBTOOL=		no	# Uses included version.
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes

@@ -16,7 +16,6 @@ DISTNAME=	Net_SSLeay.pm-${PORTVERSION}
 MAINTAINER=	shell@shellhung.org
 COMMENT=	Perl5 interface to SSL
 
-RESTRICTED=	"Cryptography"
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	"/usr"
 USE_OPENSSL=	yes

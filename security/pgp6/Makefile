@@ -25,8 +25,6 @@ COMMENT=	Public-Key encryption for the masses
 WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes
 
-RESTRICTED=	"Crypto"
-
 MAN1=		pgp.1
 
 LATEST_LINK=	pgp6

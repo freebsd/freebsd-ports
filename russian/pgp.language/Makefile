@@ -15,8 +15,6 @@ MAINTAINER=	ache@FreeBSD.org
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
 
-RESTRICTED=	"Crypto"
-
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
