@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.3
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
@@ -19,31 +19,23 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-
-PLIST_DIRS=	rkhunter/scripts rkhunter/db rkhunter/docs rkhunter/tmp rkhunter
-PLIST_FILES=	rkhunter/scripts/check_modules.pl \
-		rkhunter/scripts/check_port.pl \
-		rkhunter/scripts/filehashmd5.pl \
-		rkhunter/scripts/filehashsha1.pl \
-		bin/rkhunter \
-		etc/rkhunter.conf \
-		rkhunter/scripts/showfiles.pl \
-		rkhunter/db/backdoorports.dat \
-		rkhunter/db/mirrors.dat \
-		rkhunter/db/os.dat \
-		rkhunter/db/defaulthashes.dat \
-		rkhunter/db/md5blacklist.dat \
-		rkhunter/docs/CHANGELOG \
-		rkhunter/docs/README \
-		rkhunter/docs/WISHLIST
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		rkhunter.8
 MANCOMPRESSED=	no
 
-pre-install:
-		${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/installer.sh
+post-patch:
+	@${SED} -e 's|PREFIX|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+
 do-install:
-		cd ${WRKSRC} && ./installer.sh
-		${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
+	cd ${WRKSRC} && ./installer.sh --installdir ${PREFIX}
+	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/files/CHANGELOG ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/files/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/files/WISHLIST ${DOCSDIR}
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,19 @@
+etc/rkhunter.conf.sample
+bin/rkhunter
+lib/rkhunter/db/backdoorports.dat
+lib/rkhunter/db/mirrors.dat
+lib/rkhunter/db/os.dat
+lib/rkhunter/db/defaulthashes.dat
+lib/rkhunter/db/md5blacklist.dat
+lib/rkhunter/scripts/check_modules.pl
+lib/rkhunter/scripts/check_port.pl
+lib/rkhunter/scripts/filehashmd5.pl
+lib/rkhunter/scripts/filehashsha1.pl
+lib/rkhunter/scripts/showfiles.pl
+@dirrm lib/rkhunter/scripts
+@dirrm lib/rkhunter/db
+@dirrm lib/rkhunter
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WISHLIST
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
