@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.26
+PORTVERSION=	0.11.27
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,9 +34,9 @@ post-install:
 .endfor
 	${TAR} -C ${WRKSRC}/docs --exclude "gentoo.1x" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@find ${DOCSDIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@find ${DOCSDIR} | xargs ${CHMOD} ${SHAREMODE}
-	@find ${DOCSDIR} -type d | xargs ${CHMOD} a+x
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+x
 .endif
 
 .include <bsd.port.mk>
