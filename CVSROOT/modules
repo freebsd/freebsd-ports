@@ -5535,6 +5535,7 @@ p5-Math-Pari	ports/math/p5-Math-Pari
 p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
 p5-Math-SimpleVariable	ports/math/p5-Math-SimpleVariable
+p5-Math-Trig	ports/math/p5-Math-Trig
 p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
 p5-MatrixReal	ports/math/p5-MatrixReal
 p5-Memoize	ports/devel/p5-Memoize
