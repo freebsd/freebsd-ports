@@ -30,4 +30,10 @@ MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
 
 PLIST_FILES=	bin/lfhex
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.x"
+.endif
+
+.include <bsd.port.post.mk>
