@@ -1,14 +1,14 @@
---- Makefile.orig	Tue Jan  4 23:10:44 2000
-+++ Makefile	Tue Jan  4 23:12:54 2000
-@@ -3,7 +3,7 @@
- BIN = /usr/local/bin
+--- work/heyu.dir/Makefile	Thu Jan  6 23:47:16 2000
++++ Makefile	Sun Jan 23 00:35:45 2000
+@@ -4,7 +4,7 @@
  MAN = /usr/local/man/man1
  MAN5 = /usr/local/man/man5
--GROUP = sys
-+GROUP = wheel
- OWNER = bin
+ GROUP = sys
+-OWNER = bin
++OWNER = root
  
  
+ #	set DFLAGS equal to:
 @@ -13,19 +13,19 @@
  #	   -DVOID	if compiler doesn't understand 'void'
  #	   -DMINIEXCH	if using the DEC mini-exchange
@@ -20,8 +20,8 @@
  LIBS = -lm -lc
  
  ##  For LINUX, use the following defines in addition to what's above
--DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
-+#DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
+-DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX 
++#DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX 
  
  ##  For solaris, use the following defines in addition to what's above
  # DFLAGS = -DSYSV -DPOSIX -DSOLARIS -DLOCKDIR=\"/var/spool/locks\" -DHASSELECT
@@ -32,3 +32,15 @@
  
  ## If you aren't sure, try this
  #DFLAGS = -DSYSV -DPOSIX 
+@@ -54,9 +54,10 @@
+ EVERYTHING = $(OTHERSRC) $(SRCS)
+ 
+ heyu:	$(OBJS) version.h
+-	cc $(LDFLAGS) -o heyu $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) $(DFLAGS) -o heyu $(OBJS) $(LIBS)
+ 
+ $(OBJS): x10.h
++	cc $(CFLAGS) $(DFLAGS) -c $<
+ 
+ eeprom.o:	eeprom.h
+ 
