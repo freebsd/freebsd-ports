@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sat Jan  4 01:25:45 2003
-+++ src/Makefile.in	Mon Jan  6 19:26:05 2003
-@@ -28,11 +28,11 @@
+--- src/Makefile.in.orig	Mon May 19 03:28:57 2003
++++ src/Makefile.in	Fri May 23 01:02:05 2003
+@@ -28,9 +28,9 @@
                  -DEXEEXT='"$(EXEEXT)"' \
                  -DICEWMEXE='"icewm$(EXEEXT)"' \
                  -DICEHELPEXE='"icehelp$(EXEEXT)"' \
@@ -10,12 +10,9 @@
 -CXXFLAGS =      @CXXFLAGS@ $(DEBUG) $(DEFS) \
 +CXXFLAGS =      @CXXFLAGS@ $(DEBUG) $(DEFS) @CPPFLAGS@ \
  	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ # `fc-config --cflags`
--LFLAGS =
-+LFLAGS =        @LDFLAGS@
+ LFLAGS =	@LDFLAGS@
  LIBS =          @LIBS@
- 
- CORE_LIBS =     @CORE_LIBS@ # `fc-config --libs`
-@@ -52,7 +52,7 @@
+@@ -53,7 +53,7 @@
  	genpref.o
  
  icewm_LIBS = \
