@@ -7,9 +7,10 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@pompo.net
 
@@ -242,7 +243,7 @@ do-install:
 	@${PERL} -pi -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" \
 		${IMPDIR}/compose.php
 .if defined(WITHOUT_SSL)
-	@${PERL} -pi -e "s:%%PROTOCOL%%:imap:;s:%%IMAPPORT%%:143:" \
+	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/notls:;s:%%IMAPPORT%%:143:" \
 		${CONFDIR}/servers.php
 .else
 	@${PERL} -pi -e "s:%%IMAPPORT%%:993:" ${CONFDIR}/servers.php

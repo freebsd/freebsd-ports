@@ -1,6 +1,6 @@
---- config/sources.php.dist.orig	Tue Jan  1 13:58:34 2002
-+++ config/sources.php.dist	Thu Jan  3 18:04:12 2002
-@@ -92,21 +92,25 @@
+--- config/sources.php.dist.orig	Thu Apr 25 01:08:44 2002
++++ config/sources.php.dist	Sun May 19 00:50:20 2002
+@@ -137,22 +137,26 @@
      'title' => 'My Addressbook',
      'type' => 'sql',
      'params' => array(
@@ -8,7 +8,7 @@
 -        'hostspec' => '',
 -        'username' => '',
 -        'password' => '',
-+//        'phptype' => 'pgsql',
++//      'phptype' => 'pgsql',
 +        'phptype' => 'mysql',
 +        'hostspec' => 'localhost',
 +        'username' => 'hordemgr',
@@ -18,11 +18,13 @@
 -        'tty' => '',
 -        'port' => '5432',
 -        'protocol' => 'unix',
-+//        'tty' => '',
+-        'socket' => '',
++//      'tty' => '',
 +// Default port: 5432 for pgsql (PostGres), 3306 for mysql
-+//        'port' => '5432',
-+//        'port' => '3306',
-+//        'protocol' => 'unix',
++//      'port' => '5432',
++//      'port' => '3306',
++//      'protocol' => 'unix',
++//      'socket' => '',
          'table' => 'turba_objects'
      ),
      'map' => array(

@@ -42,6 +42,7 @@
 %%IMPDIR%%/graphics/down.gif
 %%IMPDIR%%/graphics/download.gif
 %%IMPDIR%%/graphics/draft.gif
+%%IMPDIR%%/graphics/empty_trash.gif
 %%IMPDIR%%/graphics/expand.gif
 %%IMPDIR%%/graphics/fetchmail.gif
 %%IMPDIR%%/graphics/filters.gif
@@ -93,6 +94,7 @@
 %%IMPDIR%%/lib/Maintenance/Task/rename_sentmail_monthly.php
 %%IMPDIR%%/lib/Maintenance/imp.php
 %%IMPDIR%%/lib/MIME/Viewer/html.php
+%%IMPDIR%%/lib/MIME/Viewer/enriched.php
 %%IMPDIR%%/lib/MIME/Viewer/text.php
 %%IMPDIR%%/lib/Message.php
 %%IMPDIR%%/lib/Tree.php
@@ -109,9 +111,10 @@
 %%IMPDIR%%/locale/de_DE/help.xml
 %%IMPDIR%%/locale/el_GR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/el_GR/help.xml
+%%IMPDIR%%/locale/en_GB/help.xml
+%%IMPDIR%%/locale/en_US/help.xml
 %%IMPDIR%%/locale/et_EE/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/et_EE/help.xml
-%%IMPDIR%%/locale/en_US/help.xml
 %%IMPDIR%%/locale/es_ES/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/es_ES/help.xml
 %%IMPDIR%%/locale/fi_FI/LC_MESSAGES/imp.mo
@@ -139,6 +142,7 @@
 %%IMPDIR%%/locale/ru_RU.KOI8-R/help.xml
 %%IMPDIR%%/locale/sk_SK/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sk_SK/help.xml
+%%IMPDIR%%/locale/sl_SI/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sv_SE/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sv_SE/help.xml
 %%IMPDIR%%/locale/uk_UA/LC_MESSAGES/imp.mo
@@ -175,6 +179,7 @@
 %%IMPDIR%%/po/ru_RU.KOI8-R.po
 %%IMPDIR%%/po/shtool
 %%IMPDIR%%/po/sk_SK.po
+%%IMPDIR%%/po/sl_SI.po
 %%IMPDIR%%/po/sv_SE.po
 %%IMPDIR%%/po/uk_UA.po
 %%IMPDIR%%/po/xgettext.sh
@@ -266,6 +271,7 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/de_DE
 @dirrm %%IMPDIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/el_GR
+@dirrm %%IMPDIR%%/locale/en_GB
 @dirrm %%IMPDIR%%/locale/en_US
 @dirrm %%IMPDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/es_ES
@@ -297,6 +303,8 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/ru_RU.KOI8-R
 @dirrm %%IMPDIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/sk_SK
+@dirrm %%IMPDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/sl_SI
 @dirrm %%IMPDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/sv_SE
 @dirrm %%IMPDIR%%/locale/uk_UA/LC_MESSAGES
