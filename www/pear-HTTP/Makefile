@@ -15,11 +15,8 @@ COMMENT=	PEAR miscellaneous HTTP utilities
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+FILES=		HTTP.php
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${CP} ${WRKSRC}/HTTP.php ${PEARDIR}
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/HTTP.php
-
 .include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
 The HTTP class is a class with static methods for doing miscellaneous
 HTTP-related stuff like date formatting or language negotiation.
 
-WWW: http://pear.php.net/package-info.php?package=HTTP
+WWW: http://pear.php.net/package/HTTP/
