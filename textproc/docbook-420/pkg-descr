@@ -1,0 +1,15 @@
+The DocBook DTD defines structural and content-based SGML markup
+for computer documentation, with a primary emphasis on software
+documentation and related classes of technical documents. Its
+main high-level hierarchical structures are for books, reference
+entries (for example, ``man pages''), and articles. It is
+maintained by the DocBook Technical Committee of OASIS.
+
+This port contains DocBook 4.2.  Note that DocBook 4.2 includes
+the XML DocBook DTD as part of the SGML DTD distribution.  If
+you do not need SGML DTD you should install:
+  textproc/docbook-xml
+instead.  There are no conflicts if both ports are installed
+but you will have duplicates of most of the files.
+
+WWW: http://www.oasis-open.org/docbook/
