@@ -378,6 +378,7 @@
     SUBDIR += sslsniffer
     SUBDIR += sslwrap
     SUBDIR += sst
+    SUBDIR += starttls
     SUBDIR += stegdetect
     SUBDIR += steghide
     SUBDIR += strobe
