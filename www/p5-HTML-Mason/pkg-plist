@@ -17,6 +17,7 @@ lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Devel.pod
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/FakeApache.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Interp.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Interp.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/MethodMaker.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Parser.pod
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Preview.pm
