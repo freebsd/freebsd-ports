@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libjabber
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	net
-MASTER_SITES=	http://download.jabber.org/dists/1.0/final/
+MASTER_SITES=	http://download.jabber.org/dists/1.2/
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	xode.1:${PORTSDIR}/textproc/libxode
+LIB_DEPENDS=	xode.2:${PORTSDIR}/textproc/libxode
 
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		jabber-config.1
 
