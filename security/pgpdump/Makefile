@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	security
 MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
 
@@ -14,11 +14,10 @@ MAINTAINER=	kaoru@kaisei.org
 
 GNU_CONFIGURE=  yes
 
+MAN1=		pgpdump.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pgpdump
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pgpdump
-.endif
+	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
