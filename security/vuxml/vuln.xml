@@ -264,11 +264,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0174</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing</url>
     </references>
     <dates>
       <discovery>2005-01-24</discovery>
       <entry>2005-01-24</entry>
+      <modified>2005-01-31</modified>
     </dates>
   </vuln>
 
@@ -457,6 +459,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0175</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-response_splitting</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1200</url>
       <url>https://www.watchfire.com/securearea/whitepapers.aspx?id=8</url>
@@ -464,6 +467,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-01</discovery>
       <entry>2005-01-22</entry>
+      <modified>2005-01-31</modified>
     </dates>
   </vuln>
 
@@ -869,12 +873,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0173</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1187</url>
     </references>
     <dates>
       <discovery>2005-01-10</discovery>
       <entry>2005-01-19</entry>
+      <modified>2005-01-31</modified>
     </dates>
   </vuln>
 
