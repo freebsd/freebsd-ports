@@ -9,3 +9,20 @@
  #undef HAVE_MATHERR
  #undef HAVE_MKFIFO
  #undef HAVE_REMOVE
+@@ -257,12 +257,16 @@
+ #if INT_MAX == 2147483647
+    typedef int		int32;
+    typedef unsigned	unsigned32;
++#  ifndef INT32_MAX
+ #  define INT32_MAX	INT_MAX
++#  endif
+ #else
+ #  if LONG_MAX == 2147483647
+      typedef long int		int32;
+      typedef unsigned long	unsigned32;
++#    ifndef INT32_MAX
+ #    define INT32_MAX		LONG_MAX
++#    endif
+ #  else
+ #    error I cannot figure out how to express a 32-bit integer on your machine.
+ #  endif
