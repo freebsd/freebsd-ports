@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 MAN1=	cu.1 uuconv.1 uucp.1 uulog.1 uuname.1 uupick.1 uustat.1 \
 	uuto.1 uux.1
 MAN8=	uuchk.8 uucico.8 uusched.8 uuxqt.8 uucpd.8
+INFO=	uucp
 VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
 	uucp/uucp/uucp.1 uucp/uux/uux.1 uucp/uuxqt/uuxqt.8
 FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \

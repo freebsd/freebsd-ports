@@ -19,9 +19,6 @@ etc/uucp/sys1.sample
 etc/uucp/sys2.sample
 @exec chown uucp:uucp %D/etc/uucp
 @exec chmod 750 %D/etc/uucp
-info/uucp.info.gz
-@exec install-info %D/info/uucp.info %D/info/dir
-@unexec install-info --delete %D/info/uucp.info %D/info/dir
 libexec/uucpd
 @group dialer
 bin/cu
