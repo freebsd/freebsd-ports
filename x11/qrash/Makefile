@@ -19,7 +19,12 @@ MAINTAINER=	trevor@jpj.net
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=      yes
-ALL_TARGET=	qrash
 USE_X_PREFIX=	yes
+
+ALL_TARGET=	qrash
+
+post-patch:
+	@${PERL} -pi -e "s=PREFIX=${PREFIX}=g" ${WRKSRC}/resource.cc
+	@${PERL} -pi -e "s=/usr/X11=${PREFIX}=g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
