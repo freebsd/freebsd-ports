@@ -67,7 +67,7 @@ $MAILADDRS = "nobody";
 $MAILBANNER = "";
 
 # Send mail when directories are created in the repository.
-$MAIL_ON_DIR_CREATION = 1;
+$MAIL_ON_DIR_CREATION = 0;
 
 
 
