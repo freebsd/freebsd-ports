@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.26 1997/01/08 12:27:18 asami Exp $
+# $Id: Makefile,v 1.27 1997/02/02 17:25:14 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -22,6 +22,7 @@ PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.2/fixes/ \
 
 DISTFILES=	X32src-1.tgz X32src-2.tgz
 PATCHFILES=	3.2-fix-01
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
