@@ -24,10 +24,14 @@
 %%FONTSDIR%%/mplus_h12rw.pcf.gz
 %%FONTSDIR%%/mplus_j10b-iso.pcf.gz
 %%FONTSDIR%%/mplus_j10b-jisx0201.pcf.gz
+%%FONTSDIR%%/mplus_j10b.pcf.gz
 %%FONTSDIR%%/mplus_j10r-iso.pcf.gz
 %%FONTSDIR%%/mplus_j10r-jisx0201.pcf.gz
+%%FONTSDIR%%/mplus_j10r.pcf.gz
 %%FONTSDIR%%/mplus_j12b.pcf.gz
 %%FONTSDIR%%/mplus_j12r.pcf.gz
+%%FONTSDIR%%/mplus_q06r-euro.pcf.gz
+%%FONTSDIR%%/mplus_q06r.pcf.gz
 %%FONTSDIR%%/mplus_s10b-euro.pcf.gz
 %%FONTSDIR%%/mplus_s10b.pcf.gz
 %%FONTSDIR%%/mplus_s10r-euro.pcf.gz
@@ -40,6 +44,7 @@
 %%FONTSDIR%%/mplus_t12b.pcf.gz
 %%FONTSDIR%%/mplus_t12r-euro.pcf.gz
 %%FONTSDIR%%/mplus_t12r.pcf.gz
+%%DOCSDIR%%/fonts.alias
 %%DOCSDIR%%/fonts.alias.e
 %%DOCSDIR%%/fonts.alias.j
 %%DOCSDIR%%/fonts.alias.euro
@@ -49,8 +54,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_J
 %%PORTDOCS%%%%DOCSDIR%%/README_E
 %%PORTDOCS%%%%DOCSDIR%%/README_J
+%%PORTDOCS%%%%DOCSDIR%%/README_mplusj10
 @dirrm %%DOCSDIR%%
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@exec cat  %D/%%DOCSDIR%%/fonts.alias >> %D/%%FONTSDIR%%/fonts.alias
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi

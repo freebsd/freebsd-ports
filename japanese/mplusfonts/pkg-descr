@@ -1,17 +1,7 @@
 M+ bitmap fonts is a bitmap font set aimed for simple and readable design.
-
-Latin Fonts
- + mplus-fxd (10, 12 dots)	An alternative to the "fixed".
- + mplus-hlv (10, 12 dots)	An alternative to the "helvetica".
- + mplus-hlvw (10, 12 dots)	The space between character compared with "mplus-hlv"
- + mplus-tms (10, 12 dots)	An alternative to the "times".
- + mplus-sys (10 dots)		Prepared for display in window titles and menu.
-
-Japanese Fonts
- + mplus-gothic (12 dots)	Fixed width fonts.
- + mplus-goth_p (12 dots)	Roman characters set as proportional.
+This font set includes Japanese and Latin fonts, and they're 10 and 12 dots.
 
 WWW: http://mplus-fonts.sourceforge.jp/
 
--- H.Miyamoto
-<Ys@PixyGarden.net>
+--
+H.Miyamoto <Ys@PixyGarden.net>
