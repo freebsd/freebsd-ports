@@ -6,9 +6,9 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.5.2004.06.25
+PORTVERSION?=	8.0.b2.2004.08.31
 CATEGORIES?=	databases
-MASTER_SITES=	http://people.freebsd.org/~seanc/ports/
+MASTER_SITES=	http://people.freebsd.org/~seanc/ports/pgsql/
 PATCH_SITES=	http://people.FreeBSD.org/~seanc/patches/pgsql/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	postgresql
