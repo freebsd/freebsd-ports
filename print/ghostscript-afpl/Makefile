@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
@@ -111,7 +111,7 @@ GPRINT_SRC=	${GPRINT_NAME}.tar.gz
 # HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
 # http://hpinkjet.sourceforge.net/
 HPIJS=		hpijs
-HPIJS_VERS=	1.0.1
+HPIJS_VERS=	1.0.2
 HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
 HPIJS_SRC=	${HPIJS_NAME}.tar.gz
 
@@ -173,8 +173,8 @@ post-patch:
 	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
 			${WRKSRC}/${HPIJS_NAME}/configure
-	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
-		's|#include <malloc.h>||g'
+	${PERL} -pi -e 's|#include <malloc.h>||g' \
+		${WRKSRC}/${HPIJS_NAME}/platform.h
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
