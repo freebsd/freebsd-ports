@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://mike.daewoo.com.pl/pub/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
-MAINTAINER=	martti.kuparinen@ericsson.com
+MAINTAINER=	martti.kuparinen@iki.fi
 
 USE_OPENSSL=	YES
 IS_INTERACTIVE=	YES	# prompts for information while generating certificate
