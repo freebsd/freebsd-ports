@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.24 1996/06/08 20:50:42 ache Exp $
+# $Id: Makefile,v 1.25 1996/06/15 07:03:11 torstenb Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -89,6 +89,12 @@ post-install:
 	@echo "If you are installing for the first time, do not forget to run:"
 	@echo "   ssh-keygen -b 1024 -f $(PREFIX)/etc/ssh_host_key -N '' "
 	@echo "---------------------------------------------------------------"
+	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
+		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
+		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
+		echo "[ -x /usr/local/sbin/sshd ] && /usr/local/sbin/sshd && echo -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
+		chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+	fi
 
 .include <bsd.port.mk>
 
