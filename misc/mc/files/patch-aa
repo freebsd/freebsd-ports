@@ -1,6 +1,6 @@
---- configure.orig	Tue Jan 19 00:44:07 1999
-+++ configure	Fri Jan 29 16:51:46 1999
-@@ -3188,15 +3188,15 @@
+--- configure.orig	Sun Apr 11 04:38:29 1999
++++ configure	Sun May  9 15:58:08 1999
+@@ -3267,15 +3267,15 @@
  fi
  
          
@@ -10,19 +10,17 @@
          INSTOBJEXT=.mo
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
--	INTLLIBS=$INTLDEPS
--	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++	INTLDEPS='-lintl'
+ 	INTLLIBS=$INTLDEPS
+ 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
-+#	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+#	INTLLIBS=$INTLDEPS
-+#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 +#        nls_cv_header_intl=intl/libintl.h
 +#        nls_cv_header_libgt=intl/libgettext.h
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -10359,13 +10359,13 @@
+@@ -10524,13 +10524,13 @@
      
      if $search_ncurses
      then
@@ -41,7 +39,7 @@
              cat >> confdefs.h <<\EOF
  #define HAS_CURSES 1
  EOF
-@@ -10381,13 +10381,13 @@
+@@ -10546,13 +10546,13 @@
      
      if $search_ncurses
      then
@@ -60,7 +58,7 @@
              cat >> confdefs.h <<\EOF
  #define HAS_CURSES 1
  EOF
-@@ -10403,13 +10403,13 @@
+@@ -10568,13 +10568,13 @@
      
      if $search_ncurses
      then
@@ -79,7 +77,7 @@
              cat >> confdefs.h <<\EOF
  #define HAS_CURSES 1
  EOF
-@@ -10425,13 +10425,13 @@
+@@ -10590,13 +10590,13 @@
      
      if $search_ncurses
      then
@@ -98,27 +96,27 @@
              cat >> confdefs.h <<\EOF
  #define HAS_CURSES 1
  EOF
-@@ -10676,6 +10676,8 @@
- fi
- done
+@@ -10655,6 +10655,8 @@
+ 	fi
+     fi
  
 +CFLAGS="$CFLAGS $CURSES_INCLUDEDIR"
 +LIBS="$LIBS $CURSES_LIBS"
  
- if test "x$screen_manager" = "xunknown"; then
-     cat >> confdefs.h <<\EOF
-@@ -11212,7 +11214,7 @@
- vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
- vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
+                 if $search_ncurses 
+     then
+@@ -11465,7 +11467,7 @@
+ vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR vfs/extfs/ulha 
+ vfs/extfs/uha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
 +doc/mc.1 doc/mcserv.8
  
  intl/Makefile po/Makefile.in
   config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-@@ -11423,7 +11425,7 @@
- vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
- vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
+@@ -11684,7 +11686,7 @@
+ vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR vfs/extfs/ulha 
+ vfs/extfs/uha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
 +doc/mc.1 doc/mcserv.8

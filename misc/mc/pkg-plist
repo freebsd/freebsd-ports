@@ -14,6 +14,8 @@ share/locale/pl/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/mc/FAQ
 share/mc/bin/mcfn_install
+share/mc/desktop-scripts/README.desktop
+share/mc/desktop-scripts/startup.links
 share/mc/extfs/README
 share/mc/extfs/a
 share/mc/extfs/deb
@@ -28,8 +30,11 @@ share/mc/extfs/rpms
 share/mc/extfs/sfs.ini
 share/mc/extfs/trpm
 share/mc/extfs/uar
+share/mc/extfs/uarj
 share/mc/extfs/ucpio
+share/mc/extfs/uha
 share/mc/extfs/ulha
+share/mc/extfs/unarj.diff
 share/mc/extfs/urar
 share/mc/extfs/uzip
 share/mc/extfs/uzoo
@@ -38,6 +43,22 @@ share/mc/mc.hint
 share/mc/mc.hlp
 share/mc/mc.lib
 share/mc/mc.menu
+share/mc/syntax/c.syntax
+share/mc/syntax/changelog.syntax
+share/mc/syntax/diff.syntax
+share/mc/syntax/diffc.syntax
+share/mc/syntax/html.syntax
+share/mc/syntax/java.syntax
+share/mc/syntax/latex.syntax
+share/mc/syntax/lsm.syntax
+share/mc/syntax/makefile.syntax
+share/mc/syntax/ml.syntax
+share/mc/syntax/nroff.syntax
+share/mc/syntax/pascal.syntax
+share/mc/syntax/perl.syntax
+share/mc/syntax/python.syntax
+share/mc/syntax/sh.syntax
+share/mc/syntax/smalltalk.syntax
 share/mc/term/README.xterm
 share/mc/term/ansi.ti
 share/mc/term/linux.ti
@@ -46,6 +67,8 @@ share/mc/term/xterm.ad
 share/mc/term/xterm.tcap
 share/mc/term/xterm.ti
 @dirrm share/mc/term
+@dirrm share/mc/syntax
 @dirrm share/mc/extfs
+@dirrm share/mc/desktop-scripts
 @dirrm share/mc/bin
 @dirrm share/mc
