@@ -4,54 +4,36 @@
 #
 # $FreeBSD$
 
-PORTNAME=	mod_auth_mysql_another
-PORTVERSION=	2.0
+PORTNAME=	mod_auth_mysql
+PORTVERSION=	2.9.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	modauthmysql
-DISTNAME=       mod_auth_mysql
-EXTRACT_SUFX=	.tgz
+MASTER_SITE_SUBDIR=	${PORTNAME:S/_//g}
+PKGNAMESUFFIX=	_another
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
+USE_MYSQL=	YES
+
+SHORTMODNAME=	mysql_auth
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+AP_INC=		${LOCALBASE}/include/mysql
+AP_LIB=		${LOCALBASE}/lib/mysql
+AP_EXTRAS=	-DAPACHE${AP_VER} -lmysqlclient -lz -lm
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS=   mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.else
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS=   mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS=   mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
-.endif
-
-.if exists(${LOCALBASE}/include/apache2/apr.h)
-WITH_APACHE2=	yes
-.endif
-
-.if defined(WITH_APACHE2)
-APACHE_VER=	APACHE2
-PLIST_SUB=	VER="2"
-DSO=		mod_auth_mysql.la
-.else
-APACHE_VER=	APACHE1
-PLIST_SUB=	VER=""
-DSO=		mod_auth_mysql.so
-.endif
-
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-
-post-patch:
-	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g;s|%%APXS%%|${APXS}|g;s|%%APACHE_VER%%|${APACHE_VER}|g;s|%%DSO%%|${DSO}|g' \
-		${WRKDIR}/mod_auth_mysql/Makefile.orig > ${WRKDIR}/mod_auth_mysql/Makefile
-
 .if !defined(NOPORTDOCS)
+post-build:
+	@${ECHO} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
+	@${ECHO} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 .include <bsd.port.post.mk>
