@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.73 1998/05/16 10:39:06 andreas Exp $
+# $Id: Makefile,v 1.74 1998/05/18 08:32:45 tg Exp $
 #
 
+    SUBDIR += EZWGL
     SUBDIR += ImageMagick
     SUBDIR += Mesa
     SUBDIR += aalib
