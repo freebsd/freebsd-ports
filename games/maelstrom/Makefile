@@ -17,6 +17,7 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=		yes
 WRKSRC=			${WRKDIR}/Maelstrom
+MAKE_ENV=		CFLAGS="${CFLAGS} -pedantic" CXXFLAGS="${CXXFLAGS} -pedantic"
 
 do-configure:
 	@ ${CP} ${FILESDIR}/Makeflags ${WRKSRC}

@@ -23,7 +23,7 @@ SOUNDOBJS = Maelstrom_sound.o Mac_Resource.o soundres.o mixer.o shared.o myerror
 X11INCLUDE = -I${X11BASE}/include
 INCLUDES = -I$(LOGIC) $(X11INCLUDE) $(XPMINCLUDE)
 CFLAGS += $(INCLUDES) $(FEATURES) \
-                              -DSYSTEM=\"$(SYSTEM)\" -DLIBDIR=\"$(LIBDIR)\"
+                       -pedantic -DSYSTEM=\"$(SYSTEM)\" -DLIBDIR=\"$(LIBDIR)\"
 EXTRALIBS = 
 X11LINKDIR = -L${X11BASE}/lib
 X11LIBS = -lXpm $(XPMLINKDIR) -lX11 -lXext $(X11LINKDIR)
