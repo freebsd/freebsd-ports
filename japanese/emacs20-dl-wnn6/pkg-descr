@@ -31,7 +31,8 @@ and M-x egg on emacs-dl-20.5 (not emacs-20.5!).
 This dynamic loading module sources and emacs20 dynamic loading module patch
 is placed on the following URL:
 
-	http://tt-www.cs.titech.ac.jp/~katsuya/emacs/
-	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
+	ftp://ftp.m17n.org/pub/mule/dynamic-loading/
+
+WWW: http://tokuda-www.cs.titech.ac.jp/~katsuya/emacs/
 
 --- Porting by shige <shige@FreeBSD.ORG>.
