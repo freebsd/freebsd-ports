@@ -4273,6 +4273,7 @@ openssl		ports/security/openssl
 openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
 openvrml	ports/www/openvrml
+openwebmail	ports/mail/openwebmail
 opieinfo	src/usr.bin/opieinfo
 opiekey		src/usr.bin/opiekey
 opiepasswd	src/usr.bin/opiepasswd
