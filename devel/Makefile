@@ -300,6 +300,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-mxDateTime
+    SUBDIR += py-mxProxy
     SUBDIR += py-mxStack
     SUBDIR += py-mxTools
     SUBDIR += qtarch
