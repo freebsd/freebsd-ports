@@ -1,0 +1,4 @@
+Webredirect is installed but does not start automatically. Read the manpage
+to find out what options you like.  Then start webredirect manually.  If you
+want webredirect to start automatically on boot, create a small script in
+/usr/local/etc/rc.d to do so.
