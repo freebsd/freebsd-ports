@@ -1,6 +1,6 @@
---- filewin.c.orig	Mon Apr 16 22:35:39 2001
-+++ filewin.c	Thu Apr 26 05:58:49 2001
-@@ -617,7 +617,7 @@
+--- filewin.c.orig	Sat Jun 16 23:16:26 2001
++++ filewin.c	Sat Jun 16 23:17:06 2001
+@@ -626,7 +626,7 @@
  				      sym_link_name
  				    );
  #else
@@ -9,7 +9,7 @@
  				      max_filename_len,
  				      max_linkname_len
  				    );
-@@ -652,7 +652,7 @@
+@@ -661,7 +661,7 @@
  				      modify_time
  				    );
  #else

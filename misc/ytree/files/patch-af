@@ -1,5 +1,5 @@
---- dirwin.c.orig	Sun Jul 16 07:01:56 2000
-+++ dirwin.c	Wed Nov  8 04:03:59 2000
+--- dirwin.c.orig	Sat Jun 16 23:15:01 2001
++++ dirwin.c	Sat Jun 16 23:15:08 2001
 @@ -168,7 +168,7 @@
                                   modify_time
                                   );

@@ -1,5 +1,7 @@
 bin/ytree
+@unexec if cmp -s %D/etc/ytree.conf %D/etc/ytree.conf.sample; then rm -f %D/etc/ytree.conf; fi
 etc/ytree.conf.sample
+@exec [ -f %B/ytree.conf ] || cp %B/%f %B/ytree.conf
 %%PORTDOCS%%share/doc/ytree/CHANGES
 %%PORTDOCS%%share/doc/ytree/README
 %%PORTDOCS%%share/doc/ytree/THANKS
