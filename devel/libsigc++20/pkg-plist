@@ -1,4 +1,5 @@
 bin/sigc-config
+include/sigc++config.h
 include/sigc++/adaptor.h
 include/sigc++/basic_signal.h
 include/sigc++/bind.h
@@ -13,7 +14,6 @@ include/sigc++/object.h
 include/sigc++/object_slot.h
 include/sigc++/rettype.h
 include/sigc++/scope.h
-include/sigc++/sigc++config.h
 include/sigc++/signal_system.h
 include/sigc++/slot.h
 include/sigc++/thread.h
