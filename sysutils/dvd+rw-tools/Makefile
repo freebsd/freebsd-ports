@@ -15,10 +15,15 @@ COMMENT=	DVD burning software
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/mkisofs
 
+USE_REINPLACE=	yes
+
 MAN1=		growisofs.1
 
 # This software is installed setuid-root (mode 4755) by default under Linux.
 INSTALL_TARGET=		BIN_MODE=00755 install
+
+post-patch:
+	${REINPLACE_CMD} -e 's/-O2//' ${WRKSRC}/Makefile.m4
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
