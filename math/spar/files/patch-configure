@@ -1,0 +1,10 @@
+--- configure.orig	Tue Jun 26 05:46:47 2001
++++ configure	Sun Sep  8 15:42:06 2002
+@@ -1580,7 +1563,6 @@
+ exec 5>>./config.log
+ 
+ 
+-CFLAGS="-Wall -O2"
+ if test "$CC" = "gcc"; then
+   CFLAGS="$CFLAGS -pipe"
+ fi

@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 INSTALLS_SHLIB=	yes
