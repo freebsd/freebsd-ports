@@ -8,19 +8,20 @@
 PORTNAME=	firewalk
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.packetfactory.net/firewalk/
+MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
-MAN1=		firewalk.1
+WRKSRC=		${WRKDIR}/Firewalk-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk=no
 
-WRKSRC=		${WRKDIR}/Firewalk-${PORTVERSION}
+MAN1=		firewalk.1
 
 .include <bsd.port.pre.mk>
 

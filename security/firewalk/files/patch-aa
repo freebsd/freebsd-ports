@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Nov 19 06:20:56 1999
-+++ Makefile.in	Wed Sep 27 02:00:42 2000
+--- Makefile.in.orig	Sun Feb  4 05:24:09 2001
++++ Makefile.in	Sat Nov 30 03:20:58 2002
 @@ -7,13 +7,14 @@
  #   @configure_input@
  
@@ -12,9 +12,9 @@
 +LIBNET_CONFIG=	$(PREFIX)/bin/libnet-config
 +DEFINES     +=  @DEFS@ `$(LIBNET_CONFIG) --defines`
  CFLAGS      =   @CFLAGS@
--CPPFLAGS    =   @CPPFLAGS@
+ CPPFLAGS    =   @CPPFLAGS@
 -LIBS        =   -lnet -lpcap @FW_GTK_CONFIG@ `libnet-config --libs`
-+CPPFLAGS    =   -I$(PREFIX)/include @CPPFLAGS@
-+LIBS        =   -L$(PREFIX)/lib @FW_GTK_CONFIG@ `$(LIBNET_CONFIG) --libs` -lpcap
++LIBS        =   @FW_GTK_CONFIG@ `$(LIBNET_CONFIG) --libs` -lpcap @LDFLAGS@
  OBJECTS     =   main.o firewalk.o watcher.o p_cap.o signal.o \
  		packet.o udptcpwalk.o port_list.o util.o @FW_GTK_OBJS@
+ 
