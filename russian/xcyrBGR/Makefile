@@ -8,7 +8,8 @@
 PORTNAME=	xcyrBGR
 PORTVERSION=	1.0
 CATEGORIES=	russian
-MASTER_SITES=   ftp://aladdin.cblink.net/pub/FreeBSD/X11/cyrillic/
+MASTER_SITES=	ftp://aladdin.cblink.net/pub/FreeBSD/X11/cyrillic/ \
+		ftp://ftp.cit.bg/pub/FreeBSD/X11/cyrillic/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vess@btc.net
