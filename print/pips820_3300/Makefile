@@ -9,4 +9,6 @@ MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S,_3300,,}/
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		820_3300
 
+BROKEN=		the distfile dose not exist
+
 .include "${MASTERDIR}/Makefile"
