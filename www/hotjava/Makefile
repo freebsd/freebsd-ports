@@ -14,7 +14,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 
 EXTRACT_ONLY=
 
