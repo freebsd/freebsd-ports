@@ -375,6 +375,7 @@
     SUBDIR += motor
     SUBDIR += mprof
     SUBDIR += msp430-binutils
+    SUBDIR += msp430-gcc
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm
