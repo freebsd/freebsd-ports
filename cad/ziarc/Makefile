@@ -18,6 +18,8 @@ COMMENT=	ZiaRC is a Resistor Calculator
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC}
 
+BROKEN=		Checksum mismatch
+
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
