@@ -1,0 +1,38 @@
+$FreeBSD$
+
+--- Makefile.orig	Tue Jun 15 17:11:20 1999
++++ Makefile	Thu May 16 11:38:12 2002
+@@ -1,21 +1,20 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
+-LIBS	=	-lXpm -lXext -lX11
+-OBJS	=	wmflame.o ../wmgeneral/wmgeneral.o 
++CC ?= gcc
++CFLAGS += -c -Wall
++INCDIR = -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
++LIBS   = -lXpm -lXext -lX11
++OBJS =  wmflame.o ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	cc -c -g -O3 -Wall -D$(shell echo `uname -s`) $< -o $*.o $(INCDIR)
+-
+-all: wmflame
++	${CC} ${CFLAGS} ${INCDIR} -D${shell echo `uname -s`} $< -o $*.o
+ 
+ wmflame: $(OBJS)
+-	cc -o wmflame $^ $(LIBDIR) $(LIBS)
++	${CC} -o wmflame $^ ${LIBDIR} ${LIBS}
++
++all: wmflame
+ 
+ clean:
+-	for i in $(OBJS) ; do \
++	for i in ${OBJS}; do \
+ 		rm -f $$i; \
+ 	done
+-	rm -f wmflame
+-
+-install:
+-	mv wmflame /usr/local/bin
++	rm -f wmflame core
