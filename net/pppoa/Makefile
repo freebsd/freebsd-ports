@@ -28,7 +28,7 @@ RESTRICTED_FILES=	${ALCATELDRIVER}
 
 WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
 
-MAN1=			modem_run.1 pppoa2.1 pppoa3.1
+MAN8=			modem_run.8 pppoa2.8 pppoa3.8
 USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
@@ -36,6 +36,10 @@ USE_BZIP2=		yes
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/${ALCATELDRIVER} -C ${WRKSRC}
 	@${REINPLACE_CMD} s/-lkse/${PTHREAD_LIBS}/g ${WRKSRC}/configure
+
+post-patch:
+	@${REINPLACE_CMD} 's/\@INSTALL_MAN\@/${INSTALL_MAN}/' \
+		${WRKSRC}/doc-bsd/Makefile.in
 
 post-install:
 	${INSTALL} -m 0755 -o root -g wheel -d ${PREFIX}/libdata

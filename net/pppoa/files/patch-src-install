@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Wed Sep 29 21:56:31 2004
++++ src/Makefile.in	Mon Jan 24 17:55:49 2005
+@@ -184,11 +184,6 @@
+ 	rm -f Makefile
+ 
+ install:
+-	$(INSTALL) -d "$(bindir)"
+-	$(INSTALL) -m 0755 speedtouch-setup "$(bindir)"
+-	$(INSTALL) -m 0755 speedtouch-start "$(bindir)"
+-	$(INSTALL) -m 0755 speedtouch-stop  "$(bindir)"
+-	$(INSTALL) -d "$(sysconfdir)/speedtouch"
+ 
+ uninstall:
+ 	$(RM) "$(bindir)/speedtouch-setup"
