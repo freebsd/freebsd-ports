@@ -47,6 +47,10 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%OPENGL%%share/%%MAMEMESS%%/cab/trans/trans.cab
 %%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/trans
 %%OPENGL%%@dirrm share/%%MAMEMESS%%/cab
+@exec mkdir -p %D/share/%%MAMEMESS%%/roms || true
 @dirrm share/%%MAMEMESS%%/roms
 @dirrm share/%%MAMEMESS%%
+@exec mkdir -p %%SPOOLGAMES%%/%%MAMEMESS%% || true
+@exec chown root:games %%SPOOLGAMES%%/%%MAMEMESS%% || true
+@exec chmod 775 %%SPOOLGAMES%%/%%MAMEMESS%% || true
 @unexec rmdir %%SPOOLGAMES%%/%%MAMEMESS%% 2>/dev/null || true
