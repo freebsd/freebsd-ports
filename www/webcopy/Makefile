@@ -8,9 +8,7 @@
 PORTNAME=	webcopy
 PORTVERSION=	0.98b7
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.inf.utfsm.cl/pub/utfsm/perl/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://people.freebsd.org/~steve/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
