@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		m@absolight.net
+MAINTAINER=		mat@FreeBSD.org
 COMMENT=		Read and write vCard files (RFC 2426)
 
 PERL_CONFIGURE=		yes
