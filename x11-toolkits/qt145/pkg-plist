@@ -1,8 +1,4 @@
-lib/libqt.so
-lib/libqt.so.%%VERSION%%
 bin/moc
-include/X11/qt/qt_gif.h
-include/X11/qt/qxt.h
 include/X11/qt/jri.h
 include/X11/qt/jri_md.h
 include/X11/qt/jritypes.h
@@ -171,6 +167,7 @@ include/X11/qt/qstatusbar.h
 include/X11/qt/qstring.h
 include/X11/qt/qstrlist.h
 include/X11/qt/qstrvec.h
+include/X11/qt/qt_gif.h
 include/X11/qt/qtabbar.h
 include/X11/qt/qtabdialog.h
 include/X11/qt/qtabdlg.h
@@ -195,6 +192,9 @@ include/X11/qt/qwindefs.h
 include/X11/qt/qwindow.h
 include/X11/qt/qwindowdefs.h
 include/X11/qt/qwmatrix.h
+include/X11/qt/qxt.h
+lib/libqt.so
+lib/libqt.so.%%VERSION%%
 share/doc/qt/README
 share/doc/qt/README.QT
 share/doc/qt/html/abstractwidgets.html
@@ -214,7 +214,6 @@ share/doc/qt/html/credits.html
 share/doc/qt/html/cursor-cursor-cpp.html
 share/doc/qt/html/dclock-dclock-cpp.html
 share/doc/qt/html/debug.html
-share/doc/qt/html/io.html
 share/doc/qt/html/design.html
 share/doc/qt/html/desktop-desktop-cpp.html
 share/doc/qt/html/dialogs.html
@@ -234,7 +233,6 @@ share/doc/qt/html/functions.html
 share/doc/qt/html/geomanagement.html
 share/doc/qt/html/graph.g1n
 share/doc/qt/html/grapher-grapher-cpp.html
-share/doc/qt/html/t1.gif
 share/doc/qt/html/gridlayout.gif
 share/doc/qt/html/guibooks.html
 share/doc/qt/html/headers.html
@@ -243,6 +241,7 @@ share/doc/qt/html/hierarchy.html
 share/doc/qt/html/imageio.html
 share/doc/qt/html/images.html
 share/doc/qt/html/index.html
+share/doc/qt/html/io.html
 share/doc/qt/html/kernel.html
 share/doc/qt/html/layout-layout-cpp.html
 share/doc/qt/html/letter.gif
@@ -310,7 +309,6 @@ share/doc/qt/html/qcache-members.html
 share/doc/qt/html/qcache.html
 share/doc/qt/html/qcacheiterator-members.html
 share/doc/qt/html/qcacheiterator.html
-share/doc/qt/html/qcolor.html
 share/doc/qt/html/qcheckbox-h.html
 share/doc/qt/html/qcheckbox-m.gif
 share/doc/qt/html/qcheckbox-members.html
@@ -328,10 +326,11 @@ share/doc/qt/html/qclipboard.html
 share/doc/qt/html/qcloseevent-members.html
 share/doc/qt/html/qcloseevent.html
 share/doc/qt/html/qcollection-h.html
-share/doc/qt/html/qcollection.html
 share/doc/qt/html/qcollection-members.html
+share/doc/qt/html/qcollection.html
 share/doc/qt/html/qcolor-h.html
 share/doc/qt/html/qcolor-members.html
+share/doc/qt/html/qcolor.html
 share/doc/qt/html/qcolorgroup-members.html
 share/doc/qt/html/qcolorgroup.html
 share/doc/qt/html/qcombo1-m.gif
@@ -347,7 +346,6 @@ share/doc/qt/html/qconnection-h.html
 share/doc/qt/html/qconnection-members.html
 share/doc/qt/html/qconnection.html
 share/doc/qt/html/qcursor-h.html
-share/doc/qt/html/t1.html
 share/doc/qt/html/qcursor-members.html
 share/doc/qt/html/qcursor.html
 share/doc/qt/html/qcustomevent-members.html
@@ -365,7 +363,6 @@ share/doc/qt/html/qdate-members.html
 share/doc/qt/html/qdate.html
 share/doc/qt/html/qdatetime-h.html
 share/doc/qt/html/qdatetime-members.html
-share/doc/qt/html/t10.gif
 share/doc/qt/html/qdatetime.html
 share/doc/qt/html/qdialog-h.html
 share/doc/qt/html/qdialog-members.html
@@ -402,7 +399,6 @@ share/doc/qt/html/qfiledlg-w.gif
 share/doc/qt/html/qfileiconprovider-members.html
 share/doc/qt/html/qfileiconprovider.html
 share/doc/qt/html/qfileinfo-h.html
-share/doc/qt/html/t11.gif
 share/doc/qt/html/qfileinfo-members.html
 share/doc/qt/html/qfileinfo.html
 share/doc/qt/html/qfocusdata-h.html
@@ -453,10 +449,10 @@ share/doc/qt/html/qgmanager-h.html
 share/doc/qt/html/qgmanager-members.html
 share/doc/qt/html/qgmanager.html
 share/doc/qt/html/qgridlayout-members.html
-share/doc/qt/html/qgroupbox.html
 share/doc/qt/html/qgridlayout.html
 share/doc/qt/html/qgroupbox-h.html
 share/doc/qt/html/qgroupbox-members.html
+share/doc/qt/html/qgroupbox.html
 share/doc/qt/html/qgrpbox-m.gif
 share/doc/qt/html/qgrpbox-w.gif
 share/doc/qt/html/qhboxlayout-members.html
@@ -472,8 +468,8 @@ share/doc/qt/html/qiconset.html
 share/doc/qt/html/qimage-h.html
 share/doc/qt/html/qimage-members.html
 share/doc/qt/html/qimage.html
-share/doc/qt/html/qimageconsumer.html
 share/doc/qt/html/qimageconsumer-members.html
+share/doc/qt/html/qimageconsumer.html
 share/doc/qt/html/qimagedecoder-members.html
 share/doc/qt/html/qimagedecoder.html
 share/doc/qt/html/qimagedrag-members.html
@@ -579,9 +575,9 @@ share/doc/qt/html/qmultilineedit-members.html
 share/doc/qt/html/qmultilineedit.html
 share/doc/qt/html/qnp-h.html
 share/doc/qt/html/qnpinstance-members.html
-share/doc/qt/html/qnplugin.html
 share/doc/qt/html/qnpinstance.html
 share/doc/qt/html/qnplugin-members.html
+share/doc/qt/html/qnplugin.html
 share/doc/qt/html/qnpstream-members.html
 share/doc/qt/html/qnpstream.html
 share/doc/qt/html/qnpwidget-members.html
@@ -596,8 +592,8 @@ share/doc/qt/html/qpaintdevicemetrics-h.html
 share/doc/qt/html/qpaintdevicemetrics-members.html
 share/doc/qt/html/qpaintdevicemetrics.html
 share/doc/qt/html/qpainter-h.html
-share/doc/qt/html/qpainter.html
 share/doc/qt/html/qpainter-members.html
+share/doc/qt/html/qpainter.html
 share/doc/qt/html/qpaintevent-members.html
 share/doc/qt/html/qpaintevent.html
 share/doc/qt/html/qpalette-h.html
@@ -615,7 +611,6 @@ share/doc/qt/html/qpixmap.html
 share/doc/qt/html/qpixmapcache-h.html
 share/doc/qt/html/qpixmapcache-members.html
 share/doc/qt/html/qpixmapcache.html
-share/doc/qt/html/t12.gif
 share/doc/qt/html/qpoint-h.html
 share/doc/qt/html/qpoint-members.html
 share/doc/qt/html/qpoint.html
@@ -651,13 +646,13 @@ share/doc/qt/html/qptrdict.html
 share/doc/qt/html/qptrdictiterator-members.html
 share/doc/qt/html/qptrdictiterator.html
 share/doc/qt/html/qpushbt-m.gif
-share/doc/qt/html/qqueue.html
 share/doc/qt/html/qpushbt-w.gif
 share/doc/qt/html/qpushbutton-h.html
 share/doc/qt/html/qpushbutton-members.html
 share/doc/qt/html/qpushbutton.html
 share/doc/qt/html/qqueue-h.html
 share/doc/qt/html/qqueue-members.html
+share/doc/qt/html/qqueue.html
 share/doc/qt/html/qradiobt-m.gif
 share/doc/qt/html/qradiobt-w.gif
 share/doc/qt/html/qradiobutton-h.html
@@ -743,7 +738,6 @@ share/doc/qt/html/qtabbar-h.html
 share/doc/qt/html/qtabbar-m.gif
 share/doc/qt/html/qtabbar-members.html
 share/doc/qt/html/qtabbar-w.gif
-share/doc/qt/html/t13.gif
 share/doc/qt/html/qtabbar.html
 share/doc/qt/html/qtabdialog-h.html
 share/doc/qt/html/qtabdialog-members.html
@@ -780,7 +774,6 @@ share/doc/qt/html/qtooltip-members.html
 share/doc/qt/html/qtooltip.html
 share/doc/qt/html/qtooltipgroup-members.html
 share/doc/qt/html/qtooltipgroup.html
-share/doc/qt/html/shared.html
 share/doc/qt/html/qurldrag-members.html
 share/doc/qt/html/qurldrag.html
 share/doc/qt/html/qvalidator-h.html
@@ -798,33 +791,38 @@ share/doc/qt/html/qwidgetstack-h.html
 share/doc/qt/html/qwidgetstack-members.html
 share/doc/qt/html/qwidgetstack.html
 share/doc/qt/html/qwindow-h.html
-share/doc/qt/html/qwindow.html
 share/doc/qt/html/qwindow-members.html
+share/doc/qt/html/qwindow.html
 share/doc/qt/html/qwindowdefs-h.html
 share/doc/qt/html/qwmatrix-h.html
 share/doc/qt/html/qwmatrix-members.html
 share/doc/qt/html/qwmatrix.html
+share/doc/qt/html/qxt-h.html
 share/doc/qt/html/qxtapplication-members.html
 share/doc/qt/html/qxtapplication.html
-share/doc/qt/html/qxt-h.html
 share/doc/qt/html/qxtwidget-members.html
 share/doc/qt/html/qxtwidget.html
 share/doc/qt/html/realwidgets.html
+share/doc/qt/html/shared.html
 share/doc/qt/html/shclass.html
 share/doc/qt/html/showimg-showimg-cpp.html
+share/doc/qt/html/t1.gif
+share/doc/qt/html/t1.html
 share/doc/qt/html/t10-cannon-cpp.html
 share/doc/qt/html/t10-cannon-h.html
 share/doc/qt/html/t10-lcdrange-cpp.html
 share/doc/qt/html/t10-lcdrange-h.html
 share/doc/qt/html/t10-main-cpp.html
-share/doc/qt/html/t10.html
 share/doc/qt/html/t10-makefile.html
+share/doc/qt/html/t10.gif
+share/doc/qt/html/t10.html
 share/doc/qt/html/t11-cannon-cpp.html
 share/doc/qt/html/t11-cannon-h.html
 share/doc/qt/html/t11-lcdrange-cpp.html
 share/doc/qt/html/t11-lcdrange-h.html
 share/doc/qt/html/t11-main-cpp.html
 share/doc/qt/html/t11-makefile.html
+share/doc/qt/html/t11.gif
 share/doc/qt/html/t11.html
 share/doc/qt/html/t12-cannon-cpp.html
 share/doc/qt/html/t12-cannon-h.html
@@ -832,6 +830,7 @@ share/doc/qt/html/t12-lcdrange-cpp.html
 share/doc/qt/html/t12-lcdrange-h.html
 share/doc/qt/html/t12-main-cpp.html
 share/doc/qt/html/t12-makefile.html
+share/doc/qt/html/t12.gif
 share/doc/qt/html/t12.html
 share/doc/qt/html/t13-cannon-cpp.html
 share/doc/qt/html/t13-cannon-h.html
@@ -841,6 +840,7 @@ share/doc/qt/html/t13-lcdrange-cpp.html
 share/doc/qt/html/t13-lcdrange-h.html
 share/doc/qt/html/t13-main-cpp.html
 share/doc/qt/html/t13-makefile.html
+share/doc/qt/html/t13.gif
 share/doc/qt/html/t13.html
 share/doc/qt/html/t14-cannon-cpp.html
 share/doc/qt/html/t14-cannon-h.html
@@ -878,11 +878,11 @@ share/doc/qt/html/t8.gif
 share/doc/qt/html/t8.html
 share/doc/qt/html/t9-cannon-cpp.html
 share/doc/qt/html/t9-cannon-h.html
-share/doc/qt/html/t9.gif
 share/doc/qt/html/t9-lcdrange-cpp.html
 share/doc/qt/html/t9-lcdrange-h.html
 share/doc/qt/html/t9-main-cpp.html
 share/doc/qt/html/t9-makefile.html
+share/doc/qt/html/t9.gif
 share/doc/qt/html/t9.html
 share/doc/qt/html/t9_1.gif
 share/doc/qt/html/t9_2.gif
@@ -905,6 +905,6 @@ share/doc/qt/html/widgets-widgets-cpp.html
 share/doc/qt/html/xform-xform-cpp.html
 share/doc/qt/html/xt.html
 share/doc/qt/html/y2k.html
-@dirrm include/X11/qt
 @dirrm share/doc/qt/html
 @dirrm share/doc/qt
+@dirrm include/X11/qt
