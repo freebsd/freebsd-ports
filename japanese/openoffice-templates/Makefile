@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	templates
-PORTVERSION=	1.1.0.20040612
+PORTVERSION=	1.1.1.20040612
 PORTREVISION=	0
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://desktop.good-day.net/ooo11/
