@@ -2,7 +2,6 @@ bin/gif2h5
 bin/h52gif
 bin/h5c++
 bin/h5cc
-bin/h5createU8
 bin/h5debug
 bin/h5diff
 bin/h5dump
@@ -78,31 +77,31 @@ lib/libhdf5.settings
 lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
-share/examples/hdf5/c/h5_attribute.c
-share/examples/hdf5/c/h5_chunk_read.c
-share/examples/hdf5/c/h5_compound.c
-share/examples/hdf5/c/h5_drivers.c
-share/examples/hdf5/c/h5_extend_write.c
-share/examples/hdf5/c/h5_group.c
-share/examples/hdf5/c/h5_mount.c
-share/examples/hdf5/c/h5_read.c
-share/examples/hdf5/c/h5_reference.c
-share/examples/hdf5/c/h5_select.c
-share/examples/hdf5/c/h5_write.c
-share/examples/hdf5/c/ph5example.c
-share/examples/hdf5/c++/Attributes.h5
-share/examples/hdf5/c++/Group.h5
-share/examples/hdf5/c++/SDS.h5
-share/examples/hdf5/c++/SDScompound.h5
-share/examples/hdf5/c++/SDSextendible.h5
-share/examples/hdf5/c++/Select.h5
-share/examples/hdf5/c++/chunks.cpp
-share/examples/hdf5/c++/compound.cpp
-share/examples/hdf5/c++/create.cpp
-share/examples/hdf5/c++/extend_ds.cpp
-share/examples/hdf5/c++/h5group.cpp
-share/examples/hdf5/c++/readdata.cpp
-share/examples/hdf5/c++/writedata.cpp
-@dirrm share/examples/hdf5/c
-@dirrm share/examples/hdf5/c++
-@dirrm share/examples/hdf5
+%%EXAMPLESDIR%%/c/h5_attribute.c
+%%EXAMPLESDIR%%/c/h5_chunk_read.c
+%%EXAMPLESDIR%%/c/h5_compound.c
+%%EXAMPLESDIR%%/c/h5_drivers.c
+%%EXAMPLESDIR%%/c/h5_extend_write.c
+%%EXAMPLESDIR%%/c/h5_group.c
+%%EXAMPLESDIR%%/c/h5_mount.c
+%%EXAMPLESDIR%%/c/h5_read.c
+%%EXAMPLESDIR%%/c/h5_reference.c
+%%EXAMPLESDIR%%/c/h5_select.c
+%%EXAMPLESDIR%%/c/h5_write.c
+%%EXAMPLESDIR%%/c/ph5example.c
+%%EXAMPLESDIR%%/c++/Attributes.h5
+%%EXAMPLESDIR%%/c++/Group.h5
+%%EXAMPLESDIR%%/c++/SDS.h5
+%%EXAMPLESDIR%%/c++/SDScompound.h5
+%%EXAMPLESDIR%%/c++/SDSextendible.h5
+%%EXAMPLESDIR%%/c++/Select.h5
+%%EXAMPLESDIR%%/c++/chunks.cpp
+%%EXAMPLESDIR%%/c++/compound.cpp
+%%EXAMPLESDIR%%/c++/create.cpp
+%%EXAMPLESDIR%%/c++/extend_ds.cpp
+%%EXAMPLESDIR%%/c++/h5group.cpp
+%%EXAMPLESDIR%%/c++/readdata.cpp
+%%EXAMPLESDIR%%/c++/writedata.cpp
+@dirrm %%EXAMPLESDIR%%/c
+@dirrm %%EXAMPLESDIR%%/c++
+@dirrm %%EXAMPLESDIR%%
