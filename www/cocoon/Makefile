@@ -7,7 +7,7 @@
 
 PORTNAME=	cocoon
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://xml.apache.org/cocoon/dist/cocoon1/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -22,7 +22,7 @@ MAKE_ENV=	JAVA_HOME=${JAVA_HOME} CLASSPATH=${CLASSPATH}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CLASSPATH=	${JAVA_CLASSES}
-LIBS=		fop_0_15_0.jar xalan_1_2_D02.jar xerces_1_2.jar
+LIBS=		fop_0_15_0.jar xalan_1_2_D02.jar xerces_1_2.jar turbine-pool.jar
 JDIR=		${PREFIX}/share/java/classes
 CDIR=		${PREFIX}/etc/apache/cocoon
 SDIR=		${PREFIX}/share/java/cocoon

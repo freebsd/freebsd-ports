@@ -6,6 +6,7 @@ share/java/classes/cocoon.jar
 share/java/classes/fop_0_15_0.jar
 share/java/classes/xalan_1_2_D02.jar
 share/java/classes/xerces_1_2.jar
+share/java/classes/turbine-pool.jar
 %%PORTDOCS%%share/java/cocoon/LICENSE
 %%PORTDOCS%%share/java/cocoon/README
 %%PORTDOCS%%share/java/cocoon/docs/api/allclasses-frame.html

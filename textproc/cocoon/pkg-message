@@ -10,6 +10,7 @@ To activate Cocoon:
 	"wrapper.classpath=/usr/local/share/java/classes/xerces_1_2.jar"
 	"wrapper.classpath=/usr/local/share/java/classes/xalan_1_2_D02.jar"
 	"wrapper.classpath=/usr/local/share/java/classes/fop_0_15_0.jar"
+	"wrapper.classpath=/usr/local/share/java/classes/turbine-pool.jar"
 
 (3) Add following line into zone.properties.
 
