@@ -1,4 +1,4 @@
 include/pyorbit-2/pyorbit.h
-lib/%%PYTHON_VERSION%%/site-packages/ORBit.so
+%%PYTHON_SITELIBDIR%%/ORBit.so
 libdata/pkgconfig/pyorbit-2.pc
 @dirrm include/pyorbit-2
