@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- lib/Makefile
++++ lib/Makefile
+@@ -44,8 +44,7 @@
+ STATICLIBS= $(LIBNAMES:%=lib%.a)
+ SHAREDARLIBS= $(LIBNAMES:%=lib%.shared.a)
+ SHAREDLIBS = $(LIBNAMES:%=lib%.so)
+-VERSIONSHAREDLIBS = $(SHAREDLIBS:%=%.${PROJECT_VERSION}) \
+-                    $(SHAREDLIBS:%=%.${PROJECT_SHLIB_VERSION})
++VERSIONSHAREDLIBS = $(SHAREDLIBS:%=%.${PROJECT_SHLIB_VERSION})
+ ALL_LIBS = $(STATICLIBS) $(SHAREDLIBS) $(VERSIONSHAREDLIBS)
+ 
+ ALL = shared_libs
