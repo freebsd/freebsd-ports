@@ -48,6 +48,7 @@ post-patch:
 	${WRKSRC}/bk2site.html
 	@${REINPLACE_CMD} -e 's,/icons/,/icons/bk2site/,' ${WRKSRC}/*
 	@${REINPLACE_CMD} -e 's,long int l,time_t l,' ${WRKSRC}/reference.C
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
