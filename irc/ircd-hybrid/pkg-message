@@ -1,12 +1,13 @@
 ircd-hybrid has now been installed.
 
-You should now copy ${PREFIX}/etc/ircd/*.sample to
-${PREFIX}/etc/ircd/*, and them to suit your needs.
+You should now copy /usr/local/etc/ircd/*.sample to
+/usr/local/etc/ircd/*, and them to suit your needs.
 
-Please note: you should copy _all_ the sample files to the corresponding
-configuration file, even if you just leave it empty, otherwise ircd-hybrid
-may refuse to start.
+Please note: you should copy _all_ the sample files
+to the corresponding configuration file, even if you
+just leave it empty, otherwise ircd-hybrid may refuse
+to start.
 
 You may then start the server by running:
 
-	${PREFIX}/etc/rc.d/ircd.sh start
+	/usr/local/etc/rc.d/ircd.sh start

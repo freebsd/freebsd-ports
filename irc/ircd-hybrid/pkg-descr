@@ -1,8 +1,8 @@
 A port of the ircd-hybrid IRC daemon.
 
-ircd-hybrid includes a number of improvements over a standard ircd-2.8
-server, including compressed server<->server links, chamode +e, and TS5
-support.
+ircd-hybrid includes a number of improvements over a standard
+ircd-2.8 server, including compressed server<->server links, chamode
++e, and TS5 support.
 
 WWW: http://www.ircd-hybrid.org/
 
