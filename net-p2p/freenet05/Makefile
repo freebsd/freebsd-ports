@@ -7,16 +7,14 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5076
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
-DISTNAME=	${PORTNAME}-20040328
+DISTNAME=	${PORTNAME}-20040411
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	1.4+
 USE_SIZE=	yes
@@ -35,6 +33,8 @@ JAR_FILES=	freenet.jar freenet-ext.jar
 JAR_START=	freenet.jar
 # seed file
 SEED_FILE=	seednodes.ref
+
+PORTDOCS=	${DOC_FILES}
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
