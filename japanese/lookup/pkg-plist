@@ -1,0 +1,27 @@
+share/emacs/site-lisp/lookup-startup.el
+share/emacs/site-lisp/lookup/evi-mule.el
+share/emacs/site-lisp/lookup/evi.el
+share/emacs/site-lisp/lookup/lookup-content.el
+share/emacs/site-lisp/lookup/lookup-entry.el
+share/emacs/site-lisp/lookup/lookup-package.el
+share/emacs/site-lisp/lookup/lookup-select.el
+share/emacs/site-lisp/lookup/lookup-types.el
+share/emacs/site-lisp/lookup/lookup-utils.el
+share/emacs/site-lisp/lookup/lookup-vars.el
+share/emacs/site-lisp/lookup/lookup-vse.el
+share/emacs/site-lisp/lookup/lookup.el
+share/emacs/site-lisp/lookup/ndcookie.el
+share/emacs/site-lisp/lookup/ndeb.el
+share/emacs/site-lisp/lookup/ndic.el
+share/emacs/site-lisp/lookup/ndict.el
+share/emacs/site-lisp/lookup/ndkks.el
+share/emacs/site-lisp/lookup/ndmisc.el
+share/emacs/site-lisp/lookup/ndspell.el
+share/emacs/site-lisp/lookup/ndsrd.el
+share/emacs/site-lisp/lookup/ndtp.el
+share/emacs/site-lisp/lookup/sdicf.el
+share/emacs/site-lisp/lookup/stem-english.el
+@unexec install-info  --delete %D/info/lookup.info %D/info/dir
+info/lookup.info
+@exec install-info %D/info/lookup.info %D/info/dir
+@dirrm share/emacs/site-lisp/lookup
