@@ -3,4 +3,5 @@ bin/patextract
 bin/png2pat
 bin/rgb2pat
 bin/visgrep
+bin/xgrab
 bin/xte
