@@ -20,11 +20,15 @@ COMMENT=	Qmail MTA with SpamControl patches
 QMAIL_DIST=		${PORTNAME}-${QMAIL_VERSION}${EXTRACT_SUFX}
 SPAMCONTROL_DIST=	spamcontrol-${SPAMCONTROL_VERSION}_tgz.bin
 SPAMCONTROL_VERSION=	2312
+PREFIX?=		${QMAIL_PORT_PREFIX}
+
+.if !defined(PRE_MK_INCLUDED)
+.include <bsd.port.pre.mk>
+.endif
 
 # Using default from master port, i.e., /var/qmail
 QMAIL_PORT=	${PORTSDIR}/mail/qmail
 QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
-PREFIX?=	${QMAIL_PORT_PREFIX}
 MASTERDIR=	${QMAIL_PORT}
 
 # Block some patches because SpamControl contain the same patches inside
