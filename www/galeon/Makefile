@@ -25,14 +25,10 @@ MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.4"
 MOZILLA=	mozilla
 HEADERS_SUFX=
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
+.if ${WITH_MOZILLA}=="mozilla-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
 MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5b"
-.else
-.if ${WITH_MOZILLA}=="mozilla-embedded"
-MOZILLA=	mozilla-embedded
-HEADERS_SUFX=
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -73,7 +69,6 @@ pre-everything::
 	@${ECHO_MSG} " this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel "
-	@${ECHO_MSG} "  mozilla-embedded[-devel] "
 	@${ECHO_MSG} ""
 
 post-patch:
