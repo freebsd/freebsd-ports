@@ -3,13 +3,19 @@
 There is a script to install tDiary in a user directory.
 This script should be run manually.
 
-  # ruby %%EXAMPLESDIR%%/tdiaryinst.rb --user=hoge
+[Ruby 1.6.x]
+
+  # ruby %%EXAMPLESDIR%%/tdiaryinst.rb --user=User
    or
   % ruby %%EXAMPLESDIR%%/tdiaryinst.rb
 
-same as script :
-    %%EXAMPLESDIR%%/tdiary-FreeBSD.sh
+[Ruby 1.8.x]
 
+  # %%EXAMPLESDIR%%/tdiary-FreeBSD.sh User
+   or
+  % %%EXAMPLESDIR%%/tdiary-FreeBSD.sh install
+
+---
 There is a document by English in the following directories.
   See ...
   %%EXAMPLESDIR%%/misc/i18n/
