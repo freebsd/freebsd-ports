@@ -26,6 +26,10 @@ MAN1=	ucsd.1 svolio.1 svolcvt.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 		@cp ${DISTDIR}/apple_pascal_?.dsk.gz ${WRKDIR}/${DISTNAME}
 		@gunzip ${WRKDIR}/${DISTNAME}/apple_pascal_?.dsk.gz
