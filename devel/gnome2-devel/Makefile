@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-devel
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon \
 		${X11BASE}/lib/gtk-2.0/modules/libgail-gnome.so:${PORTSDIR}/x11-toolkits/libgail-gnome
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 NO_BUILD=	yes
 
