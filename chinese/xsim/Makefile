@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cn-locale=EUC
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' 
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/xsim/IMdkit/IMConn.c
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's,@prefix@/plugins,${DATADIR}/plugins,g' \
