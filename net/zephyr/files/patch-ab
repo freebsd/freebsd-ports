@@ -1,0 +1,20 @@
+--- clients/xzwrite/Makefile.in.orig	Fri Jul  7 23:55:14 1995
++++ clients/xzwrite/Makefile.in	Wed Mar  3 19:29:01 1999
+@@ -17,6 +17,7 @@
+ VPATH=@srcdir@
+ CC=@CC@
+ INSTALL=@INSTALL@
++SED=/usr/bin/sed
+ 
+ DEBUG=-O
+ CFLAGS=$(DEBUG) -DDATADIR=\"$(datadir)\" -I$(top_srcdir)/h -I$(BUILDTOP)/h \
+@@ -41,7 +42,8 @@
+ install: xzwrite XZwrite
+ 	$(INSTALL) -m 755 -s xzwrite $(bindir)
+ 	$(INSTALL) -m 644 $(srcdir)/xzwrite.1 $(mandir)/man1
+-	$(INSTALL) -m 644 XZwrite $(datadir)
++	$(SED) -e 's#XX_PREFIX_XX#$(prefix)#' < XZwrite >XZwrite.tmp
++	$(INSTALL) -m 644 XZwrite.tmp $(datadir)/XZwrite
+ 	$(INSTALL) -m 644 $(srcdir)/xzwrite.bitmap $(datadir)
+ 
+ clean:
