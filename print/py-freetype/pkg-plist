@@ -1,3 +1,6 @@
+lib/%%PYTHON_VERSION%%/site-packages/PyFT.py
+lib/%%PYTHON_VERSION%%/site-packages/PyFT.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PyFT.pyo
 lib/%%PYTHON_VERSION%%/site-packages/freetype.py
 lib/%%PYTHON_VERSION%%/site-packages/freetype.pyc
 lib/%%PYTHON_VERSION%%/site-packages/freetype.pyo
