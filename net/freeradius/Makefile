@@ -16,6 +16,8 @@ COMMENT=	A free RADIUS server implementation
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+BROKEN=         "Incorrect pkg-plist"
+
 LOGDIR?=	/var/log
 
 USE_GMAKE=	yes
