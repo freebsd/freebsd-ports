@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+FORBIDDEN=	"Installs stupid xinitrc file containing xhost +$HOSTNAME"
+
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_ESOUND=	yes
