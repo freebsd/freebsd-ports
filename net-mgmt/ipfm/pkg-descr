@@ -1,0 +1,7 @@
+IP Flow Meter is a bandwidth analysis tool, that measures how much bandwidth
+specified hosts use on their Internet link. 
+
+It is written using libpcap ( ftp://ftp.ee.lbl.gov/libpcap.tar.Z ),
+so it ought to be portable.
+
+WWW: http://www.via.ecp.fr/~tibob/ipfm/

@@ -1,0 +1,11 @@
+--- ipfm-0.10.4/Makefile.in	Mon Oct 11 15:45:58 1999
++++ ipfm-0.10.4.orig/Makefile.in	Sun Mar  5 00:48:36 2000
+@@ -15,7 +15,7 @@
+ 
+ install: all
+ 	$(INSTALL) -d -m 755 $(SBINDIR)
+-	$(INSTALL) -m 755 source/ipfm $(SBINDIR)/ipfm
++	$(INSTALL) -s -m 755 source/ipfm $(SBINDIR)/ipfm
+ 	$(INSTALL) -d -m 755 $(ETCDIR)
+ 	[ -f $(CONFIGURATION_FILE) ] || \
+ 	  $(INSTALL) -m 644 ipfm.conf.sample $(CONFIGURATION_FILE)
