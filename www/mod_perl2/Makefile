@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	1.99r12
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
@@ -33,10 +34,6 @@ MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 
 .if ${PERL_LEVEL} > 500601
 MAN3+=		ModPerl::Config.3 Apache::TestConfig.3
-.endif
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Broken pkg-plist".
 .endif
 
 ##
