@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
@@ -44,11 +44,11 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		COMPFACE	"Enable X-Face support." off \
 		JPILOT		"Enable JPilot support." off \
 		LDAP		"Enable LDAP support." off \
-		SSL		"Enable OpenSSL support." off
+		SSL		"Enable OpenSSL support." on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SSL)
+.if !defined(WITHOUT_SSL)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--enable-ssl
