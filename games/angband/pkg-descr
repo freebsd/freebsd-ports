@@ -1,4 +1,8 @@
-A roguelike game derived from Moria.  Features unique
-monsters, artifact items, color support, X11 support.
+A roguelike game derived from Moria, based loosely on the books of J.R.R.
+Tolkien.  The ultimate aim of the game is to advance in skill and strength,
+collecting better and more powerful magical items until you are ready to face
+the Master of the dungeon: Morgoth himself!  Your character, the dungeon, and
+all the monsters are represented on the screen using ASCII characters.  Game
+also provides graphical tiles mode.
 
 WWW: http://www.thangorodrim.net/

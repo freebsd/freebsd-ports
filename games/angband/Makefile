@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	games
-MASTER_SITES=	ftp://clockwork.dementia.org/angband/Source/  \
-		ftp://ftp.sunet.se/pub/games/Angband/Source/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Source/ \
+		ftp://ftp.planetmirror.com/pub/angband/Source/
 
 MAINTAINER=	mph@freebsd.org
 COMMENT=	Rogue-like game with color, X11 support
