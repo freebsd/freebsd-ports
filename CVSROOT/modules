@@ -4884,6 +4884,7 @@ mcron		ports/sysutils/mcron
 mcrypt		ports/security/mcrypt
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
+md5crk		ports/security/md5crk
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
