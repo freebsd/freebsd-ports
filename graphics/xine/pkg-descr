@@ -1,0 +1,16 @@
+xine is a free video player for unix-like systems, which plays mpeg-2 and
+mpeg-1 system (audio + video multiplexed) streams, eventually mpeg-4 and
+other formats might be added.
+
+xine plays the video and audio data of mpeg-2 videos and synchronizes
+the playback of both.  Depending on the properties of the mpeg stream,
+playback will need more or less processor power, 100% frame rate
+has been seen on a 667 MHz P III system.
+
+xine can play Video CDs and DVDs directly (but only unlocked, unencrypted
+DVDs for obvious - legal - reasons, see the FAQ or homepage for a
+discussion of this subject).
+
+WWW: http://xine.sourceforge.net/
+
+-- Alexander Langer <alex@FreeBSD.org>
