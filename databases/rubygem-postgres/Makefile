@@ -20,7 +20,12 @@ LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+.if defined(WITH_OLD_LAYOUT)
+CONFIGURE_ARGS=	--with-pgsql-include-dir="${LOCALBASE}/pgsql/include" \
+		--with-pgsql-lib-dir="${LOCALBASE}/pgsql/lib"
+.else
 CONFIGURE_ARGS=	--with-pgsql-include-dir="${LOCALBASE}/include/pgsql"
+.endif
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README doc/postgres.html
