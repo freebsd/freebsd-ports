@@ -1,0 +1,15 @@
+Pic2fig is a pic(l) preprocessor for drawing simple figures in Fig code.
+The basic objects are box, line, arrow, circle, ellipse, arc and text.
+
+When  pic2fig  is  executed, it produces an output file in the
+current directory.  The name is constructed  from  the input  file's
+name.  If the input filename ends with .pic, then that extension
+will be replaced by .fig.   Otherwise, .fig  is appended to the input
+filename.  If file does not exist, then pic2fig tries appending .pic
+to the name.
+
+Updated to produce FIG 3.2 format by Patrick Powell <papowell@astart.com>
+
+Web Site: ftp://ftp.x.org/contrib/utilities/
+
+Note:  this version does not support the groff/pic 'thickness' attribute.
