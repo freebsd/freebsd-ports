@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="064225c5-1f53-11d9-836a-0090962cff2a">
+    <topic>squid -- NTLM authentication denial-of-service vulnerability</topic>
+      <affects>
+	<package>
+	  <name>squid</name>
+	  <range><lt>2.5.7</lt></range>
+	</package>
+      </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A remote attacker is able to cause a denial-of-service
+	  situation, when NTLM authentication is enabled in squid.
+	  NTLM authentication uses two functions which lack correct
+	  offset checking.</p>
+    </body>
+    </description>
+      <references>
+	<cvename>CAN-2004-0832</cvename>
+	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1045</url>
+      </references>
+    <dates>
+      <discovery>2004-08-18</discovery>
+      <entry>2004-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca543e06-207a-11d9-814e-0001020eed82">
     <topic>cacti -- SQL injection</topic>
     <affects>
