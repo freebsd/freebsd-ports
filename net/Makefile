@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.290 1999/08/18 07:19:06 asami Exp $
+# $Id: Makefile,v 1.291 1999/08/22 08:42:30 fenner Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -147,6 +147,7 @@
     SUBDIR += socks5
     SUBDIR += sup
     SUBDIR += tac_plus
+    SUBDIR += tcpflow
     SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += tdetect
