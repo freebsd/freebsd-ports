@@ -1,13 +1,40 @@
-*** lib_vidattr.c.bak	Fri Oct  7 11:58:52 1994
---- lib_vidattr.c	Thu Nov 24 18:05:47 1994
+*** Makefile.in.orig	Mon Nov 21 11:18:45 1994
+--- Makefile.in	Sat Nov 26 15:17:52 1994
 ***************
-*** 64,69 ****
---- 64,71 ----
-  	T(("previous attribute was %s", _traceattr(previous_attr)));
+*** 27,39 ****
+  SHELL=/bin/sh
+  .SUFFIXES: .c .o
   
-  	if (newmode == A_NORMAL && exit_attribute_mode) {
-+ 	    if((previous_attr & A_ALTCHARSET) && exit_alt_charset_mode)
-+ 		    tputs(exit_alt_charset_mode, 1, outc);
-  	    tputs(exit_attribute_mode, 1, outc);
-  	    current_pair = -1;
-  	    goto set_color;
+- CC=@CC@
+  #CFLAGS=-g -Wall -Wshadow -Wconversion -Wstrict-prototypes -Wmissing-prototypes
+- CFLAGS=@CFLAGS@
+  VPATH=@srcdir@
+  CPPFLAGS=@CPPFLAGS@ -I.
+  
+! LIBS=@LIBS@
+  LDFLAGS=@LDFLAGS@
+  
+  # Any -D definitions:
+--- 27,37 ----
+  SHELL=/bin/sh
+  .SUFFIXES: .c .o
+  
+  #CFLAGS=-g -Wall -Wshadow -Wconversion -Wstrict-prototypes -Wmissing-prototypes
+  VPATH=@srcdir@
+  CPPFLAGS=@CPPFLAGS@ -I.
+  
+! LIBS= -lresolv -lreadline -lncurses -lmytinfo
+  LDFLAGS=@LDFLAGS@
+  
+  # Any -D definitions:
+***************
+*** 176,180 ****
+--- 174,181 ----
+  Win.o: $(GLOBAL_H) Curses.h Main.h Recent.h RCmd.h LGets.h GetPass.h
+  
+  Xfer.o: $(GLOBAL_H) Main.h Xfer.h RCmd.h FTP.h Progress.h Poll.h
++ 
++ install:
++ 	install -c -s -o bin -g bin $(PROG) /usr/local/bin/ncftp2
+  
+  # eof
