@@ -7,7 +7,6 @@ share/apps/ksetispy/pics/arrow.png
 share/apps/ksetispy/pics/baloons.png
 share/apps/ksetispy/pics/cache-mini.png
 share/apps/ksetispy/pics/cache.png
-share/apps/ksetispy/pics/calibration.png
 share/apps/ksetispy/pics/client-mini.png
 share/apps/ksetispy/pics/client.png
 share/apps/ksetispy/pics/drift-rate.png
@@ -15,7 +14,6 @@ share/apps/ksetispy/pics/gaussian.png
 share/apps/ksetispy/pics/i-gaussian.png
 share/apps/ksetispy/pics/idle.png
 share/apps/ksetispy/pics/interesting.png
-share/apps/ksetispy/pics/keep-alive.png
 share/apps/ksetispy/pics/performance-mini.png
 share/apps/ksetispy/pics/performance.png
 share/apps/ksetispy/pics/processor-mini.png
@@ -27,6 +25,10 @@ share/apps/ksetispy/pics/results-mini.png
 share/apps/ksetispy/pics/results.png
 share/apps/ksetispy/pics/returned.png
 share/apps/ksetispy/pics/schedule.png
+share/apps/ksetispy/pics/script-certificate.png
+share/apps/ksetispy/pics/script-data.png
+share/apps/ksetispy/pics/script-group.png
+share/apps/ksetispy/pics/script-user.png
 share/apps/ksetispy/pics/setup-mini.png
 share/apps/ksetispy/pics/setup.png
 share/apps/ksetispy/pics/skymap.png
@@ -44,7 +46,6 @@ share/apps/ksetispy/xml/perfcomp.xml
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/cache.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/cache_setup.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/client.png
-%%PORTDOCS%%share/doc/HTML/en/ksetispy/common
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/connect.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/cpf.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/idle.png
@@ -73,6 +74,7 @@ share/apps/ksetispy/xml/perfcomp.xml
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/setup4.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/skymap.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/skymap_legend.png
+%%PORTDOCS%%share/doc/HTML/en/ksetispy/stats_servers.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/telescope.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/tray.png
 %%PORTDOCS%%share/doc/HTML/en/ksetispy/uninteresting.png
@@ -84,7 +86,6 @@ share/apps/ksetispy/xml/perfcomp.xml
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/cache.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/cache_setup.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/client.png
-%%PORTDOCS%%share/doc/HTML/it/ksetispy/common
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/connect.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/cpf.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/idle.png
@@ -113,6 +114,7 @@ share/apps/ksetispy/xml/perfcomp.xml
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/setup4.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/skymap.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/skymap_legend.png
+%%PORTDOCS%%share/doc/HTML/it/ksetispy/stats_servers.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/telescope.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/tray.png
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/uninteresting.png
@@ -122,14 +124,16 @@ share/apps/ksetispy/xml/perfcomp.xml
 %%PORTDOCS%%share/doc/HTML/it/ksetispy/wu_log.png
 share/icons/hicolor/16x16/apps/ksetispy.png
 share/icons/hicolor/32x32/apps/ksetispy.png
+share/icons/hicolor/48x48/apps/ksetispy.png
 share/icons/locolor/16x16/apps/ksetispy.png
 share/icons/locolor/32x32/apps/ksetispy.png
 share/locale/it/LC_MESSAGES/ksetispy.mo
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/it 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/HTML/it/ksetispy
-%%PORTDOCS%%@unexec rmdir %D/%%PORTDOCS%%share/doc/HTML/it 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/HTML/en/ksetispy
-@dirrm share/apps/ksetispy/xml
+%%PORTDOCS%%@dirrm share/doc/HTML/it/ksetispy
+%%PORTDOCS%%@dirrm share/doc/HTML/en/ksetispy
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @dirrm share/apps/ksetispy/pics
+@dirrm share/apps/ksetispy/xml
 @dirrm share/apps/ksetispy
