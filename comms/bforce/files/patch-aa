@@ -1,6 +1,5 @@
-diff -ur configure configure
---- configure	Sun Nov 12 22:19:24 2000
-+++ configure	Thu Jan 16 09:34:36 2003
+--- configure.orig	Sun Nov 12 21:19:24 2000
++++ configure	Fri Nov 14 20:26:09 2003
 @@ -746,10 +746,10 @@
  #
  echo $ac_n "checking "UUCP lock files directory"""... $ac_c" 1>&6
@@ -15,3 +14,12 @@ diff -ur configure configure
  else
  	lockdir=/var/lock/
  fi
+@@ -759,7 +759,7 @@
+ 
+ echo "$ac_t"""$lockdir"" 1>&6
+ 
+-for ac_prog in 'bison -y' byacc
++for ac_prog in byacc 'bison -y'
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
