@@ -7,6 +7,7 @@
 
 PORTNAME=	treecc
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
@@ -17,10 +18,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		treecc.1
 INFO=		treecc
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-post-install:
-	@${LN} -sf treecc ${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>
