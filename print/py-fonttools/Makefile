@@ -7,6 +7,7 @@
 
 PORTNAME=	fonttools
 PORTVERSION=	1.0b1
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fonttools
@@ -24,7 +25,6 @@ RUN_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
 WRKSRC=		${WRKDIR}/fonttools
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
 
 DOCDIR=		${PREFIX}/share/doc/py-fonttools
 
