@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.13.2.1
+PORTVERSION=	0.13.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,10 +47,10 @@ post-install::
 	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in README setR smindev.R
+.for i in README setR tuning.R
 	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
 .endfor
-.for i in bogolex.sh distrib mkdb sizes smindev.sh
+.for i in bogolex.sh distrib mkdb sizes tuning.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
 .endfor
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
