@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 Lachlan O'Dea
 #
-# $Id: Makefile,v 1.4 1999/01/04 15:49:04 dirk Exp $
+# $Id: Makefile,v 1.5 1999/02/12 23:56:58 steve Exp $
 #
 
 DISTNAME=	openldap-1.2.0
@@ -11,7 +11,10 @@ CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/ \
-		ftp://mirror.aarnet.edu.au/pub/OpenLDAP/openldap-release/
+		ftp://mirror.aarnet.edu.au/pub/OpenLDAP/openldap-release/ \
+		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
+		http://www.unibase.cz/ldapcz/Programy/Free/OpenLDAP/openldap-release/ \
+		ftp://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ulmo@earthling.net
