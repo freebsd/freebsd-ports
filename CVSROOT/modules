@@ -3192,6 +3192,7 @@ ja-ruby-gyokuro	ports/japanese/ruby-gyokuro
 ja-ruby-kakasi	ports/japanese/ruby-kakasi
 ja-ruby-man	ports/japanese/ruby-man
 ja-ruby-mecab	ports/japanese/ruby-mecab
+ja-ruby-rdic	ports/japanese/ruby-rdic
 ja-ruby-refe	ports/japanese/ruby-refe
 ja-ruby-romkan	ports/japanese/ruby-romkan
 ja-ruby-slang	ports/japanese/ruby-slang
