@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Apr 24 19:21:06 2001
++++ Makefile.in	Tue Apr 24 19:21:33 2001
+@@ -47,7 +47,7 @@
+ # You shouldn't need to edit anything below here.
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I.
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
