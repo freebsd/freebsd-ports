@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1996/12/18 08:55:10 asami Exp $
+# $Id: Makefile,v 1.8 1996/12/30 21:33:31 max Exp $
 #
 
 DISTNAME=	oneko-1.2
@@ -14,6 +14,9 @@ MAINTAINER=	candy@fct.kgc.co.jp
 
 USE_IMAKE=	yes
 MANCOMPRESSED=	yes
-MAN1=		oneko.1
+MAN6=		oneko.6
+
+pre-configure:
+	@echo "MANSUFFIX=6" >>${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
