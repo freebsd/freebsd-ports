@@ -6,6 +6,6 @@ modules for authenticating out of several different kinds of databases.
 Mod_Auth_External is a flexible tool for creating authentication systems
 based on other databases.
 
-WWW: http://www.wwnet.net/~janc/mod_auth_external.html
+WWW: http://www.unixpapa.com/mod_auth_external.html
 
 - Anders Nordby <anders@fix.no>

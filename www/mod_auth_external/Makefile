@@ -8,7 +8,7 @@
 PORTNAME=	mod_auth_external
 PORTVERSION=	2.1.15
 CATEGORIES=	www
-MASTER_SITES=	http://www.wwnet.net/~janc/software/ \
+MASTER_SITES=	http://www.unixpapa.com/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
