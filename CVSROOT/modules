@@ -9411,6 +9411,7 @@ xerces-c	ports/textproc/xerces-c
 xerces-c2	ports/textproc/xerces-c2
 xerces-j	ports/textproc/xerces-j
 xevil		ports/games/xevil
+xextensions	ports/x11/xextensions
 xeyesplus	ports/games/xeyesplus
 xface.el	ports/graphics/xface.el
 xfce		ports/x11-wm/xfce
