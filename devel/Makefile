@@ -413,7 +413,6 @@
     SUBDIR += ossp-al
     SUBDIR += ossp-ex
     SUBDIR += ossp-l2
-    SUBDIR += ossp-mm
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += p4.el
