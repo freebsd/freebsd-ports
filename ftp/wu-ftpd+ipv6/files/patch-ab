@@ -1,5 +1,5 @@
 *** Makefile.orig	Fri Apr  1 11:03:58 1994
---- Makefile	Tue Aug  8 20:40:20 1995
+--- Makefile	Thu Oct 12 17:31:47 1995
 ***************
 *** 1,25 ****
 ! BINDIR=		/usr/local/bin
@@ -12,7 +12,7 @@
   	@ echo 'You can say "build help" for details on how it works.'
   
   install: bin/ftpd bin/ftpcount bin/ftpshut
-  	-mv -f ${ETCDIR}/ftpd ${ETCDIR}/ftpd-old
+! 	-mv -f ${ETCDIR}/ftpd ${ETCDIR}/ftpd-old
   	@echo Installing binaries.
 ! 	install -o bin -g bin -m 755 bin/ftpd ${ETCDIR}/ftpd
 ! 	install -o bin -g bin -m 755 bin/ftpshut ${BINDIR}/ftpshut
@@ -40,7 +40,7 @@
   	@ echo 'You can say "build help" for details on how it works.'
   
   install: bin/ftpd bin/ftpcount bin/ftpshut
-  	-mv -f ${ETCDIR}/ftpd ${ETCDIR}/ftpd-old
+! 	-mv -f ${LIBEXECDIR}/ftpd ${LIBEXECDIR}/ftpd-old
   	@echo Installing binaries.
 ! 	install -c -o bin -g bin -m 755 bin/ftpd ${LIBEXECDIR}/ftpd
 ! 	install -c -o bin -g bin -m 755 bin/ftpshut ${BINDIR}/ftpshut
