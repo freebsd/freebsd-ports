@@ -58,7 +58,7 @@ pre-extract:
 	@${SED} -e s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
 post-extract:
-.for i in ${DISTFILES}
+.for i in rsa.c
 	@tr -d '\r' <${_DISTDIR}/${i} >${WRKSRC}/${i}
 .endfor
 
