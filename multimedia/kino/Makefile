@@ -7,7 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/42/	\
 		http://perso.enst.fr/~beyssac/mirrors/
@@ -17,7 +17,7 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
-		Magick.6:${PORTSDIR}/graphics/ImageMagick	\
+		Magick.7:${PORTSDIR}/graphics/ImageMagick	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_GETTEXT=	yes
