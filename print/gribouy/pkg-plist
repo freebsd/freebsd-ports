@@ -1,0 +1,10 @@
+bin/gribouy
+share/gnome/applications/gribouy.desktop
+share/gnome/gnome-2.0/ui/gribouy-ui.xml
+share/gnome/gribouy/glade/gribouy.glade
+share/gnome/pixmaps/gribouy.png
+share/gnome/pixmaps/gribouy/gribouy-graphics.png
+share/gnome/pixmaps/gribouy/gribouy-logo.jpg
+@dirrm share/gnome/pixmaps/gribouy
+@dirrm share/gnome/gribouy/glade
+@dirrm share/gnome/gribouy
