@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -68,8 +68,10 @@ MAKE_ENV+=	PAM=${PAM}
 .if defined(SKEY) && ${SKEY} == YES
 MAKE_ENV+=	SKEY=yes
 .endif
+EMPTYDIR=	${PREFIX}/empty
 ETCOLD=		${PREFIX}/etc
 ETCSSH=		${PREFIX}/etc/ssh
+PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
 WRKSRC=		${WRKDIR}/ssh
 
 post-extract:
@@ -110,17 +112,16 @@ post-configure:
 .endif
 
 pre-install:
+	-${MKDIR} ${EMPTYDIR}
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
-		-h - -d ${PREFIX}/empty -s /nonexistent -c "sshd privilege separation"; fi
+		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
 	${MKDIR} ${PREFIX}/libdata/ssh
-	${MKDIR} ${PREFIX}/empty
-	${MKDIR} ${ETCSSH}
+	-@[ ! -d ${ETCSSH} ] && ${MKDIR} ${ETCSSH}
 .for i in ${PRECIOUS}
-.if exists(${PREFIX}/etc/${i})
-	@${ECHO_MSG} ">> Linking ${ETCSSH}/${i} from old layout."
-	@${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
-.endif
+	-@[ -f ${ETCOLD}/${i} ] && [ ! -f ${ETCSSH}/${i} ] && \
+		${ECHO_MSG} ">> Linking ${ETCSSH}/${i} from old layout." && \
+		${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
 .endfor
 
 post-install:
