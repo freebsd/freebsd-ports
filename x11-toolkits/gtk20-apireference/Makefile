@@ -13,7 +13,7 @@ MASTER_SITES=	http://developer.gnome.org/doc/API/
 DISTFILES=	${MODULES:C/$/-2.0-docs${EXTRACT_SUFX}/}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	API reference for the Gimp Toolkit v2.0 for X11 GUI
+COMMENT=	API reference for the Gimp Toolkit v2.x for X11 GUI
 
 NO_BUILD=	yes
 NO_CHECKSUM=	yes		# they're rebuild too often to keep track of
