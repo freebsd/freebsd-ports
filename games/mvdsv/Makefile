@@ -6,18 +6,38 @@
 #
 
 PORTNAME=	mvdsv
-PORTVERSION=	0.1723b
+PORTVERSION=	0.1725b
 CATEGORIES=	games
-MASTER_SITES=	http://www.wsb.poznan.pl/~pawel/q/q/ktpro/ \
+MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_source
+DISTNAME=	${PORTNAME}${PORTVERSION}-sources
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(GCCVERSION)
+. if ${GCCVERSION} < 030000
+GCC_VER=	2
+. else
+GCC_VER=	3
+. endif
+.else
+. if ${OSVERSION} < 500035
+GCC_VER=	2
+. else
+GCC_VER=	3
+. endif
+.endif
+
 MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ARGS+=	GCC_VER=${GCC_VER}
+
 PLIST_FILES=	bin/mvdsv
-WRKSRC=		${WRKDIR}/${DISTNAME}/source
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/source
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -30,4 +50,4 @@ pre-everything::
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
