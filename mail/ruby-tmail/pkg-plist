@@ -39,7 +39,6 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/address.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/basics.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/changes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/config.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/details.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/index.html
@@ -53,7 +52,6 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/address.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/basics.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/changes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/config.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/details.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/index.html
