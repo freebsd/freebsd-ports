@@ -1,0 +1,20 @@
+--- getopt/Makefile.orig	Tue Feb 22 08:32:25 2000
++++ getopt/Makefile	Tue Feb 22 08:33:19 2000
+@@ -1,12 +1,12 @@
+ # GetOpt Makefile
+ 
+-CC=gcc
++#CC=gcc
+ #FLAGS=-g -DDEBUG -Wall
+ #FLAGS=-g -pg
+-FLAGS=-O6 -s -Wall
+-CFLAGS=$(FLAGS)
+-LDFLAGS=$(FLAGS)
+-SHELL=`which bash`
++FLAGS=-Wall
++CFLAGS+=$(FLAGS)
++LDFLAGS+=$(FLAGS)
++SHELL=`which sh`
+ LIB=libgetopt.a
+ OBJS=getopt.o getopt1.o
+ RANLIB=ranlib

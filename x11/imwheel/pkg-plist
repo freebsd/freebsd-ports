@@ -1,0 +1,5 @@
+bin/imwheel
+etc/imwheelrc
+share/doc/imwheel/README
+share/doc/imwheel/EMACS
+@dirrm share/doc/imwheel

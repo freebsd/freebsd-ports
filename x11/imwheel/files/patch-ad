@@ -1,0 +1,20 @@
+--- jax/Makefile.orig	Tue Feb 22 08:33:53 2000
++++ jax/Makefile	Tue Feb 22 08:35:02 2000
+@@ -1,13 +1,13 @@
+-CC=gcc -O -s
++#CC=gcc -O -s
+ #CC=gcc -g
+-INC=-I/usr/X11R6/include
+-LIB=-L/usr/X11R6/lib
++INC=-I${X11BASE}/include
++LIB=-L${X11BASE}/lib
+ ARCHIVE=*.c *.h Makefile *.1 *.man
+ 
+ all: libjax.a
+ 
+ jax.o : jax.c jax.h
+-	$(CC) -c jax.c $(INC)
++	$(CC) $(CFLAGS) -c jax.c $(INC)
+ 
+ libjax.a: jax.o
+ 	rm -f libjax.a
