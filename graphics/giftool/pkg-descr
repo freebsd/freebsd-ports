@@ -11,7 +11,7 @@ Usage: giftool [options] [file]
 	-C	Strip comment from file(s)
 	-o file	Send output to 'file'
 	-rgb name	Use 'name' as the transparent pixel
-	-rgb ##,##,##	tUse rgb-value as the transparent pixel
+	-rgb ##,##,##	Use rgb-value as the transparent pixel
 	-###	Used pixel index as transparent (1 == first colormap entry)
 
 For instance you could say 'giftool -B -i *.gif' to convert all your images
