@@ -23,6 +23,8 @@ COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
+BROKEN=		"Inconsistent dependencies (qt 2.x and 3.x)"
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	2
