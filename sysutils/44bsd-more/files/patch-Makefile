@@ -1,0 +1,11 @@
+--- Makefile	2000/05/23 04:17:57	1.15
++++ Makefile	2004/03/08 21:36:24
+@@ -6,7 +6,7 @@
+ CFLAGS+=-I${.CURDIR} -I${.OBJDIR} -DTERMIOS
+ SRCS=	ch.c command.c help.c input.c line.c linenum.c macro.c main.c marks.c \
+ 	ncommand.c option.c os.c output.c position.c prim.c screen.c search.c \
+-	signal.c tags.c ttyin.c
++	signal.c tags.c ttyin.c defrc.h
+ DPADD=	${LIBTERMCAP}
+ LDADD=	-ltermcap
+ 
