@@ -26,12 +26,12 @@ checkfile() {
 # Uninstall timseived's Cyrus.conf file.
 
 cyrus_conf() {
-	if [ -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf ]; then
-		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp
-		if cmp -s ${PKG_PREFIX}/lib/sasl/Cyrus.conf ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp; then
-			rm -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf
+	if [ -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf ]; then
+		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp
+		if cmp -s ${PKG_PREFIX}/lib/sasl2/Cyrus.conf ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp; then
+			rm -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf
 		fi
-		rm -f ${PKG_PREFIX}/lib/sasl/Cyrus.conf.tmp
+		rm -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp
 	fi
 }
 
