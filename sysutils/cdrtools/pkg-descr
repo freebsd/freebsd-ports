@@ -1,7 +1,5 @@
 Cdrecord allows you to create CD's on a CD-Recorder.
 
-See homepage http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html for details.
-
 Cdrecord has been implemented with a Philips CDD 521.
 Cdrecord now is maintained with the following drives:
 
@@ -17,3 +15,5 @@ It should run also on:
 
 This version also includes mkisofs (1.2b5) and cdda2wav, a CD-DA
 ripping program that includes customisable jitter correction.
+
+WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
