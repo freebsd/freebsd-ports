@@ -8829,6 +8829,7 @@ pl-webalizer2	ports/polish/webalizer2
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 planner		ports/deskutils/planner
+planner.el	ports/deskutils/planner.el
 plans		ports/deskutils/plans
 plasma-kmod	ports/graphics/plasma-kmod
 platon		ports/biology/platon
