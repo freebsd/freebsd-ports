@@ -697,3 +697,4 @@ x11/twin||2003-11-07|port was broken for >3 months with no fix submitted
 cad/felt|science/felt|2003-11-08|moved to science category
 cad/kaskade|math/kaskade|2003-11-08|moved to math category
 misc/icemc||2003-11-08|author no longer develops program, distfile gone
+editors/openoffice-1.1-cz|editors/openoffice-1.1-cs|2003-11-08|Czech language ISO code is cs
