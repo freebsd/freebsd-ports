@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041231:
+  AFFECTS: users of www/awstats
+  AUTHOR: webmaster@lightningfire.net
+
+  Location of awstats changed from /usr/local/www to /usr/local/www/awstats.
+  Please update configuration according instructions in pkg-message.
+
 20041229:
   AFFECTS: users of x11/kdebase3, x11/xorg-server
   AUTHOR: lofi@freebsd.org
@@ -16,7 +23,7 @@ upgrades.
   and has permissions 1777 (read/write/access for everybody + sticky bit).
 
   To make sure everything is in working order, do (as root):
-  mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix && 
+  mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix &&
   chown root:wheel /tmp/.ICE-unix
 
   Also, make sure you do NOT have clear_tmp_enable="YES" set in /etc/rc.conf,
