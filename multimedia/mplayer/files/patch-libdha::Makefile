@@ -1,0 +1,20 @@
+--- libdha/Makefile.orig	Sun Dec 22 01:49:52 2002
++++ libdha/Makefile	Sat Feb  1 12:10:47 2003
+@@ -4,8 +4,6 @@
+ 
+ MAJOR_VERSION = 0
+ MINOR_VERSION = 1
+-VERSION = $(MAJOR_VERSION).$(MINOR_VERSION) 
+-
+ 
+ ifeq ($(TARGET_OS),CYGWIN)
+ SHORTNAME = libdha.dll
+@@ -15,7 +13,7 @@
+ #SHORTNAME = libdha.so
+ VSHORTNAME = libdha.so
+ endif
+-LIBNAME = libdha.so.$(VERSION)
++LIBNAME = libdha-$(MAJOR_VERSION).so.$(MINOR_VERSION)
+ 
+ SRCS=libdha.c mtrr.c pci.c pci_names.c
+ OBJS=$(SRCS:.c=.o)
