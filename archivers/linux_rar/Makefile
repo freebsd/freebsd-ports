@@ -8,12 +8,14 @@
 PORTNAME=	linux_rar
 PORTVERSION=	2.90
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.rarsoft.com/rar/ \
+MASTER_SITES=	ftp://ftp.rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
 DISTNAME=	rarlnx${PORTVERSION:S/0//S/.//}
 EXTRACT_SUFX=	.sfx
 
 MAINTAINER=	sf@FreeBSD.org
+
+IGNORE=		"No reason to use this: newer archivers/rar is available."
 
 NO_CDROM=	NOFEE: Can not charge for distribution
 NO_PACKAGE=	Only unmodified original package can be distributed
