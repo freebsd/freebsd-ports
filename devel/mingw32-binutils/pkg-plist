@@ -55,33 +55,13 @@ bin/%%BINUTILS_TARG%%-windres
 %%BINUTILS_TARG%%/info/bfd.info-8
 %%BINUTILS_TARG%%/info/bfd.info-9
 %%BINUTILS_TARG%%/info/binutils.info
-%%BINUTILS_TARG%%/info/binutils.info-1
-%%BINUTILS_TARG%%/info/binutils.info-2
-%%BINUTILS_TARG%%/info/binutils.info-3
 %%BINUTILS_TARG%%/info/standards.info
 %%BINUTILS_TARG%%/info/configure.info
 %%BINUTILS_TARG%%/info/configure.info-1
 %%BINUTILS_TARG%%/info/configure.info-2
 %%BINUTILS_TARG%%/info/configure.info-3
 %%BINUTILS_TARG%%/info/as.info
-%%BINUTILS_TARG%%/info/as.info-1
-%%BINUTILS_TARG%%/info/as.info-2
-%%BINUTILS_TARG%%/info/as.info-3
-%%BINUTILS_TARG%%/info/as.info-4
-%%BINUTILS_TARG%%/info/as.info-5
-%%BINUTILS_TARG%%/info/as.info-6
-%%BINUTILS_TARG%%/info/as.info-7
-%%BINUTILS_TARG%%/info/as.info-8
-%%BINUTILS_TARG%%/info/as.info-9
-%%BINUTILS_TARG%%/info/as.info-10
-%%BINUTILS_TARG%%/info/as.info-11
 %%BINUTILS_TARG%%/info/ld.info
-%%BINUTILS_TARG%%/info/ld.info-1
-%%BINUTILS_TARG%%/info/ld.info-2
-%%BINUTILS_TARG%%/info/ld.info-3
-%%BINUTILS_TARG%%/info/ld.info-4
-%%BINUTILS_TARG%%/info/ld.info-5
-%%BINUTILS_TARG%%/info/ld.info-6
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/bfd.info %D/%%BINUTILS_TARG%%/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/binutils.info %D/%%BINUTILS_TARG%%/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir
