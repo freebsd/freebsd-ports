@@ -1,0 +1,2412 @@
+--- clr/src/debug/inc/dbgipcevents.h	2002/07/26 21:52:59	1.1
++++ clr/src/debug/inc/dbgipcevents.h	2002/07/26 21:54:52
+@@ -240,7 +240,7 @@
+         if (szName != NULL)
+             m_szAppDomainName = szName;
+         else
+-            m_szAppDomainName = L"<NoName>";
++            m_szAppDomainName = (LPCWSTR)L"<NoName>";
+ 
+         m_iNameLengthInBytes = (int) (wcslen(m_szAppDomainName) + 1) * sizeof(WCHAR);
+     }
+--- clr/src/vm/exceptmacros.h	2002/07/26 19:57:16	1.1
++++ clr/src/vm/exceptmacros.h	2002/07/26 19:58:13
+@@ -365,7 +365,7 @@
+ #define COMPLUS_END_CATCH_NO_RETHROW       COMPLUS_END_CATCH
+ 
+ #define GETTHROWABLE()              (GetThread()->GetThrowable())
+-#define SETTHROWABLE(or)            (GetThread()->SetThrowable(or))
++#define SETTHROWABLE(oref)            (GetThread()->SetThrowable(oref))
+ 
+ 
+ 
+--- clr/src/vm/field.h	2002/07/26 20:08:30	1.1
++++ clr/src/vm/field.h	2002/07/26 20:09:30
+@@ -433,13 +433,13 @@
+         return *pObjRef;
+     }
+ 
+-    VOID SetStaticOBJECTREF(OBJECTREF or)
++    VOID SetStaticOBJECTREF(OBJECTREF oref)
+     {
+         THROWSCOMPLUSEXCEPTION();
+         _ASSERTE(IsStatic());
+ 
+         OBJECTREF *pObjRef = NULL;
+-        GCPROTECT_BEGIN(or);
++        GCPROTECT_BEGIN(oref);
+         if (IsContextStatic()) 
+             pObjRef = (OBJECTREF*)Context::GetStaticFieldAddress(this);
+         else if (IsThreadStatic()) 
+@@ -452,7 +452,7 @@
+         }
+         _ASSERTE(pObjRef);
+         GCPROTECT_END();
+-        SetObjectReference(pObjRef, or, GetAppDomain());
++        SetObjectReference(pObjRef, oref, GetAppDomain());
+     }
+ 
+     void*   GetStaticValuePtr()               
+--- clr/src/vm/ejitmgr.h	2002/07/26 20:10:39	1.1
++++ clr/src/vm/ejitmgr.h	2002/07/26 21:52:00
+@@ -425,12 +425,12 @@
+     void                MovePreservedMethods();
+     unsigned            CompressPreserveCandidateArray(unsigned size);
+     void                MovePreservedMethod(JittedMethodInfo* jmi);
+-    int static __cdecl  compareJMIstart( const void *arg1, const void *arg2 );
++    static int __cdecl  compareJMIstart( const void *arg1, const void *arg2 );
+ 
+     void                MoveAllPreservedEhGcInfo();
+     void                MoveSinglePreservedEhGcInfo(JittedMethodInfo* jmi);
+     void                AddToPreservedEhGcInfoList(JittedMethodInfo* jmi);
+-    int static __cdecl  compareEhGcPtr( const void *arg1, const void *arg2 );
++    static int __cdecl  compareEhGcPtr( const void *arg1, const void *arg2 );
+     void                growPreservedEhGcInfoList();
+     void static         CleanupLargeEhGcInfoList();
+ 
+--- clr/src/vm/remoting.h	2002/07/26 20:11:28	1.1
++++ clr/src/vm/remoting.h	2002/07/26 20:11:48
+@@ -163,8 +163,8 @@
+     static void FieldAccessor(FieldDesc* pFD, OBJECTREF o, LPVOID pVal, BOOL fIsGetter);
+     // Methods related to wrapping/unwrapping of objects
+     static OBJECTREF WrapHelper(OBJECTREF obj);
+-    static OBJECTREF Wrap(OBJECTREF or);
+-    static OBJECTREF GetProxyFromObject(OBJECTREF or);
++    static OBJECTREF Wrap(OBJECTREF oref);
++    static OBJECTREF GetProxyFromObject(OBJECTREF oref);
+     static OBJECTREF GetObjectFromProxy(OBJECTREF obj, BOOL fMatchContexts);
+     static BOOL IsProxyToRemoteObject(OBJECTREF obj);
+     static OBJECTREF GetServerContext(OBJECTREF obj);
+--- clr/src/vm/eedbginterface.h	2002/07/26 20:12:33	1.1
++++ clr/src/vm/eedbginterface.h	2002/07/26 20:12:55
+@@ -79,7 +79,7 @@
+     virtual CorElementType ArrayGetElementType(ArrayBase* a) = 0;
+ 
+     virtual void *GetObjectFromHandle(OBJECTHANDLE handle) = 0;
+-    virtual void *GetHandleFromObject(void *or,
++    virtual void *GetHandleFromObject(void *oref,
+                                       bool fStrongNewRef,
+                                       AppDomain *pAppDomain) = 0;
+     virtual void DbgDestroyHandle( OBJECTHANDLE oh, bool fStrongNewRef ) = 0;
+--- clr/src/vm/eedbginterfaceimpl.h	2002/07/26 20:15:41	1.1
++++ clr/src/vm/eedbginterfaceimpl.h	2002/07/26 20:16:26
+@@ -117,23 +117,23 @@
+         return v;
+     }
+ 
+-    void *GetHandleFromObject(void *or, bool fStrongNewRef, AppDomain *pAppDomain)
++    void *GetHandleFromObject(void *oref, bool fStrongNewRef, AppDomain *pAppDomain)
+     {
+         OBJECTHANDLE oh;
+ 
+         if (fStrongNewRef)
+         {
+-            oh = pAppDomain->CreateStrongHandle( ObjectToOBJECTREF((Object *)or));
++            oh = pAppDomain->CreateStrongHandle( ObjectToOBJECTREF((Object *)oref));
+ 
+             LOG((LF_CORDB, LL_INFO1000, "EEI::GHFO: Given objectref 0x%x,"
+-                "created strong handle 0x%x!\n", or, oh));
++                "created strong handle 0x%x!\n", oref, oh));
+         }
+         else
+         {
+-            oh = pAppDomain->CreateLongWeakHandle( ObjectToOBJECTREF((Object *)or));
++            oh = pAppDomain->CreateLongWeakHandle( ObjectToOBJECTREF((Object *)oref));
+ 
+             LOG((LF_CORDB, LL_INFO1000, "EEI::GHFO: Given objectref 0x%x,"
+-                "created long weak handle 0x%x!\n", or, oh));
++                "created long weak handle 0x%x!\n", oref, oh));
+         }
+             
+         return (void*)oh;
+--- clr/src/debug/ee/debugger.cpp	2002/07/27 14:37:31	1.1
++++ clr/src/debug/ee/debugger.cpp	2002/07/27 14:39:23
+@@ -11942,14 +11942,14 @@
+                     // Suck out the first arg. We're gonna trick GetArgValue by passing in just our object ref as the
+                     // stack.
+                     TypeHandle	dummyTH;
+-                    OBJECTREF	or = NULL;
++                    OBJECTREF	oref = NULL;
+                     Object		*objPtr;
+ 
+                     // Note that we are passing ELEMENT_TYPE_END in the last parameter because we want to supress the the valid object ref
+                     // check since it will be done properly in DoNormalFuncEval.
+                     //
+-                    GetArgValue(pDE, &(argData[0]), false, false, dummyTH, ELEMENT_TYPE_CLASS, (BYTE*)&or, NULL, NULL, ELEMENT_TYPE_END);
+-                    objPtr = *((Object**) ((BYTE *)&or));
++                    GetArgValue(pDE, &(argData[0]), false, false, dummyTH, ELEMENT_TYPE_CLASS, (BYTE*)&oref, NULL, NULL, ELEMENT_TYPE_END);
++                    objPtr = *((Object**) ((BYTE *)&oref));
+                     if (FAILED(ValidateObject(objPtr)))
+                         COMPlusThrow(kArgumentException, L"Argument_BadObjRef");
+ 
+@@ -11960,18 +11960,18 @@
+                     // Now, find the proper MethodDesc for this interface method based on the object we're invoking the
+                     // method on.
+                     pMD = g_pEEInterface->GetVirtualMethod(pDE->m_debuggerModule->m_pRuntimeModule,
+-                                                                 OBJECTREFToObject(or),
++                                                                 OBJECTREFToObject(oref),
+                                                                  pDE->m_methodToken);
+ 					if (pMD == NULL)
+ 					{
+-						if  (OBJECTREFToObject(or)->GetMethodTable()->IsThunking())
++						if  (OBJECTREFToObject(oref)->GetMethodTable()->IsThunking())
+ 						{
+ 							// give it another try. It can be a proxy object
+-							if (OBJECTREFToObject(or)->GetMethodTable()->IsTransparentProxyType())
++							if (OBJECTREFToObject(oref)->GetMethodTable()->IsTransparentProxyType())
+ 							{	
+                                 // Make sure the proxied object is loaded.
+-                                CRemotingServices::GetClass(or);
+-                                pMD = OBJECTREFToObject(or)->GetMethodTable()->GetMethodDescForInterfaceMethod(pDE->m_md, or);
++                                CRemotingServices::GetClass(oref);
++                                pMD = OBJECTREFToObject(oref)->GetMethodTable()->GetMethodDescForInterfaceMethod(pDE->m_md, oref);
+ 							}
+ 						}
+                         if (pMD) 
+@@ -11985,7 +11985,7 @@
+                     _ASSERTE(pDE->m_md);
+ 
+                     _ASSERTE(!pDE->m_md->GetClass()->IsInterface()
+-                             || OBJECTREFToObject(or)->GetMethodTable()->IsComObjectType());
++                             || OBJECTREFToObject(oref)->GetMethodTable()->IsComObjectType());
+                 }
+ 
+                 // If this is a new object operation, then we should have a .ctor.
+--- clr/src/inc/version/__file__.ver	2002/07/27 14:59:07	1.1
++++ clr/src/inc/version/__file__.ver	2002/07/27 16:49:56
+@@ -30,7 +30,7 @@
+ #endif
+ 
+ #ifndef __RC_STRINGIZE_WSZ__
+-#define __RC_STRINGIZE_WSZ__AUX(x)          L#x
++#define __RC_STRINGIZE_WSZ__AUX(x)          L###x
+ #define __RC_STRINGIZE_WSZ__(x)             __RC_STRINGIZE_WSZ__AUX(x)
+ #endif
+ 
+--- clr/src/vm/class.cpp	2002/07/26 22:36:35	1.1
++++ clr/src/vm/class.cpp	2002/07/26 22:38:59
+@@ -9109,43 +9109,43 @@
+ // The following service adjusts a EEClass based on the supplied instance.  As
+ // we add new thunking layers, we just need to teach this service how to navigate
+ // through them.
+-EEClass *EEClass::AdjustForThunking(OBJECTREF or)
++EEClass *EEClass::AdjustForThunking(OBJECTREF oref)
+ {
+     EEClass *pClass = this;
+ 
+-    _ASSERTE((or->GetClass() == this) ||
+-             or->GetClass()->IsThunking());
++    _ASSERTE((oref->GetClass() == this) ||
++             oref->GetClass()->IsThunking());
+ 
+     if (IsThunking())
+     {
+         if(GetMethodTable()->IsTransparentProxyType())
+         {
+-            pClass = CTPMethodTable::GetClassBeingProxied(or);
++            pClass = CTPMethodTable::GetClassBeingProxied(oref);
+         }
+         else
+         {
+-            pClass = or->GetClass();
++            pClass = oref->GetClass();
+         }
+         _ASSERTE(!pClass->IsThunking());
+     }
+ 
+     return pClass;
+ }
+-MethodTable *MethodTable::AdjustForThunking(OBJECTREF or)
++MethodTable *MethodTable::AdjustForThunking(OBJECTREF oref)
+ {
+     MethodTable *pMT = this;
+ 
+-    _ASSERTE(or->GetMethodTable() == this);
++    _ASSERTE(oref->GetMethodTable() == this);
+ 
+     if (IsThunking())
+     {
+         if(IsTransparentProxyType())
+         {
+-            pMT = CTPMethodTable::GetClassBeingProxied(or)->GetMethodTable();
++            pMT = CTPMethodTable::GetClassBeingProxied(oref)->GetMethodTable();
+         }
+         else
+         {
+-            pMT = or->GetMethodTable();
++            pMT = oref->GetMethodTable();
+         }
+         _ASSERTE(!pMT->IsThunking());
+     }
+--- clr/src/vm/comndirect.h	2002/07/26 22:51:39	1.1
++++ clr/src/vm/comndirect.h	2002/07/26 22:52:01
+@@ -61,7 +61,7 @@
+ FCDECL4(VOID, GCHandleInternalCompareExchange, OBJECTHANDLE handle, Object *obj, Object* oldObj, int isPinned);
+ FCDECL1(LPVOID, GCHandleInternalAddrOfPinnedObject, OBJECTHANDLE handle);
+ FCDECL1(VOID, GCHandleInternalCheckDomain, OBJECTHANDLE handle);
+-void GCHandleValidatePinnedObject(OBJECTREF or);
++void GCHandleValidatePinnedObject(OBJECTREF oref);
+ 
+ 
+ 
+--- clr/src/vm/comndirect.cpp	2002/07/26 22:52:16	1.1
++++ clr/src/vm/comndirect.cpp	2002/07/26 22:53:57
+@@ -590,17 +590,17 @@
+ // object.
+ FCIMPL2(LPVOID, GCHandleInternalAlloc, Object *obj, int type)
+ {
+-    OBJECTREF or(obj);
++    OBJECTREF oref(obj);
+     OBJECTHANDLE hnd;
+ 
+     HELPER_METHOD_FRAME_BEGIN_RET_NOPOLL();
+     THROWSCOMPLUSEXCEPTION();
+ 
+     // If it is a pinned handle, check the object type.
+-    if (type == HNDTYPE_PINNED) GCHandleValidatePinnedObject(or);
++    if (type == HNDTYPE_PINNED) GCHandleValidatePinnedObject(oref);
+ 
+     // Create the handle.
+-    if((hnd = GetAppDomain()->CreateTypedHandle(or, type)) == NULL)
++    if((hnd = GetAppDomain()->CreateTypedHandle(oref, type)) == NULL)
+         COMPlusThrowOM();
+     HELPER_METHOD_FRAME_END_POLL();
+     return (LPVOID) hnd;
+@@ -621,29 +621,29 @@
+ // Get the object referenced by a GC handle.
+ FCIMPL1(LPVOID, GCHandleInternalGet, OBJECTHANDLE handle)
+ {
+-    OBJECTREF or;
++    OBJECTREF oref;
+ 
+     HELPER_METHOD_FRAME_BEGIN_RET_0();
+     THROWSCOMPLUSEXCEPTION();
+ 
+-    or = ObjectFromHandle(handle);
++    oref = ObjectFromHandle(handle);
+ 
+     HELPER_METHOD_FRAME_END();
+-    return *((LPVOID*)&or);
++    return *((LPVOID*)&oref);
+ }
+ FCIMPLEND
+ 
+ // Update the object referenced by a GC handle.
+ FCIMPL3(VOID, GCHandleInternalSet, OBJECTHANDLE handle, Object *obj, int isPinned)
+ {
+-    OBJECTREF or(obj);
++    OBJECTREF oref(obj);
+     HELPER_METHOD_FRAME_BEGIN_NOPOLL();
+     THROWSCOMPLUSEXCEPTION();
+ 
+-    if (isPinned) GCHandleValidatePinnedObject(or);
++    if (isPinned) GCHandleValidatePinnedObject(oref);
+ 
+     // Update the stored object reference.
+-    StoreObjectInHandle(handle, or);
++    StoreObjectInHandle(handle, oref);
+     HELPER_METHOD_FRAME_END_POLL();
+ }
+ FCIMPLEND
+@@ -672,23 +672,23 @@
+     HELPER_METHOD_FRAME_BEGIN_RET_0();
+     THROWSCOMPLUSEXCEPTION();
+ 
+-    OBJECTREF or = ObjectFromHandle(handle);
+-    if (or == NULL)
++    OBJECTREF oref = ObjectFromHandle(handle);
++    if (oref == NULL)
+         p = NULL;
+     else
+     {
+         // Get the interior pointer for the supported pinned types.
+-        if (or->GetMethodTable() == g_pStringClass)
++        if (oref->GetMethodTable() == g_pStringClass)
+         {
+-            p = ((*(StringObject **)&or))->GetBuffer();
++            p = ((*(StringObject **)&oref))->GetBuffer();
+         }
+-        else if (or->GetMethodTable()->IsArray())
++        else if (oref->GetMethodTable()->IsArray())
+         {
+-            p = (*((ArrayBase**)&or))->GetDataPtr();
++            p = (*((ArrayBase**)&oref))->GetDataPtr();
+         }
+         else
+         {
+-            p = or->GetData();
++            p = oref->GetData();
+         }
+     }
+ 
+@@ -709,21 +709,21 @@
+ 
+ // Check that the supplied object is valid to put in a pinned handle.
+ // Throw an exception if not.
+-void GCHandleValidatePinnedObject(OBJECTREF or)
++void GCHandleValidatePinnedObject(OBJECTREF oref)
+ {
+     THROWSCOMPLUSEXCEPTION();
+ 
+     // NULL is fine.
+-    if (or == NULL) return;
++    if (oref == NULL) return;
+ 
+-    if (or->GetMethodTable() == g_pStringClass)
++    if (oref->GetMethodTable() == g_pStringClass)
+     {
+         return;
+     }
+ 
+-    if (or->GetMethodTable()->IsArray())
++    if (oref->GetMethodTable()->IsArray())
+     {
+-        BASEARRAYREF asArray = (BASEARRAYREF) or;
++        BASEARRAYREF asArray = (BASEARRAYREF) oref;
+         if (CorTypeInfo::IsPrimitiveType(asArray->GetElementType())) 
+         {
+             return;
+@@ -741,7 +741,7 @@
+         }
+         
+     } 
+-    else if (or->GetMethodTable()->GetClass()->IsBlittable())
++    else if (oref->GetMethodTable()->GetClass()->IsBlittable())
+     {
+         return;
+     }
+--- clr/src/vm/comobject.cpp	2002/07/26 22:54:11	1.1
++++ clr/src/vm/comobject.cpp	2002/07/26 22:55:20
+@@ -53,10 +53,10 @@
+         return(obj);
+ 
+     Object* retVal;
+-    OBJECTREF or(obj);
+-    HELPER_METHOD_FRAME_BEGIN_RET_1(or);    // Set up a frame
++    OBJECTREF oref(obj);
++    HELPER_METHOD_FRAME_BEGIN_RET_1(oref);    // Set up a frame
+     retVal = OBJECTREFToObject(FastAllocateObject(pMT));
+-    CopyValueClass(retVal->GetData(), or->GetData(), pMT, retVal->GetAppDomain());
++    CopyValueClass(retVal->GetData(), oref->GetData(), pMT, retVal->GetAppDomain());
+     HELPER_METHOD_FRAME_END();
+ 
+     return(retVal);
+@@ -64,19 +64,19 @@
+ 
+ // Note that we obtain a sync block index without actually building a sync block.
+ // That's because a lot of objects are hashed, without requiring support for
+-FCIMPL1(INT32, ObjectNative::GetHashCode, Object* or) {
+-    if (or == 0)
++FCIMPL1(INT32, ObjectNative::GetHashCode, Object* oref) {
++    if (oref == 0)
+         return 0;
+ 
+-    VALIDATEOBJECTREF(or);
++    VALIDATEOBJECTREF(oref);
+ 
+-    DWORD      idx = or->GetSyncBlockIndex();
++    DWORD      idx = oref->GetSyncBlockIndex();
+ 
+     _ASSERTE(idx != 0);
+ 
+     // If the syncblock already exists, it has now become precious.  Otherwise the
+     // hash code would not be stable across GCs.
+-    SyncBlock *psb = or->PassiveGetSyncBlock();
++    SyncBlock *psb = oref->PassiveGetSyncBlock();
+ 
+     if (psb)
+         psb->SetPrecious();
+@@ -120,26 +120,26 @@
+ 
+ FCIMPL1(ReflectClassBaseObject*, ObjectNative::GetClass, Object* pThis)
+ {
+-    OBJECTREF            or       = NULL;
++    OBJECTREF            oref       = NULL;
+     REFLECTCLASSBASEREF  refClass = NULL;
+     
+-    HELPER_METHOD_FRAME_BEGIN_RET_ATTRIB_2(Frame::FRAME_ATTR_RETURNOBJ, or, refClass);
++    HELPER_METHOD_FRAME_BEGIN_RET_ATTRIB_2(Frame::FRAME_ATTR_RETURNOBJ, oref, refClass);
+     
+-    or = ObjectToOBJECTREF(pThis);
+-    EEClass* pClass = or->GetTrueMethodTable()->GetClass();
++    oref = ObjectToOBJECTREF(pThis);
++    EEClass* pClass = oref->GetTrueMethodTable()->GetClass();
+ 
+     // Arrays of Pointers are implemented by reflection,
+     //  defer to COMClass for them.
+     if (pClass->IsArrayClass()) 
+     {
+         // This code is essentially duplicated in GetExistingClass.
+-        ArrayBase* array = (ArrayBase*) OBJECTREFToObject(or);
++        ArrayBase* array = (ArrayBase*) OBJECTREFToObject(oref);
+         TypeHandle arrayType = array->GetTypeHandle();
+         refClass = (REFLECTCLASSBASEREF) arrayType.AsArray()->CreateClassObj();
+     }
+-    else if (or->GetClass()->IsThunking()) 
++    else if (oref->GetClass()->IsThunking()) 
+     {
+-        refClass = CRemotingServices::GetClass(or);
++        refClass = CRemotingServices::GetClass(oref);
+     }
+     else
+     {
+--- clr/src/vm/comsecurityruntime.cpp	2002/07/26 22:56:36	1.1
++++ clr/src/vm/comsecurityruntime.cpp	2002/07/26 22:57:04
+@@ -235,8 +235,8 @@
+     _ASSERTE((CorDeclSecurity)iType > dclActionNil &&
+              (CorDeclSecurity)iType <= dclMaximumValue);
+ 
+-    OBJECTREF or = pClass;
+-    EEClass* pClass = or->GetClass();
++    OBJECTREF oref = pClass;
++    EEClass* pClass = oref->GetClass();
+     _ASSERTE(pClass);
+     _ASSERTE(pClass->GetModule());
+ 
+--- clr/src/vm/comvariant.h.orig	Sat Jul 27 01:08:05 2002
++++ clr/src/vm/comvariant.h	Sat Jul 27 01:09:21 2002
+@@ -210,9 +210,9 @@
+         return &m_or;
+     }
+ 
+-    FORCEINLINE void SetObjRef(OBJECTREF or) {
+-        if (or!=NULL) {
+-            SetObjectReferenceUnchecked(&m_or, or);
++    FORCEINLINE void SetObjRef(OBJECTREF oref) {
++        if (oref!=NULL) {
++            SetObjectReferenceUnchecked(&m_or, oref);
+         } else {
+             // Casting trick to avoid going thru overloaded operator= (which
+             // in this case would trigger a false write barrier violation assert.)
+@@ -343,7 +343,7 @@
+     static STRINGREF GetStringFromVariant(VariantData* v);
+ 
+     // This is the private version of new Variant.  It is called by all the others.
+-    static void NewVariant(VariantData* dest, const CVTypes type, OBJECTREF *or, void *pvData);
++    static void NewVariant(VariantData* dest, const CVTypes type, OBJECTREF *oref, void *pvData);
+     static STRINGREF CallObjToString(VariantData *);
+     static HRESULT __stdcall LoadVariant();
+ 
+--- clr/src/vm/marshaler.h	2002/07/26 23:12:38	1.1
++++ clr/src/vm/marshaler.h	2002/07/26 23:14:08
+@@ -3561,9 +3561,9 @@
+     {
+         THROWSCOMPLUSEXCEPTION();
+ 
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+-        if (or == NULL)
++        if (oref == NULL)
+             m_native = NULL;
+         else
+         {
+@@ -3582,9 +3582,9 @@
+ 
+     void ConvertSpaceComToNativeTemp()
+     {
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+-        if (or == NULL)
++        if (oref == NULL)
+             m_native = NULL;
+         else
+             m_native = GetThread()->m_MarshalAlloc.Alloc(m_pMT->GetNativeSize());
+@@ -3598,21 +3598,21 @@
+     {
+         if (m_native != NULL)
+         {
+-            OBJECTREF or = ObjectFromHandle(m_com);
++            OBJECTREF oref = ObjectFromHandle(m_com);
+             _ASSERTE(!m_pMT->ContainsPointers());
+ 
+-            memcpyNoGCRefs(or->GetData(), m_native, m_pMT->GetNativeSize());
++            memcpyNoGCRefs(oref->GetData(), m_native, m_pMT->GetNativeSize());
+         }
+     }
+ 
+     void ConvertContentsComToNative()
+     {
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+         _ASSERTE(!m_pMT->ContainsPointers());
+-        if (or != NULL)
++        if (oref != NULL)
+         {
+-            memcpyNoGCRefs(m_native, or->GetData(), m_pMT->GetNativeSize());
++            memcpyNoGCRefs(m_native, oref->GetData(), m_pMT->GetNativeSize());
+         }
+     }
+ 
+@@ -3693,9 +3693,9 @@
+     {
+         THROWSCOMPLUSEXCEPTION();
+ 
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+-        if (or == NULL)
++        if (oref == NULL)
+             m_native = NULL;
+         else
+         {
+@@ -3717,9 +3717,9 @@
+ 
+     void ConvertSpaceComToNativeTemp()
+     {
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+-        if (or == NULL)
++        if (oref == NULL)
+             m_native = NULL;
+         else
+             m_native = GetThread()->m_MarshalAlloc.Alloc(m_pMT->GetNativeSize());
+@@ -3742,9 +3742,9 @@
+ 
+     void ConvertContentsComToNative()
+     {
+-        OBJECTREF or = ObjectFromHandle(m_com);
++        OBJECTREF oref = ObjectFromHandle(m_com);
+ 
+-        if (or != NULL)
++        if (oref != NULL)
+         {
+             FillMemory(m_native, m_pMT->GetNativeSize(), 0); //Gotta do this first so an error halfway thru doesn't leave things in a bad state.
+             FmtClassUpdateNative( (OBJECTREF*)m_com, (LPBYTE)m_native);
+--- clr/src/vm/gcscan.cpp	2002/07/26 23:16:43	1.1
++++ clr/src/vm/gcscan.cpp	2002/07/26 23:17:18
+@@ -595,8 +595,8 @@
+                 TypeHandle subArrayType = arrayDesc->GetElementTypeHandle().AsArray();
+                 for (INT32 i = 0; i < cElements; i++)
+                 {
+-                    OBJECTREF or = AllocateArrayEx(subArrayType, &pArgs[1], dwNumArgs-1, bAllocateInLargeHeap);
+-                    pOuterArray->SetAt(i, or);
++                    OBJECTREF oref = AllocateArrayEx(subArrayType, &pArgs[1], dwNumArgs-1, bAllocateInLargeHeap);
++                    pOuterArray->SetAt(i, oref);
+                 }
+                 
+                 #ifdef STRESS_HEAP
+--- clr/src/vm/invokeutil.cpp	2002/07/26 23:21:14	1.1
++++ clr/src/vm/invokeutil.cpp	2002/07/26 23:22:21
+@@ -1655,13 +1655,13 @@
+     case ELEMENT_TYPE_VAR:
+         if (pField->IsStatic())
+         {                
+-            OBJECTREF or = pField->GetStaticOBJECTREF();
+-            value = ObjToArgSlot(or);
++            OBJECTREF oref = pField->GetStaticOBJECTREF();
++            value = ObjToArgSlot(oref);
+         }
+         else
+         {
+-            OBJECTREF or = pField->GetRefValue(*target);
+-            value = ObjToArgSlot(or);
++            OBJECTREF oref = pField->GetRefValue(*target);
++            value = ObjToArgSlot(oref);
+         }
+         break;
+ 
+--- clr/src/vm/message.cpp	2002/07/26 23:23:44	1.1
++++ clr/src/vm/message.cpp	2002/07/26 23:24:46
+@@ -478,15 +478,15 @@
+         // write unboxed version back to memory provided by the client
+         if (pvDest)
+         {
+-            OBJECTREF or = pSrc;
+-            if (or == NULL)
++            OBJECTREF oref = pSrc;
++            if (oref == NULL)
+             {
+                 COMPlusThrow(kRemotingException, L"Remoting_Message_BadRetValOrOutArg");
+             }
+-            CopyValueClassUnchecked(pvDest, or->UnBox(), or->GetMethodTable());
++            CopyValueClassUnchecked(pvDest, oref->UnBox(), oref->GetMethodTable());
+             // return the object so it can be stored in the frame and 
+             // propagated to the root set
+-            ret  = *((INT64*) &or);
++            ret  = *((INT64*) &oref);
+         }
+     }
+     else
+@@ -497,21 +497,21 @@
+         // Check if it is an ObjectRef (from the GC heap)
+         if (CorTypeInfo::IsObjRef(typ))
+         {
+-            OBJECTREF or = pSrc;
+-            OBJECTREF savedOr = or;
++            OBJECTREF oref = pSrc;
++            OBJECTREF savedOr = oref;
+ 
+-            if ((or!=NULL) && (or->GetMethodTable()->IsTransparentProxyType()))
++            if ((oref!=NULL) && (oref->GetMethodTable()->IsTransparentProxyType()))
+             {
+-                GCPROTECT_BEGIN(or);
++                GCPROTECT_BEGIN(oref);
+                 if (!pClass)
+                     pClass = pSig->GetRetEEClass();
+                 // CheckCast ensures that the returned object (proxy) gets
+                 // refined to the level expected by the caller of the method
+-                if (!CRemotingServices::CheckCast(or, pClass))
++                if (!CRemotingServices::CheckCast(oref, pClass))
+                 {
+                     COMPlusThrow(kInvalidCastException, L"Arg_ObjObj");
+                 }
+-                savedOr = or;
++                savedOr = oref;
+                 GCPROTECT_END();
+             }
+             if (pvDest)
+--- clr/src/vm/ndirect.cpp	2002/07/26 23:29:00	1.1
++++ clr/src/vm/ndirect.cpp	2002/07/26 23:29:52
+@@ -1333,11 +1333,11 @@
+     if (pCleanup) {
+         if (managedRetValTypeCat == MLHF_TYPECAT_GCREF) {
+ 
+-            OBJECTREF or;
+-            or = ObjectToOBJECTREF(*(Object**)&returnValue);
+-            GCPROTECT_BEGIN(or);
++            OBJECTREF oref;
++            oref = ObjectToOBJECTREF(*(Object**)&returnValue);
++            GCPROTECT_BEGIN(oref);
+             pCleanup->Cleanup(FALSE);
+-            *((OBJECTREF*)&returnValue) = or;
++            *((OBJECTREF*)&returnValue) = oref;
+             GCPROTECT_END();
+ 
+         } else {
+--- clr/src/vm/permset.cpp	2002/07/26 23:37:29	1.1
++++ clr/src/vm/permset.cpp	2002/07/26 23:40:44
+@@ -573,7 +573,7 @@
+     HRESULT                     hr = S_OK;
+     DWORD                       i, j;
+     Thread                     *pThread;
+-    OBJECTREF                  *or;
++    OBJECTREF                  *oref;
+     TypeHandle                  hType;
+     EEClass                    *pClass;
+     MethodDesc                 *pMD;
+@@ -610,10 +610,10 @@
+ 
+     // Make a pass through the permission set, allocating objects for each
+     // security attribute class.
+-    or = (OBJECTREF*)_alloca(pPset->dwPermissions * sizeof(OBJECTREF));
+-    memset(or, 0, pPset->dwPermissions * sizeof(OBJECTREF));
++    oref = (OBJECTREF*)_alloca(pPset->dwPermissions * sizeof(OBJECTREF));
++    memset(oref, 0, pPset->dwPermissions * sizeof(OBJECTREF));
+ 
+-    GCPROTECT_ARRAY_BEGIN(*or, pPset->dwPermissions);
++    GCPROTECT_ARRAY_BEGIN(*oref, pPset->dwPermissions);
+ 
+     for (i = 0; i < pPset->dwPermissions; i++) {
+         CORSEC_PERM *pPerm = &pPset->pPermissions[i];
+@@ -769,8 +769,8 @@
+                 FATAL_EE_ERROR();
+ 
+         // Instantiate an instance.
+-        or[i] = AllocateObject(pClass->GetMethodTable());
+-        if (or[i] == NULL)
++        oref[i] = AllocateObject(pClass->GetMethodTable());
++        if (oref[i] == NULL)
+             COMPlusThrowOM();
+ 
+         // Find and call the constructor.
+@@ -781,7 +781,7 @@
+             FATAL_EE_ERROR();
+ 
+         ARG_SLOT args[] = {
+-            ObjToArgSlot(or[i]),
++            ObjToArgSlot(oref[i]),
+             (ARG_SLOT)pPset->dwAction
+         };
+ 
+@@ -942,27 +942,27 @@
+                 case SERIALIZATION_TYPE_I1:
+                 case SERIALIZATION_TYPE_U1:
+                 case SERIALIZATION_TYPE_CHAR:
+-                    pFD->SetValue8(or[i], *(BYTE*)pbBuffer);
++                    pFD->SetValue8(oref[i], *(BYTE*)pbBuffer);
+                     pbBuffer += sizeof(BYTE);
+                     cbBuffer -= sizeof(BYTE);
+                     break;
+                 case SERIALIZATION_TYPE_I2:
+                 case SERIALIZATION_TYPE_U2:
+-                    pFD->SetValue16(or[i], *(WORD*)pbBuffer);
++                    pFD->SetValue16(oref[i], *(WORD*)pbBuffer);
+                     pbBuffer += sizeof(WORD);
+                     cbBuffer -= sizeof(WORD);
+                     break;
+                 case SERIALIZATION_TYPE_I4:
+                 case SERIALIZATION_TYPE_U4:
+                 case SERIALIZATION_TYPE_R4:
+-                    pFD->SetValue32(or[i], *(DWORD*)pbBuffer);
++                    pFD->SetValue32(oref[i], *(DWORD*)pbBuffer);
+                     pbBuffer += sizeof(DWORD);
+                     cbBuffer -= sizeof(DWORD);
+                     break;
+                 case SERIALIZATION_TYPE_I8:
+                 case SERIALIZATION_TYPE_U8:
+                 case SERIALIZATION_TYPE_R8:
+-                    pFD->SetValue64(or[i], *(INT64*)pbBuffer);
++                    pFD->SetValue64(oref[i], *(INT64*)pbBuffer);
+                     pbBuffer += sizeof(INT64);
+                     cbBuffer -= sizeof(INT64);
+                     break;
+@@ -991,7 +991,7 @@
+                     } else
+                         orString = NULL;
+ 
+-                    pFD->SetRefValue(or[i], (OBJECTREF)orString);
++                    pFD->SetRefValue(oref[i], (OBJECTREF)orString);
+ 
+                     pbBuffer += dwLength;
+                     cbBuffer -= dwLength;
+@@ -1001,19 +1001,19 @@
+                     switch (eEnumType) {
+                     case ELEMENT_TYPE_I1:
+                     case ELEMENT_TYPE_U1:
+-                        pFD->SetValue8(or[i], *(BYTE*)pbBuffer);
++                        pFD->SetValue8(oref[i], *(BYTE*)pbBuffer);
+                         pbBuffer += sizeof(BYTE);
+                         cbBuffer -= sizeof(BYTE);
+                         break;
+                     case ELEMENT_TYPE_I2:
+                     case ELEMENT_TYPE_U2:
+-                        pFD->SetValue16(or[i], *(WORD*)pbBuffer);
++                        pFD->SetValue16(oref[i], *(WORD*)pbBuffer);
+                         pbBuffer += sizeof(WORD);
+                         cbBuffer -= sizeof(WORD);
+                         break;
+                     case ELEMENT_TYPE_I4:
+                     case ELEMENT_TYPE_U4:
+-                        pFD->SetValue32(or[i], *(DWORD*)pbBuffer);
++                        pFD->SetValue32(oref[i], *(DWORD*)pbBuffer);
+                         pbBuffer += sizeof(DWORD);
+                         cbBuffer -= sizeof(DWORD);
+                         break;
+@@ -1132,7 +1132,7 @@
+ 
+                 // ! don't move this up, COMString::NewString
+                 // ! inside the switch causes a GC
+-                args[0] = ObjToArgSlot(or[i]);
++                args[0] = ObjToArgSlot(oref[i]);
+ 
+                 // Call the setter.
+                 pMD->Call(args);
+@@ -1161,7 +1161,7 @@
+ 
+     // Copy over the permission objects references.
+     for (i = 0; i < pPset->dwPermissions; i++)
+-        orInput->SetAt(i, or[i]);
++        orInput->SetAt(i, oref[i]);
+ 
+ {
+     // Call the routine.
+--- clr/src/inc/version/__product__.ver	2002/07/27 19:43:42	1.1
++++ clr/src/inc/version/__product__.ver	2002/07/27 19:44:03
+@@ -29,7 +29,7 @@
+ #endif
+ 
+ #ifndef __RC_STRINGIZE_WSZ__
+-#define __RC_STRINGIZE_WSZ__AUX(x)  L#x
++#define __RC_STRINGIZE_WSZ__AUX(x)  L###x
+ #define __RC_STRINGIZE_WSZ__(x)     __RC_STRINGIZE_WSZ__AUX(x)
+ #endif
+ 
+--- palrt/inc/sscli_version.h	2002/07/27 19:43:42	1.1
++++ palrt/inc/sscli_version.h	2002/07/27 19:44:13
+@@ -27,7 +27,7 @@
+ #endif
+ 
+ #ifndef __RC_STRINGIZE_WSZ__
+-#define __RC_STRINGIZE_WSZ__AUX(x)  L#x
++#define __RC_STRINGIZE_WSZ__AUX(x)  L###x
+ #define __RC_STRINGIZE_WSZ__(x)     __RC_STRINGIZE_WSZ__AUX(x)
+ #endif
+ 
+--- clr/src/vm/comvariant.cpp.orig	Thu Jun 20 02:43:16 2002
++++ clr/src/vm/comvariant.cpp	Sat Jul 27 23:23:01 2002
+@@ -300,15 +300,15 @@
+ **Returns:  A new Variant with all of the appropriate fields filled out.
+ **Exceptions: OutOfMemoryError if v can't be allocated.       
+ ==============================================================================*/
+-void COMVariant::NewVariant(VariantData* dest, const CVTypes type, OBJECTREF *or, void *pvData) {
++void COMVariant::NewVariant(VariantData* dest, const CVTypes type, OBJECTREF *oref, void *pvData) {
+     
+     THROWSCOMPLUSEXCEPTION();
+-    _ASSERTE((type!=CV_EMPTY && type!=CV_NULL && type!=CV_MISSING) || or==NULL);  // Don't pass an object in for Empty.
++    _ASSERTE((type!=CV_EMPTY && type!=CV_NULL && type!=CV_MISSING) || oref==NULL);  // Don't pass an object in for Empty.
+ 
+     //If both arguments are null or both are specified, we're in an illegal situation.  Bail.
+     //If all three are null, we're creating an empty variant
+-    if ((type >= CV_LAST || type < 0) || (or && pvData) || 
+-        (!or && !pvData && (type!=CV_EMPTY && type!=CV_NULL && type != CV_MISSING))) {
++    if ((type >= CV_LAST || type < 0) || (oref && pvData) || 
++        (!oref && !pvData && (type!=CV_EMPTY && type!=CV_NULL && type != CV_MISSING))) {
+         COMPlusThrow(kArgumentException);
+     }
+ 
+@@ -317,21 +317,21 @@
+     
+     //Fill in the data.
+     dest->SetType(type);
+-    if (or) {
+-        if (*or != NULL) {
+-            EEClass* pEEC = (*or)->GetClass();
++    if (oref) {
++        if (*oref != NULL) {
++            EEClass* pEEC = (*oref)->GetClass();
+             if (!pEEC->IsValueClass()) {
+-                dest->SetObjRef(*or);
++                dest->SetObjRef(*oref);
+             }
+             else {
+                 if (pEEC==s_pVariantClass) {
+-                    VariantData* pVar = (VariantData *) (*or)->UnBox();
++                    VariantData* pVar = (VariantData *) (*oref)->UnBox();
+                     dest->SetObjRef(pVar->GetObjRef());
+                     dest->SetFullTypeInfo(pVar->GetFullTypeInfo());
+                     dest->SetDataAsInt64(pVar->GetDataAsInt64());
+                     return;
+                 }
+-                void* UnboxData = (*or)->UnBox();
++                void* UnboxData = (*oref)->UnBox();
+                 CVTypes cvt = GetCVTypeFromClass(pEEC);
+                 if (cvt>=CV_BOOLEAN && cvt<=CV_U4) {
+                     dest->SetObjRef(NULL);
+@@ -343,7 +343,7 @@
+                     dest->SetDataAsInt64(*((INT64 *)UnboxData));
+                     dest->SetType(cvt);
+                 } else if (cvt == CV_ENUM) {
+-                    TypeHandle th = (*or)->GetTypeHandle();
++                    TypeHandle th = (*oref)->GetTypeHandle();
+                     dest->SetType(GetEnumFlags(th.AsClass()));
+                     switch(th.GetNormCorElementType()) {
+                     case ELEMENT_TYPE_I1:
+@@ -376,14 +376,14 @@
+                     dest->SetObjRef(th.CreateClassObj());
+                } else {
+                     // Decimal and other boxed value classes handled here.
+-                    dest->SetObjRef(*or);
++                    dest->SetObjRef(*oref);
+                     dest->SetData(0);
+                 }
+                 return;
+             }
+         }
+         else {
+-            dest->SetObjRef(*or);
++            dest->SetObjRef(*oref);
+         }
+ 
+         dest->SetDataAsInt64(0);
+@@ -1058,16 +1058,16 @@
+         return Create8BytePrimitive(data, vRef->GetEEClass(), cvt);
+ 
+     case CV_ENUM: {
+-        OBJECTREF or = vRef->GetObjRef();
+-        _ASSERTE(or != NULL);
+-        ReflectClass* pRC = (ReflectClass*) ((REFLECTCLASSBASEREF) or)->GetData();
++        OBJECTREF oref = vRef->GetObjRef();
++        _ASSERTE(oref != NULL);
++        ReflectClass* pRC = (ReflectClass*) ((REFLECTCLASSBASEREF) oref)->GetData();
+         _ASSERTE(pRC);
+         EEClass* pEEC = pRC->GetClass();
+         _ASSERTE(pEEC);
+         MethodTable* mt = pEEC->GetMethodTable();
+         _ASSERTE(mt);
+-        or = mt->Box(vRef->GetData());
+-        return or;
++        oref = mt->Box(vRef->GetData());
++        return oref;
+     }
+ 
+     case CV_VOID:
+--- clr/src/vm/excep.cpp	2002/07/27 20:38:38	1.1
++++ clr/src/vm/excep.cpp	2002/07/27 20:38:54
+@@ -4751,7 +4751,7 @@
+ 
+ LPCWSTR GetHResultSymbolicName(HRESULT hr)
+ {
+-#define CASE_HRESULT(hrname) case hrname: return L#hrname;
++#define CASE_HRESULT(hrname) case hrname: return L###hrname;
+ 
+ 
+     switch (hr)
+--- clr/src/vm/jitinterface.cpp.orig	Thu Jun 20 02:43:20 2002
++++ clr/src/vm/jitinterface.cpp	Sat Jul 27 23:44:28 2002
+@@ -4050,17 +4050,17 @@
+     if (obj == NULL)
+         FCThrow(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
+-    if(or->GetMethodTable()->IsTransparentProxyType())
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
++    if(oref->GetMethodTable()->IsTransparentProxyType())
+     {
+-        or = CRemotingServices::GetObjectFromProxy(or, FALSE);
+-        if (or->GetMethodTable()->IsTransparentProxyType())
++        oref = CRemotingServices::GetObjectFromProxy(oref, FALSE);
++        if (oref->GetMethodTable()->IsTransparentProxyType())
+             FCThrow(kInvalidOperationException);
+     }
+ 
+     {
+-        fldAddr = pFD->GetAddress(OBJECTREFToObject(or));
+-        _ASSERTE(or->GetMethodTable()->IsMarshaledByRef() || pFD->IsDangerousAppDomainAgileField());
++        fldAddr = pFD->GetAddress(OBJECTREFToObject(oref));
++        _ASSERTE(oref->GetMethodTable()->IsMarshaledByRef() || pFD->IsDangerousAppDomainAgileField());
+     }
+ 
+     return fldAddr;
+@@ -5426,32 +5426,32 @@
+ 
+ /*********************************************************************/
+ // This is a helper routine used by JIT_GetField32 below
+-__int32 __stdcall JIT_GetField32Worker(OBJECTREF or, FieldDesc *pFD)
++__int32 __stdcall JIT_GetField32Worker(OBJECTREF oref, FieldDesc *pFD)
+ {
+     THROWSCOMPLUSEXCEPTION();
+ 
+     switch (pFD->GetFieldType())
+     {
+         case ELEMENT_TYPE_I1:
+-            return (INT8)(pFD->GetValue8(or));
++            return (INT8)(pFD->GetValue8(oref));
+         case ELEMENT_TYPE_BOOLEAN:
+         case ELEMENT_TYPE_U1:
+-            return (UINT8)(pFD->GetValue8(or));
++            return (UINT8)(pFD->GetValue8(oref));
+         case ELEMENT_TYPE_I2:
+-            return (INT16)(pFD->GetValue16(or));
++            return (INT16)(pFD->GetValue16(oref));
+         case ELEMENT_TYPE_CHAR:
+         case ELEMENT_TYPE_U2:
+-            return (UINT16)(pFD->GetValue16(or));
++            return (UINT16)(pFD->GetValue16(oref));
+         case ELEMENT_TYPE_I4: // can fallthru
+         case ELEMENT_TYPE_U4:
+         IN_WIN32(case ELEMENT_TYPE_PTR:)
+         IN_WIN32(case ELEMENT_TYPE_I:)
+         IN_WIN32(case ELEMENT_TYPE_U:)
+-            return pFD->GetValue32(or);
++            return pFD->GetValue32(oref);
+ 
+         case ELEMENT_TYPE_R4:
+             INT32 value;
+-            value = pFD->GetValue32(or);
++            value = pFD->GetValue32(oref);
+             setFPReturn(4, value);
+             return value;
+ 
+@@ -5474,7 +5474,7 @@
+     if (obj == NULL)
+         FCThrow(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     INT32 value = 0;
+ 
+@@ -5484,18 +5484,18 @@
+     // Try an unwrap operation to check that we are not being called in the
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+-    if(or->GetMethodTable()->IsTransparentProxyType())
++    if(oref->GetMethodTable()->IsTransparentProxyType())
+     {
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+         // This is a cross context field access. Setup a frame as we will
+         // transition to managed code later.
+         HELPER_METHOD_FRAME_BEGIN_RET_NOPOLL();        // Set up a frame
+-        value = JIT_GetField32Worker(or, pFD);
++        value = JIT_GetField32Worker(oref, pFD);
+         HELPER_METHOD_FRAME_END();                     // Tear down the frame
+     }
+     else
+     {
+-        value = JIT_GetField32Worker(or, pFD);
++        value = JIT_GetField32Worker(oref, pFD);
+     }
+ 
+     FC_GC_POLL_RET();
+@@ -5505,9 +5505,9 @@
+ 
+ /*********************************************************************/
+ // This is a helper routine used by JIT_GetField64 below
+-__int64 __stdcall JIT_GetField64Worker(OBJECTREF or, FieldDesc *pFD)
++__int64 __stdcall JIT_GetField64Worker(OBJECTREF oref, FieldDesc *pFD)
+ {
+-    INT64 value = pFD->GetValue64(or);
++    INT64 value = pFD->GetValue64(oref);
+     if (ELEMENT_TYPE_R8 == pFD->GetFieldType())
+     {
+         setFPReturn(8, value);
+@@ -5525,27 +5525,27 @@
+     if (obj == NULL)
+         FCThrow(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+     INT64 value = 0;
+ 
+     _ASSERTE(pFD->GetMethodTableOfEnclosingClass()->GetClass()->GetMethodTable() == pFD->GetMethodTableOfEnclosingClass());
+     // Try an unwrap operation to check that we are not being called in the
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+-    if(or->GetMethodTable()->IsTransparentProxyType())
++    if(oref->GetMethodTable()->IsTransparentProxyType())
+     {
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+         // This is a cross context field access. Setup a frame as we will
+         // transition to managed code later.
+         HELPER_METHOD_FRAME_BEGIN_RET_NOPOLL();        // Set up a frame
+ 
+-        value = JIT_GetField64Worker(or, pFD);
++        value = JIT_GetField64Worker(oref, pFD);
+ 
+         HELPER_METHOD_FRAME_END();              // Tear down the frame
+     }
+     else
+     {
+-        value = JIT_GetField64Worker(or, pFD);
++        value = JIT_GetField64Worker(oref, pFD);
+     }
+     FC_GC_POLL_RET();
+     return value;
+@@ -5554,7 +5554,7 @@
+ 
+ /*********************************************************************/
+ // This is a helper routine used by JIT_SetField32 below
+-static void __stdcall JIT_SetField32Worker(OBJECTREF or, FieldDesc *pFD, __int32 value)
++static void __stdcall JIT_SetField32Worker(OBJECTREF oref, FieldDesc *pFD, __int32 value)
+ {
+     THROWSCOMPLUSEXCEPTION();
+ 
+@@ -5563,13 +5563,13 @@
+         case ELEMENT_TYPE_I1:
+         case ELEMENT_TYPE_U1:
+         case ELEMENT_TYPE_BOOLEAN:
+-            pFD->SetValue8(or, value);
++            pFD->SetValue8(oref, value);
+             break;
+ 
+         case ELEMENT_TYPE_I2:
+         case ELEMENT_TYPE_U2:
+         case ELEMENT_TYPE_CHAR:
+-            pFD->SetValue16(or, value);
++            pFD->SetValue16(oref, value);
+             break;
+ 
+         case ELEMENT_TYPE_I4: // can fallthru
+@@ -5578,7 +5578,7 @@
+         IN_WIN32(case ELEMENT_TYPE_PTR:)
+         IN_WIN32(case ELEMENT_TYPE_I:)
+         IN_WIN32(case ELEMENT_TYPE_U:)
+-            pFD->SetValue32(or, value);
++            pFD->SetValue32(oref, value);
+             break;
+ 
+         default:
+@@ -5599,7 +5599,7 @@
+     if (obj == NULL)
+         FCThrowVoid(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     // basic sanity checks.  Are we pointing at a valid FD and objRef?
+     _ASSERTE(pFD->GetMethodTableOfEnclosingClass()->GetClass()->GetMethodTable() == pFD->GetMethodTableOfEnclosingClass());
+@@ -5607,20 +5607,20 @@
+     // Try an unwrap operation to check that we are not being called in the
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+-    if(or->GetMethodTable()->IsTransparentProxyType())
++    if(oref->GetMethodTable()->IsTransparentProxyType())
+     {
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+         // This is a cross context field access. Setup a frame as we will
+         // transition to managed code later.
+         HELPER_METHOD_FRAME_BEGIN_NOPOLL();        // Set up a frame
+ 
+-        JIT_SetField32Worker(or, pFD, value);
++        JIT_SetField32Worker(oref, pFD, value);
+ 
+         HELPER_METHOD_FRAME_END();          // Tear down the frame
+     }
+     else
+     {
+-        JIT_SetField32Worker(or, pFD, value);
++        JIT_SetField32Worker(oref, pFD, value);
+     }
+ 
+     FC_GC_POLL();
+@@ -5637,7 +5637,7 @@
+     if (obj == NULL)
+         FCThrowVoid(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     // basic sanity checks.  Are we pointing at a valid FD and objRef?
+     _ASSERTE(pFD->GetMethodTableOfEnclosingClass()->GetClass()->GetMethodTable() == pFD->GetMethodTableOfEnclosingClass());
+@@ -5645,20 +5645,20 @@
+     // Try an unwrap operation to check that we are not being called in the
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+-    if(or->GetMethodTable()->IsTransparentProxyType())
++    if(oref->GetMethodTable()->IsTransparentProxyType())
+     {
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+         // This is a cross context field access. Setup a frame as we will
+         // transition to managed code later.
+         HELPER_METHOD_FRAME_BEGIN_NOPOLL();        // Set up a frame
+ 
+-        pFD->SetValue64(or, value);
++        pFD->SetValue64(oref, value);
+ 
+         HELPER_METHOD_FRAME_END();          // Tear down the frame
+     }
+     else
+     {
+-        *((__int64 *)pFD->GetAddress(OBJECTREFToObject(or))) = value;
++        *((__int64 *)pFD->GetAddress(OBJECTREFToObject(oref))) = value;
+     }
+     FC_GC_POLL();
+ }
+@@ -5688,29 +5688,29 @@
+     else
+ #endif
+     {
+-        OBJECTREF or = ObjectToOBJECTREF(obj);
++        OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     // We should use this helper to get field values for marshalbyref types
+     // or proxy types
+-        _ASSERTE(or->GetClass()->IsMarshaledByRef() || or->IsThunking() 
++        _ASSERTE(oref->GetClass()->IsMarshaledByRef() || oref->IsThunking() 
+                  || pFD->IsDangerousAppDomainAgileField());
+ 
+         // Try an unwrap operation to check that we are not being called in the
+         // same context as the server. If that is the case then unwrap will return
+         // the server object.
+-        if(or->GetMethodTable()->IsTransparentProxyType())
++        if(oref->GetMethodTable()->IsTransparentProxyType())
+         {
+-            or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++            oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+             // This is a cross context field access. Setup a frame as we will
+             // transition to managed code later.
+             HELPER_METHOD_FRAME_BEGIN_RET_ATTRIB_NOPOLL(Frame::FRAME_ATTR_RETURNOBJ);    // Set up a frame
+ 
+-            newobj = pFD->GetRefValue(or);
++            newobj = pFD->GetRefValue(oref);
+             HELPER_METHOD_FRAME_END();          // Tear down the frame
+         }
+         else
+         {
+-            newobj = ObjectToOBJECTREF(*((Object**) pFD->GetAddress(OBJECTREFToObject(or))));
++            newobj = ObjectToOBJECTREF(*((Object**) pFD->GetAddress(OBJECTREFToObject(oref))));
+         }
+     }
+ 
+@@ -5741,31 +5741,31 @@
+     else
+ #endif
+     {
+-        OBJECTREF or = ObjectToOBJECTREF(obj);
++        OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+        // We should use this helper to get field values for marshalbyref types
+         // or proxy types
+-        _ASSERTE(or->GetClass()->IsMarshaledByRef() || or->IsThunking()
++        _ASSERTE(oref->GetClass()->IsMarshaledByRef() || oref->IsThunking()
+                  || pFD->IsDangerousAppDomainAgileField());
+ 
+         // Try an unwrap operation to check that we are not being called in the
+         // same context as the server. If that is the case then unwrap will return
+         // the server object.
+-        if(or->GetMethodTable()->IsTransparentProxyType())
++        if(oref->GetMethodTable()->IsTransparentProxyType())
+         {
+-            or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++            oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+ 
+             // This is a cross context field access. Setup a frame as we will
+             // transition to managed code later.
+             HELPER_METHOD_FRAME_BEGIN_NOPOLL();        // Set up a frame
+ 
+-            pFD->SetRefValue(or, ObjectToOBJECTREF(value));
++            pFD->SetRefValue(oref, ObjectToOBJECTREF(value));
+ 
+             HELPER_METHOD_FRAME_END();          // Tear down the frame
+         }
+         else
+         {
+-            pFD->SetRefValue(or, ObjectToOBJECTREF(value));
++            pFD->SetRefValue(oref, ObjectToOBJECTREF(value));
+         }
+     }
+     FC_GC_POLL();
+@@ -5785,11 +5785,11 @@
+     if (obj == NULL)
+         FCThrowVoid(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     // We should use this helper to get field values for marshalbyref types
+     // or proxy types
+-    _ASSERTE(or->GetClass()->IsMarshaledByRef() || or->IsThunking());
++    _ASSERTE(oref->GetClass()->IsMarshaledByRef() || oref->IsThunking());
+ 
+ 
+     // This may be a  cross context field access. Setup a frame as we will
+@@ -5801,10 +5801,10 @@
+     // Try an unwrap operation to check that we are not being called in the
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+-    if(or->GetMethodTable()->IsTransparentProxyType())
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++    if(oref->GetMethodTable()->IsTransparentProxyType())
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+ 
+-    CRemotingServices::FieldAccessor(pFD, or, retBuff, TRUE);
++    CRemotingServices::FieldAccessor(pFD, oref, retBuff, TRUE);
+ 
+     HELPER_METHOD_FRAME_END_POLL();          // Tear down the frame
+ }
+@@ -5819,11 +5819,11 @@
+     if (obj == NULL)
+         FCThrowVoid(kNullReferenceException);
+ 
+-    OBJECTREF or = ObjectToOBJECTREF(obj);
++    OBJECTREF oref = ObjectToOBJECTREF(obj);
+ 
+     // We should use this helper to get field values for marshalbyref types
+     // or proxy types
+-    _ASSERTE(or->GetClass()->IsMarshaledByRef() || or->IsThunking()
++    _ASSERTE(oref->GetClass()->IsMarshaledByRef() || oref->IsThunking()
+              || pFD->IsDangerousAppDomainAgileField());
+ 
+ #ifdef _DEBUG
+@@ -5833,7 +5833,7 @@
+         // Verify that the object we are assigning to is also agile
+         //
+ 
+-        if (or->IsAppDomainAgile())
++        if (oref->IsAppDomainAgile())
+         {
+             // !!! validate that all dangerous fields of valuePtr are domain agile
+         }
+@@ -5851,11 +5851,11 @@
+     // same context as the server. If that is the case then unwrap will return
+     // the server object.
+     BEGINFORBIDGC();
+-    if(or->GetMethodTable()->IsTransparentProxyType())
+-        or = CRemotingServices::GetObjectFromProxy(or, TRUE);
++    if(oref->GetMethodTable()->IsTransparentProxyType())
++        oref = CRemotingServices::GetObjectFromProxy(oref, TRUE);
+     ENDFORBIDGC();
+ 
+-    CRemotingServices::FieldAccessor(pFD, or, valuePtr, FALSE);
++    CRemotingServices::FieldAccessor(pFD, oref, valuePtr, FALSE);
+ 
+     HELPER_METHOD_FRAME_END_POLL();          // Tear down the frame
+ }
+--- clr/src/vm/remoting.cpp.orig	Thu Jun 20 02:43:23 2002
++++ clr/src/vm/remoting.cpp	Sat Jul 27 23:57:50 2002
+@@ -1610,29 +1610,29 @@
+ //              Delegates to a helper method to do the actual work
+ //
+ //+----------------------------------------------------------------------------
+-OBJECTREF CRemotingServices::Wrap(OBJECTREF or)
++OBJECTREF CRemotingServices::Wrap(OBJECTREF oref)
+ {
+     THROWSCOMPLUSEXCEPTION();
+ 
+     // Basic sanity check
+-    VALIDATEOBJECTREF(or);
++    VALIDATEOBJECTREF(oref);
+ 
+     // ******************* WARNING ********************************************
+     // Do not throw any exceptions or provoke GC without setting up a frame.
+     // At present its the callers responsibility to setup a frame that can 
+     // handle exceptions.
+     // ************************************************************************    
+-    OBJECTREF orProxy = or;
+-    if(or != NULL && (or->GetMethodTable()->IsContextful()))       
++    OBJECTREF orProxy = oref;
++    if(oref != NULL && (oref->GetMethodTable()->IsContextful()))       
+     {
+-        if(!IsTransparentProxy(OBJECTREFToObject(or)))
++        if(!IsTransparentProxy(OBJECTREFToObject(oref)))
+         {
+             // See if we can extract the proxy from the object
+-            orProxy = GetProxyFromObject(or);
++            orProxy = GetProxyFromObject(oref);
+             if(orProxy == NULL)
+             {
+                 // ask the remoting services to wrap the object
+-                orProxy = CRemotingServices::WrapHelper(or);
++                orProxy = CRemotingServices::WrapHelper(oref);
+ 
+                 // Check to make sure that everything went fine
+                 if(orProxy == NULL)
+@@ -1690,17 +1690,17 @@
+ //              ContextBoundObject class
+ //              
+ //+----------------------------------------------------------------------------
+-OBJECTREF CRemotingServices::GetProxyFromObject(OBJECTREF or)
++OBJECTREF CRemotingServices::GetProxyFromObject(OBJECTREF oref)
+ {
+     BEGINFORBIDGC();
+ 
+     // Basic sanity check
+-    VALIDATEOBJECTREF(or);
++    VALIDATEOBJECTREF(oref);
+ 
+     // We can derive a proxy for contextful types only.
+-    _ASSERTE(or->GetMethodTable()->IsContextful());
++    _ASSERTE(oref->GetMethodTable()->IsContextful());
+ 
+-    OBJECTREF srvID = (OBJECTREF)(Object*)or->GetPtrOffset(s_dwMBRIDOffset);
++    OBJECTREF srvID = (OBJECTREF)(Object*)oref->GetPtrOffset(s_dwMBRIDOffset);
+     OBJECTREF orProxy = NULL;
+     
+     if (srvID != NULL)
+@@ -1790,8 +1790,8 @@
+     OBJECTREF oref = NULL;
+     if (CTPMethodTable__GenericCheckForContextMatch(obj))
+     {
+-        OBJECTREF or = ObjectToOBJECTREF(GetRealProxy(OBJECTREFToObject(obj)));
+-        oref = (OBJECTREF)(Object*)or->GetPtrOffset(s_dwServerOffsetInRealProxy);
++        OBJECTREF oref = ObjectToOBJECTREF(GetRealProxy(OBJECTREFToObject(obj)));
++        oref = (OBJECTREF)(Object*)oref->GetPtrOffset(s_dwServerOffsetInRealProxy);
+         if (oref != NULL)
+         {
+             obj = oref; 
+@@ -1860,18 +1860,18 @@
+     ASSERT(IsTransparentProxy(OBJECTREFToObject(obj)));
+ 
+     // Extract the real proxy underlying the transparent proxy
+-    OBJECTREF or = ObjectToOBJECTREF(GetRealProxy(OBJECTREFToObject(obj)));
++    OBJECTREF oref = ObjectToOBJECTREF(GetRealProxy(OBJECTREFToObject(obj)));
+ 
+     OBJECTREF id = NULL;
+         
+     // Extract the identity object
+-    or = (OBJECTREF)(Object*)or->GetPtrOffset(s_dwIdOffset);
++    oref = (OBJECTREF)(Object*)oref->GetPtrOffset(s_dwIdOffset);
+ 
+     // Extract the _identity from the real proxy only if it is an instance of 
+     // remoting proxy
+-    if((or != NULL) && IsInstanceOfServerIdentity(or->GetMethodTable()))
++    if((oref != NULL) && IsInstanceOfServerIdentity(oref->GetMethodTable()))
+     {
+-        id = or;
++        id = oref;
+     }
+ 
+     ENDFORBIDGC();
+--- clr/src/debug/shell/commands.cpp	2002/07/28 06:11:46	1.1
++++ clr/src/debug/shell/commands.cpp	2002/07/28 06:20:53
+@@ -4329,22 +4329,22 @@
+ #define REGS_PER_LINE 4
+ #define WRITE_SPECIAL_REGISTER(shell, pContext, segmentflag, Name, fieldName, nBase, sz) \
+             if ((pContext)->ContextFlags & (segmentflag))            \
+-                (shell)->Write( L#Name L" = %04s",                   \
++                (shell)->Write( L###Name L" = %04s",                   \
+                 _itow((pContext)->##fieldName, sz, (nBase)));        \
+             else                                                     \
+-                shell->Write(L#Name L"=<?>");                        
++                shell->Write(L###Name L"=<?>");                        
+ 
+ #define WRITE_SPECIAL_BIT_REGISTER( shell, pContext, segmentFlag, fName, Name ) \
+                 if ( (pContext)->ContextFlags & (segmentFlag))           \
+                 {                                                       \
+                     if ( (pContext)->EFlags & (X86_EFLAGS_##fName) )     \
+-                        shell->Write( L#Name L" = 1"  );             \
++                        shell->Write( L###Name L" = 1"  );             \
+                     else                                                \
+-                        shell->Write( L#Name L" = 0"  );             \
++                        shell->Write( L###Name L" = 0"  );             \
+                 }                                                       \
+                 else                                                    \
+                 {                                                       \
+-                    shell->Write( L#Name L"=<?>" );                     \
++                    shell->Write( L###Name L"=<?>" );                     \
+                 }                                                       \
+ 
+ 
+--- clr/src/fjit/fjitdef.h	2002/07/28 06:23:46	1.1
++++ clr/src/fjit/fjitdef.h	2002/07/28 06:33:20
+@@ -5108,22 +5108,22 @@
+     emit_pushresult_Ptr();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-void* HELPER_CALL LDELEMA_helper(void* clshnd, unsigned int elemSize, unsigned int index, CORINFO_Array* or) {
++void* HELPER_CALL LDELEMA_helper(void* clshnd, unsigned int elemSize, unsigned int index, CORINFO_Array* oref) {
+     void* ptr;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+ 	if (clshnd != 0) {
+-		CORINFO_CLASS_HANDLE elemType = *((CORINFO_CLASS_HANDLE*) &or->i1Elems);	
++		CORINFO_CLASS_HANDLE elemType = *((CORINFO_CLASS_HANDLE*) &oref->i1Elems);	
+ 		if (elemType != clshnd)
+ 			THROW_FROM_HELPER_RET(CORINFO_ArrayTypeMismatchException);
+-		ptr = &or->i1Elems[index*elemSize + sizeof(CORINFO_CLASS_HANDLE)];
++		ptr = &oref->i1Elems[index*elemSize + sizeof(CORINFO_CLASS_HANDLE)];
+ 	}
+ 	else 
+-		ptr = &or->i1Elems[index*elemSize];
++		ptr = &oref->i1Elems[index*elemSize];
+     return ptr;
+ }
+ #endif
+@@ -5141,15 +5141,15 @@
+     emit_pushresult_I4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDELEM_I1_helper(unsigned int index, CORINFO_Array* or) {
++int HELPER_CALL LDELEM_I1_helper(unsigned int index, CORINFO_Array* oref) {
+     int i4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    i4 = or->i1Elems[index];
++    i4 = oref->i1Elems[index];
+     return i4;
+ }
+ #endif
+@@ -5166,15 +5166,15 @@
+     emit_pushresult_I4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDELEM_I2_helper(unsigned int index, CORINFO_Array* or) {
++int HELPER_CALL LDELEM_I2_helper(unsigned int index, CORINFO_Array* oref) {
+     int i4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    i4 = or->i2Elems[index];
++    i4 = oref->i2Elems[index];
+     return i4;
+ }
+ #endif
+@@ -5191,15 +5191,15 @@
+     emit_pushresult_I4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDELEM_I4_helper(unsigned int index, CORINFO_Array* or) {
++int HELPER_CALL LDELEM_I4_helper(unsigned int index, CORINFO_Array* oref) {
+     int i4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    i4 = or->i4Elems[index];
++    i4 = oref->i4Elems[index];
+     return i4;
+ }
+ #endif
+@@ -5216,15 +5216,15 @@
+     emit_pushresult_U4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned HELPER_CALL LDELEM_U4_helper(unsigned int index, CORINFO_Array* or) {
++unsigned HELPER_CALL LDELEM_U4_helper(unsigned int index, CORINFO_Array* oref) {
+     int u4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    u4 = or->u4Elems[index];
++    u4 = oref->u4Elems[index];
+     return u4;
+ }
+ #endif
+@@ -5241,15 +5241,15 @@
+     emit_pushresult_I8();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-signed __int64 HELPER_CALL LDELEM_I8_helper(unsigned int index, CORINFO_Array* or) {
++signed __int64 HELPER_CALL LDELEM_I8_helper(unsigned int index, CORINFO_Array* oref) {
+     signed __int64 i8;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    i8 = or->i8Elems[index];
++    i8 = oref->i8Elems[index];
+     return i8;
+ }
+ #endif
+@@ -5271,15 +5271,15 @@
+     emit_pushresult_I4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDELEM_U1_helper(unsigned int index, CORINFO_Array* or) {
++int HELPER_CALL LDELEM_U1_helper(unsigned int index, CORINFO_Array* oref) {
+     unsigned int u4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    u4 = or->u1Elems[index];
++    u4 = oref->u1Elems[index];
+     return u4;
+ }
+ #endif
+@@ -5296,15 +5296,15 @@
+     emit_pushresult_I4();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDELEM_U2_helper(unsigned int index, CORINFO_Array* or) {
++int HELPER_CALL LDELEM_U2_helper(unsigned int index, CORINFO_Array* oref) {
+     unsigned int u4;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    u4 = or->u2Elems[index];
++    u4 = oref->u2Elems[index];
+     return u4;
+ }
+ #endif
+@@ -5322,15 +5322,15 @@
+     emit_pushresult_I8();                       \
+ }
+ #ifdef DECLARE_HELPERS
+-__int64 HELPER_CALL LDELEM_R4_helper(unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++__int64 HELPER_CALL LDELEM_R4_helper(unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+     double r8;
+-    r8 = (double) or->r4Elems[index];
++    r8 = (double) oref->r4Elems[index];
+     return *(__int64*)&r8;
+ }
+ #endif
+@@ -5348,15 +5348,15 @@
+     emit_conv_R8toR();                          \
+ }
+ #ifdef DECLARE_HELPERS
+-__int64 HELPER_CALL LDELEM_R8_helper(unsigned int index, CORINFO_Array* or) {
++__int64 HELPER_CALL LDELEM_R8_helper(unsigned int index, CORINFO_Array* oref) {
+     double r8;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    r8 = or->r8Elems[index];
++    r8 = oref->r8Elems[index];
+     return *(__int64*)&r8;
+ }
+ #endif
+@@ -5373,15 +5373,15 @@
+     emit_pushresult_Ptr();                      \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned HELPER_CALL LDELEM_REF_helper(unsigned int index, CORINFO_RefArray* or) {
++unsigned HELPER_CALL LDELEM_REF_helper(unsigned int index, CORINFO_RefArray* oref) {
+     CORINFO_Object* result;
+-    if (or == NULL) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER_RET(CORINFO_IndexOutOfRangeException);
+     }
+-    result = or->refElems[index];
++    result = oref->refElems[index];
+     return (unsigned) result;
+ }
+ #endif
+@@ -5399,14 +5399,14 @@
+     emit_callhelper_I4I4I4(STELEM_I1_helper);  \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_I1_helper(signed char i1, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_I1_helper(signed char i1, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->i1Elems[index] = i1;
++    oref->i1Elems[index] = i1;
+ }
+ #endif
+ #endif
+@@ -5422,14 +5422,14 @@
+     emit_callhelper_I4I4I4(STELEM_I2_helper);  \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_I2_helper(signed short i2, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_I2_helper(signed short i2, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->i2Elems[index] = i2;
++    oref->i2Elems[index] = i2;
+ }
+ #endif
+ #endif
+@@ -5450,14 +5450,14 @@
+     emit_callhelper_I4I4I4(STELEM_I4_helper);   \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_I4_helper(signed int i4, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_I4_helper(signed int i4, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->i4Elems[index] = i4;
++    oref->i4Elems[index] = i4;
+ }
+ #endif
+ #endif
+@@ -5475,14 +5475,14 @@
+ }
+ 
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_I8_helper(signed __int64 i8, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_I8_helper(signed __int64 i8, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->i8Elems[index] = i8;
++    oref->i8Elems[index] = i8;
+ }
+ #endif
+ #endif
+@@ -5498,14 +5498,14 @@
+     emit_callhelper_I4I4I4(STELEM_U1_helper);   \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_U1_helper(unsigned char u1, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_U1_helper(unsigned char u1, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->u1Elems[index] = u1;
++    oref->u1Elems[index] = u1;
+ }
+ #endif
+ #endif
+@@ -5521,14 +5521,14 @@
+     emit_callhelper_I4I4I4(STELEM_U2_helper);   \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_U2_helper(unsigned short u2, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_U2_helper(unsigned short u2, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->u2Elems[index] = u2;
++    oref->u2Elems[index] = u2;
+ }
+ #endif
+ #endif
+@@ -5545,14 +5545,14 @@
+     emit_callhelper_I4I4I4(STELEM_R4_helper);   \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_R4_helper(int r4, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_R4_helper(int r4, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->r4Elems[index] = (*(float *)&r4);
++    oref->r4Elems[index] = (*(float *)&r4);
+ }
+ #endif
+ #endif
+@@ -5570,14 +5570,14 @@
+     emit_callhelper_I8I4I4(STELEM_R8_helper);                   \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STELEM_R8_helper(__int64 r8, unsigned int index, CORINFO_Array* or) {
+-    if (or == NULL) {
++void HELPER_CALL STELEM_R8_helper(__int64 r8, unsigned int index, CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    if (index >= or->length) {
++    if (index >= oref->length) {
+         THROW_FROM_HELPER(CORINFO_IndexOutOfRangeException);
+     }
+-    or->r8Elems[index] = (*(double *)&r8);
++    oref->r8Elems[index] = (*(double *)&r8);
+ }
+ #endif
+ #endif
+@@ -5622,11 +5622,11 @@
+     emit_pushresult_I4();\
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDFLD_I1_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++int HELPER_CALL LDFLD_I1_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((signed char*) ((char*)(or)+offset));
++    return *((signed char*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5647,11 +5647,11 @@
+     emit_pushresult_I4();                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDFLD_I2_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++int HELPER_CALL LDFLD_I2_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((signed short*) ((char*)(or)+offset));
++    return *((signed short*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5671,11 +5671,11 @@
+     emit_pushresult_I4();                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDFLD_I4_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++int HELPER_CALL LDFLD_I4_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((int*) ((char*)(or)+offset));
++    return *((int*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5696,11 +5696,11 @@
+        {emit_LDIND_R4();}                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-__int64 HELPER_CALL LDFLD_R4_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++__int64 HELPER_CALL LDFLD_R4_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-	double f = (double) (*((float*) ((char*)(or)+offset))); 
++	double f = (double) (*((float*) ((char*)(oref)+offset))); 
+     return *(__int64*) (&f);
+ }
+ #endif
+@@ -5722,11 +5722,11 @@
+        {emit_LDIND_I8();}                                     \
+ }    
+ #ifdef DECLARE_HELPERS
+-__int64 HELPER_CALL LDFLD_I8_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++__int64 HELPER_CALL LDFLD_I8_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((__int64*) ((char*)(or)+offset));
++    return *((__int64*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5748,11 +5748,11 @@
+     emit_conv_R8toR();                                        \
+ }
+ #ifdef DECLARE_HELPERS
+-__int64 HELPER_CALL LDFLD_R8_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++__int64 HELPER_CALL LDFLD_R8_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((__int64*) ((char*)(or)+offset));
++    return *((__int64*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5773,11 +5773,11 @@
+        {load_indirect_byte_zeroextend(TOS_REG_1,TOS_REG_1);}  \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned int HELPER_CALL LDFLD_U1_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++unsigned int HELPER_CALL LDFLD_U1_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((unsigned char*) ((char*)(or)+offset));
++    return *((unsigned char*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5798,11 +5798,11 @@
+     emit_pushresult_I4();                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned int HELPER_CALL LDFLD_U2_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++unsigned int HELPER_CALL LDFLD_U2_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((unsigned short*) ((char*)(or)+offset));
++    return *((unsigned short*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5822,11 +5822,11 @@
+     emit_pushresult_U4();                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-int HELPER_CALL LDFLD_U4_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++int HELPER_CALL LDFLD_U4_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((int*) ((char*)(or)+offset));
++    return *((int*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5847,11 +5847,11 @@
+     emit_pushresult_Ptr();                                    \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned HELPER_CALL LDFLD_REF_helper(unsigned int offset, CORINFO_Object* or) {
+-    if (or == NULL) {
++unsigned HELPER_CALL LDFLD_REF_helper(unsigned int offset, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return *((unsigned*) ((char*)(or)+offset));
++    return *((unsigned*) ((char*)(oref)+offset));
+ }
+ #endif
+ #endif
+@@ -5885,11 +5885,11 @@
+        {emit_STIND_REV_I1();}                                 \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_I1_helper(unsigned int offset, signed char val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_I1_helper(unsigned int offset, signed char val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((signed char*) ((char*)(or)+offset)) = val;
++    *((signed char*) ((char*)(oref)+offset)) = val;
+ }
+ #endif
+ #endif
+@@ -5910,11 +5910,11 @@
+       {emit_STIND_REV_I2();}                                  \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_I2_helper(unsigned int offset, signed short val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_I2_helper(unsigned int offset, signed short val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((signed short*) ((char*)(or)+offset)) = val;
++    *((signed short*) ((char*)(oref)+offset)) = val;
+ }
+ #endif
+ #endif
+@@ -5940,11 +5940,11 @@
+     }                                                         \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_I4_helper(unsigned int offset, int val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_I4_helper(unsigned int offset, int val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((int*) ((char*)(or)+offset)) = val;
++    *((int*) ((char*)(oref)+offset)) = val;
+ }
+ #endif
+ #endif
+@@ -5966,11 +5966,11 @@
+        {emit_STIND_REV_I4(); /* since we have already converted the R to R4 */}\
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_R4_helper(unsigned int offset, int val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_R4_helper(unsigned int offset, int val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((float*) ((char*)(or)+offset)) = (float)(*(float *)&val);
++    *((float*) ((char*)(oref)+offset)) = (float)(*(float *)&val);
+ }
+ #endif
+ #endif
+@@ -5993,11 +5993,11 @@
+     {emit_STIND_REV_I8();}                                      \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_I8_helper(unsigned int offset, __int64 val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_I8_helper(unsigned int offset, __int64 val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((__int64*) ((char*)(or)+offset)) = val;
++    *((__int64*) ((char*)(oref)+offset)) = val;
+ }
+ #endif
+ #endif
+@@ -6022,11 +6022,11 @@
+     {emit_STIND_REV_R8();}                                      \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_R8_helper(unsigned int offset, __int64 val, CORINFO_Object* or) {
+-    if (or == NULL) {
++void HELPER_CALL STFLD_R8_helper(unsigned int offset, __int64 val, CORINFO_Object* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    *((double*) ((char*)(or)+offset)) = (*(double *)&val);
++    *((double*) ((char*)(oref)+offset)) = (*(double *)&val);
+ }
+ #endif
+ #endif
+@@ -6047,11 +6047,11 @@
+        {emit_callhelper_I4I4(STSFLD_REF_helper);}             \
+ }
+ #ifdef DECLARE_HELPERS
+-void HELPER_CALL STFLD_REF_helper(unsigned int offset, unsigned val, CORINFO_Object* or) {
+-    if(or == NULL) {
++void HELPER_CALL STFLD_REF_helper(unsigned int offset, unsigned val, CORINFO_Object* oref) {
++    if(oref == NULL) {
+         THROW_FROM_HELPER(CORINFO_NullReferenceException);
+     }
+-    FJit_pHlpAssign_Ref((CORINFO_Object**)((char*)(or)+offset), (CORINFO_Object*)val);
++    FJit_pHlpAssign_Ref((CORINFO_Object**)((char*)(oref)+offset), (CORINFO_Object*)val);
+ }
+ void HELPER_CALL STSFLD_REF_helper(unsigned* pObj, unsigned val)
+ {
+@@ -6109,11 +6109,11 @@
+     emit_pushresult_U4();                                     \
+ }
+ #ifdef DECLARE_HELPERS
+-unsigned int HELPER_CALL LDLEN_helper(CORINFO_Array* or) {
+-    if (or == NULL) {
++unsigned int HELPER_CALL LDLEN_helper(CORINFO_Array* oref) {
++    if (oref == NULL) {
+         THROW_FROM_HELPER_RET(CORINFO_NullReferenceException);
+     }
+-    return or->length;
++    return oref->length;
+ }
+ #endif
+ #endif
+--- clr/src/tools/sos/tst-frames.h	2002/07/28 06:37:19	1.1
++++ clr/src/tools/sos/tst-frames.h	2002/07/28 06:37:52
+@@ -175,7 +175,7 @@
+     return *((LPVOID*)&boilerplate)
+ 
+ #define DEFINE_STD_FRAME_FUNCS(klass)                                   \
+-    virtual PWSTR GetFrameTypeName() { return L#klass; }
++    virtual PWSTR GetFrameTypeName() { return L###klass; }
+ 
+ //------------------------------------------------------------------------
+ // Frame defines methods common to all frame types. There are no actual
+--- clr/src/csharp/alink/inc/merge.h	2002/07/28 09:36:26	1.1
++++ clr/src/csharp/alink/inc/merge.h	2002/07/28 09:36:53
+@@ -78,7 +78,6 @@
+     mdToken                 tkNewToken;
+ 
+     _TokenMap() { tkOldToken = tkNewToken = mdTokenNil; }
+-    _TokenMap(_TokenMap &other) { tkOldToken = other.tkOldToken; tkNewToken = other.tkNewToken; }
+ 
+     static int _cdecl CompareOld(_TokenMap m1, _TokenMap m2) {
+         return m1.tkOldToken - m2.tkOldToken;
+--- clr/src/csharp/csharp/sccomp/compiler.cpp	2002/07/28 09:44:34	1.1
++++ clr/src/csharp/csharp/sccomp/compiler.cpp	2002/07/28 09:44:55
+@@ -2132,7 +2132,7 @@
+ }
+ 
+ const LPCWSTR g_stages[] = {
+-#define DEFINE_STAGE(stage) L#stage,
++#define DEFINE_STAGE(stage) L###stage,
+ #include "stage.h"
+ #undef DEFINE_STAGE
+ };
+--- clr/src/vm/stackwalk.cpp	2002/07/28 10:13:55	1.1
++++ clr/src/vm/stackwalk.cpp	2002/07/28 10:18:00
+@@ -30,6 +30,15 @@
+ void* forceFrame;   // Variable used to force a local variable to the frame
+ #endif
+ 
++inline IJitManager::ScanFlag IJitManager::GetScanFlags()
++{
++    Thread *pThread = GetThread();
++    if (!pThread || pThread->PreemptiveGCDisabled() || pThread == g_pGCHeap->GetGCThread())
++	return ScanNoReaderLock;
++
++    return ScanReaderLock;
++}
++
+ MethodDesc::RETURNTYPE CrawlFrame::ReturnsObject() 
+ {
+     if (isFrameless)
+--- pal/unix/cruntime/printf.c	2002/07/28 11:50:03	1.2
++++ pal/unix/cruntime/printf.c	2002/07/28 12:00:43
+@@ -947,7 +947,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar = va_arg(ap, WCHAR);
++                TempWChar = va_arg(ap, INT);
+                 Length = WideCharToMultiByte(CP_ACP, 0, &TempWChar, 1,
+                                              TempBuffer, 4, 0, 0);
+                 if (!Length)
+@@ -1178,7 +1178,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar[0] = va_arg(ap, WCHAR);
++                TempWChar[0] = va_arg(ap, INT);
+                 TempWChar[1] = 0;
+ 
+                 /* do the padding (if needed)*/
+@@ -1506,7 +1506,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar = va_arg(ap, WCHAR);
++                TempWChar = va_arg(ap, INT);
+                 Length = WideCharToMultiByte(CP_ACP, 0, &TempWChar, 1,
+                                              TempBuffer, 4, 0, 0);
+                 if (!Length)
+@@ -2028,7 +2028,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar[0] = va_arg(ap, WCHAR);
++                TempWChar[0] = va_arg(ap, INT);
+                 TempWChar[1] = 0;
+ 
+                /* do the padding (if needed)*/
+--- pal/unix/cruntime/silent_printf.c	2002/07/28 12:24:17	1.1
++++ pal/unix/cruntime/silent_printf.c	2002/07/28 12:24:58
+@@ -148,7 +148,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar = va_arg(ap, WCHAR);
++                TempWChar = va_arg(ap, INT);
+                 Length = Silent_WideCharToMultiByte(&TempWChar, 1, TempBuffer, 4);
+                 if (!Length)
+                 {
+@@ -350,7 +350,7 @@
+                     TempInt = va_arg(ap, INT); /* value not used */
+                 }
+ 
+-                TempWChar = va_arg(ap, WCHAR);
++                TempWChar = va_arg(ap, INT);
+                 Length = Silent_WideCharToMultiByte(&TempWChar, 1, TempBuffer, 4);
+                 if (!Length)
+                 {
+--- clr/src/vm/comcodeaccesssecurityengine.cpp.orig	Thu Jun 20 02:43:14 2002
++++ clr/src/vm/comcodeaccesssecurityengine.cpp	Sun Jul 28 23:52:19 2002
+@@ -36,6 +36,7 @@
+ #include "appdomainhelper.h"
+ #include "field.h"
+ #include "eeconfig.h"
++#include "threads.inl"
+ 
+ COUNTER_ONLY(PERF_COUNTER_TIMER_PRECISION g_TotalTimeInSecurityRuntimeChecks = 0);
+ COUNTER_ONLY(PERF_COUNTER_TIMER_PRECISION g_LastTimeInSecurityRuntimeChecks = 0);
+@@ -1735,8 +1736,8 @@
+     // An exception is thrown by the SecurityManager wrapper to ensure this case.
+     _ASSERTE(pClass != NULL);
+ 
+-    OBJECTREF or = pClass;
+-    EEClass* pClass = or->GetClass();
++    OBJECTREF oref = pClass;
++    EEClass* pClass = oref->GetClass();
+     _ASSERTE(pClass);
+     _ASSERTE(pClass->GetModule());
+ 
+--- clr/src/vm/commember.cpp.orig	Thu Jun 20 02:43:14 2002
++++ clr/src/vm/commember.cpp	Sun Jul 28 23:52:33 2002
+@@ -37,6 +37,7 @@
+ #include "dbginterface.h"
+ #include "eeconfig.h"
+ #include "comcodeaccesssecurityengine.h"
++#include "threads.inl"
+ 
+ 
+ // Static Fields
+@@ -1404,8 +1405,8 @@
+         //  call the change type to let them fix it.
+         TypeHandle srcTh = (gc.objs->m_Array[i])->GetTypeHandle();
+         if (!srcTh.CanCastTo(th)) {
+-            OBJECTREF or = g_pInvokeUtil->ChangeType(gc.binder,gc.objs->m_Array[i],th,gc.locale);
+-            gc.objs->SetAt(i, or);
++            OBJECTREF oref = g_pInvokeUtil->ChangeType(gc.binder,gc.objs->m_Array[i],th,gc.locale);
++            gc.objs->SetAt(i, oref);
+         }
+         
+         __dbgSecFrame.Pop();
+@@ -2858,14 +2859,14 @@
+     EEClass* eeClass = pField->GetEnclosingClass();
+     _ASSERTE(eeClass);
+ 
+-    OBJECTREF or = NULL;
+-    GCPROTECT_BEGIN(or);
++    OBJECTREF oref = NULL;
++    GCPROTECT_BEGIN(oref);
+     if (!pField->IsStatic()) {
+-        or = ObjectToOBJECTREF(*((Object**)target.data));
++        oref = ObjectToOBJECTREF(*((Object**)target.data));
+     }
+ 
+     // Validate the call
+-    g_pInvokeUtil->ValidateObjectTarget(pField,eeClass,or);
++    g_pInvokeUtil->ValidateObjectTarget(pField,eeClass,oref);
+ 
+     // Get the type of the field
+     CorElementType type;
+@@ -2873,7 +2874,7 @@
+ 
+     // There can be no GC after thing until the Object is returned.
+     ARG_SLOT value;
+-    value = g_pInvokeUtil->GetFieldValue(type,th,pField,&or);
++    value = g_pInvokeUtil->GetFieldValue(type,th,pField,&oref);
+     if (type == ELEMENT_TYPE_VALUETYPE) {
+         refRet = ArgSlotToObj(value);
+     }
+@@ -2894,13 +2895,13 @@
+     EEClass* eeClass = pField->GetEnclosingClass();
+     _ASSERTE(eeClass);
+ 
+-    OBJECTREF or = NULL;
+-    GCPROTECT_BEGIN(or);
++    OBJECTREF oref = NULL;
++    GCPROTECT_BEGIN(oref);
+     if (!pField->IsStatic()) {
+-        or = ObjectToOBJECTREF(*((Object**)target.data));
++        oref = ObjectToOBJECTREF(*((Object**)target.data));
+     }
+     // Validate the target/fld type relationship
+-    g_pInvokeUtil->ValidateObjectTarget(pField,eeClass,or);
++    g_pInvokeUtil->ValidateObjectTarget(pField,eeClass,oref);
+ 
+     // Verify that the value passed can be widened into the target
+     CorElementType type;
+@@ -2929,9 +2930,9 @@
+ 
+     // Verify the callee/caller access
+     if (!pField->IsPublic() && requiresAccessCheck) {
+-        if (or != NULL) 
+-            if (!or->GetTypeHandle().IsTypeDesc())
+-                sCtx.SetClassOfInstance(or->GetClass());
++        if (oref != NULL) 
++            if (!oref->GetTypeHandle().IsTypeDesc())
++                sCtx.SetClassOfInstance(oref->GetClass());
+         
+         InvokeUtil::CheckAccess(&sCtx,
+                                 pField->GetAttributes(),
+@@ -2939,9 +2940,9 @@
+                                 REFSEC_CHECK_MEMBERACCESS|REFSEC_THROW_FIELDACCESS);
+     }
+     else if (!eeClass->IsExternallyVisible()) {
+-        if (or != NULL) 
+-            if (!or->GetTypeHandle().IsTypeDesc())
+-                sCtx.SetClassOfInstance(or->GetClass());
++        if (oref != NULL) 
++            if (!oref->GetTypeHandle().IsTypeDesc())
++                sCtx.SetClassOfInstance(oref->GetClass());
+         
+         InvokeUtil::CheckAccess(&sCtx,
+                                 pField->GetAttributes(),
+@@ -2949,7 +2950,7 @@
+                                 REFSEC_CHECK_MEMBERACCESS|REFSEC_THROW_FIELDACCESS);
+     }
+ 
+-    g_pInvokeUtil->SetValidField(type,th,pField,&or,pvalue);
++    g_pInvokeUtil->SetValidField(type,th,pField,&oref,pvalue);
+     GCPROTECT_END();
+ }
+ 
+--- clr/src/vm/object.h.orig	Thu Jun 20 02:43:22 2002
++++ clr/src/vm/object.h	Wed Jul 31 10:50:29 2002
+@@ -29,7 +29,7 @@
+ #include "gc.h"
+ 
+ // Copied from threads.h, since we can't include it here.
+-extern class AppDomain* (*GetAppDomain)();
++extern class AppDomain* (__stdcall *GetAppDomain)();
+ 
+ BOOL CanBoxToObject(MethodTable *pMT);
+ TypeHandle ElementTypeToTypeHandle(const CorElementType type);
+@@ -1596,10 +1596,10 @@
+ typedef REF<FrameSecurityDescriptorBaseObject> FRAMESECDESCREF;
+ 
+ 
+-inline ARG_SLOT ObjToArgSlot(OBJECTREF or)
++inline ARG_SLOT ObjToArgSlot(OBJECTREF oref)
+ {
+     ARG_SLOT v;
+-    *((OBJECTREF*)&v) = or;
++    *((OBJECTREF*)&v) = oref;
+     return v;
+ }
+ 
+@@ -1610,10 +1610,10 @@
+     return ObjectToOBJECTREF ((Object*)v);
+ }
+ 
+-inline ARG_SLOT StringToArgSlot(STRINGREF or)
++inline ARG_SLOT StringToArgSlot(STRINGREF oref)
+ {
+     LPVOID v;
+-    *((STRINGREF*)&v) = or;
++    *((STRINGREF*)&v) = oref;
+     return (ARG_SLOT)v;
+ }
+ 
+--- clr/src/vm/class.h.orig	Thu Jun 20 02:43:13 2002
++++ clr/src/vm/class.h	Thu Aug  1 08:24:16 2002
+@@ -352,6 +352,8 @@
+     // Unfortunately, this must be public so I can easily access it from inline ASM.
+     SLOT    m_Vtable[1];
+ 
++    MethodTable() {};
++
+     void *operator new(size_t size, DWORD dwVtableSlots, DWORD dwStaticFieldBytes, DWORD dwGCSize
+             , DWORD dwNumInterfaces, ClassLoader *pLoader, BOOL isIFace
+         );
+@@ -639,7 +641,7 @@
+     // The following service adjusts a MethodTable based on the supplied instance.  As
+     // we add new thunking layers, we just need to teach this service how to navigate
+     // through them.
+-    MethodTable *AdjustForThunking(OBJECTREF or);
++    MethodTable *AdjustForThunking(OBJECTREF oref);
+     FORCEINLINE BOOL         IsThunking()    { return IsCtxProxyType() || IsTransparentProxyType(); }
+ 
+     // get dispatch vtable for interface
+@@ -1709,7 +1711,7 @@
+     // The following service adjusts a EEClass based on the supplied instance.  As
+     // we add new thunking layers, we just need to teach this service how to navigate
+     // through them.
+-    EEClass *AdjustForThunking(OBJECTREF or);
++    EEClass *AdjustForThunking(OBJECTREF oref);
+     BOOL     IsThunking()       { return m_pMethodTable->IsThunking(); }
+ 
+ 
+
+$FreeBSD$
+
+--- rotorenv/bin/makefile.csc	2002/08/01 17:56:11	1.1
++++ rotorenv/bin/makefile.csc	2002/08/01 18:00:55
+@@ -153,7 +153,9 @@
+ ! endif
+ !endif
+ 
++!ifndef PLATFORM_UNIX
+ ASSEMBLY_KEY_FILE    = $(ASSEMBLY_KEY_FILE:\=\\)
++!endif
+ 
+ #
+ # Start setting the CSharp flags

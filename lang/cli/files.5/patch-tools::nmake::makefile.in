@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- tools/nmake/makefile.in	2002/03/28 22:44:20	1.1
-+++ tools/nmake/makefile.in	2002/03/28 22:45:39
+--- tools/nmake/makefile.in.orig	Thu Jun 20 02:45:41 2002
++++ tools/nmake/makefile.in	Fri Jul 26 18:33:33 2002
 @@ -57,7 +57,7 @@
  all: makefile $(TARGET_NAME)
  
  $(TARGET_NAME) : makefile $(OBJS)
 -	ld -o $@ $(OBJS) $(REQUIRED_CRUNTIME) $(LDFLAGS) -l$(PAL_LIB) $(GCC_LIB)
-+	ld -o $@ $(OBJS) $(REQUIRED_CRUNTIME) $(LDFLAGS) -l$(PAL_LIB) $(GCC_LIB) -lc_r -lc
++	ld -o $@ $(OBJS) $(REQUIRED_CRUNTIME) $(LDFLAGS) -l$(PAL_LIB) $(GCC_LIB) -lstdc++ -lc_r -lc
  
  makefile : makefile.in
  	@echo $? is newer than $@. Please rerun $(TOP_SRC_DIR)/configure.

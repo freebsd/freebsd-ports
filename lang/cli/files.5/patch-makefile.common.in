@@ -8,7 +8,7 @@ $FreeBSD$
  # because otherwise /usr/lib might be searched when it shouldn't
  # be.
 -GCC_LIB = -L/usr/lib -lgcc
-+GCC_LIB = -L/usr/lib -lgcc -lc_r -lc
++GCC_LIB = -L/usr/lib -lgcc -lstdc++ -lc_r -lc
  
  # The C runtime static libraries that we need to get an application
  # up and running.

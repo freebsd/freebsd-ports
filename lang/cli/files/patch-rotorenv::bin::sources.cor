@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- rotorenv/bin/sources.cor	2002/07/26 16:22:24	1.1
++++ rotorenv/bin/sources.cor	2002/07/26 16:22:32
+@@ -280,7 +280,7 @@
+ !if "$(PLATFORM_UNIX)" != "1"
+ COMPILER_WARNINGS   =/WX /FI$(CORBASE)\src\inc\WarningControl.h
+ !else
+-COMPILER_WARNINGS   = -Wall -Wno-non-virtual-dtor -Wno-non-template-friend
++COMPILER_WARNINGS   = -Wno-non-virtual-dtor -Wno-non-template-friend -w
+ !endif
+ 
+ #######################################################################################
