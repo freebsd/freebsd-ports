@@ -5509,6 +5509,7 @@ rawio		ports/benchmarks/rawio
 ray		src/sys/dev/ray
 ray++		ports/graphics/ray++
 raycontrol	src/usr.sbin/raycontrol
+raysfilter	ports/mail/raysfilter
 rayshade	ports/graphics/rayshade
 razor-agents	ports/mail/razor-agents
 rblcheck	ports/mail/rblcheck
