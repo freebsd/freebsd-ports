@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/00Readme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/bibunits.dtx
 %%CLASSDIR%%/bibunits.ins
