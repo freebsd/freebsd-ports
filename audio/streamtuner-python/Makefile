@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		streamtuner-python
-PORTVERSION=		0.1.1
+PORTVERSION=		0.1.2
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	streamtuner
