@@ -38,24 +38,6 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -909,7 +901,7 @@
- 
-     # Workaround for the \"preloaded libXt\" problem.
-     # To disable the first workaround, comment the next line.
--    JAVA_WORKAROUND=`LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\" /bin/echo works 2>/dev/null`
-+    #JAVA_WORKAROUND=`LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\" /bin/echo works 2>/dev/null`
- 
-     if test \"\${JAVA_WORKAROUND}\" = 'works'; then
-         LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\"
-@@ -918,7 +910,7 @@
-     fi
- else
-     # To disable the second workaround, comment the next line.
--    JAVA_WORKAROUND2=`LD_PRELOAD=\"libawt.so\" /bin/echo works 2>/dev/null`
-+    #JAVA_WORKAROUND2=`LD_PRELOAD=\"libawt.so\" /bin/echo works 2>/dev/null`
-     if test \"\${JAVA_WORKAROUND2}\" = 'works'; then
-         LD_PRELOAD=\"libawt.so\"
-         OPERA_FORCE_JAVA_ENABLED=\"1\"
 @@ -943,11 +935,8 @@
  
  # Acrobat Reader

@@ -67,6 +67,8 @@ share/opera/java/opera.policy
 share/opera/jsconsole.html
 share/opera/lngcode.txt
 share/opera/locale/english.lng
+share/opera/locale/en/lngcode.txt
+share/opera/locale/en/search.ini
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/operamotifwrapper
@@ -106,6 +108,7 @@ share/opera/styles/wml.css
 @dirrm share/opera/styles
 @dirrm share/opera/skin
 @dirrm share/opera/plugins
+@dirrm share/opera/locale/en
 @dirrm share/opera/locale
 @dirrm share/opera/java
 @dirrm share/opera/ini
