@@ -5,18 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.92a
+PORTVERSION=		0.93a
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
-MAINTAINER=		thierry@pompo.net
+MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
 
 LIB_DEPENDS=		curl.2:${PORTSDIR}/ftp/curl			\
 			ltdl.4:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
-
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
@@ -34,7 +32,7 @@ USE_MYSQL=		yes
 USE_REINPLACE=		yes
 
 LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
-SRC2FIX1=		src/comp/gbi.c src/exec/gbx_library.c
+SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c
 SRC2FIX2=		src/comp/gbc_archive.c src/comp/gbi.c		\
 			src/exec/gbx_library.c src/share/gb_component.h
 
@@ -88,7 +86,7 @@ CONFIGURE_ARGS+=	--without-sqlite-includes				\
 PLIST_SUB+=		SQLITE="@comment "
 .endif
 
-post-patch:
+pre-configure:
 .for src in ${SRC2FIX1}
 	@${REINPLACE_CMD} -e "s|libqt-mt.so.3|${NEWLIBQT-MT}|g"			\
 			-e "s|libkdecore.so.4|${NEWLIBKDECORE}|g"		\
@@ -104,7 +102,5 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|# FreeBSD-Doc-Comment||" ${WRKSRC}/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile.in
-	@${RM} ${WRKSRC}/examples/Database/DataReportExample/Fconn.class.orig	\
-		${WRKSRC}/examples/Database/DataReportExample/Fmain.class.orig
 
 .include <bsd.port.post.mk>
