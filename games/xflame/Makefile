@@ -3,14 +3,14 @@
 # Date created:        2 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/28 18:58:34 sada Exp $
 #
 
 DISTNAME=	xflame-1.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.owlnet.rice.edu/~rahul/
 
-MAINTAINER=	kkennawa@physics.adelaide.edu.au
+MAINTAINER=	kris@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

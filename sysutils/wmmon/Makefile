@@ -3,7 +3,7 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.6 1999/02/23 11:20:48 kris Exp $
+# $Id: Makefile,v 1.7 1999/02/25 10:40:42 obrien Exp $
 #
 
 DISTNAME=	wmmon-1.0b2
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.mezaway.org/pub/DockApps/ \
 		ftp://ftp.paco.odessa.ua/.2/x11/wm/WindowMaker/apps/
 DISTFILES=	wmmon-1.0b2.tar.gz wmmon-1.0b2-freebsd.tar.gz
 
-MAINTAINER=	kkennawa@physics.adelaide.edu.au
+MAINTAINER=	kris@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
