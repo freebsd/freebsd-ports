@@ -37,7 +37,7 @@
 +	    	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/Gnome; \
  	fi
 -	$(INSTALL_SCRIPT) Gnome $(sessdir)/Gnome
-+	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/factory-Gnom
++	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/factory-Gnome
  
  	-if test -f /etc/redhat-release; then \
  		if test -f $(sessdir)/Default; then \
