@@ -3,7 +3,7 @@
 # Date Created:			17 Aug 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/17 09:58:33 rse Exp $
 #
 
 DISTNAME=	pth-1.1b5
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/ \
 		ftp://ftp.engelschall.com/sw/pth/
 
 MAINTAINER=	rse@engelschall.com
+
+NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
