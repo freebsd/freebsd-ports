@@ -4,9 +4,10 @@
 @@ -3,22 +3,23 @@
  
  
- CC=gcc
+-CC=gcc
++#CC=gcc
 -CFLAGS= -O2
-+CFLAGS= -O2 -Wall
++CFLAGS+= -Wall
  MODULES=main.o parse_cmd_line.o get_remote_data.o connect_login.o io.o relay_data.o
  DOCS=README COPYING HISTORY
 -INSTALL_DIR=/usr/sbin
