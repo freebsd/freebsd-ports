@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="597e2bee-68ea-11d9-a9e7-0001020eed82">
+    <topic>ImageMagick -- PSD handler heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><lt>6.1.8.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=184&amp;type=vulnerabilities">
+	  <p>Remote exploitation of a buffer overflow vulnerability in
+	    The ImageMagick's Project's ImageMagick PSD image-decoding
+	    module could allow an attacker to execute arbitrary
+	    code.</p>
+	  <p>Exploitation may allow attackers to run arbitrary code on
+	    a victim's computer if the victim opens a specially
+	    formatted image. Such images could be delivered by e-mail
+	    or HTML, in some cases, and would likely not raise
+	    suspicion on the victim's part. Exploitation is also
+	    possible when a web-based application uses ImageMagick to
+	    process user-uploaded image files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0005</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=184&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-12-21</discovery>
+      <entry>2005-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7850a238-680a-11d9-a9e7-0001020eed82">
     <topic>cups-lpr -- lppasswd multiple vulnerabilities</topic>
     <affects>
