@@ -3,7 +3,7 @@ SHLIB_NAME=	libimg.so.1
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
 X11BASE?=	/usr/X11R6
-TCL_VER?=	8.3
+TCL_VER?=	8.4
 
 .if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
 # If for some reason  the file does not exist -- make the best guess. In

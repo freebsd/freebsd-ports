@@ -7,14 +7,15 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.2.4
-CATEGORIES=	graphics tk83
+PORTREVISION=	1
+CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/graphics/Img/1.2/
 DISTNAME=	img${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
