@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.3.0b2
+PORTVERSION=	0.3.0
 CATEGORIES=	databases python
 MASTER_SITES=	http://dustman.net/andy/python/MySQLdb/0.3.0/
-DISTNAME=	MySQLdb-${PORTVERSION}
+DISTNAME=	MySQL-python-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
-
-WRKSRC=		${WRKDIR}/MySQLdb-${PORTVERSION}
 
 USE_PYTHON=	yes
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
