@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.38 1998/01/21 03:06:06 peter Exp $
+# $Id: Makefile,v 1.39 1998/02/08 03:04:58 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta14
@@ -24,19 +24,27 @@ MAINTAINER=	peter@freebsd.org
 DIST_SUBDIR=	squid1.2b14
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
-		--libexecdir=${PREFIX}/sbin --localstatedir=${PREFIX}/squid
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
+		--localstatedir=${PREFIX}/squid
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 
 # Some other configure options..
-#  - Use ASYNC disk I/O (Requires real pthreads, libc_r probably doesn't work)
-#CONFIGURE_ARGS+= --enable-async-io
 #  - Compile and use the malloc package from Doug Lea
 #CONFIGURE_ARGS+= --enable-dlmalloc
+#  - Compile and use the supplied GNUregex routines instead of BSD regex.
+#CONFIGURE_ARGS+= --enable-gnuregex
 #  - Use tree function to store ACL lists
 #CONFIGURE_ARGS+= --enable-acltree=bin
 #CONFIGURE_ARGS+= --enable-acltree=splay
+#  - Enable simple malloc debugging
+#CONFIGURE_ARGS+= --enable-xmalloc-debug
+#  - Detailed trace of memory allocations
+#CONFIGURE_ARGS+= --enable-xmalloc-debug-count
+#  - Show malloc statistics in cachemgr status pages
+#CONFIGURE_ARGS+= --enable-xmalloc-statistics
+#  - Use ASYNC disk I/O (Requires real pthreads, libc_r probably doesn't work)
+#CONFIGURE_ARGS+= --enable-async-io
 #  - Enable ICMP pinging for heirarchy stats and selection
 #CONFIGURE_ARGS+= --enable-icmp
 #  - Enable delay hack to limit bandwidth usage
@@ -54,12 +62,6 @@ MAKEFILE=	makefile
 #  - Enable ACL based on ethernet address (eg: for machines with dynamic DHCP 
 #    assigned IP addresses)
 #CONFIGURE_ARGS+= --enable-arp-acl
-#  - Enable simple malloc debugging
-#CONFIGURE_ARGS+= --enable-xmalloc-debug
-#  - Detailed trace of memory allocations
-#CONFIGURE_ARGS+= --enable-xmalloc-debug-count
-#  - Show malloc statistics in cachemgr status pages
-#CONFIGURE_ARGS+= --enable-xmalloc-statistics
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger

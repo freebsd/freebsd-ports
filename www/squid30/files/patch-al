@@ -1,0 +1,17 @@
+*** /tmp/configure	Sat Feb  7 21:20:29 1998
+--- configure	Sat Feb  7 21:24:51 1998
+***************
+*** 608,619 ****
+  REGEXLIB=''	# -lregex
+  LIBREGEX=''	# libregex.a
+  
+- if test "$libexecdir" = '${exec_prefix}/libexec'; then
+- 	libexecdir='${bindir}'
+- 	localstatedir='${prefix}'
+- 
+- fi
+- 
+  if test -z "$CACHE_HTTP_PORT"; then
+  	CACHE_HTTP_PORT="3128"
+  fi
+--- 608,613 ----
