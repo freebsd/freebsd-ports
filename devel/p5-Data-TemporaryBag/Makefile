@@ -25,9 +25,7 @@ MAN3=		Data::TemporaryBag.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi.orig -e 'if($$.==17){s/^our \(/use vars qw(/;s/,//g}' \
-		${WRKSRC}/TemporaryBag.pm
+EXTRA_PATCHES=	${PATCHDIR}/500503-TemporaryBag.pm
 .endif
 
 .include <bsd.port.post.mk>
