@@ -1,5 +1,5 @@
---- gcc/gcc.texi.orig	Fri Jan  2 15:38:11 1998
-+++ gcc/gcc.texi	Sat Jan 10 11:56:49 1998
+--- gcc/doc/gcc.texi.orig	Fri Jan  2 15:38:11 1998
++++ gcc/doc/gcc.texi	Sat Jan 10 11:56:49 1998
 @@ -1,6 +1,10 @@
  >\input texinfo  @c -*-texinfo-*-
  @c %**start of header

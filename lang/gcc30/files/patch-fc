@@ -13,11 +13,11 @@
 @@ -1064,6 +1067,8 @@
     "Do the full regmove optimization pass"},
    {"pack-struct", &flag_pack_struct, 1,
-    "Pack structure members together without holes" },
+    N_("Pack structure members together without holes") },
 +  {"format-extensions", &flag_format_extensions, 1,
-+   "-Wformat accepts certain FreeBSD system-dependent formats" },
++   N_("-Wformat accepts certain FreeBSD system-dependent formats") },
    {"stack-check", &flag_stack_check, 1,
-    "Insert stack checking code into the program" },
+    N_("Insert stack checking code into the program") },
    {"argument-alias", &flag_argument_noalias, 0,
 @@ -4484,6 +4489,19 @@
  	      if (optimize_val != -1)
