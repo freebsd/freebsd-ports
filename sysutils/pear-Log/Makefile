@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
