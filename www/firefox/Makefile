@@ -40,10 +40,10 @@ ALL_TARGET=	default
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20 libidl
 PKGNAMESUFFIX=	-gtk2
-PLIST=		pkg-plist.gtk2
+PLIST=		${PKGDIR}/pkg-plist.gtk2
 .else
 USE_GNOME=	gtk12 orbit
-PLIST=		pkg-plist.gtk1
+PLIST=		${PKGDIR}/pkg-plist.gtk1
 .endif
 
 NO_MTREE=		yes
