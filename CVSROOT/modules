@@ -7054,6 +7054,7 @@ syslogd		src/usr.sbin/syslogd
 systat		src/usr.bin/systat
 systemg		ports/x11-fm/systemg
 szip		ports/archivers/szip
+t-gnus		ports/news/t-gnus
 t-gnus-emacs20	ports/news/t-gnus-emacs20
 t-gnus-mule	ports/news/t-gnus-mule
 t-gnus-xemacs21-mule	ports/news/t-gnus-xemacs21-mule
