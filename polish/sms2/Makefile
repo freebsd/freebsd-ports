@@ -20,6 +20,8 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/include/pcre++.h:${PORTSDIR}/devel/pcre++
 
+LATEST_LINK=	sms2
+
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
