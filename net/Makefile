@@ -199,6 +199,7 @@
     SUBDIR += haproxy
     SUBDIR += hawk
     SUBDIR += hf6to4
+    SUBDIR += hidentd
     SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
