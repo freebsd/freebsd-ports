@@ -75,6 +75,7 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 BUILD_DEPENDS+= ${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS+= ${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+BUILD_DEPENDS+= gcp:${PORTSDIR}/sysutils/coreutils
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
