@@ -19,6 +19,12 @@ ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	YES
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/vt.c ${WRKSRC}/lib/mem.c
@@ -33,4 +39,4 @@ post-configure:
 	  -e 's%%DISTDIR%%${DISTDIR}' \
 	  ${FILESDIR}/han.sh > ${WRKSRC}/han.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

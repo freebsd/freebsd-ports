@@ -20,6 +20,12 @@ GNU_CONFIGURE=	yes
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/configure ${WRKSRC}
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.mat ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

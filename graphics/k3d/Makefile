@@ -43,6 +43,10 @@ MAN1=	k3d.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif

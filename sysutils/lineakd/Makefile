@@ -30,6 +30,12 @@ LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 
 PORTDOCS=	README TODO AUTHORS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
@@ -44,4 +50,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

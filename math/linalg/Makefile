@@ -22,6 +22,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	$(INSTALL_DATA) ${WRKSRC}/libla.a ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/include/LinAlg

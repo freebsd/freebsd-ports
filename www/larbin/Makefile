@@ -24,6 +24,12 @@ USE_REINPLACE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CXX=${CXX}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
 		${WRKSRC}/adns/Makefile > ${WRKSRC}/adns/Makefile.new
@@ -59,4 +65,4 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "====================================================================="
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
