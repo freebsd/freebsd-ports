@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/LEGO/RCX.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LEGO/RCX/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LEGO/RCX
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LEGO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LEGO
