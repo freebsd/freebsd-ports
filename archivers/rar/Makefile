@@ -16,6 +16,8 @@ EXTRACT_SUFX=   .sfx
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+CAT1=		rar.1
+
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=     Only unmodified original package can be distributed
 NO_BUILD=       yes
@@ -33,20 +35,12 @@ STRIP=
 post-fetch:
 	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
 
-#do-build:
-#        cd ${WRKSRC} && \
-#                for i in *.Txt *.Lst; do \
-#                        ${TR} -d '\015' < $$i > $$i.tmp; \
-#                        ${MV} $$i.tmp $$i; \
-#                done
-
 do-install:
-	$(INSTALL) -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
-		${PREFIX}/share/doc/rar ${PREFIX}/share/rar
+	${MKDIR} ${PREFIX}/share/doc/rar ${PREFIX}/share/rar
+	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} rar ${PREFIX}/bin/rar && \
 		${INSTALL_MAN} Rar.Txt ${PREFIX}/man/cat1/rar.1 && \
-		${INSTALL_MAN} Rar_FAQ.txt TechNote.Txt License.Txt \
+		${INSTALL_DATA} Rar_FAQ.txt TechNote.Txt License.Txt \
 			       Internet.Txt \
 			${PREFIX}/share/doc/rar && \
 		${INSTALL_DATA} RarFiles.Lst \
