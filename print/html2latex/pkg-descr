@@ -1,0 +1,8 @@
+This is an HTML to LaTeX translator.
+
+CREDITS
+Nathan Torkington adapted the HTML parser from NCSA's Xmosaic package
+(file://ncsa.uiuc.edu/Web/xmosaic) and wrote the conversion
+code.  The HTML parser code is subject to the NCSA restrictions.  The
+conversion code is subject to the VUW restrictions.  Enquiries should
+be sent via e-mail to Nathan.Torkington@vuw.ac.nz.

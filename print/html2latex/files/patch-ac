@@ -1,0 +1,133 @@
+--- /dev/null	Fri Mar 29 13:23:05 1996
++++ html2latex.1	Fri Mar 29 17:16:25 1996
+@@ -0,0 +1,130 @@
++.\" Manually converted from Nathan's html2latex.html file that
++.\" was accompanying the distribution.
++.\" "
++.Dd March 29, 1996
++.Dt HTML2LATEX 1
++.Os
++.Sh NAME
++.Nm html2latex
++.Nd convert HTML markup to LaTeX markup
++.Sh SYNOPSIS
++.Nm html2latex
++.Op opt
++.Op Ar file ...
++.Sh DESCRIPTION
++For each file argument,
++.Nm html2latex
++converts the text as HTML markup to LaTeX markup.  If no files are
++specified, a usage message is given.  Input will be taken from
++standard input for files named
++.Fl .
++Output will to a similarly named file with a
++.Ql .tex
++extension (
++.Nm html2latex
++recognises
++.Ql .html
++extensions).
++.Pp
++Options modify the action of
++.Nm html2latex .
++.Pp
++The options are:
++.Bl -tag -offset indent -width "XXX"
++.It Fl n
++Number sections.
++.It Fl p
++Place page breaks after the title page (if present) and the
++table of contents (if present).
++.It Fl c
++Generate a table of contents.
++.It Fl s
++Create no files -- LaTeX is output to stdout.
++.It Fl t Ar Title
++Generate a title page, with the title
++.Ar Title.
++.It Fl a Ar Author
++Generate a title page, with the author
++.Ar Author .
++.It Fl h Ar Header
++Place the text
++.Ar Header
++after
++.Ql \ebegin{document} .
++.It Fl f Ar Footer
++Place the text
++.Ar Footer
++before
++.Ql \eend{document} .
++.It Fl o Ar Options
++Specify the options to
++.Ql \edocumentstyle .
++.El
++.Sh EXAMPLES
++An example of use is
++.Pp
++.Dl html2latex -n - < file.html | less
++.Pp
++This converts
++.Pa file.html
++to LaTeX and pages through the output.  The sections (corresponding to
++heading tags in the HTML source) will be numbered.
++.Pp
++Another example is
++.Pp
++.Bd -literal -offset indent
++html2latex -t 'Introduction to HTML' -a gnat \e
++-p -c -o '[bookman]{article}' html-intro
++.Ed
++.Pp
++This takes input from the file
++.Pa html-intro ,
++writing to
++.Pa html-intro.tex ,
++and adds a title page (with title
++.Em Introduction to HTML
++and author
++.Em gnat )
++and table of contents with page-breaks after both.  The sections of
++the document are not numbered.  The LaTeX source includes the line
++.Ql \edocumentstyle[bookman]{article} .
++.Sh SEE ALSO
++.Xr latex 1 .
++.Sh BUGS
++Current the only HTML tags supported are:
++.Em TITLE, H1, H2, H3, H4, H5,
++.Em H6, UL, OL, DL, DT, DD, LI,
++.Em B, I, U, EM, STRONG, CODE, SAMP,
++.Em  KBD, VAR, DFN, CITE, LISTING .
++The only recognised SGML escapes are
++.Ql &amp.amp ,
++.Ql &amp.lt ,
++.Ql &amp.gt .
++.Em ADDRESS
++tags are handled badly.
++.Pp
++The
++.Em COMPACT
++attribute to a
++.Em DL
++tag is not recognised.
++.Em MENU
++and
++.Em DIR
++styles are not handled well.
++.Em TITLE
++text are ignored.
++.Pp
++Currently
++.Em PRE
++tags are not handled at all.
++.Pp
++The entire file is read into memory.  For long HTML documents on
++machines with little memory, this may cause problems.
++.Sh CREDITS
++Nathan Torkington adapted the HTML parser from NCSA's Xmosaic package
++(file://ncsa.uiuc.edu/Web/xmosaic) and wrote the conversion
++code.  The HTML parser code is subject to the NCSA restrictions.  The
++conversion code is subject to the VUW restrictions.  Enquiries should
++be sent via e-mail to
++.Ql Nathan.Torkington@vuw.ac.nz .
