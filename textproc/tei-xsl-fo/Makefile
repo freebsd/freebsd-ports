@@ -7,10 +7,12 @@
 
 PORTNAME=	tei
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Stylesheets/
 PKGNAMESUFFIX=	-xsl-fo
 DISTNAME=	teixsl-fo
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	henrik.motakef@web.de
 
