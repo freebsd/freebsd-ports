@@ -28,6 +28,7 @@
     SUBDIR += gwm
     SUBDIR += icepref
     SUBDIR += icewm
+    SUBDIR += ion
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet

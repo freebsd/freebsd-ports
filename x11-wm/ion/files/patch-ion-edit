@@ -1,0 +1,9 @@
+*** scripts/ion-edit.orig	Sat Jan 20 01:43:39 2001
+--- scripts/ion-edit	Sat Jan 20 01:51:17 2001
+***************
+*** 1,2 ****
+  #!/bin/sh
+! exec run-mailcap --action=edit "$1" > /dev/null
+--- 1,2 ----
+  #!/bin/sh
+! exec ion-runinxterm -T $1 $EDITOR "$1" > /dev/null

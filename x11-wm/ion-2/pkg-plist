@@ -1,0 +1,22 @@
+bin/ion
+bin/ion-edit
+bin/ion-man
+bin/ion-runinxterm
+bin/ion-ssh
+bin/ion-view
+etc/ion/bindings-default.conf
+etc/ion/bindings-sun.conf
+etc/ion/kludges.conf
+etc/ion/look-brownsteel.conf
+etc/ion/look-greyviolet.conf
+etc/ion/look-simpleblue.conf
+etc/ion/look-wheat.conf
+etc/ion/sample.conf
+etc/ion/ion.conf
+%%PORTDOCS%%share/doc/ion/README
+%%PORTDOCS%%share/doc/ion/LICENSE
+%%PORTDOCS%%share/doc/ion/ChangeLog
+%%PORTDOCS%%share/doc/ion/config.txt
+%%PORTDOCS%%share/doc/ion/functions.txt
+%%PORTDOCS%%@dirrm share/doc/ion
+@dirrm etc/ion
