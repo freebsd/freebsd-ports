@@ -1,5 +1,5 @@
 # New ports collection makefile for: pgp
-# Version required:     MIT 2.6.2 / International 2.6.3i
+# Version required:     MIT 2.6.2 / International 2.6.3i dev
 # PGP 2.6.3i homepage is http://www.ifi.uio.no/~staalesc/PGP/home.html
 # Date created:         8 Jul 1995
 # Whom:                 ache
@@ -69,9 +69,6 @@ EXTRACT_SUFX=   .zip
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -qa
 FILESDIR=       ${.CURDIR}/files.non_usa
-
-pre-configure:
-	cd ${WRKSRC}; cp makefile.unx makefile
 
 .endif
 .endif
