@@ -1,46 +1,64 @@
---- Makefile.in.orig	Thu Oct 11 21:49:45 2001
-+++ Makefile.in	Sat Nov 24 13:45:09 2001
-@@ -57,7 +57,7 @@
- # Pathname of directory to install the man page
- MANDEST = @mandir@
- # Pathname of directory to install the docs
--DOCDIR = /usr/share/doc/argus-2.0
-+DOCDIR = ${prefix}/share/doc/argus-2.0
- 
- # VPATH
+--- Makefile.in.orig	Mon Nov 26 21:42:32 2001
++++ Makefile.in	Thu Jan 17 23:18:54 2002
+@@ -32,7 +32,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
  srcdir = @srcdir@
-@@ -124,15 +124,6 @@
- 	[ -d $(DESTDIR)/argus/archive ] || \
- 		(mkdir -p $(DESTDIR)/argus/archive; chmod 755 $(DESTDIR)/argus/archive)
+-docdir = /usr/share/doc/argus-2.0
++docdir = @prefix@/share/doc/argus-2.0
  
--	[ -d $(DOCDIR) ] || \
--		(mkdir -p $(DOCDIR); chmod 755 $(DOCDIR))
--
--	[ -d $(DOCDIR)/html ] || \
--		(mkdir -p $(DOCDIR)/html; chmod 755 $(DOCDIR)/html)
--
--	[ -d $(DOCDIR)/html/man ] || \
--		(mkdir -p $(DOCDIR)/html/man; chmod 755 $(DOCDIR)/html/man)
--
- 	[ -d /var/log/argus ] || \
- 		(mkdir -p /var/log/argus; chmod 755 /var/log/argus)
  
-@@ -145,17 +136,9 @@
+ #### End of system configuration section. ####
+@@ -63,28 +63,6 @@
+ .PHONY: all
+ 
+ install:  force
+-	make installdirs
+-	[ -d @prefix@ ] || \
+-		(mkdir -p @prefix@; chmod 755 @prefix@)
+-
+-	[ -d @sbindir@ ] || \
+-		(mkdir -p @sbindir@; chmod 755 @sbindir@)
+-
+-	[ -d $(exec_prefix)/argus ] || \
+-		(mkdir -p $(exec_prefix)/argus; chmod 755 $(exec_prefix)/argus)
+-
+-	[ -d $(exec_prefix)/argus/archive ] || \
+-		(mkdir -p $(exec_prefix)/argus/archive; chmod 755 $(exec_prefix)/argus/archive)
+-
+-	[ -d $(docdir) ] || \
+-		(mkdir -p $(docdir); chmod 755 $(docdir))
+-
+-	[ -d $(docdir)/html ] || \
+-		(mkdir -p $(docdir)/html; chmod 755 $(docdir)/html)
+-
+-	[ -d $(docdir)/html/man ] || \
+-		(mkdir -p $(docdir)/html/man; chmod 755 $(docdir)/html/man)
+-
+ 	@for i in  $(DIRS) ; do \
+ 		if [ -d $$i ] ; then \
+ 		echo "making in $$i"; \
+@@ -94,23 +72,10 @@
  		fi; \
  	done
  
--	$(INSTALL) -m 0644 $(srcdir)/doc/CHANGES $(DOCDIR)
--	$(INSTALL) -m 0644 $(srcdir)/doc/FAQ $(DOCDIR)
--	$(INSTALL) -m 0644 $(srcdir)/doc/HOW-TO $(DOCDIR)
--	$(INSTALL) -m 0644 $(srcdir)/doc/html/man/*.html $(DOCDIR)/html/man
+-	$(INSTALL) -m 0644 $(srcdir)/doc/FAQ $(docdir)
+-	$(INSTALL) -m 0644 $(srcdir)/doc/HOW-TO $(docdir)
+-	$(INSTALL) -m 0644 $(srcdir)/doc/html/man/*.html $(docdir)/html/man
 -
- 	$(INSTALL) -m 0644 $(srcdir)/README $(DESTDIR)/argus
--	$(INSTALL) -m 0644 $(srcdir)/README $(DOCDIR)
--	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DESTDIR)/argus
--	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DOCDIR)
-+	$(INSTALL) -m 0644 $(srcdir)/COPYING $(DESTDIR)/argus
- 	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DESTDIR)/argus
--	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DOCDIR)
- 
- 	$(INSTALL) -m 0755 $(srcdir)/bin/argusbug $(BINDIR)/argusbug
- 
+ 	$(INSTALL) -m 0644 $(srcdir)/README $(prefix)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/README $(docdir)
+ 	$(INSTALL) -m 0644 $(srcdir)/COPYING $(prefix)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/COPYING $(docdir)
+-
+	$(INSTALL) -m 0755 $(srcdir)/bin/argusbug @bindir@/argusbug
+
+-	[ -d @mandir@ ] || \
+-		(mkdir -p @mandir@; chmod 755 @mandir@)
+-	[ -d @mandir@/man5 ] || \
+-		(mkdir -p @mandir@/man5; chmod 755 @mandir@/man5)
+-	[ -d @mandir@/man8 ] || \
+-		(mkdir -p @mandir@/man8; chmod 755 @mandir@/man8)
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man5/argus.5 @mandir@/man5/argus.5
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man5/argus.conf.5 @mandir@/man5/argus.conf.5
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man5/rarc.5 @mandir@/man5/rarc.5

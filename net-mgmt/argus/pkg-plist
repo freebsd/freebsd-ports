@@ -1,5 +1,4 @@
 argus/COPYING
-argus/COPYRIGHT
 argus/README
 bin/argusbug
 bin/ra
@@ -16,7 +15,7 @@ lib/argus_parse.a
 sbin/argus
 %%PORTDOCS%%share/doc/argus-2.0/CHANGES
 %%PORTDOCS%%share/doc/argus-2.0/COPYING
-%%PORTDOCS%%share/doc/argus-2.0/COPYRIGHT
+%%PORTDOCS%%share/doc/argus-2.0/CREDITS
 %%PORTDOCS%%share/doc/argus-2.0/FAQ
 %%PORTDOCS%%share/doc/argus-2.0/HOW-TO
 %%PORTDOCS%%share/doc/argus-2.0/README
@@ -44,7 +43,6 @@ share/examples/argus-2.0/System/crontab
 share/examples/argus-2.0/System/magic
 share/examples/argus-2.0/Xml/ArgusRecord.biz
 share/examples/argus-2.0/Xml/ArgusRecord.dtd
-share/examples/argus-2.0/Xml/ArgusRecord.sox
 share/examples/argus-2.0/Xml/ArgusRecord.xdr
 share/examples/argus-2.0/Xml/ArgusRecord.xsd
 share/examples/argus-2.0/Xml/ArgusRecordSample.xml
@@ -59,5 +57,4 @@ share/examples/argus-2.0/Xml/README
 %%PORTDOCS%%@dirrm share/doc/argus-2.0/html/man
 %%PORTDOCS%%@dirrm share/doc/argus-2.0/html
 %%PORTDOCS%%@dirrm share/doc/argus-2.0
-@dirrm argus/archive
-@dirrm argus
+@exec rmdir @D/argus/archive @D/argus >/dev/null 2>&1

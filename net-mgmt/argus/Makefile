@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	net security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -21,11 +20,12 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
 
-MAN1=	ra.1 racount.1 ragator.1 rasort.1 raxml.1
+MAN1=	ra.1 racount.1 ragator.1 ramon.1 rasort.1 raxml.1
 MAN5=	argus.5 argus.conf.5 rarc.5
 MAN8=	argus.8
 
 pre-install:
+	${MKDIR} ${PREFIX}/argus/archive
 	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
 	${MKDIR} ${PREFIX}/share/examples/argus-2.0
@@ -36,7 +36,7 @@ pre-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/argus-2.0/html/man
-.for i in README COPYING COPYRIGHT doc/CHANGES doc/FAQ doc/HOW-TO
+.for i in README COPYING CREDITS doc/CHANGES doc/FAQ doc/HOW-TO
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0
 .endfor
 .for i in  doc/html/man/*.html
