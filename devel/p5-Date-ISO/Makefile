@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Date-ISO
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear \
