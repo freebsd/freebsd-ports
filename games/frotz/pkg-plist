@@ -1,9 +1,5 @@
 bin/frotz
-share/doc/frotz/AUTHORS
-share/doc/frotz/BUGS
-share/doc/frotz/ChangeLog
-share/doc/frotz/HOW_TO_PLAY
-share/doc/frotz/INSTALL
-share/doc/frotz/README
-share/doc/frotz/TODO
-@dirrm share/doc/frotz
+%%PORTDOCS%%share/doc/frotz/BUGS
+%%PORTDOCS%%share/doc/frotz/HOW_TO_PLAY
+%%PORTDOCS%%share/doc/frotz/README
+%%PORTDOCS%%@dirrm share/doc/frotz
