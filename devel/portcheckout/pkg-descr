@@ -1,42 +1,7 @@
-NAME
-        portcheckout - checkout ports and all depending ports
+The portcheckout(1) reads the /usr/ports/INDEX file and checks-out
+a given port and its dependencies.  This makes it easy to use the
+ports system without having a full and up-to-date /usr/ports tree.
 
-SYNOPSIS
-        portcheckout ports [...]
-
-DESCRIPTION
-    Portcheckout(1) checks out a FreeBSD port and all runtime and buildtime
-    depending ports into the current working directory. The output is
-    written to stdout as an executable shell-script.
-
-    Compiling a FreeBSD usually require a full tree of ports in /usr/port. A
-    cvs checkout or a cvs update command takes a very long time and need
-    much free space.
-
-    With portcheckout, you checkout only the parts of the port tree which
-    you really need. This is a magnitude faster!
-
-FILES
-    Portcheckout depend on a an up to date INDEX file in /usr/ports/INDEX.
-
-EXAMPLE
-      $ portcheckout gnuplot
-
-      cd /tmp || exit 1
-      PORTSDIR="/tmp/ports"; export PORTSDIR
-       
-      # checkout ports
-      # gnuplot-340
-      cvs co ports/math/gnuplot
-       
-      # checkout depencies
-      # png-1.0.2
-      cvs co ports/graphics/png
-      # gd-1.3
-      cvs co ports/graphics/gd
-       
-      # Compile and install gnuplot-340
-      (cd ports/math/gnuplot && make all install clean)
-
-AUTHOR
-    Wolfram Schneider <wosch@FreeBSD.org>, Berlin, September 1998.
+A typical use would be to connect to the Internet, possibly download
+a new INDEX and ports upgrade kit, download a port skeleton with
+portcheckout(1), and then build the port.
