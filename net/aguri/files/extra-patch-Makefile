@@ -1,0 +1,15 @@
+--- Makefile.aguri.orig	Thu Mar 27 11:53:26 2003
++++ Makefile	Thu Mar 27 13:43:46 2003
+@@ -11,9 +11,9 @@
+ 	scripts/makeimages.pl scripts/density.pl
+ 
+ CFLAGS=		-O2 -Wall -DNDEBUG
+-DEFINES=	-DINET6 -DAGURI_STATS $(SYS_DEFINES) # -DXTREE
+-INCLUDES=	-I. $(COMPAT_INCLUDES) $(SYS_INCLUDES) # -I/usr/X11R6/include
+-LIBS=		$(SYS_LIBS) -lpcap # -R/usr/X11R6/lib -L/usr/X11R6/lib -lX11 
++DEFINES=	-DINET6 -DAGURI_STATS $(SYS_DEFINES) -DXTREE
++INCLUDES=	-I. $(COMPAT_INCLUDES) $(SYS_INCLUDES) -I/usr/X11R6/include
++LIBS=		$(SYS_LIBS) -lpcap -R/usr/X11R6/lib -L/usr/X11R6/lib -lX11 
+ 
+ all: $(PROG)
+ 
