@@ -1,1 +1,4 @@
 bin/abook
+share/doc/abook/FAQ
+share/doc/abook/README
+@dirrm share/doc/abook
