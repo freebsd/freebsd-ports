@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Storable
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
@@ -16,8 +16,8 @@ MAINTAINER=	tobez@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
-MAN3=          Storable.3
-MANPREFIX=     ${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Storable.3
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e '$$_="" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
