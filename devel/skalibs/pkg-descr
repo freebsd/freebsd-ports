@@ -1,0 +1,14 @@
+skalibs is a package centralizing the public-domain C development files
+used for building other skarnet.org software. 
+
+skalibs can also be used as a sound basic start for C development. 
+There are a lot of general-purpose libraries out there; 
+but if your main goal is to produce small and secure C code, 
+you will like skalibs.
+
+skalibs contains exclusively public-domain code. 
+So you can redistribute it as you want, and it does not prevent you 
+from distributing any of your executables.
+
+Author:	Laurent G. Bercot <ska-skaware@skarnet.org>
+WWW:	http://www.skarnet.org/software/skalibs/
