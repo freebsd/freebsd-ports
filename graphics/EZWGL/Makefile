@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/07/27 00:33:11 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/27 22:12:27 asami Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -262,4 +262,6 @@ do-install:
 	@ cd ${WRKSRC}; tar cf - html ps | (cd ${PREFIX}/share/doc/EZ; tar --unlink -xf - )
 .endif
 
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 .include <bsd.port.mk>
