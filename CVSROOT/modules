@@ -5557,6 +5557,7 @@ mudix		ports/net/mudix
 mudsh		ports/shells/mudsh
 muggy		ports/editors/muggy
 muh		ports/irc/muh
+muine		ports/audio/muine
 mulberry	ports/mail/mulberry
 mule		ports/editors/mule
 mule-common	ports/editors/mule-common
