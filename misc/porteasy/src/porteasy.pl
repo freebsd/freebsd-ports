@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.11";
+my $VERSION	= "2.7.12";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -51,7 +51,8 @@ sub PATH_MAKE		{ "/usr/bin/make" }
 
 # Global parameters
 my $dbdir     = "/var/db/pkg";	# Package database directory
-my $index     = undef;		# Index file
+my $index     = undef;		# INDEX file
+my $moved     = undef;		# MOVED file
 my $portsdir  = "/usr/ports";	# Ports directory
 my $tag	      = undef;		# CVS tag to use
 my $date      = undef;		# CVS date to use
@@ -78,7 +79,8 @@ my $website   = 0;		# Show website URL
 
 # Global variables
 my $need_deps;			# Need dependency information
-my $have_index;			# Index has been read
+my $have_index;			# INDEX has been read
+my $have_moved;			# MOVED has been read
 my %ports;			# Maps ports to their directory.
 my %pkgname;			# Inverse of the above map
 my %masterport;			# Maps ports to their master ports
@@ -86,6 +88,7 @@ my %reqd;			# Ports that need to be installed
 my %have_dep;			# Dependencies that are already present
 my %port_dep;			# Map ports to their dependency lists
 my %installed;			# Installed ports
+my %moved;			# Ports that have moved
 my $capture;			# Capture output
 
 #
@@ -333,12 +336,17 @@ sub update_index() {
 	cvs("update", "-l")
 	    or bsd::errx(1, "error updating the index file");
     }
+    if ($packages && ! -d "$portsdir/packages") {
+	mkdir("$portsdir/packages")
+	    or bsd::errx(1, "error creating the package directory");
+    }
     cvs("update", "Mk", "Templates", "Tools")
 	or bsd::errx(1, "error updating the ports infrastructure");
     $index = "$portsdir/INDEX-" . substr($release, 0, 1);
     if (! -f $index) {
 	$index = "$portsdir/INDEX";
     }
+    $moved = "$portsdir/MOVED";
 }
 
 #
@@ -367,6 +375,26 @@ sub read_index() {
 }
 
 #
+# Read the list of moved ports
+#
+sub read_moved() {
+
+    local *MOVED;		# File handle
+    my $line;			# Line from file
+
+    return if ($have_moved);
+    info("Reading $moved");
+    sysopen(MOVED, $moved, O_RDONLY)
+	or bsd::err(1, "can't open $moved");
+    while ($line = <MOVED>) {
+	if ($line =~ m/^([\w\/-]+)\|([\w\/-]*)\|([\d-]+)\|(.*)$/) {
+	    $moved{$1} = [ $2, $3, $4 ];
+	}
+    }
+    $have_moved = 1;
+}
+
+#
 # Find a port by a portion of it's package name
 #
 sub find_port($) {
@@ -385,6 +413,30 @@ sub find_port($) {
     }
     stderr("\n");
     return undef;
+}
+
+#
+# Find out if a port has moved
+#
+sub find_moved($) {
+    my $port = shift;		# Port to check
+
+    my $date = "1900-01-01";
+
+    if (!$have_moved) {
+	read_moved();
+    }
+    while (exists($moved{$port}) && $moved{$port}->[1] gt $date) {
+	if (!defined($moved{$port}->[0])) {
+	    info("$port was removed" .
+		 " on $moved{$port}->[1]: $moved{$port}->[2]");
+	    return undef;
+	}
+	info("$port was renamed to $moved{$port}->[0]" .
+	     " on $moved{$port}->[1]: $moved{$port}->[2]");
+	($port, $date) = @{$moved{$port}};
+    }
+    return $port;
 }
 
 #
@@ -408,6 +460,7 @@ sub add_port($$) {
 	    $realport = find_port($port);
 	}
     }
+    $realport = find_moved($realport);
     if (!$realport) {
 	return 1;
     }
@@ -438,8 +491,9 @@ sub get_origin($) {
 	}
     }
     close(FILE);
-    if ($origin) {
-	info("$port -> $origin\n");
+    if (!$origin) {
+	warn("$port has no known origin\n");
+	return undef;
     }
     return $origin;
 }
@@ -458,12 +512,9 @@ sub add_installed() {
     foreach $port (readdir(DIR)) {
 	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
 	if (!defined($origin = get_origin($port))) {
-	    bsd::warnx("$port has no \@origin line");
-	    if (!defined($origin = $ports{$port})) {
-		bsd::warnx("installed port %s is unknown", $port);
-	    }
-	}
-	if (defined($installed{$port} = $origin)) {
+	    bsd::warnx("$port has no known origin");
+	} else {
+	    $installed{$port} = $origin;
 	    add_port($origin, &REQ_EXPLICIT);
 	}
     }
@@ -893,7 +944,7 @@ sub list_installed() {
     my $cmp;			# Comparator
 
     foreach $pkg (sort(keys(%installed))) {
-	$origin = $installed{$pkg};
+	$origin = find_moved($installed{$pkg});
 	if (!defined($origin) || !defined($pkgname{$origin})) {
 	    print(" ? $pkg\n");
 	} else {
