@@ -7,6 +7,7 @@
 
 PORTNAME=	audit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://community.corest.com/pub/audit/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -58,7 +59,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s@Linux@FreeBSD@g" ${WRKSRC}/configure
 	(${FIND} ${WRKSRC}/src/modules -name Makefile.in -exec \
 		${REINPLACE_CMD} -e \
-		"s@^LIB=(.*){VERSION}@SOVERSION=\t${LIBVERSION}\nLIB=\1\{SOVERSION\}@" {} \;)
+		"s!^LIB=\(.*\).{VERSION}!LIB=\1${LIBVERSION}!" {} \;)
 	${REINPLACE_CMD} -e "s@AUDIT_VERSION@\"${LIBVERSION}\"@g" \
 		${WRKSRC}/src/lib/modules.c
 .for f in ${FIXPREFIX_CONF}

@@ -1,0 +1,13 @@
+--- src/auditd/auditd.c.orig	Sun Nov 24 05:22:21 2002
++++ src/auditd/auditd.c	Sun Nov 24 05:25:39 2002
+@@ -54,6 +54,10 @@
+ #include <sysexits.h>
+ #include <unistd.h>
+ #include <openssl/evp.h>
++#include <sys/param.h>
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 500035)
++#include <limits.h>
++#endif
+ 
+ #include "version.h"
+ #include "sysdep.h"
