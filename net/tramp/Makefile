@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	2.0.28
+PORTVERSION=	2.0.29
 CATEGORIES=	net elisp
 MASTER_SITES=	http://savannah.nongnu.org/download/tramp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
