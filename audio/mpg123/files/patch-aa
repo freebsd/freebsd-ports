@@ -1,5 +1,14 @@
---- Makefile.orig	Wed Jan 27 01:05:18 1999
-+++ Makefile	Mon Mar 22 22:42:04 1999
+--- Makefile.orig	Tue Jan 26 15:35:18 1999
++++ Makefile	Mon Jun 14 22:21:57 1999
+@@ -4,7 +4,7 @@
+ 
+ # Where to install binary and manpage on "make install":
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man
+ SECTION=1
 @@ -247,24 +247,27 @@
  #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
