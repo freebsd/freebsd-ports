@@ -1,0 +1,9 @@
+--- upsd.h.orig	Fri Jul  3 13:52:01 1998
++++ upsd.h	Fri Jul  3 13:52:21 1998
+@@ -206,5 +206,5 @@
+ 
+ #define	TERMINATE		kill(getpid(), SIGTERM)
+ 
+-#include "config.h"
++#include "conf.h"
+ #include "proto.h"
