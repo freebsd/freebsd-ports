@@ -3,7 +3,7 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.3 1995/04/09 06:11:13 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/02 09:08:53 asami Exp $
 #
 
 DISTNAME=	uemacs
@@ -14,7 +14,7 @@ DISTFILES=	ue312dev.zip
 
 MAINTAINER=	ports@freebsd.org
 
-EXEC_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
