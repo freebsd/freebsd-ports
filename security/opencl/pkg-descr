@@ -1,0 +1,14 @@
+OpenCL aims to be a portable, easy to use, and efficient C++ crypto
+library. It currently supports the following algorithms: 
+
+    Block Ciphers: Blowfish, CAST256, CAST5, CS-Cipher, DES, GOST,
+        IDEA, Luby-Rackoff, MISTY1, RC2, RC5, RC6, Rijndael, SAFER-SK128,
+        Serpent, SHARK, Skipjack, Square, TEA, Threeway, Twofish, XTEA 
+    Stream Ciphers: ARC4, ISAAC, SEAL 
+    Hash Functions: HAVAL, MD2, MD4, MD5, RIPE-MD128, RIPE-MD160, SHA-1,
+        SHA2-256, SHA2-512, Tiger 
+    MACs: EMAC, HMAC, MD5MAC 
+    Misc: Adler32, CRC24, CRC32, Randpool, X9.17 RNG 
+    Cipher Modes: CBC w/ Padding, CFB, OFB, Counter 
+
+WWW: http://opencl.sourceforge.net/

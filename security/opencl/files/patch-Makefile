@@ -1,0 +1,53 @@
+--- Makefile.orig	Thu Mar  1 07:14:54 2001
++++ Makefile	Sat Mar  3 02:51:20 2001
+@@ -23,7 +23,7 @@
+ DOCDIR        = $(INSTALLROOT)/share/doc/$(NAME)-$(VERSION)
+ 
+ OWNER         = root
+-GROUP         = root
++GROUP         = wheel
+ DATA_MODE     = 644
+ EXEC_MODE     = 755
+ 
+@@ -79,7 +79,7 @@
+ SYMLINK1      = $(LIBNAME)-$(MAJOR).$(MINOR).so
+ SYMLINK2      = $(LIBNAME)-$(MAJOR).so
+ SYMLINK3      = $(LIBNAME).so
+-SYMLINKS      = $(SYMLINK1) $(SYMLINK2) $(SYMLINK3)
++SYMLINKS      = $(SYMLINK3)
+ 
+ LIBRARIES     = $(STATIC_LIB) $(SHARED_LIB)
+ else
+@@ -105,9 +105,7 @@
+ ifneq (,$(findstring yes,$(MAKE_SHARED)))
+ $(SHARED_LIB): $(LIBOBJS)
+ 	$(CXX) $(SO_LINK_FLAGS) $(LIBOBJS) -o $(SHARED_LIB)
+-	$(call LN,.,$(SYMLINK0),$(SYMLINK1))
+-	$(call LN,.,$(SYMLINK1),$(SYMLINK2))
+-	$(call LN,.,$(SYMLINK2),$(SYMLINK3))
++	$(call LN,.,$(SYMLINK0),$(SYMLINK3))
+ endif
+ 
+ ##################################################
+@@ -154,9 +152,7 @@
+ 	$(call INSTALL,$(DATA_MODE)) $(STATIC_LIB) $(LIBDIR)
+ ifneq (,$(findstring yes,$(MAKE_SHARED)))
+ 	$(call INSTALL,$(EXEC_MODE)) $(SHARED_LIB) $(LIBDIR)
+-	$(call LN,$(LIBDIR),$(SYMLINK0),$(SYMLINK1))
+-	$(call LN,$(LIBDIR),$(SYMLINK1),$(SYMLINK2))
+-	$(call LN,$(LIBDIR),$(SYMLINK2),$(SYMLINK3))
++	$(call LN,$(LIBDIR),$(SYMLINK0),$(SYMLINK3))
+ endif
+ 
+ install_user: $(LIBRARIES)
+@@ -165,9 +161,7 @@
+ 	$(call INSTALL,$(DATA_MODE)) $(USER_DOCS) $(DOCDIR)
+ ifneq (,$(findstring yes,$(MAKE_SHARED)))
+ 	$(call INSTALL,$(EXEC_MODE)) $(SHARED_LIB) $(LIBDIR)
+-	$(call LN,$(LIBDIR),$(SYMLINK0),$(SYMLINK1))
+-	$(call LN,$(LIBDIR),$(SYMLINK1),$(SYMLINK2))
+-	$(call LN,$(LIBDIR),$(SYMLINK2),$(SYMLINK3))
++	$(call LN,$(LIBDIR),$(SYMLINK0),$(SYMLINK3))
+ endif
+ 
+ install_devel: $(LIBRARIES)
