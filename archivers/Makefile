@@ -20,6 +20,7 @@
     SUBDIR += ha
     SUBDIR += hffzip
     SUBDIR += hpack.non-usa.only
+    SUBDIR += jzip.org
     SUBDIR += lbrate
     SUBDIR += lha
     SUBDIR += libarc
