@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbl
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 
