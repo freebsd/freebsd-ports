@@ -1,0 +1,8 @@
+FindMTU is a tool that performs IPv6 path MTU discovery. You can use it
+to debug network problems and to detect IPv6-in-IPv4 tunnels in the path
+to a destination.
+
+FindMTU only performs IPv6 path MTU discovery. It does not know about
+IPv4.
+
+WWW: http://www.dia.uniroma3.it/~compunet/tunneldiscovery/

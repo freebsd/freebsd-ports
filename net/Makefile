@@ -113,6 +113,7 @@
     SUBDIR += etunnel
     SUBDIR += fcptools
     SUBDIR += fidelio
+    SUBDIR += findmtu
     SUBDIR += firetalk
     SUBDIR += forg
     SUBDIR += fpc-inet
