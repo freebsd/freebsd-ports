@@ -11,18 +11,24 @@ export PATH=/bin:/usr/bin:${PREFIX}/bin
 lock=/var/spool/lock/cvsup.lock
 log=/var/log/cvsup.log
 
+num_logs=8
+use_gzip=0
+
+if [ ${use_gzip} != 0 ]
+then
+	gz_ext=.gz
+fi
+
 # Rotate the log files
 
 umask 22
-test -f ${log}.7 && mv -f ${log}.7 ${log}.8
-test -f ${log}.6 && mv -f ${log}.6 ${log}.7
-test -f ${log}.5 && mv -f ${log}.5 ${log}.6
-test -f ${log}.4 && mv -f ${log}.4 ${log}.5
-test -f ${log}.3 && mv -f ${log}.3 ${log}.4
-test -f ${log}.2 && mv -f ${log}.2 ${log}.3
-test -f ${log}.1 && mv -f ${log}.1 ${log}.2
-test -f ${log}.0 && mv -f ${log}.0 ${log}.1
-test -f ${log}   && mv -f ${log}   ${log}.0
+
+for i in $(/usr/bin/jot ${num_logs} $((num_logs-1)) 0)
+do
+	test -f ${log}.$i${gz_ext} && mv -f ${log}.$i${gz_ext} ${log}.$((i+1))${gz_ext}
+done
+
+test -f ${log}   && mv -f ${log}   ${log}.0 && [ ${use_gzip} != 0 ] && /usr/bin/gzip -9 ${log}.0
 exec >${log} 2>&1
 
 # Do the update
