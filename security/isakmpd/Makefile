@@ -10,13 +10,16 @@
 
 PORTNAME=	isakmpd
 PORTVERSION=	20020403
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 MASTER_SITE_SUBDIR=	LOCAL_PORTS
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/patches/3.1/common/
+PATCHFILES=	010_isakmpd.patch
+PATCH_DIST_STRIP= -p2
 
-FORBIDDEN=	"unconfirmed reports of security bug--see <URL:http://www.openbsd.org/errata.html\#isakmpd> and <URL:http://www.kb.cert.org/vuls/id/287771>"
+MAINTAINER=	ports@FreeBSD.org
 
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
