@@ -7504,6 +7504,7 @@ roadrunner	ports/net/roadrunner
 roap		ports/textproc/roap
 robocode	ports/games/robocode
 robodoc		ports/devel/robodoc
+robotfindskitten	ports/games/robotfindskitten
 rockdodger	ports/games/rockdodger
 rocksndiamonds	ports/games/rocksndiamonds
 rolo		ports/deskutils/rolo
