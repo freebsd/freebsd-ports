@@ -1,7 +1,7 @@
 This program is a graphical program for downloading files through the
 internet which support both ftp and http (not completed yet) protocols.
 Program also supports REGET if server side supports it too. It is like kget
-for linux and ReGet or GetRight for Windows. 
+for KDE and ReGet or GetRight for Microsoft Windows. 
 
 This program supports queue of downloads, regets files after connection break
 and many other features:  

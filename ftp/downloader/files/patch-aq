@@ -1,0 +1,17 @@
+--- po/Makefile.orig	Mon Apr 17 10:32:26 2000
++++ po/Makefile	Fri Apr 21 21:00:00 2000
+@@ -1,12 +1,12 @@
+ all:
+ 	for i in `ls *.po`; do \
+-		msgfmt $$i -o `echo $$i | sed -e s/.po//`.gmo ; \
++		${MSGFMT} $$i -o `echo $$i | sed -e s/.po//`.gmo ; \
+ 	done
+ 
+ install:
+ 	for i in `ls *.gmo` ; do \
+ 		mkdir -p $(LOCALEDIR)/`echo $$i|sed -e s/.gmo//`/LC_MESSAGES;\
+-		install -c -m644 $$i $(LOCALEDIR)/`echo $$i | sed -e s/.gmo//`/LC_MESSAGES/nt.mo ; \
++		${BSD_INSTALL_DATA} $$i $(LOCALEDIR)/`echo $$i | sed -e s/.gmo//`/LC_MESSAGES/nt.mo ; \
+ 	done
+ 
+ uninstall:
