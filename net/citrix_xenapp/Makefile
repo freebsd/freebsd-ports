@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	6.30.1050
+PORTVERSION=	6.30.1052
 CATEGORIES=	net comms linux
 MASTER_SITES=
-DISTNAME=	linuxx86
+DISTNAME=	${PORTNAME}-linuxx86
 
 MAINTAINER=	mbr@FreeBSD.org
 
@@ -19,7 +19,6 @@ ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
-DIST_SUBDIR=	citrix_ica
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -36,8 +35,22 @@ NSCP=	/usr/local/libexec/netscape \
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the file manually after reading and agreeing to the license at: http://www.citrix.com/download/bin/license.asp?client=linux   Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}/${DIST_SUBDIR} and then restart this build.'
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.'
+.endif
+
+do-fetch:
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+	@${ECHO} ""
+	@${ECHO} "You have to fetch the file manually after reading and"
+	@${ECHO} "agreeing to the license at:"
+	@${ECHO} ""
+	@${ECHO} "http://www.citrix.com/download/bin/license.asp?client=linux"
+	@${ECHO} ""
+	@${ECHO} "Once linuxx86.tar.gz has been downloaded move it to"
+	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
+	@${ECHO} ""
+	@${FALSE}
 .endif
 
 do-install:
