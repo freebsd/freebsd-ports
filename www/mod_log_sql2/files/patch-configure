@@ -1,5 +1,5 @@
---- configure.old	Tue Jul 20 17:47:33 2004
-+++ configure	Mon Aug  2 02:21:00 2004
+--- configure.orig	Wed Jul 21 00:47:33 2004
++++ configure	Tue Sep 14 13:59:13 2004
 @@ -3174,9 +3174,8 @@
          MYSQL_CFLAGS=""
          MYSQL_LDFLAGS=""
@@ -36,7 +36,31 @@
          WANT_DBI_MOD=0
  
  else
-@@ -4004,7 +4001,7 @@
+@@ -3983,9 +3980,8 @@
+         CFLAGS=$ac_save_CFLAGS
+         CPPFLAGS=$ac_save_CPPFLAGS
+         if test "x$mod_ssl_h" = "x"; then
+-            { { echo "$as_me:$LINENO: error: ** mod_ssl.h not found or missing SSL headers!" >&5
+-echo "$as_me: error: ** mod_ssl.h not found or missing SSL headers!" >&2;}
+-   { (exit 1); exit 1; }; }
++            { echo "$as_me:$LINENO: WARNING: ** mod_ssl.h not found or missing SSL headers!" >&5
++echo "$as_me: WARNING: ** mod_ssl.h not found or missing SSL headers!" >&2;}
+ 		WANT_SSL_MOD=0
+ 
+         else
+@@ -3993,9 +3989,8 @@
+             WANT_SSL_MOD=1
+         fi
+     else
+-        { { echo "$as_me:$LINENO: error: ** mod_ssl.h not found or missing SSL headers!" >&5
+-echo "$as_me: error: ** mod_ssl.h not found or missing SSL headers!" >&2;}
+-   { (exit 1); exit 1; }; }
++        { echo "$as_me:$LINENO: WARNING: ** mod_ssl.h not found or missing SSL headers!" >&5
++echo "$as_me: WARNING: ** mod_ssl.h not found or missing SSL headers!" >&2;}
+ 		WANT_SSL_MOD=0
+ 
+     fi
+@@ -4004,7 +3999,7 @@
  
  case "$target" in
  	*-*-solaris* | *-*-osf* )
