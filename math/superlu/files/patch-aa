@@ -1,5 +1,5 @@
---- make.inc.orig	Fri Aug  6 15:10:24 1999
-+++ make.inc	Thu Dec 16 04:00:37 1999
+--- make.inc.orig	Tue Feb 15 13:29:45 2000
++++ make.inc	Sun Oct 15 18:11:48 2000
 @@ -16,14 +16,14 @@
  #
  #  The machine (platform) identifier to append to the library names
@@ -22,13 +22,14 @@
  ARCHFLAGS    = cr
  RANLIB       = ranlib
  
--CC           = gcc
-+CC           ?= gcc
- #CFLAGS       = -xO3 -xcg92
--CFLAGS       = -Wall -O2 
+-CC           = cc
+-CFLAGS       = -xO3 -xcg92
+-#CFLAGS       = -Wall -O2 
 -FORTRAN	     = f77
 -FFLAGS       = -O
--LOADER       = gcc
+-LOADER       = cc
++CC           ?= cc
++#CFLAGS       = -xO3 -xcg92
 +CFLAGS       ?= -Wall -O2 
 +FORTRAN	     = ${FC}
 +FFLAGS       ?= -O
