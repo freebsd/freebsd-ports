@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -19,7 +19,8 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-1.3.4:${PORTSDIR}/devel/glib13 \
+LIB_DEPENDS=	glib-1.3.5:${PORTSDIR}/devel/glib13 \
+		atk.0:${PORTSDIR}/devel/atk \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
