@@ -6,10 +6,11 @@
 #
 
 CATEGORIES=	japanese
+PORTREVISION=	1
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
-PATCH_SITES=	http://linuxlovers.yi.org/softarc/
+PATCH_SITES=	http://www.gmkun.org/patches/
 PATCHFILES=	gqmpeg-0.15.0-jp_title.patch
 
 .if defined(WITH_SJIS_TAG)
