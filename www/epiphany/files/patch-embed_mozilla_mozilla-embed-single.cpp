@@ -1,11 +1,14 @@
---- embed/mozilla/mozilla-embed-single.cpp.orig	Thu Dec 11 14:58:19 2003
-+++ embed/mozilla/mozilla-embed-single.cpp	Thu Dec 11 14:58:27 2003
-@@ -385,7 +385,7 @@
- 		return NS_ERROR_FAILURE;
- 	}
+--- embed/mozilla/mozilla-embed-single.cpp.orig	Sun Jul 18 20:12:02 2004
++++ embed/mozilla/mozilla-embed-single.cpp	Sun Jul 18 20:22:34 2004
+@@ -557,7 +557,11 @@
+                 do_GetService ("@mozilla.org/network/protocol-proxy-service;1");
+ 	if (!pps) return;
  
--#if MOZILLA_SNAPSHOT >= 12
-+#if MOZILLA_SNAPSHOT > 12
- 	result = localeService->GetLocaleComponentForUserAgent (aUILang);
- #else
- 	nsXPIDLString uiLang;
++#if MOZILLA_SNAPSHOT >= 19
++	pps->ConfigureFromPAC (NS_LITERAL_CSTRING (url));
++#else
+ 	pps->ConfigureFromPAC (url);
++#endif
+ }
+ 
+ static GList *
