@@ -11570,6 +11570,7 @@ zed		ports/editors/zed
 zendstudio	ports/devel/zendstudio
 zenity		ports/x11/zenity
 zgv		ports/graphics/zgv
+zh-BBMan	ports/chinese/BBMan
 zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
