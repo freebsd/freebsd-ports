@@ -1,17 +1,17 @@
-*** autoconf/Makefile.in.orig	Mon Apr 13 12:57:32 1998
---- autoconf/Makefile.in	Thu Apr 22 03:32:46 1999
+*** autoconf/Makefile.in.orig	Wed Jul 14 05:30:30 1999
+--- autoconf/Makefile.in	Fri Sep  3 03:54:21 1999
 ***************
 *** 10,16 ****
   	cd src; $(MAKE) all
   elf:
   	cd src; $(MAKE) elf
 - 	@echo Use make install-elf to install it.
+  runtests:
+  	cd src/test; $(MAKE)
   demos:
-  	cd demo; $(MAKE)
-  clean:
 --- 10,15 ----
 ***************
-*** 21,35 ****
+*** 23,37 ****
   	cd src; $(MAKE) install
   install-elf:
   	cd src; $(MAKE) install-elf
@@ -27,4 +27,4 @@
   #
   distclean:
   	/bin/rm -f *~ Makefile config.status config.log config.cache files.pck
---- 20,27 ----
+--- 22,29 ----

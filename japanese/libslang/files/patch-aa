@@ -1,12 +1,10 @@
-*** configure.orig	Mon Apr 13 12:57:32 1998
---- configure	Wed Apr 21 11:05:02 1999
+*** configure.orig	Wed Jul 14 05:30:30 1999
+--- configure	Fri Sep  3 04:10:29 1999
 ***************
-*** 1489,1519 ****
-  
-  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
-  echo "configure:1492: checking SLANG_VERSION" >&5
-! slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
-!                awk '{ print $3 }'`
+*** 2025,2038 ****
+  echo "configure:2026: checking SLANG_VERSION" >&5
+  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+                 awk '{ print $3 }'`
 ! slang_major_version=`echo $slang_version |
 !  awk '{ print int($1/10000) }'`
 ! slang_minor_version=`echo $slang_version $slang_major_version |
@@ -14,10 +12,21 @@
 ! slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
 !  awk '{ print ($1 - $2*10000 - $3*100) }'`
 ! 
-! slang_minor_version=$slang_minor_version.$slang_mminor_version
-  echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
+! slang_minor_version="$slang_minor_version.$slang_mminor_version"
+  slang_version="$slang_major_version.$slang_minor_version"
+  echo "$ac_t""$slang_version" 1>&6
   
+--- 2025,2032 ----
+  echo "configure:2026: checking SLANG_VERSION" >&5
+  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+                 awk '{ print $3 }'`
+! slang_major_version=2
+! slang_minor_version=1
+  slang_version="$slang_major_version.$slang_minor_version"
+  echo "$ac_t""$slang_version" 1>&6
   
+***************
+*** 2040,2054 ****
   
   
   
@@ -33,15 +42,7 @@
     ELF_LINK_CMD="\$(ELF_LINK)"
   fi
   
---- 1489,1511 ----
-  
-  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
-  echo "configure:1492: checking SLANG_VERSION" >&5
-! slang_major_version=2
-! slang_minor_version=0
-  echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
-  
-  
+--- 2034,2048 ----
   
   
   
@@ -58,21 +59,41 @@
   fi
   
 ***************
-*** 2033,2048 ****
+*** 2569,2586 ****
   
   
   echo ""
-- echo "Configuration complete.  You may need to edit src/Makefile."
-- echo "You are compiling SLANG with the following compiler configuration:"
-- echo "       CC =" "$CC"
-- echo "   CFLAGS =" "$CFLAGS"
-- echo "  LDFLAGS =" "$LDFLAGS"
-- echo ""
-- echo "   ELF_CC =" "$ELF_CC"
-- echo " ELF_LINK =" "$ELF_LINK"
-- echo "ELF_CFLAGS=" "$ELF_CFLAGS"
-- echo ""
-- echo "See also src/sl-feat.h for various features."
-- echo "Type 'make' to build normal library."
-- echo "On ELF systems, type 'make elf' to create ELF shared library."
---- 2025,2027 ----
+! echo "Configuration complete.  You may need to edit src/Makefile."
+! echo "You are compiling SLANG with the following compiler configuration:"
+! echo "       CC =" "$CC"
+! echo "   CFLAGS =" "$CFLAGS"
+! echo "  LDFLAGS =" "$LDFLAGS $DYNAMIC_LINK_FLAGS"
+! echo ""
+! echo "   ELF_CC =" "$ELF_CC"
+! echo " ELF_LINK =" "$ELF_LINK"
+! echo "ELF_CFLAGS=" "$ELF_CFLAGS"
+! echo ""
+  echo "Installation Prefix:" "$prefix"
+  echo ""
+! echo "See also src/sl-feat.h for various features."
+! echo "Type 'make' to build normal library."
+! echo "On ELF systems, type 'make elf' to create ELF shared library."
+--- 2563,2580 ----
+  
+  
+  echo ""
+! #echo "Configuration complete.  You may need to edit src/Makefile."
+! #echo "You are compiling SLANG with the following compiler configuration:"
+! #echo "       CC =" "$CC"
+! #echo "   CFLAGS =" "$CFLAGS"
+! #echo "  LDFLAGS =" "$LDFLAGS $DYNAMIC_LINK_FLAGS"
+! #echo ""
+! #echo "   ELF_CC =" "$ELF_CC"
+! #echo " ELF_LINK =" "$ELF_LINK"
+! #echo "ELF_CFLAGS=" "$ELF_CFLAGS"
+! #echo ""
+  echo "Installation Prefix:" "$prefix"
+  echo ""
+! #echo "See also src/sl-feat.h for various features."
+! #echo "Type 'make' to build normal library."
+! #echo "On ELF systems, type 'make elf' to create ELF shared library."

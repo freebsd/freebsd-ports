@@ -8,34 +8,15 @@ include/slang/slang.h
 include/slang/slcurses.h
 include/slang/slkanji.h
 @dirrm include/slang
+share/doc/slang/COPYING
+share/doc/slang/COPYING.ART
+share/doc/slang/COPYING.GPL
+share/doc/slang/COPYRIGHT
+share/doc/slang/changes.txt
+share/doc/slang/cref.txt
+share/doc/slang/cslang.txt
+share/doc/slang/slang.txt
+share/doc/slang/slangdoc.html
+share/doc/slang/slangfun.txt
 share/doc/slang/slang-j.doc
-share/doc/slang/README
-share/doc/slang/OLD/help/README
-share/doc/slang/OLD/help/makefile.djg
-share/doc/slang/OLD/help/makefile.os2
-share/doc/slang/OLD/help/makefile.unx
-share/doc/slang/OLD/help/slang.hlp
-share/doc/slang/OLD/help/slhelp.c
-@dirrm share/doc/slang/OLD/help
-@dirrm share/doc/slang/OLD
-share/doc/slang/internal/rpn.txt
-@dirrm share/doc/slang/internal
-share/doc/slang/text/cref.txt
-share/doc/slang/text/cslang.txt
-share/doc/slang/text/slang.txt
-share/doc/slang/text/slangfun.txt
-@dirrm share/doc/slang/text
-share/doc/slang/tm/tools/Makefile
-share/doc/slang/tm/tools/sl2tm.c
-share/doc/slang/tm/tools/tm2txt.c
-@dirrm share/doc/slang/tm/tools
-share/doc/slang/tm/Makefile
-share/doc/slang/tm/copyright.tm
-share/doc/slang/tm/cref.tm
-share/doc/slang/tm/cslang.tm
-share/doc/slang/tm/fixtex.sl
-share/doc/slang/tm/preface.tm
-share/doc/slang/tm/slang.tm
-share/doc/slang/tm/slangfun.tm
-@dirrm share/doc/slang/tm
 @dirrm share/doc/slang
