@@ -1,24 +1,15 @@
---- lib/Makefile.in.orig	Mon Oct  1 16:21:53 2001
-+++ lib/Makefile.in	Sun Jan 27 19:41:15 2002
-@@ -73,7 +73,7 @@
- INTLLIBS = @INTLLIBS@
- INTLOBJS = @INTLOBJS@
+--- lib/Makefile.in.orig	Wed Jul 23 04:04:52 2003
++++ lib/Makefile.in	Wed Jul 23 04:05:33 2003
+@@ -76,7 +76,7 @@
+ INTL_LIBTOOL_SUFFIX_PREFIX = @INTL_LIBTOOL_SUFFIX_PREFIX@
  KEYSERV = @KEYSERV@
+ LIBICONV = @LIBICONV@
 -LIBOBJS = @LIBOBJS@
 +LIBOBJS = @LIBOBJS@ getopt.o getopt_long.o
+ LIBPORT_GETOPT_LONG_DEP = @LIBPORT_GETOPT_LONG_DEP@
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
-@@ -93,7 +93,7 @@
- 
- libport_a_SOURCES = 
- 
--libport_a_LIBADD = @LIBOBJS@
-+libport_a_LIBADD = @LIBOBJS@ getopt.o getopt_long.o
- 
- AUTOMAKE_OPTIONS = dist-tarZ no-dependencies 1.0
- mkinstalldirs = $(SHELL) $(top_srcdir)/aux/mkinstalldirs
-@@ -106,7 +106,7 @@
+@@ -109,7 +109,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@

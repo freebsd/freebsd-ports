@@ -3,12 +3,12 @@ bin/xminicom
 bin/runscript
 bin/ascii-xfr
 etc/minicom/minicom.users
-share/locale/cs_CZ/LC_MESSAGES/minicom.mo
+share/locale/cs/LC_MESSAGES/minicom.mo
 share/locale/es/LC_MESSAGES/minicom.mo
-share/locale/fi_FI/LC_MESSAGES/minicom.mo
+share/locale/fi/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
+share/locale/hu/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
-share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
 share/locale/ru/LC_MESSAGES/minicom.mo
@@ -17,57 +17,57 @@ share/locale/ru/LC_MESSAGES/minicom.mo
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @unexec rmdir %D/etc/minicom 2>/dev/null || true
-%%PORTDOCS%%share/doc/minicom/AUTHORS
-%%PORTDOCS%%share/doc/minicom/COPYING
-%%PORTDOCS%%share/doc/minicom/ChangeLog
-%%PORTDOCS%%share/doc/minicom/doc/Announce-1.78
-%%PORTDOCS%%share/doc/minicom/doc/Announce-1.82
-%%PORTDOCS%%share/doc/minicom/doc/Announce-1.82.1
-%%PORTDOCS%%share/doc/minicom/doc/Announce-1.83
-%%PORTDOCS%%share/doc/minicom/doc/COMPATABILITY.lrzsz
-%%PORTDOCS%%share/doc/minicom/doc/ChangeLog.old
-%%PORTDOCS%%share/doc/minicom/doc/HistSearch
-%%PORTDOCS%%share/doc/minicom/doc/Locales
-%%PORTDOCS%%share/doc/minicom/doc/Macros
-%%PORTDOCS%%share/doc/minicom/doc/QuickStart.modemu
-%%PORTDOCS%%share/doc/minicom/doc/README.lrzsz
-%%PORTDOCS%%share/doc/minicom/doc/RedHat
-%%PORTDOCS%%share/doc/minicom/doc/TODO.lrzsz
-%%PORTDOCS%%share/doc/minicom/doc/Todo
-%%PORTDOCS%%share/doc/minicom/doc/Todo.175
-%%PORTDOCS%%share/doc/minicom/doc/Todo.Irix.dif
-%%PORTDOCS%%share/doc/minicom/doc/Todo.emacskey.dif
-%%PORTDOCS%%share/doc/minicom/doc/Todo.fsel
-%%PORTDOCS%%share/doc/minicom/doc/copyright.modemu
-%%PORTDOCS%%share/doc/minicom/doc/fselector.txt
-%%PORTDOCS%%share/doc/minicom/doc/japanese
-%%PORTDOCS%%share/doc/minicom/doc/minicom.FAQ
-%%PORTDOCS%%share/doc/minicom/doc/minicom.users
-%%PORTDOCS%%share/doc/minicom/doc/minirc.dfl
-%%PORTDOCS%%share/doc/minicom/doc/modemu.README
-%%PORTDOCS%%share/doc/minicom/doc/pl-translation.txt
-%%PORTDOCS%%share/doc/minicom/doc/portugues-brasil
-%%PORTDOCS%%share/doc/minicom/doc/suomeksi
-%%PORTDOCS%%share/doc/minicom/extras/htsalogin
-%%PORTDOCS%%share/doc/minicom/extras/linux/INSTALL
-%%PORTDOCS%%share/doc/minicom/extras/linux/README-FIRST
-%%PORTDOCS%%share/doc/minicom/extras/linux/mtelnet
-%%PORTDOCS%%share/doc/minicom/extras/saralogin
-%%PORTDOCS%%share/doc/minicom/extras/scriptdemo
-%%PORTDOCS%%share/doc/minicom/extras/tables/mc.iso
-%%PORTDOCS%%share/doc/minicom/extras/tables/mc.noconv
-%%PORTDOCS%%share/doc/minicom/extras/tables/mc.pc8
-%%PORTDOCS%%share/doc/minicom/extras/tables/mc.sf7
-%%PORTDOCS%%share/doc/minicom/extras/termcap/README
-%%PORTDOCS%%share/doc/minicom/extras/termcap/termcap.long
-%%PORTDOCS%%share/doc/minicom/extras/termcap/termcap.short
-%%PORTDOCS%%share/doc/minicom/extras/terminfo/README
-%%PORTDOCS%%share/doc/minicom/extras/terminfo/minicom
-%%PORTDOCS%%share/doc/minicom/extras/unixlogin
-%%PORTDOCS%%@dirrm share/doc/minicom/doc
-%%PORTDOCS%%@dirrm share/doc/minicom/extras/linux
-%%PORTDOCS%%@dirrm share/doc/minicom/extras/tables
-%%PORTDOCS%%@dirrm share/doc/minicom/extras/termcap
-%%PORTDOCS%%@dirrm share/doc/minicom/extras/terminfo
-%%PORTDOCS%%@dirrm share/doc/minicom/extras
-%%PORTDOCS%%@dirrm share/doc/minicom
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.78
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82.1
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.83
+%%PORTDOCS%%%%DOCSDIR%%/doc/COMPATABILITY.lrzsz
+%%PORTDOCS%%%%DOCSDIR%%/doc/ChangeLog.old
+%%PORTDOCS%%%%DOCSDIR%%/doc/HistSearch
+%%PORTDOCS%%%%DOCSDIR%%/doc/Locales
+%%PORTDOCS%%%%DOCSDIR%%/doc/Macros
+%%PORTDOCS%%%%DOCSDIR%%/doc/QuickStart.modemu
+%%PORTDOCS%%%%DOCSDIR%%/doc/README.lrzsz
+%%PORTDOCS%%%%DOCSDIR%%/doc/RedHat
+%%PORTDOCS%%%%DOCSDIR%%/doc/TODO.lrzsz
+%%PORTDOCS%%%%DOCSDIR%%/doc/Todo
+%%PORTDOCS%%%%DOCSDIR%%/doc/Todo.175
+%%PORTDOCS%%%%DOCSDIR%%/doc/Todo.Irix.dif
+%%PORTDOCS%%%%DOCSDIR%%/doc/Todo.emacskey.dif
+%%PORTDOCS%%%%DOCSDIR%%/doc/Todo.fsel
+%%PORTDOCS%%%%DOCSDIR%%/doc/copyright.modemu
+%%PORTDOCS%%%%DOCSDIR%%/doc/fselector.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/japanese
+%%PORTDOCS%%%%DOCSDIR%%/doc/minicom.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/doc/minicom.users
+%%PORTDOCS%%%%DOCSDIR%%/doc/minirc.dfl
+%%PORTDOCS%%%%DOCSDIR%%/doc/modemu.README
+%%PORTDOCS%%%%DOCSDIR%%/doc/pl-translation.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/portugues-brasil
+%%PORTDOCS%%%%DOCSDIR%%/doc/suomeksi
+%%PORTDOCS%%%%DOCSDIR%%/extras/htsalogin
+%%PORTDOCS%%%%DOCSDIR%%/extras/linux/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/extras/linux/README-FIRST
+%%PORTDOCS%%%%DOCSDIR%%/extras/linux/mtelnet
+%%PORTDOCS%%%%DOCSDIR%%/extras/saralogin
+%%PORTDOCS%%%%DOCSDIR%%/extras/scriptdemo
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.iso
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.noconv
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.pc8
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.sf7
+%%PORTDOCS%%%%DOCSDIR%%/extras/termcap/README
+%%PORTDOCS%%%%DOCSDIR%%/extras/termcap/termcap.long
+%%PORTDOCS%%%%DOCSDIR%%/extras/termcap/termcap.short
+%%PORTDOCS%%%%DOCSDIR%%/extras/terminfo/README
+%%PORTDOCS%%%%DOCSDIR%%/extras/terminfo/minicom
+%%PORTDOCS%%%%DOCSDIR%%/extras/unixlogin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/linux
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/tables
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/termcap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/terminfo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

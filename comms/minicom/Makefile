@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	minicom
-PORTVERSION=	2.00.0
+PORTVERSION=	2.1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
@@ -20,6 +19,7 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
@@ -30,18 +30,12 @@ CONFIGURE_ARGS+=	--enable-dfl-port=/dev/cuaa0
 CONFIGURE_ARGS+=	--enable-dfl-port=/dev/modem
 .endif
 
-MAN1=		minicom.1 runscript.1 ascii-xfr.1
+MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 
 post-patch:
-	${MV} ${WRKSRC}/src/rwconf.c ${WRKSRC}/src/rwconf.c.pre_sed
-	${SED} -e "s:/usr/local/bin/:${LOCALBASE}/bin/:g" \
-		-e "s:/sz:/lsz:g" \
-		-e "s:/sb:/lsb:g" \
-		-e "s:/sx:/lsx:g" \
-		-e "s:/rz:/lrz:g" \
-		-e "s:/rb:/lrb:g" \
-		-e "s:/rx:/lrx:g" \
-		< ${WRKSRC}/src/rwconf.c.pre_sed > ${WRKSRC}/src/rwconf.c
+	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
+		s@/sz@/lsz@;s@/sb@/lsb@;s@/sx@/lsx@;s@/rz@/lrz@; \
+		s@/rb@/lrb@;s@/rx@/lrx@" ${WRKSRC}/src/rwconf.c
 
 pre-configure:
 .if !defined(BATCH)
