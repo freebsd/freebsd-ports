@@ -5,4 +5,7 @@ lib/perl5/site_perl/qd.pl
 lib/perl5/site_perl/i386-freebsd/auto/GD/GD.bs
 lib/perl5/site_perl/i386-freebsd/auto/GD/GD.so
 lib/perl5/site_perl/i386-freebsd/auto/GD/.packlist
+lib/perl5/site_perl/i386-freebsd/auto/libgd/extralibs.ld
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/libgd
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/GD
+@dirrm lib/perl5/site_perl/auto/GD
