@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.1
-PORTREVISION=	2
+PORTVERSION=	7.1.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
