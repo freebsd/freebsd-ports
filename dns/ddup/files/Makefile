@@ -10,8 +10,8 @@ SRCS=		ddup.c \
 		update.c
 CFLAGS+=	${DEBUG}
 MAN1=		ddup.1
-BINDIR=		${LOCALBASE}/sbin
-MANDIR=		${LOCALBASE}/man/man
+BINDIR=		${PREFIX}/sbin
+MANDIR=		${PREFIX}/man/man
 
 .include <bsd.prog.mk>
 
