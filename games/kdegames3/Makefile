@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--disable-debug
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's@(defined\(__sgi\))$@\1 || defined(__FreeBSD__)@' \
+	@${PERL} -pi -e 's@(defined\(__sgi\))$$@\1 || defined(__FreeBSD__)@' \
 		${WRKSRC}/ksirtet/lib/wizard.cpp
 
 .include <bsd.port.mk>
