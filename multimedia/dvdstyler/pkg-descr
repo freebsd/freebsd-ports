@@ -1,0 +1,14 @@
+DVDStyler is a crossplatform GUI frontend to the dvd authoring and
+recording programs.
+
+The main DVDStyler features are:
+ o drag and drop MPEG files directly
+ o import image file for background
+ o create NTSC/PAL menu
+ o place text and images anywhere on the menu screen
+ o change font/color
+ o put basic text buttons, change font/color and background color
+ o set chapters for each movie
+ o change post command for each movie
+
+WWW: http://dvdstyler.sourceforge.net/
