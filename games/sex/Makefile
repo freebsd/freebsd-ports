@@ -7,9 +7,13 @@
 
 PORTNAME=	sex
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://spatula.net/software/sex/
 
 MAINTAINER=	freebsd@spatula.net
+
+MAN6=		sex.6
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
