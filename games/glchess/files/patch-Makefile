@@ -8,7 +8,7 @@
 +MANDIR     = ${PREFIX}/man/man6
 +SHAREDIR   = ${DATADIR}
  
- VERSION    = 0.3.3
+ VERSION    = 0.3.4
  DATE       = `date "+%Y-%m-%d"`
  
  all:
