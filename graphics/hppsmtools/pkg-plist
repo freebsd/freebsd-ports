@@ -1,6 +1,6 @@
-bin/psmget
-bin/psmdir
 bin/psmdel
+bin/psmdir
+bin/psmget
 bin/psmsho
 %%PORTDOCS%%share/doc/hppsmtools/README
 %%PORTDOCS%%@dirrm share/doc/hppsmtools
