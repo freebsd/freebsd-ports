@@ -3,7 +3,7 @@
 # Date created:		03 Dec 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/09 00:38:46 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	pathalias11
 PKGNAME=	pathalias-9.11

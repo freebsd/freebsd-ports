@@ -3,7 +3,7 @@
 # Date created:				23 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xmailbox-2.5

@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/07/12 04:09:14 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	majordomo-1.94.4

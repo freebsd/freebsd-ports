@@ -3,7 +3,7 @@
 # Date created:			Mon  6 Jul 12:00:06 CEST 1998
 # Whom:				Udo Schweigert <ust@cert.siemens.de>
 #
-# $Id: Makefile,v 1.4 1998/11/28 02:18:45 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	coolmail-1.3

@@ -3,7 +3,7 @@
 # Date created:				02 December 1998
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
-# $Id: Makefile,v 1.5 1999/03/24 16:38:27 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	balsa-0.4.9

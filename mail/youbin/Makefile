@@ -4,7 +4,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1999/03/29 07:50:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	youbin-2.13

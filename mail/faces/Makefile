@@ -4,7 +4,7 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/09/21 01:55:45 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	faces-1.6.1

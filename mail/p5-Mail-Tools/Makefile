@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/09/15 21:31:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MailTools-1.12

@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.8 1998/12/01 08:36:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qmail-1.03

@@ -3,7 +3,7 @@
 # Date created:				August 3, 1999
 # Whom:	      				Alex Perel <veers@disturbed.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	MIME-Lite-1.135

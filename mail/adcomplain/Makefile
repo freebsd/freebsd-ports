@@ -4,7 +4,7 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.27 1999/05/16 22:58:21 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       adcomplain-3.52

@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.66 1999/08/22 09:00:23 obrien Exp $
+# $FreeBSD$
 
 DISTNAME=	mutt-0.95.7i
 PKGNAME=	mutt-0.95.7

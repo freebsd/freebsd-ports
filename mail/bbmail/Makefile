@@ -3,7 +3,7 @@
 # Date created:		May 3 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/07/14 05:50:03 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bbmail-0.5.3

@@ -3,7 +3,7 @@
 # Date created:		7 Jun 1997
 # Whom:			igor@zynaps.ru
 #
-# $Id: Makefile,v 1.6 1999/03/29 02:01:33 ache Exp $
+# $FreeBSD$
 #
 # NOTE: APOP works only for virtual hosts as designed!
 #       Virtual hosts works only with Berkeley DB2.

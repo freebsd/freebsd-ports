@@ -3,7 +3,7 @@
 # Date created:			28 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/08/14 07:49:11 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WMPop3-0.5.6a

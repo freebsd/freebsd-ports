@@ -3,7 +3,7 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.27 1998/07/18 21:36:33 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       qpopper2.53

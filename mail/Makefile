@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.97 1999/08/12 00:15:08 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += adcomplain

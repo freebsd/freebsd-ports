@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.30 1998/08/07 23:56:29 asami Exp $
+# $FreeBSD$
 #
 
 # "?=" lines are for sharing this Makefile with japanese/exmh2.

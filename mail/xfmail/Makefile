@@ -4,7 +4,7 @@
 # Date created:		30 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.18 1999/01/07 08:19:41 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xfmail-1.3

@@ -3,7 +3,7 @@
 # Date created:		18 June 1995
 # Whom:			dchapes@zeus.leitch.com
 #
-# $Id: Makefile,v 1.4 1998/10/20 01:43:10 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbuffy3.3

@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1998
 # Whom:			Marijn Meijles <marijn@stack.nl>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	sigrot_v1.0

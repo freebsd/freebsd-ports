@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.25 1998/09/19 10:49:02 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		mailagent-3.0@65

@@ -3,7 +3,7 @@
 # Date created:		13 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/06/06 03:47:23 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	im-100

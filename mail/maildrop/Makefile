@@ -3,7 +3,7 @@
 # Date created:		16 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id: Makefile,v 1.2 1999/03/15 01:32:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	maildrop-0.63

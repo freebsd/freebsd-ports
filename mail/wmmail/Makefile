@@ -3,7 +3,7 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.9 1999/04/02 03:30:03 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WMMail.app-0.63a

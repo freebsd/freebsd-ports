@@ -3,7 +3,7 @@
 # Date created:         20 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1996/11/10 21:32:16 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       PGPsendmail-v1.4

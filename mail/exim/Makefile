@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.34 1999/06/21 11:07:07 sheldonh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	exim-3.03

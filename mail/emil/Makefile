@@ -3,7 +3,7 @@
 # Date created:		21 April 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/22 20:41:00 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emil-2.1.0-beta9

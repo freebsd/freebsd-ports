@@ -3,7 +3,7 @@
 # Date created:		23 November 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mbx2mbox-0.1

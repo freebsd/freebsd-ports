@@ -3,7 +3,7 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.4 1999/06/07 13:30:28 billf Exp $
+# $FreeBSD$
 
 DISTNAME=	ezmlm-idx-${IDX_VERSION}
 CATEGORIES=	mail

@@ -3,7 +3,7 @@
 # Date created:		2 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/02 19:55:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	serialmail-0.75

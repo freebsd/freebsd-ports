@@ -3,7 +3,7 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.2 1999/02/22 04:19:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ezmlm-0.53

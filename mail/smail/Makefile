@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.22 1999/05/02 20:27:11 torstenb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	smail-3.2.0.106

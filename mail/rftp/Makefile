@@ -3,7 +3,7 @@
 # Date created:			13 Dec, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.2 1999/03/24 17:49:46 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rftp-1.2

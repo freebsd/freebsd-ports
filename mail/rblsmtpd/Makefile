@@ -3,7 +3,7 @@
 # Date created:		30 October 1998
 # Whom:			John Saunders <john@nlc.net.au>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/11 07:23:16 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rblsmtpd-0.70

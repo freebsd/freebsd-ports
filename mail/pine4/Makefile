@@ -3,7 +3,7 @@
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.33 1999/06/21 07:52:21 mharo Exp $
+# $FreeBSD$
 #
 # The changes to ?= on some of these lines is required for the
 # pine4-ssl port. Also, please mirror changes to the files/
