@@ -57,7 +57,7 @@ LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
 DISTSITE?=	http://de.php.net/distributions/manual/
 
 localfetch:
-.for lang in de en es fr ja
+.for lang in br de en es fr ja
 	${MKDIR} ${LOCAL_DISTDIR}
 	[ -f ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ] || \
 	${FETCH_CMD} -o ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${DISTSITE}php_manual_${lang}${EXTRACT_SUFX}
