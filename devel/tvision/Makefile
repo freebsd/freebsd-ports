@@ -7,20 +7,20 @@
 
 PORTNAME=	tvision
 PORTVERSION=	0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.sigala.it/sergio/tvision/mysource/
 MASTER_SITE_SUBDIR=	devel/lang/c++
 
-MAINTAINER=	libh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
 
