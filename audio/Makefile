@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += Maaate
     SUBDIR += afsp
     SUBDIR += amp
     SUBDIR += ascd

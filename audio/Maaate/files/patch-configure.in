@@ -1,0 +1,10 @@
+--- configure.in.orig	Mon Feb 12 16:04:53 2001
++++ configure.in	Mon Feb 12 16:04:59 2001
+@@ -14,7 +14,6 @@
+ 
+ dnl Checks for libraries.
+ AC_CHECK_LIB(m,cos)
+-AC_CHECK_LIB(xml,xmlParseFile)
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC

@@ -1,0 +1,41 @@
+bin/MaaatePlay
+bin/analyseMPaudio
+bin/inspectMPaudio
+include/Maaate/Decoder.H
+include/Maaate/MPEGfile.H
+include/Maaate/allLayers.H
+include/Maaate/byteOrder.h
+include/Maaate/header.H
+include/Maaate/layer1.H
+include/Maaate/layer2.H
+include/Maaate/layer3.H
+include/Maaate/module.H
+include/Maaate/plugins.H
+include/Maaate/segmentData.H
+include/Maaate/segmentTable.H
+include/MaaateA.h
+include/MaaateP.h
+lib/Maaate/libMaaateM.a
+lib/Maaate/libMaaateM.so
+lib/Maaate/libMaaateM.so.1
+lib/libMaaateA.a
+lib/libMaaateA.so
+lib/libMaaateA.so.1
+lib/libMaaateP.a
+lib/libMaaateP.so
+lib/libMaaateP.so.1
+@dirrm include/Maaate
+@dirrm lib/Maaate
+%%PORTDOCS%%share/doc/Maaate/COPYING
+%%PORTDOCS%%share/doc/Maaate/CSIROlogo.gif
+%%PORTDOCS%%share/doc/Maaate/THANKS
+%%PORTDOCS%%share/doc/Maaate/download.html
+%%PORTDOCS%%share/doc/Maaate/header.txt
+%%PORTDOCS%%share/doc/Maaate/index.html
+%%PORTDOCS%%share/doc/Maaate/layer1.txt
+%%PORTDOCS%%share/doc/Maaate/layer2.txt
+%%PORTDOCS%%share/doc/Maaate/layer3.txt
+%%PORTDOCS%%share/doc/Maaate/maaate-faq.txt
+%%PORTDOCS%%share/doc/Maaate/maaate.gif
+%%PORTDOCS%%share/doc/Maaate/module_guide.txt
+%%PORTDOCS%%@dirrm share/doc/Maaate
