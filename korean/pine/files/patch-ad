@@ -1,0 +1,138 @@
+*** pine/osdep/os-bsf.ic.orig	Fri Jun 14 00:15:47 1996
+--- pine/osdep/os-bsf.ic	Fri Jun 14 00:57:02 1996
+***************
+*** 0 ****
+--- 1,133 ----
++ ;
++ ; FreeBSD os-fbs.ic file for building os-fbs.c.
++ ;
++ ; Boilerplate header.
++ include(header)
++ 
++ ; Can_access function.  Just calls access.  Only one version available.
++ include(canacces)
++ 
++ ; File_size function.  Only one version available.
++ include(filesize)
++ 
++ ; Is_writable_dir function.  Only one version available.
++ include(writ_dir)
++ 
++ ; Create_mail_dir function.  All Unixes use creatdir and DOS
++ ; uses creatdir.dos.
++ include(creatdir)
++ 
++ ; Rename_file function.  All Unixes use rename and DOS uses
++ ; rename.dos.  There is also one called rename.hom which
++ ; is currently unused.  Hom stands for homemade.
++ include(rename)
++ 
++ ; Build_path function.  All Unixes use bld_path and DOS
++ ; uses bld_path.dos.
++ include(bld_path)
++ 
++ ; Last_cmpnt function.  All Unixes use lstcmpnt and DOS
++ ; uses lstcmpnt.dos.
++ include(lstcmpnt)
++ 
++ ; Expand_foldername function.  All Unixes use expnfldr and DOS
++ ; uses expnfldr.dos.
++ include(expnfldr)
++ 
++ ; Fnexpand function.  All Unixes use fnexpand and DOS
++ ; uses fnexpand.dos.
++ include(fnexpand)
++ 
++ ; Filter_filename function.  All Unixes use fltrname and DOS
++ ; uses fltrname.dos.
++ include(fltrname)
++ 
++ ; There are several versions of disk quotas.  Standard BSD-style quotas
++ ; (Australian) include diskquot.  Systems which don't have quotas use
++ ; diskquot.non.  Systems which use Sun-style quotas are slightly more
++ ; complicated.  They usually require different include files.  They are
++ ; set up to include the file sunquota and prepend include file info to
++ ; that.  See diskquot.*.
++ include(diskquot.non)
++ 
++ ; Read_file function.  All Unixes use readfile and DOS
++ ; uses readfile.dos.
++ include(readfile)
++ 
++ ; Create_tmpfile function.  This usually just calls the ANSI standard
++ ; tmpfile function if there is one.  That is the version in the file tempfile.
++ ; There is also a tempfile.non for Unix systems which don't have a tmpfile
++ ; function already.
++ include(tempfile)
++ 
++ ; Temp_nam function.  This usually just calls the "standard"
++ ; tmpnam function if there is one.  That is the version in the file tempnam.
++ include(tempnam)
++ 
++ ; Coredump function.  Version called coredump just calls abort, coredump.fpe
++ ; uses a floating point exception to cause the coredump on some systems.
++ include(coredump)
++ 
++ ; This is usually a call to gethostname.  That version is in the file hostname.
++ ; There is also a version called hostname.una which uses the uname system
++ ; call commonly found in SysV systems.  An unused version called
++ ; hostname.hom also exists.
++ include(hostname)
++ 
++ ; Getdomainnames function.  All Unixes use domnames and DOS
++ ; uses domnames.dos.
++ include(domnames)
++ 
++ ; Canonical_name function.  All Unixes use canonicl and DOS
++ ; uses canonicl.dos.
++ include(canonicl)
++ 
++ ; This file includes two functions, have_job_control and stop_process.
++ ; The Unix version is called jobcntrl and the slightly-different DOS
++ ; version is jobcntrl.dos.
++ include(jobcntrl)
++ 
++ ; Error_desciption function.  All Unixes use err_desc.  The version
++ ; called err_desc.dos is the same except that it doesn't declare the
++ ; variable sys_errlist[], which is already declared.  There
++ ; is also a version called err_desc.hom which is unused.
++ include(err_desc.dos)
++ 
++ ; There are six functions in this include.  They are get_system_login,
++ ; get_system_fullname, get_system_homedir, get_system_passwd, gcos_name,
++ ; and local_name_lookup.  The Unix version is pw_stuff and the dos version
++ ; is pw_stuff.dos.  There is also a pw_stuff.fun.  Fun stands for funny
++ ; GCOS field.  It's currently unused.
++ include(pw_stuff)
++ 
++ ; Change_passwd function.  Unixes use chnge_pw.
++ ; There is also a DOS version.
++ include(chnge_pw)
++ 
++ ; Mime_can_display function.  Only a single version of this now.
++ include(mimedisp)
++ 
++ ; Most systems have the ANSI fgetpos and fsetpos functions.  For those,
++ ; use fgetpos.  If a system doesn't have it use fgetpos.non.
++ include(fgetpos)
++ 
++ ; These functions are similar to popen(), but allow both an input stream 
++ ; and an output buffer.
++ include(pipe)
++ 
++ ; These functions are used to wait on a fork'd child doing our posting
++ include(postreap.wtp)
++ 
++ ; These functions are used to hand messages off to local mail transport
++ ; and posting agents (typically, "sendmail").
++ include(sendmail)
++ 
++ ; This function is used to actually spawn the given command (usually dredged
++ ; from mailcap) on the given data file (usually on /tmp).
++ include(execview)
++ 
++ ; This includes the various routines to support printing
++ include(print)
++ 
++ ; Debug file maintenance.
++ include(debuging)

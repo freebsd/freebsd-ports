@@ -1,0 +1,4 @@
+#!/bin/sh
+# ---------- pgpsign ---------
+# 21.03.96 Roland Rosenfeld <roland@spinnaker.rhein.de>
+pgp -fast

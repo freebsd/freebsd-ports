@@ -1,0 +1,23 @@
+*** pine395k.patch.old	Thu Apr  3 18:00:08 1997
+--- pine395k.patch	Thu Apr  3 18:01:30 1997
+***************
+*** 5,13 ****
+   #ifndef _PINE_INCLUDED
+   #define _PINE_INCLUDED
+   
+! -#define PINE_VERSION		"3.95"
+! +#define PINE_VERSION		"3.95K"
+!  #define	PHONE_HOME_VERSION	"395"
+   #define	PHONE_HOME_HOST		"docserver.cac.washington.edu"
+   #define	UPDATE_FOLDER		"{pine.cac.washington.edu:144/anonymous}#news."
+  diff -u pine/strings.c pine-k/strings.c
+--- 5,13 ----
+   #ifndef _PINE_INCLUDED
+   #define _PINE_INCLUDED
+   
+! -#define PINE_VERSION		"3.96"
+! +#define PINE_VERSION		"3.96K"
+!  #define	PHONE_HOME_VERSION	"396"
+   #define	PHONE_HOME_HOST		"docserver.cac.washington.edu"
+   #define	UPDATE_FOLDER		"{pine.cac.washington.edu:144/anonymous}#news."
+  diff -u pine/strings.c pine-k/strings.c
