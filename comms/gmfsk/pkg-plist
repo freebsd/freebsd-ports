@@ -1,0 +1,8 @@
+bin/gmfsk
+share/pixmaps/gmfsk/mfsk.png
+share/pixmaps/gmfsk/pause.xpm
+share/pixmaps/gmfsk/rx.xpm
+share/pixmaps/gmfsk/tune.xpm
+share/pixmaps/gmfsk/tx.xpm
+@dirrm share/pixmaps/gmfsk
+@dirrm share/pixmaps
