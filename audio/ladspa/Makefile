@@ -25,7 +25,6 @@ PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
 post-patch:
 	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},' ${WRKSRC}/src/makefile
 
-
 do-build:
 	cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makefile targets
 
