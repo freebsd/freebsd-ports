@@ -379,6 +379,7 @@ macopix-*.tar.gz	ports/games/macopix		Contains commercial character data
 MarathonEvil-*.tar.gz	ports/games/marathon-evil Bungie/Microsoft do not
 						allow charging for Marathon data
 						files.
+mathfonts-4.1/*		ports/x11-fonts/mathfonts	 No redistribution allowed.
 mbrola-freebsd/*	ports/audio/mbrola	No commercial, military use
 						voices cannot be sold
 md5crk_*_freebsdX86.*	ports/security/md5crk	no commercial use
@@ -533,6 +534,8 @@ susv3.tar.bz2		ports/misc/susv3	Redistribution of the documents is
 swing1_1_1*		ports/java/jfc		Don't distribute without
 						value-added application.
 tasks.zip		ports/www/tasks		Licence prohibits redistribution.
+texcm-ttf-20010117/*	ports/x11-fonts/texcm-ttf	cannot be sold or distributed
+						with any commercial product.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tinker*			ports/biology/tinker	Distribution is prohibited
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
