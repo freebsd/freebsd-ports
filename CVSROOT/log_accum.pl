@@ -1,6 +1,6 @@
-#!/usr/bin/perl
+#!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.20 1996/12/15 05:38:42 peter Exp $
+# $Id: log_accum.pl,v 1.21 1997/04/13 11:18:56 bde Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -10,19 +10,19 @@
 # This file assumes a pre-commit checking program that leaves the
 # names of the first and last commit directories in a temporary file.
 #
-# Contributed by David Hampton <hampton@cisco.com>
+# Originally by David Hampton <hampton@cisco.com>
 #
+# Extensively hacked for FreeBSD by Peter Wemm <peter@dialix.com.au>,
+#  with parts stolen from Greg Woods <woods@most.wierd.com> version.
+#
+
+require 5.003;	# might work with older perl5
 
 ############################################################
 #
 # Configurable options
 #
 ############################################################
-#
-# Do cisco Systems, Inc. specific nonsense.
-#
-$cisco_systems = 0;
-
 #
 # Where do you want the RCS ID and delta info?
 # 0 = none,
@@ -31,6 +31,8 @@ $cisco_systems = 0;
 #
 $rcsidinfo = 2;
 
+# Debug level, 0 = off
+$debug = 0;
 ############################################################
 #
 # Constants
@@ -42,24 +44,17 @@ $STATE_ADDED   = 2;
 $STATE_REMOVED = 3;
 $STATE_LOG     = 4;
 
-$LAST_FILE     = "/tmp/#cvs.lastdir";
+$FILE_PREFIX   = "#cvs.files";
+$LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $CHANGED_FILE  = "/tmp/#cvs.files.changed";
 $ADDED_FILE    = "/tmp/#cvs.files.added";
 $REMOVED_FILE  = "/tmp/#cvs.files.removed";
 $LOG_FILE      = "/tmp/#cvs.files.log";
-$BRANCH_FILE   = "/tmp/#cvs.files.branch";
 $SUMMARY_FILE  = "/tmp/#cvs.files.summary";
-$FILE_PREFIX   = "#cvs.files";
+$MAIL_FILE     = "/tmp/#cvs.files.mail";
+$SUBJ_FILE     = "/tmp/#cvs.files.subj";
 
 $CVSROOT       = "$ENV{'CVSROOT'}";
-
-$AVAIL_FILE    = "$CVSROOT/CVSROOT/avail";
-$MAIL_FILE     = "/tmp/#cvs.mail";
-$SUBJ_FILE     = "/tmp/#cvs.subj";
-$VERSION_FILE  = "version";
-$TRUNKREV_FILE = "TrunkRev";
-#$CHANGES_FILE  = "Changes";
-#$CHANGES_TEMP  = "Changes.tmp";
 
 ############################################################
 #
@@ -67,39 +62,13 @@ $TRUNKREV_FILE = "TrunkRev";
 #
 ############################################################
 
-sub format_names {
-    local($dir, @files) = @_;
-    local(@lines);
-    $lines[0] = sprintf(" %-08s", $dir);
-    foreach $file (@files) {
-	if (length($lines[$#lines]) + length($file) > 60) {
-	    $lines[++$#lines] = sprintf(" %8s", " ");
-	}
-	$lines[$#lines] .= " ".$file;
-    }
-    @lines;
-}
-
 sub cleanup_tmpfiles {
-    local($all) = @_;
     local($wd, @files);
 
     $wd = `pwd`;
     chdir("/tmp");
     opendir(DIR, ".");
-    if ($all == 1) {
-	push(@files, grep(/$id$/, readdir(DIR)));
-
-	push(@files, "$MAIL_FILE.$id.db")  if (-e "$MAIL_FILE.$id.db");
-	push(@files, "$MAIL_FILE.$id.dir") if (-e "$MAIL_FILE.$id.dir");
-	push(@files, "$MAIL_FILE.$id.pag") if (-e "$MAIL_FILE.$id.pag");
-
-	push(@files, "$SUBJ_FILE.$id.db")  if (-e "$SUBJ_FILE.$id.db");
-	push(@files, "$SUBJ_FILE.$id.dir") if (-e "$SUBJ_FILE.$id.dir");
-	push(@files, "$SUBJ_FILE.$id.pag") if (-e "$SUBJ_FILE.$id.pag");
-    } else {
-	push(@files, grep(/^$FILE_PREFIX.*$id$/, readdir(DIR)));
-    }
+    push(@files, grep(/^$FILE_PREFIX\..*$id$/, readdir(DIR)));
     closedir(DIR);
     foreach (@files) {
 	unlink $_;
@@ -107,33 +76,17 @@ sub cleanup_tmpfiles {
     chdir($wd);
 }
 
-sub write_logfile {
-    local($filename, @lines) = @_;
-    open(FILE, ">$filename") || die ("Cannot open log file $filename.\n");
+sub append_to_logfile {
+    local($filename, @files) = @_;
+
+    open(FILE, ">>$filename") || die ("Cannot open for append file $filename.\n");
     print(FILE join("\n", @lines), "\n");
-    close(FILE);
-}
-
-sub append_to_file {
-    local($filename, $dir, @files) = @_;
-    if (@files) {
-	local(@lines) = &format_names($dir, @files);
-	open(FILE, ">>$filename") || die ("Cannot open file $filename.\n");
-	print(FILE join("\n", @lines), "\n");
-	close(FILE);
-    }
-}
-
-sub write_line {
-    local($filename, $line) = @_;
-    open(FILE, ">$filename") || die("Cannot open file $filename.\n");
-    print(FILE $line, "\n");
     close(FILE);
 }
 
 sub append_line {
     local($filename, $line) = @_;
-    open(FILE, ">>$filename") || die("Cannot open file $filename.\n");
+    open(FILE, ">>$filename") || die("Cannot open for append file $filename.\n");
     print(FILE $line, "\n");
     close(FILE);
 }
@@ -141,30 +94,17 @@ sub append_line {
 sub read_line {
     local($line);
     local($filename) = @_;
-    open(FILE, "<$filename") || die("Cannot open file $filename.\n");
+    open(FILE, "<$filename") || die("Cannot open for read file $filename.\n");
     $line = <FILE>;
     close(FILE);
     chop($line);
     $line;
 }
 
-sub read_file {
-    local(@text);
-    local($filename, $leader) = @_;
-    open(FILE, "<$filename") || return ();
-    while (<FILE>) {
-	chop;
-	push(@text, sprintf("  %-10s  %s", $leader, $_));
-	$leader = "";
-    }
-    close(FILE);
-    @text;
-}
-
 sub read_logfile {
     local(@text);
     local($filename, $leader) = @_;
-    open(FILE, "<$filename") || die ("Cannot open log file $filename.\n");
+    open(FILE, "<$filename");
     while (<FILE>) {
 	chop;
 	push(@text, $leader.$_);
@@ -173,11 +113,94 @@ sub read_logfile {
     @text;
 }
 
+sub write_logfile {
+    local($filename, @lines) = @_;
+
+    open(FILE, ">$filename") || die("Cannot open for write log file $filename.\n");
+    print FILE join("\n", @lines), "\n";
+    close(FILE);
+}
+
+sub format_names {
+    local($dir, @files) = @_;
+    local(@lines, $indent);
+
+    $indent = length($dir);
+    if ($indent < 15) {
+      $indent = 15;
+    }
+
+    $format = "    %-" . sprintf("%d", $indent) . "s ";
+
+    $lines[0] = sprintf($format, $dir);
+
+    if ($debug) {
+	print STDERR "format_names(): dir = ", $dir, "; tag = ", $tag, "; files = ", join(":", @files), ".\n";
+    }
+    foreach $file (@files) {
+	if (length($lines[$#lines]) + length($file) > 66) {
+	    $lines[++$#lines] = sprintf($format, "", "");
+	}
+	$lines[$#lines] .= $file . " ";
+    }
+
+    @lines;
+}
+
+sub format_lists {
+    local($header, @lines) = @_;
+    local(@text, @files, $lastdir, $tag);
+
+    if ($debug) {
+	print STDERR "format_lists(): ", join(":", @lines), "\n";
+    }
+    @text = ();
+    @files = ();
+
+    $lastdir = '';
+    foreach $line (@lines) {
+	if ($line =~ /.*\/$/) {
+	    if ($lastdir ne '') {
+	      push(@text, &format_names($lastdir, @files));
+	    }
+	    $lastdir = $line;
+	    $lastdir =~ s,/$,,;
+	    $tag = "";	# next thing is a tag
+	    @files = ();
+	} elsif ($tag eq '') {
+	    $tag = $line;
+	    if ($tag eq 'HEAD') {
+		push(@text, "  $header files:");
+	    } else {
+		push(@text, sprintf("  %-17s %s", "$header files:", $tag));
+	    }
+	} else {
+	    push(@files, $line);
+	}
+    }
+    push(@text, &format_names($lastdir, @files));
+
+    @text;
+}
+
+sub append_names_to_file {
+    local($filename, $dir, $tag, @files) = @_;
+
+    if (@files) {
+	open(FILE, ">>$filename") || die("Cannot open for append file $filename.\n");
+	print FILE $dir, "\n";
+	print FILE $tag, "\n";
+	print FILE join("\n", @files), "\n";
+	close(FILE);
+    }
+}
+
 #
 # do an 'cvs -Qn status' on each file in the arguments, and extract info.
 #
-sub change_summary {
-    local($out, @filenames) = @_;
+
+sub change_summary_changed {
+    local($out, $tag, @filenames) = @_;
     local(@revline);
     local($file, $rev, $rcsfile, $line);
 
@@ -224,79 +247,65 @@ sub change_summary {
     }
 }
 
-
-sub bump_version {
-    local($trunkrev, $editnum, $version);
-
-    $trunkrev = &read_line("$CVSROOT/$repository/$TRUNKREV_FILE");
-    $editnum  = &read_line("$CVSROOT/$repository/$VERSION_FILE");
-    &write_line("$CVSROOT/$repository/$VERSION_FILE", $editnum+1);
-    $version = $trunkrev . "(" . $editnum . ")";
+# Write these one day.
+sub change_summary_added {
+}
+sub change_summary_removed {
 }
 
 sub build_header {
-    local($version) = @_;
-    local($header);
+    local($header, $datestr);
     delete $ENV{'TZ'};
-    local($sec,$min,$hour,$mday,$mon,$year) = localtime(time);
-    $version = '';
-    $header = sprintf("%-8s  %s  %02d/%02d/%02d %02d:%02d:%02d",
-		       $login, $version, $year%100, $mon+1, $mday,
-		       $hour, $min, $sec);
+
+    $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
+    chop($datestr);
+    $header = sprintf("%-8s    %s", $login, $datestr);
 }
 
 # !!! Mailing-list and history file mappings here !!!
 sub mlist_map {
     local($dir) = @_;		# perl warns about this....
    
-    return 'cvs-CVSROOT'      if($dir =~ /^CVSROOT/);
-    return 'cvs-ports'        if($dir =~ /^ports/);
+    return 'cvs-CVSROOT'      if($dir =~ /^CVSROOT\//);
+    return 'cvs-ports'        if($dir =~ /^ports\//);
+    return 'cvs-www'          if($dir =~ /^www\//);
+    return 'cvs-distrib'      if($dir =~ /^distrib\//);
 
-    return 'cvs-other'        unless($dir =~ /^src/);
+    return 'cvs-other'        unless($dir =~ /^src\//);
+
     $dir =~ s,^src/,,;
 
-    return 'cvs-bin'          if($dir =~ /^bin/);
-    return 'cvs-etc'          if($dir =~ /^etc/);
-    return 'cvs-games'        if($dir =~ /^games/);
-    return 'cvs-gnu'          if($dir =~ /^gnu/);
-    return 'cvs-include'      if($dir =~ /^include/);
-    return 'cvs-kerberosIV'   if($dir =~ /^kerberosIV/);
+    return 'cvs-bin'          if($dir =~ /^bin\//);
+    return 'cvs-contrib'      if($dir =~ /^contrib\//);
+    return 'cvs-eBones'       if($dir =~ /^eBones\//);
+    return 'cvs-etc'          if($dir =~ /^etc\//);
+    return 'cvs-games'        if($dir =~ /^games\//);
+    return 'cvs-gnu'          if($dir =~ /^gnu\//);
+    return 'cvs-include'      if($dir =~ /^include\//);
+    return 'cvs-kerberosIV'   if($dir =~ /^kerberosIV\//);
     return 'cvs-lib'          if($dir =~ /^lib\//);
-    return 'cvs-libexec'      if($dir =~ /^libexec/);
-    return 'cvs-sbin'         if($dir =~ /^sbin/);
-    return 'cvs-share'        if($dir =~ /^share/);
-    return 'cvs-usrbin'       if($dir =~ /^usr\.bin/);
-    return 'cvs-usrsbin'      if($dir =~ /^usr\.sbin/);
+    return 'cvs-libexec'      if($dir =~ /^libexec\//);
+    return 'cvs-lkm'          if($dir =~ /^lkm\//);
+    return 'cvs-release'      if($dir =~ /^release\//);
+    return 'cvs-sbin'         if($dir =~ /^sbin\//);
+    return 'cvs-share'        if($dir =~ /^share\//);
+    return 'cvs-sys'          if($dir =~ /^sys\//);
+    return 'cvs-tools'        if($dir =~ /^tools\//);
+    return 'cvs-usrbin'       if($dir =~ /^usr\.bin\//);
+    return 'cvs-usrsbin'      if($dir =~ /^usr\.sbin\//);
 
-    return 'cvs-user'         unless($dir =~ /^sys/);
-    $dir =~ s,^sys/,,;
+    return 'cvs-user';
 
-# Note, this does not really work, it ends up dumping it in the LAST tree
-# the commit was done in, so for now, just dump it all in cvs-sys.
-# XXX
-    return 'cvs-sys';
-
-    return 'cvs-sys_ddb'      if($dir =~ /^ddb/);
-    return 'cvs-sys_fs'       if($dir =~ /^(fs)|(isofs)|(miscfs)|(nfs)|(ufs)/);
-    return 'cvs-sys_i386'     if($dir =~ /^i386/);
-    return 'cvs-sys_net'      if($dir =~ /^net/);
-    return 'cvs-sys_kern'     if($dir =~ /^kern/);
-    return 'cvs-sys_libkern'  if($dir =~ /^libkern/);
-    return 'cvs-sys_scsi'     if($dir =~ /^scsi/);
-    return 'cvs-sys_sys'      if($dir =~ /^sys/);
-    return 'cvs-sys_vm'       if($dir =~ /^vm/);
-
-    return 'cvs-sys';
 }    
 
 sub do_changes_file {
-    local($changes,$category);
+    local($changes,$category,@mailaddrs);
     local(@text) = @_;
 
-    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
-
-    foreach $category (keys %MAILFILE) {
+    @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
+    foreach $category (@mailaddrs) {
 	if ($category =~ /^cvs-/) {
+	    # convert mailing list name back to category
 	    $category =~ s,\n,,;
 	    $category =~ s/^cvs-//;
 	    $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
@@ -306,72 +315,58 @@ sub do_changes_file {
 	    close(CHANGES);
 	}
     }
-    dbmclose(%MAILFILE);
 }
-
-sub do_avail_file {
-    local($where) = @_;
-    local($users,$repo,$who);
-
-    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
-    open(AVAIL, "<$AVAIL_FILE") || die("Cannot open $AVAIL_FILE.\n");
-    while(<AVAIL>) {
-	if(/^avail\|([^|]*)\|(.*)$/) {
-	    $users = $1;
-	    $repo = $2;
-	    if(($where eq $repo) || ($where =~ /^$repo\//)) {
-		foreach $who (split(/,/, $users)) {
-		    $MAILFILE{$who} = 1;
-		}
-	    }
-	} elsif(/^avail\|([^|]*)$/) {
-	    foreach $who (split(/,/, $1)) {
-		$MAILFILE{$who} = 1;
-	    }
-	}
-    }
-    close(AVAIL);
-    dbmclose(%MAILFILE);
-}
-
-sub add_cc {
-    local($who) = @_;
-
-    # chop CC: and any leading space
-    $who =~ s/^CC:[\s]+//i;	
-
-    # re-quote it if possible..  I really don't want a rfc822 parser.. :-)
-    $who =~ s/"//g;
-    $who =~ s/^/"/;
-    $who =~ s/$/"/;
-
-    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
-    $MAILFILE{$who} = 1;
-    dbmclose(%MAILFILE);
-}
-
 
 sub mail_notification {
     local(@text) = @_;
-    local($names);
-    local($subject);
+    local($line, $word, $subjlines, $subjwords, @mailaddrs);
 
     print "Mailing the commit message...\n";
 
-    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
-    $names = "CVS-committers,cvs-all," . join(",", keys %MAILFILE);
-    $names =~ s,\n,,;
-    dbmclose(%MAILFILE);
+    local($[) = 0;
 
-    dbmopen(%SUBJFILE, "$SUBJ_FILE.$id", 0666);
-    $subject = join(" ", keys %SUBJFILE);
-    $subject =~ s,\n,,;
-    $subject =~ s,[ 	]*, ,;
-    dbmclose(%SUBJFILE);
+    @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
 
-    #print "mail -s \"cvs commit: $subject\" $names\n";
+    if ($debug) {
+	open(MAIL, "| /usr/sbin/sendmail -odb -oem peter");
+    } else {
+	open(MAIL, "| /usr/sbin/sendmail -odb -oem -t");
+    }
 
-    open(MAIL, "| mail -s \"cvs commit: $subject\" $names");
+    print(MAIL 'To: cvs-committers@FreeBSD.org, cvs-all@FreeBSD.org');
+    foreach $line (@mailaddrs) {
+	print(MAIL ", ", $line, '@FreeBSD.org');
+    }
+    print(MAIL "\n");
+
+    $subject = 'Subject: cvs commit:';
+    @subj = &read_logfile("$SUBJ_FILE.$id", "");
+    $subjlines = 0;
+    $subjwords = 0;	# minimum of two "words" per line
+    LINE: foreach $line (@subj) {
+	foreach $word (split(/ /, $line)) {
+	    if ($subjwords > 2 && length($subject . " " . $word) > 75) {
+		if ($subjlines > 2) {
+		    $subject .= " ...";
+		}
+		print(MAIL $subject, "\n");
+		if ($subjlines > 2) {
+		    $subject = "";
+		    last LINE;
+		}
+		$subject = "        ";		# rfc822 continuation line
+		$subjwords = 0;
+		$subjlines++;
+	    }
+	    $subject .= " " . $word;
+	    $subjwords++;
+	}
+    }
+    if ($subject ne "") {
+	print(MAIL $subject, "\n");
+    }
+    print (MAIL "\n");
+
     print(MAIL join("\n", @text));
     close(MAIL);
 }
@@ -387,44 +382,41 @@ sub mail_notification {
 #
 $id = getpgrp();
 $state = $STATE_NONE;
+$tag = '';
 $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
-$repository = $path[0];
 if ($#path == 0) {
     $dir = ".";
 } else {
     $dir = join('/', @path[1..$#path]);
 }
-#print("ARGV  - ", join(":", @ARGV), "\n");
-#print("files - ", join(":", @files), "\n");
-#print("path  - ", join(":", @path), "\n");
-#print("dir   - ", $dir, "\n");
-#print("id    - ", $id, "\n");
+$dir = $dir . "/";
 
-$mlist = &mlist_map($files[0]);
-dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
-$MAILFILE{$mlist} = 1;
-dbmclose(%MAILFILE);
+if ($debug) {
+  print("ARGV  - ", join(":", @ARGV), "\n");
+  print("files - ", join(":", @files), "\n");
+  print("path  - ", join(":", @path), "\n");
+  print("dir   - ", $dir, "\n");
+  print("id    - ", $id, "\n");
+}
 
-dbmopen(%SUBJFILE, "$SUBJ_FILE.$id", 0666);
-$SUBJFILE{$ARGV[0]} = 1;
-dbmclose(%SUBJFILE);
+&append_line("$MAIL_FILE.$id", &mlist_map($files[0] . "/"));
+&append_line("$SUBJ_FILE.$id", $ARGV[0]);
 
 #
 # Check for a new directory first.  This will always appear as a
 # single item in the argument list, and an empty log message.
 #
 if ($ARGV[0] =~ /New directory/) {
-    $version = &bump_version if ($cisco_systems != 0);
-    $header = &build_header($version);
+    $header = &build_header();
     @text = ();
     push(@text, $header);
     push(@text, "");
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
     #&mail_notification(@text);
-    &cleanup_tmpfiles(1);
+    &cleanup_tmpfiles();
     exit 0;
 }
 
@@ -432,8 +424,7 @@ if ($ARGV[0] =~ /New directory/) {
 # single item in the argument list, and a log message.
 #
 if ($ARGV[0] =~ /Imported sources/) {
-    $version = &bump_version if ($cisco_systems != 0);
-    $header = &build_header($version);
+    $header = &build_header();
 
     @text = ();
     push(@text, $header);
@@ -448,43 +439,44 @@ if ($ARGV[0] =~ /Imported sources/) {
     }
 
     &mail_notification(@text);
-    &cleanup_tmpfiles(1);
+    &cleanup_tmpfiles();
     exit 0;
 }    
-
-#no longer useful. the CC: line would be _too_ big.
-#&do_avail_file($dir);
-
 
 #
 # Iterate over the body of the message collecting information.
 #
+$tag = "HEAD";
 while (<STDIN>) {
-    chop;			# Drop the newline
+    s/[ \t\n]+$//;		# delete trailing space
     if (/^Revision\/Branch:/) {
-        s,^Revision/Branch:,,;
-        push (@branch_lines, split);
-        next;
+	s,^Revision/Branch:,,;
+	$tag = $_;
+	next;
+    }
+    if (/^[ \t]+Tag:/) {
+	s,^[ \t]+Tag: ,,;
+	$tag = $_;
+	next;
+    }
+    if (/^[ \t]+No tag$/) {
+	$tag = "HEAD";
+	next;
     }
     if (/^Modified Files/) { $state = $STATE_CHANGED; next; }
     if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
     if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
     if (/^Log Message/)    { $state = $STATE_LOG;     next; }
-    s/[ \t\n]+$//;		# delete trailing space
     
-    push (@changed_files, split) if ($state == $STATE_CHANGED);
-    push (@added_files,   split) if ($state == $STATE_ADDED);
-    push (@removed_files, split) if ($state == $STATE_REMOVED);
+    push (@{ $changed_files{$tag} }, split) if ($state == $STATE_CHANGED);
+    push (@{ $added_files{$tag} },   split) if ($state == $STATE_ADDED);
+    push (@{ $removed_files{$tag} }, split) if ($state == $STATE_REMOVED);
     if ($state == $STATE_LOG) {
 	if (/^PR:$/i ||
 	    /^Reviewed by:$/i ||
 	    /^Submitted by:$/i ||
 	    /^Obtained from:$/i) {
 	    next;
-	}
-	if (/^CC:/i) {
-	    &add_cc($_);
-	    # next;	# uncomment this to prevent logging CC: lines
 	}
 	push (@log_lines,     $_);
     }
@@ -504,9 +496,9 @@ while ($#log_lines > -1) {
     last if ($log_lines[$#log_lines] ne "");
     pop(@log_lines);
 }
-for ($i = $#log_lines; $i > 0; $i--) {
-    if (($log_lines[$i - 1] eq "") && ($log_lines[$i] eq "")) {
-	splice(@log_lines, $i, 1);
+for ($l = $#log_lines; $l > 0; $l--) {
+    if (($log_lines[$l - 1] eq "") && ($log_lines[$l] eq "")) {
+	splice(@log_lines, $l, 1);
     }
 }
 
@@ -523,13 +515,33 @@ for ($i = 0; ; $i++) {
 #
 # Spit out the information gathered in this pass.
 #
+foreach $tag ( keys %added_files ) {
+    &append_names_to_file("$ADDED_FILE.$i.$id",   $dir, $tag,
+	@{ $added_files{$tag} });
+}
+foreach $tag ( keys %changed_files ) {
+    &append_names_to_file("$CHANGED_FILE.$i.$id", $dir, $tag,
+	@{ $changed_files{$tag} });
+}
+foreach $tag ( keys %removed_files ) {
+    &append_names_to_file("$REMOVED_FILE.$i.$id", $dir, $tag,
+	@{ $removed_files{$tag} });
+}
 &write_logfile("$LOG_FILE.$i.$id", @log_lines);
-&append_to_file("$BRANCH_FILE.$i.$id",  $dir, @branch_lines);
-&append_to_file("$ADDED_FILE.$i.$id",   $dir, @added_files);
-&append_to_file("$CHANGED_FILE.$i.$id", $dir, @changed_files);
-&append_to_file("$REMOVED_FILE.$i.$id", $dir, @removed_files);
+
 if ($rcsidinfo) {
-    &change_summary("$SUMMARY_FILE.$i.$id", @changed_files);
+    foreach $tag ( keys %added_files ) {
+	&change_summary_added("$SUMMARY_FILE.$i.$id", $tag,
+	    @{ $added_files{$tag} });
+    }
+    foreach $tag ( keys %changed_files ) {
+	&change_summary_changed("$SUMMARY_FILE.$i.$id", $tag,
+	    @{ $changed_files{$tag} });
+    }
+    foreach $tag ( keys %removed_files ) {
+	&change_summary_removed("$SUMMARY_FILE.$i.$id", $tag,
+	    @{ $removed_files{$tag} });
+    }
 }
 
 #
@@ -550,10 +562,7 @@ if (-e "$LAST_FILE.$id") {
 # into a single message, fire a copy off to the mailing list, and drop
 # it on the end of the Changes file.
 #
-# Get the full version number
-#
-$version = &bump_version if ($cisco_systems != 0);
-$header = &build_header($version);
+$header = &build_header();
 
 #
 # Produce the final compilation of the log messages
@@ -563,12 +572,24 @@ push(@text, $header);
 push(@text, "");
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$id");
-    push(@text, &read_file("$BRANCH_FILE.$i.$id", "Branch:"));
-    push(@text, &read_file("$CHANGED_FILE.$i.$id", "Modified:"));
-    push(@text, &read_file("$ADDED_FILE.$i.$id", "Added:"));
-    push(@text, &read_file("$REMOVED_FILE.$i.$id", "Removed:"));
-    push(@text, "  Log:");
-    push(@text, &read_logfile("$LOG_FILE.$i.$id", "  "));
+    @lines = &read_logfile("$CHANGED_FILE.$i.$id", "");
+    if ($#lines >= 0) {
+	push(@text, &format_lists("Modified", @lines));
+    }
+    @lines = &read_logfile("$ADDED_FILE.$i.$id", "");
+    if ($#lines >= 0) {
+	push(@text, &format_lists("Added", @lines));
+    }
+    @lines = &read_logfile("$REMOVED_FILE.$i.$id", "");
+    if ($#lines >= 0) {
+	push(@text, &format_lists("Removed", @lines));
+    }
+
+    @lines = &read_logfile("$LOG_FILE.$i.$id", "  ");
+    if ($#lines >= 0) {
+        push(@text, "  Log:");
+	push(@text, @lines);
+    }
     if ($rcsidinfo == 2) {
 	if (-e "$SUMMARY_FILE.$i.$id") {
 	    push(@text, "  ");
@@ -577,10 +598,6 @@ for ($i = 0; ; $i++) {
 	}
     }
     push(@text, "");
-}
-if ($cisco_systems != 0) {
-    @ddts = grep(/^CSCdi/, split(' ', join(" ", @text)));
-    $text[0] .= "  " . join(" ", @ddts);
 }
 #
 # Put the log message at the beginning of the Changes file
@@ -608,5 +625,5 @@ if ($rcsidinfo == 1) {
 # Mail out the notification.
 #
 &mail_notification(@text);
-&cleanup_tmpfiles(1);
+&cleanup_tmpfiles();
 exit 0;

@@ -1,6 +1,6 @@
-#!/usr/bin/perl
+#!/usr/local/bin/perl
 #
-# $Id$
+# $Id: commit_prep.pl,v 1.3 1996/02/07 14:35:34 peter Exp $
 #
 #
 # Perl filter to handle pre-commit checking of files.  This program
@@ -23,6 +23,8 @@
 # Contributed by David Hampton <hampton@cisco.com>
 #
 
+require 5.003;	# to be sure.  log_accum needs perl5
+
 ############################################################
 #
 # Configurable options
@@ -43,7 +45,7 @@ $record_directory = 1;
 # Constants
 #
 ############################################################
-$LAST_FILE     = "/tmp/#cvs.lastdir";
+$LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $ENTRIES       = "CVS/Entries";
 
 $NoId = "
