@@ -1,0 +1,22 @@
+--- src/prcserror.tl.orig	Sun Feb 27 12:48:25 2000
++++ src/prcserror.tl	Sun Feb 27 12:51:16 2000
+@@ -29,7 +29,9 @@
+ template class PrError<QuickElim*>;
+ #endif
+ template class PrError<int>;
++#if 0
+ template class PrError<pid_t>;
++#endif
+ template class PrError<PrcsExitStatus>;
+ template class PrError<ArgList*>;
+ template class PrError<const char*>;
+@@ -68,7 +70,9 @@
+ MkTemplate(PrError, const char*);
+ MkTemplate(PrError, FILE*);
+ MkTemplate(PrError, int);
++#if 0
+ MkTemplate(PrError, pid_t);
++#endif
+ MkTemplate(PrError, bool);
+ MkTemplate(PrError, RepEntry*);
+ MkTemplate(PrError, RcsDelta*);
