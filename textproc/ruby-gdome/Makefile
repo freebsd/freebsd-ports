@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdome
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://download.berlios.de/libgdome-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,15 +17,20 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
 
+USE_BZIP2=	yes
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+post-extract:
+	${RM} -rf ${WRKSRC}/examples-ruby/CVS
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples-ruby/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
 .endif
