@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stefan@fafoe.narf.at
 COMMENT=	A slideshow presentation tool to write slides in Python or XML
 
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
