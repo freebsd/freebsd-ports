@@ -16,6 +16,8 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 man pages
 
+CONFLICTS=	xorg-manpages-*
+
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 EXTRACT_TARGET=		xc/doc/man \

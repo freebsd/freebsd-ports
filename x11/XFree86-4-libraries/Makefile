@@ -33,7 +33,7 @@ CONFLICTS=	libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* libXaw-* \
 		libXinerama-* libXmu-* libXp-* libXpm-* libXrandr-* \
 		libXrender-* libXres-* libXt-* libXv-* libXxf86-* libxkbfile-* \
 		panoramixext-* printext-* randrext-* renderext-* resourceext-* \
-		xextensions-* xf86ext-* xlibs-* xproto-*
+		xextensions-* xf86ext-* xlibs-* xorg-libraries-* xproto-*
 
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
