@@ -1,0 +1,13 @@
+This package contains a number of fonts which are useful for TV applications:
+
+led-fixed
+    This is the big font which xawtv uses by default for the onscreen display
+    in fullscreen mode. 
+ets-teletext
+    This is a teletext font. It contains the block graphic characters used by
+    teletext pages. When watching teletext with the mtt teletext browser you'll
+    get much better results with these fonts installed. 
+ets-caption
+    A font for closed captions. 
+
+WWW: http://linux.bytesex.org/xawtv/tvfonts.html
