@@ -1,6 +1,4 @@
 bin/SciTE
-%%GNOME_COMMENT%%share/gnome/applications/SciTE.desktop
-%%GNOME_COMMENT%%share/gnome/pixmaps/Sci48M.png
 %%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
 %%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/SciTE.html
@@ -16,6 +14,8 @@ bin/SciTE
 %%PORTDOCS%%%%DOCSDIR%%/SciTETranslation.html
 %%PORTDOCS%%%%DOCSDIR%%/SciTEWord.jpg
 %%PORTDOCS%%%%DOCSDIR%%/demo.png
+share/gnome/applications/SciTE.desktop
+share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/Embedded.properties
 %%DATADIR%%/SciTE.properties
 %%DATADIR%%/SciTEGlobal.properties
