@@ -540,6 +540,7 @@ beonex		ports/www/beonex
 bestfit		ports/misc/bestfit
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
+bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
 bftpd		ports/ftp/bftpd
 bg-ooodict-BG	ports/editors/ooodict-bg_BG
