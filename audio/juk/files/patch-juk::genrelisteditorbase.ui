@@ -1,0 +1,38 @@
+--- juk/genrelisteditorbase.ui.orig	Mon Dec  9 12:36:24 2002
++++ juk/genrelisteditorbase.ui	Mon Mar  3 12:24:34 2003
+@@ -159,7 +159,7 @@
+                                 <cstring>genreNameLabel</cstring>
+                             </property>
+                             <property name="text">
+-                                <string>Name</string>
++                                <string>Name:</string>
+                             </property>
+                         </widget>
+                         <widget class="KLineEdit">
+@@ -172,7 +172,7 @@
+                                 <cstring>ID3v1Label</cstring>
+                             </property>
+                             <property name="text">
+-                                <string>ID3v1 Genre Mapping</string>
++                                <string>ID3v1 genre mapping:</string>
+                             </property>
+                         </widget>
+                         <widget class="KComboBox">
+@@ -247,7 +247,7 @@
+                         <cstring>okButton</cstring>
+                     </property>
+                     <property name="text">
+-                        <string>OK</string>
++                        <string>&amp;OK</string>
+                     </property>
+                     <property name="autoDefault">
+                         <bool>true</bool>
+@@ -261,7 +261,7 @@
+                         <cstring>cancelButton</cstring>
+                     </property>
+                     <property name="text">
+-                        <string>Cancel</string>
++                        <string>&amp;Cancel</string>
+                     </property>
+                 </widget>
+             </hbox>
