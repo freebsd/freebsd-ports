@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple utility managing multiple Window Managers with Qt
 
 USE_X_PREFIX=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:UNIX/utilities:}
 MASTER_SITE_SUBDIR=sleuthkit
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
 USE_PERL5=	yes

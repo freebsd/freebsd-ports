@@ -8,7 +8,7 @@
 PORTNAME=	qt-designer
 CATEGORIES=	devel
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI C++ IDE based on QT
 
 LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23

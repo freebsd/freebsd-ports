@@ -16,7 +16,7 @@ PKGNAMEPREFIX=		linux_
 DISTFILES=		MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 			MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=		ports@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
 USE_BZIP2=		yes
