@@ -3360,6 +3360,7 @@ koi8r-ps	ports/russian/koi8r-ps
 koncd		ports/sysutils/koncd
 konverse	ports/net/konverse
 koog		ports/audio/koog
+kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
