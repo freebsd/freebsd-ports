@@ -32,14 +32,14 @@ CONFIGURE_ARGS+=--disable-debug
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
-UTMP=/var/run/utmp
+UTMP?=	/var/run/utmp
 .if exists(${UTMP})
 PLIST_SUB+=	KTALKD=""
 .else
 PLIST_SUB+=	KTALKD="@comment "
 pre-configure:
 	@${ECHO_MSG} '===>  NOTE: The file ${UTMP} was not found.'
-	@${ECHO_MSG} '===>  NOTE: ktalkd, which requires ${UTMP}, will not be built.'
+	@${ECHO_MSG} '===>  NOTE: ktalkd and kotalkd, which require ${UTMP}, will not be built.'
 .endif
 
 .include <bsd.port.mk>
