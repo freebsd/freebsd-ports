@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.85 1997/10/04 17:30:18 max Exp $
+# $Id: Makefile,v 1.86 1997/10/05 19:41:13 max Exp $
 #
 
     SUBDIR += Canna
@@ -26,6 +26,7 @@
     SUBDIR += hex
     SUBDIR += ircII
     SUBDIR += iv
+    SUBDIR += japaneseAFM
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both
     SUBDIR += jtex209-ntt
