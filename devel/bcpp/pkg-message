@@ -1,2 +1,2 @@
-You should modify /usr/local/etc/bcpp.cfg to your liking and 
+You should modify /usr/local/etc/bcpp.cfg.sample to your liking and 
 copy it to /usr/local/etc/bcpp.cfg

@@ -18,10 +18,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/code
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
 
+post-patch:
+	@${PERL5} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/bcpp.cpp
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg \
 		${PREFIX}/etc/${PORTNAME}.cfg.sample
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/txtdocs/hirachy.txt ${DOCSDIR}
