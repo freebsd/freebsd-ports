@@ -7,6 +7,7 @@
 
 PORTNAME=	spamilter
 PORTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 EXTRACT_SUFX=	.tgz
@@ -26,7 +27,9 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 BINFILES=	spamilter-system-report spamilter-user-report
-DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt
+DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
+		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
+		conf/policy.html conf/spamilter.rc
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +54,8 @@ PLIST_FILES+=	bin/dnsblchk bin/mxlookup bin/spamilter \
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	%%DOCSDIR%%/Changelog %%DOCSDIR%%/INSTALL %%DOCSDIR%%/LICENSE
 PLIST_FILES+=	%%DOCSDIR%%/docs.html %%DOCSDIR%%/docs.txt
+PLIST_FILES+=	%%DOCSDIR%%/db.rcpt %%DOCSDIR%%/db.rdnsbl %%DOCSDIR%%/db.sndr
+PLIST_FILES+=	%%DOCSDIR%%/policy.html %%DOCSDIR%%/spamilter.rc
 PLIST_DIRS+=	%%DOCSDIR%%
 .endif
 
