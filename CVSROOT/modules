@@ -1981,6 +1981,7 @@ fcrackzip	ports/security/fcrackzip
 fcron		ports/sysutils/fcron
 fd		ports/shells/fd
 fdp-tools	ports/textproc/fdp-tools
+fdupes		ports/sysutils/fdupes
 feedonfeeds	ports/www/feedonfeeds
 feh		ports/graphics/feh
 felis		ports/misc/felis
