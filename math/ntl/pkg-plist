@@ -167,6 +167,7 @@ lib/libntl.a
 %%PORTDOCS%%share/doc/NTL/vec_lzz_p.txt
 %%PORTDOCS%%share/doc/NTL/vec_lzz_pE.txt
 %%PORTDOCS%%share/doc/NTL/vector.txt
+%%PORTDOCS%%share/doc/NTL/version.txt
 %%PORTDOCS%%share/doc/NTL/xdouble.txt
 @dirrm include/NTL
 %%PORTDOCS%%@dirrm share/doc/NTL
