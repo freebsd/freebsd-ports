@@ -19,6 +19,8 @@ EXTRACT_DEPENDS= unrar:${PORTSDIR}/archivers/unrar
 # Not useful without timidity.
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 
+BROKEN=		"Unfetchable"
+
 RESTRICTED=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
