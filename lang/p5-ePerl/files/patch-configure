@@ -1,5 +1,5 @@
---- /o/mnt/mat/lang/p5-ePerl/work/eperl-2.2.14/configure.orig	Sun Aug  2 15:48:40 1998
-+++ /o/mnt/mat/lang/p5-ePerl/work/eperl-2.2.14/configure	Wed Feb 25 12:10:13 2004
+--- configure.orig	Sun Aug  2 15:48:40 1998
++++ configure	Wed Feb 25 12:10:13 2004
 @@ -571,7 +571,7 @@
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
