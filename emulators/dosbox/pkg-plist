@@ -2,3 +2,4 @@ bin/dosbox
 %%PORTDOCS%%share/doc/dosbox/NEWS
 %%PORTDOCS%%share/doc/dosbox/README
 %%PORTDOCS%%@dirrm share/doc/dosbox
+@dirrm share/dosbox
