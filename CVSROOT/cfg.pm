@@ -99,8 +99,10 @@ $MAIL_ON_DIR_CREATION = 0;
 # Remember to comment out if using for other purposes.
 ##############################################################
 ##############################################################
-use Sys::Hostname;		# get hostname() function
-if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
+my $hostname = `/bin/hostname`;
+die "Can't determine hostname!\n" if $? >> 8;
+chomp $hostname;
+if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
 	my $meister;
 
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
