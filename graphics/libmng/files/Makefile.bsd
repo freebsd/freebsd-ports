@@ -1,5 +1,5 @@
 LIB=	mng
-LDADD=	-lm
+LDADD=	-lm -L${LIBDIR} -lz -llcms -ljpeg
 
 NOPROFILE=	yes
 SHLIB_MAJOR?=	1
@@ -8,7 +8,7 @@ SHLIB_MINOR?=	0
 LOBJS!=		make -f ${.CURDIR}/Makefile.in -V libmng_la_OBJECTS
 SRCS=		${LOBJS:.lo=.c}
 
-CFLAGS+=	-I${INCDIR}
+CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS
 
 INCS=		libmng.h libmng_conf.h libmng_types.h
 INCDIR=		${LOCALBASE}/include

@@ -7,7 +7,7 @@
 
 PORTNAME=	libmng
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.3-t.com/libmng/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -26,6 +26,10 @@ INSTALLS_SHLIB=	yes
 
 MAN3=		libmng.3
 MAN5=		mng.5 jng.5
+
+post-patch:
+	${PERL} -pi -e 's%lcms/lcms.h%lcms.h%' ${WRKSRC}/configure \
+		${WRKSRC}/libmng_types.h
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
