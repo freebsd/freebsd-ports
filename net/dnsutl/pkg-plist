@@ -1,7 +1,9 @@
 bin/dns-bootp
 bin/dns-bootparams
+bin/dns-ethers-import
 bin/dns-ethers
 bin/dns-filter
+bin/dns-hosts-import
 bin/dns-hosts
 bin/dns-ng
 bin/dns-rev
