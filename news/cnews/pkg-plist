@@ -5,11 +5,11 @@
 @unexec rm -f /usr/local/newsspool
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
-@rmdir /usr/local/newsspool/in.coming/bad
-@rmdir /usr/local/newsspool/in.coming
-@rmdir /usr/local/newsspool/out.going
-@rmdir /usr/local/newsspool/out.master
-@rmdir /usr/local/newsspool/out.nntp
+@dirrm /usr/local/newsspool/in.coming/bad
+@dirrm /usr/local/newsspool/in.coming
+@dirrm /usr/local/newsspool/out.going
+@dirrm /usr/local/newsspool/out.master
+@dirrm /usr/local/newsspool/out.nntp
 bin/checknews
 bin/cnewsdo
 bin/inews
