@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 WANT_ESOUND=	yes
 

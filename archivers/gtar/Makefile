@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 

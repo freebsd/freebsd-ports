@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xlogout
 USE_IMAKE=	yes

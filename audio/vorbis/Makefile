@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ao.2:${PORTSDIR}/audio/libao \
 		ogg.2:${PORTSDIR}/audio/libogg \

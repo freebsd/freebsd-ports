@@ -10,7 +10,7 @@ PORTVERSION=	1.31
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}

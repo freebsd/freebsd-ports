@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 USE_LIBTOOL=	yes
 

@@ -17,7 +17,7 @@ EXTRACT_SUFX=	-1_ICS.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 

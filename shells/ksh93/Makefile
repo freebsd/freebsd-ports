@@ -10,7 +10,7 @@ VERSION=	2001-07-04.0000
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 
-MAINTAINER=	naddy@mips.inka.de
+MAINTAINER=	naddy@FreeBSD.org
 
 RESTRICTED=	"Source recipient must acknowledge license"
 DISTNAME=	${PORTNAME}-${VERSION}
