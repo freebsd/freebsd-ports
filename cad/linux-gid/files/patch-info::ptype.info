@@ -1,0 +1,14 @@
+--- info/ptype.info.orig	Wed Mar  9 17:25:47 2005
++++ info/ptype.info	Wed Mar  9 17:28:07 2005
+@@ -1,6 +1,11 @@
+ This is Info file ptype.info, produced by Makeinfo version 1.68 from
+ the input file ptype.texinfo.
+ 
++INFO-DIR-SECTION GiD: A graphical pre- and post-processor for numerical simulation programs
++START-INFO-DIR-ENTRY
++* Customization: (gid-ptype).           Creating custom problem types.
++END-INFO-DIR-ENTRY
++
+    Copyright 1997-2000 CIMNE
+ 
+ 

@@ -1,0 +1,14 @@
+--- info/gid.info.orig	Wed Mar  9 17:25:39 2005
++++ info/gid.info	Wed Mar  9 17:28:43 2005
+@@ -1,6 +1,11 @@
+ This is Info file gid.info, produced by Makeinfo version 1.67 from the
+ input file gid.texinfo.
+ 
++INFO-DIR-SECTION GiD: A graphical pre- and post-processor for numerical simulation programs
++START-INFO-DIR-ENTRY
++* Manual: (gid).           How to use GiD.
++END-INFO-DIR-ENTRY
++
+    This is the GiD manual
+ 
+    Copyright 1997-2003 CIMNE
