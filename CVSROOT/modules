@@ -5848,6 +5848,7 @@ pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
 pcf2bdf		ports/x11-fonts/pcf2bdf
 pchar		ports/net/pchar
+pciutils	ports/sysutils/pciutils
 pcl-cvs-emacs	ports/devel/pcl-cvs-emacs
 pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
