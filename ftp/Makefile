@@ -8,6 +8,7 @@
     SUBDIR += cftp
     SUBDIR += curl
     SUBDIR += downloader
+    SUBDIR += emirror
     SUBDIR += ftpcopy
     SUBDIR += ftpfind
     SUBDIR += ftplocate

@@ -1,0 +1,14 @@
+The ECLiPt Mirroring Tool (or EMirror for short) is a full features
+FTP-mirroring software with nice logfiles.
+
+Features:
+   * Mirrors FTP-sites
+   * Gets only the latest version of files (e.g. kernel)
+   * HTML, PHP or Text logfiles (Example)
+   * multi-threaded
+   * Regular expressions for including / excluding files
+   * Mechanisms for not getting really old files
+   * Support for most kinds of ftp-daemons (including EPLF)
+   * Support of re-get
+
+WWW: http://eclipt.uni-klu.ac.at/projects/emirror/
