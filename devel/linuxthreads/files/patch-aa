@@ -13,7 +13,7 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,88 @@
+@@ -1,128 +1,91 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -57,6 +57,9 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +CFLAGS += -DLINUXTHREADS 
 +CFLAGS += -D__USE_UNIX98
 +CFLAGS += -D__USE_XOPEN2K -D_STACK_GROWS_DOWN -DNEWLIBC -D_THREAD_SAFE
++.if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
++CFLAGS += -DLINUXTHREADS_DETECT_UNSAFE_EXIT
++.endif
 +
 +AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
 +
@@ -513,32 +516,38 @@ diff -ru ../../work/linuxthreads-2.2.3/manager.c ./manager.c
        detached = th->p_detached;
        __pthread_unlock(th->p_lock);
        if (detached)
-@@ -834,10 +857,16 @@
+@@ -834,10 +857,20 @@
  
  /* Process-wide exit() */
  
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +extern int __pthread_exit_requested_bymainthread;
 +extern int __pthread_exit_alone;
++#endif
 +
  static void pthread_handle_exit(pthread_descr issuing_thread, int exitcode)
  {
    pthread_descr th;
    __pthread_exit_requested = 1;
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +  __pthread_exit_alone = 1;
 +  if (issuing_thread == __pthread_main_thread)
 +    __pthread_exit_requested_bymainthread = 1;
++#endif
    __pthread_exit_code = exitcode;
    /* Send the CANCEL signal to all running threads, including the main
       thread, but excluding the thread from which the exit request originated
-@@ -846,6 +875,11 @@
+@@ -846,6 +875,13 @@
    for (th = issuing_thread->p_nextlive;
         th != issuing_thread;
         th = th->p_nextlive) {
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +    /* Cancelled thread might have been in critical region unless terminated */
 +    if (th->p_terminated == 0) {
 +      __pthread_exit_alone = 0;
 +      __pthread_exit_code = 1;
 +    }
++#endif
      kill(th->p_pid, __pthread_sig_cancel);
    }
    /* Now, wait for all these threads, so that they don't become zombies
@@ -650,12 +659,14 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
    __ATOMIC_INITIALIZER,       /* struct pthread_atomic p_resume_count */
    0,                          /* char p_woken_by_cancel */
    0,                          /* char p_condvar_avail */
-@@ -185,6 +195,8 @@
+@@ -185,6 +195,10 @@
  /* For process-wide exit() */
  
  int __pthread_exit_requested;
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +int __pthread_exit_requested_bymainthread = 0;
 +int __pthread_exit_alone = 1;
++#endif
  int __pthread_exit_code;
  
  /* Maximum stack size.  */
@@ -816,10 +827,11 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
      __libc_write(__pthread_manager_request,
  		 (char *) &request, sizeof(request));
      suspend(self);
-@@ -768,25 +759,30 @@
+@@ -768,25 +759,34 @@
      if (self == __pthread_main_thread)
        {
  	waitpid(__pthread_manager_thread.p_pid, NULL, __WCLONE);
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +	/*
 +	 * If other threads have been canceled then proper cleanup
 +	 * cannot be performed since a canceled thread might have
@@ -828,9 +840,11 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
 +	 */
 +	if (__pthread_exit_alone == 0)
 +	  _exit(1);
++#endif
  	free (__pthread_manager_thread_bos);
  	__pthread_manager_thread_bos = __pthread_manager_thread_tos = NULL;
        }
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +    /*
 +     * If other threads have been canceled then proper cleanup
 +     * cannot be performed since a canceled thread might have
@@ -841,6 +855,7 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
 +      __pthread_exit_code = 1;
 +      _exit(1);
 +    }
++#endif
    }
  }
  
@@ -860,13 +875,15 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
  
  /* The handler for the RESTART signal just records the signal received
     in the thread descriptor, and optionally performs a siglongjmp
-@@ -818,6 +812,9 @@
+@@ -818,6 +812,11 @@
    if (__builtin_expect (__pthread_exit_requested, 0)) {
      /* Main thread should accumulate times for thread manager and its
         children, so that timings for main thread account for all threads. */
++#ifdef LINUXTHREADS_DETECT_UNSAFE_EXIT
 +    if (self == __pthread_main_thread &&
 +	__pthread_exit_requested_bymainthread != 0)
 +	    return;
++#endif
      if (self == __pthread_main_thread)
        waitpid(__pthread_manager_thread.p_pid, NULL, __WCLONE);
      _exit(__pthread_exit_code);

@@ -90,3 +90,25 @@ set at 20 + 16 * MAXUSERS.
    initializers.  Linking the shared linuxthreads library before any such
    library causes the liblgcc_r.a version of those functions to be used.
    Use liblstdc++ and liblsupc++.
+
+4) Exit handling is broken.
+
+   If the linuxthreads library has been compiled with
+   LINUXTHREADS_DETECT_UNSAFE_EXIT defined in the ports makefile then
+   the library tries to avoid further calls to functions registered
+   with atexit if not called from the main thread or if other threads
+   were active.  Since this implicitly indicates a failure to do
+   proper cleanup, the exit code is then changed to 1.
+
+   If the linuxthreads library has been compiled without
+   LINUXTHREADS_DETECT_UNSAFE_EXIT, then calls to exit() has a
+   slightly higher probability of crashing or hanging the program when
+   other threads are active.  If another thread than the main thread
+   performs the exit call, the exit code will appear to be 0.
+
+   If multiple threads calls exit then the application will likely
+   crash.
+
+   If other threads has been joined by the main thread before it calls
+   exit then exit handling should be fairly safe and the correct exit
+   code can be detected by the parent process.
