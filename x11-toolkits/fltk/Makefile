@@ -7,6 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION?=	${_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
@@ -22,7 +23,7 @@ MAINTAINER?=	demon@FreeBSD.org
 PATCH_VERSION=	20010114
 _PORTVERSION+=	${VERSION}.${PATCH_VERSION}
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-xunicode
 
 PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fltk/
@@ -41,6 +42,8 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LDFLAGS="${PTHREAD_LIBS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 USE_X_PREFIX=	yes
 USE_MESA=	yes
