@@ -947,8 +947,7 @@ MASTER_SITE_WINDOWMAKER+= \
 MASTER_SITE_PORTS_JP+=	\
 	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
-	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
-	ftp://ftp.t-cnet.or.jp/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
+	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
 
 MASTER_SITE_TCLTK+= \
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
