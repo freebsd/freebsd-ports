@@ -257,6 +257,7 @@
     SUBDIR += nemesis
     SUBDIR += net-http
     SUBDIR += net-snmp
+    SUBDIR += net-snmp4
     SUBDIR += net-snmp-tkmib
     SUBDIR += netatalk
     SUBDIR += netcat
