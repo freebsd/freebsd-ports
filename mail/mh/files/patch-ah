@@ -1,0 +1,53 @@
+--- sbr/m_seq.c.dist	Wed Dec  1 12:01:24 1993
++++ sbr/m_seq.c	Mon Feb  3 12:39:31 1997
+@@ -16,7 +16,7 @@
+ 	int mask;
+ 	register int i, j;
+ 	register char *bp;
+-	static char buffer[BUFSIZ*2];	/* for big sequences */
++	static char buffer[BUFSIZ * 4];	/* for big sequences */
+ 
+ 	if (strcmp (current, cp) == 0) {
+ 	    /* assume this is in sync with msgstats["cur"] */
+--- sbr/m_gmsg.c.dist	Wed Dec  1 12:01:24 1993
++++ sbr/m_gmsg.c	Mon Feb  3 12:40:25 1997
+@@ -211,7 +211,7 @@
+             state;
+     register char  *cp;
+     char    name[NAMESZ],
+-            field[BUFSIZ * 2];
++            field[BUFSIZ * 4];
+     register struct node   *np;
+     register    FILE * fp;
+ 
+--- sbr/m_sync.c.dist	Wed Dec  1 12:01:25 1993
++++ sbr/m_sync.c	Mon Feb  3 12:41:21 1997
+@@ -26,7 +26,7 @@
+     register char  *cp;
+     char    flags,
+ 	    attr[BUFSIZ],
+-	    seq[BUFSIZ * 2];
++	    seq[BUFSIZ * 4];
+     register FILE  *fp;
+ #ifndef	BSD42
+     TYPESIG (*hstat) (), (*istat) (), (*qstat) (), (*tstat) ();
+--- uip/vmhsbr.c.dist	Wed Dec  1 12:01:39 1993
++++ uip/vmhsbr.c	Mon Feb  3 12:42:08 1997
+@@ -197,7 +197,7 @@
+ {
+     int     eindex = errno;
+     register char  *bp;
+-    char    buffer[BUFSIZ * 2];
++    char    buffer[BUFSIZ * 4];
+ 
+     (void) sprintf (buffer, fmt, a, b, c, d, e, f);
+     bp = buffer + strlen (buffer);
+@@ -230,7 +230,7 @@
+        *e,
+        *f;
+ {
+-    static char buffer[BUFSIZ * 2];
++    static char buffer[BUFSIZ * 4];
+ 
+     (void) sprintf (buffer, fmt, a, b, c, d, e, f);
+ 
