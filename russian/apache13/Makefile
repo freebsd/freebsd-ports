@@ -9,7 +9,7 @@
 VERSION=	1.3.9
 RA_VERSION=	29.2
 DISTNAME=       apache_${VERSION}
-PKGNAME=        rapache-${VERSION}
+PKGNAME=        ru-apache-${VERSION}
 CATEGORIES=	www russian
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
