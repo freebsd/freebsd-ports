@@ -16,7 +16,11 @@ MAINTAINER=	j.el-rayes@daemon.li
 USE_GMAKE=	yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
+.if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=--disable-openssl
+.endif
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	 --disable-fast-perl \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
