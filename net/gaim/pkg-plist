@@ -55,6 +55,7 @@ share/gnome/pixmaps/gaim/dialogs/gaim_question.png
 share/gnome/pixmaps/gaim/dialogs/gaim_warning.png
 share/gnome/pixmaps/gaim/icons/away.png
 share/gnome/pixmaps/gaim/icons/connect.png
+share/gnome/pixmaps/gaim/icons/info.png
 share/gnome/pixmaps/gaim/icons/msgpend.png
 share/gnome/pixmaps/gaim/icons/msgunread.png
 share/gnome/pixmaps/gaim/icons/offline.png
@@ -255,6 +256,7 @@ share/gnome/pixmaps/gaim/status/default/secure.png
 share/gnome/pixmaps/gaim/status/default/trepia.png
 share/gnome/pixmaps/gaim/status/default/wireless.png
 share/gnome/pixmaps/gaim/status/default/yahoo.png
+share/gnome/pixmaps/gaim/status/default/zephyr.png
 share/gnome/pixmaps/gaim/tb_drag_arrow_down.xpm
 share/gnome/pixmaps/gaim/tb_drag_arrow_left.xpm
 share/gnome/pixmaps/gaim/tb_drag_arrow_right.xpm
