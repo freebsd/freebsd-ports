@@ -2008,6 +2008,7 @@ hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
 hdf		ports/graphics/hdf
+he2		ports/hebrew/he2
 head		src/usr.bin/head
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
