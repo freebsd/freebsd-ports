@@ -1,0 +1,21 @@
+%%JAVADIR%%/jlex/CAccept.class
+%%JAVADIR%%/jlex/CAcceptAnchor.class
+%%JAVADIR%%/jlex/CAlloc.class
+%%JAVADIR%%/jlex/CBunch.class
+%%JAVADIR%%/jlex/CDTrans.class
+%%JAVADIR%%/jlex/CDfa.class
+%%JAVADIR%%/jlex/CEmit.class
+%%JAVADIR%%/jlex/CError.class
+%%JAVADIR%%/jlex/CInput.class
+%%JAVADIR%%/jlex/CLexGen.class
+%%JAVADIR%%/jlex/CMakeNfa.class
+%%JAVADIR%%/jlex/CMinimize.class
+%%JAVADIR%%/jlex/CNfa.class
+%%JAVADIR%%/jlex/CNfa2Dfa.class
+%%JAVADIR%%/jlex/CNfaPair.class
+%%JAVADIR%%/jlex/CSet.class
+%%JAVADIR%%/jlex/CSpec.class
+%%JAVADIR%%/jlex/CUtility.class
+%%JAVADIR%%/jlex/JavaLexBitSet.class
+%%JAVADIR%%/jlex/Main.class
+@dirrm %%JAVADIR%%/jlex
