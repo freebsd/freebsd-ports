@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Round Robin Database Tools
 
 USE_PERL5=	yes
 MAKE_ENV+=	PERL=${PERL}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
 DISTNAME=	${PORTNAME}-2.1pre7
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Lynx-like text WWW browser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-javascript --with-ssl --without-svgalib

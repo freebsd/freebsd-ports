@@ -15,6 +15,7 @@ MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	The multi-router traffic grapher
 
 .if defined(WITH_GD2)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
