@@ -65,4 +65,10 @@ cert:
 	@(cd ${WRKSRC}/tools/; make stunnel.pem)
 	${INSTALL} -m 600 ${WRKSRC}/tools/stunnel.pem ${PEM_DIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		Bus error with OpenSSL in -CURRENT, under investigation
+.endif
+
+.include <bsd.port.post.mk>
