@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sced
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,10 +22,10 @@ MAN1=		sced.1
 do-install:
 	${INSTALL_PROGRAM}  ${WRKSRC}/sced ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/sced.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/lib/sced
-	${INSTALL_DATA} ${WRKSRC}/scenerc ${PREFIX}/lib/sced
+	@${MKDIR} ${PREFIX}/share/sced
+	${INSTALL_DATA} ${WRKSRC}/scenerc ${PREFIX}/share/sced/sample.scenerc
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sced
+	@${MKDIR} ${PREFIX}/share/doc/sced
 	${INSTALL_DATA} ${WRKSRC}/docs/guide.* ${PREFIX}/share/doc/sced
 .endif
 
