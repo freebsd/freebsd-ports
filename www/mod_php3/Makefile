@@ -20,6 +20,8 @@ PATCHFILES=	mime.c.diff-3.0.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT?=	PHP3 module for Apache
 
+BROKEN=		"Conflicting dependencies (mysql 3.x and 4.x)"
+
 .if !defined(STANDALONE)
 USE_APACHE=	yes
 .endif
