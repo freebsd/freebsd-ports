@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	libgda
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.10
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libgda
+MASTER_SITE_SUBDIR=	stable/sources/gnome-db
 
 MAINTAINER=	gnome@FreeBSD.org
 
-USE_GNOME=	yes
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
+		gdbm.2:${PORTSDIR}/databases/gdbm
+
+USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|share/idl|share/gnome/idl|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
