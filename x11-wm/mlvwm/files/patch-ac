@@ -1,5 +1,5 @@
---- configure.h.orig	Fri Feb  6 07:16:26 1998
-+++ configure.h	Wed Mar 11 15:25:30 1998
+--- configure.h.orig	Fri Dec 18 17:59:21 1998
++++ configure.h	Fri Dec 18 18:00:53 1998
 @@ -33,7 +33,7 @@
  #ifdef MlvwmLibDir
      MLVWMLIBDIR = MlvwmLibDir
@@ -9,13 +9,7 @@
  #endif
  
  #ifndef HasLocale
-@@ -69,12 +69,12 @@
- #endif
- 
- XCOMM 
--      CDEBUGFLAGS = -g -Wall -Wshadow
-+      CDEBUGFLAGS += -Wall -Wshadow
- XCOMM            CDEBUGFLAGS = -O2 -Wall
+@@ -74,7 +74,7 @@
  XCOMM            CDEBUGFLAGS = -g -Wall
  XCOMM            CDEBUGFLAGS = -g
  
