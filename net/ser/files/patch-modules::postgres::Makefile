@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- modules/postgres/Makefile.orig	Wed Jul 30 19:34:46 2003
++++ modules/postgres/Makefile	Wed Sep 10 19:40:11 2003
+@@ -7,7 +7,7 @@
+ NAME=postgres.so
+ 
+ # libpq-fe.h locations
+-DEFS +=-I/usr/local/pgsql/include -I/usr/include/postgresql
++DEFS +=-I$(LOCALBASE)/pgsql/include -I/usr/include/postgresql
+ LIBS=-L$(LOCALBASE)/pgsql/lib -L$(LOCALBASE)/lib/pgsql -L/usr/pkg/lib \
+ 		-L/usr/pkg/lib/pgsql -lpq
+ 
