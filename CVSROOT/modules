@@ -428,6 +428,7 @@ avrprog		ports/devel/avrprog
 awele		ports/games/awele
 awk		src/gnu/usr.bin/awk
 awka		ports/lang/awka
+awstats		ports/www/awstats
 axe		ports/editors/axe
 axel		ports/ftp/axel
 axpoint		ports/print/axpoint
