@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.38
-PORTREVISION=	1
+PORTVERSION=	1.40
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
@@ -36,7 +35,7 @@ USE_GCC=	3.2
 
 HOSTTYPE!=	${UNAME} -s
 
-post-patch:
+pre-configure:
 	@${MV} ${WRKSRC}/src/Makefile-linux ${WRKSRC}/src/Makefile-${HOSTTYPE}
 	@${MV} ${WRKSRC}/src/Makefile-linux.orig ${WRKSRC}/src/Makefile-linux
 

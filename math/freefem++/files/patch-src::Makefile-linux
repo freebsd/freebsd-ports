@@ -1,7 +1,8 @@
---- src/Makefile-linux.orig	Fri Jan  9 09:17:19 2004
-+++ src/Makefile-linux	Sat Jan 10 17:52:42 2004
-@@ -1,18 +1,18 @@
--LIBLOCAL = -ldl # for dlopen (see load.cpp and man dlopen)
+--- src/Makefile-linux.orig	Tue Feb 10 13:23:56 2004
++++ src/Makefile-linux	Thu May  6 21:52:05 2004
+@@ -1,19 +1,18 @@
+-LIBLOCAL = -ldl  -rdynamic  # for dlopen (see load.cpp)
+-# for dlopen (see load.cpp and man dlopen)
 -LIBX11= -L/usr/X11R6/lib -lX11 -lm 
 -INCLUDEX11 = /usr/X11R6/include
 -CXX=g++      #C++ compiler 
@@ -29,7 +30,7 @@
  # ------------------------------
  # compilation flags of FreeFem++ 
  # ------------------------------
-@@ -31,7 +31,7 @@
+@@ -32,7 +31,7 @@
  # ---------------------------
  #  install and compile dir.
  # ----------------------

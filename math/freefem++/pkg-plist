@@ -98,6 +98,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-gc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-no-overlap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-overlap.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparce-matrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
