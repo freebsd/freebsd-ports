@@ -2,7 +2,10 @@
 
 ####################################################################
 ####################################################################
-# This file contains configuration for the CVSROOT perl scripts.
+# This file contains the default configuration for the CVSROOT
+# perl scripts.  You are advised to override the configuration
+# in the cfg_local.pm file instead of here.
+#
 # WARNING: You are strongly advised to check for syntax errors
 # in this file before committing it.  Use: perl -cw cfg.pm
 ####################################################################
