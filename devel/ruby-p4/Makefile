@@ -18,6 +18,8 @@ COMMENT=	Ruby interface to the Perforce API
 
 EXTRACT_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
 
+BROKEN=		"Does not compile"
+
 USE_RUBY=	yes
 
 P4APIVER=	2003.01
