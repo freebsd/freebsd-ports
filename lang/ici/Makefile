@@ -17,6 +17,7 @@ MAKEFILE=	Makefile.bsd
 MAN1=		ici3.1
 MANCOMPRESSED=	yes
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 ICIHDRS=	alloc.h array.h buf.h catch.h cfunc.h conf-bsd.h exec.h file.h \
@@ -30,9 +31,8 @@ ICIDOCS=	doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's/float_t/floats_t/g' ${WRKSRC}/*
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} libici3.a
