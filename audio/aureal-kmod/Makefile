@@ -46,8 +46,8 @@ BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
 PORTVERSION=	1.1
 PORTREVISION=	3
 
-.elif ${OSVERSION} < 500000
-# FreeBSD 4.2
+.elif ${OSVERSION} < 440000
+# FreeBSD 4.2, 4.3
 PORTVERSION=    1.3
 
 .if ${VERSION_SOUND_C_STABLE} < 4
@@ -55,10 +55,16 @@ PORTVERSION=    1.3
 PORTREVISION=	1
 
 .else
-# FreeBSD 4.2 after kobj MFC
+# FreeBSD 4.2 after kobj MFC, FreeBSD 4.3
 PORTREVISION=	2
 MAKE_ENV+=	HAVE_KOBJ_PCM=1
 .endif
+
+.elif ${OSVERSION} < 500000
+# FreeBSD 4.4
+PORTVERSION=	1.3
+PORTREVISION=	3
+MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .endif
 
