@@ -28,7 +28,7 @@ MASTER_SITES=	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/gs650/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/ghost/aladdin/fonts/
 # note: russian mirror isn't up to date
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV} ${PCL3_SRC} \
+		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
 		${HP970_DRV} ${GPRINT_SRC}
 EXTRACT_ONLY=	${GS_SOURCES}
 
