@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Feb 19 17:56:06 2000
-+++ Makefile.in	Sat Feb 19 17:57:05 2000
-@@ -111,7 +111,7 @@
+--- Makefile.am.orig	Sat Feb 19 17:55:58 2000
++++ Makefile.am	Sat Feb 19 17:56:24 2000
+@@ -2,7 +2,7 @@
  
  SUBDIRS = lib objects plug-ins shapes intl app samples po sheets
  
@@ -9,7 +9,7 @@
  
  pkgdata_DATA = dia_logo.png
  man_MANS = dia.1
-@@ -119,7 +119,7 @@
+@@ -10,7 +10,7 @@
  pixmapdir = $(gnomedatadir)/pixmaps
  pixmap_DATA = dia_gnome_icon.png dia-diagram.png
  
@@ -17,4 +17,4 @@
 +Applicationsdir = $(gnomedatadir)/apps/Applications
  Applications_DATA = dia.desktop
  
- mimedir = $(gnomedatadir)/mime-info
+ dia.keys: $(srcdir)/dia.keys.in Makefile

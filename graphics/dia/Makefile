@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	dia-0.83
+DISTNAME=	dia-0.84
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
@@ -23,8 +23,6 @@ USE_X_PREFIX=   yes
 USE_LIBTOOL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
