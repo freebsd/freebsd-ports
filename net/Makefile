@@ -627,6 +627,7 @@
     SUBDIR += rrdtool
     SUBDIR += rshell
     SUBDIR += rsync
+    SUBDIR += rtg
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-jabber4r
