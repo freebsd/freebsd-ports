@@ -18,6 +18,7 @@ MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+RUN_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd
 
 # The mmpython folks keep changing their release naming scheme.
 #WRKSRC=		${WRKDIR}/${PORTNAME}
