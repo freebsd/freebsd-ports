@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/xfce4/panel-plugins/libclipman.so
+lib/xfce4/panel-plugins/libclipman.la
+lib/xfce4/panel-plugins/libclipman.a
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
