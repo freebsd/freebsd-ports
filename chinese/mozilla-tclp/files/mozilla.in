@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export LANG; LANG=zh_TW.Big5
+export LC_CTYPE; LC_CTYPE=zh_TW.Big5
+export LC_ALL; LC_ALL=zh_TW.Big5
+
+cd @PREFIX@/lib/mozilla
+exec ./mozilla $@
