@@ -1,5 +1,5 @@
---- src/calclib/Calculator.cc.orig	Sun Aug 29 17:22:28 2004
-+++ src/calclib/Calculator.cc	Sun Aug 29 17:27:37 2004
+--- src/libqalculate/Calculator.cc.orig	Sun Aug 29 17:22:28 2004
++++ src/libqalculate/Calculator.cc	Sun Aug 29 17:27:37 2004
 @@ -225,7 +225,7 @@
  
  	saved_locale = strdup(setlocale(LC_NUMERIC, NULL));
