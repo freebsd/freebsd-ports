@@ -1,5 +1,17 @@
-*** Docs/tracker.texinfo.orig	Thu Apr 11 21:21:05 1996
---- Docs/tracker.texinfo	Tue Nov 12 07:08:17 1996
+*** Docs/tracker.texinfo.orig	Fri Apr 12 02:21:05 1996
+--- Docs/tracker.texinfo	Wed Dec 29 05:52:39 1999
+***************
+*** 3,8 ****
+--- 3,11 ----
+  @setfilename tracker.info
+  @set VERSION 4.44
+  @settitle Tracker @value{VERSION} 
++ @direntry
++ * Tracker: (tracker).		SoundTracker player.
++ @end direntry
+  @c End of header
+  @set EMAIL Marc.Espie@@ens.fr
+  @set POSTAL Marc Espie@*60 rue du 4 septembre@*87100 Limoges@*France
 ***************
 *** 979,992 ****
   * Other Architectures: Porting tracker.
@@ -16,7 +28,7 @@
   @subsection Amiga
   
   There is currently one Amiga version running under AmigaDos. 
---- 979,992 ----
+--- 982,995 ----
   * Other Architectures: Porting tracker.
   @end menu
   
