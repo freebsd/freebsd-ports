@@ -9327,6 +9327,7 @@ web2ldap	ports/www/web2ldap
 web500gw	ports/www/web500gw
 webalizer	ports/www/webalizer
 webalizer2	ports/polish/webalizer2
+webbench	ports/benchmarks/webbench
 webcheck	ports/www/webcheck
 webcopy		ports/www/webcopy
 webcpp		ports/www/webcpp
