@@ -6,8 +6,7 @@ any further work. To utilize the PAM support, however,
 you must perform the following:
 
 On 4.x:
-  cp %%EXAMPLESDIR%%/gnomesu-pam.4.x.sample \
-  	/etc/pam.d/gnomesu-pam
+  cat %%EXAMPLESDIR%%/gnomesu-pam.4.x.sample >> /etc/pam.conf
 
 On 5.x:
   cp %%EXAMPLESDIR%%/gnomesu-pam.5.x.sample \
