@@ -9,23 +9,3 @@
  use constant DEBUG_LEVEL	=> 3;		# 0 - quiet, 1 - essential, 2 - verbose
  use constant LOCAL_DIR		=> '';		# local directory to put files into. Leave it empty to put in the current directory. Slash (/, if not empty) in the end required.
  use constant HTTP_PROXY		=> '';		# set proxy URL if you use http proxy
-@@ -84,9 +84,6 @@
- use File::Path;
- use File::Basename;
- use File::Find;
--if (UTF8_DECODE) {
--	use Unicode::MapUTF8 qw(from_utf8);
--}
- use Compress::Zlib;
- use Getopt::Std;
- #use Data::Dumper;
-@@ -104,6 +101,9 @@
- 
- # steal options from @ARGV before we go for users
- getopts('rmacxXOIUu:p:d:i:');
-+if (UTF8_DECODE || $opt_U) {
-+	use Unicode::MapUTF8 qw(from_utf8);
-+}
- $opt_i = SAVE_PICS if (!$opt_i);
- 
- usage() && exit unless (@ARGV || ($opt_u && $opt_X));
