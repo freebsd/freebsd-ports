@@ -1,0 +1,136 @@
+--- configure.orig	Thu May  1 23:30:59 2003
++++ configure	Fri May  2 15:59:58 2003
+@@ -70925,29 +70925,6 @@
+   else
+     
+   
+-  case cs in
+-  c|c_r|pthread*) ;;
+-  *) 
+-    if test "$ext_shared" = "yes"; then
+-        SYBASE_CT_SHARED_LIBADD="-lcs $SYBASE_CT_SHARED_LIBADD" 
+-    else
+-      
+-  
+-  case cs in
+-  c|c_r|pthread*) ;;
+-  *) 
+-      LIBS="-lcs $LIBS" 
+-   ;;
+-  esac
+-
+-
+-    fi
+-   ;;
+-  esac
+-
+-
+-    
+-  
+   case ct in
+   c|c_r|pthread*) ;;
+   *) 
+@@ -70971,52 +70948,7 @@
+ 
+     
+   
+-  case comn in
+-  c|c_r|pthread*) ;;
+-  *) 
+-    if test "$ext_shared" = "yes"; then
+-        SYBASE_CT_SHARED_LIBADD="-lcomn $SYBASE_CT_SHARED_LIBADD" 
+-    else
+-      
+-  
+-  case comn in
+-  c|c_r|pthread*) ;;
+-  *) 
+-      LIBS="-lcomn $LIBS" 
+-   ;;
+-  esac
+-
+-
+-    fi
+-   ;;
+-  esac
+-
+-
+-    
+-  
+-  case intl in
+-  c|c_r|pthread*) ;;
+-  *) 
+-    if test "$ext_shared" = "yes"; then
+-        SYBASE_CT_SHARED_LIBADD="-lintl $SYBASE_CT_SHARED_LIBADD" 
+-    else
+-      
+-  
+-  case intl in
+-  c|c_r|pthread*) ;;
+-  *) 
+-      LIBS="-lintl $LIBS" 
+-   ;;
+-  esac
+-
+-
+-    fi
+-   ;;
+-  esac
+-
+-
+-  
+-    SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lcs -lct -lcomn -lintl"
++    SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lct"
+   
+     
+   save_old_LDFLAGS=$LDFLAGS
+@@ -71086,37 +71018,6 @@
+ 
+     
+   
+-else
+-  echo "$ac_t""no" 1>&6
+-
+-    LDFLAGS=$save_old_LDFLAGS
+-    unset ac_cv_func_tcl
+-     
+-      
+-  
+-  case sybtcl in
+-  c|c_r|pthread*) ;;
+-  *) 
+-    if test "$ext_shared" = "yes"; then
+-        SYBASE_CT_SHARED_LIBADD="-lsybtcl $SYBASE_CT_SHARED_LIBADD" 
+-    else
+-      
+-  
+-  case sybtcl in
+-  c|c_r|pthread*) ;;
+-  *) 
+-      LIBS="-lsybtcl $LIBS" 
+-   ;;
+-  esac
+-
+-
+-    fi
+-   ;;
+-  esac
+-
+-
+-    
+-  
+ fi
+ 
+   
+@@ -84050,10 +83951,7 @@
+ CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
+ 
+ all_targets='$(OVERALL_TARGET) $(PHP_MODULES) $(PHP_CLI_TARGET)'
+-install_targets="install-sapi install-modules $install_pear install-build install-headers install-programs"
+-if test "$PHP_SAPI" != "cgi"; then
+-  install_targets="$PHP_INSTALL_CLI_TARGET $install_targets"
+-fi
++install_targets="install-sapi $PHP_INSTALL_CLI_TARGET install-modules $install_pear install-build install-headers install-programs"
+ 
+ 
+   PHP_VAR_SUBST="$PHP_VAR_SUBST all_targets"
