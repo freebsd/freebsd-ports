@@ -102,6 +102,7 @@
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint
+    SUBDIR += clisp-hyperspec
     SUBDIR += clo++
     SUBDIR += cmake
     SUBDIR += codecrusader
