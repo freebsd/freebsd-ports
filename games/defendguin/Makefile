@@ -21,4 +21,6 @@ MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		MKDIR="${MKDIR}" \
 		TAR="${TAR}"
 
+MAN6=		defendguin.6
+
 .include <bsd.port.mk>

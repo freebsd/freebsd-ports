@@ -19,6 +19,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		cvsgraph.1
+MAN5=		cvsgraph.conf.5
 
 USE_BISON=	yes
 ALL_TARGET=	cvsgraph
