@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yawho
 
     SUBDIR += LPRng
     SUBDIR += abck
@@ -23,7 +22,7 @@
     SUBDIR += clockspeed
     SUBDIR += colorize
     SUBDIR += comconsole
-    SUBDIR += consolehm 
+    SUBDIR += consolehm
     SUBDIR += contool
     SUBDIR += copytape
     SUBDIR += cpbk
@@ -124,17 +123,17 @@
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += pslist
-    SUBDIR += pstree
     SUBDIR += psmisc
+    SUBDIR += pstree
     SUBDIR += pwgen
     SUBDIR += pyfind
     SUBDIR += qtpkg
     SUBDIR += rdate
-    SUBDIR += rotate
-    SUBDIR += rtty
     SUBDIR += readlink
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += rotate
+    SUBDIR += rtty
     SUBDIR += ruby-application.rb
     SUBDIR += ruby-quota
     SUBDIR += ruby-syslog
@@ -203,5 +202,6 @@
     SUBDIR += xw
     SUBDIR += xwatch
     SUBDIR += xwipower
+    SUBDIR += yawho
 
 .include <bsd.port.subdir.mk>

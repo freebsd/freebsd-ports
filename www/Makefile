@@ -1,9 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zope-guf
-    SUBDIR += zope-zmysqlda
-    SUBDIR += zope-zpt
-    SUBDIR += zope-zwiki
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
@@ -13,14 +9,14 @@
     SUBDIR += amyc
     SUBDIR += analog
     SUBDIR += aolserver
+    SUBDIR += apache-contrib
+    SUBDIR += apache-jserv
     SUBDIR += apache13
+    SUBDIR += apache13+ipv6
     SUBDIR += apache13-fp
     SUBDIR += apache13-modssl
     SUBDIR += apache13-ssl
-    SUBDIR += apache13+ipv6
     SUBDIR += apache2
-    SUBDIR += apache-contrib
-    SUBDIR += apache-jserv
     SUBDIR += arena
     SUBDIR += aria
     SUBDIR += ashe           # requires Motif
@@ -32,10 +28,10 @@
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
-    SUBDIR += bsdi-netscape47-communicator
-    SUBDIR += bsdi-netscape47-navigator
     SUBDIR += bmsync
     SUBDIR += boa
+    SUBDIR += bsdi-netscape47-communicator
+    SUBDIR += bsdi-netscape47-navigator
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += cgi-lib
@@ -168,8 +164,8 @@
     SUBDIR += mod_zap
     SUBDIR += momspider
     SUBDIR += mozilla
-    SUBDIR += mozilla-embedded
     SUBDIR += mozilla+ipv6
+    SUBDIR += mozilla-embedded
     SUBDIR += mozilla-headers
     SUBDIR += neon
     SUBDIR += netraider
@@ -182,8 +178,8 @@
     SUBDIR += netscape4-navigator
     SUBDIR += netscape47-communicator
     SUBDIR += netscape47-navigator
-    SUBDIR += nscache
     SUBDIR += npc
+    SUBDIR += nscache
     SUBDIR += nspostgres
     SUBDIR += oops
     SUBDIR += openvrml
@@ -325,5 +321,9 @@
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-cmf
+    SUBDIR += zope-guf
+    SUBDIR += zope-zmysqlda
+    SUBDIR += zope-zpt
+    SUBDIR += zope-zwiki
 
 .include <bsd.port.subdir.mk>

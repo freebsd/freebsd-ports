@@ -1,7 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += vnxfonts
-    SUBDIR += vntex
 
     SUBDIR += libviet
     SUBDIR += vn7to8
@@ -12,6 +10,7 @@
     SUBDIR += vnpstext
     SUBDIR += vnroff
     SUBDIR += vnterm
-
+    SUBDIR += vntex
+    SUBDIR += vnxfonts
 
 .include <bsd.port.subdir.mk>

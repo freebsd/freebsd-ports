@@ -87,7 +87,6 @@
     SUBDIR += offix-printer
     SUBDIR += p5-GnomePrint
     SUBDIR += p5-Text-PDF
-    SUBDIR += pnm2ppa
     SUBDIR += panda
     SUBDIR += pcal
     SUBDIR += pclprint
@@ -118,6 +117,7 @@
     SUBDIR += pkfonts360
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
+    SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += pscal
     SUBDIR += pstotext

@@ -69,10 +69,10 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
+    SUBDIR += dhcpconf
     SUBDIR += dhcpdump
     SUBDIR += dhcping
     SUBDIR += dhid
-    SUBDIR += dhcpconf
     SUBDIR += dhisd
     SUBDIR += dictd
     SUBDIR += dictd-database
@@ -441,8 +441,8 @@
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
-    SUBDIR += xsmbrowser
     SUBDIR += xprobe
+    SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xtradius
     SUBDIR += xwhois
