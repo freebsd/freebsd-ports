@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gensig
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.geeks.com/~robf/ware/gensig/ \
 		http://www.ooblick.com/software/gensig/
