@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dns_balance
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	DNS-Balance-${PORTVERSION}
