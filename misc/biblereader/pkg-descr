@@ -1,0 +1,14 @@
+BibleReader is a Bible browsing/searching program for Linux/X. It uses
+the popular Gtk+ widget set. Currently, BibleReader has the capacity to
+find a passage by reference, search for a phrase using regular
+expressions, and has a filter which enables searches to be limited to a
+selection of books. BibleReader comes with the King James Version
+(otherwise known as the Authorised Version) of the Bible. The BibleReader
+program is distributed under the GNU General Public License. The actual
+Bible text that is currently packaged with BibleReader (i.e. the KJV text
+of the Bible) is not copyrighted, as it's copyright has expired.
+
+WWW: http://www.whitevine.com/biblereader/
+
+- Patrick Seal
+patseal@hyperhost.net

@@ -1,0 +1,3 @@
+bin/biblereader
+share/biblereader/kjv.txt
+@dirrm share/biblereader
