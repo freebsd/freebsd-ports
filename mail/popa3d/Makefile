@@ -32,11 +32,15 @@ pre-configure:
 	@${ECHO_CMD} "share/sendmail/cf/hack/popauth.m4" >>${PLIST}
 
 post-patch:
-	@${PERL5} -pi -e "s=db1/db.h=db.h=" ${WRKSRC}/pop_root.c
+	@${MV} ${WRKSRC}/pop_root.c ${WRKSRC}/pop_root.c.sed
+	${SED} -e "s=db1/db.h=db.h=" \
+		${WRKSRC}/pop_root.c.sed > ${WRKSRC}/pop_root.c
 .endif
 
 pre-patch:
-	@${PERL5} -pi -e "s=/var/empty=${PREFIX}/empty=" ${WRKSRC}/params.h
+	@${MV} ${WRKSRC}/params.h ${WRKSRC}/params.h.sed
+	${SED} -e "s=/var/empty=${PREFIX}/empty=" \
+		${WRKSRC}/params.h.sed > ${WRKSRC}/params.h
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

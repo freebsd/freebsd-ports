@@ -19,9 +19,10 @@ SAMPLEFILES=	sma.conf
 ALL_TARGET=	sma
 
 do-configure:
-	${PERL} -pi -e "s,CC	=,CC?=," ${WRKSRC}/Makefile
-	${PERL} -pi -e "s,CFLAGS	= -Wall -O,CFLAGS+= ," \
-		${WRKSRC}/Makefile
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.sed
+	${SED} -e "s,CC	=,CC?=	," \
+		-e "s,CFLAGS	= -Wall -O,CFLAGS+=	," \
+		${WRKSRC}/Makefile.sed > ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sma ${PREFIX}/bin/sma

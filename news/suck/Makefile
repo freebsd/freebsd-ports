@@ -31,18 +31,20 @@ BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .include <bsd.port.pre.mk>
 
 .if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
-.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
 .endif
 
 post-patch:
-	@${PERL5} -pi -e "s=/usr/local/=${LOCALBASE}/=" ${WRKSRC}/Makefile.in
-	@${PERL5} -pi -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
-		${WRKSRC}/suck_config.h
-	@${PERL5} -pi -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
-		${WRKSRC}/suck_config.h
+	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.sed
+	${SED} -e "s=/usr/local/=${LOCALBASE}/=" \
+		${WRKSRC}/Makefile.in.sed > ${WRKSRC}/Makefile.in
+	@${MV} ${WRKSRC}/suck_config.h ${WRKSRC}/suck_config.h.sed
+	${SED} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
+		-e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
+		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
 
 .if !defined(NOPORTDOCS)
 post-install:

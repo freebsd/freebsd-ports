@@ -60,12 +60,20 @@ PLIST_SUB+=	WITH_TCL="@comment "
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${PERL5} -pi -e "s/= tclsh/=tclsh${TCL_V}/" \
-		${WRKSRC}/../unix/Makefile.in
-	@${PERL5} -pi -e "s=doc/==" ${WRKSRC}/../MetaKit.html
+	@${MV} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../MetaKit.html.sed
+	${SED} -e "s=doc/==" \
+		${WRKSRC}/../MetaKit.html.sed > ${WRKSRC}/../MetaKit.html
+.if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
+	@${MV} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
+	${SED} -e "s/= tclsh/=tclsh${TCL_V}/" \
+		${WRKSRC}/../unix/Makefile.in.sed \
+		> ${WRKSRC}/../unix/Makefile.in
+.endif
 .if defined(METAKIT_WITH_PYTHON)
-	${PERL5} -pi -e "s=python2.2=${PYTHON_VERSION}=" \
-		${WRKSRC}/../unix/Makefile.in
+	@${MV} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
+	${SED} -e "s=python2.2=${PYTHON_VERSION}=" \
+		${WRKSRC}/../unix/Makefile.in.sed \
+		> ${WRKSRC}/../unix/Makefile.in
 .endif
 
 post-install:

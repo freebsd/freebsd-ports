@@ -83,9 +83,11 @@ post-extract:
 		> ${WRKSRC}/sendmail.sh
 
 do-configure:
-	${PERL} -pi -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
-			${WRKSRC}/devtools/OS/FreeBSD
-	${PERL} -pi -e "s,\`-O\',\`${CFLAGS}\'," ${WRKSRC}/devtools/OS/FreeBSD
+	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
+	${SED} -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
+		-e "s,\`-O\',\`${CFLAGS}\'," \
+		${WRKSRC}/devtools/OS/FreeBSD.sed \
+		> ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 

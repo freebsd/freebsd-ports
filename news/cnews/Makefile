@@ -86,7 +86,7 @@ pre-configure:
 		-e "s=/var/news/over.view=${NEWSOV}=" \
 		-e "s=/var/news=${NEWSARTS}=" \
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
-		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 
 do-install:

@@ -19,8 +19,9 @@ MAN8=		ifmail.8 iftoss.8
 
 .if defined(IFMAIL_RUNAS)
 pre-configure:
-	@${PERL5} -pi -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \
-		${WRKSRC}/CONFIG
+	@${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.sed
+	${SED} -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \
+		${WRKSRC}/CONFIG.sed > ${WRKSRC}/CONFIG
 .endif
 
 pre-install:
