@@ -1,0 +1,11 @@
+--- xkbctrl.c.org	Sun Jan  9 22:51:02 2000
++++ xkbctrl.c	Sun Jan  9 22:51:21 2000
+@@ -27,7 +27,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <values.h>
++#include <limits.h>
+ #include <ctype.h>
+ #include <X11/Xos.h>
+ #include <X11/Xlib.h>
