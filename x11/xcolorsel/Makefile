@@ -12,7 +12,9 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTNAME=		${PKGNAME}-src
 
-MAINTAINER=	wayne@crb-web.com
+MAINTAINER=	freebsd-ports@freebsd.org
+
+BROKEN=		This port is broken and needs a new maintainer
 
 WRKSRC=		$(WRKDIR)/xcolorsel
 
