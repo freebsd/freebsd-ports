@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	bincimap
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 		http://www.bincimap.andreas.hanssen.name/%SUBDIR%/ \
