@@ -2,7 +2,7 @@
 +++ Makefile	Fri Oct 10 20:52:22 1997
 @@ -26,14 +26,15 @@
  
- CBB_ROOT = cbb-0.73
+ CBB_ROOT = cbb-0.74
  TAR = tar
 -PERL = perl
 +PERL = ${PERL5}
@@ -14,7 +14,7 @@
  install:
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${PREFIX} --libdir ${PREFIX}/lib/cbb  \
-+		--perlpath ${PERL5} --wishpath ${PREFIX}/bin/wish4.2
++		--perlpath ${PERL5} --wishpath ${PREFIX}/bin/wish8.0
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \
