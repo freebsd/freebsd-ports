@@ -1,0 +1,14 @@
+The KnowledgeKit provides a mechanism for the automatic creation and
+maintenance of Knowledge Bases as well as FAQs. It provides a standard view
+that integrates with the overall site Zope.
+
+Latest Additions:
+  * An example folder
+  * Anonymous User FAQ Addiitons
+  * FAQ moderation support
+  * Knowledge Base Items can have support files
+  * Default views
+  * ZCatalog Awareness
+  * Simple How-To Object
+
+WWW:	http://www.zope.org/Members/Bill/Products/KnowledgeKit/
