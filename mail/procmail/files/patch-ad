@@ -1,0 +1,19 @@
+*** src/recommend.c.bak	Wed Apr  2 07:15:45 1997
+--- src/recommend.c	Tue Jun 17 09:29:02 1997
+***************
+*** 52,58 ****
+    else if(chmdir==1)
+       goto nogchmod;
+    if(chmdir)
+!      printf("chmod %c+w %s.\n",chmdir==1?'g':'a',mailspooldir);
+  nogchmod:
+    return EXIT_SUCCESS;
+  }
+--- 52,58 ----
+    else if(chmdir==1)
+       goto nogchmod;
+    if(chmdir)
+!      printf("chmod %c+w %s\n",chmdir==1?'g':'a',mailspooldir);
+  nogchmod:
+    return EXIT_SUCCESS;
+  }
