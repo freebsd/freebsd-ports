@@ -11,7 +11,10 @@ PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
-		${MASTER_SITE_RINGSERVER}
+		${MASTER_SITE_RINGSERVER} \
+		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
+		ftp://ftp.po.opole.pl/pub/unix/net/tools/mrtg/ \
+		ftp://ftp.ujf-grenoble.fr/mirror/networking/mrtg/
 MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
