@@ -3,7 +3,7 @@
 # Date created:         18 November 1997
 # Whom:                 Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/20 13:44:30 itojun Exp $
+# $Id: Makefile,v 1.2 1997/11/21 17:50:07 asami Exp $
 #
 
 DISTNAME=       ttt-0.4.1
@@ -12,9 +12,10 @@ MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=     itojun@itojun.org
 
-LIB_DEPENDS=	BLT:${PORTSDIR}/x11/blt
-
-BROKEN=		tk.h
+# the tcl/tk LIB_DEPENDS has to match that of ports/x11/blt.
+LIB_DEPENDS=	BLT:${PORTSDIR}/x11/blt \
+		tcl75:${PORTSDIR}/lang/tcl75 \
+		tk41\\.1:${PORTSDIR}/x11/tk41
 
 INSTALL_TARGET=	install install-man
 MAN1=		ttt.1 tttprobe.1 tttview.1
