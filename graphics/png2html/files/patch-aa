@@ -1,10 +1,11 @@
---- Makefile.orig	Thu Nov 11 11:27:38 1999
-+++ Makefile	Thu Nov 11 19:00:05 1999
+--- Makefile.orig	Sat Nov 13 14:42:36 1999
++++ Makefile	Sat Feb 19 02:41:12 2000
 @@ -1,12 +1,14 @@
  # Makefile for png2html, (c) 1999 Geoff Holden
  
- CC      = gcc
+-CC      = gcc
 -CFLAGS  = -O2 -Wall -lpng -lgd
++CC      ?= gcc
 +INCLUDES= -ICHANGE_ME/include/gd
 +LDFLAGS = -LCHANGE_ME/lib
 +LIBS    = -lpng -lgd
