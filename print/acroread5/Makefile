@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1997/09/01 13:09:25 tg Exp $
+# $Id: Makefile,v 1.5 1998/10/06 11:19:50 tg Exp $
 #
 
 DISTNAME=	ar302lin
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+BROKEN_ELF=	library version numbers
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
