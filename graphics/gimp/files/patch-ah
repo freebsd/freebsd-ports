@@ -1,36 +1,33 @@
---- configure.in.orig	Sun Sep 27 16:50:04 1998
-+++ configure.in	Tue Sep 29 22:28:31 1998
-@@ -358,7 +358,7 @@
- LIBS="$gimp_save_LIBS"
+--- configure.in.orig	Thu Feb  4 08:37:10 1999
++++ configure.in	Sun Feb 21 00:11:35 1999
+@@ -441,7 +441,7 @@
+ fi
  
  gimpdatadir=$datadir/gimp
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 +gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+ localedir=$datadir/locale
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
- gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
---- configure.orig	Mon Sep 28 06:00:09 1998
-+++ configure	Tue Sep 29 22:28:31 1998
-@@ -4379,7 +4379,7 @@
- LIBS="$gimp_save_LIBS"
+--- configure.orig	Thu Feb  4 08:38:47 1999
++++ configure	Sun Feb 21 00:11:46 1999
+@@ -7254,7 +7254,7 @@
+ fi
  
  gimpdatadir=$datadir/gimp
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 +gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+ localedir=$datadir/locale
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
- gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
---- Makefile.in.orig	Wed Sep 30 00:52:20 1998
-+++ Makefile.in	Wed Sep 30 00:52:41 1998
-@@ -440,9 +440,9 @@
+--- Makefile.in.orig	Sat Feb 20 23:45:16 1999
++++ Makefile.in	Sun Feb 21 00:12:00 1999
+@@ -530,7 +530,7 @@
+ install-exec: install-exec-recursive
  
- install-exec-am: install-binSCRIPTS
+ install-data-am: install-gimpdataSCRIPTS install-man \
+-		install-gimpdataDATA install-m4dataDATA
++		install-gimpdataDATA
+ install-data: install-data-recursive
  
--install-data-am: install-gimpdataSCRIPTS install-man install-gimpdataDATA install-m4dataDATA
-+install-data-am: install-gimpdataSCRIPTS install-man install-gimpdataDATA
- 
--uninstall-am: uninstall-binSCRIPTS uninstall-gimpdataSCRIPTS uninstall-man uninstall-gimpdataDATA uninstall-m4dataDATA
-+uninstall-am: uninstall-binSCRIPTS uninstall-gimpdataSCRIPTS uninstall-man uninstall-gimpdataDATA
- 
- install-exec: install-exec-recursive install-exec-am
- 	@$(NORMAL_INSTALL)
+ install-am: all-am
