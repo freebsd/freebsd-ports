@@ -22,7 +22,7 @@ XMKMF=		xmkmf
 
 MAN1=	auconvert.1 auctl.1 audemo.1 audial.1 auedit.1 auinfo.1 aupanel.1 \
 	auphone.1 auplay.1 aurecord.1 auscope.1 autool.1 auvoxware.1 auwave.1 \
-	checkmail.1 issndfile.1 nas.1 playbucket.1 soundtoh.1
+	checkmail.1 issndfile.1 nas.1 nasd.1 nasd.conf.1 playbucket.1 soundtoh.1
 MAN3=	AuAnyEvent.3 AuBucketAttributes.3 AuCloseServer.3 \
 	AuConvertDataToShort.3 AuConvertShortToData.3 AuCreateBucket.3 \
 	AuCreateFlow.3 AuDataFormats.3 AuDataTypes.3 AuDefineToFormat.3 \
