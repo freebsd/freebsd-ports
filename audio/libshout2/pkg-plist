@@ -1,5 +1,13 @@
 include/shout/shout.h
 lib/libshout.a
+lib/libshout.la
 lib/libshout.so
 lib/libshout.so.3
+lib/pkgconfig/shout.pc
+share/aclocal/shout.m4
+share/doc/libshout/COPYING
+share/doc/libshout/README
+share/doc/libshout/example.c
+@dirrm share/doc/libshout
+@dirrm lib/pkgconfig
 @dirrm include/shout
