@@ -1,0 +1,24 @@
+JBoss is an implementation of the EJB 1.1 (and parts of 2.0) specification,
+that is, it is a server and container for Enterprise JavaBeans. In this it
+is similar to Sun's 'J2SDK Enterprise Edition' (J2EE), but the JBoss core
+server provides only an EJB server. The JBoss core does not include a web
+container for servlets/JSP pages, although there are bundles available that
+include either Tomcat or Jetty. The minimal core offering means that JBoss
+has minimal memory and disk space requirements. JBoss will run very
+effectively on a machine with 64 megabytes of RAM, and requires only a few
+megabytes of disk (including source code!). Sun's J2EE requires a minimum of
+128 megabytes of RAM, and 31 megabytes of disk space. Because of its small
+memory footprint, JBoss starts up about 10 times faster than J2EE. There is
+a built-in SQL database server for handling persistent beans, and this
+starts up automatically with the server (J2EE ships with the CloudScape SQL
+server, which has to be started separately).
+
+One of the nicest features of JBoss is its support for `hot' deployment. What
+this means is that deploying a Bean is a simple as copying its JAR file into
+the deployment directory. If this is done while the Bean is already loaded,
+JBoss automatically unloads it, then loads the new version. Contrast this
+with the rigmarole that other J2EE server makes us go through... JBoss is
+distributed under the LGPL, which means that it's free, even for commercial
+work, and the LGPL ensures that it remains that way. 
+
+WWW: http://www.jboss.org/
