@@ -18,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	SQLite driver for DBI-for-Ruby
 
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR}
 
 USE_RUBY=	yes
