@@ -10,6 +10,7 @@ share/gnome/help/mail-notification/C/documentation-license.xml
 share/gnome/help/mail-notification/C/figures/mail.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
+share/gnome/mail-notification/ui/authentication.glade
 share/gnome/mail-notification/ui/gmail.png
 share/gnome/mail-notification/ui/logo.png
 share/gnome/mail-notification/ui/mail-notification.png
