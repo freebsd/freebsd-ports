@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jan  7 01:04:34 2000
++++ configure	Fri Jan  7 01:07:50 2000
+@@ -2765,7 +2765,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lGL  $LIBS"
++LIBS="-L$GLBASE/lib -lGL  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2771 "configure"
+ #include "confdefs.h"
