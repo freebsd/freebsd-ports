@@ -1,0 +1,12 @@
+share/doc/maildrop/INSTALL.html
+share/doc/maildrop/README.html
+share/doc/maildrop/dotlock.html
+share/doc/maildrop/maildrop.html
+share/doc/maildrop/maildrop.makegdbm.html
+share/doc/maildrop/maildropex.html
+share/doc/maildrop/maildropfilter.html
+share/doc/maildrop/maildropgdbm.html
+share/doc/maildrop/maildroptips.html
+share/doc/maildrop/reformail.html
+share/doc/maildrop/reformime.html
+@dirrm share/doc/maildrop

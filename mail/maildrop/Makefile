@@ -1,17 +1,24 @@
 # New ports collection makefile for:	maildrop
-# Version required:	0.60
+# Version required:	0.62
 # Date created:		16 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 07:27:15 steve Exp $
 #
 
-DISTNAME=	maildrop-0.60
+DISTNAME=	maildrop-0.62
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/mail/mailhandlers
 
 MAINTAINER=	tom@eborcom.com
+
+# Maildrop is usually installed with gdbm extensions. If you do not
+# want these extensions installed, NO_GDBM must be defined.
+#
+.if !defined(NO_GDBM)
+BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+.endif
 
 ALL_TARGET=	autoconf.h config.h all
 
@@ -20,33 +27,40 @@ ALL_TARGET=	autoconf.h config.h all
 # default to "root" and "mail" respectively, which should be suitable
 # for most systems.
 #
-.if !defined(MAILDROP_SUID)
-MAILDROP_SUID=	root
-.endif
-.if !defined(MAILDROP_SGID)
-MAILDROP_SGID=	mail
-.endif
+MAILDROP_SUID?=	root
+MAILDROP_SGIG?=	mail
 
 CONFIGURE_ARGS=	--enable-syslog=1 \
+		--with-docdir="${PREFIX}/share/doc/maildrop" \
+		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
 		--enable-maildrop-gid="${MAILDROP_SGID}"
-CONFIGURE_ENV+=	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
+		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 GNU_CONFIGURE=	yes
 
 .if defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/PLIST.nodocs
 INSTALL_TARGET=	install-exec all
 .else
-MAN1=		dotlock.1 maildrop.1 reformail.1
-MAN5=		maildropex.5 maildropfilter.5
+MAN1=		dotlock.1 maildrop.1 maildrop.makegdbm.1 reformail.1 reformime.1
+MAN5=		maildropex.5 maildropfilter.5 maildropgdbm.5
 MANCOMPRESSED=	yes
 .endif
 
+.if defined(NO_GDBM)
+CONFIGURE_ARGS+=	--without-gdbm
+.endif
+
+PLIST=	${WRKDIR}/PLIST
+
 post-patch:
-.for file in README.html maildrop.1 maildrop.html maildropfilter.5 maildropfilter.html main.C recipenode.C
-	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.bak
-	@${SED} < ${WRKSRC}/${file}.bak > ${WRKSRC}/${file} s+!!PREFIX!!+${PREFIX}+g
-.endfor
+	@${CP} ${PKGDIR}/PLIST ${WRKDIR}
+.if !defined(NO_GDBM)
+	@${CAT} ${PKGDIR}/PLIST.gdbm >> ${WRKDIR}/PLIST
+.endif
+.if !defined(NOPORTDOCS)
+	@${CAT} ${PKGDIR}/PLIST.docs >> ${WRKDIR}/PLIST
+.endif
 
 .include <bsd.port.mk>
