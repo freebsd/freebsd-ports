@@ -1,5 +1,37 @@
-@comment $FreeBSD: /tmp/pcvs/ports/print/xmltex/pkg-plist,v 1.1 2002-05-28 18:11:03 nik Exp $
-share/texmf/web2c/xmltex.fmt
-share/texmf/web2c/pdfxmltex.fmt
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
+@comment $FreeBSD: /tmp/pcvs/ports/print/xmltex/pkg-plist,v 1.2 2004-02-02 16:20:29 nork Exp $
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual.xsl
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WEB2CDIR%%/xmltex.fmt
+%%WEB2CDIR%%/pdfxmltex.fmt
+%%CLASSDIR%%/testascii.cfg
+%%CLASSDIR%%/testascii.tex
+%%CLASSDIR%%/testascii.xml
+%%CLASSDIR%%/testsec.tex
+%%CLASSDIR%%/testsec.xml
+%%CLASSDIR%%/xmltex.cfg
+%%CLASSDIR%%/xmltex.ini
+%%CLASSDIR%%/xmltex.tex
+%%CLASSDIR%%/pdfxmltex.ini
+%%CLASSDIR%%/iso-8859-1.xmt
+%%CLASSDIR%%/iso-8859-2.xmt
+%%CLASSDIR%%/koi8-r.xmt
+%%CLASSDIR%%/sec.xmt
+%%CLASSDIR%%/tei.xmt
+%%CLASSDIR%%/utf-16.xmt
+%%CLASSDIR%%/windows-1250.xmt
+%%CLASSDIR%%/langtest.tex
+%%CLASSDIR%%/langtest.xml
+%%CLASSDIR%%/langtest.xmt
+%%CLASSDIR%%/mathml2.xmt
+%%CLASSDIR%%/russiankoi8.xml
+%%CLASSDIR%%/russianutf8.xml
+%%CLASSDIR%%/portugeselatin1.xml
+%%CLASSDIR%%/englishutf16.xml
+%%CLASSDIR%%/englishutf8.xml
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
