@@ -36,6 +36,10 @@ PLIST_SUB=	CHARSETS=""
 PLIST_SUB=	CHARSETS="@comment "
 .endif
 
+.if !defined(WITH_X11)
+CONFIGURE_ARGS+=--without-x
+.endif
+
 .if ${ARCH} == "alpha"
 #
 # something is wrong with slang on alpha: mc enters an infinite loop
