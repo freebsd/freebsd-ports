@@ -1,0 +1,31 @@
+--- Makefile.PL.orig	Sat Feb 12 06:18:23 2000
++++ Makefile.PL	Sun Mar 19 13:19:43 2000
+@@ -24,7 +24,7 @@
+ %neededmodules =
+     ( 
+       'mod_perl.c' => { name	    => 'perl_module', 
+-			path	    => ['$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so'],
++			path	    => ['/usr/local/libexec/apache/libperl.so', '$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so'],
+ 			win32path   => ['$EPBINDIR/modules/apachemoduleperl.dll'],
+ 			win32path   => ['$mpdll'],
+ 			file	    => 'libperl.so',
+@@ -385,18 +385,7 @@
+ 
+     #### look in which subdir the include files resides ####
+     
+-    if (-e "$apache_src/httpd.h")
+-         {
+-         $inc_dir = $apache_src ;
+-         }
+-    elsif (-e "$apache_src/main/httpd.h")
+-         {
+-         $inc_dir = "$apache_src/main" ;
+-         }
+-    elsif (-e "$apache_src/include/httpd.h")
+-         {
+-         $inc_dir = "$apache_src/include" ;
+-         }
++    $inc_dir = "/usr/local/include/apache";
+         
+ 
+     if ($win32)
