@@ -118,6 +118,7 @@
     SUBDIR += py-gnuplot
     SUBDIR += py-gsl
     SUBDIR += py-mpz
+    SUBDIR += py-numarray
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
     SUBDIR += py-scientific
