@@ -3,4 +3,3 @@
 package ifneeded crypt 1.0 [list load $dir/@LIB@]
 package ifneeded setuid 1.0 [list load $dir/@LIB@]
 package ifneeded limit 1.0 [list load $dir/@LIB@]
-package ifneeded utime 1.0 [list load $dir/@LIB@]
