@@ -1,29 +1,54 @@
 # New ports collection makefile for:	magicpoint
-# Version required:	1.03a
+# Version required:	1.04a
 # Date created:		24 December 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.2 1998/02/17 12:58:54 itojun Exp $
+# $Id: Makefile,v 1.3 1998/04/07 22:43:37 itojun Exp $
 #
 
-DISTNAME=	mgp-1.03a
-PKGNAME?=	magicpoint-1.03a
+DISTNAME=	magicpoint-1.04a
+# question is for localized (i.e. Japanese) version
+PKGNAME?=	magicpoint-1.04a
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	itojun@itojun.org
 
+# plus sign is for localized (i.e. Japanese) version
+LIB_DEPENDS+=	ttf:${PORTSDIR}/print/freetype
+
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib
 
-DOCS=	COPYRIGHT COPYRIGHT.jp README SYNTAX TODO.jp USAGE USAGE.jp
+post-configure:
+	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${X11BASE})
+
+post-build:
+	(cd ${WRKSRC}/contrib/xmindpath; make)
+
+MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
+
+DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
+	SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp ascii.mgp cloud.gif dad.eps dad.gif dns.mgp \
 		default.mgp gradation.mgp mgp-old1.gif mgp-old2.gif \
 		mgp-old3.gif mgp1.gif mgp2.gif mgp3.gif sample.mgp \
 		tutorial.mgp v6.mgp v6header.eps v6header.gif
+SAMPLES=	README README.jp cloud.gif dad.eps dad.gif default.mgp \
+		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
+		gradation.mgp mgp-old1.gif mgp-old2.gif mgp-old3.gif \
+		mgp1.gif mgp2.gif mgp3.gif mgp3.xbm mgprc-sample \
+		multilingual.mgp sample-jp.mgp sample.mgp sendmail6-jp.mgp \
+		sendmail6.mgp tutorial-jp.mgp tutorial.mgp v6-jp.mgp \
+		v6.mgp v6header.eps v6header.gif
 
 post-install:
+	(cd ${WRKSRC}/contrib/xmindpath; make install)
+.if ${MANCOMPRESSED} == yes
+	# why do we need this?
+	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mgp
 	for i in $(DOCS); do \
