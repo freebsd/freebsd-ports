@@ -87,6 +87,7 @@
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
     SUBDIR += gkrellweather
+    SUBDIR += gkx86info
     SUBDIR += gman
     SUBDIR += gnomehier
     SUBDIR += gnomemimedata
