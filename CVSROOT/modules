@@ -3963,6 +3963,7 @@ ktextdecode	ports/converters/ktextdecode
 ktnef		ports/converters/ktnef
 ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
+kvirc		ports/irc/kvirc
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
