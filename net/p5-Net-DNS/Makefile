@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.14
+PORTVERSION=	0.21
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
+
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
 
@@ -30,5 +33,13 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 \
 		Net::DNS::RR::NIMLOC.3 Net::DNS::RR::NSAP.3 \
 		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/p5-Net-DNS
+.for file in Changes README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/p5-Net-DNS
+.endfor
+.endif
 
 .include <bsd.port.mk>
