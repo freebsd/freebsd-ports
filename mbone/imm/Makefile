@@ -12,8 +12,14 @@ MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	fenner@freebsd.org
+MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
@@ -40,4 +46,4 @@ do-install:
 # The sdr plugin is pretty much required.
 	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${PREFIX}/share/doc/imm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
