@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gtkyahoo
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/gtkyahoo/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtkyahoo
 
 MAINTAINER=	dannyman@dannyland.org
 
