@@ -8,7 +8,7 @@
 PORTNAME=	apr
 PORTVERSION=	0.9.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.apache.org/dist/apr/testing/
+MASTER_SITES=	http://www.apache.org/dist/apr/
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
 MAINTAINER=	rodrigc@attbi.com
