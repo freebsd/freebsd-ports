@@ -25,7 +25,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Replacement local mail delivery agent, similar to procmail
 
 .if !defined(WITHOUT_GDBM)
@@ -74,13 +74,13 @@ MAN1=		lockmail.1 mailbot.1 maildirmake.1 maildrop.1 makemime.1 \
 MAN5=		maildir.5 maildropex.5 maildropfilter.5 maildropgdbm.5
 MAN7=		maildirquota.7
 MAN8=		deliverquota.8
-INSTALL_DOCS=	INSTALL INSTALL.html README README.html README.postfix \
+DOCS=		INSTALL INSTALL.html README README.html README.postfix \
 		UPGRADE UPGRADE.html maildroptips.txt \
 		maildir/README.*.html maildir/README.*.txt
 
 .if !defined(NOPORTDOCS)
 post-install:
-	cd ${WRKSRC} && ${INSTALL_DATA} ${INSTALL_DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
