@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.0.039.p044.1
+PORTVERSION=	8.0.046
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/\.p.+$//}
@@ -166,6 +166,7 @@ do-build:
 		--redefine-sym ftruncate=l_ftruncate \
 		--redefine-sym lseek64=lseek \
 		--redefine-sym open64=open \
+		--redefine-sym fopen64=fopen \
 		--redefine-sym freopen64=freopen \
 		--redefine-sym creat64=creat \
 		--redefine-sym ftruncate64=ftruncate \
@@ -178,6 +179,8 @@ do-build:
 		--redefine-sym __strtoll_internal=strtoll \
 		--redefine-sym __strtoul_internal=strtoul \
 		--redefine-sym __strtoull_internal=strtoull \
+		--redefine-sym _IO_getc=getc \
+		--redefine-sym _IO_putc=putc \
 		${WRKSRC}/opt/${COMPILERDIR}/lib/lib${i}.a
 .endfor
 	@${AR} q ${WRKSRC}/opt/${COMPILERDIR}/lib/libcxa.a ${WRKSRC}/*.o
