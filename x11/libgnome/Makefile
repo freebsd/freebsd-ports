@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.13 1998/10/01 22:43:33 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/11/02 17:23:51 vanilla Exp $
 #
 
 DISTNAME=	gnome-libs-0.30.1
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 
 MAINTAINER=	Nakai@technologist.com
-
-BROKEN=		gtk11 rewrite dnd code.
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gdk_imlib.1:${PORTSDIR}/graphics/imlib
