@@ -1,0 +1,4 @@
+bin/ted
+lib/X11/ted/ted.help
+lib/X11/ted/tedrc
+@dirrm lib/X11/ted

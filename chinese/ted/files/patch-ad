@@ -1,0 +1,182 @@
+*** cli_xcin.c.orig	Fri Sep 19 01:19:33 1997
+--- cli_xcin.c	Sat Sep 13 11:41:12 1997
+***************
+*** 0 ****
+--- 1,130 ----
++ /*
++ 	Copyright (C) 1994,1995	Edward Der-Hua Liu, Hsin-Chu, Taiwan
++ */
++ 
++ #include <stdio.h>
++ #include <stdarg.h>
++ #include <sys/types.h>
++ #include <X11/Xlib.h>
++ #include <X11/Xatom.h>
++ #include "state.h"
++ #include "protocol.h"
++ 
++ static Atom xcin_atom=0;
++ static Window xcin_win=None;
++ static InmdState inmdstate;
++ #define ENDIAN_TEST() (*(int *)"\x11\x22\x33\x44"==0x11223344)
++ static char my_endian;
++ 
++ static connect_xcin(Display *display)
++ {
++ Window twin;
++ xcin_atom=XInternAtom(display, XCIN_ATOM,False);
++ my_endian=ENDIAN_TEST();  /* if == 11223344, it is big-endian */
++ 
++ xcin_win=XGetSelectionOwner(display,xcin_atom);
++ return xcin_win;
++ }
++ 
++  void send_FocusIn(Display *display, Window window)
++ {
++ 	XClientMessageEvent event;
++ 	XEvent erreve;
++ 	char *tmp=event.data.b;
++ 
++ 	if (connect_xcin(display)==None) return;
++ /* Ensure xcin exists, or the process will be hanged */
++ 	event.type=ClientMessage;
++ 	event.window=window;
++ 	event.message_type=xcin_atom;
++ 	event.format=8;
++ 	
++ 	tmp[0]=tmp[1]=tmp[2]=0xff;
++ 	tmp[3]=CLI_FOCUS_IN;
++ 	memcpy(&tmp[4],&inmdstate, sizeof(inmdstate));
++ 	XSendEvent(display, xcin_win, False, 0, (XEvent *)&event);
++ }
++ 
++ static void send_FocusOut(Display *display, Window window)
++ {
++ 	XClientMessageEvent event;
++ 	XEvent erreve;
++ 	char *tmp=event.data.b;
++ 
++ 	if (connect_xcin(display)==None) return;
++ /* Ensure xcin exists, or the process will be hanged */
++ 	event.type=ClientMessage;
++ 	event.window=window;
++ 	event.message_type=xcin_atom;
++ 	event.format=8;
++ 	
++ 	tmp[0]=tmp[1]=tmp[2]=0xff;
++ 	tmp[3]=CLI_FOCUS_OUT;
++ 	memcpy(&tmp[4],&inmdstate, sizeof(inmdstate));
++ 	XSendEvent(display, xcin_win, False, 0, (XEvent *)&event);
++ }
++ 
++ static void big_little(char *i)
++ {
++ char t;
++ t=*i; *i=*(i+3); *(i+3)=t;
++ t=*(i+1); *(i+1)=*(i+2); *(i+2)=t;
++ }
++ static read_keys(Display *display, char *buf)
++ {
++ 	Atom actual_type;
++ 	int actual_format,i;
++ 	u_long nitems,bytes_after;
++ 	char *ttt, *cp;
++ 	XCIN_RES res;
++ 	int ofs;
++ 	cp=(char *)&res;
++ 	ofs=0;
++ 	do { 
++ 	if (XGetWindowProperty(display,xcin_win,xcin_atom,
++ 		ofs/4,(sizeof(XCIN_RES)+3)/4,
++ 		True, AnyPropertyType, &actual_type,&actual_format,
++ 		&nitems,&bytes_after,(unsigned char **)&ttt) != Success)
++ 			puts("err property");
++ 		memcpy((char *)(&res)+(ofs & ~0x3), ttt, nitems);
++ 		XFree(ttt);
++ 		ofs=(ofs & ~0x3) + nitems;
++ 	} while ((!nitems && !ofs) || bytes_after>0);
++ 	if (my_endian) {
++ 		big_little((char *)&res.len);
++ 		big_little((char *)&res.status);
++ 	}
++ 	memcpy(buf,res.tkey, res.len);
++ 	inmdstate=res.inmdstate;
++ 	buf[res.len]=0;
++ 	return  res.status;
++ }
++ 
++ #include <X11/Xutil.h>
++ 
++ static XComposeStatus compose_status = {NULL, 0};
++ 
++   send_key(Display *display, Window win, XKeyEvent *eve, char *buf)
++ {
++ XClientMessageEvent event;
++ XEvent erreve;
++ char *tmp=event.data.b;
++ u_char tttt[8];
++ KeySym keysym;
++ int count;
++ 
++ if (xcin_win==None && connect_xcin(display)==None)
++ 	return K_REJECT;
++ if ((xcin_win=XGetSelectionOwner(display,xcin_atom))==None)
++ 	return K_REJECT;
++ 
++ event.type=ClientMessage;
++ event.window=win;
++ event.message_type=xcin_atom;
++ event.format=32;
++ count =XLookupString (eve, tttt, sizeof(tmp), (KeySym *)tmp, &compose_status);
++ memcpy(&tmp[4],&eve->state,4);
++ XSendEvent(display, xcin_win, False, 0, (XEvent *)&event);
++ XSync(display,False);
++ return (read_keys(display, buf));
++ }
+*** protocol.h.orig	Fri Sep 19 01:19:44 1997
+--- protocol.h	Fri Sep 19 01:19:41 1997
+***************
+*** 0 ****
+--- 1,13 ----
++ /*
++ 	Copyright (C) 1994	Edward Der-Hua Liu, Hsin-Chu, Taiwan
++ */
++ 
++ #define K_REJECT (0)
++ #define K_ACCEPT (1) 
++ 
++ #define CLI_FOCUS_IN (1)
++ #define CLI_FOCUS_OUT (3)
++ 
++ #define LOAD_KEYWORD (2)
++ 
++ #define XCIN_ATOM "XCIN_A"
+*** state.h.orig	Fri Sep 19 01:20:14 1997
+--- state.h	Fri Sep 19 01:20:05 1997
+***************
+*** 0 ****
+--- 1,24 ----
++ /*
++ 	Copyright (C) 1994	Edward Der-Hua Liu, Hsin-Chu, Taiwan
++ */
++ 
++ typedef struct {
++ 	char  kb_state;
++         char _CurInMethod;
++ } InmdState;
++ 
++ #define EngChiMask (1)
++ #define HalfFullMask (2)
++ 
++ typedef struct {
++ 	int len;
++ 	int status;
++ 	InmdState inmdstate;
++ 	char tkey[512];
++ } XCIN_RES;
++ 
++ #define EngChi ((inmdstate.kb_state & EngChiMask) ? 1:0)
++ #define HalfFull ((inmdstate.kb_state & HalfFullMask) ? 1:0)
++ #define CurInMethod (inmdstate._CurInMethod)
++ /*extern InmdState inmdstate;
++ */
