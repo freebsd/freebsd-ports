@@ -4,7 +4,7 @@
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>,
 #			based on Hidekazu Kuroki's work of 2.0.43.
 #
-# $Id: Makefile,v 1.7 1997/03/04 06:37:49 asami Exp $
+# $Id: Makefile,v 1.8 1997/03/04 09:38:40 asami Exp $
 #
 
 DISTNAME=	fvwm-2.0.45
@@ -26,7 +26,7 @@ USE_IMAKE=	yes
 PATCH_FIXIT=	kits/patch/fix-2.0.45
 PATCH_I18N=	kits/patch/PATCH.I18N
 
-USE_PATCHFILES=	${PATCH_FIXES} ${PATCH_I18N}
+USE_PATCHFILES=	${PATCH_FIXIT} ${PATCH_I18N}
 
 pre-patch:
 	@for i in ${USE_PATCHFILES}; do \
