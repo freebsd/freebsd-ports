@@ -1,0 +1,11 @@
+--- Library.cc.orig	Thu Jan 23 08:22:50 1997
++++ Library.cc	Wed Feb 12 00:51:28 1997
+@@ -3,7 +3,7 @@
+ void Library::load_pix() {
+ 	int i;
+         char *name[] = {"wingdows", "apple", "next", "sgi", "sun", "os2",
+-		"bsd", "linux", "redhat", "hurd"};
++		"bsd", "linux", "bsd", "hurd"};
+ 	for (i=0; i <= NUM_OS; i++) {
+ 		os[i].load(name[i]);
+ 		if (i) cursor[i].load(name[i], cursor[i].OWN_MASK);

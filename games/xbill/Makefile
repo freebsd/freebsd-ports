@@ -3,10 +3,10 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1995/10/06 07:53:05 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 09:52:57 asami Exp $
 #
 
-DISTNAME=	xbill-1.1
+DISTNAME=	xbill-2.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -17,10 +17,8 @@ MAINTAINER=	asami@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xbill
-NO_INSTALL_MANPAGES=	yes
 
 post-install:
-	cp ${WRKSRC}/README ${PREFIX}/lib/xbill
+	${CP} ${WRKSRC}/README ${PREFIX}/share/xbill
 
 .include <bsd.port.mk>
