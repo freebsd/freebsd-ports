@@ -7,6 +7,7 @@
 
 PORTNAME=	nano
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
 		${MASTER_SITE_GNU}
@@ -20,6 +21,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-all
 
 MAN1=		nano.1
 MAN5=		nanorc.5
