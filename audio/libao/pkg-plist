@@ -1,0 +1,8 @@
+include/ao/ao.h
+include/ao/os_types.h
+lib/libao.a
+lib/libao.so
+lib/libao.so.0
+share/doc/libao-1.0.0/index.html
+@dirrm include/ao
+@dirrm share/doc/libao-1.0.0

@@ -74,6 +74,7 @@
     SUBDIR += knapster
     SUBDIR += krio
     SUBDIR += lame
+    SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
