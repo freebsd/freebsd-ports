@@ -1,5 +1,5 @@
---- ConfigX.mk.orig	Mon May  4 14:05:52 1998
-+++ ConfigX.mk	Sat Jul 18 23:02:36 1998
+--- ConfigX.mk.orig	Mon May  4 23:05:52 1998
++++ ConfigX.mk	Thu Mar  3 01:42:06 2005
 @@ -28,7 +28,7 @@
  #---------------------------------------------------------------------
  # HOMEV info
@@ -18,12 +18,23 @@
  #ARCH	= linuxelf
  #ARCH	= sun4
  #ARCH	= mips
-@@ -59,7 +59,7 @@
+@@ -59,8 +59,8 @@
  #ARCH	= hpux
  #ARCH	= aix
  #ARCH	= solaris
 -#ARCH	= bsd
+-Arch = $(ARCH)
 +ARCH	= bsd
- Arch = $(ARCH)
++Arch = bsd
  
  
+ #---------------------------------------------------------------------
+@@ -256,7 +256,7 @@
+ ifeq ($(Arch),bsd)
+ INCDIR  +=       -I/usr/$(X11RV)/include
+ LIBDIR  +=       -L/usr/$(X11RV)/lib
+-LIBS    +=       -lV -lXaw -lXmu -lXt -lXext -lX11
++LIBS    +=       -lV -lXaw -lXmu -lXt -lXext -lX11 -lICE -lSM
+ TARZ    =
+ RANLIB  =       ranlib
+ VGPATH	=	UNIX
