@@ -1,5 +1,5 @@
-*** ../../wmmon.app/wmmon/wmmon.c.orig	Tue May 19 17:13:16 1998
---- ../../wmmon.app/wmmon/wmmon.c	Mon May 24 21:47:48 1999
+*** wmmon.c.orig	Tue May 19 17:13:16 1998
+--- wmmon.c	Sun Jun 27 21:31:50 1999
 ***************
 *** 28,33 ****
 --- 28,40 ----
@@ -18,7 +18,7 @@
   		* Using global file descriptors to reduce file
 ***************
 *** 72,81 ****
---- 79,103 ----
+--- 79,105 ----
   #include <fcntl.h>
   #include <unistd.h>
   
@@ -38,7 +38,9 @@
 + #endif
 + #include <sys/sysctl.h>
 + #include <sys/time.h>
++ #if __FreeBSD_version < 400000
 + #include <sys/rlist.h>
++ #endif
 + #include <sys/vmmeter.h>
 + 
   #include <X11/Xlib.h>
@@ -46,7 +48,7 @@
   #include <X11/extensions/shape.h>
 ***************
 *** 106,117 ****
---- 128,187 ----
+--- 130,189 ----
   FILE	*fp_stat;
   FILE	*fp_loadavg;
   
@@ -109,7 +111,7 @@
   void main(int argc, char *argv[]) {
 ***************
 *** 154,159 ****
---- 224,235 ----
+--- 226,237 ----
   		}
   	}
   
@@ -150,7 +152,7 @@
   	}
   
   	for (i=0; i<MAX_STAT_DEVICES; i++) {
---- 289,349 ----
+--- 291,351 ----
   	long		istat;
   	long		idle;
   
@@ -230,7 +232,7 @@
   
   	stat_online = checksysdevs();
   
---- 357,376 ----
+--- 359,378 ----
   	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
   	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
   
@@ -253,7 +255,7 @@
   
 ***************
 *** 484,489 ****
---- 599,609 ----
+--- 601,611 ----
   	st->rt_idle = idle - st->idlelast;
   	st->idlelast = idle;
   
@@ -312,7 +314,7 @@
   /*******************************************************************************\
   |* get_statistics															   *|
   \*******************************************************************************/
---- 619,873 ----
+--- 621,875 ----
   
   void update_stat_mem(stat_dev *st, stat_dev *st2) {
   
@@ -580,7 +582,7 @@
   	long	maxdiskio=0;
   
   	*is = 0;
---- 875,882 ----
+--- 877,884 ----
   void get_statistics(char *devname, long *is, long *ds, long *idle) {
   
   	int	i;
@@ -628,7 +630,7 @@
   		if (*ds > maxdiskio) maxdiskio = *ds;
   	}
   }
---- 884,1088 ----
+--- 886,1090 ----
   	*idle = 0;
   
   	if (!strncmp(devname, "cpu", 3)) {
@@ -845,7 +847,7 @@
   
   	return 3;
   }
---- 1093,1101 ----
+--- 1095,1103 ----
   
   int checksysdevs(void) {
   
@@ -857,7 +859,7 @@
   }
 ***************
 *** 638,643 ****
---- 1134,1140 ----
+--- 1136,1142 ----
   	int     *p;
   	int		d;
   
