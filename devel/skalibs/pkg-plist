@@ -39,11 +39,13 @@ include/skalibs/netstring.h
 include/skalibs/random.h
 include/skalibs/rc4.h
 include/skalibs/select.h
+include/skalibs/selfpipe.h
 include/skalibs/sgetopt.h
 include/skalibs/sha1.h
 include/skalibs/shglob.h
 include/skalibs/sig.h
 include/skalibs/skamisc.h
+include/skalibs/skalibs-version.h
 include/skalibs/socket.h
 include/skalibs/stdcrypto.h
 include/skalibs/stddjb.h
