@@ -112,6 +112,7 @@ lib/libtemplate.so.1
 %%PORTDOCS%%share/doc/unixODBC/UserManual/StarOfficeDataGrid.gif
 %%PORTDOCS%%share/doc/unixODBC/UserManual/index.html
 %%PORTDOCS%%share/doc/unixODBC/UserManual/unixODBC.gif
+%%PORTDOCS%%share/doc/unixODBC/index.html
 %%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.gif
 %%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.html
 %%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.vsd
@@ -133,6 +134,8 @@ lib/libtemplate.so.1
 %%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure9.html
 %%PORTDOCS%%share/doc/unixODBC/lst/back.gif
 %%PORTDOCS%%share/doc/unixODBC/lst/next.gif
+%%PORTDOCS%%share/doc/unixODBC/smallbook.gif
+%%PORTDOCS%%share/doc/unixODBC/unixODBC.gif
 %%PORTDOCS%%@dirrm share/doc/unixODBC/lst
 %%PORTDOCS%%@dirrm share/doc/unixODBC/UserManual
 %%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual/Tutorial
