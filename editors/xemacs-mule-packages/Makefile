@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	2.1
+PORTVERSION=	3.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		edict-1.12-pkg.tar.gz \
+		edict-1.13-pkg.tar.gz \
 		egg-its-1.26-pkg.tar.gz \
+		latin-unity-1.02-pkg.tar.gz \
 		leim-1.17-pkg.tar.gz \
 		locale-1.18-pkg.tar.gz \
-		lookup-1.08-pkg.tar.gz \
+		lookup-1.10-pkg.tar.gz \
 		mule-base-1.39-pkg.tar.gz \
-		mule-ucs-1.00-pkg.tar.gz \
-		skk-1.19-pkg.tar.gz
+		mule-ucs-1.04-pkg.tar.gz \
+		skk-1.21-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
