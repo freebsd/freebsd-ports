@@ -1,0 +1,12 @@
+TTraffic is a Tcl/Tk version of the board game Rush Hour created by
+Binary Arts Coporation. The goal is to remove the red car(s) out of the
+grid through the slot on the right. To do this you have to slide the
+other cars out of the way. TTraffic is inspired by GTraffic, the Gnome
+version Rush Hour. TTraffic comes with about 15.000 puzzles ranging from
+intermediate to expert. These puzzles were automatically created by the
+program gtlevel.
+
+WWW: http://alpha.luc.ac.be/Research/Algebra/Members/Ttraffic/ttraffic.html
+
+-Anton
+<tobez@FreeBSD.org>
