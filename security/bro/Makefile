@@ -13,7 +13,7 @@ CATEGORIES=	security
 #see http://www-nrg.ee.lbl.gov/bro-info.html
 DISTNAME=	vp-bro-0.5-alpha
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 

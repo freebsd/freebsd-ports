@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/  \
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=

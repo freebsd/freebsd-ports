@@ -13,7 +13,7 @@ MASTER_SITES=	# part of port
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 DISTDIR=	${FILESDIR}
