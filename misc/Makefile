@@ -125,6 +125,7 @@
     SUBDIR += proxyper
     SUBDIR += py-distutils
     SUBDIR += pybliographer
+    SUBDIR += qbrew
     SUBDIR += qhacc
     SUBDIR += qlas
     SUBDIR += quotes

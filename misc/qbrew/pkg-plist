@@ -1,0 +1,35 @@
+bin/qbrew
+share/qbrew/ChangeLog
+share/qbrew/README
+share/qbrew/TODO
+share/qbrew/LICENSE
+share/qbrew/qbrew.xpm
+share/qbrew/calcdb
+share/qbrew/doc/en/qbrew-build.html
+share/qbrew/doc/en/qbrew-changes.html
+share/qbrew/doc/en/qbrew-characteristics.html
+share/qbrew/doc/en/qbrew-copyright.html
+share/qbrew/doc/en/qbrew-credits.html
+share/qbrew/doc/en/qbrew-handbook.html
+share/qbrew/doc/en/qbrew-help.html
+share/qbrew/doc/en/qbrew-hop.html
+share/qbrew/doc/en/qbrew-ingredients.html
+share/qbrew/doc/en/qbrew-install.html
+share/qbrew/doc/en/qbrew-intro.html
+share/qbrew/doc/en/qbrew-menus.html
+share/qbrew/doc/en/qbrew-notes.html
+share/qbrew/doc/en/qbrew-options.html
+share/qbrew/doc/en/qbrew-require.html
+share/qbrew/doc/en/qbrew-using.html
+share/qbrew/doc/en/qbrew.docbook
+share/qbrew/doc/en/qbrew.dsl
+share/qbrew/doc/en/primer-design.html
+share/qbrew/doc/en/primer-equipment.html
+share/qbrew/doc/en/primer-firstbrew.html
+share/qbrew/doc/en/primer-glossary.html
+share/qbrew/doc/en/primer-mashing.html
+share/qbrew/doc/en/primer-recipes.html
+share/qbrew/doc/en/primer.html
+@dirrm share/qbrew/doc/en
+@dirrm share/qbrew/doc
+@dirrm share/qbrew
