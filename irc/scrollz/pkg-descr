@@ -1,0 +1,13 @@
+ScrollZ is a color-enabled IRC client written by 
+Flier <flier@scrollz.com>. Its main difference from other
+clients is that it implements many useful features that you
+would normally find in a script, thus making it faster than
+such scripts paired up with ircII.
+
+It also has many unique features, such as three-line status
+bars, CDCC (which has reget/resend ability), and its environment
+is highly customizable.
+
+WWW: http://www.scrollz.com/
+
+- Will <andrews@technologist.com>
