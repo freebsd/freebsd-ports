@@ -7,7 +7,7 @@
 
 PORTNAME=	skim
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scim
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	scim
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
 
-LIB_DEPENDS=	scim-1.0.5:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.6:${PORTSDIR}/textproc/scim
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
