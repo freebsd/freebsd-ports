@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		6.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -21,6 +21,10 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	The base set of packages needed in Linux mode
+.if (${MACHINE_ARCH} == "alpha")
+FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
+ <URL:http://www.cert.org/advisories/CA-2003-10.html>"
+.endif
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -36,7 +40,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-RPM_GLIBC=		glibc-2.1.3-28.${MACHINE_ARCH}.rpm
+RPM_GLIBC=		glibc-2.1.3-29.${MACHINE_ARCH}.rpm
 UPDATES=		${RPM_GLIBC} \
 			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
 			XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm \
