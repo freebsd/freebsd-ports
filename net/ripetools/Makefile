@@ -1,9 +1,9 @@
 # New ports collection makefile for:   ripe-whois
-# Version required:	2.3
+# Version required:	2.4
 # Date created:		5th June 1997
 # Whom:			joe@uk.freebsd.org
 #
-# $Id: Makefile,v 1.3 1998/09/22 17:50:27 asami Exp $
+# $Id: Makefile,v 1.4 1999/03/09 03:08:24 jseger Exp $
 #
 
 DISTNAME=	ripe-whois-tools-2.4
