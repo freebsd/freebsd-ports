@@ -34,8 +34,8 @@ MYPORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
+.if ${OSVERSION} < 502108
+BROKEN=		"Does not compile: ffs()-clash"
 .endif
 
 post-install:
