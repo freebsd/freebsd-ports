@@ -1,8 +1,7 @@
---- extconf.rb.orig	Wed Jan 24 12:29:18 2001
-+++ extconf.rb	Thu Feb  8 04:50:07 2001
-@@ -2,6 +2,16 @@
- 
- $objs = ["rbglade.o"]
+--- extconf.rb.orig	Mon Jun 25 07:08:39 2001
++++ extconf.rb	Tue Jun 26 06:06:49 2001
+@@ -1,5 +1,13 @@
+ require 'mkmf'
  
 +glib_config = with_config("glib-config", "glib-config")
 +$CFLAGS += " " + %x(#{glib_config} --cflags).chomp
@@ -12,14 +11,12 @@
 +$CFLAGS += " " + %x(#{gtk_config} --cflags).chomp
 +$LDFLAGS += " " + %x(#{gtk_config} --libs).chomp
 +
-+puts $CFLAGS
-+
+ $objs = ["rbglade.o"]
+ 
  dir_config("glade")
- dir_config("xml")
- dir_config("z")
-@@ -15,4 +25,4 @@
- 	end
+@@ -16,5 +24,3 @@
  end
  
--create_makefile("lglade")
-+create_makefile("lglade")
+ create_makefile("lglade")
+-system('echo LDFLAGS+=`gtk-config --libs` >> Makefile')
+-system('echo CFLAGS+=`gtk-config --cflags` >> Makefile')
