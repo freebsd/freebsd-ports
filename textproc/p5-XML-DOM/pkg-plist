@@ -1,4 +1,33 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML-DOM/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XML/DOM.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DOM/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/AttDef.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/AttlistDecl.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Attr.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/CDATASection.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/CharacterData.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Comment.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/DOMException.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/DOMImplementation.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Document.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/DocumentFragment.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/DocumentType.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Element.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/ElementDecl.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Entity.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/EntityReference.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/NamedNodeMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/NamedNodeMap.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Node.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/NodeList.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/NodeList.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Notation.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Parser.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/PerlSAX.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/ProcessingInstruction.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Text.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/XMLDecl.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/BuildDOM.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DOM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Handler
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XML
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DOM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML-DOM
