@@ -1,4 +1,5 @@
 bin/gchem3d
+bin/gchem3d-viewer
 include/gcu/chem3d/gtkchem3dviewer.h
 include/gcu/chemistry/atom.h
 include/gcu/chemistry/bond.h
@@ -28,6 +29,7 @@ lib/libgtkperiodic.so
 lib/libgtkperiodic.so.2
 libdata/bonobo/servers/gchem3d.server
 libdata/pkgconfig/gcu.pc
+share/gnome/applications/gchem3d-viewer.desktop
 share/gnome/doc/gchemutils/reference/html/annotated.html
 share/gnome/doc/gchemutils/reference/html/atom_8h-source.html
 share/gnome/doc/gchemutils/reference/html/bond_8h-source.html
@@ -71,6 +73,8 @@ share/gnome/doc/gchemutils/reference/html/files.html
 share/gnome/doc/gchemutils/reference/html/functions.html
 share/gnome/doc/gchemutils/reference/html/functions_func.html
 share/gnome/doc/gchemutils/reference/html/functions_vars.html
+share/gnome/doc/gchemutils/reference/html/gchem3d-viewer_8c.html
+share/gnome/doc/gchemutils/reference/html/gchem3d-viewer_8c-source.html
 share/gnome/doc/gchemutils/reference/html/globals.html
 share/gnome/doc/gchemutils/reference/html/globals_enum.html
 share/gnome/doc/gchemutils/reference/html/globals_func.html
@@ -111,9 +115,14 @@ share/gnome/gchemutils/elements.xml
 share/gnome/gchemutils/glade/gtkperiodic.glade
 share/gnome/mime-info/gchemutils.keys
 share/gnome/mime-info/gchemutils.mime
+share/locale/de/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/it/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/pl/LC_MESSAGES/gnome-chemistry-utils.mo
+share/mime/chemical/x-mdl-molfile.xml
+share/mime/chemical/x-pdb.xml
+share/mime/chemical/x-xyz.xml
+share/mime/packages/gchemutils.xml
 @dirrm include/gcu/chem3d
 @dirrm include/gcu/chemistry
 @dirrm include/gcu/crystalviewer
@@ -125,3 +134,5 @@ share/locale/pl/LC_MESSAGES/gnome-chemistry-utils.mo
 @dirrm share/gnome/doc/gchemutils/reference
 @dirrm share/gnome/doc/gchemutils
 @dirrm share/gnome/doc
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime

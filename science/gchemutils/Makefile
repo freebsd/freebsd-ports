@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +19,14 @@ LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2 libgnomeprint libgnomeui
+USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnomeprint libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(datadir)/mime$$|(prefix)/share/mime| ; s|(datadir)/mime/|(prefix)/share/mime/|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
