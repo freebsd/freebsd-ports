@@ -3395,7 +3395,9 @@ libgii		ports/devel/libgii
 libglade	ports/devel/libglade
 libglade2	ports/devel/libglade2
 libgmp		src/gnu/lib/libgmp
+libgmp-freebsd	ports/math/libgmp-freebsd
 libgmp3		ports/math/libgmp3
+libgmp4		ports/math/libgmp4
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnugetopt	ports/devel/libgnugetopt
