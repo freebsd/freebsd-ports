@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Fri Nov 16 01:35:11 2001
++++ Makefile.in	Fri Nov 16 01:35:38 2001
+@@ -79,10 +79,10 @@
+ bin_SCRIPTS = movtar-config
+ lib_LIBRARIES = libmovtar.a
+ libmovtar_a_SOURCES = movtar.c tar.c
+-INCLUDES = @GLIB_CFLAGS@ @JPEG_INCLUDE@
++INCLUDES = @GLIB_CFLAGS@ @JPEG_INCLUDE@ -I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}
+ include_HEADERS = movtar.h
+ 
+-movtar_play_LDFLAGS = -lSDL -lpthread -ljpeg
++movtar_play_LDFLAGS = `${SDL_CONFIG} --libs` ${PTHREAD_LIBS} -ljpeg
+ movtar_unify_LDFLAGS = -ljpeg
+ movtar_yuv422_LDFLAGS = -ljpeg
+ LDFLAGS = @GLIB_LIBS@
