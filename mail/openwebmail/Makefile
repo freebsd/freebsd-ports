@@ -7,6 +7,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	1.70
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -34,7 +35,7 @@ do-install:
 .for file in openwebmail.pl openwebmail-main.pl openwebmail-read.pl \
 	openwebmail-viewatt.pl openwebmail-send.pl openwebmail-spell.pl \
 	openwebmail-prefs.pl openwebmail-folder.pl openwebmail-abook.pl \
-	openwebmail-advsearch.pl checkmail.pl
+	openwebmail-advsearch.pl openwebmail-cal.pl checkmail.pl
 	@${CHMOD} 4555 ${OWCGIDIR}/${file}
 .endfor
 	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}

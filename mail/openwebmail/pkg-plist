@@ -1,6 +1,7 @@
 www/cgi-bin/openwebmail/.checkmail.pl
 www/cgi-bin/openwebmail/.openwebmail-abook.pl
 www/cgi-bin/openwebmail/.openwebmail-advsearch.pl
+www/cgi-bin/openwebmail/.openwebmail-cal.pl
 www/cgi-bin/openwebmail/.openwebmail-folder.pl
 www/cgi-bin/openwebmail/.openwebmail-main.pl
 www/cgi-bin/openwebmail/.openwebmail-prefs.pl
