@@ -18,7 +18,7 @@ PKGNAMEPREFIX=	utserver-
 DISTNAME?=	TOb200ManualInstall
 .endif
 
-MAINTAINER?=	pat@databits.net
+MAINTAINER?=	pat@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/usr/games/ut-server/System/ucc-bin:${UTSERVER_PORT}
 
