@@ -1,0 +1,39 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH=${PATH}:/bin:/usr/bin:${LOCALBASE}/bin:${X11BASE}/bin
+export PATH
+
+CATALOG_MASTER_SGML=${PKG_PREFIX}/share/sgml/catalog
+CATALOG_MASTER_XML=${PKG_PREFIX}/share/xml/catalog
+CATALOG_PORTS_SGML=${PKG_PREFIX}/share/sgml/catalog.ports
+CATALOG_PORTS_XML=${PKG_PREFIX}/share/xml/catalog.ports
+
+XMLCATMGR=${PKG_PREFIX}/bin/xmlcatmgr
+
+case $2 in
+POST-INSTALL)
+
+if [ ! -r ${CATALOG_MASTER_SGML} ]; then
+    ${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} create
+fi
+
+${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} remove catalog.ports
+${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} add CATALOG catalog.ports
+
+if [ ! -r ${CATALOG_PORTS_SGML} ]; then
+    ${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} create
+fi
+
+if [ ! -r ${CATALOG_MASTER_XML} ]; then
+    ${XMLCATMGR} -c ${CATALOG_MASTER_XML} create
+fi
+
+${XMLCATMGR} -c ${CATALOG_MASTER_XML} remove ${CATALOG_PORTS_XML}
+${XMLCATMGR} -c ${CATALOG_MASTER_XML} add nextCatalog ${CATALOG_PORTS_XML}
+
+if [ ! -r ${CATALOG_PORTS_XML} ]; then
+    ${XMLCATMGR} -c ${CATALOG_PORTS_XML} create
+fi
+;;
+esac

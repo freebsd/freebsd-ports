@@ -446,6 +446,7 @@
     SUBDIR += xml2rfc
     SUBDIR += xml4j
     SUBDIR += xmlada
+    SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmlenc
     SUBDIR += xmlindent

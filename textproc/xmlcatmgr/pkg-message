@@ -1,0 +1,21 @@
+The following catalogs are installed:
+
+ 1) ${PREFIX}/share/sgml/catalog
+
+   The top level catalog for SGML stuff.  It is not changed
+   by any ports/packages except textproc/xmlcatmgr.
+
+ 2) ${PREFIX}/share/sgml/catalog.ports
+
+   This catalog is for handling SGML stuff installed under
+   ${PREFIX}/share/sgml.  It is changed by ports/packages.
+
+ 3) ${PREFIX}/share/xml/catalog
+
+   The top level catalog for XML stuff.  It is not changed
+   by any ports/packages except textproc/xmlcatmgr.
+
+ 4) ${PREFIX}/share/xml/catalog.ports
+
+   This catalog is for handling XML stuff installed under
+   ${PREFIX}/share/xml.  It is changed by ports/packages.
