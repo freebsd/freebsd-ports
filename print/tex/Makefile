@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.25 1996/12/17 12:33:46 asami Exp $
+# $Id: Makefile,v 1.26 1997/02/10 01:57:38 jmz Exp $
 #
 
 DISTNAME=	web2c-7.0
@@ -14,7 +14,7 @@ DISTFILES=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 
-IGNOREFILES=	tex_base.tar.gz cm_tfm.tar.gz mf_lib.tar.gz cm_mf.tar.gz
+IGNOREFILES=	${DISTFILES}
 EXTRACT_ONLY=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 #MAN1=		bibtex.1 dvitype.1 gftodvi.1 gftopk.1 gftype.1 \
@@ -26,8 +26,6 @@ EXTRACT_ONLY=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 USE_GMAKE=	yes
 
 MAKE_FLAGS=	fmts= all_mems= -f
-
-NO_CHECKSUM=	yes
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN?=		ftp.tex.ac.uk
