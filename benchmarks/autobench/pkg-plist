@@ -4,4 +4,4 @@ bin/autobenchd
 bin/bench2graph
 bin/crfile
 bin/sesslog
-etc/autobench.conf
+etc/autobench.conf-dist
