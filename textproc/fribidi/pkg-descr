@@ -1,0 +1,22 @@
+This is is FriBidi, a Free Implementation of the Unicode BiDi algorithm.
+
+Background
+==========
+One of the missing links stopping the penetration of free software in
+Israel is the lack of support for Hebrew. In order to have proper
+Hebrew support, the BiDi algorithm must be implemented. It is my hope
+that this library will stimulate more Hebrew free software.
+
+Of course the BiDi algorithm is not limited to Hebrew, so I expect
+that our Arab neighbors will also find this software useful.
+
+Audience
+========
+
+It is my hope that this library will stimulate the implementation of
+Hebrew and Arabic in lots of free software. Here is a small list of
+projects that would benifit from the use of the FriBidi library, but
+of course there are many more: Wine, Mozilla, Gtk, Gnome, Qt, KDE,
+AbiWord, lynx.
+
+WWW: http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/

@@ -1,0 +1,9 @@
+bin/fribidi
+bin/fribidi-config
+include/fribidi/fribidi.h
+include/fribidi/fribidi_char_sets.h
+include/fribidi/fribidi_types.h
+lib/libfribidi.a
+lib/libfribidi.so
+lib/libfribidi.so.0
+@dirrm include/fribidi
