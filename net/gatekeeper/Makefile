@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gatekeeper
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.willamowius.de/download/
-DISTNAME=	gk015
+DISTNAME=	gk017
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roger@FreeBSD.org
