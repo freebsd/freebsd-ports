@@ -5,6 +5,13 @@ info/navi2ch.info
 %%PORTDOCS%%share/doc/ja/navi2ch/README
 %%PORTDOCS%%share/doc/ja/navi2ch/TODO
 %%PORTDOCS%%@dirrm share/doc/ja/navi2ch
+%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.img
+%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xbm
+%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/plugged.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/unplugged.xpm
+@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons
+@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch
 %%LISPDIR%%/navi2ch/navi2ch-article.el
 %%LISPDIR%%/navi2ch/navi2ch-article.elc
 %%LISPDIR%%/navi2ch/navi2ch-articles.el
@@ -15,6 +22,8 @@ info/navi2ch.info
 %%LISPDIR%%/navi2ch/navi2ch-board.elc
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.el
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.elc
+%%LISPDIR%%/navi2ch/navi2ch-e21.el
+%%LISPDIR%%/navi2ch/navi2ch-e21.elc
 %%LISPDIR%%/navi2ch/navi2ch-face.el
 %%LISPDIR%%/navi2ch/navi2ch-face.elc
 %%LISPDIR%%/navi2ch/navi2ch-head.el
@@ -33,6 +42,8 @@ info/navi2ch.info
 %%LISPDIR%%/navi2ch/navi2ch-popup-article.elc
 %%LISPDIR%%/navi2ch/navi2ch-search.el
 %%LISPDIR%%/navi2ch/navi2ch-search.elc
+%%LISPDIR%%/navi2ch/navi2ch-splash.el
+%%LISPDIR%%/navi2ch/navi2ch-splash.elc
 %%LISPDIR%%/navi2ch/navi2ch-util.el
 %%LISPDIR%%/navi2ch/navi2ch-util.elc
 %%LISPDIR%%/navi2ch/navi2ch-vars.el

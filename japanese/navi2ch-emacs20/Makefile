@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -39,6 +39,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
