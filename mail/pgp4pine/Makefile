@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	pgp4pine
-PORTVERSION=	${MAJOR}.${PATCHLEVEL}
+PORTVERSION=	1.76
 CATEGORIES=	mail
 MASTER_SITES=	http://pgp4pine.flatline.de/
-DISTNAME=	${PORTNAME}-${MAJOR}-${PATCHLEVEL}
 
 MAINTAINER=	holger@flatline.de
 
-MAJOR=		1.75
-PATCHLEVEL=	6
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${MAJOR}
 MAN1=		pgp4pine.1
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --with-docdir=${PREFIX}/share/doc
 
 .include <bsd.port.mk>

@@ -3,5 +3,5 @@ share/doc/pgp4pine/FAQ
 share/doc/pgp4pine/INSTALL
 share/doc/pgp4pine/PGP_MIME
 share/doc/pgp4pine/README
-share/doc/pgp4pine/example.pgp4pinerc
+share/doc/pgp4pine/pgp4pinerc.example
 @dirrm share/doc/pgp4pine
