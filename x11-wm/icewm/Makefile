@@ -1,17 +1,17 @@
 # New ports collection makefile for:   icewm
-# Version required:    0.8.12
+# Version required:    0.8.14
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/02/20 04:22:12 steve Exp $
+# $Id: Makefile,v 1.4 1998/03/11 06:33:07 vanilla Exp $
 #
 
-DISTNAME=	icewm-0.8.12
+DISTNAME=	icewm-0.8.14
 CATEGORIES=	x11
 MASTER_SITES=	http://ixtas.fri.uni-lj.si/%7Emarkom/icewm/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	Nakai@technologist.com
 
 USE_X11=	yes
 
