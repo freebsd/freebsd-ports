@@ -1,30 +1,28 @@
-lib/xemacs/site-lisp/lookup-startup.el
-lib/xemacs/site-lisp/lookup/evi-mule.el
-lib/xemacs/site-lisp/lookup/evi.el
-lib/xemacs/site-lisp/lookup/lookup-content.el
-lib/xemacs/site-lisp/lookup/lookup-entry.el
-lib/xemacs/site-lisp/lookup/lookup-package.el
-lib/xemacs/site-lisp/lookup/lookup-select.el
-lib/xemacs/site-lisp/lookup/lookup-types.el
-lib/xemacs/site-lisp/lookup/lookup-utils.el
-lib/xemacs/site-lisp/lookup/lookup-vars.el
-lib/xemacs/site-lisp/lookup/lookup-vse.el
-lib/xemacs/site-lisp/lookup/lookup.el
-lib/xemacs/site-lisp/lookup/ndcookie.el
-lib/xemacs/site-lisp/lookup/ndeb.el
-lib/xemacs/site-lisp/lookup/ndic.el
-lib/xemacs/site-lisp/lookup/ndict.el
-lib/xemacs/site-lisp/lookup/ndkks.el
-lib/xemacs/site-lisp/lookup/ndmisc.el
-lib/xemacs/site-lisp/lookup/ndspell.el
-lib/xemacs/site-lisp/lookup/ndsrd.el
-lib/xemacs/site-lisp/lookup/ndtp.el
-lib/xemacs/site-lisp/lookup/sdicf.el
-lib/xemacs/site-lisp/lookup/stem-english.el
-@unexec install-info  --delete %D/lib/xemacs/info/lookup.info %D/lib/xemacs/info/dir
-lib/xemacs/info/lookup.info
-lib/xemacs/info/lookup.info-1
-lib/xemacs/info/lookup.info-2
-@exec [ -f %D/lib/xemacs/info/dir ] || mkdir -p %D/lib/xemacs/info; sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/lib/xemacs/info/dir
-@exec install-info %D/lib/xemacs/info/lookup.info %D/lib/xemacs/info/dir
-@dirrm lib/xemacs/site-lisp/lookup
+lib/xemacs/site-packages/lisp/lookup-startup.el
+lib/xemacs/site-packages/lisp/lookup/evi-mule.el
+lib/xemacs/site-packages/lisp/lookup/evi.el
+lib/xemacs/site-packages/lisp/lookup/lookup-content.el
+lib/xemacs/site-packages/lisp/lookup/lookup-entry.el
+lib/xemacs/site-packages/lisp/lookup/lookup-package.el
+lib/xemacs/site-packages/lisp/lookup/lookup-select.el
+lib/xemacs/site-packages/lisp/lookup/lookup-types.el
+lib/xemacs/site-packages/lisp/lookup/lookup-utils.el
+lib/xemacs/site-packages/lisp/lookup/lookup-vars.el
+lib/xemacs/site-packages/lisp/lookup/lookup-vse.el
+lib/xemacs/site-packages/lisp/lookup/lookup.el
+lib/xemacs/site-packages/lisp/lookup/ndcookie.el
+lib/xemacs/site-packages/lisp/lookup/ndeb.el
+lib/xemacs/site-packages/lisp/lookup/ndic.el
+lib/xemacs/site-packages/lisp/lookup/ndict.el
+lib/xemacs/site-packages/lisp/lookup/ndkks.el
+lib/xemacs/site-packages/lisp/lookup/ndmisc.el
+lib/xemacs/site-packages/lisp/lookup/ndspell.el
+lib/xemacs/site-packages/lisp/lookup/ndsrd.el
+lib/xemacs/site-packages/lisp/lookup/ndtp.el
+lib/xemacs/site-packages/lisp/lookup/sdicf.el
+lib/xemacs/site-packages/lisp/lookup/stem-english.el
+lib/xemacs/site-packages/pkginfo/MANIFEST.lookup
+@unexec install-info  --delete %D/lib/xemacs/site-packages/info/lookup.info %D/lib/xemacs/site-packages/info/dir
+lib/xemacs/site-packages/info/lookup.info
+@exec install-info %D/lib/xemacs/info/lookup.info %D/lib/xemacs/site-packages/info/dir
+@dirrm lib/xemacs/site-packages/lisp/lookup
