@@ -1,11 +1,9 @@
---- Makefile.inc.orig	Tue Oct 26 03:31:00 1999
-+++ Makefile.inc	Tue Nov  9 06:45:18 1999
-@@ -1,11 +1,8 @@
--CFLAGS+=	-I${.CURDIR}/..
-+CFLAGS+=	-I${.CURDIR}/.. -I${PREFIX}/include
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/Makefile.inc	Mon Oct 25 16:27:26 1999
++++ ./Makefile.inc	Tue Nov 23 19:19:33 1999
+@@ -2,10 +2,9 @@
  
--.include <bsd.obj.mk>
--
+ .include <bsd.obj.mk>
+ 
 -.if exists(${.CURDIR}/../lib/${__objdir})
 -LDADD+=         -L${.CURDIR}/../lib/${__objdir} -lssh
 -DPADD+=         ${.CURDIR}/../lib/${__objdir}/libssh.a

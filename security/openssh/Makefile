@@ -1,5 +1,5 @@
 # New ports collection makefile for:	OpenSSH
-# Version required:	19991107
+# Version required:	1.2
 # Date created:		7 October 1999
 # Whom:			green
 #
@@ -22,9 +22,9 @@ RESTRICTED=	"Links with cryptographic code."
 CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
-CFLAGS+=	-DHAVE_OPENPTY
+CFLAGS+=	-DHAVE_OPENPTY -I${PREFIX}/include
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Sun Nov 21 11:22:08 EST 1999
+CVS_DATE=	Tue Nov 23 18:52:21 EST 1999
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n ${CVS_DATE} | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
@@ -107,7 +107,7 @@ fetchsrctarball:
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
-	@${CP} ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
+	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
 
 post-patch:
 	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h

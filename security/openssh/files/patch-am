@@ -1,6 +1,5 @@
-diff -ru /home/green/ssh/sshd/Makefile ./sshd/Makefile
---- /home/green/ssh/sshd/Makefile	Tue Oct 26 03:31:00 1999
-+++ ./sshd/Makefile	Mon Nov  8 00:14:02 1999
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/sshd/Makefile	Mon Oct 25 16:27:27 1999
++++ ./sshd/Makefile	Tue Nov 23 19:29:25 1999
 @@ -3,13 +3,14 @@
  PROG=	sshd
  BINOWN=	root
@@ -23,7 +22,7 @@ diff -ru /home/green/ssh/sshd/Makefile ./sshd/Makefile
  .include <bsd.prog.mk>
  
 -LDADD+=	-lcrypto -lutil -lz
-+LDADD+=	-lutil -lz -lcrypt ${CRYPTOLIBS}
++LDADD+=	${CRYPTOLIBS} -lcrypt -lutil -lz
  DPADD+=	${LIBCRYPTO} ${LIBUTIL} ${LIBZ}
  
  .if (${TCP_WRAPPERS} == "yes")
