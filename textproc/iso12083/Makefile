@@ -8,8 +8,10 @@
 PORTNAME=	iso12083
 PORTVERSION=	1993
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -20,7 +22,6 @@ DIST_SUBDIR=	iso12083
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	# empty
 PLIST_SUB=	DTD_NAME=${PORTNAME} MKCATALOG=${MKCATALOG}
 
 INSTDIR=	${PREFIX}/share/sgml/iso12083
