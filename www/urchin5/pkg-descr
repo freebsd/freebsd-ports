@@ -1,0 +1,12 @@
+Urchin is a web analytics software product that, in basic terms, reads log
+files and produces usage reports.  Urchin uses Adobe's SVG graphics
+technology to generate gorgeous, quick-rendering, interactive graphs that
+can be easily pasted into common Office applications.  Urchin achieves a
+high level of accuracy and captures a wealth of visitor parameters via the
+Urchin Tracking Module (UTM2), a client-side data collection component that
+transparently sends additional data back to the server and into the log
+file.  The UTM2 uses a first-party cookie to overcome the effects of caches,
+proxies, and IP-recycling to provide the most accurate and complete
+reporting available from ANY analytics solution.
+
+WWW:	http://www.urchin.com
