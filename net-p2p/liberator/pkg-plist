@@ -1,0 +1,27 @@
+bin/liber
+bin/liber-real
+lib/ocaml/asfi.cma
+lib/ocaml/asfi.cmxa
+lib/ocaml/asfreenet.cmi
+lib/ocaml/asfreenet.mli
+lib/ocaml/fcp.cma
+lib/ocaml/fcp.cmi
+lib/ocaml/fcp.cmxa
+lib/ocaml/fcp.mli
+lib/ocaml/fieldset.cmi
+lib/ocaml/fieldset.mli
+lib/ocaml/fstream.cmi
+lib/ocaml/fstream.mli
+lib/ocaml/hlfi.cma
+lib/ocaml/hlfi.cmxa
+lib/ocaml/hlfreenet.cmi
+lib/ocaml/hlfreenet.mli
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FREESITE-HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/liber_mimetypes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/lib/ocaml 2>/dev/null || true

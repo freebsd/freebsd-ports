@@ -267,6 +267,7 @@
     SUBDIR += lft
     SUBDIR += libconnect
     SUBDIR += libdnet
+    SUBDIR += liberator
     SUBDIR += libfreenet
     SUBDIR += libicq
     SUBDIR += libicq2000
