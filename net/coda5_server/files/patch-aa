@@ -1,16 +1,21 @@
-Some bug inside gcc version 2.95.2 19991024 (release) because
-resolver.cc will not compile without -pedantic. Go figure.
-Adding -pedantic to CXXFLAGS just breaks the other src files.
 
---- Makefile.in.ORIG	Thu Apr 13 14:36:15 2000
-+++ coda-src/asr/Makefile.in	Thu Apr 13 14:37:56 2000
-@@ -44,6 +44,9 @@
+
+--- rc.vice.in	Mon May 15 10:41:07 2000
++++ coda-src/scripts/rc.vice.in	Wed Jun 28 17:07:15 2000
+@@ -58,7 +58,7 @@
+ }
  
- YFLAGS= -d
+ # See how we were called.
+-case "$1" in
++case "${1:-start}" in
+   start)
+     # start auth2 & update stuff: first the scm case
+     echon "Starting Coda Services: "
+@@ -126,6 +126,7 @@
  
-+resolver.o: resolver.cc
-+	$(CXX) $(CXXFLAGS) -pedantic -c $<
-+
- resolver_parser.c: resolver_parser.h
- resolver_parser.h: resolver_parser.y
- 	$(YACC) $(YFLAGS) $< && mv y.tab.c $*.c && mv y.tab.h $*.h
+   *)
+     echo "Usage: $0 {start|stop}"
++    echo "       no parameters mean start"
+     exit 1
+ 
+ esac

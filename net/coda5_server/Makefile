@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-${CODA_SUITE}
 DISTNAME=	coda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rvb@cs.cmu.edu
+MAINTAINER=	coda@cs.cmu.edu
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		lwp.1:${PORTSDIR}/devel/lwp \
@@ -28,6 +28,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
 
 CODA_SUITE?=	server
-CODA_VERSION?=	5.3.7
+CODA_VERSION?=	5.3.8
 
 .include <bsd.port.mk>

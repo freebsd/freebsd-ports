@@ -6,6 +6,7 @@ sbin/auth2
 sbin/backup
 sbin/backup.sh
 sbin/bldvldb.sh
+sbin/codaconfedit
 sbin/codasrv
 sbin/codastart
 sbin/createvol_rep
