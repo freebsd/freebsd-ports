@@ -1,0 +1,18 @@
+*** ../xmgr-4.1.1/examples/Makefile	Sun Jan 18 19:09:32 1998
+--- ./examples/Makefile			Sun Jan 18 19:10:16 1998
+***************
+*** 32,38 ****
+  install : $(EXAMPLES) $(DOTEST)
+  	$(MKINSTALLDIRS) $(GR_HOME)/examples
+  	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GR_HOME)/examples; done
+! 	$(INSTALL_PROGRAM) $(DOTEST) $(GR_HOME)/examples/$(DOTEST)
+
+  links : dummy
+
+--- 32,38 ----
+  install : $(EXAMPLES) $(DOTEST)
+  	$(MKINSTALLDIRS) $(GR_HOME)/examples
+  	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GR_HOME)/examples; done
+! 	install -c -o bin -g bin -m 555 $(DOTEST) $(GR_HOME)/examples/$(DOTEST)
+
+  links : dummy
