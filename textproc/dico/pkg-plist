@@ -1,34 +1,33 @@
-@name dico-1.1
-@cwd /usr/local
+@comment $FreeBSD$
 bin/dico
-share/dico/a.dic
-share/dico/b.dic
-share/dico/c.dic
-share/dico/d.dic
-share/dico/e.dic
-share/dico/f.dic
-share/dico/g.dic
-share/dico/h.dic
-share/dico/i.dic
-share/dico/j.dic
-share/dico/k.dic
-share/dico/l.dic
-share/dico/m.dic
-share/dico/n.dic
-share/dico/o.dic
-share/dico/p.dic
-share/dico/q.dic
-share/dico/r.dic
-share/dico/s.dic
-share/dico/t.dic
-share/dico/u.dic
-share/dico/v.dic
-share/dico/version.dic
-share/dico/w.dic
-share/dico/x.dic
-share/dico/y.dic
-share/dico/z.dic
-@dirrm share/dico
-share/doc/dico/README.TXT
-share/doc/dico/copying.doc
-@dirrm share/doc/dico
+%%DATADIR%%/a.dic
+%%DATADIR%%/b.dic
+%%DATADIR%%/c.dic
+%%DATADIR%%/d.dic
+%%DATADIR%%/e.dic
+%%DATADIR%%/f.dic
+%%DATADIR%%/g.dic
+%%DATADIR%%/h.dic
+%%DATADIR%%/i.dic
+%%DATADIR%%/j.dic
+%%DATADIR%%/k.dic
+%%DATADIR%%/l.dic
+%%DATADIR%%/m.dic
+%%DATADIR%%/n.dic
+%%DATADIR%%/o.dic
+%%DATADIR%%/p.dic
+%%DATADIR%%/q.dic
+%%DATADIR%%/r.dic
+%%DATADIR%%/s.dic
+%%DATADIR%%/t.dic
+%%DATADIR%%/u.dic
+%%DATADIR%%/v.dic
+%%DATADIR%%/version.dic
+%%DATADIR%%/w.dic
+%%DATADIR%%/x.dic
+%%DATADIR%%/y.dic
+%%DATADIR%%/z.dic
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/copying.doc
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
