@@ -1,0 +1,60 @@
+--- aclocal.m4.orig	Thu Feb 10 05:22:27 2000
++++ aclocal.m4	Fri Jul 28 19:30:42 2000
+@@ -1733,7 +1733,7 @@
+ # but which still want to provide support for the GNU gettext functionality.
+ # Please note that the actual code is *not* freely available.
+ 
+-# serial 3
++# serial 5
+ 
+ AC_DEFUN(AM_WITH_NLS,
+   [AC_MSG_CHECKING([whether NLS is requested])
+@@ -1775,9 +1775,10 @@
+ 	     AC_CHECK_LIB(intl, bindtextdomain,
+ 	       [AC_CACHE_CHECK([for gettext in libintl],
+ 		 gt_cv_func_gettext_libintl,
+-		 [AC_TRY_LINK([], [return (int) gettext ("")],
+-		 gt_cv_func_gettext_libintl=yes,
+-		 gt_cv_func_gettext_libintl=no)])])
++		 [AC_CHECK_LIB(intl, gettext,
++		  gt_cv_func_gettext_libintl=yes,
++		  gt_cv_func_gettext_libintl=no)],
++		 gt_cv_func_gettext_libintl=no)])
+ 	   fi
+ 
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \
+@@ -1799,6 +1800,9 @@
+ 		INSTOBJEXT=.mo
+ 	      fi
+ 	    fi
++	    if test "$gt_cv_func_gettext_libintl" = "yes"; then
++		INTLLIBS='-lintl'
++	    fi
+ 	])
+ 
+         if test "$CATOBJEXT" = "NONE"; then
+@@ -1883,6 +1887,12 @@
+       nls_cv_header_intl=intl/libintl.h
+       nls_cv_header_libgt=intl/libgettext.h
+     fi
++    AC_LINK_FILES($nls_cv_header_libgt, $nls_cv_header_intl)
++    AC_OUTPUT_COMMANDS(
++     [case "$CONFIG_FILES" in *po/Makefile.in*)
++        sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile
++      esac])
++
+ 
+     # If this is used in GNU gettext we have to set USE_NLS to `yes'
+     # because some of the sources are only built for this goal.
+@@ -1927,9 +1937,9 @@
+    AC_REQUIRE([AC_FUNC_MMAP])dnl
+ 
+    AC_CHECK_HEADERS([argz.h limits.h locale.h nl_types.h malloc.h string.h \
+-unistd.h values.h sys/param.h])
++unistd.h sys/param.h])
+    AC_CHECK_FUNCS([getcwd munmap putenv setenv setlocale strchr strcasecmp \
+-__argz_count __argz_stringify __argz_next])
++strdup __argz_count __argz_stringify __argz_next])
+ 
+    if test "${ac_cv_func_stpcpy+set}" != "set"; then
+      AC_CHECK_FUNCS(stpcpy)
