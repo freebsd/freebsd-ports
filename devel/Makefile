@@ -258,6 +258,7 @@
     SUBDIR += gdb52
     SUBDIR += gdb53
     SUBDIR += gdb53-act
+    SUBDIR += gdb6
     SUBDIR += gdbmods
     SUBDIR += gengameng
     SUBDIR += gengetopt
