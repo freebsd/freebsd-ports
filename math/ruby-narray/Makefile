@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	narray
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.6p1
 CATEGORIES=	math ruby
-MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/
+MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/ \
+		http://www.ruby-lang.org/~knu/backup/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
