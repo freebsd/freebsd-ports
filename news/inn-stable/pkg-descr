@@ -21,3 +21,5 @@ Final note for UUCP users. The path of the rnews executeable has changed !
 Add this to /etc/uucp/sys:
 	command-path /bin /usr/bin /usr/local/bin /usr/local/news/bin
 	commands rmail uucp rnews
+
+WWW: http://www.isc.org/inn.html
