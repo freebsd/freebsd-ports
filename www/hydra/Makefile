@@ -18,6 +18,7 @@ COMMENT=	A high performance multi-threaded web server
 
 LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls
 
+NO_LATEST_LINK=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
