@@ -14,10 +14,6 @@ MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
 
-PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
-PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
-PATCH_DIST_STRIP= -p1
-
 MAINTAINER=	issei@jp.FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
