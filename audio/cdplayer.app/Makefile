@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdplayer.app
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://planeta.terra.com.br/informatica/oldnapalm/cdplayer/
 DISTNAME=	CDPlayer.app-${PORTVERSION}
