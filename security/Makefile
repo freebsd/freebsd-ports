@@ -74,6 +74,7 @@
     SUBDIR += rsaref
     SUBDIR += saint
     SUBDIR += seahorse
+    SUBDIR += siphon
     SUBDIR += skip
     SUBDIR += slurpie
     SUBDIR += slush
