@@ -1,0 +1,11 @@
+--- lib/unix/Makefile.bsd.orig	Thu Jun  6 17:17:21 2002
++++ lib/unix/Makefile.bsd	Thu Jun  6 17:32:09 2002
+@@ -1,6 +1,6 @@
+ #YOU MUST CHOOSE YOUR COMPILER
+-#CC=gcc
+-#BFLAG=-Wall -O3
++CC?=cc
++BFLAG= ${CFLAGS}
+ 
+ all: message bugscrypt.a
+ 
