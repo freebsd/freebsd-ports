@@ -38,7 +38,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      WITH_NONROOT=yes Use xcdroast w/o beeing root"
+	@${ECHO} "      WITH_NONROOT=yes Use xcdroast w/o being root"
 	@${ECHO} ""
 
 post-patch:
