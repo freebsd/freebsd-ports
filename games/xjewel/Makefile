@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/06/12 04:23:19 asami Exp $
+# $Id: Makefile,v 1.12 1998/05/13 21:26:01 jmz Exp $
 #
 
 DISTNAME=	xjewel-1.6
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN6=		xjewel.6
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin

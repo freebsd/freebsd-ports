@@ -3,7 +3,7 @@
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/01/08 08:22:51 tg Exp $
+# $Id: Makefile,v 1.5 1998/06/17 07:17:40 tg Exp $
 #
 
 DISTNAME=	xgammon-0.98
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+MAN6=		xgammon.6
 
 PATCH_FILES=	${DISTNAME}-dirent.patch
 

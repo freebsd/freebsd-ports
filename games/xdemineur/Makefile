@@ -3,7 +3,7 @@
 # Date created:         13 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/13 08:18:03 tg Exp $
 #
 
 DISTNAME=       xdemineur-2.1
@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
+MAN1=		xdemineur.1
 
 .include <bsd.port.mk>

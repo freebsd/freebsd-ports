@@ -3,7 +3,7 @@
 # Date created:         18 Jul 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.10 1997/11/12 09:57:17 tg Exp $
+# $Id: Makefile,v 1.11 1998/03/26 12:13:35 tg Exp $
 #
 
 DISTNAME=       xkobo-1.11
@@ -16,5 +16,6 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 ALL_TARGET=	xkobo
+MAN1=		xkobo.1
 
 .include <bsd.port.mk>

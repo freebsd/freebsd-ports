@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1996/12/06 23:25:56 asami Exp $
+# $Id: Makefile,v 1.14 1997/06/12 05:10:18 asami Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
@@ -18,5 +18,6 @@ USE_GMAKE=	yes
 USE_IMAKE=      yes
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris
+MAN6=		xmred.6 xmris.6 xmsit.6
 
 .include <bsd.port.mk>

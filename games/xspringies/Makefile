@@ -3,7 +3,7 @@
 # Date created:				12 January 1997
 # Whom:					jkh
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:52:57 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/16 01:35:52 obrien Exp $
 #
 
 DISTNAME=	xspringies-1.1
@@ -14,5 +14,6 @@ DISTFILES=	xspringies.1.1.tar.Z
 MAINTAINER=	jkh@FreeBSD.ORG
 
 USE_IMAKE=	yes
+MAN1=		xspringies.1
 
 .include <bsd.port.mk>

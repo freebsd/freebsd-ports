@@ -3,7 +3,7 @@
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.9 1997/01/03 09:37:35 obrien Exp $
+# $Id: Makefile,v 1.10 1997/02/12 17:47:42 max Exp $
 #
 
 DISTNAME=       xpilot-3.6.1
@@ -15,5 +15,6 @@ MASTER_SITE_SUBDIR=	games/multiplayer
 MAINTAINER=	jmacd@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN6=		xpilot.6 xpilots.6 xp-replay.6
 
 .include <bsd.port.mk>

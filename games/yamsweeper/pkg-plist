@@ -1,6 +1,5 @@
 bin/yamsweeper
 lib/X11/yamsweeper/yams.hi
 lib/X11/yamsweeper/yams.log
-man/man1/yamsweeper.1.gz
 lib/X11/app-defaults/Yamsweeper
 @dirrm lib/X11/yamsweeper

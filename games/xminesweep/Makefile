@@ -3,7 +3,7 @@
 # Date created:		31 Januar 1995
 # Whom:			janek
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:26:07 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/03 09:37:27 obrien Exp $
 #
 
 DISTNAME=	xminesweep3.0
@@ -15,5 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	janek@gaja.ipan.lublin.pl
 
 USE_IMAKE=	yes
+MAN1=		xminesweep.1
 
 .include <bsd.port.mk>

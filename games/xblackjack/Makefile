@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:53:07 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/11 14:22:03 erich Exp $
 #
 
 DISTNAME=	xblackjack-2.2
@@ -16,5 +16,6 @@ MAINTAINER=	erich@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+MAN1=		xblackjack.1
 
 .include <bsd.port.mk>

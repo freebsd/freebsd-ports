@@ -1,5 +1,4 @@
 bin/xspringies
-man/man1/xspringies.1.gz
 lib/X11/xspringies/2snake.xsp
 lib/X11/xspringies/2x2snake.xsp
 lib/X11/xspringies/3snake.xsp
@@ -57,3 +56,4 @@ lib/X11/xspringies/zharp.xsp
 lib/X11/xspringies/zharp2.xsp
 lib/X11/xspringies/zingy.xsp
 lib/X11/xspringies/zwave.xsp
+@dirrm lib/X11/xspringies

@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.9 1997/07/21 19:36:27 max Exp $
+# $Id: Makefile,v 1.10 1998/04/12 16:45:10 jseger Exp $
 #
 
 DISTNAME=       xpipeman
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jseger@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN6=		xpipeman.6
 
 post-install:
 	${INSTALL} -c -g games -m 664 ${FILESDIR}/xpipescores ${PREFIX}/lib/X11

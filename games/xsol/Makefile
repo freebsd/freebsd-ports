@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:27:23 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/03 09:37:53 obrien Exp $
 #
 
 DISTNAME=       xsol-new
@@ -14,5 +14,6 @@ MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/games/
 MAINTAINER=	swallace@FreeBSD.org
 
 USE_IMAKE=      yes
+MAN6=		xsol.6
 
 .include <bsd.port.mk>
