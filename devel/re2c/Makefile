@@ -6,30 +6,34 @@
 #
 
 PORTNAME=	re2c
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.3
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tobez.org/download/port-mirrors/devel/re2c/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/re2c
 MAN1=		re2c.1
 
-ALL_TARGET=	default
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS.*$$|CFLAGS+=-Wall -I. -Wno-unused -Wno-parentheses|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/parser.cc ${WRKSRC}/parser.y
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/re2c ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/re2c.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/re2c
-	${INSTALL_DATA} ${WRKSRC}/doc/loplas.ps.gz ${WRKSRC}/doc/sample.bib \
-		${PREFIX}/share/doc/re2c
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
