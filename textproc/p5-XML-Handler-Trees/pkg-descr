@@ -1,0 +1,13 @@
+XML::Handler::Trees provides three PerlSAX handler classes for building
+tree structures.  XML::Handler::Tree builds the same type of tree as the
+"Tree" style in XML::Parser.  XML::Handler::EasyTree builds the same
+type of tree as the "EasyTree" style added to XML::Parser by
+XML::Parser::EasyTree.  XML::Handler::TreeBuilder builds the same type
+of tree as Sean M. Burke's XML::TreeBuilder.  These classes make it
+possible to construct these tree structures from sources other than
+XML::Parser.
+
+WWW: http://search.cpan.org/search?dist=XML-Handler-Trees
+
+-- Sergey Skvortsov
+skv@protey.ru

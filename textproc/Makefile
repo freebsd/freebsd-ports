@@ -151,6 +151,7 @@
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Filter-Base
+    SUBDIR += p5-XML-Handler-Trees
     SUBDIR += p5-XML-LibRSVG
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXSLT
