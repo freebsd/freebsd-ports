@@ -9,27 +9,21 @@
 # to 'cvs-committers@freebsd.org' etc.  This could be highly embarresing. :-)
 #
 case "`hostname | tr A-Z a-z`" in
-freefall.freebsd.org)
-	:
-	;;
-internat.freebsd.org)
-	:
+freefall.freebsd.org|internat.freebsd.org)
+	# Sanity check to make sure we've been run through the wrapper and are
+	# now primary group 'ncvs'.
+	#
+	GRP=`/usr/bin/id -gn`
+	if [ "x$GRP" != "xncvs" ]; then
+		echo "You do not have group ncvs!"
+		exit 1
+	fi
 	;;
 *)
 	echo "Please commit on Freefall\!"
 	echo "(and Internat for crypto.)"
 	exit 1
 esac
-
-#
-# Sanity check to make sure we've been run through the wrapper and are now
-# primary group 'ncvs'.
-#
-GRP=`/usr/bin/id -gn`
-if [ "x$GRP" != "xncvs" ]; then
-	echo "You do not have group ncvs!"
-	exit 1
-fi
 
 #
 # Ensure the minimum version of cvs is installed.
