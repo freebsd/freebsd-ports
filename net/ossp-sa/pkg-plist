@@ -1,0 +1,6 @@
+bin/sa-config
+include/sa.h
+lib/libsa.a
+lib/libsa.la
+lib/libsa.so
+lib/libsa.so.10
