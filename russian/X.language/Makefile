@@ -20,8 +20,6 @@ DISTFILES += Type1.koi8-r.free.tgz
 
 MAINTAINER=	ache@FreeBSD.org
 
-RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
-
 NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 USE_X_PREFIX=   YES
