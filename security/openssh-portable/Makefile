@@ -79,19 +79,17 @@ post-extract:
 .endfor
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-BROKEN=		patch conflicts with 3.5p1
 PKGNAMESUFFIX=	-gssapi
-GSSAPI_PATCH=	${PORTNAME}-3.4p1-gssapi-20020627.diff
+GSSAPI_PATCH=	${PORTNAME}-3.6.1p2-gssapi-20030430.diff
 GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
 MASTER_SITES+=	${GSSAPI_SITE}
 DISTFILES=	${EXTRACT_ONLY} ${GSSAPI_PATCH}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES+=		${FILESDIR}/servconf.c.patch
-BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS+=		autoreconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
-AUTOCONF=	autoconf
-AUTOHEADER=	autoheader
+AUTORECONF=	autoreconf
 
 post-patch:
 	@${ECHO_MSG} Applying extra patch for GSS-API key-exchange...
@@ -99,10 +97,9 @@ post-patch:
 		< ${DISTDIR}/${GSSAPI_PATCH}
 
 pre-configure:
-	@${ECHO_MSG} !!!! Warning this option uses autoconf/autoheader !!!
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+	@${ECHO_MSG} !!!! Warning this option uses autoreconf !!!
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTORECONF} \
 		${AUTOCONF_ARGS})
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER})
 .endif
 
 post-configure:
@@ -143,6 +140,12 @@ test:
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+.if ${OPENSSLBASE} == "/usr"
+CONFIGURE_ARGS+=	--without-rpath
+LDFLAGS=
+.endif
+.endif
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 .include <bsd.port.post.mk>
