@@ -17,4 +17,8 @@ MAINTAINER=	jonny@jonny.eng.br
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/id3ren/src
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/id3ren.c ${WRKSRC}/misc.c
+
 .include <bsd.port.mk>
