@@ -585,6 +585,7 @@
     SUBDIR += sdl12
     SUBDIR += sdlmm
     SUBDIR += sdts++
+    SUBDIR += semantic
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-chill
