@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 3
-FORBIDDEN=	This port is for XFree86-4.
+FORBIDDEN=	This port is for XFree86-4
 .endif
 
 do-fetch:
