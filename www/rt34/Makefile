@@ -7,6 +7,7 @@
 
 PORTNAME=	rt3
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/
@@ -16,7 +17,6 @@ MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -71,12 +71,21 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--with-db-type=${DB_TYPE} \
 		--with-db-dba=${DB_DBA_USER}
 
+.if defined(WITH_FASTCGI)
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
+		${ARCH_PERL}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+TESTDEPS_ARGS+=	--with-FASTCGI
+DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
 APACHE_PORT?=	${PORTSDIR}/www/apache2
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
+.endif
 .endif
 
 APXS?=		${LOCALBASE}/sbin/apxs
@@ -114,6 +123,7 @@ pre-fetch:
 	@${ECHO} "      DB_PORT=port                    The database port"
 	@${ECHO} "      DB_DBA_USER=password            Name of database administrator (root)"
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
+	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
 	@${ECHO} "      UPGRADE                         Upgrade only, don't initialize DB"
 	@${ECHO} ""
