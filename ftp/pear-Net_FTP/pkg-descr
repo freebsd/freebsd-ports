@@ -1,0 +1,7 @@
+Net_FTP allows you to communicate with FTP servers in a more comfortable way
+than the native FTP functions of PHP do. The class implements everything nativly
+supported by PHP and additionally features like recursive up- and downloading,
+dircreation and chmodding. It although implements an observer pattern to allow
+for example the view of a progress bar.
+
+WWW: http://pear.php.net/package/Net_FTP/
