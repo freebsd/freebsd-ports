@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1996/01/16 14:08:19 jmz Exp $
+# $Id: Makefile,v 1.17 1996/02/15 00:53:15 jmz Exp $
 #
 
 #######################################################################
@@ -13,13 +13,17 @@
 #######################################################################
 #
 # uncomment one of the 2 lines below!
-#(X-Consortium CDROM, O'Reilly 'X-Companion' CDROM, or X by FTP (_*BIG*_)
+#
+# X11_ON_CDROM means you have either X-Consortium CDROM or O'Reilly's
+# 'X-Companion' CDROM, X11_VIA_FTP means you have the FreeBSD CDROM
+# or want to ftp the whole thing _*BIG*_)
+#
 #X11_ON_CDROM	=	yes
 #X11_VIA_FTP	=	yes
 
 #if you are compiling from a cdrom, set the directory where the
 # the patch files are
-X11FIXES = ${DISTDIR}/xc
+X11FIXES = ${DISTDIR}
 
 #define this if you are short of space - save ~28 Mbytes
 #REMOVE_NOT_ESSENTIAL	=	yes
@@ -34,6 +38,8 @@ CATEGORIES      =	x11
 IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
+
+DIST_SUBDIR	=	xc
 
 .if defined(DISTDIR)
 .if exists (${DISTDIR}/xc-1.tar.gz)
@@ -58,11 +64,9 @@ do-build:
 	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
 .endif
 	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
 
 do-install:
 	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
 .if defined(X11_ON_CDROM) 
 	@find /usr/X11R6/ -name 00_TRANS.TBL -exec rm -f {} ';'
 .endif
@@ -80,10 +84,24 @@ do-extract:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
 	@echo ${X11FIXES} > ${WRKDIR}/.cdrom
-	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
 
 .elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
+DISTFILES1	=	xc-1.tar.gz xc-2.tar.gz xc-3.tar.gz
+DISTFILES2	=	fix-12 \
+			XFree86-3.1.2.diff.gz \
+			3.1.2-3.1.2-S.diff.gz
+DISTFILES	=	${DISTFILES1} ${DISTFILES2}
+MASTER_SITES	=	\
+	ftp://ftp.x.org/pub/R6/ \
+	ftp://ftp.EU.net/X11/R6/ \
+	ftp://ftp.x.org/pub/R6/fixes/ \
+	ftp://ftp.EU.net/X11/R6/fixes/ \
+	ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.1.2/patches/	\
+	ftp://ftp.xfree86.org/pub/XFree86/3.1.2/patches/
+EXTRACT_ONLY	=	${DISTFILES1}
+
+pre-patch:
+	@echo ${DISTDIR} > ${WRKDIR}/.ftp
 .else
 do-fetch:
 	@echo Please set one of the 2 variables X11_ON_CDROM or X11_VIA_FTP 
@@ -105,4 +123,3 @@ post-install:
 	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
-
