@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gbscript
 share/chinese/gb/gbscript.pro
 share/chinese/gb/cclib.24 

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/xalloc.h
 lib/libxalloc.so
 lib/libxalloc.so.1

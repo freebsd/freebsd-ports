@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/antlr
 bin/dlg
 bin/genmk

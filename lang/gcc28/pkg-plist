@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/g++
 bin/g++28
 bin/protoize

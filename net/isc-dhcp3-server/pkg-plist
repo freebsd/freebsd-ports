@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 etc/dhclient-script
 sbin/dhclient
 sbin/dhcpd
