@@ -1,5 +1,5 @@
---- b.c.orig	Sun Sep 24 17:18:38 2000
-+++ b.c	Fri Nov  3 01:59:32 2000
+--- b.c.orig	Fri Nov 29 06:56:01 2002
++++ b.c	Wed Dec 11 20:43:35 2002
 @@ -27,6 +27,9 @@
  #define	DEBUG
  
@@ -10,69 +10,19 @@
  #include <stdio.h>
  #include <string.h>
  #include <stdlib.h>
-@@ -75,6 +78,24 @@
- fa	*fatab[NFA];
- int	nfatab	= 0;	/* entries in fatab */
+@@ -714,6 +717,7 @@
+  * must be less than twice the size of their full name.
+  */
  
-+#ifdef	__FreeBSD__
-+static int
-+collate_range_cmp(a, b)
-+int a, b;
-+{
-+	int r;
-+	static char s[2][2];
-+
-+	if ((unsigned char)a == (unsigned char)b)
-+		return 0;
-+	s[0][0] = a;
-+	s[1][0] = b;
-+	if ((r = strcoll(s[0], s[1])) == 0)
-+		r = (unsigned char)a - (unsigned char)b;
-+	return r;
-+}
-+#endif
-+
- fa *makedfa(const char *s, int anchor)	/* returns dfa for reg expr s */
++#ifndef __FreeBSD__
+ /* and because isblank doesn't show up in any of the header files on any
+  * system i use, it's defined here.  if some other locale has a richer
+  * definition of "blank", sorry about that.
+@@ -723,6 +727,7 @@
  {
- 	int i, use, nuse;
-@@ -287,6 +308,9 @@
- 	int i, c, c2;
- 	uschar *p = (uschar *) argp;
- 	uschar *op, *bp;
-+#ifdef	__FreeBSD__
-+ 	int c3;
+ 	return c==' ' || c=='\t';
+ }
 +#endif
- 	static uschar *buf = 0;
- 	static int bufsz = 100;
  
-@@ -303,6 +327,22 @@
- 				c2 = *p++;
- 				if (c2 == '\\')
- 					c2 = quoted((char **) &p);
-+#ifdef	__FreeBSD__
-+ 				if (collate_range_cmp(c, c2) > 0) {
-+ 					bp--;
-+ 					i--;
-+ 					continue;
-+ 				}
-+ 				for (c3 = 0; c3 < (1 << CHAR_BIT) - 1; c3++) {
-+ 					if (collate_range_cmp(c, c3) <= 0 &&
-+ 					    collate_range_cmp(c3, c2) <= 0) {
-+ 						if (!adjbuf(&buf, &bufsz, bp-buf+2, 100, &bp, 0))
-+ 							FATAL("out of space for character class [%.10s...] 2", p);
-+ 						*bp++ = c3 + 1;
-+ 						i++;
-+ 					}
-+ 				}
-+#else /*FreeBSD*/
- 				if (c > c2) {	/* empty; ignore */
- 					bp--;
- 					i--;
-@@ -314,6 +354,7 @@
- 					*bp++ = ++c;
- 					i++;
- 				}
-+#endif /*FreeBSD*/
- 				continue;
- 			}
- 		}
+ struct charclass {
+ 	const char *cc_name;
