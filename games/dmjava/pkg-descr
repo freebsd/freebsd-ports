@@ -1,0 +1,14 @@
+Dungeon Master Java is a remake of the classic FTL game Dungeon Master.
+It is written entirely in Java, and is designed to run as a stand-alone
+application rather than an applet in a web browser. It has high-resolution
+graphics that simulate a 3D environment. Most of the graphics are rendered
+in the free ray-tracer Pov-Ray. Item graphics and character portraits are
+done by hand with a paint program, though many are simply taken from the
+original and its sequels and touched-up.
+
+Gameplay is very similar to the original, with real-time action, 90-degree
+turns, and step-by-step movement. One major change from the original is that
+monsters are not "stuck" in groups: they are completely free to wander,
+sometimes occupying a square with other monsters and sometimes not.
+
+WWW: http://www.cs.pitt.edu/~alandale/dmjava/
