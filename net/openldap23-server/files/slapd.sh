@@ -98,6 +98,6 @@ load_rc_config $name
 if [ -n "$slapd_args" ]; then
   warn "slapd_args is deprecated, use slapd_flags"
   slapd_flags="$slapd_args"
-end
+fi
 
 run_rc_command "$1"

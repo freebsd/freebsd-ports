@@ -31,6 +31,6 @@ load_rc_config $name
 if [ -n "$slurpd_args" ]; then
   warn "slurpd_args is deprecated, use slurpd_flags"
   slurpd_flags="$slurpd_args"
-end
+fi
 
 run_rc_command "$1"
