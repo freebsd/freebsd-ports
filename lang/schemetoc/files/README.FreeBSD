@@ -10,6 +10,15 @@ The syntax of the scc compiler has been extended to automatically
 use dynamic linking unless the -static flag is specified on the scc
 command line.
 
+For compiling exectables on the command line from only object files
+it has no method of knowing if you need the X library linked in,
+and will by default not.  So, if you are building an application 
+written for scheme->c which needs X support (such as ezd), you
+will need to supply a -lX11 flag on the command line.  If you are
+compiling a single scheme file(not an object file) which has the
+(with xlib) line in the module statement it is not neccesary to 
+include -lX11.
+
 Those not wishing to use the X library support can delete the following
 files:  
 
