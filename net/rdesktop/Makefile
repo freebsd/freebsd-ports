@@ -7,6 +7,7 @@
 
 PORTNAME=	rdesktop
 PORTVERSION=	1.0.0.p19.7.6
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
 DISTNAME=	rdesktop-1.0.0
@@ -29,7 +30,7 @@ ALL_TARGET=
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
 .endif
 
 do-patch:
