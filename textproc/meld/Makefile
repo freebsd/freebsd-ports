@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	meld
@@ -30,12 +30,12 @@ post-patch:
 INSTALLDIR=	${PREFIX}/share/meld
 do-install:
 	${MKDIR} ${INSTALLDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/meld ${INSTALLDIR}/meld.py
-	${LN} -sf ${INSTALLDIR}/meld.py ${PREFIX}/bin/meld
+	${INSTALL_SCRIPT} ${WRKSRC}/meld ${INSTALLDIR}
+	${LN} -sf ${INSTALLDIR}/meld ${PREFIX}/bin/meld
 	${INSTALL_DATA} ${WRKSRC}/meld.desktop ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/*.py ${INSTALLDIR}
 	${MKDIR} ${INSTALLDIR}/glade2
-	${INSTALL_DATA} ${WRKSRC}/glade2/*.glade* ${INSTALLDIR}/glade2
+	${INSTALL_DATA} ${WRKSRC}/glade2/*.glade ${INSTALLDIR}/glade2
 	${MKDIR} ${INSTALLDIR}/glade2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/glade2/pixmaps/*.png ${INSTALLDIR}/glade2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/glade2/pixmaps/*.xpm ${INSTALLDIR}/glade2/pixmaps

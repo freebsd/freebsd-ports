@@ -15,9 +15,7 @@ share/meld/filediff.pyo
 share/meld/gnomeglade.py
 share/meld/gnomeglade.pyc
 share/meld/gnomeglade.pyo
-share/meld/meld.py
-share/meld/meld.pyc
-share/meld/meld.pyo
+share/meld/meld
 share/meld/meldapp.py
 share/meld/meldapp.pyc
 share/meld/meldapp.pyo
@@ -40,13 +38,9 @@ share/meld/undo.py
 share/meld/undo.pyc
 share/meld/undo.pyo
 share/meld/glade2/cvsview.glade
-share/meld/glade2/cvsview.gladep
 share/meld/glade2/dirdiff.glade
-share/meld/glade2/dirdiff.gladep
 share/meld/glade2/filediff.glade
-share/meld/glade2/filediff.gladep
 share/meld/glade2/meld-app.glade
-share/meld/glade2/meld-app.gladep
 share/meld/glade2/pixmaps/button_apply0.xpm
 share/meld/glade2/pixmaps/button_apply1.xpm
 share/meld/glade2/pixmaps/button_copy0.xpm
@@ -62,13 +56,14 @@ share/meld/glade2/pixmaps/icon.png
 share/meld/glade2/pixmaps/logo.png
 share/meld/glade2/pixmaps/tree-file-changed.png
 share/meld/glade2/pixmaps/tree-file-new.png
+share/meld/glade2/pixmaps/tree-file-newer.png
 share/meld/glade2/pixmaps/tree-file-normal.png
 share/meld/glade2/pixmaps/tree-folder-changed.png
 share/meld/glade2/pixmaps/tree-folder-new.png
 share/meld/glade2/pixmaps/tree-folder-normal.png
-%%PORTDOCS%%share/doc/meld/index.html
-%%PORTDOCS%%share/doc/meld/stylesheet.css
-%%PORTDOCS%%@dirrm share/doc/meld
+%%PORTDOCS%%%%DOCDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/meld/glade2/pixmaps
 @dirrm share/meld/glade2
 @dirrm share/meld
