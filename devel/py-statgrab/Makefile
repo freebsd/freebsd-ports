@@ -8,8 +8,8 @@
 PORTNAME=	statgrab
 PORTVERSION=	0.2
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	py${PORTNAME}
