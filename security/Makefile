@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += aafid2
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs
