@@ -114,6 +114,7 @@
     SUBDIR += p5-dTemplate
     SUBDIR += par
     SUBDIR += perl2html
+    SUBDIR += perltidy
     SUBDIR += pspell
     SUBDIR += pspell-ispell
     SUBDIR += py-HyperText
