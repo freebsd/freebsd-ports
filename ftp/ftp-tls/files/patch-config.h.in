@@ -1,0 +1,9 @@
+--- config.h.in.orig	Fri Oct 25 14:59:53 2002
++++ config.h.in	Fri Oct 25 15:02:02 2002
+@@ -338,3 +338,6 @@
+ 
+ /* Define to `unsigned' if <sys/types.h> does not define. */
+ #undef size_t
++
++/* Define if libedit has the NetBSD enhancements. */
++#undef ENHANCED_LIBEDIT

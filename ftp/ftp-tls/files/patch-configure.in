@@ -1,0 +1,57 @@
+--- configure.in.orig	Thu Oct 24 21:28:06 2002
++++ configure.in	Fri Oct 25 15:03:04 2002
+@@ -56,6 +56,7 @@
+ AC_CHECK_LIB(nsl, inet_addr)
+ dnl Replace `main' with a function in -lsocks5:
+ dnl AC_CHECK_LIB(socks5, main)
++AC_SEARCH_LIBS(el_init, edit, have_libedit=yes, have_libedit=no)
+ 
+ # Checks for header files.
+ AC_HEADER_DIRENT
+@@ -302,11 +303,11 @@
+ 	AC_CHECK_LIB(krb5, krb5_init_context, ,
+ 	    AC_MSG_ERROR(Could not find Kerberos 5 library needed. Try again using --with-krb5-dir=DIR))
+     fi
+-    # look for OpenSSL libraries, also in the legacy (strange) place "/usr/local/ssl"
++    # look for OpenSSL libraries
+     AC_CHECK_LIB(crypto, X509_STORE_load_locations, , found_openssl=no)
+     if test "$found_openssl" = no; then
+-       CPPFLAGS="$CPPFLAGS -I/usr/local/ssl/include"
+-       LDFLAGS="$LDFLAGS -L/usr/local/ssl/lib"
++       CPPFLAGS="$CPPFLAGS -I$OPENSSLINC"
++       LDFLAGS="$LDFLAGS -L$OPENSSLLIB"
+        # remove the cached result of the previous AC_CHECK_LIB()
+        unset ac_cv_lib_crypto_X509_STORE_load_locations
+        AC_CHECK_LIB(crypto, X509_STORE_load_locations, ,
+@@ -336,10 +337,27 @@
+ if test "$enable_small" = yes; then
+     AC_DEFINE(SMALL)
+ else
+-    LIBS="-ledit -L./libedit $LIBS"
+-    CPPFLAGS="$CPPFLAGS -I./libedit"
+-    LIBEDITTARGET=libedit-all
+-    MANEDITRC=editrc.5
++    AC_MSG_CHECKING([for libedit])
++    if test $have_libedit = no; then
++	AC_MSG_RESULT([no, using my own])
++	LIBS="./libedit/libedit.a $LIBS"
++	CPPFLAGS="$CPPFLAGS -I./libedit"
++	LIBEDITTARGET=libedit-all
++	MANEDITRC=editrc.5
++     else
++	AC_MSG_RESULT([yes])
++	LIBEDITTARGET=
++
++	AC_MSG_CHECKING([for NetBSD enhancements in libedit])
++	AC_TRY_COMPILE([#include <histedit.h>], [int X = EL_RPROMPT],
++	    have_enhanced_libedit=yes)
++	if test "$have_enhanced_libedit" = yes; then
++	    AC_MSG_RESULT([yes])
++	    AC_DEFINE(ENHANCED_LIBEDIT)
++	else
++	    AC_MSG_RESULT([no])
++	fi
++     fi
+ fi
+ AC_SUBST(LIBEDITTARGET)
+ AC_SUBST(MANEDITRC)
