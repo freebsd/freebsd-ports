@@ -8,13 +8,13 @@
 PORTNAME=	snes9x
 PORTVERSION=	1.37c
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.snes9x.com/zips/
+# MASTER_SITES=	http://www.snes9x.com/zips/ is nonexistant right now
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	green
 DISTNAME=	s9xs137c
 
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
-
-BROKEN=		"Does not compile"
 
 .if ${MACHINE_ARCH} == i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/release
 MAKE_ENV+=	USB_JOYSTICK_SUPPORT=yes
 .endif
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386
 
 .if ${MACHINE_ARCH} == alpha
 post-patch:

@@ -1,5 +1,5 @@
---- unix/unix.cpp.orig	Wed Feb 28 13:12:23 2001
-+++ unix/unix.cpp	Sat Sep 28 20:16:36 2002
+--- unix/unix.cpp.orig	Wed Feb 28 16:12:23 2001
++++ unix/unix.cpp	Wed May  7 16:18:26 2003
 @@ -51,9 +51,11 @@
  #include <ctype.h>
  
@@ -50,12 +50,13 @@
  #include <linux/joystick.h>
  int js_fd [4] = {-1, -1, -1, -1};
  int js_map_button [4][16] = {
-@@ -158,6 +172,63 @@
+@@ -158,6 +172,68 @@
  char *js_device [4] = {"/dev/js0", "/dev/js1", "/dev/js2", "/dev/js3"};
  #endif
  
 +#if defined(__FreeBSD__)
 +#include <sys/types.h>
++#include <sys/param.h>
 +
 +extern "C" {
 +#define class klass
@@ -63,7 +64,11 @@
 +#include <dev/usb/usbhid.h>
 +#undef class
 +
++#if __FreeBSD_version < 500111
 +#include <libusbhid.h>
++#else
++#include <usbhid.h>
++#endif
 +}
 +
 +#define	JOYSTICK_MAX_BUTTONS	16
@@ -114,7 +119,7 @@
  void InitJoysticks ();
  void ReadJoysticks ();
  #endif
-@@ -168,7 +239,7 @@
+@@ -168,7 +244,7 @@
  char *rom_filename = NULL;
  char *snapshot_filename = NULL;
  
@@ -123,7 +128,7 @@
  static void sigbrkhandler(int)
  {
  #ifdef DEBUGGER
-@@ -195,91 +266,43 @@
+@@ -195,91 +271,43 @@
      if (strcmp (argv [i], "-j") == 0 ||
  	     strcasecmp (argv [i], "-nojoy") == 0)
  	Settings.JoystickEnabled = FALSE;
@@ -174,24 +179,6 @@
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [1][t] = SNES_START_MASK;
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [1][t] = SNES_SELECT_MASK;
 -	}
--	else
--	    S9xUsage ();
--    }
--    else if (strcasecmp (argv [i], "-joymap3") == 0)
--    {
--	if (i + 8 < argc)
--	{
--	    int t;
--
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_A_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_B_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_X_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_Y_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TL_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TR_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_START_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_SELECT_MASK;
--	}
 +#ifdef __FreeBSD__
 +    else if (strcasecmp(argv[i], "-joyshift") == 0)
 +	JoystickShift = 1;
@@ -209,6 +196,24 @@
 -	    S9xUsage ();
 +		S9xUsage();
      }
+-    else if (strcasecmp (argv [i], "-joymap3") == 0)
+-    {
+-	if (i + 8 < argc)
+-	{
+-	    int t;
+-
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_A_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_B_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_X_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_Y_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TL_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TR_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_START_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_SELECT_MASK;
+-	}
+-	else
+-	    S9xUsage ();
+-    }
 -    else if (strcasecmp (argv [i], "-joymap4") == 0)
 -    {
 -	if (i + 8 < argc)
@@ -250,7 +255,7 @@
      }
      else 
  #endif
-@@ -418,7 +441,7 @@
+@@ -418,7 +446,7 @@
  #if !defined(__MSDOS) && defined(DEBUGGER)
  #if defined(__unix) && !defined(__NeXT__)
      struct sigaction sa;
@@ -259,7 +264,7 @@
      sa.sa_handler = sigbrkhandler;
  #else
      sa.sa_handler = (SIG_PF) sigbrkhandler;
-@@ -610,6 +633,7 @@
+@@ -610,6 +638,7 @@
  }
  
  #ifdef JOYSTICK_SUPPORT
@@ -267,7 +272,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -730,6 +754,184 @@
+@@ -730,6 +759,193 @@
      }
  #endif
  }
@@ -300,7 +305,11 @@
 +	}
 +	report_id = 0;
 +#if __FreeBSD__ >= 5
++#if __FreeBSD_version < 500111
 +	reportlen = hid_report_size(rd, report_id, hid_input);
++#else
++	reportlen = hid_report_size(rd, hid_input, report_id);
++#endif
 +#else
 +	reportlen = hid_report_size(rd, hid_input, &report_id);
 +#endif
@@ -313,7 +322,12 @@
 +	my_info->hids = NULL;
 +
 +	is_joystick = 0;
-+	for (d = hid_start_parse(rd, 1 << hid_input); hid_get_item(d, &h);) {
++#if __FreeBSD_version < 500111
++	for (d = hid_start_parse(rd, 1 << hid_input);
++#else
++	for (d = hid_start_parse(rd, 1 << hid_input, report_id);
++#endif
++	    hid_get_item(d, &h);) {
 +		int usage, page, link_it = 0;
 +		struct js_range *axis;
 +
@@ -452,7 +466,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1422,7 +1624,7 @@
+@@ -1422,7 +1638,7 @@
  }
  #endif
  
@@ -461,7 +475,7 @@
  static int Rates[8] =
  {
      0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1541,7 +1743,7 @@
+@@ -1541,7 +1757,7 @@
  }
  #endif
  
@@ -470,7 +484,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1640,7 +1842,7 @@
+@@ -1640,7 +1856,7 @@
  
  void *S9xProcessSound (void *)
  {
