@@ -4,6 +4,8 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/HelpHtml/addurl.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/cmddoc.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/contact.html
+%%PORTDOCS%%share/doc/httrack/HelpHtml/dev.html
+%%PORTDOCS%%share/doc/httrack/HelpHtml/div/search.sh
 %%PORTDOCS%%share/doc/httrack/HelpHtml/faq.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/fcguide.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/filters.html
@@ -13,6 +15,7 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/addurl4.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/addurl5.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/backblue.gif
+%%PORTDOCS%%share/doc/httrack/HelpHtml/img/fade.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/httrack.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap1_a.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap1_b.gif
@@ -42,6 +45,7 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap9_h.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap9_i.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap9_j.gif
+%%PORTDOCS%%share/doc/httrack/HelpHtml/img/snap9_k.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/index.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/options.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/overview.html
@@ -56,6 +60,7 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt1.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt10.html
+%%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt11.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt2.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt3.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/step9_opt4.html
@@ -73,5 +78,6 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/httrack-doc.html
 %%PORTDOCS%%share/doc/httrack/license.txt
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/img
+%%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/div
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml
 %%PORTDOCS%%@dirrm share/doc/httrack

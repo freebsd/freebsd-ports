@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.02
+PORTVERSION=	3.04
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
 
