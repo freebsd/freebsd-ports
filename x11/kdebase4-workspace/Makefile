@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -22,6 +23,7 @@ USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 KDE_BUILD_PLIST=yes
 
+USE_OPENLDAP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
@@ -38,12 +40,6 @@ CONFIGURE_ARGS+=--without-java			\
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-# This enables kio_ldap (needed by kaddresbook).
-.if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
-PLIST_APPEND+=	plist.ldap
-.endif
 
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
@@ -85,5 +81,7 @@ post-install:
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g'
 
 .include <bsd.port.post.mk>

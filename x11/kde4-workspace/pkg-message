@@ -1,0 +1,11 @@
+This port has installed fonts into %%PREFIX%%/share/fonts
+
+You'll have to add %%PREFIX%%/share/fonts
+to your X font path by either:
+
+$ xset fp+ %%PREFIX%%/share/fonts
+$ xset fp rehash
+
+or by adding it to your X-server configuration file (usually
+/etc/X11/XF86Config or %%X11BASE%%/lib/X11/XF86Config) and
+restarting the X-server.
