@@ -1,5 +1,6 @@
 This is a complete set of memory allocation functions (malloc and
-friends). 
+friends) from the Computer Systems Research Institute at U of Toronto.
+
 	The allocator is small, fast and space-efficient. 
 
 	It performs coalescing on frees. 
