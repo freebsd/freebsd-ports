@@ -44,6 +44,13 @@ esac
 export PORTSDIR=$(pwd)
 duds=../../${branch}/duds
 
+if [ "x$NODUMMY" = "x" ]; then
+  unset XFREE86_VERSION
+  unset MOTIF_OPEN
+else
+  export XFREE86_VERSION=4
+  export MOTIF_OPEN=t
+fi
 unset DISPLAY
 export BATCH=t
 export HAVE_MOTIF=t
