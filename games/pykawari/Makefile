@@ -40,7 +40,7 @@ CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+USE_GCC=	3.3
 .endif
 
 .if ${ARCH} == "amd64"
@@ -48,7 +48,7 @@ CFLAGS+=	-fPIC
 .endif
 
 do-build:
-	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS})
+	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS} CXX=${CXX})
 
 do-install:
 	${MKDIR} ${PREFIX}/share/kawari
