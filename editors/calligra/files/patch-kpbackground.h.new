@@ -1,0 +1,10 @@
+--- kpresenter/kpbackground.h	Sat Aug 26 04:53:37 2000
++++ kpresenter/kpbackground.h.new	Tue Feb 27 16:52:49 2001
+@@ -20,6 +20,7 @@
+ #ifndef kpbackground_h
+ #define kpbackground_h
+ 
++#include <stdlib.h>
+ #include <qcolor.h>
+ #include <qstring.h>
+ #include <qrect.h>
