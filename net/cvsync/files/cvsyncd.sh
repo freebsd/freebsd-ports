@@ -6,10 +6,9 @@
 # REQUIRE: LOGIN
 # KEYWORD: FreeBSD
 #
-cvsyncd_enable="NO"
-cvsyncd_pidfile="/var/run/cvsyncd.pid"
-cvsyncd_conffile="%%PREFIX%%/etc/cvsyncd.conf"
-cvsyncd_flags=""
+cvsyncd_enable=${cvsyncd_enable-"NO"}
+cvsyncd_pidfile=${cvsyncd_pidfile-"/var/run/cvsyncd.pid"}
+cvsyncd_conffile=${cvsyncd_conffile-"%%PREFIX%%/etc/cvsyncd.conf"}
 
 . %%RC_SUBR%%
 
