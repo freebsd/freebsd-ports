@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
@@ -62,6 +62,10 @@ CONFIGURE_ARGS+=	--enable-force-setpassent
 
 .if defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	--disable-pam
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 #allow user to override
@@ -122,8 +126,7 @@ post-configure:
 		< ${WRKSRC}/Make.rules.pre_sed > ${WRKSRC}/Make.rules
 
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
-	@${SED}	-e 's:/etc:${PREFIX}/etc:' \
-		-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
+	@${SED}	-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
 		-e 's:/usr/sbin:${PREFIX}/sbin:' \
 		-e 's:/usr/bin:${PREFIX}/bin:' \
 		< ${WRKSRC}/src/proftpd.8.pre_sed > ${WRKSRC}/src/proftpd.8
