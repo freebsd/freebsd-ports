@@ -759,6 +759,7 @@
     SUBDIR += torrentsniff
     SUBDIR += tptest
     SUBDIR += traceroute
+    SUBDIR += trackerbt
     SUBDIR += trafshow
     SUBDIR += trafshow4
     SUBDIR += tramp

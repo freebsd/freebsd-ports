@@ -1,0 +1,20 @@
+[ excerpt from developer's web site with modifications ]
+
+One crucial component of the BitTorrent structure is the tracker.
+This is a small program which is hosted by someone who wants to
+share a file using BitTorrent. Anyone that wants to download that
+file needs to connect to the tracker to receive a list of other
+peers already participating in the download of the file. The tracker
+is a standalone program. If the tracker goes offline, new peers
+will not be able to join the download. This makes the tracker the
+weak link of the BitTorrent solution.
+
+What if the tracker were able to share its peer list with other
+trackers? This would create a redundant network of trackers, all
+aware of all peers participating in the download. Peak load would
+be reduced, and if one tracker goes offline new peers would still
+be able to contact one of the other trackers and join the download.
+
+WWW: http://www.alhem.net/project/trackerbt/index.html
+
+-- lioux@FreeBSD.org
