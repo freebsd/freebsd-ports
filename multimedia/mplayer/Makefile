@@ -158,6 +158,14 @@
 # WITH_AALIB
 # default: autodetect
 #
+# WITH_THEORA
+# default: autodetect
+#
+# WITH_TREMOR
+# default: autodetect
+# By setting this option mplayer will use libtremor (integer only vorbis 
+# decoding lib) instead of libvorbis even if libvorbis is installed.
+#
 # WITH_SDL
 # default: autodetect
 # (implies WITH_AALIB)
@@ -219,7 +227,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -319,6 +327,10 @@ WITH_MAD=	yes
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
 WITH_SVGALIB=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libtheora.so.0)
+WITH_THEORA=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libaa.so.1)
@@ -501,6 +513,17 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 
 .if defined(WITH_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.endif
+
+.if defined(WITH_THEORA)
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+.endif
+
+.if defined(WITH_TREMOR)
+LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+CONFIGURE_ARGS+=	--enable-tremor
+.else
+CONFIGURE_ARGS+=	--disable-tremor
 .endif
 
 .if defined(WITH_SDL)
