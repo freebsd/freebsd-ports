@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/UPS/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Business/UPS.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/UPS/autosplit.ix
+%%PORTDOCS%%share/examples/Business-UPS/test.pl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Business/UPS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Business 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/UPS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/share/examples/Business-UPS 2>/dev/null || true
