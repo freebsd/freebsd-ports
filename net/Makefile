@@ -461,6 +461,7 @@
     SUBDIR += p5-Net-SFTP
     SUBDIR += p5-Net-SMPP
     SUBDIR += p5-Net-SNMP
+    SUBDIR += p5-Net-SNMP3
     SUBDIR += p5-Net-SNPP
     SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-SSH-Perl
