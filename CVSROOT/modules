@@ -803,6 +803,7 @@ citrix_ica	ports/net/citrix_ica
 civ2demo	ports/games/civ2demo
 cjk-lyx		ports/print/cjk-lyx
 cksfv		ports/security/cksfv
+cl-asdf		ports/devel/cl-asdf
 clamav		ports/security/clamav
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
