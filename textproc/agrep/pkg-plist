@@ -1,4 +1,4 @@
 @comment $FreeBSD$
 bin/agrep
-share/doc/agrep/agrep.algorithms
-@dirrm share/doc/agrep
+%%DOCSDIR%%/agrep.algorithms
+@dirrm %%DOCSDIR%%
