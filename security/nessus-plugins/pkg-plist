@@ -44,6 +44,7 @@ lib/nessus/plugins/axent_raptor_dos.nasl
 lib/nessus/plugins/axis.nasl
 lib/nessus/plugins/axis_camera.nasl
 lib/nessus/plugins/backorifice1.nasl
+lib/nessus/plugins/basilix_inc_files.nasl
 lib/nessus/plugins/bb-hist.nasl
 lib/nessus/plugins/bb-hostsvc.nasl
 lib/nessus/plugins/bboard.nasl
@@ -169,6 +170,7 @@ lib/nessus/plugins/hotsync.nasl
 lib/nessus/plugins/hp_printer_display.nasl
 lib/nessus/plugins/hp_remote_print.nasl
 lib/nessus/plugins/hpux_ftpd.nasl
+lib/nessus/plugins/hsx.nasl
 lib/nessus/plugins/htdig.nasl
 lib/nessus/plugins/htgrep.nasl
 lib/nessus/plugins/htmlscript.nasl
@@ -186,6 +188,7 @@ lib/nessus/plugins/iChat.nasl
 lib/nessus/plugins/iParty.nasl
 lib/nessus/plugins/icat.nasl
 lib/nessus/plugins/icecap_default_pw.nasl
+lib/nessus/plugins/icecast_overflow.nasl
 lib/nessus/plugins/icmp_mask_req.nasl
 lib/nessus/plugins/icmp_timestamp.nasl
 lib/nessus/plugins/icq_crash.nasl
@@ -261,6 +264,7 @@ lib/nessus/plugins/mstream_handler.nasl
 lib/nessus/plugins/multicsp_detect.nasl
 lib/nessus/plugins/multihtml.nasl
 lib/nessus/plugins/mysql_bad_password.nasl
+lib/nessus/plugins/mysql_overflow.nasl
 lib/nessus/plugins/mysql_unpassworded.nasl
 lib/nessus/plugins/nai_webshield_info.nasl
 lib/nessus/plugins/nai_webshield_overflow.nasl
@@ -305,6 +309,7 @@ lib/nessus/plugins/objectserver.nes
 lib/nessus/plugins/oops_overflow.nasl
 lib/nessus/plugins/openlink_overflow.nasl
 lib/nessus/plugins/openssh_uselogin.nasl
+lib/nessus/plugins/oracle_xsql.nasl
 lib/nessus/plugins/oshare.nasl
 lib/nessus/plugins/ows_bin_cgi.nasl
 lib/nessus/plugins/ows_overflow.nasl
@@ -451,6 +456,7 @@ lib/nessus/plugins/smb_nt_ms00-067.nasl
 lib/nessus/plugins/smb_nt_ms00-070.nasl
 lib/nessus/plugins/smb_nt_ms00-089.nasl
 lib/nessus/plugins/smb_nt_ms00-091.nasl
+lib/nessus/plugins/smb_nt_ms01-003.nasl
 lib/nessus/plugins/smb_reg_autologon.nasl
 lib/nessus/plugins/smb_reg_hklm.nasl
 lib/nessus/plugins/smb_reg_missing_winreg.nasl
