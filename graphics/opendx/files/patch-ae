@@ -1,14 +1,5 @@
 --- src/exec/dpexec/Makefile.in.orig	Thu Jan  6 21:17:53 2000
 +++ src/exec/dpexec/Makefile.in	Sat Feb 12 15:22:32 2000
-@@ -90,7 +90,7 @@
- YACC = @YACC@
- yakker = @yakker@
- 
--INCLUDES = -I../../../include -I../libdx -D@ARCH@
-+INCLUDES = -I../../../include -I../libdx
- 
- noinst_LIBRARIES = libDPEXEC.a
- 
 @@ -204,6 +204,7 @@
  	else :; fi
  yuiif.h: yuiif.c
