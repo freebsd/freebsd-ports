@@ -9,3 +9,14 @@
  static char strbuffer[LINELENGTH + 20], *strbp = strbuffer ;
  static struct papsiz *finpapsiz ;
  struct papsiz defpapsiz = {
+--- Makefile.in.orig	Sat Feb  8 03:43:07 1997
++++ Makefile.in	Sat Jun 27 17:41:51 1998
+@@ -31,7 +31,7 @@
+ 	  (cd $$d && $(MAKE) $(makeargs) $@); else true; fi; done
+ 
+ install install-data install-exec:
+-	for d in kpathsea $(programs); do if test -d $$d; then \
++	for d in $(programs); do if test -d $$d; then \
+ 	  (cd $$d && $(MAKE) $(installargs) $@); else true; fi; done
+ 
+ # Other standard targets for everything.
