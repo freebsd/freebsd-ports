@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010811
-PORTREVISION=	1
+PORTVERSION=	20010812
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -37,8 +36,6 @@ MANCOMPRESSED=	yes
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/pkgdb.rb
-	${RUBY} -i~ -ne 'if ~%r:if /\^MD5 : then puts "      if /^MD5 \\((.*)\\) = / =~ line"; else puts $$_; end' ${WRKSRC}/portsclean
-
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
