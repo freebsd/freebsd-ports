@@ -21,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2
+USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2 lthack
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
