@@ -12,7 +12,9 @@ MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.94.1/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		bonobo-2.0:{PORTSDIR}/devel/libbonobo
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 # note, we do not want to clean openh323, otherwise it has to build
