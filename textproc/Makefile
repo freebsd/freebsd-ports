@@ -110,6 +110,7 @@
     SUBDIR += p5-Number-Format
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
+    SUBDIR += p5-RDF-Notation3
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-PolySort
