@@ -120,6 +120,7 @@
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += pslist
+    SUBDIR += pstree
     SUBDIR += psmisc
     SUBDIR += pwgen
     SUBDIR += pyfind
