@@ -1,11 +1,14 @@
---- src/hash/glsignal.c.orig	Wed Mar 24 12:49:38 2004
-+++ src/hash/glsignal.c	Wed Mar 24 12:59:16 2004
-@@ -35,6 +35,8 @@
- 	va_list vax;
- #if defined HAVE_GCC && defined __va_copy
- 	__va_copy(vax, va);
-+#elif (defined(__FreeBSD__) && __FreeBSD__ >= 5)
-+	va_copy(vax, va);
- #elif !(defined OS_BSD && defined CPU_X86 && defined HAVE_GCC)
- 	memcpy(vax, va, sizeof(va_list));
- #endif
+--- src/hash/glsignal.c.orig	Sat Oct 23 22:14:22 2004
++++ src/hash/glsignal.c	Sat Dec 11 21:30:33 2004
+@@ -63,7 +63,11 @@
+ 
+ 	glame_list_foreach(&dest->handlers, glsig_handler_t, list, h) {
+ 		va_list vac;
++#if defined(__FreeBSD__) && defined(__GNUC__) && (__GNUC__ < 3)
++		vac = va;
++#else
+ 		va_copy(vac, va);
++#endif
+ 		_glsig_handler_exec(h, sig, vac);
+ 		va_end(vac);
+ 	}
