@@ -1,6 +1,13 @@
 DGD is a rewrite from scratch of the LPMud server.  It runs on Windows, MacOS,
 BeOS and many versions of Unix.
 
+This is the core distribution of DGD, providing all the tools needed
+to implement interactive servers, for instance MUD, IRC, WWW, etc.
+A reference implementation of a kernel library is provided, which can
+be further built on. Normally with DGD, there is a kernel library to
+define the programming environment and a database library to define the
+interaction environment.
+
 Please report bugs to <felix@dworkin.nl>.
 
 WWW: http://www.dworkin.nl/dgd/
