@@ -1,9 +1,9 @@
---- python/tests/Makefile.in.orig	Wed Apr 17 21:45:40 2002
-+++ python/tests/Makefile.in	Wed Apr 17 21:46:32 2002
-@@ -130,7 +130,7 @@
- Z_CFLAGS = @Z_CFLAGS@
- Z_LIBS = @Z_LIBS@
- 
+--- python/tests/Makefile.in.orig	Thu Aug 14 22:07:15 2003
++++ python/tests/Makefile.in	Thu Aug 14 22:07:43 2003
+@@ -150,7 +150,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ pythondir = @pythondir@
 -EXAMPLE_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/doc/libxml2-python/examples
  

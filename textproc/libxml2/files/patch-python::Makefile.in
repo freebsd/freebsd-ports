@@ -1,6 +1,6 @@
---- python/Makefile.in.orig	Wed Apr 17 21:43:23 2002
-+++ python/Makefile.in	Wed Apr 17 21:44:01 2002
-@@ -141,7 +141,7 @@
+--- python/Makefile.in.orig	Thu Aug 14 22:06:11 2003
++++ python/Makefile.in	Thu Aug 14 22:06:39 2003
+@@ -161,7 +161,7 @@
  	-I$(top_srcdir)/include
  
  

@@ -1,47 +1,47 @@
---- Makefile.in.orig	Tue Nov 19 00:01:49 2002
-+++ Makefile.in	Tue Nov 19 00:04:06 2002
-@@ -137,7 +137,7 @@
- Z_CFLAGS = @Z_CFLAGS@
- Z_LIBS = @Z_LIBS@
+--- Makefile.in.orig	Thu Aug 14 22:02:48 2003
++++ Makefile.in	Thu Aug 14 22:04:43 2003
+@@ -153,7 +153,7 @@
+ install_sh = @install_sh@
+ pythondir = @pythondir@
  
 -SUBDIRS = include . doc example @PYTHON_SUBDIR@
 +SUBDIRS = include . doc example @WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
  
  DIST_SUBDIRS = include . doc example python
  
-@@ -154,7 +154,7 @@
+@@ -171,7 +171,7 @@
  lib_LTLIBRARIES = libxml2.la
  libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) -lm
  
 -libxml2_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
 +libxml2_la_LDFLAGS = -version-info 5:0:0
- @WITH_TRIO_SOURCES_TRUE@libxml2_la_SOURCES = @WITH_TRIO_SOURCES_TRUE@SAX.c entities.c encoding.c error.c parserInternals.c  \
+ 
+ @WITH_TRIO_SOURCES_TRUE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
  @WITH_TRIO_SOURCES_TRUE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
- @WITH_TRIO_SOURCES_TRUE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -239,7 +239,7 @@
+@@ -270,7 +270,7 @@
  
  CLEANFILES = xml2Conf.sh
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xml2Conf.sh
- EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml.spec \
+ EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
               libxml.m4 Copyright check-xml-test-suite.py \
-@@ -257,7 +257,7 @@
+@@ -289,7 +289,7 @@
  # Instll the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
 +DOC_MODULE = libxml2
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
+ subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -1354,7 +1354,7 @@
- 		uninstall-confexecDATA uninstall-m4dataDATA \
- 		uninstall-pkgconfigDATA
- uninstall: uninstall-recursive
+@@ -1034,7 +1034,7 @@
+ check-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) check-local
+ check: check-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
  		config.h
- all-redirect: all-recursive-am
- install-strip:
+ install-binPROGRAMS: install-libLTLIBRARIES
+ 

@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure	2002/04/26 07:47:10	1.1
-+++ configure	2002/04/26 07:47:25
-@@ -5539,6 +5539,7 @@
+--- configure.orig	Thu Aug 14 20:33:30 2003
++++ configure	Thu Aug 14 22:12:01 2003
+@@ -8256,6 +8256,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,3 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -14275,7 +14276,7 @@
+     fi
+     if test "$with_python" != ""
+     then
+-        pythondir='$(PYTHON_SITE_PACKAGES)'
++        pythondir='$(libdir)/python${PYTHON_VERSION}/site-packages'
+     else
+         pythondir='$(libdir)/python${PYTHON_VERSION}/site-packages'
+     fi
