@@ -55,6 +55,7 @@ post-patch:
 		's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%X11BASE%%|${X11BASE}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config/crosssite.def
+	@${PERL} -pi -e 's|^distclean:|$$&:|' ${WRKSRC}/Imakefile
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
