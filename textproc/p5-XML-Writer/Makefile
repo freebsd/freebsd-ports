@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Writer
-PORTVERSION=	0.500
+PORTVERSION=	0.510
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.cpan.dk/CPAN/authors/id/E/ED/EDAVIS/ \
 		${MASTER_SITE_PERL_CPAN}
