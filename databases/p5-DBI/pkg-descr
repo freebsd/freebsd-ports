@@ -9,3 +9,5 @@ implement emulations of old perl4 database interfaces, e.g., oraperl.
 This strategy enables the DBI and drivers to serve a useful purpose
 whilst allowing the real interface to evolve with experience behind the
 emulation interface.
+
+WWW: http://forteviot.symbolstone.org/technology/perl/DBI/

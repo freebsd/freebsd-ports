@@ -53,3 +53,5 @@
        actually somewhat misleading.  Date::Manip works with the
        full date AND time (year, month, day, hour, minute,
        second).
+
+WWW: http://www.cise.ufl.edu/~sbeck/
