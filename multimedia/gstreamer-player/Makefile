@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-player/
 PKGNAMESUFFIX=	-player

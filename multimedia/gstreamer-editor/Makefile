@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-editor/
 PKGNAMESUFFIX=	-editor
@@ -17,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gstreamer-0.8.4:${PORTSDIR}/multimedia/gstreamer \
+LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	gst-visualise-0.8:${PORTSDIR}/multimedia/gstreamer-plugins
 
