@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1997/08/27 16:00:04 andreas Exp $
+# $Id: Makefile,v 1.9 1997/09/02 16:48:55 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -34,7 +34,7 @@ GS_SOURCES+=	ghostscript-5.03gnu.tar.gz
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.0.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-5.03.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
 HP850_DRV=	hp850.zip
