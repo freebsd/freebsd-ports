@@ -10,7 +10,7 @@ PORTVERSION=	1.13
 CATEGORIES=	print
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 NO_BUILD=	yes
 

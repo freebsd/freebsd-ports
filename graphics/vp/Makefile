@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

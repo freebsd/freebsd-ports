@@ -10,7 +10,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/penguin-command/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		png.4:${PORTSDIR}/graphics/png

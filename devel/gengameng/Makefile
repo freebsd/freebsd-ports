@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://sites.netscape.net/sarrazip/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

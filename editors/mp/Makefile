@@ -10,7 +10,7 @@ PORTVERSION=	3.0.98n
 CATEGORIES=	editors
 MASTER_SITES=	http://www.triptico.com/download/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}"

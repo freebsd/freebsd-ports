@@ -10,7 +10,7 @@ PORTVERSION=	1.32
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

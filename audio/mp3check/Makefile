@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	dannyboy
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \
 		${LOCALBASE}/bin/mp3_check:${PORTSDIR}/audio/mp3_check

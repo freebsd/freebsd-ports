@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.ee.tut.fi/~orsila/xdms/
 DISTNAME=	xdms
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/xdms/src

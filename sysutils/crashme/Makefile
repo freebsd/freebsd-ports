@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.delphi.com/gjc/
 DISTNAME=	crashme
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes

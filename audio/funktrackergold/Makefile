@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 DISTNAME=	funktrackergold-1.5-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
