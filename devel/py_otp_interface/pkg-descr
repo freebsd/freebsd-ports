@@ -1,0 +1,5 @@
+Native Python implementation of an Erlang/OTP hidden node. It can
+talk to R7, R8 and R9 nodes, supports sending and receiving messages,
+RPC calls and EPMD registration.
+
+WWW: http://www.erlang.org/user.html#py_interface-0.91
