@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
 
+USE_REINPLACE=	yes
 USE_MYSQL=	yes
 BROKEN_WITH_MYSQL=	41
 USE_GMAKE=	yes
@@ -22,6 +23,9 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s@^#define DEBUG@#undef DEBUG@" ${WRKSRC}/pam_mysql.c
 
 pre-build:
 	@cd ${WRKSRC} && ${GMAKE} clean
