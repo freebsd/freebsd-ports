@@ -15,13 +15,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS=	db41:${PORTSDIR}/databases/db41
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 INSTALLS_SHLIB=	yes
@@ -30,6 +31,9 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .include "${FILESDIR}/manpages.mk"
 

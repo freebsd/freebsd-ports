@@ -61,8 +61,6 @@ lib/kde3/kfile_diff.la
 lib/kde3/kfile_diff.so
 lib/kde3/kfile_po.la
 lib/kde3/kfile_po.so
-lib/kde3/libdbsearchengine.la
-lib/kde3/libdbsearchengine.so
 lib/kde3/libkomparenavtreepart.la
 lib/kde3/libkomparenavtreepart.so
 lib/kde3/libkomparepart.la
@@ -356,7 +354,6 @@ share/apps/kbabel/pics/noflag.png
 share/apps/kbabel/pics/ok.png
 share/apps/kbabel/pics/pref_identity.png
 share/apps/kbabel/pics/splash.png
-share/apps/kbabeldict/modules/dbsearchengine.rc
 share/apps/kbabeldict/modules/poauxiliary.rc
 share/apps/kbabeldict/modules/pocompendium.rc
 share/apps/kbugbuster/kbugbusterui.rc
@@ -475,89 +472,58 @@ share/services/komparepart.desktop
 share/services/pothumbnail.desktop
 share/servicetypes/komparenavigationpart.desktop
 share/servicetypes/kompareviewpart.desktop
-@dirrm include/kbabel
-@dirrm include
-@dirrm lib/kde3
-@dirrm lib
-@dirrm share/doc/HTML/en/cervisia
+@dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/16x16/mimetypes
 @dirrm share/doc/HTML/en/kompare
 @dirrm share/doc/HTML/en/kbugbuster
 @dirrm share/doc/HTML/en/kbabel
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
-@dirrm share/applnk/Development
-@dirrm share/applnk
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32/mimetypes
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/mimetypes
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48/mimetypes
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16/mimetypes
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32/mimetypes
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor
-@dirrm share/icons
-@dirrm share/apps/cervisiapart
-@dirrm share/apps/cervisia
-@dirrm share/apps/kapptemplate/admin
-@dirrm share/apps/kapptemplate/appframework/no-exe
-@dirrm share/apps/kapptemplate/appframework
-@dirrm share/apps/kapptemplate/existing
-@dirrm share/apps/kapptemplate/kapp/no-exe
-@dirrm share/apps/kapptemplate/kapp
-@dirrm share/apps/kapptemplate/kpartapp/no-exe
-@dirrm share/apps/kapptemplate/kpartapp
-@dirrm share/apps/kapptemplate/kpartplugin/no-exe
-@dirrm share/apps/kapptemplate/kpartplugin
-@dirrm share/apps/kapptemplate/bin
-@dirrm share/apps/kapptemplate/include
-@dirrm share/apps/kapptemplate
+@dirrm share/doc/HTML/en/cervisia
+@dirrm share/apps/komparepart
+@dirrm share/apps/kompare/icons/locolor/32x32/apps
+@dirrm share/apps/kompare/icons/locolor/32x32
+@dirrm share/apps/kompare/icons/locolor/16x16/apps
+@dirrm share/apps/kompare/icons/locolor/16x16
+@dirrm share/apps/kompare/icons/locolor
+@dirrm share/apps/kompare/icons/crystalsvg/16x16/apps
+@dirrm share/apps/kompare/icons/crystalsvg/16x16
+@dirrm share/apps/kompare/icons/crystalsvg
+@dirrm share/apps/kompare/icons
+@dirrm share/apps/kompare
+@dirrm share/apps/kbugbuster/pics
+@dirrm share/apps/kbugbuster
 @dirrm share/apps/kbabeldict/modules
 @dirrm share/apps/kbabeldict
 @dirrm share/apps/kbabel/pics
 @dirrm share/apps/kbabel/icons/locolor/32x32/actions
 @dirrm share/apps/kbabel/icons/locolor/32x32
-@dirrm share/apps/kbabel/icons/locolor/16x16/actions
-@dirrm share/apps/kbabel/icons/locolor/16x16
 @dirrm share/apps/kbabel/icons/locolor/22x22/actions
 @dirrm share/apps/kbabel/icons/locolor/22x22
+@dirrm share/apps/kbabel/icons/locolor/16x16/actions
+@dirrm share/apps/kbabel/icons/locolor/16x16
 @dirrm share/apps/kbabel/icons/locolor
 @dirrm share/apps/kbabel/icons/hicolor/32x32/actions
 @dirrm share/apps/kbabel/icons/hicolor/32x32
-@dirrm share/apps/kbabel/icons/hicolor/16x16/actions
-@dirrm share/apps/kbabel/icons/hicolor/16x16
 @dirrm share/apps/kbabel/icons/hicolor/22x22/actions
 @dirrm share/apps/kbabel/icons/hicolor/22x22
+@dirrm share/apps/kbabel/icons/hicolor/16x16/actions
+@dirrm share/apps/kbabel/icons/hicolor/16x16
 @dirrm share/apps/kbabel/icons/hicolor
 @dirrm share/apps/kbabel/icons
 @dirrm share/apps/kbabel
+@dirrm share/apps/kapptemplate/kpartplugin/no-exe
+@dirrm share/apps/kapptemplate/kpartplugin
+@dirrm share/apps/kapptemplate/kpartapp/no-exe
+@dirrm share/apps/kapptemplate/kpartapp
+@dirrm share/apps/kapptemplate/kapp/no-exe
+@dirrm share/apps/kapptemplate/kapp
+@dirrm share/apps/kapptemplate/include
+@dirrm share/apps/kapptemplate/existing
+@dirrm share/apps/kapptemplate/bin
+@dirrm share/apps/kapptemplate/appframework/no-exe
+@dirrm share/apps/kapptemplate/appframework
+@dirrm share/apps/kapptemplate/admin
+@dirrm share/apps/kapptemplate
+@dirrm share/apps/cervisiapart
+@dirrm share/apps/cervisia
 @dirrm share/apps/catalogmanager
-@dirrm share/apps/kbugbuster/pics
-@dirrm share/apps/kbugbuster
-@dirrm share/apps/kabc/formats
-@dirrm share/apps/kabc
-@dirrm share/apps/komparepart
-@dirrm share/apps/kompare/icons/crystalsvg/16x16/apps
-@dirrm share/apps/kompare/icons/crystalsvg/16x16
-@dirrm share/apps/kompare/icons/crystalsvg
-@dirrm share/apps/kompare/icons/locolor/16x16/apps
-@dirrm share/apps/kompare/icons/locolor/16x16
-@dirrm share/apps/kompare/icons/locolor/32x32/apps
-@dirrm share/apps/kompare/icons/locolor/32x32
-@dirrm share/apps/kompare/icons/locolor
-@dirrm share/apps/kompare/icons
-@dirrm share/apps/kompare
-@dirrm share/apps
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/services
-@dirrm share/servicetypes
+@dirrm include/kbabel
