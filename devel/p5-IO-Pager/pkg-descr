@@ -1,0 +1,11 @@
+IO::Pager is lightweight and can be used to locate an available pager
+and set $ENV{PAGER} sanely or as a factory for creating objects defined
+elsewhere such as IO::Pager::Buffered and IO::Pager::Unbuffered.
+
+IO::Pager subclasses are designed to programmatically decide whether
+or not to pipe a filehandle's output to a program specified in $ENV{PAGER}.
+Subclasses are only required to support filehandle output methods and close,
+namely
+
+WWW: http://search.cpan.org/~jpierce/IO-Pager/
+Author:	Jerrad Pierce
