@@ -7,7 +7,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
@@ -25,7 +25,7 @@ pre-configure:
 
 pre-install:
 .if !defined(IFMAIL_RUNAS)
-	if ! pw usershow ifmail; then pw useradd ifmail -g uucp -u 70 \
+	if ! pw usershow ifmail; then pw useradd ifmail -g uucp -u 75 \
 		-h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
 .endif
 	${MKDIR} ${PREFIX}/libexec/ifmail
