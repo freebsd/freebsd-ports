@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.12 1996/04/01 07:24:34 asami Exp $
+# $Id: Makefile,v 1.13 1996/04/08 20:57:19 smpatel Exp $
 #
 
-RESTRICTED += Mosaic         # requires Motif
+    SUBDIR += Mosaic         # requires Motif
     SUBDIR += apache
     SUBDIR += arena
-RESTRICTED += ashe           # requires Motif
+    SUBDIR += ashe           # requires Motif
     SUBDIR += cached
     SUBDIR += chimera
     SUBDIR += comline
