@@ -1,6 +1,7 @@
 avr/bin/gcc
 bin/avr-gcc
 bin/avr-cpp
+bin/gccbug
 lib/gcc-lib/avr/3.0/cc1
 lib/gcc-lib/avr/3.0/collect2
 lib/gcc-lib/avr/3.0/specs
