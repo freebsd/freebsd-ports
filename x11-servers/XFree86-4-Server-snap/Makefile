@@ -167,7 +167,7 @@ pre-everything::
 	@${ECHO_MSG} "4.2.0!  ENABLE AT YOUR OWN RISK!"
 	@${ECHO_MSG} "********************************************************"
 
-.if ${BuildXF86DRI} == YES
+.if ${ARCH} == i386
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
@@ -180,7 +180,7 @@ pre-fetch::
 	@${ECHO_MSG} "This has been tested on a G400 AGP card."
 	@${ECHO_MSG} "********************************************************"
 .else
-NO_PACKAGE=	"Matrox drivers may not be distributed."
+NO_PACKAGE=	"Matrox drivers may not be distributed"
 RESTRICTED=	"Matrox drivers may not be distributed."
 HaveMatroxHal=		YES
 MGA_DRIVER_VERSION=	2.0
@@ -200,6 +200,10 @@ post-install::
 .else
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
+.endif
+
+.if ${HaveMatroxHal} == NO
+EXTRA_PATCHES+=		${.CURDIR}/files/patch-mga_driver.c
 .endif
 
 post-extract::
