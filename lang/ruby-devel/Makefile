@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY} \
 			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
@@ -80,6 +79,7 @@ INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 
 OBSOLETED_MODULES=	dl \
 			fileutils \
+			optparse \
 			racc-runtime \
 			sha1 \
 			shell \
