@@ -7,5 +7,6 @@
 #
 
 EMACS_PORT_NAME=	xemacs21-mule
+BROKEN=			xemacs21-mule binary is not installed by editors/xemacs21-mule ports.
 
 .include "${.CURDIR}/../mew/Makefile"
