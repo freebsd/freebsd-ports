@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cassowary
-PORTVERSION=	0.55
+PORTVERSION=	0.60
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cs.washington.edu/research/constraints/cassowary/
 
