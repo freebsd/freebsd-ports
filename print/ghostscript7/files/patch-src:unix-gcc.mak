@@ -93,7 +93,7 @@
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+XCFLAGS+=-I${.CURDIR}/gimp-print -I${LOCALBASE}/include
++XCFLAGS+=-I${.CURDIR}/gimp-print -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  

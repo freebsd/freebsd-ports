@@ -1,6 +1,6 @@
 --- lips/gdevlips.mak.orig	Thu Nov  2 12:12:13 2000
-+++ lips/gdevlips.mak	Fri Sep 12 09:34:24 2003
-@@ -1,6 +1,8 @@
++++ lips/gdevlips.mak	Sat Sep 27 22:16:20 2003
+@@ -1,17 +1,19 @@
  # ---------------- Laser Printer devices ---------------- #
  # $Id: gdevlips.mak $
  
@@ -8,8 +8,10 @@
 +
  $(GLOBJ)gdevlprn.$(OBJ): $(GLSRC)gdevlprn.c $(GLSRC)gdevlprn.h\
   $(gdevprn_h) $(PDEVH)
- 	$(GLCC) $(GLO_)gdevlprn.$(OBJ) $(C_) $(GLSRC)gdevlprn.c
-@@ -9,9 +11,9 @@
+-	$(GLCC) $(GLO_)gdevlprn.$(OBJ) $(C_) $(GLSRC)gdevlprn.c
++	$(GLCC) $(GLO_)gdevlprn.$(OBJ) $(C_) $(lips_opts) $(GLSRC)gdevlprn.c
+ 
+ ### --- The Canon LIPS II+/III/IVc/IV printer device --- ###
  
  lipsr_=$(GLOBJ)gdevl4r.$(OBJ) $(GLOBJ)gdevlips.$(OBJ) $(GLOBJ)gdevlprn.$(OBJ)
  $(GLOBJ)gdevl4r.$(OBJ): $(GLSRC)gdevl4r.c $(GLSRC)gdevlips.h $(PDEVH)
