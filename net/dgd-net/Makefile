@@ -8,14 +8,12 @@
 PORTNAME=	dgd-net
 PORTVERSION=	1.1.8
 CATEGORIES=	net lang
-MASTER_SITES=	http://dl.droso.net/ports/ \
-		http://ftp.dyu.edu.tw/FreeBSD/dgd/
+MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/archive/ \
+		http://dl.droso.net/ports/
 DISTFILES=	dgd-1.1p8.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
-
-BROKEN=		"Unfetchable"
 
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
