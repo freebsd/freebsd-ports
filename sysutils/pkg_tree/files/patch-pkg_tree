@@ -1,0 +1,65 @@
+--- pkg_tree.orig	Wed Dec 12 13:44:40 2001
++++ pkg_tree	Mon Jan  6 23:02:31 2003
+@@ -26,7 +26,7 @@
+ # updated by a newer version. In case of tcl-8.3.3_3, this is tcl-8.3.3_4.
+ #
+ # PKG-TREE is (c) Edwin Groothuis, edwin@mavetju.org
+-# For license issues, see the file LICESE.
++# For license issues, see the file LICENSE.
+ # For more information, see the website: http://www.mavetju.org
+ #
+ 
+@@ -34,10 +34,13 @@
+ 
+ use Getopt::Std;
+ 
+-use vars qw/ $opt_v /;
++use vars qw/ $opt_b $opt_q $opt_t $opt_v /;
+ 
+ $opt_v=0;
+-getopts("v");
++$opt_t=0;
++$opt_b=0;
++$opt_q=0;
++getopts("bqtv");
+ 
+ my $PKGDIR="/var/db/pkg";
+ 
+@@ -46,6 +49,7 @@
+ closedir DIR;
+ 
+ @dirs=grep !/^\./,@dirs;
++@dirs=grep !/^pkgdb.db$/,@dirs;
+ @dirs=sort @dirs;
+ 
+ my @args=@ARGV;
+@@ -150,8 +154,10 @@
+ 	}
+ 	next if (!$found);
+     }
++    next if ($opt_t && $required{$pkg}[0]!=0);
++    next if ($opt_b && $requires{$pkg}[0]!=0);
+     print "$pkg\n";
+-    if ($requires{$pkg}[0]!=0) {
++    if (!$opt_q && $requires{$pkg}[0]!=0) {
+ 	print_deps("|"," ",1,$pkg);
+     }
+ }
+--- patch-aa ends here ---
+
+--- patch-ab begins here ---
+--- pkg_tree.pod.orig	Wed Dec 12 13:44:40 2001
++++ pkg_tree.pod	Mon Jan  6 23:20:49 2003
+@@ -53,6 +53,12 @@
+  |\__ freetype2-2.0.5
+   \__ XFree86-libraries-4.1.0 (unknown)
+ 
++Use the B<-t> parameter to show only top level packages,
++and B<-b> to show only bottom level packages. And B<-t> B<-q>
++together will give the list of top level packages without their
++dependencies, installing only these packages should install all
++currently installed packages.
++
+ =head1 RETURN VALUES
+ 
+ Always 0.
