@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.4
 CATEGORIES=	math ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1165/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2108/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rb-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -21,7 +21,6 @@ LIB_DEPENDS=	gsl.6:${.CURDIR}/../gsl
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-WRKSRC=		${WRKDIR}/rb-${PORTNAME}
 CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 EXAMPLES_EN=	samples/*
