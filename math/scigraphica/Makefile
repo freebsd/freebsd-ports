@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	scigraphica
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	math gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://scigraphica.sourceforge.net/src/ \
+MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	sg-${PORTVERSION}
@@ -17,8 +17,9 @@ DISTNAME=	sg-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	gtkextra.15:${PORTSDIR}/x11-toolkits/gtkextra
-RUN_DEPENDS=	${PYNUMERIC}
+LIB_DEPENDS=	gtkextra.16:${PORTSDIR}/x11-toolkits/gtkextra
+RUN_DEPENDS=	${PYNUMERIC} \
+		${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -42,5 +43,9 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
 
 .include <bsd.port.post.mk>
