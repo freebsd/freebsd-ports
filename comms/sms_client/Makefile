@@ -20,11 +20,12 @@ HAS_CONFIGURE=		yes
 MAN1=			sms_client.1
 
 post-configure:
-	${SED} -e 's@gcc@${CC}@g' -e 's@-Wall@${CFLAGS} -Wall@g' \
+	@${SED} -e 's@gcc@${CC}@g' -e 's@-Wall@${CFLAGS} -Wall@g' \
 		${FILESDIR}/Makefile.config > ${WRKSRC}/Makefile.config
 
 post-patch:
-	${MV} ${WRKSRC}/sms/services/vodafone_autralia \
+	@${MV} ${WRKSRC}/sms/services/vodafone_autralia \
 		${WRKSRC}/sms/services/vodafone_australia
+	@${RM} ${WRKSRC}/sms/services/att_web.orig
 
 .include <bsd.port.mk>
