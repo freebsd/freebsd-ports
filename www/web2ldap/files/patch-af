@@ -1,25 +1,30 @@
-*** etc/web2ldap/web2ldapcnf/standalone.py.orig	Sat Jul 22 02:26:12 2000
---- etc/web2ldap/web2ldapcnf/standalone.py	Sat Jul 22 02:27:10 2000
+*** sbin/web2ldap.py.orig	Thu Jan 11 23:46:19 2001
+--- sbin/web2ldap.py	Thu Jan 11 23:47:16 2001
 ***************
-*** 13,22 ****
-  error_log = '/var/log/web2ldap/error_log'
+*** 1,4 ****
+! #!/usr/bin/python
   
-  # Where static documents reside
-! document_root = '/usr/lib/web2ldap/htdocs/'
+  ########################################################################
+  # web2ldap -  web-based LDAP Client, see http://www.web2ldap.de
+--- 1,4 ----
+! #!/usr/local/bin/python2.0
   
-  # Path name of mime.types file
-! mime_types = '/etc/mime.types'
+  ########################################################################
+  # web2ldap -  web-based LDAP Client, see http://www.web2ldap.de
+***************
+*** 13,19 ****
   
-  # Contact mail address of the server admin when running stand-alone
-  server_admin = 'admin@web2ldap.de'
---- 13,22 ----
-  error_log = '/var/log/web2ldap/error_log'
+  if os.name == 'posix':
+    # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!   sys.path.insert(0,'/etc/web2ldap')
+  else:
+    # For finding web2ldapcnf.py in system dirs on Windows systems
+    for i in ['SystemRoot','windir']:
+--- 13,19 ----
   
-  # Where static documents reside
-! document_root = '/usr/local/web2ldap/htdocs/'
-  
-  # Path name of mime.types file
-! mime_types = '/usr/local/web2ldap/etc/mime.types'
-  
-  # Contact mail address of the server admin when running stand-alone
-  server_admin = 'admin@web2ldap.de'
+  if os.name == 'posix':
+    # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!   sys.path.insert(0,'/usr/local/web2ldap/etc/web2ldap')
+  else:
+    # For finding web2ldapcnf.py in system dirs on Windows systems
+    for i in ['SystemRoot','windir']:

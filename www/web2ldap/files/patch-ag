@@ -1,0 +1,30 @@
+*** cgi-bin/web2ldap.py.orig	Thu Jan 11 23:55:56 2001
+--- cgi-bin/web2ldap.py	Thu Jan 11 23:56:20 2001
+***************
+*** 1,4 ****
+! #!/usr/bin/python
+  
+  ########################################################################
+  # web2ldap -  web-based LDAP Client, see http://www.web2ldap.de
+--- 1,4 ----
+! #!/usr/local/bin/python2.0
+  
+  ########################################################################
+  # web2ldap -  web-based LDAP Client, see http://www.web2ldap.de
+***************
+*** 15,21 ****
+  
+    if os.name == 'posix':
+      # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!     sys.path.insert(0,'/etc/web2ldap')
+    else:
+      # For finding web2ldapcnf.py in system dirs on Windows systems
+      for i in ['SystemRoot','windir']:
+--- 15,21 ----
+  
+    if os.name == 'posix':
+      # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!     sys.path.insert(0,'/usr/local/web2ldap/etc/web2ldap')
+    else:
+      # For finding web2ldapcnf.py in system dirs on Windows systems
+      for i in ['SystemRoot','windir']:

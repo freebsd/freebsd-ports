@@ -6,9 +6,9 @@
 #
 
 PORTNAME=      web2ldap
-PORTVERSION=   0.7.9
+PORTVERSION=   0.8.1
 CATEGORIES=    www
-MASTER_SITES=  http://sites.inka.de/ms/python/web2ldap/download/ \
+MASTER_SITES=  http://www.web2ldap.de/download/ \
                http://www.tricknolgy.org/ports/
 
 MAINTAINER=    oddbjorn@tricknology.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=   ${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/ldapmodule
 
 NO_BUILD=      yes
 USE_PYTHON=    yes
-PYTHON_VERSION= python1.5
+PYTHON_VERSION= python2.0
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
@@ -27,6 +27,7 @@ do-install:
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/mime.types.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/web2ldap/web2ldapcnf/misc.py.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/web2ldap/web2ldapcnf/standalone.py.orig
+	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/web2ldap/web2ldapcnf/hosts.py.orig
 	@${LOCALBASE}/bin/python ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/compile.py
 	@${CP} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ ${PREFIX}/${PORTNAME}
 	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
