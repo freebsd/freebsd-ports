@@ -6339,6 +6339,7 @@ ortep3		ports/biology/ortep3
 ortp		ports/net/ortp
 orville-write	ports/misc/orville-write
 osalp		ports/audio/osalp
+osb-jscore	ports/lang/osb-jscore
 oscommerce	ports/www/oscommerce
 osdclock	ports/x11-clocks/osdclock
 osf1_base	ports/emulators/osf1_base
