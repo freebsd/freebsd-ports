@@ -49,7 +49,7 @@ if [ ${host_crypto} = ${host} ]; then
     su -m ${cuser} -c \
 	"cvsup ${options} -h ${host} ${base}/supfile" || ok=no
 else
-    if [ -d prefixes/FreeBSD-crypto.cvs ]; then
+    if [ -d ${base}/prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
 	su -m ${cuser} -c \
 	    "cvsup ${options} -h ${host_crypto} ${base}/supfile.crypto" || ok=no
