@@ -212,6 +212,7 @@
     SUBDIR += p5-Mail-Box1
     SUBDIR += p5-Mail-Bulkmail
     SUBDIR += p5-Mail-CClient
+    SUBDIR += p5-Mail-ClamAV
     SUBDIR += p5-Mail-Ezmlm
     SUBDIR += p5-Mail-FilterXML
     SUBDIR += p5-Mail-Folder

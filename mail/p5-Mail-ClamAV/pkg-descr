@@ -1,0 +1,6 @@
+Clam AntiVirus is an anti-virus toolkit for UNIX. This module provide a simple
+interface to it's C API.
+
+WWW: http://clamav.elektrapro.com/
+
+Author Scott Beck <sbeck@gossamer-threads.com>
