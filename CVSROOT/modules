@@ -4063,6 +4063,7 @@ ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
 lua4		ports/lang/lua4
+luasocket	ports/net/luasocket
 luna		ports/astro/luna
 lupe		ports/x11/lupe
 lv		ports/misc/lv
