@@ -17,6 +17,7 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
 			SDL-1.0.2:${PORTSDIR}/devel/sdl
 
 USE_X_PREFIX=		yes
+USE_NEWGCC=		yes
 GNU_CONFIGURE=		yes
 
 .if !defined(NOPORTDOCS)
