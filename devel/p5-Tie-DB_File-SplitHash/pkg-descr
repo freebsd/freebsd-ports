@@ -1,0 +1,11 @@
+Tie::DB_File::SplitHash
+
+Designed for support of file size limitted OSes. Transparently splits 
+a DB_File database into as many distinct files as desired. Distributes
+hash entries between the files using a randomization algorithm. 
+Has the effect of allowing DB_File hashes to grow to the full size 
+of the partition. Requires 'Digest::SHA1' and 'DB_File' to be installed.
+
+WWW:	http://search.cpan.org/~snowhare/Tie-DB_File-SplitHash-1.01/
+
+Author: Benjamin Franz

@@ -809,6 +809,7 @@
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Cache
+    SUBDIR += p5-Tie-DB_File-SplitHash
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-File
     SUBDIR += p5-Tie-IxHash
