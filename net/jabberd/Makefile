@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s4
+DISTNAME=	${PORTNAME}-2.0s5
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	kirk@strauser.com
@@ -17,7 +17,6 @@ COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
 
-FORBIDDEN=	"http://www.vuxml.org/freebsd/553224e7-4325-11d9-a3d5-000c6e8f12ef.html"
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
@@ -25,9 +24,8 @@ USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-ssl \
 		--with-extra-include-path=${LOCALBASE}/include${EIP} \
-		--with-extra-library-path=${LOCALBASE}/lib${ELP}
-
-CONFIGURE_ARGS+=--enable-fs
+		--with-extra-library-path=${LOCALBASE}/lib${ELP} \
+		--enable-fs
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
