@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -48,7 +49,5 @@ MAN1=		gnc-prices.1 gnucash.1
 post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|LDFLAGS = -module|LDFLAGS = -module -avoid-version|g'
 
 .include <bsd.port.mk>
