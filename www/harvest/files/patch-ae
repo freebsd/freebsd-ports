@@ -1,0 +1,12 @@
+--- components/broker/standard/WWW/DisplayObject.c.old	Tue Oct 29 00:51:14 2002
++++ components/broker/standard/WWW/DisplayObject.c	Tue Oct 29 00:51:30 2002
+@@ -214,8 +214,8 @@
+ char *xstrerror(n)
+ int n;
+ {
+-	extern int sys_nerr;
+ #if !defined(__FreeBSD__) && !defined(__NetBSD__)
++	extern int sys_nerr;
+ 	extern char *sys_errlist[];
+ #endif
+ 
