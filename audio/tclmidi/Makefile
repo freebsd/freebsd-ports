@@ -33,7 +33,13 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 		midiwrit.n midivers.n midimove.n midicopy.n mididel.n \
 		miditrck.n mididev.n miditime.n midifeat.n
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} s#/usr/local#${PREFIX}#g
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
