@@ -13,7 +13,7 @@ MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
