@@ -1,0 +1,11 @@
+--- Garlic/constants.sh.orig	Fri May 26 11:56:25 2000
++++ Garlic/constants.sh	Sun Oct 22 17:24:43 2000
+@@ -48,7 +48,7 @@
+    cat > ${fname} << EOF
+ --  This package has been generated automatically on:
+ EOF
+-   ./split "`uname -a`" >> ${fname}
++   ./split "`uname -s -r`" >> ${fname}
+ echo "--  Generation date: `date`" >> ${fname}
+ cat >> ${fname} << EOF
+ --  Any change you make here is likely to be lost !
