@@ -7,5 +7,7 @@ Currently, the detectable schemes are:
 * jphide (unix and windows)
 * invisible secrets
 * outguess 01.3b
+* F5
+# appendX and camouflage
 
-WWW: http://www.outguess.org/detection.html
+WWW: http://www.outguess.org/detection.php
