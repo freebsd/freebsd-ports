@@ -67,6 +67,7 @@
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kdreamsite
+    SUBDIR += knowledgekit
     SUBDIR += kwebsearch
     SUBDIR += kwebwatch
     SUBDIR += libghttp
