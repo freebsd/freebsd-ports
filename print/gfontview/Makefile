@@ -8,27 +8,34 @@
 
 PORTNAME=	gfontview
 PORTVERSION=	0.5.0
-CATEGORIES=	print
+PORTREVISION=	1
+CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
-		ungif:${PORTSDIR}/graphics/libungif \
-		intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	t1.3:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
-USE_GTK=	yes
 USE_GNOME=	yes
-USE_AUTOCONF=	yes
+USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-libungif
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		SPOOLER="/usr/bin/lpr" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
+		--with-libungif
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|CXXFLAGS="-O2"|CXXFLAGS="\$$CXXFLAGS"|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' \
+			${WRKSRC}/configure
+	@${PERL} -pi -e 's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
+		 s|/usr/include/freetype|${LOCALBASE}/include/freetype|g' \
+			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
