@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 PORTVERSION=	2003.06.18
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -18,7 +19,7 @@ COMMENT=	Microsoft Windows 3.1/95/98/NT/2000 emulator for Unix
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=-Wl,-rpath,${PREFIX}/lib/wine
+CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 MAN1=		wine.1 winebuild.1 winemaker.1 wmc.1 wrc.1
