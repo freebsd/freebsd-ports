@@ -1,5 +1,4 @@
-@cwd /usr/local
-etc/ftpd
+libexec/ftpd
 man/man1/ftpcount.1.gz
 man/man1/ftpwho.1.gz
 man/man5/ftpaccess.5.gz
