@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.5/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.5/source/
 DISTFILES=	X335src-1.tgz X335src-2.tgz
 
-
 MAINTAINER=	jmz@FreeBSD.org
 
 IS_INTERACTIVE=	yes	# configure script asks questions
