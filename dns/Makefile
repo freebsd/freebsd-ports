@@ -60,6 +60,7 @@
     SUBDIR += sleuth
     SUBDIR += staticcharge
     SUBDIR += totd
+    SUBDIR += updatedd
     SUBDIR += walker
     SUBDIR += weedns_sc
     SUBDIR += zonecheck
