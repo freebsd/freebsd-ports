@@ -11,8 +11,6 @@ CATEGORIES=	x11
 
 MAINTAINER=	trevor@FreeBSD.org
 
-RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
-
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 

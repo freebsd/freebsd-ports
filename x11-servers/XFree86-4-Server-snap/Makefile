@@ -7,6 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -14,6 +15,8 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X401src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+RUN_DEPENDS=	Xwrapper:${PORTSDIR}/x11/wrapper
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
@@ -93,10 +96,14 @@ ExtendedInputDevices?=	YES
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-everything:
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+#	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+post-install:
+	[ -x ${PREFIX}/bin/Xwrapper ] && ( cd ${PREFIX}/bin ; ${LN} -sf Xwrapper X )
+	${CHMOD} a-s ${PREFIX}/bin/XFree86
 
 .include <bsd.port.mk>
