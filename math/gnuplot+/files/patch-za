@@ -1,10 +1,10 @@
---- gplt_x11.c.ORIG	Thu Dec  2 17:02:05 1999
-+++ gplt_x11.c	Thu Dec  2 17:02:54 1999
+--- gplt_x11.c.orig	Wed May  7 14:21:25 2003
++++ gplt_x11.c	Wed May  7 14:55:22 2003
 @@ -169,6 +169,10 @@
  # define EINTR	E_ILLFNC
  #endif
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +# include <floatingpoint.h>
 +#endif
 +
@@ -15,7 +15,7 @@
  int argc;
  char *argv[];
  {
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +  /* allow divide by zero -- Inf */
 +  fpsetmask(fpgetmask() & ~(FP_X_DZ | FP_X_INV));
 +#endif
@@ -27,7 +27,7 @@
      }
      XCloseDisplay(dpy);
 +
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +  fpresetsticky(FP_X_DZ | FP_X_INV);
 +  fpsetmask(fpgetmask() | (FP_X_DZ | FP_X_INV));
 +#endif
@@ -35,13 +35,13 @@
  
      FPRINTF((stderr, "exiting\n"));
  
---- plot.c.ORIG	Thu Dec  2 17:02:05 1999
-+++ plot.c	Thu Dec  2 17:02:54 1999
+--- plot.c.orig	Wed May  7 14:21:25 2003
++++ plot.c	Wed May  7 14:45:09 2003
 @@ -73,6 +73,10 @@
  # endif
  #endif /* _Windows */
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +# include <floatingpoint.h>
 +#endif
 +
@@ -52,7 +52,7 @@
      _control87(MCW_EM, MCW_EM);
  #endif
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +  /* allow divide by zero -- Inf */
 +  fpsetmask(fpgetmask() & ~(FP_X_DZ | FP_X_INV));
 +#endif
@@ -66,7 +66,7 @@
  	RexxDeregisterSubcom("GNUPLOT", NULL);
 +#endif
 +
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && ( defined(__i386__) || defined(__amd64__) )
 +  fpresetsticky(FP_X_DZ | FP_X_INV);
 +  fpsetmask(fpgetmask() | (FP_X_DZ | FP_X_INV));
  #endif
