@@ -137,8 +137,8 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-	@${TOUCH} ${DOCUMENT_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-	@${TOUCH} ${DATADIR}/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${PREFIX}/www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${PREFIX}/www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
