@@ -1,5 +1,5 @@
-etc/squid/jesred.conf.sample
-@exec [ -f %B/jesred.conf ] || /bin/cp %B/%f %B/jesred.conf
-etc/squid/redirect.acl.sample
-etc/squid/redirect.rules.sample
+etc/jesred/jesred.conf.sample
+etc/jesred/redirect.acl.sample
+etc/jesred/redirect.rules.sample
 libexec/jesred
+@dirrm etc/jesred
