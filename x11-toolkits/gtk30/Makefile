@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -27,7 +28,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
-NO_LATEST_LINK=	yes
+LATEST_LINK=	gtk20
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
@@ -35,7 +36,7 @@ USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gnomehack atk pango
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -44,8 +45,10 @@ PLIST_SUB=	GTK_VERSION="2.2.0"
 MAN1=		gdk-pixbuf-csource.1
 
 post-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${GREP} -l lgmodule | \
-		xargs ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
+		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
+	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
+		${WRKSRC}/configure
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
