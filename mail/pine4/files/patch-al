@@ -1,108 +1,11 @@
-*** build.orig	Mon Dec  9 09:54:38 2002
---- build	Mon Dec 16 02:16:44 2002
-***************
-*** 362,424 ****
-  	  echo "Including SSL functionality"
-  	fi
-  
--         if [ -s c-client ] ; then rm -f c-client ; fi
--         ln -s imap/c-client c-client
--         if [ -s mtest    ] ; then rm -f mtest    ; fi
--         ln -s imap/mtest mtest
--         if [ -s mailutil ] ; then rm -f mailutil ; fi
--         ln -s imap/mailutil mailutil
--         if [ -s imapd    ] ; then rm -f imapd    ; fi
--         ln -s imap/imapd imapd
--         if [ -s ipopd    ] ; then rm -f ipopd    ; fi
--         ln -s imap/ipopd ipopd
--         echo "Making c-client library, imapd, and ipopd"
-- 	echo $S1 $S2 $S3 $S4 $K1 > imap/SPECIALS
--         cd "$PHOME/imap"
-- # This "touch" tells the IMAP make not to give any warnings about IESG compliance.
-- 	if [ "$NOSSL" = "1" -o "$SSL" != "none" ] ; then touch ssl$SSL ; fi
-- 	if [ "$NOSSL" != "1" -a "$SSL" = "none" -a ! -f sslnone ]
-- 	then
-- 	   echo "+-----------------------------------------------------------+"
-- 	   echo "| It appears that you do not have OpenSSL or equivalent     |"
-- 	   echo "| installed on this system.                                 |"
-- 	   echo "|                                                           |"
-- 	   echo "| Building PINE without SSL support will possibly introduce |"
-- 	   echo "| problems when communicating with IMAP, POP3, or SMTP      |"
-- 	   echo "| servers that require TLS or SSL authentication.           |"
-- 	   echo "| In addition, your password may be vulnerable to a         |"
-- 	   echo "| snooping attack since it may be sent over the network     |"
-- 	   echo "| unencrypted.                                              |"
-- 	   echo "+-----------------------------------------------------------+"
-- 	   echo ""
-- 	   echo "Do you want to continue this build anyway? Type y or n please:"
-- 	   read ans
-- 	   case "$ans" in
-- 	       y)   echo "Building without SSL ..."
-- 		    touch sslnone
-- 		    ;;
-- 
-- 	       *)   echo "Terminating build"
-- 		    exit 1
-- 		    ;;
-- 	   esac
-- 	fi
--         eval echo eval make "$makeargs" "SSLTYPE=$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
--         eval make "$makeargs" "SSLTYPE=$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
-- 	rc=$?
-- 	if [ $rc != "0" ]
-- 	then
-- 	    echo "+---------------------------------------------+"
-- 	    echo "| Problems building c-client                  |"
-- 	    echo "|                                             |"
-- 	    echo "| Please check the output above for a         |"
-- 	    echo "| possible explanation for this failure       |"
-- 	    echo "+---------------------------------------------+"
-- 	    echo ""
-- 	    exit $rc
-- 	fi
--         echo ''
-- 
-          echo "Making Pico and Pilot"
-          cd "$PHOME/pico"
-          eval echo make "$makeargs" -f makefile.$picotarg
---- 362,367 ----
-***************
-*** 450,456 ****
-          cd "$PHOME"
-          echo ''
-          echo "Links to executables are in bin directory:"
-!         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot bin/rpdump bin/rpload bin/mailutil bin/ipop2d bin/ipop3d
-  	case $maketarg in
-  	    mnt)    echo "Fixing stacksizes ..."
-  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
---- 393,399 ----
-          cd "$PHOME"
-          echo ''
-          echo "Links to executables are in bin directory:"
-!         size bin/pine bin/pico bin/pilot
-  	case $maketarg in
-  	    mnt)    echo "Fixing stacksizes ..."
-  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-***************
-*** 484,493 ****
-  	rm -f sslnopwd sslunix.nopwd sslsco.nopwd sslunix sslsco sslnone
-          echo "Cleaning Pine"
-          cd "$PHOME/pine"
-!         make -f makefile.ult clean
-          echo "Cleaning pico"
-          cd "$PHOME/pico"
-!         make $makeargs -f makefile.ult clean
-          echo "Done"
-          cd "$PHOME"
-          ;;
---- 427,436 ----
-  	rm -f sslnopwd sslunix.nopwd sslsco.nopwd sslunix sslsco sslnone
-          echo "Cleaning Pine"
-          cd "$PHOME/pine"
-!         make -f makefile.bsf clean
-          echo "Cleaning pico"
-          cd "$PHOME/pico"
-!         make $makeargs -f makefile.bsf clean
-          echo "Done"
-          cd "$PHOME"
-          ;;
+--- build.orig	Mon Dec  9 09:54:38 2002
++++ build	Thu Jan 16 00:42:58 2003
+@@ -450,7 +450,7 @@
+         cd "$PHOME"
+         echo ''
+         echo "Links to executables are in bin directory:"
+-        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot bin/rpdump bin/rpload bin/mailutil bin/ipop2d bin/ipop3d
++        size bin/pine bin/pico bin/pilot bin/rpdump bin/rpload
+ 	case $maketarg in
+ 	    mnt)    echo "Fixing stacksizes ..."
+ 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
