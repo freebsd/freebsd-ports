@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${INSTALL_JDK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -29,13 +29,15 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.2_01
+JDK_VERSION=	1.4.2
+JDK_REVISION=	01
+DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386
 SUN_BUNDLE_ID=	8948
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}&Referer=http://java.sun.com/j2se/1.4.2/download.html
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
-APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${DL_JDK_VERSION}
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 CPIO?=		/usr/bin/cpio
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/lib/unpack
