@@ -1,0 +1,5 @@
+RWV2 Library is a wrapper around the wv2 library for Ruby: parses
+Microsoft Word files.
+
+Author:	Hannes Wyss <hwyss@ywesee.com>
+WWW:	http://www.ywesee.com/index.cgi?RwV2
