@@ -7,6 +7,7 @@
 
 PORTNAME=	libdnet
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +20,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500037
-BROKEN=		libdnet does not currently support ipfw 2
+EXTRA_PATCHES=	${PATCHDIR}/configure.patch
 .endif
 
 MAN3=	dnet.3

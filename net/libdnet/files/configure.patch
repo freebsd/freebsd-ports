@@ -1,0 +1,11 @@
+--- configure.orig	Tue Aug 19 13:57:02 2003
++++ configure	Tue Aug 19 13:57:21 2003
+@@ -4609,8 +4609,6 @@
+ 
+ if test "$ac_cv_header_net_pfvar_h" = yes ; then
+ 	LIBOBJS="$LIBOBJS fw-pf.$ac_objext"
+-elif test "$ac_cv_header_netinet_ip_fw_h" = yes ; then
+-	LIBOBJS="$LIBOBJS fw-ipfw.$ac_objext"
+ elif test "$ac_cv_header_netinet_ip_fil_h" = yes ; then
+ 	LIBOBJS="$LIBOBJS fw-ipf.$ac_objext"
+ elif test "$ac_cv_header_linux_ip_fw_h" = yes ; then
