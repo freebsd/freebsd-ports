@@ -1,0 +1,11 @@
+--- Imakefile.orig	Mon Oct 31 20:34:58 1994
++++ Imakefile	Wed Nov  1 09:30:59 2000
+@@ -8,7 +8,7 @@
+ SRCS = xbloody.c
+ OBJS = xbloody.o
+ 
+-ComplexProgramTarget(xbloody)
++ComplexProgramTargetNoMan(xbloody)
+ 
+ xbloody.tar.gz:
+ 	gtar zcvf - Imakefile README.sjis *.[hc] *.xbm > xbloody.tar.gz
