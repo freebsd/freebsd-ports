@@ -1718,6 +1718,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001_05_01
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/dtml
