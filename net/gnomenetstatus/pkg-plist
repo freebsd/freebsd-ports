@@ -125,6 +125,7 @@ share/icons/hicolor/48x48/apps/gnome-netstatus-tx.png
 share/icons/hicolor/48x48/apps/gnome-netstatus-txrx.png
 share/locale/ar/LC_MESSAGES/gnome-netstatus.mo
 share/locale/az/LC_MESSAGES/gnome-netstatus.mo
+share/locale/bg/LC_MESSAGES/gnome-netstatus.mo
 share/locale/bn/LC_MESSAGES/gnome-netstatus.mo
 share/locale/ca/LC_MESSAGES/gnome-netstatus.mo
 share/locale/cs/LC_MESSAGES/gnome-netstatus.mo
