@@ -393,6 +393,7 @@
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
     SUBDIR += xmms-flac
+    SUBDIR += xmms-imms
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-kde
     SUBDIR += xmms-kj

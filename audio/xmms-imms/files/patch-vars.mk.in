@@ -1,0 +1,19 @@
+--- vars.mk.in.orig	Sun Jan 25 16:55:21 2004
++++ vars.mk.in	Wed Feb 11 18:40:43 2004
+@@ -4,14 +4,13 @@
+ INSTALL_PROGRAM = @INSTALL@
+ DESTDIR = @prefix@
+ 
+-SHELL = bash
+ XMMS_OBJ = plugin.o interface.o libimmscore.a 
+ CORE_OBJ = imms.o immsdb.o fetcher.o picker.o spectrum.o sqldb.o \
+ 	   songinfo.o regexx.o strmanip.o levenshtein.o xidle.o md5.o
+ 
+-CFLAGS = `xmms-config --cflags` @DEBUG_CFLAGS@ -Wall -fPIC -D_REENTRANT
++CFLAGS = `xmms-config --cflags` @CFLAGS@ -Wall -fPIC -D_REENTRANT
+ CPPFLAGS = ${CFLAGS} -pedantic -fno-rtti
+-LDFLAGS = `xmms-config --libs` @LIBS@
++LDFLAGS = `xmms-config --libs` -lc @LIBS@
+ ARFLAGS = rs
+ 
+ default: all
