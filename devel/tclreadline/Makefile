@@ -1,33 +1,46 @@
 # New ports collection makefile for:	tclreadline
-# Version required:	1.0
+# Version required:	1.0.3
 # Date created:		21 September 1999
 # Whom:			darius@dons.net.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tclreadline-1.0.0
+DISTNAME=	tclreadline-1.0.3
 CATEGORIES=	tcl80 tcl82
 MASTER_SITES=	http://www.zellner.org/tclreadline/download/
 
 MAINTAINER=	darius@dons.net.au
 
 GNU_CONFIGURE=	yes
+GMAKE=		yes
 MANN=		tclreadline.n
 
 .include <bsd.port.pre.mk>
 
-.if (!exists(${PREFIX}/bin/tclsh8.2) || exists(${PREFIX}/bin/tclsh8.0)) && (defined(FORCE_80))
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.0/ --with-tcl-includes=${PREFIX}/include/tcl8.0
-TCLVERMSG=	"Building for Tcl 8.0"
+.if (!defined(USE_TCL80) && !defined(USE_TCL82))
+.if exists(${PREFIX}/bin/tclsh8.0)
+USE_TCL80=	YES
 .else
+USE_TCL82=	YES
+.endif
+.endif
+
+.if defined(USE_TCL80)
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.0 --with-tcl-includes=${PREFIX}/include/tcl8.0
+TCLVERMSG=	"Building for Tcl 8.0"
+.endif
+
+.if defined(USE_TCL82)
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2/ --with-tcl-includes=${PREFIX}/include/tcl8.2
-TCLVERMSG=	"Building for Tcl 8.2 define FORCE_80 to build for Tcl 8.0"
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2 --with-tcl-includes=${PREFIX}/include/tcl8.2
+TCLVERMSG=	"Building for Tcl 8.2"
 .endif
 
 pre-fetch:
 	@${ECHO} ${TCLVERMSG}
+	@${ECHO} "Define USE_TCL80, or USE_TCL82"
+	@${ECHO} "To compile against a different version of TCL"
 
 .include <bsd.port.post.mk>
