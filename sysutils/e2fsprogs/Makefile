@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-elf-shlibs
 CONFIGURE_ENV=	CPPFLAGS="-Derrcode_t=long"
 
+CONFLICTS=	ossp-uuid-*
+
 MAN1=	chattr.1 lsattr.1 uuidgen.1
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 fsck.8 \
 	findfs.8 mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
