@@ -2,37 +2,6 @@ lib/xemacs/mule-packages/etc/app-defaults/de/Emacs
 lib/xemacs/mule-packages/etc/app-defaults/fr/Emacs
 lib/xemacs/mule-packages/etc/app-defaults/ja/Emacs
 lib/xemacs/mule-packages/etc/app-defaults/ro/Emacs
-lib/xemacs/mule-packages/etc/mew/Mew.img
-lib/xemacs/mule-packages/etc/mew/Mew.xbm
-lib/xemacs/mule-packages/etc/mew/Mew.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Audio.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Blank.xpm
-lib/xemacs/mule-packages/etc/mew/mew-External.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Folder.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Image.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Octet-Stream.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Postscript.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Rfc822.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Text.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Unknown.xpm
-lib/xemacs/mule-packages/etc/mew/mew-Video.xpm
-lib/xemacs/mule-packages/etc/mew/mew-attach.xpm
-lib/xemacs/mule-packages/etc/mew/mew-cite.xpm
-lib/xemacs/mule-packages/etc/mew/mew-comp.xpm
-lib/xemacs/mule-packages/etc/mew/mew-forward.xpm
-lib/xemacs/mule-packages/etc/mew/mew-inc.xpm
-lib/xemacs/mule-packages/etc/mew/mew-next.xpm
-lib/xemacs/mule-packages/etc/mew/mew-pgp-enc.xpm
-lib/xemacs/mule-packages/etc/mew/mew-pgp-sigenc.xpm
-lib/xemacs/mule-packages/etc/mew/mew-pgp-sign.xpm
-lib/xemacs/mule-packages/etc/mew/mew-prev.xpm
-lib/xemacs/mule-packages/etc/mew/mew-refile.xpm
-lib/xemacs/mule-packages/etc/mew/mew-reply.xpm
-lib/xemacs/mule-packages/etc/mew/mew-send.xpm
-lib/xemacs/mule-packages/etc/mew/mew-sep.xpm
-lib/xemacs/mule-packages/etc/mew/mew-show.xpm
-lib/xemacs/mule-packages/etc/mew/mew-write.xpm
-lib/xemacs/mule-packages/etc/mew/mew-yank.xpm
 lib/xemacs/mule-packages/etc/mule-doc/ChangeLog.Mule
 lib/xemacs/mule-packages/etc/mule-doc/ChangeLog.Mule-Wnn6
 lib/xemacs/mule-packages/etc/mule-doc/ChinesePoem.cn
@@ -58,9 +27,7 @@ lib/xemacs/mule-packages/etc/mule/FAQ-Mule.ja
 lib/xemacs/mule-packages/etc/mule/FAQ-Mule.kr
 lib/xemacs/mule-packages/etc/mule/FAQ-Mule.th
 lib/xemacs/mule-packages/etc/mule/Makefile.in
-lib/xemacs/mule-packages/etc/mule/TUTORIAL.ja
 lib/xemacs/mule-packages/etc/mule/TUTORIAL.kr
-lib/xemacs/mule-packages/etc/mule/TUTORIAL.th
 lib/xemacs/mule-packages/etc/mule/VERSIONS
 lib/xemacs/mule-packages/etc/mule/coco.1
 lib/xemacs/mule-packages/etc/mule/demo.ps
@@ -88,88 +55,11 @@ lib/xemacs/mule-packages/etc/start-files/ro/locale-start.elc
 lib/xemacs/mule-packages/info/elib.info
 lib/xemacs/mule-packages/info/elib.info-1
 lib/xemacs/mule-packages/info/elib.info-2
-lib/xemacs/mule-packages/info/mew.info
-lib/xemacs/mule-packages/info/mew.info-1
-lib/xemacs/mule-packages/info/mew.info-2
-lib/xemacs/mule-packages/info/mew.info-3
-lib/xemacs/mule-packages/info/mew.jis.info
 lib/xemacs/mule-packages/info/skk.info
 lib/xemacs/mule-packages/info/skk.info-1
 lib/xemacs/mule-packages/info/skk.info-2
 lib/xemacs/mule-packages/info/skk.info-3
 lib/xemacs/mule-packages/info/skk.info-4
-lib/xemacs/mule-packages/lisp/apel/ChangeLog
-lib/xemacs/mule-packages/lisp/apel/README.en
-lib/xemacs/mule-packages/lisp/apel/README.ja
-lib/xemacs/mule-packages/lisp/apel/_pkg.el
-lib/xemacs/mule-packages/lisp/apel/atype.el
-lib/xemacs/mule-packages/lisp/apel/atype.elc
-lib/xemacs/mule-packages/lisp/apel/auto-autoloads.el
-lib/xemacs/mule-packages/lisp/apel/auto-autoloads.elc
-lib/xemacs/mule-packages/lisp/apel/broken.el
-lib/xemacs/mule-packages/lisp/apel/broken.elc
-lib/xemacs/mule-packages/lisp/apel/calist.el
-lib/xemacs/mule-packages/lisp/apel/calist.elc
-lib/xemacs/mule-packages/lisp/apel/emu-mule.el
-lib/xemacs/mule-packages/lisp/apel/emu-mule.elc
-lib/xemacs/mule-packages/lisp/apel/emu.el
-lib/xemacs/mule-packages/lisp/apel/emu.elc
-lib/xemacs/mule-packages/lisp/apel/file-detect.el
-lib/xemacs/mule-packages/lisp/apel/file-detect.elc
-lib/xemacs/mule-packages/lisp/apel/filename.el
-lib/xemacs/mule-packages/lisp/apel/filename.elc
-lib/xemacs/mule-packages/lisp/apel/install.el
-lib/xemacs/mule-packages/lisp/apel/install.elc
-lib/xemacs/mule-packages/lisp/apel/inv-xemacs.el
-lib/xemacs/mule-packages/lisp/apel/inv-xemacs.elc
-lib/xemacs/mule-packages/lisp/apel/invisible.el
-lib/xemacs/mule-packages/lisp/apel/invisible.elc
-lib/xemacs/mule-packages/lisp/apel/mcharset.el
-lib/xemacs/mule-packages/lisp/apel/mcharset.elc
-lib/xemacs/mule-packages/lisp/apel/mcs-20.el
-lib/xemacs/mule-packages/lisp/apel/mcs-20.elc
-lib/xemacs/mule-packages/lisp/apel/mcs-ltn1.el
-lib/xemacs/mule-packages/lisp/apel/mcs-ltn1.elc
-lib/xemacs/mule-packages/lisp/apel/mcs-xm.el
-lib/xemacs/mule-packages/lisp/apel/mcs-xm.elc
-lib/xemacs/mule-packages/lisp/apel/mule-caesar.el
-lib/xemacs/mule-packages/lisp/apel/mule-caesar.elc
-lib/xemacs/mule-packages/lisp/apel/path-util.el
-lib/xemacs/mule-packages/lisp/apel/path-util.elc
-lib/xemacs/mule-packages/lisp/apel/pccl-20.el
-lib/xemacs/mule-packages/lisp/apel/pccl-20.elc
-lib/xemacs/mule-packages/lisp/apel/pccl.el
-lib/xemacs/mule-packages/lisp/apel/pccl.elc
-lib/xemacs/mule-packages/lisp/apel/pces-20.el
-lib/xemacs/mule-packages/lisp/apel/pces-20.elc
-lib/xemacs/mule-packages/lisp/apel/pces-raw.el
-lib/xemacs/mule-packages/lisp/apel/pces-raw.elc
-lib/xemacs/mule-packages/lisp/apel/pces-xfc.el
-lib/xemacs/mule-packages/lisp/apel/pces-xfc.elc
-lib/xemacs/mule-packages/lisp/apel/pces-xm.el
-lib/xemacs/mule-packages/lisp/apel/pces-xm.elc
-lib/xemacs/mule-packages/lisp/apel/pces.el
-lib/xemacs/mule-packages/lisp/apel/pces.elc
-lib/xemacs/mule-packages/lisp/apel/pcustom.el
-lib/xemacs/mule-packages/lisp/apel/pcustom.elc
-lib/xemacs/mule-packages/lisp/apel/poe-xemacs.el
-lib/xemacs/mule-packages/lisp/apel/poe-xemacs.elc
-lib/xemacs/mule-packages/lisp/apel/poe.el
-lib/xemacs/mule-packages/lisp/apel/poe.elc
-lib/xemacs/mule-packages/lisp/apel/poem-ltn1.el
-lib/xemacs/mule-packages/lisp/apel/poem-ltn1.elc
-lib/xemacs/mule-packages/lisp/apel/poem-xm.el
-lib/xemacs/mule-packages/lisp/apel/poem-xm.elc
-lib/xemacs/mule-packages/lisp/apel/poem.el
-lib/xemacs/mule-packages/lisp/apel/poem.elc
-lib/xemacs/mule-packages/lisp/apel/richtext.el
-lib/xemacs/mule-packages/lisp/apel/richtext.elc
-lib/xemacs/mule-packages/lisp/apel/static.el
-lib/xemacs/mule-packages/lisp/apel/static.elc
-lib/xemacs/mule-packages/lisp/apel/std11-parse.el
-lib/xemacs/mule-packages/lisp/apel/std11-parse.elc
-lib/xemacs/mule-packages/lisp/apel/std11.el
-lib/xemacs/mule-packages/lisp/apel/std11.elc
 lib/xemacs/mule-packages/lisp/egg-its/ChangeLog
 lib/xemacs/mule-packages/lisp/egg-its/_pkg.el
 lib/xemacs/mule-packages/lisp/egg-its/auto-autoloads.el
@@ -254,82 +144,6 @@ lib/xemacs/mule-packages/lisp/locale/ChangeLog
 lib/xemacs/mule-packages/lisp/locale/_pkg.el
 lib/xemacs/mule-packages/lisp/locale/auto-autoloads.el
 lib/xemacs/mule-packages/lisp/locale/auto-autoloads.elc
-lib/xemacs/mule-packages/lisp/mew/ChangeLog
-lib/xemacs/mule-packages/lisp/mew/_pkg.el
-lib/xemacs/mule-packages/lisp/mew/auto-autoloads.el
-lib/xemacs/mule-packages/lisp/mew/auto-autoloads.elc
-lib/xemacs/mule-packages/lisp/mew/mew-attach.el
-lib/xemacs/mule-packages/lisp/mew/mew-attach.elc
-lib/xemacs/mule-packages/lisp/mew/mew-bq.el
-lib/xemacs/mule-packages/lisp/mew/mew-bq.elc
-lib/xemacs/mule-packages/lisp/mew/mew-cache.el
-lib/xemacs/mule-packages/lisp/mew/mew-cache.elc
-lib/xemacs/mule-packages/lisp/mew/mew-complete.el
-lib/xemacs/mule-packages/lisp/mew/mew-complete.elc
-lib/xemacs/mule-packages/lisp/mew/mew-decode.el
-lib/xemacs/mule-packages/lisp/mew/mew-decode.elc
-lib/xemacs/mule-packages/lisp/mew/mew-demo.el
-lib/xemacs/mule-packages/lisp/mew/mew-demo.elc
-lib/xemacs/mule-packages/lisp/mew/mew-draft.el
-lib/xemacs/mule-packages/lisp/mew/mew-draft.elc
-lib/xemacs/mule-packages/lisp/mew/mew-encode.el
-lib/xemacs/mule-packages/lisp/mew/mew-encode.elc
-lib/xemacs/mule-packages/lisp/mew/mew-env.el
-lib/xemacs/mule-packages/lisp/mew/mew-env.elc
-lib/xemacs/mule-packages/lisp/mew/mew-ext.el
-lib/xemacs/mule-packages/lisp/mew/mew-ext.elc
-lib/xemacs/mule-packages/lisp/mew/mew-fib.el
-lib/xemacs/mule-packages/lisp/mew/mew-fib.elc
-lib/xemacs/mule-packages/lisp/mew/mew-func.el
-lib/xemacs/mule-packages/lisp/mew/mew-func.elc
-lib/xemacs/mule-packages/lisp/mew/mew-header.el
-lib/xemacs/mule-packages/lisp/mew/mew-header.elc
-lib/xemacs/mule-packages/lisp/mew/mew-highlight.el
-lib/xemacs/mule-packages/lisp/mew/mew-highlight.elc
-lib/xemacs/mule-packages/lisp/mew/mew-lang-jp.el
-lib/xemacs/mule-packages/lisp/mew/mew-lang-jp.elc
-lib/xemacs/mule-packages/lisp/mew/mew-mark.el
-lib/xemacs/mule-packages/lisp/mew/mew-mark.elc
-lib/xemacs/mule-packages/lisp/mew/mew-message.el
-lib/xemacs/mule-packages/lisp/mew/mew-message.elc
-lib/xemacs/mule-packages/lisp/mew/mew-mime.el
-lib/xemacs/mule-packages/lisp/mew/mew-mime.elc
-lib/xemacs/mule-packages/lisp/mew/mew-minibuf.el
-lib/xemacs/mule-packages/lisp/mew/mew-minibuf.elc
-lib/xemacs/mule-packages/lisp/mew/mew-mule0.el
-lib/xemacs/mule-packages/lisp/mew/mew-mule0.elc
-lib/xemacs/mule-packages/lisp/mew/mew-mule2.el
-lib/xemacs/mule-packages/lisp/mew/mew-mule2.elc
-lib/xemacs/mule-packages/lisp/mew/mew-mule3.el
-lib/xemacs/mule-packages/lisp/mew/mew-mule3.elc
-lib/xemacs/mule-packages/lisp/mew/mew-pgp.el
-lib/xemacs/mule-packages/lisp/mew/mew-pgp.elc
-lib/xemacs/mule-packages/lisp/mew/mew-pick.el
-lib/xemacs/mule-packages/lisp/mew/mew-pick.elc
-lib/xemacs/mule-packages/lisp/mew/mew-refile.el
-lib/xemacs/mule-packages/lisp/mew/mew-refile.elc
-lib/xemacs/mule-packages/lisp/mew/mew-scan.el
-lib/xemacs/mule-packages/lisp/mew/mew-scan.elc
-lib/xemacs/mule-packages/lisp/mew/mew-sort.el
-lib/xemacs/mule-packages/lisp/mew/mew-sort.elc
-lib/xemacs/mule-packages/lisp/mew/mew-summary.el
-lib/xemacs/mule-packages/lisp/mew/mew-summary.elc
-lib/xemacs/mule-packages/lisp/mew/mew-syntax.el
-lib/xemacs/mule-packages/lisp/mew/mew-syntax.elc
-lib/xemacs/mule-packages/lisp/mew/mew-temacs.el
-lib/xemacs/mule-packages/lisp/mew/mew-temacs.elc
-lib/xemacs/mule-packages/lisp/mew/mew-unix.el
-lib/xemacs/mule-packages/lisp/mew/mew-unix.elc
-lib/xemacs/mule-packages/lisp/mew/mew-vars.el
-lib/xemacs/mule-packages/lisp/mew/mew-vars.elc
-lib/xemacs/mule-packages/lisp/mew/mew-virtual.el
-lib/xemacs/mule-packages/lisp/mew/mew-virtual.elc
-lib/xemacs/mule-packages/lisp/mew/mew-win32.el
-lib/xemacs/mule-packages/lisp/mew/mew-win32.elc
-lib/xemacs/mule-packages/lisp/mew/mew-xemacs.el
-lib/xemacs/mule-packages/lisp/mew/mew-xemacs.elc
-lib/xemacs/mule-packages/lisp/mew/mew.el
-lib/xemacs/mule-packages/lisp/mew/mew.elc
 lib/xemacs/mule-packages/lisp/mule-base/ChangeLog
 lib/xemacs/mule-packages/lisp/mule-base/_pkg.el
 lib/xemacs/mule-packages/lisp/mule-base/auto-autoloads.el
@@ -416,35 +230,26 @@ lib/xemacs/mule-packages/lisp/skk/skk.el
 lib/xemacs/mule-packages/lisp/skk/skk.elc
 lib/xemacs/mule-packages/man/elib/elib.texi
 lib/xemacs/mule-packages/man/elib/gpl.texi
-lib/xemacs/mule-packages/man/mew/00readme
-lib/xemacs/mule-packages/man/mew/hack-mew-jis.texi.el
-lib/xemacs/mule-packages/man/mew/hack-mew.texi.el
-lib/xemacs/mule-packages/man/mew/mew.texi
 lib/xemacs/mule-packages/man/skk/gpl.texi
 lib/xemacs/mule-packages/man/skk/skk.texi
-lib/xemacs/mule-packages/pkginfo/MANIFEST.apel
 lib/xemacs/mule-packages/pkginfo/MANIFEST.egg-its
 lib/xemacs/mule-packages/pkginfo/MANIFEST.elib
 lib/xemacs/mule-packages/pkginfo/MANIFEST.locale
-lib/xemacs/mule-packages/pkginfo/MANIFEST.mew
 lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base
 lib/xemacs/mule-packages/pkginfo/MANIFEST.ps-print-ja
 lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
-@dirrm lib/xemacs/mule-packages/pkginfo
+@unexec rmdir %D/lib/xemacs/mule-packages/pkginfo 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/man/skk
-@dirrm lib/xemacs/mule-packages/man/mew
 @dirrm lib/xemacs/mule-packages/man/elib
-@dirrm lib/xemacs/mule-packages/man
+@unexec rmdir %D/lib/xemacs/mule-packages/man 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/lisp/skk
 @dirrm lib/xemacs/mule-packages/lisp/ps-print-ja
 @dirrm lib/xemacs/mule-packages/lisp/mule-base
-@dirrm lib/xemacs/mule-packages/lisp/mew
 @dirrm lib/xemacs/mule-packages/lisp/locale
 @dirrm lib/xemacs/mule-packages/lisp/elib
 @dirrm lib/xemacs/mule-packages/lisp/egg-its
-@dirrm lib/xemacs/mule-packages/lisp/apel
-@dirrm lib/xemacs/mule-packages/lisp
-@dirrm lib/xemacs/mule-packages/info
+@unexec rmdir %D/lib/xemacs/mule-packages/lisp 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/mule-packages/info 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/etc/start-files/ro
 @dirrm lib/xemacs/mule-packages/etc/start-files/ja
 @dirrm lib/xemacs/mule-packages/etc/start-files/fr
@@ -454,11 +259,10 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
 @dirrm lib/xemacs/mule-packages/etc/mule-doc/Thai
 @dirrm lib/xemacs/mule-packages/etc/mule-doc
 @dirrm lib/xemacs/mule-packages/etc/mule
-@dirrm lib/xemacs/mule-packages/etc/mew
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/ro
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/ja
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/fr
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/de
 @dirrm lib/xemacs/mule-packages/etc/app-defaults
-@dirrm lib/xemacs/mule-packages/etc
-@dirrm lib/xemacs/mule-packages
+@unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
