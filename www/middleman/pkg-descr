@@ -1,0 +1,12 @@
+Middleman is a robust proxy server with many features designed
+to remove unwanted content, increase privacy, and to simply
+make surfing the Web a more pleasant experience. Some of the
+highlights of Middleman include banner and popup blocking, HTTP
+and FTP content caching, NTLM and Basic authentication when
+forwarding through another proxy server, regular expression
+substitution in downloaded files and HTTP headers, complete
+support for HTTP/1.1 including persistent connections and gzip
+encoding, and an intutive Web interface for configuring the
+proxy.
+
+WWW: http://sourceforge.net/projects/middle-man
