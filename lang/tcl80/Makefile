@@ -55,7 +55,8 @@ post-configure:
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+	   OSVERSION=${OSVERSION}
 
 post-install:
 	${LN} -sf ${TCL_LIB_FILE} ${PREFIX}/lib/${TCL_LIB}

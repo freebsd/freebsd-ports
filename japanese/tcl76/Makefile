@@ -49,7 +49,8 @@ post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} && ${RM} *.o
+	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
+	   VERSION=${VERSION} OSVERSION=${OSVERSION} && ${RM} *.o
 
 pre-install:
 	${MKDIR} ${PREFIX}/lib/tcl${VERSION}

@@ -1,5 +1,5 @@
---- configure.orig	Sat Feb 28 18:02:02 1998
-+++ configure	Mon Feb  8 11:51:44 1999
+--- configure.orig	Sat Feb 28 21:02:02 1998
++++ configure	Sat Feb 12 02:28:01 2005
 @@ -677,9 +677,9 @@
  if test -z "$ac_aux_dir"; then
    { echo "configure: error: can not find install-sh or install.sh in $srcdir $srcdir/.. $srcdir/../.." 1>&2; exit 1; }
@@ -13,15 +13,16 @@
  
  
  # Do some error checking and defaulting for the host and target type.
-@@ -2797,6 +2797,20 @@
+@@ -2797,6 +2797,21 @@
  	a29k-*-*)			# Default a29k environment.
  		use_collect2=yes
  		;;
 +	alpha*-*-freebsd*)
 +		tm_file=alpha/freebsd.h
-+		# On FreeBSD, the headers are already ok, except for math.h. (??right??)
-+		fixincludes=fixinc.math
-+		fixincludes=fixinc.math
++		if [ "${OSVERSION}" -lt 600011 ] ; \
++		then fixincludes=fixinc.math; \
++		else fixincludes=Makefile.in; \
++		fi
 +		tmake_file=t-libc-ok
 +		;;
 +	alpha-*-openbsd*)
@@ -34,7 +35,7 @@
  	alpha*-*-linux-gnuecoff*)
  		tm_file="${tm_file} alpha/linux.h"
  		xm_file="${xm_file} alpha/xm-linux.h"
-@@ -3158,6 +3172,14 @@
+@@ -3158,6 +3173,14 @@
  		use_collect2=yes
  		fixincludes=Makefile.in
  		;;
@@ -49,16 +50,20 @@
  	i370-*-mvs*)
  		;;
  	i[34567]86-ibm-aix*)		# IBM PS/2 running AIX
-@@ -3256,20 +3278,20 @@
+@@ -3256,20 +3279,24 @@
  # Next line turned off because both 386BSD and BSD/386 use GNU ld.
  #		use_collect2=yes
  		;;
 -	i[34567]86-*-freebsdelf*)
 -		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd-elf.h i386/perform.h"
+-		# On FreeBSD, the headers are already ok, except for math.h.
+-		fixincludes=fixinc.math
 +	i[34567]86-*-freebsdaout*)
 +		tm_file=i386/freebsd-aout.h
- 		# On FreeBSD, the headers are already ok, except for math.h.
- 		fixincludes=fixinc.math
++		if [ "${OSVERSION}" -lt 600011 ] ; \
++		then fixincludes=fixinc.math; \
++		else fixincludes=Makefile.in; \
++		fi
  		tmake_file=i386/t-freebsd
 -		gas=yes
 -		gnu_ld=yes
@@ -66,9 +71,13 @@
  		;;
  	i[34567]86-*-freebsd*)
 -		tm_file=i386/freebsd.h
+-		# On FreeBSD, the headers are already ok, except for math.h.
+-		fixincludes=fixinc.math
 +		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd.h i386/perform.h"
- 		# On FreeBSD, the headers are already ok, except for math.h.
- 		fixincludes=fixinc.math
++		if [ "${OSVERSION}" -lt 600011 ] ; \
++		then fixincludes=fixinc.math; \
++		else fixincludes=Makefile.in; \
++		fi
  		tmake_file=i386/t-freebsd
 +		gas=yes
 +		gnu_ld=yes
@@ -76,7 +85,7 @@
  		;;
  	i[34567]86-*-netbsd*)
  		tm_file=i386/netbsd.h
-@@ -3277,6 +3299,13 @@
+@@ -3277,6 +3304,13 @@
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd
  		;;
@@ -90,7 +99,7 @@
  	i[34567]86-*-coff*)
  		tm_file=i386/i386-coff.h
  		tmake_file=i386/t-i386bare
-@@ -3964,6 +3993,13 @@
+@@ -3964,6 +3998,13 @@
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd
  		;;
@@ -104,7 +113,7 @@
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
  		xm_file=m68k/xm-m68kv.h
  		xmake_file=m68k/x-m68kv
-@@ -4273,6 +4309,20 @@
+@@ -4273,6 +4314,20 @@
  			prefix=$native_prefix
  		fi
  		;;
@@ -125,7 +134,7 @@
  	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.
  		tm_file=mips/news4.h
  		if [ x$stabs = xyes ]; then
-@@ -4612,6 +4662,13 @@
+@@ -4612,6 +4667,13 @@
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd
  		;;
@@ -139,7 +148,7 @@
          pdp11-*-bsd)
  		tm_file="${tm_file} pdp11/2bsd.h"
                  ;;
-@@ -4625,10 +4682,23 @@
+@@ -4625,10 +4687,23 @@
  	romp-*-aos*)
  		use_collect2=yes
  		;;
@@ -163,7 +172,7 @@
  	powerpc-*-sysv* | powerpc-*-elf*)
  		tm_file=rs6000/sysv4.h
  		xm_file=rs6000/xm-sysv4.h
-@@ -4841,6 +4911,13 @@
+@@ -4841,6 +4916,13 @@
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd
  		;;
@@ -177,7 +186,7 @@
  	sparc-*-bsd*)
  		tm_file=sparc/bsd.h
  		;;
-@@ -5009,6 +5086,14 @@
+@@ -5009,6 +5091,14 @@
  		# On NetBSD, the headers are already okay, except for math.h.
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd

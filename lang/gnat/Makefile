@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	GNU Ada gnat
 # Date created:         Sat Mar 18 02:16:45 1995
 # Whom:			hsu
@@ -37,6 +38,9 @@ GCC_VERSION=	2.8.1
 PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION} \
 		LIBRARY_VERSION=${LIBRARY_VERSION} \
 		SHARED_MAJOR=${SHARED_MAJOR}
+.if ${OSVERSION} < 600011
+PLIST_FILES+=	lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/math.h
+.endif
 
 # Make no mistake about what host/target we are building on/for.
 # This package does not support cross-compiling, and this fixes
