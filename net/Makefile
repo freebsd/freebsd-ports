@@ -82,7 +82,6 @@
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe
-    SUBDIR += dcgui
     SUBDIR += dclib
     SUBDIR += dctc
     SUBDIR += dctc-gui
@@ -746,6 +745,7 @@
     SUBDIR += urlendec
     SUBDIR += utftpd
     SUBDIR += v6eval
+    SUBDIR += valknut
     SUBDIR += vchat
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
