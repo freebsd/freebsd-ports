@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1997/03/02 14:56:35 asami Exp $
+# $Id: Makefile,v 1.60 1997/03/03 11:53:35 asami Exp $
 #
 
     SUBDIR += Canna
@@ -58,6 +58,7 @@
     SUBDIR += platex
     SUBDIR += ptex2
     SUBDIR += qkc
+    SUBDIR += recjis
     SUBDIR += sed
     SUBDIR += sj3
     SUBDIR += sjxa
