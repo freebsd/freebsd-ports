@@ -3,7 +3,7 @@
 # Date created:        20 April 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1997/11/16 09:13:49 fenner Exp $
+# $Id: Makefile,v 1.3 1997/11/19 00:04:02 asami Exp $
 #
 
 DISTNAME=	XFrisk-0.99c0pl9
@@ -14,14 +14,12 @@ MASTER_SITE_SUBDIR=	games/multiplayer/
 
 MAINTAINER=	mph@pobox.com
 
-BROKEN=		package
-
 NO_CDROM=	Possible trademark infringement
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 pre-configure:
-	touch ${WRKSRC}/types.h
+	${TOUCH} ${WRKSRC}/types.h
 
 .include <bsd.port.mk>
