@@ -1,5 +1,5 @@
 --- sysdeps/freebsd/procmap.c.orig	Mon Nov 26 17:37:59 2001
-+++ sysdeps/freebsd/procmap.c	Wed Oct  2 21:28:31 2002
++++ sysdeps/freebsd/procmap.c	Sat Oct 19 14:07:46 2002
 @@ -33,7 +33,11 @@
  #include <sys/proc.h>
  #include <sys/resource.h>
@@ -41,7 +41,18 @@
  		    !vnode.v_data) continue;
  
  		if (kvm_read (server->machine.kd,
-@@ -251,11 +258,6 @@
+@@ -244,18 +251,17 @@
+ 			      &vnode, sizeof (vnode)) != sizeof (vnode))
+ 			glibtop_error_io_r (server, "kvm_read (vnode)");
+ 
++#if __FreeBSD_version >= 500039
++		if ((vnode.v_type != VREG) || strcmp("ufs", vnode.v_tag) ||
++#else
+ 		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
++#endif
+ 		    !vnode.v_data) continue;
+ 
+ 		if (kvm_read (server->machine.kd,
  			      (unsigned long) vnode.v_data,
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
