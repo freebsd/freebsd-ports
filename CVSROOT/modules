@@ -4204,6 +4204,7 @@ jxm		ports/audio/jxm
 jython		ports/lang/jython
 jzip		ports/games/jzip
 jzip.org	ports/archivers/jzip.org
+jzlib		ports/archivers/jzlib
 k3b		ports/sysutils/k3b
 k3b-i18n	ports/misc/k3b-i18n
 k3d		ports/graphics/k3d
