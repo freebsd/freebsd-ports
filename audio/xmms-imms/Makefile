@@ -21,6 +21,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		id3:${PORTSDIR}/audio/id3lib \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
+BROKEN=		"Broken dependency"
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
