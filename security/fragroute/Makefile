@@ -19,6 +19,8 @@ COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+BROKEN=		Broken by libevent update
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${PREFIX} \
 			--with-libevent=${PREFIX} --with-pcap
