@@ -3,17 +3,17 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.6 1997/12/05 03:14:59 itojun Exp $
+# $Id: Makefile,v 1.7 1997/12/25 10:56:19 itojun Exp $
 #
 
 DISTNAME=	ewipe0.6.0
-PKGNAME=	ja-ewipe-0.6.0
-CATEGORIES=	japanese misc
+PKGNAME=	ewipe-0.6.0
+CATEGORIES=	misc
 MASTER_SITES=	http://al.ei.tuat.ac.jp/~sekisita/ewipe/
 
 MAINTAINER=	itojun@itojun.org
 
-RUN_DEPENDS=	wish4.2jp:${PORTSDIR}/japanese/tk42
+RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
 
 NO_BUILD=	yes
 NO_CONFIGURE=	yes
