@@ -42,6 +42,7 @@ CONFIGURE_ARGS?=--enable-shared \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.3 \
 		--with-tclinclude=${LOCALBASE}/include/tcl8.3 \
 		${TK_CONFIG_ARGS}
+CONFIGURE_ENV=	LDFLAGS="-lutil"
 
 .if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
