@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-All
-PORTVERSION=	0.22
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -20,7 +20,18 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		IO::All.3
+MAN3=		IO::All.3 \
+		IO::All::DBM.3 \
+		IO::All::Dir.3 \
+		IO::All::File.3 \
+		IO::All::Filesys.3 \
+		IO::All::Link.3 \
+		IO::All::MLDBM.3 \
+		IO::All::Pipe.3 \
+		IO::All::STDIO.3 \
+		IO::All::Socket.3 \
+		IO::All::String.3 \
+		IO::All::Temp.3
 
 .include <bsd.port.pre.mk>
 
