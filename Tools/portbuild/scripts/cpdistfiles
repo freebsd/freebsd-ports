@@ -28,7 +28,5 @@ for i in $(diff ../md5 ../md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//');
 done
 mv ../md5-2 ../md5
 
-sudo rm -rf $pb/bak/distfiles
-
 echo "================================================"
 echo "all done at $(date)"
