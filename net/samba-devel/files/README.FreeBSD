@@ -2,8 +2,8 @@ If you want to use samba ports,
 
 1. Copy /usr/local/etc/smb.conf.default to /usr/local/etc/smb.conf, and edit
    it.
-2. Copy /usr/local/etc/rc.d/samba.sh.sample to /usr/local/etc/rc.d/samba.sh
-3. Type /usr/local/etc/rc.d/samba.sh or reboot.
+2. Put string 'samba_enable="YES"' into your /etc/rc.conf.
+3. Type '/usr/local/etc/rc.d/samba.sh start' or reboot.
 
 See document files in /usr/local/share/doc/samba and example config files in
 /usr/local/share/examples/samba for details.

@@ -1,11 +1,73 @@
---- Makefile.in.orig	Tue Feb 24 10:13:47 2004
-+++ Makefile.in	Tue Feb 24 10:14:00 2004
-@@ -1204,7 +1204,7 @@
+--- Makefile.in.orig	Fri Feb  6 23:40:27 2004
++++ Makefile.in	Thu Mar  4 05:47:34 2004
+@@ -101,6 +101,7 @@
+ LIBSMBCLIENT_MAJOR=0
+ LIBSMBCLIENT_MINOR=1
+ 
++NSS_VERSION=1
+ 
+ FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper  -I. $(CPPFLAGS) -I$(srcdir)
+ FLAGS2 = 
+@@ -951,8 +952,8 @@
+ 		@SONAMEFLAG@`basename $@`
+ 
+ bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
+-	@echo Linking libsmbclient shared library $@
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(DYNEXP) $(LIBS) \
++	@echo Linking libsmbclient shared library $@.$(LIBSMBCLIENT_MAJOR)
++	@$(SHLD) $(LDSHFLAGS) -o $@.$(LIBSMBCLIENT_MAJOR) $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(DYNEXP) $(LIBS) \
+ 		$(KRB5LIBS) $(LDAP_LIBS) \
+ 		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
+ 
+@@ -1035,13 +1036,13 @@
+ @WINBIND_NSS@: $(WINBIND_NSS_PICOBJS)
+ 	@echo "Linking $@"
+ 	@$(SHLD) $(WINBIND_NSS_LDSHFLAGS) -o $@ $(WINBIND_NSS_PICOBJS) \
+-		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`
++		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`.$(NSS_VERSION)
+ 
+ @WINBIND_WINS_NSS@: $(WINBIND_WINS_NSS_PICOBJS)
+ 	@echo "Linking $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_WINS_NSS_PICOBJS) \
+ 		$(LDAP_LIBS) $(KRB5LIBS) -lc \
+-		@SONAMEFLAG@`basename $@`
++		@SONAMEFLAG@`basename $@`.$(NSS_VERSION)
+ 
+ nsswitch/pam_winbind.@SHLIBEXT@: $(PAM_WINBIND_PICOBJ) bin/.dummy
+ 	@echo "Linking $@"
+@@ -1204,7 +1205,7 @@
  
  bin/t_snprintf@EXEEXT@: lib/snprintf.c
  	$(CC) $(FLAGS) -o $@ -DTEST_SNPRINTF lib/snprintf.c -lm
 -install: installbin installman installscripts installdat installswat installmodules @INSTALLCLIENT@
-+install: installbin installman installscripts installdat installswat installmodules
++install: installbin installscripts installdat installswat installmodules @INSTALLCLIENT@
  
  install-everything: install installmodules
  
+@@ -1256,7 +1257,7 @@
+ 
+ installclientlib: installdirs libsmbclient
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)${prefix}/lib
+-	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@ $(DESTDIR)${prefix}/lib
++	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@.$(LIBSMBCLIENT_MAJOR) $(DESTDIR)${prefix}/lib
+ 	-$(INSTALLCLIENTCMD_A) bin/libsmbclient.a $(DESTDIR)${prefix}/lib
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)${prefix}/include
+ 	-$(INSTALLCMD) $(srcdir)/include/libsmbclient.h $(DESTDIR)${prefix}/include
+@@ -1276,7 +1277,7 @@
+ 	fi
+ 	PYTHON_OBJS="$(PYTHON_PICOBJS)" \
+ 	PYTHON_CFLAGS="$(CFLAGS) $(CPPFLAGS) $(FLAGS)" \
+-	LIBS="$(LIBS) $(PASSDB_LIBS) $(IDMAP_LIBS) $(KRB5LIBS) $(LDAP_LIBS)" \
++	LIBS="$(LDFLAGS) $(LIBS) $(PASSDB_LIBS) $(IDMAP_LIBS) $(KRB5LIBS) $(LDAP_LIBS)" \
+ 		$(PYTHON) python/setup.py build
+ 
+ python_install: $(PYTHON_PICOBJS)
+@@ -1286,7 +1287,7 @@
+ 	fi
+ 	PYTHON_OBJS="$(PYTHON_PICOBJS)" \
+ 	PYTHON_CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
+-	LIBS="$(LIBS)" \
++	LIBS="$(LDFLAGS) $(LIBS)" \
+ 		$(PYTHON) python/setup.py install
+ 
+ python_clean:
