@@ -31,5 +31,11 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftp ${PREFIX}/bin/ftp-tls
 	@${INSTALL_MAN} ${WRKSRC}/ftp.1.TLS ${PREFIX}/man/man1/ftp-tls.1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in README.TLS draft-murray-auth-ftp-ssl-09.txt
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
