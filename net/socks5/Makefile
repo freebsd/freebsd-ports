@@ -37,7 +37,7 @@ MAN5=		libsocks5.conf.5 socks5.conf.5
 CONFIGURE_ENV=  LIBS=-lcrypt
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com.  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again."
+IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com/cgi-bin/download.pl .  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again."
 .endif
 
 .include <bsd.port.mk>
