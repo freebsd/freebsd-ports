@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.26 1998/12/02 05:01:53 asami Exp $
+# $Id: Makefile,v 1.27 1998/12/03 02:58:57 asami Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -23,12 +23,14 @@ MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
 		sq.1 tryaffix.1 unsq.1
 MAN4=		ispell.4 english.4
 
-pre-fetch pre-build pre-install:
 .if !defined(ISPELL_FR)
+.if (make(patch) || make(configure) || make(build) || make (install))
+.BEGIN:
 	@echo '*********************************************************' 
 	@echo '* Note that you can build a french or british version   *' 
 	@echo '* by typing "make french" or "make british"             *'
 	@echo '*********************************************************' 
+.endif
 .else
 EXTRA_DICT=	francais-IREQ-1.4.tar.gz
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
