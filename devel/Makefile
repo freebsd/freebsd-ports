@@ -302,6 +302,7 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ups-debug
+    SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vtcl
     SUBDIR += xmake
