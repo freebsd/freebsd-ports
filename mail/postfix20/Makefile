@@ -5,6 +5,12 @@
 # $FreeBSD$
 #
 
+# To pre-select options in batch mode, run make like this:
+#
+#  make -DBATCH POSTFIX_OPTIONS="DB3 PCRE"
+#
+# the options are the same names as in the scripts/configure.postfix file
+
 PORTNAME=	postfix
 PORTVERSION=	1.1.11
 PORTEPOCH=	1
@@ -46,6 +52,7 @@ MAKEFILEFLAGS+=	OPT="${CFLAGS}"
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
+		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
