@@ -1,0 +1,53 @@
+--- ispell.1X.orig	Wed Jul 25 17:51:46 2001
++++ ispell.1X	Sat Feb 22 14:51:32 2003
+@@ -106,7 +106,7 @@
+ .\"
+ .TH ISPELL 1 local
+ .SH NAME
+-ispell, buildhash, munchlist, findaffix, tryaffix, icombine, ijoin \- Interactive
++ispell, spell, buildhash, munchlist, findaffix, tryaffix, icombine, ijoin \- Interactive
+ spelling checking
+ .SH SYNOPSIS
+ .B ispell
+@@ -148,6 +148,11 @@
+ .br
+ .B ispell
+ .BR \-v [ v ]
++.br
++.B ispell
++.BR \-u
++.RB [ files ]
++.br
+ .IP \fIcommon-flags\fP:
+ .RB [ \-t ]
+ .RB [ \-n ]
+@@ -174,6 +179,9 @@
+ .RB [ \-F
+ .IR program ]
+ .PP
++.B spell
++.RB [ files ]
++.PP
+ .B buildhash
+ .RB [ \-s ]
+ .I
+@@ -737,6 +745,19 @@
+ or "list" option to
+ .I ispell
+ is used to produce a list of misspelled words from the standard input.
++.PP
++The
++.B \-u
++option to
++.I ispell
++provides backwards compatibility with the Unix spell command.
++When
++.I ispell
++is invoked as
++.I spell
++the
++.B \-u
++option is implied.
+ .PP
+ The
+ .B \-a

@@ -4,6 +4,7 @@ bin/deformat-sh
 bin/findaffix
 bin/icombine
 bin/ijoin
+bin/spell
 bin/ispell
 bin/munchlist
 bin/tryaffix
