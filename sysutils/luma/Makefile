@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	2.1
+PORTVERSION=	2.1.3
 CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 # MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
