@@ -1,13 +1,13 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0b6
+# Version required:	2.0b7.1
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
 # $Id$
 #
 
-DISTNAME=	msql-2.0-B6
-PKGNAME=	msql-2.0b6
+DISTNAME=	msql-2.0-B7.1
+PKGNAME=	msql-2.0b7.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.worldone.com/pub/msql/ \
 		http://www2.nerosworld.com/msql/ \
