@@ -445,6 +445,7 @@
     SUBDIR += py-feedparser
     SUBDIR += py-jaxml
     SUBDIR += py-libxml2
+    SUBDIR += py-libxslt
     SUBDIR += py-ltxml
     SUBDIR += py-martel
     SUBDIR += py-pyx12
