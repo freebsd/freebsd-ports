@@ -13,7 +13,7 @@ DISTNAME=	invaders-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-RUN_DEPENDS=	grub:${PORTSDIR}/sysutils/grub
+RUN_DEPENDS=	${LOCALBASE}/sbin/grub:${PORTSDIR}/sysutils/grub
 
 MAKEFILE=	${FILESDIR}/Makefile
 ONLY_FOR_ARCHS=	i386
