@@ -1,0 +1,9 @@
+Now you have to put emacs-chess in your loadpath
+
+	(add-to-list 'load-path "...")
+
+and add 
+
+	(autoload 'chess "chess" "Play a game of chess" t) 
+
+to your .emacs
