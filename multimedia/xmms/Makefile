@@ -9,13 +9,7 @@ PORTNAME=	xmms
 PORTVERSION=	1.2.4
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.uk.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.us.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.ca.us.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.md.us.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.nl.xmms.org/xmms/1.2.x/ \
-		ftp://ftp.de.xmms.org/xmms/1.2.x/
+MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ 
 
 MAINTAINER=	esk@ira.uka.de
 
