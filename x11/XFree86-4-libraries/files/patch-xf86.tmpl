@@ -1,11 +1,12 @@
---- config/cf/xf86.tmpl.orig	Mon Sep  2 11:45:21 2002
-+++ config/cf/xf86.tmpl	Mon Sep  2 11:45:24 2002
-@@ -27,6 +27,8 @@
+--- config/cf/xf86.tmpl.orig	Tue Dec 17 04:21:38 2002
++++ config/cf/xf86.tmpl	Thu Jan  2 14:10:44 2003
+@@ -19,6 +19,9 @@
  #ifdef UseInstalled
- #define ImakeSubCmdHelper $(IMAKE) -DUseInstalled -I$(IMAKETOP) \
- 			  -I$(IRULESRC) $(IMAKE_DEFINES)
-+#elif defined(UseInstalledPrograms)
-+#define ImakeSubCmdHelper $(IMAKE) -I$(IMAKETOP)  -I$(IRULESRC) $(IMAKE_DEFINES)
+        IMAKE_CMD = $(IMAKE) -DUseInstalled -I$(TOP) -I$(IRULESRC) \
+ 		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
++#elif UseInstalledPrograms
++       IMAKE_CMD = $(IMAKE) -I$(TOP) -I$(IRULESRC) \
++		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
  #else
- #define ImakeSubCmdHelper $(IMAKEPREFIX)$(IMAKE) -I$(IMAKETOP) \
- 			  -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
+        IMAKE_CMD = $(IMAKE) -I$(TOP) -I$(IRULESRC) \
+ 		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)

@@ -1,0 +1,61 @@
+--- programs/luit/Imakefile.orig	Wed Oct 16 18:06:09 2002
++++ programs/luit/Imakefile	Tue Mar 11 14:57:02 2003
+@@ -8,7 +8,7 @@
+ LOCAL_LIBRARIES = $(XFONTENCLIB)
+ DEPLIBS = $(DEPXFONTENCLIB)
+ 
+-SYS_LIBRARIES = MathLibrary GzipLibrary
++SYS_LIBRARIES = MathLibrary GzipLibrary -lutil
+ 
+ SRCS = luit.c iso2022.c charset.c parser.c sys.c other.c
+ 
+--- programs/luit/sys.c.orig	Mon Jan  7 12:38:30 2002
++++ programs/luit/sys.c	Tue Mar 11 14:57:02 2003
+@@ -33,6 +33,7 @@
+ #include <termios.h>
+ #include <signal.h>
+ #include <errno.h>
++#include <libutil.h>
+ 
+ #ifdef SVR4
+ #define HAVE_POLL
+@@ -313,6 +314,7 @@
+     int pty = -1;
+     char *name1 = "pqrstuvwxyzPQRST", *name2 = "0123456789abcdef";
+     char *p1, *p2;
++    int tty;
+ 
+ #ifdef HAVE_GRANTPT
+     char *temp_line;
+@@ -355,27 +357,11 @@
+   bsd:
+ #endif /* HAVE_GRANTPT */
+ 
+-    strcpy(name, "/dev/pty??");
+-    for(p1 = name1; *p1; p1++) {
+-        name[8] = *p1;
+-        for(p2 = name2; *p2; p2++) {
+-            name[9] = *p2;
+-            pty = open(name, O_RDWR);
+-            if(pty >= 0)
+-                goto found;
+-            if(errno == ENOENT)
+-                goto bail;
+-            else
+-                continue;
+-        }
+-    }
+-
+-    goto bail;
+-
+-  found:
+-    line = malloc(strlen(name));
++    if (openpty(&pty, &tty, name, NULL, NULL) == -1)
++        goto bail;
++    close(tty);
++    line = malloc(strlen(name) + 1);
+     strcpy(line, name);
+-    line[5] = 't';
+     fix_pty_perms(line);
+     *pty_return = pty;
+     *line_return = line;

@@ -1,69 +1,6 @@
---- nls/compose.dir.orig	Wed Nov 21 23:29:11 2001
-+++ nls/compose.dir	Wed Jul 17 15:05:38 2002
-@@ -62,6 +62,7 @@
- iso8859-1/Compose:		en_TT.ISO8859-1
- iso8859-1/Compose:		en_UK.ISO8859-1
- iso8859-1/Compose:		en_US.ISO8859-1
-+iso8859-15/Compose:		en_US.ISO8859-15
- iso8859-1/Compose:		en_ZA.ISO8859-1
- iso8859-3/Compose:		eo_XX.ISO8859-3
- iso8859-1/Compose:		es_AR.ISO8859-1
-@@ -211,7 +212,7 @@
- zh_CN/Compose:			zh_CN.GB2312
- zh_CN.gbk/Compose:		zh_CN.GBK
- zh_TW.big5/Compose:		zh_TW.big5
--zh_TW.big5/Compose:		zh_TW.Big5
-+zh_TW.Big5/Compose:		zh_TW.Big5
- zh_TW/Compose:			zh_TW.eucTW
- XCOMM
- XCOMM
---- nls/locale.alias.orig	Thu Dec 20 06:29:40 2001
-+++ nls/locale.alias	Sat Jan 19 22:22:20 2002
-@@ -637,18 +637,18 @@
- yi_US.MICROSOFT-CP1255:				yi_US.CP1255
- zh:						zh_CN.eucCN
- zh_CN:						zh_CN.eucCN
--zh_CN.Big5:					zh_TW.big5
-+zh_CN.Big5:					zh_TW.Big5
- zh_CN.EUC:					zh_CN.eucCN
- zh_CN.GB2312:					zh_CN.eucCN
- zh_CN.GBK:					zh_CN.gbk
--zh_CN.big5:					zh_TW.big5
-+zh_CN.big5:					zh_TW.Big5
- zh_CN.euc:					zh_CN.eucCN
- zh_CN.gb2312:					zh_CN.eucCN
- zh_HK:						zh_HK.big5
- zh_HK.Big5:					zh_HK.big5
- zh_HK.Big5HKSCS:				zh_HK.big5hkscs
--zh_TW:						zh_TW.big5
--zh_TW.Big5:					zh_TW.big5
-+zh_TW:						zh_TW.Big5
-+zh_TW.Big5:					zh_TW.Big5
- zh_TW.EUC:					zh_TW.eucTW
- 
- XCOMM The following locale names are used in SCO 3.0
---- nls/locale.dir.orig	Wed Jan  9 17:14:16 2002
-+++ nls/locale.dir	Wed Jul 17 15:06:35 2002
-@@ -68,6 +68,7 @@
- iso8859-1/XLC_LOCALE:			en_TT.ISO8859-1
- iso8859-1/XLC_LOCALE:			en_UK.ISO8859-1
- iso8859-1/XLC_LOCALE:			en_US.ISO8859-1
-+iso8859-15/XLC_LOCALE:			en_US.ISO8859-15
- iso8859-1/XLC_LOCALE:			en_ZA.ISO8859-1
- iso8859-3/XLC_LOCALE:			eo_EO.ISO8859-3
- iso8859-3/XLC_LOCALE:			eo_XX.ISO8859-3
-@@ -216,7 +217,7 @@
- zh_CN.gbk/XLC_LOCALE:			zh_CN.gbk
- zh_HK.big5/XLC_LOCALE:			zh_HK.big5
- zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.big5hkscs
--zh_TW.big5/XLC_LOCALE:			zh_TW.big5
-+zh_TW.Big5/XLC_LOCALE:			zh_TW.Big5
- zh_TW/XLC_LOCALE:			zh_TW.eucTW
- XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
- en_US.UTF-8/XLC_LOCALE:			af_ZA.UTF-8
---- nls/Compose/Imakefile.orig	Sun Nov 24 15:54:38 2002
-+++ nls/Compose/Imakefile	Sun Nov 24 15:55:37 2002
-@@ -64,11 +64,12 @@
+--- nls/Compose/Imakefile.orig	Mon Jun  3 22:19:43 2002
++++ nls/Compose/Imakefile	Sat Jan 11 01:00:46 2003
+@@ -54,6 +54,7 @@
  ComposeTarget(koi8-r)
  ComposeTarget(koi8-u)
  ComposeTarget(koi8-c)
@@ -71,31 +8,3 @@
  ComposeTarget(mulelao-1)
  ComposeTarget(vi_VN.tcvn)
  ComposeTarget(vi_VN.viscii)
- ComposeTarget(zh_CN)
- ComposeTarget(zh_CN.gbk)
- ComposeTarget(zh_TW)
--ComposeTarget(zh_TW.big5)
-+ComposeTarget(zh_TW.Big5)
- 
---- nls/XI18N_OBJS/Imakefile.orig	Fri Nov 16 09:52:31 2001
-+++ nls/XI18N_OBJS/Imakefile	Sun Jan 20 01:08:44 2002
-@@ -57,7 +57,7 @@
- XI18NTarget(zh_CN.gbk)
- XI18NTarget(zh_HK.big5hkscs)
- XI18NTarget(zh_TW)
--XI18NTarget(zh_TW.big5)
-+XI18NTarget(zh_TW.Big5)
- XI18NTarget(th_TH)
- XI18NTarget(en_US.UTF-8)
- #ifdef UXPArchitecture
---- nls/XLC_LOCALE/Imakefile.orig	Fri Nov  2 08:35:28 2001
-+++ nls/XLC_LOCALE/Imakefile	Sat Jan 19 22:19:27 2002
-@@ -89,7 +89,7 @@
- LTarget(zh_HK.big5)
- LTarget(zh_HK.big5hkscs)
- LTarget(zh_TW)
--LTarget(zh_TW.big5)
-+LTarget(zh_TW.Big5)
- LTarget(th_TH)
- LTarget(en_US.UTF-8)
- #ifdef UXPArchitecture

@@ -1,14 +1,11 @@
 #!/bin/sh
 
 # This script does the following:
-# (1) cp current xf86site.def (it is created by the imake-4 port) 
+# (1) cp xf86site.def, installed by imake-4 port,
 #       to ${WRKDIR}/xc/config/cf.
-#     this means this port uses imake-4's config for defaults.
-# (2) Generate temporal config for compiling.
-#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
-#     used locally for compiling this port, so these configs will be generated
-#     by this script. These configs will be stored to the `host.def' file,
-#     but this host.def will never be installed.
+#     this provides settings for the ports system.
+# (2) Create a host.def for this specific port, using 
+#     host.def as a base.
 
 ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
 DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
@@ -16,41 +13,22 @@ ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
 LOCALDEF=$WRKDIR/.config
 HOSTDEF=$WRKDIR/xc/config/cf/host.def
 
-configure () {
-    # Use original host.def as initial config file
-    rm -f $LOCALDEF
-    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
-    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
+# Use original host.def as initial config file
+rm -f $LOCALDEF
+grep -v '#define.*ProjectRoot' $ORIGHOSTDEF	>> $LOCALDEF
+echo "#define ProjectRoot $PREFIX"		>> $LOCALDEF
 
-    # It's good for FreeBSD ports/packages system.
-    echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
-    echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+# This is also defined in xf86site.def, but doesn't get
+# picked up for some reason.
+echo "#define NothingOutsideProjectRoot YES"	>> $LOCALDEF
 
-    # User Config.
-    if [ X$HasSecureRPC != XDEFAULT -a X$HasSecureRPC != X ]; then
-	echo "#define HasSecureRPC $HasSecureRPC" >> $LOCALDEF
-    fi
-    if [ X$BuildPexExt != XDEFAULT -a X$BuildPexExt != X ]; then
-	echo "#define BuildPexExt $BuildPexExt" >> $LOCALDEF
-    fi
-    if [ X$BuildXinerama != XDEFAULT -a X$BuildXinerama != X ]; then
-	echo "#define BuildXinerama $BuildXinerama" >> $LOCALDEF
-    fi
-    if [ X$BuildXIE != XDEFAULT -a X$BuildXIE != X ]; then
-	echo "#define BuildXIE $BuildXIE" >> $LOCALDEF
-    fi
-    if [ X$BuildAoutLibraries != XDEFAULT -a X$BuildAoutLibraries != X ]; then
-	echo "#define BuildAoutLibraries $BuildAoutLibraries" >> $LOCALDEF
-    fi
-    if [ X$ForceNormalLib != XDEFAULT -a X$ForceNormalLib != X ]; then
-	echo "#define ForceNormalLib $ForceNormalLib" >> $LOCALDEF
-    fi
-    if [ X$DebuggableLibraries != XDEFAULT -a X$DebuggableLibraries != X ]; then
-	echo "#define DebuggableLibraries $DebuggableLibraries" >> $LOCALDEF
-    fi
+# User Config.
+if [ X$DebuggableLibraries != XDEFAULT -a X$DebuggableLibraries != X ]; then
+echo "#define DebuggableLibraries $DebuggableLibraries" >> $LOCALDEF
+fi
 
-    # disable some configs: there are not used this ports
-    for i in \
+# disable some options
+for i in \
 	InstallXdmConfig \
 	InstallXinitConfig \
 	InstallFSConfig \
@@ -64,28 +42,25 @@ configure () {
 	BuildType1Fonts \
 	BuildCIDFonts \
 	BuildCyrillicFonts \
-	BuildLatin2Fonts
-    do \
-	echo "#define $i NO" >> $LOCALDEF
-    done
-    echo "#define HasFreetype2 YES" >> $LOCALDEF
-    echo "#define Freetype2Dir ${LOCALBASE}" >> $LOCALDEF
-    echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
-    echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
-    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
-    echo "#define FreeBSDCC	${CC}" >> $LOCALDEF
-    echo "#define FreeBSDCXX	${CXX}" >> $LOCALDEF
-    echo "#define FreeBSDCFLAGS	${CFLAGS}" >> $LOCALDEF
-    echo "#define BuildXftLibrary NO" >> $LOCALDEF
+	BuildLatin2Fonts \
+	BuildPlugin
+do \
+	echo "#define $i NO"			>> $LOCALDEF
+done
 
-    # Copy ORIGDEF to DESTDEF
-    rm -f $DESTDEF
-    cp -f $ORIGDEF $DESTDEF
+echo "#define FreeBSDCC	${CC}"			>> $LOCALDEF
+echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF
+echo "#define FreeBSDCFLAGS ${CFLAGS}"		>> $LOCALDEF
 
-    # copy generated config to host.def
-    cp -f $LOCALDEF $HOSTDEF
-}
+echo "#define FreeBSDBuildXlib YES"		>> $LOCALDEF
+echo "#define FreeBSDBuildXbin NO"		>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 
-configure
-cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
+# Copy ORIGDEF to DESTDEF
+rm -f $DESTDEF
+cp -f $ORIGDEF $DESTDEF
+
+# copy generated config to host.def
+cp -f $LOCALDEF $HOSTDEF
+
 exit 0

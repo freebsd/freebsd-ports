@@ -1,14 +1,11 @@
 #!/bin/sh
 
 # This script does the following:
-# (1) cp current xf86site.def (it is created by the imake-4 port) 
+# (1) cp xf86site.def, installed by imake-4 port,
 #       to ${WRKDIR}/xc/config/cf.
-#     this means this port uses imake-4's config for defaults.
-# (2) Generate temporal config for compiling.
-#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
-#     used locally for compiling this port, so these configs will be generated
-#     by this script. These configs will be stored to the `host.def' file,
-#     but this host.def will never be installed.
+#     this provides settings for the ports system.
+# (2) Create a host.def for this specific port, using 
+#     host.def as a base.
 
 ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
 DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
@@ -16,38 +13,28 @@ ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
 LOCALDEF=$WRKDIR/.config
 HOSTDEF=$WRKDIR/xc/config/cf/host.def
 
-configure () {
-    # Use original host.def as initial config file
-    rm -f $LOCALDEF
-    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
-    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
+# Use original host.def as initial config file
+rm -f $LOCALDEF
+grep -v '#define.*ProjectRoot' $ORIGHOSTDEF	>> $LOCALDEF
+echo "#define ProjectRoot $PREFIX"		>> $LOCALDEF
 
-    # It's good for FreeBSD ports/packages system.
-    echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
-    echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+# This is also defined in xf86site.def, but doesn't get
+# picked up for some reason.
+echo "#define NothingOutsideProjectRoot YES"	>> $LOCALDEF
 
-    # User Config.
-    if [ X$HasSecureRPC != XDEFAULT -a X$HasSecureRPC != X ]; then
-	echo "#define HasSecureRPC $HasSecureRPC" >> $LOCALDEF
-    fi
-    if [ X$HasPam != XDEFAULT -a X$HasPam != X ]; then
-	echo "#define HasPam $HasPam" >> $LOCALDEF
-    fi
-    if [ X$InstallXdmConfig != XDEFAULT -a X$InstallXdmConfig != X ]; then
-	echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF
-    fi
-    if [ X$InstallXinitConfig != XDEFAULT -a X$InstallXinitConfig != X ]; then
-	echo "#define InstallXinitConfig $InstallXinitConfig" >> $LOCALDEF
-    fi
-    if [ X$InstallAppDefFiles != XDEFAULT -a X$InstallAppDefFiles != X ]; then
-	echo "#define InstallAppDefFiles $InstallAppDefFiles" >> $LOCALDEF
-    fi
-    if [ ! -d /sys -a ! -d /usr/src/sys ]; then
-        echo "#define BuildXF86DRI NO" >> $LOCALDEF
-    fi
+# User Config.
+if [ X$InstallXdmConfig != XDEFAULT -a X$InstallXdmConfig != X ]; then
+echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF
+fi
+if [ X$InstallXinitConfig != XDEFAULT -a X$InstallXinitConfig != X ]; then
+echo "#define InstallXinitConfig $InstallXinitConfig" >> $LOCALDEF
+fi
+if [ X$InstallAppDefFiles != XDEFAULT -a X$InstallAppDefFiles != X ]; then
+echo "#define InstallAppDefFiles $InstallAppDefFiles" >> $LOCALDEF
+fi
 
-    # disable some configs: there are not used this ports
-    for i in \
+# disable some options
+for i in \
 	InstallFSConfig \
 	BuildServer \
 	BuildFontServer \
@@ -59,34 +46,33 @@ configure () {
 	BuildCIDFonts \
 	BuildCyrillicFonts \
 	BuildLatin2Fonts \
+	BuildPlugin \
 	LibHeaders \
-        LibInstall \
+	LibInstall \
 	ForceNormalLib \
 	ModInstall \
 	XTrueTypeInstallCConvHeaders
-    do \
-	echo "#define $i NO" >> $LOCALDEF
-    done
-    echo "#define LibInstallBuild  YES" >> $LOCALDEF
-    echo "#define FreeBSDBuildXlib NO" >> $LOCALDEF
-    echo "#define FreeBSDBuildXbin YES" >> $LOCALDEF
-    echo "#define StandardIncludes -I$PREFIX/include" >> $LOCALDEF
-    echo "#define DontUseLibPathVar YES" >> $LOCALDEF
-    echo "#define PreloadSetup" >> $LOCALDEF
-    echo "#define BuildPlugin NO" >> $LOCALDEF
-    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
-    echo "#define FreeBSDCC	${CC}" >> $LOCALDEF
-    echo "#define FreeBSDCXX	${CXX}" >> $LOCALDEF
-    echo "#define FreeBSDCFLAGS	${CFLAGS}" >> $LOCALDEF
+do \
+	echo "#define $i NO"			>> $LOCALDEF
+done
 
-    # Copy ORIGDEF to DESTDEF
-    rm -f $DESTDEF
-    cp -f $ORIGDEF $DESTDEF
+echo "#define FreeBSDCC	${CC}"			>> $LOCALDEF
+echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF
+echo "#define FreeBSDCFLAGS ${CFLAGS}"		>> $LOCALDEF
 
-    # copy generated config to host.def
-    cp -f $LOCALDEF $HOSTDEF
-}
+echo "#define LibInstallBuild  YES"		>> $LOCALDEF
+echo "#define FreeBSDBuildXlib NO"		>> $LOCALDEF
+echo "#define FreeBSDBuildXbin YES"		>> $LOCALDEF
+echo "#define StandardIncludes -I$PREFIX/include" >> $LOCALDEF
+echo "#define DontUseLibPathVar YES"		>> $LOCALDEF
+echo "#define PreloadSetup"			>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 
-cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
-configure
+# Copy ORIGDEF to DESTDEF
+rm -f $DESTDEF
+cp -f $ORIGDEF $DESTDEF
+
+# copy generated config to host.def
+cp -f $LOCALDEF $HOSTDEF
+
 exit 0

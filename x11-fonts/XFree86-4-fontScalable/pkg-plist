@@ -1,7 +1,5 @@
 %%CID:%%lib/X11/fonts/CID/fonts.dir
 %%CID:%%lib/X11/fonts/CID/fonts.scale
-lib/X11/fonts/PEX/Roman.phont
-lib/X11/fonts/PEX/Roman_M.phont
 %%SPEEDO:%%lib/X11/fonts/Speedo/encodings.dir
 %%SPEEDO:%%lib/X11/fonts/Speedo/font0419.spd
 %%SPEEDO:%%lib/X11/fonts/Speedo/font0582.spd

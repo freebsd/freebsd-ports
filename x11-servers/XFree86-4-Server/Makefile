@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86-Server
+# New ports collection makefile for:    XFree86-Server
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,48 +6,42 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.2.1
-PORTREVISION=	7
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	4.2.0/:x \
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X420src-1.tgz:x \
+DISTFILES=	X430src-1.tgz:x \
+		X430src-2.tgz:x \
+		X430src-3.tgz:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X420src-1.tgz
-
-PATCH_SITES=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
-PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz \
-			patch-nvchips.gz
+EXTRACT_ONLY=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 X server and related programs
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
+INSTALLS_SHLIB=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c \
-	patch-i810_driver.c patch-mga_driver.c patch-r128_driver.c \
-	patch-alp_xaam.c
-EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
+.for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h
+EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
-			HasSecureRPC=${HasSecureRPC} \
-			HasPam=${HasPam} \
-			ExtendedInputDevices=${ExtendedInputDevices} \
 			BuildXF86DRI=${BuildXF86DRI} \
-			HasGlide3=${HasGlide3} \
-			HaveMatroxHal=${HaveMatroxHal} \
+			WITH_DEBUG="${WITH_DEBUG}" \
 			CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}"
 MAN1=			XFree86.1 \
 			Xserver.1 \
+			gtf.1 \
 			kbd_mode.1 \
 			pcitweak.1 \
 			xf86cfg.1 \
@@ -55,29 +49,45 @@ MAN1=			XFree86.1 \
 MAN3=			XF86VidMode.3 \
 			XF86VidModeDeleteModeLine.3 \
 			XF86VidModeGetAllModeLines.3 \
+			XF86VidModeGetDotClocks.3 \
+			XF86VidModeGetGamma.3 \
+			XF86VidModeGetGammaRamp.3 \
+			XF86VidModeGetGammaRampSize.3 \
 			XF86VidModeGetModeLine.3 \
 			XF86VidModeGetMonitor.3 \
+			XF86VidModeGetPermissions.3 \
 			XF86VidModeGetViewPort.3 \
 			XF86VidModeLockModeSwitch.3 \
 			XF86VidModeModModeLine.3 \
 			XF86VidModeQueryExtension.3 \
 			XF86VidModeQueryVersion.3 \
+			XF86VidModeSetClientVersion.3 \
+			XF86VidModeSetGamma.3 \
+			XF86VidModeSetGammaRamp.3 \
 			XF86VidModeSetViewPort.3 \
 			XF86VidModeSwitchMode.3 \
 			XF86VidModeSwitchToMode.3 \
 			XF86VidModeValidateModeLine.3
-MAN4=			mga.4 \
-			tdfx.4 \
+MAN4=			citron.4 \
+			dynapro.4 \
+			elographics.4 \
 			glint.4 \
-			s3virge.4 \
+			kbd.4 \
+			keyboard.4 \
+			mga.4 \
+			microtouch.4 \
+			mouse.4 \
+			mutouch.4 \
+			nv.4 \
 			r128.4 \
 			rendition.4 \
+			s3virge.4 \
 			savage.4 \
-			nv.4 \
 			siliconmotion.4 \
+			tdfx.4 \
 			vga.4 \
-			keyboard.4 \
-			mouse.4
+			void.4 \
+			wacom.4
 MAN5=			XF86Config.5
 PKGMESSAGE=		${WRKDIR}/.pkg-message
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
@@ -87,36 +97,16 @@ XINSTALL_MAN_DIRS=	programs/Xserver
 
 .include <bsd.port.pre.mk>
 
-# XFree86 User Config:
-# ---
-# Name          Default		Meaning
-# ----------------------------------------------------------------------------
-# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
-# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
-# ExtendedInputDevices	YES	support extended input devices
-HasSecureRPC?=		DEFAULT
-HasPam?=		DEFAULT
-ExtendedInputDevices?=	DEFAULT
-
-.if ${ARCH} == i386
+.if ${ARCH} == i386 ||  ${ARCH} == alpha
 BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
-DISTFILES+=		freebsd-glide3headers.tar.gz:local
-HasGlide3=		YES
-XBUILD_DIRS+=		lib/XThrStub lib/X11 lib/GL
+XBUILD_DIRS+=		lib/XThrStub lib/X11 lib/Xext lib/GL
 XINSTALL_DIRS+=		lib/GL/mesa/src/drv
-post-extract::
-	@(cd ${WRKSRC}/lib/GL/mesa/src/drv/tdfx/ ; \
-		tar xfpz ${DISTDIR}/${DIST_SUBDIR}/freebsd-glide3headers.tar.gz)
 .else
-pre-fetch::
-	@${ECHO_MSG} "DRI only built on i386"
 BuildXF86DRI=		NO
-HasGlide3=		NO
 PLIST_SUB+=		DRI="@comment "
 .endif # i386
 
-# Some things are not applicable if this machine is an alpha
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
@@ -124,14 +114,24 @@ PLIST_SUB+=	ALPHA_NA=""
 MAN1+=		scanpci.1
 .endif
 
+.if ${ARCH} == alpha
+PLIST_SUB+=	IA64_NA="@comment "
+.else
+PLIST_SUB+=	IA64_NA=""
+.endif
+
+.if ${ARCH} == sparc64
+PLIST_SUB+=	SPARC64_NA="@comment "
+.else
+PLIST_SUB+=	SPARC64_NA=""
+.endif
+
 .if ${ARCH} == i386
-PLIST_SUB+=	I386:=""
+PLIST_SUB+=	I386=""
 MAN4+=		apm.4 \
 		chips.4 \
 		cirrus.4 \
 		cyrix.4 \
-		fbdev.4 \
-		fbdevhw.4 \
 		i128.4 \
 		i740.4 \
 		i810.4 \
@@ -142,51 +142,7 @@ MAN4+=		apm.4 \
 		vesa.4 \
 		vmware.4
 .else
-PLIST_SUB+=	I386:="@comment "
-.endif
-
-.if ${ExtendedInputDevices} == DEFAULT || ${ExtendedInputDevices} == YES
-PLIST_SUB+=	XIE:=""
-MAN4+=		citron.4 \
-		dynapro.4 \
-		elographics.4 \
-		microtouch.4 \
-		mutouch.4 \
-		wacom.4 \
-		void.4
-.else
-PLIST_SUB+=	XIE:="@comment "
-.endif
-
-.if ${ARCH} == i386
-.if !defined(WITH_MATROX_GXX_DRIVER)
-HaveMatroxHal=		NO
-PLIST_SUB+=		MATROX="@comment "
-pre-fetch::
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to include Matrox's extra"
-	@${ECHO_MSG} "\"HALLIB\" binary driver"
-	@${ECHO_MSG} "********************************************************"
-.else
-NO_PACKAGE=	"Matrox drivers may not be distributed"
-RESTRICTED=	"Matrox drivers may not be distributed."
-HaveMatroxHal=		YES
-MGA_DRIVER_VERSION=	2.0
-MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2002/:mga
-DISTFILES+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz:mga
-EXTRACT_ONLY+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
-RESTRICTED_FILES=	mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
-PLIST_SUB+=		MATROX=""
-post-extract::
-	${MV} ${WRKDIR}/mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src/HALlib/* \
-		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/HALlib/
-post-install::
-	${INSTALL_DATA} ${WRKDIR}/mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src/README_HALLIB \
-		${PREFIX}/lib/X11/doc/README.mga_HALLIB
-.endif	# !WITH_MATROX_GXX_DRIVER
-.else
-HaveMatroxHal=		NO
-PLIST_SUB+=		MATROX="@comment "
+PLIST_SUB+=	I386="@comment "
 .endif
 
 post-extract::
@@ -199,11 +155,9 @@ post-build:
 
 post-install::
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
-	strip ${PREFIX}/bin/XFree86
 	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
-	ln -sf Xwrapper-4 ${PREFIX}/bin/X; \
+	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \
 	fi;
-	
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.post.mk>

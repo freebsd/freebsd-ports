@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTVERSION=	4.3.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.2.0
+MASTER_SITE_SUBDIR=	4.3.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X420src-1.tgz X420src-2.tgz
-EXTRACT_ONLY=	X420src-1.tgz
-
-PATCH_SITES=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
-PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
+DISTFILES=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz \
+		X430src-4.tgz
 
 MAINTAINER=	anholt@freebsd.org
-COMMENT=	XFree86-4 Client environments
+COMMENT=	XFree86-4 client programs and related files
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		GLU.1:${PORTSDIR}/x11/XFree86-4-libraries \
+		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
+		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 XFREE86_VERSION=	4
@@ -34,8 +32,6 @@ PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles} \
-			HasSecureRPC=${HasSecureRPC} \
-			HasPam=${HasPam} \
 			CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}"
@@ -61,20 +57,6 @@ XINSTALL_MAN_DIRS=	programs
 InstallXdmConfig?=	DEFAULT
 InstallXinitConfig?=	DEFAULT
 InstallAppDefFiles?=	DEFAULT
-HasSecureRPC?=		DEFAULT
-HasPam?=		DEFAULT
-
-post-extract:
-	( cd ${WRKDIR} && \
-	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	   ${DISTDIR}/${DIST_SUBDIR}/X420src-2.tgz \
-	    | ${TAR} -xf - xc/fonts/util )
-
-post-patch:
-	cd ${WRKSRC}/nls; \
-	for i in Compose XI18N_OBJS XLC_LOCALE; do \
-		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
-	done
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>

@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	FontServer
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-servers x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
-EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
 MAINTAINER=	anholt@freebsd.org
-COMMENT=	XFree86-4 Font Server
+COMMENT=	XFree86-4 font server
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
@@ -28,9 +28,8 @@ SCRIPTS_ENV=		CC="${CC}" \
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 MAN1=			Xserver.1 xfs.1
 XBUILD_DIRS=		programs/xfs
-XINCLUDE_DIRS=		lib/xtrans programs/Xserver 
+XINCLUDE_DIRS=		lib/xtrans programs/Xserver
 XINSTALL_MAN_DIRS=	programs/Xserver programs/xfs
-
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.mk>

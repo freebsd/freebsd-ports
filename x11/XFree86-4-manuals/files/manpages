@@ -389,7 +389,7 @@ MAN3=	AllPlanes.3 \
 	XRaiseWindow.3 \
 	XReadBitmapFile.3 \
 	XReadBitmapFileData.3 \
-	XRebindKeySym.3 \
+	XRebindKeysym.3 \
 	XRecolorCursor.3 \
 	XReconfigureWMWindow.3 \
 	XRectInRegion.3 \

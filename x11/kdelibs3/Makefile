@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-cups		\
 		${XINERAMA}
 
-FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
+FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
