@@ -7,14 +7,15 @@
 
 PORTNAME=	dosbox
 PORTVERSION=	0.55
+PORTREVISON=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	knyghtmare@knyghtmare.com
-COMMENT=		An emulator of a PC with DOS
+COMMENT=	An emulator of a PC with DOS
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
