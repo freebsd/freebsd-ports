@@ -8,10 +8,12 @@ bin/h5dump
 bin/h5import
 bin/h5ls
 bin/h5redeploy
+bin/h5repack
 bin/h5repart
 include/H5ACpublic.h
 include/H5AbstractDs.h
 include/H5Apublic.h
+include/H5ArrayType.h
 include/H5AtomType.h
 include/H5Attribute.h
 include/H5Bpublic.h
@@ -19,6 +21,7 @@ include/H5Classes.h
 include/H5CommonFG.h
 include/H5CompType.h
 include/H5Cpp.h
+include/H5CppDoc.h
 include/H5DataSet.h
 include/H5DataSpace.h
 include/H5DataType.h
@@ -30,9 +33,9 @@ include/H5Epublic.h
 include/H5Exception.h
 include/H5FDcore.h
 include/H5FDfamily.h
-include/H5FDfphdf5.h
 include/H5FDgass.h
 include/H5FDlog.h
+include/H5FDmpi.h
 include/H5FDmpio.h
 include/H5FDmpiposix.h
 include/H5FDmulti.h
@@ -41,7 +44,6 @@ include/H5FDsec2.h
 include/H5FDsrb.h
 include/H5FDstdio.h
 include/H5FDstream.h
-include/H5FPpublic.h
 include/H5FaccProp.h
 include/H5FcreatProp.h
 include/H5File.h
@@ -67,6 +69,7 @@ include/H5Rpublic.h
 include/H5Spublic.h
 include/H5StrType.h
 include/H5Tpublic.h
+include/H5VarLenType.h
 include/H5Zpublic.h
 include/H5api_adpt.h
 include/H5pubconf.h
@@ -89,12 +92,6 @@ lib/libhdf5_cpp.a
 %%EXAMPLESDIR%%/c/h5_select.c
 %%EXAMPLESDIR%%/c/h5_write.c
 %%EXAMPLESDIR%%/c/ph5example.c
-%%EXAMPLESDIR%%/c++/Attributes.h5
-%%EXAMPLESDIR%%/c++/Group.h5
-%%EXAMPLESDIR%%/c++/SDS.h5
-%%EXAMPLESDIR%%/c++/SDScompound.h5
-%%EXAMPLESDIR%%/c++/SDSextendible.h5
-%%EXAMPLESDIR%%/c++/Select.h5
 %%EXAMPLESDIR%%/c++/chunks.cpp
 %%EXAMPLESDIR%%/c++/compound.cpp
 %%EXAMPLESDIR%%/c++/create.cpp
