@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION= 	7.cs1
+PORTVERSION= 	8.cs1
 CATEGORIES=	audio graphics linux
 MASTER_SITES=	# fetch manually
 DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
@@ -33,7 +33,7 @@ STRIP=		# Linux binary should not be stripped by INSTALL_PROGRAM as it uses /usr
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the Linux RPM version after\
 		reading and agreeing to the license at:\
-		http://www.real.com/player/7/ \
+		http://www.real.com/player/ \
 		- once ${DISTFILES} has been downloaded, move it to\
 		${DISTDIR} and then restart this build.
 .endif
@@ -47,11 +47,11 @@ do-install:
 .for f in mimeinstall.sh pluginstall.sh postinstall.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RADIR}
 .endfor
-.for f in realplay rpnphelper rpnp.so
+.for f in realplay rpnp.so
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${RADIR}
 .endfor
 .for f in LICENSE Mailcap Mime.types README app.kdelnk audiosig.rm \
-	firstrun.rm firstrun.smi firstrun.swf mime.kdelnk raclass.zip \
+	firstrun.rm mime.kdelnk raclass.zip \
 	realplay.desktop rp7.xpm rp7doc.png rp7doc.xpm rp7mini.xpm
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RADIR}
 .endfor
@@ -63,7 +63,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Plugins/ExtResources/* ${RADIR}/Plugins/ExtResources/
 
 	${LN} -sf ${RADIR}/realplay ${RABINDIR}
-	${LN} -sf ${RADIR}/rpnphelper ${RABINDIR}
 
 .if exists(${PLUGINSDIR})
 	${LN} -sf ${RADIR}/raclass.zip ${PLUGINSDIR}
@@ -71,13 +70,13 @@ do-install:
 .endif
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/RealPlayer7
-	${INSTALL_DATA} ${WRKSRC}/Help/readme ${PREFIX}/share/doc/RealPlayer7
-	${INSTALL_DATA} ${WRKSRC}/Help/realplay.htm ${PREFIX}/share/doc/RealPlayer7
-	${MKDIR} ${PREFIX}/share/doc/RealPlayer7/realplay
-	${INSTALL_DATA} ${WRKSRC}/Help/realplay/*.htm ${PREFIX}/share/doc/RealPlayer7/realplay
-	${MKDIR} ${PREFIX}/share/doc/RealPlayer7/realplay/pics
-	${INSTALL_DATA} ${WRKSRC}/Help/realplay/pics/* ${PREFIX}/share/doc/RealPlayer7/realplay/pics
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer8
+	${INSTALL_DATA} ${WRKSRC}/Help/readme ${PREFIX}/share/doc/RealPlayer8
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay.htm ${PREFIX}/share/doc/RealPlayer8
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer8/realplay
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay/*.htm ${PREFIX}/share/doc/RealPlayer8/realplay
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer8/realplay/pics
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay/pics/* ${PREFIX}/share/doc/RealPlayer8/realplay/pics
 .endif
 
 post-install:
