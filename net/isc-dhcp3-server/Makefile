@@ -24,6 +24,7 @@ USE_RC_SUBR=	yes
 
 SUBSYS?=	server
 
+UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if ${SUBSYS} == client
 OPTIONS=	INTERFACE_POLLING "interface polling support" on
 .endif
