@@ -73,6 +73,7 @@ etc/codepages/codepage.950
 @dirrm etc/codepages
 share/doc/samba/COPYING
 share/doc/samba/Manifest
+share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
 share/doc/samba/README
 share/doc/samba/README.FreeBSD
@@ -82,6 +83,8 @@ share/doc/samba/Roadmap
 share/doc/samba/THANKS
 share/doc/samba/WHATSNEW.txt
 share/doc/samba/Win95_PlainPassword.reg
+share/doc/samba/Win98_PlainPassword.reg
+share/doc/samba/Win9X-CacheHandling.reg
 share/doc/samba/announce
 share/doc/samba/faq/Samba-Server-FAQ-1.html
 share/doc/samba/faq/Samba-Server-FAQ-2.html
@@ -146,6 +149,7 @@ share/doc/samba/textdocs/Application_Serving.txt
 share/doc/samba/textdocs/BROWSING-Config.txt
 share/doc/samba/textdocs/BROWSING.txt
 share/doc/samba/textdocs/BUGS.txt
+share/doc/samba/textdocs/CRLF-LF-Conversions.txt
 share/doc/samba/textdocs/CVS_ACCESS.txt
 share/doc/samba/textdocs/DHCP-Server-Configuration.txt
 share/doc/samba/textdocs/DIAGNOSIS.txt
@@ -187,7 +191,6 @@ share/doc/samba/textdocs/UNIX_INSTALL.txt
 share/doc/samba/textdocs/UNIX_SECURITY.txt
 share/doc/samba/textdocs/Win95.txt
 share/doc/samba/textdocs/WinNT.txt
-share/doc/samba/textdocs/CRLF-LF-Conversions.txt
 share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/security_level.txt
 share/doc/samba/yodldocs/DOMAIN_MEMBER.yo
