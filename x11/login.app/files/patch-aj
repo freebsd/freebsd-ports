@@ -1,0 +1,11 @@
+--- preferences.h	2000/12/13 20:54:07	1.1
++++ preferences.h	2000/12/13 20:54:43
+@@ -39,7 +39,7 @@
+ #define DEFAULT_WELCOMEMESSAGE		"Welcome to LINUX"
+ #define DEFAULT_POWEROFFMESSAGE		"System is shutting down..."
+ #define DEFAULT_RESTARTMESSAGE		"System is rebooting..."
+-#define DEFAULT_XSERVER			"/usr/X11R6/bin/X"
++#define DEFAULT_XSERVER			"%%X11BASE%%/bin/X"
+ #define DEFAULT_THEME			"Linux"
+ #define DEFAULT_DISABLEWELCOMEMESSAGE	NO
+ #define DEFAULT_DISABLEUSERSHUTDOWN	NO

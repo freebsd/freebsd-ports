@@ -1,49 +1,49 @@
---- Makefile.orig	Fri Oct 29 18:55:32 1999
-+++ Makefile	Mon Jan 17 18:23:36 2000
-@@ -2,12 +2,12 @@
- # Login.app Makefile
+--- Makefile.orig	Sun Nov 12 06:54:45 2000
++++ Makefile	Thu Dec 14 10:50:15 2000
+@@ -3,7 +3,7 @@
  #
  
+ # Directory where Login.app will be installed
 -INSTALL_DIR = /usr/local/GNUstep/Apps/Login.app
-+INSTALL_DIR = ${X11BASE}/GNUstep/Apps/Login.app
++INSTALL_DIR = ${PREFIX}/GNUstep/Apps/Login.app
  
--INSTALL = /usr/bin/install
-+INSTALL = /usr/bin/install -c
+ # Use shadow passwords, comment out to disable
+ SHADOW = -DSHADOW_PASSWD
+@@ -13,8 +13,10 @@
+ 
+ INSTALL = /usr/bin/install -c
  CC = cc
--CFLAGS += -g -Wall -pedantic -D_GNU_SOURCE `get-wraster-flags --cflags`
+-CFLAGS += -Wall -pedantic -D_GNU_SOURCE `get-wraster-flags --cflags` $(SHADOW)
 -LDFLAGS += `get-wraster-flags --ldflags` `get-wraster-flags --libs` -lXmu -lPropList -lcrypt
-+CFLAGS += -g -Wall -pedantic -D_GNU_SOURCE `${X11BASE}/bin/get-wraster-flags --cflags`
-+LDFLAGS += `${X11BASE}/bin/get-wraster-flags --ldflags` `${X11BASE}/bin/get-wraster-flags --libs` -lXmu -lPropList -lcrypt
++WRASTER_CFLAGS != ${X11BASE}/bin/get-wraster-flags --cflags
++WRASTER_LDFLAGS != ${X11BASE}/bin/get-wraster-flags --ldflags --libs
++CFLAGS += -Wall -pedantic -D_GNU_SOURCE $(WRASTER_CFLAGS) $(SHADOW)
++LDFLAGS += $(WRASTER_LDFLAGS) -lXmu -lPropList -lcrypt
  
  TARGET = Login
  
-@@ -19,8 +19,16 @@
- 	graphics.o \
- 	util.o
- 
-+SCRIPTS = Login.root \
-+		Login.user \
-+		Logout.root \
-+		Restart \
-+		Suspend \
-+		PowerOff \
-+		Startup
-+
- $(TARGET): $(OBJS)
--	$(CC) -o $(TARGET) $^ $(LDFLAGS)
-+	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
- 
- clean: 
+@@ -61,16 +63,14 @@
  	rm -rf $(TARGET) $(OBJS) core `find -name \*~`
-@@ -31,9 +39,9 @@
- 	$(INSTALL) -d $(INSTALL_DIR)/Themes
- 	$(INSTALL) -d $(INSTALL_DIR)/Themes/Linux
- 	$(INSTALL) -d $(INSTALL_DIR)/Themes/GNUstep
--	$(INSTALL) $(TARGET) $(INSTALL_DIR)
-+	$(INSTALL) -s $(TARGET) $(INSTALL_DIR)
- 	$(INSTALL) -m 644 Preferences $(INSTALL_DIR)/Preferences
--	$(INSTALL) Scripts/* $(INSTALL_DIR)/Scripts/
-+	cd Scripts && $(INSTALL) $(SCRIPTS) $(INSTALL_DIR)/Scripts/
- 	$(INSTALL) -m 644 Themes/Linux/* $(INSTALL_DIR)/Themes/Linux/
- 	$(INSTALL) -m 644 Themes/GNUstep/* $(INSTALL_DIR)/Themes/GNUstep/
  
+ install: $(TARGET)
+-	$(INSTALL) -d $(INSTALL_DIR)
+-	$(INSTALL) -d $(INSTALL_DIR)/Scripts
+-	$(INSTALL) -d $(INSTALL_DIR)/Themes
+-	$(INSTALL) -d $(INSTALL_DIR)/Themes/Linux
+-	$(INSTALL) -d $(INSTALL_DIR)/Themes/GNUstep
+-	$(INSTALL) -s $(TARGET) $(INSTALL_DIR)
+-	$(INSTALL) -m 644 Preferences $(INSTALL_DIR)/Preferences
+-	$(INSTALL) $(SCRIPTS) $(INSTALL_DIR)/Scripts/
+-	$(INSTALL) -m 644 $(THEME_LINUX) $(INSTALL_DIR)/Themes/Linux/
+-	$(INSTALL) -m 644 $(THEME_GNUSTEP) $(INSTALL_DIR)/Themes/GNUstep/
++	$(MKDIR) $(INSTALL_DIR)/Scripts
++	$(MKDIR) $(INSTALL_DIR)/Themes/Linux
++	$(MKDIR) $(INSTALL_DIR)/Themes/GNUstep
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_DIR)
++	$(BSD_INSTALL_DATA) Preferences $(INSTALL_DIR)/Preferences
++	$(BSD_INSTALL_SCRIPT) $(SCRIPTS) $(INSTALL_DIR)/Scripts/
++	$(BSD_INSTALL_DATA) $(THEME_LINUX) $(INSTALL_DIR)/Themes/Linux/
++	$(BSD_INSTALL_DATA) $(THEME_GNUSTEP) $(INSTALL_DIR)/Themes/GNUstep/
+ 
+ uninstall:
+ 	rm -rf $(INSTALL_DIR)

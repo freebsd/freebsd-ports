@@ -1,13 +1,33 @@
---- Scripts/Login.user.orig	Sun Aug  1 01:37:50 1999
-+++ Scripts/Login.user	Mon Jan 17 18:10:27 2000
-@@ -15,18 +15,18 @@
+--- Scripts/Login.user.orig	Sat Nov 11 09:24:21 2000
++++ Scripts/Login.user	Thu Dec 14 10:43:08 2000
+@@ -1,32 +1,32 @@
+ #!/bin/sh
+ 
+-PATH="/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
++PATH="/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
+ 
+ #
+ # Try to find the user's init script for X.
+ #   1) Look for ~/.xinitrc
+ #   2) Look for ~/.xsession
+ #   3) Look for ~/.Xclients
+-#   4) Look for /etc/X11/xinit/xinitrc
+-#   5) Look for /usr/X11R6/bin/twm
+-#   6) Look for /usr/X11R6/bin/xterm
++#   4) Look for %%X11BASE%%/lib/X11/xinit/xinitrc
++#   5) Look for %%X11BASE%%/bin/twm
++#   6) Look for %%X11BASE%%/bin/xterm
+ #
+ 
  xinitrc=$HOME/.xinitrc
  xsession=$HOME/.xsession
  xclients=$HOME/.Xclients
 -systemxinitrc=/etc/X11/xinit/xinitrc
-+systemxinitrc=/usr/X11R6/lib/X11/xinit/xinitrc
- twm=/usr/X11R6/bin/twm
- xterm=/usr/X11R6/bin/xterm
+-twm=/usr/X11R6/bin/twm
+-xterm=/usr/X11R6/bin/xterm
++systemxinitrc=%%X11BASE%%/lib/X11/xinit/xinitrc
++twm=%%X11BASE%%/bin/twm
++xterm=%%X11BASE%%/bin/xterm
  
  if [ -r $xinitrc ]; then
 -	exec sh -login $xinitrc

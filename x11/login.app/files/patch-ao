@@ -1,0 +1,10 @@
+--- Scripts/Restart	2000/12/13 22:24:55	1.1
++++ Scripts/Restart	2000/12/13 22:25:01
+@@ -3,6 +3,6 @@
+ #
+ # Take the system down for reboot.
+ #
+-#/sbin/shutdown -r now
++/sbin/shutdown -r now
+ 
+ # End of file
