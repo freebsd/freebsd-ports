@@ -35,6 +35,9 @@ PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$$||g'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 	@${REINPLACE_CMD} -e 's|[$$]{prefix}/doc/urlgfe|${DOCSDIR}|g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$||g ; s|urlgfe_icon|urlgfe-icon|g ; \
