@@ -1,22 +1,24 @@
 # New ports collection makefile for:	dxpc
-# Version required:     3.7.0
+# Version required:     3.8.0
 # Date created:		2 May 1998
 # Whom:			Bruce A. Mah <bmah@ca.sandia.gov>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       dxpc-3.7.0
+DISTNAME=	dxpc-3.8.0
 CATEGORIES=	x11
-MASTER_SITES=   ${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 
 MAINTAINER=	bmah@ca.sandia.gov
+
+LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 MAN1=		dxpc.1
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+CONFIGURE_ARGS+=	--with-lzo-lib=${LOCALBASE}
 
 post-install:
 	strip ${PREFIX}/bin/dxpc
