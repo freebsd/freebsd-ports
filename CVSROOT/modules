@@ -9162,6 +9162,7 @@ worldtools	ports/sysutils/worldtools
 wots		ports/sysutils/wots
 wping		ports/net/wping
 wprint		ports/print/wprint
+wput		ports/ftp/wput
 wrapper		ports/x11/wrapper
 wsmake		ports/www/wsmake
 wsoundprefs	ports/audio/wsoundprefs
