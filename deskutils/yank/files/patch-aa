@@ -1,0 +1,20 @@
+--- src/util.h.orig	Wed Jan 24 14:12:54 2001
++++ src/util.h	Sun Feb 25 14:06:03 2001
+@@ -28,6 +28,9 @@
+ #include <config.h>
+ #endif   /* HAVE_CONFIG_H */
+ 
++/* needed for inet stuff */
++#include <sys/types.h>
++#include <sys/socket.h>
+ 
+ /* this gives errors */
+ /* #include <sys/param.h> */
+@@ -45,6 +48,7 @@
+ #include <string.h>
+ #include <time.h>
+ 
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 
