@@ -1,12 +1,12 @@
 --- Makefile.orig	Sat Feb 24 08:46:51 2001
-+++ Makefile	Sun Apr  1 19:57:57 2001
++++ Makefile	Sun Apr  1 20:51:21 2001
 @@ -21,18 +21,18 @@
  
  # SAWFISH_CLIENT_LIB should point to client.a distributed with sawfish
  
 -SAWFISH_CLIENT_LIB = /usr/lib/rep/i386-redhat-linux/sawfish/client.a
 -CC = gcc
-+SAWFISH_CLIENT_LIB = /usr/X11R6/libexec/rep/%%GNUHOST%%/sawfish/client.so
++SAWFISH_CLIENT_LIB =
 +CC ?= gcc
  CFLAGS = 
  
