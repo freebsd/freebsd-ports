@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.32
+PORTVERSION=	1.34
 CATEGORIES=	astro
-MASTER_SITES=	http://www.lsw.uni-heidelberg.de/~rwichman/
+MASTER_SITES=	http://www.lsw.uni-heidelberg.de/users/rwichman/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
@@ -34,10 +33,9 @@ MAN1=		nightfall.1
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomelibs gnomeprefix
-PLIST_SUB+=	NFDATADIR="share/gnome"
+DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	NFDATADIR="share"
 .endif
 
 .if defined(WITHOUT_PGPLOT)
@@ -48,6 +46,22 @@ LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
 .endif
+
+.if defined(WITHOUT_OPENGL)
+CONFIGURE_ARGS+=	--disable-opengl
+.else
+LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut \
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+CONFIGURE_ARGS+=	--with-lib-GL
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "Nightfall has the following tunable option(s):"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITHOUT_GNOME=gnomelibs		Turns off Gnome support"
+	@${ECHO_MSG} "	WITHOUT_PGPLOT=yes		Turns off PGPLOT support"
+	@${ECHO_MSG} "	WITHOUT_OPENGL=yes		Turns off OpenGL support"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
