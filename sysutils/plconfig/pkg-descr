@@ -1,0 +1,8 @@
+plconfig is an experimental commandline tool for configuring HomePlug 
+(Ethernet over AC) powerline bridges powered by the Intellon INT5130
+chipset.   Again, this tool is considered "between an ugly hack and 
+simple use-once-and-throw-away" quality by the program's author.
+
+WWW: http://www.neon1.net/prog/plconfig.html
+
+-- Matt Peterson <matt@peterson.org>
