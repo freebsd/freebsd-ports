@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,7 +30,6 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
-		--without-gnome \
 		--with-sigc-prefix=${LOCALBASE}
 
 .if defined(WITH_EXAMPLES)
@@ -39,6 +39,8 @@ PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
+		${WRKSRC}/Makefile.in
 .if !defined(WITH_EXAMPLES)
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
