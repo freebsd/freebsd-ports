@@ -3,7 +3,7 @@
 # Date created:		26 November 1998
 # Whom:			Jonathan Hanna <jhanna@home.com>
 #
-# $Id:$
+# $Id: Makefile,v 1.2 1998/12/05 17:58:00 flathill Exp $
 #
 
 DISTNAME=	argus-1.7.beta.1e
@@ -16,6 +16,7 @@ MAINTAINER=	jhanna@home.com
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 HAS_CONFIGURE=	true
+CONFIGURE_ARGS=	--with-pcap=bpf
 
 MAN1=	connections.1 ra.1 rasort.1 services.1
 MAN5=	argus.5
