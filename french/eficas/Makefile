@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eficas
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-sansdoc-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
@@ -23,6 +23,10 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
+
+.if !defined(NOPORTDOCS)
+DISTNAME+=	${PORTNAME}-doc-${PORTVERSION}-1
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -39,35 +43,30 @@ EF_LANG=	ang
 ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 
 post-patch:
+	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig
+
+pre-configure:
 .for FILE in ${ENV2PYTHON}
 	@${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
-		${WRKSRC}/${FILE}
+		-e "s|^#!*./bin/env python|#!${PYTHON_CMD}|" ${WRKSRC}/${FILE}
 .endfor
 	@${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
 	@${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
 		${WRKSRC}/Aster/editeur.ini
 
-pre-install:
-.if defined(NOPORTDOCS)
-	@${RM} -rf ${WRKSRC}/Aster/Doc
-.endif
-	@${FIND} ${WRKDIR} -type f -exec ${CHMOD} ${SHAREMODE} \{\} \;
-
 do-install:
 	@${MKDIR} ${EFICASDIR}
 	@${CP} -R ${WRKSRC}/* ${EFICASDIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EFICASDIR}
-	@${CP} ${FILESDIR}/eficas ${WRKDIR}
-	@${REINPLACE_CMD} -e "s#%%EFICASDIR%%#${EFICASDIR}#"		\
-		-e "s#%%PYTHON_CMD%%#${PYTHON_CMD}#" ${WRKDIR}/eficas
+	@${SED} -e "s#%%EFICASDIR%%#${EFICASDIR}#"	\
+		-e "s#%%PYTHON_CMD%%#${PYTHON_CMD}#"	\
+		< ${FILESDIR}/eficas > ${WRKDIR}/eficas
 	@${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MV} ${EFICASDIR}/Aster/Doc/* ${DOCSDIR}
-	@${RMDIR} ${EFICASDIR}/Aster/Doc
+	@${CP} ${WRKDIR}/Doc/* ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

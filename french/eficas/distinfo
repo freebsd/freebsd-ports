@@ -1,2 +1,4 @@
-MD5 (eficas-1.6.1-1.tar.gz) = 1909c559bd13139d62995006fcb47618
-SIZE (eficas-1.6.1-1.tar.gz) = 27198873
+MD5 (eficas-sansdoc-1.7.0-1) = 855a6652637f7a38bb4ebb58acafaeb9
+SIZE (eficas-sansdoc-1.7.0-1) = 677660
+MD5 (eficas-doc-1.7.0-1.tar.gz) = 038495e95cd53b845202277065cf4db7
+SIZE (eficas-doc-1.7.0-1.tar.gz) = 29335252
