@@ -22,7 +22,7 @@ OCAMLBIN=$(PREFIX)/bin
 ########################################################################
 # Where do you want to install Galax after it has been compiled?
 
-GALAXHOME=$(PREFIX)/Galax-0.2.0
+GALAXHOME=%%GALAXHOME%%
 
 BINDIR=$(GALAXHOME)/bin
 LIBDIR=$(GALAXHOME)/lib
