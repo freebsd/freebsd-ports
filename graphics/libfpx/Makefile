@@ -36,7 +36,7 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502001
+.if ${OSVERSION} >= 502101
 BROKEN=		"Does not compile"
 .endif
 
