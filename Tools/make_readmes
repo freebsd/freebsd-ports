@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# $FreeBSD$
 
 $PORTSDIR="/usr/ports";
 $README=`cat ${PORTSDIR}/Templates/README.port`;
