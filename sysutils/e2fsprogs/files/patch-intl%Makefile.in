@@ -1,0 +1,10 @@
+$FreeBSD$
+
+--- intl/Makefile.in.orig	Sun Feb 24 13:03:59 2002
++++ intl/Makefile.in	Sun Aug 31 02:58:10 2003
+@@ -142,4 +142,5 @@
+ # Define this as empty until I found a useful application.
+ installcheck:
++install-shlibs:
+ 
+ uninstall:

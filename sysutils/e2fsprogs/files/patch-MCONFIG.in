@@ -1,20 +1,12 @@
---- MCONFIG.in.orig	Mon Feb 25 05:03:57 2002
-+++ MCONFIG.in	Sun Aug  4 15:15:37 2002
-@@ -57,14 +57,14 @@
- #
- LIB = $(top_builddir)/lib
- LIBSS = $(LIB)/libss@LIB_EXT@
+$FreeBSD$
+
+--- MCONFIG.in.orig	Thu Oct 31 00:49:21 2002
++++ MCONFIG.in	Wed Aug 27 20:00:17 2003
+@@ -64 +64 @@
 -LIBCOM_ERR = $(LIB)/libcom_err@LIB_EXT@
 +LIBCOM_ERR = /usr/lib/libcom_err.so
- LIBE2P = $(LIB)/libe2p@LIB_EXT@
- LIBEXT2FS = $(LIB)/libext2fs@LIB_EXT@
- LIBUUID = $(LIB)/libuuid@LIB_EXT@ @SOCKET_LIB@ 
- DEPLIBUUID = $(LIB)/libuuid@LIB_EXT@
- 
+@@ -70,2 +70,2 @@
 -STATIC_LIBSS = $(LIB)/libss@STATIC_LIB_EXT@
 -STATIC_LIBCOM_ERR = $(LIB)/libcom_err@STATIC_LIB_EXT@
 +STATIC_LIBSS = STATIC_LIBSS = $(LIB)/libss@STATIC_LIB_EXT@
 +STATIC_LIBCOM_ERR = /usr/lib/libcom_err.a
- STATIC_LIBE2P = $(LIB)/libe2p@STATIC_LIB_EXT@
- STATIC_LIBEXT2FS = $(LIB)/libext2fs@STATIC_LIB_EXT@
- STATIC_LIBUUID = $(LIB)/libuuid@STATIC_LIB_EXT@ @SOCKET_LIB@ 

@@ -1,18 +1,7 @@
-
 $FreeBSD$
 
---- Makefile.in.orig	Sat Jun 23 07:25:59 2001
-+++ Makefile.in	Tue Jul  3 18:51:42 2001
-@@ -10,9 +10,9 @@
- @RESIZER_CMT@RESIZE_DIR= resize
- @DEBUGFS_CMT@DEBUGFS_DIR= debugfs
- 
--LIB_SUBDIRS=lib/et lib/ss lib/e2p lib/ext2fs lib/uuid # lib/finddev
--PROG_SUBDIRS=e2fsck $(DEBUGFS_DIR) misc $(RESIZE_DIR) tests/progs 
--SUBDIRS=util $(LIB_SUBDIRS) $(PROG_SUBDIRS) tests
-+LIB_SUBDIRS=lib/e2p lib/ext2fs lib/uuid # lib/finddev
-+PROG_SUBDIRS=e2fsck $(DEBUGFS_DIR) misc $(RESIZE_DIR)
-+SUBDIRS=util $(LIB_SUBDIRS) $(PROG_SUBDIRS)
- 
- SUBS= lib/ext2fs/ext2_types.h
- 
+--- Makefile.in.orig	Wed Jul 23 06:08:04 2003
++++ Makefile.in	Wed Aug 27 10:52:04 2003
+@@ -14 +14 @@
+-LIB_SUBDIRS=lib/et lib/ss lib/e2p lib/ext2fs lib/uuid lib/blkid intl
++LIB_SUBDIRS=              lib/e2p lib/ext2fs lib/uuid lib/blkid intl
