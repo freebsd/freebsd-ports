@@ -6,9 +6,19 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.20.20030821
+PORTVERSION=	7.20.20030827
 CATEGORIES=	www
-MASTER_SITES=	http://snapshot.opera.com/unix/intel-freebsd/445-20030821-7.20-B4/
+MASTER_SITES=	http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/720/beta7/en/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/720/beta7/en/static/ \
+		http://public.planetmirror.com/pub/opera/unix/freebsd/720/beta7/en/static/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/720/beta7/en/static/ \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/720/beta7/en/static/ \
+		ftp://ftp.uit.no/pub/www/opera/unix/freebsd/720/beta7/en/static/ \
+		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/720/beta7/en/static/ \
+		http://ftp.task.gda.pl/pub/opera/unix/freebsd/720/beta7/en/static/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/720/beta7/en/static/ \
+		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/720/beta7/en/static/ \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/opera/unix/freebsd/720/beta7/en/static/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0./0-/}.1-static-qt.i386.freebsd
 
 MAINTAINER=	avleeuwen@piwebs.com
@@ -29,7 +39,7 @@ NO_FILTER_SHLIBS=yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=   c_r.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .if exists(/etc/X11/applnk)
