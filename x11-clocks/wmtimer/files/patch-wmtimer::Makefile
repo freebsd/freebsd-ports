@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Sep 27 19:46:25 2001
-+++ Makefile	Thu Sep 27 19:48:29 2001
+--- Makefile.orig	Sat Sep 29 12:35:39 2001
++++ Makefile	Sat Sep 29 12:37:20 2001
 @@ -1,19 +1,19 @@
 -LIBDIR = -L/usr/X11R6/lib -L/usr/lib
 -LIBS   = -lXpm -lXext -lX11 -lm `gtk-config --libs` -lpthread 
@@ -7,7 +7,7 @@
 +LIBS   = -lXpm -lXext -lX11 -lm `${GTK_CONFIG} --libs` ${PTHREAD_LIBS}
  
 -CFLAGS = -g -I/usr/X11R6/include `gtk-config --cflags` 
-+CFLAGS += -I${X11BASE}/include `${GTK_CONFIG} --cflags` ${PTHREAD_CFLAGS} -Wall
++CFLAGS += -I${X11BASE}/include `${GTK_CONFIG} --cflags` ${PTHREAD_CFLAGS}
  OBJS =	wmtimer.o \
  		../wmgeneral/wmgeneral.o \
  		../wmgeneral/misc.o \
@@ -20,7 +20,7 @@
  all: wmtimer
  
  wmtimer: $(OBJS)
--	cc -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
+-	$(CC) -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
 +	$(CC) -o wmtimer $^ $(LIBDIR) $(LIBS)
  
  clean::
