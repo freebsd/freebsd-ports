@@ -27,9 +27,9 @@ lib/TkDesk/appbar-load.tcl
 lib/TkDesk/appbar-mail.tcl
 lib/TkDesk/appbar-trash.tcl
 lib/TkDesk/appbar.tcl
-lib/TkDesk/bookmarks.tcl
 lib/TkDesk/bltDnd.tcl
 lib/TkDesk/bltDragdrop.tcl
+lib/TkDesk/bookmarks.tcl
 lib/TkDesk/cb_tools/bindings.tcl
 lib/TkDesk/cb_tools/bitmaps/combo.xbm
 lib/TkDesk/cb_tools/bitmaps/down.xbm
@@ -57,7 +57,6 @@ lib/TkDesk/cb_tools/popup.tcl
 lib/TkDesk/cb_tools/tclIndex
 lib/TkDesk/cb_tools/tools.tcl
 lib/TkDesk/cb_tools/widgets.tcl
-lib/TkDesk/clrpick.tcl
 lib/TkDesk/config.tcl
 lib/TkDesk/configs/AppBar
 lib/TkDesk/configs/AppBar_Be
@@ -75,12 +74,13 @@ lib/TkDesk/copy.tcl
 lib/TkDesk/cpanels.tcl
 lib/TkDesk/delete.tcl
 lib/TkDesk/diary.tcl
-lib/TkDesk/envedit.tcl
-lib/TkDesk/doc/CHANGES
+lib/TkDesk/doc/ChangeLog
 lib/TkDesk/doc/Guide
 lib/TkDesk/doc/License
 lib/TkDesk/doc/QuickStart
 lib/TkDesk/doc/guide-1.html
+lib/TkDesk/doc/guide-10.html
+lib/TkDesk/doc/guide-11.html
 lib/TkDesk/doc/guide-2.html
 lib/TkDesk/doc/guide-3.html
 lib/TkDesk/doc/guide-4.html
@@ -89,10 +89,9 @@ lib/TkDesk/doc/guide-6.html
 lib/TkDesk/doc/guide-7.html
 lib/TkDesk/doc/guide-8.html
 lib/TkDesk/doc/guide-9.html
-lib/TkDesk/doc/guide-10.html
-lib/TkDesk/doc/guide-11.html
 lib/TkDesk/doc/guide.html
 lib/TkDesk/dsk_Listbox.tcl
+lib/TkDesk/envedit.tcl
 lib/TkDesk/file_ops.tcl
 lib/TkDesk/find.tcl
 lib/TkDesk/help.tcl
@@ -169,6 +168,7 @@ lib/TkDesk/images/construction.xpm
 lib/TkDesk/images/copy.xpm
 lib/TkDesk/images/copy2.xpm
 lib/TkDesk/images/desk.xpm
+lib/TkDesk/images/desk2.xpm
 lib/TkDesk/images/document.xpm
 lib/TkDesk/images/door_run.xpm
 lib/TkDesk/images/earth.xpm
@@ -269,6 +269,8 @@ lib/TkDesk/images/mail_edit.xpm
 lib/TkDesk/images/mailbox_empty.xpm
 lib/TkDesk/images/mailbox_full.xpm
 lib/TkDesk/images/mailbox_old.xpm
+lib/TkDesk/images/maildog_empty.xpm
+lib/TkDesk/images/maildog_new.xpm
 lib/TkDesk/images/man.xpm
 lib/TkDesk/images/moon.xpm
 lib/TkDesk/images/mosaic.xpm
@@ -404,6 +406,7 @@ lib/TkDesk/images/next/wrench.xpm
 lib/TkDesk/images/orbit.xpm
 lib/TkDesk/images/pacman.xpm
 lib/TkDesk/images/paint.xpm
+lib/TkDesk/images/pda.xpm
 lib/TkDesk/images/pen.xpm
 lib/TkDesk/images/pencil3.xpm
 lib/TkDesk/images/printer.xpm
@@ -416,10 +419,12 @@ lib/TkDesk/images/shell.xpm
 lib/TkDesk/images/stars.xpm
 lib/TkDesk/images/terminal.xpm
 lib/TkDesk/images/tetris.xpm
+lib/TkDesk/images/tkdesk_logo.ppm
 lib/TkDesk/images/tools.xpm
 lib/TkDesk/images/trash.xpm
 lib/TkDesk/images/trashcan.xpm
 lib/TkDesk/images/trashcan_full.xpm
+lib/TkDesk/images/twotexts.xpm
 lib/TkDesk/images/up.xpm
 lib/TkDesk/images/xbm/apple_draft.xbm
 lib/TkDesk/images/xbm/apple_write.xbm
@@ -531,58 +536,19 @@ lib/TkDesk/sounds/metal.au
 lib/TkDesk/sounds/newmail.au
 lib/TkDesk/sounds/robot_dead.au
 lib/TkDesk/sounds/start.au
-lib/TkDesk/static/itcl3.0/itcl.tcl
-lib/TkDesk/static/itcl3.0/pkgIndex.tcl
-lib/TkDesk/static/tcl8.0/history.tcl
-lib/TkDesk/static/tcl8.0/init.tcl
-lib/TkDesk/static/tcl8.0/ldAix
-lib/TkDesk/static/tcl8.0/ldAout.tcl
-lib/TkDesk/static/tcl8.0/parray.tcl
-lib/TkDesk/static/tcl8.0/safe.tcl
-lib/TkDesk/static/tcl8.0/tclIndex
-lib/TkDesk/static/tcl8.0/word.tcl
-lib/TkDesk/static/tk8.0/bgerror.tcl
-lib/TkDesk/static/tk8.0/button.tcl
-lib/TkDesk/static/tk8.0/clrpick.tcl
-lib/TkDesk/static/tk8.0/comdlg.tcl
-lib/TkDesk/static/tk8.0/console.tcl
-lib/TkDesk/static/tk8.0/dialog.tcl
-lib/TkDesk/static/tk8.0/entry.tcl
-lib/TkDesk/static/tk8.0/focus.tcl
-lib/TkDesk/static/tk8.0/listbox.tcl
-lib/TkDesk/static/tk8.0/menu.tcl
-lib/TkDesk/static/tk8.0/msgbox.tcl
-lib/TkDesk/static/tk8.0/obsolete.tcl
-lib/TkDesk/static/tk8.0/optMenu.tcl
-lib/TkDesk/static/tk8.0/palette.tcl
-lib/TkDesk/static/tk8.0/prolog.ps
-lib/TkDesk/static/tk8.0/safetk.tcl
-lib/TkDesk/static/tk8.0/scale.tcl
-lib/TkDesk/static/tk8.0/scrlbar.tcl
-lib/TkDesk/static/tk8.0/tclIndex
-lib/TkDesk/static/tk8.0/tearoff.tcl
-lib/TkDesk/static/tk8.0/text.tcl
-lib/TkDesk/static/tk8.0/tk.tcl
-lib/TkDesk/static/tk8.0/tkfbox.tcl
-lib/TkDesk/static/tk8.0/xmfbox.tcl
 lib/TkDesk/tclIndex
-lib/TkDesk/tkpatches.tcl
 lib/TkDesk/update.tcl
 lib/TkDesk/util.tcl
-@dirrm lib/TkDesk/cb_tools/bitmaps
-@dirrm lib/TkDesk/cb_tools
+@dirrm lib/TkDesk/sounds
+@dirrm lib/TkDesk/images/xbm
+@dirrm lib/TkDesk/images/next
+@dirrm lib/TkDesk/images/ficons32
+@dirrm lib/TkDesk/images/ficons16
+@dirrm lib/TkDesk/images/be
+@dirrm lib/TkDesk/images
+@dirrm lib/TkDesk/doc
 @dirrm lib/TkDesk/configs/.trash
 @dirrm lib/TkDesk/configs
-@dirrm lib/TkDesk/doc
-@dirrm lib/TkDesk/images/be
-@dirrm lib/TkDesk/images/ficons16
-@dirrm lib/TkDesk/images/ficons32
-@dirrm lib/TkDesk/images/next
-@dirrm lib/TkDesk/images/xbm
-@dirrm lib/TkDesk/images
-@dirrm lib/TkDesk/sounds
-@dirrm lib/TkDesk/static/itcl3.0
-@dirrm lib/TkDesk/static/tcl8.0
-@dirrm lib/TkDesk/static/tk8.0
-@dirrm lib/TkDesk/static
+@dirrm lib/TkDesk/cb_tools/bitmaps
+@dirrm lib/TkDesk/cb_tools
 @dirrm lib/TkDesk
