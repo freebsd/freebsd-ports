@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 
 MAINTAINER=	phj@cn.FreeBSD.org
 
-REQUIRES_MOTIF=	yes
-
 MANCOMPRESSED=	yes
 MAN1=		tocps.1
 
