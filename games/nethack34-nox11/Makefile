@@ -1,20 +1,21 @@
 # New ports collection makefile for:	nethack
-# Date created:		27 March 1995
-# Whom:			asami
+# Date created:		23 September 2000
+# Whom:			Jeremy Chadwick <yoshi@parodius.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	nethack
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/src/ \
+MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	nethack
+DISTFILES=	${PORTNAME}-331.${EXTRACT_SUFIX}
 
-MAINTAINER=	dscheidt@enteract.com
+MAINTAINER=	yoshi@parodius.com
 
-USE_XPM=	yes
+EXTRACT_SUFIX=	tgz
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
