@@ -1,0 +1,7 @@
+#!/bin/sh
+
+SVNSERVE=$(dirname $(realpath $0))/svnserve.bin
+
+umask 002
+$SVNSERVE "$@"
+

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.30.0
+PORTVERSION=	0.31.0
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.collab.net/tarballs/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -29,20 +29,22 @@ CONFIGURE_ARGS=	--with-ssl \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-swig=no
 
-
-MAN1=	svn.1 svnadmin.1
+MAN1=		svn.1 svnadmin.1 svnlook.1
 MANCOMPRESSED=	no
 
-APXS=${LOCALBASE}/sbin/apxs
+SVNREPOS?=	/home/svn/repos
+APXS=		${LOCALBASE}/sbin/apxs
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
 CONFIGURE_ARGS+= \
 		--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
+SVNGROUP?=	www
 .else
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
 PKGDEINSTALL=	NONEXISTENT
+SVNGROUP?=	svn
 .endif
 
 .if defined(WITH_APACHE2_APR)
@@ -57,11 +59,34 @@ CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
 .endif
 
+.if defined(WITH_SVNSERVE_WRAPPER)
+PLIST_SUB+=	SVNSERVE_WRAPPER=""
+EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
+.else
+PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
+.endif
+
 pre-extract:
 .if !defined (BATCH)
-	@dialog --title "-- URGENT UPGRADE INFORMATION --" --clear --yesno \
-	 "If you upgrade Subversion from pre-0.28.0 version, please,\ndump you repository with old (pre-0.28.0) svnadmin command.\nAfter this, install new version, remove old repository, create new\none with svnadmin & load dump created from old repository\n\nVersions after 0.28.0 have different repository format and\nyour old repository could not be used with versions 0.28.0 and up.\n\nRead\nhttp://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO\nfor details.\n\nDid you dump you repository and ready to install new version?" \
-	 18 70
+	@${ECHO_MSG} "!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you upgrade Subversion from pre-0.28.0 version, please,"
+	@${ECHO_MSG} "dump you repository with old (pre-0.28.0) svnadmin command."
+	@${ECHO_MSG} "After this, install new version, remove old repository, create new"
+	@${ECHO_MSG} "one with svnadmin & load dump created from old repository"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Versions after 0.28.0 have different repository format and"
+	@${ECHO_MSG} "your old repository could not be used with versions 0.28.0 and up."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Read"
+	@${ECHO_MSG} "http://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO"
+	@${ECHO_MSG} "for details."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Did you dump you repository and ready to install new version?"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!"
+	@${ECHO_MSG} ""
+	@sleep 5
 .endif
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
@@ -78,6 +103,31 @@ pre-extract:
 	@${ECHO_MSG} "You can link subversion against the APR built with"
 	@${ECHO_MSG} "the www/apache2 port, rather than the devel/apr port,"
 	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
+.endif
+	@${ECHO_MSG}
+.if defined(WITH_SVNSERVE_WRAPPER)
+	@${ECHO_MSG} "svnserve wrapper enabled."
+.else
+	@${ECHO_MSG} "You can install the svnserve wrapper (sets umask 002)"
+	@${ECHO_MSG} "by defining WITH_SVNSERVE_WRAPPER."
+.endif
+	@${ECHO_MSG}
+.if defined(WITH_REPOSITORY_CREATION)
+	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
+	@${ECHO_MSG} "Make sure that all commiters are its members."
+.else
+	@${ECHO_MSG} "You can have the repository created for you by defining"
+	@${ECHO_MSG} "WITH_REPOSITORY_CREATION."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Make sure that:"
+	@${ECHO_MSG} "* all your svn users are members of a common group"
+	@${ECHO_MSG} "* this group is the group id of the db/ and locks/"
+	@${ECHO_MSG} "  subdirectories of your repository"
+	@${ECHO_MSG} "* the above subdirectories are writable by this group"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'"
+	@${ECHO_MSG} "You could change tese settings by defining SVNREPOS and SVNGROUP"
+	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG}
 
@@ -98,6 +148,38 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	for f in BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README; do \
 		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	done
+.endif
+.if defined(WITH_SVNSERVE_WRAPPER)
+	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
+.endif
+.if defined(WITH_REPOSITORY_CREATION) && !exists(${SVNREPOS})
+. if defined(WITH_SVNSERVE_WRAPPER)
+	@if /usr/sbin/pw groupshow "${SVNGROUP}" >/dev/null 2>&1; then \
+	    echo "You already have a group \"${SVNGROUP}\", so I will use it."; \
+	else \
+	    if /usr/sbin/pw groupadd ${SVNGROUP} -h -; \
+	    then \
+	        echo "Added group \"${SVNGROUP}\"."; \
+	    else \
+	        echo "Adding group \"${SVNGROUP}\" failed..."; \
+	        echo "Please create it, and try again."; \
+	        ${FALSE}; \
+	    fi; \
+	fi
+. endif
+	@${MKDIR} ${SVNREPOS}
+	@${PREFIX}/bin/svnadmin create ${SVNREPOS}
+	@${CHGRP} ${SVNGROUP} ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock
+	@${CHMOD} g+w ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock
+	@for i in ${SVNREPOS}/db/* ; do \
+	    i=$${i##*/}; \
+	    case $$i in \
+	    DB_CONFIG) ;; \
+	    *) ${CHGRP} ${SVNGROUP} ${SVNREPOS}/db/$$i; \
+	       ${CHMOD} g+w ${SVNREPOS}/db/$$i; \
+	       ;; \
+	    esac; \
 	done
 .endif
 
