@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.6c
-PORTREVISION=	1
+PORTVERSION=	0.9.6d
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -87,6 +86,7 @@ MAN3=		BN_CTX_new.3 BN_CTX_start.3 BN_add.3 BN_add_word.3 \
 		SSL_CTX_sess_set_get_cb.3 SSL_CTX_sessions.3 \
 		SSL_CTX_set_cert_store.3 SSL_CTX_set_cert_verify_callback.3 \
 		SSL_CTX_set_cipher_list.3 SSL_CTX_set_client_CA_list.3 \
+		SSL_CTX_set_client_cert_cb.3 \
 		SSL_CTX_set_default_passwd_cb.3 SSL_CTX_set_info_callback.3 \
 		SSL_CTX_set_mode.3 SSL_CTX_set_options.3 \
 		SSL_CTX_set_quiet_shutdown.3 SSL_CTX_set_session_cache_mode.3 \
@@ -113,11 +113,15 @@ MAN5=		config.5
 
 MAN7=		des_modes.7
 
+.if defined(BATCH) || defined(OPENSSL_WITH_386)
+EXTRACONFIGURE=	386
+.endif
+
 do-configure:
 	@cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	./config --prefix=${PREFIX} --openssldir=${PREFIX}/openssl \
-	-L${PREFIX}/lib
+	-L${PREFIX}/lib ${EXTRACONFIGURE}
 
 post-install:
 .if !defined(NOSHARED)
