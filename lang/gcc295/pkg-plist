@@ -1,29 +1,20 @@
 @comment $FreeBSD$
 bin/g++295
 bin/g++filt295
-bin/g77
 bin/gcc295
 bin/%%GNU_HOST%%-gcc
-bin/gcj
-bin/gcjh
-bin/gcov
-bin/jv-scan
-bin/jcf-dump
-bin/protoize
-bin/unprotoize
+bin/protoize295
+bin/unprotoize295
 %%GNU_HOST%%/include/_G_config.h
 %%GNU_HOST%%/include/assert.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 info/cpp.info
-info/g77.info
 info/gcc.info
 @exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
