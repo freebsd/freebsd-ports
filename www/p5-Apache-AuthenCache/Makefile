@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that implements authentication caching
 
-BUILD_DEPENDS=	${SITE_PERL}/Time/Object.pm:${PORTSDIR}/devel/p5-Time-Object \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Object.pm:${PORTSDIR}/devel/p5-Time-Object \
 		${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
