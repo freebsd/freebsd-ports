@@ -4042,6 +4042,7 @@ kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwin_flatcurve	ports/x11-wm/kwin_flatcurve
+kwordquiz	ports/misc/kwordquiz
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
 kyra		ports/devel/kyra
