@@ -1,8 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += xemacs21
-    SUBDIR += xmms
-
     SUBDIR += CJK
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
@@ -37,6 +34,7 @@
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += rxvt
+    SUBDIR += rxvt-big5
     SUBDIR += stardict
     SUBDIR += ted
     SUBDIR += telnet
@@ -48,5 +46,6 @@
     SUBDIR += xcin
     SUBDIR += xcin25
     SUBDIR += xemacs
-
+    SUBDIR += xemacs21
+    SUBDIR += xmms
 .include <bsd.port.subdir.mk>
