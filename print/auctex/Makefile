@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		11.11
+PORTVERSION=		11.13
 CATEGORIES=		print elisp
-MASTER_SITES=		ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/auctex/
+MASTER_SITES=		http://savannah.nongnu.org/download/auctex/stable.pkg/${PORTVERSION}/
 
 MAINTAINER=		yoichi@FreeBSD.org
 
