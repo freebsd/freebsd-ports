@@ -1,0 +1,4 @@
+#!/bin/sh
+JLIB=PREFIX/lib/j
+export JLIB
+exec PREFIX/bin/jconsole.bin $*
