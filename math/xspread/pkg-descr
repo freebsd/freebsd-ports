@@ -1,0 +1,10 @@
+This is a much modified version of the public domain spread sheet sc,
+posted several years ago by Mark Weiser as vc, originally by James Gosling.
+
+CHANGES lists the changes since 6.1 to 6.21.
+	Sc6.16 was released to comp.sources.misc and four sets of patches
+	bring Sc6.16->6.17->6.18->6.19->6.21.
+
+Current maintainer: nstar!sawmill!prslnk!buhrt (Jeff Buhrt)
+
+This is version 2.1.
