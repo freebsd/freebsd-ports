@@ -255,16 +255,11 @@ else
   skipstart=0
 fi
 
-if [ "$incremental" = 1 -a "$noindex" = 1 ]; then
-    echo "-incremental and -noindex cannot both be used"
-    errorexit 1
-fi
-
 # mandatory arguments
 branch=$1
 date=$2
 
-if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x6 ]; then
+if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 ]; then
   usage
 fi
 
@@ -477,7 +472,12 @@ if [ "$nobuild" = 0 ]; then
     cp duds.orig duds
   fi
 
-  count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/${arch}/mlist | sed -e 's/\..*$//')
+  count=0
+  for i in `cat ${pb}/${arch}/mlist`; do
+    . ${pb}/${arch}/portbuild.conf
+    test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
+    count=$((${count}+${maxjobs}))
+  done
   cd ${pb}/${arch}/${branch}/packages/All
   ln -sf ../../Makefile .
 
