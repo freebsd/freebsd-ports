@@ -1,0 +1,37 @@
+# New ports collection makefile for:    wmpiki
+# Date created:         19 February 2004
+# Whom:                 Thomas Kempka <t.kempka@web.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmpiki
+PORTVERSION=	0.2.1
+CATEGORIES=	net windowmaker
+MASTER_SITES=	http://clay.ll.pl/download/
+
+MAINTAINER=	t.kempka@web.de
+COMMENT=	A multiping host checker dockapp
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$$(X11BASE)|g' \
+		-e 's|/include/X11|/include|g' \
+		-e 's|gcc|cc|g' \
+		${WRKSRC}/Makefile
+
+do-install:
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.example ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/wmpiki ${PREFIX}/bin
+
+.include <bsd.port.mk>
