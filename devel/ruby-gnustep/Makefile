@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/g
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
 		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+LIB_DEPENDS+=	objc:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
 RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
@@ -31,8 +32,10 @@ RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnu
 USE_RUBY=	yes
 RUBY_WITH_PTHREAD=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2
+CC=		gcc32
+CXX=		g++32
 
+GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
 GNUSTEP_PREFIX=		${LOCALBASE}/GNUstep
 GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
 GNUSTEP_SYSTEM_ROOT=	${GNUSTEP_PREFIX}/System
