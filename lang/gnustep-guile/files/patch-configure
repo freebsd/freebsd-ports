@@ -1,0 +1,11 @@
+--- configure.orig	Thu Mar 27 11:03:26 2003
++++ configure	Sat May 31 16:42:42 2003
+@@ -1149,7 +1149,7 @@
+     esac
+     case " $ac_configure_args " in
+       *" '$ac_arg' "*) ;; # Avoid dups.  Use of quotes ensures accuracy.
+-      *) ac_configure_args="$ac_configure_args '$ac_arg'" ;;
++#      *) ac_configure_args="$ac_configure_args '$ac_arg'" ;;
+     esac
+   fi
+ done

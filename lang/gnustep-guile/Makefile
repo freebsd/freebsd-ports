@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-guile
-PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -26,6 +25,7 @@ USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 PLIST_SUB+=	GUILE_VER="${GUILE_VER}"
+USE_REINPLACE=	yes
 
 MAN1=	greg.1
 
@@ -46,5 +46,12 @@ USE_GNUSTEP_INSTALL=	yes
 .include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
+
+pre-configure:
+	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
+.if defined(WITH_GNUSTEP_DEVEL)
+	${REINPLACE_CMD} -e 's=ROOT/Headers=ROOT/Library/Headers=g' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.post.mk>
