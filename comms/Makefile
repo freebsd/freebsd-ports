@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1998/06/11 12:18:01 dburr Exp $
+# $Id: Makefile,v 1.32 1998/08/07 21:59:52 asami Exp $
 #
 
     SUBDIR += bpl+
@@ -18,6 +18,7 @@
     SUBDIR += tkhylafax
     SUBDIR += viewfax
     SUBDIR += xcept
+    SUBDIR += yaps
     SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>
