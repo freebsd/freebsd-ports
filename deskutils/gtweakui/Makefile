@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gTweakUI
-PORTVERSION=	0.0.6
+PORTVERSION=	0.4.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtweakui
@@ -19,6 +19,19 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui gconf2 libglade2
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+DESKTOP_FILES=	gtweakui-galeon.desktop.in \
+				gtweakui-menus.desktop.in \
+				gtweakui-nautilus.desktop.in \
+				gtweakui-session.desktop.in
+
+post-patch:
+.for FILE in ${DESKTOP_FILES}
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' \
+			-e 's|Settings;|&AdvancedSettings;|g' ${WRKSRC}/${FILE}
+.endfor
+	@${REINPLACE_CMD} 's|$$(datadir)/applications|$$(datadir)/control-center-2.0/capplets|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
