@@ -1,4 +1,4 @@
-<# New ports collection makefile for:	aster
+# New ports collection makefile for:	aster
 # Date created:		Thu Jun 26 2003
 # Whom:			thierry@pompo.net
 #
