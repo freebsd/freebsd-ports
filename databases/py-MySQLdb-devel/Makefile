@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MySQLdb
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -52,12 +52,16 @@ MAKE_ENV+=	mysqloptlibs=""
 .endif
 .endif
 
-PORTDOCS=		MANIFEST README
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/MANIFEST ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for FILE in ${WRKSRC}/doc/*
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
