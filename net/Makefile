@@ -260,6 +260,7 @@
     SUBDIR += libdnet
     SUBDIR += liberator
     SUBDIR += libfreenet
+    SUBDIR += libgnetwork
     SUBDIR += libicq
     SUBDIR += libicq2000
     SUBDIR += libnet
