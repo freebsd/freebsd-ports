@@ -1,13 +1,11 @@
 bin/vls
 bin/vlsd
 etc/videolan/vls/vls.cfg-dist
-%%WITHDVD%%lib/videolan/vls/dvdreader.so
 @dirrm lib/videolan/vls
 @dirrm lib/videolan
 @dirrm etc/videolan/vls
 @dirrm etc/videolan
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/vls-guide.sgml
 %%PORTDOCS%%%%DOCSDIR%%/developer/3parts.sgml
 %%PORTDOCS%%%%DOCSDIR%%/developer/architecture.dia
 %%PORTDOCS%%%%DOCSDIR%%/developer/architecture.eps
