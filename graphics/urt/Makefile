@@ -9,9 +9,9 @@ PORTNAME=	urt
 PORTVERSION=	3.1b1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/
+MASTER_SITES=	ftp://ftp.iastate.edu/pub/utah-raster/
 DISTNAME=	urt
-DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
+DISTFILES=	urt-3.1b.tar.Z urt-doc.tar.Z urt-img.tar.Z
 
 PATCH_SITES=	http://www.funet.fi/pub/graphics/packages/urt/rel2/
 PATCHFILES=	urt-3.1b-3.1b1.patch
