@@ -1,0 +1,7 @@
+lib/libranlib.a
+lib/libranlib.so.1.0
+@exec /sbin/ldconfig -m %B
+share/doc/ranlib/Basegen.doc
+share/doc/ranlib/ranlib.chs
+share/doc/ranlib/ranlib.fdoc
+@dirrm %B
