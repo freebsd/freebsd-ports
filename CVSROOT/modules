@@ -6046,6 +6046,7 @@ p5-Lingua-EN-Syllable	ports/textproc/p5-Lingua-EN-Syllable
 p5-Lingua-Ident	ports/textproc/p5-Lingua-Ident
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
+p5-Lingua-Stem	ports/textproc/p5-Lingua-Stem
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy	ports/devel/p5-Locale-Maketext-Fuzzy
