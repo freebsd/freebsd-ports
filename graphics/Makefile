@@ -239,6 +239,7 @@
     SUBDIR += opengl-man
     SUBDIR += ophoto
     SUBDIR += osg
+    SUBDIR += osgedit
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-GD
     SUBDIR += p5-GD-Barcode

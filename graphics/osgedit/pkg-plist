@@ -1,0 +1,24 @@
+bin/osgedit
+share/locale/es/LC_MESSAGES/osgedit.mo
+share/locale/gl/LC_MESSAGES/osgedit.mo
+share/gnome/pixmaps/osgedit/billboard.png
+share/gnome/pixmaps/osgedit/box.png
+share/gnome/pixmaps/osgedit/center.png
+share/gnome/pixmaps/osgedit/cone.png
+share/gnome/pixmaps/osgedit/cylinder.png
+share/gnome/pixmaps/osgedit/geode.png
+share/gnome/pixmaps/osgedit/group.png
+share/gnome/pixmaps/osgedit/icon.png
+share/gnome/pixmaps/osgedit/lightsource.png
+share/gnome/pixmaps/osgedit/lod.png
+share/gnome/pixmaps/osgedit/logo.png
+share/gnome/pixmaps/osgedit/move.png
+share/gnome/pixmaps/osgedit/node.png
+share/gnome/pixmaps/osgedit/orbit.png
+share/gnome/pixmaps/osgedit/rotate.png
+share/gnome/pixmaps/osgedit/scale.png
+share/gnome/pixmaps/osgedit/select.png
+share/gnome/pixmaps/osgedit/sphere.png
+share/gnome/pixmaps/osgedit/switch.png
+share/gnome/pixmaps/osgedit/transform.png
+@dirrm share/gnome/pixmaps/osgedit
