@@ -1,0 +1,69 @@
+--- ./global.h.org	Tue Nov 15 18:09:55 1994
++++ ./global.h	Tue May  2 21:56:19 1995
+@@ -68,7 +68,7 @@
+ #define alloca __builtin_alloca
+ #endif
+ 
+-#ifndef __alpha
++#if !defined(__alpha) && !defined(__FreeBSD__)
+ #ifndef MAXPATHLEN
+ #define MAXPATHLEN 1024
+ #endif
+--- ./regex.c.org	Wed Nov 16 17:05:28 1994
++++ ./regex.c	Tue May  2 21:57:09 1995
+@@ -114,7 +114,9 @@
+  * Date :	 July 27, 1990
+  */
+ 
++#if !defined(__FreeBSD__)
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+--- ./source.c.org	Fri Dec  2 17:37:15 1994
++++ ./source.c	Tue May  2 21:57:49 1995
+@@ -74,7 +74,9 @@
+  *    LoadFile():	Search for a file and open it for display.
+  */
+ 
++#if !defined(__FreeBSD__)
+ #include <malloc.h>
++#endif
+ #include <stdlib.h>
+ 
+ #include <X11/Xos.h>
+--- ./calldbx.c.org	Mon Dec  5 17:21:36 1994
++++ ./calldbx.c	Tue May  2 22:06:38 1995
+@@ -137,13 +137,17 @@
+ 
+ #ifndef sco
+ 	for (c='p'; c<'t'; c++) {
++#ifdef __FreeBSD__
++	for (i=0; i<32; i++) {
++#else
+ 	for (i=0; i<16; i++) {
++#endif
+ #else
+ 	c = 'p';
+ 	for (i=0; i<8; i++) {
+ #endif
+ 	    pty[8] = c;
+-	    pty[9] = "0123456789abcdef"[i];
++	    pty[9] = "0123456789abcdefghijklmnopqrstuv"[i];
+ 	    if ((master = open(pty, O_RDWR)) >= 0) 
+ 		return (master); 
+ 	}
+--- ./Imakefile.org	Thu Mar 23 14:49:32 1995
++++ ./Imakefile	Tue May  2 22:14:58 1995
+@@ -50,6 +50,10 @@
+ DEFINES = -DSYSV $(DEFGDB)
+ #endif
+ 
++#ifdef FreeBSDArchitecture
++DEFINES = $(DEFGDB)
++#endif
++
+ mallocc = #malloc.c
+ malloco = #malloc.o
+ 
