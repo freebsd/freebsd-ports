@@ -1,8 +1,8 @@
 bin/tcpreen
 %%NLS%%share/locale/fr/LC_MESSAGES/tcpreen.mo
-%%PORTDOCS%%share/doc/tcpreen/AUTHORS
-%%PORTDOCS%%share/doc/tcpreen/NEWS
-%%PORTDOCS%%share/doc/tcpreen/README
-%%PORTDOCS%%share/doc/tcpreen/THANKS
-%%PORTDOCS%%share/doc/tcpreen/TODO
-%%PORTDOCS%%@dirrm share/doc/tcpreen
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

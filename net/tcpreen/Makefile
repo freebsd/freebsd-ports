@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
 USE_BZIP2=	yes
