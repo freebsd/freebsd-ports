@@ -568,6 +568,7 @@
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
     SUBDIR += ruby-mock
+    SUBDIR += ruby-ncurses
     SUBDIR += ruby-optparse
     SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-property
