@@ -228,12 +228,12 @@ post-install:
 .endif
 .if defined(WITH_TCL)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
-	@${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.notcl
 .endif
 .if defined(WITH_ODBC)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.noodbc
-	@${CAT} ${PKGDIR}/PLIST.odbc ${TMPPLIST}.noodbc > ${TMPPLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.odbc ${TMPPLIST}.noodbc > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.noodbc
 .endif
 .if defined(WITH_JDBC)
@@ -248,7 +248,7 @@ post-install:
 	@ ${ECHO_MSG} "  'postgresql.*' -> 'org.postgresql.*'!"
 	@ ${ECHO_MSG} "You will need to modify you applications' props files."
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
+	@ ${CAT} ${PKGDIR}/pkg-plist.jdbc >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/pgsql/jdbc
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/example/*java \
@@ -258,7 +258,7 @@ post-install:
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 	@ ${ECHO_MSG} "Putting jdbc examples into ${PREFIX}/share/examples/pgsql"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${CAT} ${PKGDIR}/PLIST.doc >> ${TMPPLIST}
+	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
 .endif
 .if !defined(NOPORTDOCS)
