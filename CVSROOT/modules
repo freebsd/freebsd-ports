@@ -7897,6 +7897,7 @@ py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
 py-spreadmodule	ports/net/py-spreadmodule
 py-sqlrelay	ports/databases/py-sqlrelay
+py-statgrab	ports/devel/py-statgrab
 py-supybot	ports/irc/py-supybot
 py-sybase	ports/databases/py-sybase
 py-tables	ports/devel/py-tables
