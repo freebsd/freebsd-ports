@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	gdis
-PORTVERSION=	0.81
-PORTREVISION=	2
+PORTVERSION=	0.84
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	-source.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and manipulation of isolated molecules and periodic systems
@@ -24,6 +23,10 @@ USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 
 CFLAGS+=	-DINSTALL=\"\\\"${DATADIR}\\\"\"
+
+PORTDOCS=	CHANGELOG README TODO
+PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
