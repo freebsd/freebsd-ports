@@ -5,16 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlman
-PORTVERSION=    1.09
+PORTVERSION=	1.09
 CATEGORIES=	databases www
-MASTER_SITES=	#http://www.gossamer-threads.com/scripts/mysqlman/index.htm
+MASTER_SITES=	http://www.gossamer-threads.com/scripts/source/
 DISTNAME=	mysqlman
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	janos.mohacsi@bsd.hu
 
-RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${WWW_DIR}:${PORTSDIR}/www/apache13
 
+WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 RESTRICTED=	"not redistributable, license agreement required"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
@@ -22,12 +23,12 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 # to determine whether apache installed
-WWW_DIR=        ${LOCALBASE}/www/
+WWW_DIR=	${LOCALBASE}/www/
 #install dir of mysqlman
-MYMANDIR=      www/mysqlman-${PORTVERSION}
+MYMANDIR=	www/mysqlman-${PORTVERSION}
 
 #do the substitution according to the install place
-PLIST_SUB+=     MYMANDIR=${MYMANDIR}
+PLIST_SUB+=	MYMANDIR=${MYMANDIR}
 
 #FILES to patch
 f="mysql.cgi"
@@ -36,13 +37,6 @@ f="mysql.cgi"
 WEBUSER?=	www:www
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTFILES})
-IGNORE=	You need to read the license agreement on \
-	http://www.gossamer-threads.com/scripts/mysqlman/index.htm and \
-	download on your own. Once ${DISTFILES} has been downloaded, move \
-	it to ${DISTDIR} and then restart this build
-.endif
 
 do-configure:
 	@${MV} ${WRKSRC}/${f} ${WRKSRC}/${f}.bak && ${SED} <${WRKSRC}/${f}.bak \
