@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.28 1997/06/03 22:43:00 asami Exp $
+# $Id: Makefile,v 1.29 1997/06/10 08:50:47 asami Exp $
 #
 
+    SUBDIR += Scilab
     SUBDIR += apc
     SUBDIR += blas
     SUBDIR += calc
