@@ -27,10 +27,11 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 
-.ifdef USE_GHOSTSCRIPT
-PLIST_SUB+=	PDFVIEW=""
-.else
+.if defined(WITHOUT_GHOSTSCRIPT)
 PLIST_SUB+=	PDFVIEW="@comment "
+.else
+PLIST_SUB+=	PDFVIEW=""
+USE_GHOSTSCRIPT=	yes
 .endif
 
 .include <bsd.port.mk>
