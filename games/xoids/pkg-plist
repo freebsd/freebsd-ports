@@ -1,0 +1,4 @@
+bin/xoids
+man/man6/xoids.6.gz
+share/doc/xoids/README
+@dirrm share/doc/xoids

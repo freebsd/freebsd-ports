@@ -1,0 +1,11 @@
+--- Imakefile.orig	Tue Jun 25 02:42:14 1996
++++ Imakefile	Mon Apr 27 00:58:16 1998
+@@ -24,6 +24,8 @@
+ #endif
+ 
+ #if defined(FreeBSDArchitecture)
++XPM_INC_FLAGS = -I$(X11BASE)/include/X11
++XPM_LIB_FLAGS = -lXpm
+ #endif
+ 
+ SRCS = init.c oids.c oids_x.c
