@@ -1,0 +1,24 @@
+
+                        ******* fMSX *******
+                 The Portable MSX/MSX2/MSX2+ Emulator
+                             version 1.5
+
+                         by Marat Fayzullin
+                      
+                      email: fms@freeflight.com
+                             IRC: RST38h
+                 WWW: http://www.freeflight.com/fms/
+
+
+
+                       * NEW IN THIS VERSION *
+
+o More stable split screen (Zanac-Ex no longer blinks)
+o RAM mapper fixed *again* (Designer+ works now)
+o V9938 SRCH command fixed
+o MSXDOS2.ROM support
+o PAINTER.ROM support
+o FMPAC.ROM support
+o .PSG file format is updated
+o Serial port support is *not* yet implemented.
+

@@ -1,0 +1,13 @@
+--- Makefile.orig	Wed Jul  3 00:49:39 1996
++++ Makefile	Mon Feb 24 14:20:26 1997
+@@ -34,8 +34,8 @@
+ # change the -L/usr/X11R6/lib to the directory where X11
+ # libraries libX11.* and libXext.* are located on your system.
+ CC      = gcc
+-DEFINES = -DUNIX -DLSB_FIRST -DDEBUG -DMITSHM -DSOUND
+-CFLAGS  = -O2 -I/usr/X11/include -L/usr/X11/lib ${DEFINES}
++DEFINES = -DUNIX -DLSB_FIRST -DMITSHM -DSOUND #-DBEBUG
++CFLAGS  = -O2 -I${X11BASE}/include -L${X11BASE}/lib ${DEFINES}
+ OBJECTS = fMSX.o MSX.o Z80.o Debug.o Unix.o Sound.o
+ 
+ # Make the standard distribution: fMSX and DASM.
