@@ -18,7 +18,6 @@ PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-MANUAL_PACKAGE_BUILD=	incompatible with libc internal db calls
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 INSTALLS_SHLIB=		yes
