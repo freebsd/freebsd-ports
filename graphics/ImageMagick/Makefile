@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.4.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -45,7 +46,6 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_GCC=	2.95
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
