@@ -7,14 +7,16 @@
 #
 
 PORTNAME=	kimwitu++
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://site.informatik.hu-berlin.de/kimwitu++/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	kc++.1
 

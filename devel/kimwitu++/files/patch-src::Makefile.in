@@ -1,12 +1,12 @@
---- src/Makefile.in.orig	Wed Jan 16 23:42:30 2002
-+++ src/Makefile.in	Wed Jan 16 23:43:22 2002
-@@ -165,14 +165,14 @@
+--- src/Makefile.in.orig	Wed Nov 20 20:27:27 2002
++++ src/Makefile.in	Sat Dec 28 06:35:54 2002
+@@ -146,14 +146,14 @@
  #YCFLAGS += -DMYLEXDEBUG
  #YCFLAGS += -DYYDEBUG=1 -DMYLEXDEBUG
  DEFINES := -DARCH=$(ARCH) @hashset@
 -CXXFLAGS := -g
 -CXXFLAGSOPT := -O2\ -s
-+#CXXFLAGS := -g
++CXXFLAGS := @CXXFLAGS@
 +#CXXFLAGSOPT := -O2\ -s
  CFLAGS := $(CXXFLAGS) -DHAVE_CONFIG_H -I.
  
@@ -14,17 +14,17 @@
  # -ansi should be here but it's buggy (and should be called -iso anyway)
 -CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
 -CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
-+#CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
++CXXFLAGS += -Wall -Wno-unused -Wno-uninitialized
 +#CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
    ifeq "$(WARN)" "y"
      CXXFLAGS += -Wold-style-cast -Weffc++
    endif
-@@ -228,7 +228,7 @@
+@@ -189,7 +189,7 @@
  	touch tstamp.kc ; \
- 	$(MAKE) -e -f $${olddir}/Makefile \
- 		ROOT=$${olddir} \
+ 	$(MAKE) -e -f $(MAKERUNDIR)/Makefile \
+ 		MAKERUNDIR=$(MAKERUNDIR) \
 -		CXXFLAGS=$(CXXFLAGSOPT) \
-+		CXXFLAGS+=$(CXXFLAGSOPT) \
++		CXXFLAGS="$(CXXFLAGS)" \
  		$(BOOTSTRAPTARGET)
  
  s1:
