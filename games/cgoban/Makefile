@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	cgoban
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.14
 CATEGORIES=	games
-MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/ \
-		http://www.igoweb.org/~wms/comp/cgoban/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cgoban1
 
 MAINTAINER=	simonm@dcs.gla.ac.uk
 COMMENT=	Internet Go Server client and game editor
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=
 MAN6=		cgoban.6
