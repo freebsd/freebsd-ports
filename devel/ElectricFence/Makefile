@@ -9,17 +9,15 @@
 PORTNAME=	electricfence
 PORTVERSION=	2.2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perens.com/pub/ElectricFence/Beta/  \
-		ftp://ftp.netsw.org/netsw/System/Libs/Memory/Debug/  \
-		ftp://ftp.sai.msu.su/pub/unix/debug/  \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	devel/lang/c
+MASTER_SITES=	ftp://ftp.perens.com/pub/ElectricFence/Beta/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/misc
 DISTNAME=	ElectricFence-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging malloc() that uses the VM hardware to detect buffer overruns
 
-INSTALLS_SHLIB=
+INSTALLS_SHLIB=	yes
 CFLAGS+=	-D__USE_BSD
 MAN3=		efence.3
 
