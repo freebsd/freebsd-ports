@@ -14,6 +14,11 @@ MASTER_SITES=   http://www.mnogosearch.org/Download/
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
+RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
+
+APXS?=          ${LOCALBASE}/sbin/apxs
+APACHE_PORT?=   ${PORTSDIR}/www/apache13
+
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
@@ -30,8 +35,6 @@ CONFIGURE_ARGS+= --enable-freebsd-pthreads
 CFLAGS+=        ${PTHREAD_CFLAGS}
 CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
 .endif
-
-RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
 .if !defined(NO_OPENSSL) && !defined(WITHOUT_MNOGO_SSL)
 USE_OPENSSL=    yes
