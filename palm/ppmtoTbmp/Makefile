@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPM to Pilot bitmap converter
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
