@@ -5,58 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	FlightGear
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTNAME=	fgfs-base
+PORTVERSION=	0.9.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/:src \
-		ftp://ftp.flightgear.org/pub/fgfs/Shared/:dat
+MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
+		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
 
 MAINTAINER=	des@FreeBSD.org
-COMMENT=	The FlightGear flight simulator
+COMMENT=	FlightGear scenery, textures and aircraft models
 
-BASEVERSION=	${PORTVERSION}
-BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${BASEFILE}:dat
-
-LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
-RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
-
-USE_GMAKE=	yes
+NO_BUILD=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-# Force configure to look in ${LOCALBASE}/{include,lib}
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-threads
-
-MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+WRKSRC=		${WRKDIR}/data
 
 post-extract:
-	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -delete
+	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -print -delete
 
 do-install:
-	@${ECHO} ">> Installing program"
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	@${ECHO} ">> Installing data"
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 ${DATADIR}
-	@(cd ${WRKSRC}/data && ${FIND} . -type d | (cd ${DATADIR} &&\
+	@(cd ${WRKSRC} && ${FIND} . -type d | (cd ${DATADIR} &&\
 		${XARGS} ${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755))
-	@(cd ${WRKSRC}/data && ${FIND} . -type f |\
+	@(cd ${WRKSRC} && ${FIND} . -type f |\
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
