@@ -1,0 +1,52 @@
+bin/myBudget
+%%DATADIR%%/abiword_head.txt
+%%DATADIR%%/applications/myBudget.desktop
+%%DATADIR%%/docs/DirectDebitPane.png
+%%DATADIR%%/docs/ExportAbiWord.png
+%%DATADIR%%/docs/MyBudget.html
+%%DATADIR%%/docs/MyBudget.html_files/1.png
+%%DATADIR%%/docs/MyBudget.html_files/addButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/deleteButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/deleteButton_1.png
+%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_1.png
+%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_2.png
+%%DATADIR%%/docs/MyBudget.html_files/myBudget-1_0.png
+%%DATADIR%%/docs/MyBudget.html_files/myBudget-2_0.png
+%%DATADIR%%/docs/MyBudget.html_files/mybudget-3_0.png
+%%DATADIR%%/docs/MyBudget.html_files/quitButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/replaceButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/replaceButton_1.png
+%%DATADIR%%/docs/MyBudget.html_files/sortCategoriesButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/sortDatesButton_0.png
+%%DATADIR%%/docs/MyBudget.html_files/sortItem_0.png
+%%DATADIR%%/docs/MyBudget.zabw
+%%DATADIR%%/docs/addButton.png
+%%DATADIR%%/docs/applyButton.png
+%%DATADIR%%/docs/deleteButton.png
+%%DATADIR%%/docs/gnumericButton.png
+%%DATADIR%%/docs/myBudget-1.png
+%%DATADIR%%/docs/myBudget-2.png
+%%DATADIR%%/docs/mybudget-3.png
+%%DATADIR%%/docs/quitButton.png
+%%DATADIR%%/docs/replaceButton.png
+%%DATADIR%%/docs/sortCategoriesButton.png
+%%DATADIR%%/docs/sortDatesButton.png
+%%DATADIR%%/docs/sortItem.png
+%%DATADIR%%/example.myb
+%%DATADIR%%/generic-budget.txt
+%%DATADIR%%/glade/icon.svg
+%%DATADIR%%/glade/mybudget.glade
+%%DATADIR%%/glade/mybudget.gladep
+%%DATADIR%%/gnumeric_foot.txt
+%%DATADIR%%/gnumeric_head.txt
+%%DATADIR%%/pixmaps/myBudget-icon.svg
+%%DATADIR%%/po/myBudget.po
+%%DATADIR%%/splashscreen.png
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/docs/MyBudget.html_files
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/applications
+@dirrm %%DATADIR%%

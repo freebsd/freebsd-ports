@@ -1,0 +1,27 @@
+The aim of the program is to make it as easy as possible for people to
+do their own personal budgets and keep track of their finances. Using
+this program you can:
+
+	* Create a budget and organize budget items into categories.
+	* Nominate budget items to be paid from either a cash account or
+	  via a "Direct Debit" account which allows you to save for big
+	  ticket items and ensure timely payment of scheduled bills.
+	* Automatically calculates how much money you must put aside
+	  each fortnight to meet all your "Direct Debit" obligations.
+	* Automatically tells you how much money you must have in Direct
+	  Debit account to meet your obligatory payments on any
+	  particular date.
+	* Record and save expenses against each of your budget categories.
+	* Track how your expenses relate to your budget so you can
+	  determine if you are over or under-spending in any of your
+	  categories.
+	* Sort your records into categories or by date.
+	* Comes with realistic example to show how things work.
+	* Allows you to export any of your reports, records, budget and
+	  Direct Debit status to the Gnumeric Spreadsheet program where
+	  they can be either printed or used for more detailed analysis.
+	* Allows you to export any of your reports, records, budget and
+	  Direct Debit status to the AbiWord WordProcessor program where
+	  they can be printed or incorporated into a report.
+
+WWW: http://www.abisource.com/~msevior/index.html
