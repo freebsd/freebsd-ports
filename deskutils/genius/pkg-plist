@@ -14,9 +14,7 @@ include/genius/mpzextra.h
 include/genius/plug_api.h
 include/genius/structs.h
 include/genius/utype.h
-lib/genius/libtestplugin.a
 lib/genius/libtestplugin.so
-lib/genius/libtestplugin.so.0
 libexec/genius-readline-helper-fifo
 share/gnome/applications/gnome-genius.desktop
 share/gnome/genius/gel/calculus/differentiation.gel
@@ -43,21 +41,32 @@ share/gnome/genius/gel/number_theory/misc.gel
 share/gnome/genius/gel/number_theory/modulus.gel
 share/gnome/genius/gel/number_theory/primes.gel
 share/gnome/genius/gel/number_theory/quadratic.gel
+share/gnome/genius/gel/sets/basic.gel
 share/gnome/genius/gel/statistics/basic.gel
+share/gnome/genius/gtksourceview/genius.lang
 share/gnome/genius/manual.txt
 share/gnome/genius/plugins/test.plugin
+share/locale/az/LC_MESSAGES/genius.mo
+share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
 share/locale/es/LC_MESSAGES/genius.mo
 share/locale/fr/LC_MESSAGES/genius.mo
+share/locale/hi/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
+share/locale/nl/LC_MESSAGES/genius.mo
 share/locale/no/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
+share/locale/sr/LC_MESSAGES/genius.mo
+share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
+share/locale/zh_CN/LC_MESSAGES/genius.mo
+@dirrm share/gnome/genius/gtksourceview
 @dirrm share/gnome/genius/plugins
 @dirrm share/gnome/genius/gel/statistics
+@dirrm share/gnome/genius/gel/sets
 @dirrm share/gnome/genius/gel/number_theory
 @dirrm share/gnome/genius/gel/misc
 @dirrm share/gnome/genius/gel/linear_algebra
