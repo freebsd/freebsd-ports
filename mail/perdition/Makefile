@@ -8,12 +8,7 @@
 PORTNAME=	perdition
 PORTVERSION=	0.1.9
 CATEGORIES=	mail net security
-MASTER_SITES=	ftp://perdition.sourceforge.net/pub/perdition/%SUBDIR%/ \
-		ftp://ftp.au.vergenet.net/pub/perdition/%SUBDIR%/ \
-		ftp://ftp.nl.vergenet.net/pub/perdition/%SUBDIR%/ \
-		ftp://ftp.jp.vergenet.net/pub/perdition/%SUBDIR%/ \
-		ftp://ftp.us.vergenet.net/pub/perdition/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 
