@@ -1,6 +1,6 @@
-# New ports collection makefile for:    tclock
+# New ports collection makefile for:    syncal
 # Date created:		So   7 Feb 1999 20:50:43 MET
-# Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
+# Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 #
 # $FreeBSD$
 #
