@@ -1,0 +1,50 @@
+
+
+	       PRCS -- Project Revision Control System
+
+
+Announcing version 1.0 of PRCS, the Project Revision Control System.
+PRCS is the front end to a set of tools that (like CVS) provide a way
+to deal with sets of files and directories as an entity, preserving
+coherent versions of the entire set.
+
+PRCS was designed primarily by Professor P. N. Hilfinger, with input
+and modifications by Luigi Semenzato and Josh MacDonald.  PRCS is
+written and maintained by Josh MacDonald.
+
+Its purpose is similar to that of SCCS, RCS, and CVS, but (according
+to its authors, at least), it is much simpler than any of those
+systems.
+
+To compile and install PRCS, read the instructions in the INSTALL
+file.  Once you have done this, you should at least read the first few
+sections of the documentation.  It is available in info format.  All
+documentation is located in the doc/ subdirectory.
+
+The current release, version 1.0, and future releases of PRCS can be
+found at ftp://XCF.Berkeley.EDU/pub/prcs.  HTML documentation and
+recent developments are available online at
+
+   http://www.XCF.Berkeley.EDU/~jmacd/prcs.html.
+
+PRCS is released under the GNU public license, see the file COPYING
+for details.
+
+A mailing list has been formed for announcements and discussion:
+
+   prcs-list@XCF.Berkeley.EDU,
+
+you can subscribe by mailing majordomo@XCF.Berkeley.EDU with the
+single line
+
+   subscribe prcs-list
+
+Comments about PRCS can be addressed to the following addresses:
+
+   hilfinger@CS.Berkeley.EDU,
+   jmacd@CS.Berkeley.EDU,
+   prcs@XCF.Berkeley.EDU
+
+Bug reports can be addressed to the following address:
+
+   prcs-bugs@XCF.Berkeley.EDU
