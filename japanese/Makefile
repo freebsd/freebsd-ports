@@ -358,6 +358,7 @@
     SUBDIR += tcsh-nls-rishu
     SUBDIR += tcsh-nls-roomi
     SUBDIR += tcsh-nls-ruri2
+    SUBDIR += tdiary
     SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += tgif2tex
