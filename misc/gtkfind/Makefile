@@ -3,7 +3,7 @@
 # Date created:        28 Sept 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/11/17 21:53:22 billf Exp $
 #
 
 DISTNAME=	gtkfind-0.9
@@ -12,17 +12,10 @@ MASTER_SITES=	http://www.oz.net/~mattg/
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gtk.1.6:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
-USE_GMAKE=	yes
-ALL_TARGET=
+ALL_TARGET=	gtkfind
 
 MAN1=		gtkfind.1
-
-post-patch:
-
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
-	${CAT} ${WRKSRC}/Makefile.pre_sed | \
-	${SED} -e 's#/usr/local#${PREFIX}#g' >> ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
