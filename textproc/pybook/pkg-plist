@@ -1,4 +1,5 @@
 bin/pybook
+share/pybook/license
 share/pybook/booklist
 share/pybook/vimrc
 @dirrm share/pybook
