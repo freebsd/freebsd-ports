@@ -4319,6 +4319,7 @@ liamail		ports/mail/liamail
 lib3ds		ports/graphics/lib3ds
 lib765		ports/emulators/lib765
 libGL		ports/x11/libGL
+libGLU		ports/graphics/libGLU
 libICE		ports/x11/libICE
 libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
