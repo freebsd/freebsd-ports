@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.50.0
+PORTVERSION=	1.51.4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
 		http://www.cs.berkeley.edu/~jrs/:triangle
