@@ -1,0 +1,25 @@
+--- fonts/scaled/TTF/Imakefile.orig	Sun May 30 17:51:49 2004
++++ fonts/scaled/TTF/Imakefile	Sun May 30 17:52:06 2004
+@@ -8,7 +8,7 @@
+ VERAFONTS = Vera.ttf VeraBI.ttf VeraBd.ttf VeraMoBI.ttf VeraMoBd.ttf \
+ 	VeraMoIt.ttf VeraMono.ttf VeraSe.ttf VeraSeBd.ttf
+ 
+-FONTS = $(LUXIFONTS) $(VERAFONTS)
++FONTS = $(LUXIFONTS)
+ OBJS = $(FONTS)
+ 
+ FONTINSTDIR = $(FONTDIR)/TTF
+@@ -31,6 +31,7 @@
+ DependSubdirs($(SUBDIRS))
+ #endif
+ 
++.if 0
+ LinkSourceFile(Vera.ttf,$(VERASRCDIR))
+ LinkSourceFile(VeraBI.ttf,$(VERASRCDIR))
+ LinkSourceFile(VeraBd.ttf,$(VERASRCDIR))
+@@ -41,4 +42,4 @@
+ LinkSourceFile(VeraMono.ttf,$(VERASRCDIR))
+ LinkSourceFile(VeraSe.ttf,$(VERASRCDIR))
+ LinkSourceFile(VeraSeBd.ttf,$(VERASRCDIR))
+-
++.endif
