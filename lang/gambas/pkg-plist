@@ -6014,8 +6014,20 @@ gambas/lib/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/Timer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/.gambas/FREQUEST
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/.gambas/FMAIN
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/.kdbgrc.gbx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/Database
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FMain.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FMain.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FABOUT
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FCONN
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FPREVIEW
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/MGLOBAL
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/DataReportExample
@@ -6028,7 +6040,6 @@ gambas/lib/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/Fpreview.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/Fpreview.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/Mglobal.module
-%%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/gbc.core
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/pic/button_cance.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/pic/button_ok.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/pic/empty.png
@@ -6205,6 +6216,9 @@ gambas/lib/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/pic
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample

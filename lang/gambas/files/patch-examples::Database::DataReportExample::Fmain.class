@@ -1,0 +1,62 @@
+--- ./examples/Database/DataReportExample/Fmain.class.orig	Sun Mar 14 11:01:59 2004
++++ ./examples/Database/DataReportExample/Fmain.class	Sat Apr  3 17:26:02 2004
+@@ -45,7 +45,7 @@
+   WITH mglobal
+   SELECT CASE LAST.tag
+     CASE 1  'textbox ID
+-      a=.chk (textbox1, key.code, "num")
++      a=.chk (textbox1, Key.Code, "num")
+       SELECT CASE a
+         CASE 1
+           ME.close
+@@ -53,7 +53,7 @@
+           STOP EVENT
+       END SELECT
+   
+-      IF key.code=key.enter OR key.code=key.return THEN
++      IF Key.Code=Key.enter OR Key.Code=Key.return THEN
+         .rs=.db.exec("select name from user where id='" & textbox1.text & "'")
+         IF .rs.count<>0 THEN
+           textbox2.text=.rs!name
+@@ -64,7 +64,7 @@
+       END IF
+     
+     CASE 2  'textbox Name
+-      a=.chk (textbox2, key.code)
++      a=.chk (textbox2, Key.Code)
+       SELECT CASE a
+         CASE 1
+           ME.close
+@@ -72,7 +72,7 @@
+           STOP EVENT
+       END SELECT
+   
+-      IF key.code=key.enter OR key.code=key.return THEN
++      IF Key.Code=Key.enter OR Key.Code=Key.return THEN
+         textbox1.setfocus
+         .rs = .db.exec("select * from user where id='" & textbox1.text & "'")
+         IF .rs.count =0 THEN
+@@ -118,11 +118,11 @@
+ END
+ 
+ PUBLIC SUB TableView1_KeyRelease()
+-  SELECT CASE key.code
+-    CASE key.Enter, key.Return
++  SELECT CASE Key.Code
++    CASE Key.Enter, Key.Return
+       tableview1_click()
+     
+-    CASE key.Escape
++    CASE Key.Escape
+       ME.close
+   END SELECT
+ END
+@@ -142,7 +142,7 @@
+ END
+ 
+ PUBLIC SUB gbtn_KeyPress()
+-  IF key.code=key.escape THEN ME.close
++  IF Key.Code=Key.Escape THEN ME.close
+ END
+ 
+ PUBLIC SUB header(prn AS Boolean)

@@ -1,0 +1,18 @@
+--- ./examples/Database/DataReportExample/Fconn.class.orig	Mon Feb 23 17:31:34 2004
++++ ./examples/Database/DataReportExample/Fconn.class	Sat Apr  3 17:29:08 2004
+@@ -16,7 +16,7 @@
+ END
+ 
+ PUBLIC SUB ginput_KeyPress()
+-  IF key.code=key.enter OR key.code=key.return THEN
++  IF Key.Code=Key.Enter OR Key.Code=Key.Return THEN
+     SELECT CASE LAST.tag
+       CASE 1
+         textbox2.setfocus
+@@ -75,4 +75,4 @@
+ 
+ CATCH
+   Message.Error(Error.Text)
+-END
+\ No newline at end of file
++END
