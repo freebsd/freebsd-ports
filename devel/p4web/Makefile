@@ -27,9 +27,10 @@ COMMENT=	Perforce client and server
 ARCH!= /usr/bin/uname -p
 ARCH?= i386
 
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
 VERSION=	03.1
-REVISION=	2
+REVISION=	3
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
