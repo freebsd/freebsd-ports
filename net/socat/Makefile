@@ -8,10 +8,11 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.4.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	Multipurpose relay and more
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
@@ -30,6 +31,9 @@ USE_OPENSSL=	yes
 MAN1=		socat.1
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 PLIST_FILES=	bin/filan bin/procan bin/socat
+
+post-patch:
+	@${CP} ${FILESDIR}/xio-socks.c ${WRKSRC}/xio-socks.c
 
 .if !defined(NOPORTDOCS)
 post-install:
