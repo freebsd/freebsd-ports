@@ -3,13 +3,12 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/21 03:55:09 asami Exp $
 #
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/	\
-		ftp://www.tiac.net/users/lesher/xbattle/
+MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
