@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reflow/Reflow.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reflow/Reflow.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reflow/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/Reflow.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reflow
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text > /dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text      > /dev/null || true
