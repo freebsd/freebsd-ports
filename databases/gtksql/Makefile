@@ -28,7 +28,7 @@ LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 .endif
 .if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
      && !defined(WITHOUT_PGSQL))
-HAVE_PYSQL=	yes
+HAVE_PGSQL=	yes
 LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif
 
