@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+!%%LOCALBASE%%/bin/bash
 #
 # $Id: Sophos.install,v 1.13.2.3 2003/06/07 17:20:39 jkf Exp $
 #
@@ -8,8 +8,8 @@
 # and unpacked the Sophos distribution.
 # Tweaked for FreeBSD.
 
-SOPHOS=/usr/local/Sophos
-SCRIPTS=/usr/local/libexec/MailScanner
+SOPHOS=%%LOCALBASE%%/Sophos
+SCRIPTS=%%PREFIX%%/libexec/MailScanner
 COMPD=freebsd.elf.tar.Z
 DISTRIB=freebsd.elf.tar
 
@@ -20,7 +20,7 @@ chmod -R go+rX ${SOPHOS}
 # Clear out any old libs from /usr/local/lib which is where
 # a default SAVI installation will have left them
 echo Clearing out old default Sophos installation libraries
-rm -f /usr/local/lib/libsavi.so*
+rm -f %%LOCALBASE%%/lib/libsavi.so*
 
 # Have we got to uncompress the distribution for them?
 if [ -f $COMPD ]; then

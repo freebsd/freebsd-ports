@@ -1,8 +1,149 @@
---- ../MailScanner-4.25-14.orig/docs/man/MailScanner.conf.5	Tue Dec  2 22:22:27 2003
-+++ docs/man/MailScanner.conf.5	Tue Dec  2 22:23:08 2003
+--- ../MailScanner-4.26.5.orig/docs/man/MailScanner.conf.5	Mon Jan 26 16:20:56 2004
++++ docs/man/MailScanner.conf.5	Mon Jan 26 16:21:58 2004
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.25-10" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.26-3" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.26.5-1" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
+@@ -1408,6 +1408,29 @@
+ 
+ .br 
+ If a message is spam, and this option is set, then a header will be added to the message containing 1 character for each point in the SpamAssassin score. This allows users to choose for themselves the SpamAssassin scores at which they want to do different things with the message, such as file it or delete it. 
++
++
++.TP 
++\fBRebuild Bayes Every\fR
++Default: 0
++.br 
++
++.br 
++If you are using the Bayesian statistics engine on a busy server, you may well need to force a Bayesian database rebuild and expiry at regular intervals. This is measures in seconds. 24 hours = 86400 seconds. To disable this feature set this to 0.
++
++
++.TP 
++\fBWait During Bayes Rebuild\fR
++Default: no
++.br 
++
++.br 
++# The Bayesian database rebuild and expiry may take a 2 or 3 minutes
++# to complete. During this time you can either wait, or simply
++# disable SpamAssassin checks until it has completed.
++WaitDuringBayesRebuild = no
++
++
+ .SH "What to do with spam"
+ .TP 
+ \fBSpam Actions\fR
+@@ -1431,11 +1454,11 @@
+ .br 
+ 
+ .br 
+-"bounce" \- a rejection message is sent back to the sender 
++"forward" \- an email address is supplied, to which the message is forwarded 
+ .br 
+ 
+ .br 
+-"forward" \- an email address is supplied, to which the message is forwarded 
++"notify" \- Send the recipients a short notification that spam addressed to them was not delivered. They can then take action to request retrieval of the orginal message if they think it was not spam.
+ .br 
+ 
+ .br 
+@@ -1462,23 +1485,15 @@
+ 
+ .TP 
+ \fBSender Spam Report\fR
+-Default: /opt/MailScanner/etc/reports/en/sender.spam.report.txt
+-.br 
+-Default Linux: /etc/MailScanner/reports/en/sender.spam.report.txt
+-.br 
+-Default FreeBSD: /usr/local/share/MailScanner/reports/en/sender.spam.report.txt
++Default: %reports\-dir%/sender.spam.report.txt
+ .br 
+ 
+-.br W
+-hen the "bounce" spam action is applied to a message that triggered both a "Spam List" check and SpamAssassin, this file gives the text to put in that message. 
++.br 
++When the "bounce" spam action is applied to a message that triggered both a "Spam List" check and SpamAssassin, this file gives the text to put in that message. 
+ 
+ .TP 
+ \fBSender Spam List Report\fR
+-Default: /opt/MailScanner/etc/reports/en/sender.spam.rbl.report.txt
+-.br 
+-Default Linux: /etc/MailScanner/reports/en/sender.spam.rbl.report.txt
+-.br 
+-Default FreeBSD: /usr/local/share/MailScanner/reports/en/sender.spam.rbl.report.txt
++Default: %reports\-dir%/sender.spam.rbl.report.txt
+ .br 
+ 
+ .br 
+@@ -1486,11 +1501,7 @@
+  
+ .TP 
+ \fBSender SpamAssassin Report\fR
+-Default: /opt/MailScanner/etc/reports/en/sender.spam.sa.report.txt
+-.br 
+-Default Linux: /etc/MailScanner/reports/en/sender.spam.sa.report.txt
+-.br 
+-Default FreeBSD: /usr/local/share/MailScanner/reports/en/sender.spam.sa.report.txt
++Default: %reports\-dir%/sender.spam.sa.report.txt
+ .br 
+ 
+ .br 
+@@ -1498,15 +1509,20 @@
+ 
+ .TP 
+ \fBInline Spam Warning\fR
+-Default: /opt/MailScanner/etc/reports/en/inline.spam.warning.txt
++Default: %reports\-dir%/inline.spam.warning.txt
+ .br 
+-Default Linux: /etc/MailScanner/reports/en/inline.spam.warning.txt
++
+ .br 
+-Default FreeBSD: /usr/local/share/MailScanner/reports/en/inline.spam.warning.txt
++If you use the 'attachment' Spam Action or High Scoring Spam Action then this is the location of inline spam report that is inserted at the top of the message.
++
++.TP 
++\fBRecipient Spam Report\fR
++Default: %reports\-dir%/recipient.spam.report.txt
+ .br 
+ 
+ .br 
+-If you use the 'attachment' Spam Action or High Scoring Spam Action then this is the location of inline spam report that is inserted at the top of the message.
++If you use the 'notify' Spam Action or High Scoring Spam Action then this is the location of the notification message that is sent to the original recipients of the message.
++
+ .SH "System logging"
+ .TP 
+ \fBSyslog Facility\fR
+@@ -1515,12 +1531,12 @@
+ 
+ .br 
+ This is the name of the "facility" used by syslogd to log MailScanner's messages. If this doesn't mean anything to you, then either leave it alone or else read the "syslogd" man page. 
+-.TP
++.TP 
+ \fBLog Speed\fR
+ Default: no
+-.br
++.br 
+ 
+-.br
++.br 
+ Do you want to log the processing speed for each section of the code for a batch? This can be very useful for diagnosing speed problems, particularly in spam checking.
+ 
+ .TP 
+@@ -1530,6 +1546,14 @@
+ 
+ .br 
+ If this option is set, then every spam message will be logged to syslog. If you get a lot of spam, or your server load is high, you will want to leave this option switched off. But if you are having trouble with spam detection, setting this to "yes" temporarily can provide useful debugging output. 
++
++.TP 
++\fBLog Non Spam\fR
++Default: no
++.br 
++
++.br 
++Do you want all non\-spam to be logged? Useful if you want to see all the SpamAssassin reports of mail that was marked as non\-spam. Note: It will generate a lot of log traffic.
+ 
+ .TP 
+ \fBLog Permitted Filenames\fR
