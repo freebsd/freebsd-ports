@@ -56,7 +56,7 @@
 %%GALLERYDIR%%/contrib/mambo/toolbar.gallery.php
 %%GALLERYDIR%%/contrib/phpBB2/CREDITS
 %%GALLERYDIR%%/contrib/phpBB2/HowTo.txt
-%%GALLERYDIR%%/contrib/phpBB2/modules.php.gz
+%%GALLERYDIR%%/contrib/phpBB2/modules.php
 %%GALLERYDIR%%/contrib/phpBB2/phpBB2-manual_changes.txt
 %%GALLERYDIR%%/contrib/phpBB2/phpBB2.patch
 %%GALLERYDIR%%/contrib/phpnuke/modules.php.patch
