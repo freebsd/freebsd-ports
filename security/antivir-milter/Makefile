@@ -6,7 +6,7 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.antivir.de/freebsd/
 DISTNAME=	avfbmlt
@@ -38,11 +38,9 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 post-patch:
-.for i in etc/avmilter.conf init/rc.avmilter
+.for i in etc/antivir.conf etc/avmilter.conf init/rc.avmilter script/avq
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} -e 's|\/etc\/avmilter.conf|${PREFIX}&|g' \
-		${WRKSRC}/script/avq
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/antivirupdater.sh > \
