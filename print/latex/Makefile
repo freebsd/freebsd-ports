@@ -3,52 +3,71 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.34 1998/01/26 00:59:43 jmz Exp $
+# $Id: Makefile,v 1.35 1998/02/09 21:29:17 jmz Exp $
 #
 
-VERSION=	98.01
+VERSION=	99.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES=     print
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
 DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
-		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz
+		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz \
+		latex_graphics-${VERSION}.tar.gz latex_psnfss-${VERSION}.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
+NO_WRKSUBDIR=	yes
+
 MANUAL_PACKAGE_BUILD=	has to be built with tex port
 
 do-build:
-	(cd ${WRKSRC}/base; tex --ini unpack.ins)
-	(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
+	@(cd ${WRKSRC}/base; tex --ini unpack.ins)
+	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
 		tex --ini latex.ltx </dev/null)
-	(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
+	@(cd ${WRKSRC}/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
 		 ln -sf ${PREFIX}/bin/tex latex; ./latex tools.ins)
+	@(cd ${WRKSRC}/graphics; TEXFORMATS=${WRKSRC}/base:; \
+		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
+		 ln -sf ${PREFIX}/bin/tex latex; ./latex graphics.ins)
+	@(cd ${WRKSRC}/psnfss; TEXFORMATS=${WRKSRC}/base:; \
+		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
+		chmod u+w mh2scr.enc;\
+		 ln -sf ${PREFIX}/bin/tex latex; for f in adobe charter\
+		 mathtime psfonts alucida lucidabr nimbus utopia; do \
+		./latex $$f.ins; done)
 
-do-install: 
-	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
-				${PREFIX}/share/texmf/web2c/)
-	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/share/texmf/fonts/tfm)
-	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/share/texmf/metafont)
+do-install:
+	@(${INSTALL_DATA} ${WRKSRC}/base/latex.fmt ${PREFIX}/share/texmf/web2c/)
+	@(cd ${WRKSRC}/tfm; ${INSTALL_DATA} *.tfm ${PREFIX}/share/texmf/fonts/tfm)
+	@(cd ${WRKSRC}/mf; ${INSTALL_DATA} *.mf ${PREFIX}/share/texmf/metafont)
 	@mkdir -p ${PREFIX}/share/texmf/tex/latex
 	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
 	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
 	@mkdir -p ${PREFIX}/share/texmf/makeindx;
-	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/share/texmf/makeindx)
-	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
-	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
+	@(cd ${WRKSRC}/base; ${INSTALL_DATA} *.ist ${PREFIX}/share/texmf/makeindx)
+	@(cd ${WRKSRC}/tools; for f in *.sty *.tex; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${WRKSRC}/graphics; for f in *.sty *.tex; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${WRKSRC}/psnfss; for f in *.sty *.tex; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${PREFIX}/bin; ${RM} -f latex; ln -s tex latex)
 	@(mkdir -p ${PREFIX}/share/texmf/documentation)
 	@(cd ${WRKSRC}/base; for f in *.dtx ltx3info.tex source2e.tex *.fdd ltnews*.tex *guide.tex; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
-	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
-	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${WRKSRC}/tools; for f in *.dtx; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${WRKSRC}/graphics; for f in *.dtx; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${WRKSRC}/psnfss; for f in *.dtx; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${PREFIX}/bin; ${RM} -f latex; ln -s tex latex)
 
 .include <bsd.port.mk>
