@@ -6,36 +6,39 @@
 #
 
 PORTNAME=	xfstt
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	x11-servers
-MASTER_SITES=	$(MASTER_SITE_SUNSITE)
-MASTER_SITE_SUBDIR=	X11/fonts
+MASTER_SITES=	http://download.berlios.de/xfstt/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A TrueType font server for X11
 
 USE_X_PREFIX=	yes
-MAN1=		xfstt.1
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-nls
 
-do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/xfstt $(PREFIX)/bin
-	$(INSTALL_MAN) $(WRKSRC)/xfstt.1x $(PREFIX)/man/man1/xfstt.1
+MAN1=		xfstt.1x
+
+TTFONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
+
+post-patch:
+.for file in INSTALL doc/xfstt.1x src/perftest.cc src/xfstt.cc
+	@${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
+.endfor
 
 post-install:
-	strip $(PREFIX)/bin/xfstt
-	${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/xfstt.sh \
+	${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/xfstt.sh \
 		> ${PREFIX}/etc/rc.d/xfstt.sh
-	${CHMOD} 755 ${PREFIX}/etc/rc.d/xfstt.sh
-	$(MKDIR) $(PREFIX)/lib/X11/fonts/TrueType
-.if !defined(NOPORTDOCS)
-	$(MKDIR) $(PREFIX)/share/doc/xfstt
-	$(INSTALL_DATA) $(WRKSRC)/FAQ $(PREFIX)/share/doc/xfstt
-	$(INSTALL_DATA) $(WRKSRC)/CHANGES $(PREFIX)/share/doc/xfstt
-	$(INSTALL_DATA) $(WRKSRC)/INSTALL $(PREFIX)/share/doc/xfstt
-	$(INSTALL_DATA) $(WRKSRC)/THANKS.txt $(PREFIX)/share/doc/xfstt
+	@${CHMOD} 755 ${PREFIX}/etc/rc.d/xfstt.sh
+	@${MKDIR} ${TTFONTDIR}
+.if !defined{NOPORTDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for file in CHANGES INSTALL THANKS
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
-	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
 
 .include <bsd.port.mk>
