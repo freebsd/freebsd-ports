@@ -43,6 +43,7 @@ PLIST_SUB=	LIBVER=${LIBVER}
 MAKE_ENV=	SOMAJOR=${LIBMAJOR} SOMINOR=${LIBMINOR}
 
 post-install:
+	@${TOUCH} ${PREFIX}/lib/libkdecore.la
 .for LIB in jscript kab kdecore kdeui kfile kfm khtmlw kimgio kspell mediatool
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${LIBVER} ${PREFIX}/lib/lib${LIB}.so
 .if ${PORTOBJFORMAT} == "aout"
