@@ -4,6 +4,7 @@ bin/installsieve
 bin/sieveshell
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
+cyrus/bin/cyrdump
 cyrus/bin/cyrquota
 cyrus/bin/deliver
 cyrus/bin/feedcyrus
