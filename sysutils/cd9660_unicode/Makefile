@@ -26,7 +26,7 @@ FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
 			/usr/bin/true
 
 .if (${FLAG} == "")
-BROKEN=		"your FreeBSD version is not supported. Please update to the latest version and try again"
+IGNORE=		"your FreeBSD version is not supported. Please update to the latest version and try again"
 .endif
 
 .include <bsd.port.pre.mk>

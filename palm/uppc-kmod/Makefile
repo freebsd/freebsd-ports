@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 
 .if !exists(/usr/src/sys/dev/usb/usb.h)
-BROKEN=		"Requires kernel source (/usr/src/sys) to build"
+IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif
 
 post-build:

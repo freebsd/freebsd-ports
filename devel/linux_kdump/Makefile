@@ -22,10 +22,10 @@ MAN1=		linux_kdump.1
 .include <bsd.port.pre.mk>
 
 .if !exists(/sys/i386/linux/syscalls.master)
-BROKEN=		"requires kernel source present in /sys"
+IGNORE=		"requires kernel source present in /sys"
 .endif
 .if !exists(/usr/src/usr.bin/ktrace/subr.c)
-BROKEN=		"requires ktrace source present in /usr/src/usr.bin/ktrace"
+IGNORE=		"requires ktrace source present in /usr/src/usr.bin/ktrace"
 .endif
 
 .include <bsd.port.post.mk>

@@ -39,7 +39,7 @@ VERSION_SOUND_C=
 VERSION_SOUND_C_MINOR:=	${VERSION_SOUND_C:S/^1.//:S/^17.2.//}
 
 .if ${OSVERSION} < 410000
-BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
+IGNORE=		"FreeBSD 3.*, 4.0 are not supported"
 
 .elif ${OSVERSION} < 420000
 # FreeBSD 4.1, 4.1.1
@@ -69,7 +69,7 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 .elif ${OSVERSION} < 500000
 # FreeBSD 4.5+, 4.6, 4.7, 4.8-
 .if ${VERSION_SOUND_C_MINOR} < 12
-BROKEN=		"Base system is outdated. This port needs -STABLE after 2002-04-22."
+IGNORE=		"Base system is outdated. This port needs -STABLE after 2002-04-22."
 .endif
 PORTVERSION=	1.3
 PORTREVISION=	4
@@ -79,13 +79,13 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 .if ${OSVERSION} > 500000
 # FreeBSD 5-CURRENT
 .if ${VERSION_SOUND_C_MINOR} < 70
-BROKEN=		"Base system is outdated. This port needs -CURRENT after 2002-04-04."
+IGNORE=		"Base system is outdated. This port needs -CURRENT after 2002-04-04."
 .endif
 .endif
 
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
-BROKEN=	"You need to extract kernel source tree before building this package"
+IGNORE=	"You need to extract kernel source tree before building this package"
 .endif
 
 pre-fetch:

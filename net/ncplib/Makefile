@@ -14,7 +14,7 @@ MAINTAINER=	bp@butya.kz
 COMMENT=	Client for Novell NetWare servers
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
-BROKEN=		requires kernel source
+IGNORE=		requires kernel source
 .endif
 
 IS_INTERACTIVE=	true

@@ -22,7 +22,7 @@ INSTALLS_SHLIB=	yes
 # which may differ from release to release.
 
 .if !exists(/usr/src/lib/libc)
-BROKEN=		You need to have libc sources installed in /usr/src/lib/libc \
+IGNORE=		You need to have libc sources installed in /usr/src/lib/libc \
 		before compiling.
 .endif
 

@@ -33,11 +33,11 @@ SRC_BASE?=	/usr/src
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-BROKEN=		"Systems prior to 400013 are out of support"
+IGNORE=		"Systems prior to 400013 are out of support"
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-BROKEN=		"Kernel source files required"
+IGNORE=		"Kernel source files required"
 .endif
 
 do-fetch:
