@@ -7,6 +7,7 @@
 
 PORTNAME=	libvanessa_logger
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/vanessa/%SUBDIR%/ \
