@@ -1,0 +1,5 @@
+DNS Flood Detector was developed to detect abusive usage levels
+on high traffic nameservers and to enable quick response in
+halting the use of one's nameserver to facilitate spam. 
+
+WWW: http://www.adotout.com/
