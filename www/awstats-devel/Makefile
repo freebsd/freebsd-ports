@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	4.1
+PORTVERSION=	5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,19 +16,31 @@ MAINTAINER=	mchopra@engmail.uwaterloo.ca
 
 NO_BUILD=	yes
 
+USE_PERL5=	yes
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lib
+	@${MKDIR} ${PREFIX}/www/cgi-bin/plugins
+	@${MKDIR} ${PREFIX}/www/cgi-bin/plugins/example
 	@${MKDIR} ${PREFIX}/www/icons/browser
 	@${MKDIR} ${PREFIX}/www/icons/clock
 	@${MKDIR} ${PREFIX}/www/icons/cpu
 	@${MKDIR} ${PREFIX}/www/icons/flags
 	@${MKDIR} ${PREFIX}/www/icons/os
 	@${MKDIR} ${PREFIX}/www/icons/other
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin/awstats.model.conf
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin/awstats.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/bin/awstats_logresolvemerge.pl
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/cgi-bin/lib
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/graph3d.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timehires.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timezone.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${PREFIX}/www/cgi-bin/plugins/example
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/icons/browser
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${PREFIX}/www/icons/clock
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/cpu/* ${PREFIX}/www/icons/cpu
@@ -38,6 +50,8 @@ do-install:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "* Rename ${PREFIX}/www/cgi-bin/awstats.model.conf to awstats.conf to set up AWStats"
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
+	@${ECHO_CMD} ""
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
