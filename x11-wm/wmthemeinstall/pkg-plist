@@ -1,5 +1,5 @@
 bin/wmthemeinstall
-share/wmthemeinstall/AUTHORS
-share/wmthemeinstall/ChangeLog
-share/wmthemeinstall/README
-@dirrm share/wmthemeinstall
+%%PORTDOCS%%share/doc/wmthemeinstall/AUTHORS
+%%PORTDOCS%%share/doc/wmthemeinstall/ChangeLog
+%%PORTDOCS%%share/doc/wmthemeinstall/README
+%%PORTDOCS%%@dirrm share/doc/wmthemeinstall

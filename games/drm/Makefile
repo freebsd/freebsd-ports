@@ -20,7 +20,8 @@ ALL_TARGET=
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bugs ${PREFIX}/bin/drm
 .if !defined(NOPORTDOCS)
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.drm
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -30,7 +30,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/libsx
-	${INSTALL_MAN} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
 	${GZIP_CMD} ${PREFIX}/share/doc/libsx/*.doc
 .endif
 

@@ -1,6 +1,6 @@
 include/shhcards.h
 lib/libshhcards.so
 lib/libshhcards.so.1
-share/doc/libshhcards/CREDITS
-share/doc/libshhcards/README
-@dirrm share/doc/libshhcards
+%%PORTDOCS%%share/doc/libshhcards/CREDITS
+%%PORTDOCS%%share/doc/libshhcards/README
+%%PORTDOCS%%@dirrm share/doc/libshhcards

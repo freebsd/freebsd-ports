@@ -29,9 +29,9 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xkoules
+	@${MKDIR} ${DOCSDIR}
 .for file in ANNOUNCE BUGS Card ChangeLog Koules.FAQ TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xkoules
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

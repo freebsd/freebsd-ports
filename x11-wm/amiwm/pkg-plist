@@ -14,7 +14,7 @@ lib/X11/amiwm/requestchoice
 lib/X11/amiwm/schwartz.map
 lib/X11/amiwm/system.amiwmrc
 lib/X11/amiwm/system.map
-share/doc/amiwm/README
-share/doc/amiwm/README.modules
+%%PORTDOCS%%share/doc/amiwm/README
+%%PORTDOCS%%share/doc/amiwm/README.modules
 @dirrm lib/X11/amiwm
-@dirrm share/doc/amiwm
+%%PORTDOCS%%@dirrm share/doc/amiwm

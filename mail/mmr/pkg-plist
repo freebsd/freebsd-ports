@@ -1,9 +1,9 @@
 bin/mmr
-share/doc/mmr/BUGS
-share/doc/mmr/CHANGES
-share/doc/mmr/Features
-share/doc/mmr/README
-share/doc/mmr/TODO
+%%PORTDOCS%%share/doc/mmr/BUGS
+%%PORTDOCS%%share/doc/mmr/CHANGES
+%%PORTDOCS%%share/doc/mmr/Features
+%%PORTDOCS%%share/doc/mmr/README
+%%PORTDOCS%%share/doc/mmr/TODO
 share/examples/mmr/dot.mmrc.sample
 @dirrm share/examples/mmr
-@dirrm share/doc/mmr
+%%PORTDOCS%%@dirrm share/doc/mmr

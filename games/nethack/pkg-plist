@@ -5,7 +5,7 @@ share/nethack/nethack
 @exec chmod 2755 %D/share/nethack/nethack
 @exec chown games:games %D/share/nethack/save
 @unexec rm -rf %D/share/nethack/save
-share/doc/nethack/Guidebook.txt
+%%PORTDOCS%%share/doc/nethack/Guidebook.txt
 share/nethack/pet_mark.xbm
 share/nethack/rip.xpm
 share/nethack/x11tiles
@@ -121,4 +121,4 @@ share/nethack/logfile
 share/nethack/record
 share/nethack/perm
 @dirrm share/nethack
-@dirrm share/doc/nethack
+%%PORTDOCS%%@dirrm share/doc/nethack

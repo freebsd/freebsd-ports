@@ -1,4 +1,4 @@
 include/supermatrix.h                                                          
 lib/libsuperlu.a
-share/doc/SuperLU/ug.ps
-@dirrm share/doc/SuperLU
+%%PORTDOCS%%share/doc/SuperLU/ug.ps
+%%PORTDOCS%%@dirrm share/doc/SuperLU

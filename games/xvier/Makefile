@@ -21,8 +21,8 @@ MAN6=		xvier.6
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xvier
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xvier
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

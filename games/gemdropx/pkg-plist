@@ -1,5 +1,5 @@
 bin/gemdropx
-share/doc/gemdropx/README.txt
+%%PORTDOCS%%share/doc/gemdropx/README.txt
 share/gemdropx/images/README
 share/gemdropx/images/action-mask.xbm
 share/gemdropx/images/action.xbm
@@ -67,4 +67,4 @@ share/gemdropx/sounds/win.wav
 @dirrm share/gemdropx/sounds
 @dirrm share/gemdropx/images
 @dirrm share/gemdropx
-@dirrm share/doc/gemdropx
+%%PORTDOCS%%@dirrm share/doc/gemdropx

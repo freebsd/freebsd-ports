@@ -32,11 +32,11 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/femlab
-	${INSTALL_MAN} ${WRKSRC}/examples/*.fem  ${PREFIX}/share/examples/femlab
-	${MKDIR} ${PREFIX}/share/doc/femlab
-	${INSTALL_MAN} ${WRKSRC}/docs/manual.dvi ${PREFIX}/share/doc/femlab
-	${INSTALL_MAN} ${WRKSRC}/docs/manual.ps  ${PREFIX}/share/doc/femlab
+	@${MKDIR} ${PREFIX}/share/examples/femlab
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.fem ${PREFIX}/share/examples/femlab
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/manual.dvi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/manual.ps  ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

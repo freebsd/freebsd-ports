@@ -1,8 +1,8 @@
 bin/tcb
-share/doc/tcb/CHANGES
-share/doc/tcb/COPYING
-share/doc/tcb/README
+%%PORTDOCS%%share/doc/tcb/CHANGES
+%%PORTDOCS%%share/doc/tcb/COPYING
+%%PORTDOCS%%share/doc/tcb/README
 share/tcb/HELP
 share/tcb/tcbrc
-@dirrm share/doc/tcb
+%%PORTDOCS%%@dirrm share/doc/tcb
 @dirrm share/tcb

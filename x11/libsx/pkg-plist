@@ -2,23 +2,23 @@ lib/libfreq.a
 lib/libsx.a
 include/X11/libsx/freq.h
 include/X11/libsx/libsx.h
-share/doc/libsx/libsx_intro
-share/doc/libsx/button.doc.gz
-share/doc/libsx/color.doc.gz
-share/doc/libsx/draw_area.doc.gz
-share/doc/libsx/drawing.doc.gz
-share/doc/libsx/font.doc.gz
-share/doc/libsx/form.doc.gz
-share/doc/libsx/general.libsx.doc.gz
-share/doc/libsx/label.doc.gz
-share/doc/libsx/list.doc.gz
-share/doc/libsx/menu.doc.gz
-share/doc/libsx/misc.doc.gz
-share/doc/libsx/popups.doc.gz
-share/doc/libsx/scrollbar.doc.gz
-share/doc/libsx/string_entry.doc.gz
-share/doc/libsx/text_edit.doc.gz
-share/doc/libsx/toggle.doc.gz
-share/doc/libsx/windows.doc.gz
+%%PORTDOCS%%share/doc/libsx/libsx_intro
+%%PORTDOCS%%share/doc/libsx/button.doc.gz
+%%PORTDOCS%%share/doc/libsx/color.doc.gz
+%%PORTDOCS%%share/doc/libsx/draw_area.doc.gz
+%%PORTDOCS%%share/doc/libsx/drawing.doc.gz
+%%PORTDOCS%%share/doc/libsx/font.doc.gz
+%%PORTDOCS%%share/doc/libsx/form.doc.gz
+%%PORTDOCS%%share/doc/libsx/general.libsx.doc.gz
+%%PORTDOCS%%share/doc/libsx/label.doc.gz
+%%PORTDOCS%%share/doc/libsx/list.doc.gz
+%%PORTDOCS%%share/doc/libsx/menu.doc.gz
+%%PORTDOCS%%share/doc/libsx/misc.doc.gz
+%%PORTDOCS%%share/doc/libsx/popups.doc.gz
+%%PORTDOCS%%share/doc/libsx/scrollbar.doc.gz
+%%PORTDOCS%%share/doc/libsx/string_entry.doc.gz
+%%PORTDOCS%%share/doc/libsx/text_edit.doc.gz
+%%PORTDOCS%%share/doc/libsx/toggle.doc.gz
+%%PORTDOCS%%share/doc/libsx/windows.doc.gz
 @dirrm include/X11/libsx
-@dirrm share/doc/libsx
+%%PORTDOCS%%@dirrm share/doc/libsx

@@ -17,14 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 USE_PERL5=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
-STRIP=
 
 MAN1=	type1inst.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/type1inst ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/t1embed ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/type1inst.man ${PREFIX}/man/man1/type1inst.1
+	@${INSTALL_SCRIPT} ${WRKSRC}/type1inst ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/t1embed ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/type1inst.man ${PREFIX}/man/man1/type1inst.1
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.type1inst
 .endif

@@ -25,21 +25,21 @@ share/battalion/TEXTURES/road.tex
 share/battalion/TEXTURES/screenleft.tex
 share/battalion/TEXTURES/screenright.tex
 share/battalion/TEXTURES/treewood.tex
-share/doc/battalion/README
-share/doc/battalion/bathelp01.gif
-share/doc/battalion/bathelp02.gif
-share/doc/battalion/bathelp03.gif
-share/doc/battalion/bathelp04.gif
-share/doc/battalion/bathelp05.gif
-share/doc/battalion/bathelp06.gif
-share/doc/battalion/bathelp07.gif
-share/doc/battalion/bathelp08.gif
-share/doc/battalion/bathelp09.gif
-share/doc/battalion/bathelp10.gif
-share/doc/battalion/bathelp11.gif
+%%PORTDOCS%%share/doc/battalion/README
+%%PORTDOCS%%share/doc/battalion/bathelp01.gif
+%%PORTDOCS%%share/doc/battalion/bathelp02.gif
+%%PORTDOCS%%share/doc/battalion/bathelp03.gif
+%%PORTDOCS%%share/doc/battalion/bathelp04.gif
+%%PORTDOCS%%share/doc/battalion/bathelp05.gif
+%%PORTDOCS%%share/doc/battalion/bathelp06.gif
+%%PORTDOCS%%share/doc/battalion/bathelp07.gif
+%%PORTDOCS%%share/doc/battalion/bathelp08.gif
+%%PORTDOCS%%share/doc/battalion/bathelp09.gif
+%%PORTDOCS%%share/doc/battalion/bathelp10.gif
+%%PORTDOCS%%share/doc/battalion/bathelp11.gif
 @dirrm share/battalion/DATA
 @dirrm share/battalion/MUSIC
 @dirrm share/battalion/SOUNDS
 @dirrm share/battalion/TEXTURES
 @dirrm share/battalion
-@dirrm share/doc/battalion
+%%PORTDOCS%%@dirrm share/doc/battalion

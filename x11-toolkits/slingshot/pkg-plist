@@ -12,14 +12,14 @@ lib/libsspkg.a
 lib/libsspkg.sa.1
 lib/libsspkg.so
 lib/libsspkg.so.1
-share/doc/SlingShot/README
-share/doc/SlingShot/appA.ps
-share/doc/SlingShot/appB.ps
-share/doc/SlingShot/appC.ps
-share/doc/SlingShot/appD.ps
-share/doc/SlingShot/appE.ps
-share/doc/SlingShot/ch1.ps
-share/doc/SlingShot/ch2.ps
-share/doc/SlingShot/ch3.ps
-@dirrm share/doc/SlingShot
+%%PORTDOCS%%share/doc/SlingShot/README
+%%PORTDOCS%%share/doc/SlingShot/appA.ps
+%%PORTDOCS%%share/doc/SlingShot/appB.ps
+%%PORTDOCS%%share/doc/SlingShot/appC.ps
+%%PORTDOCS%%share/doc/SlingShot/appD.ps
+%%PORTDOCS%%share/doc/SlingShot/appE.ps
+%%PORTDOCS%%share/doc/SlingShot/ch1.ps
+%%PORTDOCS%%share/doc/SlingShot/ch2.ps
+%%PORTDOCS%%share/doc/SlingShot/ch3.ps
+%%PORTDOCS%%@dirrm share/doc/SlingShot
 @dirrm include/sspkg

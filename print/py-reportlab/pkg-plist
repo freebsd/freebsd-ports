@@ -139,9 +139,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/xpreformatted.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/rl_config.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/rl_config.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/rl_config.pyo
-share/doc/reportlab/graphguide.pdf
-share/doc/reportlab/reference.pdf
-share/doc/reportlab/userguide.pdf
+%%PORTDOCS%%share/doc/reportlab/graphguide.pdf
+%%PORTDOCS%%share/doc/reportlab/reference.pdf
+%%PORTDOCS%%share/doc/reportlab/userguide.pdf
 share/examples/reportlab/colors/colortest.py
 share/examples/reportlab/gadflypaper/00readme.txt
 share/examples/reportlab/gadflypaper/gfe.py
@@ -182,7 +182,7 @@ share/examples/reportlab/tests/testdemos.py
 @dirrm share/examples/reportlab/gadflypaper
 @dirrm share/examples/reportlab/colors
 @dirrm share/examples/reportlab
-@dirrm share/doc/reportlab
+%%PORTDOCS%%@dirrm share/doc/reportlab
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase

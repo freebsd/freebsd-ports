@@ -30,9 +30,9 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${file}.s3m ${PREFIX}/share/bb
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/bb
+	@${MKDIR} ${DOCSDIR}
 .for file in ANNOUNCE COPYING README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/bb
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

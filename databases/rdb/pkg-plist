@@ -20,7 +20,7 @@ bin/summ
 bin/tbl2lst
 bin/uniqtbl
 bin/valid
-share/doc/rdb/RDB.pln.noM.gz
-share/doc/rdb/RDB.ps.gz
-share/doc/rdb/rdbi.doc
-@dirrm share/doc/rdb
+%%PORTDOCS%%share/doc/rdb/RDB.pln.noM.gz
+%%PORTDOCS%%share/doc/rdb/RDB.ps.gz
+%%PORTDOCS%%share/doc/rdb/rdbi.doc
+%%PORTDOCS%%@dirrm share/doc/rdb

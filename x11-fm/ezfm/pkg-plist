@@ -1,5 +1,5 @@
 bin/ezfm
-share/doc/ezfm/COPYING
+%%PORTDOCS%%share/doc/ezfm/COPYING
 share/ezfm/ezfmExtension
 share/ezfm/ezfmMagic
 share/ezfm/ezfmrc
@@ -336,6 +336,6 @@ share/ezfm/ezfmIcons/zipU.xpm
 share/ezfm/ezfmIcons/zip_s.xpm
 share/ezfm/ezfmIcons/zipdisk.xpm
 share/ezfm/ezfmIcons/zsh_script.xpm
-@dirrm share/doc/ezfm
+%%PORTDOCS%%@dirrm share/doc/ezfm
 @dirrm share/ezfm/ezfmIcons
 @dirrm share/ezfm

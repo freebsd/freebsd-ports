@@ -1,7 +1,7 @@
 bin/xtron
 lib/X11/app-defaults/Tron
-share/doc/xtron/CHANGES
-share/doc/xtron/README
+%%PORTDOCS%%share/doc/xtron/CHANGES
+%%PORTDOCS%%share/doc/xtron/README
 share/xtron/Xtron_icon.xpm
 share/xtron/again.xpm
 share/xtron/againr.xpm
@@ -20,4 +20,4 @@ share/xtron/quitr.xpm
 share/xtron/score.xpm
 share/xtron/scorer.xpm
 @dirrm share/xtron
-@dirrm share/doc/xtron
+%%PORTDOCS%%@dirrm share/doc/xtron

@@ -1,10 +1,10 @@
 bin/xkoules
-share/doc/xkoules/ANNOUNCE
-share/doc/xkoules/BUGS
-share/doc/xkoules/Card
-share/doc/xkoules/ChangeLog
-share/doc/xkoules/Koules.FAQ
-share/doc/xkoules/TODO
+%%PORTDOCS%%share/doc/xkoules/ANNOUNCE
+%%PORTDOCS%%share/doc/xkoules/BUGS
+%%PORTDOCS%%share/doc/xkoules/Card
+%%PORTDOCS%%share/doc/xkoules/ChangeLog
+%%PORTDOCS%%share/doc/xkoules/Koules.FAQ
+%%PORTDOCS%%share/doc/xkoules/TODO
 %%SNDSRV:%%libexec/koules.sndsrv.freebsd
 %%SNDSRV:%%share/xkoules/colize.raw
 %%SNDSRV:%%share/xkoules/creator1.raw
@@ -14,4 +14,4 @@ share/doc/xkoules/TODO
 %%SNDSRV:%%share/xkoules/end.raw
 %%SNDSRV:%%share/xkoules/start.raw
 %%SNDSRV:%%@dirrm share/xkoules
-@dirrm share/doc/xkoules
+%%PORTDOCS%%@dirrm share/doc/xkoules

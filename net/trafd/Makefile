@@ -26,8 +26,8 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/trafd
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/trafd/README
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	${MKDIR} ${PREFIX}/var/trafd
 	${MKDIR} ${PREFIX}/var/log

@@ -1,10 +1,10 @@
 bin/xenmenu
-share/doc/xenmenu/BUGS
-share/doc/xenmenu/CHANGELOG
-share/doc/xenmenu/COPYRIGHT
-share/doc/xenmenu/README
-share/doc/xenmenu/README.html
-share/doc/xenmenu/TODO
+%%PORTDOCS%%share/doc/xenmenu/BUGS
+%%PORTDOCS%%share/doc/xenmenu/CHANGELOG
+%%PORTDOCS%%share/doc/xenmenu/COPYRIGHT
+%%PORTDOCS%%share/doc/xenmenu/README
+%%PORTDOCS%%share/doc/xenmenu/README.html
+%%PORTDOCS%%share/doc/xenmenu/TODO
 share/examples/xenmenu/bin/Makefile
 share/examples/xenmenu/bin/README
 share/examples/xenmenu/bin/bbs
@@ -66,7 +66,7 @@ share/examples/xenmenu/text/shell_help.txt
 @exec mkdir %D/share/xenmenu/bin
 @exec mkdir %D/share/xenmenu/menus
 @exec mkdir %D/share/xenmenu/text
-@dirrm share/doc/xenmenu
+%%PORTDOCS%%@dirrm share/doc/xenmenu
 @dirrm share/examples/xenmenu/bin
 @dirrm share/examples/xenmenu/menus/bbs_menus
 @dirrm share/examples/xenmenu/menus/games_menus

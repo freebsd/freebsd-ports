@@ -31,9 +31,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/vpnd.conf ${PREFIX}/etc/vpnd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/vpnd.chat ${PREFIX}/etc/vpnd.chat.sample
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 ${PREFIX}/share/doc/vpnd
+	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/vpnd
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 

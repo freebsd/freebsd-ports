@@ -1,4 +1,4 @@
 bin/micq
-share/doc/micq/CHANGELOG
-share/doc/micq/README
-@dirrm share/doc/micq
+%%PORTDOCS%%share/doc/micq/CHANGELOG
+%%PORTDOCS%%share/doc/micq/README
+%%PORTDOCS%%@dirrm share/doc/micq

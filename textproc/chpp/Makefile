@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 EXAMPLES_DIR=	${PREFIX}/share/examples/chpp
-DOCS_DIR=	${PREFIX}/share/doc/chpp
 
 post-install:
 	@${MKDIR} ${EXAMPLES_DIR}
@@ -25,9 +24,9 @@ post-install:
 	@find ${EXAMPLES_DIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@find ${EXAMPLES_DIR} -type f | xargs ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCS_DIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCS_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

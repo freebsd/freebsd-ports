@@ -14,20 +14,20 @@ share/THE/the.man
 share/THE/total.the
 share/THE/uncomm.the
 share/THE/words.the
-share/doc/THE/app1.html
-share/doc/THE/app2.html
-share/doc/THE/app3.html
-share/doc/THE/app4.html
-share/doc/THE/app5.html
-share/doc/THE/app6.html
-share/doc/THE/comm.html
-share/doc/THE/commset.html
-share/doc/THE/commsos.html
-share/doc/THE/glossary.html           
-share/doc/THE/history.html           
-share/doc/THE/index.html           
-share/doc/THE/overview.html           
-share/doc/THE/query.html           
-share/doc/THE/quickref.html           
-@dirrm share/doc/THE
+%%PORTDOCS%%share/doc/THE/app1.html
+%%PORTDOCS%%share/doc/THE/app2.html
+%%PORTDOCS%%share/doc/THE/app3.html
+%%PORTDOCS%%share/doc/THE/app4.html
+%%PORTDOCS%%share/doc/THE/app5.html
+%%PORTDOCS%%share/doc/THE/app6.html
+%%PORTDOCS%%share/doc/THE/comm.html
+%%PORTDOCS%%share/doc/THE/commset.html
+%%PORTDOCS%%share/doc/THE/commsos.html
+%%PORTDOCS%%share/doc/THE/glossary.html           
+%%PORTDOCS%%share/doc/THE/history.html           
+%%PORTDOCS%%share/doc/THE/index.html           
+%%PORTDOCS%%share/doc/THE/overview.html           
+%%PORTDOCS%%share/doc/THE/query.html           
+%%PORTDOCS%%share/doc/THE/quickref.html           
+%%PORTDOCS%%@dirrm share/doc/THE
 @dirrm share/THE

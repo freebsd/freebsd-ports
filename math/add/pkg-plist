@@ -1,7 +1,7 @@
 bin/add
 share/add/add.hlp
-share/doc/add/CHANGES
-share/doc/add/COPYING
-share/doc/add/README
+%%PORTDOCS%%share/doc/add/CHANGES
+%%PORTDOCS%%share/doc/add/COPYING
+%%PORTDOCS%%share/doc/add/README
 @dirrm share/add
-@dirrm share/doc/add
+%%PORTDOCS%%@dirrm share/doc/add

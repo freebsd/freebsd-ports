@@ -79,30 +79,30 @@ lib/librle.so.1
 @comment if compressed RLE.5 doesn't work.
 man/man5/RLE.5
 man/man5/rle.5
-share/doc/urt/README
-share/doc/urt/pics/README
-share/doc/urt/pics/bullet_holes_and_shot_turb.ps.Z
-share/doc/urt/pics/center_masks_and_fin_turb.ps.Z
-share/doc/urt/pics/dart_and_strtch.ps.Z
-share/doc/urt/pics/dart_shadow_and_monkey.ps.Z
-share/doc/urt/pics/pahriah_final.ps.Z
-share/doc/urt/pics/scanned_and_cropped.ps.Z
-share/doc/urt/rle.doc
-share/doc/urt/rle.mss
-share/doc/urt/rle.ps
-share/doc/urt/rle_head.ps
-share/doc/urt/rleops.ps
-share/doc/urt/toolkit.bib
-share/doc/urt/toolkit.doc
-share/doc/urt/toolkit.mss
-share/doc/urt/toolkit.ps
-share/examples/urt/img/README
-share/examples/urt/img/christmas_ball.rle
-share/examples/urt/img/dart.rle
-share/examples/urt/img/lenna.rle
-share/examples/urt/img/mandrill.rle
-share/examples/urt/img/tack_w_shadow.rle
-@dirrm share/doc/urt/pics
-@dirrm share/doc/urt
-@dirrm share/examples/urt/img
-@dirrm share/examples/urt
+%%PORTDOCS%%share/doc/urt/README
+%%PORTDOCS%%share/doc/urt/pics/README
+%%PORTDOCS%%share/doc/urt/pics/bullet_holes_and_shot_turb.ps.Z
+%%PORTDOCS%%share/doc/urt/pics/center_masks_and_fin_turb.ps.Z
+%%PORTDOCS%%share/doc/urt/pics/dart_and_strtch.ps.Z
+%%PORTDOCS%%share/doc/urt/pics/dart_shadow_and_monkey.ps.Z
+%%PORTDOCS%%share/doc/urt/pics/pahriah_final.ps.Z
+%%PORTDOCS%%share/doc/urt/pics/scanned_and_cropped.ps.Z
+%%PORTDOCS%%share/doc/urt/rle.doc
+%%PORTDOCS%%share/doc/urt/rle.mss
+%%PORTDOCS%%share/doc/urt/rle.ps
+%%PORTDOCS%%share/doc/urt/rle_head.ps
+%%PORTDOCS%%share/doc/urt/rleops.ps
+%%PORTDOCS%%share/doc/urt/toolkit.bib
+%%PORTDOCS%%share/doc/urt/toolkit.doc
+%%PORTDOCS%%share/doc/urt/toolkit.mss
+%%PORTDOCS%%share/doc/urt/toolkit.ps
+%%PORTDOCS%%share/examples/urt/img/README
+%%PORTDOCS%%share/examples/urt/img/christmas_ball.rle
+%%PORTDOCS%%share/examples/urt/img/dart.rle
+%%PORTDOCS%%share/examples/urt/img/lenna.rle
+%%PORTDOCS%%share/examples/urt/img/mandrill.rle
+%%PORTDOCS%%share/examples/urt/img/tack_w_shadow.rle
+%%PORTDOCS%%@dirrm share/doc/urt/pics
+%%PORTDOCS%%@dirrm share/doc/urt
+%%PORTDOCS%%@dirrm share/examples/urt/img
+%%PORTDOCS%%@dirrm share/examples/urt

@@ -1,9 +1,9 @@
 etc/boa.conf.sample
 sbin/boa
-share/doc/boa/boa.sgml
-share/doc/boa/boa_banner.png
+%%PORTDOCS%%share/doc/boa/boa.sgml
+%%PORTDOCS%%share/doc/boa/boa_banner.png
 share/examples/boa/cgi-test.cgi
 share/examples/boa/nph-test.cgi
 share/examples/boa/resolver.pl
 @dirrm share/examples/boa
-@dirrm share/doc/boa
+%%PORTDOCS%%@dirrm share/doc/boa

@@ -1,17 +1,17 @@
 libexec/smtpfeed
-share/doc/smtpfeed/COPYRIGHT
-share/doc/smtpfeed/FEATURES
-share/doc/smtpfeed/FEATURES.j
-share/doc/smtpfeed/FYI
-share/doc/smtpfeed/FYI.j
-share/doc/smtpfeed/INSTALL
-share/doc/smtpfeed/INSTALL.j
-share/doc/smtpfeed/OPTIONS
-share/doc/smtpfeed/OPTIONS.j
-share/doc/smtpfeed/README
-share/doc/smtpfeed/README.j
-share/doc/smtpfeed/RELEASE.NOTE
-share/doc/smtpfeed/SIGNAL
-share/doc/smtpfeed/SIGNAL.j
-share/doc/smtpfeed/TODO
-@dirrm share/doc/smtpfeed
+%%PORTDOCS%%share/doc/smtpfeed/COPYRIGHT
+%%PORTDOCS%%share/doc/smtpfeed/FEATURES
+%%PORTDOCS%%share/doc/smtpfeed/FEATURES.j
+%%PORTDOCS%%share/doc/smtpfeed/FYI
+%%PORTDOCS%%share/doc/smtpfeed/FYI.j
+%%PORTDOCS%%share/doc/smtpfeed/INSTALL
+%%PORTDOCS%%share/doc/smtpfeed/INSTALL.j
+%%PORTDOCS%%share/doc/smtpfeed/OPTIONS
+%%PORTDOCS%%share/doc/smtpfeed/OPTIONS.j
+%%PORTDOCS%%share/doc/smtpfeed/README
+%%PORTDOCS%%share/doc/smtpfeed/README.j
+%%PORTDOCS%%share/doc/smtpfeed/RELEASE.NOTE
+%%PORTDOCS%%share/doc/smtpfeed/SIGNAL
+%%PORTDOCS%%share/doc/smtpfeed/SIGNAL.j
+%%PORTDOCS%%share/doc/smtpfeed/TODO
+%%PORTDOCS%%@dirrm share/doc/smtpfeed

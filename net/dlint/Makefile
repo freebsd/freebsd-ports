@@ -25,8 +25,8 @@ do-install:
 	cd ${WRKSRC} ; ${INSTALL_SCRIPT} dlint digparse ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/dlint.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dlint
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dlint
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

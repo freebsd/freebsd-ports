@@ -64,7 +64,7 @@ do-install:
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/thttpd
-	@${INSTALL_MAN} ${DISTDIR}/notes.html ${PREFIX}/share/doc/thttpd
+	@${INSTALL_DATA} ${DISTDIR}/notes.html ${PREFIX}/share/doc/thttpd
 .endif
 
 post-install:

@@ -22,8 +22,8 @@ include/xg/XgUtils.h
 include/xg/x_rotate.h
 include/xg/xgpm.h
 lib/libxg.a
-share/doc/xg/LICENSE
-share/doc/xg/README
+%%PORTDOCS%%share/doc/xg/LICENSE
+%%PORTDOCS%%share/doc/xg/README
 share/examples/xg/CancelPB.xpm
 share/examples/xg/HandSign.xpm
 share/examples/xg/HelpPB.xpm
@@ -41,5 +41,5 @@ share/examples/xg/testtabs.c
 share/examples/xg/testtb.c
 share/examples/xg/testte.c
 @dirrm include/xg
-@dirrm share/doc/xg
+%%PORTDOCS%%@dirrm share/doc/xg
 @dirrm share/examples/xg

@@ -35,8 +35,8 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/ezfm
-	@ ${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/ezfm
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

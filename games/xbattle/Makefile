@@ -28,11 +28,9 @@ post-install:
 	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbts
 	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbts/*
 .if !defined(NOPORTDOCS)
-	$(MKDIR) $(PREFIX)/share/doc/xbattle
-	$(CP) $(WRKSRC)/tutorial* $(PREFIX)/share/doc/xbattle/ 
-	$(CP) $(WRKSRC)/README $(PREFIX)/share/doc/xbattle/ 
-	@${CHMOD} 755 $(PREFIX)/share/doc/xbattle
-	@${CHMOD} 644 $(PREFIX)/share/doc/xbattle/*
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/tutorial* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 bin/hex
-share/doc/hex/HISTORY
-share/doc/hex/README
-share/doc/hex/TODO
+%%PORTDOCS%%share/doc/hex/HISTORY
+%%PORTDOCS%%share/doc/hex/README
+%%PORTDOCS%%share/doc/hex/TODO
 share/hex/graphics/ball0.png
 share/hex/graphics/ball1.png
 share/hex/graphics/ball2.png
@@ -15,4 +15,4 @@ share/hex/levels/Level1
 @dirrm share/hex/levels
 @dirrm share/hex/graphics
 @dirrm share/hex
-@dirrm share/doc/hex
+%%PORTDOCS%%@dirrm share/doc/hex

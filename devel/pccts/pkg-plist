@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/antlr
 bin/dlg
 bin/genmk
@@ -44,14 +43,14 @@ include/pccts/pccts_stdlib.h
 include/pccts/pccts_string.h
 include/pccts/pcctscfg.h
 include/pccts/slist.cpp
-share/doc/pccts/CHANGES_FROM_131.txt
-share/doc/pccts/CHANGES_FROM_133.txt
-share/doc/pccts/CHANGES_FROM_133_BEFORE_MR13.txt
-share/doc/pccts/KNOWN_PROBLEMS.txt
-share/doc/pccts/README
-share/doc/pccts/RIGHTS
-share/doc/pccts/history.txt
-share/doc/pccts/history.ps
+%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_131.txt
+%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_133.txt
+%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_133_BEFORE_MR13.txt
+%%PORTDOCS%%share/doc/pccts/KNOWN_PROBLEMS.txt
+%%PORTDOCS%%share/doc/pccts/README
+%%PORTDOCS%%share/doc/pccts/RIGHTS
+%%PORTDOCS%%share/doc/pccts/history.txt
+%%PORTDOCS%%share/doc/pccts/history.ps
 share/examples/pccts/makefile
 share/examples/pccts/1/makefile
 share/examples/pccts/1/test.g
@@ -94,7 +93,7 @@ share/examples/pccts/12/test.g
 share/examples/pccts/13/makefile
 share/examples/pccts/13/test.g
 @dirrm include/pccts
-@dirrm share/doc/pccts
+%%PORTDOCS%%@dirrm share/doc/pccts
 @dirrm share/examples/pccts/1
 @dirrm share/examples/pccts/2
 @dirrm share/examples/pccts/3

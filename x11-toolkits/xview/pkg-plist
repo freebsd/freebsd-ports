@@ -543,12 +543,12 @@ lib/X11/config/XView.obj
 lib/X11/config/XView.rules
 lib/X11/config/XView.tmpl
 lib/X11/config/XView.prog
-share/doc/xview/bugform
-share/doc/xview/dnd_api.txt
-share/doc/xview/olgx_api.txt
-share/doc/xview/olgx_api.ps
-share/doc/xview/paper.ms
-share/doc/xview/sel_api.txt
-share/doc/xview/whats_new.ps
-share/doc/xview/xview-info
-@dirrm share/doc/xview
+%%PORTDOCS%%share/doc/xview/bugform
+%%PORTDOCS%%share/doc/xview/dnd_api.txt
+%%PORTDOCS%%share/doc/xview/olgx_api.txt
+%%PORTDOCS%%share/doc/xview/olgx_api.ps
+%%PORTDOCS%%share/doc/xview/paper.ms
+%%PORTDOCS%%share/doc/xview/sel_api.txt
+%%PORTDOCS%%share/doc/xview/whats_new.ps
+%%PORTDOCS%%share/doc/xview/xview-info
+%%PORTDOCS%%@dirrm share/doc/xview

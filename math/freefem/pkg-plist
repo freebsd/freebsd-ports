@@ -1,7 +1,7 @@
 bin/freefem
-share/doc/freefem/ChangeLog
-share/doc/freefem/NEWS
-share/doc/freefem/README
+%%PORTDOCS%%share/doc/freefem/ChangeLog
+%%PORTDOCS%%share/doc/freefem/NEWS
+%%PORTDOCS%%share/doc/freefem/README
 share/examples/freefem/accous.pde
 share/examples/freefem/adj.pde
 share/examples/freefem/brachet.pde
@@ -28,4 +28,4 @@ share/examples/freefem/validcplx.pde
 share/examples/freefem/validsys.pde
 share/examples/freefem/varvect.pde
 @dirrm share/examples/freefem
-@dirrm share/doc/freefem
+%%PORTDOCS%%@dirrm share/doc/freefem

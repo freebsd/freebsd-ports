@@ -1,4 +1,4 @@
 bin/mpeg_encode
-share/doc/mpeg_encode/users-guide.ps
-share/doc/mpeg_encode/template.param
-@dirrm share/doc/mpeg_encode
+%%PORTDOCS%%share/doc/mpeg_encode/users-guide.ps
+%%PORTDOCS%%share/doc/mpeg_encode/template.param
+%%PORTDOCS%%@dirrm share/doc/mpeg_encode

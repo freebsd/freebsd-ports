@@ -1,5 +1,5 @@
 lib/libU77.a
 lib/libU77.so
 lib/libU77.so.1
-share/doc/libU77/manual.ps
-@dirrm share/doc/libU77
+%%PORTDOCS%%share/doc/libU77/manual.ps
+%%PORTDOCS%%@dirrm share/doc/libU77

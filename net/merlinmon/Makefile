@@ -20,8 +20,8 @@ NO_WRKSUBDIR=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/merlin ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.merlin
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -47,10 +47,10 @@ include/flick/pres/tao_stubs.scml
 include/flick/pres/tao_union.scml
 lib/libflick-iiop.a
 lib/libflick-suntcp.a
-share/doc/flick/guts.ps
-share/doc/flick/user.ps
-@dirrm include/flick/encode
-@dirrm include/flick/link
+%%PORTDOCS%%share/doc/flick/guts.ps
+%%PORTDOCS%%share/doc/flick/user.ps
+%%PORTDOCS%%@dirrm share/doc/flick
 @dirrm include/flick/pres
+@dirrm include/flick/link
+@dirrm include/flick/encode
 @dirrm include/flick
-@dirrm share/doc/flick

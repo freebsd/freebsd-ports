@@ -255,8 +255,8 @@ man/mann/tkwait.n.gz
 man/mann/toplevel.n.gz
 man/mann/winfo.n.gz
 man/mann/wm.n.gz
-share/doc/tkstep/README.TkStep
-@dirrm share/doc/tkstep
+%%PORTDOCS%%share/doc/tkstep/README.TkStep
+%%PORTDOCS%%@dirrm share/doc/tkstep
 @dirrm lib/tkstep8.0/demos/images
 @dirrm lib/tkstep8.0/demos
 @dirrm lib/tkstep8.0/images

@@ -34,15 +34,15 @@ lib/rwhois/rwhoisd.dir
 lib/rwhois/rwhoisd.root
 lib/rwhois/rwhoisd.x.dir
 lib/rwhois/sbin/rwhoisd
-share/doc/rwhois/INSTALL.html
-share/doc/rwhois/TODO
-share/doc/rwhois/UPGRADE
-share/doc/rwhois/operations_guide.html
-share/doc/rwhois/operations_guide.txt
-share/doc/rwhois/rfc2167.txt
-share/doc/rwhois/security.html
-share/doc/rwhois/security.txt
-@dirrm share/doc/rwhois
+%%PORTDOCS%%share/doc/rwhois/INSTALL.html
+%%PORTDOCS%%share/doc/rwhois/TODO
+%%PORTDOCS%%share/doc/rwhois/UPGRADE
+%%PORTDOCS%%share/doc/rwhois/operations_guide.html
+%%PORTDOCS%%share/doc/rwhois/operations_guide.txt
+%%PORTDOCS%%share/doc/rwhois/rfc2167.txt
+%%PORTDOCS%%share/doc/rwhois/security.html
+%%PORTDOCS%%share/doc/rwhois/security.txt
+%%PORTDOCS%%@dirrm share/doc/rwhois
 @dirrm lib/rwhois/sbin
 @dirrm lib/rwhois/net-10.0.0.0-8/data/referral
 @dirrm lib/rwhois/net-10.0.0.0-8/data/network

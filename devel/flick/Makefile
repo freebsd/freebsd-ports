@@ -19,9 +19,9 @@ MAKEFILE=	GNUmakefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/flick
-	${INSTALL_DATA}	${WRKSRC}/doc/guts/*.ps ${PREFIX}/share/doc/flick
-	${INSTALL_DATA}	${WRKSRC}/doc/usersguide/*.ps ${PREFIX}/share/doc/flick
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/guts/*.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/usersguide/*.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -29,9 +29,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/csh ${PREFIX}/bin/44bsd-csh
 	${INSTALL_MAN} ${WRKSRC}/csh.1 ${PREFIX}/man/man1/44bsd-csh.1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/44bsd-csh
-	${INSTALL_MAN} ${WRKSRC}/USD.doc/paper.ascii.gz  \
-		${PREFIX}/share/doc/44bsd-csh
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/USD.doc/paper.ascii.gz ${DOCSDIR}
 .endif
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak

@@ -56,13 +56,21 @@ pre-configure:
 post-install:
 	cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS}
 	cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin
-	${MKDIR} ${PREFIX}/share/doc/fwtk
-	${INSTALL_MAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/fwtk
-	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
-	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5
-	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
+.for man in ${MAN3}
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${PREFIX}/man/man3
+.endfor
+.for man in ${MAN5}
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${PREFIX}/man/man5
+.endfor
+.for man in ${MAN8}
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${PREFIX}/man/man8
+.endfor
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc ; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/fwtk
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+.for files in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${files} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>

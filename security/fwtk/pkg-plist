@@ -1,8 +1,4 @@
-@comment $FreeBSD$
-sbin/authdump
-sbin/authload
-sbin/authmgr
-sbin/mqueue
+etc/netperm-table
 libexec/authsrv
 libexec/ftp-gw
 libexec/http-gw
@@ -13,11 +9,15 @@ libexec/smap
 libexec/smapd
 libexec/tn-gw
 libexec/x-gw
-etc/netperm-table
-share/doc/fwtk/LICENSE
-share/doc/fwtk/admin_guide.ps
-share/doc/fwtk/manpages.ps
-share/doc/fwtk/overview.ps
-share/doc/fwtk/presentation.ps
-share/doc/fwtk/sample-report.txt
-share/doc/fwtk/user_guide.ps
+sbin/authdump
+sbin/authload
+sbin/authmgr
+sbin/mqueue
+%%PORTDOCS%%share/doc/fwtk/LICENSE
+%%PORTDOCS%%share/doc/fwtk/admin_guide.ps
+%%PORTDOCS%%share/doc/fwtk/manpages.ps
+%%PORTDOCS%%share/doc/fwtk/overview.ps
+%%PORTDOCS%%share/doc/fwtk/presentation.ps
+%%PORTDOCS%%share/doc/fwtk/sample-report.txt
+%%PORTDOCS%%share/doc/fwtk/user_guide.ps
+%%PORTDOCS%%@dirrm share/doc/fwtk

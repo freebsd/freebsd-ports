@@ -1,11 +1,11 @@
 bin/intel2gas
-share/doc/intel2gas/BUGS
-share/doc/intel2gas/CHANGES
-share/doc/intel2gas/DATAFILES
-share/doc/intel2gas/DATAFILES.html
-share/doc/intel2gas/README
-share/doc/intel2gas/README.html
-share/doc/intel2gas/TODO
+%%PORTDOCS%%share/doc/intel2gas/BUGS
+%%PORTDOCS%%share/doc/intel2gas/CHANGES
+%%PORTDOCS%%share/doc/intel2gas/DATAFILES
+%%PORTDOCS%%share/doc/intel2gas/DATAFILES.html
+%%PORTDOCS%%share/doc/intel2gas/README
+%%PORTDOCS%%share/doc/intel2gas/README.html
+%%PORTDOCS%%share/doc/intel2gas/TODO
 share/intel2gas/g2i/+-.01.list
 share/intel2gas/g2i/+-.02.list
 share/intel2gas/g2i/addr.syntax
@@ -59,7 +59,7 @@ share/intel2gas/i2g/size.01.list
 share/intel2gas/i2g/size.02.list
 share/intel2gas/i2g/size.04.list
 share/intel2gas/i2g/size.08.list
-@dirrm share/doc/intel2gas
+%%PORTDOCS%%@dirrm share/doc/intel2gas
 @dirrm share/intel2gas/g2i
 @dirrm share/intel2gas/i2g
 @dirrm share/intel2gas

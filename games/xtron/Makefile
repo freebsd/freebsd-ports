@@ -26,9 +26,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/xtron
 	${INSTALL_DATA} ${WRKSRC}/xtronrc ${PREFIX}/lib/X11/app-defaults/Tron
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xtron
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/xtron
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xtron
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -8,12 +8,12 @@ share/omega/omega.log
 @mode 600
 share/omega/omegahi.bak
 @mode
-share/doc/omega/buglist.txt
-share/doc/omega/compile.all
-share/doc/omega/omega.txt
-share/doc/omega/readme.1st
-share/doc/omega/readme3
-share/doc/omega/readme4
+%%PORTDOCS%%share/doc/omega/buglist.txt
+%%PORTDOCS%%share/doc/omega/compile.all
+%%PORTDOCS%%share/doc/omega/omega.txt
+%%PORTDOCS%%share/doc/omega/readme.1st
+%%PORTDOCS%%share/doc/omega/readme3
+%%PORTDOCS%%share/doc/omega/readme4
 share/omega/abyss.dat
 share/omega/abyss.txt
 share/omega/arena.dat
@@ -61,5 +61,5 @@ share/omega/village3.dat
 share/omega/village4.dat
 share/omega/village5.dat
 share/omega/village6.dat
-@dirrm share/doc/omega
+%%PORTDOCS%%@dirrm share/doc/omega
 @dirrm share/omega

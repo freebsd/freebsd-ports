@@ -18,16 +18,16 @@ sbin/zephyrd
 sbin/zhm
 sbin/zpopnotify
 sbin/zshutdown_notify
-share/doc/zephyr/INSTALL
-share/doc/zephyr/NOTES
-share/doc/zephyr/OPERATING
-share/doc/zephyr/README
-share/doc/zephyr/USING
+%%PORTDOCS%%share/doc/zephyr/INSTALL
+%%PORTDOCS%%share/doc/zephyr/NOTES
+%%PORTDOCS%%share/doc/zephyr/OPERATING
+%%PORTDOCS%%share/doc/zephyr/README
+%%PORTDOCS%%share/doc/zephyr/USING
 share/zephyr/XZwrite
 share/zephyr/xzwrite.bitmap
 share/zephyr/zwgc.desc
 share/zephyr/zwgc_resources
 @dirrm etc/zephyr
 @dirrm include/zephyr
-@dirrm share/doc/zephyr
+%%PORTDOCS%%@dirrm share/doc/zephyr
 @dirrm share/zephyr

@@ -13,7 +13,6 @@ DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-
 MAN1=		mpeg_encode.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -22,9 +21,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg_encode ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/mpeg_encode.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
 .for i in users-guide.ps template.param
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
 

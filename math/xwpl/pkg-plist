@@ -24,7 +24,7 @@ share/examples/xwpl/transien.asc
 share/examples/xwpl/twochrp1.asc
 share/examples/xwpl/twochrp2.asc
 share/examples/xwpl/zero.asc
-share/doc/xwpl/manual.ps
-share/doc/xwpl/README
+%%PORTDOCS%%share/doc/xwpl/manual.ps
+%%PORTDOCS%%share/doc/xwpl/README
 @dirrm share/examples/xwpl
-@dirrm share/doc/xwpl
+%%PORTDOCS%%@dirrm share/doc/xwpl

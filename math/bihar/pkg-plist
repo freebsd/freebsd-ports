@@ -1,5 +1,5 @@
 lib/libbihar.a
 lib/libbihar.so
 lib/libbihar.so.1
-share/doc/fftpack/fft.doc.gz
-@dirrm share/doc/fftpack
+%%PORTDOCS%%share/doc/fftpack/fft.doc.gz
+%%PORTDOCS%%@dirrm share/doc/fftpack

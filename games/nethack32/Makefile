@@ -32,8 +32,8 @@ post-install:
 	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nethack
-	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

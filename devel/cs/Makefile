@@ -21,8 +21,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cs.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cs
-	${INSTALL_DATA} ${WRKSRC}/ANNOUNCE ${PREFIX}/share/doc/cs
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ANNOUNCE ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 bin/garith
-share/doc/garith/BUGS
-share/doc/garith/COPYING
-share/doc/garith/HISTORY
-share/doc/garith/README
-share/doc/garith/TODO
-@dirrm share/doc/garith
+%%PORTDOCS%%share/doc/garith/BUGS
+%%PORTDOCS%%share/doc/garith/COPYING
+%%PORTDOCS%%share/doc/garith/HISTORY
+%%PORTDOCS%%share/doc/garith/README
+%%PORTDOCS%%share/doc/garith/TODO
+%%PORTDOCS%%@dirrm share/doc/garith
