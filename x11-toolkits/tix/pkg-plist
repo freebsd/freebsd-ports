@@ -16,8 +16,8 @@ include/tix/generic/tixPort.h
 include/tix/generic/tixTList.h
 include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
-lib/libtix4180.so.1.0
-lib/libtixsam4180.so.1.0
+lib/libtix4180.so.1.1
+lib/libtixsam4180.so.1.1
 @exec /sbin/ldconfig -m %B
 man/mann/BtnBox.n.gz
 man/mann/Balloon.n.gz
