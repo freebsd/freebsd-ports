@@ -1202,6 +1202,7 @@ dbview		ports/databases/dbview
 dc20ctrl	ports/graphics/dc20ctrl
 dc20pack	ports/graphics/dc20pack
 dc3play		ports/graphics/dc3play
+dc42wrap	ports/sysutils/dc42wrap
 dcc		ports/irc/dcc
 dcc-dccd	ports/mail/dcc-dccd
 dcdflib		ports/math/dcdflib
