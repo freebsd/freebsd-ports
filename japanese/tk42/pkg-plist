@@ -17,7 +17,7 @@ include/tk4.2jp/unix/tkUnixDefault.h
 include/tk4.2jp/unix/tkUnixInt.h
 include/tk4.2jp/unix/tkUnixPort.h
 lib/libtk42jp.a
-lib/libtk42jp.so.1.0
+lib/libtk42jp.so.1
 lib/libtk42jp.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
