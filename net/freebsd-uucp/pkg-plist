@@ -1,8 +1,6 @@
 @comment $FreeBSD$
-bin/cu
 bin/uucp
 bin/uulog
-bin/uuname
 bin/uupick
 bin/uusched
 bin/uustat
@@ -24,9 +22,14 @@ etc/uucp/sys2.sample
 info/uucp.info.gz
 @exec install-info %D/info/uucp.info %D/info/dir
 @unexec install-info --delete %D/info/uucp.info %D/info/dir
-libexec/uucp/uucico
-libexec/uucp/uuxqt
 libexec/uucpd
+@group dialer
+bin/cu
+bin/uuname
+libexec/uucp/uucico
+@group uucp
+libexec/uucp/uuxqt
+@group wheel
 sbin/uuchk
 sbin/uuconv
 @dirrm etc/uucp
