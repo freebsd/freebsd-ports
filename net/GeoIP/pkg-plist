@@ -18,5 +18,5 @@ lib/libGeoIPBitReader.so.0
 lib/libGeoIPUpdate.a
 lib/libGeoIPUpdate.so
 lib/libGeoIPUpdate.so.0
-share/GeoIP/GeoIP.dat
-@unexec rmdir %D/share/GeoIP 2>/dev/null || true
+%%DATADIR%%/GeoIP.dat
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
