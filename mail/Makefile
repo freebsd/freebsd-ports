@@ -210,6 +210,7 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += py-milter
+    SUBDIR += py-spambayes
     SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pyzor
