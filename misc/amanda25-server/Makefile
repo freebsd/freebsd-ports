@@ -48,6 +48,14 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
+	@${ECHO} "    AMANDA_PORTRANGE=low,high to restrict Amanda to TCP ports"
+	@${ECHO} "        between low and high when connecting from the server"
+	@${ECHO} "        to the client for data, messages, and indexing."
+	@${ECHO} "        The default is no restriction on TCP ports."
+	@${ECHO} "    AMANDA_UDPPORTRANGE=low,high to restrict Amanda to UDP ports"
+	@${ECHO} "        between low and high when connecting from the client"
+	@${ECHO} "        to the server. Use ports below 1024."
+	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
 USE_PERL5=	yes
@@ -116,6 +124,14 @@ CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
 CONFIGURE_ARGS+=	--with-group=operator
 .endif
 
+.if defined (AMANDA_UDPPORTRANGE)
+CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
+.endif
+
+.if defined (AMANDA_PORTRANGE)
+CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
+.endif
+
 #
 # Before 4.0, pre-CAM scsiio.h existed
 .if ${OSVERSION} < 400000
@@ -144,6 +160,14 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
+	@${ECHO} "    AMANDA_PORTRANGE=low,high to restrict Amanda to TCP ports"
+	@${ECHO} "        between low and high when connecting from the server"
+	@${ECHO} "        to the client for data, messages, and indexing."
+	@${ECHO} "        The default is no restriction on TCP ports."
+	@${ECHO} "    AMANDA_UDPPORTRANGE=low,high to restrict Amanda to UDP ports"
+	@${ECHO} "        between low and high when connecting from the client"
+	@${ECHO} "        to the server. Use ports below 1024."
+	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
@@ -190,6 +214,14 @@ CONFIGURE_ARGS+=	--with-user=operator
 CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
 .else
 CONFIGURE_ARGS+=	--with-group=operator
+.endif
+
+.if defined (AMANDA_UDPPORTRANGE)
+CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
+.endif
+
+.if defined (AMANDA_PORTRANGE)
+CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .endif
 
 .endif
