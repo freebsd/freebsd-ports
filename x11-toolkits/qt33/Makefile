@@ -19,13 +19,6 @@ MAINTAINER?=	kde@FreeBSD.org
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
-BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
-.endif
-
-.if ${OSVERSION} >= 500029
-NO_QT_OBJPRELINK=	yes
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
@@ -68,6 +61,13 @@ PLIST_SUB+=	SHARED="" STATIC="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+NO_QT_OBJPRELINK=	yes
+.endif
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
+BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
+.endif
 
 .if ${MACHINE_ARCH} == "alpha" && !defined(NO_ALPHA_UNOPTIMIZATION)
 CFLAGS+=	-O0
