@@ -1,0 +1,16 @@
+bin/gtv
+bin/plaympeg
+include/smpeg/MPEG.h
+include/smpeg/MPEGaction.h
+include/smpeg/MPEGaudio.h
+include/smpeg/MPEGerror.h
+include/smpeg/MPEGring.h
+include/smpeg/MPEGstream.h
+include/smpeg/MPEGvideo.h
+include/smpeg/smpeg.h
+lib/libsmpeg-0.3.so
+lib/libsmpeg-0.3.so.0
+lib/libsmpeg.a
+lib/libsmpeg.la
+lib/libsmpeg.so
+@dirrm include/smpeg

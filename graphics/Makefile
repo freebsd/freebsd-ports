@@ -130,6 +130,7 @@
     SUBDIR += sced
     SUBDIR += scwm-icons
     SUBDIR += sketch
+    SUBDIR += smpeg
     SUBDIR += sodipodi
     SUBDIR += spigot
     SUBDIR += splitmpg
