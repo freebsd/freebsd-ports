@@ -10,7 +10,7 @@ PORTVERSION=	0.95
 CATEGORIES=	cad
 MASTER_SITES=	http://www.varlog.com//products/admesh/files/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
 
 GNU_CONFIGURE=	yes
