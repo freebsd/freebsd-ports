@@ -18,9 +18,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-elf-shlibs
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/include -I${LOCALBASE}/include \
-			  -Derrcode_t=long" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-Derrcode_t=long"
 
 MAN1=	chattr.1 lsattr.1 uuidgen.1
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 fsck.8 \
