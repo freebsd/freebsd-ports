@@ -20,7 +20,9 @@ ALL_TARGET=	# none
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jconv ${PREFIX}/bin/jfconv
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/jfconv/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jfconv/
+.endif
 
 .include <bsd.port.mk>

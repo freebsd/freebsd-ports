@@ -25,64 +25,64 @@ include/ming/c++/ming.h
 lib/libming.a
 lib/libming.so
 lib/libming.so.2
-share/doc/ming/CHANGES
-share/doc/ming/CREDITS
-share/doc/ming/README
-share/doc/ming/TODO
-share/doc/ming/utils/README
-share/doc/ming/utils/TODO
-@dirrm share/doc/ming/utils
-@dirrm share/doc/ming
-share/examples/ming/c/action.c
-share/examples/ming/c/alphafill.c
-share/examples/ming/c/animation.c
-share/examples/ming/c/bitmapxform.c
-share/examples/ming/c/button.c
-share/examples/ming/c/cxform.c
-share/examples/ming/c/drag.c
-share/examples/ming/c/glyph.c
-share/examples/ming/c/gradient.c
-share/examples/ming/c/gradientxform.c
-share/examples/ming/c/jpegfill.c
-share/examples/ming/c/keypress.c
-share/examples/ming/c/morph.c
-share/examples/ming/c/mousetrack.c
-share/examples/ming/c/newbutton.c
-share/examples/ming/c/png.c
-share/examples/ming/c/pngalpha.c
-share/examples/ming/c/shape.c
-share/examples/ming/c/sprite.c
-share/examples/ming/c/streammp3.c
-share/examples/ming/c/text.c
-@dirrm share/examples/ming/c
-share/examples/ming/c++/action.cpp
-share/examples/ming/c++/alphafill.cpp
-share/examples/ming/c++/animation.cpp
-share/examples/ming/c++/bitmapxform.cpp
-share/examples/ming/c++/button.cpp
-share/examples/ming/c++/cxform.cpp
-share/examples/ming/c++/drag.cpp
-share/examples/ming/c++/glyph.cpp
-share/examples/ming/c++/gradient.cpp
-share/examples/ming/c++/gradientxform.cpp
-share/examples/ming/c++/jpegfill.cpp
-share/examples/ming/c++/keypress.cpp
-share/examples/ming/c++/morph.cpp
-share/examples/ming/c++/mousetrack.cpp
-share/examples/ming/c++/newbutton.cpp
-share/examples/ming/c++/png.cpp
-share/examples/ming/c++/pngalpha.cpp
-share/examples/ming/c++/shape.cpp
-share/examples/ming/c++/sprite.cpp
-share/examples/ming/c++/streammp3.cpp
-share/examples/ming/c++/text.cpp
-@dirrm share/examples/ming/c++
-share/examples/ming/common/alpha.dbl
-share/examples/ming/common/alphafill.jpg
-share/examples/ming/common/alphafill.msk
-share/examples/ming/common/backyard.jpg
-share/examples/ming/common/distortobass.mp3
-share/examples/ming/common/png.dbl
-share/examples/ming/common/test.fdb
-@dirrm share/examples/ming/common
-@dirrm share/examples/ming
+%%PORTDOCS%%share/doc/ming/CHANGES
+%%PORTDOCS%%share/doc/ming/CREDITS
+%%PORTDOCS%%share/doc/ming/README
+%%PORTDOCS%%share/doc/ming/TODO
+%%PORTDOCS%%share/doc/ming/utils/README
+%%PORTDOCS%%share/doc/ming/utils/TODO
+%%PORTDOCS%%@dirrm share/doc/ming/utils
+%%PORTDOCS%%@dirrm share/doc/ming
+%%PORTDOCS%%share/examples/ming/c/action.c
+%%PORTDOCS%%share/examples/ming/c/alphafill.c
+%%PORTDOCS%%share/examples/ming/c/animation.c
+%%PORTDOCS%%share/examples/ming/c/bitmapxform.c
+%%PORTDOCS%%share/examples/ming/c/button.c
+%%PORTDOCS%%share/examples/ming/c/cxform.c
+%%PORTDOCS%%share/examples/ming/c/drag.c
+%%PORTDOCS%%share/examples/ming/c/glyph.c
+%%PORTDOCS%%share/examples/ming/c/gradient.c
+%%PORTDOCS%%share/examples/ming/c/gradientxform.c
+%%PORTDOCS%%share/examples/ming/c/jpegfill.c
+%%PORTDOCS%%share/examples/ming/c/keypress.c
+%%PORTDOCS%%share/examples/ming/c/morph.c
+%%PORTDOCS%%share/examples/ming/c/mousetrack.c
+%%PORTDOCS%%share/examples/ming/c/newbutton.c
+%%PORTDOCS%%share/examples/ming/c/png.c
+%%PORTDOCS%%share/examples/ming/c/pngalpha.c
+%%PORTDOCS%%share/examples/ming/c/shape.c
+%%PORTDOCS%%share/examples/ming/c/sprite.c
+%%PORTDOCS%%share/examples/ming/c/streammp3.c
+%%PORTDOCS%%share/examples/ming/c/text.c
+%%PORTDOCS%%@dirrm share/examples/ming/c
+%%PORTDOCS%%share/examples/ming/c++/action.cpp
+%%PORTDOCS%%share/examples/ming/c++/alphafill.cpp
+%%PORTDOCS%%share/examples/ming/c++/animation.cpp
+%%PORTDOCS%%share/examples/ming/c++/bitmapxform.cpp
+%%PORTDOCS%%share/examples/ming/c++/button.cpp
+%%PORTDOCS%%share/examples/ming/c++/cxform.cpp
+%%PORTDOCS%%share/examples/ming/c++/drag.cpp
+%%PORTDOCS%%share/examples/ming/c++/glyph.cpp
+%%PORTDOCS%%share/examples/ming/c++/gradient.cpp
+%%PORTDOCS%%share/examples/ming/c++/gradientxform.cpp
+%%PORTDOCS%%share/examples/ming/c++/jpegfill.cpp
+%%PORTDOCS%%share/examples/ming/c++/keypress.cpp
+%%PORTDOCS%%share/examples/ming/c++/morph.cpp
+%%PORTDOCS%%share/examples/ming/c++/mousetrack.cpp
+%%PORTDOCS%%share/examples/ming/c++/newbutton.cpp
+%%PORTDOCS%%share/examples/ming/c++/png.cpp
+%%PORTDOCS%%share/examples/ming/c++/pngalpha.cpp
+%%PORTDOCS%%share/examples/ming/c++/shape.cpp
+%%PORTDOCS%%share/examples/ming/c++/sprite.cpp
+%%PORTDOCS%%share/examples/ming/c++/streammp3.cpp
+%%PORTDOCS%%share/examples/ming/c++/text.cpp
+%%PORTDOCS%%@dirrm share/examples/ming/c++
+%%PORTDOCS%%share/examples/ming/common/alpha.dbl
+%%PORTDOCS%%share/examples/ming/common/alphafill.jpg
+%%PORTDOCS%%share/examples/ming/common/alphafill.msk
+%%PORTDOCS%%share/examples/ming/common/backyard.jpg
+%%PORTDOCS%%share/examples/ming/common/distortobass.mp3
+%%PORTDOCS%%share/examples/ming/common/png.dbl
+%%PORTDOCS%%share/examples/ming/common/test.fdb
+%%PORTDOCS%%@dirrm share/examples/ming/common
+%%PORTDOCS%%@dirrm share/examples/ming

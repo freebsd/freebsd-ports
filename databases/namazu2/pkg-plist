@@ -36,18 +36,18 @@ share/locale/es/LC_MESSAGES/namazu.mo
 share/locale/fr/LC_MESSAGES/namazu.mo
 share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
-share/namazu/doc/en/manual.html
-share/namazu/doc/en/nmz.html
-share/namazu/doc/en/tips.html
-share/namazu/doc/en/tutorial.html
-@dirrm share/namazu/doc/en
-share/namazu/doc/ja/manual.html
-share/namazu/doc/ja/nmz.html
-share/namazu/doc/ja/tips.html
-share/namazu/doc/ja/tutorial.html
-@dirrm share/namazu/doc/ja
-share/namazu/doc/namazu.css
-@dirrm share/namazu/doc
+%%PORTDOCS%%share/namazu/doc/en/manual.html
+%%PORTDOCS%%share/namazu/doc/en/nmz.html
+%%PORTDOCS%%share/namazu/doc/en/tips.html
+%%PORTDOCS%%share/namazu/doc/en/tutorial.html
+%%PORTDOCS%%@dirrm share/namazu/doc/en
+%%PORTDOCS%%share/namazu/doc/ja/manual.html
+%%PORTDOCS%%share/namazu/doc/ja/nmz.html
+%%PORTDOCS%%share/namazu/doc/ja/tips.html
+%%PORTDOCS%%share/namazu/doc/ja/tutorial.html
+%%PORTDOCS%%@dirrm share/namazu/doc/ja
+%%PORTDOCS%%share/namazu/doc/namazu.css
+%%PORTDOCS%%@dirrm share/namazu/doc
 share/namazu/etc/CREDITS
 share/namazu/etc/ChangeLog.1
 share/namazu/etc/INSTALL-ja

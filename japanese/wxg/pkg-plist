@@ -28,22 +28,22 @@ lib/wxg/wxgrc
 @dirrm lib/wxg/dic
 @dirrm lib/wxg
 sbin/wxgserver
-share/doc/wxg/README
-share/doc/wxg/html/ailogo2.gif
-share/doc/wxg/html/appendix.html
-share/doc/wxg/html/contract.html
-share/doc/wxg/html/custom.html
-share/doc/wxg/html/fcontents.html
-share/doc/wxg/html/hinshi.html
-share/doc/wxg/html/imi.html
-share/doc/wxg/html/index.html
-share/doc/wxg/html/inst.html
-share/doc/wxg/html/intro.html
-share/doc/wxg/html/jinput.html
-share/doc/wxg/html/relcanna.html
-share/doc/wxg/html/uninst.html
-share/doc/wxg/html/uty.html
-@dirrm share/doc/wxg/html
-@dirrm share/doc/wxg
+%%PORTDOCS%%share/doc/wxg/README
+%%PORTDOCS%%share/doc/wxg/html/ailogo2.gif
+%%PORTDOCS%%share/doc/wxg/html/appendix.html
+%%PORTDOCS%%share/doc/wxg/html/contract.html
+%%PORTDOCS%%share/doc/wxg/html/custom.html
+%%PORTDOCS%%share/doc/wxg/html/fcontents.html
+%%PORTDOCS%%share/doc/wxg/html/hinshi.html
+%%PORTDOCS%%share/doc/wxg/html/imi.html
+%%PORTDOCS%%share/doc/wxg/html/index.html
+%%PORTDOCS%%share/doc/wxg/html/inst.html
+%%PORTDOCS%%share/doc/wxg/html/intro.html
+%%PORTDOCS%%share/doc/wxg/html/jinput.html
+%%PORTDOCS%%share/doc/wxg/html/relcanna.html
+%%PORTDOCS%%share/doc/wxg/html/uninst.html
+%%PORTDOCS%%share/doc/wxg/html/uty.html
+%%PORTDOCS%%@dirrm share/doc/wxg/html
+%%PORTDOCS%%@dirrm share/doc/wxg
 @unexec [ -L /usr/local/lib/wxg ] && rm /usr/local/lib/wxg || true
 @exec [ X"%D" != X"/usr/local" ] && ln -s %D/lib/wxg /usr/local/lib/ || true

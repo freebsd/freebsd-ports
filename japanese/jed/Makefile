@@ -98,9 +98,9 @@ do-install:
 .for f in ${MAN1}
 	${INSTALL_MAN} ${_DOCDIR}/${f} ${PREFIX}/man/man1/
 .endfor
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${_INFODIR}/jed.* ${PREFIX}/info/
 	@install-info ${PREFIX}/info/jed.info ${PREFIX}/info/dir
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${JED_ROOT}/doc/
 	${INSTALL_DATA} ${_DOCDIR}/README ${_DOCDIR}/*.txt ${_DOCDIR}/jed.tex ${WRKSRC}/jed-j.doc ${JED_ROOT}/doc/
 .endif

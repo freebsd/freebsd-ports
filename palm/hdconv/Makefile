@@ -23,7 +23,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hd ${PREFIX}/bin/hdconv
 	${LINUXBASE}/usr/bin/strip ${PREFIX}/bin/hdconv
 	brandelf -t Linux ${PREFIX}/bin/hdconv
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/hdconv/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/hdconv/
+.endif
 
 .include <bsd.port.mk>
