@@ -10,7 +10,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	www 
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 
-MAINTAINER=	nik
+MAINTAINER=	nik@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	lber.2:${PORTSDIR}/net/openldap2
