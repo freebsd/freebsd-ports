@@ -22,6 +22,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN1=		razor-check.1 razor-discover.1 razor-report.1
+MAN1=		razor-check.1 razor-discover.1 razor-report.1 \
+		razor-whitelist.1 razor.conf.1
+
+post-build:
+	pod2man ${WRKSRC}/man/razor-whitelist.pod > ${WRKSRC}/blib/man1/razor-whitelist.1
+	pod2man ${WRKSRC}/man/razor.conf.pod > ${WRKSRC}/blib/man1/razor.conf.1
 
 .include <bsd.port.mk>
