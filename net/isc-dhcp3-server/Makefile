@@ -26,12 +26,13 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
+USE_REINPLACE=	yes
+
 .include <bsd.port.pre.mk>
 
 # Global variables
 #
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 MAN1=		omshell.1
