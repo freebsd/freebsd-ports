@@ -1,8 +1,7 @@
 XKeyWrap is a wrapper of key sequence between keyboard and an application
 (ex.emacs).
-XKeyWrap can record, repeat, and play key sequence in real time.
-And XKeyWrap can send key sequence to an application on other X server
-over the network.
+XKeyWrap can record and play key sequence in real time. And XKeyWrap can send
+key sequence to an application on other X server over the network.
 
 If you want to read more details, type
     % xkeywrap -readme
@@ -17,11 +16,7 @@ If you want to see a demonstration of XKeyWrap, type
 If you want to get the full or newest original destribution package
 of XKeyWrap, see
 
-WWW: http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft.html
-
-This software is distributed under the GNU General Public License.
-If you want to get a copy of the GNU General Public License, see above
-web site and get the full original destribution package of XKeyWrap.
+WWW: http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft/index.html
 
 - Sakai Hiroaki
 sakai@seki.ee.kagu.sut.ac.jp
