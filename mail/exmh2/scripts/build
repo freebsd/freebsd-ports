@@ -17,7 +17,9 @@ EXPECT="{}"
 EXPECTK="{}"
 FACES="{}"
 DOMAIN="{}"
+GPG="{}"
 PGP="{}"
+PGP5="{}"
 GLIMPSE="{}"
 PLAY="{}"
 
@@ -37,8 +39,16 @@ if [ -d ${PREFIX}/share/faces ]; then
   fi
 fi
 
+if [ -f ${PREFIX}/bin/gpg ]; then
+  GPG=${PREFIX}/bin			#bindir
+fi
+
 if [ -f ${PREFIX}/bin/pgp ]; then
   PGP=${PREFIX}/bin			#bindir
+fi
+
+if [ -f ${PREFIX}/bin/pgp5 ]; then
+  PGP5=${PREFIX}/bin			#bindir
 fi
 
 if [ -f ${PREFIX}/bin/glimpse ]; then
@@ -62,7 +72,9 @@ sed <${FILESDIR}/${CONFIGFILE} \
 	-e "s+!!EXPECTK!!+${EXPECTK}+g" \
 	-e "s+!!FACES!!+${FACES}+g" \
 	-e "s+!!DOMAIN!!+${DOMAIN}+g" \
+	-e "s+!!GPG!!+${GPG}+g" \
 	-e "s+!!PGP!!+${PGP}+g" \
+	-e "s+!!PGP5!!+${PGP5}+g" \
 	-e "s+!!GLIMPSE!!+${GLIMPSE}+g" \
 	-e "s+!!PLAY!!+${PLAY}+g" \
 	-e "s+!!VERSION!!+${VERSION}+g" \
