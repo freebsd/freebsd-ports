@@ -1,19 +1,21 @@
---- config.orig	Thu Jul  8 06:32:37 1999
-+++ config	Sat Feb 26 23:51:52 2000
-@@ -18,7 +18,7 @@
+--- config	Mon Nov  6 12:28:20 2000
++++ config.new	Tue Jan  2 15:51:57 2001
+@@ -28,7 +28,7 @@
  # ------------------------------------------------------------------ C compiler
  
- # you need an ANSI C compiler. gcc is a popular one.
+ # You need an ANSI C compiler. gcc is a popular one.
 -CC= gcc
 +CC?= gcc
- WARN= -ansi -Wall
+ WARN= -ansi -pedantic -Wall
  
- # on IRIX, cc is a good ANSI compiler.
-@@ -64,5 +64,6 @@
+ # On IRIX, cc is a good ANSI compiler.
+@@ -93,7 +93,8 @@
  INCS= -I$(INC) $(EXTRA_INCS)
- DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRALIB) $(EXTRA_DEFS)
+ DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRA_DEFS)
  
 -CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
 +CFLAGS?= -O2
-+CFLAGS+= $(WARN) $(INCS) $(DEFS)
++CFLAGS+= -O2 $(WARN) $(INCS) $(DEFS)
+ 
+ V=4.0
  
