@@ -1,0 +1,99 @@
+@comment $FreeBSD$
+bin/leo
+%%PYTHON_SITELIBDIR%%/leo/Icons/LeoWin.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Leodoc.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Lt_arrow_disabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Lt_arrow_enabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Rt_arrow_disabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Rt_arrow_enabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/ie screenshot.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/minusnode.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/plusnode.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/section_icon.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/Leoapp.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box00.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box01.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box02.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box03.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box04.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box05.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box06.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box07.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box08.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box09.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box10.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box11.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box12.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box13.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box14.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/box15.GIF
+@dirrm %%PYTHON_SITELIBDIR%%/leo/Icons
+%%PYTHON_SITELIBDIR%%/leo/config/leoConfig.leo
+%%PYTHON_SITELIBDIR%%/leo/config/leoConfig.txt
+@dirrm %%PYTHON_SITELIBDIR%%/leo/config
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/LeoDocs.leo
+%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/leo/doc
+%%PYTHON_SITELIBDIR%%/leo/plugins/__overrideClasses.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/add_directives.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/arrows.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/at_folder.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/color_markup.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/dump_globals.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/empty_leo_file.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/enable_gc.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/french.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/french_fm.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/image.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/import_cisco_config.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.txt
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_test.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/nav_buttons.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/open_with.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/outline_export.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/override_commands.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/plugins_menu.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/read_only_nodes.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/redefine_put.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/redirect_to_log.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/rst.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/script_io_to_body.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/scripts_menu.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/startfile.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/test.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/test.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/trace_gc.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/trace_keys.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/trace_tags.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/vim.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/xemacs.py
+@dirrm %%PYTHON_SITELIBDIR%%/leo/plugins
+%%PYTHON_SITELIBDIR%%/leo/src/LeoPy.leo
+%%PYTHON_SITELIBDIR%%/leo/src/leo.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoApp.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoAtFile.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoColor.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoCommands.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoCompare.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoConfig.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoDialog.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoFileCommands.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoFind.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoFindScript.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoFontPanel.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoFrame.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoGlobals.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoImport.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoNodes.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoPlugins.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoPrefs.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoTangle.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoTest.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoTree.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoUndo.py
+@dirrm %%PYTHON_SITELIBDIR%%/leo/src
+@dirrm %%PYTHON_SITELIBDIR%%/leo
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
