@@ -62,6 +62,9 @@ post-patch:
 .for i in ${MAN1}
 	@${CP} ${WRKSRC}/docs/${i:R}.man ${WRKSRC}
 .endfor
+.if defined(NOMAN)
+	${PERL} -pi.orig -e 's,^InstallManPage.*$$,/\* $$& \*/,' ${WRKSRC}/Imakefile
+.endif
 
 
 post-install:
