@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freaky@aagh.net
 
 MAKEFILE=	makefile
 INSTALL_TARGET=	install_programs install_man
