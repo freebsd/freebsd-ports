@@ -7,6 +7,7 @@
 
 PORTNAME=	Imlib2
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.muhri.net/
 PKGNAMEPREFIX=	p5-
