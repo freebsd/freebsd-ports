@@ -53,7 +53,7 @@ share/gnome/control-center-2.0/icons/sound-capplet.png
 share/gnome/control-center-2.0/interfaces/background-properties.glade
 share/gnome/control-center-2.0/interfaces/file-types-properties.glade
 share/gnome/control-center-2.0/interfaces/font-properties.glade
-share/gnome/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade2
+share/gnome/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-default-applications-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-keybinding-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-keyboard-properties.glade
@@ -61,6 +61,7 @@ share/gnome/control-center-2.0/interfaces/gnome-mouse-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-network-preferences.glade
 share/gnome/control-center-2.0/interfaces/gnome-ui-properties.glade
 share/gnome/control-center-2.0/interfaces/sound-properties.glade
+share/gnome/control-center-2.0/interfaces/theme-install.glade
 share/gnome/control-center-2.0/interfaces/theme-properties.glade
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-bouncekey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
