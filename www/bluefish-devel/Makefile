@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.9.20030621
+PORTVERSION=	0.9.20030703
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.shellhung.org/${DOWNLOAD}/
-DISTNAME=	${PORTNAME}-2003-06-21
+DISTNAME=	${PORTNAME}-2003-07-03
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	HTML editor designed for the experienced web designer
@@ -32,9 +32,8 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gnome2-menu=${PREFIX}/share/gnome/apps/Applications
-
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-gnome2-menu=${PREFIX}/share/gnome/apps/Applications \
+			--with-icon-path=${PREFIX}/share/gnome/pixmaps
 
 # Turns debugging output on
 .if defined(WITH_DEBUG)
@@ -47,4 +46,4 @@ pre-everything::
 	@${ECHO_MSG} "WITH_DEBUG=yes for debug support"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

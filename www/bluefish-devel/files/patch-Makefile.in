@@ -4,7 +4,7 @@
  bluefish:all
  all:
  	@cd src/ && $(MAKE) all
--	if [ ${USE_NLS} == "yes" ]; then \
+-	if [ "${USE_NLS}" == "yes" ]; then \
 +	if [ ${USE_NLS} = "yes" ]; then \
  		cd po/ && $(MAKE) all; \
  	fi
@@ -13,7 +13,7 @@
  		$(INSTALL_DATA) inline_images/bluefish_icon1.png $(iconpath)/bluefish-icon.png ;\
  	fi
  	@cd src/ && $(MAKE) install
--	if [ ${USE_NLS} == "yes" ]; then \
+-	if [ "${USE_NLS}" == "yes" ]; then \
 +	if [ ${USE_NLS} = "yes" ]; then \
  		cd po/ && $(MAKE) install;\
  	fi
