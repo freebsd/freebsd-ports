@@ -361,6 +361,7 @@
     SUBDIR += libtecla
     SUBDIR += libtool13
     SUBDIR += libtool14
+    SUBDIR += libtool15
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libusb

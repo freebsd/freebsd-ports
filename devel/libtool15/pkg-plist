@@ -17,11 +17,16 @@ share/libtool%%BUILD_VERSION%%/libltdl/README
 share/libtool%%BUILD_VERSION%%/libltdl/acinclude.m4
 share/libtool%%BUILD_VERSION%%/libltdl/aclocal.m4
 share/libtool%%BUILD_VERSION%%/libltdl/config-h.in
+share/libtool%%BUILD_VERSION%%/libltdl/config.guess
+share/libtool%%BUILD_VERSION%%/libltdl/config.sub
 share/libtool%%BUILD_VERSION%%/libltdl/configure
-share/libtool%%BUILD_VERSION%%/libltdl/configure.in
+share/libtool%%BUILD_VERSION%%/libltdl/configure.ac
+share/libtool%%BUILD_VERSION%%/libltdl/install-sh
 share/libtool%%BUILD_VERSION%%/libltdl/ltdl.c
 share/libtool%%BUILD_VERSION%%/libltdl/ltdl.h
-share/libtool%%BUILD_VERSION%%/libltdl/stamp-h.in
+share/libtool%%BUILD_VERSION%%/libltdl/ltmain.sh
+share/libtool%%BUILD_VERSION%%/libltdl/missing
+share/libtool%%BUILD_VERSION%%/libltdl/mkinstalldirs
 share/libtool%%BUILD_VERSION%%/ltmain.sh
 @dirrm share/libtool%%BUILD_VERSION%%/libltdl
 @dirrm share/libtool%%BUILD_VERSION%%

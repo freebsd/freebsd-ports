@@ -4,6 +4,6 @@
  
 -libtool_m4="$aclocaldir/libtool.m4"
 -ltdl_m4="$aclocaldir/ltdl.m4"
-+libtool_m4="$aclocaldir/libtool14.m4"
-+ltdl_m4="$aclocaldir/ltdl14.m4"
++libtool_m4="$aclocaldir/libtool15.m4"
++ltdl_m4="$aclocaldir/ltdl15.m4"
  
