@@ -10,7 +10,7 @@ PORTVERSION=	1.6.3
 PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
-		ftp://sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \
+		ftp://ftp.sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
