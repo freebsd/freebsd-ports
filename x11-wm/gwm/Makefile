@@ -3,7 +3,7 @@
 # Date created:		14 November 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.2 1996/11/15 04:51:00 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 09:55:28 asami Exp $
 #
 
 DISTNAME=	gwm-1.8c
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers/gwm
 
 MAINTAINER=	markm@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 
