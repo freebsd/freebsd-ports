@@ -1,0 +1,5 @@
+cal.rb is a cal(1)-like program which shows a calendar with
+the Japanese holidays.  It can also display years in the
+Japanese era.
+
+WWW: http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/calendar.html

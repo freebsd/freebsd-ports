@@ -22,6 +22,7 @@
     SUBDIR += bible_names-fpw
     SUBDIR += binder
     SUBDIR += bookview
+    SUBDIR += cal.rb
     SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw
