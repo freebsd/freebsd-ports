@@ -164,6 +164,7 @@
     SUBDIR += mod_tsunami
     SUBDIR += mod_watch
     SUBDIR += mod_zap
+    SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += mozilla+ipv6
