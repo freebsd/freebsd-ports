@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/28 09:22:59 tg Exp $
 #
 
 DISTNAME=	NumPy
@@ -15,6 +15,7 @@ DISTFILES=	NumPy-1.0b3.tar.gz NumPyLib-1.0b2.tar.gz
 MAINTAINER=	tg@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	lapack\\.2\\.:${PORTSDIR}/math/lapack \
 		ranlib\\.1\\.:${PORTSDIR}/math/libranlib
 
@@ -34,7 +35,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}/*.py ${NUMPYDIR}
 	@PYTHONPATH=${PYTHONDIR}:${NUMPYDIR} \
 		${PREFIX}/bin/python ${PYTHONDIR}/compileall.py ${NUMPYDIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
+.endif
 
 .include <bsd.port.mk>
