@@ -1,6 +1,5 @@
 bin/xcircuit
 lib/X11/app-defaults/XCircuit
-lib/X11/app-defaults/XSchema
 lib/X11/xcircuit/analog.lps
 lib/X11/xcircuit/avlsi.lps
 lib/X11/xcircuit/builtins.lps
@@ -35,11 +34,13 @@ lib/X11/xcircuit/musiclib.lps
 lib/X11/xcircuit/signal.lps
 lib/X11/xcircuit/xcircps2.pro
 share/examples/xcircuit/USAflag.ps
+share/examples/xcircuit/analog1.ps
+share/examples/xcircuit/analog2.ps
+share/examples/xcircuit/analoglib.lps
 share/examples/xcircuit/border.ps
 share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
 share/examples/xcircuit/systemd1.lgf
-share/examples/xcircuit/test.ps
 share/examples/xcircuit/threestage.ps
 share/examples/xcircuit/vcoblock.ps
 @dirrm share/examples/xcircuit
