@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	wmapp
-PORTVERSION=	0.0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.0.4.2
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits windowmaker
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
