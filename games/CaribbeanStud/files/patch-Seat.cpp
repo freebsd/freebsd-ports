@@ -1,5 +1,5 @@
---- Seat.cpp	Fri Jan 31 22:47:58 1997
-+++ /home/andy/tmp/wrk/Seat.cpp	Sat Jul  4 19:48:21 1998
+--- Seat.cpp.orig	Fri Jan 31 23:47:58 1997
++++ Seat.cpp	Tue Aug 19 12:13:30 2003
 @@ -151,10 +151,10 @@
  	   gcv.font = XLoadFont(_dpy, "10x20"); 
  		gcflags = GCForeground | GCBackground | GCGraphicsExposures;
@@ -13,3 +13,13 @@
  	i = 0;
  	XtSetArg(args[i], XmNbackground, color.pixel);   i++;
  	XtSetArg(args[i], XmNforeground, whitepixel);   i++;
+@@ -342,7 +342,8 @@
+    Card ** cards = hands->Cards();
+    if( hands->NumOfCards() )
+    {
+-      for(int i=0; i< hands->NumOfCards() -1; i++)
++      int i;
++      for(i=0; i< hands->NumOfCards() -1; i++)
+         DrawCardBack(GetWindow(), cards[i], PositionCardX(cards[i],i),
+                                           PositionCardY(cards[i],i));
+       DrawCard(GetWindow(), cards[i], PositionCardX(cards[i],i),

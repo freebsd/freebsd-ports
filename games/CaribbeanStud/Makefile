@@ -18,7 +18,7 @@ COMMENT=	Caribbean Stud gambling game for X Window System
 MAKEFILE=		Xmakefile
 USE_MOTIF=		yes
 USE_X_PREFIX=		yes
-CFLAGS=			-pedantic
+CFLAGS+=		-Wno-deprecated
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/CaribbeanStud ${PREFIX}/bin
