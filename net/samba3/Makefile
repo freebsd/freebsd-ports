@@ -46,8 +46,8 @@ MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 \
 		testprns.1 wbinfo.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		nmbd.8 rpcclient.8 smbd.8 smbmnt.8 smbpasswd.8 \
-		smbspool.8 smbumount.8 swat.8 winbindd.8
+MAN8=		nmbd.8 rpcclient.8 smbd.8 smbmnt.8 smbmount.8 \
+		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
