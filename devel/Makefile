@@ -954,6 +954,7 @@
     SUBDIR += py-roxlib
     SUBDIR += py-sip
     SUBDIR += py-spark
+    SUBDIR += py-tables
     SUBDIR += py-twisted
     SUBDIR += py-ui
     SUBDIR += py-unit
