@@ -1,0 +1,37 @@
+bin/arm-rtems-size
+bin/arm-rtems-objdump
+bin/arm-rtems-ar
+bin/arm-rtems-strings
+bin/arm-rtems-ranlib
+bin/arm-rtems-objcopy
+bin/arm-rtems-addr2line
+bin/arm-rtems-readelf
+bin/arm-rtems-nm
+bin/arm-rtems-strip
+bin/arm-rtems-as
+bin/arm-rtems-gasp
+bin/arm-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+arm-rtems/bin/nm
+arm-rtems/bin/strip
+arm-rtems/bin/ar
+arm-rtems/bin/ranlib
+arm-rtems/bin/as
+arm-rtems/bin/ld
+arm-rtems/lib/ldscripts/armelf.x
+arm-rtems/lib/ldscripts/armelf.xbn
+arm-rtems/lib/ldscripts/armelf.xn
+arm-rtems/lib/ldscripts/armelf.xr
+arm-rtems/lib/ldscripts/armelf.xs
+arm-rtems/lib/ldscripts/armelf.xu
+@dirrm arm-rtems/bin
+@dirrm arm-rtems/lib/ldscripts
+@dirrm arm-rtems/lib
+@dirrm arm-rtems
