@@ -20,6 +20,7 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV=	"CC=${CC}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
