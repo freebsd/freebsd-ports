@@ -1,4 +1,5 @@
 bin/mutella
+bin/mutella_sio
 share/mutella/remote/template/modules/connections.html
 share/mutella/remote/template/modules/header-start.html
 share/mutella/remote/template/modules/sortby.html
@@ -23,6 +24,9 @@ share/mutella/remote/template/images/blip-blue.gif
 share/mutella/remote/template/images/blip-gray.gif
 share/mutella/remote/template/images/blip-green.gif
 share/mutella/remote/template/images/blip-red.gif
+share/mutella/remote/template/images/bullet-yellow-12x12.gif
+share/mutella/remote/template/images/bullet-red-12x12.gif
+share/mutella/remote/template/images/bullet-pale-yellow-12x12.gif
 share/mutella/remote/template/images/clear-16x16.gif
 share/mutella/remote/template/images/clear-32x32.gif
 share/mutella/remote/template/images/connections-64x64.gif
@@ -46,6 +50,7 @@ share/mutella/remote/template/images/status-64x64.gif
 share/mutella/remote/template/images/stop-16x16.gif
 share/mutella/remote/template/images/stop-32x32.gif
 share/mutella/remote/template/images/transfers-64x64.gif
+share/mutella/remote/template/confirm.html
 share/mutella/remote/template/connections.html
 share/mutella/remote/template/edit.html
 share/mutella/remote/template/index.html
@@ -58,9 +63,12 @@ share/mutella/remote/template/modules/results-grouped-body.html
 share/mutella/remote/template/modules/results-grouped-head.html
 share/mutella/remote/template/modules/results-ungrouped-body.html
 share/mutella/remote/template/modules/results-ungrouped-head.html
+share/mutella/remote/template/overview.html
 share/mutella/remote/template/results.html
 share/mutella/remote/template/searches.html
+share/mutella/remote/template/settings.html
 share/mutella/remote/template/transfers.html
+share/mutella/remote/template/varhelp.html
 @dirrm share/mutella/remote/template/modules
 @dirrm share/mutella/remote/template/images
 @dirrm share/mutella/remote/template
