@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.mit.edu/~ibaran/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
+BROKEN=		"Does not compile"
+
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

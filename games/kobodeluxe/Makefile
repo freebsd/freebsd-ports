@@ -14,6 +14,8 @@ DISTNAME=	KoboDeluxe-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	verm@drunkmonk.net
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
