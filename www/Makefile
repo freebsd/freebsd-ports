@@ -570,6 +570,7 @@
     SUBDIR += peacock
     SUBDIR += pear-APC
     SUBDIR += pear-HTTP
+    SUBDIR += pear-HTTP_Client
     SUBDIR += pear-HTTP_Download
     SUBDIR += pear-HTTP_Header
     SUBDIR += pear-HTTP_Request
