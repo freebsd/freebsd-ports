@@ -13,11 +13,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-#GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 post-patch:
-	${PERL} -pi -e 's/malloc.h/stdlib.h/; s/__UNIX__/__unix__/' \
-		${WRKSRC}/lib/*.c
+	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
+			-e 's/__UNIX__/__unix__/' \
+		$$(${GREP} --mmap -El '<malloc.h>|__UNIX__' \
+			${WRKSRC}/lib/*.c); \
+
 
 do-build do-install:
 .for d in lib client
