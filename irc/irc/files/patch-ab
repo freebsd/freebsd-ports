@@ -1,23 +1,30 @@
---- support/config.h.dist.old	Mon Aug 18 15:17:52 2003
-+++ support/config.h.dist	Mon Aug 18 15:17:52 2003
-@@ -121,1 +121,1 @@
--#undef	 OPER_KILL
+--- support/config.h.dist.orig	Sat Dec 11 01:56:41 2004
++++ support/config.h.dist	Sat Feb 26 01:13:29 2005
+@@ -118,13 +118,13 @@
+ /* 
+  * Operator rights can be precisely defined in O:line flags. However
+  * if you undefine any of the following, it will make given function
+- * unaccessible to your operators, disregarding their O:line flags.
 +#define OPER_KILL
-@@ -124,4 +124,4 @@
--#define OPER_DIE
+  */
+ #define	OPER_CONNECT
+-#define	OPER_DIE
+-#define	OPER_REHASH
+-#define	OPER_RESTART
+-#define	OPER_SET
 +#undef	OPER_DIE
--#undef	 OPER_REMOTE
 +#define OPER_REMOTE
--#undef	 LOCOP_REHASH
 +#define LOCOP_REHASH
--#undef	 LOCOP_RESTART
 +#define LOCOP_RESTART
-@@ -249,32 +249,32 @@
+ #define	OPER_SQUIT
+ #define	OPER_TKLINE
+ /* In a perfect world these two (or at least second) would be undefined. */
+@@ -232,25 +232,25 @@
   * this option is used unless you tell the system administrator beforehand
   * and obtain their permission to send messages to the system log files.
   */
 -#undef	USE_SYSLOG
-+#define	USE_SYSLOG
++#define USE_SYSLOG
  
  #ifdef	USE_SYSLOG
  /*
@@ -46,7 +53,8 @@
  #endif /* USE_SYSLOG */
  
  /*
-  * define this if you want to use crypted passwords for operators in your
+@@ -275,7 +275,7 @@
+  * Define this if you want to use crypted passwords for operators in your
   * ircd.conf file. See contrib/mkpasswd/README for more details on this.
   */
 -#undef	CRYPT_OPER_PASSWORD
@@ -54,7 +62,7 @@
  
  /*
   * If you want to store encrypted passwords in N-lines for server links,
-@@ -323,7 +323,7 @@
+@@ -324,7 +324,7 @@
   * send to the server without processing before disconnecting the client for
   * flooding it.  Values greater than 8000 make no difference to the server.
   */
@@ -63,7 +71,7 @@
  
  /* Remote query flood protection. */
  #define	CHREPLLEN	8192
-@@ -461,7 +461,7 @@
+@@ -359,7 +359,7 @@
   * The library and the include files must have been found by configure,
   * if you have installed the zlib after running configure, run it again.
   */

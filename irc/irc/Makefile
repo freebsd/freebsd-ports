@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.10.3p6
+PORTVERSION=	2.11.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
 		ftp://ftp2.nchu.edu.tw/UNIX/IRC/server/ \
@@ -29,7 +29,6 @@ SYSLOG_FACILITY=LOG_LOCAL5
 
 SCRIPTS_ENV=	SYSLOG_FACILITY="${SYSLOG_FACILITY}"
 
-MAN1=		irc.1
 MAN5=		iauth.conf.5
 MAN8=		ircd.8 iauth.8 ircdwatch.8
 
