@@ -8,21 +8,21 @@ doomlegacy/r_opengl.so
 %%PORTDOCS%%%%DOCSDIR%%/Doublescan.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_SDL
 %%PORTDOCS%%%%DOCSDIR%%/boomref.html
-%%PORTDOCS%%%%DOCSDIR%%/console.html
+%%PORTDOCS%%%%DOCSDIR%%/Console.html
 %%PORTDOCS%%%%DOCSDIR%%/copying
 %%PORTDOCS%%%%DOCSDIR%%/doomatic.txt
 %%PORTDOCS%%%%DOCSDIR%%/doomlic.txt
-%%PORTDOCS%%%%DOCSDIR%%/editing.html
+%%PORTDOCS%%%%DOCSDIR%%/Editing.html
 %%PORTDOCS%%%%DOCSDIR%%/editspecs.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/Faq.html
 %%PORTDOCS%%%%DOCSDIR%%/fsbasic.html
 %%PORTDOCS%%%%DOCSDIR%%/fsfuncs.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/legacy.html
+%%PORTDOCS%%%%DOCSDIR%%/Legacy.html
 %%PORTDOCS%%%%DOCSDIR%%/rules.txt
-%%PORTDOCS%%%%DOCSDIR%%/skinspec.html
+%%PORTDOCS%%%%DOCSDIR%%/Skinspec.html
 %%PORTDOCS%%%%DOCSDIR%%/sound.cfg
 %%PORTDOCS%%%%DOCSDIR%%/source.html
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
+%%PORTDOCS%%%%DOCSDIR%%/Whatsnew.html
 @dirrm share/doc/doomlegacy
 @dirrm doomlegacy
