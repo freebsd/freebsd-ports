@@ -4,11 +4,17 @@ lib/ctrlproxy/libadmin.so
 lib/ctrlproxy/libantiflood.so
 lib/ctrlproxy/libauto-away.so
 lib/ctrlproxy/libctcp.so
+lib/ctrlproxy/liblinestack_memory.so
 lib/ctrlproxy/liblog_custom.so
 lib/ctrlproxy/liblog_irssi.so
+lib/ctrlproxy/libmotd_file.so
 lib/ctrlproxy/libnickserv.so
 lib/ctrlproxy/libnoticelog.so
+lib/ctrlproxy/librepl_command.so
+lib/ctrlproxy/librepl_highlight.so
 lib/ctrlproxy/librepl_memory.so
+lib/ctrlproxy/librepl_none.so
+lib/ctrlproxy/librepl_simple.so
 lib/ctrlproxy/libsocket.so
 lib/ctrlproxy/libstats.so
 lib/ctrlproxy/libstrip.so
