@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.6 1995/03/30 21:34:45 gpalmer Exp $
+# $Id: LEGAL,v 1.7 1995/04/01 07:53:53 jkh Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -23,3 +23,4 @@ rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 tkman-1.6.tar.Z		ports/x11/tkman		Restrictive copyright
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
+zsh-2.6-*		ports/shells/zsh	Restrictive copyright
