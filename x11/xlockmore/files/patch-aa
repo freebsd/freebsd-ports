@@ -1,5 +1,5 @@
---- Imakefile.orig	Mon Feb 10 18:13:32 1997
-+++ Imakefile	Wed Feb 19 18:08:29 1997
+--- Imakefile.orig	Wed Apr 16 05:36:21 1997
++++ Imakefile	Fri Apr 18 09:04:31 1997
 @@ -35,7 +35,7 @@
  
  XCOMM Only the image.c and bat.c modes use this.
@@ -29,7 +29,7 @@
  
  XCOMM Least desirable RNG
  XCOMM SRANDDEF = -DSRAND=srand
-@@ -363,9 +363,9 @@
+@@ -374,9 +381,9 @@
  XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  Netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
@@ -41,23 +41,12 @@
  XCOMM        OPTDEF += -DUSE_MULTIPLE_ROOT
  XCOMM        OPTDEF += -DUSE_OLD_EVENT_LOOP
  XCOMM        OPTDEF += -DUSE_XLOCKRC
-@@ -377,7 +377,7 @@
- XCOMM        OPTDEF += -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"
- 
- XCOMM Here is your chance to override the default icon:
--       FLAGBITS = $(FLAGTYPE)
-+       FLAGBITS = freebsd
- XCOMM     TINYBITMAP = $(BITMAPTYPE)
-      TINYBITMAP = t-x11
-     SMALLBITMAP = s-$(BITMAPTYPE)
-@@ -390,8 +390,8 @@
-     IMAGEBITMAP = $(MEDIUMBITMAP)
- XCOMM    IMAGEBITMAP = l-bob
- XCOMM    IMAGEBITMAP = m-xlock
--XCOMM     LIFEBITMAP = $(SMALLBITMAP)
--     LIFEBITMAP = s-grelb
-+     LIFEBITMAP = $(SMALLBITMAP)
-+XCOMM     LIFEBITMAP = s-grelb
-    LIFE1DBITMAP = $(TINYBITMAP)
-      MAZEBITMAP = $(LARGEBITMAP)
- XCOMM     MAZEBITMAP = m-xlock
+@@ -404,7 +411,7 @@
+ XCOMM IMAGEBITMAP = l-bob #Slackware icon
+ XCOMM IMAGEBITMAP = m-xlock #XLock icon
+ XCOMM LIFEBITMAP = $(SMALLBITMAP)
+-LIFEBITMAP = s-grelb
++LIFEBITMAP = $(SMALLBITMAP)
+ LIFE1DBITMAP = $(TINYBITMAP)
+ MAZEBITMAP = $(LARGEBITMAP)
+ XCOMM MAZEBITMAP = m-xlock
