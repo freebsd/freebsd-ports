@@ -1,0 +1,7 @@
+Quantum is a tool to run SQL queries against a database. It allows
+a user to bookmark databases and dynamically loads the JDBC driver.
+It also allows you to view the tables, views, and sequences in a tree
+format. This plugin was converted from a Swing app. New to the plug-in
+version is wizards to insert, update, and delete table rows.
+
+WWW: http://quantum.sourceforge.net
