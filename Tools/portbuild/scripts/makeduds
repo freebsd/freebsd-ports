@@ -21,14 +21,20 @@ case "x$1" in
   x3)
     branch=3
     export PORTOBJFORMAT=elf
-    # export OSREL=3.3
-    # export OSVERSION=330000
+    export OSREL=3.5
+    export OSVERSION=350001
     ;;
   x4)
     branch=4
     export PORTOBJFORMAT=elf
-    export OSREL=4.0
-    export OSVERSION=400009
+    # export OSREL=4.0
+    # export OSVERSION=400018
+    ;;
+  x5)
+    branch=5
+    export PORTOBJFORMAT=elf
+    export OSREL=5.0
+    export OSVERSION=500011
     ;;
   *)
     usage
@@ -43,7 +49,7 @@ export BATCH=t
 export HAVE_MOTIF=t
 export PACKAGE_BUILDING=t
 export PARALLEL_PACKAGE_BUILD=t
-export NO_RESTRICTED=t
+#export NO_RESTRICTED=t
 #export FOR_CDROM=t
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
