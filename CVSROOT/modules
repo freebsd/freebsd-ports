@@ -10561,6 +10561,7 @@ xzip		ports/games/xzip
 xzoom		ports/x11/xzoom
 xzx		ports/emulators/xzx
 y2l		ports/textproc/y2l
+y4mscaler	ports/multimedia/y4mscaler
 yabasic		ports/lang/yabasic
 yacas		ports/math/yacas
 yacl		ports/devel/yacl
