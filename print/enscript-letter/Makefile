@@ -15,9 +15,6 @@ DISTNAME=	enscript-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
-# Work around configure issue
-CC=
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
