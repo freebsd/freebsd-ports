@@ -7,6 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.6.0.20011220
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://avifile.sourceforge.net/ \
@@ -17,7 +18,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	holger@eit.uni-kl.de
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+.if !defined(WITHOUT_DIVX)
+LIB_DEPENDS+=	divxdecore.1:${PORTSDIR}/graphics/libdivxdecore-devel
+LIB_DEPENDS+=	divxencore.0:${PORTSDIR}/graphics/libdivxencore
+.endif
 
 USE_QT_VER=	2
 USE_XLIB=	yes
@@ -30,7 +34,7 @@ USE_LIBTOOL=	yes
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --with-gnu-ld
+CONFIGURE_ARGS= --with-gnu-ld --enable-iconv
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
 
@@ -60,7 +64,7 @@ PLIST_SUB+=	MAD="@comment "
 
 # libvorbis; thus, libogg
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 
 PLIST_SUB+=	VORBIS=""
 .else
@@ -77,6 +81,9 @@ pre-everything::
 .if !defined(WITHOUT_MAD)
 	@${ECHO_MSG} "You can disable mad support by defining WITHOUT_MAD."
 .endif
+.if !defined(WITHOUT_DIVX)
+	@${ECHO_MSG} "You can disable divx support by defining WITHOUT_DIVX."
+.endif
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable vorbis support by defining WITHOUT_VORBIS."
 .endif
@@ -88,14 +95,12 @@ packet 'pth' is installed.";\
 	  ${FALSE};\
 	fi
 
-post-patch:
-	@${PERL} -pi -e "s|decore.h|divx/decore.h|; \
-		s|encore2.h|divx/encore.h|" ${WRKSRC}/plugins/libdivx4/*
-
 pre-configure:
 	@${PERL} -pi -e "s|-lqt|-lqt2|g;s|qt-mt|qt2-mt|g;\
-		s|^(PACKAGE=avifile).*|\1|" \
-		${WRKSRC}/configure
+		s|^(PACKAGE=avifile).*|\1|;s|<decore.h>|<divx/decore.h>|; \
+		s|<encore2.h>|<divx/encore.h>|" ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+		"s|decore.h|divx/decore.h|; s|encore2.h|divx/encore.h|"
 	@${PERL} -pi -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" \
 		${WRKSRC}/samples/mjpeg_plugin/Makefile.in
 	@${FIND} ${WRKSRC} \( -name Makefile.in -o -name configure \) | \
@@ -123,6 +128,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
+LIB_DEPENDS+=	SDL-1.1:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--enable-x86opt --with-win32-path=${LOCALBASE}/lib/win32
