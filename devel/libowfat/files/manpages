@@ -21,7 +21,16 @@ fmt_httpdate.3 fmt_human.3 fmt_humank.3 fmt_ip4.3 fmt_ip6.3 \
 fmt_ip6_flat.3 fmt_ip6c.3 fmt_ip6if.3 fmt_ip6ifc.3 fmt_long.3 \
 fmt_longlong.3 fmt_minus.3 fmt_pad.3 fmt_plusminus.3 fmt_str.3 \
 fmt_strn.3 fmt_uint.3 fmt_uint0.3 fmt_ulong.3 fmt_ulong0.3 \
-fmt_ulonglong.3 fmt_xlong.3 fmt_xlonglong.3 iopause.3 mmap_private.3 \
+fmt_ulonglong.3 fmt_xlong.3 fmt_xlonglong.3 imult16.3 imult32.3 \
+imult64.3 io_canread.3 io_canwrite.3 io_check.3 io_close.3 \
+io_closeonexec.3 io_createfile.3 io_dontwantread.3 io_dontwantwrite.3 \
+io_eagain.3 io_fd.3 io_finishandshutdown.3 io_getcookie.3 io_nonblock.3 \
+io_passfd.3 io_pipe.3 io_readfile.3 io_receivefd.3 io_sendfile.3 \
+io_setcookie.3 io_socketpair.3 io_timeout.3 io_timeouted.3 io_tryread.3 \
+io_tryreadtimeout.3 io_trywrite.3 io_trywritetimeout.3 io_wait.3 \
+io_waitread.3 io_waituntil.3 io_wantread.3 io_wantwrite.3 iob_addbuf.3 \
+iob_addbuf_free.3 iob_addfile.3 iob_addfile_close.3 iob_adds.3 \
+iob_adds_free.3 iob_new.3 iob_prefetch.3 iob_send.3 iopause.3 mmap_private.3 \
 mmap_read.3 mmap_shared.3 ndelay_off.3 ndelay_on.3 open_append.3 \
 open_excl.3 open_read.3 open_rw.3 open_trunc.3 open_write.3 \
 openreadclose.3 readclose.3 readclose_append.3 scan_8int.3 scan_8long.3 \
@@ -50,4 +59,5 @@ taia_add.3 taia_addsec.3 taia_approx.3 taia_frac.3 taia_less.3 \
 taia_now.3 taia_pack.3 taia_sub.3 taia_tai.3 taia_uint.3 taia_unpack.3 \
 uint16_pack.3 uint16_pack_big.3 uint16_read.3 uint16_read_big.3 \
 uint16_unpack.3 uint16_unpack_big.3 uint32_pack.3 uint32_pack_big.3 \
-uint32_read.3 uint32_read_big.3 uint32_unpack.3 uint32_unpack_big.3
+uint32_read.3 uint32_read_big.3 uint32_unpack.3 uint32_unpack_big.3 \
+umult16.3 umult32.3 umult64.3
