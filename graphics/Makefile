@@ -265,6 +265,7 @@
     SUBDIR += libtheora
     SUBDIR += libungif
     SUBDIR += libv3d
+    SUBDIR += libvisual
     SUBDIR += libwmf
     SUBDIR += libwpcg
     SUBDIR += linplasma
