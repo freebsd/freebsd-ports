@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.28 1998/08/16 18:56:31 hoek Exp $
+# $Id: Makefile,v 1.29 1998/11/07 08:49:32 hoek Exp $
 #
 
 DISTNAME=	inn-1.7.2
@@ -11,6 +11,8 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+Y2K=		http://www.isc.org/y2k.html
 
 # If you want PGP verification of control messages set PGPVERIFY to "DO"
 PGPVERIFY?=	DONT

@@ -3,7 +3,7 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1998/12/02 16:02:47 andreas Exp $
+# $Id: Makefile,v 1.11 1998/12/23 01:22:40 steve Exp $
 #
 
 DISTNAME=	dnews47k_freebsd
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+Y2K=		http://netwinsite.com/dnews_y2k.htm
 
 WRKSRC=         ${WRKDIR}/dnews
 NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
