@@ -14,13 +14,13 @@
 #uptimec_enable="NO"
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=uptimec
 rcvar=`set_rcvar`
 
-command=/usr/local/sbin/uptimec
-required_files=/usr/local/etc/uptimecrc
+command=%%PREFIX%%/sbin/uptimec
+required_files=%%PREFIX%%/etc/uptimecrc
 
 # default to enable
 uptimec_enable=${uptimec_enable:-"YES"}
