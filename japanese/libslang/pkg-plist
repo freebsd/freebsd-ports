@@ -1,11 +1,11 @@
-include/slang.h
-include/slcurses.h
 lib/libslang.a
 @exec ranlib %D/%F
 lib/libslang.so
-lib/libslang.so.1.2.2
-@exec /sbin/ldconfig -m %D/lib
-@comment @unexec /sbin/ldconfig -R
+lib/libslang.so.1.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+include/slang.h
+include/slcurses.h
 share/doc/slang/README
 share/doc/slang/OLD/help/README
 share/doc/slang/OLD/help/makefile.djg

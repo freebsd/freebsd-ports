@@ -3,21 +3,18 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/19 15:24:12 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/16 04:30:24 jseger Exp $
 
 DISTNAME=	slang1.2.2
 PKGNAME=	ja-libslang-1.2.2
 CATEGORIES=	japanese devel
-MASTER_SITES=	http://master.debian.or.jp/~kikutani/slang/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/
 
-PATCH_SITES=	http://master.debian.or.jp/~kikutani/slang/
+PATCH_SITES=	http://home.sprintmail.com/~kikutani/slang/
 PATCHFILES= 	slang1.2.2jp0.pat.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org
-
-
-BROKEN_ELF=	yes
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all elf
@@ -30,6 +27,6 @@ post-install:
 	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/slang
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
