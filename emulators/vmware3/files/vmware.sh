@@ -2,6 +2,8 @@
 #
 # Start or stop vmware
 #
+# $FreeBSD$
+#
 
 vmware_dir=@@PREFIX@@/lib/vmware
 networking=@@NETWORKING@@
