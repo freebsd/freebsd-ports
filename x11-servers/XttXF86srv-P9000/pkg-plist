@@ -1,0 +1,3 @@
+bin/XF86_P9000.xtt
+@exec /bin/ln -fs %D/%F %B/X
+@unexec ([ -x %B/XF86_P9000 ] && /bin/ln -fs %B/XF86_P9000 %B/X) || /usr/bin/true
