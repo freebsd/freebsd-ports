@@ -34,7 +34,8 @@ PATCHFILES=	postfix-2.0-ns-mx-acl-patch.gz
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 
