@@ -130,6 +130,7 @@
     SUBDIR += povray31
     SUBDIR += ppm2fli
     SUBDIR += pstoedit
+    SUBDIR += pvmpov
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
     SUBDIR += py-opengl
