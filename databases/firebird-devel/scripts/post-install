@@ -7,7 +7,7 @@ chmod -R o=r $PREFIX/firebird
 
 # Now fix up the mess.
 
-# fix up directories 
+# fix up directories
 for i in `find $PREFIX/firebird -print`
   do
     FileName=$i
@@ -28,7 +28,7 @@ ln -sf ib_util.so libib_util.so
 cd $PREFIX/firebird/bin
 
 # all users can run everything.
-chmod o=rx * 
+chmod o=rx *
 
 # SUID is needed for running server programs.
 
@@ -42,7 +42,7 @@ for i in gds_lock_mgr gds_drop gds_inet_server
 
 cd $PREFIX/firebird
 
-for i in isc_init1 isc_lock1 isc_event1 
+for i in isc_init1 isc_lock1 isc_event1
   do
     FileName=$i.`hostname`
     touch $FileName

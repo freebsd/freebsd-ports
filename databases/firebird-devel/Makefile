@@ -1,20 +1,19 @@
-# New ports collection makefile for:	Firebird
-# Date created:		20 December 2000
-# Whom:			Geoffrey C. Speicher <geoff@sea-incorporated.com>
+# New ports collection makefile for:	Firebird-devel
+# Date created:		03 December 2001
+# Whom:			Chris Knight <chris@aims.com.au>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	firebird
-PORTVERSION=	0.9
-PORTREVISION=	4
+PORTVERSION=	1.0.r1
 CATEGORIES=	databases
-MASTER_SITES=	http://firebird.sourceforge.net/download/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.aims.com.au/chris/
 MASTER_SITE_SUBDIR=firebird
-DISTFILES=	firebird-boot-kit.tar.gz \
+DISTFILES=	bootkit-RC1.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
-		interbase0.9-4src.tar.gz
+		Firebird-1.0.0-RC1-FreeBSD.tar.gz
 
 MAINTAINER=	chris@aims.com.au
 
@@ -31,8 +30,9 @@ ONLY_FOR_ARCHS=	i386
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(								\
-	cd ${WRKDIR}; ${TAR} -xzf ${DISTDIR}/interbase0.9-4src.tar.gz;	\
-	cd interbase; ${TAR} -xzf ${DISTDIR}/firebird-boot-kit.tar.gz;	\
+	cd ${WRKDIR}; ${TAR} -zxf					\
+		 ${DISTDIR}/Firebird-1.0.0-RC1-FreeBSD.tar.gz;		\
+	cd interbase; ${TAR} -zxf ${DISTDIR}/bootkit-RC1.tar.gz;	\
 	${CP} msgs/msg.gbak misc/msg.gbak				\
 	)
 
@@ -51,7 +51,12 @@ do-configure:
 	INTERBASE=${WRKDIR}/interbase/interbase; export INTERBASE;	\
 	REFDBPATH=${WRKDIR}/refDatabases; export REFDBPATH;		\
 	${SH} buildBootDatabases;					\
-	${SH} setup_dirs.boot FREEBSD PROD ${WRKDIR}/refDatabases boot;	\
+	${CAT} builds_win32/original/build_no.ksh | ${TR} -d '\r'	\
+		> builds_win32/original/build_no.ksh.fix;		\
+	${MV} builds_win32/original/build_no.ksh.fix			\
+		 builds_win32/original/build_no.ksh;			\
+	${SH} setup_dirs boot FREEBSD PROD ${WRKDIR}/refDatabases boot;	\
+	${TOUCH} ${WRKDIR}/interbase/dsql/parse.c			\
 	)
 
 do-build:
@@ -60,6 +65,8 @@ do-build:
 	'[ -d ${LDCONFIG_RUNLIST} ] && ${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
 	) > ${WRKDIR}/000.${PORTNAME}.sh
 	@(								\
+	${LN} -sf ${WRKDIR}/refDatabases/jrd/isc.gdb			\
+		 ${WRKDIR}/interbase/interbase/isc4.gdb;		\
 	cd ${WRKDIR}/interbase;						\
 	INTERBASE=${WRKDIR}/interbase/interbase; export INTERBASE;	\
 	REFDBPATH=${WRKDIR}/refDatabases; export REFDBPATH;		\
@@ -69,6 +76,7 @@ do-build:
 do-install:
 	@(								\
 	cd ${WRKDIR}/interbase;						\
+	${RM} ${WRKDIR}/interbase/interbase/isc4_tmp.gdb;		\
 	${CP} -Rp interbase ${PREFIX}/firebird;				\
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\

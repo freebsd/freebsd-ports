@@ -10,13 +10,12 @@ Note that as of Firebird 0.9_4, the locksmith back door has
 been closed.
 
 For more information on Firebird and InterBase, see:
+
+http://sourceforge.net/projects/firebird/
 http://www.ibphoenix.com/
 http://www.interbase2000.org/
 http://www.interbase.com/
 http://www.firebirdsql.org/
-
-and of course the firebird page itself:
-WWW: http://sourceforge.net/projects/firebird/
 
 For more information on the locksmith back door, see:
 

@@ -4,8 +4,8 @@
     DefaultAns=$2
     echo -n "${1}"
     Answer="$DefaultAns"
--   read Answer 
-+#   read Answer 
+-   read Answer
++#   read Answer
  }
- 
- 
+
+
