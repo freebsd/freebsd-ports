@@ -17,12 +17,8 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
-.if defined(WITH_PDFLIB4)
-LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
-.else
-LIB_DEPENDS+=	pdf.3:${PORTSDIR}/print/pdflib3
-.endif
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		pdf.4:${PORTSDIR}/print/pdflib
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
