@@ -56,18 +56,7 @@ share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/eog.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/eog.mo
-@dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/help/eog/C/stylesheet-images
 @dirrm share/gnome/help/eog/C/fig
-@dirrm share/gnome/help/eog/C
-@dirrm share/gnome/help/eog  
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/full_screen
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog
