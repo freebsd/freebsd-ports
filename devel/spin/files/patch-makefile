@@ -1,0 +1,14 @@
+--- makefile.orig	Tue Jan  4 22:47:37 2005
++++ makefile	Tue Jan  4 22:48:24 2005
+@@ -10,8 +10,9 @@
+ # Bug-reports:   bugs@spinroot.com
+ 
+ # CC=gcc		# or any other ansi compatible c compiler
+-CC=cc -DNXT 		# -DNXT enables the X operator in LTL
+-CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
++# CC=cc -DNXT 		# -DNXT enables the X operator in LTL
++# CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
++CFLAGS += -DNXT
+ 
+ #	on PC:		add -DPC to CFLAGS above
+ #	on Solaris:	add -DSOLARIS
