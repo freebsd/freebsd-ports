@@ -15,7 +15,7 @@ MAINTAINER=	pat@databits.net
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
@@ -27,7 +27,6 @@ ALL_TARGET=	${PORTNAME}.so
 PKGMESSAGE=	${DESCR}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/GrabWeather ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so \
 		${PREFIX}/libexec/gkrellm/plugins
 
