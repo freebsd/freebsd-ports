@@ -22,7 +22,6 @@ CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
 SRCS	=	${CPPS:T}
 
-CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
 CXXFLAGS+=	-fno-rtti -fno-exceptions
 LDADD	+=	-L${LOCALBASE}/lib -ljpeg
 
@@ -31,5 +30,7 @@ LDADD	+=	-L${LOCALBASE}/lib -ljpeg
 .for d in oless/h jpeg ole basics ri_image oless fpx
 CXXFLAGS+=	-I${.CURDIR}/$d
 .endfor
+
+CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
 
 .include <bsd.lib.mk>
