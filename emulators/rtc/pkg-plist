@@ -3,6 +3,7 @@ include/rtc.h
 modules/rtc.ko
 share/examples/rtc/test.c
 @dirrm share/examples/rtc
-@exec rm -f %%DEVFILE%%
-@exec mknod %%DEVFILE%% c %%CDEV_MAJOR%% 0
-@unexec rm -f %%DEVFILE%%
+@exec rm -f %%DEVDIR%%/rtc
+@exec mkdir -p %%DEVDIR%%
+@exec mknod %%DEVDIR%%/rtc c %%CDEV_MAJOR%% 0
+@unexec rm -f %%DEVDIR%%/rtc
