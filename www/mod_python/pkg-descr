@@ -7,5 +7,3 @@ developed by Gregory Trubetskoy <grisha@modpython.org> and others
 
 This port requires a Python installation without threads support. Build &
 (re)install Python with WITHOUT_THREADS set.
-
-- Anders Nordby <anders@fix.no>
