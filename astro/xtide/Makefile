@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	1.6.2
+PORTVERSION=	2.2
 CATEGORIES=	astro
-MASTER_SITES=	http://www.universe.digex.net/~dave/files/
-DISTFILES=	xtide-1.6.2.tar.gz harmonics.gz
+MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	brion@queeg.com
+MAINTAINER=	patseal@hyperhost.net
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		png.3:${PORTSDIR}/graphics/png
 
 # www.universe.digex.net is broken
 FETCH_BEFORE_ARGS=	-t
 
-EXTRACT_ONLY=	xtide-1.6.2.tar.gz
-USE_IMAKE=	yes
-NO_WRKSUBDIR=	yes
-MAN1=		xtide.1
+USE_X_PREFIX=	yes
+HAS_CONFIGURE=	yes
+MAN1=	xtide.1 tide.1
+MAN8=	xttpd.8
 MANCOMPRESSED=	no
 
 post-extract:
@@ -27,8 +31,12 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xtide.man ${PREFIX}/man/man1/xtide.1
-	@${MKDIR} ${PREFIX}/lib/xtide
-	${INSTALL_DATA} ${WRKSRC}/harmonics ${PREFIX}/lib/xtide
+	${INSTALL_PROGRAM} ${WRKSRC}/tide ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xttpd ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/xtide.1 ${PREFIX}/man/man1/xtide.1
+	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/tide.1 ${PREFIX}/man/man1/tide.1
+	${INSTALL_MAN} ${WRKSRC}/DOCUMENTATION/xttpd.8 ${PREFIX}/man/man8/xttpd.8
+	@${MKDIR} ${PREFIX}/share/xtide
+	${INSTALL_DATA} ${WRKSRC}/harmonics ${PREFIX}/share/xtide
 
 .include <bsd.port.mk>

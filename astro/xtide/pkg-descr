@@ -4,12 +4,9 @@ extensions for X, plain ASCII, and HTML.
 
 You may need to replace the harmonics file used by this port by one
 better suited to your area; there are a number of harmonics files
-available at http://www.universe.digex.net/~dave/files/.  You will
-also have to specify your location either by setting the LOCATION
-environment variable, by using the -location script, or by creating
-an appropriate ~/.xtiderc. 
+available at http://www.flaterco.com/xtide/files.html.
 
-WWW: http://www.universe.digex.net/~dave/xtide/xtide.html
+WWW: http://www.flaterco.com/xtide/
 
-- Brion Moss
-brion@queeg.com
+- Patrick Seal
+patseal@hyperhsot.net
