@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.0.9
+PORTVERSION=	2.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GUI)
 USE_QT_VER=	2
 QT_NONSTANDARD=	yes
-CONFIGURE_ENV=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
+CONFIGURE_ENV=	MOC="${MOC}" \
+		QTINC="${X11BASE}/include/qt2" \
+		QTLIB="${X11BASE}/lib" \
 		USER_INCLUDES="${QTCPPFLAGS}" \
 		USER_LDFLAGS="${QTCFGLIBS}"
-CONFIGURE_ARGS+=	--enable-gui \
-			--with-qt-includes=${X11BASE}/include/qt2 \
-			--with-qt-libraries=${X11BASE}/lib \
-			--with-extra-includes=${LOCALBASE}/include \
-			--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-gui
 PLIST_SUB=	GUI:=""
 .else
 CONFIGURE_ARGS+=	--disable-gui
@@ -35,20 +33,16 @@ PLIST_SUB=	GUI:="@comment "
 
 .if defined(WITH_PTHREAD)
 CONFIGURE_ARGS+=	--enable-threads=yes
+QT_NAME=		qt2-mt
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
+QT_NAME=		qt2
 .endif
 
-pre-patch:
-.if defined(WITH_PTHREAD)
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-			 s|-lqt|-lqt2-mt|g' ${WRKSRC}/configure
-.else
-	@${PERL} -pi -e 's|-lqt|-lqt2|g' ${WRKSRC}/configure
-.endif
-
-pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
+		 s|"-lqt"|"-l${QT_NAME}"|g ; \
+		 s|"-lqt-mt"|"-l${QT_NAME}"|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
