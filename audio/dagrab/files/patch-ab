@@ -1,6 +1,6 @@
---- dagrab.c.orig	Sat Feb 19 08:32:46 2000
-+++ dagrab.c	Wed Mar  5 02:12:38 2003
-@@ -94,26 +94,20 @@
+--- dagrab.c.orig	Sat Feb 19 17:32:46 2000
++++ dagrab.c	Tue Nov 18 00:05:29 2003
+@@ -94,26 +94,21 @@
  #include <string.h>
  #include <errno.h>
  #include <fcntl.h>
@@ -23,6 +23,7 @@
  #include <sys/socket.h>
  #include <netinet/in.h>
 +#include <sys/cdio.h>
++#include <sys/cdrio.h>
 +#include <sys/param.h>
 +#include <sys/mount.h>
  #define CDDEVICE "/dev/cdrom"
@@ -31,7 +32,7 @@
  #define OVERLAP 2
  #define KEYLEN 12
  #define OFS 12
-@@ -123,12 +117,18 @@
+@@ -123,12 +118,18 @@
  #define D_MODE 0660
  #define CDDB_MAX  65535
  #define CDDB_PORT 888
@@ -50,7 +51,7 @@
  #define KW_TRACK 0
  #define KW_FULLD 1
  #define KW_AUTHOR 2
-@@ -206,16 +206,20 @@
+@@ -206,16 +207,20 @@
  
  struct Wavefile cd_newave(unsigned size)
  {
@@ -81,7 +82,7 @@
    return dummy;
  }
  
-@@ -226,16 +230,16 @@
+@@ -226,16 +231,16 @@
    return buf;
  }
  
@@ -104,11 +105,22 @@
  }
  
  void cd_read_audio(int lba,int num,char *buf)
-@@ -244,13 +248,13 @@
+@@ -244,16 +249,27 @@
  	/*NOTE: if num>CDROM_NBLOCKS_BUFFER as defined in ide_cd.c (8 in linux 2.0.32)
  	  jitter correction may be required inside the block. */					   
  {
 -	struct cdrom_read_audio ra;
++/* CDIOCREADAUDIO has been removed in FreeBSD 5.1-CURRENT */
++#if defined (__FreeBSD__) &&  (__FreeBSD_version >= 501106)
++	int bsize = 2352;
++        if(ioctl(cdrom_fd,CDRIOCSETBLOCKSIZE,&bsize) == -1) {
++		fprintf(stderr, "setblocksize");
++		exit(1);
++        }
++	if (pread(cdrom_fd, buf, num*bsize, lba*bsize) != num*bsize){
++		fprintf(stderr,"\n%s: read device at lba %d length %d: %s\n",
++				progname,lba,num,strerror(errno));
++#else
 +	struct ioc_read_audio ra;
  
 -	ra.addr.lba=lba;
@@ -118,12 +130,16 @@
  	ra.nframes=num;
 -	ra.buf=buf;
 -	if(ioctl(cdrom_fd,CDROMREADAUDIO,&ra)){
+-		/*fprintf(stderr,"%s: read raw ioctl failed \n",progname);*/
 +	ra.buffer=buf;
 +	if(ioctl(cdrom_fd,CDIOCREADAUDIO,&ra)){
- 		/*fprintf(stderr,"%s: read raw ioctl failed \n",progname);*/
  		fprintf(stderr,"\n%s: read raw ioctl failed at lba %d length %d: %s\n",
  				progname,lba,num,strerror(errno));
-@@ -471,7 +475,7 @@
++#endif
+ 		exit(1);
+ 	}
+ }
+@@ -471,7 +487,7 @@
    DIR *d;
    struct dirent *e;
    char *id2,*p,*cddb,*loc;
@@ -132,7 +148,7 @@
    char id[12];
    char *path;
    char path2[500];
-@@ -645,10 +649,10 @@
+@@ -645,10 +661,10 @@
  int cd_getinfo(char *cd_dev,struct cd_trk_list *tl)
  {
  	int i;
@@ -146,7 +162,7 @@
  		fprintf(stderr,"%s: error opening device %s\n",progname,cd_dev);
  		exit(1);
  	}
-@@ -656,7 +660,7 @@
+@@ -656,7 +672,7 @@
  		fprintf(stderr,"%s: read TOC ioctl failed: %s\n",progname,strerror(errno));
  		exit(1);
  	}
@@ -155,7 +171,7 @@
  	if((tl->starts=(int *)malloc((tl->max-tl->min+2)*sizeof(int)))==NULL){
  		fprintf(stderr,"%s: list data allocation failed\n",progname);
  		exit(1);
-@@ -668,21 +672,21 @@
+@@ -668,21 +684,21 @@
  
  	for (i=tl->min;i<=tl->max;i++)
  	{
@@ -183,7 +199,7 @@
  	
          i=cddb_main(tl);
  	if(i==-1) {
-@@ -796,6 +800,7 @@
+@@ -796,6 +812,7 @@
  	struct Wavefile header;
  	int fd,bytes,i,n,q,space;
  	int bcount, sc, missing, speed = 0, ldp, now;
@@ -191,7 +207,7 @@
  
  	if(tn<tl->min || tn>tl->max) return (-1);
  	space = ((tl->starts[tn-tl->min+1]-tl->starts[tn-tl->min]) * 
-@@ -879,8 +884,10 @@
+@@ -879,8 +896,10 @@
  					d = p1[c];
  					buf3[c] = ((short)(d&65535) + (short)(d>>16)) >> 1;
  				}
@@ -204,7 +220,7 @@
  				fprintf(stderr,"%s: error writing wave file %s: %s\n",
  					progname,nam,strerror(errno));
  				exit(1);
-@@ -896,7 +903,17 @@
+@@ -896,7 +915,17 @@
  	/* dump last bytes */
  	if (bytes<(tl->starts[tn+1]-tl->starts[tn])*CD_FRAMESIZE_RAW){
  		n=(tl->starts[tn+1]-tl->starts[tn])*CD_FRAMESIZE_RAW-bytes;
@@ -223,7 +239,7 @@
  			fprintf(stderr,"%s: error writing wave file %s: %s\n",progname,nam,strerror(errno));
  			exit(1);
  		};
-@@ -961,7 +978,7 @@
+@@ -961,7 +990,7 @@
  int main(int ac,char **av)
  {
  	int i,l,disp_TOC=0;
@@ -232,7 +248,7 @@
  	int all_tracks=0;
  	struct cd_trk_list tl;
  	char cd_dev[BLEN+1]=CDDEVICE;
-@@ -969,10 +986,8 @@
+@@ -969,10 +998,8 @@
  	char filter[BLEN+1] = "";
  	char path[500];
  	FILE *f;

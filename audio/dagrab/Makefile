@@ -21,10 +21,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dagrab.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501106
-BROKEN=		"Broken by new ATA driver"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
