@@ -1,0 +1,22 @@
+--- configure.orig	Sun Jun  2 01:33:08 2002
++++ configure	Fri Jul 26 20:08:26 2002
+@@ -1159,8 +1159,8 @@
+ 
+ 
+ gaadatadir=$datadir/gaa
+-gaadocdir=$datadir/gaa/doc
+-gaasampledir=$datadir/gaa/sample
++gaadocdir=$datadir/doc/gaa
++gaasampledir=$datadir/examples/gaa
+ 
+ 
+ 
+@@ -2463,7 +2463,7 @@
+ 
+ 
+ if test $ac_cv_c_compiler_gnu != no; then
+-  CFLAGS="${CFLAGS} -ggdb3 -Wall -Wpointer-arith"
++  CFLAGS="${CFLAGS} -Wpointer-arith"
+ fi
+ 
+ 
