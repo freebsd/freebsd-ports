@@ -1,0 +1,12 @@
+sndstretch_xmms is an xmms plugin to adjust pitch and speed seperately 
+with two sliders.
+
+sndstretch can be compiled as an effect-plugin, with one major drawback 
+    - the time and the visual plugins don't synchronize with the song 
+
+and a very basic oss-output-plugin with some limitations: 
+    - no additional effect support built in (at least not yet). 
+    - the mixer device and pcm device are fix coded as "/dev/mixer" 
+      and "/dev/dsp" 
+    - the effect is written for normal signed short (S16_LE) and will 
+      probably only work if xmms plays such data (...i think mostly it will). 

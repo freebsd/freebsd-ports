@@ -244,6 +244,7 @@
     SUBDIR += xmms-liveice
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
+    SUBDIR += xmms-sndstretch
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-volnorm
     SUBDIR += xmp

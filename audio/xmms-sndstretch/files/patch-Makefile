@@ -1,0 +1,40 @@
+--- Makefile.orig	Thu Mar 15 18:15:55 2001
++++ Makefile	Mon Dec  3 00:55:22 2001
+@@ -1,27 +1,28 @@
+-CC      = gcc
++CC      ?= gcc
+ #INCDIR  = -I sndstretch
+-CFLAGS  = -Wall -O6 $(INCDIR)
++CFLAGS  += -Wall $(INCDIR)
++THREADS= ${PTHREAD_LIBS}
+ 
+ # maybe you will have to change this
+-XMMS_EPLUGIN_DIR = /usr/X11/lib/xmms/Output
+-XMMS_OPLUGIN_DIR = /usr/X11/lib/xmms/Effect
++XMMS_EPLUGIN_DIR = ${PREFIX}/lib/xmms/Output
++XMMS_OPLUGIN_DIR = ${PREFIX}/lib/xmms/Effect
+ 
+ all: effect_plugin output_plugin
+ 
+ effect_plugin: sndstretch_xmms_eff.lo sndstretch.lo
+-	$(CC) -shared sndstretch_xmms_eff.lo sndstretch.lo `gtk-config --libs` -lgthread -lpthread -lpthread -lc -o sndstretch_xmms_eff.so
++	$(CC) -shared sndstretch_xmms_eff.lo sndstretch.lo `${GTK_CONFIG} --libs` ${THREADS} -lc -o sndstretch_xmms_eff.so
+ 
+ output_plugin: sndstretch_xmms_out.lo sndstretch.lo
+-	$(CC) -shared sndstretch_xmms_out.lo sndstretch.lo `gtk-config --libs` -lgthread -lpthread -lpthread -lc -o sndstretch_xmms_out.so
++	$(CC) -shared sndstretch_xmms_out.lo sndstretch.lo `${GTK_CONFIG} --libs` ${THREADS} -lc -o sndstretch_xmms_out.so
+ 
+ sndstretch_xmms_eff.lo: sndstretch_xmms.h sndstretch_xmms_eff.c sndstretch_xmms.c FB_logo.xpm sndstretch_xmms-logo.xpm
+-	$(CC) $(CFLAGS) -O2 -fPIC -c sndstretch_xmms_eff.c `gtk-config --cflags` -o sndstretch_xmms_eff.lo
++	$(CC) $(CFLAGS) -fPIC -c sndstretch_xmms_eff.c `${GTK_CONFIG} --cflags` -o sndstretch_xmms_eff.lo
+         
+ sndstretch_xmms_out.lo: sndstretch_xmms.h sndstretch_xmms_out.c sndstretch_xmms.c FB_logo.xpm sndstretch_xmms-logo.xpm
+-	$(CC) $(CFLAGS) -O2 -fPIC -c sndstretch_xmms_out.c `gtk-config --cflags` -o sndstretch_xmms_out.lo
++	$(CC) $(CFLAGS) -fPIC -c sndstretch_xmms_out.c `${GTK_CONFIG} --cflags` -o sndstretch_xmms_out.lo
+         
+ sndstretch.lo: sndstretch.c sndstretch.h
+-	$(CC) $(CFLAGS) -O2 -fPIC -c sndstretch.c -o sndstretch.lo
++	$(CC) $(CFLAGS) -fPIC -c sndstretch.c -o sndstretch.lo
+ 
+ install:
+ 	install sndstretch_xmms_out.so $(XMMS_OPLUGIN_DIR)
