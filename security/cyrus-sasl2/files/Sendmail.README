@@ -9,7 +9,7 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
 
 2) Rebuild FreeBSD (make buildworld, ...)
 
-3) Create /usr/local/lib/sasl/Sendmail.conf with the following.
+3) Create /usr/local/lib/sasl2/Sendmail.conf with the following.
 
    pwcheck_method: saslauthd
 
