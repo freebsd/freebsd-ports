@@ -8,7 +8,8 @@
 PORTNAME=	echoping
 PORTVERSION=	5.0.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=		${PORTNAME}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A ping-like program that uses tcp and/or http
