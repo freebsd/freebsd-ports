@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56971fa6-641c-11d9-a097-000854d03344">
+    <topic>xshisen -- local buffer overflows</topic>
+    <affects>
+      <package>
+        <name>xshisen</name>
+        <range><lt>1.36_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Steve Kemp has found buffer overflows in the handling
+	  of the command line flag -KCONV and the XSHISENLIB environment
+	  variable.  Ulf Härnhammer has detected an unbounded copy from
+          the GECOS field to a char array.  All overflows can be exploited
+          to gain group games privileges.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=213957</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=289784</url>
+    </references>
+    <dates>
+      <discovery>2005-01-11</discovery>
+      <entry>2005-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0cf3480d-5fdf-11d9-b721-00065be4b5b6">
     <topic>helvis -- arbitrary file deletion problem</topic>
     <affects>
