@@ -1,0 +1,7 @@
+lib/perl5/man/man3/Crypt::IDEA.3.gz
+lib/perl5/site_perl/Crypt/IDEA.pm
+lib/perl5/site_perl/Crypt/IDEA.pod
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/IDEA/IDEA.bs
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/IDEA/IDEA.so
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/IDEA/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Crypt/IDEA
