@@ -5861,12 +5861,10 @@ ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-termios	ports/comms/ruby-termios
 ruby-textbuf	ports/devel/ruby-textbuf
 ruby-tgif	ports/graphics/ruby-tgif
-ruby-timex	ports/devel/ruby-timex
 ruby-tk		ports/x11-toolkits/ruby-tk
 ruby-tmail	ports/mail/ruby-tmail
 ruby-tmpl	ports/www/ruby-tmpl
 ruby-tzfile	ports/devel/ruby-tzfile
-ruby-uri	ports/net/ruby-uri
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-webunit	ports/www/ruby-webunit
 ruby-xmlparser	ports/textproc/ruby-xmlparser
