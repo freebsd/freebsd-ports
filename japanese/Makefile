@@ -103,6 +103,7 @@
     SUBDIR += kon2-16dot
     SUBDIR += kterm
     SUBDIR += kterm16c
+    SUBDIR += lambdamoo
     SUBDIR += latex2html
     SUBDIR += less
     SUBDIR += lesw
