@@ -10,7 +10,7 @@ PORTVERSION=	0.98.6
 CATEGORIES=	databases
 MASTER_SITES=	ftp://speedy.flex.ro/pub/pgaccess/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql7\
 		wish8.3:${PORTSDIR}/x11-toolkits/tk83
