@@ -32,6 +32,7 @@
     SUBDIR += gtk--
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-engines
+    SUBDIR += gtk-engines2
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-qn-x11-theme
