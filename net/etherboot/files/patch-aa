@@ -9,8 +9,8 @@
  
  # These flags affect the loader that is prepended to the Etherboot image
  LCONFIG+=	-DMOVEROM
---- boot1a.s.orig	Sat Jun 23 08:56:25 2001
-+++ boot1a.s	Mon Feb  4 14:49:28 2002
+--- boot1a.s.orig	Sat Jun 23 10:56:25 2001
++++ boot1a.s	Mon Mar 11 09:06:00 2002
 @@ -56,7 +56,7 @@
  # Partition Constants 
  		.set PRT_OFF,0x1be		# Partition offset
@@ -20,6 +20,15 @@
  
  # Flag Bits
  		.set FL_PACKET,0x80		# Packet mode
+@@ -398,7 +398,7 @@
+ 		.byte 0x00	# start head
+ 		.byte 0x01	# start sector (6 bits) + start cyl (2 bit)
+ 		.byte 0x00	# start cyl (low 8 bits)
+-		.byte 0x1	# part.type
++		.byte PRT_BSD	# part.type
+ 		.byte 0xff	# end head
+ 		.byte 0xff	# end sect (6) + end_cyl(2)
+ 		.byte 0xff	# end cyl
 --- makerom.c.orig	Thu Aug  2 00:27:48 2001
 +++ makerom.c	Mon Feb  4 15:05:00 2002
 @@ -67,7 +67,7 @@
