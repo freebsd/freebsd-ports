@@ -2960,6 +2960,7 @@ iSiloXC		ports/palm/iSiloXC
 ia64sim		ports/emulators/ia64sim
 ical		ports/deskutils/ical
 icb		ports/net/icb
+icbirc		ports/irc/icbirc
 icbm3d		ports/games/icbm3d
 icc		ports/lang/icc
 icc7		ports/lang/icc7
