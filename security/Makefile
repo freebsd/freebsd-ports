@@ -421,6 +421,7 @@
     SUBDIR += snort-rep
     SUBDIR += snortreport
     SUBDIR += snortsnarf
+    SUBDIR += spike-proxy
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += ssh
