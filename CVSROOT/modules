@@ -7756,6 +7756,7 @@ tcpview		ports/net/tcpview
 tcsh		ports/shells/tcsh
 tdb		ports/databases/tdb
 tdetect		ports/net/tdetect
+tdiary		ports/www/tdiary
 tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
 tdtd.el		ports/textproc/tdtd.el
