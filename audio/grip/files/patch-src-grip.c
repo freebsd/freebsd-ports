@@ -31,13 +31,3 @@
  
    ginfo->changer_slots=0;
    ginfo->current_disc=0;
-@@ -737,6 +738,9 @@
-       rename(filename,renamefile);
-     }
- 
-+#if defined(__FreeBSD__)
-+    ginfo->poll_drive=FALSE;
-+#endif /* defined __FreeBSD__ */
-     DoSaveConfig(ginfo);
-   }
- 
