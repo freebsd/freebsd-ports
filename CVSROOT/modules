@@ -9400,6 +9400,7 @@ terminatorx	ports/audio/terminatorx
 terminus-font	ports/x11-fonts/terminus-font
 termlog		ports/security/termlog
 terraform	ports/misc/terraform
+testdisk	ports/sysutils/testdisk
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
 tethereal-lite	ports/net/tethereal-lite
