@@ -3,7 +3,7 @@
 # Date created:				03/14/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.24 1999/03/16 19:42:34 nectar Exp $
+# $Id: Makefile,v 1.25 1999/05/27 02:25:12 nectar Exp $
 #
 
 DISTNAME=	gnome-python-1.0.3
@@ -18,12 +18,14 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 MAINTAINER=	nectar@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 PLIST=		${WRKSRC}/PLIST
 
 DOCDIR=		share/doc/py-gnome
