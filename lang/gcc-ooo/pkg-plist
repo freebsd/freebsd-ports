@@ -9,16 +9,6 @@ bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc-ooo
 bin/%%GNU_HOST%%-g++-ooo
 bin/gccbug-ooo
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixinc.sh
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
-@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
-@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%
-@unexec rmdir %D/libexec/gcc/%%GNU_HOST%% 2>/dev/null || true
-@unexec rmdir %D/libexec/gcc 2>/dev/null || true
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-
