@@ -8,8 +8,7 @@
 PORTNAME=	xvmines
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.csd.uch.gr/pub/X11/games/ \
-		ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
