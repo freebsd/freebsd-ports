@@ -24,12 +24,8 @@ MASTER_SITE_SUBDIR=	server/sources
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aquatique@rusunix.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network server
-
-.ifndef(NOPORTDOCS)
-RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
-.endif
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
