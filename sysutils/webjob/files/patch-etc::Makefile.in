@@ -1,0 +1,13 @@
+--- etc/Makefile.in.orig	Mon Mar  1 23:36:29 2004
++++ etc/Makefile.in	Fri May  7 18:40:29 2004
+@@ -22,10 +22,8 @@
+ 
+ INSTALL			= @INSTALL@
+ SRC_FILES		=\
+-			nph-webjob.cfg.sample\
+ 			webjob.cfg.sample
+ DST_FILES		=\
+-			${etcdir}/nph-webjob.cfg.sample\
+ 			${etcdir}/webjob.cfg.sample
+ 
+ all: ${SRC_FILES}
