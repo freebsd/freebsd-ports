@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.cs.virginia.edu/~dwc3q/code/ \
 		ftp://maroon.webmaster.com/pub/mbx2mbox/
 EXTRACT_SUFX=
 
-MAINTAINER=	josh@quick.net
-
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS= .

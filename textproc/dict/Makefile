@@ -12,8 +12,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
 		ftp://ftp.dict.org/pub/dict/
 
-MAINTAINER=	josh@quick.net
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-cflags=${CFLAGS}"
 USE_GMAKE=	yes
