@@ -1,5 +1,5 @@
-*** adcomplain.pl.orig	Wed Oct  8 01:12:36 1997
---- adcomplain.pl	Wed Oct  8 01:21:22 1997
+*** adcomplain.pl.orig	Wed Oct  8 02:02:29 1997
+--- adcomplain.pl	Wed Oct  8 02:13:15 1997
 ***************
 *** 1,6 ****
 ! #! /bin/sh -- # -*- perl -*-
@@ -122,3 +122,20 @@
   unlink $tempname;
   close STDIN;
   exit 0;
+***************
+*** 685,691 ****
+    local ($probe, $each, $result);
+  
+    $probe = $text;
+!   $probe =~ s/^\s*(\S\S\S).*/$1/;
+    foreach $each ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat",  "Sun") {
+      return 1 if $each =~ /$probe/i;
+      }
+--- 691,697 ----
+    local ($probe, $each, $result);
+  
+    $probe = $text;
+!   $probe =~ s/^\s*(\w\w\w).*/$1/;
+    foreach $each ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat",  "Sun") {
+      return 1 if $each =~ /$probe/i;
+      }
