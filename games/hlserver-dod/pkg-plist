@@ -93,6 +93,7 @@
 %%HLDSDIR%%dod/maps/dod_caen.bsp
 %%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_caen.txt
 %%HLDSDIR%%dod/maps/dod_cherbourg.bsp
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_cherbourg.txt
 %%HLDSDIR%%dod/maps/dod_dam.bsp
 %%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_dam.txt
 %%HLDSDIR%%dod/maps/dod_hill.bsp
@@ -128,6 +129,8 @@
 %%HLDSDIR%%dod/models/modelnames.txt
 %%HLDSDIR%%dod/models/object-seg1.mdl
 %%HLDSDIR%%dod/models/p_98k.mdl
+%%HLDSDIR%%dod/models/p_MP40.mdl
+%%HLDSDIR%%dod/models/p_TOMMY.mdl
 %%HLDSDIR%%dod/models/p_amerk.mdl
 %%HLDSDIR%%dod/models/p_bar.mdl
 %%HLDSDIR%%dod/models/p_colt.mdl
@@ -136,11 +139,9 @@
 %%HLDSDIR%%dod/models/p_grenade.mdl
 %%HLDSDIR%%dod/models/p_kar.mdl
 %%HLDSDIR%%dod/models/p_luger.mdl
-%%HLDSDIR%%dod/models/p_mp40.mdl
 %%HLDSDIR%%dod/models/p_mp44.mdl
 %%HLDSDIR%%dod/models/p_spring.mdl
 %%HLDSDIR%%dod/models/p_stick.mdl
-%%HLDSDIR%%dod/models/p_tommy.mdl
 %%HLDSDIR%%dod/models/p_youthk.mdl
 %%HLDSDIR%%dod/models/phono.mdl
 %%HLDSDIR%%dod/models/player.mdl
@@ -157,6 +158,8 @@
 %%HLDSDIR%%dod/models/stang.mdl
 %%HLDSDIR%%dod/models/tnt.mdl
 %%HLDSDIR%%dod/models/v_98k.mdl
+%%HLDSDIR%%dod/models/v_MP40.mdl
+%%HLDSDIR%%dod/models/v_TOMMY.mdl
 %%HLDSDIR%%dod/models/v_amergren.mdl
 %%HLDSDIR%%dod/models/v_amerk.mdl
 %%HLDSDIR%%dod/models/v_amerk_g2.mdl
@@ -175,7 +178,6 @@
 %%HLDSDIR%%dod/models/v_luger_a.mdl
 %%HLDSDIR%%dod/models/v_luger_r.mdl
 %%HLDSDIR%%dod/models/v_luger_s.mdl
-%%HLDSDIR%%dod/models/v_mp40.mdl
 %%HLDSDIR%%dod/models/v_mp44.mdl
 %%HLDSDIR%%dod/models/v_pineapple_a.mdl
 %%HLDSDIR%%dod/models/v_pineapple_g.mdl
@@ -189,12 +191,13 @@
 %%HLDSDIR%%dod/models/v_stick_g2.mdl
 %%HLDSDIR%%dod/models/v_stick_r.mdl
 %%HLDSDIR%%dod/models/v_stick_s.mdl
-%%HLDSDIR%%dod/models/v_tommy.mdl
 %%HLDSDIR%%dod/models/v_youthk.mdl
 %%HLDSDIR%%dod/models/v_youthk_a.mdl
 %%HLDSDIR%%dod/models/v_youthk_r.mdl
 %%HLDSDIR%%dod/models/v_youthk_s.mdl
 %%HLDSDIR%%dod/models/w_98k.mdl
+%%HLDSDIR%%dod/models/w_MP40.mdl
+%%HLDSDIR%%dod/models/w_TOMMY.mdl
 %%HLDSDIR%%dod/models/w_aflag.mdl
 %%HLDSDIR%%dod/models/w_afolder.mdl
 %%HLDSDIR%%dod/models/w_amerk.mdl
@@ -210,7 +213,6 @@
 %%HLDSDIR%%dod/models/w_grenade.mdl
 %%HLDSDIR%%dod/models/w_kar.mdl
 %%HLDSDIR%%dod/models/w_luger.mdl
-%%HLDSDIR%%dod/models/w_mp40.mdl
 %%HLDSDIR%%dod/models/w_mp40clip.mdl
 %%HLDSDIR%%dod/models/w_mp44.mdl
 %%HLDSDIR%%dod/models/w_mp44clip.mdl
@@ -219,7 +221,6 @@
 %%HLDSDIR%%dod/models/w_stick.mdl
 %%HLDSDIR%%dod/models/w_stripclip.mdl
 %%HLDSDIR%%dod/models/w_tomclip.mdl
-%%HLDSDIR%%dod/models/w_tommy.mdl
 %%HLDSDIR%%dod/models/w_wflag.mdl
 %%HLDSDIR%%dod/models/w_youthk.mdl
 %%HLDSDIR%%dod/models/wl.mdl
@@ -616,6 +617,7 @@
 %%HLDSDIR%%dod/sprites/smoke.spr
 %%HLDSDIR%%dod/sprites/stamina-torn.spr
 %%HLDSDIR%%dod/sprites/stamina.spr
+%%HLDSDIR%%dod/sprites/steam1.spr
 %%HLDSDIR%%dod/sprites/strip_clip_empty.spr
 %%HLDSDIR%%dod/sprites/strip_clip_extra.spr
 %%HLDSDIR%%dod/sprites/strip_clip_full.spr
