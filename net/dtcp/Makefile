@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtcp
-PORTVERSION=	20021119
+PORTVERSION=	20030101
 #PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/
@@ -18,11 +18,12 @@ RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
 USE_RUBY=	yes
-RUBY_SHEBANG_FILES=	${WRKSRC}/dtcpc.rb ${WRKSRC}/dtcps.rb
+RUBY_SHEBANG_FILES=	${WRKSRC}/dtcpauth.rb ${WRKSRC}/dtcpc.rb \
+			${WRKSRC}/dtcps.rb
 
 WRKSRC=		${WRKDIR}/dtcp
 
-MAN8=		dtcpc.8 dtcps.8
+MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
 MANCOMPRESSED=	yes
 
 pre-everything:
