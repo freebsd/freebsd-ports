@@ -14,6 +14,10 @@ DISTNAME=	medium
 MAINTAINER=	seggers@semyam.dinoco.de
 COMMENT=	The medium opening book (about 1.9 MByte) for crafty
 
+BROKEN=		"Does not fetch"
+EXPIRATION_DATE=2004-11-23
+DEPRECATED=	${BROKEN}
+
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 

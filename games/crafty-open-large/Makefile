@@ -14,6 +14,10 @@ DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 MAINTAINER=	seggers@semyam.dinoco.de
 COMMENT=	The large opening book for crafty
 
+BROKEN=		"Does not fetch"
+EXPIRATION_DATE=2004-11-23
+DEPRECATED=	${BROKEN}
+
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
