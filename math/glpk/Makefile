@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	demon@FreeBSD.org
 
+BROKEN=		"Installs files into /usr/include"
+
 GNU_CONFIGURE=	yes
 
 DOCFILES=	lang.ps refman.ps bench.txt brcut.txt
