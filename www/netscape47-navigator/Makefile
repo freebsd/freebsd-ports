@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../netscape4-communicator
+MASTERDIR=	${.CURDIR}/../netscape47-communicator
 COMMENT?=	DEC Alpha Netscape version 4 navigator web-surfboard
 
 BROWSER_NAME=	navigator
