@@ -14,7 +14,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 .if !defined(NOGNOME)
-LIB_DEPENDS+=	glade.2:${PORTSDIR}/devel/libglade \
+LIB_DEPENDS+=	glade.3:${PORTSDIR}/devel/libglade \
 		gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 BUILD_DEPENDS=	rep:${PORTSDIR}/lang/librep
