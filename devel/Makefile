@@ -1048,6 +1048,7 @@
     SUBDIR += pear-PEAR
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-VFS
+    SUBDIR += pear-Validate
     SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RSS

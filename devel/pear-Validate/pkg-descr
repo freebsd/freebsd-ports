@@ -1,0 +1,12 @@
+Package to validate various datas. It includes:
+* numbers (min/max, decimal or not)
+* email (syntax, domain check)
+* string (predifined type alpha upper and/or lowercase, numeric,...)
+* date (min, max)
+* Credit cards
+* uri (RFC2396)
+* possibility valid multiple data with a single method call (::multiple)
+* Locale validation for AT, CH, DE, ES, FR, NL, PL, ptBR, UK, US
+* Finance (e.g. IBAN)
+
+WWW: http://pear.php.net/package/Validate
