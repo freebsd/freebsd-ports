@@ -10,7 +10,8 @@
 PORTNAME=	festlex-ogi
 PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://cslu.cse.ogi.edu/pub/tts/
+MASTER_SITES=	ftp://cslu.cse.ogi.edu/pub/tts/ \
+		${MASTER_SITE_NETBSD}
 DISTNAME=	OGIlexicon-2.0
 DIST_SUBDIR=	festival
 

@@ -11,6 +11,7 @@ PORTNAME=	festvox-el11
 PORTVERSION=	1.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/festival/cstr/festival/1.4.1/ \
+		${MASTER_SITE_NETBSD} \
 		ftp://ftp.cstr.ed.ac.uk/pub/festival/1.4.1/
 DISTNAME=	festvox_ellpc11k
 DIST_SUBDIR=	festival
