@@ -108,6 +108,7 @@
     SUBDIR += pstotext
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
+    SUBDIR += py-freetype
     SUBDIR += py-reportlab
     SUBDIR += rlpr
     SUBDIR += rtf2latex
