@@ -3,18 +3,14 @@
 # Date created:         31 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1998/12/07 20:20:24 billf Exp $
+# $Id: Makefile,v 1.3 1998/12/10 17:24:33 vanilla Exp $
 #
 
 DISTNAME=	superlu_1.1
 PKGNAME=	superlu-1.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/pub/lapack/SuperLU/	\
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/cs.berkeley.edu/lapack/SuperLu/ \
-		ftp://ftp.ntua.gr/pub/netlib/scalapack/prototype/ \
-		ftp://ftp.uow.edu.au/pub/netlib/scalapack/prototype/ \
-		ftp://ftp.zib.de/pub/netlib/scalapack/prototype/ \
-		ftp://ftp.riken.go.jp/pub/netlib/scalapack/prototype/
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/cs.berkeley.edu/lapack/SuperLU/
 
 MAINTAINER=	ports@FreeBSD.org
 
