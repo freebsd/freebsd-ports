@@ -20,6 +20,7 @@
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cxterm
+    SUBDIR += dia
     SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
