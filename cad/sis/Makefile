@@ -50,7 +50,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/espresso/espresso.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/espresso/pla.5 ${PREFIX}/man/man5
 	${MKDIR} ${PREFIX}/lib/sis
-	${TAR} -C ${WRKSRC}/sis/sis_lib -cf - . | \
+	${TAR} -C ${WRKSRC}/sis -cf - sis_lib | \
 		${TAR} -C ${PREFIX}/lib/sis --unlink -xf -
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/SIS_paper.ps ${PREFIX}/lib/sis
