@@ -44,15 +44,6 @@
  if [ "$?" = '1' ]; then
      echo 'Stop!'
      echo
-@@ -155,7 +160,7 @@
- 
- # Test the -O2 for CFLAGS.
- ${CC-cc} -O2 conftest.c >/dev/null 2>&1
--test -f a.out && CFLAGS=-O2
-+test -f a.out && CFLAGS="-O2 -m486"
- CFLAGS="${CFLAGS--O}"
- rm -f a.out
- 
 @@ -248,7 +253,7 @@
    IFS="$saveifs"
  fi
