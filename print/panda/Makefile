@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	panda
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.3
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.stillhq.com/panda/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
@@ -22,11 +21,24 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -lpanda| \$$(top_srcdir)/libpanda.la|g' \
+		${WRKSRC}/examples/Makefile.in
+
+pre-configure:
+.for f in config.guess config.sub
+	@${LN} -sf ${LOCALBASE}/share/libtool/${f} ${WRKSRC}/config
+.endfor
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/panda_*.3 ${MANPREFIX}/man/man3
@@ -36,10 +48,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-.for f in IMAGES examples/*.c examples/images/*.*
+.for f in IMAGES examples/*.c examples/c++/*.cpp examples/images/*.*
 	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
 .endif
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
