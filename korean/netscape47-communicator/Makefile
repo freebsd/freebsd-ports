@@ -14,6 +14,6 @@ PKGDIR=		${SUBMASTERDIR}/pkg
 BROWSER_VER=	47
 BROWSER_VERSION=	4.75
 NETHELP=        nethelp-v451
-KOREAN_KIT=	netscape-korean-kit-v475.20000825
+KOREAN_KIT=	netscape-korean-kit-v475.20000826
 
 .include "${MASTERDIR}/Makefile"
