@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffproxy
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://faith.eu.org/${PORTNAME}/
 
