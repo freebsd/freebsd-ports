@@ -43,17 +43,21 @@ USE_BDB_VER=	${WITH_BDB_VER}
 .else
 USE_BDB_VER=	3
 .endif
-.if ${USE_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.if ${USE_BDB_VER} == 3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db3 --with-bdb=db3
 .elif ${USE_BDB_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif ${USE_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db4 --with-bdb=db4
+.elif ${USE_BDB_VER} == 41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
+.elif ${USE_BDB_VER} == 42
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
 .else
-BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
+BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
 .endif
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
-		--with-bdb=db${USE_BDB_VER}
 
 .if defined(WITHOUT_SKIPLIST)
 CONFIGURE_ARGS+=--with-mboxlist-db=berkeley --with-seen-db=flat

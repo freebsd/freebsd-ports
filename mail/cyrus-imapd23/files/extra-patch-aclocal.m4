@@ -1,7 +1,7 @@
 Index: aclocal.m4
 diff -u aclocal.m4.orig aclocal.m4
---- aclocal.m4.orig	Wed Oct 29 02:24:46 2003
-+++ aclocal.m4	Wed Oct 29 04:28:37 2003
+--- aclocal.m4.orig	Thu Jan 15 23:36:46 2004
++++ aclocal.m4	Sat Jan 17 22:58:54 2004
 @@ -505,7 +505,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -11,7 +11,16 @@ diff -u aclocal.m4.orig aclocal.m4
            do
              AC_CHECK_LIB($dbname, db_create, BDB_LIBADD="$BDB_LIBADD -l$dbname";
                dblib="berkeley"; break, dblib="no")
-@@ -1664,7 +1664,7 @@
+@@ -547,7 +547,7 @@
+ 	dnl Note that FreeBSD puts it in a wierd place
+         dnl (but they should use with-bdb-incdir)
+         AC_CHECK_HEADER(db.h,
+-                        CYRUS_BERKELEY_DB_CHK_LIB(),
++                        BDB_LIBADD="$BDB_LIBADD -l$with_bdb"; dblib="berkeley",
+                         dblib="no")
+ 
+ 	CPPFLAGS=$cmu_save_CPPFLAGS
+@@ -1786,7 +1786,7 @@
    LIB_UCDSNMP=""
    if test "$with_ucdsnmp" != no; then
      AC_DEFINE(HAVE_UCDSNMP,1,[Do we have SNMP support?])
