@@ -26,10 +26,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Message.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EncappedMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EvalTests.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locales.pm
-lib/perl5/%%PERL_VER%%/man/man3/Mail::SpamAssassin::Conf.3.gz
-lib/perl5/%%PERL_VER%%/man/man3/Mail::SpamAssassin.3.gz
-lib/perl5/%%PERL_VER%%/man/man3/Mail::SpamAssassin::PerMsgStatus.3.gz
-lib/perl5/%%PERL_VER%%/man/man3/Mail::SpamAssassin::PersistentAddrList.3.gz
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.sql
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/Changes
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README
