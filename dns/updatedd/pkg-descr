@@ -1,0 +1,15 @@
+Updatedd is a client to update dynamic dns settings.
+With the use of the pppd ip-up script it can update
+these settings automatically for you. 
+Updatedd does not run as a daemon.
+
+It is divided into one main program and one plugin for each
+supported service. The plugins are dynamic libraries which
+are loaded by the main program. So it is possible to remove
+support for services you don't need.
+
+Supported Services:
+ods.org, dyndns.org, ovh.net, no-ip.org, hn.org
+
+Author:	Philipp Benner <philipp_benner (at) gmx (dot) de>
+WWW:	http://pb.gotdns.org/

@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+bin/updatedd
+lib/updatedd/default.so
+lib/updatedd/dyndns.so
+lib/updatedd/hn.so
+lib/updatedd/noip.so
+lib/updatedd/ods.so
+lib/updatedd/ovh.so
+@dirrm lib/updatedd
+%%PORTDOCS%%%%DOCSDIR%%/README.english
+%%PORTDOCS%%%%DOCSDIR%%/README.german
+%%PORTDOCS%%%%DOCSDIR%%/rc_updatedd_dyndns
+%%PORTDOCS%%%%DOCSDIR%%/rc_updatedd_hn
+%%PORTDOCS%%%%DOCSDIR%%/rc_updatedd_noip
+%%PORTDOCS%%%%DOCSDIR%%/rc_updatedd_ods
+%%PORTDOCS%%%%DOCSDIR%%/rc_updatedd_ovh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
