@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1998/06/24 07:31:06 obrien Exp $
+# $Id: Makefile,v 1.3 1998/08/17 11:22:36 jseger Exp $
 #
 
 DISTNAME=	ups-3.32
@@ -17,6 +17,8 @@ MAINTAINER=     obrien@FreeBSD.org
 OSVERSION!=	sysctl -n kern.osreldate
 .if ${OSVERSION} >= 300000
 BROKEN=	"During build: Libvar_addrs[0] is not constant"
+.else
+BROKEN=	"xc_builtins.c cannot find X11/Xlib.h"
 .endif
 
 ALL_TARGET=	ups ups
