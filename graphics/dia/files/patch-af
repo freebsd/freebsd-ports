@@ -1,5 +1,5 @@
---- app/Makefile.in.orig	Fri May 11 05:04:49 2001
-+++ app/Makefile.in	Thu May 17 16:18:20 2001
+--- app/Makefile.in.orig	Sat May 19 01:04:11 2001
++++ app/Makefile.in	Sun May 20 18:55:59 2001
 @@ -177,4 +177,2 @@
  
 -bin_PROGRAMS = dia $(dia_embedd)
@@ -12,9 +12,19 @@
 +@HAVE_BONOBO_TRUE@bin_PROGRAMS = dia-bin$(EXEEXT) dia-embedd$(EXEEXT)
 +@HAVE_BONOBO_FALSE@bin_PROGRAMS = dia-bin$(EXEEXT)
  noinst_PROGRAMS = run_dia.sh
-@@ -552,2 +550,5 @@
- 	$(LINK) $(dia_LDFLAGS) $(dia_OBJECTS) $(dia_LDADD) $(LIBS)
-+
+@@ -553,2 +551,5 @@
+ 
 +dia-bin$(EXEEXT): dia$(EXEEXT)
 +	cp dia$(EXEEXT) dia-bin$(EXEEXT)
++
+ dia-embedd$(EXEEXT): $(dia_embedd_OBJECTS) $(dia_embedd_DEPENDENCIES)
+@@ -707,3 +708,3 @@
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(oafinfodir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 
+@@ -753,3 +754,3 @@
+ 
+-install-data-am: install-oafinfoDATA
++install-data-am:
  

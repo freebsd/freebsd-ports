@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	dia
-PORTVERSION=	0.88
+PORTVERSION=	0.88.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
 MAINTAINER=	gnome@FreeBSD.org
 
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GNOMELIBS=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -28,6 +30,10 @@ MAN1=		dia.1
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS=	--enable-gnome
+PLIST_SUB+=	DIAHELP="help/dia"
+.else
+CONFIGURE_ARGS=	--disable-gnome
+PLIST_SUB+=	DIAHELP="dia/help"
 .endif
 
 pre-patch:
