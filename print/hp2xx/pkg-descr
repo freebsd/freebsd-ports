@@ -13,3 +13,5 @@ It allows conversion from HPGL to:
 	pre(view), pcx (PaintBrush-Format), img (GEM),
         pic (ATARI bitmap), pbm (Portable Bitmap),
 	png (Portable Network Graphics), ...
+
+WWW: http://www.gnu.org/software/hp2xx/

@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	hp2xx
-PORTVERSION=	3.20
+PORTVERSION=	3.4.1
+PORTEPOCH=	1
 CATEGORIES=	print x11
-MASTER_SITES=	ftp://ftp.rz.uni-duesseldorf.de/pub/graphics/ \
-		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
-DISTNAME=	hp2xx-3.20-png
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/sources
 USE_XLIB=	yes
-MAKEFILE=	makefile
+
 MAN1=		hp2xx.1
 
 post-install:
