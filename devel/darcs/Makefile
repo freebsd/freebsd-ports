@@ -20,8 +20,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	darcs darcs.1 darcs-patcher darcs-createrepo
 
-GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
-			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+GHC_VERSION=	`${LOCALBASE}/bin/ghc ----numeric-version`
 
 .if defined(WITH_CGI)
 ALL_TARGET+=	darcs_cgi
