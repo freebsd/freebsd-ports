@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	msql
-PORTVERSION=	2.0.11
-PORTREVISION=	2
+PORTVERSION=    2.0.12
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB= YES
 
-# Not free for commercial use.  Must create a user on the local system
+# Not free for commercial use.
 NO_PACKAGE=	YES
 RESTRICTED=	"restrictive copyright (no commercial use)"
 
@@ -35,7 +34,7 @@ do-configure:
 
 pre-install:
 		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/check_old_version
-		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
+		PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
