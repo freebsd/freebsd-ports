@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squidpurge
-# Date created:				Fri Oct 19 23:00:00 WST 2001
-# Whom:				Dean Hollister <dean@odyssey.apana.org.au>
+# Date created:		Fri Oct 19 23:00:00 WST 2001
+# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.cache.dfn.de/DFN-Cache/Development/Purge/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -16,6 +16,8 @@ DISTNAME=	purge
 EXTRACT_SUFX=	-20000921-src.tar.gz
 
 MAINTAINER=	dean@odyssey.apana.org.au
+
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
 USE_GMAKE=	yes
 
