@@ -99,6 +99,7 @@ include/fox/FXOptionMenu.h
 include/fox/FXPNGIcon.h
 include/fox/FXPNGImage.h
 include/fox/FXPacker.h
+include/fox/FXPoint.h
 include/fox/FXPopup.h
 include/fox/FXPrintDialog.h
 include/fox/FXProfiler.h
@@ -107,6 +108,7 @@ include/fox/FXQuat.h
 include/fox/FXRadioButton.h
 include/fox/FXRange.h
 include/fox/FXRecentFiles.h
+include/fox/FXRectangle.h
 include/fox/FXRegion.h
 include/fox/FXRegistry.h
 include/fox/FXReplaceDialog.h
@@ -118,6 +120,7 @@ include/fox/FXSearchDialog.h
 include/fox/FXSeparator.h
 include/fox/FXShell.h
 include/fox/FXShutter.h
+include/fox/FXSize.h
 include/fox/FXSlider.h
 include/fox/FXSpinner.h
 include/fox/FXSplitter.h
