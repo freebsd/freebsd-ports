@@ -3,7 +3,7 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1998/01/29 12:39:43 andreas Exp $
+# $Id: Makefile,v 1.4 1998/02/02 15:58:45 asami Exp $
 #
 
 DISTNAME=	xmysqladmin-0.4.4
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-BROKEN=		package
 WRKSRC=		${WRKDIR}/xmysqladmin
 USE_X11=	yes
 ALL_TARGET=	xmysqladmin
