@@ -1,32 +1,5 @@
-*** Makefile.orig	Fri Feb 24 16:41:26 1995
---- Makefile	Sat Feb 25 18:30:04 1995
-***************
-*** 11,22 ****
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = sparc
-  VERSION = 4.18
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = gcc
-  
-  OPTS=-c
-  
---- 11,22 ----
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = freebsd
-  VERSION = 4.18
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = cc
-  
-  OPTS=-c
-  
+*** Makefile.orig	Thu Mar  2 16:53:34 1995
+--- Makefile	Fri Mar  3 07:37:29 1995
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
