@@ -11,7 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Jabber Client
 
 .if defined(WITH_XMMS)
@@ -36,7 +36,7 @@ MAN1=		gabber.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=	"Crashes or hangs on 5.x"
+IGNORE=	"Crashes or hangs on 5.x"
 .endif
 
 pre-build:
