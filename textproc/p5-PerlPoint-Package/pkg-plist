@@ -8,6 +8,45 @@ bin/pp2sdf
 %%SITE_PERL%%/PerlPoint/Tags/CPPP.pm
 %%SITE_PERL%%/PerlPoint/Tags/SDF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/doc-functions.pp
+%%PORTDOCS%%%%DOCSDIR%%/faq/Misc/parser-faq-1.pp
+%%PORTDOCS%%%%DOCSDIR%%/faq/Misc/parser-faq-2.pp
+%%PORTDOCS%%%%DOCSDIR%%/faq/Misc/parser-faq-3.pp
+%%PORTDOCS%%%%DOCSDIR%%/faq/Portability/portability-faq-1.pp
+%%PORTDOCS%%%%DOCSDIR%%/getting-started.pod
+%%PORTDOCS%%%%DOCSDIR%%/getting-started.pp
+%%PORTDOCS%%%%DOCSDIR%%/parser-active-contents.pp
+%%PORTDOCS%%%%DOCSDIR%%/parser-faq.pp
+%%PORTDOCS%%%%DOCSDIR%%/parser-paragraphs.pp
+%%PORTDOCS%%%%DOCSDIR%%/parser-tags.pp
+%%PORTDOCS%%%%DOCSDIR%%/pp-src-stream-e.png
+%%PORTDOCS%%%%DOCSDIR%%/pp-stream-result-e.png
+%%PORTDOCS%%%%DOCSDIR%%/tagdoc-example.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/basic-tag-macros.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/image.gif
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-B.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-C.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-FORMAT.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-HIDE.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-I.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-IMAGE.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-LOCALTOC.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-READY.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-REF.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-SEQ.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-STOP.pp
+%%PORTDOCS%%%%DOCSDIR%%/tags/tag-TABLE.pp
+%%PORTDOCS%%%%DOCSDIR%%/utilities/PerlPoint.clp
+%%PORTDOCS%%%%DOCSDIR%%/utilities/PerlPoint.vim
+%%PORTDOCS%%%%DOCSDIR%%/utilities/perlpoint-hilit19.lisp
+%%PORTDOCS%%%%DOCSDIR%%/utilities/utilities.txt
+%%PORTDOCS%%%%DOCSDIR%%/writing-converters.pp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/utilities
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tags
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/Portability
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/Misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint 2>/dev/null || true
 @dirrm %%SITE_PERL%%/PerlPoint/Tags
