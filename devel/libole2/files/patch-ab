@@ -1,5 +1,5 @@
---- libole2Conf.sh.in.orig	Fri Oct  8 16:27:56 1999
-+++ libole2Conf.sh.in	Tue Jun 20 11:45:56 2000
+--- libole2Conf.sh.in.orig	Fri Jun 23 08:11:07 2000
++++ libole2Conf.sh.in	Fri Jun 23 12:23:06 2000
 @@ -2,11 +2,11 @@
  exec_prefix=@exec_prefix@
  
@@ -10,7 +10,7 @@
    LIBOLE2_INCLUDEDIR=""
  fi
  LIBOLE2_LIBDIR="-L@libdir@"
--LIBOLE2_LIBS="-lole2 `glib-config --libs` @LIBS@"
-+LIBOLE2_LIBS="-lole2 `@GLIB_CONFIG@ --libs` @LIBS@"
+-LIBOLE2_LIBS="-lgnomeole2 `glib-config --libs` @LIBS@"
++LIBOLE2_LIBS="-lgnomeole2 `@GLIB_CONFIG@ --libs` @LIBS@"
  MODULE_VERSION="libole2-@VERSION@"
  
