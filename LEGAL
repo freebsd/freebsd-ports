@@ -22,9 +22,6 @@ adom-*			ports/games/adom	Copy of CD must be sent to
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
-avifile			ports/graphics/avifile	The program is under GPL but
-						legality of the codecs is
-						unknown. 
 bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
 blender			ports/graphics/blender	Can't distribute commercially.
@@ -210,6 +207,8 @@ vice-*			ports/emulators/vice	ROMs are copyrighted by
 vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 webfonts-*		ports/x11-fonts/webfonts Restrictive copyright
+win32-codecs		ports/graphics/win32-codecs Licensing status of the
+						codecs is unknown. 
 wxg/ja-wxg-1.0b-1.tgz	ports/japanese/wxg	Redistribution not allowed
 xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement

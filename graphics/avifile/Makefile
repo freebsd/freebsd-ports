@@ -12,18 +12,11 @@ MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
 		http://www.toon.eu.org/divx/
 DISTFILES=	avifile-${PORTVERSION}.tar.gz \
-		binaries-${CODEC_VERSION}.zip \
-		wmvds32.ax.gz
-EXTRACT_ONLY=	avifile-${PORTVERSION}.tar.gz
 
 MAINTAINER=	holger@eit.uni-kl.de
 
 LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-RESTRICTED=	Unsure of codec\'s license
-RESTRICTED_FILES=	binaries-${CODEC_VERSION}.zip \
-			wmvds32.ax.gz
+RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 ONLY_FOR_ARCHS=	i386
 USE_QT2=	yes
@@ -43,7 +36,12 @@ CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--enable-release
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
-CODEC_VERSION=	010122
+FMT=	/usr/bin/fmt
+
+CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+#CODEC_PORT=	../win32-codecs
+CODEC_DETECTION_FILE!=	cd ${CODEC_PORT} && ${MAKE} -V CODEC_DETECTION_FILE
+
 LIB_VERSION=	0
 # Adhoc fix. First part.
 # qt is there but configure is not finding it
@@ -57,11 +55,6 @@ DIFF?=		/usr/bin/diff
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-	@${LOCALBASE}/bin/unzip ${DISTDIR}/binaries-${CODEC_VERSION}.zip \
-		-d ${WRKDIR}/codecs
-	@${GZCAT} ${DISTDIR}/wmvds32.ax.gz > ${WRKDIR}/codecs/wmvds32.ax
-
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
 post-configure:
 	@${PERL} -pi -e \
@@ -74,9 +67,7 @@ post-build:
 .endfor
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/win32
-	@${INSTALL_DATA} ${WRKDIR}/codecs/* ${PREFIX}/lib/win32
-	@/usr/bin/fmt < ${PKGMESSAGE}
+	@${FMT} < ${PKGMESSAGE}
 	@${INSTALL_DATA} ${WRKSRC}/lib/libaviplay.la ${PREFIX}/lib
 	@${LN} -sf libaviplay.so.${LIB_VERSION} ${PREFIX}/lib/libaviplay.so
 # Adhoc fix. Second part.
