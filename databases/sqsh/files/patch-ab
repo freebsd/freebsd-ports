@@ -7,7 +7,7 @@
 -#
 +#  -- it should have some defaults...
 +
-+SYBASE=/usr/local/
++SYBASE=%%LOCALBASE%%/
 +
  echo $ac_n "checking Open Client installation""... $ac_c" 1>&6
  echo "configure:1053: checking Open Client installation" >&5

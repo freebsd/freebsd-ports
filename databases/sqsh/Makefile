@@ -22,4 +22,9 @@ GNU_CONFIGURE=	yes
 
 MAN1=	sqsh.1
 
+post-patch:
+.for file in configure autoconf/install-man
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/${file}
+.endfor
+
 .include <bsd.port.mk>
