@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	1.1.1
+PORTVERSION=	2.0
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.planetmirror.com/pub/horde/nag/		\
@@ -17,36 +17,35 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/nag/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/nag/	\
 		http://ftp.horde.org/pub/nag/
+DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Nag is a simple, multiuser task list manager
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
+RUN_DEPENDS=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-REINPLACE_ARGS=	-i.beforeNag
-
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} NAGDIR=${LNAGDIR}
+PLIST_SUB=	NAGDIR=${LNAGDIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES docs/TODO
-CONFFILE=	conf.php html.php menu.php prefs.php
-SUB_DIRS=	config graphics lib locale po scripts templates
+		docs/RELEASE_NOTES docs/TODO docs/UPGRADING
+CONFFILE=	menu.php prefs.php
+SUB_DIRS=	config lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LNAGDIR?=	${LHORDEDIR}/nag
 
-HORDEDIR=	${PREFIX}/${LHORDEDIR}
 NAGDIR=		${PREFIX}/${LNAGDIR}
 CONFDIR=	${NAGDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
-post-patch:
-		@${RM} ${WRKSRC}/config/conf.php.dist.orig		\
-			${WRKSRC}/scripts/drivers/nag_tasks.sql.orig
+pre-configure:
+	@${SED} -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g"		\
+		${FILESDIR}/httpd.conf.nag > ${WRKDIR}/httpd.conf.nag
 
 do-install:
 	@${MKDIR}  ${NAGDIR}
@@ -59,15 +58,9 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${CHOWN} -R www:www ${NAGDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${NAGDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${CP} -p ${FILESDIR}/httpd.conf.nag ${HORDE_INC}
-	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g" \
-		${HORDE_INC}/httpd.conf.nag
-	@${RM} ${HORDE_INC}/httpd.conf.nag.beforeNag
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTNAG::" ${HORDEDIR}/config/registry.php
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.afterNag
+	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.nag ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -77,9 +70,10 @@ do-install:
 .endif
 
 post-install:
+	@${SED} -e "s:%%NAGDIR%%:${NAGDIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
+		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
-	@${SED} -e "s:%%NAGDIR%%:${NAGDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
