@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xfree86_xkb_xml
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
@@ -21,9 +20,9 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
 CONFIGURE_ARGS=	--with-xkb-base=${X11BASE}/lib/X11/xkb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
