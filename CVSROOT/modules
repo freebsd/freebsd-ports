@@ -5996,6 +5996,7 @@ py-mpz		ports/math/py-mpz
 py-mx-base	ports/lang/py-mx-base
 py-mx-experimental	ports/devel/py-mx-experimental
 py-ncurses	ports/devel/py-ncurses
+py-numarray	ports/math/py-numarray
 py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
 py-omniorb	ports/devel/py-omniorb
