@@ -3,12 +3,13 @@
 # Date created:         16 May 1998
 # Whom:                 chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.8 1998/10/14 03:22:32 jseger Exp $
+# $Id: Makefile,v 1.9 1999/03/21 13:25:21 chuckr Exp $
 #
 
 DISTNAME=       objc-2.2.15
 CATEGORIES=     lang
-MASTER_SITES=   http://www.can.nl/~stes/Software/
+MASTER_SITES=   http://metalab.unc.edu/pub/Linux/devel/lang/objc/ \
+		http://www.freebsd.org/~chuckr/
 DISTFILES=	objc-2.2.15-bootstrap.tar.gz objc-2.2.15.tar.gz
 
 MAINTAINER=     chuckr@freebsd.org
