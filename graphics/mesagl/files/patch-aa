@@ -8,13 +8,13 @@
   
 + install:
 + 	install -c -m 444 lib/libMesaGL.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaGL.so.2.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaGL.so.13.0 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesaGLU.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaGLU.so.2.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaGLU.so.13.0 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesaaux.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaaux.so.2.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaaux.so.13.0 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesatk.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesatk.so.2.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesatk.so.13.0 ${X11BASE}/lib
 + 	mkdir -p -m 0775 ${X11BASE}/include/Mesa/GL
 + 	install -c include/glaux.h ${X11BASE}/include/Mesa
 + 	install -c include/gltk.h ${X11BASE}/include/Mesa
