@@ -10,7 +10,7 @@ PORTVERSION= 	1.14
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		${MASTER_SITE_SUNSITE}
-DISTNAMe=	${PORTNAME}114
+DISTNAME=	${PORTNAME}114
 
 MAINTAINER=	matt@bdd.net
 
