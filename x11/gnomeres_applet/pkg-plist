@@ -1,0 +1,5 @@
+bin/gnomeres_applet
+etc/CORBA/servers/gnomeres_applet.gnorba
+share/gnome/applets/Utility/gnomeres_applet.desktop
+share/gnome/pixmaps/gnomeres_applet.xpm
+share/locale/fr/LC_MESSAGES/gnomeres_applet.mo

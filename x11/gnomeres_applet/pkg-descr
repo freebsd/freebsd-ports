@@ -1,0 +1,12 @@
+GnomeRes - A GNOME applet for changing display modes.
+
+Features:
+---------
+ * A menu from which you can select the display mode.
+ * Info on modes presented as tooltips.
+ * An arrow ponting at the current mode in the menu.
+ * Mouse wheel support.
+ * Can lock mode switching.
+ * Startup display mode configuration.
+
+WWW: http://www.sci.fi/~syrjala/gnomeres/
