@@ -4,6 +4,7 @@ share/sitecopy/changes.awk
 share/doc/sitecopy/FAQ
 share/doc/sitecopy/NEWS
 share/doc/sitecopy/README
+share/doc/sitecopy/THANKS
 share/doc/sitecopy/update.sh
 @unexec rm -f %D/share/sitecopy
 @unexec rm -f %D/share/doc/sitecopy
