@@ -1,0 +1,6 @@
+xsh is a powerfull command-line XML (DOM) editing tool/programming
+language in the manner of Unix shell interpreters and line-oriented text
+editors like ed.  It can be used either interactively or for batch-mode
+XML processing.
+
+WWW: http://search.cpan.org/search?dist=XML-XSH

@@ -1,0 +1,13 @@
+bin/xsh
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XSH/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/Completion.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/CompletionList.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/Functions.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/Grammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/Help.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XSH/Parser.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XSH
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XSH
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true

@@ -239,6 +239,7 @@
     SUBDIR += p5-XML-Twig
     SUBDIR += p5-XML-Writer
     SUBDIR += p5-XML-XPath
+    SUBDIR += p5-XML-XSH
     SUBDIR += p5-XML-XSLT
     SUBDIR += p5-XML-XUpdate-LibXML
     SUBDIR += p5-dTemplate
