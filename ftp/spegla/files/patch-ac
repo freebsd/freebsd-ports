@@ -1,0 +1,12 @@
+--- Makefile.dist	Sat May 27 22:50:20 2000
++++ Makefile	Thu Jun 29 20:06:23 2000
+@@ -8,7 +8,8 @@
+ 
+ PROG		 = spegla
+ SRCS		 = jftp.c parserow.c spegla.c tgetopt.c container.c spf_util.c	\
+-			   que_syms.c e_err.c
++			   que_syms.c e_err.c \
++			   regcomp.c regerror.c regexec.c regfree.c
+ .if !(defined(HAVE_STRLCPY) && ${HAVE_STRLCPY} == "yes")
+ SRCS		+= strlcpy.c
+ CPPFLAGS	+= -DNO_STRLCPY
