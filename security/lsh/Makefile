@@ -11,24 +11,28 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/security/lsh/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install
+MAN1=		lsh_writekey.1 lsh_keygen.1 lsh.1
+MAN5=		DSA.5 secsh.5 SHA.5 SPKI.5
+MAN8=		lshd.8
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400014
-CONFIGURE_ARGS+=--without-ipv6
+CONFIGURE_ARGS+=	--without-ipv6
 .endif
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
 .endif
-
-MAN1=	lsh_writekey.1 lsh_keygen.1 lsh.1
-MAN5=	DSA.5 secsh.5 SHA.5 SPKI.5
-MAN8=	lshd.8
+.if ${OSVERSION} >= 500043
+BROKEN=		conflicts with /usr/include/getopt.h
+.endif
 
 post-install:
 .for BIN in lsh lsh_keygen lsh_writekey sexp-conv srp-gen lsh-decode-key
