@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	balance
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple but powerful generic tcp proxy with round robin features
 
+BROKEN=		"Checksum mismatch"
+
 ALL_TARGET=	balance
 USE_REINPLACE=	yes
 
