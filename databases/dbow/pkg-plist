@@ -1,0 +1,8 @@
+bin/dbow
+include/dbow.h
+lib/libdbow.a
+share/dbow/c.m4
+share/dbow/mysql.m4
+share/dbow/perl.m4
+share/dbow/php.m4
+@dirrm share/dbow

@@ -25,6 +25,7 @@
     SUBDIR += dbf2mysql
     SUBDIR += dbh
     SUBDIR += dbmetrix
+    SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
