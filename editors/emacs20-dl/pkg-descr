@@ -1,12 +1,12 @@
 GNU Emacs is a self-documenting, customizable, extensible real-time
 display editor (emacs binary only).
 
-This package's emacs has a dynamic loading function.
+This package's emacs has a dynamic loading module function.
 
 Emacs binary is:
     ${PREFIX}/bin/emacs-dl-${EMACS_VER}
 
 Dynamic loading patch:
-    ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/emacs-${EMACS_VER}-dl.diff
+    http://www.etl.go.jp/~tomo/comp/emacsen/emacs-${EMACS_VER}-dl.diff.gz
 
---- Port by shige@FreeBSD.ORG
+--- Porting by shige@FreeBSD.ORG
