@@ -1,0 +1,13 @@
+'abck' is an interactive tool to examine intrusion attempts and decide
+what, if anything, to do about them.  It reads through
+/var/log/messages looking for evidence of an intrusion attempt. Upon
+finding such a record, 'abck' qualifies it against information
+supplied by the user on the command line to determine if the record is
+to be processed.  As packaged, 'abck' handles several common types of
+intrusion attempt records, but it can easily be expanded to handle
+others.
+
+You need a reasonably current copy of Python to run the main script.
+
+- tim
+tundra@tundraware.com

@@ -3,6 +3,7 @@
     SUBDIR += yawho
 
     SUBDIR += LPRng
+    SUBDIR += abck
     SUBDIR += afio
     SUBDIR += anteater
     SUBDIR += asapm
