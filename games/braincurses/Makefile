@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	braincurses
-PORTVERSION=	0.2
+PORTVERSION=	0.5a
 CATEGORIES=	games
 MASTER_SITES=	http://uhaweb.hartford.edu/hyland/derr/
 
