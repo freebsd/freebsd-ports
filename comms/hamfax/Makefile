@@ -26,4 +26,10 @@ CONFIGURE_ARGS=	--with-Qt-dir=${X11BASE} CXX="g++ ${PTHREAD_CFLAGS}" \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Configure fails on 4.x"
+.endif
+
+.include <bsd.port.post.mk>
