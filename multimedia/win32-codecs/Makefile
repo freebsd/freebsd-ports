@@ -20,6 +20,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracod
 DIST_SUBDIR=	win32
 DISTFILES=	win32codecs.tar.bz2:w32codec \
 		qt6dlls.tar.bz2:mplayer_extracodec \
+		qtextras.tar.bz2:mplayer_extracodec \
 		rp9codecs.tar.bz2:mplayer_extracodec \
 		xanimdlls.tar.bz2:mplayer_extracodec
 EXTRACT_ONLY=	win32codecs.tar.bz2
@@ -41,11 +42,11 @@ CODEC_MPLAYER_VERSION=	0.90
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
 # additional codec packs
-ADDITIONAL_CODECS_DISTFILES=	qt6dlls.tar.bz2 xanimdlls.tar.bz2 \
-				rp9codecs.tar.bz2
+ADDITIONAL_CODECS_DISTFILES=	qt6dlls.tar.bz2 qtextras.tar.bz2 \
+				xanimdlls.tar.bz2 rp9codecs.tar.bz2
 # extraction wrksrc
-ADDITIONAL_CODECS_WRKSRC=	win32codecs \
-				qt6dlls rp9codecs xanimdlls
+ADDITIONAL_CODECS_WRKSRC=	win32codecs qt6dlls qtextras \
+				rp9codecs xanimdlls
 
 post-extract:
 .for file in ${ADDITIONAL_CODECS_DISTFILES}
