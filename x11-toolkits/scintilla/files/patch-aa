@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- makefile.orig	Fri Jan 10 13:35:52 2003
-+++ makefile	Thu Feb  6 10:48:09 2003
++++ makefile	Thu Feb  6 15:05:00 2003
 @@ -6,8 +6,8 @@
  # To build for GTK+ 2, define GTK2 on the make command line.
  
@@ -60,10 +60,10 @@ $FreeBSD$
  	RESearch.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o
 -	$(AR) rc $@ $^
 -	$(RANLIB) $@
-+	$(AR) -o $@ $^
++	$(AR) $(shell $(GTK_CONFIG) --libs gthread) -o $@ $^
 +
 + $(LEXRLIB): $(LEXOBJS)
-+	$(AR) -o $@ $^
++	$(AR) $(shell $(GTK_CONFIG) --libs gthread) -o $@ $^
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
