@@ -1,7 +1,7 @@
---- include/med_outils.h.orig	Tue Dec 10 19:05:22 2002
-+++ include/med_outils.h	Wed Jul 23 11:37:29 2003
-@@ -111,7 +111,7 @@
- #define MED_TAILLE_PROFILS 9 
+--- include/med_outils.h.orig	Wed Nov 17 15:05:46 2004
++++ include/med_outils.h	Sat Jan  8 22:51:32 2005
+@@ -152,7 +152,7 @@
+ #define MED_TAILLE_LIENS 7 
  
  /*Pour eviter le bug solaris*/
 -#include <malloc.h>
