@@ -11,10 +11,7 @@ include/cassowary/ClDummyVariable.h
 include/cassowary/ClEditConstraint.h
 include/cassowary/ClEditOrStayConstraint.h
 include/cassowary/ClErrors.h
-include/cassowary/ClFDBinaryOneWayConstraint.h
 include/cassowary/ClFDConnectorVariable.h
-include/cassowary/ClFDConstraint.h
-include/cassowary/ClFDSolver.h
 include/cassowary/ClFDVariable.h
 include/cassowary/ClFloatVariable.h
 include/cassowary/ClLinearConstraint.h
@@ -44,14 +41,21 @@ include/cassowary_scm.h
 include/cassowary_scm.hpp
 include/cl-snarf.h
 lib/cassowary/tests/ClTests
+lib/guile/site/cassowary/libconstraints.a
+lib/guile/site/cassowary/libconstraints.la
+lib/guile/site/cassowary/libconstraints.so
+lib/guile/site/cassowary/libconstraints.so.0
 lib/libcassowary.a
 lib/libcassowary.la
 lib/libcassowary.so
 lib/libcassowary.so.0
+lib/libconstraints.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/cassowary
 @dirrm lib/cassowary/bench
 @dirrm lib/cassowary/tests
 @dirrm lib/cassowary
-@dirrm share/guile/site/cassowary
+@dirrm lib/guile/site/cassowary
+@dirrm lib/guile/site
+@dirrm lib/guile
