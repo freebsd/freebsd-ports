@@ -18,6 +18,12 @@ USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 NO_INSTALL_MANPAGES=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (-fPIC missing)"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lfview ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/plugins/liblfv_leaf.so.1 ${PREFIX}/lib
@@ -27,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/lfview
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
