@@ -2,13 +2,26 @@ bin/sci
 bin/scc
 bin/sccomp
 bin/scixl
-man/man1/sci.1.gz
-man/man1/scc.1.gz
-lib/schemetoc
-lib/libsc.so.1.0
-lib/libscxl.so.1.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
-@exec /usr/bin/ranlib %D/lib/schemetoc/libsc.a
-@exec /usr/bin/ranlib %D/lib/schemetoc/libsc_p.a
-@exec /usr/bin/ranlib %D/lib/schemetoc/scxl.a
+lib/libsc.a
+lib/libsc_p.a
+lib/libsc.so
+lib/libsc.so.1
+lib/libscxl.a
+lib/libscxl.so
+lib/libscxl.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/schemetoc/doc/README.FreeBSD
+lib/schemetoc/doc/embedded.psf
+lib/schemetoc/doc/hello.sc
+lib/schemetoc/doc/index.psf
+lib/schemetoc/doc/intro.psf
+lib/schemetoc/doc/puzzle.sc
+lib/schemetoc/doc/r4rs.psf
+lib/schemetoc/doc/smithnotes.psf
+lib/schemetoc/doc/test.sc
+lib/schemetoc/objects.h
+lib/schemetoc/options.h
+lib/schemetoc/predef.sc
+@dirrm lib/schemetoc/doc
+@dirrm lib/schemetoc

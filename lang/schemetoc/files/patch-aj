@@ -1,0 +1,121 @@
+--- xlib/makefile.orig	Tue Mar  2 02:24:36 1993
++++ xlib/makefile	Wed Feb  2 22:22:22 2000
+@@ -1,5 +1,7 @@
+ .SUFFIXES:
+-.SUFFIXES: .sc .cdecl .o .c
++.SUFFIXES: .sc .cdecl .o .c .so
++
++SOVER = 1
+ 
+ CDECL = ../cdecl/cdecl
+ SIZEOF = ../cdecl/sizeof
+@@ -58,6 +60,16 @@
+ 	xvisualinfo.o xwindowattributes.o xwindowchanges.o xwmhints.o \
+ 	xpixmapformatvalues.o xtextproperty.o
+ 
++sxdo =  depth.so screen.so visual.so xarc.so xchar2b.so xcharstruct.so \
++        xclasshint.so xcomposestatus.so xcolor.so xlibCONSTANTS.so xevent.so \
++        xfontprop.so xfontstruct.so xgcvalues.so xhostaddress.so xiconsize.so \
++        ximage.so xkeyboardcontrol.so xkeyboardstate.so xmodifierkeymap.so \
++        xpoint.so xrectangle.so xrmoptiondescrec.so xrmvalue.so xsegment.so \
++        xsetwindowattributes.so xsizehints.so xstandardcolormap.so \
++        xlibSTUBS.so xtextitem.so xtextitem16.so xtimecoord.so xlibTYPES.so \
++        xvisualinfo.so xwindowattributes.so xwindowchanges.so xwmhints.so \
++        xpixmapformatvalues.so xtextproperty.so
++
+ xdpsc = xws2.sc xws3.sc xws4.sc xws5.sc xws6.sc xws7.sc \
+ 	xws8.sc xws9.sc xws10.sc xwsr4.sc
+ 
+@@ -76,6 +88,10 @@
+ xwso = xwss.o xws2.o xws3.o xws4.o xws5.o xws6.o xws7.o xws8.o xws9.o xws10.o \
+        xlib.o xwsr4.o
+ 
++sxwso = xwss.so xws2.so xws3.so xws4.so xws5.so xws6.so xws7.so xws8.so \
++	xws9.so xws10.so xlib.so xwsr4.so
++
++
+ sizeof.cdecl:
+ 	${SIZEOF} > sizeof.cdecl
+ 
+@@ -101,28 +117,52 @@
+ .c.o:
+ 	${SCC}  -c ${XLIBCFLAGS} $*.c
+ 
++.c.so:  
++	${CC} ${PICFLAGS} ${CFLAGS} -c ${XLIBCFLAGS} -I../scrt ${.IMPSRC} -o ${.TARGET}
++
+ scixl:	xlibTYPES.o ${xwssc} ${xwsc} ${xwso}
+ 	${SCC} -o scixl -i -m xlib ${xwso} ${xdo} ${XLIB}
+-	
+-scxl.a:	xlibTYPES.o ${xwssc} ${xwsc} ${xwso}	
+-	rm -f scxl.a
+-	ar q scxl.a ${xdo} ${xwso}
+-	${RANLIB} scxl.a
++
++libscxl.a:	xlibTYPES.o ${xwssc} ${xwsc} ${xwso}	
++	rm -f libscxl.a
++	mv -f xmodifierkeymap.o xmodifier.o
++	mv -f xstandardcolormap.o xstandard.o
++	mv -f xwindowattributes.o xwindowatt.o
++	mv -f xpixmapformatvalues.o xpixmap.o
++	ar q libscxl.a depth.o screen.o visual.o xarc.o xchar2b.o xcharstruct.o \
++	xclasshint.o xcomposestatus.o xcolor.o xlibCONSTANTS.o xevent.o \
++	xfontprop.o xfontstruct.o xgcvalues.o xhostaddress.o xiconsize.o \
++	ximage.o xkeyboardcontrol.o xkeyboardstate.o xmodifier.o \
++	xpoint.o xrectangle.o xrmoptiondescrec.o xrmvalue.o xsegment.o \
++	xsetwindowattributes.o xsizehints.o xstandard.o \
++	xlibSTUBS.o xtextitem.o xtextitem16.o xtimecoord.o xlibTYPES.o \
++	xvisualinfo.o xwindowatt.o xwindowchanges.o xwmhints.o \
++	xpixmap.o xtextproperty.o \
++	xwss.o xws2.o xws3.o xws4.o xws5.o xws6.o xws7.o xws8.o \
++	xws9.o xws10.o xlib.o xwsr4.o 
++	${RANLIB} libscxl.a
++
++Xlibscxl.so.${SOVER}: xlibTYPES.so ${xwssc} ${xwsc} ${xwso} ${sxdo} ${sxwso}
++	rm -f libscxl.so.${SOVER}
++	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,libscxl.so.${SOVER} -o libscxl.so.${SOVER} ${sxdo} ${sxwso}
++
++libscxl.so.${SOVER}:
++	${MAKE} Xlibscxl.so.${SOVER}
+ 
+ clear:
+-	${SCC} -o clear clear.sc scxl.a ${XLIB}
++	${SCC} -o clear clear.sc libscxl.a ${XLIB}
+ 
+ hello:
+-	${SCC} -o hello hello.sc scxl.a ${XLIB}
++	${SCC} -o hello hello.sc libscxl.a ${XLIB}
+ 
+ puzzle: 
+-	${SCC} -o puzzle puzzle.sc scxl.a ${XLIB}
++	${SCC} -o puzzle puzzle.sc libscxl.a ${XLIB}
+ 
+ clean:
+ 	rm -f *.BAK *.CKP core
+ 
+ noprogs:
+-	rm -f *.o scixl scxl.a hello puzzle clear
++	rm -f *.o scixl libscxl.a hello puzzle clear
+ 
+ clean-cdecl:
+ 	rm -f ${xdsc} ${xdsch} ${xdc} ${xdpsc} ${xdpsch} ${xdpc} sizeof.cdecl
+@@ -132,10 +172,17 @@
+ 		puzzle.c npuzzle.c
+ 
+ all:
+-	make scixl scxl.a
++	${MAKE} scixl libscxl.a libscxl.so.${SOVER}
++
++install:	
++	${BSD_INSTALL_DATA} libscxl.a ${LIBDIR}
++	-${RANLIB} ${LIBDIR}/libscxl.a
++	${BSD_INSTALL_PROGRAM} scixl ${BINDIR}
++	${BSD_INSTALL_DATA} libscxl.so.${SOVER} ${LIBDIR}
++	ln -sf libscxl.so.${SOVER} ${LIBDIR}/libscxl.so
+ 
+ gensource:
+-	make ${xwssc} ${xwsc}
++	${MAKE} ${xwssc} ${xwsc}
+ 
+ srclinks:
+ 	for x in ${XD} ${XDP} ${XMISC}; \
