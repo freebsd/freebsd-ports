@@ -1,5 +1,23 @@
---- src/search.c.old	Wed Feb 28 15:28:10 2001
-+++ src/search.c	Thu Apr 19 18:02:10 2001
+--- src/search.c.orig	Wed Feb 28 15:28:10 2001
++++ src/search.c	Mon Apr 23 06:46:50 2001
+@@ -431,7 +431,7 @@
+ 					s=str+1;
+ 					while((*s)&&(isdigit(*s)))s++;
+ 					j=atoi(UdmTrim(s,"= \t\r\n"));
+-					if((i>0)&&(i<MAXRANDOM)){
++					if((i>=0)&&(i<MAXRANDOM)){
+ 						frand=rand();
+ 						frand=frand/RAND_MAX*j;
+ 						Randoms[i]=frand;
+@@ -1225,7 +1225,7 @@
+ int i;
+ time_t tclock;
+ 	tclock=time(0);
+-	srand((unsigned)tclock);
++	srand((unsigned)(tclock^(getpid()<<16)));
+ 	for(i=0;i<MAXRANDOM;i++)
+ 		Randoms[i]=0;
+ }
 @@ -1269,7 +1269,8 @@
  		strcpy(template,env);
  
