@@ -132,6 +132,16 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 #  --with-interbase-prefix       Location of Interbase
 #  --with-db2-prefix             Location of DB2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
+
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
+
 post-extract:
 	${MKDIR} ${WRKDIR}/prefixes/libxml
 	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
@@ -152,4 +162,4 @@ post-install:
 	cd ${WRKSRC} && ${MAKE} install-doc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

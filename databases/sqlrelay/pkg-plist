@@ -30,11 +30,11 @@ include/sqlrelay/sqlrclientwrapper.h
 lib/libsqlrclient.a
 lib/libsqlrclient.so
 lib/libsqlrclient.so.0
-lib/libsqlrclient_p.a
+%%PROFILE%%lib/libsqlrclient_p.a
 lib/libsqlrclientwrapper.a
 lib/libsqlrclientwrapper.so
 lib/libsqlrclientwrapper.so.0
-lib/libsqlrclientwrapper_p.a
+%%PROFILE%%lib/libsqlrclientwrapper_p.a
 @dirrm sqlrelay/tmp
 @dirrm sqlrelay/debug
 @dirrm sqlrelay/cache
