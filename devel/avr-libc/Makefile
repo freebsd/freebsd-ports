@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -24,6 +24,7 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \
+		pdflatex:${PORTSDIR}/print/teTeX \
 		fig2dev:${PORTSDIR}/print/transfig
 .endif
 
