@@ -3,12 +3,12 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.20 1997/07/11 05:20:28 jdp Exp $
+# $Id: Makefile,v 1.21 1997/09/28 21:33:41 jdp Exp $
 #
 
 DISTNAME=	cvsup-15.2
 CATEGORIES=	devel net
-MASTER_SITES=	ftp://hub.freebsd.org/pub/CVSup/ \
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/CVSup/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/CVSup/ \
 		ftp://ftp.polstra.com/pub/FreeBSD/CVSup/
 
