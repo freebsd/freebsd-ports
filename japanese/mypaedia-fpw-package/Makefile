@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mypaedia-fpw-package
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 
@@ -14,9 +14,8 @@ MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		timidity:${PORTSDIR}/audio/timidity++ \
-		xanim:${PORTSDIR}/graphics/xanim
-# This suhould build-depend on the next port, but it depends on non-japanized GS :-<
-#		display:${PORTSDIR}/graphics/ImageMagick
+		xanim:${PORTSDIR}/graphics/xanim \
+		display:${PORTSDIR}/graphics/ImageMagick
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}

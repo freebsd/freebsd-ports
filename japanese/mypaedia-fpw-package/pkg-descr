@@ -15,13 +15,13 @@ WWW: http://openlab.ring.gr.jp/edict/mypaedia-fpw/
 
 (require 'lookup-package)
 (setq lookup-search-agents '((ndeb "/usr/local/share/dict/mypaedia-fpw")))
-(setq play-midi-process "timidity")
-(setq play-wav-process "play")
-(setq play-avi-process "xanim")
-(setq display-image-process "display")
 (setq lookup-package-directory "/usr/local/share/dict/lookup-package")
-(lookup-use-package "ndeb+/usr/local/share/dict/mypaedia-fpw" "mypaedia")
+(lookup-use-package "ndeb+/usr/local/share/dict/mypaedia-fpw" "mypaedia-fpw")
 (setq mypaedia-data-directory "/cdrom/INDEX")
 	;; a directory having BH.DAT, CH.DAT, MAP.DAT, PICT.DAT 
 (setq mypaedia-av-directory "/cdrom/DATA")
 	;; a directory having *.MID, *.WAV, *.AVI
+(setq mypaedia-play-midi-process "timidity")
+(setq mypaedia-play-wav-process "play")
+(setq mypaedia-play-avi-process "xanim")
+(setq mypaedia-display-image-process "display")
