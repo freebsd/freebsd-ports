@@ -12,6 +12,7 @@ MASTER_SITES=   http://www.wwnet.net/~janc/software/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	howardjp@wam.umd.edu
+COMMENT=	A simple and unobtrusive line-oriented text editor
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

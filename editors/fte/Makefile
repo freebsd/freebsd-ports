@@ -14,6 +14,7 @@ DISTNAME=		${PORTNAME}s${PORTVERSION:S/./b/}
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		mail@gelf.com
+COMMENT=	A full-featured text editor for X11
 
 BUILD_DEPENDS=  	unzip:${PORTSDIR}/archivers/unzip
 

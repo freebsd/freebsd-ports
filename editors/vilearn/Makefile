@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/Linux/util/networking/util-swan/pub/misc/ \
 DISTFILES=	${PORTNAME}.Z
 
 MAINTAINER=	i.vaudrey@bigfoot.com
+COMMENT=	An interactive tutorial for the vi editor
 
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c

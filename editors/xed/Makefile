@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	A text editor for X
 
 USE_IMAKE=	yes
 USE_XPM=	yes

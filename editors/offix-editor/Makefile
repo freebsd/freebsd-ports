@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Editor-${PORTVERSION}
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+COMMENT=	Editor from OffiX
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 

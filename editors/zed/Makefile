@@ -11,6 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://zed.c3po.it/
 
 MAINTAINER=	exile@chamber.ee
+COMMENT=	Simple, fast, powerful, small, highly configurable TEXT EDITOR
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/zed

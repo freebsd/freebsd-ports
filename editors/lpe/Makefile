@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.sasknow.com/pub/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ryan@sasknow.com
+COMMENT=	A "lightweight programmer's editor" with syntax highlighting
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		intl.4:${PORTSDIR}/devel/gettext

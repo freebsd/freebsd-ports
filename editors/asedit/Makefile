@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	editors
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	Text editor for X/Motif
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

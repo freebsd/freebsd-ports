@@ -12,6 +12,7 @@ MASTER_SITES=	http://ccwf.cc.utexas.edu/~apoc/programs/c/hexedit/
 DISTNAME=	hexedit-0.9.7
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes
 
