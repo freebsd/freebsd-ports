@@ -6,13 +6,6 @@ etc/X11/starthere
 etc/X11/sysconfig
 etc/gconf
 etc/gconf/gconf.xml.defaults
-etc/gconf/gconf.xml.defaults/apps
-etc/gconf/gconf.xml.defaults/desktop
-etc/gconf/gconf.xml.defaults/desktop/gnome
-etc/gconf/gconf.xml.defaults/schemas
-etc/gconf/gconf.xml.defaults/schemas/apps
-etc/gconf/gconf.xml.defaults/schemas/desktop
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome
 etc/gconf/gconf.xml.mandatory
 etc/gconf/schemas
 etc/gnome

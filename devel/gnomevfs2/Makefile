@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomevfs2
 PORTVERSION=	2.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.8
@@ -32,6 +32,9 @@ CONFIGURE_ARGS=	--enable-openssl \
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
@@ -114,6 +117,10 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
 		${WRKSRC}/Makefile.in
+	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -122,6 +129,7 @@ pre-configure:
 	fi
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(WITHOUT_KDE_MENUS)
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory ${PREFIX}/share/gnome/vfolders
 .endif

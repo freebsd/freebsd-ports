@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
@@ -32,6 +32,8 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_accessibility_startup.schemas \
 		desktop_gnome_applications_browser.schemas \
@@ -52,8 +54,10 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libgnome_gnome-program.c
 .endif
 
-.if defined(NOPORTDOCS)
 post-patch:
+	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|gnome-data po doc|gnome-data po|g' \
 		${WRKSRC}/Makefile.in
 .endif
