@@ -5,7 +5,7 @@
    __u32 j_first_unflushed_offset;
    /* mount id to detect very old transactions */
 -  __u32 long j_mount_id;
-+  __u64 j_mount_id;
++  __u32 j_mount_id;
  };
 
  /* magic string to find desc blocks in the journal */
