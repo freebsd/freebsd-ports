@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to minimize the compile time of C programs
+MAINTAINER=	ahze@ahze.net
+COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 GNU_CONFIGURE=	yes
 MAN1=		ccache.1
@@ -28,5 +28,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
 .endfor
 .endif
+	${STRIP_CMD} ${PREFIX}/bin/ccache
 
 .include <bsd.port.mk>
