@@ -240,8 +240,8 @@
     SUBDIR += penv
     SUBDIR += perf
     SUBDIR += personality
-    SUBDIR += pftop
     SUBDIR += pfstat
+    SUBDIR += pftop
     SUBDIR += pib
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
@@ -254,6 +254,7 @@
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap
+    SUBDIR += prune
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
