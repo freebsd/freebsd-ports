@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	commons-collections
-PORTVERSION=	2.1
+PORTVERSION=	3.0
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/collections/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -17,32 +18,41 @@ COMMENT=	Classes that extend/augment the Java Collections Framework
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	dist-jar
-.else
-ANT_TARGET=	dist-jar doc-javadoc
+ANT_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ANT_TARGET+=	javadoc
+OTHERDOCS=	DEVELOPERS-GUIDE.html LICENSE.txt PROPOSAL.html README.txt RELEASE-NOTES.html STATUS.html
+PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
-JARFILE=	${PORTNAME}.jar
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/
-	@${ECHO} " [ DONE ]"
+	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${CP} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@${CP} -r ${WRKSRC}/build/docs/apidocs ${DOCSDIR}
+	@${ECHO_CMD} -n " apidocs"
+.for DOCFILE in ${OTHERDOCS}
+	@${CP} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+	@${ECHO_CMD} -n " ${DOCFILE}"
+.endfor
+	@${ECHO_CMD} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
