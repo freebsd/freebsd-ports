@@ -1,5 +1,5 @@
-*** adcomplain.pl.orig	Fri Nov 14 19:36:55 1997
---- adcomplain.pl	Fri Nov 14 19:38:44 1997
+*** adcomplain.pl.orig	Tue Dec 16 01:31:20 1997
+--- adcomplain.pl	Tue Dec 16 01:36:40 1997
 ***************
 *** 1,3 ****
 --- 1,4 ----
@@ -27,42 +27,27 @@
   #-----------------------------------------------
   # DESCRIPTION
 ***************
-*** 255,261 ****
-  
-  # this is the name of the mail utility (see sendmail(8) man page)
-  # type "/bin/which sendmail" to find out where sendmail is on your system
-! $mailcmd = "/usr/lib/sendmail -t";
+*** 281,288 ****
+  # depending on your system, to find out where sendmail is.
+  # If left blank, we try to find sendmail in /usr/lib, /usr/sbin, and then
+  # the user's $PATH, and then invoke it with the "-t" flag.
+! #$mailcmd = "/usr/lib/sendmail -t";
+! $mailcmd = "";
   
   # this is a list of domain names for your system (e.g., "compuserve.com")
   # Names in this list are considered "friendly".  Including your own system
---- 256,262 ----
-  
-  # this is the name of the mail utility (see sendmail(8) man page)
-  # type "/bin/which sendmail" to find out where sendmail is on your system
+--- 282,289 ----
+  # depending on your system, to find out where sendmail is.
+  # If left blank, we try to find sendmail in /usr/lib, /usr/sbin, and then
+  # the user's $PATH, and then invoke it with the "-t" flag.
 ! $mailcmd = "/usr/sbin/sendmail -t";
+! #$mailcmd = "";
   
   # this is a list of domain names for your system (e.g., "compuserve.com")
   # Names in this list are considered "friendly".  Including your own system
 ***************
-*** 423,429 ****
-    }
-  
-  # Make sure critical messages are seen
-! if ($poster eq "" || $complain_to eq "") {
-    print "Press enter to continue.... ";
-    $ans = <STDIN>;
-    }
---- 424,430 ----
-    }
-  
-  # Make sure critical messages are seen
-! if (!$quiet && ($poster eq "" || $complain_to eq "")) {
-    print "Press enter to continue.... ";
-    $ans = <STDIN>;
-    }
-***************
-*** 516,521 ****
---- 517,523 ----
+*** 542,547 ****
+--- 543,549 ----
   close TEXTFILE;
   $response = ""; # garbage collection
   
@@ -71,8 +56,8 @@
   print "\n";
   $pager = $ENV{"PAGER"};
 ***************
-*** 550,555 ****
---- 552,561 ----
+*** 576,581 ****
+--- 578,587 ----
     } # for
   
   print "\n";
@@ -84,19 +69,12 @@
   close STDIN;
   exit 0;
 ***************
-*** 2032,2038 ****
-      "0200", "EET, MET DST, METDST, MEST, MESZ, SST, FST, O",
-  				# Middle Europe Daylight
-  				# Swedish Summer Time, French Summer Time
-!     "0300", "EET DST, IST, BT, P", # Turkey, Israel
-      "0330", "IT",		# Iran?
-      "0400", "IDT, MSD, ZP4, Q",
-      "0500", "ZP5, R",		# USSR Zone 4
---- 2038,2044 ----
-      "0200", "EET, MET DST, METDST, MEST, MESZ, SST, FST, O",
-  				# Middle Europe Daylight
-  				# Swedish Summer Time, French Summer Time
-!     "0300", "EET DST, IST, MSK, BT, P", # Turkey, Moscow, Israel
-      "0330", "IT",		# Iran?
-      "0400", "IDT, MSD, ZP4, Q",
-      "0500", "ZP5, R",		# USSR Zone 4
+*** 3694,3700 ****
+  	"glasscity.net",
+  	"globalent.net",	# has no anti-spam policy
+  	"globalf(n|inan).com",
+- 	"globecomm.net",
+  	"gohomeray.com",	# cyberpromo
+  	"(good|spray)(net)?.com",
+  	"greatoffer.com",
+--- 3700,3705 ----
