@@ -21,7 +21,9 @@ share/doc/xvile/vile-perl-api.doc
 share/xvile/vile/perl/Vile/Exporter.pm
 share/xvile/vile/perl/Vile/Manual.pm
 share/xvile/vile/perl/Breadcrumbs.pm
+share/xvile/vile/perl/CaptHook.pm
 share/xvile/vile/perl/Glob2re.pm
+share/xvile/vile/perl/Help.pm
 share/xvile/vile/perl/Vile.pm
 share/xvile/vile/perl/Vileserv.pm
 share/xvile/vile/perl/Visit.pm

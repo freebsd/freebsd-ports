@@ -68,7 +68,9 @@ share/doc/vile/vile-perl-api.doc
 share/vile/perl/Vile/Exporter.pm
 share/vile/perl/Vile/Manual.pm
 share/vile/perl/Breadcrumbs.pm
+share/vile/perl/CaptHook.pm
 share/vile/perl/Glob2re.pm
+share/vile/perl/Help.pm
 share/vile/perl/Vile.pm
 share/vile/perl/Vileserv.pm
 share/vile/perl/Visit.pm
