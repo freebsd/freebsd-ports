@@ -1070,6 +1070,7 @@
     SUBDIR += py-spark
     SUBDIR += py-statgrab
     SUBDIR += py-tables
+    SUBDIR += py-tconfpy
     SUBDIR += py-twisted
     SUBDIR += py-ui
     SUBDIR += py-unit
