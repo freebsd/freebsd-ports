@@ -5498,6 +5498,7 @@ ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-o_dbm	ports/databases/ruby-o_dbm
 ruby-odbc	ports/databases/ruby-odbc
 ruby-opengl	ports/graphics/ruby-opengl
+ruby-openssl	ports/security/ruby-openssl
 ruby-optparse	ports/devel/ruby-optparse
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
