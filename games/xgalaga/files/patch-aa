@@ -1,0 +1,31 @@
+--- ./libsprite/Imakefile.org	Mon May 15 17:52:06 1995
++++ ./libsprite/Imakefile	Wed May 24 02:30:34 1995
+@@ -1,5 +1,5 @@
+ 
+-    XPMINCLUDE 		= -I/usr/include/X11
++    XPMINCLUDE 		= -I$(INCROOT)/X11
+ 
+     EXTRA_INCLS = $(XPMINCLUDE) 
+ 
+--- ./Imakefile.org	Tue May 16 13:28:35 1995
++++ ./Imakefile	Wed May 24 03:01:51 1995
+@@ -9,7 +9,7 @@
+ XCOMM your system.  If not doing "make install", set this to where the
+ XCOMM files are now.
+ 
+-    XGALAGADIR = /usr/games/xgalaga
++    XGALAGADIR = $(LIBDIR)/xgalaga
+ 
+     SCOREFILE    	= $(XGALAGADIR)/.xgalscores
+     SOUNDDIR		= $(XGALAGADIR)/sounds
+@@ -32,8 +32,8 @@
+ XCOMM with the standard X libs, you shouldn't need to change this.
+ XCOMM otherwise make these point at wherever you put it.
+ 
+-    XPMLIB 		= -lXpm
+-    XPMINCLUDE 		= -I/usr/include/X11
++    XPMLIB 		= -L$(USRLIBDIR) -lXpm
++    XPMINCLUDE 		= -I$(INCROOT)/X11
+ 
+     XSPRITELIB          = -L./libsprite -lXsprite
+ 
