@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-dbfile=${NSDDBFILE} \
 		--with-namedxfer=${NSDXFER} \
 		--with-libwrap
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
