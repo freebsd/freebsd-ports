@@ -24,6 +24,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|sparc|__sparc__|" \
 		-e "s|alpha|__alpha__|" ${WRKSRC}/include/base/machdep.h
@@ -34,4 +40,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libit++.a ${PREFIX}/lib
 	${CP} -R ${WRKSRC}/include ${PREFIX}/include/it++
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
