@@ -1,35 +1,87 @@
 bin/rrdtool
 bin/rrdcgi
-bin/log2rrd.pl
-share/examples/rrdtool/bigtops.pl
-share/examples/rrdtool/minmax.pl
+lib/librrd.a
+lib/librrd.so.0
+lib/librrd.so
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+share/examples/rrdtool/cgi-demo.cgi
 share/examples/rrdtool/piped-demo.pl
 share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
-share/examples/rrdtool/cgi-demo.cgi
-share/doc/rrdtool/README.log2rrd
-share/doc/rrdtool/RRDp.html
-share/doc/rrdtool/RRDs.html
-share/doc/rrdtool/bin_dec_hex.html
-share/doc/rrdtool/cdeftutorial.html
-share/doc/rrdtool/rpntutorial.html
-share/doc/rrdtool/rrdcgi.html
-share/doc/rrdtool/rrdcreate.html
-share/doc/rrdtool/rrddump.html
-share/doc/rrdtool/rrdfetch.html
-share/doc/rrdtool/rrdgraph.html
-share/doc/rrdtool/rrdlast.html
-share/doc/rrdtool/rrdresize.html
-share/doc/rrdtool/rrdrestore.html
-share/doc/rrdtool/rrdtool.html
-share/doc/rrdtool/rrdtune.html
-share/doc/rrdtool/rrdtutorial.html
-share/doc/rrdtool/rrdupdate.html
+share/examples/rrdtool/bigtops.pl
+share/examples/rrdtool/minmax.pl
+share/examples/rrdtool/log2rrd/log2rrd.pl
+share/examples/rrdtool/log2rrd/README
+share/examples/rrdtool/rrd-file-icon/rrd.png
+share/examples/rrdtool/rrd-file-icon/README
+share/examples/rrdtool/trytime/trytime.c
+share/examples/rrdtool/trytime/README
+share/examples/rrdtool/rrdproc/rrdproc.c
+share/examples/rrdtool/rrdproc/README
+share/examples/rrdtool/README
+share/doc/rrdtool/rrdtool.pod
+share/doc/rrdtool/rrdlast.pod
+share/doc/rrdtool/rrdcreate.pod
+share/doc/rrdtool/rrdupdate.pod
+share/doc/rrdtool/cdeftutorial.pod
+share/doc/rrdtool/rpntutorial.pod
+share/doc/rrdtool/rrdgraph.pod
+share/doc/rrdtool/bin_dec_hex.pod
+share/doc/rrdtool/rrdfetch.pod
+share/doc/rrdtool/rrdrestore.pod
+share/doc/rrdtool/rrddump.pod
+share/doc/rrdtool/rrdtune.pod
+share/doc/rrdtool/rrdresize.pod
+share/doc/rrdtool/rrdcgi.pod
+share/doc/rrdtool/rrdtutorial.pod
+share/doc/rrdtool/rrdtool.txt
+share/doc/rrdtool/rrdlast.txt
+share/doc/rrdtool/rrdcreate.txt
+share/doc/rrdtool/rrdupdate.txt
+share/doc/rrdtool/cdeftutorial.txt
+share/doc/rrdtool/rpntutorial.txt
+share/doc/rrdtool/rrdgraph.txt
+share/doc/rrdtool/bin_dec_hex.txt
+share/doc/rrdtool/rrdfetch.txt
+share/doc/rrdtool/rrdrestore.txt
+share/doc/rrdtool/rrddump.txt
+share/doc/rrdtool/rrdtune.txt
+share/doc/rrdtool/rrdresize.txt
+share/doc/rrdtool/rrdcgi.txt
+share/doc/rrdtool/rrdtutorial.txt
+share/doc/rrdtool/RRDs.txt
+share/doc/rrdtool/RRDp.txt
+share/doc/rrdtool/html/rrdtool.html
+share/doc/rrdtool/html/rrdlast.html
+share/doc/rrdtool/html/rrdcreate.html
+share/doc/rrdtool/html/rrdupdate.html
+share/doc/rrdtool/html/cdeftutorial.html
+share/doc/rrdtool/html/rpntutorial.html
+share/doc/rrdtool/html/rrdgraph.html
+share/doc/rrdtool/html/bin_dec_hex.html
+share/doc/rrdtool/html/rrdfetch.html
+share/doc/rrdtool/html/rrdrestore.html
+share/doc/rrdtool/html/rrddump.html
+share/doc/rrdtool/html/rrdtune.html
+share/doc/rrdtool/html/rrdresize.html
+share/doc/rrdtool/html/rrdcgi.html
+share/doc/rrdtool/html/rrdtutorial.html
+share/doc/rrdtool/html/RRDs.html
+share/doc/rrdtool/html/RRDp.html
 lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/RRDs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ntmake.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/.packlist
+@dirrm share/examples/rrdtool/log2rrd
+@dirrm share/examples/rrdtool/trytime
+@dirrm share/examples/rrdtool/rrdproc
+@dirrm share/examples/rrdtool/rrd-file-icon
 @dirrm share/examples/rrdtool
+@dirrm share/doc/rrdtool/html
 @dirrm share/doc/rrdtool
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs
