@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.10
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
@@ -88,7 +88,7 @@ RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql40-client \
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}-gamma
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 DOCS=		manual.html manual.ps manual_toc.html manual.txt manual.texi \
 		include.texi

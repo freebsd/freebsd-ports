@@ -1,6 +1,6 @@
---- configure.orig	Mon Dec 16 10:12:16 2002
-+++ configure	Fri Dec 20 18:11:14 2002
-@@ -8071,6 +8071,7 @@
+--- configure.orig	Wed Jan 29 12:29:38 2003
++++ configure	Tue Feb  4 14:07:39 2003
+@@ -8104,6 +8104,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9000,7 +9001,7 @@
+@@ -9046,7 +9047,7 @@
    ;;
  esac
  fi
@@ -17,3 +17,47 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
+@@ -9238,43 +9239,8 @@
+ echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
+ echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
+ PS=$ac_cv_path_PS
+-# Linux style
+-if $PS p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
+-# Solaris
+-elif $PS -p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
+ # BSD style
+-elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
+-then
+   FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# SysV style
+-elif $PS -ef 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# Do anybody use this?
+-elif $PS $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
+-else
+-  case $SYSTEM_TYPE in
+-    *darwin*)
+-      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
+-    *cygwin*)
+-      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
+-    *netware* | *modesto*)
+-      FIND_PROC=
+-      ;;
+-    *)
+-      { { echo "$as_me:$LINENO: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
+-echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
+-   { (exit 1); exit 1; }; }
+-  esac
+-fi
+ 
+ echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
+ echo "${ECHO_T}\"$FIND_PROC\"" >&6
