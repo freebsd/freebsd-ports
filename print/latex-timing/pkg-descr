@@ -1,0 +1,3 @@
+"timing" is a LaTeX package for drawing timing diagrams.
+It is designed as an extention of the standard LaTeX "picture"
+environment and uses METAFONT for the symbols. 
