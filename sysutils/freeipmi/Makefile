@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+NOT_FOR_ARCHS=	ia64 sparc64 alpha
 PLIST_SUB+=	SHLIBVER=${SHLIBVER} RUNDIR=${RUNDIR} LOGDIR=${LOGDIR}
 MAN1+=		bmc-config.1 bmc-info.1 fish.1 sel.1 sensors.1
 MAN5+=		ipmipower.conf.5
