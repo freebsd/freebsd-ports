@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mp3mover
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.doc.ic.ac.uk/~jsm00/scripts/
 
