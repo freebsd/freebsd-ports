@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.128 1997/11/17 13:20:20 tg Exp $
+# $Id: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
     SUBDIR += archie
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
     SUBDIR += bb
+    SUBDIR += bind8
     SUBDIR += bing
     SUBDIR += cap
     SUBDIR += choparp
