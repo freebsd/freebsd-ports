@@ -190,6 +190,7 @@
     SUBDIR += fhist
     SUBDIR += fib
     SUBDIR += flick
+    SUBDIR += flyspray
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
