@@ -6,25 +6,31 @@
 #
 
 PORTNAME=	flexbackup
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/backup
+		http://www.reynoldsnet.org/flexbackup/tarball/
 
 MAINTAINER=	johnjen@reynoldsnet.org
-COMMENT=	Perl-based, flexible tape backup system that uses dump, cpio, or afio
+COMMENT=	Perl-based flexible tape backup system that uses dump/afio/cpio/tar
 
 RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio \
-		buffer:${PORTSDIR}/misc/buffer \
-		gtar:${PORTSDIR}/archivers/gtar
+		buffer:${PORTSDIR}/misc/buffer
+
+.if defined(WITH_GTAR)
+RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+.endif
 
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-post-patch:
-	@${PERL} -pi -e "s|tar --|gtar --|g" ${WRKSRC}/flexbackup
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you are using and older version of FreeBSD that does not have GNU Tar"
+	@${ECHO_MSG} "imported as the system 'tar,' configure this port using WITH_GTAR=yes"
+	@${ECHO_MSG} "to enable the port dependency and use the 'path' variable in the"
+	@${ECHO_MSG} "flexbackup.conf file to point to 'gtar'"
+	@${ECHO_MSG} ""
 
 post-configure:
 	@${CP} ${WRKSRC}/flexbackup.conf ${WRKSRC}/flexbackup.conf.sample
