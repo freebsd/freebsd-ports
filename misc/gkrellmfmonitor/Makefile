@@ -3,12 +3,15 @@
 # Whom:			Jean-Yves Lefort <jylefort@brutele.be>
 #
 # $FreeBSD$
+# $Id: Makefile,v 1.2 2002/11/09 03:14:54 jylefort Exp $
 #
 
 PORTNAME=	gkrellmfmonitor
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://alice.nc.huji.ac.il/~arsen/
+# the orignal master site is down
+# MASTER_SITES=	http://alice.nc.huji.ac.il/~arsen/
+MASTER_SITES=	http://www.comimpex.cz/support/LINUX/Programs/monitor/gkrellm/
 DISTNAME=	fmonitor-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
