@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.25 1996/12/17 12:33:39 asami Exp $
+# $Id: Makefile,v 1.26 1997/01/23 03:35:37 jmz Exp $
 #
 VERSION=	96.12
 DISTNAME=	latex
@@ -33,32 +33,33 @@ latex_tools-${VERSION}.tar.gz:
 	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/macros -f latex/packages/tools.tar.gz -o ${DISTDIR}/$@
 
 do-build:
-	@(cd ${WRKSRC}/base; yes | initex unpack.ins)
-	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
-		yes | initex latex.ltx)
-	@(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
+	(cd ${WRKSRC}/base; tex --ini unpack.ins)
+	(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
+		tex --ini latex.ltx </dev/null)
+	(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
-		 ln -sf /usr/local/bin/virtex latex; yes | ./latex tools.ins)
+		 ln -sf /usr/local/bin/tex latex; ./latex tools.ins)
 
 do-install: 
 	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
-				${PREFIX}/lib/texmf/ini/)
-	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
-	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/lib/texmf/mf)
+				${PREFIX}/share/texmf/web2c/)
+	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/share/texmf/fonts/tfm)
+	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/share/texmf/metafont)
+	@mkdir -p ${PREFIX}/share/texmf/tex/latex
 	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
 	   hyphen.tex *.cls *.clo *.sty *.fd *.def *.cfg ; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
-	@mkdir -p ${PREFIX}/lib/texmf/makeindx;
-	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/makeindx)
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@mkdir -p ${PREFIX}/share/texmf/makeindx;
+	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/share/texmf/makeindx)
 	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
-	@(cd ${PREFIX}/bin; rm -f latex; ln -s virtex latex)
-	@(mkdir -p ${PREFIX}/lib/texmf/documentation)
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
+	@(mkdir -p ${PREFIX}/share/texmf/documentation)
 	@(cd ${WRKSRC}/base; for f in *.dtx ltx3info.tex source2e.tex *.fdd ltnews*.tex *guide.tex; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
 
 .include "Makefile.inc"
 
