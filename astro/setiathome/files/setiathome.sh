@@ -50,16 +50,17 @@ program_file=${rc_file%.sh}
 program_path=${program_dir}/${program_file}
 export program_path
 
-program_args="\
-${seti_std_args} \
+common_args="\
 ${seti_proxy_server:+-proxy} ${seti_proxy_server} \
 ${seti_socks_server:+-socks_server} ${seti_socks_server} \
 ${seti_socks_user:+-socks_user} ${seti_socks_user} \
 ${seti_socks_passwd:+-socks_passwd} ${seti_socks_passwd} \
 ${seti_nice:+-nice} ${seti_nice} \
 "
-export program_args
 
+program_args="${seti_std_args} ${common_args}"
+export program_args
+register_args="${seti_reg_args} ${common_args}"
 
 wrapper_dir=${PREFIX}/libexec
 wrapper_file=${rc_file%.sh}.bin
@@ -202,8 +203,7 @@ register)
 	if [ "X${seti_dontlogin}" != "Xyes" ]; then
 		su -fm ${seti_user} -c "\
 			cd ${seti_wrkdir} && \
-			exec ${program_path} \
-			${seti_reg_args} ${seti_proxy_args}"
+			exec ${program_path} ${register_args}"
 	fi
 	if [ ${seti_maxprocs} -gt 1 ]; then
 		echo "      Updating additional working directories."
