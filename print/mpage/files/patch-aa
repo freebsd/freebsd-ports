@@ -1,0 +1,36 @@
+--- Makefile~	Tue Nov 25 23:16:06 1997
++++ Makefile	Thu Feb 19 15:18:17 1998
+@@ -30,7 +30,6 @@
+ # Set this to an ANSI compatible C compiler (preferably gcc)
+ # See also system specific settings below
+ #CC=cc
+-CC=gcc
+ 
+ ############################################################################
+ #
+@@ -55,9 +54,8 @@
+ SPOOL_TYPE=BSD_SPOOLER
+ 
+ # PREFIX=e:/usr		# OS/2 type
+-PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+-LIBDIR=$(PREFIX)/lib
++LIBDIR=$(PREFIX)/share
+ MANDIR=$(PREFIX)/man/man1
+ 
+ #
+@@ -168,10 +166,10 @@
+ 
+ 
+ #
+-# add your proper install stuff
++# BSD specific install stuff
+ #
+ install:
+-	cp mpage$(E) $(BINDIR)
+-	cp mpage.1 $(MANDIR)
++	$(BSD_INSTALL_PROGRAM) mpage$(E) $(BINDIR)
++	$(BSD_INSTALL_MAN) mpage.1 $(MANDIR)
+ 	if [ ! -d $(LIBDIR)/mpage ] ; then mkdir $(LIBDIR)/mpage ; fi
+-	-cp Encodings/* $(LIBDIR)/mpage
++	$(BSD_INSTALL_DATA) Encodings/* $(LIBDIR)/mpage

@@ -1,0 +1,8 @@
+Mpage is a program to reduce and print multiple pages of text per
+sheet on a PostScript compatible printer.
+It also has limited functionality to do the same with postscript files itself.
+
+Mpage and all the files distributed with mpage are covered by copyright:
+
+ Copyright (c) 1994-1997 Marcel J.E. Mol, The Netherlands
+ Copyright (c) 1988 Mark P. Hahn, Herndon, Virginia
