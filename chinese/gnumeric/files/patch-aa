@@ -1,10 +1,10 @@
---- src/dialogs/dialog-stf-preview.c.orig	Mon Oct 30 17:44:01 2000
-+++ src/dialogs/dialog-stf-preview.c	Mon Oct 30 17:44:31 2000
-@@ -711,7 +711,7 @@
- 	renderdata->gridgroup    = NULL;
- 	renderdata->hashtable    = g_hash_table_new (g_int_hash, g_int_equal);
- 
--	renderdata->font       = gdk_font_load ("fixed");
+--- src/dialogs/dialog-stf-preview.c.orig	Fri Dec 14 13:14:57 2001
++++ src/dialogs/dialog-stf-preview.c	Fri Dec 14 13:15:42 2001
+@@ -613,7 +613,7 @@
+ 	 * The name of the default font for this locale.
+ 	 * Preferably something with the correct encoding.
+ 	 */
+-	renderdata->font       = gdk_fontset_load (_("fixed"));
 +	renderdata->font       = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
  	renderdata->charwidth  = gdk_string_width (renderdata->font, "W");
  	renderdata->charheight = gdk_string_height (renderdata->font, "W");
