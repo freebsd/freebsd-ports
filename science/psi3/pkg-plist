@@ -529,3 +529,4 @@ lib/libPSI_r12.a
 @dirrm %%EXAMPLESDIR%%/casscf-sp
 @dirrm %%EXAMPLESDIR%%/Basis_Tests
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
