@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += metacity-themes
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
