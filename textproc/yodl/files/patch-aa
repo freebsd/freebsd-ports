@@ -39,7 +39,7 @@
  
  # Compiler flags?
 -CFLAGS = -g -c -Wall
-+CFLAGS = -O2 -m486 -c -Wall
++CFLAGS += -c -Wall
  
  # Installation program? If you don't have install, make sure that you state
  # something that also strips executables.
