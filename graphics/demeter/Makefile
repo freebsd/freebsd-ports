@@ -38,10 +38,6 @@ WRKSRC_DATA=		${WRKDIR}/${SAMPLE_DATA_SUBDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
-
 .if ${HAVE_SDL:Msdl} && ${HAVE_SDL:Mimage}
 WITH_SDL=	yes
 .endif
