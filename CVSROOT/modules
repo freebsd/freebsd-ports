@@ -3881,6 +3881,7 @@ libwpcg		ports/graphics/libwpcg
 libwpd		ports/textproc/libwpd
 libwww		ports/www/libwww
 libxalloc	ports/devel/libxalloc
+libxfce4gui	ports/x11-toolkits/libxfce4gui
 libxine		ports/multimedia/libxine
 libxklavier	ports/x11/libxklavier
 libxml		ports/textproc/libxml
