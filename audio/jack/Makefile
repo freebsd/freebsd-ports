@@ -32,7 +32,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},"  \
 		${WRKSRC}/configure ${WRKSRC}/libjack/Makefile.in \
 		${WRKSRC}/jackd/Makefile.in \
-		${WRKSRC}/example-clients/Makefile.in
+		${WRKSRC}/example-clients/Makefile.in ${WRKSRC}/jack.pc.in
 	${REINPLACE_CMD} -e "s,-lrt,," ${WRKSRC}/libjack/Makefile.in \
 		${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
