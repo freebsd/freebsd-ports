@@ -1,0 +1,13 @@
+--- cgi/tac.c.orig	Mon May 12 06:18:56 2003
++++ cgi/tac.c	Sat Aug  2 16:24:23 2003
+@@ -1220,10 +1220,8 @@
+ 	printf("</table>\n");
+ 	printf("</td>\n");
+ 
+-	/*
+ 	printf("</tr>\n");
+ 	printf("</table>\n");
+-	*/
+ 
+ 	printf("</td>\n");
+ 
