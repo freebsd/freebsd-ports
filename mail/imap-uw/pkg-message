@@ -1,0 +1,14 @@
+The ipop2d, ipop3d, and imapd daemons should be invoked by your
+/etc/inetd.conf file with lines such as:
+
+pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
+pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
+imap4   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
+
+If PAM authentication support has been compiled in you may need to add the
+following lines to /etc/pam.conf:
+
+imap	auth	required	pam_unix.so			try_first_pass
+imap	account	required	pam_unix.so			try_first_pass
+pop	auth	required	pam_unix.so			try_first_pass
+pop	account	required	pam_unix.so			try_first_pass

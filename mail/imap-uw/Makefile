@@ -5,26 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	imap-uw
-PORTVERSION=	4.8
-PORTREVISION=	1
+PORTNAME=	imap
+PORTVERSION=	2000c
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/imap/%SUBDIR%/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-2000a
-EXTRACT_SUFX=	.tar.Z
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		imap-utils${EXTRACT_SUFX}
-ALL_TARGET=	bsf
+PKGNAMESUFFIX=	-uw
+DISTFILES=	${DISTNAME}.tar.Z \
+		imap-utils.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 MAN8=		ipopd.8 imapd.8
+ALL_TARGET=	bsf
 
 .include <bsd.port.pre.mk>
 
@@ -47,5 +45,8 @@ do-install:
 		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
