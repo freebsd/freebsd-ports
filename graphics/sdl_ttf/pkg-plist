@@ -2,4 +2,4 @@ bin/showfont
 include/SDL11/SDL_ttf.h
 lib/libSDL_ttf.a
 lib/libSDL_ttf.so
-lib/libSDL_ttf.so.0
+lib/libSDL_ttf.so.2
