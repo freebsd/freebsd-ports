@@ -9,7 +9,9 @@ PORTNAME=	irclib
 PORTVERSION=	0.3.1
 CATEGORIES=	irc python
 MASTER_SITES=	http://joel.rosdahl.net/hacks/ \
-		http://www3.kr.freebsd.org/~pekry/distfiles/
+		http://www3.kr.freebsd.org/~perky/distfiles/ \
+		http://www2.freebsd-kr.org/distfiles/ \
+		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@python.or.kr
