@@ -1,0 +1,20 @@
+--- config.h.orig	Wed Jan 28 17:28:11 1998
++++ config.h	Wed Jan 28 17:29:04 1998
+@@ -36,7 +36,7 @@
+  * (LIBDIR is defined by imake)
+  *
+  */
+-INFODIR = /usr/info
++INFODIR = ${PREFIX}/info
+ PCBLIBDIR = $(LIBDIR)/pcb
+ DEFAULTFONT = default_font
+ DEFAULTLIBRARY = pcblib
+@@ -44,7 +44,7 @@
+ /* ----------------------------------------------------------------------
+  * the name of GNU m4 (you MUST use GNU m4)
+  */
+-GNUM4 = m4
++GNUM4 = gm4
+ 
+ /* ----------------------------------------------------------------------
+  * BTNMOD determies the modifier key to be used for the
