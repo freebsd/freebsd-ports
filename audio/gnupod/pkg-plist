@@ -1,6 +1,8 @@
 bin/gnupod_INIT.pl
 bin/gnupod_addsong.pl
 bin/gnupod_check.pl
+bin/gnupod_convert_FLAC.pl
+bin/gnupod_convert_OGG.pl
 bin/gnupod_otgsync.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
