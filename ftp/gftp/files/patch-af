@@ -1,0 +1,11 @@
+--- ./src/text/gftp-text.h.orig	Fri Feb 23 10:59:57 2001
++++ ./src/text/gftp-text.h	Mon Apr 30 00:19:21 2001
+@@ -43,7 +43,7 @@
+ /* gftp-text.h */
+ void gftp_text_log				( gftp_logging_level level, 
+ 						  void *ptr, 
+-						  const char *string, ... );
++						  const char *string, ... ) __attribute__((format(printf, 3, 4)));
+ int gftp_text_open				( gftp_request * request, 
+ 						  char *command, 
+ 						  gpointer *data );

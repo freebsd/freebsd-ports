@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.7b
+PORTVERSION=	2.0.8
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
@@ -19,6 +19,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+FORBIDDEN=	"Insecure temporary files up the wazoo"
 
 MAN1=		gftp.1
 
