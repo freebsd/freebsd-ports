@@ -27,5 +27,7 @@ ALL_TARGET=	qrash
 post-patch:
 	@${PERL} -pi -e "s=PREFIX=${PREFIX}=g" ${WRKSRC}/resource.cc
 	@${PERL} -pi -e "s=/usr/X11=${PREFIX}=g" ${WRKSRC}/configure
+	${FIND} ${WRKSRC} -type f -exec ${PERL} -pi -e \
+		"s:<malloc.h>:<stdlib.h>:g" {} \;
 
 .include <bsd.port.mk>
