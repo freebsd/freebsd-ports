@@ -1,5 +1,5 @@
---- config/cf/X11.tmpl.orig	Fri Sep  3 09:18:18 2004
-+++ config/cf/X11.tmpl	Fri Sep 10 20:29:12 2004
+--- X11.tmpl.orig	Fri Sep  3 09:18:18 2004
++++ config/cf/X11.tmpl	Wed Dec 29 13:42:37 2004
 @@ -616,7 +616,7 @@
  #define BuildXft1Library	BuildRenderLibrary
  #endif
@@ -9,7 +9,17 @@
  #endif
  #ifndef BuildFontconfigLibrary
  #define BuildFontconfigLibrary	(UseFontconfig && !HasFontconfig)
-@@ -1606,7 +1606,7 @@
+@@ -773,6 +773,9 @@
+ #ifndef ThreadedProject
+ #define ThreadedProject ThreadedX
+ #endif
++#ifndef BuildThreadStubLibrary
++#define BuildThreadStubLibrary	NO
++#endif
+ #ifndef NeedUIThrStubs
+ #define NeedUIThrStubs		NO
+ #endif
+@@ -1606,7 +1609,7 @@
  #endif
  
  #ifndef PsWrap
@@ -18,7 +28,7 @@
  #  define PsWrap $(PSWRAPSRC)/pswrap
  # else
  #  define PsWrap pswrap
-@@ -1683,7 +1683,7 @@
+@@ -1683,7 +1686,7 @@
  
       INSTAPPFLAGS = $(INSTDATFLAGS)	/* XXX - this should go away - XXX */
  
@@ -27,3 +37,43 @@
                RGB = $(XBINDIR)/rgb
              FONTC = $(XBINDIR)/bdftopcf
        MKFONTSCALE = $(XBINDIR)/mkfontscale
+@@ -1843,6 +1846,39 @@
+       DEPXLIBONLY = $(DEPXONLYLIB)
+          XLIBONLY = $(XONLYLIB)
+      LINTXONLYLIB = $(LINTXONLY)
++
++#if BuildThreadStubLibrary
++#ifndef SharedLibXThrStub
++#define SharedLibXThrStub	YES
++#endif
++#ifndef NormalLibXThrStub
++#define NormalLibXThrStub	NO
++#endif
++#ifndef DebugLibXThrStub
++#define DebugLibXThrStub	NO
++#endif
++#ifndef ProfileLibXThrStub
++#define ProfileLibXThrStub	NO
++#endif
++   XTHRSTUBLIBSRC = $(LIBSRC)/XThrStub
++#if SharedLibXThrStub
++#ifndef SharedXThrStubRev
++#define SharedXThrStubRev 6.1
++#endif
++SharedLibReferences(XTHRSTUB,XThrStub,$(XTHRSTUBLIBSRC),SOXTHRSTUBREV,SharedXThrStubRev)
++#else
++ProjectUnsharedLibReferences(XTHRSTUB,XThrStub,$(XTHRSTUBSRC),XBuildLibDir)
++#endif
++#else
++#undef  SharedLibXThrStub
++#define SharedLibXThrStub	NO
++#undef  NormalLibXThrStub
++#define NormalLibXThrStub	NO
++#undef  DebugLibXThrStub
++#define DebugLibXThrStub	NO
++#undef  ProfileLibXThrStub
++#define ProfileLibXThrStub	NO
++#endif
+ 
+ #if BuildScreenSaverLibrary
+ #ifndef SharedLibXss

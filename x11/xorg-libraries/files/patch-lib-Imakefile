@@ -1,0 +1,22 @@
+--- lib/Imakefile.orig	Wed Sep  1 18:10:28 2004
++++ lib/Imakefile	Wed Dec 29 13:43:31 2004
+@@ -36,6 +36,10 @@
+ XKBUILIBDIR = xkbui
+ #endif
+ 
++#if BuildThreadStubLibrary && BuildLibraries
++THRSTUBLIBDIR = XThrStub
++#endif
++
+ #if BuildXInputLib
+ XINPUTLIBDIR = Xi
+ #endif
+@@ -223,7 +227,7 @@
+ #endif
+ 
+ 
+-LINTSUBDIRS = $(XAULIBDIR) $(XDMCPLIBDIR) $(X11LIBDIR) \
++LINTSUBDIRS = $(XAULIBDIR) $(XDMCPLIBDIR) $(THRSTUBLIBDIR) $(X11LIBDIR) \
+              $(OLDXLIBDIR) $(ICELIBDIR) $(SMLIBDIR) $(XEXTLIBDIR) $(XTLIBDIR) \
+              $(SSLIBDIR) $(XF86MISCLIBDIR) $(XF86VMLIBDIR) $(XF86DGALIBDIR) \
+              $(XF86RUSHLIBDIR) $(XMULIBDIR) $(XMUULIBDIR) $(XPMLIBDIR) \

@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	6.8.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R6.8.1/tars
@@ -38,6 +39,8 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	${CP} ${FILESDIR}/nls-Compose-microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+	${MKDIR} ${WRKSRC}/lib/XThrStub
+	${CP} ${FILESDIR}/XThrStub-Imakefile ${WRKSRC}/lib/XThrStub/Imakefile
 
 post-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
@@ -56,6 +59,12 @@ IGNORE=	is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 PLIST_SUB+=	OSMESA:="@comment "
 .else
 PLIST_SUB+=	OSMESA:=""
+.endif
+
+.if ${OSVERSION} >= 500043
+PLIST_SUB+=	XTHRSTUB:="@comment "
+.else
+PLIST_SUB+=	XTHRSTUB:=""
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,12 @@
+--- lib/X11/Imakefile.orig	Wed Dec 29 13:44:54 2004
++++ lib/X11/Imakefile	Wed Dec 29 13:46:19 2004
+@@ -126,8 +126,7 @@
+          K5INCL = Krb5Includes
+          K5DEFS = Krb5Defines
+ #endif
+-#if (defined(FreeBSDArchitecture) && OSRelVersion < 500016) || \
+-	defined(OpenBSDArchitecture)
++#if (defined(OpenBSDArchitecture))
+ THRSTUBSRCS = UIThrStubs.c
+ THRSTUBOBJS = UIThrStubs.o
+ #endif

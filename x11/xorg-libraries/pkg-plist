@@ -559,6 +559,8 @@ lib/libXRes.so.1
 lib/libXTrap.a
 lib/libXTrap.so
 lib/libXTrap.so.6
+%%XTHRSTUB:%%lib/libXThrStub.so
+%%XTHRSTUB:%%lib/libXThrStub.so.6
 lib/libXau.a
 lib/libXau.so
 lib/libXau.so.0
