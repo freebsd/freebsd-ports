@@ -8,18 +8,23 @@
 PORTNAME=	xinetd
 PORTVERSION=	2.3.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.xinetd.org/ \
-		http://synack.net/xinetd/
+MASTER_SITES=	http://www.xinetd.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
-CONFIGURE_ARGS=	--with-loadavg --with-libwrap
+CONFIGURE_ARGS+=	--with-loadavg --with-libwrap
 # --with-inet6 "ipv6's code seens buggy.."
 
 MAN5=		xinetd.conf.5
 MAN8=		xinetd.8 xinetd.log.8
+
+post-patch:
+.for dir in sio str misc xlog pset pq timer
+	${PERL} -pi -e 's!\@INSTALL\@!/bin/cp!; s!-m 640!!' \
+		${WRKSRC}/libs/src/${dir}/Makefile.in
+.endfor
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \

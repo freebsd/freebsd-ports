@@ -42,3 +42,5 @@ It is a lot better than inetd. Here are the reasons:
       it can log the user name and command for the rsh service)
 
 6) No limit on number of server arguments
+
+WWW: http://www.xinetd.org/
