@@ -54,3 +54,55 @@
   	sleep 2		# ensure article looks older than addmissing startup
   	touch active
   	$(HERE) ./cnewsdo addmissing >addm.out 2>addm.diag
+*** batch/usenntpxmit.old	Thu Sep 22 17:28:37 1994
+--- batch/usenntpxmit	Fri Sep 30 12:30:17 1994
+***************
+*** 15,21 ****
+  
+  tmp=/tmp/nntp$$
+  cat >$tmp
+! nntpxmit $site:$tmp
+  if test -s $tmp
+  then
+  	cat $tmp >>$NEWSSITEDIR/togo.leftover
+--- 15,21 ----
+  
+  tmp=/tmp/nntp$$
+  cat >$tmp
+! nntpxmit -s $site:$tmp
+  if test -s $tmp
+  then
+  	cat $tmp >>$NEWSSITEDIR/togo.leftover
+*** nov/mkov.c.old	Sun Sep 18 17:55:05 1994
+--- nov/mkov.c	Fri Sep 30 13:39:22 1994
+***************
+*** 305,317 ****
+  	putfld(hdrp->h_bytes);
+  	putfld(hdrp->h_lines);
+  	/* put Xref in only if there is more than one locator in it */
+! 	p = strchr(hdrp->h_xref, ' ');	/* p -> space after relayer */
+! 	if (p != NULL)
+  		p = strchr(p, ':');	/* p -> colon in first location */
+! 	if (p != NULL)
+  		p = strchr(p+1, ':');	/* p -> colon in second location */
+! 	if (p != NULL)			/* at least two locations! */
+  		putextfld("xref", hdrp->h_xref);
+  	/* step 3 of 4: add new header output before this line */
+  	(void) putchar('\n');
+  }
+--- 305,319 ----
+  	putfld(hdrp->h_bytes);
+  	putfld(hdrp->h_lines);
+  	/* put Xref in only if there is more than one locator in it */
+! 	if (hdrp->h_xref != NULL) {
+! 	    p = strchr(hdrp->h_xref, ' ');	/* p -> space after relayer */
+! 	    if (p != NULL)
+  		p = strchr(p, ':');	/* p -> colon in first location */
+! 	    if (p != NULL)
+  		p = strchr(p+1, ':');	/* p -> colon in second location */
+! 	    if (p != NULL)			/* at least two locations! */
+  		putextfld("xref", hdrp->h_xref);
++ 	}
+  	/* step 3 of 4: add new header output before this line */
+  	(void) putchar('\n');
+  }
