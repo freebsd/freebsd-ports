@@ -1,0 +1,16 @@
+rzip is a compression program, similar in functionality to gzip or bzip2, but
+able to take advantage from long distance redundancies in files, which can
+sometimes allow rzip to produce much better compression ratios than other
+programs.
+
+The principal advantage of rzip is that it has an effective history buffer of
+900 Mbyte. This means it can find matching pieces of the input file over huge
+distances compared to other commonly used compression programs. The gzip
+program by comparison uses a history buffer of 32 kbyte and bzip2 uses a
+history buffer of 900 kbyte. The second advantage of rzip over bzip2 is that it
+is usually faster. This may seem surprising at first given that rzip uses the
+bzip2 library as a backend (for handling the short-range compression), but it
+makes sense when you realise that rzip has usually reduced the data a fair bit
+before handing it to bzip2, so bzip2 has to do less work.
+
+WWW: http://rzip.samba.org/

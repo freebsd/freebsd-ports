@@ -60,6 +60,7 @@
     SUBDIR += ruby-bz2
     SUBDIR += ruby-zip
     SUBDIR += rvm
+    SUBDIR += rzip
     SUBDIR += sectar
     SUBDIR += sharutils
     SUBDIR += squsq
