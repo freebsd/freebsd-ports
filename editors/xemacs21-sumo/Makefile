@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 .if defined(NAMEPREFIX) && ${NAMEPREFIX} == "mule-" || \
 	defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} != ""
@@ -28,7 +28,7 @@ NO_BUILD=	yes
 
 XEMACS_MAJOR_VER=	21
 XEMACS_REL=		21.1
-XEMACS_VER=		21.1.12
+XEMACS_VER=		21.1.13
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
 do-install:		# empty
