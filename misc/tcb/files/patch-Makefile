@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Nov 24 15:48:55 2002
++++ Makefile	Sun Nov 24 15:49:08 2002
+@@ -6,7 +6,7 @@
+ 
+ src/tcb: src/config.h
+ 	@echo 'Making tcb:'
+-	@cd src; make; cd ..
++	@cd src; $(MAKE); cd ..
+ 
+ src/config.h: config.sh
+ 	@./config.sh $(USR_DIR)	# $(USR_DIR): Debian (Linux)
