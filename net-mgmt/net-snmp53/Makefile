@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTVERSION=	5.0.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
-DISTFILES=	${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -42,9 +40,10 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		netsnmp_example_scalar_int.3 netsnmp_handler.3 \
 		netsnmp_instance.3 netsnmp_mib_handler_methods.3 \
 		netsnmp_multiplexer.3 netsnmp_old_api.3 netsnmp_read_only.3 \
+		netsnmp_scalar.3 \
 		netsnmp_serialize.3 netsnmp_table.3 netsnmp_table_array.3 \
 		netsnmp_table_data.3 netsnmp_table_dataset.3 \
-		netsnmp_table_iterator.3 netsnmp_todo.3 \
+		netsnmp_table_iterator.3 netsnmp_todo.3 netsnmp_watcher.3 \
 		print_description.3 print_mib.3 print_objid.3 print_value.3 \
 		print_variable.3 read_all_mibs.3 read_config.3 read_mib.3 \
 		read_module.3 read_module_node.3 read_objid.3 shutdown_mib.3 \

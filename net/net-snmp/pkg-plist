@@ -44,6 +44,7 @@ include/net-snmp/agent/net-snmp-agent-includes.h
 include/net-snmp/agent/null.h
 include/net-snmp/agent/old_api.h
 include/net-snmp/agent/read_only.h
+include/net-snmp/agent/scalar.h
 include/net-snmp/agent/serialize.h
 include/net-snmp/agent/set_helper.h
 include/net-snmp/agent/snmp_agent.h
@@ -54,6 +55,7 @@ include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
 include/net-snmp/agent/var_struct.h
+include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
 include/net-snmp/definitions.h
 include/net-snmp/library/README
@@ -87,6 +89,7 @@ include/net-snmp/library/snmpUDPIPv6Domain.h
 include/net-snmp/library/snmpUnixDomain.h
 include/net-snmp/library/snmp_alarm.h
 include/net-snmp/library/snmp_api.h
+include/net-snmp/library/snmp_assert.h
 include/net-snmp/library/snmp_client.h
 include/net-snmp/library/snmp_debug.h
 include/net-snmp/library/snmp_enum.h

@@ -11,13 +11,3 @@
  	$(RANLIB) libsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
  
  #how to build dependencies
-@@ -158,6 +162,6 @@
- #
- # dependencies
- #
--ifeq ($(AUTO_DEPEND),y)
--include $(SOURCES:.c=.d)
--endif
-+#ifeq ($(AUTO_DEPEND),y)
-+#include $(SOURCES:.c=.d)
-+#endif
