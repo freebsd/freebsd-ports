@@ -9,8 +9,9 @@
 PORTNAME=	hanzim
 PORTVERSION=	1.2
 CATEGORIES=	chinese tk83
-MASTER_SITES=	ftp://kommos.ucsd.edu/pub/arobert/Chinese/
+MASTER_SITES=	ftp://kommos.ucsd.edu/pub/arobert/Chinese/%SUBDIR%/
 EXTRACT_SUFX=	.tgz
+MASTER_SITE_SUBDIR=	. Old
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese character learning-aid program
