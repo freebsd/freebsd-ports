@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,8 +24,15 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
+CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
+		--with-cflags="-pthread" \
+		--with-ldflags="-lc_r"
 INSTALL_TARGET=	site-install
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500018
+BROKEN=	"libc_r conflicts with libc on your system. (Ruby/SDL can be used on 5-CURRENT only)"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -34,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
