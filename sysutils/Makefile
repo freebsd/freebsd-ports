@@ -182,6 +182,7 @@
     SUBDIR += memtest
     SUBDIR += metalog
     SUBDIR += mgeupsd
+    SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkfile
     SUBDIR += mkisofs
