@@ -598,24 +598,26 @@ MAIN:{
 
     # Show info
     if ($info) {
-	if (@ARGV) {
+	if (!@ARGV) {
 	    list_installed();
-	}
-	foreach $port (keys(%reqd)) {
-	    if ($reqd{$port} & &REQ_EXPLICIT) {
-		show_port_info($port);
+	} else {
+	    foreach $port (keys(%reqd)) {
+		if ($reqd{$port} & &REQ_EXPLICIT) {
+		    show_port_info($port);
+		}
 	    }
 	}
     }
 
     # Clean
     if ($clean) {
-	if (@ARGV) {
+	if (!@ARGV) {
 	    clean_tree();
-	}
-	foreach $port (keys(%reqd)) {
-	    if (!($reqd{$port} & &REQ_IMPLICIT)) {
-		clean_port($port);
+	} else {
+	    foreach $port (keys(%reqd)) {
+		if (!($reqd{$port} & &REQ_IMPLICIT)) {
+		    clean_port($port);
+		}
 	    }
 	}
     }
