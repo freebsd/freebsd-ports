@@ -55,7 +55,7 @@ AUTHREG+=	db
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}/include:${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 AUTHREG+=	ldap
 .endif
 
