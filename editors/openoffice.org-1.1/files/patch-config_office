@@ -1,5 +1,5 @@
---- ../config_office/configure.in	5 Aug 2003 16:21:41 -0000	1.55.2.9
-+++ ../config_office/configure.in	9 Aug 2003 05:20:19 -0000
+--- ../config_office/configure.in.orig	Wed Sep 17 05:28:53 2003
++++ ../config_office/configure.in	Sat Feb 21 11:09:36 2004
 @@ -77,6 +77,11 @@
   
                            Usage: --with-jdk-home=<absolute path to JDK 1.3 home>
@@ -23,7 +23,7 @@
  
                            Usage: --with-os-version=<OSVERSION>
  ],,)
-@@ -301,6 +306,19 @@
+@@ -301,6 +306,33 @@
  	"FreeBSD")
  		test_x=yes
  		test_gtk=yes
@@ -34,16 +34,30 @@
 +			OSVERSION=`/sbin/sysctl -n kern.osreldate`
 +		fi
 +		AC_MSG_RESULT([found OSVERSION=$OSVERSION])
-+		PTHREAD_CFLAGS="-D_THREAD_SAFE"
-+		if test "$OSVERSION" -lt "500016"; then
-+			PTHREAD_LIBS="-pthread"
-+		else
-+			PTHREAD_LIBS="-lc_r"
++		if test -z "$PTHREAD_CFLAGS"; then
++			if test "$OSVERSION" -lt "502102"; then
++				PTHREAD_CFLAGS="-D_THREAD_SAFE"
++			else
++				unset PTHREAD_CFLAGS
++			fi
 +		fi
++		AC_MSG_RESULT([use PTHREAD_CFLAGS=$PTHREAD_CFLAGS])
++		if test -z "$PTHREAD_LIBS"; then
++			if test "$OSVERSION" -lt "502102"; then
++				PTHREAD_LIBS="-lc_r"
++			fi
++			if test "$OSVERSION" -lt "500016"; then
++				PTHREAD_LIBS="-pthread"
++			fi
++			if test "$OSVERSION" -ge "502102"; then
++				PTHREAD_LIBS="-lpthread"
++			fi
++		fi
++		AC_MSG_RESULT([use PTHREAD_LIBS=$PTHREAD_LIBS])
  		;;
  	"OSF1")
  		test_x=dontknow
-@@ -326,6 +345,7 @@
+@@ -326,6 +358,7 @@
  
  AC_MSG_RESULT([checked ($_os)])
  
@@ -51,7 +65,7 @@
  AC_SUBST(PTHREAD_CFLAGS)
  AC_SUBST(PTHREAD_LIBS)
  
-@@ -812,30 +832,20 @@
+@@ -813,30 +846,20 @@
  dnl ===================================================================
  dnl Set the gcc/gxx include directories
  dnl ===================================================================
@@ -79,20 +93,20 @@
     fi
  dnl This is the original code...
 -dnl _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
--fi
 +dnl with_gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
  fi
--if test -z "$_gxx_include_path"; then
--   _gxx_include_path="NO_GXX_INCLUDE"
 +if test -z "$with_gxx_include_path"; then
 +   with_gxx_include_path="NO_GXX_INCLUDE"
  fi
+-if test -z "$_gxx_include_path"; then
+-   _gxx_include_path="NO_GXX_INCLUDE"
+-fi
 -GXX_INCLUDE_PATH="$_gxx_include_path"
 +GXX_INCLUDE_PATH="$with_gxx_include_path"
  AC_SUBST(GXX_INCLUDE_PATH)
  
  dnl ===================================================================
-@@ -1677,8 +1687,6 @@
+@@ -1710,8 +1733,6 @@
  AC_SUBST(GCC_HOME)
  
  AC_SUBST(WITH_MINGWIN)
