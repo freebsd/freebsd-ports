@@ -16,6 +16,7 @@ sbin/applyfilter
 sbin/setup-daemontools.sh
 sbin/quickmkdir
 share/doc/leafnode/ChangeLog
+share/doc/leafnode/ChangeLog.old
 share/doc/leafnode/COPYING
 share/doc/leafnode/CREDITS
 share/doc/leafnode/FAQ.txt
