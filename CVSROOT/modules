@@ -1335,6 +1335,7 @@ elk		ports/lang/elk
 elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
 elmar-fonts	ports/hebrew/elmar-fonts
+elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
 emacs		ports/editors/emacs
