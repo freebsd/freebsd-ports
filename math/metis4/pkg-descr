@@ -1,0 +1,7 @@
+METIS is a set of programs for partitioning graphs and for producing fill
+reducing orderings for sparse matrices. The algorithms implemented by METIS
+are based on the multilevel graph partitioning scheme described in [KK95a]
+and [KK95e].
+
+METIS provides high quality partitions, is extremely fast, and produces
+low fill orderings.

@@ -1,0 +1,11 @@
+bin/pmetis
+bin/kmetis
+bin/oemetis
+bin/onmetis
+bin/partnmesh
+bin/partdmesh
+bin/mesh2nodal
+bin/mesh2dual
+bin/graphchk
+lib/libmetis.a
+share/doc/METIS/manual.ps

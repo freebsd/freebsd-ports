@@ -1,0 +1,20 @@
+--- Lib/Makefile.orig	Sat Apr 25 23:43:54 1998
++++ Lib/Makefile	Sat Apr 25 23:44:31 1998
+@@ -2,7 +2,7 @@
+ 
+ INCLUDES = -I./ 
+ 
+-CFLAGS = $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
++CFLAGS += $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
+ LD = $(CC) -L./ 
+ 
+ 
+@@ -17,7 +17,7 @@
+ 	$(CC) $(CFLAGS) -c $*.c
+ 
+ ../libmetis.a: $(OBJS)
+-	$(AR) $@ $(OBJS)
++	$(AR) $(ARFLAGS) $@ $(OBJS)
+ 	$(RANLIB) $@
+ 
+ checkin:
