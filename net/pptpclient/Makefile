@@ -8,7 +8,7 @@
 PORTNAME=	pptpclient
 PORTVERSION=	1.0.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.linuxalpha.compaq.com/pptpclient/files/
+MASTER_SITES=	http://prdownloads.sourceforge.net/pptpclient/
 DISTNAME=	pptp-linux-1.0.3
 DISTFILES=	pptp-linux-1.0.3-1.tar.gz
 
