@@ -107,7 +107,8 @@ WITH_DIALOGS=	--with-dialogs=motif
 .if defined(WANT_GTK)
 WITH_GTK=	--with-gtk=yes
 WITH_XPM=	--with-xpm=no
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XPM=	no
 .endif
 

@@ -15,7 +15,8 @@ DISTNAME=	GXedit${PORTVERSION}
 MAINTAINER=	dom@happygiraffe.net
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 ALL_TARGET=	gxedit
 

@@ -83,7 +83,8 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .if defined(WANT_GTK)
 WITH_GTK=	--with-gtk=yes \
 		--with-xpm=no
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XPM=	no
 .endif
 
