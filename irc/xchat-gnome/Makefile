@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.4.3
-CATEGORIES=		irc gnome
+CATEGORIES+=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.4/ \
 			http://xchat.linuxpower.org/files/source/1.4/
 
@@ -16,7 +16,7 @@ MAINTAINER=		jim@FreeBSD.org
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
-LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+LIB_DEPENDS+=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 			Imlib.5:${PORTSDIR}/graphics/imlib
 .if defined(WITH_GNOME)
 LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
@@ -28,7 +28,6 @@ WITH_PANEL=		YES
 LIB_DEPENDS+=		panel_applet.4:${PORTSDIR}/x11/gnomecore
 .endif
 
-
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
 
@@ -37,7 +36,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-python
+CONFIGURE_ARGS+=	--disable-python
 
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=	--enable-socks
