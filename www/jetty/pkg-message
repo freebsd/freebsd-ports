@@ -13,11 +13,11 @@
   Java installation directory. For instance :
 
 	For shells like bash:
-	JAVA_HOME=%%PREFIX%%/jdk1.3.1
+	JAVA_HOME=%%PREFIX%%/jdk1.4.1
         export JAVA_HOME
 
 	For shells like (t)csh:
-	setenv JAVA_HOME %%PREFIX%%/jdk1.3.1
+	setenv JAVA_HOME %%PREFIX%%/jdk1.4.1
 
 - Running the Demo :
 
