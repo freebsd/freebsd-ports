@@ -1,20 +1,13 @@
---- Imakefile.orig	Mon Oct  7 17:16:40 1996
-+++ Imakefile	Sat Nov  2 14:09:57 1996
-@@ -8,7 +8,7 @@
+--- Imakefile.orig	Thu Nov 14 19:52:37 1996
++++ Imakefile	Sat Nov 30 12:34:41 1996
+@@ -17,13 +17,13 @@
  
- XCOMM Only the image.c and bat.c modes use this.
- XCOMM If your system has libXpm, remove the 'XCOMM ' from the next line.
--XCOMM #define XpmLibrary
-+#define XpmLibrary
- 
- #ifdef XpmLibrary
-           XPMDEF = -DHAS_XPM
-@@ -16,11 +16,11 @@
  XCOMM If you get an error "Cannot find xpm.h" while compiling, set
- XCOMM XPMINC to the directory X11/xpm.h is in.  If your xpm.h is not in a
- XCOMM X11 directory, edit the xpm modes to reflect this.  Below is a guess.
+ XCOMM XPMINC to the directory X11/xpm.h is in.  Below is a guess.
 -          XPMINC = -I/usr/local/include
 +XCOMM          XPMINC = -I/usr/local/include
+ XCOMM SGI's ViewKit (use with -DHAS_XPMINC)
+ XCOMM     XPMINC = -I/usr/include/Vk
  
  XCOMM If you get an error "Connot find libXpm" while linking, set XPMLIBPATH
  XCOMM to the directory libXpm.* is in.  Below is a guess.
@@ -23,8 +16,26 @@
  
  #endif
  
-@@ -270,9 +270,9 @@
- XCOMM  -DSTAFF_FILE=\"/etc/xlock.staff\"  file of staff who are exempt
+@@ -35,7 +35,7 @@
+ XCOMM You must copy it out of the hackers directory.
+ XCOMM It is there because it is experimental. 
+ XCOMM If your system has libXm, remove the 'XCOMM ' from the next line.
+-#define XmLibrary
++XCOMM #define XmLibrary
+  
+ #ifdef XmLibrary
+ XCOMM If its not with your X11 stuff you should set the following
+@@ -148,7 +148,7 @@
+ 
+ XCOMM Uncomment to use hackers modes.  It may make xlock unstable.
+ XCOMM Please do not uncomment for precompiled distributions.
+-#define Hackers
++XCOMM #define Hackers
+ 
+ #ifdef Hackers
+ XCOMM If you only want some of these you must remove the ones you do
+@@ -322,9 +322,9 @@
+ XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
 -        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT
@@ -35,20 +46,14 @@
  XCOMM        OPTDEF += -DMULTIPLE_ROOT
  XCOMM        OPTDEF += -DOLD_EVENT_LOOP
  XCOMM        0PTDEF += -DUSE_XLOCKRC
-@@ -291,14 +291,14 @@
-    MEDIUMPIXMAP = m-$(PIXMAPTYPE)
- XCOMM     EYESBITMAP = $(MEDIUMBITMAP)
+@@ -350,8 +350,8 @@
      IMAGEBITMAP = $(MEDIUMBITMAP)
--XCOMM     LIFEBITMAP = $(SMALLBITMAP)
-+     LIFEBITMAP = $(SMALLBITMAP)
-    LIFE1DBITMAP = $(TINYBITMAP)
-      MAZEBITMAP = $(LARGEBITMAP)
-    PUZZLEBITMAP = $(LARGEBITMAP)
-      EYESBITMAP = m-grelb
  XCOMM    IMAGEBITMAP = l-bob
  XCOMM    IMAGEBITMAP = m-xlock
+-XCOMM     LIFEBITMAP = $(SMALLBITMAP)
 -     LIFEBITMAP = s-grelb
++     LIFEBITMAP = $(SMALLBITMAP)
 +XCOMM     LIFEBITMAP = s-grelb
+    LIFE1DBITMAP = $(TINYBITMAP)
+      MAZEBITMAP = $(LARGEBITMAP)
  XCOMM     MAZEBITMAP = m-xlock
-     IMAGEPIXMAP = $(MEDIUMPIXMAP)
-    PUZZLEPIXMAP = $(MEDIUMPIXMAP)
