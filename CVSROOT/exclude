@@ -7,3 +7,4 @@
 ^src/etc/motd
 ^src/share/man/man0
 ^src/share/info/dir-tmpl
+^src/lib/libc_r/test/.*\.exp
