@@ -1,3 +1,5 @@
+%%IF_DEFAULT%%bin/erb%%RUBY_R%%
+bin/erb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/h2rb%%RUBY_R%%
 bin/h2rb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/irb%%RUBY_R%%
@@ -58,6 +60,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/debug.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/delegate.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/e2mmap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/erb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/eregex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/expect.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/fileutils.rb
@@ -261,7 +264,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fullpath.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/getopts.test
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/goodfriday.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irb.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/less.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list2.rb
