@@ -36,6 +36,7 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+BROKEN=		"Broken pkg-plist"
 .endif
 
 .include <bsd.port.post.mk>
