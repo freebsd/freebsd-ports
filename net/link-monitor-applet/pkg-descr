@@ -5,9 +5,9 @@ Link Monitor Applet features include:
 
 	* Full ICMP and ICMPv6 support
 	* Configurable scale and delays
-	* HIG compliance
+	* HIG 2.0 compliance
 
-WWW: http://lefort.be.eu.org/link-monitor-applet/
+WWW: http://www.nongnu.org/link-monitor/
 
 - Jean-Yves Lefort
 jylefort@brutele.be
