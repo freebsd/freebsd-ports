@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-alarm
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
 		http://unixpages.org/distfiles/
@@ -15,11 +14,16 @@ MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alarm timer plugin for the X Multimedia System
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget gtk12 lthack
+USE_LIBTOOL_VER=	13
+
+PLIST_FILES=	lib/xmms/General/libalarm.so
+
+# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/General
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libalarm.so ${PREFIX}/lib/xmms/General
 
 .include <bsd.port.mk>
