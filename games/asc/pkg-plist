@@ -4,11 +4,11 @@ bin/asc_demount
 bin/asc_makegfx
 bin/asc_map2pcx
 bin/asc_mapedit
-bin/asc_mntgraph
 bin/asc_mount
-bin/asc_tank2pcx
+bin/asc_raw2pcx
 bin/asc_viewid
 bin/asc_weaponguide
+share/asc/asc_dlg.zip
 share/asc/buildings.con
 share/asc/main.con
 share/asc/mk1.con

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- data/music/Makefile.in	2002/10/01 12:21:59	1.1
++++ data/music/Makefile.in	2002/10/01 12:22:47
+@@ -89,7 +89,7 @@
+ VERSION = @VERSION@
+ asc_version = @asc_version@
+ 
+-pkgdatadir = $(datadir)/games/@PACKAGE@/music
++pkgdatadir = $(datadir)/@PACKAGE@/music
+ 
+ pkgdata_DATA = frontiers.mp3 time_to_strike.mp3
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
