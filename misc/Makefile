@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1995/05/19 09:50:19 asami Exp $
+# $Id: Makefile,v 1.59 1995/07/06 04:27:15 asami Exp $
 #
 
     SUBDIR += amanda
@@ -17,8 +17,7 @@ RESTRICTED += mmv               # restrictive copyright
     SUBDIR += mshell
     SUBDIR += mtools
     SUBDIR += pcemu
-RESTRICTED += pgp.non-usa_only  # local restrictions
-RESTRICTED += pgp.usa_only      # local restrections
+    SUBDIR += pgp
     SUBDIR += rman
     SUBDIR += screen
     SUBDIR += top
