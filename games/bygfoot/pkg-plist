@@ -1,28 +1,44 @@
 bin/bygfoot
-share/bygfoot/support_files/bygfoot_icon.png
-share/bygfoot/support_files/bygfoot_team_editor_icon.png
-share/bygfoot/support_files/fin_stad.png
-share/bygfoot/support_files/fire_player.png
-share/bygfoot/support_files/flag_br.png
-share/bygfoot/support_files/flag_de.png
-share/bygfoot/support_files/flag_eng.png
-share/bygfoot/support_files/flag_es.png
-share/bygfoot/support_files/flag_fr.png
-share/bygfoot/support_files/flag_it.png
-share/bygfoot/support_files/flag_pl.png
-share/bygfoot/support_files/flag_ro.png
-share/bygfoot/support_files/get_loan.png
-share/bygfoot/support_files/inc_cap.png
-share/bygfoot/support_files/inc_saf.png
-share/bygfoot/support_files/new_week.png
-share/bygfoot/support_files/pay_loan.png
-share/bygfoot/support_files/preview.png
+bin/bygfoot-update
+bin/bygfoot-update-gui
+share/bygfoot/support_files/pixmaps/bus.png
+share/bygfoot/support_files/pixmaps/bygfoot_team_editor_icon.png
+share/bygfoot/support_files/pixmaps/fire_player.png
+share/bygfoot/support_files/pixmaps/fixtures.png
+share/bygfoot/support_files/pixmaps/flag_br.png
+share/bygfoot/support_files/pixmaps/flag_cl.png
+share/bygfoot/support_files/pixmaps/flag_de.png
+share/bygfoot/support_files/pixmaps/flag_eng.png
+share/bygfoot/support_files/pixmaps/flag_es.png
+share/bygfoot/support_files/pixmaps/flag_fr.png
+share/bygfoot/support_files/pixmaps/flag_hu.png
+share/bygfoot/support_files/pixmaps/flag_it.png
+share/bygfoot/support_files/pixmaps/flag_mx.png
+share/bygfoot/support_files/pixmaps/flag_pl.png
+share/bygfoot/support_files/pixmaps/flag_ro.png
+share/bygfoot/support_files/pixmaps/football.png
+share/bygfoot/support_files/pixmaps/get_loan.png
+share/bygfoot/support_files/pixmaps/graph.png
+share/bygfoot/support_files/pixmaps/history_plyr.png
+share/bygfoot/support_files/pixmaps/inc_cap.png
+share/bygfoot/support_files/pixmaps/inc_saf.png
+share/bygfoot/support_files/pixmaps/pay_loan.png
+share/bygfoot/support_files/pixmaps/penalty_shooter.png
+share/bygfoot/support_files/pixmaps/preview.png
+share/bygfoot/support_files/pixmaps/stadium_fin.png
+share/bygfoot/support_files/pixmaps/striker.png
+share/bygfoot/support_files/pixmaps/table.png
+share/bygfoot/support_files/pixmaps/transfer_frm.png
+share/bygfoot/support_files/pixmaps/transfer_lst.png
+share/bygfoot/support_files/pixmaps/transfer_to.png
 share/bygfoot/support_files/text_files/bygfoot.conf
 share/bygfoot/support_files/text_files/country_br
+share/bygfoot/support_files/text_files/country_cl
 share/bygfoot/support_files/text_files/country_de
 share/bygfoot/support_files/text_files/country_eng
 share/bygfoot/support_files/text_files/country_es
 share/bygfoot/support_files/text_files/country_fr
+share/bygfoot/support_files/text_files/country_hu
 share/bygfoot/support_files/text_files/country_it
 share/bygfoot/support_files/text_files/country_mx
 share/bygfoot/support_files/text_files/country_pl
@@ -30,7 +46,6 @@ share/bygfoot/support_files/text_files/country_ro
 share/bygfoot/support_files/text_files/help
 share/bygfoot/support_files/text_files/player_names
 share/bygfoot/support_files/text_files/teams
-share/bygfoot/support_files/transfers.png
 share/locale/de/LC_MESSAGES/bygfoot.mo
 share/locale/fr/LC_MESSAGES/bygfoot.mo
 share/locale/hu/LC_MESSAGES/bygfoot.mo
@@ -38,5 +53,6 @@ share/locale/pt_BR/LC_MESSAGES/bygfoot.mo
 share/locale/ro/LC_MESSAGES/bygfoot.mo
 share/locale/ru/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/text_files
+@dirrm share/bygfoot/support_files/pixmaps
 @dirrm share/bygfoot/support_files
 @dirrm share/bygfoot
