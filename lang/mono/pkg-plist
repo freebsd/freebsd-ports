@@ -2,10 +2,10 @@ bin/mcs
 bin/mcs.exe
 bin/mint
 bin/mono
-bin/mono-handle-d
 bin/monodis
 bin/monograph
 include/mono/cil/opcode.def
+include/mono/io-layer/access.h
 include/mono/io-layer/atomic.h
 include/mono/io-layer/context.h
 include/mono/io-layer/critical-sections.h
@@ -15,6 +15,7 @@ include/mono/io-layer/handles.h
 include/mono/io-layer/io-layer.h
 include/mono/io-layer/io.h
 include/mono/io-layer/macros.h
+include/mono/io-layer/mono-mutex.h
 include/mono/io-layer/mutexes.h
 include/mono/io-layer/processes.h
 include/mono/io-layer/semaphores.h
@@ -25,16 +26,22 @@ include/mono/io-layer/threads.h
 include/mono/io-layer/timefuncs.h
 include/mono/io-layer/types.h
 include/mono/io-layer/uglify.h
+include/mono/io-layer/versioninfo.h
 include/mono/io-layer/wait.h
 include/mono/io-layer/wapi.h
+include/mono/jit/debug.h
+include/mono/jit/jit.h
+include/mono/jit/regset.h
 include/mono/metadata/appdomain.h
 include/mono/metadata/assembly.h
 include/mono/metadata/blob.h
 include/mono/metadata/cil-coff.h
 include/mono/metadata/class.h
+include/mono/metadata/debug-helpers.h
 include/mono/metadata/exception.h
 include/mono/metadata/image.h
 include/mono/metadata/loader.h
+include/mono/metadata/mempool.h
 include/mono/metadata/metadata.h
 include/mono/metadata/mono-endian.h
 include/mono/metadata/object.h
@@ -45,23 +52,28 @@ include/mono/metadata/rawbuffer.h
 include/mono/metadata/reflection.h
 include/mono/metadata/row-indexes.h
 include/mono/metadata/tabledefs.h
+include/mono/metadata/threadpool.h
+include/mono/metadata/threads-types.h
+include/mono/metadata/threads.h
 include/mono/metadata/tokentype.h
 include/mono/metadata/verify.h
+include/mono/utils/mono-digest.h
+include/mono/utils/mono-hash.h
+include/mono/utils/monobitset.h
 lib/System.Data.dll
 lib/System.Drawing.dll
 lib/System.Web.dll
 lib/System.Xml.dll
 lib/System.dll
 lib/corlib.dll
-lib/libmetadata.a
 lib/libmono.a
-lib/libmonodis.a
-lib/libmonoruntime.a
-lib/libmonoutils.a
-lib/libwapi.a
+lib/libmono.la
+lib/libmono.so.0
+libdata/pkgconfig/mono.pc
 share/mono/cil/cil-opcodes.xml
 @dirrm include/mono/cil
 @dirrm include/mono/io-layer
+@dirrm include/mono/jit
 @dirrm include/mono/metadata
 @dirrm include/mono/utils
 @dirrm include/mono

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
@@ -19,10 +19,13 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
+CONFIGURE_ARGS=	--program-transform-name=\'\'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd{OSREL}
 
 MAN1=		mcs.1 mint.1 mono.1 monoburg.1 monodis.1 monostyle.1
+MAN5=		mono-config.5
 
 pre-patch:
 		@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
