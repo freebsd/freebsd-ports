@@ -1,4 +1,13 @@
 bin/abook
-share/doc/abook/FAQ
-share/doc/abook/README
-@dirrm share/doc/abook
+%%PORTDOCS%%share/doc/abook/ANNOUNCE
+%%PORTDOCS%%share/doc/abook/AUTHORS
+%%PORTDOCS%%share/doc/abook/BUGS
+%%PORTDOCS%%share/doc/abook/COPYING
+%%PORTDOCS%%share/doc/abook/ChangeLog
+%%PORTDOCS%%share/doc/abook/FAQ
+%%PORTDOCS%%share/doc/abook/INSTALL
+%%PORTDOCS%%share/doc/abook/NEWS
+%%PORTDOCS%%share/doc/abook/README
+%%PORTDOCS%%share/doc/abook/THANKS
+%%PORTDOCS%%share/doc/abook/TODO
+%%PORTDOCS%%@dirrm share/doc/abook
