@@ -137,6 +137,9 @@ gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-1.*		ports/graphics/graphviz	Needs license before fetching
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
+homard-*		ports/french/homard	Only free for use in conjunction with
+						french/aster. For any other purpose,
+						you have to acquire a license
 j2sdkee-*		ports/java/j2sdkee	For development and testing use
 						only; redistribution prohibited
 jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
