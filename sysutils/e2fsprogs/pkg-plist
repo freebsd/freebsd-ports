@@ -6,14 +6,20 @@ include/ext2fs/brel.h
 include/ext2fs/dosio.h
 include/ext2fs/e2image.h
 include/ext2fs/ext2_err.h
+include/ext2fs/ext2_ext_attr.h
 include/ext2fs/ext2_fs.h
 include/ext2fs/ext2_io.h
 include/ext2fs/ext2_types.h
 include/ext2fs/ext2fs.h
 include/ext2fs/ext2fsP.h
 include/ext2fs/irel.h
+include/ext2fs/jfs_compat.h
 include/ext2fs/jfs_dat.h
 include/ext2fs/jfs_user.h
+include/ext2fs/kernel-jbd.h
+include/ext2fs/kernel-list.h
+include/uuid/uuid.h
+include/uuid/uuidP.h
 info/libext2fs.info.gz
 lib/libe2p.a
 lib/libe2p.so
@@ -35,7 +41,9 @@ sbin/fsck.ext2
 sbin/fsck.ext3
 sbin/mke2fs
 sbin/mkfs.ext2
+sbin/mkfs.ext3
 sbin/mklost+found
 sbin/resize2fs
 sbin/tune2fs
+@dirrm include/uuid
 @dirrm include/ext2fs
