@@ -1,0 +1,24 @@
+from the README:
+    This playable demo of Myth II: Soulblighter for Linux has the following
+ limitations over the full game:
+       - Only three maps are available: two for solo games and one 
+         for multi-player games.
+       - Guest-only login to Bungie.net
+ [...] you will only be able to play this demo with other Myth II for Linux
+ Demo v1.3 users.
+from the Web page:
+    Sharpen your swords and fire up the cauldrons--Soulblighter is back!
+ Bungie's thrilling strategy adventure, Myth II: Soulblighter, brings back the
+ scourge of the West and challenges you with all-new scenarios and improved
+ graphics and 3D rendering.
+    In command of a ragtag army of berserkers, dwarves, soldiers and sorcerers,
+ you are the last hope (yet again) of saving the folk of Madrigal and the West
+ from the evil might of Soulblighter and his minions. Test your fortitiude by
+ challenging others on your network or online to a battle to the death, or cross
+ swords and sages with Soulblighter himself. For fantasy gamers, this is far
+ better than a slab of roast beast washed down with a tall ale...
+
+On FreeBSD it crashes after playing the introductory movie, if /dev/dsp is
+available.
+
+WWW: http://www.lokigames.com/products/myth2/
