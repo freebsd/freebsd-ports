@@ -8,7 +8,9 @@
 PORTNAME=	gcc-6811
 PORTVERSION=	2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/
+MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ \
+		ftp://ftp.celestial.com/mirrors/gnu/ \
+		ftp://ftp.inria.fr/gnu/
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
 MAINTAINER=	jake@FreeBSD.org
