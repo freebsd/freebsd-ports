@@ -7,18 +7,6 @@ bin/avr-g++
 bin/avr-gcc
 bin/avr-gcc-3.3.1
 bin/avr-gccbug
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/gccint.info %D/info/dir
-@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
-info/cpp.info
-info/cppinternals.info
-info/gcc.info
-info/gccint.info
-@exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/gccint.info %D/info/dir
-@exec install-info %D/info/cppinternals.info %D/info/dir
 lib/charset.alias
 lib/gcc-lib/avr/3.3.1/avr3/libgcc.a
 lib/gcc-lib/avr/3.3.1/avr4/libgcc.a
