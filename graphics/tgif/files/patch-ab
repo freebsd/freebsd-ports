@@ -1,5 +1,5 @@
---- Tgif.tmpl.orig	Tue Aug 22 16:54:28 2000
-+++ Tgif.tmpl	Tue Aug 22 16:54:51 2000
+--- Tgif.tmpl.orig     Tue Apr 24 17:37:40 2001
++++ Tgif.tmpl  Tue Apr 24 17:40:34 2001
 @@ -59,7 +59,8 @@
                    -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\" \@@\
                    -DNETLIST_FILE_EXT=\"net\" -DCOMP_FILE_EXT=\"cmp\"
