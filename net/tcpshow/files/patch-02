@@ -1,5 +1,5 @@
---- tcpshow.c.orig	Thu Jul 22 13:04:59 1999
-+++ tcpshow.c	Thu Jul 22 13:07:25 1999
+--- tcpshow.c.orig	Tue Nov 30 01:49:43 1999
++++ tcpshow.c	Tue Nov 30 01:56:10 1999
 @@ -367,7 +367,7 @@
  #endif
  
@@ -9,7 +9,26 @@
  
  
  static boolean noBflag = FALSE;
-@@ -1248,7 +1248,7 @@
+@@ -1125,7 +1125,9 @@
+ static char *icmpType (uint1 type) {
+ 
+    char *descr;
++   static char unknowntype[80];
+ 
++   snprintf(unknowntype, 80, "%s (%d)", unknown, type);
+ 
+    switch (type) {
+     case ECHO_REPLY:  descr = "echo-reply";              break;
+@@ -1143,7 +1145,7 @@
+     case INFO_REPLY:  descr = "information-reply";       break;
+     case MASK_REQ:    descr = "address-mask-request";    break;
+     case MASK_REPLY:  descr = "address-mask-reply";      break;
+-    default:          descr = unknown;                   break;
++    default:          descr = unknowntype;               break;
+    }
+ 
+    return descr;
+@@ -1248,7 +1250,7 @@
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -18,7 +37,7 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1290,6 +1290,7 @@
+@@ -1290,6 +1292,7 @@
     for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
  
     exit(0);
@@ -26,7 +45,7 @@
  
  }
  
-@@ -1336,7 +1337,7 @@
+@@ -1336,7 +1339,7 @@
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -35,7 +54,7 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1580,13 +1581,14 @@
+@@ -1580,13 +1583,14 @@
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -51,7 +70,7 @@
        return getPkt();
     }
  
-@@ -1598,7 +1600,7 @@
+@@ -1598,7 +1602,7 @@
     (void)strcpy(eTo, etherAddr(eTo, 0));
     (void)strcpy(eToName, etherName(eTo, TRUE));
  
@@ -60,7 +79,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1616,7 @@
+@@ -1614,6 +1618,7 @@
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -68,7 +87,7 @@
  
     return getPkt();
  
-@@ -1826,7 +1829,7 @@
+@@ -1826,7 +1831,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -77,7 +96,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +1999,10 @@
+@@ -1996,10 +2001,10 @@
  
     if (terseFlag) {
        printf(
@@ -91,7 +110,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2019,9 @@
+@@ -2016,9 +2021,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
