@@ -1,0 +1,10 @@
+--- local.h.samp.orig	Sun Apr 21 16:58:43 2002
++++ local.h.samp	Sun Apr 21 16:58:54 2002
+@@ -105,7 +105,6 @@
+  */
+ 
+ #define MINIMENU	/* Display a mini-menu at the bottom of the screen */
+-#define NO8BIT		/* Remove this if you use ISO character sets */
+ #undef USG		/* Define on System V or if term.c won't compile */
+ #undef NO_FCNTL_H	/* Define if you get compile errors on fcntl.h */
+ #undef NO_MKSTEMP	/* Define if you get compile or link errors */
