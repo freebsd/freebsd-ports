@@ -17,13 +17,13 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
-LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack libpanel gnomecanvas
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -40,17 +40,12 @@ XARGS?=		xargs
 # Post-patch
 #
 
-post-patch: patch-configure patch-makefiles-in \
-	    patch-seti_applet patch-pkgmessage
+post-patch: patch-configure patch-seti_applet \
+	patch-pkgmessage
 
 patch-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
-patch-makefiles-in:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g;\
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 patch-seti_applet:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
