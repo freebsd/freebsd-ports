@@ -49,3 +49,4 @@ share/xfce4/m4/i18n.m4
 @unexec rmdir %D/share/gtk-doc 2>/dev/null || true
 @dirrm share/xfce4/m4
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
+@unexec rmdir %D/sbin 2>/dev/null || true
