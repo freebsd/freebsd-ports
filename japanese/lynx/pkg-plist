@@ -9,6 +9,7 @@ etc/lynx.cfg.sample
 %%HELPDIR%%/Lynx_users_guide.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/about_lynx.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/keystrokes/alt_edit_help.html%%HELPFILE_SUFFIX%%
+%%HELPDIR%%/keystrokes/bashlike_edit_help.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/keystrokes/bookmark_help.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/keystrokes/cookie_help.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/keystrokes/dired_help.html%%HELPFILE_SUFFIX%%
@@ -36,6 +37,7 @@ etc/lynx.cfg.sample
 %%DOCDIR%%/README
 %%DOCDIR%%/samples/blue-background.lss
 %%DOCDIR%%/samples/cernrules.txt
+%%DOCDIR%%/samples/installdirs.html
 %%DOCDIR%%/samples/jumpsUnix.html
 %%DOCDIR%%/samples/jumpsVMS.html
 %%DOCDIR%%/samples/lynx-keymaps
