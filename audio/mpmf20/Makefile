@@ -15,12 +15,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
 
+NOT_FOR_ARCHS=	ia64 sparc64
+
 MAKEFILE=	makefile
 PLIST_FILES=	bin/mpmf20
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000 && ${OSVERSION} < 502108
+.if ${ARCH} == i386 && ${OSVERSION} > 500000 && ${OSVERSION} < 502108
 BROKEN=		"ffs() clash, see i386/41930"
 .endif
 
