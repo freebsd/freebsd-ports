@@ -1,0 +1,25 @@
+sbin/portfwd
+%%PORTDOCS%%share/doc/portfwd/COPYING
+%%PORTDOCS%%share/doc/portfwd/CREDITS
+%%PORTDOCS%%share/doc/portfwd/FAQ
+%%PORTDOCS%%share/doc/portfwd/README
+%%PORTDOCS%%share/doc/portfwd/TODO
+%%PORTDOCS%%share/doc/portfwd/conf.txt
+%%PORTDOCS%%@dirrm share/doc/portfwd
+share/examples/portfwd/alias.cfg
+share/examples/portfwd/bind-new.cfg
+share/examples/portfwd/bind.cfg
+share/examples/portfwd/chain.cfg
+share/examples/portfwd/debug_ftp.cfg
+share/examples/portfwd/dns.cfg
+share/examples/portfwd/empty.cfg
+share/examples/portfwd/ftp.cfg
+share/examples/portfwd/load-balance.cfg
+share/examples/portfwd/mail.cfg
+share/examples/portfwd/portfwd1.cfg
+share/examples/portfwd/portfwd2.cfg
+share/examples/portfwd/single.cfg
+share/examples/portfwd/test.cfg
+share/examples/portfwd/udp.cfg
+share/examples/portfwd/x.cfg
+@dirrm share/examples/portfwd
