@@ -7,13 +7,16 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20011229
+PORTVERSION=	20020210
 CATEGORIES=	games
-MASTER_SITES=	http://www.sneakerz.org/~mux/wtf/
+MASTER_SITES=	http://www.sneakerz.org/~mux/wtf/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	mux@sneakerz.org
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 MAN6=		wtf.6
 
