@@ -1,0 +1,13 @@
+Slate: simple traffic analysis and data reporting collection server for LFAP
+
+This package contains a small Lightweight Flow Accounting (LFAP)
+server and LFAP API library. LFAP open solution to delivering
+accounting data from Riverstone Networks Switches and Routers.
+
+You can use the sfas program to obtain micro-flow information from
+a Riverstone switch running either in Layer 4 bridging mode, routing
+or MPLS LSPs. Data that can be collected includes everything  from
+an IPv4 header and UDP headers and the src/dst port from a TCP
+header.
+
+WWW: http://www.riverstonenet.com/support/nmops/
