@@ -15,8 +15,8 @@ MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
 DISTNAME=	otp_src_R9C-0
-DIST_SUBDIR=	erlang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
+DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.erlang.org/download/patches/
@@ -25,6 +25,10 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.endif
 
 # Set JAVABINDIR to where you have javac, if different from below
 JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
@@ -41,10 +45,6 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads --enable-hipe
-
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-.endif
 
 .include <bsd.port.pre.mk>
 
