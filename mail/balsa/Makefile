@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -15,10 +15,9 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		aspell.11:${PORTSDIR}/textproc/aspell \
-		pcre.0:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
-RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell \
-		${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
+		pcre.0:${PORTSDIR}/devel/pcre \
+		esmtp.5:${PORTSDIR}/mail/libesmtp
+RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
