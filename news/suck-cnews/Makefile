@@ -5,6 +5,10 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	news
+
+MAINTAINER=	dinoex@FreeBSD.org
+
 MASTERDIR=	${.CURDIR}/../suck
 
 NEWSBIN?=	${PREFIX}/libexec/cnews
