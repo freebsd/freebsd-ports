@@ -2401,6 +2401,7 @@ haproxy		ports/net/haproxy
 harvest		ports/www/harvest
 hashish		ports/security/hashish
 hawk		ports/net/hawk
+hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
