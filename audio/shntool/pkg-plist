@@ -1,3 +1,9 @@
-bin/shntool
+bin/shncat
+bin/shncmp
+bin/shnfix
+bin/shninfo
+bin/shnjoin
 bin/shnlen
-bin/fixwav
+bin/shnsplit
+bin/shnstrip
+bin/shntool

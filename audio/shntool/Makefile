@@ -6,25 +6,18 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	0.95
+PORTVERSION=	1.01
 CATEGORIES=	audio
-MASTER_SITES=	http://sdf.lonestar.org/~jason/shn-utils/shntool/
-EXTRACT_SUFX=	.c
+MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.Org
 
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
 RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
-
-do-build:
-	cd ${WRKSRC} && ${CC} -o shntool ${DISTFILES}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/shntool ${PREFIX}/bin
-	${LN} -sf shntool ${PREFIX}/bin/shnlen
-	${LN} -sf shntool ${PREFIX}/bin/fixwav
+MAN1=		shntool.1
 
 .include <bsd.port.mk>
