@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.79 1999/01/13 07:17:23 asami Exp $
+# $Id: Makefile,v 1.80 1999/01/17 20:20:26 vanilla Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -49,8 +49,6 @@
     SUBDIR += mpage
     SUBDIR += musixtex
     SUBDIR += offix-printer
-    SUBDIR += p5-FreeType
-    SUBDIR += p5-FreeTypeWrapper
     SUBDIR += pbm2ppa
     SUBDIR += perlftlib
     SUBDIR += pkfonts118
