@@ -33,9 +33,8 @@
  # GNU gcc
  #
 -CC = gcc
--CFLAGS = -O2
 +CC = cc
-+CFLAGS = -O2 -m486
+ CFLAGS = -O2
  
  all: mpeg2decode mpeg2encode
  
