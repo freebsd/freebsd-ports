@@ -1,3 +1,5 @@
+include/pqxx/all.h
+include/pqxx/cachedresult.h
 include/pqxx/compiler.h
 include/pqxx/config.h
 include/pqxx/connection.h
