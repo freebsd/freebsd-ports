@@ -1,0 +1,12 @@
+--- README.old	Sun Mar 25 03:05:42 2001
++++ README	Sun Mar 25 03:06:04 2001
+@@ -370,8 +370,8 @@
+ ========
+ 
+ Copy vpnd (and randomd if it is required) to any directory you like.
+-Copy vpnd.conf and vpnd.chat to /etc or copy those files to any other 
+-directory when you use the -f option of vpnd (see later). Note that
++Copy vpnd.conf and vpnd.chat to /usr/local/etc or copy those files to any
++other directory when you use the -f option of vpnd (see later). Note that
+ vpnd.conf and vpnd.chat must be at least mode 644 and be owned by
+ root:root.
