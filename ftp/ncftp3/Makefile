@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.48 1998/06/11 10:35:48 obrien Exp $
+# $Id: Makefile,v 1.49 1998/06/23 00:27:05 obrien Exp $
 #
 
 DISTNAME=	ncftp-3.0beta13-src
@@ -16,7 +16,7 @@ MAINTAINER=	obrien@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS=	--disable-curses
+CONFIGURE_ARGS=	--disable-curses
 MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
 MAN3=		Strn.3
 NO_LATEST_LINK=	yes
