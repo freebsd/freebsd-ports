@@ -126,7 +126,6 @@
 %%T%%/jre/CHANGES
 %%T%%/jre/COPYRIGHT
 %%T%%/jre/LICENSE
-%%T%%/jre/LICENSE.fr
 %%T%%/jre/Welcome.html
 %%T%%/jre/README
 %%T%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
@@ -761,7 +760,6 @@
 %%T%%/COPYRIGHT
 %%T%%/README.html
 %%T%%/LICENSE
-%%T%%/LICENSE.fr
 %%T%%/README
 %%T%%/man/man1/appletviewer.1
 %%T%%/man/man1/extcheck.1
