@@ -171,6 +171,7 @@
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-htmlcompact
+    SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
