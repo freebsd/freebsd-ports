@@ -1,13 +1,13 @@
-# New ports collection makefile for:   sccmilter
-# Date created:                25 Jul 2003
-# Whom:                        Rashid N. Achilov <shelton@granch.ru>
+# New ports collection makefile for:	sccmilter
+# Date created:				25 Jul 2003
+# Whom:					Rashid N. Achilov <shelton@granch.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sccmilter
-PORTVERSION=	0.92.4
-PORTREVISION=
+PORTVERSION=	0.93.2
+PORTREVISION?=	0
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--with-debug
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "For debugging information support you should specify"
-	@${ECHO_MSG} "	WITH_DEBUG=yes (press Ctrl-C here and start make  WITH_DEBUG=yes)"
+	@${ECHO_MSG} "	WITH_DEBUG=yes (press Ctrl-C here and start make WITH_DEBUG=yes)"
 	@${ECHO_MSG} ""
 	@sleep 2
 
@@ -49,7 +49,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README CHANGES FAQ
+.for i in CHANGES FAQ README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
@@ -58,7 +58,7 @@ post-install:
 
 post-deinstall:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Do not forget delete filter description from  /etc/mail/freebsd.mc"
+	@${ECHO_MSG} "Do not forget delete filter description from /etc/mail/freebsd.mc"
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"
 	@${ECHO_MSG} ""
 
