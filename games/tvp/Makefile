@@ -18,7 +18,8 @@ COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp
+CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.2 \
 			  -I${LOCALBASE}/include/tk8.2" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
