@@ -38,6 +38,7 @@
     SUBDIR += ferite
     SUBDIR += fesi
     SUBDIR += forth
+    SUBDIR += fpc
     SUBDIR += gawk
     SUBDIR += gcc-devel
     SUBDIR += gcc27
