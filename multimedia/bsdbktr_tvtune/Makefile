@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdbktr_tvtune
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.topfx.com/dist/
 
