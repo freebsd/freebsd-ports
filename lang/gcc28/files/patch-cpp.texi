@@ -1,0 +1,14 @@
+--- cpp.texi.orig	Wed Feb 18 03:42:42 1998
++++ cpp.texi	Sun May  9 17:25:42 1999
+@@ -2,6 +2,11 @@
+ @setfilename cpp.info
+ @settitle The C Preprocessor
+ 
++@dircategory Gcc Documentation
++@direntry
++* Cpp: (cpp.info).		The GNU C pre-processor.
++@end direntry
++
+ @ignore
+ @ifinfo
+ @format

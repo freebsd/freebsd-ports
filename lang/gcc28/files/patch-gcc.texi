@@ -1,0 +1,14 @@
+--- gcc.texi.orig	Sun Mar  1 05:58:17 1998
++++ gcc.texi	Sun May  9 17:25:24 1999
+@@ -58,6 +58,11 @@
+ @settitle Porting GNU CC
+ @end ifclear
+ 
++@dircategory Gcc Documentation
++@direntry
++* Gcc: (gcc.info).		The GNU C compiler.
++@end direntry
++
+ @syncodeindex fn cp
+ @syncodeindex vr cp
+ @c %**end of header
