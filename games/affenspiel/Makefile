@@ -6,23 +6,23 @@
 # $FreeBSD$
 #
 
-DISTNAME=		affenspiel-1.0
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+DISTNAME=	affenspiel-1.0
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
-EXTRACT_SUFX=		.tgz
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/affenspiel
-USE_X_PREFIX=		yes
+WRKSRC=		${WRKDIR}/affenspiel
+USE_X_PREFIX=	yes
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/affenspiel ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/affenspiel ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/affenspiel
-	@ ${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/affenspiel
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/affenspiel
+	@${MKDIR} ${PREFIX}/share/doc/affenspiel
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/affenspiel
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/affenspiel
 .endif
 
 .include <bsd.port.mk>

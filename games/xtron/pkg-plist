@@ -1,7 +1,6 @@
 bin/xtron
 lib/X11/app-defaults/Tron
 share/doc/xtron/CHANGES
-share/doc/xtron/COPYING
 share/doc/xtron/README
 share/xtron/Xtron_icon.xpm
 share/xtron/again.xpm
@@ -20,5 +19,5 @@ share/xtron/quit.xpm
 share/xtron/quitr.xpm
 share/xtron/score.xpm
 share/xtron/scorer.xpm
-@dirrm share/doc/xtron
 @dirrm share/xtron
+@dirrm share/doc/xtron

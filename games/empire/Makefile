@@ -6,22 +6,24 @@
 # $FreeBSD$
 #
 
-DISTNAME=		empire
-PKGNAME=		empire-1.1
-CATEGORIES=		games
-MASTER_SITES=		ftp://locke.ccil.org/pub/esr/
+DISTNAME=	empire
+PKGNAME=	empire-1.1
+CATEGORIES=	games
+MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/empire-1.1
-MAN6=			empire.6
+WRKSRC=		${WRKDIR}/empire-1.1
+MAN6=		empire.6
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/empire ${PREFIX}/bin/empire
-	@ ${INSTALL_MAN} ${WRKSRC}/empire.6 ${PREFIX}/man/man6
-	@ ${MKDIR} ${PREFIX}/share/doc/empire
-.for file in BUGS COPYING READ.ME
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/empire/${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/empire ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/empire.6 ${PREFIX}/man/man6
+.if !defined(NOPORTDOCS)
+.for file in BUGS READ.ME
+	@${MKDIR} ${PREFIX}/share/doc/empire
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/empire
 .endfor
+.endif
 
 .include <bsd.port.mk>

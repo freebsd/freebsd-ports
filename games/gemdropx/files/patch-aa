@@ -1,23 +1,20 @@
---- makefile	Thu Jul 30 19:53:32 1998
-+++ /home/andy/tmp/wrk/makefile	Mon Aug 10 18:03:04 1998
-@@ -11,14 +11,16 @@
- # X Window Updates: July 29, 1998- July 29, 1998
+--- Makefile.orig	Tue Dec 28 17:33:54 1999
++++ Makefile	Thu Mar 30 00:18:17 2000
+@@ -22,7 +22,7 @@
+ JOYFLAG=$(JOY)JOYSTICK
  
  
--CC=gcc
-+CC?=gcc
-+PREFIX?=/usr/X11R6
-+X11BASE?=/usr/X11R6
+-CFLAGS=-Wall $(SDL_CFLAGS) \
++CFLAGS+=$(SDL_CFLAGS) \
+ 	-DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) -D$(JOYFLAG)
+ SDL_LIB=$(MIXER) $(SDL_LDFLAGS)
  
--INSTALLROOT= $(PREFIX)
-+INSTALLROOT= $(PREFIX)/share/gemdropx
- GFX= $(INSTALLROOT)/gfx
- SOUNDS= $(INSTALLROOT)/sounds
- 
--XLIB= $(RPATH) -L$(PREFIX)/lib -lX11 -lm
--XINC= -I$(PREFIX)/include
-+XLIB= $(RPATH) -L$(X11BASE)/lib -lX11 -lm
-+XINC= -I$(X11BASE)/include
- CFLAGS= $(XINC) -DSOUNDS=\"$(SOUNDS)\" -DGFX=\"$(GFX)\"
- 
+@@ -30,7 +30,7 @@
  all:	gemdropx
+ 
+ nosound:
+-	make MIXER= NOSOUNDFLAG=NOSOUND JOY=$(JOY)
++	$(MAKE) MIXER= NOSOUNDFLAG=NOSOUND JOY=$(JOY)
+ 
+ clean:
+ 	-rm gemdropx

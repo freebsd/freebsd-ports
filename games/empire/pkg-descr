@@ -1,8 +1,10 @@
-	Apparently, this game was originally written outside of Digital,
-	probably at a university.  The game was ported to DEC's VAX/VMS
-	from the TOPS-10/20 FORTRAN sources available around fall 1979.
-	Ed James got hold of the sources at Berkeley and converted
-	portions of the code to C, mostly to use curses for the screen
-	handling.  He published his modified sources on the net in
-	December 1986.  Because this game ran on VMS machines for so
-        long, a previous version is known as VMS Empire.
+Apparently, this game was originally written outside of Digital,
+probably at a university.  The game was ported to DEC's VAX/VMS
+from the TOPS-10/20 FORTRAN sources available around fall 1979.
+Ed James got hold of the sources at Berkeley and converted
+portions of the code to C, mostly to use curses for the screen
+handling.  He published his modified sources on the net in
+December 1986.  Because this game ran on VMS machines for so
+long, a previous version is known as VMS Empire.
+
+WWW: http://www.tuxedo.org/~esr/software.html

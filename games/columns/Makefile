@@ -14,21 +14,19 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
-ALL_TARGET=
+ALL_TARGET=	# empty
 
 USE_X_PREFIX=	yes
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/columns ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/columns
-	@ ${INSTALL_DATA} ${WRKSRC}/*.bmp ${PREFIX}/share/columns
-	@ ${INSTALL_DATA} ${WRKSRC}/*.ofn ${PREFIX}/share/columns
-	@ ${INSTALL_DATA} ${WRKSRC}/*.wav ${PREFIX}/share/columns
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/columns ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/columns
+	${INSTALL_DATA} ${WRKSRC}/*.bmp ${PREFIX}/share/columns
+	${INSTALL_DATA} ${WRKSRC}/*.ofn ${PREFIX}/share/columns
+	${INSTALL_DATA} ${WRKSRC}/*.wav ${PREFIX}/share/columns
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/columns
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/columns
+	@${MKDIR} ${PREFIX}/share/doc/columns
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/columns
 .endif
 
 .include <bsd.port.mk>

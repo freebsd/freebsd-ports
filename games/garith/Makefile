@@ -12,18 +12,21 @@ MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-ALL_TARGET=
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 WRKSRC=		${WRKDIR}/garith
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/garith ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/garith ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/garith
+	@${MKDIR} ${PREFIX}/share/doc/garith
 .for file in BUGS COPYING HISTORY README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/garith
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/garith
 .endfor
 .endif
 

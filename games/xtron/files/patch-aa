@@ -1,13 +1,18 @@
---- Makefile	Sun Apr 16 13:26:00 1995
-+++ /home/andy/tmp/wrk/Makefile	Sun Mar 29 23:08:24 1998
-@@ -20,8 +20,8 @@
+--- Makefile.orig	Sun Apr 16 22:26:00 1995
++++ Makefile	Fri Mar 31 22:59:19 2000
+@@ -18,10 +18,11 @@
  #
- CC=		gcc
- CFLAGS=		-O4 -Wall
+ #  Last Modified: 16/4/95
+ #
+-CC=		gcc
+-CFLAGS=		-O4 -Wall
 -INCLUDES=	-I/usr/X386/include/X11 -I/usr/include
 -LIBS=		-L/usr/X386/lib
-+INCLUDES=	-I/usr/X11R6/include -I/usr/X11R6/include/X11
-+LIBS=		-L/usr/X11R6/lib
++CC?=		gcc
++CFLAGS?=		-O4 -Wall
++DEFINES=	-DPREFIX=\"${PREFIX}\"
++INCLUDES=	-I${X11BASE}/include -I${X11BASE}/include/X11
++LIBS=		-L${X11BASE}/lib
  LDLIBS=		-lXpm -lX11
  DEPEND=		makedepend
  OBJS=		wintype.o xtron.o main.o xpm2pixmap.o resource.o

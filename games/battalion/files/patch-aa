@@ -1,5 +1,5 @@
---- Makefile	Thu Jan 16 16:31:58 1997
-+++ /home/andy/tmp/wrk/Makefile	Sun May 17 15:46:52 1998
+--- Makefile.orig	Thu Jan 16 16:31:58 1997
++++ Makefile	Wed Mar 29 13:08:11 1998
 @@ -23,7 +23,7 @@
  # (the program should compile with no warning messages - if you
  #  see a warning message please let me know about it)
@@ -46,7 +46,7 @@
  # STEP 7: CHOOSE ANY OPTIMIZATIONS OR ADD ANY SPECIAL INCLUSIONS
  # ------------------------------------------------------------
 -CFLAGS     = -O  -I/usr/local/X11/include -I/usr/demo/SOUND/ -I./.
-+CFLAGS+= -I${X11BASE}/include
++CFLAGS+= -I${X11BASE}/include -DPREFIX=\"${PREFIX}\"
  
  
  # STEP 8: ADD ANY SPECIAL LIBRARY PATHS
@@ -55,7 +55,7 @@
  
  OBJ 	= battalion.o audio.o net.o gprim.o graphics.o objects.o text.o update.o tk.o font.o
 -LIBS    = -L./. -L/usr/X11R6/lib -lm -lX11 -lXext
-+LIBS    = -L./. -L/usr/X11R6/lib -lm -lX11 -lXext -lcompat
++LIBS    = -L./. -L${X11BASE}/lib -lm -lX11 -lXext -lcompat
  
  all:	$(TARGET)
  

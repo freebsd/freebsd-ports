@@ -1,4 +1,6 @@
 bin/freesweep
 share/doc/freesweep/CHANGES
 share/doc/freesweep/README
+share/freesweep/sweeprc
+@dirrm share/freesweep
 @dirrm share/doc/freesweep
