@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.9 1998/10/20 01:34:15 steve Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/30 16:53:48 taoka Exp $
 #
 
 DISTNAME=	getline-39-src
