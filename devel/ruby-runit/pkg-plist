@@ -10,7 +10,6 @@ bin/runtest.rb
 %%RUBY_SITELIBDIR%%/runit/ext/testsetup.rb
 %%RUBY_SITELIBDIR%%/runit/robserver.rb
 %%RUBY_SITELIBDIR%%/runit/testfailure.rb
-%%RUBY_SITELIBDIR%%/runit/test.rb
 %%RUBY_SITELIBDIR%%/runit/testcase.rb
 %%RUBY_SITELIBDIR%%/runit/testresult.rb
 %%RUBY_SITELIBDIR%%/runit/testsuite.rb
