@@ -1,0 +1,29 @@
+--- scripts/Makefile.in.orig	Mon Dec  1 13:55:32 2003
++++ scripts/Makefile.in	Sun Feb 29 00:35:51 2004
+@@ -203,25 +203,7 @@
+ vio_dir = @vio_dir@
+ vio_libs = @vio_libs@
+ 
+-bin_SCRIPTS = @server_scripts@ \
+-			msql2mysql \
+-			mysql_config \
+-			mysql_fix_privilege_tables \
+-			mysql_fix_extensions \
+-			mysql_setpermission \
+-			mysql_secure_installation \
+-			mysql_zap \
+-			mysqlaccess \
+-			mysqlbug \
+-			mysql_convert_table_format \
+-			mysql_find_rows \
+-			mysqlhotcopy \
+-			mysqldumpslow \
+-			mysql_explain_log \
+-			mysql_tableinfo \
+-			mysqld_multi \
+-			make_win_src_distribution \
+-			mysql_create_system_tables
++bin_SCRIPTS =
+ 
+ 
+ EXTRA_SCRIPTS = make_binary_distribution.sh \

@@ -1,31 +1,13 @@
 bin/comp_err
 bin/isamchk
 bin/isamlog
-bin/make_win_src_distribution
-bin/msql2mysql
 bin/my_print_defaults
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mysql_config
-bin/mysql_convert_table_format
-bin/mysql_create_system_tables
-bin/mysql_explain_log
-bin/mysql_find_rows
-bin/mysql_fix_extensions
-bin/mysql_fix_privilege_tables
 bin/mysql_install_db
-bin/mysql_secure_installation
-bin/mysql_setpermission
-bin/mysql_tableinfo
 bin/mysql_waitpid
-bin/mysql_zap
-bin/mysqlaccess
-bin/mysqlbug
-bin/mysqld_multi
 bin/mysqld_safe
-bin/mysqldumpslow
-bin/mysqlhotcopy
 bin/pack_isam
 bin/perror
 bin/replace
@@ -136,7 +118,6 @@ share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
 share/mysql/estonian/errmsg.sys
 share/mysql/estonian/errmsg.txt
-share/mysql/fill_help_tables.sql
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
 share/mysql/german/errmsg.sys
@@ -158,7 +139,6 @@ share/mysql/my-large.cnf
 share/mysql/my-medium.cnf
 share/mysql/my-small.cnf
 share/mysql/mysql-log-rotate
-share/mysql/mysql_fix_privilege_tables.sql
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
 share/mysql/norwegian-ny/errmsg.txt
@@ -180,6 +160,7 @@ share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
+@unexec rmdir %D/lib/mysql 2> /dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/mysql/charsets
@@ -205,6 +186,6 @@ share/mysql/ukrainian/errmsg.txt
 @dirrm share/mysql/spanish
 @dirrm share/mysql/swedish
 @dirrm share/mysql/ukrainian
-@dirrm share/mysql
+@unexec rmdir %D/share/mysql 2> /dev/null || true
 @exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
