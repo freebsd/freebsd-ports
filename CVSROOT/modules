@@ -7065,6 +7065,7 @@ slnr		ports/news/slnr
 sloccount	ports/misc/sloccount
 sloth		ports/sysutils/sloth
 slrn		ports/news/slrn
+slrnface	ports/news/slrnface
 sls		ports/misc/sls
 slsc		ports/math/slsc
 slstat		src/usr.sbin/slstat
