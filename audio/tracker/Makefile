@@ -28,8 +28,8 @@ post-install:
 	@install-info ${PREFIX}/info/tracker.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tracker
-.for file in FAQ readme tracker.doc
-	${INSTALL_DATA} ${WRKSRC}/Docs/${file} ${PREFIX}/share/doc/tracker
+.for docfile in FAQ readme tracker.doc
+	${INSTALL_DATA} ${WRKSRC}/Docs/${docfile} ${PREFIX}/share/doc/tracker
 .endfor
 	@${MKDIR} ${PREFIX}/share/doc/tracker/html
 	${INSTALL_DATA} ${WRKSRC}/Docs/Html/* ${PREFIX}/share/doc/tracker/html

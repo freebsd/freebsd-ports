@@ -1,162 +1,93 @@
-*** Makefile.orig	Wed May  8 00:20:50 1996
---- Makefile	Wed Dec 29 06:05:14 1999
-***************
-*** 10,26 ****
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next, MM1, NAS, sbos2, SVR4
-  # gmake needed to handle this file in FreeBSD
-! MACHINE = sparc
-  VERSION = 5.3
-  #VPATH=..
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = gcc
-  
-  OPTS=-c 
-  
-! PREFIX=/users/algo/espie/pub
-  # Destination directory for tracker binaries and manpage.
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
---- 10,26 ----
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next, MM1, NAS, sbos2, SVR4
-  # gmake needed to handle this file in FreeBSD
-! MACHINE = freebsd
-  VERSION = 5.3
-  #VPATH=..
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC ?= gcc
-  
-  OPTS=-c 
-  
-! PREFIX?=/users/algo/espie/pub
-  # Destination directory for tracker binaries and manpage.
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-***************
-*** 30,36 ****
-  INFO_DIR = $(PREFIX)/info
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
---- 30,36 ----
-  INFO_DIR = $(PREFIX)/info
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
-***************
-*** 166,179 ****
-  UI_linux = Unix/
-  SHELL_linux = /bin/sh
-  
-! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions -fno-strength-reduce
-  LIBS_freebsd = -lm
-  AUDIODIR_freebsd=PCux/
-  CONFIG_freebsd = PCux/freebsd_
-  O_freebsd = .o
-  EXE_freebsd = 
-  UI_freebsd = Unix/
-! SHELL_freebsd = /bin/sh
-  
-  CFLAGS_aix = -O
-  LIBS_aix = -lm
---- 166,179 ----
-  UI_linux = Unix/
-  SHELL_linux = /bin/sh
-  
-! CFLAGS_freebsd = -funroll-loops -finline-functions
-  LIBS_freebsd = -lm
-  AUDIODIR_freebsd=PCux/
-  CONFIG_freebsd = PCux/freebsd_
-  O_freebsd = .o
-  EXE_freebsd = 
-  UI_freebsd = Unix/
-! SHELL_freebsd = ${SH}
-  
-  CFLAGS_aix = -O
-  LIBS_aix = -lm
-***************
-*** 220,226 ****
-  UI_sbos2 = OS2/./
-  SHELL_sbos2 = /bin/sh
-  
-! CFLAGS = $(CFLAGS_${MACHINE})
-  COPTS = $(OPTS) $(CFLAGS)
-  LIBS = $(LIBS_${MACHINE})
-  CONFIG = Arch/$(CONFIG_${MACHINE})
---- 220,226 ----
-  UI_sbos2 = OS2/./
-  SHELL_sbos2 = /bin/sh
-  
-! CFLAGS += $(CFLAGS_${MACHINE})
-  COPTS = $(OPTS) $(CFLAGS)
-  LIBS = $(LIBS_${MACHINE})
-  CONFIG = Arch/$(CONFIG_${MACHINE})
-***************
-*** 250,256 ****
-  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
-  st_virt$O automaton$O
-  
-! all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
-  
-  config.h: $(CONFIG)config.h 
-  	rm -f config.h
---- 250,256 ----
-  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
-  st_virt$O automaton$O
-  
-! all:    tracker${EXE} randomize${EXE} Docs/tracker.info
-  
-  config.h: $(CONFIG)config.h 
-  	rm -f config.h
-***************
-*** 270,280 ****
-  	echo >version.c char \*VERSION=\"${VERSION}\"\;
-  
-  install: 
-! 	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
-! 	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
-! 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
-  	[ -f ${COMPRESSION_FILE} ] || \
-! 		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
-  
-  # no manpage available, use the texinfo manual.
-  install.man:
---- 270,279 ----
-  	echo >version.c char \*VERSION=\"${VERSION}\"\;
-  
-  install: 
-! 	${BSD_INSTALL_PROGRAM} tracker $(BIN_DIR)
-! 	${BSD_INSTALL_PROGRAM} randomize $(BIN_DIR)
-  	[ -f ${COMPRESSION_FILE} ] || \
-! 		${BSD_INSTALL_MAN} Lib/compression_methods ${COMPRESSION_FILE}
-  
-  # no manpage available, use the texinfo manual.
-  install.man:
-***************
-*** 285,291 ****
-  install.info: Docs/tracker.info
-  	(cd Docs; \
-            for f in tracker.info tracker.info-* ; do \
-!             $(INSTALL) $(INST_INFO_OPT) $$f $(INFO_DIR)/$$f; \
-            done)
-  
-  devel: 
---- 284,290 ----
-  install.info: Docs/tracker.info
-  	(cd Docs; \
-            for f in tracker.info tracker.info-* ; do \
-!             ${BSD_INSTALL_DATA} $$f $(INFO_DIR)/$$f; \
-            done)
-  
-  devel: 
+--- Makefile.orig	Tue May  7 10:20:50 1996
++++ Makefile	Wed Sep  3 19:55:42 2003
+@@ -10,17 +10,17 @@
+ #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+ #  soundblaster, aix, next, MM1, NAS, sbos2, SVR4
+ # gmake needed to handle this file in FreeBSD
+-MACHINE = sparc
++MACHINE = freebsd
+ VERSION = 5.3
+ #VPATH=..
+ 
+ # The name of your C compiler. For most machines this will be
+ # either 'cc' or 'gcc'.
+-CC = gcc
++CC ?= gcc
+ 
+ OPTS=-c 
+ 
+-PREFIX=/users/algo/espie/pub
++PREFIX?=/users/algo/espie/pub
+ # Destination directory for tracker binaries and manpage.
+ #
+ # If you don't wish to use the 'make install' and 'make install.man'
+@@ -30,7 +30,7 @@
+ INFO_DIR = $(PREFIX)/info
+ 
+ # Where to put the compression methods description
+-COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
++COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
+ 
+ # How to install the binaries and manpage. If you have a unix system,
+ # use the GNU install program if you have it, otherwise try 'cp'. For
+@@ -166,14 +166,14 @@
+ UI_linux = Unix/
+ SHELL_linux = /bin/sh
+ 
+-CFLAGS_freebsd = -O2 -funroll-loops -finline-functions -fno-strength-reduce
++CFLAGS_freebsd = -funroll-loops -finline-functions
+ LIBS_freebsd = -lm
+ AUDIODIR_freebsd=PCux/
+ CONFIG_freebsd = PCux/freebsd_
+ O_freebsd = .o
+ EXE_freebsd = 
+ UI_freebsd = Unix/
+-SHELL_freebsd = /bin/sh
++SHELL_freebsd = ${SH}
+ 
+ CFLAGS_aix = -O
+ LIBS_aix = -lm
+@@ -220,7 +220,7 @@
+ UI_sbos2 = OS2/./
+ SHELL_sbos2 = /bin/sh
+ 
+-CFLAGS = $(CFLAGS_${MACHINE})
++CFLAGS += $(CFLAGS_${MACHINE})
+ COPTS = $(OPTS) $(CFLAGS)
+ LIBS = $(LIBS_${MACHINE})
+ CONFIG = Arch/$(CONFIG_${MACHINE})
+@@ -250,7 +250,7 @@
+ display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+ st_virt$O automaton$O
+ 
+-all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
++all:    tracker${EXE} randomize${EXE} Docs/tracker.info
+ 
+ config.h: $(CONFIG)config.h 
+ 	rm -f config.h
+@@ -270,11 +270,10 @@
+ 	echo >version.c char \*VERSION=\"${VERSION}\"\;
+ 
+ install: 
+-	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+-	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+-	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} tracker $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} randomize $(BIN_DIR)
+ 	[ -f ${COMPRESSION_FILE} ] || \
+-		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
++		${BSD_INSTALL_MAN} Lib/compression_methods ${COMPRESSION_FILE}
+ 
+ # no manpage available, use the texinfo manual.
+ install.man:
+@@ -284,8 +283,8 @@
+ 
+ install.info: Docs/tracker.info
+ 	(cd Docs; \
+-          for f in tracker.info tracker.info-* ; do \
+-            $(INSTALL) $(INST_INFO_OPT) $$f $(INFO_DIR)/$$f; \
++          for f in tracker.info ; do \
++            ${BSD_INSTALL_DATA} $$f $(INFO_DIR)/$$f; \
+           done)
+ 
+ devel: 
