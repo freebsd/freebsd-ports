@@ -9766,6 +9766,7 @@ xcheckers	ports/games/xcheckers
 xchm		ports/deskutils/xchm
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
+xclass		ports/x11-toolkits/xclass
 xclasses	ports/x11-toolkits/xclasses
 xclip		ports/x11/xclip
 xcmd		ports/x11/xcmd
