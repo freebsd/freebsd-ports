@@ -9,7 +9,7 @@ PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
 PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../amanda-server
-COMMENTFILE=	${PKGDIR}/pkg-comment.client
+COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 

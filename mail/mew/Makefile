@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/old/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	kiri@FreeBSD.org
+COMMENT?=	Message interface to Emacs Window for emacs
 
 # distfile version
 MEW_VER=	1.94.2
@@ -62,9 +63,8 @@ post-install:
 .endif
 
 ############################################################
-## Make DESCR,COMMENT and PLIST (only for MAINTAINER use)
+## Make DESCR and PLIST (only for MAINTAINER use)
 ############################################################
-#COMMENT_TEXT=	Message interface to Emacs Window for ${EMACS_PORT_NAME}
 #.if ${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule"
 #ELISPDIR=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${PORTNAME}
 #INFODIR=	${PREFIX}/${EMACS_PACKAGESDIR}/info
@@ -85,7 +85,6 @@ post-install:
 #		${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 #
 #pre-arrange:
-#	${ECHO_CMD} ${COMMENT_TEXT} > ${PKGDIR}/pkg-comment
 #	${SETENV} ${SCRIPTS_ENV} WRKTMPDIR=${PKGDIR} TMPL_FILES=pkg-descr \
 #		${SH} ${FILESDIR}/tmpl2file.sh
 #	${SETENV} ${SCRIPTS_ENV} WRKTMPDIR=${PKGDIR} ${SH} ${FILESDIR}/message.sh

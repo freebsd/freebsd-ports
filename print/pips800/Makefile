@@ -247,7 +247,7 @@ post-install:
 .endif
 
 # a target for the maintainer
-_MAKE_COMMENT_DESCR:
+_MAKE_DESCR:
 .if defined(INTERNATIONAL_PRODUCTS)
 .if ${PRTYPE} != -sc880 || ${PORTVERSION} != 1.0
 .for file in pkg-descr

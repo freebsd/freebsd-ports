@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Bitmap-mule, Package to use bitmap in Emacs20
 
 # This is a slave port.
 PORTCLASS=	slave

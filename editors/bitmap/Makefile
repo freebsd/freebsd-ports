@@ -14,6 +14,7 @@ DISTNAME=	bitmap-mule-${BITMAP_DISTVER}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
+COMMENT?=	Bitmap-mule, Package to use bitmap in Emacs21
 
 # ports version
 BITMAP_VER=		${BITMAP_MVER}${BITMAP_SNAP_PREFIX}${BITMAP_SNAP}

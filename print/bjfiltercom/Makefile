@@ -115,7 +115,7 @@ do-install:
 .endif
 
 # a target for the maintainer
-_MAKE_COMMENT_DESCR:
+_MAKE_DESCR:
 .if defined(SLAVE_PORT) && ${PORTNAME} != "bjfilter850"
 .for file in pkg-comment pkg-descr
 	${SED}	-e 's/F850/${PRMODEL}/g' \

@@ -27,7 +27,7 @@ CATEGORIES=	japanese
 
 MANLANG=	ja
 MAN1=		xemacs-ja.1
-COMMENTFILE?=	${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg-comment
+COMMENT?=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Canna support
 DESCR=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg-descr
 
 XEMACS_MAJOR_VER?=	21
@@ -37,30 +37,30 @@ PKGNAMESUFFIX=		-canna+freewnn
 WITH_INPUT_METHOD=	--with-canna --with-wnn --with-wnn6=no
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
 			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and FreeWnn support
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and FreeWnn support
 .elif defined(CANNA) && defined(WNN6)
 PKGNAMESUFFIX=		-canna+wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-canna --with-wnn6
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
 			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and Wnn6 support
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and Wnn6 support
 .elif defined(FREEWNN)
 PKGNAMESUFFIX=		-freewnn
 WITH_INPUT_METHOD=	--with-wnn --with-canna=no --with-wnn6=no
 LIB_INPUT_METHOD=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and FreeWnn support
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and FreeWnn support
 .elif defined(WNN6)
 PKGNAMESUFFIX=		-wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no
 LIB_INPUT_METHOD=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Wnn6 support
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Wnn6 support
 .else
 PKGNAMESUFFIX=		-canna
 WITH_INPUT_METHOD=	--with-canna --with-wnn=no --with-wnn6=no
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Canna support
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Canna support
 .endif
 
 post-install::

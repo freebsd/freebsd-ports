@@ -24,7 +24,7 @@ MULE_SLAVE=	yes
 .endif
 
 MAINTAINER?=	kiri@FreeBSD.org
-COMMENT=?	XEmacs(version 21) text editor with mule(Only the executables)
+COMMENT?=	XEmacs(version 21) text editor with mule(Only the executables)
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)
@@ -77,7 +77,6 @@ XEMACS_MAJOR_VER?=	21
 MULE_PORT=		yes
 PKGNAMESUFFIX?=		-mule
 DESCR_TMPL?=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/files/DESCR.tmpl
-COMMENT_TEXT?=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor with mule(Only the executables)
 .if defined(MULE_SLAVE)
 BINNAMEEXT=		-mule
 SITE_INCLUDES+=		${LOCALBASE}/include
@@ -105,10 +104,9 @@ post-install::
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-## for make DESCR and COMMENT (only maintainer use)
+## for make DESCR (only maintainer use)
 #pre-arrange::
 #	@${MKDIR} ${PKGDIR}
-#	@${ECHO_CMD} "${COMMENT_TEXT}" > ${COMMENT}
 #.if (${PKGNAMESUFFIX} == "-canna") || (${PKGNAMESUFFIX} == "-mule") || (${PKGNAMESUFFIX} == "-mule-common")
 #	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
 #		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
