@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.1.15
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -120,6 +120,9 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 #.endif
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
+
 pre-everything::
 .if !defined(WITH_BDB_VER)
 	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
@@ -178,8 +181,9 @@ post-install:
 		@${ECHO} "@dirrm share/doc/cyrus-imapd2/man" >>${TMPPLIST}
 		@${ECHO} "@dirrm share/doc/cyrus-imapd2" >>${TMPPLIST}
 .endif
-		${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
-			${PREFIX}/etc/rc.d/imapd.sh.sample
+		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
+		@${CHMOD} 755 ${PREFIX}/etc/rc.d/imapd.sh
 		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
 		${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
