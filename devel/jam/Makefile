@@ -18,10 +18,13 @@ USE_ZIP=	yes
 USE_REINPLACE=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
 
+post-extract:
+	@${CHMOD} u+w ${WRKSRC}/Makefile
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
-		 s|\tjam|\t\$$\{.CURDIR\}/jam|g' ${WRKSRC}/Makefile
+		 s|^	jam|	./jam|g' ${WRKSRC}/Makefile
 
 do-install:
 .if ${MACHINE_ARCH} == "alpha"
