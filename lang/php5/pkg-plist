@@ -28,9 +28,9 @@ include/php/Zend/zend_config.h
 include/php/Zend/zend_config.nw.h
 include/php/Zend/zend_config.w32.h
 include/php/Zend/zend_constants.h
-include/php/Zend/zend_default_classes.h
 include/php/Zend/zend_dynamic_array.h
 include/php/Zend/zend_errors.h
+include/php/Zend/zend_exceptions.h
 include/php/Zend/zend_execute.h
 include/php/Zend/zend_extensions.h
 include/php/Zend/zend_fast_cache.h
