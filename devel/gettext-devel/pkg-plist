@@ -60,5 +60,6 @@ share/locale/locale.alias
 @dirrm share/gettext/intl
 @dirrm share/gettext/po
 @dirrm share/gettext
-@dirrm share/locale
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @exec mkdir -p %%X11BASE%%/share/locale
+@unexec rmdir %%X11BASE%%/share/locale 2>/dev/null || true
