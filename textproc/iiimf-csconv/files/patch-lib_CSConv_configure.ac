@@ -1,0 +1,35 @@
+--- lib/CSConv/configure.ac.orig	Fri Jun 13 00:27:08 2003
++++ lib/CSConv/configure.ac	Sat Sep  4 05:39:51 2004
+@@ -55,8 +55,6 @@
+ AC_PATH_PROG(RM, rm)
+ AC_PATH_PROG(SED, sed)
+ 
+-AC_CHECK_LIB(c, main)
+-AC_CHECK_LIB(dl, main)
+ 
+ 
+ dnl FreeBSD -pthread check - Jonathan McDowell <noodles@earth.li>
+@@ -294,13 +292,8 @@
+ 	CDEBUGFLAGS=
+ 	ARFLAGS=ru
+ 
+-	if test x"${CC}" = x"gcc" ; then
+-		SHLIBCFLAGS='-fpic'
+-		SHLIBLDFLAGS='-shared'
+-	else
+-		SHLIBCFLAGS=
+-		SHLIBLDFLAGS=
+-	fi
++	SHLIBCFLAGS='-fpic'
++	SHLIBLDFLAGS='-shared'
+ 
+ 	csc_system_name="`uname -s`"
+ 	;;
+@@ -314,6 +307,7 @@
+ case "${host}" in
+ 	*solaris*) 	platform=SOLARIS ;;
+ 	*linux*) 	platform=LINUX ;;
++	*freebsd*)	platform=FREEBSD ;;
+ esac
+ AC_SUBST(platform)
+ 
