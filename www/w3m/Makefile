@@ -25,8 +25,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc \
-		${LOCALBASE}/bin/patch:${PORTSDIR}/devel/patch
-PATCH=		${LOCALBASE}/bin/patch
+		${PATCH}:${PORTSDIR}/devel/patch
+PATCH=		${LOCALBASE}/bin/gpatch
 
 W3M_VERSION=	0.1.11
 W3M_PATCHLEVEL=	23

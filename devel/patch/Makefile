@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	patch
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=g
 
-MAN1=		patch.1
+MAN1=		gpatch.1
 
 .include <bsd.port.mk>
