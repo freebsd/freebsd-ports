@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
@@ -21,6 +21,9 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.info.gz \
+		xhippo.ps.gz xhippo.sgml xhippo.txt.gz
+
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GNOME)
@@ -28,6 +31,12 @@ USE_GNOME=	yes
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/xhippo
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/xhippo
+.endfor
+.endif
 	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/etc/xhippo.config.default
 .if !exists(${PREFIX}/etc/xhippo.config)
 	${CP} ${PREFIX}/etc/xhippo.config.default ${PREFIX}/etc/xhippo.config

@@ -2,3 +2,11 @@ bin/xhippo
 @unexec if cmp -s %D/etc/xhippo.config %D/etc/xhippo.config.default; then rm -f %D/etc/xhippo.config; fi
 etc/xhippo.config.default
 @exec test -f %B/xhippo.config || cp %B/%f %B/xhippo.config
+share/doc/xhippo/ChangeLog
+share/doc/xhippo/gnu-xhippo.html
+share/doc/xhippo/screenshot.jpeg
+share/doc/xhippo/xhippo.info.gz
+share/doc/xhippo/xhippo.ps.gz
+share/doc/xhippo/xhippo.sgml
+share/doc/xhippo/xhippo.txt.gz
+share/locale/de/LC_MESSAGES/xhippo.mo
