@@ -1,0 +1,4 @@
+Gnoclip is a desktop swicher for GNOME, similar to the Window Maker clip.
+It has arrows to switch to the previous/next workspace, a menu with 
+workspace names which also allows you to change workspaces, and support 
+for screen names in Sawfish. 
