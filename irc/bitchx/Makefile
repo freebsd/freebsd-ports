@@ -41,10 +41,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		BitchX.1
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_GNOME)
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 CONFIGURE_ARGS+=--with-gtk
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include/gnome-1.0/"
 PLIST_SUB+=	NOGNOME:="@comment " GNOME:=""
@@ -52,8 +51,9 @@ PLIST_SUB+=	NOGNOME:="@comment " GNOME:=""
 CONFIGURE_ARGS+=--without-gtk
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 .endif
-.if (defined(HAVE_ESOUND) && defined(WITH_GNOME))
-USE_ESOUND=	yes
+.if (defined(WITH_ESOUND) && defined(WITH_GNOME))
+USE_GNOMENG=	yes
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 .endif
 .if defined(WITH_IPV6)
@@ -139,4 +139,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
