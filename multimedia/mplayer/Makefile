@@ -143,6 +143,10 @@
 # WITH_XMMS
 # default: autodetect
 #
+# WITH_LANG
+# default: en
+# Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
+#
 # WITHOUT_WIN32_CODECS
 # default: undefined
 # By default, mplayer depends on and uses the win32-codecs collection.
@@ -200,6 +204,10 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--enable-png \
 		--disable-libfame \
 		--disable-tv-v4l
+
+.if defined(WITH_LANG)
+CONFIGURE_ARGS+=--language=${WITH_LANG}
+.endif
 
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
@@ -432,7 +440,7 @@ CONFIGURE_ARGS+=	--disable-liblzo
 
 .if defined(WITH_XMMS)
 CONFIGURE_ARGS+=	--enable-xmms
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 .if defined(WITH_FAAD)
@@ -517,11 +525,17 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#g' \
+		${WRKSRC}/configure
 
 pre-configure:
 .if defined(WITH_LIBDVDREAD)
 	@${RM} -Rf ${WRKSRC}/libmpdvdkit2/
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
+		${WRKSRC}/config.mak
 
 post-install:
 	@${MKDIR} ${DATADIR}
