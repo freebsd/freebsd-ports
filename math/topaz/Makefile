@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
 
-MAINTAINER=	issei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
 PATCHFILES=	mailx.v05.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8

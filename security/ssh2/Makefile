@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
 DISTNAME=	ssh-${PORTVERSION}
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 #RESTRICTED=	"Crypto; export-controlled"
 

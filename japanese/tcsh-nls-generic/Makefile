@@ -12,7 +12,7 @@ CATEGORIES=	japanese shells
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	tcsh-${PORTVERSION}.add2
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

@@ -7,7 +7,7 @@
 
 CATALOGNAME=	rishu
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
