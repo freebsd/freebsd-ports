@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libqnx.so
+share/themes/QN-X11/ICON.png
+share/themes/QN-X11/README.html
+share/themes/QN-X11/gtk/gtkrc
+@dirrm share/themes/QN-X11/gtk
+@dirrm share/themes/QN-X11
