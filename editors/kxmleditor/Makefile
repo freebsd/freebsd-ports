@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	kxmleditor
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kevlo@FreeBSD.org
 
+USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-
-USE_KDELIBS_VER=2
-
-CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="moc2" KDEDIR="${LOCALBASE}"
-CONFIGURE_ARGS+=	--with-qt-includes=${X11BASE}/include/qt2 \
-			--with-qt-libraries=${X11BASE}/lib
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
