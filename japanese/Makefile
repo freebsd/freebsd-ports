@@ -328,12 +328,10 @@
     SUBDIR += seizedesktop
     SUBDIR += shinonome
     SUBDIR += sj3
-    SUBDIR += skk
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
     SUBDIR += skk10-elisp-emacs20
-    SUBDIR += skkfep
     SUBDIR += skkinput
     SUBDIR += skkinput3
     SUBDIR += skkserv
