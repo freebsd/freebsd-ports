@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"Does not install correctly"
+
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
 		aesession \
