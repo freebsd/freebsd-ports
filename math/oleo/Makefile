@@ -24,6 +24,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 
+INFO=		oleo
+PORTDOCS=	AUTHORS FAQ
+
 .if defined(WITH_MOTIF)
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
@@ -35,10 +38,11 @@ USE_XLIB=	yes
 CONFIGURE_ARGS+=	--without-motif
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+PLIST_SUB=	NLS=""
 .endif
 
 pre-everything::
@@ -52,6 +56,15 @@ pre-everything::
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
+.for pof in en fr nl
+	@${REINPLACE_CMD} -e "s|CHARSET|ISO-8859-1|;s|ENCODING|8bit|"	\
+		${WRKSRC}/po/${pof}.po
+.endfor
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "s|am: install-docDATA|am:|" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-info-am install-htmlDATA|install-info-am|" \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 pre-build:
 .for file in src/io-term.c
@@ -59,4 +72,4 @@ pre-build:
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
