@@ -1,6 +1,12 @@
---- ../arpwatch.orig/util.h	Sun Oct  6 06:22:14 1996
-+++ ./util.h	Wed Sep 10 13:03:27 2003
-@@ -11,6 +11,9 @@
+--- util.h.orig	Sun Oct  6 06:22:14 1996
++++ util.h	Fri Jun 11 12:35:32 2004
+@@ -1,4 +1,4 @@
+-/* @(#) $Header: util.h,v 1.2 96/10/06 03:22:13 leres Exp $ (LBL) */
++/* @(#) $Header: /src/arpwatch/util.h,v 1.4 2004/06/10 19:19:38 mdg Exp $ (LBL) */
+
+ void	dosyslog(int, char *, u_int32_t, u_char *, u_char *);
+ int	dump(void);
+@@ -11,9 +11,19 @@
  extern char *arpfile;
  extern char *oldarpfile;
  extern char *ethercodes;
@@ -10,3 +16,13 @@
 
  extern u_char zero[6];
  extern u_char allones[6];
+
+ extern int debug;
+ extern int initializing;
++
++struct ifdesc
++{
++  char *name;
++  char *desc;
++  struct ifdesc *next;
++};
