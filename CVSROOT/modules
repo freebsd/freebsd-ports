@@ -5154,6 +5154,7 @@ p5-Data-Flow	ports/devel/p5-Data-Flow
 p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
+p5-Data-Page	ports/databases/p5-Data-Page
 p5-Data-Properties	ports/devel/p5-Data-Properties
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
