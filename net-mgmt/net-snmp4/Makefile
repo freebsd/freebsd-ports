@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 USE_AUTOCONF_VER=213
@@ -71,17 +71,9 @@ CONFIGURE_ARGS+= --enable-ipv6
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+= --without-openssl
 .else
-.if defined(WITH_PORTSSL) || ${OSVERSION} >= 500100 || (${OSVERSION} >= 470103 && ${OSREL} == 4)
-.if ${OSVERSION} >= 500100 || (${OSVERSION} >= 470103 && ${OSREL} == 4)
-LIB_DEPENDS+=	crypto.4:${PORTSDIR}/security/openssl
-.else
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-.endif
-CONFIGURE_ARGS+= --with-openssl=${LOCALBASE}
-CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
-.else
+USE_OPENSSL=	YES
 CONFIGURE_ARGS+= --with-openssl=/usr
-.endif
+CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 .endif
 
 SHLIB_VERSION=	4
@@ -89,7 +81,7 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 pre-everything::
 	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
+	@${ECHO} "You may use the following build option(s):"
 	@${ECHO} ""
 	@${ECHO} "	WITH_PORTSSL=yes  Use the OpenSSL Version delivered by the ports."
 	@${ECHO} "	                  With FreeBSD 5, net-snmp4 requires automaticly"
