@@ -6,28 +6,38 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	0.9.9
-CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
-		ftp://ftp.sanyusan.se/pub/epic/EPIC4-BETA/ \
-		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
-DISTFILES=	epic4-0.9.9.tar.gz epic4pre2-help.tar.gz
+PORTVERSION=	0.9.13
+# Make CATEGORIES overridable for slave ports
+CATEGORIES?=	irc
+MASTER_SITES=	ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \
+		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
+		ftp://ftp.nl.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,knu,}
+#		ftp://ftp.epicsol.org/pub/epic/%SUBDIR%/ \
+#		ftp://ftp.neato.org/pub/epic/%SUBDIR%/ \
+#		ftp://ftp.sanyusan.se/pub/epic/%SUBDIR%/ \
+#		ftp://totem.fix.no/pub/mirrors/epic/%SUBDIR%/ \
+#		ftp://broken.com/pub/ircii/%SUBDIR%/
+MASTER_SITE_SUBDIR=	EPIC4-BETA
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_HELP}
+DIST_SUBDIR=	epic4
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-patch1
+PATCH_DIST_STRIP=	-d ${WRKSRC}/source
 
 MAINTAINER=	anders@codefactory.se
 
-DIST_SUBDIR=	epic4
-
-EXTRACT_ONLY=	epic4-0.9.9.tar.gz
-WRKSRC=         ${WRKDIR}/epic4-0.9.9
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+DISTFILE_HELP=	${PORTNAME}pre2-help.tar.gz
 
 MAN1=		epic.1
 
-do-install:
-	cd ${WRKSRC} && make INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-	INSTALL_DATA="${INSTALL_DATA}" install
-
 post-install:
-	cd ${PREFIX}/share/epic && tar zxf ${DISTDIR}/${DIST_SUBDIR}/epic4pre2-help.tar.gz
+	cd ${PREFIX}/share/epic && ${TAR} zxf ${_DISTDIR}/${DISTFILE_HELP}
 
 .include <bsd.port.mk>
