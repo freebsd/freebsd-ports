@@ -1080,6 +1080,7 @@
     SUBDIR += pear-HTML_BBCodeParser
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_Form
+    SUBDIR += pear-HTML_Javascript
     SUBDIR += pear-HTML_QuickForm
     SUBDIR += pear-HTML_QuickForm_Controller
     SUBDIR += pear-HTML_Select

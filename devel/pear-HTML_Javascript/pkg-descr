@@ -1,0 +1,6 @@
+Provides two classes:
+HTML_Javascript for performing basic JS operations.
+HTML_Javascript_Convert for converting variables.
+Allow output data to a file, to the standart output(print), or return.
+
+WWW: http://pear.php.net/package/HTML_Javascript/
