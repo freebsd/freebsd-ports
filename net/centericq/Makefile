@@ -12,9 +12,11 @@ MASTER_SITES=	http://download.konst.org.ua/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 		-I${LOCALBASE}/include -I/usr/include
 .endif
