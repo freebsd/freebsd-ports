@@ -7,7 +7,7 @@ share/fonts/bdf/8x16rk.bdf.gz
 share/fonts/bdf/jiskan16.bdf.gz
 share/fonts/bdf/gbkst16.bdf.gz
 share/fonts/bdf/kc15f.bdf.gz
-share/doc/kon2/README
-share/doc/kon2/README.FreeBSD
-@dirrm share/doc/kon2
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.FreeBSD
+@dirrm %%DOCSDIR%%
 @dirrm share/fonts/bdf

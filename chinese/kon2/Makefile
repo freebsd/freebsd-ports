@@ -32,6 +32,8 @@ post-patch:
 		-e "s,GB2312.1980,GBK,g" \
 		${WRKSRC}/lib/coding.c
 	cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/kon.cfg.FreeBSD-patch
+	${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/term.c \
+		${WRKSRC}/src/display/vga.c
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/fonts/bdf
