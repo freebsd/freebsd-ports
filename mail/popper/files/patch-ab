@@ -1,0 +1,136 @@
+*** pop_pass.c.orig	Fri May 24 22:26:25 1996
+--- pop_pass.c	Thu Dec  5 02:31:23 1996
+***************
+*** 482,497 ****
+  POP     *   p;
+  struct passwd  *   pw;
+  {
+      /*  We don't accept connections from users with null passwords */
+      /*  Compare the supplied password with the password file entry */
+  
+!     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0') ||
+! 		strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd)) {
+! 	sleep(SLEEP_SECONDS);
+! 	return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+      }
+  
+      return(POP_SUCCESS);
+  }
+  
+  #endif	/* AUTH */
+--- 482,530 ----
+  POP     *   p;
+  struct passwd  *   pw;
+  {
++ #ifdef SKEY
++     int pass_ok;
++ #endif
++ #if defined(BSD) && (BSD >= 199306)
++     /* Check password change and expire times before granting access */
++     time_t now = time((time_t *) NULL);
++ 
++     if ((pw->pw_change && now > pw->pw_change) ||
++         (pw->pw_expire && now > pw->pw_expire))
++ 	goto error;
++ #endif
++ 
+      /*  We don't accept connections from users with null passwords */
++     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0'))
++ 	goto error;
++ 
+      /*  Compare the supplied password with the password file entry */
++ #ifdef	SKEY
++     pass_ok = skeyaccess(p->user, NULL, p->client, p->ipaddr);
++     if (strcmp(skey_crypt(p->pop_parm[1], pw->pw_passwd, pw, pass_ok),
++ 			  pw->pw_passwd)) {
++ 	static char buf[128];
++ 	struct skey skey;
+  
+! 	if (skeychallenge(&skey, p->user, buf))
+! 	    goto error;
+! 	if (pass_ok)
+! 	    sleep(SLEEP_SECONDS);
+! 	return (pop_msg(p,POP_FAILURE,
+! 		"Password supplied for \"%s\" is incorrect. %s%s",
+! 		p->user, buf,
+! 		pass_ok ? "" : " (required)"));
+      }
++ #else
++     if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd)))
++ 	goto error;
++ #endif
+  
+      return(POP_SUCCESS);
++ 
++   error:
++     sleep(SLEEP_SECONDS);
++     return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+  }
+  
+  #endif	/* AUTH */
+*** pop_user.c.orig	Fri May 24 22:26:47 1996
+--- pop_user.c	Thu Dec  5 02:19:59 1996
+***************
+*** 117,122 ****
+--- 117,134 ----
+      }
+  #endif /* APOP */
+  
++ #ifdef	SKEY
++     {
++ 	static char buf[128];
++ 	struct skey skey;
++ 
++ 	if (!skeychallenge(&skey, p->user, buf))
++ 	   return(pop_msg(p,POP_SUCCESS,"%s%s", buf,
++ 			  skeyaccess(p->user, NULL, p->client, p->ipaddr) ?
++ 			  "" : " (required)"));
++     }
++ #endif
++ 
+      /*  Tell the user that the password is required */
+      return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
+  }
+*** popper.h.orig	Wed May 22 22:26:25 1996
+--- popper.h	Thu Dec  5 02:00:27 1996
+***************
+*** 35,40 ****
+--- 35,43 ----
+  #  define	HAVE_VSPRINTF
+  #  define	BIND43
+  # endif
++ # if (defined(BSD) && (BSD >= 199306))
++ #  define	BSD44_DBM
++ # endif
+  #endif
+  
+  #ifdef BSDI
+***************
+*** 110,116 ****
+  # define POP_MAILDIR     "/var/mail"
+  # define POP_DROP        "/var/mail/.%s.pop"
+  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
+! # define POP_TMPXMIT     "/var/mail/xmitXXXXXX"
+  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
+  # define OSDONE
+  #endif
+--- 113,119 ----
+  # define POP_MAILDIR     "/var/mail"
+  # define POP_DROP        "/var/mail/.%s.pop"
+  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
+! # define POP_TMPXMIT     "/var/tmp/xmitXXXXXX"
+  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
+  # define OSDONE
+  #endif
+***************
+*** 337,342 ****
+--- 340,348 ----
+  extern AUTH_DAT kdata;
+  #endif /* KERBEROS */
+  
++ #if defined(SKEY)
++ #include <skey.h>
++ #endif
+  #if defined(AUTHFILE)
+  extern int  checkauthfile();
+  #endif
