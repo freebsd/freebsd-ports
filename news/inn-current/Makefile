@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	inn-2.2
+DISTNAME=	inn-2.2.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
@@ -25,11 +25,13 @@ INN_NEWSLIB?=${PREFIX}/news
 INN_NEWSLOG?=/var/log/news
 
 HAS_CONFIGURE=		yes
-CONFIGURE_ENV+=		MANDIR=${PREFIX}/man
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 CONFIGURE_ARGS+=	--prefix=${INN_NEWSLIB}
 CONFIGURE_ARGS+=	--with-spool-dir=${INN_NEWSSPOOL}
 CONFIGURE_ARGS+=	--with-log-dir=${INN_NEWSLOG}
 CONFIGURE_ARGS+=	--with-perl
+CONFIGURE_ARGS+=	--with-tmp-path=${INN_NEWSSPOOL}/tmp
+CONFIGURE_ARGS+=	--with-largefiles
 
 # Various Options. See ${WRKSRC}/INSTALL for details
 
@@ -58,6 +60,6 @@ MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
 
 post-install:
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
-		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
+		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
 
 .include <bsd.port.mk>
