@@ -5260,6 +5260,7 @@ p5-XML-Filter-XInclude	ports/textproc/p5-XML-Filter-XInclude
 p5-XML-Filter-XSLT	ports/textproc/p5-XML-Filter-XSLT
 p5-XML-Generator-DBI	ports/textproc/p5-XML-Generator-DBI
 p5-XML-Handler-Trees	ports/textproc/p5-XML-Handler-Trees
+p5-XML-Handler-YAWriter	ports/textproc/p5-XML-Handler-YAWriter
 p5-XML-LibRSVG	ports/textproc/p5-XML-LibRSVG
 p5-XML-LibXML	ports/textproc/p5-XML-LibXML
 p5-XML-LibXSLT	ports/textproc/p5-XML-LibXSLT
