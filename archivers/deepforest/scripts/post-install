@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in DeepForest.app; do
+	    ${PERL} -pi -e '
+		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
+		' ${PREFIX}/JDE/DeepForest/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+
+${LN} -sf ${PREFIX}/JDE/DeepForest/DeepForest.app ${PREFIX}/bin
