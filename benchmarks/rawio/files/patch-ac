@@ -1,0 +1,11 @@
+--- mkrandom.c.orig	Sat Jan 22 03:02:13 2000
++++ mkrandom.c	Sat Jan 22 03:02:21 2000
+@@ -54,7 +54,7 @@
+ #include <sys/wait.h>
+ #include <sys/resource.h>
+ #include <signal.h>
+-#include "random.h"
++#include <machine/random.h>
+ 
+ /* submitted by Andy Doran <ad@psn.ie> */
+ #ifdef __NetBSD__
