@@ -280,6 +280,7 @@ angband		ports/games/angband
 angst		ports/net/angst
 anjuta		ports/devel/anjuta
 anteater	ports/sysutils/anteater
+anthy		ports/japanese/anthy
 antipolix	ports/games/antipolix
 antiword	ports/textproc/antiword
 aolserver	ports/www/aolserver
