@@ -7,7 +7,4 @@ lib/libxforms.so
 @unexec /sbin/ldconfig -R
 @exec ranlib %D/lib/libxforms.a
 include/forms.h
-man/man1/fdesign.1.gz
-man/man1/fd2ps.1.gz
-man/man5/xforms.5.gz
 man/man5/forms.5.gz
