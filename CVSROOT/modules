@@ -3542,6 +3542,7 @@ ish		ports/converters/ish
 ishido		ports/games/ishido
 isic		ports/net-mgmt/isic
 isilo		ports/palm/isilo
+ismail		ports/www/ismail
 iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
 isoqlog		ports/mail/isoqlog
