@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile \
+LIB_DEPENDS=	aviplay.0:${PORTSDIR}/graphics/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOMENG=	yes
@@ -133,8 +133,11 @@ post-patch:
 		${WRKSRC}/lavtools/divxdec.cpp
 	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
 		s|(-I) (\$$with_quicktime)|\1\2/include/openquicktime|; \
+		s|(-L\$$with_quicktime) |\1/lib |; \
 		s|(with_quicktime/)(openquicktime)(.h)|\1include/\2/\2\3|; \
 		s,-ldl([[:space:]]|"),\1,; \
+		s|-L/lib||g; \
+		s|(-L\$$with_dv)(\$$with_dv_l)|\1/lib|; \
 		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
@@ -153,6 +156,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(have_pthread=).+$$|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+
+post-configure:
+	@${CP} -f ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}
 
 pre-build:
 .ifdef(WITH_QUICKTIME)
