@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	16.1c
+PORTVERSION=	16.1d
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+MASTER_SITES=	http://people.freebsd.org/~jdp/s1g/ \
+		ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
 		ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
 DISTNAME=	cvsup-snap-${PORTVERSION}
