@@ -7997,6 +7997,7 @@ wanderlust-emacs20	ports/mail/wanderlust-emacs20
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh
 washerdryer	ports/x11-clocks/washerdryer
+wavbreaker	ports/audio/wavbreaker
 waveplay	ports/audio/waveplay
 wavplay		ports/audio/wavplay
 wb		ports/mbone/wb
