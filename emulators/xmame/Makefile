@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.78.1
-PORTREVISION=	1
+PORTVERSION?=	0.79.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -18,7 +17,7 @@ DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
-MAINTAINER?=	refugee@vt.edu
+MAINTAINER?=	flynn@energyhq.es.eu.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 USE_BZIP2=	yes
