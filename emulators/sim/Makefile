@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	2.9
+PORTVERSION=	2.9.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/ \
 		${MASTER_SITE_LOCAL}
@@ -22,6 +22,9 @@ NO_WRKSUBDIR=	yes
 
 SHELL=${SH}
 
+BIN_FILES=	altair eclipse h316 nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 \
+		pdp9 s3
+
 post-configure:
 	@${MKDIR} ${WRKSRC}/BIN
 	@for i in `find . -name "*.[hc]"`; \
@@ -30,17 +33,12 @@ post-configure:
 	done
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/nova ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp1 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp4 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp7 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp8 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp9 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp11 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/pdp15 ${PREFIX}/bin
+.for file in ${BIN_FILES}
+	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/sim && ${INSTALL_DATA} ${WRKDIR}/simh_doc.txt \
-		${PREFIX}/share/doc/sim
+	@${MKDIR} ${PREFIX}/share/doc/sim
+	@${INSTALL_DATA} ${WRKDIR}/simh_doc.txt ${PREFIX}/share/doc/sim
 .endif
 
 .include <bsd.port.mk>
