@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.11.1.6
+PORTVERSION=	0.11.1.8
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
-		LDFLAGS="-L${PREFIX}/lib"
+		LDFLAGS="-L${PREFIX}/lib" LIBS="-ldb4"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1
