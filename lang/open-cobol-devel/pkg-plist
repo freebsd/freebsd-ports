@@ -14,5 +14,5 @@ include/libcob/termio.h
 lib/libcob.a
 lib/libcob.so
 lib/libcob.so.1
-share/locale/ja/LC_MESSAGES/open-cobol.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/open-cobol.mo
 @dirrm include/libcob
