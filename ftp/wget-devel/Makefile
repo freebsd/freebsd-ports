@@ -24,6 +24,7 @@ MAINTAINER=	sf@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS=-L${PREFIX}/lib
