@@ -6,7 +6,7 @@
 #
 
 # This port does not work with another version of master port.
-#PORTVERSION=	1.2.4
+#PORTVERSION=	1.4.0.4
 CATEGORIES=	japanese x11 gnome
 
 MASTERDIR=	${.CURDIR}/../../x11/gnomecore
