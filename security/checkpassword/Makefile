@@ -9,7 +9,6 @@ PORTNAME=	checkpassword
 PORTVERSION=	0.90
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/checkpwd/
-MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	sada@FreeBSD.org
 
