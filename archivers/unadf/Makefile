@@ -7,6 +7,7 @@
 
 PORTNAME=	unadf
 PORTVERSION=	0.7.9b
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://perso.club-internet.fr/lclevy/adflib/
 DISTNAME=	adflib
