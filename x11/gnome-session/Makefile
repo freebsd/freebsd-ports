@@ -7,10 +7,15 @@
 
 PORTNAME=	gnomesession
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-session/2.2
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	sources/gnome-session/2.2 \
+			marcus/:local
 DISTNAME=	gnome-session-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		splash.png:local
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -28,5 +33,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=	gnome-session.1 gnome-smproxy.1 gnome-wm.1 session-properties.1 \
 	gnome-session-save.1
 MAN5=	default.session.5
+
+post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/splash.png ${WRKDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/splash.png \
+		${PREFIX}/share/gnome/pixmaps/splash/gnome-splash.png
 
 .include <bsd.port.mk>
