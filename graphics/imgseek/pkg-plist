@@ -1,3 +1,5 @@
+bin/imgSeek
+bin/imgSeekCmd
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgdb.so
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/AlbumForm.py
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/AlbumForm.pyc
@@ -92,9 +94,6 @@ lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/customWidgets.pyo
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbCallbacks.py
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbCallbacks.pyc
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbCallbacks.pyo
-lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExport.py
-lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExport.pyc
-lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExport.pyo
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExportCSV.py
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExportCSV.pyc
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExportCSV.pyo
@@ -104,6 +103,44 @@ lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/dbExportXML.pyo
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/helpText.py
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/helpText.pyc
 lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/helpText.pyo
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.py
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib/imgSeekApp.pyo
+share/imgSeek/color.png
+share/imgSeek/courB12.pbm
+share/imgSeek/courB12.pil
+share/imgSeek/styles/Acqua/bg.png
+share/imgSeek/styles/Acqua/coininfd.png
+share/imgSeek/styles/Acqua/coininfg.png
+share/imgSeek/styles/Acqua/coinsupd.png
+share/imgSeek/styles/Acqua/coinsupg.png
+share/imgSeek/styles/Acqua/d.png
+share/imgSeek/styles/Acqua/fond.png
+share/imgSeek/styles/Acqua/g.png
+share/imgSeek/styles/Acqua/inf.png
+share/imgSeek/styles/Acqua/left.png
+share/imgSeek/styles/Acqua/right.png
+share/imgSeek/styles/Acqua/space15.png
+share/imgSeek/styles/Acqua/style.css
+share/imgSeek/styles/Acqua/sup.png
+share/imgSeek/styles/Acqua/uparrow.png
+share/imgSeek/styles/Slides/bg.png
+share/imgSeek/styles/Slides/coininfd.png
+share/imgSeek/styles/Slides/coininfg.png
+share/imgSeek/styles/Slides/coinsupd.png
+share/imgSeek/styles/Slides/coinsupg.png
+share/imgSeek/styles/Slides/d.png
+share/imgSeek/styles/Slides/fond.png
+share/imgSeek/styles/Slides/g.png
+share/imgSeek/styles/Slides/inf.png
+share/imgSeek/styles/Slides/left.png
+share/imgSeek/styles/Slides/right.png
+share/imgSeek/styles/Slides/space15.png
+share/imgSeek/styles/Slides/style.css
+share/imgSeek/styles/Slides/sup.png
+share/imgSeek/styles/Slides/uparrow.png
+@dirrm share/imgSeek/styles/Slides
+@dirrm share/imgSeek/styles/Acqua
+@dirrm share/imgSeek/styles
+@dirrm share/imgSeek
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/imgSeekLib
-bin/imgSeek
-bin/imgSeekCmd

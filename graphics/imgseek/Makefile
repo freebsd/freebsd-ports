@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	imgSeek
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://easynews.dl.sourceforge.net/sourceforge/imgseek/
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	tuxsuximus@hotmail.com
-COMMENT=	ImgSeek is a photo manager and viewer with content-based search
+MAINTAINER=	tuximus@tuximus.mine.nu
+COMMENT=	A photo manager and viewer with content-based search
 
 BUILD_DEPENDS=  pyuic:${PORTSDIR}/x11-toolkits/py-qt \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick
