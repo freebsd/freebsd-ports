@@ -1,4 +1,14 @@
 bin/liferea
+bin/liferea-bin
+lib/liferea/liblihtmlg.la
+lib/liferea/liblihtmlg.so
+lib/liferea/liblihtmlg.so.0
+lib/liferea/liblihtmlm.la
+lib/liferea/liblihtmlm.so
+lib/liferea/liblihtmlm.so.0
+lib/liferea/liblihtmlt.la
+lib/liferea/liblihtmlt.so
+lib/liferea/liblihtmlt.so.0
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/pixmaps/available.png
@@ -17,6 +27,8 @@ share/locale/es_ES/LC_MESSAGES/liferea.mo
 share/locale/fr/LC_MESSAGES/liferea.mo
 share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/ko/LC_MESSAGES/liferea.mo
+share/locale/mk/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/pixmaps
 @dirrm share/gnome/liferea/css
 @dirrm share/gnome/liferea
+@dirrm lib/liferea
