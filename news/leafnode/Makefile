@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.34
+PORTVERSION=	1.9.35
 PORTREVISION=	0
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
@@ -20,7 +20,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
 
 MAINTAINER=	matthias.andree@web.de
-COMMENT=	USENET software package designed for small sites
+COMMENT=	NNTP package for offline news caching and reading
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
