@@ -39,4 +39,7 @@ pre-patch:
 		's|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
+post-install:
+	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
+
 .include <bsd.port.mk>
