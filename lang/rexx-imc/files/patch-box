@@ -1,0 +1,8 @@
+--- box	Sat Jan 23 16:51:19 1999
++++ box.new	Fri Sep  7 15:01:36 2001
+@@ -1,4 +1,4 @@
+-/*bin/true;exec rexx -x "$0" "$@";exit# This is a REXX program */
++/*usr/bin/true;exec rexx -x "$0" "$@";exit# This is a REXX program */
+ parse arg args
+ if args="" then args="/usr/games/fortune"/* default command */
+ args "| expand | rxstack"            /* stack the command's output */

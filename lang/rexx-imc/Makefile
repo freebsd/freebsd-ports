@@ -6,23 +6,58 @@
 #
 
 PORTNAME=	rexx-imc
-PORTVERSION=	1.7
+PORTVERSION=	1.75
 CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/rexx/
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}-19990331.patch
-PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmcoopr@webmail.bmi.net
 
-MAKE_ENV=	MKDIR="${MKDIR}" OPTFLAGS="${CFLAGS}"
-INSTALLS_SHLIB=	yes
+HAS_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	Make
+CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
+			PREFIX="${PREFIX}"
+CONFIGURE_ARGS=		o all
 
-MAN1=		rexx.1
+# configures and builds in one step
+NO_BUILD=		yes
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+INSTALLS_SHLIB=		yes
+
+MAN1=		rexx.1 rxstack.1 rxque.1
+
+DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
+RMEFILES=       README README.Y2K README.bugreport README.docs \
+		README.files README.make README.news README.platforms
+
+do-install:
+# install interpreter and daemon helpers
+.for prog in rexx rxque rxstack
+	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+.endfor
+# install shared libraries, include file, and rxlib
+# DO NOT delete rxlib or you will lose ability to call mathlib!!
+.for lib in librexx.so.2 rxmathfn.rxfn
+	@${INSTALL_PROGRAM} ${WRKSRC}/${lib} ${PREFIX}/lib
+.endfor
+	@${LN} -sf ${PREFIX}/lib/librexx.so.2 ${PREFIX}/lib/librexx.so
+	@${INSTALL_DATA} ${WRKSRC}/rexxsaa.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/rxmathfn.rxlib ${PREFIX}/lib
+# install man pages
+.for man in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/${man} ${PREFIX}/man/man1
+.endfor
+# install documenation and examples
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCFILES} ${RMEFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${PREFIX}/share/examples/rexx-imc
+.for ex in box rexxcps.rexx rexxtest.rexx rxmathfn.rexx shell.rexx
+	@${INSTALL_SCRIPT} ${WRKSRC}/${ex} ${PREFIX}/share/examples/rexx-imc
+.endfor
+.endif
 
 .include <bsd.port.mk>
