@@ -1,0 +1,18 @@
+mod_log_mysql is a module for the Apache 2 webserver which permits
+request logging into a MySQL database.
+
+Key features are:
+    * Seamless integration into the standard Apache logging
+      configuration.
+    * Only one configuration line needed to start logging.
+    * Free SQL use.
+    * Multiple databases, database users and/or database servers.
+    * Connection pooling, only one connection per log target per
+      child process.
+    * Logs data as it is: e.g. times as SQL DATETIME and n/a items
+      as SQL NULL.
+    * Won't loose data if the database server is down.
+
+Note: this module requires mod_log_config-st
+
+WWW: http://bitbrook.de/software/mod_log_mysql/
