@@ -3,15 +3,13 @@
 # Date created:				06 Nov 1997
 # Whom:					Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/06 14:47:45 tg Exp $
+# $Id: Makefile,v 1.2 1997/11/10 10:34:58 asami Exp $
 #
-
-BROKEN=		distfile unavailable
 
 DISTNAME=	xmbibtex-1.3
 CATEGORIES=	print databases
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.ORG
 
