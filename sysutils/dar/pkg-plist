@@ -3,11 +3,16 @@ bin/dar_cp
 bin/dar_manager
 bin/dar_slave
 bin/dar_xform
+include/dar/archive.hpp
+include/dar/catalogue.hpp
 include/dar/compressor.hpp
 include/dar/config.h
+include/dar/crypto.hpp
 include/dar/deci.hpp
+include/dar/ea.hpp
 include/dar/erreurs.hpp
 include/dar/generic_file.hpp
+include/dar/header_version.hpp
 include/dar/infinint.hpp
 include/dar/integers.hpp
 include/dar/libdar.hpp
@@ -15,6 +20,7 @@ include/dar/limitint.hpp
 include/dar/mask.hpp
 include/dar/path.hpp
 include/dar/real_infinint.hpp
+include/dar/scrambler.hpp
 include/dar/special_alloc.hpp
 include/dar/statistics.hpp
 include/dar/storage.hpp
@@ -25,8 +31,9 @@ include/dar/wrapperlib.hpp
 lib/libdar.a
 lib/libdar.la
 lib/libdar.so
-lib/libdar.so.1
-share/dar/DOC_API
+lib/libdar.so.2
+share/dar/DOC_API_V1
+share/dar/DOC_API_V2
 share/dar/FEATURES
 share/dar/GOOD_BACKUP_PRACTICE
 share/dar/LIMITATIONS
