@@ -15,18 +15,18 @@ MASTER_SITE_SUBDIR=	bash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell -- old version
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"does not compile on ${MACHINE_ARCH}"
-.endif
-
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.
 NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1
 INFO=		bash
+
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} != i386
+BROKEN=		"does not compile on ${MACHINE_ARCH}"
+.endif
 
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
