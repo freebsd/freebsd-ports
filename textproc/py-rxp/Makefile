@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxp
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
