@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
@@ -34,7 +34,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|doc win32|win32|g ; \
-		 s|^mandir =.*$$|mandir = @mandir@|g' 
+		s|^mandir =.*$$|mandir = @mandir@|g'
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
 		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
 
