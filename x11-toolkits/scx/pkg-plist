@@ -1,0 +1,52 @@
+lib/scsh/0.6/scx
+lib/scsh/0.6/scx-0.2/lib/%%TARGET%%/libscx.la
+lib/scsh/0.6/scx-0.2/lib/%%TARGET%%/libscx.so
+lib/scsh/0.6/scx-0.2/lib/%%TARGET%%/libscx.so.1
+lib/scsh/0.6/scx-0.2/load.scm
+lib/scsh/0.6/scx-0.2/scheme/examples/hello-xft.scm
+lib/scsh/0.6/scx-0.2/scheme/examples/hello.scm
+lib/scsh/0.6/scx-0.2/scheme/examples/picture.scm
+lib/scsh/0.6/scx-0.2/scheme/examples/regions.scm
+lib/scsh/0.6/scx-0.2/scheme/examples/scxev.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/libs-interfaces.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/libs-packages.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/weak-table.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/xft.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/xpm.scm
+lib/scsh/0.6/scx-0.2/scheme/libs/xrender.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/atom.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/client.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/colormap.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/cursor.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/display.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/error.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/event-types.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/event.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/extension.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/font.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/gcontext.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/grab.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/graphics.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/key.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/pixmap.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/property.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/region.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/sync-event.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/text.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/utility.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/visual.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/window.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/wm.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/xlib-interfaces.scm
+lib/scsh/0.6/scx-0.2/scheme/xlib/xlib-packages.scm
+lib/scsh/0.6/scx-0.2/scheme/xt/resource-types.scm
+lib/scsh/0.6/scx-0.2/scheme/xt/widget-type.scm
+lib/scsh/0.6/scx-0.2/scheme/xt/widget.scm
+@dirrm lib/scsh/0.6/scx-0.2/scheme/xt
+@dirrm lib/scsh/0.6/scx-0.2/scheme/xlib
+@dirrm lib/scsh/0.6/scx-0.2/scheme/libs
+@dirrm lib/scsh/0.6/scx-0.2/scheme/examples
+@dirrm lib/scsh/0.6/scx-0.2/scheme
+@dirrm lib/scsh/0.6/scx-0.2/lib/%%TARGET%%
+@dirrm lib/scsh/0.6/scx-0.2/lib
+@dirrm lib/scsh/0.6/scx-0.2

@@ -169,6 +169,7 @@
     SUBDIR += ruby-pango
     SUBDIR += ruby-tk
     SUBDIR += scintilla
+    SUBDIR += scx
     SUBDIR += sdl_gui
     SUBDIR += slingshot
     SUBDIR += soqt
