@@ -1,55 +1,62 @@
---- configure.orig	Wed Nov 19 13:00:56 1997
-+++ configure	Mon Dec 15 10:43:02 1997
-@@ -19,9 +19,10 @@
+--- script/config.status.orig	Fri Dec 11 09:36:32 1998
++++ script/config.status	Sun Jan 17 14:42:51 1999
+@@ -14,8 +14,8 @@
+ PATH_XCIN_DIR=/usr/local/lib/xcin
+ PATH_XCIN_MAN=/usr/local/man
  
- # Usage: configure [-help] [-prefix=PREFIX] [-bin-prefix=PREFIX] 
- #		   [-x-include-prefix=PREFIX] [-x-lib-prefix=PREFIX]
--#		   [-x-font-prefix=PREFIX]
-+#		   [-x-font-prefix=PREFIX] [-use-24-fonts]
+-OPT_XCIN_CFONT=-twmoe-kai-medium-r-normal--24-240-75-75-c-240-big5-1
+-OPT_XCIN_EFONT=12x24
++OPT_XCIN_CFONT=kc15f
++OPT_XCIN_EFONT=kc8x15
+ OPT_UTIL_CIN2TAB=yes
+ OPT_UTIL_TSINTOOLS=yes
+ OPT_INPTAB_SRC=yes
+--- script/configure.makefile.orig	Fri Dec 11 09:18:08 1998
++++ script/configure.makefile	Sun Jan 17 14:34:16 1999
+@@ -78,7 +78,7 @@
+           : # AIX
+         else
+           INSTALL="$dir/install -c"
+-          INSTALL_PROGRAM='$(INSTALL)'
++          INSTALL_PROGRAM='$(INSTALL) -s'
+           INSTALL_DATA='$(INSTALL) -m 644'
+           INSTALL_DIR='$(INSTALL) -d'
+           break
+--- script/configure.menu.orig	Fri Dec 11 09:49:43 1998
++++ script/configure.menu	Sun Jan 17 14:40:11 1999
+@@ -266,7 +266,7 @@
+ {
+     PATH_XCIN_PREFIX=$1
+     PATH_XCIN_BIN=$PATH_XCIN_PREFIX/bin
+-    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/xcin
++    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/X11/xcin
+     PATH_XCIN_MAN=$PATH_XCIN_PREFIX/man
+ }
  
+--- src/Makefile.in.orig	Wed Dec  9 22:26:36 1998
++++ src/Makefile.in	Sun Jan 17 14:34:16 1999
+@@ -149,7 +149,7 @@
  
-+use_24_fonts=0
- for arg in $@; do
-    case $arg in
-      -bin-prefix=*)
-@@ -34,6 +35,8 @@
- 	x_lib_prefix=`echo $arg | sed 's/[-a-z]*=//'` ;;
-      -x-font-prefix=*)
- 	x_font_prefix=`echo $arg | sed 's/[-a-z]*=//'` ;;
-+     -use-24-fonts)
-+	use_24_fonts=1 ;;
-      -help)
- 	cat << EOF >&2
- Usage:  configure [-help] [-prefix=PREFIX] [-exec-prefix=PREFIX] 
-@@ -52,6 +55,8 @@
+ install_xcin: xcin $(KBMS) $(INPUT0) tsintab
+ 	if [ ! -d $(PATH_XCIN_BIN) ]; then $(INSTALL_DIR) $(PATH_XCIN_BIN); fi
+-	$(INSTALL) xcin $(PATH_XCIN_BIN)
++	$(INSTALL_PROGRAM) xcin $(PATH_XCIN_BIN)
+ 	echo $(PATH_XCIN_BIN)/xcin >> filelist
  
-         -x-font-prefix:  Prefix dir of the X-win .pcf fonts.
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+@@ -159,13 +159,13 @@
  
-+        -use-24-fonts: Use 24 Fonts
-+
- EOF
- 	exit 0
- ;;
-@@ -94,11 +99,11 @@
- echo 'Chinese interface to setting up your XCIN system.'
- echo 
- echo 'Do you want to use the Chinese interface [y/n]?'
--read chinese
-+#read chinese
- if [ "$chinese" = 'y' ] || [ "$chinese" = 'Y' ]; then
-     unique_file=script/configure.Cinstall
- fi
--$srcdir/$unique_file -root=$srcdir -prefix=$prefix -bin-prefix=$bin_prefix -x-font-prefix=$x_font_prefix
-+$srcdir/$unique_file -root=$srcdir -prefix=$prefix -bin-prefix=$bin_prefix -x-font-prefix=$x_font_prefix -use-24-fonts=$use_24_fonts
- if [ "$?" = '1' ]; then
-     echo 'Stop!'
-     echo
-@@ -248,7 +253,7 @@
-   IFS="$saveifs"
- fi
- INSTALL=${INSTALL-cp}
--INSTALL_PROGRAM=${INSTALL_PROGRAM-'$(INSTALL)'}
-+INSTALL_PROGRAM="/usr/bin/install -c -s"
- INSTALL_DATA=${INSTALL_DATA-'$(INSTALL)'}
- INSTALL_DIR=${INSTALL_DIR-mkdir}
+ install_cin2tab: cin2tab
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+-	$(INSTALL) cin2tab $(PATH_XCIN_DIR)
++	$(INSTALL_PROGRAM) cin2tab $(PATH_XCIN_DIR)
+ 	echo $(PATH_XCIN_DIR)/cin2tab >> filelist
  
+ install_tsintools: tsintools
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(TSINTOOLS); do\
+-            $(INSTALL) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++            $(INSTALL_PROGRAM) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
+ 	done
+ 
+ install_tsintabsrc:
