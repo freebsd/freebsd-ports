@@ -1,4 +1,3 @@
-lib/perl5/%%PERL_VERSION%%/man/man3/AI::Perceptron.3
 lib/perl5/site_perl/%%PERL_VER%%/AI/Perceptron.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/Perceptron/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/Perceptron

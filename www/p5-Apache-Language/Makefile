@@ -18,5 +18,7 @@ USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Apache::Language.3 Apache::Language::Constants.3 \
+		Apache::Language::DBI.3 Apache::Language::PlainFile.3
 
 .include <bsd.port.mk>

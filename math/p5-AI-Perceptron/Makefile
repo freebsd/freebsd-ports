@@ -18,5 +18,6 @@ USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		AI::Perceptron.3
 
 .include <bsd.port.mk>
