@@ -1,0 +1,37 @@
+--- Makefile.orig	Sat Oct 19 15:54:54 2002
++++ Makefile	Mon Dec  2 21:09:54 2002
+@@ -1,26 +1,26 @@
+-CFLAGS=-Wall -O3 -fexpensive-optimizations -ffast-math -funroll-loops
++#CFLAGS=-Wall -O3 -fexpensive-optimizations -ffast-math -funroll-loops
+ 
+ all: crossword crossword_heur crw2tex
+ 
+ crossword: wordset.o crossword.cpp mirandom.o parametros.o Makefile
+-	gcc $(CFLAGS) crossword.cpp wordset.o mirandom.o parametros.o contador.o -lstdc++ -o crossword
++	$(CXX) $(CXXFLAGS) crossword.cpp wordset.o mirandom.o parametros.o contador.o -o crossword
+ 
+ crossword_heur: wordset.o crossword.cpp mirandom.o parametros.o Makefile
+-	gcc $(CFLAGS) -DHEUR crossword.cpp wordset.o mirandom.o parametros.o contador.o -lstdc++ -o crossword_heur
++	$(CXX) $(CXXFLAGS) -DHEUR crossword.cpp wordset.o mirandom.o parametros.o contador.o -o crossword_heur
+ 
+ wordset.o: wordset.h wordset.cpp contador.o Makefile
+-	gcc -c $(CFLAGS) wordset.cpp -o wordset.o
++	$(CXX) -c $(CXXFLAGS) wordset.cpp -o wordset.o
+ 
+ contador.o: contador.h contador.cpp Makefile
+-	gcc -c $(CFLAGS) contador.cpp -o contador.o
++	$(CXX) -c $(CXXFLAGS) contador.cpp -o contador.o
+ 
+ mirandom.o: mirandom.cpp mirandom.h Makefile
+-	gcc -c $(CFLAGS) mirandom.cpp -o mirandom.o
++	$(CXX) -c $(CXXFLAGS) mirandom.cpp -o mirandom.o
+ 
+ parametros.o: parametros.cpp parametros.h Makefile
+-	gcc -c $(CFLAGS) parametros.cpp -o parametros.o
++	$(CXX) -c $(CXXFLAGS) parametros.cpp -o parametros.o
+ 
+ crw2tex: crw2tex.cpp contador.o
+-	gcc -Wall crw2tex.cpp contador.o -o crw2tex -lstdc++
++	$(CXX) -Wall crw2tex.cpp contador.o -o crw2tex
+ clean:
+ 	rm -f wordset.o contador.o crossword mirandom.o crw2tex *.log *.aux core *.tex crossword_heur *.dvi *.ps1 parametros.o example.out
