@@ -10560,6 +10560,7 @@ tkxanim		ports/multimedia/tkxanim
 tl-aspell	ports/textproc/tl-aspell
 tla		ports/devel/tla
 tlb		ports/mail/tlb
+tlf		ports/comms/tlf
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
