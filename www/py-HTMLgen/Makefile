@@ -22,9 +22,9 @@ DOCDIR=			${PREFIX}/share/doc/HTMLgen
 FIND?=			find
 
 pre-install:
-	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/PLIST.docs >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${PLIST}
 	@${MKDIR} ${PREFIX}/share/doc/HTMLgen
 	@${TAR} -C ${WRKSRC} -cf - README html image | \
 		${TAR} -C ${DOCDIR} -xvf -
