@@ -1,6 +1,6 @@
-# New ports collection makefile for: de-linux-netscape6
-# Date created:			28 Feb 2002
-# Whom:				Thomas E. Zander <riggs@rrr.de>
+# New ports collection makefile for:	fr-linux-netscape6
+# Date created:				2002-03-04
+# Whom:					trevor
 # based on the german/linux-netscape6 port by Thomas E. Zander
 #
 # $FreeBSD$
