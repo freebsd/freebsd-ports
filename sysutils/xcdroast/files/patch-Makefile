@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Aug 14 01:01:08 2001
-+++ Makefile	Tue Aug 14 01:01:32 2001
+--- Makefile.orig	Tue Jul 17 23:46:26 2001
++++ Makefile	Sat Aug 18 20:15:52 2001
 @@ -6,7 +6,7 @@
  # Installation prefix directory:
  
@@ -9,3 +9,17 @@
  PRE_LIBDIR=$(PREFIX)/lib/xcdroast-0.98
  
  # put here the prefix where you want xcdroast to look for 
+@@ -23,10 +23,10 @@
+ 
+ #---
+ 
+-CFLAGS=-Wall `gtk-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
++CFLAGS=-Wall `gtk12-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
+ CFLAGS2=-Wall `glib-config --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
+-LIBS=`gtk-config --libs` `imlib-config --libs` -lgdk_imlib 
+-TOOLLIBS=`gtk-config --libs`
++LIBS=`gtk12-config --libs` `imlib-config --libs` -lgdk_imlib 
++TOOLLIBS=`gtk12-config --libs`
+ CC=gcc
+ 
+ OBJ = main.o language.o init.o tools.o xtools.o menus.o setup.o io.o duplicate.o wav_frontend.o wav_id.o create.o
