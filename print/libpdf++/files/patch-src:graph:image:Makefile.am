@@ -1,0 +1,15 @@
+--- src/graph/image/Makefile.am.orig	Mon Dec  1 11:00:20 2003
++++ src/graph/image/Makefile.am	Mon Dec  1 11:00:30 2003
+@@ -8,8 +8,8 @@
+ libimage_la_SOURCES	= Image.hh Image.cc ColourSpace.hh ColourSpace.cc \
+ 					  JpegEncoder.hh JpegEncoder.cc Header.hh Header.cc
+ 
+-noinst_PROGRAMS		= testjpeg
++#noinst_PROGRAMS		= testjpeg
+ 
+-testjpeg_SOURCES	= testjpeg.cc
+-testjpeg_LDFLAGS	= @MAGICK_LDFLAGS@
+-testjpeg_LDADD		= -lstdc++ -ljpeg libimage.la @MAGICK_LDADD@
++#testjpeg_SOURCES	= testjpeg.cc
++#testjpeg_LDFLAGS	= @MAGICK_LDFLAGS@
++#testjpeg_LDADD		= -lstdc++ -ljpeg libimage.la @MAGICK_LDADD@
