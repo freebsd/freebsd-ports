@@ -1,5 +1,5 @@
---- webalizer.c.bak	Tue Apr 18 07:34:50 2000
-+++ webalizer.c	Tue Apr 18 07:38:58 2000
+--- webalizer.c.orig	Sun Apr  9 05:18:56 2000
++++ webalizer.c	Thu Apr 20 05:46:49 2000
 @@ -61,6 +61,7 @@
  #endif
  
@@ -8,3 +8,12 @@
  #include <arpa/inet.h>
  
  #ifdef HAVE_DB_185_H
+@@ -480,7 +481,7 @@
+       else
+       {
+          /* Using DNS cache file <filaneme> */
+-         if (verbose) printf("%s %s\n",msg_dns_usec,dns_cache);
++	 if (verbose>1) printf("%s %s\n",msg_dns_usec,dns_cache);
+       }
+    }
+ #endif  /* USE_DNS */
