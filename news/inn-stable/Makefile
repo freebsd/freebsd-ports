@@ -7,7 +7,6 @@
 
 PORTNAME=	inn
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=clement
@@ -18,7 +17,7 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BRANCH=		stable
-SNAPSHOT=	20040118
+SNAPSHOT=	20040707
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
@@ -51,17 +50,19 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 .if defined(WITH_BERKELEYDB)
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
 .    if !defined(WITH_BDB_VER)
-WITH_BDB_VER=	41
+WITH_BDB_VER=	42
 .    endif
 .    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
 LIB_DEPENDS+=		db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+.elif (${WITH_BDB_VER} == 42)
+LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
 .    elif ${WITH_BDB_VER} == 2
-BROKEN=		"Does not compile with db2"
+IGNORE=		"Does not compile with db2"
 .    else
-BROKEN=		"Unknown BerkeleyDB version"
+IGNORE=		"Unknown BerkeleyDB version"
 .    endif
 CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
-CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-berkeleydb
 .endif
 
 .if defined(WITH_PYTHON)
