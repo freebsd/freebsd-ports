@@ -1,0 +1,15 @@
+--- configure.in.orig	Wed Jun  5 21:10:50 2002
++++ configure.in	Wed Jul 17 21:08:10 2002
+@@ -104,7 +104,12 @@
+ #AC_CHECK_LIB([ibs], [main])
+ 
+ # Checks for header files.
++saved_CFLAGS="$CFLAGS"
++LIBS="$LIBS $GTKGL_LIBS $GTK_LIBS"
++CFLAGS="$CFLAGS $GTKGL_CFLAGS $GTK_CFLAGS"
+ AC_CHECK_HEADERS(GL/glut.h)
++LIBS="$LIBS $saved_LIBS"
++CFLAGS="$saved_CFLAGS"
+ 
+ # Checks for typedefs, structures, and compiler characteristics.
+ AC_PROG_CC_STDC
