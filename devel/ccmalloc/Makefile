@@ -25,7 +25,7 @@ CXX=		g++
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 500000
-PATCH_FILES+=	${FILESDIR}/patch5-configure
+EXTRA_PATCHES=	${FILESDIR}/patch5-configure
 .endif
 
 post-install:
