@@ -3547,7 +3547,6 @@ kprop		src/eBones/kprop
 kpropd		src/eBones/kpropd
 krb		src/eBones/krb
 krb5		ports/security/krb5
-krb5-beta	ports/security/krb5-beta
 krbinclude	src/eBones/include
 krbman		src/eBones/man
 krdesktop	ports/net/krdesktop
