@@ -16,6 +16,7 @@ COMMENT=	Multitrack audio processing software
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAKE_ENV+=	${CONFIGURE_ENV}
@@ -34,8 +35,8 @@ RUN_DEPENDS+=	mikmod:${PORTSDIR}/audio/mikmod
 
 .if defined(WITH_AUDIOFILE)
 # very crappy hack to detect audiofile properly
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
@@ -71,7 +72,7 @@ pre-everything::
 
 post-patch:
 .if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
+	@${REINPLACE_CMD} -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
 .endif
 
 #	${STRIP_CMD} ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
