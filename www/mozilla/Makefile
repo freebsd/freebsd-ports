@@ -155,7 +155,7 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
-.if !defined(WITHOUT_OPTIMIZE) && ${ARCH} != "alpha"
+.if defined(WITH_OPTIMIZED_CFLAGS) && ${ARCH} != "alpha"
 CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
@@ -180,7 +180,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
 	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
 	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
-	@${ECHO_MSG} "	WITHOUT_OPTIMIZE=yes	Disable -O2 optimization"
+	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS=yes	Enable -O2 optimization"
 	@${ECHO_MSG} ""
 .if defined(WITH_CALENDAR)
 	@${ECHO_MSG} "Calendar is still beta software."
