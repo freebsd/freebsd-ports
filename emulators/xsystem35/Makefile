@@ -3,11 +3,11 @@
 # Date created:		24 Oct 1998
 # Whom:			FUJISHIMA Satsuki
 #
-# $Id: Makefile,v 1.8 1999/01/10 18:31:20 steve Exp $
+# $Id: Makefile,v 1.9 1999/01/23 18:38:31 flathill Exp $
 #
 
-DISTNAME=	xsystem35-1.0
-PKGNAME=	xsystem-3.5-1.0
+DISTNAME=	xsystem35-1.0.1
+PKGNAME=	xsystem-3.5-1.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
@@ -22,7 +22,7 @@ USE_IMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL README README.midi \
-		README.miko THANKS TODO
+		README.miko THANKS TODO MISCGAME.TXT
 EXAMPLES=	README.TXT atlach.inf dalk.inf diabo.inf drstop.inf \
 		katsumi.inf kichiku.inf miko.inf ningen.inf oudou.inf \
 		panyo.inf rance1.inf rance2.inf rance3.inf rance4.inf \
