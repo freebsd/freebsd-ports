@@ -32,7 +32,7 @@ USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \
 		--without-included-gettext \
