@@ -1,0 +1,14 @@
+%%RUBY_EXAMPLESDIR%%/elisp/README
+%%RUBY_EXAMPLESDIR%%/elisp/inf-ruby.el
+%%RUBY_EXAMPLESDIR%%/elisp/ruby-mode.el
+%%RUBY_EXAMPLESDIR%%/elisp/rubydb2x.el
+%%RUBY_EXAMPLESDIR%%/elisp/rubydb3x.el
+@dirrm %%RUBY_EXAMPLESDIR%%/elisp
+share/emacs/site-lisp/inf-ruby.el
+share/emacs/site-lisp/ruby-mode.el
+share/emacs/site-lisp/rubydb3x.el
+@comment share/emacs/site-lisp is created by mtree
+lib/xemacs/site-lisp/inf-ruby.el
+lib/xemacs/site-lisp/ruby-mode.el
+lib/xemacs/site-lisp/rubydb3x.el
+@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
