@@ -11,8 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
-PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -27,7 +26,7 @@ COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
 CONFLICTS=	nessus-devel-[0-9]* nessus-devel-gtk-[0-9]* \
 		nessus-devel-gtk2-[0-9]*
-LIB_DEPENDS=	nasl.2:${PORTSDIR}/security/nessus-libnasl
+LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
@@ -60,8 +59,14 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/nessusd.sh > ${LOCALBASE}/etc/rc.d/nessusd.sh
-	@${CHMOD} +x ${LOCALBASE}/etc/rc.d/nessusd.sh
+		${FILESDIR}/nessusd.sh > ${PREFIX}/etc/rc.d/nessusd.sh
+	@${CHMOD} +x ${PREFIX}/etc/rc.d/nessusd.sh
+	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.conf \
+		> ${PREFIX}/etc/nessus/nessusd.conf.dist
+	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.rules \
+		> ${PREFIX}/etc/nessus/nessusd.rules.dist
+	@${CHMOD} 644 ${PREFIX}/etc/nessus/nessusd.conf.dist \
+		${PREFIX}/etc/nessus/nessusd.rules.dist
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 .if ! defined(BATCH)
