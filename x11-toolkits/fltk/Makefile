@@ -20,7 +20,8 @@ MAINTAINER?=	demon@FreeBSD.org
 COMMENT?=	C++ graphical user interface for X
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 .if defined(WITH_XUNICODE)
 PATCH_VERSION=	20010114
@@ -42,15 +43,17 @@ _PORTVERSION+=	${VERSION}
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=--enable-threads
+CPPFLAGS+=	"${PTHREAD_CFLAGS}"
+LDFLAGS+=	"${PTHREAD_LIBS}"
 .endif
 
 VERSION=	1.1.4
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-shared
-CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--enable-shared --enable-xft
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 USE_X_PREFIX=	yes
 USE_MESA=	yes
