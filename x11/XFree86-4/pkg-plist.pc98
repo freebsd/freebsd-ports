@@ -6831,11 +6831,6 @@ X11/xserver/SecurityPolicy
 X11/xsm/system.xsm
 @cwd /var/db/xkb
 README
-@cwd /modules
-drm.ko
-gamma.ko
-mga.ko
-tdfx.ko
 @unexec rmdir /etc/X11/xsm
 @unexec rmdir /etc/X11/xserver
 @unexec rmdir /etc/X11/xkb/types
