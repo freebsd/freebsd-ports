@@ -739,6 +739,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the port still works with it.
 # USE_PACKAGE_DEPENDS - Install dependencies from existing packages instead
 #				  of building the port from scratch.
+# INSTALL_AS_USER - Define this to install as the current user, intended
+#			      for systems where you have no root access.
 #
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
@@ -798,7 +800,7 @@ SED?=		/usr/bin/sed
 SETENV?=	/usr/bin/env
 SH?=		/bin/sh
 STRIP_CMD?=	/usr/bin/strip
-SU?=		/usr/bin/su
+SU_CMD?=	/usr/bin/su root -c
 TAIL?=		/usr/bin/tail
 TEST?=		test				# Shell builtin
 TR?=		/usr/bin/tr
@@ -1347,6 +1349,16 @@ CC=				gcc32
 CXX=			g++32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 .endif
+.if defined(USE_GCC) && ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
+CC=				gcc33
+CXX=			g++33
+BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
+.endif
+.if defined(USE_GCC) && ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
+CC=				gcc34
+CXX=			g++34
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+.endif
 
 .if defined(USE_GETOPT_LONG)
 .if ${OSVERSION} < 500041
@@ -1690,10 +1702,19 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 .endif
 
+.if ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install" \
+	&& exists(${LOCALBASE}/sbin/pkg_info)
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
+PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
+PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
+PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
+PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
+.else
 PKG_CMD?=		/usr/sbin/pkg_create
-PKG_ADD?=	/usr/sbin/pkg_add
+PKG_ADD?=		/usr/sbin/pkg_add
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
+.endif
 
 # Does the pkg_create tool support conflict checking?
 PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
@@ -2170,17 +2191,18 @@ maintainer:
 
 VALID_CATEGORIES+= accessibility afterstep archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
-	deskutils devel editors elisp emulators finance french ftp \
+	deskutils devel dns editors elisp emulators finance french ftp \
 	games german gnome graphics haskell hebrew hungarian \
 	ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc multimedia net news \
-	offix palm parallel perl5 picobsd plan9 portuguese print python \
+	offix palm parallel perl5 picobsd plan9 polish portuguese print python \
 	ruby russian \
 	scheme science security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
 	tk42 tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
-	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm zope
+	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm xfce \
+	zope
 
 check-categories:
 .for cat in ${CATEGORIES}
@@ -3005,7 +3027,6 @@ delete-package-list: delete-package-links-list
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-.if ${OSVERSION} >= 460102
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
 		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 		if [ -n "$${already_installed}" ]; then \
@@ -3020,7 +3041,6 @@ check-already-installed:
 						fi; \
 				done; \
 		fi;
-.endif
 		@if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
 				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 						${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
@@ -3238,7 +3258,7 @@ ${target}: ${${target:U}_COOKIE}
 
 .if !exists(${${target:U}_COOKIE})
 
-.if ${UID} != 0 && defined(_${target:U}_SUSEQ)
+.if ${UID} != 0 && defined(_${target:U}_SUSEQ) && !defined(INSTALL_AS_USER)
 .if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ}
@@ -3247,7 +3267,7 @@ ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ}
 .endif
 	@echo "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
-		${SU} root -c "${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
+		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
 	@echo "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .elif defined(USE_SUBMAKE)
@@ -3403,7 +3423,6 @@ reinstall:
 .if !target(deinstall)
 deinstall:
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-.if ${OSVERSION} >= 460102
 	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 	for p in $${found_names}; do \
 			check_name=`${ECHO} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
@@ -3420,13 +3439,6 @@ deinstall:
 	if [ -z "$${found_names}" ]; then \
 			${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
-.else
-	@if ${PKG_INFO} -e ${PKGNAME}; then \
-		${PKG_DELETE} -f ${PKGNAME}; \
-	 else \
-		${ECHO_MSG} "===>   ${PKGNAME} not installed, skipping"; \
-	 fi
-.endif
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
@@ -3436,7 +3448,6 @@ deinstall:
 
 .if !target(deinstall-all)
 deinstall-all:
-.if ${OSVERSION} >= 460102
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
 	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 	if [ -n "$${deinstall_names}" ]; then \
@@ -3448,7 +3459,6 @@ deinstall-all:
 		${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-.endif
 .endif
 
 # Cleaning up
@@ -4063,7 +4073,7 @@ PACKAGE-DEPENDS-LIST?= \
 # Print out package names.
 
 package-depends:
-.if ${OSVERSION} >= 460102
+.if ${OSVERSION} >= 460102 || exists(${LOCALBASE}/sbin/pkg_info)
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
 .else
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1}'
