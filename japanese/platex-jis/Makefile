@@ -1,26 +1,27 @@
 # New ports collection makefile for:	platex2e-jis
-# Version required:		<1999/08/09>
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pl19990809j
-PKGNAME=	ja-platex2e-jis-1999.08.09
+PORTNAME=	platex2e
+PKGNAMESUFFIX=	-jis
+PORTVERSION=	1999.08.09
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1999-08-09/
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/${PORTVERSION:S/./-/g}/
+DISTNAME=	pl${PORTVERSION:S/.//g}j
 
 MAINTAINER=	max@FreeBSD.org
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
+BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX} \
 		platex-common:${PORTSDIR}/japanese/platex-common
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX} \
 		platex-common:${PORTSDIR}/japanese/platex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
-WRKSRC=		${WRKDIR}/19990809
-DIST_SUBDIR=	platex2e
+WRKSRC=		${WRKDIR}/${PORTVERSION:S/.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 TEXMF=		${PREFIX}/share/texmf
 

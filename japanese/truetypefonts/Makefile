@@ -1,20 +1,20 @@
 # New ports collection makefile for:	Japanese TrueType fonts
-# Version required:	1998.10.20
 # Date created:		16 November 1998
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ja-truetypefonts-1998.10.20
+PORTNAME=	truetypefonts
+PORTVERSION=	1998.10.20
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.linux.or.jp/%7Eishikawa/linux/dists/FreeType/
-DISTFILES=	xtt-fonts_0.19981020-3.tar.gz
+DISTNAME=	xtt-fonts_0.${PORTVERSION:S/.//g}-3
 
 MAINTAINER=	candy@kgc.co.jp
 
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/xtt-fonts-0.19981020
+WRKSRC=		${WRKDIR}/xtt-fonts-0.${PORTVERSION:S/.//g}
 NO_BUILD=	yes
 FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
 

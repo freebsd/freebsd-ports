@@ -1,13 +1,12 @@
 # New ports collection makefile for:	ja-perl5
-# Version required:	5.005_03
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perl5.005_03
-PKGNAME=	ja-perl-5.005.03
+PORTNAME=	perl
+PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
@@ -21,6 +20,7 @@ MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/src/5.0/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/src/5.0/
+DISTNAME=	${PORTNAME}${JPERL_VER}_${JPERL_VER_PL}
 
 PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
@@ -34,7 +34,7 @@ PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/authors/id/WATANABE/
-PATCHFILES=	jperl5.005_03-990822.pat.gz
+PATCHFILES=	j${DISTNAME}-990822.pat.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@FreeBSD.org
@@ -46,8 +46,9 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
 			-Dlibperl=libperl.so.${PERL_SHLIBVER}
 
-JPERL_VERSION=	5.00503
 JPERL_VER=	5.005
+JPERL_VER_PL=	03
+JPERL_VERSION=	${JPERL_VER}${JPERL_VER_PL}
 .if ${PORTOBJFORMAT} == "aout"
 PERL_SHLIBVER=	1.0
 .else

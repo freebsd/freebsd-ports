@@ -1,15 +1,16 @@
 # New ports collection makefile for:	skk-jisyo
-# Version required:	9.6
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	skk9.6
-PKGNAME=	ja-skk-jisyo${SKKJISYO_SIZE}-9.6
+PORTNAME=	skk-jisyo
+PORTVERSION=	9.6
+PKGNAMESUFFIX=	${SKKJISYO_SIZE}
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
+MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/${PORTVERSION}/
+DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@jp.freebsd.org
 
@@ -22,7 +23,7 @@ SKKJISYO_SIZE_INVALID=	yes
 .endif
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 
-WRKSRC=		${WRKDIR}/skk-9.6
+WRKSRC=		${WRKDIR}/skk-${PORTVERSION}
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 INSTALL_TARGET=	install-jisyo

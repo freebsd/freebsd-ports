@@ -1,22 +1,22 @@
 # New ports collection makefile for:	skk-tools
-# Version required:	9.6
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	skk9.6
-PKGNAME=	ja-skk-tools-9.6
+PORTNAME=	skk-tools
+PORTVERSION=	9.6
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
+MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/${PORTVERSION}/
+DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@jp.freebsd.org
 
 BUILD_DEPENDS=	/nonexistent:${SKK_MASTERDIR}:configure
 
 SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
-WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-9.6
+WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}
 MAKE_ARGS=	SUBDIRS='jisyo-tools'
 
 .include <bsd.port.mk>

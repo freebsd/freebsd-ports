@@ -1,19 +1,19 @@
 # New ports collection makefile for:	TkStep
-# Version required:	8.0.4
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.0.4
-PKGNAME=	ja-tkstep-8.0.4
+PORTNAME=	tkstep
+PORTVERSION=	8.0.4
 CATEGORIES=	japanese tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+DISTNAME=	tk${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/ \
 		http://www.aaa-int.or.jp/~jfactory/TkStep/dist/
-PATCHFILES=	tk8.0.4jp1.3.patch.gz tk8.0.4-Stepnize.gz
+PATCHFILES=	tk${PORTVERSION}jp1.3.patch.gz tk${PORTVERSION}-Stepnize.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

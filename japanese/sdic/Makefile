@@ -1,13 +1,12 @@
 # New ports collection makefile for:	sdic
-# Version required:	2.1.2
 # Date created:        	09 Sep 1999
 # Whom:			Kazumasa Nishizawa <kazumasa@selab.tutkie.tut.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sdic-2.1.2
-PKGNAME=	ja-sdic-2.1.2
+PORTNAME=	sdic
+PORTVERSION=	2.1.2
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/
 

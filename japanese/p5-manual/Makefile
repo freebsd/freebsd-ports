@@ -1,17 +1,17 @@
 # New ports collection makefile for:	perl5jman
-# Version required:	5.000
 # Date created:		29 June 1998
 # Whom:			SADA Kenji <sada@e-mail.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perl5.000man-j
-PKGNAME=	ja-p5-man-5.000
+PORTNAME=	man
+PORTVERSION=	5.000
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/
+DISTNAME=	perl${PORTVERSION}${PORTNAME}-j
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@FreeBSD.org
 
 NO_BUILD=	yes
 MANPREFIX=	${PREFIX}/man/ja
@@ -29,6 +29,10 @@ CAT3=		Abbrev.3pm AnyDBMFile.3pm AutoLoader.3pm AutoSplit.3pm \
 		Open2.3pm Open3.3pm POSIX.3pm Ping.3pm Socket.3pm \
 		integer.3pm less.3pm sigtrap.3pm strict.3pm subs.3pm
 
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
 post-extract:
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		perl5man.tgz ${EXTRACT_AFTER_ARGS}
@@ -45,7 +49,7 @@ do-install:
 .endfor
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 plist:
 	@${ECHO} -n >${PLIST}

@@ -1,18 +1,18 @@
 # New ports collection makefile for:	tk4.2p2JP
-# Version required:	4.2p2jp
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk4.2p2
-PKGNAME=	ja-tk-4.2
+PORTNAME=	tk
+PORTVERSION=	4.2
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl7_6/
+DISTNAME=	${PORTNAME}${PORTVERSION}p2
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk4.2jp-patch.gz
+PATCHFILES=	${PORTNAME}${VERSION}-patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -32,12 +32,12 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRI
 PATCH_ARGS=		-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_STRIP}
 .endif
 
-VERSION=	4.2jp
+VERSION=	${PORTVERSION}jp
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${MV} ${WRKDIR}/tk4.2 ${WRKDIR}/${DISTNAME}
+	@${MV} ${WRKDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${DISTNAME}
 
 post-configure:
 	@${ECHO} "We will NOT only make shared library, but also static one."

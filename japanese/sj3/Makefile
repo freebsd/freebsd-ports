@@ -1,13 +1,12 @@
 # New ports collection makefile for:	SJ3
-# Version required:	2.0.1.20
 # Date created:		18 Aug 1998
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sj3-2.0.1.20
-PKGNAME=	ja-sj3-2.0.1.20
+PORTNAME=	sj3
+PORTVERSION=	2.0.1.20
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/

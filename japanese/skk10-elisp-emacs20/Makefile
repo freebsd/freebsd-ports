@@ -1,15 +1,16 @@
 # New ports collection makefile for:	skk10-elisp-emacs20
-# Version required:	10.57
 # Date created:		21 September 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	skk${SKK10_VER}
-PKGNAME=	ja-skk-elisp-${EMACS_PORT_NAME}-${SKK10_VER}
+PORTNAME=	skk-elisp
+PORTVERSION=	${SKK10_VER}
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/
+DISTNAME=	skk${SKK10_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 

@@ -1,18 +1,20 @@
 # New ports collection makefile for:	platex2e-common
-# Version required:		<1999/08/09>
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	base-9906
-PKGNAME=	ja-platex2e-common-1999.08.09
+PORTNAME=	platex2e
+PORTVERSION=	1999.08.09
+PKGNAMESUFFIX=	-common
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1999-08-09/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/${PORTVERSION:S/./-/g}/ \
 		ftp://ftp.ams.org/pub/tex/ \
 		${MASTER_SITE_LOCAL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz tfm.tar \
+DISTFILES=	base-9906.tar.gz \
+		ecfonts-1.0.tar.gz \
+		tfm.tar \
 		amsfonts-sources.tar.Z
 
 MAINTAINER=	max@FreeBSD.org
@@ -22,9 +24,8 @@ RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 WRKSRC=		${WRKDIR}/base
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz  \
-		amsfonts-sources.tar.Z
-DIST_SUBDIR=	platex2e
+EXTRACT_ONLY=	${DISTFILES:Ntfm.tar}
+DIST_SUBDIR=	${PORTNAME}
 
 TEXMF=		${PREFIX}/share/texmf
 

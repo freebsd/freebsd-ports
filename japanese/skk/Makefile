@@ -1,13 +1,12 @@
 # New ports collection makefile for:	skk
-# Version required:	9.6
 # Date created:		04 Mar 1997
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	skk9.6
-PKGNAME=	ja-skk-9.6
+PORTNAME=	skk
+PORTVERSION=	9.6
 CATEGORIES=	japanese elisp
 MASTER_SITES=	# empty
 DISTFILES=	# empty

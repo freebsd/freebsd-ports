@@ -1,5 +1,4 @@
 # New ports collection makefile for:   ptex-pkfonts
-# Version required:    ?
 # Date created:        24 Dec 1999
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #

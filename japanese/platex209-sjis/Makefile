@@ -1,21 +1,22 @@
 # New ports collection makefile for:	platex209-sjis
-# Version required:	2.09
 # Date created:		01 Jan 1998
 # Whom:			Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	platex209
-PKGNAME=	ja-platex209-sjis-1.0
+PORTNAME=	platex209
+PORTVERSION=	1.0
+PKGNAMESUFFIX=	-sjis
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-sjis \
+BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX} \
 		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-sjis
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX}
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of platex209-*
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	tcsh with multibyte support enabled
-# Version required:	6.08.05
 # Date created:		29 November 1997
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcsh-6.08.05
-PKGNAME=	ja-tcsh-6.08.05
+PORTNAME=	tcsh
+PORTVERSION=	6.08.05
 CATEGORIES=	japanese shells
 MASTER_SITES=	ftp://ftp.astron.com/pri/
 

@@ -1,23 +1,26 @@
 # New ports collection makefile for:	pTeX-common
-# Version required:	2.1.8
 # Date created:		05 Oct 1997
 # Whom:			max
 #
 # $FreeBSD$
 #
 
-DISTNAME=	web2c-7.2
-PKGNAME=	ja-ptex-common-2.1.8
+PORTNAME=	ptex
+PORTVERSION=	2.1.8
+PKGNAMESUFFIX=	-common
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} web-7.2.tar.gz texmflib-7.3.tar.gz
+DISTNAME=	web2c-7.2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		web-7.2.tar.gz \
+		texmflib-7.3.tar.gz
 
 MAINTAINER=	max@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} web-7.2.tar.gz
-DIST_SUBDIR=	ptex
+EXTRACT_ONLY=	${DISTFILES:Ntexmflib-*}
+DIST_SUBDIR=	${PORTNAME}
 STRIP=		# some shell scripts
 MAN1=		access.1 amstex.1 bibtex.1 dmp.1 dvicopy.1 dvitype.1	\
 		eplain.1 etex.1 gftodvi.1 gftopk.1 gftype.1 kpsestat.1	\

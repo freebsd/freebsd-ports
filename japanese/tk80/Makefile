@@ -1,24 +1,24 @@
 # New ports collection makefile for:	ja-tk8.0
-# Version required:	8.0
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.0.5
-PKGNAME=	ja-tk-8.0.5
+PORTNAME=	tk
+PORTVERSION=	8.0.5
 CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk8.0.5jp1.7.patch.gz
+PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
-VERSION=	8.0
+VERSION=	${PORTVERSION:R}
 TOPDIR=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${TOPDIR}/unix
 .if defined(PATCH_DEBUG)

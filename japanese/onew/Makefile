@@ -1,20 +1,21 @@
 # New ports collection makefile for:	ONEW for Wnn4
-# Version required:	jvim2.0r+onew2.2.10
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jvim2.0r+onew2.2.10
-PKGNAME?=	ja-onew-wnn4-2.2.10
+PORTNAME=	onew
+PORTVERSION?=	2.2.10
+PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
+DISTNAME=	jvim2.0r+${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/onew
+WRKSRC=		${WRKDIR}/${PORTNAME}
 # A value 'all' must not be set to TARGET.
 ALL_TARGET=	
 
