@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	-athena-3.0.tar.gz
+EXTRACT_SUFX=	-athena-3.0.tar.Z
 
 MAINTAINER=	shanee@augusta.de
 
