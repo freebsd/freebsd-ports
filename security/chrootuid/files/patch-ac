@@ -1,0 +1,137 @@
+Message #30124 (162 lines)
+From phil@globnix.org Fri Mar 31 01:56:37 2000
+Date: Fri, 31 Mar 2000 11:56:07 +0200
+From: Phil Pennock <phil@globnix.org>
+To: truckman@FreeBSD.org, wietse@PORCUPINE.ORG
+Subject: chrootuid patch for *BSD
+Organisation: Organisation?  Here?  No, over there ---->
+X-NIC-Handles: COCO-149560 (ignore PP8185)
+X-Disclaimer: Any views expressed in this message, where not explicitly
+	attributed otherwise, are mine and mine alone.  Such views
+	do not necessarily coincide with those of any organisation
+	or company with which I am or have been affiliated.
+X-Phase-of-Moon: The Moon is Waning Crescent (20% of Full)
+X-No-HTML: <!-- TINC
+
+
+--ikeVEW9yuYc//A+q
+Content-Type: text/plain; charset=us-ascii
+
+This has been tested on FreeBSD, and tries to make things simple.  The
+'problem' with chrootuid as stands (version 1.2) is that it does not
+initialise supplementary groups.
+
+The attached patch adds this functionality.  To use properly under BSD,
+add -DUSE_SYSCTL to the cc command-line - I've tested with and without
+that option.  Wietse, sorry for changing the declaration of main() - I'm
+an ANSI-C type person and since I was making the other changes anyway I
+decided that I might as well.
+
+Oh, and the patch also ensures that a LOG_NOTICE syslog is always
+generated when the program is invoked with enough parameters to not be
+an obvious error.
+
+HTH
+-- 
+HTML email - just say no --> Phil Pennock
+"We've got a patent on the conquering of a country through the use of force.
+ We believe in world peace through extortionate license fees."  -Bluemeat
+
+--ikeVEW9yuYc//A+q
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: attachment; filename="chrootuid.patch"
+
+--- chrootuid.c.orig	Fri Mar 31 10:56:38 2000
++++ chrootuid.c	Fri Mar 31 11:47:31 2000
+@@ -34,6 +34,7 @@
+ /* VERSION/RELEASE
+ /*	1.2
+ /*--*/
++/* MODIFIED FROM ORIGINAL SOURCE! <phil@globnix.org> */
+ 
+ #ifndef lint
+ static char sccsid[] = "@(#) chrootuid.c 1.2 93/08/15 22:19:27";
+@@ -41,14 +42,25 @@
+ 
+ /* System libraries. */
+ 
++#include <stdlib.h>
+ #include <pwd.h>
+ #include <syslog.h>
++#include <sys/param.h>
++#ifdef USE_SYSCTL
++# include <sys/types.h>
++# include <sys/sysctl.h>
++#else
++# ifndef NGROUPS
++#  define NGROUPS 16
++# endif
++#endif
+ 
+-main(argc, argv)
+-int     argc;
+-char  **argv;
++int
++main(int argc, char *argv[])
+ {
+     struct passwd *pwd;
++    int *groups;
++    int ngroups;
+ 
+     /*
+      * Open a channel to the syslog daemon. Older versions of openlog()
+@@ -71,6 +83,10 @@
+ 	syslog(LOG_ERR, "usage: %s path user command", argv[0]);
+ 	return (0);
+     }
++
++    syslog(LOG_NOTICE, "chrootuid: dir(%s) user(%s) command(%s)",
++	argv[1], argv[2], argv[3]);
++
+     /* Must step into the new subtree. */
+ 
+     if (chdir(argv[1])) {
+@@ -83,6 +99,30 @@
+ 	syslog(LOG_ERR, "%s: user unknown", argv[2]);
+ 	return (0);
+     }
++#ifdef USE_SYSCTL
++    {
++	int mib[2];
++	size_t len;
++
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_NGROUPS;
++	len = sizeof(ngroups);
++	if (sysctl(mib, 2, &ngroups, &len, NULL, 0)) {
++	    syslog(LOG_ERR, "failed to get kern.ngroups: %m");
++	    return (0);
++	}
++    }
++#else
++    ngroups = NGROUPS;
++#endif
++    if (!(groups = calloc(ngroups, sizeof(int)))) {
++	syslog(LOG_ERR, "failed to allocate memory: %m");
++	return (0);
++    }
++    if (getgrouplist(argv[2], pwd->pw_gid, groups, &ngroups) == -1) {
++	syslog(LOG_WARNING, "failed to get all groups for user '%s': %m",
++	    argv[2]);
++    }
+     /* Do the chroot() before giving away root privileges. */
+ 
+     if (chroot(argv[1])) {
+@@ -94,6 +134,9 @@
+     if (setgid(pwd->pw_gid)) {
+ 	syslog(LOG_ERR, "setgid(%d): %m", pwd->pw_gid);
+ 	return (0);
++    }
++    if (setgroups(ngroups, (const gid_t *)groups)) {
++	syslog(LOG_WARNING, "setgroups failed: %m");
+     }
+     if (setuid(pwd->pw_uid)) {
+ 	syslog(LOG_ERR, "setuid(%d): %m", pwd->pw_uid);
+
+--ikeVEW9yuYc//A+q--
+
