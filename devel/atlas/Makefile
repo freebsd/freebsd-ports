@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Atlas
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.93
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/Atlas-C++/ \
-		ftp://victor.worldforge.org/pub/worldforge/libs/Atlas-C++/
+MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/Atlas-C++/transitional/ \
+		http://purple.worldforge.org/wf/downloads/libs/Atlas-C++/transitional/
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -22,14 +22,14 @@ GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| install-data-local||g' \
+	@${REINPLACE_CMD} -e 's| install-docDATA | |g' \
 		-e 's|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in README COPYING AUTHORS THANKS NEWS
+.for docfile in README COPYING AUTHORS THANKS NEWS ChangeLog TODO HACKING ROADMAP
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
