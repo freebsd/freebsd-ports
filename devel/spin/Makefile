@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.8
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://ftp.freesoftware.com/pub/netlib/spin/
-DISTFILES=	spin347.tar.gz html.tar.gz
+DISTFILES=	spin348.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
