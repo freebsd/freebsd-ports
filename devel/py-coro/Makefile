@@ -6,48 +6,54 @@
 #
 
 PORTNAME=		coro
-PORTVERSION=		20000424
+PORTVERSION=		2001.02.02
 CATEGORIES=		devel python
-MASTER_SITES=		http://www.egroups.com/files/python-coro/egroups/
+MASTER_SITES=		http://www.dotfunk.com/projects/coro/
 PKGNAMEPREFIX=		py-
-DISTNAME=		egp-coro-20000424
+DISTNAME=		${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=		kbyanc@posi.net
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro \
-			python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
+BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 
-CORO_MODULES=		coroutinemodule.so sendfilemodule.so
-CORO_PACKAGE=		coro corodns coromysql corourl \
-			coutil
-CORO_EXAMPLES= 		backdoor potato newpotato fringe \
-			coro_ehttpd crawler fifo
-CORO_DOCS=		README coro.txt
+USE_PYTHON=		yes
+PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
+			EXTRA_INCLUDE="-I${LOCALBASE}/include" \
+			EXTRA_LIB="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		installdir="${PREFIX}" \
+			PYTHON="${PYTHON_CMD}" \
+			prefix="${PREFIX}"
 
-post-build:
-	@${LOCALBASE}/bin/python \
-		${LOCALBASE}/lib/python1.5/compileall.py ${WRKSRC}
+COROMOD_MAKE=		cd ${WRKSRC}/coromodule && ${MAKE_ENV} ${MAKE}
+CORO_PACKAGE=		__init__ coro corodns coro_fd coro_subproc corodevice \
+			dnsclass dnslib dnsopcode dnstype fifo
+CORO_EXAMPLES= 		backdoor coro_fd coro_subproc coro_ehttpd \
+			corohttpd
+
+do-configure:
+	@${COROMOD_MAKE} -f Makefile.pre.in boot ${CONFIGURE_ARGS}
+
+do-build:
+	@${COROMOD_MAKE}
+
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/python1.5/site-packages
-	${MKDIR} ${PREFIX}/lib/python1.5/site-packages/coro
+	@${COROMOD_MAKE} install
+
+	${MKDIR} ${PYTHON_SITELIBDIR}
+	${MKDIR} ${PYTHON_SITELIBDIR}/coro
 	${MKDIR} ${PREFIX}/share/examples/py-coro
-.for i in ${CORO_MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/python1.5/site-packages
-.endfor
 .for i in ${CORO_PACKAGE}
-	${INSTALL_DATA} ${WRKSRC}/${i}.py ${WRKSRC}/$i.pyc \
-		${PREFIX}/lib/python1.5/site-packages/coro
-.endfor
-.for i in ${CORO_EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${i}.py ${WRKSRC}/$i.pyc \
-		${PREFIX}/share/examples/py-coro
+	${INSTALL_DATA} ${WRKSRC}/${i}.py* \
+		${PYTHON_SITELIBDIR}/coro
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/py-coro
-.for i in ${CORO_DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/share/doc/py-coro
+.for i in ${CORO_EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${i}.py* \
+		${PREFIX}/share/examples/py-coro
 .endfor
 .endif
 
