@@ -1,12 +1,12 @@
---- x.c.orig	Sun Dec  7 17:49:06 1997
-+++ x.c	Mon Dec 15 11:24:40 1997
-@@ -79,8 +79,8 @@
+--- x.c.orig	Wed May 13 09:39:26 1998
++++ x.c	Thu May 28 03:09:27 1998
+@@ -80,8 +80,8 @@
  }
  
  #if	CHINESE
 -char *Big5FontName="et24m";
 -char *AscFontName="vga12x24";
-+char *Big5FontName="kc24";
++char *Big5FontName="kc24f";
 +char *AscFontName="12x24";
  #else
  char *AscFontName="10x20";
