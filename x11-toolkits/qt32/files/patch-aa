@@ -1,0 +1,50 @@
+--- src/styles/qcommonstyle.cpp	Thu Apr 25 22:37:37 2002
++++ src/styles/qcommonstyle.cpp.qt-copy	Thu Apr 25 22:38:42 2002
+@@ -702,9 +702,9 @@
+     case CE_ProgressBarContents:
+ 	{
+ 	    const QProgressBar *progressbar = (const QProgressBar *) widget;
+-
+ 	    bool reverse = QApplication::reverseLayout();
+-	    int w = r.width() - 4;
++	    int fw = 2;
++	    int w = r.width() - 2*fw;
+ 	    if ( !progressbar->totalSteps() ) {
+ 		// draw busy indicator
+ 		int x = progressbar->progress() % (w * 2);
+@@ -712,7 +712,7 @@
+ 		    x = 2 * w - x;
+ 		x = reverse ? r.right() - x : x + r.x();
+ 		p->setPen( QPen(cg.highlight(), 4) );
+-		p->drawLine(x, r.y() + 1, x, r.height() - 2);
++		p->drawLine(x, r.y() + 1, x, r.height() - fw);
+ 	    } else {
+ 		const int unit_width = pixelMetric(PM_ProgressBarChunkWidth, widget);
+ 		int u;
+@@ -721,7 +721,7 @@
+ 		else
+ 		    u = w / unit_width;
+ 		int p_v = progressbar->progress();
+-		int t_s = progressbar->totalSteps();
++		int t_s = progressbar->totalSteps() ? progressbar->totalSteps() : 1;
+ 
+ 		if ( u > 0 && p_v >= INT_MAX / u && t_s >= u ) {
+ 		    // scale down to something usable.
+@@ -731,7 +731,7 @@
+ 
+ 		// nu < tnu, if last chunk is only a partial chunk
+ 		int tnu, nu;
+-		tnu = nu = p_v * u / (t_s - 1);
++		tnu = nu = p_v * u / t_s;
+ 
+ 		if (nu * unit_width > w)
+ 		    nu--;
+@@ -742,7 +742,7 @@
+ 		// display at the end.
+ 		int x = 0;
+ 		int x0 = reverse ? r.right() - ((unit_width > 1) ?
+-						unit_width : 2) : r.x() + 2;
++						unit_width : fw) : r.x() + fw;
+ 		for (int i=0; i<nu; i++) {
+ 		    drawPrimitive( PE_ProgressBarChunk, p,
+ 				   QRect( x0+x, r.y(), unit_width, r.height() ),
