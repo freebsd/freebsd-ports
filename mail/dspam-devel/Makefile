@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
@@ -17,7 +17,9 @@ OPTIONS=	MYSQL "Use MySQL and not db4 as database" off \
 		MAILDROP "Use Maildrop as local delivery agent" off \
 		PROCMAIL "Use Procmail as local delivery agent" off \
 		QMAIL "Play nice with Qmail mail server" off \
-		ENABLE_SPAM_DELIVERY "Deliver messages marked as spam" off
+		ENABLE_SPAM_DELIVERY "Deliver messages marked as spam" off \
+		SIGNATURE_HEADERS "Put signatures in the header" off \
+		WHITELIST "Automatic whitelisting of ham" off
 
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
@@ -69,6 +71,14 @@ CONFIGURE_ARGS+=	--with-signature-life=${WITH_SIGNATURE_LIFE}
 
 .if defined(WITH_ENABLE_SPAM_DELIVERY)
 CONFIGURE_ARGS+=	--enable-spam-delivery
+.endif
+
+.if defined(WITH_SIGNATURE_HEADERS)
+CONFIGURE_ARGS+=	--enable-signature-headers
+.endif
+
+.if defined(WITH_WHITELIST)
+CONFIGURE_ARGS+=	--enable-whitelist
 .endif
 
 DOCS=		CHANGE README
