@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmorph
-PORTVERSION=	2000.04.28
+PORTVERSION=	2001.02.22
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.colorado-research.com/~gourlay/software/Graphics/Xmorph/pub/
-DISTNAME=	${PORTNAME}-2000apr28
+DISTNAME=	${PORTNAME}-2001feb22
 
 MAINTAINER=	ports@FreeBSD.org
 
