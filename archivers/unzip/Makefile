@@ -8,7 +8,8 @@
 PORTNAME=	unzip
 PORTVERSION=	5.42
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/ \
+		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
 DISTNAME=	${PORTNAME}542
 
 MAINTAINER=	ache@FreeBSD.org
