@@ -31,9 +31,6 @@ MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
 		mibhelp.1 mrtg.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 reference.1 \
 		squid.1 unix-guide.1 webserver.1
 
-post-patch:
-		${FIND} ${WRKSRC} -type d -name CVS -print | ${XARGS} ${RM} -fr
-
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
 		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
