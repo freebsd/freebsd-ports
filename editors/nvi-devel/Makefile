@@ -9,8 +9,7 @@ PORTNAME=	nvi
 PORTVERSION=	1.81.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
