@@ -54,7 +54,7 @@ share/doc/commons-lang/help-doc.html
 share/doc/commons-lang/deprecated-list.html
 share/doc/commons-lang/stylesheet.css
 share/doc/commons-lang/allclasses-frame.html
-share/java/classes/commons-lang-1.0.jar
+share/java/classes/commons-lang.jar
 @dirrm share/doc/commons-lang/org/apache/commons/lang/builder
 @dirrm share/doc/commons-lang/org/apache/commons/lang/enum
 @dirrm share/doc/commons-lang/org/apache/commons/lang/exception
