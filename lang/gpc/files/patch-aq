@@ -1,0 +1,121 @@
+diff -P -N -C3 -r gpc.std/p/gpc-common.c gpc/p/gpc-common.c
+*** p/gpc-common.c.orig	Sat Dec 26 02:06:58 1998
+--- p/gpc-common.c		Thu Mar 23 18:24:40 2000
+***************
+*** 797,803 ****
+  
+  	    record_function_format (DECL_NAME (decl),
+  				    DECL_ASSEMBLER_NAME (decl),
+! 				    is_scan, format_num, first_arg_num);
+  	    break;
+  	  }
+  
+--- 797,803 ----
+  
+  	    record_function_format (DECL_NAME (decl),
+  				    DECL_ASSEMBLER_NAME (decl),
+! 				    is_scan, 0, format_num, first_arg_num);
+  	    break;
+  	  }
+  
+***************
+*** 1038,1043 ****
+--- 1038,1044 ----
+    tree assembler_name;		/* optional mangled identifier (for C++) */
+    int is_scan;			/* TRUE if *scanf */
+    int format_num;		/* number of format argument */
++   int null_format_ok;          /* TRUE if the format string may be NULL */
+    int first_arg_num;		/* number of first arg (zero for varargs) */
+  } function_format_info;
+  
+***************
+*** 1068,1082 ****
+  void
+  init_function_format_info ()
+  {
+!   record_function_format (get_identifier ("printf"), NULL_TREE, 0, 1, 2);
+!   record_function_format (get_identifier ("fprintf"), NULL_TREE, 0, 2, 3);
+!   record_function_format (get_identifier ("sprintf"), NULL_TREE, 0, 2, 3);
+!   record_function_format (get_identifier ("scanf"), NULL_TREE, 1, 1, 2);
+!   record_function_format (get_identifier ("fscanf"), NULL_TREE, 1, 2, 3);
+!   record_function_format (get_identifier ("sscanf"), NULL_TREE, 1, 2, 3);
+!   record_function_format (get_identifier ("vprintf"), NULL_TREE, 0, 1, 0);
+!   record_function_format (get_identifier ("vfprintf"), NULL_TREE, 0, 2, 0);
+!   record_function_format (get_identifier ("vsprintf"), NULL_TREE, 0, 2, 0);
+  
+    record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
+    record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
+--- 1069,1083 ----
+  void
+  init_function_format_info ()
+  {
+!   record_function_format (get_identifier ("printf"), NULL_TREE, 0, 0, 1, 2);
+!   record_function_format (get_identifier ("fprintf"), NULL_TREE, 0, 0, 2, 3);
+!   record_function_format (get_identifier ("sprintf"), NULL_TREE, 0, 0, 2, 3);
+!   record_function_format (get_identifier ("scanf"), NULL_TREE, 1, 0, 1, 2);
+!   record_function_format (get_identifier ("fscanf"), NULL_TREE, 1, 0, 2, 3);
+!   record_function_format (get_identifier ("sscanf"), NULL_TREE, 1, 0, 2, 3);
+!   record_function_format (get_identifier ("vprintf"), NULL_TREE, 0, 0, 1, 0);
+!   record_function_format (get_identifier ("vfprintf"), NULL_TREE, 0, 0, 2, 0);
+!   record_function_format (get_identifier ("vsprintf"), NULL_TREE, 0, 0, 2, 0);
+  
+    record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
+    record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
+***************
+*** 1093,1104 ****
+     (e.g. for varargs such as vfprintf).  */
+  
+  void
+! record_function_format (name, assembler_name, is_scan,
+  			format_num, first_arg_num)
+        tree name;
+        tree assembler_name;
+        int is_scan;
+        int format_num;
+        int first_arg_num;
+  {
+    function_format_info *info;
+--- 1094,1106 ----
+     (e.g. for varargs such as vfprintf).  */
+  
+  void
+! record_function_format (name, assembler_name, is_scan, null_format_ok,
+  			format_num, first_arg_num)
+        tree name;
+        tree assembler_name;
+        int is_scan;
+        int format_num;
++       int null_format_ok;
+        int first_arg_num;
+  {
+    function_format_info *info;
+***************
+*** 1122,1127 ****
+--- 1124,1130 ----
+  
+    info->is_scan = is_scan;
+    info->format_num = format_num;
++   info->null_format_ok = null_format_ok;
+    info->first_arg_num = first_arg_num;
+  }
+  
+diff -P -N -C3 -r gpc.std/p/gpc-defs.h gpc/p/gpc-defs.h
+*** p/gpc-defs.h.orig	Mon Dec 21 04:41:07 1998
+--- p/gpc-defs.h	Thu Mar 23 18:20:44 2000
+***************
+*** 622,628 ****
+  extern tree build_pascal_unary_op PROTO ((enum tree_code, tree, int));
+  extern tree build_pascal_pointer_reference PROTO ((tree));
+  extern tree build_pascal_address_expression PROTO ((tree));
+! extern void record_function_format PROTO ((tree, tree, int, int, int));
+  
+  /*
+   * construct an identifier_node for the assembler-name
+--- 622,628 ----
+  extern tree build_pascal_unary_op PROTO ((enum tree_code, tree, int));
+  extern tree build_pascal_pointer_reference PROTO ((tree));
+  extern tree build_pascal_address_expression PROTO ((tree));
+! extern void record_function_format PROTO ((tree, tree, int, int, int, int));
+  
+  /*
+   * construct an identifier_node for the assembler-name

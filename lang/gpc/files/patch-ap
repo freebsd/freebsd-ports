@@ -1,0 +1,18 @@
+*** tree.c.orig	Tue Mar  3 02:37:46 1998
+--- tree.c	Thu Mar 23 15:58:48 2000
+***************
+*** 4742,4747 ****
+--- 4742,4754 ----
+    for (i = 0; i < bit_size; i++)
+      buffer[i] = 0;
+  
++ #ifdef GPC
++   /* Since sets are word-aligned in Pascal,
++      the first bits in the set may be unused.  */
++ 
++   domain_min -= domain_min % BITS_PER_WORD;
++ #endif /* GPC */
++ 
+    for (vals = TREE_OPERAND (init, 1); 
+         vals != NULL_TREE; vals = TREE_CHAIN (vals))
+      {

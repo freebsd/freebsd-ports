@@ -1,0 +1,33 @@
+*** convert.c.orig	Thu Aug  7 13:44:17 1997
+--- convert.c		Thu Mar 23 14:54:56 2000
+***************
+*** 288,294 ****
+--- 288,299 ----
+  
+  		/* Can't do arithmetic in enumeral types
+  		   so use an integer type that will hold the values.  */
++ #ifdef GPC
++               if (TREE_CODE (typex) == ENUMERAL_TYPE
++                   || TREE_CODE (typex) == BOOLEAN_TYPE)
++ #else /* not GPC */
+  		if (TREE_CODE (typex) == ENUMERAL_TYPE)
++ #endif /* not GPC */
+  		  typex = type_for_size (TYPE_PRECISION (typex),
+  					 TREE_UNSIGNED (typex));
+  
+***************
+*** 326,332 ****
+--- 331,343 ----
+  
+  	    /* Can't do arithmetic in enumeral types
+  	       so use an integer type that will hold the values.  */
++ #ifdef GPC
++           if (TREE_CODE (typex) == ENUMERAL_TYPE
++               || TREE_CODE (typex) == CHAR_TYPE
++               || TREE_CODE (typex) == BOOLEAN_TYPE)
++ #else /* not GPC */
+  	    if (TREE_CODE (typex) == ENUMERAL_TYPE)
++ #endif /* not GPC */
+  	      typex = type_for_size (TYPE_PRECISION (typex),
+  				     TREE_UNSIGNED (typex));
+  

@@ -1,0 +1,49 @@
+*** optabs.c.orig	Sat Feb 14 13:41:17 1998
+--- optabs.c		Thu Mar 23 15:38:53 2000
+***************
+*** 1379,1384 ****
+--- 1379,1422 ----
+  
+  	      ok = 1;
+  	    }
++ #ifdef GPC
++          /* Optimization if real part of divisor is zero.  */
++        else if (real1 == 0)
++          {
++            /* (a+ib) / (0+id) == -i(a+ib) / d == (b/d + i(-a/d) */
++ 
++            /* Fetch imag1 from memory only once.  */
++            imag1 = force_reg (submode, imag1);
++ 
++            if (class == MODE_COMPLEX_FLOAT)
++              res = expand_binop (submode, binoptab, imag0, imag1,
++                                  realr, unsignedp, methods);
++            else
++              res = expand_divmod (0, TRUNC_DIV_EXPR, submode,
++                                   imag0, imag1, realr, unsignedp);
++            if (res == 0)
++              break;
++            else if (res != realr)
++              emit_move_insn (realr, res);
++ 
++            if (class == MODE_COMPLEX_FLOAT)
++              res = expand_binop (submode, binoptab, real0,
++                                  imag1, imagr, unsignedp, methods);
++            else
++              res = expand_divmod (0, TRUNC_DIV_EXPR, submode,
++                                   real0, imag1, imagr, unsignedp);
++ 
++            /* Negate the imaginary part.  */
++            res = expand_unop (submode, neg_optab,
++                               res, imagr, unsignedp);
++            if (res == 0)
++              break;
++            else if (res != imagr)
++              emit_move_insn (imagr, res);
++ 
++            ok = 1;
++          }
++ #endif /* GPC */
+  	  else
+  	    {
+  	      /* Divisor is of complex type:

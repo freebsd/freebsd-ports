@@ -1,0 +1,44 @@
+*** function.c.orig	Sat Feb 28 22:58:16 1998
+--- function.c		Thu Mar 23 15:34:50 2000
+***************
+*** 463,468 ****
+--- 463,491 ----
+  /* Given a function decl for a containing function,
+     return the `struct function' for it.  */
+  
++ #ifdef GPC
++ struct function *
++ maybe_find_function_data (decl)
++      tree decl;
++ {
++   struct function *p;
++   for (p = outer_function_chain; p; p = p->next)
++    if (p->decl == decl)
++      return p;
++  return (struct function *)NULL;
++ }
++ 
++ struct function *
++ find_function_data (decl)
++     tree decl;
++ {
++  struct function *p = maybe_find_function_data (decl);
++  if (!p)
++    abort ();
++  return p;
++ }
++ 
++ #else /* not GPC */
+  struct function *
+  find_function_data (decl)
+       tree decl;
+***************
+*** 475,480 ****
+--- 498,504 ----
+  
+    abort ();
+  }
++ #endif /* not GPC */
+  
+  /* Save the current context for compilation of a nested function.
+     This is called from language-specific code.

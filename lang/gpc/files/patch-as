@@ -1,0 +1,11 @@
+--- p/units/regexc.c	Tue Jan  5 08:53:29 1999
++++ p/units/regexc.c.new	Sun Apr 16 01:03:17 2000
+@@ -21,7 +21,7 @@
+ */
+ 
+ #include <stdlib.h>
+-#include <rxposix.h>
++#include <gnuregex.h>
+ 
+ typedef unsigned char Boolean;
+ 

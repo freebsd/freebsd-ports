@@ -1,0 +1,95 @@
+*** toplev.c.orig	Thu Mar 23 14:19:51 2000
+--- toplev.c		Thu Mar 23 15:57:06 2000
+***************
+*** 304,309 ****
+--- 304,315 ----
+  
+  int optimize = 0;
+  
++ #ifdef GPC
++ /* Nonzero if called with --version (i.e. gpc called with --verbose).  */
++ 
++ int version_flag = 0;
++ #endif /* GPC */
++ 
+  /* Number of error messages and warning messages so far.  */
+  
+  int errorcount = 0;
+***************
+*** 590,595 ****
+--- 596,607 ----
+  
+  int flag_pedantic_errors = 0;
+  
++ #ifdef GPC
++ /* Nonzero means copy the source input to stderr.  */
++ 
++ extern int flag_debug_source;
++ #endif /* GPC */
++ 
+  /* flag_schedule_insns means schedule insns within basic blocks (before
+     local_alloc).
+     flag_schedule_insns_after_reload means schedule insns after
+***************
+*** 2897,2902 ****
+--- 2909,2921 ----
+  #define ASM_FINISH_DECLARE_OBJECT(FILE, DECL, TOP, END)
+  #endif
+  
++ /* Dito.  */
++ #ifdef GPC
++ #define NOT_IN_GPC(X)
++ #else /* not GPC */
++ #define NOT_IN_GPC(X) X
++ #endif /* not GPC */
++ 
+    /* Forward declarations for nested functions are not "external",
+       but we need to treat them as if they were.  */
+    if (TREE_STATIC (decl) || DECL_EXTERNAL (decl)
+***************
+*** 2914,2922 ****
+  		 /* Don't output anything
+  		    when a tentative file-scope definition is seen.
+  		    But at end of compilation, do output code for them.  */
+! 		 if (! (! at_end && top_level
+  			&& (DECL_INITIAL (decl) == 0
+! 			    || DECL_INITIAL (decl) == error_mark_node)))
+  		   assemble_variable (decl, top_level, at_end, 0);
+  	       if (!output_bytecode
+  		   && decl == last_assemble_variable_decl)
+--- 2933,2941 ----
+  		 /* Don't output anything
+  		    when a tentative file-scope definition is seen.
+  		    But at end of compilation, do output code for them.  */
+! NOT_IN_GPC (     if (! (! at_end && top_level
+  			&& (DECL_INITIAL (decl) == 0
+!                           || DECL_INITIAL (decl) == error_mark_node)))     )
+  		   assemble_variable (decl, top_level, at_end, 0);
+  	       if (!output_bytecode
+  		   && decl == last_assemble_variable_decl)
+***************
+*** 3741,3747 ****
+--- 3760,3768 ----
+    register int i;
+    char *filename = 0;
+    int flag_print_mem = 0;
++ #ifndef GPC
+    int version_flag = 0;
++ #endif /* not GPC */
+    char *p;
+  
+    /* save in case md file wants to emit args as a comment.  */
+***************
+*** 3956,3961 ****
+--- 3977,3987 ----
+  		  case 'R':
+  		    sched2_dump = 1;
+  		    break;
++ #ifdef GPC
++                 case 'Y':
++                   flag_debug_source = 1;
++                   break;
++ #endif /* GPC */
+  		  case 'y':
+  		    set_yydebug (1);
+  		    break;

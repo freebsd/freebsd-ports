@@ -1,0 +1,41 @@
+*** prefix.c.orig	Fri Feb  6 16:04:22 1998
+--- prefix.c		Thu Mar 23 15:40:38 2000
+***************
+*** 232,238 ****
+       char *name;
+  {
+    char code = name[0];
+!   char *key, *prefix = 0;
+    int keylen;
+  
+    if (code != '@' && code != '$')
+--- 232,238 ----
+       char *name;
+  {
+    char code = name[0];
+!   char *key, *prefix = 0, *oldname = name;
+    int keylen;
+  
+    if (code != '@' && code != '$')
+***************
+*** 272,278 ****
+        prefix[strlen (prefix) - 1] = 0;
+      }
+  
+!   return concat (prefix, name, NULL_PTR);
+  }
+  
+  /* Update PATH using KEY if PATH starts with PREFIX.  */
+--- 272,283 ----
+        prefix[strlen (prefix) - 1] = 0;
+      }
+  
+!   name = concat (prefix, name, NULL_PTR);
+! 
+!   if (!strcmp (name, oldname))
+!     return 0;
+! 
+!   return name;
+  }
+  
+  /* Update PATH using KEY if PATH starts with PREFIX.  */
