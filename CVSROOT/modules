@@ -8606,6 +8606,7 @@ xfce4-systray	ports/x11-wm/xfce4-systray
 xfce4-toys	ports/games/xfce4-toys
 xfce4-utils	ports/sysutils/xfce4-utils
 xfce4-wm	ports/x11-wm/xfce4-wm
+xfce4-wm-themes	ports/misc/xfce4-wm-themes
 xfed		ports/x11-fonts/xfed
 xfedor		ports/x11/xfedor
 xferstats	ports/net/xferstats
