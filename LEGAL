@@ -134,6 +134,7 @@ JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
 ksh93			ports/shells/ksh93	User must agree to "regularly monitor the Website".
 l_cc_p_6.0.139.tar	ports/lang/icc		No redistribution allowed
+lgrind			ports/print/lgrind	Contains non-free code written by Van Jacobson
 linux-netscape6		ports/www/linux-netscape6	Java plugin is from Sun.
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
