@@ -1,6 +1,6 @@
---- bin/dxworker.in.orig	Fri Sep  3 17:52:03 1999
-+++ bin/dxworker.in	Wed Nov  3 12:52:46 1999
-@@ -22,10 +22,10 @@
+--- bin/dxworker.in.orig	Sun Dec 19 00:22:09 1999
++++ bin/dxworker.in	Fri Feb 11 19:21:17 2000
+@@ -22,8 +22,8 @@
  # determine the machine type, and set uiarch, exarch and thisver defaults
  switch ( $thissys )
    case FreeBSD:
@@ -9,12 +9,9 @@
 +    set exarch=$thismach
 +    set uiarch=$thismach
  
--    set remove=/usr/bin/rsh
-+    set remote=/usr/bin/rsh
+     set remote=/usr/bin/rsh
  
-     breaksw
- 
-@@ -136,7 +136,7 @@
+@@ -139,7 +139,7 @@
  
  # default to running locally, from /usr/lpp/dx  
  set exhost=$thishost
@@ -23,7 +20,7 @@
  set startup=1   # run the startup window by default
  
  
-@@ -1456,7 +1456,7 @@
+@@ -1459,7 +1459,7 @@
    case aviion:
    case alphax:
    case linux:

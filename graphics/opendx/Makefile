@@ -1,13 +1,13 @@
 # New ports collection makefile for:	opendx
-# Version required:	4.0.9
+# Version required:	4.0.10
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dx-4.0.9
-PKGNAME=	opendx-4.0.9
+DISTNAME=	dx-4.0.10
+PKGNAME=	opendx-4.0.10
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
 
 USE_XLIB=	yes
 REQUIRES_MOTIF=	yes
+USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -Dfreebsd -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
