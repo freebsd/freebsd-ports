@@ -1,0 +1,101 @@
+bin/gimv
+lib/gimageview/archiver/libarc_lha_ext.so
+lib/gimageview/archiver/libarc_rar_ext.so
+lib/gimageview/archiver/libarc_tar_ext.so
+lib/gimageview/archiver/libarc_zip_ext.so
+lib/gimageview/image_saver/libpng_saver.so
+lib/gimageview/image_saver/libpnm_saver.so
+lib/gimageview/image_saver/libxvpics_saver.so
+lib/gimageview/thumbnail/libee_thumb.so
+lib/gimageview/thumbnail/libgimv_thumb.so
+lib/gimageview/thumbnail/libgqview_thumb.so
+lib/gimageview/thumbnail/libkonq_old_thumb.so
+lib/gimageview/thumbnail/libkonqueror_thumb.so
+lib/gimageview/thumbnail/libnautilus_thumb.so
+lib/gimageview/thumbnail/libxvpics_thumb.so
+share/gimageview/doc/html/ja/gimageview-1.html
+share/gimageview/doc/html/ja/gimageview-10.html
+share/gimageview/doc/html/ja/gimageview-11.html
+share/gimageview/doc/html/ja/gimageview-12.html
+share/gimageview/doc/html/ja/gimageview-2.html
+share/gimageview/doc/html/ja/gimageview-3.html
+share/gimageview/doc/html/ja/gimageview-4.html
+share/gimageview/doc/html/ja/gimageview-5.html
+share/gimageview/doc/html/ja/gimageview-6.html
+share/gimageview/doc/html/ja/gimageview-7.html
+share/gimageview/doc/html/ja/gimageview-8.html
+share/gimageview/doc/html/ja/gimageview-9.html
+share/gimageview/doc/html/ja/gimageview.css
+share/gimageview/doc/html/ja/gimageview.html
+share/gimageview/doc/text/C/COPYING
+share/gimageview/doc/text/ja/COPYING.jp
+share/gimageview/doc/text/ja/ChangeLog.jp
+share/gimageview/doc/text/ja/INSTALL.jp
+share/gimageview/doc/text/ja/README.jp
+share/gimageview/doc/text/ja/TIPS.jp
+share/gimageview/doc/text/ja/gimageview.txt
+share/gimageview/pixmaps/default/alert.xpm
+share/gimageview/pixmaps/default/archive.xpm
+share/gimageview/pixmaps/default/back.xpm
+share/gimageview/pixmaps/default/close.xpm
+share/gimageview/pixmaps/default/dotfile.xpm
+share/gimageview/pixmaps/default/eject.xpm
+share/gimageview/pixmaps/default/ff.xpm
+share/gimageview/pixmaps/default/folder-go.xpm
+share/gimageview/pixmaps/default/folder-link-open.xpm
+share/gimageview/pixmaps/default/folder-link.xpm
+share/gimageview/pixmaps/default/folder-open.xpm
+share/gimageview/pixmaps/default/folder-up.xpm
+share/gimageview/pixmaps/default/folder.xpm
+share/gimageview/pixmaps/default/folder48.xpm
+share/gimageview/pixmaps/default/forward.xpm
+share/gimageview/pixmaps/default/fullscreen.xpm
+share/gimageview/pixmaps/default/gimageview.xpm
+share/gimageview/pixmaps/default/home.xpm
+share/gimageview/pixmaps/default/image.xpm
+share/gimageview/pixmaps/default/leftarrow.xpm
+share/gimageview/pixmaps/default/next_t.xpm
+share/gimageview/pixmaps/default/nfolder.xpm
+share/gimageview/pixmaps/default/no_zoom.xpm
+share/gimageview/pixmaps/default/paper.xpm
+share/gimageview/pixmaps/default/pause.xpm
+share/gimageview/pixmaps/default/play.xpm
+share/gimageview/pixmaps/default/prefs.xpm
+share/gimageview/pixmaps/default/prev_t.xpm
+share/gimageview/pixmaps/default/question.xpm
+share/gimageview/pixmaps/default/refresh.xpm
+share/gimageview/pixmaps/default/resize.xpm
+share/gimageview/pixmaps/default/rightarrow.xpm
+share/gimageview/pixmaps/default/rotate.xpm
+share/gimageview/pixmaps/default/rw.xpm
+share/gimageview/pixmaps/default/search.xpm
+share/gimageview/pixmaps/default/skip.xpm
+share/gimageview/pixmaps/default/small_archive.xpm
+share/gimageview/pixmaps/default/small_close.xpm
+share/gimageview/pixmaps/default/small_home.xpm
+share/gimageview/pixmaps/default/small_refresh.xpm
+share/gimageview/pixmaps/default/small_up.xpm
+share/gimageview/pixmaps/default/stop.xpm
+share/gimageview/pixmaps/default/stop2.xpm
+share/gimageview/pixmaps/default/up.xpm
+share/gimageview/pixmaps/default/zoom.xpm
+share/gimageview/pixmaps/default/zoom_fit.xpm
+share/gimageview/pixmaps/default/zoom_in.xpm
+share/gimageview/pixmaps/default/zoom_out.xpm
+share/locale/ja/LC_MESSAGES/gimageview.mo
+@dirrm lib/gimageview/archiver
+@dirrm lib/gimageview/image_saver
+@dirrm lib/gimageview/thumbnail
+@dirrm lib/gimageview
+@dirrm share/gimageview/doc/html/ja
+@dirrm share/gimageview/doc/html
+@dirrm share/gimageview/doc/text/ja
+@dirrm share/gimageview/doc/text/C
+@dirrm share/gimageview/doc/text
+@dirrm share/gimageview/doc
+@dirrm share/gimageview/pixmaps/default
+@dirrm share/gimageview/pixmaps
+@dirrm share/gimageview
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
