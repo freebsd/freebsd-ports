@@ -1,0 +1,8 @@
+--- juno-app/src/Juno.1.orig	Sun Oct 26 14:32:39 1997
++++ juno-app/src/Juno.1	Fri Feb 11 21:58:45 2000
+@@ -1,5 +1,4 @@
+ .\" This file generated automatically by mtex2man(1)
+-
+ .nh
+ .TH "Juno" "1"
+ .SH "Name"

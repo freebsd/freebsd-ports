@@ -1,0 +1,24 @@
+Juno-2 is a drawing editor that features a powerful constraint
+solver, extensibility through an embedded programming and constraint
+definition language, and double-view editing.
+
+Constraints allow you to specify locations in your drawing
+declaratively. For example, to draw an equilateral triangle, you
+first draw an arbitrary triangle and then constrain its sides to
+be equal; Juno-2 will adjust the vertices to make the triangle
+equilateral. Moreover, the constraints are maintained whenever part of
+the picture is changed, so constraints make it easier to maintain a
+picture in the face of modifications.
+
+Constraints in Juno-2 are declarative, and they can include non-linear
+functions and ordered pairs. Moreover, the Juno-2 constraint solver is
+not limited to acyclic constraint systems. This means that Juno-2's
+constraint solver is significantly more powerful and easier to use
+than other ``one-way'' constraint solvers such as DeltaBlue.
+
+This port installs some examples into "${PREFIX}/share/examples/Juno".
+Not all of them work; read the README file there.
+
+WWW: http://www.research.digital.com/SRC/juno-2/
+
+John Polstra <jdp@FreeBSD.org>
