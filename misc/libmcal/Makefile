@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.8.tar.gz
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
