@@ -1,0 +1,13 @@
+include/loudmouth-1.0/loudmouth/lm-connection.h
+include/loudmouth-1.0/loudmouth/lm-error.h
+include/loudmouth-1.0/loudmouth/lm-message-handler.h
+include/loudmouth-1.0/loudmouth/lm-message-node.h
+include/loudmouth-1.0/loudmouth/lm-message.h
+include/loudmouth-1.0/loudmouth/lm-utils.h
+include/loudmouth-1.0/loudmouth/loudmouth.h
+lib/libloudmouth.a
+lib/libloudmouth.so
+lib/libloudmouth.so.0
+libdata/pkgconfig/loudmouth-1.0.pc
+@dirrm include/loudmouth-1.0/loudmouth
+@dirrm include/loudmouth-1.0
