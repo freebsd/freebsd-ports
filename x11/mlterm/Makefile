@@ -7,6 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--enable-imlib --enable-utmp
+CONFIGURE_ARGS=	--with-imagelib=imlib --enable-utmp
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
