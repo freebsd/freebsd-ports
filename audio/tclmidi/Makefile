@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
 # despite references on the homepage to ftp.xor.com, that server
 # doesn't work - edwin 20021227
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A language designed for creating and editing standard MIDI files
 
 .if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
