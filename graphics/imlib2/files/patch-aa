@@ -1,0 +1,11 @@
+--- imlib2-config.in.orig	Tue Aug 22 16:38:40 2000
++++ imlib2-config.in	Sun Oct 29 21:38:09 2000
+@@ -45,7 +45,7 @@
+       echo $includes @x_cflags@
+       ;;
+     --libs)
+-      libdirs=-L@libdir@
++      libdirs="-L@libdir@ -L@localbase@/lib"
+       echo $libdirs -lImlib2 -lttf -lm @dlopen_libs@ @x_ldflags@ @x_libs@
+       ;;
+     *)
