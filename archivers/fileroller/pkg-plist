@@ -4,8 +4,8 @@ bin/fr-document-viewer
 %%PORTDOCS%%share/doc/fileroller/NEWS
 %%PORTDOCS%%share/doc/fileroller/README
 %%PORTDOCS%%share/doc/fileroller/TODO
-share/gnome/apps/Utilities/file-roller.desktop
 share/gnome/application-registry/file-roller.applications
+share/gnome/apps/Utilities/file-roller.desktop
 share/gnome/file-roller/glade/file_roller.glade
 share/gnome/file-roller/glade/file_roller_prop.glade
 share/gnome/file-roller/icons/add.xpm
@@ -20,8 +20,35 @@ share/gnome/file-roller/scripts/Extract_here
 share/gnome/file-roller/scripts/Extract_in_a_subfolder
 share/gnome/file-roller/scripts/Extract_to
 share/gnome/file-roller/scripts/README
+share/gnome/help/file-roller/C/docbook.css
+share/gnome/help/file-roller/C/figures/fr-add-dialog.png
+share/gnome/help/file-roller/C/figures/fr-extract.png
+share/gnome/help/file-roller/C/figures/fr-mainwindow.png
+share/gnome/help/file-roller/C/figures/fr-prefs.png
+share/gnome/help/file-roller/C/file-roller.sgml
+share/gnome/help/file-roller/C/fr-about.html
+share/gnome/help/file-roller/C/fr-creating.html
+share/gnome/help/file-roller/C/fr-extracting.html
+share/gnome/help/file-roller/C/fr-modifying.html
+share/gnome/help/file-roller/C/fr-opening-viewing.html
+share/gnome/help/file-roller/C/fr-settings.html
+share/gnome/help/file-roller/C/fr-viewing-file.html
+share/gnome/help/file-roller/C/index.html
+share/gnome/help/file-roller/C/stylesheet-images/caution.gif
+share/gnome/help/file-roller/C/stylesheet-images/home.gif
+share/gnome/help/file-roller/C/stylesheet-images/important.gif
+share/gnome/help/file-roller/C/stylesheet-images/next.gif
+share/gnome/help/file-roller/C/stylesheet-images/note.gif
+share/gnome/help/file-roller/C/stylesheet-images/prev.gif
+share/gnome/help/file-roller/C/stylesheet-images/tip.gif
+share/gnome/help/file-roller/C/stylesheet-images/toc-blank.gif
+share/gnome/help/file-roller/C/stylesheet-images/toc-minus.gif
+share/gnome/help/file-roller/C/stylesheet-images/toc-plus.gif
+share/gnome/help/file-roller/C/stylesheet-images/up.gif
+share/gnome/help/file-roller/C/stylesheet-images/warning.gif
 share/gnome/mime-info/file-roller.keys
 share/gnome/mime-info/file-roller.mime
+share/gnome/omf/file-roller/file-roller-C.omf
 share/gnome/pixmaps/file-roller.png
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
@@ -35,6 +62,11 @@ share/locale/pl/LC_MESSAGES/file-roller.mo
 share/locale/pt_BR/LC_MESSAGES/file-roller.mo
 share/locale/ru/LC_MESSAGES/file-roller.mo
 share/locale/sv/LC_MESSAGES/file-roller.mo
+@dirrm share/gnome/omf/file-roller
+@dirrm share/gnome/help/file-roller/C/stylesheet-images
+@dirrm share/gnome/help/file-roller/C/figures
+@dirrm share/gnome/help/file-roller/C
+@dirrm share/gnome/help/file-roller
 @dirrm share/gnome/file-roller/scripts
 @dirrm share/gnome/file-roller/icons
 @dirrm share/gnome/file-roller/glade
