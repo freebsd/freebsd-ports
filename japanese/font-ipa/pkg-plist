@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/fonts.alias.ipa
+%%FONTSDIR%%/fonts.dir.ipa
+%%FONTSDIR%%/ipag.ttf 
+%%FONTSDIR%%/ipagp.ttf
+%%FONTSDIR%%/ipagui.ttf
+%%FONTSDIR%%/ipam.ttf 
+%%FONTSDIR%%/ipamp.ttf
+%%PORTDOCS%%/license-ipafonts.eucjp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %%LOCALFONTSDIR%%
+@exec ln -s -f %D/%%FONTSDIR%%/ipag.ttf   %%LOCALFONTSDIR%%/ipag.ttf 
+@exec ln -s -f %D/%%FONTSDIR%%/ipagp.ttf  %%LOCALFONTSDIR%%/ipagp.ttf
+@exec ln -s -f %D/%%FONTSDIR%%/ipagui.ttf %%LOCALFONTSDIR%%/ipagui.ttf
+@exec ln -s -f %D/%%FONTSDIR%%/ipam.ttf   %%LOCALFONTSDIR%%/ipam.ttf 
+@exec ln -s -f %D/%%FONTSDIR%%/ipamp.ttf  %%LOCALFONTSDIR%%/ipamp.ttf
+@unexec rm -f %%LOCALFONTSDIR%%/ipag.ttf 
+@unexec rm -f %%LOCALFONTSDIR%%/ipagp.ttf
+@unexec rm -f %%LOCALFONTSDIR%%/ipagui.ttf
+@unexec rm -f %%LOCALFONTSDIR%%/ipam.ttf 
+@unexec rm -f %%LOCALFONTSDIR%%/ipamp.ttf
+@unexec rmdir %%LOCALFONTSDIR%% 2> /dev/null || true
