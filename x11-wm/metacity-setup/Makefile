@@ -13,8 +13,7 @@ DISTNAME=	Metacity-setup-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		gconf-2:${PORTSDIR}/devel/gconf2
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
 WRKSRC=	${WRKDIR}/Metacity-setup
 
