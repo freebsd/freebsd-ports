@@ -18,6 +18,10 @@ DISTNAME=	mp-3.0.1
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles, etc
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500000
+USE_GCC=	3.3
+.endif
 WRKSRC=		${WRKDIR}/mp
 MAN1=		mp.1
 MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
@@ -32,4 +36,4 @@ INSTALL_TARGET= install-a4
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
