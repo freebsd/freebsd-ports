@@ -7,7 +7,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	1.94
-CATEGORIES=	misc kde
+CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfs-atm
 PORTVERSION= 	3.0.1
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	${PORTNAME}+cid-${PORTVERSION}
 

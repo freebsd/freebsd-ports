@@ -7,7 +7,7 @@
 
 PORTNAME=	dante
 PORTVERSION=	1.1.2
-CATEGORIES=	security net
+CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/

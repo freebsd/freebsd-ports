@@ -7,7 +7,7 @@
 
 PORTNAME=	biblereader
 PORTVERSION=	0.3.2
-CATEGORIES=	deskutils
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.whitevine.com/biblereader/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} kjv.tar.gz
 .if defined(WITH_TRANSLATIONS)

@@ -7,7 +7,7 @@
 
 PORTNAME=	publicfile
 PORTVERSION= 	0.52
-CATEGORIES=	ftp
+CATEGORIES=	www ftp
 MASTER_SITES=	http://cr.yp.to/publicfile/ \
 		ftp://cr.yp.to/publicfile/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ttmkfdir
 PORTVERSION= 	0.0
-CATEGORIES=	x11
+CATEGORIES=	x11-fonts x11
 MASTER_SITES=	http://www.darmstadt.gmd.de/~pommnitz/TrueType/
 DISTNAME=	${PORTNAME}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpccard
 PORTVERSION=	1.3
-CATEGORIES=	misc windowmaker
+CATEGORIES=	sysutils misc windowmaker
 MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 
 MAINTAINER=	taoka@FreeBSD.org

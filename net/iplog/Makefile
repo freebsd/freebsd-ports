@@ -7,7 +7,7 @@
 
 PORTNAME=	iplog
 PORTVERSION=	2.2.1
-CATEGORIES=	security
+CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://misc.ojnk.net/~odin/stuff/
 MASTER_SITE_SUBDIR=	ojnk

@@ -7,7 +7,7 @@
 
 PORTNAME=	libneural
 PORTVERSION=	1.0.2
-CATEGORIES=	devel
+CATEGORIES=	math devel
 MASTER_SITES=	http://ieee.uow.edu.au/documents/contrib/
 
 MAINTAINER=	ports@FreeBSD.org
