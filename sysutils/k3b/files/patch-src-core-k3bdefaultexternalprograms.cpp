@@ -1,5 +1,5 @@
---- src/core/k3bdefaultexternalprograms.cpp.orig	Mon Mar 22 18:13:21 2004
-+++ src/core/k3bdefaultexternalprograms.cpp	Tue May 11 22:57:03 2004
+--- src/core/k3bdefaultexternalprograms.cpp.orig	Fri May 21 19:03:21 2004
++++ src/core/k3bdefaultexternalprograms.cpp	Sun Jul 11 12:24:22 2004
 @@ -30,6 +30,7 @@
  #include <unistd.h>
  #include <sys/stat.h>
@@ -143,7 +143,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path;
-@@ -911,7 +912,7 @@
+@@ -913,7 +914,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version

@@ -1,6 +1,6 @@
---- src/device/k3bdevice.cpp.orig	Sun Mar 14 17:35:20 2004
-+++ src/device/k3bdevice.cpp	Mon May 24 23:31:19 2004
-@@ -56,6 +56,12 @@
+--- src/device/k3bdevice.cpp.orig	Wed Jun 23 12:06:46 2004
++++ src/device/k3bdevice.cpp	Sun Jul 11 12:24:22 2004
+@@ -57,6 +57,13 @@
  
  #endif // Q_OS_LINUX
  
@@ -8,12 +8,13 @@
 +#define __BYTE_ORDER BYTE_ORDER
 +#define __BIG_ENDIAN BIG_ENDIAN
 +#define CD_FRAMESIZE_RAW 2352
++#define nearbyint(x) rint(x)
 +#endif
 +
  
  #ifdef HAVE_RESMGR
  extern "C" {
-@@ -152,8 +158,10 @@
+@@ -153,8 +160,10 @@
  
    d->supportedProfiles = 0;
  
@@ -24,7 +25,7 @@
  
  
    //
-@@ -192,6 +200,7 @@
+@@ -193,6 +202,7 @@
    unsigned char header[2048];
    ::memset( header, 0, 2048 );
  
@@ -32,7 +33,7 @@
    cmd[0] = MMC::GET_CONFIGURATION;
    cmd[8] = 8;
    if( cmd.transport( TR_DIR_READ, header, 8 ) ) {
-@@ -733,6 +742,14 @@
+@@ -769,6 +779,14 @@
        m_bufferSize = 1024;
        d->burnfree = false;
      }
@@ -45,9 +46,9 @@
 +      d->burnfree = false;
 +    }
    }
-   else if( vendor().startsWith("MATSHITA") ) {
-     if( description().startsWith("CD-R   CW-7501") ) {
-@@ -2317,10 +2334,12 @@
+   else if( vendor().startsWith("HP") ) {
+     if( description().startsWith("CD-Writer 6020") ) {
+@@ -2559,10 +2577,12 @@
  {
    // if the device is already opened we do not close it
    // to allow fast multible method calls in a row
@@ -60,7 +61,7 @@
  
    // header size is 8
    unsigned char* buffer = 0;
-@@ -2406,13 +2425,16 @@
+@@ -2648,13 +2668,16 @@
      delete [] buffer;
    }
      

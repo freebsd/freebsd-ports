@@ -1,5 +1,5 @@
---- src/device/k3bdevicemanager.cpp.orig	Sun Feb 29 13:52:41 2004
-+++ src/device/k3bdevicemanager.cpp	Tue May 11 22:57:03 2004
+--- src/device/k3bdevicemanager.cpp.orig	Tue Jun 22 21:50:55 2004
++++ src/device/k3bdevicemanager.cpp	Sun Jul 11 12:24:22 2004
 @@ -49,6 +49,12 @@
  #include <sys/stat.h>
  #include <sys/ioctl.h>
@@ -35,7 +35,7 @@
    scanFstab();
  
    return m_foundDevices;
-@@ -427,6 +441,7 @@
+@@ -421,6 +435,7 @@
  bool K3bCdDevice::DeviceManager::testForCdrom(const QString& devicename)
  {
    bool ret = false;
@@ -43,7 +43,7 @@
    int cdromfd = K3bCdDevice::openDevice( devicename.ascii() );
    if (cdromfd < 0) {
      kdDebug() << "could not open device " << devicename << " (" << strerror(errno) << ")" << endl;
-@@ -467,11 +482,36 @@
+@@ -461,11 +476,36 @@
    }
  
    ::close( cdromfd );
@@ -80,7 +80,7 @@
    K3bDevice* device = 0;
  
    // resolve all symlinks
-@@ -503,6 +543,7 @@
+@@ -497,6 +537,7 @@
      device->m_target = target;
      device->m_lun = lun;
    }
@@ -88,7 +88,7 @@
  
    if( !device->init() ) {
      kdDebug() << "Could not initialize device " << devicename << endl;
-@@ -578,9 +619,20 @@
+@@ -572,9 +613,20 @@
  
      if( K3bDevice* dev = findDevice( resolveSymLink(md) ) )
      {
@@ -109,7 +109,7 @@
          dev->setMountDevice( md );
  	dev->m_supermount = supermount;
        }
-@@ -589,6 +641,8 @@
+@@ -583,6 +635,8 @@
      {
        // compare bus, id, lun since the same device can for example be
        // determined as /dev/srX or /dev/scdX
@@ -118,7 +118,7 @@
        int bus = -1, id = -1, lun = -1;
        if( determineBusIdLun( mountInfo->fs_spec, bus, id, lun ) ) {
          if( K3bDevice* dev = findDevice( bus, id, lun ) ) {
-@@ -599,6 +653,17 @@
+@@ -593,6 +647,17 @@
            }
          }
        }
@@ -136,7 +136,7 @@
  
  
      }
-@@ -674,5 +739,131 @@
+@@ -668,5 +733,131 @@
    return QString::fromLatin1( resolved );
  }
  
