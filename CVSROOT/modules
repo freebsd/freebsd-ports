@@ -4837,6 +4837,7 @@ pinstall	ports/devel/pinstall
 pipenightdreams	ports/games/pipenightdreams
 pips-sc20	ports/print/pips-sc20
 pips-sc40	ports/print/pips-sc40
+pips-sc480	ports/print/pips-sc480
 pips-sc680_777	ports/print/pips-sc680_777
 pips-sc880	ports/print/pips-sc880
 pips-sc980	ports/print/pips-sc980
