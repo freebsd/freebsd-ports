@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	giFTcurs
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	net
-MASTER_SITES=	http://stud4.tuwien.ac.at/~e0125637/
-#MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-#MASTER_SITE_SUBDIR=	giftcurs/giFTcurs.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	giftcurs
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A cursed frontend to the giFT daemon
