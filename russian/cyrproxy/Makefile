@@ -21,10 +21,6 @@ COMMENT=	Cyrillic proxy for network protocols
 BROKEN=		"Does not compile on ${MACHINE_ARCH}"
 .endif
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/cyrproxy
 	@ ${MKDIR} ${PREFIX}/www/cgi-bin
