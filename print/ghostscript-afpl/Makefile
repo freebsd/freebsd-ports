@@ -16,8 +16,8 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 		http://www.harsch.net/Download/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV} ${HP970_DRV}
-EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_DRV}
+		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${HP970_DRV}
+EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_SRC}
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -52,7 +52,10 @@ HP8XX_DRV=	gdevcd8.tar.gz
 
 # HPDJ, additional driver for HP PCL3 Printers, by Martin Lottermoser
 # http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
-HPDJ_DRV=	hpdj-2.6.tar.gz
+HPDJ_NAME=	hpdj
+HPDJ_VERS=	2.6
+HPDJ_DIR=	${HPDJ_NAME}-${HPDJ_VERS}
+HPDJ_SRC=	hpdj-2.6.tar.gz
 
 # additional driver for HP DeskJet 970, supports duplex printing
 HP970_DRV=	gdevdj9.c.gz
@@ -79,9 +82,9 @@ post-extract:
 	@${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b \
 		${WRKSRC}/jpeg
 	@${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${HP8XX_DRV}
-	@${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${HPDJ_DRV}
+	@${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${HPDJ_SRC}
 # additional HPDJ driver
-	@${TAR} -C ${WRKSRC}/src -xf ${WRKDIR}/hpdj-2.6/hpdj.tar
+	@${TAR} -C ${WRKSRC}/src -xf ${WRKDIR}/${HPDJ_DIR}/${HPDJ_NAME}.tar
 	@${CAT} ${WRKSRC}/src/contrib.mak-5.94.add >> ${WRKSRC}/src/contrib.mak
 	@${PATCH} -d ${WRKSRC}/src --forward --quiet -E \
 		< ${WRKSRC}/src/zmedia2.c-5.50.diff
