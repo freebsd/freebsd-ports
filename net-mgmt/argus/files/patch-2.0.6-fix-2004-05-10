@@ -1,0 +1,520 @@
+diff -u3 -r ./ChangeLog /tmp/1/argus-2.0.6.fixes.1/ChangeLog
+--- ./ChangeLog	Wed May  5 15:15:44 2004
++++ /tmp/1/argus-2.0.6.fixes.1/ChangeLog	Mon May 10 19:09:58 2004
+@@ -1,3 +1,6 @@
++Mon May 10 13:02:46 EDT 2004
++	* bug in -F processing fixed.
++
+ Wed May  5 09:15:34 EDT 2004
+ 	* argus-2.0.6 released.
+ 
+diff -u3 -r ./VERSION /tmp/1/argus-2.0.6.fixes.1/VERSION
+--- ./VERSION	Wed May  5 15:54:22 2004
++++ /tmp/1/argus-2.0.6.fixes.1/VERSION	Mon May 10 19:10:12 2004
+@@ -1 +1 @@
+-2.0.6
++2.0.6.fixes.1
+diff -u3 -r ./aclocal.m4 /tmp/1/argus-2.0.6.fixes.1/aclocal.m4
+--- ./aclocal.m4	Mon Feb 23 16:00:29 2004
++++ /tmp/1/argus-2.0.6.fixes.1/aclocal.m4	Mon May 10 14:53:01 2004
+@@ -322,7 +322,7 @@
+ 
+ dnl
+ dnl If the file .debug exists:
+-dnl   Add NTAM_DEBUG to the condefs.h file.
++dnl   Add ARGUS_DEBUG to the condefs.h file.
+ dnl
+ dnl usage:
+ dnl
+@@ -338,13 +338,13 @@
+     [
+     if test -f .debug ; then
+         cat >> confdefs.h <<\EOF
+-#define NTAMDEBUG 1
++#define ARGUSDEBUG 1
+ EOF
+     fi])
+ 
+ dnl 
+ dnl If the file .threads exists:
+-dnl   Add NTAM_THREADS to the condefs.h file.
++dnl   Add ARGUS_THREADS to the condefs.h file.
+ dnl
+ dnl usage:
+ dnl
+@@ -360,7 +360,7 @@
+     [
+     if test -f .threads ; then
+         cat >> confdefs.h <<\EOF
+-#define NTAM_THREADS 1
++#define ARGUS_THREADS 1
+ EOF
+        if test "$GCC" = yes ; then
+            LIBS="$LIBS -pthread"
+@@ -451,7 +451,7 @@
+          LIB_SASL="$LIB_SASL -lsasl"
+ 
+          if test "$with_sasl" != no; then
+-            AC_DEFINE(NTAM_SASL, 1)
++            AC_DEFINE(ARGUS_SASL, 1)
+             AC_SUBST(LIB_SASL)
+             AC_SUBST(SASLFLAGS)
+          fi
+diff -u3 -r ./common/argus_filter.c /tmp/1/argus-2.0.6.fixes.1/common/argus_filter.c
+--- ./common/argus_filter.c	Mon Feb 23 16:00:36 2004
++++ /tmp/1/argus-2.0.6.fixes.1/common/argus_filter.c	Mon May 10 15:29:10 2004
+@@ -4765,11 +4765,13 @@
+ void
+ ArgusDebug (int d, char *fmt, ...)
+ {
+-   va_list ap;
+    char buf[1024], *ptr;
++   struct timeval now;
++   va_list ap;
+ 
+    if (d <= Argusdflag) {
+-      (void) sprintf (buf, "%s[%d]: %s ", ArgusProgramName, (int)getpid(), print_time(&ArgusGlobalTime));
++      gettimeofday(&now, 0L);
++      (void) sprintf (buf, "%s[%d]: %s ", ArgusProgramName, (int)getpid(), print_time(&now));
+       ptr = &buf[strlen(buf)];
+ 
+       va_start (ap, fmt);
+@@ -5480,9 +5482,8 @@
+    ptr = &buf[strlen(buf)];
+    va_end (ap);
+ 
+-   if (*fmt) {
+-      fmt += (int) strlen (fmt);
+-      if (fmt[-1] != '\n')
++   if (*ptr) {
++      if (ptr[-1] != '\n')
+          sprintf (ptr, "\n");
+    }
+ 
+diff -u3 -r ./configure /tmp/1/argus-2.0.6.fixes.1/configure
+--- ./configure	Wed May  5 16:27:45 2004
++++ /tmp/1/argus-2.0.6.fixes.1/configure	Mon May 10 14:53:56 2004
+@@ -3901,7 +3901,7 @@
+ 
+     if test -f .debug ; then
+         cat >> confdefs.h <<\EOF
+-#define NTAMDEBUG 1
++#define ARGUSDEBUG 1
+ EOF
+     fi
+ 
+@@ -4376,7 +4376,7 @@
+ 
+          if test "$with_sasl" != no; then
+             cat >>confdefs.h <<\_ACEOF
+-#define NTAM_SASL 1
++#define ARGUS_SASL 1
+ _ACEOF
+ 
+ 
+diff -u3 -r ./server/ArgusSource.c /tmp/1/argus-2.0.6.fixes.1/server/ArgusSource.c
+--- ./server/ArgusSource.c	Fri Apr 30 20:11:35 2004
++++ /tmp/1/argus-2.0.6.fixes.1/server/ArgusSource.c	Mon May 10 15:23:22 2004
+@@ -67,7 +67,7 @@
+       ArgusSnapLen = getArgusSnapLen();
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (1, "ArgusNewSource() returning 0x%x\n", retn);
++   ArgusDebug (1, "ArgusNewSource() returning 0x%x", retn);
+ #endif
+ 
+    return (retn);
+@@ -99,7 +99,7 @@
+       setuid(getuid());
+ 
+       if ((ArgusPd[0] = ArgusOpenInputPacketFile(errbuf)) == NULL)
+-         ArgusLog (LOG_ERR, "ArgusInitSource: %s\n", errbuf);
++         ArgusLog (LOG_ERR, "ArgusInitSource: %s", errbuf);
+ 
+    } else {
+       if (ArgusDeviceList == NULL) {
+@@ -127,7 +127,7 @@
+                   ArgusInterface[i].ArgusNetMask  = ntohl(ArgusInterface[i].ArgusNetMask);
+                }
+             } else
+-               ArgusLog (LOG_ERR, "ArgusInitSource: pcap_open_live %s\n", errbuf);
++               ArgusLog (LOG_ERR, "ArgusInitSource: pcap_open_live %s", errbuf);
+ 
+             ArgusPushBackList(ArgusDeviceList, ArgusDevice);
+          }
+@@ -154,7 +154,7 @@
+    bzero ((char *) &ArgusFilters[0], sizeof (struct bpf_program));
+ 
+    if (pcap_compile (ArgusPd[0], &ArgusFilters[0], ArgusInputFilter, getArgusOflag(), ArgusNetMask) < 0)
+-      ArgusLog (LOG_ERR, "ArgusInputFilter \"%s\" %s\n", ArgusInputFilter, pcap_geterr (ArgusPd[0]));
++      ArgusLog (LOG_ERR, "ArgusInputFilter \"%s\" %s", ArgusInputFilter, pcap_geterr (ArgusPd[0]));
+ 
+    if (Argusbpflag) {
+       Argusbpf_dump (&ArgusFilters[0], Argusbpflag);
+@@ -165,18 +165,18 @@
+       if (ArgusPd[i] != NULL) {
+          if (ArgusInputPacketFileType == ARGUSLIBPPKTFILE) {
+             if (pcap_setfilter (ArgusPd[i], &ArgusFilters[0]) < 0)
+-               ArgusLog (LOG_ERR, "%s\n", pcap_geterr (ArgusPd[i]));
++               ArgusLog (LOG_ERR, "%s", pcap_geterr (ArgusPd[i]));
+          }
+       }
+    }
+ 
+    if (ArgusWriteOutPacketFile) {
+       if ((ArgusPcapOutFile = pcap_dump_open(ArgusPd[0], ArgusWriteOutPacketFile)) == NULL)
+-         ArgusLog (LOG_ERR, "%s\n", pcap_geterr (ArgusPd[0]));
++         ArgusLog (LOG_ERR, "%s", pcap_geterr (ArgusPd[0]));
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (1, "ArgusInitSource() returning\n");
++   ArgusDebug (1, "ArgusInitSource() returning");
+ #endif
+ }
+ 
+@@ -197,7 +197,7 @@
+       pcap_dump_close(ArgusPcapOutFile);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (1, "ArgusDeleteSource() deleting ArgusSourceTask 0x%x\n", ArgusSourceTask);
++   ArgusDebug (1, "ArgusDeleteSource() deleting ArgusSourceTask 0x%x", ArgusSourceTask);
+ #endif
+    return (0);
+ }
+@@ -260,7 +260,7 @@
+       retn = (char *) ArgusFrontList(ArgusDeviceList);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "getArgusDevice() returning %s\n", retn);
++   ArgusDebug (3, "getArgusDevice() returning %s", retn);
+ #endif
+    return (retn);
+ }
+@@ -276,7 +276,7 @@
+       ArgusPushFrontList(ArgusDeviceList, strdup(value));
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "setArgusDevice(%s) returning\n", value);
++   ArgusDebug (3, "setArgusDevice(%s) returning", value);
+ #endif
+ }
+ 
+@@ -289,7 +289,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "clearArgusDevice(%s) returning\n");
++   ArgusDebug (3, "clearArgusDevice(%s) returning");
+ #endif
+ }
+ 
+@@ -381,7 +381,7 @@
+       close(pcap_fileno(ArgusPd[0]));
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (5, "ArgusMoatTshRead() returning %d\n", retn);
++   ArgusDebug (5, "ArgusMoatTshRead() returning %d", retn);
+ #endif
+ 
+    return (retn);
+@@ -424,7 +424,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (5, "ArgusSnoopRead() returning %d\n", retn);
++   ArgusDebug (5, "ArgusSnoopRead() returning %d", retn);
+ #endif
+ 
+    return (retn);
+@@ -449,7 +449,7 @@
+       }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "Arguslookup_pcap_callback(%d) returning %s: 0x%x\n", type, name, retn);
++   ArgusDebug (3, "Arguslookup_pcap_callback(%d) returning %s: 0x%x", type, name, retn);
+ #endif
+ 
+    return (retn);
+@@ -489,7 +489,7 @@
+                }
+       
+                if ((ArgusPcapOutFile = pcap_dump_open(ArgusPd[0], ArgusWriteOutPacketFile)) == NULL)
+-                  ArgusLog (LOG_ERR, "%s\n", pcap_geterr (ArgusPd[0]));
++                  ArgusLog (LOG_ERR, "%s", pcap_geterr (ArgusPd[0]));
+             }
+          }
+       }
+@@ -499,7 +499,7 @@
+       pcap_dump((u_char *)ArgusPcapOutFile, h, p);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusEtherPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusEtherPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -604,7 +604,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusFddiPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusFddiPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+    ArgusThisLength  = length;
+@@ -617,7 +617,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusFddiPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusFddiPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -636,7 +636,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusATMPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusATMPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+ 
+@@ -669,7 +669,7 @@
+    ArgusProcessPacket (ep, length, tvp);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusATMPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusATMPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -688,7 +688,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusPppPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusPppPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+    ArgusSnapLength  = caplen;
+@@ -703,7 +703,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusPppPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusPppPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -723,7 +723,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusPppBsdosPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusPppBsdosPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+    ArgusSnapLength  = caplen;
+@@ -754,7 +754,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusPppPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusPppPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -789,7 +789,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusSlipPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusSlipPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+    ArgusSnapLength  = caplen;
+@@ -805,7 +805,7 @@
+ 
+  
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusSlipPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusSlipPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -821,7 +821,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusIpPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusIpPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+    ArgusSnapLength  = caplen;
+@@ -835,7 +835,7 @@
+ 
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusIpPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusIpPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -860,7 +860,7 @@
+ 
+    ArgusGlobalTime  = *tvp;
+    if (ArgusGlobalTime.tv_sec < 0) {
+-      ArgusLog (LOG_ERR, "ArgusSllPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d\n",
++      ArgusLog (LOG_ERR, "ArgusSllPacket (0x%x, 0x%x, 0x%x) libpcap timestamp out of range %d.%d",
+               user, h, p, ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+    }
+ 
+@@ -911,7 +911,7 @@
+    ArgusProcessPacket (ep, length, tvp);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusSllPacket (0x%x, 0x%x, 0x%x) returning\n", user, h, p);
++   ArgusDebug (6, "ArgusSllPacket (0x%x, 0x%x, 0x%x) returning", user, h, p);
+ #endif
+ }
+ 
+@@ -958,7 +958,7 @@
+                               case ARGUSLIBPPKTFILE:
+                                  if ((pcap_read (ArgusPd[i], -1, ArgusCallBack, (u_char *) NULL)) < 0) {
+ #ifdef ARGUSDEBUG
+-                                    ArgusDebug (4, "ArgusGetPackets: pcap_read() returned %s\n", pcap_geterr(ArgusPd[i]));
++                                    ArgusDebug (4, "ArgusGetPackets: pcap_read() returned %s", pcap_geterr(ArgusPd[i]));
+ #endif
+                                     noerror = 0;
+                                  }
+@@ -986,7 +986,7 @@
+                   gettimeofday (tvp, NULL);
+                   ArgusGlobalTime = *tvp;
+                   if (ArgusGlobalTime.tv_sec < 0) {
+-                     ArgusLog (LOG_ERR, "ArgusGetPackets () gettimeofday() timestamp out of range %d.%d\n",
++                     ArgusLog (LOG_ERR, "ArgusGetPackets () gettimeofday() timestamp out of range %d.%d",
+                              ArgusGlobalTime.tv_sec, ArgusGlobalTime.tv_usec);
+                   }
+    
+@@ -997,7 +997,7 @@
+                FD_ZERO(&ArgusReadMask);
+    
+ #ifdef ARGUSDEBUG
+-               ArgusDebug (4, "ArgusGetPackets: select() returned %s\n", strerror(errno));
++               ArgusDebug (4, "ArgusGetPackets: select() returned %s", strerror(errno));
+ #endif
+                if (errno == EINTR)
+                   break;
+@@ -1029,7 +1029,7 @@
+    gettimeofday (&ArgusEndTime, 0L);
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (4, "ArgusGetPackets () returning\n");
++   ArgusDebug (4, "ArgusGetPackets () returning");
+ #endif
+ }
+ 
+@@ -1066,7 +1066,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "Argusbpf_dump (0x%x, %d) returning\n", p, option);
++   ArgusDebug (3, "Argusbpf_dump (0x%x, %d) returning", p, option);
+ #endif
+ }
+ 
+@@ -1124,7 +1124,7 @@
+                ArgusReadingOffLine++;
+ 
+             } else
+-               ArgusLog(LOG_ERR, "ArgusOpenInputPacketFile(%s) error. %s\n", Argusrfile, strerror(errno));
++               ArgusLog(LOG_ERR, "ArgusOpenInputPacketFile(%s) error. %s", Argusrfile, strerror(errno));
+          } else
+          if ((ch = fgetc(ArgusPacketInput)) != EOF) {
+             ungetc(ch, ArgusPacketInput);
+@@ -1144,19 +1144,19 @@
+                   }
+    
+                } else {
+-                  snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Unknown packet file format\n");
++                  snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Unknown packet file format");
+                }
+             } else {
+-               snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Error reading %s. Read %d bytes\n", Argusrfile, rlen);
++               snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Error reading %s. Read %d bytes", Argusrfile, rlen);
+             }
+          } else {
+-            snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Error reading %s. Stream Empty\n", Argusrfile);
++            snprintf (errbuf, PCAP_ERRBUF_SIZE - 1, "Error reading %s. Stream Empty", Argusrfile);
+          }
+       }
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "ArgusOpenInputPacketFile(0x%x) returning 0x%x\n", errbuf, retn);
++   ArgusDebug (3, "ArgusOpenInputPacketFile(0x%x) returning 0x%x", errbuf, retn);
+ #endif
+  
+    return (retn);
+@@ -1189,7 +1189,7 @@
+    }
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (6, "ArgusCopyArgv(0x%x) returning 0x%x\n", argv, buf);
++   ArgusDebug (6, "ArgusCopyArgv(0x%x) returning 0x%x", argv, buf);
+ #endif
+  
+    return buf;
+@@ -1210,7 +1210,7 @@
+  
+    if ((fd = open(fname, O_RDONLY)) >= 0) {
+       if (fstat(fd, &buf) < 0) {
+-         snprintf (outbuf, 255, "%s: fstat('%s') failed.\n", ArgusProgramName, fname);
++         snprintf (outbuf, 255, "%s: fstat('%s') failed.", ArgusProgramName, fname);
+          perror (outbuf);
+          close(fd);
+       }
+@@ -1233,7 +1233,7 @@
+  
+ 
+ #ifdef ARGUSDEBUG
+-   ArgusDebug (3, "ArgusReadInfile(%s) returning 0x%x\n", fname, p);
++   ArgusDebug (3, "ArgusReadInfile(%s) returning 0x%x", fname, p);
+ #endif
+ 
+    return (p);
+diff -u3 -r ./server/argus.c /tmp/1/argus-2.0.6.fixes.1/server/argus.c
+--- ./server/argus.c	Mon Feb 23 16:00:36 2004
++++ /tmp/1/argus-2.0.6.fixes.1/server/argus.c	Mon May 10 14:51:57 2004
+@@ -236,8 +236,16 @@
+          if (*ptr == '-') {
+             do {
+                switch (*++ptr) {
++                  case 'D':
++                     if (*++ptr == '\0')
++                        ptr = argv[++i];
++                     setArgusdflag (atoi (ptr));
++                     break;
++
+                   case 'F':
+-                     ArgusParseResourceFile (argv[i++]);
++                     if (*++ptr == '\0')
++                        ptr = argv[++i];
++                     ArgusParseResourceFile (ptr);
+                      doconf++;
+                      break;
+ 
+diff -u3 -r ./server/argus.h /tmp/1/argus-2.0.6.fixes.1/server/argus.h
+--- ./server/argus.h	Mon Feb 23 16:00:36 2004
++++ /tmp/1/argus-2.0.6.fixes.1/server/argus.h	Mon May 10 15:00:13 2004
+@@ -57,7 +57,7 @@
+ 
+ char *RaTimeFormat = "%d %b %y %T";
+ char RaFieldDelimiter = '.';
+-int nflag = 1, Nflag = -1, uflag = 1, gflag = 0;
++int nflag = 1, Nflag = -1, uflag = 0, gflag = 0;
+ int Uflag = 6, XMLflag = 0, pflag = 0, pidflag = 0;
+ int Dflag = 0, daemonflag = 0;
+ 
