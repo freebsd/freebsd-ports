@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.orig	Mon Sep  2 12:12:59 2002
++++ doc/Makefile	Mon Sep  2 12:13:01 2002
+@@ -1,6 +1,8 @@
+ #
+ # Makefile for the cc65 documentation
+ #
++# These can be built using the textproc/sgmltools port.
++#
+ 
+ 
+ # Default for the compiler lib search path as compiler define
