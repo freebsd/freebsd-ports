@@ -1,5 +1,5 @@
 --- src/vga.c.orig	Thu Jul  6 19:10:32 2000
-+++ src/vga.c	Fri Aug 25 06:32:01 2000
++++ src/vga.c	Fri Sep  1 18:30:27 2000
 @@ -22,10 +22,10 @@
  #include <unistd.h>
  #include <stdarg.h>
@@ -83,7 +83,7 @@
          return 1;               /* root can do it always */
  #endif
 -    sprintf(fname, "/dev/tty%d", vc);
-+    sprintf(fname, "/dev/ttyv%d", vc);
++    sprintf(fname, "/dev/ttyv%x", vc);
      if ((stat(fname, &sbuf) >= 0) && (getuid() == sbuf.st_uid)) {
          return 1;
      }
@@ -101,7 +101,7 @@
      if (svgalib_vc <= 0)
          goto error;
 -    sprintf(fname, "/dev/tty%d", svgalib_vc);
-+    sprintf(fname, "/dev/ttyv%d", svgalib_vc - 1);
++    sprintf(fname, "/dev/ttyv%x", svgalib_vc - 1);
      close(__svgalib_tty_fd);
      /* change our control terminal: */
      setpgid(0,getppid());
