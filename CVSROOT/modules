@@ -871,6 +871,7 @@ chord		ports/misc/chord
 chord2html	ports/misc/chord2html
 chordpack	ports/audio/chordpack
 chpp		ports/textproc/chpp
+chromium	ports/games/chromium
 chrootuid	ports/security/chrootuid
 chtml		ports/www/chtml
 cider		ports/cad/cider
