@@ -24,23 +24,17 @@ USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib12 gtk12
 USE_LIBTOOL=	yes
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	mathmlviewer.1 mathml2ps.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-BROKEN=		Does not build on FreeBSD 5.x
-.endif
 
 post-patch:
 .for file in src/stringAux.cc src/PS_T1_FontManager.cc
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/${file}
 .endfor
 
-post-install:
-	@install-info ${PREFIX}/info/gtkmathview.info ${PREFIX}/info/dir
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

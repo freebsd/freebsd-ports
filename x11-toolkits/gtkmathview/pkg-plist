@@ -5,11 +5,10 @@ include/gtkmathview/defs.h
 include/gtkmathview/gtkmathview.h
 @dirrm include/gtkmathview
 lib/libgtkmathview.a
+lib/libgtkmathview.la
 lib/libgtkmathview.so
-lib/libgtkmathview.so.3
-@unexec install-info --delete %D/info/gtkmathview.info %D/info/dir
-info/gtkmathview.info
-@exec install-info %D/info/gtkmathview.info %D/info/dir
+lib/libgtkmathview.so.4
+lib/pkgconfig/gtkmathview.pc
 share/gtkmathview/dictionary-combining.xml
 share/gtkmathview/dictionary-local.xml
 share/gtkmathview/dictionary.dtd
@@ -28,3 +27,4 @@ share/gtkmathview/math-engine-configuration.dtd
 share/gtkmathview/math-engine-configuration.xml
 share/gtkmathview/t1.config
 @dirrm share/gtkmathview
+@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
