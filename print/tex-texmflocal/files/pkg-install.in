@@ -1,0 +1,11 @@
+# $FreeBSD$
+
+case $2 in
+POST-INSTALL|DEINSTALL)
+	echo "fixup %%TEXMFLOCAL_LSR%%..."
+	T=/tmp/tex-texmflocal.$$
+	cat %%TEXMFLOCAL_LSR%% | grep -v "./lsR[0-9]*.tmp": >  ${T}
+	cp ${T} %%TEXMFLOCAL_LSR%%
+	rm -f ${T}
+;;
+esac
