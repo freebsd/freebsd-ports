@@ -34,14 +34,11 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=Silva
 
-# yes, some of us are running zope on python 2.3
-#PYTHON_VERSION=	python2.3
-
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 CPIO=		cpio --quiet -pdum -R
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 
 do-install:
 	@${CHMOD} -R og+rX ${WRKDIR}/
