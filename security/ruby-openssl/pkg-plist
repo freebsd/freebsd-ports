@@ -1,5 +1,5 @@
-%%RUBY_SITEARCHLIBDIR%%/OpenSSL.so
-%%RUBY_SITELIBDIR%%/OpenSSL.rb
+%%RUBY_SITEARCHLIBDIR%%/openssl.so
+%%RUBY_SITELIBDIR%%/openssl.rb
 %%RUBY_SITELIBDIR%%/buffering.rb
 %%RUBY_SITELIBDIR%%/net/https.rb
 %%RUBY_SITELIBDIR%%/net/protocols.rb
