@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlockmore
-# Version required:     4.12
+# Version required:     4.13.1
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.43 1998/10/01 06:19:19 tg Exp $
+# $Id: Makefile,v 1.44 1998/11/11 05:37:39 asami Exp $
 #
 
-DISTNAME=       xlockmore-4.12
+DISTNAME=       xlockmore-4.13.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -28,9 +28,9 @@ MAN1=		xlock.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 300000
-CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
-.endif
+# .if ${OSVERSION} > 300000
+# CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
+# .endif
 
 WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
