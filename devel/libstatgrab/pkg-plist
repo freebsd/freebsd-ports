@@ -1,17 +1,10 @@
-bin/statgrab
-bin/statgrab-make-mrtg-config
-bin/statgrab-make-mrtg-index
+%%SAIDAR%%bin/saidar
+%%STATGRAB%%bin/statgrab
+%%STATGRAB%%bin/statgrab-make-mrtg-config
+%%STATGRAB%%bin/statgrab-make-mrtg-index
 include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.so
 lib/libstatgrab.so.1
-%%PORTDOCS%%%%DOCSDIR%%/cpu.txt
-%%PORTDOCS%%%%DOCSDIR%%/diskio.txt
-%%PORTDOCS%%%%DOCSDIR%%/load_average.txt
-%%PORTDOCS%%%%DOCSDIR%%/network.txt
-%%PORTDOCS%%%%DOCSDIR%%/os_stats.txt
-%%PORTDOCS%%%%DOCSDIR%%/page_stat.txt
-%%PORTDOCS%%%%DOCSDIR%%/process_stats.txt
-%%PORTDOCS%%%%DOCSDIR%%/user_list.txt
-%%PORTDOCS%%%%DOCSDIR%%/vm_stats.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+libdata/pkgconfig/libstatgrab.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
