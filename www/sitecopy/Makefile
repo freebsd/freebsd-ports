@@ -3,13 +3,12 @@
 # Date created:		15 January 1999
 # Whom:			nik
 #
-# $Id: Makefile,v 1.2 1999/01/18 06:24:32 asami Exp $
+# $Id: Makefile,v 1.3 1999/02/24 21:45:33 nik Exp $
 #
 
 DISTNAME=	sitecopy-0.4.0
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
-DISTFILES=	sitecopy-0.4.0.tar.gz
 
 MAINTAINER=     nik@FreeBSD.ORG
 
