@@ -6,24 +6,29 @@
 #
 
 PORTNAME=	wmbattery
-PORTVERSION=	1.13
+PORTVERSION=	1.18
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pat@databits.net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-ALL_TARGET=	wmbattery
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
+		--x-includes=${X11BASE}/include
+
 MAN1=		wmbattery.1
 
 post-install:
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
+		${PREFIX}/share/doc/${PORTNAME}
 .if !defined(NOPORTDOCS)
-.for i in INSTALL README TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/wmbattery
+.for i in README TODO
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 .endif
 
