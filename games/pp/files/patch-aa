@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Apr  5 09:08:26 1997
-+++ Makefile	Fri May 24 03:59:44 2002
++++ Makefile	Fri May 24 04:16:16 2002
 @@ -1,12 +1,15 @@
  ####### This section was automatically generated from
  
@@ -17,7 +17,7 @@
 +LFLAGS+= -Wl,-rpath,${X11BASE}/lib
 +.endif
 +CC ?= gcc
-+MOC = ${X11BASE]/bin/moc1
++MOC = ${X11BASE}/bin/moc1
  SHELL =	/bin/sh
  
  ####### End of automatically generated section
