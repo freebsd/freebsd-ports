@@ -7,7 +7,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc tcl84
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
