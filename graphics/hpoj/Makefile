@@ -28,8 +28,14 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
+.if ${ARCH} == "i386" && ${OSVERSION} > 500000
 BROKEN=	"ffs() clash, see i386/41930"
+.endif
+
+.if ${ARCH} == "alpha"
+EXTRA_PATCHES=	files/extra-patch-mlcd-Makefile.in \
+		files/extra-patch-mlcd-ParPort.cpp \
+		files/extra-patch-mlcd-ParPort.h
 .endif
 
 .ifndef(WITHOUT_X11)
