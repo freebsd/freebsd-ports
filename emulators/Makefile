@@ -69,6 +69,7 @@
     SUBDIR += mupen64-rsp
     SUBDIR += mupen64-sdlaudio
     SUBDIR += mupen64-sdlinput
+    SUBDIR += mupen64-sound
     SUBDIR += osf1_base
     SUBDIR += p-interp
     SUBDIR += pcemu
