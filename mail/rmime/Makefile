@@ -19,6 +19,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dd@FreeBSD.org
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
+RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
 
 NO_WRKSUBDIR=	yes
 STRIP=		# empty
