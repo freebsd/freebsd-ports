@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/imlib
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

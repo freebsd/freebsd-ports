@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 DISTNAME=	gtk+-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	glib-1.3.2:${PORTSDIR}/devel/glib13 \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \

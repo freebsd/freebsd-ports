@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://oss.sgi.com/projects/audiofile/download/ \
 MASTER_SITE_SUBDIR=	stable/sources/audiofile
 DISTNAME=	audiofile-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
