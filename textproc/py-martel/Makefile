@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	martel
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 PORTEPOCH=	1
 CATEGORIES=	textproc biology python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.biopython.org/Download/
 MASTER_SITE_SUBDIR=	wjv
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Martel-${PORTVERSION}
+DISTNAME=	biopython-${BIOPYTHON_VERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
@@ -20,9 +20,9 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/Martel
+BIOPYTHON_VERSION=	1.00a4
 PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 do-build:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
@@ -32,15 +32,5 @@ pre-install:
 
 do-install:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-.for docfile in README HISTORY doc/*
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

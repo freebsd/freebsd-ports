@@ -1,11 +1,3 @@
-%%PORTDOCS%%share/doc/martel/HISTORY
-%%PORTDOCS%%share/doc/martel/README
-%%PORTDOCS%%share/doc/martel/intro.txt
-%%PORTDOCS%%share/doc/martel/tech_description.txt
-%%PORTDOCS%%share/doc/martel/writing_a_format.txt
-%%PORTDOCS%%share/examples/martel/sample.comma
-%%PORTDOCS%%share/examples/martel/sample.swissprot
-%%PORTDOCS%%share/examples/martel/sample.tab
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.pyo
@@ -15,12 +7,18 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/Generate.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/LAX.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/LAX.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/LAX.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/RecordReader.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/RecordReader.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/RecordReader.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Time.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Time.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Time.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/__init__.pyo
@@ -37,5 +35,3 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/optimize.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/optimize.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/optimize.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel
-%%PORTDOCS%%@dirrm share/examples/martel
-%%PORTDOCS%%@dirrm share/doc/martel
