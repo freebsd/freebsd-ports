@@ -1,0 +1,19 @@
+--- configure.in.orig	Sun Mar 11 15:13:27 2001
++++ configure.in	Sun Mar 11 15:18:58 2001
+@@ -79,12 +79,12 @@
+ if test "$with_sdl" != "no" ; then
+ AC_CHECK_PROG(SDL_CONFIG, sdl-config, yes)
+ if test "$SDL_CONFIG" ; then
+-SDL_LIBS="`sdl-config --libs`"
+-SDL_CFLAGS="`sdl-config --cflags`"
++SDL_LIBS="`$SDL_CONFIG --libs`"
++SDL_CFLAGS="`$SDL_CONFIG --cflags`"
+ old_incs="$INCS"
+ INCS="$INCS $SDL_CFLAGS"
+-AC_CHECK_LIB(SDL, SDL_Init, [
+-AC_CHECK_HEADERS(SDL/SDL.h, ,[
++AC_CHECK_LIB(SDL-1.1, SDL_Init, [
++AC_CHECK_HEADERS(SDL11/SDL.h, ,[
+ AC_MSG_WARN(SDL found but headers are missing!!)
+ with_sdl=no
+ ])], [with_sdl=no], $SDL_LIBS)
