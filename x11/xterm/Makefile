@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	193
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/
 EXTRACT_SUFX=	.tgz
@@ -14,12 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.5:${PORTSDIR}/textproc/expat2 \
-		png.5:${PORTSDIR}/graphics/png \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	XFree86-clients-* xorg-clients-*
+CONFLICTS=	XFree86-clients-*
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
