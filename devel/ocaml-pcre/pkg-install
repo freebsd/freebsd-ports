@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+  echo "${PKG_PREFIX}/lib/ocaml/site-lib/pcre" >> ${PKG_PREFIX}/lib/ocaml/ld.conf
+elif [ "$2" = "DEINSTALL" ]; then
+  mv ${PKG_PREFIX}/lib/ocaml/ld.conf ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
+  grep -v pcre ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp > ${PKG_PREFIX}/lib/ocaml/ld.conf
+  rm -f ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
+fi
