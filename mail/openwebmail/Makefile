@@ -30,11 +30,6 @@ OWDATADIR=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
-_SUIDPERL_ENABLED!=	${PERL5} -V | ${GREP} d_dosuid | wc -l
-
-.if ${PERL_LEVEL} > 500800 && !defined(_SUIDPERL_ENABLED)
-WITHOUT_SPEEDYCGI=yes
-.endif
 
 .if !defined(WITHOUT_SPEEDYCGI)
 BUILD_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
@@ -70,6 +65,13 @@ _CUSTOMIZED=	yes
 .endif
 
 pre-fetch:
+.if ${PERL_LEVEL} > 500800
+	@${ECHO} ""
+	@${ECHO} "WARNING:"
+	@${ECHO} "Please make sure that your perl is built with -DSUIDPERL_ENABLED,"
+	@${ECHO} "otherwise please build openwebmail with WITHOUT_SPEEDYCGI=yes"
+	@${ECHO} ""
+.endif
 .if defined(WITH_PAM)
 	@${ECHO} "PAM support will be added."
 .endif
@@ -102,11 +104,11 @@ pre-fetch:
 
 post-patch:
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
-	@${PERL} -pi.bak -e 's,/usr/local/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
-	@${PERL} -pi.bak -e 's,/usr/local/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
+	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
+	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .if !defined(WITHOUT_SPEEDYCGI)
 	@${ECHO} "savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
-	@${PERL} -pi.bak -e 's,/usr/local/bin/speedy,${LOCALBASE}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
+	@${PERL} -pi.bak -e 's,${LOCALBASE}/bin/speedy,${LOCALBASE}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
 .endif
