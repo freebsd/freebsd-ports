@@ -1,0 +1,7 @@
+A Perl module used by websieve for creating Sieve scripts on an Cyrus
+IMAP mail server.  Sometimes also referenced as 'perlsieve'.
+
+Author: Alain Turbide <aturbide@toshiba.ca>
+
+
+WWW: http://sourceforge.net/projects/websieve
