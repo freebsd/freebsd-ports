@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	dvipdfm
-PORTVERSION=	20020531
+PORTVERSION=	20020605
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfm-cjk/snapshot/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfm-cjk/snapshot/ \
+		http://project.ktug.or.kr/dvipdfmx/snapshot/
 PKGNAMESUFFIX=	-cjk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
