@@ -30,8 +30,8 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
 # patch files
-PATCH_SITES+=		http://sheepkiller.nerim.net/ports/apache2/:clement \
-			http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/:clement
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:clement/}
+PATCH_SITE_SUBDIR=	clement/:clement
 PATCHFILES+=		httpd-2.0.48-buildconf.patch:clement \
 			httpd-2.0.48-ldap-fix.patch:clement
 PATCH_DIST_STRIP+=	-p1:apache-clem
@@ -51,8 +51,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS}" \
  		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
@@ -145,7 +144,7 @@ post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
 
 pre-configure:
-	cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
+	@cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
 
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
