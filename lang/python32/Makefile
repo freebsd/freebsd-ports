@@ -6,6 +6,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.4.a0.20040106
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -19,6 +20,8 @@ WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
+MAKE_ENV=	VPATH="${WRKSRC}"
+INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -27,6 +30,11 @@ USE_REINPLACE=	yes
 PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
+
+SHARED_WRKSRC=	${WRKSRC}/build.shared
+PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
+DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -56,26 +64,12 @@ CONFIGURE_ARGS+=	--enable-unicode=ucs4
 CONFIGURE_ARGS+=        --without-pymalloc
 .endif
 
-.if defined(BUILD_SHARED)
-CONFIGURE_ARGS+=	--enable-shared
-INSTALLS_SHLIB=		yes
-PLIST_SUB+=		SHARED_ONLY=""
-.else
-PLIST_SUB+=		SHARED_ONLY="@comment "
-.endif
-
-DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
-TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
 PLIST_SUB+=	X86_ONLY=""
 .else
 PLIST_SUB+=	X86_ONLY="@comment "
-.endif
-.if ${ARCH} == amd64
-CFLAGS+=        -fPIC
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
 PLIST_SUB+=     32BIT_ONLY="@comment "
@@ -126,6 +120,33 @@ post-patch:
 		${WRKSRC}/Include/patchlevel.h
 	${REINPLACE_CMD} -e 's,^.*freenet.*$$,,' ${WRKSRC}/Lib/base64.py
 
+post-configure:
+	@# prepare a subdir for shared build
+.for subdir in Modules Parser Python Objects
+	${MKDIR} ${SHARED_WRKSRC}/${subdir}
+.endfor
+	${SED} -e 's,^\(LDLIBRARY=\).*$$,\1libpython$$(VERSION).so,' \
+		-e 's,^\(BLDLIBRARY=\).*$$,\1-L. -lpython$$(VERSION),' \
+		-e 's,^\(CFLAGSFORSHARED=\).*$$,\1$$(CCSHARED),' \
+		-e 's,^\(Makefile Modules/config.c:.*\)Makefile.pre,\1,' \
+		-e 's,^\(.(BUILDPYTHON)\: .*\).(LIBRARY),\1,' \
+		-e 's,^\(.(BUILDPYTHON):.*\).(LIBRARY),\1,' \
+		${WRKSRC}/Makefile > ${SHARED_WRKSRC}/Makefile
+	${LN} -sf ${WRKSRC}/pyconfig.h ${WRKSRC}/Include ${WRKSRC}/Grammar \
+		${SHARED_WRKSRC}/
+	${LN} -sf ${WRKSRC}/Python/getplatform.c ${WRKSRC}/Python/importdl.c \
+		${WRKSRC}/Python/importdl.h \
+		${SHARED_WRKSRC}/Python/
+	${LN} -sf ${WRKSRC}/Modules/makesetup ${WRKSRC}/Modules/Setup* \
+		${WRKSRC}/Modules/*.c ${WRKSRC}/Modules/*.h \
+		${SHARED_WRKSRC}/Modules/
+
+post-build:
+	cd ${SHARED_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}.so python; \
+	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
+	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
+
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
@@ -136,6 +157,16 @@ pre-install:
 .endfor
 
 post-install:
+	@# shared version of executable and library
+	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}.so.1 \
+		${PREFIX}/lib
+	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
+		lib${PYTHON_VERSION}.so
+	${INSTALL_PROGRAM} \
+		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
+		${PREFIX}/bin
+ 
+	@# additional files installing by ports
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
 		${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
