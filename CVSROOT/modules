@@ -12510,6 +12510,7 @@ zh-cnprint	ports/chinese/cnprint
 zh-cwtex	ports/chinese/cwtex
 zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
+zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
