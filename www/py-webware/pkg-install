@@ -16,7 +16,7 @@ WEBKIT_HOME_DIR=${WEBKIT_HOME_DIR:-${PKG_PREFIX}/www/webkit}
 
 add_webkit_account()
 {
-    UID=101  # shouldn't be used for any other user!
+    UID=108  # shouldn't be used for any other user!
     GID=${UID}
 
     if pw group show "${WEBWARE_GROUP}" 2>/dev/null; then
