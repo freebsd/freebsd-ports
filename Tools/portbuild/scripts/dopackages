@@ -9,8 +9,99 @@ usage () {
   exit 1
 }
 
+# usage: makeindex pb scripts branch user
+makeindex () {
+  pb=$1
+  scripts=$2
+  branch=$3
+  user=$4
+
+  cd ${pb}/usr/ports
+  echo "================================================"
+  echo "generating index"
+  echo "================================================"
+  echo "index generation started at $(date)"
+  ${scripts}/makeindex ${branch} || exit 1
+  echo "index generation ended at $(date)"
+  if grep -q non-existent INDEX; then
+    echo "errors in INDEX:"
+    grep -C non-existent INDEX
+    grep -v non-existent INDEX > INDEX.tmp
+    mv -f INDEX.tmp INDEX
+  fi
+  echo $(wc -l <INDEX) "lines in INDEX"
+  chown ${user} INDEX
+}
+
+# usage: makeduds pb scripts branch
+makeduds () {
+  pb=$1
+  scripts=$2
+  branch=$3
+
+  cd ${pb}/usr/ports
+  echo "================================================"
+  echo "generating duds"
+  echo "================================================"
+  echo "duds generation started at $(date)"
+  if ! ${scripts}/makeduds ${branch}; then
+    echo "error(s) detected, exiting script at $(date)"
+    exit 1
+  fi
+  echo "duds generation ended at $(date)"
+  echo $(wc -l < ${pb}/${branch}/duds) "items in duds"
+  echo "duds diff:"
+  diff ${pb}/${branch}/duds.old ${pb}/${branch}/duds
+  cp -p ${pb}/${branch}/duds ${pb}/${branch}/duds.old
+}
+
+# usage: setupnode pb scripts branch me node
+setupnode () {
+  pb=$1
+  scripts=$2
+  branch=$3
+  me=$4
+  node=$5
+
+  echo "setting up of $node started at $(date)"
+  scp -p -a ${scripts}/setupnode ${node}:${scripts}
+  ssh -n ${node} ${scripts}/setupnode ${me} ${pb} ${branch}
+  echo "setting up of $node ended at $(date)"
+}
+
+# usage: restrictedlist pb scripts branch
+restrictedlist () {
+  pb=$1
+  scripts=$2
+  branch=$3
+
+  cd ${pb}/usr/ports
+  echo "================================================"
+  echo "creating restricted list"
+  echo "================================================"
+  echo "restricted list genaration started at $(date)"
+  make ECHO_MSG=/usr/bin/true clean-restricted-list > ${pb}/${branch}/restricted.sh
+  echo "restricted list genaration ended at $(date)"
+  echo $(grep -c '^#' ${pb}/${branch}/restricted.sh) "ports in ${pb}/${branch}/restricted.sh"
+}
+  
+# usage: cdromlist pb scripts branch
+cdromlist () {
+  pb=$1
+  scripts=$2
+  branch=$3
+
+  cd ${pb}/usr/ports
+  echo "================================================"
+  echo "creating cdrom list"
+  echo "================================================"
+  echo "cdrom list generation started at $(date)"
+  make ECHO_MSG=/usr/bin/true clean-for-cdrom-list > ${pb}/${branch}/cdrom.sh
+  echo "cdrom list generation ended at $(date)"
+  echo $(grep -c '^#' ${pb}/${branch}/cdrom.sh) "ports in ${pb}/${branch}/cdrom.sh"
+}
+
 scripts=${pb}/scripts
-lock=${pb}/lock
 
 umask 002
 export PORTSDIR=${pb}/usr/ports
@@ -20,19 +111,13 @@ me=$(hostname -s)
 echo "Subject: $me package building logs"
 echo
 echo "Called with arguments: "${1+"$@"}
+echo "Started at $(date)"
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
 
 if [ $# = 0 ]; then
   usage
 fi
-
-if [ -e ${lock} ]; then
-  echo "Skipped since lock file exists"
-  exit 1
-fi
-
-touch ${lock}
 
 nobuild=0
 noindex=0
@@ -74,64 +159,50 @@ if [ "$nocvsup" = 0 ]; then
   echo "================================================"
   su ${user} -c 'cvsup -g -L 1 /etc/supfile.cvsup'
   echo "================================================"
-  echo "running cvs update"
+  echo "running cvs update on /usr/ports"
   echo "================================================"
   su ${user} -c 'cvs -q update -d -P'
   echo "================================================"
   echo "running make checksubdirs"
   echo "================================================"
   make checksubdirs 
+  echo "================================================"
+  echo "running cvs update on /usr/opt/doc"
+  echo "================================================"
+  cd ${pb}/usr/opt/doc
+  su ${user} -c 'cvs -q update -d -P'
+fi
+
+# this one not in background to check return status
+if [ "$noduds" = 0 ]; then
+  makeduds ${pb} ${scripts} ${branch}
 fi
 
 # generate new Makefile
 if [ "$noindex" = 0 ]; then
-  echo "================================================"
-  echo "generating index"
-  echo "================================================"
-  echo -n "started at "
-  date
-  ${scripts}/makeindex ${branch} || exit 1
-  echo -n "ended at "
-  date
-  echo $(wc -l <INDEX) "lines in INDEX"
-  chown ${user} INDEX
+  makeindex ${pb} ${scripts} ${branch} ${user} &
+  sleep 2
 fi
-make parallel > ../../${branch}/Makefile
-
-if [ "$noduds" = 0 ]; then
-  echo "================================================"
-  echo "generating duds"
-  echo "================================================"
-  echo -n "started at "
-  date
-  ${scripts}/makeduds ${branch}
-  echo -n "ended at "
-  date
-  echo $(wc -l < ${pb}/${branch}/duds) "items in duds"
-  echo "duds diff:"
-  diff ${pb}/${branch}/duds.old ${pb}/${branch}/duds
-  cp -p ${pb}/${branch}/duds ${pb}/${branch}/duds.old
-fi
-
-echo "================================================"
-echo "running cvs update on /usr/opt/doc"
-echo "================================================"
-cd ${pb}/usr/opt/doc
-su ${user} -c 'cvs -q update -d -P'
 
 echo "================================================"
 echo "setting up nodes"
 echo "================================================"
-echo -n "started at "
-date
 for node in $(awk '{print $1}' ${pb}/mlist); do
-  echo "setting up $node"
-  scp -p -a $scripts/setupnode $node:$scripts
-  ssh -n $node $scripts/setupnode $me $pb $branch &
+  setupnode ${pb} ${scripts} ${branch} ${me} ${node} &
+  sleep 2
 done
+
+restrictedlist ${pb} ${scripts} ${branch} &
+sleep 2
+
+cdromlist ${pb} ${scripts} ${branch} &
+
 wait
-echo -n "ended at "
-date
+
+echo "all preparation ended at $(date)"
+
+cd ${pb}/usr/ports
+make parallel > ../../${branch}/Makefile
 
 cd ${pb}
 if [ "$nobuild" = 0 ]; then
@@ -145,19 +216,17 @@ if [ "$nobuild" = 0 ]; then
   mv -f errors logs packages old-errors make.* bak
   mkdir -p errors logs packages/All
   chown -R ${user} errors logs packages 
-  cp -p tarballs/XFree86-3.3.3.1.tgz packages/All
+  cp -p tarballs/XFree86-3.3.4.tgz packages/All
   cp -p tarballs/Motif-*.tgz packages/All
   count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist)
   cd ${pb}/${branch}/packages/All
   echo "================================================"
   echo "building packages (phase 1)"
   echo "================================================"
-  echo -n "started at "
-  date
+  echo "started at $(date)"
   make -k -j$count -f ../../Makefile > ../../make.0 2>&1 </dev/null
-  echo -n "ended at "
-  date
-  echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
+  echo "ended at $(date)"
+  echo $(echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) - 2 | bc) "packages built"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
   cd ${pb}/${branch}
@@ -172,12 +241,15 @@ if [ "$nobuild" = 0 ]; then
   echo "================================================"
   echo "building packages (phase 2)"
   echo "================================================"
-  echo -n "started at "
-  date
+  echo "started at $(date)"
   make -k -j$count -f ../../Makefile > ../../make.1 2>&1 </dev/null
-  echo -n "ended at "
-  date
+  echo "ended at $(date)"
+  rm XFree86-3.*.tgz Motif-*.tgz
+  md5 *.tgz > CHECKSUM.MD5
+  ${pb}/scripts/chopindex ${pb}/usr/ports/INDEX ${pb}/${branch}/packages > \
+    ${pb}/${branch}/packages/INDEX
   echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
+  echo $(cat ${pb}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
   cd ${pb}/${branch}
@@ -195,25 +267,47 @@ if [ "$nobuild" = 0 ]; then
   if [ "x$new" != "x" ]; then
     echo "The following port(s) didn't build the first time around: $new"
   fi
-  cd ${PORTSDIR}
   echo "================================================"
-  echo "creating restricted list"
+  echo "new failures"
   echo "================================================"
-  echo -n "started at "
-  date
-  make ECHO_MSG=/usr/bin/true clean-restricted-list > ${pb}/${branch}/restricted.sh
-  echo -n "ended at "
-  date
-  echo $(grep -c '^#' ${pb}/${branch}/restricted.sh) "ports in ${pb}/${branch}/restricted.sh"
+  cd ${pb}/${branch}/errors
+  for i in *.log; do
+    if [ ! -f ../bak/errors/$i ]; then
+      echo -n " $i"
+    fi
+  done
+  echo
   echo "================================================"
-  echo "creating cdrom list"
+  echo "old packages"
   echo "================================================"
-  echo -n "started at "
-  date
-  make ECHO_MSG=/usr/bin/true clean-for-cdrom-list > ${pb}/${branch}/cdrom.sh
-  echo -n "ended at "
-  date
-  echo $(grep -c '^#' ${pb}/${branch}/cdrom.sh) "ports in ${pb}/${branch}/cdrom.sh"
+  cd ${pb}/${branch}/bak/packages/All
+  for i in *.tgz; do
+    if [ ! -f ../../../packages/All/$i ]; then
+      echo -n " $i"
+    fi
+  done
+  echo
+  echo "================================================"
+  echo "old failures"
+  echo "================================================"
+  cd ${pb}/${branch}/bak/errors
+  for i in *.log; do
+    if [ ! -f ../../errors/$i ]; then
+      echo -n " $i"
+    fi
+  done
+  echo
+  echo "================================================"
+  echo "new packages"
+  echo "================================================"
+  cd ${pb}/${branch}/packages/All
+  for i in *.tgz; do
+    if [ ! -f ../../bak/packages/All/$i ]; then
+      echo -n " $i"
+    fi
+  done
+  echo
 fi
-
-rm -f ${lock}
+echo "================================================"
+echo "all done at $(date)"
+echo "================================================"
