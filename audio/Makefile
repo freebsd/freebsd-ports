@@ -222,6 +222,7 @@
     SUBDIR += mpt
     SUBDIR += mq3
     SUBDIR += muse
+    SUBDIR += musepack
     SUBDIR += musicbox
     SUBDIR += musicbrainz
     SUBDIR += musiccontrol

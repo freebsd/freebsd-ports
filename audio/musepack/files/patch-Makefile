@@ -1,0 +1,75 @@
+--- Makefile.orig	Wed Mar 17 23:17:54 2004
++++ Makefile	Fri Apr 16 16:07:57 2004
+@@ -136,27 +136,21 @@
+ OPTIM_SPEED = \
+ 	-O3 -s                  \
+ 	-finline-functions      \
+-	-mno-ieee-fp            \
+-	-ffast-math             \
+ 	-fomit-frame-pointer    \
+ 	-frerun-loop-opt        \
+ 	-fstrength-reduce       \
+ 	-fexpensive-optimizations \
+ 	-funroll-all-loops -fmove-all-movables -fstrength-reduce \
+-	-mpreferred-stack-boundary=2 -malign-jumps=5 -malign-loops=0 -malign-functions=5
+ 
+ # -fcse-follow-jumps \
+ 
+ 
+ OPTIM_SIZE = \
+ 	-Os -s                  \
+-	-mno-ieee-fp            \
+-	-ffast-math             \
+ 	-fomit-frame-pointer    \
+ 	-frerun-loop-opt        \
+ 	-fstrength-reduce       \
+ 	-fmove-all-movables -fstrength-reduce -fcse-follow-jumps \
+-	-mpreferred-stack-boundary=2 -malign-jumps=5 -malign-loops=0 -malign-functions=5
+ 
+ # Options to generate Assembly code for inspecting
+ 
+@@ -189,7 +183,7 @@
+ 
+ # Merge all options together for CFLAGS and CFLAG_SIZE
+ 
+-CFLAGS        = $(ARCH) $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMAKE_$(BITS)BIT -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
++CFLAGS        += $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMAKE_$(BITS)BIT -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
+ CFLAGS       += -I$(XINCLDIR) -L$(XLIBDIR)
+ #CFLAGS      += $(ASSEM)
+ CFLAGS_SIZE   = $(CFLAGS) $(OPTIM_SIZE)
+@@ -226,14 +220,20 @@
+ 
+ # Lists of object and C files
+ 
+-MPPDEC_OBJ = cpu_feat.o decode.o http.o huffsv7.o huffsv46.o id3tag.o mppdec.o profile.o requant.o synth.o synthasm.o synthtab.o toolsd.o wave_out.o stderr.o _setargv.o
++MPPDEC_OBJ = decode.o http.o huffsv7.o huffsv46.o id3tag.o mppdec.o profile.o requant.o synth.o synthtab.o toolsd.o wave_out.o stderr.o _setargv.o
+ MPPDEC_SRC =            decode.c http.c huffsv7.c huffsv46.c id3tag.c mppdec.c profile.c requant.c synth.c            synthtab.c tools.c  wave_out.c stderr.c _setargv.c
+ MPPDEC_ASO = cpu_feat.o                                                                                     synthasm.o
++ifeq ($(ARCH),i386)
++MPPDEC_OBJ+= cpu_feat.o synthasm.o
++endif
+ 
+ 
+-MPPENC_OBJ = analy_filter.o ans.o bitstream.o cvd.o fft4g.o fft4gasm.o fft_routines.o mppenc.o profile.o psy.o psy_tab.o quant.o huffsv7e.o encode_sv7.o wave_in.o tags.o toolse.o fastmath.o pipeopen.o stderr.o regress.o keyboard.o
++MPPENC_OBJ = analy_filter.o ans.o bitstream.o cvd.o fft4g.o fft_routines.o mppenc.o profile.o psy.o psy_tab.o quant.o huffsv7e.o encode_sv7.o wave_in.o tags.o toolse.o fastmath.o pipeopen.o stderr.o regress.o keyboard.o
+ MPPENC_SRC = analy_filter.c ans.c bitstream.c cvd.c fft4g.c            fft_routines.c mppenc.c profile.c psy.c psy_tab.c quant.c huffsv7.c  encode_sv7.c wave_in.c tags.c tools.c  fastmath.c pipeopen.c stderr.c regress.c keyboard.c
+ MPPENC_ASO =                                                fft4gasm.o
++ifeq ($(ARCH),i386)
++MPPENC_OBJ+= fft4gasm.o
++endif
+ 
+ 
+ REPLAY_OBJ = replaygain.o gain_analysis.o pipeopen.o stderr.o _setargv.o
+@@ -353,8 +353,10 @@
+ #
+ # Compile mppdec source code files
+ 
+-config.h: mpp.h config.c
+-	$(CC) -DMPP_DECODER $(CFLAGS) -o config config.c   $(LDADD) &> $(LOGFILE)
++config: mpp.h config.c
++	$(CC) -DMPP_DECODER $(CFLAGS) -o config config.c   $(LDADD)
++
++config.h: config
+ 	@$(RM_F) config.h
+ 	@./config "$(CC) $(CFLAGS) -o <<EXE>> <<SRC>> $(LDADD)" "./<<EXE>>"
+ 	@$(RM_F) config
