@@ -22,7 +22,7 @@ name=clamav_milter
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/clamav-milter
-required_dirs=%%DATADIR%%
+required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/clamd.conf
 
 start_precmd=start_precmd

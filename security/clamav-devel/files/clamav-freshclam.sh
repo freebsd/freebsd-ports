@@ -24,7 +24,7 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/freshclam
 pidfile=/var/run/clamav/freshclam.pid
 command_args="--daemon"
-required_dirs=%%DATADIR%%
+required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/freshclam.conf
 
 # read settings, set default values

@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -39,7 +39,10 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PORTDOCS=	NEWS ChangeLog html
 
-CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
+DBDIR=		/var/db/clamav
+PLIST_SUB+=	DBDIR=${DBDIR}
+
+CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
@@ -64,7 +67,7 @@ CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
 CLAMAV_MILTER_SOCKET?=	/var/run/clamav/clmilter.sock
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%DBDIR%%|${DBDIR}|g' \
 		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
 		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
 		-e 's|%%CLAMAV_CLAMD_SOCKET%%|${CLAMAV_CLAMD_SOCKET}|g' \
@@ -78,7 +81,7 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
 		-e 's|^\#?(NotifyClamd)$$|\1|' \
-		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
+		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
@@ -149,7 +152,7 @@ post-install:
 		${DESTDIR}${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
 		${DESTDIR}${RC_DIR}/clamav-freshclam${RC_SUFX}
-	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DATADIR}
+	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
 .for c in clamd freshclam
 	@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
 		${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default ${DESTDIR}${PREFIX}/etc/${c}.conf
