@@ -605,6 +605,7 @@
     SUBDIR += ragel
     SUBDIR += re2c
     SUBDIR += regexx
+    SUBDIR += rhtvision
     SUBDIR += rinfo
     SUBDIR += rlwrap
     SUBDIR += robodoc
