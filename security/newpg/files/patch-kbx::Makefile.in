@@ -1,0 +1,11 @@
+--- kbx/Makefile.in.orig	Wed Jan 29 17:09:39 2003
++++ kbx/Makefile.in	Wed Jan 29 17:10:18 2003
+@@ -156,7 +156,7 @@
+ libkeybox_a_SOURCES = $(common_sources)
+ 
+ kbxutil_SOURCES = kbxutil.c $(common_sources)
+-kbxutil_LDADD = ../jnlib/libjnlib.a  $(KSBA_LIBS) $(LIBGCRYPT_LIBS)
++kbxutil_LDADD = ../jnlib/libjnlib.a  $(KSBA_LIBS) $(LIBGCRYPT_LIBS) $(INTLLIBS)
+ subdir = kbx
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

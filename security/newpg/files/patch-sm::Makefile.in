@@ -1,0 +1,11 @@
+--- sm/Makefile.in.orig	Wed Jan 29 17:15:33 2003
++++ sm/Makefile.in	Wed Jan 29 17:15:59 2003
+@@ -165,7 +165,7 @@
+ 
+ 
+ gpgsm_LDADD = ../jnlib/libjnlib.a ../assuan/libassuan.a ../kbx/libkeybox.a \
+-              ../common/libcommon.a $(LIBGCRYPT_LIBS) $(KSBA_LIBS)
++              ../common/libcommon.a $(LIBGCRYPT_LIBS) $(KSBA_LIBS) $(INTLLIBS)
+ 
+ subdir = sm
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

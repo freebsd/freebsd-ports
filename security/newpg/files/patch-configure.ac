@@ -1,0 +1,12 @@
+--- configure.ac.orig	Thu Jan 30 00:43:39 2003
++++ configure.ac	Thu Jan 30 00:44:25 2003
+@@ -303,7 +303,7 @@
+ AC_REPLACE_FUNCS(mkdtemp)
+ AC_REPLACE_FUNCS(fseeko ftello)
+ AC_REPLACE_FUNCS(isascii)
+-AC_REPLACE_FUNCS(putc_unlocked)
++AC_DEFINE(HAVE_PUTC_UNLOCKED, 1, [FreeBSD has it, trust me])
+ 
+ # We use jnlib, so tell other modules about it
+ AC_DEFINE(HAVE_JNLIB_LOGGING, 1,
+

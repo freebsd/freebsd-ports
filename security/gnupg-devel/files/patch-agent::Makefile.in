@@ -1,0 +1,11 @@
+--- agent/Makefile.in	Wed Dec  4 14:13:12 2002
++++ agent/Makefile.in.new	Wed Jan 29 19:37:03 2003
+@@ -137,7 +137,7 @@
+ pkglib_PROGRAMS = gpg-protect-tool
+ 
+ AM_CPPFLAGS = -I$(top_srcdir)/common $(LIBGCRYPT_CFLAGS) $(PTH_CFLAGS)
+-LDFLAGS = @LDFLAGS@ 
++LDFLAGS = @LDFLAGS@ $(INTLLIBS)
+ 
+ gpg_agent_SOURCES = \
+ 	gpg-agent.c agent.h \
