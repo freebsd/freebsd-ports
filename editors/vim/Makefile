@@ -24,6 +24,7 @@ PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
+COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
 
