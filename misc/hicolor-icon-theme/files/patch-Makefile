@@ -1,0 +1,8 @@
+--- Makefile.orig	Mon Dec  2 06:49:53 2002
++++ Makefile	Tue Jan 13 15:59:20 2004
+@@ -1,5 +1,4 @@
+ VERSION=0.2
+-PREFIX=/usr/local
+ DATADIR=$(PREFIX)/share
+ DESTDIR=
+ INSTALL=install
