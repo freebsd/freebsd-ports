@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuserv
 PORTVERSION=	3.12.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A standalone release of gnuserv for GNU Emacs
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 BINSUFFIX?=	-emacs
 
@@ -38,6 +39,12 @@ PLIST_SUB=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
 		BINSUFFIX=${BINSUFFIX}
 
 lispdir=	${PREFIX}/${EMACS_SITE_LISPDIR}/gnuserv
+
+post-patch:
+.for i in gnudoit gnuattach
+	@${REINPLACE_CMD} 's/gnuclient/gnuclient${BINSUFFIX}/' ${WRKSRC}/${i}
+.endfor
+
 post-install:
 	${MKDIR} ${lispdir};
 .for i in ${SOURCES} ${ELCS}
