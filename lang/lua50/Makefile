@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -20,6 +21,9 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 
 USE_REINPLACE=	yes
 MAN1=		lua.1 luac.1
+ALL_TARGET=	all so
+INSTALL_TARGET=	install soinstall
+INSTALLS_SHLIB=	YES
 
 do-configure:
 	${REINPLACE_CMD} \
@@ -32,6 +36,7 @@ do-configure:
 		-e 's|^\(INSTALL_DATA=\).*$$|\1 ${INSTALL_DATA}|' \
 		-e 's|^#\(USERCONF.*READLINE.*\)$$|\1|' \
 		-e 's|^\(EXTRA_LIBS=\).*$$|\1 -lm -lreadline -lhistory -lncurses|' \
+		-e 's|V=5.0|V=5|' \
 		${WRKSRC}/config
 
 post-install:
