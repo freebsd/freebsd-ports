@@ -14,14 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Spreadsheet::ParseExcel.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

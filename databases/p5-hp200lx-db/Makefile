@@ -14,12 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	g.gonter@ieee.org
 
-USE_PERL5=	yes
-
-# MAN3=		HP200LX::DB.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -10,8 +10,8 @@ PORTVERSION=	0.3
 CATEGORIES=	www security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
-DISTNAME=	Apache-AuthenRadius-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
+DISTNAME=	Apache-AuthenRadius-${PORTVERSION}
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -19,12 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_per
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Authen/Radius.pm:${PORTSDIR}/security/p5-Authen-Radius
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AuthenRadius.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

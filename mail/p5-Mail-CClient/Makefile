@@ -17,12 +17,9 @@ MAINTAINER=		kbyanc@posi.net
 
 LIB_DEPENDS=		c-client4.7:${PORTSDIR}/mail/cclient
 
-USE_PERL5=		yes
+PERL_CONFIGURE=		yes
 
 MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=			Mail::Cclient.3
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -8,5 +8,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/MainContext.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSL.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/.packlist
-lib/perl5/%%PERL_VER%%/man/man3/Crypt::SSLeay.3
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay

@@ -18,12 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSL
 
 RESTRICTED=	"Crypto; export-controlled"
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 $MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 $MAN3=		IO::Socket::SSL.3
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -19,14 +19,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBD::File.3 \
 		DBD::CSV.3 \
 		Bundle::DBD::CSV.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

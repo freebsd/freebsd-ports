@@ -17,12 +17,9 @@ MAINTAINER=	roman@xpert.com
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3=		Convert::TNEF.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

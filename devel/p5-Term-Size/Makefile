@@ -14,13 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brad@kazrak.com
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::Size.3
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL \
-		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

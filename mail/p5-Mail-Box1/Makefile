@@ -25,7 +25,6 @@ BROKEN=		"Requires Perl 5.6.0 for 'our' keyword"
 .endif
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

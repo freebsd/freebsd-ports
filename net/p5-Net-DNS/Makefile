@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
 		Net::DNS::RR::AFSDB.3 Net::DNS::RR::CNAME.3 Net::DNS::RR::HINFO.3 \
@@ -27,10 +28,5 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 Net::DNS::RR::NIMLOC.3 \
 		Net::DNS::RR::NSAP.3 Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 \
 		Net::DNS::Update.3
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

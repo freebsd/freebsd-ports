@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${site_perl}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
-USE_PERL5=	YES
 PERL_CONFIGURE=	YES
 
 MAN3=		File::Tail.3

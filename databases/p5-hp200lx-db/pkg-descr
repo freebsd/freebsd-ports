@@ -19,4 +19,3 @@ array tie implementation to access database data records
   FETCH                               retrieve a record
   STORE                               store a record
   $db->get_last_index ()              return highest index
-

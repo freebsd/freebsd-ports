@@ -15,9 +15,6 @@ DISTNAME=	${PORTNAME}-.${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

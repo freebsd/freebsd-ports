@@ -17,9 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-
 IS_INTERACTIVE=	yes
 
 MAN3=		Mail::Sender.3

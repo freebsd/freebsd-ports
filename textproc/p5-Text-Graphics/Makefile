@@ -17,7 +17,6 @@ MAINTAINER=	tobez@tobez.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Graphics.3

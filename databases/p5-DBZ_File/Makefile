@@ -15,15 +15,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+CONFIGURE_ENV=	-I${FILESDIR} -L${FILESDIR}
 
 WRKSRC=		${WRKDIR}/DBZ_File
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBZ_File.3
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} -I ${FILESDIR} Makefile.PL \
-			LIBS= INC=-I${FILESDIR} CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

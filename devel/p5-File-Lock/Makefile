@@ -14,10 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_PERL5=	yes
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

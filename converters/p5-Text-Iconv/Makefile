@@ -16,17 +16,10 @@ MAINTAINER=	skv@protey.ru
 
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE/lib"
 
 MAN3=		Text::Iconv.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PREFIX=${PREFIX} \
-		LIBS="-L${LOCALBASE}/lib -liconv " \
-		INC="-I ${LOCALBASE}/include " \
-		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

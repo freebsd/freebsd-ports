@@ -1,4 +1,3 @@
-
 This is my first alpha release of File::Lock, my version of the code
 greatfully provided by Jarrko. I've mucked about with it quite a bit,
 and there are a few policy decisions you might not agree with:
@@ -18,12 +17,13 @@ unlocked on destruction. But it isn't.
 
 File::Lock::lockfile isn't written yet, but will be.
 
-You can use a mode of "t" or "i" to get info/test a lock. fcntl in array context
-will return an array consisting of all the usual fcntl data. In any other case, a single
-letter is returned, "u", "w",  or "r", for the detected locking mode. (or unlocked.) 
+You can use a mode of "t" or "i" to get info/test a lock. fcntl in array
+context will return an array consisting of all the usual fcntl data.
+In any other case, a single letter is returned, "u", "w",  or "r",
+for the detected locking mode. (or unlocked.) 
 
-All calls return true if successful. Currently no mucking about with errno is done, so it
-might not be the same for the same condition on all systems.
+All calls return true if successful. Currently no mucking about with errno
+is done, so it might not be the same for the same condition on all systems.
 
 If you need real fcntl() and it's constants, use Fcntl. File::Lock does
 optionally export SEEK_*, and LOCK_EX|UN|SH, though. (I don't remember why,
@@ -33,4 +33,3 @@ Any comments, complaints, or bug patches would be greatly appreciated.
 
 --
 Kenneth Albanowski (kjahds@kjahds.com, CIS: 70705,126)
-

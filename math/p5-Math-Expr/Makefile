@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
+
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Expr.3 Math::Expr::FormulaDB.3 \
 		Math::Expr::MatchSet.3 Math::Expr::Node.3 \

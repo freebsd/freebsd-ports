@@ -18,7 +18,6 @@ LIB_DEPENDS=	db3.1:${PORTSDIR}/databases/db3
 
 PERL_CONFIGURE=	yes
 ALL_TARGET=	all test
-USE_PERL5=	yes
 
 post-patch:
 	${PERL} -pi -e 's|^(INCLUDE\s+= )./libraries/.*$$|$$1\$(PREFIX)/include/db3|g; \

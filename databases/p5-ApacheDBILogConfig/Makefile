@@ -18,10 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/Apache/DBI.pm:${
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
-USE_PERL5=	yes
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			PREFIX="${PREFIX}" CC="${CC}" CCFLAGS="${CFLAGS}"
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

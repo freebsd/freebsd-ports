@@ -14,17 +14,13 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tcl::Tk.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

@@ -14,13 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	scrappy@FreeBSD.org
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3=		Convert::BER.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Spreadsheet::WriteExcel::Worksheet.3 \
 		Spreadsheet::WriteExcel::BIFFwriter.3 \
@@ -22,11 +22,6 @@ MAN3=		Spreadsheet::WriteExcel::Worksheet.3 \
 		Spreadsheet::WriteExcel::Workbook.3 \
 		Spreadsheet::WriteExcel::examples::WorkbookBig.3 \
 		Spreadsheet::WriteExcel.3 Spreadsheet::WriteExcel::Format.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

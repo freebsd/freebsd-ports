@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/net-snmp
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 post-install:

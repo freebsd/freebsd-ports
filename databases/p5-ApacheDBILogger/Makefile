@@ -18,13 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/Apache/DBI.pm:${
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DBILogger.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			PREFIX="${PREFIX}" CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

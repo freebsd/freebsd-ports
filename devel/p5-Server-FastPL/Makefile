@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@tobez.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Server::FastPL.3 Server::FastPL::Client.3 \

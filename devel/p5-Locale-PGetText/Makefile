@@ -14,16 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nakai@FreeBSD.org
 
-USE_PERL5=	YES
-
-# There is also perl man but how to manage /usr/local/man 
-# and /usr/local/lib/perl5/%%PERL_VER%%/man
+PERL_CONFIGURE=	YES
 
 MAN1=		MsgFormat.1 XText.1
-#MAN3=		Locale::PGettext.3
-#MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+MAN3=		Locale::PGettext.3
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
