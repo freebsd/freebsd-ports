@@ -87,6 +87,7 @@ include/wine/windows/axcore.idl
 include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/cderr.h
+include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
@@ -212,6 +213,9 @@ include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
 include/wine/windows/mscat.h
+include/wine/windows/mshtmdid.h
+include/wine/windows/mshtml.h
+include/wine/windows/mshtml.idl
 include/wine/windows/msi.h
 include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
@@ -312,6 +316,7 @@ include/wine/windows/wininet.h
 include/wine/windows/winioctl.h
 include/wine/windows/winnetwk.h
 include/wine/windows/winnls.h
+include/wine/windows/winnls32.h
 include/wine/windows/winnt.h
 include/wine/windows/winreg.h
 include/wine/windows/winres.h
