@@ -8,7 +8,8 @@
 PORTNAME=	nbtscan
 PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.abb.aha.ru/software/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.org
 
