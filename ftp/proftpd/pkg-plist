@@ -7,5 +7,5 @@ etc/rc.d/proftpd.sh.sample
 libexec/proftpd
 sbin/ftpshut
 share/doc/proftpd/Configuration.html
-share/doc/proftpd/FAQ-config.html
+share/doc/proftpd/faq.html
 @dirrm share/doc/proftpd
