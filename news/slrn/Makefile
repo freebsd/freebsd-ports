@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.7.3
 PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCHFILES=	slrn-0.9.7.2-decode.diff
-PATCH_SITES=	http://slrn.sourceforge.net/patches/
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	petef@FreeBSD.org
 
@@ -30,17 +26,17 @@ USE_OPENSSL=	YES
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-ALL_TARGET=	all slrnpull
+ALL_TARGET=	all
 
-MAN1=		slrn.1
+MAN1=		slrn.1 slrnpull.1
 
 post-patch:
 	@${PERL} -pi -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
 		${WRKSRC}/src/slrnfeat.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${MACHINE_ARCH}objs/slrn ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${MACHINE_ARCH}objs/slrnpull ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/slrn ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/slrnpull ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/examples/slrn
 	${INSTALL_DATA} ${WRKSRC}/doc/slrn.rc ${PREFIX}/share/examples/slrn
 	@${MKDIR} ${PREFIX}/share/examples/slrn/slrnpull
@@ -48,5 +44,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/${file} ${PREFIX}/share/examples/slrn/slrnpull
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/slrn.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/slrnpull.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
