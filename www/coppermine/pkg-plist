@@ -3,41 +3,85 @@
 %%CPGDIR%%/addpic.php
 %%CPGDIR%%/admin.php
 %%CPGDIR%%/albmgr.php
+%%CPGDIR%%/albums/edit/index.html
 %%CPGDIR%%/albums/index.html
 %%CPGDIR%%/albums/userpics/index.html
 %%CPGDIR%%/anycontent.php
 %%CPGDIR%%/banning.php
 %%CPGDIR%%/bridge/invisionboard.inc.php
 %%CPGDIR%%/bridge/phpbb.inc.php
+%%CPGDIR%%/bridge/punbb.inc.php
+%%CPGDIR%%/bridge/smf.inc.php
 %%CPGDIR%%/bridge/vbulletin.inc.php
+%%CPGDIR%%/bridge/vbulletin23.inc.php
+%%CPGDIR%%/bridge/vbulletin3.0_readme.txt
+%%CPGDIR%%/bridge/vbulletin30.inc.php
+%%CPGDIR%%/bridge/vbulletin3gamma.inc.php
+%%CPGDIR%%/bridge/woltlab21.inc.php
 %%CPGDIR%%/bridge/yabbse.inc.php
+%%CPGDIR%%/calendar.php
 %%CPGDIR%%/catmgr.php
 %%CPGDIR%%/config.php
+%%CPGDIR%%/db_ecard.php
 %%CPGDIR%%/db_input.php
 %%CPGDIR%%/delete.php
 %%CPGDIR%%/displayecard.php
 %%CPGDIR%%/displayimage.php
-%%CPGDIR%%/docs/COPYING
 %%CPGDIR%%/docs/README.html
 %%CPGDIR%%/docs/credits.html
 %%CPGDIR%%/docs/faq.htm
 %%CPGDIR%%/docs/index.htm
+%%CPGDIR%%/docs/pics/admin_menu.gif
 %%CPGDIR%%/docs/pics/admin_mode_bar.GIF
+%%CPGDIR%%/docs/pics/albmgr.gif
 %%CPGDIR%%/docs/pics/album_menu.GIF
 %%CPGDIR%%/docs/pics/category_cp.GIF
+%%CPGDIR%%/docs/pics/config_language.gif
+%%CPGDIR%%/docs/pics/cpg10.gif
+%%CPGDIR%%/docs/pics/cpg110.gif
+%%CPGDIR%%/docs/pics/cpg111.gif
+%%CPGDIR%%/docs/pics/cpg120.gif
+%%CPGDIR%%/docs/pics/cpg121.gif
+%%CPGDIR%%/docs/pics/cpg13x.gif
+%%CPGDIR%%/docs/pics/cpg1x.gif
+%%CPGDIR%%/docs/pics/cpg_all.gif
+%%CPGDIR%%/docs/pics/cpg_exclam.gif
+%%CPGDIR%%/docs/pics/cpg_no.gif
+%%CPGDIR%%/docs/pics/cpg_ok.gif
+%%CPGDIR%%/docs/pics/cust_thmb.gif
+%%CPGDIR%%/docs/pics/cust_thmb_3.gif
+%%CPGDIR%%/docs/pics/cust_thmb_final.gif
 %%CPGDIR%%/docs/pics/delete.gif
 %%CPGDIR%%/docs/pics/down.gif
 %%CPGDIR%%/docs/pics/edit.gif
 %%CPGDIR%%/docs/pics/edit_album.GIF
 %%CPGDIR%%/docs/pics/edit_picture.GIF
+%%CPGDIR%%/docs/pics/edit_video.gif
 %%CPGDIR%%/docs/pics/group_cp.GIF
+%%CPGDIR%%/docs/pics/groupsscrsht2.jpg
+%%CPGDIR%%/docs/pics/link.gif
+%%CPGDIR%%/docs/pics/searchnew_1.gif
+%%CPGDIR%%/docs/pics/searchnew_2.gif
+%%CPGDIR%%/docs/pics/spacer.gif
 %%CPGDIR%%/docs/pics/up.gif
+%%CPGDIR%%/docs/pics/user_folder_link.gif
+%%CPGDIR%%/docs/pics/util_re-size.gif
+%%CPGDIR%%/docs/tester-README.txt
+%%CPGDIR%%/docs/theme.htm
+%%CPGDIR%%/docs/translation.htm
 %%CPGDIR%%/ecard.php
+%%CPGDIR%%/editOnePic.php
 %%CPGDIR%%/editpics.php
+%%CPGDIR%%/faq.php
+%%CPGDIR%%/forgot_passwd.php
 %%CPGDIR%%/getlang.php
 %%CPGDIR%%/groupmgr.php
+%%CPGDIR%%/image_processor.php
+%%CPGDIR%%/images/arrow_upleft.gif
+%%CPGDIR%%/images/ascending.gif
 %%CPGDIR%%/images/coppermine_logo.png
 %%CPGDIR%%/images/delete.gif
+%%CPGDIR%%/images/descending.gif
 %%CPGDIR%%/images/down.gif
 %%CPGDIR%%/images/ecard.gif
 %%CPGDIR%%/images/edit.gif
@@ -105,6 +149,7 @@
 %%CPGDIR%%/images/flags/pt.gif
 %%CPGDIR%%/images/flags/py.gif
 %%CPGDIR%%/images/flags/qa.gif
+%%CPGDIR%%/images/flags/reset.gif
 %%CPGDIR%%/images/flags/ro.gif
 %%CPGDIR%%/images/flags/ru.gif
 %%CPGDIR%%/images/flags/sa.gif
@@ -112,6 +157,8 @@
 %%CPGDIR%%/images/flags/sg.gif
 %%CPGDIR%%/images/flags/si.gif
 %%CPGDIR%%/images/flags/sk.gif
+%%CPGDIR%%/images/flags/sl.gif
+%%CPGDIR%%/images/flags/sr.gif
 %%CPGDIR%%/images/flags/sv.gif
 %%CPGDIR%%/images/flags/th.gif
 %%CPGDIR%%/images/flags/tr.gif
@@ -169,18 +216,53 @@
 %%CPGDIR%%/images/smiles/icon_wink.gif
 %%CPGDIR%%/images/spacer.gif
 %%CPGDIR%%/images/stamp.gif
+%%CPGDIR%%/images/thumb_audio.jpg
+%%CPGDIR%%/images/thumb_avi.jpg
+%%CPGDIR%%/images/thumb_doc.jpg
+%%CPGDIR%%/images/thumb_document.jpg
+%%CPGDIR%%/images/thumb_gz.jpg
+%%CPGDIR%%/images/thumb_htm.jpg
+%%CPGDIR%%/images/thumb_html.jpg
+%%CPGDIR%%/images/thumb_mid.jpg
+%%CPGDIR%%/images/thumb_midi.jpg
+%%CPGDIR%%/images/thumb_mov.jpg
+%%CPGDIR%%/images/thumb_movie.jpg
+%%CPGDIR%%/images/thumb_mp3.jpg
+%%CPGDIR%%/images/thumb_mpeg.jpg
+%%CPGDIR%%/images/thumb_mpg.jpg
+%%CPGDIR%%/images/thumb_ogg.jpg
+%%CPGDIR%%/images/thumb_qtv.jpg
+%%CPGDIR%%/images/thumb_ra.jpg
+%%CPGDIR%%/images/thumb_ram.jpg
+%%CPGDIR%%/images/thumb_rar.jpg
+%%CPGDIR%%/images/thumb_rm.jpg
+%%CPGDIR%%/images/thumb_rmj.jpg
+%%CPGDIR%%/images/thumb_swf.jpg
+%%CPGDIR%%/images/thumb_txt.jpg
+%%CPGDIR%%/images/thumb_wav.jpg
+%%CPGDIR%%/images/thumb_wma.jpg
+%%CPGDIR%%/images/thumb_wmv.jpg
+%%CPGDIR%%/images/thumb_xls.jpg
+%%CPGDIR%%/images/thumb_zip.jpg
 %%CPGDIR%%/images/unk48x48.gif
 %%CPGDIR%%/images/up.gif
 %%CPGDIR%%/images/up_dup.gif
 %%CPGDIR%%/images/up_na.gif
 %%CPGDIR%%/images/up_ok.gif
 %%CPGDIR%%/images/up_pb.gif
+%%CPGDIR%%/include/archive.php
 %%CPGDIR%%/include/config.inc.php.sample
+%%CPGDIR%%/include/crop.inc.php
+%%CPGDIR%%/include/exifReader.inc.php
 %%CPGDIR%%/include/exif_php.inc.php
 %%CPGDIR%%/include/functions.inc.php
+%%CPGDIR%%/include/imageObjectGD.class.php
+%%CPGDIR%%/include/imageObjectIM.class.php
 %%CPGDIR%%/include/index.html
 %%CPGDIR%%/include/init.inc.php
+%%CPGDIR%%/include/iptc.inc.php
 %%CPGDIR%%/include/mailer.inc.php
+%%CPGDIR%%/include/media.functions.inc.php
 %%CPGDIR%%/include/picmgmt.inc.php
 %%CPGDIR%%/include/search.inc.php
 %%CPGDIR%%/include/select_lang.inc.php
@@ -192,10 +274,10 @@
 %%CPGDIR%%/installer.css
 %%CPGDIR%%/lang/arabic-utf-8.php
 %%CPGDIR%%/lang/arabic.php
-%%CPGDIR%%/lang/bosnian-utf-8.php
-%%CPGDIR%%/lang/bosnian.php
 %%CPGDIR%%/lang/brazilian_portuguese-utf-8.php
 %%CPGDIR%%/lang/brazilian_portuguese.php
+%%CPGDIR%%/lang/bulgarian-utf-8.php
+%%CPGDIR%%/lang/bulgarian.php
 %%CPGDIR%%/lang/chinese_big5-utf-8.php
 %%CPGDIR%%/lang/chinese_big5.php
 %%CPGDIR%%/lang/chinese_gb-utf-8.php
@@ -210,8 +292,6 @@
 %%CPGDIR%%/lang/dutch.php
 %%CPGDIR%%/lang/english-utf-8.php
 %%CPGDIR%%/lang/english.php
-%%CPGDIR%%/lang/estonian-utf-8.php
-%%CPGDIR%%/lang/estonian.php
 %%CPGDIR%%/lang/finnish-utf-8.php
 %%CPGDIR%%/lang/finnish.php
 %%CPGDIR%%/lang/french-utf-8.php
@@ -228,36 +308,37 @@
 %%CPGDIR%%/lang/indonesian.php
 %%CPGDIR%%/lang/italian-utf-8.php
 %%CPGDIR%%/lang/italian.php
+%%CPGDIR%%/lang/italian2-utf-8.php
+%%CPGDIR%%/lang/italian2.php
 %%CPGDIR%%/lang/japanese-utf-8.php
 %%CPGDIR%%/lang/japanese.php
-%%CPGDIR%%/lang/korean-utf-8.php
-%%CPGDIR%%/lang/korean.php
 %%CPGDIR%%/lang/latvian-utf-8.php
 %%CPGDIR%%/lang/latvian.php
+%%CPGDIR%%/lang/malay-utf-8.php
+%%CPGDIR%%/lang/malay.php
 %%CPGDIR%%/lang/norwegian-utf-8.php
 %%CPGDIR%%/lang/norwegian.php
-%%CPGDIR%%/lang/portuguese-utf-8.php
-%%CPGDIR%%/lang/portuguese.php
+%%CPGDIR%%/lang/polish-utf-8.php
+%%CPGDIR%%/lang/polish.php
 %%CPGDIR%%/lang/romanian-utf-8.php
 %%CPGDIR%%/lang/romanian.php
+%%CPGDIR%%/lang/romanian_no_diacritics-utf-8.php
+%%CPGDIR%%/lang/romanian_no_diacritics.php
 %%CPGDIR%%/lang/russian-utf-8.php
 %%CPGDIR%%/lang/russian.php
-%%CPGDIR%%/lang/slovak-utf-8.php
-%%CPGDIR%%/lang/slovak.php
 %%CPGDIR%%/lang/slovenian-utf-8.php
 %%CPGDIR%%/lang/slovenian.php
 %%CPGDIR%%/lang/spanish-utf-8.php
 %%CPGDIR%%/lang/spanish.php
 %%CPGDIR%%/lang/swedish-utf-8.php
 %%CPGDIR%%/lang/swedish.php
-%%CPGDIR%%/lang/turkish-utf-8.php
-%%CPGDIR%%/lang/turkish.php
 %%CPGDIR%%/lang/vietnamese-utf-8.php
 %%CPGDIR%%/lang/vietnamese.php
 %%CPGDIR%%/login.php
 %%CPGDIR%%/logout.php
 %%CPGDIR%%/modifyalb.php
 %%CPGDIR%%/phpinfo.php
+%%CPGDIR%%/picEditor.php
 %%CPGDIR%%/profile.php
 %%CPGDIR%%/ratepic.php
 %%CPGDIR%%/readme
@@ -268,14 +349,14 @@
 %%CPGDIR%%/searchnew.php
 %%CPGDIR%%/showthumb.php
 %%CPGDIR%%/sql/basic.sql
-%%CPGDIR%%/sql/restore_config.sql
 %%CPGDIR%%/sql/schema.sql
 %%CPGDIR%%/sql/update.sql
-%%CPGDIR%%/themes/default/images/button_bg.gif
-%%CPGDIR%%/themes/default/images/site_logo.png
-%%CPGDIR%%/themes/default/style.css
-%%CPGDIR%%/themes/default/template.html
-%%CPGDIR%%/themes/default/theme.php
+%%CPGDIR%%/themes/classic/images/button_bg.gif
+%%CPGDIR%%/themes/classic/images/site_logo.png
+%%CPGDIR%%/themes/classic/images/tile.gif
+%%CPGDIR%%/themes/classic/style.css
+%%CPGDIR%%/themes/classic/template.html
+%%CPGDIR%%/themes/classic/theme.php
 %%CPGDIR%%/themes/eyeball/images/bg.gif
 %%CPGDIR%%/themes/eyeball/images/button_bg.gif
 %%CPGDIR%%/themes/eyeball/images/hline_bg.gif
@@ -299,6 +380,7 @@
 %%CPGDIR%%/themes/eyeball/images/tableh1a_bg_left.gif
 %%CPGDIR%%/themes/eyeball/images/tableh1a_bg_middle.gif
 %%CPGDIR%%/themes/eyeball/images/tableh1a_bg_right.gif
+%%CPGDIR%%/themes/eyeball/images/tile.gif
 %%CPGDIR%%/themes/eyeball/images/top_background_r1_c1.gif
 %%CPGDIR%%/themes/eyeball/images/top_background_r1_c2.gif
 %%CPGDIR%%/themes/eyeball/images/top_background_r1_c4.gif
@@ -327,17 +409,11 @@
 %%CPGDIR%%/themes/fruity/images/left_bottom.gif
 %%CPGDIR%%/themes/fruity/images/left_bottom_left.gif
 %%CPGDIR%%/themes/fruity/images/left_top.gif
-%%CPGDIR%%/themes/fruity/images/main_nav.gif_del
-%%CPGDIR%%/themes/fruity/images/main_under.gif_del
-%%CPGDIR%%/themes/fruity/images/main_under2.gif_del
 %%CPGDIR%%/themes/fruity/images/main_under_left.gif
 %%CPGDIR%%/themes/fruity/images/main_under_middle.gif
 %%CPGDIR%%/themes/fruity/images/main_under_right.gif
-%%CPGDIR%%/themes/fruity/images/middle_top.gif_del
 %%CPGDIR%%/themes/fruity/images/middle_top2.gif
-%%CPGDIR%%/themes/fruity/images/middle_top_end.gif_del
 %%CPGDIR%%/themes/fruity/images/next.gif
-%%CPGDIR%%/themes/fruity/images/orange.gif_del
 %%CPGDIR%%/themes/fruity/images/prev.gif
 %%CPGDIR%%/themes/fruity/images/rating0.gif
 %%CPGDIR%%/themes/fruity/images/rating1.gif
@@ -361,6 +437,7 @@
 %%CPGDIR%%/themes/hardwired/images/buttonleft.gif
 %%CPGDIR%%/themes/hardwired/images/buttonleft1.gif
 %%CPGDIR%%/themes/hardwired/images/buttonleftad.gif
+%%CPGDIR%%/themes/hardwired/images/buttonleftmemb.gif
 %%CPGDIR%%/themes/hardwired/images/buttonleftmy.gif
 %%CPGDIR%%/themes/hardwired/images/buttonleftout.gif
 %%CPGDIR%%/themes/hardwired/images/buttonleftup.gif
@@ -383,6 +460,7 @@
 %%CPGDIR%%/themes/hardwired/images/rating4.gif
 %%CPGDIR%%/themes/hardwired/images/rating5.gif
 %%CPGDIR%%/themes/hardwired/images/slideshow.gif
+%%CPGDIR%%/themes/hardwired/images/tile.gif
 %%CPGDIR%%/themes/hardwired/style.css
 %%CPGDIR%%/themes/hardwired/template.html
 %%CPGDIR%%/themes/hardwired/theme.php
@@ -444,6 +522,7 @@
 %%CPGDIR%%/themes/mac_ox_x/images/tableh1a_bg_middle.gif
 %%CPGDIR%%/themes/mac_ox_x/images/tableh1a_bg_right.gif
 %%CPGDIR%%/themes/mac_ox_x/images/tableh2_bg.gif
+%%CPGDIR%%/themes/mac_ox_x/images/tile.gif
 %%CPGDIR%%/themes/mac_ox_x/images/top_panel_r1_c1.gif
 %%CPGDIR%%/themes/mac_ox_x/images/top_panel_r1_c1b.gif
 %%CPGDIR%%/themes/mac_ox_x/images/top_panel_r1_c2.jpg
@@ -461,6 +540,7 @@
 %%CPGDIR%%/themes/project_vii/images/menu_spacer.gif
 %%CPGDIR%%/themes/project_vii/images/right_menu_button.gif
 %%CPGDIR%%/themes/project_vii/images/right_menu_button_over.gif
+%%CPGDIR%%/themes/project_vii/images/tile.gif
 %%CPGDIR%%/themes/project_vii/images/top_panel_r1_c1.jpg
 %%CPGDIR%%/themes/project_vii/images/top_panel_r1_c4.jpg
 %%CPGDIR%%/themes/project_vii/images/top_panel_r1_c5.jpg
@@ -474,6 +554,12 @@
 %%CPGDIR%%/themes/rainy_day/images/button1_r1_c2.gif
 %%CPGDIR%%/themes/rainy_day/images/button1_r1_c3.gif
 %%CPGDIR%%/themes/rainy_day/images/button_bg.gif
+%%CPGDIR%%/themes/rainy_day/images/rating0.gif
+%%CPGDIR%%/themes/rainy_day/images/rating1.gif
+%%CPGDIR%%/themes/rainy_day/images/rating2.gif
+%%CPGDIR%%/themes/rainy_day/images/rating3.gif
+%%CPGDIR%%/themes/rainy_day/images/rating4.gif
+%%CPGDIR%%/themes/rainy_day/images/rating5.gif
 %%CPGDIR%%/themes/rainy_day/images/template_r1_c1.gif
 %%CPGDIR%%/themes/rainy_day/images/template_r1_c5.gif
 %%CPGDIR%%/themes/rainy_day/images/template_r1_c6.gif
@@ -499,13 +585,45 @@
 %%CPGDIR%%/themes/rainy_day/images/template_r7_c5.gif
 %%CPGDIR%%/themes/rainy_day/images/template_r7_c6.gif
 %%CPGDIR%%/themes/rainy_day/images/template_r7_c9.gif
+%%CPGDIR%%/themes/rainy_day/images/tile.gif
 %%CPGDIR%%/themes/rainy_day/style.css
 %%CPGDIR%%/themes/rainy_day/template.html
 %%CPGDIR%%/themes/rainy_day/theme.php
+%%CPGDIR%%/themes/styleguide/domLib.js
+%%CPGDIR%%/themes/styleguide/domTT.js
+%%CPGDIR%%/themes/styleguide/images/albmgr_php.gif
+%%CPGDIR%%/themes/styleguide/images/banning_php.gif
+%%CPGDIR%%/themes/styleguide/images/catmgr_php.gif
+%%CPGDIR%%/themes/styleguide/images/config_php.gif
+%%CPGDIR%%/themes/styleguide/images/db_ecard_php.gif
+%%CPGDIR%%/themes/styleguide/images/delete_php.gif
+%%CPGDIR%%/themes/styleguide/images/displayimage_php.gif
+%%CPGDIR%%/themes/styleguide/images/ecard_php.gif
+%%CPGDIR%%/themes/styleguide/images/editpics_php.gif
+%%CPGDIR%%/themes/styleguide/images/forgot_passwd_php.gif
+%%CPGDIR%%/themes/styleguide/images/groupmgr_php.gif
+%%CPGDIR%%/themes/styleguide/images/index_php.gif
+%%CPGDIR%%/themes/styleguide/images/login_php.gif
+%%CPGDIR%%/themes/styleguide/images/logout_php.gif
+%%CPGDIR%%/themes/styleguide/images/modifyalb_php.gif
+%%CPGDIR%%/themes/styleguide/images/profile_php.gif
+%%CPGDIR%%/themes/styleguide/images/reviewcom_php.gif
+%%CPGDIR%%/themes/styleguide/images/search_php.gif
+%%CPGDIR%%/themes/styleguide/images/searchnew_php.gif
+%%CPGDIR%%/themes/styleguide/images/spacer.gif
+%%CPGDIR%%/themes/styleguide/images/thumbnails_php.gif
+%%CPGDIR%%/themes/styleguide/images/tile.gif
+%%CPGDIR%%/themes/styleguide/images/upload_php.gif
+%%CPGDIR%%/themes/styleguide/images/usermgr_php.gif
+%%CPGDIR%%/themes/styleguide/images/util_php.gif
+%%CPGDIR%%/themes/styleguide/readme.htm
+%%CPGDIR%%/themes/styleguide/template.html
+%%CPGDIR%%/themes/styleguide/theme.php
 %%CPGDIR%%/themes/water_drop/images/bg.gif
 %%CPGDIR%%/themes/water_drop/images/box_left_icon.gif
 %%CPGDIR%%/themes/water_drop/images/button_bg.gif
 %%CPGDIR%%/themes/water_drop/images/orange_carret.gif
+%%CPGDIR%%/themes/water_drop/images/tile.gif
 %%CPGDIR%%/themes/water_drop/style.css
 %%CPGDIR%%/themes/water_drop/template.html
 %%CPGDIR%%/themes/water_drop/theme.php
@@ -515,9 +633,13 @@
 %%CPGDIR%%/upload.php
 %%CPGDIR%%/usermgr.php
 %%CPGDIR%%/util.php
+%%CPGDIR%%/versioncheck.php
 %%CPGDIR%%/xp_publish.php
+%%CPGDIR%%/zipdownload.php
 @dirrm %%CPGDIR%%/themes/water_drop/images
 @dirrm %%CPGDIR%%/themes/water_drop
+@dirrm %%CPGDIR%%/themes/styleguide/images
+@dirrm %%CPGDIR%%/themes/styleguide
 @dirrm %%CPGDIR%%/themes/rainy_day/images
 @dirrm %%CPGDIR%%/themes/rainy_day
 @dirrm %%CPGDIR%%/themes/project_vii/images
@@ -532,8 +654,8 @@
 @dirrm %%CPGDIR%%/themes/fruity
 @dirrm %%CPGDIR%%/themes/eyeball/images
 @dirrm %%CPGDIR%%/themes/eyeball
-@dirrm %%CPGDIR%%/themes/default/images
-@dirrm %%CPGDIR%%/themes/default
+@dirrm %%CPGDIR%%/themes/classic/images
+@dirrm %%CPGDIR%%/themes/classic
 @dirrm %%CPGDIR%%/themes
 @dirrm %%CPGDIR%%/sql
 @dirrm %%CPGDIR%%/lang
@@ -545,6 +667,7 @@
 @dirrm %%CPGDIR%%/docs
 @dirrm %%CPGDIR%%/bridge
 @dirrm %%CPGDIR%%/albums/userpics
+@dirrm %%CPGDIR%%/albums/edit
 @dirrm %%CPGDIR%%/albums
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/%%CPGDIR%% 2>/dev/null || true
