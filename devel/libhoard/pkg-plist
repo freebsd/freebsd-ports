@@ -1,0 +1,5 @@
+lib/libhoard.so
+lib/libhoard.so.1
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/asplos2000.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
