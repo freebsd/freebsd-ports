@@ -124,6 +124,7 @@
     SUBDIR += linux-sun-jdk14
     SUBDIR += linux-sun-jdk15
     SUBDIR += mmake
+    SUBDIR += mx4j
     SUBDIR += netbeans
     SUBDIR += netbeans3
     SUBDIR += netcomponents
