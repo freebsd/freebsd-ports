@@ -10,7 +10,7 @@ while [ X$addr = X ]; do
 done
 
 while [ X$host = X ]; do
-    echo -n "Enter fully qualified name of this host (`hostname`)>" ; read host
+    echo -n "Enter fully qualified name of this host (`hostname`)> " ; read host
     if [ X$host = X ]; then
         host=`hostname`
     fi

@@ -1,15 +1,19 @@
 # New ports collection makefile for:	mailagent
-# Version required:		3.0.44
+# Version required:		3.0pl53+unofficial-patch
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1996/11/17 07:42:30 obrien Exp $
+# $Id: Makefile,v 1.5 1996/12/08 01:44:51 max Exp $
 #
 
-DISTNAME=	mailagent-3.0pl44
-PKGNAME=	mailagent-3.0.44
+DISTNAME=	mailagent-3.0pl53
+PKGNAME=	mailagent-3.0.53
 CATEGORIES=	mail
-MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ 
+MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ \
+		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS
+
+PATCHFILES=	mailagent-3.0pl53-unoff-patch.gz
+PATCH_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
 MAINTAINER=	max@FreeBSD.ORG
 
@@ -23,16 +27,17 @@ IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-dres \
-			-Dccflags='${CFLAGS} -D_HAVE_PARAM_H' \
-			-Dperlpath='/usr/local/bin/perl' \
+			-Dperlpath='${PERLPATH}/perl' \
 			-Dutmp='/var/run/utmp' \
 			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1' \
 			-Dnotifypatches='false'
+MAKE_ENV=	PATH=${PERLPATH}:/bin:/sbin:/usr/bin:/usr/sbin
 INSTALL_TARGET=	install install.man
 
 MAN1=			edusers.1 mailagent.1 maildist.1  \
 			maillist.1 mailpatch.1 package.1
 # Note that mailhelp.1 is intentionally left uncompressed as it is referred
 # from several other man pages with .so macro.
+PERLPATH!=	dirname `which perl5.003`
 
 .include <bsd.port.mk>
