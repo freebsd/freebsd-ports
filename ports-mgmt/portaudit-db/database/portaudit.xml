@@ -991,7 +991,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>FreeBSD</name>
-	<range><le>491101</le></range>
+	<range><lt>491101</lt></range>
 	<range><ge>500000</ge><lt>502114</lt></range>
       </package>
     </affects>
