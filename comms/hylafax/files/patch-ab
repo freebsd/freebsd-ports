@@ -1,12 +1,12 @@
---- configure.orig	Wed Nov 27 08:20:17 1996
-+++ configure	Mon Feb  2 10:21:51 1998
+--- configure.orig	Sat Feb 14 04:46:28 1998
++++ configure	Sun Sep  5 13:47:48 1999
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/usr/local/bin/bash
- #	$Id: patch-ab,v 1.4 1998/02/02 01:25:38 itojun Exp $
+ #	$Id: configure,v 1.407 1998/02/07 14:35:55 guru Rel $
  #
  # HylaFAX Facsimile Software
-@@ -239,7 +239,7 @@
+@@ -248,7 +248,7 @@
  test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
  test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
  test -d /usr/5bin && PATH=/usr/5bin:$PATH:/usr/etc	# Sun and others
