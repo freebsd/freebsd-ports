@@ -13,15 +13,15 @@ if [ -e ${lock} ]; then
 fi
 
 touch ${lock}
-mkdir -p ${pb}/buildlogs
+mkdir -p ${pb}/archive/buildlogs
 
+ln -sf ${pb}/archive/buildlogs/log.4.${date} ${pb}/4/build.log
 ${pb}/scripts/dopackages 4 2>&1 \
-	| tee ${pb}/4/build.log \
+	| tee ${pb}/archive/buildlogs/log.4.${date} \
 	| sendmail $mailto
-cp -p ${pb}/4/build.log ${pb}/buildlogs/4.log.${date}
+ln -sf ${pb}/archive/buildlogs/log.3.${date} ${pb}/3/build.log
 ${pb}/scripts/dopackages -nocvsup 3 2>&1 \
-	| tee ${pb}/3/build.log \
+	| tee ${pb}/archive/buildlogs/log.3.${date} \
 	| sendmail $mailto
-cp -p ${pb}/3/build.log ${pb}/buildlogs/3.log.${date}
 
 rm -f ${lock}
