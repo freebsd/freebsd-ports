@@ -3,12 +3,12 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.5 1996/11/11 05:50:23 obrien Exp $
+# $Id: Makefile,v 1.6 1996/11/21 12:27:50 asami Exp $
 #
 
 DISTNAME=	zorro-1.1p8
 PKGNAME=	zorro-1.1.8
-CATEGORIES=	misc
+CATEGORIES=	misc tk41
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	shanee@rabbit.augusta.de

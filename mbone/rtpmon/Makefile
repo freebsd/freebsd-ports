@@ -3,11 +3,11 @@
 # Date created:				1 November 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/11/10 21:10:46 fenner Exp $
+#   $Id: Makefile,v 1.2 1996/11/13 12:41:18 asami Exp $
 #
 
 DISTNAME=	rtpmon-1.0a5
-CATEGORIES=	mbone
+CATEGORIES=	mbone tk41
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
 MAINTAINER=	fenner@FreeBSD.org

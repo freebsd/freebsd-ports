@@ -3,11 +3,11 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.11 1996/12/03 10:29:03 jkh Exp $
+# $Id: Makefile,v 1.12 1996/12/03 10:42:26 obrien Exp $
 #
 
 DISTNAME=	zircon-1.18b8
-CATEGORIES=	net
+CATEGORIES=	net tk41
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	ports@FreeBSD.org

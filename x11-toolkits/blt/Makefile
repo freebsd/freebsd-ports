@@ -3,11 +3,11 @@
 # Date created:		3 August 1996
 # Whom:			lukin <lukin@okbmei.msk.su>
 #
-# $Id: Makefile,v 1.11 1996/11/18 11:42:48 asami Exp $
+# $Id: Makefile,v 1.12 1997/04/02 00:24:18 fenner Exp $
 #
 
 DISTNAME=	blt-2.1
-CATEGORIES=	x11
+CATEGORIES=	x11 tk41
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/devel/
 DISTFILES=	BLT2.1.tar.gz
 

@@ -3,11 +3,11 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1996/11/11 05:49:38 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/17 09:05:52 obrien Exp $
 #
 
 DISTNAME=	ical-2.1b2
-CATEGORIES=	misc
+CATEGORIES=	misc tk41
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
 MAINTAINER=	erich@FreeBSD.org

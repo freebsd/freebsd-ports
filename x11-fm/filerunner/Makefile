@@ -3,12 +3,12 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.2 1996/11/05 17:53:16 jfitz Exp $
+# $Id: Makefile,v 1.3 1996/11/18 10:36:49 asami Exp $
 #
 
 DISTNAME=	FileRunner_2.0
 PKGNAME=	filerunner-2.0
-CATEGORIES=	x11
+CATEGORIES=	x11 tk41
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/xutils/managers
 EXTRACT_SUFX=	.tgz

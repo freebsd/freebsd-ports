@@ -3,12 +3,12 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.2 1996/11/18 11:33:19 asami Exp $
+#   $Id: Makefile,v 1.3 1996/11/26 11:21:38 asami Exp $
 #
 
 DISTNAME=	sdr.V2.3a1
 PKGNAME=	sdr-2.3a1
-CATEGORIES=	mbone
+CATEGORIES=	mbone tk41
 MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/sdr/
 
 MAINTAINER=	fenner@FreeBSD.org

@@ -3,12 +3,12 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1997/02/21 14:54:53 tg Exp $
+# $Id: Makefile,v 1.6 1997/02/25 08:10:20 asami Exp $
 #
 
 DISTNAME=	Tix4.1.0
 PKGNAME=	tix-4.1.0
-CATEGORIES=	x11
+CATEGORIES=	x11 tk41
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
 MAINTAINER=	ports@FreeBSD.ORG

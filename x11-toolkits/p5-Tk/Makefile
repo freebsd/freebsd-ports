@@ -3,12 +3,12 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1996/12/11 10:18:43 asami Exp $
+#   $Id: Makefile,v 1.6 1997/01/08 23:43:12 asami Exp $
 #
 
 DISTNAME=	Tk400.200
 PKGNAME=	p5-Tk400-2.00
-CATEGORIES=	x11
+CATEGORIES=	x11 tk41
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
 

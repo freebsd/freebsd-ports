@@ -3,11 +3,11 @@
 # Date created:         26 June 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:25:09 asami Exp $
+# $Id: Makefile,v 1.6 1997/01/03 11:33:08 obrien Exp $
 #
 
 DISTNAME=       tksol-1.0
-CATEGORIES=	games
+CATEGORIES=	games tk41
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/misc_software/tksol/
 EXTRACT_SUFX=	.tar.Z
 

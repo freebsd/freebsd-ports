@@ -3,11 +3,11 @@
 # Date released:	03-Mar-1997
 # Whom			tenser
 #
-# $Id: Makefile,v 1.2 1997/03/06 11:39:52 asami Exp $
+# $Id: Makefile,v 1.3 1997/03/07 08:05:09 tg Exp $
 #
 
 DISTNAME=	bsvc-2.0
-CATEGORIES=	emulators
+CATEGORIES=	emulators tk41
 MASTER_SITES=	ftp://ftp.ncsu.edu/pub/eos/pub/bsvc/distribution/
 EXTRACT_SUFX=	-src.tar.z
 
