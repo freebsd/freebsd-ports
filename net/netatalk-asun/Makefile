@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.u.washington.edu/public/asun/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.u.washington.edu/public/asun/
 MASTER_SITE_SUBDIR=	stb/mirror/ftp.u.washington.edu/public/asun
 
-MAINTAINER=	stb@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper

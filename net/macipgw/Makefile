@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.hanse.de/sites/transit/netatalk/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	stb/netatalk
 
-MAINTAINER=	stb@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatalk.a:${PORTSDIR}/net/netatalk \
 		${LOCALBASE}/include/atalk/ddp.h:${PORTSDIR}/net/netatalk

@@ -20,7 +20,7 @@ PATCH_SITES=	http://www.umich.edu/~rsug/netatalk/patches/1.4b2/ \
 PATCH_SITE_SUBDIR=	stb/mirror/www.umich.edu/%7Ersug/netatalk/patches/1.4b2/ \
 PATCHFILES=	afpd-macos8.diff afpd-bfree.diff
 
-MAINTAINER=	stb@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 MAN1=		aecho.1 getzones.1 megatron.1 nbp.1 pap.1 psorder.1 hqx2bin.1 \
 		macbinary.1 nbplkup.1 nbprgstr.1 nbpunrgstr.1 \
