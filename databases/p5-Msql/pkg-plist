@@ -1,7 +1,5 @@
 bin/dbimon
 bin/pmsql
-lib/perl5/man/man3/DBD::mSQL.3.gz
-lib/perl5/man/man3/Msql.3.gz
 lib/perl5/site_perl/DBD/mSQL.pm
 lib/perl5/site_perl/Msql.pm
 lib/perl5/site_perl/Msql/Statement.pm
@@ -9,8 +7,6 @@ lib/perl5/site_perl/i386-freebsd/auto/DBD/mSQL/mSQL.bs
 lib/perl5/site_perl/i386-freebsd/auto/DBD/mSQL/mSQL.so
 lib/perl5/site_perl/i386-freebsd/auto/Msql/Msql.bs
 lib/perl5/site_perl/i386-freebsd/auto/Msql/Msql.so
-man/man1/pmsql.1.gz
-man/man1/dbimon.1.gz
 lib/perl5/site_perl/i386-freebsd/auto/Msql/.packlist
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/DBD/mSQL
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Msql
