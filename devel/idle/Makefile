@@ -13,19 +13,20 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+
+USE_PYTHON=	yes
+PYTHON_VERSION=	python1.5
 
 do-build:
-		${LOCALBASE}/bin/python \
-			${LOCALBASE}/lib/python1.5/compileall.py ${WRKSRC}
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 		@${MKDIR} ${PREFIX}/share/idle/Icons
 		@cd ${WRKSRC} && \
 			${INSTALL_DATA} *.py? help.txt ${PREFIX}/share/idle
 		@${INSTALL_DATA} ${WRKSRC}/Icons/* ${PREFIX}/share/idle/Icons
-		@printf "#!/bin/sh\n${LOCALBASE}/bin/python ${PREFIX}/share/idle/idle.pyc\n" \
+		@printf "#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/idle/idle.pyc\n" \
 			> ${WRKDIR}/idle.sh
 		@${INSTALL_SCRIPT} ${WRKDIR}/idle.sh ${PREFIX}/bin/idle
 .if !defined(NOPORTDOCS)
