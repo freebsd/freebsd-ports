@@ -1,0 +1,90 @@
+--- src/bin/doc/DocViewer.c.orig	Tue Dec 28 23:06:17 1999
++++ src/bin/doc/DocViewer.c	Tue Dec 28 23:08:16 1999
+@@ -600,8 +600,8 @@
+ }
+ 
+ void DocumentViewer::pin (const char* name) {
+-    long count = _pinned_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _pinned_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         ViewerPinnedInfo& m = _pinned_info->item_ref(i);
+         if (strcmp(m._name, name) == 0) {
+             break;
+@@ -633,8 +633,8 @@
+ }
+ 
+ void DocumentViewer::unpin (const char* name) {
+-    long count = _pinned_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _pinned_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         ViewerPinnedInfo& m = _pinned_info->item_ref(i);
+         if (strcmp(m._name, name) == 0) {
+             break;
+@@ -651,8 +651,8 @@
+ 
+ void DocumentViewer::menubar (const char* name) {
+     choose(nil, false);
+-    long count = _menu_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _menu_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         ViewerMenuInfo& m = _menu_info->item_ref(i);
+         if (strcmp(m._name, name) == 0) {
+             break;
+@@ -674,8 +674,8 @@
+ }
+ 
+ void DocumentViewer::keymap (const char* name) {
+-    long count = _keymap_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _keymap_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         ViewerKeymapInfo& info = _keymap_info->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -698,8 +698,8 @@
+ void DocumentViewer::highlight_colors (
+     const char* name, const Color*& overlay, const Color*& underlay
+ ) {
+-    long count = _color_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _color_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         ViewerColorInfo& info = _color_info->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -766,8 +766,8 @@
+ }
+ 
+ void DocumentViewer::float_removed (Item* item) {
+-    long count = _float_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _float_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         if (_float_info->item_ref(i)._item == item) {
+             break;
+         }
+@@ -782,8 +782,8 @@
+ }
+ 
+ void DocumentViewer::float_changed (Item* item) {
+-    long count = _float_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _float_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         if (_float_info->item_ref(i)._item == item) {
+             break;
+         }
+@@ -797,8 +797,8 @@
+ 
+ void DocumentViewer::float_adjusted (Item* item, float x, float y, long p) {
+     Session::instance()->default_display()->flush();
+-    long count = _float_info->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _float_info->count(), i;
++    for (i = 0; i < count; ++i) {
+         if (_float_info->item_ref(i)._item == item) {
+             break;
+         }

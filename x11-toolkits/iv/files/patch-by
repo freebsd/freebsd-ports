@@ -1,0 +1,13 @@
+--- src/lib/Unidraw/text.c.orig	Tue Dec 28 23:20:23 1999
++++ src/lib/Unidraw/text.c	Tue Dec 28 23:20:46 1999
+@@ -561,8 +561,9 @@
+ 
+ const char* PSText::Filter (const char* string, int len) {
+     TextBuffer stext(sbuf, 0, SBUFSIZE);
++    int dot;
+ 
+-    for (int dot = 0; len--; string++) {
++    for (dot = 0; len--; string++) {
+ 	char c = *string;
+ 
+ 	if (!isascii(c) || iscntrl(c)) {

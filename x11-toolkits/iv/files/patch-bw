@@ -1,0 +1,46 @@
+--- src/bin/doc/DialogMgr.c.orig	Tue Dec 28 23:13:39 1999
++++ src/bin/doc/DialogMgr.c	Tue Dec 28 23:14:26 1999
+@@ -107,8 +107,8 @@
+ const char* DialogManager::choose (
+     Window* window, const char* prompt, const char* filter
+ ) {
+-    long count = _chooser->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _chooser->count(), i;
++    for (i = 0; i < count; ++i) {
+         ChooserInfo& info = _chooser->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -127,8 +127,8 @@
+ const char* DialogManager::ask (
+     Window* window, const char* prompt, const char* initial
+ ) {
+-    long count = _asker->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _asker->count(), i;
++    for (i = 0; i < count; ++i) {
+         AskerInfo& info = _asker->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -145,8 +145,8 @@
+ }
+ 
+ int DialogManager::confirm (Window* window, const char* prompt) {
+-    long count = _confirmer->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _confirmer->count(), i;
++    for (i = 0; i < count; ++i) {
+         ConfirmerInfo& info = _confirmer->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -163,8 +163,8 @@
+ }
+ 
+ void DialogManager::report (Window* window, const char* prompt) {
+-    long count = _reporter->count();
+-    for (long i = 0; i < count; ++i) {
++    long count = _reporter->count(), i;
++    for (i = 0; i < count; ++i) {
+         ReporterInfo& info = _reporter->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;

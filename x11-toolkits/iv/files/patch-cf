@@ -1,0 +1,19 @@
+--- src/bin/ibuild/ibglue.c.orig	Wed Dec 29 00:01:29 1999
++++ src/bin/ibuild/ibglue.c	Wed Dec 29 00:02:33 1999
+@@ -271,14 +271,14 @@
+             strcpy(VGlueClass, coreclass);
+             strcat(VGlueClass, "_VGlue");
+             
+-            boolean export = icomp->GetMemberNameVar()->GetExport();
++            boolean export_ = icomp->GetMemberNameVar()->GetExport();
+             const char* classname = icomp->GetClassNameVar()->GetName();
+             if (icomp->GetClassNameVar()->IsSubclass()) {
+                 BeginInstantiate(out);
+                 out << "(";
+ 
+             } else {
+-                if (export && !_emitMain) {
++                if (export_ && !_emitMain) {
+                     out << "    " << mname << " = new ";
+                 } else {
+                     out << "    " << classname << "* ";

@@ -1,0 +1,14 @@
+--- src/lib/Unidraw/psview.c.orig	Tue Dec 28 23:04:51 1999
++++ src/lib/Unidraw/psview.c	Tue Dec 28 23:05:07 1999
+@@ -752,9 +752,10 @@
+ 	if (dashpatsize <= 0) {
+ 	    out << "[] " << dashoffset << " ";
+ 	} else {
++	    int i;
+ 	    out << "[";
+ 
+-	    for (int i = 0; i < dashpatsize - 1; i++) {
++	    for (i = 0; i < dashpatsize - 1; i++) {
+ 		out << dashpat[i] << " ";
+ 	    }
+ 	    out << dashpat[i] << "] " << dashoffset << " ";

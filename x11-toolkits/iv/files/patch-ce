@@ -1,0 +1,11 @@
+--- src/bin/ibuild/ibed.c.orig	Tue Dec 28 23:59:18 1999
++++ src/bin/ibuild/ibed.c	Tue Dec 28 23:59:30 1999
+@@ -672,7 +672,7 @@
+     return tools;
+ }
+ 
+-static const unit = 15;
++static const int unit = 15;
+ 
+ static Coord xClosed[] = { unit/5, unit, unit, unit*3/5, 0 };
+ static Coord yClosed[] = { 0, unit/5, unit*3/5, unit, unit*2/5 };

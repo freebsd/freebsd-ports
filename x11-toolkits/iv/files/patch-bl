@@ -1,0 +1,40 @@
+--- src/bin/idraw/idarrow.c.orig	Tue Dec 28 22:27:42 1999
++++ src/bin/idraw/idarrow.c	Tue Dec 28 22:28:29 1999
+@@ -304,9 +304,11 @@
+ 	if (dashpatsize <= 0) {
+ 	    out << "[] " << dashoffset << " ";
+ 	} else {
++	    int i;
++
+ 	    out << "[";
+ 
+-	    for (int i = 0; i < dashpatsize - 1; i++) {
++	    for (i = 0; i < dashpatsize - 1; i++) {
+ 		out << dashpat[i] << " ";
+ 	    }
+ 	    out << dashpat[i] << "] " << dashoffset << " ";
+@@ -557,9 +559,11 @@
+ 	if (dashpatsize <= 0) {
+ 	    out << "[] " << dashoffset << " ";
+ 	} else {
++	    int i;
++
+ 	    out << "[";
+ 
+-	    for (int i = 0; i < dashpatsize - 1; i++) {
++	    for (i = 0; i < dashpatsize - 1; i++) {
+ 		out << dashpat[i] << " ";
+ 	    }
+ 	    out << dashpat[i] << "] " << dashoffset << " ";
+@@ -806,9 +810,10 @@
+ 	if (dashpatsize <= 0) {
+ 	    out << "[] " << dashoffset << " ";
+ 	} else {
++	    int i;
+ 	    out << "[";
+ 
+-	    for (int i = 0; i < dashpatsize - 1; i++) {
++	    for (i = 0; i < dashpatsize - 1; i++) {
+ 		out << dashpat[i] << " ";
+ 	    }
+ 	    out << dashpat[i] << "] " << dashoffset << " ";

@@ -1,6 +1,6 @@
 --- src/bin/ibuild/ibcmds.c.orig	Fri Dec 11 22:33:25 1992
-+++ src/bin/ibuild/ibcmds.c	Thu May 27 21:36:47 1999
-@@ -86,7 +86,9 @@
++++ src/bin/ibuild/ibcmds.c	Tue Dec 28 23:53:30 1999
+@@ -86,13 +86,18 @@
  #undef FileChooser
  #define FileChooser _lib_iv(FileChooser)
  
@@ -10,7 +10,16 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <stream.h>
-@@ -2407,9 +2409,9 @@
+ #include <string.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
++#ifdef __FreeBSD__
++#include <unistd.h>
++#endif
+ 
+ #if defined(sgi) || defined(sco)
+ /* not all vforks are alike */
+@@ -2407,12 +2412,13 @@
  	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
          EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
  
@@ -21,5 +30,10 @@
 +	for (unidraw->First(ii); !unidraw->Done(ii); unidraw->Next(ii)) {
 +	    IBEditor* iEd = (IBEditor*) unidraw->GetEditor(ii);
  	    ToolPanel* itoolpanel = iEd->GetToolPanel();
++	    int i;
  
-             for (int i = 0; i < installed->Count(); i++) {
+-            for (int i = 0; i < installed->Count(); i++) {
++            for (i = 0; i < installed->Count(); i++) {
+                 itoolpanel->Install(installed->GetName(i));
+             }
+             for (i = 0; i < removed->Count(); i++) {

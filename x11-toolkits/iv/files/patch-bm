@@ -1,0 +1,12 @@
+--- src/bin/mailbox/main.c.orig	Tue Dec 28 22:29:16 1999
++++ src/bin/mailbox/main.c	Tue Dec 28 22:29:29 1999
+@@ -453,7 +453,8 @@
+ 	    if (atp != nil) {
+ 		char* dotp = strchr(atp, '.');
+ 		if (dotp != nil) {
+-		    for (int i = 0; i < strlen(mail_domain); ++i) {
++		    int i;
++		    for (i = 0; i < strlen(mail_domain); ++i) {
+ 			char c = dotp[i];
+ 			c = isupper(c) ? c - 'A' + 'a' : c;
+ 			if (c != mail_domain[i]) {

@@ -1,0 +1,14 @@
+--- src/lib/InterViews/style.c.orig	Tue Dec 28 22:14:59 1999
++++ src/lib/InterViews/style.c	Tue Dec 28 22:15:54 1999
+@@ -419,9 +419,10 @@
+ 
+     long n = path->count();
+     if (e->avail_ <= n) {
++	long i;
+ 	long new_avail = n + 5;
+ 	StyleAttributeList** new_list = new StyleAttributeList*[new_avail];
+-	for (long i = 0; i < e->avail_; i++) {
++	for (i = 0; i < e->avail_; i++) {
+ 	    new_list[i] = e->entries_[i];
+ 	}
+ 	for (i = e->avail_; i < new_avail; i++) {
