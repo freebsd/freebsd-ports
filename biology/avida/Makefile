@@ -39,12 +39,6 @@ DIR2FIX=	source/main/functional_testsuites/default.md5sum/genesis	\
 		source/qt-viewer/setup_genesis.cc source/support/genesis	\
 		source/support/genesis.4stack source/main/config.cc source/defs.hh
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-configure:
 .for src in ${DIR2FIX}
 	@${REINPLACE_CMD} -e "s|../work/|${DATADIR}/|" ${WRKSRC}/${src}
@@ -59,4 +53,4 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/work/qt-viewer ${PREFIX}/bin
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
