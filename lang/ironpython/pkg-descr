@@ -1,0 +1,24 @@
+IronPython is a new Python implementation targeting the .NET and
+Mono platforms. It is...
+
+* Fast - IronPython-0.6 is up to 1.7x faster than Python-2.3 on the
+standard pystone benchmark.  An early performance report is are
+contained in this paper for PyCon 2004.
+
+* Integrated with the Common Language Runtime - IronPython code can
+easily use CLR libraries and Python classes can extend CLR classes.
+
+* Fully dynamic - IronPython supports an interactive interpreter
+and transparent on-the-fly compilation of source files just like
+standard Python.
+
+* Optionally static - IronPython also supports static compilation
+of Python code to produce static executables (.exe's) that can be
+run directly or static libraries (.dll's) that can be called from
+other CLR languages including C#, VB, managed C++ and many more.
+
+* Managed and verifiable - IronPython generates verifiable assemblies
+with no dependencies on native libraries that can run in environments
+which require verifiable managed code.
+
+WWW: http://www.ironpython.com/

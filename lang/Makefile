@@ -107,6 +107,7 @@
     SUBDIR += ifc7
     SUBDIR += intel2gas
     SUBDIR += intercal
+    SUBDIR += ironpython
     SUBDIR += itcl
     SUBDIR += jruby
     SUBDIR += jython
