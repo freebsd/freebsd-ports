@@ -7,7 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes

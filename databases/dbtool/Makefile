@@ -8,7 +8,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 
@@ -17,7 +17,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_BERKELEY_DB)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db
+LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db
 DB_INC=		-I${LOCALBASE}/include/db3
 CONFIGURE_ARGS=	--with-berkeley
 .else
