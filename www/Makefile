@@ -313,6 +313,7 @@
     SUBDIR += retawq
     SUBDIR += roxen
     SUBDIR += ruboard
+    SUBDIR += ruby-google
     SUBDIR += ruby-http-access
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webrick
