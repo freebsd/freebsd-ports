@@ -1,0 +1,11 @@
+Generic Java library for validating data constraints.
+
+A common issue when receiving data either electronically or from
+user input is verifying the integrity of the data. This work is
+repetitive and becomes even more complicated when different sets
+of validation rules need to be applied to the same set of data
+based on locale for example. Error messages may also vary by
+locale. This package attempts to address some of these issues and
+speed development and maintenance of validation rules.
+
+WWW: http://jakarta.apache.org/commons/validator/
