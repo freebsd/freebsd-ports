@@ -366,6 +366,7 @@
     SUBDIR += spellcast
     SUBDIR += speyes
     SUBDIR += spider
+    SUBDIR += ssamtse
     SUBDIR += starlanes
     SUBDIR += stvef-paks
     SUBDIR += stvef-server

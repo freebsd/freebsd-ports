@@ -1,0 +1,20 @@
+bin/ssamtse
+ssam/Bin/libEntitiesMP.so
+ssam/Bin/libamp11lib.so
+ssam/Bin/libvorbis.so
+ssam/Bin/ssam_lnx.dynamic
+ssam/Bin/libGameMP.so
+ssam/Bin/libvorbisfile.so
+ssam/Bin/ssam_lnxded
+ssam/Bin/libShaders.so
+ssam/Bin/libogg.so
+ssam/Bin/ssam_lnx
+ssam/Bin/ssam_lnxded.dynamic
+@exec ln -sf %D/ssam/Bin/libogg.so %D/ssam/Bin/libogg.so.0
+@exec ln -sf %D/ssam/Bin/libGameMP.so %D/ssam/Bin/libGame.so
+@exec ln -sf %D/ssam/Bin/libEntitiesMP.so %D/ssam/Bin/libEntities.so
+@unexec rm %D/ssam/Bin/libogg.so.0 2>&1 >/dev/null || true
+@unexec rm %D/ssam/Bin/libGame.so 2>&1 >/dev/null || true
+@unexec rm %D/ssam/Bin/libEntities.so 2>&1 >/dev/null || true
+@dirrm ssam/Bin
+@dirrm ssam

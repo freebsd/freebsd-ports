@@ -1,0 +1,21 @@
+--- bin/ssamtse.orig	Fri Mar 14 07:07:05 2003
++++ bin/ssamtse	Tue Nov 25 09:14:55 2003
+@@ -3,6 +3,8 @@
+ # Serious Sam: The Second Encounter startup script
+ #
+ 
++SSAMTSE_DATA_PATH=/usr/local/ssam/Bin
++
+ # Function to find the real directory a program resides in.
+ # Feb. 17, 2000 - Sam Lantinga, Loki Entertainment Software
+ FindPath()
+@@ -41,6 +43,9 @@
+ 
+ LD_LIBRARY_PATH=.:${SSAMTSE_DATA_PATH}:${LD_LIBRARY_PATH}
+ export LD_LIBRARY_PATH
++
++export __GL_SINGLE_THREADED=yes
++export SERIOUS_MHZ=%SERIOUS_MHZ%
+ 
+ # Let's boogie!
+ if [ -x "${SSAMTSE_DATA_PATH}/ssam_lnx" ]
