@@ -29,8 +29,8 @@ USE_OPENLDAP=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
-		PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/openh323 \
+		PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
+		OPENH323DIR=${WRKDIR}/../../../net/openh323/work/openh323 \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 
