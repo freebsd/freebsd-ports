@@ -3,11 +3,11 @@
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1995/04/15 05:41:43 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/06 00:49:36 torstenb Exp $
 #
 
 DISTNAME=	pidentd-2.5.1
-CATEGORIES+=	networking
+CATEGORIES+=	security networking
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
 

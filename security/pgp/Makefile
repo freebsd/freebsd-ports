@@ -4,10 +4,11 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1995/07/07 23:57:25 ache Exp $
+# $Id: Makefile,v 1.3 1995/07/08 00:28:30 ache Exp $
 #
 
-CATEGORIES+=	utilities
+CATEGORIES+=	security
+
 MAINTAINER=	ache@FreeBSD.ORG
 WRKSRC=         ${WRKDIR}/src
 MAKEFILE=       makefile
