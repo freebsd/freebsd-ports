@@ -1,0 +1,20 @@
+*** pop_uidl.c.bak	Thu Nov 20 00:20:38 1997
+--- pop_uidl.c	Mon Jun 29 01:28:01 1998
+***************
+*** 101,107 ****
+       POP         *p;
+       MsgInfoList *mp;
+  {
+!   char buf[MAXLINELEN], *cp;
+  
+      fseek(p->drop, mp->offset, 0);
+      while (fgets(buf, sizeof(buf), p->drop) != NULL) {
+--- 101,108 ----
+       POP         *p;
+       MsgInfoList *mp;
+  {
+!   /* prevent overflow in pop_euidl */
+!   static char buf[MAXLINELEN - 128], *cp;
+  
+      fseek(p->drop, mp->offset, 0);
+      while (fgets(buf, sizeof(buf), p->drop) != NULL) {
