@@ -18,20 +18,17 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 220000
-RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/sp
-.else
-RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
-.endif
-
-.if defined(WITH_OPENJADE)
-RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
-.endif
-
 .if ${MACHINE_ARCH} == "alpha"
 WITH_OPENJADE=	yes
 .endif
 
+.if ${OSVERSION} < 220000
+RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/sp
+.elif defined(WITH_OPENJADE)
+RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
+.else
+RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
+.endif
 RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
