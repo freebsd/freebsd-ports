@@ -1,0 +1,16 @@
+--- src/gtkimhtml.c.orig	Fri Apr 23 04:24:05 2004
++++ src/gtkimhtml.c	Sat Apr 24 05:37:14 2004
+@@ -542,10 +542,11 @@
+ 	GtkTextIter start, end;
+ 	GtkTextMark *sel = gtk_text_buffer_get_selection_bound(imhtml->text_buffer);
+ 	GtkTextMark *ins = gtk_text_buffer_get_insert(imhtml->text_buffer);
+-	
++	gboolean primary;
++
+ 	gtk_text_buffer_get_iter_at_mark(imhtml->text_buffer, &start, sel);
+ 	gtk_text_buffer_get_iter_at_mark(imhtml->text_buffer, &end, ins);
+-	gboolean primary = gtk_widget_get_clipboard(GTK_WIDGET(imhtml), GDK_SELECTION_PRIMARY) == clipboard;
++	primary = gtk_widget_get_clipboard(GTK_WIDGET(imhtml), GDK_SELECTION_PRIMARY) == clipboard;
+ 
+ 	if (info == TARGET_HTML) {
+ 		int len;
