@@ -1,30 +1,35 @@
 # ports collection makefile for:   lame
-# Version required:    2.1f
-# Date created:         November 1998
+# Version required:    3.11
+# Date created:        11 January 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/01 22:33:47 sada Exp $
+# $Id$
 #
 
-DISTNAME=	dist10
-PKGNAME=	lamer-2.1f
+DISTNAME=	lame3.11
+PKGNAME=	lame-3.11
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.tnt.uni-hannover.de/pub/MPEG/audio/mpeg2/software/technical_report/ \
-		ftp://ftp.deva.net/pub/sources/sound/codecs/mpeg/
-
-PATCH_SITES=	http://student.uq.edu.au/~s302585/lame/files/
-PATCHFILES=	dist10patch-2.1f.gz
+MASTER_SITES=	ftp://geek.rcc.se/pub/mp3encoder/lame/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-PATCH_DIST_STRIP = -p1
+LIB_DEPENDS=	gtk12:${PORTSDIR}/x11-toolkits/gtk12
 
-WRKSRC=		${WRKDIR}/dist10/lsf/encoder/
+MAN1=		lame.1
+
 USE_GMAKE=	YES
-ALL_TARGET=	lamer
+ALL_TARGET=	lame
 RESTRICTED=	Condition is not clear
 
 do-install:
-	( cd ${WRKSRC}; ${INSTALL_PROGRAM} lamer ${PREFIX}/bin )
+	( cd ${WRKSRC}; ${INSTALL_PROGRAM} lame ${PREFIX}/bin )
+	( cd ${WRKSRC}; ${INSTALL_MAN} ${WRKSRC}/doc/man/lame.1 \
+	${PREFIX}/man/man1 )
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/lame
+	${INSTALL_MAN} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/lame
+.endif
 
 .include <bsd.port.mk>
