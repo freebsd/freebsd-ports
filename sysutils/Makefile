@@ -314,6 +314,7 @@
     SUBDIR += port-maintenance-tools
     SUBDIR += portdowngrade
     SUBDIR += portindex
+    SUBDIR += portmanager
     SUBDIR += portsman
     SUBDIR += portupgrade
     SUBDIR += powerman

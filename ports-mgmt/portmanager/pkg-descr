@@ -1,0 +1,8 @@
+FreeBSD port collection management.  Insures your ports are only built with
+the most up to date sources. Great for users of KDE or GNOME who are always
+concerned over the way their underlying ports are built.
+
+WWW: http://portmanager.sourceforge.net/
+
+Michael C. Shultz
+ringworm@inbox.lv	
