@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	demon@FreeBSD.org
-
-BROKEN=		"Installs files into /usr/include"
+COMMENT=	A GNU Linear Programming Kit
 
 GNU_CONFIGURE=	yes
 
