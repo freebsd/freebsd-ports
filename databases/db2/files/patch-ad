@@ -1,0 +1,11 @@
+--- ../dist/Makefile.in.orig	Mon Dec  2 21:19:43 2002
++++ ../dist/Makefile.in	Mon Dec  2 21:19:50 2002
+@@ -4,7 +4,7 @@
+ 
+ srcdir=	@srcdir@/..
+ CPPFLAGS=-I. -I$(srcdir)/include @CPPFLAGS@
+-SHAREDFLAGS= -fpic -DPIC
++SHAREDFLAGS= -fPIC -DPIC
+ CFLAGS=	-c @CFLAGS@ $(CPPFLAGS)
+ CC=	@CC@
+ CXXFLAGS=-c @CXXFLAGS@ $(CPPFLAGS)
