@@ -1,17 +1,14 @@
-%%DATADIR%%/0_20_1_1/POPFile/0.20.0/Classifier/Bayes.pm
-%%DATADIR%%/0_20_1_1/POPFile/0.20.1/Classifier/Bayes.pm
-%%DATADIR%%/0_20_1_1/README_euc
-%%DATADIR%%/0_20_1_1/README_sjis
-%%DATADIR%%/0_20_1_1/license
-%%DATADIR%%/0_20_1_1/popfile_jpn.nsi
+sbin/popfile.sh
 %%DATADIR%%/Classifier/Bayes.pm
 %%DATADIR%%/Classifier/MailParse.pm
 %%DATADIR%%/Classifier/WordMangle.pm
+%%DATADIR%%/Classifier/popfile.sql
 %%DATADIR%%/POPFile/Configuration.pm
 %%DATADIR%%/POPFile/Loader.pm
 %%DATADIR%%/POPFile/Logger.pm
 %%DATADIR%%/POPFile/MQ.pm
 %%DATADIR%%/POPFile/Module.pm
+%%DATADIR%%/POPFile/popfile_version
 %%DATADIR%%/Proxy/POP3.pm
 %%DATADIR%%/Proxy/Proxy.pm
 %%DATADIR%%/UI/HTML.pm
@@ -20,6 +17,7 @@
 %%DATADIR%%/black.gif
 %%DATADIR%%/favicon.ico
 %%DATADIR%%/insert.pl
+%%DATADIR%%/languages/Arabic.msg
 %%DATADIR%%/languages/Bulgarian.msg
 %%DATADIR%%/languages/Chinese-Simplified.msg
 %%DATADIR%%/languages/Chinese-Traditional.msg
@@ -93,7 +91,6 @@
 %%DATADIR%%/pipe.pl
 %%DATADIR%%/pix.gif
 %%DATADIR%%/popfile.pl
-%%DATADIR%%/setup-popfile.sh
 %%DATADIR%%/skins/CoolBlue.css
 %%DATADIR%%/skins/CoolBrown.css
 %%DATADIR%%/skins/CoolGreen.css
@@ -104,6 +101,7 @@
 %%DATADIR%%/skins/PRJBlueGrey.css
 %%DATADIR%%/skins/PRJSteelBeach.css
 %%DATADIR%%/skins/SimplyBlue.css
+%%DATADIR%%/skins/Sleet-RTL.css
 %%DATADIR%%/skins/Sleet.css
 %%DATADIR%%/skins/StrawberryRose.css
 %%DATADIR%%/skins/blue.css
@@ -143,13 +141,7 @@
 %%DATADIR%%/skins/white.css
 %%DATADIR%%/skins/windows.css
 %%DATADIR%%/stopwords
-%%DATADIR%%/v0.20.1.change
-@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.0/Classifier
-@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.0
-@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.1/Classifier
-@dirrm %%DATADIR%%/0_20_1_1/POPFile/0.20.1
-@dirrm %%DATADIR%%/0_20_1_1/POPFile
-@dirrm %%DATADIR%%/0_20_1_1
+%%DATADIR%%/v0.21.0.change
 @dirrm %%DATADIR%%/Classifier
 @dirrm %%DATADIR%%/POPFile
 @dirrm %%DATADIR%%/Proxy

@@ -4,10 +4,11 @@ training. You can give it a simple job, like separating out junk e-mail, or
 a complicated one -- like filing mail into a dozen folders. Think of it as a
 personal assistant for your inbox. 
 
-Before using this ports, use ${LOCALDIR}/share/popfile/popfile-setup.sh
-script to create _your_ own popfile instance.
+Since v0.21.0, POPFile supports multiple user with a single instance.
+Using ${LOCALDIR}/sbin/popfile.sh, you can start your own POPFile easily;
+it uses ${HOME}/.popfile as a working directory.
 
-For 'Nihongo' users: this ports also imports the bugfix of Japanese
-character parsing, versioned as 0.20.1.1.
+Note for old POPFile users: copy messages/ and corpus/ directory to
+your ${HOME}/.popfile directory (if not, create it), then start popfile.sh.
 
 WWW: http://popfile.sourceforge.net/
