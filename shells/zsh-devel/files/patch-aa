@@ -1,19 +1,20 @@
-*** Src/Makefile.in.orig	Tue Jul  9 11:00:39 1996
---- Src/Makefile.in	Tue Jul  9 11:00:46 1996
-***************
-*** 138,144 ****
-  # install binary, creating install directory if necessary
-  install.bin: zsh
-  	$(top_srcdir)/mkinstalldirs $(bindir)
-! 	-if [ -f $(bindir)/zsh ]; then mv $(bindir)/zsh $(bindir)/zsh.old; fi
-  	$(INSTALL_PROGRAM) zsh $(bindir)/zsh
-  	-if [ -f $(bindir)/zsh-$(VERSION) ]; then rm -f $(bindir)/zsh-$(VERSION); fi
-  	ln $(bindir)/zsh $(bindir)/zsh-$(VERSION)
---- 138,144 ----
-  # install binary, creating install directory if necessary
-  install.bin: zsh
-  	$(top_srcdir)/mkinstalldirs $(bindir)
-! 	-if [ -f $(bindir)/zsh ]; then mv -f $(bindir)/zsh $(bindir)/zsh.old; fi
-  	$(INSTALL_PROGRAM) zsh $(bindir)/zsh
-  	-if [ -f $(bindir)/zsh-$(VERSION) ]; then rm -f $(bindir)/zsh-$(VERSION); fi
-  	ln $(bindir)/zsh $(bindir)/zsh-$(VERSION)
+--- Doc/Makefile.in.orig	Sun Nov  1 01:00:48 1998
++++ Doc/Makefile.in	Sun Nov  1 01:03:09 1998
+@@ -65,7 +65,7 @@
+ 	$(TEXI2DVI) $(sdir)/zsh.texi
+ 
+ zsh.info: zsh.texi
+-	$(MAKEINFO) $(sdir)/zsh.texi; exit 0
++	$(MAKEINFO) --no-split $(sdir)/zsh.texi; exit 0
+ 
+ zsh.texi: zsh.yo
+ 	$(YODL) -o $(sdir)/zsh.texi -I$(sdir) -w ztexi.yo version.yo zsh.yo
+@@ -133,7 +133,7 @@
+ # install info pages, creating install directory if necessary
+ install.info: zsh.info
+ 	$(sdir_top)/mkinstalldirs $(infodir)
+-	for file in zsh.info zsh.info-[1-9]; do \
++	for file in zsh.info ; do \
+ 	  if test -f $$file; then \
+ 	    $(INSTALL_DATA) $$file $(infodir); \
+ 	  elif test -f $(sdir)/$$file; then \
