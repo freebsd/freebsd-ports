@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	phpgroupware
-PORTVERSION=	0.9.14.001
+PORTVERSION=	0.9.14.004
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpgroupware
-DISTNAME=	phpGroupWare-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system
