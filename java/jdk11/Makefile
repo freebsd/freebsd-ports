@@ -3,7 +3,7 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FReeBSD.org>
 #
-# $Id: Makefile,v 1.14 1998/08/19 14:56:37 nate Exp $
+# $Id: Makefile,v 1.15 1998/11/14 17:35:33 nate Exp $
 #
 
 DISTNAME=	jdk1.1.7.V98-11-5
@@ -21,7 +21,7 @@ NO_BUILD=       yes
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk1.1.7
-	(cd ${WRKSRC} && tar -c -f - --exclude '*.class' .) \
+	(cd ${WRKSRC} && tar -c -f - .) \
 		| (cd ${PREFIX}/jdk1.1.7 && tar fx -)
 
 .include <bsd.port.mk>
