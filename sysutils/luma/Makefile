@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 # MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
@@ -29,11 +29,10 @@ USE_OPENLDAP=	yes
 
 MAN1=		luma.1
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${FIND} ${WRKSRC} -name *.orig -delete
+	@${MV} ${WRKSRC}/share/man ${WRKSRC}/
 
 do-configure:
 
-pre-install:
-	${MV} ${WRKSRC}/share/man ${WRKSRC}/
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

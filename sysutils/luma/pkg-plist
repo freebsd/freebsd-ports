@@ -292,6 +292,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/i18n/es.png
 %%DATADIR%%/i18n/gb.png
 %%DATADIR%%/i18n/luma_br.qm
+%%DATADIR%%/i18n/luma_cs.qm
 %%DATADIR%%/i18n/luma_de.qm
 %%DATADIR%%/i18n/luma_es.qm
 %%DATADIR%%/i18n/luma_fr.qm
@@ -301,6 +302,10 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/i18n/no.png
 %%DATADIR%%/i18n/ru.png
 %%DATADIR%%/i18n/sv.png
+%%DATADIR%%/icons/1leftarrow.png
+%%DATADIR%%/icons/1rightarrow.png
+%%DATADIR%%/icons/2leftarrow.png
+%%DATADIR%%/icons/2rightarrow.png
 %%DATADIR%%/icons/AdvancedObjectWidget/binary.png
 %%DATADIR%%/icons/AdvancedObjectWidget/delete.png
 %%DATADIR%%/icons/AdvancedObjectWidget/displayall.png
@@ -379,6 +384,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/server.png
 %%DATADIR%%/icons/single.png
 %%DATADIR%%/icons/tip.png
+%%DATADIR%%/icons/today.png
 %%DATADIR%%/icons/trashcan.png
 %%DATADIR%%/icons/trashcan_empty.svgz
 %%DATADIR%%/icons/view_icon.png
