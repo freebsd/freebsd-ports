@@ -4359,6 +4359,7 @@ kkeyled		ports/sysutils/kkeyled
 klaptopdaemon	ports/sysutils/klaptopdaemon
 klassmodeler	ports/devel/klassmodeler
 klh10		ports/emulators/klh10
+klira		ports/audio/klira
 klog		ports/comms/klog
 klogoturtle	ports/lang/klogoturtle
 klondike	ports/games/klondike
