@@ -1,0 +1,15 @@
+Pup (Printer Utility Program) is a GUI utility for maintaining your printer.  
+
+Supports following printers
+  * Lexmark Optra Color 40 
+                  Color 45 
+                  E310 
+  * HP 2100M
+       4000
+       LJ4 Plus  
+
+With read back additionally all PJL printers are supported.
+see lptcontrol(8)
+
+Author: matthewsimpson@users.sourceforge.net
+WWW: http://pup.sourceforge.net/
