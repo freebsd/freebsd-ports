@@ -1,0 +1,8 @@
+POE::Component::Client::UserAgent is based on LWP and LWP::Parallel.
+It lets other tasks run while making a request to an Internet server
+and waiting for response, and it lets several requests run in parallel.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-Client-UserAgent
+
+-- Sergey Skvortsov
+skv@protey.ru
