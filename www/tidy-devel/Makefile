@@ -28,7 +28,7 @@ PLIST_SUB=	SHLIB="@comment "
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_AUTOCONF=	yes
-CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIB=""
@@ -55,15 +55,9 @@ post-patch:
 	@${CP} ${WRKSRC}/build/gmake/Makefile ${WRKSRC}
 .else
 	@${CP} -R -f ${WRKSRC}/build/gnuauto/* ${WRKSRC}
-.endif
-
-configure-message:
-# Ugly hack to insert libtoolize + aclocal after build-depends and before patch-libtool
-.if defined(WITH_SHLIB)
-	(cd ${WRKSRC}	\
-	&& ${LIBTOOLIZE} --force --copy	\
-	&& ${ACLOCAL})
-	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
+	(cd ${WRKSRC}   \
+        && ${LIBTOOLIZE} --force --copy \
+        && ${ACLOCAL})
 .endif
 
 pre-install:
