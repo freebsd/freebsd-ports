@@ -91,6 +91,10 @@ include/gsk/xml/gskxmltoken.h
 @dirrm include/gsk/protocols
 @dirrm include/gsk/xml
 @dirrm include/gsk
+lib/libgsk-lisp.a
+lib/libgsk-lisp.la
+lib/libgsk-lisp.so
+lib/libgsk-lisp.so.0
 lib/libgsk-minigtk.a
 lib/libgsk-minigtk.la
 lib/libgsk-minigtk.so
