@@ -8,7 +8,8 @@
 PORTNAME=	sntop
 PORTVERSION=	1.2.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://sntop.sourceforge.net/pub/sntop/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sntop
 
 MAINTAINER=	matt@gsicomp.on.ca
 
