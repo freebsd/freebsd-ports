@@ -1,0 +1,5 @@
+bin/test_physfs
+include/physfs.h
+lib/libphysfs-0.1.so.8
+lib/libphysfs.la
+lib/libphysfs.a
