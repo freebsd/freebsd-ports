@@ -19,7 +19,7 @@ CONFLICTS=	pccts*
 
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.4+
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}" CLASSPATH="${PORT_CLASSPATH}"
@@ -46,7 +46,7 @@ post-extract:
 	${CHMOD} -R +w ${WRKSRC}
 
 post-configure:
-	@${SED} "s|%%JAVAJARDIR%%|${JAVAJARDIR}| ; s|%%LOCALBASE%%|${LOCALBASE}|" ${FILESDIR}/antlr.sh >${WRKDIR}/antlr.sh
+	@${SED} "s|%%JAVAJARDIR%%|${JAVAJARDIR}| ; s|%%LOCALBASE%%|${LOCALBASE}| ; s|%%JAVA_VERSION%%|${JAVA_VERSION}|" ${FILESDIR}/antlr.sh >${WRKDIR}/antlr.sh
 
 .if defined(WITH_BUILT_JAVA_LIB)
 pre-build:
