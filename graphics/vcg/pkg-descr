@@ -1,0 +1,10 @@
+The VCG tool reads a textual and readable specification of a 
+graph and visualizes  the graph.   If  not  all positions of 
+nodes are fixed,  the tool  layouts the graph using  several 
+heuristics as reducing  the number of crossings,  minimizing 
+the  size of  edges,  centering of nodes.  The specification 
+language of  the  VCG  tool is nearly compatible to GRL, the 
+language of the edge tool, but contains many extensions. The 
+VCG tool  allows folding of dynamically or statically speci-
+fied  regions  of the  graph.  It uses  colors and  runs  on 
+X11. (An older version runs on Sunview).

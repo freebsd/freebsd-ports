@@ -1,0 +1,20 @@
+--- 1.1	1995/02/18 16:48:19
++++ Makefile	1995/02/18 17:12:05
+@@ -31,7 +31,7 @@
+ 
+ #all: stamp-all
+ 
+-all: xvcg_gcc xvcg
++all: xvcg_cc xvcg
+ 
+ configure: stamp-config
+ 
+@@ -236,7 +236,7 @@
+ 	@echo "		make xvcg_c89_noxmkmf"
+ 	@echo "		make vcg_gcc"
+ 	@echo "		make vcg_cc"
+- 
++
+ compare: preconf xcompare xvcg install
+ 	/bin/rm $(PROJECTHOME)/../bin/vcg
+ 	ln -s $(PROJECTHOME)/../bin/xvcg $(PROJECTHOME)/../bin/vcg

@@ -1,0 +1,11 @@
+--- 1.1	1995/02/18 16:51:08
++++ src/Makefile	1995/02/18 16:55:50
+@@ -189,7 +189,7 @@
+ 
+ # Generated Other - Files
+ GOFILES  = grammar.l grammar.y
+- 
++
+ # Object - Files
+ OFILES	= y.tab.o lex.yy.o main.o options.o alloc.o step0.o folding.o  \
+ 	  step1.o step2.o step3.o step4.o prepare.o draw.o             \

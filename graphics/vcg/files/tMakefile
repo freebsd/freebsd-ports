@@ -1,0 +1,372 @@
+# SCCS-info %W% %E%
+#
+# /*--------------------------------------------------------------------*/
+# /*                                                                    */
+# /*              VCG : Visualization of Compiler Graphs                */
+# /*              --------------------------------------                */
+# /*                                                                    */
+# /*   file:         tMakefile.tpl                                      */
+# /*   version:      1.00.00                                            */
+# /*   creation:     1.4.1993                                           */
+# /*   author:       I. Lemke  (...-Version 0.99.99)                    */
+# /*                 G. Sander (Version 1.00.00-...)                    */
+# /*                 Universitaet des Saarlandes, W-66041 Saarbruecken  */
+# /*                 ESPRIT Project #5399 Compare                       */
+# /*   description:  Top level Makefile                                 */
+# /*   status:       in work                                            */
+# /*                                                                    */
+# /*--------------------------------------------------------------------*/
+#
+# $Id$
+#
+# $Log$
+#
+
+#========================= CHANGE AREA =========================
+
+# Please update the change area according to your system.
+# NOTE: you must also adapt the file src/globals.h and demo/demo.csh
+# accordingly.
+
+SHELL = /bin/sh
+
+# where the binaries go
+# BINDIR = /usr/local/bin/
+# BINDIR = /RW/esprit/users/sander/PUBLIC/CMD/
+BINDIR = /usr/X11R6/bin
+
+# where the manual pages go
+# MANDIR = /usr/local/man/manl/
+# MANDIR = /RW/esprit/users/sander/PUBLIC/MAN/
+MANDIR = /usr/X11R6/man/manl
+
+# what the manual extension is
+MANEXT = l
+
+# how the VCG tool should be called
+# For the Sunview version I use the name vcg.
+# For the X11 version I prefer the name xvcg.
+# VCGTOOL = vcg
+# VCGTOOL = xvcg
+VCGTOOL = xvcg
+
+# Note: you can test the tool before it is installed.
+# Thus we need the path of the tool for the tests.
+# It may also be the path of the tool after installation.
+# Then use
+VCGCALL   = $(BINDIR)/$(VCGTOOL)
+#
+# Used during the demoanimations:
+# where the vcg is during the tests.
+# Please enter the absolute path to the VCG-tool.
+# VCGCALL   = /usr/local/bin/vcg
+# VCGCALL  = /RW/esprit/users/sander/PUBLIC/CMD/$(VCGTOOL)
+
+#-------------------------- Flags ------------------------------
+
+# Flags for the C compiler
+# Important: Do not use -Dlint with gcc. This causes confusion
+# during linking (!!!), e.g. some undefined messages.
+#CFLAGS   = -O -finline-functions
+#CFLAGS   = -O -finline-functions -DDRAWLIB_TOO_LARGE
+#CFLAGS   = -g -finline-functions  -Wall
+#
+# Do not use  -O -finline-functions for FreeBSD, or you really have a lot
+# of swap for compiling drawstr.c.
+CFLAGS = -c -O2 -pipe
+
+# Flags for debugging
+DFLAGS =
+
+# Flags for the C linker
+#CLINKFLAGS = -Bstatic -o
+CLINKFLAGS = -o
+
+# Include directories
+# If you use gcc, it may happen that not all ANSI header files
+# are on the right place. Example: we often have problems to
+# find stdarg.h. Look for this file and add the directory here,
+# e.g.:
+# INCLUDES = /usr/local/include/gnuansi/
+#
+# For Sunview, this should be enough, because on Suns, Sunview
+# is normally installed in standard directories:
+# INCLUDES =
+#
+# For X11, it depends where it is installed. Look for Xlib.h,
+# Xproto.h or Xutil.h.
+# For instance, if you find /usr/local/X11/include/X11/Xlib.h
+# then please use
+# INCLUDES = -I/usr/local/X11/include/
+# INCLUDES = -I/RW/esprit/X11R5/include/
+INCLUDES = -I/usr/X11R6/include/
+
+# Library directories
+# For Sunview, this should be enough, because on Suns, Sunview
+# is normally installed in standard directories:
+# LIBPATH =
+#
+# For X11, it depends where it is installed. Look for libX.a,
+# or libX11.so.<version_number>, or libXext.a, etc.
+# For instance, if you find /usr/local/X11/lib/libX11.a
+# then please use
+# LIBPATH = -L/usr/local/X11/lib/
+# LIBPATH = -L/RW/esprit/X11R5/lib/
+LIBPATH = -L/usr/X11R6/lib/
+
+# Libraries
+# Libraries for SunView
+# LIBRARIES = -lsuntool -lsunwindow -lpixrect -lm
+#
+# Libraries for X11
+# LIBRARIES = -lXext -lX11 -lm
+LIBRARIES = -lXext -lX11 -lm
+
+#-------------------------- Tools ------------------------------
+
+# C compiler
+# CC = gcc -pipe
+CC = cc
+
+# C linker
+# CCLINK  = gcc -static
+CCLINK = cc
+
+# If you use gcc and the sun driver, you need the normal sun
+# preprocessor because of incompatibilities of the system libraries
+CPP     = $(CC) -E
+
+# If you dont need a special preprocessor, change the .c.o rule or
+# define this:
+#CPP    = cat
+
+# Install software. You can use /bin/cp instead of /bin/install.
+# I prefer that binaries are stripped.
+# For directories:
+# INSTALLDIR = /bin/install -d -m 755
+INSTALLDIR = /bin/mkdir -p
+
+# For binary files:
+# Assume that you want to install s file called dummy.
+# INSTALL = /bin/install -s -m 755 dummy $(BINDIR)/dummy
+INSTALL = /usr/bin/install -c -s -m 755 dummy $(BINDIR)/dummy
+
+# For manual pages:
+# Assume that you want to install s file called dummy.
+# INSTALLMAN = /bin/install -m 644 dummy $(MANDIR)/dummy
+INSTALLMAN = /usr/bin/install -c -m 644 dummy $(MANDIR)/dummy
+
+# To make the documentation
+LATEX = latex
+
+# To make the short documentation using big-latex
+BIGLATEX = not_available
+
+# For the pictures, we need some transfig-tools.
+# If the files doc/foldpath.tex, doc/foldpath.ps,
+# doc/foldtree.tex, doc/foldtree.ps, doc/hideedge.tex,
+# doc/hideedge.ps, doc/window.tex, doc/window.ps
+# are available, we do not need this.
+#
+TRANSFIGTEX = fig2ps2tex
+TRANSFIGPS  = fig2dev
+
+
+# The tools CHECKOUT, CHECKEDIT and CHECKIN are not needed unless
+# you want to develop, change or maintain the VCG tool sources
+# under control of RCS.
+
+# RCS check out shellscript (normally not needed)
+CHECKOUT = co
+
+# RCS check edit shellscript (normally not needed)
+CHECKEDIT = ce
+
+# RCS check in shellscript (normally not needed)
+CHECKIN  = ci
+
+# parser pregenerator. If the files src/grammar.y and src/grammar.l
+# are available, you don't need this.
+PARSEGEN = parsegen
+
+# lex-compatible scanner generator
+LEX     = not_needed
+
+# yacc-compatible parser generator. Currently, it does not work
+# with yacc because some bison features are used directly.
+YACC     = not_needed
+
+# Make
+# MAKE     = make
+MAKE = make
+
+# MakeDepend (should understand the -f option)
+# DEPEND   = makedepend
+DEPEND = makedepend
+
+# Streameditor
+# SED = /bin/sed
+SED = /usr/bin/sed
+
+# Move File
+# MV       = /bin/mv
+MV = /bin/mv
+
+# Link Files (or Copy them)
+# LN       = /bin/ln -s
+LN = /bin/ln
+
+# Remove File
+# RM       = /bin/rm
+RM = /bin/rm
+
+# Change directory
+CD       = cd
+
+# Touch file
+# TOUCH    = touch
+TOUCH = /usr/bin/touch
+
+#==================== END OF CHANGE AREA ======================
+
+#-------------------------- Files ------------------------------
+
+# Directories
+DIRECTORIES = src man demo doc expl
+
+# The tarfiles of subdirectories, to make a distribution
+SUBTARFILES = src/vcg.tar man/manpages.tar demo/demo.tar doc/doc.tar \
+	      expl/expl.tar
+
+# These files are generated, but included into a distribution.
+# They are in the directory preconf.
+
+GEN_DISTFILES = tMakefile src/globals.h demo/demo.csh
+
+
+# Directories where we have something to make
+MAKEDIRS = src demo man doc
+
+# Directories where we have something to install
+INSTDIRS = src demo man doc
+
+#-------------------------- Rules ------------------------------
+
+MAKEARGUS = \
+	SHELL="$(SHELL)" \
+	BINDIR="$(BINDIR)" \
+	MANDIR="$(MANDIR)" \
+	MANEXT="$(MANEXT)" \
+	VCGTOOL="$(VCGTOOL)" \
+	VCGCALL="$(VCGCALL)" \
+	CFLAGS="$(CFLAGS)" \
+	CLINKFLAGS="$(CLINKFLAGS)" \
+	DFLAGS="$(DFLAGS)" \
+	INCLUDES="$(INCLUDES)" \
+	LIBPATH="$(LIBPATH)" \
+	LIBRARIES="$(LIBRARIES)" \
+	CC="$(CC)" \
+	CCLINK="$(CCLINK)" \
+	CPP="$(CPP)" \
+	LATEX="$(LATEX)" \
+	BIGLATEX="$(BIGLATEX)" \
+	TRANSFIGTEX="$(TRANSFIGTEX)" \
+	TRANSFIGPS="$(TRANSFIGPS)"   \
+	INSTALLDIR="$(INSTALLDIR)"   \
+	INSTALL="$(INSTALL)"         \
+	INSTALLMAN="$(INSTALLMAN)"   \
+	CHECKOUT="$(CHECKOUT)" \
+	CHECKEDIT="$(CHECKEDIT)" \
+	CHECKIN="$(CHECKIN)" \
+	PARSEGEN="$(PARSEGEN)" \
+	LEX="$(LEX)" \
+	YACC="$(YACC)" \
+	MAKE="$(MAKE)" \
+	DEPEND="$(DEPEND)" \
+	SED="$(SED)" \
+	MV="$(MV)" \
+	LN="$(LN)" \
+	RM="$(RM)" \
+	CD="$(CD)" \
+	TOUCH="$(TOUCH)"
+
+all: stamp-src stamp-demo stamp-doc stamp-shortdoc
+
+stamp-src: src
+	($(CD) src; $(MAKE) $(MAKEARGUS))
+	$(TOUCH) stamp-src	
+
+stamp-demo: demo
+	($(CD) demo; $(MAKE) $(MAKEARGUS))
+	$(TOUCH) stamp-demo
+
+stamp-doc: doc
+	($(CD) doc; $(MAKE) $(MAKEARGUS))
+	$(TOUCH) stamp-doc
+
+stamp-shortdoc: doc
+	($(CD) doc; $(MAKE) $(MAKEARGUS) short)
+	$(TOUCH) stamp-shortdoc
+
+demonstration: test
+
+documentation: doc
+
+shortdocu: stamp-shortdoc
+
+install: stamp-src stamp-demo
+	for i in $(INSTDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) $(MAKEARGUS) install); \
+	done
+
+test: 	stamp-src stamp-demo
+	($(CD) demo; csh demo.csh);
+
+clean:
+	for i in $(MAKEDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) RM="$(RM)" clean); \
+	done
+	$(RM) -f stamp-* core
+
+veryclean:
+	for i in $(MAKEDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) RM="$(RM)" veryclean); \
+	done
+	$(RM) -f stamp-* core
+
+targetclean:
+	for i in $(MAKEDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) RM="$(RM)" targetclean); \
+	done
+	$(RM) -f stamp-* core
+
+distclean:
+	for i in $(MAKEDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) RM="$(RM)" distclean); \
+	done
+	$(RM) -f stamp-* core
+
+depend:
+	for i in $(MAKEDIRS) ;\
+	do \
+	($(CD) $$i; $(MAKE) $(MAKEARGUS) depend); \
+	done
+
+tar: tMakefile Makefile $(DIRECTORIES)
+	for i in $(DIRECTORIES) ;\
+	do \
+	($(CD) $$i; $(MAKE) $(MAKEARGUS) dist); \
+	done
+	tar -cf vcgcomplete.tar README README.SYS COPYING \
+		 demotrue config tMakefile.tpl Makefile preconf $(SUBTARFILES)
+
+
+dist: tar
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
