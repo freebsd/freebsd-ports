@@ -35,6 +35,7 @@
     SUBDIR += pyDict
     SUBDIR += rxvt
     SUBDIR += rxvt-big5
+    SUBDIR += rxvt-gb
     SUBDIR += stardict
     SUBDIR += ted
     SUBDIR += telnet
