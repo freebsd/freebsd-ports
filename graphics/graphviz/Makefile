@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/dist/
-DISTNAME=	gviz${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +17,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
-
-WRKSRC=		${WRKDIR}/gv${PORTVERSION}
 
 USE_XPM=	yes
 USE_GMAKE=	yes
@@ -39,14 +36,13 @@ MAN3=		agraph.3 cdt.3 expr.3 graph.3 pathplan.3
 MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
 PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
-		neatoguide.pdf tcldot.html Dot.ref
+		neatoguide.pdf tcldot.html Dot.ref FAQ.html
 
-post-patch:
-	@cd ${WRKSRC} && aclocal && autoheader && libtoolize --force
+post-extract:
+	@${RM} ${WRKSRC}/cdt/ast_common.h
 
-pre-build:
-	@cd ${WRKSRC}/cdt && ./iffe - set cc ${CC} ${CFLAGS} : run \
-		features/common > ast_common.h
+#post-patch:
+#	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOHEADER} && libtoolize --force
 
 post-install:
 .if !defined(NOPORTDOCS)

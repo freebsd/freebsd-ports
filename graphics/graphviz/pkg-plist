@@ -106,12 +106,13 @@ lib/graphviz/libtcldgr.so
 lib/graphviz/libtcldgr.so.0
 lib/graphviz/libtcldot.so
 lib/graphviz/libtcldot.so.0
-lib/graphviz/libtclpathplan.so
-lib/graphviz/libtclpathplan.so.0
+lib/graphviz/libtclplan.so
+lib/graphviz/libtclplan.so.0
 lib/graphviz/libtkspline.so
 lib/graphviz/libtkspline.so.0
 lib/graphviz/pkgIndex.tcl
 %%PORTDOCS%%share/doc/graphviz/Dot.ref
+%%PORTDOCS%%share/doc/graphviz/FAQ.html
 %%PORTDOCS%%share/doc/graphviz/dotguide.pdf
 %%PORTDOCS%%share/doc/graphviz/dottyguide.pdf
 %%PORTDOCS%%share/doc/graphviz/gd.html
