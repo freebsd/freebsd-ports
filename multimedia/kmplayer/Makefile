@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	kmplayer
-DISTVERSION=	0.8.4-rc4b
-PORTREVISION=	1
+DISTVERSION=	0.8.4-rc5
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
-
-#EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
-EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-configure
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
