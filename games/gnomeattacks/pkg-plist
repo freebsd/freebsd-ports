@@ -1,12 +1,32 @@
 bin/gnomeattacks
 share/gnome/pixmaps/gnomeattacks/bullet.png
+share/gnome/pixmaps/gnomeattacks/dead_ship.png
 share/gnome/pixmaps/gnomeattacks/hiscore.png
 share/gnome/pixmaps/gnomeattacks/instructions.png
-share/gnome/pixmaps/gnomeattacks/level_1_bg.png
-share/gnome/pixmaps/gnomeattacks/level_1_fg.png
-share/gnome/pixmaps/gnomeattacks/level_2_bg.png
-share/gnome/pixmaps/gnomeattacks/level_2_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_1_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_1_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_1_heights.txt
+share/gnome/pixmaps/gnomeattacks/London/level_2_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_2_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_2_heights.txt
+share/gnome/pixmaps/gnomeattacks/London/level_3_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_3_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_3_heights.txt
+share/gnome/pixmaps/gnomeattacks/London/level_4_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_4_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_4_heights.txt
+share/gnome/pixmaps/gnomeattacks/London/level_5_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_5_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_5_heights.txt
+share/gnome/pixmaps/gnomeattacks/London/level_6_bg.png
+share/gnome/pixmaps/gnomeattacks/London/level_6_fg.png
+share/gnome/pixmaps/gnomeattacks/London/level_6_heights.txt
+share/gnome/pixmaps/gnomeattacks/Original/level_1_bg.png
+share/gnome/pixmaps/gnomeattacks/Original/level_1_fg.png
+share/gnome/pixmaps/gnomeattacks/Original/level_2_bg.png
+share/gnome/pixmaps/gnomeattacks/Original/level_2_fg.png
 share/gnome/pixmaps/gnomeattacks/ship.png
-share/gnome/pixmaps/gnomeattacks/ship_dead.png
 share/gnome/pixmaps/gnomeattacks/title.png
+@dirrm share/gnome/pixmaps/gnomeattacks/Original
+@dirrm share/gnome/pixmaps/gnomeattacks/London
 @dirrm share/gnome/pixmaps/gnomeattacks
