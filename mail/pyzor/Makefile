@@ -8,7 +8,7 @@
 
 PORTNAME=	pyzor
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ post-patch:
 		${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
 
 post-install:
-	${CHOWN} ${SHAREMODE} ${DOCSDIR}/usage.html
-	${CHOWN} ${BINMODE} ${PREFIX}/bin/pyzor ${PREFIX}/bin/pyzord
+	${CHMOD} ${SHAREMODE} ${DOCSDIR}/usage.html
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/pyzor ${PREFIX}/bin/pyzord
 
 .include <bsd.port.mk>
