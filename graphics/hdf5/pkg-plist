@@ -1,16 +1,17 @@
 bin/gif2h5
 bin/h52gif
+bin/h5c++
 bin/h5cc
+bin/h5createU8
 bin/h5debug
+bin/h5diff
 bin/h5dump
 bin/h5import
 bin/h5ls
-bin/h5perf
 bin/h5redeploy
 bin/h5repart
 include/H5ACpublic.h
 include/H5AbstractDs.h
-include/H5Alltypes.h
 include/H5Apublic.h
 include/H5AtomType.h
 include/H5Attribute.h
@@ -30,6 +31,7 @@ include/H5Epublic.h
 include/H5Exception.h
 include/H5FDcore.h
 include/H5FDfamily.h
+include/H5FDfphdf5.h
 include/H5FDgass.h
 include/H5FDlog.h
 include/H5FDmpio.h
@@ -40,6 +42,7 @@ include/H5FDsec2.h
 include/H5FDsrb.h
 include/H5FDstdio.h
 include/H5FDstream.h
+include/H5FPpublic.h
 include/H5FaccProp.h
 include/H5FcreatProp.h
 include/H5File.h
@@ -50,7 +53,6 @@ include/H5Group.h
 include/H5HGpublic.h
 include/H5HLpublic.h
 include/H5IdComponent.h
-include/H5Idtemplates.h
 include/H5Include.h
 include/H5IntType.h
 include/H5Ipublic.h
@@ -76,3 +78,31 @@ lib/libhdf5.settings
 lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
+share/examples/hdf5/c/h5_attribute.c
+share/examples/hdf5/c/h5_chunk_read.c
+share/examples/hdf5/c/h5_compound.c
+share/examples/hdf5/c/h5_drivers.c
+share/examples/hdf5/c/h5_extend_write.c
+share/examples/hdf5/c/h5_group.c
+share/examples/hdf5/c/h5_mount.c
+share/examples/hdf5/c/h5_read.c
+share/examples/hdf5/c/h5_reference.c
+share/examples/hdf5/c/h5_select.c
+share/examples/hdf5/c/h5_write.c
+share/examples/hdf5/c/ph5example.c
+share/examples/hdf5/c++/Attributes.h5
+share/examples/hdf5/c++/Group.h5
+share/examples/hdf5/c++/SDS.h5
+share/examples/hdf5/c++/SDScompound.h5
+share/examples/hdf5/c++/SDSextendible.h5
+share/examples/hdf5/c++/Select.h5
+share/examples/hdf5/c++/chunks.cpp
+share/examples/hdf5/c++/compound.cpp
+share/examples/hdf5/c++/create.cpp
+share/examples/hdf5/c++/extend_ds.cpp
+share/examples/hdf5/c++/h5group.cpp
+share/examples/hdf5/c++/readdata.cpp
+share/examples/hdf5/c++/writedata.cpp
+@dirrm share/examples/hdf5/c
+@dirrm share/examples/hdf5/c++
+@dirrm share/examples/hdf5

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.4.5
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
 
@@ -33,11 +33,11 @@ post-patch:
 		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g ; \
 		 s|-lcipher||g' \
 			${WRKSRC}/config/freebsd
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/config/gnu-flags
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
 
 post-install:
-.for file in gif2h5 h52gif h5debug h5dump h5import h5ls h5perf h5repart
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.for i in gif2h5 h52gif h5createU8 h5debug h5diff h5dump h5import h5ls h5repart
+	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
 .include <bsd.port.mk>

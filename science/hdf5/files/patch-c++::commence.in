@@ -1,15 +1,15 @@
---- config/commence.in.orig	Tue Jul 22 23:39:43 2003
-+++ config/commence.in	Mon Oct 20 23:45:00 2003
-@@ -26,7 +26,7 @@
+--- c++/config/commence.in.orig	Mon Jun 30 16:19:35 2003
++++ c++/config/commence.in	Mon Oct 20 23:44:08 2003
+@@ -27,7 +27,7 @@
  RM=rm -f
  CP=cp
  INSTALL=@INSTALL@
 -INSTALL_PROGRAM=@INSTALL_PROGRAM@
 +INSTALL_PROGRAM=@INSTALL_SCRIPT@
  INSTALL_DATA=@INSTALL_DATA@
- RUNSERIAL=@RUNSERIAL@
- RUNPARALLEL=@RUNPARALLEL@
-@@ -39,7 +39,7 @@
+ TRACE=:
+ 
+@@ -37,7 +37,7 @@
  bindir=@bindir@
  libdir=@libdir@
  includedir=@includedir@
@@ -17,16 +17,15 @@
 +docdir=@exec_prefix@/share
  PUB_LIB=$(LIB)
  
- ## Shared libraries
-@@ -57,9 +57,9 @@
+ ## Obtain default library; the current version of libtool does not fully
+@@ -60,8 +60,8 @@
  ## Optional variables. We must declare them here because Irix pmake
  ## complains if it sees a reference to a variable which has never been
  ## defined. The main makefile is free to redefine these to something else.
 -DOCDIR=$(docdir)
+-EXAMPLEDIR=$(docdir)/hdf5/examples/c++
 +DOCDIR=$(docdir)/doc/hdf5
- SUBDOCDIR=
--EXAMPLEDIR=$(docdir)/hdf5/examples/c
-+EXAMPLEDIR=$(docdir)/examples/hdf5/c
++EXAMPLEDIR=$(docdir)/examples/hdf5/c++
  LIB=
  LIB_SRC=
  LIB_OBJ=
