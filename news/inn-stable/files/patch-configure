@@ -1,0 +1,15 @@
+--- configure.orig	Tue Sep  2 06:39:30 2003
++++ configure	Mon Sep 22 11:34:06 2003
+@@ -5828,9 +5828,9 @@
+     fi
+     if test x"$BERKELEY_DB_DIR" = xyes ; then
+         for v in db41 db4 db3 db2 ; do
+-            if test -d "/usr/local/include/$v" ; then
+-                BERKELEY_DB_LDFLAGS="-L/usr/local/lib"
+-                BERKELEY_DB_CFLAGS="-I/usr/local/include/$v"
++            if test -d "${LOCALBASE}/include/$v" ; then
++                BERKELEY_DB_LDFLAGS="-L${LOCALBASE}/lib"
++                BERKELEY_DB_CFLAGS="-I${LOCALBASE}/include/$v"
+                 BERKELEY_DB_LIB="-l$v"
+                 echo "$ac_t""FreeBSD locations" 1>&6
+                 break

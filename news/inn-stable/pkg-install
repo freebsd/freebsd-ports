@@ -2,9 +2,27 @@
 
 PKGNAME=$1
 [ ! -n PKG_PREFIX ] && exit 1
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
 
 case $2 in
     PRE-INSTALL)
+	;;
+    CHECK-CONF)
+	NEWSBASE=${PKG_PREFIX}/news
+	echo "Checking for configuration files"
+	for f in $(find ${NEWSBASE}/etc/ -name "*.dist" -type f)
+		do
+			REALFILE=${f%%.dist}
+			echo -n "Checking if ${REALFILE} exists:   "
+			if [ -e ${REALFILE} ] 
+				then
+					echo "[YES]"
+				else
+					echo "[NO]"
+					echo "     Installing ${f} to ${REALFILE}"
+					cp ${f} ${REALFILE}
+			fi
+		done
 	;;
     POST-INSTALL)
 	NEWSBASE=${PKG_PREFIX}/news
