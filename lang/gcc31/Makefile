@@ -4,14 +4,14 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.16 1998/04/14 10:17:27 obrien Exp $
+# $Id: Makefile,v 1.17 1998/05/05 06:34:46 obrien Exp $
 #
 
-DISTNAME=	egcs-19980502
+DISTNAME=	egcs-19980508
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-05-02/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-05-02/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-05-02/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-05-08/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-05-08/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-05-08/
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -36,12 +36,12 @@ post-install:
 	${PREFIX}/bin/c++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 	${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 	${PREFIX}/bin/i386-unknown-freebsd-gcc \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1obj \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1plus \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cpp \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/collect2 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/f771 ; \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/cc1 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/cc1obj \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/cc1plus \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/cpp \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/collect2 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.28/f771 ; \
 		do strip $$prog ; \
 		done)
 	if [ ! -f ${PREFIX}/info/dir ]; then \
