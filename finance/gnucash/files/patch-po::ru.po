@@ -1,0 +1,28 @@
+
+$FreeBSD$
+
+--- po/ru.po	2002/08/18 07:33:38	1.1
++++ po/ru.po	2002/08/18 07:34:07
+@@ -907,7 +907,7 @@
+ 
+ #: src/gnome/dialog-totd.c:302
+ msgid "-*-helvetica-bold-r-normal-*-*-180-*-*-p-*-*-*"
+-msgstr "-rfx-helvetica-bold-r-normal-*-*-180-*-*-p-*-*-*"
++msgstr "-cronyx-helvetica-bold-r-normal-*-*-180-*-*-p-*-*-*"
+ 
+ #: src/gnome/dialog-totd.c:303
+ msgid "Tip of the Day:"
+@@ -4259,11 +4259,11 @@
+ msgid ""
+ "register-default-font:-adobe-helvetica-medium-r-normal--*-120-*-*-*-*-*-*"
+ msgstr ""
+-"register-default-font:-rfx-helvetica-medium-r-normal--*-120-*-*-*-*-*-*"
++"register-default-font:-cronyx-helvetica-medium-r-normal--*-120-*-*-*-*-*-*"
+ 
+ #: src/register/gnome/gnucash-style.c:904
+ msgid "register-hint-font:-adobe-helvetica-medium-o-normal--*-120-*-*-*-*-*-*"
+-msgstr "register-hint-font:-rfx-helvetica-medium-o-normal--*-120-*-*-*-*-*-*"
++msgstr "register-hint-font:-cronyx-helvetica-medium-o-normal--*-120-*-*-*-*-*-*"
+ 
+ #: src/register/splitreg.c:93
+ msgid "sample: 12/12/2000"
