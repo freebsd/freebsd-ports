@@ -27,6 +27,7 @@ squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.4.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.5
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.6.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.7.txt
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.8.txt
 squirrelmail/doc/addressbook.txt
 squirrelmail/doc/compose.txt
 squirrelmail/doc/db-backend.txt
@@ -99,6 +100,15 @@ squirrelmail/help/da_DK/main_folder.hlp
 squirrelmail/help/da_DK/options.hlp
 squirrelmail/help/da_DK/read_mail.hlp
 squirrelmail/help/da_DK/basic.hlp
+squirrelmail/help/de_DE/search.hlp
+squirrelmail/help/de_DE/FAQ.hlp
+squirrelmail/help/de_DE/addresses.hlp
+squirrelmail/help/de_DE/compose.hlp
+squirrelmail/help/de_DE/folders.hlp
+squirrelmail/help/de_DE/main_folder.hlp
+squirrelmail/help/de_DE/options.hlp
+squirrelmail/help/de_DE/read_mail.hlp
+squirrelmail/help/de_DE/basic.hlp
 squirrelmail/help/en_US/FAQ.hlp
 squirrelmail/help/en_US/addresses.hlp
 squirrelmail/help/en_US/basic.hlp
@@ -479,7 +489,6 @@ squirrelmail/src/printer_friendly_main.php
 squirrelmail/src/printer_friendly_top.php
 squirrelmail/src/read_body.php
 squirrelmail/src/redirect.php
-squirrelmail/src/retrievalerror.php
 squirrelmail/src/right_main.php
 squirrelmail/src/search.php
 squirrelmail/src/signout.php
@@ -623,6 +632,7 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/help/th_TH
 @dirrm squirrelmail/help/cs_CZ
 @dirrm squirrelmail/help/da_DK
+@dirrm squirrelmail/help/de_DE
 @dirrm squirrelmail/help/en_US
 @dirrm squirrelmail/help/es_ES
 @dirrm squirrelmail/help/fi_FI
