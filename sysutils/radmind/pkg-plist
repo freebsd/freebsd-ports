@@ -5,9 +5,13 @@ bin/lcksum
 bin/lcreate
 bin/lfdiff
 bin/lmerge
+bin/ra.sh
 bin/twhich
+etc/rc.d/radmind.sh
 sbin/radmind
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %%RADMIND_BASE_DIR%%/cert 2>/dev/null || true
+@unexec rmdir %%RADMIND_BASE_DIR%% 2>/dev/null || true
