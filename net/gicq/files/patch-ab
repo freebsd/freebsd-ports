@@ -1,0 +1,11 @@
+--- configure.orig	Sat Mar 27 04:11:51 1999
++++ configure	Sat Mar 27 04:12:04 1999
+@@ -3979,7 +3979,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-licq "`glib-config --libs`" $LIBS"
++LIBS="-licq "`glib12-config --libs`" $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3985 "configure"
+ #include "confdefs.h"
