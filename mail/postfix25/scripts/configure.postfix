@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.49 2004-06-22 19:30:26 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.50 2004-06-25 09:11:35 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -24,8 +24,8 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 TLS		"SSL and TLS" "$status_TLS" \
-IPv6		"IPv6 support (broken)" "$status_IPv6" \
-IPv6TLS		"IPv6 support with SSL and TLS (broken)" "$status_IPv6TLS" \
+IPv6		"IPv6 support" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
@@ -206,8 +206,8 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.24-pf-2.1.1.patch.gz"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.25/"
+			echo "PATCHFILES+=	ipv6-1.25-pf-2.1.3.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
@@ -224,8 +224,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.24-pf-2.1.1.patch.gz"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.25/"
+			echo "PATCHFILES+=	tls+ipv6-1.25-pf-2.1.3.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
