@@ -1,0 +1,11 @@
+--- src/gametime.cc.orig	Sat May 10 11:42:49 2003
++++ src/gametime.cc	Sat May 10 11:42:58 2003
+@@ -20,7 +20,7 @@
+   */
+ 
+ #include "gametime.h"
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ 
+ double gametime::Minute;
+ u_int32 gametime::timer1;
