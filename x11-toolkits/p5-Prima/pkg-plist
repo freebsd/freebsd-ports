@@ -10,14 +10,16 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Const.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/DetailedList.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/DockManager.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Docks.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Drawable.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Edit.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/EditDialog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/ExtLists.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/FileDialog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/FontDialog.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/FrameSet.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Gencls.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Header.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/HelpViewer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/HelpViewer.fm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/ImageDialog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/ImageViewer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/IniFile.pm
@@ -30,8 +32,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/MDI.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Make.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/MsgBox.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Notebooks.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Object.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Outlines.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/PodView.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/PrintDialog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/ScrollBar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/ScrollWidget.pm
@@ -41,6 +43,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/StdBitmap.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/StdDlg.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Stress.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Terminals.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/TextView.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Utils.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Widgets.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/sysimage.gif
@@ -130,6 +133,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/editor
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/extlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/eyes
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/f_fill
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/frames
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/fontdlg
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/generic
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/grip
@@ -151,15 +155,14 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/pitch
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/pointers
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/print
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/ps_setup
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/socket
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/rot
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/rtc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/scrollbar
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/sheet
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/socket
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/transparent
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/examples/triangle
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/apricot.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/dbmalloc.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/gbm.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/guts.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/img.h
@@ -185,15 +188,26 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/generic/Widget.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/generic/Window.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/generic/config.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/unix/guts.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/gp-problems.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/image-load.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/codecs.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/internals.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/gencls.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/gp-problems.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/codecs.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/image-load.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/internals.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Clipboard.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Drawable.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/File.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Image.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Menu.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Object.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Printer.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Timer.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Widget.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/Window.pod
 bin/gencls
 bin/tmlink
 bin/VB
 bin/cfgmaint
+bin/podview
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/unix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE/generic
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Prima/CORE

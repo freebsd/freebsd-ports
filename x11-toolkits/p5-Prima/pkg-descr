@@ -6,7 +6,22 @@ The toolkit contains a rich set of standard widgets and has emphasis on
 2D image processing tasks.  A Perl program using PRIMA looks and behaves
 identically on X, Win32 and OS/2 PM.
 
-The toolkit includes a visual builder.
+The toolkit includes a visual builder ( VB ) and a graphic pod viewer 
+utility ( podview ). The examples are installed into perl site in
+Prima/examples directory. 
+
+A 'hello world' code is as simple as follows:
+
+   use Prima qw(Application Buttons);
+   Prima::Window-> create(
+      text     => 'Hello world!',
+      size     => [ 200, 200],
+   )-> insert( Button =>
+      centered => 1,
+      text     => 'Hello world!',
+      onClick  => sub { $::application-> close },
+   );
+   run Prima;
 
 WWW: http://prima.eu.org/
 

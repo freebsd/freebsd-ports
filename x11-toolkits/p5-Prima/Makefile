@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	http://www.prima.eu.org/download/
 PKGNAMEPREFIX=	p5-
