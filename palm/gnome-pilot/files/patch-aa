@@ -1,6 +1,6 @@
---- configure.orig	Tue Dec  7 17:50:25 1999
-+++ configure	Thu Dec 23 13:54:26 1999
-@@ -2123,8 +2123,8 @@
+--- configure.orig	Wed May 10 00:02:39 2000
++++ configure	Tue Jun 13 16:40:13 2000
+@@ -1839,8 +1839,8 @@
    
  		gnome_cv_gnorba_found=no
  		if test x$gnome_cv_orbit_found = xyes; then
@@ -11,7 +11,7 @@
  			if test -n "$GNORBA_LIBS"; then
  				gnome_cv_gnorba_found=yes
  			fi
-@@ -2144,8 +2144,8 @@
+@@ -1860,8 +1860,8 @@
  fi
  	if test x$gnome_cv_orbit_found = xyes; then
  		
@@ -22,7 +22,7 @@
  		
  		
  	else
-@@ -2956,7 +2956,7 @@
+@@ -2676,7 +2676,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -31,7 +31,7 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -4806,7 +4806,7 @@
+@@ -4591,7 +4591,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -40,3 +40,14 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -5915,8 +5915,8 @@
+ fi
+ 
+ GPILOT_LIBDIR='-L${libdir}'
+-GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `gnome-config --libs gnome` `glib-config --libs glib gmodule`"
+-GPILOT_INCLUDEDIR="-I${includedir} `gnome-config --cflags gnome` `glib-config --cflags glib gmodule`"
++GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `gnome-config --libs gnome` `$GLIB_CONFIG --libs glib gmodule`"
++GPILOT_INCLUDEDIR="-I${includedir} `gnome-config --cflags gnome` `$GLIB_CONFIG --cflags glib gmodule`"
+ 
+ 
+ 
