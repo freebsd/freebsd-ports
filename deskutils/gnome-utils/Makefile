@@ -3,7 +3,7 @@
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1999/03/09 01:09:00 nectar Exp $
+# $Id: Makefile,v 1.8 1999/04/08 18:08:34 steve Exp $
 #
 
 DISTNAME=	gnome-utils-1.0.1
@@ -18,19 +18,18 @@ BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	obgnome.1:${PORTSDIR}/lang/gnomeobjc
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
+		--with-gnome=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gtt.1
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
