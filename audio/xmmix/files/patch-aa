@@ -1,0 +1,11 @@
+--- ./appenv.h.org	Sun Jul 14 10:48:59 1996
++++ ./appenv.h	Mon Aug 19 04:05:16 1996
+@@ -59,7 +59,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <errno.h>
