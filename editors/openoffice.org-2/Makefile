@@ -34,6 +34,8 @@ ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 PASTE?=	/usr/bin/paste
 
+WANT_GNOME=	yes
+
 .include <bsd.port.pre.mk>
 
 BUILD_NR=		645
