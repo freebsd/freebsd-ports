@@ -1,7 +1,9 @@
 %%RUBY_SITELIBDIR%%/amazon.rb
 %%RUBY_SITELIBDIR%%/amazon/babyregistry.rb
+%%RUBY_SITELIBDIR%%/amazon/locale.rb
 %%RUBY_SITELIBDIR%%/amazon/search.rb
 %%RUBY_SITELIBDIR%%/amazon/search/blended.rb
+%%RUBY_SITELIBDIR%%/amazon/search/cache.rb
 %%RUBY_SITELIBDIR%%/amazon/search/exchange.rb
 %%RUBY_SITELIBDIR%%/amazon/search/exchange/marketplace.rb
 %%RUBY_SITELIBDIR%%/amazon/search/exchange/thirdparty.rb
