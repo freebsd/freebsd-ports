@@ -223,6 +223,7 @@
     SUBDIR += libglut
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvasmm
+    SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
     SUBDIR += libgrass5
     SUBDIR += libimg
