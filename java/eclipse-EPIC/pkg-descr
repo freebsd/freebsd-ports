@@ -1,0 +1,8 @@
+EPIC is an opensource Perl IDE for the Eclipse platform.
+Features supported are syntax highlighting, on the fly syntax check,
+content assist, perldoc support, source formatter, templating support
+and a Perl debugger.
+A regular expression plugin and support for the eSpell spellchecker
+are also available.
+
+WWW: http://e-p-i-c.sourceforge.net/
