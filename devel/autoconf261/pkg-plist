@@ -11,7 +11,13 @@ info/autoconf%%BUILD_VERSION%%.info
 info/standards%%BUILD_VERSION%%.info
 @exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
 @exec install-info %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
+share/autoconf%%BUILD_VERSION%%/Autom4te/C4che.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/ChannelDefs.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/Channels.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/Configure_ac.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/FileUtils.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/General.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/Request.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/Struct.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/XFile.pm
 share/autoconf%%BUILD_VERSION%%/INSTALL

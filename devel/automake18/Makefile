@@ -1,4 +1,4 @@
-# New ports collection makefile for:	automake17
+# New ports collection makefile for:	automake18
 # Date created:		15 Feb 2003
 # Whom:			Udo Schweigert
 #
@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (version 1.7)
+COMMENT=	GNU Standards-compliant Makefile generator (version 1.8)
 
-BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
-RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
+BUILD_DEPENDS=	autoconf259:${PORTSDIR}/devel/autoconf259
+RUN_DEPENDS=	autoconf259:${PORTSDIR}/devel/autoconf259
 
-BUILD_VERSION=	17
+BUILD_VERSION=	18
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	AUTOCONF=autoconf257 AUTOHEADER=autoheader257 MAKEINFO=makeinfo
+CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
@@ -41,7 +40,7 @@ pre-everything::
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 post-patch:
-	@(cd ${WRKSRC} && \
+	@(cd ${WRKSRC}/doc && \
 		${RM} -f *.info && \
 		${MV} automake.texi automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \

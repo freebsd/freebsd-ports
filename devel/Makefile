@@ -58,11 +58,13 @@
     SUBDIR += autoconf
     SUBDIR += autoconf213
     SUBDIR += autoconf257
+    SUBDIR += autoconf259
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += automake14
     SUBDIR += automake17
+    SUBDIR += automake18
     SUBDIR += avarice
     SUBDIR += avltree
     SUBDIR += avr-binutils

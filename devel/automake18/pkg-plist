@@ -22,6 +22,7 @@ share/aclocal%%BUILD_VERSION%%/maintainer.m4
 share/aclocal%%BUILD_VERSION%%/make.m4
 share/aclocal%%BUILD_VERSION%%/minuso.m4
 share/aclocal%%BUILD_VERSION%%/missing.m4
+share/aclocal%%BUILD_VERSION%%/mkdirp.m4
 share/aclocal%%BUILD_VERSION%%/multi.m4
 share/aclocal%%BUILD_VERSION%%/obsol-gt.m4
 share/aclocal%%BUILD_VERSION%%/obsol-lt.m4
@@ -33,9 +34,25 @@ share/aclocal%%BUILD_VERSION%%/regex.m4
 share/aclocal%%BUILD_VERSION%%/runlog.m4
 share/aclocal%%BUILD_VERSION%%/sanity.m4
 share/aclocal%%BUILD_VERSION%%/strip.m4
+share/automake%%BUILD_VERSION%%/Automake/ChannelDefs.pm
 share/automake%%BUILD_VERSION%%/Automake/Channels.pm
+share/automake%%BUILD_VERSION%%/Automake/Condition.pm
+share/automake%%BUILD_VERSION%%/Automake/Config.pm
+share/automake%%BUILD_VERSION%%/Automake/Configure_ac.pm
+share/automake%%BUILD_VERSION%%/Automake/DisjConditions.pm
+share/automake%%BUILD_VERSION%%/Automake/FileUtils.pm
 share/automake%%BUILD_VERSION%%/Automake/General.pm
+share/automake%%BUILD_VERSION%%/Automake/Item.pm
+share/automake%%BUILD_VERSION%%/Automake/ItemDef.pm
+share/automake%%BUILD_VERSION%%/Automake/Location.pm
+share/automake%%BUILD_VERSION%%/Automake/Options.pm
+share/automake%%BUILD_VERSION%%/Automake/Rule.pm
+share/automake%%BUILD_VERSION%%/Automake/RuleDef.pm
 share/automake%%BUILD_VERSION%%/Automake/Struct.pm
+share/automake%%BUILD_VERSION%%/Automake/VarDef.pm
+share/automake%%BUILD_VERSION%%/Automake/Variable.pm
+share/automake%%BUILD_VERSION%%/Automake/Version.pm
+share/automake%%BUILD_VERSION%%/Automake/Wrap.pm
 share/automake%%BUILD_VERSION%%/Automake/XFile.pm
 share/automake%%BUILD_VERSION%%/COPYING
 share/automake%%BUILD_VERSION%%/INSTALL
@@ -81,6 +98,7 @@ share/automake%%BUILD_VERSION%%/am/yacc.am
 share/automake%%BUILD_VERSION%%/ansi2knr.1
 share/automake%%BUILD_VERSION%%/ansi2knr.c
 share/automake%%BUILD_VERSION%%/compile
+share/automake%%BUILD_VERSION%%/config-ml.in
 share/automake%%BUILD_VERSION%%/config.guess
 share/automake%%BUILD_VERSION%%/config.sub
 share/automake%%BUILD_VERSION%%/depcomp
@@ -90,6 +108,7 @@ share/automake%%BUILD_VERSION%%/mdate-sh
 share/automake%%BUILD_VERSION%%/missing
 share/automake%%BUILD_VERSION%%/mkinstalldirs
 share/automake%%BUILD_VERSION%%/py-compile
+share/automake%%BUILD_VERSION%%/symlink-tree
 share/automake%%BUILD_VERSION%%/texinfo.tex
 share/automake%%BUILD_VERSION%%/ylwrap
 @dirrm share/aclocal%%BUILD_VERSION%%
