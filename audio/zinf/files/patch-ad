@@ -1,11 +1,11 @@
---- Makefile-plugins.in.orig	Tue Oct 16 13:31:05 2001
-+++ Makefile-plugins.in	Wed Dec 12 03:25:45 2001
-@@ -232,7 +232,7 @@
- UNIXFREEAMPUIOBJ += ui/freeamp/unix/src/GTKPreferenceWindow.o 
- UNIXFREEAMPUIOBJ += ui/freeamp/unix/src/GTKFileSelector.o  
- UNIXFREEAMPUIOBJ += ui/musicbrowser/unix/src/gtkmessagedialog.o
--UNIXFREEAMPUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS)
-+UNIXFREEAMPUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS) $(GTK_LIBS)
+--- Makefile-plugins.in.orig	Sat Aug  3 22:53:07 2002
++++ Makefile-plugins.in	Sat Aug  3 22:54:02 2002
+@@ -200,7 +200,7 @@
+ UNIXZINFUIOBJ += ui/zinf/unix/src/GTKPreferenceWindow.o 
+ UNIXZINFUIOBJ += ui/zinf/unix/src/GTKFileSelector.o  
+ UNIXZINFUIOBJ += ui/musicbrowser/unix/src/gtkmessagedialog.o
+-UNIXZINFUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS)
++UNIXZINFUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS) $(GTK_LIBS)
  
- BEOSFREEAMPUIOBJ  = ui/freeamp/beos/src/BeOSWindow.o
- BEOSFREEAMPUIOBJ += ui/freeamp/beos/src/BeOSBitmap.o
+ plugins/zinf.ui: $(ZINFUIOBJ)
+ 	$(LINKMOD) -o $@ $(ZINFUIOBJ) $(ZINFUILIBS)
