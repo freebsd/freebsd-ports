@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~marcus/:local \

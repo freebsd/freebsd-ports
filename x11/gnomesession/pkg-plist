@@ -13,6 +13,7 @@ share/gnome/control-center-2.0/capplets/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
 share/gnome/pixmaps/splash/gnome-splash.png
+share/locale/af/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-session-2.0.mo
@@ -37,6 +38,7 @@ share/locale/fi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/gu/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-session-2.0.mo
@@ -49,6 +51,7 @@ share/locale/kn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/mi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-session-2.0.mo
