@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -17,7 +17,7 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libwmf=${LOCALBASE} --with-libiconv=${LOCALBASE} \
 		--with-png=${LOCALBASE} --with-exporter --without-glib
 

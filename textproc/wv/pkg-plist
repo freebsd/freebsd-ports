@@ -464,6 +464,8 @@ share/wv/wvHtml.xml
 share/wv/wvLaTeX.xml
 share/wv/wvText.xml
 share/wv/wvWml.xml
+share/wv/wvXml.dtd
+share/wv/wvXml.xml
 @exec mkdir -p %D/share/wv/ttf
 @dirrm share/wv/wingdingfont
 @dirrm share/wv/patterns
