@@ -4606,6 +4606,7 @@ libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
 libpst		ports/mail/libpst
+libqglviewer	ports/graphics/libqglviewer
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
 libredblack	ports/devel/libredblack
