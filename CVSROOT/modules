@@ -11810,6 +11810,7 @@ xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
 xmlppm		ports/textproc/xmlppm
 xmlpull		ports/textproc/xmlpull
+xmlroff		ports/textproc/xmlroff
 xmlrpc++	ports/net/xmlrpc++
 xmlrpc-c	ports/net/xmlrpc-c
 xmlsec		ports/security/xmlsec
