@@ -1,6 +1,6 @@
---- doc/interpreter/Makefile.in.orig	Sun Jun  8 17:34:05 2003
-+++ doc/interpreter/Makefile.in	Sun Jun  8 17:34:22 2003
-@@ -86,7 +86,7 @@
+--- doc/interpreter/Makefile.in.orig	Thu Feb 27 05:55:47 2003
++++ doc/interpreter/Makefile.in	Tue Jun 10 01:26:37 2003
+@@ -87,7 +87,7 @@
  	@$(top_srcdir)/move-if-change $@.t $@
  
  octave.info: $(MAIN_TEXINFO) $(SUB_TEXINFO) ../conf.texi

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.1.39
+PORTVERSION=	2.1.48
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/bleeding-edge/ \
+MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	High-level interactive language for numerical computations
 USE_BZIP2=	yes
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=    fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 .include <bsd.port.pre.mk>
 
@@ -32,6 +32,9 @@ PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-shared --with-fftw --host=${GNU_HOST}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 .if ${OSVERSION} < 400004
 CONFIGURE_ARGS+=	--with-f2c
@@ -41,7 +44,7 @@ CONFIGURE_ARGS+=	--with-f2c
 CONFIGURE_ARGS+=	--disable-readline
 .endif
 
-MAN1=		octave.1 octave-bug.1
+MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/interpreter/octave.info*
