@@ -35,7 +35,7 @@ MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
+.if ${ARCH} == "i386"
 .if !defined(WITHOUT_WIN32_CODECS)
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
@@ -44,12 +44,12 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif
 
-.if (${OSVERSION} == 500043)
+.if ${OSVERSION} == 500043
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xitk:common.h
 .endif
 
 # mbrtowc() is not implemented
-.if (${OSVERSION} < 500039)
+.if ${OSVERSION} < 500039
 CONFIGURE_ARGS+=	--disable-mbs
 .endif
 

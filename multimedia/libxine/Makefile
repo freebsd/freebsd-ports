@@ -50,7 +50,7 @@ MAN1=		xine-config.1
 .include <bsd.port.pre.mk>
 
 # PRId64 macro is not defined
-.if (${OSVERSION} < 500028)
+.if ${OSVERSION} < 500028
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c
 .endif
 
