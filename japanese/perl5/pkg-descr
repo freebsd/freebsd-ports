@@ -1,8 +1,8 @@
-* ja-perl-5.005.02
+* ja-perl-5.005.03
 	This port collection was used:
 		port collection lang/perl5
 				by markm@FreeBSD.ORG,
-	    and jperl5.005_02-981225
+	    and jperl5.005_03-990503
 				by yasushi@cs.washington.edu,
 		port collection japanese/perl5
 				by shige@FreeBSD.ORG

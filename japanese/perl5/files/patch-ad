@@ -1,6 +1,6 @@
---- hints/freebsd.sh.orig	Fri Jul 24 13:00:19 1998
-+++ hints/freebsd.sh	Wed Feb 10 15:22:47 1999
-@@ -68,6 +68,7 @@
+--- hints/freebsd.sh.orig	Fri Feb 12 09:05:48 1999
++++ hints/freebsd.sh	Fri May  7 22:50:53 1999
+@@ -72,6 +72,7 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
@@ -8,7 +8,7 @@
  	test -r ./broken-db.msg && . ./broken-db.msg
  	;;
  #
-@@ -81,12 +82,18 @@
+@@ -85,12 +86,18 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
@@ -27,64 +27,67 @@
  	;;
  esac
  
-@@ -95,17 +102,25 @@
+@@ -99,7 +106,11 @@
  case "$osvers" in
  0.*|1.0*) ;;
  
--3.0*)   if [ -e /usr/lib/aout ]; then
--            libpth="/usr/lib/aout /usr/local/lib /usr/lib"
--            glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
--        fi
--        cccdlflags='-DPIC -fpic'
--        lddlflags='-Bshareable'
--        ;;
+-3.*|4.0*)
++2.*)	cccdlflags='-DPIC -fpic'
++	lddlflags="-Bshareable $lddlflags"
++	;;
++
++*)
+         objformat=`/usr/bin/objformat`
+         if [ x$objformat = xelf ]; then
+             libpth="/usr/lib /usr/local/lib"
+@@ -115,10 +126,6 @@
+         fi
+         cccdlflags='-DPIC -fpic'
+         ;;
 -
 -*)	cccdlflags='-DPIC -fpic'
-+2.*)	cccdlflags='-DPIC -fpic'
- 	lddlflags="-Bshareable $lddlflags"
- 	;;
-+
-+*)	objformat=`objformat`
-+	if [ x$objformat = xelf ]; then
-+	    libpth="/usr/lib /usr/local/lib"
-+	    glibpth="/usr/lib /usr/local/lib"
-+	    ldflags="-Wl,-E "
-+	    lddlflags="-shared "
-+	else
-+	    if [ -e /usr/lib/aout ]; then
-+	        libpth="/usr/lib/aout /usr/local/lib /usr/lib"
-+	        glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
-+	    fi
-+	    lddlflags='-Bshareable'
-+	fi
-+	cccdlflags='-DPIC -fpic'
-+        ;;
+-	lddlflags="-Bshareable $lddlflags"
+-	;;
  esac
  
  cat <<'EOM' >&4
-@@ -125,7 +140,11 @@
- case "$usethreads" in
- $define)
-     case "$osvers" in  
--        3.0*) ldflags="-pthread $ldflags"
-+         0.*|1.*|2.0*|2.1*)   cat <<'EOM' >&4
-+It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
-+upgrading to the latest STABLE release.
-+EOM
-+              exit 1
-               ;;
-         2.2*) if [ ! -r /usr/lib/libc_r ]; then
-                 cat <<'EOM' >&4
-@@ -142,11 +161,7 @@
-               # The safest quick-fix is just to not use nm at all.
-               usenm=false
-               ;;
--         *)   cat <<'EOM' >&4
--It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
--upgrading to the latest STABLE release.
--EOM
--              exit 1
-+        *) ldflags="-pthread $ldflags"
-               ;;
-     esac
-     ;;
+@@ -166,7 +173,7 @@
+ $define|true|[yY]*)
+         lc_r=`/sbin/ldconfig -r|grep ':-lc_r'|awk '{print $NF}'`
+         case "$osvers" in  
+-	2.2.8*|3.*|4.*)
++	2.2.8*)
+ 	      if [ ! -r "$lc_r" ]; then
+ 	      cat <<EOM >&4
+ POSIX threads should be supported by FreeBSD $osvers --
+@@ -179,7 +186,7 @@
+ 	      fi
+ 	      ldflags="-pthread $ldflags"
+ 	      ;;
+-        2.2*)
++        0.*|1.*|2.0*|2.1*|2.2*)
+               cat <<EOM >&4
+ POSIX threads are not supported well by FreeBSD $osvers.
+ 
+@@ -192,12 +199,17 @@
+ EOM
+ 	      exit 1
+ 	      ;;
+-	 *)   cat <<EOM >&4
+-I did not know that FreeBSD $osvers supports POSIX threads.
++	 *)   if [ ! -r "$lc_r" ]; then
++	      cat <<EOM >&4
++POSIX threads should be supported by FreeBSD $osvers --
++but your system is missing the shared libc_r.
++(/sbin/ldconfig -r doesn't find any).
+ 
+-Feel free to tell perlbug@perl.com otherwise.
++Consider using the latest STABLE release.
+ EOM
+-	      exit 1
++		 exit 1
++	      fi
++	      ldflags="-pthread $ldflags"
+ 	      ;;
+ 	esac
+ 
