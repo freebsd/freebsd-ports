@@ -78,6 +78,7 @@ lib/tcl%%TCL_VER%%/encoding/jis0201.enc
 lib/tcl%%TCL_VER%%/encoding/jis0208.enc
 lib/tcl%%TCL_VER%%/encoding/jis0212.enc
 lib/tcl%%TCL_VER%%/encoding/koi8-r.enc
+lib/tcl%%TCL_VER%%/encoding/koi8-u.enc
 lib/tcl%%TCL_VER%%/encoding/ksc5601.enc
 lib/tcl%%TCL_VER%%/encoding/macCentEuro.enc
 lib/tcl%%TCL_VER%%/encoding/macCroatian.enc
