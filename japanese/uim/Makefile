@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/uim/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
 
-LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
