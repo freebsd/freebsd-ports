@@ -3,17 +3,20 @@
 # Date created:         19 April 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.5 1997/02/24 23:10:34 erich Exp $
+# $Id: Makefile,v 1.6 1997/03/27 23:48:18 erich Exp $
 #
 
-DISTNAME=	swig1.1b5p1
-PKGNAME=	swig-1.1b5
+DISTNAME=	swig1.1
+PKGNAME=	swig-1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/
 
 MAINTAINER=	erich@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/SWIG1.1b5p1
+WRKSRC=		${WRKDIR}/SWIG1.1
 GNU_CONFIGURE=	yes
+
+post-build:
+	@cd ${WRKSRC}; make runtime
 
 .include <bsd.port.mk>
