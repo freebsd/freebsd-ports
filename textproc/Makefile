@@ -119,6 +119,7 @@
     SUBDIR += htmldoc
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-headers
     SUBDIR += iiimf-protocol-lib
     SUBDIR += iiimf-server
