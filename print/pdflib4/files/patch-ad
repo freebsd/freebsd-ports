@@ -1,52 +1,29 @@
---- configure.orig	Wed Jun 30 12:52:35 1999
-+++ configure	Mon Jul 12 16:17:30 1999
-@@ -555,7 +555,7 @@
+--- configure.orig	Mon Aug  2 18:04:00 1999
++++ configure	Tue Sep  7 23:14:14 1999
+@@ -557,7 +557,7 @@
  
  
  
--VERSION="2.0"
+-VERSION="2.01"
 +VERSION="2"
  
- DEFINES=""
+ WITH_CXX=nope
+ WITH_JAVA=nope
+@@ -1936,7 +1936,7 @@
+ PDFLIB_STATIC=libpdf$VERSION.a
  
-@@ -1503,6 +1503,7 @@
-   PERLINCLUDE=nope
- fi
+ case $ac_sys_system in
+-    NetBSD*) PDFLIB_SHARED=libpdf$SO.$VERSION;;
++    NetBSD*|FreeBSD*) PDFLIB_SHARED=libpdf$SO.$VERSION;;
+     *)	PDFLIB_SHARED=libpdf$VERSION$SO;;
+ esac
  
-+PERLINCLUDE=`($PERL -e 'use Config; print $Config{privlib};') 2>/dev/null`
+@@ -1971,7 +1971,7 @@
+ # This must work with the shared as well as the dynamic version.
  
- # First figure out what the name of Perl5 is
- 
-@@ -1569,12 +1570,12 @@
- 		PERLINCLUDE="-I$PERL5DIR"
- 	fi
- 	PERLLIBDIR=`($PERL -e 'use Config; print $Config{sitearchexp};') 2>/dev/null`
--	if test -z "$PERLLIBDIR" -o ! -d "$PERLLIBDIR"; then
-+	if test -z "$PERLLIBDIR"; then
- 		echo "$ac_t""unable to determine perl5 shared library directory" 1>&6
- 		PERLIB="/usr/lib/perl5/site_perl/5.005/archname"
- 	fi
- 	PERLMODDIR=`($PERL -e 'use Config; print $Config{sitelib};') 2>/dev/null`
--	if test -z "$PERLMODDIR" -o ! -d "$PERLMODDIR"; then
-+	if test -z "$PERLMODDIR"; then
- 		echo "$ac_t""unable to determine perl5 module directory" 1>&6
- 		PERLMODDIR="/usr/lib/perl5/site_perl/5.005"
- 	fi
-@@ -1887,7 +1888,7 @@
- 	BINDINGS_TEST=""
- 	CCSHARED=""
- else
--	PDFLIB=libpdf$VERSION$SO
-+	PDFLIB=libpdf$SO.$VERSION
- fi
- 
- 
-@@ -1902,7 +1903,7 @@
-    	ZLIBLINK=""
- fi
- 
--PDFLIBLINK="-lpdf$VERSION $TIFFLINK $ZLIBLINK -lm"
-+PDFLIBLINK="-lpdf $TIFFLINK $ZLIBLINK -lm"
- 
- 
+ case $ac_sys_system in
+-    NetBSD*) PDFLIBLINK="-lpdf $TIFFLINK $ZLIBLINK -lm";;
++    NetBSD*|FreeBSD*) PDFLIBLINK="-lpdf $TIFFLINK $ZLIBLINK -lm";;
+     *) PDFLIBLINK="-lpdf$VERSION $TIFFLINK $ZLIBLINK -lm";;
+ esac
  

@@ -6,9 +6,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	pdflib-2.0
+DISTNAME=	pdflib-2.01
 CATEGORIES=	print
-MASTER_SITES=	http://www.ifconnection.de/~tm/pdflib/ \
+MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
