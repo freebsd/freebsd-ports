@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041024:
+  AFFECTS: users of mail/popfile
+  AUTHOR: matusita@FreeBSD.org
+
+  Since there is a known problem that popfile doesn't work with SQLite 1.x
+  at this time, you'll be in trouble after upgrading databases/p5-DBD-SQLite
+  to the latest one.  A workaround is commited to 0.22.0_1 which uses
+  databases/p5-DBD-SQLite2 by default.  However, if already installed popfile,
+  please check ${HOME}/.popfile/popfile.cfg, and change the line
+  "bayes_dbconnect dbi:SQLite:dbname=$dbname" to
+  "bayes_dbconnect dbi:SQLite2:dbname=$dbname" then restart popfile.
+
 20041023:
   AFFECTS: users of mail/dbmail
   AUTHOR: seanc@FreeBSD.org
