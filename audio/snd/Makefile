@@ -7,6 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		4.6
+PORTREVISION=		1
 CATEGORIES=		audio
 MASTER_SITES=		ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 			${MASTER_SITE_SOURCEFORGE}
@@ -50,6 +51,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
+PLIST=		${WRKDIR}/pkg-plist
 PREFIX=		/
 .if !defined(WITHOUT_X)
 USE_GLIB=	yes
@@ -62,7 +64,7 @@ post-configure:
 	@${PERL} -pi -e "s:^LIBS = :LIBS = -lm:g" ${WRKSRC}/makefile
 
 do-install:
-.for i in audinfo sndinfo sndplay sndrecord sndsine
+.for i in audinfo snd-info sndplay sndrecord sndsine
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${LOCALBASE}/bin
 .endfor
 .if !defined(WITHOUT_X)
@@ -101,5 +103,8 @@ pre-build:
 .if !defined(NOPORTDOCS)
 	${ECHO} "@dirrm %%LOCALBASE%%/share/doc/snd" >> ${PLIST}
 .endif
+
+post-build:
+	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
 
 .include <bsd.port.mk>
