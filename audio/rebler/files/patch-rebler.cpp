@@ -1,5 +1,5 @@
---- rebler.cpp.orig	Mon Aug  6 21:59:36 2001
-+++ rebler.cpp	Wed Mar  6 12:03:42 2002
+--- rebler.cpp.orig	Mon Aug  6 22:59:36 2001
++++ rebler.cpp	Sun Apr 13 04:09:49 2003
 @@ -29,6 +29,7 @@
  ******************************************************************************/
  
@@ -19,7 +19,15 @@
              cerr << "Win32DLL   : " << ci->dll << endl;
  //                cerr << "GUID       : " << ci->guid << endl;
              cerr << "module name: " << ci->modulename << endl;
-@@ -325,8 +326,8 @@
+@@ -303,7 +304,6 @@
+             case CodecInfo::Plugin: cerr << "Plugin "; break;
+             case CodecInfo::Win32:  cerr << "Win32  "; break;
+             case CodecInfo::DShow_Dec: cerr << "DShow_Dec"; break;
+-            case CodecInfo::DShow_Enc: cerr << "DShow_Enc"; break;
+             default:
+                 cerr << "Unknown";
+                 break;
+@@ -325,8 +325,8 @@
                   iter != ci->encoder_info.end();
                   iter++)
              {
@@ -30,7 +38,7 @@
                  cerr << "    " << "kind  : ";
                  switch(iter->kind)
                  {
-@@ -338,8 +339,8 @@
+@@ -338,8 +338,8 @@
                  {
                      cerr << "Select from: ";
                      for( std::vector<std::string>::const_iterator i =
