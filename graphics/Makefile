@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1995/07/29 11:31:33 asami Exp $
+# $Id: Makefile,v 1.13 1995/08/28 15:11:46 jkh Exp $
 #
 
     SUBDIR += ImageMagick
@@ -16,6 +16,7 @@
     SUBDIR += xanim
     SUBDIR += xdl
     SUBDIR += xfig
+    SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xli
     SUBDIR += xpaint
