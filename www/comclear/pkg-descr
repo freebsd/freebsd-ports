@@ -1,0 +1,11 @@
+From the ComClear README:
+
+"ComClear is a history cleaner for Netscape Navigator and Communicator.  It 
+ allows a user to choose from deleting the cache, cookies, history and 
+ drop-down list.
+
+ Comclear has both a command-line version and a GTK+ version, the latter of 
+ which is run automatically when comclear is run from an X session."
+
+Author:		Luke Reeves <luke@submail.net>
+WWW:		http://www.neuro-tech.net/comclearu.xml
