@@ -839,6 +839,7 @@
     SUBDIR += zabbix-agent
     SUBDIR += zebra
     SUBDIR += zebra-server
+    SUBDIR += zsync
     SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>
