@@ -17,21 +17,30 @@ DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
+		${JAVA_HOME}/bin/javac:${JAVA_PORT}
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/jakarta-tomcat${PORTVERSION}/lib/webserver.jar:${PORTSDIR}/www/jakarta-tomcat
+		${TOMCAT_HOME}/lib/webserver.jar:${PORTSDIR}/www/jakarta-tomcat
 
 USE_GMAKE=	YES
 MAKEFILE=	Makefile.freebsd
 WRKSRC=		${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/apache1.3
 
 APXS?=		${LOCALBASE}/sbin/apxs
+JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
+JAVA_PORT?=	${PORTSDIR}/java/jdk13
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+TOMCAT_HOME?=	${LOCALBASE}/jakarta-tomcat${PORTVERSION}
+
+pre-build:
+	${SED} \
+	-e "s#%%APXS%%#${APXS}#g" \
+	-e "s#%%JAVA_HOME%%#${JAVA_HOME}#g" \
+	${FILESDIR}/Makefile.freebsd \
+	> ${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/apache1.3/Makefile.freebsd
 
 do-install:
 	${APXS} -i -A -n jk ${WRKSRC}/mod_jk.so
-	${SED} -e "s#%%PREFIX%%#${PREFIX}#g" ${FILESDIR}/mod_jk.conf > ${WRKDIR}/mod_jk.conf
+	${SED} -e "s#%%TOMCAT_HOME%%#${TOMCAT_HOME}#g" ${FILESDIR}/mod_jk.conf > ${WRKDIR}/mod_jk.conf
 	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf ${PREFIX}/etc/apache
-
-	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
