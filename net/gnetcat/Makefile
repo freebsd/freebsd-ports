@@ -18,8 +18,10 @@ COMMENT=	GPL'ed re-write of the well known networking tool netcat
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
+INFO=		gnetcat
 MAN1=		gnetcat.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/gnetcat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netcat ${PREFIX}/bin/gnetcat
