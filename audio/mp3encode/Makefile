@@ -1,7 +1,7 @@
 # New ports collection makefile for: mp3encode
 # Version required:	1.10
 # Date created:		5th August, 1998
-# Whom:			Joel Sutton <jsutton@webnet.com.au>
+# Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	mp3encode-1.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
-MAINTAINER=	jsutton@webnet.com.au
+MAINTAINER=	jsutton@bbcon.com.au
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
 ALL_TARGET=	encode
