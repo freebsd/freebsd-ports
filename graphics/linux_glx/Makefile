@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 
 PREFIX=		/compat/linux
+NO_MTREE=	yes
 
 WRKSRC=		${WRKDIR}/linux_glx
 # switch off stripping during INSTALL_PROGRAM
