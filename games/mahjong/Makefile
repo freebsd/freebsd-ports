@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/
 DISTNAME=	mj-${PORTVERSION}-src
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GTK=	yes
 
