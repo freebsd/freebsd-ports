@@ -3,7 +3,7 @@
 # Date created:		1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.3 1999/06/28 15:58:33 shige Exp $
+# $Id: Makefile,v 1.4 1999/06/28 18:34:03 billf Exp $
 #
 
 DISTNAME=	jsdk20-solaris2-sparc
@@ -20,7 +20,6 @@ NO_CDROM=	"Sun has a funky license for this software"
 RESTRICTED=	"no commercial use"
 
 WRKSRC=		${WRKDIR}/JSDK2.0
-NO_BUILD=	yes
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
@@ -31,9 +30,15 @@ do-fetch:
 	  ${ECHO_MSG} "=========================================================="; \
 	 fi
 
+do-build:
+	@${SED} -e s,%%PREFIX%%,${PREFIX},g \
+		${WRKSRC}/bin/servletrunner > ${WRKDIR}/servletrunner
+
 do-install:
-	${MKDIR} ${PREFIX}/JSDK2.0
-	(cd ${WRKSRC} && tar -c -f - .) \
-		| (cd ${PREFIX}/JSDK2.0 && tar fx -)
+	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/jsdk20
+	@${INSTALL_SCRIPT} ${WRKDIR}/servletrunner ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/lib/jsdk.jar ${PREFIX}/share/java/classes
+	@cd ${WRKSRC}; \
+	 ${CP} -R [Rde]* ${PREFIX}/share/java/jsdk20
 
 .include <bsd.port.mk>
