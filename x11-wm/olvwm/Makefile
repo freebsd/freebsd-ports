@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 DISTFILES=	olvwm4.tar.Z olvwm4.Patch01.Z
 EXTRACT_ONLY=	olvwm4.tar.Z
 NO_WRKSUBDIR=	yes
+DEPENDS=	${PORTSDIR}/x11/xview
 
 pre-configure:
 	@echo "Applying olvwm4 Patch01"
