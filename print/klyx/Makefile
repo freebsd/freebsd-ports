@@ -3,11 +3,11 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/25 14:26:20 tg Exp $
 #
 
 DISTNAME=	klyx-0.9.3
-CATEGORIES=	x11 kde
+CATEGORIES=	print kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= /unstable/apps/office
 
@@ -20,10 +20,8 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		kfile\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
-
 CONFIGURE_ENV=	CXXFLAGS="$(CXXFLAGS)" \
 		INSTALL_SCRIPT="$(INSTALL_SCRIPT)"
 
