@@ -20,9 +20,7 @@ bin/vcompat
 bin/vmake
 bin/vshow
 lib/libmfhdf.a
-@exec ranlib %D/%F
 lib/libdf.a
-@exec ranlib %D/%F
 include/atom.h
 include/bitvect.h
 include/cdeflate.h
