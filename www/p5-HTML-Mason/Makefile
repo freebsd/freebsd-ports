@@ -28,8 +28,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-prompts
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason.3 \
