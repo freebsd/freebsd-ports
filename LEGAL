@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.120 1998/11/24 09:21:47 flathill Exp $
+# $Id: LEGAL,v 1.121 1998/11/24 22:45:34 billf Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -64,13 +64,10 @@ giftool-*		ports/graphics/giftool	Don't redistribute for profit
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-*		ports/graphics/graphviz	Needs license before fetching
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
-john-1.4		ports/security/john	crypt(); export-controlled
+john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
-kaffe-0.9.1		ports/lang/kaffe	Restrictive copyright
+kaffe-*			ports/lang/kaffe	Restrictive copyright
 mew-1.70.tar.gz		ports/mail/mew	ITAR export-controlled (hooks to pgp)
-mikmod-2.14.tar.gz	ports/audio/mikmod	Registration required for 
-				redistribution of the source and commercial
-				use of the binaries
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
 msql-*			ports/databases/msql	Not free for commercial org.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
