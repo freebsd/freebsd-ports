@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,24 +17,48 @@ COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 USE_PERL5=	yes
 USE_LIBTOOL_VER=	13
+USE_GNOME=	pkgconfig gnomehack
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-perl-binding
 
-MAN1=		rigctl.1 rotctl.1
+MAN1=		rigctl.1 rigmem.1 rotctl.1
 MAN8=		rpc.rigd.8 rpc.rotd.8
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_XML)
+USE_GNOME+=	libxml2
+PLIST_SUB+=	XML=""
+.else
+CONFIGURE_ARGS+=	--disable-xmltest
+PLIST_SUB+=	XML="@comment "
+.endif
+
 .if defined(WITH_TCL)
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.3
+LIB_DEPENDS+=	tcl84.1:${PORTSDIR}/lang/tcl84
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 --with-tcl-binding
 PLIST_SUB+=	TCL=""
 .else
-CONFIGURE_ARGS+=	--without-with-tcl --without-with-tcl-binding
+CONFIGURE_ARGS+=	--without-tcl-binding
 PLIST_SUB+=	TCL="@comment "
 .endif
 
+.if defined(WITH_PYTHON)
+BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+CONFIGURE_ARGS+=	--with-python-binding
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=	--without-python-binding
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 .if defined(WITH_RIGMATRIX)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=	--with-rigmatrix
 PLIST_SUB+=	RIGMATRIX=""
 .else
@@ -47,34 +70,30 @@ PLIST_SUB+=	RIGMATRIX="@comment "
 CONFIGURE_ARGS+=	--with-gnuradio
 PLIST_SUB+=	GNURADIO=""
 .else
-CONFIGURE_ARGS+=	--without-with-gnuradio
-PLIST_SUB+=	GNURADIO="@comment "
-.endif
-
-.if defined(WITH_MICROTUNE)
-CONFIGURE_ARGS+=	--with-microtune
-PLIST_SUB+=	MICROTUNE=""
-.else
-CONFIGURE_ARGS+=	--without-with-microtune
-PLIST_SUB+=	MICROTUNE="@comment "
+CONFIGURE_ARGS+=	--without-gnuradio
+LIST_SUB+=	GNURADIO="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_TCL) || !defined(WITH_RIGMATRIX)
+.if !defined(WITH_TCL) || !defined(WITH_PYTHON) || !defined(WITH_RIGMATRIX)
 	@${ECHO_MSG} "You can specify the following command lines:"
 	@${ECHO_MSG} ""
 .endif
+.if !defined(WITH_XML)
+	@${ECHO_MSG} "WITH_XML=yes		for XML support"
+.endif
 .if !defined(WITH_TCL)
-	@${ECHO_MSG} "WITH_TCL=yes for TCL support"
+	@${ECHO_MSG} "WITH_TCL=yes		for TCL Binding support"
+.endif
+.if !defined(WITH_PYTHON)
+	@${ECHO_MSG} "WITH_PYTHON=yes		for PYTHON Binding support"
 .endif
 .if !defined(WITH_RIGMATRIX)
-	@${ECHO_MSG} "WITH_RIGMATRIX=yes for RigMatrix support"
+	@${ECHO_MSG} "WITH_RIGMATRIX=yes	for RigMatrix support"
 .endif
 #.if !defined(WITH_GNURADIO)
-#	@${ECHO_MSG} "WITH_GNURADIO=yes for GNURadio support"
+#	@${ECHO_MSG} "WITH_GNURADIO=yes		for GNURadio support"
 #.endif
-#.if !defined(WITH_MICROTUNE)
-#	@${ECHO_MSG} "WITH_MICROTUNE=yes for MicroTune support"
-#.endif
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
