@@ -8,11 +8,14 @@
 PORTNAME=	shlock
 PORTVERSION=	2.3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
+MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITE_SUBDIR=inn
 
 DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
+
+PORTCOMMENT=	Create lock files for use in shell scripts
 
 HAS_CONFIGURE=	yes
 
