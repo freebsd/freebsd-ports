@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
+PORTREVISION=	1 # Service Release 9 : cx130-20010626 
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -41,7 +42,7 @@ IGNORE=	"You can not legally distribute binaries"
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from http://www6.software.ibm.com/dl/dklx130/dklx130-p or http://www.ibm.com/developerworks/java/jdk/linux130/, place it in ${DISTDIR} and then run make again.
+IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from http://www6.software.ibm.com/dl/dklx130/dklx130-p, place it in ${DISTDIR} and then run make again.
 .endif
 
 post-patch:
@@ -56,7 +57,7 @@ post-patch:
 do-install:
 	${MKDIR} ${TARGET_PREFIX}
 	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${TARGET_PREFIX} -xpf-
-	${LOCALBASE}/bin/registervm "${TARGET_PREFIX}/bin/java # IBM-JDK${PORTVERSION}"
+	${LOCALBASE}/bin/registervm "${TARGET_PREFIX}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
