@@ -1,18 +1,18 @@
 # New ports collection makefile for:    skill
-# Version required:     3.7.5
-# Date created:         04 Jun 1997
-# Whom:                 Joao Carlos Mendes Luis <jonny@mailhost.coppe.ufrj.br>
+# Version required:     3.7.6
+# Date created:         20 Oct 1998
+# Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.2 1997/10/30 02:30:10 jseger Exp $
+# $Id: Makefile,v 1.3 1998/10/21 00:57:39 steve Exp $
 #
 
-DISTNAME=       skill-3.7@P4
-PKGNAME=	skill-3.7.5
+DISTNAME=	skill-3.7@P5
+PKGNAME=	skill-3.7.6
 CATEGORIES=	sysutils
-MASTER_SITES=   ftp://jaguar.cs.utah.edu/pub/skill/
+MASTER_SITES=	ftp://fast.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=	_tar.Z
 
-MAINTAINER=	jonny@coppe.ufrj.br
+MAINTAINER=	jonny@jonny.eng.br
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Config
@@ -20,9 +20,6 @@ WRKSRC=			${WRKDIR}/${PKGNAME}
 
 MAN1=		skill.1
 MLINKS=		skill.1 snice.1
-
-# Bugs: skill.1 and snice.1 are hard links.  When compressed they
-# are changed to independent files.  I'd like to change this...
 
 pre-configure:
 	@chmod a+x ${WRKSRC}/Config
