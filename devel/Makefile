@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.129 1998/08/09 01:44:57 steve Exp $
+# $Id: Makefile,v 1.130 1998/08/10 00:09:42 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -67,12 +67,10 @@
     SUBDIR += ncurses
     SUBDIR += noweb
     SUBDIR += omniORB
-    SUBDIR += p5-B
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-Curses
-    SUBDIR += p5-Data-Dumper
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Date-Manip
