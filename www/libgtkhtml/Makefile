@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-gconf=yes \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

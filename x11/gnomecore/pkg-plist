@@ -53,6 +53,33 @@ lib/libpanel_applet.so.5
 lib/libpanel_status.a
 lib/libpanel_status.so
 lib/libpanel_status.so.5
+share/doc/panel/panel-decl.txt
+share/doc/panel/panel-sections.txt
+share/doc/panel/panel.hierarchy
+share/doc/panel/panel.html
+share/doc/panel/panel.sgml
+share/doc/panel/panel.signals
+share/doc/panel/panel.types
+share/doc/panel/panel/appletwidget.html
+share/doc/panel/panel/index.html
+share/doc/panel/panel/panel-context-menu.html
+share/doc/panel/panel/panel-miscellaneous.html
+share/doc/panel/panel/panel-panel-interaction.html
+share/doc/panel/panel/r1373.html
+share/doc/panel/panel/r160.html
+share/doc/panel/panel/statusdocklet.html
+share/doc/panel/panel/unnamed1.html
+share/doc/panel/panel/unnamed10.html
+share/doc/panel/panel/unnamed11.html
+share/doc/panel/panel/unnamed12.html
+share/doc/panel/panel/unnamed13.html
+share/doc/panel/panel/unnamed14.html
+share/doc/panel/panel/unnamed15.html
+share/doc/panel/panel/unnamed16.html
+share/doc/panel/panel/unnamed3.html
+share/doc/panel/panel/unnamed4.html
+share/doc/panel/panel/unnamed5.html
+share/doc/panel/panel/unnamed6.html
 share/gnome/applets/Amusements/.directory
 share/gnome/applets/Amusements/fish_applet.desktop
 share/gnome/applets/Clocks/.directory
@@ -836,33 +863,6 @@ share/gnome/help/tasklist_applet/eu/tasklist.sgml
 share/gnome/help/tasklist_applet/eu/tasklist_applet.sgml
 share/gnome/help/tasklist_applet/eu/topic.dat
 share/gnome/hints/panel.hints
-share/gnome/html/panel-decl.txt
-share/gnome/html/panel-sections.txt
-share/gnome/html/panel.hierarchy
-share/gnome/html/panel.html
-share/gnome/html/panel.sgml
-share/gnome/html/panel.signals
-share/gnome/html/panel.types
-share/gnome/html/panel/appletwidget.html
-share/gnome/html/panel/index.html
-share/gnome/html/panel/panel-context-menu.html
-share/gnome/html/panel/panel-miscellaneous.html
-share/gnome/html/panel/panel-panel-interaction.html
-share/gnome/html/panel/r1373.html
-share/gnome/html/panel/r160.html
-share/gnome/html/panel/statusdocklet.html
-share/gnome/html/panel/unnamed1.html
-share/gnome/html/panel/unnamed10.html
-share/gnome/html/panel/unnamed11.html
-share/gnome/html/panel/unnamed12.html
-share/gnome/html/panel/unnamed13.html
-share/gnome/html/panel/unnamed14.html
-share/gnome/html/panel/unnamed15.html
-share/gnome/html/panel/unnamed16.html
-share/gnome/html/panel/unnamed3.html
-share/gnome/html/panel/unnamed4.html
-share/gnome/html/panel/unnamed5.html
-share/gnome/html/panel/unnamed6.html
 share/gnome/idl/Terminal.idl
 share/gnome/idl/gnome-panel.idl
 share/gnome/idl/help-browser.idl
@@ -1140,7 +1140,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/omf/gnome-core
 @dirrm share/gnome/mc/templates
 @dirrm share/gnome/mc
-@dirrm share/gnome/html/panel
 @dirrm share/gnome/hints
 @dirrm share/gnome/help/tasklist_applet/eu/stylesheet-images
 @dirrm share/gnome/help/tasklist_applet/eu/figures
@@ -1347,6 +1346,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/applets/Clocks
 @dirrm share/gnome/applets/Amusements
 @dirrm share/gnome/applets
+@dirrm share/doc/panel/panel
+@dirrm share/doc/panel
 @dirrm etc/gnome/panel-config/panel.d/default
 @dirrm etc/gnome/panel-config/panel.d
 @dirrm etc/gnome/panel-config
