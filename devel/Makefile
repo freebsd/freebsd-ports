@@ -926,6 +926,7 @@
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pwlib
+    SUBDIR += py-anonfunc
     SUBDIR += py-ansistyle
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon

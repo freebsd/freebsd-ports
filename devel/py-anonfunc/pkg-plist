@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/anonfunc.pth
+%%PYTHON_SITELIBDIR%%/anonfunc.so
+%%PYTHON_SITELIBDIR%%/anonfuncalias.py
+%%PYTHON_SITELIBDIR%%/anonfuncalias.pyc
+%%PYTHON_SITELIBDIR%%/anonfuncalias.pyo
