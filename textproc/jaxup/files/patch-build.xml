@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- build.xml.orig	Thu Dec  9 14:14:21 2004
++++ build.xml	Thu Dec  9 14:16:44 2004
+@@ -57,6 +57,8 @@
+ 		<javadoc destdir="${build.apidocs.dir}" windowtitle="${project.fullname}" author="true" version="true" use="true">
+ 			<fileset dir="${src.java.dir}"/>
+ 			<classpath refid="project.classpath"/>
++      <link href="${jaxen.apidocs}"/>
++      <link href="${j2se.apidocs}"/>
+ 		</javadoc>
+ 	</target>
+ 
