@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
