@@ -99,6 +99,10 @@ post-patch:
 			npunix.c npwin.cpp
 	${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 # Work around qmake generated dependencies
 pre-install:
