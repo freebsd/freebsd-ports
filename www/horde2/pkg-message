@@ -18,7 +18,7 @@ It is recommended that you change the password of the 'hordemgr'
 user used to connect to the horde database.
 Horde is setup by default to access MySQL.
 
-If %%APACHE_CONF%% has been updated,
+Your %%APACHE_CONF%% has been updated,
 you have to restart Apache.
 
 When everything is OK, you should be able to access Horde from

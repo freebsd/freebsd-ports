@@ -1,5 +1,5 @@
+# This is included in Apache's httpd.conf for Horde   
 
-# Added for Horde   
 <Directory /home/httpd/html/horde>  
     Options Indexes FollowSymLinks
     AllowOverride None

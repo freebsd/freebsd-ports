@@ -119,6 +119,7 @@
 %%TURBADIR%%/templates/wml/search/foot.inc
 %%TURBADIR%%/templates/wml/search/head.inc
 %%TURBADIR%%/templates/wml/search/row.inc
+etc/horde/httpd.conf.turba
 %%PORTDOCS%%@dirrm share/doc/turba
 @dirrm %%TURBADIR%%/config
 @dirrm %%TURBADIR%%/graphics
