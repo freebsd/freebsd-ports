@@ -1,0 +1,12 @@
+--- Fan/Fan.pm.orig	Sat Sep 19 12:57:26 1998
++++ Fan/Fan.pm	Sun Jan 10 03:43:34 1999
+@@ -48,8 +48,7 @@
+ 
+ ;# Where configuration files are.
+ BEGIN {
+-	use Config;
+-	$sysconfdir = "$Config{prefix}/etc";
++	$sysconfdir = "%%PREFIX%%/etc";
+ }
+ 
+ ;#
