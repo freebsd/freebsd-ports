@@ -1,6 +1,6 @@
 # New ports collection makefile for:	docker
 # Date created:				March 15, 2003
-# Whom:					Samy <samy@kerneled.com>
+# Whom:					Samy Al Bahra <samy@kerneled.org>
 #
 # $FreeBSD$
 #
@@ -9,10 +9,10 @@ PORTNAME=	docker
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.kerneled.com/projects/docker/ \
+MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		http://icculus.org/openbox/docker/
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	A dockapp with support for GNOME2 and KDE3 tray icons
 
 PLIST_FILES=	bin/docker
