@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
 
