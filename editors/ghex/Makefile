@@ -9,7 +9,7 @@ PORTNAME=	ghex
 PORTVERSION=	1.2.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/ghex
+MASTER_SITE_SUBDIR=	sources/ghex/1.2
 
 MAINTAINER=	gnome@FreeBSD.org
 

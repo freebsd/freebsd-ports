@@ -9,7 +9,7 @@ PORTNAME=	gnomebuild
 PORTVERSION=	0.0.2
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/${PORTNAME:S/gnome/gnome-/}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome/gnome-/}/0.0
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.13
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libgtop
+MASTER_SITE_SUBDIR=	sources/libgtop/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
 

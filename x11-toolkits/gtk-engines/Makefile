@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gtk-engines
+MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
 
 MAINTAINER=	gnome@FreeBSD.org
 

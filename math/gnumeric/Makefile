@@ -9,7 +9,7 @@ PORTNAME=	gnumeric
 PORTVERSION=	1.0.9
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnumeric
+MASTER_SITE_SUBDIR=	sources/gnumeric/1.0
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	gnomepilot-conduits
 PORTVERSION=	0.9
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot-conduits
+MASTER_SITE_SUBDIR=	sources/gnome-pilot-conduits/0.9
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gnome-spell
+MASTER_SITE_SUBDIR=	sources/gnome-spell/0.4
 DISTNAME=	gnome-spell-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

@@ -9,7 +9,7 @@ PORTNAME=	gnomegames2
 PORTVERSION=	2.0.4
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-games
+MASTER_SITE_SUBDIR=	sources/gnome-games/2.0
 DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

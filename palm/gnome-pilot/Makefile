@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.eskil.org/gnome-pilot/download/tarballs/
-MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot
+MASTER_SITE_SUBDIR=	sources/gnome-pilot/0.1
 DISTNAME=	gnome-pilot-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

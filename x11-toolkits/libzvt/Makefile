@@ -9,7 +9,7 @@ PORTNAME=	libzvt
 PORTVERSION=	2.0.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	pango
 PORTVERSION=	1.0.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,2.0.0/sources/${PORTNAME},} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.0,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
 		http://www.ameth.org/gimp/gtk/v1.3/

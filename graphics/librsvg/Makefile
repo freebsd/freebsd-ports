@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/librsvg
+MASTER_SITE_SUBDIR=	sources/librsvg/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
 

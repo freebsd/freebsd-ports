@@ -9,7 +9,7 @@ PORTNAME=	gnomevfs2
 PORTVERSION=	2.0.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-vfs
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.0
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/glibwww
+MASTER_SITE_SUBDIR=	sources/glibwww/0.2
 
 MAINTAINER=	gnome@FreeBSD.org
 

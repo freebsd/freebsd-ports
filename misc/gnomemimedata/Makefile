@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-mime-data
+MASTER_SITE_SUBDIR=	sources/gnome-mime-data/2.0
 DISTNAME=	gnome-mime-data-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

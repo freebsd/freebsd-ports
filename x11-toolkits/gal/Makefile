@@ -9,7 +9,7 @@ PORTNAME=	gal
 PORTVERSION=	0.19.3
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gal
+MASTER_SITE_SUBDIR=	sources/gal/0.19
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	libghttp
 PORTVERSION=	1.0.9
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libghttp
+MASTER_SITE_SUBDIR=	sources/libghttp/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
 

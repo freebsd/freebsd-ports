@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0.5
 PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/control-center
+MASTER_SITE_SUBDIR=	sources/control-center/1.4
 DISTNAME=	control-center-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

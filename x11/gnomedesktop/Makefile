@@ -9,7 +9,7 @@ PORTNAME=	gnomedesktop
 PORTVERSION=	2.0.8
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-desktop
+MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.0
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
