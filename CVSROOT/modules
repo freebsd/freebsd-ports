@@ -174,6 +174,7 @@ a2ps-letter	ports/print/a2ps-letter
 a2ps-letterdj	ports/print/a2ps-letterdj
 aafid2		ports/security/aafid2
 aalib		ports/graphics/aalib
+aap		ports/devel/aap
 abacus		ports/deskutils/abacus
 abc2mtex	ports/print/abc2mtex
 abcache		ports/www/abcache
