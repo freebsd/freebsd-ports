@@ -7,12 +7,12 @@
 
 PORTNAME=	insub
 PORTVERSION=	9.1
-PORTREVISION?=	0
-CATEGORIES?=	irc
+PORTREVISION=	0
+CATEGORIES=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
 
-MAINTAINER?=	alfred@FreeBSD.org
-COMMENT?=	Some scripts for expressing how you feel on irc and the web
+MAINTAINER=	alfred@FreeBSD.org
+COMMENT=	Some scripts for expressing how you feel on irc and the web
 
 NO_BUILD=	YES
 
@@ -42,6 +42,5 @@ do-install:
 			*) ${INSTALL_DATA} $$i ${LOCALBASE}/share/cows; \
 		esac \
 	done
-
 
 .include <bsd.port.post.mk>
