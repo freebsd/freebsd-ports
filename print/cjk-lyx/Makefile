@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.6.3
+PORTVERSION=	1.1.6.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
-DISTNAME=	CJK-LyX-1.1.6fix3-src
+DISTNAME=	${DIST_VER}-src
 
 MAINTAINER=	cjh@FreeBSD.org
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .if defined(WITH_ISPELL)
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
 		intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
@@ -31,7 +31,9 @@ CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
 MAKE_ENV+=	INTLLIBS="-L${LOCALBASE}/lib -lintl"
 MAN1=		lyx.1 reLyX.1
-WRKSRC=		${WRKDIR}/CJK-LyX-1.1.6fix3
+
+DIST_VER=	CJK-LyX-1.1.6fix4
+WRKSRC=		${WRKDIR}/${DIST_VER}
 
 .if !defined(WITH_ISPELL)
 pre-fetch:
