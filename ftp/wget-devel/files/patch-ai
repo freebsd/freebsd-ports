@@ -1,0 +1,70 @@
+--- src/connect.c.orig	Sun Mar 29 23:28:15 1998
++++ src/connect.c	Fri Sep 24 15:49:42 1999
+@@ -62,6 +62,59 @@
+ uerr_t
+ make_connection (int *sock, char *hostname, unsigned short port)
+ {
++#ifdef INET6
++  struct sockaddr_storage sock_name;
++  struct sockaddr_in *sin;
++  struct sockaddr_in6 *sin6;
++  size_t socksize;
++
++  /*
++   * Get internet address of the host.  We can do it either by calling
++   * ngethostbyname, or by calling store_hostaddress, from host.c.
++   * storehostaddress is better since it caches calls to
++   * gethostbyname.
++   */
++  if (!store_hostaddress (&sock_name, hostname))
++    return HOSTERR;
++
++  /* Set port and protocol */
++  switch (sock_name.ss_family) {
++  case AF_INET:
++      sin = (struct sockaddr_in *) &sock_name;
++      sin->sin_family = AF_INET;
++#ifdef HAVE_SOCKADDR_SA_LEN
++      sin->sin_len = sizeof (struct sockaddr_in);
++#endif
++      sin->sin_port = htons (port);
++      socksize = sizeof (struct sockaddr_in);
++      break;
++  case AF_INET6:
++      sin6 = (struct sockaddr_in6 *) &sock_name;
++      sin6->sin6_family = AF_INET6;
++#ifdef HAVE_SOCKADDR_SA_LEN
++      sin6->sin6_len = sizeof (struct sockaddr_in6);
++#endif
++      sin6->sin6_port = htons (port);
++      socksize = sizeof (struct sockaddr_in6);
++      break;
++  default:
++      return HOSTERR;
++  }
++  /* Make an internet socket, stream type.  */
++  if ((*sock = socket (sock_name.ss_family, SOCK_STREAM, 0)) == -1)
++      return CONSOCKERR;
++
++  /* Connect the socket to the remote host.  */
++  if (connect (*sock, (struct sockaddr *) &sock_name, socksize))
++    {
++      if (errno == ECONNREFUSED)
++	return CONREFUSED;
++      else
++	return CONERROR;
++    }
++  DEBUGP (("Created fd %d.\n", *sock));
++  return NOCONERROR;
++#else  /* !INET6 */
+   struct sockaddr_in sock_name;
+   /* struct hostent *hptr; */
+ 
+@@ -97,6 +150,7 @@
+     }
+   DEBUGP (("Created fd %d.\n", *sock));
+   return NOCONERROR;
++#endif /* INET6 */
+ }
+ 
+ /* Bind the local port PORT.  This does all the necessary work, which

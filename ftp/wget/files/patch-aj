@@ -1,0 +1,254 @@
+--- src/host.c.orig	Mon Sep 21 18:55:42 1998
++++ src/host.c	Fri Sep 24 15:49:42 1999
+@@ -75,12 +75,58 @@
+ static struct host *add_hlist PARAMS ((struct host *, const char *,
+ 				       const char *, int));
+ 
++#ifdef INET6
++/*
++ * The same as gethostbyname2, but supports internet addresses of the
++ * form `N.N.N.N' and 'X:X:X:X:X:X:X:X'.
++ *
++ * Return the pointer of struct hostent on successful finding of the
++ * hostname, NULL pointer otherwise.
++ */
++struct hostent *
++ngethostbyname2 (const char *name, int af)
++{
++    struct hostent *hp = (struct hostent *) NULL;
++    char *addr;
++    size_t socksize;
++
++    /* Support only 2 types address family */
++    if (af != AF_INET6 && af != AF_INET)
++	return (struct hostent *) NULL;
++
++    hp = gethostbyname2(name, af);
++    if (!hp) {
++	if (inet_pton(af, name, addr) != -1) {
++	    switch (af) {
++	    case AF_INET:
++		socksize = sizeof (struct sockaddr_in);
++		break;
++	    case AF_INET6:
++		socksize = sizeof (struct sockaddr_in6);
++		break;
++	    }
++	    hp = gethostbyaddr(addr, socksize, af);
++	}
++    }
++    return hp;
++}
++#endif /* INET6 */
++
+ /* The same as gethostbyname, but supports internet addresses of the
+    form `N.N.N.N'.  */
+ struct hostent *
+ ngethostbyname (const char *name)
+ {
+   struct hostent *hp;
++#ifdef  INET6
++  const int af[] = { AF_INET, AF_INET6 };
++  int i;
++
++  for (i = 0; i < 2; i++)
++      if ((hp = ngethostbyname2(name, af[i])) != NULL)
++	  return hp;
++  return (struct hostent *) NULL;
++#else
+   unsigned long addr;
+ 
+   addr = (unsigned long)inet_addr (name);
+@@ -89,6 +135,7 @@
+   else
+     hp = gethostbyname (name);
+   return hp;
++#endif
+ }
+ 
+ /* Search for HOST in the linked list L, by hostname.  Return the
+@@ -117,11 +164,159 @@
+   return NULL;
+ }
+ 
+-/* Store the address of HOSTNAME, internet-style, to WHERE.  First
+-   check for it in the host list, and (if not found), use
+-   ngethostbyname to get it.
++#ifdef INET6
++int
++convert_hostaddress(int af, const char *hostname, void *address)
++{
++    struct host *t;
++    int valid;
++
++    valid = inet_pton(af, hostname, address);
++    if (valid == -1 || valid == 0) {
++	/* If it is not of that form, try to find it in the cache.  */
++	t = search_host (hlist, hostname);
++	if (t)
++	    valid = inet_pton(af, t->realname, address);
++	if (valid != -1 && valid != 0)
++	    return 1;
++    } else
++	return 1;
++    return 0;
++}
++
++/*
++ * Store the address of HOSTNAME, internet-style, to WHERE.  First
++ * check for it in the host list, and (if not found), use
++ * ngethostbyname to get it.
++ *
++ * Return 1 on successful finding of the hostname, 0 otherwise.
++ */
++int
++store_hostaddress (struct sockaddr_storage *where, const char *hostname)
++{
++  struct host *t;
++  struct addrinfo hints, *res;
++  union {
++      struct in_addr in;
++      struct in6_addr in6;
++  } addr_un;
++  struct sockaddr_in *sin;
++  struct sockaddr_in6 *sin6;
++  char *addr_s;
++  char addr_st[INET6_ADDRSTRLEN];
++  int af, valid ,i, err;
++  int family;
++  const int afs[] = { AF_INET6, AF_INET };
++#define MAX_AF 2
+ 
+-   Return 1 on successful finding of the hostname, 0 otherwise.  */
++  if (opt.inet)
++      family = AF_INET;
++  else if (opt.inet6)
++      family = AF_INET6;
++  else
++      family = 0;
++  /*
++   * If the address is of the form d.d.d.d, there will be no trouble
++   * with it.
++   */
++  if (!family) {
++      for (i = 0; i < MAX_AF; i++) {
++	  valid = convert_hostaddress(afs[i], hostname, &addr_un);
++	  af = afs[i];
++      }
++  } else {
++      valid = convert_hostaddress(family, hostname, &addr_un);
++      af = family;
++  }
++  /* If we have the numeric address, just store it.  */
++  if (valid) {
++      /* This works on both little and big endian architecture, as
++       * inet_addr returns the address in the proper order.  It
++       * appears to work on 64-bit machines too.
++       */
++      switch (af) {
++      case AF_INET:
++	  sin = (struct sockaddr_in *) where;
++	  memcpy(&sin->sin_addr, &addr_un.in, sizeof(struct in_addr));
++	  sin->sin_family = AF_INET;
++	  return 1;
++      case AF_INET6:
++	  sin6 = (struct sockaddr_in6 *) where;
++	  memcpy(&sin6->sin6_addr, &addr_un.in6, sizeof(struct in6_addr));
++	  sin6->sin6_family = AF_INET6;
++	  return 1;
++      default:
++	  return 0;
++      }
++  }
++  /*
++   * Since all else has failed, let's try gethostbyname2().  Note that
++   * we use gethostbyname2() rather than ngethostbyname2(), because we
++   * *know* the address is not numerical.
++   */
++  bzero(&hints, sizeof(hints));
++  hints.ai_socktype = SOCK_STREAM;
++  hints.ai_protocol = 0;
++  if (!family) {
++      hints.ai_family = AF_UNSPEC;
++  } else {
++      hints.ai_family = family;
++  }
++  err = getaddrinfo(hostname, NULL, &hints, &res);
++  if (err) {
++      fprintf(stderr, "%s: %s\n", hostname, gai_strerror(err));
++      return 0;
++  }
++  /*
++   * Copy the address of the host to socket description.
++   */
++  switch (res->ai_family) {
++  case AF_INET:
++      sin = (struct sockaddr_in *) where;
++      memcpy(&sin->sin_addr, &((struct sockaddr_in *)res->ai_addr)->sin_addr, sizeof (struct in_addr));
++      sin->sin_family = AF_INET;
++      memcpy (&addr_un.in.s_addr, &((struct sockaddr_in *)res->ai_addr)->sin_addr, sizeof (addr_un.in));
++      inet_ntop(AF_INET, &addr_un.in, addr_st, sizeof (struct in_addr));
++      STRDUP_ALLOCA (addr_s, addr_st);
++      freeaddrinfo(res);
++      break;
++  case AF_INET6:
++      sin6 = (struct sockaddr_in6 *) where;
++      memcpy(&sin6->sin6_addr, &((struct sockaddr_in6 *)res->ai_addr)->sin6_addr, sizeof (struct in6_addr));
++      sin6->sin6_family = AF_INET6;
++      memcpy (&addr_un.in6, &((struct sockaddr_in6 *)res->ai_addr)->sin6_addr, sizeof (addr_un.in6));
++      inet_ntop(AF_INET6, &addr_un.in6, addr_st, sizeof (struct in6_addr));
++      STRDUP_ALLOCA (addr_s, addr_st);
++      freeaddrinfo(res);
++      break;
++  default:
++      freeaddrinfo(res);
++      return 0;
++  }
++  /*
++   * Now that we're here, we could as well cache the hostname for
++   * future use, as in realhost().  First, we have to look for it by
++   * address to know if it's already in the cache by another name.
++   */
++  /*
++   * Originally, we copied to in.s_addr, but it appears to be missing
++   * on some systems.
++   */
++  t = search_address (hlist, addr_s);
++  if (t) /* Found in the list, as realname.  */
++    {
++      /* Set the default, 0 quality.  */
++      hlist = add_hlist (hlist, hostname, addr_s, 0);
++      return 1;
++    }
++  /* Since this is really the first time this host is encountered,
++   * set quality to 1.
++   */
++  hlist = add_hlist (hlist, hostname, addr_s, 1);
++  return 1;
++}
++#undef MAX_AF
++#else  /* INET6 */
+ int
+ store_hostaddress (unsigned char *where, const char *hostname)
+ {
+@@ -131,8 +326,10 @@
+   struct in_addr in;
+   char *inet_s;
+ 
+-  /* If the address is of the form d.d.d.d, there will be no trouble
+-     with it.  */
++  /*
++   * If the address is of the form d.d.d.d, there will be no trouble
++   * with it.
++   */
+   addr = (unsigned long)inet_addr (hostname);
+   if ((int)addr == -1)
+     {
+@@ -178,6 +375,7 @@
+   hlist = add_hlist (hlist, hostname, inet_s, 1);
+   return 1;
+ }
++#endif /* INET6 */
+ 
+ /* Add a host to the host list.  The list is sorted by addresses.  For
+    equal addresses, the entries with quality should bubble towards the
