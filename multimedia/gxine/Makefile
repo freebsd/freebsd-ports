@@ -7,7 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	xine
 MAINTAINER=	greg@chown.ath.cx
 COMMENT=	An alternative GUI for the Xine media player
 
-LIB_DEPENDS=	xine.7:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.8:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
