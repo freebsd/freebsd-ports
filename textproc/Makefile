@@ -27,6 +27,7 @@
     SUBDIR += cl-meta-cmucl
     SUBDIR += cl-meta-sbcl
     SUBDIR += cl-ppcre
+    SUBDIR += cl-ppcre-cmucl
     SUBDIR += coco
     SUBDIR += cocoon
     SUBDIR += code2html
