@@ -1,0 +1,3 @@
+upsd is a daemon with flexible configuration which lets you to
+shutdown your system properly when source power line fails and
+measure its frequency, voltage etc
