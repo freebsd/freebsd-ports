@@ -34,7 +34,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${PORTVERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
 MACHINE=	 -DBSD_UNIX -DUSE_LOCALE -DUSE_X11
-CC=		cc -O -g -Wall -traditional -Dconst= -I${X11BASE}/include
+CC=		cc ${CFLAGS} -Wall -traditional -Dconst= -I${X11BASE}/include
 LIBS=		-ltermlib -lxpg4 -L${PREFIX}/lib -L${X11BASE}/lib -lX11
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
 # LIB_DEPENDS, etc.
