@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Jun 28 02:49:21 1997
-+++ Makefile.in	Wed Aug 20 13:45:58 1997
+--- Makefile.in.orig	Wed Sep 24 01:57:18 1997
++++ Makefile.in	Wed Oct  1 13:23:24 1997
 @@ -29,7 +29,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
@@ -26,13 +26,13 @@
 -RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/library \
 -		  TK_LIBRARY=$(TK_SRC_DIR)/library \
 -	          $(TCL_SRC_DIR)/unix/tclsh
-+RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/../../lib/tcl7.6 \
-+		  TK_LIBRARY=$(TK_SRC_DIR)/../../lib/tk4.2 \
-+	          $(TCL_SRC_DIR)/../../bin/tclsh7.6
++RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/../../lib/tcl8.0 \
++		  TK_LIBRARY=$(TK_SRC_DIR)/../../lib/tk8.0 \
++	          $(TCL_SRC_DIR)/../../bin/tclsh8.0
  
  
  #----------------------------------------------------------------
-@@ -133,7 +133,8 @@
+@@ -132,7 +133,8 @@
  CC_SWITCHES = $(CFLAGS) $(AC_FLAGS) -I$(TCL_GENERIC_DIR) \
      -I$(TCL_SRC_DIR)/unix -I$(TK_GENERIC_DIR) -I$(TK_SRC_DIR)/unix \
      $(ITCL_CFLAGS) \
@@ -42,12 +42,12 @@
  
  #----------------------------------------------------------------
  # The information below should be usable as is. You shouldn't need
-@@ -211,29 +212,29 @@
+@@ -210,29 +212,29 @@
  # scripts of TK must be included in the fixed order.
  #----------------------------------------------------------------------
  
 -TCL_SCRIPTS = $(TCL_SRC_DIR)/library/*.tcl
-+TCL_SCRIPTS = $(TCL_SRC_DIR)/../../lib/tcl7.6/*.tcl
++TCL_SCRIPTS = $(TCL_SRC_DIR)/../../lib/tcl8.0/*.tcl
  
  TK_SCRIPTS = \
 -    $(TK_SRC_DIR)/library/bgerror.tcl \
@@ -62,19 +62,7 @@
 -    $(TK_SRC_DIR)/library/msgbox.tcl \
 -    $(TK_SRC_DIR)/library/tkfbox.tcl \
 -    $(TK_SRC_DIR)/library/xmfbox.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/bgerror.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/dialog.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/focus.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/obsolete.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/optMenu.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/palette.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/tearoff.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/clrpick.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/comdlg.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/msgbox.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/tkfbox.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/xmfbox.tcl \
-     $(SRC_DIR)/generic/tk4.2/tk.tcl \
+-    $(SRC_DIR)/generic/tk4.2/tk.tcl \
 -    $(TK_SRC_DIR)/library/button.tcl \
 -    $(TK_SRC_DIR)/library/entry.tcl \
 -    $(TK_SRC_DIR)/library/listbox.tcl \
@@ -82,13 +70,26 @@
 -    $(TK_SRC_DIR)/library/scale.tcl \
 -    $(TK_SRC_DIR)/library/scrlbar.tcl \
 -    $(TK_SRC_DIR)/library/text.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/button.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/entry.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/listbox.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/menu.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/scale.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/scrlbar.tcl \
-+    $(TK_SRC_DIR)/../../lib/tk4.2/text.tcl \
-     $(SRC_DIR)/generic/tk4.2/console.tcl
++    $(TK_SRC_DIR)/../../lib/tk8.0/bgerror.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/dialog.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/focus.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/obsolete.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/optMenu.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/palette.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/tearoff.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/clrpick.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/comdlg.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/msgbox.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/tkfbox.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/xmfbox.tcl \
++    $(SRC_DIR)/generic/tk8.0/tk.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/button.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/entry.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/listbox.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/menu.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/scale.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/scrlbar.tcl \
++    $(TK_SRC_DIR)/../../lib/tk8.0/text.tcl \
+     $(SRC_DIR)/generic/tk8.0/console.tcl
  
  TIX_SCRIPTS = \
