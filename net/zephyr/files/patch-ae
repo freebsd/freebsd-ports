@@ -1,0 +1,11 @@
+--- lib/zephyr/Makefile.in.orig	Sun Sep 19 17:17:01 1999
++++ lib/zephyr/Makefile.in	Sun Sep 19 17:17:21 1999
+@@ -21,7 +21,7 @@
+ 
+ DEBUG=-O
+ CFLAGS= $(DEBUG) -DCONFDIR=\"$(confdir)\" -I$(top_srcdir)/h -I$(BUILDTOP)/h \
+-	@X_CFLAGS@ @CPPFLAGS@
++	-I$(top_srcdir)/h/zephyr @X_CFLAGS@ @CPPFLAGS@
+ 
+ OBJS =	zephyr_err.o ZAsyncLocate.o ZCkAuth.o ZCkIfNot.o ZClosePort.o \
+ 	ZCmpUID.o ZCmpUIDP.o ZFlsLocs.o ZFlsSubs.o ZFmtAuth.o ZFmtList.o \
