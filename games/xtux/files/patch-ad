@@ -5,7 +5,7 @@
  BINARY = $(TOPLEVEL_PATH)/xtux
  
 -# Flags used when compiling
--CFLAGS = -g -Wall -O -DDATADIR=\"$(DATADIR)\"
+-CFLAGS = -g -Wall -O2 -DDATADIR=\"$(DATADIR)\"
 -
  # Paths to header files
  X11_INC = -I$(X11_PATH)/include

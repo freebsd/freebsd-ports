@@ -493,11 +493,11 @@ share/xtux/maps/end.map
 share/xtux/maps/geekusa.map
 share/xtux/maps/home.map
 share/xtux/maps/home2.map
+share/xtux/maps/mapgen.map
 share/xtux/maps/my_way_home.map
 share/xtux/maps/skyscraper.map
 share/xtux/maps/slashdot.map
 share/xtux/maps/street_spirit.map
-share/xtux/maps/test.map
 share/xtux/maps/unfinished_sympathy.map
 share/xtux/maps/watership.map
 share/xtux/default.table

@@ -5,7 +5,7 @@
  BINARY = $(TOPLEVEL_PATH)/tux_serv
  
 -# Flags used when compiling
--CFLAGS = -g -Wall -O -DDATADIR=\"$(DATADIR)\"
+-CFLAGS = -g -Wall -O2 -DDATADIR=\"$(DATADIR)\"
 -
  # Paths to header files
  COMMON_INC = -I$(COMMON_PATH)
