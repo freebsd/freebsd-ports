@@ -7,6 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c19
+PORTREVISION?=	0
 CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
@@ -20,7 +21,7 @@ DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER?=	freebsdports@arved.de
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
