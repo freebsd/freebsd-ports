@@ -121,6 +121,7 @@
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
     SUBDIR += libogg
+    SUBDIR += libsamplerate
     SUBDIR += libshout
     SUBDIR += libshout2
     SUBDIR += libsidplay

@@ -1,0 +1,10 @@
+Secret Rabbit Code (aka libsamplerate) is a Sample Rate Converter for
+audio.
+
+SRC is capable of arbitrary and time varying conversions ; from
+downsampling by a factor of 12 to upsampling by the same factor.
+Arbitrary in this case means that the ratio of input and output sample
+rates can be an irrational number.  The conversion ratio can also vary
+with time for speeding up and slowing down effects.
+
+WWW: http://www.mega-nerd.com/SRC/
