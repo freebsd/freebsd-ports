@@ -1,0 +1,14 @@
+Declaring constants is very convenient for writing programs, but as
+they're often inlined by Perl, retrieving their symbolic names can be
+tricky.  This is made worse with lowlevel modules that use constants for
+bit-twiddling.
+
+Devel::Constants makes this much more manageable.
+
+It silently wraps around the constant module, intercepting all constant
+declarations.  It builds a hash, associating the values to their names.
+The names can then be retrieved as necessary.
+
+WWW: http://search.cpan.org/search?dist=Devel-Constants
+
+-- Anton
