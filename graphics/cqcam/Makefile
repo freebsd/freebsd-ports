@@ -3,7 +3,7 @@
 # Date created:		29 Oct 1997
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.7 1998/10/05 03:18:32 steve Exp $
+# $Id: Makefile,v 1.8 1998/11/29 13:47:11 asami Exp $
 #
 
 DISTNAME=	cqcam-0.45a
@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		cqcam.1
 MLINKS=		cqcam.1 webcam.1 \
