@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc
