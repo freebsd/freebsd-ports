@@ -1,0 +1,5 @@
+RAY++ is a collection of C++ classes needed for ray tracing (shapes,
+surfaces, cameras etc.). The object-oriented design makes it easy to
+extend the package.
+
+WWW: http://www.mpa-garching.mpg.de/~martin/ray++/
