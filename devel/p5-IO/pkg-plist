@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pipe.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Select.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Poll.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/INET.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Seekable.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Pipe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Dir.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Select.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Poll.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket/INET.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Seekable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IO
