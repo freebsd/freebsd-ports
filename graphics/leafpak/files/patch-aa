@@ -1,0 +1,51 @@
+diff -u leafpak.c.orig leafpak.c
+--- leafpak.c.orig	Sat Feb  5 23:48:02 2000
++++ leafpak.c	Tue Oct 31 05:34:30 2000
+@@ -94,20 +94,24 @@
+ 
+   for (i = 0; i < lp->file_num; i++) {
+     fp = fopen(lp->name[i], "w");
+-    printf("extracting %s...", lp->name[i]);
+-    fflush(stdout);
++    if (fp == NULL) {
++      printf("Can't write %s. skip\n", lp->name[i]);
++    } else {
++      printf("extracting %s...", lp->name[i]);
++      fflush(stdout);
+ 
+-    pos = lp->pos[i];
+-    fseek(lp->fp, (long)pos, SEEK_SET);
+-    k = 0;
+-    while (pos != lp->nextpos[i]) {
+-      val = (fgetc(lp->fp) - lp->key[k]) & 0xff;
+-      k = (++k) % KEY_LEN; 
+-      fputc(val, fp);
+-      pos++;
++      pos = lp->pos[i];
++      fseek(lp->fp, (long)pos, SEEK_SET);
++      k = 0;
++      while (pos != lp->nextpos[i]) {
++	val = (fgetc(lp->fp) - lp->key[k]) & 0xff;
++	k = (++k) % KEY_LEN; 
++	fputc(val, fp);
++	pos++;
++      }
++      fclose(fp);
++      printf("done.\n");
+     }
+-    fclose(fp);
+-    printf("done.\n");
+   }
+   printf("\nAll files are extracted.\n");
+ }
+@@ -139,6 +143,10 @@
+   fflush(stdout);
+ 
+   fp = fopen(file, "w");
++  if ( fp == NULL ) {
++    printf("Can't write %s.\n", file);
++    return -1;
++  }
+   pos = lp->pos[i];
+   fseek(lp->fp, (long)pos, SEEK_SET);
+   while (pos != lp->nextpos[i]) {

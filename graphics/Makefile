@@ -94,6 +94,7 @@
     SUBDIR += killustrator
     SUBDIR += kplot3d
     SUBDIR += lcms
+    SUBDIR += leafpak
     SUBDIR += lfview
     SUBDIR += libdjvu++
     SUBDIR += libflash

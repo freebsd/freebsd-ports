@@ -1,0 +1,39 @@
+diff -u leafpak2.c.orig leafpak2.c
+--- leafpak2.c.orig	Sat Feb  5 23:47:49 2000
++++ leafpak2.c	Tue Oct 31 05:41:13 2000
+@@ -236,14 +236,18 @@
+     fflush(stdout);
+     
+     fp = fopen(lp->name[i], "w");
+-    fseek(lp->fp, (long)lp->position[i], SEEK_SET);
++    if (fp == NULL) {
++      printf("Can't write %s\n",lp->name[i]);
++    } else {
++      fseek(lp->fp, (long)lp->position[i], SEEK_SET);
+     
+-    for (j = 0; j < lp->length[i]; j++) {
+-      fputc(fgetc(lp->fp), fp);
+-    }
++      for (j = 0; j < lp->length[i]; j++) {
++	fputc(fgetc(lp->fp), fp);
++      }
+     
+-    fclose(fp);
+-    printf("done.\n");
++      fclose(fp);
++      printf("done.\n");
++    }
+   }
+ 
+ #ifdef DEBUG
+@@ -275,6 +279,10 @@
+   fflush(stdout);
+ 
+   fp = fopen(filename, "w");
++  if (fp == NULL) {
++    printf("Can't write %s.\n", filename);
++    return 1;
++  }
+   fseek(lp->fp, (long)lp->position[i], SEEK_SET);
+ 
+   for (j = 0; j < lp->length[i]; j++) {
