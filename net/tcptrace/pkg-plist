@@ -1,13 +1,14 @@
 bin/tcptrace
 share/doc/tcptrace/ARGS
-share/doc/tcptrace/BUGS
 share/doc/tcptrace/CHANGES
+share/doc/tcptrace/COPYING
 share/doc/tcptrace/COPYRIGHT
 share/doc/tcptrace/FAQ
 share/doc/tcptrace/README
 share/doc/tcptrace/README.mailing_list
 share/doc/tcptrace/README.modules
 share/doc/tcptrace/README.tput_graphs
+share/doc/tcptrace/THANKS
 share/doc/tcptrace/WWW
 share/doc/tcptrace/dot_tcptracerc.sample
 @dirrm share/doc/tcptrace
