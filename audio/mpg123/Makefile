@@ -99,9 +99,4 @@ OPT_ARCH?=	i586
 MAKE_ARGS+=	OPT_ARCH=${OPT_ARCH}
 .endif
 
-post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/audio_oss.c > ${WRKSRC}/audio_oss.c.new
-	@${MV} ${WRKSRC}/audio_oss.c.new ${WRKSRC}/audio_oss.c
-
 .include <bsd.port.post.mk>

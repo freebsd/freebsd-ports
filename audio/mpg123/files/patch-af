@@ -1,0 +1,11 @@
+--- audio_oss.c.orig    Sat Jan 31 23:14:08 1998
++++ audio_oss.c Sun May 12 15:35:49 2002
+@@ -31,7 +31,7 @@
+ #elif defined(__bsdi__)
+ #include <sys/soundcard.h>
+ #else
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #endif
+
+ int audio_open(struct audio_info_struct *ai)
