@@ -60,8 +60,6 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-exceptions	\
 		--disable-cpp-rtti		\
 		--enable-crypto			\
-		--disable-debug			\
-		--disable-debug			\
 		--disable-gtktest		\
 		--disable-freetypetest		\
 		--disable-installer		\
@@ -72,7 +70,6 @@ CONFIGURE_ARGS=					\
 		--disable-pedantic		\
 		--disable-bidi			\
 		--disable-plaintext-editor-only	\
-		--enable-strip			\
 		--enable-svg			\
 		--enable-svg-renderer-libart	\
 		--disable-tests			\
@@ -112,6 +109,7 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CALENDAR "Enable the Calendar module" off \
 	MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
+	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
 	XMLTERM "Enable the XMLTerm module" on \
@@ -138,6 +136,14 @@ BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 .endif
 .else
 CONFIGURE_ARGS+=--disable-xft
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug \
+		--disable-strip
+.else
+CONFIGURE_ARGS+=--disable-debug \
+		--enable-strip
 .endif
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
