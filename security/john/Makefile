@@ -47,7 +47,7 @@ do-configure:
 		${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/john
+	@${MKDIR} ${DATADIR}
 	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
 	@cd ${PREFIX}/bin ; ${LN} -sf john xtract
 	@cd ${PREFIX}/bin ; ${LN} -sf john unshadow
@@ -57,10 +57,11 @@ do-install:
 		${WRKDIR}/${DISTNAME}/run/digits.chr \
 		${WRKDIR}/${DISTNAME}/run/password.lst \
 		${WRKDIR}/${DISTNAME}/run/john.ini \
-		${PREFIX}/share/john
+		${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/john
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/john
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
