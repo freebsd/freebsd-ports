@@ -1941,6 +1941,7 @@ gnomemedia	ports/audio/gnomemedia
 gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
+gnomepanel	ports/x11/gnomepanel
 gnomepilot	ports/palm/gnomepilot
 gnomepilot-conduits	ports/palm/gnomepilot-conduits
 gnomepim	ports/deskutils/gnomepim
