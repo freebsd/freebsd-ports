@@ -5373,6 +5373,7 @@ mod_csacek	ports/www/mod_csacek
 mod_cvs		ports/www/mod_cvs
 mod_cvs2	ports/www/mod_cvs2
 mod_dav		ports/www/mod_dav
+mod_dosevasive20	ports/www/mod_dosevasive20
 mod_dtcl	ports/www/mod_dtcl
 mod_encoding	ports/www/mod_encoding
 mod_extract_forwarded	ports/www/mod_extract_forwarded
