@@ -1,1 +1,5 @@
+bin/exifcom
 bin/exiftags
+%%PORTDOCS%%share/doc/exiftags/CHANGES
+%%PORTDOCS%%share/doc/exiftags/README
+%%PORTDOCS%%@dirrm share/doc/exiftags
