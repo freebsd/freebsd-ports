@@ -12,7 +12,7 @@
 # this Makefile.
 
 DISTNAME=       fetchmail-5.2.3
-CATEGORIES=	mail
+CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi

@@ -7,7 +7,7 @@
 #
 
 PKGNAME=       w3m-ssl-${W3M_VER}
-CATEGORIES=    www
+CATEGORIES=    www ipv6
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
 PKGDIR=        ${.CURDIR}/pkg

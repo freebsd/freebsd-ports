@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	ruby-1.4.3
-CATEGORIES=	lang
+CATEGORIES=	lang ipv6
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.iij.ad.jp/pub/lang/ruby/${BRANCH_NAME}/ \

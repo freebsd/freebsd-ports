@@ -7,7 +7,7 @@
 #
 
 PKGNAME=       ja-w3m-ssl-${W3M_VER}
-CATEGORIES=    japanese www
+CATEGORIES=    japanese www ipv6
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
 PKGDIR=        ${.CURDIR}/pkg
