@@ -4,6 +4,7 @@ bin/gnobots
 bin/gnome-stones
 bin/gnomine
 bin/gnothello
+bin/gnotravex
 bin/gturing
 bin/gyahtzee
 bin/mahjongg
@@ -22,6 +23,7 @@ share/gnome/apps/Games/gnobots.desktop
 share/gnome/apps/Games/gnome-stones.desktop
 share/gnome/apps/Games/gnomine.desktop
 share/gnome/apps/Games/gnothello.desktop
+share/gnome/apps/Games/gnotravex.desktop
 share/gnome/apps/Games/gyahtzee.desktop
 share/gnome/apps/Games/mahjongg.desktop
 share/gnome/apps/Games/same-gnome.desktop
@@ -39,6 +41,11 @@ share/gnome/games/gnothello.b3.scores
 share/gnome/games/gnothello.w1.scores
 share/gnome/games/gnothello.w2.scores
 share/gnome/games/gnothello.w3.scores
+share/gnome/games/gnotravex.2x2.scores
+share/gnome/games/gnotravex.3x3.scores
+share/gnome/games/gnotravex.4x4.scores
+share/gnome/games/gnotravex.5x5.scores
+share/gnome/games/gnotravex.6x6.scores
 share/gnome/games/gyahtzee.scores
 share/gnome/games/mahjongg.scores
 share/gnome/games/same-gnome.scores
@@ -53,26 +60,6 @@ share/gnome/gnome-stones/objects/libgnomekoban.a
 share/gnome/gnome-stones/objects/libgnomekoban.la
 share/gnome/gnome-stones/objects/libgnomekoban.so
 share/gnome/gnome-stones/objects/libgnomekoban.so.0
-share/gnome/help/aisleriot/C/camelot-goal.gif
-share/gnome/help/aisleriot/C/camelot.html
-share/gnome/help/aisleriot/C/canfield.html
-share/gnome/help/aisleriot/C/clock-rules.gif
-share/gnome/help/aisleriot/C/clock.html
-share/gnome/help/aisleriot/C/docbook.css
-share/gnome/help/aisleriot/C/doublets.html
-share/gnome/help/aisleriot/C/eagle-wing.html
-share/gnome/help/aisleriot/C/fortunes.html
-share/gnome/help/aisleriot/C/glossary.html
-share/gnome/help/aisleriot/C/gpl.html
-share/gnome/help/aisleriot/C/index.html
-share/gnome/help/aisleriot/C/intro.html
-share/gnome/help/aisleriot/C/klondike.html
-share/gnome/help/aisleriot/C/odessa.html
-share/gnome/help/aisleriot/C/osmosis.html
-share/gnome/help/aisleriot/C/pileon.html
-share/gnome/help/aisleriot/C/spider.html
-share/gnome/help/aisleriot/C/topic.dat
-share/gnome/help/aisleriot/C/yukon.html
 share/gnome/help/gnobots/C/index.html
 share/gnome/help/gnobots/C/topic.dat
 share/gnome/pixmaps/cards/backs/beige.png
@@ -125,6 +112,7 @@ share/gnome/pixmaps/gnothello/metal.png
 share/gnome/pixmaps/gnothello/metal2.png
 share/gnome/pixmaps/gnothello/shrink.png
 share/gnome/pixmaps/gnothello/woodtrim.png
+share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/seta.png
 share/gnome/pixmaps/same-gnome/blink-sync.png
@@ -138,6 +126,7 @@ share/gnome/pixmaps/gnome-gyahtzee.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-stones.png
 share/gnome/pixmaps/gnothello.png
+share/gnome/sol-games/beleaguered_castle.scm
 share/gnome/sol-games/camelot.scm
 share/gnome/sol-games/canfield.scm
 share/gnome/sol-games/clock.scm
@@ -146,6 +135,7 @@ share/gnome/sol-games/eagle_wing.scm
 share/gnome/sol-games/fortunes.scm
 share/gnome/sol-games/freecell.scm
 share/gnome/sol-games/klondike.scm
+share/gnome/sol-games/neighbor.scm
 share/gnome/sol-games/odessa.scm
 share/gnome/sol-games/osmosis.scm
 share/gnome/sol-games/pileon.scm
@@ -166,8 +156,6 @@ share/locale/no/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm include/gdkcardimage
-@dirrm share/gnome/help/aisleriot/C
-@dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/help/gnobots/C
 @dirrm share/gnome/help/gnobots
 @dirrm share/gnome/pixmaps/cards/backs
@@ -180,6 +168,7 @@ share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/gnobots
 @dirrm share/gnome/pixmaps/gnome-stones
 @dirrm share/gnome/pixmaps/gnothello
+@dirrm share/gnome/pixmaps/gnotravex
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/same-gnome
 @dirrm share/gnome/sol-games
