@@ -7296,6 +7296,7 @@ sim		ports/emulators/sim
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
 simage		ports/graphics/simage
+simicq		ports/net/simicq
 simpack		ports/math/simpack
 simulavr	ports/devel/simulavr
 since		ports/misc/since
