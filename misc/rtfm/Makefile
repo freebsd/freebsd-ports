@@ -1,6 +1,6 @@
 # New ports collection makefile for:	rtfm
 # Date created:		20 July 1999
-# Whom:			Chris Costello <chris@calldei.com>
+# Whom:			Chris Costello <chris@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fconv
 # Date created:		21 April 1999
-# Whom:			Chris Costello <chris@calldei.com>
+# Whom:			Chris Costello <chris@FreeBSD.org>
 #
 # $FreeBSD$
 #
