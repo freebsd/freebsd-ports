@@ -1,8 +1,9 @@
-This is Brian Kernighan's awk, which is "the one true awk".
-Awk scans input files for specified patterns and can perform
-an associated action when a line of the file matches the
-pattern.
+This is the version of awk described in "The AWK Programming Language",
+by Al Aho, Brian Kernighan, and Peter Weinberger
+(Addison-Wesley, 1988, ISBN 0-201-07981-X).
 
+Awk scans input files for specified patterns and can perform an associated
+action when a line of the file matches the pattern.
 
 -- 
 Josh Gilliam                    <josh@quick.net>
