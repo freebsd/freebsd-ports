@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
 LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+BROKEN=		"Unfetchable"
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
