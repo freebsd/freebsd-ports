@@ -541,8 +541,8 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-spadmin
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sweb
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-swriter
-	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice > ${TMPPLIST}
-	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice >> ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice_${RELEASE_NR} > ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice_${RELEASE_NR} >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
