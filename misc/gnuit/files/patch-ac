@@ -1,0 +1,11 @@
+--- term/.gitrc.cons25.orig	Sat Jun 15 17:00:30 1996
++++ term/.gitrc.cons25	Sat Jun 15 17:05:28 1996
+@@ -24,7 +24,7 @@
+ [Setup]
+ TempDirectory		= /tmp
+ AnsiColors		= ON	# empty means OFF
+-UseLastScreenChar	= OFF	# use the last character on the screen
++UseLastScreenChar	= ON	# use the last character on the screen
+ StartupScrollStep	=	# empty means half the number of lines
+ 
+ 
