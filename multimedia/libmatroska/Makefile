@@ -47,7 +47,7 @@ do-configure:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-CFLAGS+= -DNO_WSTRING -I${LOCALBASE}/include
+CFLAGS+= -DNO_WSTRING -idirafter -I${LOCALBASE}/include
 .endif
 
 .include <bsd.port.post.mk>
