@@ -3,7 +3,7 @@
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.14 1998/11/11 17:24:17 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/11/11 22:52:49 asami Exp $
 #
 
 DISTNAME= 	gIDE-0.0.11
@@ -15,6 +15,8 @@ MAINTAINER=	rom_glsa@ein-hashofet.co.il
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		guile.4:${PORTSDIR}/lang/guile
+
+BROKEN=		configure
 
 USE_X_PREFIX=   yes
 GNU_CONFIGURE=  yes
