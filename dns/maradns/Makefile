@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.00
+PORTVERSION=	1.0.02
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.glou.net/download/ \
