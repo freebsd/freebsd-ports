@@ -102,6 +102,7 @@
     SUBDIR += seizedesktop
     SUBDIR += sls
     SUBDIR += sma
+    SUBDIR += snowflake
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += tcb
