@@ -1,0 +1,12 @@
+The ultimate quest of this module is to produce from non-XML text
+text, that will will most probably pass throught any XML parser one
+could find.
+
+Basic cleaning is just XML tag matching (for every opening tag there
+will be closing tag as well, and they will form a tree structure).
+
+When you add some extra parameters, you will receive complete XML
+text, including XML head and root element (if none were defined in
+text, then some will be added).
+
+WWW: http://search.cpan.org/~pkubanek/XML-Clean/
