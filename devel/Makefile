@@ -283,6 +283,7 @@
     SUBDIR += mingw-bin-msvcrt
     SUBDIR += mingw-binutils
     SUBDIR += mingw-gcc
+    SUBDIR += mingw-opengl-headers
     SUBDIR += mips-rtems-binutils
     SUBDIR += mips-rtems-chill
     SUBDIR += mips-rtems-g77

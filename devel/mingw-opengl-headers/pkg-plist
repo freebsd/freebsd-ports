@@ -1,0 +1,7 @@
+i386-mingw32msvc/include/gl
+i386-mingw32msvc/include/GL/gl.h
+i386-mingw32msvc/include/GL/glaux.h
+i386-mingw32msvc/include/GL/glu.h
+i386-mingw32msvc/lib/glu32.dll
+i386-mingw32msvc/lib/opengl32.dll
+@dirrm i386-mingw32msvc/include/GL
