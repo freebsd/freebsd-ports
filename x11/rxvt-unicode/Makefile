@@ -9,7 +9,7 @@ PORTNAME=	rxvt-unicode
 PORTVERSION=	3.7
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/
-MASTER_SITE_SUBDIR=     . Attic
+MASTER_SITE_SUBDIR=	. Attic
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
@@ -22,7 +22,7 @@ USE_X_PREFIX=		yes
 USE_XPM=		yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=		--enable-shared --enable-everything
-CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_BZIP2=		yes
 
