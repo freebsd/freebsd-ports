@@ -42,7 +42,6 @@ WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
-MAKE_ARGS+=	CC="${CC}"
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
 _DATADIR=	${DISTNAME:S/-//g:S/.//g}

@@ -1,5 +1,14 @@
 --- Makefile.orig	Sun Jun  1 06:18:29 2003
 +++ Makefile	Sat Nov  1 15:39:09 2003
+@@ -256,7 +256,7 @@
+ #DO NOT CHANGE the next line, we need it for configure to find the compiler
+ #instead of using the default from the "make" program.
+ #Use a line further down to change the value for CC.
+-CC=
++#CC=
+ 
+ # Change and use these defines if configure cannot find your Motif stuff.
+ # Unfortunately there is no "standard" location for Motif. {{{
 @@ -288,6 +288,7 @@
  # of make, will buid Vim.
  
