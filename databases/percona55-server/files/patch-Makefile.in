@@ -1,14 +1,15 @@
---- Makefile.in.orig	Wed Nov 20 00:06:37 2002
-+++ Makefile.in	Wed Nov 20 00:07:31 2002
-@@ -207,12 +207,11 @@
+--- Makefile.in.orig	Tue Feb  4 13:55:10 2003
++++ Makefile.in	Tue Feb  4 13:58:31 2003
+@@ -210,13 +210,11 @@
  EXTRA_DIST = INSTALL-SOURCE README \
  			COPYING COPYING.LIB
  
--SUBDIRS = include @docs_dirs@ @readline_dir@ \
+-SUBDIRS = . include @docs_dirs@ @readline_dir@ \
 -			@thread_dirs@ pstack @sql_client_dirs@ \
--			@sql_server_dirs@ @libmysqld_dirs@ scripts man \
--			tests BUILD os2 \
--			@bench_dirs@ support-files @fs_dirs@ @tools_dirs@
+-			@sql_server_dirs@ scripts man tests \
+-			BUILD netware os2 @libmysqld_dirs@ \
+-			@bench_dirs@ support-files @fs_dirs@ @tools_dirs@ \
+-			@platform_dir@
 -
 +.if defined(CLIENT_ONLY)
 +SUBDIRS = include @sql_client_dirs@ tests man
