@@ -55,14 +55,17 @@ BROKEN=	"ffs() clash, see i386/41930"
 
 .if ${ARCH} == "alpha"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
-		${FILESDIR}/extra-patch-mlcd-ParPort.cpp \
 		${FILESDIR}/extra-patch-mlcd-ParPort.h
 .endif
 
 GNU_CONFIGURE=	yes
 # Necessary hacks to find libsnmp:
+.if ${OSVERSION} < 510000
+EXTRALDFLAGS=   -lcipher
+.endif
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lcipher -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${EXTRALDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}/include/ucd-snmp
 
 .ifdef(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-qt
