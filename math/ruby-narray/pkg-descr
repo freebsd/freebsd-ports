@@ -1,0 +1,10 @@
+NArray is a class of Numerical N-dimensional Array, providing fast and
+efficient computing of the large data arrays.
+
+Element types: Integer, Float, Complex and Ruby Object.
+
+Methods: array manipulation, arithmetic operators and mathematical
+functions (including FFTW and LU factorization).
+
+Author:	Masahiro TANAKA <masa@ir.isas.ac.jp>
+WWW:	http://www.ir.isas.ac.jp/~masa/ruby/index-e.html
