@@ -8800,6 +8800,7 @@ premake		ports/devel/premake
 preps-gui	ports/devel/preps-gui
 preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
+print-n-times	ports/textproc/print-n-times
 print_pmw	ports/print/pmw
 printext	ports/x11/printext
 prips		ports/sysutils/prips
