@@ -1,7 +1,7 @@
 Index: sieve/Makefile.in
 diff -u sieve/Makefile.in.orig sieve/Makefile.in
 --- sieve/Makefile.in.orig	Wed Nov 12 13:02:12 2003
-+++ sieve/Makefile.in	Sun Mar  7 23:40:33 2004
++++ sieve/Makefile.in	Thu Mar 11 01:22:05 2004
 @@ -33,12 +33,13 @@
  YACC = @YACC@
  YFLAGS = -d
@@ -17,11 +17,13 @@ diff -u sieve/Makefile.in.orig sieve/Makefile.in
  LDFLAGS = @LDFLAGS@
  
  MAKEDEPEND = @MAKEDEPEND@
-@@ -59,7 +60,7 @@
+@@ -58,8 +59,8 @@
+ dist: $(BUILT_SOURCES)
  
  install: sievec
- 	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
+-	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
 -	$(srcdir)/../install-sh -m 755 sievec $(DESTDIR)$(service_path) || exit
++	$(INSTALL) -d ${DESTDIR}$(service_path)
 +	$(INSTALL) -s -m 755 sievec $(DESTDIR)$(service_path) || exit
  
  test: $(DEPLIBS) libsieve.a test.o
