@@ -1,12 +1,14 @@
 #
-# Note : this makefile is for Intel(R) C++ Compiler Version 6.0 !
+# Note : This makefile is for Intel(R) C++ Compiler
 #
 
 #
 # compiler
 #
-CC= icc
-CXX= icpc
+#CC= icc
+#CXX= icpc
+#CFLAGS= -O -ip -axiMKW
+#CXXFLAGS= -O -ip -axiMKW
 
 #
 # Basename for libraries
@@ -18,7 +20,9 @@ LIB_BASENAME = libstlport_icc
 #
 #
 LINK=ar cr
-DYN_LINK=$(CXX) -Qoption,ld,-BOOTSTRAPSTLPORT -mt -shared -o
+# Using icc here is a hack while icpc on FreeBSD is set up to automatically
+# link against libstlport_icc.
+DYN_LINK=$(CC) -mt -shared -o
 
 OBJEXT=o
 DYNEXT=so
@@ -38,13 +42,13 @@ include common_macros.mak
 
 WARNING_FLAGS= -w1
 
-CXXFLAGS_COMMON = -I${STLPORT_DIR} ${WARNING_FLAGS} ${PTHREAD_CFLAGS} -D_REENTRANT -mt
+CXXFLAGS_COMMON = -I$(STLPORT_DIR) $(WARNING_FLAGS) $(PTHREAD_CFLAGS) -D_REENTRANT
 
-CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) -O -ip -axiMKW
-CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) -O -ip -axiMKW -KPIC
+CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) $(CXXFLAGS)
+CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) $(CXXFLAGS) -KPIC
 
 CXXFLAGS_DEBUG_static = $(CXXFLAGS_COMMON) -O -g
-CXXFLAGS_DEBUG_dynamic = $(CXXFLAGS_COMMON) -O -g -KPIC
+CXXFLAGS_DEBUG_dynamic = $(CXXFLAGS_COMMON) -O -KPIC
 
 CXXFLAGS_STLDEBUG_static = $(CXXFLAGS_DEBUG_static) -D_STLP_DEBUG
 CXXFLAGS_STLDEBUG_dynamic = $(CXXFLAGS_DEBUG_dynamic) -D_STLP_DEBUG

@@ -16,7 +16,7 @@ test_deque.cpp test_set.cpp test_map.cpp \
 test_hash_map.cpp  test_hash_set.cpp test_rope.cpp \
 test_string.cpp test_bitset.cpp test_valarray.cpp
 
-LIST=${AUX_LIST} ${TEST_LIST}
+LIST=$(AUX_LIST) $(TEST_LIST)
 
 OBJECTS = $(LIST:%.cpp=obj/%.o) $(STAT_MODULE)
 D_OBJECTS = $(LIST:%.cpp=d_obj/%.o) $(STAT_MODULE)
@@ -29,12 +29,12 @@ D_TEST_EXE = ./eh_test_d
 TEST  = ./eh_test.out
 D_TEST = ./eh_test_d.out
 
-CXXFLAGS= $(PTHREAD_CFLAGS) -D_REENTRANT -mt -w1 -g -O ${STL_INCL} -I. ${CXX_EXTRA_FLAGS} -DEH_VECTOR_OPERATOR_NEW -DEH_DELETE_HAS_THROW_SPEC
-D_CXXFLAGS = $(PTHREAD_CFLAGS) -D_REENTRANT -mt -w1 -g -O ${STL_INCL} -I. ${CXX_EXTRA_FLAGS} -DEH_VECTOR_OPERATOR_NEW -DEH_DELETE_HAS_THROW_SPEC -D_STLP_DEBUG -D_STLP_USE_STATIC_LIB
+CXXFLAGS += $(PTHREAD_CFLAGS) -D_REENTRANT -w1 $(STL_INCL) -I. $(CXX_EXTRA_FLAGS) -DEH_VECTOR_OPERATOR_NEW -DEH_DELETE_HAS_THROW_SPEC
+D_CXXFLAGS = $(CXXFLAGS) -g -D_STLP_DEBUG
 
 check: $(TEST)
 
-LIBS = -lm
+LIBS = -lm -mt
 D_LIBSTLPORT = -L../../lib -lstlport_icc_stldebug
 LIBSTLPORT = -L../../lib -lstlport_icc
 
@@ -52,10 +52,10 @@ $(D_OBJDIR):
 
 
 $(TEST_EXE) : $(OBJDIR) $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBSTLPORT) $(LIBS) -o $(TEST_EXE)
+	$(CC) $(CXXFLAGS) $(OBJECTS) $(LIBSTLPORT) $(LIBS) -o $(TEST_EXE)
 
 $(D_TEST_EXE) : $(D_OBJDIR) $(D_OBJECTS)
-	$(CXX) $(D_CXXFLAGS) $(D_OBJECTS) $(D_LIBSTLPORT) $(LIBS) -o $(D_TEST_EXE)
+	$(CC) $(D_CXXFLAGS) $(D_OBJECTS) $(D_LIBSTLPORT) $(LIBS) -o $(D_TEST_EXE)
 
 
 $(TEST) : $(TEST_EXE)
@@ -73,4 +73,4 @@ obj/%.o : %.cpp
 	$(CXX) $(CXXFLAGS) $< -c -o $@
 
 clean:
-	rm -rf ${TEST_EXE} *.o */*.o *.core
+	-rm -rf $(TEST_EXE) *.o */*.o *.core
