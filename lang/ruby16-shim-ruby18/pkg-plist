@@ -1,3 +1,5 @@
+%%IF_DEFAULT%%bin/erb%%RUBY_R%%
+bin/erb%%_RUBY_SUFFIX%%
 @comment features/ruby18
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/file_ruby18.so
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/io_ruby18.so

@@ -56,6 +56,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_DISTVERSION	- The version number part of RUBY_DISTNAME.
 # RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
+# MASTER_SITE_SUBDIR_RUBY	- MASTER_SITE_SUBDIR for the ruby distfiles.
 #
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
 # RUBY_ARCH		- Set to target architecture name. (e.g. i386-freebsdelf4.3)
@@ -125,15 +126,17 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 .if defined(RUBY_VER) && ${RUBY_VER} == 1.7
 RUBY_VERSION?=		1.7.3
 RUBY_PORT?=		lang/ruby${RUBY_R}-devel
-RUBY_DISTVERSION?=	${RUBY_VERSION}-2002.11.22
+RUBY_DISTVERSION?=	${RUBY_VERSION}-2002.12.12
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
-RUBY_PORTVERSION?=	${RUBY_VERSION}.2002.11.22
+RUBY_PORTVERSION?=	${RUBY_VERSION}.2002.12.12
+MASTER_SITE_SUBDIR_RUBY=	snapshots
 .else
 RUBY_VERSION?=		1.6.8
-RUBY_DISTVERSION?=	${RUBY_VERSION}-preview2
+RUBY_DISTVERSION?=	${RUBY_VERSION}-preview3
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
-RUBY_PORTVERSION?=	${RUBY_VERSION}.p2
+RUBY_PORTVERSION?=	${RUBY_VERSION}.p3
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
+MASTER_SITE_SUBDIR_RUBY=	${RUBY_VER}
 .endif
 #      defined(RUBY_VER) && ${RUBY_VER} == 1.7
 
