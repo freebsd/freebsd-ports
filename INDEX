@@ -189,7 +189,11 @@ jp-gxditview-0.98|/usr/ports/japanese/gxditview|/usr/X11R6|Japanized GNU's modif
 jp-ircii-2.8.2|/usr/ports/japanese/ircII|/usr/local|The 'Internet Relay Chat' Client.|/usr/ports/japanese/ircII/pkg/DESCR|max@sfc.wide.ad.jp|japanese net||
 kakasi-2.2.5|/usr/ports/japanese/kakasi|/usr/local|Kanji-Kana Simple Inverter, language filter for Japanese.|/usr/ports/japanese/kakasi/pkg/DESCR|max@sfc.wide.ad.jp|japanese||
 jp-ckinput2-2.0.1|/usr/ports/japanese/kinput2-canna|/usr/X11R6|An input server of Japanese text (Canna version)|/usr/ports/japanese/kinput2-canna/pkg/DESCR|asami@FreeBSD.ORG|japanese x11|Canna-3.2.2|Canna-3.2.2
-jp-kinput2-2.0.1|/usr/ports/japanese/kinput2-canna+wnn|/usr/X11R6|An input server of Japanese text (Canna+Wnn version)|/usr/ports/japanese/kinput2-canna+wnn/pkg/DESCR|asami@FreeBSD.ORG|japanese x11|Canna-3.2.2 Wnn-4.2|Canna-3.2.2
+jp-cskinput2-2.0.1|/usr/ports/japanese/kinput2-canna+sj3|/usr/X11R6|An input server of Japanese text (Canna+SJ3 version)|/usr/ports/japanese/kinput2-canna+sj3/pkg/DESCR|hidekazu@cs.titech.ac.jp|japanese x11|Canna-3.2.2 sj3-2.0.1.13|Canna-3.2.2
+jp-kinput2-2.0.1|/usr/ports/japanese/kinput2-canna+sj3+wnn|/usr/X11R6|An input server of Japanese text (Canna+SJ3+Wnn version)|/usr/ports/japanese/kinput2-canna+sj3+wnn/pkg/DESCR|hidekazu@cs.titech.ac.jp|japanese x11|Canna-3.2.2 Wnn-4.2 sj3-2.0.1.13|Canna-3.2.2
+jp-cwkinput2-2.0.1|/usr/ports/japanese/kinput2-canna+wnn|/usr/X11R6|An input server of Japanese text (Canna+Wnn version)|/usr/ports/japanese/kinput2-canna+wnn/pkg/DESCR|asami@FreeBSD.ORG|japanese x11|Canna-3.2.2 Wnn-4.2|Canna-3.2.2
+jp-skinput2-2.0.1|/usr/ports/japanese/kinput2-sj3|/usr/X11R6|An input server of Japanese text (SJ3 version)|/usr/ports/japanese/kinput2-sj3/pkg/DESCR|hidekazu@cs.titech.ac.jp|japanese x11|sj3-2.0.1.13|
+jp-swkinput2-2.0.1|/usr/ports/japanese/kinput2-sj3+wnn|/usr/X11R6|An input server of Japanese text (SJ3+Wnn version)|/usr/ports/japanese/kinput2-sj3+wnn/pkg/DESCR|hidekazu@cs.titech.ac.jp|japanese x11|Wnn-4.2 sj3-2.0.1.13|
 jp-wkinput2-2.0.1|/usr/ports/japanese/kinput2-wnn|/usr/X11R6|An input server of Japanese text (Wnn version)|/usr/ports/japanese/kinput2-wnn/pkg/DESCR|asami@FreeBSD.ORG|japanese x11|Wnn-4.2|
 kon-0994e|/usr/ports/japanese/kon|/usr/local|kon 0994e + FreeBSD patch - kanji console|/usr/ports/japanese/kon/pkg/DESCR|asami@FreeBSD.ORG|japanese|gmake-3.74|
 kterm-6.1.0|/usr/ports/japanese/kterm|/usr/X11R6|An xterm that speaks Japanese|/usr/ports/japanese/kterm/pkg/DESCR|asami@FreeBSD.ORG|japanese x11||
@@ -475,7 +479,7 @@ wwwish-1.0|/usr/ports/www/wwwish|/usr/local|A Tk interpreter with WWW abilities|
 fwf-3.8|/usr/ports/x11/FWF|/usr/X11R6|The Free Widget Foundation Widget Release, R3.8|/usr/ports/x11/FWF/pkg/DESCR|jkh@FreeBSD.ORG|x11||
 XFree86-3.1.2|/usr/ports/x11/XFree86|/usr/local|X11R6/XFree86 version 3.1.2|/usr/ports/x11/XFree86/pkg/DESCR|jmz@FreeBSD.ORG|x11||
 Xaw3d-1.2a|/usr/ports/x11/Xaw3d|/usr/X11R6|A 3-D Athena Widget set that looks like Motif|/usr/ports/x11/Xaw3d/pkg/DESCR|asami@FreeBSD.ORG|x11||
-afterstep-0.98b23a|/usr/ports/x11/afterstep|/usr/X11R6|This window manager is a continuation of the Bowman NeXTSTEP clone.|/usr/ports/x11/afterstep/pkg/DESCR|jfitz@freebsd.org|x11|xpm-3.4f|fvwm-1.24r xpm-3.4f
+afterstep-0.98b24a|/usr/ports/x11/afterstep|/usr/X11R6|This window manager is a continuation of the Bowman NeXTSTEP clone.|/usr/ports/x11/afterstep/pkg/DESCR|jfitz@freebsd.org|x11|xpm-3.4f|fvwm-1.24r xpm-3.4f
 auis-6.3.1|/usr/ports/x11/auis|/usr/local|Andrew User Interface System|/usr/ports/x11/auis/pkg/DESCR|ports@FreeBSD.ORG|x11||
 blast-1.0|/usr/ports/x11/blast|/usr/X11R6|Blast blows holes through windows.|/usr/ports/x11/blast/pkg/DESCR|searle@longacre.demon.co.uk|x11||
 blt-2.1|/usr/ports/x11/blt|/usr/local|A Tk extension (with shared libs)|/usr/ports/x11/blt/pkg/DESCR|lukin@okbmei.msk.su|x11|tcl-7.5 tk-4.1|tcl-7.5 tk-4.1
