@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
 
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
