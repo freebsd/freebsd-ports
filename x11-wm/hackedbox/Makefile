@@ -56,6 +56,10 @@ pre-install:
 .for ii in ${DOCS}
 	${ECHO_CMD} share/doc/hackedbox/${ii} >> ${PLIST}
 .endfor
+.for ii in nl_NL sl_SI
+	${ECHO_CMD} @dirrm share/doc/hackedbox/${ii} >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrm share/doc/hackedbox >> ${PLIST}
 .endif
 
 do-install:
