@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@lansing.dk
 COMMENT=	Perl extension for persistent session management
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Session::DB_File.3 \
@@ -35,4 +32,11 @@ MAN3=		CGI::Session::DB_File.3 \
 		CGI::Session::CookBook.3 \
 		CGI::Session::Serialize::Storable.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>

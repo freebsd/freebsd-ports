@@ -22,14 +22,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Gallery.3
 
 TEMPLATEFILES=	directory.tpl error.tpl index.tpl info.tpl layout.tpl \
@@ -64,6 +62,11 @@ post-install:
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
