@@ -32,6 +32,73 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="641859e8-eca1-11d8-b913-000c41e2cdad">
+    <topic>KDE Konqueror frame injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><lt>3.2.3_3</lt></range>
+      </package>
+      <package>
+	<name>kdebase</name>
+	<range><lt>3.2.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20040811-3.txt">
+          <p>A malicious website could abuse Konqueror to insert
+            its own frames into the page of an otherwise trusted
+            website. As a result the user may unknowingly send
+            confidential information intended for the trusted website
+            to the malicious website.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0721</cvename>
+      <url>http://secunia.com/advisories/11978/</url>
+      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-htmlframes.patch</url>
+      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdebase-htmlframes.patch</url>
+    </references>
+    <dates>
+      <discovery>2004-08-11</discovery>
+      <entry>2004-08-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="603fe36d-ec9d-11d8-b913-000c41e2cdad">
+    <topic>kdelibs insecure temporary file handling</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><le>3.2.3_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to a KDE Security Advisory, KDE may sometimes
+	  create temporary files without properly checking the ownership
+	  and type of the target path.  This could allow a local
+	  attacker to cause KDE applications to overwrite arbitrary
+	  files.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0689</cvename>
+      <cvename>CAN-2004-0690</cvename>
+      <url>http://www.kde.org/info/security/advisory-20040811-1.txt</url>
+      <url>http://www.kde.org/info/security/advisory-20040811-2.txt</url>
+      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-kstandarddirs.patch</url>
+      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-dcopserver.patch</url>
+    </references>
+    <dates>
+      <discovery>2004-08-11</discovery>
+      <entry>2004-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b8f9a02-ec93-11d8-b913-000c41e2cdad">
     <topic>gaim remotely exploitable vulnerabilities in MSN component</topic>
     <affects>
