@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.264 1999/05/28 22:31:23 nectar Exp $
+# $Id: Makefile,v 1.265 1999/05/29 05:01:11 steve Exp $
 #
 
     SUBDIR += IglooFTP
@@ -186,6 +186,7 @@
     SUBDIR += tkirc
     SUBDIR += traceroute
     SUBDIR += trafshow
+    SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += ucd-snmp
     SUBDIR += vnc
