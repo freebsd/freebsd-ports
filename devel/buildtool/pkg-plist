@@ -18,6 +18,8 @@ share/buildtool-0/templates/sa.config
 share/buildtool-0/templates/sa.docs
 share/buildtool-0/templates/sa.mk_top
 share/buildtool-0/templates/sa.mk_src
+share/buildtool-0/licenses/apache
+share/buildtool-0/licenses/artistic
 share/buildtool-0/licenses/bsd
 share/buildtool-0/licenses/gplv2
 @dirrm libexec/buildtool-0
@@ -26,3 +28,6 @@ share/buildtool-0/licenses/gplv2
 @dirrm share/buildtool-0/templates
 @dirrm share/buildtool-0/licenses
 @dirrm share/buildtool-0
+@unexec install-info --delete %D/info/buildtool.info %D/info/dir
+info/buildtool.info
+@exec install-info %D/info/buildtool.info %D/info/dir

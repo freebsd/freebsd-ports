@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	buildtool
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jos@catnook.com
+
+MAN1=		buildtool.1
 
 do-configure:
 	@cd ${WRKSRC} \
