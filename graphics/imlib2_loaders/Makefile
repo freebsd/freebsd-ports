@@ -8,11 +8,10 @@
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ny.us.rasterman.com/files/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ishmael27x@yahoo.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb
