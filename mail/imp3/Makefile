@@ -199,14 +199,6 @@ pre-install:
 	    ${FALSE} ; \
 	fi
 .endif
-.if !defined(WITHOUT_ASPELL)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "pspell.4"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with pspell support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-.endif
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
 	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.2" ; then \
@@ -257,7 +249,7 @@ do-install:
 .if !defined(WITHOUT_ASPELL)
 	@${PERL} -pi -e "s:\/\* BEGBSDASPELL::;s:ENDBSDASPELL \*\/::" \
 			${CONFDIR}/mime_drivers.php
-	@${PERL} -pi -e "s:spellchecker'] = '':spellchecker'] = 'true':" \
+	@${PERL} -pi -e "s:spellchecker'] = '':spellchecker'] = '${LOCALBASE}/bin/aspell':" \
 		${CONFDIR}/conf.php
 .endif
 .if !defined(WITHOUT_X11)
