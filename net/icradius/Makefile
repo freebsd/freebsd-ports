@@ -10,9 +10,9 @@ PORTVERSION=	0.18.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.innercite.com/pub/icradius/
 
-FORBIDDEN=	"Remotely exploitable buffer overflow"
+FORBIDDEN=	"Remotely exploitable buffer overflow. See ports/net/freeradius for compatible and non-exploitable replacement."
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	Makefile.BSD
 
