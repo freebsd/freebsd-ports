@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	flounder
-PORTVERSION=	0.32a
+PORTVERSION=	0.40
 CATEGORIES=	science
 MASTER_SITES=	http://www.enel.ucalgary.ca/~vigmond/flounder/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
