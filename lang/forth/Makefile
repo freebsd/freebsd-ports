@@ -2,7 +2,7 @@
 #By mr
 DISTNAME=	pfe099
 DISTFILES=	pfe-0.9.9.tar.gz
-MASTER_SITES=	ftp://roxi.rz.fht-mannheim.de/pub/languages/forth/
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
