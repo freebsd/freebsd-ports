@@ -7,6 +7,7 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -25,7 +26,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|root:root|${BINOWN}:${BINGRP}|g' \
+				${WRKSRC}/kgoldrunner/gamedata/Makefile.in
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.mk>
