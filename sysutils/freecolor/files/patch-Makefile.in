@@ -1,0 +1,11 @@
+--- Makefile.in.bak	Wed Jan  7 20:07:33 2004
++++ Makefile.in	Wed Jan  7 20:09:53 2004
+@@ -20,7 +20,7 @@
+ 
+ install:
+ 	strip free
+-	$(INSTALL) -m 755 free $(bindir)/freecolor
++	$(INSTALL) -g kmem -m 2755 free $(bindir)/freecolor
+ 
+ clean:
+ 	rm -f core free *~

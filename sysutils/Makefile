@@ -114,6 +114,7 @@
     SUBDIR += fontedit
     SUBDIR += fonteditfs
     SUBDIR += fortunelock
+    SUBDIR += freecolor
     SUBDIR += freedt
     SUBDIR += freesbie
     SUBDIR += fsck_ext2fs
