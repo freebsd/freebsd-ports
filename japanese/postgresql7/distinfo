@@ -1,1 +1,2 @@
-MD5 (postgresql-7.0.2.tar.gz) = fc512e38394256e2749299fdd69a937e
+MD5 (postgresql/postgresql-7.0.2.tar.gz) = fc512e38394256e2749299fdd69a937e
+MD5 (postgresql/jumbo-20001025.patch.gz) = c00f6578bba3522c90115412d53293aa
