@@ -1,7 +1,7 @@
 Index: Makefile.in
 diff -u Makefile.in.orig Makefile.in
 --- Makefile.in.orig	Tue Jan 13 06:02:09 2004
-+++ Makefile.in	Thu Mar 11 01:34:50 2004
++++ Makefile.in	Sat Apr  3 00:04:36 2004
 @@ -90,13 +90,13 @@
  	touch distcvs
  
@@ -19,7 +19,7 @@ diff -u Makefile.in.orig Makefile.in
 +	$(INSTALL) -d ${DESTDIR}$(prefix)/man/man1
 +	$(INSTALL) -d ${DESTDIR}$(prefix)/man/man3
 +	$(INSTALL) -d ${DESTDIR}$(prefix)/man/man5
-+	$(INSTALL) -d ${DESTDIR}$(prefix)/man/man8
++	$(INSTALL) -d ${DESTDIR}$(cyrus_prefix)/man/man8
  	@for d in  $(SUBDIRS); \
  	do \
  		(cd $$d; echo "### Making" install "in" `pwd`;	\

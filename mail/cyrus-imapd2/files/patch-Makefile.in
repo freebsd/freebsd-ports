@@ -1,0 +1,13 @@
+Index: Makefile.in
+diff -u Makefile.in.orig Makefile.in
+--- Makefile.in.orig	Thu Nov 20 01:45:26 2003
++++ Makefile.in	Sat Apr  3 03:15:59 2004
+@@ -98,7 +98,7 @@
+ 	$(srcdir)/install-sh -d ${DESTDIR}$(prefix)/man/man1
+ 	$(srcdir)/install-sh -d ${DESTDIR}$(prefix)/man/man3
+ 	$(srcdir)/install-sh -d ${DESTDIR}$(prefix)/man/man5
+-	$(srcdir)/install-sh -d ${DESTDIR}$(prefix)/man/man8
++	$(srcdir)/install-sh -d ${DESTDIR}$(cyrus_prefix)/man/man8
+ 	@for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" install "in" `pwd`;	\
