@@ -1,0 +1,11 @@
+--- src/commands.c.orig	Sun Feb 13 17:16:37 2005
++++ src/commands.c	Sun Feb 13 17:17:18 2005
+@@ -2842,7 +2842,7 @@
+ {
+    char move_string[MAX_HOST_LEN+20];
+    
+-   sprintf(move_string, "$ForceMove %s", buf);
++   snprintf(move_string, MAX_HOST_LEN, "$ForceMove %s", buf);
+  
+    send_to_humans(move_string, REGULAR | REGISTERED | OP, user);
+    remove_all(UNKEYED | NON_LOGGED | REGULAR | REGISTERED | OP, 1, 1);
