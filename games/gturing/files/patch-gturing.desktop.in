@@ -1,0 +1,7 @@
+--- gturing.desktop.in.orig	Sat Jul 14 07:15:50 2001
++++ gturing.desktop.in	Mon Jul  8 22:51:47 2002
+@@ -5,3 +5,4 @@
+ Icon=gnome-gturing.png
+ Terminal=0
+ Type=Application
++Categories=Application;Game;

@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Tue Jul  9 01:09:00 2002
++++ pixmaps/Makefile.in	Tue Jul  9 01:22:36 2002
+@@ -114,7 +114,7 @@
+ WARN_CFLAGS = @WARN_CFLAGS@
+ cxxflags_set = @cxxflags_set@
+ 
+-pixmapsdir = $(datadir)/$(PACKAGE)/pixmaps
++pixmapsdir = $(datadir)/pixmaps
+ 
+ pixmaps_DATA =   gnome-gturing.png  play.xpm  power.xpm  step.xpm  stop.xpm
+ 

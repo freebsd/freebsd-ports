@@ -136,6 +136,7 @@
     SUBDIR += gtkabale
     SUBDIR += gtkballs
     SUBDIR += gtktetcolor
+    SUBDIR += gturing
     SUBDIR += gtypist
     SUBDIR += halflifeserver
     SUBDIR += heretic
