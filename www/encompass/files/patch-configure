@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2002/03/02 14:17:13	1.1
++++ configure	2002/03/02 14:17:28
+@@ -5029,7 +5029,7 @@
+ 
+ 
+ 
+-GNOME_HELP_DIR="`gnome-config --datadir`/gnome/help"
++GNOME_HELP_DIR="`gnome-config --datadir`/help"
+ 
+ 
+ PACKAGE_PIXMAPS_DIR="`gnome-config --datadir`/pixmaps/${PACKAGE}"
