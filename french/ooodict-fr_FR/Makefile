@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
+CATEGORIES=	french
 
 LANGPREFIX=	fr
 LANGSUFFIX=	FR
