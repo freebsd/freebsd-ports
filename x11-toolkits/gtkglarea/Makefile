@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
-MAINTAINER=	jaeger16@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 
 USE_X_PREFIX=	yes
