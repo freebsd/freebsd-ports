@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  wget
 # Date created:			  31 December 1996
 # Whom:				  Thomas Gellekum <tg@FreeBSD.org>
@@ -16,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.max.irk.ru/unix/net/www/wget/
 MASTER_SITE_SUBDIR=	wget
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sf@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
@@ -26,7 +25,6 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include \
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/doc/wget.info*
-	@${CP} ${FILESDIR}/zh_TW.Big5.po ${WRKSRC}/po
 
 post-install:
 	install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
