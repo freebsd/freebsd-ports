@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,21 +15,60 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf
-USE_LIBTOOL_VER=13
+USE_GNOME=	gtk20 lthack
+USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf1 --enable-utmp
+USE_PERL5_BUILD=yes
+CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp
+CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
+
+OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
+		UIM "uim support" off \
+		M17NLIB "m17n library support" off \
+		IIIMF "IIIMF support (broken)" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_FRIBIDI)
-CONFIGURE_ARGS=	--enable-fribidi
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--enable-fribidi
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+.endif
+
+.if defined(WITH_UIM)
+CONFIGURE_ARGS+=	--enable-uim
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	uim.0:${PORTSDIR}/japanese/uim
+PLIST_SUB+=	UIM=""
+.else
+PLIST_SUB+=	UIM="@comment "
+.endif
+
+.if defined(WITH_M17NLIB)
+CONFIGURE_ARGS+=	--enable-m17nlib
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	m17n.1:${PORTSDIR}/devel/m17n-lib
+PLIST_SUB+=	M17NLIB=""
+.else
+PLIST_SUB+=	M17NLIB="@comment "
+.endif
+
+.if defined(WITH_IIIMF)
+.if ${OSVERSION} < 500043
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-inputmethod:iiimf:im_iiimf.c
+.endif
+
+CONFIGURE_ARGS+=	--enable-iiimf
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS=-I${LOCALBASE}/include
+MAKE_ENV=	LIBS_LOCAL="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS_LOCAL="-I${LOCALBASE}/include/iiimf -I${LOCALBASE}/include/iiimf/iiimp"
+LIB_DEPENDS+=	iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
+PLIST_SUB+=	IIIMF=""
+.else
+PLIST_SUB+=	IIIMF="@comment "
 .endif
 
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
-
-.include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PKGNAMESUFFIX=	-noaa
@@ -39,18 +77,12 @@ CONFIGURE_ARGS+=	--enable-anti-alias
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
-pre-everything::
-.if !defined(WITH_FRIBIDI)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may enable BiDi support by using the"
-	@${ECHO_MSG} "WITH_FRIBIDI option."
-	@${ECHO_MSG}
-.endif
-
 post-configure:
 	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		-e "s,%%PERL%%,${PERL}," \
 		${WRKSRC}/tool/w3mmlconfig/Makefile
+	${CP} ${WRKSRC}/libtool ${WRKSRC}/kiklib/
+	${CP} ${WRKSRC}/libtool ${WRKSRC}/mkf/
 
 post-build:
 	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE})
