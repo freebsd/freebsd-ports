@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1997/10/05 19:29:32 max Exp $
+# $Id: Makefile,v 1.19 1997/10/05 21:07:13 max Exp $
 #
 
 DISTNAME=	base-9706
@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz tfm.tar \
 MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
 WRKSRC=		${WRKDIR}/base
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz  \
