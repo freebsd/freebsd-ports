@@ -1,0 +1,22 @@
+*** string.c.orig	Fri Sep 23 18:34:06 1994
+--- string.c	Fri Sep 23 18:50:39 1994
+***************
+*** 4,9 ****
+--- 4,20 ----
+  #define strchr	index
+  #endif
+  
++ char *
++ gets (char *s)
++ {
++     char *x = fgets (s, WORDLEN, stdin);
++     if (x) {
++ 	char *p = strchr (x, '\n');
++ 	if (p) 
++ 	    *p = 0;
++     }
++     return x;
++ }
+  
+  /* function to find the position of sub_string in main_string 
+   * ---------------------------------------------------------- */
