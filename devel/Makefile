@@ -533,6 +533,7 @@
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-pcre
+    SUBDIR += ocaml-sdl
     SUBDIR += ocaml-ulex
     SUBDIR += ocamlweb
     SUBDIR += ode
