@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Inflect.pm
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/demo_NO.pl
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/demo_NUM.pl
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/demo_PL.pl
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/demo_eq.pl
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/demo_inflect.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true

@@ -1,0 +1,11 @@
+The exportable subroutines of Lingua::EN::Inflect provide plural
+inflections and "a"/"an" selection for English words.
+
+Plural forms of all nouns, most verbs, and some adjectives are
+provided. Where appropriate, "classical" variants (for example:
+"brother" -> "brethren", "dogma" -> "dogmata", etc.) are also
+provided.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Inflect
+
+Seamus Venasse <svenasse@polaris.ca>
