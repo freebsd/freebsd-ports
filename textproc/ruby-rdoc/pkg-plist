@@ -1,0 +1,22 @@
+bin/rdoc
+%%RUBY_SITELIBDIR%%/markup/simple_markup.rb
+%%RUBY_SITELIBDIR%%/markup/simple_markup/to_html.rb
+%%RUBY_SITELIBDIR%%/markup/simple_markup/lines.rb
+%%RUBY_SITELIBDIR%%/markup/simple_markup/inline.rb
+%%RUBY_SITELIBDIR%%/markup/simple_markup/fragments.rb
+%%RUBY_SITELIBDIR%%/rdoc/code_objects.rb
+%%RUBY_SITELIBDIR%%/rdoc/html_generator.rb
+%%RUBY_SITELIBDIR%%/rdoc/html_pages.rb
+%%RUBY_SITELIBDIR%%/rdoc/options.rb
+%%RUBY_SITELIBDIR%%/rdoc/parse.rb
+%%RUBY_SITELIBDIR%%/rdoc/template.rb
+@dirrm %%RUBY_SITELIBDIR%%/markup/simple_markup
+@dirrm %%RUBY_SITELIBDIR%%/markup
+@dirrm %%RUBY_SITELIBDIR%%/rdoc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdoc/markup/sample.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc/markup
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/ToDo
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdoc

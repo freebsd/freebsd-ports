@@ -1,0 +1,10 @@
+RDoc is a documentation tool for Ruby source files.  It understands
+Ruby syntax, and automatically extracts class, module, method, and
+attribute definitions, building a structured set of HTML ages
+documenting your programs.  It also extracts any comment block
+associated with program elements, formatting these using a natural
+markup scheme (the intent being that the source code should not have
+to have too much extra annotation when used by RDoc).
+
+Author:	Dave Thomas <dave@pragmaticprogrammer.com>
+WWW:	http://rdoc.sourceforge.net/
