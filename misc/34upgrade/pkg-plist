@@ -1,3 +1,4 @@
+etc/mtree/BSD.x11-4.dist
 usr/bin/install-info
 usr/bin/makeinfo
 usr/lib/libc_r.so.4
