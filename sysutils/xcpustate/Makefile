@@ -25,10 +25,4 @@ NO_WRKSUBDIR=	yes
 
 MAN1=		xcpustate.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
