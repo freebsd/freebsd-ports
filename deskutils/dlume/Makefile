@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dlume
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://clay.ll.pl/download/
 
