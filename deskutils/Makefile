@@ -12,6 +12,7 @@
     SUBDIR += gcal
     SUBDIR += gemcal
     SUBDIR += genius
+    SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnofin
     SUBDIR += gnomepim
