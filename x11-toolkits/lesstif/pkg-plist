@@ -179,7 +179,6 @@ share/doc/LessTif/doc/working.html
 @dirrm include/Xm
 @dirrm include/Mrm
 @dirrm share/doc/LessTif/doc/man/man5
-@dirrm share/doc/LessTif/doc/man/man3
 @dirrm share/doc/LessTif/doc/man/man1
 @dirrm share/doc/LessTif/doc/man
 @dirrm share/doc/LessTif/doc/images
