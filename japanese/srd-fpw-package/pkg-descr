@@ -1,0 +1,23 @@
+srd.el is a supplement file to use "Random House" on lookup.  "Random
+House" is produced by Shogakukan Inc.  You can get more detail
+information (written in Japanese) from
+
+WWW: http://openlab.ring.gr.jp/edict/srd-fpw/
+
+[TO USE]
+(1) Get "Random House" from somewhere.
+
+(2) Install it by using /usr/ports/japanese/srd-fpw
+    The port converts it into a files formatted "JIS X 4081" by FreePWING.
+    Then install MID, WAV, AVI files from CD-ROM by hand.
+
+(3) Add the following lines into your ~/.emacs
+
+(require 'lookup-package)
+(setq lookup-search-agents '((ndeb "/usr/share/dict/srd-fpw")))
+(setq lookup-package-directory "/usr/share/dict/package")
+(lookup-use-package "ndeb+/usr/share/dict/srd-fpw" "srd-fpw")
+(setq srd-fpw-data-directory "/cdrom/DATA")
+   ;; a directory having img.dat, srdra.bnd
+(setq play-realaudio-process "rvplayer")
+(setq display-image-process "display")
