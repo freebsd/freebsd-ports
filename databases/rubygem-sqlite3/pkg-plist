@@ -3,6 +3,7 @@
 %%RUBY_SITELIBDIR%%/sqlite3/database.rb
 %%RUBY_SITELIBDIR%%/sqlite3/driver/dl/api.rb
 %%RUBY_SITELIBDIR%%/sqlite3/driver/dl/driver.rb
+%%RUBY_SITELIBDIR%%/sqlite3/driver/native/driver.rb
 %%RUBY_SITELIBDIR%%/sqlite3/errors.rb
 %%RUBY_SITELIBDIR%%/sqlite3/pragmas.rb
 %%RUBY_SITELIBDIR%%/sqlite3/resultset.rb
@@ -10,11 +11,13 @@
 %%RUBY_SITELIBDIR%%/sqlite3/translator.rb
 %%RUBY_SITELIBDIR%%/sqlite3/value.rb
 %%RUBY_SITELIBDIR%%/sqlite3/version.rb
+@dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver/native
 @dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver/dl
 @dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver
 @dirrm %%RUBY_SITELIBDIR%%/sqlite3
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/blank.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL/PtrData.html
@@ -37,6 +40,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/API.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/Driver.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native/Driver.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/EmptyException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Error.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Exception.html
@@ -73,6 +78,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/database_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/api_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/driver_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native/driver_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/errors_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/pragmas_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/resultset_rb.html
@@ -86,6 +92,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3
@@ -93,6 +100,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/faq
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Database

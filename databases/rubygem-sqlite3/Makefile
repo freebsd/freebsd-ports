@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	0.5.0
+PORTVERSION=	0.9.0
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/2301/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2488/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -16,15 +16,16 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-NO_BUILD=	yes
+CONFIGURE_ARGS=	-- --with-sqlite3-dir="${LOCALBASE}"
 
-DOCS=	ChangeLog LICENSE api/* doc/*
+DOCS=	ChangeLog LICENSE README api/* doc/*
 
 post-install:
 .if !defined(NOPORTDOCS)
