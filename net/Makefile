@@ -359,6 +359,7 @@
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += py-pcap
+    SUBDIR += py-smb
     SUBDIR += py-soap
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
