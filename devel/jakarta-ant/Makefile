@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jakarta-ant
-PORTVERSION=	1.5.0.b2
+PORTVERSION=	1.5.0.b3
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/
@@ -25,7 +25,7 @@ PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
 SCRIPTS=	bin/ant bin/antRun bin/runant.pl
-ANT_VERSION=	1.5Beta2
+ANT_VERSION=	1.5Beta3
 
 DATADIRS=	lib
 .if !defined(NOPORTDOCS)

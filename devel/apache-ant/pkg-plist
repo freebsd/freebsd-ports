@@ -923,6 +923,10 @@ bin/ant
 %%T%%/docs/manual/OptionalTasks/ejb.html
 %%T%%/docs/manual/OptionalTasks/ftp.html
 %%T%%/docs/manual/OptionalTasks/icontract.html
+%%T%%/docs/manual/OptionalTasks/jarlib-available.html
+%%T%%/docs/manual/OptionalTasks/jarlib-display.html
+%%T%%/docs/manual/OptionalTasks/jarlib-manifest.html
+%%T%%/docs/manual/OptionalTasks/jarlib-resolve.html
 %%T%%/docs/manual/OptionalTasks/javacc.html
 %%T%%/docs/manual/OptionalTasks/javah.html
 %%T%%/docs/manual/OptionalTasks/jdepend.html
@@ -959,6 +963,8 @@ bin/ant
 %%T%%/docs/manual/OptionalTasks/wljspc.html
 %%T%%/docs/manual/OptionalTasks/xmlvalidate.html
 %%T%%/docs/manual/OptionalTypes/classfileset.html
+%%T%%/docs/manual/OptionalTypes/extension.html
+%%T%%/docs/manual/OptionalTypes/extensionset.html
 %%T%%/docs/manual/antexternal.html
 %%T%%/docs/manual/anttaskslist.html
 %%T%%/docs/manual/base_task_classes.html
