@@ -8,7 +8,8 @@
 PORTNAME=	bbconf
 PORTVERSION=	1.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://bbconf.sourceforge.net/code/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stijn@win.tue.nl
 
