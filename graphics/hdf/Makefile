@@ -20,6 +20,8 @@ MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 MAN3=		gr_chunk.3
 MANCOMPRESSED=	maybe
 
+INSTALLS_SHLIB=	yes
+
 MAKE_ARGS=	PREFIX="${PREFIX}" -j 2
 
 post-patch:
