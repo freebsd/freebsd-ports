@@ -3,6 +3,7 @@ lib/X11/app-defaults/XVkbd
 lib/X11/app-defaults/XVkbd-belgian
 lib/X11/app-defaults/XVkbd-common
 lib/X11/app-defaults/XVkbd-danish
+lib/X11/app-defaults/XVkbd-fitaly
 lib/X11/app-defaults/XVkbd-french
 lib/X11/app-defaults/XVkbd-french2
 lib/X11/app-defaults/XVkbd-german
