@@ -2169,6 +2169,7 @@ gnomepm		ports/misc/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
+gnomespeech	ports/audio/gnomespeech
 gnomespell	ports/textproc/gnomespell
 gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
