@@ -1,0 +1,25 @@
+*** Makefile.orig	Sun Mar  8 17:10:55 1998
+--- Makefile	Sun Mar  8 17:11:37 1998
+***************
+*** 21,30 ****
+  ########
+  
+  CC=gcc
+! CFLAGS=-O2 -Wall -g
+  
+  LD=gcc
+! LDFLAGS=-g
+  
+  LEX=flex -i -L
+  
+--- 21,30 ----
+  ########
+  
+  CC=gcc
+! CFLAGS=-O2 -Wall
+  
+  LD=gcc
+! LDFLAGS=-s
+  
+  LEX=flex -i -L
+  

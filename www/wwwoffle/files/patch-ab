@@ -1,0 +1,19 @@
+*** misc.c.orig	Sun Mar  8 17:19:03 1998
+--- misc.c	Sun Mar  8 17:19:38 1998
+***************
+*** 316,322 ****
+           tim->tm_hour,
+           tim->tm_min,
+           tim->tm_sec,
+!          utc?"GMT":tzname[tim->tm_isdst>0]);
+  
+   return(value);
+  }
+--- 316,322 ----
+           tim->tm_hour,
+           tim->tm_min,
+           tim->tm_sec,
+!          utc?"GMT":tim->tm_zone);
+  
+   return(value);
+  }
