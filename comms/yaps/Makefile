@@ -3,18 +3,17 @@
 # Date created:         Di  29 Sep 1998 15:51:27 CEST
 # Whom:                 se
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/09 04:50:07 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/10 20:18:31 jseger Exp $
 #
 
 DISTNAME=       yaps-0.96
 CATEGORIES=	comms
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/comm/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/comm/ \
+		ftp://ftp.cdrom.com/pub/linux/sunsite/apps/serialcomm/machines/
 
 MAINTAINER=     se@FreeBSD.ORG
 
 USE_GMAKE=	true
-
-BROKEN=		fetch
 
 MAN1=		yaps.1
 
