@@ -1,0 +1,5 @@
+bin/rott
+%%PORTDOCS%%%%DOCSDIR%%/cheats.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmdline.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

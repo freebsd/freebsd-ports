@@ -1,0 +1,35 @@
+--- Makefile.orig	Wed Jan  1 12:23:03 2003
++++ Makefile	Wed Feb 18 08:55:16 2004
+@@ -8,8 +8,8 @@
+ #  the build process's behaviour, set it to "true" or "false" (w/o quotes).
+ #-----------------------------------------------------------------------------#
+ #cygwin := true
+-#cygwin := false
+-cygwin := autodetect
++cygwin := false
++#cygwin := autodetect
+ 
+ # you only need to set these for Cygwin at the moment.
+ SDL_INC_DIR = /cygdrive/c/SDL/include
+@@ -40,15 +40,15 @@
+     SDL_LDFLAGS := -L$(SDL_LIB_DIR) -lSDL
+   endif
+ else
+-  SDL_CFLAGS := $(shell sdl-config --cflags)
+-  SDL_LDFLAGS := $(shell sdl-config --libs)
+-  EXTRACFLAGS += -DUSE_EXECINFO=1
++  SDL_CFLAGS := $(shell ${SDL_CONFIG} --cflags)
++  SDL_LDFLAGS := $(shell ${SDL_CONFIG} --libs)
++#  EXTRACFLAGS += -DUSE_EXECINFO=1
+ endif
+ 
+ 
+-CC = gcc
+-CFLAGS = -g $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS)
+-LDLIBS = $(SDL_LDFLAGS) -lSDL -lSDL_mixer $(EXTRALDFLAGS) -Wl,-E
++#CC = gcc
++CFLAGS += -g $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS)
++LDLIBS = $(SDL_LDFLAGS) -lSDL_mixer $(EXTRALDFLAGS) -Wl,-E
+ 
+ all: rott
+ 
