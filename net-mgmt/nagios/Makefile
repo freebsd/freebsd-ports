@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -46,6 +45,10 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql \
 		--with-mysql-xdata
+.endif
+
+.if defined(NAGIOS_FILE_PERFDATA)
+CONFIGURE_ARGS+=--with-file-perfdata
 .endif
 
 .if defined(WITH_POSTGRES)
