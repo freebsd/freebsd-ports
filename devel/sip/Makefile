@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 
