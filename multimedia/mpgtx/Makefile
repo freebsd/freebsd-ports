@@ -31,12 +31,12 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600000
-CFLAGS+=	-O
+CFLAGS+=	-fno-unit-at-a-time
 .endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
-		 s|\$$cflags \$$optimization_cflags|$$cflags|g ; \
+		 s|\$$cflags \$$optimization_cflags|${CFLAGS}|g ; \
 		 s|g++|${CXX}|g; s|-pedantic||' ${WRKSRC}/configure
 
 do-install:
