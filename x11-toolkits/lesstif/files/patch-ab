@@ -1,15 +1,11 @@
---- lib/config/Makefile.in.orig	Mon Apr 28 19:29:10 1997
-+++ lib/config/Makefile.in	Fri May 23 01:24:36 1997
-@@ -47,10 +47,10 @@
- install: $(STUFF)
- 	-mkdir -p ${x_config_path}
- 	for i in ${STUFF} ; do \
--	  ${INSTALL_PROGRAM} $$i ${x_config_path} ; \
-+	  ${BSD_INSTALL_DATA} $$i ${x_config_path} ; \
- 	done
- 	-mkdir -p ${bin_dir}
--	${INSTALL_PROGRAM} mxmkmf ${bin_dir}
-+	${BSD_INSTALL_SCRIPT} mxmkmf ${bin_dir}
+--- lib/config/Makefile.in.orig	Sat Mar 14 16:49:51 1998
++++ lib/config/Makefile.in	Tue Mar 17 10:32:07 1998
+@@ -97,7 +97,7 @@
+ MAINTAINERCLEANFILES=Makefile.in
+ bin_SCRIPTS=	mxmkmf
  
- clean:
- 	rm -f Imake.tmpl Motif.rules Motif.tmpl mxmkmf
+-configdir=	$(libdir)/X11/config
++configdir=	$(libdir)/X11/lesstif
+ config_DATA=	Imake.tmpl Motif.rules Motif.tmpl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../include/LTconfig.h
