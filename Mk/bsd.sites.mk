@@ -45,20 +45,13 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://slave.opensource.captech.com/gnome/%SUBDIR%/ \
-	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/GNOME/%SUBDIR%/ \
+	ftp://gnome.eazel.com/pub/gnome/%SUBDIR%/ \
+	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
-	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
-	ftp://ftp2.sinica.edu.tw/pub5/gnome/%SUBDIR%/ \
-	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
-	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/GNOME/%SUBDIR%/
+	ftp://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
+	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
+	ftp://sunsite.uio.no/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
