@@ -1,0 +1,80 @@
+%%PORTDOCS%%share/doc/omniORBpy/html/contents_motif.gif
+%%PORTDOCS%%share/doc/omniORBpy/html/index.html
+%%PORTDOCS%%share/doc/omniORBpy/html/next_motif.gif
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy001.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy002.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy003.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy004.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy005.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy006.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy007.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy008.html
+%%PORTDOCS%%share/doc/omniORBpy/html/omniORBpy009.html
+%%PORTDOCS%%share/doc/omniORBpy/html/previous_motif.gif
+%%PORTDOCS%%share/doc/omniORBpy/omniORBpy.pdf
+%%PORTDOCS%%share/doc/omniORBpy/omniORBpy.ps
+%%PORTDOCS%%share/doc/omniORBpy/tex/omniORBpy.bib
+%%PORTDOCS%%share/doc/omniORBpy/tex/omniORBpy.tex
+%%PORTDOCS%%share/examples/omniORBpy/echo/echo.idl
+%%PORTDOCS%%share/examples/omniORBpy/echo/echo_clt.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/echo_srv.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo.idl
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_clt.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_coloc.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_nsclt.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_nssrv.py
+%%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_srv.py
+%%PORTDOCS%%share/examples/omniORBpy/poa/README
+%%PORTDOCS%%share/examples/omniORBpy/poa/echo.idl
+%%PORTDOCS%%share/examples/omniORBpy/poa/servantactivator.py
+%%PORTDOCS%%share/examples/omniORBpy/poa/servantlocator.py
+%%PORTDOCS%%share/examples/omniORBpy/random/README
+%%PORTDOCS%%share/examples/omniORBpy/random/random.idl
+%%PORTDOCS%%share/examples/omniORBpy/random/random_clt.py
+%%PORTDOCS%%share/examples/omniORBpy/tests/PerfTest.idl
+%%PORTDOCS%%share/examples/omniORBpy/tests/TypeTest.idl
+%%PORTDOCS%%share/examples/omniORBpy/tests/pclient.py
+%%PORTDOCS%%share/examples/omniORBpy/tests/pserver.py
+%%PORTDOCS%%share/examples/omniORBpy/tests/tclient.py
+%%PORTDOCS%%share/examples/omniORBpy/tests/tserver.py
+%%PORTDOCS%%share/examples/omniORBpy/weather/README
+%%PORTDOCS%%share/examples/omniORBpy/weather/gauge.py
+%%PORTDOCS%%share/examples/omniORBpy/weather/weather.py
+%%PORTDOCS%%share/examples/omniORBpy/weather/weatherInfo.idl
+%%PORTDOCS%%share/examples/omniORBpy/weather/wserver.py
+lib/%%PYTHON_VERSION%%/site-packages/CosNaming/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/CosNaming/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.0
+lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.0.5
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/CORBA.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/CORBA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/PortableServer.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/PortableServer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/PortableServer__POA.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/PortableServer__POA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/URI.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/URI.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/ir_idl.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/ir_idl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/tcInternal.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/tcInternal.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/python.py
+lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/python.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniORB
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/CosNaming
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/weather
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/tests
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/random
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/poa
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/echo
+%%PORTDOCS%%@dirrm share/examples/omniORBpy
+%%PORTDOCS%%@dirrm share/doc/omniORBpy/tex
+%%PORTDOCS%%@dirrm share/doc/omniORBpy/html
+%%PORTDOCS%%@dirrm share/doc/omniORBpy
+@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/omniidl_be 2>/dev/null || true
