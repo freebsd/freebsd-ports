@@ -1,0 +1,10 @@
+Sun IPv6socket_scrub program
+============================
+
+The ipv6socket_scrub utility searches  recursively  through
+the  current directory  (the  default) or any specified
+directory or file to find IPv4 socket code that may be a 
+candidate for modification when porting to the IPv6 socket API. 
+The utility is designed to run from a Solaris machine.
+
+WWW: http://www.sun.com/solaris/ipv6

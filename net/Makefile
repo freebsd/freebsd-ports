@@ -187,6 +187,7 @@
     SUBDIR += iplog
     SUBDIR += ipsorc
     SUBDIR += ipv6calc
+    SUBDIR += ipv6socket_scrub
     SUBDIR += ipw
     SUBDIR += isc-dhcp3
     SUBDIR += isic
