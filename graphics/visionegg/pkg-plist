@@ -1,0 +1,89 @@
+VisionEgg/LICENSE.txt
+VisionEgg/README.txt
+VisionEgg/VisionEgg.cfg
+VisionEgg/check-config.py
+VisionEgg/data/panorama.jpg
+VisionEgg/data/visionegg.bmp
+VisionEgg/demo/GUI/drumDemoGUI.py
+VisionEgg/demo/Pyro/simpleClient.py
+VisionEgg/demo/Pyro/simpleServer.py
+VisionEgg/demo/README.txt
+VisionEgg/demo/calibrate/README.txt
+VisionEgg/demo/calibrate/cal_helper.py
+VisionEgg/demo/calibrate/cal_server.py
+VisionEgg/demo/calibrate/gamma.py
+VisionEgg/demo/calibrate/quit_server.py
+VisionEgg/demo/daq/trigger_in.py
+VisionEgg/demo/daq/trigger_out.py
+VisionEgg/demo/displayText.py
+VisionEgg/demo/grating.py
+VisionEgg/demo/lib3ds-demo.py
+VisionEgg/demo/makeMovie.py
+VisionEgg/demo/mouseTarget.py
+VisionEgg/demo/movingPOV.py
+VisionEgg/demo/perspectiveGrating.py
+VisionEgg/demo/target.py
+VisionEgg/demo/targetBackground.py
+VisionEgg/demo/tcp/README.txt
+VisionEgg/demo/tcp/gratingGUI.py
+VisionEgg/demo/tcp/gratingTCP.py
+VisionEgg/demo/texture.py
+VisionEgg/demo/textureDrum.py
+VisionEgg/test/opengl_info.py
+@dirrm VisionEgg/data
+@dirrm VisionEgg/demo/GUI
+@dirrm VisionEgg/demo/Pyro
+@dirrm VisionEgg/demo/calibrate
+@dirrm VisionEgg/demo/daq
+@dirrm VisionEgg/demo/tcp
+@dirrm VisionEgg/demo
+@dirrm VisionEgg/test
+@dirrm VisionEgg
+%%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Core.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Core.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Core.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Daq.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Daq.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Daq.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/GUI.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/GUI.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/GUI.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Gratings.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Gratings.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Gratings.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Lib3DS.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Lib3DS.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Lib3DS.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/TCPController.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/TCPController.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/TCPController.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Text.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Text.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Text.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Textures.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Textures.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Textures.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/__init__.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/_lib3ds.so
+%%PYTHON_SITELIBDIR%%/VisionEgg/_maxpriority.so
+@dirrm %%PYTHON_SITELIBDIR%%/VisionEgg
