@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.12 1998/08/07 22:49:30 asami Exp $
+# $Id: Makefile,v 1.13 1998/08/13 17:55:39 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-PLIST=          ${WRKDIR}/PLIST.fixedup
+PLIST_SUB=	GNUHOST=${GNUHOST}
 GNUHOST=	i386-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
 GNU_CONFIGURE=	yes
@@ -33,10 +33,6 @@ pre-configure:
 	${MV} freebsd-elf.h freebsd-elf.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in \
 		>freebsd-elf.h)
-
-pre-install:
-	@${SED} -e 's:%GNUHOST%:${GNUHOST}:' ${PKGDIR}/PLIST \
-		> ${PLIST}
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
