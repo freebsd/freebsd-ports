@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.15 1995/04/10 08:06:03 jkh Exp $
+# $Id: Makefile,v 1.16 1995/04/20 18:23:06 asami Exp $
 #
 
 DISTNAME=	mule-2.2.2
@@ -36,5 +36,12 @@ STRIP=
 
 pre-build:
 	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
+
+post-install:
+# note that any2ps is a script
+	strip ${PREFIX}/bin/mule-19.28
+	strip ${PREFIX}/bin/m2ps
+	strip ${PREFIX}/bin/b2m
+	strip ${PREFIX}/bin/coco
 
 .include <bsd.port.mk>
