@@ -15,7 +15,7 @@ DISTNAME=	bugseeker2ee-1_0_2
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	BugSeeker for Java 2, a debugger for Java applications
 
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/linux-sun-jdk13
+USE_JAVA=	1.3+
 
 NO_CDROM=	"License doesn\'t allow redistribution"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
@@ -24,7 +24,6 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/bugseeker2
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR=	${PREFIX}/${PKGBASE}${PORTVERSION}
-JAVA_HOME?=	${LOCALBASE}/linux-sun-jdk1.3.1
 DOWNLOAD_URL?=	http://www.karmira.com/store/index.html
 
 .include <bsd.port.pre.mk>
