@@ -32,6 +32,8 @@ WRKSRC=		${WRKDIR}
 STUFFIT_FILES=	bin/unstuff bin/stuff
 STUFFIT_MAN=    man/man1/stuff.1 man/man1/unstuff.1
 
+MAN1 = stuff.1 unstuff.1
+
 post-fetch:
 	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
 
