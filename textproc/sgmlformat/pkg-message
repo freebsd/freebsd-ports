@@ -1,0 +1,10 @@
+*****************************************************************
+To avoid any confusion with the versions of these tools that
+might already be installed in your system, after installing this
+package you may wish move or remove:
+
+/usr/bin/sgmlfmt
+/usr/bin/sgmls
+/usr/bin/instant
+/usr/share/sgml/*  (all subdirectories)
+*****************************************************************
