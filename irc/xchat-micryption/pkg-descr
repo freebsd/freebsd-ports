@@ -1,0 +1,24 @@
+[ excerpt from developer's web site with modifications ]
+
+Mircryption is a free encryption add-on for the popular irc clients
+mIRC and XChat. Features:
+
+- Channel text, Private query windows, DCC Chats, Actions, Topics can
+all be encrypted. All crypto-related algorithms used are taken from
+published, common, trusted sources. Encryption algorithm is Blowfish
+(no known vulnerabilities); encryption keys are themselves stored
+in encrypted form.
+
+- Supports CBC mode encryption.
+
+- No need to modify the way you work - text is encrypted and decrypted
+automatically; encryption status of conversations is clear but
+unobtrusive.
+
+- User-friendly key management routines; menu driven and easy to
+temporarily disable & re-enable encryption on a channel, send plain
+text quicky, etc.
+
+WWW: http://mircryption.sourceforge.net/
+
+-- lioux@FreeBSD.org
