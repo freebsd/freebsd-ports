@@ -1,38 +1,39 @@
 bin/asp-perl
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Application.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Collection.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CollectionItem.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Error.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/GlobalASA.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Lang/PerlScript.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Load.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Response.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/STDERR.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Share/CORE.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Share/CORE/MailErrors.inc
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Share/CORE/MailErrorsHTML.inc
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/StatINC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/State.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/StateManager.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache/ASP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache/ASP/Extra.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/ASP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Lang
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Share/CORE
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Share
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache/ASP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+%%SITE_PERL%%/Apache/ASP.pm
+%%SITE_PERL%%/Apache/ASP/ApacheCommon.pm
+%%SITE_PERL%%/Apache/ASP/Application.pm
+%%SITE_PERL%%/Apache/ASP/CGI.pm
+%%SITE_PERL%%/Apache/ASP/CGI/Table.pm
+%%SITE_PERL%%/Apache/ASP/CGI/Test.pm
+%%SITE_PERL%%/Apache/ASP/Collection.pm
+%%SITE_PERL%%/Apache/ASP/CollectionItem.pm
+%%SITE_PERL%%/Apache/ASP/Date.pm
+%%SITE_PERL%%/Apache/ASP/Error.pm
+%%SITE_PERL%%/Apache/ASP/GlobalASA.pm
+%%SITE_PERL%%/Apache/ASP/Lang/PerlScript.pm
+%%SITE_PERL%%/Apache/ASP/Load.pm
+%%SITE_PERL%%/Apache/ASP/Request.pm
+%%SITE_PERL%%/Apache/ASP/Response.pm
+%%SITE_PERL%%/Apache/ASP/STDERR.pm
+%%SITE_PERL%%/Apache/ASP/Server.pm
+%%SITE_PERL%%/Apache/ASP/Session.pm
+%%SITE_PERL%%/Apache/ASP/Share/CORE.pm
+%%SITE_PERL%%/Apache/ASP/Share/CORE/MailErrors.inc
+%%SITE_PERL%%/Apache/ASP/Share/CORE/MailErrorsHTML.inc
+%%SITE_PERL%%/Apache/ASP/StatINC.pm
+%%SITE_PERL%%/Apache/ASP/State.pm
+%%SITE_PERL%%/Apache/ASP/StateManager.pm
+%%SITE_PERL%%/Bundle/Apache/ASP.pm
+%%SITE_PERL%%/Bundle/Apache/ASP/Extra.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP
+@dirrm %%SITE_PERL%%/Apache/ASP/CGI
+@dirrm %%SITE_PERL%%/Apache/ASP/Lang
+@dirrm %%SITE_PERL%%/Apache/ASP/Share/CORE
+@dirrm %%SITE_PERL%%/Apache/ASP/Share
+@dirrm %%SITE_PERL%%/Apache/ASP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Bundle/Apache/ASP
+@dirrm %%SITE_PERL%%/Bundle/Apache
+@unexec rmdir %D/%%SITE_PERL%%/Bundle/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
