@@ -33,7 +33,4 @@ GNU_CONFIGURE=	yes
 MANCOMPRESSED=	yes
 MAN1=		golem.1
 
-.if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=	-fPIC
-.endif
 .include <bsd.port.mk>
