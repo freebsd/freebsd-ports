@@ -1,0 +1,11 @@
+--- ada/ali.adb.orig	Wed May  3 20:09:02 2000
++++ ada/ali.adb	Wed May  3 20:09:13 2000
+@@ -220,7 +220,7 @@
+          Write_Str (" is incorrectly formatted");
+          Write_Eol;
+          Write_Str
+-           ("make sure you are using consistent versions of gcc/gnatbind");
++           ("make sure you are using consistent versions of adagcc/gnatbind");
+          Write_Eol;
+ 
+          --  Find start of line

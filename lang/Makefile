@@ -35,6 +35,7 @@
     SUBDIR += ghc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
+    SUBDIR += gnat-glade
     SUBDIR += gnomebasic
     SUBDIR += gpc
     SUBDIR += guile

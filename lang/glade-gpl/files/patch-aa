@@ -1,0 +1,18 @@
+--- configure.in.orig	Wed May  3 19:38:25 2000
++++ configure.in	Wed May  3 19:39:03 2000
+@@ -83,6 +83,7 @@
+   sparc-sun-sunos4*)   PLATFORM_SPECIFIC=u;;
+   i?86-*-solaris2*)    PLATFORM_SPECIFIC=s;;  
+   *-linux*)            PLATFORM_SPECIFIC=l;;
++  *-freebsd*)          PLATFORM_SPECIFIC=f;;
+   *-opennt*)           PLATFORM_SPECIFIC=p;;
+   alpha*-*-osf*)       PLATFORM_SPECIFIC=a;;
+   i?86-*-cygwin32*)    PLATFORM_SPECIFIC=w;;
+@@ -100,6 +101,7 @@
+    u) PSNAME="SunOS";;
+    a) PSNAME="OSF";;
+    l) PSNAME="Linux";;
++   f) PSNAME="FreeBSD";;
+    p) PSNAME="Open NT";;
+    w) PSNAME="Windows NT";;
+    g) PSNAME="SGI";;
