@@ -1,0 +1,7 @@
+bin/hlfl
+%%PORTDOCS%%share/doc/hlfl/services.hlfl
+%%PORTDOCS%%share/doc/hlfl/sample_1.hlfl
+%%PORTDOCS%%share/doc/hlfl/sample_2.hlfl
+%%PORTDOCS%%share/doc/hlfl/test.hlfl
+%%PORTDOCS%%share/doc/hlfl/syntax.txt
+%%PORTDOCS%%@dirrm share/doc/hlfl

@@ -1,0 +1,10 @@
+hlfl stands for "High Level Firewall Language". It permits writing
+firewalling rules using a high level language, and transforms them into
+rules for real software, like ipfilter, ipchains or cisco rules.
+
+You could make contact with the developers by subscribing to
+<hlfl@hlfl.org>. There is also an announce ML at <hlfl-announce@hlfl.org>.
+These lists are managed by majordomo (write to <majordomo@hlfl.org> with
+"help" in the body of your mail).
+
+Arnaud S. Launay <asl@launay.org>
