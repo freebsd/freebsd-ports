@@ -23,7 +23,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \
-		--libdir=${PREFIX}/share/${PORTNAME}
+		--libdir=${DATADIR}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -42,14 +42,12 @@ INFO_DIR=	${PREFIX}/info
 EMACS_FILES=	gforth.el
 EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
 
-SHARE_DIR=	${PREFIX}/share/${PORTNAME}
-
 EMPTY_FILES=	siteinit.fs
-FORTH_DIR=	${SHARE_DIR}/site-forth
+FORTH_DIR=	${DATADIR}/site-forth
 
 EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 \
 		hppa ia64 m68k misc power shboom sparc
-ARCH_DIR=	${SHARE_DIR}/${PORTVERSION}/arch
+ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 
 #
 # Post-extract

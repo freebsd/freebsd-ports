@@ -19,12 +19,12 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${MKDIR} ${DATADIR}
 .if !defined(NOPORTDOCS)
 .for f in dotconf-api.txt dotconf-features.txt
-	@${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/doc/$f ${DATADIR}
 .endfor
 .endif
-	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples ${DATADIR}
 
 .include <bsd.port.mk>

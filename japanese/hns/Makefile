@@ -19,10 +19,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 do-install:
-	@if [ -d ${PREFIX}/share/${PORTNAME} ]; then ${RM} -rf ${PREFIX}/share/${PORTNAME}; fi
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${CP} -pR ${WRKSRC}/ ${PREFIX}/share/${PORTNAME}
-	${CHOWN} -R 0:0 ${PREFIX}/share/${PORTNAME}
+	@if [ -d ${DATADIR} ]; then ${RM} -rf ${DATADIR}; fi
+	${MKDIR} ${DATADIR}
+	${CP} -pR ${WRKSRC}/ ${DATADIR}
+	${CHOWN} -R 0:0 ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/hns-setup ${PREFIX}/bin/hns-setup
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/todayhns/todayhns ${PREFIX}/bin/todayhns
 

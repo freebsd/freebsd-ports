@@ -27,9 +27,8 @@ MAN3=		Apache::MP3.3 \
 		Apache::MP3::Resample.3 \
 		Apache::MP3::Sorted.3
 
-PKGDATADIR=	${PREFIX}/share/${PORTNAME}
 post-install:
-	${MKDIR} ${PKGDATADIR}
-	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${PKGDATADIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${DATADIR}
 
 .include <bsd.port.mk>
