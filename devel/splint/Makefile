@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	splint
-PORTVERSION=	3.0.1.6
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.splint.org/downloads/
 EXTRACT_SUFX=	.src.tgz
@@ -15,13 +14,15 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		splint.1
 
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/splint.1 ${MANPREFIX}/man/man1
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/Headers/constants.h
 
 .include <bsd.port.mk>
