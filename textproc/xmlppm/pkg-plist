@@ -1,4 +1,4 @@
 bin/xmlppm
 bin/xmlunppm
-%%PORTDOCS%%share/doc/xmlppm/README
-%%PORTDOCS%%@dirrm share/doc/xmlppm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
