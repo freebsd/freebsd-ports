@@ -1,0 +1,34 @@
+--- configure.orig	Wed Feb 11 01:19:46 2004
++++ configure	Wed Feb 11 01:20:41 2004
+@@ -2441,7 +2441,7 @@
+                         DLZ_BDB_LIB="yes"
+                         
+                         # check other locations for includes.
+-                        bdb_incdirs="/ /db41/ /db4/ /db/"
++                        bdb_incdirs="/ /db42/ /db41/ /db4/ /db/"
+ 			for d in $bdb_incdirs
+                         do
+ 				if test -f $use_dlz_bdb/include${d}db.h
+@@ -2455,11 +2455,11 @@
+                         then
+                                 echo "$ac_t""not found" 1>&6
+                                 { echo "configure: error: Berkeley DB header was not found in $use_dlz_bdb/include, \
+-$use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" 1>&2; exit 1; }
++$use_dlz_bdb/include/db42 $use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" 1>&2; exit 1; }
+                         fi
+                         
+ 			# look for libname other than libdb.so
+-                        bdb_libnames="db41 db-4.1 db"
++                        bdb_libnames="db-4.2 db41 db-4.1 db"
+ 			for d in $bdb_libnames
+                         do
+ 				if test -f $use_dlz_bdb/lib/lib${d}.so
+@@ -2471,7 +2471,7 @@
+                         if test "$DLZ_BDB_LIB" = "yes"
+                         then
+                                 echo "$ac_t""not found" 1>&6
+-                                { echo "configure: error: Berkeley DB library libdb41.so, libdb-4.1.so or libdb.so could not be found \
++                                { echo "configure: error: Berkeley DB library libdb-4.2.so libdb41.so, libdb-4.1.so or libdb.so could not be found \
+ in $use_dlz_bdb/lib" 1>&2; exit 1; }
+                         fi                        
+ 

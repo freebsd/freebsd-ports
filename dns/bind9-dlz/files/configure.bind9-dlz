@@ -21,6 +21,7 @@ OpenLDAP20	"OpenLDAP 2.0 backend" OFF \
 OpenLDAP21	"OpenLDAP 2.1 backend" OFF \
 OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
 BerkleyDB41	"BerkleyDB 4.1 backend" OFF \
+BerkleyDB42	"BerkleyDB 4.2 backend" OFF \
 FileSystem	"Filesystem driver" ON \
 Stub		"Stub driver" OFF \
 2> /tmp/checklist.tmp.$$
@@ -81,6 +82,11 @@ while [ "$1" ]; do
 			echo WITH_BERKLEYDB_DRIVER=YES
 			echo BERKLEYDB_LIB?=db41.1
 			echo BERKLEYDB_PORT?=databases/db41
+			;;
+		\"BerkleyDB42\")
+			echo WITH_BERKLEYDB_DRIVER=YES
+			echo BERKLEYDB_LIB?=db4-2.1
+			echo BERKLEYDB_PORT?=databases/db42
 			;;
 		\"FileSystem\")
 			echo WITH_FILESYSTEM_DRIVER=YES
