@@ -1,0 +1,2 @@
+%%RUBY_SITEARCHLIBDIR%%/gtktrayicon.so
+%%RUBY_SITELIBDIR%%/gtktrayicon.rb

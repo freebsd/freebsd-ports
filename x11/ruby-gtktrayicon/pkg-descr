@@ -1,0 +1,4 @@
+Ruby/GtkTrayIcon is a Ruby binding for the System Tray Protocol
+Specification based on code from the EGG library.
+
+WWW: http://ruby-gnome2.sourceforge.jp/
