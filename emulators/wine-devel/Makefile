@@ -27,8 +27,8 @@ ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
+USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
-USE_SIZE=	yes
 # GCC 3.2 also seems fine, but the ports collection requires specifying
 # a concrete version.
 USE_GCC=	3.3
