@@ -1,0 +1,14 @@
+Poly1305-AES is a state-of-the-art secret-key message-authentication
+code suitable for a wide variety of applications.
+
+Poly1305-AES computes a 16-byte authenticator of a message of any
+length, using a 16-byte nonce (unique message number) and a 32-byte
+secret key. Attackers can't modify or forge messages if the message
+sender transmits an authenticator along with each message and the
+message receiver checks each authenticator.
+
+There's a mailing list for Poly1305-AES discussions. To subscribe, send
+an empty message to poly1305-subscribe@list.cr.yp.to.
+
+Author:		Prof. Daniel J. Bernstein <djb@cr.yp.to>
+WWW:		http://cr.yp.to/mac.html
