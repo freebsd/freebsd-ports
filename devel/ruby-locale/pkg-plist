@@ -1,0 +1,5 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/locale.so
+share/examples/ruby/locale/test.rb
+@dirrm share/examples/ruby/locale
+share/doc/ruby/locale/README
+@dirrm share/doc/ruby/locale
