@@ -1,0 +1,8 @@
+ftpq is an ftp upload queue manager.  If you live behind
+a dial-up link to the Internet, and regularly upload files
+(e.g. for web sites), ftpq allows you to queue the uploads
+whilst off-line for processing on next connection to the network. 
+
+WWW: http://www.tranchant.freeserve.co.uk/ftpq.html
+
+- Will <andrews@technologist.com>
