@@ -1,0 +1,19 @@
+*** scores.c~	Mon Nov  8 15:15:55 1993
+--- scores.c	Sat Nov 19 22:32:31 1994
+***************
+*** 35,41 ****
+  	numhighs = 0;
+  	scorefd = open(SCOREPATH, O_RDWR);
+  	if(scorefd == -1) {
+! 		scorefd = open(SCOREPATH, O_RDWR | O_CREAT, 0444);
+  		if(scorefd == -1) {
+  			scorefd = open("jetpack.scores", O_RDWR);
+  			if(scorefd == -1) {
+--- 35,41 ----
+  	numhighs = 0;
+  	scorefd = open(SCOREPATH, O_RDWR);
+  	if(scorefd == -1) {
+! 		scorefd = open(SCOREPATH, O_RDWR | O_CREAT, 0644);
+  		if(scorefd == -1) {
+  			scorefd = open("jetpack.scores", O_RDWR);
+  			if(scorefd == -1) {
