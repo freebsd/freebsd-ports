@@ -23,10 +23,18 @@ USE_PYTHON=	yes
 APXS?=		${LOCALBASE}/sbin/apxs
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 MAKE_ENV=	EXPR_COMPAT=yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 230
+post-patch:
+	${REINPLACE_CMD} -e 's,LONG_LONG,long long,g' ${WRKSRC}/src/requestobject.c
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
