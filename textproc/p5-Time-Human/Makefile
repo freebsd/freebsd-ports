@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Time::Human.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		Does not build with Perl 5.005.
+.endif
+
+.include <bsd.port.post.mk>
