@@ -78,4 +78,3 @@ share/automake/texinfo.tex
 share/automake/texinfos.am
 share/automake/ylwrap
 @dirrm share/automake
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
