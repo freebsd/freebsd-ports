@@ -47,6 +47,7 @@ share/jargon/graphics/docbook-1.png
 share/jargon/graphics/eat-flaming-death.png
 share/jargon/graphics/eiaward.png
 share/jargon/graphics/fortran.png
+share/jargon/graphics/gefingerpoken.jpg
 share/jargon/graphics/home.png
 share/jargon/graphics/len_std.jpg
 share/jargon/graphics/licenseplate.jpg
@@ -1184,6 +1185,7 @@ share/jargon/html/J/jiffy.html
 share/jargon/html/J/job-security.html
 share/jargon/html/J/jock.html
 share/jargon/html/J/joe-code.html
+share/jargon/html/J/joe-job.html
 share/jargon/html/J/juggling-eggs.html
 share/jargon/html/J/juice.html
 share/jargon/html/J/jump-off-into-never-never-land.html
@@ -1948,6 +1950,7 @@ share/jargon/html/S/snark.html
 share/jargon/html/S/sneaker.html
 share/jargon/html/S/sneakernet.html
 share/jargon/html/S/sniff.html
+share/jargon/html/S/snippage.html
 share/jargon/html/S/social-engineering.html
 share/jargon/html/S/social-science-number.html
 share/jargon/html/S/sock-puppet.html
@@ -2487,6 +2490,7 @@ share/jargon/html/graphics/docbook-1.png
 share/jargon/html/graphics/eat-flaming-death.png
 share/jargon/html/graphics/eiaward.png
 share/jargon/html/graphics/fortran.png
+share/jargon/html/graphics/gefingerpoken.jpg
 share/jargon/html/graphics/home.png
 share/jargon/html/graphics/len_std.jpg
 share/jargon/html/graphics/licenseplate.jpg
