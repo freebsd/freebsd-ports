@@ -1,0 +1,7 @@
+PEAR Data paging class.
+
+It takes an array of data as input and page it according to various
+parameters. It also builds links within a specified range, and allows
+complete customization of the output (it even works with mod_rewrite).
+
+WWW: http://pear.php.net/package/Pager/
