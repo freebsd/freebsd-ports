@@ -1,5 +1,5 @@
---- config.c.orig	Fri Aug  4 19:21:05 2000
-+++ config.c	Mon Nov 19 14:42:14 2001
+--- config.c.orig	Sat Aug  5 01:21:05 2000
++++ config.c	Mon Jul  8 23:07:17 2002
 @@ -94,6 +94,7 @@
  Bool TidyMark = yes;        /* add meta element indicating tidied doc */
  Bool Emacs = no;            /* if true format error output for GNU Emacs */
@@ -16,7 +16,17 @@
  
    /* this must be the final entry */
      {0,          0,             0}
-@@ -423,7 +425,10 @@
+@@ -392,7 +394,8 @@
+         home_dir = passwd->pw_dir;
+     }
+ 
+-    if (p = realloc(expanded_filename, strlen(filename)+strlen(home_dir)+1))
++    if (home_dir != NULL &&
++	(p = realloc(expanded_filename, strlen(filename)+strlen(home_dir)+1)))
+     {
+         strcat(strcpy(expanded_filename = p, home_dir), filename);
+         return(expanded_filename);
+@@ -423,7 +426,10 @@
      /* open the file and parse its contents */
  
      if ((fin = fopen(fname, "r")) == null)
@@ -28,7 +38,7 @@
      else
      {
          config_text = null;
-@@ -533,6 +538,12 @@
+@@ -533,6 +539,12 @@
      {
          QuoteAmpersand = yes;
          HideEndTags = no;
