@@ -70,6 +70,7 @@
     SUBDIR += pine3
     SUBDIR += pine4
     SUBDIR += pine4-ssl
+    SUBDIR += popa3d
     SUBDIR += poppassd
     SUBDIR += popper
     SUBDIR += postfix
