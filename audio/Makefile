@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1999/02/12 15:45:08 kuriyama Exp $
+# $Id: Makefile,v 1.70 1999/03/02 00:07:53 fenner Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -14,6 +14,7 @@
     SUBDIR += esound
     SUBDIR += gmod
     SUBDIR += gnomeaudio
+    SUBDIR += gnomemedia
     SUBDIR += gqmpeg
     SUBDIR += gsm
     SUBDIR += kdemultimedia
