@@ -53,7 +53,11 @@ share/doc/atk/atktext.html
 share/doc/atk/atkutil.html
 share/doc/atk/atkvalue.html
 share/doc/atk/book1.html
+share/doc/atk/home.png
 share/doc/atk/index.sgml
+share/doc/atk/left.png
+share/doc/atk/right.png
+share/doc/atk/up.png
 share/locale/am/LC_MESSAGES/atk10.mo
 share/locale/az/LC_MESSAGES/atk10.mo
 share/locale/be/LC_MESSAGES/atk10.mo
@@ -94,6 +98,8 @@ share/locale/ru/LC_MESSAGES/atk10.mo
 share/locale/sk/LC_MESSAGES/atk10.mo
 share/locale/sl/LC_MESSAGES/atk10.mo
 share/locale/sq/LC_MESSAGES/atk10.mo
+share/locale/sr/LC_MESSAGES/atk10.mo
+share/locale/sr@Latn/LC_MESSAGES/atk10.mo
 share/locale/sv/LC_MESSAGES/atk10.mo
 share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/tr/LC_MESSAGES/atk10.mo
