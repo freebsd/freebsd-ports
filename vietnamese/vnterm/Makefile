@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	vnterm
-PORTVERSION=	3.4	#11.6.5.1
+PORTVERSION=	3.4	#11.6.6[.0]
+PORTREVISION?=	1
 CATEGORIES=	vietnamese x11
-MASTER_SITES=	ftp://ftp.x.org/pub/R6.5.1/tars/
+MASTER_SITES=	ftp://ftp.x.org/pub/R6.6/tars/
 DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
