@@ -14,7 +14,7 @@
  
  # Where to install the help file
 -HELPDIR		= /usr/local/lib/help
-+HELPDIR		= $(OPENWINHOME)/share/help
++HELPDIR		= $(OPENWINHOME)/lib/help
  
  # Where your XView libraries are installed.  If running under
  # SunOS 4.x, use the first version.  If using Solaris 2.x with

@@ -3,7 +3,7 @@
 # Date created:         2 Dec 1996
 # Whom:                 nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.2 1997/01/06 00:27:09 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/01/06 10:26:27 obrien Exp $
 #
 
 DISTNAME=	contool-3.3a
@@ -21,7 +21,7 @@ USE_IMAKE=	yes
 
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/help
+	@${MKDIR} ${PREFIX}/lib/help
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
