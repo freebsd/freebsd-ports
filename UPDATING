@@ -508,7 +508,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   AFFECTS: users of mail/dspam and mail/dspam-devel
   AUTHOR: itetcu@people.tecnik93.com
 
-  When upgradng from previous version, read mail/dspam/files/UPDATING
+  When upgrading from previous version, read mail/dspam/files/UPDATING
   and adjust your options.
 
 20041121:
