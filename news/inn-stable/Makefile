@@ -13,7 +13,8 @@ MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]*$/.0/}
 
-PATCH_SITES=	http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+PATCH_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 PATCHFILES=	inn-patch-2.4_to_${PORTVERSION:C/2\.4\.//}-snap.gz
 PATCH_DIST_STRIP=-p1
 

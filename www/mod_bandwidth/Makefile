@@ -8,7 +8,8 @@
 PORTNAME=	mod_bandwidth
 PORTVERSION=	2.0.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 EXTRACT_SUFX=   .c
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
