@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -26,6 +27,7 @@ CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=${TK_LIB_FILE}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
+USE_REINPLACE=	yes
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	4
@@ -41,8 +43,7 @@ TK_LIB_FILE=	${TK_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
 .endif
 
 post-patch:
-	@${CP} ${WRKSRC}/mkLinks ${WRKSRC}/mkLinks.orig
-	@${SED} -e 's/\.[3n]/&.gz/g' ${WRKSRC}/mkLinks.orig > ${WRKSRC}/mkLinks
+	@${REINPLACE_CMD} -e 's/\.[3n]/&.gz/g' ${WRKSRC}/mkLinks
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}

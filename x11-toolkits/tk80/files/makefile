@@ -1,5 +1,4 @@
 all:
-	for f in ../generic/*.o; do ln -sf $$f; done
 	make -f Makefile wish
 test:
 	make -f Makefile test
