@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
+
 MAN1=		agrep.1
 
 do-install:
