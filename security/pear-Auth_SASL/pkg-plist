@@ -1,0 +1,8 @@
+%%PEARDIR%%/SASL.php
+%%PEARDIR%%/SASL/Anonymous.php
+%%PEARDIR%%/SASL/Common.php
+%%PEARDIR%%/SASL/CramMD5.php
+%%PEARDIR%%/SASL/DigestMD5.php
+%%PEARDIR%%/SASL/Login.php
+%%PEARDIR%%/SASL/Plain.php
+@dirrm %%PEARDIR%%/SASL

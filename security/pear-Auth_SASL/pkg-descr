@@ -1,0 +1,9 @@
+Provides PHP code to generate responses to common SASL mechanisms, including:
+
+o Digest-MD5
+o CramMD5
+o Plain
+o Anonymous
+o Login (Pseudo mechanism).
+
+WWW: http://pear.php.net/package-info.php?pacid=123
