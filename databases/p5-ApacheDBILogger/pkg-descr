@@ -1,0 +1,6 @@
+This module tracks what's being transfered by the Apache web
+server in a SQL database (everything with a DBI/DBD driver).
+This allows to get statistics (of almost everything) without
+having to parse the log files (like the Apache::Traffic module,
+just in a "real" database, and with a lot more logged
+information).
