@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Server for Digital Audio Access Protocol
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libid3tag.a:${PORTSDIR}/audio/mad \

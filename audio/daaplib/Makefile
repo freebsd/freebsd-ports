@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daaplib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A C++ library for DAAP memory streams
 
 USE_ZIP=	yes
