@@ -7,7 +7,7 @@
 
 PORTNAME=	encompass
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www gnome
 MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/ \
 		http://encompass.sourceforge.net/ \
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	neon.22:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.23:${PORTSDIR}/www/neon
 
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gtkhtml

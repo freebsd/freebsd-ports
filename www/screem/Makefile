@@ -7,6 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
@@ -19,7 +20,7 @@ LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
-		neon.22:${PORTSDIR}/www/neon
+		neon.23:${PORTSDIR}/www/neon
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
