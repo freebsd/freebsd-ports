@@ -28,4 +28,10 @@ USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=	"Causes xsltproc to die with a floating point exception"
+.endif
+
+.include <bsd.port.post.mk>
