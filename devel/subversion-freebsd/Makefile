@@ -337,6 +337,7 @@ post-install:
 .endif
 .if defined(WITH_PERL)
 	cd ${WRKSRC} ; \
+	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile ; \
 	  ${MAKE} install-swig-pl
 .endif
 .if defined(WITH_PYTHON)
