@@ -1,8 +1,8 @@
 Parity Archive
 
-par uses Reed-Solomon coding to make multiple parity volumes from
+parchive uses Reed-Solomon coding to make multiple parity volumes from
 the same set of files.  What this means is that you can recover as
 many files as you have recovery volumes.  Any recovery volumes for
 that set will do.
 
-WWW: http://par.sourceforge.net/
+WWW: http://parchive.sourceforge.net/
