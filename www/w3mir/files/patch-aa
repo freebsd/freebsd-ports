@@ -1,0 +1,19 @@
+--- w3http.pm.orig	Fri May 28 23:35:19 1999
++++ w3http.pm	Sat Jan  8 03:35:34 2000
+@@ -133,13 +133,13 @@
+ use URI::URL;
+ 
+ # Suplementary libwww-perl:
+-sub URI::URL::_generic::basename {
++sub URI::_generic::basename {
+   my $self = shift;
+-  my @p = $self->path_components;
++  my @p = $self->path_segments;
+   my $old = $p[-1];
+   if (@_) {
+     splice(@p, -1, 1, shift);
+-    $self->path_components(@p)
++    $self->path_segments(@p);
+   }
+   $old;
+ }
