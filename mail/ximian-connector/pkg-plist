@@ -14,7 +14,6 @@ libexec/evolution/%%EVO_VERSION%%/evolution-exchange-storage
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 %%DOCSDIR%%/ximian-connector-e2k-action.html
 %%DOCSDIR%%/ximian-connector-e2k-autoconfig.html
