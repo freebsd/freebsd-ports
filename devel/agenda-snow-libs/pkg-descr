@@ -1,0 +1,11 @@
+  All SNOW libraries, which are need to develop for Agenda VR3 PDA.
+  Agenda VR3 uses Linux VR (mipsel-linux gcc target) as OS.
+  So, this libraries was build with gcc-2.97 for mipsel-linux
+  target.
+
+  This package also includes some scripts to work with SNOW libraries. 
+
+  SNOW is new ABI for embedded use. All last releases of Agenda's 
+  romdisk use SNOW. 
+  
+WWW: http://dev.agendacomputing.org/
