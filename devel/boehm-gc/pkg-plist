@@ -40,6 +40,7 @@ share/doc/gc/README.autoconf
 share/doc/gc/README.changes
 share/doc/gc/README.contributors
 share/doc/gc/README.cords
+share/doc/gc/README.darwin
 share/doc/gc/README.dj
 share/doc/gc/README.environment
 share/doc/gc/README.ews4800
