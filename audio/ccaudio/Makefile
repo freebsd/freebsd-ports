@@ -19,19 +19,15 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
-BUILD_DEPENDS=	ccgnu2-config:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.1.0:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes
 
 MAN3=		Audio.3cc AudioCodec.3cc AudioCopy.3cc AudioFile.3cc \
 		AudioSample.3cc AudioTone.3cc CDAudio.3cc DTMFDetect.3cc \
 		LinearSample.3cc
-
-post-install:
-.for m in ${MAN3}
-	@${INSTALL_MAN} ${WRKSRC}/doc/man3/${m} ${MAN3PREFIX}/man/man3
-.endfor
 
 .include <bsd.port.mk>
