@@ -181,6 +181,7 @@
     SUBDIR += pari
     SUBDIR += pari-devel
     SUBDIR += parmetis
+    SUBDIR += pear-Structures_Graph
     SUBDIR += petsc
     SUBDIR += petsc-mpich
     SUBDIR += php4-bcmath
