@@ -7,7 +7,7 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
