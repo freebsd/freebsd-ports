@@ -1,4 +1,4 @@
-# New ports collection makefile for:	files except executables for mule 2.3@19.34
+# New ports collection makefile for:	files except executables for mule
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
@@ -28,20 +28,20 @@ EMACS_VERSION=	19.34
 
 WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 
-.for dir in 	chinese/mule-wnn4 \
+.for dir in 	chinese/mule-freewnn \
 		editors/mule \
-		japanese/mule-canna+sj3+wnn4 \
+		japanese/mule-canna+freewnn+sj3 \
 		japanese/mule-canna+sj3+wnn6 \
 		japanese/mule-canna+sj3 \
-		japanese/mule-canna+wnn4 \
+		japanese/mule-freewnn+canna \
 		japanese/mule-canna+wnn6 \
 		japanese/mule-canna \
-		japanese/mule-sj3+wnn4 \
+		japanese/mule-freewnn+sj3 \
 		japanese/mule-sj3+wnn6 \
 		japanese/mule-sj3 \
-		japanese/mule-wnn4 \
+		japanese/mule-freewnn \
 		japanese/mule-wnn6 \
-		korean/mule-wnn4
+		korean/mule-freewnn
 .if exists(${WRKDIRBASE}/${dir}/work/.install_done)
 WRKDIR=		${WRKDIRBASE}/${dir}/work
 .elif exists(${WRKDIRBASE}/${dir}/work/.build_done)
