@@ -1,0 +1,12 @@
+#!/bin/sh
+cat <<EOF > /tmp/$$StartV4
+#!/bin/sh
+if [ X"\$DISPLAY" = X"" ] ; then
+	echo this script should be started from within X 1>&2
+	exit 1;
+fi
+OBERON=.:PREFIX/lib/ETHOberonV4 PREFIX/lib/ETHOberonV4/oberon &
+EOF
+sed -e "1,\$ s,PREFIX,$1,g" < /tmp/$$StartV4 > $1/bin/StartV4
+rm -f /tmp/$$StartV4
+chmod +x $1/bin/StartV4

@@ -1,0 +1,17 @@
+ Linux-Oberon (TM) V4 Release 0.9 (Linux 1.X version)
+======================================================
+ Linux-Oberon is an Oberon implementation for Linux
+ based machines or FreeBSD using Linux emulation. It
+ covers both the programming language Oberon and the
+ Oberon system closely resembling the original imple-
+ mentation by N. Wirth and J. Gutknecht.
+
+ Linux-Oberon implements the Oberon2 language exten-
+ sions.
+
+ For more information see:
+	http://www.oberon.ethz.ch/
+
+  NUX-Oberon (TM) V4 Release 0.9 (Linux 1.X version)
+======================================================
+                       Copyright 1990-1994 ETH Zurich
