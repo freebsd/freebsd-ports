@@ -5,4 +5,3 @@ installed sample file. Following that you will need to setup your
 database tables, you can use the output of
 %%%PREFIX%%%/sbin/mydns --create-tables
 as a template.
-

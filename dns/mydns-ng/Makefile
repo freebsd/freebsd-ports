@@ -6,56 +6,53 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/iconv
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-confdir=${PREFIX}/etc --without-libiconv-prefix
+CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
+USE_LIBTOOL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 MAN5=		mydns.conf.5
 MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8
 
-DOCS=	AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
+DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_PGSQL)
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=	--without-mysql
-PKGNAMESUFFIX=		-pg
+LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+=--without-mysql
+PKGNAMESUFFIX=	-pg
 .else
+#LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=--without-pgsql
+PKGNAMESUFFIX=	-mysql
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=	--without-pgsql
-PKGNAMESUFFIX=		-mysql
-.endif
-
-.if !defined(NOPORTDOCS)
-USE_PERL5=	yes
 .else
-pre-configure:
-	@${REINPLACE_CMD} -E -e "s|^(all: vars manpages info) html-doc|\1|" \
-		${WRKSRC}/doc/Makefile.in
+LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
 .endif
-
-post-build:
-	cd ${WRKSRC}/doc && ${MAKE} html
+.endif
 
 post-install:
 	@${SED} 's|%%%PREFIX%%%|${PREFIX}|g' < ${FILESDIR}/mydns.sh > ${WRKSRC}/mydns.sh
 	@${INSTALL_SCRIPT} ${WRKSRC}/mydns.sh ${PREFIX}/etc/rc.d/mydns.sh.sample
 	@install-info ${PREFIX}/info/mydns.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}/html ${DOCSDIR}/contrib
+	@${MKDIR} ${DOCSDIR}/contrib
 .for f in ${DOCS}
-	        @${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html/
 	@${INSTALL_DATA} ${WRKSRC}/contrib/admin.php ${DOCSDIR}/contrib/
 	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
 .endif
