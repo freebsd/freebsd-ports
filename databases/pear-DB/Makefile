@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB
-PORTVERSION=	1.6.8
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
@@ -15,6 +15,8 @@ COMMENT=	PEAR Database Abstraction Layer
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_REINPLACE=	yes
 
 FILES=		DB.php DB/common.php DB/dbase.php DB/fbsql.php DB/ibase.php \
 		DB/ifx.php DB/msql.php DB/mssql.php DB/mysql.php DB/mysqli.php \
@@ -32,11 +34,21 @@ TESTS=		db_error.phpt db_parsedsn.phpt db_factory.phpt db_ismanip.phpt \
 		driver/10errormap.phpt driver/11transactions.phpt \
 		driver/13limit.phpt driver/14fetchmode_object.phpt \
 		driver/15quote.phpt driver/16tableinfo.phpt driver/17query.phpt \
-		driver/18get.phpt driver/bug22328.phpt driver/connect.inc \
-		driver/mktable.inc driver/run.cvs driver/setup.inc.cvs \
-		driver/skipif.inc
+		driver/18get.phpt driver/19getlistof.phpt driver/connect.inc \
+		driver/mktable.inc driver/multiconnect.php driver/run.cvs \
+		driver/setup.inc.cvs driver/skipif.inc
 _DOCSDIR=	doc
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+
+post-patch:
+.for file in ${FILES}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
+.endfor
+	@${REINPLACE_CMD} -e "s|@include_path@|${PREFIX}/${LPEARDIR}|g" \
+		${WRKSRC}/tests/include.inc
+	@${REINPLACE_CMD} -e "s|@include_path@|${PREFIX}/${LPEARDIR}|g" \
+		${WRKSRC}/tests/driver/setup.inc.cvs
+
 .include <bsd.port.post.mk>
