@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://k332.feld.cvut.cz/pub/local/lemming/gtkfig/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Figure-drawing tool
 
 PLIST_FILES=	bin/gtkfig

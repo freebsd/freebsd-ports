@@ -20,7 +20,7 @@ DISTNAME=	php-${PORTVERSION}
 PATCH_SITES=	http://www.php.net/distributions/
 PATCHFILES=	mime.c.diff-3.0.gz
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	PHP3 module for Apache
 
 .if !defined(STANDALONE)

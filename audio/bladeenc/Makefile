@@ -12,7 +12,7 @@ MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 EXTRACT_SUFX=	-src-stable.tar.gz
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 encoder
 
 GNU_CONFIGURE=	yes

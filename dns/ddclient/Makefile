@@ -10,7 +10,7 @@ PORTVERSION=	3.6.3
 CATEGORIES=	dns
 MASTER_SITES=	http://members.rogers.com/ddclient/pub/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update dynamic DNS entries
 
 USE_PERL5=	yes
