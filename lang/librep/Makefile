@@ -28,6 +28,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
+INFO=		librep
+
 # Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
 # The reason why it should be in X11BASE is that sawfish (primary user of
 # librep) installs shared object into one of the librep's directories, so
