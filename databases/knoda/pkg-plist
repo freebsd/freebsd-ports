@@ -43,6 +43,7 @@ share/apps/hk_kdeclasses/pics/viewmode.png
 share/apps/knoda/hk_kdeworkspace.rc
 share/apps/knoda/knodaui.rc
 share/apps/knoda/pics/knodalogo.png
+share/config/magic/hk_classes.magic
 share/doc/HTML/en/knoda/common
 share/doc/HTML/en/knoda/index.cache.bz2
 share/doc/HTML/en/knoda/index.docbook
@@ -54,6 +55,8 @@ share/locale/de/LC_MESSAGES/knoda.mo
 share/locale/es/LC_MESSAGES/knoda.mo
 share/locale/fr/LC_MESSAGES/knoda.mo
 share/locale/hu/LC_MESSAGES/knoda.mo
+share/mimelnk/application/x-hk_classes-sqlite2.desktop
+share/mimelnk/application/x-hk_classes-sqlite3.desktop
 share/services/hk_kdedbdesignerpart.desktop
 share/services/hk_kdeformpart.desktop
 share/services/hk_kdegridpart.desktop
