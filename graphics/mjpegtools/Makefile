@@ -7,6 +7,7 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -14,13 +15,13 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	aviplay.6:${PORTSDIR}/graphics/avifile \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GLIB=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-aviplay
 CONFIGURE_ENV=  CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -48,6 +49,12 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+PLIST_SUB+=	DIVX='@comment '
+.else
+PLIST_SUB+=	DIVX=''
+.endif
 
 # pre-detection
 # LIBDV
