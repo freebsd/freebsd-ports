@@ -1,0 +1,11 @@
+--- sysinfo.c.orig	Sat Oct 10 13:43:22 1998
++++ sysinfo.c	Sat Oct 10 13:43:40 1998
+@@ -364,7 +364,7 @@
+ #if (__FreeBSD_version >= 300003) /* ?? */
+ 	mib[1] = MNT_EXPORTED;
+ #else
+-	mib[1] = MNT_NFS;
++	mib[1] = MOUNT_NFS;
+ #endif
+ 	mib[2] = NFS_NFSSTATS;
+ 	if (sysctl( mib, 3, &nfsstats, &size, NULL, 0) < 0)
