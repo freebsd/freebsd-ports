@@ -104,7 +104,10 @@ pre-fetch:
 .endif
 
 .if ${OSVERSION} < 410000
-IGNORE=		"Systems prior to 4.1 are not supported"
+IGNORE=		Systems prior to 4.1 are not supported
+.endif
+.if ${OSVERSION} >= 500000
+IGNORE=		Only works with FreeBSD 4.x
 .endif
 
 .include <bsd.port.post.mk>
