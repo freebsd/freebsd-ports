@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:	pTeX-common
 # Date created:		05 Oct 1997
 # Whom:			max
@@ -8,13 +7,13 @@
 
 PORTNAME=	ptex
 PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-common
-DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF}
-EXTRACT_ONLY=	${TETEX_SRC}
+DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH}
+EXTRACT_ONLY=	${TETEX_SRC} ${DVIPSK_JPATCH}
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -59,19 +58,17 @@ MAN1=				access.1 allcm.1 allneeded.1 amstex.1 \
 TETEX_SRC=	teTeX-src-1.0.7.tar.gz
 TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
 PTEX_TEXMF=	ptex-texmf-1.10.tar.gz
+DVIPSK_JPATCH=	dvipsk-jpatch-p1.5e.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
 
-pre-configure:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "It will be ok if configure will complain about a missing texmf tree!"
-	@${ECHO_MSG}
-
 pre-install:
 	@${MKDIR} ${TEXMF_TREE}
-	@tar zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
-	@tar zxf ${_DISTDIR}/${PTEX_TEXMF} -C ${TEXMF_TREE}
+	@${TAR} --exclude 'dvips/base/*' -zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
+	@${TAR} -zxf ${_DISTDIR}/${PTEX_TEXMF} -C ${TEXMF_TREE}
+	@${PATCH} -d ${TEXMF_TREE}/dvips/pstricks -E --quiet < ${WRKDIR}/PSTricks.patch
+	@${RM} ${TEXMF_TREE}/dvips/pstricks/pst-text.pro.orig
 # Following two commands are intended to be temporary until 
 # the original distribution is updated.
 	${MV} -f ${PREFIX}/share/texmf/tex/latex/base/latex.ltx ${WRKDIR}
