@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.238 1999/04/02 01:07:56 taoka Exp $
+# $Id: Makefile,v 1.239 1999/04/03 01:29:19 steve Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -54,6 +54,7 @@
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gated
+    SUBDIR += gftp
     SUBDIR += ggsd
     SUBDIR += gnome-icu
     SUBDIR += gnomenetwork
