@@ -1,0 +1,13 @@
+include/torrent/common.h
+include/torrent/download.h
+include/torrent/exceptions.h
+include/torrent/entry.h
+include/torrent/http.h
+include/torrent/peer.h
+include/torrent/torrent.h
+lib/libtorrent.a
+lib/libtorrent.so
+lib/libtorrent.so.2
+libexec/pkgconfig/libtorrent.pc
+@dirrm include/torrent
+@unexec rmdir %D/libexec/pkgconfig 2> /dev/null || true
