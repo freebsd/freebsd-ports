@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xtorshun.org/gmime/sources/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
+USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 USE_GTK=	YES
 USE_LIBTOOL=	YES

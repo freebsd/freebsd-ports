@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Apr  7 23:28:52 2001
-+++ Makefile.in	Sat Apr  7 23:28:23 2001
+--- Makefile.in.orig	Wed Mar 28 21:57:59 2001
++++ Makefile.in	Sun Apr  8 01:01:19 2001
 @@ -92,7 +92,7 @@
  glib_cflags = @glib_cflags@
  glib_libs = @glib_libs@
@@ -9,3 +9,12 @@
  
  INCLUDES = -I@srcdir@ $(VERSION_FLAGS) @GLIB_CFLAGS@ -DG_LOG_DOMAIN=\"gmime\"
  
+@@ -126,7 +126,7 @@
+ test_parser_DEPENDENCIES = $(DEPS)
+ test_parser_LDADD = $(LDADDS)
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gmimeConf.sh
+ 
+ CLEANFILES = gmimeConf.sh
