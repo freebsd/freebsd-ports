@@ -1,6 +1,6 @@
---- configure.in~	Sat May  6 01:46:26 2000
-+++ configure.in	Wed May 17 11:09:08 2000
-@@ -1286,6 +1286,26 @@
+--- configure.in.orig	Tue May  7 08:12:10 2002
++++ configure.in	Mon Jun 24 09:38:33 2002
+@@ -1772,6 +1772,26 @@
  AC_CACHE_CHECK(type of rtentry structure,ac_cv_RTENTRY_TYPE,
  [
  
@@ -26,4 +26,57 @@
 +
  dnl 4.4 compat
  AC_TRY_COMPILE([
- #include <sys/types.h>
+ #ifdef HAVE_SYS_PARAM_H
+@@ -2117,29 +2137,29 @@
+ #endif
+ ],swdevt,sw_nblksenabled)
+ 
+-AC_CHECK_STRUCT_FOR([
+-#ifdef HAVE_SYS_STAT_H
+-#include <sys/stat.h>
+-#endif
+-#if HAVE_SYS_STATFS_H
+-#include <sys/statfs.h>
+-#endif
+-#if HAVE_SYS_STATVFS_H
+-#include <sys/statvfs.h>
+-#endif
+-],statvfs,f_frsize)
+-
+-AC_CHECK_STRUCT_FOR([
+-#ifdef HAVE_SYS_STAT_H
+-#include <sys/stat.h>
+-#endif
+-#if HAVE_SYS_STATFS_H
+-#include <sys/statfs.h>
+-#endif
+-#if HAVE_SYS_STATVFS_H
+-#include <sys/statvfs.h>
+-#endif
+-],statvfs,f_files)
++dnl AC_CHECK_STRUCT_FOR([
++dnl #ifdef HAVE_SYS_STAT_H
++dnl #include <sys/stat.h>
++dnl #endif
++dnl #if HAVE_SYS_STATFS_H
++dnl #include <sys/statfs.h>
++dnl #endif
++dnl #if HAVE_SYS_STATVFS_H
++dnl #include <sys/statvfs.h>
++dnl #endif
++dnl ],statvfs,f_frsize)
++
++dnl AC_CHECK_STRUCT_FOR([
++dnl #ifdef HAVE_SYS_STAT_H
++dnl #include <sys/stat.h>
++dnl #endif
++dnl #if HAVE_SYS_STATFS_H
++dnl #include <sys/statfs.h>
++dnl #endif
++dnl #if HAVE_SYS_STATVFS_H
++dnl #include <sys/statvfs.h>
++dnl #endif
++dnl ],statvfs,f_files)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #if HAVE_NLIST_H
