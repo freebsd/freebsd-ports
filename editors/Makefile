@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1995/10/02 16:17:08 erich Exp $
+# $Id: Makefile,v 1.22 1995/10/03 11:45:06 asami Exp $
 #
 
     SUBDIR += axe
@@ -13,5 +13,7 @@
     SUBDIR += xcoral
     SUBDIR += xemacs
     SUBDIR += xvile
+
+    NOBUILD += ashe		# requires motif
 
 .include <bsd.port.subdir.mk>
