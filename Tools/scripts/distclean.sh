@@ -7,14 +7,14 @@
 #
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42, (c) Poul-Henning Kamp):
-# Maxim Sobolev <sobomax@altavista.net wrote this file.  As long as you retain
+# Maxim Sobolev <sobomax@FreeBSD.org> wrote this file.  As long as you retain
 # this notice you can do whatever you want with this stuff. If we meet some
 # day, and you think this stuff is worth it, you can buy me a beer in return.
 #
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.3 2000-06-06 10:05:06 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.4 2000-08-02 07:13:11 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
