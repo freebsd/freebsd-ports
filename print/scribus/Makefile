@@ -11,7 +11,7 @@ PORTVERSION=	0.5
 CATEGORIES=	print
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
