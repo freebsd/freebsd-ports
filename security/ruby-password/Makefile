@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	password
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,13 +21,19 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_SHEBANG_FILES=	example/*
 
 CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/pw_dict.pwd"
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	CHANGES README doc/password.html
+MAN1=		pwgen.1
+MANCOMPRESSED=	no
+
+DOCS_EN=	CHANGES README
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/example/pwgen ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/pwgen.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/*.rb ${RUBY_MODEXAMPLESDIR}/
