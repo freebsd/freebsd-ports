@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.51
+PORTVERSION=	0.9.60
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +18,10 @@ CONFIGURE_ARGS+=	--program-transform-name=s,^,,
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
+
+pre-configure:
+.for i in config.h.in Makefile.in configure
+	${TOUCH} ${WRKSRC}/${i}
+.endfor
 
 .include <bsd.port.mk>

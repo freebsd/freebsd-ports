@@ -13,7 +13,7 @@ share/doc/HTML/en/kdiff3/dirbrowser.png
 share/doc/HTML/en/kdiff3/iteminfo.png
 share/doc/HTML/en/kdiff3/new.png
 share/doc/HTML/en/kdiff3/merge_current.png
-share/applnk/Applications/kdiff3.desktop
+share/applnk/Utilities/kdiff3.desktop
 share/icons/locolor/32x32/apps/kdiff3.png
 share/icons/locolor/16x16/apps/kdiff3.png
 share/icons/hicolor/32x32/apps/kdiff3.png
