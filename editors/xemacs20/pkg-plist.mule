@@ -11,7 +11,7 @@ bin/xemacs-%%XEMACS_VER%%
 @exec ln -s %D/%F %B/xemacs
 @unexec rm %B/xemacs
 etc/rc.d/xemacs20.sh
-@exec mkdir -p /var/run/xemacs/lock ; chmod 1777 /var/run/xemacs/lock
+@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 @exec mkdir -p %D/share/emacs/site-lisp ; chmod 755 %D/share/emacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/BABYL
