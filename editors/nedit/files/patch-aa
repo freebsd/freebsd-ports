@@ -1,7 +1,7 @@
-*** Makefile.orig	Sun Apr  7 17:30:29 1996
---- Makefile	Sun Apr  7 20:07:04 1996
+*** Makefile.orig	Wed Oct 22 15:42:20 1997
+--- Makefile	Sat Nov  8 23:39:51 1997
 ***************
-*** 2,8 ****
+*** 2,15 ****
   # Makefile for NEdit text editor
   #
   # targets: sgi_nedit, hp_nedit, ultrix_nedit, ibm_nedit, sunos_nedit,
@@ -9,7 +9,14 @@
   #
   # Builds an intermediate library in util directory, then builds
   # the nedit executable in the source directory
---- 2,8 ----
+  #
+  
+! all:
+! 	@echo "Please specify target"
+  
+  sgi_nedit:
+  	(cd util; $(MAKE) -f Makefile.sgi libNUtil.a)
+--- 2,15 ----
   # Makefile for NEdit text editor
   #
   # targets: sgi_nedit, hp_nedit, ultrix_nedit, ibm_nedit, sunos_nedit,
@@ -17,24 +24,32 @@
   #
   # Builds an intermediate library in util directory, then builds
   # the nedit executable in the source directory
+  #
+  
+! all: freebsd_nedit
+! 
+  
+  sgi_nedit:
+  	(cd util; $(MAKE) -f Makefile.sgi libNUtil.a)
 ***************
-*** 39,41 ****
---- 39,53 ----
-  linux_nedit:
-  	(cd util; make -f Makefile.linux libNUtil.a)
-  	(cd source; make -f Makefile.linux nedit nc)
+*** 39,44 ****
+--- 39,54 ----
+  	(cd util; $(MAKE) -f Makefile.dec libNUtil.a)
+  	(cd source; $(MAKE) -f Makefile.dec nedit nc)
+  
 + 
 + freebsd_nedit:
 + 	(cd util; make -f Makefile.freebsd libNUtil.a)
 + 	(cd source; make -f Makefile.freebsd nedit nc)
 + 	
-+ all: freebsd_nedit
-+ 
 + install::
 + 	(cd source; make -f Makefile.freebsd install)
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nedit.man ${PREFIX}/man/man1/nedit.1
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nc.man ${PREFIX}/man/man1/nc.1
 + 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit.ad
+  linux_nedit:
+  	(cd util; $(MAKE) -f Makefile.linux libNUtil.a)
+  	(cd source; $(MAKE) -f Makefile.linux nedit nc)
 *** util/Makefile.freebsd.orig	Sun Apr  7 18:09:19 1996
 --- util/Makefile.freebsd	Sun Apr  7 17:32:32 1996
 ***************
@@ -95,41 +110,21 @@
   help.o: help.c
   	$(CC) $(CFLAGS) $(BIGGER_STRINGS) -c help.c -o $@
   
-*** source/preferences.c.orig	Mon Apr  8 10:35:00 1996
---- source/preferences.c	Mon Apr  8 10:35:22 1996
+*** source/preferences.c.orig	Wed Oct 22 15:42:14 1997
+--- source/preferences.c	Thu Oct 30 17:22:14 1997
 ***************
-*** 104,110 ****
-  #else
-      {"shellCommands", "ShellCommands", PREF_STRING, "spell:Alt+B:s:ED:\n\
-      	(cat;echo \"\") | spell\nwc::w:ED:\nwc\nsort::o:EX:\nsort\n\
-! 	number lines::n:AW:\nnl -ba\nmake:Alt+Z:m:W:\nmake\n\
+*** 206,211 ****
+--- 206,218 ----
+  	sort::o:EX:\nsort\nnumber lines::n:AW:\nnl -ba\nmake:Alt+Z:m:W:\nmake\n\
   	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
-      	NULL, (void *)MAX_SHELL_CMDS_LEN, True},
-  #endif /* linux */
---- 104,110 ----
+      	&TempStringPrefs.shellCmds, NULL, True},
++ #elif __FreeBSD__
++     {"shellCommands", "ShellCommands", PREF_ALLOC_STRING, "spell:Alt+B:s:EX:\n\
++ 	cat>spellTmp; xterm -e ispell -x spellTmp; cat spellTmp; rm spellTmp\n\
++ 	wc::w:ED:\nset wc=`wc`; echo $wc[1] \"words,\" $wc[2] \"lines,\" $wc[3] \"characters\"\n\
++ 	sort::o:EX:\nsort\nnumber lines::n:AW:\npr -tn\nmake:Alt+Z:m:W:\nmake\n\
++ 	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
++     	&TempStringPrefs.shellCmds, NULL, True},
   #else
-      {"shellCommands", "ShellCommands", PREF_STRING, "spell:Alt+B:s:ED:\n\
-      	(cat;echo \"\") | spell\nwc::w:ED:\nwc\nsort::o:EX:\nsort\n\
-! 	number lines::n:AW:\npr -tn\nmake:Alt+Z:m:W:\nmake\n\
-  	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
-      	NULL, (void *)MAX_SHELL_CMDS_LEN, True},
-  #endif /* linux */
-*** source/textDisp.c.orig	Sun Apr  7 17:35:04 1996
---- source/textDisp.c	Sun Apr  7 17:35:44 1996
-***************
-*** 1556,1562 ****
-         line number, and the number of visible lines respectively.  The scroll
-         bar maximum value is chosen to generally represent the size of the whole
-         buffer, with minor adjustments to keep the scroll bar widget happy */
-!     sliderSize = textD->nVisibleLines;
-      sliderValue = textD->topLineNum;
-      sliderMax = max(textD->nBufferLines + 2, sliderSize + sliderValue);
-      XtVaSetValues(textD->vScrollBar,
---- 1556,1562 ----
-         line number, and the number of visible lines respectively.  The scroll
-         bar maximum value is chosen to generally represent the size of the whole
-         buffer, with minor adjustments to keep the scroll bar widget happy */
-!     sliderSize = max(textD->nVisibleLines, 1);
-      sliderValue = textD->topLineNum;
-      sliderMax = max(textD->nBufferLines + 2, sliderSize + sliderValue);
-      XtVaSetValues(textD->vScrollBar,
+      {"shellCommands", "ShellCommands", PREF_ALLOC_STRING, "spell:Alt+B:s:ED:\n\
+      	(cat;echo \"\") | spell\nwc::w:ED:\nset wc=`wc`; echo $wc[1] \"lines,\" $wc[2] \"words,\" $wc[3] \"characters\"\n\
