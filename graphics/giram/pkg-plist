@@ -1,0 +1,30 @@
+bin/povfront
+bin/giram
+Giram/plug-ins/Rotate
+Giram/plug-ins/Spheres
+Giram/plug-ins/Box
+Giram/docs/Tutorial
+Giram/SampleScenes/Cone.pov
+Giram/SampleScenes/Disc.pov
+Giram/SampleScenes/Giram.pov
+Giram/SampleScenes/IntSphereBox1.pov
+Giram/SampleScenes/IntSphereBox2.pov
+Giram/SampleScenes/IntSphereBox3.pov
+Giram/SampleScenes/IntSpherePlane1.pov
+Giram/SampleScenes/IntSpherePlane2.pov
+Giram/SampleScenes/IntSpherePlane3.pov
+Giram/SampleScenes/Triangle.pov
+Giram/SampleScenes/basicvue.pov
+Giram/SampleScenes/basicvue2.pov
+Giram/SampleScenes/basicvue3.pov
+Giram/SampleScenes/basicvue4.pov
+Giram/SampleScenes/box.pov
+Giram/SampleScenes/colors.inc
+Giram/SampleScenes/superel1.pov
+Giram/SampleScenes/superel2.pov
+Giram/SampleScenes/superel3.pov
+Giram/SampleScenes/torus.pov
+@dirrm Giram/plug-ins
+@dirrm Giram/SampleScenes
+@dirrm Giram/docs
+@dirrm Giram
