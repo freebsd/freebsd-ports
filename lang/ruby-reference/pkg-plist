@@ -16,6 +16,7 @@
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_hash.html
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_integer.html
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_io.html
+%%RUBY_DOCDIR%%/ruby-reference/ref_c_matchdata.html
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_matchingdata.html
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_method.html
 %%RUBY_DOCDIR%%/ruby-reference/ref_c_module.html

@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby-reference
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://www.pragmaticprogrammer.com/ruby/downloads/files/
 DISTNAME=	rubyref_html_${PORTVERSION}
