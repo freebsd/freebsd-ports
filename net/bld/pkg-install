@@ -1,0 +1,112 @@
+#!/bin/sh
+
+if [ $2 != "POST-INSTALL" ]
+then
+	exit
+fi
+
+varrun=/var/run/bld
+user=bld
+group=bld
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+make_account() {
+    local u g gcos homeopt home
+
+    u=$1
+    g=$2
+    gcos=$3
+    homeopt=${4:+"-d $4"}
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	pw groupadd ${g} || exit
+	echo "Done."
+    fi
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	pw useradd ${u} -g ${g} -h - ${homeopt} \
+		-s /nonexistent -c "${gcos}" || exit
+	echo "Done."
+    fi
+
+    if [ x"$homeopt" = x ]; then
+	eval home=~${u}
+	if [ ! -d "${home}" ]; then
+		mkdir -p ${home}/.cvsup || exit
+		touch ${home}/.cvsup/auth || exit
+		chown -R ${u}:${g} ${home} || exit
+		chmod -R go= ${home} || exit
+	fi
+    fi
+}
+
+if [ ! -d "${varrun}" ]
+then
+	mkdir ${varrun} || exit
+fi
+
+echo ""
+make_account ${user} ${group} "Blacklist Daemon" "/nonexistent"
+chmod 700 ${varrun}
+chown bld ${varrun}
+
+if grep -q "^[^#]*${facility}.*/var/log/bld.log" /etc/syslog.conf; then
+	echo -n "It looks like you already have some logging set up, so I "
+	echo "will use it."
+else
+	echo "Setting up server logging in \"/etc/syslog.conf\"."
+	cat <<EOF >>/etc/syslog.conf
+!bld
+*.*						/var/log/bld.log
+EOF
+
+	if [ ! -f /var/log/bld.log ]; then
+		echo "Creating \"/var/log/bld.log\"."
+		cp /dev/null /var/log/bld.log
+	fi
+
+	if [ -f /var/run/syslog.pid ]; then
+		echo "Giving syslogd a kick in the pants."
+		kill -HUP $(cat /var/run/syslog.pid)
+	fi
+
+	echo "Adding bld log entry to \"/etc/newsyslog.conf\"."
+	cat <<EOF >>/etc/newsyslog.conf
+/var/log/bld.log			664  7    *    24    Z
+EOF
+	echo "Done."
+fi

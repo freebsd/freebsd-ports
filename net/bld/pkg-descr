@@ -1,0 +1,13 @@
+BLD stands for "black list daemon" and is intended to build blacklists
+using simple rules based on a maximum number of submissions of the same
+IP address during a minimum time interval.  BLD was primarily designed to
+fight against dictionnary-based spams (by making the MTA report to BLD
+any host that tries to send a mail to an unknown user) but can be used  
+by any application that needs a blacklist based on connection rate
+limits.
+
+See homepage for more infos:
+
+WWW: http://www.online.redhate.org/bld/
+
+Olivier Beyssac <obld@r14.freenix.org>

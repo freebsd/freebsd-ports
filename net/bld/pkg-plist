@@ -1,0 +1,7 @@
+sbin/bld
+sbin/bldsubmit
+sbin/bldread
+sbin/bldquery
+etc/rc.d/bld.sh
+%%PORTDOCS%%@unexec %D/%%DOCSDIR%% 2>/dev/null || true
+@unexec rmdir /var/run/bld || (echo ; echo "Remove dumps from /var/run/bld/* if you don't want to keep them" ; echo) && true
