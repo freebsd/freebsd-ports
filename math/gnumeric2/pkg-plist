@@ -275,6 +275,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/configuration-toolbars.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-commentNlink.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-delete.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-entry-advanced.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-entry-external.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-entry.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-format.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-generate.xml
@@ -284,7 +285,6 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-move-copy.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-overview.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-selections.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/data-types.xml
-share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/datasource.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/extending-code.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/extending-functions.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/extending-overview.xml
@@ -692,7 +692,6 @@ share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/ga/LC_MESSAGES/gnumeric.mo
 share/locale/gl/LC_MESSAGES/gnumeric.mo
 share/locale/he/LC_MESSAGES/gnumeric.mo
-share/locale/hi/LC_MESSAGES/gnumeric.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
