@@ -88,6 +88,7 @@
     SUBDIR += gracula
     SUBDIR += graphviz
     SUBDIR += gridpix
+    SUBDIR += gsculpt
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
