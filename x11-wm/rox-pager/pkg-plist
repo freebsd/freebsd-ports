@@ -1,0 +1,13 @@
+apps/Pager/%%BINARIES%%/Pager
+apps/Pager/.DirIcon
+apps/Pager/AppInfo.xml
+apps/Pager/AppRun
+apps/Pager/AppletRun
+apps/Pager/Help/COPYING
+apps/Pager/Help/Changes
+apps/Pager/Help/README
+apps/Pager/Options.xml
+@dirrm apps/Pager/Help
+@dirrm apps/Pager/%%BINARIES%%
+@dirrm apps/Pager
+@unexec rmdir %D/apps 2>/dev/null || true

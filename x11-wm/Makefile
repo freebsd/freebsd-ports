@@ -80,6 +80,7 @@
     SUBDIR += qvwm
     SUBDIR += ratmenu
     SUBDIR += ratpoison
+    SUBDIR += rox-pager
     SUBDIR += sapphire
     SUBDIR += sapphire-themes
     SUBDIR += sawfish2
