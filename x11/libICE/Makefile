@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libICE
-PORTVERSION=	6.3.1.p2
-PORTREVISION=	1
+PORTVERSION=	6.3.2
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Inter Client Exchange library for X11
@@ -28,7 +27,6 @@ PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-WRKSRC=		${WRKDIR}/${PORTNAME}-6.3.1
 
 INSTALLS_SHLIB=	yes
 
