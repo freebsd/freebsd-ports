@@ -1,0 +1,9 @@
+SGML DTDs for HTML level 0, 1, 2, 3.2, and the 4.0 draft as
+defined by the World Wide Web Consortium (W3C).  See
+http://www.w3.org/ for more information.
+
+These DTDs are useful for validating or processing world wide web
+pages with SGML tools such as those in the sp or jade ports.
+
+John Fieber
+jfieber@FreeBSD.org
