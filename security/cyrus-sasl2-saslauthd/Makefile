@@ -75,7 +75,6 @@ CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME}
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
-GSSAPI=	"@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -87,7 +86,6 @@ LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
 CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
-EBONES=	"@comment "
 .endif
 .elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
 CONFIGURE_ARGS+=--enable-krb4
@@ -96,7 +94,6 @@ LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
 CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
-EBONES=	"@comment "
 .endif
 
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
