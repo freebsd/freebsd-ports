@@ -1,14 +1,15 @@
 --- Makefile.orig	Thu Feb  7 22:14:41 2002
-+++ Makefile	Wed Apr 28 17:47:59 2004
-@@ -63,6 +64,7 @@
- 	    -e 's/^        /	/' \
++++ Makefile	Mon Nov 29 23:15:59 2004
+@@ -60,7 +60,7 @@
+ 	       -DCDEBUG="$(CFLAGS)" -Iconf MF.c | \
+ 	sed -e '1,/MAKE WILL CUT HERE/d' \
+ 	    -e '/^#/d' \
+-	    -e 's/^        /	/' \
++	    -e 's/^ /	/' \
  	    -e '/^[ \f	]$$/d' \
  	    -e '/^[ \/]*[*]/d' | \
-+	    unexpand | \
  	sed -n -e '/^..*$$/p' > ymakefile
- 	rm -f MF.c
- 
-@@ -97,3 +99,5 @@
+@@ -97,3 +97,5 @@
  man/nn.1.D: man/nn.1
  	sh SPLITNN1
  
