@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.131 1997/12/01 23:19:38 jseger Exp $
+# $Id: Makefile,v 1.132 1997/12/27 04:10:19 asami Exp $
 #
 
     SUBDIR += archie
@@ -31,6 +31,7 @@
     SUBDIR += irc
     SUBDIR += ircII
     SUBDIR += ircii-epic
+    SUBDIR += ircd-hybrid-5
     SUBDIR += isc-dhcp
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
