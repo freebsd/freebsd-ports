@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.69 1999/03/13 17:11:03 billf Exp $
+# $Id: Makefile,v 1.70 1999/03/13 17:57:44 billf Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -35,52 +35,54 @@ MAINTAINER=	dirk@FreeBSD.ORG
 
 Y2K=		http://www.php.net/y2k.php3
 
-VERSION_APACHE=	1.3.4
+VERSION_APACHE=	1.3.6
 VERSION_PHP3=	3.0.7
 
-#
-# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
-#
-
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= \
-		 --prefix=${PREFIX} \
-		 --with-layout=GNU \
-		 --sysconfdir=${PREFIX}/etc/apache \
-		 --includedir=${PREFIX}/include/apache \
-		 --logfiledir=/var/log \
-		 --runtimedir=/var/run \
-		 --datadir=${PREFIX}/www \
-		 --proxycachedir=${PREFIX}/www/proxy \
-		 --libexecdir=${PREFIX}/libexec/apache \
-		 --without-confadjust \
-		 --enable-shared=remain \
-		 --enable-module=most \
-		 --enable-module=auth_db \
-		 --disable-module=auth_dbm \
-		 --activate-module=src/modules/php3/libphp3.a
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--target=apache \
+		--with-layout=GNU \
+		--with-perl=${PERL} \
+		--bindir=${PREFIX}/bin \
+		--sbindir=${PREFIX}/sbin \
+		--libexecdir=${PREFIX}/libexec/apache \
+		--mandir=${PREFIX}/man \
+		--sysconfdir=${PREFIX}/etc/apache \
+		--datadir=${PREFIX}/share/apache \
+		--includedir=${PREFIX}/include/apache \
+		--localstatedir=/var \
+		--runtimedir=/var/run \
+		--logfiledir=/var/log \
+		--proxycachedir=/var/spool/apache \
+		--without-confadjust \
+		--enable-module=most \
+		--enable-module=auth_db \
+		--disable-module=auth_dbm \
+		--enable-shared=max \
+		--activate-module=src/modules/php3/libphp3.a
 
-# Currently perl version don't matter
-#                --with-perl=${PERL5}
-
-OPTIM=-DHARD_SERVER_LIMIT=512 \
--DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
--DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+OPTIM=		-DHARD_SERVER_LIMIT=512 \
+		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer
+OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
+CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
+		-fexpensive-optimizations -ffast-math
 .endif
 
-CONFIGURE_ENV= OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
+CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
 
-MAN1=	ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=	apxs.8 httpd.8 logresolve.8 rotatelogs.8
+INSTALL_TARGET=	install-quiet
+
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 apache.8 apachectl.8 apxs.8 logresolve.8 rotatelogs.8
 
 APACHEDOCDIR=	${PREFIX}/share/doc/apache
 PHP3DOCDIR=	${PREFIX}/share/doc/php3
 
 PHP3_CONF_ARGS=	--prefix=${PREFIX} \
+		${CONFIGURE_TARGET} \
 		--with-system-regex \
 		--with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/lib \
@@ -98,7 +100,6 @@ pre-configure:
 	&& cd ${WRKDIR}/php-${VERSION_PHP3} \
 	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP3}" \
 	&& CC="${CC}" \
-	   ac_cv_path_CC="${CC}" \
 	   CFLAGS="${CFLAGS}" \
 	   CPPFLAGS="-I${PREFIX}/include -I${PREFIX}/include/gd" \
 	   LDFLAGS=-L${PREFIX}/lib \
@@ -117,22 +118,13 @@ post-install:
 	fi
 	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/php3.ini-dist ${PREFIX}/lib
 .for i in php2 php3 phpi phps
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/extra/icons/$i.gif ${PREFIX}/www/icons
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/extra/icons/$i.gif ${PREFIX}/share/apache/icons
 .endfor
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${APACHEDOCDIR} ${PHP3DOCDIR}
 .for i in README LICENSE ABOUT_APACHE
 	${INSTALL_DATA} ${WRKSRC}/$i ${APACHEDOCDIR}
-.endfor
-	(cd ${WRKSRC}/htdocs && tar cf - *) |\
-	(cd ${APACHEDOCDIR} && tar xf -); \
-	find ${APACHEDOCDIR} -type d -exec chmod a+rx {} \; ; \
-	find ${APACHEDOCDIR} -type f -exec chmod a+r {} \;
-.for i in apache_pb.gif index.html manual
-	if [ ! -e ${PREFIX}/www/data/$i ] ; then \
-		${LN} -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i; \
-	fi
 .endfor
 .for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
 	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/$i ${PHP3DOCDIR}
