@@ -1,14 +1,16 @@
 # New ports collection makefile for:   gtop
-# Version required:    0.28.1
+# Version required:    0.99.0
 # Date created:        28 September 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/10 13:44:01 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/10/12 06:13:47 vanilla Exp $
 #
 
-DISTNAME=	gtop-0.28.1
+DISTNAME=	gtop-0.99.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.home-of-linux.org/pub/gtop/0.28.1/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/
+#		ftp://ftp.home-of-linux.org/pub/gtop/0.28.1/
 
 MAINTAINER=	Nakai@technologist.com
 
@@ -22,7 +24,8 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 		-I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:
