@@ -1,14 +1,11 @@
-bin/add_file_priv
-bin/add_func_table
-bin/add_long_password
 bin/comp_err
 bin/isamchk
 bin/isamlog
-bin/make_binary_distribution
 bin/msql2mysql
 bin/mysql
+bin/mysql_fix_privilege_tables
 bin/mysql_install_db
-bin/mysql_setpermisson
+bin/mysql_setpermission
 bin/mysql_zap
 bin/mysqlaccess
 bin/mysqladmin
@@ -40,7 +37,7 @@ lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.4.1
+lib/mysql/libmysqlclient.so.5
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
@@ -66,8 +63,11 @@ share/mysql/hungarian/errmsg.sys
 share/mysql/hungarian/errmsg.txt
 share/mysql/italian/errmsg.sys
 share/mysql/italian/errmsg.txt
+share/mysql/japanese/errmsg.sys
+share/mysql/japanese/errmsg.txt
+share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.10-beta.spec
+share/mysql/mysql-3.22.11-beta.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
@@ -80,6 +80,8 @@ share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
 share/mysql/russian/errmsg.sys
 share/mysql/russian/errmsg.txt
+share/mysql/slovak/errmsg.sys
+share/mysql/slovak/errmsg.txt
 share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
 share/mysql/swedish/errmsg.sys
@@ -94,12 +96,14 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/german
 @dirrm share/mysql/hungarian
 @dirrm share/mysql/italian
+@dirrm share/mysql/japanese
 @dirrm share/mysql/mysql
 @dirrm share/mysql/norwegian
 @dirrm share/mysql/norwegian-ny
 @dirrm share/mysql/polish
 @dirrm share/mysql/portuguese
 @dirrm share/mysql/russian
+@dirrm share/mysql/slovak
 @dirrm share/mysql/spanish
 @dirrm share/mysql/swedish
 @dirrm share/mysql
