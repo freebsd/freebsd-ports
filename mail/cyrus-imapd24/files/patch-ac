@@ -1,13 +1,22 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Wed Dec 12 15:50:29 2001
-+++ configure	Wed Dec 12 15:51:15 2001
-@@ -5542,7 +5542,7 @@
+--- configure.orig	Thu Jan 30 16:54:20 2003
++++ configure	Thu Jan 30 17:07:29 2003
+@@ -1988,7 +1988,7 @@
+ 
+ #Try to detect the name of the DB4/DB3 library
+ dbfound="no"
+-for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
++for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+   do
+     echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
+ echo "configure:1995: checking for db_create in -l$dbname" >&5
+@@ -6171,7 +6171,7 @@
  #define HAVE_UCDSNMP 1
  EOF
  
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
 +    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm"
      echo $ac_n "checking for rpmdbOpen in -lrpm""... $ac_c" 1>&6
- echo "configure:5548: checking for rpmdbOpen in -lrpm" >&5
+ echo "configure:6177: checking for rpmdbOpen in -lrpm" >&5
  ac_lib_var=`echo rpm'_'rpmdbOpen | sed 'y%./+-%__p_%'`
