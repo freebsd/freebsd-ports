@@ -150,6 +150,7 @@
     SUBDIR += mktool
     SUBDIR += monitord
     SUBDIR += msyslog
+    SUBDIR += multitail
     SUBDIR += muse
     SUBDIR += ndir
     SUBDIR += no-login
