@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.25.14
-PORTREVISION=	5
+PORTVERSION=	4.26.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
-DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}
+DISTNAME=	MailScanner-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
@@ -25,7 +24,6 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
-
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
@@ -36,6 +34,8 @@ CONFLICTS=	MailScanner-devel-*
 
 USE_PERL5=	yes
 
+PATCHLEVEL=	1
+WRKSRC=		${WRKDIR}/MailScanner-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		MailScanner.8

@@ -75,6 +75,29 @@ libexec/MailScanner/sophos-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
 libexec/MailScanner/update_virus_scanners
+%%DATADIR%%/reports/cat/deleted.filename.message.txt.sample
+%%DATADIR%%/reports/cat/deleted.virus.message.txt.sample
+%%DATADIR%%/reports/cat/disinfected.report.txt.sample
+%%DATADIR%%/reports/cat/inline.sig.html.sample
+%%DATADIR%%/reports/cat/inline.sig.txt.sample
+%%DATADIR%%/reports/cat/inline.spam.warning.txt.sample
+%%DATADIR%%/reports/cat/inline.warning.html.sample
+%%DATADIR%%/reports/cat/inline.warning.txt.sample
+%%DATADIR%%/reports/cat/languages.conf.sample
+%%DATADIR%%/reports/cat/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/cat/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/cat/sender.error.report.txt.sample
+%%DATADIR%%/reports/cat/sender.filename.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.rbl.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.sa.report.txt.sample
+%%DATADIR%%/reports/cat/sender.virus.report.txt.sample
+%%DATADIR%%/reports/cat/stored.filename.message.txt.sample
+%%DATADIR%%/reports/cat/stored.virus.message.txt.sample
+%%DATADIR%%/reports/cat/deleted.content.message.txt.sample
+%%DATADIR%%/reports/cat/sender.content.report.txt.sample
+%%DATADIR%%/reports/cat/sender.mcp.report.txt.sample
+%%DATADIR%%/reports/cat/stored.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
@@ -85,6 +108,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/cy+en/inline.warning.html.sample
 %%DATADIR%%/reports/cy+en/inline.warning.txt.sample
 %%DATADIR%%/reports/cy+en/languages.conf.sample
+%%DATADIR%%/reports/cy+en/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/cy+en/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.content.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.error.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.filename.report.txt.sample
@@ -106,6 +131,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/cz/inline.warning.html.sample
 %%DATADIR%%/reports/cz/inline.warning.txt.sample
 %%DATADIR%%/reports/cz/languages.conf.sample
+%%DATADIR%%/reports/cz/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/cz/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/cz/sender.content.report.txt.sample
 %%DATADIR%%/reports/cz/sender.error.report.txt.sample
 %%DATADIR%%/reports/cz/sender.filename.report.txt.sample
@@ -128,6 +155,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/de/inline.warning.html.sample
 %%DATADIR%%/reports/de/inline.warning.txt.sample
 %%DATADIR%%/reports/de/languages.conf.sample
+%%DATADIR%%/reports/de/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/de/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/de/sender.content.report.txt.sample
 %%DATADIR%%/reports/de/sender.error.report.txt.sample
 %%DATADIR%%/reports/de/sender.filename.report.txt.sample
@@ -149,6 +178,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/dk/inline.warning.html.sample
 %%DATADIR%%/reports/dk/inline.warning.txt.sample
 %%DATADIR%%/reports/dk/languages.conf.sample
+%%DATADIR%%/reports/dk/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/dk/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/dk/sender.content.report.txt.sample
 %%DATADIR%%/reports/dk/sender.error.report.txt.sample
 %%DATADIR%%/reports/dk/sender.filename.report.txt.sample
@@ -170,6 +201,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/en/inline.warning.html.sample
 %%DATADIR%%/reports/en/inline.warning.txt.sample
 %%DATADIR%%/reports/en/languages.conf.sample
+%%DATADIR%%/reports/en/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/en/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/en/sender.content.report.txt.sample
 %%DATADIR%%/reports/en/sender.error.report.txt.sample
 %%DATADIR%%/reports/en/sender.filename.report.txt.sample
@@ -191,6 +224,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/es/inline.warning.html.sample
 %%DATADIR%%/reports/es/inline.warning.txt.sample
 %%DATADIR%%/reports/es/languages.conf.sample
+%%DATADIR%%/reports/es/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/es/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/es/sender.content.report.txt.sample
 %%DATADIR%%/reports/es/sender.error.report.txt.sample
 %%DATADIR%%/reports/es/sender.filename.report.txt.sample
@@ -212,6 +247,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/fr/inline.warning.html.sample
 %%DATADIR%%/reports/fr/inline.warning.txt.sample
 %%DATADIR%%/reports/fr/languages.conf.sample
+%%DATADIR%%/reports/fr/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/fr/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/fr/sender.content.report.txt.sample
 %%DATADIR%%/reports/fr/sender.error.report.txt.sample
 %%DATADIR%%/reports/fr/sender.filename.report.txt.sample
@@ -233,6 +270,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/hu/inline.warning.html.sample
 %%DATADIR%%/reports/hu/inline.warning.txt.sample
 %%DATADIR%%/reports/hu/languages.conf.sample
+%%DATADIR%%/reports/hu/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/hu/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/hu/sender.content.report.txt.sample
 %%DATADIR%%/reports/hu/sender.error.report.txt.sample
 %%DATADIR%%/reports/hu/sender.filename.report.txt.sample
@@ -254,6 +293,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/it/inline.warning.html.sample
 %%DATADIR%%/reports/it/inline.warning.txt.sample
 %%DATADIR%%/reports/it/languages.conf.sample
+%%DATADIR%%/reports/it/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/it/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/it/sender.content.report.txt.sample
 %%DATADIR%%/reports/it/sender.error.report.txt.sample
 %%DATADIR%%/reports/it/sender.filename.report.txt.sample
@@ -275,6 +316,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/nl/inline.warning.html.sample
 %%DATADIR%%/reports/nl/inline.warning.txt.sample
 %%DATADIR%%/reports/nl/languages.conf.sample
+%%DATADIR%%/reports/nl/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/nl/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/nl/sender.content.report.txt.sample
 %%DATADIR%%/reports/nl/sender.error.report.txt.sample
 %%DATADIR%%/reports/nl/sender.filename.report.txt.sample
@@ -296,6 +339,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/pt_br/inline.warning.html.sample
 %%DATADIR%%/reports/pt_br/inline.warning.txt.sample
 %%DATADIR%%/reports/pt_br/languages.conf.sample
+%%DATADIR%%/reports/pt_br/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/pt_br/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.content.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.error.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.filename.report.txt.sample
@@ -317,6 +362,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/ro/inline.warning.html.sample
 %%DATADIR%%/reports/ro/inline.warning.txt.sample
 %%DATADIR%%/reports/ro/languages.conf.sample
+%%DATADIR%%/reports/ro/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/ro/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/ro/sender.content.report.txt.sample
 %%DATADIR%%/reports/ro/sender.error.report.txt.sample
 %%DATADIR%%/reports/ro/sender.filename.report.txt.sample
@@ -339,6 +386,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/se/inline.warning.html.sample
 %%DATADIR%%/reports/se/inline.warning.txt.sample
 %%DATADIR%%/reports/se/languages.conf.sample
+%%DATADIR%%/reports/se/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/se/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/se/sender.content.report.txt.sample
 %%DATADIR%%/reports/se/sender.error.report.txt.sample
 %%DATADIR%%/reports/se/sender.filename.report.txt.sample
@@ -360,6 +409,8 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/sk/inline.warning.html.sample
 %%DATADIR%%/reports/sk/inline.warning.txt.sample
 %%DATADIR%%/reports/sk/languages.conf.sample
+%%DATADIR%%/reports/sk/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/sk/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/sk/sender.content.report.txt.sample
 %%DATADIR%%/reports/sk/sender.error.report.txt.sample
 %%DATADIR%%/reports/sk/sender.filename.report.txt.sample
@@ -380,6 +431,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
 %%PORTDOCS%%%%DOCSDIR%%/README.sql-logging
+%%PORTDOCS%%%%DOCSDIR%%/FreeBSD.html
 %%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/building.txt
 %%PORTDOCS%%%%DOCSDIR%%/donations.shtml
@@ -411,8 +463,12 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/install/mcafee.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
@@ -472,6 +528,7 @@ libexec/MailScanner/update_virus_scanners
 @dirrm %%DATADIR%%/reports/de
 @dirrm %%DATADIR%%/reports/cz
 @dirrm %%DATADIR%%/reports/cy+en
+@dirrm %%DATADIR%%/reports/cat
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%
 @dirrm libexec/MailScanner
