@@ -1,5 +1,5 @@
 # New ports collection makefile for:	X-Emacs Packages
-# Version required:	21.1
+# Version required:	1.0
 # Date created:		24 Apr 1999
 # Whom:			Michael Elbel (me@FreeBSD.org)
 #
@@ -26,8 +26,9 @@ DISTFILES=	\
 		fsf-compat-1.06-pkg.tar.gz  viper-1.17-pkg.tar.gz \
 		mail-lib-1.24-pkg.tar.gz    net-utils-1.12-pkg.tar.gz \
 		mailcrypt-2.02-pkg.tar.gz   vc-1.19-pkg.tar.gz \
-		sh-script-1.10-pkg.tar.gz  \
-		${MULEDISTFILES}
+		sh-script-1.10-pkg.tar.gz   auctex-1.17-pkg.tar.gz \
+		ispell-1.16-pkg.tar.gz      pcl-cvs-1.40-pkg.tar.gz \
+		w3-1.14-pkg.tar.gz
 
 MAINTAINER=	me@FreeBSD.org
 
@@ -35,12 +36,6 @@ DIST_SUBDIR=	xemacs
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-# Have
-.if !defined(USE_MULE)
-pre-fetch:
-	@${ECHO_MSG} "To install the MULE support files, set the environment variable USE_MULE"
-.endif
 
 do-install:
 		${MKDIR} ${PREFIX}/lib/xemacs/xemacs-packages
@@ -53,10 +48,5 @@ post-install:
 	@${ECHO_MSG} "the 'Options' menu of the menubar."
 	@${ECHO_MSG} "To install all packages, consider using the xemacs-sumo-packages"
 	@${ECHO_MSG} "and xemacs-mule-sumo-packages ports."
-
-.if defined(USE_MULE)
-MULEDISTFILES=	mule-base-1.32-pkg.tar.gz
-PLIST=		${PKGDIR}/PLIST.mule
-.endif
 
 .include <bsd.port.mk>
