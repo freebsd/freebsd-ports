@@ -29,7 +29,11 @@ USE_AUTOCONF=	yes
 USE_AUTOHEADER=	yes
 WANT_AUTOCONF_VER= 257
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
