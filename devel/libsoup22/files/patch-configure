@@ -1,27 +1,26 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Sep 28 11:59:17 2001
-+++ configure	Fri Sep 28 12:00:34 2001
-@@ -5722,9 +5722,9 @@
+--- configure.orig	Fri Jun  7 18:58:41 2002
++++ configure	Sat Jul 20 15:01:54 2002
+@@ -6554,6 +6554,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7460,9 +7461,9 @@
+ 
    rm -f conf.glibtest
  
+-	GLIB_CFLAGS=`glib-config --cflags glib`
+-	GLIB_LIBS=`glib-config --libs glib`
+-	GMODULE_LIBS=`glib-config --libs gmodule`
++	GLIB_CFLAGS=`$GLIB_CONFIG --cflags glib`
++	GLIB_LIBS=`$GLIB_CONFIG --libs glib`
++	GMODULE_LIBS=`$GLIB_CONFIG --libs gmodule`
+ 	FAVOUR_LIBXML=1
+ 	SOUP_PKGCONFIG_REQUIRES="glib"
  
--GLIB_CFLAGS=`glib-config --cflags glib`
--GLIB_LIBS=`glib-config --libs glib`
--GMODULE_LIBS=`glib-config --libs gmodule`
-+GLIB_CFLAGS=`$GLIB_CONFIG --cflags glib`
-+GLIB_LIBS=`$GLIB_CONFIG --libs glib`
-+GMODULE_LIBS=`$GLIB_CONFIG --libs gmodule`
- 
- 
- 
-@@ -5854,8 +5854,6 @@
- 
- save_CPPFLAGS=$CPPFLAGS
- save_LIBS=$LIBS
--CPPFLAGS=
--LIBS=
- 
- echo $ac_n "checking for poptGetContext in -lpopt""... $ac_c" 1>&6
- echo "configure:5862: checking for poptGetContext in -lpopt" >&5

@@ -6,31 +6,27 @@
 #
 
 PORTNAME=	soup
-PORTVERSION=	0.5.1
+PORTVERSION=	0.7.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/soup
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
+USE_BZIP2=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	gnomehack glib12 libxml
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
-		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
