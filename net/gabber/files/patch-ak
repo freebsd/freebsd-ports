@@ -1,0 +1,11 @@
+--- src/GabberUtility.cc.orig  Thu Jan 18 12:39:58 2001
++++ src/GabberUtility.cc       Thu Jan 18 12:40:12 2001
+@@ -1,7 +1,7 @@
+   
+ #include "GabberUtility.hh"
+ #include "Gabber.hh"
+-#include "e-unicode.h"
++#include <gal/widgets/e-unicode.h>
+
+ using namespace jabberoo;
+
