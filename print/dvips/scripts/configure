@@ -10,8 +10,10 @@ fi
 CACHE=$prefix/lib/texmf/fonts
 
 if [ -f $prefix/bin/MakeTeXPK ]; then
+  echo
   echo "**WARNING** MakeTeXPK already exists in $PREFIX/bin"
-  echo "This file will be replaced during install."
+  echo "**WARNING** This file will be replaced during install."
+  echo
 fi
 
 
@@ -33,8 +35,10 @@ for i in $RES; do
   shift
 done
 
-rm -f $SCRIPTDIR/install.tmp
+rm -f $SCRIPTDIR/post-install
+echo
 echo "Choose a font directory for automatic font generation."
+echo "------------------------------------------------------"
 echo "The default directory is $CACHE. If you"
 echo "don't want to make this directory world writable, then you"
 echo "can choose eg. /tmp. Then you will have to periodically move "
@@ -43,7 +47,7 @@ echo -n "font directory [$CACHE]: "
 read answ; if [ "$answ" != "" ]; then 
   CACHE=$answ; 
 else
-  echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/install.tmp
+  echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/post-install
 fi
   
 sed -e s:/usr/lib/tex:/$PREFIX/lib/texmf: \
