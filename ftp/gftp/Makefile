@@ -9,7 +9,7 @@
 DISTNAME=	gftp-2.0.5a
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
-		ftp://gftp.seul.org/pub/gftp
+		ftp://gftp.seul.org/pub/gftp/
 
 MAINTAINER=	dmarion@open.hr
 
