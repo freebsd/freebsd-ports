@@ -30,12 +30,16 @@ LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 DRIVER=		FILE
 .endif
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64"
+PIC=	--PIC
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s|^booroot=.*|booroot=${PREFIX}/share/boodler|" ${WRKSRC}/wrapper/boodler
 	@${RMDIR} ${WRKDIR}/boodler-snd/string
 
 do-build:
-	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER} && make)
+	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER} ${PIC} && make)
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle/
 
 do-install:
