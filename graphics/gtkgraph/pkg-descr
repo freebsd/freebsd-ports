@@ -1,0 +1,21 @@
+GtkGraph is a simple graphing calculator written
+for X Windows using the GTK+ widget set.  It includes
+the following features:
+
+ * Plotting up to ten functions on the same "canvas" 
+ * Allowing the user to select the range of the canvas. 
+ * Usage of functions exp, sin, tan, cos, asin, atan,
+   acos, sec, csc, cot, log, ln, abs, sqrt, and constants
+   pi and e. 
+ * Saving and loading sets of functions to plot 
+ * Printing 
+ * Exporting the graph to PostScript, or any bitmap format
+   that Imlib supports (JPEG, XPM, PNG...) 
+ * Arithmatic and algebraic calculations 
+ * Allowing the user to customize colors and axis and plot
+   titles 
+
+WWW: http://gtkgraph.linuxbox.com/
+
+- Chris D. Faulhaber
+jedgar@fxp.org

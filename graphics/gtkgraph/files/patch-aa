@@ -1,0 +1,18 @@
+--- config.h.in.orig	Tue Jul 27 15:09:36 1999
++++ config.h.in	Fri Nov 12 11:13:03 1999
+@@ -6,15 +6,6 @@
+ /* Default value for alignment of strings in .mo file.  */
+ #define DEFAULT_ALIGNMENT 1
+ 
+-#ifndef __P
+-# if __STDC__
+-#  define __P(args) args
+-# else
+-#  define __P(args) ()
+-# endif
+-#endif
+-
+-
+ /* Define if using alloca.c.  */
+ #undef C_ALLOCA
+ 
