@@ -8,7 +8,7 @@
 PORTNAME=	bin86
 PORTVERSION=	0.16.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cix.co.uk/~mayday/
+MASTER_SITES=	http://www.cix.co.uk/~mayday/dev86/
 
 MAINTAINER=	trevor@FreeBSD.org
 
