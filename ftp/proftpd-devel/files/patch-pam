@@ -1,0 +1,41 @@
+--- ./README.PAM.orig	Mon Jan 21 16:25:42 2002
++++ ./README.PAM	Mon Jan 21 16:27:07 2002
+@@ -19,14 +19,8 @@
+ 
+ FreeBSD:
+ 
+-To use PAM with ProFTPD, you must edit /etc/pam.conf and add the
+-following lines:
+-
+-ftp auth    required    pam_unix.so         try_first_pass
+-ftp account required    pam_unix.so         try_first_pass
+-ftp session required    pam_permit.so
+-
+-PAM authentication should now work properly.
++To use PAM with ProFTPD, you must set AuthPAMConfig to 'ftpd'.  If you
++installed proftpd from the ports collection, this is already the default.
+ 
+ Linux:
+ To use PAM with ProFTPD, you must edit /etc/pam.d/ftp and add the
+--- ./doc/Configuration.html.orig	Mon Jan 21 16:28:02 2002
++++ ./doc/Configuration.html	Mon Jan 21 16:28:13 2002
+@@ -712,7 +712,7 @@
+ <hr>
+ <h2><a name="AuthPAMConfig">AuthPAMConfig</a></h2>
+ <p><strong>Syntax:</strong> AuthPAMConfig <em>service</em><br>
+-  <strong>Default:</strong> ftp<br>
++  <strong>Default:</strong> ftpd<br>
+   <strong>Context:</strong> server config,&lt;VirtualHost&gt;, &lt;Global&gt;<br>
+   <STRONG>Module:</STRONG> mod_pam<BR>
+   <strong>Compatibility:</strong> 1.2.0rc1 and later</p>
+--- ./modules/mod_pam.c.orig	Mon Jan 21 16:28:51 2002
++++ ./modules/mod_pam.c	Mon Jan 21 16:29:03 2002
+@@ -48,7 +48,7 @@
+ #endif /* HAVE_SECURITY_PAM_APPL_H */
+ 
+ static pam_handle_t *	pamh			= NULL;
+-static char *		pamconfig		= "ftp";
++static char *		pamconfig		= "ftpd";
+ static char *		pam_user 		= (char *)0;
+ static char *		pam_pass 		= (char *)0;
+ static int		pam_user_len		= 0;
