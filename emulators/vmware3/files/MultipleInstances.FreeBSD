@@ -1,0 +1,222 @@
+  Running multiple networked instances of VMware on FreeBSD
+  =========================================================
+
+The only currently-known (assuming VMware version 3) problem with this
+is that each VMware instance needs its own vmnet interface - the vmnet
+driver is "exclusive open" on the VMware side (and substantial
+modifications would probably be needed for it to be able to handle
+multiple VMwares). This leads to some limitations and some clutter of
+your 'ifconfig' output, but nothing insurmountable if you really need/
+want this.
+
+The gory details of creating and configuring those vmnet interfaces are
+handled by the rc script (normally installed in /usr/local/etc/rc.d),
+based on the config file (normally /usr/local/etc/vmware/config). The
+port build/install will create an initial version of the config file
+based on your responses in the configuration dialogue - this will cover
+at most one vmnet interface, and you will need to extend it by editing
+the file for multiple vmnet interfaces / VMware instances. It's a good
+idea to keep a backup of the config file, since de/reinstalling the
+VMware port (e.g. on upgrade) may delete/overwrite it.
+
+The other thing that needs some manual tweaking is the VMware config
+itself - the "Host Only" mode is hardwired to use vmnet1 (on Linux this
+can be used by multiple VMware instances), and so can only be used on at
+most one of the concurrently-running instances. For the others, you need
+to choose "Custom" as the "Connection Type" for the Ethernet Adapter,
+and specify /dev/vmnetN as "VMnet", where N = 2,3,... (actually you may
+want to do this for vmnet1 too when using bridged mode, see below). You
+can of course have multiple VMware configs with the same vmnet interface
+- as long as you never want to run them simultaneously.
+
+The rc script will do setup when given the argument 'start', and
+teardown when given the argument 'stop' (no surprise there). It assumes
+an unconfigured system when doing setup, and a system configured
+according to the config file when doing teardown. This works fine with a
+fixed config and boot/halt/reboot etc of course (setup with an already
+configured system or teardown with an unconfigured should be fine too,
+but may yield some error messages).
+
+There may however be "surprises" if you violate these conditions when
+changing the config file. To avoid that, this is the "safe" procedure
+for any config file change:
+
+1. Stop/suspend/exit any VMwares currently running.
+2. Run '/usr/local/etc/rc.d/001.vmware.sh stop'.
+3. Do the config changes.
+4. Run '/usr/local/etc/rc.d/001.vmware.sh start'.
+5. Start the VMwares (optional).
+
+If you forget (or ignore:-) this sequence, things *may* work out right
+anyway depending on what changes you did. If they don't, and your vmnet
+setup ends up in a mess, a reboot will of course fix things, but
+avoiding that and cleaning it up manually is of course preferable. If
+you make sure that a) no IP addresses are configured on vmnet interfaces
+and b) (assuming you used or are going to use bridging) no vmnet_bridgeN
+netgraph bridges are configured (use the 'ngctl' command), running the
+script with 'start' should probably succeed with the setup.
+
+A general note on the config file contents: The rc script assumes that
+the vmnet interfaces you are using are in a numerically consecutive
+sequence starting with vmnet1. I.e. you can't have "holes" as in using
+vmnet1, vmnet2, and vmnet4 only - the actual order in the file doesn't
+matter though. This is because the script runs a loop looking for the
+vmnet1.Bridged, vmnet2.Bridged, etc, settings - and if it doesn't find a
+YES or NO setting, it assumes that there are no more vmnets configured
+and it's done. Also, there are some pathnames defined in the config file
+- this text doesn't concern them in any way, but they must be preserved
+when changing the file, of course.
+
+Below are the details of what needs to be in the config file for the
+respective modes. Note that you can mix and match freely, i.e. have some
+VMwares in non-bridged and some in bridged mode (and even have multiple
+bridges with different "real" interfaces), and the vmnet interfaces can
+be in any order (e.g. vmnet1 and vmnet3 bridged to your "real" interface
+and vmnet2 non-bridged), as long as you fulfill the requirement above
+("hybrid" mode has an additional requirement, see below).
+
+
+  Non-bridged mode
+  ----------------
+
+In this mode, each vmnet interface is effectively (from the FreeBSD host
+perspective) connected to its own little subnet, and the rules and
+restrictions that apply are exactly the same as when having multiple
+"real" interfaces connected to different subnets. E.g. the vmnet
+interface must be configured with an IP address and netmask that define
+the subnet and differ from other subnets, the subnet must contain also
+the IP address(es) used by the VMware guests that are configured to use
+that vmnet interface, etc. An initial config from the port build/install
+may look like:
+
+vmnet1.Bridged = "NO"
+vmnet1.BridgeInterface = ""
+vmnet1.HostOnlyAddress = "192.168.32.1"
+vmnet1.HostOnlyNetMask = "255.255.255.0"
+
+All you need to do is more of the same, e.g. replicate for vmnet2,
+ensuring that vmnet2.Bridged = "NO" and using a different
+vmnet2.HostOnlyAddress that falls in a different subnet - e.g. add:
+
+vmnet2.Bridged = "NO"
+vmnet2.BridgeInterface = ""
+vmnet2.HostOnlyAddress = "192.168.33.1"
+vmnet2.HostOnlyNetMask = "255.255.255.0"
+
+As you can see this may eat up a lot of network address space, which may
+or may not matter depending on your environment (there's plenty of
+"private" IP address space, but it may be used elsewhere on your
+intranet). You can of course use smaller subnets - the longest netmask
+possible is 255.255.255.252, giving four-address subnets, to cover the
+requirements above - and then act as a gateway for the "aggregate" as
+far as other hosts are concerned. Another alternative is to use the
+"hybrid" mode described below - and if you really need to have the
+VMware guests be in the same subnet for other reasons (e.g. you may need
+to have broadcast work between them), that's the way to go.
+
+
+  Bridged mode
+  ------------
+
+In this mode, the VMware guests are effectively connected to the same
+subnet as the FreeBSD host (on the "real" interface that you specify).
+For all practical intents and purposes, the bridge is an "internal
+Ethernet switch". An initial config from the port build/install may look
+like:
+
+vmnet1.Bridged = "YES"
+vmnet1.BridgeInterface = "fxp0"
+vmnet1.HostOnlyAddress = "192.168.0.1"
+vmnet1.HostOnlyNetMask = "255.255.255.0"
+
+The "192.168.0.1" may come as a surprise, since you never gave that
+address in the configuration dialogue - and if you're familiar with
+bridging, you may rightly wonder why the vmnet1 interface needs an IP
+address at all. The answer is that it doesn't (and shouldn't really have
+one), and that this may actually cause problems (e.g. if 192.168.0/24 is
+used elsewhere on your network, you can't reach it anymore) - but VMware
+needs it (sort of).
+
+To go into the gory details, this comes from the fact that the FreeBSD
+port "plays tricks" with VMware - you are supposed to configure the
+VMware Ethernet Adapter as "Host Only" even when using bridging, and
+when configured like that, VMware requires that vmnet1 has an IP address
+configured. However as noted above, the "Host Only" config can only be
+used for vmnet1 - for the others you need the "Custom" + "/dev/vmnetN"
+config - and this does *not* require an IP address on the vmnet
+interface. So, to get rid of this "ugly" IP address, you may want to use
+"Custom" + "/dev/vmnet1" on the vmnet1-using VMware(s).
+
+In any case, the rc script will leave the vmnet interface without an IP
+address if and only if the vmnetN.HostOnlyAddress is given as "0.0.0.0".
+This is recommended at least for your vmnet2 and above bridged
+interfaces, since otherwise you have to come up with a new "dummy"
+address/netmask for each one - even though they aren't actually used for
+anything, FreeBSD doesn't allow you to configure the same address/subnet
+on multiple interfaces. So, for another bridged interface on the same
+"real" interface, add:
+
+vmnet2.Bridged = "YES"
+vmnet2.BridgeInterface = "fxp0"
+vmnet2.HostOnlyAddress = "0.0.0.0"
+vmnet2.HostOnlyNetMask = "255.255.255.0"
+
+And so on. The HostOnlyNetMask setting doesn't really matter when
+HostOnlyAddress = "0.0.0.0", but it still has to be a valid netmask -
+"255.255.255.0" is fine.
+
+
+  "Hybrid" mode
+  -------------
+
+This is really non-bridged mode with a twist (and arguably better), but
+since it includes a bridge it may be confusing to call it "non-
+bridged".:-) I.e. functionally it is equivalent to non-bridged insofar
+as the VMwares live in an "internal" subnet different from the "real"
+one(s) the FreeBSD host is connected to - it just allows for multiple
+simultaneous VMwares in a single such subnet.
+
+The way to do this is simply to connect the vmnet interfaces together
+with a bridge - but *not* connect this bridge to any of the "real"
+interfaces, and instead have just one of the bridged vmnet interfaces
+configured as in the non-bridged case, and acting as the FreeBSD host's
+interface to this subnet. Such a subnet for 3 vmnets/VMwares could look
+like this in the config file (starting off with the original non-bridged
+vmnet1 from above):
+
+vmnet1.Bridged = "NO"
+vmnet1.BridgeInterface = ""
+vmnet1.HostOnlyAddress = "192.168.32.1"
+vmnet1.HostOnlyNetMask = "255.255.255.0"
+vmnet2.Bridged = "YES"
+vmnet2.BridgeInterface = "vmnet1"
+vmnet2.HostOnlyAddress = "0.0.0.0"
+vmnet2.HostOnlyNetMask = "255.255.255.0"
+vmnet3.Bridged = "YES"
+vmnet3.BridgeInterface = "vmnet1"
+vmnet3.HostOnlyAddress = "0.0.0.0"
+vmnet3.HostOnlyNetMask = "255.255.255.0"
+
+I.e. all the vmnets except the first one have Bridged = "YES" and point
+BridgeInterface to the first *vmnet* interface. And in this case, the
+vmnet interface with Bridged = "NO" *must* be numerically *before* the
+others (it doesn't have to be vmnet1 in particular, of course).
+
+With this setup, the VMware guests configured for vmnet1/2/3 can use
+whatever IP addresses in the 192.168.32.0/24 subnet they want (except
+for .1 and .255, of course), in any combination. It's of course possible
+to have a smaller subnet than /24 here too, as long as it is big enough
+to "cover" the desired IP addresses (obviously the abovementioned
+255.255.255.252 would not be enough).
+
+You can also have multiple separate subnets like this, if you should
+need it - the rules are the same for each, the (numerically) first vmnet
+with Bridged = "NO" and the others with Bridged = "YES" and pointing
+BridgeInterface to the first one. And like in the "original" non-bridged
+mode, each "first" vmnet interface must be configured with an IP address
+and netmask that define the subnet and differ from other subnets.
+
+--
+This document and the supplied patches have been made available by
+Per Hedeland.
+

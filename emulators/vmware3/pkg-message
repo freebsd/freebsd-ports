@@ -5,6 +5,9 @@ Get Linux procfs ready and initialize vmmon/vmnet as follows:
 
 then you'll be ready to start vmware.
 
+If you experience freezes on power on, be sure that the
+ACPI module is not loaded.
+
 Don't forget to load the kernel module aio.ko, or
 options VFS_AIO in the kernel.  Otherwise expect problems.
 
@@ -25,4 +28,10 @@ kern.ipc.shm_allow_removed=1
 Don't miss the documents installed:
 
 	vmware(1) ${PREFIX}/share/doc/vmware/*
+
+If you want to learn more on how to configure vmnet
+interfaces for multiple instances of VMware, please refer to
+
+  ${PREFIX}/share/doc/vmware/MultipleInstances.FreeBSD
+
 ************************************************************

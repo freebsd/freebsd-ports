@@ -5,7 +5,9 @@
 
 host_ip=$VMNET_HOST_IP
 netmask=$VMNET_NETMASK
-title="VMware network options"
+title="VMware network setup"
+
+
 
 get_network_settings() {
     bridged="NO"
@@ -119,9 +121,27 @@ do_network() {
     done
 }
 
+guided_setup() {
+    /usr/bin/dialog --title "$title" --clear --yesno \
+"\n"\
+"Do you want to configure vmnet interface?\n"\
+    10 50
+    if [ $? -eq 0 ]; then
+      do_network
+    else
+      /usr/bin/dialog --title "$title" --msgbox \
+"\n"\
+"Please, refer to $PREFIX/share/doc/vmware/MultipleInstances.FreeeBSD\n"\
+"for further information on setting up your vmnet interfaces.\n"\
+      8 70
+      networking=1
+      return 1
+    fi
+}
+
 networking=0
 if [ _$BATCH = _ ]; then
-    do_network
+    guided_setup
 
     if [ $? -eq 0 ]; then
 	networking=1
