@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Jul 20 03:35:46 1996
-+++ Makefile	Tue Jan  5 16:34:35 1999
-@@ -30,31 +30,30 @@
+--- Makefile.old	Mon Nov 29 18:32:05 1999
++++ Makefile	Mon Nov 29 18:35:26 1999
+@@ -30,31 +30,32 @@
  # uncomment the following two lines if you want to include X11 support
  # (mpeg2decode)
  
@@ -32,9 +32,10 @@
  #
  # GNU gcc
  #
--CC = gcc
++.ifndef CC
+ CC = gcc
 -CFLAGS = -O2
-+CC = cc
++.endif
  
  all: mpeg2decode mpeg2encode
  
