@@ -4,6 +4,7 @@ share/doc/commons-logging/org/apache/commons/logging/impl/package-frame.html
 share/doc/commons-logging/org/apache/commons/logging/impl/Jdk14Logger.html
 share/doc/commons-logging/org/apache/commons/logging/impl/Log4JCategoryLog.html
 share/doc/commons-logging/org/apache/commons/logging/impl/Log4jFactory.html
+share/doc/commons-logging/org/apache/commons/logging/impl/Log4JLogger.html
 share/doc/commons-logging/org/apache/commons/logging/impl/LogFactoryImpl.html
 share/doc/commons-logging/org/apache/commons/logging/impl/LogKitLogger.html
 share/doc/commons-logging/org/apache/commons/logging/impl/NoOpLog.html
