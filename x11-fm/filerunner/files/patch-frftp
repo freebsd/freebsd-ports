@@ -1,0 +1,10 @@
+--- frftp.orig	Thu Feb 15 03:32:34 2001
++++ frftp	Thu Feb 15 03:32:53 2001
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ # the next line restarts using wish \
+-exec wish8.0 $0 wish8.0 $*
++exec wish8.2 $0 wish8.2 $*
+ 
+ 
+ proc ShowWindow { realhost file } {
