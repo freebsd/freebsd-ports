@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal generation program
 
+BROKEN=		"Checksum mismatch"
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_QT_VER=	3
