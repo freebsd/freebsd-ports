@@ -27,9 +27,9 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/rrdtool ${PREFIX}/bin
 		${INSTALL_PROGRAM} ${WRKSRC}/src/rrdcgi ${PREFIX}/bin
 		${INSTALL_SCRIPT} ${WRKSRC}/contrib/log2rrd/log2rrd.pl ${PREFIX}/bin
-		${MKDIR} -m 755 ${PREFIX}/share/rrdtool/examples
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${PREFIX}/share/rrdtool/examples
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/*.cgi ${PREFIX}/share/rrdtool/examples
+		${MKDIR} -m 755 ${PREFIX}/share/examples/rrdtool
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${PREFIX}/share/examples/rrdtool
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/*.cgi ${PREFIX}/share/examples/rrdtool
 		${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 		${MKDIR} -m 755 ${PREFIX}/share/doc/rrdtool
@@ -45,7 +45,7 @@ post-install:
 .if !defined(BATCH)
 	@${ECHO} ""
 	@${ECHO} "############################################################################"
-	@${ECHO} "# See ${PREFIX}/share/rrdtool/examples for some demonstration code        #"
+	@${ECHO} "# See ${PREFIX}/share/examples/rrdtool for some demonstration code        #"
 	@${ECHO} "############################################################################"
 .endif
 
