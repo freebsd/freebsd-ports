@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/09/22 20:10:54 ache Exp $
+# $Id: Makefile,v 1.6 1995/09/28 16:41:41 ache Exp $
 #
 
 DISTNAME=       elm-2.4pl24me8
@@ -17,7 +17,7 @@ PATCH_SITES=    ${MASTER_SITES}
 MAINTAINER=	ache@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=     yes     # I don't know, why
+NO_PACKAGE=     yes      # domain name compiled in
 
 post-install:
 	cd ${WRKSRC}/nls; ${MAKE} install
