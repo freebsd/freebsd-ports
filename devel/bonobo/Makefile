@@ -1,0 +1,33 @@
+# New ports collection makefile for:	bonobo
+# Version required:			0.4
+# Date created:				8th October 1999
+# Whom:					Ade Lovett <ade@lovett.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	bonobo-0.4
+CATEGORIES=	devel gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/bonobo
+
+MAINTAINER=	ade@lovett.com
+
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+		gdk_pixbuf.0:${PORTSDIR}/graphics/gdk-pixbuf
+
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+USE_PERL5=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libefs/configure
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>
