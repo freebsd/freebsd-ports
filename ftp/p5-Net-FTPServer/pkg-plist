@@ -13,7 +13,7 @@
 %%SITE_PERL%%/Net/FTPServer/InMem/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/InMem/Server.pm
 %%SITE_PERL%%/Net/FTPServer/Proxy/DirHandle.pm
-%%SITE_PERL%%/Net/FTPServer/Proxy/FileHandle.pm   
+%%SITE_PERL%%/Net/FTPServer/Proxy/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/Proxy/Server.pm
 %%SITE_PERL%%/Net/FTPServer/RO/DirHandle.pm
 %%SITE_PERL%%/Net/FTPServer/RO/FileHandle.pm

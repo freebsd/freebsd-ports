@@ -190,7 +190,7 @@ news/doc/sample-control
 @unexec if cmp -s %D/%%ETCDIR%%/passwd.nntp %D/%%ETCDIR%%/passwd.nntp.dist; then rm -f %D/%%ETCDIR%%/passwd.nntp ; fi
 %%ETCDIR%%/passwd.nntp.dist
 @exec [ -f %B/passwd.nntp ] || cp -fp %B/%f %B/passwd.nntp
-@unexec if cmp -s %D/%%ETCDIR%%/radius.conf %D/%%ETCDIR%%/radius.conf.dist; then rm -f %D/%%ETCDIR%%/radius.conf ; fi 
+@unexec if cmp -s %D/%%ETCDIR%%/radius.conf %D/%%ETCDIR%%/radius.conf.dist; then rm -f %D/%%ETCDIR%%/radius.conf ; fi
 %%ETCDIR%%/radius.conf.dist
 @exec [ -f %B/radius.conf ] || cp -fp %B/%f %B/radius.conf
 @unexec if cmp -s %D/%%ETCDIR%%/readers.conf %D/%%ETCDIR%%/readers.conf.dist; then rm -f %D/%%ETCDIR%%/readers.conf; fi

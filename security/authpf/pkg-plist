@@ -9,4 +9,3 @@ sbin/authpf
 @dirrm etc/authpf/users
 @dirrm etc/authpf/banned
 @dirrm etc/authpf
-

@@ -132,4 +132,3 @@ bin/opera
 @cwd /etc/X11
 wmconfig/opera
 %%APPLNK:%%applnk/Internet/opera.desktop
-

@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-@comment We just copy the file in the kernel module dir. 
+@comment We just copy the file in the kernel module dir.
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/nvidia_pci.c.diff
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

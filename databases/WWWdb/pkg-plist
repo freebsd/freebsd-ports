@@ -34,4 +34,3 @@
 @dirrm %%SITE_PERL%%/WWWdb/DbSession
 @dirrm %%SITE_PERL%%/WWWdb
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb
-

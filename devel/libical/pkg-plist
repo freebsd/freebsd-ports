@@ -415,4 +415,3 @@ share/libical/zoneinfo/zones.tab
 @dirrm share/libical/zoneinfo/Pacific
 @dirrm share/libical/zoneinfo
 @dirrm share/libical
-

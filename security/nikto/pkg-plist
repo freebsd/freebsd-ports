@@ -2,7 +2,7 @@ bin/nikto
 etc/nikto/config.txt
 share/nikto/nikto_mutate.plugin
 share/nikto/nikto_outdated.plugin
-share/nikto/nikto_apacheusers.plugin        
+share/nikto/nikto_apacheusers.plugin
 share/nikto/nikto_passfiles.plugin
 share/nikto/nikto_httpoptions.plugin
 share/nikto/nikto_msgs.plugin

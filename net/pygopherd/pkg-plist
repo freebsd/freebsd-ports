@@ -120,7 +120,7 @@ etc/pygopherd/pygopherd.conf-dist
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.py
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyo
-%%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.py 
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.py
 %%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.pyo
 %%PYTHON_SITELIBDIR%%/pygopherd/testutil.py
@@ -136,4 +136,3 @@ etc/pygopherd/pygopherd.conf-dist
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd
 @unexec rmdir %D/etc/pygopherd 2> /dev/null || echo "If you do not plan on reinstalling pygopherd, you can safely remove %D/etc/pygopherd"
-

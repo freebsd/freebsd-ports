@@ -1,13 +1,13 @@
 bin/fudgit
-lib/fudgit/advance.ft      
-lib/fudgit/avg.ft          
-lib/fudgit/bessel.ft       
-lib/fudgit/fac.ft          
-lib/fudgit/fft.ft          
-lib/fudgit/fib.ft          
-lib/fudgit/fib2.ft         
-lib/fudgit/fit.ft          
-lib/fudgit/fudgitrc        
-lib/fudgit/if.ft           
+lib/fudgit/advance.ft
+lib/fudgit/avg.ft
+lib/fudgit/bessel.ft
+lib/fudgit/fac.ft
+lib/fudgit/fft.ft
+lib/fudgit/fib.ft
+lib/fudgit/fib2.ft
+lib/fudgit/fit.ft
+lib/fudgit/fudgitrc
+lib/fudgit/if.ft
 lib/fudgit/fudgit.help
 @dirrm lib/fudgit

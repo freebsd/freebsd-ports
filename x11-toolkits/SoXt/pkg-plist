@@ -40,4 +40,3 @@ share/aclocal/soxt.m4
 share/Coin/conf/soxt-default.cfg
 @dirrm share/Coin/conf
 @dirrm share/Coin
-

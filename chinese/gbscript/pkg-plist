@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/gbscript
 share/chinese/gb/gbscript.pro
-share/chinese/gb/cclib.24 
+share/chinese/gb/cclib.24
 @unexec rmdir %D/share/chinese/gb 2>/dev/null || true
 @unexec rmdir %D/share/chinese 2>/dev/null || true

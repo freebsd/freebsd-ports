@@ -53,7 +53,7 @@ info/mgetty.info
 @exec install-info %D/info/mgetty.info %D/info/dir
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
-lib/mgetty+sendfax/faxq-helper 
+lib/mgetty+sendfax/faxq-helper
 lib/mgetty+sendfax/samples/answer_fax.sh
 lib/mgetty+sendfax/samples/coverpg-pl.ps
 lib/mgetty+sendfax/samples/coverpg.pbm

@@ -20,22 +20,22 @@ lib/mozilla/defaults/profile/KR/localstore.rdf
 lib/mozilla/defaults/profile/KR/mimeTypes.rdf
 lib/mozilla/defaults/profile/KR/panels.rdf
 lib/mozilla/defaults/profile/KR/search.rdf
-lib/mozilla/searchplugins/bugzilla.gif  
-lib/mozilla/searchplugins/bugzilla.src  
-lib/mozilla/searchplugins/dmoz.gif  
-lib/mozilla/searchplugins/dmoz.src  
-lib/mozilla/searchplugins/google.gif  
-lib/mozilla/searchplugins/google.src  
-lib/mozilla/searchplugins/google_en.gif  
-lib/mozilla/searchplugins/google_en.src  
-lib/mozilla/searchplugins/google_ko.gif  
-lib/mozilla/searchplugins/google_ko.src  
-lib/mozilla/searchplugins/lxrmozilla.gif  
-lib/mozilla/searchplugins/lxrmozilla.src  
-lib/mozilla/searchplugins/mozilla.gif  
-lib/mozilla/searchplugins/mozilla.src  
-lib/mozilla/searchplugins/NetscapeSearch.gif  
-lib/mozilla/searchplugins/NetscapeSearch.src  
+lib/mozilla/searchplugins/bugzilla.gif
+lib/mozilla/searchplugins/bugzilla.src
+lib/mozilla/searchplugins/dmoz.gif
+lib/mozilla/searchplugins/dmoz.src
+lib/mozilla/searchplugins/google.gif
+lib/mozilla/searchplugins/google.src
+lib/mozilla/searchplugins/google_en.gif
+lib/mozilla/searchplugins/google_en.src
+lib/mozilla/searchplugins/google_ko.gif
+lib/mozilla/searchplugins/google_ko.src
+lib/mozilla/searchplugins/lxrmozilla.gif
+lib/mozilla/searchplugins/lxrmozilla.src
+lib/mozilla/searchplugins/mozilla.gif
+lib/mozilla/searchplugins/mozilla.src
+lib/mozilla/searchplugins/NetscapeSearch.gif
+lib/mozilla/searchplugins/NetscapeSearch.src
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
 @unexec mv %D/lib/mozilla/chrome/chrome.rdf.orig %D/lib/mozilla/chrome/chrome.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt

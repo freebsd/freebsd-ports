@@ -14,7 +14,7 @@ lib/librvm.so.2
 lib/librvmlwp.a
 lib/librvmlwp.so
 lib/librvmlwp.so.2
-lib/libseg.a 
+lib/libseg.a
 lib/libseg.so
 lib/libseg.so.2
 sbin/rdsinit
