@@ -2,9 +2,9 @@
 #
 # $Id$
 #
-cd @PREFIX@/libexec/uvscan/
+cd /usr/local/libexec/uvscan/
 ftp http://download.nai.com/products/datfiles/4.x/nai/readme.txt >/dev/null
-AVVER=`head -5 readme.txt | grep ' 4[0-9][0-9][0-9] ' | head -1 | sed -e 's/^.* \(4[0-9]*\) .*$/\1/'`
+AVVER=`grep DAT readme.txt | head -5 | grep '[^0-9]4[0-9][0-9][0-9][^0-9]' | head -1 | sed -e 's/^.*[^0-9]\(4[0-9]*\)[^0-9].*$/\1/'`
 if [ ! -f dat-$AVVER.tar ]; then
 	for i in *.tar ; do
 		mv $i $i.old
