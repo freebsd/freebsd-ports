@@ -2,6 +2,7 @@ bin/slurm
 %%PORTDOCS%%share/slurm/blue.theme
 %%PORTDOCS%%share/slurm/cyan.theme
 %%PORTDOCS%%share/slurm/foo.theme
+%%PORTDOCS%%share/slurm/black.theme
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/KEYS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ

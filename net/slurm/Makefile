@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	slurm
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.raisdorf.net/files/code/ \
-		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/
+MASTER_SITES=	http://www.wormulon.net/files/slurm/ \
+		http://www.raisdorf.net/files/slurm/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	Slurm is a generic network load monitor
+COMMENT=	A generic network load monitor
 
 LDFLAGS+=	-lncurses
 
