@@ -288,6 +288,7 @@
     SUBDIR += micq
     SUBDIR += mldonkey
     SUBDIR += mldonkey-gui
+    SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-src
     SUBDIR += mldonkey-urlslave
     SUBDIR += mmucl

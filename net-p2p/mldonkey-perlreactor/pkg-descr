@@ -1,0 +1,7 @@
+[ excerpt from developer's www site]
+PerlReactor is a Perl script that scans donkeypages like sharereactor
+for new releases and puts them in your mldonkey queue. It was written
+to stay up-to-date with episodes of TV series without looking at
+sharereactor everyday.
+
+WWW: http://remotefilesync.sourceforge.net/perlreactor/

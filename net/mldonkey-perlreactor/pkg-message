@@ -1,0 +1,12 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read
+/usr/local/share/doc/mldonkey-perlreactor/README. It contains
+important information about configuring perlreactor.
+
+This port/package merely installed the program, you now need to
+both configure and enable it.
+
+If your mldonkey runs on a different machine than the script or if
+you have set a http-password, you have to edit the top of the script
+to make it work.
