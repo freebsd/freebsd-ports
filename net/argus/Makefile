@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	1.7.b1e
+PORTVERSION=	1.7.b.1e
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.sei.cmu.edu/pub/argus/argus-1.7/
 DISTNAME=	argus-1.7.beta.1e
