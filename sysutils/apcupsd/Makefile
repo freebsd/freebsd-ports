@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir --enable-usb \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
-		--with-serial-dev=/dev/usv
+		--with-serial-dev=/dev/usv \
+		--disable-pthreads
 
 OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
 OPTIONS+=       CGI "Compile with CGI programms to show status" off
