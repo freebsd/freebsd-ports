@@ -23,7 +23,7 @@ PLIST_FILES=	sbin/micro_httpd
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \
 		s:/usr/local/man/man8:${MAN8PREFIX}/man/man8:g; \
-		s:^(CC|CFLAGS) =.+::g;" \
+		s:gcc:${CC}:g; s:-O:${CFLAGS}:g" \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s/^.TH micro_httpd 1/.TH micro_httpd 8/g" \
 		${WRKSRC}/micro_httpd.8
