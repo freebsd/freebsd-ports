@@ -170,6 +170,7 @@ PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
+	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 
 .if ${PHP_SAPI} == "full"
 pre-configure:
