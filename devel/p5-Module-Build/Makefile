@@ -23,4 +23,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+IGNORE=                Needs perl 5.6 or higher
+.endif
+
+.include <bsd.port.post.mk>
