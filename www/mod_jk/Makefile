@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	jakarta-tomcat-connectors/jk/release/v${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	tomcat-connectors/jk/source
 DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache JK module for connecting to Tomcat using AJP1X
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 .include <bsd.port.pre.mk>
 
