@@ -83,7 +83,9 @@ include/libguile.h
 lib/libguile.a
 lib/libguile.la
 lib/libguile.so
-lib/libguile.so.2.0
+lib/libguile.so.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/guile.m4
 share/aclocal/threads.m4
 share/guile/1.2/ice-9/boot-9.scm
