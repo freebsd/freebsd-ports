@@ -13,13 +13,12 @@ MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION}/
 DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	keichii@FreeBSD.org
-COMMENT=	Icarus Verilog is a Verilog simulation and synthesis tool
-
-GNU_CONFIGURE=	yes
+COMMENT=	A Verilog simulation and synthesis tool
 
 USE_BISON=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-MAN1=		iverilog.1 vvp.1
+MAN1=		iverilog-vpi.1 iverilog.1 vvp.1
 
 .include <bsd.port.mk>
