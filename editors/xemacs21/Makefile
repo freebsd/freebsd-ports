@@ -8,7 +8,7 @@
 
 DISTNAME=	xemacs-${XEMACS_VER}
 PKGNAME=	${LANGPREFIX}xemacs${PKGNAMEEXT}-21.1
-CATEGORIES=	editors
+CATEGORIES?=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-${XEMACS_REL}/ \
@@ -16,9 +16,9 @@ MASTER_SITES=	\
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-${XEMACS_REL}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER?=	gj@FreeBSD.org
 
-RUN_DEPENDS+=    ${PREFIX}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=    ${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
