@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3butler
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.babblica.net/butler/versions/
 
