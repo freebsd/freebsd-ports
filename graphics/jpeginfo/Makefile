@@ -1,0 +1,23 @@
+# New ports collection makefile for:    jpeginfo
+# Date created:         9.8.2001
+# Whom:                 ache
+#
+# $FreeBSD$
+#
+
+PORTNAME=       jpeginfo
+PORTVERSION=    1.5a
+CATEGORIES=     graphics
+MASTER_SITES=   http://www.cc.jyu.fi/~tjko/src/
+
+MAINTAINER=     ache@freebsd.org
+
+LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+
+GNU_CONFIGURE=  yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=           jpeginfo.1
+
+.include <bsd.port.mk>
