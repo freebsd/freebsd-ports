@@ -10,7 +10,8 @@
 PORTNAME=	lilypond
 PORTVERSION=	1.3.131
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/development/
+MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.3/ \
+		ftp://sca.uwaterloo.ca/pub/lilypond/v1.3/
 
 MAINTAINER=	trevor@FreeBSD.org
 
