@@ -1,0 +1,38 @@
+--- tcpshow.1.orig	Sun Jul 19 15:05:47 1998
++++ tcpshow.1	Mon Nov  2 05:23:41 1998
+@@ -46,7 +46,7 @@
+ ] [
+ .B \-noData
+ ] [
+-.B \-minDecode
++.B \-minHdrDecode
+ ]
+ .br
+ .ti +8
+@@ -175,7 +175,7 @@
+ .IP
+ The protocol data is not displayed (a count of data bytes is shown).
+ .TP
+-.B \-minDecode
++.B \-minHdrDecode
+ display only a minimal decode of the protocol headers.
+ .IP
+ Essentially, the header decode shows only the hostnames and ports involved.
+@@ -261,7 +261,7 @@
+ .LP
+ Display data only (minimal header decode).
+ .IP
+-# tcpshow -minDecode
++# tcpshow -minHdrDecode
+ .LP
+ Display a decode of Telnet traffic only, omitting the link and IP headers.
+ .IP
+@@ -282,7 +282,7 @@
+ .IP
+ # tcpdump -s 1518 -w savefile
+ .br
+-# tcpshow -minDecode port smtp < savefile
++# tcpshow -minHdrDecode port smtp < savefile
+ .LP
+ To display a decode of data not captured via \fBtcpdump\fP(1), you
+ would typically use the application that captured the trace to dump
