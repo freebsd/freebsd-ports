@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Jun  3 08:46:32 2001
++++ Makefile	Tue Mar  5 16:07:48 2002
+@@ -11,10 +11,10 @@
+ CXX	=	g++
+ CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
+ CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
+-INCPATH	=	-I/usr/X11R6/include -I$(QTDIR)/include
++INCPATH	=	-I/usr/X11R6/include -I$(QTDIR)/include/qt2
+ LINK	=	g++
+ LFLAGS	=	
+-LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -ltiff -lqt -lXext -lX11 -lm
++LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -L%%LOCALBASE%%/lib -ltiff -lqt -lXext -lX11 -lm
+ MOC	=	$(QTDIR)/bin/moc
+ UIC	=	$(QTDIR)/bin/uic
+ 
