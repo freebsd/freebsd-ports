@@ -4501,6 +4501,7 @@ msrc0		ports/devel/msrc0
 msun		src/lib/msun
 msyslog		ports/sysutils/msyslog
 mt		src/usr.bin/mt
+mtc		ports/russian/mtc
 mtest		src/usr.sbin/mtest
 mtf		ports/archivers/mtf
 mtl		ports/math/mtl
