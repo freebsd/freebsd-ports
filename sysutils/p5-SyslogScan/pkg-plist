@@ -1,0 +1,22 @@
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/ByGroup.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Delivery.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/DeliveryIterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/FilterUser.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Group.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/In_identdLine.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/ParseDate.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLine.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineClone.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineFrom.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineTo.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineTrans.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Summary.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SyslogEntry.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/UnsupportedEntry.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Usage.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Volume.pm
+lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/WhereIs.pm
+lib/perl5/site_perl/%%PERL_VER%%/read_mail_log.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan
