@@ -831,6 +831,7 @@ ccache		ports/devel/ccache
 ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
 ccdoc		ports/devel/ccdoc
+ccd2iso		ports/sysutils/ccd2iso
 cclient		ports/mail/cclient
 ccmalloc	ports/devel/ccmalloc
 ccmath		ports/math/ccmath
