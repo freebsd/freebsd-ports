@@ -1,16 +1,6 @@
-GtkDatabox is designed to display large amounts of numerical data fast and
-easy. Thousands of data points (X and Y coordinate) may be displayed without
-any problems, zooming and scrolling as well as optional rulers are already
-included. 
-
-The widget may be used as display for oscilloscopes or other applications that
-need to display fast changes in their data. 
-
-At the present time only dotted curves, bars or lines may be used, but other
-forms of representation like different dots or pixmaps are planned for the
-near future.
-
-In addition user defined drawing functions will be added, along with structs
-for exporting the display to other media (i.e. PS, PNG, etc.)
+A widget to display large sets of data as dots (or lines). Different data
+sets will have different colors, you may change colors and style of the data
+The widget gives the possibility to zoom into and out of the data and to 
+scroll around. It also offers a grid like on an oscilloscope.
 
 WWW: http://www.eudoxos.de/gtk/gtkdatabox/
