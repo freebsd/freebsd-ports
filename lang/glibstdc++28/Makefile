@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.16 1999/03/08 07:28:30 asami Exp $
+# $Id: Makefile,v 1.17 1999/03/11 21:47:12 scrappy Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -27,16 +27,14 @@ RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 CC=		gcc28
 CXX=		g++28
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=        i386-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=        i386-portbld-freebsd${OSREL}
 .else
-GNUHOST=        i386-unknown-freebsdaout${OSREL}
+CONFIGURE_TARGET=        i386-portbld-freebsdaout${OSREL}
 .endif
-GCC28DIR=	lib/gcc-lib/${GNUHOST}/2.8.1
-CONFIGURE_ARGS= --host=${GNUHOST}
+GCC28DIR=	lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	# empty
 USE_GMAKE=	yes
-PLIST_SUB=	GCC28SUBDIR=${GCC28DIR} GNUHOST=${GNUHOST}
+PLIST_SUB=	GCC28SUBDIR=${GCC28DIR} GNUHOST=${CONFIGURE_TARGET}
 
 pre-install:
 	@# allow a boched ``make install'' to be re-tried
