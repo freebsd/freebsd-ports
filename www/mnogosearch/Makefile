@@ -57,9 +57,9 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
 
 post-install:
-	cp -R ${WRKSRC}/create ${PREFIX}/share/mnogosearch
-	/bin/chmod 700 /var/mnogosearch/cache
-	/usr/sbin/chown nobody.nogroup /var/mnogosearch/cache
+	${CP} -R ${WRKSRC}/create ${PREFIX}/share/mnogosearch
+	${CHMOD} 700 /var/mnogosearch/cache
+	${CHOWN} nobody.nogroup /var/mnogosearch/cache
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/mnogosearch
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
