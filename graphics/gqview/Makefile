@@ -6,37 +6,32 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Another gtk-based graphic file viewer
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	Another gtk2-based graphic file viewer
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf
-WANT_GNOME=	yes
+USE_GNOME=	gtk20
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-gnome
+		LIBS="-L${LOCALBASE}/lib"
 
 CONFLICTS=	gqview-devel-1.3.*
 
 MAN1=		gqview.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g' \
-		${WRKSRC}/aclocal.m4
-
+.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	${MKDIR} ${PREFIX}/share/gnome/apps/Graphics
-	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
