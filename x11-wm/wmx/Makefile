@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pl/}
 MAINTAINER=	sec@42.org
 COMMENT=	Extended version of wm2 - A simple window manager for X
 
+BROKEN=		"Contains severe bug, will be fixed by maintainer"
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
