@@ -1,0 +1,23 @@
+	ATTENTIONATTENTION:
+
+Restrictions
+============
+
+This program uses heavy encryption algorithms. If your country has
+restrictions against encryption, you should check with legal
+authorities before using it.
+
+Short usage note
+================
+
+Please, check
+/usr/local/share/doc/freenet/README
+for more information.
+
+Using FreeNet
+=============
+
+Point your web browser to http://127.0.0.1:8888/ to get the Freenet
+user interface, this page serves as a "gateway" to Freenet. Try
+clicking the various links in the "Bookmarks" panel to reach some
+of the popular Freenet index sites.

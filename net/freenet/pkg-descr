@@ -1,0 +1,23 @@
+Freenet is a large-scale peer-to-peer network which pools the power
+of member computers around the world to create a massive virtual
+information store open to anyone to freely publish or view information
+of all kinds. Freenet is:
+
+Highly survivable: All internal processes are completely anonymized
+and decentralized across the global network, making it virtually
+impossible for an attacker to destroy information or take control
+of the system.
+
+Private: Freenet makes it extremely difficult for anyone to spy on
+the information that you are viewing, publishing, or storing.
+
+Secure: Information stored in Freenet is protected by strong
+cryptography against malicious tampering or counterfeiting.
+
+Efficient: Freenet dynamically replicates and relocates information
+in response to demand to provide efficient service and minimal
+bandwidth usage regardless of load. Significantly, Freenet generally
+requires log(n) time to retrieve a piece of information in a network
+of size n.
+
+WWW: http://freenet.sourceforge.net/
