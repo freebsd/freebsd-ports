@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 16:37:20 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Wed Sep 11 16:39:15 2002
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Fri Feb 28 09:52:23 2003
++++ libnautilus-private/nautilus-volume-monitor.c	Mon Mar 10 18:13:57 2003
 @@ -59,6 +59,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -241,7 +238,7 @@ $FreeBSD$
  #else
  	GString *new_dev_path;
  	struct cdrom_tocentry entry;
-@@ -1765,7 +1854,7 @@
+@@ -1768,7 +1857,7 @@
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
@@ -250,7 +247,7 @@ $FreeBSD$
  		/* These are set up by get_current_mount_list for Solaris. */
  		volume->is_removable = volume_is_removable (volume);
  #endif
-@@ -1794,7 +1883,7 @@
+@@ -1797,7 +1886,7 @@
  		ok = mount_volume_auto_add (volume);
  	} else if (strcmp (file_system_type_name, "cdda") == 0) {
  		ok = mount_volume_cdda_add (volume);
@@ -259,13 +256,13 @@ $FreeBSD$
  		ok = mount_volume_iso9660_add (volume);
  	} else if (strcmp (file_system_type_name, "nfs") == 0) {
  		ok = mount_volume_nfs_add (volume);
-@@ -1823,8 +1912,8 @@
- 	}
- 
- 	/* Identify device type */
--	if (eel_str_has_prefix (volume->mount_path, "/mnt/")) {		
+@@ -1835,8 +1924,8 @@
+ 	} else if (eel_str_has_prefix (volume->device_path, "/dev/cdrom")) {
+                 volume->device_type = NAUTILUS_DEVICE_CDROM_DRIVE;
+                 volume->is_removable = TRUE;
+-	} else if (eel_str_has_prefix (volume->mount_path, "/mnt/")) {		
 -		name = volume->mount_path + strlen ("/mnt/");
-+	if (eel_str_has_prefix (volume->mount_path, "/")) {		
++	} else if (eel_str_has_prefix (volume->mount_path, "/")) {		
 +		name = volume->mount_path + strlen ("/");
  		
  		if (eel_str_has_prefix (name, "cdrom")
