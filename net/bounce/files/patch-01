@@ -1,0 +1,19 @@
+--- bounce.c.orig	Sun Sep 20 15:44:41 1998
++++ bounce.c	Sun Sep 20 15:46:04 1998
+@@ -20,13 +20,14 @@
+ #include <sys/ioctl.h>
+ #include <signal.h>
+ #include <sys/wait.h>
++#include <unistd.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #define    QLEN           5
+ #define    DEFAULT_PORT   1523
+ 
+ char sbuf[16384], cbuf[16384];
+-extern int errno;
+-extern char *sys_errlist[];
+ 
+ void sigchld() {
+   signal(SIGCHLD, sigchld);
