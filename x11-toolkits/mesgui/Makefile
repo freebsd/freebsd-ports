@@ -13,19 +13,33 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+		freetype.9:${PORTSDIR}/print/freetype2
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_REINPLACE=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	OPT="-I${LOCALBASE}/include -I${X11BASE}/include"
+MAKE_ENV=	OPT="${OPT}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
+OPT=		${CFLAGS} -fPIC -DPIC -Iinclude \
+		`${SDL_CONFIG} --cflags` `freetype-config --cflags` \
+		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	`${SDL_CONFIG} --libs` `freetype-config --libs` \
+		-L${LOCALBASE}/lib -L${X11BASE}/lib
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|^CC|#CC|g" -e "s,OPT =,OPT+=,g" \
-		-e "s|-I/usr|-I${LOCALBASE}|g" -e "s,SDL,SDL11,g" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
+		 s|^OPT|#OPT|g ; \
+		 s|gcc|\$$\(CC\)|g ; \
+		 s|-lc|\$$\(LDFLAGS\)|g' ${WRKSRC}/Makefile
+	@cd ${WRKSRC}/src && \
+	for file in * ; do \
+		${MV} $${file} $${file}.pre_tr ; \
+		${TR} -d "\r" < $${file}.pre_tr > $${file} ; \
+	done
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/mesgui.h ${PREFIX}/include
