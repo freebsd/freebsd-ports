@@ -1,0 +1,86 @@
+*** config/options.h-vanilla	Fri Feb 10 19:21:59 1995
+--- config/options.h	Tue Feb 28 23:46:59 1995
+***************
+*** 42,48 ****
+   *	LIBEXEC_DIR	- Internal support programs
+   *	MAN_DIR		- Man pages
+   */
+! #define CONFIG_DIR "/etc/amanda"
+  #define LIBEXEC_DIR "/usr/local/libexec/amanda"
+  #define BIN_DIR	"/usr/local/sbin"
+  #define MAN_DIR	"/usr/share/local/man/man8"
+--- 42,48 ----
+   *	LIBEXEC_DIR	- Internal support programs
+   *	MAN_DIR		- Man pages
+   */
+! #define CONFIG_DIR "/usr/local/etc/amanda"
+  #define LIBEXEC_DIR "/usr/local/libexec/amanda"
+  #define BIN_DIR	"/usr/local/sbin"
+  #define MAN_DIR	"/usr/share/local/man/man8"
+***************
+*** 53,59 ****
+   * I compile with -g to compile in a full symbol table, but you might choose
+   * to use -O or something else.
+   */
+! #define MK_CCOPTS -g
+  /*
+   * You can also redefine MK_CC here if you wish to override the system
+   * dependent C compiler.  If you have a stable version of GCC, you may
+--- 53,59 ----
+   * I compile with -g to compile in a full symbol table, but you might choose
+   * to use -O or something else.
+   */
+! #define MK_CCOPTS -O
+  /*
+   * You can also redefine MK_CC here if you wish to override the system
+   * dependent C compiler.  If you have a stable version of GCC, you may
+***************
+*** 77,83 ****
+   * Since 2.2.1 is a major change, I recommend defining this for existing
+   * Amanda sites.
+   */
+! #define USE_VERSION_SUFFIXES
+  
+  
+  /*
+--- 77,83 ----
+   * Since 2.2.1 is a major change, I recommend defining this for existing
+   * Amanda sites.
+   */
+! /*#define USE_VERSION_SUFFIXES*/
+  
+  
+  /*
+***************
+*** 182,196 ****
+  #define HAVE_GZIP
+  
+  #ifdef HAVE_GZIP
+! #  define COMPRESS_PATH  	"/usr/imports/bin/gzip"
+  #  define COMPRESS_SUFFIX 	".gz"
+  #  define COMPRESS_FAST_OPT	"--fast"
+  #  define COMPRESS_BEST_OPT	"--best"
+! #  define UNCOMPRESS_CMD	"gzcat"
+  #else
+  #  define COMPRESS_PATH		COMPRESS	/* defined in config.h */
+  #  define COMPRESS_SUFFIX	".Z"
+  #  define COMPRESS_FAST_OPT	"-f"		/* -f doesn't do anything */
+  #  define COMPRESS_BEST_OPT	"-f"		/* it's just a placeholder */
+! #  define UNCOMPRESS_CMD	"zcat"
+  #endif
+--- 182,196 ----
+  #define HAVE_GZIP
+  
+  #ifdef HAVE_GZIP
+! #  define COMPRESS_PATH  	"/usr/bin/gzip"
+  #  define COMPRESS_SUFFIX 	".gz"
+  #  define COMPRESS_FAST_OPT	"--fast"
+  #  define COMPRESS_BEST_OPT	"--best"
+! #  define UNCOMPRESS_CMD	"/usr/bin/gzcat"
+  #else
+  #  define COMPRESS_PATH		COMPRESS	/* defined in config.h */
+  #  define COMPRESS_SUFFIX	".Z"
+  #  define COMPRESS_FAST_OPT	"-f"		/* -f doesn't do anything */
+  #  define COMPRESS_BEST_OPT	"-f"		/* it's just a placeholder */
+! #  define UNCOMPRESS_CMD	"/usr/bin/zcat"
+  #endif
