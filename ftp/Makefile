@@ -72,6 +72,7 @@
     SUBDIR += sftp
     SUBDIR += spegla
     SUBDIR += tftp-hpa
+    SUBDIR += tnftpd
     SUBDIR += twoftpd
     SUBDIR += vcheck
     SUBDIR += vsftpd
