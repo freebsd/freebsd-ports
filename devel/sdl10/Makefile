@@ -8,7 +8,8 @@
 PORTNAME=		sdl
 PORTVERSION=		1.0.8
 CATEGORIES=		devel
-MASTER_SITES=		http://www.devolution.com/~slouken/SDL/release/
+MASTER_SITES=		http://www.libsdl.org/release/ \
+			http://www.devolution.com/~slouken/SDL/release/
 DISTNAME=		SDL-${PORTVERSION}
 
 MAINTAINER=		sobomax@FreeBSD.org
