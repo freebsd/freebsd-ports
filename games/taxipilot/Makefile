@@ -16,15 +16,9 @@ COMMENT=	A Spacetaxi clone
 LIB_DEPENDS=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOMAKE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500028
-BROKEN=		"Does not build on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
