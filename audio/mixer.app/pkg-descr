@@ -1,4 +1,4 @@
-A dockapp that controls the mixer for three volumes:
+A dockapp that controls the mixer for three volumes by default:
 	* Master
 	* CD
 	* PCM
@@ -6,6 +6,3 @@ A dockapp that controls the mixer for three volumes:
 Author: 
 Per Liden <per@rsn.hk-r.se>
 WWW: http://www.student.hk-r.se/~pt96pli/mixer/
-
--Chris Piazza
-cpiazza@home.net

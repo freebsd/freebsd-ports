@@ -1,23 +1,22 @@
 # New ports collection makefile for:	wmSpaceWeather
 # Version required:     1.04
 # Date created:		16 April 1999
-# Whom:			Chris Piazza <cpiazza@home.net>
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/30 04:54:58 taoka Exp $
 
 DISTNAME=	wmSpaceWeather-1.04
 PKGNAME=	wmspaceweather-1.04
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	clean all
 

@@ -3,7 +3,7 @@
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.20 1999/05/01 02:15:38 steve Exp $
+# $Id: Makefile,v 1.21 1999/05/29 09:37:37 mharo Exp $
 #
 
 DISTNAME=	blackbox-0.50.5
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://balance.wiw.org/pub/blackbox/ \
 	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/ \
 		ftp://ftp.max.irk.ru/unix/x/wm/
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

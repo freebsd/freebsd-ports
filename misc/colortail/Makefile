@@ -1,16 +1,16 @@
 # New ports collection makefile for:   colortail
 # Version required:    0.2.0
 # Date created:                25 February 1999
-# Whom:                        Chris Piazza <cpiazza@home.net>
+# Whom:                        Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/27 12:32:21 taoka Exp $
 #
 
 DISTNAME=      colortail-0.2.0
 CATEGORIES=    misc
 MASTER_SITES=  http://www.student.hk-r.se/~pt98jan/
 
-MAINTAINER=    cpiazza@home.net
+MAINTAINER=    cpiazza@FreeBSD.org
 
 GNU_CONFIGURE= YES
 
