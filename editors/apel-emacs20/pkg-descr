@@ -6,7 +6,7 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
 
   APEL stands for "A Portable Emacs Library".  It consists of
   following modules:
-    APEL
+    apel
      - utility to write portable CCL program
      - utility for Association-list
      - utility for condition tree and condition/situation-alist
@@ -14,6 +14,7 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
      - utility to make file-name
      - utility to install emacs-lisp package
      - ROT 13-47-48 Caesar rotation utility
+     - portable custom environment
     emu
      - poe: emulation module mainly for basic functions and special forms/macros
      - poem: provide basic functions to write portable MULE programs
@@ -23,7 +24,7 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
      - text/richtext module
 
   APEL is installed the following directory tree:
-	${PREFIX}/share/emacs/site-lisp/apel/		--- APEL
+	${PREFIX}/share/emacs/site-lisp/apel/		--- apel
 	${PREFIX}/share/emacs/20.3/site-lisp/emu/	--- emu
 
 --- Porting by shige <shige@FreeBSD.ORG>.
