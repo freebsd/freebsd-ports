@@ -1,0 +1,5 @@
+lib/%%PYTHON_VERSION%%/site-packages/spark.py
+%%PORTDOCS%%share/doc/spark/doc.html
+%%PORTDOCS%%share/doc/spark/doc.tex
+%%PORTDOCS%%share/doc/spark/paper.ps.gz
+%%PORTDOCS%%@dirrm share/doc/spark
