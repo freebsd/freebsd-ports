@@ -10,6 +10,8 @@ PORTVERSION=	1.6.4.3
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
+# version 1.6.4.3 isn't fetchable anymore, informed maintainer about
+# version 1.6.5pre19 which is still there - edwin 20021227
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
