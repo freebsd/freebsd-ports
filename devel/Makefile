@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.180 1999/05/05 13:51:33 taoka Exp $
+# $Id: Makefile,v 1.181 1999/05/08 10:32:25 asami Exp $
 #
 
     SUBDIR += ElectricFence
@@ -16,6 +16,7 @@
     SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += cccc
+    SUBDIR += cdk
     SUBDIR += cflow
     SUBDIR += clig
     SUBDIR += cons
