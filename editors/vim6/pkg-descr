@@ -1,0 +1,15 @@
+Vim is an almost compatible version of the UNIX text editor vi.  Only the 'Q'
+command is missing (you don't need it).
+
+Many new features have been added:
+    multiple windows and buffers, multi level undo, command line history,
+    filename completion, selection highlighting, block operations (including
+    column/rectangular blocks), etc.
+
+	an X-windows aware or a full X-windows GUI version can also be built
+	that allows full use of the mouse and pull-down menus
+
+Portability to all UNIX platforms, Amiga DOS, MS-DOS, MS-Windows NT, and
+    Archimedes.
+
+-- David	(obrien@cs.ucdavis.edu)

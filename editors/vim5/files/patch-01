@@ -1,0 +1,21 @@
+--- Makefile.orig	Tue May 13 01:50:19 1997
++++ Makefile	Sun May 18 19:45:46 1997
+@@ -559,7 +559,7 @@
+ $(MOTIF_COMMENT)GUI_DEFS  = -DUSE_GUI_MOTIF $(NARROW_PROTO)
+ $(MOTIF_COMMENT)GUI_IPATH = -I$(GUI_INC_LOC)
+ $(MOTIF_COMMENT)GUI_LIBS_DIR = -L$(GUI_LIB_LOC)
+-$(MOTIF_COMMENT)GUI_LIBS  = -lXm -lXt
++$(MOTIF_COMMENT)GUI_LIBS  = ${MOTIFLIB} -lXt
+ $(MOTIF_COMMENT)GUI_TARGETS =	$(BINLOC)/$(GVIMTARGET) \
+ 				$(BINLOC)/$(GEXTARGET) \
+ 				$(BINLOC)/$(GVIEWTARGET) \
+@@ -796,7 +796,8 @@
+ 	GUI_INC_LOC="$(GUI_INC_LOC)" GUI_LIB_LOC="$(GUI_LIB_LOC)" \
+ 		CC="$(CC)" CFLAGS="$(CFLAGS)" TERM_LIB="$(TERM_LIB)" \
+ 	$(CONF_SHELL) ./configure $(CONF_OPT_GUI) $(CONF_OPT_X) \
+-	$(CONF_OPT_PERL) $(CONF_ARGS)
++	$(CONF_OPT_PERL) $(CONF_ARGS) \
++	--prefix=$(PREFIX)
+ 
+ # When configure.in has changed, run autoconf to produce configure
+ # If you don't have autoconf, use the configure that's there
