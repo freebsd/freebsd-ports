@@ -7,6 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
+PORTVERSION2=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh${PORTVERSION2}/src/ \
 		${MASTER_SITE_GNU}
