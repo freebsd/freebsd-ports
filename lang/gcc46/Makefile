@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-27
+SNAPDATE=	2002-04-06
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -35,7 +35,7 @@ LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
 
-CVS_DATE=	${SNAPDATE} 10:41 PST
+CVS_DATE=	${SNAPDATE} 23:35 PST
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
@@ -154,9 +154,9 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-#.for info in cpp cppinternals g77 gcc gcj
-#	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-#.endfor
+.for info in cpp cppinternals g77 gcc gcj
+	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
