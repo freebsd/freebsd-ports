@@ -1624,6 +1624,7 @@ fo-aspell	ports/textproc/fo-aspell
 font2svg	ports/print/font2svg
 fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
+fonteditfs	ports/sysutils/fonteditfs
 fontilus	ports/x11-fonts/fontilus
 foobillard	ports/games/foobillard
 foomatic-db	ports/print/foomatic-db
