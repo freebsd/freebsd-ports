@@ -27,14 +27,9 @@ ISCVERSION=	9.2.3rc4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --disable-threads \
-		--with-randomdev=/dev/random
+		--with-randomdev=/dev/random --with-openssl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.endif
 
 .if defined(PORT_REPLACES_BASE_BIND9)
 PKGNAMESUFFIX=	-base
@@ -111,4 +106,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
