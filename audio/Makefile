@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.86 1999/05/03 03:53:35 steve Exp $
+# $Id: Makefile,v 1.87 1999/05/03 03:55:02 steve Exp $
 #
 
     SUBDIR += amp
@@ -27,6 +27,7 @@
     SUBDIR += kmpg
     SUBDIR += lamer
     SUBDIR += libaudiofile
+    SUBDIR += libmikmod
     SUBDIR += linux-realplayer
     SUBDIR += maplay
     SUBDIR += mikmod
