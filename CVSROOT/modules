@@ -9279,3 +9279,4 @@ p5-Test-MockObject	ports/devel/p5-Test-MockObject
 rc_subr		ports/sysutils/rc_subr
 openfts		ports/textproc/openfts
 usogres		ports/databases/usogres
+erserver	ports/databases/erserver
