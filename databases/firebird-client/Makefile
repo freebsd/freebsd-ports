@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.5.r9
+PORTVERSION=	1.5
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
-		http://www.aims.net.au/chris/firebird/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
-DISTNAME=	Firebird-1.5.0.4288.src
+DISTNAME=	firebird-1.5.0.4290
 
 MAINTAINER=	chris@e-easy.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -29,7 +28,7 @@ LD=	gcc
 
 CONFLICTS=	firebird-devel-*
 
-WRKSRC=		${WRKDIR}/firebird15-rc9
+WRKSRC=		${WRKDIR}/firebird-1.5.0.4290
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
