@@ -24,8 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 .endif
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-NO_CDROM=	"unsure to sell for profit"
-NO_PACKAGE=	"unsure to redistribute"
+RESTRICTED=	"unsure to redistribute"
 
 .if defined(OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll -loops -fexpensive-optimizations -malign-double
