@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
