@@ -10,11 +10,10 @@ MASTERDIR=	${.CURDIR}/../../palm/jpilot
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
 PKGNAME=	ja-jpilot-0.93.1
-
-.include "${MASTERDIR}/Makefile"
-
-CATEGORIES=	japanese palm
+CATEGORIES=	japanese
 
 MAINTAINER=	sumikawa@kame.net
 
-CONFIGURE_ARGS+=	--with-japanese
+CONFIGURE_ARGS=	--with-japanese
+
+.include "${MASTERDIR}/Makefile"
