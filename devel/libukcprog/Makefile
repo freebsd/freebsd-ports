@@ -7,7 +7,7 @@
 
 PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -23,6 +23,6 @@ DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget pkgconfig lthack
 
 .include <bsd.port.mk>
