@@ -31,6 +31,7 @@ bin/spin
 %%PORTDOCS%%%%DOCSDIR%%/Test/leader
 %%PORTDOCS%%%%DOCSDIR%%/Test/leader.ltl
 %%PORTDOCS%%%%DOCSDIR%%/Test/leader2
+%%PORTDOCS%%%%DOCSDIR%%/Test/leader_trace
 %%PORTDOCS%%%%DOCSDIR%%/Test/loops
 %%PORTDOCS%%%%DOCSDIR%%/Test/mobile1
 %%PORTDOCS%%%%DOCSDIR%%/Test/mobile1.ltl
