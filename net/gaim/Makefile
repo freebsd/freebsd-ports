@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-MAN1=		gaim.1
+MAN1=		gaim.1 gaim-remote.1
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
