@@ -7,7 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.25.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}
@@ -24,11 +24,13 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR 
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
-		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
+		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 CONFLICTS=	MailScanner-devel-*
 
@@ -79,8 +81,17 @@ do-build:
 		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/lib/MailScanner/ConfigDefs.pl
-	${PERL} -pi \
-		-e 's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
+	${PERL} -pi -e \
+		's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
+	${PERL} -pi -e \
+		's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g;' \
+		${WRKSRC}/lib/clamav-wrapper
+	${PERL} -pi -e \
+		's,/usr/bin/wget,${LOCALBASE}/bin/wget,g;' \
+		${WRKSRC}/lib/sophos-autoupdate
+	${PERL} -pi -e \
+		's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g;' \
+		${WRKSRC}/lib/sophos-autoupdate
 
 do-install:
 	# 
@@ -148,6 +159,8 @@ do-install:
 	cd ${WRKSRC}/docs/man && \
 		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
 		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
+	# Sophos install script
+	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
 	@${WRKSRC}/bin/upgrade_MailScanner_conf \
