@@ -106,6 +106,8 @@ LPRngTool	ports/sysutils/LPRngTool
 MT		ports/www/MT
 MT-PM		ports/www/MT-PM
 Maaate		ports/audio/Maaate
+MailScanner	ports/mail/MailScanner
+MailScanner-devel	ports/mail/MailScanner-devel
 MathPlanner	ports/editors/MathPlanner
 Mosaic		ports/www/Mosaic
 MuSE		ports/audio/muse
@@ -4425,7 +4427,6 @@ mailfront	ports/mail/mailfront
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
 mailmgr		ports/mail/mailmgr
-mailscanner	ports/mail/mailscanner
 mailsync	ports/mail/mailsync
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
