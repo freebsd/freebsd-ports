@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.23 1998/03/03 08:05:04 tg Exp $
+# $Id: Makefile,v 1.24 1998/04/08 09:23:57 tg Exp $
 #
 
 DISTNAME=       python1.5
@@ -12,12 +12,8 @@ CATEGORIES=	lang tk80
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 
-PATCH_SITES=	http://www.python.org/1.5/patches/
-PATCHFILES=	abstract.1.txt code.1.txt fileobject.1.txt listobject.1.txt \
-		ntpath.1.txt pcre.1.txt pypcre.1.txt pythonrun.1.txt \
-		random.1.txt re.1.txt re.2.txt rfc822.1.txt shelve.1.txt \
-		strop.1.txt tokenizer.1.txt tokenizer.2.txt urllib.1.txt \
-		urllib.2.txt versioncheck.1.txt
+PATCH_SITES=	http://www.python.org/1.5/
+PATCHFILES=	all.txt
 
 MAINTAINER=	tg@FreeBSD.org
 
