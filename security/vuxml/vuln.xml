@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>tnftp</name>
-        <range><ge>0</ge></range>
+        <range><lt>20050103</lt></range>
       </package>
     </affects>
     <description>
