@@ -1,4 +1,3 @@
-# New ports collection makefile for:	powerdns
 # Date Created:				14.Jan 2003
 # Whom:					dirk.meyer@dinoex.sub.org
 #
@@ -6,8 +5,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.12
-PORTREVISION=	1
+PORTVERSION=	2.9.13
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}

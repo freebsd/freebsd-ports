@@ -1,0 +1,11 @@
+--- pdns/communicator.hh	21 Jun 2003 09:59:08 -0000	1.5
++++ pdns/communicator.hh	10 Jan 2004 15:47:47 -0000
+@@ -94,7 +94,7 @@
+   
+   time_t earliest()
+   {
+-    time_t early=1<<31-1; // y2038 problem lurking here :-)
++    time_t early=(1<<31)-1; // y2038 problem lurking here :-)
+     for(d_nqueue_t::const_iterator i=d_nqueue.begin();i!=d_nqueue.end();++i) 
+       early=min(early,i->next);
+     return early-time(0);
