@@ -7,7 +7,7 @@
 
 PORTNAME=	blwm
 PORTVERSION=	1.0.4
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm portuguese
 MASTER_SITES=	http://labdid.if.usp.br/~blanes/arquivos/
 
 MAINTAINER=	trevor@FreeBSD.org
