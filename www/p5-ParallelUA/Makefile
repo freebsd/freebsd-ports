@@ -4,11 +4,11 @@
 # Date created:                         Sep 8 1998
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.7 1999/05/17 21:34:42 ache Exp $
+# $Id: Makefile,v 1.8 1999/05/26 14:15:23 kuriyama Exp $
 #
 
-DISTNAME=       ParallelUserAgent-2.42
-PKGNAME=        p5-ParallelUA-2.42
+DISTNAME=       ParallelUserAgent-2.43
+PKGNAME=        p5-ParallelUA-2.43
 CATEGORIES=     www perl5 devel
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     LWP
