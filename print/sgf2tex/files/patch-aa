@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jun 17 21:04:35 2001
-+++ Makefile	Wed Jun 20 12:59:39 2001
+--- Makefile.orig	Mon Jun 18 13:04:35 2001
++++ Makefile	Mon Mar 28 15:04:58 2005
 @@ -14,12 +14,18 @@
  # TEXHASH is MakeTeXls-R for WEB2C Unix distribution, texhash for TETEX, blank
  # for NTEX.
@@ -11,12 +11,12 @@
 -BINDIR=/usr/local/bin/
 +MFDIR=${PREFIX}/share/texmf/fonts/source/public/GOOE
 +TFMDIR=${PREFIX}/share/texmf/fonts/tfm/public/GOOE
-+TEXINPUTS=${PREFIX}/share/texmf/tex/GOOE
++TEXINPUTS=${PREFIX}/share/texmf/tex/generic/GOOE
 +MANDIR=${PREFIX}/man/man1/
 +BINDIR=${PREFIX}/bin/
-+.if exists(/usr/local/bin/MakeTeXls-R)
++.if exists(${LOCALBASE}/bin/MakeTeXls-R)
 +TEXHASH=MakeTeXls-R
-+.elif exists(/usr/local/bin/texhash)
++.elif exists(${LOCALBASE}/bin/texhash)
  TEXHASH=texhash
 +.else
 +TEXHASH=
@@ -24,7 +24,7 @@
  
  # PKFONTS may be left undefined for the initial installation. If you are
  # reinstalling fonts for which you have made modifications to the metafont
-@@ -45,6 +51,8 @@
+@@ -45,21 +51,23 @@
  
  .SUFFIXES : .mf .tfm .300pk .360pk .432pk .600pk .720pk .864pk .300gf .360gf .432gf .600gf .720gf .864gf
  
@@ -33,7 +33,9 @@
  sgfsplit: sgfsplit.c
  	cc -g -o sgfsplit sgfsplit.c
  
-@@ -53,13 +61,13 @@
+ manual.dvi: manual.tex
+-	tex manual
++	${TEX_BIN} manual
  
  install: sgfsplit 
  	rm -f $(PKFONTS)
@@ -49,7 +51,7 @@
 +	mkdir -p $(TEXINPUTS) && install -c -m 0644 gooemacs.tex gotcmacs.tex $(TEXINPUTS)
  	$(TEXHASH)
 -	tex manual
-+	install -c -m 0644 manual.dvi ${PREFIX}/share/doc/sgf2tex.dvi
++	install -c -m 0644 manual.dvi ${TEXINPUTS}/manual.dvi
  
  # The preferred method of installation is just to copy the metafont
  # sources and tfm files into appropriated directories in MakeTeXPK's
