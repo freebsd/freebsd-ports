@@ -27,6 +27,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
 
+FORBIDDEN=	"http://www.vuxml.org/freebsd/eeb1c128-33e7-11d9-a9e7-0001020eed82.html"
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
