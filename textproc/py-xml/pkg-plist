@@ -12,6 +12,7 @@
 %%PORTDOCS%%share/doc/py-xml/README.pyexpat
 %%PORTDOCS%%share/doc/py-xml/README.sgmlop
 %%PORTDOCS%%share/doc/py-xml/TODO
+%%PORTDOCS%%share/doc/py-xml/package-summary.txt
 %%PORTDOCS%%share/doc/py-xml/xml-howto.tex
 %%PORTDOCS%%share/doc/py-xml/xml-howto.txt
 %%PORTDOCS%%share/doc/py-xml/xml-ref.tex
@@ -104,6 +105,7 @@
 %%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/af_20000919.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/af_20000922.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/nc_20000921.py
+%%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/uo_20010713.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/ext/TestSuite.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/ext/bigTest.html
 %%PORTDOCS%%share/examples/py-xml/test/dom/ext/mulit-single.html
@@ -235,6 +237,9 @@
 %%PORTDOCS%%share/examples/py-xml/test/xmlval_illformed.dtd
 bin/xmlproc_parse
 bin/xmlproc_val
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/FtCore.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/FtCore.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/FtCore.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.pyo
@@ -333,6 +338,9 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/XHtmlPrinter.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/c14n.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/c14n.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/c14n.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/HtmlLib.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/HtmlLib.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/HtmlLib.pyo
@@ -556,6 +564,9 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/marshal/wddx.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/marshal/xmlrpc.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/marshal/xmlrpc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/marshal/xmlrpc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/ns.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/ns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/ns.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/parsers/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/parsers/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/parsers/__init__.pyo
@@ -723,6 +734,7 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/qp_xml.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de/LC_MESSAGES
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/output
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/dom/html
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/dom/ext
@@ -743,5 +755,4 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/qp_xml.pyo
 %%PORTDOCS%%@dirrm share/doc/py-xml/xmlproc
 %%PORTDOCS%%@dirrm share/doc/py-xml/4DOM
 %%PORTDOCS%%@dirrm share/doc/py-xml
-@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom 2>/dev/null || true
 @unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%% 2>/dev/null || true
