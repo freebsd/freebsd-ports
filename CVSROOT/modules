@@ -2392,6 +2392,7 @@ ja-gnomecore	ports/japanese/gnomecore
 ja-gnomelibs	ports/japanese/gnomelibs
 ja-gnumeric	ports/japanese/gnumeric
 ja-gp		ports/japanese/gp
+ja-gqmpeg	ports/japanese/gqmpeg
 ja-grep		ports/japanese/grep
 ja-groff	ports/japanese/groff
 ja-gxditview	ports/japanese/gxditview
