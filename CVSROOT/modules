@@ -1646,6 +1646,7 @@ fastjar		ports/archivers/fastjar
 fastresolve	ports/sysutils/fastresolve
 fb		ports/editors/fb
 fbbi		ports/lang/fbbi
+fbdesk		ports/x11-wm/fbdesk
 fbm		ports/graphics/fbm
 fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
