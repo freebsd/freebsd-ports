@@ -91,7 +91,7 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 
 		# Type check the header
 		unless ($value =~ /^$pattern$/) {
-			print "Error: syntax check failed for: $header\n";
+			print "Error: $header: should match /^$pattern\$/.\n";
 			++$error;
 			next;
 		}
