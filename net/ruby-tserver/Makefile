@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tserver
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.tmtm.org/ruby/tserver/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
