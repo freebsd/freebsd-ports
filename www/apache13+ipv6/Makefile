@@ -18,6 +18,9 @@ PATCHFILES=	apache-1.3.29-v6-20031112.diff.gz
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
+BROKEN=		Vulnerability is found and no IPv6 patch for latest version is available. \
+		Recommned to use apache2 instead of this port
+
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
