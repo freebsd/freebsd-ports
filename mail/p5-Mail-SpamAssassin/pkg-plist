@@ -49,6 +49,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locales.pm
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/INSTALL
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/TRADEMARK
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/USAGE
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/procmailrc.example
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/sample-nonspam.txt
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/sample-spam.txt
