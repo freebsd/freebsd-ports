@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Run/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Timer.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/IO.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Run
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC/Run
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IPC 2>/dev/null || true

@@ -1,0 +1,6 @@
+IPC::Run allows you run and interact with child processes, files, pipes,
+and pseudo-ttys.  Both event-loop and procedural techniques are
+supported and may be mixed.  Likewise, functional and OO API styles are
+both supported and may be mixed.
+
+Currently, pseudo-ttys operations are not supported in FreeBSD.
