@@ -68,6 +68,13 @@ PLIST_SUB+=	XTHRSTUB:="@comment "
 PLIST_SUB+=	XTHRSTUB:=""
 .endif
 
+# amd64 also supplies libxkbfile.so*
+.if ${MACHINE_ARCH} == "amd64"
+PLIST_SUB+=	AMD64:=""
+.else
+PLIST_SUB+=	AMD64:="@comment "
+.endif
+
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
