@@ -67,6 +67,12 @@ NO_WERROR=	yes
 CONFIGURE_ARGS+=	--disable-werror
 .endif
 
+.if ${OSVERSION} < 500000
+.if ${MOZILLA}=="mozilla-devel"
+USE_GCC=	3.4
+.endif
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " By default the port uses www/mozilla for html rendering, but you can"

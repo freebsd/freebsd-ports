@@ -50,6 +50,14 @@ HEADERS_SUFX=
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+.if ${WITH_MOZILLA}=="mozilla-devel"
+USE_GCC=	3.4
+.endif
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
@@ -89,4 +97,4 @@ do-install:
 			${PREFIX}/etc/mplayerplug-in.types ;\
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
