@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -18,9 +17,9 @@ COMMENT?=	The XSLT C library for GNOME
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME?=	gnomehack lthack gnometarget libxml2
+USE_GNOME?=	gnomehack gnometarget libxml2
 USE_REINPLACE=	yes
 CONFIGURE_ARGS?= --with-html-dir=${PREFIX}/share/doc \
 		--without-python
