@@ -1,0 +1,73 @@
+*** login.c.orig	Tue Jan 11 20:36:37 2000
+--- login.c	Tue Jan 11 20:36:34 2000
+***************
+*** 117,122 ****
+--- 117,125 ----
+  #include <hpsecurity.h>
+  #include <prot.h>
+  #endif /* HAVE_HPUX_TCB_AUTH */
++ #ifdef __FreeBSD__
++ #include <osreldate.h>
++ #endif
+  #include "ssh.h"
+  
+  /* Returns the time when the user last logged in.  Returns 0 if the 
+***************
+*** 255,261 ****
+     were more standardized. */
+  
+  void record_login(int pid, const char *ttyname, const char *user, uid_t uid,
+!                   const char *host, struct sockaddr_in *addr)
+  {
+    int fd;
+  
+--- 258,264 ----
+     were more standardized. */
+  
+  void record_login(int pid, const char *ttyname, const char *user, uid_t uid,
+! 		  const char *host, struct sockaddr *addr)
+  {
+    int fd;
+  
+***************
+*** 301,317 ****
+    strncpy(u.ut_user, user, sizeof(u.ut_user));
+  #endif /* HAVE_NAME_IN_UTMP */
+  #ifdef HAVE_HOST_IN_UTMP
+-   strncpy(u.ut_host, host, sizeof(u.ut_host));
+  #ifdef __FreeBSD__
+    if (strlen(host) > sizeof(u.ut_host)) {
+      strncpy(u.ut_host, get_remote_ipaddr(), sizeof(u.ut_host));
+!   }
+  #endif /* __FreeBSD__ */
+  #endif /* HAVE_HOST_IN_UTMP */
+  #ifdef HAVE_ADDR_IN_UTMP
+    if (addr)
+      memcpy(&u.ut_addr, &addr->sin_addr, sizeof(u.ut_addr));
+    else
+      memset(&u.ut_addr, 0, sizeof(u.ut_addr));
+  #endif
+  
+--- 304,325 ----
+    strncpy(u.ut_user, user, sizeof(u.ut_user));
+  #endif /* HAVE_NAME_IN_UTMP */
+  #ifdef HAVE_HOST_IN_UTMP
+  #ifdef __FreeBSD__
++ #if __FreeBSD_version >= 320000
++   trimdomain(host, sizeof u.ut_host);
++ #endif
+    if (strlen(host) > sizeof(u.ut_host)) {
+      strncpy(u.ut_host, get_remote_ipaddr(), sizeof(u.ut_host));
+!   } else
+  #endif /* __FreeBSD__ */
++   strncpy(u.ut_host, host, sizeof(u.ut_host));
+  #endif /* HAVE_HOST_IN_UTMP */
+  #ifdef HAVE_ADDR_IN_UTMP
++ #if 0 /* XXX */
+    if (addr)
+      memcpy(&u.ut_addr, &addr->sin_addr, sizeof(u.ut_addr));
+    else
++ #endif /* XXX */
+      memset(&u.ut_addr, 0, sizeof(u.ut_addr));
+  #endif
+  

@@ -1,0 +1,14 @@
+*** readconf.h.orig	Wed May 12 13:19:27 1999
+--- readconf.h	Mon Jan 10 22:56:13 2000
+***************
+*** 98,103 ****
+--- 98,106 ----
+    int use_privileged_port;	/* Use privileged port */
+  
+    int port;			/* Port to connect. */
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   int another_port;		/* Port to connect for -A option. */
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    int connection_attempts;	/* Max attempts (seconds) before giving up */
+    int number_of_password_prompts; /* Max number of password prompts */
+    int password_prompt_login;	/* Show remote login at password prompt */

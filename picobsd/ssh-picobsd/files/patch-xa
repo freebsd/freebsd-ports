@@ -1,0 +1,167 @@
+Note that this patch has been incorporated into the port due to problems
+with patching a autoconf generated configure script. The script itself contains
+linenumbers and in case of two patches against that script the second one fails
+because it expects something that the first patch has already changed. The
+only clean way is to re-generate it with autoconf. *sigh*
+This patch was fetched from
+http://www.ssh.org/patches/patch-ssh-1.2.27-bsd.tty.chown
+  - torstenb@FreeBSD.org, Tue Jan 11 21:36:46 CET 2000
+
+
+Patch for problem with tty ownership with chflags and chown in BSD 4.4
+variants. Fixes a security bug in tty allocation. 
+
+This patch works for ssh-1.2.27.
+
+Apply with the following commands:
+
+% cd /wherever/you/hold/your/sources/ssh-1.2.27
+% patch -p1 -l < /path/to/where/you/saved/patch-ssh-1.2.27-bsd.tty.chown
+% ./configure --whatever-config-flags-you-use
+% make clean
+% make
+% su
+Password: ***********
+# make install
+# kill -HUP `cat /var/run/sshd.pid`
+
+You should be all set.
+
+Sami Lehtinen <sjl@ssh.fi>
+
+--begin patch--
+diff -u --recursive -X /u/sjl/bin/diff-src-db auth-passwd.c.orig auth-passwd.c
+--- auth-passwd.c.orig	Wed May 12 14:19:23 1999
++++ auth-passwd.c	Wed Aug 11 19:49:32 1999
+@@ -613,7 +613,13 @@
+             /* get_name pulls out just the name not the
+                type */
+               strcpy(ccname + 5, krb5_cc_get_name(ssh_context, ccache));
+-              (void) chown(ccname + 5, pw->pw_uid, pw->pw_gid);
++              if (chown(ccname + 5, pw->pw_uid, pw->pw_gid) < 0)
++                {
++                  log_msg("Kerberos: chown failed for %s, error: %s",
++                          ccname + 5, strerror(errno));
++                  packet_send_debug("Kerberos: chown failed for %s", ccname + 5);
++                  goto errout;
++                }
+               
+               /* If tgt was passed unlink file */
+               if (ticket)
+diff -u --recursive -X /u/sjl/bin/diff-src-db config.h.in.orig config.h.in
+--- config.h.in.orig	Wed May 12 14:20:04 1999
++++ config.h.in	Wed Aug 11 20:20:51 1999
+@@ -360,6 +360,9 @@
+ /* Define if you have the authenticate function.  */
+ #undef HAVE_AUTHENTICATE
+ 
++/* Define if you have the chflags function.  */
++#undef HAVE_CHFLAGS
++
+ /* Define if you have the clock function.  */
+ #undef HAVE_CLOCK
+ 
+diff -u --recursive -X /u/sjl/bin/diff-src-db configure.in.orig configure.in
+--- configure.in.orig	Wed May 12 14:20:02 1999
++++ configure.in	Wed Aug 11 20:05:13 1999
+@@ -433,6 +433,7 @@
+ AC_CHECK_FUNCS(strchr memcpy setlogin openpty _getpty clock fchmod ulimit)
+ AC_CHECK_FUNCS(gethostname getdtablesize umask innetgr initgroups setpgrp)
+ AC_CHECK_FUNCS(setpgid daemon waitpid ttyslot authenticate getpt isastream)
++AC_CHECK_FUNCS(chflags)
+ 
+ AC_REPLACE_FUNCS(strerror memmove remove random putenv crypt socketpair snprintf)
+ 
+diff -u --recursive -X /u/sjl/bin/diff-src-db sshd.c.orig sshd.c
+--- sshd.c.orig	Wed May 12 14:19:29 1999
++++ sshd.c	Wed Aug 11 20:26:31 1999
+@@ -2897,9 +2897,87 @@
+               tty_mode = S_IRUSR|S_IWUSR|S_IWGRP|S_IWOTH;
+             }
+ 
++        retry_chown:
++
+           /* Change ownership of the tty. */
+-          (void)chown(ttyname, pw->pw_uid, tty_gid);
+-          (void)chmod(ttyname, tty_mode);
++          if (chown(ttyname, pw->pw_uid, tty_gid) < 0)
++            {
++              /* chown failed. Atleast two possibilities. Either we are not
++                 running as root, in which case this is OK, or we are running
++                 on BSD, and somebody has put some flags to the tty. */
++              
++              /* Check whether we are root or not.*/
++              if (getuid() != UID_ROOT)
++                {
++                  /* We are not, and then this is OK. */
++                  debug("chown failed (but we're not root anyway) for "
++                        "%s, error %s", ttyname, strerror(errno));
++                }
++              else
++                {
++#ifdef HAVE_CHFLAGS
++                  static int retrying = 0;
++                  struct stat st;
++                  
++                  if (!retrying)
++                    {
++                      debug("chown failed for %s, error: %s. Removing "     
++                            "user-settable flags, and retrying.",
++                            ttyname, strerror(errno));
++                      
++                      if (stat(ttyname, &st) < 0)
++                        {
++                          error("stat failed for %s, error: %s",
++                                ttyname, strerror(errno));
++                        }
++                      else
++                        {              
++                          debug("Removing user-settable flags with "
++                                "chflags.");
++                          /* Remove user definable flags. */
++                          if (chflags(ttyname, st.st_flags &
++                                      ~(UF_NODUMP | UF_IMMUTABLE |
++                                        UF_APPEND | UF_OPAQUE)) < 0)
++                            {
++                              debug("chflags failed for %s, error: %s",
++                                    ttyname, strerror(errno));
++                            }
++                          else
++                            {
++                              debug("Retrying...");
++                              retrying = 1;
++                              goto retry_chown;
++                            }
++                        }
++                    }
++                  else
++                    {
++                      debug("chown failed even with retry. error: %s",
++                            strerror(errno));
++                    }
++                  
++#endif /* HAVE_CHFLAGS */          
++                  error("ssh_pty_allocate_and_fork: chown failed for %s.",
++                        ttyname);
++                  goto fail;
++                }
++            }
++          
++          if (chmod(ttyname, tty_mode) < 0)
++            {
++              if (getuid() != UID_ROOT)
++                {
++                  /* We are not, and then this is (probably) OK. */
++                  debug("chmod failed (but we're not root anyway) for "
++                        "%s, error %s", ttyname, strerror(errno));
++                }
++              else
++                {
++                  error("ssh_pty_allocate_and_fork: chmod %s: %s",
++                        ttyname, strerror(errno));
++                  goto fail;
++                }
++            }
+ 
+           /* Get TERM from the packet.  Note that the value may be of arbitrary
+              length. */

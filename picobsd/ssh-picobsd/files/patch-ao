@@ -1,0 +1,583 @@
+*** newchannels.c.orig	Tue Jan 11 20:38:09 2000
+--- newchannels.c	Tue Jan 11 20:38:02 2000
+***************
+*** 282,287 ****
+--- 282,292 ----
+  #endif /* NEED_SYS_SYSLOG_H */
+  #endif /* LIBWRAP */
+  
++ #ifdef __FreeBSD__
++ #include <utmp.h>
++ #include <osreldate.h>
++ #endif
++ 
+  /* Directory in which the fake unix-domain X11 displays reside. */
+  #ifndef X11_DIR
+  #define X11_DIR "/tmp/.X11-unix"
+***************
+*** 1405,1417 ****
+                                        int host_port, int gatewayports)
+  {
+    int ch, sock;
+!   struct sockaddr_in sin;
+  
+    if (strlen(host) > sizeof(channels[0].path) - 1)
+      packet_disconnect("Forward host name too long.");
+    
+    /* Create a port to listen for the host. */
+!   sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0)
+      packet_disconnect("socket: %.100s", strerror(errno));
+  
+--- 1410,1438 ----
+                                        int host_port, int gatewayports)
+  {
+    int ch, sock;
+!   struct addrinfo hints, *ai, *aitop;
+!   char ntop[ADDRSTRLEN], strport[PORTSTRLEN];
+  
+    if (strlen(host) > sizeof(channels[0].path) - 1)
+      packet_disconnect("Forward host name too long.");
+    
++   memset(&hints, 0, sizeof(hints));
++   hints.ai_family = IPv4or6;
++   hints.ai_flags = gatewayports ? AI_PASSIVE : 0;
++   hints.ai_socktype = SOCK_STREAM;
++   sprintf(strport, "%d", port);
++   if (getaddrinfo(NULL, strport, &hints, &aitop) != 0)
++     packet_disconnect("getaddrinfo: fatal error");
++ 
++   for (ai = aitop; ai; ai = ai->ai_next)
++     {
++ 
++   getnameinfo(ai->ai_addr, ai->ai_addrlen,
++ 	      ntop, sizeof(ntop), strport, sizeof(strport),
++ 	      NI_NUMERICHOST|NI_NUMERICSERV);
++ 
+    /* Create a port to listen for the host. */
+!   sock = socket(ai->ai_family, SOCK_STREAM, 0);
+    if (sock < 0)
+      packet_disconnect("socket: %.100s", strerror(errno));
+  
+***************
+*** 1421,1441 ****
+    (void)fcntl(sock, F_SETFL, O_NDELAY);
+  #endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
+  
+!   /* Initialize socket address. */
+!   memset(&sin, 0, sizeof(sin));
+!   sin.sin_family = AF_INET;
+!   if (gatewayports)
+!     sin.sin_addr.s_addr = INADDR_ANY;
+!   else
+! #ifdef BROKEN_INET_ADDR
+!     sin.sin_addr.s_addr = inet_network("127.0.0.1");
+! #else /* BROKEN_INET_ADDR */
+!     sin.sin_addr.s_addr = inet_addr("127.0.0.1");
+! #endif /* BROKEN_INET_ADDR */
+!   sin.sin_port = htons(port);
+!   
+    /* Bind the socket to the address. */
+!   if (bind(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+      packet_disconnect("bind: %.100s", strerror(errno));
+        
+    /* Start listening for connections on the socket. */
+--- 1442,1451 ----
+    (void)fcntl(sock, F_SETFL, O_NDELAY);
+  #endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
+  
+!   debug("Listening on %s port %s.", ntop, strport);
+! 
+    /* Bind the socket to the address. */
+!   if (bind(sock, ai->ai_addr, ai->ai_addrlen) < 0)
+      packet_disconnect("bind: %.100s", strerror(errno));
+        
+    /* Start listening for connections on the socket. */
+***************
+*** 1448,1453 ****
+--- 1458,1466 ----
+    strcpy(channels[ch].path, host); /* note: host name stored here */
+    channels[ch].host_port = host_port; /* port on host to connect to */
+    channels[ch].listening_port = port; /* port being listened */
++ 
++   } /* for (ai = aitop; ai; ai = ai->ai_next) */
++   freeaddrinfo(aitop);
+  }  
+  
+  /* Initiate forwarding of connections to port "port" on remote host through
+***************
+*** 1636,1644 ****
+  void channel_input_port_open(void)
+  {
+    int remote_channel, sock, newch, host_port, i;
+-   struct sockaddr_in sin;
+    char *host, *originator_string;
+!   struct hostent *hp;
+  
+    /* Get remote channel number. */
+    remote_channel = packet_get_int();
+--- 1649,1658 ----
+  void channel_input_port_open(void)
+  {
+    int remote_channel, sock, newch, host_port, i;
+    char *host, *originator_string;
+!   struct addrinfo hints, *ai, *aitop;
+!   char ntop[ADDRSTRLEN], strport[PORTSTRLEN];
+!   int gaierr;
+  
+    /* Get remote channel number. */
+    remote_channel = packet_get_int();
+***************
+*** 1678,1713 ****
+          }
+      }
+    
+!   memset(&sin, 0, sizeof(sin));
+! #ifdef BROKEN_INET_ADDR
+!   sin.sin_addr.s_addr = inet_network(host);
+! #else /* BROKEN_INET_ADDR */
+!   sin.sin_addr.s_addr = inet_addr(host);
+! #endif /* BROKEN_INET_ADDR */
+!   if ((sin.sin_addr.s_addr & 0xffffffff) != 0xffffffff)
+!     {
+!       /* It was a valid numeric host address. */
+!       sin.sin_family = AF_INET;
+!     }
+!   else
+      {
+!       /* Look up the host address from the name servers. */
+!       hp = gethostbyname(host);
+!       if (!hp)
+!         {
+!           error("%.100s: unknown host.", host);
+!           goto fail;
+!         }
+!       if (!hp->h_addr_list[0])
+!         {
+!           error("%.100s: host has no IP address.", host);
+!           goto fail;
+!         }
+!       sin.sin_family = hp->h_addrtype;
+!       memcpy(&sin.sin_addr, hp->h_addr_list[0], 
+!              sizeof(sin.sin_addr));
+      }
+-   sin.sin_port = htons(host_port);
+    
+  #ifdef F_SECURE_COMMERCIAL
+  
+--- 1692,1706 ----
+          }
+      }
+    
+!   memset(&hints, 0, sizeof(hints));
+!   hints.ai_family = IPv4or6;
+!   hints.ai_socktype = SOCK_STREAM;
+!   sprintf(strport, "%d", host_port);
+!   if ((gaierr = getaddrinfo(host, strport, &hints, &aitop)) != 0)
+      {
+!       error("%.100s: unknown host (%s)", host, gai_strerror(gaierr));
+!       goto fail;
+      }
+    
+  #ifdef F_SECURE_COMMERCIAL
+  
+***************
+*** 1744,1751 ****
+  
+  #endif /* F_SECURE_COMMERCIAL */
+  
+    /* Create the socket. */
+!   sock = socket(sin.sin_family, SOCK_STREAM, 0);
+    if (sock < 0)
+      {
+        error("socket: %.100s", strerror(errno));
+--- 1737,1751 ----
+  
+  #endif /* F_SECURE_COMMERCIAL */
+  
++   for (ai = aitop; ai; ai = ai->ai_next)
++     {
++ 
++   getnameinfo(ai->ai_addr, ai->ai_addrlen,
++ 	      ntop, sizeof(ntop), strport, sizeof(strport),
++ 	      NI_NUMERICHOST|NI_NUMERICSERV);
++ 
+    /* Create the socket. */
+!   sock = socket(ai->ai_family, SOCK_STREAM, 0);
+    if (sock < 0)
+      {
+        error("socket: %.100s", strerror(errno));
+***************
+*** 1753,1767 ****
+      }
+  
+    /* Connect to the host/port. */
+!   if (connect(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+      {
+!       error("connect %.100s:%d: %.100s", host, host_port,
+!             strerror(errno));
+        close(sock);
+        goto fail;
+      }
+  
+    /* Successful connection. */
+  
+  #if defined(O_NONBLOCK) && !defined(O_NONBLOCK_BROKEN)
+    (void)fcntl(sock, F_SETFL, O_NONBLOCK);
+--- 1753,1777 ----
+      }
+  
+    /* Connect to the host/port. */
+!   if (connect(sock, ai->ai_addr, ai->ai_addrlen) < 0)
+      {
+!       debug("connect %.100s port %s: %.100s", ntop, strport, strerror(errno));
+        close(sock);
++       continue;	/* fail -- try next */	
++     }
++   break; /* success */
++ 
++   } /* for (ai = aitop; ai; ai = ai->ai_next) */
++   freeaddrinfo(aitop);
++ 
++   if (!ai)
++     {
++       error("connect %.100s:%d: failed.", host, host_port);
+        goto fail;
+      }
+  
+    /* Successful connection. */
++   debug("Connecting to %.200s [%.100s] port %s.", host, ntop, strport);
+  
+  #if defined(O_NONBLOCK) && !defined(O_NONBLOCK_BROKEN)
+    (void)fcntl(sock, F_SETFL, O_NONBLOCK);
+***************
+*** 1803,1809 ****
+  {
+    extern ServerOptions options;
+    int display_number, port, sock;
+!   struct sockaddr_in sin;
+    char buf[512];
+  #ifdef HAVE_GETHOSTNAME
+    char hostname[257];
+--- 1813,1822 ----
+  {
+    extern ServerOptions options;
+    int display_number, port, sock;
+!   struct addrinfo hints, *ai, *aitop;
+!   char strport[PORTSTRLEN];
+! #define	NUM_SOCKS	10
+!   int gaierr, n, nn, num_socks = 0, socks[NUM_SOCKS];
+    char buf[512];
+  #ifdef HAVE_GETHOSTNAME
+    char hostname[257];
+***************
+*** 1817,1828 ****
+    for (display_number = options.x11_display_offset; display_number < MAX_DISPLAYS; display_number++)
+      {
+        port = 6000 + display_number;
+!       memset(&sin, 0, sizeof(sin));
+!       sin.sin_family = AF_INET;
+!       sin.sin_addr.s_addr = INADDR_ANY;
+!       sin.sin_port = htons(port);
+        
+!       sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (sock < 0)
+          {
+            error("socket: %.100s", strerror(errno));
+--- 1830,1850 ----
+    for (display_number = options.x11_display_offset; display_number < MAX_DISPLAYS; display_number++)
+      {
+        port = 6000 + display_number;
+!       memset(&hints, 0, sizeof(hints));
+!       hints.ai_family = IPv4or6;
+!       hints.ai_flags = AI_PASSIVE;
+!       hints.ai_socktype = SOCK_STREAM;
+!       sprintf(strport, "%d", port);
+!       if ((gaierr = getaddrinfo(NULL, strport, &hints, &aitop)) != 0)
+! 	{
+! 	  error("getaddrinfo: %.100s", gai_strerror(gaierr));
+! 	  return NULL;
+! 	}
+! 
+!       for (ai = aitop; ai; ai = ai->ai_next)
+! 	{
+        
+!       sock = socket(ai->ai_family, SOCK_STREAM, 0);
+        if (sock < 0)
+          {
+            error("socket: %.100s", strerror(errno));
+***************
+*** 1835,1847 ****
+        (void)fcntl(sock, F_SETFL, O_NDELAY);
+  #endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
+        
+!       if (bind(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+          {
+            debug("bind port %d: %.100s", port, strerror(errno));
+            shutdown(sock, 2);
+            close(sock);
+!           continue;
+          }
+        break;
+      }
+    if (display_number >= MAX_DISPLAYS)
+--- 1857,1882 ----
+        (void)fcntl(sock, F_SETFL, O_NDELAY);
+  #endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
+        
+!       if (bind(sock, ai->ai_addr, ai->ai_addrlen) < 0)
+          {
+            debug("bind port %d: %.100s", port, strerror(errno));
+            shutdown(sock, 2);
+            close(sock);
+! 	  for (n = 0; n < num_socks; n++)
+! 	    {
+! 	      shutdown(socks[n], 2);
+! 	      close(socks[n]);
+! 	    }
+! 	  num_socks = 0;
+! 	  break;
+          }
++ 
++       socks[num_socks++] = sock;
++       if (num_socks == NUM_SOCKS)
++ 	break;
++       } /* for (ai = aitop; ai; ai = ai->ai_next) */
++ 
++       if (num_socks > 0)
+        break;
+      }
+    if (display_number >= MAX_DISPLAYS)
+***************
+*** 1851,1863 ****
+--- 1886,1907 ----
+      }
+  
+    /* Start listening for connections on the socket. */
++   for (n = 0; n < num_socks; n++)
++     {
++   sock = socks[n];
+    if (listen(sock, 5) < 0)
+      {
+        error("listen: %.100s", strerror(errno));
+        shutdown(sock, 2);
+        close(sock);
++       for (nn = 0; nn < n; nn++)
++ 	{
++ 	  shutdown(socks[nn], 2);
++ 	  close(socks[nn]);
++ 	}
+        return NULL;
+      }
++   } /* for (n = 0; n < num_socks; n++) */
+  
+    /* Set up a suitable value for the DISPLAY variable. */
+  #ifdef NONSTANDARD_IP_ADDRESS_X11_KLUDGE
+***************
+*** 1868,1877 ****
+    if (gethostname(hostname, sizeof(hostname)) < 0)
+      fatal("gethostname: %.100s", strerror(errno));
+    {
+!     struct hostent *hp;
+!     struct in_addr addr;
+!     hp = gethostbyname(hostname);
+!     if (hp == NULL || !hp->h_addr_list[0])
+        {
+          error("Could not get server IP address for %.200s.", hostname);
+          packet_send_debug("Could not get server IP address for %.200s.", 
+--- 1912,1922 ----
+    if (gethostname(hostname, sizeof(hostname)) < 0)
+      fatal("gethostname: %.100s", strerror(errno));
+    {
+!     struct addrinfo hints, *ai;
+!     char ntop[ADDRSTRLEN];
+!     memset(&hints, 0, sizeof(hints));
+!     hints.ai_family = IPv4or6;
+!     if (getaddrinfo(hostname, NULL, &hints, &ai) != 0 || !ai)
+        {
+          error("Could not get server IP address for %.200s.", hostname);
+          packet_send_debug("Could not get server IP address for %.200s.", 
+***************
+*** 1880,1888 ****
+          close(sock);
+          return NULL;
+        }
+!     memcpy(&addr, hp->h_addr_list[0], sizeof(addr));
+      snprintf(buf, sizeof(buf),
+!              "%.100s:%d.%d", inet_ntoa(addr), display_number, 
+               screen_number);
+    }
+  #else /* NONSTANDARD_IP_ADDRESS_X11_KLUDGE */
+--- 1925,1934 ----
+          close(sock);
+          return NULL;
+        }
+!     getnameinfo(ai->ai_addr, ai->ai_addrlen,
+! 		ntop, sizeof(ntop), NULL, 0, NI_NUMERICHOST);
+      snprintf(buf, sizeof(buf),
+!              "%.100s:%d.%d", ntop, display_number, 
+               screen_number);
+    }
+  #else /* NONSTANDARD_IP_ADDRESS_X11_KLUDGE */
+***************
+*** 1891,1896 ****
+--- 1937,1945 ----
+      fatal("gethostname: %.100s", strerror(errno));
+    snprintf(buf, sizeof(buf),
+             "%.400s:%d.%d", hostname, display_number, screen_number);
++ #if __FreeBSD_version >= 320000
++   trimdomain(buf, UT_HOSTSIZE);
++ #endif
+  #else /* HAVE_GETHOSTNAME */
+    if (uname(&uts) < 0)
+      fatal("uname: %.100s", strerror(errno));
+***************
+*** 1900,1907 ****
+--- 1949,1960 ----
+  #endif /* NONSTANDARD_IP_ADDRESS_X11_KLUDGE */
+              
+    /* Allocate a channel for the socket. */
++   for (n = 0; n < num_socks; n++)
++     {
++   sock = socks[n];
+    (void)channel_allocate(SSH_CHANNEL_X11_LISTENER, sock,
+                           xstrdup("X11 inet listener"));
++   } /* for (n = 0; n < num_socks; n++) */
+  
+    /* Return a suitable value for the DISPLAY environment variable. */
+    return xstrdup(buf);
+***************
+*** 1916,1924 ****
+    int remote_channel, display_number, sock, newch;
+    const char *display;
+    struct sockaddr_un ssun;
+-   struct sockaddr_in sin;
+    char buf[255], *cp, *remote_host;
+!   struct hostent *hp;
+  
+    /* Get remote channel number. */
+    remote_channel = packet_get_int();
+--- 1969,1978 ----
+    int remote_channel, display_number, sock, newch;
+    const char *display;
+    struct sockaddr_un ssun;
+    char buf[255], *cp, *remote_host;
+!   struct addrinfo hints, *ai, *aitop;
+!   char strport[PORTSTRLEN];
+!   int gaierr;
+  
+    /* Get remote channel number. */
+    remote_channel = packet_get_int();
+***************
+*** 2058,2110 ****
+        goto fail;
+      }
+    
+!   /* Try to parse the host name as a numeric IP address. */
+!   memset(&sin, 0, sizeof(sin));
+! #ifdef BROKEN_INET_ADDR
+!   sin.sin_addr.s_addr = inet_network(buf);
+! #else /* BROKEN_INET_ADDR */
+!   sin.sin_addr.s_addr = inet_addr(buf);
+! #endif /* BROKEN_INET_ADDR */
+!   if ((sin.sin_addr.s_addr & 0xffffffff) != 0xffffffff)
+      {
+!       /* It was a valid numeric host address. */
+!       sin.sin_family = AF_INET;
+      }
+!   else
+      {
+-       /* Not a numeric IP address. */
+-       /* Look up the host address from the name servers. */
+-       hp = gethostbyname(buf);
+-       if (!hp)
+-         {
+-           error("%.100s: unknown host.", buf);
+-           goto fail;
+-         }
+-       if (!hp->h_addr_list[0])
+-         {
+-           error("%.100s: host has no IP address.", buf);
+-           goto fail;
+-         }
+-       sin.sin_family = hp->h_addrtype;
+-       memcpy(&sin.sin_addr, hp->h_addr_list[0], 
+-              sizeof(sin.sin_addr));
+-     }
+-   /* Set port number. */
+-   sin.sin_port = htons(6000 + display_number);
+  
+    /* Create a socket. */
+!   sock = socket(sin.sin_family, SOCK_STREAM, 0);
+    if (sock < 0)
+      {
+!       error("socket: %.100s", strerror(errno));
+!       goto fail;
+      }
+    /* Connect it to the display. */
+!   if (connect(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+      {
+!       error("connect %.100s:%d: %.100s", buf, 6000 + display_number, 
+              strerror(errno));
+        close(sock);
+        goto fail;
+      }
+  
+--- 2112,2155 ----
+        goto fail;
+      }
+    
+!   /* Look up the host address */
+!   memset(&hints, 0, sizeof(hints));
+!   hints.ai_family = IPv4or6;
+!   hints.ai_socktype = SOCK_STREAM;
+!   sprintf(strport, "%d", 6000 + display_number);
+!   if ((gaierr = getaddrinfo(buf, strport, &hints, &aitop)) != 0)
+      {
+!       error("%.100s: unknown host. (%s)", buf, gai_strerror(gaierr));
+!       goto fail;
+      }
+! 
+!   for (ai = aitop; ai; ai = ai->ai_next)
+      {
+  
+    /* Create a socket. */
+!   sock = socket(ai->ai_family, SOCK_STREAM, 0);
+    if (sock < 0)
+      {
+!       debug("socket: %.100s", strerror(errno));
+!       continue;
+      }
+    /* Connect it to the display. */
+!   if (connect(sock, ai->ai_addr, ai->ai_addrlen) < 0)
+      {
+!       debug("connect %.100s:%d: %.100s", buf, 6000 + display_number, 
+              strerror(errno));
+        close(sock);
++       continue;
++     }
++   /* Success */
++   break;
++ 
++   } /* (ai = aitop, ai; ai = ai->ai_next) */
++   freeaddrinfo(aitop);
++   if (!ai)
++     {
++       error("connect %.100s:%d: %.100s", buf, 6000 + display_number, 
++ 	    strerror(errno));
+        goto fail;
+      }
+  
+***************
+*** 2412,2417 ****
+--- 2457,2466 ----
+       ssh-agent connections on your system */
+    old_umask = umask(S_IRUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH);
+    
++   /* Make sure the socket doesn't already exist, left over from a system
++      crash perhaps. */
++   unlink(channel_forwarded_auth_socket_name);
++ 
+    if (bind(sock, (struct sockaddr *)&sunaddr, AF_UNIX_SIZE(sunaddr)) < 0)
+      packet_disconnect("Agent socket bind failed: %.100s", strerror(errno));
+    

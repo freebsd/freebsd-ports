@@ -1,0 +1,54 @@
+*** auth-kerberos.c.orig	Tue Jan 11 20:33:46 2000
+--- auth-kerberos.c	Tue Jan 11 20:33:38 2000
+***************
+*** 120,129 ****
+--- 120,137 ----
+        
+        debug("Kerberos invalid service name (%.100s).", server);
+        packet_send_debug("Kerberos invalid service name (%.100s).", server);
++ #ifdef krb5_xfree
+        krb5_xfree(server);
++ #else
++       free(server);
++ #endif
+        return 0;
+      }
++ #ifdef krb5_xfree
+    krb5_xfree(server);
++ #else
++   free(server);
++ #endif
+    
+    /* Extract the users name from the ticket client principal */
+    problem = krb5_copy_principal(ssh_context, ticket->enc_part2->client,
+***************
+*** 159,165 ****
+--- 167,177 ----
+    packet_put_string((char *) reply.data, reply.length);
+    packet_send();
+    packet_write_wait();
++ #ifdef krb5_xfree
+    krb5_xfree(reply.data);
++ #else
++   krb5_free_data_contents(ssh_context, &reply);
++ #endif
+    return 1;
+  }
+  #endif /* KRB5 */
+***************
+*** 177,183 ****
+    extern char *ticket;
+    static krb5_principal rcache_server = 0;
+    static krb5_rcache rcache;
+!   struct sockaddr_in local, foreign;
+    krb5_address *local_addr, *remote_addr;
+    int s;
+    
+--- 189,195 ----
+    extern char *ticket;
+    static krb5_principal rcache_server = 0;
+    static krb5_rcache rcache;
+!   struct sockaddr_storage local, foreign;
+    krb5_address *local_addr, *remote_addr;
+    int s;
+    

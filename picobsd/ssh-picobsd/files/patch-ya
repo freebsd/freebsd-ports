@@ -1,0 +1,54 @@
+--- Makefile.in.1	Thu Dec 21 18:39:10 2000
++++ Makefile.in	Thu Dec 21 18:44:34 2000
+@@ -267,6 +267,7 @@
+ LIBS		= @LIBS@
+ LIBOBJS		= @LIBOBJS@
+ CONFOBJS	= @CONFOBJS@
++CONFOBJS	=	# force none.
+ SSHCONFOBJS	= @SSHCONFOBJS@
+ SSHDCONFOBJS	= @SSHDCONFOBJS@
+ 
+@@ -324,16 +325,21 @@
+ XLIBS		= $(X_LIBS) $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS) $(LIBS)
+ 
+ COMMON_OBJS = $(LIBOBJS) $(CONFOBJS) \
++	log-server.o \
+ 	rsa.o randoms.o md5.o buffer.o emulate.o packet.o compress.o \
+ 	xmalloc.o ttymodes.o newchannels.o bufaux.o authfd.o authfile.o \
+ 	crc32.o rsaglue.o cipher.o des.o match.o arcfour.o mpaux.o \
+-	userfile.o signals.o blowfish.o deattack.o
++	userfile.o signals.o blowfish.o deattack.o \
++	canohost.o
++
+ SSHD_OBJS = sshd.o auth-rhosts.o auth-passwd.o auth-rsa.o auth-rh-rsa.o pty.o \
+-	log-server.o login.o hostfile.o canohost.o servconf.o tildexpand.o \
+-	serverloop.o $(COMMON_OBJS) $(KERBEROS_OBJS) $(SSHDCONFOBJS)
+-SSH_OBJS = ssh.o sshconnect.o log-client.o readconf.o hostfile.o readpass.o \
+-	tildexpand.o clientloop.o canohost.o $(COMMON_OBJS) $(SSHCONFOBJS)
+-KEYGEN_OBJS = ssh-keygen.o log-client.o readpass.o rsa.o randoms.o md5.o \
++	login.o hostfile.o servconf.o tildexpand.o \
++	serverloop.o \
++	ssh.o sshconnect.o log-client.o readconf.o readpass.o \
++	clientloop.o \
++	scp.o \
++	$(COMMON_OBJS) $(SSHCONFOBJS)
++KEYGEN_OBJS = ssh-keygen.o log-server.o readpass.o rsa.o randoms.o md5.o \
+ 	buffer.o xmalloc.o authfile.o cipher.o des.o arcfour.o mpaux.o \
+ 	bufaux.o userfile.o signals.o blowfish.o $(LIBOBJS) $(CONFOBJS)
+ AGENT_OBJS = ssh-agent.o log-client.o rsa.o randoms.o md5.o buffer.o \
+@@ -403,7 +409,6 @@
+ #endif F_SECURE_COMMERCIAL
+ SCRIPT_PROGRAMS = make-ssh-known-hosts
+ SBIN_PROGRAMS = sshd
+-PROGRAMS = ssh $(SBIN_PROGRAMS) $(NORMAL_PROGRAMS) $(SCRIPT_PROGRAMS) \
+-$(X_PROGRAMS) $(OTHER_PROGRAMS)
++PROGRAMS = $(SBIN_PROGRAMS)
+ SSH_PROGRAM = $(bindir)/ssh1
+ 
+@@ -759,3 +765,6 @@
+ tags:
+ 	-rm -f TAGS
+ 	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a
++
++obj:
++	echo "-- fake target for picobsd --"

@@ -1,0 +1,19 @@
+*** make-ssh-known-hosts.pl.in.orig	Wed May 12 20:18:51 1999
+--- make-ssh-known-hosts.pl.in	Sun Jun  6 02:30:08 1999
+***************
+*** 98,104 ****
+  $debug = 5;
+  $defserver = '';
+  $bell='\a';
+! $public_key = '/etc/ssh_host_key.pub';
+  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
+  $timeout = 60;
+  $ping_timeout = 3;
+--- 98,104 ----
+  $debug = 5;
+  $defserver = '';
+  $bell='\a';
+! $public_key = '@ETCDIR@/ssh_host_key.pub';
+  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
+  $timeout = 60;
+  $ping_timeout = 3;

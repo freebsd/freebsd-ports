@@ -1,0 +1,56 @@
+*** log-server.c.orig	Wed May 12 13:19:26 1999
+--- log-server.c	Mon Jan 10 22:56:13 2000
+***************
+*** 146,151 ****
+--- 146,170 ----
+    syslog(LOG_INFO, "log: %.500s", buf);
+  }
+  
++ #ifdef ENABLE_LOG_AUTH
++ void log_auth(const char *fmt, ...)
++ {
++   char buf[1024];
++   va_list args;
++   extern int log_auth_flag;
++   if (!log_auth_flag)
++     return;
++   if (log_quiet)
++     return;
++   va_start(args, fmt);
++   vsprintf(buf, fmt, args);
++   va_end(args);
++   if (log_on_stderr)
++     fprintf(stderr, "log: %s\n", buf);
++   syslog(LOG_INFO|LOG_AUTH, "%.500s", buf);
++ }
++ #endif /* ENABLE_LOG_AUTH */
++ 
+  /* Converts portable syslog severity to machine-specific syslog severity. */
+  
+  static int syslog_severity(int severity)
+***************
+*** 322,327 ****
+--- 341,349 ----
+  {
+    char buf[1024];
+    va_list args;
++ #ifdef ENABLE_LOG_AUTH
++   extern char *unauthenticated_user;
++ #endif /* ENABLE_LOG_AUTH */
+  
+    if (log_quiet)
+      exit(1);
+***************
+*** 331,336 ****
+--- 353,363 ----
+    if (log_on_stderr)
+      fprintf(stderr, "fatal: %s\n", buf);
+    syslog(syslog_severity(severity), "fatal: %.500s", buf);
++ #ifdef ENABLE_LOG_AUTH
++   if (unauthenticated_user)
++     log_auth("LOGIN FAILED %.100s from %.200s",
++ 	     unauthenticated_user, get_canonical_hostname());
++ #endif /* ENABLE_LOG_AUTH */
+  
+    do_fatal_cleanups();
+  
