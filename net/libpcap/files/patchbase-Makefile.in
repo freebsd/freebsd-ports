@@ -1,0 +1,30 @@
+--- Makefile.in.orig	Thu Jan  8 16:38:30 2004
++++ Makefile.in	Thu Jan  8 16:41:40 2004
+@@ -96,13 +96,17 @@
+ 
+ CLEANFILES = $(OBJ) libpcap.a $(GENSRC) $(GENHDR) lex.yy.c
+ 
+-all: libpcap.a
++all: libpcap.a libpcap.so.2
+ 
+ libpcap.a: $(OBJ)
+ 	@rm -f $@
+ 	ar rc $@ $(OBJ) $(LIBS)
+ 	$(RANLIB) $@
+ 
++libpcap.so.2: $(OBJ)
++	@rm -f $@
++	$(CC) -shared -Wl,-x  -o libpcap.so.2 -Wl,-soname,libpcap.so.2  `lorder *.o | tsort -q`
++
+ scanner.c: $(srcdir)/scanner.l
+ 	@rm -f $@
+ 	$(LEX) -t $< > $$$$.$@; mv $$$$.$@ $@
+@@ -154,6 +158,8 @@
+ install:
+ 	[ -d $(DESTDIR)$(libdir) ] || \
+ 	    (mkdir -p $(DESTDIR)$(libdir); chmod 755 $(DESTDIR)$(libdir))
++	$(INSTALL_DATA) libpcap.so.2 $(DESTDIR)$(libdir)/libpcap.so.2
++	ln -fs $(DESTDIR)$(libdir)/libpcap.so.2 $(DESTDIR)$(libdir)/libpcap.so
+ 	$(INSTALL_DATA) libpcap.a $(DESTDIR)$(libdir)/libpcap.a
+ 	$(RANLIB) $(DESTDIR)$(libdir)/libpcap.a
+ 	[ -d $(DESTDIR)$(includedir) ] || \
