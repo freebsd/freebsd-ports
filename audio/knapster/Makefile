@@ -17,6 +17,8 @@ MAINTAINER=	jedgar@FreeBSD.org
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	kdehelp:${PORTSDIR}/x11/kdebase11
 
+BROKEN=		"KDE 1.x is no longer in the the ports tree"
+
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 USE_QT=		yes
