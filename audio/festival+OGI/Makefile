@@ -1,61 +1,38 @@
-# New ports collection makefile for:	festival
-# Date created:        			2000-06-11
-# Whom:					Trevor Johnson
-# based on the NetBSD port
+# New ports collection makefile for:	festival+OGI
+# Date created:        			2003-11-05
+# Whom:					trevor
+# based on pkgsrc/audio/festival from NetBSD
 #
-# $NetBSD: Makefile,v 1.11 1999/12/28 04:19:58 wiz Exp $
+# $NetBSD: Makefile,v 1.27 2003/10/06 21:40:17 jmc Exp $
 # $FreeBSD$
 #
 
-PORTNAME=	festival
+PORTNAME=	festival+OGI
 PORTVERSION=	1.4.1
-PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_FESTIVAL}
+MASTER_SITES=	${MASTER_SITE_FESTIVAL} ${MASTER_SITE_FESTIVAL_OGI}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-.if defined (WITH_OGI)
-MASTER_SITES+=	${PATCH_SITES}
-PATCH_SITES=	${MASTER_SITE_FESTIVAL_OGI}
-.endif
-DISTFILES=	${DISTNAME}.tar.gz \
-		speech_tools-1.2.1.tar.gz
-.if defined (WITH_OGI)
-DISTFILES+=	OGIresLPC-2.0.4.tar.gz
-.endif
+DISTFILES=	festival-${PORTVERSION}.tar.gz \
+		speech_tools-1.2.1.tar.gz \
+		OGIresLPC-2.0.9.tar.gz
 
-.if defined (WITH_OGI)
-PATCHFILES=	OGIfestpatch-${PORTVERSION}.tar.gz
-.endif
+PATCH_SITES=	${MASTER_SITE_FESTIVAL_OGI}
+PATCHFILES=	OGIfestpatch-1.4.1.2.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	Multi-lingual speech synthesis system
+COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
+CONFLICTS=	festival-*
 DIST_SUBDIR=	festival
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
-.if defined (WITH_OGI)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa-ogi
 RESTRICTED=	no-commercial-use
-.endif
 
-FESTIVAL_ARCH=	${MACHINE_ARCH:S/i386/ix86/}
-USE_GCC=	2.95
-.if defined (WITH_OGI)
-PLIST=		${WRKDIR}/pkg-plist
-.endif
-
-WRKSRC=		${WRKDIR}
-
-USE_GMAKE=	yes
-
-SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
-
+FESTIVAL_ARCH=	${MACHINE_ARCH:S/i386/ix86/}
 FHOME=		${PREFIX}/share/festival
-
 MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
 		EST_HOME=${SPEECHTOOLS} \
 		PKG_FESTIVAL_BUILD_HOME=${FESTIVAL} \
@@ -63,47 +40,35 @@ MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
 		PKG_COMPILER="${CC}" \
 		PKG_X11BASE=${X11BASE} \
 		PKG_PREFIX=${PREFIX} \
-		EGCS_CC="${CC}" \
-		EGCS_CXX="${CXX}" \
-		GCC28_CC="${CC}" \
-		GCC28_CXX="${CXX}" \
 		GCC27_CC="${CC}" \
 		GCC27_CXX="${CXX}" \
-		GCC26_CC="${CC}" \
-		GCC26_CXX="${CXX}" \
 		CC="${CC}" \
 		CXX="${CXX}"
-
 MAN1=		festival.1 festival_client.1
+USE_GCC=	2.95
+USE_GMAKE=	yes
+SPEECHTOOLS=	${WRKSRC}/speech_tools
+WRKSRC=		${WRKDIR}
 
-.if defined (WITH_OGI)
+pre-everything::
+	@${ECHO_CMD} "* WARNING:  the source code for this port has not   *"
+	@${ECHO_CMD} "* been properly reviewed by the FreeBSD maintainer. *"
+	@${ECHO_CMD} "* Waiting ten seconds (control-C cancels build).    *"
+	@sleep 10
+
 post-extract:
-	@${GUNZIP_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/OGIfestpatch-${PORTVERSION}.tar.gz \
-	| ${TAR} -C ${WRKSRC} -xf -
-.endif
-
-.if !defined(WITH_OGI)
-pre-fetch:
-	@${ECHO}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "* To build this port with the OGI enhancements, define *"
-	@${ECHO_MSG} "* \"WITH_OGI\" and restart the build.  The license for *"
-	@${ECHO_MSG} "* the OGI materials prohibits commercial use, but they *"
-	@${ECHO_MSG} "* are required by some of the voices.                  *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO}
-.endif
+	@${TAR} -C ${WRKSRC} -xzf \
+		${DISTDIR}/${DIST_SUBDIR}/OGIfestpatch-1.4.1.2.tar.gz
 
 pre-patch:
-	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config &&\
-		${CHMOD} u+w ${SPEECHTOOLS}/config/config
-	${CP} ${FESTIVAL}/config/config-dist ${FESTIVAL}/config/config && \
-		${CHMOD} u+w ${FESTIVAL}/config/config
+	${CP} ${FESTIVAL}/config/config-dist ${FESTIVAL}/config/config
+	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config
+	${CHMOD} u+w ${FESTIVAL}/config/config ${SPEECHTOOLS}/config/config
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} >= 500113
+.if ${OSVERSION} > 500112
 .for ii in compilers/gcc27.mak config config-dist
 	@${MV} ${SPEECHTOOLS}/config/${ii} ${SPEECHTOOLS}/config/${ii}.orig
 	@${SED} -e "s:= gcc:= gcc295:g" < ${SPEECHTOOLS}/config/${ii}.orig \
@@ -123,31 +88,28 @@ post-patch:
 .endfor
 .endfor
 
-pre-install:
-.if defined (WITH_OGI)
-	${CAT} ${PKGDIR}/pkg-plist-ogi ${PKGDIR}/pkg-plist > ${PLIST}
-.endif
-
 do-install:
-	${MKDIR} ${FHOME}/lib/voices/english/
-	${MKDIR} ${FHOME}/lib/voices/spanish/
-	${MKDIR} ${FHOME}/lib/dicts
+	${MKDIR} ${FHOME}/lib/voices/english/ ${FHOME}/lib/voices/spanish/ \
+		${FHOME}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
 	${RM} -rf ${FHOME}/lib/etc/*FreeBSD*
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*FreeBSD*/audsp ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${PREFIX}/libexec/festival.naked
-	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${PREFIX}/libexec/festival_client.naked
-	for n in festival.sh festival_client.sh sitevars.scm; \
-	do {\
-	  ${SED} "s%@PKG_FESTIVAL_LOCATION@%${FHOME}%; \
-	       s%@PKG_PREFIX@%${PREFIX}%" <${FILESDIR}/$$n > ${WRKDIR}/$$n ;} \
-	done
+.for ii in festival festival_client
+	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/${ii} \
+		${PREFIX}/libexec/${ii}.naked
+.endfor
+.for ii in festival.sh festival_client.sh sitevars.scm
+	${SED} "s%@PKG_FESTIVAL_LOCATION@%${FHOME}%; \
+		s%@PKG_PREFIX@%${PREFIX}%" <${FILESDIR}/${ii} > ${WRKDIR}/${ii}
+.endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/festival.sh ${PREFIX}/bin/festival
-	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh ${PREFIX}/bin/festival_client
+	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh \
+		${PREFIX}/bin/festival_client
 	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${FHOME}/lib/sitevars.scm
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${PREFIX}/man/man1/festival.1
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${PREFIX}/man/man1/festival_client.1
+.for ii in ${MAN1}
+	${INSTALL_MAN} ${FESTIVAL}/doc/${ii} ${PREFIX}/man/man1/
+.endfor
 
 .include <bsd.port.post.mk>

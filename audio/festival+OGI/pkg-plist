@@ -1,4 +1,21 @@
-@comment $NetBSD: PLIST,v 1.3 1999/10/27 14:20:50 hubertf Exp $
+@comment $FreeBSD$
+@comment $NetBSD: PLIST,v 1.1 2001/11/01 00:15:49 zuntum Exp $
+share/festival/lib/ogi_effect.scm
+share/festival/lib/ogi_enhance.scm
+share/festival/lib/ogi_gswdurtreeZ_wb.scm
+share/festival/lib/ogi_hack.scm
+share/festival/lib/ogi_kddurtreeZ_wb.scm
+share/festival/lib/ogi_klatt_durs_wb.scm
+share/festival/lib/ogi_languages.scm
+share/festival/lib/ogi_lexicons.scm
+share/festival/lib/ogi_lts_worldbet.scm
+share/festival/lib/ogi_phrase.scm
+share/festival/lib/ogi_postlex.scm
+share/festival/lib/ogi_synthesis.scm
+share/festival/lib/ogi_token.scm
+share/festival/lib/ogi_unitsel.scm
+share/festival/lib/ogi_wordsynth.scm
+share/festival/lib/ogi_worldbet_phones.scm
 bin/festival
 bin/festival_client
 libexec/festival.naked
