@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- Makefile	2001/04/19 07:33:49	1.1
++++ Makefile	2001/04/19 07:37:13
+@@ -1,6 +1,6 @@
+-CC        = gcc
+-CFLAGS    = -g -O2 -Wall
+-XROOT     = /usr/X11R6
++CC        ?= gcc
++CFLAGS    ?= -g -O2 -Wall
++XROOT     = $(X11BASE)
+ INCLUDES  = -I$(XROOT)/include
+ LIBS      = -lX11 -lXext -lXpm
+ LDPATH    = -L$(XROOT)/lib
+@@ -8,7 +8,7 @@
+ PROG      = oroborus
+ RCFILE    = .$(PROG)rc
+ DEFINES   = -DSHAPE_SUPPORT -DWORKSPACE_SUPPORT #-DDEBUG
+-PREFIX    = /usr
++PREFIX    ?= /usr
+ DATADIR   = $(PREFIX)/share/$(PROG)
+ PIXMAPDIR = $(DATADIR)/pixmaps/default
+ 
