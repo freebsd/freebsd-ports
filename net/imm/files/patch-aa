@@ -1,0 +1,229 @@
+diff -rc2 src.orig/Makefile src/Makefile
+*** orig-Makefile	Thu Feb 17 04:15:02 1994
+--- Makefile	Thu Oct 13 21:21:15 1994
+***************
+*** 1,50 ****
+- # This is a simplified Makefile for use in Tk distributions.  Before using
+- # it to compile Tk, you may wish to reset some of the following variables:
+  #
+! # TCL_DIR -           Name of directory holding tcl.h and tcl.a.
+! # XLIB -              If your Xlib library isn't in the standard place,
+! #                     you can replace "-lX11" with the name of the file
+! #                     containing your library archive.
+! # INSTALL_DIR -               Full path name of top-level directory where
+! #                     information is installed.
+! # TK_LIBRARY -                Full path name of directory to contain scripts
+! #                     and other library files used by Tk.  This value
+! #                     is available to applications as the variable
+! #                     $tk_library.  If the environment variable
+! #                     TK_LIBRARY is defined by a user, it will override
+! #                     the value specified in this Makefile.
+! # LIB_DIR -           Directory in which to install the archive libtcl.a
+! # BIN_DIR -           Directory in which to install executables such as imm.
+! # INCLUDE_DIR -               Directory in which to install header files.
+! # MANx_DIR -          Directories in which to install manual entries.
+! # RANLIB -            If you're using a System-V-based UNIX that doesn't
+! #                     have ranlib, change this definition to "echo" or
+! #                     something else harmless.
+! # SHELL -             Some versions of make (e.g. SGI's) use this variable
+! #                     to determine which shell to use for executing
+! #                     commands.
+  #
+!  
+! TCL_DIR               = /usr/local/packages/tk3.6/tcl7.3
+! #TCL_DIR               = /usr/local/packages/tk/tcl
+! XLIB          = -lX11
+! INSTALL_DIR	= /usr/local
+  LIB_DIR		= $(INSTALL_DIR)/lib
+! TK_LIBRARY    = $(INSTALL_DIR)/lib/tk
+  BIN_DIR		= $(INSTALL_DIR)/bin
+  INCLUDE_DIR	= $(INSTALL_DIR)/include
+  SHELL		= /bin/sh
+- TARGET		= ../solaris
+- 
+- # ANSI-C procedure prototypes are turned on by default if supported
+- # by the compiler.  To turn them off, uncomment the following line:
+- 
+- # NP =		-DNO_PROTOTYPE
+  
+! # To compile under OpenWindows, uncomment the following line:
+!  
+! OW =          -I/usr/openwin/include -L/usr/openwin/lib
+! CC		= cc -w
+! CFLAGS		= -xO4 -dalign -DSIG_T=int -DSOLARIS -DMULTICAST -I. -I$(INCLUDE_DIR) -O -DTK_LIBRARY=\"${TK_LIB}\" ${NP} ${OW} -lnsl -lsocket
+  
+  ROBJS = protocol.o mcl.o xlopen.o utils.o imm_init.o
+--- 1,18 ----
+  #
+! # Makefile for imm under FreeBSD 2.0
+  #
+! 
+! TCL_DIR		= /usr/local/include
+! XLIB		= -L/usr/X11R6/lib -lX11
+! INSTALL_DIR	= $(DESTDIR)/usr/local
+  LIB_DIR		= $(INSTALL_DIR)/lib
+! TK_LIBRARY	= $(INSTALL_DIR)/lib/tk
+  BIN_DIR		= $(INSTALL_DIR)/bin
+  INCLUDE_DIR	= $(INSTALL_DIR)/include
+  SHELL		= /bin/sh
+  
+! CFLAGS		= -DSIG_T=void -DMULTICAST -DHAVE_UNISTD_H -I. \
+! 	-I$(TCL_DIR) -O -DTK_LIBRARY=\"${TK_LIBRARY}\" -I/usr/X11R6/include \
+! 	-DFUNCPROTO=15
+  
+  ROBJS = protocol.o mcl.o xlopen.o utils.o imm_init.o
+***************
+*** 52,62 ****
+  SOBJS = protocol.o immserv.o sorttree.o utils.o
+  
+! LIBS = /usr/local/lib/libtk.a /usr/local/lib/libtcl.a
+  
+! all: $(TARGET)/imm $(TARGET)/immserv tcl2c
+  
+  tcl2c: tcl2c.c
+! 	$(CC) $(CFLAGS) tcl2c.c  $(LIBS) $(XLIB) -o tcl2c
+!  
+  imm_init.c: tcl2c imm_def.tcl mcl.tcl Radio.tcl Listbox.tcl viewbox.tcl filebox.tcl mkHostname.tcl
+  	./tcl2c Init < init.tcl > imm_init.c
+--- 20,33 ----
+  SOBJS = protocol.o immserv.o sorttree.o utils.o
+  
+! LIBS = -L/usr/local/lib -ltk -ltcl
+  
+! all: imm immserv
+! 
+! install:
+! 	install -c -s -o bin -g bin -m 555 imm immserv /usr/local/bin
+  
+  tcl2c: tcl2c.c
+! 	$(CC) $(CFLAGS) tcl2c.c  $(LIBS) $(XLIB) -lm -o tcl2c
+! 
+  imm_init.c: tcl2c imm_def.tcl mcl.tcl Radio.tcl Listbox.tcl viewbox.tcl filebox.tcl mkHostname.tcl
+  	./tcl2c Init < init.tcl > imm_init.c
+***************
+*** 69,74 ****
+  	./tcl2c HOSTBOX < mkHostname.tcl >> imm_init.c
+  
+! $(TARGET)/imm: main.o $(ROBJS)
+! 	$(CC) $(CFLAGS) main.o $(ROBJS) $(LIBS) $(XLIB) -lm -o $(TARGET)/imm
+  
+  lscomp: lscomp.o protocol.o sorttree.o utils.o
+--- 40,45 ----
+  	./tcl2c HOSTBOX < mkHostname.tcl >> imm_init.c
+  
+! imm: main.o $(ROBJS)
+! 	$(CC) $(CFLAGS) main.o $(ROBJS) $(LIBS) $(XLIB) -lcompat -lm -o imm
+  
+  lscomp: lscomp.o protocol.o sorttree.o utils.o
+***************
+*** 92,101 ****
+  immserv.o: immserv.c immserv.h
+  
+! $(TARGET)/immserv: $(SOBJS)
+! 	$(CC) $(CFLAGS) $(SOBJS) -o $(TARGET)/immserv
+! 
+! 
+! 
+! 
+! 
+  
+--- 63,67 ----
+  immserv.o: immserv.c immserv.h
+  
+! immserv: $(SOBJS)
+! 	$(CC) $(CFLAGS) $(SOBJS) -lcompat -o immserv 
+  
+diff -rc2 orig-immserv.c immserv.c
+*** orig-immserv.c	Fri Mar  4 19:01:13 1994
+--- immserv.c	Thu Oct 13 21:20:48 1994
+***************
+*** 21,24 ****
+--- 21,25 ----
+    ******************************************************************************/
+  #define MAIN
++ #include <stdlib.h>
+  #include "protocol.h"
+  #if defined(sgi) || defined (ultrix) || defined (__alpha) || defined(hpux) || defined(__NetBSD__)
+***************
+*** 1098,1102 ****
+  	while (top != NULL) {
+  	    /* extract name and directory */
+! 	    token = strrchr(top->name, '//') + 1;
+  	    entry = liststrdup(token,NULL);
+  	    i = strlen(top->name) - strlen(entry);
+--- 1099,1103 ----
+  	while (top != NULL) {
+  	    /* extract name and directory */
+! 	    token = strrchr(top->name, '/') + 1;
+  	    entry = liststrdup(token,NULL);
+  	    i = strlen(top->name) - strlen(entry);
+***************
+*** 1195,1199 ****
+  int setackalarm() {}
+  /******************************************************************************/
+! #ifndef __NetBSD__
+  /* routine to put process to sleep */
+  int usleep( wait)
+--- 1196,1200 ----
+  int setackalarm() {}
+  /******************************************************************************/
+! #ifndef __FreeBSD__
+  /* routine to put process to sleep */
+  int usleep( wait)
+diff -rc2 orig-main.c main.c
+*** orig-main.c	Fri Mar  4 19:01:13 1994
+--- main.c	Thu Oct 13 21:16:10 1994
+***************
+*** 162,165 ****
+--- 162,168 ----
+  	fclose(stdin);
+  	closeall();
++ #ifndef SIGCLD
++ #define SIGCLD SIGCHLD
++ #endif
+  	signal(SIGCLD,SIG_IGN);
+  	Tcl_DeleteInterp(interp);
+diff -rc2 orig-mcl.c mcl.c
+*** orig-mcl.c	Wed Mar  9 18:51:36 1994
+--- mcl.c	Thu Oct 13 21:17:52 1994
+***************
+*** 23,29 ****
+--- 23,36 ----
+  #define MAIN
+  #include "protocol.h"
++ #ifdef __FreeBSD__
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <fcntl.h>
+  #include <tk.h>
++ #include <sys/socket.h>
++ #include <netinet/in.h>
++ #include <arpa/inet.h>
+  
+  extern int SendDeclarePacket();    
+***************
+*** 50,54 ****
+  
+  int len_addr_dist;
+- extern struct nodelist;
+  extern int locktransmit;
+  extern char *localhost;
+--- 57,60 ----
+diff -rc2 orig-xlopen.c xlopen.c
+*** orig-xlopen.c	Fri Mar  4 19:01:14 1994
+--- xlopen.c	Thu Oct 13 21:18:29 1994
+***************
+*** 30,34 ****
+  extern char *optarg;
+  extern int optind, opterr;
+! #ifndef __NetBSD__
+  extern char *sys_errlist[];
+  #endif
+--- 30,34 ----
+  extern char *optarg;
+  extern int optind, opterr;
+! #ifndef __FreeBSD__
+  extern char *sys_errlist[];
+  #endif
