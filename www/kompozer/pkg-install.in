@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Date created:			Mon Nov 29, 2003
+# Whom:				Thierry Thomas (<thierry@pompo.net>)
+# Fix the chrome registry.
+
+umask 022
+PATH=/bin:/usr/bin:/usr/local/bin
+
+[ "x$1" = "x" ] && exit 1
+[ "x$2" != "xPOST-INSTALL" ] && exit 0
+
+NVUDIR=%%NVUDIR%%
+REGXPCOM=${NVUDIR}/regxpcom
+REGCHROME=${NVUDIR}/regchrome
+NVUBIN=${NVUDIR}/nvu-bin
+
+echo "===> Building Chrome's registry..."
+rm -rf ${NVUDIR}/chrome/overlayinfo
+rm -f ${NVUDIR}/chrome/*.rdf
+mkdir -p ${NVUDIR}/chrome/overlayinfo
+rm -f ${NVUDIR}/component.reg
+rm -rf ${NVUDIR}/extensions
+
+cd ${NVUDIR} || exit 1
+./run-mozilla.sh ${REGXPCOM} || true
+./run-mozilla.sh ${REGCHROME} || true
+./run-mozilla.sh ${NVUBIN} -register > /dev/null 2>&1
+
+exit 0

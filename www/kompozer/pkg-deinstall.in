@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Date created:			Mon Nov 29, 2003
+# Whom:				Thierry Thomas (<thierry@pompo.net>)
+# Fix the chrome registry.
+
+umask 022
+PATH=/bin:/usr/bin
+
+[ "x$1" = "x" ] && exit 1
+[ "x$2" != "xDEINSTALL" ] && exit 0
+
+NVUDIR=%%NVUDIR%%
+
+rm -rf ${NVUDIR}/chrome/overlayinfo
+rm -f ${NVUDIR}/chrome/*.rdf
+rm -f ${NVUDIR}/component.reg
+rm -f ${NVUDIR}/components.ini
+rm -f ${NVUDIR}/defaults.ini
+rm -f ${NVUDIR}/components/*.dat
+rm -rf ${NVUDIR}/extensions
+
+exit 0
