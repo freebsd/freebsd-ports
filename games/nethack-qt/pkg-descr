@@ -1,5 +1,3 @@
-WWW: http://www.uq.edu.au/~cswallis/nhqt/
-
 NetHack is a Free graphical one-player roleplaying game with a
 highly modular window system interface supporting TTY, VGA, Mac,
 Amiga, and other displays. Qt is a graphical user interface toolkit.
@@ -20,3 +18,5 @@ o   You rarely need to put the mouse in a pop-up to interact with it.
 o   Macros - hidden feature - F1=multi-rest F2=multi-search F3=try-it 
 o   It is much easier to code, so new feature-requests are more easily done. 
 o   Sound support.
+
+WWW: http://trolls.troll.no/warwick/nethack/
