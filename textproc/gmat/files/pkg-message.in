@@ -1,0 +1,7 @@
+============================================================
+To use the programs in this package, add the path
+/usr/local/share/gmat/bin to your PATH environment variable.
+
+Then, type gmat /usr/local/share/doc/gmat/gmat.sgm
+to format the documentation.
+============================================================

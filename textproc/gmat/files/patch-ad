@@ -1,13 +1,11 @@
---- macros/tmac.G~	Fri Mar 24 03:42:38 2000
-+++ macros/tmac.G	Fri Jan 26 13:46:44 2001
-@@ -20,8 +20,8 @@
- .\"
- .\" ############ DEFAULTS AND MISC VARIABLES
- .\" The following strings are set in accord with the Makefile
--.ds TMPDIR %%TMPDIR%% 
--.ds BINDIR %%BINDIR%% 
-+.ds TMPDIR %%TMPDIR%%
-+.ds BINDIR %%BINDIR%%
+--- macros/tmac.G.orig	Mon Mar 19 14:29:40 2001
++++ macros/tmac.G	Tue Dec  7 21:31:06 2004
+@@ -25,7 +25,7 @@
  .ds gmat_gmacroff %%BINDIR%%/gmacroff
  .\" DEFINE THE FOLLOWING paths for your local environment!
  .ds gmat_echo /bin/echo
+-.ds gmat_sed /bin/sed
++.ds gmat_sed /usr/bin/sed
+ .ds gmat_rm /bin/rm
+ .ds gmat_mv /bin/mv
+ .\" The following strings set variables to subdirectories of the book
