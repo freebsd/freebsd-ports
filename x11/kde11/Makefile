@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1998/03/04 23:26:58 se Exp $
+# $Id: Makefile,v 1.9 1998/04/27 20:48:06 se Exp $
 #
 
 DISTNAME=	kde-4.1b
@@ -16,8 +16,8 @@ MAINTAINER=	se@freebsd.org
 LIB_DEPENDS=	kdecore\\.0\\.91:${PORTSDIR}/x11/kdelibs
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \
 		kcalc:${PORTSDIR}/misc/kdeutils \
-#		kmahjongg:${PORTSDIR}/games/kdegames \
-#		kghostview:${PORTSDIR}/graphics/kdegraphics \
+		kmahjongg:${PORTSDIR}/games/kdegames \
+		kghostview:${PORTSDIR}/graphics/kdegraphics \
 #		kmedia:${PORTSDIR}/audio/kdemultimedia \
 #		kmail:${PORTSDIR}/net/kdenetwork
 
