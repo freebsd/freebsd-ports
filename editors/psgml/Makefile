@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.2 1999/02/26 18:56:07 shige Exp $
+# $Id: Makefile,v 1.3 1999/03/01 09:18:27 shige Exp $
 #
 
 DISTNAME=	psgml-1.1.6
@@ -14,9 +14,8 @@ MAINTAINER?=	shige@FreeBSD.ORG
 
 # distfile version
 PSGML_VER=	1.1.6
-PSGML_SETUPEL=  psgml-setup.el
+PSGML_SETUPEL=  psgml-setupel.el
 CATALOG=	${PREFIX}/share/sgml/catalog
-INFILES=	${PSGML_SETUPEL}
 
 # This is a master port.
 PORTCLASS?=	master
@@ -52,9 +51,10 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
 CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
-SCRIPTS_ENV=	INFILES=${INFILES} \
+SCRIPTS_ENV=	TARGETS="${PSGML_SETUPEL}" \
 		EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
+PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+		PSGML_SETUPEL=${PSGML_SETUPEL}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
