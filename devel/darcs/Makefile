@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.21
+PORTVERSION=	0.9.22
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
