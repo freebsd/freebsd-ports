@@ -4046,7 +4046,6 @@ lib/gap4r3/pkg/unipot/init.g
 lib/gap4r3/pkg/unipot/lib/banner.g
 lib/gap4r3/pkg/unipot/lib/unipot.gd
 lib/gap4r3/pkg/unipot/lib/unipot.gi
-lib/gap4r3/pkg/unipot/read.co
 lib/gap4r3/pkg/unipot/read.g
 lib/gap4r3/pkg/xgap/Changelog.r11
 lib/gap4r3/pkg/xgap/Changelog.r12
