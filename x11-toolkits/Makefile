@@ -84,6 +84,7 @@
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
+    SUBDIR += guis
     SUBDIR += hs-frantk
     SUBDIR += hs-gio
     SUBDIR += hs-gtk+hs
