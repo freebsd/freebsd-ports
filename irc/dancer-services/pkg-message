@@ -16,3 +16,6 @@ You may then start the servers by running:
 
 	/usr/local/etc/rc.d/dancer-ircd.sh start
 	/usr/local/etc/rc.d/dancer-services.sh start
+
+To make dancer-serives automatically run on (the next) startup, you
+must add ``dancer_services_enable=YES'' to /etc/rc.conf.

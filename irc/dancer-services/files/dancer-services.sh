@@ -1,25 +1,23 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
-case "$1" in
-start)
-  if [ -x %PREFIX%/sbin/dancer-services ]; then
-    su -fm ircservices -c %PREFIX%/sbin/dancer-services && echo ' dancer-services'
-  fi
-  ;;
+# PROVIDE: dancer-services
+# KEYWORD: FreeBSD
 
-stop)
-  if [ -f /var/run/dancer-services.pid ]; then
-    kill `cat /var/run/dancer-services.pid`
-  else
-    # oh well
-    killall dancer-services
-  fi
-  ;;
+. %%RC_SUBR%%
 
-*)
-  echo "usage: $0 {start|stop}" >&2
-  exit 64
-  ;;
-esac
+name=dancer_services
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/dancer-services
+pidfile=/var/run/dancer-services/dancer-services.pid
+required_files=%%PREFIX%%/etc/dancer-services/services.conf
+
+[ -z "$dancer_services_enable" ] && dancer_services_enable=NO
+[ -z "$dancer_services_user" ] && dancer_services_user=ircservices
+
+load_rc_config $name
+
+run_rc_command "$1"
