@@ -19,6 +19,7 @@ NO_BUILD=	yes
 RESTRICTED=	Testing purpose only (from README.TXT).
 
 do-install:
+	@${MKDIR} ${PREFIX}/share/java/classes
 	${INSTALL_DATA} ${WRKDIR}/bin/cryptix-jce-api.jar ${PREFIX}/share/java/classes/
 	${INSTALL_DATA} ${WRKDIR}/bin/cryptix-jce-compat.jar ${PREFIX}/share/java/classes/
 	${INSTALL_DATA} ${WRKDIR}/bin/cryptix-jce-provider.jar ${PREFIX}/share/java/classes/
