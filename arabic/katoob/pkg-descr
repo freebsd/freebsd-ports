@@ -1,0 +1,8 @@
+Katoob is a light weight, multi lingual, 
+BIDI-aware text editor based on the Gtk+ 2 
+library. It supports opening and saving files 
+in multiple encodings. The main support was 
+for Arabic language but more languages are
+currently supported.
+
+WWW: http://www.arabeyes.org/project.php?proj=Katoob
