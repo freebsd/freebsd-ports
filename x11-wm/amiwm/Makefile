@@ -3,7 +3,7 @@
 # Date created: 13 November 1997
 # Whom: Douglas Carmichael <dcarmich@mcs.com>
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:01:37 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/23 18:18:35 vanilla Exp $
 #
 
 DISTNAME=	amiwm0.20pl48
@@ -12,6 +12,8 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 
 MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		build
 
 #WRKSRC=		${WRKDIR}/amiwm
 GNU_CONFIGURE=	yes
