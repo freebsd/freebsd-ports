@@ -9,3 +9,4 @@ share/doc/ebw3/README
 share/doc/ebw3/README.port
 share/doc/ebw3/README.access
 @dirrm share/doc/ebw3
+@unexec rmdir %D/www/cgi-bin 2> /dev/null || true
