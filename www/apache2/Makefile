@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.53 1998/06/07 02:39:22 asami Exp $
+# $Id: Makefile,v 1.54 1998/06/09 19:49:59 ache Exp $
 #
 
 DISTNAME=       apache_1.3.0
@@ -29,7 +29,8 @@ CONFIGURE_ARGS= \
 		 --disable-module=auth_dbm
 
 CONFIGURE_ENV= \
-OPTIM='-DBUFFERED_LOGS -DDOCUMENT_LOCATION=\\"'${PREFIX}'/www/data/\\" \
+OPTIM='-DBUFFERED_LOGS -DHARD_SERVER_LIMIT=512 \
+-DDOCUMENT_LOCATION=\\"'${PREFIX}'/www/data/\\" \
 -DDEFAULT_PATH=\\"/bin:/usr/bin:'${PREFIX}'/bin\\"'
 
 MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
