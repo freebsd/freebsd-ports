@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Delegation
-PORTVERSION=	1.00
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -16,9 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Object-oriented delegation
 
 PERL_CONFIGURE=	yes
-PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Delegation.3
 
 post-install:
