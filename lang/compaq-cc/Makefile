@@ -44,6 +44,12 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 USE_LINUX=		yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Broken pkg-plist on alpha 5.x"
+.endif
+
 do-install:
 	@if [ -z "`kldstat -v | ${GREP} -E 'linux'`" ]; then \
 		${ECHO_MSG} 'AlphaLinux  mode is not enabled.\
@@ -153,4 +159,4 @@ post-install:
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-docs
 	cd ${WRKDIR} ; ex < ex.script3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
