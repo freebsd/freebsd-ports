@@ -1,24 +1,5 @@
 --- configure	Fri Nov  9 14:58:04 2001
 +++ configure	Tue Oct 15 13:51:29 2002
-@@ -1106,4 +1106,8 @@
- 		SYBASE_LIBS=
- 
-+		if test "$SYBASE_VERSION" = "FreeTDS"
-+		then
-+			SYBASE_LIBS="-lct -ltds"
-+		else
- 		#
- 		# Check for -lblk
-@@ -1152,9 +1156,4 @@
- 		fi
- 
--		#
--		# Check for -ltds (FreeTDS project)
--		#
--		if test -f $SYBASE_LIBDIR/libtds.a; then
--			SYBASE_LIBS="$SYBASE_LIBS -ltds"
- 		fi
- 
 @@ -1196,5 +1195,5 @@
  			ncr*)
  				SYBASE_OS="-ldl -lm";;
