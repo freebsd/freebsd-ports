@@ -1,0 +1,242 @@
+bin/hns-setup
+bin/todayhns
+share/hns/GPL-j.txt
+share/hns/GPL.txt
+share/hns/Makefile
+share/hns/Makefile.in
+share/hns/README
+share/hns/contrib/hnf-mode/hnf-mode.el
+share/hns/contrib/hnf-mode/hnf-mode.el-19.28.patch
+share/hns/contrib/hnf-mode/hnf-mode.html
+share/hns/contrib/hnf-mode/hnf-yotei.el
+share/hns/contrib/hnf-mode/index.html
+share/hns/contrib/hnf-mode/mail2nikki.el
+share/hns/contrib/hnf-mode/mail2nikki.html
+share/hns/contrib/hnf-mode/screenshot.gif
+share/hns/contrib/hnf-mode/yotei-mode.gif
+share/hns/contrib/perl5003-patch/perl5003-patch-to-hns-200-pl0.txt
+share/hns/contrib/theme/hns-2.00/stripe.tar.gz
+share/hns/contrib/todayhns/todayhns
+share/hns/diary/1999/d19991231.hnf
+share/hns/diary/1999/y199912
+share/hns/diary/conf/alias.txt
+share/hns/diary/conf/auth_ruri.txt
+share/hns/diary/conf/browser_style.txt
+share/hns/diary/conf/foot.txt
+share/hns/diary/conf/head.txt
+share/hns/diary/conf/rlink.txt
+share/hns/diary/conf/robotlist.txt
+share/hns/diary/conf/ruri_map.txt
+share/hns/diary/todo
+share/hns/docs/FAQ-j.html
+share/hns/docs/FAQ-tech-j.html
+share/hns/docs/RAQ-j.html
+share/hns/docs/admin-j.html
+share/hns/docs/cat-j.html
+share/hns/docs/caution-j.html
+share/hns/docs/change_from_103-pl1-j.html
+share/hns/docs/config-j.html
+share/hns/docs/customize-j.html
+share/hns/docs/directory-j.html
+share/hns/docs/highlight-j.html
+share/hns/docs/history-j.html
+share/hns/docs/hnf-j.html
+share/hns/docs/hns-logo.gif
+share/hns/docs/hns.css
+share/hns/docs/howto-j.html
+share/hns/docs/index-j.html
+share/hns/docs/index.html
+share/hns/docs/install-j.html
+share/hns/docs/isp-list-j.html
+share/hns/docs/known_bugs-j.html
+share/hns/docs/known_client_problems-j.html
+share/hns/docs/license-j.html
+share/hns/docs/link-j.html
+share/hns/docs/log-ana-j.html
+share/hns/docs/mail2nikki-j.html
+share/hns/docs/mark-j.html
+share/hns/docs/new_features_2.00-j.html
+share/hns/docs/perf-j.html
+share/hns/docs/pospe2hnf-j.html
+share/hns/docs/security_tips-j.html
+share/hns/docs/theme-j.html
+share/hns/docs/todo-j.html
+share/hns/docs/unagi-j.html
+share/hns/docs/upgrade-j.html
+share/hns/docs/user_var-j.html
+share/hns/docs/web2nikki-j.html
+share/hns/docs/yotei-j.html
+share/hns/hns-setup.en
+share/hns/hns-setup.ja
+share/hns/public_html/diary/ChangeLog.ja
+share/hns/public_html/diary/anti-windoze/002.gif
+share/hns/public_html/diary/anti-windoze/README
+share/hns/public_html/diary/anti-windoze/hns-logo-2.gif
+share/hns/public_html/diary/anti-windoze/ruribaka.gif
+share/hns/public_html/diary/anti-windoze/ruriusiro.gif
+share/hns/public_html/diary/anti-windoze/screen1.jpg
+share/hns/public_html/diary/anti-windoze/theme.ph
+share/hns/public_html/diary/cat/A.gif
+share/hns/public_html/diary/cat/B.gif
+share/hns/public_html/diary/cat/C.gif
+share/hns/public_html/diary/cat/D.gif
+share/hns/public_html/diary/cat/E.gif
+share/hns/public_html/diary/cat/F.gif
+share/hns/public_html/diary/cat/G.gif
+share/hns/public_html/diary/cat/H.gif
+share/hns/public_html/diary/cat/I.gif
+share/hns/public_html/diary/cat/J.gif
+share/hns/public_html/diary/cat/K.gif
+share/hns/public_html/diary/cat/L.gif
+share/hns/public_html/diary/cat/M.gif
+share/hns/public_html/diary/cat/N.gif
+share/hns/public_html/diary/cat/O.gif
+share/hns/public_html/diary/cat/P.gif
+share/hns/public_html/diary/cat/Q.gif
+share/hns/public_html/diary/cat/R.gif
+share/hns/public_html/diary/cat/S.gif
+share/hns/public_html/diary/cat/T.gif
+share/hns/public_html/diary/cat/U.gif
+share/hns/public_html/diary/cat/V.gif
+share/hns/public_html/diary/cat/W.gif
+share/hns/public_html/diary/cat/X.gif
+share/hns/public_html/diary/cat/Y.gif
+share/hns/public_html/diary/cat/Z.gif
+share/hns/public_html/diary/cat/cat.txt
+share/hns/public_html/diary/cat/nikki.gif
+share/hns/public_html/diary/cat/toko.gif
+share/hns/public_html/diary/config.ph.in
+share/hns/public_html/diary/dot.htaccess
+share/hns/public_html/diary/english/theme.ph
+share/hns/public_html/diary/icons/README
+share/hns/public_html/diary/icons/README_1.02
+share/hns/public_html/diary/icons/README_1.03
+share/hns/public_html/diary/icons/ase_13.gif
+share/hns/public_html/diary/icons/baka_13.gif
+share/hns/public_html/diary/icons/be_13.gif
+share/hns/public_html/diary/icons/fu_13.gif
+share/hns/public_html/diary/icons/haji_13.gif
+share/hns/public_html/diary/icons/hatena_13.gif
+share/hns/public_html/diary/icons/hns-2.0-icon.gif
+share/hns/public_html/diary/icons/hns-logo.gif
+share/hns/public_html/diary/icons/hns_icon.html
+share/hns/public_html/diary/icons/mark00.gif
+share/hns/public_html/diary/icons/mark01.gif
+share/hns/public_html/diary/icons/naku_13.gif
+share/hns/public_html/diary/icons/neko_13.gif
+share/hns/public_html/diary/icons/nomal_13.gif
+share/hns/public_html/diary/icons/ojigi_13.gif
+share/hns/public_html/diary/icons/okoru_13.gif
+share/hns/public_html/diary/icons/ruri-bg.gif
+share/hns/public_html/diary/icons/ruri.gif
+share/hns/public_html/diary/icons/ruriase.gif
+share/hns/public_html/diary/icons/ruribaka.gif
+share/hns/public_html/diary/icons/ruriodor.gif
+share/hns/public_html/diary/icons/ruriusiro.gif
+share/hns/public_html/diary/icons/ruriv.gif
+share/hns/public_html/diary/icons/ruriwarau.gif
+share/hns/public_html/diary/icons/usiro_13.gif
+share/hns/public_html/diary/icons/v_13.gif
+share/hns/public_html/diary/icons/warau_13.gif
+share/hns/public_html/diary/icons/yasum_13.gif
+share/hns/public_html/diary/index.cgi.in
+share/hns/public_html/diary/japanese/theme-old.ph
+share/hns/public_html/diary/japanese/theme-static.ph
+share/hns/public_html/diary/japanese/theme.ph
+share/hns/public_html/diary/lib/CGI/Cookie.pm
+share/hns/public_html/diary/lib/CGI/QueryString.pm
+share/hns/public_html/diary/lib/CGI/Tools.pm
+share/hns/public_html/diary/lib/DateTime/Date.pm
+share/hns/public_html/diary/lib/DateTime/Format.pm
+share/hns/public_html/diary/lib/DateTime/Time.pm
+share/hns/public_html/diary/lib/HNS.pm
+share/hns/public_html/diary/lib/HNS/Admini.pm
+share/hns/public_html/diary/lib/HNS/Calendar/Direct.pm
+share/hns/public_html/diary/lib/HNS/Calendar/NoTable.pm
+share/hns/public_html/diary/lib/HNS/Calendar/Table.pm
+share/hns/public_html/diary/lib/HNS/CategoryList.pm
+share/hns/public_html/diary/lib/HNS/Collection.pm
+share/hns/public_html/diary/lib/HNS/DateSelect.pm
+share/hns/public_html/diary/lib/HNS/Diary.pm
+share/hns/public_html/diary/lib/HNS/ExtHTML.pm
+share/hns/public_html/diary/lib/HNS/Hnf/Command.pm
+share/hns/public_html/diary/lib/HNS/Hnf/TreeBuilder.pm
+share/hns/public_html/diary/lib/HNS/Hnf/UserVar.pm
+share/hns/public_html/diary/lib/HNS/Hnf/Warning.pm
+share/hns/public_html/diary/lib/HNS/PIM/Schedule.pm
+share/hns/public_html/diary/lib/HNS/PIM/Todo.pm
+share/hns/public_html/diary/lib/HNS/Status.pm
+share/hns/public_html/diary/lib/HNS/Style.pm
+share/hns/public_html/diary/lib/HNS/System.pm
+share/hns/public_html/diary/lib/HNS/Template.pm
+share/hns/public_html/diary/lib/Image/Size.pm
+share/hns/public_html/diary/lib/ObjectTemplate.pm
+share/hns/public_html/diary/lib/SimpleDB/Append.pm
+share/hns/public_html/diary/lib/SimpleDB/Base.pm
+share/hns/public_html/diary/lib/SimpleDB/Hash.pm
+share/hns/public_html/diary/lib/SimpleDB/Scalar.pm
+share/hns/public_html/diary/lib/jcode.pl
+share/hns/public_html/diary/message.html
+share/hns/public_html/diary/ruribaka/ruri-bg.gif
+share/hns/public_html/diary/ruribaka/theme.ph
+share/hns/public_html/diary/update.html
+share/hns/tools/admini/ChangeLog.ja
+share/hns/tools/admini/admini.cgi.in
+share/hns/tools/log/ChangeLog.ja
+share/hns/tools/log/log.cgi.in
+share/hns/tools/mail2nikki/ChangeLog.ja
+share/hns/tools/mail2nikki/mail2nikki.pl.in
+share/hns/tools/make-rurimap/ChangeLog.ja
+share/hns/tools/make-rurimap/make-rurimap.cgi.in
+share/hns/tools/pospe2hnf/ChangeLog.ja
+share/hns/tools/pospe2hnf/pospe2hnf.pl.in
+share/hns/tools/rotate_log/ChangeLog.ja
+share/hns/tools/rotate_log/rotate_log.cgi.in
+share/hns/tools/title/ChangeLog.ja
+share/hns/tools/title/title.cgi.in
+share/hns/tools/title_wrapper/ChangeLog.ja
+share/hns/tools/title_wrapper/title_wrapper.cgi.in
+share/hns/tools/view/ChangeLog.ja
+share/hns/tools/view/view.cgi.in
+share/hns/tools/web2nikki/ChangeLog.ja
+share/hns/tools/web2nikki/web2nikki.cgi.in
+@dirrm share/hns/contrib/hnf-mode
+@dirrm share/hns/contrib/icon
+@dirrm share/hns/contrib/perl5003-patch
+@dirrm share/hns/contrib/theme/hns-2.00
+@dirrm share/hns/contrib/theme
+@dirrm share/hns/contrib/todayhns
+@dirrm share/hns/contrib
+@dirrm share/hns/diary/1999
+@dirrm share/hns/diary/conf
+@dirrm share/hns/diary
+@dirrm share/hns/docs
+@dirrm share/hns/public_html/diary/anti-windoze
+@dirrm share/hns/public_html/diary/cat
+@dirrm share/hns/public_html/diary/english
+@dirrm share/hns/public_html/diary/icons
+@dirrm share/hns/public_html/diary/japanese
+@dirrm share/hns/public_html/diary/lib/CGI
+@dirrm share/hns/public_html/diary/lib/DateTime
+@dirrm share/hns/public_html/diary/lib/HNS/Calendar
+@dirrm share/hns/public_html/diary/lib/HNS/Hnf
+@dirrm share/hns/public_html/diary/lib/HNS/PIM
+@dirrm share/hns/public_html/diary/lib/HNS
+@dirrm share/hns/public_html/diary/lib/Image
+@dirrm share/hns/public_html/diary/lib/SimpleDB
+@dirrm share/hns/public_html/diary/lib
+@dirrm share/hns/public_html/diary/ruribaka
+@dirrm share/hns/public_html/diary
+@dirrm share/hns/public_html
+@dirrm share/hns/tools/admini
+@dirrm share/hns/tools/log
+@dirrm share/hns/tools/mail2nikki
+@dirrm share/hns/tools/make-rurimap
+@dirrm share/hns/tools/pospe2hnf
+@dirrm share/hns/tools/rotate_log
+@dirrm share/hns/tools/title
+@dirrm share/hns/tools/title_wrapper
+@dirrm share/hns/tools/view
+@dirrm share/hns/tools/web2nikki
+@dirrm share/hns/tools
+@dirrm share/hns

@@ -58,6 +58,7 @@
     SUBDIR += gtkicq
     SUBDIR += gxditview
     SUBDIR += hex
+    SUBDIR += hns
     SUBDIR += ircII
     SUBDIR += iv
     SUBDIR += japaneseAFM
