@@ -15,9 +15,9 @@ DISTNAME=	Numeric-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+PYSETUP=	setup_all.py
 NO_LATEST_LINK=	yes
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
@@ -29,12 +29,7 @@ post-extract:
 		${LN} -sf ../../../Include Include/Numeric)
 .endfor
 
-do-build:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py build)
-
-do-install:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py install)
-
+post-install:
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
 	@${MKDIR} ${EXAMPLEDIR}/NumTut
