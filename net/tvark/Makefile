@@ -21,10 +21,6 @@ USE_MYSQL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${PERL} -pi -e "s|/usr/local/bin|${PREFIX}/bin|" ${WRKSRC}/Makefile
 	@${PERL} -pi -e "s|gtk-config|${GTK_CONFIG}|" ${WRKSRC}/Makefile
