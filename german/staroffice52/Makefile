@@ -11,13 +11,20 @@ CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://ftp.software-engineering.org/pub/mirrors/staroffice/5.2/ \
 		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
+		ftp://sunsite.anu.edu.au/mnt/disk3/sun-info/sun-patches/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/deutsch/ \
 		ftp://ftp.schwabmuenchen.de/pub/Linux/Office/Star_Office/ \
 		ftp://ftp.mayn.de/pub/unix/office/staroffice/ \
-		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/
+		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/ \
+		ftp://ftp.cityline.net/mirrors2/sun-patches-all/ \
+		ftp://ftp.gtn.com/os/Sun/patches/ \
+		ftp://ftp.jaist.ac.jp/.arc07/sun-info/sun-patches/ \
+		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
+		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
+		ftp://ftp.sunet.se/pub7/security/vendor/sun/patches/
 DISTNAME=	so-5_2-ga-bin-linux-de.bin
-DISTFILES=	soa-5_2-ga-bin-linux-de.bin so-5_2-ga-bin-linux-de.bin
-EXTRACT_ONLY=
+DISTFILES=	soa-5_2-ga-bin-linux-de.bin so-5_2-ga-bin-linux-de.bin 109939-02.tar.Z
+EXTRACT_ONLY=	109939-02.tar.Z
 
 MAINTAINER=	mb@imp.ch
 
@@ -32,6 +39,7 @@ WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
+SUNSOLVE=	${WRKDIR}/109939-02
 
 .include <bsd.port.pre.mk>
 
@@ -81,6 +89,13 @@ do-extract:
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@cd ../../
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		    ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}) ; \
+		then \
+			exit 1; \
+		fi \
+	done
 .endif
 
 post-configure:
@@ -112,6 +127,12 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
+.if ! defined(WITH_CDROM)
+	@${ECHO_MSG} "===>   Applying sunsolve patches for ${PKGNAME}"
+	@for file in ${SUNSOLVE}/* ; do \
+		${CP} -Rv $$file ${PREFIX}/office52/ ; \
+	done
+.endif
 .endif
 
 post-install:
