@@ -1,5 +1,5 @@
 # New ports collection makefile for: X Japanese man documents
-# Version required:	0.3
+# Version required:	0.4
 # Date created:		24 Dec 1998
 # Based on:		Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>'s
 #			japanese/man-doc
@@ -8,16 +8,17 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xjman-0.3
-PKGNAME=	ja-xjman-0.3
+DISTNAME=	xjman-0.4
+PKGNAME=	ja-${DISTNAME}
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://WWW.FreeBSD.org/~sada/distfiles/
+		http://xjman.dsl.gr.jp/
 
 MAINTAINER=	sada@FreeBSD.org
 
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/man/ja_JP.ujis
 
 MANSECS=	1 3 5
