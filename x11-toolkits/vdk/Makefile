@@ -9,7 +9,7 @@ PORTNAME=	vdk
 PORTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	vdkbuilder
+MASTER_SITE_SUBDIR=	vdklib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no
+CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 INSTALLS_SHLIB=	yes
 
 MAN1=		vdk-config-2.1
