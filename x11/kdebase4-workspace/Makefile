@@ -16,8 +16,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14 \
-		objprelink:${PORTSDIR}/devel/objprelink
+		automake14:${PORTSDIR}/devel/automake14
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
+.endif
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
@@ -30,7 +32,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--with-qt-dir=${X11BASE} \
-		--without-ldap --disable-closure --enable-objprelink
+		--without-ldap --disable-closure
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+CONFIGURE_ARGS+=--enable-objprelink
+.endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
 .endif
