@@ -17,12 +17,14 @@ BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 
 MAKE_FLAGS=
 MAKEFILE=
+USE_REINPLACE=	yes
+
 MAN1=		mkcmd.1
 MAN5=		mkcmd.5
 
 post-patch:
 .for f in bin/mkcmd/machine.h bin/mkcmd/mkcmd.man lib/mkcmd/mkcmd.man
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}
 .endfor
 
 do-build:

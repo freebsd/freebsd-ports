@@ -15,12 +15,14 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adamw@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 post-patch:
 		@for i in ${WRKSRC}/lib/version.h ${WRKSRC}/include/lib/version.h \
 			${WRKSRC}/src/dcpp/main.c ${WRKSRC}/src/dcc/defs.h \
 			${WRKSRC}/src/dlink/main.c; \
 		do \
-			${PERL} -pi -e 's@/home/dice@${PREFIX}/share/dice@g' $$i; \
+			${REINPLACE_CMD} -e 's@/home/dice@${PREFIX}/share/dice@g' $$i; \
 		done
 
 		@${CP} ${FILESDIR}/Makefile ${WRKSRC}
