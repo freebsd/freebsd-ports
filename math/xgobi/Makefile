@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xgobi
-PORTVERSION=	2001.09
+PORTVERSION=	2002.04.12
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.research.att.com/areas/stat/xgobi/
 DISTNAME=	xgobi
