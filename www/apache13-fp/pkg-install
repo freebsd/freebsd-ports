@@ -105,7 +105,7 @@ fix_frontpage_scripts ()
 
 fix_httpd_conf ()
 {
-    if [ ! -f ${AP_CONF}/httpd.conf} ] ; then
+    if [ ! -f ${AP_CONF}/httpd.conf ] ; then
 	/bin/cat ${AP_CONF}/httpd.conf.default | \
 	    /usr/bin/sed -e 's;@@HOSTNAME@@;'${HOST_NAME}';' \
 	    > ${AP_CONF}/httpd.conf

@@ -1,5 +1,5 @@
---- frontpage/version4.0/change_server.sh.orig	Tue May  2 15:41:43 2000
-+++ frontpage/version4.0/change_server.sh	Thu Jul  6 21:45:52 2000
+--- frontpage/version4.0/change_server.sh.orig	Mon Aug 14 11:51:36 2000
++++ frontpage/version4.0/change_server.sh	Wed Mar  7 22:12:02 2001
 @@ -38,9 +38,12 @@
  {
    VERSION="4.0"
@@ -16,15 +16,6 @@
  
  case "`echo 'x\c'`" in
     'x\c')   echo="echo -n"    nnl= ;;      #BSD
-@@ -62,7 +65,7 @@
-      SunOS*5.*i386*)   machine="solarisx86" ;;
-      BSD/OS*)          machine="bsdi" ;;
-      SCO_SV*)          machine="sco5" ;;
--     FreeBSD*)         machine="freebsd" ;;
-+     FreeBSD*)         machine="bsdi" ;;
-      UnixWare\ *\ *\ 7*\ i*) machine="uware7" ;;
-      *)                echo "ERROR:  Unsupported platform!  Uname is $system." 
-                        return 1
 @@ -217,8 +220,22 @@
  
   clear

@@ -1,5 +1,5 @@
---- frontpage/version4.0/fp_install.sh.orig	Tue May  2 15:41:43 2000
-+++ frontpage/version4.0/fp_install.sh	Thu Jul  6 21:46:15 2000
+--- frontpage/version4.0/fp_install.sh.orig	Mon Aug 14 11:51:36 2000
++++ frontpage/version4.0/fp_install.sh	Wed Mar  7 22:16:28 2001
 @@ -48,7 +48,8 @@
  {
    VERSION="4.0"
@@ -10,15 +10,6 @@
  
  case "`echo 'x\c'`" in
     'x\c')   echo="echo -n"    nnl= ;;      #BSD
-@@ -70,7 +71,7 @@
-     SunOS*5.*i386*)     machine="solarisx86" ;;
-     BSD/OS*)            machine="bsdi" ;;
-     SCO_SV*)            machine="sco5" ;;
--    FreeBSD*)		machine="freebsd" ;;
-+    FreeBSD*)		machine="bsdi" ;;
-     UnixWare\ *\ *\ 7*\ i*)   machine="uware7" ;;
-     *)                  echo "ERROR:  Unsupported platform!  Uname is $system."
-                         return 1
 @@ -129,7 +130,7 @@
  checkuser()
  {
