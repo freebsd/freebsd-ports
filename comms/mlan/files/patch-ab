@@ -164,7 +164,7 @@ diff -u --new-file -r ../R1/examples/freebsd/lib/serial.c ./examples/freebsd/lib
 +// 
 +void msDelay(int len)
 +{
-+   usleep(len * 10000);
++   usleep(len * 1000);
 +}
 +
 +
