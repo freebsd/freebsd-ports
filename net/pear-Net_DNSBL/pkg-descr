@@ -1,0 +1,3 @@
+Checks if a given Host or URL is listed on an DNSBL or SURBL.
+
+WWW: http://pear.php.net/package/Net_DNSBL/
