@@ -25,7 +25,8 @@ CONFIGURE_ARGS+=--localstatedir=/var \
 		--with-ssl-headers=${LOCALBASE}/include/openssl \
 		--with-ssl-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include \
-		--with-lzo-lib=${LOCALBASE}/lib
+		--with-lzo-lib=${LOCALBASE}/lib \
+		--enable-lzo
 
 ALL_TARGET= 	vtund
 
