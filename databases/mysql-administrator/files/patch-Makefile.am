@@ -1,0 +1,11 @@
+--- mysql-gui-common/library/source/Makefile.am.orig	Wed Nov  3 01:28:52 2004
++++ mysql-gui-common/library/source/Makefile.am	Sat Nov  6 17:35:25 2004
+@@ -5,7 +5,7 @@
+ 
+ INCLUDES= -Wall -Wsign-compare\
+ 	 -I../include -I../shared_include -I../public_interface/linux\
+-	@MYSQL_INCLUDE@ @GLIB_CFLAGS@ @PCRE_CFLAGS@
++	@MYSQL_INCLUDE@ @GLIB_CFLAGS@ @PCRE_CFLAGS@ -D__USE_POSIX
+ 
+ test_SOURCES=test.c
+ 
