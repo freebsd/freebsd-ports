@@ -1,0 +1,11 @@
+Forenames and surnames are often stored either wholly in UPPERCASE
+or wholly in lowercase. This module allows you to convert names
+into the correct case where possible.
+
+Although forenames and surnames are normally stored separately if
+they do appear in a single string, whitespace separated, NameCase
+and nc deal correctly with them.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-NameCase
+
+Seamus Venasse <svenasse@polaris.ca>
