@@ -1,5 +1,15 @@
 --- sql-mysql.cc	Wed Jan 12 20:50:03 2000
-+++ sql-mysql.cc	Tue Nov 26 19:48:56 2002
++++ sql-mysql.cc	Wed Nov 10 17:40:19 2004
+@@ -19,7 +19,7 @@
+ 
+ // -------------------------------------------------------------
+-char *
++const char *
+ Sql_mysql::getErrorMsg() {
+-	char *msg = mysql_error(&mysql);
++	const char *msg = mysql_error(&mysql);
+ 	if (*msg == '\0') {
+ 		return errormsg;
 @@ -72,5 +72,5 @@
  // -------------------------------------------------------------
  int

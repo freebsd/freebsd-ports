@@ -7,7 +7,7 @@
 
 PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases ${TCL_NODOT}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl-sql
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client
 BUILD_DEPENDS=	tclsh${TCL_VERSION}:${PORTSDIR}/lang/${TCL_NODOT}
 
 TCL_VERSION?=	8.4	# Only this needs changing to switch TCL-version

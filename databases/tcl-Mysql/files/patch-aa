@@ -5,8 +5,12 @@ be slightly different. The  patch gets rid of a lot  of sprintf and will
 make your scripts faster, especially  when fetching multiple rows of the
 same queries.
 
+In modern MySQL mysql_error() returns a const-pointer, so getErrorMsg()
+had to be changed. However, since we are using TCL_STATIC anyway, we can
+just cast its result back down to plain char*
+
 --- sql.cc	Fri Aug 13 15:28:56 1999
-+++ sql.cc	Thu Apr  1 17:04:56 2004
++++ sql.cc	Wed Nov 10 17:40:19 2004
 @@ -12,24 +12,11 @@
  
 -const char* HANDLE_PREFIX = "sql";
@@ -41,12 +45,12 @@ same queries.
 @@ -38,3 +25,3 @@
  	// An error occured.
 -	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_VOLATILE);
-+	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_STATIC);
++	Tcl_SetResult(interp, (char *)conn->getErrorMsg(), TCL_STATIC);
  	return TCL_ERROR;
 @@ -47,3 +34,3 @@
  	// An error occured.
 -	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_VOLATILE);
-+	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_STATIC);
++	Tcl_SetResult(interp, (char *)conn->getErrorMsg(), TCL_STATIC);
  	return TCL_ERROR;
 @@ -60,9 +47,9 @@
  int queryCmd(Tcl_Interp *interp, Sql_interface *conn, char *cmd) {
@@ -55,7 +59,7 @@ same queries.
  	if ((handle = conn->query(cmd)) < 0) {
  		// An error occured.
 -		Tcl_SetResult(interp, conn->getErrorMsg(), TCL_VOLATILE);
-+		Tcl_SetResult(interp, conn->getErrorMsg(), TCL_STATIC);
++		Tcl_SetResult(interp, (char *)conn->getErrorMsg(), TCL_STATIC);
  		return TCL_ERROR;
  	}
 -	sprintf(interp->result, "%s%d", RESULT_PREFIX, handle);
@@ -149,7 +153,7 @@ same queries.
 +		}
 +		connid = mgr->connect(objc-2, argv);
 +		if (connid < 0) {
-+			Tcl_SetResult(interp, mgr->getErrorMsg(), TCL_STATIC);
++			Tcl_SetResult(interp, (char *)mgr->getErrorMsg(), TCL_STATIC);
  			return TCL_ERROR;
  		}
 -		char errormsg[16];
