@@ -1,5 +1,5 @@
---- config.mk.in.orig	Fri Aug 10 12:23:23 2001
-+++ config.mk.in	Sat Sep 22 02:04:54 2001
+--- config.mk.in.orig	Mon Apr 15 11:21:21 2002
++++ config.mk.in	Tue Oct 28 07:39:01 2003
 @@ -7,13 +7,13 @@
  exec_prefix = @exec_prefix@
  incdir = @includedir@
@@ -12,7 +12,7 @@
  
  # debug and optimization flags (-g, -O2, etc.)
 -CXXFLAGS = -pedantic -w -O2 -fPIC @CXXFLAGS@
-+CXXFLAGS = -pedantic -w -fPIC @CXXFLAGS@
++CXXFLAGS = -w -fPIC @CXXFLAGS@
  
  # command to build a shared object library
- DYNAMICAR = ld -G -o
+ DYNAMICAR = @DYNAMICAR@
