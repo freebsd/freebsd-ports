@@ -1,15 +1,6 @@
---- Config.orig	Thu May 29 11:49:38 2003
-+++ Config	Tue Jan  6 10:20:40 2004
-@@ -8,7 +8,7 @@
- # Conventional Configure file.
- 
- SSL_ENABLE           = true   # SSL requires OpenSSL
--SESSION_CACHE_ENABLE = true   # SSL session cache Requires Berkeley DB 3 or 4
-+SESSION_CACHE_ENABLE = false  # SSL session cache Requires Berkeley DB 3 or 4
- GZIP_ENABLE          = true   # Enable on the fly compression of pages
- FENCE_ENABLE         = false  # Use Electric Fence to catch malloc problems
- DIRECT_ENABLE        = false  # Experimental. Leave this switched off... 
-@@ -26,7 +26,7 @@
+--- Config.orig	Thu Feb 17 12:18:46 2005
++++ Config	Thu Feb 17 12:23:25 2005
+@@ -27,7 +27,7 @@
  
  ############################################################################
  # Location of compiler
@@ -18,7 +9,7 @@
  # Location of make program (GNU make required)
  MAKE         = gmake
  # Location of install program (GNU install or compatible required)
-@@ -35,7 +35,8 @@
+@@ -36,7 +36,8 @@
  # Base Compiler options for GCC.
  #BASECFLAGS   = -Wall -g
  #BASELDFLAGS  = -g
@@ -28,7 +19,7 @@
  BASELDFLAGS  = -g -O2
  BASE_LIBS    = -lcrypt
  
-@@ -56,9 +57,9 @@
+@@ -57,9 +58,9 @@
  # which points to ../../imap/c-client. This just reduces the amount of
  # noise output on each line when building the package.
  #
@@ -41,7 +32,7 @@
  CCLIENT_SSL_ENABLE  = true
  
  #
-@@ -78,12 +79,14 @@
+@@ -79,12 +80,14 @@
  # Following works with the mail/cclient port from FreeBSD
  #
  #CCLIENT_INCLUDE = -I/usr/local/include/c-client
@@ -57,3 +48,20 @@
  #CCLIENT_KERB_ENABLE = true
  
  ############################################################################
+@@ -123,12 +126,12 @@
+ # DB definitions (required if SESSION_CACHE_ENABLE set)
+ #
+ # Following suitable for Redhat Linux which has DB 3 preinstalled
+-DB_INCLUDE=
+-DB_LIBS=-ldb
++#DB_INCLUDE=
++#DB_LIBS=-ldb
+ 
+ # Following suitable for FreeBSD with DB 4 package installed
+-#DB_INCLUDE=-I/usr/local/include/db4
+-#DB_LIBS=-L/usr/local/lib -ldb4
++DB_INCLUDE=-I/usr/local/include/db42
++DB_LIBS=-L/usr/local/lib -ldb-4.2
+ 
+ ############################################################################
+ 

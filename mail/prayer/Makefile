@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.12
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 # ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/prayer-1.0.8.tar.gz
@@ -16,18 +16,16 @@ COMMENT=	Prayer Webmail System
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
 .if !defined(PRAYER_WITHOUT_SESSION_CACHE)
-LIB_DEPENDS+=	${BERKLEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
+LIB_DEPENDS+=	${BERKELEYDB_LIB}:${PORTSDIR}/${BERKELEYDB_PORT}
 .endif
-
-BROKEN=		Does not fetch
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS}"
-BERKLEYDB_PORT?=	databases/db3
-BERKLEYDB_LIB?=		db3.3
+BERKELEYDB_PORT?=	databases/db42
+BERKELEYDB_LIB?=		db-4.2
 
 DOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 	INSTALL LOGS NOTICE README ROADMAP SECURITY TODO URL_OPTIONS
