@@ -6,33 +6,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		hexedit
-PORTVERSION=		1.2.1
-CATEGORIES=		editors
-MASTER_SITES=		http://www.chez.com/prigaux/ \
-			${MASTER_SITE_SUNSITE}
+PORTNAME=	hexedit
+PORTVERSION=	1.2.1
+CATEGORIES=	editors
+MASTER_SITES=	http://www.chez.com/prigaux/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/hex
-EXTRACT_SUFX=		.src.tgz
+EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=		obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
-GNU_CONFIGURE=		yes
-
-ALL_TARGET=
-WRKSRC=			${WRKDIR}/hexedit
-
-MAN1=			hexedit.1
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-${PORTVERSION}//}
+GNU_CONFIGURE=	yes
+MAN1=		hexedit.1
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/hexedit ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/hexedit.1 ${PREFIX}/man/man1
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/hexedit
-.for file in COPYING Changes TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/hexedit
-.endfor
-.endif
 
 .include <bsd.port.mk>
