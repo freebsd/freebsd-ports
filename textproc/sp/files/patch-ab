@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Oct 10 00:15:02 1998
-+++ Makefile	Sat Jan 15 00:13:40 2000
++++ Makefile	Mon Jan 31 14:38:24 2000
 @@ -1,11 +1,12 @@
  # Copyright (c) 1994, 1995 James Clark
  # See the file COPYING for copying permission.
@@ -15,6 +15,15 @@
  # You might want to uncomment this on BSD systems
  #INSTALL=install
  
+@@ -33,7 +34,7 @@
+ # Add -Dsig_atomic_t=int on SunOS 4.1.x with g++ (or any other platform
+ #  which doesn't appropriately define sig_atomic_t).
+ # Add -DJADE_MIF to include the Jade MIF backend
+-XDEFINES=
++XDEFINES=-DSGML_CATALOG_FILES_DEFAULT=\"/usr/local/share/sgml/catalog\"
+ DEFINES=-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST -DSP_MULTI_BYTE $(XDEFINES)
+ CXXFLAGS=-ansi $(DEBUG) $(WARN)
+ # Flag to pass to CXX to make it output list of dependencies as a Makefile.
 @@ -48,14 +49,14 @@
  # If you defined SP_HAVE_SOCKET, add any libraries that are needed for sockets
  # -lsocket -lnsl needed on Solaris 2.x
