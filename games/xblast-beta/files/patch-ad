@@ -1,0 +1,12 @@
+--- image/misc/Imakefile~	Thu Apr 10 11:30:44 1997
++++ image/misc/Imakefile	Tue Dec 26 15:19:43 2000
+@@ -19,7 +19,7 @@
+  */
+ 
+ PPMFILES=*.ppm
+-
+-ALLFILES=$(PPMFILES) 
++PBMFILES=*.pbm
++ALLFILES=$(PPMFILES) $(PBMFILES)
+ 
+ InstallMultiple($(ALLFILES),$(IMAGEDIR))
