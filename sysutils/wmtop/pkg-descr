@@ -3,7 +3,7 @@ monitors the top 3 processes (in terms of CPU usage). You can
 configure which processes are displayed and it can be used as an
 application launcher.
 
-WWW: http://www.tanelorn.demon.co.uk/Computing/
+WWW: http://wmtop.sourceforge.net/
 
 - Dan Piponi
 wmtop@tanelorn.demon.co.uk
