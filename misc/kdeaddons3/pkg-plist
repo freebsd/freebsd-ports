@@ -1,4 +1,7 @@
 bin/dcop_kate
+bin/noatunsynaescope.bin
+bin/noatuntippecanoe.bin
+bin/noatuntyler.bin
 bin/testor
 lib/kde3/katehtmltoolsplugin.la
 lib/kde3/katehtmltoolsplugin.so
@@ -41,6 +44,8 @@ lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/noatunalsaplayer.la
 lib/kde3/noatunalsaplayer.so
+lib/kde3/noatunblurscope.la
+lib/kde3/noatunblurscope.so
 lib/kde3/noatuncharlatan.la
 lib/kde3/noatuncharlatan.so
 lib/kde3/noatunluckytag.la
@@ -49,6 +54,12 @@ lib/kde3/noatunmadness.la
 lib/kde3/noatunmadness.so
 lib/kde3/noatunpitchablespeed.la
 lib/kde3/noatunpitchablespeed.so
+lib/kde3/noatunsynaescope.la
+lib/kde3/noatunsynaescope.so
+lib/kde3/noatuntippecanoe.la
+lib/kde3/noatuntippecanoe.so
+lib/kde3/noatuntyler.la
+lib/kde3/noatuntyler.so
 lib/kde3/noatunwakeup.la
 lib/kde3/noatunwakeup.so
 lib/kde3/noatunwavecapture.la
@@ -100,10 +111,15 @@ share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/entries/mplayer.desktop
 share/apps/noatun/alsaplayerui.plugin
+share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin
 share/apps/noatun/luckytag.plugin
 share/apps/noatun/madness.plugin
 share/apps/noatun/pitchablespeed.plugin
+share/apps/noatun/synaescope.plugin
+share/apps/noatun/tippecanoe.plugin
+share/apps/noatun/tyler.plugin
+share/apps/noatun/tylerstates
 share/apps/noatun/wakeup.plugin
 share/apps/noatun/wavecapture.plugin
 share/doc/HTML/en/kate-plugins/common
