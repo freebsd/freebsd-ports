@@ -80,6 +80,7 @@
     SUBDIR += mgapdesk
     SUBDIR += mlterm
     SUBDIR += multi-gnome-terminal
+    SUBDIR += mxico
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
     SUBDIR += offix-clipboard
