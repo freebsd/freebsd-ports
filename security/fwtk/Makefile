@@ -3,15 +3,13 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.7 1997/03/07 12:33:01 obrien Exp $
+# $Id: Makefile,v 1.8 1997/05/17 11:13:18 asami Exp $
 #
 
 DISTNAME=	fwtk-1.3
 CATEGORIES=	security net
 DISTFILES=	fwtk-v1.3${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	gpalmer@FreeBSD.ORG
 
 RESTRICTED=	"No form of redistribution is allowed"
 
