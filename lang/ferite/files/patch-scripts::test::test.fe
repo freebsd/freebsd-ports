@@ -1,29 +1,26 @@
-
-$FreeBSD$
-
---- scripts/test/test.fe.orig	Sun Dec 23 14:17:44 2001
-+++ scripts/test/test.fe	Wed Jan  9 11:25:18 2002
+--- scripts/test/test.fe.orig	Sat Nov 23 05:29:42 2002
++++ scripts/test/test.fe	Sat Jan 11 18:27:52 2003
 @@ -17,17 +17,17 @@
-    a_global_int = 10;
-    testfile = new File();
-    
--   Console.println( "Printing Out All ext2 Partitions in /etc/fstab" );
-+   Console.println( "Printing Out All ufs Partitions in /etc/fstab" );
-    testfile->open( "/etc/fstab", "r", "" );
-    Console.println( "Here." );
-    while( blam = testfile->readln(1024) && ! testfile->eof() )
-    {
-       if( blam =~ /
--	 (\/dev\/[hs]d[a-g][1-9])   # device entry
--	 [\ \t]*                    # whitespace 
--	 (\/[a-z]*(\/[a-z]*)*)      # mount point
--	 [\ \t]*                    # whitespace
--	 ext2                       # force adherance to ext2
-+	 (\/dev\/[adw][ad][0-9][0-9]?s?[1-4]?[a-h])   # device entry
-+	 [\ \t]*                                      # whitespace 
-+	 (\/[a-z]*(\/[a-z]*)*)                        # mount point
-+	 [\ \t]*                                      # whitespace
-+	 ufs                                          # force adherance to ufs
- 	 /xoi   /* make usre it's not case sensitive */ 
-         )
-       {
+ 
+     a_global_int = 10;
+ 
+-    Console.println( "Printing Out All ext3 Partitions in /etc/fstab" );
++    Console.println( "Printing Out All ufs Partitions in /etc/fstab" );
+     testfile = Sys.openfile( "/etc/fstab", 0 );
+     Console.println( "Here." );
+     while( (blam = testfile.readln()) )
+     {
+         if( blam =~ m/
+-            (\/dev\/[hs]d[a-g][1-9])   # device entry
+-            [\ \t]*                    # whitespace
+-            (\/[a-z]*(\/[a-z]*)*)      # mount point
+-            [\ \t]*                    # whitespace
+-            ext3                       # force adherance to ext3
++            (\/dev\/[adw][ad][0-9][0-9]?s?[1-4]?[a-h])   # device entry
++            [\ \t]*                                      # whitespace
++            (\/[a-z]*(\/[a-z]*)*)                        # mount point
++            [\ \t]*                                      # whitespace
++            ufs                                          # force adherance to ufs
+             /xoi   /* make usre it's not case sensitive */
+             )
+         {

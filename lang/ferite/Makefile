@@ -6,39 +6,28 @@
 #
 
 PORTNAME=	ferite
-PORTVERSION=	0.99.4
+PORTVERSION=	0.99.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
-		pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+INSTALLS_SHLIB=	yes
+PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}
 
-EXTRA_DOCS=	AUTHORS COPYING ChangeLog README ROADMAP TODO
+MAN1=		builder.1 ferite.1
 
 .if defined(NOPORTDOCS)
-MAKE_ENV=	DOCS=""
-.else
-MAKE_ENV=	DOCS=docs
-post-install:
-.for i in ${EXTRA_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/ferite
-.endfor
+MAKE_ENV+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PTRHEAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/"//g}|g' \
-		${WRKSRC}/configure ${WRKSRC}/ferite-config.in
 
 .include <bsd.port.mk>

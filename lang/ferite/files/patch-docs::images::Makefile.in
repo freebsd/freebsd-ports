@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- docs/images/Makefile.in.orig	Wed Jan  9 08:47:07 2002
-+++ docs/images/Makefile.in	Wed Jan  9 12:11:41 2002
-@@ -117,7 +117,7 @@
+--- docs/images/Makefile.in.orig	Thu Jan  9 04:49:26 2003
++++ docs/images/Makefile.in	Tue Jan 14 09:37:43 2003
+@@ -127,7 +127,7 @@
  	    ferite_logo_black.png
  
  
@@ -12,3 +9,19 @@ $FreeBSD$
  
  EXTRA_DIST = $(images_DATA)
  subdir = docs/images
+@@ -158,6 +158,7 @@
+ uninstall-info-am:
+ imagesDATA_INSTALL = $(INSTALL_DATA)
+ install-imagesDATA: $(images_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(imagesdir)
+ 	@list='$(images_DATA)'; for p in $$list; do \
+@@ -166,6 +167,7 @@
+ 	  echo " $(imagesDATA_INSTALL) $$d$$p $(DESTDIR)$(imagesdir)/$$f"; \
+ 	  $(imagesDATA_INSTALL) $$d$$p $(DESTDIR)$(imagesdir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-imagesDATA:
+ 	@$(NORMAL_UNINSTALL)

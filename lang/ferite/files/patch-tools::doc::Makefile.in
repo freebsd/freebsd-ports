@@ -1,0 +1,27 @@
+--- tools/doc/Makefile.in.orig	Thu Jan  9 04:49:50 2003
++++ tools/doc/Makefile.in	Tue Jan 14 09:38:37 2003
+@@ -125,7 +125,7 @@
+ SUBDIRS = template
+ 
+ doc_DATA = parser.fe structs.fe doc.fe template.fe  
+-docdir = @prefix@/share/ferite/doc
++docdir = @prefix@/share/doc/ferite
+ 
+ bin_SCRIPTS = feritedoc
+ 
+@@ -188,6 +188,7 @@
+ uninstall-info-am:
+ docDATA_INSTALL = $(INSTALL_DATA)
+ install-docDATA: $(doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -196,6 +197,7 @@
+ 	  echo " $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+ 	  $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
