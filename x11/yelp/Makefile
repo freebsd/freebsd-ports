@@ -15,14 +15,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A help browser for GNOME 2.0 desktop
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
