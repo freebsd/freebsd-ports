@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src/build
 
-USE_GCC=	3.4
 USE_GNOME=	pkgconfig
 USE_SDL=	sdl
 USE_GMAKE=	yes
