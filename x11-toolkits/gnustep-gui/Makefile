@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep-gui
+.if defined(GNUSTEP_GUI_DEVEL)
+PORTVERSION=	0.8.0
+.else
 PORTVERSION=	0.7.6
+.endif
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://archive.progeny.com/gnustep/core/ \
@@ -19,6 +23,11 @@ RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 BREAKS_IF_PEDANTIC=	yes
+.if defined(GNUSTEP_GUI_DEVEL)
+PLIST_SUB+=	DEVEL=""
+.else
+PLIST_SUB+=	DEVEL="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
