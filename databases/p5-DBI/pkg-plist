@@ -1,7 +1,9 @@
 bin/dbiprof
 bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/DBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ExampleP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/NullP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Proxy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Sponge.pm
