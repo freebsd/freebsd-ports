@@ -1,0 +1,23 @@
+bin/ximian-connector-setup
+etc/gconf/gconf.xml.defaults/apps/evolution/exchange/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/exchange/%gconf.xml
+etc/gconf/schemas/apps_evolution_exchange.schemas
+lib/evolution/%%EVO_VERSION%%/camel-providers/libcamelexchange.so
+lib/evolution/%%EVO_VERSION%%/camel-providers/libcamelexchange.urls
+libdata/bonobo/servers/GNOME_Evolution_Exchange_Storage.server
+libexec/evolution/%%EVO_VERSION%%/evolution-exchange-storage
+share/gnome/evolution/%%EVO_VERSION%%/images/connector.png
+share/gnome/evolution/%%EVO_VERSION%%/images/exchange-delegates-48.png
+share/gnome/evolution/%%EVO_VERSION%%/images/exchange-oof-48.png
+share/gnome/ximian-connector/%%VERSION%%/glade/exchange-autoconfig-wizard.glade
+share/gnome/ximian-connector/%%VERSION%%/glade/exchange-delegates.glade
+share/gnome/ximian-connector/%%VERSION%%/glade/exchange-oof.glade
+share/gnome/ximian-connector/%%VERSION%%/glade/exchange-permissions-dialog.glade
+share/gnome/ximian-connector/%%VERSION%%/images/connector.png
+share/locale/de/LC_MESSAGES/ximian-connector-%%VERSION%%.mo
+@dirrm share/gnome/ximian-connector/%%VERSION%%/images
+@dirrm share/gnome/ximian-connector/%%VERSION%%/glade
+@dirrm share/gnome/ximian-connector/%%VERSION%%
+@dirrm share/gnome/ximian-connector
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/exchange
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/exchange

@@ -1,0 +1,13 @@
+Ximian Connector is a plugin for Evolution that adds Exchange client
+capabilities to Evolution.
+
+With the Evolution Connector installed, Evolution functions as an
+Exchange client, enabling users to become full participants in company-wide
+group scheduling and other collaborative tasks. Linux, Solaris and FreeBSD
+users can access public folders, Global Address Lists, email, calendar,
+task lists, and group scheduling information.
+
+WWW: http://www.novell.com/products/connector/
+
+- Alex Kiesel
+kiesel@schlund.de

@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jun  1 20:52:34 2004
++++ configure	Tue Jun  1 20:52:55 2004
+@@ -22992,7 +22992,7 @@
+ 
+ 		case $with_static_ldap in
+ 		no|"")
+-			if test -f $with_openldap/lib/libldap.la; then
++			if test -f $with_openldap/lib/libldap.so; then
+ 				with_static_ldap=no
+ 			else
+ 				with_static_ldap=yes
