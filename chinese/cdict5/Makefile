@@ -13,12 +13,13 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ijliao
 DISTFILES=	cdict5.tgz cdict5-file.tgz
 EXTRACT_ONLY=	cdict5.tgz
-IGNOREFILES=	cdict5-file.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese-English / English-Chinese dictionary
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+
+IGNOREFILES=	cdict5-file.tgz
 
 .include <bsd.port.pre.mk>
 
