@@ -4288,6 +4288,7 @@ mziq		ports/audio/mziq
 nab		ports/biology/nab
 nadar		ports/games/nadar
 nag		ports/deskutils/nag
+nagios		ports/net/nagios
 nail		ports/mail/nail
 naim		ports/net/naim
 nam		ports/net/nam
