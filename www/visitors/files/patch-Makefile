@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed May 19 14:06:49 2004
++++ Makefile	Wed May 19 14:07:15 2004
+@@ -3,11 +3,11 @@
+ # All Rights Reserved
+ # Under the GPL license version 2
+ 
+-CC= gcc
++#CC= gcc
+ AR= /usr/bin/ar
+ RANLIB= /usr/bin/ranlib
+-CCOPT= -O2 -Wall -W
+-DEBUG= -g
++CCOPT= ${CFLAGS}
++#DEBUG= -g
+ 
+ OBJ = visitors.o aht.o antigetopt.o
+ PRGNAME = visitors
