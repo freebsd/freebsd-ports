@@ -45,6 +45,7 @@
     SUBDIR += cflow
     SUBDIR += clanlib
     SUBDIR += clig
+    SUBDIR += cln
     SUBDIR += codecrusader
     SUBDIR += codemedic
     SUBDIR += commoncpp

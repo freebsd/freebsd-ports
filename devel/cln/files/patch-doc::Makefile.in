@@ -1,0 +1,10 @@
+--- doc/Makefile.in.orig	Sun Feb 11 17:11:56 2001
++++ doc/Makefile.in	Sun Feb 11 17:24:01 2001
+@@ -81,6 +81,7 @@
+ 
+ install : all installdirs force
+ 	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).info $(DESTDIR)$(infodir)/$(PACKAGE).info
++	install-info $(srcdir)/$(PACKAGE).info $(DESTDIR)$(infodir)/dir
+ 	$(INSTALL_DATA) $(srcdir)/$(PACKAGE)_*.html $(DESTDIR)$(htmldir)
+ 	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).dvi $(DESTDIR)$(dvidir)/$(PACKAGE).dvi
+ 
