@@ -1,0 +1,51 @@
+bin/makerom
+bin/mknbi-dos
+bin/mknbi-linux
+bin/mknbi-mgl
+lib/netboot/netboot.drivers
+lib/netboot/binaries/floppy.bin
+lib/netboot/binaries/floppy86.bin
+lib/netboot/binaries/kernel.bin
+lib/netboot/binaries/kernel86.bin
+lib/netboot/binaries/kernelm.bin
+lib/netboot/binaries/netndis.bin
+lib/netboot/binaries/netndis86.bin
+lib/netboot/binaries/netpkt.bin
+lib/netboot/binaries/netpkt86.bin
+lib/netboot/binaries/netundi.bin
+lib/netboot/binaries/netundi86.bin
+lib/netboot/binaries/rom.bin
+lib/netboot/binaries/rom86.bin
+lib/netboot/netdrvr/pktdrvr/drivers/3c501.com
+lib/netboot/netdrvr/pktdrvr/drivers/3c503.com
+lib/netboot/netdrvr/pktdrvr/drivers/3c505.com
+lib/netboot/netdrvr/pktdrvr/drivers/3c507.com
+lib/netboot/netdrvr/pktdrvr/drivers/3c509.com
+lib/netboot/netdrvr/pktdrvr/drivers/3c523.com
+lib/netboot/netdrvr/pktdrvr/drivers/dc21x4.com
+lib/netboot/netdrvr/pktdrvr/drivers/de600.com
+lib/netboot/netdrvr/pktdrvr/drivers/depca.com
+lib/netboot/netdrvr/pktdrvr/drivers/ee10pkt.com
+lib/netboot/netdrvr/pktdrvr/drivers/e10ppkt.com
+lib/netboot/netdrvr/pktdrvr/drivers/e100bpkt.com
+lib/netboot/netdrvr/pktdrvr/drivers/epropkt.com
+lib/netboot/netdrvr/pktdrvr/drivers/exos205.com
+lib/netboot/netdrvr/pktdrvr/drivers/exp16.com
+lib/netboot/netdrvr/pktdrvr/drivers/hppclan.com
+lib/netboot/netdrvr/pktdrvr/drivers/hppclanp.com
+lib/netboot/netdrvr/pktdrvr/drivers/lan595.com
+lib/netboot/netdrvr/pktdrvr/drivers/ne1000.com
+lib/netboot/netdrvr/pktdrvr/drivers/ne2.com
+lib/netboot/netdrvr/pktdrvr/drivers/ne2000.com
+lib/netboot/netdrvr/pktdrvr/drivers/ne2100.com
+lib/netboot/netdrvr/pktdrvr/drivers/smc_wd.com
+lib/netboot/utils/pktwatch.com
+lib/netboot/utils/romcheck.bin
+@dirrm lib/netboot/binaries
+@dirrm lib/netboot/netdrvr/ndis2
+@dirrm lib/netboot/netdrvr/pktdrvr/drivers
+@dirrm lib/netboot/netdrvr/pktdrvr
+@dirrm lib/netboot/netdrvr/undi
+@dirrm lib/netboot/netdrvr
+@dirrm lib/netboot/utils
+@dirrm lib/netboot
