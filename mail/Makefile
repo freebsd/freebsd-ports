@@ -87,6 +87,7 @@
     SUBDIR += movemail
     SUBDIR += mreport
     SUBDIR += mutt
+    SUBDIR += mutt-devel
     SUBDIR += muttzilla
     SUBDIR += nail
     SUBDIR += namg
