@@ -1,17 +1,17 @@
 bin/afio
-share/doc/afio/README
-share/doc/afio/SCRIPTS
-share/examples/afio/DONTDUMP
-share/examples/afio/README
-share/examples/afio/afiodump.example
-share/examples/afio/backup
-share/examples/afio/gnupg_read
-share/examples/afio/gnupg_write
-share/examples/afio/pgp_read
-share/examples/afio/pgp_write
-share/examples/afio/restore
-share/examples/afio/tapechange
-share/examples/afio/x.dot
-share/examples/afio/x.home
-@dirrm share/doc/afio
-@dirrm share/examples/afio
+%%PORTDOCS%%share/doc/afio/README
+%%PORTDOCS%%share/doc/afio/SCRIPTS
+%%PORTDOCS%%share/examples/afio/DONTDUMP
+%%PORTDOCS%%share/examples/afio/README
+%%PORTDOCS%%share/examples/afio/afiodump.example
+%%PORTDOCS%%share/examples/afio/backup
+%%PORTDOCS%%share/examples/afio/gnupg_read
+%%PORTDOCS%%share/examples/afio/gnupg_write
+%%PORTDOCS%%share/examples/afio/pgp_read
+%%PORTDOCS%%share/examples/afio/pgp_write
+%%PORTDOCS%%share/examples/afio/restore
+%%PORTDOCS%%share/examples/afio/tapechange
+%%PORTDOCS%%share/examples/afio/x.dot
+%%PORTDOCS%%share/examples/afio/x.home
+%%PORTDOCS%%@dirrm share/doc/afio
+%%PORTDOCS%%@dirrm share/examples/afio

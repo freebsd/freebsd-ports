@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afio
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
@@ -14,15 +14,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@jelal.hb.north.de
 
-WRKSRC=		${WRKDIR}/afio.2.4.6
-ALL_TARGET=	afio
+ALL_TARGET=	${PORTNAME}
 MAN1=		afio.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/afio
-	@(cd ${WRKSRC} ; \
-		${INSTALL_MAN} README SCRIPTS ${PREFIX}/share/doc/afio)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_MAN} README SCRIPTS ${DOCSDIR})
 	@${MKDIR} ${PREFIX}/share/examples/afio
 	@${INSTALL_SCRIPT} ${FILESDIR}/afiodump.example ${PREFIX}/share/examples/afio
 	@${INSTALL_DATA} ${WRKSRC}/script1/DONTDUMP ${PREFIX}/share/examples/afio
