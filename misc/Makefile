@@ -25,7 +25,6 @@
     SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
-    SUBDIR += cpdup
     SUBDIR += crosspad
     SUBDIR += cstream
     SUBDIR += cwish
