@@ -1,64 +1,92 @@
---- makefile.orig	Mon Apr 19 01:22:38 1999
-+++ makefile	Mon Jun  4 02:25:37 2001
-@@ -1,45 +1,49 @@
- GDC_INCL = .
--GD_INCL  = gd1.3
--GD_LIB   = gd1.3
-+GD_INCL  = $(PREFIX)/include/gd
-+GD_LIB   = $(PREFIX)/lib
+--- makefile.orig	Sat Nov  4 02:49:46 2000
++++ makefile	Mon Jun 18 01:15:50 2001
+@@ -2,8 +2,8 @@
+ GDC_LIB  = .
+ 
+ # GDChart requires the gd library - www.boutell.com/gd/
+-GD_INCL  = ../gd-1.8.3
+-GD_LIB   = ../gd-1.8.3
++GD_INCL  = $(LOCALBASE)/include/gd
++GD_LIB   = $(LOCALBASE)/lib
+ 
+ # libgd requires libpng
+ # PNG_INCL = ../libpng-1.0.8
+@@ -30,37 +30,35 @@
+ # LIB_PATHS = $(LIB_PATHS) -R$(PNG_LIB) -R$(ZLIB_LIB)
+ # LIB_PATHS = $(LIB_PATHS) -Xlinker -rpath -Xlinker $(PNG_LIB) -Xlinker -rpath -Xlinker $(ZLIB_LIB)
  
 -CC=gcc
 -
 -all: gdc_samp1 gdc_samp2 gdc_pie_samp
 +all: libgdchart.a
  
- # compile the samples
- gdc_samp1: gdc.o gdchart.o price_conv.o gdc_samp1.o $(GD_LIB)/libgd.a
--	$(CC) -o gdc_samp1 gdc.o gdchart.o price_conv.o gdc_samp1.o -L$(GD_LIB) -lgd -lm
-+	$(CC) $(CFLAGS) -o gdc_samp1 gdc.o gdchart.o price_conv.o gdc_samp1.o -L$(GD_LIB) -lgd -lm
- 
- gdc_samp1.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdchart.h gdc_samp1.c
--	$(CC) -I$(GDC_INCL) -c gdc_samp1.c
-+	$(CC) $(CFLAGS) -I$(GDC_INCL) -c gdc_samp1.c
- 
- gdc_samp2: gdc.o gdchart.o price_conv.o gdc_samp2.o $(GD_LIB)/libgd.a
--	$(CC) -o gdc_samp2 gdc.o gdchart.o price_conv.o gdc_samp2.o -L$(GD_LIB) -lgd -lm
-+	$(CC) $(CFLAGS) -o gdc_samp2 gdc.o gdchart.o price_conv.o gdc_samp2.o -L$(GD_LIB) -lgd -lm
- 
- gdc_samp2.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdchart.h gdc_samp2.c
--	$(CC) -I$(GDC_INCL) -c gdc_samp2.c
-+	$(CC) $(CFLAGS) -I$(GDC_INCL) -c gdc_samp2.c
- 
- gdc_pie_samp: gdc.o gdc_pie.o price_conv.o gdc_pie_samp.o $(GD_LIB)/libgd.a
--	$(CC) -o gdc_pie_samp gdc.o gdc_pie.o price_conv.o gdc_pie_samp.o -L$(GD_LIB) -lgd -lm
-+	$(CC) $(CFLAGS) -o gdc_pie_samp gdc.o gdc_pie.o price_conv.o gdc_pie_samp.o -L$(GD_LIB) -lgd -lm
- 
+ # --- compile the samples ---
  gdc_pie_samp.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdcpie.h gdc_pie_samp.c
 -	$(CC) -I$(GDC_INCL) -c gdc_pie_samp.c
 +	$(CC) $(CFLAGS) -I$(GDC_INCL) -c gdc_pie_samp.c
  
+ gdc_samp1.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdchart.h gdc_samp1.c
+-	$(CC) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_samp1.c
++	$(CC) $(CFLAGS) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_samp1.c
+ 
+ gdc_samp2.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdchart.h gdc_samp2.c
+-	$(CC) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_samp2.c
++	$(CC) $(CFLAGS) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_samp2.c
+ 
+ # --- link the samples ---
+ gdc_samp1: gdc.o gdchart.o price_conv.o gdc_samp1.o gifencode.o $(GD_LIB)/libgd.a
+-	$(CC) -o gdc_samp1 \
++	$(CC) $(CFLAGS) -o gdc_samp1 \
+ 			 gdc.o gdchart.o price_conv.o gifencode.o \
+ 			 gdc_samp1.o \
+ 			 $(LIB_PATHS) \
+ 			 -lgd -lz -lpng $(JPEG_LK) -lm
+ 
+ gdc_samp2: gdc.o gdchart.o price_conv.o gdc_samp2.o gifencode.o $(GD_LIB)/libgd.a
+-	$(CC) -o gdc_samp2 \
++	$(CC) $(CFLAGS) -o gdc_samp2 \
+ 			 gdc.o gdchart.o price_conv.o gifencode.o \
+ 			 gdc_samp2.o \
+ 			 $(LIB_PATHS) \
+ 			 -lgd -lz -lpng $(JPEG_LK) -lm
+ 
+ gdc_pie_samp: gdc.o gdc_pie.o price_conv.o gdc_pie_samp.o gifencode.o $(GD_LIB)/libgd.a
+-	$(CC) -o gdc_pie_samp \
++	$(CC) $(CFLAGS) -o gdc_pie_samp \
+ 			 gdc.o gdc_pie.o price_conv.o gifencode.o \
+ 			 gdc_pie_samp.o \
+ 			 $(LIB_PATHS) \
+@@ -68,24 +66,31 @@
+ 
  # --- compile the lib ---
+ gifencode.o: gifencode.c gifencode.h
+-	$(CC) -I$(GD_INCL) -c gifencode.c
++	$(CC) $(CFLAGS) -I$(GD_INCL) -c gifencode.c
+ 
  price_conv.o: price_conv.c
 -	$(CC) -c price_conv.c
 +	$(CC) $(CFLAGS) -c price_conv.c
  
- gdc.o: gdc.c gdc.h
--	$(CC) -I$(GD_INCL) -I$(GDC_INCL) -c gdc.c
-+	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) -c gdc.c
+ gdc.o: gdc.c $(GDC_INCL)/gdc.h $(GDC_INCL)/gifencode.h
+-	$(CC) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdc.c
++	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdc.c
  
- gdc_pie.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdcpie.h gdc_pie.c
--	$(CC) -I$(GD_INCL) -I$(GDC_INCL) -c gdc_pie.c
-+	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) -c gdc_pie.c
+ gdc_pie.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gifencode.h $(GDC_INCL)/gdcpie.h gdc_pie.c
+-	$(CC) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_pie.c
++	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdc_pie.c
  
- gdchart.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gdchart.h gdchart.c
--	$(CC) -I$(GD_INCL) -I$(GDC_INCL) -c gdchart.c
-+	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) -c gdchart.c
+ gdchart.o: $(GDC_INCL)/gdc.h $(GDC_INCL)/gifencode.h $(GDC_INCL)/gdchart.h gdchart.c
+-	$(CC) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdchart.c
++	$(CC) $(CFLAGS) -I$(GD_INCL) -I$(GDC_INCL) $(JPEG_DEF) -c gdchart.c
  
- $(GD_LIB)/libgd.a:
- 	cd $(GD_LIB) ; make -f Makefile libgd.a
+ # --- supporting libraries ---
+ # should be compile & installed separately
+ # $(GD_LIB)/libgd.a:
+ # 	cd $(GD_LIB) ; make -f Makefile libgd.a
 +
-+libgdchart.a: gdc.o gdc_pie.o gdchart.o price_conv.o
-+	$(AR) rc libgdchart.a gdc.o gdc_pie.o gdchart.o price_conv.o
++libgdchart.a: gdc.o gdc_pie.o gdchart.o price_conv.o gifencode.o
++	$(AR) rc libgdchart.a gdc.o gdc_pie.o gdchart.o price_conv.o \
++	gifencode.o
 +	@if [ -x $(RANLIB) ] ; then \
 +	  $(RANLIB) libgdchart.a; \
 +	fi;
