@@ -8,7 +8,8 @@
 PORTNAME=	xscreensaver-gnome
 PORTVERSION=	4.16
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www.jwz.org/xscreensaver/
+MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
+		http://ftp.uni-koeln.de/windows/xcontrib/
 DISTNAME=	xscreensaver-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
