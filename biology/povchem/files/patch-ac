@@ -14,7 +14,7 @@
  #
  #Viewer = c:\util\dvpeg.exe
 -Viewer = /usr/local/bin/xv
-+Viewer = %%X11BASE%%/bin/xv
++Viewer = %%LOCALBASE%%/bin/display
  
  # If ColorSplit is Proportional, 'Power' determines the power of the vdW radii
  # to which the point of color change is proportional. See the manual for

@@ -1,5 +1,8 @@
---- povchem.c.orig	Sat Mar 14 17:19:41 1998
-+++ povchem.c	Sat Mar 14 17:20:32 1998
+
+$FreeBSD$
+
+--- povchem.c.orig	Fri Jul 11 11:49:07 2003
++++ povchem.c	Fri Jul 11 11:59:23 2003
 @@ -482,7 +482,7 @@
   */
    
@@ -18,3 +21,159 @@
    if (!FINISH) New_String(&FINISH,"Plastic");
    if (!FINISH_DECLARATION) New_String(&FINISH_DECLARATION,"\
    finish {\n\
+@@ -742,7 +742,7 @@
+     phong 0.3\n\
+     phong_size 50\n\
+     specular 0.0\n\
+-  }\n\n");
++  };\n\n");
+ 
+   if (POVRAY && (!POV_OPTIONS || !POV_WIDTH) ) {
+     puts("Warning: to run POV-Ray from PovChem, you must define *all* the");
+@@ -977,10 +977,10 @@
+   if (model==CPK ||
+       (model==BALLnSTICK && ballSizeModel==PROPORTIONAL) ) {
+     if (model==BALLnSTICK)
+-      fprintf(pov,"#declare Proportionality_Constant = %.*g\n",SF,ballRadius);
++      fprintf(pov,"#declare Proportionality_Constant = %.*g;\n",SF,ballRadius);
+     for (Z=0;Z<NUM_ELEMENTS;Z++) {
+       if (PeriodicTable[Z].isPresent) {
+-        fprintf(pov,"#declare %s_Radius = %.*g",
++        fprintf(pov,"#declare %s_Radius = %.*g;",
+                     PeriodicTable[Z].name,SF,PeriodicTable[Z].vdW);
+         if (model==BALLnSTICK)
+           fputs("*Proportionality_Constant\n",pov);
+@@ -989,13 +989,13 @@
+       }
+     }
+   } else
+-    fprintf(pov,"#declare All_Atom_Radius = %.*g\n",SF,Determine_Radius(0));
++    fprintf(pov,"#declare All_Atom_Radius = %.*g;\n",SF,Determine_Radius(0));
+   fputs("\n",pov);
+ 
+   if (sphereColorModel==BY_ELEMENT || cylinderColorModel==BY_ELEMENT) {
+     for (Z=0;Z<NUM_ELEMENTS;Z++) {
+       if (PeriodicTable[Z].isPresent) {
+-        fprintf(pov,"#declare Atom_%s_Color = color rgb <%.5g, %.5g, %.5g>\n",
++        fprintf(pov,"#declare Atom_%s_Color = color rgb <%.5g, %.5g, %.5g>;\n",
+                     PeriodicTable[Z].name,RED(Z),GREEN(Z),BLUE(Z));
+       }
+     }
+@@ -1003,20 +1003,20 @@
+   }
+ 
+   if (sphereColorModel==ALL_THE_SAME)
+-    fprintf(pov,"#declare All_Atom_Color = color rgb <%.5g, %.5g, %.5g>\n\n",
++    fprintf(pov,"#declare All_Atom_Color = color rgb <%.5g, %.5g, %.5g>;\n\n",
+                 allSphereColor.r,allSphereColor.g,allSphereColor.b);
+ 
+   if (sphereColorModel==BY_PDB) {
+     if (ballSizeModel==CONSTANT) {
+       fputs("#declare Atom_All =\n  sphere {\n",pov);
+       fputs("    <0,0,0>, All_Atom_Radius\n",pov);
+-      fprintf(pov,"    finish { %s }\n  }\n\n",FINISH);
++      fprintf(pov,"    finish { %s }\n  };\n\n",FINISH);
+     } else {
+       for (Z=0;Z<NUM_ELEMENTS;Z++) {
+         if (PeriodicTable[Z].isPresent) {
+           fprintf(pov,"#declare Atom_%s =\n  sphere {\n",PeriodicTable[Z].name);
+           fprintf(pov,"    <0,0,0>, %s_Radius\n",PeriodicTable[Z].name);
+-          fprintf(pov,"    finish { %s }\n  }\n",FINISH);
++          fprintf(pov,"    finish { %s }\n  };\n",FINISH);
+         }
+       }
+       fputs("\n",pov);
+@@ -1024,7 +1024,7 @@
+     tag=firstSphereTag;
+     nTags=nSphereTags;
+     for (i=0;i<nTags;i++) {
+-      fprintf(pov,"#declare Atom_%s_Color = color rgb <%.5g, %.5g, %.5g>\n",
++      fprintf(pov,"#declare Atom_%s_Color = color rgb <%.5g, %.5g, %.5g>;\n",
+                   tag->name,tag->r,tag->g,tag->b);
+       tag=tag->next;
+     }
+@@ -1051,7 +1051,7 @@
+             fputs(      "      pigment { color All_Atom_Color }\n",pov);
+             break;
+         }
+-        fprintf(pov,"      finish { %s }\n    }\n  }\n",FINISH);
++        fprintf(pov,"      finish { %s }\n    }\n  };\n",FINISH);
+       }
+     }
+ 
+@@ -1060,7 +1060,7 @@
+     fputs(      "    <0,0,0>, All_Atom_Radius\n",pov);
+     fputs(      "    texture {\n",pov);
+     fputs(      "      pigment { color All_Atom_Color }\n",pov);
+-    fprintf(pov,"      finish { %s }\n    }\n  }\n",FINISH);
++    fprintf(pov,"      finish { %s }\n    }\n  };\n",FINISH);
+   }
+ 
+   fputs("\n",pov);
+@@ -1080,26 +1080,26 @@
+   factors[4]=HIGH_ORDER_FACTOR;
+ 
+   if (nOrders[H_BOND]) {
+-    fprintf(pov,"#declare H_Bond_Radius = %.*g\n",SF,HBondRadius);
+-    fprintf(pov,"#declare H_Bond_Color = color rgb <%.5g, %.5g, %.5g>\n",
++    fprintf(pov,"#declare H_Bond_Radius = %.*g;\n",SF,HBondRadius);
++    fprintf(pov,"#declare H_Bond_Color = color rgb <%.5g, %.5g, %.5g>;\n",
+                 HBondColor.r,HBondColor.g,HBondColor.b);
+     fputs(      "#declare H_Bond =\n  cylinder {\n",pov);
+     fputs(      "    <0,0,0>, <1,0,0>, H_Bond_Radius\n",pov);
+     fputs(      "    texture {\n",pov);
+     fputs(      "      pigment { H_Bond_Color }\n",pov);
+-    fprintf(pov,"      finish { %s }\n    }\n  }\n\n",FINISH);
++    fprintf(pov,"      finish { %s }\n    }\n  };\n\n",FINISH);
+   }
+ 
+   if (model==CYLINDER) 
+-    fputs("#declare All_Bond_Radius = All_Atom_Radius\n\n",pov);
++    fputs("#declare All_Bond_Radius = All_Atom_Radius;\n\n",pov);
+   else {
+     if (cylinderSizeModel==CONSTANT)
+-      fprintf(pov,"#declare All_Bond_Radius = %.*g\n\n",SF,cylinderRadius);
++      fprintf(pov,"#declare All_Bond_Radius = %.*g;\n\n",SF,cylinderRadius);
+     else {
+-      fprintf(pov,"#declare Single_Bond_Radius = %.*g\n",SF,cylinderRadius);
++      fprintf(pov,"#declare Single_Bond_Radius = %.*g;\n",SF,cylinderRadius);
+       for (i=DOUBLE;i<=HIGH_ORDER;i++) {
+         if (nOrders[i])
+-          fprintf(pov,"#declare %sBond_Radius = Single_Bond_Radius*%.*g\n",
++          fprintf(pov,"#declare %sBond_Radius = Single_Bond_Radius*%.*g;\n",
+                      orderTypes[i],SF,factors[i]);
+       }
+       fputs("\n",pov);
+@@ -1107,7 +1107,7 @@
+   }
+ 
+   if (cylinderColorModel==ALL_THE_SAME)
+-    fprintf(pov,"#declare All_Bond_Color = color rgb <%.5g, %.5g, %.5g>\n\n",
++    fprintf(pov,"#declare All_Bond_Color = color rgb <%.5g, %.5g, %.5g>;\n\n",
+                 allCylinderColor.r,allCylinderColor.g,allCylinderColor.b);
+ 
+   fputs(      "#declare Bond =\n  cylinder {\n",pov);
+@@ -1124,12 +1124,12 @@
+   } else
+     fprintf(pov,"    finish { %s }\n",FINISH);
+     
+-  fputs(      "  }\n\n",pov);
++  fputs(      "  };\n\n",pov);
+ 
+   if (cylinderColorModel==BY_PDB && firstCylinderTag!=firstSphereTag) {
+     tag=firstCylinderTag;
+     for (i=0;i<nCylinderTags;i++) {
+-      fprintf(pov,"#declare Bond_%s_Color = color rgb <%.5g, %.5g, %.5g>\n",
++      fprintf(pov,"#declare Bond_%s_Color = color rgb <%.5g, %.5g, %.5g>;\n",
+                   tag->name,tag->r,tag->g,tag->b);
+       tag=tag->next;
+     }
+@@ -2092,7 +2092,7 @@
+  * the origin, looking along +Z, sky along +Y.
+  */
+  
+-  fprintf(pov,"#declare Camera_Position = < %.6g, %.6g, %.6g >\n\n",
++  fprintf(pov,"#declare Camera_Position = < %.6g, %.6g, %.6g >;\n\n",
+               eye.x,eye.y,eye.z);
+ 
+   fputs(      "camera{\n",pov);

@@ -7,15 +7,17 @@
 
 PORTNAME=	povchem
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology graphics
 MASTER_SITES=	http://www.chemicalgraphics.com/paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \
 		povchem.cfg \
 		periodic.tab
 
-MAINTAINER=	frankch@waru.life.nthu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple yet powerful tool to generate POV from a PDB file
+
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
@@ -31,8 +33,8 @@ do-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/povchem.cfg
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+	${WRKSRC}/povchem.cfg
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} -o povchem povchem.c -lm
