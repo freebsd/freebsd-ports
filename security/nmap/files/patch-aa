@@ -1,12 +1,26 @@
 --- Makefile.in.orig	Fri Mar  9 22:25:19 2001
-+++ Makefile.in	Sat Apr  7 11:28:49 2001
-@@ -17,3 +17,3 @@
++++ Makefile.in	Sun May 27 17:49:17 2001
+@@ -16,5 +16,5 @@
+ CCOPT = 
  LIBPCAPDIR = @libpcapdir@
 -INCLS = -I$(LIBPCAPDIR) 
 +#INCLS = -I$(LIBPCAPDIR) 
  DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAP_PLATFORM=\"$(NMAP_PLATFORM)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
-@@ -173,3 +173,3 @@
- install: $(TARGET)
+ CFLAGS = -g @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+@@ -171,9 +171,13 @@
+ 	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
+ 
+-install: $(TARGET)
 -	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir) $(deskdir)
+-	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
++install-nmapfe:
+ 	@echo "If the next command fails -- you cannot use the X front end"
++	$(SHTOOL) mkdir -f -p -m 755 $(deskdir)
+ 	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop && $(INSTALL) -c -m 644 docs/nmapfe.1 $(mandir)/man1/nmapfe.1 && $(INSTALL) -c -m 644 docs/xnmap.1 $(mandir)/man1/xnmap.1
++
++install: $(TARGET)
 +	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)
- 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
++	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
++	-$(MAKE) install-nmapfe
+ 	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(mandir)/man1/$(TARGET).1
+ 	$(INSTALL) -c -m 644 nmap-os-fingerprints  $(nmapdatadir)/nmap-os-fingerprints
