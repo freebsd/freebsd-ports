@@ -168,7 +168,7 @@ post-install:
 		${BSDPAN_WRKSRC}/${file} ${BSDPAN_DEST}/${file}
 .endfor
 	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
-.if ${OSVERSION} < 500043
+.if ${OSVERSION} < 500043 || ${OSVERSION} > 502100
 	@fmt ${PKGMESSAGE}
 .else
 	@${PREFIX}/bin/use.perl port
