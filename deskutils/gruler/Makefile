@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	gruler
-PORTVERSION=	0.4
-PORTREVISION=	1
-CATEGORIES=	deskutils gnome
+PORTVERSION=	0.6
+CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
-DISTNAME=${PORTNAME:S/gr/gR/}-${PORTVERSION}
 
-MAINTAINER=	smyru@heron.pl
-COMMENT=	Screen ruler for GNOME desktop
+MAINTAINER=	jylefort@brutele.be
+COMMENT=	A customizable screen ruler for GNOME
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_REINPLACE=	yes
+USE_GCC=	3.4
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|PACKAGE_DATA_DIR|"${PREFIX}/share/gnome"|' \
+		${WRKSRC}/src/gui.c
+	@${REINPLACE_CMD} -e 's|^\(gruler_pixmapsdir = \).*|\1${PREFIX}/share/gnome/pixmaps|' \
+		${WRKSRC}/pixmaps/Makefile.in
 
 .include <bsd.port.mk>

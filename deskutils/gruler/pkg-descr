@@ -1,4 +1,20 @@
-Gnome Screen Ruler is a tool that helps measure dimension
-of the on-screen objects, one very helpful to webmasters.
+Gnome Screen Ruler is an on-screen ruler for measuring horizontal and
+vertical distances in any application. Features:
+
+	* Horizontal and vertical display
+	* Multiple units: pixels, inches, centimeters, picas, points,
+	  percentage
+	* Configurable colors and font
+	* Can be set always-on-top
+	* Measurement lines track mouse cursor to help measure
+	  anything on screen
+	* Move and resize via click-and-drag with the mouse
+	* Align with other windows while dragging (hold SHIFT key)
+	* Move using the keyboard for precision (arrow keys)
+	* Resize using keyboard (ALT+arrow keys)
+	* Speed up keyboard operations (hold SHIFT key)
 
 WWW: http://linuxadvocate.org/projects/gruler/
+
+- Jean-Yves Lefort
+jylefort@brutele.be

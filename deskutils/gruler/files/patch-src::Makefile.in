@@ -1,12 +1,12 @@
---- src/Makefile.in.orig	Tue Oct  5 05:18:57 2004
-+++ src/Makefile.in	Tue Oct  5 05:19:02 2004
+--- src/Makefile.in.orig	Thu Jan 27 22:24:50 2005
++++ src/Makefile.in	Thu Jan 27 22:25:13 2005
 @@ -159,9 +159,6 @@
  	$(GNOME_CFLAGS)
  
  
 -AM_CFLAGS = \
 -	 -Wall\
--	 -O2
+-	 -g
  
  
  bin_PROGRAMS = gruler

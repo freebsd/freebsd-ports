@@ -1,5 +1,7 @@
 bin/gruler
-share/gRuler/glade/gRuler.glade
-share/gnome/applications/gRuler.desktop
-@dirrm share/gRuler/glade
-@dirrm share/gRuler
+share/gnome/applications/gruler.desktop
+share/gnome/gruler/glade/gruler-icon.png
+share/gnome/gruler/glade/gruler.glade
+share/gnome/pixmaps/gruler-icon.png
+@dirrm share/gnome/gruler/glade
+@dirrm share/gnome/gruler
