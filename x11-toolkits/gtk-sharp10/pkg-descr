@@ -1,0 +1,5 @@
+Gtk# is a port of Gtk+ 2 to the .NET runtime, written in C#.  It provides
+access to both basic parts of Gtk+ and other parts of the GNOME development
+environment.
+
+WWW: http://gtk-sharp.sf.net/
