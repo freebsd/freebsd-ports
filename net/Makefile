@@ -231,6 +231,7 @@
     SUBDIR += linpopup
     SUBDIR += linux-edonkey-server
     SUBDIR += lla
+    SUBDIR += lmd
     SUBDIR += macipgw
     SUBDIR += maradns
     SUBDIR += mars_nwe
