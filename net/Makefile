@@ -23,6 +23,7 @@
     SUBDIR += arts++
     SUBDIR += ascend-radius
     SUBDIR += asfrecorder
+    SUBDIR += aslookup
     SUBDIR += balance
     SUBDIR += bbsnet
     SUBDIR += bgpq
