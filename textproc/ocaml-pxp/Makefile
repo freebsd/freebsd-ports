@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxp
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.94.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=-without-wlex-compat
 
 USE_REINPLACE=	yes
 
