@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.6 1997/10/23 17:59:33 hoek Exp $
+# $Id: Makefile,v 1.7 1997/11/08 08:39:04 obrien Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -15,8 +15,8 @@ MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
 
 MAINTAINER=	hoek@FreeBSD.ORG
 
-LIB_DEPENDS=    tk80\\.1\\.:${PORTSDIR}/x11/tk80
-LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=    tk80\\.1\\.:${PORTSDIR}/x11/tk80 \
+		uu\\.1\\.:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tcl="${PREFIX}" --enable-tk="${PREFIX}"
@@ -29,7 +29,7 @@ INSTALL_TARGET=	install-tcl
 MAN1=		xdeview.1
 
 PORTDOCDIR?=	share/doc/xdeview
-DOCFILES+=	${FILESDIR}/porting.notes ${WRKSRC}/HOWTO
+DOCFILES=	${FILESDIR}/porting.notes ${WRKSRC}/HOWTO
 
 post-install:
 	strip ${PREFIX}/bin/uuwish
