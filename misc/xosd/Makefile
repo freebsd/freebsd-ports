@@ -6,38 +6,34 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.ignavus.net/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	http://www.ignavus.net/
 
 MAINTAINER=	perky@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-.if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
-.endif
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		xmms.3:${PORTSDIR}/audio/xmms
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
+USE_LIBTOOL=	yes
+USE_AUTOMAKE_VER=	15
+AUTOMAKE_ARGS=	--add-missing
+USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
-MAKE_ENV=	CFLAGS='${CFLAGS}' PREFIX='${PREFIX}' \
-		X11BASE='${X11BASE}' LOCALBASE='${LOCALBASE}' \
-		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG="${GLIB_CONFIG}" \
-		XMMS_CONFIG="${XMMS_CONFIG}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib -lgnugetopt' \
+		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' GTK_CONFIG='${GTK_CONFIG}' \
+		GLIB_CONFIG='${GLIB_CONFIG}' XMMS_PLUGINDIR=${X11BASE}/lib/xmms
 
 MAN1=		osd_cat.1
-MAN3=		xosd.3
+MAN3=		xosd_display.3 xosd_hide.3 xosd_init.3 xosd_is_onscreen.3 \
+		xosd_set_offset.3 xosd_set_pos.3 xosd_set_shadow_offset.3 \
+		xosd_show.3 xosd_uninit.3 xosd.3 xosd_get_number_lines.3
 
-.if defined(WITH_XMMS)
-MAKE_ENV+=	XMMS_PLUGINDIR=${X11BASE}/lib/xmms
-PLIST_SUB+=	WITH_XMMS=""
-.else
-PLIST_SUB+=	WITH_XMMS="@comment "
-.endif
+pre-configure:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/libtoolize --force && ${ACLOCAL}
 
 .include <bsd.port.mk>
