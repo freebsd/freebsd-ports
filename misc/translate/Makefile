@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	translate
-PORTVERSION=	1.00
+PORTVERSION=	1.10
 CATEGORIES=	misc
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
-DISTNAME=	translate
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	Translates string using Babelfish
@@ -23,6 +22,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+
+MAN1=		translate.1
 
 .include <bsd.port.mk>
