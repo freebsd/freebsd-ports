@@ -254,7 +254,7 @@ share/tkstep8.0/tkfbox.tcl
 share/tkstep8.0/tkstep.tcl
 share/tkstep8.0/xmfbox.tcl
 lib/libtkstep80.a
-lib/libtkstep80.so.1.0
+lib/libtkstep80.so.1.2
 @exec /sbin/ldconfig -m %B
 @dirrm share/doc/tkstep
 @dirrm share/tkstep8.0/demos/images
