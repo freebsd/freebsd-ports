@@ -48,6 +48,5 @@ share/doc/Xtt/INSTALL.eng
 share/doc/Xtt/INSTALL.jis
 share/doc/Xtt/MISCNOTES.eng
 share/doc/Xtt/MISCNOTES.jis
-@dirrm lib/modules/codeconv
 @dirrm share/doc/Xtt
 @dirrm include/X11/fonts/codeconv
