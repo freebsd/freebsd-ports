@@ -10,8 +10,3 @@
  
  static const char *configPaths[] = {
  	/* Unix absolute paths */
-@@ -1817,4 +1819,3 @@
- 
- 	return( ( noErrors ) ? noErrors : EXIT_SUCCESS );
- 	}
--
