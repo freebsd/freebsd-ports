@@ -1,218 +1,284 @@
-share/doc/diveintopython/about.html
-share/doc/diveintopython/abstracts.html
-share/doc/diveintopython/apihelper_alltogether.html
-share/doc/diveintopython/apihelper_andor.html
-share/doc/diveintopython/apihelper_builtin.html
-share/doc/diveintopython/apihelper_divein.html
-share/doc/diveintopython/apihelper_filter.html
-share/doc/diveintopython/apihelper_getattr.html
-share/doc/diveintopython/apihelper_lambda.html
-share/doc/diveintopython/apihelper_optional.html
-share/doc/diveintopython/apihelper_summary.html
-share/doc/diveintopython/chef.html
-share/doc/diveintopython/dialect_alltogether.html
-share/doc/diveintopython/dialect_basehtml.html
-share/doc/diveintopython/dialect_dialectizer.html
-share/doc/diveintopython/dialect_dictsub.html
-share/doc/diveintopython/dialect_divein.html
-share/doc/diveintopython/dialect_extract.html
-share/doc/diveintopython/dialect_locals.html
-share/doc/diveintopython/dialect_quoting.html
-share/doc/diveintopython/dialect_re.html
-share/doc/diveintopython/dialect_sgmllib.html
-share/doc/diveintopython/dialect_summary.html
-share/doc/diveintopython/diveintopython.css
-share/doc/diveintopython/download/diveintopython-common-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-examples-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-help-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-html-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-html-flat-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-pdf-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-text-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-word-%%VERSION%%.zip
-share/doc/diveintopython/download/diveintopython-xml-%%VERSION%%.zip
-share/doc/diveintopython/examples.html
-share/doc/diveintopython/fdl.html
-share/doc/diveintopython/fdl_aggregation.html
-share/doc/diveintopython/fdl_applicability.html
-share/doc/diveintopython/fdl_collections.html
-share/doc/diveintopython/fdl_combining.html
-share/doc/diveintopython/fdl_copying.html
-share/doc/diveintopython/fdl_copyinginquantity.html
-share/doc/diveintopython/fdl_future.html
-share/doc/diveintopython/fdl_howto.html
-share/doc/diveintopython/fdl_modifications.html
-share/doc/diveintopython/fdl_termination.html
-share/doc/diveintopython/fdl_translation.html
-share/doc/diveintopython/fileinfo_alltogether.html
-share/doc/diveintopython/fileinfo_class.html
-share/doc/diveintopython/fileinfo_classattributes.html
-share/doc/diveintopython/fileinfo_divein.html
-share/doc/diveintopython/fileinfo_exception.html
-share/doc/diveintopython/fileinfo_files.html
-share/doc/diveintopython/fileinfo_for.html
-share/doc/diveintopython/fileinfo_fromimport.html
-share/doc/diveintopython/fileinfo_instantiation.html
-share/doc/diveintopython/fileinfo_modules.html
-share/doc/diveintopython/fileinfo_morespecial.html
-share/doc/diveintopython/fileinfo_os.html
-share/doc/diveintopython/fileinfo_private.html
-share/doc/diveintopython/fileinfo_specialmethods.html
-share/doc/diveintopython/fileinfo_summary.html
-share/doc/diveintopython/fileinfo_userdict.html
-share/doc/diveintopython/fudd.html
-share/doc/diveintopython/furtherreading.html
-share/doc/diveintopython/history.html
-share/doc/diveintopython/images/callouts/1.png
-share/doc/diveintopython/images/callouts/10.png
-share/doc/diveintopython/images/callouts/2.png
-share/doc/diveintopython/images/callouts/3.png
-share/doc/diveintopython/images/callouts/4.png
-share/doc/diveintopython/images/callouts/5.png
-share/doc/diveintopython/images/callouts/6.png
-share/doc/diveintopython/images/callouts/7.png
-share/doc/diveintopython/images/callouts/8.png
-share/doc/diveintopython/images/callouts/9.png
-share/doc/diveintopython/images/caution.png
-share/doc/diveintopython/images/diveintopython.png
-share/doc/diveintopython/images/dot.png
-share/doc/diveintopython/images/important.png
-share/doc/diveintopython/images/note.png
-share/doc/diveintopython/images/tip.png
-share/doc/diveintopython/images/warning.png
-share/doc/diveintopython/index.html
-share/doc/diveintopython/kgp_alltogether.html
-share/doc/diveintopython/kgp_attributes.html
-share/doc/diveintopython/kgp_cache.html
-share/doc/diveintopython/kgp_child.html
-share/doc/diveintopython/kgp_commandline.html
-share/doc/diveintopython/kgp_divein.html
-share/doc/diveintopython/kgp_handler.html
-share/doc/diveintopython/kgp_openanything.html
-share/doc/diveintopython/kgp_packages.html
-share/doc/diveintopython/kgp_parse.html
-share/doc/diveintopython/kgp_search.html
-share/doc/diveintopython/kgp_stdio.html
-share/doc/diveintopython/kgp_summary.html
-share/doc/diveintopython/kgp_unicode.html
-share/doc/diveintopython/license.html
-share/doc/diveintopython/license_terms.html
-share/doc/diveintopython/odbchelper_dict.html
-share/doc/diveintopython/odbchelper_divein.html
-share/doc/diveintopython/odbchelper_docstring.html
-share/doc/diveintopython/odbchelper_funcdef.html
-share/doc/diveintopython/odbchelper_indenting.html
-share/doc/diveintopython/odbchelper_join.html
-share/doc/diveintopython/odbchelper_list.html
-share/doc/diveintopython/odbchelper_map.html
-share/doc/diveintopython/odbchelper_multiassign.html
-share/doc/diveintopython/odbchelper_objects.html
-share/doc/diveintopython/odbchelper_stringformatting.html
-share/doc/diveintopython/odbchelper_summary.html
-share/doc/diveintopython/odbchelper_testing.html
-share/doc/diveintopython/odbchelper_tuple.html
-share/doc/diveintopython/odbchelper_vardef.html
-share/doc/diveintopython/olde.html
-share/doc/diveintopython/preface.html
-share/doc/diveintopython/regression_datacentric.html
-share/doc/diveintopython/regression_divein.html
-share/doc/diveintopython/regression_filter.html
-share/doc/diveintopython/regression_import.html
-share/doc/diveintopython/regression_map.html
-share/doc/diveintopython/regression_path.html
-share/doc/diveintopython/roman_bugs.html
-share/doc/diveintopython/roman_change.html
-share/doc/diveintopython/roman_divein.html
-share/doc/diveintopython/roman_failure.html
-share/doc/diveintopython/roman_postscript.html
-share/doc/diveintopython/roman_refactoring.html
-share/doc/diveintopython/roman_romantest.html
-share/doc/diveintopython/roman_sanity.html
-share/doc/diveintopython/roman_stage1.html
-share/doc/diveintopython/roman_stage2.html
-share/doc/diveintopython/roman_stage3.html
-share/doc/diveintopython/roman_stage4.html
-share/doc/diveintopython/roman_stage5.html
-share/doc/diveintopython/roman_success.html
-share/doc/diveintopython/roman_summary.html
-share/doc/diveintopython/tips.html
-share/doc/diveintopython/toc.html
-share/examples/diveintopython/BaseHTMLProcessor.py
-share/examples/diveintopython/LICENSE.txt
-share/examples/diveintopython/apihelper.py
-share/examples/diveintopython/apihelpertest.py
-share/examples/diveintopython/argecho.py
-share/examples/diveintopython/autosize.py
-share/examples/diveintopython/builddialectexamples.py
-share/examples/diveintopython/colorize.py
-share/examples/diveintopython/dialect.py
-share/examples/diveintopython/fileinfo.py
-share/examples/diveintopython/fullpath.py
-share/examples/diveintopython/kgp/binary.xml
-share/examples/diveintopython/kgp/husserl.xml
-share/examples/diveintopython/kgp/kant.xml
-share/examples/diveintopython/kgp/kgp.dtd
-share/examples/diveintopython/kgp/kgp.py
-share/examples/diveintopython/kgp/russiansample.xml
-share/examples/diveintopython/kgp/stderr.py
-share/examples/diveintopython/kgp/stdout.py
-share/examples/diveintopython/kgp/template.xml
-share/examples/diveintopython/kgp/test.xml
-share/examples/diveintopython/kgp/thanks.xml
-share/examples/diveintopython/kgp/toolbox.py
-share/examples/diveintopython/kgptest.py
-share/examples/diveintopython/makerealworddoc.py
-share/examples/diveintopython/odbchelper.py
-share/examples/diveintopython/odbchelpertest.py
-share/examples/diveintopython/parsephone.py
-share/examples/diveintopython/piglatin.py
-share/examples/diveintopython/plural.py
-share/examples/diveintopython/pyfontify.py
-share/examples/diveintopython/regression.py
-share/examples/diveintopython/roman.py
-share/examples/diveintopython/roman/stage1/roman1.py
-share/examples/diveintopython/roman/stage1/romantest1.py
-share/examples/diveintopython/roman/stage2/roman2.py
-share/examples/diveintopython/roman/stage2/romantest2.py
-share/examples/diveintopython/roman/stage3/roman3.py
-share/examples/diveintopython/roman/stage3/romantest3.py
-share/examples/diveintopython/roman/stage4/roman4.py
-share/examples/diveintopython/roman/stage4/romantest4.py
-share/examples/diveintopython/roman/stage5/roman5.py
-share/examples/diveintopython/roman/stage5/romantest5.py
-share/examples/diveintopython/roman/stage6/roman61.py
-share/examples/diveintopython/roman/stage6/roman62.py
-share/examples/diveintopython/roman/stage6/romantest61.py
-share/examples/diveintopython/roman/stage6/romantest62.py
-share/examples/diveintopython/roman/stage7/roman71.py
-share/examples/diveintopython/roman/stage7/roman72.py
-share/examples/diveintopython/roman/stage7/romantest71.py
-share/examples/diveintopython/roman/stage7/romantest72.py
-share/examples/diveintopython/roman/stage8/roman81.py
-share/examples/diveintopython/roman/stage8/roman82.py
-share/examples/diveintopython/roman/stage8/roman83.py
-share/examples/diveintopython/roman/stage8/romantest81.py
-share/examples/diveintopython/roman/stage8/romantest82.py
-share/examples/diveintopython/roman/stage8/romantest83.py
-share/examples/diveintopython/roman/stage9/roman9.py
-share/examples/diveintopython/roman/stage9/romantest9.py
-share/examples/diveintopython/romantest.py
-share/examples/diveintopython/uncurly.py
-share/examples/diveintopython/unicode2koi8r.py
-share/examples/diveintopython/urllister.py
-@dirrm share/examples/diveintopython/roman/stage9
-@dirrm share/examples/diveintopython/roman/stage8
-@dirrm share/examples/diveintopython/roman/stage7
-@dirrm share/examples/diveintopython/roman/stage6
-@dirrm share/examples/diveintopython/roman/stage5
-@dirrm share/examples/diveintopython/roman/stage4
-@dirrm share/examples/diveintopython/roman/stage3
-@dirrm share/examples/diveintopython/roman/stage2
-@dirrm share/examples/diveintopython/roman/stage1
-@dirrm share/examples/diveintopython/roman
-@dirrm share/examples/diveintopython/kgp
-@dirrm share/examples/diveintopython
-@dirrm share/doc/diveintopython/images/callouts
-@dirrm share/doc/diveintopython/images
-@dirrm share/doc/diveintopython/download
-@dirrm share/doc/diveintopython
+%%DOCSDIR%%/appendix/about.html
+%%DOCSDIR%%/appendix/abstracts.html
+%%DOCSDIR%%/appendix/examples.html
+%%DOCSDIR%%/appendix/fdl.html
+%%DOCSDIR%%/appendix/fdl_aggregation.html
+%%DOCSDIR%%/appendix/fdl_applicability.html
+%%DOCSDIR%%/appendix/fdl_collections.html
+%%DOCSDIR%%/appendix/fdl_combining.html
+%%DOCSDIR%%/appendix/fdl_copying.html
+%%DOCSDIR%%/appendix/fdl_copyinginquantity.html
+%%DOCSDIR%%/appendix/fdl_future.html
+%%DOCSDIR%%/appendix/fdl_howto.html
+%%DOCSDIR%%/appendix/fdl_modifications.html
+%%DOCSDIR%%/appendix/fdl_termination.html
+%%DOCSDIR%%/appendix/fdl_translation.html
+%%DOCSDIR%%/appendix/furtherreading.html
+%%DOCSDIR%%/appendix/history.html
+%%DOCSDIR%%/appendix/license.html
+%%DOCSDIR%%/appendix/license_terms.html
+%%DOCSDIR%%/appendix/tips.html
+%%DOCSDIR%%/ch12.html
+%%DOCSDIR%%/diveintopython.css
+%%DOCSDIR%%/download/diveintopython-common-4.9.zip
+%%DOCSDIR%%/download/diveintopython-examples-4.9.zip
+%%DOCSDIR%%/download/diveintopython-html-4.9.zip
+%%DOCSDIR%%/download/diveintopython-html-flat-4.9.zip
+%%DOCSDIR%%/download/diveintopython-pdf-4.9.zip
+%%DOCSDIR%%/download/diveintopython-text-4.9.zip
+%%DOCSDIR%%/download/diveintopython-word-4.9.zip
+%%DOCSDIR%%/download/diveintopython-xml-4.9.zip
+%%DOCSDIR%%/dynamic_functions/index.html
+%%DOCSDIR%%/dynamic_functions/stage1.html
+%%DOCSDIR%%/dynamic_functions/stage2.html
+%%DOCSDIR%%/dynamic_functions/stage3.html
+%%DOCSDIR%%/dynamic_functions/stage4.html
+%%DOCSDIR%%/dynamic_functions/stage5.html
+%%DOCSDIR%%/dynamic_functions/stage6.html
+%%DOCSDIR%%/dynamic_functions/summary.html
+%%DOCSDIR%%/file_handling/all_together.html
+%%DOCSDIR%%/file_handling/file_objects.html
+%%DOCSDIR%%/file_handling/for_loops.html
+%%DOCSDIR%%/file_handling/index.html
+%%DOCSDIR%%/file_handling/more_on_modules.html
+%%DOCSDIR%%/file_handling/os_module.html
+%%DOCSDIR%%/file_handling/summary.html
+%%DOCSDIR%%/getting_to_know_python/declaring_functions.html
+%%DOCSDIR%%/getting_to_know_python/documenting_functions.html
+%%DOCSDIR%%/getting_to_know_python/everything_is_an_object.html
+%%DOCSDIR%%/getting_to_know_python/indenting_code.html
+%%DOCSDIR%%/getting_to_know_python/index.html
+%%DOCSDIR%%/getting_to_know_python/testing_modules.html
+%%DOCSDIR%%/html_processing/all_together.html
+%%DOCSDIR%%/html_processing/basehtmlprocessor.html
+%%DOCSDIR%%/html_processing/dialect.html
+%%DOCSDIR%%/html_processing/dictionary_based_string_formatting.html
+%%DOCSDIR%%/html_processing/extracting_data.html
+%%DOCSDIR%%/html_processing/index.html
+%%DOCSDIR%%/html_processing/introducing_sgmllib.html
+%%DOCSDIR%%/html_processing/locals_and_globals.html
+%%DOCSDIR%%/html_processing/quoting_attribute_values.html
+%%DOCSDIR%%/html_processing/summary.html
+%%DOCSDIR%%/images/callouts/1.png
+%%DOCSDIR%%/images/callouts/10.png
+%%DOCSDIR%%/images/callouts/2.png
+%%DOCSDIR%%/images/callouts/3.png
+%%DOCSDIR%%/images/callouts/4.png
+%%DOCSDIR%%/images/callouts/5.png
+%%DOCSDIR%%/images/callouts/6.png
+%%DOCSDIR%%/images/callouts/7.png
+%%DOCSDIR%%/images/callouts/8.png
+%%DOCSDIR%%/images/callouts/9.png
+%%DOCSDIR%%/images/caution.png
+%%DOCSDIR%%/images/diveintopython.png
+%%DOCSDIR%%/images/dot.png
+%%DOCSDIR%%/images/important.png
+%%DOCSDIR%%/images/note.png
+%%DOCSDIR%%/images/tip.png
+%%DOCSDIR%%/images/warning.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/installing_python/debian.html
+%%DOCSDIR%%/installing_python/index.html
+%%DOCSDIR%%/installing_python/macos9.html
+%%DOCSDIR%%/installing_python/macosx.html
+%%DOCSDIR%%/installing_python/redhat.html
+%%DOCSDIR%%/installing_python/shell.html
+%%DOCSDIR%%/installing_python/source.html
+%%DOCSDIR%%/installing_python/summary.html
+%%DOCSDIR%%/installing_python/windows.html
+%%DOCSDIR%%/native_data_types/chef.html
+%%DOCSDIR%%/native_data_types/declaring_variables.html
+%%DOCSDIR%%/native_data_types/formatting_strings.html
+%%DOCSDIR%%/native_data_types/fudd.html
+%%DOCSDIR%%/native_data_types/index.html
+%%DOCSDIR%%/native_data_types/joining_lists.html
+%%DOCSDIR%%/native_data_types/lists.html
+%%DOCSDIR%%/native_data_types/mapping_lists.html
+%%DOCSDIR%%/native_data_types/multiple_values.html
+%%DOCSDIR%%/native_data_types/olde.html
+%%DOCSDIR%%/native_data_types/summary.html
+%%DOCSDIR%%/native_data_types/tuples.html
+%%DOCSDIR%%/object_oriented_framework/class_attributes.html
+%%DOCSDIR%%/object_oriented_framework/defining_classes.html
+%%DOCSDIR%%/object_oriented_framework/importing_modules.html
+%%DOCSDIR%%/object_oriented_framework/index.html
+%%DOCSDIR%%/object_oriented_framework/instantiating_classes.html
+%%DOCSDIR%%/object_oriented_framework/private_functions.html
+%%DOCSDIR%%/object_oriented_framework/special_class_methods.html
+%%DOCSDIR%%/object_oriented_framework/special_class_methods2.html
+%%DOCSDIR%%/object_oriented_framework/userdict.html
+%%DOCSDIR%%/power_of_introspection/all_together.html
+%%DOCSDIR%%/power_of_introspection/and_or.html
+%%DOCSDIR%%/power_of_introspection/built_in_functions.html
+%%DOCSDIR%%/power_of_introspection/filtering_lists.html
+%%DOCSDIR%%/power_of_introspection/getattr.html
+%%DOCSDIR%%/power_of_introspection/index.html
+%%DOCSDIR%%/power_of_introspection/lambda_functions.html
+%%DOCSDIR%%/power_of_introspection/optional_arguments.html
+%%DOCSDIR%%/power_of_introspection/summary.html
+%%DOCSDIR%%/refactoring/handling_changing_requirements.html
+%%DOCSDIR%%/refactoring/index.html
+%%DOCSDIR%%/refactoring/postscript.html
+%%DOCSDIR%%/refactoring/refactoring.html
+%%DOCSDIR%%/refactoring/summary.html
+%%DOCSDIR%%/regression_testing/all_together.html
+%%DOCSDIR%%/regression_testing/data_centric.html
+%%DOCSDIR%%/regression_testing/dynamic_import.html
+%%DOCSDIR%%/regression_testing/filtering_lists.html
+%%DOCSDIR%%/regression_testing/finding_the_path.html
+%%DOCSDIR%%/regression_testing/index.html
+%%DOCSDIR%%/regression_testing/mapping_lists.html
+%%DOCSDIR%%/regression_testing/summary.html
+%%DOCSDIR%%/regular_expressions/index.html
+%%DOCSDIR%%/regular_expressions/n_m_syntax.html
+%%DOCSDIR%%/regular_expressions/phone_numbers.html
+%%DOCSDIR%%/regular_expressions/roman_numerals.html
+%%DOCSDIR%%/regular_expressions/street_addresses.html
+%%DOCSDIR%%/regular_expressions/summary.html
+%%DOCSDIR%%/regular_expressions/verbose.html
+%%DOCSDIR%%/scripts_and_streams/all_together.html
+%%DOCSDIR%%/scripts_and_streams/caching.html
+%%DOCSDIR%%/scripts_and_streams/child_nodes.html
+%%DOCSDIR%%/scripts_and_streams/command_line_arguments.html
+%%DOCSDIR%%/scripts_and_streams/handlers_by_node_type.html
+%%DOCSDIR%%/scripts_and_streams/index.html
+%%DOCSDIR%%/scripts_and_streams/stdin_stdout_stderr.html
+%%DOCSDIR%%/scripts_and_streams/summary.html
+%%DOCSDIR%%/toc/index.html
+%%DOCSDIR%%/unit_testing/diving_in.html
+%%DOCSDIR%%/unit_testing/index.html
+%%DOCSDIR%%/unit_testing/romantest.html
+%%DOCSDIR%%/unit_testing/stage_1.html
+%%DOCSDIR%%/unit_testing/stage_2.html
+%%DOCSDIR%%/unit_testing/stage_3.html
+%%DOCSDIR%%/unit_testing/stage_4.html
+%%DOCSDIR%%/unit_testing/stage_5.html
+%%DOCSDIR%%/unit_testing/testing_for_failure.html
+%%DOCSDIR%%/unit_testing/testing_for_sanity.html
+%%DOCSDIR%%/xml_processing/attributes.html
+%%DOCSDIR%%/xml_processing/index.html
+%%DOCSDIR%%/xml_processing/packages.html
+%%DOCSDIR%%/xml_processing/parsing_xml.html
+%%DOCSDIR%%/xml_processing/searching.html
+%%DOCSDIR%%/xml_processing/unicode.html
+%%EXAMPLESDIR%%/BaseHTMLProcessor.py
+%%EXAMPLESDIR%%/LICENSE.txt
+%%EXAMPLESDIR%%/apihelper.py
+%%EXAMPLESDIR%%/apihelpertest.py
+%%EXAMPLESDIR%%/argecho.py
+%%EXAMPLESDIR%%/autosize.py
+%%EXAMPLESDIR%%/builddialectexamples.py
+%%EXAMPLESDIR%%/colorize.py
+%%EXAMPLESDIR%%/dialect.py
+%%EXAMPLESDIR%%/fibonacci.py
+%%EXAMPLESDIR%%/fileinfo.py
+%%EXAMPLESDIR%%/fileinfo_fromdict.py
+%%EXAMPLESDIR%%/fullpath.py
+%%EXAMPLESDIR%%/kgp/binary.xml
+%%EXAMPLESDIR%%/kgp/husserl.xml
+%%EXAMPLESDIR%%/kgp/kant.xml
+%%EXAMPLESDIR%%/kgp/kgp.dtd
+%%EXAMPLESDIR%%/kgp/kgp.py
+%%EXAMPLESDIR%%/kgp/kgp_optik.py
+%%EXAMPLESDIR%%/kgp/russiansample.xml
+%%EXAMPLESDIR%%/kgp/stderr.py
+%%EXAMPLESDIR%%/kgp/stdout.py
+%%EXAMPLESDIR%%/kgp/template.xml
+%%EXAMPLESDIR%%/kgp/test.xml
+%%EXAMPLESDIR%%/kgp/thanks.xml
+%%EXAMPLESDIR%%/kgp/toolbox.py
+%%EXAMPLESDIR%%/kgptest.py
+%%EXAMPLESDIR%%/makerealworddoc.py
+%%EXAMPLESDIR%%/odbchelper.py
+%%EXAMPLESDIR%%/odbchelpertest.py
+%%EXAMPLESDIR%%/parsephone.py
+%%EXAMPLESDIR%%/piglatin.py
+%%EXAMPLESDIR%%/plural-rules.en
+%%EXAMPLESDIR%%/plural.py
+%%EXAMPLESDIR%%/plural/stage1/plural1.py
+%%EXAMPLESDIR%%/plural/stage1/pluraltest1.py
+%%EXAMPLESDIR%%/plural/stage2/plural2.py
+%%EXAMPLESDIR%%/plural/stage2/pluraltest2.py
+%%EXAMPLESDIR%%/plural/stage3/plural3.py
+%%EXAMPLESDIR%%/plural/stage3/pluraltest3.py
+%%EXAMPLESDIR%%/plural/stage4/plural4.py
+%%EXAMPLESDIR%%/plural/stage4/pluraltest4.py
+%%EXAMPLESDIR%%/plural/stage5/plural5.py
+%%EXAMPLESDIR%%/plural/stage5/pluraltest5.py
+%%EXAMPLESDIR%%/plural/stage5/rules.en
+%%EXAMPLESDIR%%/plural/stage6/plural6.py
+%%EXAMPLESDIR%%/plural/stage6/pluraltest6.py
+%%EXAMPLESDIR%%/plural/stage6/rules.en
+%%EXAMPLESDIR%%/pluraltest.py
+%%EXAMPLESDIR%%/pyfontify.py
+%%EXAMPLESDIR%%/regression.py
+%%EXAMPLESDIR%%/roman.py
+%%EXAMPLESDIR%%/roman/stage1/roman1.py
+%%EXAMPLESDIR%%/roman/stage1/romantest1.py
+%%EXAMPLESDIR%%/roman/stage2/roman2.py
+%%EXAMPLESDIR%%/roman/stage2/romantest2.py
+%%EXAMPLESDIR%%/roman/stage3/roman3.py
+%%EXAMPLESDIR%%/roman/stage3/romantest3.py
+%%EXAMPLESDIR%%/roman/stage4/roman4.py
+%%EXAMPLESDIR%%/roman/stage4/romantest4.py
+%%EXAMPLESDIR%%/roman/stage5/roman5.py
+%%EXAMPLESDIR%%/roman/stage5/romantest5.py
+%%EXAMPLESDIR%%/roman/stage6/roman61.py
+%%EXAMPLESDIR%%/roman/stage6/roman62.py
+%%EXAMPLESDIR%%/roman/stage6/romantest61.py
+%%EXAMPLESDIR%%/roman/stage6/romantest62.py
+%%EXAMPLESDIR%%/roman/stage7/roman71.py
+%%EXAMPLESDIR%%/roman/stage7/roman72.py
+%%EXAMPLESDIR%%/roman/stage7/romantest71.py
+%%EXAMPLESDIR%%/roman/stage7/romantest72.py
+%%EXAMPLESDIR%%/roman/stage8/roman81.py
+%%EXAMPLESDIR%%/roman/stage8/roman82.py
+%%EXAMPLESDIR%%/roman/stage8/roman83.py
+%%EXAMPLESDIR%%/roman/stage8/romantest81.py
+%%EXAMPLESDIR%%/roman/stage8/romantest82.py
+%%EXAMPLESDIR%%/roman/stage8/romantest83.py
+%%EXAMPLESDIR%%/roman/stage9/roman9.py
+%%EXAMPLESDIR%%/roman/stage9/romantest9.py
+%%EXAMPLESDIR%%/romantest.py
+%%EXAMPLESDIR%%/uncurly.py
+%%EXAMPLESDIR%%/unicode2koi8r.py
+%%EXAMPLESDIR%%/urllister.py
+@dirrm %%DOCSDIR%%/xml_processing
+@dirrm %%DOCSDIR%%/unit_testing
+@dirrm %%DOCSDIR%%/toc
+@dirrm %%DOCSDIR%%/scripts_and_streams
+@dirrm %%DOCSDIR%%/regular_expressions
+@dirrm %%DOCSDIR%%/regression_testing
+@dirrm %%DOCSDIR%%/refactoring
+@dirrm %%DOCSDIR%%/power_of_introspection
+@dirrm %%DOCSDIR%%/object_oriented_framework
+@dirrm %%DOCSDIR%%/native_data_types
+@dirrm %%DOCSDIR%%/installing_python
+@dirrm %%DOCSDIR%%/images/callouts
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/html_processing
+@dirrm %%DOCSDIR%%/getting_to_know_python
+@dirrm %%DOCSDIR%%/file_handling
+@dirrm %%DOCSDIR%%/dynamic_functions
+@dirrm %%DOCSDIR%%/download
+@dirrm %%DOCSDIR%%/appendix
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/roman/stage9
+@dirrm %%EXAMPLESDIR%%/roman/stage8
+@dirrm %%EXAMPLESDIR%%/roman/stage7
+@dirrm %%EXAMPLESDIR%%/roman/stage6
+@dirrm %%EXAMPLESDIR%%/roman/stage5
+@dirrm %%EXAMPLESDIR%%/roman/stage4
+@dirrm %%EXAMPLESDIR%%/roman/stage3
+@dirrm %%EXAMPLESDIR%%/roman/stage2
+@dirrm %%EXAMPLESDIR%%/roman/stage1
+@dirrm %%EXAMPLESDIR%%/roman
+@dirrm %%EXAMPLESDIR%%/plural/stage6
+@dirrm %%EXAMPLESDIR%%/plural/stage5
+@dirrm %%EXAMPLESDIR%%/plural/stage4
+@dirrm %%EXAMPLESDIR%%/plural/stage3
+@dirrm %%EXAMPLESDIR%%/plural/stage2
+@dirrm %%EXAMPLESDIR%%/plural/stage1
+@dirrm %%EXAMPLESDIR%%/plural
+@dirrm %%EXAMPLESDIR%%/kgp
+@dirrm %%EXAMPLESDIR%%
