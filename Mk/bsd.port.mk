@@ -656,14 +656,17 @@ PREFIX?=		${LOCALBASE}
 .else
 OPENSSLBASE=	/usr
 OPENSSLDIR=		/etc/ssl
-# OpenSSL in the base system doesn't include IDEA for patent reasons.
-OPENSSL_IDEA=	no
+# OpenSSL in the base system may not include IDEA for patent licensing reasons.
+OPENSSL_IDEA?=	${MAKE_IDEA}
+OPENSSL_IDEA?=	NO
+.if ${OPENSSL_IDEA} == "NO"
 # XXX This is a hack to work around the fact that /etc/make.conf clobbers
 #     our CFLAGS. It might not be enough for all future ports.
 .if defined(HAS_CONFIGURE)
 CFLAGS+=		-DNO_IDEA
 .else
 OPENSSL_CFLAGS+=-DNO_IDEA
+.endif
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .endif
 .endif
@@ -671,13 +674,6 @@ MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 LIB_DEPENDS+=	crypto.1:${PORTSDIR}/security/openssl
 OPENSSLBASE?=	${LOCALBASE}
 OPENSSLDIR?=	${OPENSSLBASE}/openssl
-.endif
-.if ${USE_OPENSSL} == RSA && defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
-# We set this so ports can decide whether or not to link against librsaref
-# and libRSAglue
-OPENSSL_RSAREF=	yes
-MAKE_ENV+=		EXTRA_SSL_LIBS="-L${OPENSSLBASE}/lib -L${LOCALBASE}/lib -lRSAglue -lrsaref"
 .endif
 OPENSSLLIB=		${OPENSSLBASE}/lib
 OPENSSLINC=		${OPENSSLBASE}/include
@@ -693,6 +689,10 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 
 .if defined(USE_PYTHON) || defined(PYTHON_VERSION)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
+
+.if defined(USE_RUBY) || defined(USE_LIBRUBY)
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
 # defaults to 3.3.6; will be changed to 4.0 when it is ready
@@ -747,7 +747,7 @@ USE_NEWGCC=	yes
 .endif
 
 .if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.3:${PORTSDIR}/x11-toolkits/qt21
+LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 USE_NEWGCC=	yes
 .endif
 
@@ -786,15 +786,15 @@ MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
 .if defined(USE_LINUX)
-RUN_DEPENDS=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
 
 .if defined(REQUIRES_MOTIF)
 USE_XPM=			yes
-.if defined(PARALLEL_PACKAGE_BUILD)
 .if defined(MOTIF_OPEN)
 LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
 .else
+.if defined(PARALLEL_PACKAGE_BUILD)
 BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
@@ -996,7 +996,7 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
-MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p
+MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
@@ -1221,7 +1221,7 @@ maintainer:
 .else
 VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	cad chinese comms converters databases deskutils devel \
-	editors elisp emulators ftp games german gnome graphics \
+	editors elisp emulators french ftp games german gnome graphics \
 	hebrew ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python ruby russian \
@@ -1229,7 +1229,7 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
 	tk42 tk80 tk82 tk83 tkstep80 \
 	vietnamese windowmaker www \
-	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm
+	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm zope
 check-categories:
 .for cat in ${CATEGORIES}
 	@if ${ECHO} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
