@@ -16,15 +16,11 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	perky@fallin.lv
 
-BUILD_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
-RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
-
-JAVA?=		${LOCALBASE}/bin/javavm
+USE_JAVA=	1.1+
 NO_BUILD=	yes
 
 INST_PACKAGES?=	demo lib source
 INST_TARGET?=	${DISTNAME:S/-//g}
-
 JYTHON_PREFIX=	${PREFIX}/${INST_TARGET}
 PLIST_SUB+=	JYTHON_DIR=${INST_TARGET}
 
