@@ -90,7 +90,8 @@ signal signalmodule.c		# signal(2)
 
 # The SGI specific GL module:
 
-#gl glmodule.c -lgl -lX11	# Graphics Library -- SGI only
+GLHACK=-Dclear=__GLclear
+#gl glmodule.c cgensupport.c -I$(srcdir) $(GLHACK) -lgl -lX11
 
 # The thread module is now automatically enabled, see Setup.thread.
 
@@ -191,6 +192,11 @@ rgbimg rgbimgmodule.c   # Read SGI RGB image files (but coded portably)
 # md5c.c and md5.h are included here.
 
 md5 md5module.c md5c.c
+
+
+# The sha module implements the SHA checksum algorithm.
+# (NIST's Secure Hash Algorithm.)
+sha shamodule.c
 
 
 # The mpz module interfaces to the GNU Multiple Precision library.
