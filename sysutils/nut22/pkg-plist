@@ -6,8 +6,10 @@ bin/upslog
 etc/nut/hosts.conf.sample
 etc/nut/multimon.conf.sample
 etc/nut/upsd.conf.sample
+etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
-etc/nut/upsset.passwd.sample
+etc/nut/upssched.conf.sample
+etc/nut/upsset.conf.sample
 etc/rc.d/nut.sh.sample
 libexec/nut/apcsmart
 libexec/nut/belkin
@@ -20,10 +22,12 @@ libexec/nut/genericups
 libexec/nut/ipt-anzen
 libexec/nut/mge-ellipse
 libexec/nut/mgeups
+libexec/nut/multilink
 libexec/nut/mustekups
 libexec/nut/newapc
 libexec/nut/optiups
 libexec/nut/powercom
+libexec/nut/sec
 libexec/nut/toshiba1500
 libexec/nut/ups-trust425+625
 libexec/nut/upseyeux
@@ -33,11 +37,12 @@ sbin/upsmon
 sbin/upssched
 %%PORTDOCS%%share/doc/nut/Changes.trust
 %%PORTDOCS%%share/doc/nut/FAQ
-%%PORTDOCS%%share/doc/nut/QUICKSTART
+%%PORTDOCS%%share/doc/nut/INSTALL
 %%PORTDOCS%%share/doc/nut/README
 %%PORTDOCS%%share/doc/nut/access.txt
 %%PORTDOCS%%share/doc/nut/belkin.txt
 %%PORTDOCS%%share/doc/nut/big-servers.txt
+%%PORTDOCS%%share/doc/nut/chroot.txt
 %%PORTDOCS%%share/doc/nut/commands.txt
 %%PORTDOCS%%share/doc/nut/configure.txt
 %%PORTDOCS%%share/doc/nut/data-room.txt
@@ -46,6 +51,7 @@ sbin/upssched
 %%PORTDOCS%%share/doc/nut/generic-ups.txt
 %%PORTDOCS%%share/doc/nut/mge-ellipse.txt
 %%PORTDOCS%%share/doc/nut/model-arguments.txt
+%%PORTDOCS%%share/doc/nut/multilink.txt
 %%PORTDOCS%%share/doc/nut/new-modules.txt
 %%PORTDOCS%%share/doc/nut/pager.txt
 %%PORTDOCS%%share/doc/nut/powercom.txt
@@ -56,6 +62,7 @@ sbin/upssched
 %%PORTDOCS%%share/doc/nut/ups-trust425+625.txt
 %%PORTDOCS%%share/doc/nut/upssched.txt
 %%PORTDOCS%%share/doc/nut/cables/powerware.txt
+%%PORTDOCS%%share/doc/nut/cables/repotec.txt
 %%PORTDOCS%%share/doc/nut/cables/victron.txt
 %%CGIFILES%%share/nut/cgi/multimon.cgi
 %%CGIFILES%%share/nut/cgi/upsimage.cgi
