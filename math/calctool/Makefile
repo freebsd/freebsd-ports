@@ -5,12 +5,12 @@
 #
 # $FreeBSD$
 #
- 
+
 DISTNAME=       calctool-2.4pl13
 PKGNAME=        calctool-2.4.13
 CATEGORIES=     math
 MASTER_SITES=   ftp://ftp.kfu.com/pub/
- 
+
 MAINTAINER=     nsayer@quack.kfu.com
 
 USE_X_PREFIX=		yes
