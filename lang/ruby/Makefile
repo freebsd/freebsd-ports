@@ -67,10 +67,14 @@ RUBYLIB=	""
 PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 		RUBYLIB=${RUBYLIB}
 
-IRB_WITHOUT_SUFFIX=	${LOCALBASE}/bin/irb
-IRB_WITH_SUFFIX=	${IRB_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
+INSTALLED_SCRIPTS=	${PREFIX}/bin/irb
 
-OBSOLETED_MODULES=	sha1 shell syslog timex urb uri
+OBSOLETED_MODULES=	sha1 \
+			shell \
+			syslog \
+			timex \
+			urb \
+			uri
 
 post-extract:
 .if defined(WITH_ONIGURUMA)
@@ -93,8 +97,10 @@ post-patch:
 pre-install:
 	${RM} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} \
 		${PREFIX}/man/man1/ruby${RUBY_R}.1 \
-		${PREFIX}/man/man1/ruby${RUBY_R}.1.gz \
-		${IRB_WITHOUT_SUFFIX}${RUBY_R}
+		${PREFIX}/man/man1/ruby${RUBY_R}.1.gz
+	for f in ${INSTALLED_SCRIPTS}; do \
+		${RM} -f $${f}${RUBY_R}; \
+	done
 
 post-install:
 .if ${STRIP} == -s
@@ -104,20 +110,27 @@ post-install:
 	${MV} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
 	${MV} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 .endif
-	${MV} -f ${IRB_WITHOUT_SUFFIX} ${IRB_WITH_SUFFIX}
+	for f in ${INSTALLED_SCRIPTS}; do \
+		${MV} -f $${f} $${f}${_RUBY_SUFFIX}; \
+	done
 	if [ -x ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ]; then \
 		${LN} -fs ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}; \
 		${LN} -fs ruby${RUBY_DEFAULT_SUFFIX}${RUBY_R}.1${MANEXT} ${PREFIX}/man/man1/ruby${RUBY_R}.1${MANEXT}; \
 	fi
 	if [ -x ${RUBY_WITHOUT_SUFFIX} ]; then \
-		${LN} -fs ${IRB_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX} ${IRB_WITHOUT_SUFFIX}; \
+		for f in ${INSTALLED_SCRIPTS}; do \
+			${LN} -fs $${f}${RUBY_DEFAULT_SUFFIX} $${f}; \
+		done; \
 	fi
 .if !empty(RUBY_R)
 	if [ -x ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ]; then \
-		${LN} -fs ${IRB_WITH_SUFFIX} ${IRB_WITHOUT_SUFFIX}${RUBY_R}; \
+		for f in ${INSTALLED_SCRIPTS}; do \
+			${LN} -fs $${f}${_RUBY_SUFFIX} $${f}${RUBY_R}; \
+		done; \
 	fi
 .endif
-	${LDCONFIG} -m ${LOCALBASE}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
+.for f in ${INSTALLED_SCRIPTS}
 	${RUBY_WITH_SUFFIX} ${RUBY_FLAGS} -i -p \
 		-e 'if $$. == 1; ' \
 		-e ' if /^#!/; ' \
@@ -126,8 +139,9 @@ post-install:
 		-e '  $$_ = "#!${RUBY_WITH_SUFFIX}\n" + $$_;' \
 		-e ' end;' \
 		-e 'end' \
-		${IRB_WITH_SUFFIX}
-	${CHMOD} ${BINMODE} ${IRB_WITH_SUFFIX}
+		${f}${_RUBY_SUFFIX}
+	${CHMOD} ${BINMODE} ${f}${_RUBY_SUFFIX}
+.endfor
 	${MKDIR} ${RUBY_ELISPDIR}
 	${TOUCH} ${RUBY_ELISPDIR}/.keep_me
 	${MKDIR} ${RUBY_EXAMPLESDIR}
