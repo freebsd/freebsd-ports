@@ -353,8 +353,6 @@ share/primer3/primer3_www_results_help.html
 @dirrm share/primer3
 %%PORTDOCS%%@dirrm share/doc/primer3/
 %%PORTDOCS%%@dirrm share/examples/primer3/primer1_list_last
-%%PORTDOCS%%@dirrm share/examples/primer3/primer1_list_tmp
 %%PORTDOCS%%@dirrm share/examples/primer3/primer_global_err
 %%PORTDOCS%%@dirrm share/examples/primer3/primer_list_last
-%%PORTDOCS%%@dirrm share/examples/primer3/primer_list_tmp
 %%PORTDOCS%%@dirrm share/examples/primer3/

@@ -40,6 +40,7 @@ do-install:
 .for file in ${DOCUMENTS}
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${file} ${DOCSDIR}
 .endfor
+	@${RMDIR} ${WRKDIR}/${DISTNAME}/test/primer*_list_tmp
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKDIR}/${DISTNAME}/test && ${FIND} * | \
 		${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
