@@ -5,7 +5,7 @@
     if (CmndOneLine(NULL, ln, ln2) == 0)
     {
 -      *major = GetIntVers(ln2, &j);
-+      j=0; if(isalpha(ln2[0])){for(i=0;!isspace(ln2[i]);i++)j++;} /* skip gccXXX ; XXX is number */
++      j=0;if(isalpha(ln2[0])){for(i=0;!isspace(ln2[i]);i++)j++;} /*skip gccXXX ; XXX is number*/
 +      for (i=j; !isdigit(ln2[i]); i++) j++;
 +      *major = GetIntVers(ln2+j, &i); j += i;
        if (*major != -1)
@@ -45,6 +45,15 @@
        }
     }
     return(*comp ? comp : NULL);
+@@ -2587,7 +2587,7 @@
+       break;
+    case IntP4:
+       lf1 = l1 = 64;
+-      lf2 = l2 = 512;
++      lf2 = l2 = 4096;
+       s1 = 0;
+       s2 = 0;
+       break;
 @@ -2799,7 +2803,7 @@
        else if (strstr(ln, "ia64")) la = LAIA64;
        else if ( strstr(ln, "i686") || strstr(ln, "i586") ||

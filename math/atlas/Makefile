@@ -92,6 +92,7 @@ do-build:
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=NON_THREADED_PIC)
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED)
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED_PIC)
+post-build:
 # make atlas enhanced lapack (static ver)
 	(cd ${WRKSRC}; ${MKDIR} tmp1 ; \
 		${CP} ${WRKDIR}/lapack/work/LAPACK/SRC/liblapack.a tmp1 ;\
@@ -138,7 +139,11 @@ do-build:
 .endfor
 
 # make atlas shared (thread safe) library
-.for i in ${ATLAS_LIBS1} ${ATLAS_LIBS2}
+.for i in ${ATLAS_LIBS1}
+	( cd ${WRKSRC}/lib/THREADED_PIC/ ; \
+		ld -Bshareable -o ${i}_r.so.1 -x -soname ${i}_r.so.1 --whole-archive ${i}.a )
+.endfor
+.for i in ${ATLAS_LIBS2}
 	( cd ${WRKSRC}/lib/THREADED_PIC/ ; \
 		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 --whole-archive ${i}.a )
 .endfor
@@ -151,7 +156,7 @@ do-install:
 .endfor
 .for i in ${ATLAS_LIBS1}
 	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED/${i}.a       ${PREFIX}/lib/${i}_r.a
-	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}.so.1    ${PREFIX}/lib/${i}_r.so.1
+	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}_r.so.1    ${PREFIX}/lib/${i}_r.so.1
 	@${LN} -sf ${i}_r.so.1 ${PREFIX}/lib/${i}_r.so
 .endfor
 .for i in ${ATLAS_LIBS2}
