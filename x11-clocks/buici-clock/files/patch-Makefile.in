@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Feb 12 19:05:59 2003
++++ Makefile.in	Mon Nov 22 11:42:51 2004
+@@ -138,7 +138,7 @@
+ 
+ xolib:
+ 	@if test ! "${XO_PATH}" = "../xo" ; \
+-	 then (cd ${XO_PATH} ; ./configure ; make all) ; fi
++	 then (cd ${XO_PATH} ; ./configure ; gmake all) ; fi
+ 
+ $(O_D)$(TARGET): $(OBJ) $(XO_PATH)/libxo.a
+ 	$(CC) -o $@ $(addprefix $(O_D),$(OBJ)) $(LFLAGS) 
+@@ -178,7 +178,7 @@
+ 		.version_patch`  > .version
+ 
+ _version.h: .version
+-	@/bin/echo -e \#define SZ_VERSION \"`cat .version`\"  > _version.h
++	@/bin/echo \#define SZ_VERSION \"`cat .version`\"  > _version.h
+  
+ .PHONY: transmit
+ transmit: # distribution-archive
