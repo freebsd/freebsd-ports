@@ -90,6 +90,7 @@
     SUBDIR += wmmount
     SUBDIR += wmpccard
     SUBDIR += xbatt
+    SUBDIR += xbattbar
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xfsm
