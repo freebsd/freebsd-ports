@@ -27,6 +27,10 @@ INCS=	defreal.h       nab.h           nabcode.h       nabtypes.h
 post-extract:
 	@${CP} ${FILESDIR}/config.h ${WRKSRC}
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/cifparse/cifparse.c
+
 pre-install:
 	@cd ${WRKSRC}/src && \
 		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
