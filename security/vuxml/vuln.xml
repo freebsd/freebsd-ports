@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5ebfe901-a3cb-11d9-b248-000854d03344">
+    <topic>hashcash -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>hashcash</name>
+	<range><lt>1.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200503-12.xml">
+	  <p>Tavis Ormandy of the Gentoo Linux Security Audit Team
+	    identified a flaw in the Hashcash utility that an attacker
+	    could expose by specifying a malformed reply address.</p>
+	  <p>Successful exploitation would permit an attacker to disrupt
+	    Hashcash users, and potentially execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200503-12.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-03-06</discovery>
+      <entry>2005-04-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="70b62f5e-9e2e-11d9-a256-0001020eed82">
     <topic>clamav -- zip handling DoS vulnerability</topic>
     <affects>
