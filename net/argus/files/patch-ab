@@ -1,0 +1,17 @@
+--- include/argus_filter.h~	Fri May 31 14:11:34 2002
++++ include/argus_filter.h	Wed Dec 25 22:13:46 2002
+@@ -216,7 +216,13 @@
+ extern void *ArgusCalloc (int, int);
+ extern void ArgusFree (void *);
+ 
+-extern void error(va_list);
++/*extern void error(va_list);*/
++#if defined(__STDC__)
++void error(const char *fmt, ...);
++#else
++void error(const char *fmt, va_dcl);
++#endif
++
+ extern void warning(va_list);
+ 
+ extern char *savestr(const char *);
