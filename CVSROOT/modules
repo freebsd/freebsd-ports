@@ -1780,6 +1780,7 @@ forte		ports/java/forte
 forth		ports/lang/forth
 fortran-utils	ports/devel/fortran-utils
 fortune		src/games/fortune
+fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
 fox		ports/x11-toolkits/fox
