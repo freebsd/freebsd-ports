@@ -5,33 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	gdchart
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.nullcube.com/software/pygdchart/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-py-${PORTVERSION}
+DISTNAME=	pygdchart-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdchart.a:${PORTSDIR}/graphics/gdchart
 
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	GD_INCLUDE=${LOCALBASE}/include/gd \
-		GDCHART_INCLUDE=${LOCALBASE}/include \
-		PYTHON_INCLUDE=${PYTHON_INCLUDEDIR} \
-		LOCALBASE=${LOCALBASE}
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g} \
-		EXAMPLE_DIR=${EXAMPLE_DIR:S/^${LOCALBASE}\///g}
-MODULE_FILES=	chart.py gdchart.so
-EXAMPLE_FILES=	test.html test.py CHANGES
-EXAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+USE_PYDISTUTILS=yes
+EXAMPLE_FILES=	test.html test.py
+EXAMPLE_DIR=	${PREFIX}/share/examples/py-gdchart
 
-do-install:
-.for file in ${MODULE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
-.endfor
+post-extract:
+	${SED} -e 's,%%PORTVERSION%%,${PORTVERSION},g' \
+		-e 's,%%GD_INCLUDE%%,${LOCALBASE}/include/gd,g' \
+		-e 's,%%GDCHART_INCLUDE%%,${LOCALBASE}/include,g' \
+		-e 's,%%LOCALLIB%%,${LOCALBASE}/lib,g' \
+		${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+
+post-install:
 .if !defined(NO_PORTDOCS)
 	${MKDIR} ${EXAMPLE_DIR}
 .for file in ${EXAMPLE_FILES}
