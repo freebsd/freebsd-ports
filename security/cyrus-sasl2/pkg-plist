@@ -40,6 +40,7 @@ lib/sasl2/libplain.so.2
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.so
 lib/sasl2/libsasldb.so.2
+man/cat8/saslauthd.8.gz
 sbin/saslauthd
 sbin/sasldblistusers2
 sbin/saslpasswd2

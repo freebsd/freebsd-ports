@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.12
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -37,7 +37,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 		sasl_server_step.3 sasl_server_userdb_checkpass_t.3 \
 		sasl_server_userdb_setpass_t.3 sasl_setpass.3 sasl_setprop.3 \
 		sasl_user_exists.3 sasl_verifyfile_t.3
-MAN8=		saslauthd.8 sasldblistusers2.8 saslpasswd2.8
+MAN8=		sasldblistusers2.8 saslpasswd2.8
 
 GNU_CONFIGURE=	YES
 
@@ -160,8 +160,7 @@ post-install:
 		${MAN8PREFIX}/man/man8/saslpasswd2.8
 	${INSTALL_MAN} ${WRKSRC}/utils/sasldblistusers2.8 \
 		${MAN8PREFIX}/man/man8/sasldblistusers2.8
-	${INSTALL_MAN} ${WRKSRC}/saslauthd/saslauthd.mdoc \
-		${MAN8PREFIX}/man/man8/saslauthd.8
+	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
