@@ -1,0 +1,40 @@
+*** Wingz/bin/Wingz.sh~	Fri Sep 29 12:16:44 1995
+--- Wingz/bin/Wingz.sh	Mon Oct 23 14:54:04 1995
+***************
+*** 5,11 ****
+  # Copyright 1988, 1989, 1990
+  #
+  
+! INSTDIR=xxxx
+  
+  if [ ! -n "$WINGZ"  ]
+  then
+--- 5,11 ----
+  # Copyright 1988, 1989, 1990
+  #
+  
+! INSTDIR=@WINGZ_DIR@
+  
+  if [ ! -n "$WINGZ"  ]
+  then
+
+
+
+*** Makefile~	Mon Oct 23 15:01:00 1995
+--- Makefile	Mon Oct 23 15:00:44 1995
+***************
+*** 0 ****
+--- 1,13 ----
++ # Makefile to patch/install Wingz
++ 
++ all:
++ 	sed 's:@WINGZ_DIR@:${PREFIX}/lib/X11/:' Wingz/bin/Wingz.sh >Wingz.sh
++ 	chmod +x Wingz.sh
++ 
++ install:
++ 	pax -w Wingz |(cd ${PREFIX}/lib/X11; pax -r)
++ 	cp Wingz.sh ${PREFIX}/bin/Wingz
++ 	cp Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
++ 	install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
++ 
++ 

@@ -1,0 +1,22 @@
+From the README:
+  About Wingz
+  -----------
+
+  Wingz is an easy-to-use, graphical spreadsheet for business and technical
+  professionals, that allows users to create sophisticated presentations
+  and reports, as well as user interfaces and end-user applications.
+
+  The product is available today on UNIX(R) operating systems under
+  OSF/Motif(TM) and OPEN LOOK(R) graphical interfaces, in addition to
+  Microsoft Windows(TM), Apple(R) Macintosh(R), OS/2(R) Presentation
+  Manager(TM), and NeXTstep(R).
+
+  Wingz was originally developed by Informix(R) but effective from
+  January 30th, 1995 Informix granted exclusive distribution rights to IISC.
+
+This port uses the linux-compat system, but hopefully that'll be
+invisible to the end user.
+
+eric.
+--
+erich@FreeBSD.org
