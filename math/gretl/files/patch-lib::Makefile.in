@@ -45,8 +45,8 @@
  
  $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:14:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:14:0 $(LDFLAGS)
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:15:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:15:0 $(LDFLAGS)
  
  .deps:
  	mkdir $@
