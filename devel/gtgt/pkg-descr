@@ -1,0 +1,11 @@
+The (general | GNU) template generation tools are a set of scripts
+for creating a whole set of sources, which may already be compiled
+and installed by using the GNU development tools. Think of gtgt as
+a program which is able to create an already compilable, very
+sophisticated "hello world" program, written in C or C++ and
+constituted by a main program, two internal modules (classes), one
+static and one shared library. Using gitty-gitty you will get a
+template of sources for the main cases you might meet, and which
+you can also use as examples for automake, autoconf and so on.
+
+WWW: http://gtgt.sourceforge.net/
