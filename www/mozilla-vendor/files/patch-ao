@@ -1,0 +1,10 @@
+--- nsprpub/pr/src/misc/prnetdb.c.orig	Wed Mar  8 08:27:18 2000
++++ nsprpub/pr/src/misc/prnetdb.c	Thu Jan 18 17:52:51 2001
+@@ -924,6 +924,7 @@
+     PRStatus rv = PR_SUCCESS;
+     if (!_pr_initialized) _PR_ImplicitInitialization();
+ 
++	bzero(&(addr->inet),sizeof(addr->inet));
+ 	addr->inet.family = AF_INET;
+ 	addr->inet.port = htons(port);
+ 	switch (val)

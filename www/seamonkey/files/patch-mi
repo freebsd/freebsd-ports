@@ -29,7 +29,7 @@
 -DEFINES			+= -D_THREAD_SAFE
 -THREAD_FLAG		+= -pthread
 +DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
-+DSO_LDOPTS		+= -pthread -lgcc_r
++DSO_LDOPTS		+= -pthread
  else
  IMPL_STRATEGY		= _EMU
  DEFINES			+= -D_PR_LOCAL_THREADS_ONLY

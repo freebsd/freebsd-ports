@@ -2846,6 +2846,7 @@ lib/mozilla/components/libnsprefm.so
 lib/mozilla/components/liboji.so
 lib/mozilla/components/libpref.so
 lib/mozilla/components/libprofile.so
+lib/mozilla/components/libpsmglue.so
 lib/mozilla/components/librdf.so
 lib/mozilla/components/librdfdomds.so
 lib/mozilla/components/libregviewer.so
@@ -2919,6 +2920,7 @@ lib/mozilla/components/prefmigr.xpt
 lib/mozilla/components/profile.xpt
 lib/mozilla/components/proxyObjInst.xpt
 lib/mozilla/components/proxytest.xpt
+lib/mozilla/components/psmglue.xpt
 lib/mozilla/components/rdf.xpt
 lib/mozilla/components/rdfdomds.xpt
 lib/mozilla/components/regviewer.xpt
@@ -2988,6 +2990,7 @@ lib/mozilla/htmlrobot
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
 lib/mozilla/libDebugRobot.so
+lib/mozilla/libcmt.so
 lib/mozilla/libgkgfx.so
 lib/mozilla/libgtkembedmoz.so
 lib/mozilla/libgtksuperwin.so
@@ -2997,9 +3000,11 @@ lib/mozilla/libjsj.so
 lib/mozilla/libmozjs.so
 lib/mozilla/libmsgbaseutil.so
 lib/mozilla/libnspr4.so
+lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
+lib/mozilla/libprotocol.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
 lib/mozilla/lots
@@ -3015,6 +3020,23 @@ lib/mozilla/nsinstall
 lib/mozilla/plugins/libnullplugin.so
 lib/mozilla/pop3Test
 lib/mozilla/proxytests
+lib/mozilla/psm
+lib/mozilla/psmdata/doc/04digsgn.gif
+lib/mozilla/psmdata/doc/06pcrypt.gif
+lib/mozilla/psmdata/doc/bannerrn.gif
+lib/mozilla/psmdata/doc/cartbanner.gif
+lib/mozilla/psmdata/doc/cmcjavascriptapi.html
+lib/mozilla/psmdata/doc/contents.htm
+lib/mozilla/psmdata/doc/glossary.htm
+lib/mozilla/psmdata/doc/help.htm
+lib/mozilla/psmdata/doc/next.gif
+lib/mozilla/psmdata/doc/prev.gif
+lib/mozilla/psmdata/doc/psmtest.html
+lib/mozilla/psmdata/doc/release_notes.html
+lib/mozilla/psmdata/ui/psm_bin.properties
+lib/mozilla/psmdata/ui/psm_doc.properties
+lib/mozilla/psmdata/ui/psm_text.properties
+lib/mozilla/psmdata/ui/psm_ui.properties
 lib/mozilla/rdfcat
 lib/mozilla/rdfpoll
 lib/mozilla/regExport
@@ -3194,6 +3216,7 @@ lib/mozilla/searchplugins/mozilla.src
 lib/mozilla/sendlatertest
 lib/mozilla/sendpage
 lib/mozilla/splash.xpm
+lib/mozilla/start-psm
 lib/mozilla/testimap
 lib/mozilla/testmailnews
 lib/mozilla/timebombgen
@@ -3217,6 +3240,9 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/entityTables
 @dirrm lib/mozilla/res/builtin
 @dirrm lib/mozilla/res
+@dirrm lib/mozilla/psmdata/ui
+@dirrm lib/mozilla/psmdata/doc
+@dirrm lib/mozilla/psmdata
 @dirrm lib/mozilla/plugins
 @dirrm lib/mozilla/icons
 @dirrm lib/mozilla/dtd
