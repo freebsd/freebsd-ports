@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-CFLAGS+=	-fpermissive
 MAN1=		motor.1
 
 .include <bsd.port.pre.mk>
