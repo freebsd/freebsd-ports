@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-Hostname-Long
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sys
@@ -19,4 +19,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Sys::Hostname::Long.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -i -pe 's/}\(/}->(/' ${WRKSRC}/lib/Sys/Hostname/Long.pm
+.endif
+
+.include <bsd.port.post.mk>
