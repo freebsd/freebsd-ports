@@ -3,7 +3,7 @@
 # Date created:         02 Dez 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.2 1998/12/24 13:03:50 flathill Exp $
+# $Id: Makefile,v 1.3 1999/01/18 02:35:08 steve Exp $
 #
 
 DISTNAME=	fidogate-4.2.9
@@ -16,6 +16,10 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 # you may commet out this line if you have another transfer-agent
 RUN_DEPENDS=	${PREFIX}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
+
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	indefinite hang
+.endif
 
 USE_GMAKE=	yes
 
