@@ -1,0 +1,24 @@
+apps/MIME-Editor/.DirIcon
+apps/MIME-Editor/AppInfo.xml
+apps/MIME-Editor/AppRun
+apps/MIME-Editor/Help/COPYING
+apps/MIME-Editor/Help/Changes
+apps/MIME-Editor/Help/README
+apps/MIME-Editor/editor.py
+apps/MIME-Editor/editor.pyc
+apps/MIME-Editor/editor.pyo
+apps/MIME-Editor/fields.py
+apps/MIME-Editor/fields.pyc
+apps/MIME-Editor/fields.pyo
+apps/MIME-Editor/findrox.py
+apps/MIME-Editor/findrox.pyc
+apps/MIME-Editor/findrox.pyo
+apps/MIME-Editor/override.py
+apps/MIME-Editor/override.pyc
+apps/MIME-Editor/override.pyo
+apps/MIME-Editor/type.py
+apps/MIME-Editor/type.pyc
+apps/MIME-Editor/type.pyo
+@dirrm apps/MIME-Editor/Help
+@dirrm apps/MIME-Editor
+@unexec rmdir %D/apps 2>/dev/null || true
