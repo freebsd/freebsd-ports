@@ -1,0 +1,82 @@
+--- PATCHES Dec 2002 17:44:54 -0000	3.6
++++ PATCHES Feb 2004 13:19:42 -0000
+@@ -0,0 +1 @@
++patch-1.5.6.dw.maildir-mtime.1
+--- browser.c Sep 2003 13:03:25 -0000	3.9
++++ browser.c Feb 2004 13:19:42 -0000
+@@ -29,2 +29,3 @@
+ #endif
++#include "mx.h"
+ 
+@@ -304,4 +305,6 @@ folder_format_str (char *dest, size_t de
+ static void add_folder (MUTTMENU *m, struct browser_state *state,
+-			const char *name, const struct stat *s, int new)
++			const char *name, const struct stat *s, BUFFY *mbuf)
+ {
++  int new = (mbuf) ? mbuf->new : 0;
++
+   if (state->entrylen == state->entrymax)
+@@ -317,2 +320,5 @@ static void add_folder (MUTTMENU *m, str
+ 
++  if (mbuf && mbuf->magic == M_MAILDIR && mbuf->mtime)
++    s->st_mtime = mbuf->mtime;
++
+   if (s != NULL)
+@@ -411,3 +417,3 @@ static int examine_directory (MUTTMENU *
+       tmp = tmp->next;
+-    add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
++    add_folder (menu, state, de->d_name, &s, tmp);
+   }
+@@ -435,3 +441,3 @@ static int examine_mailboxes (MUTTMENU *
+     {
+-      add_folder (menu, state, tmp->path, NULL, tmp->new);
++      add_folder (menu, state, tmp->path, NULL, tmp);
+       continue;
+@@ -442,3 +448,3 @@ static int examine_mailboxes (MUTTMENU *
+     {
+-      add_folder (menu, state, tmp->path, NULL, tmp->new);
++      add_folder (menu, state, tmp->path, NULL, tmp);
+       continue;
+@@ -456,3 +462,3 @@ static int examine_mailboxes (MUTTMENU *
+ 
+-    add_folder (menu, state, buffer, &s, tmp->new);
++    add_folder (menu, state, buffer, &s, tmp);
+   }
+--- buffy.c Feb 2004 17:50:43 -0000	3.9
++++ buffy.c Feb 2004 13:19:42 -0000
+@@ -229,2 +229,3 @@ int mutt_parse_mailboxes (BUFFER *path, 
+     (*tmp)->newly_created = 0;
++    (*tmp)->mtime = 0;
+ 
+@@ -260,2 +261,3 @@ int mutt_buffy_check (int force)
+   struct stat sb;
++  struct stat smd;
+   struct dirent *de;
+@@ -299,2 +301,3 @@ int mutt_buffy_check (int force)
+     tmp->new = 0;
++    tmp->mtime = 0;
+ 
+@@ -383,6 +386,13 @@ int mutt_buffy_check (int force)
+ 	  {
+-	    /* one new and undeleted message is enough */
+-	    BuffyCount++;
+-	    tmp->new = 1;
+-	    break;
++	    if (!tmp->new)
++	    {
++	      /* one new and undeleted message is enough */
++	      BuffyCount++;
++	      tmp->new = 1;
++	    }
++	    snprintf (path, sizeof (path), "%s/new/%s", tmp->path, de->d_name);
++	    if (!stat (path, &smd) && smd.st_mtime > tmp->mtime)
++	    {
++	      tmp->mtime = smd.st_mtime;
++	    }
+ 	  }
+--- buffy.h Dec 2002 11:19:39 -0000	3.2
++++ buffy.h Feb 2004 13:19:42 -0000
+@@ -29,2 +29,3 @@ typedef struct buffy_t
+   struct buffy_t *next;
++  time_t mtime;			/* for maildirs...time of newest entry */
+   short new;			/* mailbox has new mail */
