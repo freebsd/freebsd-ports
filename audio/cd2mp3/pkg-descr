@@ -1,0 +1,14 @@
+This port makes mp3 creation easy, by ripping tracks from
+CD to WAV files and Encoding them to mp3 automatically.
+
+It is basically a front-end (but VERY easy to use) to
+dagrab and bladeenc, which must be installed in your
+path.
+
+These programs and further documentation are available
+from the website.
+
+WWW: http://ukug.uk.freebsd.org/~kandy/
+
+- Jamie Heckford
+jamie@jamiesdomain.co.uk
