@@ -1,2 +1,3 @@
 bin/spamprobe
+bin/spamprobe-export_0.6
 man/man1/spamprobe.1.gz

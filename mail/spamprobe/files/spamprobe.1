@@ -19,7 +19,10 @@
 .Op Fl m
 .Op Fl n Ar number
 .Op Fl r Ar number
+.Op Fl s Ar number
 .Op Fl v
+.Op Fl V
+.Op Fl Y
 .Op Fl 7
 .Op Fl 8
 .Ar command Op ...
@@ -37,6 +40,12 @@
 .Ar spam Op filename ...
 .Nm
 .Ar remove Op filename ...
+.Nm
+.Ar dump
+.Nm
+.Ar export
+.Nm
+.Ar import Op filename ...
 .Sh DESCRIPTION
 Welcome to
 .Nm SpamProbe ! 
@@ -84,7 +93,9 @@ multiple emails arrive simultaneously.
 .It
 Scores only the Received, Subject, To, From, and Cc headers.  All other
 headers are ignored to make it hard for spammers to hide non-spammy words
-in X- headers to fool the filter.
+in X- headers to fool the filter.  The
+.Fl H
+command line option can be used to override this. 
 .El
 .Ss OPTIONS
 .Bl -tag -width ".Fl d Ar directory"
@@ -152,11 +163,29 @@ repeats reduces the number of words overall (since a single word occupies
 more than one slot) but allows words which occur frequently in the message
 to have a higher weight. Generally this is changed only for optimization
 purposes.
+.It Fl s Ar number
+.Nm
+maintains an in memory cache of the words it has seen in previous messages
+to reduce disk i/o and improve performance.  By default the cache is
+flushed and cleared every 250 messages.  This number can be changed using
+the
+.Fl s
+option.  A value of zero causes
+.NM
+to use 100,000 as the limit which effectively means that the cache will
+only be flushed at program exit (unless you have really enormous mailbox
+files).  The cache doesn't affect receive, dump, or export but has a
+significant impact on the others.
 .It Fl v
 Write debugging information to stderr.  This can be useful for debugging
 or for seeing which terms
 .Nm
 used to score each email.
+.It Fl V
+Prints version and copyright information and then exits.
+.It Fl Y
+Assume traditional Berkeley mailbox format, ignoring any Content-Length:
+fields.
 .It Fl 7
 Ignore any characters with the most significant bit set to 1 instead of
 mapping them to the letter 'z'.
@@ -175,9 +204,11 @@ scored the message is classified as either spam or non-spam and its word
 counts are written to the appropriate database.  The message's score is
 written to stdout along with a single word.  For example:
 .Pp
-     SPAM 0.99
-  or
-     GOOD 0.02
+.Dl "SPAM 0.99"
+.Pp
+or
+.Pp
+.Dl "GOOD 0.02"
 .It Ar score Op filename ...
 Similar to receive except that the databases are not modified in any way
 and only the score is printed to stdout.
@@ -201,6 +232,28 @@ ignored.
 Scans each file (or stdin if no file is specified) and removes its term
 counts from the database.  Messages which are not in the database
 (recognized using their message ids) are ignored.
+.It Ar dump
+Prints the contents of the word counts database one word per line in human
+readable format with good count, spam count, and word in columns separated
+by whitespace.  Note that when using GDBM for the database the words are
+printed in the order they are hashed so the results will need to be sorted
+to be most useful.  The standard unix sort command can do this.  For
+example to list all words from "most good" to "least good" use this
+command:
+.Pp
+.Dl "spamprobe dump | sort -k 1 -n -r"
+.Pp
+To list all words from "most spammy" to "least spammy" use this command:
+.Pp
+.Dl "spamprobe dump | sort -k 2 -n -r"
+.It Ar export
+Similar to the dump command but prints the counts and words in a comma
+separated format with the words surrounded by double quotes. This can be
+more useful for importing into some databases.
+.It Ar import Op filename ...
+Reads the specified files which must contain export data written by the
+export command.  The terms and counts from this file are added to the
+database.  This can be used to convert a database from a prior version.
 .El
 .Sh ENVIRONMENT
 The
@@ -244,9 +297,12 @@ Exit status is 0 on success, and 1 if
 .Nm
 encounters an invalid command.
 .Sh COMPATIBILITY
-The
+Version of 
 .Nm
-command has no known compatibility issues.
+previous to 0.7 use a different database format.  To convert your existing
+database to the new format use the following command.
+.Pp
+.Dl "spamprobe-export_0.6 | spamprobe import"
 .Sh SEE ALSO
 .Xr formail 1 ,
 .Xr procmail 1 ,
