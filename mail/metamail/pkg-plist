@@ -29,6 +29,7 @@ lib/metamail/fonts/heb6x13.pcf
 lib/metamail/fonts/heb8x13.pcf
 lib/metamail/fonts/heb8x13B.pcf
 lib/metamail/fonts/fonts.dir
+lib/metamail/fonts/fonts.alias
 etc/mailcap
 man/man1/audiocompose.1.gz
 man/man1/audiosend.1.gz
