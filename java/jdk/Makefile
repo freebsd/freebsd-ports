@@ -3,7 +3,7 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FreeBSD.org>
 #
-# $Id: Makefile,v 1.20 1999/06/08 16:15:19 nate Exp $
+# $Id: Makefile,v 1.21 1999/06/08 21:57:38 steve Exp $
 #
 
 DISTNAME=	jdk-${JDK_VERSION}
@@ -24,14 +24,21 @@ NO_BUILD=       yes
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-DISTFILES=	jdk${JDK_VERSION}_AOUT.V99-6-3.tar.gz
+NETPATCH=	AOUT.netpatch.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_AOUT.V99-6-3.tar.gz ${NETPATCH}
+EXTRACT_ONLY=	jdk${JDK_VERSION}_AOUT.V99-6-3.tar.gz
 .else
-DISTFILES=	jdk${JDK_VERSION}_ELF.V99-6-3.tar.gz
+NETPATCH=	ELF.netpatch.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_ELF.V99-6-3.tar.gz ${NETPATCH}
+EXTRACT_ONLY=	jdk${JDK_VERSION}_ELF.V99-6-3.tar.gz
 .endif
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	(cd ${WRKSRC} && tar -c -f - .) \
 		| (cd ${PREFIX}/jdk${JDK_VERSION} && tar fx -)
+
+post-install:
+	tar xzf ${DISTDIR}/${NETPATCH} -C ${PREFIX}
 
 .include <bsd.port.post.mk>
