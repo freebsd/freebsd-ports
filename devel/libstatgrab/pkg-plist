@@ -7,4 +7,3 @@ lib/libstatgrab.a
 lib/libstatgrab.so
 lib/libstatgrab.so.4
 libdata/pkgconfig/libstatgrab.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
