@@ -6,4 +6,4 @@ share/doc/python/mac.ps
 share/doc/python/ref.ps
 share/doc/python/tut.ps
 share/doc/python/README
-@unexec rmdir share/doc/python 2>/dev/null || true
+@unexec rmdir %D/share/doc/python 2>/dev/null || true
