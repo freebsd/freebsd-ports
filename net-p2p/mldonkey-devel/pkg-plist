@@ -1,12 +1,17 @@
-bin/kill_mldonkey
-bin/mldonkey
-bin/mldonkey-real
+%%CORE%%bin/kill_mldonkey
+%%CORE%%bin/mlnet
+%%CORE%%bin/mlnet-real
+%%GUICORE%%bin/mlguistarter
+%%GUICORE%%bin/mldonkey_previewer
+%%GUICORE%%bin/mlnet+gui
+%%GUI%%bin/mlchat
+%%GUI%%bin/mlgui
+%%GUI%%bin/mlim
 %%PORTDOCS%%share/doc/mldonkey/AUTHORS
 %%PORTDOCS%%share/doc/mldonkey/BUGS
 %%PORTDOCS%%share/doc/mldonkey/ChangeLog
-%%PORTDOCS%%share/doc/mldonkey/Developers.txt
 %%PORTDOCS%%share/doc/mldonkey/FAQ.html
-%%PORTDOCS%%share/doc/mldonkey/Readme.txt
+%%PORTDOCS%%share/doc/mldonkey/INSTALL
 %%PORTDOCS%%share/doc/mldonkey/TODO
 %%PORTDOCS%%share/doc/mldonkey/ed2k_links.txt
 %%PORTDOCS%%@dirrm share/doc/mldonkey
