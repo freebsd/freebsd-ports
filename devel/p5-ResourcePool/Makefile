@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ResourcePool
-PORTVERSION=	1.0103
+PORTVERSION=	1.0104
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
