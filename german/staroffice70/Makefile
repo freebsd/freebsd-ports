@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	staroffice
-PORTVERSION=	6.0
-PORTREVISION=	2
+PORTVERSION=	7.0
 CATEGORIES=	editors linux
-MASTER_SITES=	ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
+MASTER_SITES=	ftp://ftp.sun.co.uk/pub/patches/:patch \
+		ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
 		ftp://ftp.math.ohio-state.edu/private/sun/.../:patch \
 		ftp://ftp.uga.edu/pub/unix/sun/patches/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
-DISTNAME=	so-6_0-ga-bin-linux-en.bin
+DISTNAME=	so-7-ga-bin-linux-de.bin
 .if !defined(USE_CDROM)
-DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-04.tar:patch
+DISTFILES=      so-7-ga-bin-linux-de.bin 116518-02.tar:patch
+.else
+DISTFILES=	116518-02.tar:patch
 .endif
 .if defined(WITH_ADABAS)
-DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
+DISTFILES+=     soa-7-ga-bin-linux-de.bin
 .endif
 
-EXTRACT_ONLY=	112887-04.tar
+EXTRACT_ONLY=	116518-02.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
@@ -38,7 +40,8 @@ TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/112887-04
-ADABAS_DIST=	soa-6_0-ga-bin-linux-en.bin
+ADABAS_DIST=	soa-7-ga-bin-linux-de.bin
+PATCH_DIST=	so-7-pp1-bin-linux.bin
 
 .include <bsd.port.pre.mk>
 
@@ -107,16 +110,23 @@ pre-fetch:
 	@${ECHO} WITH_ADABAS=YES.
 	@${ECHO}
 .endif
-.if defined(USE_CDROM)
-DLTEST=112887-04.tar
-.else
-.if exists(/cdrom/linux/office60/setup)
+.if defined(WITH_ADABAS)
 	@${ECHO}
-	@${ECHO} It seems that you have a Sun StarOffice 6.0 CDROM
+	@${ECHO} This option is currently broken. The enduser installer fails with this
+	@${ECHO} option and tries to copy missing files.
+	@${ECHO}
+	@${FALSE}
+.endif
+.if defined(USE_CDROM)
+DLTEST=116518-02.tar
+.else
+.if exists(/cdrom/linux/office7/setup)
+	@${ECHO}
+	@${ECHO} It seems that you have a Sun StarOffice 7.0 CDROM
 	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
 	@${ECHO} this CD-ROM, please run 
 	@${ECHO}
-	@${ECHO}        make -USE_CDROM
+	@${ECHO}        make USE_CDROM=YES
 	@${ECHO}
 	@${ECHO} Otherwise please unmount the CD-ROM.
 	@${ECHO}
@@ -138,7 +148,8 @@ post-extract:
 .else
 	@${MKDIR} ${WRKSRC}
 .if defined(USE_CDROM)
-	@ln -sf /cdrom/linux/office60/* ${WRKSRC}
+	@ln -sf /cdrom/linux/office7/* ${WRKSRC}
+	@${MKDIR} ${TMPDIR}
 .else
 	@${MKDIR} ${TMPDIR}
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
@@ -158,6 +169,12 @@ post-configure:
 	    's|DefaultDestPath = "staroffice%PRODUCTVERSION";|DefaultDestPath = "${PREFIX}/staroffice%PRODUCTVERSION";|' \
 	    ${WRKSRC}/setup.ins
 
+pre-install:
+	@${CP} ${FILESDIR}/setup.resp ${WRKSRC}
+	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
+                        -e 's#%%SOVERSION%%#${SOVERSION}#g' \
+                        ${WRKSRC}/setup.resp
+
 do-install:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
@@ -166,28 +183,24 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-.if exists(${LINUXBASE}/${PREFIX})
+.if exists(${LINUXBASE}/${PREFIX}/${SOVERSION})
 	@${LN} -fs ${LINUXBASE}/${PREFIX}/${SOVERSION} ${PREFIX}/${SOVERSION}
-.endif
-.if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
-.if exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0)
-	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 \
-		${WRKDIR}/tmp/libXrender.so
-.endif
+.else
+	@${MKDIR} -p ${PREFIX}/${SOVERSION}
 .endif
 	@${ECHO} ;
 	@${ECHO_MSG} "===>   STEP 1: Main Setup ${PKGNAME}"
 	@${ECHO} ;
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net -r:${WRKSRC}/setup.resp'
 	@if [ -f ${PREFIX}/${SOVERSION}/program/setup ]; then \
 		${ECHO} ; \
-		${ECHO} Ignore the error message. StarOffice6.0 has been installed ; \
+		${ECHO} Ignore the error message. StarOffice7.0 has been installed ; \
 		${ECHO} successfully on your system. ; \
 		${ECHO} ; \
 	else \
 		${ECHO} ; \
-		${ECHO} An error occured during StarOffice6.0 install. Please send a mail with debug-output and ; \
+		${ECHO} An error occured during StarOffice7.0 install. Please send a mail with debug-output and ; \
 		${ECHO} some information about your FreeBSD-environment to mb@imp.ch. Thanks. ; \
 		${ECHO} ; \
 		${FALSE} ; \
@@ -205,7 +218,7 @@ do-install:
 .endif
 .if defined(WITH_ADABAS)
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/${ADABAS_DIST}'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/${ADABAS_DIST} -r:${WRKSRC}/setup.resp'
 .endif
 	@${ECHO} ;
 	@${ECHO_MSG} "===>   STEP 3: Applying sunsolve patches for ${PKGNAME}"
@@ -216,24 +229,30 @@ do-install:
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/wrapper \
-	   > ${WRKDIR}/staroffice6
-	 @${INSTALL_SCRIPT} ${WRKDIR}/staroffice6 ${PREFIX}/bin/staroffice6
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sagenda
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-scalc
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sdraw
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-setup
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sfax
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-simpress
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-spadmin
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sweb
-	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-swriter
-	@${ECHO} StarOffice6.0 has been installed successfully.  In order to use
-	@${ECHO} it, execute ${PREFIX}/bin/staroffice6.
+	   > ${WRKDIR}/staroffice7
+	 @${INSTALL_SCRIPT} ${WRKDIR}/staroffice7 ${PREFIX}/bin/staroffice7
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-sagenda
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-scalc
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-sdraw
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-setup
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-sfax
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-simpress
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-spadmin
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-sweb
+	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-swriter
+	@${ECHO} StarOffice7.0 has been installed successfully.  In order to use
+	@${ECHO} it, execute ${PREFIX}/bin/staroffice7.
 	@${ECHO} 
 
 install-patch:
+	@${CP} ${FILESDIR}/patchsetup.resp ${WRKSRC}
+	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
+                        -e 's#%%SOVERSION%%#${SOVERSION}#g' \
+                        ${WRKSRC}/patchsetup.resp
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-04/so-6_0-pp2-bin-linux.bin -patch:${PREFIX}/staroffice6.0'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c 'umask 022 && \
+		${WRKSRC}/../116518-02/${PATCH_DIST} -patch:${PREFIX}/${SOVERSION}\
+		-r:${WRKSRC}/patchsetup.resp'
 
 install-update:
 	@make extract
