@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnomebreakout
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.senet.com.au/~alcaron/ \
-		http://linux.tucows.com/files/gnome/entertain/
+MASTER_SITES=	http://www.senet.com.au/~alcaron/
 DISTNAME=	gnome-breakout-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
