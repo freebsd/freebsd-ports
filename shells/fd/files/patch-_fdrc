@@ -1,5 +1,5 @@
 --- _fdrc.orig	Wed Jul 10 00:00:00 2002
-+++ _fdrc	Mon Sep 16 05:39:03 2002
++++ _fdrc	Thu Sep 19 03:26:06 2002
 @@ -13,2 +13,3 @@
  #SORTTYPE=0
 +FD_SORTTYPE=101
@@ -47,7 +47,7 @@
 +  launch "$ext"		"$tar Ztvf %C"		"$tar_format"
 +done
 +
-+for ext in .tar.gz /.tgz .taz; do
++for ext in .tar.gz .tar.z /.tgz .taz; do
 +  launch "$ext"		"$tar ztvf %C"		"$tar_format"
 +done
 +
@@ -58,7 +58,7 @@
 +launch "/.lzh"		"lha -lq"		"%a %u/%g %s %x %m %d %{yt} %f"
 +
 +for ext in /.zip /.jar; do
-+  launch "$ext"	"unzip -lqq"		"%s %m-%d-%y %t %f"
++  launch "$ext"	"unzip -lqq"		" %s %m-%d-%y %t %f"
 +done
 +
 +for ext in .Z /.gz; do
@@ -86,7 +86,7 @@
 +  arch	"$ext"	"$tar Zcf %C %T"		"$tar Zxf %C %TA"
 +done
 +
-+for ext in .tar.gz /.tgz .taz; do
++for ext in .tar.gz .tar.z /.tgz .taz; do
 +  arch	"$ext"	"$tar cf - %T | gzip -9c > %C"	"$tar zxf %C %TA"
 +done
 +
