@@ -82,10 +82,6 @@ CONFIGURE_ARGS+=	--enable-keymap=lynx
 
 .include <bsd.port.pre.mk>
 
-.if defined(JAPANESE)
-BROKEN=		"Does not compile"
-.endif
-
 .if exists(${PORT_DBDIR}/boehm-gc/options)
 .include "${PORT_DBDIR}/boehm-gc/options"
 .endif
@@ -102,6 +98,8 @@ CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} -lpthread -lc"
 .endif
+.else
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
 .endif
 
 pre-everything::
