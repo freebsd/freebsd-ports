@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/lordzephyroth/
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gtkhtml.3:${PORTSDIR}/www/gtkhtml \
+		gtkhtml.4:${PORTSDIR}/www/gtkhtml \
 		glibwww.1:${PORTSDIR}/www/glibwww2 \
 		gconf-1.0:${PORTSDIR}/devel/gconf
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
