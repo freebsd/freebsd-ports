@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Apr  2 22:50:58 2001
-+++ Makefile.in	Mon Apr  2 22:52:53 2001
+--- Makefile.in.orig	Wed Jul 25 17:56:05 2001
++++ Makefile.in	Sat Aug  4 17:03:58 2001
 @@ -236,20 +236,16 @@
  $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
  #>- 	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps ./Makefile
@@ -21,3 +21,12 @@
  
  config.h: stamp-h
  	@if test ! -f $@; then \
+@@ -441,7 +437,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-data-local
++install-data-am:
+ install-data: install-data-recursive
+ 
+ install-am: all-am

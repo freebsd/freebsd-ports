@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koncd
-PORTVERSION=	0.7.1
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.koncd.de/download/ \
 		ftp://apps.kde.com/pub/Multimedia/Audio/Burners_Rippers/KOnCD/
@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.koncd.de/download/ \
 MAINTAINER=	demon@FreeBSD.org
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs
+		mkisofs:${PORTSDIR}/sysutils/mkisofs \
+		mpg123:${PORTSDIR}/audio/mpg123
 
 USE_KDELIBS_VER=2
 USE_GMAKE=	yes
