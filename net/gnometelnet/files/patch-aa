@@ -1,0 +1,13 @@
+--- share/GTelnet.desktop.orig	Fri Jul 28 23:21:24 2000
++++ share/GTelnet.desktop	Wed Aug  2 19:01:55 2000
+@@ -4,8 +4,8 @@
+ Comment=Beautiful GNOME Telnet Client
+ Name[en_US.ISO8859-1]=GTelnet
+ Comment[en_US.ISO8859-1]=Beautiful GNOME Telnet Client
+-Exec=/usr/bin/Gnome_Telnet 
+-Icon=/usr/share/gtelnet/gnome-telnet.png
++Exec=Gnome_Telnet 
++Icon=gtelnet/gnome-telnet.png
+ Terminal=false
+ MultipleArgs=false
+ Type=Application

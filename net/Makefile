@@ -76,6 +76,7 @@
     SUBDIR += gnomba
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
+    SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
     SUBDIR += gnubile
