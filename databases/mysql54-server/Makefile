@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-readline \
 		--without-bench \
 		--with-mit-threads=no \
-		--with-libwrap
+		--with-libwrap \
+		--with-low-memory
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
