@@ -1,10 +1,23 @@
---- Makefile.in.orig	Thu Feb 28 22:43:46 2002
-+++ Makefile.in	Sat Mar  9 10:48:45 2002
-@@ -89,7 +89,6 @@ install_wine:
- 	$(INSTALL_PROGRAM) wine $(bindir)/wine
- 
- install:: all install_wine $(INSTALLSUBDIRS:%=%/__install__)
--	-$(LDCONFIG)
- 
- uninstall:: $(INSTALLSUBDIRS:%=%/__uninstall__)
- 	cd $(bindir) && $(RM) wine
+*** Makefile.in.orig	Thu Jun  6 13:16:17 2002
+--- Makefile.in	Thu Jun  6 13:17:00 2002
+*************** wine: $(WINEWRAPPER)
+*** 72,89 ****
+  	$(RM) $@ && $(LN_S) $(WINEWRAPPER) $@
+  
+  install:: all $(SUBDIRS:%=%/__install__)
+- 	-$(LDCONFIG)
+- 	@if test -n "`LANG=C $(LDD) $(bindir)/wine|grep not.found`";	\
+- 	then								\
+- 		echo "*************************************************" ; \
+- 		echo "*************************************************" ; \
+- 		echo "The installed Wine libraries will not be found!" ; \
+- 		echo "You can either:" ; 				\
+- 		echo "   Add the line '$(libdir)' to /etc/ld.so.conf" ;	\
+- 		echo '   export LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:$(libdir)' ; \
+- 		echo "*************************************************" ; \
+- 		echo "*************************************************" ; \
+- 	fi
+  
+  uninstall:: $(SUBDIRS:%=%/__uninstall__)
+  
+--- 72,77 ----
