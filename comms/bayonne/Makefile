@@ -8,7 +8,9 @@
 PORTNAME=	bayonne
 PORTVERSION=	0.5.3
 CATEGORIES=	comms
-MASTER_SITES=	ftp://www.voxilla.org/pub/bayonne/
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://www.voxilla.org/pub/bayonne/
+MASTER_SITE_SUBDIR=	../old-gnu/bayonne
 
 MAINTAINER=	dyfet@gnu.org
 
@@ -25,8 +27,10 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 PLIST_SUB=	BAYONNE_VERSION=%{PORT_VERSION}
 
+MAN8=		bayonne.8
+
 post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|-release \$$\(LT_RELEASE\)||g'
 
 post-install:
