@@ -75,6 +75,7 @@
     SUBDIR += nvi-euc-tw
     SUBDIR += openoffice-1.0-zh_CN
     SUBDIR += openoffice-1.0-zh_TW
+    SUBDIR += openoffice-1.1-zh_CN
     SUBDIR += oto
     SUBDIR += oxford
     SUBDIR += p5-Date-Chinese
