@@ -40,4 +40,10 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 501101
+BROKEN=		incompatible with gcc33
+.endif
+
+.include <bsd.port.post.mk>
