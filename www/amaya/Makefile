@@ -1,13 +1,13 @@
 # New ports collection makefile for:	amaya
-# Version required:	1.4
+# Version required:	1.4a
 # Date created:		26 Dec 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/10 18:54:23 steve Exp $
 #
 
-DISTNAME=	amaya-src-1.4
-PKGNAME=	amaya-1.4
+DISTNAME=	amaya-src-1.4a
+PKGNAME=	amaya-1.4a
 CATEGORIES= 	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -29,36 +29,12 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-configure:
-	${SED} -e 's/CPP.*/CPP = cpp/' <${WRKSRC}/Options.orig\
-	 >${WRKSRC}/Options
+	${CP} ${WRKSRC}/Options.orig ${WRKSRC}/Options
 
 post-install:
 .for file in amaya print
-	strip ${PREFIX}/share/thot/applis/bin/${file}
+	strip ${PREFIX}/thot/applis/bin/${file}
 .endfor
-.for file in COPYRIGHT.html AmayaPage.html
-	${INSTALL_DATA} ${WRKSRC}/../amaya/${file} ${PREFIX}/share/thot/amaya/
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/thot/doc/Icons
-.for file in Back.gif Browser.gif Editor.gif Forward.gif Image.gif Link.gif\
-	 NumList.gif Plugin.gif SaveAs.gif SourceJava.gif Sources.gif\
-	 amaya.gif background.gif bug.gif check.gif cross.gif doc48x.gif\
-	 drapeau-F.gif eyec.gif find.gif floppy.gif left.gif opera.gif\
-	 put.gif question.gif right.gif target.gif ui.gif up.gif warning.gif
-	${INSTALL_DATA} ${WRKSRC}/../doc/Icons/${file}\
-	 ${PREFIX}/share/thot/doc/Icons/
-.endfor
-	${MKDIR} ${PREFIX}/share/thot/doc/amaya
-.for file in Creating.html MakeBook.html StyleSheets.html Manual.html\
-	 Tables.html Math.html Registry.html Transform.html Attributes.html\
-	 New.html Views.html Autoconf.html ImageMaps.html Numbering.html\
-	 Searching.html BinDist.html Selecting.html Browsing.html CSS.html\
-	 Plugins.html Keyboard.html Printing.html Changing.html\
-	 Publishing.html Configure.html Links.html Put.html SpellChecking.html
-	${INSTALL_DATA} ${WRKSRC}/../doc/amaya/${file}\
-	 ${PREFIX}/share/thot/doc/amaya/
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/thot/amaya/
 
 .include <bsd.port.mk>
