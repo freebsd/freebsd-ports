@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:                 pgs
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/14 08:53:05 tg Exp $
 #
 
 DISTNAME=	fftpack
@@ -11,12 +11,12 @@ PKGNAME=	fftpack-1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
 EXTRACT_SUFX=	.tar
-EXTRACT_ARGS=	-xvf
 
 MAINTAINER=	ports@FreeBSD.org
 
 # ${DISTFILES} is automatically created from the directory contents
 IGNOREFILES=	${DISTFILES}
+EXTRACT_BEFORE_ARGS=	-xvf
 
 post-extract:
 	uncompress $(WRKSRC)/*.f.Z
@@ -30,6 +30,6 @@ post-install:
 	${MKDIR} $(PREFIX)/share/doc/fftlib
 	${CP} $(WRKSRC)/doc.Z $(PREFIX)/share/doc/fftlib/
 .endif
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
