@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libstdc++
 DISTNAME=	libstdc++-2.8.1.1
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28

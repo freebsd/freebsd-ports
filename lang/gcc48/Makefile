@@ -28,7 +28,7 @@ DISTFILES=	\
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc33_${SNAPDATE}.diff
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc33

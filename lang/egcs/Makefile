@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
 DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 

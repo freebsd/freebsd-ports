@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	releases/${PKGNAME}
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}${EXTRACT_SUFX}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 
