@@ -1,2 +1,3 @@
 bin/tla
+bin/tla-gpg-check
 @comment automatically generated plist for docs

@@ -39,8 +39,11 @@ do-configure:
 test:
 	cd ${WRKSRC} ; ${GMAKE} test
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${SED} 's,^#!.*$$,#!${AWK} -f,' ${ORIGWRKSRC}/tla/=gpg-check.awk \
+		> ${WRKDIR}/tla-gpg-check
+	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}; \
 	for f in `${FIND} ${ORIGWRKSRC}/docs-tla/html -type f -name '*.html' \
 		-exec ${BASENAME} {} \;`; do \
