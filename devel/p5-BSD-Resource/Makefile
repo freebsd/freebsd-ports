@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	BSD-Resource
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	BSD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	Perl module to access BSD process resource limit and priority functions
+COMMENT=	Perl module to access BSD resource limit and priority functions
 
 PERL_CONFIGURE=	yes
 
