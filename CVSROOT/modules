@@ -2060,6 +2060,7 @@ freelibiberty	ports/devel/freelibiberty
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
 freeradius	ports/net/freeradius
+freeride	ports/devel/freeride
 freesbie	ports/sysutils/freesbie
 freesci		ports/emulators/freesci
 freescope	ports/devel/freescope
