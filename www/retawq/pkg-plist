@@ -4,21 +4,3 @@ share/locale/de/LC_MESSAGES/retawq.mo
 share/locale/es/LC_MESSAGES/retawq.mo
 share/locale/fr/LC_MESSAGES/retawq.mo
 share/locale/pt_BR/LC_MESSAGES/retawq.mo
-%%PORTDOCS%%%%DOCSDIR%%/arg.html
-%%PORTDOCS%%%%DOCSDIR%%/changes.html
-%%PORTDOCS%%%%DOCSDIR%%/coding_style.html
-%%PORTDOCS%%%%DOCSDIR%%/credits.html
-%%PORTDOCS%%%%DOCSDIR%%/ctconfig.html
-%%PORTDOCS%%%%DOCSDIR%%/feature.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/key.html
-%%PORTDOCS%%%%DOCSDIR%%/notion.html
-%%PORTDOCS%%%%DOCSDIR%%/patent.html
-%%PORTDOCS%%%%DOCSDIR%%/raq.html
-%%PORTDOCS%%%%DOCSDIR%%/report.html
-%%PORTDOCS%%%%DOCSDIR%%/rfc.html
-%%PORTDOCS%%%%DOCSDIR%%/rtconfig.html
-%%PORTDOCS%%%%DOCSDIR%%/scheme.html
-%%PORTDOCS%%%%DOCSDIR%%/session.html
-%%PORTDOCS%%%%DOCSDIR%%/tls.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
