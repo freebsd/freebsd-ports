@@ -3,12 +3,12 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.17 1999/01/08 22:53:25 mph Exp $
+# $Id: Makefile,v 1.18 1999/02/22 03:27:30 steve Exp $
 #
 
-DISTNAME=	xmcd-2.4
+DISTNAME=	xmcd-2.5
 CATEGORIES=	audio
-MASTER_SITES=	http://mercury.hypersurf.com/~amb/download/xmcd/src/
+MASTER_SITES=	http://metalab.unc.edu/tkan/download/xmcd/src/
 
 MAINTAINER=	eischen@vigrid.com
 
@@ -30,5 +30,6 @@ post-patch:
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
+	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
 
 .include <bsd.port.mk>
