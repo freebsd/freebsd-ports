@@ -6,7 +6,7 @@
 #
 
 group|meisters|peter,jdp,markm,joe
-group|updating_committers|imp,bmah,nectar
+group|updating_committers|imp,murray,bmah,nectar
 
 unavail
 avail||CVSROOT
