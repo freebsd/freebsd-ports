@@ -1,0 +1,36 @@
+--- Makefile.orig	Wed Mar 10 00:43:27 1999
++++ Makefile	Tue Feb 13 23:25:09 2001
+@@ -2,19 +2,19 @@
+ #
+ 
+ # For IRIX
+-CFLAGS = -xansi -fullwarn -O3 -g0
++#CFLAGS = -xansi -fullwarn -O3 -g0
+ 
+ # For Solaris
+-CFLAGS = -fast -xO4 -s -v -Xa
++#CFLAGS = -fast -xO4 -s -v -Xa
+ 
+ # For HPUX
+-CFLAGS = -Wall -O -Ae
++#CFLAGS = -Wall -O -Ae
+ 
+ # For OSF1
+-CFLAGS = -w -verbose -fast -std1 -g0
++#CFLAGS = -w -verbose -fast -std1 -g0
+ 
+ # For GNU C compiler
+-CFLAGS = -Wall -O6 -s -pedantic
++CFLAGS = %%CFLAGS%%
+ 
+ SHELL = /bin/sh
+ 
+@@ -38,6 +38,6 @@
+ 	rm -f shc *.x
+ 
+ install:
+-	install -c -s shc /usr/local/bin/
+-	install -c -m 644 shc.1 /usr/local/man/man1/
++	install -c -s shc %%PREFIX%%/bin/
++	install -c -m 644 shc.1 %%PREFIX%%/man/man1/
+ 
