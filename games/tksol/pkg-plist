@@ -59,3 +59,4 @@ share/games/tksol/downbitmaps/bk_lines
 @dirrm share/games/tksol/cardbitmaps
 @dirrm share/games/tksol/downbitmaps
 @dirrm share/games/tksol
+@dirrm share/games
