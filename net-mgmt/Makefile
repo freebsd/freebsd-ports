@@ -89,6 +89,7 @@
     SUBDIR += netustad
     SUBDIR += netwag
     SUBDIR += netwox
+    SUBDIR += nfdump
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrg
