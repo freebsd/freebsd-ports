@@ -460,7 +460,6 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
-	ftp://ftp.sra.co.jp/pub/cmd/postgres/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
 	ftp://ftp.us.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.au.postgresql.org/pub/postgresql/%SUBDIR%/ \
