@@ -13,15 +13,14 @@ MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-j/source
 DISTFILES=	Xerces-J-src.${PORTVERSION}${EXTRACT_SUFX} Xerces-J-tools.${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	XML parser for Java
 
 CONFLICTS=	xml4j-4.*
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
+USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
 
@@ -30,33 +29,29 @@ OPTIONS=	DEPRECATED_JARS "build/install the deprecated JARs" on \
 
 .include <bsd.port.pre.mk>
 
-ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGETS=	jars
+ALL_TARGET=	jars
 .if !defined(NOPORTDOCS)
-ANT_TARGETS+=	javadocs #docs
+ALL_TARGET+=	javadocs #docs
 PORTDOCS=	api dom3-api other xerces2 xni xs
 .endif
 
 JARFILES+=	xercesImpl.jar xml-apis.jar
 .if !defined(WITHOUT_DEPRECATED_JARS)
-ANT_TARGETS+=	deprecatedjars
+ALL_TARGET+=	deprecatedjars
 JARFILES+=	xerces.jar xmlParserAPIs.jar resolver.jar
 .endif
 .if !defined(WITHOUT_SAMPLES)
 JARFILES+=	xercesSamples.jar
 .endif
 
-PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,${PREFIX}/,,}/,}
+PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 TOOLS_JARFILES=	resolver.jar stylebook-1.0-b2.jar bin/xjavac.jar
+CLASSPATH!=	echo ${TOOLS_JARFILES:S,^,tools/,} | ${TR} " " ":"
+MAKE_ENV=	CLASSPATH=${CLASSPATH}
 
 post-extract:
 	@cd ${WRKSRC} && ${MV} ../tools .
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} CLASSPATH=`echo ${TOOLS_JARFILES:S,^,tools/,} | \
-		${TR} " " ":"` ${ANT} ${ANT_TARGETS}
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
