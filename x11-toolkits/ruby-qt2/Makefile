@@ -16,8 +16,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
-
+USE_QT2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
