@@ -1,5 +1,14 @@
 --- ./conserver/group.c	Sat Nov 22 20:11:49 1997
 +++ ./conserver/group.c	Sat Aug 23 17:19:13 1997
+@@ -406,7 +406,7 @@
+ 				continue;
+ 			}
+ 			/* read terminal line */
+-			if ((nr = read(pCEServing->fdtty, acIn, sizeof(acIn))) < 0) {
++			if ((nr = read(pCEServing->fdtty, acIn, sizeof(acIn))) <= 0) {
+ 				/* carrier lost */
+ 				fprintf(stderr, "%s: lost carrier on %s (%s)!\n", progname, pCEServing->server, pCEServing->dfile);
+ #if DO_VIRTUAL
 @@ -750,5 +750,5 @@
  				CSTROUT(pCLServing->fd, "- ");
  				if (-1 == tcsendbreak(pCEServing->fdtty, 9)) {
