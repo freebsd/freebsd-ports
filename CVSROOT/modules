@@ -9288,6 +9288,7 @@ spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
 spamd		ports/mail/spamd
 spamguard	ports/mail/spamguard
+spamilter	ports/mail/spamilter
 spamoracle	ports/mail/spamoracle
 spampd		ports/mail/spampd
 spamprobe	ports/mail/spamprobe
