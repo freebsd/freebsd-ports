@@ -1,0 +1,18 @@
+--- src/file.c.~1~	Sat Mar  6 01:38:53 1999
++++ src/file.c	Fri Apr 30 17:23:33 1999
+@@ -24,7 +24,6 @@
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <utime.h>
+ #include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+@@ -32,6 +31,7 @@
+ #include <sys/file.h>
+ #include <sys/types.h>
+ #include <sys/file.h>
++#include <utime.h>
+ #include "main.h"
+ #if defined(APP_GNP) && defined(USE_GTKXMHTML)
+ #include <glib.h>
