@@ -38,6 +38,12 @@ ${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/XFree8
 USE_PERL5_RUN=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-build:
 .if !defined(WITHOUT_SERVER)
 	@${ECHO_MSG} "NOTE:"
@@ -96,4 +102,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/vncpasswd/vncpasswd.man ${PREFIX}/man/man1/vncpasswd.1
 	${INSTALL_MAN} ${WRKSRC}/vncconnect/vncconnect.man ${PREFIX}/man/man1/vncconnect.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

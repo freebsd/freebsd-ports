@@ -27,6 +27,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .if defined(WITH_NOWAD)
 WITHOUT_WAD=	yes
 .endif

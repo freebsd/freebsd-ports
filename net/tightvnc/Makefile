@@ -32,6 +32,10 @@ MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .if ${XFREE86_VERSION} >= 4
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 .endif
