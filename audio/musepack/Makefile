@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	musepack
-PORTVERSION=	1.15r
+PORTVERSION=	1.15u
 CATEGORIES=	audio
-MASTER_SITES=	http://www.saunalahti.fi/cse/seed/downloads/ \
-		http://corecodec.org/download.php/196/
+MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 DISTNAME=	mpcsv7-src-${PORTVERSION}
 
 MAINTAINER=	shoesoft@gmx.net
@@ -20,6 +19,7 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 PLIST_FILES=	bin/mppdec bin/mppenc bin/replaygain
 BINS=		mppdec mppenc replaygain
 ALL_TARGET=	${BINS}
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/sv7
@@ -34,6 +34,7 @@ post-patch:
 .if ${ARCH} != i386
 	${REINPLACE_CMD} -e "s|#define USE_ASM|//#define USE_ASM|" ${WRKSRC}/mpp.h
 .endif
+	${REINPLACE_CMD} -e "s|#define USE_IRIX_AUDIO|//#define USE_IRIX_AUDIO|" ${WRKSRC}/mpp.h
 	${REINPLACE_CMD} -e "s|<machine/soundcard.h>|<sys/soundcard.h>|" ${WRKSRC}/mppdec.h
 
 do-install:

@@ -1,43 +1,36 @@
---- Makefile.orig	Wed Mar 17 23:17:54 2004
-+++ Makefile	Fri Apr 16 16:07:57 2004
-@@ -136,27 +136,21 @@
- OPTIM_SPEED = \
- 	-O3 -s                  \
- 	-finline-functions      \
--	-mno-ieee-fp            \
--	-ffast-math             \
- 	-fomit-frame-pointer    \
- 	-frerun-loop-opt        \
- 	-fstrength-reduce       \
- 	-fexpensive-optimizations \
- 	-funroll-all-loops -fmove-all-movables -fstrength-reduce \
--	-mpreferred-stack-boundary=2 -malign-jumps=5 -malign-loops=0 -malign-functions=5
+--- Makefile.orig	Fri Jan 28 16:56:12 2005
++++ Makefile	Sun Mar  6 12:56:51 2005
+@@ -98,7 +98,7 @@
  
- # -fcse-follow-jumps \
+ ifndef MINGW
+ LDADD    = -lm
+-#LDADD   += -lesd
++LDADD   += -L$(LOCALBASE)/lib -lesd
+ else
+ LDADD    = -lwinmm -lws2_32
+ endif
+@@ -161,7 +161,7 @@
  
+ FLAGS = \
+ 	-fomit-frame-pointer -funroll-loops \
+-	-mno-ieee-fp -ffast-math -pipe
++	-pipe
  
- OPTIM_SIZE = \
- 	-Os -s                  \
--	-mno-ieee-fp            \
--	-ffast-math             \
- 	-fomit-frame-pointer    \
- 	-frerun-loop-opt        \
- 	-fstrength-reduce       \
- 	-fmove-all-movables -fstrength-reduce -fcse-follow-jumps \
--	-mpreferred-stack-boundary=2 -malign-jumps=5 -malign-loops=0 -malign-functions=5
- 
- # Options to generate Assembly code for inspecting
- 
-@@ -189,7 +183,7 @@
+ ifneq ($(CC_MAJ),4)
+ FLAGS += -fmove-all-movables
+@@ -211,9 +211,9 @@
  
  # Merge all options together for CFLAGS and CFLAG_SIZE
  
--CFLAGS        = $(ARCH) $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMAKE_$(BITS)BIT -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
-+CFLAGS        += $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMAKE_$(BITS)BIT -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
- CFLAGS       += -I$(XINCLDIR) -L$(XLIBDIR)
+-CFLAGS        += $(ARCH) $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
++CFLAGS        += $(FEATURE) $(WARN) $(PROFILE) $(DEBUG) -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPPENC_VERSION=\"$(MPPENC_VERSION)\"
+ ifndef MINGW
+-CFLAGS       += -I$(XINCLDIR) -L$(XLIBDIR)
++CFLAGS       += -I$(LOCALBASE)/include
+ endif
  #CFLAGS      += $(ASSEM)
  CFLAGS_SIZE   = $(CFLAGS) $(OPTIM_SIZE)
-@@ -226,14 +220,20 @@
+@@ -254,12 +254,15 @@
  
  # Lists of object and C files
  
@@ -52,7 +45,12 @@
  
 -MPPENC_OBJ = analy_filter.o ans.o bitstream.o cvd.o fft4g.o fft4gasm.o fft_routines.o mppenc.o profile.o psy.o psy_tab.o quant.o huffsv7e.o encode_sv7.o wave_in.o tags.o toolse.o fastmath.o pipeopen.o stderr.o regress.o keyboard.o
 +MPPENC_OBJ = analy_filter.o ans.o bitstream.o cvd.o fft4g.o fft_routines.o mppenc.o profile.o psy.o psy_tab.o quant.o huffsv7e.o encode_sv7.o wave_in.o tags.o toolse.o fastmath.o pipeopen.o stderr.o regress.o keyboard.o
- MPPENC_SRC = analy_filter.c ans.c bitstream.c cvd.c fft4g.c            fft_routines.c mppenc.c profile.c psy.c psy_tab.c quant.c huffsv7.c  encode_sv7.c wave_in.c tags.c tools.c  fastmath.c pipeopen.c stderr.c regress.c keyboard.c
+ ifdef MINGW
+ MPPENC_OBJ += winmsg.o
+ endif
+@@ -268,6 +271,9 @@
+ MPPENC_SRC += winmsg.c
+ endif
  MPPENC_ASO =                                                fft4gasm.o
 +ifeq ($(ARCH),i386)
 +MPPENC_OBJ+= fft4gasm.o
@@ -60,7 +58,7 @@
  
  
  REPLAY_OBJ = replaygain.o gain_analysis.o pipeopen.o stderr.o _setargv.o
-@@ -353,8 +353,10 @@
+@@ -393,8 +399,10 @@
  #
  # Compile mppdec source code files
  
