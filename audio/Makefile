@@ -110,6 +110,7 @@
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += p5-MP3-Info
+    SUBDIR += p5-Xmms
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi

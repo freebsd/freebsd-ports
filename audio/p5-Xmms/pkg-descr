@@ -1,0 +1,11 @@
+This package provides the following modules:
+
+Xmms::Remote - Perl interface to the xmms_remote API
+
+Xmms::Config - Perl interface to the xmms_cfg API
+
+Xmms - Exports the remote control shell routine
+
+Xmms::Plugin - Embeds a Perl interpreter inside xmms and provides
+               Input/Output/Effect/General plugin interfaces for
+               Perl (not yet released, may never be)

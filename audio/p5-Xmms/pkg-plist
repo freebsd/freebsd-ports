@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/Xmms.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms/ExtUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms/Remote.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms/SongChange.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms-Perl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Config/Config.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Config/Config.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Remote/Remote.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Remote/Remote.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/SongChange/SongChange.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/SongChange/SongChange.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Config
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Remote
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/SongChange
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms-Perl
