@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamoracle
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://cristal.inria.fr/~xleroy/software/
 
@@ -18,15 +17,23 @@ BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 USE_REINPLACE=	yes
 
-post-patch:
+MAN1=	spamoracle.1
+MAN5=	spamoracle.conf.5
+
+DOC_FILES=	Changes README
+
+do-configure:
 	@${REINPLACE_CMD} -E -e 's|^(CPP=)gcc[[:space:]]+-E|\1${CPP}|' \
+		-e 's|^(MANDIR=).*$$|\1${MANPREFIX}/man|' \
+		-e 's|^(BINDIR=).*$$|\1${PREFIX}/bin|' \
 		${WRKSRC}/Makefile
 
-do-install:
+post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
