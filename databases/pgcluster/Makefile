@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	pgcluster
-PORTVERSION=	1.0.6c.a14
+PORTVERSION=	1.0.7
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	v${BASEPGSQL}
+MASTER_SITE_SUBDIR=	source/v${BASEPGSQL}
 DISTNAME=	postgresql-base-${BASEPGSQL}
 DIST_SUBDIR=	postgresql
 
 PATCH_SITES=	http://dist.bsdlab.org/
-PATCHFILES=	pgcluster-${PORTVERSION}-patch.tar.gz
+PATCHFILES=	pgcluster-${PORTVERSION}-patch.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -37,7 +37,7 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install-strip
 .endif
 
-BASEPGSQL=	7.3.4
+BASEPGSQL=	7.3.6
 .if defined(WITHOUT_PGCLUSTER_REPLICATION)
 PGRP=		"@comment "
 .endif
