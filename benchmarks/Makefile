@@ -20,6 +20,7 @@
     SUBDIR += netperf
     SUBDIR += netpipe
     SUBDIR += nttcp
+    SUBDIR += pear-Benchmark
     SUBDIR += pipebench
     SUBDIR += pnetmark
     SUBDIR += polygraph
