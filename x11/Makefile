@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.234 1998/09/09 07:16:26 tg Exp $
+# $Id: Makefile,v 1.235 1998/09/09 08:11:49 tg Exp $
 #
 
     SUBDIR += XFree86
@@ -26,6 +26,7 @@
     SUBDIR += emu
     SUBDIR += eterm
     SUBDIR += fbsd-icons
+    SUBDIR += gnome
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
     SUBDIR += kb2mb2
