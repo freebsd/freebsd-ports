@@ -6,28 +6,35 @@
 #
 
 PORTNAME=	aguri
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=	yb@sainte-barbe.org
-COMMENT=	"An Aggregation-based Traffic Profiler"
+COMMENT=	An Aggregation-based Traffic Profiler
 
+.if defined(WITH_X11)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 USE_XLIB=	yes
+.endif
 
 MAN1=		aguri.1
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/aguri ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/aguri.1 ${MANPREFIX}/man/man1
 
 post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILES in INSTALL README
+.for FILES in CHANGES INSTALL README
 	@${INSTALL_DATA} ${WRKSRC}/${FILES} ${DOCSDIR}
 .endfor
 .endif
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/scripts/README ${DATADIR}
-.for SCRIPTS in agurify.pl density.pl makeplot.pl
+.for SCRIPTS in agurify.pl density.pl makeimages.pl makeplot.pl
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/${SCRIPTS} \
 	${DATADIR}
 .endfor
