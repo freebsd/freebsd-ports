@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.38
+PORTVERSION=	2.46
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
@@ -14,18 +14,13 @@ MASTER_SITE_SUBDIR=	knu
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
-USE_PERL5=	YES
-NO_BUILD=	YES
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_BZIP2=	yes
+USE_PERL5=	yes
 
-DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README TODO index.html [cC]hange[lL]og* ${DOCDIR}
-	${LN} -s ${PREFIX}/bin/${PORTNAME} ${DOCDIR}/${PORTNAME}.pl
-.endif
 
 .include <bsd.port.mk>

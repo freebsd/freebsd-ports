@@ -1,19 +1,1 @@
 bin/cvs2cl
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-basic.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-branches-revs.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-branches.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-revs.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-tags-branches-revs.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-tags-branches.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-tags-revs.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-tags.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-the-works.txt
-%%PORTDOCS%%share/doc/cvs2cl/ChangeLog-xml.txt
-%%PORTDOCS%%share/doc/cvs2cl/README
-%%PORTDOCS%%share/doc/cvs2cl/TODO
-%%PORTDOCS%%share/doc/cvs2cl/changelog-xml-schema.xdr
-%%PORTDOCS%%share/doc/cvs2cl/changelog.dtd
-%%PORTDOCS%%share/doc/cvs2cl/changelogs.html
-%%PORTDOCS%%share/doc/cvs2cl/cvs2cl.pl
-%%PORTDOCS%%share/doc/cvs2cl/index.html
-%%PORTDOCS%%@dirrm share/doc/cvs2cl
