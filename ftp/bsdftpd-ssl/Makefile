@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bsdftpd-ssl
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
+PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.0/src/
 DISTNAME=	bsdftpd-ssl-${PORTVERSION}
@@ -26,10 +26,11 @@ MAN1=	ftps.1
 # Server part
 .if !defined(CLIENT_ONLY)
 COMMENT=	Secure FTP server with the TLS/SSL support
-MAN5=	ftpchroot.5
+MAN5=	ftpchroot.5 xferlog.5
 MAN8=	ftpd.8
 MLINKS=	ftpd.8 ftpd-ssl.8
-PKGMESSAGE=	${FILESDIR}/pkg-message.server
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SED_ARG=	's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g'
 .endif
 
 MANCOMPRESSED=	yes
@@ -56,6 +57,8 @@ do-build:
 # Server part
 .if !defined(CLIENT_ONLY)
 	(cd ${WRKSRC}/ftpd && make) || exit
+	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server > \
+	${WRKDIR}/pkg-message
 .endif
 
 do-install:
@@ -66,6 +69,7 @@ do-install:
 .if !defined(CLIENT_ONLY)
 	${INSTALL_PROGRAM} ${WRKSRC}/ftpd/ftpd ${PREFIX}/libexec/ftpd
 	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpchroot.5.gz ${MANDIR}5/ftpchroot.5.gz
+	${INSTALL_MAN} ${WRKSRC}/ftpd/xferlog.5.gz ${MANDIR}5/xferlog.5.gz
 	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpd.8.gz ${MANDIR}8/ftpd.8.gz
 .endif
 
@@ -94,6 +98,7 @@ post-install:
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/xCA.sh ${DOCDIR}/cert/xCA.sh
 .endif
 .if !defined(CLIENT_ONLY)
+	@${INSTALL_SCRIPT} ${FILESDIR}/bsdftpd-ssl.sh ${PREFIX}/etc/rc.d/bsdftpd-ssl.sh.sample
 	@${ECHO_CMD} "*******************************************************************************"
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "*******************************************************************************"
