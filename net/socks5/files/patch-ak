@@ -1,30 +1,24 @@
---- lib/hostname.c.orig	Wed Aug  4 04:59:29 1999
-+++ lib/hostname.c	Tue Feb 22 09:51:48 2000
+--- lib/hostname.c.orig	Wed Aug 16 09:38:40 2000
++++ lib/hostname.c	Wed Aug 30 13:27:33 2000
 @@ -17,6 +17,11 @@
  #define S5_HOSTLIST_SIZE    256
  #define S5_HOSTALIASES_SIZE 16
- #define S5_FAKEHOSTFILE     ".s5fakehost"
-+
+  
 +/* wrapper for KAME-special getnameinfo() */
 +#ifndef NI_WITHSCOPEID
 +#define	NI_WITHSCOPEID	0
 +#endif
-  
++
  struct hostEntry {
      char name[S5_HOSTNAME_SIZE];
-@@ -171,7 +176,7 @@
-         strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
-         hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
- 
--        lseek(fd, (j-1)*256+sizeof(int), SEEK_SET);
-+        lseek(fd, (j-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
-         if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
-             S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
-             SetWriteLock(0);
-@@ -402,6 +407,129 @@
- }
- #endif
- 
+ };
+@@ -398,6 +403,129 @@
+     lsInWrapFunction = 0;
+     lsInWrapHostname = 0;
+     return &h;
++}
++#endif
++
 +#if defined(HAVE_GETADDRINFO) && defined(HAVE_GETNAMEINFO)
 +/* wrapper around the getaddrinfo call.                                      */
 +/* similar to getaddrinfo() except for:                                      */
@@ -145,18 +139,6 @@
 +    lsInWrapFunction = 0;
 +    lsInWrapHostname = 0;
 +    return 0;
-+}
-+#endif
-+
- int lsGetCachedAddress(const char *name, S5NetAddr *na) {
-     int i;
-     char hostname[S5_HOSTNAME_SIZE];
-@@ -472,7 +600,7 @@
+ }
+ #endif
  
-     if (fd > 0) {
-         SetReadLock(1);
--        lseek(fd, (i-1)*256+sizeof(int), SEEK_SET);
-+        lseek(fd, (i-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
- 
-         if (REAL(read)(fd, hostname, len) != len) {
-             S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");
