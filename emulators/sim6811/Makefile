@@ -7,6 +7,7 @@
 
 PORTNAME=	sim6811
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/
 DISTNAME=	sim
@@ -18,9 +19,5 @@ COMMENT=	A Motorola 6811 simulator
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 .include <bsd.port.post.mk>
