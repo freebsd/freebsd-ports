@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		streamtuner-live365
-PORTVERSION=		0.3.3
-PORTREVISION=	1
+PORTVERSION=		0.3.4
+PORTREVISION=		0
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	streamtuner
@@ -18,7 +18,8 @@ COMMENT=		A Live365 plugin for streamtuner
 BUILD_DEPENDS=		${X11BASE}/include/streamtuner/streamtuner.h:${PORTSDIR}/audio/streamtuner
 RUN_DEPENDS=		${X11BASE}/bin/streamtuner:${PORTSDIR}/audio/streamtuner
 
-PLIST_FILES=		lib/streamtuner/plugins/live365.so
+PLIST_FILES=		lib/streamtuner/plugins/live365.so \
+			share/locale/fr/LC_MESSAGES/streamtuner-live365.mo
 USE_X_PREFIX=		yes
 USE_LIBTOOL_VER=	15
 
