@@ -1,0 +1,11 @@
+--- src/tds/util.c.orig	Thu Nov 11 19:15:05 1999
++++ src/tds/util.c	Thu Dec 23 09:54:13 1999
+@@ -267,7 +267,7 @@
+       char  *sybase = getenv("SYBASE");
+       if (sybase!=NULL && sybase[0]!='\0')
+       {
+-         search_interface_file(sybase, "interfaces", server, ip_addr, ip_port);
++         search_interface_file(sybase, "etc/freetds/interfaces", server, ip_addr, ip_port);
+       }
+    }
+ 
