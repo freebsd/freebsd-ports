@@ -8,11 +8,9 @@
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/gnuserv
-
-BROKEN=		"Does not compile"
+MASTERDIR=	${.CURDIR}/../gnuserv
 
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
