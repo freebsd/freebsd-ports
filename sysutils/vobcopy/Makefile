@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -20,7 +20,6 @@ USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 ALL_TARGET=	${PORTNAME}
 
@@ -57,7 +56,8 @@ post-configure:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${PREFIX}/bin/vobcopy
-	@${INSTALL_MAN} ${WRKSRC}/vobcopy.1 ${MANPREFIX}/man/man1/vobcopy.1
+	@${INSTALL_MAN} ${WRKSRC}/vobcopy.1${MAN1_SUFX} \
+		${MANPREFIX}/man/man1/vobcopy.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
