@@ -425,5 +425,6 @@
     SUBDIR += zipcodes
     SUBDIR += zope-ejsplitter
     SUBDIR += zope-jamailhost
+    SUBDIR += zope-zmilocalizer
 
 .include <bsd.port.subdir.mk>
