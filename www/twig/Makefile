@@ -19,7 +19,8 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
 .if !defined(WITH_MYSQL)
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .else
 .endif
 
