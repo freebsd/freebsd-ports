@@ -3,7 +3,7 @@
 # Date created:		10 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/10 09:53:40 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/02 08:11:03 asami Exp $
 #
 
 DISTNAME=	xcolors
@@ -18,9 +18,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 FETCH_DEPENDS=	ncftp2:${PORTSDIR}/net/ncftp2
 
-WRKSRC=		${WRKDIR}/pub/R6untarred/contrib/programs/xcolors
-NCFTP=		ncftp2
-NCFTPFLAGS=
+WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>
