@@ -3354,6 +3354,7 @@ libepplet	ports/x11-wm/libepplet
 libesmtp	ports/mail/libesmtp
 libevent	ports/devel/libevent
 libexec		src/libexec
+libexif		ports/graphics/libexif
 libf2c		src/lib/libf2c
 libfame		ports/graphics/libfame
 libfetch	src/lib/libfetch
