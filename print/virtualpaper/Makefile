@@ -8,7 +8,7 @@
 PORTNAME=	virtualpaper
 PORTVERSION=	1.4
 CATEGORIES=	print
-MASTER_SITES=	http://www.research.digital.com:80/SRC/virtualpaper/cgi-bin/nph-download.tcl/sources.tar.Z?object=Virtual+Paper/
+MASTER_SITES=	http://www.research.compaq.com/SRC/virtualpaper/cgi-bin/nph-download.tcl/sources.tar.Z?object=Virtual+Paper/
 DISTFILES=	sources.tar.Z
 
 MAINTAINER=	jdp@FreeBSD.org
