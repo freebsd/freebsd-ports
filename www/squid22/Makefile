@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.39 1998/02/08 03:04:58 peter Exp $
+# $Id: Makefile,v 1.40 1998/02/08 03:39:05 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta14
@@ -65,7 +65,12 @@ MAKEFILE=	makefile
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
-.for file in cachemgr.cgi client dnsserver pinger squid
+.for file in client squid
+	if [ -f ${PREFIX}/sbin/${file} ] ; then \
+		strip ${PREFIX}/sbin/${file} ; \
+	fi
+.endfor
+.for file in cachemgr.cgi dnsserver pinger unlinkd
 	if [ -f ${PREFIX}/sbin/${file} ] ; then \
 		strip ${PREFIX}/sbin/${file} ; \
 	fi
