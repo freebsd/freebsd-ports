@@ -17,6 +17,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -35,7 +36,7 @@ post-install:
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PTRHEAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/"//g}|g' \
 		${WRKSRC}/configure ${WRKSRC}/ferite-config.in

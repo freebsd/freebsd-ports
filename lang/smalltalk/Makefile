@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO='makeinfo --no-split'
@@ -35,8 +36,8 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/gst.info*
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${PERL} -pi -e \
-		's| -release \$$\(VERSION\)| -avoid-version|g'
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libltdl/ltdl.c
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
+		's| -release \$$(VERSION)| -avoid-version|g'
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libltdl/ltdl.c
 
 .include <bsd.port.mk>

@@ -16,12 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	full
 MAN1=		sacomp.1
 
 pre-configure:
-	@${PERL} -pi.in \
+	@${REINPLACE_CMD} \
 		-e "s:%%CC%%:${CC}:g			;" \
 	        -e "s:%%CFLAGS%%:${CFLAGS}:g		;" \
 	        -e "s:%%LOCALBASE%%:${LOCALBASE}:g	;" \

@@ -17,12 +17,14 @@ WRKSRC=		${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
+USE_REINPLACE=	yes
+
 do-install:
 	@${MKDIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
+	${REINPLACE_CMD} -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${WRKDIR}/src/gofc.h
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
-	${PERL} -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
 	${INSTALL_DATA} ${WRKDIR}/src/runtime.o ${LIBDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/gofer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/goferc ${PREFIX}/bin

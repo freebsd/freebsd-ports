@@ -13,13 +13,14 @@ MASTER_SITES=	http://www.malgil.com/sxm/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all image Formlist
 
 MAN1=		sxm.1 sxi.1
 
 post-patch:
-	@${PERL} -pi -e "s|/usr/local|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g ; \
 		s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
