@@ -3,11 +3,11 @@
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 16:29:00 flathill Exp $
+# $Id: Makefile,v 1.2 1999/02/28 10:25:56 obrien Exp $
 #
 
-DISTNAME=	aspell-.27
-PKGNAME=	aspell-0.27
+DISTNAME=	aspell-.27.1
+PKGNAME=	aspell-0.27.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
