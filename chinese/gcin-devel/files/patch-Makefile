@@ -5,7 +5,7 @@
  	install -m 644 menu/* $(libdir)/menu
  	$(MAKE) -C data install
 -	if [ $(prefix) = /usr/local ]; then \
-+	if [ $(prefix) != /usr/local ]; then \
++	if [ $(prefix) = /usr/local -a `uname` != FreeBSD ]; then \
  	   install -m 644 menu/* /usr/lib/menu; \
  	   which update-menus >& /dev/null && update-menus; \
  	   sh modify-XIM; \

@@ -8,6 +8,8 @@ bin/tsd2a
 bin/tslearn
 lib/menu/gcin
 lib/menu/gcin-setup
+share/gcin/script/gcin-user-setup
+share/gcin/script/gcin-utf8-setup
 share/gcin/table/ar30.gtab
 share/gcin/table/cj.gtab
 share/gcin/table/et.kbm
@@ -26,4 +28,5 @@ share/icons/gcin/pin-float16.png
 @dirrm share/icons/gcin
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/gcin/table
+@dirrm share/gcin/script
 @dirrm share/gcin
