@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.28.j
+PORTVERSION=	2.5.28.k
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
