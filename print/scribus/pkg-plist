@@ -1,5 +1,6 @@
 bin/scribus
 include/scribus/bookmwin.h
+include/scribus/bookpalette.h
 include/scribus/cmykcolor.h
 include/scribus/colorm.h
 include/scribus/cpalette.h
@@ -38,82 +39,14 @@ include/scribus/werktoolb.h
 lib/scribus/ISOenc.txt
 lib/scribus/Stdenc.txt
 lib/scribus/TTFenc.txt
+lib/scribus/dicts/hyph_da.dic
 lib/scribus/dicts/hyph_de.dic
 lib/scribus/dicts/hyph_en.dic
 lib/scribus/dicts/hyph_es.dic
 lib/scribus/dicts/hyph_fr.dic
 lib/scribus/dicts/hyph_it.dic
 lib/scribus/dicts/hyph_ru.dic
-lib/scribus/doc/en/acro1.png
-lib/scribus/doc/en/acro2.png
-lib/scribus/doc/en/acro3.png
-lib/scribus/doc/en/acroreader.html
-lib/scribus/doc/en/bookmark1.png
-lib/scribus/doc/en/changelog.html
-lib/scribus/doc/en/cms.html
-lib/scribus/doc/en/colormgmtscreen.png
-lib/scribus/doc/en/compile.html
-lib/scribus/doc/en/context1.png
-lib/scribus/doc/en/corel1.png
-lib/scribus/doc/en/corel2a.png
-lib/scribus/doc/en/corel2c.png
-lib/scribus/doc/en/corelphoto.html
-lib/scribus/doc/en/embed2.png
-lib/scribus/doc/en/embed3.png
-lib/scribus/doc/en/embedcolor.png
-lib/scribus/doc/en/favicon.ico
-lib/scribus/doc/en/gamut3.png
-lib/scribus/doc/en/hyphen1.png
-lib/scribus/doc/en/hyphen2.png
-lib/scribus/doc/en/hyphen3.png
-lib/scribus/doc/en/hyphenator.html
-lib/scribus/doc/en/index-1.html
-lib/scribus/doc/en/index-2.html
-lib/scribus/doc/en/index-3.html
-lib/scribus/doc/en/index-4.html
-lib/scribus/doc/en/index-9.html
-lib/scribus/doc/en/index.html
-lib/scribus/doc/en/keys.png
-lib/scribus/doc/en/keys2.png
-lib/scribus/doc/en/layers1.png
-lib/scribus/doc/en/layers2.png
-lib/scribus/doc/en/layers3.png
-lib/scribus/doc/en/modify1.png
-lib/scribus/doc/en/modify2.png
-lib/scribus/doc/en/modify3.png
-lib/scribus/doc/en/modifyimage.png
-lib/scribus/doc/en/modifytext.png
-lib/scribus/doc/en/newdoc.png
-lib/scribus/doc/en/optimizelinuxdtp.html
-lib/scribus/doc/en/pagepalette1.png
-lib/scribus/doc/en/pagepalette2.png
-lib/scribus/doc/en/pagepalette3.png
-lib/scribus/doc/en/pdf1.png
-lib/scribus/doc/en/pdf2.png
-lib/scribus/doc/en/pdf4.png
-lib/scribus/doc/en/pdf5.png
-lib/scribus/doc/en/pdfexport.html
-lib/scribus/doc/en/pdfshow2.png
-lib/scribus/doc/en/pdftool1.png
-lib/scribus/doc/en/pdftool2.png
-lib/scribus/doc/en/pdftool3.png
-lib/scribus/doc/en/pdftool4.png
-lib/scribus/doc/en/polylinepref.png
-lib/scribus/doc/en/polypref.png
-lib/scribus/doc/en/pref4.png
-lib/scribus/doc/en/preferences.html
-lib/scribus/doc/en/prefs1.png
-lib/scribus/doc/en/prefs2.png
-lib/scribus/doc/en/prefs3.png
-lib/scribus/doc/en/ruler.png
-lib/scribus/doc/en/sclinks.html
-lib/scribus/doc/en/scrapbook.png
-lib/scribus/doc/en/scribus.css
-lib/scribus/doc/en/scribus_head.png
-lib/scribus/doc/en/scribus_logonew.jpg
-lib/scribus/doc/en/scribusnib.png
-lib/scribus/doc/en/scrkeys.png
-lib/scribus/doc/en/toolshide.png
+lib/scribus/dicts/hyph_sk.dic
 lib/scribus/icons/AddNode.png
 lib/scribus/icons/AddPoint.png
 lib/scribus/icons/AppIcon.xpm
@@ -224,20 +157,17 @@ lib/scribus/libs/libpostscript.so
 lib/scribus/libs/libpostscript.so.0
 lib/scribus/libs/libpreferences.so
 lib/scribus/libs/libpreferences.so.0
+lib/scribus/plugins/charselect.da.qm
 lib/scribus/plugins/charselect.de.qm
 lib/scribus/plugins/charselect.sk.qm
 lib/scribus/plugins/libcharselect.so
 lib/scribus/plugins/libcharselect.so.0
 lib/scribus/profiles/ReadMe
-lib/scribus/samples/Demo1.pdf
-lib/scribus/samples/Demo1.scd
-lib/scribus/samples/Fields.pdf
-lib/scribus/samples/Fields.scd
-lib/scribus/samples/scribusformsdoc.pdf
-lib/scribus/samples/survey.pdf
 lib/scribus/scribus.bg.qm
 lib/scribus/scribus.ca.qm
+lib/scribus/scribus.da.qm
 lib/scribus/scribus.de.qm
+lib/scribus/scribus.en_GB.qm
 lib/scribus/scribus.es.qm
 lib/scribus/scribus.fr.qm
 lib/scribus/scribus.gl.qm
@@ -248,13 +178,10 @@ lib/scribus/scribus.pl.qm
 lib/scribus/scribus.sk.qm
 lib/scribus/scribus.tr.qm
 lib/scribus/scribus.uk.qm
-@dirrm lib/scribus/samples
 @dirrm lib/scribus/profiles
 @dirrm lib/scribus/plugins
 @dirrm lib/scribus/libs
 @dirrm lib/scribus/icons
-@dirrm lib/scribus/doc/en
-@dirrm lib/scribus/doc
 @dirrm lib/scribus/dicts
 @dirrm lib/scribus
 @dirrm include/scribus/libpostscript
