@@ -30,14 +30,13 @@ MAN7=	xmlrpc-c.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/lib/abyss/src/data.c \
 		${WRKSRC}/tools/turbocharger/mod_gzip.c
+	cd ${WRKSRC}; ${REINPLACE_CMD} -e 's,<strstream.h>,<strstream>,' \
+		examples/meerkat-app-list.cc \
+		tools/xml-rpc-api2cpp/DataType.cc
 
 post-install:
 	@${RM} -f ${PREFIX}/lib/*.la
