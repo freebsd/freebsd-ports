@@ -1,6 +1,6 @@
 bin/sparc-rtems-chill
-lib/gcc-lib/sparc-rtems/2.95.2/libchill.a
-lib/gcc-lib/sparc-rtems/2.95.2/cc1chill
-lib/gcc-lib/sparc-rtems/2.95.2/chillrt0.o
-lib/gcc-lib/sparc-rtems/2.95.2/soft/chillrt0.o
-lib/gcc-lib/sparc-rtems/2.95.2/soft/libchill.a
+lib/gcc-lib/sparc-rtems/2.95.3/libchill.a
+lib/gcc-lib/sparc-rtems/2.95.3/cc1chill
+lib/gcc-lib/sparc-rtems/2.95.3/chillrt0.o
+lib/gcc-lib/sparc-rtems/2.95.3/soft/chillrt0.o
+lib/gcc-lib/sparc-rtems/2.95.3/soft/libchill.a

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gcj
-PORTVERSION=	2.95.2
-PORTREVISION=	22
+PORTVERSION=	2.95.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	newlib
 DISTFILES=	${JAVANAME}.tar.gz ${NEWLIBNAME}.tar.gz
-PATCHFILES=	${JAVANAME}-rtems-20010221.diff \
-		${NEWLIBNAME}-rtems-20010221.diff
+PATCHFILES=	${JAVANAME}-rtems-20010622a.diff \
+		${NEWLIBNAME}-rtems-20010622.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
@@ -21,7 +21,7 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-JAVANAME=	gcc-2.95.2
+JAVANAME=	gcc-2.95.3
 NEWLIBNAME=	newlib-1.9.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcj
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}

@@ -1,4 +1,4 @@
-MD5 (gcc-2.95.2.tar.gz) = 0e36957d734286e242e9697fd2806c4f
+MD5 (gcc-2.95.3.tar.gz) = f3ad4f32c2296fad758ed051b5ac8e28
 MD5 (newlib-1.9.0.tar.gz) = ca85717ef6e9ec57b895e286f8c1d905
-MD5 (gcc-2.95.2-rtems-20010221.diff) = f52f172ebf45205c7c8f45b7d1a58fc3
-MD5 (newlib-1.9.0-rtems-20010221.diff) = 63e10f0b0eaee18ab30de9d007e7a760
+MD5 (gcc-2.95.3-rtems-20010622a.diff) = 67a27e618ad38879fb5d58a609c26744
+MD5 (newlib-1.9.0-rtems-20010622.diff) = 18e88710e89a6801a9a32ea547e2afbb

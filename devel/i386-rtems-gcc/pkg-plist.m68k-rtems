@@ -41,6 +41,7 @@ include/g++-3/parsestream.h
 include/g++-3/pfstream.h
 include/g++-3/procbuf.h
 include/g++-3/stdiostream.h
+include/g++-3/sstream
 include/g++-3/stream.h
 include/g++-3/streambuf.h
 include/g++-3/strfile.h
@@ -190,59 +191,59 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/m68k-rtems/2.95.2/include/syslimits.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/stdarg.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/stddef.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/varargs.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-alpha.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-h8300.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-i860.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-i960.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-mips.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-m88k.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-mn10200.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-mn10300.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-pa.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-pyr.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-sparc.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-clipper.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-spur.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-m32r.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-sh.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-v850.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-arc.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/iso646.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-ppc.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/va-c4x.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/math-68881.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/typeinfo
-lib/gcc-lib/m68k-rtems/2.95.2/include/exception
-lib/gcc-lib/m68k-rtems/2.95.2/include/new
-lib/gcc-lib/m68k-rtems/2.95.2/include/new.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/proto.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/stdbool.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/limits.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/float.h
-lib/gcc-lib/m68k-rtems/2.95.2/include/README
-lib/gcc-lib/m68k-rtems/2.95.2/cc1
-lib/gcc-lib/m68k-rtems/2.95.2/collect2
-lib/gcc-lib/m68k-rtems/2.95.2/crtbegin.o
-lib/gcc-lib/m68k-rtems/2.95.2/crtend.o
-lib/gcc-lib/m68k-rtems/2.95.2/crti.o
-lib/gcc-lib/m68k-rtems/2.95.2/crtn.o
-lib/gcc-lib/m68k-rtems/2.95.2/specs
-lib/gcc-lib/m68k-rtems/2.95.2/cpp
-lib/gcc-lib/m68k-rtems/2.95.2/m68000/libgcc.a
-lib/gcc-lib/m68k-rtems/2.95.2/libgcc.a
-lib/gcc-lib/m68k-rtems/2.95.2/m5200/libgcc.a
-lib/gcc-lib/m68k-rtems/2.95.2/mcpu32/libgcc.a
-lib/gcc-lib/m68k-rtems/2.95.2/msoft-float/libgcc.a
-lib/gcc-lib/m68k-rtems/2.95.2/cc1plus
-lib/gcc-lib/m68k-rtems/2.95.2/m68000/libstdc++.a
-lib/gcc-lib/m68k-rtems/2.95.2/m5200/libstdc++.a
-lib/gcc-lib/m68k-rtems/2.95.2/mcpu32/libstdc++.a
-lib/gcc-lib/m68k-rtems/2.95.2/msoft-float/libstdc++.a
-lib/gcc-lib/m68k-rtems/2.95.2/libstdc++.a
+lib/gcc-lib/m68k-rtems/2.95.3/include/syslimits.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/stdarg.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/stddef.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/varargs.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-alpha.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-h8300.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-i860.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-i960.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-mips.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-m88k.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-mn10200.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-mn10300.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-pa.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-pyr.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-sparc.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-clipper.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-spur.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-m32r.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-sh.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-v850.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-arc.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/iso646.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-ppc.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/va-c4x.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/math-68881.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/typeinfo
+lib/gcc-lib/m68k-rtems/2.95.3/include/exception
+lib/gcc-lib/m68k-rtems/2.95.3/include/new
+lib/gcc-lib/m68k-rtems/2.95.3/include/new.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/proto.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/stdbool.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/limits.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/float.h
+lib/gcc-lib/m68k-rtems/2.95.3/include/README
+lib/gcc-lib/m68k-rtems/2.95.3/cc1
+lib/gcc-lib/m68k-rtems/2.95.3/collect2
+lib/gcc-lib/m68k-rtems/2.95.3/crtbegin.o
+lib/gcc-lib/m68k-rtems/2.95.3/crtend.o
+lib/gcc-lib/m68k-rtems/2.95.3/crti.o
+lib/gcc-lib/m68k-rtems/2.95.3/crtn.o
+lib/gcc-lib/m68k-rtems/2.95.3/specs
+lib/gcc-lib/m68k-rtems/2.95.3/cpp0
+lib/gcc-lib/m68k-rtems/2.95.3/m68000/libgcc.a
+lib/gcc-lib/m68k-rtems/2.95.3/libgcc.a
+lib/gcc-lib/m68k-rtems/2.95.3/m5200/libgcc.a
+lib/gcc-lib/m68k-rtems/2.95.3/mcpu32/libgcc.a
+lib/gcc-lib/m68k-rtems/2.95.3/msoft-float/libgcc.a
+lib/gcc-lib/m68k-rtems/2.95.3/cc1plus
+lib/gcc-lib/m68k-rtems/2.95.3/m68000/libstdc++.a
+lib/gcc-lib/m68k-rtems/2.95.3/m5200/libstdc++.a
+lib/gcc-lib/m68k-rtems/2.95.3/mcpu32/libstdc++.a
+lib/gcc-lib/m68k-rtems/2.95.3/msoft-float/libstdc++.a
+lib/gcc-lib/m68k-rtems/2.95.3/libstdc++.a
 m68k-rtems/bin/gcc
 m68k-rtems/lib/libm.a
 m68k-rtems/lib/libc.a
@@ -334,12 +335,12 @@ m68k-rtems/include/sys/features.h
 m68k-rtems/include/sys/sched.h
 m68k-rtems/include/limits.h
 m68k-rtems/include/pthread.h
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2/include
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2/m68000
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2/m5200
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2/mcpu32
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2/msoft-float
-@dirrm lib/gcc-lib/m68k-rtems/2.95.2
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3/include
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3/m68000
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3/m5200
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3/mcpu32
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3/msoft-float
+@dirrm lib/gcc-lib/m68k-rtems/2.95.3
 @dirrm lib/gcc-lib/m68k-rtems
 @dirrm lib/gcc-lib
 @dirrm m68k-rtems/lib/m68000

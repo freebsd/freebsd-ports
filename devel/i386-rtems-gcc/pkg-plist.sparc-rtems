@@ -41,6 +41,7 @@ include/g++-3/parsestream.h
 include/g++-3/pfstream.h
 include/g++-3/procbuf.h
 include/g++-3/stdiostream.h
+include/g++-3/sstream
 include/g++-3/stream.h
 include/g++-3/streambuf.h
 include/g++-3/strfile.h
@@ -190,54 +191,54 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/sparc-rtems/2.95.2/include/syslimits.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/stdarg.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/stddef.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/varargs.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-alpha.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-h8300.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-i860.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-i960.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-mips.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-m88k.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-mn10200.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-mn10300.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-pa.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-pyr.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-sparc.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-clipper.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-spur.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-m32r.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-sh.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-v850.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-arc.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/iso646.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-ppc.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/va-c4x.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/typeinfo
-lib/gcc-lib/sparc-rtems/2.95.2/include/exception
-lib/gcc-lib/sparc-rtems/2.95.2/include/new
-lib/gcc-lib/sparc-rtems/2.95.2/include/new.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/proto.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/stdbool.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/limits.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/float.h
-lib/gcc-lib/sparc-rtems/2.95.2/include/README
-lib/gcc-lib/sparc-rtems/2.95.2/cc1
-lib/gcc-lib/sparc-rtems/2.95.2/collect2
-lib/gcc-lib/sparc-rtems/2.95.2/crtbegin.o
-lib/gcc-lib/sparc-rtems/2.95.2/crtend.o
-lib/gcc-lib/sparc-rtems/2.95.2/crti.o
-lib/gcc-lib/sparc-rtems/2.95.2/crtn.o
-lib/gcc-lib/sparc-rtems/2.95.2/specs
-lib/gcc-lib/sparc-rtems/2.95.2/cpp
-lib/gcc-lib/sparc-rtems/2.95.2/libgcc.a
-lib/gcc-lib/sparc-rtems/2.95.2/soft/libgcc.a
-lib/gcc-lib/sparc-rtems/2.95.2/soft/crtbegin.o
-lib/gcc-lib/sparc-rtems/2.95.2/soft/crtend.o
-lib/gcc-lib/sparc-rtems/2.95.2/cc1plus
-lib/gcc-lib/sparc-rtems/2.95.2/soft/libstdc++.a
-lib/gcc-lib/sparc-rtems/2.95.2/libstdc++.a
+lib/gcc-lib/sparc-rtems/2.95.3/include/syslimits.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/stdarg.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/stddef.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/varargs.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-alpha.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-h8300.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-i860.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-i960.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-mips.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-m88k.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-mn10200.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-mn10300.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-pa.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-pyr.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-sparc.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-clipper.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-spur.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-m32r.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-sh.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-v850.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-arc.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/iso646.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-ppc.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/va-c4x.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/typeinfo
+lib/gcc-lib/sparc-rtems/2.95.3/include/exception
+lib/gcc-lib/sparc-rtems/2.95.3/include/new
+lib/gcc-lib/sparc-rtems/2.95.3/include/new.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/proto.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/stdbool.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/limits.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/float.h
+lib/gcc-lib/sparc-rtems/2.95.3/include/README
+lib/gcc-lib/sparc-rtems/2.95.3/cc1
+lib/gcc-lib/sparc-rtems/2.95.3/collect2
+lib/gcc-lib/sparc-rtems/2.95.3/crtbegin.o
+lib/gcc-lib/sparc-rtems/2.95.3/crtend.o
+lib/gcc-lib/sparc-rtems/2.95.3/crti.o
+lib/gcc-lib/sparc-rtems/2.95.3/crtn.o
+lib/gcc-lib/sparc-rtems/2.95.3/specs
+lib/gcc-lib/sparc-rtems/2.95.3/cpp0
+lib/gcc-lib/sparc-rtems/2.95.3/libgcc.a
+lib/gcc-lib/sparc-rtems/2.95.3/soft/libgcc.a
+lib/gcc-lib/sparc-rtems/2.95.3/soft/crtbegin.o
+lib/gcc-lib/sparc-rtems/2.95.3/soft/crtend.o
+lib/gcc-lib/sparc-rtems/2.95.3/cc1plus
+lib/gcc-lib/sparc-rtems/2.95.3/soft/libstdc++.a
+lib/gcc-lib/sparc-rtems/2.95.3/libstdc++.a
 sparc-rtems/bin/gcc
 sparc-rtems/lib/libm.a
 sparc-rtems/lib/libc.a
@@ -312,9 +313,9 @@ sparc-rtems/include/sys/features.h
 sparc-rtems/include/sys/sched.h
 sparc-rtems/include/limits.h
 sparc-rtems/include/pthread.h
-@dirrm lib/gcc-lib/sparc-rtems/2.95.2/include
-@dirrm lib/gcc-lib/sparc-rtems/2.95.2/soft
-@dirrm lib/gcc-lib/sparc-rtems/2.95.2
+@dirrm lib/gcc-lib/sparc-rtems/2.95.3/include
+@dirrm lib/gcc-lib/sparc-rtems/2.95.3/soft
+@dirrm lib/gcc-lib/sparc-rtems/2.95.3
 @dirrm lib/gcc-lib/sparc-rtems
 @dirrm lib/gcc-lib
 @dirrm sparc-rtems/include/machine

@@ -1,5 +1,5 @@
---- gcc-2.95.2/Makefile.in.orig	Fri Sep  1 21:07:00 2000
-+++ gcc-2.95.2/Makefile.in	Fri Sep  1 21:16:11 2000
+--- gcc-2.95.3/Makefile.in.orig	Fri Sep  1 21:07:00 2000
++++ gcc-2.95.3/Makefile.in	Fri Sep  1 21:16:11 2000
 @@ -656,9 +656,7 @@
  	install-autoconf \
  	install-automake \

@@ -1,6 +1,6 @@
---- gcc-2.95.2/gcc/Makefile.in.orig	Fri Aug 13 03:46:55 1999
-+++ gcc-2.95.2/gcc/Makefile.in	Fri Sep  1 21:15:38 2000
-@@ -400,7 +400,7 @@
+--- gcc-2.95.3/gcc/Makefile.in.orig	Thu Jan 25 09:02:58 2001
++++ gcc-2.95.3/gcc/Makefile.in	Thu Sep 13 07:11:36 2001
+@@ -401,7 +401,7 @@
  MAYBE_USE_COLLECT2 = @maybe_use_collect2@
  # It is convenient for configure to add the assignment at the beginning,
  # so don't override it here.
@@ -9,7 +9,7 @@
  
  # List of extra C and assembler files to add to libgcc1.a.
  # Assembler files should have names ending in `.asm'.
-@@ -437,7 +437,7 @@
+@@ -438,7 +438,7 @@
  
  # A list of all the language-specific executables.
  # This is overridden by configure.
@@ -18,7 +18,7 @@
  
  # List of things which should already be built whenever we try to use xgcc
  # to compile anything (without linking).
-@@ -2432,9 +2432,8 @@
+@@ -2433,9 +2433,8 @@
  # Copy the compiler files into directories where they will be run.
  # Install the driver last so that the window when things are
  # broken is small.
@@ -30,7 +30,7 @@
  
  # Do nothing while making gcc with a cross-compiler. The person who
  # makes gcc for the target machine has to know how to put a complete
-@@ -2507,51 +2506,6 @@
+@@ -2508,51 +2507,6 @@
  	  else true; \
  	  fi; \
  	done
@@ -71,8 +71,8 @@
 -	    $(INSTALL_DATA) SYSCALLS.c.X $(libsubdir)/SYSCALLS.c.X; \
 -	    chmod a-x $(libsubdir)/SYSCALLS.c.X; \
 -	fi
--	-rm -f $(libsubdir)/cpp$(exeext)
--	$(INSTALL_PROGRAM) cpp$(exeext) $(libsubdir)/cpp$(exeext)
+-	-rm -f $(libsubdir)/cpp0$(exeext)
+-	$(INSTALL_PROGRAM) cpp0$(exeext) $(libsubdir)/cpp0$(exeext)
 -# Install gcov if it was compiled.
 -	-if [ -f gcov$(exeext) ]; \
 -	then \
