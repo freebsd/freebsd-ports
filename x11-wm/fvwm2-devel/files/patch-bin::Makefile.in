@@ -1,6 +1,6 @@
---- bin/Makefile.in.orig	Sun Aug 25 04:34:30 2002
-+++ bin/Makefile.in	Tue Sep 10 10:26:39 2002
-@@ -511,9 +511,9 @@
+--- bin/Makefile.in.orig	Mon Dec  2 05:08:41 2002
++++ bin/Makefile.in	Tue Dec 17 11:29:50 2002
+@@ -592,9 +592,9 @@
  		echo "Minor warning: $(bindir)/xpmroot symlink was not created"
  
  install-data-local:
@@ -10,6 +10,6 @@
 +	@rm -f $(DESTDIR)$(mandir)/man1/xpmroot.1.gz
 +	@$(LN_S) fvwm-root.1.gz $(DESTDIR)$(mandir)/man1/xpmroot.1.gz || \
 +		echo "Minor warning: $(mandir)/man1/xpmroot.1.gz symlink was not created"
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -41,6 +41,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmM4
 libexec/fvwm/%%FVWM_VERSION%%/FvwmPager
 libexec/fvwm/%%FVWM_VERSION%%/FvwmPerl
+libexec/fvwm/%%FVWM_VERSION%%/FvwmProxy
 libexec/fvwm/%%FVWM_VERSION%%/FvwmRearrange
 libexec/fvwm/%%FVWM_VERSION%%/FvwmSave
 libexec/fvwm/%%FVWM_VERSION%%/FvwmSaveDesk
@@ -52,6 +53,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmTheme
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTile
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
+libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowLister
 @comment The following are here because they are symlinks
 man/man1/fvwm2.1.gz
 man/man1/xpmroot.1.gz
@@ -391,6 +393,7 @@ share/fvwm/FvwmForm-RootCursor
 share/fvwm/FvwmForm-Setup
 share/fvwm/FvwmForm-Talk
 share/fvwm/FvwmForm-TalkHelp
+share/fvwm/ConfigFvwmProxyDefaults
 share/fvwm/FvwmScript-BaseConfig
 share/fvwm/FvwmScript-BellSetup
 share/fvwm/FvwmScript-Buttons
