@@ -1,0 +1,32 @@
+bin/gnome-translate
+share/gnome/applications/gnome-translate.desktop
+share/gnome/gnome-translate/ui/app.glade
+share/gnome/gnome-translate/ui/edit-toolbars.glade
+share/gnome/gnome-translate/ui/hand-open.png
+share/gnome/gnome-translate/ui/logo.png
+share/gnome/gnome-translate/ui/menus.xml
+share/gnome/gnome-translate/ui/preferences.glade
+share/gnome/gnome-translate/ui/toolbars.xml
+share/gnome/gnome-translate/ui/translate-web-page.glade
+share/gnome/help/gnome-translate/C/documentation-license.xml
+share/gnome/help/gnome-translate/C/figures/main-window.png
+share/gnome/help/gnome-translate/C/gnome-translate.xml
+share/gnome/help/gnome-translate/C/software-license.xml
+share/gnome/omf/gnome-translate/gnome-translate-C.omf
+share/gnome/pixmaps/gnome-translate.png
+share/icons/hicolor/16x16/apps/gnome-translate-web-page.png
+share/icons/hicolor/16x16/apps/gnome-translate.png
+share/icons/hicolor/24x24/apps/gnome-translate-web-page.png
+share/icons/hicolor/24x24/apps/gnome-translate.png
+share/icons/hicolor/32x32/apps/gnome-translate-swap-panes.png
+share/icons/hicolor/32x32/apps/gnome-translate-web-page.png
+share/icons/hicolor/32x32/apps/gnome-translate.png
+share/icons/hicolor/48x48/apps/gnome-translate-web-page.png
+share/icons/hicolor/48x48/apps/gnome-translate.png
+share/locale/fr/LC_MESSAGES/gnome-translate.mo
+@dirrm share/gnome/gnome-translate/ui
+@dirrm share/gnome/gnome-translate
+@dirrm share/gnome/help/gnome-translate/C/figures
+@dirrm share/gnome/help/gnome-translate/C
+@dirrm share/gnome/help/gnome-translate
+@dirrm share/gnome/omf/gnome-translate
