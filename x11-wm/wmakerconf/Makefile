@@ -1,14 +1,14 @@
 # New ports collection makefile for:	wmakerconf
-# Version required:			2.3
+# Version required:			2.4
 # Date Created:				14 August 1999
 # Whom:					Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmakerconf-2.3
+DISTNAME=	wmakerconf-2.4
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://members.linuxstart.com/~ulli/wmakerconf/
+MASTER_SITES=	http://ulli.linuxbox.com/wmakerconf/
 
 MAINTAINER=	dr@domix.de
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS=	bunzip2:${PORTSDIR}/archivers/bzip2 \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
