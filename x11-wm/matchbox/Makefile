@@ -1,0 +1,66 @@
+# New ports collection makefile for:	matchbox
+# Date created:				2002-07-14
+# Whom:					trevor
+#
+# $FreeBSD$
+#
+
+PORTNAME=	matchbox
+PORTVERSION=	0.3
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://handhelds.org/~mallum/downloadables/matchbox/
+
+MAINTAINER=	trevor@FreeBSD.org
+
+DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
+
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+MAN1=		matchbox.1 mbcontrol.1 monolaunch.1 miniapm.1 minisys.1 minitime.1 minivol.1
+PLIST=		${WRKDIR}/pkg-plist
+USE_X_PREFIX=	yes
+
+pre-install:
+	${ECHO_CMD} bin/matchbox > ${PLIST}
+.for ii in minitime minisys minivol monolaunch mbcontrol mbdock
+	${ECHO_CMD} bin/${ii} >> ${PLIST}
+.endfor
+	cd ${WRKSRC}/data/themes && ${FIND} -s . -type f | \
+		${CUT} -c3-999 | \
+		${SED} -e 's:^:share/data/matchbox/:' >> ${PLIST} \
+		&& ${FIND} -d . -type d | \
+		${CUT} -c3-999 | \
+		${SED} -e 's:^:@dirrm share/data/matchbox/:' >> ${PLIST}
+.if !defined(NOPORTDOCS)
+.for ii in ${DOCS}
+	${ECHO_CMD} share/doc/matchbox/${ii} >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrm share/doc/matchbox >> ${PLIST}
+.endif
+.for ii in share/matchbox/mbdock share/matchbox
+	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
+.endfor
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/matchbox ${PREFIX}/bin
+.for ii in minitime minisys minivol monolaunch mbcontrol
+	${INSTALL_PROGRAM} ${WRKSRC}/util/${ii} ${PREFIX}/bin
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/dock/mbdock ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/data/ && pax -r -w themes ${DATADIR} \
+		&& pax -r -w mbdock ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for ii in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
+.endfor
+.endif
+.for ii in defaults icon.xpm
+	${INSTALL_DATA} ${WRKSRC}/data/${ii} ${DATADIR}
+.endfor
+.for ii in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/${ii} ${PREFIX}/man/man1/
+.endfor
+
+.include <bsd.port.mk>

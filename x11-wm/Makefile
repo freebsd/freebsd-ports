@@ -53,6 +53,7 @@
     SUBDIR += libdockapp
     SUBDIR += libepplet
     SUBDIR += lwm
+    SUBDIR += matchbox
     SUBDIR += metacity
     SUBDIR += metacity-setup
     SUBDIR += mlvwm
