@@ -27,6 +27,7 @@ USE_LIBTOOL=	yes
 WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ssl \
 		--with-neon=${LOCALBASE} \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
