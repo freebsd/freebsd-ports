@@ -24,8 +24,13 @@ MAKEFILE=	GNUmakefile
 .ifdef WITHOUT_GHOSTSCRIPT
 PLIST_SUB+=	PDFVIEW="@comment "
 .else
-BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFP1)
+GSPORT?=	print/ghostscript-afp1
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+BUILD_DEPENDS+=	gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS+=	gs:${PORTSDIR}/${GSPORT}
 PLIST_SUB+=	PDFVIEW=""
 .endif
 
