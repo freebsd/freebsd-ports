@@ -7821,7 +7821,6 @@ tcpstat		ports/net/tcpstat
 tcptrace	ports/net/tcptrace
 tcptraceroute	ports/net/tcptraceroute
 tcpview		ports/net/tcpview
-tcsh		ports/shells/tcsh
 tdb		ports/databases/tdb
 tdetect		ports/net/tdetect
 tdiary		ports/www/tdiary
