@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/ \
 		ftp://ftp.ring.gr.jp/pub/text/elisp/jaist/ftp.opaopa.org/elisp/ \
@@ -15,10 +15,14 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
-
 EMACS_PORT_NAME?=	emacs20
+
+.if ${EMACS_PORT_NAME} != "emacs21"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${PORTNAMESUFFIX}
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${PORTNAMESUFFIX}
 
 DOCS=		README
 
