@@ -1,5 +1,18 @@
-Warning: This JDK is currently unstable, especially if not run as root.
+======================================================================
+Warning: This JDK is currently unstable.  You are advised to use
+either the FreeBSD jdk14 port or one of the jdk13 ports instead.
 
-You are advised to use either of the following JDK ports instead:
-o Sun JDK 1.3 for Linux (java/linux-sun-jdk13)
-o FreeBSD JDK 1.3 (java/jdk13)
+This Java VM will attempt to obtain some system information by
+accessing files in linux's procfs.  You must install the Linux
+emulation procfs filesystem for this to work correctly.  The JVM
+will exhibit various problems otherwise.  This can be accomplished
+by adding the following line to your /etc/fstab file:
+
+ linprocfs   /compat/linux/proc   linprocfs   rw   0  0
+
+and then, as root, executing the commands:
+
+kldload linprocfs
+mount /compat/linux/proc 
+
+======================================================================
