@@ -3,7 +3,7 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/03/27 10:35:56 vanilla Exp $
+# $Id: Makefile,v 1.11 1999/04/08 18:08:39 steve Exp $
 #
 
 DISTNAME=	gtk-engines-0.5
@@ -13,11 +13,13 @@ MASTER_SITE_SUBDIR=	sources/gtk-engines
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gdk_imlib.3:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 THEMES=		metal notif pixmap redmond95
 
@@ -27,8 +29,5 @@ post-patch:
 		${MV} gtkrc gtkrc.tmp; \
 		${SED} -e s^%%PREFIX%%^${PREFIX}^g < gtkrc.tmp > gtkrc; \
 	done
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

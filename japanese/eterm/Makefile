@@ -3,7 +3,7 @@
 # Date created:        11th December 1998
 # Whom:                MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id: Makefile,v 1.4 1999/03/15 18:30:05 nectar Exp $
+# $Id: Makefile,v 1.5 1999/05/09 16:35:44 steve Exp $
 #
 
 DISTNAME=	Eterm-0.8.9
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.eterm.org/download/ \
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-LIB_DEPENDS=	Imlib.3:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
