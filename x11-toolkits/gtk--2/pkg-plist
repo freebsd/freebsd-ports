@@ -186,7 +186,7 @@ lib/gtkmm/proc/gtkconvert.m4
 lib/gtkmm/proc/gtkmmproc
 lib/gtkmm/proc/list.m4
 lib/gtkmm/proc/stage1.m4
-lib/libgdkmm-1.2.so.0
+lib/libgdkmm-1.2.so.1
 lib/libgdkmm.a
 lib/libgdkmm.so
 lib/libgtkmm-1.2.so.0
