@@ -15,7 +15,6 @@
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-parse.elc
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml.el
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml.elc
-%%EMACS_LIBDIR%%/site-lisp/%%PSGML_SETUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/psgml
 @unexec install-info --delete %D/info/psgml.info %D/info/dir
 @unexec install-info --delete %D/info/psgml-api.info %D/info/dir
