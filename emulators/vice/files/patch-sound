@@ -1,6 +1,6 @@
---- configure.orig	Mon Jun  9 00:09:09 2003
-+++ configure	Sun Jun 15 09:49:49 2003
-@@ -5504,7 +5504,7 @@
+--- configure.orig	Sun Aug 22 22:05:49 2004
++++ configure	Fri Sep 17 07:20:22 2004
+@@ -5587,7 +5587,7 @@
  fi
  
  if test x"$with_sdl" = "xyes"; then
@@ -9,25 +9,16 @@
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -9255,7 +9255,7 @@
+@@ -10823,7 +10823,7 @@
  
- 
- 
--for ac_header in linux/soundcard.h machine/soundcard.h
-+for ac_header in linux/soundcard.h machine/soundcard.h sys/soundcard.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -9825,7 +9825,7 @@
- 
- if test x"$with_sdl" = "xyes"; then
+   if test x"$with_sdl" = "xyes"; then
  
 -for ac_header in SDL/SDL_audio.h
 +for ac_header in SDL_audio.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -10625,7 +10625,6 @@
+@@ -11627,7 +11627,6 @@
  fi
  
  if test x"$with_sdl" = "xyes"; then
@@ -35,7 +26,7 @@
  
  echo "$as_me:$LINENO: checking for SDL_OpenAudio in -lSDL" >&5
  echo $ECHO_N "checking for SDL_OpenAudio in -lSDL... $ECHO_C" >&6
-@@ -10633,7 +10632,8 @@
+@@ -11635,7 +11634,8 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -45,7 +36,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10686,7 +10686,7 @@
+@@ -11688,7 +11688,7 @@
  #define HAVE_LIBSDL 1
  _ACEOF
  
@@ -54,7 +45,7 @@
  
  fi
  
-@@ -10827,7 +10827,8 @@
+@@ -11829,7 +11829,8 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -64,7 +55,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10880,7 +10881,7 @@
+@@ -11882,7 +11883,7 @@
  #define HAVE_LIBESD 1
  _ACEOF
  
@@ -85,17 +76,6 @@
  /* Define to 1 if you have the `memmove' function. */
  #undef HAVE_MEMMOVE
  
---- src/sound.c.orig	Sat Jan 11 16:38:57 2003
-+++ src/sound.c	Fri Feb 14 03:21:39 2003
-@@ -977,7 +977,7 @@
- #if defined(USE_ARTS)
-     sound_init_arts_device();
- #endif
--#if defined(HAVE_LINUX_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
-+#if defined(HAVE_LINUX_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H) || defined (HAVE_SYS_SOUNDCARD_H)
-     sound_init_uss_device();
- #endif
- #if defined(HAVE_ESD_H) && defined(HAVE_LIBESD)
 --- src/sounddrv/soundsdl.c.orig	Sat Jan 12 21:35:58 2002
 +++ src/sounddrv/soundsdl.c	Fri Feb 14 03:13:41 2003
 @@ -26,7 +26,7 @@
@@ -107,15 +87,3 @@
  #include <unistd.h>
  
  #include "vice.h"
---- src/sounddrv/sounduss.c.orig	Sun Sep 29 20:37:11 2002
-+++ src/sounddrv/sounduss.c	Fri Feb 14 03:17:42 2003
-@@ -50,6 +50,9 @@
- #if defined(HAVE_MACHINE_SOUNDCARD_H)
- #include <machine/soundcard.h>
- #endif
-+#if defined(HAVE_SYS_SOUNDCARD_H)
-+#include <sys/soundcard.h>
-+#endif
- 
- static int uss_fd = -1;
- static int uss_8bit = 0;

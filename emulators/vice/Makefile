@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
@@ -22,7 +22,6 @@ RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
-USE_GCC=	3.2
 
 .if defined(VICE_WITH_GNOME)
 GNOME_SUFFIX=	-gnome
@@ -52,9 +51,6 @@ BUILD_DEPENDS+=	bdftopcf:${X_CLIENTS_PORT}
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 # ../src/resid/libresid.a(wave.o)(.rodata+0x0): relocation truncated to fit: GPREL32 *UND*
 BROKEN=		"GPREL relocation truncated"
-.endif
-.if ${OSVERSION} >= 502122
-BROKEN=		gcc34: conflicting types
 .endif
 
 post-extract:

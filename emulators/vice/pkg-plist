@@ -189,6 +189,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%DOCSDIR%%/PETdoc.txt
 %%DOCSDIR%%/Readme.beos
 %%DOCSDIR%%/Readme.dos
+%%DOCSDIR%%/ReadmeMacOSX.txt
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Walkthrough-Howto.txt
 %%DOCSDIR%%/Win32-Howto.txt
