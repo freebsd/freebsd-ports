@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	No-frills, GTK-based Ogg Vorbis player
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+
+USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>
 
