@@ -19,11 +19,11 @@ COMMENT=	Slick GNOME2 theme from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=      gnomehack libgnomeui
+USE_GNOME=	gnomehack libgnomeui
 
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}
 
@@ -51,9 +51,9 @@ XIMIAN_DISTVERSION=	6.3
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
-PLIST_SUB+=     XMMS=""
+PLIST_SUB+=	XMMS=""
 .else
-PLIST_SUB+=     XMMS="@comment "
+PLIST_SUB+=	XMMS="@comment "
 .endif
 
 pre-everything::
