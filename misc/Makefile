@@ -26,8 +26,8 @@
     SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
-    SUBDIR += bottlerocket
     SUBDIR += bookcase
+    SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs
     SUBDIR += buffer
@@ -64,8 +64,6 @@
     SUBDIR += dvorakng
     SUBDIR += earthview
     SUBDIR += edonkey-tool-hash
-    SUBDIR += edonkey-tool-list
-    SUBDIR += edonkey-tool-recovermet
     SUBDIR += edonkey-tool-slist
     SUBDIR += elscreen
     SUBDIR += emma
@@ -222,6 +220,8 @@
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += lingoteach
+    SUBDIR += linux-edonkey-tool-list
+    SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += logsurfer
     SUBDIR += lr
     SUBDIR += lv
@@ -245,8 +245,8 @@
     SUBDIR += numchar
     SUBDIR += nut
     SUBDIR += nwrite
-    SUBDIR += orville-write
     SUBDIR += opencyc
+    SUBDIR += orville-write
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-IntSpan
     SUBDIR += p5-Array-PrintCols
