@@ -13,8 +13,8 @@
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
 
 PORTNAME=	postfix
-PORTVERSION=	1.1.11-20020917
-PORTREVISION=	1
+PORTVERSION=	1.1.11-20021115
+#PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -30,6 +30,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	khera@kciLink.com
 
 USE_SUBMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
@@ -41,6 +42,10 @@ MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
 	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
+
+# TLS patch adds to MAN8 but doesn't have .html file, so avoid trying to
+# patch it.
+MAN8base=$(MAN8:S/tlsmgr.8//)
 
 NO_LATEST_LINK=	yes
 
@@ -69,6 +74,27 @@ post-patch:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
+
+pre-patch:
+.for file in ${MAN1}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+		${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
+.endfor
+.for file in ${MAN5}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+		${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
+.endfor
+.for file in ${MAN8base}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+		${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
+.endfor
+.for file in faq rate rewrite uce
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+		${WRKSRC}/html/${file}.html
+.endfor
+.for file in ${CONF1}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
+.endfor
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
