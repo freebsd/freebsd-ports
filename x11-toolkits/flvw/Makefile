@@ -33,6 +33,10 @@ INC_SUBDIR=	include/FL
 
 INSTALLS_SHLIB=	yes
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's/^#define fl_inactive inactive//' \
 		${WRKSRC}/FL/Flv_List.H
