@@ -1,0 +1,20 @@
+Gnomebaker is a gnome cd/dvd burn program. It can:
+
+    * Create Data CDs
+    * Blank RW disks
+    * Burn DVDs
+    * Copy Data CDs
+    * Copy Audio CDs
+    * Support multisession burning
+    * Burn existing CD ISO images
+    * Drag and drop to create Data CDs (including DnD to and from nautilus)
+    * Create Audio CDs from existing wavs, mp3s and oggs
+    * Integrate with gconf for storage of application settings
+
+In the future it will also do the following and hopefully much more:
+
+    * Create Video CDs from existing video and stills
+    * Create mixed mode CDs
+    * Burn on the fly
+
+WWW: http://gnomebaker.sourceforge.net

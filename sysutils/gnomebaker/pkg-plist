@@ -1,0 +1,72 @@
+bin/gnomebaker
+%%DOCSDIR%%/ABOUT-NLS
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/omf.make
+%%DOCSDIR%%/xmldocs.make
+share/gnome/applications/gnomebaker.desktop
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-blank-cdrw.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-burn-iso.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-copy-audio-cd.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-copy-data-cd.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-create-audio-cd.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker-create-data-cd.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker_prefs-filebrowser.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker_prefs-tmp.png
+share/gnome/gnomebaker/doc/gnomebaker/C/figures/gnomebaker_window.png
+share/gnome/gnomebaker/doc/gnomebaker/C/gnomebaker.xml
+share/gnome/gnomebaker/doc/gnomebaker/C/legal.xml
+share/gnome/omf/gnomebaker/gnomebaker-C.omf
+%%DATADIR%%/baker-add-dir.png
+%%DATADIR%%/baker-add-files.png
+%%DATADIR%%/baker-audio-copy.png
+%%DATADIR%%/baker-blank-cdrw.png
+%%DATADIR%%/baker-blank-dvdrw.png
+%%DATADIR%%/baker-burn-cd.png
+%%DATADIR%%/baker-cd.png
+%%DATADIR%%/baker-data-copy.png
+%%DATADIR%%/baker-import-session.png
+%%DATADIR%%/gnomebaker-48.png
+%%DATADIR%%/gnomebaker.glade
+%%DATADIR%%/splash_2.png
+share/locale/af/LC_MESSAGES/gnomebaker.mo
+share/locale/cs/LC_MESSAGES/gnomebaker.mo
+share/locale/da/LC_MESSAGES/gnomebaker.mo
+share/locale/de/LC_MESSAGES/gnomebaker.mo
+share/locale/en_US/LC_MESSAGES/gnomebaker.mo
+share/locale/es/LC_MESSAGES/gnomebaker.mo
+share/locale/es_ES/LC_MESSAGES/gnomebaker.mo
+share/locale/fr/LC_MESSAGES/gnomebaker.mo
+share/locale/fr_FR/LC_MESSAGES/gnomebaker.mo
+share/locale/he/LC_MESSAGES/gnomebaker.mo
+share/locale/hr/LC_MESSAGES/gnomebaker.mo
+share/locale/ja/LC_MESSAGES/gnomebaker.mo
+share/locale/ko/LC_MESSAGES/gnomebaker.mo
+share/locale/lv/LC_MESSAGES/gnomebaker.mo
+share/locale/ms/LC_MESSAGES/gnomebaker.mo
+share/locale/nl_NL/LC_MESSAGES/gnomebaker.mo
+share/locale/pl/LC_MESSAGES/gnomebaker.mo
+share/locale/pt/LC_MESSAGES/gnomebaker.mo
+share/locale/pt_BR/LC_MESSAGES/gnomebaker.mo
+share/locale/ro/LC_MESSAGES/gnomebaker.mo
+share/locale/ru/LC_MESSAGES/gnomebaker.mo
+share/locale/sk/LC_MESSAGES/gnomebaker.mo
+share/locale/sv/LC_MESSAGES/gnomebaker.mo
+share/locale/sv_SE/LC_MESSAGES/gnomebaker.mo
+share/locale/tr/LC_MESSAGES/gnomebaker.mo
+share/locale/zh_CN/LC_MESSAGES/gnomebaker.mo
+@dirrm %%DATADIR%%
+@dirrm share/gnome/omf/gnomebaker
+@dirrm share/gnome/gnomebaker/doc/gnomebaker/C/figures
+@dirrm share/gnome/gnomebaker/doc/gnomebaker/C
+@dirrm share/gnome/gnomebaker/doc/gnomebaker
+@dirrm share/gnome/gnomebaker/doc
+@dirrm share/gnome/gnomebaker
+@dirrm %%DOCSDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

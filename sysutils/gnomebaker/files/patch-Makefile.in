@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Tue Mar  1 16:18:14 2005
++++ Makefile.in	Tue Mar  1 16:30:51 2005
+@@ -130,12 +130,12 @@
+ 
+ SUBDIRS = intl po macros src pixmaps help
+ 
+-gnomebakerdocdir = ${prefix}/doc/gnomebaker
++gnomebakerdocdir = ${prefix}/share/doc/gnomebaker
+ gnomebakerdoc_DATA =  	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO 	ABOUT-NLS 	xmldocs.make 	omf.make
+ 
+ 
+ #gnomemenudir = $(prefix)/@NO_PREFIX_PACKAGE_MENU_DIR@/Applications
+-gnomemenudir = /usr/share/applications
++gnomemenudir = $(prefix)/share/gnome/applications
+ gnomemenu_DATA = gnomebaker.desktop
+ 
+ gnomebaker_glade_filedir = $(prefix)/@NO_PREFIX_PACKAGE_DATA_DIR@/@PACKAGE@
