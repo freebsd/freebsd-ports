@@ -25,9 +25,7 @@ COMMENT=	Powerful visual administration console for MySQL environment
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
 WANT_AUTOMAKE_VER=	14
-USE_AUTOCONF=	yes
 WANT_AUTOCONF_VER=	257
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
@@ -47,9 +45,6 @@ post-patch:
 			${WRKSRC}/mysqladministrator/source/linux/Makefile.am
 	@${CHMOD} a+x 	${WRKSRC}/mysqlcommonguiparts/missing \
 			${WRKSRC}/mysqladministrator/missing
-
-run-autotools:
-	@${DO_NADA}
 
 do-configure:
 	@${DO_NADA}
