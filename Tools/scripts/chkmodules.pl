@@ -36,11 +36,10 @@
 # Clement Laforet.
 #
 
-use strict;
-use File::Find;
-
 require 5.005;
 use strict;
+use File::Find;
+use Cwd 'abs_path';
 
 my $portsdir = $ENV{PORTSDIR} ? $ENV{PORTSDIR} : '/usr/ports';
 my $cvsroot  = $ENV{CVSROOT}  ? $ENV{CVSROOT}  : '/home/ncvs/CVSROOT-ports';
@@ -48,6 +47,7 @@ my @excludes = $ENV{EXCLUDE}  ? split(' ', $ENV{EXCLUDE}) : ('local', 'rookies')
 
 -d "$portsdir"        or die "Can't find ports tree at $portsdir.\n";
 -f "$cvsroot/modules" or die "Can't read modules file $cvsroot/modules.\n";
+$portsdir = abs_path($portsdir);
 
 my %ports = ('ports' => 1);
 

@@ -58,15 +58,14 @@
 # if you can spare the time.
 #
 
-use strict;
-use File::Find;
-
 require 5.005;
 use strict;
+use File::Find;
+use Cwd 'abs_path';
 
 my $portsdir   = $ENV{PORTSDIR}   ? $ENV{PORTSDIR}   : '/usr/ports';
-
 my $versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
+my $cvsblame   = $ENV{CVSBLAME}   ? 1                : 0;
 
 my $pkg_version =
   -x '/usr/local/sbin/pkg_version'
@@ -74,12 +73,13 @@ my $pkg_version =
    : '/usr/sbin/pkg_version';
 
 -d "$portsdir" or die "Can't find ports tree at $portsdir.\n";
+$portsdir = abs_path($portsdir);
 
 my $useindex = !-w "$versiondir";
 
 my $versionfile =
   $useindex
-  ? "$portsdir/`cd $portsdir; make -VINDEXFILE`"
+  ? "$portsdir/".`cd $portsdir; make -VINDEXFILE`
   : "$versiondir/VERSIONS";
 chomp $versionfile;
 
@@ -104,7 +104,6 @@ sub wanted {
 find(\&wanted, $portsdir);
 
 my %backwards;
-
 
 open VERSIONS, "<$versionfile";
 
@@ -148,8 +147,14 @@ if (!$useindex) {
     close VERSIONS;
 }
 
-print join("\n - ",
-    "Package versions going backwards:",
-    map("$_: $backwards{$_}", sort keys %backwards)),
-  "\n"
-  if %backwards;
+if (%backwards) {
+    print "Package versions going backwards:\n";
+    foreach (sort keys %backwards) {
+        print " - $_: $backwards{$_}\n";
+        if ($cvsblame && -d "$portsdir/$_/CVS") {
+            my @cvslog = `cd "$portsdir/$_"; cvs -R log -N -r. Makefile`;
+            print map "\t" . $_, grep /^-/ .. /^=/, @cvslog;
+            print "\n";
+        }
+    }
+}
