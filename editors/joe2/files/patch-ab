@@ -1,0 +1,63 @@
+*** main.c.old	Sun Jan 22 03:21:08 1995
+--- main.c	Tue Oct 15 16:54:32 1996
+***************
+*** 18,23 ****
+--- 18,27 ----
+  
+  #include <stdio.h>
+  #include <fcntl.h>
++ #ifdef __FreeBSD__
++ #include <locale.h>
++ #include <ctype.h>
++ #endif
+  #include "config.h"
+  #include "w.h"
+  #include "tty.h"
+***************
+*** 186,191 ****
+--- 190,209 ----
+  #else
+   run=namprt(argv[0]);
+  #endif 
++ 
++ #ifdef __FreeBSD__
++  setlocale(LC_ALL, "");
++  for(c=0;c<256;c++)
++   { int a=0;
++     if(iscntrl(c))
++      a|=UNDERLINE;
++     if((c&0x80)&&!isprint(c))
++      a|=INVERSE;
++     xlata[c]=a;
++     if(isprint(c))
++      xlatc[c]=c;
++   }
++ #endif
+  
+   if(s=getenv("LINES")) sscanf(s,"%d",&lines);
+   if(s=getenv("COLUMNS")) sscanf(s,"%d",&columns);
+*** scrn.h.old	Thu Oct  6 10:09:04 1994
+--- scrn.h	Tue Oct 15 16:42:29 1996
+***************
+*** 254,263 ****
+  
+  #define xlat(a,c) \
+    ( \
+!   (dspasis && ((unsigned)(c)>=128)) ? \
+        ((a)=0) \
+      : \
+!       (((a)=xlata[(unsigned)(c)]), ((c)=xlatc[(unsigned)(c)])) \
+    )
+  
+  /* int eraeol(SCRN *t,int x,int y);
+--- 254,263 ----
+  
+  #define xlat(a,c) \
+    ( \
+!   (dspasis && ((unsigned char)(c)>=128)) ? \
+        ((a)=0) \
+      : \
+!       (((a)=xlata[(unsigned char)(c)]), ((c)=xlatc[(unsigned char)(c)])) \
+    )
+  
+  /* int eraeol(SCRN *t,int x,int y);
