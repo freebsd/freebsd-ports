@@ -1,0 +1,20 @@
+--- vnpstext.1V.orig	Thu May 14 21:43:57 1992
++++ vnpstext.1V	Sun Dec  8 02:13:22 1996
+@@ -41,7 +41,7 @@
+ .PP
+ The location of the prolog file can either be
+ the current directory, or in
+-.I /usr/local/lib/ps.
++.I /usr/local/share/vn-fonts.
+ The latter setting may be overridden by
+ the environment variable
+ .I PSLIBDIR.
+@@ -113,7 +113,7 @@
+ Lines are not wrapped.  If a line is too long to
+ fit across a page width, it is truncated (by the printer).
+ .SH FILES
+-.IP \fI/usr/local/lib/ps:\fP 20m
++.IP \fI/usr/local/share/vn-fonts:\fP 20m
+ default prolog search directory
+ .IP \fIinitcour.ps:\fP 20m
+ Vietnamese Courier font file to download to the printer.

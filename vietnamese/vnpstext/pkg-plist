@@ -1,0 +1,11 @@
+bin/vnpstext
+man/man1/vnpstext.1.gz
+share/vn-fonts/initcour.ps
+share/vn-fonts/initcourb.ps
+share/vn-fonts/cour10.pro
+share/vn-fonts/cour10b.pro
+share/vn-fonts/cour12.pro
+share/vn-fonts/cour12b.pro
+share/vn-fonts/cour17.pro
+share/vn-fonts/cour17b.pro
+
