@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.7.5
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -18,7 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	corecode@corecode.ath.cx
 
-THEMEFILE=	sylpheed-theme-pak1${EXTRACT_SUFX}
+THEMEVERSION=	2
+THEMEFILE=	sylpheed-theme-pak${THEMEVERSION}${EXTRACT_SUFX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -106,7 +106,7 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in README README.jp README.claws RELEASE_NOTES.claws TODO TODO.jp tools/README.sylprint
+.for i in NEWS README README.LDAP README.jp README.claws TODO TODO.jp tools/README.sylprint
 	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
