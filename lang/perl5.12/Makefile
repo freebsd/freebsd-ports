@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsitearch=${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
+	-Dscriptdir=${PREFIX}/bin \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 # INSTALLS_SHLIB=	yes
