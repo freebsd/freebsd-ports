@@ -1,31 +1,63 @@
+bin/netustadctl
+bin/netustadpasswd
 sbin/netustad
-sbin/netustadctl
-sbin/netustadpasswd
 etc/rc.d/netustad.sh
-@unexec if cmp -s %D/etc/netustad.conf %D/etc/netustad.conf-dist; then rm -f %D/etc/netustad.conf; fi
-etc/netustad.conf-dist
-@exec [ -f %B/netustad.conf ] || cp %B/%f %B/netustad.conf
-%%DATADIR%%/script/English
+@unexec if cmp -s %D/etc/netustad/netustad.conf %D/etc/netustad/netustad.conf-dist; then rm -f %D/etc/netustad/netustad.conf; fi
+etc/netustad/netustad.conf-dist
+@exec [ -f %B/netustad/netustad.conf ] || cp %B/%f %B/netustad/netustad.conf
+include/netustad/acceptrequest.h
+include/netustad/addnewrule.h
+include/netustad/auth.h
+include/netustad/common.h
+include/netustad/config.h
+include/netustad/deleterule.h
+include/netustad/editrule.h
+include/netustad/loadconfig.h
+include/netustad/mimetype.h
+include/netustad/netustad.h
+include/netustad/execcgi.h
+include/netustad/network.h
+include/netustad/snprintf.h
+share/locale/tr/LC_MESSAGES/netustad.mo
 %%DATADIR%%/script/action1.inc
 %%DATADIR%%/script/action2.inc
-%%DATADIR%%/script/addform
-%%DATADIR%%/script/addrule.inc
-%%DATADIR%%/script/authform
 %%DATADIR%%/script/edit-parse
-%%DATADIR%%/script/editform
-%%DATADIR%%/script/editrule.inc
-%%DATADIR%%/script/footer
-%%DATADIR%%/script/header
+%%DATADIR%%/script/if-edit
+%%DATADIR%%/script/if-parse
 %%DATADIR%%/script/intf-parse
-%%DATADIR%%/script/loadindex
-%%DATADIR%%/script/maketable
+%%DATADIR%%/script/nat-edit
+%%DATADIR%%/script/nat-parse
 %%DATADIR%%/script/netustad.css
 %%DATADIR%%/script/proto.inc
+%%DATADIR%%/script/rt-edit
+%%DATADIR%%/script/rt-parse
 %%DATADIR%%/script/ruleoption1.inc
 %%DATADIR%%/script/ruleoption2.inc
 %%DATADIR%%/script/service-parse
-%%DATADIR%%/script/showrule
+%%DATADIR%%/script/stats-parse
 %%DATADIR%%/script/static-parse
+%%DATADIR%%/script/addform
+%%DATADIR%%/script/authform
+%%DATADIR%%/script/editform
+%%DATADIR%%/script/footer
+%%DATADIR%%/script/header
+%%DATADIR%%/script/if_edit
+%%DATADIR%%/script/if_table
+%%DATADIR%%/script/loadindex
+%%DATADIR%%/script/maketable
+%%DATADIR%%/script/nat_add
+%%DATADIR%%/script/nat_del
+%%DATADIR%%/script/nat_edit
+%%DATADIR%%/script/rt_add
+%%DATADIR%%/script/rt_del
+%%DATADIR%%/script/rt_edit
+%%DATADIR%%/script/rt_table
+%%DATADIR%%/script/shownat
+%%DATADIR%%/script/showrule
+%%DATADIR%%/script/stats
+%%DATADIR%%/script/addrule.content
+%%DATADIR%%/script/editrule.content
+%%DATADIR%%/script/writeconfig
 %%DATADIR%%/script/images/action_allow.png
 %%DATADIR%%/script/images/action_checkstate.png
 %%DATADIR%%/script/images/action_count.png
@@ -56,14 +88,22 @@ etc/netustad.conf-dist
 %%DATADIR%%/script/images/menu_login.png
 %%DATADIR%%/script/images/menu_logout.png
 %%DATADIR%%/script/images/menu_rulelist.png
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%DATADIR%%/cert/netustad.crt
+%%DATADIR%%/cert/netustad.csr
+%%DATADIR%%/cert/netustad.key
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/GPL-License
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
+@dirrm include/netustad
+@dirrm etc/netustad
+@dirrm share/locale/tr/LC_MESSAGES
 @dirrm %%DATADIR%%/script/images
 @dirrm %%DATADIR%%/script
+@dirrm %%DATADIR%%/cert
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
