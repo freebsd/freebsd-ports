@@ -1,0 +1,27 @@
+bin/iselect
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/chdir/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/chdir/dot.bashrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/gotourl/dot.gotourlrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/gotourl/dot.vimrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/gotourl/gotourl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ilogin/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/ilogin/dot.bashrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/ilogin/dot.ilogin
+%%PORTDOCS%%%%EXAMPLESDIR%%/ilogin/ilogin
+%%PORTDOCS%%%%EXAMPLESDIR%%/melm/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/melm/melm
+%%PORTDOCS%%%%EXAMPLESDIR%%/melm/xmelm
+%%PORTDOCS%%%%EXAMPLESDIR%%/mtin/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/mtin/mtin
+%%PORTDOCS%%%%EXAMPLESDIR%%/mtin/xmtin
+%%PORTDOCS%%%%EXAMPLESDIR%%/scvs/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/scvs/dot.scvsrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/scvs/scvs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/scvs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mtin
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/melm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ilogin
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gotourl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/chdir
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
