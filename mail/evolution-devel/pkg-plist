@@ -1,21 +1,25 @@
 bin/evolution
 bin/evolution-addressbook
 bin/evolution-calendar
+bin/evolution-executive-summary
 bin/evolution-mail
 bin/killev
 bin/load-gnomecard-addressbook
 bin/load-pine-addressbook
+bin/rdf-summary
+bin/test-service
 bin/wombat
 include/camel/broken-date-parser.h
 include/camel/camel-address.h
-include/camel/camel-charset-map-private.h
 include/camel/camel-charset-map.h
 include/camel/camel-data-wrapper.h
 include/camel/camel-exception-list.def
 include/camel/camel-exception.h
 include/camel/camel-folder-search.h
 include/camel/camel-folder-summary.h
+include/camel/camel-folder-thread.h
 include/camel/camel-folder.h
+include/camel/camel-imap-auth.h
 include/camel/camel-imap-command.h
 include/camel/camel-imap-folder.h
 include/camel/camel-imap-store.h
@@ -23,6 +27,13 @@ include/camel/camel-imap-stream.h
 include/camel/camel-imap-summary.h
 include/camel/camel-imap-utils.h
 include/camel/camel-internet-address.h
+include/camel/camel-local-folder.h
+include/camel/camel-local-store.h
+include/camel/camel-local-summary.h
+include/camel/camel-lock.h
+include/camel/camel-maildir-folder.h
+include/camel/camel-maildir-store.h
+include/camel/camel-maildir-summary.h
 include/camel/camel-mbox-folder.h
 include/camel/camel-mbox-store.h
 include/camel/camel-mbox-summary.h
@@ -31,6 +42,7 @@ include/camel/camel-mh-folder.h
 include/camel/camel-mh-store.h
 include/camel/camel-mh-summary.h
 include/camel/camel-mime-filter-basic.h
+include/camel/camel-mime-filter-bestenc.h
 include/camel/camel-mime-filter-charset.h
 include/camel/camel-mime-filter-crlf.h
 include/camel/camel-mime-filter-from.h
@@ -69,6 +81,7 @@ include/camel/camel-stream-buffer.h
 include/camel/camel-stream-filter.h
 include/camel/camel-stream-fs.h
 include/camel/camel-stream-mem.h
+include/camel/camel-stream-null.h
 include/camel/camel-stream.h
 include/camel/camel-transport.h
 include/camel/camel-types.h
@@ -80,11 +93,11 @@ include/camel/camel.h
 include/camel/gmime-content-field.h
 include/camel/gstring-util.h
 include/camel/hash-table-utils.h
-include/camel/md5-utils.h
 include/camel/string-utils.h
 include/ename/e-address-western.h
 include/ename/e-name-western-tables.h
 include/ename/e-name-western.h
+include/evolution/cal-client/cal-client-types.h
 include/evolution/cal-client/cal-client.h
 include/evolution/cal-util/cal-component.h
 include/evolution/cal-util/cal-recur.h
@@ -101,30 +114,15 @@ include/evolution/ebook/e-card-simple.h
 include/evolution/ebook/e-card-types.h
 include/evolution/ebook/e-card.h
 include/ical.h
-include/icalcalendar.h
-include/icalcomponent.h
-include/icalenums.h
-include/icalerror.h
-include/icalmemory.h
-include/icalmime.h
-include/icalparameter.h
-include/icalparser.h
-include/icalproperty.h
-include/icalrecur.h
-include/icalrestriction.h
-include/icalset.h
-include/icaltime.h
-include/icaltypes.h
-include/icalvalue.h
-include/icalversion.h
-include/pvl.h
-include/sspm.h
+include/libicalvcal/icalvcal.h
+include/libicalvcal/port.h
+include/libicalvcal/vcaltmp.h
+include/libicalvcal/vcc.h
+include/libicalvcal/vobject.h
 lib/evolution/camel-providers/%%VERSION%%/libcamelimap.so
 lib/evolution/camel-providers/%%VERSION%%/libcamelimap.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamelmh.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelmh.urls
+lib/evolution/camel-providers/%%VERSION%%/libcamellocal.so
+lib/evolution/camel-providers/%%VERSION%%/libcamellocal.urls
 lib/evolution/camel-providers/%%VERSION%%/libcamelnntp.so
 lib/evolution/camel-providers/%%VERSION%%/libcamelnntp.urls
 lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.so
@@ -153,9 +151,15 @@ lib/libename.so.0
 lib/libeselectnames.a
 lib/libeselectnames.so
 lib/libeselectnames.so.0
+lib/libevolution-services.a
+lib/libevolution-services.so
+lib/libevolution-services.so.0
 lib/libical.a
-lib/libicalss.a
+lib/libical.so
+lib/libical.so.0
 lib/libicalvcal.a
+lib/libicalvcal.so
+lib/libicalvcal.so.0
 share/gnome/apps/Applications/evolution.desktop
 share/gnome/evolution/addresstypes.xml
 share/gnome/evolution/arrow.png
@@ -163,6 +167,7 @@ share/gnome/evolution/default_user/ldapservers.xml
 share/gnome/evolution/default_user/local/Calendar/folder-metadata.xml
 share/gnome/evolution/default_user/local/Contacts/folder-metadata.xml
 share/gnome/evolution/default_user/local/Drafts/folder-metadata.xml
+share/gnome/evolution/default_user/local/Executive-Summary/folder-metadata.xml
 share/gnome/evolution/default_user/local/Inbox/folder-metadata.xml
 share/gnome/evolution/default_user/local/Inbox/mbox
 share/gnome/evolution/default_user/local/Outbox/folder-metadata.xml
@@ -182,10 +187,10 @@ share/gnome/evolution/glade/e-contact-editor-confirm-delete.glade
 share/gnome/evolution/glade/e-contact-print.glade
 share/gnome/evolution/glade/e-itip-control.glade
 share/gnome/evolution/glade/e-meeting-dialog.glade
-share/gnome/evolution/glade/e-msg-composer-address-dialog.glade
 share/gnome/evolution/glade/e-msg-composer-attachment.glade
 share/gnome/evolution/glade/e-shell-folder-creation-dialog.glade
 share/gnome/evolution/glade/event-editor-dialog.glade
+share/gnome/evolution/glade/executive-summary-config.glade
 share/gnome/evolution/glade/filter.glade
 share/gnome/evolution/glade/fulladdr.glade
 share/gnome/evolution/glade/fullname.glade
@@ -195,6 +200,7 @@ share/gnome/evolution/glade/mail-config-druid.glade
 share/gnome/evolution/glade/mail-config.glade
 share/gnome/evolution/glade/select-names.glade
 share/gnome/evolution/glade/task-editor-dialog.glade
+share/gnome/evolution/summary.html
 share/gnome/evolution/vfoldertypes.xml
 share/gnome/help/evolution/C/aboutbook.html
 share/gnome/help/evolution/C/apx-gloss.html
@@ -225,13 +231,14 @@ share/gnome/help/evolution/C/fig/print-preview.png
 share/gnome/help/evolution/C/fig/vfolder-createrule-fig.png
 share/gnome/help/evolution/C/index.html
 share/gnome/help/evolution/C/introduction.html
+share/gnome/help/evolution/C/ln15.html
 share/gnome/help/evolution/C/menuref-cal-editor.html
 share/gnome/help/evolution/C/menuref-cal.html
 share/gnome/help/evolution/C/menuref-contact-editor.html
 share/gnome/help/evolution/C/menuref-mail-editor.html
 share/gnome/help/evolution/C/menuref-mail.html
 share/gnome/help/evolution/C/menuref.html
-share/gnome/help/evolution/C/p1924.html
+share/gnome/help/evolution/C/p2007.html
 share/gnome/help/evolution/C/print-destination.html
 share/gnome/help/evolution/C/stylesheet-images/caution.gif
 share/gnome/help/evolution/C/stylesheet-images/home.gif
@@ -262,7 +269,7 @@ share/gnome/help/evolution/C/usage-mainwindow.html
 share/gnome/help/evolution/C/usage-print.html
 share/gnome/help/evolution/C/usage-sync.html
 share/gnome/help/evolution/C/usage.html
-share/gnome/help/evolution/C/x2644.html
+share/gnome/help/evolution/C/x2828.html
 share/gnome/html/evolution-cal-client-decl.txt
 share/gnome/html/evolution-cal-client-sections.txt
 share/gnome/html/evolution-cal-client.hierarchy
@@ -271,9 +278,45 @@ share/gnome/html/evolution-cal-util-decl.txt
 share/gnome/html/evolution-cal-util-sections.txt
 share/gnome/html/evolution-cal-util.hierarchy
 share/gnome/html/evolution-cal-util.types
+share/gnome/html/evolution-devel-guide/calclient.html
+share/gnome/html/evolution-devel-guide/calcomponent.html
+share/gnome/html/evolution-devel-guide/calendar-architecture.html
+share/gnome/html/evolution-devel-guide/calendar-public-reference.html
+share/gnome/html/evolution-devel-guide/evolution-api-reference.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-recur.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-util.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-timeutil.html
+share/gnome/html/evolution-devel-guide/evolution-calendar.html
+share/gnome/html/evolution-devel-guide/fdl-section1.html
+share/gnome/html/evolution-devel-guide/fdl-section10.html
+share/gnome/html/evolution-devel-guide/fdl-section2.html
+share/gnome/html/evolution-devel-guide/fdl-section3.html
+share/gnome/html/evolution-devel-guide/fdl-section4.html
+share/gnome/html/evolution-devel-guide/fdl-section5.html
+share/gnome/html/evolution-devel-guide/fdl-section6.html
+share/gnome/html/evolution-devel-guide/fdl-section7.html
+share/gnome/html/evolution-devel-guide/fdl-section8.html
+share/gnome/html/evolution-devel-guide/fdl-section9.html
+share/gnome/html/evolution-devel-guide/fdl-using.html
+share/gnome/html/evolution-devel-guide/fdl.html
+share/gnome/html/evolution-devel-guide/index.html
+share/gnome/html/evolution-devel-guide/introduction.html
+share/gnome/html/evolution-devel-guide/x122.html
+share/gnome/html/evolution-devel-guide/x131.html
+share/gnome/html/evolution-devel-guide/x99.html
+share/gnome/idl/Evolution-LocalStorage.idl
+share/gnome/idl/Evolution-Session.idl
+share/gnome/idl/Evolution-Shell.idl
+share/gnome/idl/Evolution-ShellComponent.idl
+share/gnome/idl/Evolution-ShellView.idl
+share/gnome/idl/Evolution-Storage.idl
+share/gnome/idl/Evolution-StorageSetView.idl
+share/gnome/idl/Evolution.idl
 share/gnome/idl/addressbook.idl
 share/gnome/idl/evolution-calendar.idl
 share/gnome/images/evolution/briefcase.png
+share/gnome/images/evolution/butterfly.png
+share/gnome/images/evolution/buttons/add-service.png
 share/gnome/images/evolution/buttons/compose-message.png
 share/gnome/images/evolution/buttons/copy-message.png
 share/gnome/images/evolution/buttons/fetch-mail.png
@@ -294,29 +337,50 @@ share/gnome/images/evolution/evolution-notes.png
 share/gnome/images/evolution/evolution-tasks-mini.png
 share/gnome/images/evolution/evolution-tasks.png
 share/gnome/images/evolution/evolution-today.png
+share/gnome/images/evolution/executive-summary-bg.png
+share/gnome/images/evolution/executive-summary-curve.png
 share/gnome/images/evolution/globe.png
 share/gnome/images/evolution/house.png
 share/gnome/images/evolution/malehead.png
+share/gnome/images/evolution/service-close.png
+share/gnome/images/evolution/service-configure.png
+share/gnome/images/evolution/service-down-disabled.png
+share/gnome/images/evolution/service-down.png
+share/gnome/images/evolution/service-left-disabled.png
+share/gnome/images/evolution/service-left.png
+share/gnome/images/evolution/service-right-disabled.png
+share/gnome/images/evolution/service-right.png
+share/gnome/images/evolution/service-up-disabled.png
+share/gnome/images/evolution/service-up.png
 share/gnome/images/evolution/splash.png
 share/gnome/mime-info/evolution.keys
-share/gnome/oaf/addressbook.oafinfo
-share/gnome/oaf/calendar-control.oafinfo
-share/gnome/oaf/evolution-addressbook-select-names.oafinfo
-share/gnome/oaf/evolution-calendar.oafinfo
-share/gnome/oaf/evolution-mail.oafinfo
-share/gnome/oaf/wombat.oafinfo
+share/gnome/oaf/GNOME_Evolution_Addressbook.oafinfo
+share/gnome/oaf/GNOME_Evolution_Addressbook_SelectNames.oafinfo
+share/gnome/oaf/GNOME_Evolution_Calendar.oafinfo
+share/gnome/oaf/GNOME_Evolution_Calendar_Control.oafinfo
+share/gnome/oaf/GNOME_Evolution_Mail.oafinfo
+share/gnome/oaf/GNOME_Evolution_Shell.oafinfo
+share/gnome/oaf/GNOME_Evolution_Summary.oafinfo
+share/gnome/oaf/GNOME_Evolution_Summary_rdf.oafinfo
+share/gnome/oaf/GNOME_Evolution_Summary_test.oafinfo
+share/gnome/oaf/GNOME_Evolution_Wombat.oafinfo
 share/gnome/pixmaps/evolution.png
 share/gnome/ui/evolution-addressbook-ldap.xml
 share/gnome/ui/evolution-addressbook.xml
 share/gnome/ui/evolution-calendar.xml
 share/gnome/ui/evolution-contact-editor.xml
+share/gnome/ui/evolution-event-editor.xml
 share/gnome/ui/evolution-executive-summary.xml
 share/gnome/ui/evolution-mail.xml
+share/gnome/ui/evolution-message-composer.xml
 share/gnome/ui/evolution-subscribe.xml
+share/gnome/ui/evolution-task-editor-dialog.xml
 share/gnome/ui/evolution.xml
+share/locale/ca/LC_MESSAGES/evolution.mo
 share/locale/da/LC_MESSAGES/evolution.mo
 share/locale/de/LC_MESSAGES/evolution.mo
 share/locale/el/LC_MESSAGES/evolution.mo
+share/locale/en_GB/LC_MESSAGES/evolution.mo
 share/locale/es/LC_MESSAGES/evolution.mo
 share/locale/fi/LC_MESSAGES/evolution.mo
 share/locale/fr/LC_MESSAGES/evolution.mo
@@ -326,6 +390,7 @@ share/locale/hu/LC_MESSAGES/evolution.mo
 share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
+share/locale/lt/LC_MESSAGES/evolution.mo
 share/locale/nl/LC_MESSAGES/evolution.mo
 share/locale/nn/LC_MESSAGES/evolution.mo
 share/locale/no/LC_MESSAGES/evolution.mo
@@ -339,6 +404,7 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/images/evolution/buttons
 @dirrm share/gnome/images/evolution
 @dirrm share/gnome/images
+@dirrm share/gnome/html/evolution-devel-guide/
 @dirrm share/gnome/help/evolution/C/stylesheet-images
 @dirrm share/gnome/help/evolution/C/fig
 @dirrm share/gnome/help/evolution/C
@@ -350,6 +416,7 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution/default_user/local/Sent
 @dirrm share/gnome/evolution/default_user/local/Outbox
 @dirrm share/gnome/evolution/default_user/local/Inbox
+@dirrm share/gnome/evolution/default_user/local/Executive-Summary
 @dirrm share/gnome/evolution/default_user/local/Drafts
 @dirrm share/gnome/evolution/default_user/local/Contacts
 @dirrm share/gnome/evolution/default_user/local/Calendar
