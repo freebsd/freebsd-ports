@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	eugos@gmx.net
 COMMENT=	A Qt-based Jabber client
 
 HAS_CONFIGURE=	yes
@@ -24,5 +24,8 @@ CONFIGURE_ENV=	QTDIR=${X11BASE} \
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/psi
 
 .include <bsd.port.mk>
