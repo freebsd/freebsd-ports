@@ -18,24 +18,3 @@
    ;
    return 0;
  }
-@@ -3814,13 +3814,13 @@
- echo "${ECHO_T}$ac_cv_header_openssl_sha_h" >&6
- 
- fi
--if test $ac_cv_header_openssl_sha_h = yes; then
--  :
--else
--  { { echo "$as_me:$LINENO: error: Error, OpenSSL header file sha.h not found." >&5
--echo "$as_me: error: Error, OpenSSL header file sha.h not found." >&2;}
--   { (exit 1); exit 1; }; }
--fi
-+#if test $ac_cv_header_openssl_sha_h = yes; then
-+#  :
-+#else
-+#  { { echo "$as_me:$LINENO: error: Error, OpenSSL header file sha.h not found." >&5
-+#echo "$as_me: error: Error, OpenSSL header file sha.h not found." >&2;}
-+#   { (exit 1); exit 1; }; }
-+#fi
- 
- 
- 
