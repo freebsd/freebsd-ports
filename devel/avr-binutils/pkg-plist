@@ -111,6 +111,7 @@ info/ld.info-6
 @exec install-info %D/info/as.info %D/info/dir
 @exec install-info %D/info/binutils.info %D/info/dir
 @exec install-info %D/info/ld.info %D/info/dir
+share/locale/da/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
 share/locale/es/LC_MESSAGES/ld.mo
