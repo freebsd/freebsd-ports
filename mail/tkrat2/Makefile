@@ -8,10 +8,7 @@
 PORTNAME=	tkrat
 PORTVERSION=	2.1
 CATEGORIES=	mail tk83
-MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/ \
-		ftp://ftp.md.chalmers.se/pub/tkrat/ \
-		ftp://ftp.sunet.se/pub/unix/mail/tkrat/ \
-		http://www.tkrat.org/downloads/stable/
+MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail user agent for X with a Tcl/Tk user interface
