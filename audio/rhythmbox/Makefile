@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -32,8 +32,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
 LIB_DEPENDS+=		xine.9:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
 .else
-#USE_GNOME+=		gstreamerplugins
-LIB_DEPENDS+=		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
+USE_GNOME+=		gstreamerplugins
 .endif
 
 .include <bsd.port.pre.mk>
