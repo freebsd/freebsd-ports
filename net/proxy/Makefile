@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	proxy
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net
-DISTNAME=	canonware-1.1.0
+DISTNAME=	canonware-1.2.0
 MASTER_SITES=	http://www.canonware.com/download/canonware/
 
 MAINTAINER=	jasone@FreeBSD.org
