@@ -1,6 +1,6 @@
---- configure.orig	Wed Mar  1 23:41:56 2000
-+++ configure	Wed Mar  1 23:42:08 2000
-@@ -2348,7 +2348,7 @@
+--- configure.orig	Tue Feb  1 07:51:56 2000
++++ configure	Sat Mar 25 21:24:22 2000
+@@ -2348,10 +2348,10 @@
  CFLAGS="$CFLAGS -I/usr/local/include -I/opt/include" 
  
  EB_CFLAGS="$CFLAGS -I../"
@@ -8,4 +8,8 @@
 +EB_LIBS="$LIBS -L../libicq -licq -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -pthread"
  EB_LDADD="$LDADD"
  
- EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "
+-EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "
++EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall"
+ # Check whether --with-esd-prefix or --without-esd-prefix was given.
+ if test "${with_esd_prefix+set}" = set; then
+   withval="$with_esd_prefix"
