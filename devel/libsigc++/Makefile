@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libsigc++
-DIST_SUBDIR=	gnome
+#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 

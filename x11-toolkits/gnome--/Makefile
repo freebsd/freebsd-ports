@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnomemm
-DIST_SUBDIR=	gnome
+#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.lysator.liu.se/~astrand/projects/xalf/old/
 MASTER_SITE_SUBDIR=	stable/sources/xalf
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	gnome
+#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
