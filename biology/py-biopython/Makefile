@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.23
+PORTVERSION=	1.30
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,26 +16,16 @@ COMMENT=	A collection of Python modules for bioinformatics
 
 CONFLICTS=	py*-martel-*
 
-BROKEN=		"Does not build"
-
-BUILD_DEPENDS=	${PYDISTUTILS}
-RUN_DEPENDS=	${PYNUMERIC} \
+BUILD_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5_BUILD=yes
-USE_PYTHON=	2.0+
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-CPIO=		cpio --quiet -pdum -R
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+USE_PYTHON=	2.2+
+USE_PYDISTUTILS=yes
 
 .if !defined(WITHOUT_REPORTLAB)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
 .endif
-
-do-build:
-	(cd ${WRKSRC} && ${PYTHON_SETUP} build)
-
-do-install:
-	(cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX})
 
 .include <bsd.port.mk>
