@@ -1,5 +1,5 @@
---- uds/packetsocket.cc.orig	Wed May  9 15:24:10 2001
-+++ uds/packetsocket.cc	Thu May 10 19:52:41 2001
+--- uds/packetsocket.cc.orig	Thu Sep  5 02:36:31 2002
++++ uds/packetsocket.cc	Thu Sep  5 02:37:03 2002
 @@ -22,6 +22,7 @@
  
  // includes
@@ -14,6 +14,6 @@
  
 -	hostent* he = gethostbyaddr( &si.sin_addr, sizeof( si.sin_addr ), AF_INET );
 +	hostent* he = gethostbyaddr( (const char *)&si.sin_addr, sizeof( si.sin_addr ), AF_INET );
- 	clog<<he<<endl;
  	
  	if ( he )
+ 	{
