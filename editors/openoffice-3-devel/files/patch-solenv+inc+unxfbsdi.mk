@@ -1,12 +1,12 @@
 --- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Sat Mar  9 23:28:50 2002
-@@ -1,84 +1,145 @@
++++ ../solenv/inc/unxfbsdi.mk	Wed May 29 14:32:50 2002
+@@ -1,84 +1,148 @@
 -
  # mak file fuer unxfbsdi
  
 -ASM=
 -AFLAGS=
-+ASM=gcc
++ASM=$(CC)
 +AFLAGS=-x assembler-with-cpp -c $(CDEFS)
  
  SOLAR_JAVA=TRUE
@@ -16,12 +16,6 @@
 +# not needed at the moment
  LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
  
-+# name of C Compiler
-+cc=gcc
-+
-+# name of C++ Compiler
-+CC=g++
-+
 +# options for C and C++ Compiler
 +CDEFS+=-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400 -DOSVERSION=$(OSVERSION)
 +CDEFS+=$(PTHREAD_CFLAGS)
@@ -57,6 +51,14 @@
 +# Compiler flags for compiling static object in single threaded
 +# environment with character user interface
 +CFLAGSOBJCUIST=-fPIC
++
++# Compiler flags for compiling static object in multi threaded
++# environment with graphical user interface
++CFLAGSOBJGUIMT=-fPIC
++
++# Compiler flags for compiling static object in multi threaded
++# environment with character user interface
++CFLAGSOBJCUIMT=-fPIC
  
 -cc=				gcc
 -CC=				g++
@@ -76,14 +78,6 @@
 -CFLAGSSLOCUIMT=	-fPIC
 -CFLAGSPROF=     -pg
 -CFLAGSDEBUG=	-g
-+# Compiler flags for compiling static object in multi threaded
-+# environment with graphical user interface
-+CFLAGSOBJGUIMT=-fPIC
-+
-+# Compiler flags for compiling static object in multi threaded
-+# environment with character user interface
-+CFLAGSOBJCUIMT=-fPIC
-+
 +# Compiler flags for compiling shared object in multi threaded
 +# environment with graphical user interface
 +CFLAGSSLOGUIMT=-fPIC
@@ -124,7 +118,7 @@
 +STATIC=-Wl,-Bstatic
 +DYNAMIC=-Wl,-Bdynamic
 +
-+LINK=gcc
++LINK=$(CC)
  LINKFLAGS=
 +
 +# linker flags for linking applications
@@ -172,6 +166,15 @@
 +# STLport always needs pthread.
 +LIBSTLPORT=$(DYNAMIC) -lstlport_gcc $(PTHREAD_LIBS)
 +LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
++
++.IF "$(CVER)"=="C300"
++STDLIBGUIMT+= -lsupc++
++STDLIBCUIMT+= -lsupc++
++STDSHLGUIMT+= -lsupc++
++STDSHLCUIMT+= -lsupc++
++LIBSTLPORT+= -lsupc++
++LIBSTLPORTST+= -lsupc++
++.ENDIF
  
 +# default objectfilenames to lin
  STDOBJGUI=
@@ -195,7 +198,7 @@
  
  IMPLIB=
  IMPLIBFLAGS=
-@@ -87,12 +148,12 @@
+@@ -87,12 +151,12 @@
  MAPSYMFLAGS=
  
  RC=irc
