@@ -7,13 +7,14 @@
 
 PORTNAME=	NeTraMet
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.auckland.ac.nz/pub/iawg/NeTraMet/ \
 		http://www2.auckland.ac.nz/net/Accounting/
 DISTFILES+=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX} \
 		${NETRAMET_DOCS}
-EXTRACT_ONLY=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX}
 DIST_SUBDIR=	netramet
+EXTRACT_ONLY=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Implementation of the Internet Accounting Architecture
@@ -39,9 +40,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${NETRAMET_DOCS}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} ${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>
