@@ -1,6 +1,15 @@
---- conduits/backup/Makefile.in.orig	Wed Apr 19 05:36:22 2000
-+++ conduits/backup/Makefile.in	Fri Apr 21 11:22:12 2000
-@@ -188,7 +188,7 @@
+--- conduits/backup/Makefile.in.orig	Wed May 10 00:03:11 2000
++++ conduits/backup/Makefile.in	Tue May 16 16:47:08 2000
+@@ -176,7 +176,7 @@
+ ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ ccenterConduits_DATA = backup-conduit-control-applet.desktop
+ 
+-paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
++paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
+ panel_DATA = $(ccenterConduits_DATA)
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
@@ -9,9 +18,18 @@
  libbackup_conduit_la_DEPENDENCIES = 
  libbackup_conduit_la_OBJECTS =  backup_conduit.lo
  PROGRAMS =  $(bin_PROGRAMS)
---- conduits/email/Makefile.in.orig	Wed Apr 19 05:36:26 2000
-+++ conduits/email/Makefile.in	Fri Apr 21 11:23:14 2000
-@@ -188,7 +188,7 @@
+--- conduits/email/Makefile.in.orig	Wed May 10 00:03:11 2000
++++ conduits/email/Makefile.in	Tue May 16 16:47:11 2000
+@@ -176,7 +176,7 @@
+ ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ ccenterConduits_DATA = email-conduit-control-applet.desktop
+ 
+-paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
++paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
+ panel_DATA = $(ccenterConduits_DATA)
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
@@ -20,9 +38,18 @@
  libemail_conduit_la_DEPENDENCIES = 
  libemail_conduit_la_OBJECTS =  email_conduit.lo parsedate.lo
  PROGRAMS =  $(bin_PROGRAMS)
---- conduits/expense/Makefile.in.orig	Wed Apr 19 05:36:33 2000
-+++ conduits/expense/Makefile.in	Fri Apr 21 11:23:26 2000
-@@ -188,7 +188,7 @@
+--- conduits/expense/Makefile.in.orig	Wed May 10 00:03:13 2000
++++ conduits/expense/Makefile.in	Tue May 16 16:47:14 2000
+@@ -176,7 +176,7 @@
+ ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ ccenterConduits_DATA = expense-conduit-control-applet.desktop
+ 
+-paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
++paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
+ panel_DATA = $(ccenterConduits_DATA)
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
@@ -31,9 +58,18 @@
  libexpense_conduit_la_DEPENDENCIES = 
  libexpense_conduit_la_OBJECTS =  expense_conduit.lo
  PROGRAMS =  $(bin_PROGRAMS)
---- conduits/file/Makefile.in.orig	Wed Apr 19 05:36:18 2000
-+++ conduits/file/Makefile.in	Fri Apr 21 11:23:36 2000
-@@ -198,7 +198,7 @@
+--- conduits/file/Makefile.in.orig	Wed May 10 00:03:10 2000
++++ conduits/file/Makefile.in	Tue May 16 16:47:17 2000
+@@ -181,7 +181,7 @@
+ ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ ccenterConduits_DATA = file-conduit-control-applet.desktop
+ 
+-paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
++paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
+ panel_DATA = $(ccenterConduits_DATA)
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -202,7 +202,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
@@ -42,9 +78,18 @@
  libfile_conduit_la_DEPENDENCIES = 
  libfile_conduit_la_OBJECTS =  file_conduit.lo
  PROGRAMS =  $(bin_PROGRAMS)
---- conduits/memo_file/Makefile.in.orig	Wed Apr 19 05:36:29 2000
-+++ conduits/memo_file/Makefile.in	Fri Apr 21 11:23:50 2000
-@@ -188,7 +188,7 @@
+--- conduits/memo_file/Makefile.in.orig	Wed May 10 00:03:12 2000
++++ conduits/memo_file/Makefile.in	Tue May 16 16:47:20 2000
+@@ -176,7 +176,7 @@
+ ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ ccenterConduits_DATA = memo_file_capplet.desktop
+ 
+-paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
++paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
+ panel_DATA = $(ccenterConduits_DATA)
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
