@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	airport
-PORTVERSION=	1.5.2
+PORTVERSION=	2.0
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
 DISTFILES=	configurator_${PORTVERSION:S/.//g}${EXTRACT_SUFX} \
@@ -16,23 +16,19 @@ DISTFILES=	configurator_${PORTVERSION:S/.//g}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@freebsd.org
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc \
-		${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 EXTRACT_BEFORE_ARGS=	-q -o
 
 USE_ZIP=	YES
+USE_JAVA=	1.2+
 
 NO_WRKSUBDIR=	YES
+NO_BUILD=	yes
 
-JDK_VERSION=	1.1.8
-JFC_VERSION=	1.1.1
 LINKMONVERSION=	1.1
 HOSTMONVERSION=	1.0
-MODEMVERSION=	1.4
-
-NO_BUILD=	yes
+MODEMVERSION=	2.0
 
 .include <bsd.port.pre.mk>
 
@@ -42,14 +38,12 @@ do-install:
 		${MKDIR} ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/configurator_${PORTVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
+		${INSTALL_DATA} ${WRKSRC}/airportmodemutility_${PORTVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
 		${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
-		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/airport; \
 		${INSTALL_DATA} ${WRKSRC}/configurator_${PORTVERSION:S/.//g}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
 		${SED} \
 			-e s,%%PREFIX%%,${PREFIX},g \
-			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
-			-e s/%%JDK_VERSION%%/${JDK_VERSION}/ \
 			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/hostmon
