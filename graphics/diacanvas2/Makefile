@@ -29,6 +29,12 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 CONFIGURE_ENV+=	DISPLAY=localhost:1001
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|unit_tests doc|unit_tests|g' ${WRKSRC}/Makefile.in
@@ -59,4 +65,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ref/html/*.png ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
