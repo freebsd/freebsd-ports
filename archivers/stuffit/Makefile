@@ -18,7 +18,7 @@ COMMENT=	Stuffit Archive Creator and Expander
 NO_CDROM=	Shareware -- should not redistribute
 NO_PACKAGE=	Only unmodified original package can be distributed
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
 STRIP=		# empty: do not strip linux binary during INSTALL_PROGRAM
