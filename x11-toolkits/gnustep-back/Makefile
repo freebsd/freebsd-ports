@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
-RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
+BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui-devel
+RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui-devel
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
