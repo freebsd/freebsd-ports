@@ -19,7 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp/navi2ch
 
 DOCDIR=		share/doc/ja/navi2ch
-PLIST_SUB?=	XEMACS="@comment "
+.if ${EMACS_PORT_NAME} == emacs20
+PLIST_SUB=	XEMACS="@comment "
+.elif ${EMACS_PORT_NAME} == xemacs21-mule
+PLIST_SUB=	XEMACS=""
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
