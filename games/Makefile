@@ -20,6 +20,7 @@
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += amphetamine
+    SUBDIR += amy
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += antipolix
