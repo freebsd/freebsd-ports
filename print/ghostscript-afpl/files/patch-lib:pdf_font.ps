@@ -1,14 +1,14 @@
---- lib/pdf_font.ps.orig	Fri Oct 24 02:45:33 2003
-+++ lib/pdf_font.ps	Thu Dec 18 23:11:07 2003
-@@ -1113,10 +1113,12 @@
+--- lib/pdf_font.ps.orig	Mon Aug 30 21:03:30 2004
++++ lib/pdf_font.ps	Wed Dec 29 17:17:19 2004
+@@ -1114,10 +1114,12 @@
  
  /buildCIDType0 {	% <CIDFontType0-font-resource> buildCIDType0 <font>
-   dup /BaseFont get exch 1 index findCIDFont
+   dup /BaseFont get findCIDFont exch pop
 +  addCIDmetrics /CIDFont defineresource
  } bdef
  
  /buildCIDType2 {	% <CIDFontType2-font-resource> buildCIDType2 <font>
-   dup /BaseFont get exch 1 index findCIDFont
+   dup /BaseFont get findCIDFont exch pop
 +  addCIDmetrics /CIDFont defineresource
  } bdef
  
