@@ -7,6 +7,7 @@
 
 PORTNAME=	fd
 PORTVERSION=	2.04c
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
