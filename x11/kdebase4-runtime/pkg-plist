@@ -1163,7 +1163,6 @@ share/locale/en_UK/LC_MESSAGES/kcmsyssound.mo
 share/locale/en_UK/LC_MESSAGES/kdehelp.mo
 share/locale/en_UK/LC_MESSAGES/kdisplay.mo
 share/locale/en_UK/LC_MESSAGES/kdmconfig.mo
-share/locale/en_UK/LC_MESSAGES/kfm.mo
 share/locale/en_UK/LC_MESSAGES/klock.mo
 share/locale/en_UK/LC_MESSAGES/kvt.mo
 share/locale/en_UK/LC_MESSAGES/kwm.mo
@@ -1408,7 +1407,6 @@ share/locale/ko/LC_MESSAGES/klock.mo
 share/locale/ko/LC_MESSAGES/kmenuedit.mo
 share/locale/ko/LC_MESSAGES/kpanel.mo
 share/locale/ko/LC_MESSAGES/krootwm.mo
-share/locale/ko/LC_MESSAGES/kstart.mo
 share/locale/ko/LC_MESSAGES/kvt.mo
 share/locale/ko/LC_MESSAGES/kwm.mo
 share/locale/mk/LC_MESSAGES/kdehelp.mo
@@ -1438,7 +1436,6 @@ share/locale/nl/LC_MESSAGES/klock.mo
 share/locale/nl/LC_MESSAGES/kmenuedit.mo
 share/locale/nl/LC_MESSAGES/kpanel.mo
 share/locale/nl/LC_MESSAGES/krootwm.mo
-share/locale/nl/LC_MESSAGES/kstart.mo
 share/locale/nl/LC_MESSAGES/kvt.mo
 share/locale/nl/LC_MESSAGES/kwm.mo
 share/locale/no/LC_MESSAGES/kbgndwm.mo
@@ -1638,7 +1635,6 @@ share/locale/sl/LC_MESSAGES/kfm.mo
 share/locale/sl/LC_MESSAGES/kfontmanager.mo
 share/locale/sl/LC_MESSAGES/kpanel.mo
 share/locale/sl/LC_MESSAGES/krootwm.mo
-share/locale/sl/LC_MESSAGES/kstart.mo
 share/locale/sl/LC_MESSAGES/kwm.mo
 share/locale/sv/LC_MESSAGES/kbgndwm.mo
 share/locale/sv/LC_MESSAGES/kcmbell.mo
@@ -1739,7 +1735,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/klock.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kpanel.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krootwm.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/kstart.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kvt.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kwm.mo
 share/mimelnk/application/gzip.kdelnk
