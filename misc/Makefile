@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.116 1997/10/11 04:14:17 obrien Exp $
+# $Id: Makefile,v 1.117 1997/10/13 04:41:07 max Exp $
 #
 
     SUBDIR += amanda
@@ -20,6 +20,7 @@
     SUBDIR += gnuls
     SUBDIR += ical
     SUBDIR += jive
+    SUBDIR += kdeutils
     SUBDIR += kp
     SUBDIR += less
     SUBDIR += lile

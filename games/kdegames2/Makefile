@@ -3,11 +3,12 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/02 11:29:32 se Exp $
+# $Id: Makefile,v 1.2 1997/11/03 00:25:43 se Exp $
 #
 
 DISTNAME=	kdegames-Beta1-2
-CATEGORIES=	x11
+PKGNAME=	kdegames-1.2b
+CATEGORIES=	games kde
 MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta1/distribution/tgz/source/ \
  		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta1/distribution/tgz/source/ \
  		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta1/distribution/tgz/source/
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	se@freebsd.org
 
-BUILD_DEPENDS=	${X11BASE}/bin/moc:${PORTSDIR}/x11/qt
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.[67]\\.:${PORTSDIR}/graphics/jpeg \
