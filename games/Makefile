@@ -323,6 +323,7 @@
     SUBDIR += ptkei
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
+    SUBDIR += py-ski
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
