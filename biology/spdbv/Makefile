@@ -6,27 +6,29 @@
 #
 
 PORTNAME=	spdbv
-PORTVERSION=	37b2
+PORTVERSION=	3.7
 CATEGORIES=	biology
 MASTER_SITES=	http://au.expasy.org/spdbv/program/ \
-				http://www.expasy.org/spdbv/program/ \
-				http://tw.expasy.org/spdbv/program/ \
-				http://cn.expasy.org/spdbv/program/ \
-				http://ca.expasy.org/spdbv/program/ \
-				http://kr.expasy.org/spdbv/program/ \
-				http://inn-prot.weizmann.ac.il/spdbv/program/\
-				http://www.usm.maine.edu/spdbv/program/ \
-				http://www.genebee.msu.ru/spdbv/program/
-DISTNAME=	${PORTNAME}${PORTVERSION}_IRIX_Linux
+		http://www.expasy.org/spdbv/program/ \
+		http://tw.expasy.org/spdbv/program/ \
+		http://cn.expasy.org/spdbv/program/ \
+		http://ca.expasy.org/spdbv/program/ \
+		http://kr.expasy.org/spdbv/program/ \
+		http://inn-prot.weizmann.ac.il/spdbv/program/\
+		http://www.usm.maine.edu/spdbv/program/ \
+		http://www.genebee.msu.ru/spdbv/program/
+DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-Linux
 
 MAINTAINER=	chuynh@biolateral.com.au
 
-RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linux_mesa3
+RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linux_mesa3 \
+		${LINUXBASE}${X11BASE}/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 SPDBV=	SPDBV
 
 WRKSRC=		${WRKDIR}/SPDBV_DISTRIBUTION
 
+USE_LINUX=	yes
 NO_BUILD=	yes
 NO_CDROM=	"Must be downloaded direct from Expasy via www interface"
 

@@ -1,7 +1,7 @@
---- install.sh.orig	Mon Dec  4 21:31:45 2000
-+++ install.sh	Thu Dec 20 10:15:42 2001
+--- install.sh.orig	Tue Nov  5 13:55:58 2002
++++ install.sh	Tue Nov  5 14:02:10 2002
 @@ -7,10 +7,9 @@
- SPDBVNEEDOSbis="Linux"
+ SPDBVNEEDOS="Linux"
  
  SPDBVUSERDIR="$HOME"
 -SPDBVSHAREDIR="/usr/share"
@@ -30,27 +30,27 @@
 -        else
 -            abort
 -        fi
-+        echo " "
-+        echo "will reinstall"
++		echo " "
++		echo "will reinstall"
      fi
      mkdir $SPDBVDEST/$SPDBVDIR #2> /dev/null
      if [ ! -d $SPDBVDEST/$SPDBVDIR ]; then
-@@ -64,11 +51,11 @@
-     chmod ugo+rx $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh
+@@ -63,11 +50,11 @@
+     chmod ugo+rx $SPDBVDEST/$SPDBVDIR/bin/spdbv
  
-     #try to make link from /usr/bin/spdbv to ./spdbv.sh
+     #try to make link from /usr/bin/spdbv to ./spdbv
 -    if [ ! -w /usr/bin/ ]; then
 +    if [ ! -w ${SPDBVDEST}/bin/ ]; then
         echo " "
--       echo "Can't make a link from /usr/bin/spdbv to spdbv.sh"
-+       echo "Can't make a link from ${SPDBVDEST}/bin/spdbv to spdbv.sh"
+-       echo "Can't make a link from /usr/bin/spdbv to $SPDBVDEST/$SPDBVDIR/bin/spdbv"
++       echo "Can't make a link from ${SPDBVDEST}/bin/spdbv to $SPDBVDEST/$SPDBVDIR/bin/spdbv"
      else
--       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh /usr/bin/spdbv
-+       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh ${SPDBVDEST}/bin/spdbv
+-       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv /usr/bin/spdbv
++       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv ${SPDBVDEST}/bin/spdbv
      fi
  }
  
-@@ -82,65 +69,18 @@
+@@ -81,65 +68,18 @@
     echo " Installation script for Release $SPDBVVERSION ($SPDBVNEEDOS)"
     echo " " 
     echo " " 
@@ -99,7 +99,7 @@
     echo " Installation script for Release $SPDBVVERSION ($SPDBVNEEDOS)"
     echo " "
     echo "Installation completed."
--   echo "Start your copy of SPDBV with the script $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh"
+-   echo "Start your copy of SPDBV with the script $SPDBVDEST/$SPDBVDIR/bin/spdbv"
     echo ""
     echo "ENJOY SPDBV!"
     exit
