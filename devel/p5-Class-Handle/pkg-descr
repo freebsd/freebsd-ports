@@ -1,0 +1,11 @@
+Class related functionality in Perl is broken up into a variety of
+different modules.  Class::Handle attempts to provide a convenient
+object wrapper around the various different types of functions that can
+be performed on a class.
+
+Currently, Class::Handle provies what is effectively a combined API from
+UNIVERSAL, Class::ISA and Class::Inspector for obtaining information
+about a Class, and some additional task methods, such as load to common
+tasks relating to classes.
+
+WWW: http://search.cpan.org/dist/Class-Handle/
