@@ -1,0 +1,5 @@
+--- Makefile	Sun Dec 31 11:22:34 1995
++++ Makefile	Sun Jan 21 11:54:00 2001
+@@ -75 +75 @@
+-	bdftopcf -t $< | compress > $@
++	bdftopcf -t $< | gzip -9 > $@
