@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	Tue Feb 17 16:43:20 2004
++++ src/Makefile.in	Tue Feb 17 16:43:42 2004
+@@ -197,7 +197,7 @@
+ sysconfdir = @sysconfdir@
+ systray = @systray@
+ target_alias = @target_alias@
+-bin_PROGRAMS = $(am__append_1) ed2k amule
++bin_PROGRAMS = $(am__append_1) amule
+ 
+ BUILT_SOURCES = sys.h
+ EXTRA_DIST = sys.h.in strings.en *.h pixmaps bitmaps Makengfile
+@@ -357,8 +357,8 @@
+ CONFIG_CLEAN_FILES = timestamp-sys.h
+ @COMPILE_CMD_TRUE@bin_PROGRAMS = amulecmd$(EXEEXT) amulecmdDLG$(EXEEXT) \
+ @COMPILE_CMD_TRUE@	amuleweb$(EXEEXT) amulewebDLG$(EXEEXT) \
+-@COMPILE_CMD_TRUE@	ed2k$(EXEEXT) amule$(EXEEXT)
+-@COMPILE_CMD_FALSE@bin_PROGRAMS = ed2k$(EXEEXT) amule$(EXEEXT)
++@COMPILE_CMD_TRUE@	amule$(EXEEXT)
++@COMPILE_CMD_FALSE@bin_PROGRAMS = amule$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am__amule_SOURCES_DIST = ListenSocket.cpp EMSocket.cpp AddFriend.cpp \
