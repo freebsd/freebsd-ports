@@ -32,9 +32,14 @@ include/mozilla/addrbook/nsAbDirectoryQueryProxy.h
 include/mozilla/addrbook/nsAbDirectoryRDFResource.h
 include/mozilla/addrbook/nsAbLDAPAutoCompFormatter.h
 include/mozilla/addrbook/nsAbLDAPCard.h
+include/mozilla/addrbook/nsAbLDAPChangeLogData.h
+include/mozilla/addrbook/nsAbLDAPChangeLogQuery.h
 include/mozilla/addrbook/nsAbLDAPDirFactory.h
 include/mozilla/addrbook/nsAbLDAPDirectory.h
 include/mozilla/addrbook/nsAbLDAPDirectoryQuery.h
+include/mozilla/addrbook/nsAbLDAPReplicationData.h
+include/mozilla/addrbook/nsAbLDAPReplicationQuery.h
+include/mozilla/addrbook/nsAbLDAPReplicationService.h
 include/mozilla/addrbook/nsAbMDBCard.h
 include/mozilla/addrbook/nsAbMDBCardProperty.h
 include/mozilla/addrbook/nsAbMDBDirFactory.h
@@ -61,6 +66,9 @@ include/mozilla/addrbook/nsIAbDirectoryQuery.h
 include/mozilla/addrbook/nsIAbDirectoryQueryProxy.h
 include/mozilla/addrbook/nsIAbDirectorySearch.h
 include/mozilla/addrbook/nsIAbLDAPAutoCompFormatter.h
+include/mozilla/addrbook/nsIAbLDAPReplicationData.h
+include/mozilla/addrbook/nsIAbLDAPReplicationQuery.h
+include/mozilla/addrbook/nsIAbLDAPReplicationService.h
 include/mozilla/addrbook/nsIAbListener.h
 include/mozilla/addrbook/nsIAbMDBCard.h
 include/mozilla/addrbook/nsIAbMDBDirectory.h
@@ -196,7 +204,6 @@ include/mozilla/content/nsIEventStateManager.h
 include/mozilla/content/nsIForm.h
 include/mozilla/content/nsIFormControl.h
 include/mozilla/content/nsIFormSubmission.h
-include/mozilla/content/nsIHTMLAttributes.h
 include/mozilla/content/nsIHTMLCSSStyleSheet.h
 include/mozilla/content/nsIHTMLContentContainer.h
 include/mozilla/content/nsIHTMLDocument.h
@@ -218,6 +225,8 @@ include/mozilla/content/nsIPrivateDOMEvent.h
 include/mozilla/content/nsIPrivateDOMImplementation.h
 include/mozilla/content/nsIPrivateTextEvent.h
 include/mozilla/content/nsIPrivateTextRange.h
+include/mozilla/content/nsIRadioControlElement.h
+include/mozilla/content/nsIRadioVisitor.h
 include/mozilla/content/nsIRangeUtils.h
 include/mozilla/content/nsISVGAttribute.h
 include/mozilla/content/nsISVGStyleValue.h
@@ -237,6 +246,7 @@ include/mozilla/content/nsIStyleRuleSupplier.h
 include/mozilla/content/nsIStyleSheet.h
 include/mozilla/content/nsIStyleSheetLinkingElement.h
 include/mozilla/content/nsIStyledContent.h
+include/mozilla/content/nsITextAreaElement.h
 include/mozilla/content/nsITextContent.h
 include/mozilla/content/nsITextControlElement.h
 include/mozilla/content/nsIWyciwygChannel.h
@@ -268,6 +278,8 @@ include/mozilla/content/nsXULAtomList.h
 include/mozilla/content/nsXULAtoms.h
 include/mozilla/content_xsl/nsIDocumentTransformer.h
 include/mozilla/content_xsl/nsITransformMediator.h
+include/mozilla/cookie/nsCCookie.h
+include/mozilla/cookie/nsCCookieManager.h
 include/mozilla/cookie/nsCookieHTTPNotify.h
 include/mozilla/cookie/nsICookie.h
 include/mozilla/cookie/nsICookieConsent.h
@@ -297,6 +309,7 @@ include/mozilla/docshell/nsIScrollable.h
 include/mozilla/docshell/nsITextScroll.h
 include/mozilla/docshell/nsIURIFixup.h
 include/mozilla/docshell/nsIWebNavigation.h
+include/mozilla/docshell/nsIWebPageDescriptor.h
 include/mozilla/dom/domstubs.h
 include/mozilla/dom/nsDOMCID.h
 include/mozilla/dom/nsDOMError.h
@@ -514,6 +527,12 @@ include/mozilla/dom/nsIDOMWindow.h
 include/mozilla/dom/nsIDOMWindowCollection.h
 include/mozilla/dom/nsIDOMWindowInternal.h
 include/mozilla/dom/nsIDOMXMLDocument.h
+include/mozilla/dom/nsIDOMXPathEvaluator.h
+include/mozilla/dom/nsIDOMXPathException.h
+include/mozilla/dom/nsIDOMXPathExpression.h
+include/mozilla/dom/nsIDOMXPathNSResolver.h
+include/mozilla/dom/nsIDOMXPathNamespace.h
+include/mozilla/dom/nsIDOMXPathResult.h
 include/mozilla/dom/nsIDOMXULButtonElement.h
 include/mozilla/dom/nsIDOMXULCheckboxElement.h
 include/mozilla/dom/nsIDOMXULCommandDispatcher.h
@@ -545,6 +564,8 @@ include/mozilla/dom/nsIScriptObjectOwner.h
 include/mozilla/dom/nsIScriptObjectPrincipal.h
 include/mozilla/dom/nsPIDOMWindow.h
 include/mozilla/dom/nsPIWindowRoot.h
+include/mozilla/downloadmanager/nsIDownloadManager.h
+include/mozilla/downloadmanager/nsIDownloadProgressListener.h
 include/mozilla/editor/nsEditorCID.h
 include/mozilla/editor/nsICiter.h
 include/mozilla/editor/nsIDocumentStateListener.h
@@ -659,6 +680,7 @@ include/mozilla/imglib2/imgIDecoderObserver.h
 include/mozilla/imglib2/imgILoad.h
 include/mozilla/imglib2/imgILoader.h
 include/mozilla/imglib2/imgIRequest.h
+include/mozilla/impComm4xMail/nsIComm4xProfile.h
 include/mozilla/import/nsIImportABDescriptor.h
 include/mozilla/import/nsIImportAddressBooks.h
 include/mozilla/import/nsIImportFieldMap.h
@@ -817,11 +839,6 @@ include/mozilla/layout/nsIMenuBoxObject.h
 include/mozilla/layout/nsIMenuFrame.h
 include/mozilla/layout/nsIMutableStyleContext.h
 include/mozilla/layout/nsIObjectFrame.h
-include/mozilla/layout/nsIOutlinerBoxObject.h
-include/mozilla/layout/nsIOutlinerColFrame.h
-include/mozilla/layout/nsIOutlinerContentView.h
-include/mozilla/layout/nsIOutlinerSelection.h
-include/mozilla/layout/nsIOutlinerView.h
 include/mozilla/layout/nsIPageSequenceFrame.h
 include/mozilla/layout/nsIPercentHeightObserver.h
 include/mozilla/layout/nsIPopupBoxObject.h
@@ -836,6 +853,7 @@ include/mozilla/layout/nsIReflowCallback.h
 include/mozilla/layout/nsIScrollBoxObject.h
 include/mozilla/layout/nsIScrollableFrame.h
 include/mozilla/layout/nsIScrollableViewProvider.h
+include/mozilla/layout/nsIScrollbarMediator.h
 include/mozilla/layout/nsISelectControlFrame.h
 include/mozilla/layout/nsIStatefulFrame.h
 include/mozilla/layout/nsIStyleContext.h
@@ -845,22 +863,21 @@ include/mozilla/layout/nsITableCellLayout.h
 include/mozilla/layout/nsITableLayout.h
 include/mozilla/layout/nsITextFrame.h
 include/mozilla/layout/nsITreeBoxObject.h
-include/mozilla/layout/nsITreeFrame.h
+include/mozilla/layout/nsITreeColFrame.h
+include/mozilla/layout/nsITreeContentView.h
+include/mozilla/layout/nsITreeSelection.h
+include/mozilla/layout/nsITreeView.h
 include/mozilla/layout/nsLayoutCID.h
-include/mozilla/layout/nsOutlinerBodyFrame.h
-include/mozilla/layout/nsOutlinerColFrame.h
-include/mozilla/layout/nsOutlinerContentView.h
-include/mozilla/layout/nsOutlinerSelection.h
-include/mozilla/layout/nsOutlinerUtils.h
 include/mozilla/layout/nsPIBoxObject.h
 include/mozilla/layout/nsReflowType.h
 include/mozilla/layout/nsStyleChangeList.h
 include/mozilla/layout/nsStyleConsts.h
 include/mozilla/layout/nsTextTransformer.h
-include/mozilla/ldap/disptmpl.h
-include/mozilla/ldap/lber.h
-include/mozilla/ldap/ldap.h
-include/mozilla/ldap/srchpref.h
+include/mozilla/layout/nsTreeBodyFrame.h
+include/mozilla/layout/nsTreeColFrame.h
+include/mozilla/layout/nsTreeContentView.h
+include/mozilla/layout/nsTreeSelection.h
+include/mozilla/layout/nsTreeUtils.h
 include/mozilla/libart_lgpl/art_affine.h
 include/mozilla/libart_lgpl/art_alphagamma.h
 include/mozilla/libart_lgpl/art_bpath.h
@@ -1024,6 +1041,7 @@ include/mozilla/msgbase/nsIMsgIdentity.h
 include/mozilla/msgbase/nsIMsgIncomingServer.h
 include/mozilla/msgbase/nsIMsgMailNewsUrl.h
 include/mozilla/msgbase/nsIMsgMailSession.h
+include/mozilla/msgbase/nsIMsgMdnGenerator.h
 include/mozilla/msgbase/nsIMsgMessageService.h
 include/mozilla/msgbase/nsIMsgOfflineManager.h
 include/mozilla/msgbase/nsIMsgPrintEngine.h
@@ -1108,6 +1126,7 @@ include/mozilla/msgbaseutil/nsUInt32Array.h
 include/mozilla/msgbaseutil/nsUint8Array.h
 include/mozilla/msgcompose/nsIMsgAttachment.h
 include/mozilla/msgcompose/nsIMsgCompFields.h
+include/mozilla/msgcompose/nsIMsgCompUtils.h
 include/mozilla/msgcompose/nsIMsgCompose.h
 include/mozilla/msgcompose/nsIMsgComposeParams.h
 include/mozilla/msgcompose/nsIMsgComposeProgressParams.h
@@ -1228,6 +1247,8 @@ include/mozilla/msglocal/nsPop3Protocol.h
 include/mozilla/msglocal/nsPop3Service.h
 include/mozilla/msglocal/nsPop3Sink.h
 include/mozilla/msglocal/nsPop3URL.h
+include/mozilla/msgmdn/nsMsgMdnCID.h
+include/mozilla/msgmdn/nsMsgMdnGenerator.h
 include/mozilla/msgnews/nntpCore.h
 include/mozilla/msgnews/nsIMsgNewsFolder.h
 include/mozilla/msgnews/nsIMsgOfflineNewsState.h
@@ -1252,10 +1273,13 @@ include/mozilla/msgnews/nsNntpService.h
 include/mozilla/msgnews/nsNntpUrl.h
 include/mozilla/msgsmime/nsIMsgSMIMECompFields.h
 include/mozilla/msgsmime/nsIMsgSMIMEHeaderSink.h
+include/mozilla/msgsmime/nsISMimeJSHelper.h
 include/mozilla/msgsmime/nsMsgComposeSecure.h
 include/mozilla/msgsmime/nsMsgSMIMECID.h
+include/mozilla/msgsmime/nsSMimeJSHelper.h
 include/mozilla/necko/mozITXTToHTMLConv.h
 include/mozilla/necko/netCore.h
+include/mozilla/necko/nsCPasswordManager.h
 include/mozilla/necko/nsHTTPChunkConv.h
 include/mozilla/necko/nsIAboutModule.h
 include/mozilla/necko/nsIAuthPrompt.h
@@ -1293,6 +1317,7 @@ include/mozilla/necko/nsINetModRegEntry.h
 include/mozilla/necko/nsINetModuleMgr.h
 include/mozilla/necko/nsINetNotify.h
 include/mozilla/necko/nsIPasswordManager.h
+include/mozilla/necko/nsIPasswordManagerInternal.h
 include/mozilla/necko/nsIProgressEventSink.h
 include/mozilla/necko/nsIPrompt.h
 include/mozilla/necko/nsIProtocolHandler.h
@@ -1508,8 +1533,8 @@ include/mozilla/pipboot/nsISecurityWarningDialogs.h
 include/mozilla/pipnss/nsIBadCertListener.h
 include/mozilla/pipnss/nsICMS.h
 include/mozilla/pipnss/nsICMSSecureMessage.h
-include/mozilla/pipnss/nsICertOutliner.h
 include/mozilla/pipnss/nsICertSelect.h
+include/mozilla/pipnss/nsICertTree.h
 include/mozilla/pipnss/nsIKeygenThread.h
 include/mozilla/pipnss/nsINSSDialogs.h
 include/mozilla/pipnss/nsIPK11TokenDB.h
@@ -1518,9 +1543,8 @@ include/mozilla/pipnss/nsISSLStatus.h
 include/mozilla/pipnss/nsIUserCertPicker.h
 include/mozilla/pipnss/nsIX509Cert.h
 include/mozilla/pipnss/nsIX509CertDB.h
-include/mozilla/pippki/nsIASN1Outliner.h
+include/mozilla/pippki/nsIASN1Tree.h
 include/mozilla/pippki/nsIPKIParamBlock.h
-include/mozilla/platform.h
 include/mozilla/plugin/npapi.h
 include/mozilla/plugin/npupp.h
 include/mozilla/plugin/nsICookieStorage.h
@@ -1535,7 +1559,6 @@ include/mozilla/plugin/nsIMalloc.h
 include/mozilla/plugin/nsIPlugin.h
 include/mozilla/plugin/nsIPluginHost.h
 include/mozilla/plugin/nsIPluginInputStream.h
-include/mozilla/plugin/nsIPluginInputStream2.h
 include/mozilla/plugin/nsIPluginInstance.h
 include/mozilla/plugin/nsIPluginInstanceOwner.h
 include/mozilla/plugin/nsIPluginInstancePeer.h
@@ -1565,6 +1588,7 @@ include/mozilla/pref/nsIPrefBranch.h
 include/mozilla/pref/nsIPrefBranchInternal.h
 include/mozilla/pref/nsIPrefLocalizedString.h
 include/mozilla/pref/nsIPrefService.h
+include/mozilla/pref/nsIRelativeFilePref.h
 include/mozilla/pref/nsISecurityPref.h
 include/mozilla/prefmigr/nsIPrefMigration.h
 include/mozilla/prefmigr/nsIPrefMigrationProgress.h
@@ -1610,11 +1634,9 @@ include/mozilla/shistory/nsISHistoryListener.h
 include/mozilla/sidebar/nsISidebar.h
 include/mozilla/string/nsAFlatString.h
 include/mozilla/string/nsAPromiseString.h
-include/mozilla/string/nsAReadableString.h
 include/mozilla/string/nsASingleFragmentString.h
 include/mozilla/string/nsAString.h
 include/mozilla/string/nsAStringGenerator.h
-include/mozilla/string/nsAWritableString.h
 include/mozilla/string/nsAlgorithm.h
 include/mozilla/string/nsBufferHandle.h
 include/mozilla/string/nsBufferHandleUtils.h
@@ -1642,7 +1664,6 @@ include/mozilla/string/nsStringIteratorUtils.h
 include/mozilla/string/nsStringTraits.h
 include/mozilla/string/nsXPIDLString.h
 include/mozilla/transformiix/nsISyncLoader.h
-include/mozilla/transformiix/nsIXPathNodeSelector.h
 include/mozilla/txmgr/nsITransaction.h
 include/mozilla/txmgr/nsITransactionList.h
 include/mozilla/txmgr/nsITransactionListener.h
@@ -1692,6 +1713,7 @@ include/mozilla/uriloader/nsCURILoader.h
 include/mozilla/uriloader/nsDocLoader.h
 include/mozilla/uriloader/nsIContentHandler.h
 include/mozilla/uriloader/nsIDocumentLoader.h
+include/mozilla/uriloader/nsIDownload.h
 include/mozilla/uriloader/nsIURIContentListener.h
 include/mozilla/uriloader/nsIURILoader.h
 include/mozilla/uriloader/nsIWebProgress.h
@@ -1708,6 +1730,7 @@ include/mozilla/view/nsIView.h
 include/mozilla/view/nsIViewManager.h
 include/mozilla/view/nsIViewObserver.h
 include/mozilla/view/nsViewsCID.h
+include/mozilla/wallet/nsCPassword.h
 include/mozilla/wallet/nsIKeyedStreamGenerator.h
 include/mozilla/wallet/nsIPassword.h
 include/mozilla/wallet/nsIPasswordSink.h
@@ -1771,6 +1794,7 @@ include/mozilla/widget/nsIMenuItem.h
 include/mozilla/widget/nsIMenuListener.h
 include/mozilla/widget/nsIMenuRollup.h
 include/mozilla/widget/nsIMouseListener.h
+include/mozilla/widget/nsINativeScrollbar.h
 include/mozilla/widget/nsIPopUpMenu.h
 include/mozilla/widget/nsIRollupListener.h
 include/mozilla/widget/nsIScrollbar.h
@@ -1828,8 +1852,6 @@ include/mozilla/xmlterm/mozXMLTermUtils.h
 include/mozilla/xmlterm/ptystream.h
 include/mozilla/xmlterm/tracelog.h
 include/mozilla/xmlterm/unistring.h
-include/mozilla/xp_core.h
-include/mozilla/xp_mem.h
 include/mozilla/xp_path.h
 include/mozilla/xp_str.h
 include/mozilla/xpcom/nsAVLTree.h
@@ -1837,6 +1859,7 @@ include/mozilla/xpcom/nsAgg.h
 include/mozilla/xpcom/nsAppDirectoryServiceDefs.h
 include/mozilla/xpcom/nsAtomService.h
 include/mozilla/xpcom/nsAutoLock.h
+include/mozilla/xpcom/nsCategoryManagerUtils.h
 include/mozilla/xpcom/nsCOMPtr.h
 include/mozilla/xpcom/nsCRT.h
 include/mozilla/xpcom/nsCWeakReference.h
@@ -1849,6 +1872,7 @@ include/mozilla/xpcom/nsDebug.h
 include/mozilla/xpcom/nsDeque.h
 include/mozilla/xpcom/nsDirectoryService.h
 include/mozilla/xpcom/nsDirectoryServiceDefs.h
+include/mozilla/xpcom/nsDirectoryServiceUtils.h
 include/mozilla/xpcom/nsDoubleHashtable.h
 include/mozilla/xpcom/nsEnumeratorUtils.h
 include/mozilla/xpcom/nsError.h
@@ -1858,6 +1882,7 @@ include/mozilla/xpcom/nsFastLoadService.h
 include/mozilla/xpcom/nsFileSpec.h
 include/mozilla/xpcom/nsFileStream.h
 include/mozilla/xpcom/nsFixedSizeAllocator.h
+include/mozilla/xpcom/nsGenericFactory.h
 include/mozilla/xpcom/nsHashtable.h
 include/mozilla/xpcom/nsHashtableEnumerator.h
 include/mozilla/xpcom/nsIAllocator.h
@@ -1908,6 +1933,8 @@ include/mozilla/xpcom/nsIModule.h
 include/mozilla/xpcom/nsIMultiplexInputStream.h
 include/mozilla/xpcom/nsIObjectInputStream.h
 include/mozilla/xpcom/nsIObjectOutputStream.h
+include/mozilla/xpcom/nsIObservableInputStream.h
+include/mozilla/xpcom/nsIObservableOutputStream.h
 include/mozilla/xpcom/nsIObserver.h
 include/mozilla/xpcom/nsIObserverService.h
 include/mozilla/xpcom/nsIOutputStream.h
@@ -1952,6 +1979,7 @@ include/mozilla/xpcom/nsIUnicharInputStream.h
 include/mozilla/xpcom/nsIVariant.h
 include/mozilla/xpcom/nsIWeakReference.h
 include/mozilla/xpcom/nsIWeakReferenceUtils.h
+include/mozilla/xpcom/nsIXPTLoader.h
 include/mozilla/xpcom/nsInt64.h
 include/mozilla/xpcom/nsLinebreakConverter.h
 include/mozilla/xpcom/nsLocalFile.h
@@ -2016,9 +2044,9 @@ include/mozilla/xpinstall/InstallCleanupDefines.h
 include/mozilla/xpinstall/nsIDOMInstallTriggerGlobal.h
 include/mozilla/xpinstall/nsIDOMInstallVersion.h
 include/mozilla/xpinstall/nsISoftwareUpdate.h
+include/mozilla/xpinstall/nsIXPIDialogService.h
 include/mozilla/xpinstall/nsIXPINotifier.h
-include/mozilla/xpinstall/nsIXPIProgressDlg.h
-include/mozilla/xpinstall/nsPIXPIManagerCallbacks.h
+include/mozilla/xpinstall/nsIXPIProgressDialog.h
 include/mozilla/xpinstall/nsPIXPIProxy.h
 include/mozilla/xpinstall/nsPIXPIStubHook.h
 include/mozilla/xpinstall/nsSoftwareUpdateIIDs.h
@@ -2034,6 +2062,9 @@ include/mozilla/xuldoc/nsIXULPrototypeCache.h
 include/mozilla/xuldoc/nsIXULPrototypeDocument.h
 include/mozilla/xultmpl/nsIXULSortService.h
 include/mozilla/xultmpl/nsIXULTemplateBuilder.h
+include/mozilla/zlib/zconf.h
+include/mozilla/zlib/zlib.h
+@dirrm include/mozilla/zlib
 @dirrm include/mozilla/xultmpl
 @dirrm include/mozilla/xuldoc
 @dirrm include/mozilla/xul
@@ -2092,6 +2123,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/necko
 @dirrm include/mozilla/msgsmime
 @dirrm include/mozilla/msgnews
+@dirrm include/mozilla/msgmdn
 @dirrm include/mozilla/msglocal
 @dirrm include/mozilla/msgimap
 @dirrm include/mozilla/msgdb
@@ -2111,7 +2143,6 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/locale
 @dirrm include/mozilla/libreg
 @dirrm include/mozilla/libart_lgpl
-@dirrm include/mozilla/ldap
 @dirrm include/mozilla/layout
 @dirrm include/mozilla/jsurl
 @dirrm include/mozilla/jsdebug
@@ -2122,6 +2153,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/intl
 @dirrm include/mozilla/inspector
 @dirrm include/mozilla/import
+@dirrm include/mozilla/impComm4xMail
 @dirrm include/mozilla/imglib2
 @dirrm include/mozilla/htmlparser
 @dirrm include/mozilla/helperAppDlg
@@ -2136,6 +2168,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/embedcomponents
 @dirrm include/mozilla/embed_base
 @dirrm include/mozilla/editor
+@dirrm include/mozilla/downloadmanager
 @dirrm include/mozilla/dom
 @dirrm include/mozilla/docshell
 @dirrm include/mozilla/dbm

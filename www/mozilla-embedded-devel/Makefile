@@ -41,7 +41,7 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla-embedded
 	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded
-	cd ${WRKSRC}/dist/Embed && ${TAR} -chf - * | \
-		${TAR} -xf - -C ${PREFIX}/lib/mozilla-embedded
+	cd ${WRKSRC}/dist/Embed && ${FIND} . | \
+		cpio -pdm -L -R ${INCOWN}:${INCGRP} ${PREFIX}/lib/mozilla-embedded
 
 .include <bsd.port.mk>
