@@ -66,6 +66,7 @@ MAN8=		fmtutil.8 texlinks.8 mkfontdesc.8
 MLINKS=		allcm.1 allec.1 mktexlsr.1 texhash.1 tex.1 virtex.1 \
 		etex.1 evirtex.1 mf.1 virmf.1 mpost.1 virmpost.1 \
 		omega.1 viromega.1 pdftex.1 pdfvirtex.1
+INFO=		dvips kpathsea latex web2c
 
 .if !defined(WITHOUT_X11)
 MAN1+=		t1mapper.1 xdvi.1 xdvizilla.1
