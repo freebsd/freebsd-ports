@@ -44,123 +44,226 @@ COMMENT=	A once-popular mail user agent, unofficial clone
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 
 HAS_CONFIGURE=	yes
-USE_ICONV=	yes
+USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_SCRIPT=	Configure
-SCRIPTS_ENV=	CFLAGS="${CFLAGS}" ${PLIST_SUB} PREFIX="${PREFIX}" \
-		LOCALBASE="${LOCALBASE}" MAN1PREFIX="${MAN1PREFIX}"
-CONFIGURE_ARGS=	-S -P ${PREFIX}
+SCRIPTS_ENV=	CONFIG_PATH="${CONFIG_PATH}" CFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
+		MAN1PREFIX="${MAN1PREFIX}" CONF_DIR="${CONF_DIR}" \
+		LIB_DIR="${LIB_DIR}" SHLIB_DIR="${SHLIB_DIR}" \
+		STAGE_DIR="${STAGE_DIR}" ELM_SHLIBS="${ELM_SHLIBS}"
+CONFIGURE_ARGS=	-b -S -P ${PREFIX} -c ../${CONFIG_PATH:T}
 
 MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
 ALL_TARGET=	all documentation
 
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_SUBDIR%%
+LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_DIR%%
 
-PLIST_SUB=	SO_REV="${SO_REV}" DOC_SUBDIR="${DOC_SUBDIR}" \
-		LIB_SUBDIR="${LIB_SUBDIR}" SHLIB_SUBDIR="${SHLIB_SUBDIR}"
+PLIST_SUB=	SO_REV="${SO_REV}" \
+		RC_DIR="${RC_DIR:S,^${PREFIX}/,,}" \
+		MAIL_DIR="${MAIL_DIR:S,^${PREFIX}/,,}" \
+		CONF_DIR="${CONF_DIR:S,^${PREFIX}/,,}" \
+		LIB_DIR="${LIB_DIR:S,^${PREFIX}/,,}" \
+		SHLIB_DIR="${SHLIB_DIR:S,^${PREFIX}/,,}" \
+		ELM_SHLIBS="${ELM_SHLIBS}" \
+		${ELM_SHLIBS:U:S/^/ELM_/:S/$/=""/} \
+		${ELM_UNSHLIBS:U:S/^/ELM_/:S/$/="@comment "/}
+RCSCRIPTS_SUB=	SHLIB_DIR="${SHLIB_DIR}" RC_SUBR=${RC_SUBR}
 
-MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 elmcharset.1 \
-		elmrc-write.1 elmstringconvert.1 elmterminal.1 \
-		elmunidata.1 fastmail.1 frm.1 listalias.1 messages.1 \
-		newalias.1 newmail.1 printmail.1 readmsg.1
+MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 elmbindata.1 \
+		elmcharset.1 elmlibregister.1 elmrc-write.1 elmregister.1 \
+		elmstringconvert.1 elmterminal.1 elmunidata.1 elmuninstall.1 \
+		fastmail.1 frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
+		printmail.1 readmsg.1
 MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
+
+.if !defined(ELM_USER_SHLIBS)
+OPTIONS=	ELM_ICONV "libiconv support" on \
+		ELM_SMTP "SMTP submission protocol (RFC2746) support" on \
+		ELM_TLS "POP STLS and IMAP STARTTLS support" on
+.endif
+
+.include <bsd.port.pre.mk>
 
 # Local variables
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	99
-ELM_PATCHLEVEL=	f
+ELM_REVISION=	116
+ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
 _level=${level}
-.if ${_level} != _ && ${ELM_PATCHDONE} == false
+. if ${_level} != _ && ${ELM_PATCHDONE} == false
 PATCHFILES+=	${DISTNAME:S/+/+PL/}${level}.patch.gz
-.endif
-.if ${ELM_PATCHLEVEL} == ${level}
+. endif
+. if ${ELM_PATCHLEVEL} == ${_level}
 ELM_PATCHDONE=	true
-.endif
+. endif
 .endfor
+
+ELM_SYSTEM_SHLIBS=	iconv smtp tls
+
+.if !defined(ELM_USER_SHLIBS)
+. for shlib in ${ELM_SYSTEM_SHLIBS}
+.  if !defined(${shlib:U:S/^/WITHOUT_ELM_/})
+ELM_USER_SHLIBS+=${shlib}
+.  endif
+. endfor
+.endif
+
+ELM_USER_SHLIBS?=	${ELM_SYSTEM_SHLIBS} # or none
+
+ELM_SHLIBS=
+.if ${ELM_USER_SHLIBS} == none
+ELM_UNSHLIBS=	${ELM_SYSTEM_SHLIBS}
+.else
+ELM_UNSHLIBS=
+. for shlib1 in ${ELM_SYSTEM_SHLIBS}
+_shlib1=${shlib1}
+_define=	false
+.  for shlib2 in ${ELM_USER_SHLIBS}
+_shlib2=${shlib2}
+.   if ${_shlib1} == ${_shlib2}
+_define=	true
+.   endif
+.  endfor
+.  if ${_define} == true
+ELM_SHLIBS+=	${shlib1}
+.  else
+ELM_UNSHLIBS+=	${shlib1}
+.  endif
+. endfor
+.endif
+
+.if ${ELM_SHLIBS:Miconv} == iconv
+USE_ICONV=	yes
+.endif
 
 # evaluation should be protected 'til extraction to avoid noisy messages.
 SO_REV=		$$([ -f ${WRKSRC}/hdrs/patchlevel.h ] && \
 		  ${AWK} '/SHAREDTAG:/{print $$2}' ${WRKSRC}/hdrs/patchlevel.h)
 MSECS=		1
 
-RCD_SUBDIR=	etc/rc.d
-LIB_SUBDIR=	lib/elm
-SHLIB_SUBDIR=	libexec/elm
-DOC_SUBDIR=	share/doc/elm+ME
+STAGE_DIR=	${WRKDIR}/stage
+RC_DIR=		${PREFIX}/etc/rc.d
+MAIL_DIR=	${PREFIX}/etc/mail
+CONF_DIR=	${MAIL_DIR}/elm
+LIB_DIR=	${PREFIX}/lib/elm
+SHLIB_DIR=	${PREFIX}/libexec/elm
 
-RCD_DIR=	${PREFIX}/${RCD_SUBDIR}
-LIB_DIR=	${PREFIX}/${LIB_SUBDIR}
-
-_RCD_FILE=	00elm.sh
-RCD_FILE=	000.elm.sh
+CONFIG_PATH=	${WRKDIR}/config.sh
+_RC_FILE=	00elm.sh
+RC_FILE=	000.elm.sh
 MIME_TYPES=	elm.mimetypes
 MIME_CSETS=	elm.mimecharsets
 TERM_INFO=	elm.terminalinfo
 ELM_RC=		elm.rc
-DOC_FILES=	README.ME+ \
-		shared_libs/iconv/README.ICONV \
-		shared_libs/smtp/README.SMTP \
-		shared_libs/tls/README.TLS \
+CONF_FILES=	${MIME_TYPES} ${MIME_CSETS} ${TERM_INFO} ${ELM_RC}
+DOC_FILES=	MIME.txt README.ME+ \
 		doc/Alias.fmtd doc/Config.fmtd doc/Cover.fmtd \
 		doc/Form.fmtd doc/Ref.fmtd doc/Users.fmtd
+.for shlib in ${ELM_SHLIBS}
+DOC_FILES+=	shared_libs/${shlib:L}/README.${shlib:U}
+.endfor
 
 # Post-patch
 #
 
-post-patch: fix-permissions patch-install-script patch-setgid patch-nls-files
+post-patch: fix-permissions patch-startup-scripts patch-setgid patch-nls-files
 
 fix-permissions:
 	@${CHMOD} -R u+w ${WRKSRC}
 
-patch-install-script:
-	@${SED} -e 's,%%SHLIB_SUBDIR%%,${SHLIB_SUBDIR},' \
-		${FILESDIR}/${_RCD_FILE} > ${WRKSRC}/${RCD_FILE}
+patch-startup-scripts:
+	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/${_RC_FILE} > ${WRKDIR}/${RC_FILE}
 
-# d_savegrpmboxid is currently broken using setgid(2) instead of setegid(2).
-# will probably be fixed in a next release, for instance, fake a patch.
-# the alternative would be to disable this option in pre-configure script.
+# from <sys/unistd.h>:
+# Although we have saved user/group IDs, we do not use them in setuid
+# as described in POSIX 1003.1, because the feature does not work for
+# root.  We use the saved IDs in seteuid/setegid, which are not currently
+# part of the POSIX 1003.1 specification.  XXX revisit for 1003.1-2001
+# as this is now mandatory.
 patch-setgid:
-	@${REINPLACE_CMD} -e 's|setgid|setegid|' \
+	@if [ "$$(sysctl -n kern.saved_ids)" -eq 0 ]; then \
+	    ${REINPLACE_CMD} -e 's|setgid|setegid|' \
 		${WRKSRC}/lib/localmbx.c \
-		${WRKSRC}/src/init.c ${WRKSRC}/src/lock.c
+		${WRKSRC}/src/init.c ${WRKSRC}/src/lock.c; \
+	    ${REINPLACE_CMD} -e 's|have_saved_ids = 0|have_saved_ids = 1|' \
+		${WRKSRC}/lib/read_rc.c; \
+	fi
 
 patch-nls-files:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/nls/LANGS
 
+# Pre-configure
+#
+pre-configure: configure-shlibs
+
+TEE?=	tee
+
+configure-shlibs:
+	@${CP} /dev/null ${CONFIG_PATH}
+.for shlib in ${ELM_SYSTEM_SHLIBS}
+	@${ECHO_CMD} "\#  Support for ${shlib:U}" \
+		> ${WRKSRC}/shared_libs/${shlib:L}/config.res
+.endfor
+.for shlib in ${ELM_SHLIBS}
+	@${ECHO_CMD} "${shlib:L}_ok='define'" \
+		| ${TEE} -a ${CONFIG_PATH} \
+		>> ${WRKSRC}/shared_libs/${shlib:L}/config.res
+.endfor
+.for shlib in ${ELM_UNSHLIBS}
+	@${ECHO_CMD} "${shlib:L}_ok='undef'" \
+		| ${TEE} -a ${CONFIG_PATH} \
+		>> ${WRKSRC}/shared_libs/${shlib:L}/config.res
+.endfor
+
+# Post-configure
+#
+
+post-configure: rename-readmes
+
+rename-readmes:
+.for shlib in ${ELM_SHLIBS}
+	@if [ -f ${WRKSRC}/shared_libs/${shlib:L}/README.ME+ ]; then \
+		${MV} ${WRKSRC}/shared_libs/${shlib:L}/README.ME+ \
+		       ${WRKSRC}/shared_libs/${shlib:L}/README.${shlib:U}; \
+	fi
+.endfor
+
 # Pre-install
 #
 
-pre-install: backup-mime-charsets backup-terminal-info
+pre-install: create-install-dirs backup-conf-files
 
-backup-mime-charsets:
-.if exists(${LIB_DIR}/${MIME_CSETS})
-	@${MV} ${LIB_DIR}/${MIME_CSETS} ${LIB_DIR}/${MIME_CSETS}.orig
-.endif
+create-install-dirs:
+	@${MKDIR} ${CONF_DIR} ${LIB_DIR} ${SHLIB_DIR}
 
-backup-terminal-info:
-.if exists(${LIB_DIR}/${TERM_INFO})
-	@${MV} ${LIB_DIR}/${TERM_INFO} ${LIB_DIR}/${TERM_INFO}.orig
-.endif
+backup-conf-files:
+.for file in ${CONF_FILES}
+	@if [ -f ${LIB_DIR}/${file} ]; then \
+		${MV} ${LIB_DIR}/${file} ${CONF_DIR}/${file}.orig; \
+	elif [ -f ${CONF_DIR}/${file} ]; then \
+		${MV} ${CONF_DIR}/${file} ${CONF_DIR}/${file}.orig; \
+	fi
+.endfor
 
 # Post-install
 #
 
 post-install: install-startup-files install-nls-files \
 	      install-doc-files install-mime-types \
-	      install-mime-charsets restore-mime-charsets \
-	      install-terminal-info restore-terminal-info \
-	      install-global-rc-file \
+	      install-conf-files restore-conf-files \
+	      merge-global-rc-file \
 	      remove-catman-files remove-catman-links
 
 install-startup-files:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${RCD_FILE} ${RCD_DIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${RC_FILE} ${RC_DIR}
 
 install-nls-files:
 	@cd ${WRKSRC}/nls; ${MAKE} install
@@ -168,73 +271,47 @@ install-nls-files:
 install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+. for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 	@${GZIP_CMD} ${DOCSDIR}/${file:T}
-.endfor
+. endfor
 .endif
 
 install-mime-types:
-	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${LIB_DIR}/${MIME_TYPES}-dist
-.if !exists(${LIB_DIR}/${MIME_TYPES})
-	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${LIB_DIR}
-.endif
+	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${CONF_DIR}/${MIME_TYPES}
 
-install-mime-charsets:
-	@${INSTALL_DATA} ${LIB_DIR}/${MIME_CSETS} ${LIB_DIR}/${MIME_CSETS}-dist
-# was
-# 	@${LIB_DIR}/elmcharset -G \
-# 		-I ${WRKSRC}/ConfTool/killsets \
-# 		-S ${WRKSRC}/charset/MAPPING/ISO8859 \
-# 		-w ${LIB_DIR}/${MIME_CSETS}-dist \
-# 		${WRKSRC}/bin/${MIME_CSETS}
+install-conf-files:
+.for file in ${CONF_FILES}
+	@${INSTALL_DATA} ${CONF_DIR}/${file} ${CONF_DIR}/${file}-dist
+.endfor
 
-restore-mime-charsets:
-.if exists(${LIB_DIR}/${MIME_CSETS}.orig)
-	@${MV} ${LIB_DIR}/${MIME_CSETS}.orig ${LIB_DIR}/${MIME_CSETS}
-.endif
+# for instance, don't restore obsolete files :( except elm.rc :)
+restore-conf-files:
+.for file in ${ELM_RC} # ${CONF_FILES}
+	@if [ -f ${CONF_DIR}/${file}.orig ]; then \
+		${MV} ${CONF_DIR}/${file}.orig ${CONF_DIR}/${file}; \
+	fi
+.endfor
 
-install-terminal-info:
-	@${INSTALL_DATA} ${LIB_DIR}/${TERM_INFO} ${LIB_DIR}/${TERM_INFO}-dist
-# was
-# 	@${LIB_DIR}/elmterminal -G \
-# 		-w ${LIB_DIR}/${TERM_INFO}-dist \
-# 		${WRKSRC}/bin/${TERM_INFO}
-
-restore-terminal-info:
-.if exists(${LIB_DIR}/${TERM_INFO}.orig)
-	@${MV} ${LIB_DIR}/${TERM_INFO}.orig ${LIB_DIR}/${TERM_INFO}
-.endif
-
-# at installation time, elm already has merged changes to the global
-# rc file.  so, the only way to generate a -dist rc file is to
-# backup the original rc file, then to generate the -dist rc file
-# and to restore the backuped rc file. this allow us, at deinstallation
-# time, to not delete an existing customized rc file.
-# same assertion about elm.mimecharsets and elm.terminalinfo.
-install-global-rc-file:
-	@${MV} ${LIB_DIR}/${ELM_RC} ${LIB_DIR}/${ELM_RC}.orig
+merge-global-rc-file:
 	@${LIB_DIR}/elmrc-write -G -I
-	@${MV} ${LIB_DIR}/${ELM_RC} ${LIB_DIR}/${ELM_RC}-dist
-	@${MV} ${LIB_DIR}/${ELM_RC}.orig ${LIB_DIR}/${ELM_RC}
+	@${LIB_DIR}/elmlibregister -G -I ${ELM_SHLIBS}
 
 remove-catman-files:
 .for sect in ${MSECS}
-.for page in ${MAN${sect}}
+. for page in ${MAN${sect}}
 	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}
-.endfor
+. endfor
 .endfor
 
 remove-catman-links:
 .for sect in ${MSECS}
-.for page in ${MLINKS}
-.if ${MAN${sect}:M${page}} == ""
+. for page in ${MLINKS}
+.  if ${MAN${sect}:M${page}} == ""
 	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}
-.endif
+.  endif
+. endfor
 .endfor
-.endfor
-
-.include <bsd.port.pre.mk>
 
 # some sketchy hackery
 FETCH_CMD_INTERIOR=	${FETCH_CMD:M*fetch*}

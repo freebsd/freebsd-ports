@@ -1,6 +1,6 @@
---- src/newmbox.c.orig	Wed Mar 20 08:04:48 2002
-+++ src/newmbox.c	Tue Apr 16 05:02:54 2002
-@@ -422,6 +422,36 @@
+--- src/messages/header_alloc.c.orig	Wed Dec 17 19:22:20 2003
++++ src/messages/header_alloc.c	Tue Dec 23 03:14:46 2003
+@@ -333,6 +333,36 @@
      }
  
      if (NULL != (tmphdr = locate_header_by_name(parsed_headers,

@@ -2,20 +2,36 @@
 #
 # $FreeBSD$
 #
+# Configure the shared library cache
+#
+# PROVIDE: elm
+# REQUIRE: ldconfig
+# KEYWORD: FreeBSD
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+elm_enable="YES"
+elm_shlib_dir="%%SHLIB_DIR%%"
 
-case "$1" in
-start)
-	/sbin/ldconfig -m ${PREFIX}/%%SHLIB_SUBDIR%%
-	;;
-stop)
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" 2>&1
-	exit 64
-	;;
-esac
+. %%RC_SUBR%%
+
+name=ldconfig
+rcvar=$(set_rcvar)
+ldconfig_command="/sbin/ldconfig"
+load_rc_config ${name}
+
+name="elm"
+rcvar=$(set_rcvar)
+start_cmd="elm_start"
+stop_cmd=":"
+
+elm_start ()
+{
+	_ins=
+	ldconfig=${ldconfig_command}
+	checkyesno ldconfig_insecure && _ins="-i"
+	if [ -x "${ldconfig_command}" ]; then
+		${ldconfig} -m ${_ins} ${elm_shlib_dir}
+	fi
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
