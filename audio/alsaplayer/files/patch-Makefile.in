@@ -1,0 +1,11 @@
+--- Makefile.in-orig	Tue Jun 17 17:34:25 2003
++++ Makefile.in	Tue Jun 17 17:34:43 2003
+@@ -228,7 +228,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign
+-SUBDIRS = interface output input scopes app alsaplayer extra docs \
++SUBDIRS = interface output input scopes app alsaplayer extra \
+ 	libalsaplayer examples m4 reader
+ 
+ 

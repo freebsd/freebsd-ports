@@ -10,6 +10,7 @@
     SUBDIR += adpcm
     SUBDIR += afsp
     SUBDIR += alienwah
+    SUBDIR += alsaplayer
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += arts
