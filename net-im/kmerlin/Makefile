@@ -6,25 +6,20 @@
 #
 
 PORTNAME=	kmerlin
-PORTVERSION=	1.2
+PORTVERSION=	1.3b3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-1.3Beta3
 
-MAINTAINER=		cedric@cedric.trix.net
+MAINTAINER=	cedric@cedric.trix.net
 COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
-
-BROKEN=		"Does not compile"
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=15
-USE_AUTOMAKE=	yes
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
 
-pre-configure:
-	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
