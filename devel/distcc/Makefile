@@ -22,16 +22,19 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=	GNOME "Build GUI monitor based on GNOME" Off \
+		GTK "Build GUI monitor based on GTK" Off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOME)
 USE_GNOME=	libgnomeui
-CONFIGURE_ARGS+=	"--with-gnome"
+CONFIGURE_ARGS+=	--with-gnome
 PKGNAMESUFFIX=	-gnome
 PLIST_SUB+=	WITH_GNOME=""
 .elif defined(WITH_GTK)
 USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	"--with-gtk"
+CONFIGURE_ARGS+=	--with-gtk
 PKGNAMESUFFIX=	-gtk
 PLIST_SUB+=	WITH_GNOME=""
 .else
@@ -42,11 +45,6 @@ MAN1=		distcc.1 distccd.1
 DOC_FILES=	AUTHORS INSTALL NEWS README \
 		doc/protocol-1.txt doc/status-1.txt \
 		doc/protocol-2.txt doc/reporting-bugs.txt
-
-pre-everything::
-	@${ECHO_MSG} "Available knobs for ${PORTNAME}"
-	@${ECHO_MSG} "  - WITH_GNOME: Build GUI monitor based on GNOME"
-	@${ECHO_MSG} "  - WITH_GTK: Build GUI monitor based on GTK"
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
