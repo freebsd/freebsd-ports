@@ -3,14 +3,14 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1997/05/06 14:28:42 jfitz Exp $
+# $Id: Makefile,v 1.15 1997/05/24 13:17:10 jfitz Exp $
 #
 
-DISTNAME=	mailagent-3.0pl56
-PKGNAME=	mailagent-3.0.56
-CATEGORIES=	mail
-MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ \
-		${MASTER_SITE_LOCAL}
+DISTNAME=		mailagent-3.0@56
+PKGNAME=		mailagent-3.0.56
+CATEGORIES=		mail
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/RAM/
 
 MAINTAINER=	max@FreeBSD.ORG
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 BUILD_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 NO_PACKAGE=	"Correct FQDN needs to be hardcoded"
-WRKSRC=		${WRKDIR}/mailagent-3.0
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
