@@ -1,0 +1,3 @@
+This module allows Term::ReadLine (which ships with Perl 5) to use
+the GNU readline library, for improved command line editing and
+recall in programs using Term::ReadLine.
