@@ -1,0 +1,26 @@
+--- RhapServer/TCPSocket.cpp.orig	Sun Feb 27 09:54:42 2000
++++ RhapServer/TCPSocket.cpp	Sun Feb 27 09:59:32 2000
+@@ -41,6 +41,10 @@
+ #include <sys/errno.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++
+ #include "TCPSocket.h"
+ #include "SocketUtils.h"
+ #include "OS.h"
+@@ -57,7 +61,12 @@
+ 	//make sure to find out what IP address this connection is actually occuring on. That
+ 	//way, we can report correct information to clients asking what the connection's IP is
+ 	int len = sizeof(fLocalAddr);
++#if defined(__FreeBSD_version) && (__FreeBSD_version >= 400013)
++	int err = ::getsockname(fSocket, (struct sockaddr*)&fLocalAddr,
++	    (socklen_t*)&len);
++#else
+ 	int err = ::getsockname(fSocket, (struct sockaddr*)&fLocalAddr, &len);
++#endif
+ 	AssertV(err == 0, OSThread::GetErrno());
+ 	
+ 	fState |= kBound;

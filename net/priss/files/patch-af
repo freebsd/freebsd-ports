@@ -1,0 +1,26 @@
+--- RhapServer/TCPListenerSocket.cpp.orig	Sun Feb 27 09:49:27 2000
++++ RhapServer/TCPListenerSocket.cpp	Sun Feb 27 10:01:25 2000
+@@ -42,6 +42,10 @@
+ #include <sys/errno.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++
+ #include "TCPListenerSocket.h"
+ #include "Task.h"
+ 
+@@ -82,7 +86,12 @@
+ 	//fSocket data member of TCPSocket.
+ 	while (true)
+ 	{
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 400013)
++		int osSocket = accept(fSocket, (struct sockaddr*)&addr,
++		    (socklen_t*)&size);
++#else
+ 		int osSocket = accept(fSocket, (struct sockaddr*)&addr, &size);
++#endif
+ 		if (osSocket == -1)
+ 		{
+ 			//take a look at what this error is.

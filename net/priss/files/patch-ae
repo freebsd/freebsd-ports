@@ -1,0 +1,11 @@
+--- RhapServer/RTSPRequestInterface.cpp.orig	Sun Feb 27 09:47:18 2000
++++ RhapServer/RTSPRequestInterface.cpp	Sun Feb 27 09:47:38 2000
+@@ -501,7 +501,7 @@
+ 					GetUsersMovieFolderPath(0, &len);
+ 		if (len)
+ 		{
+-			char*	home = malloc(1024);
++			char*	home = (char *)malloc(1024);
+ 			if (FindUsersHome(user, home))
+ 			{
+ 				strcat(home, movieDirPath);
