@@ -3898,6 +3898,7 @@ libcache	ports/devel/libcache
 libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
+libcheck	ports/devel/libcheck
 libchipcard	ports/devel/libchipcard
 libchipcard-kde	ports/devel/libchipcard-kde
 libchk		ports/sysutils/libchk
