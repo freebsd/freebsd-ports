@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	reportlab
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	print python
 MASTER_SITES=	http://216.92.220.143/ftp/ \
-		ftp://ftp.reportlab.com/
+		ftp://ftp.reportlab.com/ \
+		http://people.freebsd.org/~perky/distfiles/:accel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	ReportLab_${PORTVERSION:S/./_/}.tgz \
+		rl_accel-2544.tar.gz:accel
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
@@ -21,7 +22,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/reportlab-${PORTVERSION:S/./_/}/reportlab
+WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
 REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab

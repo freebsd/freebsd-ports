@@ -1,10 +1,10 @@
---- setup.py.orig	Thu Jan 22 01:45:46 2004
-+++ setup.py	Mon Jan 26 11:59:58 2004
-@@ -17,7 +17,7 @@
-     return r
- 
- pjoin = os.path.join
--package_path = pjoin(package_home(distutils.__dict__), 'reportlab')
+--- setup.py.orig	Fri Nov 26 00:12:20 2004
++++ setup.py	Mon Mar 21 03:26:45 2005
+@@ -19,7 +19,7 @@
+ isfile = os.path.isfile
+ isdir = os.path.isfile
+ dirname = os.path.dirname
+-package_path = pjoin(package_home(distutils.__dict__), 'site-packages', 'reportlab')
 +package_path = os.environ['PACKAGE_PATH']
  
  def get_version():
