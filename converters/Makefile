@@ -36,6 +36,7 @@
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-BinHex
+    SUBDIR += p5-Convert-Binary-C
     SUBDIR += p5-Convert-Morse
     SUBDIR += p5-Convert-PEM
     SUBDIR += p5-Convert-Recode
