@@ -9685,7 +9685,7 @@ xhexagons	ports/games/xhexagons
 xhime		ports/games/xhime
 xhippo		ports/audio/xhippo
 xhtml		ports/textproc/xhtml
-xhtml-1.1	ports/textproc/xhtml-1.1
+xhtml-11	ports/textproc/xhtml-11
 xhtml-basic	ports/textproc/xhtml-basic
 xhtml-modularization	ports/textproc/xhtml-modularization
 xicq		ports/net/xicq
