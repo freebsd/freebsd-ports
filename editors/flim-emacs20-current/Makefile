@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/16 01:36:55 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/01/18 02:32:36 steve Exp $
 #
 
 DISTNAME=	flim-${FLIM_VER}
@@ -40,7 +40,7 @@ EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300006
-MAKEINFO=	makeinfo --no-split --force
+MAKEINFO=	makeinfo --no-split --no-validate
 .else
 MAKEINFO=	makeinfo --no-split
 .endif

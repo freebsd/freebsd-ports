@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 04:02:48 steve Exp $
+# $Id: Makefile,v 1.2 1999/02/17 12:44:26 kuriyama Exp $
 #
 
 DISTNAME=	semi-${SEMI_VER}
@@ -48,7 +48,7 @@ BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300006
-MAKEINFO=	makeinfo --no-split --force
+MAKEINFO=	makeinfo --no-split --no-validate
 .else
 MAKEINFO=	makeinfo --no-split
 .endif
