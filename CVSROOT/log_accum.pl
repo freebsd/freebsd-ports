@@ -428,8 +428,6 @@ sub do_changes_file {
 sub mail_notification {
 	my @text = @_;
 
-	print "Mailing the commit message...\n";
-
 # This is turned off since the To: lines go overboard.
 # Also it has bit-rotted since, and can't just be switched on again.
 # - but keep it for the time being in case we do something like cvs-stable
@@ -446,6 +444,8 @@ sub mail_notification {
 	my @email = ();
 
 	my $to = $cfg::MAILADDRS;
+	print "Mailing the commit message to '$to'.\n";
+
 	push @email, "To: $to" if $cfg::ADD_TO_LINE;
 
 	my $subject = 'Subject: cvs commit:';
