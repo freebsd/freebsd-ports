@@ -1,0 +1,12 @@
+The HTML Document Object allows you as a programmer to quickly and easily
+generate dynamic HTML documents without having to deal with all the HTML
+overhead at every step of the way. For example, you have the ability to
+generate a cookie at any point, until you actually display the document. 
+
+The HTML Document Object provides a template object that you fill in with
+the content you want displayed. You still have to order your content in the
+order it should show, but you don't have to generate all your JavaScript code
+first and then your body, you can intermingle them and the HTML Document
+Object will take care of keeping track of where everything goes. 
+
+WWW: http://htmlobject.sourceforge.net/
