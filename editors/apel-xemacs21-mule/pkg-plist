@@ -1,4 +1,5 @@
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.apel
+%%EMACS_PACKAGESDIR%%/lisp/apel/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/ChangeLog
 %%EMACS_PACKAGESDIR%%/lisp/apel/README.en
 %%EMACS_PACKAGESDIR%%/lisp/apel/README.ja
@@ -28,6 +29,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/apel/mcs-20.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/mcs-xm.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/mcs-xm.elc
+%%EMACS_PACKAGESDIR%%/lisp/apel/mcs-xmu.el
+%%EMACS_PACKAGESDIR%%/lisp/apel/mcs-xmu.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/mule-caesar.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/mule-caesar.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/path-util.el
