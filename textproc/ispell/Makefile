@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/04/15 03:45:43 asami Exp $
+# $Id: Makefile,v 1.9 1995/07/21 13:22:04 jmz Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -36,6 +36,9 @@ pre-configure:
 .else
 	@echo -n
 .endif
+
+post-configure:
+	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 
 british:
 	@echo "Okay, making a british version of ispell...."
