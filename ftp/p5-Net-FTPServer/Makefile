@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-A
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync \
+		${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
