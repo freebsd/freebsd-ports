@@ -1,0 +1,13 @@
+--- Makefile.orig	Tue Sep 28 07:49:54 1999
++++ Makefile	Sun Dec 26 10:22:14 1999
+@@ -14,8 +14,8 @@
+ 
+ all :
+ 	gcc -o sslwrap ${SRC} ${OPT} -DFLAT_INC -DOPENSSL=${OPENSSL} \
+-		-L/usr/local/ssl/lib -lssl -lcrypto \
+-		-I/usr/local/ssl/include \
++		-L${PREFIX}/lib -lssl -lcrypto ${EXTRA_SSL_LIBS} \
++		-I${PREFIX}/include \
+ 		${EXTLIBS}
+ 
+ clean:
