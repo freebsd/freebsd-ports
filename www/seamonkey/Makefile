@@ -6,15 +6,15 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.6.a
+PORTVERSION=	1.6.b
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a/a/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.b/b/}/src \
 		marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a/a/}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.b/b/}${EXTRACT_SUFX} \
 		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
