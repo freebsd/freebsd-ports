@@ -26,6 +26,10 @@ ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	Redistribution not allowed yet.
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		conflicts between linux_base and linux_base-8
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
