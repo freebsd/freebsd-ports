@@ -1,0 +1,21 @@
+--- configure.orig	Fri Feb 15 21:01:04 2002
++++ configure	Sun Feb 24 14:25:34 2002
+@@ -818,8 +818,9 @@
+         CFLAGS=" -O2 -DNDEBUG -funsigned-char -Wall "
+         CXXFLAGS=" -O2 -DNDEBUG -funsigned-char -Wall "
+ fi
+-LIBS=" -L/usr/lib/unicon"
++LIBS=" -L/usr/lib/unicon -L$ac_default_prefix/lib"
+ LDFLAGS=" -Wl,-rpath=/usr/lib/unicon"
++CPPFLAGS="$CPPFLAGS -I$ac_default_prefix/include"
+ 
+ 
+ 
+@@ -2780,6 +2781,7 @@
+ 
+ 	     if test "$gt_cv_func_gnugettext1_libintl" = "yes"; then
+ 	       	       	       	       INTLLIBS="-lintl $LIBICONV"
++	       	       	       	       LIBS="-lintl $LIBS"
+ 	     fi
+ 
+ 	     gt_save_LIBS="$LIBS"
