@@ -7554,6 +7554,7 @@ sonicmail	ports/mail/sonicmail
 sopwith		ports/games/sopwith
 soqt		ports/x11-toolkits/soqt
 soribada	ports/audio/soribada
+sortmail	ports/mail/sortmail
 soundgrab	ports/audio/soundgrab
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
