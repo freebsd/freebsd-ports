@@ -126,10 +126,6 @@ pre-everything::
 # Post-configure
 #
 
-post-extract:
-	@${GZIP_CMD} -dc ${DISTDIR}/BIOS-bochs-1.4.1.gz > \
-		${WRKDIR}/BIOS-bochs-1.4.1
-
 post-patch: patch-bochsrc patch-mans patch-wrapper patch-pkgmessage
 
 patch-bochsrc:
@@ -185,7 +181,6 @@ install-bios:
 	@${MKDIR} ${BIOS_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-* ${BIOS_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/bios/BIOS-* ${BIOS_DIR}
-	@${INSTALL_DATA} ${WRKDIR}/BIOS-bochs-1.4.1 ${BIOS_DIR}
 
 install-fonts:
 	@${MKDIR} ${FONT_DIR}
