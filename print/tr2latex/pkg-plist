@@ -1,0 +1,8 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/tr2latex
+@mode 644
+man/man1/tr2latex.1
+lib/texmf/tex/misc/troffman.sty
+lib/texmf/tex/misc/troffms.sty
