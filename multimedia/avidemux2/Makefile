@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.18
-PORTREVISION=	1
+PORTVERSION=	2.0.20
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
-DISTNAME=	avidemux-2.0.18
+DISTNAME=	avidemux-2.0.20
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.2:${PORTSDIR}/audio/mad
+		mad.2:${PORTSDIR}/audio/libmad \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	\
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
@@ -82,7 +82,11 @@ pre-everything::
 post-patch:
 	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure ${WRKSRC}/*/*/Makefile
-post-configure:
-#	@${SH} ${WRKSRC}/buildLavCodec.sh
+	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/adm_lavcodec/*.c
+	@${REINPLACE_CMD} 's|ADM_LOCALEDIR=$${datadir}/locale|ADM_LOCALEDIR=${PREFIX}/share/locale|' ${WRKSRC}/configure
+.if ${OSVERSION} >= 500000
+	@${ECHO_MSG} "Remove this ugly hack!"
+	@${REINPLACE_CMD} 's|#define EMULATE_FAST_INT 1||g' ${WRKSRC}/configure
+.endif
 
 .include <bsd.port.post.mk>
