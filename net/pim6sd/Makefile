@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pim6sd
-PORTVERSION=	20021111a
+PORTVERSION=	20030901a
 PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
