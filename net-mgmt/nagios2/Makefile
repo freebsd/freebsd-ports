@@ -7,8 +7,12 @@
 
 PORTNAME=	netsaint
 PORTVERSION=	0.0.7b6
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://netsaint.sourceforge.net/download/
+MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
+		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/dwcjr/
+
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
 
 MAINTAINER=	blaz@si.FreeBSD.org
 
@@ -37,5 +41,17 @@ pre-fetch:
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+BSDIMAGES=	bsd_logofullsize.gif bsd_sblogo.gif
+
+post-patch:
+	cd ${WRKSRC} && tar zxf ${DISTDIR}/netsaint-graphics.tar.gz
+
+
+post-install:
+.for i in ${BSDIMAGES}
+	${INSTALL_DATA} ${WRKSRC}/html/images/$i ${PREFIX}/share/${PORTNAME}/images/
+.endfor
+
 
 .include <bsd.port.mk>

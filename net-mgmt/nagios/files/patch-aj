@@ -1,0 +1,18 @@
+--- html/main.html.org	Sun Sep 16 11:36:54 2001
++++ html/main.html	Sun Sep 16 11:38:28 2001
+@@ -27,7 +27,7 @@
+ 
+ <P>
+ <div align="center">
+-<IMG SRC="images/logofullsize.gif" BORDER="0" ALT="NetSaint" width="238" height="227"><br>
++<IMG SRC="images/bsd_logofullsize.gif" BORDER="0" ALT="NetSaint" width="268" height="221"><br>
+ Copyright (c) 1999-2001 Ethan Galstad<br>
+ <a href="mailto:netsaint@netsaint.org">netsaint@netsaint.org</a>
+ </div>
+@@ -81,4 +81,4 @@
+ </div>
+ 
+ </BODY>
+-</HTML>
++</HTML>
+
