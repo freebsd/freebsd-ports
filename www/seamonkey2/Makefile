@@ -175,6 +175,10 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
+.if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
@@ -238,7 +242,7 @@ post-build:
 		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
 		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
 		${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
-	${FIND} ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
+	${FIND} ${WRKSRC}/dist/bin -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 pre-install:
