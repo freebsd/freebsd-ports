@@ -145,12 +145,19 @@ DB_LIB_VERSION?=1
 #
 # Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
 # transport.
-#WITHOUT_LMTP
+#WITHOUT_LMTP=		yes
+#
+# Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
+#WITH_WISHLIST=		yes
 
 # You should not need to fiddle with anything below this point.
 
 .if defined(WITH_EXIMON)
 RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
+.endif
+
+.if defined(WITH_WISHLIST)
+EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 .endif
 
 .include <bsd.port.pre.mk>
@@ -336,6 +343,15 @@ SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
 
 .if !defined(WITHOUT_LMTP)
 SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
+.endif
+
+pre-everything::
+.if empty(.MAKEFLAGS:M-s) && defined(WITH_WISHLIST)
+	@${ECHO} ''
+	@${ECHO} 'Included extra patches:'
+	@${FIND} ${PATCHDIR} -name 'wishlist-*.patch' \
+	    -exec ${SED} -ne 's,^# , ,p' {} \;
+	@${ECHO} ''
 .endif
 
 post-patch:
