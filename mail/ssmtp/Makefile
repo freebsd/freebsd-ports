@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--enable-logfile
 .endif
 
 .if defined(WITH_MD5AUTH)
-CONFIGURE_ARGS+=	--enable-md5suth
+CONFIGURE_ARGS+=	--enable-md5auth
 .endif
 
 .if !defined(WITHOUT_IPV6)
