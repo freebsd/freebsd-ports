@@ -1,0 +1,64 @@
+#!/bin/sh
+
+if [ "x$1" = "x" ]; then
+	exit 1;
+fi
+if [ "x$2" != "xINSTALL" -a "x$2" != "xDEINSTALL" ]; then
+	exit 1;
+fi
+
+export FONTDIR; FONTDIR=${PKG_PREFIX}/lib/X11/fonts/local
+
+if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
+	echo '**********************************************************************'
+	echo "****** ${FONTDIR}/ doesn't exist."
+	echo "****** Creating ${FONTDIR}/"
+	echo '****** Please upgrade your XFree86 to 3.3.3 or upper,'
+	echo "****** or add this directory to your /etc/XF86Config's FontPath entry."
+	echo '**********************************************************************'
+	mkdir ${FONTDIR}
+fi
+
+# font alias entry here!
+TMPFILE=/tmp/install-fonts-alias-$$
+cat << EOF > ${TMPFILE}
+-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+k20b -kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+k20m -kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+10x20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
+a20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
+10x20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
+a20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
+10x20rkb -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+r20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+10x20rkm -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+r20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+EOF
+
+echo "Updating ${FONTDIR}/fonts.alias"
+cd ${FONTDIR}
+touch fonts.alias
+cp fonts.alias fonts.alias.orig
+if [ "$2" = "INSTALL" ] ; then
+	(grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig ; \
+	 cat ${TMPFILE}) > fonts.alias
+elif [ "$2" = "DEINSTALL" ] ; then
+	grep -v -- "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
+fi
+rm -f fonts.alias.orig ${TMPFILE}
+
+echo "**********************************************************"
+echo "You should restart X server or do 'xset fp rehash' command"
+echo "to enable this update."
+echo "**********************************************************"
+
+exit 0;

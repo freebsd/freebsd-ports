@@ -1,23 +1,23 @@
 --- pcf/fonts.alias.kappa.old	Thu Oct  8 00:18:23 1998
 +++ pcf/fonts.alias.kappa	Wed Oct  7 15:26:19 1998
 @@ -0,0 +1,20 @@
-+-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+k20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+k20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
-+a20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
-+a20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
-+10x20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
-+10x20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
-+r20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
-+r20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
-+10x20rkb	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
-+10x20rkm	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
++-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++k20b -kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++k20m -kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
++10x20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
++a20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
++10x20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
++a20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
++10x20rkb -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
++r20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
++10x20rkm -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
++r20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0

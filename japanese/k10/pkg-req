@@ -22,8 +22,11 @@ fi
 # font alias entry here!
 TMPFILE=/tmp/install-fonts-alias-$$
 cat << EOF > ${TMPFILE}
-k12 -mnkaname-fixed-medium-r-normal--12-110-75-75-c-120-jisx0208.1983-0
-r12 -mnkaname-fixed-medium-r-normal--12-110-75-75-c-60-jisx0201.1976-0
+k10  -misc-fixed-medium-r-normal--10-90-75-75-c-100-jisx0208.1983-0
+k10b -misc-fixed-bold-r-normal--10-90-75-75-c-100-jisx0208.1983-0
+a10  -misc-fixed-medium-r-normal--10-90-75-75-c-50-iso8859-1
+a10b -misc-fixed-bold-r-normal--10-90-75-75-c-50-iso8859-1
+r10  -misc-fixed-medium-r-normal--10-90-75-75-c-50-jisx0201.1976-0
 EOF
 
 echo "Updating ${FONTDIR}/fonts.alias"

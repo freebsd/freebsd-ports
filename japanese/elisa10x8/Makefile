@@ -3,7 +3,7 @@
 # Date created:		26 Sep 1997
 # Whom: Dai ISHIJIMA & ELISA Font Project <ishijima@tri.pref.osaka.jp>
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:43:05 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/24 14:42:58 kuriyama Exp $
 #
 
 DISTNAME=	ja-elisa8-1.0
@@ -21,9 +21,16 @@ USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	elisau10.tgz
 
-MAKE_ENV+=	DISTDIR=${DISTDIR}
+FONTSDIR=	lib/X11/fonts/local
+MAKE_ENV=	DISTDIR=${DISTDIR} FONTSDIR=${FONTSDIR}
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
+
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 post-install:
+	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/elisa8
 	@${CP} ${WRKSRC}/elisa100.doc ${PREFIX}/share/doc/elisa8/

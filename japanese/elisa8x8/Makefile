@@ -3,7 +3,7 @@
 # Date created:		17 Aug. 1998
 # Whom: Toshihiko SHIMOKAWA <toshi@tea.forus.or.jp> & ELISA Font Project
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/18 22:49:25 kuriyama Exp $
 #
 
 DISTNAME=	elisat10
@@ -18,43 +18,38 @@ NO_WRKSUBDIR=	yes
 
 BDFTOPCF_CMD=	${PREFIX}/bin/bdftopcf
 MKFONTDIR_CMD=	${PREFIX}/bin/mkfontdir
-FONTSDIR=	${PREFIX}/lib/X11/fonts/misc
+FONTSDIR=	lib/X11/fonts/local
+INSTALLDIR=	${PREFIX}/${FONTSDIR}
 DOCDIR=		${PREFIX}/share/doc/elisa
 PORTDOCS=	elisa100.doc elisat10.doc elisat10.html
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-build:
 	@(cd ${WRKDIR}; \
-	${BDFTOPCF_CMD} elisat10.bdf | ${GZIP_CMD} -9 > elisat10.pcf.gz ;\
-	${BDFTOPCF_CMD} jpnhn4-jis.bdf | ${GZIP_CMD} -9 > jpnhn4-jis.pcf.gz ;\
-	${BDFTOPCF_CMD} jpnhn4-iso.bdf | ${GZIP_CMD} -9 > jpnhn4-iso.pcf.gz ;\
+	${BDFTOPCF_CMD} elisat10.bdf   | ${GZIP_CMD} -c > elisat10.pcf.gz ;\
+	${BDFTOPCF_CMD} jpnhn4-jis.bdf | ${GZIP_CMD} -c > jpnhn4-jis.pcf.gz ;\
+	${BDFTOPCF_CMD} jpnhn4-iso.bdf | ${GZIP_CMD} -c > jpnhn4-iso.pcf.gz ;\
 	)
 
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+
 do-install:
-	@${MKDIR} ${FONTSDIR} ${DOCDIR}
+	@${MKDIR} ${INSTALLDIR} ${DOCDIR}
 	@(cd ${WRKSRC} ;\
-	${INSTALL_DATA} elisat10.pcf.gz ${FONTSDIR} ;\
-	${INSTALL_DATA} jpnhn4-jis.pcf.gz ${FONTSDIR} ;\
-	${INSTALL_DATA} jpnhn4-iso.pcf.gz ${FONTSDIR} ;\
-	${INSTALL_DATA} ${PORTDOCS} ${DOCDIR} ;\
-	${ECHO} "Updating fonts.dir" ;\
-	${MKFONTDIR_CMD} ${FONTSDIR} ;\
-	${ECHO} "Updating fonts.alias" ;\
-	${TOUCH} ${FONTSDIR}/fonts.alias ;\
-	${CAT} ${FONTSDIR}/fonts.alias fonts.alias > fonts.alias.tmp ;\
-	${INSTALL_DATA} fonts.alias.tmp ${FONTSDIR} ;\
-	${MV} -f ${FONTSDIR}/fonts.alias.tmp ${FONTSDIR}/fonts.alias ;\
+	${INSTALL_DATA} elisat10.pcf.gz ${INSTALLDIR} ;\
+	${INSTALL_DATA} jpnhn4-jis.pcf.gz ${INSTALLDIR} ;\
+	${INSTALL_DATA} jpnhn4-iso.pcf.gz ${INSTALLDIR} ;\
 	)
 
 post-install:
+	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@(cd ${WRKSRC} ;\
 	${INSTALL_DATA} ${PORTDOCS} ${DOCDIR} ;\
 	)
 .endif
-	@${ECHO} "**********************************************************"
-	@${ECHO} "You should restart X server or do 'xset fp rehash' command"
-	@${ECHO} "to use installed fonts."
-	@${ECHO} "**********************************************************"
 
 .include <bsd.port.mk>

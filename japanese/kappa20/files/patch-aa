@@ -1,87 +1,23 @@
---- Makefile.dist	Sun Oct  4 05:46:39 1998
-+++ Makefile	Wed Nov 11 23:55:53 1998
-@@ -1,4 +1,4 @@
--TARGETDIR = /usr/X11R6/lib/X11/fonts/misc
-+TARGETDIR = ${PREFIX}/lib/X11/fonts/local
- 
- COMPRESSCMD = gzip -9
- COMPRESSEXT = .gz
-@@ -59,43 +59,43 @@
+--- Makefile.orig	Sun Oct  4 05:46:39 1998
++++ Makefile	Sat Oct 10 02:53:35 1998
+@@ -59,7 +59,7 @@
  	rm vk20m.bdf.orig
  
  fonts.alias.standard::
 -	grep -v '^-kappa\*--20-\*' ${TARGETDIR}/fonts.alias > pcf/fonts.alias
--	echo -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo k20b -kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo k20m -kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo 10x20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1 >> pcf/fonts.alias
--	echo a20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1 >> pcf/fonts.alias
--	echo 10x20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1 >> pcf/fonts.alias
--	echo a20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1 >> pcf/fonts.alias
--	echo 10x20rkb -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0 >> pcf/fonts.alias
--	echo r20b -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0 >> pcf/fonts.alias
--	echo 10x20rkm -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0 >> pcf/fonts.alias
--	echo r20m -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0 >> pcf/fonts.alias
-+	perl -ne 'if ( /^!/ || ( !/[ \t]-kappa-.+--20-/i ) ){ print; }' ${TARGETDIR}/fonts.alias > pcf/fonts.alias
-+	echo '-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo 'k20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo 'k20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '10x20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1' >> pcf/fonts.alias
-+	echo 'a20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1' >> pcf/fonts.alias
-+	echo '10x20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1' >> pcf/fonts.alias
-+	echo 'a20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1' >> pcf/fonts.alias
-+	echo '10x20rkb	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0' >> pcf/fonts.alias
-+	echo 'r20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0' >> pcf/fonts.alias
-+	echo '10x20rkm	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0' >> pcf/fonts.alias
-+	echo 'r20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0' >> pcf/fonts.alias
- 
- fonts.alias.all:: fonts.alias.standard
--	echo -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo vk20b -kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-minchou-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo -kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo vk20m -kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0 >> pcf/fonts.alias
--	echo ipa-10x20m  -kappa-fixed-medium-r-normal--20-190-75-75-c-100-muleipa-1
--	echo ipa-10x20b  -kappa-fixed-bold-r-normal--20-190-75-75-c-100-muleipa-1
-+	echo '-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0	-kappa-mincho-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo 'vk20b	-kappa-fixed-bold-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-minchou-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1983-0	-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo '-kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0	-kappa-mincho-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo 'vk20m	-kappa-fixed-medium-r-normal--20-190-75-75-vc-200-jisx0208.1990-0' >> pcf/fonts.alias
-+	echo 'ipa-10x20m	-kappa-fixed-medium-r-normal--20-190-75-75-c-100-muleipa-1' >> pcf/fonts.alias
-+	echo 'ipa-10x20b	-kappa-fixed-bold-r-normal--20-190-75-75-c-100-muleipa-1' >> pcf/fonts.alias
++#	egrep -iv '[ 	]-kappa.+--20-.+' ${TARGETDIR}/fonts.alias > pcf/fonts.alias
+ 	echo -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
+ 	echo -kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
+ 	echo -kappa-minchou-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 >> pcf/fonts.alias
+@@ -99,8 +99,9 @@
  
  
  install::
+-	install -m 644 -c pcf/*.pcf* pcf/fonts.alias ${TARGETDIR}
+-	cd ${TARGETDIR} ; mkfontdir
++	install -m 644 -c pcf/*.pcf* ${TARGETDIR}
++#	install -m 644 -c pcf/*.pcf* pcf/fonts.alias ${TARGETDIR}
++#	cd ${TARGETDIR} ; mkfontdir
+ 
+ clean::
+ 	rm -f *~ pcf/*.pcf* pcf/fonts.dir pcf/fonts.alias vk20?.bdf* 
