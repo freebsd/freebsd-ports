@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 MAINTAINER=	gnome@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
