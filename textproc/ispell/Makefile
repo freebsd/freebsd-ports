@@ -6,15 +6,15 @@
 #
 
 PORTNAME?=	ispell
-PORTVERSION?=	3.2.05
-PORTREVISION?=	2
+PORTVERSION?=	3.2.06
+PORTREVISION?=	0
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
-DISTNAME=	ispell-3.2.05		# needed for slave ports / options
-DISTFILES=	ispell-3.2.05.tar.gz    # needed for slave ports / options
+DISTNAME=	ispell-3.2.06		# needed for slave ports / options
+DISTFILES=	ispell-3.2.06.tar.gz    # needed for slave ports / options
 
 MAINTAINER?=	jmz@FreeBSD.org
-ISPELL_FILES= 	ispell-3.2.05.tar.gz
+ISPELL_FILES= 	ispell-3.2.06.tar.gz
 
 MAN1=		ispell.1
 MAN4=		ispell.4 english.4
