@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4
-PORTVERSION=	1.3578
+PORTVERSION=	1.4251
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://public.perforce.com/guest/tony_smith/perforce/API/Ruby/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
