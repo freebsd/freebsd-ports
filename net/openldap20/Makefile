@@ -25,7 +25,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source LDAP client and server software
 
+.if exists(${LOCALBASE}/lib/libdb4.a)
+DB_CFLAGS=      -I${LOCALBASE}/include/db4
+LIB_DEPENDS=	db41:${PORTSDIR}/databases/db4
+.else
+DB_CFLAGS=      -I${LOCALBASE}/include/db3
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+.endif
 
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
@@ -48,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 # math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
 CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/db3
+		${DB_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_SASL)
