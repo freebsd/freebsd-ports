@@ -7675,6 +7675,7 @@ synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
 syncmal		ports/palm/syncmal
 synergy 	ports/sysutils/synergy
+syntax_tools	ports/devel/syntax_tools
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 systemg		ports/x11-fm/systemg
