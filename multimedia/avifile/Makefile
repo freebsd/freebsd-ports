@@ -19,7 +19,7 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 ONLY_FOR_ARCHS=	i386
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -28,11 +28,8 @@ USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		MOC="${MOC}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-win32-path=${LOCALBASE}/lib/win32 \
+CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32 \
 		--enable-release
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
@@ -50,7 +47,6 @@ LIB_VERSION=	0
 EXTRA_BUILD_DIR=	player samples/benchmark samples/qtrecompress
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-MOC?=		${X11BASE}/bin/moc2
 DIFF?=		/usr/bin/diff
 
 .include <bsd.port.pre.mk>

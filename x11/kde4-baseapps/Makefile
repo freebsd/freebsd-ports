@@ -6,36 +6,27 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-USE_QT2=	yes
+USE_KDELIBS_VER=2
 SOMAJOR=	4
 SOMINOR=	0
-MOC?=		${X11BASE}/bin/moc2
 USE_XPM=	yes
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--with-qt-dir=${X11BASE} \
-		--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-extra-libs=${LOCALBASE}/lib \
 		--without-ldap \
 		--disable-closure
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include -D_GETOPT_H" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 
 pre-configure:

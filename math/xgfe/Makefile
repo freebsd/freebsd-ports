@@ -15,7 +15,7 @@ MAINTAINER=	mph@freebsd.org
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_X_PREFIX=	yes
 
 MAKE_ENV=	X11BASE=$(X11BASE) PREFIX=$(PREFIX)

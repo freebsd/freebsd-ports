@@ -16,7 +16,7 @@ RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_QT2=yes
+USE_QT_VER=	2
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

@@ -18,16 +18,11 @@ LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	MOC="${X11BASE}/bin/moc2"
-CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-sidplay-inc=${LOCALBASE}/include \
-		--with-sidplay-lib=${LOCALBASE}/lib \
-		--with-x-includes=${X11BASE}/include \
-		--with-x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS+=--with-sidplay-inc=${LOCALBASE}/include \
+		--with-sidplay-lib=${LOCALBASE}/lib
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 

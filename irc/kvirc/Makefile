@@ -22,8 +22,7 @@ MAN1=		kvirc.1
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes
-USE_NEWGCC=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \

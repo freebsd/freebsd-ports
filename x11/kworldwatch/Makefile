@@ -14,11 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	scrappy@freebsd.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
-		kfm.3:${PORTSDIR}/x11/kdelibs11
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

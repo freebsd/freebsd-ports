@@ -21,25 +21,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	jeremy@external.org
 
-LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}
 
-USE_QT2=	yes
-MOC?=		${X11BASE}/bin/moc2
+USE_KDELIBS_VER=2
 USE_XPM=	yes
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-extra-libs=${LOCALBASE}/lib \
-		--with-extra-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
 		--disable-closure
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc ${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 
 DOCS=		css html javascript php

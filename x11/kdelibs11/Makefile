@@ -29,7 +29,7 @@ MAKE_ENV+=	SOMAJOR="${LIBVER}" SOMINOR="0"
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
+USE_QT_VER=	1
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=
@@ -39,12 +39,6 @@ CONFIGURE_ARGS=	--enable-shared --x-includes="$(X11BASE)/include" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		QTDIR=${QTDIR}
-
-.if defined(PREFIX)
-QTDIR?=		${PREFIX}
-.else
-QTDIR?=		${X11BASE}
-.endif
 
 # generate KDE style mtree
 MTREE_CMD=	${CAT} ${MTREE_FILE} ${FILESDIR}/kde.dist | /usr/sbin/mtree

@@ -13,9 +13,8 @@ MASTER_SITES=	http://www.guruz.de/
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
-USE_QT=		yes
+USE_KDELIBS_VER=1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}"

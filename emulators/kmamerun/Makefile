@@ -14,11 +14,9 @@ DISTNAME=	kmamerun-0.3.0pre1
 MAINTAINER=	nsayer@freebsd.org
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
-USE_QT=		yes
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 

@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/fine
 
 .include <bsd.port.pre.mk>

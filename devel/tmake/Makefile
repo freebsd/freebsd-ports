@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
 USE_PERL5=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 NO_BUILD=	yes
 TMAKE_BIN=	progen tmake
 

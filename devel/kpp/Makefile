@@ -12,10 +12,8 @@ MASTER_SITES=	http://www.msoe.edu/~geiseri/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
-
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
-USE_QT=		yes
 CONFIGURE_ARGS+=--datadir=${PREFIX}
 CONFIGURE_ENV=	KDEDIR="${PREFIX}"
 

@@ -13,11 +13,10 @@ MASTER_SITE_SUBDIR=	ksnes9x
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
 
 .include <bsd.port.mk>

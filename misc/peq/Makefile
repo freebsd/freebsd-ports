@@ -13,7 +13,7 @@ MASTER_SITES=	http://silverstone.fortunecity.com/jaguar/37/ \
 
 MAINTAINER=	gvg@uunet.co.za
 
-USE_QT=		yes
+USE_QT_VER=	1
 
 post-install:
 	strip ${PREFIX}/bin/peq

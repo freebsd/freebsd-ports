@@ -13,10 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
-		kdecore.3:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib
 
-USE_QT=		yes
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

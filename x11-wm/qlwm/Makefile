@@ -19,11 +19,10 @@ DOCS=		CHANGES README
 LIBDIR=		lib/qlwm
 PLIST=		${WRKDIR}/pkg-plist
 MAN1=		qlwm.1
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_X_PREFIX=	yes
 
-MAKE_ENV=	CPPFLAGS="-I${X11BASE}/include/qt2 -I${X11BASE}/include" \
-		LFLAGS="-L${X11BASE}/lib -L${X11BASE}/lib/qt2" \
+MAKE_ENV=	LFLAGS="-L${X11BASE}/lib -L${X11BASE}/lib/qt2" \
 		QTDIR=${X11BASE} \
 		DEST=${PREFIX}/${LIBDIR}
 

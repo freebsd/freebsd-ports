@@ -12,9 +12,7 @@ MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11/
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

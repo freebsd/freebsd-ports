@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.midwestcs.com/bidwatcher/download/
 MAINTAINER=	mph@FreeBSD.org
 
 USE_GMAKE=	YES
-USE_QT=		YES
+USE_QT_VER=	1
 MAKE_ENV=	QTDIR=${X11BASE}/include/X11/qt \
 		SYSCONF_LFLAGS_QT=${X11BASE}/lib \
 		SYSCONF_MOC=${X11BASE}/bin/moc

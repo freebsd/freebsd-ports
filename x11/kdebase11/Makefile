@@ -26,7 +26,7 @@ NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
-USE_QT=		yes
+USE_QT_VER=	1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt-includes=${QTDIR}/include/X11/qt \
@@ -39,12 +39,6 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS) -DHAVE_GETUSERSHELL -DTIME_WITH_SYS_TIME" \
 		QTDIR=${QTDIR}
 MAKE_ENV=	RM=${RM}
 CFLAGS+=	"-I$(PREFIX)/include"
-
-.if defined(PREFIX)
-QTDIR?=		${PREFIX}
-.else
-QTDIR?=		${X11BASE}
-.endif
 
 pre-patch:
 	@${CP} ${FILESDIR}/ja.kimap ${WRKSRC}/kikbd/maps

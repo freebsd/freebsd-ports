@@ -12,13 +12,8 @@ MASTER_SITES=	http://linuxberg.uol.com.br/files/kde/network/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
-		kfile.3:${PORTSDIR}/x11/kdelibs11 \
-		kfm.3:${PORTSDIR}/x11/kdelibs11
-
+USE_KDELIBS_VER=1
 USE_XLIB=	yes
-USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

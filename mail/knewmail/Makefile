@@ -13,11 +13,9 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	wellers@netvision.net.il
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
-
+USE_KDELIBS_VER=1
 HAS_CONFIGURE=	yes
 KDEDIR=		${PREFIX}
-USE_QT=		yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .include <bsd.port.mk>

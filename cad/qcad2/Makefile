@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 MAKE_ENV=	QTDIR="${X11BASE}"
 
 .include <bsd.port.pre.mk>

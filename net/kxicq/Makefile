@@ -13,11 +13,9 @@ DISTNAME=	${PORTNAME}-03132000
 
 MAINTAINER=	andrey@novikov.com
 
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
-
+USE_KDELIBS_VER=1
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_QT=		yes
 
 DIST_SUBDIR=	kxicq
 

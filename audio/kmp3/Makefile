@@ -12,10 +12,7 @@ MASTER_SITES=	http://www.kmp3.org/tarballs/
 
 MAINTAINER=	mb@imp.ch
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kmp3

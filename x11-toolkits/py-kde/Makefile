@@ -19,7 +19,7 @@ MAINTAINER=	adsharma@sharmas.dhs.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/python1.5/qt.py:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_LIBTOOL=	yes
-USE_QT=		yes
+USE_QT_VER=	1
 USE_GMAKE=	yes
 CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/X11/qt
 

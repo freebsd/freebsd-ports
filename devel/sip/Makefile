@@ -15,9 +15,9 @@ MAINTAINER=	adsharma@sharmas.dhs.org
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-qt --with-qt-includes=${X11BASE}/include/qt2
+CONFIGURE_ARGS=	--enable-qt
 CONFIGURE_ENV=	LDFLAGS=-lgcc
 
 .include <bsd.port.mk>

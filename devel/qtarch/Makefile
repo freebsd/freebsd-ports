@@ -13,10 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 USE_GMAKE=	yes
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/qtarch-1.4

@@ -17,7 +17,7 @@ RUN_DEPENDS=	esdplay:${PORTSDIR}/audio/esound
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
+USE_QT_VER=	1
 
 post-install:
 	@strip ${PREFIX}/bin/icqnix

@@ -14,14 +14,12 @@ MAINTAINER=	adsharma@sharmas.dhs.org
 
 LIB_DEPENDS=	sip.4:${PORTSDIR}/devel/sip
 
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS=-lgcc \
 		SIP_MOC="${X11BASE}/bin/moc2"
-CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib
 
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | \

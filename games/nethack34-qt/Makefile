@@ -25,7 +25,7 @@ QT_PATCH=	qnethack-3.2.2.1.0.1.src.tar.gz
 QT_SOUND=	nhs.tar.gz
 EXTRACT_ONLY=	nethack-3.2.2.tar.gz
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_XPM=	yes
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	brett@peloton.runet.edu
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_BISON=	yes
 MAKE_ENV=	Cxx="${CXX}" CxxFLAGS="${CXXFLAGS}"
 ALL_TARGET=	jafm

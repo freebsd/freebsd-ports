@@ -13,13 +13,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-USE_QT2=	yes
+USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${X11BASE}/include
-
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 .include <bsd.port.pre.mk>
 

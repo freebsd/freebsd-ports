@@ -15,10 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andrey@novikov.com
 
-LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
-
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
 
 .include <bsd.port.mk>

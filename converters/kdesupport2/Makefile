@@ -16,21 +16,13 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_QT2=	yes
-MOC?=		${X11BASE}/bin/moc2
+USE_QT_VER=	2
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-extra-libs=${LOCALBASE}/lib \
-		--without-audiofile
-CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" \
-		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
+CONFIGURE_ARGS+=--without-audiofile
 
 pre-configure:
 	${PERL} -pi -e "s@-version-info 1:1@-version-info 3:0@g" ${WRKSRC}/mimelib/Makefile.in
