@@ -8,4 +8,8 @@ This package contains the following software:
 	may be used to read data CD's, to write to DVD-RAM
 	and to copy Solaris boot CD's
 
+-	scgcheck (checks and validates the ABI of libscg)
+
+-	rscsi (allows using SCSI-devices over the network)
+
 WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html

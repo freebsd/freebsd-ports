@@ -1,66 +1,169 @@
-# New ports collection makefile for:	cdrtools
-# Date created:		Wed Jul 25 23:30:19 CEST 2001
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
+# New ports collection makefile for:	cdrtools-devel
+# Date created:				28 May 2003
+# Whom:					marius@alchemy.franken.de
 #
 # $FreeBSD$
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.0.3
+PORTVERSION?=	2.01a18
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
-MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
-DISTNAME=	cdrtools-2.00.3
+MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	cdrtools-2.01a18
 
-MAINTAINER=	dirk@FreeBSD.org
-COMMENT?=	Cdrecord, mkisofs and several other programs to record CD-R[W]
+MAINTAINER=	marius@alchemy.franken.de
+COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
+
+CONFLICTS?=	cdrtools-[0-9]*
+
+NO_LATEST_LINK=	yes
 
 .if defined(MKISOFS)
-MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8
+MAN8=		isoinfo.8 mkisofs.8
+MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
+		mkisofs.8 mkhybrid.8
+DOCS=		README README.compression README.eltorito README.graft_dirs \
+		README.hfs_boot README.hfs_magic README.hide README.joliet \
+		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
+		README.session README.sort README.sparcboot
 .else
-MAN1=		cdda2wav.1 cdrecord.1 readcd.1
+MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
+DOCS=		README README.DiskT@2 README.FreeBSD README.WORM README.cdplus \
+		README.cdrw README.cdtext README.clone README.copy \
+		README.mkisofs README.multi README.raw README.rscsi \
+		README.sony README.verify
 .endif
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
-SLAVEDIRS=	sysutils/mkisofs
+USE_REINPLACE=	yes
+MAKE_ENV=	CCOM=${CC}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 
-.if ${MACHINE_ARCH} != "i386"
+.if !defined(MKISOFS)
+.if !defined(WITH_RSCSI)
+PLIST_SUB=	RSCSI="@comment "
+.else
+PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
+PLIST_SUB=	RSCSI=""
+.endif
+PKGMESSAGE=	${WRKDIR}/pkg-message
+.else
+PKGMESSAGE=	""
+.endif
+
+pre-everything::
+.if !defined(MKISOFS)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build option(s):"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITH_RSCSI=yes	builds with rscsi which allows using SCSI-devices over the"
+	@${ECHO_MSG} "		network."
+	@${ECHO_MSG} "		BEWARE:	The rscsi binary gets installed suid root as this is"
+	@${ECHO_MSG} "			the preferred method to set it up."
+	@${ECHO_MSG} ""
+.endif
+
 post-extract:
-	${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
+.for i in config.guess config.sub
+	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
+	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/cdda2wav
+.endfor
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+.endif
+
+post-patch:
+.if defined(MKISOFS)
+.for i in 45libdeflt 45libedc 45libparanoia 55cdda2wav 55cdrecord 55readcd \
+	55rscsi 55scgcheck
+	@${RM} ${WRKSRC}/TARGETS/${i}
+.endfor
+.else
+.for i in 45libfile 45libhfs_iso 45libunls 55mkisofs 55mkisofs!@!diag
+	@${RM} ${WRKSRC}/TARGETS/${i}
+.endfor
+.if !defined(WITH_RSCSI)
+	@${RM} ${WRKSRC}/TARGETS/55rscsi
+.endif
+.for i in README.rscsi include/deflts.h cdrecord/cdrecord.1 \
+	cdrecord/cdrecord.dfl cdrecord/defaults.c readcd/readcd.1 \
+	rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
+	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
+		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
+		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
+.endfor
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
+		${WRKDIR}/pkg-message
 .endif
 
 do-install:
 .if defined(MKISOFS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${ARCH}-freebsd-cc/mkisofs \
-	 ${PREFIX}/bin
+		${PREFIX}/bin
 	@${LN} -sf mkisofs ${PREFIX}/bin/mkhybrid
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/devdump \
-	 ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isodump \
-	 ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isoinfo \
-	 ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isovfy \
-	 ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/mkisofs/apple_driver.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkhybrid.8 ${PREFIX}/man/man8
+.for i in devdump isodebug isodump isoinfo isovfy
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/${i} \
+		${PREFIX}/bin
+.endfor
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/mkisofs/${i} ${DOCSDIR}
+.endfor
+.endif
 .else
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${ARCH}-freebsd-cc/cdrecord \
-	 ${PREFIX}/bin
+		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${ARCH}-freebsd-cc/cdda2wav \
-	 ${PREFIX}/bin
+		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
 	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${ARCH}-freebsd-cc/readcd \
-	 ${PREFIX}/bin
+		${PREFIX}/bin
+.if defined(WITH_RSCSI)
+	@${INSTALL_PROGRAM} ${WRKSRC}/rscsi/OBJ/${ARCH}-freebsd-cc/rscsi \
+		${PREFIX}/sbin
+	@${CHMOD} u+s ${PREFIX}/sbin/rscsi
+.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${ARCH}-freebsd-cc/scgcheck \
+		${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl \
+		${PREFIX}/etc/cdrecord.sample
+#.if !exists(${PREFIX}/etc/cdrecord)
+#	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord
+#.endif
+	@if ! [ -f ${PREFIX}/etc/cdrecord ]; then ${INSTALL_DATA} \
+		${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord; fi
+.if defined(WITH_RSCSI)
+	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi.sample
+#.if !exists(${PREFIX}/etc/rscsi)
+#	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi
+#.endif
+	@if ! [ -f ${PREFIX}/etc/rscsi ]; then ${INSTALL_DATA} \
+		${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi; fi
 .endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+.endif
+
+post-install:
+	-@if [ -f ${PKGINSTALL} ]; then ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; fi
+	@if [ -f ${WRKDIR}/pkg-message ]; then ${CAT} ${WRKDIR}/pkg-message; fi
 
 .include <bsd.port.mk>
