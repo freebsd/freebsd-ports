@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	ppm2fli
-PORTVERSION=	b1
+PORTVERSION=	2.0d
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://crusty.er.usgs.gov/pub/animation/fli/
-DISTNAME=	ppm2fli_b1.92
+MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+NO_WRKSUBDIR=	yes
+
 MAN1=	ppm2fli.1 unflick.1
 
+pre-patch:
+	@${PERL} -pi -e 's|^C|#C|g ; \
+		 s|gcc |\$${CC} |g' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ppm2fli ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/unflick ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ppm2fli.man ${PREFIX}/man/man1/ppm2fli.1
-	${INSTALL_MAN} ${WRKSRC}/unflick.man ${PREFIX}/man/man1/unflick.1
+.for name in ppm2fli unflick
+	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${PREFIX}/bin/${name}
+	${INSTALL_MAN} ${WRKSRC}/${name}.man ${MANPREFIX}/man/man1/${name}.1
+.endfor
 
 .include <bsd.port.mk>
