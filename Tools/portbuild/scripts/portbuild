@@ -6,6 +6,7 @@ master=bento
 
 export BATCH=t
 export NO_RESTRICTED=t
+#export FOR_CDROM=t
 export USA_RESIDENT=YES
 export FORCE_PKG_REGISTER=t
 #export FORCE_PACKAGE=t
@@ -20,7 +21,7 @@ unset MAKEFLAGS
 unset PORTSDIR
 
 # directories to clean
-cleandirs="/usr/local /usr/X11R6"
+cleandirs="/usr/local /usr/X11R6 /compat"
 
 # 15 minutes
 export FTP_TIMEOUT=900
@@ -42,15 +43,23 @@ if [ "x$1" = "x-noclean" ]; then
   shift
 fi
 
-if [ ${branch} = "3.0" ]; then
-  export OSREL=3.0
-  export OSVERSION=300006
-  export PORTOBJFORMAT=elf
-else
-  export OSREL=2.2.8
-  export OSVERSION=228001
-  export PORTOBJFORMAT=aout
-fi
+case ${branch} in
+  4*)
+    export OSREL=4.0
+    export OSVERSION=400003
+    export PORTOBJFORMAT=elf
+    ;;
+  3*)
+    export OSREL=3.2
+    export OSVERSION=320000
+    export PORTOBJFORMAT=elf
+    ;;
+  *)
+    export OSREL=2.2.8
+    export OSVERSION=228001
+    export PORTOBJFORMAT=aout
+    ;;
+esac
 
 args="$*"
 
@@ -92,13 +101,6 @@ if [ ${found} != 1 ]; then
   touch ${chroot}/used/${pkgname}
   tar -C ${chroot} -xf ${bindist}
 
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
-    >/dev/null 2>&1
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
-    >/dev/null 2>&1
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
-    >/dev/null 2>&1
-
 fi
 
 rm -rf ${chroot}/tmp/*
@@ -108,6 +110,13 @@ mkdir -p depends distfiles packages
 echo "building ${pkgname} on $(hostname -s)" | tee ${chroot}/tmp/${pkgname}.log
 echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
 echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
+
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
+  >/dev/null 2>&1
 
 mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/usr/ports
 mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
@@ -125,11 +134,9 @@ while [ $# -gt 0 ]; do
   if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
       echo "copying package $1 for ${pkgname}"
-      if [ -f ${bakdir}/$1 ]; then
-	cp -p ${bakdir}/$1 ${chroot}/tmp/depends
-      else
-	scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
-      fi
+      scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
+    else
+      echo "skipping package $1 for ${pkgname} since it is missing"
     fi
   fi
   shift
