@@ -141,6 +141,7 @@
     SUBDIR += seizedesktop
     SUBDIR += sh-utils
     SUBDIR += shc
+    SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
     SUBDIR += snowflake

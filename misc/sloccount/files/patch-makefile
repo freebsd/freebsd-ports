@@ -1,0 +1,66 @@
+--- makefile.orig	Mon Apr 30 21:30:22 2001
++++ makefile	Sun May 20 20:54:36 2001
+@@ -7,14 +7,12 @@
+ # Set this for where to store the man pages and executables.
+ # If you want to store this as part of an official distribution,
+ # change this to "/usr":
+-PREFIX=/usr/local
+ 
+ # Set "EXE_SUFFIX" to ".exe" if you're running on Windows, like this:
+ # EXE_SUFFIX=.exe
+ EXE_SUFFIX=
+ 
+ # Set this to your C compiler, if it's not "gcc"; a likely alternative is "cc":
+-CC=gcc
+ 
+ # Set this to the name of your "install" program.  On some systems,
+ # "install -C" would be useful (so unchanged files won't be modified),
+@@ -35,9 +33,9 @@
+ ARCH=i386
+ VERSIONEDNAME=$(NAME)-$(VERSION)
+ INSTALL_DIR=$(PREFIX)/bin
+-MAN_DIR=$(PREFIX)/share/man
++MAN_DIR=$(PREFIX)/man
+ MAN_DIR_MAN1=$(MAN_DIR)/man1
+-DOC_DIR=$(PREFIX)/share/doc/$(VERSIONEDNAME)-$(RPM_VERSION)
++DOC_DIR=$(PREFIX)/share/doc/${NAME}
+ POSTED_DIR=/home/dwheeler/dwheeler.com/sloccount
+ 
+ 
+@@ -83,10 +81,10 @@
+ all: lexcount1$(EXE_SUFFIX) c_count$(EXE_SUFFIX) java_count$(EXE_SUFFIX) sloccount.1.gz
+ 
+ lexcount1$(EXE_SUFFIX): lexcount1.c
+-	$(CC) lexcount1.c -o lexcount1$(EXE_SUFFIX)
++	$(CC) ${CFLAGS} lexcount1.c -o lexcount1$(EXE_SUFFIX)
+ 
+ c_count$(EXE_SUFFIX): c_count.c
+-	$(CC) c_count.c -o c_count$(EXE_SUFFIX)
++	$(CC) ${CFLAGS} c_count.c -o c_count$(EXE_SUFFIX)
+ 
+ sloccount.1.gz: sloccount.1
+ 	gzip -c sloccount.1 > sloccount.1.gz
+@@ -97,7 +95,7 @@
+ 
+ # This is USC's code counter, not built by default:
+ c_lines: C_LINES.C
+-	$(CC) C_LINES.C -o c_lines$(EXE_SUFFIX)
++	$(CC) ${CFLAGS} C_LINES.C -o c_lines$(EXE_SUFFIX)
+ 
+ 
+ install_programs: all
+@@ -107,14 +105,12 @@
+ 	cd $(INSTALL_DIR) && rm -f $(EXECUTABLES)
+ 
+ install_man:
+-	$(INSTALL_A_DIR) $(MAN_DIR_MAN1)
+ 	$(INSTALL) $(MANPAGES) $(MAN_DIR_MAN1)
+ 
+ uninstall_man:
+ 	cd $(MAN_DIR_MAN1) && rm -f $(MANPAGES)
+ 
+ install_docs: install_man
+-	$(INSTALL_A_DIR) $(DOC_DIR)
+ 	$(INSTALL) $(MYDOCS) $(DOC_DIR)
+ 
+ uninstall_docs:
