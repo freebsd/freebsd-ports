@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.16
+PORTVERSION=	2.4.17
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
@@ -25,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
-MAN4=		libxml.4
+MAN3=		libxml.3
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
