@@ -4125,6 +4125,7 @@ linuxdoc	ports/textproc/linuxdoc
 linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
+lirc		ports/comms/lirc
 lire		ports/sysutils/lire
 listmanager	ports/mail/listmanager
 liteamp		ports/audio/liteamp
