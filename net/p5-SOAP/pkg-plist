@@ -1,0 +1,25 @@
+lib/perl5/site_perl/%%PERL_VER%%/SOAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Defs.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Envelope.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/EnvelopeMaker.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericHashSerializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericInputStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericScalarSerializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/OutputStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Packager.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Serializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/SimpleTypeWrapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Struct.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/StructSerializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Apache.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/CGI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypeMapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypedPrimitive.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypedPrimitiveSerializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport

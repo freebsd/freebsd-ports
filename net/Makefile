@@ -199,6 +199,7 @@
     SUBDIR += p5-SNMP
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
+    SUBDIR += p5-SOAP
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
     SUBDIR += p5-URI
