@@ -8823,6 +8823,7 @@ snack		ports/audio/snack
 snarf		ports/www/snarf
 snd-port	ports/audio/snd
 snes9x		ports/emulators/snes9x
+snes9express	ports/emulators/snes9express
 sng		ports/graphics/sng
 sniff		ports/security/sniff
 sniffit		ports/net/sniffit
