@@ -1,0 +1,9 @@
+This is a "meta-port" to install the extensions for PHP 4.
+
+Defaults to:
+ctype, mysql, overload, pcre, posix, session, tokenizer, xml and zlib.
+
+WWW: http://www.php.net/
+
+- Alex Dupre
+ale@FreeBSD.org
