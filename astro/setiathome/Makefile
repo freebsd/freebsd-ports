@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/22 01:44:26 stb Exp $
+# $Id: Makefile,v 1.2 1999/04/22 01:48:34 stb Exp $
 #
 
 PKGNAME=	setiathome-0.46
@@ -54,7 +54,7 @@ pre-fetch:
 		${ECHO} "It seems you are running FreeBSD `uname -r`, which is not currently";	\
 		${ECHO} "supported.  SETI@home currently supports only FreeBSD 2.2.5 and above,";	\
 		${ECHO} "and FreeBSD 3.1."; \
-		${ECHO}
+		${ECHO} \
 		exit 72; \
 	fi;
 
