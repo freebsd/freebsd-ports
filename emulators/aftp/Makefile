@@ -10,7 +10,7 @@
 DISTNAME=	aftp
 PKGNAME=	aftp-1.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/incoming/
+MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/utility/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jsutton@webnet.com.au
