@@ -1,8 +1,10 @@
 %%SITE_PERL%%/HTTP/Proxy.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter.pm
+%%SITE_PERL%%/HTTP/Proxy/BodyFilter/complete.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/htmlparser.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/htmltext.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/lines.pm
+%%SITE_PERL%%/HTTP/Proxy/BodyFilter/save.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/simple.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/tags.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter.pm
