@@ -5038,10 +5038,8 @@ share/pysol/html/rules/fallingstar.html
 share/pysol/html/rules/fan.html
 share/pysol/html/rules/fifteenplus.html
 share/pysol/html/rules/flowerclock.html
-share/pysol/html/rules/flyingdragon.html
 share/pysol/html/rules/forecell.html
 share/pysol/html/rules/fortress.html
-share/pysol/html/rules/fortresstowers.html
 share/pysol/html/rules/fortyandeight.html
 share/pysol/html/rules/fortythieves.html
 share/pysol/html/rules/fourteen.html
@@ -5074,6 +5072,7 @@ share/pysol/html/rules/ladypalk.html
 share/pysol/html/rules/larasgame.html
 share/pysol/html/rules/littleforty.html
 share/pysol/html/rules/lucas.html
+share/pysol/html/rules/mahjongg.html
 share/pysol/html/rules/maria.html
 share/pysol/html/rules/martha.html
 share/pysol/html/rules/matriarchy.html
