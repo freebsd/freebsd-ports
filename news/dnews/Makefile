@@ -8,7 +8,7 @@
 PORTNAME=	dnews
 PORTVERSION=	4.7k
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
+MASTER_SITES=	ftp://ftp.netwinsite.com/pub/dnews/
 DISTNAME=	dnews47k_freebsd
 EXTRACT_SUFX=	.tar.Z
 
