@@ -29,6 +29,8 @@ XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 gettext		"gettext library support" OFF \
 YP		"YP/NIS support" OFF \
+sysvsem		"System V semaphore support" OFF \
+sysvshm		"System V shared memory support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -156,6 +158,12 @@ while [ "$1" ]; do
 		\"YP\")
 			echo "CONFIGURE_ARGS+=--with-yp"
 			;;
+		\"sysvsem\")
+			echo "CONFIGURE_ARGS+=--enable-sysvsem"
+			;;
+		\"sysvshm\")
+			echo "CONFIGURE_ARGS+=--enable-sysvshm"
+ 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
