@@ -1,10 +1,16 @@
---- Makefile.orig	Sun Nov 12 10:55:43 2000
-+++ Makefile	Mon Nov 13 03:26:41 2000
-@@ -307,2 +307,3 @@
- #CONF_ARGS = --exec-prefix=/usr
-+CONF_ARGS = --prefix=$(PREFIX)
+--- Makefile.orig	Sun Apr 29 13:28:12 2001
++++ Makefile	Thu May  3 03:34:11 2001
+@@ -305,6 +305,7 @@
+ # of make, will buid Vim.
  
-@@ -1589,24 +1590,24 @@
+ # CONFIGURE - configure arguments {{{1
++CONF_ARGS = --prefix=$(PREFIX)
+ # You can give a lot of options to configure.
+ # Change this to your desire and do 'make config' afterwards
+ 
+@@ -1657,40 +1658,40 @@
+ installvimdiff: $(BINDIR)/$(VIMDIFFTARGET) $(BINDIR)/$(GVIMDIFFTARGET)
+ 
  $(BINDIR)/$(EXTARGET):
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
 +	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
@@ -37,14 +43,34 @@
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
 +	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
  
-@@ -1617,24 +1618,24 @@
+ $(BINDIR)/$(VIMDIFFTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(VIMDIFFTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(VIMDIFFTARGET)
+ 
+ $(BINDIR)/$(GVIMDIFFTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMDIFFTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMDIFFTARGET)
+ 
+ $(BINDIR)/$(EVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(EVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(EVIMTARGET)
+ 
+ $(BINDIR)/$(EVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(EVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(EVIEWTARGET)
+ 
+ # create links for the manual pages with various names to vim.	This is only
+ # done when the links (or manpages with the same name) don't exist yet.
+@@ -1708,34 +1709,34 @@
+ 			$(MANSUBDIR)/$(EVIEWNAME).1
+ 
  $(MANSUBDIR)/$(EXNAME).1:
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(EXNAME).1
-+	#cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(EXNAME).1
++	#cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(EXNAME).1
  
  $(MANSUBDIR)/$(VIEWNAME).1:
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(VIEWNAME).1
-+	#cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(VIEWNAME).1
++	#cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(VIEWNAME).1
  
  $(MANSUBDIR)/$(GVIMNAME).1:
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(GVIMNAME).1
@@ -70,3 +96,13 @@
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
 +	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
  
+ $(MANSUBDIR)/$(GVIMDIFFNAME).1:
+-	cd $(MANSUBDIR); ln -s $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
++	cd $(MANSUBDIR); ln -sf $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
+ 
+ $(MANSUBDIR)/$(EVIEWNAME).1:
+-	cd $(MANSUBDIR); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
++	cd $(MANSUBDIR); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
+ 
+ uninstall: uninstall_runtime
+ 	-rm -f $(BINDIR)/$(VIMTARGET)
