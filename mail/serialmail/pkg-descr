@@ -1,0 +1,16 @@
+serialmail is a collection of tools for passing mail across serial
+links. It works with qmail: you use qmail to deliver messages to a
+maildir, and then serialmail to deliver messages out of the maildir.
+
+serialmail uses ucspi-tcp/tcpclient for networking. It can also be used
+with future UCSPI clients for transparent compression, IPv6, etc.
+
+serialmail supports SMTP, including ESMTP PIPELINING, and QMTP.
+
+serialmail is under user control. A user delivering messages to a
+maildir, and picking up the messages through qmail-pop3d, can switch to
+maildirsmtp without pestering the sysadmin. The user can also decide
+whether undeliverable messages should be left for POP retrieval or
+bounced back to the sender.
+
+http://pobox.com/~djb/serialmail.html

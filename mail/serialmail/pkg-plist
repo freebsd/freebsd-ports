@@ -1,0 +1,10 @@
+bin/maildirqmtp
+bin/maildirserial
+bin/maildirsmtp
+bin/serialqmtp
+bin/serialsmtp
+bin/setlock
+share/doc/serialmail/AUTOTURN
+share/doc/serialmail/FROMISP
+share/doc/serialmail/TOISP
+@dirrm share/doc/serialmail
