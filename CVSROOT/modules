@@ -3606,6 +3606,7 @@ ksrvtgt		src/eBones/ksrvtgt
 kssh		ports/security/kssh
 kstars		ports/astro/kstars
 kstash		src/eBones/kstash
+ksubeditor	ports/multimedia/ksubeditor
 ktrace		src/usr.bin/ktrace
 kvirc		ports/irc/kvirc
 kvm_mkdb	src/usr.sbin/kvm_mkdb
