@@ -9,7 +9,7 @@
 DISTNAME=	xcircuit-2.0a10
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://bach.ece.jhu.edu/pub/tim/
+		ftp://bach.ece.jhu.edu/pub/tim/xcircuit/
 MASTER_SITE_SUBDIR=	apps/circuits
 
 MAINTAINER=     ports@FreeBSD.org
