@@ -1,8 +1,0 @@
-XtRadius is a freeware radius server implementation. The main feature is that it
-can handle user accounting and authentication informations via external fully
-configurable scripts.
-The XtRadius server is based on Cistron Radius 1.6.3. You can write script to
-make you own auth and/or accounting routines without having to patch the main
-server.
-
-WWW: http://www.xtradius.com/
