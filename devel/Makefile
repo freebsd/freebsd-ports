@@ -72,7 +72,6 @@
     SUBDIR += libglade
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
-    SUBDIR += libgtop-devel
     SUBDIR += libmalloc
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
