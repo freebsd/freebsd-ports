@@ -8,19 +8,20 @@ buildenv () {
 
     case "x$branch" in
 	x4)
-	    export XFREE86_VERSION=4
 	    ;;
 	x4-exp)
-	    export XFREE86_VERSION=4
 	    ;;
 	x5)
-	    export XFREE86_VERSION=4
 	    ;;
 	*)
 	    echo "buildvars: invalid branch"
 	    exit 1
 	    ;;
     esac
+
+    export XFREE86_VERSION=4
+    export PKGSUFFIX=.tbz
+    export PKGZIPCMD=bzip2
 
     # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
     # - kk 020311
