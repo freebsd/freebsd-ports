@@ -24,6 +24,7 @@ RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
 .endif
 
 USE_BZIP2=	yes
