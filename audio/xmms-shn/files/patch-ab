@@ -1,5 +1,5 @@
---- src/shn.h.orig	Thu Nov  2 15:13:34 2000
-+++ src/shn.h	Thu Nov  2 15:13:50 2000
+--- include/shn.h.orig	Thu Nov  2 15:13:34 2000
++++ include/shn.h	Thu Nov  2 15:13:50 2000
 @@ -108,7 +108,7 @@
  	unsigned char *getbufp;
  	int            nbitget;

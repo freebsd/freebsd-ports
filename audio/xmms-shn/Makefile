@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.1
+PORTVERSION=	2.2.3
 CATEGORIES=	audio
-MASTER_SITES=	http://sdf.lonestar.org/~jason/shn-utils/xmms-shn/source/
+MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/
 
 MAINTAINER=	fenner@FreeBSD.Org
 
