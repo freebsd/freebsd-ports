@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtv
-PORTVERSION=	1.1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
