@@ -61,7 +61,6 @@ share/MHonArc/MHonArc/CharEnt/KOI8_U.pm
 share/MHonArc/MHonArc/CharEnt/KOI_0.pm
 share/MHonArc/MHonArc/CharEnt/KOI_7.pm
 share/MHonArc/MHonArc/CharEnt/VISCII.pm
-share/MHonArc/MHonArc/CharEnt/cmp.pl
 share/MHonArc/MHonArc/CharMaps.pm
 share/MHonArc/MHonArc/Encode.pm
 share/MHonArc/MHonArc/RFC822.pm
