@@ -8,6 +8,7 @@ PKG_NAME=$1
 PKG_ACTION=$2
 MAILUSER=mailnull
 SPOOLDIR=/var/spool/MIMEDefang
+QUARANTINEDIR=/var/spool/MD-Quarantine
 
 case "$PKG_ACTION" in
 POST-INSTALL)
@@ -15,6 +16,11 @@ POST-INSTALL)
 		mkdir -p ${SPOOLDIR}
 		chown ${MAILUSER}:${MAILUSER} ${SPOOLDIR}
 		chmod 700 ${SPOOLDIR}
+	fi
+	if [ ! -d ${QUARANTINEDIR} ]; then
+		mkdir -p ${QUARANTINEDIR}
+		chown ${MAILUSER}:${MAILUSER} ${QUARANTINEDIR}
+		chmod 700 ${QUARANTINEDIR}
 	fi
 	;;
 

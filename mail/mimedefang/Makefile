@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.33
+PORTVERSION=	2.34
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://www.roaringpenguin.com/mimedefang/
@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 
 MAILUSER?=		mailnull
 SPOOLDIR?=		/var/spool/MIMEDefang
-QUARANTINEDIR?=	/var/spool/MIMEDefang
+QUARANTINEDIR?=	/var/spool/MD-Quarantine
 
 CONFIGURE_ENV+=		PERL=${PERL}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
