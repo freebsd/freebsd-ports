@@ -89,9 +89,6 @@ share/locale/ru/LC_MESSAGES/a2ps.mo
 share/locale/sl/LC_MESSAGES/a2ps.mo
 share/locale/sv/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
-@unexec rmdir share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/* 2>/dev/null || true
-@unexec rmdir share/locale 2>/dev/null || true
 share/a2ps/sheets/sheets.map
 share/a2ps/sheets/ada.ssh
 share/a2ps/sheets/asn1.ssh
@@ -247,7 +244,8 @@ share/a2ps/afm/pzdr.afm
 share/a2ps/ppd/README
 share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
-@comment share/emacs/site-lisp/a2ps.el
+%%WITHEMACS%%share/emacs/site-lisp/a2ps.el
+%%WITHEMACS%%share/emacs/site-lisp/a2ps-print.el
 bin/a2ps
 bin/ogonkify
 bin/composeglyphs
@@ -258,9 +256,9 @@ bin/fixps
 bin/pdiff
 bin/psmandup
 bin/psset
-@unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
-@unexec install-info --delete --info-dir=%D/info %D/info/regex.info
+@unexec install-info --delete %D/info/a2ps.info %D/info/dir
+@unexec install-info --delete %D/info/ogonkify.info %D/info/dir
+@unexec install-info --delete %D/info/regex.info %D/info/dir
 info/ogonkify.info
 info/a2ps.info
 info/a2ps.info-1
@@ -273,9 +271,9 @@ info/regex.info
 info/regex.info-1
 info/regex.info-2
 info/regex.info-3
-@exec install-info --info-dir=%D/info %D/info/a2ps.info
-@exec install-info --info-dir=%D/info %D/info/ogonkify.info
-@exec install-info --info-dir=%D/info %D/info/regex.info
+@exec install-info %D/info/a2ps.info %D/info/dir
+@exec install-info %D/info/ogonkify.info %D/info/dir
+@exec install-info %D/info/regex.info %D/info/dir
 include/liba2ps.h
 lib/liba2ps.a
 @dirrm share/a2ps/ppd
@@ -288,3 +286,38 @@ lib/liba2ps.a
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps/encoding
 @dirrm share/a2ps
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale
