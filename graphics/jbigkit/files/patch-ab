@@ -12,7 +12,7 @@
 +.if ${PORTOBJFORMAT} == elf
 +SOJBIGLIB=libjbig.so.1
 +.else
-+SOJBIGLIB=libjbig.so.1.0
++SOJBIGLIB=libjbig.so.1.1
 +.endif
 +
 +all: libjbig.a $(SOJBIGLIB)
@@ -45,4 +45,4 @@
  
  clean:
 -	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
-+	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec *.so libjbig.so.1 libjbig.so.1.0 libjbig.a
++	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec *.so libjbig.so.1 libjbig.so.1.1 libjbig.a
