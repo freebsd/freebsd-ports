@@ -1,5 +1,6 @@
 bin/gpg
 bin/gpgm
+lib/gnupg/rndunix
 lib/gnupg/tiger
 lib/gnupg/twofish
 @dirrm lib/gnupg
