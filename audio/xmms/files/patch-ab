@@ -1,0 +1,14 @@
+--- Output/OSS/audio.c.orig	Thu Oct 14 09:26:06 1999
++++ Output/OSS/audio.c	Tue Sep 28 16:36:45 1999
+@@ -146,10 +146,7 @@
+ 	audio_buf_info buf_info;
+ 	int bytes;
+ 
+-	if (!ioctl(fd, SNDCTL_DSP_GETOSPACE, &buf_info))
+-		bytes = ((buf_info.fragstotal - buf_info.fragments - 3) * buf_info.fragsize);
+-	else
+-		bytes = 0;
++	bytes = 0;
+ 
+ 	if (!oss_used() && bytes <= 0)
+ 		return FALSE;
