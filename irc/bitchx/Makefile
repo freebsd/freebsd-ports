@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
@@ -37,11 +37,14 @@ CONFIGURE_ARGS+=--with-gtk
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif
-.if defined(HAVE_ESOUND)
+.if (defined(HAVE_ESOUND) && defined(HAVE_GNOME))
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=--enable-sound
 .endif
-
+.if defined(HAVE_IPV6)
+USE_IPV6=	yes
+CONFIGURE_ARGS+=--enable-ipv6
+.endif
 .if defined(WITH_TCL)
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--with-tcl \
@@ -53,8 +56,8 @@ post-extract:
 .endif
 
 .if defined(WITH_SOCKS5)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=--with-socks5=${LOCALBASE}
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 
@@ -74,10 +77,21 @@ pre-patch:
 pre-extract:
 	@${ECHO} "Available switches:"
 	@${ECHO} "-------------------"
+.if !defined(WITH_PLUGINS)
 	@${ECHO} "WITH_PLUGINS - Build the plugins"
+.endif
+.if !defined(WITH_LATIN)
 	@${ECHO} "WITH_LATIN - Recommended if you are using an ISO-8859-1 display"
+.endif
+.if !defined(WITH_TCL)
 	@${ECHO} "WITH_TCL - Build BitchX with TCL scripting"
+.endif
+.if !defined(WITH_SOCKS5)
 	@${ECHO} "WITH_SOCKS5 - Build BitchX with SOCKS5 support"
+.endif
+.if !defined(WITH_IPV6)
+	@${ECHO} "WITH_IPV6 - Build BitchX with IPV6 support"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
