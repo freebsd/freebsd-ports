@@ -1,2 +1,3 @@
 sbin/fpexec
+sbin/fpstatic
 libexec/apache/mod_frontpage.so

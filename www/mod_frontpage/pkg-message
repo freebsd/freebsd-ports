@@ -1,12 +1,13 @@
 ************************************************************************
 
-The BSDI FrontPage Extentions require that libcrypt.* be linked to the
-libdescrypt.* libraries.  The fpsrvadm.exe program can only create DES
-passwords, but the Apache server is unable to use them when libcrypt.*
-are linked to the libscrypt.* libraries.
+mod_frontpage improved has been installed. You can turn off/on the
+extensions and the frontpage administration per site in httpd.conf
+and per virtual server. FrontPageAdminDisable is the default if no
+option is given.
 
-A new apache.sh.sample has been installed. Please replace your own
-apache.sh with this script. The frontpage suid key generation is
-needed by mod_frontpage. Without it it doesn't work.
+FrontPageEnable		# Enable Frontpage Extensions
+FrontPageDisable	# Disable Frontpage Extensions
+FrontPageAdminEnable	# Enable Frontpage Extensions fpadmcgi.exe
+FrontPageAdminDisable	# Disable Frontpage Extensions fpadmcgi.exe
 
 ************************************************************************

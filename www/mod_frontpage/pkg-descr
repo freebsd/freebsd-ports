@@ -7,8 +7,9 @@ with your Apache HTTP Server (e.g. creating FrontPage-extended subwebs using the
 FrontPage client in contrast to creating them as user "root" with "fpinstall.sh"
 or the "fpsrvadm.exe"-utility on the system's shell).
 
-WWW: http://home.edo.uni-dortmund.de/~chripo/
-FTP: ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage
+WWW: http://home.edo.uni-dortmund.de/~chripo		# Old homepage with FAQ
+     http://people.freebsd.org/~mbr/distfiles		# New source
+FTP: ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage	# Old source
 
 Copyright (C) 2001 Christof Pohl <chripo+frontpage@edo.uni-dortmund.de>
 APXS install by Jean-Michel Dault <jmdault@mandrakesoft.com
