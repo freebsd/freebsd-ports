@@ -35,7 +35,6 @@ PLIST_SUB=	INCLUDE_PATH=${INCLUDE_PATH} FAKE_SBIN=bin
 .endif
 
 WRKSRC=		${WRKDIR}/src
-MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 MAN1=		dig.1 dnskeygen.1 dnsquery.1 host.1
 MAN3=		getaddrinfo.3 gethostbyname.3 getipnodebyname.3 getnetent.3 \
