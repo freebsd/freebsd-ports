@@ -13,11 +13,9 @@ MASTER_SITES=	http://schumann.cx/mhash/dl/
 MAINTAINER=	nsayer@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --disable-pthreads
+CONFIGURE_ARGS+= --with-LDFLAGS='-lc_r'
 
 MAN3=		mhash.3
-
-RESTRICTED=	"yes - cryptography"
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
