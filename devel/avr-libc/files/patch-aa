@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Feb  7 11:19:03 2000
++++ Makefile	Tue Dec  5 14:23:40 2000
+@@ -17,7 +17,7 @@
+ AR = ${target}-ar
+ RM = rm
+ MD = mkdir -p $@
+-INSTALL = install -m644 $^/
++INSTALL = install -C -m644 $^/
+ 
+ CFLAGS = -Wall -Wstrict-prototypes -DNO_UNDERSCORES=1
+ CFLAGS_DEBUG = -g
