@@ -7,8 +7,8 @@ fi
 echo -n "Do you want pine to display its menu and help message in Japanese? (y/n)> "
 read ans
 case X$ans in
-y*|Y*)
-ln -fs ${WRKSRC}/pine-j.hlp ${WRKSRC}/pine.hlp
+Xy*|XY*)
+ln -fs ${WRKSRC}/pine/pine-j.hlp ${WRKSRC}/pine/pine.hlp
 ;;
 *)
 ln -fs ${WRKSRC}/pine/pine-e.hlp ${WRKSRC}/pine/pine.hlp
@@ -20,4 +20,3 @@ w
 EOP
 ;;
 esac
-
