@@ -1,0 +1,250 @@
+*** make.44bsd	Wed May 29 17:37:44 1996
+--- make.44bsd	Sat Jun  8 15:18:11 1996
+***************
+*** 3,10 ****
+  
+  #               Defines are described in the INSTALL document.
+  
+! PROG=popper popauth
+! MAN8=popper.8 popauth.8
+  SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
+  	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
+  	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
+--- 3,12 ----
+  
+  #               Defines are described in the INSTALL document.
+  
+! SUBDIR=popauth
+! 
+! PROG=popper
+! MAN8=popper.8
+  SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
+  	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
+  	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
+***************
+*** 12,32 ****
+  	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
+  #SRCS+=	flock.c mktemp.c
+  
+! BINDIR=/usr/local/libexec
+! MANDIR=/usr/local/man/man
+  
+  #LDADD+= -lcrypt -lndbm
+  
+! CFLAGS+=-DHAVE_PARAM_H 
+  
+  # if you want APOP support, uncomment the next line
+! #CFLAGS+=-DAPOP=\"/etc/pop.auth\" -DPOPUID=\"pop\"
+  
+  # if you want RPOP support, uncomment the next line
+! #CFLAGS+=-DRPOP
+  
+  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
+! #CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
+  
+  .include <bsd.prog.mk>
+- 
+--- 14,40 ----
+  	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
+  #SRCS+=	flock.c mktemp.c
+  
+! BINDIR=${PREFIX}/libexec
+! MANDIR=${PREFIX}/man/man
+  
+  #LDADD+= -lcrypt -lndbm
+  
+! CFLAGS+=-DHAVE_PARAM_H -DSETPROCTITLE -DDEBUG
+! LDADD+=-lutil
+! 
+! .if exists(/usr/lib/libskey.a) && exists(/usr/lib/libmd.a)
+! DPADD+= ${LIBSKEY} ${LIBMD} ${LIBCRYPT}
+! LDADD+= -lskey -lmd -lcrypt
+! CFLAGS+= -DSKEY
+! .endif
+  
+  # if you want APOP support, uncomment the next line
+! CFLAGS+=-DAPOP=\"${PREFIX}/etc/pop.auth\" -DPOPUID=\"pop\"
+  
+  # if you want RPOP support, uncomment the next line
+! # CFLAGS+=-DRPOP
+  
+  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
+! CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
+  
+  .include <bsd.prog.mk>
+*** pop_dropcopy.c	Sat Jun  8 14:44:01 1996
+--- pop_dropcopy.c	Sat Jun  8 14:50:46 1996
+***************
+*** 755,760 ****
+--- 755,761 ----
+                                                          the SERVER maildrop */
+      FILE		    *tf;		    /*  The temp file */
+      int			    tfn;		    
++     char		    template[POP_TMPSIZE];  /*  Temp name holder */
+      char                    buffer[MAXLINELEN];     /*  Read buffer */
+      long                    offset;                 /*  Old/New boundary */
+      int                     nchar;                  /*  Bytes written/read */
+***************
+*** 788,793 ****
+--- 789,805 ----
+      }
+  #endif
+  
++     /* First create a unique file.  Would prefer mkstemp, but Ultrix...*/
++     strcpy(template,POP_TMPDROP);
++     if (((tfn=mkstemp(template)) == -1) ||
++ 	((tf=fdopen(tfn, "w+")) == NULL)) {	/* failure, bail out	*/
++         pop_log(p,POP_PRIORITY,
++             "Unable to create temporary temporary maildrop '%s': %s",template,
++                 (errno < sys_nerr) ? sys_errlist[errno] : "") ;
++         return pop_msg(p,POP_FAILURE,
++ 		"System error, can't create temporary file.");
++     }
++ 
+      /* Here we work to make sure the user doesn't cause us to remove or
+       * write over existing files by limiting how much work we do while
+       * running as root.
+***************
+*** 801,806 ****
+--- 813,831 ----
+  	pwp->pw_gid = mybuf.st_gid;
+  # endif
+  #endif
++ 
++     /* Now give this file to the user	*/
++     (void) chown(template, (UID_T)pwp->pw_uid, (GID_T)pwp->pw_gid);
++     /* (void) chmod(template,0600); umask now handles this */
++ 
++     /* Now link this file to the temporary maildrop.  If this fails it
++      * is probably because the temporary maildrop already exists.  If so,
++      * this is ok.  We can just go on our way, because by the time we try
++      * to write into the file we will be running as the user.
++      */
++     (void) link(template,p->temp_drop);
++     (void) fclose(tf);
++     (void) unlink(template);
+  
+      /* Now we run as the user. */
+      (void) setgid((GID_T)pwp->pw_gid);
+*** pop_pass.c	Fri May 24 11:26:25 1996
+--- pop_pass.c	Tue Jun  4 11:09:56 1996
+***************
+*** 482,497 ****
+  POP     *   p;
+  struct passwd  *   pw;
+  {
+      /*  We don't accept connections from users with null passwords */
+!     /*  Compare the supplied password with the password file entry */
+  
+!     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0') ||
+! 		strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd)) {
+! 	sleep(SLEEP_SECONDS);
+! 	return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+!     }
+  
+      return(POP_SUCCESS);
+  }
+  
+  #endif	/* AUTH */
+--- 482,516 ----
+  POP     *   p;
+  struct passwd  *   pw;
+  {
++ #if defined(BSD) && (BSD >= 199306)
++     /* Check password change and expire times before granting access */
++     time_t now = time();
++ 
++     if ((pw->pw_change && now > pw->pw_change) ||
++         (pw->pw_expire && now > pw->pw_expire))
++ 	goto error;
++ #endif
++ 
+      /*  We don't accept connections from users with null passwords */
+!     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0'))
+! 	goto error;
+  
+!     /*  Compare the supplied password with the password file entry */
+! #ifdef	SKEY
+!     if (strcmp(skey_crypt(p->pop_parm[1], pw->pw_passwd, pw,
+! 			  skeyaccess(p->user, NULL, p->client, p->ipaddr)),
+! 			  pw->pw_passwd))
+! 	goto error;
+! #else
+!     if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd)))
+! 	goto error;
+! #endif
+  
+      return(POP_SUCCESS);
++ 
++   error:
++     sleep(SLEEP_SECONDS);
++     return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+  }
+  
+  #endif	/* AUTH */
+*** pop_user.c	Fri May 24 11:26:47 1996
+--- pop_user.c	Tue Jun  4 11:08:42 1996
+***************
+*** 117,122 ****
+--- 117,134 ----
+      }
+  #endif /* APOP */
+  
++ #ifdef	SKEY
++     {
++ 	static char buf[128];
++ 	struct skey skey;
++ 
++ 	if (!skeychallenge(&skey, p->user, buf))
++ 	   return(pop_msg(p,POP_SUCCESS,"%s%s", buf,
++ 			  skeyaccess(p->user, NULL, p->client, p->ipaddr) ?
++ 			  "" : " required"));
++     }
++ #endif
++ 
+      /*  Tell the user that the password is required */
+      return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
+  }
+*** popper.h	Wed May 22 11:26:25 1996
+--- popper.h	Sat Jun  8 14:55:56 1996
+***************
+*** 35,40 ****
+--- 35,43 ----
+  #  define	HAVE_VSPRINTF
+  #  define	BIND43
+  # endif
++ # if (defined(BSD) && (BSD >= 199506))
++ #  define	BSD44_DBM
++ # endif
+  #endif
+  
+  #ifdef BSDI
+***************
+*** 110,116 ****
+  # define POP_MAILDIR     "/var/mail"
+  # define POP_DROP        "/var/mail/.%s.pop"
+  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
+! # define POP_TMPXMIT     "/var/mail/xmitXXXXXX"
+  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
+  # define OSDONE
+  #endif
+--- 113,119 ----
+  # define POP_MAILDIR     "/var/mail"
+  # define POP_DROP        "/var/mail/.%s.pop"
+  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
+! # define POP_TMPXMIT     "/var/tmp/xmitXXXXXX"
+  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
+  # define OSDONE
+  #endif
+***************
+*** 337,342 ****
+--- 340,348 ----
+  extern AUTH_DAT kdata;
+  #endif /* KERBEROS */
+  
++ #if defined(SKEY)
++ #include <skey.h>
++ #endif
+  #if defined(AUTHFILE)
+  extern int  checkauthfile();
+  #endif
