@@ -8058,6 +8058,7 @@ pips3300	ports/print/pips3300
 pips3500	ports/print/pips3500
 pips670		ports/print/pips670
 pips740		ports/print/pips740
+pips740-cups	ports/print/pips740-cups
 pips750_2000	ports/print/pips750_2000
 pips760		ports/print/pips760
 pips770		ports/print/pips770
