@@ -36,7 +36,6 @@
     SUBDIR += p5-Unicode-String
     SUBDIR += recode
     SUBDIR += ruby-iconv
-    SUBDIR += ruby-sha1
     SUBDIR += siconv
     SUBDIR += tcs
     SUBDIR += tnef

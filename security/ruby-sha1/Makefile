@@ -8,7 +8,7 @@
 PORTNAME=	sha1
 PORTVERSION=	1.1
 PORTEPOCH=	1
-CATEGORIES=	converters ruby
+CATEGORIES=	security ruby
 MASTER_SITES=	http://www.omcl.org/~spcoltri/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
