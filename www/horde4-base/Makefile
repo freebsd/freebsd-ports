@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 
