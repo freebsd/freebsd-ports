@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
