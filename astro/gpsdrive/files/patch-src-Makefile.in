@@ -1,14 +1,5 @@
 --- src/Makefile.in.orig	Thu Aug  8 23:52:40 2002
 +++ src/Makefile.in	Thu Aug  8 23:54:21 2002
-@@ -117,7 +117,7 @@
- 
- # gpsdrive_LDADD= $(GLIB_LIBS) $(GTK_LIBS) $(PIXLIBS)
- #gpsdrive_LDADD=@LIBS@
--gpsdrive_LDADD = @XLIBS@
-+gpsdrive_LDADD = @XLIBS@ -lgnugetopt
- # gpsdrive_CFLAGS=@CFLAGS@
- # libgpsd_a_CFLAGS=@CFLAGS@
- # CFLAGS=
 @@ -173,7 +173,7 @@
  
  am_friendsd_OBJECTS = friendsd.$(OBJEXT)
@@ -18,12 +9,3 @@
  friendsd_DEPENDENCIES =
  friendsd_LDFLAGS =
  @DISABLEGARMIN_TRUE@am_garble_OBJECTS =
-@@ -183,7 +183,7 @@
- @DISABLEGARMIN_FALSE@	garmin_link.$(OBJEXT) \
- @DISABLEGARMIN_FALSE@	garmin_util.$(OBJEXT)
- garble_OBJECTS = $(am_garble_OBJECTS)
--garble_LDADD = $(LDADD)
-+garble_LDADD = $(LDADD) -lgnugetopt
- garble_DEPENDENCIES =
- garble_LDFLAGS =
- am_gpsd_OBJECTS = gpsd.$(OBJEXT)
