@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
 
 MAINTAINER=	vince@blue-box.net
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
+
+WRKSRC=		${WRKDIR}/syslog-ng-1.4.9a
 
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
