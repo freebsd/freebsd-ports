@@ -21,4 +21,6 @@ do
 	mv $file `echo $file | sed -e 's/\.l/.h/'`
 done
 
+perl -pi -e "s|!!LOCALBASE!!|$LOCALBASE|" ${WRKSRC}/knews.tmpl
+
 exit 0

@@ -3,16 +3,19 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1996/11/18 10:36:41 asami Exp $
+# $Id: Makefile,v 1.9 1997/07/21 06:52:04 andreas Exp $
 #
 
-DISTNAME=	knews-0.9.8
+DISTNAME=	knews-1.0b.0
 CATEGORIES=	x11 news
-MASTER_SITES=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/
+MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
+		png\\.0\\.:${PORTSDIR}/graphics/png
+RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp
 
 WRKSRC=		${WRKDIR}/knews
 USE_IMAKE=	yes
