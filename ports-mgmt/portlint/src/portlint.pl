@@ -369,7 +369,7 @@ foreach my $i (<patches/patch-??>) {
 foreach my $i (@checker) {
 	print "OK: checking $i.\n";
 	if (! -f "$i") {
-		&perror("FATAL: no $i in \"$portdir\".") unless $i = $makevar{MD5_FILE} && $makevar{DISTFILES} eq "";
+		&perror("FATAL: no $i in \"$portdir\".") unless $i eq $makevar{MD5_FILE} && $makevar{DISTFILES} eq "";
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("Cannot open the file $i\n");
