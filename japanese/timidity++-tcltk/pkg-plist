@@ -1,4 +1,15 @@
 bin/tkmidi
+lib/timidity/bitmaps/back.xbm
+lib/timidity/bitmaps/fwrd.xbm
+lib/timidity/bitmaps/next.xbm
+lib/timidity/bitmaps/pause.xbm
+lib/timidity/bitmaps/play.xbm
+lib/timidity/bitmaps/prev.xbm
+lib/timidity/bitmaps/quit.xbm
+lib/timidity/bitmaps/random.xbm
+lib/timidity/bitmaps/repeat.xbm
+lib/timidity/bitmaps/stop.xbm
+lib/timidity/bitmaps/timidity.xbm
 lib/timidity/browser.tcl
 lib/timidity/interface_k.so
 lib/timidity/misc.tcl
@@ -7,3 +18,4 @@ lib/timidity/tkmidity.tcl
 lib/timidity/tkpanel.tcl
 share/doc/timidity/C/README.tk
 share/doc/timidity/ja/README.tk
+@dirrm lib/timidity/bitmaps
