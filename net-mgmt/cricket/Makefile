@@ -19,6 +19,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/LWP.
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
+NO_PACKAGE=	"needs customization"
+
 USE_PERL5=	yes
 
 FETCH_BEFORE_ARGS=	-b
@@ -30,5 +32,12 @@ do-install:
 	@${MKDIR} -m 755 ${PREFIX}/cricket
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket
 	@find ${PREFIX}/cricket -name \*.orig -or -name \*.bak | xargs ${RM} -f
+
+post-install:
+	@${ECHO} ""
+	@${ECHO} "Cricket has been installed in ${PREFIX}/cricket. You'll find"
+	@${ECHO} "executables and configfiles there. Please take a look at"
+	@${ECHO} "http://www.munitions.com/~jra/cricket/. The documentation can"
+	@${ECHO} "be found in ${PREFIX}/cricket/doc/ too."
 
 .include <bsd.port.mk>
