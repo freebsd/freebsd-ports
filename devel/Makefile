@@ -632,6 +632,7 @@
     SUBDIR += p5-Event
     SUBDIR += p5-Exception-Class
     SUBDIR += p5-Exporter-Lite
+    SUBDIR += p5-ExtUtils-Depends
     SUBDIR += p5-ExtUtils-ParseXS
     SUBDIR += p5-ExtUtils-XSBuilder
     SUBDIR += p5-File-BasicFlock
