@@ -1,5 +1,5 @@
---- unix/Makefile.orig	Thu Nov 19 13:59:08 1998
-+++ unix/Makefile	Sat Jan 22 17:23:42 2000
+--- unix/Makefile.orig	Sun Apr 16 12:27:18 2000
++++ unix/Makefile	Wed May 31 03:30:22 2000
 @@ -42,7 +42,7 @@
  # such as -DDOSWILD).
  
@@ -9,12 +9,14 @@
  LD = $(CC)#	must match, else "unresolved symbol:  ___main" is possible)
  AS = as
  LOC = $(LOCAL_UNZIP)
-@@ -680,7 +680,7 @@
+@@ -679,8 +679,8 @@
  # FreeBSD on Intel:
  freebsd:		unix_make
  	@echo 'NOTE:  use bsd target for non-Intel FreeBSD compiles (if any).'
 -	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
+-	 CF="-O3 -Wall -I. -DASM_CRC -DBSD $(LOC)"\
 +	$(MAKE) unzips CC=$(CC) LD=$(CC) AS=$(CC)\
- 	 CF="-O3 -Wall -I. -DASM_CRC -DBSD $(LOC)"\
++	 CF="-I. -DASM_CRC -DBSD $(LOC)"\
  	 AF="-Di386 $(AF)" CRC32=crc_gcc
  
+ # Generic BSDish Unix gcc.  ``The -O3 only works with later versions of gcc;
