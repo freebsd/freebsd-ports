@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.55 2004-10-26 14:23:33 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.56 2004-11-14 19:59:51 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -219,6 +219,9 @@ while [ "$1" ]; do
 ##			echo "README+=	SPF_README"
 			echo ""
 			SUB_SPF=""
+			if [ X$SUB_TLS != "X" ]; then
+				echo "EXTRA_PATCHES+=	${FILESDIR}/extra-libspf2_and_tls.patch"
+			fi
 			;;
 		IPv6)
 			if [ X$SUB_TLS = "X" ]; then
