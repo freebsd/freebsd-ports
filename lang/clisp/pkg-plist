@@ -57,6 +57,8 @@ share/locale/fr/LC_MESSAGES/clisp.mo
 share/locale/fr/LC_MESSAGES/clisplow.mo
 share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
+share/locale/ru/LC_MESSAGES/clisp.mo
+share/locale/ru/LC_MESSAGES/clisplow.mo
 @dirrm share/doc/clisp
 @dirrm lib/clisp/base
 @dirrm lib/clisp/data
