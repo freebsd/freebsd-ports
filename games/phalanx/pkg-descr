@@ -1,0 +1,11 @@
+   Phalanx is a chess playing program.  Phalanx is xboard compatible.
+Running with xboard: 'xboard -fcp phalanx'.  Note that permanent brain
+(pondering) is off by default.  Newer versions of xboard set it on with
+the 'hard' command.  If this does not work, try 'xboard -fcp "phalanx -p+"'
+or (for <4.0.0 versions of xboard) change your initString (see Xboard
+documentation for details).  It's better to stop permanent brain in both
+programs, when playing Phalanx against another program on a machine with
+one CPU.
+   It's also possible to run phalanx without xboard. Do "phalanx -h" to get
+a list of command line options. One important command of phalanx's ASCII
+interface is "help".
