@@ -1,0 +1,10 @@
+NunniMCAX is a C, non validating XML parser.  Its APIs and functioning
+are very similar to SAX.
+
+The aim of NunniMCAX is to be a lightweight, fast and reliable XML
+parser to be used in environment with limited resources.  A minimal
+(only well-formed check) executable linked statically against the
+library with all symbols stripped away on FreeBSD has a size below
+19 KByte.
+
+WWW: http://sourceforge.net/projects/nunnimcax/

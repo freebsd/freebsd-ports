@@ -1,0 +1,4 @@
+include/NunniMCAX.h
+lib/libNunniMCAX.a
+lib/libNunniMCAX.so
+lib/libNunniMCAX.so.%%SHLIB_MAJOR%%
