@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME}-${EAGLEVERSION}e
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	riggs@rrr.de
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
