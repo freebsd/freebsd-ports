@@ -15,7 +15,13 @@ MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -37,7 +43,7 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 ALL_TARGET=	tcl
 INSTALL_TARGET=	install-tcl
-PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="" NOTCLTK="@comment " 
+PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="" NOTCLTK="@comment "
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
 		-I${X11BASE}/include
 .else
@@ -52,6 +58,26 @@ PLIST_SUB+=	PYTHON="" NOPYTHON="@comment " TCLTK="@comment " NOTCLTK=""
 .else
 PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="@comment " NOTCLTK=""
 .endif
+.endif
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
+.if !defined(WITH_TCLTK)
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_TCLTK for Tcl/Tk support"
+	@${ECHO} "      (prevents python support)"
+	@${ECHO} ""
+.endif
+.if !defined(WITH_PYTHON)
+	@${ECHO} ""
+	@${ECHO} "      Or define WITH_PYTHON for Python support"
+	@${ECHO} "      (only available without WITH_TCLTK defined)"
+	@${ECHO} ""
 .endif
 
 post-patch:
