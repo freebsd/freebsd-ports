@@ -9,6 +9,7 @@
     SUBDIR += babytrans
     SUBDIR += basket
     SUBDIR += bigyear
+    SUBDIR += blogtk
     SUBDIR += cal
     SUBDIR += checkrdf
     SUBDIR += dailystrips
