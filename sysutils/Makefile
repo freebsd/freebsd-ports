@@ -203,6 +203,7 @@
     SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += pmap
+    SUBDIR += portsman
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap

@@ -1,0 +1,7 @@
+Ports manager is a ncurses based, graphical front-end to manage
+the FreeBSD ports collection. It behaves like a package manager
+and comes with many features.
+
+WWW: http://portsman.berlios.de
+-- 
+	Anselm R. Garbe
