@@ -1,34 +1,42 @@
-# New ports collection makefile for: netscape-communcator-linux-4.x
-# Date created:			27 June 1999
-# Whom:				girgen@partitur.se
-# Based on work by:		thepish
+# New ports collection makefile for: netscape-linux-6
+# Version required:		6
+# Date created:			8 April 2000
+# Whom:				sada@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	linux-netscape-${BROWSER}
-PORTVERSION=	${BROWSER_VER}
+PORTNAME=	linux-netscape
+PORTVERSION=	6
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/
-DISTFILES=	${BROWSER}-v472-export.x86-unknown-linuxglibc2.0.tar.gz
+MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/6_PR1/unix/linux22/
+DISTFILES=	netscape-v600pr1.x86-unknown-linux2.2.tar.gz
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	ports@FreeBSD.org
 
-IGNORE=	"Just repository copied"
+RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
+		${LINUX_BASE}/usr/lib/libgdk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
+		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-
+LINUX_BASE=	/compat/linux
+NO_BUILD=	yes
+NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
+PLIST_SUB=	STARTUP_CMD=${STARTUP_CMD}
+STRIP=
+USE_XLIB=	yes
+WRKSRC=	${WRKDIR}/package
 
-# don't overwrite the native FreeBSD port's shell script wrapper in ${PREFIX}/bin
-BROWSER_ARC=	${BROWSER}-linux
+INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
+STARTUP_CMD=	netscape6
 
-WRKSRC=		${WRKDIR}/${BROWSER}-v472.x86-unknown-linux2.0
+post-configure:
+	${SED} -e "s;%%INSTALL_DIR%%;${INSTALL_DIR};g" \
+	${FILESDIR}/start.sh >${WRKDIR}/${STARTUP_CMD}
 
-USE_LINUX_LIB=	yes
+do-install:
+	${MKDIR} ${INSTALL_DIR}
+	${CP} -Rp ${WRKSRC}/* ${INSTALL_DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 
-MAILCAP=	${.CURDIR}/../linux-netscape47-communicator/files/mailcap
-NSUBDIR=	lib/netscape-linux
-
-.include "../netscape47-communicator/Makefile"
+.include <bsd.port.mk>
