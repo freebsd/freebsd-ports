@@ -1,0 +1,6 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/bonnie
+@mode 644
+man/man1/bonnie.1.gz
