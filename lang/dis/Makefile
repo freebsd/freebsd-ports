@@ -13,8 +13,10 @@ DISTNAME=	dis
 
 MAINTAINER=    simond@irrelevant.org
 
+USE_REINPLACE=	yes
+
 post-patch:
-	${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/dis.c
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/dis.c
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/dis.c -o ${WRKSRC}/dis
