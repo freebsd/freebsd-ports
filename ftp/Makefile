@@ -41,6 +41,7 @@
     SUBDIR += jigdo
     SUBDIR += jmirror
     SUBDIR += junglemonkey
+    SUBDIR += kasablanca
     SUBDIR += kbear
     SUBDIR += kwebget
     SUBDIR += lftp
