@@ -3,14 +3,13 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.4 1995/04/23 17:21:34 jmz Exp $
+# $Id: Makefile,v 1.5 1995/04/24 15:17:40 jmz Exp $
 #
 
-DISTNAME=		perl5.001
+DISTNAME=		perl5.001m
 PKGNAME=		perl-5.001
 CATEGORIES+=            languages development programming
-MASTER_SITES=           ftp://prep.ai.mit.edu/pub/gnu/ ftp://ftp.sun.ac.za/pub/gnu/
-EXTRACT_SUFX=		.tar.gz
+MASTER_SITES=           ftp://ftp.netlabs.com/pub/outgoing/perl5.0/ ftp://ftp.wpi.edu/perl5/
 
 MAINTAINER=	markm@FreeBSD.ORG
 
