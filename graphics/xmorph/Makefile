@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=		morph.1
+MAN1=		xmorph.1
 INFO=		xmorph
 
 .include <bsd.port.pre.mk>
