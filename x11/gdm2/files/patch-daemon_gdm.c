@@ -1,14 +1,5 @@
 --- daemon/gdm.c.orig	Mon Apr  5 03:11:28 2004
 +++ daemon/gdm.c	Tue May 11 00:04:26 2004
-@@ -42,7 +42,7 @@
- #include <locale.h>
- 
- /* This should be moved to auth.c I suppose */
--#include <X11/Xauth.h>
-+/*#include <X11/Xauth.h>*/
- 
- #include <vicious.h>
- 
 @@ -3822,7 +3822,7 @@
  			return;
  		}
