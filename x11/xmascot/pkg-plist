@@ -1,6 +1,7 @@
 bin/xmascot
 lib/X11/app-defaults/XMascot
 lib/X11/ja_JP.EUC/app-defaults/XMascot
+lib/X11/ja_JP.eucJP/app-defaults/XMascot
 lib/X11/xmascot/aquarius.gif
 lib/X11/xmascot/aries.gif
 lib/X11/xmascot/canser.gif
@@ -45,3 +46,5 @@ lib/X11/xmascot/yubi.xbmmsk
 @dirrm lib/X11/xmascot
 @unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
 @unexec rmdir %D/lib/X11/ja_JP.EUC 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.eucJP/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.eucJP 2>/dev/null || true

@@ -1,10 +1,10 @@
 --- config.tmpl.orig	Fri Oct 24 01:41:01 1997
-+++ config.tmpl	Sat Jan 15 00:00:00 2000
++++ config.tmpl	Sat Jun  8 11:33:39 JST 2002
 @@ -97,6 +97,7 @@
  
  #ifdef USE_I18N
  DEFINES_I18N = -DI18N
-+LANG = ja_JP.EUC
++LANG = ja_JP.eucJP
  LOCALEDIR = $(LIBDIR)/$(LANG)/app-defaults
  #else
  DEFINES_I18N =
