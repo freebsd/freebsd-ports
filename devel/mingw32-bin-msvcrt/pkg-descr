@@ -1,0 +1,5 @@
+Headers and Libraries for Windows cross-development.
+
+This port is needed by mingw-gcc/devel.
+
+WWW: http://mingw.sourceforge.net
