@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	vnc2swf
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/
 
 MAINTAINER=	esn@x123.info
-COMMENT=	VNC Session Recorder To Format (Movie) swf
+COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
 LIB_DEPENDS=	ming:${PORTSDIR}/graphics/ming
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/vnc2swf
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+PLIST_FILES=	bin/vnc2swf bin/recordwin
 
 CONFIGURE_ARGS=	--with-ming=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ming"
