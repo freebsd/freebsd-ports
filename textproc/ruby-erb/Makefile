@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erb
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,20 +18,16 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-post-extract:
-		${MKDIR} ${WRKSRC}/sample/ja
-		${MV} ${WRKSRC}/sample/sample.rhtml ${WRKSRC}/sample/ja
-
 post-patch:
-		${RUBY} -i -pe '$$. == 1 and $$_ = "#!${RUBY}\n" + $$_' \
-			${WRKSRC}/lib/erb/erb.rb
+	${RUBY} -i -pe '$$. == 1 and $$_ = "#!${RUBY}\n" + $$_' ${WRKSRC}/lib/erb/erb.rb
 
 do-install:
 	@cd ${WRKSRC}; \
 	${RUBY} install.rb
-	${LN} -s ${RUBY_SITELIBDIR}/erb/erb.rb ${PREFIX}/bin/erb
+	${LN} -sf ${RUBY_SITELIBDIR}/erb/erb.rb ${PREFIX}/bin/erb
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/sample ${RUBY_EXAMPLESDIR}/erb/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
