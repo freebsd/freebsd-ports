@@ -1,0 +1,36 @@
+--- doc/Makefile.in.orig	Mon Jun 11 03:20:55 2001
++++ doc/Makefile.in	Tue Jul  3 04:48:46 2001
+@@ -20,7 +20,7 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ configdir = ${sysconfdir}/sane.d
+-docdir=$(prefix)/doc/sane-@VERSION@
++docdir=$(datadir)/doc/sane
+ 
+ MKDIR = $(top_srcdir)/mkinstalldirs
+ INSTALL = @INSTALL@
+@@ -55,7 +55,7 @@
+ EMACS   = xemacs
+ WWW_PATH= /home/httpd/html/sane/
+ 
+-all: sane.ps $(MANPAGES) 
++all: $(MANPAGES) 
+ 
+ %.1 %.5 %.7: %.man
+ 	@sed -e 's|@DATADIR@|$(datadir)|g' \
+@@ -80,6 +80,7 @@
+ 	  echo installing $${page} in $(mandir)/man7/$${page}...; \
+ 	  $(INSTALL_DATA) $${page} $(mandir)/man7/$${page} || exit 1; \
+ 	done
++ifndef NOPORTDOCS
+ 	$(MKDIR) $(docdir)
+ 	@for readme in $(READMES); do \
+ 	  echo installing $${readme} in $(docdir)/$${readme}...; \
+@@ -99,6 +100,7 @@
+ 	    echo installing $${doc} in $(docdir)/$${doc}...; \
+ 	    $(INSTALL_DATA) $${doc} $(docdir)/$${doc}; \
+ 	  done
++endif
+ 
+ uninstall:
+ 	@for page in $(SECT1); do \
