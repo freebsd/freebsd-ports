@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.2.1
+PORTVERSION=	5.3.6
 CATEGORIES=	mail
-MASTER_SITES=	http://www.inter7.com/vpopmail/
+MASTER_SITES=	http://www.inter7.com/devel/
 
 MAINTAINER=	roam@FreeBSD.org
 
@@ -37,25 +37,35 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MD5_PASSWORDS - store encrypted passwords in MD5 format
 # WITH_MYSQL	- allow authentitation via mysql
 # WITH_MYSQL_LARGE_SITE - enables large site layout
+# WITH_MYSQL_REPLICATION - enables MySQL database replication
+# WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
+# WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
 # WITH_CLEAR_PASSWD - store passwords in plaintext into the MySQL db
-# WITH_APOP     - allow apop authentication
+# WITH_VALIAS   - enable valias processing
 # WITHOUT_ROAMING - disallow roaming users
 # WITH_IP_ALIAS - enables IP aliasing
 # WITH_DELIVER_FILTER - enables the experimental vdelivermail filter
 # WITH_QMAIL_EXT - enables qmail-like user-* address extesions processing
+# WITHOUT_FILE_LOCKING - disable file locking
+# WITH_FILE_SYNC - enables immediate synching (may decrease performance)
 #
 # Set these to the values you'd prefer
 #
 # HARDQUOTA     - size of hard quota, or 'n' for no hard quota
 # RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
 # DEFAULT_DOMAIN - default domain for non-vhost lookups
+# WITH_SINGLE_DOMAIN - optimize for a site with many users in a single domain
 # LOGLEVEL	- n - no logging, y - log all,
 #                 e - log errors, p - log passwords in errors
-# APOPFILE	- location of apop secrets file
+# WITHOUT_AUTH_LOG - disables authentication logging
+# WITH_MYSQL_LOG - enable logging to a MySQL database
 # QMAIL_DIR     - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
 # VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
+#
+# MySQL database configuration options
+#
 # WITH_MYSQL_SERVER - the hostname of the MySQL server (localhost)
 # WITH_MYSQL_USER - the username for connecting to the MySQL server (root)
 # WITH_MYSQL_PASSWD - the password for connecting to the MySQL server (secret)
@@ -68,11 +78,35 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
 # Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
 #
+# Oracle database configuration options
+#
+# WARNING: This is NOT TESTED, not in the least.
+# Please report any success or failure to the port maintainer,
+# Peter Pentchev <roam@FreeBSD.org>
+#
+# WITH_ORACLE_PROC - the name of the Oracle Pro-C precompiler, default 'proc'
+# WITH_ORACLE_SERVICE - the Oracle service name (jimmy)
+# WITH_ORACLE_USER - the username for connecting to the Oracle server (system)
+# WITH_ORACLE_PASSWD - the password for connecting to the Oracle server (manager)
+# WITH_ORACLE_DB  - the name of the Oracle database to connect to (orcl1)
+# WITH_ORACLE_HOME - the Oracle installation directory (/export/home/oracle)
+#
+# Sybase database configuration options
+#
+# WARNING: This is NOT TESTED, not in the least.
+# Please report any success or failure to the port maintainer,
+# Peter Pentchev <roam@FreeBSD.org>
+#
+# WITH_SYBASE_SERVER - the Sybase server name (empty)
+# WITH_SYBASE_USER - the username for connecting to the Sybase server (sa)
+# WITH_SYBASE_PASSWD - the password for connecting to the Sybase server (empty)
+# WITH_SYBASE_APP - the app for connecting to the Sybase server (vpopmail)
+# WITH_SYBASE_DB  - the name of the Sybase database to connect to (vpopmail)
+#
 
 HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
 LOGLEVEL?=	y
-APOPFILE?=	/usr/local/vpopmail/etc/apop-secrets
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
 QMAIL_DIR?=	${LOCALBASE}/qmail
@@ -104,10 +138,11 @@ CONFIGURE_ARGS+=	--enable-md5-passwords=y
 .endif
 
 .if defined(WITH_APOP)
-CONFIGURE_ARGS+=	--enable-apop=y \
-			--enable-apop-file=${APOPFILE}
-.else
-CONFIGURE_ARGS+=	--enable-apop=n
+BROKEN=		"The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work"
+.endif
+
+.if defined(WITH_VALIAS)
+CONFIGURE_ARGS+=	--enable-valias=y
 .endif
 
 .if defined(WITH_SQWEBMAIL)
@@ -131,6 +166,12 @@ CONFIGURE_ARGS+=	--enable-mysql=y \
 .if defined(WITH_MYSQL_LARGE_SITE)
 CONFIGURE_ARGS+=	--enable-large-site=y
 .endif
+.if defined(WITH_MYSQL_REPLICATION)
+CONFIGURE_ARGS+=	--enable-mysql-replication=y
+.endif
+.if defined(WITH_MYSQL_LOG)
+CONFIGURE_ARGS+=	--enable-mysql-logging=y
+.endif
 
 .if defined(WITH_MYSQL_SERVER)
 WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
@@ -146,8 +187,21 @@ WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
 .endif
 .endif
 
+.if defined(WITH_SYBASE)
+CONFIGURE_ARGS+=	--enable-sybase=y
+.endif
+
+.if defined(WITH_ORACLE)
+WITH_ORACLE_PROC?=	proc
+CONFIGURE_ARGS+=	--enable-oracle=y
+.endif
+
 .if defined(DEFAULT_DOMAIN)
 CONFIGURE_ARGS+=	--enable-default-domain=${DEFAULT_DOMAIN}
+.endif
+
+.if defined(WITH_SINGLE_DOMAIN)
+CONFIGURE_ARGS+=	--enable-many-domains=n
 .endif
 
 .if defined(WITH_IP_ALIAS)
@@ -160,6 +214,18 @@ CONFIGURE_ARGS+=	--enable-deliver-filter=y
 
 .if defined(WITH_QMAIL_EXT)
 CONFIGURE_ARGS+=	--enable-qmail-ext=y
+.endif
+
+.if defined(WITHOUT_FILE_LOCKING)
+CONFIGURE_ARGS+=	--enable-file-locking=n
+.endif
+
+.if defined(WITH_FILE_SYNC)
+CONFIGURE_ARGS+=	--enable-file-sync=y
+.endif
+
+.if defined(WITHOUT_AUTH_LOG)
+CONFIGURE_ARGS+=	--enable-auth-logging=n
 .endif
 
 #
@@ -191,6 +257,41 @@ pre-configure:
 .endif
 .if defined(WITH_MYSQL_DB)
 	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.endif
+.if defined(WITH_ORACLE)
+.if defined(WITH_ORACLE_SERVICE)
+	${PERL} -pi -e "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\$$1${WITH_ORACLE_SERVICE}\$$2/" ${WRKSRC}/voracle.h
+.endif
+.if defined(WITH_ORACLE_USER)
+	${PERL} -pi -e "s/(#define ORACLE_USER.*)system(.*)/\$$1${WITH_ORACLE_USER}\$$2/" ${WRKSRC}/voracle.h
+.endif
+.if defined(WITH_ORACLE_PASSWD)
+	${PERL} -pi -e "s/(#define ORACLE_PASSWD.*)manager(.*)/\$$1${WITH_ORACLE_PASSWD}\$$2/" ${WRKSRC}/voracle.h
+.endif
+.if defined(WITH_ORACLE_HOME)
+	${PERL} -pi -e "s@(#define ORACLE_HOME.*)/export/home/oracle(.*)@\$$1${WITH_ORACLE_HOME}\$$2@" ${WRKSRC}/voracle.h
+.endif
+.if defined(WITH_ORACLE_DB)
+	${PERL} -pi -e "s/(#define ORACLE_DATABASE.*)orcl1(.*)/\$$1${WITH_ORACLE_DB}\$$2/" ${WRKSRC}/voracle.h
+.endif
+	cd ${WRKSRC} && ${WITH_ORACLE_PROC} voracle.pc
+.endif
+.if defined(WITH_SYBASE)
+.if defined(WITH_SYBASE_SERVER)
+	${PERL} -pi -e "s/(#define SYBASE_SERVER.*)\"\"(.*)/\$$1\"${WITH_SYBASE_SERVER}\"\$$2/" ${WRKSRC}/vsybase.h
+.endif
+.if defined(WITH_SYBASE_USER)
+	${PERL} -pi -e "s/(#define SYBASE_USER.*)sa(.*)/\$$1${WITH_SYBASE_USER}\$$2/" ${WRKSRC}/vsybase.h
+.endif
+.if defined(WITH_SYBASE_PASSWD)
+	${PERL} -pi -e "s/(#define SYBASE_PASSWD.*)\"\"(.*)/\$$1\"${WITH_SYBASE_PASSWD}\"\$$2/" ${WRKSRC}/vsybase.h
+.endif
+.if defined(WITH_SYBASE_APP)
+	${PERL} -pi -e "s@(#define SYBASE_APP.*)vpopmail(.*)@\$$1${WITH_SYBASE_APP}\$$2@" ${WRKSRC}/vsybase.h
+.endif
+.if defined(WITH_SYBASE_DB)
+	${PERL} -pi -e "s/(#define SYBASE_DATABASE.*)vpopmail(.*)/\$$1${WITH_SYBASE_DB}\$$2/" ${WRKSRC}/vsybase.h
 .endif
 .endif
 	${MKDIR} ${VCFGDIR}
