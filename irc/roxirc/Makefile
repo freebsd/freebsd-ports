@@ -1,12 +1,12 @@
 # New ports collection makefile for:    roxirc
-# Version required:     1.3
+# Version required:     1.4
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
-# $Id: Makefile,v 1.4 1999/06/23 19:44:22 cpiazza Exp $
+# $Id: Makefile,v 1.5 1999/06/28 02:20:59 billf Exp $
 #
 
-DISTNAME=	roxirc-1.3
+DISTNAME=	roxirc-1.4
 CATEGORIES=	irc tk80
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
@@ -25,6 +25,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help ${PREFIX}/share/doc/roxirc/help
 
 post-patch:
-	/usr/bin/perl -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/roxirc
+	${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/roxirc
 
 .include <bsd.port.mk>
