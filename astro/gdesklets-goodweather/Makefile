@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	goodweather
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -25,10 +25,12 @@ USE_REINPLACE=	yes
 NAME=		GoodWeather
 WRKSRC=		${WRKDIR}/${NAME}
 DATADIR=	${PREFIX}/share/gnome
+PKGMESSAGE=	${WRKDIR}/pkg-message
 SKINS=		liquid um weather.com
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
+	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
