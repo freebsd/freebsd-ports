@@ -12,7 +12,7 @@ CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-PATCH_SITES=	ftp://freebsd.ntu.edu.tw/Upload/FBSD-taiwan/users/benedick/patch/pine/ \
+PATCH_SITES=	http://people.FreeBSD.org/~avatar/ports/patches/pine/ \
 		ftp://www.mmlab.cse.yzu.edu.tw/pub/collect/patch/pine/
 PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 
