@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.9 1998/12/13 22:00:40 kuriyama Exp $
+# $Id: Makefile,v 1.10 1999/02/12 14:44:30 kuriyama Exp $
 #
 # based on japanese/netscape4-*
 
@@ -27,7 +27,7 @@ BROWSER=	${BROWSER_NAME}-${BROWSER_VER}
 BROWSER_NAME?=	communicator
 BROWSER_VER=	4.08
 LANG=		ko_KR.EUC
-KOREAN_KIT=	netscape-v408.generic-generic-generic-19981227
+KOREAN_KIT=	netscape-v408.generic-generic-generic-19981229
 NDIR=		${PREFIX}/lib/netscape
 MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 			-e "s;@PREFIX@;${PREFIX};g" \
