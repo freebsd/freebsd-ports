@@ -9,7 +9,7 @@ PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://xmps.sourceforge.net/sources/
+MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin for Win32 (TM) Codecs
