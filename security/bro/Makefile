@@ -20,26 +20,24 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ENV+=	CC="${CC}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 USE_BISON=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-extract:
-	@(cd ${WRKSRC} && ${TAR} xfvz libedit.src.tar.gz > /dev/null)
+	@cd ${WRKSRC} && ${TAR} xfz libedit.src.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS+=-g -O0||g; \
 		s|CC=gcc||' \
 		${WRKSRC}/libedit/Makefile.in \
 		${WRKSRC}/libedit/Makefile
+	@${REINPLACE_CMD} -e "s,tr '\[a-z\]' '\[A-Z\]',tr 'a-z' 'A-Z',g" \
+		${WRKSRC}/libedit/makelist
+	@${REINPLACE_CMD} -E -e 's,(const char\*) const (helpstring),\1 \2,g' \
+		${WRKSRC}/DebugCmds.h
 
 pre-configure:
 	@${ECHO_CMD} "Configure libedit..."
@@ -61,4 +59,4 @@ post-install:
 	@${GZIP_CMD} ${DOCSDIR}/bro-CN99.ps
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
