@@ -1,6 +1,6 @@
---- source/Makefile.orig	Sat Feb 13 00:33:39 1999
-+++ source/Makefile	Sat Feb 13 00:41:26 1999
-@@ -111,13 +111,24 @@
+--- source/Makefile.orig	Thu Feb 22 16:01:18 1996
++++ source/Makefile	Mon May 31 16:46:38 1999
+@@ -111,13 +111,34 @@
  	  all
  
  freebsd:
@@ -14,20 +14,30 @@
 +	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DJOYSTICK' \
 +	  all
 +.else
++.if $(MACHINE_ARCH) == "i386"
++	$(MAKE) \
++	  OPENWINHOME='$$(X11BASE)' \
++	  GRAFLIBS='$$(XVLIBS)' \
++	  GRAFINCLUDES='$$(XVINCLUDES)' \
++	  GRAFOBJS='$$(XVOBJS)' \
++	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND \
++		-DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\" -DJOYSTICK' \
++	  all
++.else
 +	$(MAKE) \
 +	  OPENWINHOME='$$(X11BASE)' \
  	  GRAFLIBS='$$(XVLIBS)' \
  	  GRAFINCLUDES='$$(XVINCLUDES)' \
  	  GRAFOBJS='$$(XVOBJS)' \
 -	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND -DJOYSTICK' \
-+	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND \
-+		-DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\" -DJOYSTICK' \
++	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\"' \
  	  all
++.endif
 +.endif
  
  irix:
  	$(MAKE) \
-@@ -143,7 +154,7 @@
+@@ -143,7 +164,7 @@
  XVLIBS=-L$(OPENWINHOME)/lib -lxview -lolgx -lX11
  XVINCLUDES=-I$(OPENWINHOME)/include
  
