@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fam
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
