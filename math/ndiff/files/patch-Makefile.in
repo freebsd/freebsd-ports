@@ -1,0 +1,36 @@
+--- Makefile.in.orig	Wed Feb 18 14:17:22 2004
++++ Makefile.in	Wed Feb 18 14:19:31 2004
+@@ -602,14 +602,12 @@
+ 	if test -f $(PROGNAME) ; \
+ 	then \
+ 		$(CP) $(PROGNAME) $(bindir)/$(PROGNAME) ; \
+-		$(LN) $(bindir)/$(PROGNAME) $(bindir)/$(PROGNAME)-$(VERSION) ; \
+ 	else \
+ 		for f in $(SHFILES) ; \
+ 		do \
+ 			g=`basename $$f .sh` ; \
+ 			$(SEDCMD) $$f | $(CHECKSUM) > $(bindir)/$$g ; \
+-			$(LN) $(bindir)/$$g $(bindir)/$$g-$(VERSION) ; \
+-			$(CHMOD) 775 $(bindir)/$$g $(bindir)/$$g-$(VERSION) ; \
++			$(CHMOD) 775 $(bindir)/$$g ; \
+ 		done ; \
+ 	fi
+ 
+@@ -635,7 +633,7 @@
+ install-show:
+ 	@echo ''
+ 	@echo Installed files...
+-	@$(LS) -l $(bindir)/$(PROGNAME) $(bindir)/$(PROGNAME)-$(VERSION)
++	@$(LS) -l $(bindir)/$(PROGNAME)
+ 	@$(LS) -l $(mandir)/$(PROGNAME).$(manext)
+ 	@if test -d $(shrlibdir) ; then $(LS) -lR $(shrlibdir)/* ; fi
+ 	@echo ''
+@@ -703,7 +701,7 @@
+ uninstall-exe:
+ 	-for f in $(PROGRAMS) ; \
+ 	do \
+-		$(RM) $(bindir)/$$f $(bindir)/$$f-$(VERSION) 2>/dev/null; \
++		$(RM) $(bindir)/$$f 2>/dev/null; \
+ 	done
+ 
+ uninstall-man:

@@ -1,0 +1,24 @@
+ndiff is a utility for comparing putatively similar files, ignoring small
+numeric differences.  The utility is written by Nelson H.  F. Beebe and
+covered by the GNU General Public License (GPL), version 2.  It may be
+built with arbitrary precision support (more powerful) or using built-in
+floating point precision, see Makefile.
+
+Assessing the consistency of a numerical program run in multiple
+environments (operating systems, architectures, or compilers) can be a
+difficult task for a human, as small differences in numerical output values
+are expected.  File differencing utilites, such as diff(1), will generally
+produce voluminous output, often longer than the original files.
+
+ndiff solves this problem. Taking two two text files expected to be
+identical, or at least numerically similar, it allows to specify absolute
+and/or relative error tolerances for differences between numerical values
+in the two files, and then reports only the lines with values exceeding
+those tolerances.  It also tells by how much they differ. A simple example:
+
+% ndiff --relative-error 1.0e-3 test019.txt.1 test019.txt.2
+### Maximum relative error in matching lines = 8.64e-51 at line 129 field 4
+
+WWW: http://www.math.utah.edu/~beebe/software/ndiff/
+
+Have fun.         Stefan   (sad@mailaps.org)

@@ -96,6 +96,7 @@
     SUBDIR += mupad
     SUBDIR += naturalmath
     SUBDIR += nauty
+    SUBDIR += ndiff
     SUBDIR += netcdf
     SUBDIR += newmat
     SUBDIR += ngraph
