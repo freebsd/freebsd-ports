@@ -1,16 +1,15 @@
-diff -ruN src.bak/runtime/Makefile src/runtime/Makefile
---- src.bak/runtime/Makefile	Thu Dec 16 11:58:42 1999
-+++ src/runtime/Makefile	Mon Jun 18 16:30:56 2001
-@@ -9,7 +9,7 @@
+--- src/runtime/Makefile.orig	Fri Mar 15 21:03:33 2002
++++ src/runtime/Makefile	Fri Mar 15 21:06:15 2002
+@@ -13,7 +13,7 @@
+   SUF=.${CFG}
+ endif
  
- LD = ld
- LDFLAGS = -r
 -TRUE = /bin/true
 +TRUE = /usr/bin/true
- CC = gcc
- AR = ar
+ LDFLAGS = -r
  ARFLAGS = r
-@@ -48,7 +48,7 @@
+ 
+@@ -51,7 +51,7 @@
  	mkdir -p ${OBJDIR}
  
  ${OBJDIRS}: ${OBJDIR}/% :

@@ -5,36 +5,32 @@
 # $FreeBSD$
 
 PORTNAME=	nhc98
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.10-IO \
-		patch-1.10-arrow \
-		patch-1.10-blockbuffer \
-		patch-1.10-commas \
-		patch-1.10-counter \
-		patch-1.10-hp2graph \
-		patch-1.10-keywords \
-		patch-1.10-lhs \
-		patch-1.10-patterns \
-		patch-1.10-hiding \
-		patch-1.10-ghc5.02
+PATCHFILES=	patch-1.12-ranlib \
+		patch-1.12-hmake-config \
+		patch-1.12-getEnv
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
-
-FORBIDDEN=	"Loops infinitely during build"
 
 .if defined(WITH_TRACER)
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BUILD_DEPENDS+= ghc:${PORTSDIR}/lang/ghc
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST=		${WRKSRC}/pkg-plist
 
 .if !defined(WITH_TRACER)
 ALL_TARGET=	basic
@@ -46,6 +42,10 @@ MAKE_ENV+=	PATH=${PREFIX}/jdk1.1.8/bin:$$PATH
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+
+.if ${OSVERSION} >= 500000
+CONFIGURE_ARGS+=	--buildwith=ghc
+.endif
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/nhc98 +docs
@@ -89,5 +89,16 @@ post-install:
 	       < ${WRKSRC}/man/nhc98.1 > ${WRKSRC}/man/nhc98.1.fix
 	${INSTALL_MAN} ${WRKSRC}/man/nhc98.1.fix ${PREFIX}/man/man1/nhc98.1
 	${RM} ${WRKSRC}/man/nhc98.1.fix
+.if !defined(NOPORTDOCS)
+.for ending in aux log
+	${RM} ${PREFIX}/share/doc/nhc98/hat/tutorial1.${ending}
+.endfor
+.for ending in aux log out toc
+	${RM} ${PREFIX}/share/doc/nhc98/hat/hatuser.${ending}
+.endfor
+.for directory in . bugs examples hat hmake implementation-notes libs
+	${RM} -r ${PREFIX}/share/doc/nhc98/${directory}/CVS
+.endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

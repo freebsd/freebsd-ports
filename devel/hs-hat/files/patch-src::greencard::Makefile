@@ -1,6 +1,5 @@
-diff -ruN src.bak/greencard/Makefile src/greencard/Makefile
---- src.bak/greencard/Makefile	Tue May 29 16:22:46 2001
-+++ src/greencard/Makefile	Mon Jun 18 16:31:45 2001
+--- src/greencard/Makefile.orig	Fri Mar 15 21:04:02 2002
++++ src/greencard/Makefile	Fri Mar 15 21:06:49 2002
 @@ -34,7 +34,7 @@
  
  
