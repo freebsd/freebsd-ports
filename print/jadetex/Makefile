@@ -3,7 +3,7 @@
 # Date created:         5 December 1998
 # Whom:                 Sean Kelly <kelly@plutotech.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/08 21:08:28 nik Exp $
+# $Id: Makefile,v 1.2 1999/01/22 00:03:56 nik Exp $
 #
 # When jadetex-2.3 goes mainstream, it will replace jadetex-2.1
 # currently in the Comprehensive TeX Archive Network (CTAN).  When
@@ -17,7 +17,7 @@ CATEGORIES=		print
 VERSION=		2.3
 PKGNAME=		${DISTNAME}-${VERSION}
 MAINTAINER=		kelly@plutotech.com
-MASTER_SITES=		http://tug.org/applications/jadetex/
+MASTER_SITES=		http://www.freebsd.org/~nik/distfiles/jadetex/
 DISTFILES=		Makefile.jadetex jadetex.dtx jadetex.ini jadetex.ins \
 			pdfjadetex.ini
 DIST_SUBDIR=		jadetex
