@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-theme
 DISTNAME=	Milk-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Port of Milk, Mac OS X theme
+COMMENT=	A port of Milk, Mac OS X theme
 
 TYPE?=		gtk
 
