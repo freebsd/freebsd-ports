@@ -1,33 +1,34 @@
-# New ports collection makefile for:    MySQL-server
-# Date created:         Sun Mar 3 12:20:35 CET 2002
-# Whom:                 Alex Dupre <sysadmin@alexdupre.com>
+# New ports collection makefile for:	MySQL-server
+# Date created:				Fri Apr 11 10:06:26 CET 2003
+# Whom:					Alex Dupre <sysadmin@alexdupre.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.12
-PORTREVISION?=	1
+PORTVERSION=	4.1.0
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
-		http://mysql.tzone.it/Downloads/MySQL-4.0/ \
-		ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.0/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.0/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-4.0/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-4.0/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-4.0/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.0/ \
-		http://www.mysql.cz/Downloads/MySQL-4.0/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.0/ \
-		http://mysql.oms-net.nl/Downloads/MySQL-4.0/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.0/
+MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.1/ \
+		http://mysql.tzone.it/Downloads/MySQL-4.1/ \
+		ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
+		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.1/ \
+		http://mysql.mediatraffic.fi/Downloads/MySQL-4.1/ \
+		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-4.1/ \
+		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-4.1/ \
+		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.1/ \
+		http://www.mysql.cz/Downloads/MySQL-4.1/ \
+		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.1/ \
+		http://mysql.oms-net.nl/Downloads/MySQL-4.1/ \
+		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.1/
 PKGNAMESUFFIX?=	-server
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql40-client
+SLAVEDIRS=	databases/mysql41-client
 DB_DIR?=	/var/db/mysql
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -37,6 +38,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-debug \
 		--without-readline \
+		--without-libedit \
 		--without-bench \
 		--without-extra-tools \
 		--with-libwrap \
@@ -95,10 +97,10 @@ CXX=		${CC}
 .if !defined(CLIENT_ONLY)
 USE_PERL5_RUN=	yes
 
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql40-client \
+RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql41-client \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}-alpha
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
