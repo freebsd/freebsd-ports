@@ -6437,6 +6437,7 @@ qmail		ports/mail/qmail
 qmail-contrib	ports/mail/qmail-contrib
 qmail-ldap	ports/mail/qmail-ldap
 qmail-mysql	ports/mail/qmail-mysql
+qmail-notify	ports/mail/qmail-notify
 qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailanalog	ports/mail/qmailanalog
