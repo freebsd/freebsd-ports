@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	xswallow
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/X/
-DISTNAME=	XswallowSource-1.0.17
+DISTNAME=	XswallowSource-1.0.18
 
 MAINTAINER=	conrads@home.com
 
 USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/PluginSDK30b5/xswallow
+WRKSRC=		${WRKDIR}/xswallow/xswallow
 
 PORTOBJFORMAT=	aout
 
