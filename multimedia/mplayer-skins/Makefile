@@ -202,6 +202,8 @@ DISTFILES+=	mini-0.1.tar.bz2:mini
 EXTRACT_ONLY+=	mini-0.1.tar.bz2
 .endif
 
+pre-install:
+	@${TOUCH} ${PLIST}
 # Automatically create PLIST
 # creates @dirrm entries
 # copies file entries
