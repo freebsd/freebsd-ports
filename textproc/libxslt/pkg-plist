@@ -23,7 +23,7 @@ include/libxslt/xsltconfig.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.so
-lib/libexslt.so.4
+lib/libexslt.so.5
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
