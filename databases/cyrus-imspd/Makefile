@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imspd
 PORTVERSION= 	1.6a3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
