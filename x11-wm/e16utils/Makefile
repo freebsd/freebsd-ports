@@ -8,7 +8,7 @@
 PORTNAME=	e16utils
 PORTVERSION=	0.16
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/e16utils/
+MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/e16utils/
 DISTFILES=	e16menuedit-0.1.tar.gz e16keyedit-0.2.tar.gz
 
 MAINTAINER=	ports@FreeBSD.ORG
