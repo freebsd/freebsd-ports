@@ -1,0 +1,315 @@
+Index: src/sql.c
+===================================================================
+RCS file: /usr/src/CVS/mnogosearch/src/sql.c,v
+retrieving revision 1.25
+diff -u -r1.25 sql.c
+--- src/sql.c	2001/02/26 15:58:17	1.25
++++ src/sql.c	2001/02/27 13:51:54
+@@ -3723,6 +3723,9 @@
+ 	char qbuf[UDMSTRSIZ];
+ 	UDM_SEARCHWORD * wrd=NULL;	
+ 	size_t wordnum;
++	int has_crosswrd=0;
++	int wcounts[UDM_MAXWORDPERQUERY];
++
+ #ifdef HAVE_MYSQL
+ 	MYSQL_ROW row;
+ #endif
+@@ -3732,147 +3735,164 @@
+ #endif
+ 
+ 	UdmPrepare(query,text);
++	bzero(wcounts,sizeof(wcounts));
+ 
+ 	/* Now find each word */
+ 	for(wordnum=0;wordnum<query->words_in_query;wordnum++){
+-		int numrows,firstnum,curnum,len,i;
++		int numrows,firstnum,curnum,tnum,i,tmin,tmax,tlst=-1;
+ 		char tablename[32]="dict";
++
++		if((query->Conf->DBMode==UDM_DBMODE_MULTI)&&(query->word_match!=UDM_MATCH_WORD)){
++			/* This is for substring search!  */
++			/* In Multi mode: we have to scan */
++			/* almost all tables except those */
++			/* with to short words            */
++			
++			tmin=DICTNUM(strlen(query->words[wordnum]));
++			tmax=MAXDICT;
++		}else{
++			tmin=tmax=DICTNUM(strlen(query->words[wordnum]));
++		}
++
++		for(tnum=tmin;tnum<=tmax;tnum++){
++
++			if(tlst!=DICTNUM(tnum)){
++				tlst=DICTNUM(tnum);		
+ #ifdef DEBUG_SEARCH
+-		ticks=UdmStartTimer();
+-		fprintf(stderr,"Start search for '%s'\n",rw);
++				ticks=UdmStartTimer();
++				fprintf(stderr,"Start search for '%s'\n",rw);
+ #endif
+-		switch(query->Conf->DBMode){
+-		case UDM_DBMODE_MULTI:
+-			len=strlen(query->words[wordnum]);len=DICTNUM(len);
+-			sprintf(tablename,"dict%d",len);
+-			break;
+-		case UDM_DBMODE_MULTI_CRC:
+-			len=strlen(query->words[wordnum]);len=DICTNUM(len);
+-			sprintf(tablename,"ndict%d",len);
+-			break;
+-		case UDM_DBMODE_SINGLE_CRC:
+-			strcpy(tablename,"ndict");
+-			break;
+-		default:
+-			break;
+-		}
+-		if((query->Conf->DBMode==UDM_DBMODE_SINGLE_CRC)||
+-			(query->Conf->DBMode==UDM_DBMODE_MULTI_CRC)){
+-			udmcrc32_t crc;
+-			crc=query->cwords[wordnum];
+-			if(query->Conf->tagstr[0] || query->Conf->statusstr[0] || query->Conf->urlstr[0] || query->Conf->langstr[0] || query->Conf->timestr[0] || query->Conf->catstr[0]){
+-				sprintf(qbuf,"\
+-SELECT %s.url_id,%s.intag \
+-FROM %s,url \
+-WHERE %s.word_id=%d \
+-AND url.rec_id=%s.url_id %s%s%s%s%s%s",
+-				tablename,tablename,
+-				tablename,tablename,
+-				crc,tablename,
+-				query->Conf->tagstr,
+-				query->Conf->statusstr,
+-				query->Conf->urlstr,
+-				query->Conf->langstr,
+-				query->Conf->timestr,
+-				query->Conf->catstr);
+-			}else{
+-				sprintf(qbuf,"SELECT url_id,intag FROM %s WHERE word_id=%d",tablename,crc);
+-			}
+-		}else{
+-			char cmparg[256];
+-			switch(query->word_match){	
+-				case UDM_MATCH_BEGIN:
+-					sprintf(cmparg," LIKE '%s%%'",query->words[wordnum]);
++				switch(query->Conf->DBMode){
++				case UDM_DBMODE_MULTI:
++					sprintf(tablename,"dict%d",DICTNUM(tnum));
+ 					break;
+-				case UDM_MATCH_END:
+-					sprintf(cmparg," LIKE '%%%s'",query->words[wordnum]);
++				case UDM_DBMODE_MULTI_CRC:
++					sprintf(tablename,"ndict%d",DICTNUM(tnum));
+ 					break;
+-				case UDM_MATCH_SUBSTR:
+-					sprintf(cmparg," LIKE '%%%s%%'",query->words[wordnum]);
++				case UDM_DBMODE_SINGLE_CRC:
++					strcpy(tablename,"ndict");
+ 					break;
+-				case UDM_MATCH_WORD:
+ 				default:
+-					sprintf(cmparg,"='%s'",query->words[wordnum]);
+ 					break;
+-			}
+-			if(query->Conf->tagstr[0]||query->Conf->statusstr[0]||query->Conf->urlstr[0]||query->Conf->langstr[0]||query->Conf->catstr[0]||query->Conf->timestr[0]){
+-		
+-				sprintf(qbuf,"\
++				}
++				if((query->Conf->DBMode==UDM_DBMODE_SINGLE_CRC)||(query->Conf->DBMode==UDM_DBMODE_MULTI_CRC)){
++					udmcrc32_t crc;
++					crc=query->cwords[wordnum];
++					if(query->Conf->tagstr[0] || query->Conf->statusstr[0] || query->Conf->urlstr[0] || query->Conf->langstr[0] || query->Conf->timestr[0] || query->Conf->catstr[0]){
++						sprintf(qbuf,"\
+ SELECT %s.url_id,%s.intag \
+ FROM %s,url \
++WHERE %s.word_id=%d \
++AND url.rec_id=%s.url_id %s%s%s%s%s%s",
++						tablename,tablename,
++						tablename,tablename,
++						crc,tablename,
++						query->Conf->tagstr,
++						query->Conf->statusstr,
++						query->Conf->urlstr,
++						query->Conf->langstr,
++						query->Conf->timestr,
++						query->Conf->catstr);
++					}else{
++						sprintf(qbuf,"SELECT url_id,intag FROM %s WHERE word_id=%d",tablename,crc);
++					}
++				}else{
++					char cmparg[256];
++					switch(query->word_match){	
++						case UDM_MATCH_BEGIN:
++							sprintf(cmparg," LIKE '%s%%'",query->words[wordnum]);
++							break;
++						case UDM_MATCH_END:
++							sprintf(cmparg," LIKE '%%%s'",query->words[wordnum]);
++							break;
++						case UDM_MATCH_SUBSTR:
++							sprintf(cmparg," LIKE '%%%s%%'",query->words[wordnum]);
++							break;
++						case UDM_MATCH_WORD:
++						default:
++							sprintf(cmparg,"='%s'",query->words[wordnum]);
++							break;
++					}
++					if(query->Conf->tagstr[0]||query->Conf->statusstr[0]||query->Conf->urlstr[0]||query->Conf->langstr[0]||query->Conf->catstr[0]||query->Conf->timestr[0]){
++						sprintf(qbuf,"\
++SELECT %s.url_id,%s.intag \
++FROM %s,url \
+ WHERE %s.word%s \
+ AND url.rec_id=%s.url_id %s%s%s%s%s%s",
+-				tablename,tablename,
+-				tablename,tablename,
+-				cmparg,tablename,
+-				query->Conf->tagstr,
+-				query->Conf->statusstr,
+-				query->Conf->urlstr,
+-				query->Conf->langstr,
+-				query->Conf->timestr,
+-				query->Conf->catstr);
+-			}else{
+-				sprintf(qbuf,"SELECT url_id,intag FROM %s WHERE word%s",tablename,cmparg);
+-			}
+-		}
+-		((DB*)(query->db))->res=sql_query(query,qbuf);
+-		if(UdmDBErrorCode(query->db))return(NULL);
+-		numrows=SQL_NUM_ROWS(((DB*)(query->db))->res);
++						tablename,tablename,
++						tablename,tablename,
++						cmparg,tablename,
++						query->Conf->tagstr,
++						query->Conf->statusstr,
++						query->Conf->urlstr,
++						query->Conf->langstr,
++						query->Conf->timestr,
++						query->Conf->catstr);
++					}else{
++						sprintf(qbuf,"SELECT url_id,intag FROM %s WHERE word%s",tablename,cmparg);
++					}
++				}
++				((DB*)(query->db))->res=sql_query(query,qbuf);
++				if(UdmDBErrorCode(query->db))return(NULL);
++				numrows=SQL_NUM_ROWS(((DB*)(query->db))->res);
+ 
+ #ifdef DEBUG_SEARCH
+-		ticks=UdmStartTimer()-ticks;
+-		fprintf(stderr,"Stop search for '%s'\t%.2f  %d found\n",rw,(float)ticks/1000,num);
++				ticks=UdmStartTimer()-ticks;
++				fprintf(stderr,"Stop search for '%s'\t%.2f  %d found\n",rw,(float)ticks/1000,num);
+ #endif
+ 
+-		/* Add new found word to the list */
+-		if(!query->total_found){
+-			wrd=(UDM_SEARCHWORD*)UdmXmalloc((query->total_found+numrows)*sizeof(UDM_SEARCHWORD));
+-		}else{
+-			wrd=(UDM_SEARCHWORD*)UdmXrealloc(wrd,(query->total_found+numrows)*sizeof(UDM_SEARCHWORD));
+-		}
+-
+-		firstnum=curnum=query->total_found;
+-		for(i=0;i<numrows;i++){
+-			int url_id;
+-			int weight;
+-			int fweight=0;
++				/* Add new found word to the list */
++				if(!query->total_found){
++					wrd=(UDM_SEARCHWORD*)UdmXmalloc((query->total_found+numrows)*sizeof(UDM_SEARCHWORD));
++				}else{
++					wrd=(UDM_SEARCHWORD*)UdmXrealloc(wrd,(query->total_found+numrows)*sizeof(UDM_SEARCHWORD));
++				}
++
++				firstnum=curnum=query->total_found;
++				for(i=0;i<numrows;i++){
++					int url_id;
++					int weight;
++					int fweight=0;
+ #ifdef HAVE_MYSQL
+-			/* mysql_data_seek is slow */
+-			/* We will use sequential fetch instead*/
+-			row=mysql_fetch_row(((DB*)(query->db))->res);
+-			url_id=atoi(row[0]);
+-			weight=atoi(row[1]);
++					/* mysql_data_seek is slow */
++					/* We will use sequential fetch instead*/
++					row=mysql_fetch_row(((DB*)(query->db))->res);
++					url_id=atoi(row[0]);
++					weight=atoi(row[1]);
+ #else
+-			url_id=atoi(sql_value(((DB*)(query->db))->res,i,0));
+-			weight=atoi(sql_value(((DB*)(query->db))->res,i,1));
++					url_id=atoi(sql_value(((DB*)(query->db))->res,i,0));
++					weight=atoi(sql_value(((DB*)(query->db))->res,i,1));
+ #endif
+ 
+-			/* Check weight factors */
+-			if(query->weight_factor){
+-				int f;
+-				for(f=0;f<8;f++)fweight+=(((weight>>f)&0x01)*query->wf[f]);
+-			}else{
+-				fweight=weight&0xFFFF;
+-			}
+-			if(fweight){
+-				wrd[curnum].url_id=url_id;
+-				wrd[curnum].count=1<<query->wordorders[wordnum];
+-				wrd[curnum].weight=fweight;
+-				wrd[curnum].pos=((unsigned int)weight)>>16;;
+-				curnum++;
++					/* Check weight factors */
++					if(query->weight_factor){
++						int f;
++						for(f=0;f<8;f++)fweight+=(((weight>>f)&0x01)*query->wf[f]);
++					}else{
++						fweight=weight&0xFFFF;
++					}
++					if(fweight){
++						wrd[curnum].url_id=url_id;
++						wrd[curnum].count=1<<query->wordorders[wordnum];
++						wrd[curnum].weight=fweight;
++						wrd[curnum].pos=((unsigned int)weight)>>16;;
++						curnum++;
++					}
++				}
++				SQL_FREE(((DB*)(query->db))->res);
++				wcounts[wordnum]+=curnum-firstnum;
++				query->total_found=curnum;
++				wrd=(UDM_SEARCHWORD*)UdmXrealloc(wrd,query->total_found*sizeof(UDM_SEARCHWORD));
+ 			}
+-		}
+-		SQL_FREE(((DB*)(query->db))->res);
+-		if(query->wordinfo[0])strcat(query->wordinfo,", ");
+-		sprintf(UDM_STREND(query->wordinfo)," %s : %d",query->words[wordnum],curnum-firstnum);
+-		query->total_found=curnum;
+-		wrd=(UDM_SEARCHWORD*)UdmXrealloc(wrd,query->total_found*sizeof(UDM_SEARCHWORD));
++		}	
+ 	}
+ 
+ 
++
++
+ 	/* Now find each word in crosstable */
+-	if(query->Conf->use_crossword&&query->Conf->DBMode!=UDM_DBMODE_CACHE){
+-	for(wordnum=0;wordnum<query->words_in_query;wordnum++){
++	has_crosswrd=((query->Conf->use_crossword)&&(query->Conf->DBMode!=UDM_DBMODE_CACHE));
++	for(wordnum=0;((has_crosswrd)&&(wordnum<query->words_in_query));wordnum++){
+ 		int numrows,firstnum,curnum,i;
+ 		char tablename[32]="";
+ #ifdef DEBUG_SEARCH
+@@ -3997,13 +4017,15 @@
+ 			}
+ 		}
+ 		SQL_FREE(((DB*)(query->db))->res);
+-		if(query->wordinfo[0])strcat(query->wordinfo,", ");
+-		sprintf(UDM_STREND(query->wordinfo)," %s : %d",query->words[wordnum],curnum-firstnum);
+ 		query->total_found=curnum;
++		wcounts[wordnum]+=curnum-firstnum;
+ 		wrd=(UDM_SEARCHWORD*)UdmXrealloc(wrd,query->total_found*sizeof(UDM_SEARCHWORD));
+-	}}
+-
++	}
+ 
++	for(wordnum=0;wordnum<query->words_in_query;wordnum++){
++		if(query->wordinfo[0])strcat(query->wordinfo,", ");
++		sprintf(UDM_STREND(query->wordinfo)," %s : %d",query->words[wordnum],wcounts[wordnum]);
++	}
+ 
+ 	if(query->total_found){
+ 		/* Sort in URL order */			
