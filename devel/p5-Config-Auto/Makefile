@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Auto
-PORTVERSION=	0.06
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -38,12 +38,6 @@ post-patch:
 		     -e '$$_ = "" if (/5.006/);' \
 		     -e '$$_ = "" if (/use warnings/);' \
 		 ${WRKSRC}/lib/Config/Auto.pm
-.endif
-
-.if ${PERL_LEVEL} <= 500503
-# make PREFIX-clean under perl 5.005_03
-post-configure:
-	@${PERL} -pi -e 's,/usr/local/,\$${PREFIX}/,g' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>
