@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  pchar
+# Version required: 0.0
 # Date created:			  Wed Nov 03, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  cxterm
+# Version required: 0.0
 # Date created:			  Sat Aug 10, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  gv
+# Version required: 0.0
 # Date created:			  16 Apr 1996
 # Whom:				  tg@freebsd.org
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection Makefile for:  rclock
+# Version required: 0.0
 # Date created:			  24th Feburary 1997
 # Whom:				  obrien@NUXI.com
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  stlport
+# Version required: 0.0
 # Date Created:			  2 December 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

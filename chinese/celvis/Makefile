@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  celvis
+# Version required: 0.0
 # Date created:			  Thur Aug 15, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

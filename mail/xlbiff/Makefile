@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  xlbiff
+# Version required: 0.0
 # Date created:			  23-Aug-1995
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #

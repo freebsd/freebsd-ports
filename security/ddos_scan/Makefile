@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ddos_scan
+# Version required: 0.0
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  foo
+# Version required: 0.0
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  mixal
+# Version required: 0.0
 # Date created:			  21-Dec-1996
 # Whom:                 	  David O'Brien <obrien@cs.ucdavis.edu>
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ncftp3
+# Version required: 0.0
 # Date created:			  4 Nov 1994
 # Whom:				  ache
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  bochs
+# Version required: 0.0
 # Date created:			  16 December 1997
 # Whom:				  alex
 #

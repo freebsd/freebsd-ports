@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ncftp
+# Version required: 0.0
 # Date created:			  20 Jun 1996
 # Whom:				  jkh
 #

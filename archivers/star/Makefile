@@ -1,4 +1,5 @@
 # New ports collection makefile for:	star
+# Version required: 0.0
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  telserv
+# Version required: 0.0
 # Date created:			  Mon Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

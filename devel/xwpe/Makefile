@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  xwpe
+# Version required: 0.0
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

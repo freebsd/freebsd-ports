@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  bison
+# Version required: 0.0
 # Date created:			  27 Mar 1999
 # Whom:				  Jerry Hicks
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  pathchar
+# Version required: 0.0
 # Date created:			  7 November 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

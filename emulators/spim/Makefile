@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  spim
+# Version required: 0.0
 # Date created:			  Mon Oct 28, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

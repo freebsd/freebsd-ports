@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  Mark Moraes malloc library
+# Version required: 0.0
 # Date created:			  11 January 1995
 # Whom:				  jkh
 #

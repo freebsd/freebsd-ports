@@ -1,5 +1,6 @@
 # ex:ts=8
 # New ports collection makefile for: Electric Fence
+# Version required: 0.0
 # Date created: 	13 November 1997
 # Whom:			jraynard
 #

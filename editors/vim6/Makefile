@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  vim
+# Version required: 0.0
 # Date created:			  Sat June 29, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

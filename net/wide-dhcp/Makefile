@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  dhcp
+# Version required: 0.0
 # Date created:			  21 November 1995
 # Whom:				  Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  xsysstats
+# Version required: 0.0
 # Date created:			  12 December 1994
 # Whom:				  asami
 #
