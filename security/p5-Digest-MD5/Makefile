@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest-MD5
-PORTVERSION=	2.24
+PORTVERSION=	2.26
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -17,7 +17,6 @@ COMMENT=	Perl5 interface to the MD5 algorithm
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Digest::MD5.3
 
 .include <bsd.port.mk>
