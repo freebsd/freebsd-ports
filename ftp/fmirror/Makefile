@@ -7,6 +7,7 @@
 
 PORTNAME=	fmirror
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/
 
