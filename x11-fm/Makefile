@@ -31,6 +31,7 @@
     SUBDIR += xdiskusage
     SUBDIR += xfce4-fm
     SUBDIR += xfce4-fm-icons
+    SUBDIR += xfe
     SUBDIR += xfm
     SUBDIR += xnc
 
