@@ -8,9 +8,16 @@
 
 PORTNAME=	gman
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://stud3.tuwien.ac.at/~e0025974/distfiles/ \
-		http://homex.coolconnect.com/user/xkwang/gman/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/g/gman
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-1.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
@@ -18,8 +25,11 @@ COMMENT=	A user-friendly graphical front end for the man system
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 MAN1=	gman.1x
 
@@ -34,8 +44,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gman ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/bin/gman.cgi
-	@${MKDIR} ${PREFIX}/www/cgi-bin/gman
-	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/www/cgi-bin/gman
+	@${MKDIR} ${PREFIX}/www/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_MAN} ${WRKSRC}/gman.1x ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
