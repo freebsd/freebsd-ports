@@ -2,6 +2,7 @@ bin/authtest
 %%OPENSSLFLAG%%bin/couriertls
 bin/deliverquota
 bin/imapd
+bin/maildiracl
 bin/maildirkw
 bin/maildirmake
 bin/pop3d
@@ -31,19 +32,22 @@ bin/pop3d
 %%PWDFLAG%%%%LIBEXECDIR%%/authlib/authpwd
 %%LIBEXECDIR%%/authlib/authuserdb
 %%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
-%%LIBEXECDIR%%/courierlogger
 %%LIBEXECDIR%%/couriertcpd
 %%LIBEXECDIR%%/imapd-ssl.rc
 %%LIBEXECDIR%%/imapd.rc
 %%LIBEXECDIR%%/makedatprog
 %%LIBEXECDIR%%/pop3d-ssl.rc
 %%LIBEXECDIR%%/pop3d.rc
+sbin/authenumerate
+sbin/courierlogger
 sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
 sbin/mkpop3dcert
 sbin/pop3login
 sbin/pw2userdb
+sbin/sharedindexinstall
+sbin/sharedindexsplit
 sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
@@ -63,4 +67,6 @@ share/courier-imap/vchkpw2userdb
 @dirrm share/courier-imap
 @dirrm %%LIBEXECDIR%%/authlib
 @dirrm %%LIBEXECDIR%%
+@dirrm %%CONFDIR%%/shared
+@dirrm %%CONFDIR%%/shared.tmp
 @dirrm %%CONFDIR%%
