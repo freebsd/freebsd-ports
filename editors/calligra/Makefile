@@ -14,7 +14,7 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22 \
 		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
-		iconv.0:${PORTSDIR}/converters/iconv
+		iconv.1:${PORTSDIR}/converters/iconv
 
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	iconv.0:${PORTSDIR}/converters/iconv \
+LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv \
 		gnome.4:${PORTSDIR}/x11/gnomelibs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
