@@ -7698,6 +7698,7 @@ php4-iconv	ports/converters/php4-iconv
 php4-interbase	ports/databases/php4-interbase
 php4-mbstring	ports/converters/php4-mbstring
 php4-mssql	ports/databases/php4-mssql
+php4-mysql	ports/databases/php4-mysql
 php4-nms	ports/lang/php4-nms
 php4-pcre	ports/devel/php4-pcre
 php4-pear	ports/devel/php4-pear
