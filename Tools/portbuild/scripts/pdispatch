@@ -31,10 +31,10 @@ if grep -qxF $pkgname ${pb}/${arch}/${branch}/duds; then
 fi
 
 args=${1+"$@"}
-mach=$(cat ${pb}/${arch}/ulist)
-num=$(echo $(echo $mach | wc -w))
+num=$(wc -w ${pb}/${arch}/ulist | awk '{print $1}')
+random=$(jot -r 1 1 ${num})
+mach=$(cat ${pb}/${arch}/ulist | cut -f ${random} -d ' ' )
 set $mach
-shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
 flags=""
 if [ "x$NOCLEAN" != "x" ]; then
   flags="${flags} -noclean"
