@@ -33,6 +33,7 @@ MAN3=	Log::Dispatch.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		MKDIR="${MKDIR}" \
 		REALCURDIR="${.CURDIR}"
 
 pre-fetch:
