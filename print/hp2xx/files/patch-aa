@@ -1,87 +1,110 @@
-*** ./makefile.orig	Mon Dec  1 03:22:14 1997
---- ./makefile	Sun Jan 17 14:39:04 1999
-***************
-*** 34,40 ****
-  
-  # Installation sites (GNU conventions):
-  #
-! prefix   = /usr/local
-  bindir   = $(prefix)/bin
-  includedir = $(prefix)/include
-  mandir   = $(prefix)/man
---- 34,40 ----
-  
-  # Installation sites (GNU conventions):
-  #
-! prefix   = ${PREFIX}
-  bindir   = $(prefix)/bin
-  includedir = $(prefix)/include
-  mandir   = $(prefix)/man
-***************
-*** 45,53 ****
-  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
-  #
-  #CC       = gcc
-! #CFLAGS   = -O2 -Wall -ansi -fstrength-reduce -finline-functions
-! CC       = cc
-! CFLAGS   = -O
-  
-  #LFLAGS   =                # only sometimes needed; see below for examples
-  #CPPFLAGS = -I.            # only sometimes needed; see below for examples
---- 45,53 ----
-  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
-  #
-  #CC       = gcc
-! CFLAGS   += -Wall -ansi
-! #CC       = cc
-! #CFLAGS   = -O
-  
-  #LFLAGS   =                # only sometimes needed; see below for examples
-  #CPPFLAGS = -I.            # only sometimes needed; see below for examples
-***************
-*** 56,63 ****
-  #
-  #	PNG test setup (for build without installed libpng/libz)
-  #
-! LFLAGS   = -L../../libpng-0.96 -L../../zlib-1.0.4
-! CPPFLAGS = -I. -I../../libpng-0.96 -I../../zlib-1.0.4
-  BINDCMD  = 
-  
-  #############################################################################
---- 56,65 ----
-  #
-  #	PNG test setup (for build without installed libpng/libz)
-  #
-! #LFLAGS   = -L../../libpng-0.96 -L../../zlib-1.0.4
-! LFLAGS = -L${X11BASE}/lib -L$(prefix)/lib
-! #CPPFLAGS = -I. -I../../libpng-0.96 -I../../zlib-1.0.4
-! CPPFLAGS = -I. -I${X11BASE}/include -I$(prefix)/include
-  BINDCMD  =
-  
-  #############################################################################
-***************
-*** 208,215 ****
-  PROGRAM	= hp2xx
-  
-  default:
-! 	@echo "This makefile needs manual configuration! Edit it now!
-! 	@echo "After configuration, you may use the following commands:
-  	@echo   ""
-  	@echo   "make all             Compile everything"
-  	@echo   "make check           Run a color application in preview mode"
---- 210,217 ----
-  PROGRAM	= hp2xx
-  
-  default:
-! 	@echo "This makefile needs manual configuration! Edit it now!"
-! 	@echo "After configuration, you may use the following commands:"
-  	@echo   ""
-  	@echo   "make all             Compile everything"
-  	@echo   "make check           Run a color application in preview mode"
-***************
-*** 306,309 ****
-  install-man:	../doc/hp2xx.1
-  		$(CP) ../doc/hp2xx.1 $(man1dir)
-  		$(CHMOD) 644 $(man1dir)/hp2xx.1
-- 
---- 308,310 ----
+--- Makefile.orig	Sun Dec 30 20:17:58 2001
++++ Makefile	Wed Jan 30 20:59:01 2002
+@@ -35,7 +35,7 @@
+ 
+ # Installation sites (GNU conventions):
+ #
+-prefix   = /usr/local
++prefix   = ${PREFIX}
+ bindir   = $(prefix)/bin
+ includedir = $(prefix)/include
+ mandir   = $(prefix)/man
+@@ -45,12 +45,12 @@
+ # CC and CFLAGS set for gcc, but any ANSI-C compiler should work.
+ # For non-gcc compilers, simply set CFLAGS = -O (to start with)
+ #
+-CC       = gcc
+-CFLAGS	= -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
++#CC       = gcc
++#CFLAGS	= -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
+ 
+ #CFLAGS   = +O1 -Aa -D_HPUX_SOURCE -DSYSV -I/usr/include/X11R5 -I/usr/include/X11R4 $(DEFINES)
+ 
+-LFLAGS   = -L/usr/X11R6/lib            # only sometimes needed; see below for examples
++#LFLAGS   = -L/usr/X11R6/lib            # only sometimes needed; see below for examples
+ CPPFLAGS = -I.            # only sometimes needed; see below for examples
+ BINDCMD  =                # only needed for EMX and DJGPP DOS extenders
+ 
+@@ -65,9 +65,9 @@
+ # add -lpng -lz for PNG support
+ # and/or -ltiff for TIFF
+ #
+-DEFINES   = -DUNIX -DHAS_UNIX_X11 
++DEFINES   = -DUNIX -DHAS_UNIX_X11 -I${X11BASE}/include -I${LOCALBASE}/include
+ PREVIEWER = to_x11
+-ALL_LIBS  = -L/usr/lib/X11R6 -lX11 -lm     
++ALL_LIBS  = -L${X11BASE}/lib -lX11 -lm -L${LOCALBASE}/lib -ltiff -lpng -lz
+ #
+ # Generic UNIX, no previewer
+ #
+@@ -179,19 +179,19 @@
+ #
+ # Epson Esc/P2 support 
+ #
+-#EX_SRC	 += to_escp2.c
+-#EX_OBJ	 += to_escp2.o
+-#EX_DEFS += -DEPSON
++EX_SRC	 += to_escp2.c
++EX_OBJ	 += to_escp2.o
++EX_DEFS += -DEPSON
+ #
+ # Include PNG support:
+-#EX_SRC  += png.c to_png.c
+-#EX_OBJ  += png.o to_png.o
+-#EX_DEFS += -DPNG
++EX_SRC  += png.c to_png.c
++EX_OBJ  += png.o to_png.o
++EX_DEFS += -DPNG
+ #
+ # Include TIFF support:
+-#EX_SRC  +=  to_tif.c
+-#EX_OBJ  += to_tif.o
+-#EX_DEFS += -DTIF
++EX_SRC  +=  to_tif.c
++EX_OBJ  += to_tif.o
++EX_DEFS += -DTIF
+ #
+ # Include ATARI extras:
+ # EX_SRC	+= to_pic.c to_pac.c
+@@ -224,7 +224,8 @@
+ 
+ $(PROGRAM): $(OBJS)
+ 	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) -o $(PROGRAM)
+-	$(BINDCMD)
++
++all: $(PROGRAM) hp2xx.info
+ 
+ default:
+ 	@echo "This makefile needs manual configuration! Edit it now!
+@@ -248,9 +249,9 @@
+ #									#
+ #########################################################################
+ 
+-# .c.o:	$< $(COMMON_INCS)
+-#	-$(RMCMD) $@
+-#	$(CC) $(DEFINES) $(EX_DEFS) $(ALL_CFLAGS) $(CPPFLAGS) $<
++.c.o:	$< $(COMMON_INCS)
++	-$(RMCMD) $@
++	$(CC) $(DEFINES) $(EX_DEFS) $(ALL_CFLAGS) $(CPPFLAGS) $<
+ 
+ 
+ #########################################################################
+@@ -307,15 +308,11 @@
+ install:	install-bin install-info install-man
+ 
+ install-bin:	$(PROGRAM)
+-		-$(STRIP) $(PROGRAM)
+-		-$(CP) $(PROGRAM) $(bindir)
+-		-$(CHMOD) 755 $(bindir)/$(PROGRAM)
++		${BSD_INSTALL_PROGRAM} $(PROGRAM) $(bindir)
+ 
+ install-info:	hp2xx.info
+-		-$(CP) hp2xx.info $(infodir)
+-		-$(CHMOD) 644 $(infodir)/hp2xx.info
++		${BSD_INSTALL_DATA} hp2xx.info $(infodir)
+ 
+ install-man:	../doc/hp2xx.1
+-		-$(CP) ../doc/hp2xx.1 $(man1dir)
+-		-$(CHMOD) 644 $(man1dir)/hp2xx.1
++		${BSD_INSTALL_MAN} ../doc/hp2xx.1 $(man1dir)
+ 
