@@ -3,7 +3,7 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1998/03/14 16:35:58 andreas Exp $
+# $Id: Makefile,v 1.11 1998/03/21 12:40:53 asami Exp $
 #
 
 DISTNAME=	knews-1.0b.0
@@ -16,8 +16,6 @@ LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.0\\.:${PORTSDIR}/graphics/png
 RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp
-
-BROKEN=		jpeglib.h
 
 WRKSRC=		${WRKDIR}/knews
 USE_IMAKE=	yes
