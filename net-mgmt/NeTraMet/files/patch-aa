@@ -1,0 +1,12 @@
+--- src/srl/srl.c.orig	Sun Oct  3 14:06:34 1999
++++ src/srl/srl.c	Fri Jan 25 23:37:10 2002
+@@ -93,7 +93,9 @@
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <string.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <sys/time.h>
+ 
+ #define SRLEXT
