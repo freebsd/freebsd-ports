@@ -3,10 +3,10 @@
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1999/01/20 21:59:41 vanilla Exp $
+# $Id: Makefile,v 1.15 1999/01/21 19:18:20 vanilla Exp $
 #
 
-DISTNAME=	glib-1.1.13
+DISTNAME=	glib-1.1.14
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
@@ -16,7 +16,6 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib11d
 
 MAN1=		glib-config.1

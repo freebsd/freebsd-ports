@@ -1,15 +1,15 @@
---- configure.orig	Sun Jan 17 23:35:47 1999
-+++ configure	Thu Jan 21 18:58:35 1999
-@@ -3609,7 +3609,7 @@
+--- configure.orig	Thu Jan 28 10:10:34 1999
++++ configure	Thu Jan 28 23:13:58 1999
+@@ -3750,7 +3750,7 @@
  
  
  # Check for some functions
--for ac_func in localtime_r rand_r lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll
-+for ac_func in localtime_r rand_r lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp
+-for ac_func in lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll
++for ac_func in lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:3616: checking for $ac_func" >&5
-@@ -5168,11 +5168,14 @@
+ echo "configure:3757: checking for $ac_func" >&5
+@@ -5453,11 +5453,13 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -21,7 +21,6 @@
 +	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
-+			G_THREAD_LIBS=""
 +			have_poll=no
 +		else
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE"
@@ -29,79 +28,79 @@
  		;;
      esac
  
-@@ -5181,7 +5184,7 @@
+@@ -5466,7 +5469,7 @@
      old_CPPFLAGS=$CPPFLAGS
      CPPFLAGS="$CPPFLAGS $G_THREAD_CFLAGS"
      cat > conftest.$ac_ext <<EOF
--#line 5185 "configure"
-+#line 5188 "configure"
+-#line 5470 "configure"
++#line 5473 "configure"
  #include "confdefs.h"
  #include <time.h>
  EOF
-@@ -5198,7 +5201,7 @@
+@@ -5483,7 +5486,7 @@
      CPPFLAGS=$old_CPPFLAGS
  
      echo $ac_n "checking necessary compiler options""... $ac_c" 1>&6
--echo "configure:5202: checking necessary compiler options" >&5
-+echo "configure:5205: checking necessary compiler options" >&5
+-echo "configure:5487: checking necessary compiler options" >&5
++echo "configure:5490: checking necessary compiler options" >&5
  
      echo "$ac_t""$G_THREAD_CFLAGS" 1>&6
  else
-@@ -5218,7 +5221,7 @@
+@@ -5503,7 +5506,7 @@
          case "$mutex_has_default" in
          "yes")
                  echo $ac_n "checking size of $mutex_default_type""... $ac_c" 1>&6
--echo "configure:5222: checking size of $mutex_default_type" >&5
-+echo "configure:5225: checking size of $mutex_default_type" >&5
+-echo "configure:5507: checking size of $mutex_default_type" >&5
++echo "configure:5510: checking size of $mutex_default_type" >&5
  if eval "test \"`echo '$''{'glib_cv_sizeof_gmutex'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -5226,7 +5229,7 @@
+@@ -5511,7 +5514,7 @@
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
    cat > conftest.$ac_ext <<EOF
--#line 5230 "configure"
-+#line 5233 "configure"
+-#line 5515 "configure"
++#line 5518 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  #include <$mutex_header_file>
-@@ -5238,7 +5241,7 @@
+@@ -5523,7 +5526,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:5242: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:5245: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:5527: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:5530: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    glib_cv_sizeof_gmutex=`cat conftestval`
  else
-@@ -5258,7 +5261,7 @@
+@@ -5543,7 +5546,7 @@
  
  
  	echo $ac_n "checking byte contents of $mutex_default_type""... $ac_c" 1>&6
--echo "configure:5262: checking byte contents of $mutex_default_type" >&5
-+echo "configure:5265: checking byte contents of $mutex_default_type" >&5
+-echo "configure:5547: checking byte contents of $mutex_default_type" >&5
++echo "configure:5550: checking byte contents of $mutex_default_type" >&5
  if eval "test \"`echo '$''{'glib_cv_byte_contents_gmutex'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -5266,7 +5269,7 @@
+@@ -5551,7 +5554,7 @@
    glib_cv_byte_contents_gmutex=0
  else
    cat > conftest.$ac_ext <<EOF
--#line 5270 "configure"
-+#line 5273 "configure"
+-#line 5555 "configure"
++#line 5558 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  #include <$mutex_header_file>
-@@ -5283,7 +5286,7 @@
+@@ -5568,7 +5571,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:5287: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:5290: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:5572: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:5575: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    glib_cv_byte_contents_gmutex=`cat conftestval`
  else
-@@ -5311,6 +5314,63 @@
+@@ -5596,6 +5599,63 @@
  
  
  
@@ -109,12 +108,12 @@
 +	for ac_func in poll
 +do
 +echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
-+echo "configure:5322: checking for $ac_func" >&5
++echo "configure:5607: checking for $ac_func" >&5
 +if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
 +  echo $ac_n "(cached) $ac_c" 1>&6
 +else
 +  cat > conftest.$ac_ext <<EOF
-+#line 5327 "configure"
++#line 5612 "configure"
 +#include "confdefs.h"
 +/* System header to define __stub macros and hopefully few prototypes,
 +    which can conflict with char $ac_func(); below.  */
@@ -137,7 +136,7 @@
 +
 +; return 0; }
 +EOF
-+if { (eval echo configure:5350: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++if { (eval echo configure:5635: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
 +  rm -rf conftest*
 +  eval "ac_cv_func_$ac_func=yes"
 +else
@@ -165,26 +164,26 @@
  glib_sysdefso="glibconfig-sysdefs.h"
  glib_sysdef_msg=`echo POLLIN:1 POLLOUT:4 POLLPRI:2 POLLERR:8 POLLHUP:16 POLLNVAL:32 | sed 's/:[^ 	]*//g'`
  if test "x`(echo '\n') 2>/dev/null`" != 'x\n'; then
-@@ -5319,7 +5379,7 @@
+@@ -5604,7 +5664,7 @@
    glib_nl='\n'
  fi
  echo $ac_n "checking system definitions for $glib_sysdef_msg""... $ac_c" 1>&6
--echo "configure:5323: checking system definitions for $glib_sysdef_msg" >&5
-+echo "configure:5383: checking system definitions for $glib_sysdef_msg" >&5
+-echo "configure:5608: checking system definitions for $glib_sysdef_msg" >&5
++echo "configure:5668: checking system definitions for $glib_sysdef_msg" >&5
  cat >confrun.c <<_______EOF
  #include <stdio.h>
  #include <sys/types.h>
-@@ -5346,11 +5406,11 @@
+@@ -5631,11 +5691,11 @@
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
    cat > conftest.$ac_ext <<EOF
--#line 5350 "configure"
-+#line 5410 "configure"
+-#line 5635 "configure"
++#line 5695 "configure"
  #include "confdefs.h"
  `cat confrun.c`
  EOF
--if { (eval echo configure:5354: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:5414: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:5639: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:5699: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    echo "$ac_t""done" 1>&6
  else
