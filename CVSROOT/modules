@@ -327,6 +327,7 @@ arm-aout-binutils	ports/devel/arm-aout-binutils
 arm-aout-gcc295	ports/devel/arm-aout-gcc295
 arm-elf-binutils	ports/devel/arm-elf-binutils
 arm-elf-gcc295	ports/devel/arm-elf-gcc295
+arm-elf-gcc31	ports/devel/arm-elf-gcc31
 arm-rtems-binutils	ports/devel/arm-rtems-binutils
 arm-rtems-chill	ports/devel/arm-rtems-chill
 arm-rtems-g77	ports/devel/arm-rtems-g77
