@@ -1,0 +1,3 @@
+Cgoban (Complete Goban) is for Unix systems with X11.  It has the
+ability to be a computerized go board, view and edit smart-go files,
+and connect to go servers on the Internet.

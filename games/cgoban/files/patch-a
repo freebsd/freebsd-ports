@@ -1,0 +1,19 @@
+*** Makefile.in~	Sat Aug 24 17:26:24 1996
+--- Makefile.in	Mon Oct 28 12:22:40 1996
+***************
+*** 36,42 ****
+  
+  # Change these values to tell make where to put the binary and the man page
+  #   when it's done compiling.
+! PREFIX = /usr/games
+  BINDIR = $(PREFIX)/bin
+  MANDIR = $(PREFIX)/man
+  
+--- 36,42 ----
+  
+  # Change these values to tell make where to put the binary and the man page
+  #   when it's done compiling.
+! PREFIX = @prefix@
+  BINDIR = $(PREFIX)/bin
+  MANDIR = $(PREFIX)/man
+  
