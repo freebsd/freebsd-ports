@@ -3,12 +3,12 @@
 # Date created:		9 January 1998
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.5 1998/06/07 15:58:19 dburr Exp $
+# $Id: Makefile,v 1.6 1998/07/19 07:46:56 dburr Exp $
 #
 
 DISTNAME=	ircd-hybrid-5.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.vol.com/pub/ircd/
+MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/
 
 MAINTAINER=	desmo@bandwidth.org
 
