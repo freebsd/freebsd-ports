@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gob
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.5z.com/pub/gob/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/gob
 
 MAINTAINER=	gnome@FreeBSD.org
 
