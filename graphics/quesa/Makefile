@@ -17,7 +17,7 @@ COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 USE_REINPLACE=	yes
 WANT_AUTOCONF_VER?=	253
 WANT_AUTOMAKE_VER?=	15
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GL=		yes
 USE_X_PREFIX=	yes
 .ifdef (WITH_QUESA_EXAMPLES)

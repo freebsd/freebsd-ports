@@ -15,7 +15,7 @@ COMMENT=	High-performance distributed memory object cache system
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
-USE_AUTOMAKE=	YES
+USE_AUTOMAKE_VER=	14
 WANT_AUTOCONF_VER=	253
 GNU_CONFIGURE=	YES
 

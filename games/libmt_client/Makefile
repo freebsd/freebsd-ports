@@ -17,7 +17,7 @@ COMMENT=		Client-side library of MaitreTarot, a Tarot card game
 LIB_DEPENDS=		maitretarot.0:${PORTSDIR}/games/libmaitretarot
 
 USE_BZIP2=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=		glib20 libxml2 lthack
 INSTALLS_SHLIB=		yes
 
