@@ -4703,6 +4703,7 @@ p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
 p5-Proc-ProcessTable	ports/devel/p5-Proc-ProcessTable
 p5-Proc-Simple	ports/devel/p5-Proc-Simple
 p5-Quota	ports/sysutils/p5-Quota
+p5-RADIUS-UserFile	ports/textproc/p5-RADIUS-UserFile
 p5-RDF-Notation3	ports/textproc/p5-RDF-Notation3
 p5-RPC-XML	ports/net/p5-RPC-XML
 p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
