@@ -1,0 +1,10 @@
+--- epplets/E-ScreenSave.c.orig	Thu Jan 13 15:14:42 2000
++++ epplets/E-ScreenSave.c	Thu Jan 13 15:15:03 2000
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/time.h>
+ #include <sys/resource.h>
+ 
+ 

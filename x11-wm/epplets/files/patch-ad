@@ -1,0 +1,11 @@
+--- epplets/E-Load.c.orig	Thu Jan 13 15:01:17 2000
++++ epplets/E-Load.c	Thu Jan 13 15:01:37 2000
+@@ -95,7 +95,7 @@
+   glibtop_cpu cpu;
+ 
+     glibtop_get_cpu (&cpu);
+-    bits= (int)cpu.xcpu_flags;
++    bits= (int)cpu.flags;
+     for (i=0; i<GLIBTOP_NCPU; i++) {
+       c += bits&1;
+       /*      printf ("%d: %o - %d\n",i,bits,c ); */
