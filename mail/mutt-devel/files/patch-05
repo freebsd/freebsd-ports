@@ -63,8 +63,8 @@
    {
    case -1: /* abort - don't resort */
      return -1;
---- compose.c.orig	Tue Mar 26 23:03:26 2002
-+++ compose.c	Thu May  2 09:21:11 2002
+--- compose.c.orig	Wed Dec 11 12:20:04 2002
++++ compose.c	Tue Dec 17 19:57:50 2002
 @@ -173,7 +173,7 @@
    char input_signas[SHORT_STRING];
  
@@ -78,14 +78,14 @@
      char *p;
  
    switch (mutt_multi_choice (_("S/MIME (e)ncrypt, (s)ign, encrypt (w)ith, sign (a)s, (b)oth, or (f)orget it? "),
--			     _("ewsabf")))
-+			     N_("ewsabf")))
+-			     _("eswabf")))
++			     N_("eswabf")))
    {
    case 1: /* (e)ncrypt */
      msg->security |= SMIMEENCRYPT;
 @@ -239,7 +239,7 @@
      msg->security |= SMIMEENCRYPT;
-     switch (mutt_multi_choice (_("1: DES, 2: Tripple-DES, 3: RC2-40,"
+     switch (mutt_multi_choice (_("1: DES, 2: Triple-DES, 3: RC2-40,"
  				 " 4: RC2-64, 5: RC2-128, or (f)orget it? "),
 -			       _("12345f"))) {
 +			       N_("12345f"))) {
