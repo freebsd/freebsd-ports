@@ -3,12 +3,14 @@
 
     SUBDIR += Canna
     SUBDIR += FAQ
+    SUBDIR += VTPSfont
     SUBDIR += Wnn
     SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
     SUBDIR += a2ps
     SUBDIR += ack
     SUBDIR += acroread-jpnfont
+    SUBDIR += addttfont
     SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += camltk41
@@ -217,6 +219,7 @@
     SUBDIR += tcsh-nls-rishu
     SUBDIR += tcsh-nls-roomi
     SUBDIR += tcsh-nls-ruri2
+    SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += tgif2tex
     SUBDIR += tk42
