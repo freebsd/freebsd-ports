@@ -1,14 +1,14 @@
---- configure.orig	Thu Dec 31 03:05:56 1998
-+++ configure	Tue Jan  5 13:38:32 1999
-@@ -1081,13 +1081,13 @@
+--- configure.orig	Tue Jan  5 08:57:49 1999
++++ configure	Fri Jan 15 04:19:33 1999
+@@ -1085,13 +1085,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1086: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1090: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1086: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1090: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
@@ -19,16 +19,16 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
-@@ -2573,7 +2573,7 @@
+@@ -2583,7 +2583,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lxml `gnome-config --libs xml` $LIBS"
 +LIBS="-lxml -lz $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2579 "configure"
+ #line 2589 "configure"
  #include "confdefs.h"
-@@ -2604,7 +2604,7 @@
+@@ -2614,7 +2614,7 @@
    
  		
  		
