@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libcdaudio
-PORTVERSION=	0.99.10
+PORTVERSION=	0.99.12
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
-USE_GNOME=	gnomehack gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
