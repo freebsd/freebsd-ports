@@ -1,3 +1,2 @@
-@cwd /usr/local
 sbin/in.identd
-man/man8/identd.8
+man/man8/identd.8.gz
