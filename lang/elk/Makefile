@@ -8,22 +8,32 @@ DISTNAME=       elk-2.2
 MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
 CATEGORIES+=	languages
 PATCH_STRIP=	-p1
+ALL_TARGET=	default
+MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 #
 # /usr/local/lib/elk is built into the port.
 # change it in ${WRKSRC}/config/site if you change it here and vice versa.
+# i also renamed /usr/local/bin/scheme to /usr/local/bin/elk
+# to avoid a clash with mit-scheme.
 #
 
 pre-install:
+	@mkdir -p ${PREFIX}/bin
+	@mkdir -p ${PREFIX}/include
+	@mkdir -p ${PREFIX}/man/man1
 	@mkdir -p ${PREFIX}/lib/elk
 
 install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@${MAKE} ${MAKEFLAGS} pre-install
 	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@(cd /usr/local/lib/elk; mv bin/scheme ${PREFIX}/bin; \
-	  mkdir -p ${PREFIX}/include/elk; mv include/*.h ${PREFIX}/include/elk; \
+	@(cd /usr/local/lib/elk; \
+	  mv bin/scheme ${PREFIX}/bin/elk; \
+	  mkdir -p ${PREFIX}/include/elk; \
+	  mv include/*.h ${PREFIX}/include/elk; \
 	  rmdir bin include)
+	@install -c -o bin -g bin -m 444 ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
 .include <bsd.port.mk>
