@@ -1,5 +1,4 @@
 bin/dec32
-%%EMACS_SITE_LISPDIR%%/distel/erl-test-init.el
 %%EMACS_SITE_LISPDIR%%/distel/edb.el
 %%EMACS_SITE_LISPDIR%%/distel/derl.el
 %%EMACS_SITE_LISPDIR%%/distel/epmd.el
@@ -18,17 +17,22 @@ share/distel/ebin/dilber.beam
 share/distel/ebin/dilber_servant.beam
 share/distel/ebin/distel.beam
 share/distel/ebin/distel_ie.beam
+share/distel/ebin/fdoc.beam
 share/distel/src/dilber.erl
 share/distel/src/dilber_servant.erl
 share/distel/src/distel.erl
 share/distel/src/distel_ie.erl
+share/distel/src/fdoc.erl
 share/doc/distel/AUTHORS
 share/doc/distel/ChangeLog
 share/doc/distel/NEWS
 share/doc/distel/README
 share/doc/distel/README.ie-session
+share/doc/distel/distel-3.1.pdf
 share/doc/distel/distel-euc.pdf
 share/doc/distel/distel-euc.ps.gz
+share/doc/distel/distel-user-3.3.pdf
+share/doc/distel/distel-user-3.3.ps.gz
 share/doc/distel/emacs-init-snippet.el
 @dirrm share/doc/distel
 @dirrm share/distel/src

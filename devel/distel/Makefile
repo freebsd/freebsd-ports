@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distel
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	base
 EMACS_PORT_NAME?=	emacs21
 
-DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz
+DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz \
+		distel-user-3.3.pdf distel-user-3.3.ps.gz \
+		distel-3.1.pdf
 DISTEL_DOCS=	config/emacs-init-snippet.el AUTHORS ChangeLog NEWS README README.ie-session
 
 do-install:
