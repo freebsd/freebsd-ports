@@ -22,7 +22,7 @@ COMMENT=	An integrated mail, calendar and address book distributed suite
 LIB_DEPENDS=	gtkhtml-3.0.3:${PORTSDIR}/www/gtkhtml3
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
 .if !defined(WITHOUT_PILOT)
