@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Mar 15 14:20:50 2001
-+++ configure.in	Thu Mar 15 14:21:01 2001
+--- configure.in.orig	Fri Mar 16 21:16:17 2001
++++ configure.in	Sat Dec 29 08:24:46 2001
 @@ -23,7 +23,5 @@
  
  dnl Checks for library functions.

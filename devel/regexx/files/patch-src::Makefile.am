@@ -1,6 +1,7 @@
---- src/Makefile.am.orig	Thu Mar 15 14:40:46 2001
-+++ src/Makefile.am	Tue Mar 13 22:42:21 2001
-@@ -5,6 +5,7 @@
+--- src/Makefile.am.orig	Tue Mar 13 22:42:21 2001
++++ src/Makefile.am	Sat Dec 29 08:24:46 2001
+@@ -4,7 +4,8 @@
+ ## $Date: 2001/03/13 14:42:21 $
  ##
  
 +INCLUDES=`pcre-config --cflags`
