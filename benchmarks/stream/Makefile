@@ -20,6 +20,6 @@ do-extract:
 	@${CP} -r ${_DISTDIR} ${WRKDIR}
 
 post-install:
-	strip ${PREFIX}/bin/stream
+	${STRIP_CMD} ${PREFIX}/bin/stream
 
 .include <bsd.port.mk>
