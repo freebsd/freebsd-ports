@@ -113,7 +113,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.1.3
+KDE_VERSION=		3.1.4
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 
@@ -123,9 +123,9 @@ QTCGFLIBS?=
 # Qt 3.x common stuff
 QT_PREFIX?=		${X11BASE}
 MOC?=			${QT_PREFIX}/bin/moc
-#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt31
-BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt31
-RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt31
+#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt32
+BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt32
+RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt32
 QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include -D_GETOPT_H
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \

@@ -1,6 +1,6 @@
---- configure.orig	Thu Jan 30 14:50:09 2003
-+++ configure	Thu Jan 30 14:50:25 2003
-@@ -2807,7 +2807,7 @@
+--- configure.orig	Wed Aug 20 13:08:00 2003
++++ configure	Wed Aug 20 13:07:43 2003
+@@ -2906,7 +2906,7 @@
    fi
  else
    if test "$GCC" = yes; then
@@ -9,7 +9,7 @@
    else
      CFLAGS=
    fi
-@@ -3214,7 +3214,7 @@
+@@ -3454,7 +3454,7 @@
          CFLAGS="-g -O2 $CFLAGS"
        fi
      else
@@ -18,7 +18,7 @@
      fi
    fi
  
-@@ -3456,7 +3456,7 @@
+@@ -3694,7 +3694,7 @@
    fi
  else
    if test "$GXX" = yes; then
@@ -27,7 +27,7 @@
    else
      CXXFLAGS=
    fi
-@@ -3805,7 +3805,7 @@
+@@ -4051,7 +4051,7 @@
        if test "$CXX" = "KCC"; then
          CXXFLAGS="+K3 $CXXFLAGS"
        else
@@ -36,3 +36,12 @@
        fi
      fi
    fi
+@@ -26467,7 +26467,7 @@
+ 
+ 
+ 
+-for ac_func in socket snprintf vsnprintf seteuid setegid random strfmon stpcpy mkstemp setmntent gettimeofday
++for ac_func in socket snprintf vsnprintf seteuid setegid random strfmon stpcpy mkstemp setmntent gettimeofday vasprintf
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_func" >&5
