@@ -2,29 +2,27 @@ TEMPLATE =	app
 CONFIG =	qt warn_on thread release 
 TERGET =	cheesetracker
 
-DEFINES =	POSIX_ENABLED OSS_ENABLED
+DEFINES =	POSIX_ENABLED OSS_ENABLED LADSPA_ENABLED
 LIBS =		-L${LOCALBASE}/lib -lsigc-1.2
-INCLUDEPATH =	${LOCALBASE}/lib/sigc++-1.2/include \
-		${LOCALBASE}/include/sigc++-1.2 \
-		common \
+INCLUDEPATH =	common \
 		common/components/audio \
 		common/components/data \
 		common/components/midi \
 		common/defines \
 		trackercore \
 		loaders \
-		savers
+		savers \
+		${LOCALBASE}/lib/sigc++-1.2/include \
+		${LOCALBASE}/include/sigc++-1.2 \
+		${LOCALBASE}/include
 
 HEADERS = \
+		common/interface__QT/helpers/property_bridge_edit.h \
+		common/interface__QT/helpers/cspinbutton.h \
 		common/interface__QT/helpers/ccolor_bridge.h \
 		common/interface__QT/helpers/ccolor_list.h \
-		common/interface__QT/helpers/ccolor_panel.h \
-		common/interface__QT/helpers/cspinbutton.h \
 		common/interface__QT/helpers/font_bridge.h \
 		common/interface__QT/helpers/keyboard_input_config.h \
-		common/interface__QT/helpers/property_bridge_edit.h \
-		common/interface__QT/helpers/property_bridge_edit_list.h \
-		common/interface__QT/helpers/vertical_scrolled_window.h \
 		common/interface__QT/audio/audio_config.h \
 		common/interface__QT/audio/sample_editor.h \
 		common/interface__QT/audio/sample_editor_format.h \
@@ -36,8 +34,9 @@ HEADERS = \
 		common/interface__QT/audio/note_bridge.h \
 		common/interface__QT/audio/sample_editor_clipboard.h \
 		common/interface__QT/audio/sample_editor_effects.h \
-		common/interface__QT/popups/cspindialog.h \
-		common/interface__QT/popups/text_area_popup.h \
+		common/interface__QT/audio/mixer_effects_manager.h \
+		common/interface__QT/audio/effect_chain_editor.h \
+		common/interface__QT/popups/effect_select_popup.h \
 		interface__QT/pattern_edit.h \
 		interface__QT/pattern_edit_widget.h \
 		interface__QT/sample_edit.h \
@@ -45,19 +44,29 @@ HEADERS = \
 		interface__QT/interface.h \
 		interface__QT/order_and_defaults_editor.h \
 		interface__QT/variables_edit.h \
-		interface__QT/mdi_main_window.h
+		interface__QT/mdi_main_window.h \
+		interface__QT/sample_player_fdialog.h
 
 SOURCES = \
-		common/plugins/effects/custom/chorus.cpp \
+		common/plugins/effects/custom/dummy_effect.cpp \
+		common/plugins/effects/custom/chorus_effect.cpp \
+		common/plugins/effects/custom/freeverb_effect.cpp \
+		common/plugins/effects/custom/effect_amp.cpp \
+		common/plugins/effects/custom/effect_distort.cpp \
+		common/plugins/effects/custom/effect_echo.cpp \
+		common/plugins/effects/custom/effect_stereo_enhancer.cpp \
 		common/plugins/effects/freeverb/allpass.cpp \
 		common/plugins/effects/freeverb/comb.cpp \
 		common/plugins/effects/freeverb/revmodel.cpp \
+		common/plugins/effects/ladspa/ladspa_effect_source.cpp \
+		common/plugins/effects/ladspa/ladspa_effect.cpp \
 		common/plugins/edit_effects/simple_edit_effects.cpp \
 		common/plugins/resamplers/resampler_raw.cpp \
 		common/plugins/resamplers/resampler_linear.cpp \
+		common/plugins/resamplers/resampler_dummy.cpp \
 		common/os/mutex_lock.cpp \
-		common/os/path_data.cpp \
 		common/os/threaded_class.cpp \
+		common/os/path_data.cpp \
 		common/os/timer.cpp \
 		common/components/audio/sound_driver_manager.cpp \
 		common/components/audio/effect.cpp \
@@ -73,10 +82,15 @@ SOURCES = \
 		common/components/audio/sample_data.cpp \
 		common/components/audio/sample_conversion.cpp \
 		common/components/audio/mixer_base.cpp \
+		common/components/audio/mixer__buffers.cpp \
 		common/components/audio/ring_buffer.cpp \
 		common/components/audio/tables.cpp \
 		common/components/audio/edit_effect.cpp \
+		common/components/audio/effect_source_internal.cpp \
+		common/components/audio/effect_source_manager.cpp \
+		common/components/audio/effect_chain.cpp \
 		common/components/audio/sound_driver_dummy.cpp \
+		common/components/audio/dds_helpers.cpp \
 		common/components/midi/midi_client.cpp \
 		common/components/midi/midi_out_device.cpp \
 		common/components/midi/midioutdevicemanager.cpp \
@@ -90,14 +104,19 @@ SOURCES = \
 		common/components/data/config_handler.cpp \
 		common/components/data/keyboard_input.cpp \
 		common/components/data/selection.cpp \
+		common/components/data/dds.cpp \
+		common/components/data/dds_packer.cpp \
 		common/drivers/posix/timer_rtc.cpp \
 		common/drivers/posix/timer_sigalarm.cpp \
 		common/drivers/posix/sound_driver_jack.cpp \
 		common/drivers/posix/sound_driver_oss.cpp \
 		common/drivers/posix/midi_out_device_alsa.cpp \
 		common/drivers/posix/midi_out_device_oss.cpp \
+		common/drivers/rtaudio/rt_audio.cpp \
+		common/drivers/rtaudio/sound_driver_rtaudio.cpp \
 		common/interface__QT/helpers/property_bridge_edit.cpp \
 		common/interface__QT/helpers/cspinbutton.cpp \
+		common/interface__QT/helpers/clist_manager.cpp \
 		common/interface__QT/helpers/vertical_scrolled_window.cpp \
 		common/interface__QT/helpers/ccolor_panel.cpp \
 		common/interface__QT/helpers/ccolor_bridge.cpp \
@@ -116,8 +135,11 @@ SOURCES = \
 		common/interface__QT/audio/note_bridge.cpp \
 		common/interface__QT/audio/sample_editor_clipboard.cpp \
 		common/interface__QT/audio/sample_editor_effects.cpp \
+		common/interface__QT/audio/mixer_effects_manager.cpp \
+		common/interface__QT/audio/effect_chain_editor.cpp \
 		common/interface__QT/popups/cspindialog.cpp \
 		common/interface__QT/popups/text_area_popup.cpp \
+		common/interface__QT/popups/effect_select_popup.cpp \
 		trackercore/file_format_manager.cpp \
 		trackercore/file_reader.cpp \
 		trackercore/file_writer.cpp \
@@ -149,15 +171,17 @@ SOURCES = \
 		loaders/loader_s3m.cpp \
 		loaders/loader_wav.cpp \
 		loaders/loader_xm.cpp \
+		loaders/loader_ct.cpp \
+		savers/saver_ct.cpp \
 		savers/saver_it.cpp \
 		savers/saver_raw.cpp \
 		savers/saver_wav.cpp \
 		interface_binds/editor_commands.cpp \
 		interface_binds/editor.cpp \
+		interface_binds/editor_insertion.cpp \
 		interface_binds/editor_orderlist.cpp \
 		interface_binds/editor_selection.cpp \
 		interface_binds/editor_undo.cpp \
-		interface_binds/editor_insertion.cpp \
 		interface_binds/tracker_instance.cpp \
 		interface_binds/player_rt_keyboard.cpp \
 		interface__QT/sample_edit.cpp \
@@ -173,5 +197,6 @@ SOURCES = \
 		interface__QT/sample_instrument_table.cpp \
 		interface__QT/pattern_edit_widget.cpp \
 		interface__QT/table_base.cpp \
+		interface__QT/sample_player_fdialog.cpp \
 		program__QT/cheesetracker_qt.cpp
 
