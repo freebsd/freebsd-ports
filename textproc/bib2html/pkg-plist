@@ -1,0 +1,50 @@
+bin/bib2html
+%%SITE_PERL%%/Bib2HTML/Checker/Names.pm
+%%SITE_PERL%%/Bib2HTML/General/Error.pm
+%%SITE_PERL%%/Bib2HTML/General/HTML.pm
+%%SITE_PERL%%/Bib2HTML/General/Misc.pm
+%%SITE_PERL%%/Bib2HTML/General/Title.pm
+%%SITE_PERL%%/Bib2HTML/General/Verbose.pm
+%%SITE_PERL%%/Bib2HTML/Generator/AbstractGenerator.pm
+%%SITE_PERL%%/Bib2HTML/Generator/DomainGen.pm
+%%SITE_PERL%%/Bib2HTML/Generator/ExtendedGen.pm
+%%SITE_PERL%%/Bib2HTML/Generator/HTMLGen.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang/English.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang/French.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang/Portuguese.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang/Spanish.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/child.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/emptychild.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/lastchild.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/minus.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/plus.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/samechild.gif
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna/stylesheet.css
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Theme/Simple.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Theme.pm
+%%SITE_PERL%%/Bib2HTML/Generator/XMLGen.pm
+%%SITE_PERL%%/Bib2HTML/Generator/bibteXML-ext.dtd
+%%SITE_PERL%%/Bib2HTML/Generator/bibteXML.dtd
+%%SITE_PERL%%/Bib2HTML/Generator/drive.png
+%%SITE_PERL%%/Bib2HTML/Generator/loupe.gif
+%%SITE_PERL%%/Bib2HTML/Generator/valid-css.gif
+%%SITE_PERL%%/Bib2HTML/Generator/valid-html401.gif
+%%SITE_PERL%%/Bib2HTML/Parser/BibScanner.pm
+%%SITE_PERL%%/Bib2HTML/Parser/Parser.pm
+%%SITE_PERL%%/Bib2HTML/Parser/Scanner.pm
+%%SITE_PERL%%/Bib2HTML/Parser/StateMachine.pm
+%%SITE_PERL%%/Bib2HTML/Release.pm
+%%SITE_PERL%%/Bib2HTML/Translator/BibTeXEntry.pm
+%%SITE_PERL%%/Bib2HTML/Translator/BibTeXName.pm
+%%SITE_PERL%%/Bib2HTML/Translator/TeX.pm
+@dirrm %%SITE_PERL%%/Bib2HTML/Translator
+@dirrm %%SITE_PERL%%/Bib2HTML/Parser
+@dirrm %%SITE_PERL%%/Bib2HTML/Generator/Theme/Dyna
+@dirrm %%SITE_PERL%%/Bib2HTML/Generator/Theme
+@dirrm %%SITE_PERL%%/Bib2HTML/Generator/Lang
+@dirrm %%SITE_PERL%%/Bib2HTML/Generator
+@dirrm %%SITE_PERL%%/Bib2HTML/General
+@dirrm %%SITE_PERL%%/Bib2HTML/Checker
+@dirrm %%SITE_PERL%%/Bib2HTML
