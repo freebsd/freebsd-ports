@@ -291,6 +291,7 @@
     SUBDIR += pngcheck
     SUBDIR += pngcrush
     SUBDIR += pngquant
+    SUBDIR += pngwriter
     SUBDIR += pornview
     SUBDIR += povray
     SUBDIR += povray31
