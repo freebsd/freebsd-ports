@@ -1,0 +1,11 @@
+--- src/studio/Makefile.in.orig	Thu Nov 16 02:13:34 2000
++++ src/studio/Makefile.in	Tue Mar  6 16:10:37 2001
+@@ -201,7 +201,7 @@
+ bin_PROGRAMS = studio
+ 
+ studio_LDFLAGS = $(all_libraries)
+-studio_LDADD =  		$(top_srcdir)/src/studiocore/libstudiocore.la 		-lX11 $ 		-lz 		-lpng -lz -lm 		-ljpeg 		-lqt $ $ -lXext $ $ 		-lkdecore 		-lkdeui 		-ltiff -ljpeg -lz 		-lfl 		-ldl 		-lkfile 		-lkhtml 		-lkparts
++studio_LDADD =  		$(top_srcdir)/src/studiocore/libstudiocore.la 		-lX11 $ 		-lz 		-lpng -lz -lm 		-ljpeg 		-lqt2 $ $ -lXext $ $ 		-lkdecore 		-lkdeui 		-ltiff -ljpeg -lz 		-lfl 			-lkfile 		-lkhtml 		-lkparts
+ 
+ LDFLAGS = -s 
+ INCLUDES = $(all_includes) 		-I$(top_srcdir)/src/PluginsManager 		-I$(top_srcdir)/src/studiocore
