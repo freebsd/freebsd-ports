@@ -1,0 +1,11 @@
+--- configure.bak	Wed May 24 00:41:52 2000
++++ configure	Wed May 24 00:43:14 2000
+@@ -782,7 +782,7 @@
+ esac
+ 
+ ### Native Language Support
+-ALL_LINGUAS="de et en_GB"
++ALL_LINGUAS="de et"
+ 
+ ### Checks for programs
+ save_CFLAGS="$CFLAGS"
