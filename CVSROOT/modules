@@ -7344,6 +7344,7 @@ seti_applet	ports/astro/seti_applet
 setiathome	ports/astro/setiathome
 setkey		src/usr.sbin/setkey
 setquota	ports/sysutils/setquota
+settitle	ports/x11/settitle
 sex		ports/games/sex
 seyon		ports/comms/seyon
 sfio		ports/devel/sfio
