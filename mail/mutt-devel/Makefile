@@ -71,8 +71,7 @@
 #  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.4
-PORTREVISION?=	8
+PORTVERSION=	1.5.5.1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -119,6 +118,8 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 .include <bsd.port.pre.mk>
 
 CD_PATCH_VERSION=	1.5.4
+DW_PATCH_VERSION=	1.5.x
+DW_MBOX_PATCH_VERSION=	1.5.4
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -127,6 +128,9 @@ CD_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
+.endif
+.if !defined(DW_MBOX_PATCH_VERSION)
+DW_MBOX_PATCH_VERSION=	${PORTVERSION}
 .endif
 
 # XXX
@@ -233,7 +237,7 @@ PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.ifdef.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-PATCHFILES+=	p0-patch-${DW_PATCH_VERSION}.dw.mbox-hook.1:dw
+PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
@@ -272,10 +276,6 @@ SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
-.endif
-.if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-quote
 .endif
 
 .if !defined(NOPORTDOCS)
