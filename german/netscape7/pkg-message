@@ -1,0 +1,7 @@
+* WARNING *********************************************************************
+*    Users should back up their bookmark files.  There have been reports that *
+* the bookmark file can be clobbered the first time Netscape 6 is run.        *
+*    Problems have also been reported from running Mozilla and Netscape 6     *
+* simultaneously.  Both use $HOME/.mozilla for preferences, but some          *
+* configuration files seem to be incompatible.                                *
+*******************************************************************************
