@@ -294,6 +294,7 @@
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += stan
+    SUBDIR += susv2
     SUBDIR += sword
     SUBDIR += sword-modules
     SUBDIR += tcb
