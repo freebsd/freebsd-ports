@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.216 1999/01/07 12:05:28 asami Exp $
+# $Id: Makefile,v 1.217 1999/01/26 22:19:05 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -78,6 +78,7 @@
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += macipgw
+    SUBDIR += mars_nwe
     SUBDIR += micq
     SUBDIR += mirror
     SUBDIR += moxftp
