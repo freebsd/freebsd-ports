@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.5 1998/01/29 17:25:59 jseger Exp $
+# $Id: Makefile,v 1.6 1998/03/16 07:01:32 vanilla Exp $
 #
 
     SUBDIR += babel
+    SUBDIR += hmmer
     SUBDIR += kinemage
     SUBDIR += povchem
     SUBDIR += rasmol
