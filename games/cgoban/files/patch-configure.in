@@ -1,0 +1,19 @@
+--- configure.in.orig	Tue Jan  7 04:31:33 2003
++++ configure.in	Mon Nov 17 21:22:54 2003
+@@ -168,7 +158,6 @@
+ AC_MINIX
+ AC_PROG_CPP
+ AC_EXEEXT
+-WMS_GET_CFLAGS
+ 
+ AM_CONFIG_HEADER(configure.h)
+ AC_SUBST(LIBS)dnl
+@@ -185,7 +174,7 @@
+ AC_TIME_WITH_SYS_TIME
+ AC_CHECK_HEADER(sun/audioio.h, AC_DEFINE(SUN_SOUND))
+ if test $ac_cv_header_sun_audioio_h = no; then
+-  AC_CHECK_HEADER(linux/soundcard.h, AC_DEFINE(LINUX_SOUND))
++  AC_CHECK_HEADER(sys/soundcard.h, AC_DEFINE(LINUX_SOUND))
+ fi
+ WMS_CHECK_H_ERRNO
+ WMS_CHECK_SOCKETS
