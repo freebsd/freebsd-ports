@@ -119,6 +119,7 @@
     SUBDIR += libogg
     SUBDIR += libshout
     SUBDIR += libsidplay
+    SUBDIR += libsidplay2
     SUBDIR += libsndfile
     SUBDIR += libvorbis
     SUBDIR += libworkman
