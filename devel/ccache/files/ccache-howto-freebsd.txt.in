@@ -5,7 +5,7 @@
 To use ccache add the following to /etc/make.conf
 
 .if !defined(NOCCACHE)
-.if ${.CURDIR:M/usr/src*}
+.if ${.CURDIR:M/usr/src*} || ${.CURDIR:M${MAKEOBJDIRPREFIX}*}
 CC=%%LOCALBASE%%/libexec/ccache/cc
 CXX=%%LOCALBASE%%/libexec/ccache/c++
 .else
