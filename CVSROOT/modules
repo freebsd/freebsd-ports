@@ -713,7 +713,6 @@ blop		ports/audio/blop
 blt		ports/x11-toolkits/blt
 blue		ports/games/blue
 bluefish	ports/www/bluefish
-bluefish-devel	ports/www/bluefish-devel
 bluej		ports/java/bluej
 blwm		ports/x11-wm/blwm
 bmeps		ports/graphics/bmeps
