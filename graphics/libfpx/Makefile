@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libfpx
-PORTVERSION=	1.2.0.4
-PORTREVISION=	1
+PORTVERSION=	1.2.0.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://imagemagick.sourceforge.net/http/delegates/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
+MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
 		ftp://ftp.crc.ca/pub/packages/graphics/imagemagick/ \
@@ -34,6 +32,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	-j2
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
+USE_BZIP2=	yes
 
 post-patch:
 	# Replacing references to <malloc.h> with <stdlib.h>
