@@ -10714,6 +10714,7 @@ ved		ports/editors/ved
 velocity	ports/x11-fm/velocity
 vera		ports/misc/vera
 verlihub	ports/net/verlihub
+verlihub-plugins	ports/net/verlihub-plugins
 vertex		ports/graphics/vertex
 vgb		ports/emulators/vgb
 vgb-bin		ports/emulators/vgb-bin
