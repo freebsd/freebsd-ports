@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		giblib.1:${PORTSDIR}/graphics/giblib
 
-GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS="-L${X11BASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+
+MAN1=		feh.1
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NO_DOC=yes
 .endif
-
-MAN1=		feh.1
 
 .include <bsd.port.mk>
