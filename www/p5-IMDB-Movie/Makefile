@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	IMDB-Movie
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JE/JEFFA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.ORG
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module to fetch movie info from www.imdb.com
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
