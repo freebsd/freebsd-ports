@@ -16,6 +16,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/RELEASE-NOTES-4.0.2-B1.txt
 %%T%%/RELEASE-NOTES-4.0.2-B2.txt
 %%T%%/RELEASE-NOTES-4.0.2.txt
+%%T%%/RELEASE-NOTES-4.0.4.txt
 %%T%%/RELEASE-NOTES-4.0.txt
 %%T%%/RELEASE-PLAN-4.0.1.txt
 %%T%%/RELEASE-PLAN-4.0.txt
@@ -52,16 +53,18 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
 %%T%%/server/lib/catalina.jar
+%%T%%/server/lib/commons-logging.jar
 %%T%%/server/lib/jakarta-regexp-1.2.jar
 %%T%%/server/lib/servlets-cgi.renametojar
 %%T%%/server/lib/servlets-common.jar
 %%T%%/server/lib/servlets-default.jar
 %%T%%/server/lib/servlets-invoker.jar
 %%T%%/server/lib/servlets-manager.jar
-%%T%%/server/lib/servlets-snoop.jar
 %%T%%/server/lib/servlets-ssi.renametojar
 %%T%%/server/lib/servlets-webdav.jar
 %%T%%/server/lib/tomcat-ajp.jar
+%%T%%/server/lib/tomcat-http11.jar
+%%T%%/server/lib/tomcat-coyote.jar
 %%T%%/server/lib/tomcat-util.jar
 %%T%%/server/lib/warp.jar
 %%T%%/webapps/ROOT/WEB-INF/web.xml
@@ -85,6 +88,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/examples/WEB-INF/classes/RequestParamExample.class
 %%T%%/webapps/examples/WEB-INF/classes/RequestParamExample.java
 %%T%%/webapps/examples/WEB-INF/classes/SendMailServlet.java
+%%T%%/webapps/examples/WEB-INF/classes/SendMailServlet.class
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.class
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.java
 %%T%%/webapps/examples/WEB-INF/classes/SnoopServlet.class
@@ -423,6 +427,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/FileLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/LoggerBase.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemErrLogger.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemOutLogger.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-frame.html
@@ -455,7 +460,6 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/HTMLManagerServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/InvokerServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/ManagerServlet.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/SnoopAllServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/SsiInvokerServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/WebdavServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-frame.html
@@ -660,7 +664,6 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/CommandLineContext.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/Constants.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/EmbededServletOptions.html
-%%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JasperError.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JasperException.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspC.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspCompilationContext.Interface1.html
@@ -1070,5 +1073,6 @@ man/man1/tomcat4ctl.1
 @dirrm %%T%%/server/lib
 @dirrm %%T%%/server/classes
 @dirrm %%T%%/server
+@dirrm %%T%%/temp
 @dirrm %%T%%/work
 @dirrm %%T%%
