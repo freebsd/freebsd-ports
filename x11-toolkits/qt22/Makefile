@@ -7,6 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	2.2.4
+PORTREVISION?=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
