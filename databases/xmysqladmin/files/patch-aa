@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jan 10 18:17:46 1998
-+++ Makefile	Thu Jan 29 13:36:49 1998
++++ Makefile	Wed Feb  3 14:14:54 1999
 @@ -34,7 +34,7 @@
  # This is used by 'make install' command
  #-------------------------------------------------------
@@ -16,6 +16,17 @@
 -PIXMAPPATH = /usr/local/bin
 +PIXMAPPATH = ${X11BASE}/include/X11/pixmaps
  ########################################################
+ 
+ 
+@@ -55,8 +55,8 @@
+ # mysql version
+ # mysql_reload() on 3.20, mysql_refresh() on 3.21  
+ #-------------------------------------------------------
+-#MYSQL_VERSION = 320  # for versions 3.20.#
+-MYSQL_VERSION = 321   # for versions 3.21.#
++MYSQL_VERSION = 320  # for versions 3.20.#
++#MYSQL_VERSION = 321   # for versions 3.21.#
+ 
  
  
 @@ -93,8 +93,8 @@
