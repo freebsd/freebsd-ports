@@ -3,7 +3,7 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:30:59 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/07 23:56:22 asami Exp $
 #
 
 DISTNAME=	xlines
@@ -13,9 +13,7 @@ MASTER_SITES=	ftp://risq.belcaf.minsk.by/pub/genie/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11-toolkits/qt
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
-
+USE_QT=		yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 

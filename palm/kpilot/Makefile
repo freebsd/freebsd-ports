@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/05/20 19:34:21 dima Exp $
+# $Id: Makefile,v 1.7 1998/08/07 23:56:11 asami Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -12,9 +12,7 @@ MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
 
 MAINTAINER=	dima@freebsd.org
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
-LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11-toolkits/qt \
-		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
@@ -23,6 +21,7 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11-toolkits/qt \
 		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.0\\.[6-9]:${PORTSDIR}/x11/kdelibs
 
+USE_QT=		yes
 KDEDIR?=	$(PREFIX)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-extra-includes=$(PREFIX)/include/giflib"
