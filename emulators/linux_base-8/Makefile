@@ -118,7 +118,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${LINUXBASE}/${DBPATH}
 	@${MKDIR} ${LINUXBASE}/var/tmp ${LINUXBASE}/lib
-	@cd ${LINUXBASE}/lib && ${LN} -s libtermcap.so.2.0.8 libtermcap.so.2
+	@cd ${LINUXBASE}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
 	@${RPM} --initdb --root ${LINUXBASE} --dbpath ${DBPATH}
 #
 # Make sure we have a /dev/null in the chrooted environment.
@@ -157,7 +157,7 @@ do-install:
 	@for F in ${REMOVE_FILES}; do \
 		${RM} -f ${LINUXBASE}/$$F; \
 	done
-	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
+	@${LN} -sf /var/tmp ${LINUXBASE}/usr/tmp
 
 post-install:
 	@${ECHO} ''
