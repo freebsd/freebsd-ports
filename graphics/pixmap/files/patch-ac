@@ -1,0 +1,24 @@
+--- ./Imakefile.org	Fri May 13 04:04:38 1994
++++ ./Imakefile	Mon Feb 27 16:31:46 1995
+@@ -27,10 +27,9 @@
+ PIXMAPDIR = $(LIBDIR)/Pixmap
+ 
+ XCOMM Specify here your Xpm installation directories
+-        XPM_INCLUDEDIR = /usr/local/include
+         XPM_LIBDIR = $(LIBDIR)/xpm
+-        XPM_INCLUDEDIR = /net/koala/include
+-        XPM_LIBDIR = /net/koala/lib/sun4
++        XPM_INCLUDEDIR = $(INCDIR)
++        XPM_LIBDIR = $(USRLIBDIR)
+         EXTRA_INCLUDES = $(R5EXT) -I. -I.. -I$(XPM_INCLUDEDIR) -I/usr/include/$(MOTIFVER)
+ 
+ #ifdef USE_MOTIF
+@@ -89,7 +88,7 @@
+ 
+ Pixmap.ad: APixmap.ad
+ 	@echo Pixmap compiled with Athena.
+-	@sed -e "s#@PIXMAPDIR@#$(PIXMAPDIR)/#g" <APixmap.ad >Pixmap.ad
++	@sed -e "s#@PIXMAPDIR@#$(PIXMAPDIR)/#g" -e "s/^Pixmap//" <APixmap.ad >Pixmap.ad
+ #endif
+ 
+ dotpixmap: $(RGBTXT)
