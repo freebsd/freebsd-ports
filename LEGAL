@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.92 1997/12/08 15:56:01 tg Exp $
+# $Id: LEGAL,v 1.93 1997/12/18 03:50:10 alex Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -73,7 +73,6 @@ mikmod-2.14.tar.gz	ports/audio/mikmod	Registration required for
 				use of the binaries
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
 msql-*			ports/databases/msql	Not free for commercial org.
-mutt/* (without `e')    ports/mail/mutt.with_pgp ITAR export-controlled
 netscape-*		ports/net/netscape	Commercial product
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 pgp262s.zip		ports/security/pgp*	Various locality restrictions
