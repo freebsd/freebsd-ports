@@ -13,7 +13,7 @@ MASTER_SITES=	http://perl.apache.org/dist/ \
 PKGNAMESUFFIX=	2
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
 USE_APACHE=	yes

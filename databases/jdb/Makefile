@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	JDB manipulates flat-ASCII databases from shell scripts
 
 USE_PERL5=	yes

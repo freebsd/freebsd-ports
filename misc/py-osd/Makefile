@@ -13,7 +13,7 @@ MASTER_SITES=	http://repose.cx/pyosd/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyosd-${PORTVERSION}
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	A python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
