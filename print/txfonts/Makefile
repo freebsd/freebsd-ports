@@ -7,6 +7,7 @@
 
 PORTNAME=	txfonts
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	fonts/txfonts
@@ -32,6 +33,7 @@ NO_BUILD=	yes
 TEXFONTSDIR=	${PREFIX}/share/texmf/fonts
 LATEXMACRODIR=	${PREFIX}/share/texmf/tex/latex
 DVIPSCONFDIR=	${PREFIX}/share/texmf/dvips/config
+DVIPDFMCONFDIR=	${PREFIX}/share/texmf/dvipdfm/config
 
 TXDIST=		${DISTDIR}/${DIST_SUBDIR}
 TXPATCHDIR=	${WRKDIR}/tx_patch1
@@ -377,6 +379,8 @@ do-install:
 	  ${MKDIR} ${DVIPSCONFDIR}; fi
 	@(for i in ${DVIPS}; do \
 	  ${INSTALL_DATA} ${TXDIST}/dvips/$$i ${DVIPSCONFDIR}/ ; done)
+	@(for i in ${DVIPDFM}; do \
+	  ${INSTALL_DATA} ${TXDIST}/dvipdfm/$$i ${DVIPDFMCONFDIR}/ ; done)
 	@(for i in ${TXPATCH_NAME}; do \
 	  ${INSTALL_DATA} ${TXPATCHDIR}/$$i.tfm ${TEXFONTSDIR}/tfm/txr/ ; done)
 	@(for i in ${TXPATCH_NAME}; do \
