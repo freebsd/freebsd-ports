@@ -12,10 +12,10 @@ MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
 EMACS_NAME=		xemacs
 EMACS_PORT=		xemacs-mule
-EMACS_VER=		20.4
-MULE_VER=		20.4
-EMACS_LIBDIR=		lib/xemacs-20.4
-EMACS_VER_LIBDIR=	lib/xemacs-20.4
+EMACS_VER=		21.1.6
+MULE_VER=		21.1.6
+EMACS_LIBDIR=		lib/xemacs-21.1.6
+EMACS_VER_LIBDIR=	lib/xemacs-21.1.6
 
 HAVE_COMMON_PORT=	yes
 
