@@ -1,48 +1,29 @@
---- ../../OLD/v/Makefile	Thu Feb  5 09:15:48 1998
-+++ Makefile	Sun Feb  8 09:38:16 1998
-@@ -329,29 +329,27 @@
+--- ConfigX.mk.orig	Mon May  4 14:05:52 1998
++++ ConfigX.mk	Sat Jul 18 23:02:36 1998
+@@ -28,7 +28,7 @@
+ #---------------------------------------------------------------------
+ # HOMEV info
+ #---------------------------------------------------------------------
+-HOMEV	=	$(HOME)/v
++#HOMEV	=	$(HOME)/v
  
- .PHONY:	installv
- installv:
--	-mkdir /usr/local/v
--	-mkdir /usr/local/v/lib
--	-mkdir /usr/local/v/bin
--	-mkdir /usr/local/v/include
--	-mkdir /usr/local/v/include/v
--	-chmod 755 /usr/local/v 
--	-chmod 755 /usr/local/v/lib
--	-chmod 755 /usr/local/v/bin
--	-chmod 755 /usr/local/v/include
--	-chmod 755 /usr/local/v/include/v
--	cp includex/v/* /usr/local/v/include/v
--	cp $(LibDir)/*.a /usr/local/v/lib
--	cp $(Bin)/* /usr/local/v/bin
--	-chmod 644 /usr/local/v/include/v/*
--	-chmod 644 /usr/local/v/lib/*
--	-chmod 755 /usr/local/v/bin/*
-+	-mkdir -p ${PREFIX}/lib
-+	-mkdir ${PREFIX}/bin
-+	-mkdir -p ${PREFIX}/include/v
-+	-chmod 755 ${PREFIX}
-+	-chmod 755 ${PREFIX}/lib
-+	-chmod 755 ${PREFIX}/bin
-+	-chmod 755 ${PREFIX}/include
-+	-chmod 755 ${PREFIX}/include/v
-+	cp includex/v/* ${PREFIX}/include/v
-+	cp $(LibDir)/*.a ${PREFIX}/lib
-+	cp $(Bin)/* ${PREFIX}/bin
-+	-chmod 644 ${PREFIX}/include/v/*
-+	-chmod 644 ${PREFIX}/lib/libV.a
-+#	-chmod 755 ${PREFIX}/bin/*
  
- .PHONY:	instalVlLinux
- installVLinux:
- 	@echo "You must run this as root"
--	-mkdir /usr/include/v
-+	-mkdir ${PREFIX}/include/v
- 	chmod 644 includex/v/*
--	cp includex/v/* /usr/include/v
-+	cp includex/v/* ${PREFIX}/include/v
- ifeq ($(Arch),linuxelf)
- 	chmod 644 $(LibDir)/*.so.$(VV)
- 	cp $(LibDir)/*.so.$(VV) /usr/lib
+ #---------------------------------------------------------------------
+@@ -51,7 +51,7 @@
+ # User contributed definitions are available for:
+ # hpux, aix, solaris, bsd
+ #---------------------------------------------------------------------
+-ARCH	= linux
++#ARCH	= linux
+ #ARCH	= linuxelf
+ #ARCH	= sun4
+ #ARCH	= mips
+@@ -59,7 +59,7 @@
+ #ARCH	= hpux
+ #ARCH	= aix
+ #ARCH	= solaris
+-#ARCH	= bsd
++ARCH	= bsd
+ Arch = $(ARCH)
+ 
+ 

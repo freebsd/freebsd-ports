@@ -1,0 +1,12 @@
+diff -ru ./appgen/vgcode.cpp ../patched/appgen/vgcode.cpp
+--- ./appgen/vgcode.cpp	Fri Apr 24 15:19:36 1998
++++ ../patched/appgen/vgcode.cpp	Tue Jun 16 07:27:50 1998
+@@ -1291,7 +1291,7 @@
+ of << "\n";
+ of << "HOMEV	=	" << op.home << "\n";
+ #ifdef V_VersionX
+-of << "X11INC	=	/usr/X11/include\n";
++of << "X11INC	=	/usr/X11R6/include\n";
+ of << "X11LIB	=	/usr/X11R6/lib\n";
+ #endif
+ of << "LIBS	=	" << DEF_LIBS << "\n";
