@@ -54,16 +54,20 @@ open IN, "< $filename" or
 my @log_in = map { s/^(.*?)\s*$/$1/; $1 } grep { !/^CVS:/ } <IN>;
 close IN;
 
-# Remove leading, trailing and duplicate blank lines.
+# Remove duplicate blank lines.
 my $i = 0;
-while ($i < scalar(@log_in)) {
+while ($i < scalar(@log_in) - 1) {
 	if ($log_in[$i] eq "" && $log_in[$i + 1] eq "") {
 		splice(@log_in, $i, 1);
 		next;
         }
         ++$i;
 }
-shift @log_in unless $log_in[0];
+
+# Remove leading and trailing blank lines.  (There will be at most
+# one because of the duplicate removal above).
+shift @log_in if $log_in[0] eq "";
+pop @log_in if $log_in[-1] eq "";
 
 # Filter out blank templated entries, and type check if necessary.
 # (looking from the end of the commit message backwards)
