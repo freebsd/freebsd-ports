@@ -1,0 +1,6 @@
+Babytrans is a graphical front-end for GTK+/Gnome that allows you to use the
+dictionaries from Babylon Translator software available under Windows. It use
+only the old dictionnary format (.dic) and do not handle (yet) the new
+format (.bgl/.dat).
+
+WWW: http://fjolliton.free.fr/babytrans/

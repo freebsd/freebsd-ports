@@ -1,0 +1,13 @@
+--- po/it.po.orig	Mon Apr  3 04:02:43 2000
++++ po/it.po	Thu Feb 13 08:30:31 2003
+@@ -235,10 +235,6 @@
+ msgid "Help for Babytrans"
+ msgstr "Aiuto per Babytrans"
+ 
+-#: src/main.cc:992
+-msgid "Auto mode active"
+-msgstr "Modalità automatica attiva"
+-
+ #: src/main.cc:1068
+ msgid "Invalid selection"
+ msgstr "Selezione non valida"

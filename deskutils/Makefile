@@ -3,6 +3,7 @@
 
     SUBDIR += abacus
     SUBDIR += aspostit
+    SUBDIR += babytrans
     SUBDIR += bigyear
     SUBDIR += bulb
     SUBDIR += cal
