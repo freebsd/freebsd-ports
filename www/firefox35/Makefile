@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.r2
-PORTREVISION=	1
+PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0rc2/source
-DISTNAME=	${PORTNAME}-1.0rc2-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0/source
+DISTNAME=	${PORTNAME}-1.0-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -35,13 +34,16 @@ PLIST=		${WRKDIR}/plist
 PLUGINSDIR=	${PREFIX}/lib/browser_plugins
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libidl
+USE_GNOME=	gtk20 libidl gnomehier
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
+FIREFOX_ICON=	firefox.png
+FIREFOX_ICON_SRC=${WRKSRC}/other-licenses/branding/firefox/content/alert-exclam.png
 
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
@@ -121,6 +123,8 @@ post-extract::
 		-e 's|@PREFIX@|${FAKEDIR}/lib/firefox|'	\
 		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
+		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/firefox.desktop
 
 post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -191,6 +195,8 @@ pre-install:
 		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
 		${GREP} / >> ${PLIST}
+	${ECHO_CMD} 'share/gnome/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
+	${ECHO_CMD} 'share/gnome/applications/firefox.desktop' >> ${PLIST}
 
 do-install:
 # This is the actual installation.  First, the contents of FAKEDIR are
@@ -228,5 +234,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
 		${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}/chrome/icons/default/default.xpm
 .endif # defined(WITH_NEW_ICON)
+	${INSTALL_DATA} ${FIREFOX_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${FIREFOX_ICON}
+	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/gnome/applications
 
 .include <bsd.port.post.mk>
