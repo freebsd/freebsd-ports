@@ -6,25 +6,31 @@
 #
 
 PORTNAME=	cadubi
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics editors
-MASTER_SITES=	ftp://ftp.dei.uc.pt/.raid1/linux/files/console/graphics/ \
-		http://www.logicallemon.com/projects/cadubi/downloads/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://langworth.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
+USE_PERL5=	yes
 NO_BUILD=	yes
+
+do-configure:
+	@${PERL} -pi -e \
+		's|Bin/help|Bin/../share/cadubi/help|g' ${WRKSRC}/cadubi
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cadubi ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/CADUBI.pl ${PREFIX}/libexec
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/help.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/logo.txt ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cadubi
-	${INSTALL_DATA} ${WRKSRC}/CADUBI.help ${PREFIX}/share/doc/cadubi
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/extras/ansi_term_codes.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

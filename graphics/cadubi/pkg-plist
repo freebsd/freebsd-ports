@@ -1,4 +1,7 @@
 bin/cadubi
-libexec/CADUBI.pl
-%%PORTDOCS%%share/doc/cadubi/CADUBI.help
-%%PORTDOCS%%@dirrm share/doc/cadubi
+%%DATADIR%%/help.txt
+%%DATADIR%%/logo.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ansi_term_codes.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
