@@ -99,7 +99,7 @@ info/web2c.info-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/kpathsea.info %D/info/dir
 @exec install-info %D/info/web2c.info %D/info/dir
-lib/libkpathsea.so.3.2.0
+lib/libkpathsea.so.3
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 lib/libkpathsea.so
