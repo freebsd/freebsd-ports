@@ -93,6 +93,7 @@
     SUBDIR += m68knewlib
     SUBDIR += makedepend
     SUBDIR += mico
+    SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
     SUBDIR += mprof

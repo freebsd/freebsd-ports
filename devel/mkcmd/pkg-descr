@@ -1,0 +1,5 @@
+mkcmd lets us build a nifty command line option parser and some
+on-line documentation in a snap.  It is a prerequisite for many of
+Kevin Braunsdorf's tools.
+
+FreeBSD port by Andrew J. Korty <ajk@waterspout.com>.
