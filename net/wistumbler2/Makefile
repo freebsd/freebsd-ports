@@ -24,10 +24,6 @@ MANCOMPRESSED=	yes
 MAN1=		wistumbler2.1
 PLIST_FILES=	bin/wistumbler2
 
-.if !exists(/sys/dev/owi/if_ieee80211.h)
-IGNORE=	requires kernel sources from at least FreeBSD 5.2
-.endif
-
 .if defined(NO_X)
 MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 .endif
@@ -36,6 +32,13 @@ MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on 4.x"
+.else
+# this port needs the file /sys/dev/owi/if_ieee80211.h, but there
+# was not a FreeBSD version bump specifically for that.  Use the
+# nearest one.
+.if ${OSVERSION} < 501107
+IGNORE=	requires newer kernel sources that include /sys/dev/owi/if_ieee80211.h
+.endif
 .endif
 
 pre-everything::
