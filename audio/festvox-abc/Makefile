@@ -17,9 +17,9 @@ DIST_SUBDIR=	festival
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Mexican Spanish male voice for Festival speech synthesis system
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${.CURDIR}/../festogi-spanish \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi
+RUN_DEPENDS=	\
+		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${PORTSDIR}/audio/festogi-spanish \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 
 RESTRICTED=	no-commercial-use
 
