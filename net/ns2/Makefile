@@ -7,6 +7,7 @@
 
 PORTNAME=	ns
 PORTVERSION=	2.27
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	ns-src-2.27
@@ -28,10 +29,6 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 ALL_TARGET=
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502112
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		"Does not compile on alpha 4.x"
