@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
+		${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/pre/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -28,13 +29,11 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
 		glib20 \
-		pkgconfig \
 		libxml2
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS= --disable-tests \
+CONFIGURE_ARGS=	--disable-tests \
 		--disable-failing-tests
-CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}" \
@@ -48,7 +47,6 @@ MAN1=	gst-complete-${GST_VERSION}.1 gst-compprep-${GST_VERSION}.1 \
 	gst-register-${GST_VERSION}.1 gst-typefind-${GST_VERSION}.1 \
 	gst-xmllaunch-${GST_VERSION}.1 gst-xmlinspect-${GST_VERSION}.1
 
-PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
 
 # library minor number
