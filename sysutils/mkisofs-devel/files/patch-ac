@@ -22,9 +22,10 @@
 +      memcpy (copy, name, strlen(name) + 1);
 +      pnt = copy;
 +      last_dot = strrchr (pnt,'.');
-       *last_dot = '\0';
+       c = last_dot;
+       *c = '\0';
        last_dot = strrchr (pnt,'.');
--      *last_dot = '.';
+-      *c = '.';
      }
  
    while(*pnt)

@@ -1,21 +1,10 @@
---- eltorito.c.orig	Mon May  5 15:46:11 1997
-+++ eltorito.c	Mon May  5 16:11:42 1997
-@@ -33,6 +33,9 @@
- #include "mkisofs.h"
- #include "iso9660.h"
+--- multi.c.orig	Mon Oct 13 04:46:46 1997
++++ multi.c	Fri Oct 17 14:49:16 1997
+@@ -437,6 +437,7 @@
+   if( tt_extent != 0 && tt_size != 0 )
+     {
+       tt_buf = (unsigned char *) e_malloc(tt_size);
++      memset(tt_buf, 0, tt_size);
+       readsecs(tt_extent, tt_buf, tt_size/SECTOR_SIZE);
  
-+#undef MIN
-+#define MIN(a, b) (((a) < (b))? (a): (b))
-+
- static struct eltorito_validation_entry valid_desc;
- static struct eltorito_defaultboot_entry default_desc;
- 
-@@ -158,7 +161,7 @@
-      * but who really reads this stuff!
-      */
-     if (publisher)
--	memcpy_max(valid_desc.id,  publisher, strlen(publisher));
-+	memcpy_max(valid_desc.id,  publisher, MIN(31, strlen(publisher)));
-     
-     valid_desc.key1[0] = 0x55;
-     valid_desc.key2[0] = 0xAA;
+       /*
