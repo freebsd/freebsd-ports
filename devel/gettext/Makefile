@@ -33,6 +33,7 @@ INSTALLS_SHLIB=	yes
 
 OPTIONS=	EXAMPLES "install example files" off
 PLIST=		${WRKDIR}/plist
+PLISTU=		${WRKDIR}/plist-unsorted
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 		VERSION=${PORTVERSION}
 
@@ -71,18 +72,21 @@ post-build:
 .endif
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} -f ${PLISTU}
+	@${TOUCH} ${PLISTU}
 .if defined (WITH_EXAMPLES)
 	cd ${WRKSRC}/gettext-tools && \
 		${FIND} -s examples -type f | ${GREP} -vw examples/po | \
 		${GREP} -v ChangeLog | ${GREP} -v examples/Makefile | \
 		${GREP} -v examples/installpaths.in | \
-		${SED} 's:^:share/doc/gettext/:' > ${PLIST} && \
+		${SED} 's:^:share/doc/gettext/:' > ${PLISTU} && \
 		${FIND} -d examples -type d | ${GREP} -v examples/po | \
-		${SED} -e 's:^:@dirrm share/doc/gettext/:' \
-		>> ${PLIST}
+		${GREP} / | ${SED} -e 's:^:@dirrm share/doc/gettext/:' \
+		>> ${PLISTU}
 .endif
-	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
+	@${CAT} ${.CURDIR}/pkg-plist ${PLISTU} | ${GREP} -v ^@ > ${PLIST}
+	@${SORT} -r ${.CURDIR}/pkg-plist ${PLISTU} | ${GREP} ^@dirrm >> ${PLIST}
+	@${GREP} -h ^@ ${.CURDIR}/pkg-plist ${PLISTU} | ${GREP} exec >> ${PLIST}
 
 post-install:
 .for f in po-compat.el po-mode.el
