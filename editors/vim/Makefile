@@ -7,21 +7,21 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	0
+PATCHLEVEL=	15
 PORTVERSION=	6.3.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
-DISTNAME=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}${PORTVERSION:C/[.0-9]*//g}
+DISTNAME=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 
-PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-#PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
+PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
 BADPATCHES=	000
-#.for p in ${BADPATCHES}
-#PATCHFILES:=	${PATCHFILES:N6.3.${p}}
-#.endfor
+.for p in ${BADPATCHES}
+PATCHFILES:=	${PATCHFILES:N6.3.${p}}
+.endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
@@ -176,7 +176,8 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-	@-ncftpls ftp://ftp.vim.org/pub/vim/patches/ \
+	@-ncftpls \
+	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
 		| fgrep ${PORTVERSION:C/[0-9]*$//} | ${TAIL}
 
 find-bad-patches:
