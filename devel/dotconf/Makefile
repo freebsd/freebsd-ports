@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 post-install:
