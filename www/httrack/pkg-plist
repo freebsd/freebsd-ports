@@ -13,6 +13,7 @@ lib/libhttrack.so.1
 %%PORTDOCS%%share/doc/httrack/HelpHtml/fcguide.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/filters.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/httrack.css
+%%PORTDOCS%%share/doc/httrack/HelpHtml/httrack.man.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/images/bg_rings.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/images/header_title_4.gif
 %%PORTDOCS%%share/doc/httrack/HelpHtml/images/screenshot_01.jpg
