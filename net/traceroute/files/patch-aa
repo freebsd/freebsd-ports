@@ -1,23 +1,6 @@
---- Makefile.orig	Mon Dec 30 22:36:56 1996
-+++ Makefile	Sun May 18 01:08:46 1997
-@@ -4,11 +4,14 @@
- # Adapt the installation directories to your local standards.
- # ----------------------------------------------------------------------
- 
-+# Installation prefix:
-+PREFIX ?= /usr/local
-+
- # This is where the traceroute executable will go.
--DESTBIN = /usr/local/etc
-+DESTBIN = ${PREFIX}/sbin
- 
- # This is where the traceroute manual page will go.
--DESTMAN = /usr/local/man
-+DESTMAN = ${PREFIX}/man
- 
- BINDIR = $(DESTBIN)
- MANDIR = $(DESTMAN)/man8
-@@ -49,13 +52,13 @@
+--- Makefile.old	Fri Aug 28 04:40:36 1998
++++ Makefile	Fri Dec  4 16:32:45 1998
+@@ -61,13 +61,13 @@
  # were used to build the resolver library you are linking with.
  # ----------------------------------------------------------------------
  
@@ -34,56 +17,51 @@
  INCLUDES =
  
  # ----------------------------------------------------------------------
-@@ -64,15 +67,15 @@
- 
- DEFS = $(CONFIGDEFS) $(SYSDEFS) $(INCLUDES)
- 
--COPTS =
-+#COPTS =
+@@ -79,13 +79,14 @@
+ COPTS =
  COPTS = -O
  
- CFLAGS = $(COPTS) $(DEFS)
+-CFLAGS = $(COPTS) $(DEFS)
++#CFLAGS = $(COPTS) $(DEFS)
  
  # Select your favorite compiler.
 -CC = /usr/ucb/cc			#if defined(solaris) && BSD
 -CC = /bin/cc -arch m68k -arch i386	#if defined(next)
 -CC = /bin/cc
+-CC = cc
 +#CC = /usr/ucb/cc			#if defined(solaris) && BSD
 +#CC = /bin/cc -arch m68k -arch i386	#if defined(next)
 +#CC = /bin/cc
- CC = cc
++#CC = cc
++cc = ${CC}
  
  # ----------------------------------------------------------------------
-@@ -89,16 +92,16 @@
+ # Linking definitions.
+@@ -101,17 +102,17 @@
  # With BIND 4.9.3 the getnet...() calls are in the resolver library.
  # ----------------------------------------------------------------------
  
 -RES = -lsocket				#if defined(SCO) && default
-+#RES = -lsocket				#if defined(SCO) && default
- RES =
+-RES =
 -RES = ../res/libresolv.a
 -RES = -lresolv
-+#RES = ../res/libresolv.a
-+#RES = -lresolv
- 
+-
 -COMPLIB = ../compat/lib/lib44bsd.a
 -COMPLIB = -lnet
+-COMPLIB =
++#RES = -lsocket				#if defined(SCO) && default
++#RES =
++#RES = ../res/libresolv.a
++#RES = -lresolv
++
 +#COMPLIB = ../compat/lib/lib44bsd.a
 +#COMPLIB = -lnet
- COMPLIB =
++#COMPLIB =
  
 -LIBS = -lsocket -lnsl			#if defined(solaris) && not BSD
+-LIBS =
 +#LIBS = -lsocket -lnsl			#if defined(solaris) && not BSD
- LIBS =
++#LIBS =
  
  LIBRARIES = $(RES) $(COMPLIB) $(LIBS)
-@@ -152,7 +155,8 @@
- 	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS) $(LIBRARIES)
  
- install: $(PROG)
--	$(INSTALL) -m 4755 -o root -g network -s $(PROG) $(BINDIR)
-+	$(INSTALL) -m 4555 -o root -g bin -s $(PROG) $(BINDIR)
-+	$(INSTALL) -m 444 traceroute.8 $(MANDIR)
- 
- man: $(MANS)
- 	$(INSTALL) -m 444 traceroute.8 $(MANDIR)
