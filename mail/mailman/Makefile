@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.list.org/ \
 MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	khera@kcilink.com
 COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
