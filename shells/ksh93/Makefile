@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 
 MAINTAINER=	naddy@mips.inka.de
 
+BROKEN=		"does not build"
 RESTRICTED=	"Source recipient must acknowledge license"
 DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
