@@ -83,6 +83,8 @@ my $rcpt_watch  = $ENV{RCPT_WATCH}      ? $ENV{RCPT_WATCH}      : '';
 my $rcpt_watchm = $ENV{RCPT_WATCHM}     ? $ENV{RCPT_WATCHM}     : '';
 my $rcpt_orig   = $ENV{RCPT_ORIGIN}     ? $ENV{RCPT_ORIGIN}     : '';
 my $rcpt_vers   = $ENV{RCPT_VERSION}    ? $ENV{RCPT_VERSION}    : '';
+my $cc_author   = $ENV{CC_AUTHOR}       ? 1                     : 0;
+my $cc_mntnr    = $ENV{CC_MAINTAINER}   ? 1                     : 0;
 
 my $make        = '/usr/bin/make';
 my $cvs         = '/usr/bin/cvs';
@@ -126,7 +128,7 @@ $ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;
-my %pkgmaintainer;
+my %pkgmntnr;
 
 sub wanted {
     return
@@ -141,14 +143,16 @@ sub wanted {
     }
     elsif ($File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os) {
         $File::Find::prune = 1;
-        my @makevar = readfrom $File::Find::name,
-          $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
+        if (-f "$File::Find::name/Makefile") {
+            my @makevar = readfrom $File::Find::name,
+              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
 
-        if ($#makevar == 2) {
-            $pkgorigin{$1} = $makevar[0]
-              if $1 ne $makevar[0];
-            $pkgname{$1} = $makevar[1];
-            $pkgmaintainer{$1} = $makevar[2];
+            if ($#makevar == 2 && $makevar[1]) {
+                $pkgorigin{$1} = $makevar[0]
+                  if $1 ne $makevar[0];
+                $pkgname{$1} = $makevar[1];
+                $pkgmntnr{$1} = $makevar[2];
+            }
         }
     }
 }
@@ -168,11 +172,11 @@ else {
             my @makevar = readfrom "$portsdir/$_",
               $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
 
-            next if $#makevar != 2;
+            next if $#makevar != 2 || ! $makevar[1];
             $pkgorigin{$_} = $makevar[0]
               if $_ ne $makevar[0];
             $pkgname{$_} = $makevar[1];
-            $pkgmaintainer{$_} = $makevar[2];
+            $pkgmntnr{$_} = $makevar[2];
         }
     }
 }
@@ -213,17 +217,17 @@ while (<VERSIONS>) {
           if ($watch_re && $result ne '=' && $origin =~ /^(?:$watch_re)$/o);
 
         $watchedm{$origin} = "(was <$maintainer>) $version -> $pkgname{$origin}"
-          if ($watchm_re && $maintainer && $pkgmaintainer{$origin}
-            && $maintainer ne $pkgmaintainer{$origin} && $origin =~ /^(?:$watchm_re)$/o);
+          if ($watchm_re && $maintainer && $pkgmntnr{$origin}
+            && $maintainer ne $pkgmntnr{$origin} && $origin =~ /^(?:$watchm_re)$/o);
 
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
             $pkgname{$origin}   = $version;
         }
     }
-    else {
+    elsif ($origin) {
         $pkgname{$origin} = $version;
-        $pkgmaintainer{$origin} = $maintainer;
+        $pkgmntnr{$origin} = $maintainer;
     }
 }
 close VERSIONS;
@@ -233,9 +237,28 @@ if (!$useindex) {
 
     open VERSIONS, ">$versionfile";
     foreach (sort keys %pkgname) {
-        print VERSIONS "$_\t$pkgname{$_}\t$pkgmaintainer{$_}\n";
+        print VERSIONS "$_\t$pkgname{$_}\t$pkgmntnr{$_}\n";
     }
     close VERSIONS;
+}
+
+my %revision;
+my %author;
+
+sub getauthors {
+    my ($ports) = @_;
+    foreach my $origin (keys %{$ports}) {
+        if (!$revision{$origin}) {
+            open MAKEFILE, "<$portsdir/$origin/Makefile";
+            while (<MAKEFILE>) {
+               if (m'\$FreeBSD$ ]+,v (\d+(?:\.\d+)+) \d{4}(?:/\d{2}){2} \d{2}(?::\d{2}){2} (\w+) [\w ]+\$') {
+                   $revision{$origin} = $1;
+                   $author{$origin} = $2;
+               }
+           }
+           close MAKEFILE
+        }
+    }
 }
 
 sub blame {
@@ -243,12 +266,12 @@ sub blame {
 
     if (%{$ports}) {
         foreach my $origin (sort keys %{$ports}) {
-            print $fh "- *$origin* <$pkgmaintainer{$origin}>: $ports->{$origin}\n";
+            print $fh "- *$origin* <$pkgmntnr{$origin}>: $ports->{$origin}\n";
             if ($cvsblame && -d "$portsdir/$origin/CVS") {
                 my @cvslog = readfrom "$portsdir/$origin",
-                  $cvs, '-R', 'log', '-N', '-r.', 'Makefile';
+                  $cvs, '-R', 'log', '-N', '-r' . ($revision{$origin} ? $revision{$origin} : '.'), 'Makefile';
                 foreach (@cvslog) {
-                    my $in_log = /^-/ ... /^=/;
+                    my $in_log = /^-/ ... /^[-=]/;
                     print $fh "   | $_\n"
                       if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
                 }
@@ -260,14 +283,35 @@ sub blame {
 }
 
 sub template {
-    my ($from, $rcpt, $replyto) = @_;
+    my ($from, $rcpt, $replyto, $ports) = @_;
+
+    my $portlist = join ', ', sort keys %{$ports};
+    substr($portlist, 32) = '...'
+        if length $portlist > 35;
+
+    my %cclist;
+    if ($cc_author) {
+        foreach (map $author{$_}, keys %{$ports}) {
+            $cclist{"$_\@FreeBSD.org"} = 1
+                if $_;
+        }
+    }
+    if ($cc_mntnr) {
+        foreach (map $pkgmntnr{$_}, keys %{$ports}) {
+            $cclist{$_} = 1
+                if $_;
+        }
+    }
+    my $cc = join ', ', sort keys %cclist;
 
     my $header = '';
     while (<main::DATA>) {
         last if /^\.\n?$/;
         $_ =~ s/%%FROM%%/$from/og;
         $_ =~ s/%%RCPT%%/$rcpt/og;
+        $_ =~ s/%%CC%%/$cc/og;
         $_ =~ s/%%REPLYTO%%/$replyto/og;
+        $_ =~ s/%%SUBJECT%%/$portlist/og;
         $header .= $_;
     }
     return $header;
@@ -295,16 +339,20 @@ sub mail {
 
 my $tmpl;
 
-$tmpl = template $h_from, $rcpt_orig, $h_replyto;
+getauthors \%pkgorigin;
+$tmpl = template $h_from, $rcpt_orig, $h_replyto, \%pkgorigin;
 mail $tmpl, $rcpt_orig, \%pkgorigin;
 
-$tmpl = template $h_from, $rcpt_vers, $h_replyto;
+getauthors \%backwards;
+$tmpl = template $h_from, $rcpt_vers, $h_replyto, \%backwards;
 mail $tmpl, $rcpt_vers, \%backwards;
 
-$tmpl = template $h_from, $rcpt_watch, $h_replyto;
+getauthors \%watched;
+$tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watched;
 mail $tmpl, $rcpt_watch, \%watched;
 
-$tmpl = template $h_from, $rcpt_watch, $h_replyto;
+getauthors \%watchedm;
+$tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watchedm;
 mail $tmpl, $rcpt_watchm, \%watchedm;
 
 exit((%pkgorigin || %backwards) ? 1 : 0);
@@ -312,10 +360,11 @@ exit((%pkgorigin || %backwards) ? 1 : 0);
 __END__
 From: %%FROM%%
 To: %%RCPT%%
+CC: %%CC%%
 Reply-To: %%REPLYTO%%
-Subject: Ports with a wrong PKGORIGIN
+Subject: Ports with a broken PKGORIGIN: %%SUBJECT%%
 
-** The following ports have a wrong PKGORIGIN **
+** The following ports have an incorrect PKGORIGIN **
 
  PKGORIGIN connects packaged or installed ports to the directory they
  originated from. This is essential for tools like pkg_version or
@@ -325,8 +374,9 @@ Subject: Ports with a wrong PKGORIGIN
 .
 From: %%FROM%%
 To: %%RCPT%%
+CC: %%CC%%
 Reply-To: %%REPLYTO%%
-Subject: Ports with version numbers going backwards
+Subject: Ports with version numbers going backwards: %%SUBJECT%%
 
 ** The following ports have a version number that sorts before a previous one **
 
@@ -334,13 +384,13 @@ Subject: Ports with version numbers going backwards
  version numbers of a port form a monotonic increasing sequence over time.
  Refer to the FreeBSD Porter's Handbook, 'Package Naming Conventions' for
  more information. Tools that won't work include pkg_version, portupgrade
- and portaudit. A common problem is an accidental deletion of PORTEPOCH.
+ and portaudit. A common error is an accidental deletion of PORTEPOCH.
 
 .
 From: %%FROM%%
 To: %%RCPT%%
 Reply-To: %%REPLYTO%%
-Subject: Version changes in your watched ports
+Subject: Version changes in your watched ports: %%SUBJECT%%
 
 ** The following ports have changed version numbers **
 
@@ -351,7 +401,7 @@ Subject: Version changes in your watched ports
 From: %%FROM%%
 To: %%RCPT%%
 Reply-To: %%REPLYTO%%
-Subject: Maintainer changes in your watched ports
+Subject: Maintainer changes in your watched ports: %%SUBJECT%%
 
 ** The following ports have changed maintainers **
 
