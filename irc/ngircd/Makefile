@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
