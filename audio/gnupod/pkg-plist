@@ -1,15 +1,18 @@
-bin/gnupod_INITpod
-bin/gnupod_addsong
-bin/gnupod_connect
-bin/gnupod_delete
-bin/mktunes
-bin/tunes2pod
-%%PORTDOCS%%share/doc/gnupod/README
+bin/gnupod_INITpod.pl
+bin/gnupod_addsong.pl
+bin/gnupod_delete.pl
+bin/gnupod_list.pl
+bin/gnupod_m3u2pl.pl
+bin/gnupod_mkm3u.pl
+bin/gnupod_renumber.pl
+bin/gnupod_search.pl
+bin/mktunes.pl
+bin/tunes2pod.pl
 %%PORTDOCS%%share/doc/gnupod/CHANGES
-%%PORTDOCS%%share/doc/gnupod/TODO
-%%PORTDOCS%%share/doc/gnupod/index-de.html
-%%PORTDOCS%%share/doc/gnupod/index.html
 %%PORTDOCS%%share/doc/gnupod/logo.png
 %%PORTDOCS%%share/doc/gnupod/gnutunesdb.example
 %%PORTDOCS%%share/doc/gnupod/ipod.svg
 %%PORTDOCS%%@dirrm share/doc/gnupod
+@unexec install-info --delete %D/info/gnupod.info %D/info/dir
+info/gnupod.info
+@exec install-info %D/info/gnupod.info %D/info/dir
