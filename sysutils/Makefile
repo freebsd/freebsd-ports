@@ -72,6 +72,7 @@
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
+    SUBDIR += gnomesystemmonitor
     SUBDIR += gpart
     SUBDIR += grub
     SUBDIR += gtoaster
