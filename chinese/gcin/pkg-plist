@@ -17,6 +17,7 @@ lib/menu/gcin-setup
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/cj.gtab
+%%DATADIR%%/table/cj5.gtab
 %%DATADIR%%/table/dayi3.gtab
 %%DATADIR%%/table/et.kbm
 %%DATADIR%%/table/et-asdf.kbm
