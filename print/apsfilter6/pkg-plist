@@ -1,18 +1,18 @@
-apsfilter/SETUP
-apsfilter/bin/apsfilter
-apsfilter/bin/setup_dvips.sh
-apsfilter/filter/.keep_me
-apsfilter/global/GLOBAL.sh
-apsfilter/lib/redir_gs_msg.ps
-apsfilter/setup/README
-apsfilter/setup/devices-5.50
-apsfilter/setup/devices-6.01
-apsfilter/setup/filtersetup
-apsfilter/setup/printer-5.50
-apsfilter/setup/printer-6.01
-apsfilter/setup/test.ps
-apsfilter/template/README
-apsfilter/template/apsfilterrc
+share/apsfilter/SETUP
+share/apsfilter/bin/apsfilter
+share/apsfilter/bin/setup_dvips.sh
+share/apsfilter/filter/.keep_me
+share/apsfilter/global/GLOBAL.sh
+share/apsfilter/lib/redir_gs_msg.ps
+share/apsfilter/setup/README
+share/apsfilter/setup/devices-5.50
+share/apsfilter/setup/devices-6.01
+share/apsfilter/setup/filtersetup
+share/apsfilter/setup/printer-5.50
+share/apsfilter/setup/printer-6.01
+share/apsfilter/setup/test.ps
+share/apsfilter/template/README
+share/apsfilter/template/apsfilterrc
 share/doc/apsfilter/ANNOUNCE
 share/doc/apsfilter/FAQ
 share/doc/apsfilter/HOWTO-BUGREPORTS
@@ -23,11 +23,11 @@ share/doc/apsfilter/WHAT_AM_I
 share/doc/apsfilter/features
 share/doc/apsfilter/methods
 share/doc/apsfilter/paper
-@dirrm apsfilter/bin
-@dirrm apsfilter/filter
-@dirrm apsfilter/global
-@dirrm apsfilter/lib
-@dirrm apsfilter/setup
-@dirrm apsfilter/template
-@dirrm apsfilter
+@dirrm share/apsfilter/bin
+@dirrm share/apsfilter/filter
+@dirrm share/apsfilter/global
+@dirrm share/apsfilter/lib
+@dirrm share/apsfilter/setup
+@dirrm share/apsfilter/template
+@dirrm share/apsfilter
 @dirrm share/doc/apsfilter
