@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	i960-rtems
 .include "${.CURDIR}/../i386-rtems-binutils/Makefile"

@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://bourbon.netvision.net.il/mysql/mod_auth_mysql/ \
 		http://web.mysql.com/Contrib/
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client

@@ -17,7 +17,7 @@ PATCHFILES=	${CHILLNAME}-rtems-20000724.diff.gz \
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 DIST_SUBDIR=	rtems
 

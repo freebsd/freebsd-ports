@@ -10,7 +10,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
