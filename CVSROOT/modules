@@ -7387,6 +7387,7 @@ p5-NetAddr-IP-Find	ports/textproc/p5-NetAddr-IP-Find
 p5-NetCDF	ports/math/p5-NetCDF
 p5-NetPacket	ports/net/p5-NetPacket
 p5-News-Article	ports/news/p5-News-Article
+p5-News-Article-NoCeM	ports/news/p5-News-Article-NoCeM
 p5-News-Newsrc	ports/news/p5-News-Newsrc
 p5-NewsLib	ports/news/p5-NewsLib
 p5-Nmap-Scanner	ports/security/p5-Nmap-Scanner
