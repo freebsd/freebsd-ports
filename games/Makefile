@@ -214,6 +214,7 @@
     SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += trojka
+    SUBDIR += tuxkart
     SUBDIR += tuxracer
     SUBDIR += tvp
     SUBDIR += nighthawk
