@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.metadecks.org/software/aube/download/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for sound generation and processing
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk.bicom.pl/chgrep/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes

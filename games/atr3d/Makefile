@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
