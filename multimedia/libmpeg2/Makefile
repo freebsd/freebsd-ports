@@ -46,6 +46,12 @@ CONFIGURE_ARGS+=	--disable-sdl
 CONFIGURE_ARGS+=	--disable-warnings
 .endif
 
+# We must be able to build EV6 code; actual CPU-type optimizations
+# are chosen at runtime.
+.if ${MACHINE_ARCH:L} == "alpha"
+CFLAGS:=	${CFLAGS:N-mcpu=*}
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "====>"
 .ifndef(WITH_SDL)
