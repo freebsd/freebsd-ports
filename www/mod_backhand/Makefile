@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mod_backhand
-PORTVERSION=	1.1.1pre4
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cnds.jhu.edu/pub/backhand/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sean@chittenden.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
