@@ -1,0 +1,47 @@
+bin/avrdude
+share/doc/avrdude/avrdude.pdf
+etc/avrdude.conf
+share/doc/avrdude/avrdude-html/avrdude_1.html
+share/doc/avrdude/avrdude-html/avrdude_10.html
+share/doc/avrdude/avrdude-html/avrdude_11.html
+share/doc/avrdude/avrdude-html/avrdude_12.html
+share/doc/avrdude/avrdude-html/avrdude_13.html
+share/doc/avrdude/avrdude-html/avrdude_14.html
+share/doc/avrdude/avrdude-html/avrdude_15.html
+share/doc/avrdude/avrdude-html/avrdude_16.html
+share/doc/avrdude/avrdude-html/avrdude_17.html
+share/doc/avrdude/avrdude-html/avrdude_18.html
+share/doc/avrdude/avrdude-html/avrdude_19.html
+share/doc/avrdude/avrdude-html/avrdude_2.html
+share/doc/avrdude/avrdude-html/avrdude_20.html
+share/doc/avrdude/avrdude-html/avrdude_21.html
+share/doc/avrdude/avrdude-html/avrdude_22.html
+share/doc/avrdude/avrdude-html/avrdude_23.html
+share/doc/avrdude/avrdude-html/avrdude_24.html
+share/doc/avrdude/avrdude-html/avrdude_25.html
+share/doc/avrdude/avrdude-html/avrdude_26.html
+share/doc/avrdude/avrdude-html/avrdude_27.html
+share/doc/avrdude/avrdude-html/avrdude_28.html
+share/doc/avrdude/avrdude-html/avrdude_29.html
+share/doc/avrdude/avrdude-html/avrdude_3.html
+share/doc/avrdude/avrdude-html/avrdude_30.html
+share/doc/avrdude/avrdude-html/avrdude_31.html
+share/doc/avrdude/avrdude-html/avrdude_32.html
+share/doc/avrdude/avrdude-html/avrdude_33.html
+share/doc/avrdude/avrdude-html/avrdude_34.html
+share/doc/avrdude/avrdude-html/avrdude_35.html
+share/doc/avrdude/avrdude-html/avrdude_36.html
+share/doc/avrdude/avrdude-html/avrdude_37.html
+share/doc/avrdude/avrdude-html/avrdude_4.html
+share/doc/avrdude/avrdude-html/avrdude_5.html
+share/doc/avrdude/avrdude-html/avrdude_6.html
+share/doc/avrdude/avrdude-html/avrdude_7.html
+share/doc/avrdude/avrdude-html/avrdude_8.html
+share/doc/avrdude/avrdude-html/avrdude_9.html
+share/doc/avrdude/avrdude-html/avrdude_toc.html
+share/doc/avrdude/avrdude.ps
+@unexec install-info --delete %D/info/avrdude.info %D/info/dir
+info/avrdude.info
+@exec install-info %D/info/avrdude.info %D/info/dir
+@dirrm share/doc/avrdude/avrdude-html
+@dirrm share/doc/avrdude
