@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsoap
-PORTVERSION=	2.7.0d
+PORTVERSION=	2.7.0e
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gsoap2
@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-2.7
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
-
-BROKEN=		Size mismatch
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
