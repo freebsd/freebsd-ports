@@ -5,6 +5,6 @@
 # $FreeBSD$
 #
 
-EMACS_PORT_NAME=	mule19
+EMACS_PORT_NAME=	mule
 
 .include "${.CURDIR}/../mew/Makefile"
