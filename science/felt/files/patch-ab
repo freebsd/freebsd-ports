@@ -1,13 +1,40 @@
-If you are not using the Xaw3d widget set, remove this patch
-
---- src/Velvet/Makefile.orig	Wed Dec 16 21:04:49 1998
-+++ src/Velvet/Makefile	Wed Dec 16 21:03:41 1998
-@@ -18,7 +18,7 @@
- CFLAGS	= $(CCOPTS) -I$(X11INC) -I$(TOPDIR)/include
- LDFLAGS	= $(LDOPTS) -L$(X11LIB)
- LIBS	= $(LIBWIDGETS) $(LIBGEN) $(LIBGEOMPACK) $(LIBFELT) $(LIBELT) $(LIBMTX)\
--	  -lXaw -lXmu -lXt -lSM -lICE -lXext -lX11 -lm
-+	  -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lX11 -lm
- OBJS	= analysis.o animate.o apply.o bivar.o callbacks.o canvas.o\
- 	  colors.o constraint.o contour.o draw3d.o drawingshell.o\
- 	  element.o elementlist.o elementop.o eps.o error.o field.o file.o\
+diff -rc src/Velvet.orig/Makefile src/Velvet/Makefile
+*** src/Velvet.orig/Makefile	Wed Dec 23 23:01:05 1998
+--- src/Velvet/Makefile	Wed Dec 23 23:01:34 1998
+***************
+*** 18,24 ****
+  CFLAGS	= $(CCOPTS) -I$(X11INC) -I$(TOPDIR)/include
+  LDFLAGS	= $(LDOPTS) -L$(X11LIB)
+  LIBS	= $(LIBWIDGETS) $(LIBGEN) $(LIBGEOMPACK) $(LIBFELT) $(LIBELT) $(LIBMTX)\
+! 	  -lXaw -lXmu -lXt -lSM -lICE -lXext -lX11 -lm
+  OBJS	= analysis.o animate.o apply.o bivar.o callbacks.o canvas.o\
+  	  colors.o constraint.o contour.o draw3d.o drawingshell.o\
+  	  element.o elementlist.o elementop.o eps.o error.o field.o file.o\
+--- 18,24 ----
+  CFLAGS	= $(CCOPTS) -I$(X11INC) -I$(TOPDIR)/include
+  LDFLAGS	= $(LDOPTS) -L$(X11LIB)
+  LIBS	= $(LIBWIDGETS) $(LIBGEN) $(LIBGEOMPACK) $(LIBFELT) $(LIBELT) $(LIBMTX)\
+! 	  -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lX11 -lm
+  OBJS	= analysis.o animate.o apply.o bivar.o callbacks.o canvas.o\
+  	  colors.o constraint.o contour.o draw3d.o drawingshell.o\
+  	  element.o elementlist.o elementop.o eps.o error.o field.o file.o\
+diff -rc src/Velvet.orig/Velvet.ad src/Velvet/Velvet.ad
+*** src/Velvet.orig/Velvet.ad	Wed Dec 23 23:01:06 1998
+--- src/Velvet/Velvet.ad	Wed Dec 23 23:01:34 1998
+***************
+*** 1046,1052 ****
+  
+  ! 3d specific defaults
+  
+! !*shapeStyle:					Rectangle
+! !*control*spacer.height:				43
+! !*control*MenuButton*height:			26
+! !*control*Command*height:			26
+--- 1046,1052 ----
+  
+  ! 3d specific defaults
+  
+! *shapeStyle:					Rectangle
+! *control*spacer.height:				43
+! *control*MenuButton*height:			26
+! *control*Command*height:			26
