@@ -16,7 +16,7 @@ MAINTAINER=	kunia@istc.kiev.ua
 
 MAN1=		fmio.1
 MANCOMPRESSED=	no
-
+ONLY_FOR_ARCHS=	i386
 
 pre-build:
 .if !defined(WITH_BKTR)
