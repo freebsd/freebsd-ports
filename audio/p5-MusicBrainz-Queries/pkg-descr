@@ -1,0 +1,4 @@
+This module is used to provide access to the RDF Query Constants used
+by the MusicBrainz::Client module for querying the MusicBrainz server.
+
+WWW: http://www.musicbrainz.org/
