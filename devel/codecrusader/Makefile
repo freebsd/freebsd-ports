@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UNIX IDE for X inspired by MetroWerks CodeWarrior
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

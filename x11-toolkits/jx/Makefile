@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
 		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/libs/X/c++libs/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ application framework and widget library for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	${PORTNAME:S,_,-,}_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Paper for Calculations and Graphs
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

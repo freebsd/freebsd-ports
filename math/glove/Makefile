@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	Glove_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data acquisition, manipulation, and analysis program for X
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

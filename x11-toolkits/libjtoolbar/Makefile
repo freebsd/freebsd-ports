@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
 		ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	JToolBar_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An additional library for the JX widget library
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	server/sources
 PKGNAMESUFFIX=	-doc
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) documentation
 
 USE_BZIP2=	yes
