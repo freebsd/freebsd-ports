@@ -1,5 +1,5 @@
---- Makefile.dynamic.in.orig	Sun Jan  2 00:07:09 2005
-+++ Makefile.dynamic.in	Thu Jan 20 17:27:18 2005
+--- Makefile.dynamic.in.orig	Tue Dec 28 05:04:28 2004
++++ Makefile.dynamic.in	Fri Mar 18 12:01:37 2005
 @@ -47,25 +47,26 @@
  	$(LIBTOOL) $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
@@ -19,8 +19,8 @@
 +	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/fontforge $(bindir)
 +	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/sfddiff $(bindir)
 +	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/acorn2sfd $(bindir)
- #	-rm -f $(bindir)/pfaedit
- #	(cd $(bindir) ; ln -s fontforge pfaedit)
+ 	-rm -f $(bindir)/pfaedit
+ 	(cd $(bindir) ; ln -s fontforge pfaedit)
 -	cp fontforge/pfaedit-*.ui $(sharedir)
 +	${BSD_INSTALL_DATA} fontforge/pfaedit-*.ui $(sharedir)
  #The next line will fail for most installs. If you have downloaded the cidmaps
