@@ -11,6 +11,10 @@ CATEGORIES+=	editors
 MASTER_SITES+=	http://dict.progbits.com/
 DISTFILES+=	${LANGDIST}
 
+MAINTAINER=     openoffice@FreeBSD.org
+
+EXTRACT_ONLY=
+
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
 .endif
@@ -47,11 +51,8 @@ COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .endif
 
-EXTRACT_ONLY=
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-
-MAINTAINER=     openoffice@FreeBSD.org
 
 .if defined(RDEP)
 BUILD_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${RDEP}
