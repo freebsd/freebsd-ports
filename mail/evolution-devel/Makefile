@@ -7,7 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/ \
 		${MASTER_SITE_GNOME}
@@ -17,7 +17,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf
+LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
+		nss3.1:${PORTSDIR}/security/nss
 #		ldap.2:${PORTSDIR}/net/openldap2
 .if !defined(WITHOUT_PILOT)
 BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
@@ -35,8 +36,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--with-html-dir=${PREFIX}/share/gnome/html \
-		--with-openssl-includes=${OPENSSLBASE}/include \
-		--with-openssl-libs=${OPENSSLBASE}/lib
+		--with-nspr-includes=${LOCALBASE}/include/nspr \
+		--with-nspr-libs=${LOCALBASE}/lib \
+		--with-nss-includes=${LOCALBASE}/include/nss/security \
+		--with-nss-libs=${LOCALBASE}/lib
 #		--with-openldap=${LOCALBASE}
 .if !defined(WITHOUT_PILOT)
 CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE}/pilot \
