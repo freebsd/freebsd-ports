@@ -18,9 +18,12 @@ PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 PATCHFILES=	oleo-1.6-1.6jb2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sanpei@yy.cs.keio.ac.jp
+MAINTAINER=    sanpei@sanpei.org
 
+CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GNU_CONFIGURE=yes
+USE_XLIB=      yes
 
 post-install:
 .if !defined(NOPORTDOCS)
