@@ -9,7 +9,7 @@ PORTNAME=	pgpmoose
 PORTVERSION=	1.19
 CATEGORIES=	news security
 MASTER_SITES=	http://people.qualcomm.com/ggr/ \
-		ftp://ftp.dinoex.sub.de/pub/approved/
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 DISTNAME=	PGPMoose
 EXTRACT_SUFX=	.tar.Z
 

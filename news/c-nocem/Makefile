@@ -8,7 +8,7 @@ PORTNAME=	c-nocem
 PORTVERSION=	3.6
 CATEGORIES=	news security
 MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
-		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
