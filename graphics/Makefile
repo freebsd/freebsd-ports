@@ -253,6 +253,7 @@
     SUBDIR += mrsidviewer
     SUBDIR += multivideo
     SUBDIR += netpbm
+    SUBDIR += nip
     SUBDIR += nurbs++
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
@@ -414,6 +415,7 @@
     SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
+    SUBDIR += vips
     SUBDIR += visionegg
     SUBDIR += vp
     SUBDIR += whirlgif
@@ -469,7 +471,5 @@
     SUBDIR += yafray
     SUBDIR += zimg
     SUBDIR += zphoto
-    SUBDIR += vips
-    SUBDIR += nip
 
 .include <bsd.port.subdir.mk>

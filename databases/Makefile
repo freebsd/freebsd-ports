@@ -119,8 +119,6 @@
     SUBDIR += p5-Class-DBI-Replication
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
-    SUBDIR += p5-DWH_File
-    SUBDIR += p5-Data-Page
     SUBDIR += p5-Class-DBI-ToSax
     SUBDIR += p5-Class-DBI-mysql
     SUBDIR += p5-DBD-CSV
@@ -158,6 +156,8 @@
     SUBDIR += p5-DBIx-XHTML_Table
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBZ_File
+    SUBDIR += p5-DWH_File
+    SUBDIR += p5-Data-Page
     SUBDIR += p5-GDBM
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-Ima-DBI

@@ -73,7 +73,6 @@
     SUBDIR += demoroniser
     SUBDIR += dhttpd
     SUBDIR += dillo
-#    SUBDIR += djvuplugin
     SUBDIR += drivel
     SUBDIR += drupal
     SUBDIR += eldav.el
@@ -165,7 +164,6 @@
     SUBDIR += linkchecker
     SUBDIR += links
     SUBDIR += links1
-    SUBDIR += linuxpluginwrapper
     SUBDIR += linux-beonex
     SUBDIR += linux-flashplugin
     SUBDIR += linux-flashplugin6
@@ -175,6 +173,7 @@
     SUBDIR += linux-mozillafirebird
     SUBDIR += linux-mozillafirebird-el
     SUBDIR += linux-opera
+    SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
     SUBDIR += logtools
     SUBDIR += lws
@@ -634,5 +633,6 @@
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
+#    SUBDIR += djvuplugin
 
 .include <bsd.port.subdir.mk>

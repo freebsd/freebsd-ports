@@ -407,8 +407,8 @@
     SUBDIR += pdftohtml
     SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += perl2html
-    SUBDIR += ppower4
     SUBDIR += pocketreader
+    SUBDIR += ppower4
     SUBDIR += prosper
     SUBDIR += py-4suite
     SUBDIR += py-HyperText

@@ -295,6 +295,7 @@
     SUBDIR += loadd
     SUBDIR += loudmouth
     SUBDIR += luasocket
+    SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
@@ -322,7 +323,6 @@
     SUBDIR += mute-net-gui
     SUBDIR += mute-net-text
     SUBDIR += mutella
-    SUBDIR += mDNSResponder
     SUBDIR += naim
     SUBDIR += nakenchat
     SUBDIR += nam

@@ -1,7 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += trf
-    SUBDIR += webalizer2
     SUBDIR += aspell
     SUBDIR += ekg
     SUBDIR += gnugadu
@@ -15,5 +13,7 @@
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1
     SUBDIR += sms
+    SUBDIR += trf
+    SUBDIR += webalizer2
 
 .include <bsd.port.subdir.mk>
