@@ -8,7 +8,7 @@
 PORTNAME=	frontpage
 PKGNAMEPREFIX=	th-
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Thai Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
