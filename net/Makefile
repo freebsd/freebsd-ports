@@ -12,6 +12,7 @@
     SUBDIR += airport
     SUBDIR += amcl
     SUBDIR += angst
+    SUBDIR += ap-utils
     SUBDIR += apinger
     SUBDIR += archie
     SUBDIR += archie.el
