@@ -1,148 +1,149 @@
-include/installer.h
-include/sysdeps.h
-include/systime.h
-include/uint16.h
-include/uint32.h
-include/uint64.h
-include/uintnn.h
-include/adt/common.h
-include/adt/ghash.h
-include/adt/gqueue.h
-include/adt/gstack.h
-@dirrm include/adt
-include/base64/base64.h
-@dirrm include/base64
-include/cdb/cdb.h
-include/cdb/make.h
-include/cdb/str.h
-@dirrm include/cdb
-include/cli/cli.h
-@dirrm include/cli
-include/crc/crc32.h
-include/crc/crc64.h
-@dirrm include/crc
-include/crypto/md5.h
-include/crypto/sha1.h
-include/crypto/sha256.h
-include/crypto/sha384.h
-include/crypto/sha512.h
-@dirrm include/crypto
-include/cvm/client.h
-include/cvm/errors.h
-include/cvm/facts.h
-include/cvm/module.h
-@dirrm include/cvm
-include/cvm-sasl/cvm-sasl.h
-@dirrm include/cvm-sasl
-include/dict/dict.h
-include/dict/load.h
-@dirrm include/dict
-include/iobuf/iobuf.h
-@dirrm include/iobuf
-include/misc/misc.h
-@dirrm include/misc
-include/msg/msg.h
-include/msg/wrap.h
-@dirrm include/msg
-include/net/ipv4.h
-include/net/resolve.h
-include/net/socket.h
-@dirrm include/net
-include/path/path.h
-@dirrm include/path
-include/pwcmp/client.h
-include/pwcmp/hex.h
-include/pwcmp/module.h
-@dirrm include/pwcmp
-include/str/iter.h
-include/str/str.h
-@dirrm include/str
-include/unix/nonblock.h
-include/unix/sig.h
-@dirrm include/unix
-include/vmailmgr/client.h
-include/vmailmgr/vpwentry.h
-@dirrm include/vmailmgr
-lib/libbg-sysdeps.a
-lib/libbg-installer.a
-lib/libbg-instcheck.a
-lib/libbg-instshow.a
+include/bglibs/adt/common.h
+include/bglibs/adt/ghash.h
+include/bglibs/adt/gqueue.h
+include/bglibs/adt/gstack.h
+include/bglibs/base64/base64.h
+include/bglibs/cdb/cdb.h
+include/bglibs/cdb/make.h
+include/bglibs/cdb/str.h
+include/bglibs/cli/cli.h
+include/bglibs/crc/crc32.h
+include/bglibs/crc/crc64.h
+include/bglibs/crypto/md5.h
+include/bglibs/crypto/sha1.h
+include/bglibs/crypto/sha256.h
+include/bglibs/crypto/sha384.h
+include/bglibs/crypto/sha512.h
+include/bglibs/cvm-sasl/cvm-sasl.h
+include/bglibs/cvm/client.h
+include/bglibs/cvm/errors.h
+include/bglibs/cvm/facts.h
+include/bglibs/cvm/module.h
+include/bglibs/dict/dict.h
+include/bglibs/dict/load.h
+include/bglibs/installer.h
+include/bglibs/iobuf/iobuf.h
+include/bglibs/misc/misc.h
+include/bglibs/msg/msg.h
+include/bglibs/msg/wrap.h
+include/bglibs/net/ipv4.h
+include/bglibs/net/resolve.h
+include/bglibs/net/socket.h
+include/bglibs/path/path.h
+include/bglibs/pwcmp/client.h
+include/bglibs/pwcmp/hex.h
+include/bglibs/pwcmp/module.h
+include/bglibs/str/iter.h
+include/bglibs/str/str.h
+include/bglibs/sysdeps.h
+include/bglibs/systime.h
+include/bglibs/uint16.h
+include/bglibs/uint32.h
+include/bglibs/uint64.h
+include/bglibs/uintnn.h
+include/bglibs/unix/nonblock.h
+include/bglibs/unix/sig.h
+include/bglibs/vmailmgr/client.h
+include/bglibs/vmailmgr/vpwentry.h
+lib/libbase64/base64.a
 lib/libbg-adt.a
 lib/libbg-base64.a
 lib/libbg-cdb.a
 lib/libbg-cli.a
 lib/libbg-crc.a
 lib/libbg-crypto.a
-lib/libcvm-client.a
-lib/libcvm-command.a
-lib/libcvm-local.a
-lib/libcvm-udp.a
-lib/libcvm-sasl.a
 lib/libbg-dict.a
+lib/libbg-installer.a
+lib/libbg-instcheck.a
+lib/libbg-instshow.a
 lib/libbg-iobuf.a
 lib/libbg-misc.a
 lib/libbg-msg.a
 lib/libbg-net.a
 lib/libbg-path.a
-lib/libpwcmp.a
-lib/libpwcmp-module.a
 lib/libbg-str.a
+lib/libbg-sysdeps.a
 lib/libbg-unix.a
-lib/libvmailmgr.a
-lib/libsysdeps.a
-lib/libinstaller.a
-lib/libinstcheck.a
-lib/libinstshow.a
-lib/libbase64/base64.a
-@dirrm lib/libbase64
 lib/libcdb/cdb.a
 lib/libcdb/make.a
 lib/libcdb/str.a
-@dirrm lib/libcdb
 lib/libcli/cli.a
-@dirrm lib/libcli
 lib/libcrypto/md5.a
 lib/libcrypto/sha1.a
 lib/libcrypto/sha256.a
 lib/libcrypto/sha512a.a
-@dirrm lib/libcrypto
+lib/libcvm-client.a
+lib/libcvm-command.a
+lib/libcvm-local.a
+lib/libcvm-sasl.a
+lib/libcvm-sasl/cvm-sasl.a
+lib/libcvm-udp.a
 lib/libcvm/client.a
 lib/libcvm/command.a
 lib/libcvm/local.a
 lib/libcvm/udp.a
-@dirrm lib/libcvm
-lib/libcvm-sasl/cvm-sasl.a
-@dirrm lib/libcvm-sasl
 lib/libdict/dict.a
 lib/libdict/load.a
-@dirrm lib/libdict
+lib/libinstaller.a
+lib/libinstcheck.a
+lib/libinstshow.a
 lib/libiobuf/iobuf.a
 lib/libiobuf/str.a
-@dirrm lib/libiobuf
 lib/libmisc/misc.a
-@dirrm lib/libmisc
 lib/libmsg/msg.a
 lib/libmsg/wrap.a
-@dirrm lib/libmsg
 lib/libnet/ipv4.a
 lib/libnet/resolve.a
 lib/libnet/socket.a
-@dirrm lib/libnet
 lib/libpath/path.a
-@dirrm lib/libpath
+lib/libpwcmp-module.a
+lib/libpwcmp.a
 lib/libpwcmp/client.a
 lib/libpwcmp/hex.a
 lib/libpwcmp/module.a
-@dirrm lib/libpwcmp
 lib/libstr/iter.a
 lib/libstr/str.a
-@dirrm lib/libstr
+lib/libsysdeps.a
 lib/libunix/nonblock.a
 lib/libunix/sig.a
-@dirrm lib/libunix
+lib/libvmailmgr.a
 lib/libvmailmgr/client.a
 lib/libvmailmgr/vpwentry.a
 @dirrm lib/libvmailmgr
+@dirrm lib/libunix
+@dirrm lib/libstr
+@dirrm lib/libpwcmp
+@dirrm lib/libpath
+@dirrm lib/libnet
+@dirrm lib/libmsg
+@dirrm lib/libmisc
+@dirrm lib/libiobuf
+@dirrm lib/libdict
+@dirrm lib/libcvm-sasl
+@dirrm lib/libcvm
+@dirrm lib/libcrypto
+@dirrm lib/libcli
+@dirrm lib/libcdb
+@dirrm lib/libbase64
+@dirrm include/bglibs/vmailmgr
+@dirrm include/bglibs/unix
+@dirrm include/bglibs/str
+@dirrm include/bglibs/pwcmp
+@dirrm include/bglibs/path
+@dirrm include/bglibs/net
+@dirrm include/bglibs/msg
+@dirrm include/bglibs/misc
+@dirrm include/bglibs/iobuf
+@dirrm include/bglibs/dict
+@dirrm include/bglibs/cvm-sasl
+@dirrm include/bglibs/cvm
+@dirrm include/bglibs/crypto
+@dirrm include/bglibs/crc
+@dirrm include/bglibs/cli
+@dirrm include/bglibs/cdb
+@dirrm include/bglibs/base64
+@dirrm include/bglibs/adt
+@dirrm include/bglibs
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
