@@ -88,7 +88,6 @@
     SUBDIR += swi-pl
     SUBDIR += tcl76
     SUBDIR += tcl80
-    SUBDIR += tcl81
     SUBDIR += tcl81-thread
     SUBDIR += tcl82
     SUBDIR += tclX80
