@@ -3,13 +3,13 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.2 1996/01/13 18:56:58 joerg Exp $
+# $Id: Makefile,v 1.3 1996/01/15 10:40:43 asami Exp $
 #
 
 DISTNAME=	scanner
 PKGNAME=	hpscan-1.0
 CATEGORIES+=	graphics
-MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/ \
+MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/ \
 		ftp://macbeth.cogsci.ed.ac.uk/pub/
 
 MAINTAINER=	nate@FreeBSD.org

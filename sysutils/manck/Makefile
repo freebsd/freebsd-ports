@@ -3,12 +3,12 @@
 # Date created:         10 September 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.2 1995/09/14 10:57:28 asami Exp $
+# $Id: Makefile,v 1.3 1996/06/02 15:23:57 wosch Exp $
 #
 
 DISTNAME=       manck-1.2
 CATEGORIES+=	sysutils
-MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=     joerg@FreeBSD.org
 
