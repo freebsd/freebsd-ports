@@ -21,4 +21,6 @@ WRKSRC=		${WRKDIR}/gkrellmbgchg-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellmbgchg.so
+
 .include <bsd.port.mk>
