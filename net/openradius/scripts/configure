@@ -1,0 +1,64 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat > Makefile << END
+
+### Installation paths and compiled-in defaults
+#
+DIR_BIN 	= $PREFIX/bin
+DIR_SBIN	= $PREFIX/sbin
+DIR_ETC 	= $PREFIX/etc/openradius
+DIR_LIB 	= $PREFIX/lib/openradius
+FILE_LOG	= $PREFIX/var/log/openradius.log
+
+### Modules that will be built and installed
+#
+TGT_LIB		+= modules/ascfile/ascfile
+TGT_LIB		+= modules/unixpasswd/unixpasswd
+TGT_LIB		+= modules/radlogger/radlogger
+TGT_LIB		+= modules/delay/delay
+TGT_LIB		+= modules/radsql/radsql
+
+### System compatibility flags, used in some targets' CF_TGT, LF_TGT or LL_TGT
+#
+S_CF_U_INT32_T	= -DU_INT32_T=u_int32_t
+S_CF_SYSLOG	= -DHAVE_SYSLOG
+S_CF_VSNPRINTF 	= -DHAVE_VSNPRINTF
+S_CF_SIGACTION 	= -DHAVE_SIGACTION
+S_LL_INET	=
+
+### Build flags for all targets
+#
+CF_ALL		= -g -Wall
+LF_ALL		= 
+LL_ALL		=
+
+### Module-specific build flags
+#
+CF_RADLDAP	= -I$LDAPINCLUDE/openldap
+LF_RADLDAP	= -L$LDAPLIB/usr/local/lib
+LL_RADLDAP	= -lldap -llber
+
+### Build tools
+# 
+# The C compiler named here must output full (header) dependencies in $(@).d.
+# It may be necessary to create a script similar to ccd-gcc for your compiler.
+# 
+CMPLR		= ./build/ccd-gcc
+DEFHDR		= ./build/hdr
+INST		= ./build/install
+ARCH		= ar rc \$@ \$^
+#
+COMP		= \$(CMPLR) \$(CF_ALL) \$(CF_TGT) -o \$@ -c \$<
+LINK		= \$(CMPLR) \$(LF_ALL) \$(LF_TGT) -o \$@ \$^ \$(LL_TGT) \$(LL_ALL)
+COMPLINK	= \$(CMPLR) \$(CF_ALL) \$(CF_TGT) \$(LF_ALL) \$(LF_TGT) -o \$@ \$< \$(LL_TGT) \$(LL_ALL)
+
+
+### Standard parts
+#
+include	Rules.mk
+
+END
+
+exit 0;

@@ -389,6 +389,7 @@
     SUBDIR += openldap22-client
     SUBDIR += openldap22-server
     SUBDIR += openmcu
+    SUBDIR += openradius
     SUBDIR += openreg
     SUBDIR += openslp
     SUBDIR += openverse
