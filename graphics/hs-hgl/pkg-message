@@ -1,0 +1,6 @@
+----------
+Please set the environment variable HUGSFLAGS "-P{Hugs}/x11:".
+
+In tcsh:  setenv HUGSFLAGS "-P{Hugs}/x11:"
+In sh:	  export HUGSFLAGS="-P{Hugs}/x11:"
+----------

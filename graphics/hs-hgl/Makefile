@@ -7,10 +7,11 @@
 
 PORTNAME=	hgl
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.org/graphics/downloads/
-DISTNAME=	graphics-${PORTVERSION}.src
 PKGNAMEPREFIX=	hs-
+DISTNAME=	graphics-${PORTVERSION}.src
 
 MAINTAINER=	octaphial@yahoo.com
 
@@ -20,27 +21,32 @@ WRKSRC=		${WRKDIR}/graphics-${PORTVERSION}
 USE_GMAKE=	yes
 USE_XLIB=	yes
 
+HGL_LIBS=	${PREFIX}/lib/hugs/x11
+HGL_DOCS=	${PREFIX}/share/doc/hs-hgl
+
 BUILD_WRKSRC=	${WRKSRC}/lib/x11
 MAKE_ENV=	system=FreeBSD \
-		hugs_install=${PREFIX}/share/hugs
+		hugs_install=${HGL_LIBS}
 ALL_TARGET=	all
 
 do-install:
-	${MKDIR} ${PREFIX}/share/hugs/lib/x11
-	${MKDIR} ${PREFIX}/share/hugs/demos/hgl
-	${INSTALL_SCRIPT} ${PKGDIR}/scripts/hugs-hgl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/x11/*.hs ${PREFIX}/share/hugs/lib/x11
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/x11/*.o ${PREFIX}/share/hugs/lib/x11
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/x11/*.so ${PREFIX}/share/hugs/lib/x11
-	${INSTALL_DATA} ${WRKSRC}/demos/* ${PREFIX}/share/hugs/demos/hgl
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/hugs/demos/hgl
+	${MKDIR} ${HGL_LIBS}
+	${MKDIR} ${HGL_LIBS}/demos
+	${INSTALL_DATA} ${WRKSRC}/lib/x11/*.hs ${HGL_LIBS}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/x11/*.o ${HGL_LIBS}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/x11/*.so ${HGL_LIBS}
+	${INSTALL_DATA} ${WRKSRC}/demos/* ${HGL_LIBS}/demos
+	${INSTALL_DATA} ${WRKSRC}/test/* ${HGL_LIBS}/demos
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/hgl
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/hgl
-	${INSTALL_DATA} ${WRKSRC}/License ${PREFIX}/share/doc/hgl
-	${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/share/doc/hgl
-	${INSTALL_DATA} ${WRKSRC}/Version ${PREFIX}/share/doc/hgl
-	${INSTALL_DATA} ${WRKSRC}/Version-2.0.4 ${PREFIX}/share/doc/hgl
+	${MKDIR} ${HGL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${HGL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/License ${HGL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/Readme ${HGL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/Version ${HGL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/Version-2.0.4 ${HGL_DOCS}
+	@${ECHO} ''
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO} ''
 
 .include <bsd.port.mk>
