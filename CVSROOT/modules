@@ -3691,7 +3691,7 @@ ja-rxvt		ports/japanese/rxvt
 ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
-ja-scim-table	ports/japanese/scim-table
+ja-scim-tables	ports/japanese/scim-tables
 ja-sdic		ports/japanese/sdic
 ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
@@ -4204,7 +4204,7 @@ ko-openoffice-1.0	ports/korean/openoffice-1.0
 ko-openoffice-1.1	ports/korean/openoffice-1.1
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
-ko-scim-table	ports/korean/scim-table
+ko-scim-tables	ports/korean/scim-tables
 ko-texinfo	ports/korean/texinfo
 ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
@@ -5392,8 +5392,8 @@ moviedb		ports/misc/moviedb
 movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
 mozart		ports/lang/mozart
-mozex		ports/lang/mozex
-mozex-firefox	ports/lang/mozex-firefox
+mozex		ports/www/mozex
+mozex-firefox	ports/www/mozex-firefox
 mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
@@ -11250,7 +11250,7 @@ zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-scim-chinese	ports/chinese/scim-chinese
-zh-scim-table	ports/chinese/scim-table
+zh-scim-tables	ports/chinese/scim-tables
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
