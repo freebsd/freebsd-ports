@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbconnect
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +28,8 @@ OPTIONS=	MYSQL "With MySQL driver" on \
 		PGSQL "With PostgreSQL driver" off
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=		YES
