@@ -277,6 +277,10 @@ post-install:
 		${WRKSRC}/${file}
 	@${INSTALL_DATA} ${WRKSRC}/${file} \
 		${PREFIX}/include/ffmpeg/${file:T}
+# change headers back so reinstall target works
+	@${REINPLACE_CMD} -e 's|<ffmpeg/common.h>|"common.h"|; \
+		s|<ffmpeg/avcodec.h>|"avcodec.h"|' \
+		${WRKSRC}/${file}
 .endfor
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
