@@ -5,7 +5,7 @@
  void resInit( char* name )
  {
 -  strcpy( resource_name, my_strlwr(name) );
-+  strcpy( resource_name, "/usr/X11R6/share/qrash/qrash.dat" );
++  strcpy( resource_name, "PREFIX/share/qrash/qrash.dat" );
    FILE* f = fopen( resource_name, "rb" );
    if(f) {
      fseek( f, -4, SEEK_END );

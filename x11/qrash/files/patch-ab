@@ -1,5 +1,5 @@
 --- configure.orig	Wed Sep 24 11:50:18 1997
-+++ configure	Sun Oct 24 05:48:05 1999
++++ configure	Thu Jun 15 10:25:16 2000
 @@ -9,7 +9,7 @@
  echo "what CPU has your box inside?"
  echo "1) i386-compatible"
@@ -9,7 +9,7 @@
  case $cpu in
    1)	echo "CPU=_g" > options ;
  	echo "CXXFLAGS += -Di386" >> options ;;
-@@ -32,13 +33,13 @@
+@@ -32,7 +32,7 @@
  echo "3) Vesa (dos only)"
  #echo "4) Win32 DirectDraw"
  #echo "5) OS/2 DIVE"
@@ -18,14 +18,7 @@
  case $gfx in
    1)	echo "GFX=vga" >> options ;
  	echo "LIBS += -lvga" >> options ;;
- 
-   2)	echo "GFX=x11" >> options ;
--	echo "LIBS += -L/usr/X11/lib -lX11" >> options ;;
-+	echo "LIBS += -L/usr/X11R6/lib -lX11" >> options ;;
- 
-   3)	echo "GFX=dos" >> options ;
- 	echo "LIBS += -Lsvgakit -lsvga -lpmode -lztime" >> options ;;
-@@ -68,7 +70,7 @@
+@@ -68,7 +68,7 @@
  echo "10) none of the above"
  #echo "11) Win32"
  #echo "12) OS/2"
