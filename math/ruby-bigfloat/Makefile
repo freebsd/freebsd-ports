@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bigfloat
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.tinyforest.gr.jp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
