@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/27 14:32:07 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/03/01 09:38:26 shige Exp $
 #
 
 DISTNAME=	dtd-catalogs-1.0
@@ -16,18 +16,24 @@ MAINTAINER=	shige@FreeBSD.ORG
 RUN_DEPENDS=	${ISO8879_CAT}:${PORTSDIR}/textproc/iso8879 \
 		${ISO12083_CAT}:${PORTSDIR}/textproc/iso12083 \
 		${HTML_CAT}:${PORTSDIR}/textproc/html \
-		${DOCBOOK3_CAT}:${PORTSDIR}/textproc/docbook \
+		${DOCBOOK_CAT}:${PORTSDIR}/textproc/docbook \
 		${LINUXDOC_CAT}:${PORTSDIR}/textproc/linuxdoc
 
+# DOCBOOK_CAT catalog is only for dependency.
+DOCBOOK_CAT=	${LOCALBASE}/share/sgml/docbook/catalog
+
+# The following catalogs are listed in catalog-list-file actually.
 ISO8879_CAT=	${LOCALBASE}/share/sgml/iso8879/catalog
 ISO12083_CAT=	${LOCALBASE}/share/sgml/iso12083/catalog
 HTML_CAT=	${LOCALBASE}/share/sgml/html/catalog
-DOCBOOK2_CAT=	${LOCALBASE}/share/sgml/docbook/2.4.1/catalog
-DOCBOOK3_CAT=	${LOCALBASE}/share/sgml/docbook/3.0/catalog
+DOCBOOK241_CAT=	${LOCALBASE}/share/sgml/docbook/2.4.1/catalog
+DOCBOOK300_CAT=	${LOCALBASE}/share/sgml/docbook/3.0/catalog
+DOCBOOK310_CAT=	${LOCALBASE}/share/sgml/docbook/3.1/catalog
 LINUXDOC_CAT=	${LOCALBASE}/share/sgml/linuxdoc/catalog
 
 ALL_CATALOGS=	${ISO8879_CAT} ${ISO12083_CAT} ${HTML_CAT} \
-		${DOCBOOK2_CAT} ${DOCBOOK3_CAT} ${LINUXDOC_CAT}
+		${DOCBOOK241_CAT} ${DOCBOOK300_CAT} ${DOCBOOK310_CAT} \
+		${LINUXDOC_CAT}
 
 CATALOG=	${LOCALBASE}/share/sgml/catalog
 
