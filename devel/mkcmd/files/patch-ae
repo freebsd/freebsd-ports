@@ -1,0 +1,24 @@
+--- bin/mkcmd/Make.host.orig	Mon Jul 31 06:56:23 2000
++++ bin/mkcmd/Make.host	Fri Aug 11 19:44:39 2000
+@@ -5,7 +5,7 @@
+ SHELL=/bin/sh
+ 'ifelse(HOSTTYPE,`PTX',
+ `BIN=	${ROOT}/bin',
+-`BIN=	${DESTDIR}/usr/local/bin')`
++`BIN=	${PREFIX}/bin')`
+ PROG=	mkcmd
+ 
+ I=/usr/include
+@@ -17,10 +17,10 @@
+ # -D in CDEFS.  See notes in machine.h.  Change LIB (if you move DEFDIR)
+ # in the lib source Makefile.
+ INCLUDE=
+-DEBUG='ifelse(HOSTTYPE,`V386',`',`-O')`
++DEBUG='ifelse(HOSTTYPE,`V386',`',`')`
+ CDEFS= -D'HOSTTYPE`'ifdef(`CPP_FIX',` CPP_FIX')`'ifelse(
+ HOSTTYPE,`IBMR2',` -D_AIX')`
+-CFLAGS=	${DEBUG} ${CDEFS} ${INCLUDE}
++CFLAGS+=	${DEBUG} ${CDEFS} ${INCLUDE}
+ INSTALL= install
+ 
+ HDR=	main.h mkcmd.h check.h emit.h key.h list.h parser.h stracc.h option.h \

@@ -5,7 +5,7 @@
  
  #if !defined(DEFDIR)
 -#define DEFDIR	"/usr/local/lib/mkcmd:/usr/local/lib/mkcmd/type"
-+#define DEFDIR	"/usr/local/share/mkcmd:/usr/local/share/mkcmd/type"
++#define DEFDIR	"%%PREFIX%%/share/mkcmd:%%PREFIX%%/share/mkcmd/type"
  #endif
  
  #if !defined(TILDEDIR)
