@@ -1,6 +1,6 @@
-lib/perl5/man/man3/./Date::Format.3.gz
-lib/perl5/man/man3/./Date::Parse.3.gz
-lib/perl5/man/man3/./Time::Zone.3.gz
+lib/perl5/man/man3/Date::Format.3.gz
+lib/perl5/man/man3/Date::Parse.3.gz
+lib/perl5/man/man3/Time::Zone.3.gz
 lib/perl5/site_perl/Date/Format.pm
 lib/perl5/site_perl/Date/Language.pm
 lib/perl5/site_perl/Date/Parse.pm
