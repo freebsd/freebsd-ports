@@ -20,6 +20,7 @@
     SUBDIR += bbjd
     SUBDIR += bestfit
     SUBDIR += biblereader
+    SUBDIR += bibletime-doc
     SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
