@@ -100,6 +100,7 @@
     SUBDIR += memtest
     SUBDIR += mgeupsd
     SUBDIR += mixer
+    SUBDIR += mkfile
     SUBDIR += mkisofs
     SUBDIR += mksunbootcd
     SUBDIR += monitord

@@ -1,0 +1,14 @@
+$FreeBSD$
+
+--- Makefile.dist	Fri Nov 16 14:50:21 2001
++++ Makefile	Fri Nov 16 14:54:44 2001
+@@ -1,7 +1,8 @@
+ #
+ #	@(#)Makefile	1.1 (HATANOU Tomomi) 2001/06/22
+ #
+-BINDIR?=	/usr/sbin
++BINDIR=		${PREFIX}/sbin
++MANDIR=		${PREFIX}/man/man
+ PROG=		mkfile
+ MAN8=		mkfile.8
+ 
