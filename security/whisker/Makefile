@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	whisker
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kris@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/v1.3
+WRKSRC=		${WRKDIR}/v${PORTVERSION}
 
 do-build:
 		(cd ${WRKSRC}; ${SED} "s%y0y0y0%${PREFIX}%g" whisker.pl > whisker)
