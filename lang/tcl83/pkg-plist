@@ -10,6 +10,7 @@ include/tcl8.1/generic/tclInt.h
 include/tcl8.1/generic/tclMath.h
 include/tcl8.1/generic/tclPort.h
 include/tcl8.1/generic/tclRegexp.h
+include/tcl8.1/tcl.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81.a
 lib/libtcl81.so.1
