@@ -25,6 +25,7 @@ share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/pluck.ny
 share/audacity/plug-ins/tremolo.ny
+share/audacity/audacity-1.2-help.htb
 share/locale/bg/LC_MESSAGES/audacity.mo
 share/locale/ca/LC_MESSAGES/audacity.mo
 share/locale/cs/LC_MESSAGES/audacity.mo
@@ -44,10 +45,11 @@ share/locale/pt/LC_MESSAGES/audacity.mo
 share/locale/ru/LC_MESSAGES/audacity.mo
 share/locale/sl/LC_MESSAGES/audacity.mo
 share/locale/sv/LC_MESSAGES/audacity.mo
+share/locale/uk/LC_MESSAGES/audacity.mo
+share/locale/zh/LC_MESSAGES/audacity.mo
 @dirrm share/audacity/plug-ins
 @dirrm share/audacity/nyquist
 @dirrm share/audacity
-%%PORTDOCS%%%%DOCSDIR%%/audacity-1.2-help.htb
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
