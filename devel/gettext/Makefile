@@ -4,6 +4,14 @@
 #
 # $FreeBSD$
 #
+# There are several knobs which are used to define additions to the core
+# gettext functionality.
+#
+# If you want to install the gettext examples define:
+#  WITH_EXAMPLES
+#
+# If you want to install the gettext man pages in html format define:
+#  WITH_HTMLMAN
 
 PORTNAME=	gettext
 PORTVERSION=	0.13.1
@@ -31,8 +39,6 @@ CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
 		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
-OPTIONS=	EXAMPLES "install example files" off \
-		HTMLMAN "install man pages in HTML format" off
 PLIST=		${WRKDIR}/plist
 PLISTU=		${WRKDIR}/plist-unsorted
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
