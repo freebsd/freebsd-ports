@@ -11,7 +11,7 @@ CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell

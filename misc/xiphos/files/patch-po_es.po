@@ -1,7 +1,7 @@
 --- po/es.po.orig	Tue May  7 06:01:07 2002
 +++ po/es.po	Sun May  4 11:13:14 2003
 @@ -454,11 +454,6 @@
- msgstr "_Marcas R__idas/Borrar Marcas R__idas"
+ msgstr "_Marcas Rápidas/Borrar Marcas Rápidas"
  
  # src/gs_gui.c
 -# src/gs_html_editor.c
@@ -29,18 +29,18 @@
  # src/gs_html_editor.c
 -# src/gs_html_editor.c
 -msgid "``%s'' has been modified.  Do you wish to save it?"
--msgstr "``%s'' ha sido modificado.  __Desea guardarlo?"
+-msgstr "``%s'' ha sido modificado.  ¿Desea guardarlo?"
 -
 -# src/gs_html_editor.c
  msgid "-untitled-"
- msgstr "-sin t__ulo-"
+ msgstr "-sin título-"
  
 @@ -947,18 +933,6 @@
- msgstr "No, utilizar las opciones guardadas en la sesi__ anterior de GnomeSword"
+ msgstr "No, utilizar las opciones guardadas en la sesión anterior de GnomeSword"
  
  # src/gs_preferences_dlg.c
 -msgid "Show Bible Texts notebook tabs"
--msgstr "Mostrar las lenguetas de los Textos B__licos"
+-msgstr "Mostrar las lenguetas de los Textos Bíblicos"
 -
 -# src/gs_preferences_dlg.c
 -msgid "Show Commentary notebook tabs"
@@ -48,7 +48,7 @@
 -
 -# src/gs_preferences_dlg.c
 -msgid "Show Dict/Lex notebook tabs"
--msgstr "Mostrar las lenguetas de los Diccionarios/L__ica"
+-msgstr "Mostrar las lenguetas de los Diccionarios/Léxica"
 -
 -# src/gs_preferences_dlg.c
  # src/gs_setup.c
