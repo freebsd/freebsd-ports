@@ -7,7 +7,7 @@
 
 PORTNAME=	wmqmon
 PORTVERSION=	0.7
-CATEGORIES=	net windowmaker
+CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://www.gibfest.org/~w1nter/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
