@@ -1,16 +1,15 @@
-share/games/tuxkart/wavs/barf.wav
-share/games/tuxkart/wavs/boing.wav
-share/games/tuxkart/wavs/bonk.wav
-share/games/tuxkart/wavs/burp.wav
-share/games/tuxkart/wavs/bzzt.wav
-share/games/tuxkart/wavs/explosion.wav
-share/games/tuxkart/wavs/horn.wav
-share/games/tuxkart/wavs/laser.wav
-share/games/tuxkart/wavs/loser.wav
-share/games/tuxkart/wavs/ow.wav
-share/games/tuxkart/wavs/shoomf.wav
-share/games/tuxkart/wavs/ugh.wav
-share/games/tuxkart/wavs/wee.wav
+bin/tuxkart
+share/games/tuxkart/data/levels.dat
+share/games/tuxkart/data/bsodcastle.loc
+share/games/tuxkart/data/geekopeak.loc
+share/games/tuxkart/data/gownsbow.loc
+share/games/tuxkart/data/tuxtrack.loc
+share/games/tuxkart/data/bsodcastle.drv
+share/games/tuxkart/data/geekopeak.drv
+share/games/tuxkart/data/gownsbow.drv
+share/games/tuxkart/data/tuxtrack.drv
+share/games/tuxkart/fonts/haeberli.txf
+share/games/tuxkart/fonts/sorority.txf
 share/games/tuxkart/images/Gown_beak.rgb
 share/games/tuxkart/images/Gown_body.rgb
 share/games/tuxkart/images/Penguin_beak.rgb
@@ -105,23 +104,25 @@ share/games/tuxkart/models/tuxkart_logo.ac
 share/games/tuxkart/models/tuxsign.ac
 share/games/tuxkart/models/vasign.ac
 share/games/tuxkart/models/zipper.ac
-share/games/tuxkart/data/levels.dat
-share/games/tuxkart/data/bsodcastle.loc
-share/games/tuxkart/data/geekopeak.loc
-share/games/tuxkart/data/gownsbow.loc
-share/games/tuxkart/data/tuxtrack.loc
-share/games/tuxkart/data/bsodcastle.drv
-share/games/tuxkart/data/geekopeak.drv
-share/games/tuxkart/data/gownsbow.drv
-share/games/tuxkart/data/tuxtrack.drv
 share/games/tuxkart/mods/mfarmer.mod
-share/games/tuxkart/fonts/haeberli.txf
-share/games/tuxkart/fonts/sorority.txf
-bin/tuxkart
-@dirrm share/games/tuxkart/mods
-@dirrm share/games/tuxkart/data
-@dirrm share/games/tuxkart/models
+share/games/tuxkart/wavs/barf.wav
+share/games/tuxkart/wavs/boing.wav
+share/games/tuxkart/wavs/bonk.wav
+share/games/tuxkart/wavs/burp.wav
+share/games/tuxkart/wavs/bzzt.wav
+share/games/tuxkart/wavs/explosion.wav
+share/games/tuxkart/wavs/horn.wav
+share/games/tuxkart/wavs/laser.wav
+share/games/tuxkart/wavs/loser.wav
+share/games/tuxkart/wavs/ow.wav
+share/games/tuxkart/wavs/shoomf.wav
+share/games/tuxkart/wavs/ugh.wav
+share/games/tuxkart/wavs/wee.wav
 @dirrm share/games/tuxkart/wavs
+@dirrm share/games/tuxkart/mods
+@dirrm share/games/tuxkart/models
 @dirrm share/games/tuxkart/images
 @dirrm share/games/tuxkart/fonts
+@dirrm share/games/tuxkart/data
 @dirrm share/games/tuxkart
+@unexec rmdir %D/share/games 2>/dev/null || true
