@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gai
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gnomeprefix gdkpixbuf gtk20 pango gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 
-PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.2 lib/libgai.so.0 \
+PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.3 lib/libgai.so.0 \
 		lib/libgai.so libdata/pkgconfig/gai.pc
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
@@ -37,17 +37,17 @@ CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|lib/pkgconfig/|libdata/pkgconfig/|" ${WRKSRC}/gai/Makefile.in
-	${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|g" ${WRKSRC}/gai/Makefile.in
+	@${REINPLACE_CMD} -e "s|lib/pkgconfig|libdata/pkgconfig|g" \
+		-e "s|-O2|${CFLAGS}|g" ${WRKSRC}/gai/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in FAQ.html referenceguide.html
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
-	@${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/${file}" >> ${TMPPLIST}
-.endfor
-	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+	@${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+	@${FIND} ${DOCSDIR} -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
+		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 	@${MKDIR} ${EXAMPLESDIR}
 .for dir in docking examples templates
 	${CP} -R ${WRKSRC}/${dir} ${EXAMPLESDIR}
