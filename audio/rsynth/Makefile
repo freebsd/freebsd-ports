@@ -18,6 +18,8 @@ RUN_DEPENDS=	auvoxware:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	YES
 
+BROKEN=		"PLIST is incorrect"
+
 pre-configure:
 	@${CP} ${FILESDIR}/freebsdplay.c ${WRKSRC}/config/freebsdplay.c
 	@${CP} ${FILESDIR}/config.guess ${WRKSRC}/config.guess
