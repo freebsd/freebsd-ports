@@ -1,0 +1,11 @@
+NTLM is an authentication protocol used by Microsoft Internet
+Informations Server(tm) and Microsoft Internet Explorer(tm).  While it
+is not really secure, it offers background authentication (the
+workstation logon credentials of users are passed through to the web
+server).  This feature is widely used in intranets based on these
+Microsoft products.
+
+This module is implementing NTLM authentication for Apache on Unix
+platforms.
+
+WWW: http://modntlm.sourceforge.net/

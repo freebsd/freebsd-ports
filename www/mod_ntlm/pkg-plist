@@ -1,0 +1,5 @@
+libexec/apache/mod_ntlm.so
+@exec %D/sbin/apxs -e -A -n ntlm %D/%f
+@unexec %D/sbin/apxs -e -A -n ntlm %D/%F
+%%PORTDOCS%%%%DOCSDIR%%/mod_ntlm.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
