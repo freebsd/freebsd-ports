@@ -52,8 +52,8 @@ PCXXDEFS = $(XF86VIDMODE_DEF)
 #
 PCOPTS   = -Wall -W -ansi $(ACOPTS)
 PCXXOPTS = -Wall -W -fno-exceptions -fno-rtti $(ACXXOPTS)
-COPT     = -DNDEBUG ${PORTCFLAGS}
-CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer \
+COPT     = -DNDEBUG ${PORTCFLAGS} -DUSBJOYSTICK
+CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -DUSBJOYSTICK -ffast-math -fomit-frame-pointer \
 	-fnonnull-objects -fexpensive-optimizations
 CDEBUG   = -DDEBUG -g
 CXXDEBUG = -DDEBUG -g
@@ -98,6 +98,7 @@ NETWORK_LIBS =				\
 	$(NULL)
 
 WINDOW_LIBS =				\
+	-lusb				\
 	-lXext				\
 	-lX11				\
 	$(NULL)
