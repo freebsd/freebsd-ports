@@ -399,6 +399,7 @@
     SUBDIR += tidy
     SUBDIR += tinyproxy
     SUBDIR += transproxy
+    SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += udmsearch
     SUBDIR += ump
