@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9168253c-5a6d-11d9-a9e7-0001020eed82">
+    <topic>a2ps -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>a2ps-a4</name>
+	<name>a2ps-letter</name>
+	<name>a2ps-letterdj</name>
+	<range><lt>4.13b_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Security Advisory reports that Javier
+	  Fern&#225;ndez-Sanguino Pe&#241;a has found temporary file
+	  creation vulnerabilities in the fixps and psmandup scripts
+	  which are part of a2ps.  These vulnerabilities could lead to
+	  an attacker overwriting arbitrary files with the credentials
+	  of the user running the vulnerable scripts.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/13641/</url>
+    </references>
+    <dates>
+      <discovery>2004-12-27</discovery>
+      <entry>2004-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64c8cc2a-59b1-11d9-8a99-000c6e8f12ef">
     <topic>libxine -- buffer-overflow vulnerability in aiff support</topic>
     <affects>
