@@ -7539,6 +7539,7 @@ seaview		ports/biology/seaview
 sec		ports/sysutils/sec		
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
+sectok		ports/security/sectok
 sed_inplace	ports/textproc/sed_inplace
 sedsed		ports/devel/sedsed
 seejpeg		ports/graphics/seejpeg
