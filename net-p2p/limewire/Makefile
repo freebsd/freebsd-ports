@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	3.8.7
+PORTVERSION=	4.0.6
 CATEGORIES=	net java
-MASTER_SITES=	http://www3.limewire.com/download/
+MASTER_SITES=	http://www9.limewire.com:82/download/
 DISTNAME=	LimeWireLinux
 EXTRACT_SUFX=	.tgz
 
