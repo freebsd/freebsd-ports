@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	kopete
-PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	stefan.jahn@nemesis-sektor.de
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE instant messaging system (ICQ, AIM, MSN, Jabber, Yahoo, IRC)
 
 CONFLICTS=	kdenetwork-3.[2-].*
