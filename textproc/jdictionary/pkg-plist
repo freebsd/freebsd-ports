@@ -1,0 +1,3 @@
+bin/jdictionary
+share/java/classes/jdictionary/jdictionary.jar
+@dirrm share/java/classes/jdictionary

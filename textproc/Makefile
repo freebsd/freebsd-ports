@@ -86,6 +86,7 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += java2html
+    SUBDIR += jdictionary
     SUBDIR += jing
     SUBDIR += jrefentry
     SUBDIR += kbedic
