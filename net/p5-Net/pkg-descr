@@ -1,0 +1,87 @@
+Contents of perl5 Net class:
+
+Net::FTP - FTP Client class
+
+       Net::FTP is a class implementing a simple FTP client in
+       Perl as described in RFC959
+
+       Net::FTP provides methods that will perform various
+       operations. These methods could be split into groups
+       depending the level of interface the user requires.      
+
+
+Net::Time - time and daytime network client interface
+
+       Net::Time provides subroutines that obtain the time on a
+       remote machine.
+
+
+Net::DummyInetd - A dummy Inetd server
+
+       Net::DummyInetd is just what it's name says, it is a dummy
+       inetd server.  Creation of a Net::DummyInetd will cause a
+       child process to be spawned off which will listen to a
+       socket. When a connection arrives on this socket the
+       specified command is fork'd and exec'd with STDIN and
+       STDOUT file descriptors duplicated to the new socket.   
+
+
+Net::NNTP - NNTP Client class
+
+       Net::NNTP is a class implementing a simple NNTP client in
+       Perl as described in RFC977. Net::NNTP inherits its
+       communication methods from Net::Cmd   
+
+
+Net::SNPP - Simple Network Pager Protocol Client
+
+       This module implements a client interface to the SNPP
+       protocol, enabling a perl5 application to talk to SNPP
+       servers. This documentation assumes that you are familiar
+       with the SNPP protocol described in RFC1861.        
+
+
+Net::POP3 - Post Office Protocol 3 Client class (RFC1081)
+
+      This module implements a client interface to the POP3
+       protocol, enabling a perl5 application to talk to POP3
+       servers. This documentation assumes that you are familiar
+       with the POP3 protocol described in RFC1081.       
+
+
+Net::Cmd - Network Command class (as used by FTP, SMTP etc)   
+
+       Net::Cmd is a collection of methods that can be inherited
+       by a sub class of IO::Handle. These methods implement the
+       functionality required for a command based protocol, for
+       example FTP and SMTP.       
+
+Net::SMTP - Simple Mail transfer Protocol Client
+
+       This module implements a client interface to the SMTP
+       protocol, enabling a perl5 application to talk to SMTP
+       servers. This documentation assumes that you are familiar
+       with the SMTP protocol described in RFC821.    
+
+
+Net::Domain - Attempt to evaluate the current host's internet name and domain
+
+       Using various methods attempt to find the Fully Qualified
+       Domain Name (FQDN) of the current host. From this
+       determine the host-name and the host-domain. 
+
+
+Net::Netrc - OO interface to users netrc file
+
+      Net::Netrc is a class implementing a simple interface to
+      the .netrc file used as by the ftp program.      
+
+
+Net::Telnet - Defines constants for the telnet protocol
+
+       This module is VERY preliminary as I am not 100% sure how
+       it should be implemented.
+
+       Currently it just exports constants used in the telnet
+       protocol.                                  
+
