@@ -1,0 +1,8 @@
+bin/tcpservertest
+bin/tcptest
+include/libsocketcpp/tcpsocket.h
+lib/libsocketcpp.a
+lib/libsocketcpp.la
+lib/libsocketcpp.so
+lib/libsocketcpp.so.0
+@dirrm include/libsocketcpp
