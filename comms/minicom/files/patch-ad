@@ -1,0 +1,21 @@
+--- rwconf.c.orig	Sun Apr 28 07:22:28 1996
++++ rwconf.c	Sun Nov 24 00:41:47 1996
+@@ -70,12 +70,12 @@
+   { "/usr/bin/kermit -i -l %l -r", PUBLIC, "pprog8" },
+ #else
+   /* Most sites have this in /usr/local, except Linux. */
+-  { "/usr/local/bin/sz -vv",	PUBLIC,   "pprog1" },
+-  { "/usr/local/bin/sb -vv",	PUBLIC,   "pprog2" },
+-  { "/usr/local/bin/sx -vv",	PUBLIC,   "pprog3" },
+-  { "/usr/local/bin/rz -vv",	PUBLIC,   "pprog4" },
+-  { "/usr/local/bin/rb -vv",	PUBLIC,   "pprog5" },
+-  { "/usr/local/bin/rx -vv",	PUBLIC,   "pprog6" },
++  { "/usr/local/bin/lsz -vv",	PUBLIC,   "pprog1" },
++  { "/usr/local/bin/lsb -vv",	PUBLIC,   "pprog2" },
++  { "/usr/local/bin/lsx -vv",	PUBLIC,   "pprog3" },
++  { "/usr/local/bin/lrz -vv",	PUBLIC,   "pprog4" },
++  { "/usr/local/bin/lrb -vv",	PUBLIC,   "pprog5" },
++  { "/usr/local/bin/lrx -vv",	PUBLIC,   "pprog6" },
+   { "/usr/local/bin/kermit -i -l %l -s", PUBLIC, "pprog7" },
+   { "/usr/local/bin/kermit -i -l %l -r", PUBLIC, "pprog8" },
+ #endif

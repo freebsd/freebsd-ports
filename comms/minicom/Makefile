@@ -1,9 +1,10 @@
+# ex:ts=8
 # New ports collection makefile for:    minicom
 # Version required:     1.74
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.5 1996/11/17 03:01:06 obrien Exp $
+# $Id: Makefile,v 1.6 1996/11/18 10:35:07 asami Exp $
 #
 
 DISTNAME=	minicom-1.75
@@ -13,8 +14,8 @@ MASTER_SITE_SUBDIR=	apps/comm
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
-RUN_DEPENDS=	rz:${PORTSDIR}/comms/rzsz \
-		sz:${PORTSDIR}/comms/rzsz \
+RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
+		lsz:${PORTSDIR}/comms/lrzsz \
 		kermit:${PORTSDIR}/comms/kermit
 
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
