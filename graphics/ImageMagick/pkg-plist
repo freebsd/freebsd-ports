@@ -19,22 +19,11 @@ include/magick/monitor.h
 include/magick/plug-ins.h
 include/magick/utility.h
 include/magick/widget.h
+include/magick/memory.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.7
+lib/libMagick.so.4.8
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
-man/man1/ImageMagick.1.gz
-man/man1/animate.1.gz
-man/man1/combine.1.gz
-man/man1/convert.1.gz
-man/man1/display.1.gz
-man/man1/identify.1.gz
-man/man1/import.1.gz
-man/man1/mogrify.1.gz
-man/man1/montage.1.gz
-man/man1/xtp.1.gz
-man/man4/miff.4.gz
-man/man5/quantize.5.gz
 @dirrm include/magick
