@@ -74,15 +74,41 @@ for v in 42 80 81 82 42jp 80jp; do
   fi
 done
 if [ X$tkversion != X ]; then
-  echo "Using tk-$tkLversion"
-  echo "#define HasTk			YES" >>$F
-  echo "#define TkLibDir		/usr/local/lib" >>$F
-  echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
-  echo "#define TkLibName		tk$tkversion" >>$F
-  echo "#define HasTcl			YES" >>$F
-  echo "#define TclLibDir		/usr/local/lib" >>$F
-  echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
-  echo "#define TclLibName		tcl$tclversion" >>$F
+  case $tkversion in
+  *jp)
+    echo "Using Japanized tk-$jptkLversion"
+    if [ X"${MACHINE}" = X"pc98" ]; then
+	echo "#define HasJpTk			YES" >>$F
+	echo "#define JpTkLibDir		/usr/local/lib" >>$F
+	echo "#define JpTkIncDir		/usr/local/include/tk$tkLversion" >>$F
+	echo "#define JpTkLibName		tk$tkversion" >>$F
+	echo "#define HasJpTcl		YES" >>$F
+	echo "#define JpTclLibDir		/usr/local/lib" >>$F
+	echo "#define JpTclIncDir		/usr/local/include/tcl$tclLversion" >>$F
+	echo "#define JpTclLibName		tcl$tclversion" >>$F
+    else
+	echo "#define HasTk			YES" >>$F
+	echo "#define TkLibDir		/usr/local/lib" >>$F
+	echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
+	echo "#define TkLibName		tk$tkversion" >>$F
+	echo "#define HasTcl			YES" >>$F
+	echo "#define TclLibDir		/usr/local/lib" >>$F
+	echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
+	echo "#define TclLibName		tcl$tclversion" >>$F
+    fi
+    ;;
+  *)
+    echo "Using tk-$tkLversion"
+    echo "#define HasTk			YES" >>$F
+    echo "#define TkLibDir		/usr/local/lib" >>$F
+    echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
+    echo "#define TkLibName		tk$tkversion" >>$F
+    echo "#define HasTcl			YES" >>$F
+    echo "#define TclLibDir		/usr/local/lib" >>$F
+    echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
+    echo "#define TclLibName		tcl$tclversion" >>$F
+    ;;
+  esac
 else
 cat <<EOF
 *** I don't see the static library for tk version $tkversion in /usr/local/lib.
