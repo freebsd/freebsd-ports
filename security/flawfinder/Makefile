@@ -8,7 +8,7 @@
 
 PORTNAME=	flawfinder
 PORTVERSION=	0.15
-CATEGORIES=	devel
+CATEGORIES=	security devel
 MASTER_SITES=	http://www.dwheeler.com/flawfinder/
 
 MAINTAINER=	ports@FreeBSD.org
