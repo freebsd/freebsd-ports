@@ -1,7 +1,11 @@
-Digikam is a KDE application which acts as a frontend to gphoto2 for
-communicating with your digital camera. It can preview and download images
-via a convenient GUI. It is also able to autodetect the camera connected
-to your computer.
+Digikam is a simple digital photo management application, which makes 
+importing and organizing digital photos a "snap". The photos can be organized 
+in albums which are automatically sorted chronologically. An easy to use 
+interface is provided to connect to your camera and preview images and download
+and/or delete them.
+
+Digikam also includes a very flexible plugin architecture. Install the 
+graphics/digikamplugins port to extend Digikam's features.
 
 WWW: http://digikam.sourceforge.net/
 
