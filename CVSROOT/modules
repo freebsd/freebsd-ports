@@ -5193,7 +5193,6 @@ mknmz-wwwoffle	ports/www/mknmz-wwwoffle
 mkptools	ports/Tools/scripts/mkptools
 mksunbootcd	ports/sysutils/mksunbootcd
 mktool		ports/sysutils/mktool
-mkultra		ports/x11-themes/mkultra
 mkvtoolnix	ports/multimedia/mkvtoolnix
 mkxvcd		ports/multimedia/mkxvcd
 ml		ports/mail/ml
@@ -5339,7 +5338,6 @@ moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 moleskine	ports/editors/moleskine
 momspider	ports/www/momspider
-moneydance	ports/finance/moneydance
 monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
