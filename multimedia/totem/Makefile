@@ -7,7 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	0.95.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.95
@@ -16,13 +16,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A Xine-based video player for the Gnome 2 Desktop
 
-LIB_DEPENDS=	xine.5:${PORTSDIR}/multimedia/libxine \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	xine.6:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
