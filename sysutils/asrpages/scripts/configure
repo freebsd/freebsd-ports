@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cp ${WRKSRC}/lart.1m ${WRKSRC}/lart.8
