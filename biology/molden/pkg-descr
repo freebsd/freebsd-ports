@@ -6,14 +6,12 @@ Everything what you want about MO calculation can be seen.
 
 WWW: http://www.cmbi.kun.nl/~schaft/molden/molden.html
 
-You must set the environmental variable ether ORIGINALBINARY=yes or 
-MYBINARY=yes. The latter will be used for building up your own binary, 
-which is specially customized.
-web site, shown above.
-
-Acknowledgement:  Porting to 4.0-CURRENT (__FreeBSD_version == 400005) 
-and later versions have been assisted greatly by Glenn Johnson 
-<gjohnson@nola.srrc.usda.gov>, thanks a lot !
+By the distribution policy of the author;
+ * Only the latest version is supplied.
+ * Users must get the `distfiles' from the original site.
+ * Do not re-distribute the source and the executable.
+ * Using a not-so-latest version is prohibited, because 
+   the author may only respond about the latest version.
 
 --
 rmiya
