@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Dec  7 20:44:33 2000
-+++ configure.in	Wed Jan  3 20:16:19 2001
+--- configure.in.orig	Tue Mar 27 18:23:16 2001
++++ configure.in	Wed Mar 28 09:23:20 2001
 @@ -15,7 +15,7 @@
  dnl Target installation directory for documentation
  
@@ -9,23 +9,14 @@
  
  dnl Checks for programs.
  
-@@ -26,10 +26,6 @@
+@@ -25,10 +25,6 @@
+ AC_PROG_YACC
  AC_PROG_LEX
  AC_PATH_PROG(PERL, perl)
- 
+-
 -AC_CHECK_FILE(/sbin/start-stop-daemon, , 
 -		STARTSTOPDAEMONSRC="utils/start-stop-daemon.c")
 -AC_SUBST(STARTSTOPDAEMONSRC)
--
+ 
  dnl Checks for libraries.
  
- AC_CHECK_LIB(m, log)
-@@ -41,7 +37,7 @@
- fi
- 
- AC_CHECK_LIB(z, gzopen)
--AC_PATH_PROG(XML_CONFIG, xml-config, no)
-+AC_PATH_PROG(XML_CONFIG, xml2-config, no)
- if test "$XML_CONFIG" = "no"; then
- 	echo "You MUST have the gnome-xml library installed"; exit 1
- else
