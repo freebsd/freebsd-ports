@@ -2,21 +2,160 @@ bin/ml-burg
 bin/ml-lex
 bin/ml-yacc
 bin/sml
-bin/sml-cm
 lib/sml-nj/bin/.heap/sml.x86-bsd
-lib/sml-nj/bin/.heap/sml-cm.x86-bsd
 lib/sml-nj/bin/.heap/ml-yacc.x86-bsd
 lib/sml-nj/bin/.heap/ml-lex.x86-bsd
 lib/sml-nj/bin/.heap/ml-burg.x86-bsd
 lib/sml-nj/bin/.run/run.x86-freebsd
 lib/sml-nj/bin/.arch-n-opsys
 lib/sml-nj/bin/.run-sml
-lib/sml-nj/bin/sml
-lib/sml-nj/bin/sml-cm
-lib/sml-nj/bin/ml-yacc
-lib/sml-nj/bin/ml-lex
 lib/sml-nj/bin/ml-burg
-@dirrm lib/sml-nj/bin/.run
+lib/sml-nj/bin/ml-lex
+lib/sml-nj/bin/ml-yacc
+lib/sml-nj/bin/sml
+lib/sml-nj/lib/cml-lib.cm
+lib/sml-nj/lib/cml.cm
+lib/sml-nj/lib/eXene.cm
+lib/sml-nj/lib/html-lib.cm
+lib/sml-nj/lib/ml-yacc-lib.cm
+lib/sml-nj/lib/pp-lib.cm
+lib/sml-nj/lib/reactive-lib.cm
+lib/sml-nj/lib/regexp-lib.cm
+lib/sml-nj/lib/smlnj-lib.cm
+lib/sml-nj/lib/unix-lib.cm
+lib/sml-nj/src/ml-yacc/lib/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/ml-yacc/lib/sources.cm
+lib/sml-nj/src/smlnj-lib/HTML/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/HTML/sources.cm
+lib/sml-nj/src/smlnj-lib/PP/devices/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/PP/devices/sources.cm
+lib/sml-nj/src/smlnj-lib/PP/src/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/PP/src/sources.cm
+lib/sml-nj/src/smlnj-lib/PP/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/PP/sources.cm
+lib/sml-nj/src/smlnj-lib/Reactive/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/Reactive/sources.cm
+lib/sml-nj/src/smlnj-lib/RegExp/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/RegExp/sources.cm
+lib/sml-nj/src/smlnj-lib/Unix/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/Unix/sources.cm
+lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/smlnj-lib/Util/sources.cm
+lib/sml-nj/src/cml/cml-lib/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/cml-lib/CM/x86-unix/trace-cml.cm.stable
+lib/sml-nj/src/cml/cml-lib/sources.cm
+lib/sml-nj/src/cml/cml-lib/trace-cml.cm
+lib/sml-nj/src/cml/src/IO/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/IO/sources.cm
+lib/sml-nj/src/cml/src/OS/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/OS/sources.cm
+lib/sml-nj/src/cml/src/Sockets/CM/x86-unix/layer2.cm.stable
+lib/sml-nj/src/cml/src/Sockets/CM/x86-unix/layer3.cm.stable
+lib/sml-nj/src/cml/src/Sockets/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/Sockets/CM/x86-unix/layer1.cm.stable
+lib/sml-nj/src/cml/src/Sockets/layer1.cm
+lib/sml-nj/src/cml/src/Sockets/layer2.cm
+lib/sml-nj/src/cml/src/Sockets/layer3.cm
+lib/sml-nj/src/cml/src/Sockets/sources.cm
+lib/sml-nj/src/cml/src/Unix/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/Unix/CM/x86-unix/os.cm.stable
+lib/sml-nj/src/cml/src/Unix/os.cm
+lib/sml-nj/src/cml/src/Unix/sources.cm
+lib/sml-nj/src/cml/src/core-cml/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/core-cml/sources.cm
+lib/sml-nj/src/cml/src/glue/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/glue/sources.cm
+lib/sml-nj/src/cml/src/util/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/util/sources.cm
+lib/sml-nj/src/cml/src/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/cml/src/sources.cm
+lib/sml-nj/src/eXene/graph-util/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/eXene/graph-util/sources.cm
+lib/sml-nj/src/eXene/lib/CM/x86-unix/base.cm.stable
+lib/sml-nj/src/eXene/lib/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/eXene/lib/base.cm
+lib/sml-nj/src/eXene/lib/sources.cm
+lib/sml-nj/src/eXene/styles/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/eXene/styles/sources.cm
+lib/sml-nj/src/eXene/widgets/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/eXene/widgets/sources.cm
+lib/sml-nj/src/eXene/CM/x86-unix/sources.cm.stable
+lib/sml-nj/src/eXene/sources.cm
 @dirrm lib/sml-nj/bin/.heap
+@dirrm lib/sml-nj/bin/.run
 @dirrm lib/sml-nj/bin
+@dirrm lib/sml-nj/lib
+@dirrm lib/sml-nj/src/ml-yacc/lib/CM/x86-unix
+@dirrm lib/sml-nj/src/ml-yacc/lib/CM
+@dirrm lib/sml-nj/src/ml-yacc/lib
+@dirrm lib/sml-nj/src/ml-yacc
+@dirrm lib/sml-nj/src/smlnj-lib/HTML/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/HTML/CM
+@dirrm lib/sml-nj/src/smlnj-lib/HTML
+@dirrm lib/sml-nj/src/smlnj-lib/PP/devices/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/PP/devices/CM
+@dirrm lib/sml-nj/src/smlnj-lib/PP/devices
+@dirrm lib/sml-nj/src/smlnj-lib/PP/src/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/PP/src/CM
+@dirrm lib/sml-nj/src/smlnj-lib/PP/src
+@dirrm lib/sml-nj/src/smlnj-lib/PP/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/PP/CM
+@dirrm lib/sml-nj/src/smlnj-lib/PP
+@dirrm lib/sml-nj/src/smlnj-lib/Reactive/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/Reactive/CM
+@dirrm lib/sml-nj/src/smlnj-lib/Reactive
+@dirrm lib/sml-nj/src/smlnj-lib/RegExp/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/RegExp/CM
+@dirrm lib/sml-nj/src/smlnj-lib/RegExp
+@dirrm lib/sml-nj/src/smlnj-lib/Unix/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/Unix/CM
+@dirrm lib/sml-nj/src/smlnj-lib/Unix
+@dirrm lib/sml-nj/src/smlnj-lib/Util/CM/x86-unix
+@dirrm lib/sml-nj/src/smlnj-lib/Util/CM
+@dirrm lib/sml-nj/src/smlnj-lib/Util
+@dirrm lib/sml-nj/src/smlnj-lib
+@dirrm lib/sml-nj/src/cml/cml-lib/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/cml-lib/CM
+@dirrm lib/sml-nj/src/cml/cml-lib
+@dirrm lib/sml-nj/src/cml/src/IO/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/IO/CM
+@dirrm lib/sml-nj/src/cml/src/IO
+@dirrm lib/sml-nj/src/cml/src/OS/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/OS/CM
+@dirrm lib/sml-nj/src/cml/src/OS
+@dirrm lib/sml-nj/src/cml/src/Sockets/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/Sockets/CM
+@dirrm lib/sml-nj/src/cml/src/Sockets
+@dirrm lib/sml-nj/src/cml/src/Unix/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/Unix/CM
+@dirrm lib/sml-nj/src/cml/src/Unix
+@dirrm lib/sml-nj/src/cml/src/core-cml/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/core-cml/CM
+@dirrm lib/sml-nj/src/cml/src/core-cml
+@dirrm lib/sml-nj/src/cml/src/glue/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/glue/CM
+@dirrm lib/sml-nj/src/cml/src/glue
+@dirrm lib/sml-nj/src/cml/src/util/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/util/CM
+@dirrm lib/sml-nj/src/cml/src/util
+@dirrm lib/sml-nj/src/cml/src/CM/x86-unix
+@dirrm lib/sml-nj/src/cml/src/CM
+@dirrm lib/sml-nj/src/cml/src
+@dirrm lib/sml-nj/src/cml
+@dirrm lib/sml-nj/src/eXene/graph-util/CM/x86-unix
+@dirrm lib/sml-nj/src/eXene/graph-util/CM
+@dirrm lib/sml-nj/src/eXene/graph-util
+@dirrm lib/sml-nj/src/eXene/lib/CM/x86-unix
+@dirrm lib/sml-nj/src/eXene/lib/CM
+@dirrm lib/sml-nj/src/eXene/lib
+@dirrm lib/sml-nj/src/eXene/styles/CM/x86-unix
+@dirrm lib/sml-nj/src/eXene/styles/CM
+@dirrm lib/sml-nj/src/eXene/styles
+@dirrm lib/sml-nj/src/eXene/widgets/CM/x86-unix
+@dirrm lib/sml-nj/src/eXene/widgets/CM
+@dirrm lib/sml-nj/src/eXene/widgets
+@dirrm lib/sml-nj/src/eXene/CM/x86-unix
+@dirrm lib/sml-nj/src/eXene/CM
+@dirrm lib/sml-nj/src/eXene
+@dirrm lib/sml-nj/src
 @dirrm lib/sml-nj

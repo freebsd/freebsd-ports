@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# usage: get-cm work_dir
+#
+# Find all .cm Group and Library descriptions that are referenced
+# from the top level alias files in $SML_BASE/lib/
+
+# temp file
+tmpfile="${TMP:-/tmp}/chomp$$"
+
+# attempt to change directory to work dir
+cd $1 || exit 1
+work_dir=`pwd`	# get the canonical name for the current directory
+
+trap "rm -f $tmpfile" 0 1 2 3 15
+
+# hack to remove SML comments '(* ... *)' 
+
+strip_comments()
+{
+	# caveat: the following assumes gcc is present ...	
+	gcc -x c -E -P -ansi -DOPSYS_UNIX $1 | awk '{ 
+		line = $0
+		if (match(line, "\\(\\*")) {
+			while (match($0, "\\(\\*")) {
+				if (RSTART > 1) {
+					print substr($0, 0, RSTART-1);
+				}
+				sub("^.*\\(\\*", "");
+				while (!match($0, "\\*\\)")) {
+					getline
+				}
+				$0 = substr($0, RSTART+RLENGTH);
+			}
+		}
+		print
+	}'
+}
+
+# return canonical name for a path with embedded ..'s
+
+canonical()
+{
+	echo $(cd `dirname $1` && pwd)/`basename $1`
+}
+
+# initial list of CM description files
+global_cm_list="$(cat ./lib/*.cm | awk '{ print $2 }')"
+
+set -- $global_cm_list
+
+touch $tmpfile
+
+# process the global list
+while [ $# -ge 1 ]; do
+
+	cm_file="$1"; shift
+	global_cm_list="$*"
+
+	echo $cm_file >> $tmpfile
+
+	cm_dir=`dirname $cm_file`
+	cm_new=$(strip_comments $cm_file | grep '\.cm' | \
+		awk '{ print $1 }')
+
+	# append new CM files to current global list
+	for i in $cm_new; do
+		new_cm_file=$(canonical $cm_dir/$i)
+		if [ -r $new_cm_file ]; then 
+			if ! grep "^$new_cm_file" $tmpfile > /dev/null; then 
+				global_cm_list="$new_cm_file $global_cm_list"
+				echo $new_cm_file >> $tmpfile
+			fi
+		fi
+	done 
+
+	set -- $global_cm_list
+done
+
+# output to stdout
+sort -u < $tmpfile | sed -e "s,^$work_dir/,,"
