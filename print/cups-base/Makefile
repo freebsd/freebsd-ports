@@ -30,6 +30,8 @@ post-patch:
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' \
 		${WRKSRC}/man/*.man
+	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
