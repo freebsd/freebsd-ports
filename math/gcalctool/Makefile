@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.3.50
+PORTVERSION=	4.3.51
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/4.3
@@ -23,6 +23,8 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		gcalctool.1
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \

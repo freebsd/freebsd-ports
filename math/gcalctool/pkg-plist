@@ -1,5 +1,5 @@
-@unexec if test -L %D/bin/gnome-calculator; then rm -f %D/bin/gnome-calculator; fi
 bin/gcalctool
+bin/gnome-calculator
 etc/gconf/gconf.xml.defaults/apps/gcalctool/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
 etc/gconf/schemas/gcalctool.schemas
@@ -10,13 +10,94 @@ share/gnome/help/gcalctool/C/figures/gcalctool_menu_symbol.png
 share/gnome/help/gcalctool/C/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/C/gcalctool.xml
 share/gnome/help/gcalctool/C/legal.xml
+share/gnome/help/gcalctool/de/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/de/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/de/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/de/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/de/gcalctool.xml
+share/gnome/help/gcalctool/de/legal.xml
+share/gnome/help/gcalctool/es/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/es/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/es/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/es/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/es/gcalctool.xml
+share/gnome/help/gcalctool/es/legal.xml
+share/gnome/help/gcalctool/fr/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/fr/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/fr/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/fr/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/fr/gcalctool.xml
+share/gnome/help/gcalctool/fr/legal.xml
+share/gnome/help/gcalctool/it/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/it/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/it/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/it/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/it/gcalctool.xml
+share/gnome/help/gcalctool/it/legal.xml
+share/gnome/help/gcalctool/ja/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/ja/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/ja/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/ja/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/ja/gcalctool.xml
+share/gnome/help/gcalctool/ja/legal.xml
+share/gnome/help/gcalctool/ko/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/ko/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/ko/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/ko/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/ko/gcalctool.xml
+share/gnome/help/gcalctool/ko/legal.xml
+share/gnome/help/gcalctool/sv/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/sv/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/sv/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/sv/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/sv/gcalctool.xml
+share/gnome/help/gcalctool/sv/legal.xml
+share/gnome/help/gcalctool/zh_CN/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/zh_CN/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/zh_CN/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/zh_CN/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/zh_CN/gcalctool.xml
+share/gnome/help/gcalctool/zh_CN/legal.xml
+share/gnome/help/gcalctool/zh_HK/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/zh_HK/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/zh_HK/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/zh_HK/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/zh_HK/gcalctool.xml
+share/gnome/help/gcalctool/zh_HK/legal.xml
+share/gnome/help/gcalctool/zh_TW/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/zh_TW/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/zh_TW/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/zh_TW/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/zh_TW/gcalctool.xml
+share/gnome/help/gcalctool/zh_TW/legal.xml
 share/gnome/omf/gcalctool/gcalctool-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-zh_HK.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_HK.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gcalctool/gcalctool-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gcalctool.png
 share/locale/am/LC_MESSAGES/gcalctool.mo
 share/locale/ar/LC_MESSAGES/gcalctool.mo
 share/locale/az/LC_MESSAGES/gcalctool.mo
 share/locale/be/LC_MESSAGES/gcalctool.mo
+share/locale/bg/LC_MESSAGES/gcalctool.mo
 share/locale/ca/LC_MESSAGES/gcalctool.mo
 share/locale/cs/LC_MESSAGES/gcalctool.mo
 share/locale/cy/LC_MESSAGES/gcalctool.mo
@@ -24,6 +105,7 @@ share/locale/da/LC_MESSAGES/gcalctool.mo
 share/locale/de/LC_MESSAGES/gcalctool.mo
 share/locale/el/LC_MESSAGES/gcalctool.mo
 share/locale/en_CA/LC_MESSAGES/gcalctool.mo
+share/locale/en_GB/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/eu/LC_MESSAGES/gcalctool.mo
 share/locale/fa/LC_MESSAGES/gcalctool.mo
@@ -45,6 +127,7 @@ share/locale/mn/LC_MESSAGES/gcalctool.mo
 share/locale/ms/LC_MESSAGES/gcalctool.mo
 share/locale/nl/LC_MESSAGES/gcalctool.mo
 share/locale/no/LC_MESSAGES/gcalctool.mo
+share/locale/pa/LC_MESSAGES/gcalctool.mo
 share/locale/pl/LC_MESSAGES/gcalctool.mo
 share/locale/pt/LC_MESSAGES/gcalctool.mo
 share/locale/pt_BR/LC_MESSAGES/gcalctool.mo
@@ -63,9 +146,39 @@ share/locale/vi/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/omf/gcalctool
+@dirrm share/gnome/help/gcalctool/zh_TW/figures
+@dirrm share/gnome/help/gcalctool/zh_TW
+@dirrm share/gnome/help/gcalctool/zh_HK/figures
+@dirrm share/gnome/help/gcalctool/zh_HK
+@dirrm share/gnome/help/gcalctool/zh_CN/figures
+@dirrm share/gnome/help/gcalctool/zh_CN
+@dirrm share/gnome/help/gcalctool/sv/figures
+@dirrm share/gnome/help/gcalctool/sv
+@dirrm share/gnome/help/gcalctool/ko/figures
+@dirrm share/gnome/help/gcalctool/ko
+@dirrm share/gnome/help/gcalctool/ja/figures
+@dirrm share/gnome/help/gcalctool/ja
+@dirrm share/gnome/help/gcalctool/it/figures
+@dirrm share/gnome/help/gcalctool/it
+@dirrm share/gnome/help/gcalctool/fr/figures
+@dirrm share/gnome/help/gcalctool/fr
+@dirrm share/gnome/help/gcalctool/es/figures
+@dirrm share/gnome/help/gcalctool/es
+@dirrm share/gnome/help/gcalctool/de/figures
+@dirrm share/gnome/help/gcalctool/de
 @dirrm share/gnome/help/gcalctool/C/figures
 @dirrm share/gnome/help/gcalctool/C
 @dirrm share/gnome/help/gcalctool
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool
 @dirrm etc/gconf/gconf.xml.defaults/apps/gcalctool
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_HK.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_TW.omf 2>/dev/null || /usr/bin/true
