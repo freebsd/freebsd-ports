@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	tclX
-PORTVERSION=	8.3
+PORTVERSION=	8.3.5
 CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
-MASTER_SITES=	ftp://tcl.activestate.com/pub/tcl/tclx/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=tclx
 DISTNAME=	tclx${PORTVERSION}
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
@@ -54,16 +56,10 @@ MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 MANN=	Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n memory.n
 
-#post-build:
-#	cd ${WRKSRC}/../tcl/unix && ${MAKE} buildhelp
-#.ifndef WITHOUT_X11
-#	cd ${WRKSRC}/../tk/unix && ${MAKE} buildhelp
-#.endif
-
-
 .include <bsd.port.pre.mk>
 
 post-install:
+	# Preventing the help files from being rebuilt over and over:
 	${INSTALL_MAN} ${WRKSRC}/../doc/CmdWrite.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/../doc/Handles.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/../doc/Keylist.3 ${PREFIX}/man/man3

@@ -180,6 +180,7 @@ lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/csubstr
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/ctoken
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/ctype
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/format
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/re_syntax
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/regexp
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/regsub
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/replicate

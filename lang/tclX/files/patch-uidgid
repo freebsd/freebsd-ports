@@ -1,0 +1,111 @@
+--- ../tcl/unix/tclXunixId.c	Thu Dec  2 22:02:08 1999
++++ ../tcl/unix/tclXunixId.c	Fri Jan 10 17:36:50 2003
+@@ -41,3 +41,3 @@
+ UseridToUsernameResult _ANSI_ARGS_((Tcl_Interp *interp,
+-                                    int         userId));
++                                    long        userId));
+ 
+@@ -49,3 +49,3 @@
+ GroupidToGroupnameResult _ANSI_ARGS_((Tcl_Interp *interp,
+-                                      int         groupId));
++                                      long        groupId));
+ 
+@@ -149,13 +149,13 @@
+ static int
+ UseridToUsernameResult (interp, userId)
+     Tcl_Interp *interp;
+-    int         userId;
++    long        userId;
+ {
+-    uid_t          uid = (uid_t) userId;
+-    struct passwd *pw = getpwuid (userId);
++    uid_t          uid = (uid_t)userId;
++    struct passwd *pw;
+     Tcl_Obj       *resultObj = Tcl_GetObjResult (interp);
+-    char          userIdString[16];
+ 
+-    if ((pw == NULL) || ((int) uid != userId)) {
+-	sprintf (userIdString, "%d", uid);
++    if ((long)uid != userId || (pw = getpwuid(uid)) == NULL) {
++	char	userIdString[32];
++	sprintf (userIdString, "%ld", userId);
+ 	Tcl_AppendStringsToObj (resultObj, 
+@@ -188,3 +188,3 @@
+     }
+-    Tcl_SetObjResult (interp, Tcl_NewIntObj (pw->pw_uid));
++    Tcl_SetObjResult (interp, Tcl_NewIntObj ((int)pw->pw_uid));
+     endpwent ();
+@@ -194,14 +194,13 @@
+ static int
+ GroupidToGroupnameResult (interp, groupId)
+     Tcl_Interp *interp;
+-    int         groupId;
++    long        groupId;
+ {
+-    gid_t          gid = (gid_t) groupId;
+-    struct group  *grp = getgrgid (groupId);
++    gid_t gid = (gid_t)groupId;
++    struct group  *grp = getgrgid (gid);
+     Tcl_Obj       *resultObj = Tcl_GetObjResult (interp);
+-    char          groupIdString[16];
+-
+-    sprintf (groupIdString, "%d", gid);
+ 
+-    if ((grp == NULL) || ((int) gid != groupId)) {
++    if ((long)gid != groupId || (grp = getgrgid (gid)) == NULL) {
++	char	groupIdString[32];
++	sprintf (groupIdString, "%ld", groupId);
+ 	Tcl_AppendStringsToObj (resultObj, 
+@@ -232,3 +231,3 @@
+     }
+-    Tcl_SetIntObj (resultObj, grp->gr_gid);
++    Tcl_SetLongObj (resultObj, (long)grp->gr_gid);
+     return TCL_OK;
+@@ -297,6 +296,6 @@
+     if (STREQU (subCommand, "user"))
+-        return UseridToUsernameResult (interp, geteuid ());
++        return UseridToUsernameResult (interp, (long)geteuid ());
+     
+     if (STREQU (subCommand, "userid")) {
+-	Tcl_SetObjResult (interp, Tcl_NewIntObj (geteuid ()));
++	Tcl_SetObjResult (interp, Tcl_NewLongObj ((long)geteuid ()));
+         return TCL_OK;
+@@ -305,6 +304,6 @@
+     if (STREQU (subCommand, "group"))
+-        return GroupidToGroupnameResult (interp, getegid ());
++        return GroupidToGroupnameResult (interp, (long)getegid ());
+     
+     if (STREQU (subCommand, "groupid")) {
+-	Tcl_SetObjResult (interp, Tcl_NewIntObj (getegid ()));
++	Tcl_SetObjResult (interp, Tcl_NewLongObj ((long)getegid ()));
+         return TCL_OK;
+@@ -419,3 +418,3 @@
+         if (symbolic) {
+-	    int    groupId = groups [groupIndex];
++	    gid_t groupId = groups [groupIndex];
+             grp = getgrgid (groupId);
+@@ -437,3 +436,3 @@
+         } else {
+-	    newObj = Tcl_NewIntObj(groups[groupIndex]);
++	    newObj = Tcl_NewLongObj((long)groups[groupIndex]);
+             Tcl_ListObjAppendElement (interp, 
+@@ -514,3 +513,3 @@
+     if (objc == 2) {
+-        return UseridToUsernameResult (interp, getuid ());
++        return UseridToUsernameResult (interp, (long)getuid ());
+     }
+@@ -552,3 +551,3 @@
+     if (objc == 2) {
+-	Tcl_SetObjResult (interp, Tcl_NewIntObj (getuid()));
++	Tcl_SetObjResult (interp, Tcl_NewLongObj ((long)getuid()));
+         return TCL_OK;
+@@ -583,3 +582,3 @@
+     if (objc == 2) {
+-        return GroupidToGroupnameResult (interp, getgid ());
++        return GroupidToGroupnameResult (interp, (long)getgid ());
+     }
+@@ -621,3 +620,3 @@
+     if (objc == 2) {
+-	Tcl_SetIntObj (Tcl_GetObjResult (interp), getgid());
++	Tcl_SetObjResult (interp, Tcl_NewLongObj((long)getgid()));
+         return TCL_OK;

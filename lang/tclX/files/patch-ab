@@ -28,9 +28,7 @@
  
  tcl.tlib: ${TLIB_SRCS} autoload.tcl
  	-rm -f tcl.tlib tcl.tndx
-@@ -306,7 +307,7 @@
- buildhelp: tcl tcl.tndx
- 	rm -rf ${HELP_DIR} help help.tmp
+@@ -308,5 +308,5 @@
  	mkdir ${HELP_DIR}
 -	${BLDMANHELP} ${TCL_SRC_DIR}/doc ${TCLX_TOOLS_SRC_DIR}/tclmanpages \
 +	${BLDMANHELP} ${TCLX_TOOLS_SRC_DIR}/tclmanpages \
