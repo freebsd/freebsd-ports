@@ -1,13 +1,13 @@
-lib/X11/fonts/korean/johab/iyagi16.pcf.gz
-lib/X11/fonts/korean/johab/iyagis16.pcf.gz
-lib/X11/fonts/korean/johab/johabg16.pcf.gz
-lib/X11/fonts/korean/johab/johabm16.pcf.gz
-lib/X11/fonts/korean/johab/johabp16.pcf.gz
-lib/X11/fonts/korean/johab/johabshg16.pcf.gz
-lib/X11/fonts/korean/johab/johabshm16.pcf.gz
-lib/X11/fonts/korean/johab/johabshp16.pcf.gz
-lib/X11/fonts/korean/johab/johabsg16.pcf.gz
-lib/X11/fonts/korean/johab/johabsm16.pcf.gz
-lib/X11/fonts/korean/johab/johabsp16.pcf.gz
-lib/X11/fonts/korean/johab/fonts.dir
-@dirrm lib/X11/fonts/korean/johab
+lib/X11/fonts/misc/iyagi16.pcf.gz
+lib/X11/fonts/misc/iyagis16.pcf.gz
+lib/X11/fonts/misc/johabg16.pcf.gz
+lib/X11/fonts/misc/johabm16.pcf.gz
+lib/X11/fonts/misc/johabp16.pcf.gz
+lib/X11/fonts/misc/johabshg16.pcf.gz
+lib/X11/fonts/misc/johabshm16.pcf.gz
+lib/X11/fonts/misc/johabshp16.pcf.gz
+lib/X11/fonts/misc/johabsg16.pcf.gz
+lib/X11/fonts/misc/johabsm16.pcf.gz
+lib/X11/fonts/misc/johabsp16.pcf.gz
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
