@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://home2.highway.ne.jp/mutoh/tools/ruby/
 MASTER_SITE_SUBDIR=	${PORTNAME}
