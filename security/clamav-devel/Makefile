@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040116
+PORTVERSION=	20040120
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -23,6 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
+#OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -67,7 +68,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|'
-
 
 .include <bsd.port.pre.mk>
 
@@ -119,6 +119,10 @@ post-build:
 pre-install:
 	 ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/docs/*pdf ${DOCSDIR}${PKGNAMESUFFIX}
+.endif
 
 post-install:
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
