@@ -9134,6 +9134,7 @@ tinyca		ports/security/tinyca
 tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
 tinyfugue	ports/net/tinyfugue
+tinyldap	ports/net/tinyldap
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
