@@ -22,6 +22,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
+LATEST_LINK=	${PORTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes

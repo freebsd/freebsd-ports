@@ -13,6 +13,7 @@ DISTNAME=	Tripwire-${PORTVERSION}-1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
+LATEST_LINK=	tripwire-131
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
 NO_CDROM=	"cannot be redistributed for more than the cost of duplication"
