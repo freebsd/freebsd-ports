@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.7.34
+PORTVERSION=	1.8.1
 CATEGORIES=	databases
 MASTER_SITES=	http://qdbm.sourceforge.net/ \
 #		${MASTER_SITE_SOURCEFORGE}
@@ -33,5 +33,8 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin
+
+test:
+	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.mk>
