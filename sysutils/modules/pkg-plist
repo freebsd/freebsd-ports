@@ -1,0 +1,25 @@
+Modules/%%MODULES_VERSION%%/bin/add.modules
+Modules/%%MODULES_VERSION%%/bin/mkroot
+Modules/%%MODULES_VERSION%%/bin/modulecmd
+Modules/%%MODULES_VERSION%%/init/.modulespath
+Modules/%%MODULES_VERSION%%/init/bash
+Modules/%%MODULES_VERSION%%/init/csh
+Modules/%%MODULES_VERSION%%/init/ksh
+Modules/%%MODULES_VERSION%%/init/perl
+Modules/%%MODULES_VERSION%%/init/python
+Modules/%%MODULES_VERSION%%/init/sh
+Modules/%%MODULES_VERSION%%/init/tcsh
+Modules/%%MODULES_VERSION%%/init/zsh
+Modules/%%MODULES_VERSION%%/modulefiles/dot
+Modules/%%MODULES_VERSION%%/modulefiles/module-cvs
+Modules/%%MODULES_VERSION%%/modulefiles/module-info
+Modules/%%MODULES_VERSION%%/modulefiles/modules
+Modules/%%MODULES_VERSION%%/modulefiles/null
+Modules/%%MODULES_VERSION%%/modulefiles/use.own
+Modules/versions/%%MODULES_VERSION%%
+@dirrm Modules/versions
+@dirrm Modules/%%MODULES_VERSION%%/modulefiles
+@dirrm Modules/%%MODULES_VERSION%%/init
+@dirrm Modules/%%MODULES_VERSION%%/bin
+@dirrm Modules/%%MODULES_VERSION%%
+@dirrm Modules

@@ -1,0 +1,126 @@
+--- configure.orig	Mon Nov  5 22:50:41 2001
++++ configure	Sun Nov 14 16:18:02 2004
+@@ -4105,7 +4105,7 @@
+ trap 'rm -fr `echo "Makefile modules.lsm .spec doc/Makefile init/Makefile
+ 	init/bash init/csh init/ksh init/perl init/python init/sh init/tcsh
+ 	init/zsh init/.modulespath
+-	doc/module.1 doc/modulefile.4
++	doc/module.1 doc/modulefile.5
+ 	etc/Makefile etc/add.modules etc/mkroot
+ 	etc/skel/.cshrc etc/skel/.login 
+ 	etc/skel/.kshenv etc/skel/.profile 
+@@ -4234,7 +4234,7 @@
+ CONFIG_FILES=\${CONFIG_FILES-"Makefile modules.lsm .spec doc/Makefile init/Makefile
+ 	init/bash init/csh init/ksh init/perl init/python init/sh init/tcsh
+ 	init/zsh init/.modulespath
+-	doc/module.1 doc/modulefile.4
++	doc/module.1 doc/modulefile.5
+ 	etc/Makefile etc/add.modules etc/mkroot
+ 	etc/skel/.cshrc etc/skel/.login 
+ 	etc/skel/.kshenv etc/skel/.profile 
+diff -urN sysutils/modules.orig/files/patch-configure sysutils/modules/files/patch-configure
+--- sysutils/modules.orig/files/patch-configure	Thu Jan  1 01:00:00 1970
++++ sysutils/modules/files/patch-configure	Sun Nov 14 16:18:24 2004
+@@ -0,0 +1,20 @@
++--- configure.orig	Mon Nov  5 22:50:41 2001
+++++ configure	Sun Nov 14 16:18:02 2004
++@@ -4105,7 +4105,7 @@
++ trap 'rm -fr `echo "Makefile modules.lsm .spec doc/Makefile init/Makefile
++ 	init/bash init/csh init/ksh init/perl init/python init/sh init/tcsh
++ 	init/zsh init/.modulespath
++-	doc/module.1 doc/modulefile.4
+++	doc/module.1 doc/modulefile.5
++ 	etc/Makefile etc/add.modules etc/mkroot
++ 	etc/skel/.cshrc etc/skel/.login 
++ 	etc/skel/.kshenv etc/skel/.profile 
++@@ -4234,7 +4234,7 @@
++ CONFIG_FILES=\${CONFIG_FILES-"Makefile modules.lsm .spec doc/Makefile init/Makefile
++ 	init/bash init/csh init/ksh init/perl init/python init/sh init/tcsh
++ 	init/zsh init/.modulespath
++-	doc/module.1 doc/modulefile.4
+++	doc/module.1 doc/modulefile.5
++ 	etc/Makefile etc/add.modules etc/mkroot
++ 	etc/skel/.cshrc etc/skel/.login 
++ 	etc/skel/.kshenv etc/skel/.profile 
+diff -urN sysutils/modules.orig/files/patch-doc::Makefile.in sysutils/modules/files/patch-doc::Makefile.in
+--- sysutils/modules.orig/files/patch-doc::Makefile.in	Thu Jan  1 01:00:00 1970
++++ sysutils/modules/files/patch-doc::Makefile.in	Sun Nov 14 16:05:08 2004
+@@ -0,0 +1,36 @@
++--- ./doc/Makefile.in.orig	Wed Jun 28 02:17:33 2000
+++++ ./doc/Makefile.in	Sun Nov 14 16:04:44 2004
++@@ -26,21 +26,21 @@
++ # Directory in which to install man pages
++ mandir = @mandir@
++ man1dir = $(mandir)/man1
++-man4dir = $(mandir)/man4
+++man5dir = $(mandir)/man5
++ 
++ SHELL = /bin/sh
++ 
++ #### End of system configuration section. ####
++ 
++-MAN_FILES= module.1 modulefile.4
+++MAN_FILES= module.1 modulefile.5
++ 
++-MAKEDIRS=  $(man1dir) $(man4dir)
+++MAKEDIRS=  $(man1dir) $(man5dir)
++ 
++ all:
++ 
++ install: all install-dirs
++ 	$(INSTALL_DATA) module.1     $(man1dir)
++-	$(INSTALL_DATA) modulefile.4 $(man4dir)
+++	$(INSTALL_DATA) modulefile.5 $(man5dir)
++ 
++ install-dirs:
++ 	@for i in $(MAKEDIRS) ; do \
++@@ -63,6 +63,6 @@
++ mostlyclean: clean
++ 
++ distclean:	clean
++-	rm -f module.1 modulefile.4
+++	rm -f module.1 modulefile.5
++ 
++ realclean:	distclean
+diff -urN sysutils/modules.orig/files/patch-doc::module.1.in sysutils/modules/files/patch-doc::module.1.in
+--- sysutils/modules.orig/files/patch-doc::module.1.in	Thu Jan  1 01:00:00 1970
++++ sysutils/modules/files/patch-doc::module.1.in	Sun Nov 14 17:18:21 2004
+@@ -0,0 +1,17 @@
++--- doc/module.1.in.orig	Sat Jun  9 11:48:47 2001
+++++ doc/module.1.in	Sun Nov 14 17:17:58 2004
++@@ -114,7 +114,7 @@
++ .LP
++ Upon invocation \fImodulecmd\fP sources rc files which contain global, user
++ and modulefile specific setups. These files are interpreted as modulefiles.
++-See \fBmodulefile(4)\fP for detailed information.
+++See \fBmodulefile(5)\fP for detailed information.
++ .LP
++ Upon invocation of modulecmd module RC files are sourced in the following
++ order:
++@@ -466,4 +466,4 @@
++ .B module update
++ sub-command.
++ .SH SEE ALSO
++-.BR modulefile(4)
+++.BR modulefile(5)
+diff -urN sysutils/modules.orig/files/patch-doc::modulefile.5.in sysutils/modules/files/patch-doc::modulefile.5.in
+--- sysutils/modules.orig/files/patch-doc::modulefile.5.in	Thu Jan  1 01:00:00 1970
++++ sysutils/modules/files/patch-doc::modulefile.5.in	Sun Nov 14 16:24:03 2004
+@@ -0,0 +1,17 @@
++--- doc/modulefile.5.in.orig	Fri Jan  4 05:59:16 2002
+++++ doc/modulefile.5.in	Sun Nov 14 16:19:28 2004
++@@ -1,4 +1,4 @@
++-.TH MODULEFILE 4 "1 July 1994"
+++.TH MODULEFILE 5 "1 July 1994"
++ .nh
++ .SH NAME
++ modulefile \- files containing Tcl code for The Modules package
++@@ -538,7 +538,7 @@
++ .RE
++ .RS
++ .I a syslog facility
++-- directs logging to the syslog. See \fBsyslog.conf(4)\fP for detailed
+++- directs logging to the syslog. See \fBsyslog.conf(5)\fP for detailed
++ description of the valid syslog facilities.
++ .RE
++ .RS
