@@ -7,6 +7,7 @@
 
 PORTNAME=	gltron
 PORTVERSION=	0.62
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gltron.sourceforge.net/download/
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D worm game for two players for X Window System
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod \
-		SDL_sound-1.0.0:${PORTSDIR}/audio/sdl_sound \
+		SDL_sound-1.0.1:${PORTSDIR}/audio/sdl_sound \
 		SDL_net.0:${PORTSDIR}/net/sdl_net \
 		png.5:${PORTSDIR}/graphics/png
 
