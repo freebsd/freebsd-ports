@@ -8,16 +8,17 @@
 PORTNAME=	irssi
 PORTVERSION=	0.7.98.3
 PORTREVISION=	3
-CATEGORIES=	irc ipv6
+CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org	# `?=' is for slave ports
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-socks --with-bot --without-servertest \
+# `+=' is for slave ports
+CONFIGURE_ARGS+=	--without-socks --with-bot --without-servertest \
 		--enable-perl-path=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 CONFIGURE_ENV= LIBS="-L${LOCALBASE}/lib -lintl"
 
