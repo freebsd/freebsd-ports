@@ -279,7 +279,7 @@ libexec/gimp/1.3/plug-ins/plugindetails
 libexec/gimp/1.3/plug-ins/png
 libexec/gimp/1.3/plug-ins/pnm
 libexec/gimp/1.3/plug-ins/polar
-libexec/gimp/1.3/plug-ins/print
+%%PRINT%%libexec/gimp/1.3/plug-ins/print
 libexec/gimp/1.3/plug-ins/ps
 libexec/gimp/1.3/plug-ins/psd
 libexec/gimp/1.3/plug-ins/psd_save
