@@ -25,4 +25,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gfont.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

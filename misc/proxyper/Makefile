@@ -48,4 +48,4 @@ do-install:
 	${CHMOD} 755 ${BINDIR}
 	${LN} -s ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

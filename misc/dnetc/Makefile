@@ -88,4 +88,4 @@ do-install:
 	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKDIR}/dnetc.ini ${BINDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

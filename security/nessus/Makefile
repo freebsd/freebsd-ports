@@ -47,4 +47,4 @@ post-install:
 		@${ECHO} "The syntax of nessusd.users and nessusd.rules has changed!"
 		@${ECHO} "=========================================================="
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

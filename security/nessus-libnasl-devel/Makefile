@@ -36,4 +36,4 @@ GNU_CONFIGURE=	yes
 BROKEN=		"Can't be built successfully in -CURRENT"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
