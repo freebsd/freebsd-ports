@@ -1,5 +1,5 @@
 --- config/Makefile.SH.orig	Wed Dec 17 07:44:36 2003
-+++ config/Makefile.SH	Sun Jan 11 01:52:40 2004
++++ config/Makefile.SH	Wed Jan 28 23:21:55 2004
 @@ -255,9 +255,12 @@
  INCLUDEDIR= \$(DESTDIR)$includedir
  LIBDIR    = \$(DESTDIR)$libdir
@@ -83,7 +83,8 @@
 +#	   --eval '(setq load-path (append (list ".") load-path))' \
 +#	   -f batch-byte-compile *.el
  
- $install_emacs_files: elc
+-$install_emacs_files: elc
++$install_emacs_files: #elc
  	-mkdir -p \$(EMACSDIR)
 -	-cd $emx; for f in *.elc *.el pariemacs.txt; do \
 +#	-cd $emx; for f in *.elc *.el pariemacs.txt; do \
