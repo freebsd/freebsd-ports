@@ -156,7 +156,7 @@ DJ970_SRCS=	${DJ970}.c.gz
 #
 # For that reason, integlation of stp driver is disabled by default.
 GPRINT=		gimp-print
-GPRINT_VERS=	4.2.6
+GPRINT_VERS=	4.2.7
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
