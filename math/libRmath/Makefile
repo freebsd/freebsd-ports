@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libRmath
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
