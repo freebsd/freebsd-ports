@@ -1,0 +1,212 @@
+--- fc-lang/fc-lang.c	2002/08/22 07:36:43	1.3
++++ fc-lang/fc-lang.c	2002/12/14 02:03:58	1.4
+@@ -165,22 +165,38 @@ static int compare (const void *a, const
+     return FcStrCmpIgnoreCase (*as, *bs);
+ }
+ 
++#define MAX_LANG	    1024
++#define MAX_LANG_SET_MAP    ((MAX_LANG + 31) / 32)
++
++#define BitSet(map, id)   ((map)[(id)>>5] |= ((FcChar32) 1 << ((id) & 0x1f)))
++#define BitGet(map, id)   ((map)[(id)>>5] >> ((id) & 0x1f)) & 1)
++
+ int
+ main (int argc, char **argv)
+ {
+-    char	*files[1024];
+-    FcCharSet	*sets[1024];
+-    int		duplicate[1024];
+-    char	*names[1024];
++    char	*files[MAX_LANG];
++    FcCharSet	*sets[MAX_LANG];
++    int		duplicate[MAX_LANG];
++    int		country[MAX_LANG];
++    char	*names[MAX_LANG];
++    char	*langs[MAX_LANG];
+     FILE	*f;
++    int		ncountry = 0;
+     int		i = 0;
+     FcCharLeaf	**leaves, **sleaves;
+     int		total_leaves = 0;
+     int		l, sl, tl;
++    int		c;
+     char	line[1024];
++    FcChar32	map[MAX_LANG_SET_MAP];
++    int		num_lang_set_map;
+     
+     while (*++argv)
++    {
++	if (i == MAX_LANG)
++	    fatal (*argv, 0, "Too many languages");
+ 	files[i++] = *argv;
++    }
+     files[i] = 0;
+     qsort (files, i, sizeof (char *), compare);
+     i = 0;
+@@ -191,6 +207,10 @@ main (int argc, char **argv)
+ 	    fatal (files[i], 0, strerror (errno));
+ 	sets[i] = scan (f, files[i]);
+ 	names[i] = get_name (files[i]);
++	langs[i] = get_lang(names[i]);
++	if (strchr (langs[i], '-'))
++	    country[ncountry++] = i;
++
+ 	total_leaves += sets[i]->num;
+ 	i++;
+ 	fclose (f);
+@@ -319,10 +339,54 @@ main (int argc, char **argv)
+ 		"      { FC_REF_CONSTANT, %d, "
+ 		"(FcCharLeaf **) leaves_%s, "
+ 		"(FcChar16 *) numbers_%s } },\n",
+-		get_lang(names[i]),
++		langs[i],
+ 		sets[j]->num, names[j], names[j]);
+     }
+     printf ("};\n\n");
++    printf ("#define NUM_LANG_CHAR_SET	%d\n", i);
++    num_lang_set_map = (i + 31) / 32;
++    printf ("#define NUM_LANG_SET_MAP	%d\n", num_lang_set_map);
++    /*
++     * Dump indices with country codes
++     */
++    if (ncountry)
++    {
++	int	ncountry_ent = 0;
++	printf ("\n");
++	printf ("static const FcChar32 fcLangCountrySets[][NUM_LANG_SET_MAP] = {\n");
++	for (c = 0; c < ncountry; c++)
++	{
++	    i = country[c];
++	    if (i >= 0)
++	    {
++		int l = strchr (langs[i], '-') - langs[i];
++		int d, k;
++
++		for (k = 0; k < num_lang_set_map; k++)
++		    map[k] = 0;
++
++		BitSet (map, i);
++		for (d = c + 1; d < ncountry; d++)
++		{
++		    int j = country[d];
++		    if (j >= 0 && !strncmp (langs[j], langs[i], l))
++		    {
++			BitSet(map, j);
++			country[d] = -1;
++		    }
++		}
++		printf ("    {");
++		for (k = 0; k < num_lang_set_map; k++)
++		    printf (" 0x%08x,", map[k]);
++		printf (" }, /* %*.*s */\n",
++			l, l, langs[i]);
++		++ncountry_ent;
++	    }
++	}
++	printf ("};\n\n");
++	printf ("#define NUM_COUNTRY_SET %d\n", ncountry_ent);
++    }
++    
+     while (fgets (line, sizeof (line), stdin))
+ 	fputs (line, stdout);
+     
+--- src/fccfg.c	2002/08/31 22:17:32	1.23
++++ src/fccfg.c	2002/12/21 02:31:53	1.24
+@@ -1141,7 +1141,11 @@ FcConfigSubstituteWithPat (FcConfig    *
+ 		if ((t->kind == FcMatchFont || kind == FcMatchPattern) &&
+ 		    !FcStrCmpIgnoreCase ((FcChar8 *) t->field, 
+ 					 (FcChar8 *) e->field))
++		{
++		    if (!st[i].elt)
++			t = 0;
+ 		    break;
++		}
+ 	    }
+ 	    switch (e->op) {
+ 	    case FcOpAssign:
+--- src/fclang.c	2002/08/26 23:34:31	1.7
++++ src/fclang.c	2002/12/14 02:03:59	1.8
+@@ -31,9 +31,6 @@ typedef struct {
+ 
+ #include "../fc-lang/fclang.h"
+ 
+-#define NUM_LANG_CHAR_SET   (sizeof (fcLangCharSets) / sizeof (fcLangCharSets[0]))
+-#define NUM_LANG_SET_MAP    ((NUM_LANG_CHAR_SET + 31) / 32)
+-
+ struct _FcLangSet {
+     FcChar32	map[NUM_LANG_SET_MAP];
+     FcStrSet	*extra;
+@@ -339,13 +336,21 @@ FcLangSetCompareStrSet (const FcLangSet 
+ FcLangResult
+ FcLangSetCompare (const FcLangSet *lsa, const FcLangSet *lsb)
+ {
+-    int		    i;
++    int		    i, j;
+     FcLangResult    best, r;
+ 
+     for (i = 0; i < NUM_LANG_SET_MAP; i++)
+ 	if (lsa->map[i] & lsb->map[i])
+ 	    return FcLangEqual;
+     best = FcLangDifferentLang;
++    for (j = 0; j < NUM_COUNTRY_SET; j++)
++	for (i = 0; i < NUM_LANG_SET_MAP; i++)
++	    if ((lsa->map[i] & fcLangCountrySets[j][i]) &&
++		(lsb->map[i] & fcLangCountrySets[j][i]))
++	    {
++		best = FcLangDifferentCountry;
++		break;
++	    }
+     if (lsa->extra)
+     {
+ 	r = FcLangSetCompareStrSet (lsb, lsa->extra);
+--- fc-lang/fclang.h	2002/10/21 17:03:47	1.20
++++ fc-lang/fclang.h	2002/12/14 02:03:58	1.21
+@@ -3996,3 +3996,11 @@ static const FcLangCharSet  fcLangCharSe
+       { FC_REF_CONSTANT, 1, (FcCharLeaf **) leaves_fj, (FcChar16 *) numbers_fj } },
+ };
+ 
++#define NUM_LANG_CHAR_SET	175
++#define NUM_LANG_SET_MAP	6
++
++static const FcChar32 fcLangCountrySets[][NUM_LANG_SET_MAP] = {
++    { 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00003e00, }, /* zh */
++};
++
++#define NUM_COUNTRY_SET 1
+--- fontconfig/fcprivate.h	2002/08/22 07:36:44	1.6
++++ fontconfig/fcprivate.h	2002/12/04 10:28:03	1.7
+@@ -87,7 +87,7 @@ _FcPatternVapBuild_bail1:					    \
+     if (!orig)							    \
+ 	FcPatternDestroy (__p__);				    \
+ _FcPatternVapBuild_bail0:					    \
+-    result = 0;							    \
++    result = (void*)0;						    \
+ 								    \
+ _FcPatternVapBuild_return:					    \
+     ;								    \
+--- src/fcstr.c	2002/08/31 22:17:32	1.10
++++ src/fcstr.c	2002/12/14 01:59:38	1.11
+@@ -283,7 +283,7 @@ FcUtf16ToUcs4 (const FcChar8	*src_orig,
+ 	if ((b & 0xfc00) != 0xdc00)
+ 	    return 0;
+ 	result = ((((FcChar32) a & 0x3ff) << 10) |
+-		  ((FcChar32) b & 0x3ff)) | 0x10000;
++		  ((FcChar32) b & 0x3ff)) + 0x10000;
+     }
+     else
+ 	result = a;
+--- src/fontconfig.man	2002/10/02 07:11:30	1.7
++++ src/fontconfig.man	2003/02/16 17:44:36	1.8
+@@ -1453,6 +1453,12 @@ match the available fonts.  It is in xml
+ 
+ .B fonts.dtd 
+ is a DTD that describes the format of the configuration files.
++
++.B local.conf
++is sourced by the default system-wide fonts.conf file. 
++Note that the normal 'make install' procedure for XFree86 is to
++replace any existing fonts.conf file with the new version.  Place
++any local customizations in local.conf which this file references.
+ 
+ .B ~/.fonts.conf
+ is the conventional location for per-user font configuration, although the

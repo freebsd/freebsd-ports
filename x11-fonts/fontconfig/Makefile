@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
