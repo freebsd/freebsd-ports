@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.87
-PORTREVISION=	3
+PORTVERSION=	0.88
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -22,9 +21,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	acl-0.87-1.wbm.gz bind8-0.87-2.wbm.gz net-0.87-1.wbm.gz \
-		software-0.87-1.wbm.gz
-WEBMIN_THEMES=	caldera-0.87-1.wbt.gz
+WEBMIN_MODULES=	proftpd-0.88-1.wbm.gz majordomo-0.88-1.wbm.gz
+WEBMIN_THEMES=
 		
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
