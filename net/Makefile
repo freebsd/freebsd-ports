@@ -533,6 +533,7 @@
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
+    SUBDIR += py-samba
     SUBDIR += py-smb
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule

@@ -3,7 +3,7 @@
 # here. Samba has a huge number of configurable options (perhaps too
 # many!) most of which are not shown in this example
 #
-# For a step by step guide on installing, configuring and using Samba, 
+# For a step by step guide on installing, configuring and using samba, 
 # read the Samba HOWTO Collection.
 #
 # Any line which starts with a ; (semi-colon) or a # (hash) 

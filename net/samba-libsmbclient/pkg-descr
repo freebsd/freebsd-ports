@@ -1,4 +1,4 @@
-This is the shared library from the Samba program.  It lets other programs use 
-the SMB protocol.
+This is the shared library from the Samba port. It lets other programs
+to use the SMB protocol.
 
 WWW: http://www.samba.org/
