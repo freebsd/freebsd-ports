@@ -18,10 +18,8 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.3/ \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gtk20
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 
