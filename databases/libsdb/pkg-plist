@@ -6,4 +6,4 @@ include/sdb.h
 lib/libsdb.a
 lib/libsdb.la
 lib/libsdb.so
-lib/libsdb.so.4
+lib/libsdb.so.5
