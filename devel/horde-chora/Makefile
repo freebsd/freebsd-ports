@@ -35,6 +35,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letter
 .endif
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i.beforeChora
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -70,21 +72,19 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${PERL} -pi -e "s:%%CVSROOT%%:${CVSROOT}:;s:%%CONFDIR%%:${CONFDIR}:" \
+	@${REINPLACE_CMD} -e "s:%%CVSROOT%%:${CVSROOT}:;s:%%CONFDIR%%:${CONFDIR}:" \
 		${CONFDIR}/cvsroots.php
+	@${RM} ${CONFDIR}/cvsroots.php.beforeChora
 	@${CHOWN} -R www:www ${CHORADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.chora ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/chora:${CHORADIR}:g" \
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/chora:${CHORADIR}:g" \
 		${HORDE_INC}/httpd.conf.chora
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.beforeChora
-	@${CP} -p ${HORDEDIR}/config/mime_drivers.php		\
-		${HORDEDIR}/config/mime_drivers.php.beforeChora
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
+	@${RM} ${HORDE_INC}/httpd.conf.chora.beforeChora
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTCHORA::" \
 		${HORDEDIR}/config/registry.php
 .if !defined(WITHOUT_ENSCRIPT)
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTCHORA::" \
 		${HORDEDIR}/config/mime_drivers.php
 .endif
 	@${CP} -p ${HORDEDIR}/config/registry.php		\

@@ -34,6 +34,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libssl.so:${PORTSDIR}/www/apache13-mod
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL
 CONFFILE=	html.php lang.php mime_drivers.php mime_mapping.php \
@@ -92,33 +95,35 @@ do-install:
 	@${CP} -p  ${WRKSRC}/*.php ${HORDEDIR}
 	@if [ ! -f ${CONFDIR}/horde.php ]; then \
 		${CP} ${CONFDIR}/horde.php.dist ${CONFDIR}/horde.php ; \
-		${PERL} -pi -e "s:/var/www/htdocs/horde/templates:${HORDEDIR}/templates:g" \
-			${CONFDIR}/horde.php ; \
-		${PERL} -pi -e "s:/tmp/horde.log:${LOG_FILE}:g" ${CONFDIR}/horde.php ; \
+		${REINPLACE_CMD} -e "s:/tmp/horde.log:${LOG_FILE}:g" ${CONFDIR}/horde.php ; \
+		${RM} ${CONFDIR}/horde.php.beforeHorde ; \
 	fi
-	@${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:g" \
+	@${REINPLACE_CMD} -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:g" \
 		${HORDEDIR}/lib/Auth/mcal.php
+	@${RM} ${HORDEDIR}/lib/Auth/mcal.php.beforeHorde
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${CONFDIR}/mime_drivers.php
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${CONFDIR}/mime_drivers.php
+	@${RM} ${CONFDIR}/mime_drivers.php.beforeHorde
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
-	@${PERL} -pi -e "s:UPDATED_BY_THE_PORT:${HORDEDIR}/:g" \
+	@${REINPLACE_CMD} -e "s:UPDATED_BY_THE_PORT:${HORDEDIR}/:g" \
 		${HORDESBIN}/horde_set_perms.sh
+	@${RM} ${HORDESBIN}/horde_set_perms.sh.beforeHorde
 	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
 	@(if [ -f ${APACHE_CONF} ] ; then \
-	    ${MKDIR} ${HORDE_INC} ; \
-	    ${CP} -p ${FILESDIR}/httpd.conf.horde ${HORDE_INC} ; \
-	    ${PERL} -pi -e "s:/home/httpd/html/horde:${HORDEDIR}:g" ${HORDE_INC}/httpd.conf.horde ; \
-	    ${PERL} -pi -e "s:/home/httpd/phplib:${PHP_LIB}:g" ${HORDE_INC}/httpd.conf.horde ; \
-	    ${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
-	    ${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
-	    ${PERL} -pi -e "s:php_value auto_prepend_file:# php_value auto_prepend_file:g" ${APACHE_CONF} ; \
-	    ${PERL} -pi -e "s:${HORDEDIR}/phplib:${PHP_LIB}:g" ${APACHE_CONF} ; \
-	    ${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
-	    ${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
+		${MKDIR} ${HORDE_INC} ; \
+		${CP} -p ${FILESDIR}/httpd.conf.horde ${HORDE_INC} ; \
+		${REINPLACE_CMD} -e "s:/home/httpd/html/horde:${HORDEDIR}:g ; \
+			s:/home/httpd/phplib:${PHP_LIB}:g" ${HORDE_INC}/httpd.conf.horde ; \
+		${RM} ${HORDE_INC}/httpd.conf.horde.beforeHorde ; \
+		${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
+		${REINPLACE_CMD} -e "s:php_value auto_prepend_file:# php_value auto_prepend_file:g ; \
+			s:${HORDEDIR}/phplib:${PHP_LIB}:g" ${APACHE_CONF} ; \
+		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
+		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
 	@${CHOWN} -R www:www ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
@@ -129,7 +134,8 @@ do-install:
 .for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@${PERL} -pi -e "s:/usr/local/apache/htdocs/horde:${DOCSDIR}:g" ${DOCSDIR}/INSTALL
+	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g" ${DOCSDIR}/INSTALL
+	@${RM} ${DOCSDIR}/INSTALL.beforeHorde
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

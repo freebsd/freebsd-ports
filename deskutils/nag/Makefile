@@ -16,8 +16,11 @@ MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeNag
+
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} NAGDIR=${LNAGDIR}
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL \
@@ -48,11 +51,10 @@ do-install:
 	@${CHOWN} -R www:www ${NAGDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.nag ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g" \
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g" \
 		${HORDE_INC}/httpd.conf.nag
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.beforeNag
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTNAG::" ${HORDEDIR}/config/registry.php
+	@${RM} ${HORDE_INC}/httpd.conf.nag.beforeNag
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTNAG::" ${HORDEDIR}/config/registry.php
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.afterNag
 .if !defined(NOPORTDOCS)
