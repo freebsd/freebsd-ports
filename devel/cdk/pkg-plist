@@ -35,6 +35,12 @@ include/cdk/viewer.h
 lib/libcdk.a
 lib/libcdk.so
 lib/libcdk.so.4
+share/doc/cdk/COPYING
+share/doc/cdk/EXPANDING
+share/doc/cdk/INSTALL
+share/doc/cdk/NOTES
+share/doc/cdk/README
+share/doc/cdk/TODO
 share/examples/cdk/cli/Makefile
 share/examples/cdk/cli/Makefile.in
 share/examples/cdk/cli/cdkalphalist
@@ -192,4 +198,5 @@ share/examples/cdk/examples/vinstall.c
 @dirrm share/examples/cdk/cli/samples
 @dirrm share/examples/cdk/cli
 @dirrm share/examples/cdk
+@dirrm share/doc/cdk
 @dirrm include/cdk
