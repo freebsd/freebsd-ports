@@ -1,7 +1,7 @@
 bin/3dpong
-share/3dpong/hit.au
-share/3dpong/score.au
-share/3dpong/wall.au
-%%PORTDOCS%%share/doc/3dpong/README.txt
-@dirrm share/3dpong
-%%PORTDOCS%%@dirrm share/doc/3dpong
+%%DATADIR%%/hit.au
+%%DATADIR%%/score.au
+%%DATADIR%%/wall.au
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
