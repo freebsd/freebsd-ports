@@ -17,9 +17,10 @@ USE_LIBTOOL=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG}|g' ${WRKSRC}/configure \
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' ${WRKSRC}/configure \
 		${WRKSRC}/tools/edb_gtk_ed/Makefile.in
 
 .include <bsd.port.mk>
