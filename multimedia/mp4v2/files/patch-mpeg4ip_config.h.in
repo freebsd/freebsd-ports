@@ -1,0 +1,27 @@
+--- mpeg4ip_config.h.in.orig	Tue May 18 13:31:06 2004
++++ mpeg4ip_config.h.in	Wed Sep 29 14:40:59 2004
+@@ -25,16 +25,12 @@
+ #undef HAVE_FPOS_T___POS
+ 
+ /* Define to 1 if you have the `getopt' function. */
+-#undef HAVE_GETOPT
+ 
+ /* Define to 1 if you have the <getopt.h> header file. */
+-#undef HAVE_GETOPT_H
+ 
+ /* Define to 1 if you have the `getopt_long' function. */
+-#undef HAVE_GETOPT_LONG
+ 
+ /* Define to 1 if you have the `getopt_long_only' function. */
+-#undef HAVE_GETOPT_LONG_ONLY
+ 
+ /* Define to 1 if you have the `getrusage' function. */
+ #undef HAVE_GETRUSAGE
+@@ -67,7 +63,6 @@
+ #undef HAVE_IPv6
+ 
+ /* Define to 1 if you have the `gnugetopt' library (-lgnugetopt). */
+-#undef HAVE_LIBGNUGETOPT
+ 
+ /* have libmpeg2 decoder library */
+ #undef HAVE_LIBMPEG2
