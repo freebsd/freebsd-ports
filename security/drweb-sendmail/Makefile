@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -80,7 +80,7 @@ post-configure:
 	} | ./configure
 
 # Not fully used yet
-post-build:
+pre-install:
 	cd ${WRKSRC}/../sendmail && { \
 		${ECHO} y; \
 		${ECHO} "${PREFIX}/sbin"; \
