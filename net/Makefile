@@ -238,7 +238,6 @@
     SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd
-    SUBDIR += mpd-netgraph
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg
