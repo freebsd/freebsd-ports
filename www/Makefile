@@ -75,6 +75,7 @@
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += flashplugin-mozilla-devel
+    SUBDIR += flashpluginwrapper
     SUBDIR += frontpage
     SUBDIR += frontpage-ar
     SUBDIR += frontpage-de

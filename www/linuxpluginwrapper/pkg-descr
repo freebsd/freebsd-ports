@@ -1,0 +1,7 @@
+A wrapper that allows the use of the Linux flash plugin to work with
+a FreeBSD-native binary of mozilla.
+
+WWW: http://tmp.ninth-nine.com/FlashPluginWrapper/
+
+- Pete
+petef@FreeBSD.org
