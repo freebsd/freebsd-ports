@@ -8604,7 +8604,6 @@ xfractint	ports/graphics/xfractint
 xfree86_xkb_xml	ports/x11/xfree86_xkb_xml
 xfrisk		ports/games/xfrisk
 xfsm		ports/sysutils/xfsm
-xfwm4		ports/x11-wm/xfwm4
 xg		ports/x11-toolkits/xg
 xgalaga		ports/games/xgalaga
 xgammon		ports/games/xgammon

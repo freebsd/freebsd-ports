@@ -97,7 +97,7 @@
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
     SUBDIR += xfce
-    SUBDIR += xfwm4
+    SUBDIR += xfce4-wm
     SUBDIR += xwmm
     SUBDIR += yawm
 
