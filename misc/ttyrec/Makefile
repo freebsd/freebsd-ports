@@ -7,15 +7,20 @@
 #
 
 PORTNAME=	ttyrec
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
 MAINTAINER=	ports@FreeBSD.org
 
+MAN1=	ttyplay.1 ttyrec.1
+
 do-install:
-.for file in ttyrec ttyplay
+.for file in ttyrec ttyplay ttytime
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
+.for file in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
