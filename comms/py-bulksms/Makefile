@@ -8,11 +8,10 @@
 PORTNAME=	bulksms
 PORTVERSION=	0.1
 CATEGORIES=	comms python
-MASTER_SITES=	http://botanicus.net/dw/dl/	\
-		http://evo6.org/ports/py-bulksms/
+MASTER_SITES=	http://botanicus.net/dw/dl/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andy@evo6.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python client for the BulkSMS.co.uk HTTP API
 
 USE_PYTHON=	yes
