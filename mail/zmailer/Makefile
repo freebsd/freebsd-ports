@@ -16,21 +16,16 @@ COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
 GNU_CONFIGURE=	yes
+USE_GCC=	2.95
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
-CONFIGURE_ARGS= --with-openssl
+CONFIGURE_ARGS=	--with-openssl
 .else
-CONFIGURE_ARGS= --without-openssl
+CONFIGURE_ARGS=	--without-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
-CONFIGURE_ARGS+= --prefix=${PREFIX}/ \
+CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-bundled-libresolv \
 		--with-mailbin=${PREFIX}/sbin \
 		--with-mailbox=/var/mail \
@@ -48,7 +43,7 @@ CONFIGURE_ARGS+= --prefix=${PREFIX}/ \
 		--libdir=${PREFIX}/lib \
 		--with-ta-mmap
 
-MAN1= 		rmail.1 vacation.1 zmailer.1 zmsh.1 mboxpath.1 ssl.1 mailq.1 \
+MAN1=		rmail.1 vacation.1 zmailer.1 zmsh.1 mboxpath.1 ssl.1 mailq.1 \
 		mailrm.1 newaliases.1
 MAN3=		zmailer.3
 MAN5=		aliases.5
@@ -120,4 +115,4 @@ replace:
 		${LN} -s ${PREFIX}/sbin/rmail /bin/rmail; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
