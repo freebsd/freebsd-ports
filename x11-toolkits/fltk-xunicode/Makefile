@@ -7,6 +7,10 @@
 
 MASTERDIR=	${.CURDIR}/../fltk
 
+MAINTAINER=	knu@FreeBSD.org
+
+COMMENT=	${.CURDIR}/pkg-comment
+
 WITH_XUNICODE=	yes
 
 .include "${MASTERDIR}/Makefile"
