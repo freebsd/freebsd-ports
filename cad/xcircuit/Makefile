@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	2.3.3.b16
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
