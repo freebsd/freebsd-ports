@@ -8,7 +8,8 @@
 PORTNAME=	webstats
 PORTVERSION=	0.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.patsplanet.com/software/webstats/files/
+MASTER_SITES=	http://www.patsplanet.com/software/webstats/files/ \
+		http://www.caomhin.org/geek/ports/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	kevin@caomhin.demon.co.uk
