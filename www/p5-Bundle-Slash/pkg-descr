@@ -1,0 +1,11 @@
+       Slash -- Slashdot Like Automated Storytelling Homepage --
+       is the code that runs Slashdot. More than that, however,
+       Slash is an architecture for putting together web sites.
+       It comes with functionality for posting articles, conducting
+       polls, having discussions, and more; but it can be extended
+       in innumerable ways.
+       
+       Bundle::Slash is a collection of prerequisite perl modules
+       needed before installing Slash.
+
+WWW: http://slashcode.com/
