@@ -31,7 +31,7 @@ USE_XPM=	yes
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.5
-XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b18
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b17
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
@@ -56,10 +56,6 @@ ALL_TARGET=	all dist
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" || ${OSVERSION} < 500000 || ${OSVERSION} > 600000
-BROKEN=		"Does not build except on i386 5.x"
-.endif
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
