@@ -347,7 +347,7 @@ metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${X11BASE}/libdata/pkgconfig/libmetacity-private.pc
 metacity_USE_GNOME_IMPL=gconf2 glade2
 
-gal2_LIB_DEPENDS=	gal-2.0.4:${PORTSDIR}/x11-toolkits/gal2
+gal2_LIB_DEPENDS=	gal-2.0.5:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${X11BASE}/libdata/pkgconfig/gal-2.0.pc
 gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
