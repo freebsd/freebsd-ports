@@ -110,12 +110,11 @@ PLIST_SUB+=	X11=''
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|LIBLTDL=.*\n|LIBLTDL="-lltdl"\n|g ; \
- 		 s|INCLTDL=.*\n|INCLTDL=\n|g ; \
-		 s|lcms/lcms.h|lcms.h|g ; \
-		 s|(-D_REENTRANT)|\1 ${PTHREAD_CFLAGS}| ; \
-		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
+		s|LIBLTDL=.*\n|LIBLTDL="-lltdl"\n|g ; \
+		s|INCLTDL=.*\n|INCLTDL=\n|g ; \
+		s|lcms/lcms.h|lcms.h|g ; \
+		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(top_builddir\)/ltdl/libltdlc.la|\$$\(LIBLTDL\)|g'
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
