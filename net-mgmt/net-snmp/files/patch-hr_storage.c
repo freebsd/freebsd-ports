@@ -13,7 +13,7 @@
  void            sol_get_swapinfo(int *, int *);
  #endif
  
-+#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
++#if defined(__FreeBSD__) && __FreeBSD_version >= 500102
 +void		collect_mbuf(long *long_mbuf, long *long_mbufc);
 +#endif
 +
@@ -117,7 +117,7 @@
  #elif defined(MBSTAT_SYMBOL)
 +#if !defined(__FreeBSD__) || __FreeBSD_version < 500021
                  long_return = mbstat.m_clusters - mbstat.m_clfree;      /* unlikely, but... */
-+#elif defined(__FreeBSD__) && __FreeBSD_version < 500024
++#elif defined(__FreeBSD__) && __FreeBSD_version < 500102
 +			/* mbuf stats disabled */
 +			return NULL;
 +#elif defined(__FreeBSD__)
@@ -134,7 +134,7 @@
  #endif
                  break;
  #endif                      /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
-+#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
++#if defined(__FreeBSD__) && __FreeBSD_version >= 500102
 +	    case HRS_TYPE_MBUFCLUSTER:
 +	      collect_mbuf(NULL, &long_return);
 +	      break;
@@ -147,7 +147,7 @@
  }
  #endif                          /* solaris2 */
 +
-+#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
++#if defined(__FreeBSD__) && __FreeBSD_version >= 500102
 +void
 +collect_mbuf(long *long_mbuf, long *long_mbufc)
 +{
