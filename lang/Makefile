@@ -63,6 +63,7 @@
     SUBDIR += gambas
     SUBDIR += gauche
     SUBDIR += gawk
+    SUBDIR += gcc-objc
     SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcc295
