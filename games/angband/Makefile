@@ -14,8 +14,18 @@ MASTER_SITES=	ftp://clockwork.dementia.org/angband/Source/  \
 MAINTAINER=	mph@freebsd.org
 
 GNU_CONFIGURE=	yes
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-
 CONFIGURE_ARGS=	--with-setgid=games --with-x
+.else
+CONFIGURE_ARGS=	--with-setgid=games --with-x=no
+.endif
+
+pre-fetch:
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "You could define WITHOUT_X11, if you don't want X support"
+.else
+	@${ECHO_MSG} "Building without X support"
+.endif
 
 .include <bsd.port.mk>
