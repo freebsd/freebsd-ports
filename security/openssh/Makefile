@@ -12,9 +12,10 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp1.se.openbsd.org/pub/OpenBSD/OpenSSH/
 DISTNAME=	openssh-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	openbsd2x_3.0.1.patch
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
 
