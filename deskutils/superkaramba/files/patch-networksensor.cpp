@@ -1,6 +1,6 @@
 --- src/networksensor.cpp.orig	Mon Apr 21 15:17:03 2003
-+++ src/networksensor.cpp	Sat Nov  8 19:51:04 2003
-@@ -7,14 +7,67 @@
++++ src/networksensor.cpp	Sun Nov  9 18:34:35 2003
+@@ -7,14 +7,65 @@
   *   the Free Software Foundation; either version 2 of the License, or     *
   *   (at your option) any later version.                                   *
   ***************************************************************************/
@@ -11,7 +11,6 @@
 +#include <net/route.h>
 +#endif
 +
-+#include <stdio.h>
  #include "networksensor.h"
  
  NetworkSensor::NetworkSensor( QString dev, int interval ):Sensor( interval )
@@ -40,27 +39,26 @@
 +    */
 +
 +   if_number = -1;
++   int if_gw = -1;
 +
 +   for (int i = 1; i <= n; ++i) {
 +      name[4] = i;
 +      /* Get data for iface-number i */
 +      sysctl(name, 6, (void*)&if_mib, (size_t*)&if_miblen, (void*)NULL, (size_t)0);
 +
-+      if ( device == "" ) {
-+         /* Does the interface hold the default route? */
-+         if ( if_mib.ifmd_flags & RTF_GATEWAY ) {
-+            if_number = i;
-+            break;
-+         }
++      /* We found the right interface? */
++      if (QString(if_mib.ifmd_name) == device) {
++         if_number = i;
++         break;
 +      }
-+      else {
-+         /* We found the right interface? */
-+         if (QString(if_mib.ifmd_name) == device) {
-+            if_number = i;
-+            break;
-+         }
-+      }
++
++      /* Does the interface hold the default route? */
++      if ( if_mib.ifmd_flags & RTF_GATEWAY )
++         if_gw = i;
 +   }
++
++   if ((if_number == -1) && (if_gw != -1))
++      if_number = if_gw;
 +#else
     if( device == "" )
     	device = "eth0";
@@ -69,7 +67,7 @@
       getInOutBytes(receivedBytes,transmittedBytes);
      netTimer.start();
  
-@@ -24,6 +77,27 @@
+@@ -24,6 +75,27 @@
  }
  void NetworkSensor::getInOutBytes ( unsigned long &in,unsigned long &out) const
  {
@@ -97,7 +95,7 @@
      QFile file("/proc/net/dev");
      QString line;
      if ( file.open(IO_ReadOnly | IO_Translate) )
-@@ -49,6 +123,7 @@
+@@ -49,6 +121,7 @@
          }
      file.close();
      }
