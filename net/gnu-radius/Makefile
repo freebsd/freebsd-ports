@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.95
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	radius
-DISTNAME=       radius-${PORTVERSION}
+DISTNAME=	radius-${PORTVERSION}
 
 MAINTAINER=	lance@merlin.net.ua
 COMMENT=	GNU RADIUS server
@@ -18,11 +17,13 @@ COMMENT=	GNU RADIUS server
 #MAKEFILE=	Makefile
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
+USE_RC_SUBR=	yes
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	# empty
 
+INFO=		radius
 MAN1=		radgrep.1 radlast.1 raduse.1 radwho.1
 MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
 MANCOMPRESSED=	no
@@ -30,8 +31,6 @@ MANCOMPRESSED=	no
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR="${.CURDIR}" \
 		MKDIR="${MKDIR}"
-
-STARTUP_FILE=	${PREFIX}/etc/rc.d/gnu-radius.sh
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-include-path="${LOCALBASE}/include/" \
@@ -45,11 +44,12 @@ post-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+post-patch:
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
+		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
+
 post-install:
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=g" ${FILESDIR}/gnu-radius.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/gnu-radius.sh
-	@${CHMOD} 550 ${PREFIX}/etc/rc.d/gnu-radius.sh
-	@${CHOWN} root:wheel ${PREFIX}/etc/rc.d/gnu-radius.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
