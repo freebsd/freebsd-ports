@@ -1,0 +1,12 @@
+--- Makefile.PL.orig	Fri Apr 16 04:32:54 1999
++++ Makefile.PL	Thu Dec 30 00:09:35 2004
+@@ -4,4 +4,9 @@
+ WriteMakefile(
+     'NAME'	=> 'Unix::ConfigFile',
+     'VERSION_FROM' => 'ConfigFile.pm', # finds $VERSION
++    'MAN3PODS'	=> {'AliasFile.pm' => 'blib/man3/Unix::AliasFile.3',
++	'ConfigFile.pm' => 'blib/man3/Unix::ConfigFile.3',
++	'PasswdFile.pm' => 'blib/man3/Unix::PasswdFile.3',
++        'AutomountFile.pm' => 'blib/man3/Unix::AutomountFile.3',
++	'GroupFile.pm' => 'blib/man3/Unix::GroupFile.3'}
+ );
