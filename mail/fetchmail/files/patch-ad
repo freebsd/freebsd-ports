@@ -1,5 +1,5 @@
 --- configure.orig	Thu Sep 16 00:21:02 1999
-+++ configure	Fri Sep 24 13:09:48 1999
++++ configure	Fri Sep 24 13:13:25 1999
 @@ -4970,7 +4970,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -27,3 +27,21 @@
  elif test -n "$with_kerberos" -a -n "$with_kerberos5"
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
+@@ -5399,7 +5399,7 @@
+ then
+     CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
+     LDEFLAGS="$LDEFLAGS -L$with_kerberos/lib"
+-    LIBS="$LIBS -lkrb -ldes"
++    LIBS="$LIBS -lkrb -ldes -lcom_err"
+ else
+   if test "$with_kerberos" != "no"
+   then
+@@ -5409,7 +5409,7 @@
+       then
+         CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
+         LDEFLAGS="$LDEFLAGS -L$dir/lib"
+-        LIBS="$LIBS -lkrb -ldes"
++        LIBS="$LIBS -lkrb -ldes -lcom_err"
+         break
+       fi
+     done
