@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/06 08:38:44 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -23,4 +23,4 @@ PATCHDIR=	${PORTSDIR}/editors/nvi/patches
 PKGDIR=		${PORTSDIR}/editors/nvi/pkg
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-CONFIGURE_ARGS=	--enable-multibyte=eucu-cn --program-prefix=n
+CONFIGURE_ARGS=	--enable-multibyte=euc-cn --program-prefix=n
