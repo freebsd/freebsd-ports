@@ -1,0 +1,45 @@
+README for TkGoodStuff version 4.1, 2 Oct, 1996
+
+TkGoodStuff for the X Window System is an alarm clock, biff, modem
+dialer/network status indicator, note-taker, web-browser launch tool,
+system load monitor, application/utility menu, Win95-like task bar,
+and whatever else you want.
+
+TkGoodStuff produces a button bar.  It is easily configured and
+modified with the on-line GUI preferences manager (*no* rc-file
+hacking).  The main envisioned use is as an always-on-top destop
+utility to serve the user's common needs for indicators and buttons.
+There is a "screen-edge" mode, in which the bar occupies an edge of
+the screen, can be dragged to other edges, and can auto-minimize
+(shrink to a line at the screen-edge).  For users of the fvwm window
+manager (though tkgoodstuff works without fvwm), tkgoodstuff serves
+all the functions of the Windows95 taskbar, and then some.
+
+You can configure buttons to launch applications (with lots of
+configurable options), you can "swallow" any application's window into
+your tkgoodstuff panel, and several "clients" are included (you can
+also write your own with a tcl/tk script---an example is provided):
+
+        -- analog/digital alarm clock
+        -- biff (check/scan/read new mail; handles multiple folders
+           and alert levels, MH folders, IMAP mailboxes)
+        -- PPP (or SLIP or TERM) net link GUI dialer and status
+           indicator (with sophisticated redialing and login
+           scripting).
+        -- FVWM support, including Win95-like bar of buttons for open
+           and iconified windows, as well as a pager.
+        -- launcher for WWW browsers (lets you visit the URL in the
+           current X selection with one click)
+        -- note-taker (tool for quickly jotting down and organizing
+           scraps of information)
+        -- calendar/alarm support (for Ical-generated calendar files)
+        -- system load monitor (graphical and/or digital display)
+        -- Menu button, for launching applications and running
+           utilities (the menu is GUI-configured).
+        -- "webster" net dictionary client
+        -- calculator with scrollable history and hex/dec/oct modes
+           (perpetually alpha, until someone adopts it as a project!)
+        -- POP/IMAP mail fetch scheduler.
+        -- file watcher: look for changes in log files
+        -- launcher for tkman (operates with X selection like WWW
+           client)
