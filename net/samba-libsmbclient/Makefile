@@ -5,33 +5,45 @@
 # $FreeBSD$
 #
 
-PORTNAME=	samba
-PORTVERSION=	3.0.2a
-CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	. old-versions
-PKGNAMESUFFIX=	-libsmbclient
+PORTREVISION=		0
+PORTEPOCH=		0
+PKGNAMESUFFIX=		-libsmbclient
 
-MAINTAINER=	kwm@rainbow-runner.nl
-COMMENT=	The shared lib from the samba packages
+MAINTAINER=		kwm@rainbow-runner.nl
+COMMENT=		The shared lib from the samba packages
 
-USE_BZIP2=		yes
-USE_SIZE=		yes
+CONFLICTS=		samba-3.*
+
+USE_ICONV=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/source
+SAMBA_PORT=		samba-devel
+SAMBA_SUBPORT=		yes
 
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
+PKGDIR=			${.CURDIR}
+# We WANT libsmbclient support :)
+CONFIGURE_ARGS+=	--with-libsmbclient
+CONFIGURE_ARGS+=	--with-libiconv
+# This is taken from SAMBA_PORT(grep without)
+CONFIGURE_ARGS+=	--without-python
+CONFIGURE_ARGS+=	--without-utmp
+CONFIGURE_ARGS+=	--without-winbind
+CONFIGURE_ARGS+=	--without-ads
+CONFIGURE_ARGS+=	--without-ldap
+CONFIGURE_ARGS+=	--without-ldapsam
+CONFIGURE_ARGS+=	--without-krb5
+CONFIGURE_ARGS+=	--without-pam_smbpass
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} include/proto.h
 	cd ${WRKSRC} && ${MAKE} libsmbclient
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.so ${PREFIX}/lib/libsmbclient.so.0
-	${LN} -s ${PREFIX}/lib/libsmbclient.so.0 ${PREFIX}/lib/libsmbclient.so
+	${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.a ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.so.0 ${PREFIX}/lib
+	${LN} -snf libsmbclient.so.0 ${PREFIX}/lib/libsmbclient.so
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
