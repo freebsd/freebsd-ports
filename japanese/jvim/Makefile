@@ -48,6 +48,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7/2B_ROMKANA:${PORTSDIR}/japanese
 JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd -lcrypt
 .endif
+
+.include <bsd.port.pre.mk>
+
 #
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
@@ -81,4 +84,4 @@ post-install:
 		strip ${LOCALBASE}/bin/$$file; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
