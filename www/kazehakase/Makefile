@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/12746
+MASTER_SITE_SUBDIR=	${PORTNAME}/13181
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -58,6 +58,9 @@ HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel"
 HEADERS_SUFX=	-devel
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
+.endif
 .else
 HEADERS_SUFX=
 .endif
