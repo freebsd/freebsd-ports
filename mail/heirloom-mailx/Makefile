@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nail
-PORTVERSION=	9.22
+PORTVERSION=	9.23
 CATEGORIES=	mail
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		nail.1
