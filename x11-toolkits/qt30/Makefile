@@ -11,6 +11,7 @@ CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 

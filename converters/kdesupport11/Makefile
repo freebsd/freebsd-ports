@@ -12,6 +12,7 @@ CATEGORIES=	converters kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 DISTNAME=	kdesupport-1.1.2
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
