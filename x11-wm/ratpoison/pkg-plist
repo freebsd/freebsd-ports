@@ -1,4 +1,8 @@
+@comment $FreeBSD$
 bin/ratpoison
+share/ratpoison/genrpbindings
+share/ratpoison/ratpoison.el
+share/ratpoison/split.sh
 %%PORTDOCS%%@unexec install-info --delete %D/info/ratpoison %D/info/dir
 %%PORTDOCS%%info/ratpoison.info
 %%PORTDOCS%%@exec install-info %D/info/ratpoison.info %D/info/dir
@@ -8,3 +12,4 @@ bin/ratpoison
 %%PORTDOCS%%share/doc/ratpoison/NEWS
 %%PORTDOCS%%share/doc/ratpoison/README
 %%PORTDOCS%%@dirrm share/doc/ratpoison
+@dirrm share/ratpoison

@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Jul  6 23:46:16 2002
++++ configure	Thu Oct 31 16:16:00 2002
+@@ -846,7 +846,6 @@
+ EOF
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -O2"
+ echo $ac_n "checking build system type""... $ac_c" 1>&6
+ echo "configure:852: checking build system type" >&5
+ 
