@@ -1,4 +1,4 @@
 bin/fprobe
-%%PORTDOCS%%share/doc/fprobe/ChangeLog
-%%PORTDOCS%%share/doc/fprobe/README
-@dirrm share/doc/fprobe
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
