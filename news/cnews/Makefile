@@ -44,6 +44,7 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
+PLIST=		${WRKDIR}/.PLIST.sed
 
 MODIFY=		conf/quiz.def \
 		conf/substitutions \
@@ -54,6 +55,13 @@ NEWSCTL?=	${PREFIX}/news/lib
 NEWSARTS?=	/var/news
 NEWSOV?=	/var/news/over.view
 PGPVERIFY?=	pgpverify-1.12
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 300000
+.else
+BROKEN=		gawk need to be updated to 3.0.4
+.endif
 
 pre-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
@@ -70,6 +78,10 @@ pre-configure:
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
 		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
+	@${SED} \
+		-e "s=news/cnewsbin=${NEWSBIN:S=${PREFIX}/==}=" \
+		-e "s=news/lib=${NEWSCTL:S=${PREFIX}/==}=" \
+		${PKGDIR}/PLIST >${PLIST}
 
 do-install:
 	${RM} -f ${PREFIX}/bin/inews
@@ -106,4 +118,4 @@ do-install:
 	@${ECHO} "!!!!!!!!"
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

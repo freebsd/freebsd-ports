@@ -150,5 +150,7 @@ news/lib/whoami
 @dirrm news/cnewsbin/maint
 @dirrm news/cnewsbin/nov
 @dirrm news/cnewsbin/relay
-@dirrm news/lib/bin
 @dirrm news/cnewsbin
+@dirrm news/lib/bin
+@dirrm news/lib
+@dirrm news
