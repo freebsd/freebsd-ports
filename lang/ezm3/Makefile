@@ -54,6 +54,11 @@ WORDSIZE=	64
 ENDIANESS=	be
 .endif
 
+# The build fails for -O2 or greater.  Override it with plain -O.
+.if defined(CFLAGS) && !empty(CFLAGS:M-O[2-9s]*)
+CFLAGS+=	-O
+.endif
+
 post-patch:
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 502107
 	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int64_t;|\1int32_t;|' \
