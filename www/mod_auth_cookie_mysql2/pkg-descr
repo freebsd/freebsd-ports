@@ -1,0 +1,4 @@
+This Apache module allows authentication against a MySQL database via a 
+cryptographically secure cookie.
+
+WWW: http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql2.html
