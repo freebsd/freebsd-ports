@@ -11,7 +11,7 @@ PKGNAME=	snes9x-1.25
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	nacai@iname.com
 
 .if ${MACHINE_ARCH} == i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
