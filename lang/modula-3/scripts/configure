@@ -1,0 +1,14 @@
+#! /bin/sh
+#
+# $Id$
+
+files_to_patch="\
+    ${WRKSRC}/boot-FreeBSD2/m3build/templates/FreeBSD2 \
+    ${WRKSRC}/m3/m3build/templates/FreeBSD2"
+temp_prefix=${WRKDIR}/installed
+
+for i in ${files_to_patch}; do
+    test -f ${i}.bak || cp -p ${i} ${i}.bak
+    rm -f ${i}
+    sed -e "s+!!PREFIX!!+${temp_prefix}+g" ${i}.bak >${i}
+done
