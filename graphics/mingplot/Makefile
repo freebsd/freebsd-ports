@@ -14,7 +14,7 @@ MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A tool to generate a flash-based chart
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/ming.so:${PORTSDIR}/graphics/ruby-ming \
-		${RUBY_SITEARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
+		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
 USE_RUBY=	yes
 
