@@ -142,7 +142,6 @@
     SUBDIR += freesweep
     SUBDIR += frotz
     SUBDIR += frozenbubble
-    SUBDIR += fsgs
     SUBDIR += fuhquake
     SUBDIR += galaxis
     SUBDIR += garith
@@ -217,11 +216,7 @@
     SUBDIR += hlserver-opera
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-psychostats
-    SUBDIR += hlserver-pvk
     SUBDIR += hlserver-si
-    SUBDIR += hlserver-snow
-    SUBDIR += hlserver-svencoop
-    SUBDIR += hlserver-trainhunters
     SUBDIR += hlserver-ts
     SUBDIR += hlserver-tsc
     SUBDIR += hlserver-vs
