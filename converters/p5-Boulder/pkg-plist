@@ -17,5 +17,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Boulder/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/Stone.pm
 lib/perl5/site_perl/%%PERL_VER%%/Boulder.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Boulder
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Boulder
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Stone
