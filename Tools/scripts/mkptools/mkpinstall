@@ -67,7 +67,7 @@ my ($mtreedist) = "/etc/mtree/BSD.local.dist";
 
 my ($redest) = "mtree -d -f $mtreedist -r -U -p $predir";
 
-my ($ff) = "(cd $predir && find . ! -type d | cut -d/ -f2- | grep -v man | sort)";
+my ($ff) = "(cd $predir && find . ! -type d | cut -d/ -f2- | grep -v man/man | sort)";
 my ($fd) = "(cd $predir && find . -type d | cut -d/ -f2- | grep -v '^\.\$'| sort)";
 
 system("mkdir $tmpdir");
