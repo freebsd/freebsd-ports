@@ -1,0 +1,13 @@
+--- configure.orig	Fri Jul 25 09:25:23 2003
++++ configure	Fri Jul 25 09:25:28 2003
+@@ -1820,8 +1820,8 @@
+ 
+ 
+ 
+-APR_VER_REGEX="0\.9\.[4-9]"
+-APU_VER_REGEX="0\.9\.[4-9]"
++APR_VER_REGEX="0\.9\.[3-9]"
++APU_VER_REGEX="0\.9\.[3-9]"
+ 
+ 
+ 

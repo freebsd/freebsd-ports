@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.24.2
-PORTREVISION=	1
+PORTVERSION=	0.26.0
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/4807/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/5322/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
@@ -90,10 +89,8 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc/book; \
-	${MAKE} INSTALL_DIR=${DOCSDIR} \
-		install-book-html install-book-pdf install-book-ps
-	for f in BUGS CHANGES COMMITTERS COPYING HACKING IDEAS INSTALL PORTING README; do \
+	${MKDIR} ${DOCSDIR}
+	for f in BUGS CHANGES COMMITTERS COPYING HACKING IDEAS INSTALL README; do \
 		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
