@@ -37,6 +37,7 @@ share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
 share/gnome/mc/mc.hint.cs
 share/gnome/mc/mc.hint.es
+share/gnome/mc/mc.hint.ru
 share/gnome/mc/mc.lib
 share/gnome/mc/mc.menu
 share/gnome/mc/mc.sh
@@ -44,7 +45,7 @@ share/gnome/mc/syntax/ada95.syntax
 share/gnome/mc/syntax/c.syntax
 share/gnome/mc/syntax/changelog.syntax
 share/gnome/mc/syntax/diff.syntax
-share/gnome/mc/syntax/diffc.syntax
+share/gnome/mc/syntax/fortran.syntax
 share/gnome/mc/syntax/html.syntax
 share/gnome/mc/syntax/java.syntax
 share/gnome/mc/syntax/latex.syntax
@@ -65,10 +66,20 @@ share/gnome/mime-info/mc.keys
 share/gnome/pixmaps/mc/directory.xpm
 share/gnome/pixmaps/mc/gnome-application-encapsulated_postscript.png
 share/gnome/pixmaps/mc/gnome-application-pdf.png
+share/gnome/pixmaps/mc/gnome-application-pgp.png
 share/gnome/pixmaps/mc/gnome-application-postscript.png
 share/gnome/pixmaps/mc/gnome-application-x-c-header.png
 share/gnome/pixmaps/mc/gnome-application-x-c-source.png
 share/gnome/pixmaps/mc/gnome-application-x-cc-source.png
+share/gnome/pixmaps/mc/gnome-application-x-e-theme.png
+share/gnome/pixmaps/mc/gnome-application-x-generic-spreadsheet.png
+share/gnome/pixmaps/mc/gnome-application-x-gnome-app-info.png
+share/gnome/pixmaps/mc/gnome-application-x-java-source.png
+share/gnome/pixmaps/mc/gnome-application-x-kde-app-info.png
+share/gnome/pixmaps/mc/gnome-application-x-php.png
+share/gnome/pixmaps/mc/gnome-application-x-reject.png
+share/gnome/pixmaps/mc/gnome-application-x-scheme-source.png
+share/gnome/pixmaps/mc/gnome-application-x-sql.png
 share/gnome/pixmaps/mc/gnome-audio-basic.png
 share/gnome/pixmaps/mc/gnome-audio-midi.png
 share/gnome/pixmaps/mc/gnome-audio-ulaw.png
@@ -76,11 +87,18 @@ share/gnome/pixmaps/mc/gnome-audio-x-aiff.png
 share/gnome/pixmaps/mc/gnome-audio-x-mod.png
 share/gnome/pixmaps/mc/gnome-audio-x-mp3.png
 share/gnome/pixmaps/mc/gnome-audio-x-pn-realaudio.png
+share/gnome/pixmaps/mc/gnome-audio-x-s3m.png
+share/gnome/pixmaps/mc/gnome-audio-x-stm.png
 share/gnome/pixmaps/mc/gnome-audio-x-voc.png
 share/gnome/pixmaps/mc/gnome-audio-x-wav.png
+share/gnome/pixmaps/mc/gnome-audio-x-xi.png
+share/gnome/pixmaps/mc/gnome-audio-x-xm.png
 share/gnome/pixmaps/mc/gnome-audio.png
 share/gnome/pixmaps/mc/gnome-compressed.png
 share/gnome/pixmaps/mc/gnome-core.png
+share/gnome/pixmaps/mc/gnome-font-afm.png
+share/gnome/pixmaps/mc/gnome-font-ttf.png
+share/gnome/pixmaps/mc/gnome-font-x-pcf.png
 share/gnome/pixmaps/mc/gnome-http-url.png
 share/gnome/pixmaps/mc/gnome-image-bmp.png
 share/gnome/pixmaps/mc/gnome-image-generic.png
@@ -97,6 +115,7 @@ share/gnome/pixmaps/mc/gnome-image-ras.png
 share/gnome/pixmaps/mc/gnome-image-rgb.png
 share/gnome/pixmaps/mc/gnome-image-tga.png
 share/gnome/pixmaps/mc/gnome-image-tiff.png
+share/gnome/pixmaps/mc/gnome-image-x-xfig.png
 share/gnome/pixmaps/mc/gnome-image-xbm.png
 share/gnome/pixmaps/mc/gnome-image-xcf.png
 share/gnome/pixmaps/mc/gnome-image-xpm.png
@@ -109,6 +128,12 @@ share/gnome/pixmaps/mc/gnome-pack-rpm.png
 share/gnome/pixmaps/mc/gnome-package.png
 share/gnome/pixmaps/mc/gnome-tex.png
 share/gnome/pixmaps/mc/gnome-text-html.png
+share/gnome/pixmaps/mc/gnome-text-x-authors.png
+share/gnome/pixmaps/mc/gnome-text-x-copying.png
+share/gnome/pixmaps/mc/gnome-text-x-credits.png
+share/gnome/pixmaps/mc/gnome-text-x-install.png
+share/gnome/pixmaps/mc/gnome-text-x-makefile.png
+share/gnome/pixmaps/mc/gnome-text-x-readme.png
 share/gnome/pixmaps/mc/gnome-textfile.png
 share/gnome/pixmaps/mc/gnome-video-mpeg.png
 share/gnome/pixmaps/mc/gnome-video-quicktime.png
@@ -152,9 +177,12 @@ share/locale/pl/LC_MESSAGES/mc.mo
 share/locale/pt_BR/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
+share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
+share/locale/tr/LC_MESSAGES/mc.mo
 share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 @dirrm share/gnome/mc/desktop-scripts
 @dirrm share/gnome/mc/extfs

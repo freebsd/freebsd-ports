@@ -34,12 +34,12 @@
  
  uninstall:
  	@for I in $(unixdirs); do cd $$I; $(MAKE) $@ || exit 1; cd ..; done
---- lib/Makefile.in.orig	Thu Sep 23 12:01:11 1999
-+++ lib/Makefile.in	Fri Sep 24 16:46:36 1999
+--- lib/Makefile.in.orig	Sat Mar 18 07:43:44 2000
++++ lib/Makefile.in	Mon Mar 20 10:25:38 2000
 @@ -15,16 +15,11 @@
  LIBFILES_IN = mc.ext.in mc-gnome.ext.in
  LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu
 -SUPPBIN_IN = mc.csh.in mc.sh.in
 -SUPPBIN_OUT =  mc.csh mc.sh
  DESKTOP_FILES = startup.links README.desktop
