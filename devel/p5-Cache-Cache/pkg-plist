@@ -1,0 +1,21 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cache/Cache/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Cache/BaseCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/BaseCacheTester.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/Cache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheBenchmark.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheMetaData.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheTester.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/CacheUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/FileCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/MemoryCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SharedCacheUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SharedMemoryCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SizeAwareCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SizeAwareCacheTester.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SizeAwareFileCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SizeAwareMemoryCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Cache/SizeAwareSharedMemoryCache.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cache/Cache
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cache 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Cache 2>/dev/null || true
