@@ -20,5 +20,9 @@ USE_PERL5=	YES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/DeCSS ${PREFIX}/bin/decss
+	${MKDIR} ${PREFIX}/share/doc/decss
+.for i in FAQ README decss-now.png decss_mirror.html original_pigdog_article.txt
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/decss
+.endfor
 
 .include <bsd.port.mk>
