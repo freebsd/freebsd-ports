@@ -1,0 +1,21 @@
+This is a tool for eDonkey2000 that re-creates x.part.met files
+that have been lost or set zero size after a crash.
+
+Obviously, this only works if the x.part file in your temp folder
+survives. Only those 9MB blocks will be saved which have been fully
+downloaded, but you'll be able to continue your download.
+
+The tool tries to find the best match from information stored in
+the known.met file and all the x.part.met files in the temp folder.
+
+Therefore, you can increase the chance of recovery by searching for
+the file you are trying to restore and put as many possible candidates
+as you can find in the download list (which you can cancel again
+after using this tool).
+
+N.B. Obviously these candidates should have the same size as your
+download was/is supposed to have! Therefore, if your download was
+supposed to be 699MB when finished, files with 720MB or 750MB are
+NOT likely candidates, even if the name is the same.
+
+WWW: http://users.aber.ac.uk/tpm01/ed2k_tools/
