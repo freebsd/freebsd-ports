@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTVERSION=	2.3.11
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A C++ Application Framework for use with Gtkmm
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
-		gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
-		glademm-2.0:${PORTSDIR}/devel/libglademm \
-		xml\\+\\+-1.0:${PORTSDIR}/textproc/libxml++
+LIB_DEPENDS=	gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
+		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
+		gnomevfsmm-2.6:${PORTSDIR}/devel/gnome-vfsmm \
+		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
 
-USE_X_PREFIX=	yes
-USE_PERL5=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intltool
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack intltool gnometarget
-USE_INC_LIBTOOL_VER=13
+USE_GCC=	3.4
+USE_PERL5=	yes
+USE_X_PREFIX=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	VERSION="2.3" API_VERSION="2.4"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
