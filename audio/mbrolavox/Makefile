@@ -8,11 +8,22 @@
 PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-MASTER_SITES=
 DIST_SUBDIR=	mbrolavox
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
+
+VOICESCONF=	${.CURDIR}/voices.conf
+
+.if !defined(OPTIONS)
+OPTIONS!=	/usr/bin/awk -F\| '{ print $$1 " \"" $$3 "\" " $$4 }' < ${VOICESCONF}
+.endif
+.if !defined(ALLOPTIONS)
+ALLOPTIONS!=	/usr/bin/awk -F\| '{ print $$1 }' < ${VOICESCONF}
+.for ii in ${ALLOPTIONS}
+FILE_${ii}!=	/usr/bin/grep ^${ii} ${VOICESCONF} | /usr/bin/awk -F\| '{ print $$2 }'
+.endfor
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -22,41 +33,38 @@ USE_ZIP=	yes
 PLIST=		${WRKDIR}/plist
 WRKSRC=		${WRKDIR}/voices
 
-BROKEN=		"Does not fetch"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
-
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
+.if defined(PACKAGE_BUILDING)	# Ugly hack until OPTIONS and PACKAGE_BUILDING is fixed. Can be removed when ports/63682 has been commited.
+WITH_us1?=	yes
+.endif
 
-pre-everything::
-	${MKDIR} ${WRKSRC}
-.if !exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
-.if !defined(BATCH)
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-.endif
-.endif
-DISTFILES?=	us1-980512.zip
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
-DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/voices.conf
-PATCHDIRS!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/fetchdirs.conf
-.endif
-.for ii in ${PATCHDIRS}
-MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/ \
-	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/ \
-	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/ \
-	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/
+.for ii in ${ALLOPTIONS}
+. if defined(WITH_${ii})
+FILEDIRS+=	${ii}
+MYDISTFILES+=	${FILE_${ii}}:${ii}
+MYFILES+=	${FILE_${ii}}
+MYWITH+=	${ii}
+. endif
 .endfor
+DISTFILES=	${MYDISTFILES}
+
+.for ii in ${FILEDIRS}
+MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
+		http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/:${ii} \
+		ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/:${ii} \
+		ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/:${ii}
+.endfor
+
+do-build:
+	@${DO_NADA}
 
 do-extract:
-.for ii in ${DISTFILES}
-	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+.for ii in ${MYFILES}
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
 .endfor
-
-do-patch:
-	@${DO_NADA}
 
 pre-install:
 	@${RM} -f ${PLIST}
