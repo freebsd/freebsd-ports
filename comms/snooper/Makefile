@@ -18,14 +18,8 @@ COMMENT=	Serial line protocol analyzer (need two serial interfaces)
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
 GNU_CONFIGURE=	yes
-
-post-extract:
-	@${RM} -f ${WRKSRC}/.depend
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/snooper
-	${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/snooper
-.endif
+MAKE_ARGS=	OPTFLAG=""
+PLIST_FILES=	bin/snooper
+PORTDOCS=	README
 
 .include <bsd.port.mk>
