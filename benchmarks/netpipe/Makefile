@@ -3,7 +3,7 @@
 # Date created:		20 Feb 1998
 # Whom:			jkoshy
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/21 00:02:50 jkoshy Exp $
 
 DISTNAME=	netpipe-2.3
 CATEGORIES=	benchmarks net
@@ -17,6 +17,7 @@ MAINTAINER=	jkoshy@freebsd.org
 
 ALL_TARGET=	NPtcp
 MAN1=		netpipe.1
+MLINKS=		netpipe.1 NPtcp.1
 MANCOMPRESSED=	no
 
 do-install:
