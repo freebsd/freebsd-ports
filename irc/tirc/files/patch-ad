@@ -1,0 +1,19 @@
+--- cmd.c.orig	Sat Feb 20 17:52:12 1999
++++ cmd.c	Mon Aug 23 18:49:49 1999
+@@ -213,6 +213,7 @@
+ { "URL",	0,	urlcmd,		0,		urlhelp		},
+ { "UPTIME",	0,	uptimecmd,	0,		uptimehelp	},
+ { "COLOUR",	0,	colourcmd,	0,		colourhelp	},
++{ "COLOR",	0,	colourcmd,	0,		colourhelp	},
+ { "SOURCE",	0,	sourcecmd,	0,		sourcehelp	},
+ { "NCOL",	0,	ncolcmd,	0,		ncolhelp	},
+ #ifdef	WITH_DLMOD
+@@ -1112,7 +1113,7 @@
+ 		}
+ 	}
+ 
+-	if (!strcmp("COLOUR", option) || all) {
++	if (!strcmp("COLOUR", option) || !strcmp("COLOR", option) || all) {
+ 		if (args != NULL) {
+ 			irc_strupr(args);
+ 			if (!strcmp("ON", args))

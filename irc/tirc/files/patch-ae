@@ -1,0 +1,14 @@
+--- odlg.c.orig	Mon Aug 23 18:43:40 1999
++++ odlg.c	Mon Aug 23 18:47:49 1999
+@@ -49,9 +49,11 @@
+ 	{ "OOD", "Enable the Op-On-Demand facility", CONF_OOD, 0 },
+ 	{ "ATTRIBS", "ircII-style inline text attributes", CONF_ATTRIBS, 0 },
+ 	{ "COLOUR", "ANSI char cell colourization", CONF_COLOUR, 0 },
++	{ "COLOR", "ANSI char cell colourization", CONF_COLOUR, 0 },
+ 	{ "STIPPLE", "Dash-on-off line in status lines", CONF_STIPPLE, 0 },
+ 	{ "HIDEMCOL", "Filter out mIRC colour crap", CONF_HIDEMCOL, 0 },
+ 	{ "NCOLOUR", "Nickname colourization", CONF_NCOLOUR, 0 },
++	{ "NCOLOR", "Nickname colourization", CONF_NCOLOUR, 0 },
+ 	{ "NUMERICS", "Display IRC protocol numerics", CONF_NUMERICS, 0 },
+ 	{ "TELEVIDEO", "Disable attribs on my old tvi9050", CONF_TELEVIDEO, 0 },
+ 	{ "", "", 0, 0 }	/* delimiter */
