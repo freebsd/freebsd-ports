@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Sun Linux JDK 1.4.x
 # Date created:				25 May 2001
-# Whom:					Ernst de Haan <ernst@jollem.com>
+# Whom:					Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	j2sdk-${DL_JDK_VERSION:S/./_/g}-linux-i386
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=  ${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
