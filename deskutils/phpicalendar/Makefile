@@ -26,7 +26,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/${dir} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/${dir}
 .endfor
-.for f in TIMEZONES admin.php day.php preferences.php print.php search.php week.php year.php README COPYING AUTHORS
+.for f in TIMEZONES admin.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
 	@${CP} ${WRKSRC}/${f} ${WWWDIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${f}
 .endfor
