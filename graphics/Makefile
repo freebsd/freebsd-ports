@@ -35,6 +35,7 @@
     SUBDIR += cinepaint
     SUBDIR += claraocr
     SUBDIR += compupic
+    SUBDIR += corona
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += cthumb
