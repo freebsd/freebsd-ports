@@ -1,25 +1,27 @@
 # New ports collection makefile for: Silva
 # Date created:		30 Dec 2003
-# Whom:			Tim Middleton
+# Whom:			Tim Middleton <x@vex.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	silva
-PORTVERSION=	0.9.3.6
+PORTVERSION=	1.1
 PORTEPOCH=	1
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/infrae/%SUBDIR%/:silva,document,metadata
-MASTER_SITE_SUBDIR=	Silva/Silva-${PORTVERSION}/:silva \
-			SilvaDocument/SilvaDocument-0.9.3.6/:document \
-			SilvaMetadata/SilvaMetadata-0.7.5/:metadata
+MASTER_SITES=	http://www.infrae.com/download/%SUBDIR%/:silva,document,metadata,sprout
+MASTER_SITE_SUBDIR=	Silva/${PORTVERSION}/:silva \
+			SilvaDocument/1.1/:document \
+			SilvaMetadata/0.8/:metadata \
+			Sprout/0.5/:sprout
 PKGNAMEPREFIX=	zope-
 DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
-		SilvaDocument-0.9.3.6.tgz:document \
-		SilvaMetadata-0.7.5.tgz:metadata
+		SilvaDocument-1.1.tgz:document \
+		SilvaMetadata-0.8.tgz:metadata \
+		Sprout-0.5.tgz:sprout
 
 MAINTAINER=	x@Vex.Net
-COMMENT=	Web application to manage/edit structured documents
+COMMENT=	Web application (CMS) to manage/edit structured documents
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Annotations/__init__.py:${PORTSDIR}/www/zope-annotations \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/FileSystemSite/__init__.py:${PORTSDIR}/www/zope-FileSystemSite \
@@ -41,6 +43,7 @@ do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 	@${CHMOD} -R og+rX ${WRKDIR}/
 	@${CP} -R ${WRKDIR}/Silva* ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CP} -R ${WRKDIR}/Sprout ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
