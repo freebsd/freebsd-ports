@@ -1,5 +1,5 @@
 # New ports collection makefile for:	gtkextra
-# Date created:				1 August 1999
+# Date created:				17 August 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
