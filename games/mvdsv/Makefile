@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mvdsv
-PORTVERSION=	0.1722
+PORTVERSION=	0.1723b
 CATEGORIES=	games
 MASTER_SITES=	http://www.wsb.poznan.pl/~pawel/q/q/ktpro/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
 MAKEFILE=	${FILESDIR}/Makefile
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/vvd/${PORTNAME}${PORTVERSION}b/source
+WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
