@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.94.12a
-PORTREVISION=	1
+PORTVERSION=	2.95.2
+PORTREVISION=	0
 CATEGORIES=	japanese ruby
-MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	rskkserv/12104
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -37,8 +38,11 @@ SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
 
+MAN1=		rskkserv.1
+MANLANG=	"" ja
+
 DOCS_EN=	ChangeLog
-DOCS_JA=	README		TODO
+DOCS_JA=	TODO
 
 post-extract:
 	${LN} -s ${WRKSRC}/skkserv.rb.in ${WRKSRC}/rskkserv.in
@@ -51,10 +55,13 @@ post-patch:
 		-e 'gsub %r:SKK-JISYO\\.L:, %q:${SKKJISYO}:' \
 		-e 'sub %r%(CACHEDIR\s*=\s*")[^"]*(")%, \
 					     %q%\\1${SKKJISYO_BASE}\\2%' \
-		${WRKSRC}/rskkserv.conf.sample
+		${WRKSRC}/doc/rskkserv.conf.sample
+	${RUBY} -i -p \
+		-e 'sub %r%/usr/bin/ruby%, %q%${RUBY}% ' \
+		${WRKSRC}/doc/conf-o2n.rb
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/rskkserv.conf.sample ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/doc/rskkserv.conf.sample ${PREFIX}/etc/
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		( \
@@ -70,7 +77,7 @@ post-install:
 		${ECHO_CMD} "	pidfile=/var/run/rskkserv.pid"; \
 		${ECHO_CMD} "	if [ -f \$$pidfile ]; then"; \
 		${ECHO_CMD} "	    kill \`cat \$$pidfile\` && echo -n ' rskkserv'"; \
-		${ECHO_CMD} "	    ${RM} \$$pidfile"; \
+		${ECHO_CMD} "	    ${RM} -f \$$pidfile"; \
 		${ECHO_CMD} "	else"; \
 		${ECHO_CMD} "	    ${ECHO_CMD} ' rskkserv: not running'"; \
 		${ECHO_CMD} "	fi"; \
@@ -90,6 +97,10 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1 ${PREFIX}/man/man1/rskkserv.1
+	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1.ja_JP.eucJP ${PREFIX}/man/ja/man1/rskkserv.1
 .endif
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/conf-o2n.rb ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
