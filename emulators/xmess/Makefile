@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.79.1
+PORTVERSION=	0.80.1
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	X11 emulator for game consoles
