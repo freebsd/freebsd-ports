@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distutils
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.python.org/sigs/distutils-sig/download/
 PKGNAMEPREFIX=	py-
@@ -16,6 +16,10 @@ MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+PLIST_SUB=	PYVERSION="python${PYVERSION}"
+
+PYVERSION!=	python -c 'import string, sys; print string.split(sys.version)[0][:3]' || echo "1.5"
 
 do-build:
 	@(cd ${WRKSRC}; python setup.py build)
