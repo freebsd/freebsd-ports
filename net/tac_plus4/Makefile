@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.4
-PORTREVISION=	7
+PORTVERSION=	F4.0.4.7
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/tac_plus/
 DISTNAME=	tacacs+-F4.0.4.7
