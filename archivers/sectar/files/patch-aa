@@ -1,0 +1,11 @@
+--- configure.orig	Fri Feb  2 16:22:29 2001
++++ configure	Sun Feb  4 01:17:10 2001
+@@ -2153,7 +2153,7 @@
+ objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+ deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $lt_target \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
