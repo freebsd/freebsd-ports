@@ -33,6 +33,7 @@ bin/signtool
 bin/signver
 bin/ssltap
 bin/strsclnt
+bin/symkeyutil
 bin/tstclnt
 bin/vfyserv
 include/nss/dbm/cdefs.h
@@ -41,7 +42,6 @@ include/nss/dbm/ncompat.h
 include/nss/dbm/nsres.h
 include/nss/dbm/winfile.h
 include/nss/nss/base64.h
-include/nss/nss/blapi.h
 include/nss/nss/blapit.h
 include/nss/nss/cert.h
 include/nss/nss/certdb.h
@@ -56,6 +56,7 @@ include/nss/nss/crmf.h
 include/nss/nss/crmft.h
 include/nss/nss/cryptohi.h
 include/nss/nss/cryptoht.h
+include/nss/nss/ecl-exp.h
 include/nss/nss/hasht.h
 include/nss/nss/jar-ds.h
 include/nss/nss/jar.h
@@ -102,7 +103,6 @@ include/nss/nss/pkcs12.h
 include/nss/nss/pkcs12t.h
 include/nss/nss/pkcs7t.h
 include/nss/nss/portreg.h
-include/nss/nss/pqgutil.h
 include/nss/nss/preenc.h
 include/nss/nss/secasn1.h
 include/nss/nss/secasn1t.h
@@ -122,7 +122,6 @@ include/nss/nss/secoidt.h
 include/nss/nss/secpkcs5.h
 include/nss/nss/secpkcs7.h
 include/nss/nss/secport.h
-include/nss/nss/secrng.h
 include/nss/nss/shsign.h
 include/nss/nss/smime.h
 include/nss/nss/ssl.h
