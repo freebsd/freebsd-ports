@@ -1,3 +1,4 @@
-%%JAVADIR%%/lib/i386/green_threads/libtya.so
-%%JAVADIR%%/tya/README
-@dirrm %%JAVADIR%%/tya
+lib/tya/libtya.so
+share/tya/README
+@dirrm share/tya
+@dirrm lib/tya

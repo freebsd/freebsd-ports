@@ -1,0 +1,26 @@
+--- Makefile.in	2000/09/10 20:08:34	1.1
++++ Makefile.in	2000/09/10 20:08:38
+@@ -12,12 +12,12 @@
+ #TARGETFLAGS =-DDEBUG
+ 
+ # GCC specific options:
+-COPTFLAGS=-O3
++#COPTFLAGS=-O3
+ #COPTFLAGS=-O6 -v
+ 
+ 
+ # CPU specific options:
+-POPTFLAGS=-m486 -malign-loops=4 -malign-functions=4 -malign-jumps=4
++POPTFLAGS=-malign-loops=4 -malign-functions=4 -malign-jumps=4
+ 
+ 
+ #_____________________________________________________________
+@@ -32,7 +32,7 @@
+ CSOURCES=tya.c tyarechelp.c tyarecode.c tyautil.c tyaruntime.c tyaexc.c
+ 
+ #
+-CFLAGS = -Wall -pipe -shared $(COPTFLAGS) $(POPTFLAGS)	$(TARGETFLAGS)
++CFLAGS += -Wall -shared $(COPTFLAGS) $(POPTFLAGS)	$(TARGETFLAGS)
+ 
+ all: $(TARGET)
+ 
