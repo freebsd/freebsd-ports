@@ -1,22 +1,22 @@
---- install.orig	Sat Sep 13 14:37:20 1997
-+++ install	Fri Sep 10 00:13:56 1999
+--- install.orig	Thu Aug 17 00:42:03 2000
++++ install	Thu Jan  4 17:23:05 2001
 @@ -1,5 +1,5 @@
  : # Use perl
 -eval 'exec perl -S $0 "$@"'
 +eval 'exec !!PERL5!! -S $0 "$@"'
    if $running_under_some_shell;
  
- $vid=101;
-@@ -121,7 +121,7 @@
- 
- chop ($cd = `pwd`);
- 
--$prefix = "/usr/local";
-+$prefix = "!!PREFIX!!";
- 
- &getval($ans, "y",
-  "\nBy default all files will be installed in subdirectories 'bin', 'lib',\n"
-@@ -181,9 +181,9 @@
+ $vid=103;
+@@ -17,7 +17,7 @@
+     $pathsep = ':';
+     $dirsep = '/';
+     $sys = 'unix';
+-    $prefix = '/usr/local';
++    $prefix = "!!PREFIX!!";
+ } elsif (-e 'nul') {
+     $pathsep = ';';
+     $dirsep = '\\';
+@@ -198,9 +198,9 @@
  $ht = "\nTo use the automatic hyphenation feature, hyphenation pattern files\n"
       ."from the TeX distribution are needed.";
  $cophy = 1;
@@ -28,8 +28,8 @@
      SW:for("texmf/tex/generic/hyphen","macros","inputs","lib/macros",
          "lib/inputs","lib/tex/macros","lib/tex/inputs") {
          if(-f "$texdir/$_/ushyph1.tex") {
-@@ -255,7 +255,7 @@
- &mkdir($html,$def);
+@@ -272,7 +272,7 @@
+ &makedir($html,$def);
  
  $paper = "";
 -&getval($format, "A4",
@@ -37,7 +37,7 @@
   "\nEnter the default paper type, possible choices are:\nA0, A1, A2, A3, A4,"
   ." A5, A6, A7, A8, A9, A10,\nB0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,\n"
   ."letter, legal, arche, archd, archc, archb, archa,\nflsa, flse, halfletter,"
-@@ -401,8 +401,7 @@
+@@ -419,8 +419,7 @@
  
  sub getval {
      $text = $_[1]? "$_[2] [$_[1]]": $_[2];
