@@ -1,0 +1,92 @@
+--- doc/Makefile.in.orig	Sun Oct 14 22:21:32 2001
++++ doc/Makefile.in	Sun Oct 14 22:23:53 2001
+@@ -66,12 +66,12 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-man_MANS = tnef.3
++man_MANS = tnef.1
+ EXTRA_DIST = file-format.tex $(man_MANS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+-man3dir = $(mandir)/man3
++man1dir = $(mandir)/man1
+ MANS = $(man_MANS)
+ 
+ NROFF = nroff
+@@ -92,12 +92,12 @@
+ 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ 
+-install-man3:
+-	$(mkinstalldirs) $(DESTDIR)$(man3dir)
+-	@list='$(man3_MANS)'; \
++install-man1:
++	$(mkinstalldirs) $(DESTDIR)$(man1dir)
++	@list='$(man1_MANS)'; \
+ 	l2='$(man_MANS)'; for i in $$l2; do \
+ 	  case "$$i" in \
+-	    *.3*) list="$$list $$i" ;; \
++	    *.1*) list="$$list $$i" ;; \
+ 	  esac; \
+ 	done; \
+ 	for i in $$list; do \
+@@ -106,30 +106,30 @@
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man3dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man3dir)/$$inst; \
++	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
++	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
+ 
+-uninstall-man3:
+-	@list='$(man3_MANS)'; \
++uninstall-man1:
++	@list='$(man1_MANS)'; \
+ 	l2='$(man_MANS)'; for i in $$l2; do \
+ 	  case "$$i" in \
+-	    *.3*) list="$$list $$i" ;; \
++	    *.1*) list="$$list $$i" ;; \
+ 	  esac; \
+ 	done; \
+ 	for i in $$list; do \
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " rm -f $(DESTDIR)$(man3dir)/$$inst"; \
+-	  rm -f $(DESTDIR)$(man3dir)/$$inst; \
++	  echo " rm -f $(DESTDIR)$(man1dir)/$$inst"; \
++	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
+ install-man: $(MANS)
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-man3
++	$(MAKE) $(AM_MAKEFLAGS) install-man1
+ uninstall-man:
+ 	@$(NORMAL_UNINSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) uninstall-man3
++	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ tags: TAGS
+ TAGS:
+ 
+@@ -173,7 +173,7 @@
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man3
++	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1
+ 
+ 
+ mostlyclean-generic:
+@@ -203,7 +203,7 @@
+ 
+ maintainer-clean: maintainer-clean-am
+ 
+-.PHONY: install-man3 uninstall-man3 install-man uninstall-man tags \
++.PHONY: install-man1 uninstall-man1 install-man uninstall-man tags \
+ distdir info-am info dvi-am dvi check check-am installcheck-am \
+ installcheck install-exec-am install-exec install-data-am install-data \
+ install-am install uninstall-am uninstall all-redirect all-am all \
