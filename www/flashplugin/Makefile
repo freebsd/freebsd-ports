@@ -23,6 +23,12 @@ MAKE_ENV=	OBJFORMAT=aout LIBRARY_PATH=${PREFIX}/lib/aout
 PORTOBJFORMAT=	aout
 ALL_TARGET=	libswf.so
 
+pre-build:
+.if !exists(/usr/lib/aout/c++rt0.o)
+	@${CAT} ${FILESDIR}/message.nolib
+	@${FALSE}
+.endif
+
 do-install:
 .if !defined(PACKAGE_BUILDING)
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
