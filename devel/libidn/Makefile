@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -18,14 +18,13 @@ COMMENT=	Internationalized Domain Names command line tool
 BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
 USE_GETOPT_LONG=	yes
-USE_GNOME=		gnomehack
+USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
