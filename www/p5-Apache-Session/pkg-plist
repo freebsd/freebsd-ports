@@ -1,19 +1,28 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Counted.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/PosixFileLocker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DaemonLocker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/MemoryStore.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Embperl.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/SysVSemaphoreLocker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/SingleThread.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/NullLocker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DBIStore.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/FileStore.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/TreeStore.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Tree.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Flex.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Oracle.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Postgres.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Generate/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/Null.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock/Semaphore.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Serialize/Base64.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Serialize/Storable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Serialize/UUEncode.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/Oracle.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/Postgres.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Serialize
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Lock
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Generate
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache
