@@ -678,6 +678,7 @@ bugseeker-demo	ports/java/bugseeker-demo
 bugsx		ports/games/bugsx
 bugzilla	ports/devel/bugzilla
 buildtool	ports/devel/buildtool
+buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
 burgerspace	ports/games/burgerspace
 buttonbox	ports/x11/buttonbox
