@@ -61,14 +61,6 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
 
-post-patch:
-	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
-		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
-		${WRKSRC}/modules/ldapbackend/Makefile.in
-	${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
-		-e 's;@modulelibs@;@modulelibs@ -llber;' \
-		${WRKSRC}/pdns/Makefile.in
-
 post-install:
 .if !exists(${PREFIX}/etc/pdns.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/pdns.conf-dist ${PREFIX}/etc/pdns.conf
@@ -101,6 +93,14 @@ PLIST_SUB+=		RECURSOR=""
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
 CONFIGURE_MODULES+=	"ldap"
+
+post-patch:
+	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
+		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
+		${WRKSRC}/modules/ldapbackend/Makefile.in
+	${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
+		-e 's;@modulelibs@;@modulelibs@ -llber;' \
+		${WRKSRC}/pdns/Makefile.in
 .endif
 
 .else
