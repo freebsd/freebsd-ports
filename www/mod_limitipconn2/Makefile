@@ -14,6 +14,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	ychsiao@ychsiao.idv.tw
 COMMENT=	Allows you to limit the number of simultaneous connexions
 
+LATEST_LINK=	mod_limitipconn2
+
 USE_APACHE=	YES
 WITH_APACHE2=	YES
 
