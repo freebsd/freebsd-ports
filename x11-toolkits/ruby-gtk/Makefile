@@ -5,25 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ruby-gtk
+PORTNAME=	gtk
 PORTVERSION= 	0.23
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://www.ruby-lang.org/gtk/download/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	yasuf@bsdclub.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/gtk-${PORTVERSION}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+USE_XLIB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS=	${GTK_CONFIG}
+INSTALL_TARGET=	site-install
 
 .if defined(WITHOUT_IMLIB)
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -32,23 +33,25 @@ LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
 GTK_CONFIG?=	${X11BASE}/bin/imlib-config
 .endif
 
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${GTK_CONFIG}
+post-configure:
+	${PERL} -i -pe 's/\binstall\b/site-install/g' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${PREFIX}/lib/ruby/${RUBY_VER}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/gtk
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${PREFIX}/share/examples/ruby/gtk
-	${MKDIR} ${PREFIX}/share/examples/ruby/gtk/browser
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rb ${PREFIX}/share/examples/ruby/gtk/browser
+	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/gtk
+	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk/browser
+	${INSTALL_DATA} ${WRKSRC}/doc/*.rb ${RUBY_EXAMPLESDIR}/gtk/browser
 .if !defined(NO_IMLIB)
-	${MKDIR} ${PREFIX}/share/examples/ruby/gtk/gdkimlib
-	${INSTALL_DATA} ${WRKSRC}/sample/gdkimlib/*.rb ${PREFIX}/share/examples/ruby/gtk/gdkimlib
+	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk/gdkimlib
+	${INSTALL_DATA} ${WRKSRC}/sample/gdkimlib/*.rb ${RUBY_EXAMPLESDIR}/gtk/gdkimlib
 .endif
-	${MKDIR} ${PREFIX}/share/doc/ruby/gtk/ja
-	${INSTALL_DATA} ${WRKSRC}/doc/api/* ${PREFIX}/share/doc/ruby/gtk
-	${INSTALL_DATA} ${WRKSRC}/doc/api-ja/* ${PREFIX}/share/doc/ruby/gtk/ja
+	${MKDIR} ${RUBY_DOCDIR}/gtk/ja
+	${INSTALL_DATA} ${WRKSRC}/doc/api/* ${RUBY_DOCDIR}/gtk
+	${INSTALL_DATA} ${WRKSRC}/doc/api-ja/* ${RUBY_DOCDIR}/gtk/ja
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>
