@@ -5,7 +5,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	communicator-ja-euc-v474-export.generic-generic-generic
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+		http://www.imasy.or.jp/~mistral/netscape/resource/
+DISTNAME=	communicator-ja-euc-v475-export.generic-generic-generic
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
@@ -14,7 +16,7 @@ PATCHDIR=	${SUBMASTERDIR}/patches
 PKGDIR=		${SUBMASTERDIR}/pkg
 
 BROWSER_VER=	47
-BROWSER_VERSION=	4.74
+BROWSER_VERSION=	4.75
 NETHELP=	nethelp-v47
 
 .include "${MASTERDIR}/Makefile"
