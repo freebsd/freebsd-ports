@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/
 
+.include <bsd.port.pre.mk>
+
 .if defined(HAVE_GNOME)
 CONFIGURE_ARGS+=	--with-gnome
 .else
@@ -60,7 +62,5 @@ post-patch:
 	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
 		${WRKSRC}/hacks/glx/${file}
 .endfor
-
-.include <bsd.port.pre.mk>
 
 .include <bsd.port.post.mk>
