@@ -56,11 +56,36 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%AHPY5%%/aster_homard_utilitaires.py
 %%AHPY5%%/aster_homard_utilitaires.pyc
 %%AHPY5%%/aster_homard_utilitaires.pyo
+%%AHPY6%%/__init__.py
+%%AHPY6%%/__init__.pyc
+%%AHPY6%%/__init__.pyo
+%%AHPY6%%/aster_homard_1.py
+%%AHPY6%%/aster_homard_1.pyc
+%%AHPY6%%/aster_homard_1.pyo
+%%AHPY6%%/aster_homard_2.py
+%%AHPY6%%/aster_homard_2.pyc
+%%AHPY6%%/aster_homard_2.pyo
+%%AHPY6%%/aster_homard_3.py
+%%AHPY6%%/aster_homard_3.pyc
+%%AHPY6%%/aster_homard_3.pyo
+%%AHPY6%%/aster_homard_4.py
+%%AHPY6%%/aster_homard_4.pyc
+%%AHPY6%%/aster_homard_4.pyo
+%%AHPY6%%/aster_homard_5.py
+%%AHPY6%%/aster_homard_5.pyc
+%%AHPY6%%/aster_homard_5.pyo
+%%AHPY6%%/aster_homard_V6x.py
+%%AHPY6%%/aster_homard_V6x.pyc
+%%AHPY6%%/aster_homard_V6x.pyo
+%%AHPY6%%/aster_homard_utilitaires.py
+%%AHPY6%%/aster_homard_utilitaires.pyc
+%%AHPY6%%/aster_homard_utilitaires.pyo
 %%HOMARDDIR%%/homard
 %%PORTDOCS%%%%DOCSDIR%%/A_Lire.txt
 %%PORTDOCS%%%%DOCSDIR%%/Readme.txt
 @dirrm %%AHPY%%
 @dirrm %%AHPY5%%
+@dirrm %%AHPY6%%
 @dirrm %%HOMARDDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec ln -sf %%HOMARDDIR%%/aster_homard_py %%ASTER_TOOLS%%

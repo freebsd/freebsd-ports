@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homard
-PORTVERSION=	6.2
-PORTREVISION=	3
+PORTVERSION=	7.1
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -32,53 +31,51 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME:U}_V${PORTVERSION}.Linux
+WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	7.3
+ASTER_VER=	7.4
 vaster=		STA${ASTER_VER}
-ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
+ASTER_TOOLS=	${LOCALBASE}/aster/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
 AHPY5=		aster_homard_V5x_py
-HOMARDSCRIPT=	${WRKDIR}/${PORTNAME}_base
+AHPY6=		aster_homard_V6x_py
+HOMARDSCRIPT=	${WRKSRC}/${PORTNAME}_base
 # This name is requested to run aster's make test
 HOMARDPG=	${PORTNAME:U}_V${PORTVERSION}.out
+HOMARDWDIR=	${PORTNAME:U}_V${PORTVERSION}.Linux
 
 DOCS=		A_Lire.txt Readme.txt
 
 .include <bsd.port.pre.mk>
 
-unames!=	${UNAME} -s
 PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
-		AHPY5=${LHOMARDDIR}/${AHPY5} UNAMES=${unames} HOMARDPG=${HOMARDPG}	\
-		ASTER_TOOLS=${ASTER_TOOLS}
+		AHPY5=${LHOMARDDIR}/${AHPY5} AHPY6=${LHOMARDDIR}/${AHPY6}		\
+		UNAMES=${OPSYS} HOMARDPG=${HOMARDPG} ASTER_TOOLS=${ASTER_TOOLS}
 
-BRANDELF?=	/usr/bin/brandelf
-
-post-patch:
-	@${REINPLACE_CMD} -e "s#/home/homard/ASTER_HOMARD#${ASTER_TOOLS}#"	\
-		-e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
-		-e "s#/local/edf-python-2.1.1/bin/python#${PYTHON_CMD}#"	\
+pre-configure:
+	@${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
+		-e "s#/local/edf-python-2.1.1/bin/python#${PYTHON_CMD}#"		\
 		${HOMARDSCRIPT}
 
 do-install:
 	@${MKDIR} ${HOMARDDIR}
-	@${MKDIR} ${PREFIX}/bin/${unames}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDPG} ${PREFIX}/bin/${unames}
-	@${BRANDELF} -t Linux ${PREFIX}/bin/${unames}/${HOMARDPG}
+	@${MKDIR} ${PREFIX}/bin/${OPSYS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/${HOMARDPG} ${PREFIX}/bin/${OPSYS}
+	@${BRANDELF} -t Linux ${PREFIX}/bin/${OPSYS}/${HOMARDPG}
 	@${INSTALL_SCRIPT} ${HOMARDSCRIPT} ${HOMARDDIR}/${PORTNAME}
-	@${CP} -R ${WRKSRC}/${AHPY} ${HOMARDDIR}
-	@${CP} -R ${WRKSRC}/${AHPY5} ${HOMARDDIR}
+	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/${AHPY} ${HOMARDDIR}
+	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/${AHPY5} ${HOMARDDIR}
+	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/${AHPY6} ${HOMARDDIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${HOMARDDIR}
 	@${LN} -fs ${HOMARDDIR}/homard ${ASTER_TOOLS}/
 	@${LN} -fs ${HOMARDDIR}/aster_homard_py ${ASTER_TOOLS}/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKDIR}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
