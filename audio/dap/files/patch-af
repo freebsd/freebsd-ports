@@ -1,19 +1,15 @@
---- sound/Makefile.linux.orig	Mon Nov 15 07:28:21 1999
-+++ sound/Makefile.linux	Sat Dec 11 13:45:25 1999
-@@ -1,5 +1,5 @@
--CC      = gcc
--CXX     = g++
-+CC      ?= gcc
-+CXX     ?= g++
- FORMS   = ../../xforms/FORMS
- SPKIT   = ../spkit
- AUDIO   = ../libaudio
-@@ -9,7 +9,7 @@
+diff -urN ../dap-2.1.1.orig/sound/Makefile.linux ./sound/Makefile.linux
+--- ../dap-2.1.1.orig/sound/Makefile.linux	Tue Feb 22 09:27:33 2000
++++ ./sound/Makefile.linux	Sun Jun 11 13:54:11 2000
+@@ -9,9 +9,9 @@
  HOMEDIR = $(HOME)
  INCDIR  = -I. -I.. -I$(SPKIT) -I$(MAINDIR)
  LIBDIR  = -L$(SPKIT)/spkit -L$(AUDIO) -L$(AUDIOF)
--CCFLAGS = $(DEBUG) $(OPTIM) -DNOFORMS -DLINUX -DBIGENDIAN -DUSINGGCC -Wall
-+CCFLAGS = $(CXXFLAGS) -DNOFORMS -DLINUX -DUSINGGCC -Wall
+-CCFLAGS = $(DEBUG) $(OPTIM) -DNOFORMS -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++CCFLAGS = $(OPTIM) -DNOFORMS -DLINUX -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
- OPTIM   = -O1
+-OPTIM   = -O1
++OPTIM   = ${CXXFLAGS}
  LDFLAGS = $(LIBDIR) -laudio -laudiofile -lm
+ 
+ PROGS =	SampleTest
