@@ -103,11 +103,56 @@
 %%LIBC_TARG%%/share/mspgcc/doc/devheaders.txt
 %%LIBC_TARG%%/share/mspgcc/doc/doc.txt
 %%LIBC_TARG%%/share/mspgcc/doc/volatil
+%%LIBC_TARG%%/share/mspgcc/examples/LICENSE.txt
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/config.h
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/depend.mak
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/environ.mak
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/test.c
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/usart.c
+%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/usart.h
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/font.c
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/font.h
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/lcd.c
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/lcd.h
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/char_lcd/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.c
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.h
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.h
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.s
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/titleimage.c
+%%LIBC_TARG%%/share/mspgcc/examples/leds/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/leds/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/leds/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/leds/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/lcd.c
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/lcd.h
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/rawsources/README
 %%LIBC_TARG%%/share/mspgcc/examples/rawsources/flash.c
 %%LIBC_TARG%%/share/mspgcc/examples/rawsources/rand.c
 %%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/README
 %%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/nn4.c
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/config.h
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/depend.mak
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/environ.mak
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/task.c
+%%LIBC_TARG%%/share/mspgcc/examples/tasker/task.h
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/README
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.h
@@ -116,6 +161,15 @@
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.h
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/webside.c
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/fll.h
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/fll.s
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/miniterm.py
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.h
+%%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.s
 @dirrm %%LIBC_TARG%%/include/msp430
 @dirrm %%LIBC_TARG%%/include/sys
 @dirrm %%LIBC_TARG%%/include
@@ -123,9 +177,16 @@
 @dirrm %%LIBC_TARG%%/lib/msp2
 @dirrm %%LIBC_TARG%%/share/mspgcc/doc
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/adc
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/char_lcd
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/leds
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/rawsources
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/reed-solomon
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/tasker
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples
 @dirrm %%LIBC_TARG%%/share/mspgcc
 @unexec rmdir %D/%%LIBC_TARG%%/share 2>/dev/null || true
