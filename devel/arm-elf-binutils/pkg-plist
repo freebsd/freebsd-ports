@@ -3,7 +3,6 @@ arm-elf/bin/addr2line
 arm-elf/bin/ar
 arm-elf/bin/as
 arm-elf/bin/c++filt
-arm-elf/bin/gasp
 arm-elf/bin/ld
 arm-elf/bin/nm
 arm-elf/bin/objcopy
@@ -13,10 +12,7 @@ arm-elf/bin/readelf
 arm-elf/bin/size
 arm-elf/bin/strings
 arm-elf/bin/strip
-arm-elf/include/ansidecl.h
-arm-elf/include/bfd.h
-arm-elf/include/bfdlink.h
-arm-elf/include/symcat.h
+@comment arm-elf/include/symcat.h
 arm-elf/lib/ldscripts/armelf.x
 arm-elf/lib/ldscripts/armelf.xbn
 arm-elf/lib/ldscripts/armelf.xc
@@ -25,14 +21,11 @@ arm-elf/lib/ldscripts/armelf.xr
 arm-elf/lib/ldscripts/armelf.xs
 arm-elf/lib/ldscripts/armelf.xsc
 arm-elf/lib/ldscripts/armelf.xu
-arm-elf/lib/libbfd.a
 arm-elf/lib/libiberty.a
-arm-elf/lib/libopcodes.a
 bin/arm-elf-addr2line
 bin/arm-elf-ar
 bin/arm-elf-as
 bin/arm-elf-c++filt
-bin/arm-elf-gasp
 bin/arm-elf-ld
 bin/arm-elf-nm
 bin/arm-elf-objcopy
@@ -42,6 +35,9 @@ bin/arm-elf-readelf
 bin/arm-elf-size
 bin/arm-elf-strings
 bin/arm-elf-strip
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
+share/locale/da/LC_MESSAGES/ld.mo
 share/locale/da/LC_MESSAGES/opcodes.mo
 share/locale/de/LC_MESSAGES/opcodes.mo
 share/locale/es/LC_MESSAGES/bfd.mo
@@ -54,9 +50,13 @@ share/locale/fr/LC_MESSAGES/binutils.mo
 share/locale/fr/LC_MESSAGES/gas.mo
 share/locale/fr/LC_MESSAGES/ld.mo
 share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
 share/locale/ja/LC_MESSAGES/bfd.mo
 share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/opcodes.mo
 share/locale/sv/LC_MESSAGES/bfd.mo
+share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
 share/locale/sv/LC_MESSAGES/opcodes.mo
 share/locale/tr/LC_MESSAGES/bfd.mo
@@ -64,6 +64,8 @@ share/locale/tr/LC_MESSAGES/binutils.mo
 share/locale/tr/LC_MESSAGES/gas.mo
 share/locale/tr/LC_MESSAGES/ld.mo
 share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/zh_CN/LC_MESSAGES/bfd.mo
+share/locale/zh_CN/LC_MESSAGES/binutils.mo
 @dirrm arm-elf/bin
 @dirrm arm-elf/include
 @dirrm arm-elf/lib/ldscripts
