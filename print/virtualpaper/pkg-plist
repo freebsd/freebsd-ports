@@ -7,3 +7,4 @@ lib/m3/www/EditLectern.1.html
 lib/m3/www/Lectern.1.html
 lib/m3/www/LecternClient.1.html
 share/virtualpaper/COPYRIGHT
+@dirrm share/virtualpaper

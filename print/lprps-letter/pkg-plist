@@ -7,3 +7,5 @@ share/lprps/banner.ps
 bin/textps
 bin/psrev
 share/doc/lprps/INSTALL
+@dirrm share/doc/lprps
+@dirrm share/lprps
