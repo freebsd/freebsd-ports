@@ -18,7 +18,7 @@ BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget gtk20 libxml2
+USE_GNOME=	gnomeprefix gnomehack gnometarget gconf2 gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
