@@ -1,0 +1,13 @@
+m3cc/gcc/COPYING
+m3cc/gcc/Makefile.in
+m3cc/gcc/calls.c
+m3cc/gcc/combine.c
+m3cc/gcc/config/i386/freebsd.h
+m3cc/gcc/expr.c
+m3cc/gcc/expr.h
+m3cc/gcc/function.c
+m3cc/gcc/m3.c
+m3cc/gcc/m3.def
+m3cc/gcc/sdbout.c
+m3cc/gcc/tree.def
+m3cc/gcc/tree.h

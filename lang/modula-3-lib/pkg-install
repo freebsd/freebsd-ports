@@ -1,0 +1,74 @@
+#! /bin/sh
+#
+# This script determines whether certain earlier versions of the
+# Modula-3 port exist on the system in a place where the linker or
+# dynamic linker would find them.  These earlier versions must be
+# removed before installing the current port, because they use higher
+# major version numbers for the shared libraries than this port uses.
+# This situation arose because of an ill-considered choice for the
+# major version numbers in those early ports.  I am intentionally
+# breaking the rule that the version number should never be decreased,
+# in order to nip this unfortunate situation in the bud.
+
+if [ x$2 != xPRE-INSTALL ]; then
+    exit 0
+fi
+
+check() {
+    local list i lib_path oldIFS status
+
+    status=0
+
+    # Check the dynamic linker's hints.
+
+    list=$(/sbin/ldconfig -r | grep "libm3\.so\.35[34]\." | sed "s/^.* => //")
+    for file in ${list}; do
+	if [ -f ${file} ]; then  # The file actually exists
+	    echo $(dirname ${file})
+	    status=1
+	fi
+    done
+
+    # Check any directories in LD_LIBRARY_PATH.  Also, check the directory
+    # where we intend to install the new libraries.
+
+    lib_path=${PREFIX:-/usr/local}/lib/m3/FreeBSD2:${LD_LIBRARY_PATH}
+    oldIFS=${IFS}; IFS=":"; set ${lib_path}; IFS=${oldIFS}
+    for dir; do
+	if [ x${dir} != x ]; then
+	    if echo ${dir}/libm3.so.35[34].* | grep -q "\*"; then # Not found
+		:
+	    else  # Found
+		echo ${dir}
+		status=1
+	    fi
+	fi
+    done
+
+    return ${status}
+}
+
+tmp=/tmp/m3-inst$$a
+trap "rm -f ${tmp}" 1 2 3 15
+touch ${tmp}
+
+if check > ${tmp}; then
+    rm -f ${tmp}
+    exit 0
+else
+    echo "*****************************************************************"
+    echo "*                        IMPORTANT                              *"
+    echo "* You currently have an older version of the Modula-3 port on   *"
+    echo "* your system.  You must remove the older version before you    *"
+    echo "* install this one.  Otherwise, a problem with the shared       *"
+    echo "* libraries in the older version will cause utter confusion.    *"
+    echo "* Please remove the older version and try again.                *"
+    echo "*                                                               *"
+    echo "* Old Modula-3 shared libraries were found in the following     *"
+    echo "* directories:                                                  *"
+    echo "*                                                               *"
+    sort -u ${tmp} | awk '{ printf "*   %-59s *\n", $0 }'
+    echo "*****************************************************************"
+    rm -f ${tmp}
+    exit 1
+fi

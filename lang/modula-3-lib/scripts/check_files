@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# check_files listfile m3dir sysdir
+#
+# The listfile must contain a list of filenames, one per line.  It is read,
+# and all leading instances of m3dir are replaced with sysdir.  If all
+# the resulting files exist and are readable, then sysdir is echoed to
+# the standard output.  Otherwise, nothing is echoed.  In any event, the
+# exit status is successful.
+
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 listfile m3dir sysdir" >&2
+    exit 1
+fi
+
+listfile=$1
+m3dir=$2
+sysdir=$3
+
+result=${sysdir}
+for i in $(sed "s,^${m3dir},${sysdir}," ${listfile}); do
+    if [ ! -r $i ]; then
+	result=
+	break
+    fi
+done
+
+echo ${result}
+exit 0
