@@ -20,7 +20,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.base${EXTRACT_SUFX} \
 #		${PORTNAME}-${PORTVERSION}.test${EXTRACT_SUFX}
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	girgen@partitur.se
 
 Y2K=		http://www.postgresql.org/y2k.html
 
