@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/
 DISTFILES=	gbscript-1.11.tar.gz cclib.24
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	makefile
