@@ -7,12 +7,12 @@
 
 PORTNAME=		dvipdfm
 PORTVERSION=		0.13.2c
+PORTREVISION=		1
 CATEGORIES=		japanese print
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
 PATCH_SITES=		http://hamilcar.phys.kyushu-u.ac.jp/~hirata/dvipdfm/distfiles/
-PATCHFILES=		${DISTNAME}-jpatch-p1.diff.gz
-
+PATCHFILES=		${DISTNAME}-jpatch-p1c.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		yasu@asuka.net
