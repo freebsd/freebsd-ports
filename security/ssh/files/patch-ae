@@ -13,7 +13,7 @@
   ServerKeyBits 768
   LoginGraceTime 600
   KeyRegenerationInterval 3600
-! PermitRootLogin yes
+! PermitRootLogin no
   IgnoreRhosts no
   StrictModes yes
   QuietMode no
