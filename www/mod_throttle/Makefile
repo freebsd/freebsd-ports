@@ -33,6 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_throttle/
 .endfor
 .endif
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
