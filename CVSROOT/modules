@@ -4793,6 +4793,7 @@ nd		ports/www/nd
 ndir		ports/sysutils/ndir
 neXtaw		ports/x11-toolkits/neXtaw
 nedit		ports/editors/nedit
+nefu		ports/net/nefu
 nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
