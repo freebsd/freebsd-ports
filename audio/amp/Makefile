@@ -3,7 +3,7 @@
 # Date created:		Jun 23 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.4 1998/04/26 08:05:24 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/04/29 22:55:19 vanilla Exp $
 #
 
 DISTNAME=	amp-0.7.6
@@ -13,6 +13,8 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
