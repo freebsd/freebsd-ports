@@ -16,29 +16,30 @@
 +
  
  VERSION=1.0
-@@ -46,2 +47,25 @@
+@@ -46,2 +47,26 @@
  	  $(DISTUID)@$(DISTHOST):$(DISTPATH)/jbigkit-$(VERSION)-announce.txt
  	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/.www/download/
 +
 +install:
 +	mkdir -p ${PREFIX}/bin
-+	install -c -s -m 755 -o bin -g bin pbmtools/jbgtopbm ${PREFIX}/bin
-+	install -c -s -m 755 -o bin -g bin pbmtools/pbmtojbg ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} pbmtools/jbgtopbm pbmtools/pbmtojbg \
++		${PREFIX}/bin
 +	mkdir -p ${PREFIX}/man/man1
-+	install -c -m 644 -o bin -g bin pbmtools/pbmtojbg.1 ${PREFIX}/man/man1
-+	install -c -m 644 -o bin -g bin pbmtools/jbgtopbm.1 ${PREFIX}/man/man1
-+	mkdir -p ${PREFIX}/man/man5
++	${BSD_INSTALL_MAN} pbmtools/pbmtojbg.1 pbmtools/jbgtopbm.1 \
++		${PREFIX}/man/man1
++	# mkdir -p ${PREFIX}/man/man5
 +	# Not installing the pbm(5) man page, because BSD has its own
 +	# install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
-+	install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
++	# Not installing the pgm(5) man page for it comes with netpbm port
++	# install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
 +	mkdir -p ${PREFIX}/include
-+	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
++	${BSD_INSTALL_DATA} libjbig/jbig.h ${PREFIX}/include
 +	mkdir -p ${PREFIX}/lib
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.a ${PREFIX}/lib
++	${BSD_INSTALL_DATA} libjbig/libjbig.a ${PREFIX}/lib
 +.if ${PORTOBJFORMAT} == elf
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1 ${PREFIX}/lib
-+	(cd ${PREFIX}/lib; ln -sf libjbig.so.1 libjbig.so)
++	${BSD_INSTALL_DATA} libjbig/libjbig.so.1 ${PREFIX}/lib
++	ln -sf libjbig.so.1 ${PREFIX}/lib/libjbig.so
 +.else
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.1 ${PREFIX}/lib
-+	(cd ${PREFIX}/lib; ln -sf libjbig.so.1.1 libjbig.so)
++	${BSD_INSTALL_DATA} libjbig/libjbig.so.1.1 ${PREFIX}/lib
++	ln -sf libjbig.so.1.1 ${PREFIX}/lib/libjbig.so
 +.endif

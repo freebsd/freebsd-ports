@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-WRKSRC= ${WRKDIR}/jbigkit
+WRKSRC= ${WRKDIR}/${PORTNAME}
 MAN1=	jbgtopbm.1 pbmtojbg.1
-MAN5=	pgm.5
 
 post-install:
 .if !defined(NOPORTDOCS)
