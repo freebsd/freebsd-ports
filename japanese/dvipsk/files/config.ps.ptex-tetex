@@ -1,5 +1,5 @@
-% teTeX's config.ps. Thomas Esser, 1998, public domain.
 % $FreeBSD$
+% teTeX's config.ps. Thomas Esser, 1998, public domain.
 
 % Memory available. Download the three-line PostScript file:
 %   %! Hey, we're PostScript
@@ -46,7 +46,7 @@ j
 % This shows how to add your own map file.
 % Remove the comment and adjust the name:
 % p +myfonts.map
-p +kanji.map
+p +ptex-kanji.map
 
 @ A4size 210mm 297mm
 @+ %%PaperSize: A4
