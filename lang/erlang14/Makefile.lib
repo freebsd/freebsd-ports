@@ -17,7 +17,6 @@ OTP_LIBS=	appmon-2.1.2 \
 		et-1.0 \
 		eva-2.0.4 \
 		gs-1.5.2 \
-		hipe-2.0.2 \
 		ic-4.2.6 \
 		inets-3.0.7 \
 		jinterface-1.2.1.2 \
