@@ -82,6 +82,7 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
+	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
 .if defined(WITH_MINORUPDATE)
 	@${MV} ${WRKDIR}/vje ${WRKSRC}/vje30/bin/
 .endif
