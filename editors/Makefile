@@ -49,6 +49,7 @@
     SUBDIR += jext
     SUBDIR += joe
     SUBDIR += jove
+    SUBDIR += koffice
     SUBDIR += le
     SUBDIR += leim20
     SUBDIR += lpe
