@@ -2583,6 +2583,7 @@ gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsdrive	ports/astro/gpsdrive
 gpsman		ports/astro/gpsman
+gpt		ports/misc/gpt
 gputils		ports/devel/gputils
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
