@@ -12,7 +12,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	8.2.5
-CATEGORIES=	net
+CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.nominum.com/pub/isc/bind/src/${PORTVERSION}/ \
