@@ -14,3 +14,4 @@ man/man5/hosts_options.5.gz
 man/man8/tcpd.8.gz
 man/man8/tcpdchk.8.gz
 man/man8/tcpdmatch.8.gz
+etc/inetd.conf.wrapped.sample
