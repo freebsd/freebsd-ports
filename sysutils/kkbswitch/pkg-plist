@@ -9,6 +9,7 @@ share/locale/ru/LC_MESSAGES/kkbswitch.mo
 share/locale/uk/LC_MESSAGES/kkbswitch.mo
 share/locale/el/LC_MESSAGES/kkbswitch.mo
 share/locale/sk/LC_MESSAGES/kkbswitch.mo
+share/locale/he/LC_MESSAGES/kkbswitch.mo
 %%DOCSDIR%%/code_style.png
 %%DOCSDIR%%/flag_code_style.png
 %%DOCSDIR%%/flag_style.png

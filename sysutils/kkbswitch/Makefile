@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kkbswitch
-PORTVERSION=		1.4.1
+PORTVERSION=		1.4.2
 CATEGORIES=		sysutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kkbswitch
@@ -24,7 +24,9 @@ CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 
 DOCSDIR=		share/doc/HTML/en/${PORTNAME}
 
-OPTIONS=		RU_UA_LAYOUT	"With additional RU_UA keyboard layout" on
+MAN1=			kkbswitch.1
+
+OPTIONS=		RU_UA_LAYOUT	"With additional RU_UA keyboard layout" off
 
 PLIST_SUB=		PREFIX=${PREFIX} \
 			X11BASE=${X11BASE} \
@@ -33,9 +35,9 @@ PLIST_SUB=		PREFIX=${PREFIX} \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RU_UA_LAYOUT)
+CONFIGURE_ARGS+=	--enable-ru-ua-layout
 PLIST_SUB+=		LAYOUT=""
 .else
-CONFIGURE_ARGS+=	--disable-ru-ua-layout
 PLIST_SUB+=		LAYOUT="@comment "
 .endif
 
