@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 #
 # $FreeBSD$
 #
@@ -76,6 +76,7 @@
 #
 
 $debug = 0;
+$die = '';
 $cvsroot = $ENV{'CVSROOT'};
 $availfile = $cvsroot . "/CVSROOT/avail";
 $myname = $ENV{"USER"} if !($myname = $ENV{"LOGNAME"});
