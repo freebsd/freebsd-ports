@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar  9 18:00:00 1998
-+++ Makefile	Mon Jul  1 03:46:01 2002
+--- Makefile.orig	Tue Mar 10 00:00:00 1998
++++ Makefile	Fri Nov 29 18:20:50 2002
 @@ -16,8 +16,8 @@
  #
  ##############################################################################
@@ -15,13 +15,13 @@
  # -c: don't link yet
  #COMPILE_FLAGS = -O3 -m486 -c
  
-+.if exists(${X11BASE}/include/X11/forms.h)
-+XFORMSINC = -I${X11BASE}/include/X11
++.if exists(${PREFIX}/include/X11/forms.h)
++XFORMSINC = -I${PREFIX}/include/X11
 +.endif
 +
  # -O: normal optimization level  -c: don't link yet
 -COMPILE_FLAGS = -O -c
-+COMPILE_FLAGS = ${CFLAGS} -I${PREFIX}/include -I${X11BASE}/include ${XFORMSINC} -c
++COMPILE_FLAGS = ${CFLAGS} -I${LOCALBASE}/include -I${PREFIX}/include ${XFORMSINC} -c
  
  # -s: DESTROYS symbol-table
 -LINK_FLAGS = -s
@@ -30,8 +30,8 @@
  
 -SYSLIB = -L/usr/X11R6/lib -lX11 -lm
 -LIBS = -L/usr/lib -ltiff -ljpeg -lgz -lforms -lXpm $(SYSLIB)
-+SYSLIB = -L${X11BASE}/lib -lX11 -lm
-+LIBS = -L${PREFIX}/lib -ltiff -ljpeg -lz -lforms -lXpm $(SYSLIB)
++SYSLIB = -L${PREFIX}/lib -lX11 -lGL -lGLU -lm
++LIBS = -L${LOCALBASE}/lib -ltiff -ljpeg -lz -lforms -lXpm $(SYSLIB)
  
  OBJECTS = xmrm.o xmrm_cb.o io.o morphvec.o init.o wavemorph.o wave_rts.o wave.o\
            areas.o xmrm_main.o
