@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.76 1999/05/27 23:20:33 dirk Exp $
+# $Id: Makefile,v 1.77 1999/06/10 10:24:35 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \
 		http://www.apache.de/dist/ \
 		http://www.php.net/distributions/ \
-		ftp://www.php.net/pub/distributions/ \
+		http://us.php.net/distributions/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://apache.compuex.com/pub/apache/dist/ \
 		http://php.he.net/distributions/ \
