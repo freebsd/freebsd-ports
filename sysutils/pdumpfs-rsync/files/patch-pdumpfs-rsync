@@ -1,0 +1,11 @@
+--- pdumpfs-rsync.orig	Sat May 29 03:00:00 2004
++++ pdumpfs-rsync	Sat May 29 03:01:57 2004
+@@ -15,7 +15,7 @@
+ # the GNU General Public License version 2.
+ #
+ 
+-load '/usr/bin/pdumpfs'
++load File.join(File.dirname(__FILE__), 'pdumpfs')
+ require 'ftools'
+ require 'getoptlong'
+ 
