@@ -1,0 +1,19 @@
+--- Makefile.orig	Sun Nov 19 12:52:12 2000
++++ Makefile	Sat Dec 23 07:47:42 2000
+@@ -5,7 +5,7 @@
+ #============================================================#
+ 
+ #Change this to where you want to put the data directory.
+-DATADIR = `pwd`/data
++#DATADIR = `pwd`/data
+ #Eg you might want to put the data files here......
+ #DATADIR = /usr/share/games/xtux
+ 
+@@ -14,7 +14,7 @@
+ SV_SRC_DIR = src/server
+ CL_SRC_DIR = src/client
+ 
+-MAKE = @make -C
++MAKE = @gmake -C
+ 
+ all:	common client server

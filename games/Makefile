@@ -301,6 +301,7 @@
     SUBDIR += xtrojka
     SUBDIR += xtron
     SUBDIR += xtruco
+    SUBDIR += xtux
     SUBDIR += xvier
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
