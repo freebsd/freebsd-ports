@@ -2,7 +2,6 @@
 #
 
     SUBDIR += IglooFTP
-    SUBDIR += beroftpd
     SUBDIR += cftp
     SUBDIR += curl
     SUBDIR += downloader
