@@ -13,8 +13,10 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 
 MAINTAINER=	hollywar@mail.holywar.net
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 do-patch:
 	cd ${WRKSRC} ; ${MV} Makefile.tmpl Makefile ;
