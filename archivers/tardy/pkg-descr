@@ -1,0 +1,17 @@
+The tardy program is a tar post-processor. It may be used to manipulate the
+file headers in tar archive files in various ways.
+
+The reason the tardy program was written was because the author wanted to
+"spruce up" tar files before posting them to the net, mostly to remove
+artefacts of the development environment, without introducing more.
+
+The tardy program was designed to allow you to alter certain characteristics
+of files after they have been included in the tar file. Among them are:
+   * change file owner (by number or name)
+   * change file group (by number or name)
+   * add directory prefix (e.g. dot)
+   * change file protections (e.g. from 600 to 644)
+
+Note that all of these affect ALL files in the archive.
+
+WWW: http://www.canb.auug.org.au/~millerp/tardy.html

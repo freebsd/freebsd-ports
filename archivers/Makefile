@@ -51,6 +51,7 @@
     SUBDIR += star
     SUBDIR += stuffit
     SUBDIR += szip
+    SUBDIR += tardy
     SUBDIR += ucl
     SUBDIR += unace
     SUBDIR += unadf
