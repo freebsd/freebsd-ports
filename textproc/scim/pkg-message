@@ -1,0 +1,21 @@
+------------------------------------------------------------------------------
+The installation of SCIM has finished. Please note this port is only a common
+framework for input methods and does not contain any actual input methods.
+
+In the ports collection the following input method components for SCIM are
+available:
+
+ Chinese:
+  chinese/scim-tables	Table based input methods: Array30, CangJie, Cantonese,
+                        Dayi, Erbi, EZ, Jyutping, Simplex, Wubi, Ziranma, ZhuYin
+  chinese/scim-chinese	Smart pinyin
+    
+ Korean:
+  korean/scim-tables	Table based input methods: Hangul, Hanja
+
+ Japanese:
+  japanese/scim-tables	Table based input methods: HIRAGANA, KATAKANA, Nippon
+
+As a common rule, set XMODIFIERS to '@im=SCIM' and use `scim -d' to start the
+scim daemon.
+------------------------------------------------------------------------------
