@@ -33,6 +33,10 @@ DOCS=		FAQ.html MANUAL.html MANUAL_lynx.html README \
 SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g"
 
+.if defined(USE_INET6)
+SED_CMD+=	-e "s,undef INET6,define INET6,g"
+.endif
+
 .if defined(JAPANESE)
 SED_CMD+=	-e "s,undef JAPANESE,define JAPANESE,g" \
 		-e "s,w3mhelp_en.html,w3mhelp_ja.html,g"
