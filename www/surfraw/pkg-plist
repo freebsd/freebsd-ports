@@ -33,6 +33,7 @@ bin/webster
 bin/wetandwild
 bin/xxx
 bin/yahoo
+@unexec if cmp -s %D/etc/surfraw.conf %D/share/examples/surfraw/surfraw.conf; then rm -f %D/etc/surfraw.conf; fi
 share/examples/surfraw/surfraw.conf
 share/surfraw/surfraw_elvi.list
 @dirrm share/examples/surfraw
