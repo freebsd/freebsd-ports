@@ -96,6 +96,7 @@
     SUBDIR += flow-tools
     SUBDIR += flowscan
     SUBDIR += fping
+    SUBDIR += freebsd-uucp
     SUBDIR += freeradius-devel
     SUBDIR += freewais-sf
     SUBDIR += fspclient
