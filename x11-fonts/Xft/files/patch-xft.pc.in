@@ -1,0 +1,9 @@
+--- xft.pc.in.orig	Sun Oct  6 17:17:59 2002
++++ xft.pc.in	Sun Oct  6 17:18:10 2002
+@@ -11,5 +11,5 @@
+ Description: X FreeType library
+ Version: @PACKAGE_VERSION@
+ Requires: fontconfig
+-Libs: -L${libdir} -lXft ${freetypelibs} ${xrenderlibs}
++Libs: -L${libdir} -lXft2 ${freetypelibs} ${xrenderlibs}
+ Cflags: -I${includedir} ${freetypecflags} ${xrendercflags}
