@@ -36,10 +36,10 @@ Dist			Port			Why
 						binary form
 ac3dlx*			graphics/linux-ac3d	Commercial license, no
 						distribution
-acroread/linux-5*.tar.gz devel/acroread		Must fill out redistribution
+acroread/linux-5*.tar.gz print/acroread		Must fill out redistribution
 						form at
 						http://www.adobe.com/products/acrobat/distribute.html
-acroread/AdobeReader_*-7*.*.rpm devel/acroread7	Must fill out redistribution
+acroread/AdobeReader_*-7*.*.rpm print/acroread7	Must fill out redistribution
 						form at
 						http://www.adobe.com/products/acrobat/distribute.html
 actx-*			games/actx		Contains commercial character
