@@ -1,19 +1,38 @@
 bin/gfax
-bin/lpr.gfax
-bin/gfax.install-lpr
-bin/gfax.uninstall-lpr
+lib/gfax/controller.py
+lib/gfax/en.h
+lib/gfax/fax-g3.profile
+lib/gfax/fax.py
+lib/gfax/file_handler.py
+lib/gfax/gfax.desktop
+lib/gfax/gfax.glade
+lib/gfax/gfax.png
+lib/gfax/gfax.py
+lib/gfax/gfax.spec
+lib/gfax/hfaxlib.py
+lib/gfax/install.sh
+lib/gfax/mgettydruid.glade
+lib/gfax/pixmaps/gfax.png
+lib/gfax/pixmaps/gnome-logo-icon-transparent.png
+lib/gfax/prefs.py
+lib/gfax/prefs_ui.py
+lib/gfax/setup.glade
+lib/gfax/ui.py
+lib/gfax/uninstall.sh
+%%PORTDOCS%%share/doc/gfax/AUTHORS
+%%PORTDOCS%%share/doc/gfax/COPYING
+%%PORTDOCS%%share/doc/gfax/Changelog
+%%PORTDOCS%%share/doc/gfax/HACKING
+%%PORTDOCS%%share/doc/gfax/INSTALL
+%%PORTDOCS%%share/doc/gfax/TODO
 share/gnome/apps/Applications/gfax.desktop
-share/gnome/gfax/glade/gfax.glade
-share/gnome/gfax/glade/setup.glade
-share/gnome/gfax/glade/mgettydruid.glade
-share/gnome/gfax/glade/spool.glade
-share/gnome/help/gfax/C/gfax.html
-share/gnome/help/gfax/C/topic.dat
-share/gnome/help/gfax/C/index.html
-share/gnome/pixmaps/gfax.png
-@unexec /bin/sh %D/bin/gfax.uninstall-lpr
-@exec /bin/sh %D/bin/gfax.install-lpr
-@dirrm share/gnome/gfax/glade
-@dirrm share/gnome/gfax
-@dirrm share/gnome/help/gfax/C
-@dirrm share/gnome/help/gfax
+share/gnome/ximian/Programs/Utilities/gfax.desktop
+@dirrm share/gnome/ximian/Programs/Utilities
+@dirrm share/gnome/ximian/Programs
+@dirrm share/gnome/ximian
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps
+@dirrm share/gnome
+%%PORTDOCS%%share/doc/gfax
+@dirrm lib/gfax/pixmaps
+@dirrm lib/gfax

@@ -6,52 +6,58 @@
 #
 
 PORTNAME=	gfax
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5
 CATEGORIES=	comms print
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
-DIST_SUBDIR=	gnome
+MASTER_SITES=	http://gfax.cowlug.org/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A GNOME pop-up fax manager
 
-BROKEN=		"Replaces system lpr binary"
-
-BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
-RUN_DEPENDS=	${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
 
-USE_GMAKE=	yes
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack libpanel libcapplet libglade
-GNU_CONFIGURE=	yes
+NO_BUILD=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+BASEFILES=	controller.py en.h fax-g3.profile fax.py file_handler.py \
+		gfax.desktop gfax.glade gfax.png gfax.py gfax.spec \
+		hfaxlib.py install.sh mgettydruid.glade prefs.py \
+		prefs_ui.py setup.glade ui.py uninstall.sh
+
+PIXFILES=	gfax.png gnome-logo-icon-transparent.png
+DOCFILES=	AUTHORS COPYING Changelog HACKING INSTALL TODO
 
 post-extract:
-	@${LN} -sf ${LOCALBASE}/share/automake/install-sh ${WRKSRC}/install-sh
-	@${LN} -sf ${LOCALBASE}/share/automake/missing ${WRKSRC}/missing
-	@${LN} -sf ${LOCALBASE}/share/automake/mkinstalldirs ${WRKSRC}/mkinstalldirs
+	@${REINPLACE_CMD} -e 's|/usr/lib/gfax|${PREFIX}/lib/gfax|g' \
+		${WRKSRC}/gfax.py
+	@${REINPLACE_CMD} -e 's|/usr/share/gfax|${PREFIX}/share/gfax|g ; \
+		s|/usr/lib/gfax|${PREFIX}/lib/gfax|g' \
+		${WRKSRC}/prefs.py
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
-			${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		 's|[(]gnomedatadir[)]/gnome|(gnomedatadir)|g'
-
-pre-install:
-	@${MV} ${WRKSRC}/gfax.install-lpr ${WRKSRC}/gfax.install-lpr.orig
-	@${SED} \
-		-e 's#%%PREFIX%%#${PREFIX}/#' \
-		${WRKSRC}/gfax.install-lpr.orig > ${WRKSRC}/gfax.install-lpr
-	@${MV} ${WRKSRC}/lpr.gfax ${WRKSRC}/lpr.gfax.orig
-	@${SED} \
-		-e 's#%%PREFIX%%#${PREFIX}/#' \
-		${WRKSRC}/lpr.gfax.orig > ${WRKSRC}/lpr.gfax
-
-post-install:
-	@${SH} ${PREFIX}/bin/gfax.install-lpr
+do-install:
+	@${MKDIR} ${PREFIX}/lib/gfax
+	@${MKDIR} ${PREFIX}/lib/gfax/pixmaps
+	@${MKDIR} ${PREFIX}/share/gnome/apps/Applications
+	@${MKDIR} ${PREFIX}/share/gnome/ximian
+	@${MKDIR} ${PREFIX}/share/gnome/ximian/Programs
+	@${MKDIR} ${PREFIX}/share/gnome/ximian/Programs/Utilities
+.for base in ${BASEFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${base} ${PREFIX}/lib/gfax
+.endfor
+	@${INSTALL_SCRIPT} ${WRKSRC}/gfax.py ${PREFIX}/bin/gfax
+	@${INSTALL_DATA} ${WRKSRC}/gfax.desktop ${PREFIX}/share/gnome/apps/Applications
+	@${INSTALL_DATA} ${WRKSRC}/gfax.desktop ${PREFIX}/share/gnome/ximian/Programs/Utilities
+	@${INSTALL_DATA} ${WRKSRC}/gfax.png ${PREFIX}/share/gnome/pixmaps
+.for pixmaps in ${PIXFILES}
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/${pixmaps} ${PREFIX}/lib/gfax/pixmaps
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
