@@ -240,3 +240,4 @@ lib/X11/fvwm95/fvwmrc_convert
 lib/X11/fvwm95/quantize_pixmaps
 lib/X11/fvwm95/system.fvwm95rc
 lib/libfvwm95.a
+@dirrm lib/X11/fvwm95
