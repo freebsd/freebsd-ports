@@ -21,8 +21,14 @@ MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherd.conf.5 gopherrc.5
 MAN8=	gopherd.8 gopherindex.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
 		's,<malloc.h>,<stdlib.h>,'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
