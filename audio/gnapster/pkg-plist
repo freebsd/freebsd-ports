@@ -1,5 +1,4 @@
 bin/gnapster
-%%GNOME:%%share/gnome/apps/Applications/gnapster.desktop
 %%DATADIR%%/gnapster/themes/cyblue.theme
 %%DATADIR%%/gnapster/themes/cypress.theme
 %%DATADIR%%/gnapster/themes/default.theme
@@ -21,4 +20,5 @@ share/locale/ru/LC_MESSAGES/gnapster.mo
 share/locale/sv/LC_MESSAGES/gnapster.mo
 share/locale/tr/LC_MESSAGES/gnapster.mo
 @dirrm %%DATADIR%%/gnapster/themes
+@dirrm %%DATADIR%%/gnapster/pixmaps
 @dirrm %%DATADIR%%/gnapster
