@@ -1,0 +1,3 @@
+bin/cutecom
+share/applnk/Utilities/cutecom.desktop
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
