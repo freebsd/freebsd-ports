@@ -7,6 +7,7 @@
 
 PORTNAME=	vlog
 PORTVERSION=	1.1f
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://inc2.com/download/
 DISTNAME=	vlog-${PORTVERSION}
@@ -25,13 +26,7 @@ USE_PERL5=	yes
 MAN1=		vlog.1
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
