@@ -61,10 +61,10 @@ lib/mule/site-lisp/w3/xbm-button.el
 lib/mule/site-lisp/w3/xbm-button.elc
 lib/mule/site-lisp/w3/xpm-button.el
 lib/mule/site-lisp/w3/xpm-button.elc
-share/doc/w3/.emacs
-share/doc/w3/.mosaic-hotlist-default
 share/doc/w3/Makefile
-share/doc/w3/W3.ad
 share/doc/w3/clean-cache
-share/doc/w3/user-install
 share/doc/w3/w3.txi
+share/doc/w3/W3.ad
+share/examples/w3/dot.emacs
+share/examples/w3/dot.mosaic-hotlist-default
+share/examples/w3/user-install
