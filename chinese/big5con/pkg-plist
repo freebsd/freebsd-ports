@@ -1,5 +1,33 @@
-bin/big5con
-bin/big5fld
+bin/b5c
+bin/b5cfld
+bin/et
 etc/big5con.cfg
 lib/fonts/taipei16.bdf.gz
 lib/fonts/8x16.bdf.gz
+lib/xcin/Boshiamy.cin
+lib/xcin/Boshiamy.tab
+lib/xcin/Boshiamy.tab.rev
+lib/xcin/ar30.tab
+lib/xcin/ar30.tab.quick
+lib/xcin/ar30.tab.rev
+lib/xcin/array30.tab
+lib/xcin/changjei.tab
+lib/xcin/cj.tab
+lib/xcin/cj.tab.rev
+lib/xcin/et.kbm
+lib/xcin/et26.kbm
+lib/xcin/hsu.kbm
+lib/xcin/pho.sel1st
+lib/xcin/pho.tab
+lib/xcin/pho1st
+lib/xcin/phonetic.tab
+lib/xcin/sample.phs.out
+lib/xcin/tsin
+lib/xcin/tsin.idx
+lib/xcin/tsin.src
+lib/xcin/xcin.help
+lib/xcin/xusrar30.tbl
+lib/xcin/zo.kbm
+lib/xcin/sample.phs.b5c
+@dirrm lib/fonts
+@dirrm lib/xcin
