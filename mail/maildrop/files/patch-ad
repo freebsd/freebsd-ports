@@ -1,0 +1,16 @@
+--- funcs.C.old	Sat Jan 29 17:28:18 2000
++++ funcs.C	Sat Jan 29 17:28:45 2000
+@@ -114,13 +114,7 @@
+ static GETGROUPS_T getprocgroup()
+ {
+ #if	HAS_GETPGRP
+-
+-#ifdef	GETPGRP_VOID
+-
+ 	return ( getpgrp() );
+-#else
+-	return ( getpgrp( getpid()) );
+-#endif
+ #else
+ #if	HAS_GETPGID
+ 	return ( getpgid( 0 ) );
