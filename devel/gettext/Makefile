@@ -106,6 +106,7 @@ post-install:
 	${MKDIR} ${X11BASE}/share/locale
 	cd ${WRKSRC}/gettext-tools/doc && make install-info-am
 .if !defined (NOPORTDOCS)
+	cd ${WRKSRC}/gettext-runtime/doc && make install-data-local
 	cd ${WRKSRC}/gettext-tools/doc && make install-data-local
 .endif
 .if defined (WITH_EXAMPLES)
