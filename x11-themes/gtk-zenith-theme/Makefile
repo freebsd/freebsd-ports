@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	zenith
 DISTNAME=	zenith-1.2
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	The Zenith GTK theme engine
 
 WRKSRC=		${WRKDIR}/zenith-1.0
 

@@ -67,6 +67,7 @@ DIST_SUBDIR=	erlang
 EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Documentation (PDF) for the Erlang/OTP system
 
 NO_BUILD=	yes
 

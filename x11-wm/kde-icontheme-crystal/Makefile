@@ -14,6 +14,7 @@ DISTNAME=	crystal_icons
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Crystal icon theme for KDE3
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes

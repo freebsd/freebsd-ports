@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.gimp.org/
 DISTNAME=	urw-fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Another font package for X
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

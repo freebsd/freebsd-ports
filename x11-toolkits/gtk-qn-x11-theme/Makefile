@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	qnx11__
 DISTNAME=	qnx11__-1.2.x
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	The QN-X11 GTK theme engine
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Automatic documentation generator for postgresql databases
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg

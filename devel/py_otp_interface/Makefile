@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A native python implementation of an Erlang/OTP node
 
 USE_PYTHON=	yes
 

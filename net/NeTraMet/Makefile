@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.gla.ac.uk/pub/software/NeTraMet/
 DISTNAME=	NeTraMet${PORTVERSION:S/.//}
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Implementation of the Internet Accounting Architecture
 
 WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.han.de/~werner/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 ALL_TARGET=	ytree
 MAN1=		ytree.1

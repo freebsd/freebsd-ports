@@ -12,6 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A collection of ATM fonts (not all free) from the CICA archives
 
 RESTRICTED=	"see accompanying .license files"
 NO_WRKSUBDIR=	yes

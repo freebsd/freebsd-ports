@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	esdl
 DISTNAME=	esdl-${PORTVERSION}.src
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A library for accessing SDL and OpenGL through Erlang
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang

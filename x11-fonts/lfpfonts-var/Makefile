@@ -11,6 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dreamer.nitro.dk/linux/lfp/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Variable width fonts from the Linux Font Project
 
 WRKSRC=		${WRKDIR}/lfpfonts-var
 

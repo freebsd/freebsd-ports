@@ -12,6 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Unique standard tape archiver with many enhancements
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ DISTNAME=		memo-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		olgeni@FreeBSD.org
+COMMENT=		Appointment/TODO management for the ROX desktop
 
 RUN_DEPENDS=		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 			${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib

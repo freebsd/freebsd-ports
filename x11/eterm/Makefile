@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER?=	olgeni@FreeBSD.org
+COMMENT?=	X11 terminal emulator based on rxvt/xterm
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 

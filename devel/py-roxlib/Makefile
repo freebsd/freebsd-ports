@@ -15,6 +15,7 @@ DISTNAME=		rox-lib-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		olgeni@FreeBSD.org
+COMMENT=		Python libraries for ROX
 
 USE_PYTHON=		yes
 
