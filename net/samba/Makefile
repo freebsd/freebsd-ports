@@ -183,6 +183,8 @@ post-install:
 .endif
 .if defined(WITH_RECYCLE)
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle/recycle.so ${SAMBA_VFSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle/recycle.conf \
+		${SAMBA_CONFDIR}/recycle.conf.default
 .endif
 .endif
 	${MKDIR} ${PREFIX}/share/examples/samba

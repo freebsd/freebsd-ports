@@ -183,7 +183,7 @@
 # Un-comment the following two lines to add a recycle bin facility to a samba share
 # NOTE: It currently doesn't work with the [homes] virtual share, use a regular share instead
 ;  vfs object = %%SAMBA_VFSDIR%%/recycle.so
-;  vfs options= recycle=.recycle
+;  vfs options= %%SAMBA_CONFDIR%%/recycle.conf.default
 
 # Un-comment the following and create the netlogon directory for Domain Logons
 ; [netlogon]
@@ -277,7 +277,7 @@
 ;   printable = no
 # Un-comment the following two lines to add a recycle bin facility to a samba share
 ;  vfs object = %%SAMBA_VFSDIR%%/recycle.so
-;  vfs options= recycle=.recycle
+;  vfs options= %%SAMBA_CONFDIR%%/recycle.conf.default
 
 # The following two entries demonstrate how to share a directory so that two
 # users can place files there that will be owned by the specific users. In this
