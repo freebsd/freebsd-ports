@@ -23,7 +23,6 @@
     SUBDIR += arprelease
     SUBDIR += arpwatch
     SUBDIR += arts++
-    SUBDIR += ascend-radius
     SUBDIR += asfrecorder
     SUBDIR += aslookup
     SUBDIR += balance
