@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tab
+	${MKDIR} ${PREFIX}/share/doc/tabe
 	${INSTALL_DATA} ${WRKSRC}/src/tsi-src/README ${PREFIX}/share/doc/tabe
 .for DOC in BoPoMoFo.shtml Changes Changes.pre-0.1 TODO ZuYinCode.txt \
 		et26.txt libtabe.sgml
@@ -38,7 +38,7 @@ post-install:
 .endif
 .if ${PORTOBJFORMAT} == "elf"
 	${RM} -f ${PREFIX}/lib/libbims.so ${PREFIX}/lib/libbims.so.0
-	${MV} ${PREFIX}/lib/libbims.so.0.1-2 ${PREFIX}/lib/libbims.so.0
+	${MV} ${PREFIX}/lib/libbims.so.0.1 ${PREFIX}/lib/libbims.so.0
 	${LN} -s libbims.so.0 ${PREFIX}/lib/libbims.so
 	${RM} -f ${PREFIX}/lib/libtabe.so ${PREFIX}/lib/libtabe.so.0
 	${MV} ${PREFIX}/lib/libtabe.so.0.1 ${PREFIX}/lib/libtabe.so.0
