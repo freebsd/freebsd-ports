@@ -6,6 +6,7 @@ bin/openttd
 %%DATADIR%%/data/trkfoundw.grf
 @dirrm %%DATADIR%%/data
 %%DATADIR%%/lang/american.lng
+%%DATADIR%%/lang/catalan.lng
 %%DATADIR%%/lang/czech.lng
 %%DATADIR%%/lang/danish.lng
 %%DATADIR%%/lang/dutch.lng
@@ -15,13 +16,19 @@ bin/openttd
 %%DATADIR%%/lang/galician.lng
 %%DATADIR%%/lang/german.lng
 %%DATADIR%%/lang/hungarian.lng
+%%DATADIR%%/lang/icelandic.lng
 %%DATADIR%%/lang/italian.lng
+%%DATADIR%%/lang/latvian.lng
 %%DATADIR%%/lang/norwegian.lng
 %%DATADIR%%/lang/origveh.lng
 %%DATADIR%%/lang/polish.lng
+%%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
+%%DATADIR%%/lang/russian.lng
 %%DATADIR%%/lang/slovak.lng
+%%DATADIR%%/lang/spanish.lng
 %%DATADIR%%/lang/swedish.lng
+%%DATADIR%%/lang/turkish.lng
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/Howto_compile_lng_files_from_CLI.txt
