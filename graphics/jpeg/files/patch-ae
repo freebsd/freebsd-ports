@@ -1,0 +1,18 @@
+--- rdjpgcom.c.orig	Sat Oct 11 18:41:04 1997
++++ rdjpgcom.c	Mon Apr 24 16:04:13 2000
+@@ -14,6 +14,7 @@
+ #define JPEG_CJPEG_DJPEG	/* to get the command-line config symbols */
+ #include "jinclude.h"		/* get auto-config symbols, <stdio.h> */
+ 
++#include <locale.h>		/* to declare setlocale() */
+ #include <ctype.h>		/* to declare isupper(), tolower() */
+ #ifdef USE_SETMODE
+ #include <fcntl.h>		/* to declare setmode()'s parameter macros */
+@@ -231,6 +232,7 @@
+     ERREXIT("Erroneous JPEG marker length");
+   length -= 2;
+ 
++  setlocale(LC_ALL, "");
+   while (length > 0) {
+     ch = read_1_byte();
+     /* Emit the character in a readable form.
