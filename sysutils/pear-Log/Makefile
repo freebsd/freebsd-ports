@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -18,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+#		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
