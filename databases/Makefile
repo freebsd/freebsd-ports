@@ -25,6 +25,7 @@
     SUBDIR += firebird-devel
     SUBDIR += freetds
     SUBDIR += gadfly
+    SUBDIR += gauche-gdbm
     SUBDIR += gdbm
     SUBDIR += gigabase
     SUBDIR += gmysql
