@@ -26,3 +26,4 @@ share/pixmaps/xsidplay.xpm
 %%PORTDOCS%%share/examples/xsidplay/Zybernix.sid
 %%PORTDOCS%%@dirrm share/examples/xsidplay
 %%PORTDOCS%%@dirrm share/doc/xsidplay
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
