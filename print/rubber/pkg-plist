@@ -1,0 +1,56 @@
+bin/rubber
+bin/rubber-info
+share/rubber/rubber/__init__.py
+share/rubber/rubber/__init__.pyc
+share/rubber/rubber/cmd_info.py
+share/rubber/rubber/cmd_info.pyc
+share/rubber/rubber/cmdline.py
+share/rubber/rubber/cmdline.pyc
+share/rubber/rubber/graphics/__init__.py
+share/rubber/rubber/graphics/__init__.pyc
+share/rubber/rubber/graphics/eps_gz.py
+share/rubber/rubber/graphics/eps_gz.pyc
+share/rubber/rubber/graphics/epstopdf.py
+share/rubber/rubber/graphics/epstopdf.pyc
+share/rubber/rubber/graphics/fig2dev.py
+share/rubber/rubber/graphics/fig2dev.pyc
+share/rubber/rubber/graphics/mpost.py
+share/rubber/rubber/graphics/mpost.pyc
+share/rubber/rubber/info.py
+share/rubber/rubber/info.pyc
+share/rubber/rubber/modules/__init__.py
+share/rubber/rubber/modules/__init__.pyc
+share/rubber/rubber/modules/bibtex.py
+share/rubber/rubber/modules/bibtex.pyc
+share/rubber/rubber/modules/cweb.py
+share/rubber/rubber/modules/cweb.pyc
+share/rubber/rubber/modules/dvips.py
+share/rubber/rubber/modules/dvips.pyc
+share/rubber/rubber/modules/graphics.py
+share/rubber/rubber/modules/graphics.pyc
+share/rubber/rubber/modules/graphicx.py
+share/rubber/rubber/modules/graphicx.pyc
+share/rubber/rubber/modules/makeidx.py
+share/rubber/rubber/modules/makeidx.pyc
+share/rubber/rubber/modules/minitoc-hyper.py
+share/rubber/rubber/modules/minitoc-hyper.pyc
+share/rubber/rubber/modules/minitoc.py
+share/rubber/rubber/modules/minitoc.pyc
+share/rubber/rubber/modules/pdftex.py
+share/rubber/rubber/modules/pdftex.pyc
+share/rubber/rubber/modules/vt100.py
+share/rubber/rubber/modules/vt100.pyc
+share/rubber/rubber/modules/xr.py
+share/rubber/rubber/modules/xr.pyc
+share/rubber/rubber/util.py
+share/rubber/rubber/util.pyc
+share/rubber/rubber/version.py
+share/rubber/rubber/version.pyc
+@comment when somebody knows a way to handle multilanguage manpages, please
+@comment fix this one
+@comment man/fr/man1/rubber.1
+@comment man/fr/man1/rubber-info.1
+@dirrm share/rubber/rubber/modules
+@dirrm share/rubber/rubber/graphics
+@dirrm share/rubber/rubber
+@dirrm share/rubber
