@@ -1734,6 +1734,7 @@ entropy		ports/math/entropy
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
 eog2		ports/graphics/eog2
+epeg		ports/graphics/epeg
 eperl		ports/lang/eperl
 ephem		ports/astro/ephem
 epic4		ports/irc/epic4
