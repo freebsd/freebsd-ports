@@ -1,0 +1,20 @@
+--- configure.orig	Mon Jul 26 12:31:53 1999
++++ configure	Thu Aug 19 11:42:57 1999
+@@ -2581,7 +2581,7 @@
+   \
+ dictdir=$enable_dict_dir
+ else
+-  dictdir=${libdir}/aspell 
++  dictdir=${datadir}/aspell 
+ fi
+ 
+ 
+@@ -2592,7 +2592,7 @@
+   \
+ pkgdocdir=$enable_doc_dir
+ else
+-  pkgdocdir=\${prefix}/doc/aspell 
++  pkgdocdir=\${prefix}/share/doc/aspell 
+ fi
+ 
+ 
