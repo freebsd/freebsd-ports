@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	reallyslick
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rss-glx
-DISTNAME=	rss_glx-${PORTVERSION}
+DISTNAME=	rss-glx_${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	OpenGL screensaver collection
 
-BROKEN=		"Broken pkg-plist"
-
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=	colorfire.1 cyclone.1 euphoria.1 fieldlines.1 flocks.1 \
-	flux.1 helios.1 hufo_smoke.1 hufo_tunnel.1 lattice.1 \
-	plasma.1 skyrocket.1 solarwinds.1 sundancer2.1
+MAN1=	biof.1 busyspheres.1 colorfire.1 cyclone.1 euphoria.1 fieldlines.1 flocks.1 \
+	flux.1 helios.1 hufo_smoke.1 hufo_tunnel.1 lattice.1 matrixview.1 \
+	plasma.1 skyrocket.1 solarwinds.1 spirographx.1 sundancer2.1
 
 post-patch:
 .for file in oglc_src/Makefile.in other_src/Makefile.in \

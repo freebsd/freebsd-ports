@@ -1,3 +1,5 @@
+bin/biof
+bin/busyspheres
 bin/colorfire
 bin/cyclone
 bin/euphoria
@@ -5,10 +7,13 @@ bin/fieldlines
 bin/flocks
 bin/flux
 bin/helios
-bin/hufo_tunnel
 bin/hufo_smoke
+bin/hufo_tunnel
 bin/lattice
+bin/matrixview
 bin/plasma
+bin/rss-glx_install.pl
 bin/skyrocket
 bin/solarwinds
+bin/spirographx
 bin/sundancer2
