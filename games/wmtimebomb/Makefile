@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		PropList.1:${PORTSDIR}/devel/libPropList \
+		PropList.2:${PORTSDIR}/devel/libPropList \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \

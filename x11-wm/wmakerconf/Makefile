@@ -19,7 +19,7 @@ RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker \
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Imlib.4:${PORTSDIR}/graphics/imlib \
-		PropList.1:${PORTSDIR}/devel/libPropList \
+		PropList.2:${PORTSDIR}/devel/libPropList \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
