@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1999/02/03 11:11:43 asami Exp $
+# $Id: Makefile,v 1.11 1999/02/10 03:52:47 jmz Exp $
 #
 
 DISTNAME=	doomsrc-1.8
@@ -18,6 +18,8 @@ DISTFILES?=	doomsrc.zip
 MAINTAINER=	jmz@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+NO_CDROM=	requested by IDsoftware
 
 MASTER_SITES2=	ftp://sunsite.unc.edu/pub/Linux/games/doom/ \
 		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/games/doom/ \
@@ -35,7 +37,7 @@ USE_GMAKE=	yes
 do-fetch:
 	@${MAKE} ${.MAKEFLAGS} do-fetch __REAL_FETCH__=YES
 	@${MAKE} ${.MAKEFLAGS} do-fetch __REAL_FETCH__=YES \
-	DISTFILES="${DISTFILES2}" MASTER_SITES="${MASTER_SITES2}" 
+	DISTFILES="${DISTFILES2}" MASTER_SITES="${MASTER_SITES2}"
 .endif
 post-extract:
 	@cd ${WRKDIR} && tar xzf linuxdoom-1.10.src.tgz && tar xzf sndserv.tgz
