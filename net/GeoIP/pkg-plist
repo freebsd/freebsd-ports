@@ -2,6 +2,7 @@ bin/geoiplookup
 bin/geoipupdate
 etc/GeoIP.conf.default
 include/GeoIP.h
+include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 lib/libGeoIP.so
