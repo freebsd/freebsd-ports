@@ -1,1 +1,3 @@
-Utility port, which installs hierarchy of common GNOME directories.
+This is a utility port that creates the common GNOME directory
+structure.  This way, the existence of the directories can be
+ensured before applications attempt to install into them.
