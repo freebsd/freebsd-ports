@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.2 2003-08-28 17:44:28 ume Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.3 2003-10-01 17:56:06 ume Exp $
 #
 
 # PROVIDE: saslauthd
@@ -21,9 +21,9 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE 
 #
-saslauthd_enable="YES"				# Enable saslauthd
+[ -z "$saslauthd_enable" ] && saslauthd_enable="YES"	# Enable saslauthd
 #saslauthd_program="${prefix}/sbin/saslauthd"	# Location of saslauthd
-saslauthd_flags="-a pam"			# Flags to saslauthd program
+[ -z "$saslauthd_flags" ] && saslauthd_flags="-a pam"	# Flags to saslauthd program
 
 . %%RC_SUBR%%
 
