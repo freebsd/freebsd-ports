@@ -11,11 +11,15 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	web/c_cpp/cweb
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Literate programming tools for the C language
 
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		cweb.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|cc|${CC}|' ${WRKSRC}/${MAKEFILE}
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/cweb
