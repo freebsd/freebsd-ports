@@ -120,9 +120,12 @@ share/locale/ca/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/cs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/de/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/el/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/en_CA/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/en_GB/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hr/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/hu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ja/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
@@ -132,10 +135,12 @@ share/locale/no/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt_BR/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/ru/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/uk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
 @dirrm share/gnome/quick-lounge/glade
 @dirrm share/gnome/quick-lounge

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quick-lounge-applet
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.1
@@ -18,8 +18,8 @@ COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomepanel
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
