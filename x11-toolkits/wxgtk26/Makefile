@@ -22,8 +22,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		expat.5:${PORTSDIR}/textproc/expat2\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
-CONFLICTS=	wxgtk-*
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
