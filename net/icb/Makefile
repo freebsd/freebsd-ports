@@ -8,8 +8,8 @@
 
 PORTNAME=	icb
 PORTVERSION=	5.1.0
-PORTREVISION=	2
-CATEGORIES=	net tcl82
+PORTREVISION=	3
+CATEGORIES=	net tcl84
 MASTER_SITES=	http://www.obfuscation.org/ftp/pub/icb/ \
 		ftp://ftp.obfuscation.org/pub/icb/
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
@@ -17,10 +17,10 @@ DISTNAME=	c${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet CB - a mostly-defunct chat client
 
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclinclude=${LOCALBASE}/include/tcl8.3 \
+CONFIGURE_ARGS=	--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
 		--with-tcllib=${LOCALBASE}/lib
 
 do-install:
