@@ -8,8 +8,8 @@
 PORTNAME=	opengl-man
 PORTVERSION=	657
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www2.cons.org:8000/freebsd-distfiles/
+MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
 MAINTAINER=	cracauer@cons.org
 COMMENT=	Section 3 manpages for OpenGL: gl, glx, glu, gle, glut
