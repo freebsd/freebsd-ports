@@ -10,20 +10,16 @@ include/Producer/InputArea
 include/Producer/Keyboard
 include/Producer/KeyboardMouse
 include/Producer/Math
-include/Producer/Mutex
+include/Producer/RefOpenThreads
 include/Producer/Referenced
 include/Producer/RenderSurface
-include/Producer/Thread
 include/Producer/Timer
 include/Producer/Trackball
 include/Producer/Types
 include/Producer/Version
 include/Producer/VisualChooser
 include/Producer/Window3D
-include/Producer/osgCameraGroup
-include/Producer/osgSceneHandler
 lib/libProducer.so
-lib/libProducer.so.0
 @dirrm include/Producer
 %%PORTDOCS%%%%DOCSDIR%%/CameraConfig.bnf
 %%PORTDOCS%%%%DOCSDIR%%/CameraConfig.example
