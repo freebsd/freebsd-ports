@@ -1,0 +1,30 @@
+--- themes/Makefile.in.orig	Fri Oct 23 01:09:53 1998
++++ themes/Makefile.in	Fri Dec 11 19:56:10 1998
+@@ -196,17 +196,18 @@
+ 	-@for i in $(THEMES) ; do \
+ 	  $(SED) -e 's%@''PREFIX''@%${prefix}%g' $$i/MAIN.in > $$i/MAIN ; \
+ 	done
+-	$(mkinstalldirs) $(pkglibdir)/themes
++	$(mkinstalldirs) $(pkgdatadir)/themes
+ 	-@for i in $(THEMES) ; do \
+-	  if test ! -d $(pkglibdir)/themes/$$i ; then \
+-	    echo "Installing $$i theme in $(pkglibdir)/themes" ; \
+-	    $(mkinstalldirs) $(pkglibdir)/themes/$$i ; \
+-	    $(CP) $$i/???* $(pkglibdir)/themes/$$i ; \
+-	    $(CHMOD) 755 $(pkglibdir)/themes/$$i ; \
+-	    $(CHMOD) 644 $(pkglibdir)/themes/$$i/???* ; \
+-	    rm -f $(pkglibdir)/themes/$$i/MAIN.in ; \
++	  if test ! -d $(pkgdatadir)/themes/$$i ; then \
++	    echo "Installing $$i theme in $(pkgdatadir)/themes" ; \
++	    $(mkinstalldirs) $(pkgdatadir)/themes/$$i ; \
++	    $(CP) $$i/???* $(pkgdatadir)/themes/$$i ; \
++	    $(CHMOD) 755 $(pkgdatadir)/themes/$$i ; \
++	    $(CHMOD) 644 $(pkgdatadir)/themes/$$i/???* ; \
++	    rm -f $(pkgdatadir)/themes/$$i/MAIN.in ; \
++	    rm -f $(pkgdatadir)/themes/$$i/MAIN.in.orig ; \
+ 	  else \
+-	    echo "ALERT!  Not overwriting theme $$i in $(pkglibdir)/themes.  You will need to update this theme manually." ; \
++	    echo "ALERT!  Not overwriting theme $$i in $(pkgdatadir)/themes.  You will need to update this theme manually." ; \
+ 	  fi ; \
+ 	done
+ 	@if test ! -f $(HOME)/.active.tags ; then $(CP) active.tags $(HOME)/.active.tags ; \

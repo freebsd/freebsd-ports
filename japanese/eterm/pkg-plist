@@ -1,0 +1,42 @@
+bin/Esetroot
+bin/Eterm
+lib/libmej.a
+lib/libmej.la
+lib/libmej.so
+lib/libmej.so.8.7
+lib/libEterm.a
+lib/libEterm.la
+lib/libEterm.so
+lib/libEterm.so.8.7
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/Eterm/themes/Eterm/Eterm.menu
+share/Eterm/themes/Eterm/MAIN
+share/Eterm/themes/chooser/MAIN
+share/Eterm/themes/chooser/chooser.menu
+share/Eterm/themes/emacs/MAIN
+share/Eterm/themes/emacs/emacs.menu
+share/Eterm/themes/irc/MAIN
+share/Eterm/themes/irc/irc.menu
+share/Eterm/themes/mutt/MAIN
+share/Eterm/themes/mutt/mutt.menu
+share/Eterm/themes/tn3270/MAIN
+share/Eterm/themes/trans/MAIN
+share/Eterm/themes/trans/trans.menu
+share/Eterm/Eterm.help
+share/Eterm/Eterm.ref
+share/Eterm/Eterm.tcap
+share/Eterm/Eterm.ti
+share/Eterm/FAQ.html
+share/Eterm/ReleaseNotes
+share/Eterm/colortest.sh
+share/Eterm/menu_cmd
+@dirrm share/Eterm/themes/trans
+@dirrm share/Eterm/themes/tn3270
+@dirrm share/Eterm/themes/mutt
+@dirrm share/Eterm/themes/irc
+@dirrm share/Eterm/themes/emacs
+@dirrm share/Eterm/themes/chooser
+@dirrm share/Eterm/themes/Eterm
+@dirrm share/Eterm/themes
+@dirrm share/Eterm
