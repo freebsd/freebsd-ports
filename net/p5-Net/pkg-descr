@@ -84,4 +84,3 @@ Net::Telnet - Defines constants for the telnet protocol
 
        Currently it just exports constants used in the telnet
        protocol.                                  
-
