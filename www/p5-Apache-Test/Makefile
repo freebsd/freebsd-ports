@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -25,8 +25,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestMM.3 \
-		Apache::TestRequest.3 Apache::TestRun.3 Apache::TestSmoke.3 \
-		Apache::TestTrace.3 Apache::TestUtil.3 Bundle::ApacheTest.3
+		Apache::TestReport.3 Apache::TestRequest.3 Apache::TestRun.3 \
+		Apache::TestSmoke.3 Apache::TestTrace.3 Apache::TestUtil.3 \
+		Bundle::ApacheTest.3
 
 .include <bsd.port.pre.mk>
 
