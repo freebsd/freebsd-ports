@@ -1,0 +1,11 @@
+The Apache PageKit uses a newer expat library (textproc/expat2) for parsing
+XML and XSLT documents.  This causes a conflict with the builtin expat
+library.  You may need to recompile the Apache port without support for the
+builtin expat library.  To verify if you need to recompile Apache, run the
+following command.
+
+    strings `which httpd` | grep XML
+
+If anything outputs to the console, you need to recompile Apache.  You can
+disable the builtin expat library by passing "--disable-rule=EXPAT" to
+configure.
