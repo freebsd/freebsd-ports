@@ -136,6 +136,10 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 ##
 ## Port conflict management
 ##

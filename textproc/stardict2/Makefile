@@ -24,6 +24,12 @@ LIB_DEPENDS=	gnome-2.200:${PORTSDIR}/x11/libgnome \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo \
 		bonobo-activation.4:${PORTSDIR}/devel/bonobo-activation
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -47,4 +53,4 @@ post-install:
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-big5-2.0.0/* ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ce-big5-2.0.0/* ${PREFIX}/share/stardict/dic/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

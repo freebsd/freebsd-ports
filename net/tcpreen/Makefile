@@ -25,6 +25,10 @@ DOC_FILES=	README
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 .if ${OSVERSION} < 500000
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .endif
