@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Boulder
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Boulder
@@ -25,6 +25,7 @@ MAN3=		Boulder.3 \
 		Boulder::Blast::WU.3 \
 		Boulder::Genbank.3 \
 		Boulder::Medline.3 \
+		Boulder::LocusLink.3 \
 		Boulder::Omim.3 \
 		Boulder::Store.3 \
 		Boulder::Stream.3 \
