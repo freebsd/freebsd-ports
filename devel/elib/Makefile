@@ -39,7 +39,8 @@ MAKE_ARGS+=	EMACS="${EMACS_CMD} -q --no-site-file" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		MAKEINFO="makeinfo --no-split" \
 		MKDIR="${MKDIR}" \
-		prefix="${PREFIX}"
+		prefix="${PREFIX}" \
+		locallisppath="${PREFIX}/${EMACS_SITE_LISPDIR}"
 
 .if defined(EMACS_PORT_NAME)
 .if ${EMACS_MAJOR_VER} <= 19
