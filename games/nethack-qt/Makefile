@@ -3,15 +3,17 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/02/07 19:33:15 andreas Exp $
+# $Id: Makefile,v 1.12 1998/03/14 14:58:02 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
-PKGNAME=	nethack-qt-3.2.2
+PKGNAME=	qt-nethack-1.0.1
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.troll.no/warwick/nethack/ \
+		http://trolls.troll.no/warwick/nethack/ \
+		ftp://ftp.troll.no/contrib/ \
 		${MASTER_SITE_GNU}
-QT_PATCH=	nhqt0.93.tar.gz
+QT_PATCH=	qnethack-3.2.2.1.0.1.src.tar.gz
 QT_SOUND=	nhs.tar.gz
 DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
 
@@ -19,7 +21,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	auplay:${PORTSDIR}/audio/nas \
 		xpmtoppm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt \
+LIB_DEPENDS=	qt\\.1\\.40:${PORTSDIR}/x11/qt140 \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
 
@@ -41,6 +43,9 @@ pre-configure:
 	@ cd ${WRKSRC}/src; ${PATCH} -s < ${FILESDIR}/src-sounds.c.diff
 	@ cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/include-unixconf.h.diff
 
+pre-build:
+	(cd ${WRKSRC}/util; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} tile2x11 )
+
 post-install:
 	@ cd ${WRKSRC}/doc; chmod 644 *.6
 	@ cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
@@ -58,8 +63,8 @@ post-install:
 	@ ${ECHO}  "   setenv AUDIOSERVER `hostname`:0"
 	@ ${ECHO}  "b) Start the NAS audio server"
 	@ ${ECHO}  "   auvoxware -aa &    # -aa allows any host access"
-	@ ${ECHO}  "c) Copy the example nethackrc file from \$FILESDIR to your"
+	@ ${ECHO}  "c) Copy the example nethackrc file from ${FILESDIR} to your"
 	@ ${ECHO}  "   login directory:"
-	@ ${ECHO}  "   \${CP} \$FILESDIR/sample.nethackrc \$HOME/.nethackrc"
+	@ ${ECHO}  "   ${CP} ${FILESDIR}/sample.nethackrc ${HOME}/.nethackrc"
 
 .include <bsd.port.mk>
