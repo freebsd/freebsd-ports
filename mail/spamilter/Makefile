@@ -17,13 +17,13 @@ COMMENT=	A Sendmail LibMilter filter to block spam
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_PORT}
+LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .endif
 .endif
 
-SENDMAIL_PORT?=	sendmail
+SENDMAIL_MILTER_PORT?=	sendmail
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
