@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.12
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,9 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-.for file in src/fileio.c src/main.c
-	@${PERL} -pi -e 's|#include <crypt.h>||g' ${WRKSRC}/${file}
-.endfor
+	@${PERL} -pi -e 's|crypt\.h||g ; \
+		 s|malloc\.h||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
