@@ -1,0 +1,9 @@
+bin/txl
+bin/txlc
+bin/txldb
+bin/txlp
+lib/txlapr.x
+lib/txlcvt.x
+lib/txlmain.o
+lib/txlpf.x
+lib/txlvm.o

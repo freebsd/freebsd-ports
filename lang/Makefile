@@ -54,6 +54,7 @@
     SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += fpl
+    SUBDIR += freetxl
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc27
