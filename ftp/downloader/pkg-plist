@@ -29,3 +29,4 @@ share/locale/nl/LC_MESSAGES/nt.mo
 share/locale/pt_BR/LC_MESSAGES/nt.mo
 share/locale/ru/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
+@dirrm share/doc/downloader
