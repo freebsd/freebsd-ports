@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PodParser
-PORTVERSION=	1.21
+PORTVERSION=	1.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -16,6 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Modules to work with POD (Plain Old Documentation)
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	INSTALLDIRS="site"
 
 MAN1=		pod2usage.1 podchecker.1 podselect.1
 MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
