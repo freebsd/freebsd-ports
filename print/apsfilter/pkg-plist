@@ -2,7 +2,6 @@ apsfilter/SETUP
 apsfilter/SETUP.cfg
 apsfilter/bin/a2ps
 apsfilter/bin/apsfilter
-apsfilter/bin/rewindstdin
 apsfilter/bin/setup_dvips.sh
 apsfilter/global/GLOBAL.sh
 apsfilter/global/filters_found
