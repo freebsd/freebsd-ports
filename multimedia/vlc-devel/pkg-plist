@@ -62,6 +62,7 @@ lib/vlc/codec/liblpcm_plugin.so
 lib/vlc/codec/libmpeg_audio_plugin.so
 lib/vlc/codec/librawvideo_plugin.so
 lib/vlc/codec/libspudec_plugin.so
+lib/vlc/codec/libsubsdec_plugin.so
 lib/vlc/codec/libvorbis_plugin.so
 lib/vlc/control/libgestures_plugin.so
 lib/vlc/control/libhttp_plugin.so
@@ -70,7 +71,6 @@ lib/vlc/demux/liba52sys_plugin.so
 lib/vlc/demux/libaac_plugin.so
 lib/vlc/demux/libasf_plugin.so
 lib/vlc/demux/libau_plugin.so
-lib/vlc/demux/libaudio_plugin.so
 lib/vlc/demux/libavi_plugin.so
 lib/vlc/demux/libdemuxdump_plugin.so
 lib/vlc/demux/libdemuxsub_plugin.so
@@ -81,6 +81,7 @@ lib/vlc/demux/libm3u_plugin.so
 lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmp4_plugin.so
 lib/vlc/demux/libmpeg_system_plugin.so
+lib/vlc/demux/libmpga_plugin.so
 lib/vlc/demux/libogg_plugin.so
 lib/vlc/demux/libps_plugin.so
 lib/vlc/demux/librawdv_plugin.so
@@ -88,18 +89,17 @@ lib/vlc/demux/libts_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/gui/libgtk_plugin.so
 lib/vlc/gui/libwxwindows_plugin.so
+lib/vlc/libffmpeg.a
 lib/vlc/libi420_rgb_mmx.a
 lib/vlc/libi420_ymga_mmx.a
 lib/vlc/libi420_yuy2_mmx.a
 lib/vlc/libi422_yuy2_mmx.a
-lib/vlc/libidct.a
-lib/vlc/libidctclassic.a
 lib/vlc/libmemcpy3dn.a
 lib/vlc/libmemcpymmx.a
 lib/vlc/libmemcpymmxext.a
-lib/vlc/libmotion.a
-lib/vlc/libmpeg_video_old.a
+lib/vlc/libstream_out_transcode.a
 lib/vlc/misc/libdummy_plugin.so
+lib/vlc/misc/libfreetype_plugin.so
 lib/vlc/misc/libgtk_main_plugin.so
 lib/vlc/misc/libhttpd_plugin.so
 lib/vlc/misc/libipv4_plugin.so
@@ -110,6 +110,7 @@ lib/vlc/misc/libsap_plugin.so
 lib/vlc/misc/libscreensaver_plugin.so
 lib/vlc/mux/libmux_avi_plugin.so
 lib/vlc/mux/libmux_dummy_plugin.so
+lib/vlc/mux/libmux_mp4_plugin.so
 lib/vlc/mux/libmux_ogg_plugin.so
 lib/vlc/mux/libmux_ps_plugin.so
 lib/vlc/mux/libmux_ts_plugin.so
@@ -119,6 +120,7 @@ lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.so
 lib/vlc/packetizer/libpacketizer_mpeg4video_plugin.so
 lib/vlc/packetizer/libpacketizer_mpegaudio_plugin.so
 lib/vlc/packetizer/libpacketizer_mpegvideo_plugin.so
+lib/vlc/packetizer/libpacketizer_vorbis_plugin.so
 lib/vlc/stream_out/libstream_out_display_plugin.so
 lib/vlc/stream_out/libstream_out_dummy_plugin.so
 lib/vlc/stream_out/libstream_out_duplicate_plugin.so
@@ -134,8 +136,8 @@ lib/vlc/video_filter/libcrop_plugin.so
 lib/vlc/video_filter/libdeinterlace_plugin.so
 lib/vlc/video_filter/libdistort_plugin.so
 lib/vlc/video_filter/libinvert_plugin.so
+lib/vlc/video_filter/liblogo_plugin.so
 lib/vlc/video_filter/libmotionblur_plugin.so
-lib/vlc/video_filter/libosdtext_plugin.so
 lib/vlc/video_filter/libtransform_plugin.so
 lib/vlc/video_filter/libwall_plugin.so
 lib/vlc/video_output/libvout_sdl_plugin.so
@@ -155,11 +157,10 @@ share/vlc/familiar-forwardb16x16.xpm
 share/vlc/familiar-openb16x16.xpm
 share/vlc/familiar-pauseb16x16.xpm
 share/vlc/familiar-playb16x16.xpm
+share/vlc/familiar-playlistb16x16.xpm
 share/vlc/familiar-preferencesb16x16.xpm
 share/vlc/familiar-rewindb16x16.xpm
 share/vlc/familiar-stopb16x16.xpm
-share/vlc/font-eutopiabold21.rle
-share/vlc/font-eutopiabold36.rle
 share/vlc/gnome-vlc16x16.png
 share/vlc/gnome-vlc32x32.png
 share/vlc/gnome-vlc32x32.xpm
@@ -169,10 +170,23 @@ share/vlc/gvlc32x32.png
 share/vlc/gvlc32x32.xpm
 share/vlc/gvlc48x48.ico
 share/vlc/gvlc48x48.png
+share/vlc/http/admin/browse.html
+share/vlc/http/admin/index.html
+share/vlc/http/admin/.access
+share/vlc/http/index.html
+share/vlc/http/info.html
 share/vlc/kvlc16x16.png
 share/vlc/kvlc32x32.png
 share/vlc/kvlc32x32.xpm
 share/vlc/kvlc48x48.png
+share/vlc/pda-forwardb16x16.xpm
+share/vlc/pda-openb16x16.xpm
+share/vlc/pda-pauseb16x16.xpm
+share/vlc/pda-playb16x16.xpm
+share/vlc/pda-playlistb16x16.xpm
+share/vlc/pda-preferencesb16x16.xpm
+share/vlc/pda-rewindb16x16.xpm
+share/vlc/pda-stopb16x16.xpm
 share/vlc/qvlc16x16.png
 share/vlc/qvlc32x32.png
 share/vlc/qvlc32x32.xpm
@@ -229,6 +243,8 @@ share/vlc/vlc48x48.ico
 share/vlc/vlc48x48.png
 @dirrm share/vlc/skins/default
 @dirrm share/vlc/skins
+@dirrm share/vlc/http/admin
+@dirrm share/vlc/http
 @dirrm share/vlc
 @dirrm lib/vlc/visualization
 @dirrm lib/vlc/video_output

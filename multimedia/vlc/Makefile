@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -25,7 +24,7 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
-		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		slp.1:${PORTSDIR}/net/openslp
 
 # After libmpeg2 release 0.3.2
@@ -42,7 +41,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
 		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS=-L${LOCALBASE}/lib
+		LDFLAGS=-L${LOCALBASE}/lib WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-mad=${LOCALBASE} \
@@ -54,7 +53,7 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--disable-libmpeg2 \
 		--program-prefix="" \
 		--without-libintl-prefix \
-		--without-libiconv-prefix
+		--without-libiconv-prefix \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
