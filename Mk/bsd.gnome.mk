@@ -450,7 +450,7 @@ evolutiondataserver_DETECT=		${X11BASE}/libdata/pkgconfig/evolution-data-server-
 evolutiondataserver_USE_GNOME_IMPL=libgnome
 
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
-desktopfileutils_DETECT=	${X11BASE}/bin/update-desktop-database
+desktopfileutils_DETECT=	${LOCALBASE}/bin/update-desktop-database
 desktopfileutils_USE_GNOME_IMPL=glib20
 
 # End component definition section
