@@ -273,6 +273,7 @@
     SUBDIR += pop3vscan
     SUBDIR += popa3d
     SUBDIR += popa3d-before-sendmail
+    SUBDIR += popcheck
     SUBDIR += popd
     SUBDIR += poppassd
     SUBDIR += popper
