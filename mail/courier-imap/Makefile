@@ -190,7 +190,6 @@ MLINKS=		authlib.7 authpwd.7 \
 
 EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
@@ -226,5 +225,11 @@ post-install:
 	@${ECHO_MSG} "imap    account required    pam_unix.so         try_first_pass"
 	@${ECHO_MSG} "imap    session required    pam_permit.so"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "In case you are upgrading an existing Installation, you need to run"
+	@${ECHO_MSG} "'make install-configure' to update your old configuration files."
+	@${ECHO_MSG} ""
+
+install-configure:
+	cd ${WRKSRC} && ${GMAKE} install-configure
 
 .include <bsd.port.post.mk>
