@@ -14,12 +14,13 @@ PORTVERSION=	${VERSION}.${REVISION}
 CATEGORIES=	x11 graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${VERSION}
-PATCH_SITES=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
-		ftp://ftp.de.debian.org/debian/pool/main/x/xloadimage/
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=	pool/main/x/xloadimage
 PATCHFILES=	xloadimage_${VERSION}-${REVISION}.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	X11 Image Loading Utility
 
 USE_XLIB=	yes
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
