@@ -8,8 +8,10 @@
 
 PORTNAME=	MathPlanner
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://koti.mbnet.fi/jarmonik/
+MASTER_SITES=	http://koti.mbnet.fi/jarmonik/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mathematical design and publishing application
@@ -20,18 +22,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile with gcc 2.95.x"
-.endif
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
-.endif
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s|malloc\.h|stdlib.h|"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
