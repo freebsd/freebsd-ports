@@ -105,13 +105,11 @@ share/doc/vmware/EULA
 share/doc/vmware/INSTALL
 share/doc/vmware/README
 share/doc/vmware/README.FreeBSD
-@exec mkdir /compat/linux/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n /compat/linux/dev/tty$n;done
+@exec mkdir -p /compat/linux/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n /compat/linux/dev/tty$n;done
 @exec ln -s /dev/ttyva /compat/linux/dev/tty10
 @exec ln -s /dev/ttyvb /compat/linux/dev/tty11
-@exec ln -s /dev/wd0 /compat/linux/dev/hda
-@exec ln -s /dev/wd1 /compat/linux/dev/hdb
-@exec ln -s /dev/wd2 /compat/linux/dev/hdc
-@exec ln -s /dev/wd3 /compat/linux/dev/hdd
+@exec mknod /compat/linux/dev/hda b 0 0x00010002
+@exec mknod /compat/linux/dev/hdb b 0 0x0001000a
 @exec ln -s %D/etc/vmware /etc/vmware
 @exec mknod /dev/vmmon c 200 0
 @exec mknod /dev/vmnet1 c 201 1
