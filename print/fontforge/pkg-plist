@@ -148,6 +148,14 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/charview2.png
 %%PORTDOCS%%share/doc/pfaedit/cidmenu.html
 %%PORTDOCS%%share/doc/pfaedit/cliargs.html
+%%PORTDOCS%%share/doc/pfaedit/contextchain.html
+%%PORTDOCS%%share/doc/pfaedit/contextchain-coverage.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-cselect.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-format.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-glyphlists.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-pickglyph.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-rcover.png
+%%PORTDOCS%%share/doc/pfaedit/contextchain-seqlookup.png
 %%PORTDOCS%%share/doc/pfaedit/corpchar.html
 %%PORTDOCS%%share/doc/pfaedit/corpchar.txt
 %%PORTDOCS%%share/doc/pfaedit/cpodd.png
@@ -188,6 +196,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/fi.png
 %%PORTDOCS%%share/doc/pfaedit/filemenu.html
 %%PORTDOCS%%share/doc/pfaedit/files.html
+%%PORTDOCS%%share/doc/pfaedit/findprobs-att.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-cid.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-hint.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-paths.png
@@ -196,6 +205,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-anchors.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-cid.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-comment.png
+%%PORTDOCS%%share/doc/pfaedit/fontinfo-context.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-encoding.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-panose.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-private.png
