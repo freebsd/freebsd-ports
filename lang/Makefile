@@ -94,7 +94,6 @@
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mmix
-    SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
     SUBDIR += mozart
     SUBDIR += nawk
