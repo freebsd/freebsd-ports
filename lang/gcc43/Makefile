@@ -7,25 +7,24 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.3
-PORTREVISION=	20041015
+PORTVERSION=	4.0.0
+PORTREVISION=	20041024
 CATEGORIES=	lang java
-VERSIONSTRING=	3.4-${PORTREVISION}
+VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.4
+COMMENT?=	GNU Compiler Collection 4.0
 
-LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
+LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
 
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -48,10 +47,12 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
+# FIXME: needed to make gcc40 port work for now.
+WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		34
+SUFFIX=		40
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
@@ -71,20 +72,22 @@ CONFIGURE_ARGS+=	--disable-shared
 ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 MAN1=		cpp${SUFFIX}.1 \
+		fastjar${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
-		g77-${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1 \
 		gcj${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
+		grmic${SUFFIX}.1 \
+		grmiregistry${SUFFIX}.1 \
 		grepjar${SUFFIX}.1 \
 		jar${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
+INFO=		cpp cppinternals gcc gccinstall gccint gcj fastjar
 
 .if defined(WITHOUT_LIBJAVA)
 CONFIGURE_ARGS+=	--disable-libgcj
@@ -117,7 +120,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install: fake-manpages
-.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -127,14 +130,11 @@ post-install: fake-manpages
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
-	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
+.for f in libstdc++ libsupc++ libobjc libmudflap libmudflapth ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
@@ -158,7 +158,7 @@ post-install: fake-manpages
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} 'LATEST.*3\.4'
+	@-ncftpls ${SITE} | ${GREP} 'LATEST.*4\.0'
 .endfor
 
 .include <bsd.port.post.mk>
