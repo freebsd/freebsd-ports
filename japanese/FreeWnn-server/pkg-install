@@ -98,7 +98,7 @@ POST-INSTALL)
 
     case $1 in
       ja-Wnn-4.2)
-	sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons"
+	sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons ${PKG_PREFIX}/lib/wnn/ja_JP/dic/gerodic"
 	usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
 	wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
 	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
