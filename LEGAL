@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.33 1996/06/11 21:53:38 asami Exp $
+# $Id: LEGAL,v 1.34 1996/06/12 02:29:41 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -37,3 +37,5 @@ glimpse-*		ports/misc/glimpse	Don't sell for profit
 SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
 sattrack-3.1.4		ports/misc/sattrack	Don't sell for profit
 spice-3f4		ports/cad/spice		Export restrictions
+radius-2.4.21		ports/net/radius	Restrictive copyright in
+						src/rlmadmin.c
