@@ -1,0 +1,5 @@
+lib/python1.5/lib-dynload/libqtcmodule-0.11.1.so
+lib/python1.5/lib-dynload/libqtcmodule.so
+lib/python1.5/qt.py
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
