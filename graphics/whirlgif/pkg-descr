@@ -1,0 +1,11 @@
+WhirlGIF  ,  a tool for making GIF animations.
+
+whirlgif is a quick program that reads a series of GIF files, and produces
+a single gif file composed of those images.
+
+For example, if you have images img0001.gif, img0002.gif, img0003.gif ...... 
+and want to loop 100 times, then you can do something like:
+
+	whirlgif -loop 100 img*.gif
+
+to create an animation.
