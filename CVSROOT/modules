@@ -4622,6 +4622,7 @@ mpack		ports/converters/mpack
 mpage		ports/print/mpage
 mpatrol		ports/devel/mpatrol
 mpb		ports/science/mpb
+mpc		ports/audio/mpc
 mpd		ports/net/mpd
 mpeg		ports/multimedia/mpeg
 mpeg2codec	ports/multimedia/mpeg2codec
