@@ -10,7 +10,7 @@ PORTVERSION=	0.4a
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
-DISTFILES=	${DISTNAME}-src.tar.gz
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3-D network tank game that uses OpenGL/Mesa
