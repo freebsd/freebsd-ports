@@ -105,6 +105,7 @@
     SUBDIR += doxygen
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
+    SUBDIR += elfio
     SUBDIR += elftoaout
     SUBDIR += elib-emacs
     SUBDIR += elib-emacs20
