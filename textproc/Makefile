@@ -446,6 +446,7 @@
     SUBDIR += php5-dom
     SUBDIR += php5-pspell
     SUBDIR += php5-simplexml
+    SUBDIR += php5-wddx
     SUBDIR += php5-xml
     SUBDIR += pocketreader
     SUBDIR += ppower4
