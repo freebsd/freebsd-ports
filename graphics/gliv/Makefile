@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/
 
@@ -16,6 +16,7 @@ COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
+USE_GCC=	3.3
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
