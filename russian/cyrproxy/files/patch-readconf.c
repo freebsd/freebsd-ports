@@ -5,7 +5,7 @@
  	  while(list!=NULL)						\
  	    {								\
 -	      if(list->##fieldn == compval)				\
-+	      if((list->fieldn) == compval)				\
++	      if(list->fieldn == compval)				\
  		retval=list;						\
  	      list=list->chain;						\
  	    }								\
