@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Wed Apr 28 16:21:56 1999
++++ doc/Makefile.in	Tue Oct 19 07:54:59 1999
+@@ -69,7 +69,7 @@
+ 
+ all: $(DOCS) info
+ 
+-install: $(mandir)/gawk$(manext) $(mandir)/igawk$(manext) $(infodir)/gawk.info
++install: $(mandir)/gawk$(manext) $(infodir)/gawk.info
+ 
+ $(infodir)/gawk.info::
+ 	-if test -f gawk.info; then d=.; \

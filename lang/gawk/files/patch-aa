@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Wed Jun  9 10:36:30 1999
++++ Makefile.in	Mon Oct 11 07:54:39 1999
+@@ -184,7 +184,6 @@
+ 	then	$(LN_S) gawk awk; \
+ 	fi; exit 0)
+ 	cd doc && $(MAKE) install
+-	cd awklib && $(MAKE) install
+ 
+ installdirs: mkinstalldirs
+ 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
