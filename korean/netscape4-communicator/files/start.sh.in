@@ -1,0 +1,19 @@
+#!/bin/sh
+CHMOD='/bin/chmod'
+CP='/bin/cp -p'
+MKDIR='/bin/mkdir -p'
+export LANG; LANG=ko_KR.EUC
+export LC_ALL; LC_ALL=$LANG
+export LC_CTYPE; LC_CTYPE=$LANG
+export MOZILLA_HOME; MOZILLA_HOME=@NDIR@
+export MOZILLA_NO_ASYNC; MOZILLA_NO_ASYNC=True
+export CLASSPATH; CLASSPATH=.:$MOZILLA_HOME
+#export XENVIRONMENT; XENVIRONMENT=${MOZILLA_HOME}/Netscape.ad
+export XKEYSYMDB; XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
+export XAPPLRESDIR; XAPPLRESDIR=@RDIR@
+export XNLSPATH; XNLSPATH=${MOZILLA_HOME}/nls
+export PATH_LOCALE; PATH_LOCALE=@RDIR@/locale
+export NPX_PLUGIN_PATH; NPX_PLUGIN_PATH=${MOZILLA_HOME}/plugins
+export TIMID_DIR; TIMID_DIR=/usr/local/lib/timidity
+export XCMSDB; XCMSDB=/dev/null
+exec ${MOZILLA_HOME}/@BROWSER@.bin $*
