@@ -281,7 +281,8 @@
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb-devel
     SUBDIR += py-PyGreSQL
-    SUBDIR += py-PySQLite
+    SUBDIR += py-PySQLite10
+    SUBDIR += py-PySQLite11
     SUBDIR += py-SQLDict
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
