@@ -1,0 +1,23 @@
+bin/kdoc
+bin/qt2kdoc
+bin/makekdedoc
+lib/perl5/site_perl/%%PERL_VER%%/kdocUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocAstUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocParseDoc.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocCxxHTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocLib.pm
+lib/perl5/site_perl/%%PERL_VER%%/Ast.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocIDLhtml.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocHTMLutil.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdoctexi.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocCxxLaTeX.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocDocHelper.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocCxxDocbook.pm
+lib/perl5/site_perl/%%PERL_VER%%/Iter.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocMan.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocDocIter.pm
+lib/perl5/site_perl/%%PERL_VER%%/kdocAstGen.pm
+share/doc/kdoc/index.docbook
+share/doc/kdoc/README
+@dirrm share/doc/kdoc

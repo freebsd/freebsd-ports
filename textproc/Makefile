@@ -57,6 +57,7 @@
     SUBDIR += jade
     SUBDIR += java2html
     SUBDIR += latte
+    SUBDIR += kdoc
     SUBDIR += latex2html
     SUBDIR += libxml
     SUBDIR += libxml++
