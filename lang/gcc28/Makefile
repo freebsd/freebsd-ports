@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.20 1999/01/27 07:41:20 fenner Exp $
+# $Id: Makefile,v 1.21 1999/02/09 18:25:42 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/in
 CONFIGURE_ARGS+=	--host=${GNUHOST}
 .endif
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	# empty
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1

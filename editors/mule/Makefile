@@ -3,7 +3,7 @@
 # Date created:		6 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.35 1999/01/23 14:28:25 simokawa Exp $
+# $Id: Makefile,v 1.36 1999/02/03 11:11:41 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -41,8 +41,7 @@ MAKE_ENV=      LIBDIR="${LIBDIR}"
 CONFIGURE_ENV=	PATH=/usr/bin:$$PATH
 EMACS_PREFIX=	mule
 EMACS_EXECUTABLE =	mule
-EMACS_ARCH=	${MACHINE_ARCH}--freebsd
-CONFIGURE_ARGS=	${EMACS_ARCH} --with-executable=${EMACS_EXECUTABLE} \
+CONFIGURE_ARGS=	--with-executable=${EMACS_EXECUTABLE} \
 		--with-emacs-prefix=${EMACS_PREFIX} \
 		--with-terminal-face \
 		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \

@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.13 1999/01/18 03:05:25 steve Exp $
+# $Id: Makefile,v 1.14 1999/01/23 07:05:33 vanilla Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -38,7 +38,7 @@ INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	i386-unknown-freebsd \
+CONFIGURE_ARGS=	\
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
 		--with-x11 \
@@ -50,6 +50,7 @@ CONFIGURE_ARGS=	i386-unknown-freebsd \
 		--sitelispdir=${PREFIX}/lib/${XEMACS_DIR}/lisp:${PREFIX}/lib/${XEMACS_DIR}/site-lisp:${PREFIX}/lib/xemacs/site-lisp:${PREFIX}/share/emacs/site-lisp \
 		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		${MISC_OPTIONS} ${WITH_INPUT_METHOD} ${WITH_WIDGETS}
+CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 
 STRIP=
 

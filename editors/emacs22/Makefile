@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.35 1999/01/23 14:28:19 simokawa Exp $
+# $Id: Makefile,v 1.36 1999/01/27 07:41:10 fenner Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -14,14 +14,14 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	ports@FreeBSD.ORG
 
 EMACS_VERSION=	19.34
-EMACS_ARCH=	${MACHINE_ARCH}--freebsd
-PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${EMACS_ARCH}
+CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${CONFIGURE_TARGET}
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	${EMACS_ARCH} --with-x-toolkit --sharedstatedir=/var/run
+CONFIGURE_ARGS=	--with-x-toolkit --sharedstatedir=/var/run
 
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1

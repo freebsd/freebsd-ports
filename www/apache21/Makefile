@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.65 1999/01/15 00:26:19 ache Exp $
+# $Id: Makefile,v 1.66 1999/03/07 18:34:56 ache Exp $
 #
 
 DISTNAME=       apache_1.3.4
@@ -19,8 +19,9 @@ Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-GNU_CONFIGURE=  yes
+HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= \
+		 --prefix=${PREFIX} \
 		 --with-layout=GNU \
 		 --sysconfdir=${PREFIX}/etc/apache \
 		 --includedir=${PREFIX}/include/apache \

@@ -3,7 +3,7 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.7 1997/11/22 19:49:58 jseger Exp $
+# $Id: Makefile,v 1.8 1999/01/27 07:41:22 fenner Exp $
 #
 
 DISTNAME=	dejagnu-1.3
@@ -17,7 +17,6 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/dejagnu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	i386-freebsd
 STRIP=
 MAN1=		runtest.1
 

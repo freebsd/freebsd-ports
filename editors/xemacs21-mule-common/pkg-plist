@@ -3628,5 +3628,5 @@ lib/%%XEMACS_DIR%%/lisp/x11/x-win-xfree86.elc
 @dirrm lib/%%XEMACS_DIR%%/lisp/mule
 @dirrm lib/%%XEMACS_DIR%%/lisp/skk
 @dirrm lib/%%XEMACS_DIR%%/lisp
-@unexec mkdir -p %D/lib/%%XEMACS_DIR%%/i386-unknown-freebsd
-@dirrm lib/%%XEMACS_DIR%%/i386-unknown-freebsd
+@unexec mkdir -p %D/lib/%%XEMACS_DIR%%/i386--freebsd
+@dirrm lib/%%XEMACS_DIR%%/i386--freebsd

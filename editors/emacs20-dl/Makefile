@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.5 1999/01/27 07:41:11 fenner Exp $
+# $Id: Makefile,v 1.6 1999/03/01 09:17:43 shige Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -25,9 +25,9 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 EMACS_VER=	20.3
-EMACS_ARCH=	${MACHINE_ARCH}--freebsd
+CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 CONFIGURE_ARGS=	${EMACS_ARCH} --with-x-toolkit --with-pop
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${EMACS_ARCH}
+PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 .if defined(USE_XPGLIB)
 .if (${USE_XPGLIB} == "YES")

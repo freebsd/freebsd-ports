@@ -3,7 +3,7 @@
 # Date created:		11 Dec 1998
 # Whom:			ruslan@shevchenko.kiev.ua
 #
-# $Id$
+# $Id: Makefile,v 1.4 1999/02/26 05:01:24 jkoshy Exp $
 #
 
 DISTNAME=	erlang_base-47.4.1.src
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/erlang-47.4.1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	# empty
 
 STRIP=
 

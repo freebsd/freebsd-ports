@@ -3,7 +3,7 @@
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.11 1997/04/04 16:26:01 max Exp $              
+# $Id: Makefile,v 1.12 1997/05/17 12:24:33 max Exp $              
 #
 
 DISTNAME=	pl-2.8.6
@@ -15,7 +15,7 @@ MAINTAINER=	max@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	i386-freebsd
+CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 STRIP=
 MAKE_FLAGS+=	CIFLAGS=-DRTLD_LAZY -f
 MAN1=		pl.1 chpl.1 plld.1

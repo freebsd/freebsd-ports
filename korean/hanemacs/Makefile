@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1998/10/16 01:12:22 jseger Exp $
+# $Id: Makefile,v 1.3 1999/01/18 03:21:43 steve Exp $
 #
 
 DISTNAME=	hanemacs-19.34b-1
@@ -17,8 +17,9 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 WRKSRC=		${WRKDIR}/hanemacs-19.34
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
+CONFIGURE_ARGS=	--with-x-toolkit \
 		--sharedstatedir=/var/run
+CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 

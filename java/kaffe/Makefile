@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.38 1998/12/11 00:51:40 steve Exp $
+# $Id: Makefile,v 1.39 1999/01/23 07:05:27 vanilla Exp $
 #
 
 DISTNAME=	kaffe-1.0.b3
@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L/usr/local/lib"
+CONFIGURE_TARGET=	# empty
 MAN1=		kaffe.1
 
 post-install:

@@ -3,14 +3,14 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.14 1999/01/04 20:42:33 sada Exp $
+# $Id: Makefile,v 1.15 1999/01/15 09:49:34 asami Exp $
 #
 
 DISTNAME=	xc
 PKGNAME?=	xtt-common-1.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
+MASTER_SITES=	ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
+		ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
 		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/1.x/
 DISTFILES=	X333src-1.tgz X333src-2.tgz \
 		xtt-1.1.tar.gz xttdoc11-to-pl01.diff.gz
