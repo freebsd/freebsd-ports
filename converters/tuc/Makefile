@@ -1,0 +1,23 @@
+# New ports collection makefile for:	tuc
+# Version required:			1.10
+# Date created:				30 March 1999
+# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
+#
+# $Id$
+#
+
+DISTNAME=	tuc-1.10
+CATEGORIES=	textproc
+MASTER_SITES=	http://www.whizkidtech.net/fports/
+
+MAINTAINER=	adam@whizkidtech.net
+
+MAN1=		tuc.1
+
+NO_CDROM=	Author does not allow CD-ROM distribution
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tuc ${PREFIX}/bin
+	$(INSTALL_MAN) ${WRKSRC}/tuc.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
