@@ -3,14 +3,14 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.31 1999/02/09 14:00:25 hosokawa Exp $
+# $Id: Makefile,v 1.32 1999/02/09 14:06:51 hosokawa Exp $
 #
 
 DISTNAME=	samba-2.0.2
 #PKGNAME=	samba-2.0.2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.bitcon.no/.7/unix/networking/samba/   \
-		ftp://samba.anu.edu.au/pub/samba/
+MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/ \
+		ftp://ftp.sunet.se/pub/unix/utilities/samba/
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
 
@@ -28,7 +28,9 @@ SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --libdir=${SAMBA_CONFDIR} \
-		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat
+		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
+		--with-lockdir=${VARDIR}/spool/lock
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
