@@ -1,6 +1,6 @@
 # New ports collection makefile for: elf
 # Date created:        December 31 2002 (HAPPY NEW YEAR!)
-# Whom:                Samy
+# Whom:                Samy Al Bahra <samy@kerneled.org>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,9 @@ PORTNAME=	elf
 PORTVERSION=	0.5.4p1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.kerneled.com/projects/elf/
+MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	A commandline based ELF header analyzer
 
 MAN1=		elf.1
