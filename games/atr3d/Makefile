@@ -7,7 +7,7 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -16,7 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		glut.3:${PORTSDIR}/graphics/libglut
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
