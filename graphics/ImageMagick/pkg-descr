@@ -4,7 +4,7 @@ compositing, animation, and creating  montages. ImageMagick can read and
 write many of the more popular image formats (e.g. JPEG, TIFF, PNM, XPM,
 Photo CD, etc.).
 
-The package can  be built _without_ the  GUI (X11) support at  all -- it
+The package can be built _without_ the GUI (X11) support at all -- it
 will not have the display, import, and animate functionality, but remain
 extremely useful for image manipulation.
 

@@ -211,11 +211,11 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/yuv.la
 %%MODULES%%lib/ImageMagick/modules/coders/yuv.so
 lib/libMagick++.a
-lib/libMagick++.la
+%%MODULES%%lib/libMagick++.la
 lib/libMagick++.so
 lib/libMagick++.so.5
 lib/libMagick.a
-lib/libMagick.la
+%%MODULES%%lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.5
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
