@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/07/20 02:55:30 steve Exp $
+# $Id: Makefile,v 1.3 1999/06/05 22:29:48 mharo Exp $
 #
 
 DISTNAME=	dvipsk-5.78a
@@ -21,6 +21,9 @@ RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common \
 		${PREFIX}/share/fonts/vf-a2bk:${PORTSDIR}/japanese/vftool
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hangs indefinitely in pkg/INSTALL upon pkg_add
+.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
