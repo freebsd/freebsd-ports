@@ -1,0 +1,24 @@
+bin/exiv2
+include/exiv2/canonmn.hpp
+include/exiv2/datasets.hpp
+include/exiv2/error.hpp
+include/exiv2/exif.hpp
+include/exiv2/exv_conf.h
+include/exiv2/exv_msvc.h
+include/exiv2/fujimn.hpp
+include/exiv2/ifd.hpp
+include/exiv2/image.hpp
+include/exiv2/iptc.hpp
+include/exiv2/makernote.hpp
+include/exiv2/metadatum.hpp
+include/exiv2/nikonmn.hpp
+include/exiv2/rcsid.hpp
+include/exiv2/sigmamn.hpp
+include/exiv2/tags.hpp
+include/exiv2/types.hpp
+include/exiv2/value.hpp
+lib/libexiv2-0.6.2.so
+lib/libexiv2.a
+lib/libexiv2.la
+lib/libexiv2.so
+@dirrm include/exiv2

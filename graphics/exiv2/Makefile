@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 
@@ -17,13 +17,11 @@ COMMENT=	Exif and Iptc metadata manipulation library and tools
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 PORTDOCS=	*
-PLIST_FILES=	bin/exiv2 \
-		lib/libexiv2.so
 
 .if defined(PORTDOCS)
 ALLTARGET=	all doc
