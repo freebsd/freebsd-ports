@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	graph
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rockit.sourceforge.net/subprojects/graphr/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	rockit
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}r-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	ruby
@@ -22,13 +22,17 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+DOCS=		BUGS README
+
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
