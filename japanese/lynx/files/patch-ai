@@ -8,7 +8,7 @@
 + * This code is harmful to display bold links.
 + * Already set COLOR attributes?
 + * Therefore we do not need this code.
-+ *   --- by shige@kuis.kyoto-u.ac.jp
++ *   --- by shige@FreeBSD.org
 + */
 +#if 0  /* do not need */
  #if defined(COLOR_CURSES)

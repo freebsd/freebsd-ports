@@ -1,7 +1,7 @@
 # New ports collection makefile for:	xv-m17n
 # Version required:	3.10a
 # Date created:		07 Oct 1998
-# Whom:			Shigeyuki FUKUSHIMA (shige@kuis.kyoto-u.ac.jp)
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
