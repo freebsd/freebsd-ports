@@ -2,7 +2,11 @@ bin/AbiWord-2.0
 bin/abiword
 bin/ttfadmin.sh
 bin/ttftool
+%%GNOME:%%libdata/bonobo/servers/GNOME_AbiWord_Control_2_0.server
+share/AbiSuite-2.0/AbiWord.exe.MANIFEST
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Break.glade
+share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Field.glade
+share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_FormatTable.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_HdrFtr.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_InsertTable.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Insert_DateTime.glade
@@ -47,6 +51,7 @@ share/AbiSuite-2.0/AbiWord/strings/pt-BR.strings
 share/AbiSuite-2.0/AbiWord/strings/pt-PT.strings
 share/AbiSuite-2.0/AbiWord/strings/ro-RO.strings
 share/AbiSuite-2.0/AbiWord/strings/ru-RU.strings
+share/AbiSuite-2.0/AbiWord/strings/sc-IT.strings
 share/AbiSuite-2.0/AbiWord/strings/sk-SK.strings
 share/AbiSuite-2.0/AbiWord/strings/sl-SI.strings
 share/AbiSuite-2.0/AbiWord/strings/sq-AL.strings
@@ -128,6 +133,7 @@ share/AbiSuite-2.0/AbiWord/system.profile-zh-CN
 share/AbiSuite-2.0/AbiWord/system.profile-zh-TW
 share/AbiSuite-2.0/GNOME_AbiWord_Control_2_0.server
 share/AbiSuite-2.0/README
+share/AbiSuite-2.0/abi-nautilus-view-file.xml
 share/AbiSuite-2.0/clipart/book.png
 share/AbiSuite-2.0/clipart/chip.png
 share/AbiSuite-2.0/clipart/fun.png
@@ -168,6 +174,7 @@ share/AbiSuite-2.0/templates/Two-Columns.awt
 share/AbiSuite-2.0/templates/US-Letter.awt
 share/AbiSuite-2.0/templates/normal.awt
 share/gnome/apps/Applications/abiword.desktop
+%%GNOME:%%share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
 share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-2.0/templates
 @dirrm share/AbiSuite-2.0/icons

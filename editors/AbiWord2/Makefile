@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -51,10 +50,8 @@ BROKEN=	"This port cannot be built when textproc/wv is installed because of a he
 .if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mgal2}!=""
 USE_GNOME+=		nautilus2 gal2
 CONFIGURE_ARGS+=	--enable-gnome
-PLIST_SUB+=		GNOME:=""
 PKGNAMESUFFIX=		-gnome
-.else
-PLIST_SUB+=		GNOME:="@comment "
+GNOME_ENABLED=		yes
 .endif
 
 .if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
@@ -84,10 +81,15 @@ pre-configure:
 		 s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
 	@${INSTALL_DATA} ${WRKSRC}/src/pkg/linux/rpm/data/abiword.desktop \
 		${PREFIX}/share/gnome/apps/Applications/abiword.desktop
 	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/icons/abiword_48.png \
 		${PREFIX}/share/gnome/pixmaps/abiword_48.png
+.if defined(GNOME_ENABLED)
+	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/GNOME_AbiWord_Control_2_0.server\
+		${PREFIX}/libdata/bonobo/servers/GNOME_AbiWord_Control_2_0.server
+	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/abi-nautilus-view-file.xml \
+		${PREFIX}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
+.endif
 
 .include <bsd.port.post.mk>

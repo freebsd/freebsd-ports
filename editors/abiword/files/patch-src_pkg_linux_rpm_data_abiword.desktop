@@ -1,14 +1,11 @@
---- src/pkg/linux/rpm/data/abiword.desktop.orig	Sun Dec  8 19:56:43 2002
-+++ src/pkg/linux/rpm/data/abiword.desktop	Sat Feb 22 00:25:22 2003
-@@ -8,9 +8,9 @@
- Comment[fr]=Traitement de texte AbiWord
- Comment[pt]=Processador de Texto Abiword
- Comment[sv]=Ordbehandlaren Abiword
--Exec=abiword-2.0
-+Exec=AbiWord-2.0
+--- src/pkg/linux/rpm/data/abiword.desktop.orig	Sun Apr  6 14:45:19 2003
++++ src/pkg/linux/rpm/data/abiword.desktop	Sun Apr 20 00:33:09 2003
+@@ -12,7 +12,7 @@
  Icon=abiword_48.png
  Terminal=0
  Type=Application
 -Categories=Application;Office;WordProcessor;X-Red-Hat-Base;
 +Categories=Application;Office;WordProcessor;
  StartupNotify=true
+ Encoding=UTF-8
+ X-Desktop-File-Install-Version=0.3
