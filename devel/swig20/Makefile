@@ -7,6 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.3.21
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -99,15 +100,11 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
 USE_LIBTOOL_VER=	13
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC -DPIC"
 ALL_TARGET=	swig runtime
 PLIST_SUB+=	VER="${VER}"
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Build fails on sparc64"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/' ${WRKSRC}/configure
