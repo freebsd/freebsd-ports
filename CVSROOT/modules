@@ -1987,6 +1987,7 @@ ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
 ghex		ports/editors/ghex
+ghex2		ports/editors/ghex2
 ghfaxviewer	ports/comms/ghfaxviewer
 ghostscript-afpl	ports/print/ghostscript-afpl
 ghostscript-afpl-nox11	ports/print/ghostscript-afpl-nox11
@@ -2200,6 +2201,7 @@ gnujsp		ports/www/gnujsp
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
 gnumeric	ports/math/gnumeric
+gnumeric2	ports/math/gnumeric2
 gnump3d		ports/audio/gnump3d
 gnunet		ports/net/gnunet
 gnupg		ports/security/gnupg
