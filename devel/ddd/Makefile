@@ -26,7 +26,7 @@ USE_LIBTOOL_VER=13
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/freelibiberty ${CPPFLAGS}' \
+CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/freelibiberty ${CPPFLAGS} -fpermissive' \
 		LDFLAGS='${LDFLAGS}'
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
