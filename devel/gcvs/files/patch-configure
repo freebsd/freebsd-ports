@@ -1,29 +1,24 @@
 --- configure.orig	Tue Mar  6 19:00:29 2001
-+++ configure	Wed Mar 28 23:40:57 2001
-@@ -2942,8 +2942,9 @@
- fi
- 
++++ configure	Fri Apr 13 22:34:02 2001
+@@ -2944,6 +2944,7 @@
  HAVE_TCL=0
--TCL_CFLAGS=
-+TCL_CFLAGS="-I $TCL_INCLUDE_DIR"
+ TCL_CFLAGS=
  TCL_LIB_SPEC=
 +TCL_PACKAGE_PATH="TCL_LIB_SPEC/.."
  
  if test $ac_has_tclinc = yes -a $ac_has_tcllib = yes ; then
  	HAVE_TCL=1
-@@ -2954,13 +2955,14 @@
+@@ -2953,9 +2954,11 @@
+ 
  	# The variables that we use from tclConfig.sh
  	TCL_CFLAGS=$TCL_CFLAGS
- #	TCL_LIB_SPEC=$TCL_LIB_SPEC
+-#	TCL_LIB_SPEC=$TCL_LIB_SPEC
 -	TCL_LIB_SPEC="-L$TCL_PACKAGE_PATH -ltcl"
-+	TCL_LIB_SPEC="-L$TCL_PACKAGE_PATH -ltcl83"
++	TCL_LIB_SPEC=$TCL_LIB_SPEC
++#	TCL_LIB_SPEC="-L$TCL_PACKAGE_PATH -ltcl83"
  fi
- 
- 
- 
- 
- 
++TCL_CFLAGS="$TCL_CFLAGS -I $TCL_INCLUDE_DIR"
 +
- if test $HAVE_TCL = 1; then
- 	echo "$ac_t""Using TCL ${TCL_VERSION}${TCL_PATCH_LEVEL}" 1>&6
- else
+ 
+ 
+ 
