@@ -49,6 +49,7 @@
     SUBDIR += fte
     SUBDIR += gate
     SUBDIR += gedit
+    SUBDIR += gedit2
     SUBDIR += ghex
     SUBDIR += glimmer
     SUBDIR += gmanedit

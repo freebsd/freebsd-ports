@@ -1,31 +1,32 @@
-# New ports collection makefile for:	gedit
-# Date created:				4 May 1999
-# Whom:					Andrey Zakhvatov
+# New ports collection makefile for:	gedit2
+# Date created:				14 May 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gedit
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTNAME=	gedit2
+PORTVERSION=	1.118.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gedit
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
+WRKSRC=	${WRKDIR}/gedit-${PORTVERSION}
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
-
-MAN1=		gedit.1
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
