@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.118 1998/10/08 15:31:52 vanilla Exp $
+# $Id: LEGAL,v 1.119 1998/11/23 14:11:29 kuriyama Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -59,7 +59,7 @@ fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
-glimpse-*		ports/misc/glimpse	Don't sell for profit
+glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-*		ports/graphics/graphviz	Needs license before fetching
@@ -90,7 +90,7 @@ rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
-sharefonts-*		ports/x11/sharefonts	Shareware.  Cannot be
+sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						distributed w/o prior
 						authorization.
 sim-2.3.tar.gz		ports/emulators/sim	No commercial use
@@ -115,7 +115,7 @@ xfntmizi-*.noarch	ports/korean/mizifont	Not a free software, but
 						redistributable on FreeBSD
 						mirrors
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
-xhime*.tgz		ports/deskutils/xhime	Contains commercial character
+xhime*.tgz		ports/games/xhime	Contains commercial character
 						data
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
