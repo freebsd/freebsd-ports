@@ -7,10 +7,10 @@
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cis.ohio-state.edu/~matey/au88x0/
-DISTNAME=	au88x0-${PORTVERSION}
+DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	matey@cis.ohio-state.edu
 
@@ -35,7 +35,8 @@ VERSION_SOUND_C!=	${AWK} '/.*\$$FreeBSD/ { print $$4; exit; }' \
 VERSION_SOUND_C=
 .endif
 
-VERSION_SOUND_C:=	${VERSION_SOUND_C:S/1.17.2.//}
+VERSION_SOUND_C_CURRENT:=	${VERSION_SOUND_C:S/1.//}
+VERSION_SOUND_C_STABLE:=	${VERSION_SOUND_C:S/1.17.2.//}
 
 .if ${OSVERSION} < 410000
 BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
@@ -43,13 +44,13 @@ BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
 .elif ${OSVERSION} < 420000
 # FreeBSD 4.1, 4.1.1
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 
 .elif ${OSVERSION} < 500000
 # FreeBSD 4.2
 PORTVERSION=    1.3
 
-.if ${VERSION_SOUND_C} < 4
+.if ${VERSION_SOUND_C_STABLE} < 4
 # FreeBSD 4.2 before kobj MFC
 PORTREVISION=	1
 
@@ -61,8 +62,11 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .endif
 
-.if ${OSVERSION} < 500000
-DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
+.if ${OSVERSION} > 500000
+# FreeBSD 5-CURRENT
+.if ${VERSION_SOUND_C_CURRENT} < 40
+BROKEN=		"Base system is outdated. This port needs -CURRENT after newpcm megacommit (built after 3/24/2001)"
+.endif
 .endif
 
 pre-fetch:
@@ -91,10 +95,14 @@ pre-fetch:
 	fi
 
 pre-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
+		${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/aureal.sh > \
+		${WRKDIR}/aureal.sh.sample
 	${MKDIR} ${PREFIX}/lib/au88x0
 
 post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/aureal.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
