@@ -23,7 +23,7 @@
          CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
          LDEFLAGS="$LDEFLAGS -L$dir/lib"
 -        LIBS="$LIBS -lkrb -ldes"
-+        LIBS="$LIBS -lkrb -ldes -lecomm_err"
++        LIBS="$LIBS -lkrb -ldes -lcom_err"
          break
        fi
      done
