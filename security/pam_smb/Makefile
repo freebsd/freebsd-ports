@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 STARTUP_SCRIPT=	pam_smbd.sh.sample
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -21,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${PERL} -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
+	@${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pamsmbd/pamsmbd ${PREFIX}/sbin/
