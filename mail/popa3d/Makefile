@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popa3d
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/pub/projects/popa3d/ \
@@ -38,13 +38,6 @@ pre-configure:
 .if defined(SMTP_AFTER_POP3)
 	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
 	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
-.endif
-
-.if defined(SMTP_AFTER_POP3)
-post-patch:
-	@${MV} ${WRKSRC}/pop_root.c ${WRKSRC}/pop_root.c.sed
-	${SED} -e "s=db1/db.h=db.h=" \
-		${WRKSRC}/pop_root.c.sed > ${WRKSRC}/pop_root.c
 .endif
 
 .if !exists(/var/empty)
