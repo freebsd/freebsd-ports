@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.unixpapa.com/software/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A Unix Web Authenticator
 
-IGNORE=		changes the permissions on ${LOCALBASE}/bin
-
 USE_REINPLACE=	yes
 PLIST_FILES=	bin/pwauth
 
@@ -27,7 +25,8 @@ post-patch:
 		s/%%MINUID%%/1000/" ${WRKSRC}/config.h
 
 do-install:
+	-@${MKDIR} -p ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${PREFIX}/bin
-	@${CHMOD} u=rxs ${PREFIX}/bin
+	@${CHMOD} u=rxs ${PREFIX}/bin/pwauth
 
 .include <bsd.port.post.mk>
