@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/john
 bin/unshadow
 bin/xtract
@@ -8,8 +7,4 @@ share/john/digits.chr
 share/john/lanman.chr
 share/john/john.conf
 share/john/password.lst
-share/doc/john/CHANGES
-share/doc/john/LICENSING
-share/doc/john/README
-@dirrm share/doc/john
 @dirrm share/john

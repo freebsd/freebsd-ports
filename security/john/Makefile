@@ -8,6 +8,7 @@
 
 PORTNAME=	john
 PORTVERSION=	1.6.37
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/a/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
@@ -18,19 +19,20 @@ MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Featureful Unix password cracker
 
 USE_REINPLACE=	yes
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
 
 ALL_TARGET=	generic
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 . if ${MACHINE_CPU:Mmmx}
 ALL_TARGET=	${OSNAME}-x86-mmx-elf
 . else
 ALL_TARGET=	${OSNAME}-x86-any-elf
 . endif
-.elif ${MACHINE_ARCH} == "alpha"
+.elif ${ARCH} == "alpha"
 ALL_TARGET=	${OSNAME}-alpha
 .endif
 
@@ -60,6 +62,7 @@ do-install:
 			${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${OLDSRC}/../doc/* ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${DOCSDIR}
 .endif
 
