@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	japanese
 DISTFILES=	# none
 
