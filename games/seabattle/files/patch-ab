@@ -1,0 +1,19 @@
+*** batt.h	Tue May 13 19:58:17 1997
+--- /home/andy/tmp/wrk/batt.h	Mon Jun 30 14:41:02 1997
+***************
+*** 2,8 ****
+   * batt.h     Part of the SEABATTLE game by Vince Weaver                 *
+   ************************************************************************/
+  
+! #include <curses.h>     /* Slang support is good for rxvt in linux */
+  #include <stdio.h>
+  #include <ctype.h>
+  #include <stdlib.h>
+--- 2,8 ----
+   * batt.h     Part of the SEABATTLE game by Vince Weaver                 *
+   ************************************************************************/
+  
+! #include <ncurses.h>     /* Slang support is good for rxvt in linux */
+  #include <stdio.h>
+  #include <ctype.h>
+  #include <stdlib.h>

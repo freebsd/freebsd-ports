@@ -1,0 +1,35 @@
+*** binp.c	Tue May 13 17:51:00 1997
+--- /home/andy/tmp/wrk/binp.c	Mon Jun 30 14:41:38 1997
+***************
+*** 129,143 ****
+                                             /* Incomplete as of yet */
+     if (which_one==1) 
+        if (sound_device) 
+!          if(rand()%2) system("cat hit1.au > /dev/audio ");
+!          else system("cat hit2.au > /dev/audio ");
+        else beep();
+     if (which_one==2)
+        if (sound_device)
+!          if(rand()%2) system("cat miss1.au > /dev/audio ");
+!          else system("cat miss2.au > /dev/audio ");
+     if (which_one==3) 
+!       if (sound_device) system("cat sunkit.au > /dev/audio ");
+        else beep();
+  }
+  
+--- 129,143 ----
+                                             /* Incomplete as of yet */
+     if (which_one==1) 
+        if (sound_device) 
+!          if(rand()%2) system("cat " PREFIX "/share/seabattle/hit1.au > /dev/audio ");
+!          else system("cat " PREFIX "/share/seabattle/hit2.au > /dev/audio ");
+        else beep();
+     if (which_one==2)
+        if (sound_device)
+!          if(rand()%2) system("cat " PREFIX "/share/seabattle/miss1.au > /dev/audio ");
+!          else system("cat " PREFIX "/share/seabattle/miss2.au > /dev/audio ");
+     if (which_one==3) 
+!       if (sound_device) system("cat " PREFIX "/share/seabattle/sunkit.au > /dev/audio ");
+        else beep();
+  }
+  

@@ -1,0 +1,28 @@
+*** Makefile	Tue May 13 17:53:34 1997
+--- /home/andy/tmp/wrk/Makefile	Mon Jun 30 14:43:45 1997
+***************
+*** 17,28 ****
+  #C_OPTS = 
+  #L_OPTS = -lcurses
+  
+! #On Linux, uncomment the following
+  #
+! PLATFORM = Linux
+! C_OPTS = -O2 -Wall
+  L_OPTS = -lncurses
+- 
+  
+  #For Dos/Windows DJGPP (you need the curses lib)
+  #PLATFORM = DOS_DJGPP
+--- 17,27 ----
+  #C_OPTS = 
+  #L_OPTS = -lcurses
+  
+! #On FreeBSD/Linux, uncomment the following
+  #
+! PLATFORM = FreeBSD/Linux
+! C_OPTS = ${CFLAGS} -DPREFIX=\"${PREFIX}\"
+  L_OPTS = -lncurses
+  
+  #For Dos/Windows DJGPP (you need the curses lib)
+  #PLATFORM = DOS_DJGPP
