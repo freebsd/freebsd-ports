@@ -1,0 +1,45 @@
+bin/devhelp
+lib/devhelp/libdevhelp.so
+share/gnome/devhelp/dtd/devhelp-1.dtd
+share/gnome/devhelp/images/book_open.png
+share/gnome/devhelp/images/book_closed.png
+share/gnome/devhelp/images/helpdoc.png
+share/gnome/devhelp/ui/window.ui
+share/gnome/pixmaps/devhelp.png
+share/gnome/applications/devhelp.desktop
+share/gnome/mime-info/devhelp.keys
+share/gnome/mime-info/devhelp.mime
+share/locale/am/LC_MESSAGES/devhelp.mo
+share/locale/az/LC_MESSAGES/devhelp.mo
+share/locale/be/LC_MESSAGES/devhelp.mo
+share/locale/cs/LC_MESSAGES/devhelp.mo
+share/locale/da/LC_MESSAGES/devhelp.mo
+share/locale/de/LC_MESSAGES/devhelp.mo
+share/locale/el/LC_MESSAGES/devhelp.mo
+share/locale/es/LC_MESSAGES/devhelp.mo
+share/locale/fr/LC_MESSAGES/devhelp.mo
+share/locale/he/LC_MESSAGES/devhelp.mo
+share/locale/hi/LC_MESSAGES/devhelp.mo
+share/locale/is/LC_MESSAGES/devhelp.mo
+share/locale/it/LC_MESSAGES/devhelp.mo
+share/locale/ja/LC_MESSAGES/devhelp.mo
+share/locale/kn/LC_MESSAGES/devhelp.mo
+share/locale/ko/LC_MESSAGES/devhelp.mo
+share/locale/lv/LC_MESSAGES/devhelp.mo
+share/locale/ms/LC_MESSAGES/devhelp.mo
+share/locale/nl/LC_MESSAGES/devhelp.mo
+share/locale/no/LC_MESSAGES/devhelp.mo
+share/locale/pl/LC_MESSAGES/devhelp.mo
+share/locale/pt/LC_MESSAGES/devhelp.mo
+share/locale/pt_BR/LC_MESSAGES/devhelp.mo
+share/locale/ru/LC_MESSAGES/devhelp.mo
+share/locale/sk/LC_MESSAGES/devhelp.mo
+share/locale/sv/LC_MESSAGES/devhelp.mo
+share/locale/uk/LC_MESSAGES/devhelp.mo
+share/locale/vi/LC_MESSAGES/devhelp.mo
+share/locale/zh_CN/LC_MESSAGES/devhelp.mo
+share/locale/zh_TW/LC_MESSAGES/devhelp.mo
+@dirrm share/gnome/devhelp/ui
+@dirrm share/gnome/devhelp/images
+@dirrm share/gnome/devhelp/dtd
+@dirrm share/gnome/devhelp
