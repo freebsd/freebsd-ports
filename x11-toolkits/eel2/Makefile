@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eel2
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	2.0.0/sources/${PORTNAME:S/2$//}
 DIST_SUBDIR=	gnome2
 DISTNAME=	eel-${PORTVERSION}
 
@@ -18,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
-		gailutil.16:${PORTSDIR}/x11-toolkits/gail \
+		gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
