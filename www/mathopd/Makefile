@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION= 	1.3pl4
+PORTVERSION= 	1.3p4
 CATEGORIES=	www
 MASTER_SITES=	http://mathop.diva.nl/dist/ \
 		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
 MAINTAINER=	tobez@plab.ku.dk
 
