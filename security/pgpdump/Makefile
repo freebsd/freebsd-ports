@@ -17,5 +17,9 @@ HAS_CONFIGURE=  yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/pgpdump
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pgpdump
+.endif
 
 .include <bsd.port.mk>
