@@ -6853,6 +6853,7 @@ py-medusa	ports/net/py-medusa
 py-metar	ports/astro/py-metar
 py-mhash	ports/security/py-mhash
 py-milter	ports/mail/py-milter
+py-mimelib	ports/mail/py-mimelib
 py-ming		ports/graphics/py-ming
 py-mpz		ports/math/py-mpz
 py-musicbrainz	ports/audio/py-musicbrainz
