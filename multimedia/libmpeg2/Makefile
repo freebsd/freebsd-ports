@@ -53,6 +53,12 @@ CONFIGURE_ARGS+=	--disable-warnings
 CFLAGS:=	${CFLAGS:N-mcpu=*}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "====>"
 .ifndef(WITH_SDL)
@@ -83,4 +89,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
 		${PREFIX}/include/mpeg2dec
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
