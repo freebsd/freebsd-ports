@@ -17,14 +17,13 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-		s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		"s/-D.*_DISABLE_DEPRECATED//g"
 
 .include <bsd.port.mk>
