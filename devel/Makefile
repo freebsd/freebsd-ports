@@ -92,6 +92,7 @@
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clo++
+    SUBDIR += cmake
     SUBDIR += codecrusader
     SUBDIR += codemedic
     SUBDIR += commoncpp

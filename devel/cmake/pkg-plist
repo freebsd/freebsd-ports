@@ -1,0 +1,39 @@
+bin/ccmake
+bin/cmake
+bin/ctest
+share/CMake/Modules/Dart.cmake
+share/CMake/Modules/Documentation.cmake
+share/CMake/Modules/FindCABLE.cmake
+share/CMake/Modules/FindCurses.cmake
+share/CMake/Modules/FindCygwin.cmake
+share/CMake/Modules/FindDart.cmake
+share/CMake/Modules/FindDoxygen.cmake
+share/CMake/Modules/FindFLTK.cmake
+share/CMake/Modules/FindGCCXML.cmake
+share/CMake/Modules/FindGLU.cmake
+share/CMake/Modules/FindGLUT.cmake
+share/CMake/Modules/FindGTK.cmake
+share/CMake/Modules/FindHhc.cmake
+share/CMake/Modules/FindITK.cmake
+share/CMake/Modules/FindJNI.cmake
+share/CMake/Modules/FindJPEG.cmake
+share/CMake/Modules/FindMPI.cmake
+share/CMake/Modules/FindOpenGL.cmake
+share/CMake/Modules/FindPerl.cmake
+share/CMake/Modules/FindPythonLibs.cmake
+share/CMake/Modules/FindQt.cmake
+share/CMake/Modules/FindSelfPackers.cmake
+share/CMake/Modules/FindTCL.cmake
+share/CMake/Modules/FindTclsh.cmake
+share/CMake/Modules/FindUnixCommands.cmake
+share/CMake/Modules/FindVTK.cmake
+share/CMake/Modules/FindWget.cmake
+share/CMake/Modules/FindWish.cmake
+share/CMake/Modules/FindX11.cmake
+share/CMake/Modules/LinkQT.cmake
+share/CMake/Templates/install-sh
+share/CMake/Templates/CMakeSystemConfig.cmake.in
+share/CMake/Templates/configure
+@dirrm share/CMake/Templates
+@dirrm share/CMake/Modules
+@dirrm share/CMake
