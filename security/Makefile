@@ -9,6 +9,7 @@
     SUBDIR += amavis-perl
     SUBDIR += apg
     SUBDIR += arirang
+    SUBDIR += audit
     SUBDIR += bcwipe
     SUBDIR += beecrypt
     SUBDIR += bfbtester
