@@ -7,6 +7,7 @@
 
 PORTNAME=	vtwm
 PORTVERSION=	5.4.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
