@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- radius/test/Makefile	2003/01/19 13:26:53	1.1
++++ radius/test/Makefile	2003/01/19 13:27:00
+@@ -5,7 +5,7 @@
+ 
+ include $(BUILD)/Makefile.pre
+ 
+-PACKAGES += RADIUS UTIL PTHREAD
++PACKAGES += RADIUS UTIL PTHREAD LIBCEXT
+ 
+ TESTPROGRAMS = \
+ 	radiusTest.cxx \

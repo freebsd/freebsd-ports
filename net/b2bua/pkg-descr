@@ -1,0 +1,9 @@
+B2bUa is basically two SIP UAs working back-to-back and thus controlling
+the calls going through it.Unlike a sip-proxy, a B2bUa will take an
+incoming call, modify it and present it in other form to final
+destination.B2bUa is in the call-signalling-path all the times.
+There are numerous applications in which b2bUa can be used either
+as a media negotiator or simply supervising the calls between two
+parties.
+
+WWW: http://www.vovida.org/applications/downloads/b2bua/

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- build/Makefile.pre	2003/01/18 02:20:43	1.1
++++ build/Makefile.pre	2003/01/18 02:20:51
+@@ -81,7 +81,7 @@
+ # defaults should you want to.
+ 
+ VOCAL_TOOLCHAIN_TYPE		:= gnu
+-VOCAL_COMPILE_TYPE 		:= debug
++VOCAL_COMPILE_TYPE 		:= nodebug
+ 
+ 
+ ######################################################################

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- build/Makefile.osarch	2003/01/18 02:21:44	1.1
++++ build/Makefile.osarch	2003/01/18 02:22:24
+@@ -18,6 +18,8 @@
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+ 
++    CXXFLAGS += -D_REENTRANT -D_THREAD_SAFE
++    CFLAGS += -D_REENTRANT -D_THREAD_SAFE
+     USE_LIBGETOPT = 1
+     USE_R_WRAPPER = 1
+ 

@@ -29,6 +29,7 @@
     SUBDIR += arts++
     SUBDIR += asfrecorder
     SUBDIR += aslookup
+    SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
     SUBDIR += bgpq
