@@ -6,7 +6,7 @@
 
 PORTNAME=		kshowmail
 PORTVERSION=		3.1.0
-PORTREVISION=	1
+PORTREVISION=		2	
 CATEGORIES=		mail kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		POP3 mail checker for KDE
 
-LIB_DEPENDS=		mimelib.1:${PORTSDIR}/net/kdenetwork3
+LIB_DEPENDS=		mimelib.1:${PORTSDIR}/deskutils/kdepim3
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
