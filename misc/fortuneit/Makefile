@@ -3,7 +3,7 @@
 # Date created:        25-01-1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/02 04:39:34 steve Exp $
 #
 
 DISTNAME=	fortune.it-1.51
@@ -39,6 +39,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/italia ${PREFIX}/share/games/fortune
 .if defined(INSTALL_OFFENSIVE)
 	@${INSTALL_DATA} ${WRKSRC}/zozzital ${PREFIX}/share/games/fortune
+.endif
+
+pre-install:
+.if exists(${STRCMD})
+	@ ${ECHO_MSG}	"Please install the games distribution"
+	@ exit 1
 .endif
 
 post-install:
