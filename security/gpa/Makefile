@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
