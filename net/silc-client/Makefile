@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
@@ -62,7 +62,10 @@ post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${PERL} -pi -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+# install neither documentation nor silc server, we have ports for those
+	@${PERL} -pi -e 's/-D_THREAD_SAFE//; \
+		s/^(SILC_DIST_SUBDIRS.+?)doc/\1/' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${PERL} -pi -e 's/example_silcd.conf \\\n//' ${WRKSRC}/doc/Makefile.in
 	@${PERL} -pi -e 's/^(install-data-am:) install-docDATA$$/\1/' \
 		${WRKSRC}/irssi/docs/Makefile.in

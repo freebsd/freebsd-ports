@@ -18,6 +18,7 @@ share/silc/help/cumode
 share/silc/help/cycle
 share/silc/help/date
 share/silc/help/dehilight
+share/silc/help/detach
 share/silc/help/disconnect
 share/silc/help/echo
 share/silc/help/eval
@@ -48,6 +49,7 @@ share/silc/help/motd
 share/silc/help/msg
 share/silc/help/names
 share/silc/help/nick
+share/silc/help/note
 share/silc/help/notice
 share/silc/help/oper
 share/silc/help/part
@@ -78,6 +80,7 @@ share/silc/help/unquery
 share/silc/help/upgrade
 share/silc/help/users
 share/silc/help/version
+share/silc/help/watch
 share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
