@@ -6,7 +6,7 @@
 #
 
 PORTNAME=           comserv
-PORTVERSION=        1.0.0
+PORTVERSION=        1.0.1
 CATEGORIES=         comms net
 MASTER_SITES=       ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= bsd
