@@ -1,0 +1,13 @@
+--- basics.h.orig	Thu May 14 16:35:56 1998
++++ basics.h	Thu May 14 16:36:18 1998
+@@ -6,10 +6,6 @@
+ //Initial revision
+ //
+ 
+-typedef unsigned int bool;
+-const bool true = (0 == 0);
+-const bool false = (!true);
+-
+ typedef unsigned int 	uint;
+ typedef unsigned char 	uchar, byte;
+ typedef unsigned short 	ushort, word;

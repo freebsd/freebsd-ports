@@ -1,0 +1,6 @@
+re2c is a tool for generating C-based recognizers from regular
+expressions.  re2c-based scanners are efficient:  for programming
+languages, given similar specifications, an re2c-based scanner is
+typically almost twice as fast as a flex-based scanner with little or no
+increase in size (possibly a decrease on cisc architectures).  Indeed,
+re2c-based scanners are quite competitive with hand-crafted ones.
