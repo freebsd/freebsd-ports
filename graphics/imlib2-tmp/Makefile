@@ -1,17 +1,18 @@
 # New ports collection makefile for:	imlib2
 # Date created:		16 Oct 2000
-# Whom:			>Jeremy Norris <ishmael27@home.com>
+# Whom:			Jeremy Norris <ishmael27@home.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	imlib2
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/e17/libs/ \
-		http://www.us.rasterman.com/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -32,8 +33,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-mmx
 .endif
 
+post-configure:
+	@${PERL} -pi -e 's|\@localbase\@|${LOCALBASE}|g' ${WRKSRC}/imlib2-config
+
 post-install:
-	strip ${PREFIX}/lib/libImlib2.so.1
-	strip ${PREFIX}/lib/loaders/filter/*
-	strip ${PREFIX}/lib/loaders/image/*
+	@strip ${PREFIX}/lib/libImlib2.so.1
+.for i in bump_map colormod testfilter
+	@strip ${PREFIX}/lib/loaders/filter/${i}.so
+.endfor
+.for i in argb bmp db gif jpeg png pnm tga tiff xpm
+	@strip ${PREFIX}/lib/loaders/image/${i}.so
+.endfor
+
 .include <bsd.port.post.mk>
