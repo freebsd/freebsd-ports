@@ -4,10 +4,10 @@
 # Whom:			torstenb
 # Updated to use 2.4 alpha 7 by gpalmer
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:27:55 torstenb Exp $
+# $Id: Makefile,v 1.2 1994/11/10 05:53:43 gpalmer Exp $
 #
 
-DISTNAME=	pidentd-2.4alpha.7
+DISTNAME=	pidentd-2.4.1
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ ftp://ftp.fu-berlin.de/unix/security/ident/servers/
 
 pre-install:
