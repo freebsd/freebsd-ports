@@ -18,7 +18,7 @@ COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme03
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
