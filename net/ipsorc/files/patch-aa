@@ -1,0 +1,15 @@
+--- spellbook.c Sun Dec  2 09:22:58 2001
++++ ../ipsorc-1.4.patch/spellbook.c     Sun Dec  2 13:04:07 2001
+@@ -114,10 +114,10 @@
+   { type = ICMP_ECHOREPLY; }
+ 
+   else if(strstr(type_name, "Destination Unreachable"))
+-  { type = ICMP_DEST_UNREACH; }
++  { type = ICMP_UNREACH_PORT; }
+ 
+   else if(strstr(type_name, "Source Quench"))
+-  { type = ICMP_SOURCE_QUENCH; }
++  { type = ICMP_SOURCEQUENCH; }
+ 
+   else if(strstr(type_name, "Redirect"))
+   { type = ICMP_REDIRECT; }
