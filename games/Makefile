@@ -79,6 +79,7 @@
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
+    SUBDIR += gtktetcolor
     SUBDIR += halflifeserver
     SUBDIR += heretic
     SUBDIR += heroes
