@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gdb/releases
 PKGNAMEPREFIX=	fpc-
 
 PATCH_SITES=	ftp://ftp.freepascal.org/fpc/contrib/libgdb/v5.2.1 \
-		http://planetmirror.com/pub/fpc/contrib/libgdb/v5.2.1/ \
+		ftp://planetmirror.com/pub/fpc/contrib/libgdb/v5.2.1/ \
 		ftp://ftp.jp.freepascal.org/mirror/fpc/contrib/libgdb/v5.2.1/ \
 		ftp://freepascal.stack.nl/pub/fpc/contrib/libgdb/v5.2.1/ \
 		ftp://ftp.no.freepascal.org/pub/fpc/contrib/libgdb/v5.2.1/ \
