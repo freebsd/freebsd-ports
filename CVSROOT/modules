@@ -6575,6 +6575,7 @@ p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
+p5-Text-BibTex	ports/textproc/p5-Text-BibTex
 p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
@@ -6614,6 +6615,7 @@ p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
+p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
 p5-Tie-Cache	ports/devel/p5-Tie-Cache
 p5-Tie-DBI	ports/databases/p5-Tie-DBI
