@@ -700,7 +700,7 @@ lib/jgnat/adalib/s-wwdenu.ali
 lib/jgnat/adalib/s-wwdwch.ali
 lib/jgnat/adalib/system.ali
 lib/jgnat/adalib/text_io.ali
-lib/jgnat/jgnat.jar
+share/java/classes/jgnat.jar
 @dirrm lib/jgnat/adainclude
 @dirrm lib/jgnat/adalib
 @dirrm lib/jgnat
