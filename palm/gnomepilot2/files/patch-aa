@@ -1,6 +1,17 @@
---- configure.orig	Mon Apr 22 16:21:27 2002
-+++ configure	Tue Sep 17 13:44:51 2002
-@@ -5388,6 +5388,7 @@
+--- configure.orig	Thu Oct 24 10:43:46 2002
++++ configure	Thu Oct 24 22:06:58 2002
+@@ -1265,10 +1265,6 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
+ 
+ GNOME_PILOT_MAJOR=0
+ GNOME_PILOT_REVISION=1
+@@ -6474,6 +6470,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,8 +19,8 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -5633,8 +5634,8 @@
-   
+@@ -6707,8 +6704,8 @@
+ 
  		gnome_cv_gnorba_found=no
  		if test x$gnome_cv_orbit_found = xyes; then
 -			GNORBA_CFLAGS="`gnome-config --cflags gnorba gnomeui`"
@@ -19,63 +30,18 @@
  			if test -n "$GNORBA_LIBS"; then
  				gnome_cv_gnorba_found=yes
  			fi
-@@ -5654,8 +5655,8 @@
+@@ -6727,8 +6724,8 @@
  fi
  	if test x$gnome_cv_orbit_found = xyes; then
- 		
+ 
 -		GNORBA_CFLAGS="`gnome-config --cflags gnorba gnomeui`"
 -		GNORBA_LIBS="`gnome-config --libs gnorba gnomeui`"
 +		GNORBA_CFLAGS="`$GNOME_CONFIG --cflags gnorba gnomeui`"
 +		GNORBA_LIBS="`$GNOME_CONFIG --libs gnorba gnomeui`"
- 		
- 		
+ 
  	else
-@@ -7531,7 +7532,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -7701,7 +7702,7 @@
- #		 USE_INCLUDED_LIBINTL=yes
- #		 CATOBJEXT=.cat
- #		 INSTOBJEXT=.cat
--#		 DATADIRNAME=lib
-+#		 DATADIRNAME=share
- #		 INTLDEPS='$(top_builddir)/intl/libintl.a'
- #		 INTLLIBS=$INTLDEPS
- #		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
-@@ -8268,7 +8269,7 @@
- 	else
- 	    PISOCK_CFLAGS="-I$withval/include"
- 	    incdir="$withval/include"
--	    PISOCK_LIBS="-L$withval/lib -lpisock"
-+	    PISOCK_LIBS="-L$withval/lib -lpisync -lpisock"
- 	    echo $ac_n "checking "for existance of $withval/lib/libpisock.so"""... $ac_c" 1>&6
- echo "configure:8274: checking "for existance of $withval/lib/libpisock.so"" >&5
- 	    if test -r $withval/lib/libpisock.so; then
-@@ -8381,7 +8382,7 @@
- 	                                                   piversion_include="$prefix/include/pi-version.h"
- 						           if test x$PISOCK_LIBDIR = x; then
- 							      incdir="$prefix/include"
--							      PISOCK_LIBS="-L$prefix/lib -lpisock"
-+							      PISOCK_LIBS="-L$prefix/lib -lpisock -lpisock"
-                                                            fi							  
- else
-   echo "$ac_t""no" 1>&6
-@@ -8432,7 +8433,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--   PISOCK_LIBS=-lpisock 
-+   PISOCK_LIBS=-lpisync -lpisock 
- else
-   echo "$ac_t""no" 1>&6
-  { echo "configure: error: "Unable to find libpisock. Try ftp://ryeham.ee.ryerson.ca/pub/PalmOS/."" 1>&2; exit 1; } 
-@@ -9022,8 +9023,8 @@
+ 	    	if test xfail = xfailure; then
+@@ -11322,8 +11319,8 @@
  fi
  
  GPILOT_LIBDIR='-L${libdir}'
@@ -84,5 +50,5 @@
 +GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `$GNOME_CONFIG --libs gnome` `$GLIB_CONFIG --libs glib gmodule`"
 +GPILOT_INCLUDEDIR="-I${includedir} `$GNOME_CONFIG --cflags gnome` `$GLIB_CONFIG --cflags glib gmodule`"
  
- 
- 
+ # Check whether --with-oaf or --without-oaf was given.
+ if test "${with_oaf+set}" = set; then
