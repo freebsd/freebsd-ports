@@ -28,17 +28,15 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-BROKEN=	"Does not compile on 5.X"
+.if ${OSVERSION} >= 500000
+IGNORE=	"does not currently support FreeBSD 5.x"
 .endif
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 
 .include <bsd.port.post.mk>
