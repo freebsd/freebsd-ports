@@ -22,17 +22,12 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
+CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
-
-.if defined(QT_GIF_AVAILABLE) || defined(HAVE_UNISYS_LICENSE)
-CONFIGURE_ARGS+=-gif
-RESTRICTED=	"Requires a license from UNISYS"
-.endif
 
 .if !defined(NOPORTDOCS)
 .include "${.CURDIR}/files/manpages"
