@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.88.9
+# Version required:	0.89.9
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lesstif-0.89.4
+DISTNAME=	lesstif-0.89.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -24,9 +24,8 @@ CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
 
 MAN1 =	lesstif.1 mwm.1 xmbind.1
 
-MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 LessTifInternals.3 \
-	Object.3 OverrideShell.3 Rect.3 Shell.3 TopLevelShell.3 \
-	TransientShell.3 UnNamedObj.3 VendorShell.3 WmShell.3 XmArrowButton.3 \
+MAN3 =	LessTifInternals.3 \
+	XmArrowButton.3 \
 	XmArrowButtonGadget.3 XmBulletinBoard.3 XmCascadeButton.3 \
 	XmCascadeButtonGadget.3 XmClipboard.3 XmComboBox.3 XmCommand.3 \
 	XmDesktop.3 XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 \
