@@ -6,38 +6,33 @@
 #
 
 PORTNAME=	dbd_mysql
-PORTVERSION=	0.0.4
+PORTVERSION=	${RUBY_DBI_PORTVERSION}
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://www.sprytech.com/~rainer.perl/ruby/files/
+MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-dbi-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${.CURDIR}/../ruby-dbi \
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
 		${RUBY_SITEARCHLIBDIR}/mysql.so:${.CURDIR}/../ruby-mysql
 
 USE_RUBY=	yes
+USE_RUBY_SETUP=	yes
 
-NO_BUILD=	yes
+WRKSRC=		${RUBY_DBI_WRKSRC}
+CONFIGURE_ARGS=	--with=lib/${PORTNAME}
 
-WRKSRC=		${WRKDIR}/lib/${PORTNAME}
+DOCS_EN=	lib/${PORTNAME}/doc/*
 
-EXAMPLES_EN=	../../examples/test1.rb
-DOCS_EN=	doc/*
+.include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/dbi/
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/dbi/${PORTNAME}
-.for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/dbi/${PORTNAME}/
-.endfor
-	${MKDIR} ${RUBY_DOCDIR}/dbi/${PORTNAME}
+	${MKDIR} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/dbi/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}/
 .endfor
 .endif
 

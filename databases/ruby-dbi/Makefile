@@ -5,37 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dbi
-PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTNAME=	${RUBY_DBI_PORTNAME}
+PORTVERSION=	${RUBY_DBI_PORTVERSION}
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://www.sprytech.com/~rainer.perl/ruby/files/
+MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	ruby
+DISTNAME=	${RUBY_DBI_DISTNAME}
+DIST_SUBDIR=	ruby	
 
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
+USE_RUBY_SETUP=	yes
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${RUBY_DBI_WRKSRC}
+CONFIGURE_ARGS=	--with=lib/${PORTNAME},lib/wrapper
 
-NO_BUILD=	yes
+DOCS_EN=	README.1st doc/* lib/${PORTNAME}/doc/*
 
-DOCS_EN=	README.1st lib/${PORTNAME}/doc/*
+.include "${.CURDIR}/Makefile.common"
 
 post-extract:
 	${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
+	${RM} ${WRKSRC}/doc/create_html
+	${RM} ${WRKSRC}/lib/${PORTNAME}/doc/create_html
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/*.rb ${RUBY_SITELIBDIR}/
+post-install:
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}/${PORTNAME}
-	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_SITELIBDIR}/DBD
+	${MKDIR} ${RUBY_SITEARCHLIBDIR}/DBD
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
 

@@ -1,11 +1,11 @@
-# New ports collection makefile for:	dbd_sybase for DBD-for-Ruby
-# Date created:		3 June 2001
+# New ports collection makefile for:	dbd_pg for DBD-for-Ruby
+# Date created:		9 June 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	dbd_sybase
+PORTNAME=	dbd_pg
 PORTVERSION=	${RUBY_DBI_PORTVERSION}
 CATEGORIES=	databases ruby
 MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
@@ -15,16 +15,16 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	tds.0:${.CURDIR}/../freetds
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR}
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
+		${RUBY_SITEARCHLIBDIR}/postgres.so:${.CURDIR}/../ruby-postgres
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=ext/${PORTNAME}
+CONFIGURE_ARGS=	--with=lib/${PORTNAME}
 
-DOCS_EN=	ext/${PORTNAME}/doc/*
+DOCS_EN=	lib/${PORTNAME}/doc/*
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 

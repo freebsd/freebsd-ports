@@ -72,7 +72,7 @@
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
     SUBDIR += ruby-dbd_mysql
-    SUBDIR += ruby-dbd_postgresql
+    SUBDIR += ruby-dbd_pg
     SUBDIR += ruby-dbd_sybase
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
