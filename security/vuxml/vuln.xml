@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce109fd4-67f3-11d9-a9e7-0001020eed82">
+    <topic>mysql-scripts -- mysqlaccess insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>mysql-scripts</name>
+	<range><lt>3.23.58_2</lt></range>
+	<range><gt>4.*</gt><lt>4.0.23a_1</lt></range>
+	<range><gt>4.1.*</gt><lt>4.1.9_1</lt></range>
+	<range><gt>5.*</gt><lt>5.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Debian Security Team reports:</p>
+	<blockquote>
+	  <p>Javier Fernandez-Sanguino Pena from the Debian Security
+	    Audit Project discoverd a temporary file vulnerability in
+	    the mysqlaccess script of MySQL that could allow an
+	    unprivileged user to let root overwrite arbitrary files
+	    via a symlink attack and could also could unveil the
+	    contents of a temporary file which might contain sensitive
+	    information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0004</cvename>
+      <url>http://lists.mysql.com/internals/20600</url>
+    </references>
+    <dates>
+      <discovery>2005-01-12</discovery>
+      <entry>2005-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2d5e56e-67eb-11d9-a9e7-0001020eed82">
     <topic>unrtf -- buffer overflow vulnerability</topic>
     <affects>
