@@ -8000,6 +8000,7 @@ pear-Auth_HTTP	ports/security/pear-Auth_HTTP
 pear-Auth_SASL	ports/security/pear-Auth_SASL
 pear-Benchmark	ports/benchmarks/pear-Benchmark
 pear-Cache	ports/sysutils/pear-Cache
+pear-Cache_Lite	ports/sysutils/pear-Cache_Lite
 pear-Config	ports/devel/pear-Config
 pear-Console_Getargs	ports/devel/pear-Console_Getargs
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
