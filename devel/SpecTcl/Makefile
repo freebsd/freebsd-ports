@@ -3,7 +3,7 @@
 # Date created:		Fri Oct  3 18:50:53 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1998/03/20 14:35:10 tg Exp $
+# $Id: Makefile,v 1.6 1998/07/03 23:06:27 steve Exp $
 #
 
 DISTNAME=	SpecTcl1.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 

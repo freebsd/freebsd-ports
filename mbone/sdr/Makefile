@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.7 1997/12/19 00:52:04 fenner Exp $
+#   $Id: Makefile,v 1.8 1998/08/05 09:31:32 asami Exp $
 #
 
 DISTNAME=	sdr.V2.4a7n
@@ -13,7 +13,7 @@ MASTER_SITES=	http://north.east.isi.edu/sdr/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes

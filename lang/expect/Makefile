@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.26
 #
-# $Id: Makefile,v 1.31 1998/05/25 20:00:59 steve Exp $
+# $Id: Makefile,v 1.32 1998/06/28 23:25:51 steve Exp $
 #
 # Note this file is included from japanese/extract/Makefile
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS?=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS?=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --enable-shared \

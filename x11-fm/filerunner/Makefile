@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.14 1998/06/23 09:54:01 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/08/07 22:33:11 asami Exp $
 #
 
 DISTNAME=	FileRunner-2.5
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11/tk81
+LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11-toolkits/tk81
 
 MAKEFILE=	Makefile.freebsd_gcc
 MAKE_ENV+=	X11BASE=${X11BASE}

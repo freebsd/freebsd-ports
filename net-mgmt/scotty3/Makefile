@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.26 1998/03/21 12:44:08 asami Exp $
+# $Id: Makefile,v 1.27 1998/04/14 02:10:05 asami Exp $
 #
 
 DISTNAME=	scotty-2.1.8
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
 MAINTAINER=	phk@freebsd.org
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --with-tcl-config=/usr/local/lib/tcl8.0 \

@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.18 1998/03/20 09:59:49 tg Exp $
+# $Id: Makefile,v 1.19 1998/08/07 22:17:52 asami Exp $
 #
 
 DISTNAME=	ical-2.2
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/
 
 MAINTAINER=	erich@FreeBSD.ORG
 
-LIB_DEPENDS=    tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=    tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

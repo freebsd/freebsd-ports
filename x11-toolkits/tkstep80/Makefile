@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/07/27 21:36:08 hoek Exp $
+# $Id: Makefile,v 1.11 1998/08/07 22:56:47 asami Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -39,8 +39,8 @@ post-install:
 		${PREFIX}/share/doc/tkstep
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
-.if exists(${PORTSDIR}/x11/tk80/pkg/INSTALL.wish)
-	${SH} ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
+.if exists(${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish)
+	${SH} ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
 .endif
 
 test:
@@ -48,4 +48,4 @@ test:
 
 .include <bsd.port.mk>
 
-PKG_ARGS+=      -i ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
+PKG_ARGS+=      -i ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish

@@ -3,7 +3,7 @@
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/29 09:07:08 tg Exp $
 #
 
 DISTNAME=	Atari800-0.8.1
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 MAINTAINER=	sutton@aardvark.apana.org.au
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	xview:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview:${PORTSDIR}/x11-toolkits/xview-lib
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed"
 NO_PACKAGE=	${RESTRICTED}

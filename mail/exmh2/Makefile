@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.28 1998/07/03 23:07:01 steve Exp $
+# $Id: Makefile,v 1.29 1998/07/08 10:49:19 peter Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -37,7 +37,7 @@ MAINTAINER=	peter@FreeBSD.org
 
 DIST_SUBDIR=	${PKGNAME}
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 WISH=		wish8.0
 TCLSH=		tclsh8.0

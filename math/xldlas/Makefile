@@ -3,7 +3,7 @@
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1998/05/25 21:03:04 fenner Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:30 asami Exp $
 #
 
 DISTNAME=	xldlas-0.85
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-source.tgz
 
 MAINTAINER=	giffunip@asme.org
 
-LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
+LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/xldlas
 

@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.2 1996/11/26 07:57:46 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/26 23:57:21 fenner Exp $
 #
 
 DISTNAME=	xvnews-2.3.2
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

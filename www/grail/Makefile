@@ -3,7 +3,7 @@
 # Date created:				6/11/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.5 1998/06/27 16:19:09 nectar Exp $
+# $Id: Makefile,v 1.3 1998/07/04 22:07:19 nectar Exp $
 #
 
 DISTNAME=		grail-0.4
@@ -15,7 +15,7 @@ MAINTAINER=		nectar@freebsd.org
 
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=		tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=		tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
 CHOWN?=chown
 CHMOD?=chmod

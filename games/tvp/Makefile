@@ -3,7 +3,7 @@
 # Date Created:		3 Jul 1996
 # Whom:			Tim Vanderhoek <ac199@hwcn.org>
 #
-# $Id: Makefile,v 1.3 1997/12/24 01:21:44 alex Exp $
+# $Id: Makefile,v 1.4 1998/07/15 16:00:52 hoek Exp $
 #
 
 DISTNAME=	tvp-0.9.7.1
@@ -15,7 +15,7 @@ MAINTAINER=	hoek@FreeBSD.ORG
 # If you comment this out, the port should automatically use whichever
 # version of tk you have installed, or, lacking all versions, it will
 # build only the ANSI and terminal interfaces (not the nice X interface).
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-tcl-dir=${PREFIX}/lib \

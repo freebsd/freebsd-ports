@@ -3,7 +3,7 @@
 # Date created:				17 July 1998
 # Whom:					mph
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/17 17:41:17 mph Exp $
 #
 
 DISTNAME=	xwatch-0.1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://hem.passagen.se/osk/
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	gtk\\.1:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 

@@ -3,7 +3,7 @@
 # Date created:         3 August 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.6 1998/06/27 05:18:53 asami Exp $
+# $Id: Makefile,v 1.7 1998/07/27 23:24:09 asami Exp $
 #
 
 DISTNAME=	tkref-1.01
@@ -13,7 +13,7 @@ MASTER_SITES=	http://gtcs.com/softdist/ \
 
 MAINTAINER=	bgingery@gtcs.com
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 

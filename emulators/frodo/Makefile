@@ -3,7 +3,7 @@
 # Date created:		11 Dez 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.2 1998/02/22 08:34:59 fenner Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:49 asami Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 USE_X_PREFIX=	YES
 ALL_TARGET=	Frodo

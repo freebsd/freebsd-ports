@@ -3,7 +3,7 @@
 # Date created:         26-Apr-97
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.4 1997/05/09 23:42:43 asami Exp $
+# $Id: Makefile,v 1.5 1998/02/21 22:38:01 fenner Exp $
 #
 
 DISTNAME=       klondike-1.8
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=     johnh@isi.edu
 
-RUN_DEPENDS=    wish4.1:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=    wish4.1:${PORTSDIR}/x11-toolkits/tk41
 
 GNU_CONFIGURE=  Yes
 CONFIGURE_ARGS= --bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games \

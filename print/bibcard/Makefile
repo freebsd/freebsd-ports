@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1997/04/15 04:58:06 obrien Exp $
+# $Id: Makefile,v 1.4 1997/04/16 03:13:15 asami Exp $
 #
 
 DISTNAME=	bibcard.6.4
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@NUXI.com
 
-LIB_DEPENDS=    xview\\.3\\.:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=    xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.14 1997/10/30 00:59:20 asami Exp $
+# $Id: Makefile,v 1.15 1998/08/05 09:31:35 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -32,7 +32,7 @@ PROGRAM_NAME=xftp
 RESOURCE_NAME=Xftp
 .endif
 
-#LIB_DEPENDS=	Xaw3d\\.6:${PORTSDIR}/x11/Xaw3d
+#LIB_DEPENDS=	Xaw3d\\.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 .if !defined (NOMANCOMPRESS)
   GZIP_EXT=.gz

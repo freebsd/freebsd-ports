@@ -3,7 +3,7 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.6 1998/07/06 13:26:32 dburr Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:31:08 asami Exp $
 #
 
 DISTNAME=	fxtv-0.47
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rhh@ct.picker.com
 
 LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d    \
+		Xaw3d\\.6\\.:${PORTSDIR}/x11-toolkits/Xaw3d    \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 # This program does not actually depend on the below, but they are pretty

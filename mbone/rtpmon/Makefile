@@ -3,7 +3,7 @@
 # Date created:				1 November 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.6 1998/02/21 22:38:06 fenner Exp $
+#   $Id: Makefile,v 1.7 1998/08/05 09:31:32 asami Exp $
 #
 
 DISTNAME=	rtpmon-1.0a7
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
+LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11-toolkits/tk42
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes

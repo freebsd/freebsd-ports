@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.7 1997/09/25 04:12:57 fenner Exp $
+#   $Id: Makefile,v 1.8 1998/08/05 09:31:31 asami Exp $
 #
 
 DISTNAME=	nt.1.5a23
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-TK_DIR=         ${PORTSDIR}/x11/tk42
+TK_DIR=         ${PORTSDIR}/x11-toolkits/tk42
 TK_SRC=		${TK_DIR}/work/tk4.2p2
 
 DEPENDS=	${TK_DIR}

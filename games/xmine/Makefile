@@ -3,7 +3,7 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.12 1997/01/03 11:33:16 obrien Exp $
+# $Id: Makefile,v 1.13 1997/04/30 03:18:00 asami Exp $
 #
 
 DISTNAME=	xmine-1.0.3-Xaw
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	joerg@FreeBSD.org
 
-LIB_DEPENDS=    Xaw3d\\.:${PORTSDIR}/x11/Xaw3d
+LIB_DEPENDS=    Xaw3d\\.:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=      yes
 MAN6=		xmine.6

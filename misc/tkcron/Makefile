@@ -3,7 +3,7 @@
 # Date created:		30 July 1996
 # Whom:			Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.5 1997/11/22 20:10:39 jseger Exp $
+# $Id: Makefile,v 1.7 1998/03/20 14:35:15 tg Exp $
 #
 
 DISTNAME=	tkcron-2.12
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	sander@haldjas.folklore.ee
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd

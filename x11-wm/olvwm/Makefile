@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.10 1996/11/18 13:06:09 asami Exp $
+# $Id: Makefile,v 1.11 1998/08/07 23:01:40 asami Exp $
 #
 
 DISTNAME=	olvwm4
@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	olvwm4.Patch01.Z
 PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/08/07 12:01:21 markm Exp $
+# $Id: Makefile,v 1.16 1998/08/07 23:08:39 asami Exp $
 #
 
 DISTNAME=	Tk800.008
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Tk
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 #BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/HTML/Parse.pm:${PORTSDIR}/www/p5-libwww
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
 
 USE_PERL5=	YES
 

@@ -3,7 +3,7 @@
 # Date created:		14 April 1998
 # Whom:			Donald J. Maddox <dmaddox@scsn.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/29 23:46:01 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:34 asami Exp $
 #
 
 DISTNAME=       X-Files-1.43
@@ -13,7 +13,7 @@ MASTER_SITES=   http://java.inf.tu-dresden.de/X-Files/data/
 
 MAINTAINER=     dmaddox@scsn.net
 
-BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/X-Files
 NO_BUILD=	yes
