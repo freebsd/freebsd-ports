@@ -7,7 +7,7 @@
 
 PORTNAME=	AbiWord2
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -20,7 +20,6 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		fribidi.0:${PORTSDIR}/converters/fribidi \
 		popt.0:${PORTSDIR}/devel/popt \
 		aspell.15:${PORTSDIR}/textproc/aspell
@@ -36,6 +35,7 @@ USE_AUTOMAKE_VER=14
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_ICONV=	yes
 USE_GNOME=	gnomehier libglade2 libxml2
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
