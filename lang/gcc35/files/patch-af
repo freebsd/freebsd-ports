@@ -1,6 +1,6 @@
---- gcc/config/i386/freebsd.h.orig	Thu Jun 17 05:33:32 1999
-+++ gcc/config/i386/freebsd.h	Sat Jul 24 17:59:06 1999
-@@ -135,6 +135,10 @@
+--- gcc/config/i386/freebsd.h.orig	Mon Nov 22 22:17:32 1999
++++ gcc/config/i386/freebsd.h	Wed Dec 15 02:32:20 1999
+@@ -117,6 +117,10 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
@@ -11,51 +11,24 @@
  /* Tell final.c that we don't need a label passed to mcount.  */
  
  #undef FUNCTION_PROFILER
-@@ -162,22 +166,30 @@
+@@ -140,7 +144,15 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
 -#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
 +#define CPP_PREDEFINES "-Di386 -Acpu(i386) -Amachine(i386)" CPP_FBSD_PREDEFINES
- 
- #undef CPP_SPEC
--#define CPP_SPEC "%(cpp_cpu) %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
-+#if TARGET_CPU_DEFAULT == 2
-+#define CPP_SPEC "\
-+  %{!maout: -D__ELF__} \
-+  %{munderscores: -D__UNDERSCORES__} \
-+  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
-+  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{!m386:-D__i486__}"
-+#else
-+#define CPP_SPEC "\
-+  %{!maout: -D__ELF__} \
-+  %{munderscores: -D__UNDERSCORES__} \
-+  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
-+  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{m486:-D__i486__}"
-+#endif
 +
 +#undef CC1_SPEC
 +#define CC1_SPEC "\
 +  %{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
 +  %{maout: %{!mno-underscores: %{!munderscores: -munderscores }}}"
- 
--/* This defines which switch letters take arguments.  On FreeBSD, most of
--   the normal cases (defined in gcc.c) apply, and we also have -h* and
--   -z* options (for the linker) (comming from svr4).
--   We also have -R (alias --rpath), no -z, --soname (-h), --assert etc. */
--
--#undef SWITCH_TAKES_ARG
--#define SWITCH_TAKES_ARG(CHAR) \
--  (DEFAULT_SWITCH_TAKES_ARG (CHAR) \
--   || (CHAR) == 'h' \
--   || (CHAR) == 'z' \
--   || (CHAR) == 'R')
++
 +#undef  ASM_SPEC
 +#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
  
  /* Provide a STARTFILE_SPEC appropriate for FreeBSD.  Here we add
     the magical crtbegin.o file (see crtstuff.c) which provides part 
-@@ -186,11 +198,11 @@
+@@ -149,11 +161,11 @@
     
  #undef	STARTFILE_SPEC
  #define STARTFILE_SPEC \
@@ -72,12 +45,12 @@
  
  /* Provide a ENDFILE_SPEC appropriate for FreeBSD.  Here we tack on
     the magical crtend.o file (see crtstuff.c) which provides part of 
-@@ -200,7 +212,7 @@
+@@ -163,7 +175,7 @@
  
  #undef	ENDFILE_SPEC
  #define ENDFILE_SPEC \
 -  "%{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s"
 +  "%{!maout: %{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s}"
  
- /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
-    libc, depending on whether we're doing profiling or need threads support.
+ /* Provide a LINK_SPEC appropriate for FreeBSD.  Here we provide support
+    for the special GCC options -static and -shared, which allow us to

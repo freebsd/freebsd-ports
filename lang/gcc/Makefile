@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	1999-11-10
+SNAPDATE=	2000-01-10
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	gcc-2.96
@@ -62,12 +62,11 @@ MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
-	@${CP} ${WRKSRC}/gcc/config/t-openbsd-thread ${WRKSRC}/gcc/config/t-freebsd-thread
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
-		>${WRKSRC}/gcc/config/freebsd.h )
+	${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
+		${WRKSRC}/gcc/config/freebsd.h )
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
 	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
