@@ -4,6 +4,8 @@
 #
 # $FreeBSD$
 #
+# PLEASE update print/ghostscript5 (there's a symlink that uses a hardwired
+# version number) when updating this port.  Thank you.
 
 PORTNAME=       jpeg
 PORTVERSION=	6b
