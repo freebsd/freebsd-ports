@@ -198,6 +198,7 @@
     SUBDIR += sj3
     SUBDIR += sjxa
     SUBDIR += skk
+    SUBDIR += skk10-elisp-emacs20
     SUBDIR += skk-elisp
     SUBDIR += skk-jisyo
     SUBDIR += skk-tools
