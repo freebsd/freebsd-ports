@@ -13,7 +13,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DPEENDS=
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+.endif
+.if !defined(WITHOUT_PDF)
+LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
+.endif
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -25,7 +31,17 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--includedir=${LOCALBASE}/include/ \
 		--libdir=${LOCALBASE}/lib \
 		--without-linux-vga --without-gd \
-		--with-readline=gnu --with-lasergnu --with-png=${LOCALBASE}
+		--with-readline=gnu --with-lasergnu 
+.if !defined(WITHOUT_PNG)
+CONFIGURE_ARGS+=--with-png=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-png
+.endif
+.if !defined(WITHOUT_PDF)
+CONFIGURE_ARGS+=--with-pdf=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-pdf
+.endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
