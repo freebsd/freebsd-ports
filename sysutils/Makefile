@@ -172,6 +172,7 @@
     SUBDIR += lsmlib
     SUBDIR += lsof
     SUBDIR += ltrace
+    SUBDIR += lxsplit
     SUBDIR += maint
     SUBDIR += manck
     SUBDIR += medusa
