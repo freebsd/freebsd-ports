@@ -38,7 +38,7 @@ XCDRDAO=		yes
 
 .if defined(XCDRDAO)
 USE_NEWGCC=	yes
-LIB_DEPENDS+=		gtkmm-1.0.5:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS+=		gtkmm-1.0.7:${PORTSDIR}/x11-toolkits/gtk--
 .else
 CONFIGURE_ARGS= 	--disable-gtkmmtest
 .endif
