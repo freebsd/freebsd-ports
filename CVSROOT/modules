@@ -4799,6 +4799,7 @@ libjparser	ports/x11-toolkits/libjparser
 libjsearch	ports/x11-toolkits/libjsearch
 libjtoolbar	ports/x11-toolkits/libjtoolbar
 libjtree	ports/x11-toolkits/libjtree
+libkipi		ports/graphics/libkipi
 libksba		ports/security/libksba
 liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
