@@ -8,4 +8,8 @@ LIB=		ranlib
 
 SRCS =	com.c ranlib.c
 
+beforeinstall:
+	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/ranlib.h \
+		${PREFIX}/include
+
 .include <bsd.lib.mk>
