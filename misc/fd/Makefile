@@ -1,13 +1,13 @@
 # New ports collection makefile for:    FD
-# Version required:     1.03e
+# Version required:     1.03f
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.6 1997/09/19 12:51:32 max Exp $
+# $Id: Makefile,v 1.7 1997/11/13 20:19:15 max Exp $
 #
 
-DISTNAME=	FD-1.03e
-PKGNAME=	fd-1.03e
+DISTNAME=	FD-1.03f
+PKGNAME=	fd-1.03f
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/
 
