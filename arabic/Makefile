@@ -10,6 +10,7 @@
     SUBDIR += kde3-i18n
     SUBDIR += khotot
     SUBDIR += koffice-i18n
+    SUBDIR += libitl
     SUBDIR += openoffice-1.1
 
 .include <bsd.port.subdir.mk>
