@@ -1,18 +1,19 @@
---- bin/gnump3d2.orig	Fri Jul  4 10:20:24 2003
-+++ bin/gnump3d2	Fri Jul  4 10:23:13 2003
-@@ -2620,9 +2620,9 @@
-   {
-       $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
+--- bin/gnump3d2.orig	Fri Mar 26 03:49:02 2004
++++ bin/gnump3d2	Fri Mar 26 12:57:38 2004
+@@ -3052,10 +3052,10 @@
+       # This is mainly here for Windows users.
+       $CONFIG_FILE = "gnump3d.conf";
    }
 -  elsif ( -e "/etc/gnump3d/gnump3d.conf" )
 +  elsif ( -e "%%PREFIX%%/etc/gnump3d/gnump3d.conf" )
    {
+       # None of the others are present, use the system wide one.
 -      $CONFIG_FILE = "/etc/gnump3d/gnump3d.conf";
 +      $CONFIG_FILE = "%%PREFIX%%/etc/gnump3d/gnump3d.conf";
    }
-   elsif ( -e "gnump3d.conf" )
-   {
-@@ -2764,8 +2764,8 @@
+ 
+ 
+@@ -3183,8 +3183,8 @@
    $PORT          = getConfig( "port", 8888 );
    $bind_address  = getConfig( "binding_host", "" );
    $host          = getConfig( "hostname", "localhost" );
@@ -23,7 +24,7 @@
    $always_stream = getConfig( "always_stream", 1 );
    $access_log    = getConfig( "logfile", "/var/log/gnump3d/access.log" );
    $error_log     = getConfig( "errorlog", "/var/log/gnump3d/error.log" );
-@@ -2773,11 +2773,11 @@
+@@ -3192,11 +3192,11 @@
    $client_host   = getConfig( "use_client_host", 1 );
    $default_theme = getConfig( "theme", "default" );
    $TIMEOUT       = getConfig( "read_time", 10 );
@@ -36,14 +37,14 @@
 -  $mime_file     = getConfig( "mime_file",  "/etc/gnump3d/mime.types" );
 +  $mime_file     = getConfig( "mime_file",  "%%PREFIX%%/etc/gnump3d/mime.types" );
    $enable_browse = getConfig( "enable_browsing", 1 );
-   $sort_order    = getConfig( "sort_order", '$SONGNAME' );
+   $sort_order    = getConfig( "sort_order", '$FILENAME' );
  
-@@ -2813,7 +2813,7 @@
+@@ -3238,7 +3238,7 @@
    # Experimental features.
    #
    $jukebox        = getConfig( "jukebox_mode", 0 );
 -  $jukebox_binary = getConfig( "jukebox_player", "/usr/bin/mpg123" );
-+  $jukebox_binary = getConfig( "jukebox_player", "%%PREFIX%%/bin/mpg123" );
++  $jukebox_binary = getConfig( "jukebox_player", "%%LOCALBASE%%/bin/mpg123" );
    if ( $jukebox )
    {
       $always_stream = 0;

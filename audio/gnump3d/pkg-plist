@@ -8,15 +8,16 @@ etc/gnump3d/gnump3d.conf-default
 @exec [ -f %B/gnump3d.conf ] || cp %B/%f %B/gnump3d.conf
 etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/IP.pm
+%%SITE_PERL%%/gnump3d/MD5.pm
 %%SITE_PERL%%/gnump3d/base64.pm
 %%SITE_PERL%%/gnump3d/config.pm
 %%SITE_PERL%%/gnump3d/files.pm
+%%SITE_PERL%%/gnump3d/lang/de.pm
+%%SITE_PERL%%/gnump3d/lang/en.pm
+%%SITE_PERL%%/gnump3d/lang/lookup.pm
 %%SITE_PERL%%/gnump3d/mp3info.pm
 %%SITE_PERL%%/gnump3d/ogginfo.pm
 %%SITE_PERL%%/gnump3d/oggtagreader.pm
-%%SITE_PERL%%/gnump3d/lang/en.pm
-%%SITE_PERL%%/gnump3d/lang/lookup.pm
-%%SITE_PERL%%/gnump3d/playlist.pm
 %%SITE_PERL%%/gnump3d/plugins/COPYING.pm
 %%SITE_PERL%%/gnump3d/plugins/bug.pm
 %%SITE_PERL%%/gnump3d/plugins/info.pm
@@ -28,6 +29,8 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/plugins/search.pm
 %%SITE_PERL%%/gnump3d/plugins/size.pm
 %%SITE_PERL%%/gnump3d/plugins/stats.pm
+%%SITE_PERL%%/gnump3d/plugins/tagbrowse.pm
+%%SITE_PERL%%/gnump3d/sorting.pm
 %%SITE_PERL%%/gnump3d/tagcache.pm
 %%SITE_PERL%%/gnump3d/url.pm
 %%DATADIR%%/Clean/AUTHOR
@@ -48,6 +51,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Clean/search.html
 %%DATADIR%%/Clean/size.html
 %%DATADIR%%/Clean/stats.html
+%%DATADIR%%/Clean/tagbrowse.html
 %%DATADIR%%/LaFrere/AUTHOR
 %%DATADIR%%/LaFrere/COPYING.html
 %%DATADIR%%/LaFrere/bug.html
@@ -65,7 +69,27 @@ etc/gnump3d/mime.types
 %%DATADIR%%/LaFrere/search.html
 %%DATADIR%%/LaFrere/size.html
 %%DATADIR%%/LaFrere/stats.html
+%%DATADIR%%/LaFrere/tagbrowse.html
 %%DATADIR%%/README
+%%DATADIR%%/SchwartzNGrau/AUTHOR
+%%DATADIR%%/SchwartzNGrau/COPYING.html
+%%DATADIR%%/SchwartzNGrau/bug.html
+%%DATADIR%%/SchwartzNGrau/clear.gif
+%%DATADIR%%/SchwartzNGrau/config.ini
+%%DATADIR%%/SchwartzNGrau/error.html
+%%DATADIR%%/SchwartzNGrau/index.html
+%%DATADIR%%/SchwartzNGrau/info.html
+%%DATADIR%%/SchwartzNGrau/master.css
+%%DATADIR%%/SchwartzNGrau/now.html
+%%DATADIR%%/SchwartzNGrau/playlist.html
+%%DATADIR%%/SchwartzNGrau/prefs.html
+%%DATADIR%%/SchwartzNGrau/random.html
+%%DATADIR%%/SchwartzNGrau/recent.html
+%%DATADIR%%/SchwartzNGrau/results.html
+%%DATADIR%%/SchwartzNGrau/search.html
+%%DATADIR%%/SchwartzNGrau/size.html
+%%DATADIR%%/SchwartzNGrau/stats.html
+%%DATADIR%%/SchwartzNGrau/tagbrowse.html
 %%DATADIR%%/Tabular/AUTHOR
 %%DATADIR%%/Tabular/COPYING.html
 %%DATADIR%%/Tabular/bug.html
@@ -73,7 +97,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Tabular/error.html
 %%DATADIR%%/Tabular/extras.html
 %%DATADIR%%/Tabular/footer.tmpl
-%%DATADIR%%/Tabular/header.tmpl
 %%DATADIR%%/Tabular/index.html
 %%DATADIR%%/Tabular/info.html
 %%DATADIR%%/Tabular/now.html
@@ -87,6 +110,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Tabular/statistics.html
 %%DATADIR%%/Tabular/stats.html
 %%DATADIR%%/Tabular/style.css
+%%DATADIR%%/Tabular/tagbrowse.html
 %%DATADIR%%/Tabular/template.ini
 %%DATADIR%%/Thexder/AUTHOR
 %%DATADIR%%/Thexder/COPYING.html
@@ -123,6 +147,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/default/AUTHOR
 %%DATADIR%%/default/COPYING.html
 %%DATADIR%%/default/bug.html
+%%DATADIR%%/default/config.ini
 %%DATADIR%%/default/error.html
 %%DATADIR%%/default/footer.tmpl
 %%DATADIR%%/default/header.tmpl
@@ -138,6 +163,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/default/size.html
 %%DATADIR%%/default/stats.html
 %%DATADIR%%/default/style.css
+%%DATADIR%%/default/tagbrowse.html
 %%DATADIR%%/dotNET/AUTHOR
 %%DATADIR%%/dotNET/COPYING.html
 %%DATADIR%%/dotNET/bug.html
@@ -188,6 +214,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/redgrey/COPYING.html
 %%DATADIR%%/redgrey/bug.html
 %%DATADIR%%/redgrey/error.html
+%%DATADIR%%/redgrey/header.tmpl
 %%DATADIR%%/redgrey/index.html
 %%DATADIR%%/redgrey/info.html
 %%DATADIR%%/redgrey/now.html
@@ -198,22 +225,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/redgrey/results.html
 %%DATADIR%%/redgrey/search.html
 %%DATADIR%%/redgrey/stats.html
-%%DATADIR%%/simple/AUTHOR
-%%DATADIR%%/simple/COPYING.html
-%%DATADIR%%/simple/bug.html
-%%DATADIR%%/simple/config.ini
-%%DATADIR%%/simple/error.html
-%%DATADIR%%/simple/index.html
-%%DATADIR%%/simple/info.html
-%%DATADIR%%/simple/now.html
-%%DATADIR%%/simple/playlist.html
-%%DATADIR%%/simple/prefs.html
-%%DATADIR%%/simple/random.html
-%%DATADIR%%/simple/recent.html
-%%DATADIR%%/simple/results.html
-%%DATADIR%%/simple/search.html
-%%DATADIR%%/simple/stats.html
-@dirrm %%DATADIR%%/simple
+%%DATADIR%%/redgrey/tagbrowse.html
 @dirrm %%DATADIR%%/redgrey
 @dirrm %%DATADIR%%/nausicaa
 @dirrm %%DATADIR%%/dotNET/images
@@ -221,6 +233,7 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%/Thexder
 @dirrm %%DATADIR%%/Tabular
+@dirrm %%DATADIR%%/SchwartzNGrau
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%
