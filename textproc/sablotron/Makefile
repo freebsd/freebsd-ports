@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
@@ -26,13 +25,16 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 INSTALLS_SHLIB=	yes
 
-SHLIB_MAJOR=	68	# API changes counter
+SHLIB_MAJOR=	69	# API changes counter
 PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}" DOCSDIR="share/doc/${PORTNAME}"
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
+		LIBTOOL=${LIBTOOL}
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a
 USE_LIBTOOL=	yes
+
+MAN1=	sabcmd.1
 
 .include <bsd.port.pre.mk>
 
