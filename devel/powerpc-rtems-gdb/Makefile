@@ -13,6 +13,6 @@ LCLTARGET=	powerpc-rtems
 CONFIGURE_ARGS=	--verbose --enable-sim --enable-sim-powerpc \
 		--enable-sim-timebase --enable-sim-hardware
 
-BROKEN=		"Errors on compile"
+MAN1+=		${LCLTARGET}-run.1
 
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"
