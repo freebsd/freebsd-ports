@@ -125,6 +125,7 @@
     SUBDIR += kterm16c
     SUBDIR += lambdamoo
     SUBDIR += latex2html
+    SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += lesw
     SUBDIR += libicq

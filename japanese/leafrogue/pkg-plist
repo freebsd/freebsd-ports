@@ -1,0 +1,9 @@
+bin/leafrogue
+share/rogue/leaf.msg
+@unexec rmdir %D/share/rogue 2>/dev/null || true
+share/doc/ja/leafrogue/readme.txt
+share/doc/ja/leafrogue/lf_rogue.html
+share/doc/ja/leafrogue/lf_rogue.txt
+share/doc/ja/leafrogue/guide.tex
+share/doc/ja/leafrogue/guide.txt
+@dirrm share/doc/ja/leafrogue
