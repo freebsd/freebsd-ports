@@ -129,6 +129,7 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
+    SUBDIR += openssl-beta
     SUBDIR += openvpn
     SUBDIR += outguess
     SUBDIR += p5-Authen-Krb4
