@@ -1,0 +1,11 @@
+--- protoMakefile.ORIG Sun Jan 21 05:46:02 1996
++++ protoMakefile      Mon Aug 17 18:56:27 1998
+@@ -47,7 +47,7 @@
+ # Example (for Solaris 2.x with SPARCompiler C):
+ # CC = cc -c -O -s -Xc -DDONTFREE
+
+-CC = cc -c
++CC = cc -c ${CFLAGS}
+
+ # Define LINK1 and LINK2 so that the command
+ #
