@@ -5,8 +5,8 @@
          LD_SEARCH_FLAGS='-R ${LIB_RUNTIME_DIR}'
          ;;                                         
 +    FreeBSD*)
-+	SHLIB_CFLAGS=""
-+	SHLIB_LD="gcc -shared -DCONFDIR=\"@sysconfdir@\""
++	SHLIB_CFLAGS="-fPIC -DPIC"
++	SHLIB_LD="gcc -shared"
 +	SHLIB_LD_LIBS="-lpam"
 +	SHLIB_SUFFIX=".so"
 +	LD_FLAGS=""
