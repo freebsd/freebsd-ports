@@ -3,7 +3,7 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/19 15:24:12 kuriyama Exp $
 
 DISTNAME=	slang1.2.2
 PKGNAME=	ja-libslang-1.2.2
@@ -15,6 +15,9 @@ PATCHFILES= 	slang1.2.2jp0.pat.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org
+
+
+BROKEN_ELF=	yes
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all elf
