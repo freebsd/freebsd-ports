@@ -1,24 +1,3 @@
---- dictd.c.orig	Mon Mar 10 01:07:36 2003
-+++ dictd.c	Fri Oct 10 00:19:17 2003
-@@ -1064,6 +1064,8 @@
- 
- static void set_utf8bit_mode (const char *loc)
- {
-+#include <osreldate.h>
-+#if __FreeBSD_version > 499999
-    char *locale_copy;
-    locale_copy = strdup (loc);
-    strlwr_8bit (locale_copy);
-@@ -1075,6 +1077,9 @@
-    bit8_mode = !utf8_mode && (locale_copy [0] != 'c' || locale_copy [1] != 0);
- 
-    free (locale_copy);
-+#else
-+   utf8_mode = 0;
-+#endif
- }
- 
- static void init (const char *fn)
 --- index.c.orig	Mon Jan 26 02:52:14 2004
 +++ index.c	Mon Jan 26 03:02:18 2004
 @@ -144,9 +144,12 @@
