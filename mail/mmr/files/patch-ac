@@ -1,0 +1,14 @@
+--- terminal.h.orig	Mon Jun 23 13:49:40 1997
++++ terminal.h	Sat Nov  1 08:55:42 1997
+@@ -13,7 +13,11 @@
+ extern "C" {
+ #include <stdlib.h>
+ #include <stdarg.h>
++#ifdef __FreeBSD__
++#include <ncurses.h>
++#else
+ #include <curses.h>
++#endif
+ }
+ 
+ /* Note that screen coordinates start at (1,1) */

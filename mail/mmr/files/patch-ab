@@ -1,0 +1,10 @@
+--- headers.h.orig	Tue Feb 18 13:39:00 1997
++++ headers.h	Sat Nov  1 08:55:42 1997
+@@ -12,4 +12,7 @@
+ #include <signal.h>
+ #include <errno.h>
+ #include <sys/ioctl.h>
++#ifdef __FreeBSD__
++extern char* cuserid(char*);
++#endif
+ }

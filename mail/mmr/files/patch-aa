@@ -1,0 +1,21 @@
+--- Makefile.orig	Mon Sep 22 16:20:20 1997
++++ Makefile	Sat Nov  1 08:55:42 1997
+@@ -7,15 +7,15 @@
+ #		(Toggled at runtime with ^T)
+ # -DMAILPATH=\"/some/path\"
+ #		Set the default mail spool directory
+-DEFS = -DTHREADMAIL
++DEFS = -DTHREADMAIL -DMAILPATH=\"/var/mail\"
+ 
+ OBJS = main.o rcfile.o listing.o handlemail.o commands.o terminal.o mailmsg.o \
+        mime.o mimetype.o base64.o filemap.o iobottle.o my_regex.o outgoing.o \
+ 	md5/libmd5.a
+-LIBS = -lncurses
++LIBS = -lncurses -lcompat
+ CXX  = g++
+ INCDIRS = -Imd5 -I/usr/include/ncurses
+-CXXFLAGS = $(DEFS) $(INCDIRS) -g
++CXXFLAGS = $(DEFS) $(INCDIRS) $(CFLAGS)
+ 
+ # Remind 'make' how to make C++ files.. *sigh*
+ include .c++howto
