@@ -37,7 +37,7 @@ USE_REINPLACE=	yes
 BUILD_NR=		645
 RELEASE_NR=		1.1
 FRELEASE_NR=		1.1.2
-SNAPDATE=		20040408
+SNAPDATE=		20040518
 INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
@@ -50,14 +50,14 @@ SIMPLEOSVER!=		${UNAME} -r | sed -e 's/\.//' | sed -e 's/\..*//'
 LANG_EXT=01
 .else
 #
-# Add pkg-descr and pkg-message if available 	 
-# 	 
-.if exists(${.CURDIR}/pkg-descr) 	 
-DESCR=  ${.CURDIR}/pkg-descr 	 
-.endif 	 
-.if exists(${.CURDIR}/pkg-message) 	 
-PKGMESSAGE=     ${.CURDIR}/pkg-message 	 
-.endif 	 
+# Add pkg-descr and pkg-message if available
+#
+.if exists(${.CURDIR}/pkg-descr)
+DESCR=  ${.CURDIR}/pkg-descr
+.endif
+.if exists(${.CURDIR}/pkg-message)
+PKGMESSAGE=     ${.CURDIR}/pkg-message
+.endif
 #
 # Set prefix and suffix
 #
@@ -152,7 +152,7 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no --with-jdk-home=${JDKDIR}
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-jdk-home=${JDKDIR}
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -321,7 +321,7 @@ post-extract:
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP && \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf - 
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf -
 .endif
 
 post-patch:
@@ -554,7 +554,6 @@ sdk:
 		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
 .endif
 	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
-
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
