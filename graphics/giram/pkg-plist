@@ -1,30 +1,35 @@
+share/locale/fr/LC_MESSAGES/Giram.mo
+share/locale/es/LC_MESSAGES/Giram.mo
 bin/povfront
 bin/giram
-Giram/plug-ins/Rotate
-Giram/plug-ins/Spheres
-Giram/plug-ins/Box
-Giram/docs/Tutorial
-Giram/SampleScenes/Cone.pov
-Giram/SampleScenes/Disc.pov
-Giram/SampleScenes/Giram.pov
-Giram/SampleScenes/IntSphereBox1.pov
-Giram/SampleScenes/IntSphereBox2.pov
-Giram/SampleScenes/IntSphereBox3.pov
-Giram/SampleScenes/IntSpherePlane1.pov
-Giram/SampleScenes/IntSpherePlane2.pov
-Giram/SampleScenes/IntSpherePlane3.pov
-Giram/SampleScenes/Triangle.pov
-Giram/SampleScenes/basicvue.pov
-Giram/SampleScenes/basicvue2.pov
-Giram/SampleScenes/basicvue3.pov
-Giram/SampleScenes/basicvue4.pov
-Giram/SampleScenes/box.pov
-Giram/SampleScenes/colors.inc
-Giram/SampleScenes/superel1.pov
-Giram/SampleScenes/superel2.pov
-Giram/SampleScenes/superel3.pov
-Giram/SampleScenes/torus.pov
-@dirrm Giram/plug-ins
-@dirrm Giram/SampleScenes
-@dirrm Giram/docs
-@dirrm Giram
+libexec/giram/plug-ins/Spheres
+libexec/giram/plug-ins/Box
+libexec/giram/plug-ins/Rotate
+share/doc/giram/Tutorial
+share/doc/giram/SampleScenes/Cone.pov
+share/doc/giram/SampleScenes/Disc.pov
+share/doc/giram/SampleScenes/Giram.pov
+share/doc/giram/SampleScenes/IntSphereBox1.pov
+share/doc/giram/SampleScenes/IntSphereBox2.pov
+share/doc/giram/SampleScenes/IntSphereBox3.pov
+share/doc/giram/SampleScenes/IntSpherePlane1.pov
+share/doc/giram/SampleScenes/IntSpherePlane2.pov
+share/doc/giram/SampleScenes/IntSpherePlane3.pov
+share/doc/giram/SampleScenes/Triangle.pov
+share/doc/giram/SampleScenes/basicvue.pov
+share/doc/giram/SampleScenes/basicvue2.pov
+share/doc/giram/SampleScenes/basicvue3.pov
+share/doc/giram/SampleScenes/basicvue4.pov
+share/doc/giram/SampleScenes/box.pov
+share/doc/giram/SampleScenes/lollipop.pov
+share/doc/giram/SampleScenes/superel1.pov
+share/doc/giram/SampleScenes/superel2.pov
+share/doc/giram/SampleScenes/superel3.pov
+share/doc/giram/SampleScenes/test.pov
+share/doc/giram/SampleScenes/torus.pov
+share/doc/giram/SampleScenes/Giram.gsf
+@dirrm share/doc/giram/SampleScenes
+@dirrm share/doc/giram
+@dirrm libexec/giram/plug-ins
+@dirrm libexec/giram
+
