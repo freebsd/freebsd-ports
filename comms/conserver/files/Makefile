@@ -1,3 +1,3 @@
-SUBDIR=	conserver.cf conserver console
+SUBDIR=	autologin conserver.cf conserver console
 
 .include <bsd.subdir.mk>
