@@ -1216,16 +1216,13 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/XFree86/X.Org/contrib/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/contrib/%SUBDIR%/ \
-	ftp://mirror.xmission.com/X/contrib/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/XFree86/mirror/X.Org/contrib/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/X11/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
 	ftp://sunsite.tus.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.dl.ac.uk/src/X/contrib/%SUBDIR%/ \
 	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/
 
