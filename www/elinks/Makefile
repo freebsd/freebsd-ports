@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	www
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
 		http://elinks.or.cz/download/
