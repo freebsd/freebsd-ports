@@ -4900,6 +4900,7 @@ netstat		src/usr.bin/netstat
 nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
+newfile		ports/devel/newfile
 newfs		src/sbin/newfs
 newfs_msdos	src/sbin/newfs_msdos
 newgrp		src/usr.bin/newgrp
