@@ -8,7 +8,7 @@
 PORTNAME=	pslist
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ringwraith.online.bg/devel/sysutils/
+MASTER_SITES=	http://devel.ringlet.net/sysutils/pslist/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A utility to view or send signals to processes with all their children"
