@@ -6,3 +6,5 @@ towin/fromwin: best match cp1251<->koi8-r decoder with CR/LF translation
 a2kfcnv: EGA/VGA raw screen fonts converter: cp866 font -> koi8-r font
 
 All programs written according to RFC 1489
+
+WWW: http://koi8.pp.ru/unix.html
