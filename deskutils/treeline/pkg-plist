@@ -1,8 +1,4 @@
 bin/treeline
-lib/python2.3/site-packages/sitecustomize.py
-lib/python2.3/site-packages/sitecustomize.pyc
-lib/treeline/__init__.py
-lib/treeline/__init__.pyc
 lib/treeline/cmdline.py
 lib/treeline/cmdline.pyc
 lib/treeline/docparam.py
@@ -21,8 +17,6 @@ lib/treeline/gentime.py
 lib/treeline/gentime.pyc
 lib/treeline/helpview.py
 lib/treeline/helpview.pyc
-lib/treeline/modsitecustom.py
-lib/treeline/modsitecustom.pyc
 lib/treeline/numbering.py
 lib/treeline/numbering.pyc
 lib/treeline/option.py
@@ -31,12 +25,14 @@ lib/treeline/optiondlg.py
 lib/treeline/optiondlg.pyc
 lib/treeline/output.py
 lib/treeline/output.pyc
+lib/treeline/p3.py
+lib/treeline/p3.pyc
+lib/treeline/plugininterface.py
+lib/treeline/plugininterface.pyc
 lib/treeline/printpreview.py
 lib/treeline/printpreview.pyc
 lib/treeline/recentfiles.py
 lib/treeline/recentfiles.pyc
-lib/treeline/sitecustomize.py
-lib/treeline/sitecustomize.pyc
 lib/treeline/spellcheck.py
 lib/treeline/spellcheck.pyc
 lib/treeline/textedit2.py
@@ -75,6 +71,8 @@ lib/treeline/xpm.pyc
 %%PORTDOCS%%%%DOCSDIR%%/sample_bookmarks.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_char_format.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_color_items.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_intern_links.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_table.trl
+@dirrm lib/treeline/plugins
 @dirrm lib/treeline
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
