@@ -1,10 +1,10 @@
-*** ../../wmmon/Makefile.FreeBSD-3.0~	Thu Nov 12 18:39:57 1998
---- ../../wmmon/Makefile.FreeBSD-3.0	Fri Jan  1 23:33:27 1999
+*** ../../wmmon/Makefile.FreeBSD-2.2~	Thu Nov 12 18:39:39 1998
+--- ../../wmmon/Makefile.FreeBSD-2.2	Fri Jan  1 23:34:03 1999
 ***************
 *** 3,9 ****
   #
   LIBDIR		= -L/usr/X11R6/lib
-  LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
+  LIBS		= -lXpm -lXext -lX11 -lkvm
 ! CFLAGS		= -g -Wall -I/usr/X11R6/include
   OBJS		=	wmmon.o \
   			../wmgeneral/wmgeneral.o \
@@ -12,7 +12,7 @@
 --- 3,10 ----
   #
   LIBDIR		= -L/usr/X11R6/lib
-  LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
+  LIBS		= -lXpm -lXext -lX11 -lkvm
 ! CFLAGS		?= -O2
 ! CFLAGS		+= -g -Wall -I/usr/X11R6/include
   OBJS		=	wmmon.o \
