@@ -1,6 +1,14 @@
 --- configure.orig	Thu Dec  5 10:37:31 2002
-+++ configure	Sat Dec 14 16:07:17 2002
-@@ -8988,7 +8988,7 @@
++++ configure	Mon Dec 16 19:49:41 2002
+@@ -8059,6 +8059,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8988,7 +8989,7 @@
    ;;
  esac
  fi
@@ -9,7 +17,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9177,43 +9177,7 @@
+@@ -9177,43 +9178,7 @@
  echo "${ECHO_T}no" >&6
  fi
  
@@ -54,7 +62,7 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -13208,7 +13172,6 @@
+@@ -13208,7 +13173,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -62,7 +70,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -13262,7 +13225,6 @@
+@@ -13262,7 +13226,6 @@
  #define HAVE_LIBC_R 1
  _ACEOF
  
@@ -70,7 +78,7 @@
  
  fi
  
-@@ -13706,29 +13668,6 @@
+@@ -13706,29 +13669,6 @@
  fi
  
  
@@ -100,7 +108,7 @@
  
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
-@@ -16081,10 +16020,6 @@
+@@ -16081,10 +16021,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -111,7 +119,7 @@
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
-@@ -19222,14 +19157,6 @@
+@@ -19222,14 +19158,6 @@
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
@@ -126,7 +134,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -19313,10 +19240,6 @@
+@@ -19313,10 +19241,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -137,7 +145,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -19399,10 +19322,6 @@
+@@ -19399,10 +19323,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
