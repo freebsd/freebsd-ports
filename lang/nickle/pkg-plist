@@ -1,10 +1,16 @@
 bin/nickle
-share/nickle/abort.5c
-share/nickle/arc4.5c
-share/nickle/builtin.5c
-share/nickle/command.5c
-share/nickle/math.5c
-share/nickle/mutex.5c
-share/nickle/prng.5c
-share/nickle/scanf.5c
-@dirrm share/nickle
+%%DATADIR%%/abort.5c
+%%DATADIR%%/arc4.5c
+%%DATADIR%%/builtin.5c
+%%DATADIR%%/command.5c
+%%DATADIR%%/ctype.5c
+%%DATADIR%%/file.5c
+%%DATADIR%%/history.5c
+%%DATADIR%%/math.5c
+%%DATADIR%%/mutex.5c
+%%DATADIR%%/printf.5c
+%%DATADIR%%/prng.5c
+%%DATADIR%%/scanf.5c
+%%DATADIR%%/socket.5c
+%%DATADIR%%/string.5c
+@dirrm %%DATADIR%%
