@@ -19,6 +19,8 @@ share/texmf/dvipdfm/config/lw35urw.map
 share/texmf/dvipdfm/config/lw35urwa.map
 share/texmf/dvipdfm/config/psbase14.map
 share/texmf/dvipdfm/config/t1fonts.map
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
 @dirrm share/dvipdfm
 @dirrm share/texmf/doc/dvipdfm
 @dirrm share/texmf/dvipdfm/base
