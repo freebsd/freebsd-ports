@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure	2002/05/31 11:00:12	1.1
++++ configure	2002/05/31 11:00:19
+@@ -895,7 +895,6 @@
+ 
+ 
+ 
+-prefix=/usr
+ 
+ # Check whether --with-xkb_base or --without-xkb_base was given.
+ if test "${with_xkb_base+set}" = set; then
