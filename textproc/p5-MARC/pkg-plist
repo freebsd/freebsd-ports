@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MARC/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/MARC.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MARC
