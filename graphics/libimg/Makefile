@@ -9,7 +9,8 @@ PORTNAME=	libimg
 PORTVERSION=	1.2.4
 PORTREVISION=	1
 CATEGORIES=	graphics tk84
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/graphics/Img/1.2/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	tkimg
 DISTNAME=	img${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
