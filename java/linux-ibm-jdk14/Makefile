@@ -1,0 +1,64 @@
+# New ports collection makefile for:	linux-ibm-jdk14
+# Date created:				19 November 2002
+# Whom:					Greg Lewis <glewis@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	jdk
+PORTVERSION=	${JDK_VERSION}
+CATEGORIES=	java
+MASTER_SITES=	# https://www6.software.ibm.com/dl/lxdk/lxdk-p/
+PKGNAMEPREFIX=	linux-ibm-
+DISTNAME=	IBMJava2-SDK-14
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	glewis@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
+
+NO_BUILD=	yes
+USE_LINUX=	yes
+USE_REINPLACE=	yes
+JDK_VERSION=	1.4.0
+ONLY_FOR_ARCHS=	i386
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+
+NO_CDROM=	"License does not allow distribution with fee"
+RESTRICTED=	"Redistribution of repackaged binaries not permitted"
+
+DOWNLOAD_URL=	https://www6.software.ibm.com/dl/lxdk/lxdk-p/
+
+CPIO?=		/usr/bin/cpio
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+ECHO_MSG=/usr/bin/printf
+IGNORE=:\n\
+Because of licensing restrictions, you must manually fetch the IBM Java SDK\n\
+${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}).  Please access\n\
+${DOWNLOAD_URL}, and select the\n\
+\"Dev Kit for Linux\", ${JDK_VERSION}, for the \"32-bit xSeries (Intel Compat)\"\n\
+platform.  After registration, download the archive and place it in\n\
+${DISTDIR}.  Then run make again.\n
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s:%%APP_HOME%%:${APP_HOME}:g" ${WRKSRC}/bin/java-rmi.cgi
+	@${RM} -f ${WRKSRC}/bin/java-rmi.cgi.*
+
+do-install:
+	${MKDIR} ${APP_HOME}
+	cd ${WRKSRC} && ${FIND} . \
+		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
