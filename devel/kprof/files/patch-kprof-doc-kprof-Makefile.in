@@ -1,0 +1,11 @@
+--- kprof/doc/kprof/Makefile.in.orig	Fri Feb 20 16:56:46 2004
++++ kprof/doc/kprof/Makefile.in	Fri Feb 20 16:57:00 2004
+@@ -373,7 +373,7 @@
+ 
+ HTML/index.html: HTML index.docbook
+ 	@test -d HTML && rm -r HTML
+-	$(KDB2HTML) $(srcdir)/index.docbook
++	$(MEINPROC) $(srcdir)/index.docbook
+ 
+ install-docs:
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/$(KDE_LANG)/kprof
