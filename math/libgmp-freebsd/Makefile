@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sobomax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for arbitrary precision arithmetic
 
+NO_LATEST_LINK=	yes
 CONFLICTS=	libgmp-4*
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
