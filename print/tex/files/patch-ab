@@ -1,0 +1,20 @@
+--- configure.orig	Sun May 13 15:01:20 2001
++++ configure	Sun May 13 15:02:43 2001
+@@ -990,8 +990,7 @@
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+-
+-
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
+ 
+ # Check whether --with-dtl or --without-dtl was given.
+ if test "${with_dtl+set}" = set; then
+@@ -1840,6 +1839,7 @@
+ s%@LN_S@%$LN_S%g
+ s%@TEX@%$TEX%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@MAINT@%$MAINT%g
+ s%@host@%$host%g
