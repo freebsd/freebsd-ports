@@ -48,7 +48,7 @@ Acrobat5/Reader/%%ARCHDIR%%/lib/libAGM.so.4.08
 Acrobat5/Reader/%%ARCHDIR%%/lib/libBIB.so
 Acrobat5/Reader/%%ARCHDIR%%/lib/libBIB.so.1.1
 Acrobat5/Reader/%%ARCHDIR%%/lib/libCoolType.so
-Acrobat5/Reader/%%ARCHDIR%%/lib/libCoolType.so.3.06
+Acrobat5/Reader/%%ARCHDIR%%/lib/libCoolType.so.4.10
 Acrobat5/Reader/%%ARCHDIR%%/lib/libOPP.so
 Acrobat5/Reader/%%ARCHDIR%%/lib/libOPP.so.1.02
 Acrobat5/Reader/%%ARCHDIR%%/plug_ins/AcroForm.api
@@ -64,12 +64,13 @@ Acrobat5/Reader/res/splashScreen18R.xpm
 Acrobat5/Reader/license.txt
 Acrobat5/bin/acroread
 bin/acroread5
+%%PORTDOCS%%share/doc/acroread/README
 @exec ln -sf ../../Resource/Font/ %D/Acrobat5/Reader/%%ARCHDIR%%/fonts
 @unexec rm -f %D/Acrobat5/Reader/%%ARCHDIR%%/fonts
 @exec ln -sf ../res %D/Acrobat5/Reader/%%ARCHDIR%%/res
 @unexec rm -f %D/Acrobat5/Reader/%%ARCHDIR%%/res
 @exec echo "Be sure to read the license agreement in"
-@exec echo "%D/Acrobat5/Reader/License.pdf"
+@exec echo "%D/Acrobat5/Reader/license.txt"
 @dirrm Acrobat5/bin
 @dirrm Acrobat5/Reader/res
 @comment ALPHA-ONLY:@dirrm Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language
@@ -87,3 +88,4 @@ bin/acroread5
 @dirrm Acrobat5/Browsers/%%ARCHDIR%%
 @dirrm Acrobat5/Browsers
 @dirrm Acrobat5
+@dirrm share/doc/acroread
