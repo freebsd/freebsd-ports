@@ -5747,6 +5747,7 @@ ruby-libpng	ports/graphics/ruby-libpng
 ruby-locale	ports/devel/ruby-locale
 ruby-log4r	ports/sysutils/ruby-log4r
 ruby-lua	ports/lang/ruby-lua
+ruby-mail	ports/mail/ruby-mail
 ruby-man	ports/lang/ruby-man
 ruby-math3d	ports/math/ruby-math3d
 ruby-mcrypt	ports/security/ruby-mcrypt
