@@ -4,5 +4,5 @@ bin/svolcvt
 bin/xturtleserver
 share/p-interp/README
 share/p-interp/COPYING
-share/p-interp/system-svol
-share/p-interp/work-svol
+share/p-interp/system.svol
+share/p-interp/work.svol
