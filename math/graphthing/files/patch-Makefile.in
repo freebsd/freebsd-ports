@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed May  1 14:00:12 2002
++++ Makefile.in	Wed May  1 14:00:22 2002
+@@ -3,7 +3,7 @@
+ PACKAGE = @PACKAGE@
+ VERSION = @GT_VERSION@
+ 
+-SUBDIRS = intl src po
++SUBDIRS = src po
+ 
+ DISTFILES = COPYING ChangeLog Makefile.in README TODO aclocal.m4 \
+ 	configure configure.in install-sh mkinstalldirs version
