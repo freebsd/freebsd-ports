@@ -33,6 +33,9 @@ bin/plucker-setup
 %%PYTHON_SITELIBDIR%%/PyPlucker/Retriever.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/Retriever.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/Retriever.pyo
+%%PYTHON_SITELIBDIR%%/PyPlucker/Profiling.py
+%%PYTHON_SITELIBDIR%%/PyPlucker/Profiling.pyc
+%%PYTHON_SITELIBDIR%%/PyPlucker/Profiling.pyo
 %%PYTHON_SITELIBDIR%%/PyPlucker/Spider.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/Spider.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/Spider.pyo
@@ -42,12 +45,18 @@ bin/plucker-setup
 %%PYTHON_SITELIBDIR%%/PyPlucker/Url.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/Url.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/Url.pyo
+%%PYTHON_SITELIBDIR%%/PyPlucker/UtilFns.py
+%%PYTHON_SITELIBDIR%%/PyPlucker/UtilFns.pyc
+%%PYTHON_SITELIBDIR%%/PyPlucker/UtilFns.pyo
 %%PYTHON_SITELIBDIR%%/PyPlucker/Writer.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/Writer.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/Writer.pyo
 %%PYTHON_SITELIBDIR%%/PyPlucker/__init__.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/__init__.pyo
+%%PYTHON_SITELIBDIR%%/PyPlucker/helper/CharsetMapping.py
+%%PYTHON_SITELIBDIR%%/PyPlucker/helper/CharsetMapping.pyc
+%%PYTHON_SITELIBDIR%%/PyPlucker/helper/CharsetMapping.pyo
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/PQAAppInfo.py
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/PQAAppInfo.pyc
 %%PYTHON_SITELIBDIR%%/PyPlucker/helper/PQAAppInfo.pyo
@@ -71,16 +80,18 @@ bin/plucker-setup
 %%PORTDOCS%%share/doc/plucker/manual/Bookmarks.gif
 %%PORTDOCS%%share/doc/plucker/manual/Category.gif
 %%PORTDOCS%%share/doc/plucker/manual/CopyURL.gif
+%%PORTDOCS%%share/doc/plucker/manual/DBFormat.html
 %%PORTDOCS%%share/doc/plucker/manual/DBMgr.gif
 %%PORTDOCS%%share/doc/plucker/manual/EditBookmarks.gif
 %%PORTDOCS%%share/doc/plucker/manual/Find.gif
+%%PORTDOCS%%share/doc/plucker/manual/Gestures.gif
+%%PORTDOCS%%share/doc/plucker/manual/HWButtons.gif
 %%PORTDOCS%%share/doc/plucker/manual/Mail.gif
 %%PORTDOCS%%share/doc/plucker/manual/MainScreen.gif
 %%PORTDOCS%%share/doc/plucker/manual/Plucker_Doc.css
 %%PORTDOCS%%share/doc/plucker/manual/Plucker_Doc.html
 %%PORTDOCS%%share/doc/plucker/manual/Prefs.gif
 %%PORTDOCS%%share/doc/plucker/manual/Result.gif
-%%PORTDOCS%%share/doc/plucker/manual/Start.gif
 %%PORTDOCS%%share/doc/plucker/manual/TapAction.gif
 %%PORTDOCS%%share/doc/plucker/manual/chicken-head.gif
 %%PORTDOCS%%share/doc/plucker/manual/contents.png
@@ -166,6 +177,8 @@ bin/plucker-setup
 %%PORTDOCS%%share/doc/plucker/manual/node78.html
 %%PORTDOCS%%share/doc/plucker/manual/node79.html
 %%PORTDOCS%%share/doc/plucker/manual/node8.html
+%%PORTDOCS%%share/doc/plucker/manual/node80.html
+%%PORTDOCS%%share/doc/plucker/manual/node81.html
 %%PORTDOCS%%share/doc/plucker/manual/node9.html
 %%PORTDOCS%%share/doc/plucker/manual/prev.png
 %%PORTDOCS%%share/doc/plucker/manual/prev_g.png
@@ -180,11 +193,14 @@ share/plucker/viewer_cs.prc
 share/plucker/viewer_da.prc
 share/plucker/viewer_de.prc
 share/plucker/viewer_en.prc
+share/plucker/viewer_es.prc
 share/plucker/viewer_fo.prc
 share/plucker/viewer_fr.prc
 share/plucker/viewer_it.prc
 share/plucker/viewer_ja.prc
 share/plucker/viewer_pl.prc
+share/plucker/viewer_ru.prc
+share/plucker/viewer_tr.prc
 share/plucker/viewer_zh_CN.prc
 @dirrm %%PYTHON_SITELIBDIR%%/PyPlucker/helper
 @dirrm %%PYTHON_SITELIBDIR%%/PyPlucker
