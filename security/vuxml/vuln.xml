@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65a17a3f-ed6e-11d8-aff1-00061bc2ad93">
+    <topic>Arbitrary code execution via a format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>jftpgw</name>
+        <range><lt>0.13.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The log functions in jftpgw may allow
+	  remotely authenticated user to execute
+	  arbitrary code via the format string
+	  specifiers in certain syslog messages.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0448</cvename>
+      <url>http://www.debian.org/security/2004/dsa-510</url>
+      <url>http://www.securityfocus.com/bid/10438</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16271</url>
+    </references>
+    <dates>
+      <discovery>2004-05-30</discovery>
+      <entry>2004-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="641859e8-eca1-11d8-b913-000c41e2cdad">
     <topic>KDE Konqueror frame injection vulnerability</topic>
     <affects>
