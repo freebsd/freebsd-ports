@@ -22,7 +22,8 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|/usr/local/lib/gkrellm2/plugins|${PREFIX}/libexec/gkrellm2/plugins|' ${WRKSRC}/Makefile
+		s|/usr/local/lib/gkrellm2/plugins|${PREFIX}/libexec/gkrellm2/plugins| ; \
+		s|gcc -c|gcc -c -fPIC|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|ulong|u_long|' ${WRKSRC}/*.c
 
 .include <bsd.port.mk>
