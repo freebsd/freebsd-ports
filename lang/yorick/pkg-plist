@@ -81,6 +81,8 @@ share/yorick/1.4/include/demo4.i
 share/yorick/1.4/include/demo5.i
 share/yorick/1.4/include/digit2.i
 share/yorick/1.4/include/ellipse.i
+share/yorick/1.4/include/elliptic.i
+share/yorick/1.4/include/filter.i
 share/yorick/1.4/include/fitlsq.i
 share/yorick/1.4/include/fitrat.i
 share/yorick/1.4/include/fits.i
