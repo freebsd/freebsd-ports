@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3243e839-f489-11d8-9837-000c41e2cdad">
+    <topic>fidogate -- write files as `news' user</topic>
+    <affects>
+      <package>
+	<name>fidogate</name>
+	<range><lt>4.4.9_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Neils Heinen reports that the setuid `news' binaries
+	  installed as part of fidogate may be used to create files or
+	  append to file with the privileges of the `news' user by
+	  setting the LOGFILE environmental variable.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvs.sourceforge.net/viewcvs.py/fidogate/fidogate/ChangeLog?rev=4.320&amp;view=markup</url>
+    </references>
+    <dates>
+      <discovery>2004-08-21</discovery>
+      <entry>2004-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0c4d5973-f2ab-11d8-9837-000c41e2cdad">
     <topic>mysql -- mysqlhotcopy insecure temporary file creation</topic>
     <affects>
@@ -64,6 +89,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>08-22-2004</entry>
     </dates>
   </vuln>
+
   <vuln vid="c4b025bb-f05d-11d8-9837-000c41e2cdad">
     <topic>tnftpd -- remotely exploitable vulnerability</topic>
     <affects>
