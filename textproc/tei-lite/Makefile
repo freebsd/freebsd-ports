@@ -7,6 +7,7 @@
 
 PORTNAME=	tei
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Lite/DTD/
 PKGNAMESUFFIX=	-lite
@@ -16,22 +17,24 @@ EXTRACT_ONLY=	# Empty
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	SGML version of the TEI-Lite DTD
 
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_BUILD=	yes
-PLIST_SUB=	MKCATALOG=${MKCATALOG} CATALOG=${CATALOG}
+PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
+PLIST_SUB+=	DTDDIR=${DTDDIR}
+PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 INSTDIR=	${PREFIX}/share/sgml/tei/lite
-CATALOG=	${PREFIX}/share/sgml/catalog
-MKCATALOG=	${PREFIX}/sbin/mkcatalog
+DTDDIR=		${PORTNAME}/lite
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 do-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 	@${INSTALL_DATA} ${DISTDIR}/teilite.dtd ${INSTDIR}
 	@${INSTALL_DATA} ${DISTDIR}/teilite.tag ${INSTDIR}
-	@${SED} -e 's!%%INSTDIR%%!${INSTDIR}!' ${FILESDIR}/catalog \
-	  > ${INSTDIR}/catalog
+	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}
 
 post-install:
-	@${MKCATALOG} -q -c ${CATALOG} install ${PORTNAME}/lite
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/catalog 
 
 .include <bsd.port.mk>

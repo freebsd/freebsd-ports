@@ -7,6 +7,7 @@
 
 PORTNAME=	tei
 PORTVERSION=	p3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Vault/GL/
 DISTNAME=	teip3dtd
@@ -14,25 +15,27 @@ DISTNAME=	teip3dtd
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	DTD of the Text Encoding Initiative
 
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	DTD_NAME=${PORTNAME} DTD_VERSION=${PORTVERSION} \
-		MKCATALOG=${MKCATALOG}
+PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
+		DTDDIR=${DTDDIR} \
+		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 SGMLDIR=	${PREFIX}/share/sgml
 INSTDIR=	${SGMLDIR}/${PORTNAME}/${PORTVERSION}
-MKCATALOG=	${PREFIX}/sbin/mkcatalog
+DTDDIR=		${PORTNAME}/${PORTVERSION}
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 do-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 	@${INSTALL_MAN} ${WRKSRC}/*.dtd ${INSTDIR}
 	@${INSTALL_MAN} ${WRKSRC}/*.ent ${INSTDIR}
-	@${SED} -e 's!%%INSTDIR%%!${INSTDIR}!' ${FILESDIR}/catalog \
-	  > ${INSTDIR}/catalog
+	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}
 
 post-install:
-	@${MKCATALOG} -q install ${PORTNAME}/${PORTVERSION}
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/catalog 
 
 .include <bsd.port.mk>

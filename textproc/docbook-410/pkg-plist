@@ -3,9 +3,9 @@ share/sgml/docbook/4.1/41chg.txt
 share/sgml/docbook/4.1/50issues.txt
 share/sgml/docbook/4.1/ChangeLog
 share/sgml/docbook/4.1/cals-tbl.dtd
-@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%/%%DTD_VERSION%%
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/%%DTD_VERSION%%/catalog
 share/sgml/docbook/4.1/catalog
-@exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add %%DTD_NAME%%/%%DTD_VERSION%%/catalog
 share/sgml/docbook/4.1/dbcent.mod
 share/sgml/docbook/4.1/dbgenent.mod
 share/sgml/docbook/4.1/dbhier.mod

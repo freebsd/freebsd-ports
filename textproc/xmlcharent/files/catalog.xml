@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+	"http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+
+<!-- Created by xmlcatmgr-0.2 -->
+
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <public publicId="ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" uri="file://@@XMLDIR@@/iso-lat1.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Latin 2//EN//XML" uri="file://@@XMLDIR@@/iso-lat2.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Greek Letters//EN//XML" uri="file://@@XMLDIR@@/iso-grk1.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Monotoniko Greek//EN//XML" uri="file://@@XMLDIR@@/iso-grk2.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Russian Cyrillic//EN//XML" uri="file://@@XMLDIR@@/iso-cyr1.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN//XML" uri="file://@@XMLDIR@@/iso-cyr2.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" uri="file://@@XMLDIR@@/iso-num.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Diacritical Marks//EN//XML" uri="file://@@XMLDIR@@/iso-dia.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Publishing//EN//XML" uri="file://@@XMLDIR@@/iso-pub.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Box and Line Drawing//EN//XML" uri="file://@@XMLDIR@@/iso-box.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES General Technical//EN//XML" uri="file://@@XMLDIR@@/iso-tech.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Greek Symbols//EN//XML" uri="file://@@XMLDIR@@/iso-grk3.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN//XML" uri="file://@@XMLDIR@@/iso-grk4.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN//XML" uri="file://@@XMLDIR@@/iso-amso.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML" uri="file://@@XMLDIR@@/iso-amsb.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN//XML" uri="file://@@XMLDIR@@/iso-amsr.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML" uri="file://@@XMLDIR@@/iso-amsn.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML" uri="file://@@XMLDIR@@/iso-amsa.ent" />
+  <public publicId="ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN//XML" uri="file://@@XMLDIR@@/iso-amsc.ent" />
+</catalog>
