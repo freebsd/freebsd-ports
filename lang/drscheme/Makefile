@@ -25,7 +25,7 @@ ALL_TARGET=	all install
 USE_XLIB=	yes
 
 PLTHOME=	${PREFIX}/drscheme
-DRS_D=		bin install collects teachpack
+DRS_D=		bin install collects teachpack include lib
 DRS_B=		drscheme mred mzc mzscheme tex2page
 MAN1=		drscheme.1 mred.1 mzscheme.1
 
