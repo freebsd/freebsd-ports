@@ -7,6 +7,7 @@
 
 PORTNAME=	cphone
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/cphone/
 DISTNAME=	cphone_0.1.0
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NOCLEANDEPENDS=	yes
 
 USE_BISON=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_GMAKE=	yes
 ALL_TARGET=	optnoshared
 MAKE_ENV=	QTDIR=${X11BASE} \
