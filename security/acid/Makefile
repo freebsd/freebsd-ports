@@ -22,6 +22,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
+BROKEN=		"Inconsistent dependencies (mod_php4 and php4)"
+DEPRECATED=	"This port will be removed on April 15 if it is still broken."
+
 USE_MYSQL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
