@@ -1,0 +1,31 @@
+bin/pips%%PRTYPE%%
+libexec/%%BASE_NAME%%/filter%%PRTYPE%%
+libexec/%%BASE_NAME%%/filter%%PRTYPE%%.rev
+libexec/%%BASE_NAME%%/gsconfig%%PRTYPE%%
+share/doc/%%BASE_NAME%%/readme%%PRTYPE%%
+share/doc/%%BASE_NAME%%/pips_mo/de.gmo
+share/doc/%%BASE_NAME%%/pips_mo/en.gmo
+share/doc/%%BASE_NAME%%/pips_mo/es.gmo
+share/doc/%%BASE_NAME%%/pips_mo/fr.gmo
+share/doc/%%BASE_NAME%%/pips_mo/it.gmo
+share/doc/%%BASE_NAME%%/pips_mo/ja.gmo
+share/doc/%%BASE_NAME%%/pips_mo/ko.gmo
+share/doc/%%BASE_NAME%%/pips_mo/nl.gmo
+share/doc/%%BASE_NAME%%/pips_mo/pt.gmo
+share/doc/%%BASE_NAME%%/pips_mo/zh.gmo
+share/doc/%%BASE_NAME%%/pips_mo/zh_TW.gmo
+@dirrm share/doc/%%BASE_NAME%%/pips_mo
+%%LIB_README%%
+@dirrm libexec/%%BASE_NAME%%
+@dirrm share/doc/%%BASE_NAME%%
+@cwd /compat/linux
+%%LIB_DIR_FILE%%
+@exec /compat/linux/sbin/ldconfig ; true
+usr/share/locale/de/LC_MESSAGES/pips.mo
+usr/share/locale/es/LC_MESSAGES/pips.mo
+usr/share/locale/fr/LC_MESSAGES/pips.mo
+usr/share/locale/it/LC_MESSAGES/pips.mo
+usr/share/locale/ko/LC_MESSAGES/pips.mo
+usr/share/locale/nl/LC_MESSAGES/pips.mo
+usr/share/locale/pt/LC_MESSAGES/pips.mo
+usr/share/locale/ja_JP/LC_MESSAGES/pips.mo
