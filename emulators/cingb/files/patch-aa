@@ -1,0 +1,17 @@
+--- Makefile.templ.orig	Thu Apr 19 21:04:46 2001
++++ Makefile.templ	Thu Apr 19 21:05:37 2001
+@@ -16,7 +16,7 @@
+ 
+ # unix dependent
+ 
+-INCPATH                 = -I/usr/include/glide
++INCPATH                 = -I/usr/X11R6/include -I/usr/local/include
+ LIBPATH 		= -L/usr/X11R6/lib
+ 
+ LIBS 			= -lX11 %%%libext%%% %%%libsocket%%% %%%libnsl%%%
+@@ -91,4 +91,4 @@
+ 
+ arplay.c: globals.h arplay.h
+ 
+-main.c:     globals.h z80.h gameboy.h 
++main.c:     globals.h z80.h gameboy.h 
