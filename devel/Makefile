@@ -912,6 +912,7 @@
     SUBDIR += publib
     SUBDIR += pwlib
     SUBDIR += py-ansistyle
+    SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-clientcookie
     SUBDIR += py-coro
