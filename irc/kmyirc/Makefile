@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kmyirc
 # Date created:		25 November 2002
-# Whom:			Frank Laszlo <laszlof@freebsdmatrix.net
+# Whom:			Frank Laszlo <laszlof@vonostingroup.com>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ CATEGORIES=		irc kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		laszlof@freebsdmatrix.net
+MAINTAINER=		laszlof@vonostingroup.com
 COMMENT=		"Good and easy IRC client for KDE."
 
 GNU_CONFIGURE=		yes
