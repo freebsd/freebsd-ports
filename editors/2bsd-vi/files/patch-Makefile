@@ -1,5 +1,5 @@
---- /var/tmp/Makefile.orig	Mon Jul 12 11:06:48 2004
-+++ Makefile	Mon Jul 12 11:29:22 2004
+--- Makefile.old	Wed Jan 19 09:43:24 2005
++++ Makefile	Wed Jan 19 09:43:41 2005
 @@ -79,10 +79,9 @@
  # Destinations for installation. $(PRESERVEDIR) is used for recovery files.
  # It will get mode 1777.
@@ -21,7 +21,7 @@
  
  #
  # Compiler and linker flags.
-@@ -276,13 +275,6 @@
+@@ -292,13 +291,6 @@
  # install in standard place
  
  install-man:
@@ -35,7 +35,7 @@
  	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.1
  	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.1
  	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
-@@ -290,10 +282,6 @@
+@@ -306,10 +298,6 @@
  	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
  
  install: all install-man
@@ -46,19 +46,11 @@
  # special provisions for sticky install
  	if test -f $(DESTDIR)$(BINDIR)/ex; \
  	then	test -f $(DESTDIR)$(BINDIR)/ex.old.$$$$ && exit 1; \
-@@ -303,15 +291,12 @@
+@@ -319,7 +307,6 @@
  		rm -f $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
  	fi
- 	$(INSTALL) -c -s -m 1755 ex $(DESTDIR)$(BINDIR)/ex
+ 	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
 -	test -d $(DESTDIR)$(LIBEXECDIR) || mkdir -p $(DESTDIR)$(LIBEXECDIR)
- 	$(INSTALL) -c -s exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
- 	$(INSTALL) -c -s expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
+ 	$(INSTALL) -c $(STRIP) exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
+ 	$(INSTALL) -c $(STRIP) expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
  	ln -s ex $(DESTDIR)$(BINDIR)/edit
- 	ln -s ex $(DESTDIR)$(BINDIR)/vedit
- 	ln -s ex $(DESTDIR)$(BINDIR)/vi
- 	ln -s ex $(DESTDIR)$(BINDIR)/view
--	test -d $(DESTDIR)$(PRESERVEDIR) || mkdir -p $(DESTDIR)$(PRESERVEDIR)
--	chmod 1777 $(DESTDIR)$(PRESERVEDIR)
- 
- ex.o: config.h ex_argv.h ex.h ex_proto.h ex_temp.h ex_tty.h ex_tune.h
- ex.o: ex_vars.h libterm/libterm.h
