@@ -1,0 +1,51 @@
+--- Makefile.orig	Tue Mar 13 04:05:59 2001
++++ Makefile	Mon Apr 30 00:39:37 2001
+@@ -59,7 +59,7 @@
+ else
+ 
+ ifndef DEBUG
+-C_OPTIMIZE = -O2 -finline-functions
++C_OPTIMIZE = ${CFLAGS} -finline-functions
+ else
+ C_OPTIMIZE = -O
+ endif
+@@ -112,10 +112,10 @@
+ 
+ # -----	editing the rest should usually be unnecessary ------------------------
+ 
+-CC			= gcc -c
++#CC		= gcc -c
+-CC_FLAGS	= $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) -ansi -pipe `gtk-config --cflags` `gnome-config --cflags gnomeui` -Isrc
++CC_FLAGS	= $(PROF_OPTS) $(C_DEBUG) $(C_OPTS) $(C_WARNINGS) -ansi -pipe `gtk-config --cflags` `gnome-config --cflags gnomeui` $(C_OPTIMIZE) -Isrc
+-LD			= gcc
++LD			= $(CC)
+ LD_FLAGS	= $(PROF_OPTS) -pipe `gtk-config --libs` `gnome-config --libs gnomeui`
+ C_SRCS		= $(addprefix src/,$(C_SRCS_))
+ C_OBJS_		= $(C_SRCS_:.c=.o)
+ C_OBJS		= $(addprefix $(OUT)/,$(C_OBJS_))
+@@ -144,7 +144,7 @@
+ 		$(LD) -o $(OUT)/hypersrc $(C_OBJS) $(LD_FLAGS) $(LIBS) $(OUT)/libparser.a
+ 
+ $(OUT)/%.o:     src/%.c
+-		$(CC) -o $@ $(CC_FLAGS) $(subst $(OUT)/,src/,$<)
++		$(CC) -c -o $@ $(CC_FLAGS) $(subst $(OUT)/,src/,$<)
+ 
+ # -----------------------------------------------------------------------------
+ # parser (lex/yacc code that builds func graph/tree)
+@@ -179,13 +179,13 @@
+ 		mv  y.tab.[cho] $(OUT)
+ 
+ $(OUT)/y.tab.o:  $(OUT)/y.tab.c
+-		$(CC) -o $@ $(CC_FLAGS_PARSER) $(OUT)/y.tab.c
++		$(CC) -c -o $@ $(CC_FLAGS_PARSER) $(OUT)/y.tab.c
+ 
+ $(OUT)/lex.yy.o:  $(OUT)/lex.yy.c
+-		$(CC) -o $@ $(CC_FLAGS_PARSER) $(OUT)/lex.yy.c
++		$(CC) -c -o $@ $(CC_FLAGS_PARSER) $(OUT)/lex.yy.c
+ 
+ $(OUT)/str_heap.o:  src/str_heap.c  src/str_heap.h
+-		$(CC) -o $@ $(CC_FLAGS_PARSER) src/str_heap.c
++		$(CC) -c -o $@ $(CC_FLAGS_PARSER) src/str_heap.c
+ 
+ # -----------------------------------------------------------------------------
+ 
