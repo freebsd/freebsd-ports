@@ -1,6 +1,7 @@
 bin/bzip2
 bin/bunzip2
 bin/bzcat
+bin/bz2cat
 bin/bzip2recover
 include/bzlib.h
 lib/libbz2.a
