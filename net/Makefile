@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.85 1996/12/01 12:12:35 max Exp $
+# $Id: Makefile,v 1.86 1996/12/06 10:23:28 max Exp $
 #
 
     SUBDIR += archie
@@ -46,6 +46,7 @@
     SUBDIR += ucd-snmp
     SUBDIR += wais
     SUBDIR += wide-dhcp
+    SUBDIR += wget
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xgopher
