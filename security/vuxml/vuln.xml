@@ -4207,4 +4207,51 @@ misc.c:
       <modified>2004-08-05</modified>
     </dates>
   </vuln>
+
+  <vuln vid="abe47a5a-e23c-11d8-9b0a-000347a4fa7d">
+    <topic>Mozilla certificate spoofing</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><ge>0.9.1</ge><le>0.9.2</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.2,2</lt></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Mozilla and Mozilla Firefox contains a flaw that may
+          allow a malicious user to spoof SSL certification.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="003a01c472ba$b2060900$6501a8c0@sec">http://www.securityfocus.com/archive/1/369953</mlist>
+      <url>http://www.cipher.org.uk/index.php?p=advisories/Certificate_Spoofing_Mozilla_FireFox_25-07-2004.advisory</url>
+      <url>http://secunia.com/advisories/12160</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253121</url>
+      <url>http://www.osvdb.org/8238</url>
+      <bid>10796</bid>
+      <cvename>CAN-2004-0763</cvename>
+    </references>
+    <dates>
+      <discovery>2004-07-25</discovery>
+      <entry>2004-07-30</entry>
+      <modified>2004-08-05</modified>
+    </dates>
+  </vuln>
 </vuxml>
