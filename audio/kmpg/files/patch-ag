@@ -1,0 +1,15 @@
+--- kmpg.h.orig	Thu May 14 19:20:37 1998
++++ kmpg.h	Thu May 14 19:20:55 1998
+@@ -24,10 +24,10 @@
+ #include <signal.h>
+ #include <sys/utsname.h>
+ #include <unistd.h>
+-#if defined(_FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ #else
+ #include <mntent.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #endif
+ #include <sys/types.h>
+ #include <sys/stat.h>

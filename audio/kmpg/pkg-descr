@@ -1,0 +1,15 @@
+Kmpg is an MPEG audio player for the KDE project. The player uses mpg123 by
+Michael Hipp as a decoding engine (note: do not contact him about bugs/
+features in kmpg, rather contact Martin Muller).
+
+Kmpg has the following advanced features:
+* Supports MPEG 1.0/2.0, layers 1,2 and 3.
+* Simple to use interface.
+* Drag and drop support using the KDE dnd standard.
+* Support for multiple platforms: Linux, FreeBSD, Solaris 2.x, SunOS 4.x
+  (tested 4.1.4), HP/UX 7xx, SGI IRIX, DEC Unix (tested 3.2 and 4.0), OSF/1,
+  DEC Ultrix (tested 4.4) and IBM AIX (tested 4.1).
+* Playlist editor.
+* Advanced configuration dialog allowing the user to tune the behaviour of
+  the decoder.
+* All configuration changes can be applied while playing a stream.
