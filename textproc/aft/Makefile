@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	aft
-PORTVERSION=	5.08
+PORTVERSION=	5.09
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A document preparation system using an Almost Free Text input format
 
 USE_PERL5=	yes

@@ -5,6 +5,8 @@ bin/aft
 %%DATADIR%%/aft-html.pm
 %%DATADIR%%/aft-htmlc.pm
 %%DATADIR%%/aft-lout.pm
+%%DATADIR%%/aft-loutbook.pm
+%%DATADIR%%/aft-loutreport.pm
 %%DATADIR%%/aft-rtf.pm
 %%DATADIR%%/aft-tex.pm
 %%DATADIR%%/aft-xhtml.pm
@@ -23,6 +25,8 @@ bin/aft
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-html.dat
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-htmlc.dat
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-lout.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-loutbook.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-loutreport.dat
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-rtf.dat
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-tex.dat
 %%PORTDOCS%%%%DOCSDIR%%/backends/aft-xhtml.dat
