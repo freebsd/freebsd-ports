@@ -9,6 +9,7 @@ CATEGORIES=	french editors
 
 LANG_PKGNAME=	fr
 LANG_EXT=	33
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	FREN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 

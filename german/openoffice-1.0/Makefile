@@ -9,6 +9,7 @@ CATEGORIES=	german editors
 
 LANG_PKGNAME=	de
 LANG_EXT=	49
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 #
 # Special case. We do not need LANG_CONFIGURE_ARG cause
 # the EN_US and DE_DE versions are always built.

@@ -9,6 +9,7 @@ CATEGORIES=	editors
 
 LANG_PKGNAME=	se
 LANG_EXT=	46
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	SWED
 MASTERDIR=	${.CURDIR}/../openoffice
 
