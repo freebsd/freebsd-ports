@@ -11610,6 +11610,7 @@ xcept		ports/comms/xcept
 xchadance	ports/games/xchadance
 xchain		ports/games/xchain
 xchat		ports/irc/xchat
+xchat-fish	ports/irc/xchat-fish
 xchat-gnome	ports/irc/xchat-gnome
 xchat-mircryption	ports/irc/xchat-mircryption
 xchat-systray-plugin	ports/irc/xchat-systray-plugin
