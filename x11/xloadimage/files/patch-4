@@ -1,0 +1,11 @@
+--- tiff/tiffcompat.h~	Tue Nov  2 22:31:40 1993
++++ tiff/tiffcompat.h	Tue Jun  9 02:06:32 1998
+@@ -151,8 +151,6 @@
+ #ifdef applec
+ #define	lseek	mpw_lseek
+ extern long mpw_lseek(int, long, int);
+-#else
+-extern	long lseek();
+ #endif
+ 
+ /*

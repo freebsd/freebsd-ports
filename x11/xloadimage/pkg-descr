@@ -1,28 +1,24 @@
 This utility will view several types of images under X11, or load
 images onto the root window.  The current version supports:
-
-	CMU Window Manager raster files
-	Faces Project images
-	Fuzzy Bitmap (FBM) images
-	GEM bit images
-	GIF images
-	G3 FAX images
-	JFIF-style JPEG images
-	McIDAS areafiles
-	MacPaint images
-	PC Paintbrush (PCX) images
-	Portable Bitmap (PBM, PGM, PPM) images
-	Sun monochrome rasterfiles
-	Sun color RGB rasterfiles
-	Utah Raster Toolkit (RLE) files
-	X pixmap files
-	X10 bitmap files
-	X11 bitmap files
-	X Window Dump (except XYPixmap, TrueColor and DirectColor)
-
+     Native Image File Format (NIFF)
+     Sun Rasterfile
+     GIF Image
+     JFIF-style JPEG Image
+     TIFF image
+     FBM Image
+     CMU WM Raster
+     Portable Bit Map (PBM, PGM, PPM)
+     Faces Project
+     Utah RLE Image
+     X Window Dump
+     Sun Visualization File Format
+     McIDAS areafile
+     VICAR Image
+     PC Paintbrush Image
+     GEM Bit Image
+     MacPaint Image
+     X Pixmap
+     X Bitmap
 A variety of options are available to modify images prior to viewing.
-These options include clipping, dithering, depth reduction, zoom
-(either X or Y axis independently or both at once), brightening or
-darkening, and image merging.  When applicable, these options are done
-automatically (eg a color image to be displayed on a monochrome screen
-will be dithered automatically).
+These options include clipping, dithering, depth reduction, zoom,
+brightening or darkening, and image merging. 
