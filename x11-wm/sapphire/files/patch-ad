@@ -1,0 +1,28 @@
+--- data/menu/default.orig	Mon Feb 21 23:06:19 2000
++++ data/menu/default	Mon Apr 10 22:06:34 2000
+@@ -38,11 +38,20 @@
+ 
+ 	submenu (themes)
+ 	{
+-		theme (default) {~/.sapphire/themes/default.theme}
+-		theme (darkblue){~/.sapphire/themes/darkblue.theme}
+-		theme (slate)   {~/.sapphire/themes/slate.theme}
+-		theme (rose)    {~/.sapphire/themes/rose.theme}
+-		theme (green)   {~/.sapphire/themes/green.theme}
++		theme (default)  {~/.sapphire/themes/default.theme}
++		theme (atomic)   {~/.sapphire/themes/atomic.theme}
++		theme (bevel)    {~/.sapphire/themes/bevel.theme}
++		theme (blues)    {~/.sapphire/themes/blues.theme}
++		theme (darkblue) {~/.sapphire/themes/darkblue.theme}
++		theme (dtheater) {~/.sapphire/themes/dtheater.theme}
++		theme (klamath)  {~/.sapphire/themes/klamath.theme}
++		theme (metal)    {~/.sapphire/themes/metal.theme}
++		theme (nocturne) {~/.sapphire/themes/nocturne.theme}
++		theme (river)    {~/.sapphire/themes/river.theme}
++		theme (rose)     {~/.sapphire/themes/rose.theme}
++		theme (sapphire) {~/.sapphire/themes/sapphire.theme}
++		theme (slate)    {~/.sapphire/themes/slate.theme}
++		theme (synopsis) {~/.sapphire/themes/synopsis.theme}
+ 	}
+ 		
+ 	separator
