@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	20030121
+PORTVERSION=	20040211
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	http://www.xpenguin.biz/download/webunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
