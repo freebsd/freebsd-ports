@@ -9,7 +9,7 @@ PORTNAME=	rar
 PORTVERSION=    3.0
 PORTEPOCH=      1
 CATEGORIES=	archivers
-MASTER_SITES=   http://rarlab.com/rar/ \
+MASTER_SITES=   http://files10.rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
 DISTNAME=       rarbsd-3.0
 
