@@ -25,6 +25,9 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-bonobo --with-gtkhtml --without-gal \
 		--with-libglade --with-gdkpixbuf --with-ghttp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-build:
+	@${TOUCH} -f ${WRKSRC}/guile-gnome/gtkhtml/*.c
 
 .include <bsd.port.mk>
