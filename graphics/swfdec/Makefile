@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,7 +34,7 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|" ${WRKSRC}/libswfdec/jpeg/sl_types.h
+	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/libswfdec/jpeg/sl_types.h
 
 .include <bsd.port.mk>
