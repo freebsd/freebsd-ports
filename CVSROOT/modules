@@ -1497,6 +1497,7 @@ dspam		ports/mail/dspam
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dt		ports/sysutils/dt
+dtc		ports/systuils/dtc
 dtcp		ports/net/dtcp
 dtcpclient	ports/net/dtcpclient
 dtd-catalogs	ports/textproc/dtd-catalogs
@@ -7479,6 +7480,7 @@ php3		ports/lang/php3
 php4		ports/lang/php4
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
+php4-dtc	ports/lang/php4-cli
 php4-horde	ports/lang/php4-horde
 php4-nms	ports/lang/php4-nms
 php5		ports/lang/php5
@@ -7866,6 +7868,7 @@ procmail	ports/mail/procmail
 procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
+proftpd-mysql	ports/ftp/proftpd-mysql
 profxp		ports/ftp/profxp
 progsreiserfs	ports/sysutils/progsreiserfs
 proguard	ports/java/proguard
