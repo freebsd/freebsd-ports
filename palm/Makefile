@@ -4,6 +4,7 @@
     SUBDIR += coldsync
     SUBDIR += gnomepilot
     SUBDIR += gnomepilot-conduits
+    SUBDIR += hdconv
     SUBDIR += imgvtopgm
     SUBDIR += isilo
     SUBDIR += jconv
