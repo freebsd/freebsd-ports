@@ -1,16 +1,16 @@
 # New ports collection makefile for:    linux_kdump
-# Version required:	1
+# Version required:	1.2
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1999/01/06 04:27:51 simokawa Exp $
+# $Id$
 #
 
-DISTNAME=	linux_kdump-1.0
+DISTNAME=	linux_kdump-1.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gsoft.com.au/misc/
+MASTER_SITES=	ftp://ftp.scc.nl/pub/FreeBSD/distfiles/
 
-MAINTAINER=	msmith@FreeBSD.org
+MAINTAINER=	marcel@FreeBSD.org
 
 BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
