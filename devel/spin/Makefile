@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/ \
 		ftp://netlib.bell-labs.com/netlib/spin/ \
