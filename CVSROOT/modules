@@ -4058,6 +4058,7 @@ linpopup	ports/net/linpopup
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-agsatellite	ports/net/linux-agsatellite
+linux-arts	ports/audio/linux-arts
 linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
