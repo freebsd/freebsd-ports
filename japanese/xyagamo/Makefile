@@ -10,7 +10,7 @@ PORTVERSION=	0.1b
 CATEGORIES=	japanese games
 MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 
-MAINTAINER=	shinmaru@dokidoki.ne.jp
+MAINTAINER=	ports@freebsd.org
 
 USE_X_PREFIX=	YES
 USE_XPM=	yes
