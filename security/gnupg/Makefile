@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.2.6
+PORTVERSION=	1.4.0
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
@@ -18,11 +18,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
 USE_BZIP2=	YES
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	YES
-.endif
-
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -31,16 +26,15 @@ MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
 .if !defined(WITHOUT_NLS)
+USE_GETTEXT=	YES
 PLIST_SUB=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
-MAN1=		gpg.1 gpgv.1
+MAN1=		gpg.1 gpgv.1 gpg.ru.1
 MAN7=		gnupg.7
-# Workaround for 1.2.5 distribution.
-# Refer: http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000173.html
-INSTALL_TARGET=	install mkinstalldirs=`pwd`/scripts/mkinstalldirs
+INFO=		gpg gpgv
 
 .include <bsd.port.pre.mk>
 
