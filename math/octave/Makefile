@@ -36,8 +36,7 @@ PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-fftw --with-blas=${BLAS_LIBS} --with-lpack \
@@ -59,9 +58,14 @@ MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/interpreter/octave.info*
 	@${RM} -f ${WRKSRC}/doc/liboctave/liboctave.info*
-
 post-install:
-	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/liboctave.info $(PREFIX)/info
+	${RM} ${PREFIX}/bin/octave
+	@${CP} ${FILESDIR}/octave ${WRKDIR}
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g ; \
+			      s,%%OCTAVE_VERSION%%,${OCTAVE_VERSION},g' \
+			      ${WRKDIR}/octave
+	${INSTALL_SCRIPT} ${WRKDIR}/octave ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
 	install-info --entry='* Octave: (octave).	Interactive language for numerical computations.' $(PREFIX)/info/octave.info $(PREFIX)/info/dir
 	install-info --entry='* LibOctave: (liboctave).	C++ class library for Octave.' $(PREFIX)/info/liboctave.info $(PREFIX)/info/dir
 .ifndef NOPORTDOCS

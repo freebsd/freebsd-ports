@@ -290,8 +290,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/vx-s-ccv.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-s-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
-@exec /bin/ln -sf %D/include/octave-%%OCTAVE_VERSION%%/octave %D/include/octave
-@unexec /bin/rm -f %D/include/octave
 @unexec install-info --delete --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
 @unexec install-info --delete --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 info/octave.info
@@ -384,12 +382,12 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/svd.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/syl.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/time.oct
 libexec/octave/ls-R
-share/doc/octave/Octave-FAQ.ps
-share/doc/octave/liboctave.ps
-share/doc/octave/octave.ps
-share/doc/octave/refcard-a4.ps
-share/doc/octave/refcard-legal.ps
-share/doc/octave/refcard-letter.ps
+%%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
+%%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
+%%PORTDOCS%%%%DOCSDIR%%/octave.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
 share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/%%OCTAVE_VERSION%%/m/audio/lin2mu.m
 share/octave/%%OCTAVE_VERSION%%/m/audio/loadaudio.m
@@ -1023,7 +1021,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
 @dirrm share/octave/%%OCTAVE_VERSION%%
 @dirrm share/octave
-@dirrm share/doc/octave
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/octave/site/oct/%%GNU_HOST%%
 @dirrm libexec/octave/site/oct
 @dirrm libexec/octave/site/exec/%%GNU_HOST%%
