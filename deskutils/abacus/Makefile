@@ -13,7 +13,8 @@ MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	steve
 PATCHFILES=	${PKGNAME}.patch.gz
 
 MAINTAINER=	ports@FreeBSD.org

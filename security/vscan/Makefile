@@ -10,7 +10,8 @@ PORTNAME=	vscan
 PORTVERSION=	3.1.8
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
-		${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	steve
 DISTNAME=	nlxb318e
 EXTRACT_SUFX=	.tar
 
