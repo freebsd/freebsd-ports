@@ -1,0 +1,8 @@
+--- src/libxosd/Makefile.am~	Thu Aug 15 18:00:38 2002
++++ src/libxosd/Makefile.am	Wed Sep 18 17:16:18 2002
+@@ -1,4 +1,4 @@
+-CFLAGS=@CFLAGS@ -I..
++CFLAGS=-I.. @CFLAGS@
+ # Library
+ lib_LTLIBRARIES 	= libxosd.la
+ libxosd_la_SOURCES 	= xosd.c
