@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/:bin \
-		http://apache.proserve.nl/dist/ant/binaries/:bin \
-		http://apache.cs.uu.nl/dist/ant/binaries/:bin \
-		http://dist.apache.easynet.nl/ant/binaries/:bin \
+MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		http://www.esil.univ-mrs.fr/~hquiroz/:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
