@@ -1,5 +1,14 @@
---- ../dist/Makefile.in.bak	Mon Dec  7 22:05:59 1998
-+++ ../dist/Makefile.in	Sun Mar 28 18:15:28 1999
+--- ../dist/Makefile.in.orig	Mon Dec  7 22:05:59 1998
++++ ../dist/Makefile.in	Mon Mar 29 00:59:52 1999
+@@ -43,7 +43,7 @@
+ LOBJS=	@LIBOBJS@
+ POBJS=	err.o getlong.o
+ 
+-libdb=	libdb.a
++libdb=  libdb2.a
+ all: $(libdb) $(PROGS)
+ 
+ $(libdb): db.h $(OBJS) $(LOBJS)
 @@ -141,11 +141,11 @@
  	$(rm) -f confdefs.h db.h db_int.h db_185.h include.tcl
  
@@ -10,10 +19,10 @@
 -libdir=	$(prefix)/BerkeleyDB/lib
 -mandir=	$(prefix)/BerkeleyDB/docs
 +bindir= $(prefix)/bin
-+datadir=$(prefix)/share/BerkeleyDB
-+includedir=$(prefix)/include/BerkeleyDB
++datadir=$(prefix)/share/db2
++includedir=$(prefix)/include/db2
 +libdir= $(prefix)/lib
-+mandir= $(prefix)/share/doc/BerkeleyDB
++mandir= $(prefix)/share/doc/db2
  
  dmode=	755
  emode=	555
