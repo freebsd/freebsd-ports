@@ -8,4 +8,6 @@ share/doc/leafnode+/FAQ
 share/doc/leafnode+/INSTALL
 share/doc/leafnode+/README
 share/doc/leafnode+/config.example
+@exec if [ ! -d %D/lib/leafnode ]; then mkdir -p %D/lib/leafnode; fi
 @dirrm share/doc/leafnode+
+@dirrm lib/leafnode
