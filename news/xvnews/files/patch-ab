@@ -1,0 +1,36 @@
+*** Imakefile.orig	Sun Sep 25 20:17:35 1994
+--- Imakefile	Wed Nov 20 19:41:32 1996
+***************
+*** 13,19 ****
+  SUBDIRS = $(LIBGUIDE) $(GUIDEXV)
+  
+  XVIEWLIB = -lxview -lolgx -lX11
+! XVIEWDIR = /usr/openwin/lib
+  
+  MakeSubdirs($(SUBDIRS))
+  
+--- 13,19 ----
+  SUBDIRS = $(LIBGUIDE) $(GUIDEXV)
+  
+  XVIEWLIB = -lxview -lolgx -lX11
+! XVIEWDIR = /usr/X11R6/lib
+  
+  MakeSubdirs($(SUBDIRS))
+  
+***************
+*** 22,28 ****
+  SYS_LIBRARIES = #-lintl
+  
+  # Add -linn to the following line if you want to support nnrp.passwd
+! LOCAL_LIBRARIES = -L$(GUIDEXV) -lguidexv -L$(LIBGUIDE) -lguide -L$(XVIEWDIR) $(XVIEWLIB)
+  
+  ICONS = news.icon
+  
+--- 22,28 ----
+  SYS_LIBRARIES = #-lintl
+  
+  # Add -linn to the following line if you want to support nnrp.passwd
+! LOCAL_LIBRARIES = -L$(GUIDEXV) -lguidexv -L$(LIBGUIDE) -lguide -L$(XVIEWDIR) $(XVIEWLIB) -lcompat
+  
+  ICONS = news.icon
+  
