@@ -1,0 +1,14 @@
+bin/3proxy
+bin/dighosts
+bin/mycrypt
+bin/pop3p
+bin/proxy
+bin/socks
+bin/tcppm
+bin/udppm
+etc/3proxy.cfg.sample
+etc/rc.d/3proxy.sh
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/Readme
+%%PORTDOCS%%%%DOCSDIR%%/Release.notes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,26 @@
+--- 3proxy.cfg.sample.orig	Mon Jul 28 14:50:42 2003
++++ 3proxy.cfg.sample	Mon Jul 28 14:51:55 2003
+@@ -332,12 +332,12 @@
+ # this example shows you how to include passwd file. For included files
+ # <CR> and <LF> are treated as field separators.
+ 
+-service
++#service
+ # service is required under NT if you want 3proxy to start as service
+ 
+ 
+ #log /usr/local/etc/3proxy/logs/3proxy.log D
+-log c:\3proxy\logs\3proxy.log D
++log /var/log/3proxy.log D
+ # log allows to specify log file location and rotation, D means logfile
+ # is created daily
+ 
+@@ -421,7 +421,7 @@
+ # like multimedia streams or online games.
+ 
+ auth strong
+-fflush
++flush
+ allow 3APA3A,test
+ socks
+ # for socks we will use password authentication and different access control -
