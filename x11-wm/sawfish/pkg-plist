@@ -280,6 +280,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/edge-flip.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/edge-flip.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/error-handler.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/error-handler.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/hide-dialogs.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/hide-dialogs.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/match-window.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/match-window.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/old-window-menu.jl
@@ -384,6 +386,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt-wm.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt-wm.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/recolor-image.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/recolor-image.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/rects.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/rects.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/stacking.jl
@@ -429,6 +433,62 @@ share/sawfish/%%VERSION%%/sounds/gameover.wav
 share/sawfish/%%VERSION%%/sounds/slide.wav
 share/sawfish/%%VERSION%%/sounds/toggled.wav
 %%GNOME:%%share/sawfish/%%VERSION%%/themer.glade
+share/sawfish/%%VERSION%%/themes/Crux/README
+share/sawfish/%%VERSION%%/themes/Crux/active:bottom-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:bottom-left-corner.png
+share/sawfish/%%VERSION%%/themes/Crux/active:bottom-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:bottom-right-corner.png
+share/sawfish/%%VERSION%%/themes/Crux/active:button-hilight.png
+share/sawfish/%%VERSION%%/themes/Crux/active:button-pressed.png
+share/sawfish/%%VERSION%%/themes/Crux/active:button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:close-button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:left-top-border-shaped.png
+share/sawfish/%%VERSION%%/themes/Crux/active:left-top-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:maximize-button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:menu-button-hilight.png
+share/sawfish/%%VERSION%%/themes/Crux/active:menu-button-pressed.png
+share/sawfish/%%VERSION%%/themes/Crux/active:menu-button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:minimize-button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:right-top-border-shaped.png
+share/sawfish/%%VERSION%%/themes/Crux/active:right-top-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:shade-button.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-center-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-center-left.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-center-mid.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-center-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-center-right.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/active:top-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:bottom-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:bottom-left-corner.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:bottom-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:bottom-right-corner.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:button-hilight.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:button-pressed.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:close-button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:left-top-border-shaped.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:left-top-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:maximize-button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:menu-button-hilight.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:menu-button-pressed.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:menu-button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:minimize-button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:right-top-border-shaped.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:right-top-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:shade-button.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-center-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-center-left.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-center-mid.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-center-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-center-right.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-left-border.png
+share/sawfish/%%VERSION%%/themes/Crux/inactive:top-right-border.png
+share/sawfish/%%VERSION%%/themes/Crux/theme.jl
 share/sawfish/%%VERSION%%/themes/absolute-e/README
 share/sawfish/%%VERSION%%/themes/absolute-e/README.gl
 share/sawfish/%%VERSION%%/themes/absolute-e/README.it
@@ -593,6 +653,7 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/themes/gradient
 @dirrm share/sawfish/%%VERSION%%/themes/brushed-metal
 @dirrm share/sawfish/%%VERSION%%/themes/absolute-e
+@dirrm share/sawfish/%%VERSION%%/themes/Crux
 @dirrm share/sawfish/%%VERSION%%/themes
 @dirrm share/sawfish/%%VERSION%%/sounds
 @dirrm share/sawfish/%%VERSION%%/lisp/sawfish/wm/util
