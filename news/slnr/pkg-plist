@@ -4,3 +4,4 @@ share/doc/slnr/porting.notes
 share/doc/slnr/soup12.doc
 share/doc/slnr/slnr.doc
 share/doc/slnr/default.dot.slnrrc
+@dirrm share/doc/slnr
