@@ -23,8 +23,7 @@ CONFIGURE_ARGS= --with-gcc=yes --with-double=yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@perl -pi.bak -e "s|/usr/local/plplot/lib|${PREFIX}/lib/plplot|g;" \
-		${WRKSRC}/src/plctrl.c
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/*.c
 
 post-install:
 .if ${PORTOBJFORMAT} == "elf"
@@ -32,5 +31,6 @@ post-install:
 .else
 	${LN} -sf libplplotdX.so.4.99 ${PREFIX}/lib/libplplotdX.so
 .endif
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

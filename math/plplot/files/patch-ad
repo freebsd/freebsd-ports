@@ -1,0 +1,7 @@
+--- cf/init.in.orig	Mon May 15 16:54:21 1995
++++ cf/init.in	Wed Jan  5 01:26:07 2000
+@@ -58,3 +58,4 @@
+ INCLUDE_DIR	= @INCLUDE_DIR@
+ TCL_DIR		= @TCL_DIR@
+ DEMOS_DIR	= @DEMOS_DIR@
++DATA_DIR	= @DATA_DIR@
