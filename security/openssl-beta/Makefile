@@ -3,14 +3,15 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.24 1999/01/09 12:55:48 dirk Exp $
+# $Id: Makefile,v 1.25 1999/01/12 23:18:59 dirk Exp $
 #
 
 DISTNAME=		openssl-0.9.1c
 CATEGORIES=		devel security
 MASTER_SITES=		http://www.openssl.org/source/ \
-			ftp://ftp.sunet.se/pub/security/tools/net/openssl/ \
-			ftp://ftp.cert.dfn.de/pub/tools/net/openssl/
+			ftp://ftp.openssl.org/source/ \
+			ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
+			ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 
 MAINTAINER=		dirk@FreeBSD.ORG
 
