@@ -4856,6 +4856,7 @@ pash		ports/shells/pash
 passlogd	ports/net/passlogd
 passwd		src/usr.bin/passwd
 paste		src/usr.bin/paste
+patanjali	ports/misc/patanjali
 patch		src/gnu/usr.bin/patch
 patchutils	ports/misc/patchutils
 pathalias	ports/mail/pathalias
