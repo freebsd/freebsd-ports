@@ -50,7 +50,8 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL) || defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7-client
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 PLIST_SUB+=	PGSQL=""
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_postgresql
