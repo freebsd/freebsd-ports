@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
