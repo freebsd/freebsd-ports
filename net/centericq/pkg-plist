@@ -1,0 +1,7 @@
+bin/center
+share/center/Contact.wav
+share/center/Message.wav
+share/center/Online.wav
+share/center/email.wav
+share/center/url.wav
+@dirrm share/center

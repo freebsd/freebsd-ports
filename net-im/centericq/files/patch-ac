@@ -1,0 +1,11 @@
+--- centerICQ.cc.orig	Sat Dec 25 13:37:57 1999
++++ centerICQ.cc	Sat Dec 25 13:38:46 1999
+@@ -1680,7 +1680,7 @@
+     mkdir(buf, S_IREAD | S_IWRITE | S_IEXEC);
+   
+     if(QanswerY) {
+-	sprintf(fname, "cp /usr/local/lib/center/*.wav %s/.center", getenv("HOME"));
++	sprintf(fname, "cp __PREFIX__/share/center/*.wav %s/.center", getenv("HOME"));
+ 	system(fname);
+     }
+ 

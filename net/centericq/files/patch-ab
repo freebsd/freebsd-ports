@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Dec 25 13:35:19 1999
++++ Makefile	Sat Dec 25 13:36:05 1999
+@@ -1,14 +1,14 @@
+ # macros and variables
+-CC = gcc
+-CPP = g++
++CC ?= gcc
++CPP = ${CXX} 
+ 
+ PROG1 = center
+-CFLAGS = #-g -Wall -DUNIX 
++CFLAGS += #-g -Wall -DUNIX 
+ 
+-INCLUDE = -I/usr/include -I../ktools/include
++INCLUDE = -I../ktools/include
+ KTLIBDIR = ../ktools
+ LIB = $(KTLIBDIR)/libkonst.a
+-LIBDIR = -L/usr/lib -L/usr/local/lib
++LIBDIR = -L${LOCALBASE}/lib -L${PREFIX}/lib
+ OBJS = centerICQ.o centerinfo.o phonebook.o icqlib.o center.o centersearch.o
+ 
+ # targets
