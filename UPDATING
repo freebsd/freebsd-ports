@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050306:
+  AFFECTS: users of math/ploticus
+  AUTHOR: linimon@FreeBSD.org
+
+  ploticus is now installed as bin/ploticus rather than bin/pl to
+  avoid useless conflicts with other ports.
+
 20050303:
   AFFECTS: users of net/i2p
   AUTHOR: lioux@FreeBSD.org
