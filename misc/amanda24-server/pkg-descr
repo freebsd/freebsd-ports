@@ -20,3 +20,8 @@ Here are some features of Amanda:
     tape.  For example, a ~2 Gb 8mm tape on a ~240K/s interface to a host
     with a large holding disk can be filled by Amanda in under 4 hours. 
   * does simple tape management: will not overwrite the wrong tape.
+
+WWW: http://sourceforge.net/projects/amanda/
+
+- Jim
+jim@thehousleys.net
