@@ -1,0 +1,25 @@
+--- rtspproxy/Makefile.in.orig	Thu Feb  8 00:40:54 2001
++++ rtspproxy/Makefile.in	Sun Oct 20 13:43:49 2002
+@@ -1,9 +1,9 @@
+-CC=@CC@
+-CXX=@CXX@
++CC?=@CC@
++CXX?=@CXX@
+ LD=@LD@
+ 
+-CFLAGS=@CFLAGS@ -I../libapp -I../librtsp -I.
+-CXXFLAGS=@CXXFLAGS@ -I../libapp -I../librtsp -I.
++CFLAGS+=@CFLAGS@ -I../libapp -I../librtsp -I.
++CXXFLAGS+=@CXXFLAGS@ -I../libapp -I../librtsp -I.
+ LDFLAGS=@LDFLAGS@
+ SYSLIBS=@SYSLIBS@
+ 
+@@ -24,7 +24,7 @@
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJS) $(LIBS)
+-	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(SYSLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(SYSLIBS)
+ 
+ clean:
+ 	rm -f rtspproxy $(OBJS) core

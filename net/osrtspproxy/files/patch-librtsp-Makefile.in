@@ -1,0 +1,16 @@
+--- librtsp/Makefile.in.orig	Sun Oct 20 13:32:26 2002
++++ librtsp/Makefile.in	Sun Oct 20 13:33:01 2002
+@@ -1,9 +1,9 @@
+-CC=@CC@
+-CXX=@CXX@
++CC?=@CC@
++CXX?=@CXX@
+ AR=@AR@
+ 
+-CFLAGS=@CFLAGS@ -I../libapp -I.
+-CXXFLAGS=@CXXFLAGS@ -I../libapp -I.
++CFLAGS+=@CFLAGS@ -I../libapp -I.
++CXXFLAGS+=@CXXFLAGS@ -I../libapp -I.
+ ARFLAGS=@ARFLAGS@
+ 
+ SRCS=rtspmsg.cpp rtspprot.cpp pkt.cpp proxypkt.cpp tran.cpp   

@@ -1,0 +1,16 @@
+--- libapp/Makefile.in.orig	Sun Oct 20 13:26:38 2002
++++ libapp/Makefile.in	Sun Oct 20 13:30:06 2002
+@@ -1,9 +1,9 @@
+-CC=@CC@
+-CXX=@CXX@
++CC?=@CC@
++CXX?=@CXX@
+ AR=@AR@
+ 
+-CFLAGS=@CFLAGS@ -I.
+-CXXFLAGS=@CXXFLAGS@ -I.
++CFLAGS+=@CFLAGS@ -I.
++CXXFLAGS+=@CXXFLAGS@ -I.
+ ARFLAGS=@ARFLAGS@
+ 
+ SRCS=types.cpp md5.c dbg.cpp str.cpp bitset.cpp variant.cpp valmap.cpp \

@@ -7,6 +7,7 @@
 
 PORTNAME=	osrtspproxy
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://docs.real.com/docs/proxykit/
 DISTNAME=	${PORTNAME}_2_0
