@@ -949,17 +949,7 @@ share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/text/xmcd.desktop
 share/services/kmixctrl_restore.desktop
 share/servicetypes/audiomidi.desktop
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -968,8 +958,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
-@dirrm share/doc/HTML/en
-@dirrm share/config
 @dirrm share/apps/noatun/skins/vibrocentric
 @dirrm share/apps/noatun/skins/phong
 @dirrm share/apps/noatun/skins/kjofol
@@ -1025,7 +1013,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/kmid/icons
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
-@dirrm share/apps/kicker/applets
 @dirrm share/apps/artscontrol
 @dirrm share/apps/artsbuilder/pics
 @dirrm share/apps/artsbuilder/examples/todo
@@ -1033,11 +1020,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
-@dirrm share/apps
-@dirrm share/applnk/Settings/Sound
-@dirrm share/applnk/Multimedia
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
 @dirrm lib/Arts
 @dirrm include/noatun
 @dirrm include/mpeglib_artsplug
@@ -1052,4 +1034,3 @@ share/servicetypes/audiomidi.desktop
 @dirrm include/mpeglib/input
 @dirrm include/mpeglib/decoder
 @dirrm include/mpeglib
-@dirrm include/arts
