@@ -1,8 +1,10 @@
 bin/tkmsg
 bin/bbsmount
+share/bbtools/bbsmount.bb
 share/bbtools/bbsmount.bb-sample
 share/bbtools/bbsmount.nobb
 share/bbtools/bbsmount.style
+share/bbtools/README.bbsmount
 share/bbsmount/examples/bbsmount.bb.ex
 share/bbsmount/images/notfound.xpm
 share/bbsmount/images/mountedcd.xpm

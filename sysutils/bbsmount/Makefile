@@ -1,23 +1,21 @@
 # New ports collection makefile for:	bbsmount
 # Date created:				11 October 2003
-# Whom:				Eric J. Christeson <echriste@702com.net>
+# Whom:				Eric J. Christeson <ejc@crackpot.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bbsmount
-PORTVERSION=	0.3.0p1
-PORTREVISION=	1
+PORTVERSION=	0.3.0p3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://phoenix.inf.upol.cz/~jezberam/bbsmount/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
-MAINTAINER=	echriste@702com.net
+MAINTAINER=	ejc@crackpot.org
 COMMENT=	Graphical disk mounter for the Blackbox slit
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
