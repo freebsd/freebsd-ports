@@ -10,6 +10,9 @@ PORTVERSION=	1.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://extrovert.screwdriver.net/~extra/ \
 		ftp://ftp.gnustep.org/pub/gnustep/libs/
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

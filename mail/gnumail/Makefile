@@ -10,6 +10,9 @@ PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://extrovert.screwdriver.net/~extra/
 DISTNAME=	GNUMail-${PORTVERSION}
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 

@@ -9,6 +9,9 @@ PORTNAME=	gomoku.app
 PORTVERSION=	1.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 DISTNAME=	Gomoku-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
