@@ -73,7 +73,7 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} pkg-libwarning
+	${SH} ${MASTERDIR}/pkg-libwarning
 .endif
 
 post-patch:
