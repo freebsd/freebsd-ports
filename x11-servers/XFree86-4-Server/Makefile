@@ -111,8 +111,11 @@ PLIST_SUB+=	IA64_NA=""
 .endif
 
 .if ${ARCH} == sparc64
+PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
+MAN4+=		sunffb.4
 .else
+PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
 MAN4+=		glint.4 \
 		mga.4 \
