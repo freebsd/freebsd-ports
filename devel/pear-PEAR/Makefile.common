@@ -128,6 +128,7 @@ do-generate-plist:
 	if [ -n "${EXAMPLES}" ]; then echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}"; fi; \
 	echo "@dirrm ${LPKGREGDIR}"; \
 	echo "@unexec rmdir %D/${LINSTDIR} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LINSTDIR:H} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LPEARDIR}/.registry 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LPEARDIR}/packages 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LPEARDIR} 2> /dev/null || true"; \
