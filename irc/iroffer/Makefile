@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-do-configure:
-		cd ${WRKSRC} && ${SH} ./Configure
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	Configure
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin
