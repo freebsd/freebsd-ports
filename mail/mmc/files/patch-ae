@@ -1,0 +1,10 @@
+--- src/smtp.cc	2000/07/21 13:33:45	1.1
++++ src/smtp.cc	2000/07/21 13:34:24
+@@ -20,6 +20,7 @@
+        For the complete License see the file COPYING.
+ */
+ 
++#include <sys/types.h>
+ #include<sys/socket.h>
+ #include<gnome.h>
+ 

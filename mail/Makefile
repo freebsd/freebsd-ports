@@ -61,6 +61,7 @@
     SUBDIR += mh
     SUBDIR += minimalist
     SUBDIR += ml
+    SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mreport

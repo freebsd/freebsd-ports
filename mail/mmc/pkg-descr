@@ -1,0 +1,19 @@
+MMC is a Mail Client, written in C++, for Gnome.
+
+Current features (more to come in the nearest future):
+
+ o Single window interface
+ o Two pane view for multiple mailboxes
+ o Sortable columnized email view
+ o Simple Address Book
+ o Complete support for POP3 email receiving
+ o Complete support for SMTP email sending
+ o Simple, organized email composition interface
+ o Complete attachment support, intuitive attachment list
+ o MIME support
+ o Multiple recipients, carbon copy/blind carbon copy support
+ o Multiple Mailboxes
+ o Copying/Moving between multiple Folders
+
+
+WWW: http://mmc.sourceforge.net/

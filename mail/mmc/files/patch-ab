@@ -1,0 +1,11 @@
+--- src/Makefile.in	2000/07/21 13:35:12	1.1
++++ src/Makefile.in	2000/07/21 13:35:38
+@@ -115,7 +115,7 @@
+ mmc_SOURCES = main.cc main.h msg.cc msg.h pop3.cc pop3.h mime.cc mime.h               compose.cc compose.h smtp.cc smtp.h address.cc progressbar.cc               protocols.h protocols.cc folders.cc folders.h address.h progress.h
+ 
+ 
+-mmc_LDADD = $(GNOMEUI_LIBS) $(GNOME_LIBDIR) $(INTLLIBS) -ldb
++mmc_LDADD = $(GNOMEUI_LIBS) $(GNOME_LIBDIR) $(INTLLIBS)
+ 
+ EXTRA_DIST = logo.png
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
