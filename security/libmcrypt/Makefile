@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/old/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
