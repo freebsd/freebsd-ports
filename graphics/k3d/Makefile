@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	k3d
-PORTVERSION=	0.4.1.0
-PORTREVISION=	2
+PORTVERSION=	0.4.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,9 +26,11 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
 		Half.2:${PORTSDIR}/graphics/OpenEXR \
 		gts.3:${PORTSDIR}/graphics/gts
 
+CONFLICTS=	atlas-3* superlu-3*
+
+USE_LIBTOOL_VER=15
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12 libxslt
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	\
 	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -44,15 +45,9 @@ MAN1=	k3d.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"Does not compile"
 
 post-install:
 .for dir in ${PREFIX}/include/k3d ${PREFIX}/share/k3d ${PREFIX}/lib/k3d
