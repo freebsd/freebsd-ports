@@ -7,4 +7,5 @@ lib/ocaml/site-lib/pcre/pcre.cma
 lib/ocaml/site-lib/pcre/pcre.cmi
 lib/ocaml/site-lib/pcre/pcre.mli
 @dirrm lib/ocaml/site-lib/pcre
+@exec echo "Updating %D/lib/ocaml/ld.conf"; if (! grep -q "lib/ocaml/site-lib/pcre" %D/lib/ocaml/ld.conf); then echo "%D/lib/ocaml/site-lib/pcre" >> %D/lib/ocaml/ld.conf; fi;
 @unexec echo "Updating %D/lib/ocaml/ld.conf"; cp %D/lib/ocaml/ld.conf %D/lib/ocaml/ld.conf.tmp; grep -v "lib/ocaml/site-lib/pcre" %D/lib/ocaml/ld.conf.tmp > %D/lib/ocaml/ld.conf; rm %D/lib/ocaml/ld.conf.tmp
