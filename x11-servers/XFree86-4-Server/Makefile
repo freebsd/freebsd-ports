@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -36,7 +36,6 @@ EXTRA_PATCHES+= \
 	${FILESDIR}/patch-bus-Imakefile \
 	${FILESDIR}/patch-bus_Imakefile \
 	${FILESDIR}/patch-compiler.h \
-	${FILESDIR}/patch-dirfile.c \
 	${FILESDIR}/patch-elfloader.c \
 	${FILESDIR}/patch-freebsdPci.c \
 	${FILESDIR}/patch-ftfuncs.c \
@@ -57,6 +56,7 @@ EXTRA_PATCHES+= \
 	${FILESDIR}/patch-savage-pci-id \
 	${FILESDIR}/patch-smi \
 	${FILESDIR}/patch-sunffb_Imakefile \
+	${FILESDIR}/patch-xc::lib::font::fontfile \
 	${FILESDIR}/patch-xf86-common-Imakefile \
 	${FILESDIR}/patch-xf86Events.c \
 	${FILESDIR}/patch-xf86Sbus.h \
