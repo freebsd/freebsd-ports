@@ -21,6 +21,12 @@ bin/flow-tag
 bin/flow-xlate
 etc/flow-tools/map
 etc/flow-tools/filter-acl
+include/ftconfig.h
+include/ftlib.h
+include/ftpaths.h
+include/ftqueue.h
+include/radix.h
+lib/libft.a
 share/flow-tools/asn
 share/flow-tools/ip-prot
 share/flow-tools/tcp-port
