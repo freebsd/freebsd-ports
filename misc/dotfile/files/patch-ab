@@ -1,0 +1,49 @@
+*** configure.in.orig	Sun Dec 21 06:40:27 1997
+--- configure.in	Sun Feb 22 09:55:53 1998
+***************
+*** 25,37 ****
+  dnl remove until the next comment line
+  dnl and rerun autoconf (or mail blackie@imada.ou.dk)
+  
+- echo "######################################################################"
+- echo "######################################################################"
+- echo If the configure script does not work, then please report to
+- echo blackie@imada.ou.dk, and edit configure.in.
+- echo "######################################################################"
+- echo "######################################################################"
+- 
+  AC_PATH_PROGS(WISHnew, wish8.0 wish4.2 wish4.1 wish4.0,no)
+  AC_PATH_PROGS(WISHnothing, wish, no)
+  if test "$WISHnew" != "no" -a "$WISHnothing" != "no"; then
+--- 25,30 ----
+***************
+*** 53,68 ****
+    AC_PATH_PROGS(WISH, wish8.0 wish4.2 wish4.1 wish4.0 wish, no)
+    if test "$WISH" = no; then
+  	  AC_MSG_ERROR(I couldn't find 'wish' please insert it into your path and try again)
+-   else
+-     echo "####################################################################"
+-     echo "####################################################################"
+-     echo "                               WARNING"
+-     echo "You do not have a link from wish to \"$WISH\"."
+-     echo "This means that the executable dotfile does not work, when you"
+-     echo "upgrade wish! In this case edit \"dotfile\" !"
+-     echo "####################################################################"
+-     echo "####################################################################"
+-   fi
+  fi
+  dnl ############################################################
+  dnl The dotfile generator require tclsh, if it can not be found
+--- 46,51 ----
+***************
+*** 134,142 ****
+  chmod 755 dotfile
+  chmod 755 Modules/fvwm2/fvwmrc_convert
+  
+- echo ----------------------------------------------------------------------
+- echo ----------------------------------------------------------------------
+- echo please login to your mail host, go to the directory Modules/procmail
+- echo and run ./configure from there.
+- echo ----------------------------------------------------------------------
+- echo ----------------------------------------------------------------------
+--- 117,119 ----

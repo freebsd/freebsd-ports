@@ -1,0 +1,19 @@
+*** Modules/procmail/configure.in.orig	Sat Feb 21 15:20:04 1998
+--- Modules/procmail/configure.in	Sat Feb 21 15:20:19 1998
+***************
+*** 13,19 ****
+  echo "----------------------------------------------------------------------"
+  
+  
+! AC_PATH_PROGS(TCLSH, tclsh7.6 tclsh7.5 tclsh7.4 tclsh, no)
+  if test "$TCLSH" = no; then
+          AC_MSG_ERROR(I couldn't find 'tclsh' please insert it into your pa
+  th and try again)
+--- 13,19 ----
+  echo "----------------------------------------------------------------------"
+  
+  
+! AC_PATH_PROGS(TCLSH, tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh, no)
+  if test "$TCLSH" = no; then
+          AC_MSG_ERROR(I couldn't find 'tclsh' please insert it into your pa
+  th and try again)

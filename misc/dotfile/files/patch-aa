@@ -1,20 +1,65 @@
---- configure.orig	Fri Jan 31 08:09:10 1997
-+++ configure	Sat Nov 22 15:25:48 1997
-@@ -399,7 +399,7 @@
- 
- 
- 
--for ac_prog in wish4.2 wish4.1 wish4.0 wish
-+for ac_prog in wish8.0 wish4.2 wish4.1 wish4.0 wish
- do
- # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
-@@ -439,7 +439,7 @@
- 	{ echo "configure: error: I couldn't find 'wish' please insert it into your path and try again" 1>&2; exit 1; }
- fi
- 
--for ac_prog in tclsh7.6 tclsh7.5 tclsh7.4 tclsh
-+for ac_prog in tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh
- do
- # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
+*** Makefile.in.orig	Sun Dec 21 06:40:34 1997
+--- Makefile.in	Sun Feb 22 11:07:08 1998
+***************
+*** 23,48 ****
+  SHELL = /bin/sh
+  
+  ### Tell the user that there is nothing to be compiled.
+- .PHONY: nothing
+- nothing:
+- 	@echo ----------------------------------------------------------------------
+- 	@echo ----------------------------------------------------------------------
+- 	@echo "The Dotfile Generator does not contain any files which has to be compiled!"
+- 	@echo "On the other hand, during installation, all the modules need to be"
+- 	@echo "bytecompiled, so now it's time to type: make install"
+- 	@echo ----------------------------------------------------------------------
+- 	@echo ----------------------------------------------------------------------
+  
+- #
+  # install all the files in the corect places.
+  #
+  .PHONY:	install
+  install: copydirs bytecompile
+- 	@echo "**********************************************************************"
+- 	@echo In the directory Doc, three articles in HTML format, concerning
+- 	@echo The Dotfile Generator is located. If you want these to be installed
+- 	@echo on your system, please do it manually.
+- 	@echo "**********************************************************************"
+  
+  .PHONY: copydirs
+  copydirs:
+--- 23,33 ----
+***************
+*** 58,64 ****
+  	done
+  	cp dotfile.1 $(mandir)
+  	-@RM@ $(bindir)/dotfile
+! 	-@LN@ -s $(bindir)/dotfile-$(version) $(bindir)/dotfile
+  	chmod 755 $(bindir)/dotfile
+  	chmod 755 $(bindir)/dotfile-$(version)
+  
+--- 43,49 ----
+  	done
+  	cp dotfile.1 $(mandir)
+  	-@RM@ $(bindir)/dotfile
+! 	-@LN@ -s dotfile-$(version) $(bindir)/dotfile
+  	chmod 755 $(bindir)/dotfile
+  	chmod 755 $(bindir)/dotfile-$(version)
+  
+***************
+*** 72,78 ****
+  fvwm1 fvwm2:
+  	@echo "----------------------------------------------------------------------"
+  	@echo "                           Byte compiling $@"
+! 	@if wish testwish; then \
+  	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
+  	else \
+  	echo "An error should be shown above!"; \
+--- 57,63 ----
+  fvwm1 fvwm2:
+  	@echo "----------------------------------------------------------------------"
+  	@echo "                           Byte compiling $@"
+! 	@if $(WISH) testwish; then \
+  	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
+  	else \
+  	echo "An error should be shown above!"; \
