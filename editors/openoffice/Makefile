@@ -142,15 +142,25 @@ CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 460001
 	@${ECHO}
-	@${ECHO} OO setup is currently broken on STABLE
+	@${ECHO} OO setup is broken on STABLE < 4.6
+	@${ECHO} including 4.6 RELEASE.
 	@${ECHO} You'll need a system patch to solve
+	@${ECHO}
 	@${ECHO} this problem:
 	@${ECHO}
 	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf.diff
 	@${ECHO}
 .endif
+	@${ECHO}
+	@${ECHO} OO.org build and also OO.org itself
+	@${ECHO} can deadlock. You can work around
+	@${ECHO} this problem with this patch:
+	@${ECHO}
+	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff
+	@${ECHO}
+	@${ECHO}
 .if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} OPTIONS:
