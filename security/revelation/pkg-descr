@@ -1,0 +1,24 @@
+Revelation is a password manager for the GNOME 2 desktop, released under the
+GNU GPL license. It stores all your accounts and passwords in a single, secure
+place, and gives you access to it through a user-friendly graphical interface.
+
+Features:
+* Secure storage of passwords - uses an AES-encrypted XML data file with
+  Cipher Block Chaining and compression for randomization.
+* Uses a tree-structure for organizing accounts, making it easy to handle
+  a large number of accounts.
+* Support for importing data from / exporting data to foreign file formats.
+  Currently supported: Figaro's Password Manager, GNOME Password Manager
+  (gpass), .netrc, XML
+* Has many different account types, covering the most common ones: creditcard,
+  crypto key, database, door lock, email, ftp, generic, phone, shell, and
+  website
+* Unlimited undo/redo
+* Cut/copy/paste support
+* Account search
+* Built-in password generator
+* GConf-integrated configuration system
+* User-friendly, HIG-compliant user interface.
+
+Author:	Erik Grinaker <erikg-at-codepoet.no>
+WWW:	http://oss.codepoet.no/revelation/

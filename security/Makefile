@@ -372,6 +372,7 @@
     SUBDIR += rats
     SUBDIR += rc5pipe
     SUBDIR += rdigest
+    SUBDIR += revelation
     SUBDIR += rid
     SUBDIR += rkhunter
     SUBDIR += rng_82802
