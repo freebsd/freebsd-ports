@@ -3,7 +3,7 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.32 1999/06/06 09:56:00 dirk Exp $
+# $Id: Makefile,v 1.33 1999/08/09 18:48:11 dirk Exp $
 #
 
 DISTNAME=	openssl-0.9.4
@@ -23,7 +23,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You must set variable USA_RESIDENT to YES, if you are USA resident"
 	@${ECHO} "or to NO, if you aren't USA resident to build this package."
-	@${ECHO} "You must also have installed RSAREF if you are USA resident."
+	@${ECHO} "You must also have installed rsaref port if you are USA resident."
 	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES && !defined(I_HAVE_AN_RSA_LICENSE)
