@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	6.1.19
+PORTVERSION=	6.1.22
 CATEGORIES=	net www japanese
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/ \
 		ftp://ftp.etl.go.jp/pub/DeleGate/
