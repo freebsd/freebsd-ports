@@ -8,12 +8,13 @@
 PORTNAME=	9menu
 PORTVERSION=	1.6
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	ftp://quenix.dyndns.org/freebsd/ \
-		http://mitglied.lycos.de/buran/linux/soft/9menu/
+MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
+		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
+#BROKEN=		unfetchable
 
 USE_XLIB=		yes
 EXTRACT_CMD=		zcat
