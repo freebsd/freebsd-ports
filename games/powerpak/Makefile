@@ -20,10 +20,6 @@ LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 
-BROKEN=		Broken pkg-plist
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_SDL=	mixer sdl
 USE_FREETYPE=	yes
 USE_REINPLACE=	yes
@@ -31,7 +27,7 @@ INSTALLS_SHLIB=	yes
 MAKEFILE=	Makefile.UNIX
 
 post-extract:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`/usr/bin/printf '\r'`//g ; \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e "s/`/usr/bin/printf '\r'`//g ; \
 		s|\"SDL/|\"|g ; s|<SDL/|<|g"
 
 do-install:
