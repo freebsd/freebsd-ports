@@ -1,0 +1,14 @@
+XML::Twig - Tree interface to XML documents allowing chunk by chunk
+processing of huge documents.
+
+From the website:
+
+  XML-Twig is a Perl module that subclasses XML-Parser to allow easy
+  processing of XML documents of all sizes.  A flush method allows dumping of
+  a completely processed sub-document to be printed, thus allowing processing
+  of documents of any size.
+
+Author: Michel Rodriguez <m.v.rodriguez@ieee.org>
+WWW:    http://www.xmltwig.com/
+
+-- Johann Visagie <wjv@FreeBSD.org>
