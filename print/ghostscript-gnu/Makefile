@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -56,7 +56,7 @@ COMMENT=	GNU Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/gs/fonts.dir:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	ghostscript-afpl*
 USE_BZIP2=	yes
