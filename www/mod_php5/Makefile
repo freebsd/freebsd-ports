@@ -40,9 +40,6 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
-PATCH_SITES=	http://www.apache.org/info/css-security/
-PATCHFILES=	apache_1.3.11_css_patch.txt
-
 MAINTAINER=	dirk@FreeBSD.org
 
 BROKEN=		"PHP-${VERSION_PHP} is beta. Beware the bugs. Enter at your own risk!"
@@ -51,7 +48,7 @@ Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	version4/downloads
 
-VERSION_APACHE=	1.3.11
+VERSION_APACHE=	1.3.12
 VERSION_PHP=	4.0b3
 
 NO_LATEST_LINK=	yes
