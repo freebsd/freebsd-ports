@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.3 1994/08/23 10:20:29 jkh Exp $
+# $Id: Makefile,v 1.4 1994/09/13 12:40:24 jkh Exp $
 #
-SUBDIR=	emu fvwm tk
+SUBDIR=	emu fvwm iv tk
 
 .include <bsd.port.subdir.mk>
