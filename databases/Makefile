@@ -11,6 +11,7 @@
     SUBDIR += gnats
     SUBDIR += gtksql
     SUBDIR += interbase4
+    SUBDIR += metakit
     SUBDIR += msql
     SUBDIR += mysql322-client
     SUBDIR += mysql322-server
