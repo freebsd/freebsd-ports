@@ -8,6 +8,7 @@
 
 PORTNAME=	ngrep
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,9 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Network grep
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pcre --disable-pcap-restart
+CONFIGURE_ARGS=	--with-pcre \
+		--disable-pcap-restart \
+		--enable-dropprivs-onlyroot
 ALL_TARGET=	ngrep
 USE_BZIP2=	yes
 
