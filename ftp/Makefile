@@ -31,6 +31,7 @@
     SUBDIR += omi
     SUBDIR += pavuk
     SUBDIR += proftpd
+    SUBDIR += puf
     SUBDIR += sftp
     SUBDIR += spegla
     SUBDIR += vsftpd
