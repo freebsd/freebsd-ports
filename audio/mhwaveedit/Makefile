@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
@@ -18,17 +17,17 @@ COMMENT=	A graphical program for editing sound files
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		portaudio.0:${PORTSDIR}/audio/portaudio
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-sdl
+CONFIGURE_ARGS=	--disable-optimization --without-sdl
+
+PLIST_FILES=	bin/mhwaveedit
 
 .if defined(WITH_DOUBLE_SAMPLES)
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
-PLIST_FILES=	bin/mhwaveedit
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -39,8 +38,5 @@ pre-everything::
 	@${ECHO_MSG} "		processing (slows down program but may increase"
 	@${ECHO_MSG} "		quality for 24/32-bit samplerates)"
 	@${ECHO_MSG} ""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| -O2||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
