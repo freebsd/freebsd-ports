@@ -8,8 +8,8 @@
 PORTNAME=       uk-phone
 PORTVERSION=	2.1
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/PSTN/ \
-		http://people.FreeBSD.org/~brian/PSTN/
+MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/uk-phone/ \
+		http://people.FreeBSD.org/~brian/uk-phone/
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=     brian@FreeBSD.org
