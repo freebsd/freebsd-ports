@@ -10,7 +10,7 @@ PORTVERSION=	1.0c
 CATEGORIES=	net
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/
 
-MAINTAINER=	A.C.P.M.Kalker@student.utwente.nl
+MAINTAINER=	freebsd-ports@FreeBSD.Org
 
 WRKSRC=		${WRKDIR}/slirp-1.0c/src
 GNU_CONFIGURE=	yes
