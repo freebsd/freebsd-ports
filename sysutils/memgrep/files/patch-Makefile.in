@@ -1,17 +1,26 @@
---- Makefile.in.orig	Sat Feb 22 00:41:31 2003
-+++ Makefile.in	Sat Feb 22 14:04:54 2003
-@@ -6,13 +6,13 @@
+--- Makefile.in.orig	Tue Dec 30 06:08:09 2003
++++ Makefile.in	Sun Jan  4 17:58:03 2004
+@@ -1,19 +1,19 @@
+-DEBUG=
+-FLAGS=-Wall -O3
++#DEBUG=
++#FLAGS=
+ 
+ all:
+ 	cd src && make
  	cd examples && make
  
  install:
 -	cp include/memgrep.h /usr/include
 -	cp libmemgrep.so /usr/lib
 -	cp libmemgrep.a /usr/lib
+-	cp heaplist.so /usr/lib
 -	cp memgrep /usr/bin
-+	${INSTALL} include/memgrep.h ${PREFIX}/include
-+	${INSTALL} libmemgrep.so ${PREFIX}/lib
-+	${INSTALL} libmemgrep.a ${PREFIX}/lib
-+	${INSTALL} memgrep ${PREFIX}/bin
++	${BSD_INSTALL_DATA} include/memgrep.h ${PREFIX}/include
++	${BSD_INSTALL_PROGRAM} libmemgrep.so ${PREFIX}/lib
++	${BSD_INSTALL_DATA} libmemgrep.a ${PREFIX}/lib
++	${BSD_INSTALL_PROGRAM} heaplist.so ${PREFIX}/lib
++	${BSD_INSTALL_PROGRAM} memgrep ${PREFIX}/bin
  
  uninstall:
 -	rm -f /usr/lib/libmemgrep.so /usr/lib/libmemgrep.a /usr/bin/memgrep /usr/include/memgrep.h

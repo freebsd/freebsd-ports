@@ -1,27 +1,5 @@
 bin/memgrep
 include/memgrep.h
+lib/heaplist.so
 lib/libmemgrep.so
 lib/libmemgrep.a
-%%PORTDOCS%%share/doc/memgrep/html/annotated.html
-%%PORTDOCS%%share/doc/memgrep/html/doxygen.css
-%%PORTDOCS%%share/doc/memgrep/html/doxygen.png
-%%PORTDOCS%%share/doc/memgrep/html/examples.html
-%%PORTDOCS%%share/doc/memgrep/html/files.html
-%%PORTDOCS%%share/doc/memgrep/html/functions.html
-%%PORTDOCS%%share/doc/memgrep/html/group__memgrep.html
-%%PORTDOCS%%share/doc/memgrep/html/index.html
-%%PORTDOCS%%share/doc/memgrep/html/memgrep_8h-source.html
-%%PORTDOCS%%share/doc/memgrep/html/modules.html
-%%PORTDOCS%%share/doc/memgrep/html/simple_8c-example.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__core__memory__sections.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__mem__ctx.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__mem__ctx__core__data.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__functions.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__result.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__result__row.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__result__row__dump.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__result__row__replace.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__memgrep__result__row__search.html
-%%PORTDOCS%%share/doc/memgrep/html/struct__process__section__addrs.html
-%%PORTDOCS%%@dirrm share/doc/memgrep/html
-%%PORTDOCS%%@dirrm share/doc/memgrep
