@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jext
-PORTVERSION=	2.8.1.1
+PORTVERSION=	2.8.1.2
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.jext.org/ \
 		http://members.xoom.com/romainguy/
