@@ -5993,6 +5993,7 @@ p5-Glade	ports/x11-toolkits/p5-Glade
 p5-Glade-Perl	ports/devel/p5-Glade-Perl
 p5-Glib2	ports/devel/p5-Glib2
 p5-Gnome	ports/x11-toolkits/p5-Gnome
+p5-Gnome2	ports/x11-toolkits/p5-Gnome2
 p5-Gnome2-VFS	ports/x11-toolkits/p5-Gnome2-VFS
 p5-GnomePrint	ports/print/p5-GnomePrint
 p5-GnuPG-Interface	ports/security/p5-GnuPG-Interface
