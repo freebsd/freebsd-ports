@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-mcs-manager
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
@@ -16,7 +17,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings manager
 
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xfce4mcs-manager.1:${PORTSDIR}/x11/libxfce4mcs
 
@@ -25,6 +27,9 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LIBS=-L${LOCALBASE}/lib
 
 post-patch:
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \

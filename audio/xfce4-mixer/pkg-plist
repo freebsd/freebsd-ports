@@ -1,5 +1,18 @@
 lib/xfce4/panel-plugins/libmixer.a
 lib/xfce4/panel-plugins/libmixer.la
 lib/xfce4/panel-plugins/libmixer.so
+share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
+share/locale/de/LC_MESSAGES/xfce4-mixer.mo
+share/locale/fr/LC_MESSAGES/xfce4-mixer.mo
+share/locale/hu/LC_MESSAGES/xfce4-mixer.mo
+share/locale/it/LC_MESSAGES/xfce4-mixer.mo
+share/locale/lt/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ms/LC_MESSAGES/xfce4-mixer.mo
+share/locale/nl/LC_MESSAGES/xfce4-mixer.mo
+share/locale/pt_PT/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ru/LC_MESSAGES/xfce4-mixer.mo
+share/locale/tr/LC_MESSAGES/xfce4-mixer.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
