@@ -126,7 +126,7 @@ share/geomview/data/.geomview
 @dirrm share/geomview/data
 @dirrm share/geomview
 share/examples/geomview/example4.tcl
-share/examples/geomview/example3.c  
+share/examples/geomview/example3.c
 share/examples/geomview/example2.c
 share/examples/geomview/example1.c
 @dirrm share/examples/geomview

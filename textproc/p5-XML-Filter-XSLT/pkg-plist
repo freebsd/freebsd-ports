@@ -3,7 +3,7 @@
 %%SITE_PERL%%/XML/Filter/XSLT/LibXSLT.pm
 @dirrm %%SITE_PERL%%/XML/Filter/XSLT
 @unexec rmdir %D/%%SITE_PERL%%/XML/Filter 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true 
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/XSLT
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true

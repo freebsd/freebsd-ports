@@ -11,4 +11,3 @@ lib/libds.so
 %%PORTDOCS%%share/doc/libds/set.html
 %%PORTDOCS%%share/doc/libds/stack.html
 %%PORTDOCS%%@unexec rmdir %D/share/doc/libds 2>/dev/null || true
-

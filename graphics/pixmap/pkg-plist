@@ -1,16 +1,16 @@
 bin/pixmap
 lib/X11/app-defaults/Pixmap
 lib/X11/Pixmap/Down
-lib/X11/Pixmap/FlipHoriz 
+lib/X11/Pixmap/FlipHoriz
 lib/X11/Pixmap/FlipVert
 lib/X11/Pixmap/Fold
 lib/X11/Pixmap/Left
 lib/X11/Pixmap/Right
-lib/X11/Pixmap/RotateLeft 
-lib/X11/Pixmap/RotateRight 
-lib/X11/Pixmap/Stipple 
-lib/X11/Pixmap/Up 
-lib/X11/Pixmap/Term 
+lib/X11/Pixmap/RotateLeft
+lib/X11/Pixmap/RotateRight
+lib/X11/Pixmap/Stipple
+lib/X11/Pixmap/Up
+lib/X11/Pixmap/Term
 lib/X11/Pixmap/Excl
 lib/libXgnu.a
 @dirrm lib/X11/Pixmap

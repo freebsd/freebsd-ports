@@ -10,4 +10,3 @@ share/locale/da/LC_MESSAGES/lostirc.mo
 %%PORTDOCS%%share/doc/lostirc/README
 %%PORTDOCS%%share/doc/lostirc/TODO
 %%PORTDOCS%%@dirrm share/doc/lostirc
-

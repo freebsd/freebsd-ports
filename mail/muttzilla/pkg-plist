@@ -5,7 +5,7 @@ bin/mznews.sh
 bin/mznews.py
 etc/muttzilla.conf
 lib/muttzilla.so
-lib/muttzilla/mutt 
+lib/muttzilla/mutt
 lib/muttzilla/pine
 lib/muttzilla/dtmail
 lib/muttzilla/VM

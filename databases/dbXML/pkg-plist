@@ -1392,4 +1392,3 @@ bin/dbxml
 @unexec rmdir %D/%%T%%/logs > /dev/null 2>&1 || true
 @dirrm %%T%%/xml
 @unexec rmdir %D/%%T%% > /dev/null 2>&1 || true
-

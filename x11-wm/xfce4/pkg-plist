@@ -2,4 +2,3 @@
 %%GDM%%etc/gdm/Sessions/XFce4
 %%GDM%%@unexec rmdir %D/etc/gdm/Sessions 2>/dev/null || true
 %%GDM%%@unexec rmdir %D/etc/gdm 2>/dev/null || true
-

@@ -66,7 +66,7 @@ lib/tkscanfax/tkscanfax.spec
 lib/tkscanfax/fax-logbrowse.tcl
 lib/tkscanfax/fax-balloon.tcl
 @exec /bin/ln -sf %D/lib/tkscanfax/tkscan %D/bin
-@exec /bin/ln -sf %D/lib/tkscanfax/tkfax %D/bin 
+@exec /bin/ln -sf %D/lib/tkscanfax/tkfax %D/bin
 @unexec /bin/rm -f %D/bin/tkscan
 @unexec /bin/rm -f %D/bin/tkfax
 @dirrm lib/tkscanfax/doc/images

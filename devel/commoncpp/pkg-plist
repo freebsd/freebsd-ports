@@ -25,7 +25,7 @@ include/cc++2/cc++/serial.h
 include/cc++2/cc++/slog.h
 include/cc++2/cc++/socket.h
 include/cc++2/cc++/strchar.h
-include/cc++2/cc++/string.h   
+include/cc++2/cc++/string.h
 include/cc++2/cc++/template.h
 include/cc++2/cc++/thread.h
 include/cc++2/cc++/unix.h

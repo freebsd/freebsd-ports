@@ -12,7 +12,7 @@ lib/cii/%%CIIMAJOR%%/examples/words
 lib/cii/%%CIIMAJOR%%/examples/basename
 lib/cii/%%CIIMAJOR%%/examples/dirname
 lib/cii/%%CIIMAJOR%%/examples/sort
-lib/cii/%%CIIMAJOR%%/examples/spin  
+lib/cii/%%CIIMAJOR%%/examples/spin
 lib/cii/%%CIIMAJOR%%/examples/sieve
 lib/cii/%%CIIMAJOR%%/include/ap.h
 lib/cii/%%CIIMAJOR%%/include/arena.h
@@ -63,9 +63,9 @@ lib/cii/%%CIIMAJOR%%/libcii.a
 %%PORTDOCS%%share/doc/cii/examples/kref.c
 %%PORTDOCS%%share/doc/cii/examples/mpcalc.c
 %%PORTDOCS%%share/doc/cii/examples/sieve.c
-%%PORTDOCS%%share/doc/cii/examples/sort.c 
+%%PORTDOCS%%share/doc/cii/examples/sort.c
 %%PORTDOCS%%share/doc/cii/examples/spin.c
-%%PORTDOCS%%share/doc/cii/examples/wf.c  
+%%PORTDOCS%%share/doc/cii/examples/wf.c
 %%PORTDOCS%%share/doc/cii/examples/words.c
 %%PORTDOCS%%share/doc/cii/examples/xref.c
 %%PORTDOCS%%share/doc/cii/history.html

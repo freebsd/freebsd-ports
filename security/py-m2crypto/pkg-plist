@@ -81,4 +81,3 @@ lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML/__init__.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML/dsig
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto
-

@@ -39,4 +39,3 @@ bin/%%BINUTILS_TARG%%-windres
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib
-

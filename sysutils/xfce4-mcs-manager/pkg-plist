@@ -37,9 +37,9 @@ share/xfce4/doc/C/images/smgr_from_panel.png
 share/xfce4/doc/C/images/smgr_from_root_menu.png
 share/xfce4/doc/C/images/smgr_from_setup_button.png
 share/xfce4/doc/C/xfce-mcs-manager.html
-share/xfce4/doc/fr/images/settings_manager.png 
-share/xfce4/doc/fr/images/smgr_from_panel.png  
-share/xfce4/doc/fr/images/smgr_from_root_menu.png 
+share/xfce4/doc/fr/images/settings_manager.png
+share/xfce4/doc/fr/images/smgr_from_panel.png
+share/xfce4/doc/fr/images/smgr_from_root_menu.png
 share/xfce4/doc/fr/images/smgr_from_setup_button.png
 share/xfce4/doc/fr/xfce-mcs-manager.html
 @dirrm include/xfce4/xfce-mcs-manager

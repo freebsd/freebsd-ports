@@ -1,8 +1,8 @@
 bin/pmf
 %%PORTDOCS%%share/doc/pmf/mud-clients.FAQ
-%%PORTDOCS%%share/doc/pmf/mud-rwho.FAQ  
+%%PORTDOCS%%share/doc/pmf/mud-rwho.FAQ
 %%PORTDOCS%%share/doc/pmf/mud.FAQ
-%%PORTDOCS%%share/doc/pmf/mudlist.18oct93 
+%%PORTDOCS%%share/doc/pmf/mudlist.18oct93
 %%PORTDOCS%%share/doc/pmf/pmf.doc
 %%PORTDOCS%%share/doc/pmf/resource-usage
 share/examples/pmf/dot.pmfrc

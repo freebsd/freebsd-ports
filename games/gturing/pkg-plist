@@ -44,18 +44,18 @@ bin/gturing
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 %%PORTDOCS%%share/examples/gturing/subst.tur
-%%PORTDOCS%%share/examples/gturing/sort.tur 
+%%PORTDOCS%%share/examples/gturing/sort.tur
 %%PORTDOCS%%share/examples/gturing/dec2bin_shift.tur
 %%PORTDOCS%%share/examples/gturing/dec2bin.tur
 %%PORTDOCS%%share/examples/gturing/dashnumbers.tur
 %%PORTDOCS%%share/examples/gturing/bin2dec_shift.tur
-%%PORTDOCS%%share/examples/gturing/bin2dec.tur 
+%%PORTDOCS%%share/examples/gturing/bin2dec.tur
 %%PORTDOCS%%share/examples/gturing/bb5.tur
 %%PORTDOCS%%share/examples/gturing/bb3.tur
 %%PORTDOCS%%share/examples/gturing/bb2.tur
 %%PORTDOCS%%share/examples/gturing/addbin.tur
 %%PORTDOCS%%share/examples/gturing/add.tur
-%%PORTDOCS%%share/examples/gturing/3ones2zeroes.tur 
+%%PORTDOCS%%share/examples/gturing/3ones2zeroes.tur
 %%PORTDOCS%%share/doc/gturing/TODO
 %%PORTDOCS%%share/doc/gturing/README
 %%PORTDOCS%%share/doc/gturing/NEWS

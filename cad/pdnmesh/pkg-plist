@@ -26,5 +26,5 @@ share/pdnmesh/examples/heart
 share/pdnmesh/examples/switch
 share/pdnmesh/examples/trans
 @dirrm share/pdnmesh/examples
-@dirrm share/pdnmesh/tutorial 
+@dirrm share/pdnmesh/tutorial
 @dirrm share/pdnmesh

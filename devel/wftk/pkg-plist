@@ -52,4 +52,3 @@ include/uta/togglebutton.h
 include/uta/widget.h
 share/aclocal/uta.m4
 @dirrm include/uta
-

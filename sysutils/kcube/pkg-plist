@@ -3,4 +3,3 @@ lib/libkcube.so
 lib/libkcube.so.1
 share/apps/kicker/applets/kcube.desktop
 @unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
-

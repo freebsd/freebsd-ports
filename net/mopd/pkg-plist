@@ -4,6 +4,6 @@ sbin/mopprobe
 sbin/moptrace
 sbin/mopchk
 sbin/mopa.out
-share/doc/mopd/VAX-netboot-HOWTO 
+share/doc/mopd/VAX-netboot-HOWTO
 share/doc/mopd/VS3100-console-cmds.txt
 @dirrm share/doc/mopd

@@ -2,4 +2,4 @@ lib/libmtrie.a
 %%HURRRR%%lib/libmtrie_p.a
 lib/libmtrie.so.1
 lib/libmtrie.so
-include/mtrie.h 
+include/mtrie.h

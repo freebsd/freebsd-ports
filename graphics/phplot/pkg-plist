@@ -2,7 +2,7 @@ lib/php/phplot/phplot.php
 lib/php/phplot/phplot_data.php
 lib/php/phplot/rgb.inc.php
 lib/php/phplot/benjamingothic.ttf
-@dirrm lib/php/phplot 
+@dirrm lib/php/phplot
 @unexec rmdir lib/php 2>/dev/null || true
 share/phplot/examples/test_setup.php
 share/phplot/examples/benjamingothic.ttf

@@ -206,4 +206,4 @@ lib/jed/lib/README
 @dirrm lib/jed/doc/manual
 @dirrm lib/jed/doc
 @dirrm lib/jed
-%%PORTDOCS%%@dirrm share/doc/jed   
+%%PORTDOCS%%@dirrm share/doc/jed
