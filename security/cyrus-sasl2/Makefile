@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-auth-sasldb \
 		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
-		--with-saslauthd
+		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
 .if defined(WITH_BDB_VER)
 .if ${WITH_BDB_VER} == 3
@@ -181,6 +181,8 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		OPENSSLINC=${OPENSSLINC} \
 		OPENSSLLIB=${OPENSSLLIB} \
 		LDFLAGS=${LDFLAGS}
+
+SASLAUTHD_RUNPATH?=	/var/state/saslauthd
 
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus

@@ -9,11 +9,11 @@ sbin/saslauthd
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
-@mode ug=rwx,o=
-@exec mkdir -p /var/state/saslauthd
-@exec chown -R cyrus:mail /var/state/saslauthd
-@exec chmod -R ug=rwx,o= /var/state/saslauthd
-@comment This file gets created by the state/saslauthd program
-@unexec rm -fr /var/state/saslauthd
-@unexec rmdir /var/state
+%%RUNPATH%%@mode ug=rwx,o=
+%%RUNPATH%%@exec mkdir -p /var/state/saslauthd
+%%RUNPATH%%@exec chown -R cyrus:mail /var/state/saslauthd
+%%RUNPATH%%@exec chmod -R ug=rwx,o= /var/state/saslauthd
+%%RUNPATH%%@comment This file gets created by the state/saslauthd program
+%%RUNPATH%%@unexec rm -fr /var/state/saslauthd
+%%RUNPATH%%@unexec rmdir /var/state
 @cwd %%PREFIX%%
