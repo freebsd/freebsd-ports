@@ -9,12 +9,16 @@ PORTNAME=	BitchX
 PORTVERSION=	1.0c17
 CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
-		ftp://ftp.bitchx.org/pub/BitchX/source/ \
+		ftp://ftp.bitchx.org/pub/BitchX/source/
 
 MAINTAINER=	cj@vallcom.net
 
 .if defined(WITH_GNOME)
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+.endif
+
+.if defined(WITH_TCL)
+BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
@@ -26,6 +30,11 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-gtk
 .else
 CONFIGURE_ARGS+=	--without-gtk
+.endif
+.if defined(WITH_TCL)
+CONFIGURE_ARGS+=	--with-tcl \
+			--with-tcl-includes=/usr/local/include/tcl8.3 \
+			--with-tcl-libs=/usr/local/lib
 .endif
 .if defined(WITH_ESD)
 CONFIGURE_ARGS+=	--enable-sound
@@ -40,8 +49,12 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share"	\
 			--datadir="${PREFIX}/share" \
 			--libdir="${PREFIX}/share"
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
+.if defined(WITH_TCL)
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
+.else
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+.endif
+CONFIGURE_ENV+= GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}"
 
 MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -49,6 +62,11 @@ MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 
 pre-extract:
 	@${CAT} ${PKGDIR}/MESSAGE
+
+.if defined(WITH_TCL)
+post-extract:
+	@uudecode -p files/tcl-freebsd.o.uu > ${WRKSRC}/source/tcl.o
+.endif
 
 .if defined(WITH_LATIN)
 pre-patch:
