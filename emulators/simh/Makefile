@@ -25,7 +25,7 @@ SHELL=${SH}
 BIN_FILES=	altair eclipse h316 nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 \
 		pdp9 s3
 
-post-configure:
+pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
 	@for i in `find . -name "*.[hc]"`; \
 	do \
