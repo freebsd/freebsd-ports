@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pircbot
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	irc java
 MASTER_SITES=	http://www.jibble.org/files/ \
 		ftp://ftp.i-scream.org/pub/www.jibble.org/files/ \
