@@ -7,6 +7,7 @@
 
 PORTNAME=	lua-mode.el
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://lua-users.org/files/wiki_insecure/editors/
 DISTNAME=	lua-mode.el
@@ -15,8 +16,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jre@vineyard.net
 COMMENT=	Emacs/XEmacs major mode for editing Lua scripts
-
-BROKEN=		"Unfetchable (incorrect SIZE)"
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
