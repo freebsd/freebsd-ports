@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/net/crescendo/Attic/pkg-plist,v 1.4 2001-04-13 11:42:49 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/net/crescendo/Attic/pkg-plist,v 1.5 2003-10-19 19:21:10 dinoex Exp $
 bin/crescendo
 share/gnome/crescendo/cr-about.jpg
 share/gnome/crescendo/cr-splash1.jpg
@@ -7,7 +7,6 @@ share/gnome/apps/Internet/crescendo.desktop
 share/gnome/pixmaps/crescendo.png
 @dirrm share/gnome/crescendo
 %%PORTDOCS%%%%DOCDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCDIR%%/COPYING
 %%PORTDOCS%%%%DOCDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCDIR%%/HACKING
 %%PORTDOCS%%%%DOCDIR%%/INSTALL
