@@ -1,0 +1,86 @@
+Index: mozilla/xpfe/global/resources/locale/en-US/brand.dtd
+===================================================================
+RCS file: /cvsroot/mozilla/xpfe/global/resources/locale/en-US/brand.dtd,v
+retrieving revision 1.9
+diff -u -r1.9 brand.dtd
+--- xpfe/global/resources/locale/en-US/brand.dtd	22 Sep 2002 22:14:25 -0000	1.9
++++ xpfe/global/resources/locale/en-US/brand.dtd	17 Oct 2002 14:11:36 -0000
+@@ -1,4 +1,4 @@
+-<!ENTITY  lang.version          "1.2a">
++<!ENTITY  lang.version          "1.2b">
+ <!ENTITY  brandShortName        "Mozilla">
+ <!ENTITY  vendorShortName       "Mozilla">
+ <!ENTITY  sidebarName           "Sidebar">
+Index: mozilla/xpfe/global/resources/locale/en-US/region.dtd
+===================================================================
+RCS file: /cvsroot/mozilla/xpfe/global/resources/locale/en-US/region.dtd,v
+retrieving revision 1.12
+diff -u -r1.12 region.dtd
+--- xpfe/global/resources/locale/en-US/region.dtd	22 Sep 2002 22:14:25 -0000	1.12
++++ xpfe/global/resources/locale/en-US/region.dtd	17 Oct 2002 14:11:36 -0000
+@@ -2,4 +2,4 @@
+ <!ENTITY  vendorURL             "http://www.mozilla.org/">
+ <!ENTITY  releaseURL            "http://www.mozilla.org/releases/">
+ <!ENTITY  getNewThemesURL       "http://mozilla.org/themes/download/">
+-<!ENTITY  content.version       "1.2a">
++<!ENTITY  content.version       "1.2b">
+Index: mozilla/extensions/inspector/resources/content/contents.rdf
+===================================================================
+RCS file: /cvsroot/mozilla/extensions/inspector/resources/content/contents.rdf,v
+retrieving revision 1.5
+diff -u -r1.5 contents.rdf
+--- extensions/inspector/resources/content/contents.rdf	12 Sep 2002 23:39:25 -0000	1.5
++++ extensions/inspector/resources/content/contents.rdf	17 Oct 2002 14:11:36 -0000
+@@ -12,7 +12,7 @@
+         chrome:displayName="Document Inspector"
+         chrome:author="Joe Hewitt"
+         chrome:name="inspector"
+-        chrome:localeVersion="0.9.4"
++        chrome:localeVersion="1.2b"
+         chrome:skinVersion="1.2">
+   </RDF:Description>
+ 
+Index: mozilla/extensions/inspector/resources/locale/en-US/contents.rdf
+===================================================================
+RCS file: /cvsroot/mozilla/extensions/inspector/resources/locale/en-US/contents.rdf,v
+retrieving revision 1.2
+diff -u -r1.2 contents.rdf
+--- extensions/inspector/resources/locale/en-US/contents.rdf	15 Nov 2001 04:09:28 -0000	1.2
++++ extensions/inspector/resources/locale/en-US/contents.rdf	17 Oct 2002 14:11:36 -0000
+@@ -17,5 +17,5 @@
+   </RDF:Description>
+ 
+   <RDF:Description about="urn:mozilla:locale:en-US:inspector"
+-	                 chrome:localeVersion="0.9.4"/>
++	                 chrome:localeVersion="1.2b"/>
+ </RDF:RDF>
+Index: mozilla/xpfe/components/download-manager/resources/mac/contents.rdf
+===================================================================
+RCS file: /cvsroot/mozilla/xpfe/components/download-manager/resources/mac/contents.rdf,v
+retrieving revision 1.2
+diff -u -r1.2 contents.rdf
+--- xpfe/components/download-manager/resources/mac/contents.rdf	12 Sep 2002 23:38:32 -0000	1.2
++++ xpfe/components/download-manager/resources/mac/contents.rdf	17 Oct 2002 14:11:36 -0000
+@@ -11,7 +11,7 @@
+                    chrome:displayName="Mac-specific dl mgr files"
+                    chrome:author="mozilla.org"
+                    chrome:name="dlmgr"
+-                   chrome:localeVersion="1.0.0"
++                   chrome:localeVersion="1.2b"
+                    chrome:skinVersion="1.2">
+   </RDF:Description>
+  
+Index: mozilla/extensions/editor/cascades/resources/locale/en-US/contents.rdf
+===================================================================
+RCS file: /cvsroot/mozilla/extensions/editor/cascades/resources/locale/en-US/contents.rdf,v
+retrieving revision 1.1
+diff -u -r1.1 contents.rdf
+--- extensions/editor/cascades/resources/locale/en-US/contents.rdf	9 Sep 2002 09:33:17 -0000	1.1
++++ extensions/editor/cascades/resources/locale/en-US/contents.rdf	17 Oct 2002 14:11:36 -0000
+@@ -17,5 +17,5 @@
+   </RDF:Description>
+ 
+   <RDF:Description about="urn:mozilla:locale:en-US:cascades"
+-	                 chrome:localeVersion="0.1.7"/>
++	                 chrome:localeVersion="1.2b"/>
+ </RDF:RDF>
