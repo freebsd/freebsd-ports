@@ -8,7 +8,7 @@
 PORTNAME=	umfpack
 PORTVERSION=	4.1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.cise.ufl.edu/pub/faculty/davis/umfpack/
+MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/umfpack/v${PORTVERSION}/
 DISTNAME=	UMFPACKv${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
