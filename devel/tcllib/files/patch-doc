@@ -1,0 +1,37 @@
+	. Don't install the redundant HTML-formatted documentation.
+	. Use the correct tclsh executable.
+
+--- Makefile.in	Mon Jun 10 19:14:53 2002
++++ Makefile.in	Sun Feb 23 12:28:49 2003
+@@ -234,9 +234,5 @@
+ 
+ # Generation of documentation is platform dependent
+-doc:
+-	$(MAKE) html-doc
+-	if [ `echo 'puts $$tcl_platform(platform) ; exit' | $(TCLSH_PROG)` = unix ] ; then \
+-	    $(MAKE) nroff-doc ; \
+-	fi
++doc: nroff-doc
+ 
+ install: all install-libraries install-doc
+@@ -273,11 +269,6 @@
+ install-doc: doc
+ 	@echo Installing documentation for $(PACKAGE)
+-	@if [ `echo 'puts $$tcl_platform(platform) ; exit' | $(TCLSH_PROG)` = unix ] ; then \
+-	    $(mkinstalldirs) $(mandir)/mann ; \
+-	    for f in doc/nroff/*.n ; do cp -f $$f $(mandir)/mann ; done ; \
+-	    $(INSTALL_DATA) $(srcdir)/man.macros $(mandir) ; \
+-	fi
+-	$(mkinstalldirs)   $(pkglibdir)/htmldoc
+-	cp doc/html/*.html $(pkglibdir)/htmldoc
++	${BSD_INSTALL_MAN} doc/nroff/*.n $(mandir)/mann
++	$(INSTALL_DATA) $(srcdir)/man.macros $(mandir)
+ 
+ test:
+@@ -398,5 +389,5 @@
+ #========================================================================
+ 
+-DOC_EXP=$(srcdir)/modules/doctools/mpexpand
++DOC_EXP=${TCLSH_PROG} $(srcdir)/modules/doctools/mpexpand
+ 
+ ## Parameters:
