@@ -23,7 +23,7 @@ USE_GNOME=	gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-exporter --without-glib --with-libwmf=${LOCALBASE}
+CONFIGURE_ARGS=	--with-exporter --with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 
@@ -33,5 +33,12 @@ MLINKS=	wvWare.1 wvConvert.1
 
 CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+.if ${MACHINE_ARCH:L} == "amd64"
+USE_GNOME+=	glib20
+CONFIGURE_ARGS+=	--with-glib
+.else
+CONFIGURE_ARGS+=	--without-glib
+.endif
 
 .include <bsd.port.mk>
