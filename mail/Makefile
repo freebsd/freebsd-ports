@@ -335,7 +335,6 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix1
-    SUBDIR += postfix20
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postilion
