@@ -1,0 +1,47 @@
+$FreeBSD$
+
+addport	- future replacement for easy-import
+
+consistency-check -  check whether all your ports are installed properly,
+                     what files have changed, and what new files there are
+
+getpr   - downloads a problem report from GNATS and attempts to extract
+          the patch, shar, uuencoded file from it.
+          this probably needs to be checked for potential security problems.
+prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
+prdone  - checks in the port, attempting to fill out the commit message using
+          information from the problem report and then takes you into edit-pr
+          so you don't forget to close the PR.
+
+----------------------------------------------------------------------
+
+consistency-check gives output like:
+
+Not on filesystem - jade from jade-1.2.1
+Only on filesystem - jadefoo
+No package md5 available for lessecho
+File nsgmls owned by multiple packages sp-1.3.4,jade-1.2.1
+No filesystem md5 available for setuser, but it exists                          
+For sgmlnorm, package md5 312d7b63d591e07629e0da4ae4a0ac07 is DIFFERENT from fs md5 of 19f1f901911b90d8e04c6ea69e1b0541!
+
+change $do_md5 to 0 to not check md5, and $do_fs to 0 to not check for
+files above those installed by packages.
+
+----------------------------------------------------------------------
+
+getpr, prpatch and prdone are used as so:
+	% cd /usr/ports/CATEGORY/PORT
+	% getpr PRNUMBER
+	<read diff presented to you>
+	<check that there are no followups to the PR as getpr wont' split
+	 them out of the PR>
+	% prpatch
+	<test port>
+	% prdone PRNUMBER ci
+	<this will attempt to fill out the cvs log message, check in the
+	 port and edit-pr the problem report so you can close it>
+
+NOTE: These scripts need work and are *NOT* safe to use unless you know
+      what they do.  Use at your own risk.  Patches would be great, but
+      I'd prefer they pass through me.
+
