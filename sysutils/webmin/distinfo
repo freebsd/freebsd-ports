@@ -1,4 +1,6 @@
 MD5 (webmin-1.180.tar.gz) = bce184bd1f22841c69e1773b18a72b3b
 SIZE (webmin-1.180.tar.gz) = 7461621
+MD5 (ldap-useradmin-1.180-1.wbm.gz) = 073e885fff513da6eca28b6fb4f6f270
+SIZE (ldap-useradmin-1.180-1.wbm.gz) = 34041
 MD5 (sendmail-1.180-1.wbm.gz) = a02e08a2ae7cc5999685b8088d1fa54b
 SIZE (sendmail-1.180-1.wbm.gz) = 272496
