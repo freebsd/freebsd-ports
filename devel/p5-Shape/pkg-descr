@@ -1,0 +1,5 @@
+This is a library for reading, creating, and writing ArcView(c)
+shapefiles using Perl.  The Perl code uses Frank Warmerdam's Shapefile
+C Library. 
+
+WWW: http://www.water.hut.fi/pub/Grid/Shape.html
