@@ -1,0 +1,43 @@
+# New ports collection makefile for:	august
+# Date created:				2000-12-31
+# Whom:					trevor
+#
+# based on the OpenBSD port by Kevin Lo <kevlo@openbsd.org>
+# $OpenBSD: Makefile,v 1.6 2000/12/10 15:00:14 kevlo Exp $
+# $FreeBSD$
+#
+
+PORTNAME=	august
+PORTVERSION=	0.62b
+CATEGORIES=     www
+MASTER_SITES=	http://www.lls.se/~johanb/august/
+DISTNAME=	${PORTNAME}${PORTVERSION}.src
+
+MAINTAINER=	trevor@FreeBSD.org
+
+RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint \
+		identify:${PORTSDIR}/graphics/ImageMagick \
+		wish8.3:${PORTSDIR}/x11-toolkits/tk83
+
+NO_BUILD=	yes
+PLIST=		${WRKDIR}/pkg-plist
+
+do-patch:
+	${PERL} -pi -e "s:/usr/bin/wish:${PREFIX}/bin/wish8.3:g" \
+		${WRKSRC}/august
+
+pre-install:
+	${ECHO} bin/august > ${PLIST}
+.if !defined(NOPORTDOCS)
+	${ECHO} share/doc/august/specchars.txt >> ${PLIST}
+	${ECHO} @dirrm share/doc/august >> ${PLIST}
+.endif
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/august ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/august
+	${INSTALL_DATA} ${WRKSRC}/specchars.txt ${PREFIX}/share/doc/august
+.endif
+
+.include <bsd.port.mk>
