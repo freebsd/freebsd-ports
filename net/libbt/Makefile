@@ -26,6 +26,12 @@ USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@|' ${WRKSRC}/src/Makefile.in
@@ -46,4 +52,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/protocol.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
