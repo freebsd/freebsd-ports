@@ -106,6 +106,7 @@
     SUBDIR += pal
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar
+    SUBDIR += phprojekt
     SUBDIR += plan
     SUBDIR += planner
     SUBDIR += plans

@@ -1,0 +1,10 @@
+PHProjekt - an open source groupware suite
+
+PHProjekt is a modular application for the coordination of group activities and
+to share informations and document via intranet and internet.
+Components of PHProjekt: Group calendar, project management, time card system,
+file management, contact manager, mail client and 9 other modules.
+PHProjekt supports many protocols like ldap, soap and webdav and is available
+for 36 languages and 6 databases.
+
+WWW: http://www.phprojekt.com/
