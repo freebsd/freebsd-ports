@@ -8,7 +8,7 @@
 PORTNAME=	jpeg2ps
 PORTVERSION=	1.9
 CATEGORIES=	graphics converters
-MASTER_SITES=	http://www.pdflib.com/jpeg2ps/
+MASTER_SITES=	http://www.pdflib.com/products/more/jpeg2ps/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
