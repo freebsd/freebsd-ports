@@ -20,7 +20,7 @@ COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
 USE_REINPLACE=	yes
 
-MANLANG=	"" fr
+MANLANG=	""
 
 .ifndef CUPS_OVERWRITE_BASE
 PKGINSTALL=	nonexistent
