@@ -1,0 +1,5 @@
+bin/ccmalloc
+lib/libccmalloc.a
+lib/ccmalloc-g++.o
+share/ccmalloc/ccmalloc.cfg
+@dirrm share/ccmalloc

@@ -87,6 +87,7 @@
     SUBDIR += ccache
     SUBDIR += cccc
     SUBDIR += ccdoc
+    SUBDIR += ccmalloc
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
