@@ -5219,6 +5219,7 @@ pktsuckers	ports/security/pktsuckers
 pkzip		ports/archivers/pkzip
 pl-sms		ports/misc/pl-sms
 plan		ports/deskutils/plan
+planets		ports/astro/planets
 plasma-kmod	ports/graphics/plasma-kmod
 platon		ports/biology/platon
 play		ports/audio/play
