@@ -39,6 +39,7 @@
     SUBDIR += deep_zoom
     SUBDIR += dia
     SUBDIR += diacanvas
+    SUBDIR += diacanvas2
     SUBDIR += digikam
     SUBDIR += divxcalc
     SUBDIR += djvulibre
