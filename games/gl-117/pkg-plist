@@ -6,6 +6,7 @@ share/gl-117/models/cannon1.3ds
 share/gl-117/models/cannon2.3ds
 share/gl-117/models/chaff1.3ds
 share/gl-117/models/container1.3ds
+share/gl-117/models/depot1.3ds
 share/gl-117/models/egg.3ds
 share/gl-117/models/fig1.3ds
 share/gl-117/models/fig2.3ds
@@ -25,11 +26,11 @@ share/gl-117/models/gl-14b.3ds
 share/gl-117/models/gl-14c.3ds
 share/gl-117/models/gl-14d.3ds
 share/gl-117/models/gl-15.3ds
-share/gl-117/models/gl-15e.3ds
 share/gl-117/models/gl-16.3ds
 share/gl-117/models/gl-21.3ds
 share/gl-117/models/gl-21b.3ds
 share/gl-117/models/gl-29.3ds
+share/gl-117/models/gl-50.3ds
 share/gl-117/models/hall1.3ds
 share/gl-117/models/hall2.3ds
 share/gl-117/models/mine1.3ds
@@ -45,14 +46,18 @@ share/gl-117/models/oilrig.3ds
 share/gl-117/models/pickup1.3ds
 share/gl-117/models/pickup2.3ds
 share/gl-117/models/radar.3ds
+share/gl-117/models/rubble.3ds
 share/gl-117/models/ship1.3ds
 share/gl-117/models/ship2.3ds
 share/gl-117/models/tank1.3ds
 share/gl-117/models/tank2.3ds
 share/gl-117/models/tent1.3ds
 share/gl-117/models/tent4.3ds
-share/gl-117/models/transp1.3ds
+share/gl-117/models/transp2.3ds
+share/gl-117/models/transp4.3ds
+share/gl-117/models/trsam.3ds
 share/gl-117/models/truck1.3ds
+share/gl-117/models/truck2.3ds
 share/gl-117/music/ambient.s3m
 share/gl-117/music/dark.s3m
 share/gl-117/music/electro.s3m
@@ -83,6 +88,7 @@ share/gl-117/textures/clouds2.tga
 share/gl-117/textures/clouds3.tga
 share/gl-117/textures/cross.tga
 share/gl-117/textures/cross2.tga
+share/gl-117/textures/depot_fr.tga
 share/gl-117/textures/earth.tga
 share/gl-117/textures/egg_chec.tga
 share/gl-117/textures/flare1.tga
@@ -101,11 +107,12 @@ share/gl-117/textures/gl-16_ch.tga
 share/gl-117/textures/gl-21_ch.tga
 share/gl-117/textures/gl-21b_c.tga
 share/gl-117/textures/gl-29_ch.tga
+share/gl-117/textures/gl-50_ch.tga
 share/gl-117/textures/glitter.tga
 share/gl-117/textures/grass1.tga
 share/gl-117/textures/gravel1.tga
-share/gl-117/textures/hall1_ch.tga
-share/gl-117/textures/hall2_ch.tga
+share/gl-117/textures/hall1b_g.tga
+share/gl-117/textures/hall2b_c.tga
 share/gl-117/textures/medals.tga
 share/gl-117/textures/moon1.tga
 share/gl-117/textures/oilrig_c.tga
@@ -119,15 +126,16 @@ share/gl-117/textures/redsand1.tga
 share/gl-117/textures/redstone2.tga
 share/gl-117/textures/rocks1.tga
 share/gl-117/textures/sand1.tga
-share/gl-117/textures/ship1_fr.tga
 share/gl-117/textures/ship2_fr.tga
+share/gl-117/textures/ship_fra.tga
 share/gl-117/textures/smoke1.tga
 share/gl-117/textures/smoke2.tga
 share/gl-117/textures/smoke3.tga
 share/gl-117/textures/sun2.tga
 share/gl-117/textures/tent1_no.tga
 share/gl-117/textures/tent4_fr.tga
-share/gl-117/textures/transp1_.tga
+share/gl-117/textures/transp2_.tga
+share/gl-117/textures/transp4_.tga
 share/gl-117/textures/tree1.tga
 share/gl-117/textures/tree2.tga
 share/gl-117/textures/tree3.tga
@@ -137,8 +145,8 @@ share/gl-117/textures/treeu2.tga
 share/gl-117/textures/treeu3.tga
 share/gl-117/textures/treeu4.tga
 share/gl-117/textures/water1.tga
-@dirrm share/gl-117/textures
-@dirrm share/gl-117/sounds
-@dirrm share/gl-117/music
 @dirrm share/gl-117/models
+@dirrm share/gl-117/music
+@dirrm share/gl-117/sounds
+@dirrm share/gl-117/textures
 @dirrm share/gl-117
