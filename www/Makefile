@@ -607,6 +607,7 @@
     SUBDIR += zope-epoz
     SUBDIR += zope-exuserfolder
     SUBDIR += zope-formulator
+    SUBDIR += zope-groupuserfolder
     SUBDIR += zope-guf
     SUBDIR += zope-parsedxml
     SUBDIR += zope-proxyindex
