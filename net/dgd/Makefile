@@ -5,6 +5,8 @@
 #
 
 DISTNAME=	dgd-1.0.8
+DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME}/1.0.8-1.0.8.1.gz \
+		${DISTNAME}/1.0.8.1-1.0.8.2.gz ${DISTNAME}/1.0.8.2-1.0.8.3.gz
 PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz
 PATCHSITE=	epsilon.me.chalmers.se
 NCFTPFLAGS=
@@ -15,35 +17,22 @@ WRKSRC=		${WRKDIR}/dgd/src
 PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
 		-r ${PKGDIR}/REQ
 
-### rely on DISTFILES being a single filename
-
 pre-fetch:
 	@if [ ! -d ${DISTDIR}/${DISTNAME} ]; then mkdir -p ${DISTDIR}/${DISTNAME}; fi
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	    echo ">> Fetching distribution file from remote system..." \
-	    ${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:${DISTFILES} \
-        	&& mv ${DISTFILES} ${DISTDIR}; \
+	@if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
+		echo ">> Fetching distribution file from remote site..."; \
+		${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:${DISTNAME}.tar.gz \
+        		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
 	fi
 	@for file in ${PATCHFILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
-			echo ">> $$file doesn't seem to exist on this system."; \
-			echo ">> Attempting to fetch it from a master site."; \
-			if ${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:patches/$$file; \
-			then \
-				echo ">> $$file Fetched!" ; \
-				mv patches/$$file ${DISTDIR}/${DISTNAME}; \
-				break; \
-			fi; \
-			if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
-				echo ">> Couldn't fetch it - please try to retreive this";\
-				echo ">> file manually into ${DISTDIR}/${DISTNAME} and try again."; \
-				exit 1; \
-			fi; \
+			echo ">> Fetching patch $$file from remote site...";  \
+			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:patches/$$file \
+				&& mv patches/$$file ${DISTDIR}/${DISTNAME}; \
 	    	fi \
 	 done
 
-# We need to determine whether all author-supplied patches are present
-# and whether they are applied correctly
+# Need to determine whether all author-supplied patches are correctly applied
 ### not yet implemented
 
 pre-configure: extract ${PATCH_COOKIE}
