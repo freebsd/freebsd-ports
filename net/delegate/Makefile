@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	7.3.4
+PORTVERSION=	7.5.4
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.etl.go.jp/pub/DeleGate/
@@ -41,6 +41,11 @@ pre-fetch:
 	@${ECHO} "* See FreeBSD security advisory 00:04 for more information.         *"
 	@${ECHO} "*********************************************************************"
 .endif
+.if defined(FTP_PASSIVE_MODE) && ${FTP_PASSIVE_MODE}=="YES"
+	@${ECHO} "Note: If you have trouble retrieving the distfile, try"
+	@${ECHO} "      \"unsetenv FTP_PASSIVE_MODE\" before running make."
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
 	@${MKDIR} ${PREFIX}/share/examples/delegate
