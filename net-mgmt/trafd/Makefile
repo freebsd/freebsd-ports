@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trafd
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
@@ -26,8 +26,8 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/bpft
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/bpft/README
+	${MKDIR} ${PREFIX}/share/doc/trafd
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/trafd/README
 .endif
 	${MKDIR} ${PREFIX}/var/trafd
 	${MKDIR} ${PREFIX}/var/log

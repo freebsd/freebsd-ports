@@ -1,12 +1,12 @@
-bpft is a superset of trafshow, and extends it by adding a daemon
+trafd is a superset of trafshow, and extends it by adding a daemon
 which collects data about network connections (src, dst, protocol
 and length). The resulting data can be dumped to a file for later
 processing.
 
-Read /usr/local/share/doc/bpft/README after installation for more
+Read /usr/local/share/doc/trafd/README after installation for more
 information.
 
-To use bpft, your kernel must be rebuilt with the following line
+To use trafd, your kernel must be rebuilt with the following line
 added to your kernel config file (/sys/i386/conf/<YourMachine>):
 
 pseudo-device   bpfilter        4       # Berkeley packet filter
