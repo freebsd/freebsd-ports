@@ -7,11 +7,21 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
-.if defined(WNN6)
-.endif
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
+.if defined(CANNA) && defined(FREEWNN)
+PKGNAMESUFFIX+=	-canna+freewnn
+.elif defined(CANNA) && defined(WNN6)
+PKGNAMESUFFIX+=	-canna+wnn6
+.elif defined(FREEWNN)
+PKGNAMESUFFIX+=	-freewnn
+.elif defined(WNN6)
+PKGNAMESUFFIX+=	-wnn6
+.elif defined(CANNA)
+PKGNAMESUFFIX+=	-canna
+.endif
 DISTNAME=	xemacs-${XEMACS_VER}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 		${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
@@ -20,26 +30,19 @@ DIST_SUBDIR=	xemacs
 MAINTAINER?=	anrays@gmail.com
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
-USE_GNOME=	#
-
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
-RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages \
-		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
+BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${PORTSDIR}/editors/xemacs-mule-packages
+RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${PORTSDIR}/editors/xemacs-mule-packages
 .if defined(PKGNAMEPREFIX)
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs21-mule
 .endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		compface.1:${PORTSDIR}/mail/faces \
-		${LIB_INPUT_METHOD}
+		compface.1:${PORTSDIR}/mail/faces
 
-XEMACS_MAJOR_VER?=	21
-XEMACS_REL=		${XEMACS_MAJOR_VER}.4
-XEMACS_VER=		${XEMACS_MAJOR_VER}.4.16
-XEMACS_ARCH=		${CONFIGURE_TARGET}
+XEMACS_REL=	21.4
+XEMACS_VER=	${XEMACS_REL}.16
+XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 USE_GETTEXT=	yes
 USE_XLIB=	yes
@@ -67,10 +70,8 @@ CONFIGURE_ARGS=	--with-x11 \
 		--with-clash-detection \
 		--with-database=berkdb \
 		${WITH_XIM} \
-		${WITH_ATHENA} \
-		${WITH_MENUBARS} ${WITH_SCROLLBARS} ${WITH_DIALOGS} ${WITH_WIDGETS} \
-		${WITH_OFFIX} ${WITH_GTK} \
-		${WITH_INPUT_METHOD}
+		${WITH_MENUBARS} ${WITH_SCROLLBARS} \
+		${WITH_DIALOGS} ${WITH_WIDGETS}
 MAKE_ARGS=	prefix=${PREFIX}
 ALL_TARGET=	all dist
 .if defined(PKGNAMEPREFIX)
@@ -85,18 +86,26 @@ MAN1=		xemacs.1
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 .endif
+
+.if defined(WITH_GTK)
+CONFIGURE_ARGS+=--with-gtk
+USE_GNOME+=	gtk12
+.endif
+
 PKGDIR=		${.CURDIR}/../../editors/xemacs21-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
+.include <bsd.port.pre.mk>
+
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+= --with-system-malloc --pdump
+CONFIGURE_ARGS+=--with-system-malloc --pdump
 .endif
 
 pre-fetch:
-.if !defined(WANT_GTK)
-	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK and recompile."
+.if !defined(WITH_GTK)
+	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WITH_GTK and recompile."
 .endif
 .if !defined(WITHOUT_MOTIF)
 .if !defined(MOTIF_STATIC)
@@ -115,55 +124,50 @@ WITH_DIALOGS=	--with-dialogs=athena
 WITH_DIALOGS=	--with-dialogs=motif
 .endif
 
-.if defined(WANT_GTK)
-WITH_GTK=	--with-gtk=yes
-USE_GNOME+=	gtk12
-.endif
-
 .if defined(PACKAGE_BUILDING)
-WITH_OFFIX?=	--with-offix=no
+CONFIGURE_ARGS+=--with-offix=no
 .endif
-WITH_ATHENA?=	--with-athena=xaw
 WITH_MENUBARS?=	--with-menubars=lucid
 WITH_SCROLLBARS?=--with-scrollbars=motif
 WITH_WIDGETS?=	--with-widgets=motif
 .endif
 WITH_XIM?=	--with-xim=xlib
-WITH_ATHENA?=	--with-athena=xaw
 WITH_MENUBARS?=	--with-menubars=athena
 WITH_SCROLLBARS?=--with-scrollbars=athena
 WITH_DIALOGS?=	--with-dialogs=athena
 WITH_WIDGETS?=	--with-widgets=athena
 
+.if defined(WITH_XAW3D)
+CONFIGURE_ARGS+=--with-athena=3d
+.else
+CONFIGURE_ARGS+=--with-athena=xaw
+.endif
+
 BINNAMEEXT=		-mule
 .if defined(CANNA) && defined(FREEWNN)
-PKGNAMESUFFIX=		-canna+freewnn
-WITH_INPUT_METHOD=	--with-canna --with-wnn --with-wnn6=no
-LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
+CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
 			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .elif defined(CANNA) && defined(WNN6)
-PKGNAMESUFFIX=		-canna+wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
-WITH_INPUT_METHOD=	--with-canna --with-wnn6
-LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
+CONFIGURE_ARGS+=	--with-canna --with-wnn6
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
 			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(FREEWNN)
-PKGNAMESUFFIX=		-freewnn
-WITH_INPUT_METHOD=	--with-wnn --with-canna=no --with-wnn6=no
-LIB_INPUT_METHOD=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+CONFIGURE_ARGS+=	--with-wnn --with-canna=no --with-wnn6=no
+LIB_DEPENDS+=		wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .elif defined(WNN6)
-PKGNAMESUFFIX=		-wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
-WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no
-LIB_INPUT_METHOD=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
+CONFIGURE_ARGS+=	--with-wnn6 --with-canna=no
+LIB_DEPENDS+=		wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(CANNA)
-PKGNAMESUFFIX=		-canna
-WITH_INPUT_METHOD=	--with-canna --with-wnn=no --with-wnn6=no
-LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
+CONFIGURE_ARGS+=	--with-canna --with-wnn=no --with-wnn6=no
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
+.else
+CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
 SITE_INCLUDES+=		${LOCALBASE}/include
 SITE_LIBRARIES+=	${LOCALBASE}/lib
-WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 
 # fix .so references in a few man pages
 pre-configure::
@@ -186,7 +190,7 @@ post-install::
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-.if defined(WANT_GTK)
+.if defined(WITH_GTK)
 	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
 	@${ECHO_MSG} "the maintainer."
 	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
