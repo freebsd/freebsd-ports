@@ -8294,6 +8294,7 @@ plb		ports/net/plb
 plconfig	ports/sysutils/plconfig
 plib		ports/x11-toolkits/plib
 pload		ports/net/pload
+plog		ports/www/plog
 plone		ports/www/plone
 plor		ports/news/plor
 ploticus	ports/math/ploticus
