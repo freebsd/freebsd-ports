@@ -1,0 +1,20 @@
+# New ports collection makefile for:	asm2html
+# Date created:				5 June 2003
+# Whom:					Ben Haga <tuxsuximus@hotmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	asm2html
+PORTVERSION=	1.4
+CATEGORIES=	textproc
+MASTER_SITES=	http://virtus.ath.cx/asm2html/
+
+MAINTAINER=	tuxsuximus@hotmail.com
+COMMENT=	Converts NASM syntax assembly code to HTML code
+
+MAN1=		asm2html.1
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX}
+
+.include <bsd.port.mk>
