@@ -3,12 +3,12 @@
 # Date created:        Wed Nov  4 08:48:08 EST 1998
 # Whom:                maurice
 #
-# $Id: Makefile,v 1.3 1999/05/04 22:36:19 steve Exp $
+# $Id: Makefile,v 1.4 1999/05/29 04:38:13 steve Exp $
 #
 
 DISTNAME=	radiusclient-0.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/
+MASTER_SITES=	ftp://ftp.hamburg.cityline.net/pub/radiusclient/
 
 MAINTAINER=	maurice@serc.rmit.edu.au
 
