@@ -4,14 +4,14 @@
 # Date created:                         20 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.6 1998/09/01 10:39:42 ache Exp $
+# $Id: Makefile,v 1.7 1998/09/15 21:31:54 asami Exp $
 #
 
 DISTNAME=       WebMagick-1.44
 CATEGORIES=     www
 MASTER_SITES=   http://www.cyberramp.net/~bfriesen/webmagick/dist/
 
-LIB_DEPENDS=    Magick\\.:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=    Magick.4:${PORTSDIR}/graphics/ImageMagick
 
 MAINTAINER=     ache@freebsd.org
 
