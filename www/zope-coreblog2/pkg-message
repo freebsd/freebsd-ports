@@ -1,3 +1,13 @@
 To complete the installation of COREBlog
 
 - Restart Zope.  This may be done from the Zope Control Panel.
+
+Do you upgrade from 0.70b or before?  So, you should modify your blog
+to add a file rsd_xml (Really Simple Discoverablitiy).
+
+ 1. In ZMI, open your blog and click contents tab.
+ 2. Select blog_header object and add a line below:
+      <link rel="EditURI" type="application/rsd+xml" title="RSD"
+          href="<dtml-var blogurl missing="">/rsd_xml" />
+ 3. Add 'rsd_xml' DTML Document
+ 4. Copy into 'rsd_xml' from /your/Zope/Product-dir/COREBlog/dtml/rsd_xml.dtml
