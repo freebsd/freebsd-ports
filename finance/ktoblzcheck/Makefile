@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	0.4
+PORTVERSION=	1.0
 CATEGORIES=	finance german
 MASTER_SITES=	http://ktoblzcheck.sourceforge.net/download/:misc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:main/}
@@ -19,7 +19,10 @@ COMMENT=	Check bank codes of German banks
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALLS_SHLIBS=	yes
 
 MAN1=		ktoblzcheck.1
 
