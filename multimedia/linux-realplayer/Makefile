@@ -17,8 +17,7 @@ COMMENT=	Linux RealPlayer 10 from RealNetworks
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	\
 	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8 \
-	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-	${LINUXBASE}/usr/lib/libesd.so.0:${PORTSDIR}/audio/linux-esound
+	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386
