@@ -30,11 +30,6 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mimlib}!="" && !defined(WITHOUT_GNOME)
-USE_GNOME+=	imlib
-PKGNAMESUFFIX=	-imlib
-.endif
-
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_STROKE)
@@ -52,16 +47,19 @@ CONFIGURE_ARGS+=	--disable-shape
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.if defined(HAVE_GNOME) && !defined(WITHOUT_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME=	imlib
+PKGNAMESUFFIX=	-imlib
 CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
 			--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
+PLIST_SUB+=	GTK=""
 .else
 CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
 			--disable-gtktest --disable-imlibtest
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
+PLIST_SUB+=	GTK="@comment not installed: "
 .endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
