@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish" \
 		--disable-nls
 
+MANCOMPRESSED=	yes
 MAN1=		bluefish.1
 
 post-install:

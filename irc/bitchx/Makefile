@@ -26,6 +26,8 @@ CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L{LOCALBASE}/lib"
 
+MAN1=		BitchX.1
+
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GNOME)

@@ -269,3 +269,4 @@ share/locale/tr/LC_MESSAGES/screem.mo
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
 @dirrm lib/screem/plugins
+@dirrm lib/screem

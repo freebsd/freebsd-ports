@@ -126,7 +126,7 @@ lib/libvdkcalendar.so.1
 lib/libvdkdclock.a
 lib/libvdkdclock.so
 lib/libvdkdclock.so.1
-share/gnome/pixmaps/vdkb.png
+%%GNOME:%%share/gnome/pixmaps/vdkb.png
 %%DATADIR%%/vdkb/res/AUTHORS
 %%DATADIR%%/vdkb/res/COPYING
 %%DATADIR%%/vdkb/res/ChangeLog
