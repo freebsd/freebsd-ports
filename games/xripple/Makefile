@@ -1,15 +1,23 @@
-# new ports collection makefile for:	xripple
-# Version:				1.0 <no version #>
+# New ports collection makefile for:	xripple
+# Version required:			1.0 <no version #>
 # Date created:				6 Oct 1996
 # Whom:					oly
 #
-# $Id: Makefile,v 1.4 1997/06/12 06:08:02 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/03 13:39:48 jseger Exp $
 #
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.easynet.net/pub/X/wm/enlightenment/enlightenment/misc/
+MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
+		ftp://ftp.cin.nihon-u.ac.jp/pub/X11/enlightenment/misc/ \
+		ftp://ftp.compnet.ru/pub/incoming/Faiy/Linux/ \
+		ftp://ftp.dataplus.se/pub/linux/enlightenment/misc/ \
+		ftp://ftp.devolution.com/pub/enlightenment/ \
+		ftp://ftp.dti.ad.jp/.1/X/e/ \
+		ftp://ftp.gui.uva.es/pub/linux.new/software/X11/winman/enlightenment/ \
+		ftp://ftp.gwdg.de/pub/linux/tux/x/enlightenment/enlightenment/misc/ \
+		ftp://ftp.pconline.com/users/gjerde/enlightenment/
 
 MAINTAINER=	oly@world.std.com
 
