@@ -1561,6 +1561,7 @@ etherboot	ports/net/etherboot
 ethereal	ports/net/ethereal
 etlfonts	ports/x11-fonts/etlfonts
 ettercap	ports/net/ettercap
+euchre		ports/games/euchre
 eudc-emacs20	ports/net/eudc-emacs20
 eukleides	ports/math/eukleides
 euler		ports/science/euler
