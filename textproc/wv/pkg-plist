@@ -20,6 +20,7 @@ include/wv/wv.h
 include/wv/wvexporter.h
 lib/libwv.a
 lib/libwv.so
+lib/libwv-1.0.so
 lib/libwv-1.0.so.0
 libdata/pkgconfig/wv-1.0.pc
 share/wv/patterns/100.gif
