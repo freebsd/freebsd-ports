@@ -7,7 +7,7 @@
 
 PORTNAME=	amavisd
 PORTVERSION=	20020300
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.amavis.org/dist/perl/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
@@ -39,6 +39,8 @@ AMAVISGROUP?=	vscan
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --with-amavisuser=${AMAVISUSER}:${AMAVISGROUP}
 
+STARTSCRIPT=	amavisd.sh
+
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
 MTA?=		postfix
@@ -47,19 +49,24 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 CONFIGURE_ARGS+=	--enable-postfix
 MTA?=		postfix
 RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
+.elif defined(WITH_MILTER)
+CONFIGURE_ARGS+=	--enable-milter
+MTA?=		milter
+PLIST=		${PKGDIR}/pkg-plist.milter
+STARTSCRIPT=	amavisd-milter.sh
 .else
 CONFIGURE_ARGS+=	--enable-sendmail
 MTA?=		sendmail
 .endif
 
 post-patch:
-	@${SED} 's,%%AMAVISUSER%%,${AMAVISUSER},g' ${FILESDIR}/amavisd.sh > ${WRKSRC}/amavisd.sh
+	@${SED} 's,%%AMAVISUSER%%,${AMAVISUSER},g' ${FILESDIR}/${STARTSCRIPT} > ${WRKSRC}/${STARTSCRIPT}
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${AMAVISUSER} ${AMAVISGROUP}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/${STARTSCRIPT} ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in FAQ INSTALL README README.exim README.milter README.postfix README.qmail README.scanners README.sendmail doc/amavis.html doc/amavis.m4 doc/amavis.png doc/amavis.txt
