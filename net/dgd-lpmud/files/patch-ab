@@ -1,46 +1,17 @@
 $FreeBSD$
 
-*** rundgd.old	Thu Jan 16 03:13:15 1997
---- rundgd	Thu Jan 16 03:28:42 1997
-***************
-*** 1,10 ****
-  #!/bin/sh
-  
-  passwd=HNAMEPASS
-  while true
-  do
-!     mv 2.4.5/lpmud.log 2.4.5/lpmud.log.old
-!     date > 2.4.5/lpmud.log
-!     hname 6047 $passwd &
-!     driver lpmud.dgd >> 2.4.5/lpmud.log 2>&1
-  done > /dev/null 2>&1
---- 1,11 ----
-  #!/bin/sh
-
-+ dgd=%%PREFIX%%/dgd
-+ cd $dgd/lpmud-2.4.5
-  passwd=HNAMEPASS
-  while true
-  do
-!     mv lpmud.log lpmud.log.old
-!     date > lpmud.log
-!     $dgd/bin/hname 2000 $passwd &
-!     $dgd/bin/driver $dgd/lpmud.dgd >> lpmud.log 2>&1
-  done > /dev/null 2>&1
-*** lpmud.dgd.old	Thu Jan 16 03:10:34 1997
---- lpmud.dgd	Thu Jan 16 03:13:00 1997
-***************
-*** 1,6 ****
-  telnet_port	= 2000;			/* telnet port number */
-  binary_port	= 1999;			/* binary port number */
-! directory	= "/usr/local/mud/2.4.5";/* base directory (MUST be absolute) */
-  users		= 40;			/* max # of users */
-  editors		= 41;			/* max # of editor sessions */
-  ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
---- 1,6 ----
-  telnet_port	= 2000;			/* telnet port number */
-  binary_port	= 1999;			/* binary port number */
-! directory	= "%%PREFIX%%/dgd/lpmud-2.4.5";/* base directory (MUST be absolute) */
-  users		= 40;			/* max # of users */
-  editors		= 41;			/* max # of editor sessions */
-  ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+--- lpmud.dgd.orig	Thu Dec 12 17:57:25 1996
++++ lpmud.dgd	Thu Aug 28 14:52:40 2003
+@@ -1,10 +1,10 @@
+ telnet_port	= 2000;			/* telnet port number */
+ binary_port	= 1999;			/* binary port number */
+-directory	= "/usr/local/mud/2.4.5";/* base directory (MUST be absolute) */
++directory	= "%%DATADIR%%/lpmud";/* base directory (MUST be absolute) */
+ users		= 40;			/* max # of users */
+ editors		= 41;			/* max # of editor sessions */
+ ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+-swap_file	= "../tmp/swap";	/* swap file */
++swap_file	= "../tmp/dgd-lpmud.swap";/* swap file */
+ swap_size	= 20960;		/* # sectors in swap file */
+ cache_size	= 100;			/* # sectors in swap cache */
+ sector_size	= 1024;			/* swap sector size */
