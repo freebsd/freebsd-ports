@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treecc
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
@@ -15,12 +15,8 @@ COMMENT=	Treecc program is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_AUTOMAKE=	yes
+USE_GMAKE=	yes
 MAN1=		treecc.1
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|etc doc tests examples|etc doc|g' \
-		${WRKSRC}/Makefile.*
 
 post-install:
 	@${LN} -sf treecc ${PREFIX}/bin/${DISTNAME}
