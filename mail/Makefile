@@ -344,6 +344,7 @@
     SUBDIR += tmda
     SUBDIR += tpop3d
     SUBDIR += turba
+    SUBDIR += uebimiau
     SUBDIR += vbsfilter
     SUBDIR += vm
     SUBDIR += vm-pop3d
