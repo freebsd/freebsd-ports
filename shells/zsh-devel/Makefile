@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	3.1.7.p2
+PORTVERSION=	3.1.7.p4
 CATEGORIES=	shells
 MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
 		ftp://ftp.zsh.org/%SUBDIR%/ \
@@ -24,7 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	shige@FreeBSD.org
 
 ZSH_VER=	${PORTVERSION:S/.p/-pre-/}
-ZSHFUNC_FILES=	zsh-functions-freebsd-2000.04.29.tar.gz
+ZSHFUNC_FILES=	zsh-functions-freebsd-2000.05.15.tar.gz
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
@@ -33,7 +33,16 @@ INSTALL_TARGET=	install install.info
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1 zshmodules.1 \
 		zshzftpsys.1 zshcompsys.1 zshcompwid.1
-PLIST_SUB=	ZSH_VER=${ZSH_VER} ZSHFUNC_SUBDIR=${ZSHFUNC_SUBDIR}
+PLIST_SUB=	ZSH_VER="${ZSH_VER}" ZSHFUNC_SUBDIR="${ZSHFUNC_SUBDIR}" \
+		LIBZSH="${LIBZSH}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400013
+LIBZSH=		@comment lib/zsh/libzsh-${ZSH_VER}.so
+.else
+LIBZSH=		lib/zsh/libzsh-${ZSH_VER}.so
+.endif
 
 # If you want to build a static binary, uncomment the following line
 #LDFLAGS+=-static
@@ -66,4 +75,4 @@ post-install:
 	  ${ECHO} ${PREFIX}/bin/zsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

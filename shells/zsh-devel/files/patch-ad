@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed May  3 03:01:17 2000
++++ configure.in	Wed May 17 21:34:02 2000
+@@ -1489,7 +1489,7 @@
+   esac
+   case "$host" in
+     *-hpux*)  EXTRA_LDFLAGS="${EXTRA_LDFLAGS=-Wl,-E}" ;;
+-    *-freebsd3*|*-freebsd4*|*-linux*) EXTRA_LDFLAGS="${EXTRA_LDFLAGS=-rdynamic}" ;;
++    *-freebsd[3-9]*|*-linux*) EXTRA_LDFLAGS="${EXTRA_LDFLAGS=-rdynamic}" ;;
+     mips-sni-sysv4)
+       #
+       # unfortunately, we have different compilers

@@ -1,5 +1,5 @@
---- Doc/zsh.texi.orig	Thu Apr 20 04:04:38 2000
-+++ Doc/zsh.texi	Sat Apr 29 00:05:57 2000
+--- Doc/zsh.texi.orig	Mon May  8 18:18:06 2000
++++ Doc/zsh.texi	Mon May 15 18:50:31 2000
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -28,16 +28,16 @@
  @end example
  
  @noindent
-@@ -2555,7 +2559,7 @@
- @t{histchars} parameter which is `@t{!}'
- by default and may occur anywhere on the command line; history
- expansions do not nest.  The `@t{!}' can be escaped with `@t{\}'
--or can be enclosed between a pair of single quotes (@t{@value{dsq}}) to suppress
-+or can be enclosed between a pair of single quotes (@t{'}@t{'}) to suppress
- its special meaning. Double quotes will @emph{not} work for this.
- 
- @noindent
-@@ -6092,7 +6096,7 @@
+@@ -2571,7 +2575,7 @@
+ A history expansion begins with the first character of the @t{histchars}
+ parameter, which is `@t{!}' by default, and may occur anywhere on the
+ command line; history expansions do not nest.  The `@t{!}' can be escaped
+-with `@t{\}' or can be enclosed between a pair of single quotes (@t{@value{dsq}})
++with `@t{\}' or can be enclosed between a pair of single quotes (@t{'}@t{'})
+ to suppress its special meaning.  Double quotes will @emph{not} work for
+ this.  Following this history character is an optional event designator
+ (@ref{Event Designators}) and then an optional word
+@@ -6137,7 +6141,7 @@
  @example
  unsetopt localtraps
  trap - INT
@@ -46,7 +46,7 @@
  @end example
  
  @noindent
-@@ -6313,7 +6317,7 @@
+@@ -6358,7 +6362,7 @@
  @cindex rc, quoting style
  @cindex quoting style, rc
  @item @t{RC_QUOTES}
@@ -55,7 +55,7 @@
  within singly quoted strings.
  
  @pindex RCS
-@@ -9328,7 +9332,7 @@
+@@ -9373,7 +9377,7 @@
  @item @t{quote-line} (ESC-') (unbound) (unbound)
  Quote the current line; that is, put a `@t{'}' character at the
  beginning and the end, and convert all `@t{'}' characters
@@ -64,7 +64,7 @@
  
  @tindex quote-region
  @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -10112,7 +10116,7 @@
+@@ -15230,7 +15234,7 @@
  
  @noindent
  @example
@@ -73,7 +73,7 @@
  @end example
  
  @noindent
-@@ -10200,7 +10204,7 @@
+@@ -15318,7 +15322,7 @@
  
  @noindent
  @example
@@ -82,7 +82,7 @@
  @end example
  
  @noindent
-@@ -16239,7 +16243,7 @@
+@@ -16469,7 +16473,7 @@
  paranoid behaviour, intended to avoid common security problems involving
  a root-run @t{rm} being tricked into removing files other than the ones
  intended.  It will refuse to follow symbolic links, so that (for example)
@@ -91,7 +91,7 @@
  if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
  where it is after leaving directories, so that a recursive removal of
  a deep directory tree can't end up recursively removing @t{/usr} as
-@@ -16638,7 +16642,7 @@
+@@ -16868,7 +16872,7 @@
  @item @t{link}
  If the file is a link and the @t{-L} option is in
  effect, this contains the name of the file linked to, otherwise
