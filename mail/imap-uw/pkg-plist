@@ -10,3 +10,4 @@ lib/lib%%SHLIBBASE%%.so
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
+libexec/mlock

@@ -1,5 +1,5 @@
 This is the IMAP4rev1 server from the University of Washington.
-Included are backwares-comaptible (almost) POP2 and POP3 servers.
+Included are (almost) backwards-compatible POP2 and POP3 servers.
 
         ipop2d           POP2 daemon
         ipop3d           POP3 daemon
@@ -12,9 +12,10 @@ pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
 pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
 imap4   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
 
-You may also have to edit your /etc/services (or Yellow Pages,
-NetInfo, etc. equivalent) to register these services, such as:
+If you compiled in PAM authentication support then you also have to add the
+following lines to your /etc/pam.conf:
 
-pop             109/tcp
-pop3            110/tcp
-imap4           143/tcp		[imap2 and imap4 share the same port again]
+imap	auth	required	pam_unix.so			try_first_pass
+imap	account	required	pam_unix.so			try_first_pass
+pop	auth	required	pam_unix.so			try_first_pass
+pop	account	required	pam_unix.so			try_first_pass

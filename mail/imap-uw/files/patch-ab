@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Wed Jan 27 01:17:39 1999
-+++ src/osdep/unix/Makefile	Sat Feb 27 17:16:00 1999
-@@ -100,7 +100,7 @@
+--- src/osdep/unix/Makefile.orig	Wed Nov 17 04:05:48 1999
++++ src/osdep/unix/Makefile	Wed Dec 22 00:43:23 1999
+@@ -104,7 +104,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -9,8 +9,8 @@
  MAKE=make
  MV=mv
  RM=rm -rf
-@@ -115,6 +115,10 @@
-  PASSWDTYPE=$(PASSWDTYPE)
+@@ -119,6 +119,10 @@
+  PASSWDTYPE=$(PASSWDTYPE) SPECIALAUTHENTICATORS="$(SPECIALAUTHENTICATORS)"
  BUILD=$(MAKE) build $(BUILDOPTIONS)
  
 +# Need this for the shared library rule to work correctly
@@ -20,16 +20,34 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -190,7 +194,7 @@
+@@ -178,6 +182,16 @@
+ 	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst= -DNFSKLUDGE" \
+ 	 RANLIB=true ARRC="ar -rc"
+ 
++bfp:	# FreeBSD Pluggable Authentication Modules
++	$(BUILD) `cat EXTRASPECIALS` OS=bsi SIGTYPE=psx \
++	 CHECKPW=pam \
++	 SPOOLDIR=/var \
++	 ACTIVEFILE=/usr/local/news/lib/active \
++	 RSHPATH=/usr/bin/rsh \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS="-lpam -lcrypt"
++
+ bs3:	# BSD/i386 3.0 or higher
+ 	$(BUILD) `cat EXTRASPECIALS` OS=bsi CHECKPW=bsi LOGINPW=bsi \
+ 	 SPOOLDIR=/var NEWSSPOOL=/var/news/spool \
+@@ -194,7 +208,8 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
 -	 BASECFLAGS="-g -O -pipe -DNFSKLUDGE" \
-+	 BASECFLAGS="-DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS" \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
  	 BASELDFLAGS="-lcrypt"
  
  bsi:	# BSD/i386
-@@ -606,19 +610,31 @@
+@@ -627,19 +642,31 @@
  
  # Build it!
  
@@ -63,7 +81,7 @@
  
  
  # Dependencies
-@@ -652,7 +668,7 @@
+@@ -673,7 +700,7 @@
  
  # OS-dependent
  
@@ -72,7 +90,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -664,7 +680,12 @@
+@@ -685,7 +712,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
