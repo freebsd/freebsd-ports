@@ -9,7 +9,7 @@
 PORTNAME=	braincurses
 PORTVERSION=	0.5a
 CATEGORIES=	games
-MASTER_SITES=	http://uhaweb.hartford.edu/hyland/derr/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A clone of the Mastermind game
