@@ -6,31 +6,29 @@ include/libcomprex/comprex.h
 include/libcomprex/directory.h
 include/libcomprex/file.h
 include/libcomprex/fp.h
+include/libcomprex/fsiter.h
+include/libcomprex/fsnode.h
 include/libcomprex/io.h
 include/libcomprex/module.h
 include/libcomprex/types.h
 include/libcomprex/utils.h
-lib/comprex/archive/libar.a
 lib/comprex/archive/libar.la
 lib/comprex/archive/libar.so
-lib/comprex/archive/libbzip2.a
 lib/comprex/archive/libbzip2.la
 lib/comprex/archive/libbzip2.so
-lib/comprex/archive/libtar.a
 lib/comprex/archive/libtar.la
 lib/comprex/archive/libtar.so
-lib/comprex/archive/libzlib.a
 lib/comprex/archive/libzlib.la
 lib/comprex/archive/libzlib.so
-lib/comprex/scheme/libcurlscm.a
 lib/comprex/scheme/libcurlscm.la
 lib/comprex/scheme/libcurlscm.so
 lib/libcomprex.a
 lib/libcomprex.la
 lib/libcomprex.so
-lib/libcomprex.so.2
+lib/libcomprex.so.3
 share/aclocal/libcomprex.m4
-@dirrm include/libcomprex
-@dirrm lib/comprex/archive
+share/locale/nl/LC_MESSAGES/libcomprex.mo
 @dirrm lib/comprex/scheme
+@dirrm lib/comprex/archive
 @dirrm lib/comprex
+@dirrm include/libcomprex
