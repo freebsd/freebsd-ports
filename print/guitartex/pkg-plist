@@ -1,0 +1,11 @@
+bin/guitartex
+share/guitartex/chord-common.ps
+share/guitartex/down.gif
+share/guitartex/filenew.gif
+share/guitartex/fileopen.gif
+share/guitartex/filesave.gif
+share/guitartex/pdf.gif
+share/guitartex/postscript.gif
+share/guitartex/tex.gif
+share/guitartex/up.gif
+@dirrm share/guitartex

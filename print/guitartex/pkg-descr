@@ -1,0 +1,10 @@
+GuitarTeX converts the Chord format into "normal" LaTeX format like a kind
+of preprocessor. This may be a single song or even a complete songbook. You
+may as well translate your chord file directly into postscript or PDF format.
+
+If you know LaTeX, you may edit the output file. The advantage of GuitarTeX
+is that you can use all LaTeX features to design a single song sheet or
+songbook, e.g.: packages like graphics or MusicTeX, table of contents,
+marginpar's, and so on.
+
+WWW: http://guitartex.sourceforge.net/
