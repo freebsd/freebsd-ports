@@ -17,6 +17,15 @@
  
  : Test and see if we are running under ksh, either blatantly or in disguise.
  if (PATH=.; alias -x) >/dev/null 2>&1; then
+@@ -732,7 +732,7 @@
+ inclwanted=''
+
+ : change the next line if compiling for Xenix/286 on Xenix/386
+-xlibpth='/usr/lib/386 /lib/386'
++xlibpth='/usr/lib/aout /usr/lib/386 /lib/386'
+
+ : Possible local library directories to search.
+ loclibpth="/usr/local/lib /opt/local/lib /usr/gnu/lib"
 @@ -756,7 +756,7 @@
  : List of libraries we want.
  libswanted='sfio net socket inet nsl nm ndbm gdbm dbm db malloc dl'
