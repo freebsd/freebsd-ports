@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	4.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -128,5 +128,8 @@ pre-configure:
 	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .endif
+
+post-install:
+	${CHMOD} o-rwx ${PREFIX}/vpopmail/bin ${PREFIX}/vpopmail/lib
 
 .include <bsd.port.mk>
