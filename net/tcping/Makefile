@@ -8,7 +8,7 @@
 PORTNAME=	tcping
 PORTVERSION=	1.3.4
 CATEGORIES=	net
-MASTER_SITES=	http://stud.fh-heilbronn.de/~kirchner/tcping/
+MASTER_SITES=	http://www.linuxco.de/tcping/
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Do a TCP connect to the given IP/port combination
