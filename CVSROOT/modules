@@ -7373,6 +7373,7 @@ phppgadmin	ports/databases/phppgadmin
 phpua-bf	ports/games/phpua-bf
 phpua-engine	ports/games/phpua-engine
 phpua-hl	ports/games/phpua-hl
+phpua-q3	ports/games/phpua-q3
 phpwiki		ports/www/phpwiki
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
