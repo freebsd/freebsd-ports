@@ -1,2 +1,4 @@
-C<Tk::HistEntry> defines entry widgets with history capabilities. The widgets
-come in two flavours:
+Tk::HistEntry implements an entry widget with history. You may use the up
+and down keys to select older entries (or use the associated listbox).
+
+WWW: http://search.cpan.org/search?dist=Tk-HistEntry
