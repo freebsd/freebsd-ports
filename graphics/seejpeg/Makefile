@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	services@nevernet.net
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
