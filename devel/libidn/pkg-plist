@@ -21,6 +21,8 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/ro/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libidn.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
