@@ -32,6 +32,7 @@ RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
+USE_SUBMAKE=	yes
 LINUX_DIR=	/compat/linux
 VMDIR=		${PREFIX}/lib/vmware
 

@@ -27,6 +27,7 @@ PATCHFILES=	sasl_apop_patch.gz \
 
 MAINTAINER=	hetzels@westbend.net
 
+USE_SUBMAKE=	yes
 USE_OPENSSL=	YES
 
 INSTALLS_SHLIB=	yes

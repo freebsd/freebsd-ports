@@ -27,6 +27,7 @@ MAINTAINER?=	girgen@partitur.se
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
+USE_SUBMAKE=	yes
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 

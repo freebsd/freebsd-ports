@@ -21,6 +21,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khera@kciLink.com
 
+USE_SUBMAKE=	yes
+
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
 	postsuper.1 sendmail.1

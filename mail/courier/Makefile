@@ -49,6 +49,7 @@ MIMETYPES=	${LOCALBASE}/etc/apache/mime.types
 IS_INTERACTIVE=	yes
 .endif
 
+USE_SUBMAKE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes

@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 
 MAINTAINER=	joe@tao.org.uk
 
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}

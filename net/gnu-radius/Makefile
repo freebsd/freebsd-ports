@@ -14,6 +14,7 @@ MAINTAINER=	lance@evitel.net
 
 #MAKEFILE=	Makefile
 
+USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-include-path="${LOCALBASE}/include/" \

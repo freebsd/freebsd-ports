@@ -16,6 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_SUBMAKE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Log::Dispatch.3 \
