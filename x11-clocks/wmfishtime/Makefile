@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfishtime
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
@@ -14,14 +15,14 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
 GTK_LIBS?=	`${GTK_CONFIG} --libs`
 GTK_CFLAGS?=	`${GTK_CONFIG} --cflags`
-MAKE_ARGS+=	CFLAGS="${CFLAGS} -Wall -I${LOCALBASE}/include ${GTK_CFLAGS}" \
+MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall ${GTK_CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
 		GTK_LIBS="${GTK_LIBS}"
 
 do-install:

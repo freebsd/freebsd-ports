@@ -7,6 +7,7 @@
 
 PORTNAME=	wmmount
 PORTVERSION=	1.0b2
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker afterstep
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	${PORTNAME}-1.0-beta2
@@ -15,14 +16,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The freespace for Window Maker
 
+USE_GETOPT_LONG=yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
 
 post-patch:
 .for file in system.wmmount.eg system.wmmount.sh
