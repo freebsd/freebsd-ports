@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.13 1997/06/30 07:11:02 peter Exp $
+# $Id: Makefile,v 1.14 1997/08/26 22:29:48 pst Exp $
 #
 
 DISTNAME=       gnats-3.104-beta
@@ -15,7 +15,6 @@ MAINTAINER=	pst@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-NO_PACKAGE=	"Requires gnats UID"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/share/emacs/site-lisp \
@@ -38,8 +37,16 @@ post-build:
 	(cd ${WRKSRC}/gnats;   ${MAKE} info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} info)
 
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+
 post-install:
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} install-info)
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
+	install-info ${PREFIX}/info/gnats.info   ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/send-pr.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
