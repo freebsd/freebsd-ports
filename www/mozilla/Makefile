@@ -25,7 +25,6 @@ LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
