@@ -22,11 +22,24 @@ LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
+		"--with-xdmdir=${X11BASE}/lib/X11/xdm"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS) -DHAVE_GETUSERSHELL -DTIME_WITH_SYS_TIME" \
-		INSTALL_SCRIPT="install -c -m 555"
+		INSTALL_SCRIPT="install -c -m 555" \
+		PATH="${PATH}:${X11BASE}/bin"
 USE_GMAKE=	yes
 MAKE_ENV=	RM=${RM}
 CFLAGS+=	"-I$(PREFIX)/include"
+
+KSSES=	kattraction.kss kbanner.kss kbat.kss kblankscrn.kss \
+	kblob.kss kbouboule.kss kbsod.kss kflame.kss kforest.kss \
+	khop.kss klaser.kss klines.kss klissie.kss kmatrix.kss \
+	kmorph3d.kss kpipes.kss kpolygon.kss kpyro.kss krock.kss \
+	kscience.kss kslidescreen.kss kslip.kss kspace.kss kswarm.kss 
+
+post-install:
+.for KSS in $(KSSES)
+	$(CHMOD) 4555 $(PREFIX)/bin/$(KSS)
+.endfor
 
 .include <bsd.port.mk>
