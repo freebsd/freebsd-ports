@@ -17,7 +17,7 @@ MAINTAINER?=	tg@FreeBSD.org
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS=	--with-fpectl
+CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 MAN1=		python.1
