@@ -20,6 +20,6 @@ USE_MOTIF=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/xmbibtex lib/X11/app-defaults/XmBibTeX
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
