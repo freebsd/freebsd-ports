@@ -1,3 +1,7 @@
 bin/gnomekiss
 share/gnome/pixmaps/gnomekiss/gnome-kiss.png
+share/gnome/apps/Games/gnomekiss.desktop
+share/locale/en_GB/LC_MESSAGES/gnomekiss.mo
+share/locale/es/LC_MESSAGES/gnomekiss.mo
+share/locale/es_ES/LC_MESSAGES/gnomekiss.mo
 @dirrm share/gnome/pixmaps/gnomekiss

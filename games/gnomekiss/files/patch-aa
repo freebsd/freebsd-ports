@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jan 21 00:14:10 2002
++++ configure	Sat Jan 26 20:37:38 2002
+@@ -4007,7 +4007,7 @@
+ PACKAGE_PIXMAPS_DIR="`gnome-config --datadir`/pixmaps/${PACKAGE}"
+ 
+ 
+-GNOME_DESKTOP_DIR="`gnome-config --datadir`/gnome/apps"
++GNOME_DESKTOP_DIR="`gnome-config --datadir`/apps"
+ 
+ 
+ trap '' 1 2 15
