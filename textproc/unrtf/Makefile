@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/f2d5e56e-67eb-11d9-a9e7-0001020eed82.html
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2005-02-16
+
 USE_REINPLACE=	yes
 ALL_TARGET=	unrtf
 
