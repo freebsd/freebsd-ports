@@ -47,6 +47,7 @@ _JAVA_VERSIONS=		1.1 1.2 1.3 1.4
 _JAVA_HOME_FREEBSD_1_1=			${LOCALBASE}/jdk1.1.8
 _JAVA_HOME_FREEBSD_1_2=			${LOCALBASE}/jdk1.2.2
 _JAVA_HOME_FREEBSD_1_3=			${LOCALBASE}/jdk1.3.1
+_JAVA_HOME_FREEBSD_1_4=			${LOCALBASE}/jdk1.4.1
 _JAVA_HOME_BLACKDOWN_LINUX_1_2=	${LOCALBASE}/linux-blackdown-jdk1.2.2
 _JAVA_HOME_BLACKDOWN_LINUX_1_3=	${LOCALBASE}/linux-blackdown-jdk1.3.1
 _JAVA_HOME_BLACKDOWN_LINUX_1_4=	${LOCALBASE}/linux-blackdown-jdk1.4.1
@@ -59,6 +60,7 @@ _JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-sun-jdk1.4.1
 _JAVA_PORT_FREEBSD_1_1=			java/jdk11
 _JAVA_PORT_FREEBSD_1_2=			java/jdk12
 _JAVA_PORT_FREEBSD_1_3=			java/jdk13
+_JAVA_PORT_FREEBSD_1_4=			java/jdk14
 _JAVA_PORT_BLACKDOWN_LINUX_1_2=	java/linux-blackdown-jdk12
 _JAVA_PORT_BLACKDOWN_LINUX_1_3=	java/linux-blackdown-jdk13
 _JAVA_PORT_IBM_LINUX_1_3=		java/linux-ibm-jdk13
@@ -82,6 +84,7 @@ _DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
 .		undef HAVE_JAVA_FREEBSD_1_1
 .		undef HAVE_JAVA_FREEBSD_1_2
 .		undef HAVE_JAVA_FREEBSD_1_3
+.		undef HAVE_JAVA_FREEBSD_1_4
 .		undef HAVE_JAVA_BLACKDOWN_LINUX_1_2
 .		undef HAVE_JAVA_BLACKDOWN_LINUX_1_3
 .		undef HAVE_JAVA_IBM_LINUX_1_3
@@ -97,6 +100,9 @@ HAVE_JAVA_FREEBSD_1_2=	YES
 .		endif
 .		if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
 HAVE_JAVA_FREEBSD_1_3=	YES
+.		endif
+.		if exists(${_JAVA_HOME_FREEBSD_1_4}/${_JDK_FILE})
+HAVE_JAVA_FREEBSD_1_4=	YES
 .		endif
 .		if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE})
 HAVE_JAVA_BLACKDOWN_LINUX_1_2=	YES
@@ -134,6 +140,8 @@ JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_1}
 JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_2}
 .			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_3}
 JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_3}
+.                       elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_4}
+JAVA_PORT=      ${_JAVA_PORT_FREEBSD_1_4}
 .			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
 JAVA_PORT=	${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
 .			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_3}
@@ -191,7 +199,8 @@ USE_JAVA=	1.3
 			     defined(HAVE_JAVA_BLACKDOWN_LINUX_1_2) || \
 			     defined(HAVE_JAVA_SUN_LINUX_1_2)
 USE_JAVA=	1.2
-.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4)
+.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4) && \
+			     !defined(HAVE_JAVA_FREEBSD_1_4)
 USE_JAVA=	1.1
 .			else
 USE_JAVA=	1.4
@@ -203,7 +212,8 @@ USE_JAVA=	1.4
 			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
 			   defined(HAVE_JAVA_IBM_LINUX_1_3)
 USE_JAVA=	1.3
-.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4)
+.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4) && \
+			     !defined(HAVE_JAVA_FREEBSD_1_4)
 USE_JAVA=	1.2
 .			else
 USE_JAVA=	1.4
@@ -212,8 +222,9 @@ USE_JAVA=	1.4
 .			if defined(HAVE_JAVA_FREEBSD_1_3)   || \
 			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
 			   defined(HAVE_JAVA_IBM_LINUX_1_3) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
-			  !defined(HAVE_JAVA_SUN_LINUX_1_4)
+			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) && \
+			  !defined(HAVE_JAVA_SUN_LINUX_1_4) && \
+			  !defined(HAVE_JAVA_FREEBSD_1_4)
 USE_JAVA=	1.3
 .			else
 USE_JAVA=	1.4
@@ -324,14 +335,22 @@ JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_3}
 JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_3}
 .			endif
 
-# If the port needs JDK 1.4, then there's currently only one choice, the Sun
-# JDK 1.4.x for Linux.
+# If the port needs JDK 1.4, then there're currently two choices, the Sun
+# JDK 1.4.x for Linux and native port of it for FreeBSD.
 .		elif ${USE_JAVA} == "1.4"
+.			if !defined(HAVE_JAVA_FREEBSD_1_4)
 JAVA_VENDOR=	Sun
 JAVA_VER=		1.4.1
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_4}
 JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
+.			else
+JAVA_VENDOR=	FreeBSD
+JAVA_VER=		1.4.1
+JAVA_OS=		FreeBSD
+JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_4}
+JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_4}
+.			endif
 .		else
 .BEGIN:
 	@${ECHO} "${PKGNAME}: \"${USE_JAVA}\" is not a valid value for USE_JAVA. It should be one of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
