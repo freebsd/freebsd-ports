@@ -54,6 +54,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-extract.h \
 		${PATCHDIR}/extra-patch-print-802_11.c
 .endif
 
+.if defined(WITH_TCPMD5)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tcpmd5-print-tcp.c \
+		${PATCHDIR}/extra-patch-tcpmd5-tcp.h
+.endif
+
 LOCALPCAPDIR=	${WRKDIR}/libpcap-0.8.1
 LOCALPCAPFILES= include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
