@@ -3,7 +3,7 @@
 # Date created:				April 27th 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/05/07 16:28:35 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/06/24 15:59:07 vanilla Exp $
 #
 
 DISTNAME=	MIME-tools-4.121
@@ -31,7 +31,7 @@ MAN3=	MIME::IO.3			MIME::Entity.3 \
 	MIME::Field::ConTraEnc.3	MIME::Tools.3 \
 	MIME::Decoder::NBit.3		MIME::Head.3 \
 	MIME::Decoder.3			MIME::Field::ContDisp.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

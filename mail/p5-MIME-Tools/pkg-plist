@@ -1,25 +1,25 @@
-lib/perl5/site_perl/MIME/Body.pm
-lib/perl5/site_perl/MIME/Entity.pm
-lib/perl5/site_perl/MIME/Decoder.pm
-lib/perl5/site_perl/MIME/Decoder/QuotedPrint.pm
-lib/perl5/site_perl/MIME/Decoder/Base64.pm
-lib/perl5/site_perl/MIME/Decoder/Binary.pm
-lib/perl5/site_perl/MIME/Decoder/Gzip64.pm
-lib/perl5/site_perl/MIME/Decoder/NBit.pm
-lib/perl5/site_perl/MIME/Decoder/UU.pm
-lib/perl5/site_perl/MIME/Field/ConTraEnc.pm
-lib/perl5/site_perl/MIME/Field/ContDisp.pm
-lib/perl5/site_perl/MIME/Field/ContType.pm
-lib/perl5/site_perl/MIME/Field/ParamVal.pm
-lib/perl5/site_perl/MIME/Head.pm
-lib/perl5/site_perl/MIME/IO.pm
-lib/perl5/site_perl/MIME/Latin1.pm
-lib/perl5/site_perl/MIME/Parser.pm
-lib/perl5/site_perl/MIME/ParserBase.pm
-lib/perl5/site_perl/MIME/ToolUtils.pm
-lib/perl5/site_perl/MIME/Tools.pm
-lib/perl5/site_perl/MIME/Words.pm
-lib/perl5/site_perl/i386-freebsd/auto/MIME-tools/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/MIME-tools
-@dirrm lib/perl5/site_perl/MIME/Field
-@dirrm lib/perl5/site_perl/MIME/Decoder
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Body.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Entity.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/QuotedPrint.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Base64.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Binary.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Gzip64.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/NBit.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/UU.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ConTraEnc.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ContDisp.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ContType.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ParamVal.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Head.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Latin1.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/ParserBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/ToolUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Tools.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Words.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME-tools/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME-tools
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Field
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder
