@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.51 2004/06/15 06:23:42 marcus Exp $
+# $Id: portlint.pl,v 1.55 2004/06/25 16:03:32 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -174,7 +174,7 @@ my @varlist =  qw(
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
-	INDEXFILE PKGORIGIN
+	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -553,18 +553,26 @@ sub checkplist {
 	my(%omfinstallseen) = ();
 	my(%omfseen) = ();
 	my($inforemoveseen, $infoinstallseen, $infoseen) = (0, 0, 0);
+	my(%gconfinstallseen) = ();
+	my(%gconfremoveseen) = ();
+	my(%gconfseen) = ();
 	my(%omfafterinstall) = ();
 	my(%omfafterremove) = ();
 	my($infobeforeremove, $infoafterinstall) = (0, 0);
+	my(%gconfbeforeremove) = ();
+	my(%gconfafterinstall) = ();
 	my($infooverwrite) = (0);
 	my($rcsidseen) = (0);
 
 	my(@exec_omf) = ();
 	my(@exec_info) = ();
+	my(@exec_gconf) = ();
 	my(@unexec_omf) = ();
 	my(@unexec_info) = ();
+	my(@unexec_gconf) = ();
 	my(@omffile) = ();
 	my(@infofile) = ();
+	my(@gconffile) = ();
 
 	my $seen_dirrm_docsdir;
 
@@ -618,6 +626,11 @@ sub checkplist {
 			} elsif (!$autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
 				push(@exec_info, $1);
+			} elsif ($_ =~ /^\@exec[ \t]+env[ \t]+GCONF_CONFIG_SOURCE=\S+[ \t]+gconftool-2[ \t]+--makefile-install-rule\s+(\S+)\s+.+$/) {
+				push(@exec_gconf, $1);
+				my $gt = $1;
+				$gt =~ s/^\%D\///;
+				$gconfinstallseen{$gt} = $.;
 			} elsif ($autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				&perror("WARN: $file [$.]: \@exec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 			} elsif ($_ =~ /^\@unexec[ \t]+scrollkeeper-uninstall[ \t]+-q\s+(\S+)\s+.+$/) {
@@ -628,6 +641,11 @@ sub checkplist {
 			} elsif (!$autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				$inforemoveseen = $.;
 				push(@unexec_info, $1);
+			} elsif ($_ =~ /^\@unexec[ \t]+env[ \t]+GCONF_CONFIG_SOURCE=\S+[ \t]+gconftool-2[ \t]+--makefile-uninstall-rule\s+(\S+)\s+.+$/) {
+				push(@unexec_gconf, $1);
+				my $gt = $1;
+				$gt =~ s/^\%D\///;
+				$gconfremoveseen{$gt} = $.;
 			} elsif ($autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				&perror("WARN: $file [$.]: \@unexec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 			} elsif ($_ =~ /^\@(exec|unexec)/) {
@@ -664,8 +682,16 @@ sub checkplist {
 		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL_VER} eq '') {
 			&perror("WARN: $file [$.]: installing libtool archives, ".
 				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
-				"See http://www.FreeBSD.org/gnome/docs/portlint.html ".
+				"See http://www.FreeBSD.org/gnome/docs/porting.html ".
 				"for a way to completely eliminate .la files.");
+		}
+
+		if ($_ =~ /\%gconf.*\.xml/) {
+			&perror("WARN: $file [$.]: explicitly listing \%gconf key files ".
+				"in the plist is discouraged.  This will soon become a ".
+				"fatal error.  See ".
+				"http://www.FreeBSD.org/gnome/docs/porting.html ".
+				"for the preferred way to handle gconf schemas.");
 		}
 
 		if ($_ =~ m|^lib/pkgconfig/[^\.]+.pc$|) {
@@ -709,6 +735,13 @@ sub checkplist {
 					"an entry.");
 				$infooverwrite++;
 			}
+		}
+
+		if ($_ =~ /.*\.schemas?$/) {
+			$gconfseen{$_} = $.;
+			$gconfafterinstall{$_}++ if ($gconfinstallseen{$_});
+			$gconfbeforeremove{$_}++ if (!$gconfremoveseen{$_});
+			push(@gconffile, $_);
 		}
 
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
@@ -796,12 +829,28 @@ sub checkplist {
 		}
 	}
 
+	# Check that each gconf schema file has an install and deinstall line.
+	my $gconf_install = join(" ", @exec_gconf);
+	$gconf_install .= ' ';
+	my $gconf_deinstall = join(" ", @unexec_gconf);
+	$gconf_deinstall .= ' ';
+
+	foreach my $gf (@gconffile) {
+		if ($gconf_install !~ /\%D\/\Q$gf\E/) {
+			&perror("WARN: $file: you need an '\@exec env GCONF_CONFIG_SOURCE=xml::\%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule \%D/$gf >/dev/null || /usr/bin/true' line");
+		}
+		if ($gconf_deinstall !~ /\%D\/$gf/) {
+			&perror("WARN: $file: you need an '\@unexec env GCONF_CONFIG_SOURCE=xml::\%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule \%D/$gf >/dev/null || /usr/bin/true' line");
+		}
+	}
+
 	if ($rcsidinplist && !$rcsidseen) {
 		&perror("FATAL: $file: RCS tag \"\$$rcsidstr\$\" must be present ".
 			"as \@comment.")
 	}
 
-	if (((!$autoinfo && !$infoseen) || $autoinfo) && !scalar(keys %omfseen)) {
+	if (((!$autoinfo && !$infoseen) || $autoinfo) && !scalar(keys %omfseen) &&
+		!scalar(keys %gconfseen)) {
 		close(IN);
 		return 1;
 	}
@@ -857,6 +906,36 @@ sub checkplist {
 				"that it is placed before any of the info files. ");
 		}
 	}
+
+	if (scalar(keys %gconfseen)) {
+		if (!scalar(keys %gconfinstallseen)) {
+			&perror("WARN: $file: gconftool-2 must be used to ".
+					"add/delete gconf schema keys.");
+		} else {
+			foreach my $gf (keys %gconfseen) {
+				if ($gconfafterinstall{$gf}) {
+					&perror("FATAL: $file [$gconfinstallseen{$gf}]: move ".
+							"\"\@exec gconftool-2\" ".
+							"line to make sure that it is placed after ".
+							"the $gf entry.");
+				}
+			}
+		}
+		if (!scalar(keys %gconfremoveseen)) {
+			&perror("FATAL: $file: \"\@unexec gconftool-2\" must ".
+					"be placed before the schema file it uninstalls.");
+		} else {
+			foreach my $gf (keys %gconfseen) {
+				if ($gconfbeforeremove{$gf}) {
+					&perror("FATAL: $file [$gconfremoveseen{$gf}]: move ".
+							"\"\@unexec gconftool-2\" ".
+							"line to make sure that it is placed after ".
+							"the $gf entry.");
+				}
+			}
+		}
+	}
+
 	close(IN);
 }
 
@@ -1664,10 +1743,36 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 
 	}
 
-	$pkg_version =
-	    -x '/usr/local/sbin/pkg_version'
-		?  '/usr/local/sbin/pkg_version'
-		:  '/usr/sbin/pkg_version';
+	$pkg_version = $makevar{PKG_VERSION};
+
+	if ($makevar{CONFLICTS}) {
+		print "OK: checking CONFLICTS.\n" if ($verbose);
+		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
+			my $selfconflict;
+			if ($makevar{PKGINSTALLVER} >= 20040125) {
+				$selfconflict = !system($pkg_version, '-T',
+					$makevar{PKGNAME}, $conflict);
+			} else {
+				my $conflictre = $conflict;
+				$conflictre =~ s/[.+]/\\$&/g;
+				$conflictre =~ s/\*/.*/g;
+				$conflictre =~ s/\?/./g;
+				$conflictre =~ s/\[!/[^/g;
+				$selfconflict = ($makevar{PKGNAME} =~ /^$conflictre$/);
+			}
+			if ($conflict !~ /(?:[<>=]|[]?*]$)/) {
+				&perror("WARN: Conflict \"$conflict\" specified to narrow. ".
+					"You should end it with a wildcard (-[0-9]*).");
+			} elsif ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
+				&perror("WARN: Conflict \"$conflict\" specified to broad. ".
+					"You should end it with a version number fragment (-[0-9]*).");
+			}
+			if ($selfconflict) {
+				&perror("FATAL: Package conflicts with itself. ".
+					"You should remove \"$conflict\" from CONFLICTS.");
+			}
+		}
+	}
 
 	$versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
 
