@@ -70,5 +70,6 @@
     SUBDIR += shujit
     SUBDIR += tya
     SUBDIR += xalan-j
+    SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>
