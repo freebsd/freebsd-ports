@@ -1532,6 +1532,7 @@ freesweep	ports/games/freesweep
 freetds		ports/databases/freetds
 freetype	ports/print/freetype
 freetype2	ports/print/freetype2
+freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
 fressh		ports/security/fressh
