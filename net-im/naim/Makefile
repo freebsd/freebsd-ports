@@ -7,6 +7,7 @@
 
 PORTNAME=	naim
 PORTVERSION=	0.11.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://rpi-acm.org/~n/dev.n.ml.org/ \
 		http://www.acm.rpi.edu/~n/dev.n.ml.org/
@@ -19,9 +20,9 @@ MAN1=		naim.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/naim
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${PREFIX}/share/doc/naim/
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/COLORS ${PREFIX}/share/doc/naim/ 
+	@ ${MKDIR} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/COLORS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
