@@ -1,0 +1,11 @@
+--- src/statistics.c.orig	Thu Apr  1 22:56:59 1999
++++ src/statistics.c	Wed Jan 24 15:42:54 2001
+@@ -117,7 +117,7 @@
+ 
+ 	if (ftell(f) == 0L) {
+ 	    fprintf(f,
+-	    "# post fetc dupl alre hist miss grps ua-g us-g grossbyt netbytes totaltim fail\n");
++	    "# post fetc dupl alre hist miss grps ua-g us-g grossbyt netbytes totaltim fail bnce\n");
+ 	}
+ 	fprintf(f,     
+ 	    "T %s %s",

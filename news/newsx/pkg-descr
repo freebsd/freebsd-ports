@@ -1,0 +1,18 @@
+Newsx is an NNTP client for Unix. It will connect to a remote NNTP
+server and post outgoing articles batched by the news system, as well as
+fetch incoming articles.
+
+It provides the NNTP capabilities required for small local news spools
+on installations with NNTP access only through limited ISP accounts. It
+works well via a dialup SLIP/PPP connection.
+
+Newsx is also well suited for large spools with normal feeds, being
+used for pulling newsgroups from specific NNTP servers that are not
+distributed in the usual manner. Since newsx obeys the normal news spool
+configuration file and requires little or no specific configuration, the
+administrative burden should be minimized.
+
+WWW: http://www.kvaleberg.com/newsx.html
+
+- Ben Smithurst
+  <ben@FreeBSD.org>

@@ -1,0 +1,41 @@
+--- lib/config.h.orig	Sun Nov  5 01:15:51 2000
++++ lib/config.h	Sun Mar  4 18:06:56 2001
+@@ -1,6 +1,7 @@
+ /* include/config.h.  Generated automatically by configure.  */
+ /* include/config.h.in.  Generated automatically from configure.in by autoheader.  */
+ /*  $Revision: 1.64.2.4 $
++**	+ patch for newsx - some #ifndef <thierry@thomas.as>
+ **
+ **  Here be configuration data used by various InterNetNews programs.  This
+ **  file is used as source for the autoheader script, which from it and
+@@ -103,7 +104,7 @@
+ #define NNRP_LOADLIMIT          16
+ 
+ /* The standard NNTP port. */
+-#define NNTP_PORT               119
++#define NNTP_PORT               "nntp"
+ 
+ /* What to use for a Path tail for local posts. */
+ #define PATHMASTER              "not-for-mail"
+@@ -253,7 +254,9 @@
+ #define NEWSMASTER "usenet"
+ 
+ /* The umask used by all INN programs. */
+-#define NEWSUMASK 02
++#ifndef NEWSUMASK
++  #define NEWSUMASK 02
++#endif
+ 
+ /* The username and group name that INN should run under. */
+ #define NEWSUSER "news"
+@@ -546,7 +549,9 @@
+    size for some header parsing code.  This is currently also used by innd
+    to determine whether to reject a message for an excessively long header;
+    this behavior should be fixed. */
+-#define MAXHEADERSIZE           1024
++#ifndef MAXHEADERSIZE
++  #define MAXHEADERSIZE           1024
++#endif
+ 
+ /* Default buffer size for outgoing feeds from innd. */
+ #define SITE_BUFFER_SIZE        (16 * 1024)

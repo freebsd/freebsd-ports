@@ -1,0 +1,25 @@
+--- src/filter.c.orig	Mon Nov 23 07:25:48 1998
++++ src/filter.c	Wed Jan 24 06:37:22 2001
+@@ -40,6 +40,22 @@
+ static int filter_open = 0;
+ static SOCKET_D filter_sock; /* BUG: no... */
+ 
++#ifndef HAVE_STRTOUL
++/*
++ *  for systems that doesn't have it, assuming base<=10
++ */
++long 
++strtoul(char *str,char **endptr,int base)
++{
++    long u = 0L;
++    char c;
++    while (isspace(*str)) ++str;
++    while (isdigit(c = *str++)) u = u*base + c-'0';
++    if (endptr)  *endptr = str;
++    return u;
++}
++#endif
++	
+ /*
+  *  start the program if not active already
+  */

@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sun Apr 25 03:08:26 1999
++++ lib/Makefile.in	Fri Feb  9 05:22:26 2001
+@@ -203,7 +203,7 @@
+ 	$(COMPILE) -c $<
+ 
+ mostlyclean-compile:
+-	-rm -f *.o core *.core
++	-rm -f *.o core *.core *.a
+ 
+ clean-compile:
+ 

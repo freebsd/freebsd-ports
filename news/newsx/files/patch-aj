@@ -1,0 +1,61 @@
+--- doc/in.hosts.5.in.orig	Tue Apr 20 02:45:46 1999
++++ doc/in.hosts.5.in	Sun Jan 21 14:52:33 2001
+@@ -45,29 +45,38 @@
+ file that describes what the latest article is that has been fetched from
+ that particular host. 
+ .PP
+-As long as you want to get all news articles in the groups defined at your
+-local server, there is no need to do anything to make construct this file,
+-it will take care of itself.
++If you want to get all news articles in all the groups defined at your
++local server, do nothing and let the file be constructed automatically.
++Other choices, such as using multiple
++.IR cron (8)
++entries and
++.IR newsx (8)
++end tags to control when certain newsgroups are fetched,
++or using
++.B .newsrc
++article numbers to avoid fetching articles you've already seen,
++require setting up the
++.B in.hosts
++file for the server by hand.
+ .PP
+ The format of this file is simple:
+ .PP
+-Blank lines and lines starting with a '#' will be treated as comments.
++Blank lines and lines starting with a '#' are treated as comments.
+ .PP
+-Lines starting with a ':' indicates a tag for use with the 
+-newsx \fB-e\fP option.
++Lines starting with a ':' indicate a tag for use with the 
++newsx \fB-e\fP (end tag) option.
+ .PP
+ Otherwise, each line consists of a newsgroup name and the first unread
+-article number, separated by whitespace. A missing article number 
+-corresponds to zero, meaning that all available articles on the
+-server will be read.
++article number, separated by whitespace.   No article number is the same
++as zero, meaning that all available articles on the server will be read.
+ .PP
+ It is important to realize that there is one unique file belonging to 
+ each remote newsserver, and that they should not be mixed.
+ .PP
+ If switching from reading news via an NNTP newsreader to fetching with
+-newsx, it is possible to use a existing
++newsx, it is possible to use an existing
+ .B ".newsrc" 
+-file directly as basis for making an initial
++file directly as the initial
+ \fB\*j/\fP\fIspoolname\fP
+ file. 
+ 
+@@ -77,7 +86,7 @@
+ Incoming host state file.
+ There should be one of these per external news server.
+ .IP "\*j/\fIspoolname\fP.tmp"
+-Incoming spool, temporary (while news are being pulled).
++Incoming spool, temporary (while news is being pulled).
+ .IP "\*j/\fIspoolname\fP.old"
+ Previous generation of the external host state file.
+ .IP "\*j/\fIspoolname\fP.conf" .

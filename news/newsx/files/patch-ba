@@ -1,0 +1,23 @@
+--- dbz/configdata.h.orig	Sun Mar  7 16:41:31 1999
++++ dbz/configdata.h	Sun Feb 18 11:57:39 2001
+@@ -3,6 +3,9 @@
+  *  extracted from INN version 2.0
+  *
+  *  $Log: configdata.h,v $
++ *  Revision x.x  2001/02/18 <thierry@thomas.as>
++ *  BOOL already defined (no more configdata.h in inn 2.3)
++ *
+  *  Revision 1.7  1999/03/07 15:41:31  src
+  *  Removed DBZ_VERSION from configuration
+  *
+@@ -22,7 +25,9 @@
+ #include "proto.h"
+ #include "../config.h"
+ 
+-typedef int BOOL;
++#ifndef __CONFIG_H__
++  typedef int BOOL;
++#endif
+ #ifndef TRUE
+ #define TRUE 1
+ #endif

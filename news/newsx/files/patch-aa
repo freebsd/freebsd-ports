@@ -1,0 +1,48 @@
+--- configure.in.orig	Tue Apr 20 16:49:01 1999
++++ configure.in	Sat Mar  3 17:12:12 2001
+@@ -425,10 +425,10 @@
+ 	dnl $RNEWS
+ 	PATHETC="$NEWSHOME"
+ 	SPOOL="$NEWSARTS"
+-	BATCH="$NEWSARTS/out.going"
+-	INCOMING="$NEWSARTS/in.coming"
++	BATCH="$NEWSARTS/outgoing"
++	INCOMING="$NEWSARTS/incoming"
+ 	if test x$INHOSTS = x ; then
+-	    INHOSTS="$NEWSARTS/in.hosts"
++	    INHOSTS="$NEWSARTS/inhosts"
+ 	fi
+ 
+ 	dnl This is pretty standard:
+@@ -610,9 +610,10 @@
+ if test x$INN_MODE = x1; then
+     CFLAGS_save="$CFLAGS"
+     CFLAGS="$CFLAGS -L$NEWSLIB"
++    LIBS_save="$LIBS"
++    LIBS="$LIBS -linn -lstorage"
+     AC_CHECK_LIB(inn, HashMessageID, HAVE_LIBINN=1)
+ 
+-    LIBS_save="$LIBS"
+     dnl
+     dnl BUG:
+     dnl Note that double inclusion of -lstorage seem to be required
+@@ -702,7 +703,7 @@
+ dnl
+ dnl We must have sensible default values
+ dnl for all files and directories mentioned in the
+-dnl documentation
++dnl documentation.  Use new INN names as defaults.
+ dnl
+ mkdoc ()
+ {
+@@ -718,8 +719,8 @@
+ mkdoc SPOOL             "/var/spool/news"
+ mkdoc NEWSHOME          "/usr/lib/news"
+ mkdoc NEWSBIN           "/usr/lib/newsbin"
+-mkdoc BATCH             "$DOC_SPOOL/out.going"
+-mkdoc INCOMING          "$DOC_SPOOL/in.coming"
++mkdoc BATCH             "$DOC_SPOOL/outgoing"
++mkdoc INCOMING          "$DOC_SPOOL/incoming"
+ mkdoc INHOSTS           "$DOC_SPOOL/in.hosts"
+ mkdoc LOCKS             "$DOC_NEWSHOME"
+ mkdoc PATHETC           "$DOC_NEWSHOME"

@@ -1,0 +1,11 @@
+--- src/getarticle.c.orig	Sun Apr 18 11:28:45 1999
++++ src/getarticle.c	Sat Mar  3 17:49:03 2001
+@@ -292,7 +292,7 @@
+ 	if (a != where) {
+ 	    if (a==0 && window <= 1) {
+ 		/* OK, we'll allow it - presumably a non-conforming server */
+-		static told = 0;
++		static int told = 0;
+ 		if (!told) {
+ 		    log_msg(L_INFO,"no article number in ARTICLE response: %s",
+ 								       status);

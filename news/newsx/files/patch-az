@@ -1,0 +1,11 @@
+--- src/libinn.h.orig	Mon Aug 21 08:14:43 2000
++++ src/libinn.h	Thu Feb 15 21:52:47 2001
+@@ -7,7 +7,7 @@
+ 
+ /* We've probably already included this; only include it if we need it. */
+ #ifndef __CONFIG_H__
+-# include "config.h"
++# include "../lib/config.h"
+ #endif
+ 
+ #include <stdio.h>

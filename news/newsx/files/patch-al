@@ -1,0 +1,19 @@
+--- doc/newsx.conf.5.in.orig	Wed Apr 21 01:13:12 1999
++++ doc/newsx.conf.5.in	Sun Jan 21 14:08:22 2001
+@@ -34,14 +34,10 @@
+ 
+ .SH DESCRIPTION
+ .PP
+-The
+ .B "newsx.conf"
+-will be
+-be read before 
++is a profile file read by
+ .IR newsx (8)
+-the command line argument parsing commences.
+-.PP
+-The profile contains standard
++before processing the command line arguments.  It contains standard
+ .IR newsx (8)
+ command line options. The leading dashes for options are mandatory.
+ Several lines may be used.

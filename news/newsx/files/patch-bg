@@ -1,0 +1,22 @@
+--- src/config.c.orig	Mon Apr 19 05:32:38 1999
++++ src/config.c	Sun Feb 18 15:03:48 2001
+@@ -12,6 +12,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: config.c,v $
++ *  Revision x.xx  2001/02/18
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.10  1999/04/19 03:32:38  src
+  *  Standard profile in $PATHETC/newsx.conf
+  *
+@@ -100,7 +103,8 @@
+     /* BUG: check if already? */
+     n = sizeof(CONFIG_S) + strlen(val);
+ 
+-    cp = xmalloc(n);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    cp = xmalloc(n,"config.c",107);
+ 
+     /* add to list of config tags at that hashindex */
+     strcpy(cp->name,tag);

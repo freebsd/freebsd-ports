@@ -1,0 +1,284 @@
+--- README.in.orig	Wed Apr 21 01:16:33 1999
++++ README.in	Fri Feb  9 05:51:35 2001
+@@ -1,9 +1,12 @@
++[edited by Winston Edmond  02/2001
++ Note: `./README' will be created by `./configure' from `README.in']
++
+ 
+ 	     Newsx - An NNTP client for posting and fetching news
+ 	     ====================================================
+ 
+-			      Version @VERSION@
+-		       Written by Egil Kvaleberg
++			       Version @VERSION@
++			Written by Egil Kvaleberg
+ 					
+ 				 ------
+ 
+@@ -107,36 +110,66 @@
+ test              Directory for test code
+ 
+ 
+-COMPILE AND INSTALL
+--------------------
+-
+-1. Type `make', and hopefully you will get the newsx executable.
+-   Read the INSTALL for further enlightenment.
++CONFIGURE, COMPILE, AND INSTALL
++-------------------------------
+ 
+-2. Type `su' to become root, and then `make install' to install the
+-   executables and the man pages.
++1. Set up your local news server first.  Newsx auto-configuration depends
++   on the news server files and directories it finds and where.
+ 
++2. Glance at ./INSTALL to see if you need any special configuration
++   options.  Run ./configure with the options you prefer.
+ 
+-MAILING LISTS
+--------------
++3. Type `make', and hopefully you will get the newsx executable.
+ 
+-If you want to be informed about future newsx versions and receive
+-possible bug alerts, you can send an email message to:
+-
+-	majordomo@kvaleberg.no
+-
+-with the following line in the message body:
+-
+-	subscribe newsx-announce
++4. Type `su' to become root, and then `make install' to install the
++   executables and the man pages.
+ 
+-If you want to join the newsx discussion list, you can send an
+-email message to the same address with the following line in the
+-message body:
+ 
+-	subscribe newsx
++QUICK START -- GENERAL
++----------------------
+ 
+-The Usenet newsgroup news.software.nntp is also a suitable forum for
+-discussing newsx.
++Newsx moves articles between servers, so you need to have a working local
++news server with at least one newsgroup in order to test newsx.  There are
++two basic tests:
++  (1) can an article locally posted to the newsgroup and queued by the news
++       server for delivery to the remote server be successfully sent to the
++       remote server, and
++  (2) can articles from the remote server be fetched and placed in the
++       local server's "in" queue.
++The "QUICK START WITH INN/C-NEWS" instructions below walk you through these
++tests.
++
++By default, an in.hosts/$server file is built automatically and will fetch
++all articles in all groups listed in active (except as limited by the sys
++file or command line options).  It is sometimes worthwhile to set up this
++file by hand rather than accept the default.
++
++Special case #1:
++   * you've been reading news DIRECTLY from one or more REMOTE servers,
++   * you're now setting up a local server, AND
++   * you'd like to avoid downloading articles you've already seen.
++
++   You can copy your $HOME/.newsrc file and use it as the initial
++   in.hosts/$server file!  The (remote server's) article numbers will be
++   extracted, and if you use "--forget-inactive" the first time you call
++   `newsx', groups that were in .newsrc that you've unsubscribed to will be
++   eliminated from in.hosts/$server, and current and future downloading
++   will be limited to only the groups you're subscribed to at the time.
++   (This does not "track" newsgroup subscription changes you make later.)
++
++Special case #2:
++   * you've been running a local server for some time and have lots of
++       newsgroups in 'active' that you don't want fetched.
++
++   Use the 'active' file or a .newsrc file, remove the article numbers
++   (assuming they're the local server's article numbers), trim the list
++   down to the groups you want, and use that as the in.hosts/$server
++   file.
++
++WARNING:
++   Newsgroups can have LOTS of articles.  Please look at the newsx man page
++   descriptions of --maxnew, --syncnew, and --maxart before running newsx
++   to pull articles from the remote server the first time.
+ 
+ 
+ QUICK START WITH INN
+@@ -144,6 +177,7 @@
+ 
+ We assume that you already have INN installed. What you have to do is:
+ 
++SETUP:
+  1. Do all maintenance of the news system as user `@DOC_NEWSUSER@'. Ensure
+     that the `.profile' of this user defines a path that includes
+     `@DOC_NEWSBIN@'. E.g.:
+@@ -168,14 +202,21 @@
+     the special `newsx' in the example above with the particular exclude
+     string for the newsserver in question.
+ 
+- 3. If you haven't done so already, define one or more newsgroups that 
+-    will appear in the `@DOC_ACTIVE@' file:
++ 3. If you haven't done so already, create one or more newsgroups in the
++    `@DOC_ACTIVE@' file that you will be fetching from the remote
++    newsserver:
+ 
+ 	ctlinnd newgroup acme.test
+ 
+- 4. Try to fetch news articles for these groups by doing:
++FETCH TEST:
++ 4. Dry-run test fetching news articles for these groups by doing:
++
++	newsx -ddddd -n --maxnew 100 acme news.acme.net
++
++    If the output looks correct, try running it for real (using your
++    preference of --maxnew, --maxart, and --syncnew options):
+ 
+-	newsx -ddddd acme news.acme.net
++	newsx -dd --maxnew 100 acme news.acme.net
+ 
+  5. The articles should now appear in the incoming batch
+     `@DOC_INCOMING@'. If you invoke:
+@@ -185,13 +226,15 @@
+     the incoming articles should appear in the news spool. In the
+     example, you may look for them in `@DOC_SPOOL@/acme/test'.
+ 
++POST TEST:
+  6. Using a newsreader, post an article to a suitable test group. Try to 
+     use a group with as small distribution as possible, preferably local 
+     to the external newsserver you are using. If you haven't done so 
+     already, the group must be in the `@DOC_ACTIVE@' file.
+ 
+-    The next time that `rnews' is invoked, the articles will be output
+-    to the spool file `@DOC_BATCH@/acme' specified in the `@DOC_NEWSFEEDS@' file.
++    The next time that `rnews' is invoked, the articles will be output to
++    the spool file `@DOC_BATCH@/acme' specified in the
++    `@DOC_NEWSFEEDS@' file.
+ 
+  7. Run:
+ 
+@@ -210,16 +253,11 @@
+ 
+ 	newsx -l posted.log -f posted acme news.acme.net
+ 
+- 9. To catch up with new newsgroups in a quicker way, you may want to
+-    limit the number of articles fetched by adding the option:
+-
+-		--maxnew 100
+-
+-10. You may want to arrange for automatic news exchange by using `crontab'.
++ 9. You may want to arrange for automatic news exchange by using `crontab'.
+     It is usually good to invoke `newsrun' before and after the newsx
+     session.
+ 
+-11. For more information about how to set up news and other subjects related
++10. For more information about how to set up news and other subjects related
+     to use of ordinary ISP accounts, you might want to consult:
+ 
+ 	http://www.kvaleberg.com/ISP-Hookup-HOWTO.html
+@@ -231,6 +269,7 @@
+ 
+ We assume that you already have C News installed. What you have to do is:
+ 
++SETUP:
+  1. Do all maintenance of the news system as user `@DOC_NEWSUSER@'. Ensure
+     that the `.profile' of this user defines a path that includes
+     `@DOC_NEWSBIN@'. E.g.:
+@@ -244,8 +283,9 @@
+ 	ME:all/all::
+ 	acme/newsx:all,!junk,!control/all:FL:
+ 
+-    The outgoing batch will be named `acme' - replace `acme' with what
+-    is appropriate for your configuration.
++    The filename of the outgoing batch will be the server's name, `acme' in
++    the example above.  Replace `acme' with what is appropriate for your
++    configuration.
+ 
+     All groups that you do NOT want to exchange with the host in question
+     should be listed with an `!' before it, the `junk' group being a
+@@ -254,27 +294,38 @@
+     The L-flag is a double insurance that only actual local postings will
+     be sent out.
+ 
+-    NOTE: Depending on how you use the spool, you may want to replace
+-    the special `newsx' in the example above with the particular exclude
+-    string for the newsserver in question.
+-
+- 3. If you haven't done so already, define one or more newsgroups that 
+-    will appear in the `@DOC_ACTIVE@' file:
++    NOTE: Depending on how you use the spool, you may want to replace the
++    special `newsx' in the example above with the particular exclude string
++    for the newsserver in question.  This is particularly true if you are
++    sending and receiving news with multiple servers or if the local system
++    names you're using aren't the name the servers use for themselvers in
++    "Path:".
++
++ 3. If you haven't done so already, create one or more newsgroups in the
++    `@DOC_ACTIVE@' file that you will be fetching from the remote
++    newsserver:
+ 
+ 	addgroup acme.test y
+ 
+- 4. Try to fetch news articles for these groups by doing:
++FETCH TEST:
++ 4. Dry-run test fetching news articles for these groups by doing:
++
++	newsx -ddddd -n --maxnew 100 acme news.acme.net
+ 
+-	newsx -ddddd acme news.acme.net
++    If the output looks correct, try running it for real (using your
++    preference of --maxnew, --maxart, and --syncnew options):
++
++	newsx -dd --maxnew 100 acme news.acme.net
+ 
+  5. The articles should now appear in the incoming batch
+-    `@DOC_INCOMING@'. If you invoke:
++    `@DOC_INCOMING@'.  If you invoke:
+ 
+ 	newsrun 
+ 
+-    the incoming articles should appear in the news spool. In the
+-    example, you may look for them in `@DOC_SPOOL@/acme/test'.
++    the incoming articles should appear in the news spool.  For newsgroup
++    acme.test, articles would be placed in `@DOC_SPOOL@/acme/test/'.
+ 
++POST TEST:
+  6. Using a newsreader, post an article to a suitable test group. Try to 
+     use a group with as small distribution as possible, preferably local 
+     to the external newsserver you are using. If you haven't done so 
+@@ -287,6 +338,28 @@
+  7. Continue with point 7 in the INN explanation above.
+ 
+ 
++MAILING LISTS
++-------------
++
++If you want to be informed about future newsx versions and receive
++possible bug alerts, you can send an email message to:
++
++	majordomo@kvaleberg.no
++
++with the following line in the message body:
++
++	subscribe newsx-announce
++
++If you want to join the newsx discussion list, you can send an
++email message to the same address with the following line in the
++message body:
++
++	subscribe newsx
++
++The Usenet newsgroup news.software.nntp is also a suitable forum for
++discussing newsx.
++
++
+ LEGAL MATTER
+ ------------
+ 
+@@ -398,6 +471,3 @@
+ 	Husebybakken 14A
+ 	N-0379 Oslo
+ 	Norway         
+-
+-
+-$Id: README.in,v 1.60 1999/04/21 05:16:33 src Exp $

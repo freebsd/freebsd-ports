@@ -1,0 +1,12 @@
+--- dbz/dbz-v6.c.orig	Thu Apr  8 06:48:51 1999
++++ dbz/dbz-v6.c	Sun Jan 21 11:19:14 2001
+@@ -116,6 +116,9 @@
+ #if HAVE_SYS_TIME_H
+ #  include <sys/time.h>
+ #endif
++#if HAVE_MEMORY_H
++#  include <memory.h>
++#endif
+ 
+ #include <stdio.h> 
+ #include <unistd.h>

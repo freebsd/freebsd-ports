@@ -1,0 +1,76 @@
+--- INSTALL.orig	Thu Apr  8 04:12:00 1999
++++ INSTALL	Fri Feb  9 05:54:42 2001
+@@ -1,27 +1,46 @@
++Installation Summary
++--------------------
+ 
+-Basic Installation
+-==================
++To compile and install this package:
+ 
+-The easiest way to compile this package is:
++  1. Set up your local news server first.  Newsx auto-configuration
++     checks what news server files and directories exist.
+ 
+-  1. Type `make' to configure tha package for your system and compile
+-     the package.
++  2. Look over the Installation Details and Special Cases below to see if
++     you need to give ./configure any special options.
+ 
+-     To run the configuration as a seperate step, type `./configure'.
++  3. As user 'news' (or whatever owns your USENET News software), do
+ 
+-  2. Type `make install' to install the programs and any data files and
+-     documentation. You will often have to switch to superuser mode for
+-     this.
++		./configure     (with the options you prefer)
+ 
+-  3. Consult the README and FAQ for further advice regarding installation
++     (Note: ./configure produces README from README.in .)
++
++		make		(to build the programs).
++
++  4. If you need to be superuser/root to install software, do so, then do
++
++	 	make install	(installs the programs, data files, and
++				 documentation).
++
++  5. Consult the README and FAQ for further advice regarding installation
+      and setting up the package.
+ 
+-  4. You can remove the program binaries and object files from the
++  6. You can remove the program binaries and object files from the
+      source code directory by typing `make clean'.  To also remove the
+      files that `configure' created (so you can compile the package for
+      a different kind of computer), type `make distclean'. 
+ 
+ 
++Installation Details and Special Cases
++--------------------------------------
++
++Linux
++=====
++
++Linux users should check "http://web.tiscalinet.it/kalem/newsx.html".
++It has some RPM and Debian-related changes you may find useful.
++
++
+ Support for INN 2.x
+ ===================
+ 
+@@ -131,7 +150,13 @@
+ A warning: not all `configure' scripts look for a site script.
+ 
+ 
+-$Id: INSTALL,v 1.7 1999/04/08 08:04:32 src Exp $
+-
++WORKAROUNDS
++===========
+ 
++1) `dbx newsx' complains of a symbol table problem and won't run
+ 
++   Apparently, `gcc -g' can produce things dbx can't handle.  This has been
++   seen in dbz/dbz-v3.o, dbz/dbz.o, and dbz/hash.o.  Recompile the file
++   without the "-g" option and relink newsx.  E.g., if dbx complains about
++   dbz/dbz.o, edit dbz/Makefile to remove "-g " from CFLAGS,
++   `rm dbz/dbz.o src/newsx', and rerun `make'.

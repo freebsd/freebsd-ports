@@ -1,0 +1,44 @@
+--- src/sim.c.orig	Wed Mar 31 07:53:46 1999
++++ src/sim.c	Sun Feb 18 15:13:00 2001
+@@ -5,6 +5,9 @@
+  *  that emulates the API to allow consistent handling
+  *
+  *  $Log: sim.c,v $
++ *  Revision x.xx  2001/02/18
++ *  Use xmalloc and xrealloc from libinn.h + std_error (<thierry@thomas.as>)
++ *
+  *  Revision 1.2  1999/03/31 05:53:46  src
+  *  Seperated MAXHEADERSIZE from NNTP_STRLEN
+  *
+@@ -46,11 +49,12 @@
+     SMerrorstr = NULL;
+ 
+     if ((fp = fopen(name, "r")) == NULL) {
+-	SMerrorstr = strerror(errno);
++	SMerrorstr = str_error(errno);
+ 	return 0;
+     }
+ 
+-    line = art = xmalloc(alloc_len);
++/* xmalloc from libinn (<thierry@thomas.as>) */
++    line = art = xmalloc(alloc_len,"sim.c",57);
+     art_len = 0;
+ 
+     for (;;) {
+@@ -106,14 +110,14 @@
+     line += 3;
+ 
+     if (ferror(fp)) {
+-	SMerrorstr = strerror(errno);
++	SMerrorstr = str_error(errno);
+ 	fclose(fp);
+ 	free(art);
+ 	return 0;
+     }
+ 
+     /* all set */
+-    ap = xmalloc(sizeof(ARTHANDLE));
++    ap = xmalloc(sizeof(ARTHANDLE),"sim.c",120);
+ 
+     ap->data = art;
+     ap->len = line-art;

@@ -1,0 +1,10 @@
+--- test/Makefile.am.orig	Mon Apr  5 21:01:56 1999
++++ test/Makefile.am	Fri Mar  2 23:01:01 2001
+@@ -37,5 +37,6 @@
+ INCLUDES = -I../src
+ 
+ LDADD = ../src/filter.o ../src/socket.o ../src/logmsg.o ../src/telnet.o \
+-	../src/title.o ../src/exec.o ../src/script.o ../src/util.o
++	../src/title.o ../src/exec.o ../src/script.o ../src/util.o \
++	-L/usr/local/news/lib -lstorage ../dbz/libdbzv3.a ../lib/libgetopt.a -linn -lstorage
+ 

@@ -1,0 +1,29 @@
+--- src/telnet.c.orig	Wed Mar 31 07:53:46 1999
++++ src/telnet.c	Mon Feb 12 21:31:37 2001
+@@ -6,6 +6,9 @@
+  *  the GNU General Public License applies
+  *
+  *  $Log: telnet.c,v $
++ *  Revision x.xx  2001/02/11
++ *  Use xmalloc and xrealloc from libinn.h (<thierry@thomas.as>)
++ *
+  *  Revision 1.9  1999/03/31 05:53:46  src
+  *  Seperated MAXHEADERSIZE from NNTP_STRLEN
+  *
+@@ -26,6 +29,7 @@
+ #include "proto.h"
+ #include "nntp.h"
+ #include "news.h" /* MAXHEADERSIZE */
++#include "libinn.h"
+ 
+ #include <signal.h>
+ #include <setjmp.h>
+@@ -161,7 +165,7 @@
+     static int buf_m = 0;
+     static int not_first_time = 0;
+ 
+-    if (!buf) buf = xmalloc(MAXHEADERSIZE);
++    if (!buf) buf = xmalloc(MAXHEADERSIZE,"telnet.c",168);
+ 
+     if (!not_first_time) {
+ 	not_first_time = 1;

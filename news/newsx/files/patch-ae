@@ -1,0 +1,15 @@
+--- config.h.in.orig	Sun Apr 18 23:08:14 1999
++++ config.h.in	Fri Feb  9 03:35:08 2001
+@@ -72,10 +72,10 @@
+ /* "/var/spool/news" */
+ #undef SPOOL
+ 
+-/* "/var/spool/news/out.going" */
++/* /var/spool/news/ out.going(C-News) or outgoing(INN) */
+ #undef BATCH
+ 
+-/* "/var/spool/news/in.coming" */
++/* /var/spool/news/ in.coming(C-News) or incoming(INN) */
+ #undef INCOMING
+ 
+ /* "/var/spool/news/in.hosts" */
