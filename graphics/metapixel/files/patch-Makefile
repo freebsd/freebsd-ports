@@ -1,22 +1,20 @@
---- Makefile.orig	Fri Jan 21 23:32:17 2000
-+++ Makefile	Tue Sep 24 03:40:26 2002
-@@ -1,18 +1,18 @@
+--- Makefile.orig	Sat Jan 22 07:32:17 2000
++++ Makefile	Sun Jul  6 19:40:11 2003
+@@ -1,5 +1,3 @@
 -PREFIX = /usr/local
 -INSTALL = install
  
  BINDIR = $(PREFIX)/bin
  
- VERSION = 0.7
+@@ -7,12 +5,12 @@
  
  #PROFILE = -pg
-+CFLAGS+= -I/usr/local/include
-+LDFLAGS+= -L/usr/local/lib -lgnugetopt
  
 -LDOPTS = -L/usr/X11R6/lib $(PROFILE)
 -CCOPTS = -I/usr/X11R6/include -I/usr/X11R6/include/X11 -Wall -O9 $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
 -CC = gcc
-+LDOPTS = ${LDFLAGS} -L/usr/X11R6/lib $(PROFILE)
-+CCOPTS = ${CFLAGS} -I/usr/X11R6/include -I/usr/X11R6/include/X11 -Wall $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
++LDOPTS = ${LDFLAGS} $(PROFILE)
++CCOPTS = ${CFLAGS} ${CPPFLAGS} -Wall $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
 +#CC = gcc
  #LIBFFM = -lffm
  

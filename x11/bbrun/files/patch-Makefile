@@ -4,8 +4,8 @@
 -CC     = gcc
 -LIBS   = -lXpm `gtk-config --libs`
 -CFLAGS = `gtk-config --cflags`
-+LIBS   = -lXpm `${GTK_CONFIG} --libs` -L${LOCALBASE}/lib -lgnugetopt
-+CFLAGS = `${GTK_CONFIG} --cflags` -Wall
++LIBS   = -lXpm `${GTK_CONFIG} --libs` 
++CFLAGS += `${GTK_CONFIG} --cflags` -Wall
  OBJS   = bbrun.o \
           ../wmgeneral/wmgeneral.o \
           ../wmgeneral/misc.o \
@@ -17,7 +17,7 @@
  
  bbrun: $(OBJS)
 -	$(CC) -Wall -g -o bbrun $^ $(LIBS)
-+	$(CC) -o bbrun $^ $(LIBS)
++	$(CC) -o bbrun $^ $(LDFLAGS) $(LIBS)
  
  install:
  	cp bbrun /usr/local/bin/
