@@ -29,6 +29,10 @@ NO_BUILD=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xmovie-i586
 
+# Linux binary should not be stripped by INSTALL_PROGRAM as it uses
+# /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
+STRIP=
+
 RPM_MIRRORS=            \
 	ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/ \
 	ftp://ftp.redhat.com/redhat/__DIR__/ \
