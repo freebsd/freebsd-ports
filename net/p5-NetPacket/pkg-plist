@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/UDP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/IP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/ICMP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/IGMP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/Ethernet.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket/ARP.pm
+lib/perl5/site_perl/%%PERL_VER%%/NetPacket.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetPacket/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/NetPacket
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetPacket
