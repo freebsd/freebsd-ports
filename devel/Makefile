@@ -586,6 +586,7 @@
     SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += semantic
+    SUBDIR += semantic-emacs20
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-chill
