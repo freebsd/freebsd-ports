@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION= 	2.2.4
+PORTVERSION= 	2.2.5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
-MAN1=		xmllint.1
+MAN1=		xml-config.1 xmllint.1
 MAN4=		libxml.4
 
 .include <bsd.port.mk>
