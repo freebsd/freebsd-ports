@@ -1,0 +1,12 @@
+#PATCHOPTIONS: -p0
+--- asis/a4g-gnat_int.ads.orig	Wed Oct 27 15:06:50 1999
++++ asis/a4g-gnat_int.ads	Wed Oct 27 15:06:57 1999
+@@ -67,7 +67,7 @@
+    -- Compiler Variables & Routines --
+    -----------------------------------
+ 
+-   Gcc      : constant String := "gcc";
++   Gcc      : constant String := "adagcc";
+ 
+    Nul_Argument_List : constant Argument_List (1 .. 0) := (others => null);
+ 

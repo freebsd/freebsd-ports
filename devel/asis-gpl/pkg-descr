@@ -1,0 +1,8 @@
+ASIS is an ISO standard API for the extraction of syntactic
+and semantic information from an Ada compilation environment.
+This is the implementation of ASIS for GNAT, the GNU Ada compiler.
+
+WWW: http://www.gnat.com/
+
+-- 
+Thomas Quinot -- <thomas@cuivre.fr.eu.org>
