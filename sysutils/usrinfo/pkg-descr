@@ -1,0 +1,6 @@
+usrinfo is simple program that gathers information about a specified user
+and displays the information using either "<br>" or "\n" line breaks. Useful
+if you want to display a users information from the web.
+
+- Aaron Landwehr
+aaron@snaphat.com

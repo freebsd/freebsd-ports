@@ -364,6 +364,7 @@
     SUBDIR += usermin
     SUBDIR += userneu
     SUBDIR += userneu-devel
+    SUBDIR += usrinfo
     SUBDIR += utcount
     SUBDIR += uwatch
     SUBDIR += vcp
