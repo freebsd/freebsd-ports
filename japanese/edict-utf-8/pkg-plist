@@ -54,9 +54,11 @@ share/doc/xjdic/aviation.doc
 share/doc/xjdic/compverb.doc
 share/doc/xjdic/concrete.doc
 share/doc/xjdic/ediclsd3.rme
-share/doc/xjdic/edict.doc
+share/doc/xjdic/edict_doc.html
+share/doc/xjdic/edict_doc.txt
 share/doc/xjdic/edicth.doc
-share/doc/xjdic/enamdict.doc
+share/doc/xjdic/enamdict_doc.html
+share/doc/xjdic/enamdict_doc.txt
 share/doc/xjdic/findic.doc
 share/doc/xjdic/geodic.doc
 share/doc/xjdic/j_places.inf
