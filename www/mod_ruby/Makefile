@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.4
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -29,7 +29,8 @@ INSTALL_TARGET=	site-install
 
 RUBY_RD_FILES=	# empty
 
-DOCS_EN=	COPYING ChangeLog README.en doc/default.css doc/*.en.*
+DOCS_EN=	COPYING ChangeLog LEGAL LICENSE.apreq NOTICE \
+		README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
 do-configure:
