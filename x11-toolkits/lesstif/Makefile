@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.26 1998/11/10 10:12:09 tg Exp $
+# $Id: Makefile,v 1.27 1998/11/13 09:42:26 tg Exp $
 #
 
 DISTNAME=	lesstif-0.87.0
@@ -53,7 +53,7 @@ MAN5=	mwmrc.5
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
-pre-fetch:
+pre-extract:
 	@${ECHO} "***********************************************************"
 	@${ECHO} "*                      W a r n i n g                      *"
 	@${ECHO} "* This port will overwrite your Motif installation.       *"
