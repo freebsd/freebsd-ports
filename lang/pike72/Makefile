@@ -30,10 +30,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 WANT_MESA=	yes
 WANT_GTK=	yes
-#WANT_GNOME=	yes
 USE_BISON=	yes
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+= --without-debug \
 		 --with-double-precision \
@@ -58,14 +57,8 @@ CONFIGURE_ARGS+= --without-debug \
 		 --with-tiff \
 		 --with-gdbm \
 		 --without-ssleay
-#		 --with-gdbm=${PREFIX} \
-#		 --without-relocatable-dumped-modules \
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -192,22 +185,6 @@ LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 CONFIGURE_ARGS+= --with-GL --with-GLUT
 .else
 CONFIGURE_ARGS+= --without-GL --without-GLUT
-.endif
-
-#.if defined(HAVE_GNOME)
-#USE_GNOME=	yes
-#USE_GTK=	yes
-#USE_GLI=	yes
-#CONFIGURE_ARGS+= --with-GTK --with-gnome --with-glade
-#.else
-CONFIGURE_ARGS+= --without-GTK --without-gnome --without-glade
-#.endif
-
-.if (${MACHINE} == "i386")
-CONFIGURE_ARGS+= --with-poll
-.else
-# Alpha seems to have problems with poll() with pike... :/
-CONFIGURE_ARGS+= --without-poll
 .endif
 
 USE_GMAKE=	yes
