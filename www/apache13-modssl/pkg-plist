@@ -119,7 +119,19 @@ libexec/apache/mod_vhost_alias.so
 share/apache/cgi-bin/printenv
 share/apache/cgi-bin/test-cgi
 share/apache/htdocs/apache_pb.gif
-share/apache/htdocs/index.html
+share/apache/htdocs/index.html.ca
+share/apache/htdocs/index.html.cz
+share/apache/htdocs/index.html.de
+share/apache/htdocs/index.html.dk
+share/apache/htdocs/index.html.ee
+share/apache/htdocs/index.html.en
+share/apache/htdocs/index.html.es
+share/apache/htdocs/index.html.fr
+share/apache/htdocs/index.html.it
+share/apache/htdocs/index.html.lu
+share/apache/htdocs/index.html.nl
+share/apache/htdocs/index.html.pt
+share/apache/htdocs/index.html.se
 share/apache/htdocs/manual/LICENSE
 share/apache/htdocs/manual/bind.html
 share/apache/htdocs/manual/cgi_path.html
@@ -133,6 +145,7 @@ share/apache/htdocs/manual/footer.html
 share/apache/htdocs/manual/handler.html
 share/apache/htdocs/manual/header.html
 share/apache/htdocs/manual/images/apache_pb.gif
+share/apache/htdocs/manual/images/feather.jpg
 share/apache/htdocs/manual/images/custom_errordocs.gif
 share/apache/htdocs/manual/images/home.gif
 share/apache/htdocs/manual/images/index.gif
@@ -149,6 +162,7 @@ share/apache/htdocs/manual/invoking.html
 share/apache/htdocs/manual/keepalive.html
 share/apache/htdocs/manual/location.html
 share/apache/htdocs/manual/man-template.html
+share/apache/htdocs/manual/netware.html
 share/apache/htdocs/manual/install-tpf.html
 share/apache/htdocs/manual/readme-tpf.html
 share/apache/htdocs/manual/misc/API.html
@@ -170,6 +184,7 @@ share/apache/htdocs/manual/misc/perf-dec.html
 share/apache/htdocs/manual/misc/perf-hp.html
 share/apache/htdocs/manual/misc/perf-tuning.html
 share/apache/htdocs/manual/misc/perf.html
+share/apache/htdocs/manual/misc/rewriteguide.html
 share/apache/htdocs/manual/misc/security_tips.html
 share/apache/htdocs/manual/misc/vif-info.html
 share/apache/htdocs/manual/misc/windoz_keepalive.html

@@ -1,5 +1,5 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.9 + 2.4.10
+# Version required:	1.3.11 + 2.5.0
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
@@ -48,8 +48,8 @@ LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
 		ssl.1:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
-VERSION_APACHE=	1.3.9
-VERSION_MODSSL=	2.4.10
+VERSION_APACHE=	1.3.11
+VERSION_MODSSL=	2.5.0
 
 Y2K=		http://www.modssl.org/docs/2.4/ssl_faq.html#y2k
 RESTRICTED=	"Contains cryptography"
