@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://www.freebsd.org/gifs/:powerlogo \
 		http://www.microsoft.com/frontpage/images/:fplogo
+MASTER_SITE_SUBDIR=	old
 PKGNAMESUFFIX=	_fp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
