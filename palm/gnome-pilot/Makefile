@@ -17,7 +17,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	3Com PalmPilot conduit system for GNOME 2
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
-LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
+LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
+		pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
