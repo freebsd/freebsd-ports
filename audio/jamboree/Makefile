@@ -17,15 +17,16 @@ COMMENT=	A simple GNOME music player
 
 LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2 gstreamerplugins
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+BROKEN=	"Needs update for gstreamer-0.8"
 
 .include <bsd.port.mk>
