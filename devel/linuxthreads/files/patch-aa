@@ -530,13 +530,15 @@ diff -ru ../../work/linuxthreads-2.2.3/manager.c ./manager.c
    __pthread_exit_code = exitcode;
    /* Send the CANCEL signal to all running threads, including the main
       thread, but excluding the thread from which the exit request originated
-@@ -846,6 +875,9 @@
+@@ -846,6 +875,11 @@
    for (th = issuing_thread->p_nextlive;
         th != issuing_thread;
         th = th->p_nextlive) {
 +    /* Cancelled thread might have been in critical region unless terminated */
-+    if (th->p_terminated == 0)
++    if (th->p_terminated == 0) {
 +      __pthread_exit_alone = 0;
++      __pthread_exit_code = 1;
++    }
      kill(th->p_pid, __pthread_sig_cancel);
    }
    /* Now, wait for all these threads, so that they don't become zombies
@@ -806,7 +808,7 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
      __libc_write(__pthread_manager_request,
  		 (char *) &request, sizeof(request));
      suspend(self);
-@@ -768,25 +759,28 @@
+@@ -768,25 +759,30 @@
      if (self == __pthread_main_thread)
        {
  	waitpid(__pthread_manager_thread.p_pid, NULL, __WCLONE);
@@ -827,8 +829,10 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
 +     * been inside a critical region of code with a spinlock
 +     * held, a system mutex held, or a mutex partially held.
 +     */
-+    if (__pthread_exit_alone == 0)
++    if (__pthread_exit_alone == 0) {
++      __pthread_exit_code = 1;
 +      _exit(1);
++    }
    }
  }
  
