@@ -1,5 +1,4 @@
 bin/logtool
-bin/lt
 bin/logtail
 etc/logtool/exclude
 etc/logtool/green
