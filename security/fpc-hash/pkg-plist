@@ -1,0 +1,4 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/md5/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/md5/md5.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/md5/md5.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/md5
