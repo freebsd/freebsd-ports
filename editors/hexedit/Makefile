@@ -3,7 +3,7 @@
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/20 09:39:06 asami Exp $
 #
 
 DISTNAME=	hexedit-0.9.3
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	ncurses\\.4\\.:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
 
 MANUAL_PACKAGE_BUILD=	depends on ncurses
 

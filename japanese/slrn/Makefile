@@ -3,7 +3,7 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/20 03:04:32 steve Exp $
 
 DISTNAME=	slrn0.9.5.2
 PKGNAME=	ja-slrn-0.9.5.2
@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org
 
-LIB_DEPENDS=	slang\\.1\\.:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/japanese/libslang
 
 WRKSRC=         ${WRKDIR}/slrn
 JDOCSRC=	${WRKDIR}/slrn-doc-j0.9.5.2-0
