@@ -120,19 +120,12 @@ Amaya/dicopar/nederl.ptn
 Amaya/dicopar/portug.ptn
 Amaya/dicopar/swedish.ptn
 Amaya/doc/html/Access.html
-Amaya/doc/html/Access.html.fr
 Amaya/doc/html/Annotations.html
-Amaya/doc/html/Annotations.html.fr
 Amaya/doc/html/Attributes.html
-Amaya/doc/html/Attributes.html.fr
 Amaya/doc/html/Browsing.html
-Amaya/doc/html/Browsing.html.fr
 Amaya/doc/html/Changing.html
-Amaya/doc/html/Changing.html.fr
 Amaya/doc/html/Configure.html
-Amaya/doc/html/Configure.html.fr
 Amaya/doc/html/Creating.html
-Amaya/doc/html/Creating.html.fr
 Amaya/doc/html/HTML-elements/40styling.html
 Amaya/doc/html/HTML-elements/address.html
 Amaya/doc/html/HTML-elements/headings.html
@@ -141,45 +134,136 @@ Amaya/doc/html/HTML-elements/inline.html
 Amaya/doc/html/HTML-elements/lists.html
 Amaya/doc/html/HTML-elements/structure.html
 Amaya/doc/html/HTML.html
-Amaya/doc/html/HTML.html.fr
 Amaya/doc/html/ImageMaps.html
-Amaya/doc/html/ImageMaps.html.fr
 Amaya/doc/html/Index.html
-Amaya/doc/html/Index.html.fr
 Amaya/doc/html/Keyboard.html
-Amaya/doc/html/Keyboard.html.fr
 Amaya/doc/html/Links.html
-Amaya/doc/html/Links.html.fr
 Amaya/doc/html/MakeBook.html
-Amaya/doc/html/MakeBook.html.fr
 Amaya/doc/html/Manual.html
-Amaya/doc/html/Manual.html.fr
 Amaya/doc/html/Math.html
-Amaya/doc/html/Math.html.fr
 Amaya/doc/html/Numbering.html
-Amaya/doc/html/Numbering.html.fr
 Amaya/doc/html/Printing.html
-Amaya/doc/html/Printing.html.fr
 Amaya/doc/html/Publishing.html
-Amaya/doc/html/Publishing.html.fr
 Amaya/doc/html/SVG.html
-Amaya/doc/html/SVG.html.fr
 Amaya/doc/html/Searching.html
-Amaya/doc/html/Searching.html.fr
 Amaya/doc/html/Selecting.html
-Amaya/doc/html/Selecting.html.fr
 Amaya/doc/html/ShortCuts.html
-Amaya/doc/html/ShortCuts.html.fr
 Amaya/doc/html/SpellChecking.html
-Amaya/doc/html/SpellChecking.html.fr
 Amaya/doc/html/StyleSheets.html
-Amaya/doc/html/StyleSheets.html.fr
 Amaya/doc/html/Tables.html
-Amaya/doc/html/Tables.html.fr
 Amaya/doc/html/Transform.html
 Amaya/doc/html/Views.html
-Amaya/doc/html/Views.html.fr
+Amaya/doc/html/accessibility_in _amaya/about_amayas_accessibility_features.html
+Amaya/doc/html/accessibility_in _amaya/about_producing_accessible_content.html
+Amaya/doc/html/accessibility_in _amaya/accessibility_in_amaya.html
+Amaya/doc/html/attaching_annotations/about_reading_annotations.html
+Amaya/doc/html/attaching_annotations/about_storing_local_annotations.html
+Amaya/doc/html/attaching_annotations/about_storing_remote_annotations.html
+Amaya/doc/html/attaching_annotations/annotation_issues.html
+Amaya/doc/html/attaching_annotations/annotation_menu.html
+Amaya/doc/html/attaching_annotations/configuring_annotation_settings.html
+Amaya/doc/html/attaching_annotations/creating_an_annotation.html
+Amaya/doc/html/attaching_annotations/deleting_an_annotation.html
+Amaya/doc/html/attaching_annotations/loading_and_presenting_annotations.html
+Amaya/doc/html/attaching_annotations/moving_annotations.html
+Amaya/doc/html/attaching_annotations/navigating_annotations.html
+Amaya/doc/html/attaching_annotations/replying_to_annotations.html
+Amaya/doc/html/attaching_annotations/what_is_an_annotation.html
+Amaya/doc/html/browsing/about_access_keys.html
+Amaya/doc/html/browsing/about_moving_backward_and_forward.html
+Amaya/doc/html/browsing/about_target_anchors.html
+Amaya/doc/html/browsing/activating_a_link.html
+Amaya/doc/html/browsing/opening_documents.html
+Amaya/doc/html/browsing/reloading_a_page.html
+Amaya/doc/html/browsing/types.html
+Amaya/doc/html/browsing/working_with_the_amaya_browser_and_editor.html
+Amaya/doc/html/configuring_amaya/about_configuration_directory_and_file_conventions.html
+Amaya/doc/html/configuring_amaya/about_keyboard_shortcuts.html
+Amaya/doc/html/configuring_amaya/configuring_amaya.html
+Amaya/doc/html/configuring_amaya/menu_preferences.html
+Amaya/doc/html/editing_attributes/copying_attributes.html
+Amaya/doc/html/editing_attributes/editing_attributes_in_the_structure_view.html
+Amaya/doc/html/editing_attributes/editing_attributes_through_the_attributes_menu.html
+Amaya/doc/html/editing_attributes/working_with_attributes.html
+Amaya/doc/html/editing_documents/about_inserting_a_division.html
+Amaya/doc/html/editing_documents/about_merging_elements.html
+Amaya/doc/html/editing_documents/changing_the_document_structure.html
+Amaya/doc/html/editing_documents/the_transform_command.html
+Amaya/doc/html/editing_iso-latin-1_characters/about_optional_multikey_support.html
+Amaya/doc/html/editing_iso-latin-1_characters/about_standard_multikey_support.html
+Amaya/doc/html/editing_iso-latin-1_characters/entering_ISOLatin1_characters_in_amaya.html
+Amaya/doc/html/editing_mathematics/about_entering_math_characters.html
+Amaya/doc/html/editing_mathematics/about_entering_math_constructs_using_the_keyboard.html
+Amaya/doc/html/editing_mathematics/about_linking_in_mathml.html
+Amaya/doc/html/editing_mathematics/editing_math_expressions.html
+Amaya/doc/html/editing_mathematics/math_issues.html
+Amaya/doc/html/editing_mathematics/the_math_palette_and_the_types.html
+Amaya/doc/html/editing_mathematics/viewing_structure_in_mathml.html
+Amaya/doc/html/editing_mathematics/working_with_math_expressions.html
+Amaya/doc/html/editing_tables/add_column.html
+Amaya/doc/html/editing_tables/add_row.html
+Amaya/doc/html/editing_tables/add_tbody.html
+Amaya/doc/html/editing_tables/create_table.html
+Amaya/doc/html/editing_tables/remove_column.html
+Amaya/doc/html/editing_tables/working_with_tables.html
+Amaya/doc/html/elements/about_white_space_handling.html
+Amaya/doc/html/elements/buttons_and_types_menu.html
+Amaya/doc/html/elements/changing_the_document_title.html
+Amaya/doc/html/elements/creating_nested_structures.html
+Amaya/doc/html/elements/creating_new_documents.html
+Amaya/doc/html/elements/exiting_anchors.html
+Amaya/doc/html/elements/the_enter_key.html
+Amaya/doc/html/elements/the_structure_menu.html
 Amaya/doc/html/index.css
+Amaya/doc/html/linking/changing_a_link.html
+Amaya/doc/html/linking/creating_a_target_anchor.html
+Amaya/doc/html/linking/creating_a_target_element.html
+Amaya/doc/html/linking/creating_an_external_link.html
+Amaya/doc/html/linking/creating_an_internal_link.html
+Amaya/doc/html/linking/removing_a_link_or_a_target_anchor.html
+Amaya/doc/html/numbering_sections/numbering_sections.html
+Amaya/doc/html/printing/about_controlling_printing_with_css.html
+Amaya/doc/html/printing/print_command.html
+Amaya/doc/html/printing/printing_documents.html
+Amaya/doc/html/printing/unix_platforms.html
+Amaya/doc/html/printing/using_the_setup_and_print_command.html
+Amaya/doc/html/printing/windows_platforms.html
+Amaya/doc/html/saving_and_publishing_documents/about_saving_in_html.html
+Amaya/doc/html/saving_and_publishing_documents/saving_and_publishing_documents.html
+Amaya/doc/html/saving_and_publishing_documents/saving_documents_as_text.html
+Amaya/doc/html/saving_and_publishing_documents/the_save_command.html
+Amaya/doc/html/saving_and_publishing_documents/the_saveas_command.html
+Amaya/doc/html/searching_and_replacing_text/searching_and_replacing_text.html
+Amaya/doc/html/selecting/selecting_by_structure.html
+Amaya/doc/html/selecting/selecting_images.html
+Amaya/doc/html/selecting/selecting_with_keyboard_and_mouse.html
+Amaya/doc/html/spell_checking/spell_checking.html
+Amaya/doc/html/style.css
+Amaya/doc/html/style_sheets/about_applying_style_using_html_elements.html
+Amaya/doc/html/style_sheets/about_linking_external_and_user_style_sheets.html
+Amaya/doc/html/style_sheets/creating_and_updating_a_style_attribute.html
+Amaya/doc/html/style_sheets/creating_generic_style_for_an_element_or_a_class.html
+Amaya/doc/html/style_sheets/creating_html_style_elements.html
+Amaya/doc/html/style_sheets/handling_external_css.html
+Amaya/doc/html/style_sheets/removing_style.html
+Amaya/doc/html/style_sheets/working_with_styles.html
+Amaya/doc/html/using_graphics/creating_graphics_with_the_palette.html
+Amaya/doc/html/using_graphics/moving_graphics.html
+Amaya/doc/html/using_graphics/painting_graphics.html
+Amaya/doc/html/using_graphics/resizing_graphics.html
+Amaya/doc/html/using_graphics/working_with_graphics.html
+Amaya/doc/html/using_image_maps/about_alternative_text_and_long_descriptions.html
+Amaya/doc/html/using_image_maps/adding_an_image.html
+Amaya/doc/html/using_image_maps/creating_clientside_image_maps.html
+Amaya/doc/html/using_image_maps/moving_image_map_areas.html
+Amaya/doc/html/using_image_maps/resizing_image_map_areas.html
+Amaya/doc/html/using_image_maps/using_clientside_image_maps.html
+Amaya/doc/html/using_image_maps/working_with_image_maps.html
+Amaya/doc/html/using_the_makebook_function/assembling_large_document_collections.html
+Amaya/doc/html/viewing/about_synchronized_views.html
+Amaya/doc/html/viewing/closing_a_view.html
+Amaya/doc/html/viewing/opening_a_view.html
+Amaya/doc/html/viewing/working_with_document_views.html
 Amaya/doc/images/Back.gif
 Amaya/doc/images/Browser.gif
 Amaya/doc/images/CacheMenu.gif
@@ -212,6 +296,7 @@ Amaya/doc/images/ProfilesMenu.gif
 Amaya/doc/images/ProfilesMenufr.gif
 Amaya/doc/images/ProxyMenu.gif
 Amaya/doc/images/ProxyMenufr.gif
+Amaya/doc/images/PublishMenu-es.gif
 Amaya/doc/images/PublishMenu.gif
 Amaya/doc/images/PublishMenufr.gif
 Amaya/doc/images/Reload.png
@@ -222,12 +307,20 @@ Amaya/doc/images/TemplatesMenu.gif
 Amaya/doc/images/TemplatesMenufr.gif
 Amaya/doc/images/amaya.gif
 Amaya/doc/images/annot.png
+Amaya/doc/images/annotationicon-es.png
 Amaya/doc/images/annotationicon.png
+Amaya/doc/images/annotationsmenu-es.png
 Amaya/doc/images/annotationsmenu.png
 Amaya/doc/images/annotationsmenu_fr.png
+Amaya/doc/images/annotationwindow-es.png
 Amaya/doc/images/annotationwindow.png
 Amaya/doc/images/annotorp.png
+Amaya/doc/images/cache_preferences.png
 Amaya/doc/images/check.gif
+Amaya/doc/images/code.gif
+Amaya/doc/images/color_preferences.png
+Amaya/doc/images/configuration_for_annotations.png
+Amaya/doc/images/configurebox-es.png
 Amaya/doc/images/configurebox.png
 Amaya/doc/images/configureboxfr.png
 Amaya/doc/images/css.gif
@@ -235,13 +328,22 @@ Amaya/doc/images/cssfr.gif
 Amaya/doc/images/doc48x.gif
 Amaya/doc/images/find.gif
 Amaya/doc/images/floppy.gif
+Amaya/doc/images/general_preferences.png
+Amaya/doc/images/geometry_preferences.png
+Amaya/doc/images/language_negotiation.png
 Amaya/doc/images/left.gif
 Amaya/doc/images/linkwindow.png
+Amaya/doc/images/localfilter-es.png
 Amaya/doc/images/localfilter.png
+Amaya/doc/images/profiles_preferences.png
+Amaya/doc/images/proxy_preferences.png
+Amaya/doc/images/publishing_preferences.png
 Amaya/doc/images/put.gif
 Amaya/doc/images/right.gif
 Amaya/doc/images/table.gif
 Amaya/doc/images/target.gif
+Amaya/doc/images/templates_preferences.png
+Amaya/doc/images/threads.png
 Amaya/doc/images/up.gif
 Amaya/doc/images/w3c_home
 Amaya/fonts/Families.list
@@ -252,6 +354,28 @@ Amaya/fonts/icones1.fb
 Amaya/fonts/icones11.fb
 @dirrm Amaya/fonts
 @dirrm Amaya/doc/images
+@dirrm Amaya/doc/html/viewing
+@dirrm Amaya/doc/html/using_the_makebook_function
+@dirrm Amaya/doc/html/using_image_maps
+@dirrm Amaya/doc/html/using_graphics
+@dirrm Amaya/doc/html/style_sheets
+@dirrm Amaya/doc/html/spell_checking
+@dirrm Amaya/doc/html/selecting
+@dirrm Amaya/doc/html/searching_and_replacing_text
+@dirrm Amaya/doc/html/saving_and_publishing_documents
+@dirrm Amaya/doc/html/printing
+@dirrm Amaya/doc/html/numbering_sections
+@dirrm Amaya/doc/html/linking
+@dirrm Amaya/doc/html/elements
+@dirrm Amaya/doc/html/editing_tables
+@dirrm Amaya/doc/html/editing_mathematics
+@dirrm Amaya/doc/html/editing_iso-latin-1_characters
+@dirrm Amaya/doc/html/editing_documents
+@dirrm Amaya/doc/html/editing_attributes
+@dirrm Amaya/doc/html/configuring_amaya
+@dirrm Amaya/doc/html/browsing
+@dirrm Amaya/doc/html/attaching_annotations
+@dirrm Amaya/doc/html/accessibility_in _amaya
 @dirrm Amaya/doc/html/HTML-elements
 @dirrm Amaya/doc/html
 @dirrm Amaya/doc
