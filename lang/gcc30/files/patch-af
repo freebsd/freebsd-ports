@@ -1,34 +1,15 @@
---- gcc/config/i386/freebsd.h.orig	Mon Jun 14 17:58:11 1999
-+++ gcc/config/i386/freebsd.h	Mon Jun 21 05:18:57 1999
-@@ -135,23 +135,16 @@
-  : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
-  : (-1))
+--- gcc/config/i386/freebsd.h.orig	Thu Jun 17 05:33:32 1999
++++ gcc/config/i386/freebsd.h	Thu Jun 24 11:16:34 1999
+@@ -137,6 +137,8 @@
  
--/* Output assembler code to FILE to increment profiler label # LABELNO
--   for profiling a function entry.  */
-+/* Tell final.c that we don't need a label passed to mcount.  */
+ /* Tell final.c that we don't need a label passed to mcount.  */
+ 
 +#define NO_PROFILE_DATA
- 
++
  #undef FUNCTION_PROFILER
  #define FUNCTION_PROFILER(FILE, LABELNO)  \
  {									\
-   if (flag_pic)								\
--    {									\
--      fprintf (FILE, "\tleal %sP%d@GOTOFF(%%ebx),%%edx\n",		\
--	       LPREFIX, (LABELNO));					\
--      fprintf (FILE, "\tcall *mcount@GOT(%%ebx)\n");			\
--    }									\
-+      fprintf (FILE, "\tcall *.mcount@GOT(%%ebx)\n");			\
-   else									\
--    {									\
--      fprintf (FILE, "\tmovl $%sP%d,%%edx\n", LPREFIX, (LABELNO));	\
--      fprintf (FILE, "\tcall mcount\n");				\
--    }									\
-+      fprintf (FILE, "\tcall .mcount\n");				\
- }
- 
- #undef SIZE_TYPE
-@@ -170,10 +163,30 @@
+@@ -162,10 +164,30 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
@@ -61,7 +42,7 @@
  
  /* This defines which switch letters take arguments.  On FreeBSD, most of
     the normal cases (defined in gcc.c) apply, and we also have -h* and
-@@ -194,11 +207,11 @@
+@@ -186,11 +208,11 @@
     
  #undef	STARTFILE_SPEC
  #define STARTFILE_SPEC \
@@ -78,7 +59,7 @@
  
  /* Provide a ENDFILE_SPEC appropriate for FreeBSD.  Here we tack on
     the magical crtend.o file (see crtstuff.c) which provides part of 
-@@ -208,7 +221,7 @@
+@@ -200,7 +222,7 @@
  
  #undef	ENDFILE_SPEC
  #define ENDFILE_SPEC \
@@ -87,12 +68,3 @@
  
  /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
     libc, depending on whether we're doing profiling or need threads support.
-@@ -247,7 +260,7 @@
-       %{!static: \
-         %{rdynamic:-export-dynamic} \
- 	%{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
--    %{static:-Bstatic}}} \
-+    %{static:-Bstatic}} \
-   %{symbolic:-Bsymbolic}"
- 
- /* A C statement to output to the stdio stream FILE an assembler
