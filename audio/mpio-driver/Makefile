@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		mpio-driver
-PORTVERSION=		0.2
+PORTVERSION=		0.3
 CATEGORIES=		audio
 MASTER_SITES=		ftp://ftp.gascom.ru/pub/patches/
-DISTFILES=		urio.c.diff_1
+DISTFILES=		urio.c.diff_2
 EXTRACT_ONLY=
 
 MAINTAINER=		asa@gascom.ru
@@ -17,12 +17,12 @@ COMMENT=		Digit@lway MPIO MP3 player device driver KMOD
 
 NO_PACKAGE=		should be recompiled for a particular FreeBSD kernel
 
-BROKEN=			Does not patch
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-IGNORE=		This port only works for FreeBSD 4.x
+.if ${OSVERSION} >= 500000
+PLIST_SUB=	MODDEST=/boot
+.else
+PLIST_SUB=	MODDEST=
 .endif
 
 post-extract:
@@ -31,10 +31,12 @@ post-extract:
 
 pre-patch:
 	@${CP} ${MASTERDIR}/files/Makefile ${WRKSRC}
-	@cd ${WRKSRC} && ${PATCH} < ${DISTDIR}/urio.c.diff_1
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/urio.c.diff_2
 
 post-install:
 	${INSTALL_SCRIPT} ${MASTERDIR}/files/mpio-driver.sh.sample ${PREFIX}/etc/rc.d
+.if exists(/dev/MAKEDEV)
 	@cd /dev && sh MAKEDEV urio0
+.endif
 
 .include <bsd.port.post.mk>
