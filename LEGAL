@@ -177,6 +177,10 @@ radius*			ports/net/radius	Binary redistribution only,
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
+robocode-*		ports/games/robocode	Restrictive license. Particularly,
+						redistribution isn't permitted
+						and user should delete software
+						after 60 days.
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rp*_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
 Scilab-*		ports/math/Scilab	Don't sell for profit.
