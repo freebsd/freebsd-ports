@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
+PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -57,13 +57,13 @@ CONFIGURE_ARGS+=	--disable-ldap
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/gnupg
+	${MKDIR} ${DOCSDIR}
 .for i in DETAILS FAQ HACKING OpenPGP
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/gnupg
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .for i in ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
 	README THANKS TODO VERSION
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/gnupg
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 .if defined(WITH_SUID_GPG)
