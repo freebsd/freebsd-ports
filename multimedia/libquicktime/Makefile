@@ -51,6 +51,9 @@ PORTDOCS=	codecs.html \
 
 .if defined(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.a)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+PLIST_SUB+=	LAME=""
+.else
+PLIST_SUB+=	LAME="@comment "
 .endif
 
 .if ${MACHINE_CPU:Mmmx}
