@@ -6,25 +6,20 @@
 #
 
 PORTNAME=	XML-Handler-Trees
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	PerlSAX handlers for building tree structures
-
-BUILD_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
 
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Handler::Trees.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
 post-extract:
-	@${FIND} ${WRKSRC} -type f -name "*.p[lm]" | ${XARGS} ${CHMOD} +w
-	@${FIND} ${WRKSRC} -type f -name "*.p[lm]" | ${XARGS} dos2unix -p
+	@${CHMOD} +w ${WRKSRC}/Trees.pm && ${PERL} -pi -e 's|\r||' ${WRKSRC}/Trees.pm
 
 .include <bsd.port.mk>
