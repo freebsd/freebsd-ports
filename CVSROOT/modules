@@ -2386,6 +2386,7 @@ ipsend		src/usr.sbin/ipsend
 ipsorc		ports/net/ipsorc
 iptest		src/usr.sbin/iptest
 ipv6calc	ports/net/ipv6calc
+ipv6socket_scrub	ports/net/ipv6socket_scrub
 ipw		ports/net/ipw
 irc		ports/irc/irc
 ircII		ports/irc/ircII
