@@ -4495,6 +4495,7 @@ openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
+openzz		ports/devel/openzz
 opieinfo	src/usr.bin/opieinfo
 opiekey		src/usr.bin/opiekey
 opiepasswd	src/usr.bin/opiepasswd
