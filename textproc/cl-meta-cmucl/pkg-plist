@@ -1,0 +1,3 @@
+lib/common-lisp/meta/cmuclfasl/package.fasl
+lib/common-lisp/meta/cmuclfasl/meta.fasl
+@dirrm lib/common-lisp/meta/cmuclfasl
