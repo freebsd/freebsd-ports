@@ -16,7 +16,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A set of perl modules to utilize mDNS for service discovery
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
-RUN_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
