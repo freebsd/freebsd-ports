@@ -11,5 +11,5 @@ include/AL/alutypes.h
 lib/libopenal.a
 lib/libopenal.so
 lib/libopenal.so.0
-lib/libopenal.so.0.0.6
+lib/libopenal.so.0.0.7
 @dirrm include/AL
