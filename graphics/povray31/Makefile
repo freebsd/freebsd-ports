@@ -45,6 +45,7 @@ do-install:
 		(cd ${POVLIB}; tar xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
+	@${INSTALL_DATA} ${WRKSRC}/*.txt ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
