@@ -28,10 +28,6 @@ lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
 lib/libcdio.so.4
-lib/libcdio_paranoia.a
-lib/libcdio_paranoia.la
-lib/libcdio_paranoia.so
-lib/libcdio_paranoia.so.0
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
