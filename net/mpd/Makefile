@@ -19,8 +19,18 @@ MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
-USE_OPENSSL=	yes
+.if defined(WITH_OPENSSL_PORT)
+USE_OPENSSL_PORT=yes
 MAKE_ENV=	COPTS=-I${OPENSSLINC} LDADD=-L${OPENSSLLIB}
+.else
+USE_OPENSSL_BASE=yes
+MAKE_ENV=	COPTS=-I${OPENSSLINC}
+.endif
+
+pre-build:
+	@${ECHO}
+	@${ECHO} "Use WITH_OPENSSL_PORT=yes if you use OPENSSL from ports"
+	@${ECHO}
 
 post-install:
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh.sample
