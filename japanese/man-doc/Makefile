@@ -3,11 +3,11 @@
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.9 1997/07/13 18:52:10 max Exp $
+# $Id: Makefile,v 1.11 1997/08/25 07:25:00 max Exp $
 #
 
 DISTNAME=	jpman-${VERSION}e
-PKGNAME=	jp-man-doc-${VERSION}e
+PKGNAME=	ja-man-doc-${VERSION}e
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
 
