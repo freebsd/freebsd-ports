@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.5
-PORTREVISION?=	2
+PORTVERSION=	1.7.6
+PORTREVISION?=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -22,13 +22,10 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		nspr4.1:${PORTSDIR}/devel/nspr
+		mng.1:${PORTSDIR}/graphics/libmng
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -99,6 +96,9 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
+
+# moz_pis
+MOZ_PIS_SCRIPTS=	# no default scripts
 
 OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CALENDAR "Enable the Calendar module" off \
@@ -191,6 +191,7 @@ MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
 FAKEDIR=	${WRKDIR}/fake
+MOZ_PIS_DIR=	${FAKEDIR}/lib/${MOZILLA}/init.d
 
 #.if ${ARCH} == "i386"
 #CONFIGURE_ARGS+=	--enable-reorder
@@ -214,7 +215,7 @@ CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 .if defined(WITH_MENU_ENTRY)
-USE_GNOME+=	gnomehier
+USE_GNOME+=	gnomehier desktopfileutils
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
@@ -276,6 +277,12 @@ post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		< ${FILESDIR}/mozilla.desktop.in > \
 		${WRKDIR}/mozilla.desktop
+.for ii in ${MOZ_PIS_SCRIPTS}
+	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${FILESDIR}/moz_pis_${ii} > ${WRKDIR}/moz_pis_${ii}
+.endfor
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -283,15 +290,12 @@ pre-configure:
 		${FALSE}; \
 	fi
 
-post-build:
-	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
-		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
-
 pre-install:
 	${RM} -rf ${FAKEDIR} ${PLIST}
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+	${MKDIR} ${MOZ_PIS_DIR}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/mozilla \
 		${FAKEDIR}/bin/mozilla-config
@@ -313,6 +317,9 @@ pre-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
+.for ii in ${MOZ_PIS_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/moz_pis_${ii} ${MOZ_PIS_DIR}/${ii}
+.endfor
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
@@ -332,6 +339,8 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm include/${MOZILLA} >> ${PLIST}
+	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -340,7 +349,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla-config ${PREFIX}/lib/${MOZILLA}
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
 	fi
@@ -378,6 +387,9 @@ post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
+.if defined(WITH_MENU_ENTRY)
+	@-update-desktop-database
 .endif
 
 .include <bsd.port.post.mk>
