@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fetchmail
-# Version required:     3.9.7
+# Version required:     3.9.8
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.32 1997/06/09 23:49:42 max Exp $
+# $Id: Makefile,v 1.33 1997/06/11 02:38:35 ache Exp $
 #
 
-DISTNAME=       fetchmail-3.9.7
+DISTNAME=       fetchmail-3.9.8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -19,7 +19,7 @@ MAN1=		fetchmail.1
 FDOC=   ${PREFIX}/share/doc/fetchmail
 
 post-patch:
-	cp /usr/include/md5.h ${WRKSRC}
+	@${CP} -f  /usr/include/md5.h ${WRKSRC}
 
 post-install:
 	install -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
