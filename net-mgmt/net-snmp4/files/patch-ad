@@ -1,0 +1,29 @@
+--- agent/mibgroup/mibII/interfaces.c~	Tue Mar 16 08:46:12 1999
++++ agent/mibgroup/mibII/interfaces.c	Sat Apr  3 13:49:28 1999
+@@ -1745,10 +1745,18 @@
+ 			physaddrbuf = 0;
+ 		}
+ 		ifm = (struct if_msghdr *)rtm;
++#if defined(freebsd3) || defined(freebsd4)
++		if (physaddrs != 0) physaddrs[naddrs] = (void*)(ifm + 1);
++		naddrs++;
++#endif
+ 		ilen -= ifm->ifm_msglen;
+ 		cp += ifm->ifm_msglen;
+ 		rtm = (struct rt_msghdr *)cp;
+ 		while (ilen > 0 && rtm->rtm_type == RTM_NEWADDR) {
++#if defined(freebsd3) || defined(freebsd4)
++			ilen -= rtm->rtm_msglen;
++			cp += rtm->rtm_msglen;
++#else
+ 			int is_alias = 0;
+ 			ifam = (struct ifa_msghdr *)rtm;
+ 			ilen -= sizeof(*ifam);
+@@ -1771,6 +1779,7 @@
+ 				}
+ 				sa = (struct sockaddr *)cp;
+ 			}
++#endif
+ 			rtm = (struct rt_msghdr *)cp;
+ 		}
+ 	}

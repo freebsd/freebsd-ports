@@ -1,0 +1,12 @@
+--- agent/mibgroup/ucd_snmp.h.orig	Fri Feb 26 03:03:41 1999
++++ agent/mibgroup/ucd_snmp.h	Sun Apr  4 13:52:23 1999
+@@ -18,5 +18,9 @@
+ config_arch_require(bsdi3, ucd-snmp/memory)
+ config_arch_require(linux, ucd-snmp/vmstat)
+ config_arch_require(freebsd2, ucd-snmp/vmstat_freebsd2)
++config_arch_require(freebsd3, ucd-snmp/vmstat_freebsd2)
++config_arch_require(freebsd4, ucd-snmp/vmstat_freebsd2)
+ config_arch_require(freebsd2, ucd-snmp/memory_freebsd2)
++config_arch_require(freebsd3, ucd-snmp/memory_freebsd2)
++config_arch_require(freebsd4, ucd-snmp/memory_freebsd2)
+ config_add_mib(UCD-SNMP-MIB) 
