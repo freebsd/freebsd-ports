@@ -81,6 +81,7 @@
     SUBDIR += mozart
     SUBDIR += nawk
     SUBDIR += nickle
+    SUBDIR += nml
     SUBDIR += nqc
     SUBDIR += o2c
     SUBDIR += objc
