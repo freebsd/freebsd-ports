@@ -1,1 +1,22 @@
+bin/kcmhotkyes
+bin/kcmmodifiers
 bin/khotkeys
+share/applnk/Settings/Keys/kcmhotkeys.kdelnk
+share/applnk/Settings/Keys/kcmmodifiers.kdelnk
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-1.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-2.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-3.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-4.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-5.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index-6.html
+share/doc/HTML/en/kcontrol/kcmhotkeys/index.html
+share/doc/HTML/en/kcontrol/kcmmodifiers/index-1.html
+share/doc/HTML/en/kcontrol/kcmmodifiers/index-2.html
+share/doc/HTML/en/kcontrol/kcmmodifiers/index-3.html 
+share/doc/HTML/en/kcontrol/kcmmodifiers/index-4.html 
+share/doc/HTML/en/kcontrol/kcmmodifiers/index-5.html 
+share/doc/HTML/en/kcontrol/kcmmodifiers/index.html  
+share/locale/cs/LC_MESSAGES/kcmhotkyes.mo
+share/locale/cs/LC_MESSAGES/kcmmodifiers.mo
+@dirrm share/doc/HTML/en/kcontrol/kcmmodifiers
+@dirrm share/doc/HTML/en/kcontrol/kcmhotkeys
