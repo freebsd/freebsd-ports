@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/jftp.jar"
