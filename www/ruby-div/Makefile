@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A web application server using dRuby and ERB2
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/drb.rb:${PORTSDIR}/net/ruby-drb
 

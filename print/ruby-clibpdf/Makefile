@@ -15,6 +15,7 @@ DISTNAME=	ClibPDF-ALPHA-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby binding for ClibPDF
 
 LIB_DEPENDS=	cpdf.0:${PORTSDIR}/print/clibpdf
 

@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library to access Panda
 
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

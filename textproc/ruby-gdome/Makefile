@@ -14,6 +14,7 @@ DISTNAME=	lib${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension that wraps around gdome2
 
 LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
 

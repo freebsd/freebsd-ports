@@ -14,6 +14,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	The "meta-port" for Ruby/GNOME2
 
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango

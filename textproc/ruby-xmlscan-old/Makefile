@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Pure Ruby XML/HTML scanner and XPath processor/compiler modules
 
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 

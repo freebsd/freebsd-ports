@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby extension to use PAM library
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

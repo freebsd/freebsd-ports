@@ -14,6 +14,7 @@ DISTNAME=	rb-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
 
 LIB_DEPENDS=	gsl.4:${.CURDIR}/../gsl
 

@@ -15,6 +15,7 @@ DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Variable precision floating library for Ruby
 
 IGNOREFILES=	${PORTNAME}.html ${PORTNAME}_en.html
 

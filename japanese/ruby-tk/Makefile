@@ -8,6 +8,7 @@
 CATEGORIES=	japanese
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to the Japanized Tk widget set
 
 TK_VERSION?=	80
 WITH_TCLTK_JP=	yes

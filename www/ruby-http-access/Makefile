@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/:L}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library to access the Internet via HTTP
 
 USE_RUBY=	yes
 

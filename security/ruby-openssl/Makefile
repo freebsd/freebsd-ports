@@ -14,6 +14,7 @@ DISTNAME=	ossl-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby module which wraps OpenSSL
 
 USE_OPENSSL=	yes
 USE_RUBY=	yes

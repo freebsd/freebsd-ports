@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Documentation from Ruby source files
 
 USE_RUBY=	yes
 

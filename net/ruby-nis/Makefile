@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library to use the NIS/YP API
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A lightweight logging library for Ruby
 
 USE_RUBY=	yes
 NO_BUILD=	yes

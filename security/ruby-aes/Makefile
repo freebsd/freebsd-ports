@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-rb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library which implements AES (Rijndael) encryption
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

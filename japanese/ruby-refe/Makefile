@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interactive reference in Japanese
 
 IGNOREFILES=	ruby-refm.rd.gz \
 		extrefm.rd

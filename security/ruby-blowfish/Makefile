@@ -18,6 +18,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to the Blowfish cipher
 
 USE_OPENSSL=	yes
 USE_RUBY=	yes

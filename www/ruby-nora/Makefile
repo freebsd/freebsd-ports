@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:E}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A rich set of Ruby libraries for Web applications
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

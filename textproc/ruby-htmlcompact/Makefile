@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library to compact an HTML document by reducing whitespaces
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
