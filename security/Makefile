@@ -123,6 +123,7 @@
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
+    SUBDIR += mac-robber
     SUBDIR += mcrypt
     SUBDIR += mdcrack
     SUBDIR += mhash
