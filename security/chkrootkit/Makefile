@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
@@ -14,7 +14,7 @@ MAINTAINER=	cordeiro@iqm.unicamp.br
 
 ALL_TARGET=	chkrootkit chklastlog chkwtmp ifpromisc
 
-DOCFILES=	COPYRIGHT README.chklastlog README.chkwtmp
+DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
 
 pre-patch:
 	${PERL} -pi -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
