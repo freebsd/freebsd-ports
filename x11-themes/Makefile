@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += kde-icons-wasp
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-sparkling
