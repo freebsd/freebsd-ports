@@ -110,7 +110,6 @@ share/gnome/assetml/gcompris_misc_fr.assetml
 share/gnome/assetml/gcompris_misc_it.assetml
 share/gnome/assetml/gcompris_misc_pt.assetml
 share/gnome/assetml/gcompris_misc_ru.assetml
-share/gnome/gcompris/boards/#searace1player.xml#
 share/gnome/gcompris/boards/DOCUMENTATIONS
 share/gnome/gcompris/boards/README
 share/gnome/gcompris/boards/advanced_colors.xml
@@ -164,7 +163,6 @@ share/gnome/gcompris/boards/anim.xml
 share/gnome/gcompris/boards/anim/animation.js
 share/gnome/gcompris/boards/anim/camera.png
 share/gnome/gcompris/boards/anim/minibutton.png
-share/gnome/gcompris/boards/anim_plus.xml
 share/gnome/gcompris/boards/babymatch.xml
 share/gnome/gcompris/boards/babymatch/bell.png
 share/gnome/gcompris/boards/babymatch/board1_0.xml
@@ -373,7 +371,6 @@ share/gnome/gcompris/boards/colors/colors_highlight.png
 share/gnome/gcompris/boards/colors_group.xml
 share/gnome/gcompris/boards/computer.xml
 share/gnome/gcompris/boards/dataset/mrpatate.xml
-share/gnome/gcompris/boards/dataset/mrpatate.xml.clement
 share/gnome/gcompris/boards/doubleentry.xml
 share/gnome/gcompris/boards/doubleentry/board1_0.xml
 share/gnome/gcompris/boards/doubleentry/board2_0.xml
