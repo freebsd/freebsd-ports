@@ -68,8 +68,8 @@ MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
-BROKEN=		"Does not compile on !i386 and !sparc64"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 pre-configure:
