@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	djvu
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		giconv:${PORTSDIR}/converters/iconv
+		giconv.2:${PORTSDIR}/converters/libiconv
 .ifndef WITHOUT_X11
 USE_QT_VER=	2
 #LIB_DEPENDS+=	qt2:${PORTSDIR}/x11-toolkits/qt23
