@@ -1,6 +1,6 @@
-Borges is a web application framework based on Seaside that allows
-linear programming of web applications.  Borges runs on Webrick and
-features a simple rendering interface.
+Borges is a web application framework based on Seaside 2.0
+(http://beta4.com/seaside2/) that allows linear programming of
+web applications.
 
 Author:	Eric Hodel <drbrain@segment7.net>
-WWW:	http://segment7.net/ruby-code/borges/borges.html
+WWW:	http://http://borges.rubyforge.org/

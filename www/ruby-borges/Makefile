@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	borges
-PORTVERSION=	0.2.0
+PORTVERSION=	1.0.0
 CATEGORIES=	www ruby
-MASTER_SITES=	http://segment7.net/ruby-code/borges/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/420/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -16,24 +16,27 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A web application framework for Ruby that allows linear programming
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	webrick
-
-NO_BUILD=	yes
+USE_RUBY_SETUP=	yes
 
 DOCS=		BUGS CHANGELOG README
 EXAMPLES=	data/examples/ruby/borges/*
 
-do-install:
-	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
-.endfor
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+RUBY_REQUIRE=	Ruby > 180
+
+.include <bsd.port.pre.mk>
+
+.if !defined(RUBY_PROVIDED)
+IGNORE=		only works with Ruby 1.8.0 or later
 .endif
 
-.include <bsd.port.mk>
+post-extract:
+# This port is not really RUBY_MODEXAMPLESDIR/RUBY_MODDOCDIR clean
+.for d in doc examples
+	${MV} ${WRKSRC}/data/${d}/ruby/Borges ${WRKSRC}/data/${d}/ruby/borges
+	${MV} ${WRKSRC}/data/${d}/ruby ${WRKSRC}/data/${d}/${RUBY_NAME}
+.if defined(NOPORTDOCS)
+	${MV} ${WRKSRC}/data/${d} ${WRKSRC}/
+.endif
+.endfor
+
+.include <bsd.port.post.mk>

@@ -1,37 +1,1208 @@
-%%RUBY_SITELIBDIR%%/borges.rb
-%%RUBY_SITELIBDIR%%/borges/ApacheDRbClient.rb
-%%RUBY_SITELIBDIR%%/borges/ApacheDRbServer.rb
-%%RUBY_SITELIBDIR%%/borges/Application.rb
-%%RUBY_SITELIBDIR%%/borges/HTML.rb
-%%RUBY_SITELIBDIR%%/borges/Page.rb
-%%RUBY_SITELIBDIR%%/borges/Radical.rb
-%%RUBY_SITELIBDIR%%/borges/Renderer.rb
-%%RUBY_SITELIBDIR%%/borges/Session.rb
-%%RUBY_SITELIBDIR%%/borges/TC_LRUCache.rb
-%%RUBY_SITELIBDIR%%/borges/Utilities.rb
-%%RUBY_SITELIBDIR%%/borges/Webrick.rb
-%%RUBY_SITELIBDIR%%/borges/console_ask.rb
-%%RUBY_SITELIBDIR%%/borges/template_ask.rb
-%%RUBY_SITELIBDIR%%/borges/web_ask.rb
-@dirrm %%RUBY_SITELIBDIR%%/borges
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/apache/borges.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/apache/counters.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pagecounter.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/status.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/README
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/application.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/ask.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/index.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/patterns
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/renderask.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/renderer.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/respond.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/train.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/train/webask.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/train
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/apache
+%%RUBY_SITELIBDIR%%/Borges.rb
+%%RUBY_SITELIBDIR%%/Borges/CGIDRbClient.rb
+%%RUBY_SITELIBDIR%%/Borges/Callback/ActionCallback.rb
+%%RUBY_SITELIBDIR%%/Borges/Callback/Callback.rb
+%%RUBY_SITELIBDIR%%/Borges/Callback/CallbackStore.rb
+%%RUBY_SITELIBDIR%%/Borges/Callback/DispatchCallback.rb
+%%RUBY_SITELIBDIR%%/Borges/Callback/ValueCallback.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/ApplicationEditor.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/ApplicationList.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/BatchedList.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/ComponentTree.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Counter.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/DateRangeSelector.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/DateSelector.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/DateTable.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Dialog/Dialog.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Dialog/InputDialog.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Dialog/RadioDialog.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/ExampleBrowser.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/GeeWeb.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/NavigationBar.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Path.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Report.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/SelectionDateTable.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/TabPanel.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/TaskFrame.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/ToolFrame.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Tutorial.rb
+%%RUBY_SITELIBDIR%%/Borges/Component/Window.rb
+%%RUBY_SITELIBDIR%%/Borges/Controller/Component.rb
+%%RUBY_SITELIBDIR%%/Borges/Controller/Controller.rb
+%%RUBY_SITELIBDIR%%/Borges/Controller/Task.rb
+%%RUBY_SITELIBDIR%%/Borges/DRb.rb
+%%RUBY_SITELIBDIR%%/Borges/DRbServer.rb
+%%RUBY_SITELIBDIR%%/Borges/ErrorPage/EmailErrorPage.rb
+%%RUBY_SITELIBDIR%%/Borges/ErrorPage/ErrorPage.rb
+%%RUBY_SITELIBDIR%%/Borges/ErrorPage/WalkbackPage.rb
+%%RUBY_SITELIBDIR%%/Borges/Extensions/Array.rb
+%%RUBY_SITELIBDIR%%/Borges/Extensions/Numeric.rb
+%%RUBY_SITELIBDIR%%/Borges/Extensions/Object.rb
+%%RUBY_SITELIBDIR%%/Borges/Extensions/Proc.rb
+%%RUBY_SITELIBDIR%%/Borges/Extensions/String.rb
+%%RUBY_SITELIBDIR%%/Borges/Filter/BasicAuthentication.rb
+%%RUBY_SITELIBDIR%%/Borges/Filter/Filter.rb
+%%RUBY_SITELIBDIR%%/Borges/Filter/Once.rb
+%%RUBY_SITELIBDIR%%/Borges/Filter/Transaction.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/HtmlAttributes.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/HtmlBuilder.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/HtmlElement.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/HtmlRenderer.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/PluggableSelectBox.rb
+%%RUBY_SITELIBDIR%%/Borges/HTML/RenderingContext.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/BooleanPreference.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/ListPreference.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/NumberPreference.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/Preference.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/Preferences.rb
+%%RUBY_SITELIBDIR%%/Borges/Preference/StringPreference.rb
+%%RUBY_SITELIBDIR%%/Borges/Report/ReportColumn.rb
+%%RUBY_SITELIBDIR%%/Borges/Report/TableReport.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/Application.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/Dispatcher.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/DocumentHandler.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/NotFoundHandler.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/Registry.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/RequestHandler.rb
+%%RUBY_SITELIBDIR%%/Borges/RequestHandler/Session.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/BasicAuthResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/GenericResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/HtmlResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/NotFoundResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/RedirectResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Response/RefreshResponse.rb
+%%RUBY_SITELIBDIR%%/Borges/Session/AuthenticatedSession.rb
+%%RUBY_SITELIBDIR%%/Borges/Session/ControllerSession.rb
+%%RUBY_SITELIBDIR%%/Borges/Task/PluggableTask.rb
+%%RUBY_SITELIBDIR%%/Borges/Task/Tool.rb
+%%RUBY_SITELIBDIR%%/Borges/Test.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/CalendarTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/ClosureTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/EncodingTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/ErrorTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/ExceptionTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/HtmlTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/InputTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/OnceTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/ParentTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/TestTabs.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/TransactionTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Test/UploadTest.rb
+%%RUBY_SITELIBDIR%%/Borges/TestCase.rb
+%%RUBY_SITELIBDIR%%/Borges/TestCase/ContinuationTest.rb
+%%RUBY_SITELIBDIR%%/Borges/TestCase/LRUCacheTest.rb
+%%RUBY_SITELIBDIR%%/Borges/TestCase/StateRegistryTest.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/ExternalID.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/LRUCache.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/RenderNotification.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/Request.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/Response.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/SimulatedRequestNotification.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/StateHolder.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/StateRegistry.rb
+%%RUBY_SITELIBDIR%%/Borges/Utilities/WeakIdentityKeyHash.rb
+%%RUBY_SITELIBDIR%%/Borges/WEBrick.rb
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Utilities
+@dirrm %%RUBY_SITELIBDIR%%/Borges/TestCase
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Test
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Task
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Session
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Response
+@dirrm %%RUBY_SITELIBDIR%%/Borges/RequestHandler
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Report
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Preference
+@dirrm %%RUBY_SITELIBDIR%%/Borges/HTML
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Filter
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Extensions
+@dirrm %%RUBY_SITELIBDIR%%/Borges/ErrorPage
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Controller
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Component/Dialog
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Component
+@dirrm %%RUBY_SITELIBDIR%%/Borges/Callback
+@dirrm %%RUBY_SITELIBDIR%%/Borges
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ObjectSpaceBrowser.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreBanner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreBrowseFrame.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreCart.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreCheckoutTask.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreFront.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreItem.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreItemList.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreItemView.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreSearchTask.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreSession.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SushiNet/StoreTask.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/borges-cgi.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/SushiNet
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/INSTALL
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Array.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Array.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.src/M000659.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.src/M000660.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.src/M000661.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.src/M000662.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Application.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Application.src/M000281.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Application.src/M000282.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Application.src/M000283.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000389.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000390.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000391.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000392.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000393.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src/M000394.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000240.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000241.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000242.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000243.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000244.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000245.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000246.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src/M000247.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/AuthenticatedSession.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/AuthenticatedSession.src/M000298.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/AuthenticatedSession.src/M000299.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/AuthenticatedSession.src/M000300.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthResponse.src/M000415.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthentication.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthentication.src/M000387.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthentication.src/M000388.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000181.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000182.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000183.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000184.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000185.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000186.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000187.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000188.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000189.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src/M000190.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BooleanPreference.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BooleanPreference.src/M000612.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CGIDRbClient.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CGIDRbClient.src/M000127.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.src/M000191.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.src/M000192.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.src/M000193.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.src/M000194.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000350.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000351.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000352.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000353.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000354.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000355.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000356.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000357.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000358.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src/M000359.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000270.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000271.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000272.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000273.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000274.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000275.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000276.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000277.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000278.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000279.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src/M000280.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000284.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000285.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000286.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000287.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000288.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000289.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000290.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000291.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src/M000292.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000453.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000454.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000455.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000456.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000457.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000458.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000459.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000460.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000461.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000462.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000463.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000464.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000465.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000466.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000467.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000468.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000469.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000470.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000471.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000472.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000473.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000474.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000475.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000476.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src/M000477.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000325.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000326.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000327.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000328.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000329.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000330.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src/M000331.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.src/M000360.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.src/M000361.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.src/M000362.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.src/M000363.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRb.src/M000129.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src/M000521.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src/M000522.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src/M000523.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src/M000524.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src/M000525.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000370.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000371.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000372.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000373.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000374.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000375.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000376.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000377.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000378.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000379.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000380.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000381.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src/M000382.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000478.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000479.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000480.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000481.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000482.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000483.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src/M000484.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000599.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000600.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000601.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000602.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000603.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000604.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000605.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000606.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000607.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000608.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000609.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000610.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src/M000611.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000397.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000398.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000399.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000400.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000401.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000402.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src/M000403.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DispatchCallback.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DispatchCallback.src/M000195.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DispatchCallback.src/M000196.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000590.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000591.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000592.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000593.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000594.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000595.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000596.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src/M000597.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src/M000526.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src/M000527.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src/M000528.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src/M000529.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src/M000530.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000620.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000621.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000622.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000623.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000624.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000625.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000626.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000627.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src/M000628.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000255.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000256.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000257.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000258.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000259.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000260.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000261.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000262.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000263.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src/M000264.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000431.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000432.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000433.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000434.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000435.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000436.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000437.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src/M000438.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExternalID.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExternalID.src/M000128.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Filter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Filter.src/M000441.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000417.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000418.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000419.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000420.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000421.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000422.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000423.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000424.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000425.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000426.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000427.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000428.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000429.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src/M000430.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GenericResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GenericResponse.src/M000509.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000561.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000562.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000563.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000564.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000565.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000566.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000567.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000568.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000569.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src/M000570.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000197.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000198.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000199.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000200.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000201.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000202.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000203.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000204.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000205.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000206.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000207.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000208.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000209.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000210.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000211.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000212.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000213.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000214.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000215.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000216.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000217.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000218.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000219.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000220.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000221.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000222.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000223.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000224.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000225.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000226.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000227.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000228.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000229.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000230.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000231.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000232.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000233.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000234.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000235.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000236.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000237.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000238.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src/M000239.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000576.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000577.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000578.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000579.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000580.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000581.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000582.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000583.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000584.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000585.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000586.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000587.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000588.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src/M000589.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000629.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000630.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000631.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000632.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000633.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000634.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000635.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000636.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000637.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000638.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000639.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000640.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000641.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000642.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000643.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000644.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000645.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000646.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000647.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000648.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000649.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000650.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000651.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000652.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000653.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000654.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000655.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src/M000656.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000533.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000534.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000535.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000536.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000537.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000538.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000539.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000540.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000541.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src/M000542.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src/M000571.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src/M000572.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src/M000573.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src/M000574.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src/M000575.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.src/M000383.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.src/M000384.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.src/M000385.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.src/M000386.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ListPreference.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ListPreference.src/M000395.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ListPreference.src/M000396.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.src/M000248.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.src/M000249.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.src/M000250.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.src/M000251.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundHandler.src/M000364.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundResponse.src/M000366.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NumberPreference.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NumberPreference.src/M000180.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Once.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Once.src/M000367.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Once.src/M000368.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src/M000265.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src/M000266.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src/M000267.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src/M000268.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src/M000269.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableSelectBox.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableSelectBox.src/M000531.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableSelectBox.src/M000532.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableTask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableTask.src/M000657.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableTask.src/M000658.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preference.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preference.src/M000301.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preferences.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preferences.src/M000613.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preferences.src/M000614.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preferences.src/M000615.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RadioDialog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RadioDialog.src/M000323.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RadioDialog.src/M000324.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RedirectResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RedirectResponse.src/M000404.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RefreshResponse.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RefreshResponse.src/M000365.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000510.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000511.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000512.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000513.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000514.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000515.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000516.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000517.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000518.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000519.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src/M000520.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RenderNotification.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RenderingContext.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RenderingContext.src/M000369.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Report.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Report.src/M000178.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Report.src/M000179.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000485.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000486.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000487.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000488.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000489.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000490.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000491.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000492.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000493.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000494.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000495.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000496.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000497.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000498.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000499.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000500.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000501.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000502.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000503.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000504.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src/M000505.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Request.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Request.src/M000670.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Request.src/M000671.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Request.src/M000672.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RequestHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RequestHandler.src/M000439.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RequestHandler.src/M000440.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.src/M000616.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.src/M000617.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.src/M000618.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.src/M000619.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000302.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000303.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000304.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000305.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000306.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000307.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000308.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000309.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000310.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000311.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000312.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000313.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000314.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000315.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000316.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000317.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000318.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000319.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src/M000320.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000135.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000136.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000137.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000138.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000139.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000140.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000141.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000142.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000143.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000144.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000145.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000146.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000147.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000148.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000149.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000150.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000151.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000152.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000153.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000154.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000155.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000156.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000157.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000158.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000159.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000160.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000161.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000162.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000163.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000164.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000165.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000166.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000167.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000168.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000169.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000170.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000171.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000172.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000173.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000174.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000175.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000176.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src/M000177.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SimulatedRequestNotification.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateHolder.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateHolder.src/M000321.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateHolder.src/M000322.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src/M000293.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src/M000294.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src/M000295.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src/M000296.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src/M000297.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StringPreference.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StringPreference.src/M000416.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000405.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000406.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000407.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000408.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000409.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src/M000410.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000543.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000544.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000545.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000546.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000547.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000548.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000549.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000550.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000551.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000552.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000553.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000554.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000555.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000556.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000557.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000558.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000559.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src/M000560.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Task.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Task.src/M000598.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TaskFrame.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TaskFrame.src/M000343.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TaskFrame.src/M000344.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TaskFrame.src/M000345.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tool.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tool.src/M000506.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tool.src/M000507.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tool.src/M000508.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000442.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000443.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000444.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000445.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000446.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000447.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000448.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000449.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000450.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000451.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src/M000452.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Transaction.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Transaction.src/M000252.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Transaction.src/M000253.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Transaction.src/M000254.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000332.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000333.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000334.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000335.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000336.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000337.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000338.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000339.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000340.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000341.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src/M000342.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.src/M000411.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.src/M000412.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.src/M000413.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.src/M000414.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.src/M000130.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.src/M000131.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.src/M000133.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.src/M000134.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.src/M000346.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.src/M000347.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.src/M000348.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.src/M000349.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000663.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000664.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000665.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000666.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000667.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000668.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src/M000669.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ClosureTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ClosureTest.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ClosureTest.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ClosureTest.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000047.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000048.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000049.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000050.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000051.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src/M000052.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/EncodingTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/EncodingTest.src/M000044.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ErrorTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ErrorTest.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ExceptionTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ExceptionTest.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ExceptionTest/ExceptionTestException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/InputTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/InputTest.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/InputTest.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.src/M000053.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.src/M000054.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.src/M000055.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.src/M000056.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Numeric.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Numeric.src/M000022.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Numeric.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Object.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Object.src/M000043.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.src/M000123.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.src/M000124.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.src/M000125.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.src/M000126.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src/M000114.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src/M000115.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src/M000116.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src/M000117.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src/M000118.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.src/M000119.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.src/M000120.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.src/M000121.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.src/M000122.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/OnceTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/OnceTest.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ParentTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ParentTest.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ParentTest.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ParentTest.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Proc.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Proc.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Proc.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/String.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/String.src/M000057.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/String.src/M000058.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/String.src/M000059.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000084.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000085.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000086.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000087.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000088.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000089.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src/M000090.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000091.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000092.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000093.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000094.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000095.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000096.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000097.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src/M000098.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCart.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCart.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCart.src/M000071.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCart.src/M000072.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCheckoutTask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCheckoutTask.src/M000081.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCheckoutTask.src/M000082.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCheckoutTask.src/M000083.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreFront.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreFront.src/M000110.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreFront.src/M000111.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItem.src/M000112.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItem.src/M000113.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemList.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemList.src/M000102.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemList.src/M000103.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemList.src/M000104.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemView.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemView.src/M000073.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemView.src/M000074.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemView.src/M000075.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src/M000105.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src/M000106.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src/M000107.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src/M000108.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src/M000109.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src/M000076.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src/M000077.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src/M000078.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src/M000079.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src/M000080.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreTask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreTask.src/M000099.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreTask.src/M000100.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreTask.src/M000101.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/TestTabs.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/TestTabs.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/TestTabs.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/TransactionTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/TransactionTest.src/M000045.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/UploadTest.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/UploadTest.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/UploadTest.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ValueHolder.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/ValueHolder.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000060.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000061.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000062.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000063.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000064.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000065.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src/M000066.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key/IdentityKeyHash.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key/IdentityKeyHash.src/M000067.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key/IdentityKeyHash.src/M000068.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key/IdentityKeyHash.src/M000069.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/classes/Weak/RefError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/ObjectSpaceBrowser_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreBanner_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreBrowseFrame_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreCart_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreCheckoutTask_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreFront_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreItemList_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreItemView_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreItem_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreSearchTask_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreSession_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet/StoreTask_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/borges-cgi_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/CGIDRbClient_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback/ActionCallback_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback/CallbackStore_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback/Callback_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback/DispatchCallback_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback/ValueCallback_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/ApplicationEditor_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/ApplicationList_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/BatchedList_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/ComponentTree_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Counter_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/DateRangeSelector_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/DateSelector_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/DateTable_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Dialog/Dialog_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Dialog/InputDialog_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Dialog/RadioDialog_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/ExampleBrowser_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/GeeWeb_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/NavigationBar_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Path_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Report_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/SelectionDateTable_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/TabPanel_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/TaskFrame_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/ToolFrame_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Tutorial_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Window_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Controller/Component_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Controller/Controller_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Controller/Task_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/DRbServer_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/DRb_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/ErrorPage/EmailErrorPage_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/ErrorPage/ErrorPage_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/ErrorPage/WalkbackPage_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions/Array_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions/Numeric_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions/Object_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions/Proc_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions/String_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Filter/BasicAuthentication_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Filter/Filter_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Filter/Once_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Filter/Transaction_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/HtmlAttributes_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/HtmlBuilder_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/HtmlElement_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/HtmlRenderer_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/PluggableSelectBox_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML/RenderingContext_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/BooleanPreference_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/ListPreference_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/NumberPreference_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/Preference_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/Preferences_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference/StringPreference_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Report/ReportColumn_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Report/TableReport_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/Application_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/Dispatcher_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/DocumentHandler_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/NotFoundHandler_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/Registry_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/RequestHandler_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler/Session_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/BasicAuthResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/GenericResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/HtmlResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/NotFoundResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/RedirectResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response/RefreshResponse_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Session/AuthenticatedSession_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Session/ControllerSession_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Task/PluggableTask_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Task/Tool_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/CalendarTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/ClosureTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/EncodingTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/ErrorTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/ExceptionTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/HtmlTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/InputTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/OnceTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/ParentTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/TestTabs_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/TransactionTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test/UploadTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/TestCase/ContinuationTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/TestCase/LRUCacheTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/TestCase/StateRegistryTest_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/TestCase_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/ExternalID_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/LRUCache_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/RenderNotification_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/Request_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/Response_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/SimulatedRequestNotification_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/StateHolder_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/StateRegistry_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities/WeakIdentityKeyHash_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/WEBrick_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RDoc/rdoc-style.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Utilities
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/TestCase
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Test
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Task
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Session
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Response
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/RequestHandler
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Report
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Preference
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/HTML
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Filter
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Extensions
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/ErrorPage
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Controller
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component/Dialog
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Component
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges/Callback
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib/Borges
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges/SushiNet
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby/Borges
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/data/examples/ruby
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/data/examples
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files/data
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key/IdentityKeyHash.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Weak/Key
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Weak
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ValueHolder.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/UploadTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/TransactionTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/TestTabs.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreTask.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSession.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreSearchTask.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemView.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItemList.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreItem.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreFront.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCheckoutTask.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreCart.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBrowseFrame.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet/StoreBanner.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/SushiNet
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/String.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/StateRegistryTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Proc.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ParentTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/OnceTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klasses.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Klass.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser/Instance.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ObjectSpaceBrowser
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Object.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Numeric.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/LRUCacheTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/InputTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/HtmlTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ExceptionTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ExceptionTest
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ErrorTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/EncodingTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ContinuationTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/ClosureTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/CalendarTest.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Window.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WalkbackPage.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/WEBrickServlet.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ValueCallback.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tutorial.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Transaction.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ToolFrame.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Tool.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TaskFrame.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Task.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TableReport.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/TabPanel.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StringPreference.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateRegistry.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/StateHolder.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Session.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/SelectionDateTable.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Response.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RequestHandler.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Request.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ReportColumn.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Report.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RenderingContext.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Registry.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RefreshResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RedirectResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/RadioDialog.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preferences.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Preference.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableTask.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/PluggableSelectBox.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Path.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Once.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NumberPreference.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NotFoundHandler.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/NavigationBar.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ListPreference.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/LRUCache.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/InputDialog.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlRenderer.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlElement.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlBuilder.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/HtmlAttributes.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GenericResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/GeeWeb.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Filter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExternalID.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ExampleBrowser.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ErrorPage.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/EmailErrorPage.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DocumentHandler.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dispatcher.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DispatchCallback.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Dialog.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateTable.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateSelector.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DateRangeSelector.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRbServer.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/DRb.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Counter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ControllerSession.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Controller.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ComponentTree.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Component.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CallbackStore.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Callback.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/CGIDRbClient.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BooleanPreference.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BatchedList.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthentication.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/BasicAuthResponse.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/AuthenticatedSession.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationList.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ApplicationEditor.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/Application.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges/ActionCallback.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Borges
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes/Array.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/RDoc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
