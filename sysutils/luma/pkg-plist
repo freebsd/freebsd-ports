@@ -233,13 +233,21 @@ lib/luma/plugins/schemabrowser/SchemaView.pyc
 lib/luma/plugins/schemabrowser/SchemaViewDesign.py
 lib/luma/plugins/schemabrowser/SchemaViewDesign.pyc
 lib/luma/plugins/schemabrowser/SchemaViewDesign.ui
-lib/luma/plugins/schemabrowser/SearchView.py
-lib/luma/plugins/schemabrowser/SearchView.pyc
 lib/luma/plugins/schemabrowser/__init__.py
 lib/luma/plugins/schemabrowser/__init__.pyc
 lib/luma/plugins/schemabrowser/plugin.meta
 lib/luma/plugins/schemabrowser/schemabrowser.py
 lib/luma/plugins/schemabrowser/schemabrowser.pyc
+lib/luma/plugins/schemaeditor/schemaeditor.pyc
+lib/luma/plugins/schemaeditor/SchemaEditorDesign.py
+lib/luma/plugins/schemaeditor/SchemaEditorDesign.ui
+lib/luma/plugins/schemaeditor/__init__.py
+lib/luma/plugins/schemaeditor/plugin.meta
+lib/luma/plugins/schemaeditor/schemaeditor.py
+lib/luma/plugins/schemaeditor/SchemaEditor.pyc
+lib/luma/plugins/schemaeditor/SchemaEditorDesign.pyc
+lib/luma/plugins/schemaeditor/__init__.pyc
+lib/luma/plugins/schemaeditor/SchemaEditor.py
 lib/luma/plugins/template_plugin/AddAttributeDialog.py
 lib/luma/plugins/template_plugin/AddAttributeDialog.pyc
 lib/luma/plugins/template_plugin/AddAttributeDialogDesign.py
@@ -304,6 +312,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/i18n/luma_es.qm
 %%DATADIR%%/i18n/luma_fr.qm
 %%DATADIR%%/i18n/luma_no.qm
+%%DATADIR%%/i18n/luma_no_NY.qm
 %%DATADIR%%/i18n/luma_ru.qm
 %%DATADIR%%/i18n/luma_sv.qm
 %%DATADIR%%/i18n/no.png
@@ -341,12 +350,15 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/folder.png
 %%DATADIR%%/icons/help.png
 %%DATADIR%%/icons/language.png
+%%DATADIR%%/icons/LOGO.README
 %%DATADIR%%/icons/luma-128.png
 %%DATADIR%%/icons/luma-16.png
 %%DATADIR%%/icons/luma-22.png
 %%DATADIR%%/icons/luma-32.png
 %%DATADIR%%/icons/luma-48.png
 %%DATADIR%%/icons/luma-64.png
+%%DATADIR%%/icons/luma-250.png
+%%DATADIR%%/icons/luma-350.png
 %%DATADIR%%/icons/luma-blau.eps
 %%DATADIR%%/icons/mainwin/bookmark.png
 %%DATADIR%%/icons/mainwin/configure.png
@@ -418,12 +430,13 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 @dirrm lib/luma/base/utils
 @dirrm lib/luma/base
 @dirrm lib/luma/environment
-@dirrm lib/luma/plugins/schemabrowser
 @dirrm lib/luma/plugins/addressbook
 @dirrm lib/luma/plugins/admin_utils
 @dirrm lib/luma/plugins/browser_plugin
 @dirrm lib/luma/plugins/mass_creation_plugin
 @dirrm lib/luma/plugins/search_plugin
+@dirrm lib/luma/plugins/schemabrowser
+@dirrm lib/luma/plugins/schemaeditor
 @dirrm lib/luma/plugins/template_plugin
 @dirrm lib/luma/plugins/usermanagement
 @dirrm lib/luma/plugins
