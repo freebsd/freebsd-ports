@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
 DISTNAME=	gnome-libs-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER?=	ade@FreeBSD.org
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
