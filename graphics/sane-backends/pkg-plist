@@ -1,3 +1,4 @@
+bin/sane-config
 bin/scanimage
 bin/xcam
 bin/xscanimage
