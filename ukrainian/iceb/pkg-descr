@@ -1,14 +1,14 @@
 Ukrainian accounting system with curses GUI.
 Hardware support: 
-	- many cache registers
+	- many cash registers
 	- bar-code scanners
 Includes:
 	- main book
-	- matheriasl accounting
+	- matherials accounting
 	- service accounting
 	- salary calculation
 	- payment documents
-	- cachier orders accounting
+	- cashier orders accounting
 
 WWW: http://www.iceb.vinnitsa.com/
 
