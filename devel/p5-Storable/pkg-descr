@@ -1,0 +1,17 @@
+       The Storable package brings you persistency for your perl
+       data structures containing SCALAR, ARRAY, HASH or REF
+       objects, i.e. anything that can be convenientely stored to
+       disk and retrieved at a later time.
+
+       It can be used in the regular procedural way by calling
+       store with a reference to the object to store, and
+       providing a file name. The routine returns undef for I/O
+       problems or other internal error, a true value otherwise.
+       Serious errors are propagated as a die exception.
+
+       To retrieve data stored to disk, you use retrieve with a
+       file name, and the objects stored into that file are
+       recreated into memory for you, and a reference to the root
+       object is returned. In case an I/O error occurred while
+       reading, undef is returned instead. Other serious errors
+       are propagated via die.
