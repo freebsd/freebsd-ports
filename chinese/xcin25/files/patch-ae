@@ -1,13 +1,13 @@
---- src/xcinrc.in.orig	Sat Dec 18 15:42:02 1999
-+++ src/xcinrc.in	Sat Dec 18 15:42:58 1999
-@@ -105,8 +105,8 @@
- 	  (AUTO_SELECTION	YES)
- 	;
- 	; The following has effect only when AUTO_SELECTION is YES
--	  (TSI_FNAME		"tsi.db")
--	  (YIN_FNAME		"yin.db")
-+	  (TSI_FNAME		"/usr/local/share/tabe/tsiyin/tsi.db")
-+	  (YIN_FNAME		"/usr/local/share/tabe/tsiyin/yin.db")
- 	  (SPACE_SELECTION	NO)
- 	  (PHRASE_SELECTION	YES)
- 	  (N_SELECTION_PHR	4)))
+--- src/xcinrc.in.orig	Mon Jul 24 09:44:21 2000
++++ src/xcinrc.in	Sat Aug 12 15:15:12 2000
+@@ -86,8 +86,8 @@
+           (PINPHO_MAP           "bims_pinyin")
+         ;
+         ; The following has effect only when AUTO_SELECTION is YES
+-          (TSI_FNAME            "tsi.db")
+-          (YIN_FNAME            "yin.db")
++          (TSI_FNAME            "/usr/local/share/tabe/tsiyin/tsi.db")
++          (YIN_FNAME            "/usr/local/share/tabe/tsiyin/yin.db")
+           (SPACE_SELECTION      NO)
+           (PHRASE_SELECTION     YES)
+           (N_SELECTION_PHR      4)
