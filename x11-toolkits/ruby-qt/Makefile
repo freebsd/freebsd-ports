@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	0.14a
+PORTVERSION=	0.14b
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,20 +29,18 @@ CONFIGURE_ARGS=	--with-qti18n \
 MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
+post-extract:
+	find ${WRKSRC}/examples '(' -name .cvsignore -o -name a.out ')' -delete
+
 post-patch:
 	${RUBY} -i -pe 'gsub %r"/usr/X11\b", "${X11BASE}"' ${WRKSRC}/lib/qt.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/qt
-	${TAR} -C ${WRKSRC}/examples -cf - \
-		--exclude .cvsignore --exclude a.out . \
-			| ${TAR} -C ${RUBY_EXAMPLESDIR}/qt -xvf -
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/qt/
 	${MKDIR} ${RUBY_DOCDIR}/qt/ja
-	${TAR} -C ${WRKSRC} -cf - \
-		./tutorial \
-			| ${TAR} -C ${RUBY_DOCDIR}/qt -xvf -
-	${CHOWN} -R 0:0 ${RUBY_EXAMPLESDIR}/qt ${RUBY_DOCDIR}/qt
+	${CP} -R ${WRKSRC}/tutorial ${RUBY_DOCDIR}/qt/
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/qt/
 	${INSTALL_DATA} ${WRKSRC}/README.jp ${RUBY_DOCDIR}/qt/ja/
 .endif
