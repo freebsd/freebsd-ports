@@ -40,6 +40,6 @@ do-install:
 .endfor
 
 post-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
