@@ -164,6 +164,7 @@
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
     SUBDIR += kicq
+    SUBDIR += kmsn
     SUBDIR += kmud
     SUBDIR += konverse
     SUBDIR += ksamba
