@@ -8,7 +8,9 @@
 PORTNAME=	zorro
 PORTVERSION=	1.1.8
 CATEGORIES=	deskutils tk82
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/zorro-1.1p8/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/tcl/alcatel/code/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/tcl-neosoft.com/alcatel/code/
+
 DISTNAME=	${PORTNAME}-1.1p8
 
 MAINTAINER=	shanee@augusta.de
