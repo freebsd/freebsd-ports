@@ -87,6 +87,7 @@ MASTER_SITE_APACHE_HTTPD+=	\
 
 MASTER_SITE_APACHE_JAKARTA+=	\
 	http://jakarta.apache.org/builds/%SUBDIR%/ \
+	http://archive.apache.org/dist/jakarta/%SUBDIR%/ \
 	${MASTER_SITE_APACHE:S,%SUBDIR%,jakarta/&,}
 
 MASTER_SITE_APACHE_XML+=	\
