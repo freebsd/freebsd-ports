@@ -1,10 +1,6 @@
 bin/gtranslator
 bin/pozilla.sh
-lib/gtranslator/backends/docbook.xml
-lib/gtranslator/backends/docbook/docbook.so
-lib/gtranslator/backends/text.xml
-lib/gtranslator/backends/text/text.so
-share/gnome/apps/Development/gtranslator.desktop
+share/gnome/applications/gtranslator.desktop
 share/gnome/gtranslator/colorschemes/arek.xml
 share/gnome/gtranslator/colorschemes/boom-boom.xml
 share/gnome/gtranslator/colorschemes/clean.xml
@@ -26,29 +22,15 @@ share/gnome/gtranslator/colorschemes/vim.xml
 share/gnome/gtranslator/colorschemes/waliays.xml
 share/gnome/gtranslator/colorschemes/yef.xml
 share/gnome/gtranslator/colorschemes/zuper.xml
-share/gnome/gtranslator/etspecs/messages-table.etspec
+share/gnome/gtranslator/dtd/umtf.dtd
 share/gnome/gtranslator/scripts/build-gtranslator-learn-buffer.sh
 share/gnome/gtranslator/scripts/cleanup-gtranslator-settings.sh
 share/gnome/gtranslator/scripts/my-update.sh
-share/gnome/help/gtranslator/C/authors.html
-share/gnome/help/gtranslator/C/bugs.html
 share/gnome/help/gtranslator/C/figures/mainwindow.png
 share/gnome/help/gtranslator/C/figures/prefs.png
 share/gnome/help/gtranslator/C/figures/toolbar.png
-share/gnome/help/gtranslator/C/glossary.html
-share/gnome/help/gtranslator/C/gtranslator.sgml
-share/gnome/help/gtranslator/C/index.html
-share/gnome/help/gtranslator/C/license.html
-share/gnome/help/gtranslator/C/prefs.html
-share/gnome/help/gtranslator/C/topic.dat
-share/gnome/help/gtranslator/C/usage.html
-share/gnome/help/gtranslator/ja/authors.html
-share/gnome/help/gtranslator/ja/commandlinearguments.html
-share/gnome/help/gtranslator/ja/features.html
-share/gnome/help/gtranslator/ja/index.html
-share/gnome/help/gtranslator/ja/thanks.html
-share/gnome/help/gtranslator/ja/topic.dat
-share/gnome/help/gtranslator/ja/use-of-gtranslator.html
+share/gnome/help/gtranslator/C/gtranslator.xml
+share/gnome/help/gtranslator/C/legal.xml
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
 share/gnome/omf/gtranslator/gtranslator-C.omf
@@ -59,7 +41,9 @@ share/gnome/pixmaps/gtranslator/fuzzy.png
 share/gnome/pixmaps/gtranslator/fuzzy_small.png
 share/gnome/pixmaps/gtranslator/untranslated.png
 share/gnome/pixmaps/gtranslator/untranslated_small.png
+share/locale/am/LC_MESSAGES/gtranslator.mo
 share/locale/az/LC_MESSAGES/gtranslator.mo
+share/locale/be/LC_MESSAGES/gtranslator.mo
 share/locale/ca/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
@@ -70,12 +54,15 @@ share/locale/et/LC_MESSAGES/gtranslator.mo
 share/locale/eu/LC_MESSAGES/gtranslator.mo
 share/locale/fi/LC_MESSAGES/gtranslator.mo
 share/locale/fr/LC_MESSAGES/gtranslator.mo
+share/locale/ga/LC_MESSAGES/gtranslator.mo
 share/locale/gl/LC_MESSAGES/gtranslator.mo
 share/locale/hu/LC_MESSAGES/gtranslator.mo
+share/locale/id/LC_MESSAGES/gtranslator.mo
 share/locale/it/LC_MESSAGES/gtranslator.mo
 share/locale/ja/LC_MESSAGES/gtranslator.mo
 share/locale/ko/LC_MESSAGES/gtranslator.mo
 share/locale/lt/LC_MESSAGES/gtranslator.mo
+share/locale/lv/LC_MESSAGES/gtranslator.mo
 share/locale/nl/LC_MESSAGES/gtranslator.mo
 share/locale/nn/LC_MESSAGES/gtranslator.mo
 share/locale/no/LC_MESSAGES/gtranslator.mo
@@ -84,6 +71,9 @@ share/locale/pt/LC_MESSAGES/gtranslator.mo
 share/locale/pt_BR/LC_MESSAGES/gtranslator.mo
 share/locale/ru/LC_MESSAGES/gtranslator.mo
 share/locale/sk/LC_MESSAGES/gtranslator.mo
+share/locale/sq/LC_MESSAGES/gtranslator.mo
+share/locale/sr/LC_MESSAGES/gtranslator.mo
+share/locale/sr@Latn/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/ta/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
@@ -94,15 +84,10 @@ share/locale/zh_CN/LC_MESSAGES/gtranslator.mo
 share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @dirrm share/gnome/pixmaps/gtranslator
 @dirrm share/gnome/omf/gtranslator
-@dirrm share/gnome/help/gtranslator/ja
 @dirrm share/gnome/help/gtranslator/C/figures
 @dirrm share/gnome/help/gtranslator/C
 @dirrm share/gnome/help/gtranslator
 @dirrm share/gnome/gtranslator/scripts
-@dirrm share/gnome/gtranslator/etspecs
+@dirrm share/gnome/gtranslator/dtd
 @dirrm share/gnome/gtranslator/colorschemes
 @dirrm share/gnome/gtranslator
-@dirrm lib/gtranslator/backends/text
-@dirrm lib/gtranslator/backends/docbook
-@dirrm lib/gtranslator/backends
-@dirrm lib/gtranslator

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,18 +16,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libbonoboui
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gnomevfs
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv -lgnuregex"
 
 MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
-
-post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
