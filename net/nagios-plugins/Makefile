@@ -7,7 +7,7 @@
 
 PORTNAME=	netsaint-plugins
 PORTVERSION=	1.2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/netsaintplug/
 DISTNAME=	${PORTNAME}-1.2.9-3
@@ -24,48 +24,17 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 
-.if defined(WANT_QSTAT)
-BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
-RUN_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
-PLIST_SUB+=	WANT_QSTAT=""
-.else
-PLIST_SUB+=	WANT_QSTAT="@comment "
-.endif
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
-.if defined(WANT_FPING)
-BUILD_DEPENDS+=	fping:${PORTSDIR}/net/fping
-RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
-PLIST_SUB+=	WANT_FPING=""
-.else
-PLIST_SUB+=	WANT_FPING="@comment "
-.endif
-
-.if defined(WANT_SNMP)
-BUILD_DEPENDS+=	snmpcheck:${PORTSDIR}/net/net-snmp
-RUN_DEPENDS+=	snmpcheck:${PORTSDIR}/net/net-snmp
-PLIST_SUB+=	WANT_SNMP=""
-CONFIGURE_ARGS+=--enable-snmp
-.else
-PLIST_SUB+=	WANT_SNMP="@comment "
-.endif
-
-.if defined(WANT_RADIUS)
-LIB_DEPENDS+=	radiusclient.0:${PORTSDIR}/net/radiusclient
-PLIST_SUB+=	WANT_RADIUS=""
-CONFIGURE_ARGS+=--enable-radius
-.else
-PLIST_SUB+=	WANT_RADIUS="@comment "
-.endif
-
-.if defined(WANT_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-PLIST_SUB+=	WANT_MYSQL=""
-CONFIGURE_ARGS+=--with-mysqllibdir=${LOCALBASE}/lib/mysql
-.else
-PLIST_SUB+=	WANT_MYSQL="@comment "
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
 pre-install:
 	${PERL} ${SCRIPTDIR}/createuser
 
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+	
 .include <bsd.port.mk>

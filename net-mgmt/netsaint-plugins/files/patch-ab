@@ -1,5 +1,5 @@
 --- configure.in.orig	Tue Mar  6 06:40:44 2001
-+++ configure.in	Sat Mar 17 21:38:21 2001
++++ configure.in	Mon Apr 16 12:24:22 2001
 @@ -7,7 +7,7 @@
  dnl AM_INIT_AUTOMAKE(netsaint-plugins,$VERSION)
  AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
@@ -9,7 +9,7 @@
  
  dnl Figure out how to invoke "install" and what install options to use.
  
-@@ -126,18 +126,28 @@
+@@ -126,25 +126,37 @@
  LIBS="$_SAVEDLIBS"
  CPPFLAGS="$_SAVEDCPPFLAGS"
  
@@ -38,9 +38,27 @@
  LIBS="$_SAVEDLIBS"
 +fi
  
++AC_ARG_ENABLE(ldap,--enable-ldap compile check_ldap)
++if test $enableval; then
  dnl Check for LDAP libraries
  _SAVEDLIBS="$LIBS"
-@@ -157,9 +167,9 @@
+-AC_CHECK_LIB(ldap,main,,,-llber)
+-if test "$ac_cv_lib_ldap_main" = "yes"; then
+-  LDAPLIBS="-lldap -llber"\
+-  LDAPINCLUDE="-I/usr/include/ldap"
++AC_CHECK_LIB(ldap,ldap_simple_bind,,,-L${LOCALBASE}/lib -llber)
++if test "$ac_cv_lib_ldap_ldap_simple_bind" = "yes"; then
++  LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber"\
++  LDAPINCLUDE="-I${LOCALBASE}/include"
+   AC_SUBST(LDAPLIBS)
+   AC_SUBST(LDAPINCLUDE)
+   EXTRAS="$EXTRAS check_ldap"
+@@ -153,13 +165,14 @@
+   AC_MSG_WARN([install LDAP libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
++fi
+ 
  dnl Check for mysql libraries
  _SAVEDLIBS="$LIBS"
  _SAVEDCPPFLAGS="$CPPFLAGS"
@@ -52,7 +70,7 @@
    AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz" check_mysql_LDFLAGS="-L$MYSQLLIBDIR",,-L$MYSQLLIBDIR -lz)
  elif test -f /usr/lib/libmysqlclient.so; then
    AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz",,-lz)
-@@ -175,7 +185,8 @@
+@@ -175,7 +188,8 @@
    AC_CHECK_LIB(mysqlclient,mysql_close,MYSQLLIBS="-lmysqlclient" check_mysql_LDFLAGS="-L/usr/lib/mysql",,-L/usr/lib/mysql)
  fi
  if test "$ac_cv_lib_mysqlclient_mysql_init" = "yes" -o "$ac_cv_lib_mysqlclient_mysql_close" = "yes"; then
@@ -62,7 +80,7 @@
    if test "$ac_cv_header_mysql_mysql_h" = "yes" -a "$ac_cv_header_mysql_errmsg_h" = "yes"; then
      EXTRAS="$EXTRAS check_mysql"
      AC_SUBST(MYSQLLIBS)
-@@ -189,7 +200,7 @@
+@@ -189,7 +203,7 @@
    AC_MSG_WARN([install mysql client libs to compile this plugin (see Requirements).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -71,7 +89,7 @@
  
  dnl Check for OpenSSL location
  AC_PATH_PROG(OPENSSL,openssl)
-@@ -268,16 +279,16 @@
+@@ -268,16 +282,16 @@
  dnl AC_SUBST(libgetopt_a_DEPENDENCIES)
  dnl AC_SUBST(libsnprintf_a_SOURCES)
  
@@ -97,7 +115,7 @@
  
  AC_CHECK_FUNC(vsnprintf,,LIBS="$LIBS -lsnprintf" DEPLIBS="$DEPLIBS libsnprintf.a")
  
-@@ -328,72 +339,72 @@
+@@ -328,72 +342,72 @@
  	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -eo 'rss comm'")
  	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
          echo "      ps syntax... $PATH_TO_PS -eo 's  comm vsz rss user ppid args'"
@@ -199,7 +217,7 @@
  dnl BSD-like mode in RH 6.1
  elif [ps waxno 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S +COMMAND +VSZ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
  then
-@@ -407,7 +418,7 @@
+@@ -407,7 +421,7 @@
  	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
  	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS waxno 'rss comm'")
  	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
@@ -208,7 +226,7 @@
  dnl IRIX 53
  elif [ps -el 2>/dev/null | egrep -i "^ *F +S +UID +PID +PPID +C +PRI +NI +P +SZ +RSS +WCHAN +TTY +TIME +[RGSCOMDNA]+" >/dev/null]
  then
-@@ -618,6 +629,8 @@
+@@ -618,6 +632,8 @@
  	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO")
  fi
  
@@ -217,11 +235,39 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -f "$PATH_TO_SNMPGET"
  then
-@@ -625,6 +638,7 @@
- 	EXTRAS="$EXTRAS check_hpjd check_snmp"
+@@ -626,6 +642,7 @@
  else
  	echo "** Get snmpget from http://ucd-snmp.ucdavis.edu to make check_hpjd and check_snmp plugins"
+ fi
++fi
+ 
+ AC_PATH_PROG(PATH_TO_SNMPGETNEXT,snmpgetnext)
+ if test -f "$PATH_TO_SNMPGETNEXT"
+@@ -633,6 +650,8 @@
+ 	AC_DEFINE_UNQUOTED(PATH_TO_SNMPGETNEXT,"$PATH_TO_SNMPGETNEXT")
+ fi
+ 
++AC_ARG_ENABLE(qstat,--enable-qstat compile check_game)
++if test $enableval; then
+ AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
+ AC_PATH_PROG(PATH_TO_QSTAT,qstat)
+ if test -n "$PATH_TO_QUAKESTAT"
+@@ -646,7 +665,10 @@
+ else
+ 	echo "** Get qstat from http://www.activesw.com/people/steve/qstat.html in order to make check_game plugin"
+ fi
++fi
+ 
++AC_ARG_ENABLE(fping,--enable-fping compile check_fping)
++if test $enableval; then
+ AC_PATH_PROG(PATH_TO_FPING,fping)
+ if test -n "$PATH_TO_FPING"
+ then
+@@ -654,6 +676,7 @@
+ 	EXTRAS="$EXTRAS check_fping"
+ else
+ 	echo "** Get fping from http://www.stanford.edu/~schemers/docs/fping/fping.html in order to make check_fping plugin"
 +fi
  fi
  
- AC_PATH_PROG(PATH_TO_SNMPGETNEXT,snmpgetnext)
+ AC_PATH_PROG(PATH_TO_SSH,ssh)
