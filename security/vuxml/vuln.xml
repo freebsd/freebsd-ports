@@ -106,11 +106,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <uscertta>TA04-174A</uscertta>
       <certvu>317350</certvu>
       <mlist msgid="BAY13-F94UHMuEEkHMz0005c4f7@hotmail.com">http://www.securityfocus.com/archive/1/366801</mlist>
+      <mlist msgid="40DFAB69.1060909@sympatico.ca">http://www.securityfocus.com/archive/1/367286</mlist>
     </references>
     <dates>
       <discovery>2004-06-22</discovery>
       <entry>2004-06-25</entry>
-      <modified>2004-06-27</modified>
+      <modified>2004-06-28</modified>
     </dates>
   </vuln>
 
