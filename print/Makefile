@@ -57,6 +57,7 @@
     SUBDIR += musixtex
     SUBDIR += offix-printer
     SUBDIR += pbm2ppa
+    SUBDIR += pclprint
     SUBDIR += pdflib
     SUBDIR += pdq
     SUBDIR += perlftlib
