@@ -8364,6 +8364,7 @@ peacock		ports/www/peacock
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_HTTP	ports/security/pear-Auth_HTTP
+pear-Auth_RADIUS	ports/net/pear-Auth_RADIUS
 pear-Auth_SASL	ports/security/pear-Auth_SASL
 pear-Benchmark	ports/benchmarks/pear-Benchmark
 pear-Cache	ports/sysutils/pear-Cache
