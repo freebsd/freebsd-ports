@@ -1,0 +1,10 @@
+TEA Total is an extremely small 128 bit private key based
+encryption/decryption system which uses the new variant of TEA (Tiny
+Encryption Algorithm) by David Wheeler and Roger Needham of the Cambridge
+Computer Laboratory.
+
+TEA is said to be several times faster than DES, as well as being much
+smaller and more secure.  It also isn't encumbered by any patents and the
+reference implementation is in the public domain. 
+
+WWW:  http://www.linuxhacker.org/tea-total/
