@@ -2168,6 +2168,7 @@ grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
 gri		ports/math/gri
 gridpix		ports/graphics/gridpix
+gringotts	ports/security/gringotts
 grip		ports/audio/grip
 grn		ports/news/grn
 groff		src/gnu/usr.bin/groff
