@@ -1,0 +1,7 @@
+diff -ruN mserver-0.23a.orig/mserver.sh.sample mserver-0.23a/mserver.sh.sample
+--- mserver.sh.sample	Thu Jan  1 03:00:00 1970
++++ mserver.sh.sample	Fri May 21 12:01:53 1999
+@@ -0,0 +1,3 @@
++#!/bin/sh
++echo -n " mserver"
++/usr/local/sbin/mserver

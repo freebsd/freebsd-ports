@@ -1,0 +1,17 @@
+diff -ruN mserver-0.23a.orig/config.h mserver-0.23a/config.h
+--- config.h.orig	Sun Jan 18 11:57:10 1998
++++ config.h	Fri May 21 11:51:00 1999
+@@ -4,7 +4,6 @@
+ 
+ /* #define if we are building on a BSD system */
+ 
+-#undef BSD
+ 
+ /* location of the runtime config file */
+ 
+@@ -12,5 +11,5 @@
+ 
+ /* location of the spool dir for modem locks */
+ 
+-#define LOCK_DIR	"/var/lock"
++#define LOCK_DIR	"/var/spool/lock"

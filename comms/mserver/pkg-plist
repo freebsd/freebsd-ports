@@ -1,0 +1,7 @@
+sbin/mserver
+sbin/tcpconn
+etc/mserver.conf.default
+etc/rc.d/mserver.sh.sample
+share/doc/mserver/README
+share/doc/mserver/README.tcpconn
+@dirrm share/doc/mserver
