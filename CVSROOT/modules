@@ -8513,7 +8513,7 @@ sk-aspell	ports/textproc/sk-aspell
 sk-ooodict-SK	ports/editors/ooodict-sk_SK
 skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
-sketch		ports/graphics/sketch
+skencil		ports/graphics/skencil
 ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skip		ports/security/skip
