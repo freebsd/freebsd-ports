@@ -1,4 +1,4 @@
-@comment bin/Xvnc
+bin/Xvnc
 bin/vncviewer
 bin/vncpasswd
 bin/vncserver

@@ -1,0 +1,10 @@
+--- Xvnc/config/cf/vnclibs.def.orig	Wed Apr 19 01:18:53 2000
++++ Xvnc/config/cf/vnclibs.def	Wed Nov 20 22:05:54 2002
+@@ -5,5 +5,5 @@
+  * and programs/Xserver/hw/vnc whenever you change this file.
+  */
+ 
+-VNCLIBS = $(TOP)/../libvncauth/libvncauth.a $(TOP)/../zlib/libz.a
+-VNCCPPFLAGS = -I$(TOP)/../include -I$(TOP)/../zlib
++VNCLIBS = $(TOP)/../libvncauth/libvncauth.a -lz 
++VNCCPPFLAGS = -I$(TOP)/../include -I%%LOCALBASE%%/include

@@ -7,6 +7,7 @@
 
 PORTNAME=	tridiavnc
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.developvnc.org/logged-in/downloadnow/
@@ -14,25 +15,30 @@ MASTER_SITE_SUBDIR=dwcjr
 DISTNAME=	DevVNC_unix
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dwcjr@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
 USE_IMAKE=	yes
+ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
+XFREE86_HTML_MAN=	no
+
+post-patch:
+.for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def Xvnc/config/cf/Imake.tmpl
+	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/${file}
+.endfor
+	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
+		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
 
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.
 post-install:
-#	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
+	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
 	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
 	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect ${PREFIX}/bin/vncconnect
-	${SED}  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
-		-e s%^\#!/usr/bin/perl%\#!${PERL}% \
-		< ${WRKSRC}/vncserver \
-		> ${WRKSRC}/vncserver.local
-	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin/vncserver
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
 	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc

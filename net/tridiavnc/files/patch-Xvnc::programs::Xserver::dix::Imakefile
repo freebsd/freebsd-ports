@@ -1,0 +1,17 @@
+--- Xvnc/programs/Xserver/dix/Imakefile.orig	Thu Apr 13 02:18:32 2000
++++ Xvnc/programs/Xserver/dix/Imakefile	Wed Nov 20 20:44:05 2002
+@@ -37,12 +37,12 @@
+  */
+ 
+ #ifdef DefaultFontPath
+-DEFAULTFONTPATH = DefaultFontPath
++DEFAULTFONTPATH = ${X11BASE}/lib/X11/fonts/misc
+ SITE_FONT_PATH = -DCOMPILEDDEFAULTFONTPATH=\"$(DEFAULTFONTPATH)\"
+ #endif
+ 
+ #ifdef DefaultRGBDatabase
+-DEFAULTRGBDATABASE = DefaultRGBDatabase
++DEFAULTRGBDATABASE = ${X11BASE}/lib/X11/rgb
+    SITE_RGB_DB = -DRGB_DB=\"$(DEFAULTRGBDATABASE)\"
+ #endif
+ 

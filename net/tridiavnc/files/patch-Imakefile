@@ -1,0 +1,14 @@
+--- Imakefile.orig	Thu Nov  9 02:41:59 2000
++++ Imakefile	Wed Nov 20 01:27:33 2002
+@@ -10,10 +10,7 @@
+ 	XCOMM END TridiaVNC_Source_Internal
+ 	make depend
+ 	make all
+-	@echo ""
+-	@echo Built $(SUBDIRS).
+-	@echo 'To build Xvnc, do "cd Xvnc", followed by "make World"'
+-	@echo ""
++	cd Xvnc; make World
+ 
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
