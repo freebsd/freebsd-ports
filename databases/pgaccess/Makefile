@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.flex.ro/pub/pgaccess/
 
 MAINTAINER=	andreas@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql\
+RUN_DEPENDS=	${LOCALBASE}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql\
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/pgaccess
