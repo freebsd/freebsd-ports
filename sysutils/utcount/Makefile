@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=utcount
 
-MAINTAINER=	info@volginfo.ru
+MAINTAINER=	den@FreeBSD.org
 COMMENT=	Users Traffic Count
 
 .include <bsd.port.mk>

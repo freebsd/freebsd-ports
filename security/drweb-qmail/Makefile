@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
 
-MAINTAINER=	info@volginfo.ru
+MAINTAINER=	den@FreeBSD.org
 COMMENT=	Qmail client for DrWeb antivirus suite
 
 RUN_DEPENDS=	${DRWEB_PREFIX}/drwebd:${PORTSDIR}/security/drweb \
