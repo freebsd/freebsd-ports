@@ -1,15 +1,11 @@
---- help-converters/gnome-vfs-module/Makefile.in.orig	Tue Nov  5 00:53:20 2002
-+++ help-converters/gnome-vfs-module/Makefile.in	Tue Nov  5 00:56:05 2002
-@@ -138,15 +138,15 @@
+--- help-converters/gnome-vfs-module/Makefile.in.orig	Sun May 25 01:15:30 2003
++++ help-converters/gnome-vfs-module/Makefile.in	Sun May 25 01:17:17 2003
+@@ -147,12 +147,12 @@
  cxxflags_set = @cxxflags_set@
  gnomelocaledir = @gnomelocaledir@
  
--INCLUDES = \
--	-I$(top_srcdir)					\
-+INCLUDES =	-DPREFIX="\"$(PREFIX)\"" -DLOCALBASE="\"$(LOCALBASE)\"" \
-+	-DX11BASE="\"$(X11BASE)\"" -I$(top_srcdir) \
- 	$(HELP_VFS_MODULE_CFLAGS)		\
-     -DSERVERDIR=\"$(libexecdir)\"
+-INCLUDES =  	-I$(top_srcdir)						$(HELP_VFS_MODULE_CFLAGS)		    -DSERVERDIR=\"$(libexecdir)\"
++INCLUDES =  	-DPREFIX="\"$(PREFIX)\"" -DLOCALBASE="\"$(LOCALBASE)\"" -DX11BASE="\"$(X11BASE)\"" -I$(top_srcdir)				$(HELP_VFS_MODULE_CFLAGS)		    -DSERVERDIR=\"$(libexecdir)\"
  
  
  modules_LTLIBRARIES = libvfs-help.la
@@ -18,4 +14,4 @@
 +module_flags = -export_dynamic -avoid-version -module
  modulesdir = $(libdir)/gnome-vfs-2.0/modules
  
- libvfs_help_la_SOURCES = \
+ libvfs_help_la_SOURCES =  	help-method.c		help-method.h		
