@@ -13,12 +13,7 @@ MASTER_SITES=	http://www.icecast.org/releases/
 MAINTAINER=	zach@pabst.bendnet.com
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=--with-libwrap
-
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} pkg-install
-.endif
+CONFIGURE_ARGS=	--with-libwrap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/icecast ${PREFIX}/sbin
