@@ -70,6 +70,7 @@
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += mnemo
     SUBDIR += moneydance
+    SUBDIR += moregroupware
     SUBDIR += mrproject
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
