@@ -46,6 +46,12 @@ CONFIGURE_ARGS+=	--with-iODBC=${LOCALBASE} \
 PKGNAMESUFFIX=	-${DRIVER_MANAGER}-mysql${MYSQL_VER}
 COMMENT+=	${MYSQL_VER} / ${DRIVER_MANAGER}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${OSVERSION} >= 503000
+BROKEN=		"Does not compile on FreeBSD >=5.x on !i386"
+.endif
+
 # Allow a new value of ODBCVER to be set at build-time
 .if defined(ODBCVER)
 post-patch:
@@ -68,4 +74,4 @@ post-install:
 	[ -f ${PREFIX}/lib/libmyodbc3.so.0 ] || ${LN} -s ${PREFIX}/lib/libmyodbc3.so ${PREFIX}/lib/libmyodbc3.so.0
 	[ -f ${PREFIX}/lib/libmyodbc3_r.so.0 ] || ${LN} -s ${PREFIX}/lib/libmyodbc3_r.so ${PREFIX}/lib/libmyodbc3_r.so.0
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
