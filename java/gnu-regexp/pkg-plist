@@ -1,11 +1,14 @@
 share/doc/gnu-regexp/api/allclasses-frame.html
 share/doc/gnu-regexp/api/deprecated-list.html
+share/doc/gnu-regexp/api/gnu/regexp/CharIndexed.html
 share/doc/gnu-regexp/api/gnu/regexp/RE.html
 share/doc/gnu-regexp/api/gnu/regexp/REException.html
 share/doc/gnu-regexp/api/gnu/regexp/REFilterInputStream.html
+share/doc/gnu-regexp/api/gnu/regexp/REFilterReader.html
 share/doc/gnu-regexp/api/gnu/regexp/REMatch.html
 share/doc/gnu-regexp/api/gnu/regexp/REMatchEnumeration.html
 share/doc/gnu-regexp/api/gnu/regexp/RESyntax.html
+share/doc/gnu-regexp/api/gnu/regexp/UncheckedRE.html
 share/doc/gnu-regexp/api/gnu/regexp/package-frame.html
 share/doc/gnu-regexp/api/gnu/regexp/package-summary.html
 share/doc/gnu-regexp/api/gnu/regexp/package-tree.html
@@ -29,6 +32,7 @@ share/doc/gnu-regexp/api/serialized-form.html
 share/doc/gnu-regexp/api/stylesheet.css
 share/doc/gnu-regexp/changes.html
 share/doc/gnu-regexp/credits.html
+share/doc/gnu-regexp/faq.html
 share/doc/gnu-regexp/gnu-regexp-applet.jar
 share/doc/gnu-regexp/index.html
 share/doc/gnu-regexp/reapplet.html

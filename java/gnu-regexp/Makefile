@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gnu-regexp
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.4
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.tralfamadore.com/pub/java/
 DISTNAME=	gnu.regexp-${PORTVERSION}
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
+USE_JAVA=	1.1+
 
 NO_BUILD=	yes
 
