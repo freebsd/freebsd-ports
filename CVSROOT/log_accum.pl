@@ -21,6 +21,7 @@
 require 5.003;		# might work with older perl5
 
 use strict;
+use POSIX qw(strftime);
 use Text::Tabs;
 
 use lib $ENV{CVSROOT};
@@ -364,9 +365,7 @@ sub change_summary_removed {
 
 
 sub build_header {
-	delete $ENV{'TZ'};
-
-	my $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
+	my $datestr = strftime("%F %T %Z", localtime());
 	chomp $datestr;
 
 	my $header = sprintf("%-8s    %s", $cfg::COMMITTER, $datestr);
@@ -594,11 +593,14 @@ sub do_diff {
 					$diff .= "Index: $file\n"
 					    . "=" x 68 . "\n";
 					@args = ('-Qn', 'update', '-p',
-					    '-r1.1', $file);
+					    '-r1.1');
 				} else {
 					@args = ('-Qn', 'diff', '-u',
-					    "-r$prev_rev", "-r$rev", $file);
+					    "-r$prev_rev", "-r$rev",
+					    "--ignore-matching-lines=" .
+					    "\$$cfg::IDHEADER.*\$");
 				}
+				push(@args, $file);
 
 				print "Generating diff: $cfg::PROG_CVS @args\n"
 				    if  $cfg::DEBUG;
