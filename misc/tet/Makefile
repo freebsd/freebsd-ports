@@ -6,12 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=		tet3.2e-unsup
-PKGNAME=		tet-3.2e
+DISTNAME=		tet3.3d-unsup
+PKGNAME=		tet-3.3d
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
 			http://www.FreeBSD.org/~jkoshy/PORTS/
-EXTRACT_SUFX=		.src.tgz
+EXTRACT_SUFX=		.src.tar.gz
 
 MAINTAINER=		jkoshy@freebsd.org
 
