@@ -1,3 +1,4 @@
+@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
 %%PHPBBDIR%%/admin/admin_disallow.php
@@ -18,7 +19,6 @@
 %%PHPBBDIR%%/admin/page_header_admin.php
 %%PHPBBDIR%%/admin/pagestart.php
 %%PHPBBDIR%%/common.php
-%%PHPBBDIR%%/config.php
 %%PHPBBDIR%%/contrib/README.html
 %%PHPBBDIR%%/contrib/attachments.zip
 %%PHPBBDIR%%/contrib/card_ban_system.zip
@@ -47,13 +47,6 @@
 %%PHPBBDIR%%/db/schemas/oracle_triggers.sql
 %%PHPBBDIR%%/db/schemas/postgres_basic.sql
 %%PHPBBDIR%%/db/schemas/postgres_schema.sql
-%%PHPBBDIR%%/docs/AUTHORS
-%%PHPBBDIR%%/docs/COPYING
-%%PHPBBDIR%%/docs/FAQ.html
-%%PHPBBDIR%%/docs/INSTALL.html
-%%PHPBBDIR%%/docs/README.html
-%%PHPBBDIR%%/docs/coding-guidelines.txt
-%%PHPBBDIR%%/docs/codingstandards.htm
 %%PHPBBDIR%%/extension.inc
 %%PHPBBDIR%%/faq.php
 %%PHPBBDIR%%/groupcp.php
@@ -111,7 +104,6 @@
 %%PHPBBDIR%%/includes/usercp_sendpasswd.php
 %%PHPBBDIR%%/includes/usercp_viewprofile.php
 %%PHPBBDIR%%/index.php
-%%PHPBBDIR%%/install.php
 %%PHPBBDIR%%/language/index.htm
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
 %%PHPBBDIR%%/language/lang_english/email/admin_send_email.tpl
@@ -297,11 +289,26 @@
 %%PHPBBDIR%%/templates/subSilver/viewtopic_body.tpl
 %%PHPBBDIR%%/templates/subSilver/viewtopic_poll_ballot.tpl
 %%PHPBBDIR%%/templates/subSilver/viewtopic_poll_result.tpl
-%%PHPBBDIR%%/update_to_FINAL.php
-%%PHPBBDIR%%/upgrade.php
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
+@exec touch %B/config.php && chown %%WWWOWN%% %B/config.php
+%%PORTDOCS%%share/doc/phpbb/AUTHORS
+%%PORTDOCS%%share/doc/phpbb/FAQ.html
+%%PORTDOCS%%share/doc/phpbb/INSTALL.html
+%%PORTDOCS%%share/doc/phpbb/README.html
+%%PORTDOCS%%share/doc/phpbb/coding-guidelines.txt
+%%PORTDOCS%%share/doc/phpbb/codingstandards.htm
+share/phpbb/install.php
+@exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
+@unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
+share/phpbb/update_to_FINAL.php
+@exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
+@unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
+share/phpbb/upgrade.php
+@exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
+@unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
+@dirrm share/phpbb
 @dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
 @dirrm %%PHPBBDIR%%/templates/subSilver/images
 @dirrm %%PHPBBDIR%%/templates/subSilver/admin
@@ -315,11 +322,9 @@
 @dirrm %%PHPBBDIR%%/images/avatars/uploads
 @dirrm %%PHPBBDIR%%/images/avatars
 @dirrm %%PHPBBDIR%%/images
-@dirrm %%PHPBBDIR%%/docs
 @dirrm %%PHPBBDIR%%/db/schemas
 @dirrm %%PHPBBDIR%%/db
 @dirrm %%PHPBBDIR%%/contrib
 @dirrm %%PHPBBDIR%%/admin
-@dirrm %%PHPBBDIR%%
-@unexec rmdir %D/www/data 2>/dev/null || true
-@unexec rmdir %D/www 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/phpbb
