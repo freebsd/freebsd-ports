@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matthias.andree@web.de
+MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
