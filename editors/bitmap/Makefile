@@ -26,7 +26,7 @@ EMACS_PORT_NAME=	emacs20
 ALL_TARGET=	elc
 
 BUILD_DEPENDS=	uncompface:${PORTSDIR}/mail/faces
-RUN_DEPENDS=	${BITMAP_FONT}:${PORTSDIR}/x11-fonts/bitmap-font
+RUN_DEPENDS=	${BITMAP_FONT}:${PORTSDIR}/x11-fonts/bitmap-fonts
 PLIST_SUB=	BITMAPDOCDIR=${BITMAPDOCDIR}
 
 .include <bsd.port.pre.mk>
