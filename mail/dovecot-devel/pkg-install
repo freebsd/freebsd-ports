@@ -70,13 +70,11 @@ case $2 in
 
 PRE-INSTALL)
 	make_account dovecot dovecot "Dovecot"
-	make_account dovecot-auth dovecot-auth "Dovecot Auth"
 	;;
 
 POST-INSTALL)
-	base=/var/dovecot
-	DIRLIST="${base} ${base}/auth ${base}/ssl ${base}/ssl/certs \
-		${base}/ssl/private ${base}/login /var/run/dovecot"
+	base=/var/run/dovecot
+	DIRLIST="${base} ${base}/login"
 	echo "Fixing ownerships and modes in \"${base}\"."
 	for directory in ${DIRLIST}; do
 		if [ ! -d "${directory}" ]; then
@@ -84,11 +82,10 @@ POST-INSTALL)
 			echo "Created directory: ${directory}"
 		fi
 	done
-	chown -R root:wheel      ${base}
-	chown -R dovecot:dovecot ${base}/auth ${base}/ssl
-	chown    root:dovecot    ${base}/login /var/run/dovecot
-	chmod 0750 ${base}/login
-	chmod 0700 /var/run/dovecot
+	chown -R root:wheel   ${base}
+	chmod -R 0700         ${base}
+	chown -R root:dovecot ${base}/login
+	chmod -R 0750         ${base}/login
 	;;
 
 esac

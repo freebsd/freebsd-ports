@@ -7,23 +7,21 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.10.6
+PORTVERSION=	0.99.10.7
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/
+MASTER_SITES=	http://www.dovecot.org/releases/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
+CONFLICTS=	dovecot-1.*
+
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-shadow --enable-ipv6 \
-		--localstatedir=/var --with-ssl=openssl \
-		--with-ssldir=/var/dovecot/ssl --with-pop3d \
-		--with-pam
+CONFIGURE_ARGS=	--without-shadow --with-pam --localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -31,16 +29,30 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		auth.txt configuration.txt design.txt \
 		index.txt mail-storages.txt mkcert.sh multiaccess.txt \
-		nfs.txt dovecot-ldap.conf dovecot-pgsql.conf \
-		dovecot-mysql.conf dovecot-openssl.cnf securecoding.txt
+		nfs.txt securecoding.txt \
+		dovecot-ldap.conf dovecot-pgsql.conf \
+		dovecot-mysql.conf dovecot-openssl.cnf
 
-OPTIONS=	SASL2		"SASL2 support"		off \
+OPTIONS=	GNUTLS		"GNUTLS support"	off \
+		SASL2		"SASL2 support"		off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off
 
 .include <bsd.port.pre.mk>
+
+## GNUTLS support
+#
+# Use the GNU Transport Layer Security
+# rather than OpenSSL.
+.if defined(WITH_GNUTLS)
+IGNORE=			Currently incompatible with security/gnutls
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-ssl=gnutls
+.else
+CONFIGURE_ARGS+=	--with-ssl=openssl
+.endif
 
 ## SASL2 support
 #
@@ -63,6 +75,8 @@ CONFIGURE_ARGS+=	--with-cyrus-sasl2
 VPOPMAIL=		${LOCALBASE}/vpopmail/bin/vchkpw
 BUILD_DEPENDS+=		${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
+.else
+CONFIGURE_ARGS+=	--without-vpopmail
 .endif
 
 ## OpenLDAP Support
@@ -93,17 +107,12 @@ CONFIGURE_ARGS+=	--with-pgsql
 #
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
-CONFIGURED_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-pre-build:
-	@${REINPLACE_CMD} -e 's,%%SSLDIR%%,/var/dovecot/ssl,' \
-		${WRKSRC}/doc/mkcert.sh \
-		${WRKSRC}/dovecot-example.conf
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
-		${WRKSRC}/dovecot-example.conf
-
 post-build:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/dovecot-example.conf >${WRKDIR}/dovecot.conf.sample
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		${FILESDIR}/dovecot.sh >${WRKDIR}/dovecot.sh
@@ -120,13 +129,12 @@ do-install:
 		${WRKSRC}/src/imap-login/imap-login \
 		${WRKSRC}/src/pop3-login/pop3-login \
 			${PREFIX}/libexec/dovecot/
-	${INSTALL_DATA} ${WRKSRC}/dovecot-example.conf ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/master/dovecot ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKDIR}/dovecot.conf.sample ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${WRKDIR}/dovecot.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
 
 post-install:
