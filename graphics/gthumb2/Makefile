@@ -31,7 +31,7 @@ MAN1=		gthumb.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.9)
-LIB_DEPENDS+=	exif.8:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif.9:${PORTSDIR}/graphics/libexif
 .endif
 
 .include <bsd.port.post.mk>
