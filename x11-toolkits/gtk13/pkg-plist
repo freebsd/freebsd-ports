@@ -153,6 +153,7 @@ share/locale/ja/LC_MESSAGES/gtk+.mo
 share/locale/ko/LC_MESSAGES/gtk+.mo
 share/locale/lt/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
+share/locale/nn/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
 share/locale/pt/LC_MESSAGES/gtk+.mo
@@ -168,6 +169,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 share/themes/Default/gtk/gtkrc.bg
 share/themes/Default/gtk/gtkrc.bg_BG.iso88595
+share/themes/Default/gtk/gtkrc.cp1255
 share/themes/Default/gtk/gtkrc.cs
 share/themes/Default/gtk/gtkrc.cy
 share/themes/Default/gtk/gtkrc.el
@@ -175,6 +177,8 @@ share/themes/Default/gtk/gtkrc.eo
 share/themes/Default/gtk/gtkrc.et
 share/themes/Default/gtk/gtkrc.ga
 share/themes/Default/gtk/gtkrc.he
+share/themes/Default/gtk/gtkrc.he_IL.cp1255
+share/themes/Default/gtk/gtkrc.he_IL.microsoftcp1255
 share/themes/Default/gtk/gtkrc.hr
 share/themes/Default/gtk/gtkrc.hu
 share/themes/Default/gtk/gtkrc.hy
@@ -189,6 +193,7 @@ share/themes/Default/gtk/gtkrc.ka_GE.georgianacademy
 share/themes/Default/gtk/gtkrc.ka_GE.georgianps
 share/themes/Default/gtk/gtkrc.ko
 share/themes/Default/gtk/gtkrc.lt
+share/themes/Default/gtk/gtkrc.lv
 share/themes/Default/gtk/gtkrc.mk
 share/themes/Default/gtk/gtkrc.pl
 share/themes/Default/gtk/gtkrc.ro
@@ -196,6 +201,7 @@ share/themes/Default/gtk/gtkrc.ru
 share/themes/Default/gtk/gtkrc.ru_RU.iso88595
 share/themes/Default/gtk/gtkrc.sk
 share/themes/Default/gtk/gtkrc.sl
+share/themes/Default/gtk/gtkrc.sp
 share/themes/Default/gtk/gtkrc.sq
 share/themes/Default/gtk/gtkrc.sr
 share/themes/Default/gtk/gtkrc.th
@@ -206,6 +212,7 @@ share/themes/Default/gtk/gtkrc.vi_VN.tcvn
 share/themes/Default/gtk/gtkrc.vi_VN.tcvn5712
 share/themes/Default/gtk/gtkrc.vi_VN.viscii
 share/themes/Default/gtk/gtkrc.vi_VN.viscii111
+share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @dirrm share/themes/Default/gtk

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
@@ -35,5 +35,6 @@ MAN1=		gtk12-config.1
 pre-build:
 	${PERL} -i -pe 's/\\"$$/\\/' ${WRKSRC}/gtk/gtkrc.*
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
+#	${CP} ${WRKSRC}/docs/gtk-config.1 ${WRKSRC}/docs/gtk12-config.1
 
 .include <bsd.port.mk>
