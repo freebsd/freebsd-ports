@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.tux.org/pub/java/JDK-${PORTVERSION}/${ARCH}/FCS/ \
 		http://www.metaverse.nl/~ernst/ \
