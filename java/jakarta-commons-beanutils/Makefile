@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	java
 MASTER_SITES=	http://apache.cs.uu.nl/dist/jakarta/commons/beanutils/source/
 PKGNAMEPREFIX=	jakarta-
