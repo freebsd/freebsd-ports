@@ -5,7 +5,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.16 1998/01/18 15:12:38 steve Exp $
+# $Id: Makefile,v 1.18 1999/06/24 11:10:37 sheldonh Exp $
 #
 # Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorporated
@@ -18,9 +18,7 @@ DISTNAME=       gcc-2.8.1
 PKGNAME=        gnat-3.11p
 CATEGORIES=	lang
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
-		${MASTER_SITE_GNU} \
-		ftp://ftp.pcnet.com/users/eischen/GNAT/ \
-		http://axl.noc.iafrica.com/~sheldonh/
+		${MASTER_SITE_GNU}
 DISTFILES=      gnat-3.11p-src.tar.gz gcc-2.8.1.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
