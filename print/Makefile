@@ -131,6 +131,7 @@
     SUBDIR += pdq
     SUBDIR += perlftlib
     SUBDIR += pfaedit
+    SUBDIR += pfbtopfa
     SUBDIR += phppdflib
     SUBDIR += pic2fig
     SUBDIR += pips2200
