@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.16a
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -49,6 +49,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-everything \
 			--with-paranoidmsg \
 			--with-virtualchroot \
+			--with-tls \
 			--sysconfdir=${PREFIX}/etc
 # language support requested?
 .if defined(WITH_LANG)
@@ -102,7 +103,7 @@ DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
 		README.Authentication-Modules THANKS pure-ftpd.png \
-		pureftpd.schema
+		pureftpd.schema README.TLS
 
 CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
