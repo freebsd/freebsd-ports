@@ -1,7 +1,7 @@
---- builtin/Makefile.am.orig	Fri May  2 02:19:51 2003
-+++ builtin/Makefile.am	Fri May  2 02:20:08 2003
+--- builtin/Makefile.am.orig	Mon Dec 20 16:12:28 2004
++++ builtin/Makefile.am	Mon Dec 20 16:12:46 2004
 @@ -1,6 +1,6 @@
- ## $OpenXM: OpenXM_contrib2/asir2000/builtin/Makefile.am,v 1.4 2003/03/20 07:34:09 ohara Exp $
+ ## $OpenXM: OpenXM_contrib2/asir2000/builtin/Makefile.am,v 1.8 2004/12/19 17:06:23 ohara Exp $
  
 -asirdir  = ${prefix}/lib/asir
 +asirdir  = ${prefix}/share/asir

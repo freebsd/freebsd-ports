@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20040214
+PORTVERSION=	20050131
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASIR_DOC}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${ASIR_SRC} ${ASIR_DOC}
+EXTRACT_ONLY=	${ASIR_SRC}
 
 MAINTAINER=	saito@asir.org
 COMMENT=	The system Risa/Asir is a general computer algebra system
@@ -22,8 +22,10 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
 USE_XLIB=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari=new
-ASIR_DOC_VERSION=	20040211
+CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
+ASIR_SRC_VERSION= 20050112
+ASIR_DOC_VERSION=	20050111
+ASIR_SRC=	asir-${ASIR_DOC_VERSION}.tar.gz
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 MAN1=		asir.1
 PREFIX?=	${LOCALBASE}
@@ -35,10 +37,6 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 	sturm sym weight xm
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
 
 pre-install:
 	@${MKDIR} ${DATADIR}

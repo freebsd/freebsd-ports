@@ -849,6 +849,8 @@ share/doc/asir/html-eg/man_284.html
 share/doc/asir/html-eg/man_285.html
 share/doc/asir/html-eg/man_286.html
 share/doc/asir/html-eg/man_287.html
+share/doc/asir/html-eg/man_288.html
+share/doc/asir/html-eg/man_289.html
 share/doc/asir/html-eg/man_28.html
 share/doc/asir/html-eg/man_29.html
 share/doc/asir/html-eg/man_3.html
@@ -1137,6 +1139,8 @@ share/doc/asir/html-jp/man_284.html
 share/doc/asir/html-jp/man_285.html
 share/doc/asir/html-jp/man_286.html
 share/doc/asir/html-jp/man_287.html
+share/doc/asir/html-jp/man_288.html
+share/doc/asir/html-jp/man_289.html
 share/doc/asir/html-jp/man_28.html
 share/doc/asir/html-jp/man_29.html
 share/doc/asir/html-jp/man_3.html
@@ -1219,13 +1223,41 @@ share/doc/asir/html-jp/man_99.html
 share/doc/asir/html-jp/man_toc.html
 share/doc/asir/html-internal-ja/internal.html
 share/doc/asir/html-internal-ja/internal_toc.html
+share/doc/asir/html-exp-ja/exp-ja.texi
+share/doc/asir/html-exp-ja/exp-ja_1.html
+share/doc/asir/html-exp-ja/exp-ja_2.html
+share/doc/asir/html-exp-ja/exp-ja_3.html
+share/doc/asir/html-exp-ja/exp-ja_4.html
+share/doc/asir/html-exp-ja/exp-ja_5.html
+share/doc/asir/html-exp-ja/exp-ja_6.html
+share/doc/asir/html-exp-ja/exp-ja_7.html
+share/doc/asir/html-exp-ja/exp-ja_8.html
+share/doc/asir/html-exp-ja/exp-ja_9.html
+share/doc/asir/html-exp-ja/exp-ja_10.html
+share/doc/asir/html-exp-ja/exp-ja_11.html
+share/doc/asir/html-exp-ja/exp-ja_12.html
+share/doc/asir/html-exp-ja/exp-ja_13.html
+share/doc/asir/html-exp-ja/exp-ja_14.html
+share/doc/asir/html-exp-ja/exp-ja_15.html
+share/doc/asir/html-exp-ja/exp-ja_16.html
+share/doc/asir/html-exp-ja/exp-ja_17.html
+share/doc/asir/html-exp-ja/exp-ja_18.html
+share/doc/asir/html-exp-ja/exp-ja_19.html
+share/doc/asir/html-exp-ja/exp-ja_20.html
+share/doc/asir/html-exp-ja/exp-ja_21.html
+share/doc/asir/html-exp-ja/exp-ja_22.html
+share/doc/asir/html-exp-ja/exp-ja_23.html
+share/doc/asir/html-exp-ja/exp-ja_24.html
+share/doc/asir/html-exp-ja/exp-ja_toc.html
 share/doc/asir/internal-jp.pdf
+share/doc/asir/exp-ja.pdf
 share/doc/asir/asir.1
 @dirrm include/asir
 @dirrm share/asir/help-jp
 @dirrm share/asir/help-eg
 @dirrm share/asir
 @dirrm share/doc/asir/html-eg
+@dirrm share/doc/asir/html-exp-ja
 @dirrm share/doc/asir/html-jp
 @dirrm share/doc/asir/html-internal-ja
 @dirrm share/doc/asir
