@@ -25,6 +25,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
 
+FORBIDDEN=	http://vuxml.freebsd.org/fffacc93-16cb-11d9-bc4a-000c41e2cdad.html
+
 PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/patches/
 # Note: xpm.patch appears to already be in xvdir.c
