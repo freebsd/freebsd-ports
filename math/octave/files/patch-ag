@@ -1,0 +1,14 @@
+--- src/sysdep.cc.orig	Fri Feb 18 11:51:53 2000
++++ src/sysdep.cc	Fri Feb 18 11:52:46 2000
+@@ -110,7 +110,11 @@
+ {
+ #if defined (HAVE_FLOATINGPOINT_H)
+   // Disable trapping on common exceptions.
++#if defined(__alpha__)
++  fpsetmask (~(FP_X_OFL|FP_X_INV|FP_X_DZ|FP_X_UFL|FP_X_IMP));
++#else
+   fpsetmask (~(FP_X_OFL|FP_X_INV|FP_X_DZ|FP_X_DNML|FP_X_UFL|FP_X_IMP));
++#endif
+ #endif
+ }
+ #endif
