@@ -7,7 +7,7 @@
 
 PORTNAME=	openldap20
 PORTVERSION=	2.0.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		http://www.PlanetMirror.com/pub/openldap/%SUBDIR%/ \
