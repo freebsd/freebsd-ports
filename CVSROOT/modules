@@ -850,6 +850,7 @@ cl-lml-clisp	ports/www/cl-lml-clisp
 cl-meta		ports/textproc/cl-meta
 cl-port		ports/devel/cl-port
 cl-ppcre	ports/textproc/cl-ppcre
+cl-split-sequence	ports/devel/cl-split-sequence
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
 clanbomber	ports/games/clanbomber
