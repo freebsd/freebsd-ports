@@ -1,0 +1,47 @@
+lib/libkickpim.la
+lib/libkickpim.so
+share/apps/kicker/applets/kickpim.desktop
+share/apps/kickpim/icons/hi12-kickpim-anniversary.png
+share/apps/kickpim/icons/hi12-kickpim-birthday.png
+share/apps/kickpim/icons/hi12-kickpim-cardmenu.png
+share/apps/kickpim/icons/hi12-kickpim-email-check.png
+share/apps/kickpim/icons/hi12-kickpim-email.png
+share/apps/kickpim/icons/hi12-kickpim-event.png
+share/apps/kickpim/icons/hi24-kickpim-icon-anniversary.png
+share/apps/kickpim/icons/hi24-kickpim-icon-email-vip.png
+share/apps/kickpim/icons/hi24-kickpim-icon-email.png
+share/apps/kickpim/icons/hi24-kickpim-icon-event.png
+share/apps/kickpim/icons/hi24-kickpim-icon.png
+share/apps/kickpim/icons/hi32-kickpim-icon.png
+share/apps/kickpim/icons/info-kickpim-applet.png
+share/apps/kickpim/icons/info-kickpim-card.png
+share/apps/kickpim/icons/info-kickpim-menu.png
+share/apps/kickpim/info/image-kickpim-lain.jpg
+share/doc/HTML/en/kickpim/common
+share/doc/HTML/en/kickpim/index.cache.bz2
+share/doc/HTML/en/kickpim/index.docbook
+share/locale/de/LC_MESSAGES/kickpim.mo
+share/locale/fr/LC_MESSAGES/kickpim.mo
+share/locale/it/LC_MESSAGES/kickpim.mo
+share/locale/nl/LC_MESSAGES/kickpim.mo
+share/locale/pl/LC_MESSAGES/kickpim.mo
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrm share/doc/HTML/en/kickpim
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kickpim/info
+@dirrm share/apps/kickpim/icons
+@dirrm share/apps/kickpim
+@unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
+@unexec rmdir %D/share/apps/kicker 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
