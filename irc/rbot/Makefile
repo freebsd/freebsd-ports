@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
@@ -24,25 +24,13 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbot.rb ${PREFIX}/bin/rbot
-	${MKDIR} ${RUBY_SITELIBDIR}/rbot
-	${INSTALL_DATA} ${WRKSRC}/rbot/*.rb ${RUBY_SITELIBDIR}/rbot
-	${MKDIR} ${RUBY_SITELIBDIR}/rbot/languages
-	${INSTALL_DATA} ${WRKSRC}/rbot/languages/* \
-		${RUBY_SITELIBDIR}/rbot/languages
-	${MKDIR} ${RUBY_SITELIBDIR}/rbot/plugins
-	${INSTALL_DATA} ${WRKSRC}/rbot/plugins/* \
-		${RUBY_SITELIBDIR}/rbot/plugins
-	${MKDIR} ${RUBY_SITELIBDIR}/rbot/dbplugins
-	${INSTALL_DATA} ${WRKSRC}/rbot/dbplugins/* \
-		${RUBY_SITELIBDIR}/rbot/dbplugins
+	${TAR} -C ${WRKSRC} -cf - rbot | ${TAR} -C ${RUBY_SITELIBDIR} -xkpf -
 	${MKDIR} ${PREFIX}/etc/rbot
-	${INSTALL_DATA} ${WRKSRC}/rbotconf/*.rbot ${PREFIX}/etc/rbot
-	${MKDIR} ${PREFIX}/etc/rbot/keywords
-	${MKDIR} ${PREFIX}/etc/rbot/logs
-	${MKDIR} ${PREFIX}/etc/rbot/quotes
+	( cd ${WRKSRC}/rbotconf && ${TAR} -cf - * ) | \
+		${TAR} -C ${PREFIX}/etc/rbot -xkpf -
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/rbot
-	( cd ${WRKSRC}/doc && ${TAR} -cpf - * ) | \
+	( cd ${WRKSRC}/doc && ${TAR} -cf - * ) | \
 		${TAR} -C ${RUBY_DOCDIR}/rbot -xpf -
 .endif
 
