@@ -1,0 +1,38 @@
+bin/gnome-memblocks
+etc/sound/events/gnome-memblocks.soundlist
+share/gnome/apps/Games/gnome-memblocks.desktop
+share/gnome/games/gnome-memblocks.default.scores
+share/gnome/help/gnome-memblocks/C/index.html
+share/gnome/help/gnome-memblocks/C/topic.dat
+share/gnome/pixmaps/gnome-memblocks.png
+share/gnome/pixmaps/gnome-memblocks/default/1.png
+share/gnome/pixmaps/gnome-memblocks/default/10.png
+share/gnome/pixmaps/gnome-memblocks/default/11.png
+share/gnome/pixmaps/gnome-memblocks/default/12.png
+share/gnome/pixmaps/gnome-memblocks/default/13.png
+share/gnome/pixmaps/gnome-memblocks/default/14.png
+share/gnome/pixmaps/gnome-memblocks/default/15.png
+share/gnome/pixmaps/gnome-memblocks/default/16.png
+share/gnome/pixmaps/gnome-memblocks/default/17.png
+share/gnome/pixmaps/gnome-memblocks/default/18.png
+share/gnome/pixmaps/gnome-memblocks/default/2.png
+share/gnome/pixmaps/gnome-memblocks/default/3.png
+share/gnome/pixmaps/gnome-memblocks/default/4.png
+share/gnome/pixmaps/gnome-memblocks/default/5.png
+share/gnome/pixmaps/gnome-memblocks/default/6.png
+share/gnome/pixmaps/gnome-memblocks/default/7.png
+share/gnome/pixmaps/gnome-memblocks/default/8.png
+share/gnome/pixmaps/gnome-memblocks/default/9.png
+share/gnome/pixmaps/gnome-memblocks/default/background.jpg
+share/gnome/sounds/gnome-memblocks/flip01.wav
+share/gnome/sounds/gnome-memblocks/flip02.wav
+share/gnome/sounds/gnome-memblocks/flip03.wav
+share/gnome/sounds/gnome-memblocks/flip04.wav
+share/gnome/sounds/gnome-memblocks/flip05.wav
+share/gnome/sounds/gnome-memblocks/flip06.wav
+share/gnome/sounds/gnome-memblocks/flip07.wav
+@dirrm share/gnome/sounds/gnome-memblocks
+@dirrm share/gnome/pixmaps/gnome-memblocks/default
+@dirrm share/gnome/pixmaps/gnome-memblocks
+@dirrm share/gnome/help/gnome-memblocks/C
+@dirrm share/gnome/help/gnome-memblocks
