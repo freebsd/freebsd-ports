@@ -2722,6 +2722,7 @@ idlefork	ports/devel/idlefork
 ifc		ports/lang/ifc
 ifconfig	src/sbin/ifconfig
 ifd-devkit	ports/security/ifd-devkit
+ifd-gpr400	ports/security/ifd-gpr400
 ifd-test	ports/devel/ifd-test
 ifhp		ports/print/ifhp
 ifile		ports/mail/ifile
