@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jun 27 20:05:45 2002
++++ configure	Wed Dec 18 07:15:14 2002
+@@ -1980,7 +1980,7 @@
+ fi;
+ 
+ if test x$with_lib_path != x ; then
+-  LDFLAGS="-L `echo $with_lib_path | sed 's/:/ -L /g'`"
++  LDFLAGS="$LDFLAGS -L `echo $with_lib_path | sed 's/:/ -L /g'`"
+ fi
+ 
+ echo "$as_me:$LINENO: checking for -R flag" >&5

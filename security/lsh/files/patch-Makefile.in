@@ -1,0 +1,11 @@
+--- src/testsuite/Makefile.in.orig	Thu Jun 27 20:50:33 2002
++++ src/testsuite/Makefile.in	Wed Dec 18 07:26:20 2002
+@@ -122,7 +122,7 @@
+ noinst_PROGRAMS = $(TS_PROGS)
+ 
+ LDADD = testutils.o ../liblsh.a ../nettle/libnettle.a \
+-	$(addprefix ../,@LIBARGP@)
++	../@LIBARGP@
+ 
+ 
+ EXTRA_DIST = testutils.c testutils.h $(TS_SH) $(TS_MORE_SH) \
