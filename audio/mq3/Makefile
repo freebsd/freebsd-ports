@@ -16,7 +16,7 @@ COMMENT=	A minimal mp3/ogg player written in Qt
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		qthreads.0:${PORTSDIR}/lang/guile
+		qthreads.15:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_QT_VER=	2
