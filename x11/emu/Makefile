@@ -15,11 +15,12 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X Window System
 
+BUILD_DEPENDS=	xrdb:${X_CLIENTS_PORT}
+RUN_DEPENDS=	xrdb:${X_CLIENTS_PORT}
+
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
-
-BROKEN=		Missing dependency
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/emu
