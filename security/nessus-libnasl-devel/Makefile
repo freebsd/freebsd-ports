@@ -4,8 +4,7 @@
 #
 
 PORTNAME=	nessus-libnasl-devel
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10a
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -25,9 +24,6 @@ WRKSRC=		${WRKDIR}/libnasl
 
 USE_BISON=	YES
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/etc/nessus/com \
-		--localstatedir=${PREFIX}/etc/nessus/var
-
 INSTALLS_SHLIB=	YES
 
 MAN1=		nasl.1 nasl-config.1
