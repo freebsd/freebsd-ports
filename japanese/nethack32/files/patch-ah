@@ -1,0 +1,13 @@
+--- sys/unix/Makefile.utl.orig	Sun Feb 13 07:26:46 2000
++++ sys/unix/Makefile.utl	Sun Feb 13 07:27:42 2000
+@@ -86,8 +86,8 @@
+ # if, instead of yacc/lex you have bison/flex, comment/uncomment the following.
+ # YACC     = yacc
+ # LEX      = lex
+-YACC     = bison -y
+-# YACC     = byacc
++# YACC     = bison -y
++YACC     = byacc
+ LEX      = flex -8
+  
+ # these are the names of the output files from YACC/LEX. Under MS-DOS
