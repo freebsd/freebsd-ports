@@ -84,6 +84,7 @@
     SUBDIR += opensched
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-LJ-SpellCheck
+    SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
