@@ -18,7 +18,7 @@ RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
 		rrdtool:${PORTSDIR}/net/rrdtool \
 		php:${PORTSDIR}/lang/php4-nms \
 		nmap:${PORTSDIR}/security/nmap \
-		tmpwatch:${PORTSDIR}/sysutils/tmpwatch
+		${LOCALBASE}/sbin/tmpwatch:${PORTSDIR}/sysutils/tmpwatch
 
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
