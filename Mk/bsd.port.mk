@@ -81,7 +81,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_ONLY	- If defined, a subset of ${DISTFILES} you want to
 #			  	  actually extract.
 #
-# These three variables are typically set in /etc/make.conf to indicate
+# These variables are typically set in /etc/make.conf to indicate
 # the user's preferred location to fetch files from.
 #
 # MASTER_SITE_BACKUP - Backup location(s) for distribution files and patch
@@ -92,6 +92,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  value.
 # MASTER_SITE_FREEBSD - If set, only use ${MASTER_SITE_BACKUP} for
 #				  MASTER_SITES.
+# CD_MOUNTPTS -			List of CDROM mountpoints to look for distfiles under.
+#						This variable supercedes CD_MOUNTPT, which is
+#						obsolete.
 #
 # Set these if your port should not be built under certain circumstances.
 # These are string variables; you should set them to the reason why
@@ -304,7 +307,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  example, if your port has "man/man1/foo.1" and
 #				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
 #				  The available sections chars are "123456789LN".
-# MLINKS		- A list of <target, source> tuples for creating links
+# MLINKS		- A list of <source, target> tuples for creating links
 #				  for manpages.  For example, "MLINKS= a.1 b.1 c.3 d.3"
 #				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 and d.3" in
 #				  appropriate directories.  (Use this even if the port
@@ -930,6 +933,9 @@ LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 .if ${XFREE86_VERSION} == 3
+.if defined(USE_IMAKE)
+BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
+.endif
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
@@ -1142,15 +1148,27 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
+# Determine whether or not we can use rootly owner/group functions.
+UID!=	id -u
+.if ${UID} == 0
+_BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
+_SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
+_MANOWNGRP=	-o ${MANOWN} -g ${MANGRP}
+.else
+_BINOWNGRP=
+_SHROWNGRP=
+_MANOWNGRP=
+.endif
+
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_SCRIPT= \
-	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_DATA= \
-	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
+	${INSTALL} ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}
 INSTALL_MAN= \
-	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
+	${INSTALL} ${COPY} ${_MANOWNGRP} -m ${MANMODE}
 
 INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -1227,24 +1245,148 @@ INSTALL_TARGET?=	install
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
 PATCH_SITES?=
+_MASTER_SITES_DEFAULT?=
+
+# Feed internal _{MASTER,PATCH}_SITES_n where n is a group designation
+# as per grouping rules (:something)
+# Organize _{MASTER,PATCH}_SITES_{DEFAULT,[^/:]+} according to grouping
+# rules (:something)
+.for _S in ${MASTER_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if ${_group}==all || ${_group}==ALL || ${_group}==default
+.			BEGIN:
+				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO} "in group definitions."
+				@${ECHO} "Please fix your MASTER_SITES"
+				@${FALSE}
+.			endif
+_MASTER_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
+.		endfor
+.	else
+_MASTER_SITES_DEFAULT+=	${_S:C@^(.*/):[^/:]+$@\1@}
+.	endif
+.endfor
+.for _S in ${PATCH_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if ${_group}==all || ${_group}==ALL || ${_group}==default
+.			BEGIN:
+				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO} "in group definitions."
+				@${ECHO} "Please fix your MASTER_SITES"
+				@${FALSE}
+.			endif
+_PATCH_SITES_${_group}+=	${_S:C@^(.*/):[^/:]+$@\1@}
+.		endfor
+.	else
+_PATCH_SITES_DEFAULT+=	${_S:C@^(.*/):[^/:]+$@\1@}
+.	endif
+.endfor
+
+# Feed internal _{MASTER,PATCH}_SITE_SUBDIR_n where n is a group designation
+# as per grouping rules (:something)
+# Organize _{MASTER,PATCH}_SITE_SUBDIR_{DEFAULT,[^/:]+} according to grouping
+# rules (:something)
+.for _S in ${MASTER_SITE_SUBDIR}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if ${_group}==all || ${_group}==ALL || ${_group}==default
+.			BEGIN:
+				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO} "in group definitions."
+				@${ECHO} "Please fix your MASTER_SITE_SUBDIR"
+				@${FALSE}
+.			endif
+.			if defined(_MASTER_SITES_${_group})
+_MASTER_SITE_SUBDIR_${_group}+= ${_S:C@^(.*)/:[^/:]+$@\1@}
+.			endif
+.		endfor
+.	else
+.		if defined(_MASTER_SITES_DEFAULT)
+_MASTER_SITE_SUBDIR_DEFAULT+=	${_S:C@^(.*)/:[^/:]+$@\1@}
+.		endif
+.	endif
+.endfor
+.for _S in ${PATCH_SITE_SUBDIR}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if ${_group}==all || ${_group}==ALL || ${_group}==default
+.			BEGIN:
+				@${ECHO} "The words all, ALL and default are reserved and cannot be used"
+				@${ECHO} "in group definitions."
+				@${ECHO} "Please fix your PATCH_SITE_SUBDIR"
+				@${FALSE}
+.			endif
+.			if defined(_PATCH_SITES_${_group})
+_PATCH_SITE_SUBDIR_${_group}+= ${_S:C@^(.*)/:[^/:]+$@\1@}
+.			endif
+.		endfor
+.	else
+.		if defined(_PATCH_SITES_DEFAULT)
+_PATCH_SITE_SUBDIR_DEFAULT+=	${_S:C@^(.*)/:[^/:]+$@\1@}
+.		endif
+.	endif
+.endfor
 
 # Substitute subdirectory names
-.if defined(MASTER_SITE_SUBDIR)
-.for dir in ${MASTER_SITE_SUBDIR}
-MASTER_SITES_TMP+=	${MASTER_SITES:S^%SUBDIR%^${dir}^}
+# XXX simpler/faster solution but not the best space wise, suggestions please
+.for _S in ${MASTER_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+MASTER_SITES_TMP=
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if defined(_MASTER_SITE_SUBDIR_${_group})
+.				for dir in ${_MASTER_SITE_SUBDIR_${_group}}
+MASTER_SITES_TMP+=	${_MASTER_SITES_${_group}:S^%SUBDIR%^${dir}^}
+.				endfor
+.			else
+MASTER_SITES_TMP+=	${_MASTER_SITES_${_group}:S^%SUBDIR%/^^}
+.			endif
+_MASTER_SITES_${_group}:=	${MASTER_SITES_TMP}
+.		endfor
+.	endif
 .endfor
+MASTER_SITES_TMP=
+.if defined(_MASTER_SITE_SUBDIR_DEFAULT)
+.	for dir in ${_MASTER_SITE_SUBDIR_DEFAULT}
+MASTER_SITES_TMP+=	${_MASTER_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
+.	endfor
 .else
-MASTER_SITES_TMP=	${MASTER_SITES:S^%SUBDIR%/^^}
+MASTER_SITES_TMP=	${_MASTER_SITES_DEFAULT:S^%SUBDIR%/^^}
 .endif
-MASTER_SITES:=	${MASTER_SITES_TMP}
-.if defined(PATCH_SITE_SUBDIR)
-.for dir in ${PATCH_SITE_SUBDIR}
-PATCH_SITES_TMP+=	${PATCH_SITES:S^%SUBDIR%^${dir}^}
+_MASTER_SITES_DEFAULT:=	${MASTER_SITES_TMP}
+MASTER_SITES_TMP=
+.for _S in ${PATCH_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+PATCH_SITES_TMP=
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/,/ /g}
+.			if defined(_PATCH_SITE_SUBDIR_${_group})
+.				for dir in ${_PATCH_SITE_SUBDIR_${_group}}
+PATCH_SITES_TMP+=	${_PATCH_SITES_${_group}:S^%SUBDIR%^${dir}^}
+.				endfor
+.			else
+PATCH_SITES_TMP+=	${_PATCH_SITES_${_group}:S^%SUBDIR%/^^}
+.			endif
+_PATCH_SITES_${_group}:=	${PATCH_SITES_TMP}
+.		endfor
+.	endif
 .endfor
+PATCH_SITES_TMP=
+.if defined(_PATCH_SITE_SUBDIR_DEFAULT)
+.	for dir in ${_PATCH_SITE_SUBDIR_DEFAULT}
+PATCH_SITES_TMP+=	${_PATCH_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
+.	endfor
 .else
-PATCH_SITES_TMP=	${PATCH_SITES:S^%SUBDIR%/^^}
+PATCH_SITES_TMP=	${_PATCH_SITES_DEFAULT:S^%SUBDIR%/^^}
 .endif
-PATCH_SITES:=	${PATCH_SITES_TMP}
+_PATCH_SITES_DEFAULT:=	${PATCH_SITES_TMP}
+PATCH_SITES_TMP=
 
 # The primary backup site.
 MASTER_SITE_BACKUP?=	\
@@ -1263,13 +1405,42 @@ _MASTER_SITE_BACKUP=	${MASTER_SITE_BACKUP}
 
 # Search CDROM first if mounted, symlink instead of copy if
 # FETCH_SYMLINK_DISTFILES is set
-CD_MOUNTPT?=	/cdrom
-.if exists(${CD_MOUNTPT}/ports/distfiles)
-_MASTER_SITE_OVERRIDE:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${_MASTER_SITE_OVERRIDE}
+CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
+.for MOUNTPT in ${CD_MOUNPTS}
+.if exists(${MOUNTPT}/ports/distfiles)
+_MASTER_SITE_OVERRIDE:=	file:${MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${_MASTER_SITE_OVERRIDE}
 .if defined(FETCH_SYMLINK_DISTFILES)
 FETCH_BEFORE_ARGS+=	-l
 .endif
 .endif
+.endfor
+
+# Organize DISTFILES, PATCHFILES, _MASTER_SITES_ALL, _PATCH_SITES_ALL
+# according to grouping rules (:something)
+DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
+_MASTER_SITES_ALL=	${_MASTER_SITES_DEFAULT}
+_PATCH_SITES_ALL=	${_PATCH_SITES_DEFAULT}
+.for _D in ${DISTFILES}
+_D_TEMP=	${_D:S/^${_D:C/:[^:]+$//}//}
+.	if !empty(_D_TEMP) && defined(_MASTER_SITES_${_D_TEMP:S/^://})
+#_MASTER_SITES_ALL+=	${MASTER_SITES_${_D_TEMP:S/^://}}
+_MASTER_SITES_ALL+=	${_MASTER_SITES_${_D:S/^${_D:C/:[^:]+$//}://}}
+#_DISTFILES+=	${_D:S/:${_D_TEMP:S/^://}$//}
+_DISTFILES+=	${_D:C/:[^:]+$//}
+.	else
+_DISTFILES+=	${_D}
+.	endif
+.endfor
+.for _P in ${PATCHFILES}
+_P_TEMP=	${_P:S/^${_P:C/:[^:]+$//}//}
+.	if !empty(_P_TEMP) && defined(_PATCH_SITES_${_P_TEMP:S/^://})
+_PATCH_SITES_ALL+=	${_PATCH_SITES_${_P:S/^${_P:C/:[^:]+$//}://}}
+_PATCHFILES+=	${_P:C/:[^:]+$//}
+.	else
+_PATCHFILES+=	${_P}
+.	endif
+.endfor
+ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 
 #
 # Sort the master site list according to the patterns in MASTER_SORT
@@ -1283,16 +1454,86 @@ MASTER_SORT_AWK= BEGIN { RS = " "; ORS = " "; IGNORECASE = 1 ; gl = "${MASTER_SO
 MASTER_SORT_AWK+= /${srt:S^/^\\/^g}/ { good["${srt}"] = good["${srt}"] " " $$0 ; next; } 
 .endfor
 MASTER_SORT_AWK+= { rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
-SORTED_MASTER_SITES_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites
-SORTED_PATCH_SITES_CMD=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites
+SORTED_MASTER_SITES_DEFAULT_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-DEFAULT
+SORTED_PATCH_SITES_DEFAULT_CMD=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-DEFAULT
+SORTED_MASTER_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-ALL
+SORTED_PATCH_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-ALL
 
-master-sites:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${MASTER_SITES}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
-patch-sites:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${PATCH_SITES}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+#
+# Sort the master site list according to the patterns in MASTER_SORT
+# according to grouping rules (:something)
+#
+# for use in the fetch targets
+.for _S in ${MASTER_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/^://:S/,/ /g}
+.			if !target(master-sites-${_group})
+SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-${_group}
+master-sites-${_group}:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+.			endif
+.		endfor
+.	endif
+.endfor
+.for _S in ${PATCH_SITES}
+_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
+.	if !empty(_S_TEMP)
+.		for _group in ${_S_TEMP:S/^://:S/,/ /g}
+.			if !target(patch-sites-${_group})
+SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-${_group}
+patch-sites-${_group}:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+.			endif
+.		endfor
+.	endif
+.endfor
 
-DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-ALLFILES?=	${DISTFILES} ${PATCHFILES}
+#
+# Hackery to enable simple fetch targets with several dynamic MASTER_SITES
+#
+_MASTER_SITES_ENV=	_MASTER_SITES_DEFAULT="${_MASTER_SITES_DEFAULT}"
+.for _F in ${DISTFILES}
+_F_TEMP=	${_F:S/^${_F:C/:[^:]+$//}//:S/^://}
+.	if !empty(_F_TEMP)
+.		for _group in ${_F_TEMP:S/,/ /g}
+.			if defined(_MASTER_SITES_${_group})
+_MASTER_SITES_ENV+=	_MASTER_SITES_${_group}="${_MASTER_SITES_${_group}}"
+.			endif
+.		endfor
+.	endif
+.endfor
+_PATCH_SITES_ENV=	_PATCH_SITES_DEFAULT="${_PATCH_SITES_DEFAULT}"
+.for _F in ${PATCHFILES}
+_F_TEMP=	${_F:S/^${_F:C/:[^:]+$//}//:S/^://}
+.	if !empty(_F_TEMP)
+.		for _group in ${_F_TEMP:S/,/ /g}
+.			if defined(_PATCH_SITES_${_group})
+_PATCH_SITES_ENV+=	_PATCH_SITES_${_group}="${_PATCH_SITES_${_group}}"
+.			endif
+.		endfor
+.	endif
+.endfor
+
+master-sites-ALL:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+patch-sites-ALL:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+# has similar effect to old targets, i.e., access only {MASTER,PATCH}_SITES, not working with the new _n variables
+master-sites-DEFAULT:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+patch-sites-DEFAULT:
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+
+# synonyms, mnemonics
+master-sites-all: master-sites-ALL
+patch-sites-all: patch-sites-ALL
+master-sites-default: master-sites-DEFAULT
+patch-sites-default: patch-sites-DEFAULT
+
+# compatibility with old behavior
+master-sites: master-sites-DEFAULT
+patch-sites: patch-sites-DEFAULT
 
 .if defined(IGNOREFILES)
 .if !defined(CKSUMFILES)
@@ -1324,7 +1565,7 @@ _IGNOREFILES?=	${IGNOREFILES}
 
 # This is what is actually going to be extracted, and is overridable
 #  by user.
-EXTRACT_ONLY?=	${DISTFILES}
+EXTRACT_ONLY?=	${_DISTFILES}
 
 # Documentation
 MAINTAINER?=	ports@FreeBSD.org
@@ -1654,7 +1895,7 @@ ignorelist:
 .if defined(RESTRICTED)
 clean-restricted:	delete-distfiles delete-package
 clean-restricted-list: delete-distfiles-list delete-package-list
-RESTRICTED_FILES?=	${DISTFILES} ${PATCHFILES}
+RESTRICTED_FILES?=	${_DISTFILES} ${_PATCHFILES}
 .else
 clean-restricted:
 clean-restricted-list:
@@ -1663,7 +1904,7 @@ clean-restricted-list:
 .if defined(NO_CDROM)
 clean-for-cdrom:	delete-distfiles delete-package
 clean-for-cdrom-list:	delete-distfiles-list delete-package-list
-RESTRICTED_FILES?=	${DISTFILES} ${PATCHFILES}
+RESTRICTED_FILES?=	${_DISTFILES} ${_PATCHFILES}
 .else
 clean-for-cdrom:
 clean-for-cdrom-list:
@@ -1759,7 +2000,10 @@ describe:
 do-fetch:
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
-	 for file in ${DISTFILES}; do \
+	 ${_MASTER_SITES_ENV} ; \
+	 for _file in ${DISTFILES}; do \
+		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
@@ -1776,7 +2020,20 @@ do-fetch:
 				fi; \
 			fi; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			for site in `${SORTED_MASTER_SITES_CMD}`; do \
+			if [ ! -z "$$select" ] ; then \
+				__MASTER_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
+						eval ___MASTER_SITES_TMP="\$${_MASTER_SITES_$${group}}" ; \
+						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
+					fi \
+				done; \
+				___MASTER_SITES_TMP= ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
@@ -1796,7 +2053,10 @@ do-fetch:
 	 done)
 .if defined(PATCHFILES)
 	@(cd ${_DISTDIR}; \
-	 for file in ${PATCHFILES}; do \
+	 ${_PATCH_SITES_ENV} ; \
+	 for _file in ${PATCHFILES}; do \
+		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
@@ -1805,7 +2065,20 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			for site in `${SORTED_PATCH_SITES_CMD}`; do \
+			if [ ! -z $$select ] ; then \
+				__PATCH_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
+						eval ___PATCH_SITES_TMP="\$${_PATCH_SITES_$${group}}" ; \
+						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
+					fi \
+				done; \
+				___PATCH_SITES_TMP= ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
@@ -1853,7 +2126,7 @@ do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@(cd ${_DISTDIR}; \
-	  for i in ${PATCHFILES}; do \
+	  for i in ${_PATCHFILES}; do \
 		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
 			${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
 		fi; \
@@ -2396,7 +2669,7 @@ pre-distclean:
 
 .if !target(distclean)
 distclean: pre-distclean clean
-	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${DISTFILES} ${PATCHFILES}"
+	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${_DISTFILES} ${_PATCHFILES}"
 .endif
 
 .if !target(delete-distfiles)
@@ -2440,9 +2713,25 @@ delete-distfiles-list:
 fetch-list:
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
-	 for file in ${DISTFILES}; do \
+	 ${_MASTER_SITES_ENV} ; \
+	 for _file in ${DISTFILES}; do \
+		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			for site in `${SORTED_MASTER_SITES_CMD}`; do \
+			if [ ! -z "$$select" ] ; then \
+				__MASTER_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
+						eval ___MASTER_SITES_TMP=\$${_MASTER_SITES_$${group}} ; \
+						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
+					fi \
+				done; \
+				___MASTER_SITES_TMP= ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -2456,9 +2745,25 @@ fetch-list:
 	done)
 .if defined(PATCHFILES)
 	@(cd ${_DISTDIR}; \
-	 for file in ${PATCHFILES}; do \
+	 ${_PATCH_SITES_ENV} ; \
+	 for _file in ${PATCHFILES}; do \
+		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			for site in `${SORTED_PATCH_SITES_CMD}`; do \
+			if [ ! -z "$$select" ] ; then \
+				__PATCH_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
+						eval ___PATCH_SITES_TMP=\$${_PATCH_SITES_$${group}} ; \
+						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
+					fi \
+				done; \
+				___PATCH_SITES_TMP= ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
