@@ -2,51 +2,406 @@ bin/tomcat4ctl
 etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/logs/stdout.log
 %%T%%/logs/stderr.log
-%%T%%/bin/bootstrap.jar
-%%T%%/bin/startup.sh
-%%T%%/bin/tool-wrapper.sh
-%%T%%/bin/jasper.sh
-%%T%%/bin/shutdown.sh
-%%T%%/bin/jspc.sh
-%%T%%/bin/setclasspath.sh
-%%T%%/bin/catalina.sh
-%%T%%/bin/digest.sh
-%%T%%/lib/jasper-runtime.jar
-%%T%%/lib/naming-factory.jar
-%%T%%/lib/jasper-compiler.jar
-%%T%%/conf/server.xml
-%%T%%/conf/web.xml
-%%T%%/conf/server-noexamples.xml.config
-%%T%%/conf/tomcat-users.xml
-%%T%%/conf/catalina.policy
-%%T%%/common/lib/jndi.jar
-%%T%%/common/lib/jta-spec1_0_1.jar
-%%T%%/common/lib/tyrex-0.9.7.0.jar
-%%T%%/common/lib/tyrex.license
-%%T%%/common/lib/naming-common.jar
-%%T%%/common/lib/xerces.jar
-%%T%%/common/lib/jdbc2_0-stdext.jar
-%%T%%/common/lib/mail.jar
-%%T%%/common/lib/activation.jar
-%%T%%/common/lib/naming-resources.jar
-%%T%%/common/lib/servlet.jar
-%%T%%/common/lib/tools.jar
-%%T%%/webapps/tomcat-docs/config/manager.html
-%%T%%/webapps/tomcat-docs/config/server.html
-%%T%%/webapps/tomcat-docs/config/ajp.html
-%%T%%/webapps/tomcat-docs/config/realm.html
-%%T%%/webapps/tomcat-docs/config/resources.html
-%%T%%/webapps/tomcat-docs/config/loader.html
-%%T%%/webapps/tomcat-docs/config/host.html
-%%T%%/webapps/tomcat-docs/config/engine.html
-%%T%%/webapps/tomcat-docs/config/http11.html
-%%T%%/webapps/tomcat-docs/config/service.html
-%%T%%/webapps/tomcat-docs/config/valve.html
-%%T%%/webapps/tomcat-docs/config/index.html
-%%T%%/webapps/tomcat-docs/config/logger.html
-%%T%%/webapps/tomcat-docs/config/defaultcontext.html
-%%T%%/webapps/tomcat-docs/config/warp.html
-%%T%%/webapps/tomcat-docs/config/context.html
+%%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
+%%T%%/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
+%%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF/web.xml
+%%T%%/webapps/tomcat-docs/appdev/sample/web/hello.jsp
+%%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
+%%T%%/webapps/tomcat-docs/appdev/sample/docs/README.txt
+%%T%%/webapps/tomcat-docs/appdev/sample/build.xml
+%%T%%/webapps/tomcat-docs/appdev/installation.html
+%%T%%/webapps/tomcat-docs/appdev/index.html
+%%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/source.html
+%%T%%/webapps/tomcat-docs/appdev/processes.html
+%%T%%/webapps/tomcat-docs/appdev/build.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/deployment.html
+%%T%%/webapps/tomcat-docs/appdev/introduction.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StandardManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/PersistentManagerBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/DistributedManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/PersistentManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StoreBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/FileStore.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StandardSessionFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/ManagerBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/JDBCStore.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/SSLServerSocketFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/ServerSocketFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/DefaultServerSocketFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ErrorDispatcherValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RemoteAddrValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RequestDumperValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RequestFilterValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ValveBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ErrorReportValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/AccessLogValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/CertificatesValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Constants.AccessLog.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RemoteHostValve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardLoader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Extension.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappLoader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.ResourceEntry.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Reloader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardHostMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogMessage.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardPipeline.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardEngineMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardHost.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardWrapperFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogThrowable.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetRequestDispatcher.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardServer.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContextFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/FastEngineMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResourcePaths.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ContainerBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardContextMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/DefaultContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardService.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogException.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardEngine.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/StandardCluster.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterSessionBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ReplicationWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MulticastSender.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterMemberInfo.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MulticastReceiver.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterReceiver.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterSender.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/ManagerServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.ResourceInfo.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/HTMLManagerServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/WebdavServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/SsiInvokerServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/InvokerServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/Test.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/FilterMap.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityConstraint.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEnvironment.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/FilterDef.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextLocalEjb.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ResourceParams.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEjb.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextResource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ErrorPage.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityCollection.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ApplicationParameter.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/LoginConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/MemoryRealm.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/GenericPrincipal.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JNDIRealm.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/RealmBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JDBCRealm.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/UserDatabase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaService.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ClassLoaderFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/BootstrapService.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaManagerMBean.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Embedded.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EngineConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/UserConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/HostConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Bootstrap.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Catalina.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EmbeddedManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EmbeddedManagerMBean.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/HomesUserDatabase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemErrLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/FileLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/LoggerBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemOutLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/FormAuthenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SavedRequest.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/NonLoginAuthenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SSLAuthenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/HttpConnector.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpSSLData.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpEngine.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpCertificates.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConfigurationHandler.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.Stream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpHost.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.Stream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpPacket.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequestHandler.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnector.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnection.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpConnector.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpRequestStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpResponseStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/SocketInputStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWriter.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestBase.PrivilegedGetSession.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestBase.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiExec.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/ResponseIncludeWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiFsize.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiCommand.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiEcho.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiFlastmod.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiMediator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/ServletOutputStreamWrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiInclude.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/SaxContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/XmlMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/XmlAction.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Base64.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/MD5Encoder.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/StringParser.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/RequestUtil.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/StringManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CookieTools.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/DateTool.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/XMLWriter.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/HexUtils.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/InstanceSupport.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/MIME2Java.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ProcessEnvironment.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/LifecycleSupport.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/URL.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ResourceSet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ProcessHelper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CGIProcessEnvironment.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/FastDateFormat.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Queue.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/DOMWriter.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Enumerator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ParameterMap.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CharsetMapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleException.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/SessionListener.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Engine.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ValveContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerServlet.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Cluster.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Service.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Realm.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ServerFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Logger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Lifecycle.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Contained.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/HttpRequest.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/InstanceEvent.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Manager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/HttpResponse.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Authenticator.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/InstanceListener.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Container.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Pipeline.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerEvent.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Valve.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Store.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Server.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Context.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/SessionEvent.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleListener.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleEvent.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Response.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Wrapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerListener.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Mapper.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Globals.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Session.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Deployer.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Loader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Host.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Connector.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Request.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TyrexDataSourceFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/ResourceEnvFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TyrexTransactionFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/MailSessionFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/BeanFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/ResourceFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/EjbFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/SendMailFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TransactionFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/Handler.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.WARResource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/BaseDirContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.Entry.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLConnection.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/RecyclableNamingEnumeration.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ResourceAttributes.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.FileResourceAttributes.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLStreamHandlerFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.FileResource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Resource.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ProxyDirContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ProxyDirContext.CacheEntry.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLStreamHandler.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/javaURLContextFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextAccessController.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/EjbRef.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingEntry.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/TransactionRef.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NameParserImpl.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/StringManager.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ResourceRef.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/JndiPermission.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextBindings.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContextBindingsEnumeration.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/SelectorContext.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContextEnumeration.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ResourceEnvRef.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingServiceMBean.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingService.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/index-all.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/overview-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/overview-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/serialized-form.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/overview-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/deprecated-list.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/package-list
+%%T%%/webapps/tomcat-docs/catalina/docs/api/allclasses-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/stylesheet.css
+%%T%%/webapps/tomcat-docs/catalina/docs/api/help-doc.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/allclasses-noframe.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/constant-values.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/index.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/packages.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/index.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jndi-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-memory-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-invoker.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jdbc-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-default.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-opers.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpServletRequest.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpSessionContext.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpSessionListener.html
@@ -145,11 +500,11 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/IterationTag.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/BodyTag.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/package-summary.html
-%%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/PageData.html
+%%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagData.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagLibraryInfo.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagLibraryValidator.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/BodyTagSupport.html
-%%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagData.html
+%%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/PageData.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagInfo.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagVariableInfo.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/jsp/package-tree.html
@@ -203,31 +558,23 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/tomcat-docs/servletapi/overview-tree.html
 %%T%%/webapps/tomcat-docs/servletapi/overview-frame.html
 %%T%%/webapps/tomcat-docs/servletapi/allclasses-noframe.html
-%%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
-%%T%%/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
-%%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF/web.xml
-%%T%%/webapps/tomcat-docs/appdev/sample/web/hello.jsp
-%%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
-%%T%%/webapps/tomcat-docs/appdev/sample/docs/README.txt
-%%T%%/webapps/tomcat-docs/appdev/sample/build.xml
-%%T%%/webapps/tomcat-docs/appdev/installation.html
-%%T%%/webapps/tomcat-docs/appdev/index.html
-%%T%%/webapps/tomcat-docs/appdev/web.xml.txt
-%%T%%/webapps/tomcat-docs/appdev/source.html
-%%T%%/webapps/tomcat-docs/appdev/processes.html
-%%T%%/webapps/tomcat-docs/appdev/build.xml.txt
-%%T%%/webapps/tomcat-docs/appdev/deployment.html
-%%T%%/webapps/tomcat-docs/appdev/introduction.html
 %%T%%/webapps/tomcat-docs/WEB-INF/web.xml
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/index.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jndi-realm.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-memory-realm.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-invoker.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jdbc-realm.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-default.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-opers.html
+%%T%%/webapps/tomcat-docs/config/manager.html
+%%T%%/webapps/tomcat-docs/config/server.html
+%%T%%/webapps/tomcat-docs/config/ajp.html
+%%T%%/webapps/tomcat-docs/config/realm.html
+%%T%%/webapps/tomcat-docs/config/resources.html
+%%T%%/webapps/tomcat-docs/config/loader.html
+%%T%%/webapps/tomcat-docs/config/host.html
+%%T%%/webapps/tomcat-docs/config/engine.html
+%%T%%/webapps/tomcat-docs/config/http11.html
+%%T%%/webapps/tomcat-docs/config/service.html
+%%T%%/webapps/tomcat-docs/config/valve.html
+%%T%%/webapps/tomcat-docs/config/index.html
+%%T%%/webapps/tomcat-docs/config/logger.html
+%%T%%/webapps/tomcat-docs/config/defaultcontext.html
+%%T%%/webapps/tomcat-docs/config/warp.html
+%%T%%/webapps/tomcat-docs/config/context.html
 %%T%%/webapps/tomcat-docs/images/tomcat.gif
 %%T%%/webapps/tomcat-docs/images/jakarta-logo.gif
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/package-summary.html
@@ -545,6 +892,35 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/ROOT/tomcat.gif
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/manager/WEB-INF/web.xml
+%%T%%/conf/server.xml
+%%T%%/conf/web.xml
+%%T%%/conf/server-noexamples.xml.config
+%%T%%/conf/tomcat-users.xml
+%%T%%/conf/catalina.policy
+%%T%%/common/lib/jndi.jar
+%%T%%/common/lib/jta-spec1_0_1.jar
+%%T%%/common/lib/tyrex-0.9.7.0.jar
+%%T%%/common/lib/tyrex.license
+%%T%%/common/lib/naming-common.jar
+%%T%%/common/lib/xerces.jar
+%%T%%/common/lib/jdbc2_0-stdext.jar
+%%T%%/common/lib/mail.jar
+%%T%%/common/lib/activation.jar
+%%T%%/common/lib/naming-resources.jar
+%%T%%/common/lib/servlet.jar
+%%T%%/common/lib/tools.jar
+%%T%%/bin/bootstrap.jar
+%%T%%/bin/startup.sh
+%%T%%/bin/tool-wrapper.sh
+%%T%%/bin/jasper.sh
+%%T%%/bin/shutdown.sh
+%%T%%/bin/jspc.sh
+%%T%%/bin/setclasspath.sh
+%%T%%/bin/catalina.sh
+%%T%%/bin/digest.sh
+%%T%%/lib/jasper-runtime.jar
+%%T%%/lib/naming-factory.jar
+%%T%%/lib/jasper-compiler.jar
 %%T%%/server/lib/servlets-cgi.renametojar
 %%T%%/server/lib/servlets-ssi.renametojar
 %%T%%/server/lib/tomcat-coyote.jar
@@ -560,6 +936,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/server/lib/servlets-common.jar
 %%T%%/server/lib/jakarta-regexp-1.2.jar
 %%T%%/server/lib/warp.jar
+%%T%%/RELEASE-NOTES-4.0.2-B1.txt
 %%T%%/RELEASE-NOTES-4.0.1.txt
 %%T%%/RELEASE-NOTES-4.0.1-B1.txt
 %%T%%/RELEASE-NOTES-4.0-RC2.txt
@@ -568,8 +945,8 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/RELEASE-NOTES-4.0-B6.txt
 %%T%%/RELEASE-NOTES-4.0-B5.txt
 %%T%%/RELEASE-NOTES-4.0-B4.txt
-%%T%%/RELEASE-NOTES-4.0-B3.txt
 %%T%%/LICENSE
+%%T%%/RELEASE-NOTES-4.0-B3.txt
 %%T%%/RELEASE-NOTES-4.0-B2.txt
 %%T%%/RELEASE-NOTES-4.0-B1.txt
 %%T%%/README.txt
@@ -577,21 +954,52 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/RELEASE-PLAN-4.0.txt
 %%T%%/RELEASE-PLAN-4.0.1.txt
 %%T%%/RELEASE-NOTES-4.0.txt
+%%T%%/RELEASE-NOTES-4.0.6.txt
 %%T%%/RELEASE-NOTES-4.0.5.txt
 %%T%%/RELEASE-NOTES-4.0.4.txt
 %%T%%/RELEASE-NOTES-4.0.2.txt
 %%T%%/RELEASE-NOTES-4.0.2-B2.txt
-%%T%%/RELEASE-NOTES-4.0.2-B1.txt
 man/man1/tomcat4ctl.1
 @dirrm %%T%%/logs
-@dirrm %%T%%/bin
-@dirrm %%T%%/lib
-@dirrm %%T%%/conf
-@dirrm %%T%%/common/lib
-@dirrm %%T%%/common/classes
-@dirrm %%T%%/common
-@dirrm %%T%%/classes
-@dirrm %%T%%/webapps/tomcat-docs/config
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/images
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/docs
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample
+@dirrm %%T%%/webapps/tomcat-docs/appdev
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/naming
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs
+@dirrm %%T%%/webapps/tomcat-docs/catalina/funcspecs
+@dirrm %%T%%/webapps/tomcat-docs/catalina
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/class-use
@@ -603,19 +1011,8 @@ man/man1/tomcat4ctl.1
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax
 @dirrm %%T%%/webapps/tomcat-docs/servletapi
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/images
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/docs
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample
-@dirrm %%T%%/webapps/tomcat-docs/appdev
 @dirrm %%T%%/webapps/tomcat-docs/WEB-INF
-@dirrm %%T%%/webapps/tomcat-docs/catalina/funcspecs
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs
-@dirrm %%T%%/webapps/tomcat-docs/catalina
+@dirrm %%T%%/webapps/tomcat-docs/config
 @dirrm %%T%%/webapps/tomcat-docs/images
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/parser
@@ -675,6 +1072,13 @@ man/man1/tomcat4ctl.1
 @dirrm %%T%%/webapps/manager/WEB-INF
 @dirrm %%T%%/webapps/manager
 @dirrm %%T%%/webapps
+@dirrm %%T%%/conf
+@dirrm %%T%%/common/lib
+@dirrm %%T%%/common/classes
+@dirrm %%T%%/common
+@dirrm %%T%%/classes
+@dirrm %%T%%/bin
+@dirrm %%T%%/lib
 @dirrm %%T%%/temp
 @dirrm %%T%%/server/lib
 @dirrm %%T%%/server/classes
