@@ -21,10 +21,10 @@
 -         print \"[ ~\", (name) obj, \"~.\", (property) id, \"(\";\
 -     switch(y) { 1: print a; 2: print a,\",\",b; 3: print a,\",\",b,\",\",c;\
 +         if (n==1) {\
-+           #ifdef DEBUG;n=debug_flag & 1;
++           #ifdef DEBUG;n=debug_flag & 1;\
 +debug_flag=debug_flag-n;#endif;\
 +           print \"[ ~\", (name) obj, \"~.\", (property) id, \"(\";\
-+     switch(y) { 1: print a; 2: print a,\",\",b; 3: print
++     switch(y) { 1: print a; 2: print a,\",\",b; 3: print \
 +a,\",\",b,\",\",c;\
       4: print a,\",\",b,\",\",c,\",\",d;\
       5: print a,\",\",b,\",\",c,\",\",d,\",\",e;\
