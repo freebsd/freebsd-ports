@@ -1,6 +1,6 @@
---- driver/Makefile.in.orig	Mon Apr  3 05:04:08 2000
-+++ driver/Makefile.in	Mon May  8 19:09:10 2000
-@@ -147,17 +147,17 @@
+--- driver/Makefile.in.orig	Sat Nov 11 10:44:07 2000
++++ driver/Makefile.in	Sun Nov 12 11:17:08 2000
+@@ -148,18 +148,16 @@
  CMD_LIBS	= $(LIBS) $(X_LIBS) \
  		  $(X_PRE_LIBS) -lX11 -lXext $(X_EXTRA_LIBS)
  
@@ -13,19 +13,22 @@
 -MEN		= xscreensaver.man xscreensaver-demo.man \
 +MEN		= xscreensaver.man \
  		  xscreensaver-command.man
- ALL_MEN		= xscreensaver.man \
+-ALL_MEN		= xscreensaver.man \
 -		  xscreensaver-demo.man xscreensaver-command.man
-+		  xscreensaver-command.man
++ALL_MEN		= xscreensaver.man xscreensaver-command.man
  EXTRAS		= README Makefile.in XScreenSaver.ad.in xscreensaver.pam \
 -		  xscreensaver.kss xscreensaver-demo.glade \
-+		  xscreensaver.kss \
- 		  screensaver-properties.desktop.in .gdbinit
+-		  screensaver-properties.desktop.in .gdbinit
++		  xscreensaver.kss screensaver-properties.desktop.in .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
  		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
-@@ -211,8 +211,6 @@
- 	$$inst xscreensaver $(install_prefix)$(bindir)/xscreensaver
+ 		  vms_axp.opt vms_axp_12.opt vms_decc.opt vms_decc_12.opt
+@@ -214,10 +212,6 @@
+ 	  $(install_prefix)$(bindir)/xscreensaver-command ; \
  	$(INSTALL_PROGRAM) xscreensaver-command \
  	  $(install_prefix)$(bindir)/xscreensaver-command
+-	@echo $(INSTALL_PROGRAM) xscreensaver-demo \
+-	  $(install_prefix)$(bindir)/xscreensaver-demo ; \
 -	$(INSTALL_PROGRAM) xscreensaver-demo \
 -	  $(install_prefix)$(bindir)/xscreensaver-demo
  
