@@ -761,6 +761,7 @@ cheetah		ports/www/cheetah
 chef		ports/misc/chef
 chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
+cherokee	ports/www/cherokee
 chexedit	ports/editors/chexedit
 chicken		ports/lang/chicken
 chimera		ports/www/chimera
