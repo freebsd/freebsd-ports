@@ -8,8 +8,7 @@
 PORTNAME=	wmbattery
 PORTVERSION=	1.21
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/ \
-		http://kitenet.net/programs/code/debian/
+MASTER_SITES=	http://kitenet.net/programs/wmbattery/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
