@@ -7,21 +7,15 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
-		http://virtual-estates.net/~mi/port-stuff/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gd_gif_in.c.bz2
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
 
-.if !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
@@ -46,10 +40,29 @@ MAKE_ARGS+=	-j2
 MAKE_ARGS+=	$v="${$v}"
 .endfor
 
-post-extract:
-	${BZIP2_CMD} -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
+pre-fetch:
+.if !defined(WITH_LZW)
+	@${ECHO_CMD} "************************************************************"
+	@${ECHO_CMD} "*      If you live outside US and Canada, you can set      *"
+	@${ECHO_CMD} "*      WITH_LZW=1 to enable GIF compression support.       *"
+	@${ECHO_CMD} "************************************************************"
+.endif
 
-.ifdef GD_FONTS
+post-extract:
+	@${CP} ${FILESDIR}/g* ${WRKSRC}
+
+post-patch:
+.if !defined(WITH_LZW)
+	@${PERL} -pi -e "s|#define LZW_LICENCED||g" ${WRKSRC}/gd_gif_out.c
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
+.endif
+
+.if defined(GD_FONTS)
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
 
