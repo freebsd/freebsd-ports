@@ -5,6 +5,6 @@
  #endif
  
 +#ifdef FreeBSDArchitecture
-+#define ProjectRoot /usr/X11R6
++#define ProjectRoot %%X11BASE%%
 +#endif
  

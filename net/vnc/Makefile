@@ -55,6 +55,10 @@ post-build:
 	@cd ${WRKSRC}/Xvnc && make World
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/Xvnc/config/cf/vnc.def
+
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} -f ${PLIST}
