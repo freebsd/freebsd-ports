@@ -6,3 +6,4 @@ bin/rmiregistry
 lib/security/classpath.security
 lib/security/libgcj.security
 share/java/libgcj-3.2.3.jar
+@dirrm lib/security
