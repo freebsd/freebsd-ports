@@ -1,0 +1,13 @@
+--- config/abi_defs.mk.orig	Thu Apr 29 10:46:27 1999
++++ config/abi_defs.mk	Sun May  9 10:40:19 1999
+@@ -230,8 +230,8 @@
+ ## We should change this when get non-gtk versions on unix....
+ 
+ ifeq ($(ABI_NATIVE),unix)
+-CFLAGS 		+=	`gtk-config --cflags`
+-EXTRA_LIBS	+=	`gtk-config --libs`
++CFLAGS 		+=	`gtk12-config --cflags`
++EXTRA_LIBS	+=	`gtk12-config --libs`
+ endif
+ 
+ ##################################################################
