@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=    5.10
+PORTVERSION=    5.1.0
 CATEGORIES=	editors
 MASTER_SITES=	ftp://biew.sourceforge.net/pub/biew/5.x/src/ \
 		http://download.sourceforge.net/biew/
