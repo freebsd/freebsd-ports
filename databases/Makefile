@@ -1,5 +1,6 @@
-# $Id: Makefile,v 1.12 1996/12/12 02:41:29 erich Exp $
+# $Id: Makefile,v 1.13 1997/03/25 04:40:29 jfitz Exp $
 #
+    SUBDIR += PostgreSQL
     SUBDIR += exodus
     SUBDIR += gdbm
     SUBDIR += gnats
@@ -9,7 +10,6 @@
     SUBDIR += p5-DBI
     SUBDIR += p5-Msql
     SUBDIR += p5-Pg
-    SUBDIR += postgres95
     SUBDIR += typhoon
     SUBDIR += xfsql
 
