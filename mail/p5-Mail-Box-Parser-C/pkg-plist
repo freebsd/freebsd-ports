@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser/C.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/C.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/C.so
+@dirrm %%SITE_PERL%%/Mail/Box/Parser/C
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C
+@unexec rmdir %D/%%SITE_PERL%%/Mail/Box/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail/Box 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true

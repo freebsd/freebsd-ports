@@ -1,0 +1,12 @@
+The Mail::Box::Parser::C implements parsing of messages in ANSI C, using
+Perl's XS extension facility.
+
+This is an optional module for MailBox, and will (once installed)
+automatically be used by MailBox to parse e-mail message content when
+the message is supplied as file-handle.  In all other cases, MailBox
+will use Mail::Box::Parser::Perl.
+
+WWW: http://search.cpan.org/dist/Mail-Box-Parser-C/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

@@ -182,6 +182,7 @@
     SUBDIR += p5-MIME-Types
     SUBDIR += p5-Mail-Audit
     SUBDIR += p5-Mail-Box
+    SUBDIR += p5-Mail-Box-Parser-C
     SUBDIR += p5-Mail-Box1
     SUBDIR += p5-Mail-Bulkmail
     SUBDIR += p5-Mail-CClient
