@@ -1,7 +1,7 @@
 # New ports collection makefile for: fftw
 # Version required:	2.1.2
 # Date created:		Dec 28 1998
-# Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
+# Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 
-MAINTAINER=	lkoeller@cc.fh-lippe.de
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 .include <bsd.port.pre.mk>
 
