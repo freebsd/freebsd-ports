@@ -3,7 +3,7 @@
 @@ -159,3 +159,3 @@
  
 -SUBDIRS = vfs lib doc slang gtkedit edit src gnome new_icons 	idl syntax intl doc-gnome po pc
-+SUBDIRS = vfs lib doc gtkedit src gnome new_icons syntax intl po
++SUBDIRS = vfs lib doc gtkedit edit src gnome new_icons syntax intl po
  
 @@ -174,3 +174,3 @@
  CONFIG_HEADER = config.h
