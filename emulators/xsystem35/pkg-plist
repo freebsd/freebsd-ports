@@ -1,5 +1,5 @@
-bin/xsystem35
 bin/instgame
+bin/xsystem35
 share/doc/ja/xsystem35/BUGS
 share/doc/ja/xsystem35/ChangeLog
 share/doc/ja/xsystem35/FAQ
@@ -7,28 +7,38 @@ share/doc/ja/xsystem35/GRFMT.TXT
 share/doc/ja/xsystem35/INSTALL
 share/doc/ja/xsystem35/MISCGAME.TXT
 share/doc/ja/xsystem35/README
-share/doc/ja/xsystem35/README.midi
+share/doc/ja/xsystem35/README.color
 share/doc/ja/xsystem35/README.miko
+share/doc/ja/xsystem35/README.music
+share/doc/ja/xsystem35/README.pastel
 share/doc/ja/xsystem35/THANKS
 share/doc/ja/xsystem35/TODO
-share/examples/xsystem35/xsys35rc.sample
 share/examples/xsystem35/README.TXT
+share/examples/xsystem35/ambi.inf
 share/examples/xsystem35/atlach.inf
 share/examples/xsystem35/dalk.inf
+share/examples/xsystem35/darcrows.inf
 share/examples/xsystem35/diabo.inf
 share/examples/xsystem35/drstop.inf
+share/examples/xsystem35/hushaby.inf
 share/examples/xsystem35/katsumi.inf
 share/examples/xsystem35/kichiku.inf
+share/examples/xsystem35/mamatoto.inf
+share/examples/xsystem35/mamori.inf
 share/examples/xsystem35/miko.inf
+share/examples/xsystem35/mugen.inf
 share/examples/xsystem35/ningen.inf
 share/examples/xsystem35/oudou.inf
 share/examples/xsystem35/panyo.inf
+share/examples/xsystem35/pascha.inf
+share/examples/xsystem35/progood.inf
 share/examples/xsystem35/rance1.inf
 share/examples/xsystem35/rance2.inf
 share/examples/xsystem35/rance3.inf
 share/examples/xsystem35/rance4.inf
 share/examples/xsystem35/toushin.inf
 share/examples/xsystem35/toushin2.inf
+share/examples/xsystem35/xsys35rc.sample
 share/examples/xsystem35/zero.inf
 @dirrm share/doc/ja/xsystem35
 @dirrm share/examples/xsystem35
