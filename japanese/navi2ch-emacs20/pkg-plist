@@ -1,17 +1,17 @@
-@unexec install-info --delete %D/info/navi2ch.info %D/info/dir
-info/navi2ch.info
-@exec install-info %D/info/navi2ch.info %D/info/dir
+@unexec install-info --delete %D/%%INFODIR%%/navi2ch.info %D/%%INFODIR%%/dir
+%%INFODIR%%/navi2ch.info
+@exec install-info %D/%%INFODIR%%/navi2ch.info %D/%%INFODIR%%/dir
 %%PORTDOCS%%share/doc/ja/navi2ch/ChangeLog
 %%PORTDOCS%%share/doc/ja/navi2ch/README
 %%PORTDOCS%%share/doc/ja/navi2ch/TODO
 %%PORTDOCS%%@dirrm share/doc/ja/navi2ch
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.img
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xbm
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/plugged.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/unplugged.xpm
-@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons
-@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch
+%%ETCDIR%%/navi2ch-logo.img
+%%ETCDIR%%/navi2ch-logo.xbm
+%%ETCDIR%%/navi2ch-logo.xpm
+%%ETCDIR%%/plugged.xpm
+%%ETCDIR%%/unplugged.xpm
+@dirrm %%ETCDIR%%
+%%LISPDIR%%/navi2ch/gikope.el
 %%LISPDIR%%/navi2ch/navi2ch-article.el
 %%LISPDIR%%/navi2ch/navi2ch-article.elc
 %%LISPDIR%%/navi2ch/navi2ch-articles.el
@@ -22,6 +22,8 @@ info/navi2ch.info
 %%LISPDIR%%/navi2ch/navi2ch-board.elc
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.el
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.elc
+%%LISPDIR%%/navi2ch/navi2ch-directory.el
+%%LISPDIR%%/navi2ch/navi2ch-directory.elc
 %%LISPDIR%%/navi2ch/navi2ch-e21.el
 %%LISPDIR%%/navi2ch/navi2ch-e21.elc
 %%LISPDIR%%/navi2ch/navi2ch-face.el
@@ -30,12 +32,26 @@ info/navi2ch.info
 %%LISPDIR%%/navi2ch/navi2ch-head.elc
 %%LISPDIR%%/navi2ch/navi2ch-history.el
 %%LISPDIR%%/navi2ch/navi2ch-history.elc
+%%LISPDIR%%/navi2ch/navi2ch-http-date.el
+%%LISPDIR%%/navi2ch/navi2ch-http-date.elc
+%%LISPDIR%%/navi2ch/navi2ch-jbbs-net.el
+%%LISPDIR%%/navi2ch/navi2ch-jbbs-net.elc
+%%LISPDIR%%/navi2ch/navi2ch-jbbs-shitaraba.el
+%%LISPDIR%%/navi2ch/navi2ch-jbbs-shitaraba.elc
 %%LISPDIR%%/navi2ch/navi2ch-list.el
 %%LISPDIR%%/navi2ch/navi2ch-list.elc
+%%LISPDIR%%/navi2ch/navi2ch-localfile.el
+%%LISPDIR%%/navi2ch/navi2ch-localfile.elc
+%%LISPDIR%%/navi2ch/navi2ch-logo.el
+%%LISPDIR%%/navi2ch/navi2ch-machibbs.el
+%%LISPDIR%%/navi2ch/navi2ch-machibbs.elc
 %%LISPDIR%%/navi2ch/navi2ch-message.el
 %%LISPDIR%%/navi2ch/navi2ch-message.elc
+%%LISPDIR%%/navi2ch/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-mona.el
 %%LISPDIR%%/navi2ch/navi2ch-mona.elc
+%%LISPDIR%%/navi2ch/navi2ch-multibbs.el
+%%LISPDIR%%/navi2ch/navi2ch-multibbs.elc
 %%LISPDIR%%/navi2ch/navi2ch-net.el
 %%LISPDIR%%/navi2ch/navi2ch-net.elc
 %%LISPDIR%%/navi2ch/navi2ch-popup-article.el
