@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Mar 19 10:25:32 2000
++++ Makefile.in	Sun Nov 12 13:18:17 2000
+@@ -85,7 +85,7 @@
+ VERSION = @VERSION@
+ l = @l@
+ 
+-SUBDIRS = config extras gfx doc lib intl uwm po
++SUBDIRS = config extras gfx lib intl uwm po
+ EXTRA_DIST = ude.spec.in INSTALL.redhat REQUIREMENTS INSTALL.UDE 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
