@@ -30,6 +30,9 @@ share/vile/vileinit.rc
 share/vile/vileperl.rc
 share/vile/vile.hlp
 share/vile/ada.keywords
+share/vile/as.keywords
+share/vile/as386.keywords
+share/vile/asm.keywords
 share/vile/awk.keywords
 share/vile/basic.keywords
 share/vile/bat.keywords
@@ -72,12 +75,14 @@ share/vile/tags.keywords
 share/vile/tbl.keywords
 share/vile/tc.keywords
 share/vile/tcl.keywords
+share/vile/texi.keywords
 share/vile/ti.keywords
 share/vile/vb.keywords
 share/vile/vile.keywords
 share/vile/vim.keywords
 share/vile/vlog.keywords
 share/vile/which.rc
+share/vile/xml.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
 share/vile/yacc.keywords
