@@ -1,0 +1,13 @@
+--- configure.bak	Thu Jun 27 14:20:21 2002
++++ configure	Wed Sep 24 09:40:31 2003
+@@ -3247,8 +3247,8 @@
+ EOF
+ 
+     echo "$ac_t""enabled" 1>&6
+-    PTHREAD_CFLAGS="-pthread"
+-    PTHREAD_LFLAGS="-pthread"
++#   PTHREAD_CFLAGS="-pthread"
++#   PTHREAD_LFLAGS="-pthread"
+ else
+     echo "$ac_t""disabled" 1>&6
+ fi
