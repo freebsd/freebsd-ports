@@ -20,10 +20,11 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-MAKE_ENV+=	MANPREFIX=${MANPREFIX}
+CONFLICTS?=		openssl-beta-0.*
+MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 USE_PERL5_BUILD=	yes
-OPENSSH_SHLIBVER?=	3
+OPENSSL_SHLIBVER?=	3
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
@@ -827,8 +828,8 @@ PLIST_SUB+=	SHARED="@comment "
 .else
 PLIST_SUB+=	SHARED=""
 ALL_TARGET=	freebsd-shared all
-MAKE_ENV+=	SHLIBVER=${OPENSSH_SHLIBVER}
-PLIST_SUB+=	SHLIBVER=${OPENSSH_SHLIBVER}
+MAKE_ENV+=	SHLIBVER=${OPENSSL_SHLIBVER}
+PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 INSTALLS_SHLIB=	yes
 .endif
 
@@ -862,8 +863,8 @@ do-configure:
 post-install:
 .if !defined(NOSHARED)
 .for i in libcrypto libssl
-	@${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSH_SHLIBVER} ${PREFIX}/lib
-	@${LN} -sf $i.so.${OPENSSH_SHLIBVER} ${PREFIX}/lib/$i.so
+	@${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib
+	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 .endif
 .if !defined(NOPORTDOCS)

@@ -80,7 +80,7 @@ lib/pkgconfig/openssl.pc
 %%NOBASE%%openssl/misc/c_name
 %%NOBASE%%openssl/misc/der_chop
 %%NOBASE%%openssl/openssl.cnf.sample
-%%PORTDOCS%%share/doc/openssl/openssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
 @dirrm lib/pkgconfig
 %%NOBASE%%@dirrm openssl/certs
@@ -93,4 +93,4 @@ lib/pkgconfig/openssl.pc
 %%NOBASE%%@dirrm openssl/misc
 %%NOBASE%%@dirrm openssl/private
 %%NOBASE%%@dirrm openssl
-%%PORTDOCS%%@dirrm share/doc/openssl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

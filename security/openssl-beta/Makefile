@@ -35,8 +35,10 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+CONFLICTS?=		openssl-0.*
+MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
-NO_LATEST_LINK=	yes
+NO_LATEST_LINK=		yes
 USE_PERL5_BUILD=	yes
 OPENSSL_SHLIBVER?=	4
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
@@ -860,8 +862,6 @@ MANPREFIX=	${PREFIX}
 PLIST_SUB+=	MANDIR="@comment "
 PLIST_SUB+=	NOBASE=""
 .endif
-
-MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 .if ${MACHINE_ARCH} == "i386"
