@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.1.pre7
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
-DISTNAME=	tla-1.1pre7
+DISTNAME=	tla-1.1
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
 
-RUN_DEPENDS=	gpatch:${PORTSDIR}/devel/patch
+RUN_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
+		gdiff:${PORTSDIR}/textproc/diffutils
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -27,7 +28,10 @@ pre-configure:
 	${MKDIR} ${WRKSRC}
 
 do-configure:
-	cd ${WRKSRC} ; ../configure --prefix ${LOCALBASE} --with-gnu-patch gpatch
+	cd ${WRKSRC} ; ../configure --prefix ${LOCALBASE} \
+			--with-gnu-patch gpatch \
+			--with-gnu-diff gdiff \
+			--with-gnu-diff3 gdiff3
 
 test:
 	cd ${WRKSRC} ; ${GMAKE} test
