@@ -342,6 +342,7 @@
     SUBDIR += p5-Sledge-Plugin-Dumper
     SUBDIR += p5-Sledge-Plugin-Log
     SUBDIR += p5-Sledge-Plugin-NoCache
+    SUBDIR += p5-Sledge-Plugin-ScratchPad
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-WWW-Automate
