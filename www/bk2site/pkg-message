@@ -1,10 +1,13 @@
-*==========================================================================*
-| Bk2site would look for your ~/.netscape/bookmarks.html and convert it to |
-| your ~/public_html/bk2site as Yahoo-like web site !                      |
-|                                                                          |
-| !! Don't forget manually copy ${PREFIX}/share/bk2site/*.gif into icons/  |
-| directory related with your web root directory.                          |
-|                                                                          |
-| !! If you want to search your Yahoo-like web just like Yahoo!, copy *.pl |
-| into cgi-bin/ directory related with your web root directory             |
-*==========================================================================*
+========================================================================
+o You have to create ~/public_html/bk2site MANUALLY before using bk2site.
+o Example ~/.bk2siterc is at ${PREFIX}/share/bk2site/dot.bk2siterc.
+
+o If you install bk2site without apache installed, or via package, you
+  have to do these 2 things manually:
+
+  1) Copy ${PREFIX}/share/bk2site/*.gif into icons/bk2site directory
+     related with your web root directory.
+
+  2) Copy ${PREFIX}/share/bk2site/*.pl into cgi-bin/bk2site directory
+     related with your web root directory.
+========================================================================

@@ -5,18 +5,24 @@ etc/bk2site/newbase.html
 etc/bk2site/indexbase.html
 etc/bk2site/bk2site.html
 share/bk2site/dot.bk2siterc
-share/bk2site/smiley.gif
-share/bk2site/question.gif
-share/bk2site/note.gif
-share/bk2site/news.gif
-share/bk2site/new.gif
-share/bk2site/mana_red.gif
-share/bk2site/mailto.gif
-share/bk2site/ltbulb.gif
-share/bk2site/earth.gif
-share/bk2site/disk.gif
-share/bk2site/cool2.gif
-share/bk2site/cool.gif
-share/bk2site/closeup.gif
-share/bk2site/thumbs_down.gif
+%%CGIDIR%%/check-meta.pl
+%%CGIDIR%%/redirect.pl
+%%CGIDIR%%/search.pl
+%%ICONSDIR%%/closeup.gif
+%%ICONSDIR%%/smiley.gif
+%%ICONSDIR%%/question.gif
+%%ICONSDIR%%/note.gif
+%%ICONSDIR%%/news.gif
+%%ICONSDIR%%/new.gif
+%%ICONSDIR%%/mana_red.gif
+%%ICONSDIR%%/mailto.gif
+%%ICONSDIR%%/ltbulb.gif
+%%ICONSDIR%%/earth.gif
+%%ICONSDIR%%/disk.gif
+%%ICONSDIR%%/cool2.gif
+%%ICONSDIR%%/cool.gif
+%%ICONSDIR%%/thumbs_down.gif
+@dirrm etc/bk2site
 @dirrm share/bk2site
+@unexec /bin/rm -r %D/%%CGIDIR%%
+@unexec /bin/rm -r %D/%%ICONSDIR%%
