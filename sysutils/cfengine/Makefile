@@ -26,7 +26,7 @@ USE_AUTOMAKE=	yes
 MAN8=		cfengine.8
 
 pre-configure:
-	@cd ${WRKSRC} && aclocal && autoheader
+	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOHEADER}
 
 post-install:
 .if defined(NOPORTDOCS)
