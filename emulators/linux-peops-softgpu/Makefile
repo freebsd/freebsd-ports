@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	softgpu
-PORTVERSION=	1.12
+PORTNAME=	peops-softgpu
+PORTVERSION=	1.15
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://home.t-online.de/home/PeteBernert/
-PKGNAMEPREFIX=	linux-peops-
-DISTNAME=	gpupeopssoftx112
+PKGNAMEPREFIX=	linux-
+DISTNAME=	gpupeopssoftx115
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A PSEmu Pro GPU plugin using a software X11 renderer (Linux version)
@@ -28,15 +28,13 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/linux-psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/linux-psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/linux-psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libgpuPeopsSoftX.so.1.0.12 ${PSEMUPRO_PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libgpuPeopsSoftX.so.1.0.15 ${PSEMUPRO_PLUGINS_DIR}
 
 	${MKDIR} ${PSEMUPRO_CFGBINS_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cfgPeopsSoft ${PSEMUPRO_CFGBINS_DIR}
@@ -47,8 +45,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
-		${WRKSRC}/readme_1_12.txt \
-		${WRKSRC}/version_1_12.txt \
+		${WRKSRC}/peops_soft_readme_1_15.txt \
+		${WRKSRC}/peops_soft_version_1_15.txt \
 		${DOCSDIR}
 .endif
 
