@@ -84,9 +84,10 @@ post-extract:
 
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
-	@find ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
 	@${PERL} -i -pe 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${PERL} -i -pe 's,^(#include\s*)\<malloc\.h\>,$$1<stdlib.h>,' ${BUILD_WRKSRC}/*.c
 .if defined(NOPORTDOCS)
 	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ REQUEST
 .endif
