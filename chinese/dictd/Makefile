@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	kcwu@ck.tp.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../net/dictd
 EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
@@ -25,3 +25,4 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}tw-
 ALL_TARGET+=	dictfmt
 INSTALL_TARGET+=install.dictfmt
 PLIST=		${WRKDIR}/PLIST
+MAN1+=		dictfmt.1
