@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.7c
+PORTVERSION=	0.9.7d
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -29,9 +29,9 @@ CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
-	passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 req.1 rsa.1 s_client.1 \
-	s_server.1 sess_id.1 smime.1 speed.1 spkac.1 verify.1 version.1 \
-	x509.1 rsautl.1
+	passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 req.1 rsa.1 rsautl.1 \
+	s_client.1 s_server.1 s_time.1 sess_id.1 smime.1 speed.1 spkac.1 verify.1 \
+	version.1 x509.1
 
 MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	ASN1_STRING_print_ex.3 BIO_ctrl.3 BIO_f_base64.3 BIO_f_buffer.3 \
@@ -43,6 +43,7 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	BN_cmp.3 BN_copy.3 BN_generate_prime.3 BN_mod_inverse.3 \
 	BN_mod_mul_montgomery.3 BN_mod_mul_reciprocal.3 BN_new.3 \
 	BN_num_bytes.3 BN_rand.3 BN_set_bit.3 BN_swap.3 BN_zero.3 \
+	CONF_modules_free.3 CONF_modules_load_file.3 \
 	CRYPTO_set_ex_data.3 DH_generate_key.3 DH_generate_parameters.3 \
 	DH_get_ex_new_index.3 DH_new.3 DH_set_method.3 DH_size.3 \
 	DSA_SIG_new.3 DSA_do_sign.3 DSA_dup_DH.3 DSA_generate_key.3 \
@@ -53,7 +54,8 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	ERR_put_error.3 ERR_remove_state.3 EVP_BytesToKey.3 EVP_DigestInit.3 \
 	EVP_EncryptInit.3 EVP_OpenInit.3 EVP_PKEY_new.3 EVP_PKEY_set1_RSA.3 \
 	EVP_SealInit.3 EVP_SignInit.3 EVP_VerifyInit.3 OBJ_nid2obj.3 \
-	OPENSSL_VERSION_NUMBER.3 OpenSSL_add_all_algorithms.3 PKCS12_create.3 \
+	OPENSSL_VERSION_NUMBER.3 OpenSSL_add_all_algorithms.3 \
+	OPENSSL_config.3 OPENSSL_load_builtin_modules.3 PKCS12_create.3 \
 	PKCS12_parse.3 PKCS7_sign.3 PKCS7_verify.3 PKCS7_encrypt.3 \
 	PKCS7_decrypt.3 RAND_add.3 RAND_bytes.3 RAND_cleanup.3 RAND_egd.3 \
 	RAND_load_file.3 RAND_set_rand_method.3 RSA_blinding_on.3 \
@@ -285,6 +287,8 @@ MLINKS=	dgst.1 md4.1 \
 	BN_zero.3 BN_one.3 \
 	BN_zero.3 BN_set_word.3 \
 	BN_zero.3 BN_value_one.3 \
+	CONF_modules_free.3 CONF_modules_unload.3 \
+	CONF_modules_load_file.3 CONF_modules_load.3 \
 	CRYPTO_set_ex_data.3 CRYPTO_get_ex_data.3 \
 	DH_generate_key.3 DH_compute_key.3 \
 	DH_generate_parameters.3 DH_check.3 \
@@ -434,6 +438,7 @@ MLINKS=	dgst.1 md4.1 \
 	OPENSSL_VERSION_NUMBER.3 SSLeay_version.3 \
 	OpenSSL_add_all_algorithms.3 OpenSSL_add_all_ciphers.3 \
 	OpenSSL_add_all_algorithms.3 OpenSSL_add_all_digests.3 \
+	OPENSSL_config.3 OPENSSL_no_config.3 \
 	RAND_add.3 RAND_event.3 \
 	RAND_add.3 RAND_screen.3 \
 	RAND_add.3 RAND_seed.3 \
