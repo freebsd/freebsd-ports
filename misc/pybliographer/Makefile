@@ -10,16 +10,16 @@ PORTVERSION=	1.0.8
 PORTREVISION=	1
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pyblio/1.0
+MASTER_SITE_SUBDIR=	sources/pybliographer/1.0
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Needs GNU Recode c.5 or later"
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode
+
+BROKEN=		"Needs GNU Recode c.5 or later"
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
