@@ -1713,7 +1713,6 @@ frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
-freeamp		ports/audio/freeamp
 freebirth	ports/audio/freebirth
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
@@ -8682,6 +8681,7 @@ zh-zhcon	ports/chinese/zhcon
 zic		src/usr.sbin/zic
 zile		ports/editors/zile
 zimg		ports/graphics/zimg
+zinf		ports/audio/zinf
 zip		ports/archivers/zip
 zipios++	ports/archivers/zipios++
 zircon		ports/irc/zircon
