@@ -46,6 +46,9 @@ bin/mkmanifest
 bin/mxtar
 bin/xcopy
 bin/mcomp
+bin/lz
+bin/mdu
+bin/mshowfat
 @unexec install-info --delete %D/info/mtools.info %D/info/dir
 info/mtools.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
@@ -58,6 +61,7 @@ man/man1/mcopy.1.gz
 man/man1/mdel.1.gz
 man/man1/mdeltree.1.gz
 man/man1/mdir.1.gz
+man/man1/mdu.1.gz
 man/man1/mformat.1.gz
 man/man1/mkmanifest.1.gz
 man/man1/mlabel.1.gz
@@ -67,6 +71,7 @@ man/man1/mmove.1.gz
 man/man1/mrd.1.gz
 man/man1/mread.1.gz
 man/man1/mren.1.gz
+man/man1/mshowfat.1.gz
 man/man1/mtoolstest.1.gz
 man/man1/mtools.1.gz
 man/man1/mtype.1.gz
