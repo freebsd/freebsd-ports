@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ayttm
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GCC=	3.2
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gdkpixbuf gnometarget
+USE_GNOME=	gdkpixbuf gnometarget lthack
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
@@ -32,6 +32,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-smtp --enable-jasper-filter
 
 MAN1=		ayttm.1
 
@@ -40,8 +41,8 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-CFLAGS+=	-fpermissive
+.if ${ARCH} == "alpha"
+CFLAGS+=        -O0  
 .endif
 
 .if ${HAVE_GNOME:Mesound}!=""
