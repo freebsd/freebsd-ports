@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.11 1998/11/25 05:06:25 jseger Exp $
+# $Id: Makefile,v 1.12 1998/11/25 06:13:41 asami Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -70,7 +70,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtiff.so.1.0 ${PREFIX}/lib/libtiff.so
+	${LN} -sf libtiff.so.4.0 ${PREFIX}/lib/libtiff.so
 .endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 

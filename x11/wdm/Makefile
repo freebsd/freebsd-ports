@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1998/11/24 16:06:23 tg Exp $
+# $Id: Makefile,v 1.15 1998/11/25 05:06:26 jseger Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11
@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.2:${PORTSDIR}/graphics/png \
-		tiff.1:${PORTSDIR}/graphics/tiff34
+		tiff.4:${PORTSDIR}/graphics/tiff34
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
