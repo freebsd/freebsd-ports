@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.81
-PORTREVISION=	1
+PORTVERSION=	1.2.83
+PORTREVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	pdmenu_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jacques@php.net
 COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
