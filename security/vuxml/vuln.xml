@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20dfd134-1d39-11d9-9be9-000c6e8f12e">
+    <topic>freeradius -- denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><ge>0.8.0</ge><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A remote attacker may be able to crash the freeRADIUS Server
+	  due to three independant bugs in the function which does
+	  improper checking values while processing RADIUS
+	  attributes.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.securitytracker.com/alerts/2004/Sep/1011364.html</url>
+      <certvu>541574</certvu>
+    </references>
+    <dates>
+      <discovery>2004-09-20</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76301302-1d59-11d9-814e-0001020eed82">
     <topic>xerces_c -- Attribute blowup denial-of-service</topic>
     <affects>
