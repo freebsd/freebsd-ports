@@ -272,6 +272,19 @@ MASTER_SITE_THEMES+= \
 	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/
 
+MASTER_SITE_SOURCEWARE+= \
+	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
+	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/sourceware/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
+	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
+	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
+	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
+
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
