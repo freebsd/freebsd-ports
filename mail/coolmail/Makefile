@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=system/mail/biffs
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ust@cert.siemens.de
+MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A Xbiff like mail tool with animated 3D graphics
 
 USE_XLIB=	yes
@@ -23,8 +23,5 @@ MAN1=		coolmail.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/coolmail ${PREFIX}/bin/coolmail
 	${INSTALL_MAN} ${WRKSRC}/coolmail.man ${PREFIX}/man/man1/coolmail.1
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/coolmail
 
 .include <bsd.port.mk>
