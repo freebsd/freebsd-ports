@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	2.0.43
+PORTVERSION=	2.0.44
 CATEGORIES=	net elisp
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,12 +25,12 @@ PLIST_SUB+=	TRAMP_LISPDIR=${TRAMP_LISPDIR} \
 		DIRSECTION=${DIRSECTION} \
 		INFOENTRY=${INFOENTRY} INFOENTRY_JA=${INFOENTRY_JA}
 CONFIGURE_ENV=	TEXI2DVI=no
-CONFIGURE_ARGS= --with-contrib --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--with-contrib --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/${TRAMP_LISPDIR} \
 		--with-emacs=${EMACS_CMD}
 
 .if defined(JAPANESE_INFO)
-CONFIGURE_ARGS+= --with-japanese-manual
+CONFIGURE_ARGS+=	--with-japanese-manual
 PLIST_SUB+=	JAPANESE_INFO=""
 .else
 PLIST_SUB+=	JAPANESE_INFO="@comment "
@@ -51,6 +51,5 @@ post-install:
 .if ${EMACS_PORT_NAME} == emacs20
 	(cd ${WRKSRC}/contrib; ${GMAKE} install)
 .endif
-	
 
 .include <bsd.port.mk>
