@@ -1,17 +1,27 @@
---- server/dda/voxware/auvoxware.c.orig	Fri Dec 28 16:33:46 2001
-+++ server/dda/voxware/auvoxware.c	Fri Dec 28 16:58:50 2001
-@@ -156,7 +156,9 @@
+--- ./server/dda/voxware/auvoxware.c.orig	Sun Apr 29 17:11:08 2001
++++ ./server/dda/voxware/auvoxware.c	Sat Sep  7 17:02:34 2002
+@@ -154,16 +154,11 @@
+ #include <sys/param.h>
+ #include <assert.h>
  
- #ifdef __FreeBSD__
- # include <machine/soundcard.h>
+-#ifdef __FreeBSD__
+-# include <machine/soundcard.h>
 -# include <machine/pcaudioio.h>
-+# ifdef __i386__
-+#  include <machine/pcaudioio.h>
-+# endif
++#ifdef __NetBSD__
++# include <sys/ioctl.h>
++# include <soundcard.h>
  #else
- # ifdef __NetBSD__
- #  include <sys/ioctl.h>
-@@ -624,7 +626,11 @@
+-# ifdef __NetBSD__
+-#  include <sys/ioctl.h>
+-#  include <soundcard.h>
+-# else
+-#  include <sys/soundcard.h>
+-# endif
++# include <sys/soundcard.h>
+ #endif
+ 
+ #include <audio/audio.h>
+@@ -624,7 +619,11 @@
  
      if(sndStatOut.fd == -1)
      {
@@ -23,7 +33,7 @@
         {
             osLogMsg("openDevice: waiting on output device\n");
             sleep(1);
-@@ -1269,6 +1275,11 @@
+@@ -1269,6 +1268,11 @@
  /*
   * Setup soundcard at maximum audio quality.
   */
@@ -35,7 +45,7 @@
  static void setupSoundcard(sndStatPtr)
  SndStat* sndStatPtr;
  {
-@@ -1425,7 +1436,11 @@
+@@ -1425,7 +1429,11 @@
  	  osLogMsg("openDevice OUT %s mode %d\n", 
  		   sndStatOut.device, sndStatOut.howToOpen);
  	
