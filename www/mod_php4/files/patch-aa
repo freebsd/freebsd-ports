@@ -1,11 +1,14 @@
 --- ext/ming/php_ming.h.orig	Mon May 28 02:09:57 2001
-+++ ext/ming/php_ming.h	Mon Jun 25 22:58:57 2001
-@@ -28,7 +28,7 @@
++++ ext/ming/php_ming.h	Mon Oct 15 22:53:37 2001
+@@ -28,7 +28,10 @@
  
  #if HAVE_MING
  
 -#include "ming.h"
 +#include "ming/ming.h"
++
++/* XXX: dirty workaround */
++#define MING_VERSION_TEXT "0.2a"
  
  extern zend_module_entry ming_module_entry;
  #define ming_module_ptr &ming_module_entry
