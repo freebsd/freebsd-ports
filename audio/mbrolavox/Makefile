@@ -16,7 +16,6 @@ COMMENT=	Voices for MBROLA voice synthesizer
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		does not extract
 NO_BUILD=	yes
 RESTRICTED=	"no commercial nor military use, no sale"
 USE_ZIP=	yes
@@ -34,28 +33,22 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 .endif
-
-.if defined(PACKAGE_BUILDING)
-.BEGIN:
-	${MKDIR} ${WRKDIR}
-	${CP} ${FILESDIR}/default-voices.conf ${WRKDIR}/voices.conf
-	${CP} ${FILESDIR}/default-fetchdirs.conf ${WRKDIR}/fetchdirs.conf
-.endif
+DISTFILES?=	us1-980512.zip
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
 DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/voices.conf
 PATCHDIRS!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/fetchdirs.conf
 .endif
 .for ii in ${PATCHDIRS}
-MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
-	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/:${ii} \
-	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/:${ii} \
-	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/:${ii}
+MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/ \
+	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/ \
+	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/ \
+	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/
 .endfor
 
 do-extract:
 .for ii in ${DISTFILES}
-	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
+	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
 .endfor
 
 do-patch:
