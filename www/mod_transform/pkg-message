@@ -1,0 +1,8 @@
+***************************************************************
+
+To use mod_transform, add these lines to your httpd.conf:
+
+LoadModule transform_module libexec/apache2/mod_transform.so
+AddOutputFilter XSLT xml
+
+***************************************************************

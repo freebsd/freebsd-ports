@@ -1,0 +1,10 @@
+mod_transform is a filter module that allows Apache 2.0 to do dynamic XSL
+Transformations on either static XML documents, or XML documents generated
+from another Apache module or CGI program.
+
+This module originated from mod_xml_gnome_xslt by WebThing.
+
+WWW: http://www.outoforder.cc/projects/apache/mod_transform/
+
+- Stan
+stan@stormier.net
