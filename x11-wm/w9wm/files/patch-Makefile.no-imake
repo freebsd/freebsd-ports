@@ -1,0 +1,29 @@
+--- Makefile.no-imake.orig	Wed Dec  6 19:02:10 2000
++++ Makefile.no-imake	Sat Mar 17 23:17:16 2001
+@@ -6,11 +6,11 @@
+ # if you're using AIX, add "-DBSD_INCLUDES" to "CFLAGS".
+ #
+ 
+-CFLAGS = -g -DSHAPE
+-LDFLAGS = -lXext -lX11
+-BIN = /usr/bin/X11
++CFLAGS += -DSHAPE -I${X11BASE}/include
++LDFLAGS = -lXext -lX11 -L${X11BASE}/lib
++BIN = ${X11BASE}/bin
+ 
+-MANDIR = /usr/man/man1
++MANDIR = ${X11BASE}/man/man1
+ MANSUFFIX = 1
+ 
+ #
+@@ -31,9 +31,7 @@
+ 
+ install: w9wm
+ 	cp w9wm $(BIN)/w9wm
+-
+-install.man:
+-	cp 9wm.man $(MANDIR)/9wm.$(MANSUFFIX)
++	cp w9wm.1 $(MANDIR)/w9wm.$(MANSUFFIX)
+ 
+ $(OBJS): $(HFILES)
+ 
