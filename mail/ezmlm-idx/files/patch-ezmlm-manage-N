@@ -1,0 +1,11 @@
+--- ezmlm-manage.c.orig	Wed Jul 31 16:36:20 2002
++++ ezmlm-manage.c	Wed Jul 31 17:25:37 2002
+@@ -1015,7 +1015,7 @@
+         strerr_die2x(0,INFO,ERR_UNSUB_NOP);
+       mod_bottom();
+       if (r) {				/* success to target */
+-	qmail_to(&qq,target.s);
++	if (flagnotify) qmail_to(&qq,target.s);
+         if (flagverbose > 1) to_owner();
+       } else				/* NOP to sender = admin. Will take */
+         qmail_to(&qq,sender);		/* care of it. No need to tell owner */
