@@ -6,30 +6,42 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2000.03.06
+PORTVERSION=	2.25.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp2.cons.org/pub/lisp/clisp/source/ \
-		ftp://ftp.freesoftware.com/pub/lisp/clisp/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
+MASTER_SITES=	ftp://clisp.cons.org/pub/lisp/clisp/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jabrown@caida.org
 
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+
+# The build uses INSTALL_* to copy files around, but since the Ports
+# INSTALL_* try to set file permissions, using them breaks non-root builds.
+# Instead, we'll just fix up permissions in the post-install target, after we
+# install the files.
+CONFIGURE_ENV+=	INSTALL=${CP} INSTALL_DATA=${CP} INSTALL_PROGRAM=${CP} \
+	INSTALL_SCRIPT=${CP} INSTALL_MAN=${CP}
 
 # Build subdirectory
-BUILD_DIRNAME=obj
+BUILD_DIRNAME=${CONFIGURE_TARGET}
 
-# These came from clisp's "configure" on my system.
+# These came from clisp-2.25.1's "configure" on my 4.1.1-R system.
 MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
 	--with-dynamic-ffi
 
 # The post-install target uses these to fix permissions.
 DATA_PATHS=${PREFIX}/lib/clisp ${PREFIX}/share/doc/clisp \
 	${PREFIX}/share/locale/de/LC_MESSAGES/clisp.mo \
+	${PREFIX}/share/locale/de/LC_MESSAGES/clisplow.mo \
 	${PREFIX}/share/locale/en/LC_MESSAGES/clisp.mo \
+	${PREFIX}/share/locale/en/LC_MESSAGES/clisplow.mo \
 	${PREFIX}/share/locale/es/LC_MESSAGES/clisp.mo \
+	${PREFIX}/share/locale/es/LC_MESSAGES/clisplow.mo \
 	${PREFIX}/share/locale/fr/LC_MESSAGES/clisp.mo \
-	${PREFIX}/share/locale/nl/LC_MESSAGES/clisp.mo
+	${PREFIX}/share/locale/fr/LC_MESSAGES/clisplow.mo \
+	${PREFIX}/share/locale/nl/LC_MESSAGES/clisp.mo \
+	${PREFIX}/share/locale/nl/LC_MESSAGES/clisplow.mo
 PROG_PATHS=${PREFIX}/bin/clisp
 MAN_PATHS=${PREFIX}/man/man1/clisp.1 ${PREFIX}/man/man3/clreadline.3
 
@@ -38,27 +50,12 @@ post-extract:
 	@cd ${WRKSRC} && \
 	printf "all install:\n\t@cd ${WRKSRC}/${BUILD_DIRNAME} && \$${MAKE} \$${MAKEFLAGS} \$$@\n" > ${WRKSRC}/Makefile
 
-# It looks like the 'configure' script in the source gets seriously confused
-# by the environment it gets from GNU_CONFIGURE=YES, so we'll call it here.
-#
-# The 'configure' wants the CC environment variable to include CFLAGS; but
-# I'll edit it since if CFLAGS includes "-pipe", configure gets stuck reading
-# from stdin, using the assembler in gcc 2.7.2.3
-pre-configure:
-	@cd ${WRKSRC} && \
-	${RM} -rf ${BUILD_DIRNAME} && \
-	${SETENV} CC="${CC} `echo ${CFLAGS} | ${SED} s/-pipe//`" \
-		./configure --prefix=${PREFIX} ${BUILD_DIRNAME}
-
 # The 'configure' script stops short of doing this for us.
 post-configure:
 	@cd ${WRKSRC}/${BUILD_DIRNAME} && \
 	./makemake ${MAKEMAKE_ARGS} > Makefile && \
-	make config.lsp
+	make config.lisp
 
-# The build uses INSTALL_* to copy files around, but since the Ports
-# INSTALL_* try to set file permissions, using them breaks non-root builds.
-# Instead, we'll just fix up permissions after we install the files.
 post-install:
 	${CHOWN} -R ${BINOWN}.${BINGRP} ${PROG_PATHS}
 	${CHMOD} -R ugo+rX,ugo-w ${PROG_PATHS}
