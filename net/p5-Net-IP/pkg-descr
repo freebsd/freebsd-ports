@@ -6,6 +6,3 @@ functions.  Most subroutines can take either IPv4 or IPv6 addresses
 transparently.
 
 WWW: http://search.cpan.org/search?dist=Net-IP
-
-- Kimura Fuyuki
-fuyuki@hadaly.org

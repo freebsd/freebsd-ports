@@ -14,7 +14,7 @@ DISTFILES=	6to4\?rev=1.9\&content-type=text%2fplain \
 		6to4.conf\?rev=1.3\&content-type=text%2fplain
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
 USE_REINPLACE=	yes

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client-side implementation of the DICT protocol in Ruby
 
 USE_RUBY=	yes

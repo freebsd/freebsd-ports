@@ -3,6 +3,3 @@ written in Emacs Lisp and is customized to the way Emacs thinks about
 language files, and is optimized to use Emacs' parsing capabilities.
 
 WWW: http://cedet.sourceforge.net/semantic.shtml
-
-- Kimura Fuyuki
-fuyuki@hadaly.org

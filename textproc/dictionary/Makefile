@@ -11,7 +11,7 @@ CATEGORIES=	textproc net elisp
 MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dictionary client for Emacs
 
 EMACS_PORT_NAME?=	emacs21

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick access to files and tags in an Emacs frame
 
 EMACS_PORT_NAME?=	emacs21

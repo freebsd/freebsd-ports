@@ -12,16 +12,16 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts dates between ISO and Gregorian formats
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize
+BUILD_DEPENDS=	${SITE_PERL}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal \
+		${SITE_PERL}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear \
+		${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Date::ISO.3
 
 .include <bsd.port.mk>

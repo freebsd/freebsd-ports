@@ -3,6 +3,3 @@ navigating HTTP connections, parsing URLs, handling CGI operations,
 and fetching WWW resources.
 
 WWW: http://www.gnu.org/software/guile/
-
-- Kimura Fuyuki
-fuyuki@hadaly.org

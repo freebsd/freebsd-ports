@@ -12,12 +12,11 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CAST5 block cipher in pure Perl
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::CAST5_PP.3
 
 .include <bsd.port.mk>

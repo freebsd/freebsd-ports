@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	VCS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for generic Version Control System access in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
@@ -24,7 +24,6 @@ PERL_CONFIGURE=	yes
 MAN1=		diff-hist.1
 MAN3=		VCS.3 VCS::Cvs.3 VCS::Dir.3 VCS::File.3 \
 		VCS::Hms.3 VCS::Rcs.3 VCS::Version.3 VCS_dev.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
