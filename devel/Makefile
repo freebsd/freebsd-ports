@@ -20,6 +20,7 @@
     SUBDIR += allegro
     SUBDIR += amulet
     SUBDIR += anjuta
+    SUBDIR += anjuta-devel
     SUBDIR += antlr
     SUBDIR += apr
     SUBDIR += arch
