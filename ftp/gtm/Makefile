@@ -12,7 +12,7 @@ CATEGORIES=	ftp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gtm \
-		stable/sources/gtm
+		sources/gtm/0.4
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

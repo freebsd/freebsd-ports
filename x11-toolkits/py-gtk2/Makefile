@@ -9,7 +9,7 @@ PORTNAME=	py-gtk
 PORTVERSION=	0.6.10
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-python	
+MASTER_SITE_SUBDIR=	sources/gnome-python/0.6
 DISTNAME=	gnome-python-1.4.4
 DIST_SUBDIR=	gnome
 

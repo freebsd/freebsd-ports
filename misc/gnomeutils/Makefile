@@ -10,7 +10,7 @@ PORTVERSION=	1.4.1.2
 PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
+MASTER_SITE_SUBDIR=	sources/gnome-utils/1.4
 DISTNAME=	gnome-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

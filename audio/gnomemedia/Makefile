@@ -10,7 +10,7 @@ PORTVERSION=	1.2.3
 PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-media
+MASTER_SITE_SUBDIR=	sources/gnome-media/1.2
 DISTNAME=	gnome-media-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

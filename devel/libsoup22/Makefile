@@ -9,7 +9,7 @@ PORTNAME=	soup
 PORTVERSION=	0.7.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/soup
+MASTER_SITE_SUBDIR=	sources/soup/0.7
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

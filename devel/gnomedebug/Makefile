@@ -9,7 +9,7 @@ PORTNAME=	gnomedebug
 PORTVERSION=	0.1.6
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/${PORTNAME:S/gnome/gnome-/}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome/gnome-/}/0.1
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org

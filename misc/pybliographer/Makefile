@@ -10,7 +10,7 @@ PORTVERSION=	1.0.8
 PORTREVISION=	1
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/pyblio
+MASTER_SITE_SUBDIR=	sources/pyblio/1.0
 
 MAINTAINER=	ports@FreeBSD.org
 

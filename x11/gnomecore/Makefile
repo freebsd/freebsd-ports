@@ -9,7 +9,7 @@ PORTNAME=	gnomecore
 PORTVERSION=	1.4.2
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-core
+MASTER_SITE_SUBDIR=	sources/gnome-core/1.4
 DISTNAME=	gnome-core-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

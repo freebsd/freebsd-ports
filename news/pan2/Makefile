@@ -13,7 +13,7 @@ MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ 
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/ \
 		${MASTER_SITE_GNOME}
 		
-MASTER_SITE_SUBDIR=	stable/sources/pan
+MASTER_SITE_SUBDIR=	sources/pan/0.13
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

@@ -9,7 +9,7 @@ PORTNAME=	gnomemm
 PORTVERSION=	1.2.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnomemm
+MASTER_SITE_SUBDIR=	sources/gnomemm/1.2
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

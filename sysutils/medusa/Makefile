@@ -9,7 +9,7 @@ PORTNAME=	medusa
 PORTVERSION=	0.5.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/medusa
+MASTER_SITE_SUBDIR=	sources/medusa/0.5
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	gnomeaudio
 PORTVERSION=	1.4.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-audio
+MASTER_SITE_SUBDIR=	sources/gnome-audio/1.4
 DISTNAME=	gnome-audio-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

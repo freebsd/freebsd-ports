@@ -9,7 +9,7 @@ PORTNAME=	oaf
 PORTVERSION=	0.6.10
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/oaf
+MASTER_SITE_SUBDIR=	sources/oaf/0.6
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -10,7 +10,7 @@ PORTVERSION=	1.2.10
 PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/glib
+MASTER_SITE_SUBDIR=	sources/glib/1.2
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig

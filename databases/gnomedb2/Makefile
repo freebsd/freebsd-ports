@@ -9,7 +9,7 @@ PORTNAME=	gnomedb2
 PORTVERSION=	0.8.192
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/sources/gnome-db
+MASTER_SITE_SUBDIR=	sources/gnome-db/0.8
 DISTNAME=	gnome-db-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

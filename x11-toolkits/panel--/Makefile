@@ -9,7 +9,7 @@ PORTNAME=	panelmm
 PORTVERSION=	0.3.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/panelmm
+MASTER_SITE_SUBDIR=	sources/panelmm/0.3
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

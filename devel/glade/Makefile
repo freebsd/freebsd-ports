@@ -9,7 +9,7 @@ PORTNAME=	glade
 PORTVERSION=	0.6.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/glade
+MASTER_SITE_SUBDIR=	sources/glade/0.6
 
 MAINTAINER=	gnome@FreeBSD.org
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.4.8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://me.in-berlin.de/~jroger/gnome-pim/ \
 		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-pim
+MASTER_SITE_SUBDIR=	sources/gnome-pim/1.4
 DISTNAME=	gnome-pim-${PORTVERSION}
 DIST_SUBDIR=	gnome
 

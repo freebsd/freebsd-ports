@@ -9,7 +9,7 @@ PORTNAME=	gnomemedia2
 PORTVERSION=	2.0.2.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-media
+MASTER_SITE_SUBDIR=	sources/gnome-media/2.0
 DISTNAME=	gnome-media-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0.5
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-applets
+MASTER_SITE_SUBDIR=	sources/gnome-applets/1.4
 DISTNAME=	gnome-applets-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

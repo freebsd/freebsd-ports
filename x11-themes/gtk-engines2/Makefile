@@ -9,7 +9,7 @@ PORTNAME=	gtk-engines2
 PORTVERSION=	1.9.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+MASTER_SITE_SUBDIR=	sources/gtk-engines/1.9
 DISTNAME=	gtk-engines-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

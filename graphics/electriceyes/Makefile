@@ -9,7 +9,7 @@ PORTNAME=	electriceyes
 PORTVERSION=	0.3.12
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/ee
+MASTER_SITE_SUBDIR=	sources/ee/0.3
 DISTNAME=	ee-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	gnomecrash
 PORTVERSION=	0.0.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-crash
+MASTER_SITE_SUBDIR=	sources/gnome-crash/0.0
 DISTNAME=	gnome-crash-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

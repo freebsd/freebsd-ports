@@ -9,7 +9,7 @@ PORTNAME=	metatheme2
 PORTVERSION=	0.9.7
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.9
 DISTNAME=	metatheme-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

@@ -9,7 +9,7 @@ PORTNAME=	crux
 PORTVERSION=	1.9.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/latest/sources
+MASTER_SITE_SUBDIR=	sources/crux/1.9
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

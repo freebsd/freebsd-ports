@@ -10,7 +10,7 @@ PORTVERSION=	0.20
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gnome-guile
+MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20
 DISTNAME=	gnome-guile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

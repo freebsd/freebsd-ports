@@ -10,7 +10,7 @@ PORTVERSION=	1.8.17
 PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libxml
+MASTER_SITE_SUBDIR=	sources/libxml/1.8
 
 MAINTAINER=	gnome@FreeBSD.org
 

@@ -11,7 +11,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	libsigc \
-			stable/sources/libsigc++
+			sources/libsigc++/1.0
 			
 #DIST_SUBDIR=	gnome
 

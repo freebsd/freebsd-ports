@@ -10,7 +10,7 @@ PORTVERSION=	2.0.8
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
+MASTER_SITE_SUBDIR=	sources/bug-buddy/2.0
 DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
