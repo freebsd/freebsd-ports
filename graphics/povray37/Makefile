@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.6 1996/12/06 23:43:32 asami Exp $
+# $Id: Makefile,v 1.7 1997/09/22 09:14:43 tg Exp $
 #
 
 DISTNAME=       povray3
@@ -16,7 +16,7 @@ DISTFILES=      povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png
 
 MAN1=		povray.1
 
