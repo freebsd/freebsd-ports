@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:47:16 asami Exp $
+#   $Id: Makefile,v 1.4 1997/04/05 20:28:16 jfitz Exp $
 #
 
 DISTNAME=	HTML-Stream-1.38
 PKGNAME=	p5-HTML-Stream-1.38
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 

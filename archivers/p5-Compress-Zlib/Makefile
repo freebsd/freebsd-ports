@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/11/17 05:43:01 obrien Exp $
+#   $Id: Makefile,v 1.5 1996/11/18 08:45:00 asami Exp $
 #
 
 DISTNAME=	Compress-Zlib-0.4
 PKGNAME=	p5-Compress-Zlib-0.4
-CATEGORIES=	archivers
+CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
 

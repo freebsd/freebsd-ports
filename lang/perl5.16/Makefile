@@ -3,12 +3,12 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.15 1996/12/10 06:43:36 asami Exp $
+# $Id: Makefile,v 1.16 1996/12/11 10:18:36 asami Exp $
 #
 
 DISTNAME=	perl5.003
 PKGNAME=	perl-5.003
-CATEGORIES=	lang devel
+CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/perl/CPAN/src/5.0/ \
 		ftp://dong.math.ncu.edu.tw/perl/CPAN/src/5.0/ \

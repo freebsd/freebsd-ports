@@ -3,11 +3,11 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1997/01/25 12:27:10 andreas Exp $
+# $Id: Makefile,v 1.11 1997/01/26 10:06:58 andreas Exp $
 #
 
 DISTNAME=	crossfire-0.93.0
-CATEGORIES=	games
+CATEGORIES=	games perl5
 MASTER_SITES=	ftp://ra.pyramid.com/pub/crossfire/ \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.real-time.com/pub/games/crossfire/ \

@@ -3,12 +3,12 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1996/12/11 12:04:04 asami Exp $
+#   $Id: Makefile,v 1.7 1997/02/12 18:48:21 jfitz Exp $
 #
 
 DISTNAME=	MsqlPerl-1.15
 PKGNAME=	p5-Msql-1.15
-CATEGORIES=	databases
+CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Msql
 

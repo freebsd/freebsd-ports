@@ -3,12 +3,12 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/24 06:58:44 max Exp $
+# $Id: Makefile,v 1.2 1997/02/05 15:35:22 max Exp $
 #
 
 DISTNAME=	perl5.003
 PKGNAME=	jp-perl-5.003
-CATEGORIES=	japanese
+CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/perl/CPAN/src/5.0/ \
 		ftp://dong.math.ncu.edu.tw/perl/CPAN/src/5.0/ \

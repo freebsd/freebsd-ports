@@ -3,12 +3,12 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:59:14 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/11/18 08:46:06 asami Exp $
 #
 
 DISTNAME=	Ioctl-0_7
 PKGNAME=	p5-Ioctl-0.7
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Ioctl/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Ioctl/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Ioctl/ \

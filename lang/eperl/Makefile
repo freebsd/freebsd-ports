@@ -4,11 +4,11 @@
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/01/04 23:40:16 andreas Exp $
 #
 
 DISTNAME=	eperl-2.0.3
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	http://www.engelschall.com/sw/eperl/dist/
 
 MAINTAINER=	rse@engelschall.com

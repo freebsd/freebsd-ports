@@ -3,12 +3,12 @@
 # Date created:				April 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/04/05 22:15:46 jfitz Exp $
 #
 
 DISTNAME=	Net-DNS-0.06
 PKGNAME=	p5-Net-0.06
-CATEGORIES=	net
+CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 

@@ -3,12 +3,12 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/11/18 08:46:37 asami Exp $
+#   $Id: Makefile,v 1.5 1997/03/07 04:44:32 jfitz Exp $
 #
 
 DISTNAME=	MailTools-1.09
 PKGNAME=	p5-Mail-Tools-1.09
-CATEGORIES=	mail
+CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 

@@ -3,12 +3,12 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:59:09 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/11/18 08:46:03 asami Exp $
 #
 
 DISTNAME=	IniConf.pm-0.91
 PKGNAME=	p5-IniConf-0.91
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IniConf
 

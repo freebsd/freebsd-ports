@@ -3,12 +3,12 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/23 17:37:41 jmz Exp $
+# $Id: Makefile,v 1.2 1996/12/24 07:47:28 asami Exp $
 #
 
 DISTNAME=       PGPLOT1.0b_src
 PKGNAME=	pgperl-1.0
-CATEGORIES=     graphics
+CATEGORIES=     graphics perl5
 MASTER_SITES=   ftp://ftp.ast.cam.ac.uk/pgperl/perl5/
 EXTRACT_SUFX=	.tar.Z
 

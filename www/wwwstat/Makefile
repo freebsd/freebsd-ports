@@ -3,11 +3,11 @@
 # Date created:			So   2 Mär 1997 18:10:49 MET
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/02 18:26:17 andreas Exp $
+# $Id: Makefile,v 1.2 1997/03/04 05:51:14 asami Exp $
 #
 
 DISTNAME=	wwwstat-2.01
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	ftp://www.ics.uci.edu/pub/websoft/wwwstat/
 DISTFILES=	wwwstat-2.0.tar.gz
 
