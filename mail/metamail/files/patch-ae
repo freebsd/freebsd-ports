@@ -1,5 +1,5 @@
-*** metamail/splitmail.c.orig	Sun Jun 18 13:13:56 1995
---- metamail/splitmail.c	Sun Jun 18 13:14:48 1995
+*** metamail/splitmail.c.orig	Mon Jan 31 16:23:14 1994
+--- metamail/splitmail.c	Wed Feb 18 15:39:09 2004
 ***************
 *** 41,48 ****
   #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
@@ -19,3 +19,21 @@
   #endif
   
   usageexit() {
+***************
+*** 361,367 ****
+      }
+      if (!ULstrcmp(s, "subject")) {
+          *colon = ':';
+!         strcpy(SubjectBuf, ++colon);
+          return(0);
+      }
+      if (!ULstrcmp(s, "content-type")) {
+--- 361,368 ----
+      }
+      if (!ULstrcmp(s, "subject")) {
+          *colon = ':';
+!         strncpy(SubjectBuf, ++colon, sizeof(SubjectBuf));
+!         SubjectBuf[sizeof(SubjectBuf) - 1] = '\0';
+          return(0);
+      }
+      if (!ULstrcmp(s, "content-type")) {

@@ -74,8 +74,8 @@
                       while (s && *s && isspace((unsigned char) *s)) ++s;
                       if (s && (*s == 'y' || *s == 'Y')) break;
                       continue;
-*** metamail.c.bak	Thu Feb 17 04:57:19 1994
---- metamail/metamail.c	Mon Nov 20 01:21:37 1995
+*** metamail/metamail.c.orig	Wed Feb 16 19:57:19 1994
+--- metamail/metamail.c	Wed Feb 18 15:39:09 2004
 ***************
 *** 83,89 ****
   #define MAX_FILE_NAME_SIZE 256
@@ -111,6 +111,27 @@
                                           overwriteans = 0;
                                       } else {
 ***************
+*** 1202,1210 ****
+      fprintf(outfp, "Content-type: %s", ContentType);
+      for (j=0; j<CParamsUsed; ++j) {
+          fprintf(outfp, " ; ");
+!         fprintf(outfp, CParams[j]);
+          fprintf(outfp, " = ");
+!         fprintf(outfp, CParamValues[j]);
+      }
+      fprintf(outfp, "\n\n"); 
+      TranslateInputToOutput(InputFP, outfp, EncodingCode, ContentType);
+--- 1202,1210 ----
+      fprintf(outfp, "Content-type: %s", ContentType);
+      for (j=0; j<CParamsUsed; ++j) {
+          fprintf(outfp, " ; ");
+!         fprintf(outfp, "%s", CParams[j]);
+          fprintf(outfp, " = ");
+!         fprintf(outfp, "%s", CParamValues[j]);
+      }
+      fprintf(outfp, "\n\n"); 
+      TranslateInputToOutput(InputFP, outfp, EncodingCode, ContentType);
+***************
 *** 1823,1829 ****
           } else {
               printf("This message contains '%s'-format data.\nDo you want to view it using the '%s' command (y/n) [y] ? ", ctype, ShortCommand(progname));
@@ -127,3 +148,38 @@
           if (!s) return(0); /* EOF */
   	while (s && *s && isspace((unsigned char) *s)) ++s;
   	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
+***************
+*** 2022,2028 ****
+      if (lc2strcmp(charset, PrevCharset)) {
+          char *s2, *charsetinuse;
+  
+!         strcpy(PrevCharset, charset);
+          for (s2=PrevCharset; *s2; ++s2) {
+              if (isupper((unsigned char) *s2)) *s2 = tolower((unsigned char) *s2);
+          }
+--- 2022,2029 ----
+      if (lc2strcmp(charset, PrevCharset)) {
+          char *s2, *charsetinuse;
+  
+!         strncpy(PrevCharset, charset, sizeof(PrevCharset));
+!         PrevCharset[sizeof(PrevCharset) - 1] = '\0';
+          for (s2=PrevCharset; *s2; ++s2) {
+              if (isupper((unsigned char) *s2)) *s2 = tolower((unsigned char) *s2);
+          }
+***************
+*** 2032,2038 ****
+          }
+      }
+      if (ecode == ENCODING_NONE) {
+!         printf(txt+1);
+      } else {
+          /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
+          MkTmpFileName(TmpFile);
+--- 2033,2039 ----
+          }
+      }
+      if (ecode == ENCODING_NONE) {
+!         printf("%s", txt+1);
+      } else {
+          /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
+          MkTmpFileName(TmpFile);
