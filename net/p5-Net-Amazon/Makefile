@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -41,8 +41,11 @@ MAN3=		Net::Amazon.3 Net::Amazon::Attribute::Review.3 \
 		Net::Amazon::Request::Similar.3 \
 		Net::Amazon::Request::UPC.3 \
 		Net::Amazon::Request::Wishlist.3 \
+		Net::Amazon::Request::Seller.3 \
 		Net::Amazon::Request::Sort.3 \
-		Net::Amazon::Request::TextStream.3
+		Net::Amazon::Request::TextStream.3 \
+		Net::Amazon::Result::Seller.3 \
+		Net::Amazon::Result::Seller::Listing.3
 
 .include <bsd.port.pre.mk>
 
