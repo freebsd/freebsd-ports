@@ -1,40 +1,44 @@
 # New ports collection makefile for:	Java Foundation Classes with Swing
-# Version required:	1.1
+# Version required:	1.1.1
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	swing11
-PKGNAME=	jfc-1.1
+DISTNAME=	swing1_1_1
+PKGNAME=	jfc-1.1.1
 CATEGORIES=	java
 MASTER_SITES=	http://java.sun.com/products/jfc/
-EXTRACT_SUFX=	.tar.Z
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 
-RESTRICTED=	"Cannot distribute without value-added application."
-WRKSRC=		${WRKDIR}/swing-1.1
+USE_ZIP=	YES
+RESTRICTED=	"Can only be distributed with value added application"
+WRKSRC=		${WRKDIR}/swing-1.1.1fcs
 NO_BUILD=	YES
-PLIST_SUB=	JFCSUBDIR=${JFCSUBDIR}
+PLIST_SUB=	JFCSUBDIR=${PKGNAME}
 
-JAVASUBDIR=	jdk1.1.8
-JFCSUBDIR=	swing-1.1
+JDK_VERSION=	1.1.8
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-		${ECHO} "Please fetch \"${DISTFILES}\" and put it in"; \
-		${ECHO} "\"${DISTDIR}\" manually."; \
-		exit 1; \
-	 fi
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE='You must manually fetch the standard zip format distribution from http://www.javasoft.com/products/jfc/download.html and place it in ${DISTDIR} then run make again.'
+.endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${JFCSUBDIR}
-	(cd ${WRKSRC} && tar -c -f - .) \
-		| (cd ${PREFIX}/${JFCSUBDIR} && tar fx -)
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/${JFCSUBDIR}
+	@${MKDIR} ${PREFIX}/share/java/classes/${PKGNAME}/
+	@${CP} ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/${PKGNAME}/
+	@${MKDIR} ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} ${WRKSRC}/CHANGES.txt ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} ${WRKSRC}/README.html ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} ${WRKSRC}/README.txt  ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} -R ${WRKSRC}/doc      ${PREFIX}/share/java/${PKGNAME}/
+	@${CP} -R ${WRKSRC}/examples ${PREFIX}/share/java/${PKGNAME}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
