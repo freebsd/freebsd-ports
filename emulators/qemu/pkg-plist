@@ -1,5 +1,6 @@
 bin/qemu
 bin/qemu-mkcow
+bin/qemu-system-ppc
 bin/vmdk2raw
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
