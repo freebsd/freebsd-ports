@@ -1,0 +1,160 @@
+BBBike/BBBikeDraw.pm
+BBBike/BBBikeUtil.pm
+BBBike/Bundle/BBBike.pm
+BBBike/Fahrinfo.pm
+BBBike/GfxConvert.pm
+BBBike/Karte.pm
+BBBike/Karte/Berlinmap1996.pm
+BBBike/Karte/Berlinmap1997.pm
+BBBike/Karte/Berlinmap1998.pm
+BBBike/Karte/GIS.pm
+BBBike/Karte/GISmap.pm
+BBBike/Karte/Polar.pm
+BBBike/Karte/Satmap.pm
+BBBike/Karte/SatmapGIF.pm
+BBBike/Karte/Standard.pm
+BBBike/MANIFEST
+BBBike/PLZ.pm
+BBBike/README
+BBBike/Route.pm
+BBBike/Strassen.pm
+BBBike/Telefonbuch.pm
+BBBike/bbbike
+@exec ln -fs %D/%F %D/bin/bbbike
+@unexec rm -f %D/bin/bbbike
+BBBike/bbbike-fast.bat
+BBBike/bbbike.bat
+BBBike/bbbike.pod
+BBBike/cbbbike
+@exec ln -fs %D/%F %D/bin/cbbbike
+@unexec rm -f %D/bin/cbbbike
+BBBike/cbbbike.bat
+BBBike/cgi/bbbike.cgi
+BBBike/data/Berlin.small.data
+BBBike/data/ampeln
+BBBike/data/berlin
+BBBike/data/faehren
+BBBike/data/flaechen
+BBBike/data/gesperrt
+BBBike/data/hoehe
+BBBike/data/landstrassen
+BBBike/data/landstrassen2
+BBBike/data/multi_bez_str
+BBBike/data/orte
+BBBike/data/orte2
+BBBike/data/plz
+BBBike/data/rbahn
+BBBike/data/rbahnhof
+BBBike/data/sbahn
+BBBike/data/sbahnhof
+BBBike/data/sehenswuerdigkeit
+BBBike/data/strassen
+BBBike/data/ubahn
+BBBike/data/ubahnhof
+BBBike/data/wasserstrassen
+BBBike/data/wasserumland
+BBBike/data/wasserumland2
+BBBike/ext/BBBikeXS/BBBikeXS.pm
+BBBike/ext/BBBikeXS/BBBikeXS.xs
+BBBike/ext/BBBikeXS/MANIFEST
+BBBike/ext/BBBikeXS/Makefile.PL
+BBBike/ext/BBBikeXS/test.pl
+BBBike/ext/BBBikeXS/typemap
+BBBike/ext/VirtArray/Changes
+BBBike/ext/VirtArray/MANIFEST
+BBBike/ext/VirtArray/Makefile.PL
+BBBike/ext/VirtArray/README
+BBBike/ext/VirtArray/VirtArray.pm
+BBBike/ext/VirtArray/VirtArray.xs
+BBBike/ext/VirtArray/test.pl
+BBBike/ext/VirtArray/typemap
+BBBike/images/ampel.gif
+BBBike/images/ampel_klein.gif
+BBBike/images/andreaskr.gif
+BBBike/images/andreaskr_klein.gif
+BBBike/images/berlin_overview_small.gif
+BBBike/images/bicycle.gif
+BBBike/images/click.gif
+BBBike/images/cross.gif
+BBBike/images/flaechen.gif
+BBBike/images/flag2_bl.gif
+BBBike/images/flag_ziel.gif
+BBBike/images/haltestelle.gif
+BBBike/images/info.gif
+BBBike/images/koord.gif
+BBBike/images/landstrasse.gif
+BBBike/images/menupfeil.gif
+BBBike/images/open.gif
+BBBike/images/ort.gif
+BBBike/images/printer.gif
+BBBike/images/rbahn.gif
+BBBike/images/rueckweg.gif
+BBBike/images/save.gif
+BBBike/images/sbahn.gif
+BBBike/images/search.gif
+BBBike/images/srtbike.gif
+BBBike/images/srtbike.xpm
+BBBike/images/srtbike_mini.xpm
+BBBike/images/start_ptr.xbm
+BBBike/images/start_ptr_mask.xbm
+BBBike/images/stip.xbm
+BBBike/images/strasse.gif
+BBBike/images/ubahn.gif
+BBBike/images/wasser.gif
+BBBike/images/windrose.gif
+BBBike/images/windrose2.gif
+BBBike/images/ziel_ptr.xbm
+BBBike/images/ziel_ptr_mask.xbm
+BBBike/lib/BikePower.pm
+BBBike/lib/BikePower/Tk.pm
+BBBike/lib/BikePower/change_wind.xpm
+BBBike/lib/BikePower/crouch.xpm
+BBBike/lib/BikePower/pack_end.xpm
+BBBike/lib/BikePower/pack_middle.xpm
+BBBike/lib/BikePower/racing.xpm
+BBBike/lib/BikePower/standing.xpm
+BBBike/lib/BikePower/tuck.xpm
+BBBike/lib/BikePower/up_down.xpm
+BBBike/lib/BikePower/upright.xpm
+BBBike/lib/EasySound.pm
+BBBike/lib/Met/Wind.pm
+BBBike/lib/MyFile.pm
+BBBike/lib/Tk/CanvasBalloon.pm
+BBBike/lib/Tk/ContextHelp.pm
+BBBike/lib/Tk/context_help.xbm
+BBBike/lib/Tk/context_help_mask.xbm
+BBBike/lib/Tk/context_nohelp.xbm
+BBBike/lib/Tk/context_nohelp_mask.xbm
+BBBike/lib/Tk/Enscript.pm
+BBBike/lib/Tk/enscript.cfg
+BBBike/lib/Tk/FileDialogExt.pm
+BBBike/lib/Tk/UnderlineAll.pm
+BBBike/lib/TkCompat.pm
+BBBike/lib/WinCompat.pm
+BBBike/lib/click.au
+BBBike/lib/click.wav
+BBBike/lib/wettermeldung2
+BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.so
+BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.bs
+BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.so
+BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.bs
+BBBike/lib/BBBikeXS.pm
+BBBike/lib/VirtArray.pm
+BBBike/bbbike.1
+@dirrm BBBike/lib/BikePower
+@dirrm BBBike/lib/Met
+@dirrm BBBike/ext/BBBikeXS
+@dirrm BBBike/lib/Tk
+@dirrm BBBike/ext/VirtArray
+@dirrm BBBike/ext
+@dirrm BBBike/lib/i386-freebsd/auto/VirtArray
+@dirrm BBBike/Bundle
+@dirrm BBBike/lib/i386-freebsd/auto/BBBikeXS
+@dirrm BBBike/lib/i386-freebsd/auto
+@dirrm BBBike/lib/i386-freebsd
+@dirrm BBBike/Karte
+@dirrm BBBike/lib
+@dirrm BBBike/images
+@dirrm BBBike/cgi
+@dirrm BBBike/data
+@dirrm BBBike
