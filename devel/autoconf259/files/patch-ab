@@ -1,0 +1,10 @@
+--- autoconf.texi.orig	Wed Nov 27 03:09:46 1996
++++ autoconf.texi	Fri Jun 13 16:29:42 1997
+@@ -4,6 +4,7 @@
+ @settitle Autoconf
+ @c For double-sided printing, uncomment:
+ @c @setchapternewpage odd
++@dircategory Programming & development tools
+ @c %**end of header
+ 
+ @set EDITION 2.12
