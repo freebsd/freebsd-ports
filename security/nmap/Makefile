@@ -4,7 +4,7 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1998/08/04 18:01:31 obrien Exp $
+# $Id: Makefile,v 1.3 1998/08/18 14:31:31 ache Exp $
 #
 
 DISTNAME=	nmap-1.51
@@ -16,6 +16,9 @@ MAINTAINER=     obrien@FreeBSD.org
 GNU_CONFIGURE=	yes
 CFLAGS+=        -DDLT_RAW=12 # for obsoleted <net/bpf.h>
 MAN1=		nmap.1
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/libpcap*
 
 post-install:
 	@strip ${PREFIX}/bin/nmap
