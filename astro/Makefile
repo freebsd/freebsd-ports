@@ -14,6 +14,7 @@
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
     SUBDIR += gkrellsun
+    SUBDIR += glunarclock
     SUBDIR += gpsdrive
     SUBDIR += gpsman
     SUBDIR += jday
