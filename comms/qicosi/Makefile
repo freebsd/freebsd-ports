@@ -1,45 +1,49 @@
-# New ports collection makefile for:	qico
-# Date created:		13 Jan 2000
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
+# New ports collection makefile for:	qicosi
+# Date created:				26 May 2004
+# Whom:					Andrey Slusar <vasallia@ukr.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	qico
-PORTVERSION=	0.49.10.3
+PORTNAME=	qicosi
+PORTVERSION=	0.53
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.49.10-p3
+MASTER_SITES=	http://santinel.bas-net.by/files/
+DISTNAME=	qico-${PORTVERSION}si
 
-MAINTAINER=	dsh@vlink.ru
-COMMENT=	An FidoNet Technology Network (FTN) compatible mailer for Unix systems
+MAINTAINER=	vasallia@ukr.net
+COMMENT=	Ip/modem fido compatible mailer
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-.if defined(WITH_QICO_AMIGA4D)
-CONFIGURE_ARGS+=	--enable-aso
-.endif
+CONFDIR?=	${PREFIX}/etc/fido/qico
 
-.if defined(WITH_QICO_MORDA)
-PLIST_SUB+=	WITH_QICO_MORDA=""
-.else
-CONFIGURE_ARGS+=	--disable-qcc
-PLIST_SUB+=	WITH_QICO_MORDA="@comment "
+.if defined(WITH_OPENLOCK)
+CONFIGURE_ARGS+=	--with-lock-style=open
 .endif
+CONFIGURE_ARGS+=	--with-config=${CONFDIR}/qico.conf \
+			--with-default-speed=115200
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
-.if defined(WITH_QICO_MORDA)
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
-.endif
+DOCS=		Changes FAQ README
+EXAMPLES=	fts-0001 onchat qhistory qico.xpm qlinks sfreq \
+		stat.run synctime tossing
 
+MAN8=		qcc.8 qctl.8 qico.8
+
+post-install:
+	${MKDIR} ${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${CONFDIR}/qico.conf.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/qico
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/qico/FAQ.ru
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qico/README.ru
+	${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}.ru
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+.for i in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/stuff/${i} ${EXAMPLESDIR}/${i}
+.endfor
 .endif
 
 .include <bsd.port.mk>
