@@ -6,21 +6,21 @@
 # $FreeBSD$
 #
 
-DISTNAME=	epic-4.pre2.500
+DISTNAME=	epic4-2000
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/ \
 		ftp://ftp.sanyusan.se/pub/epic/EPIC4-BETA/
-DISTFILES=	epic4pre2.500.tar.gz epic4pre2-help.tar.gz
+DISTFILES=	epic4-2000.tar.gz epic4pre2-help.tar.gz
 
 MAINTAINER=	anders@sanyusan.se
 
 DIST_SUBDIR=	epic4
 
-EXTRACT_ONLY=	epic4pre2.500.tar.gz
+EXTRACT_ONLY=	epic4-2000.tar.gz
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/ircii-EPIC4pre2.500
+WRKSRC=		${WRKDIR}/epic4-2000
 
 MAN1=		epic.1
 
