@@ -6,33 +6,37 @@
 #
 
 PORTNAME=	soundtracker
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.6
 CATEGORIES=	audio gnome
-MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.6/
+MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
+MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	esound gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gnomelibs esound gnomeprefix gnomehack
-CONFIGURE_ARGS+=--enable-gnome
 PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomelibs gnomeprefix gnomehack
+CONFIGURE_ARGS+=	--enable-gnome
+PLIST_SUB+=	DATADIR="share/gnome"
 .else
-CONFIGURE_ARGS+=--disable-gnome
+CONFIGURE_ARGS+=	--disable-gnome
+PLIST_SUB+=	DATADIR="share"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| install-exec-local||g'
 
 .include <bsd.port.post.mk>
