@@ -1,37 +1,30 @@
-*** Makefile~	Mon Jan 23 19:28:24 1995
---- Makefile	Tue Sep 19 00:46:41 1995
-***************
-*** 490,496 ****
-  local.h:
-  	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
-  
-! msgs.h:	config.sh FRC
-  	@. ./config.sh; \
-  	  set $(SHELLDEBUG); \
-  	  set +e; \
---- 490,496 ----
-  local.h:
-  	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
-  
-! msgs.h:	config.sh 
-  	@. ./config.sh; \
-  	  set $(SHELLDEBUG); \
-  	  set +e; \
-***************
-*** 504,510 ****
-  	  else \
-  	    set -x; \
-  	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
-! 	  fi
-  
-  FRC:
-  
---- 504,511 ----
-  	  else \
-  	    set -x; \
-  	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
-! 	  fi; \
-! 	touch msgs.h
-  
-  FRC:
-  
+--- Makefile.orig	Thu Oct 12 20:04:06 1995
++++ Makefile	Wed Jun  4 05:05:47 1997
+@@ -253,7 +253,7 @@
+ 	    set -ex; \
+ 	    rm -f $$ELISPDIR/ispell.el; \
+ 	    $$INSTALL ispell.el $$ELISPDIR; \
+-	    if sh iwhich $$EMACS >/dev/null; then \
++	    if sh iwhich ___XXX___$$EMACS >/dev/null; then \
+ 		echo '(byte-compile-file "'"$$ELISPDIR/ispell.el"'")' \
+ 		  > /tmp/emi$$$$; \
+ 		$$EMACS -batch -l /tmp/emi$$$$; \
+@@ -508,7 +508,7 @@
+ local.h:
+ 	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
+ 
+-msgs.h:	config.sh FRC
++msgs.h:	config.sh 
+ 	@. ./config.sh; \
+ 	  set $(SHELLDEBUG); \
+ 	  set +e; \
+@@ -522,7 +522,8 @@
+ 	  else \
+ 	    set -x; \
+ 	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
+-	  fi
++	  fi; \
++	touch msgs.h
+ 
+ FRC:
+ 
