@@ -155,6 +155,7 @@
     SUBDIR += ggsd
     SUBDIR += gicq
     SUBDIR += gini
+    SUBDIR += gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
