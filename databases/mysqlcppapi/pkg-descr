@@ -1,0 +1,14 @@
+mysqlcppapi is a C++ wrapper for the MySQL C API library.
+
+It is a branch of the MySql++ project, but it has diverged significantly for
+the following reasons:
+
+* MySQL++ is aggressively optimised for speed, but optimisation should happen
+  after the design is mature, and that optimisation should be targeted.
+  Premature optimisation obscures the design and prevents it from improving.
+* MySQL++ provides too many ways to do things instead of deciding on an
+  interface. Again, this obscures the design.
+* MySQL++ uses preprocessor macros to an extent that is unacceptable in a C++
+  library.
+
+WWW: http://mysqlcppapi.sourceforge.net

@@ -1,0 +1,13 @@
+--- configure~	Wed Aug  4 23:58:41 2004
++++ configure	Thu Aug  5 00:12:29 2004
+@@ -18465,8 +18465,8 @@
+ fi;
+ 
+ 
+-MYSQL_LIBS="-L${MYSQL_PREFIX}/mysql/lib/mysql -lmysqlclient -L${MYSQL_PREFIX}/lib/mysql -lmysqlclient"
+-MYSQL_CFLAGS="-I${MYSQL_PREFIX}/mysql/include"
++MYSQL_LIBS="-L${MYSQL_PREFIX}/lib/mysql -lmysqlclient"
++MYSQL_CFLAGS="-I${MYSQL_PREFIX}/include"
+ 
+ 
+ 

@@ -106,6 +106,7 @@
     SUBDIR += mysql50-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlcc
+    SUBDIR += mysqlcppapi
     SUBDIR += mysqlman
     SUBDIR += mysqltcl
     SUBDIR += mytop
