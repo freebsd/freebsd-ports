@@ -196,6 +196,7 @@ lib/asterisk/modules/codec_gsm.so
 lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_mp3_d.so
+lib/asterisk/modules/codec_speex.so
 lib/asterisk/modules/codec_ulaw.so
 lib/asterisk/modules/format_g729.so
 lib/asterisk/modules/format_gsm.so
