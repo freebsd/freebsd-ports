@@ -106,6 +106,7 @@
     SUBDIR += liamail
     SUBDIR += libesmtp
     SUBDIR += libetpan
+    SUBDIR += libnewmail
     SUBDIR += liboe
     SUBDIR += libpst
     SUBDIR += librfc822
