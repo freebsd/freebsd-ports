@@ -9,7 +9,6 @@ PORTNAME=	libXv
 PORTVERSION=	2.2.1.p1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/dist/
-DISTNAME=	${PORTNAME}-${REALVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 Extension library
