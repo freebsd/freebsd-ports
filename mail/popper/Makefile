@@ -7,7 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	2.53
-PORTREVISION=   5
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -29,8 +29,8 @@ O_DEFS=		-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
 .if !defined(WITH_POPPER_APOP_ONLY)
-P_LIBS=         -lopie
-O_DEFS+=        -DOPIE
+P_LIBS=		-lopie
+O_DEFS+=	-DOPIE
 .else
 O_DEFS+=	-DAPOP_ONLY
 .endif

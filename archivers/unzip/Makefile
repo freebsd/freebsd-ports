@@ -21,7 +21,7 @@ MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK"
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 .if defined(WITH_UNZIP_UNREDUCE)
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
 EXTRACT_ONLY=	${PORTNAME}551.tar.gz
 MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK -DUSE_SMITH_CODE"
 .endif

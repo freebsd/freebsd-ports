@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ricochet
-PORTVERSION=    0.98
-PORTREVISION=   2
+PORTVERSION=	0.98
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 do-configure:
