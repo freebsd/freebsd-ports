@@ -1,12 +1,10 @@
 bin/ghfaxviewer
-lib/charset.alias
-share/gnome/pixmaps/ghfaxviewer/info.xpm
-share/gnome/pixmaps/ghfaxviewer/ghfaxviewer-logo.xpm
+share/gnome/apps/Graphics/ghfaxviewer.desktop
 share/gnome/pixmaps/ghfaxviewer/ghfaxviewer-icon.xpm
-share/gnome/locale/de/LC_MESSAGES/ghfaxviewer.mo
-share/gnome/locale/fr/LC_MESSAGES/ghfaxviewer.mo
-share/gnome/locale/locale.alias
-share/gnome/locale/pl/LC_MESSAGES/ghfaxviewer.mo
-share/gnome/locale/zh_TW.Big5/LC_MESSAGES/ghfaxviewer.mo
-share/gnome/gnome/apps/Graphics/ghfaxviewer.desktop
+share/gnome/pixmaps/ghfaxviewer/ghfaxviewer-logo.xpm
+share/gnome/pixmaps/ghfaxviewer/info.xpm
+share/locale/de/LC_MESSAGES/ghfaxviewer.mo
+share/locale/fr/LC_MESSAGES/ghfaxviewer.mo
+share/locale/pl/LC_MESSAGES/ghfaxviewer.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ghfaxviewer.mo
 @dirrm share/gnome/pixmaps/ghfaxviewer

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2002/05/13 12:02:06	1.1
++++ configure	2002/05/13 12:02:24
+@@ -4759,7 +4759,7 @@
+       CFLAGS="$CFLAGS `gnome-config --cflags gnomeui`"
+       LDFLAGS="$LDFLAGS `gnome-config --libs gnomeui`"
+       PIXMAPS_DIR="`gnome-config --datadir`/pixmaps/ghfaxviewer"
+-      GNOME_GRAPH_APP_DIR="`gnome-config --datadir`/gnome/apps/Graphics"
++      GNOME_GRAPH_APP_DIR="`gnome-config --datadir`/apps/Graphics"
+ 
+       # Check whether --with-gnome-print-prefix or --without-gnome-print-prefix was given.
+ if test "${with_gnome_print_prefix+set}" = set; then
