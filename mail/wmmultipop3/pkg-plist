@@ -1,0 +1,5 @@
+bin/wmmultipop3
+%%PORTDOCS%%share/doc/wmmultipop3/ChangeLog
+%%PORTDOCS%%share/doc/wmmultipop3/INSTALL
+%%PORTDOCS%%share/doc/wmmultipop3/README
+%%PORTDOCS%%@dirrm share/doc/wmmultipop3

@@ -213,6 +213,7 @@
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wmbiff
     SUBDIR += wmmail
+    SUBDIR += wmmultipop3
     SUBDIR += wmpop3
     SUBDIR += xbuffy
     SUBDIR += xc-mail
