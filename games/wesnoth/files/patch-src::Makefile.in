@@ -1,12 +1,15 @@
---- src/Makefile.in.orig	Tue Oct  5 23:45:33 2004
-+++ src/Makefile.in	Tue Oct  5 23:45:59 2004
-@@ -660,8 +660,7 @@
+--- src/Makefile.in.orig	Mon Nov  1 22:21:14 2004
++++ src/Makefile.in	Mon Nov  1 22:23:02 2004
+@@ -680,10 +680,10 @@
+ 			 sdl_ttf/SDL_ttf.h \
  			 wesconfig.h
  
- AM_CXXFLAGS = @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
--	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR) \
--	-I../intl -I$(top_srcdir)/intl
-+	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
+-AM_CXXFLAGS = -I sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
++AM_CXXFLAGS = -I sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
+ 	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
+ 
+-AM_CFLAGS = -I sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
++AM_CFLAGS = -I sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
+ 	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
  
  CXXLD = $(LDPREFIX) $(CXX)
- all: all-recursive
