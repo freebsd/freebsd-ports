@@ -14,9 +14,8 @@
 %%SITE_PERL%%/Net/Jabber/Namespaces.pm
 %%SITE_PERL%%/Net/Jabber/Presence.pm
 %%SITE_PERL%%/Net/Jabber/Protocol.pm
-%%SITE_PERL%%/Net/Jabber/Query.pm
 %%SITE_PERL%%/Net/Jabber/Server.pm
-%%SITE_PERL%%/Net/Jabber/X.pm
+%%SITE_PERL%%/Net/Jabber/Stanza.pm
 %%SITE_PERL%%/Net/Jabber/XDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
