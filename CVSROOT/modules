@@ -6700,6 +6700,7 @@ rdist		src/usr.bin/rdist
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
 readlink	ports/sysutils/readlink
+reallyslick	ports/graphics/reallyslick
 realpath	src/bin/realpath
 rebler		ports/audio/rebler
 reboot		src/sbin/reboot
