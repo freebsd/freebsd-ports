@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.2 1998/05/15 02:46:05 chuckr Exp $
+# $Id: Makefile,v 1.3 1998/07/27 00:25:29 steve Exp $
 #
 
 DISTNAME=	mpich-1.1.1
@@ -11,6 +11,11 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
 MAINTAINER=	dbader@eece.unm.edu
+
+SVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         MOUNT_NFS undeclared
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cflags="$(CFLAGS)"
