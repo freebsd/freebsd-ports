@@ -1,5 +1,5 @@
---- kdm/kfrontend/genkdmconf.c.orig	Wed May  8 14:21:31 2002
-+++ kdm/kfrontend/genkdmconf.c	Sat May 25 13:19:06 2002
+--- kdm/kfrontend/genkdmconf.c.orig	Wed Jun 26 12:37:51 2002
++++ kdm/kfrontend/genkdmconf.c	Wed Jun 26 12:39:42 2002
 @@ -402,7 +402,7 @@
  "# by Xsetup usually.\n"
  "# This is not required if you use PAM with the pam_console module.\n"
@@ -20,3 +20,12 @@
  "\n"
  #ifdef _AIX
  "if [ -f /usr/lib/X11/xdm/sessreg ]; then\n"
+@@ -1054,7 +1054,7 @@
+ { "Language",		"de_DE", 0 },
+ { "ShowUsers",		"None", 0 },
+ { "SelectedUsers",	"root,johndoe", 0 },
+-{ "HiddenUsers",	"adm,alias,amanda,apache,bin,bind,daemon,exim,falken,ftp,games,gdm,gopher,halt,httpd,ident,imnadm,ingres,kmem,lp,mail,mailnull,man,mta,mysql,named,news,nfsnobody,nobody,nscd,ntp,operator,pcap,pop,postfix,postgres,qmaild,qmaill,qmailp,qmailq,qmailr,qmails,radvd,reboot,rpc,rpcuser,rpm,sendmail,shutdown,squid,sympa,sync,tty,uucp,xfs,xten", 1 },
++{ "HiddenUsers",	"adm,alias,amanda,apache,bin,bind,daemon,exim,falken,ftp,games,gdm,gopher,halt,httpd,ident,imnadm,ingres,kmem,lp,mail,mailnull,man,mta,mysql,named,news,nfsnobody,nobody,nscd,ntp,operator,pcap,pop,postfix,postgres,qmaild,qmaill,qmailp,qmailq,qmailr,qmails,radvd,reboot,rpc,rpcuser,rpm,sendmail,shutdown,smmsp,squid,sympa,sync,tty,uucp,www,xfs,xten", 1 },
+ { "MinShowUID",		"1000", 0 },
+ { "MaxShowUID",		"29999", 0 },
+ { "SortUsers",		"false", 0 },
