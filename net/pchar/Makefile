@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	pchar
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
+MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS= --with-ipv6
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pchar
-	cd ${WRKSRC} ; ${INSTALL_DATA} README FAQ ${PREFIX}/share/doc/pchar
+	cd ${WRKSRC} ; ${INSTALL_DATA} README CHANGES FAQ ${PREFIX}/share/doc/pchar
 .endif
 
 .include <bsd.port.post.mk>
