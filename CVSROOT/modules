@@ -1690,6 +1690,7 @@ gff2ps		ports/biology/gff2ps
 gfont		ports/graphics/gfont
 gfontview	ports/print/gfontview
 gforth		ports/lang/gforth
+gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggsd		ports/net/ggsd
 ggv		ports/print/ggv
