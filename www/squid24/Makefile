@@ -28,6 +28,8 @@ DIST_SUBDIR=	squid2.4
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+USE_PERL5_BUILD=yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid \
