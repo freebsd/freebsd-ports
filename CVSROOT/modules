@@ -3224,6 +3224,7 @@ jailer		ports/sysutils/jailer
 jailutils	ports/sysutils/jailutils
 jakarta-ant	ports/devel/jakarta-ant
 jakarta-bcel	ports/java/jakarta-bcel
+jakarta-commons-cli	ports/java/jakarta-commons-cli
 jakarta-commons-collections	ports/java/jakarta-commons-collections
 jakarta-commons-lang	ports/java/jakarta-commons-lang
 jakarta-jmeter	ports/www/jakarta-jmeter
