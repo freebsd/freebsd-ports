@@ -4,6 +4,11 @@ Both Motif 1.2 and Motif 2.0 libraries are built and installed.
 By default, the 1.2 library is used because it is a more complete
 implementation of the Motif 1.2 API.
 
+The Hungry Programmers, the people writing LessTif, have adopted a
+naming scheme where an even minor number indicates a stable release
+of the libraries and an odd number is a development release. *Ports will
+be made for even number releases only.*
+
 WWW: http://www.lesstif.org
 
 --

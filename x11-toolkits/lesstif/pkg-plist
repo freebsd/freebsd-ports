@@ -4,12 +4,10 @@ LessTif/COPYING
 LessTif/COPYING.LIB
 LessTif/CREDITS
 LessTif/FAQ
-LessTif/INSTALL
 LessTif/KNOWN_BUGS
 LessTif/NEWS
 LessTif/README
 LessTif/RELEASE-POLICY
-LessTif/TODO
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
 LessTif/Motif1.2/include/Mrm/MrmPrivate.h
@@ -157,6 +155,7 @@ LessTif/Motif2.0/include/Xm/BulletinB.h
 LessTif/Motif2.0/include/Xm/BulletinBP.h
 LessTif/Motif2.0/include/Xm/CSText.h
 LessTif/Motif2.0/include/Xm/CacheP.h
+LessTif/Motif2.0/include/Xm/CareVisualT.h
 LessTif/Motif2.0/include/Xm/CascadeB.h
 LessTif/Motif2.0/include/Xm/CascadeBG.h
 LessTif/Motif2.0/include/Xm/CascadeBGP.h
@@ -165,7 +164,9 @@ LessTif/Motif2.0/include/Xm/ComboBox.h
 LessTif/Motif2.0/include/Xm/ComboBoxP.h
 LessTif/Motif2.0/include/Xm/Command.h
 LessTif/Motif2.0/include/Xm/CommandP.h
+LessTif/Motif2.0/include/Xm/ContItemT.h
 LessTif/Motif2.0/include/Xm/Container.h
+LessTif/Motif2.0/include/Xm/ContainerP.h
 LessTif/Motif2.0/include/Xm/ContainerT.h
 LessTif/Motif2.0/include/Xm/CutPaste.h
 LessTif/Motif2.0/include/Xm/CutPasteP.h
@@ -255,6 +256,7 @@ LessTif/Motif2.0/include/Xm/SeparatoGP.h
 LessTif/Motif2.0/include/Xm/Separator.h
 LessTif/Motif2.0/include/Xm/SeparatorP.h
 LessTif/Motif2.0/include/Xm/ShellEP.h
+LessTif/Motif2.0/include/Xm/SpecRenderT.h
 LessTif/Motif2.0/include/Xm/SpinB.h
 LessTif/Motif2.0/include/Xm/SpinBP.h
 LessTif/Motif2.0/include/Xm/TearOffBP.h
@@ -296,36 +298,6 @@ LessTif/Motif2.0/lib/libXm.a
 LessTif/Motif2.0/lib/libXm.la
 LessTif/Motif2.0/lib/libXm.so
 LessTif/Motif2.0/lib/libXm.so.2
-LessTif/doc/COPYING.LIB.html
-LessTif/doc/FAQ.html
-LessTif/doc/INSTALL.html
-LessTif/doc/apps.html
-LessTif/doc/bug-reporting.html
-LessTif/doc/bugs.html
-LessTif/doc/button.html
-LessTif/doc/cdrom.html
-LessTif/doc/core.html
-LessTif/doc/current.html
-LessTif/doc/cvs.html
-LessTif/doc/download.html
-LessTif/doc/index.html
-LessTif/doc/links.html
-LessTif/doc/lists.html
-LessTif/doc/mirrors.html
-LessTif/doc/platforms.html
-LessTif/doc/release-policy.html
-LessTif/doc/test_policy.html
-LessTif/doc/test_summary.html
-LessTif/doc/testers.html
-LessTif/doc/versions.html
-LessTif/doc/web_button.html
-LessTif/doc/images/hungry.gif
-LessTif/doc/images/lesstif-realsmall.gif
-LessTif/doc/images/lesstif-small.gif
-LessTif/doc/images/lesstif.gif
-LessTif/doc/images/ltsunlogo.gif
-LessTif/doc/imgs/lesstif.jpg
-LessTif/doc/imgs/ltsunlogo.gif
 @dirrm LessTif/Motif1.2/include/Mrm
 @dirrm LessTif/Motif1.2/include/Xm
 @dirrm LessTif/Motif1.2/include
@@ -336,12 +308,11 @@ LessTif/doc/imgs/ltsunlogo.gif
 @dirrm LessTif/Motif2.0/include
 @dirrm LessTif/Motif2.0/lib
 @dirrm LessTif/Motif2.0
-@dirrm LessTif/doc/html
-LessTif/doc/Lessdox
-@dirrm LessTif/doc/images
-@dirrm LessTif/doc/imgs
-@dirrm LessTif/doc
 @dirrm LessTif
+bin/mwm
+bin/uil
+bin/mxmkmf
+bin/xmbind
 include/Mrm
 include/Xm
 lib/libXm.a
@@ -355,6 +326,9 @@ lib/libMrm.la
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/X11/app-defaults/Mwm
+lib/X11/config/Imake.tmpl
+lib/X11/config/Motif.rules
+lib/X11/config/Motif.tmpl
 lib/X11/mwm/README
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc

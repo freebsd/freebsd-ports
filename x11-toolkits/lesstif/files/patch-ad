@@ -1,6 +1,6 @@
---- doc/lessdox/functions/Makefile.in.orig	Fri Apr 23 11:54:57 1999
-+++ doc/lessdox/functions/Makefile.in	Fri Apr 23 11:55:34 1999
-@@ -114,10 +114,10 @@
+--- doc/lessdox/functions/Makefile.in.orig	Mon Nov  8 13:17:08 1999
++++ doc/lessdox/functions/Makefile.in	Mon Nov  8 13:17:55 1999
+@@ -120,10 +120,10 @@
  EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -14,4 +14,4 @@
 +man5dir = $(mandir)/man5
  
  man1_DATA = 
- man3_DATA =  	XtConfigureObject.3 XtDestroyWidget.3         XtManageChild.3 XtUnmanageChild.3
+ man3_DATA = 
