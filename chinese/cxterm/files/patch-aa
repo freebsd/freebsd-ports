@@ -1,0 +1,21 @@
+--- cxterm/misc.c.orig	Tue Jan 17 02:57:48 1995
++++ cxterm/misc.c	Sat Aug 10 05:46:57 1996
+@@ -34,6 +34,7 @@
+  * SOFTWARE.
+  */
+ 
++#include <sys/param.h>
+ #include "ptyx.h"		/* X headers included here. */
+ 
+ #include <X11/Xos.h>
+@@ -796,8 +797,10 @@
+ char *SysErrorMsg (n)
+     int n;
+ {
++#if !(defined(BSD) && (BSD >= 199306))
+     extern char *sys_errlist[];
+     extern int sys_nerr;
++#endif
+ 
+     return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");
+ }
