@@ -1,2 +1,6 @@
 bin/firefox-remote
 bin/thunderbird-remote
+%%MENU_FIREFOX%%share/gnome/applications/mozilla_firefox.desktop
+%%MENU_THUNDERBIRD%%share/gnome/applications/mozilla_thunderbird.desktop
+%%MENU_FIREFOX%%share/gnome/pixmaps/mozilla_firefox.png
+%%MENU_THUNDERBIRD%%share/gnome/pixmaps/mozilla_thunderbird.png
