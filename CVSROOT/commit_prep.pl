@@ -183,9 +183,9 @@ $directory =~ s,^$cvsroot[/]+,,;
 if ($directory =~ /^src/) {
 	$check_id = 1;
 }
-#if ($directory =~ /^ports/) {
-#	$check_id = 2;
-#}
+if ($directory =~ /^ports/) {
+	$check_id = 2;
+}
 if ($directory =~ /^src\/contrib/) {
 	$check_id = 3;
 }
