@@ -22,7 +22,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	udo.schweigert@siemens.com
 
 DIST_SUBDIR=    mutt
-GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
@@ -32,7 +31,8 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 .include <bsd.port.pre.mk>
 
 USE_AUTOCONF=	yes
-AUTOCONF=	autoconf
+USE_AUTOMAKE=	yes
+USE_GMAKE=	yes
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
 		defined(WITH_MUTT_RU_PATCH) || defined(WITH_MUTT_QUOTE_PATCH)
@@ -42,12 +42,18 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
 .endif
 
+# XXX
+# this should be done automagically by aclocal but ....
+# for now, this will have to do
+pre-build:
+	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
+		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+		${BUILD_WRKSRC}/Makefile
+
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
 
-BUILD_DEPENDS+=	automake:${PORTSDIR}/devel/automake \
-		autoconf:${PORTSDIR}/devel/autoconf
 .if defined(PACKAGE_BUILDING)
 WITH_MUTT_SLANG=	yes
 WITH_MUTT_IMAP=		yes
@@ -134,7 +140,7 @@ post-patch::
 	 @${CHMOD} 700 ${WRKSRC}/patchlist.sh
 
 pre-configure::
-	(cd ${WRKSRC}; aclocal -I m4)
+	@(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
 .if !defined(NOPORTDOCS)
 post-build:
