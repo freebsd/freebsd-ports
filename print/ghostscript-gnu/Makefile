@@ -521,7 +521,7 @@ pre-build:
 	${LN} -sf ${WRKSRC}/${LEX7000}/src/${i} ${WRKSRC}/src
 .endfor
 
-pre-install:
+pre-su-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
