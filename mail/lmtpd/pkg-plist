@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/filtercheck
+bin/lmtpdlogsum
 etc/lmtpd.conf.dist
 libexec/lmtpd
 share/nls/C/filtercheck.cat
