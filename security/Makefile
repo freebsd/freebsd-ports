@@ -371,6 +371,7 @@
     SUBDIR += sniff
     SUBDIR += snort
     SUBDIR += snort-rep
+    SUBDIR += snortreport
     SUBDIR += snortsnarf
     SUBDIR += srm
     SUBDIR += srp

@@ -1,0 +1,31 @@
+www/snortreport/DB.php
+www/snortreport/DB_mysql.php
+www/snortreport/DB_pgsql.php
+www/snortreport/alertchart.php
+www/snortreport/alerts.php
+www/snortreport/functions.php
+www/snortreport/index.php
+www/snortreport/info-retrieval.php
+www/snortreport/ipdetail.php
+www/snortreport/page_bottom.php
+www/snortreport/page_top.php
+www/snortreport/portscan.php
+www/snortreport/profiling.phps
+www/snortreport/psdetail.php
+www/snortreport/sig-by-time-chart.php
+www/snortreport/sigdetail.php
+www/snortreport/srconf.php
+www/snortreport/timespan.php
+www/snortreport/default.css
+www/snortreport/go.png
+www/snortreport/nodata.png
+www/snortreport/srlogo.png
+www/snortreport/menu.html
+www/snortreport/ssm.js
+www/snortreport/ssmItems.js
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/Performance.txt
+%%PORTDOCS%%%%DOCSDIR%%/create_indexes.sql
+@dirrm www/snortreport
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
