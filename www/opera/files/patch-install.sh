@@ -1,5 +1,14 @@
 --- install.sh.orig	Tue Jun  1 12:35:02 2004
 +++ install.sh	Tue Jun  1 19:40:04 2004
+@@ -373,7 +373,7 @@
+ 	    mvv=''    # SunOS mv (no -v verbose option)
+ 	;;
+ 
+-	i[3456]86:FreeBSD|i[3456]86:NetBSD)
++	i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD)
+ 		cpf='-f'
+ 		if test "$verbose" -gt '1'; then
+ 		    chmodv='-v'
 @@ -760,12 +760,10 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
