@@ -47,6 +47,7 @@ share/gnome/idl/gnome-pilot.idl
 share/gnome/mime-info/palm.keys
 share/gnome/mime-info/palm.mime
 share/gnome/omf/gnome-pilot/gnome-pilot-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-pilot/gnome-pilot-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-palm-conduit.png
 share/gnome/pixmaps/gnome-palm.png
 share/gnome/pixmaps/sync_broken.png
@@ -88,3 +89,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
 @dirrm include/gpilotd
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-pilot/gnome-pilot-C.omf 2>/dev/null || /usr/bin/true
