@@ -1,0 +1,11 @@
+Sendmail implements a general purpose internetwork mail routing facility
+under the UNIX operating system.  It is not tied to any one transport
+protocol - its function may be likened to a crossbar switch, relaying
+messages from one domain into another.  In the process, it can do a limited
+amount of message header editing to put the message into a format that is
+appropriate for the receiving domain.  All of this is done under the
+control of a configuration file.
+
+Sendmail is a trademark of Sendmail, Inc.
+
+WWW: http://www.sendmail.org/
