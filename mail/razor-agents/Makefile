@@ -38,7 +38,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 580000
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
