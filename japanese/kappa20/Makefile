@@ -13,6 +13,7 @@ MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
 DISTNAME=	Kappa20-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kappa20 \
 		${AYUDISTNAME}${AYU_SUFFIX}:ayu20
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	X11 20-dot kanji font 'Kappa20dot + ayu font'
