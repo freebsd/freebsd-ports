@@ -412,7 +412,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
      when the mode is not restrictive enough. In addition, the output
      directory is created with world writable permissions allowing other
      users to drop symlinks or other files at that location.</p>
-    </body> 
+    </body>
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
@@ -424,6 +424,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <entry>2005-02-01</entry>
    </dates>
   </vuln>
+
   <vuln vid="35f6093c-73c3-11d9-8a93-00065be4b5b6">
    <topic>newsgrab -- directory traversal vulnerability</topic>
     <affects>
@@ -441,7 +442,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
      could cause newsgrab to drop an attachment anywhere on the
      file system using the permissions of the user running the
      script.</p>
-    </body> 
+    </body>
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
@@ -471,7 +472,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       overflow by sending an overly long response. Such an overflow allows
       arbitrary code to be executed, with the privileges of the newspost
       process, on the affected systems.</p>
-    </body> 
+    </body>
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newspost-20050114.txt</url>
@@ -482,6 +483,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <entry>2005-02-01</entry>
    </dates>
   </vuln>
+
   <vuln vid="76e0b133-6bfd-11d9-a5df-00065be4b5b6">
    <topic>newsfetch -- server response buffer overflow vulnerability</topic>
    <affects>
@@ -497,7 +499,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        this is done without any proper bounds checking. As a result long
        server responses may cause an overflow when a newsgroup listing is
        requested from an NNTP server.</p>
-    </body> 
+    </body>
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsfetch-20050119.txt</url>
@@ -508,6 +510,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <entry>2005-02-01</entry>
    </dates>
   </vuln>
+
   <vuln vid="23fb5a04-722b-11d9-9e1e-c296ac722cb3">
     <topic>squid -- buffer overflow in WCCP recvfrom() call</topic>
     <affects>
@@ -537,16 +540,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-        <cvename>CAN-2005-0211</cvename>
-        <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
-	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
-	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1217</url>
-	<cvename>886006</cvename>
+      <cvename>CAN-2005-0211</cvename>
+      <certvu>886006</certvu>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1217</url>
     </references>
     <dates>
       <discovery>2005-01-28</discovery>
       <entry>2005-01-28</entry>
-      <modified>2005-02-08</modified>
+      <modified>2005-02-13</modified>
     </dates>
   </vuln>
 
@@ -2113,7 +2116,7 @@ http_access deny Gopher</pre>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>The setuid root elvprsv utility, used to preserve
 	 recovery helvis files, can be abused by local users to delete
-        with root privileges.</p> 
+        with root privileges.</p>
 	<p>The problem is that elvprsv deletes files when it thinks they
 	have become corrupt. When elvprsv is pointed to a normal file then
 	it will almost always think the file is corrupt and deletes it.
@@ -3134,7 +3137,7 @@ http_access deny Gopher</pre>
         MySQL bug report. Attackers that have control of a MySQL account
         can easily use a modified version of that script during an attack. </p>
        </body>
-     </description>      
+     </description>
      <references>
         <cvename>CAN-2004-0837</cvename>
         <bid>11357</bid>
@@ -3251,7 +3254,7 @@ http_access deny Gopher</pre>
      </references>
      <dates>
        <discovery>2004-03-23</discovery>
-       <entry>2004-12-16</entry>        
+       <entry>2004-12-16</entry>
      </dates>
    </vuln>
 
