@@ -1,0 +1,12 @@
+pbnc runs in userland and acts as a simple TCP port forwarder.
+It  has  a  single-threaded design  (uses  select(),  does not
+fork). It can handle multiple targets with an unlimited number
+of clients (at least in theory), and supports simple  IP-based
+access control. Since pbnc works on network level, it does not
+care  about  the  application  protocol.  It  can  tunnel  FTP
+(control connection), SSH, HTTP and all other protocols  using
+TCP  communication.  Application-level  SSL/TLS  encryption is
+also no problem.
+
+WWW: http://duncanthrax.net/pbnc/
+WWW: http://freshmeat.net/projects/pbnc/
