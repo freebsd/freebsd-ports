@@ -13,6 +13,6 @@ Bitmap-mule, Package to use bitmap in Emacs20.
 	- vm-bitmap.el:		VM related functions for x-face-mule.el
 
   Bitmap-mule is installed the following directory tree:
-	${LOCALBASE}/share/emacs/site-lisp/bitmap/	--- Bitmap-mule
+	${LOCALBASE}/share/emacs/20.7/site-lisp/bitmap/
 
---- Porting by shige <shige@FreeBSD.org>
+Ported by shige@FreeBSD.org.
