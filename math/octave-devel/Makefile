@@ -10,10 +10,10 @@ PORTVERSION=	2.1.30
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
-USE_BZIP2=	yes
 
 MAINTAINER=	chuckr@FreeBSD.org
 
+USE_BZIP2=	yes
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
