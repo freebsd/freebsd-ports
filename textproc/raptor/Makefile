@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
 MASTER_SITE_SUBDIR=	librdf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chuck@pkix.net
 COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
