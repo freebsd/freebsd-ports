@@ -18,6 +18,7 @@ include/libxml2/libxml/nanoftp.h
 include/libxml2/libxml/nanohttp.h
 include/libxml2/libxml/parser.h
 include/libxml2/libxml/parserInternals.h
+include/libxml2/libxml/relaxng.h
 include/libxml2/libxml/schemasInternals.h
 include/libxml2/libxml/threads.h
 include/libxml2/libxml/tree.h
@@ -48,6 +49,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/TODO
 %%PYTHON:%%share/doc/libxml2-python/examples/attribs.py
 %%PYTHON:%%share/doc/libxml2-python/examples/build.py
+%%PYTHON:%%share/doc/libxml2-python/examples/ctxterror.py
 %%PYTHON:%%share/doc/libxml2-python/examples/cutnpaste.py
 %%PYTHON:%%share/doc/libxml2-python/examples/error.py
 %%PYTHON:%%share/doc/libxml2-python/examples/inbuf.py
@@ -59,6 +61,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/reader.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader2.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader3.py
+%%PYTHON:%%share/doc/libxml2-python/examples/readererr.py
 %%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
 %%PYTHON:%%share/doc/libxml2-python/examples/resolver.py
 %%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
