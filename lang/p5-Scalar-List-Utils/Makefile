@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Scalar-List-Utils
-PORTVERSION=	1.09
+PORTVERSION=	1.11
 PORTEPOCH=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	Scalar
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl subroutines that would be nice to have in the perl core
 
 PERL_CONFIGURE=	yes
 
 MAN3=		List::Util.3 Scalar::Util.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
