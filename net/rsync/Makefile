@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.19 1998/12/08 21:40:06 billf Exp $
+# $Id: Makefile,v 1.20 1998/12/09 03:03:13 billf Exp $
 #
 
 DISTNAME=	rsync-2.2.1
@@ -19,6 +19,11 @@ MAINTAINER=     obrien@FreeBSD.org
 GNU_CONFIGURE=	yes
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
+
+pre-configure:
+	@${MV} ${WRKSRC}/rsync.1 ${WRKSRC}/rsync.1.in
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g'  \
+		${WRKSRC}/rsync.1.in > ${WRKSRC}/rsync.1
 
 post-install:
 	@strip ${PREFIX}/bin/rsync
