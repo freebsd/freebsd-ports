@@ -1,0 +1,5 @@
+This game is installed as ${LOCALBASE}/bin/enigma (most likely
+/usr/local/bin/enigma). If you run "enigma", you might end up in
+/usr/bin/enigma (very simple file encryption).
+
+To play the game, please use "/usr/local/bin/enigma"
