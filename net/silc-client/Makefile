@@ -7,7 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
+PLIST_SUB+=	ARCH="${ARCH}-freebsd"
 PKGDEINSTALL=	${PKGINSTALL}
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
