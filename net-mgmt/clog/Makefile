@@ -9,8 +9,8 @@
 PORTNAME=	clog
 PORTVERSION=	1.6
 CATEGORIES=	net security
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Tcp connection logger daemon
