@@ -1,6 +1,9 @@
---- Makefile.orig	Sun Dec 14 18:21:44 2003
-+++ Makefile	Sun Jan 25 07:38:41 2004
-@@ -83,6 +83,26 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -143,6 +143,26 @@
  
  else
  # ----------------------------------------------------------------------------
@@ -27,20 +30,20 @@
  # Irix
  # ----------------------------------------------------------------------------
  ifeq ($(patsubst IRIX%,IRIX,$(SYSTEM)), IRIX)
-@@ -158,6 +179,7 @@
+@@ -228,6 +248,7 @@
  endif
  endif
  endif
 +endif
  
- AR = ar
- INSTALL = install
-@@ -171,7 +193,7 @@
+ ifeq (undefined, $(origin SHARED_OBJ_EXT))
+ SHARED_OBJ_EXT = o
+@@ -245,7 +266,7 @@
  STRIP = -s
  endif
  INCLUDE = -Iinclude
 -CFLAGS = $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
-+CFLAGS += $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
++CFLAGS += $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA) -fPIC
  
  LIB.SRCS = src/glew.c
  LIB.OBJS = $(LIB.SRCS:.c=.o)
