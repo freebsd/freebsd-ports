@@ -32,6 +32,10 @@ WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securit
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
+.if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
+BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
+	 	illegibly. Please remove the mozilla-fonts package.
+.endif
 .endif
 
 LATEST_LINK=	mozilla-devel
