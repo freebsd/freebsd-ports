@@ -1,0 +1,26 @@
+*** xengine.c~	Wed Oct  3 10:58:17 1990
+--- xengine.c	Sun Dec  8 22:17:43 1996
+***************
+*** 180,191 ****
+  
+  	Arg             args[10];
+  
+! 	XtSetArg(args[0], XtNwidth, 0);
+! 	XtSetArg(args[1], XtNheight, 0);
+  	XtGetValues(w, args, 2);
+- 
+- 	width = args[0].value;
+- 	height = args[1].value;
+  
+  	XFreePixmap(XtDisplay(engine), enginePixmap);
+  	enginePixmap = XCreatePixmap(XtDisplay(engine), XtWindow(engine), width, height, DefaultDepthOfScreen(XtScreen(engine)));
+--- 180,188 ----
+  
+  	Arg             args[10];
+  
+! 	XtSetArg(args[0], XtNwidth, &width);
+! 	XtSetArg(args[1], XtNheight, &height);
+  	XtGetValues(w, args, 2);
+  
+  	XFreePixmap(XtDisplay(engine), enginePixmap);
+  	enginePixmap = XCreatePixmap(XtDisplay(engine), XtWindow(engine), width, height, DefaultDepthOfScreen(XtScreen(engine)));
