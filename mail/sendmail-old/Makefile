@@ -59,13 +59,17 @@ MAN8=	sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 	mail.local.8 rmail.8
 
 pre-install:
-	${CAT} ${PKGDIR}/pkg-plist >${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
+.if defined(SENDMAIL_WITH_MILTER)
+	@${ECHO} "libexec/sample" >>${PLIST}
+	@${ECHO} "libexec/vbsfilter-1.3" >>${PLIST}
+.endif
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && find cf -type f | \
+	@cd ${WRKSRC} && find cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
-	cd ${WRKSRC} && find -d cf -type d | \
+	@cd ${WRKSRC} && find -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
-	${ECHO} "@dirrm share/sendmail" >>${PLIST}
+	@${ECHO} "@dirrm share/sendmail" >>${PLIST}
 .endif
 
 # We want mail.local and rmail for our system.
@@ -90,17 +94,44 @@ post-install:
 	@cd ${WRKSRC}; ${TAR} cf - cf |\
 		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
 .endif
+.if defined(SENDMAIL_WITH_MILTER)
+	${INSTALL_PROGRAM} ${WRKSRC}/sample ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-1.3 ${PREFIX}/libexec
+.endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
 mailer.conf:
-	${SED} \
+	@${SED} \
 	-e "s=^sendmail[ 	]*/.*$$=sendmail	${SENDMAIL}=" \
 	-e "s=^send-mail[ 	]*/.*$$=send-mail	${SENDMAIL}=" \
 	-e "s=^mailq[ 	]*/.*$$=mailq		${SENDMAIL}=" \
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
 	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new ${DESTDIR}/etc/mail/mailer.conf
+.endif
+
+.if defined(SENDMAIL_WITH_MILTER)
+MASTER_SITES+=	http://aeschi.ch.eu.org/milter/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} vbsfilter-1.3.c
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+post-extract:
+	@${CP} ${_DISTDIR}vbsfilter-1.3.c ${WRKSRC}
+	@${SED}  -e '1,184d' -e '417,419d' ${WRKSRC}/libmilter/README \
+		> ${WRKSRC}/sample.c
+
+post-patch:
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/vbsfilter-1.3.c.patch
+
+post-configure:
+	${CAT} ${FILESDIR}/site.config.m4.milter >>${WCONF}/site.config.m4
+
+post-build:
+	( cd ${WRKSRC}/libmilter && ${MAKE} )
+	( cd ${WRKSRC} && \
+	${MAKE} -f ${FILESDIR}/Makefile.milter SENDMAIL_SOURCE=${WRKSRC} \
+	SENDMAIL_OBJECT=${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A` )
 .endif
 
 .include <bsd.port.mk>
