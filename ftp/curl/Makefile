@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.12.1
+PORTVERSION=	7.12.3
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -66,10 +66,12 @@ PLIST_SUB+=	SSL="@comment "
 CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
-# Note: some of these tests seem to intermittently fail on my system.
-# I don't know why they would do that, yet.
+CONFIGURE_ARGS += --without-libidn
+
+# Setting LANG=C is a kludge; maybe curl/libcurl shouldn't actually use
+# the user's locale when dates are sent to the server.
 test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LANG=C ${MAKE} test
 
 .if !defined(NOPORTDOCS)
 post-install:
