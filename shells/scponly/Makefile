@@ -15,6 +15,11 @@
 #
 # Core funcionality:
 #
+# SCPONLY_DEFAULT_CHDIR=DIR
+# default: undefined
+# example: public_html
+# define if you want to make users `cd' to this directory after authentication
+#
 # WITHOUT_SCPONLY_WILDCARDS
 # default: undefined
 # define if you want to disable wildcard processing.
@@ -39,6 +44,10 @@
 # default: undefined
 # define if you want to enable rsync compatibility.
 #
+# WITH_SCPONLY_SVN
+# default: undefined
+# define if you want to enable subversion compatibility.
+#
 # WITH_SCPONLY_UNISON
 # default: undefined
 # define if you want to enable unison compatibility.
@@ -53,7 +62,7 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	3.11
+PORTVERSION=	4.0
 PORTREVISION=	0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
@@ -68,6 +77,10 @@ GNU_CONFIGURE=	yes
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 
 .include <bsd.port.pre.mk>
+
+.if defined(SCPONLY_DEFAULT_CHDIR) && !empty(SCPONLY_DEFAULT_CHDIR)
+CONFIGURE_ARGS+=--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
+.endif
 
 .if defined(WITHOUT_SCPONLY_WILDCARDS)
 CONFIGURE_ARGS+=--disable-wildcards
@@ -91,9 +104,15 @@ CONFIGURE_ARGS+=--enable-chrooted-binary
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
-BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
+.endif
+
+.if defined(WITH_SCPONLY_SVN)
+BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+CONFIGURE_ARGS+=--enable-svn-compat
 .endif
 
 .if defined(WITH_SCPONLY_UNISON)
