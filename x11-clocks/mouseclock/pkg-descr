@@ -1,0 +1,7 @@
+Mouseclock is a little program to display the current time using 
+the X root cursor.
+
+See README for details.
+
+Orignal mouseclock written by santini@chambord.univ-orleans.fr.
+This port is done by furusawa@com.cs.osakafu-u.ac.jp.
