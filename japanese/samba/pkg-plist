@@ -87,7 +87,6 @@ etc/rc.d/samba.sh
 etc/smb.conf.default
 %%AUDIT%%lib/samba/audit.so
 %%RECYCLE%%lib/samba/recycle.so
-private/smbpasswd.sample
 sbin/nmbd
 sbin/smbd
 sbin/swat
