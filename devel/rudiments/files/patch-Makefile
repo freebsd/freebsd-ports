@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Aug  5 18:41:03 2004
++++ Makefile	Thu Aug 26 16:50:16 2004
+@@ -32,7 +32,7 @@
+ 
+ install-pc:
+ 	$(MKINSTALLDIRS) $(libdir)/pkgconfig
+-	$(INSTALL) -m 0644 rudiments.pc $(libdir)/pkgconfig/rudiments.pc
++	$(INSTALL) -m 0644 rudiments.pc $(prefix)/libdata/pkgconfig/rudiments.pc
+ 
+ install: install-libs install-includes install-bin install-doc install-pc
+ 
