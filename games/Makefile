@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.53 1997/01/13 07:45:33 tg Exp $
+# $Id: Makefile,v 1.54 1997/02/01 15:06:56 max Exp $
 #
 
     SUBDIR += acm
@@ -12,6 +12,7 @@
     SUBDIR += golddig
     SUBDIR += imaze
     SUBDIR += jetpack
+    SUBDIR += lincity
     SUBDIR += nethack
     SUBDIR += oneko
     SUBDIR += qcc
