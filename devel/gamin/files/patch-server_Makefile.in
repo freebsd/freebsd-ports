@@ -1,0 +1,47 @@
+--- server/Makefile.in.orig	Thu Mar 24 23:04:39 2005
++++ server/Makefile.in	Thu Mar 24 23:07:52 2005
+@@ -43,6 +43,7 @@
+ libexec_PROGRAMS = gam_server$(EXEEXT)
+ @ENABLE_INOTIFY_TRUE@am__append_2 = gam_inotify.c gam_inotify.h
+ @ENABLE_DNOTIFY_TRUE@am__append_3 = gam_dnotify.c gam_dnotify.h
++@ENABLE_KQUEUE_TRUE@am__append_4 = gam_kqueue.c gam_kqueue.h
+ subdir = server
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -63,15 +64,16 @@
+ 	gam_connection.h gam_debugging.h gam_debugging.c \
+ 	gam_excludes.c gam_excludes.h local_inotify.h \
+ 	gam_debug_lists.c gam_inotify.c gam_inotify.h gam_dnotify.c \
+-	gam_dnotify.h
++	gam_dnotify.h gam_kqueue.c gam_kqueue.h
+ @ENABLE_INOTIFY_TRUE@am__objects_1 = gam_inotify.$(OBJEXT)
+ @ENABLE_DNOTIFY_TRUE@am__objects_2 = gam_dnotify.$(OBJEXT)
++@ENABLE_KQUEUE_TRUE@am__objects_3 = gam_kqueue.$(OBJEXT)
+ am_gam_server_OBJECTS = gam_subscription.$(OBJEXT) \
+ 	gam_listener.$(OBJEXT) gam_server.$(OBJEXT) gam_node.$(OBJEXT) \
+ 	gam_tree.$(OBJEXT) gam_poll.$(OBJEXT) gam_channel.$(OBJEXT) \
+ 	gam_connection.$(OBJEXT) gam_debugging.$(OBJEXT) \
+ 	gam_excludes.$(OBJEXT) gam_debug_lists.$(OBJEXT) \
+-	$(am__objects_1) $(am__objects_2)
++	$(am__objects_1) $(am__objects_2) $(am__objects_3)
+ gam_server_OBJECTS = $(am_gam_server_OBJECTS)
+ am__DEPENDENCIES_1 =
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -236,7 +238,8 @@
+ 	gam_poll.h gam_channel.c gam_channel.h gam_connection.c \
+ 	gam_connection.h gam_debugging.h gam_debugging.c \
+ 	gam_excludes.c gam_excludes.h local_inotify.h \
+-	gam_debug_lists.c $(am__append_2) $(am__append_3)
++	gam_debug_lists.c $(am__append_2) $(am__append_3) \
++	$(am__append_4)
+ gam_server_LDFLAGS = 
+ gam_server_DEPENDENCIES = $(DEPS)
+ gam_server_LDADD = $(top_builddir)/lib/libgamin_shared.a $(LDADDS) $(LIBGAMIN_LIBS)
+@@ -316,6 +319,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_debug_lists.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_debugging.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_dnotify.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_kqueue.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_excludes.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_inotify.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gam_listener.Po@am__quote@

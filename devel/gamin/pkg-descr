@@ -1,0 +1,5 @@
+Gamin is a file and directory monitoring system defined to be a subset of the
+FAM (File Alteration Monitor) system. This is a service provided by a library
+which allows to detect when a file or a directory has been modified.
+
+WWW: http://www.gnome.org/~veillard/gamin/index.html

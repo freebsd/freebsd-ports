@@ -1,0 +1,12 @@
+--- config.h.in.orig	Thu Mar 24 23:41:54 2005
++++ config.h.in	Thu Mar 24 23:42:12 2005
+@@ -6,6 +6,9 @@
+ /* Use inotify as backend */
+ #undef ENABLE_INOTIFY
+ 
++/* Use kqueue as backend */
++#undef ENABLE_KQUEUE
++
+ /* Use polling as backend */
+ #undef ENABLE_POLLING
+ 

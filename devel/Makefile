@@ -271,6 +271,7 @@
     SUBDIR += g-wrap
     SUBDIR += g2c
     SUBDIR += gaa
+    SUBDIR += gamin
     SUBDIR += gaphor
     SUBDIR += gauche-gaunit
     SUBDIR += gauche-readline
