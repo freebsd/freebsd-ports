@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,8 @@ MAINTAINER=	stijn@win.tue.nl
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm-0.98:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+		png.4:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
