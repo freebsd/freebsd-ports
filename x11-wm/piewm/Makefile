@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piewm
-PORTVERSION= 	1.03
+PORTVERSION=	1.03
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmanager
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://kassandra.techfak.uni-bielefeld.de/mtessmer/wmanager/
 EXTRACT_SUFX=	.src.tar.bz2

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	olvwm
-PORTVERSION= 	4.2
+PORTVERSION=	4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		${MASTER_SITE_XCONTRIB}

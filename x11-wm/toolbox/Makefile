@@ -7,7 +7,7 @@
 
 PORTNAME=	toolbox
 PORTVERSION=	0.4.6
-CATEGORIES= 	x11-wm
+CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2.bc.edu/~kelleyry/toolbox/
 
 MAINTAINER=	patseal@hyperhost.net

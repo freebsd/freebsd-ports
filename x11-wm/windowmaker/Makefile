@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION= 	0.63.1
+PORTVERSION=	0.63.1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm95-i18n
-PORTVERSION= 	2.0.43a
+PORTVERSION=	2.0.43a
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/ \
 		ftp://ftp.plig.org/pub/fvwm95/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epplets
-PORTVERSION= 	0.5
+PORTVERSION=	0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/e/epplets/
 DISTNAME=	epplet-base-${PORTVERSION}

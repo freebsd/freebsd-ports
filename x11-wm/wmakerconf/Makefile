@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION= 	2.7
+PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
