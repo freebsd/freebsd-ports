@@ -93,7 +93,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>lha</name>
-	<range><le>1.14i_2</le></range>
+	<range><lt>1.14i_4</lt></range>
       </package>
     </affects>
     <description>
@@ -114,6 +114,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
+      <modified>2004-05-03</modified>
     </dates>
   </vuln>
 
