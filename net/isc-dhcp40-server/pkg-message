@@ -17,11 +17,18 @@
 	    dhcpd_withuser="dhcpd"			# user name to run as
 	    dhcpd_withgroup="dhcpd"			# group name to run as
 	    dhcpd_chroot_enable="YES"			# runs chrooted?
-	    dhcpd_devfs_enable="YES"		      # uses devfs if available?
+	    dhcpd_devfs_enable="YES"		      # use devfs if available?
+	    dhcpd_makedev_enable="YES"		      # use MAKEDEV instead?
 	    dhcpd_rootdir="/var/db/dhcpd"		# directory to run in
+	    dhcpd_includedir="<some_dir>"		# directory with config-
+							  files to include
 	    dhcpd_flags="-early_chroot"			# needs full root
 
-      WARNING: -early_chroot requires a jail(8) like environment to works.
+      WARNING: -early_chroot requires a jail(8) like environment to work.
+
+      WARNING: dhcpd_devfs_enable and dhcpd_makedev_enable are mutually
+               exclusive 
+               dhcpd_makedev_enable make NO sense on FreeBSD 5.x and up!
 
 ****  If compiled with jail support (the default), the following lines are
       also supported (-early_chroot and dhcpd_chroot_enable=YES are implied):
