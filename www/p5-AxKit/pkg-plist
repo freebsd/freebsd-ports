@@ -6,6 +6,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Exception.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/AxPoint.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/LibXSLT.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/PassiveTeX.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/Sablot.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XMLNewsNITF.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Language/XMLNewsRDF.pm
@@ -16,6 +17,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Makefile.PL
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/MediaChooser/WAPCheck.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/Fragment.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/Passthru.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugins/QueryStringCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/Filter.pm
@@ -36,6 +38,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/AxKit.so
 share/examples/AxKit/axkit.org/docs/associating_stylesheets.xml
 share/examples/AxKit/axkit.org/docs/index.xml
 share/examples/AxKit/axkit.org/docs/introduction.dkb
+share/examples/AxKit/axkit.org/docs/presentations/tpc2001/ax_logo.png
+share/examples/AxKit/axkit.org/docs/presentations/tpc2001/redbg.png
+share/examples/AxKit/axkit.org/docs/presentations/tpc2001/tpc-axkit.axp
 share/examples/AxKit/axkit.org/docs/provider-howto.dkb
 share/examples/AxKit/axkit.org/docs/quick_start.dkb
 share/examples/AxKit/axkit.org/docs/xpathscript/guide.dkb
@@ -78,10 +83,16 @@ share/examples/AxKit/axkit.org/sidebar.xml
 share/examples/AxKit/axkit.org/sidebar_new.xml
 share/examples/AxKit/axkit.org/stylesheets/axkit.css
 share/examples/AxKit/axkit.org/stylesheets/axkit_html.css
+share/examples/AxKit/axkit.org/stylesheets/body_print_html.xps
+share/examples/AxKit/axkit.org/stylesheets/body_tag_html.xps
 share/examples/AxKit/axkit.org/stylesheets/docbook_example.xml
 share/examples/AxKit/axkit.org/stylesheets/docbook_print.xps
 share/examples/AxKit/axkit.org/stylesheets/docbook_screen.xps
 share/examples/AxKit/axkit.org/stylesheets/docbook_tags.xps
+share/examples/AxKit/axkit.org/stylesheets/error.xps
+share/examples/AxKit/axkit.org/stylesheets/error.xsl
+share/examples/AxKit/axkit.org/stylesheets/irc.xps
+share/examples/AxKit/axkit.org/stylesheets/navbar_html.xps
 share/examples/AxKit/axkit.org/stylesheets/new/rdf_html.xps
 share/examples/AxKit/axkit.org/stylesheets/new/sidebar_html.xps
 share/examples/AxKit/axkit.org/stylesheets/new/webpage_html.xps
@@ -111,8 +122,10 @@ share/examples/AxKit/index.xml
 @dirrm share/examples/AxKit/axkit.org/stylesheets
 @dirrm share/examples/AxKit/axkit.org/img
 @dirrm share/examples/AxKit/axkit.org/examples
-@dirrm share/examples/AxKit/axkit.org/docs/xsp
 @dirrm share/examples/AxKit/axkit.org/docs/xpathscript
+@dirrm share/examples/AxKit/axkit.org/docs/xsp
+@dirrm share/examples/AxKit/axkit.org/docs/presentations/tpc2001
+@dirrm share/examples/AxKit/axkit.org/docs/presentations
 @dirrm share/examples/AxKit/axkit.org/docs
 @dirrm share/examples/AxKit/axkit.org
 @dirrm share/examples/AxKit
