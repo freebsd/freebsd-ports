@@ -1,0 +1,69 @@
+*** main.cxx.orig	Mon Aug  4 05:07:54 2003
+--- main.cxx	Sat Aug 23 09:17:04 2003
+***************
+*** 501,507 ****
+  #include <speexcodec.h>
+  #include "h261codec.h"
+  #include "h263codec.h"
+! #include "ffh263codec.h"
+  #include "h323pdu.h"
+  #include "g726codec.h"
+  //#include "h323t120.h"
+--- 501,507 ----
+  #include <speexcodec.h>
+  #include "h261codec.h"
+  #include "h263codec.h"
+! //#include "ffh263codec.h"
+  #include "h323pdu.h"
+  #include "g726codec.h"
+  //#include "h323t120.h"
+*************** BOOL MyH323EndPoint::Initialise(PConfigA
+*** 1519,1530 ****
+      }                                                                            \
+    }                                                                              \
+  
+! #if H323_AVCODEC
+!   ADD_VIDEO_CAPAB (H323_FFH263Capability);
+! #endif
+! #if H323_VICH263
+!   ADD_VIDEO_CAPAB (H323_H263Capability);
+! #endif
+  
+    if (!videoReceiveDevice.IsEmpty()) {
+      if (videoSize == 1) {
+--- 1519,1530 ----
+      }                                                                            \
+    }                                                                              \
+  
+! //#if H323_AVCODEC
+! //  ADD_VIDEO_CAPAB (H323_FFH263Capability);
+! //#endif
+! //#if H323_VICH263
+! //  ADD_VIDEO_CAPAB (H323_H263Capability);
+! //#endif
+  
+    if (!videoReceiveDevice.IsEmpty()) {
+      if (videoSize == 1) {
+*************** void MyH323EndPoint::TestVideoGrabber(PC
+*** 3609,3618 ****
+  
+    if (cap->IsDescendant(H323_H261Capability::Class())) 
+      frame.SetPayloadType(RTP_DataFrame::H261); 
+! #if H323_AVCODEC
+!   else if (cap->IsDescendant(H323_FFH263Capability::Class()))
+!     frame.SetPayloadType(RTP_DataFrame::DynamicBase);
+! #endif
+    frameCount = 0;
+    skipCount = 0;
+    PINDEX bitsEncoded = 0;
+--- 3609,3618 ----
+  
+    if (cap->IsDescendant(H323_H261Capability::Class())) 
+      frame.SetPayloadType(RTP_DataFrame::H261); 
+! //#if H323_AVCODEC
+! //  else if (cap->IsDescendant(H323_FFH263Capability::Class()))
+! //    frame.SetPayloadType(RTP_DataFrame::DynamicBase);
+! //#endif
+    frameCount = 0;
+    skipCount = 0;
+    PINDEX bitsEncoded = 0;
