@@ -19,6 +19,7 @@ DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
+IPv6		"IPv6 support" OFF \
 2> $tempfile
 #TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 
@@ -102,6 +103,14 @@ while [ "$1" ]; do
 		\"Test\")
 			echo "BIN3=		smtp-sink smtp-source"
 			SUB_TEST=""
+			;;
+		\"IPv6\")
+			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
+			echo "PATCHFILES+=	postfix-20010202snap-v6-20010204a.diff.gz"
+			echo ""
+			echo "pre-patch:"
+			echo "	cd \${WRKSRC} && ln -s . postfix"
+			echo ""
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
