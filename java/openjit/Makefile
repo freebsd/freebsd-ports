@@ -38,8 +38,12 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME}
 
 CPIO?=		/usr/bin/cpio
 
+PLIST_SUB+=	JAVADIR=${JAVA_HOME:S,${PREFIX}/,,}
 .if defined(WITH_JDK11)
 JAVALIBDIR=	${PREFIX}/lib/OpenJIT
+PLIST_SUB+=	JAVA2:="@comment " JAVA11:=""
+.else
+PLIST_SUB+=	JAVA2:="" JAVA11:="@comment "
 .endif
 
 post-configure:
