@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	7.1.034
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -129,8 +129,11 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 do-build:
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
-		${FILESDIR}/cxa_atexit.c ${FILESDIR}/cxa_finalize.c \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
+.if ( ${OSVERSION} < 502101 )
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
+		${FILESDIR}/cxa_finalize.c
+.endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
@@ -162,8 +165,7 @@ post-install:
 	@${ECHO_CMD} "${PREFIX}/intel/${COMPILERDIR}/ia32/bin to your PATH."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "In order to be able to compile C++ source with icpc you have to install"
-	@${ECHO_CMD} "devel/stlport-icc. (It is a good idea to run 'rehash' before or stlport-icc"
-	@${ECHO_CMD} "probably won't find the compiler.)"
+	@${ECHO_CMD} "devel/stlport-icc."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "If you use icc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
 	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
