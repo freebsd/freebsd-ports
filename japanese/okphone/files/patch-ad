@@ -1,0 +1,11 @@
+--- ./Makefile.org	Fri Dec 15 01:30:07 1989
++++ ./Makefile	Wed Feb  7 20:39:53 1996
+@@ -13,3 +13,8 @@
+ 	done
+ 
+ default: all	
++
++install:
++	for i in ${DIRS} ; do \
++		cd $$i ; make MFLAGS="${MFLAGS}" $@ ; cd .. ; \
++	done
