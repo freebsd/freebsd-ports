@@ -32,4 +32,3 @@ lib/libavformat.so.%%SHLIB_VERSION%%
 %%PORTDOCS%%share/doc/ffmpeg/ffserver-doc.texi
 %%PORTDOCS%%@dirrm share/doc/ffmpeg
 %%VHOOK%%@dirrm lib/vhook
-@dirrm include/ffmpeg

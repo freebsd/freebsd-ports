@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -166,6 +166,13 @@ LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 
 CONFIGURE_ARGS+=	--enable-faad
 .endif
+## post processing
+.ifndef(WITHOUT_POSTPROCESS)
+CONFIGURE_ARGS+=	--enable-shared-pp
+PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
+PLIST_DIRS+=		include/ffmpeg/postproc
+.endif
+PLIST_DIRS+=		include/ffmpeg
 
 pre-everything::
 .ifndef(WITH_FREETYPE2)
@@ -191,6 +198,12 @@ pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} 'You can enable additional compilation optimizations'
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITHOUT_POSTPROCESS)
+	@${ECHO_MSG} 'You can disable post process support by defining'
+	@${ECHO_MSG} 'WITHOUT_POSTPROCESS'
+	@${ECHO_MSG} 'Beware that this might break some ports that require it'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_VHOOK)
@@ -289,5 +302,10 @@ post-install:
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
 .endfor
+.ifndef(WITHOUT_POSTPROCESS)
+	@${MKDIR} ${PREFIX}/include/ffmpeg/postproc
+	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/postprocess.h \
+		 ${PREFIX}/include/ffmpeg/postproc/postprocess.h
+.endif
 
 .include <bsd.port.post.mk>
