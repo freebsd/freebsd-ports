@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	misc www
 MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
-
-BROKEN=		"Does not fetch"
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
