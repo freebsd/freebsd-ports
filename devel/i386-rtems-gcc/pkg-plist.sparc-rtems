@@ -3,7 +3,6 @@ bin/sparc-rtems-c++filt
 bin/sparc-rtems-cpp
 bin/sparc-rtems-g++
 bin/sparc-rtems-gcc
-bin/sparc-rtems-gccbug
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
