@@ -14,6 +14,7 @@
     SUBDIR += XFree86-contrib
     SUBDIR += accessx
     SUBDIR += aterm
+    SUBDIR += bbrun
     SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
