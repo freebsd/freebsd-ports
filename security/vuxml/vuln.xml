@@ -31,6 +31,58 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="98bd69c3-834b-11d8-a41f-0020ed76ef5a">
+    <topic>Courier mail services: remotely exploitable buffer overflows</topic>
+    <affects>
+      <package>
+	<name>courier</name>
+	<range><lt>0.45</lt></range>
+      </package>
+      <package>
+	<name>courier-imap</name>
+	<range><lt>3.0</lt></range>
+      </package>
+      <package>
+	<name>sqwebmail</name>
+	<range><lt>4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Courier set of mail services use a common Unicode
+	  library.  This library contains buffer overflows in the
+	  converters for two popular Japanese character encodings.
+	  These overflows may be remotely exploitable, triggered by
+	  a maliciously formatted email message that is later processed
+	  by one of the Courier mail services.
+	  From the release notes for the corrected versions of the
+	  Courier set of mail services:</p>
+	<blockquote>
+          <p>iso2022jp.c: Converters became (upper-)compatible with
+            ISO-2022-JP (RFC1468 / JIS X 0208:1997 Annex 2) and
+            ISO-2022-JP-1 (RFC2237).  Buffer overflow vulnerability
+            (when Unicode character is out of BMP range) has been
+            closed.  Convert error handling was implemented.</p>
+          <p>shiftjis.c: Broken SHIFT_JIS converters has been fixed
+            and became (upper-)compatible with Shifted Encoding Method
+            (JIS X 0208:1997 Annex 1). Buffer overflow vulnerability
+            (when Unicode character is out of BMP range) has been
+            closed.  Convert error handling was implemented.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0224</cvename>
+      <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/iso2022jp.c?rev=1.10&amp;view=markup</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/shiftjis.c?rev=1.6&amp;view=markup</url>
+      <bid>9845</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-01</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b7cb488c-8349-11d8-a41f-0020ed76ef5a">
     <topic>isakmpd payload handling denial-of-service vulnerabilities</topic>
     <affects>
