@@ -1,0 +1,14 @@
+Darts: Double-ARray Trie System
+
+This is a C++ template library that implements Double-Array [Aoe
+1989].  Currently only Japanese documentation is provided.
+
+* [Aoe1989] Aoe, J. An Efficient Digital Search Algorithm by Using a
+  Double-Array Structure. IEEE Transactions on Software
+  Engineering. Vol. 15, 9 (Sep 1989). pp. 1066-1077.
+
+* [Datrie] Theppitak Karoonboonyanan An Implementation of Double-Array
+  Triehttp://www.links.nectec.or.th/~thep/datrie/
+
+Author:	Taku Kudoh <taku-ku@is.aist-nara.ac.jp>
+WWW:	http://cl.aist-nara.ac.jp/~taku-ku/software/darts/
