@@ -3,6 +3,7 @@ lib/xemacs/site-packages/lisp/lookup/evi-mule.el
 lib/xemacs/site-packages/lisp/lookup/evi.el
 lib/xemacs/site-packages/lisp/lookup/lookup-content.el
 lib/xemacs/site-packages/lisp/lookup/lookup-entry.el
+lib/xemacs/site-packages/lisp/lookup/lookup-kanji.el
 lib/xemacs/site-packages/lisp/lookup/lookup-package.el
 lib/xemacs/site-packages/lisp/lookup/lookup-select.el
 lib/xemacs/site-packages/lisp/lookup/lookup-types.el
@@ -16,6 +17,7 @@ lib/xemacs/site-packages/lisp/lookup/ndic.el
 lib/xemacs/site-packages/lisp/lookup/ndict.el
 lib/xemacs/site-packages/lisp/lookup/ndkks.el
 lib/xemacs/site-packages/lisp/lookup/ndmisc.el
+lib/xemacs/site-packages/lisp/lookup/ndnmz.el
 lib/xemacs/site-packages/lisp/lookup/ndspell.el
 lib/xemacs/site-packages/lisp/lookup/ndsrd.el
 lib/xemacs/site-packages/lisp/lookup/ndtp.el
@@ -23,4 +25,8 @@ lib/xemacs/site-packages/lisp/lookup/sdicf.el
 lib/xemacs/site-packages/lisp/lookup/stem-english.el
 lib/xemacs/site-packages/pkginfo/MANIFEST.lookup
 lib/xemacs/site-packages/info/lookup.info
+lib/xemacs/site-packages/info/lookup.info-1
+lib/xemacs/site-packages/info/lookup.info-2
+lib/xemacs/site-packages/info/lookup.info-3
+lib/xemacs/site-packages/info/lookup-guide.info
 @dirrm lib/xemacs/site-packages/lisp/lookup
