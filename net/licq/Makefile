@@ -15,13 +15,21 @@ PKGNAMESUFFIX=	-socks
 MAINTAINER=	dinoex@FreeBSD.org
 
 .if defined(WITH_SOCKS)
+.if defined(WITH_DANTE)
+LIB_DEPENDS=	socks.1:${PORTSDIR}/net/dante
+.else
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+.endif
 .endif
 
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=--enable-socks5
+.if defined(WITH_DANTE)
+CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+.endif
 .endif
 
 post-patch:
