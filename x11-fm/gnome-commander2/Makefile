@@ -21,22 +21,18 @@ BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomelibs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
+post-patch:
 .for AM in config.sub config.guess install-sh missing mkinstalldirs
 	${LN} -fs ${LOCALBASE}/share/automake14/automake/${AM} ${WRKSRC}/${AM}
 .endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[%][%]X11BASE[%][%]|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/gnome-cmd-data.c
 
 .include <bsd.port.mk>
