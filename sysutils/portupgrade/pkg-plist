@@ -1,5 +1,6 @@
 sbin/pkgdepfix
 sbin/portsdb
+sbin/portinstall
 sbin/portupgrade
 sbin/portversion
 %%RUBY_SITELIBDIR%%/pkg.rb
