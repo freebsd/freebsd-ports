@@ -4,6 +4,7 @@
     SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
     SUBDIR += metacity-theme-hacked-2
+    SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-themes
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
