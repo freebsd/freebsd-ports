@@ -1,0 +1,7 @@
+bin/sdl-config
+include/SDL
+lib/SDL.a
+lib/SDL.so
+lib/SDL.so.4
+lib/SDLmain.a
+share/aclocal/sdl.m4
