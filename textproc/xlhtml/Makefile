@@ -8,7 +8,10 @@
 PORTNAME=	xlhtml
 PORTVERSION=	0.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.xlhtml.org/
+MASTER_SITES=	http://www.xlhtml.org/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sobomax
+DISTNAME=	xlHtml-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
