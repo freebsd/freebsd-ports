@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.51-2
+PORTVERSION=	0.52
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	david@dyn-ns.net
-COMMENT=	A GUI to upload songs and playlists to iPod
+COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib
 
