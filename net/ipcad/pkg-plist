@@ -1,0 +1,4 @@
+bin/ipcad
+etc/ipcad.conf.sample
+%%PORTDOCS%%share/doc/ipcad/README
+@dirrm share/doc/ipcad
