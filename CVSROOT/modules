@@ -8417,6 +8417,7 @@ qmailmrtg7	ports/mail/qmailmrtg7
 qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
+qmrtg		ports/mail/qmrtg
 qnxstyle	ports/x11-themes/qnxstyle
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
