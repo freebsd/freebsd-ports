@@ -378,7 +378,10 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 .if defined(USE_RUBY_FEATURES)
 shim=	${USE_RUBY_FEATURES:Mbenchmark} \
 	${USE_RUBY_FEATURES:Mdl} \
+	${USE_RUBY_FEATURES:Merb} \
 	${USE_RUBY_FEATURES:Mfileutils} \
+	${USE_RUBY_FEATURES:Mipaddr} \
+	${USE_RUBY_FEATURES:Mopen-uri} \
 	${USE_RUBY_FEATURES:Moptparse} \
 	${USE_RUBY_FEATURES:Mpp} \
 	${USE_RUBY_FEATURES:Mracc-runtime} \
