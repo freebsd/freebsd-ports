@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	linux-netscape-${BROWSER_NAME}
-PORTVERSION=	4.78
+PORTVERSION=	4.79
 CATEGORIES=	www linux
 
 MAINTAINER=	girgen@partitur.se
