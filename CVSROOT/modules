@@ -1161,6 +1161,7 @@ cups-base	ports/print/cups-base
 cups-lpr	ports/print/cups-lpr
 cups-pdf	ports/print/cups-pdf
 cups-pstoraster	ports/print/cups-pstoraster
+cups-samba	ports/print/cups-samba
 curl		ports/ftp/curl
 curlpp		ports/ftp/curlpp
 curly		ports/sysutils/curly
