@@ -20,5 +20,8 @@ usually used in commandline-constructed pipes.
 -  "gcc -Wall" clean source code, serious effort taken to avoid
   undefined behavior in ANSI C or POSIX, except long long
   is required. Limiting and reporting works on data amounts > 4 GB.
+- Audio support: input/output-files can be switched to Audi CD quality mode
+- TCP support: input-output streams can be TCP connections, either
+  connecting to other hosts or waiting for a host to connect
 
 WWW: http://www.cons.org/cracauer/cstream.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cstream
-PORTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/ \
 		http://www2.cons.org/cracauer/download/ \
