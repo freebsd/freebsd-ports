@@ -33,6 +33,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
@@ -72,4 +74,4 @@ do-install:
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
