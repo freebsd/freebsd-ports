@@ -43,10 +43,4 @@ post-configure:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/editkit/Makefile
 
-CIAFILE=	CIA_WDB2.jpd.bz2
-XRMAPFILE=	xrmap-2.26.tar.bz2
-DISTFILE=	anthems-1.1.tar.bz2 \
-		factbook_text_2002.tar.bz2 factbook_html_2002.tar.bz2 \
-		flags-1.1.tar.bz2 hymns-1.2.tar.bz2
-
 .include <bsd.port.mk>
