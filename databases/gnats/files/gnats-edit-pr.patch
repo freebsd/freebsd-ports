@@ -1,6 +1,6 @@
---- gnats/gnats-edit-pr.sh.orig	Tue Apr 20 16:17:07 1999
-+++ gnats/gnats-edit-pr.sh	Sun May 28 09:27:12 2000
-@@ -124,15 +124,20 @@
+--- gnats-edit-pr.sh.orig	Tue Apr 20 23:17:07 1999
++++ gnats-edit-pr.sh	Mon Dec  3 21:36:18 2001
+@@ -124,15 +124,21 @@
  
       *)
         if [ "`echo $1 | grep /`" != "" ]; then
@@ -17,13 +17,14 @@
  done
  
 +chng_msg="/tmp/chng.$$"
++chng_tpl="/home/gnats/gnats-adm/edit-pr-msg"
 +
 +for pr_id in $prs ; do
 +
  # set command here to always pass host and port, and directory if supplied
  if [ "$mode" = "network" ]; then
      prog="nedit-pr"
-@@ -149,12 +154,12 @@
+@@ -149,12 +155,12 @@
  fi
  
  # These traps take care of deleting all the /tmp files
@@ -38,7 +39,7 @@
  
  # find a user name
  if [ "$USER" != "" ]; then
-@@ -192,7 +197,7 @@
+@@ -192,7 +198,7 @@
  if cmp -s $new.old $new ; then
    echo "$prog: PR not changed"
    $PR_EDIT --unlock $pr_id
@@ -47,7 +48,7 @@
  fi
  
  # error-check output by calling pr-edit --check; if mistakes exist,
-@@ -229,6 +234,8 @@
+@@ -229,6 +235,8 @@
  new_resp="`sed -n '/^>Responsible:/{s,^>[-a-zA-Z]*: *,,;s, *(.*,,g;p;q;}' $new`"
  old_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
  new_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
@@ -56,7 +57,7 @@
  full_id="`sed -n '/^>Category:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`/$pr_id"
  
  # If you can read this, you may have a future in sed(1) programming.
-@@ -256,8 +263,12 @@
+@@ -256,8 +264,12 @@
  if [ "$old_resp" != "$new_resp" ]; then
    resp_change=yes
  fi
@@ -70,7 +71,7 @@
    # we've got a change
    mail_to="$me"
    if [ ! -z "$state_change" ]; then
-@@ -266,14 +277,38 @@
+@@ -266,14 +278,48 @@
      echo State-Changed-By: $me >> $change_msg
      echo State-Changed-When: $DATE >> $change_msg
      echo "State-Changed-Why: " >> $change_msg
@@ -80,10 +81,10 @@
 +	echo "Re-use last message (y/n)?"
 +	read yesno
 +	if [ "$yesno" != "y" ]; then
-+	    cat /home/gnats/gnats-adm/edit-pr-msg > $chng_msg
++	    sed 's/%%ITEM%%/state/' $chng_tpl > $chng_msg
 +	fi
 +    else
-+	cat /home/gnats/gnats-adm/edit-pr-msg > $chng_msg
++	sed 's/%%ITEM%%/state/' $chng_tpl > $chng_msg
 +    fi
 +    $VISUAL $chng_msg
 +    sed '/^GNATS:/d' $chng_msg >> $change_msg
@@ -104,7 +105,17 @@
 +    echo Class-Changed-When: $DATE >> $change_msg
 +    echo "Class-Changed-Why: " >> $change_msg
 +    echo 'Why did the class change? (Ctrl-D to end)'
-+    cat >> $change_msg
++    if [ -e $chng_msg ]; then
++	echo "Re-use last message (y/n)?"
++	read yesno
++	if [ "$yesno" != "y" ]; then
++	    sed 's/%%ITEM%%/class/' $chng_tpl > $chng_msg
++	fi
++    else
++	sed 's/%%ITEM%%/class/' $chng_tpl > $chng_msg
++    fi
++    $VISUAL $chng_msg
++    sed '/^GNATS:/d' $chng_msg >> $change_msg
 +    to_old=1
 +    to_new=1
 +    if [ ! -z "$resp_change" ]; then
@@ -114,7 +125,23 @@
    fi
    if [ ! -z "$resp_change" ]; then
      $debug_print "Doing responsible change."
-@@ -287,6 +322,9 @@
+@@ -282,11 +328,24 @@
+     echo Responsible-Changed-When: $DATE >> $change_msg
+     echo "Responsible-Changed-Why: " >> $change_msg
+     echo 'Why did the responsible person change? (Ctrl-D to end)'
+-    cat >> $change_msg
++    if [ -e $chng_msg ]; then
++	echo "Re-use last message (y/n)?"
++	read yesno
++	if [ "$yesno" != "y" ]; then
++	    sed 's/%%ITEM%%/responsible/' $chng_tpl > $chng_msg
++	fi
++    else
++	sed 's/%%ITEM%%/responsible/' $chng_tpl > $chng_msg
++    fi
++    $VISUAL $chng_msg
++    sed '/^GNATS:/d' $chng_msg >> $change_msg
+     to_old=1
      to_new=1
    fi
  
@@ -124,7 +151,7 @@
    if [ -n "$to_subm" ]; then mail_to="${reply_to}, ${mail_to}" ; fi
    if [ -n "$x_gnats_notify" ]; then mail_to="${x_gnats_notify}, ${mail_to}" ; fi
    if [ -n "$to_old" ] ; then mail_to="${mail_to}, `$PR_ADDR ${old_resp}`" ; fi
-@@ -303,7 +341,7 @@
+@@ -303,7 +362,7 @@
    $MAIL_AGENT << __EOF__
  To: $mail_to
  From: $me
@@ -133,7 +160,7 @@
  
  `if [ "$old_synopsis" != "$new_synopsis" ]; then
  	echo Old Synopsis: "$old_synopsis"
-@@ -321,5 +359,9 @@
+@@ -321,5 +380,9 @@
  # call PR_EDIT on the new file and clean up
  $PR_EDIT < $new
  $PR_EDIT --unlock $pr_id
