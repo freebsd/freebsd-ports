@@ -7,6 +7,7 @@
 
 PORTNAME?=	mvdsv
 PORTVERSION=	0.176
+PORTEPOCH=	1
 CATEGORIES?=	games
 MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
 		http://freebsd.nsu.ru/distfiles/
