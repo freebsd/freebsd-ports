@@ -3,7 +3,7 @@
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1995/04/12 04:56:21 asami Exp $
+# $Id: Makefile,v 1.9 1995/04/16 11:28:50 ache Exp $
 #
 
 DISTNAME=       screen-3.6.2
@@ -13,6 +13,5 @@ MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 MAINTAINER=	ache@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
-NCFTPFLAGS=     -PN
 
 .include <bsd.port.mk>
