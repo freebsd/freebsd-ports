@@ -3111,6 +3111,7 @@ husky-sqpack	ports/news/husky-sqpack
 hx		ports/net/hx
 hybserv		ports/irc/hybserv
 hydra		ports/www/hydra
+hydrogen	ports/audio/hydrogen
 hylafax		ports/comms/hylafax
 hyperlatex	ports/print/hyperlatex
 hypermail	ports/www/hypermail
