@@ -6,33 +6,35 @@
 #
 
 PORTNAME=	newsx
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.6/pl6/}
 
 MAINTAINER=	thierry@pompo.net
 
+.if defined(WITH_CNEWS)
+BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
+.else !defined(WITHOUT_INN_2-X)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
+.endif
 
-hdr_dir=	${LOCALBASE}/news/include
+USE_AUTOMAKE_VER=14
+CONFIGURE_ENV=	PATH="${PATH}:${LOCALBASE}/news/bin"
+.if !defined(WITH_CNEWS)
+.if !defined(WITHOUT_INN_2-X)
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/news/include"
+CONFIGURE_ARGS=	--with-newslib=${LOCALBASE}/news/lib
+.endif
+.endif
+
+HDR_DIR=	${LOCALBASE}/news/include
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
-post-extract:
-	@${ECHO} "*********************************************************"
-	@${ECHO} "If this step fails, then you probably don't have made inn"
-	@${ECHO} "Go to ${PORTSDIR}/news/inn, and then make it (no need to"
-	@${ECHO} "make install again if inn is already installed)."
-	@${ECHO} "*********************************************************"
-	${CP} ${hdr_dir}/storage.h	${WRKSRC}/lib
-	${CP} ${hdr_dir}/config.h	${WRKSRC}/lib
-	${CP} ${hdr_dir}/libinn.h	${WRKSRC}/src
-	${CP} ${hdr_dir}/libinn.h	${WRKSRC}/dbz
-	${CP} ${hdr_dir}/clibrary.h	${WRKSRC}/dbz
+post-patch:
+	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/configure.in
 
-# Remark: newsx does not really requires inn, but this port has specially
-# been built to run with inn 2.3x.
 pre-configure:
 	@${ECHO} "*********************************************************"
 	@${ECHO} "If the configure step fails, then you probably don't have"
@@ -40,10 +42,6 @@ pre-configure:
 	@${ECHO} "${PORTSDIR}/news/inn, and then try building this port"
 	@${ECHO} "again."
 	@${ECHO} "*********************************************************"
-
-post-configure:
-	@${PERL} -pi -e "s:^LIBS = :LIBS = -L${LOCALBASE}/news/lib -linn:g" \
-	${WRKSRC}/test/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -53,9 +51,6 @@ post-install:
 .endfor
 	@${ECHO} "Documentation installed in ${DOCSDIR}."
 .endif
-
-#GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=14
 
 MAN1=	newsq.1
 MAN5=	newsx.conf.5 in.hosts.5
