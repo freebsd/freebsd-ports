@@ -1,5 +1,5 @@
-*** sshconnect.c.orig	Wed May 12 13:19:29 1999
---- sshconnect.c	Thu Feb 24 17:12:10 2000
+*** sshconnect.c.orig	Wed May 12 20:19:29 1999
+--- sshconnect.c	Thu Feb 24 22:34:47 2000
 ***************
 *** 337,343 ****
   
@@ -18,7 +18,7 @@
     int sock;
   
 ***************
-*** 345,385 ****
+*** 345,379 ****
        bind our own socket to a privileged port. */
     if (privileged)
       {
@@ -28,7 +28,7 @@
           {
 !           sock = socket(AF_INET, SOCK_STREAM, 0);
             if (sock < 0)
-              fatal("socket: %.100s", strerror(errno));
+!             fatal("socket: %.100s", strerror(errno));
             
 !           /* Initialize the desired sockaddr_in structure. */
 !           memset(&sin, 0, sizeof(sin));
@@ -49,18 +49,12 @@
                 close(sock);
                 continue;
               }
-            fatal("bind: %.100s", strerror(errno));
+!           fatal("bind: %.100s", strerror(errno));
           }
         debug("Allocated local port %d.", p);
       }
     else
-      { 
-        /* Just create an ordinary socket on arbitrary port.  */
-!       sock = socket(AF_INET, SOCK_STREAM, 0);
-        if (sock < 0)
-          fatal("socket: %.100s", strerror(errno));
-      }
---- 345,397 ----
+--- 345,404 ----
        bind our own socket to a privileged port. */
     if (privileged)
       {
@@ -68,11 +62,23 @@
 !       int errgai;
 !       char strport[PORTSTRLEN];
         int p;
++ #if (defined(__OpenBSD__) || defined(__FreeBSD__))  && !defined(SOCKS)
++       p = 1023;	/* Compat with old FreeBSD */
++ #if __FreeBSD__ >= 400014
++       sock = rresvport_af(&p, family);
++         if (sock < 0)
++           error("rresvport_af: %.100s", strerror(errno));
++ #else
++       sock = rresvport(&p);
++         if (sock < 0)
++           error("rresvport: %.100s", strerror(errno));
++ #endif
++ #else
         for (p = 1023; p > 512; p--)
           {
 ! 	  sock = socket(family, SOCK_STREAM, 0);
             if (sock < 0)
-              fatal("socket: %.100s", strerror(errno));
+!             error("socket: %.100s", strerror(errno));
             
 ! 	  /* Initialize the desired addrinfo structure. */
 ! 	  memset(&hints, 0, sizeof(hints));
@@ -102,18 +108,13 @@
 + 	      freeaddrinfo(ai);
                 continue;
               }
-            fatal("bind: %.100s", strerror(errno));
+!           error("bind: %.100s", strerror(errno));
           }
-        debug("Allocated local port %d.", p);
 +       freeaddrinfo(ai);
++ #endif
+        debug("Allocated local port %d.", p);
       }
     else
-      { 
-        /* Just create an ordinary socket on arbitrary port.  */
-!       sock = socket(family, SOCK_STREAM, 0);
-        if (sock < 0)
-          fatal("socket: %.100s", strerror(errno));
-      }
 ***************
 *** 396,409 ****
      the daemon. */
@@ -130,7 +131,7 @@
   #if defined(SO_LINGER) && defined(ENABLE_SO_LINGER)
     struct linger linger;
   #endif /* SO_LINGER */
---- 408,426 ----
+--- 421,439 ----
      the daemon. */
   
   int ssh_connect(const char *host, int port, int connection_attempts,
@@ -162,7 +163,7 @@
     /* If a proxy command is given, connect using it. */
     if (proxy_command != NULL && *proxy_command)
       return ssh_proxy_connect(host, port, original_real_uid, proxy_command,
---- 438,443 ----
+--- 451,456 ----
 ***************
 *** 432,440 ****
   
@@ -174,7 +175,7 @@
     /* Try to connect several times.  On some machines, the first time will
        sometimes fail.  In general socket code appears to behave quite
        magically on many machines. */
---- 445,482 ----
+--- 458,495 ----
   
     /* No proxy command. */
   
@@ -318,7 +319,7 @@
   #endif /* SOCKS */
                   {
                     /* Successful connection. */
---- 485,511 ----
+--- 498,526 ----
         if (attempt > 0)
           debug("Trying again...");
   
@@ -337,6 +338,8 @@
                 sock = ssh_create_socket(original_real_uid, 
 ! 				       !anonymous && geteuid() == UID_ROOT,
 ! 				       ai->ai_family);
+! 	      if (sock < 0)
+! 		      continue;
   
                 /* Connect to the host. */
   #if defined(SOCKS)
@@ -370,7 +373,7 @@
   
     /* Return failure if we didn't get a successful connection. */
     if (attempt >= connection_attempts)
---- 518,532 ----
+--- 533,547 ----
                    returned an error. */
                 shutdown(sock, 2);
                 close(sock);
@@ -387,20 +390,6 @@
     /* Return failure if we didn't get a successful connection. */
     if (attempt >= connection_attempts)
 ***************
-*** 578,586 ****
---- 537,547 ----
-    /* Set socket options.  We would like the socket to disappear as soon as
-       it has been closed for whatever reason. */
-    /* setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (void *)&on, sizeof(on)); */
-+ #if 0 /* XXX */
-  #if defined(TCP_NODELAY) && defined(ENABLE_TCP_NODELAY)
-    setsockopt(sock, IPPROTO_TCP, TCP_NODELAY, (void *)&on, sizeof(on));
-  #endif /* TCP_NODELAY */
-+ #endif /* 0 */
-  #if defined(SO_LINGER) && defined(ENABLE_SO_LINGER)
-    linger.l_onoff = 1;
-    linger.l_linger = 15;
-***************
 *** 946,952 ****
     int ap_opts, ret_stat = 0;
     krb5_keyblock   *session_key = 0;
@@ -409,7 +398,7 @@
     
     memset(&auth, 0 , sizeof(auth));
     remotehost = (char *) get_canonical_hostname();
---- 907,913 ----
+--- 920,926 ----
     int ap_opts, ret_stat = 0;
     krb5_keyblock   *session_key = 0;
     krb5_ap_rep_enc_part *repl = 0;
