@@ -1,10 +1,8 @@
 bin/povray
 lib/povray31/CMPL_Unix.doc
-lib/povray31/allanim.ini
 lib/povray31/allscene.ini
 lib/povray31/allscene.sh
 lib/povray31/allscene/.bla
-lib/povray31/allstill.ini
 lib/povray31/compile.doc
 lib/povray31/gamma.gif
 lib/povray31/include/ash.map
