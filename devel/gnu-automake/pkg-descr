@@ -9,6 +9,11 @@ program. aclocal is a program to generate an 'aclocal.m4' based on the
 contents of 'configure.in'. It is useful as an extensible, maintainable
 mechanism for augmenting autoconf.
 
+This port is specifically designed for developers that want to create
+cross-platform software distributions on FreeBSD.  This version of automake
+should _NEVER_ be used with the FreeBSD ports system as a replacement for the
+versioned copies of automake.
+
 WWW: http://www.gnu.org/software/automake/
 
 -- AlanE <alane@freebsd.org>
