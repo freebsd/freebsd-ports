@@ -1,0 +1,11 @@
+--- Modules/makesetup.orig	Fri Dec 11 02:10:29 1998
++++ Modules/makesetup	Mon Aug 23 13:28:50 1999
+@@ -101,7 +101,7 @@
+ 	LIBS=
+ 	LOCALLIBS=
+ 	BASELIBS=
+-	while read line
++	while read -e line
+ 	do
+ 		# Output DEFS in reverse order so first definition overrides
+ 		case $line in
