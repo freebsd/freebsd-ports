@@ -40,7 +40,7 @@ OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=		xine.12:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--with-player=xine
 WITH_MONKEYMEDIA=	yes
 .else
