@@ -6,6 +6,7 @@ rm -f $LOCALDEF
 echo "#define BuildServer YES"			>> $LOCALDEF
 echo "#define BuildServersOnly YES"		>> $LOCALDEF
 echo "#define XprtServer NO"			>> $LOCALDEF
+echo "#define BuildXprint NO"			>> $LOCALDEF
 echo "#define XnestServer NO"			>> $LOCALDEF
 echo "#define XorgServer NO"			>> $LOCALDEF
 echo "#define XVirtualFramebufferServer YES"	>> $LOCALDEF

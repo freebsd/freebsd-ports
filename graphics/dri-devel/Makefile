@@ -28,6 +28,8 @@ LATEST_LINK=	${PORTNAME}-devel
 
 ONLY_FOR_ARCHS=	alpha i386
 
+IGNORE=		is currently older than graphics/dri. Please use that one instead
+
 do-configure:
 	@${RM} -f ${WRKSRC}/config/cf/projectroot.def
 	@${ECHO} "#define ProjectRoot ${X11BASE}" > ${WRKSRC}/config/cf/projectroot.def

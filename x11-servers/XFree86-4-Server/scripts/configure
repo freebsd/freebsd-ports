@@ -44,6 +44,7 @@ for i in \
 	BuildType1Fonts \
 	BuildCIDFonts \
 	BuildCyrillicFonts \
+	BuildHtmlManPages \
 	JoystickSupport \
 	XnestServer \
 	BuildFontServer \

@@ -31,6 +31,12 @@ ALL_TARGET=	targets
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/demos
 SHAREDIR=	${PREFIX}/share/mesa-demos
 
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+IGNORE=		does not build with X.Org
+.endif
+
 post-extract:
 	${REINPLACE_CMD} -e 's|../images/|${SHAREDIR}/images/|g' \
 		-e 's|geartrain.dat|${SHAREDIR}/data/geartrain.dat|g' \
@@ -48,4 +54,4 @@ post-install:
 		${INSTALL_DATA} $$dat ${SHAREDIR}/data ; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

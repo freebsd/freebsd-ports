@@ -1,0 +1,11 @@
+--- lib/Xevie/Imakefile.orig	Fri Oct  1 17:42:49 2004
++++ lib/Xevie/Imakefile	Fri Oct  1 17:44:51 2004
+@@ -66,7 +66,7 @@
+ 	RemoveFile($@)
+ 	sh ../Xcursor/config-subst $(SUBSTVARS) < xevie.pc.in > $@
+ 
+-InstallNonExecFile(xevie.pc,$(USRLIBDIR)/pkgconfig)
++InstallNonExecFile(xevie.pc,$(PROJECTROOT)/libdata/pkgconfig)
+ 
+ clean::
+ 	RemoveFile(xevie.pc)

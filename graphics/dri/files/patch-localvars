@@ -1,0 +1,44 @@
+--- configs/freebsd-dri.orig	Wed Nov 24 23:14:01 2004
++++ configs/freebsd-dri	Wed Nov 24 23:14:20 2004
+@@ -11,7 +11,7 @@
+ WARN_FLAGS = -Wall
+ OPT_FLAGS = -O
+ 
+-CFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g -std=c99  -Wundef -fPIC -ffast-math -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
++CFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g -std=c9x -Wundef -fPIC -ffast-math -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
+ CXXFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic -fPIC
+ 
+ ASM_SOURCES = 
+--- src/mesa/drivers/dri/r200/r200_tcl.c.orig	Thu Nov 25 01:38:38 2004
++++ src/mesa/drivers/dri/r200/r200_tcl.c	Thu Nov 25 01:39:09 2004
+@@ -101,7 +101,7 @@
+ };
+    
+ 
+-#define LOCAL_VARS r200ContextPtr rmesa = R200_CONTEXT(ctx); (void)rmesa
++#define LOCAL_VARS r200ContextPtr rmesa = R200_CONTEXT(ctx)
+ #define ELT_TYPE  GLushort
+ 
+ #define ELT_INIT(prim, hw_prim) \
+--- src/mesa/drivers/dri/radeon/radeon_swtcl.c.orig	Thu Nov 25 01:54:49 2004
++++ src/mesa/drivers/dri/radeon/radeon_swtcl.c	Thu Nov 25 01:55:10 2004
+@@ -508,7 +508,7 @@
+ 
+ 
+ 
+-#define LOCAL_VARS radeonContextPtr rmesa = RADEON_CONTEXT(ctx); (void)rmesa
++#define LOCAL_VARS radeonContextPtr rmesa = RADEON_CONTEXT(ctx)
+ #define ELTS_VARS( buf )  GLushort *dest = buf
+ #define INIT( prim ) radeonDmaPrimitive( rmesa, prim )
+ #define ELT_INIT(prim) radeonEltPrimitive( rmesa, prim )
+--- src/mesa/drivers/dri/radeon/radeon_tcl.c.orig	Thu Nov 25 01:47:13 2004
++++ src/mesa/drivers/dri/radeon/radeon_tcl.c	Thu Nov 25 01:47:30 2004
+@@ -105,7 +105,7 @@
+ };
+    
+ 
+-#define LOCAL_VARS radeonContextPtr rmesa = RADEON_CONTEXT(ctx); (void)rmesa
++#define LOCAL_VARS radeonContextPtr rmesa = RADEON_CONTEXT(ctx)
+ #define ELT_TYPE  GLushort
+ 
+ #define ELT_INIT(prim, hw_prim) \

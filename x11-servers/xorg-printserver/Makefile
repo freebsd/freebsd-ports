@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xorg-printserver
-PORTVERSION=	6.7.0
+PORTVERSION=	6.8.1
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
-		${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	R6.7/tars
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/tars
+DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
+		X11R${PORTVERSION}-src3.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Print server from X.Org
@@ -26,6 +25,8 @@ USE_XLIB=	yes
 XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
 XMAN_DIRS=	programs/Xserver
+
+MAN7=		Xprint.7
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>

@@ -6,5 +6,5 @@ share/dict/kdrill/hira.edic
 share/dict/kdrill/hiraplus.edic
 share/dict/kdrill/kata.edic
 share/dict/kdrill/kataplus.edic
-lib/X11/doc/html/kdrill.1.html
+lib/X11/app-defaults/KDrill
 @dirrm share/dict/kdrill

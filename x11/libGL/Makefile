@@ -7,11 +7,13 @@
 
 PORTNAME=	libGL
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
-EXTRACT_ONLY=	X11R6.7.0-src1.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+DISTFILES=	X11R6.8.1-src1.tar.gz \
+		X11R6.8.1-src3.tar.gz
+EXTRACT_ONLY=	X11R6.8.1-src1.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL library that renders using GLX or DRI
@@ -36,7 +38,7 @@ BROKEN=	Requires libXThrStub, which should be part of libX11
 
 post-extract:
 	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X11R6.7.0-src3.tar.gz | \
+		${DISTDIR}/${DIST_SUBDIR}/X11R6.8.1-src3.tar.gz | \
 		${TAR} -xf - xc/programs/Xserver/hw/xfree86/os-support \
 		xc/programs/Xserver/GL)
 

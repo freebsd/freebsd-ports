@@ -14,6 +14,8 @@ echo "#define LibInstall NO"			>> $LOCALDEF
 echo "#define ForceNormalLib NO"		>> $LOCALDEF
 echo "#define XTrueTypeInstallCConvHeaders NO"	>> $LOCALDEF
 echo "#define BuildServer YES"			>> $LOCALDEF
+echo "#define BuildXprint NO"			>> $LOCALDEF
+echo "#define BuildLibraries NO"		>> $LOCALDEF
 echo "#define LibInstallBuild YES"		>> $LOCALDEF
 echo "#define ModInstall YES"			>> $LOCALDEF
 echo "#define XF86Server NO"			>> $LOCALDEF

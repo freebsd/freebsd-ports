@@ -1,0 +1,11 @@
+--- lib/Xfixes/Imakefile.orig	Fri Oct  1 17:42:54 2004
++++ lib/Xfixes/Imakefile	Fri Oct  1 17:44:58 2004
+@@ -68,7 +68,7 @@
+ 	RemoveFile($@)
+ 	sh ../Xcursor/config-subst $(SUBSTVARS) < xfixes.pc.in > $@
+ 
+-InstallNonExecFile(xfixes.pc,$(USRLIBDIR)/pkgconfig)
++InstallNonExecFile(xfixes.pc,$(PROJECTROOT)/libdata/pkgconfig)
+ 
+ clean::
+ 	RemoveFile(xfixes.pc)

@@ -43,6 +43,7 @@ for i in \
 	BuildCIDFonts \
 	BuildCyrillicFonts \
 	BuildLatin2Fonts \
+	BuildHtmlManPages \
 	BuildPlugin
 do \
 	echo "#define $i NO"			>> $LOCALDEF

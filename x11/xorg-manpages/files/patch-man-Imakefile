@@ -1,0 +1,11 @@
+--- doc/man/Imakefile.orig	Thu Nov 11 17:13:20 2004
++++ doc/man/Imakefile	Thu Nov 11 17:13:56 2004
+@@ -33,7 +33,7 @@
+ LIBMANDIRS = X11 Xt Xext Xi Xau $(XVDIR) $(GLXDIRS) $(GLUDIRS) $(DMXDIR) $(XPRINTLIBDIRS)
+ #endif
+ 
+-SUBDIRS = general $(LIBMANDIRS) $(MISCDIR)
++SUBDIRS = general $(LIBMANDIRS)
+ 
+ all::
+ 

@@ -91,3 +91,7 @@ share/doc/X11/xsmp.txt
 share/doc/X11/xtest.txt
 share/doc/X11/xtestlib.txt
 share/doc/X11/xv-protocol-v2.txt
+@unexec rmdir %D/share/doc/X11/PDF 2>/dev/null || true
+@unexec rmdir %D/share/doc/X11/PostScript 2>/dev/null || true
+@unexec rmdir %D/share/doc/X11/html 2>/dev/null || true
+@unexec rmdir %D/share/doc/X11 2>/dev/null || true

@@ -5,21 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libraries
-PORTVERSION=	6.7.0
-PORTREVISION=	3
+PORTNAME=	xorg-libraries
+PORTVERSION=	6.8.1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/:xorg \
-		${MASTER_SITE_XORG:S/$/:xorg/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	R6.7/tars/:xorg \
-			anholt/:local
-PKGNAMEPREFIX=	xorg-
-DISTFILES=	X11R6.7.0-src1.tar.gz:xorg \
-		X11R6.7.0-src3.tar.gz:xorg \
-		Wraphelp2.gz:local
-EXTRACT_ONLY=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
+		X11R${PORTVERSION}-src3.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 libraries and headers from X.Org
@@ -44,9 +36,6 @@ XINSTALL_DIRS=	include lib nls programs/Xserver/include \
 
 INSTALLS_SHLIB=	yes
 
-post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > ${WRKSRC}/lib/Xdmcp/Wraphelp.c
-
 post-patch:
 	${CP} ${FILESDIR}/nls-Compose-microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
 
@@ -67,13 +56,6 @@ IGNORE=	is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 PLIST_SUB+=	OSMESA:="@comment "
 .else
 PLIST_SUB+=	OSMESA:=""
-.endif
-
-# sparc64 doesn't have a working libc_r yet, and -current doesn't need libXThrStub.
-.if ${ARCH} == "sparc64" || ${OSVERSION} >= 500043
-PLIST_SUB+=	XTHRSTUB:="@comment "
-.else
-PLIST_SUB+=	XTHRSTUB:=""
 .endif
 
 .include <bsd.port.post.mk>
