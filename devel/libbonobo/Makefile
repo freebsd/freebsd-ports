@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libbonobo
-PORTVERSION=	1.113.0
+PORTVERSION=	1.115.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
