@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1997/07/12 16:53:38 max Exp $
+# $Id: Makefile,v 1.8 1997/10/04 14:53:07 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -13,11 +13,12 @@ MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		http://www.uq.edu.au/~cswallis/nhqt/ \
 		http://student.uq.edu.au/~s002434/ \
 		${MASTER_SITE_GNU}
-QT_PATCH=	nhqt0.9.tar.gz
-QT_SOUND=	nhs.tar.gz
-DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+QT_PATCH=	nhqt0.9.tar.gz
+QT_SOUND=	nhs.tar.gz
+PATCHFILES=	${QT_PATCH} ${QT_SOUND}
 
 BUILD_DEPENDS=	auplay:${PORTSDIR}/audio/nas \
 		xpmtoppm:${PORTSDIR}/graphics/netpbm
