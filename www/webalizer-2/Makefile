@@ -3,7 +3,7 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/28 12:42:08 andreas Exp $
 
 DISTNAME=	webalizer-1.12-09-src
 PKGNAME=	webalizer-1.12
@@ -35,5 +35,9 @@ post-install:
 .for i in msfree.gif sample.conf
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/webalizer/${i}
 .endfor
+	@if [ ! -f ${PREFIX}/etc/webalizer.conf-dist ]; then \
+		${INSTALL_DATA} ${WRKSRC}/sample.conf \
+			${PREFIX}/etc/webalizer.conf-dist ; \
+	fi
 
 .include <bsd.port.mk>

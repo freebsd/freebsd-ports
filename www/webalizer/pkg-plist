@@ -1,4 +1,5 @@
 bin/webalizer
+etc/webalizer.conf-dist
 share/doc/webalizer/CHANGES
 share/doc/webalizer/COPYING
 share/doc/webalizer/Copyright
