@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.129 1999/04/21 07:49:39 obrien Exp $
+# $Id: Makefile,v 1.130 1999/04/24 22:51:09 obrien Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -75,6 +75,7 @@
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
+    SUBDIR += siod
     SUBDIR += slib
     SUBDIR += smalltalk
     SUBDIR += sml-nj
