@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Dec  5 19:38:34 2002
-+++ Makefile.in	Sun Dec 29 15:27:21 2002
-@@ -231,7 +231,7 @@
+--- Makefile.in.orig	Tue Mar 18 15:40:51 2003
++++ Makefile.in	Wed Sep 24 20:17:07 2003
+@@ -233,7 +233,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -9,19 +9,25 @@
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -700,11 +700,9 @@
- install-dirs:
- 	-mkdir -p $(etcdir)
- 	-mkdir -p $(modulesdir)
--	-mkdir -p $(docdir)
+@@ -706,17 +706,13 @@
  
  install-dirs-client: install-dirs
  	-mkdir -p $(helpdir)
--	-mkdir -p $(mandir)/man1
+-	-mkdir -p $(mansdir)/man1
  
  install-dirs-server: install-dirs
  	-mkdir -p $(logsdir)
-@@ -738,12 +736,8 @@
+-	-mkdir -p $(mansdir)/man5
+-	-mkdir -p $(mansdir)/man8
+ 
+ doc-install:
+ 	-$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
+ 	-$(INSTALL_DATA) $(srcdir)/doc/FAQ $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/doc/*.txt $(docdir)/
+ 	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
+ 	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
+ 	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
+@@ -740,12 +736,8 @@
  	fi
  
  etc-install-client:
@@ -35,12 +41,3 @@
  
  etc-install-server:
  	-@if test '!' -f $(etcdir)/silcd.conf ; then \
-@@ -773,7 +767,7 @@
- 	  $(sbindir)/silcd -C $(etcdir); \
- 	fi
- 
--@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
-+@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install etc-install-client
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
