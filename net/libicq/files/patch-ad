@@ -1,0 +1,50 @@
+--- src/send.c.orig	Thu Nov 11 17:16:26 1999
++++ src/send.c	Thu Nov 11 17:18:50 1999
+@@ -139,6 +139,17 @@
+     fprintf(stderr, "\nSocket creation failed.");
+     exit(1);
+   }
++
++#ifdef IP_PORTRANGE
++  {
++    int i=IP_PORTRANGE_HIGH;
++    if (setsockopt(sok, IPPROTO_IP, IP_PORTRANGE, &i, sizeof(i))<0)
++    {
++      fprintf(stderr, "\nSocket range selection failed.");
++      exit(1);
++    }
++  }
++#endif
+    
+   if(Verbose & ICQ_VERB_INFO)
+     printf("\nSocket created.  Attempting to connect..." );
+@@ -170,6 +181,12 @@
+   bzero(&(sin.sin_zero), 8);  
+ 
+   tcp_sok = socket(AF_INET, SOCK_STREAM, 0);
++#if IP_PORTRANGE
++  {
++    int i=IP_PORTRANGE_HIGH;
++    setsockopt(tcp_sok, IPPROTO_IP, IP_PORTRANGE, &i, sizeof(i));
++  }
++#endif
+   setsockopt(tcp_sok, SOL_SOCKET, SO_REUSEADDR, &retval, 4);
+   set_nonblock(tcp_sok);
+   retval = bind(tcp_sok, (struct sockaddr*)&sin, sizeof(sin));
+--- src/tcp.c.orig	Thu Nov 11 17:20:01 1999
++++ src/tcp.c	Thu Nov 11 17:20:02 1999
+@@ -608,6 +608,14 @@
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if(sock == -1) return -1;
+ 
++#ifdef IP_PORTRANGE
++   {
++      int i=IP_PORTRANGE_HIGH;
++      if (setsockopt(sock, IPPROTO_IP, IP_PORTRANGE, &i, sizeof(i))<0)
++        return -1;
++   }
++#endif
++
+    set_nonblock(sock);
+ 
+    if((bind(sock, (struct sockaddr*)&local, sizeof(struct sockaddr))) == -1)
