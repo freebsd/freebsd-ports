@@ -1,6 +1,6 @@
---- kbd.c.orig	Thu Jan 11 13:26:36 2001
-+++ kbd.c	Thu Jan 11 13:28:37 2001
-@@ -479,9 +479,9 @@
+--- kbd.c.orig	Sat Oct 12 19:47:58 2002
++++ kbd.c	Sat Mar  1 16:03:31 2003
+@@ -746,9 +746,9 @@
  				case 'B': ev.x = KBD_DOWN; break;
  				case 'C': ev.x = KBD_RIGHT; break;
  				case 'D': ev.x = KBD_LEFT; break;
