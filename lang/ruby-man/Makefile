@@ -16,17 +16,18 @@ MAINTAINER=	olgeni@uli.it
 
 DIST_SUBDIR=	ruby
 
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" LANGSUFFIX="${LANGSUFFIX}"
+PLIST_SUB=	LANGSUFFIX="${LANGSUFFIX}"
 
-RUBY_VER?=	1.4
-WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_VER}${LANGSUFFIX}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${LANGSUFFIX}
 
 NO_BUILD=	yes
 
-DOCDIR=		${PREFIX}/share/doc/ruby/ruby-man-${RUBY_VER}${LANGSUFFIX}
+DOCDIR=		${RUBY_DOCDIR}/ruby-man${LANGSUFFIX}
 
 do-install:
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>
