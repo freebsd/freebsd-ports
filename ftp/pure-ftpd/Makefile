@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
+		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.za.pureftpd.org/pub/pure-ftpd/releases/ \
+		http://ftp.cn.pureftpd.org/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
 
 MAINTAINER=	j@pureftpd.org
-
-.if defined(WITH_DMALLOC)
-LIB_DEPENDS+=	dmalloc.1:${PORTSDIR}/devel/dmalloc
-.endif
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap2
@@ -61,12 +61,6 @@ CONFIGURE_ARGS+=	--with-pgsql
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-# use of dmalloc requested?
-.if defined(WITH_DMALLOC)
-CONFIGURE_ARGS+=	--with-dmalloc
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-.endif
-
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
 		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
 		pure-authd.8
@@ -88,14 +82,13 @@ PAM_TARGET?=	pure-ftpd
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
-		README.Authentication-Modules THANKS poweredby.jpg \
+		README.Authentication-Modules THANKS pure-ftpd.png \
 		pureftpd.schema
 
 CONTRIB=	xml_python_processors.txt sfv-crc-check.pl
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
-	@${ECHO} "WITH_DMALLOC=1        - enable use of the dmalloc library;"
 	@${ECHO} "WITH_LDAP=1           - Support for users in LDAP \
 		directories;"
 	@${ECHO} "WITH_MYSQL=1          - Support for users in MySQL databases;"
@@ -103,7 +96,8 @@ pre-fetch:
 	@${ECHO} "WITH_LANG=lang        - enable compilation of language \
 		support, lang is one of"
 	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
-	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean or swedish."
+	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
+	@${ECHO} "  norwegian or swedish."
 	@${ECHO}
 
 post-install:

@@ -27,7 +27,7 @@ sbin/pure-uploadscript
 %%PORTDOCS%%share/doc/pure-ftpd/README.PGSQL
 %%PORTDOCS%%share/doc/pure-ftpd/README.Virtual-Users
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
-%%PORTDOCS%%share/doc/pure-ftpd/poweredby.jpg
+%%PORTDOCS%%share/doc/pure-ftpd/pure-ftpd.png
 %%PORTDOCS%%share/doc/pure-ftpd/pureftpd.schema
 share/examples/pure-ftpd/pam/pure-ftpd
 share/examples/pure-ftpd/sfv-crc-check.pl
