@@ -1,36 +1,24 @@
---- Makefile.orig	Mon Nov  1 21:21:36 1999
-+++ Makefile	Fri Jun  9 12:07:27 2000
-@@ -2,15 +2,15 @@
- # Makefile for antiword (Linux version)
- #
+--- antiword.h.orig	Thu Nov 30 03:54:14 2000
++++ antiword.h	Sun Dec 17 05:44:49 2000
+@@ -41,7 +41,9 @@
+  #endif /* __riscos */
+ #endif /* !PATH_MAX */
  
--CC	= gcc
--LD	= gcc
-+CC	?= gcc
-+LD	= $(CC)
++#ifndef	SIZE_T_MAX
+ #define SIZE_T_MAX		(size_t)UINT_MAX
++#endif
  
- # must be equal to DEBUG or NDEBUG
- DB	= NDEBUG
+ #if defined(__riscos)
+ #define FILE_SEPARATOR		"."
+--- Makefile.orig	Sun Dec 17 05:45:07 2000
++++ Makefile	Sun Dec 17 05:45:47 2000
+@@ -43,8 +43,7 @@
  
- LDLIBS	=
+ kantiword:	Unix-only/KDE-only/kantiword.sh
+ 		@rm -f $@
+-		echo "#!/bin/sh" > $@
+-		cat $? >> $@
++		@cat $? >> $@
+ 		@chmod 750 $@
  
--CFLAGS	= -Wall -pedantic -O2 -D$(DB)
-+CFLAGS	+= -D$(DB)
- LDFLAGS	=
- 
- OBJS	=\
-@@ -22,12 +22,12 @@
- PROGS =\
- 	antiword
- 
--INSTALL_DIR = $(HOME)/bin
-+INSTALL_DIR = $(PREFIX)/bin
- 
- all:		$(PROGS)
- 
- install:	all
--		cp -pf $(PROGS) $(INSTALL_DIR)
-+		$(BSD_INSTALL_PROGRAM) $(PROGS) $(INSTALL_DIR)
- 
- clean:
- 		rm -f $(OBJS)
+ .c.o:
