@@ -3,13 +3,15 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.5 1995/08/19 06:54:21 asami Exp $
+# $Id: Makefile,v 1.6 1995/11/26 10:48:20 asami Exp $
 #
 
 DISTNAME=       rman-2.4
 CATEGORIES+=	misc
 MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 # Restrictive copyright
 NO_PACKAGE=	yes
