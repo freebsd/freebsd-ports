@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkyahoo
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yahoo Messenger Client using GTK
 
 USE_X_PREFIX=	yes

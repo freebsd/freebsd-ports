@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.pekdon.net/files/source/
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A windowmanager based on aewm++
 
 USE_X_PREFIX=	yes
