@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.0.1
+PORTVERSION=	1.9.1
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
-		http://sylpheed.good-day.net/sylpheed/:source \
+		http://sylpheed.good-day.net/sylpheed/v1.9/:source \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
 MASTER_SITE_SUBDIR=	sylpheed-claws/:source oliver/:mime
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r.1/rc/}
@@ -26,9 +26,10 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+NO_LATEST_LINK=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -37,23 +38,14 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 		--with-libintl-prefix=${LOCALBASE} \
 		--program-transform-name=''
 
+CONFLICTS=	sylpheed-1.[0-8]* sylpheed-gtk2-[0-9]*
+
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITH_PIXBUF)
-USE_GNOME+=	gdkpixbuf
-.else
-USE_GNOME+=	imlib
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PIXBUF)
-CONFIGURE_ARGS+=--disable-imlib
-.else
-CONFIGURE_ARGS+=--disable-gdk-pixbuf
-.endif
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
@@ -95,7 +87,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      WITH_PIXBUF=yes   Enable GDK Pixbuf support"
 	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
 	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
 	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
@@ -129,7 +120,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ChangeLog INSTALL README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${i}.jp ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/mime.types ${PREFIX}/etc/sylpheed-mime.types
 .endif
