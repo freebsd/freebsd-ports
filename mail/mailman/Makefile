@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -125,6 +125,10 @@ post-configure:
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+# port system auditors complain if dir is created prior to install
+# but configure demands it be there.  we delete it now if empty,
+# so it will be re-created.  For existing installs, this is ignored
+	@- rmdir ${MAILMANDIR} 2> /dev/null
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
