@@ -1,0 +1,109 @@
+--- z/zcurses.c.orig	Mon Mar 17 11:24:09 1997
++++ z/zcurses.c	Tue Jan  5 18:49:09 1999
+@@ -116,6 +116,10 @@
+ #include <ctype.h>
+ #include <signal.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #if defined(__FreeBSD__)
+ #include <sys/ioctl.h>
+ #endif
+@@ -124,10 +128,13 @@
+ #include <local/fas.h>
+ #endif /* FASI */
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ long time();
+-void report_error_count();
+ extern char *tzname[];
+ struct tm *localtime();
++#endif
++
++void report_error_count();
+ 
+ #undef uchar
+ #define uchar unsigned char
+@@ -266,7 +273,7 @@
+ char *tod;
+ {
+ 	static char tod_str[32];
+-	long cur_time = time((long *)0);
++	time_t cur_time = time((time_t *)0);
+ 	struct tm *lt = localtime(&cur_time);
+ 
+ 	switch (type)
+@@ -564,7 +571,7 @@
+ 			if (++dumbtty_pos > 75)
+ 			{
+ 				dumbtty_newline();
+-				current_epoch = time((long *)0);
++				current_epoch = time((time_t *)0);
+ 				elapsed_seconds = current_epoch - this_file_start_epoch;
+ 				cptr = get_elapsed_time(elapsed_seconds);
+ 				dumbtty_pos = printf("%s elapsed ", cptr +
+@@ -598,7 +605,7 @@
+ 			{
+ 				dumbtty_newline();
+ 				dumbtty_newline();
+-				current_epoch = time((long *)0);
++				current_epoch = time((time_t *)0);
+ 				elapsed_seconds = current_epoch - this_file_start_epoch;
+ 				cptr = get_elapsed_time(elapsed_seconds);
+ 				dumbtty_pos = printf("%s elapsed ", cptr +
+@@ -708,7 +715,7 @@
+ 	wmove(win, 9, 3);
+ 	cptr = timeofday_text(1, (char *)0);
+ 	waddstr(win, cptr);
+-	current_epoch = time((long *)0);
++	current_epoch = time((time_t *)0);
+ 	elapsed_seconds = current_epoch - start_seconds;
+ 	cptr = get_elapsed_time(elapsed_seconds);
+ 	wmove(win, 9, 21);
+@@ -970,7 +977,7 @@
+ 	{
+ 		report_tx_ind(0);
+ 		report_rx_ind(0);
+-		current_epoch = time((long *)0);
++		current_epoch = time((time_t *)0);
+ 		elapsed_seconds = current_epoch - start_seconds;
+ 		if (elapsed_seconds && (zcurses_bitrate > 50))
+ 		{
+@@ -1088,7 +1095,7 @@
+ 	if (report_init_complete)
+ 		return;
+ 
+-	start_seconds = time((long *)0);
++	start_seconds = time((time_t *)0);
+ 	current_epoch = start_seconds;
+ 
+ 	if (dumbtty)
+@@ -1338,7 +1345,7 @@
+ 	float efficiency = 0.0;
+ 	static long xfer_rate_report_epoch = 0L;
+ 
+-	current_epoch = time((long *)0);
++	current_epoch = time((time_t *)0);
+ 
+ 	if (!final && (current_epoch < (xfer_rate_report_epoch + 5L)))
+ 		return;
+@@ -1674,7 +1681,7 @@
+ 		write(log_packets, "\n", 1);
+ 	}
+ 
+-	this_file_start_epoch = time((long *)0);
++	this_file_start_epoch = time((time_t *)0);
+ 	this_file_xfer_count = 0;
+ 
+ 	if (dumbtty)
+@@ -1736,7 +1743,7 @@
+ 		write(log_packets, "\n", 1);
+ 	}
+ 
+-	this_file_start_epoch = time((long *)0);
++	this_file_start_epoch = time((time_t *)0);
+ 	this_file_xfer_count = 0;
+ 
+ 	if (dumbtty)
