@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ddd
 info/ddd.info
 @exec install-info %D/info/ddd.info %D/info/dir
@@ -6,42 +5,42 @@ info/ddd.info
 info/ddd-themes.info
 @exec install-info %D/info/ddd-themes.info %D/info/dir
 @unexec install-info --delete %D/info/ddd-themes.info %D/info/dir
-share/ddd-3.3/COPYING
-share/ddd-3.3/NEWS
-share/ddd-3.3/ddd/Ddd
-share/ddd-3.3/themes/green.vsl
-share/ddd-3.3/themes/red.vsl
-share/ddd-3.3/themes/smalltitles.vsl
-share/ddd-3.3/themes/smallvalues.vsl
-share/ddd-3.3/themes/suppress.vsl
-share/ddd-3.3/themes/tinyvalues.vsl
-share/ddd-3.3/vsllib/arcs.vsl
-share/ddd-3.3/vsllib/builtin.vsl
-share/ddd-3.3/vsllib/colors.vsl
-share/ddd-3.3/vsllib/ctree.vsl
-share/ddd-3.3/vsllib/ddd.vsl
-share/ddd-3.3/vsllib/flow.vsl
-share/ddd-3.3/vsllib/flowplus.vsl
-share/ddd-3.3/vsllib/fonts.vsl
-share/ddd-3.3/vsllib/linebreak.vsl
-share/ddd-3.3/vsllib/list.vsl
-share/ddd-3.3/vsllib/slopes.vsl
-share/ddd-3.3/vsllib/std.vsl
-share/ddd-3.3/vsllib/struct.vsl
-share/ddd-3.3/vsllib/symbols.vsl
-share/ddd-3.3/vsllib/tab.vsl
-share/ddd-3.3/vsllib/tree.vsl
-share/ddd-3.3/vsllib/verbose.vsl
-share/ddd-3.3/vsllib/vsl.vsl
-share/ddd-3.3/vsllib/vsldef.vsl
-share/ddd-3.3/vsllib/vsllib.vsl
+share/ddd-%%VERSION%%/COPYING
+share/ddd-%%VERSION%%/NEWS
+share/ddd-%%VERSION%%/ddd/Ddd
+share/ddd-%%VERSION%%/themes/green.vsl
+share/ddd-%%VERSION%%/themes/red.vsl
+share/ddd-%%VERSION%%/themes/smalltitles.vsl
+share/ddd-%%VERSION%%/themes/smallvalues.vsl
+share/ddd-%%VERSION%%/themes/suppress.vsl
+share/ddd-%%VERSION%%/themes/tinyvalues.vsl
+share/ddd-%%VERSION%%/vsllib/arcs.vsl
+share/ddd-%%VERSION%%/vsllib/builtin.vsl
+share/ddd-%%VERSION%%/vsllib/colors.vsl
+share/ddd-%%VERSION%%/vsllib/ctree.vsl
+share/ddd-%%VERSION%%/vsllib/ddd.vsl
+share/ddd-%%VERSION%%/vsllib/flow.vsl
+share/ddd-%%VERSION%%/vsllib/flowplus.vsl
+share/ddd-%%VERSION%%/vsllib/fonts.vsl
+share/ddd-%%VERSION%%/vsllib/linebreak.vsl
+share/ddd-%%VERSION%%/vsllib/list.vsl
+share/ddd-%%VERSION%%/vsllib/slopes.vsl
+share/ddd-%%VERSION%%/vsllib/std.vsl
+share/ddd-%%VERSION%%/vsllib/struct.vsl
+share/ddd-%%VERSION%%/vsllib/symbols.vsl
+share/ddd-%%VERSION%%/vsllib/tab.vsl
+share/ddd-%%VERSION%%/vsllib/tree.vsl
+share/ddd-%%VERSION%%/vsllib/verbose.vsl
+share/ddd-%%VERSION%%/vsllib/vsl.vsl
+share/ddd-%%VERSION%%/vsllib/vsldef.vsl
+share/ddd-%%VERSION%%/vsllib/vsllib.vsl
 share/doc/ddd/PROBLEMS
 share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
 share/doc/ddd/ddd.ps.gz
 share/doc/ddd/sample.dddinit
-@dirrm share/ddd-3.3/ddd
-@dirrm share/ddd-3.3/themes
-@dirrm share/ddd-3.3/vsllib
-@dirrm share/ddd-3.3
 @dirrm share/doc/ddd
+@dirrm share/ddd-%%VERSION%%/vsllib
+@dirrm share/ddd-%%VERSION%%/themes
+@dirrm share/ddd-%%VERSION%%/ddd
+@dirrm share/ddd-%%VERSION%%
