@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20001101
+PORTVERSION=	20010325
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://www.post.yusei.go.jp/newnumber/lzh/s/
+MASTER_SITES=	http://www.postal.mpt.go.jp/newnumber/lzh/s/
 EXTRACT_SUFX=	.lzh
 DISTNAME=	ken_all
 
