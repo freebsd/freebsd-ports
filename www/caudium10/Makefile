@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	caudium
+PORTNAME=	caudium10
 PORTVERSION=	1.0.52
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
