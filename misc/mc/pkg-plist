@@ -32,7 +32,6 @@ share/mc/FAQ
 share/mc/bin/mc.csh
 share/mc/bin/mc.sh
 share/mc/bin/mcfn_install
-share/mc/cedit.menu
 share/mc/desktop-scripts/README.desktop
 share/mc/desktop-scripts/startup.links
 share/mc/edit.indent.rc
