@@ -1,9 +1,9 @@
 # New ports collection makefile for: dict
 # Version required:     1.0
-# Date created:         6 August 1997
+# Date created:         29 September 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1997/08/16 10:14:36 wosch Exp $
+# $Id: Makefile,v 1.1.1.1 1997/09/29 18:02:04 wosch Exp $
 #
 
 DISTNAME=       de-manpages-1.0
