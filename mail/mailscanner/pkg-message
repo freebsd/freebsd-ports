@@ -1,0 +1,24 @@
+*************************************************************************
+	    _  _____ _____ _____ _   _ _____ ___ ___  _   _ 	
+	   / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |
+	  / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |
+	 / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |
+	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|
+							
+	See PREFIX/share/doc/MailScanner/README.FreeBSD.port,
+	http://www.mailscanner.info, the man pages MailScanner and
+	MailScanner.conf for further instructions.
+
+	You will need to make several modifications to config files
+	before MailScanner will work correctly.
+                                              
+	If this is the first time you are installing this port you
+	should create an initial set of configuration files with 
+                                                               
+	make initial-config 
+
+	within this directory. Without this step you will only have
+	.sample files instead of real .conf files and report
+	templates.
+
+*************************************************************************

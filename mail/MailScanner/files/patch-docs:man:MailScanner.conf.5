@@ -1,0 +1,106 @@
+--- ../MailScanner-4.21-9.orig/docs/man/MailScanner.conf.5	Sun May 11 02:35:52 2003
++++ docs/man/MailScanner.conf.5	Thu Jun 12 15:29:18 2003
+@@ -1,4 +1,4 @@
+-.TH "MailScanner.conf" "5" "4.14-5" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.21-9" "Julian Field" "Mail"
+ .SH "NAME"
+ .LP 
+ MailScanner.conf \- Main configuration for MailScanner
+@@ -303,7 +303,7 @@
+ .br 
+ 
+ .br 
+-Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kavdaemonclient, inoculate, onoculan, nod32, f\-secure, f\-prot, panda, rav, antivir, clamav, trend, none (no virus scanning at all)
++Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kavdaemonclient, inoculate, onoculan, nod32, f\-secure, f\-prot, panda, rav, antivir, clamav, trend, bitdefender, none (no virus scanning at all)
+ .br 
+ 
+ .br 
+@@ -335,7 +335,12 @@
+ .br 
+ 
+ .br 
+-Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. 
++Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 2 special keywords
++.br 
++HTML\-IFrame: inserting this will stop senders being warned about HTML Iframe tags, when they are not allowed.
++.br 
++HTML\-Codebase: inserting this will stop senders being warned about HTML Object Codebase tags, when they are not allowed.
++
+ 
+ .TP 
+ \fBStill Deliver Silent Viruses\fR
+@@ -621,6 +626,15 @@
+ If this is set to yes then you get the normal fully detailed spam report in spam messages. If this is set to no then you simply get a "spam" or "not spam" report. The exact text inserted can be configured in the languages.conf file for your language. 
+ 
+ .TP 
++\fBInclude Scores In SpamAssassin Report\fR
++Default: yes
++.br 
++
++.br 
++Do you want to include the numerical scores in the detailed SpamAssassin report, or just list the names of the scores?
++
++
++.TP 
+ \fBSpam Score Character\fR
+ Default: s
+ .br 
+@@ -979,6 +993,14 @@
+ This provides a space\-separated list of "Spam Lists" (or RBL's or DNSBL's) which are checked for each message. These lists are based on the domain name of the sender address of each message. Every list used here must be defined in the "Spam List Definitions" file mentioned above. 
+ 
+ .TP 
++\fBSpam Lists To Reach High Score\fR
++Default: 5
++.br 
++
++.br 
++If a message appears in at least this number of "Spam Lists" (as defined above), then the message will be treated as "High Scoring Spam" and so the "High Scoring Spam Actions" will happen. You probably want to set this to 2 if you are actually using this feature. 5 is high enough that it will never happen unless you use lots of "Spam Lists". This can also be the filename of a ruleset.
++
++.TP 
+ \fBSpam List Timeout\fR
+ Default: 10
+ .br 
+@@ -1146,6 +1168,9 @@
+ .br 
+ "striphtml" \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
+ 
++.br 
++"attachment" \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
++
+ .TP 
+ \fBHigh Scoring Spam Actions\fR
+ Default: deliver
+@@ -1155,6 +1180,14 @@
+ This is the same as the "Spam Actions" option above, but it gives the actions to apply to any message whose SpamAssassin score is above the "High Scoring" threshold described above. 
+ 
+ .TP 
++\fBNon Spam Actions\fR
++Default: deliver
++.br 
++
++.br 
++This is the same as the "Spam Actions" option above, except that it applies to messages that are NOT spam. The bounce option does not make much sense here so do not use it.
++
++.TP 
+ \fBSender Spam Report\fR
+ Default: /opt/MailScanner/etc/reports/en/sender.spam.report.txt
+ .br 
+@@ -1189,6 +1222,18 @@
+ 
+ .br 
+ When the "bounce" spam action is applied to a message that triggered SpamAssassin, this file gives the text to put in that message. 
++
++.TP 
++\fBInline Spam Warning\fR
++Default: /opt/MailScanner/etc/reports/en/inline.spam.warning.txt
++.br 
++Default Linux: /etc/MailScanner/reports/en/inline.spam.warning.txt
++.br 
++Default FreeBSD: /usr/local/share/MailScanner/reports/en/inline.spam.warning.txt
++.br 
++
++.br 
++If you use the 'attachment' Spam Action or High Scoring Spam Action then this is the location of inline spam report that is inserted at the top of the message.
+ .SH "System logging"
+ .TP 
+ \fBSyslog Facility\fR

@@ -1,0 +1,171 @@
+--- ../MailScanner-4.21-9.orig/docs/man/MailScanner.conf.5.html	Sun May 11 02:35:53 2003
++++ docs/man/MailScanner.conf.5.html	Thu Jun 12 15:29:20 2003
+@@ -1,5 +1,5 @@
+ <!-- Creator     : groff version 1.18.1 -->
+-<!-- CreationDate: Fri May  9 19:19:36 2003 -->
++<!-- CreationDate: Thu Jun 12 15:28:39 2003 -->
+ <html>
+ <head>
+ <meta name="generator" content="groff -Thtml, see www.gnu.org">
+@@ -804,8 +804,8 @@
+ <p>Which Virus Scanning package to use. Possible choices are
+ sophos, sophossavi, mcafee, command, kaspersky,
+ kavdaemonclient, inoculate, onoculan, nod32, f&minus;secure,
+-f&minus;prot, panda, rav, antivir, clamav, trend, none (no
+-virus scanning at all)</p>
++f&minus;prot, panda, rav, antivir, clamav, trend,
++bitdefender, none (no virus scanning at all)</p>
+ <!-- INDENTATION -->
+ <p>Note for McAfee users: Do NOT use any symlinks with
+ McAfee at all. It is very strange but McAfee may not detect
+@@ -883,7 +883,14 @@
+ such as &quot;Klez&quot; and &quot;Bugbear&quot; which put
+ fake addresses on messages they send, so there is no point
+ informing the sender of the message, as it won&rsquo;t
+-actually be them who sent it anyway.</p>
++actually be them who sent it anyway. Other words that can be
++put in this list are the 2 special keywords<br>
++HTML&minus;IFrame: inserting this will stop senders being
++warned about HTML Iframe tags, when they are not
++allowed.<br>
++HTML&minus;Codebase: inserting this will stop senders being
++warned about HTML Object Codebase tags, when they are not
++allowed.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1642,6 +1649,27 @@
+ <tr valign="top" align="left">
+ <td width="10%"></td>
+ <td width="89%">
++<p><b>Include Scores In SpamAssassin Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="21%"></td>
++<td width="77%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>Do you want to include the numerical scores in the
++detailed SpamAssassin report, or just list the names of the
++scores?</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="10%"></td>
++<td width="89%">
+ <p><b>Spam Score Character</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2623,6 +2651,32 @@
+ <tr valign="top" align="left">
+ <td width="10%"></td>
+ <td width="89%">
++<p><b>Spam Lists To Reach High Score</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="21%"></td>
++<td width="77%">
++<p>Default: 5</p>
++<!-- INDENTATION -->
++<p>If a message appears in at least this number of
++&quot;Spam Lists&quot; (as defined above), then the message
++will be treated as &quot;High Scoring Spam&quot; and so the
++&quot;High Scoring Spam Actions&quot; will happen. You
++probably want to set this to 2 if you are actually using
++this feature. 5 is high enough that it will never happen
++unless you use lots of &quot;Spam Lists&quot;. This can also
++be the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="10%"></td>
++<td width="89%">
+ <p><b>Spam List Timeout</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -3021,6 +3075,11 @@
+ action on its own does not imply that the message will be
+ delivered, you will need to specify &quot;deliver&quot; or
+ &quot;forward&quot; to actually deliver the message.</p>
++<!-- INDENTATION -->
++<p>&quot;attachment&quot; &minus; Convert the original
++message into an attachment of the message. This means the
++user has to take an extra step to open the spam, and stops
++&quot;web bugs&quot; very effectively.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+@@ -3051,6 +3110,28 @@
+ <tr valign="top" align="left">
+ <td width="10%"></td>
+ <td width="89%">
++<p><b>Non Spam Actions</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="21%"></td>
++<td width="77%">
++<p>Default: deliver</p>
++<!-- INDENTATION -->
++<p>This is the same as the &quot;Spam Actions&quot; option
++above, except that it applies to messages that are NOT spam.
++The bounce option does not make much sense here so do not
++use it.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="10%"></td>
++<td width="89%">
+ <p><b>Sender Spam Report</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -3122,6 +3203,32 @@
+ <p>When the &quot;bounce&quot; spam action is applied to a
+ message that triggered SpamAssassin, this file gives the
+ text to put in that message.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="10%"></td>
++<td width="89%">
++<p><b>Inline Spam Warning</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="21%"></td>
++<td width="77%">
++<p>Default:
++/opt/MailScanner/etc/reports/en/inline.spam.warning.txt<br>
++Default Linux:
++/etc/MailScanner/reports/en/inline.spam.warning.txt<br>
++Default FreeBSD:
++/usr/local/share/MailScanner/reports/en/inline.spam.warning.txt</p>
++<!-- INDENTATION -->
++<p>If you use the &rsquo;attachment&rsquo; Spam Action or
++High Scoring Spam Action then this is the location of inline
++spam report that is inserted at the top of the message.</p>
+ </td>
+ </table>
+ <a name="System logging"></a>
