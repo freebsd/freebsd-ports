@@ -1,6 +1,29 @@
 --- configure.in.orig	Thu May 16 20:07:47 2002
-+++ configure.in	Mon May 12 22:47:00 2003
-@@ -80,14 +80,9 @@
++++ configure.in	Sun Sep 21 11:54:41 2003
+@@ -18,8 +18,8 @@
+ 
+ AC_PROG_CC_WARNINGS()
+ 
+-LDFLAGS="$LDFLAGS -L/usr/local/lib"
+-CFLAGS="-I/usr/local/include $CFLAGS"
++LDFLAGS="$LDFLAGS -L/usr/local/lib %%PTHREAD_LIBS%%"
++CFLAGS="-I/usr/local/include $CFLAGS %%PTHREAD_CFLAGS%%"
+ 
+ AC_PATH_X
+ if test $have_x
+@@ -38,11 +38,6 @@
+ 	echo "*****************************"
+ 	exit
+ 	])
+-AC_CHECK_LIB(pthread, main, [],
+-	[
+-	CFLAGS="$CFLAGS -pthread"
+-	])
+-
+ 
+ dnl AC_WITH_SDL
+ AC_CHECK_LIB(SDL, main,
+@@ -80,14 +75,8 @@
  AC_CANONICAL_HOST
  
  case "$host_os" in
@@ -14,7 +37,6 @@
 -    CFLAGS="-DFREEBSD_5 $CFLAGS"
 + freebsd*)
 +    echo " + OS Type is FreeBSD"
-+    CFLAGS="-DFREEBSD $CFLAGS"
      ;;
  
   darwin1.3.*)
