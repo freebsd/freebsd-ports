@@ -1,0 +1,11 @@
+Fredrik Lundh's original and widely used Python implementation of Userland's
+XML-RPC protocol (http://www.xmlrpc.com/) is tightly integrated with Python
+and extremely simple to use.  It includes a simple example server based on
+Python's SocketServer class, and an XML-RPC handler for Medusa.
+
+Version 0.9.9 is regarded as a beta-quality development release.
+
+Author: Fredrik Lundh <fredrik@pythonware.com>
+WWW:    http://www.pythonware.com/products/xmlrpc/
+
+-- Johann Visagie <johann@egenetics.com>

@@ -293,6 +293,7 @@
     SUBDIR += pvm++
     SUBDIR += py-soap
     SUBDIR += py-xmlrpc
+    SUBDIR += py-xmlrpclib
     SUBDIR += queso
     SUBDIR += radius
     SUBDIR += radiusclient
