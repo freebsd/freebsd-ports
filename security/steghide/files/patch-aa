@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Oct 16 03:12:24 1999
++++ Makefile.in	Fri Nov 30 15:21:06 2001
+@@ -66,7 +66,7 @@
+ bin_PROGRAMS = steghide
+ steghide_SOURCES = bufmanag.c crypto.c fformats.c io.c main.c md5.c stegano.c
+ man_MANS = steghide.1
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
+ doc_DATA = AUTHORS BUGS COPYING HISTORY INSTALL README TODO
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
