@@ -1,0 +1,18 @@
+dnsjava is an implementation of DNS in Java. It supports all defined record
+types (including the DNSSEC types), and unknown types. It can be used for
+queries, zone transfers, and dynamic updates. It includes a cache which can be
+used by clients, and a minimal implementation of a server. It supports TSIG
+authenticated messages, partial DNSSEC verification, and EDNS0.
+
+dnsjava provides functionality above and beyond that of the InetAddress class.
+Since it is written in pure Java, dnsjava is fully threadable, and in many
+cases is faster than using InetAddress.
+
+dnsjava provides both high and low level access to DNS. The high level
+functions perform queries for records of a given name, type, and class, and
+return an array of records. There is also a clone of InetAddress, which is even
+simpler. A cache is used to reduce the number of DNS queries sent. The low
+level functions allow direct manipulation of DNS messages and records, as well
+as allowing additional resolver properties to be set.
+
+WWW:	http://www.xbill.org/dnsjava/
