@@ -117,10 +117,14 @@ lib/foxicons/tgz_16x16.png
 lib/foxicons/tgz_32x32.png
 lib/foxicons/tools_16x16.png
 lib/foxicons/tools_32x32.png
+lib/foxicons/vhdl_16x16.png
+lib/foxicons/vhdl_32x32.png
 lib/foxicons/video_16x16.png
 lib/foxicons/video_32x32.png
 lib/foxicons/visio_16x16.png
 lib/foxicons/visio_32x32.png
+lib/foxicons/vlog_16x16.png
+lib/foxicons/vlog_32x32.png
 lib/foxicons/wave_16x16.png
 lib/foxicons/wave_32x32.png
 lib/foxicons/word_16x16.png
@@ -141,6 +145,7 @@ share/locale/de/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
+share/locale/it/LC_MESSAGES/xfe.mo
 share/locale/pt_BR/LC_MESSAGES/xfe.mo
 share/locale/pl/LC_MESSAGES/xfe.mo
 share/locale/tr/LC_MESSAGES/xfe.mo
