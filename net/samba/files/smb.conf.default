@@ -139,7 +139,7 @@
 # Client codepage setting
 # for Western European users
 ; client code page=850
-# for Asian Users (Japanese, Chinese, etc.)
+# for Japanese Users
 ; client code page=932
 ; coding system=cap
 
