@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.46
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -41,6 +41,12 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .endif
+.if defined(BUILD_STATIC)
+CONFIGURE_ARGS+=--with-mysqld-ldflags=--static
+.endif
+.if defined(BUILD_OPTIMIZED)
+CFLAGS+=	-mcpu=pentiumpro -O3 -fno-omit-frame-pointer
+.endif
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads -L${LOCALBASE}/lib -llthread -llgcc_r'
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
@@ -49,6 +55,7 @@ LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		CXX="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
@@ -86,6 +93,9 @@ pre-fetch:
 	@${ECHO} "				DNS check before inserting local hostname to"
 	@${ECHO} "				mysql database."
 	@${ECHO} "				Use if your machine has no offical DNS entry."
+	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
+	@${ECHO} "	BUILD_OPTIMIZED=yes	Add -mcpu=pentiumpro -O3 -fno-omit-frame-pointer"
+	@${ECHO} "				to CFLAGS."
 	@${ECHO} ""
 
 post-patch:
