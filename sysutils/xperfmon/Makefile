@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/xperfmon++
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN=		"5.X or newer systems should use xperfmon3"
+IGNORE=		"5.X or newer systems should use xperfmon3"
 .endif
 
 pre-configure:
