@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	qt-${DB}-plugin
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/      \
 		ftp://ftp.silug.org/pub/qt/             \

@@ -1,10 +1,10 @@
 bin/qmake
 @comment A bug in pkg_* prevents us from using %D below
 @cwd %%_PREFIX%%/share/qt/mkspecs
-aix-g++/qmake.conf
-aix-g++/qplatformdefs.h
 aix-g++-64/qmake.conf
 aix-g++-64/qplatformdefs.h
+aix-g++/qmake.conf
+aix-g++/qplatformdefs.h
 aix-xlc-64/qmake.conf
 aix-xlc-64/qplatformdefs.h
 aix-xlc/qmake.conf
@@ -51,10 +51,10 @@ linux-cxx/qmake.conf
 linux-cxx/qplatformdefs.h
 linux-ecc-64/qmake.conf
 linux-ecc-64/qplatformdefs.h
-linux-g++/qmake.conf
-linux-g++/qplatformdefs.h
 linux-g++-64/qmake.conf
 linux-g++-64/qplatformdefs.h
+linux-g++/qmake.conf
+linux-g++/qplatformdefs.h
 linux-icc/qmake.conf
 linux-icc/qplatformdefs.h
 linux-kcc/qmake.conf
@@ -74,6 +74,8 @@ macx-mwerks/qplatformdefs.h
 macx-pbuilder/Info.plist.app
 macx-pbuilder/qmake.conf
 macx-pbuilder/qplatformdefs.h
+macx-xlc/qmake.conf
+macx-xlc/qplatformdefs.h
 netbsd-g++/qmake.conf
 netbsd-g++/qplatformdefs.h
 openbsd-g++/qmake.conf
@@ -157,6 +159,7 @@ win32-watcom/qmake.conf
 @dirrm macx-g++
 @dirrm macx-mwerks
 @dirrm macx-pbuilder
+@dirrm macx-xlc
 @dirrm netbsd-g++
 @dirrm openbsd-g++
 @dirrm qnx-g++
