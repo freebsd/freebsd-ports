@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	2.00
+PORTREVISION=	0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-DISTFILES=	xpdf-chinese-simplified.tar.gz xpdf-chinese-traditional.tar.gz
+DISTFILES=	xpdf-chinese-simplified-2002-jun-17.tar.gz \
+		xpdf-chinese-traditional-2002-apr-14.tar.gz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
