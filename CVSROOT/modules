@@ -4680,6 +4680,7 @@ p5-Number-Format	ports/textproc/p5-Number-Format
 p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-ORBit	ports/devel/p5-ORBit
 p5-Orchard-Perl	ports/textproc/p5-Orchard-Perl
+p5-PDF-API2	ports/textproc/p5-PDF-API2
 p5-PDF-Create	ports/textproc/p5-PDF-Create
 p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
