@@ -16,7 +16,7 @@ LETTERDJ	"LETTERDJ printing"		ON	\
 A4		"A4 printing"			OFF	\
 PS		"Postscript and PDF files"	ON	\
 SAMBA		"Windows Remote-Print Support"	ON	\
-ATALK		"AppleTalk Remote-Print Support"OFF	\
+ATALK		"AppleTalk Remote-Print Support" OFF	\
 ENCRYPTED_PDF	"Encrypted PDF files"		ON	\
 ASCII		"ASCII/English Text/Scripts"	ON	\
 MAIL		"Mail/News articles"		ON	\
