@@ -1,0 +1,40 @@
+--- Makefile.org	Sun Oct 29 01:21:56 1995
++++ Makefile	Sun Dec  1 14:01:52 1996
+@@ -8,12 +8,13 @@
+ # Various other stuff used
+ RM    = rm -f
+ CP    = cp
++INSTALL_DATA =	/usr/bin/install -c -o bin -g bin -m 444
+ 
+ # where the Info file should go
+-INFODIR = ../info
++INFODIR = ${PREFIX}/info
+ 
+ # where the w3 lisp files should go
+-LISPDIR = $$HOME/lisp
++LISPDIR = ${PREFIX}/share/emacs/site-lisp/w3
+ 
+ # Change this to be where your .emacs file is stored
+ DOTEMACS      = $$HOME/.emacs
+@@ -57,16 +58,16 @@
+ w3:	docomp.el $(OBJECTS)
+ 	@echo Build of w3 complete...
+ 
+-all:	w3.info w3 emacs
++all:	w3.info w3
+ 
+ install: all
+ 	@echo Installing in $(LISPDIR)
+ 	if [ ! -d $(LISPDIR) ] ; then $(MKDIR) $(LISPDIR) ; fi
+-	(cd $(LISPDIR) ; $(RM) -f $(SOURCES) $(OBJECTS) w3-sysdp.el*)
+-	$(CP) $(SOURCES) $(OBJECTS) $(LISPDIR)
++	(cd $(LISPDIR) ; $(RM) $(SOURCES) $(OBJECTS) w3-sysdp.el*)
++	${INSTALL_DATA} $(SOURCES) $(OBJECTS) $(LISPDIR)
+ 	if [ ! -d $(INFODIR) ] ; then $(MKDIR) $(INFODIR) ; fi
+-	(cd $(INFODIR) ; $(RM) -f w3.info*)
+-	$(CP) w3.info* $(INFODIR)
++	(cd $(INFODIR) ; $(RM) w3.info*)
++	${INSTALL_DATA} w3.info* $(INFODIR)
+ 
+ emacs:	
+ 	@echo Adding w3 setup to $(DOTEMACS)
