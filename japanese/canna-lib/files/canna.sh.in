@@ -1,9 +1,9 @@
 #!/bin/sh
 
-OPTIONS=
+OPTIONS="-u bin"
 # Uncomment the following if you want to use a TCP connection
 # instead of a UNIX domain socket.
-#OPTIONS="-inet"
+#OPTIONS="-u bin -inet"
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
     echo "$0: Cannot determine the PREFIX" >&2

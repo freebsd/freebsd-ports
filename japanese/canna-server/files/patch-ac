@@ -1,5 +1,5 @@
 --- Canna.conf.orig	Thu Oct 24 23:37:25 2002
-+++ Canna.conf	Thu Nov  7 09:14:12 2002
++++ Canna.conf	Thu Nov 14 09:28:18 2002
 @@ -132,11 +132,12 @@
  
  /* rootにならずにインストールする時はこれを定義して下さい */
@@ -27,11 +27,7 @@
  #endif
  
  /* 次の3行は変更しないでください */
-@@ -161,10 +162,11 @@
- #else
- cannaOwnerGroup = -o $(cannaOwner) -g $(cannaGroup)
- #endif
-+cannaOwnerDefinition = -DcannaOwner="\"$(cannaOwner)\""
+@@ -164,7 +165,7 @@
  
  pointerIntegerDef =
  
@@ -40,7 +36,7 @@
      /* SunOS 4.x をお使いの方で shared object を利用する場合には
              cannaDsoRev = 1.1
      と指定してください。また、FreeBSD を利用する場合は、
-@@ -308,7 +310,7 @@
+@@ -308,7 +309,7 @@
   * ここから下は変更しないようにしてください。
   */
  
