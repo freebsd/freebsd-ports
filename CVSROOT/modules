@@ -4571,6 +4571,7 @@ p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
 p5-Lingua-EN-Gender	ports/textproc/p5-Lingua-EN-Gender
 p5-Lingua-EN-Infinitive	ports/textproc/p5-Lingua-EN-Infinitive
 p5-Lingua-EN-Inflect	ports/textproc/p5-Lingua-EN-Inflect
+p5-Lingua-EN-Nickname	ports/textproc/p5-Lingua-EN-Nickname
 p5-Lingua-EN-Numbers-Ordinate	ports/textproc/p5-Lingua-EN-Numbers-Ordinate
 p5-Lingua-EN-Sentence	ports/textproc/p5-Lingua-EN-Sentence
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
