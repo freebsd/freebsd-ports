@@ -7514,6 +7514,7 @@ pear-mailparse	ports/mail/pear-mailparse
 pear-sqlite	ports/databases/pear-sqlite
 pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
+pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
