@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/06/05 22:29:48 mharo Exp $
+# $Id: Makefile,v 1.4 1999/06/17 08:15:52 asami Exp $
 #
 
 DISTNAME=	dvipsk-5.78a
@@ -96,8 +96,8 @@ post-install:
 	@${LN} -fs ${DVIPSDIR}/contrib ${PREFIX}/share/doc/dvips/contrib
 .endif
 .if defined(BATCH)
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	  ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL BATCH
+	@${SETENV} PKG_PREFIX=${PREFIX} BATCH=yes \
+	  ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .else
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	  ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
