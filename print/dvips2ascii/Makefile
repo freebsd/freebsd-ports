@@ -6,13 +6,16 @@
 # $FreeBSD$
 #
 
-DISTNAME= 	dvips2ascii-1.0
+DISTNAME= 	dvips2ascii-1.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.freebsd.org/~wosch/src/
+MASTER_SITES=	http://www.de.freebsd.org/~eserte/distfiles/
 
 MAINTAINER=	eserte@cs.tu-berlin.de
 
 do-build:
+	${MV} ${WRKSRC}/dvips2ascii ${WRKSRC}/dvips2ascii.orig
+	${SED} -e 's;#!.*perl;#!${PERL};' \
+	    < ${WRKSRC}/dvips2ascii.orig > ${WRKSRC}/dvips2ascii
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dvips2ascii ${PREFIX}/bin
