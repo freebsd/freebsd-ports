@@ -281,10 +281,10 @@ MAKE_ENV+=		HAVE_IMLIB=${HAVE_IMLIB}
 
 .if defined(USE_GNOMELIBS)
 CONFIGURE_ARGS+=--with-gnome=${PREFIX}
-.if !defined(HAVE_GNOME) && ${CONFIGURE_ARGS:S/--localstatedir=//} == ${CONFIGURE_ARGS:S/  / /g}
+.if ${CONFIGURE_ARGS:S/--localstatedir=//} == ${CONFIGURE_ARGS:S/  / /g}
 CONFIGURE_ARGS+=--localstatedir=${PREFIX}/share/gnome
 .endif
-.if !defined(HAVE_GNOME) && ${CONFIGURE_ARGS:S/--datadir=//} == ${CONFIGURE_ARGS:S/  / /g}
+.if ${CONFIGURE_ARGS:S/--datadir=//} == ${CONFIGURE_ARGS:S/  / /g}
 CONFIGURE_ARGS+=--datadir=${PREFIX}/share/gnome
 .endif
 LIB_DEPENDS+=	gnome.5:${PORTSDIR}/x11/gnomelibs
