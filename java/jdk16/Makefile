@@ -141,6 +141,8 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-build:
+	@# XXX make sure that SwingSet2/resources does not exists
+	@${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
 	@# This file serves no purpose (in case of port)
 	@${RM} -f ${JDKIMAGEDIR}/src.zip
 
