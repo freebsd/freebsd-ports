@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.12
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,6 +17,15 @@ MAINTAINER=	nbm@FreeBSD.org
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
+#
+# options available:
+#
+# WITHOUT_OPENSSL:		Don't build in TLS support
+# WITHOUT_PAM:			Don't build in PAM support
+# WITH_VPOPMAIL:		Build in vpopmail support
+# WITH_MYSQL:			Build in mysql support
+# WITH_POSTGRESQL:		Build in postgresql support
+#
 
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	YES
@@ -54,6 +63,15 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 PLIST_SUB+=	MYSQLFLAG=""
 .endif
 
+.if !defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=	\
+		--without-authpgsql
+PLIST_SUB+=	PGSQLFLAG="@comment "
+.else
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+PLIST_SUB+=	PGSQLFLAG=""
+.endif
+
 .if !defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	\
 		--with-authpam
@@ -84,7 +102,7 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@perl -i.nbm -pe 'm#^sysconf_DATA = imapd.dist# && s@[ip][mo][ap][p3]d.cnf@@g;' \
+	@perl -i.nbm -pe 'm#^\timapd.cnf pop3d.cnf# && s@[ip][mo][ap][p3]d.cnf@@g;' \
 		${WRKSRC}/Makefile.in
 
 post-install:
