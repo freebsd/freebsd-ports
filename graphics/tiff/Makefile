@@ -1,5 +1,5 @@
 # New ports collection makefile for:	tiff
-# Version required:	3.5.1
+# Version required:	3.5.2
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.algebra.com>
@@ -8,32 +8,35 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tiff-v3.5.1
-PKGNAME=	tiff-3.5.1
+DISTNAME=	tiff-v3.5.2
+PKGNAME=	tiff-3.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.onshore.com/pub/libtiff/ \
 		http://www.libtiff.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
+CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
+		--with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_LIB=${PREFIX}/lib \
 		--with-DIR_INC=${PREFIX}/include \
 		--with-DIR_MAN=${PREFIX}/man \
 		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
-		--with-DIRS_LIBINC=${PREFIX}/include \
+		--with-DIRS_LIBINC=${LOCALBASE}/include \
 		--with-DIR_GZLIB=/usr/lib \
-		--with-DIR_JPEGLIB=${PREFIX}/lib \
+		--with-DIR_JPEGLIB=${LOCALBASE}/lib \
 		--with-LIBGL=no --with-LIBIMAGE=no \
 		--with-INSTALL="${SH} ${WRKSRC}/port/install.sh" \
 		--noninteractive
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=--with-HTML=no
-PLIST=${PKGDIR}/PLIST.nodocs
+CONFIGURE_ARGS+=	--with-HTML=no
+PLIST=			${PKGDIR}/PLIST.nodocs
+.else
+CONFIGURE_ARGS+=	--with-HTML --with-DIR_HTML=${PREFIX}/share/doc/tiff
 .endif
 
 MAN1=	fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 ras2tiff.1 \
@@ -51,37 +54,23 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFRGBAImage.3t TIFFRGBAImageBegin.3t TIFFRGBAImageEnd.3t \
 	TIFFRGBAImageGet.3t TIFFRGBAImageOK.3t TIFFReadBufferSetup.3t \
 	TIFFReadDirectory.3t TIFFReadEncodedStrip.3t TIFFReadEncodedTile.3t \
-	TIFFReadRGBAImage.3t TIFFReadRawStrip.3t TIFFReadRawTile.3t \
-	TIFFReadScanline.3t TIFFReadTile.3t TIFFRegisterCODEC.3t \
-	TIFFReverseBits.3t TIFFScanlineSize.3t TIFFSetDirectory.3t \
-	TIFFSetErrorHandler.3t TIFFSetField.3t TIFFSetSubDirectory.3t \
-	TIFFSetWarningHandler.3t TIFFStripSize.3t TIFFSwabArrayOfLong.3t \
-	TIFFSwabArrayOfShort.3t TIFFSwabLong.3t TIFFSwabShort.3t \
-	TIFFTileRowSize.3t TIFFTileSize.3t TIFFUnRegisterCODEC.3t \
-	TIFFVGetField.3t TIFFVSetField.3t TIFFVStripSize.3t TIFFVTileSize.3t \
-	TIFFWarning.3t TIFFWriteBufferSetup.3t TIFFWriteDirectory.3t \
-	TIFFWriteEncodedStrip.3t TIFFWriteEncodedTile.3t TIFFWriteRawStrip.3t \
-	TIFFWriteRawTile.3t TIFFWriteScanline.3t TIFFbuffer.3t TIFFcodec.3t \
-	TIFFfree.3t TIFFmalloc.3t TIFFmemcmp.3t TIFFmemcpy.3t TIFFmemory.3t \
-	TIFFmemset.3t TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t \
-	TIFFswab.3t TIFFtile.3t libtiff.3t
-
-DOCDIR=	${PREFIX}/share/doc/tiff
-
-.include <bsd.port.pre.mk>
+	TIFFReadRGBAImage.3t TIFFReadRGBAStrip.3t TIFFReadRGBATile.3t \
+	TIFFReadRawStrip.3t TIFFReadRawTile.3t TIFFReadScanline.3t \
+	TIFFReadTile.3t TIFFRegisterCODEC.3t TIFFReverseBits.3t \
+	TIFFScanlineSize.3t TIFFSetDirectory.3t TIFFSetErrorHandler.3t \
+	TIFFSetField.3t TIFFSetSubDirectory.3t TIFFSetWarningHandler.3t \
+	TIFFStripSize.3t TIFFSwabArrayOfLong.3t TIFFSwabArrayOfShort.3t \
+	TIFFSwabLong.3t TIFFSwabShort.3t TIFFTileRowSize.3t TIFFTileSize.3t \
+	TIFFUnRegisterCODEC.3t TIFFVGetField.3t TIFFVSetField.3t \
+	TIFFVStripSize.3t TIFFVTileSize.3t TIFFWarning.3t \
+	TIFFWriteBufferSetup.3t TIFFWriteDirectory.3t TIFFWriteEncodedStrip.3t \
+	TIFFWriteEncodedTile.3t TIFFWriteRawStrip.3t TIFFWriteRawTile.3t \
+	TIFFWriteScanline.3t TIFFbuffer.3t TIFFcodec.3t TIFFfree.3t \
+	TIFFmalloc.3t TIFFmemcmp.3t TIFFmemcpy.3t TIFFmemory.3t TIFFmemset.3t \
+	TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t TIFFswab.3t \
+	TIFFtile.3t libtiff.3t
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${DOCDIR}/images
-.endif
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtiff.so.4.0 ${PREFIX}/lib/libtiff.so
-.else
-	${LN} -sf libtiff.so.4 ${PREFIX}/lib/libtiff.so
-.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

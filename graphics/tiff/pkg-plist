@@ -8,6 +8,7 @@ bin/rgb2ycbcr
 bin/thumbnail
 bin/tiff2bw
 bin/tiff2ps
+bin/tiff2rgba
 bin/tiffcmp
 bin/tiffcp
 bin/tiffdither
@@ -26,7 +27,6 @@ share/doc/tiff/bugs.html
 share/doc/tiff/build.html
 share/doc/tiff/contrib.html
 share/doc/tiff/document.html
-share/doc/tiff/images.html
 share/doc/tiff/images/back.gif
 share/doc/tiff/images/bali.jpg
 share/doc/tiff/images/cat.gif
@@ -43,6 +43,7 @@ share/doc/tiff/images/ring.gif
 share/doc/tiff/images/smallliz.jpg
 share/doc/tiff/images/strike.gif
 share/doc/tiff/images/warning.gif
+share/doc/tiff/images.html
 share/doc/tiff/index.html
 share/doc/tiff/internals.html
 share/doc/tiff/intro.html
@@ -62,6 +63,5 @@ share/doc/tiff/v3.4beta033.html
 share/doc/tiff/v3.4beta034.html
 share/doc/tiff/v3.4beta035.html
 share/doc/tiff/v3.4beta036.html
-share/doc/tiff/v3.5.1.html
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff

@@ -1,5 +1,5 @@
---- libtiff/Makefile.in.orig	Mon Apr 29 18:16:21 1996
-+++ libtiff/Makefile.in	Mon Nov 23 22:11:22 1998
+--- libtiff/Makefile.in.orig	Wed Sep  8 18:39:00 1999
++++ libtiff/Makefile.in	Wed Nov 24 07:31:09 1999
 @@ -62,7 +62,7 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -9,21 +9,43 @@
  CFLAGS	= @ENVOPTS@ @LIBCOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} ${CONF_LIBRARY}
  #
  SRCS	= \
-@@ -199,7 +199,16 @@
+@@ -197,8 +197,8 @@
+ 	${AR} ${AROPTS} libtiff.@DSOSUF@ shr.o
+ 	rm -f shr.o
+ 	touch $@
+-# NetBSD 1.1 or FreeBSD
+-NETBSDdso FREEBSDdso: ${OBJS}
++# NetBSD 1.1
++NETBSDdso: ${OBJS}
+ 	@rm -f libtiff_pic.a
+ 	@${AR} cq libtiff_pic.a `lorder ${OBJS} | tsort -q`
+ 	${RANLIB} libtiff_pic.a
+@@ -215,7 +215,18 @@
  # OSF/1 3.2 shared lib rule
  OSFdso: ${OBJS}
  	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
 -
++# FreeBSD a.out shared lib rule
 +FREEBSD_AOUTdso: ${OBJS}
 +	${LD} -Bshareable -x ${LIBDIR}/c++rt0.o -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
-+	@LN@ -sf libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
++	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
 +	touch $@
++# FreeBSD ELF shared lib rule
 +FREEBSD_ELFdso: ${OBJS}
 +	${CC} -shared -Wl,-soname,libtiff.@DSOSUF_VERSION@ -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
-+	@LN@ -sf libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
++	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
 +	touch $@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
+@@ -327,7 +338,7 @@
+ 	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+ 		-O libtiff.@DSOSUF_VERSION@;				\
+ 	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
+-		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
++		-lns libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
+ 	else								\
+ 	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+ 		-O libtiff.@DSOSUF@;					\
