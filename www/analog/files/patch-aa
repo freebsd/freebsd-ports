@@ -1,20 +1,20 @@
---- Makefile.orig	Mon Jun 15 19:57:00 1998
-+++ Makefile	Tue Aug 18 21:00:37 1998
+--- Makefile.orig	Sat Nov  7 00:27:05 1998
++++ Makefile	Tue Jan 19 21:21:20 1999
 @@ -2,10 +2,11 @@
  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
  CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
 -CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
 +#CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
- #                    HP/UX cc needs -Aa
+ #                    HP/UX cc needs -Aa (HP/UX 9) or -Ae (HP/UX 10)
  #                    Some Linuces might need -I/usr/src/linux/include
 -DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOSTRCMP -DEBCDIC
 +#DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOSTRCMP -DEBCDIC
 +DEFS = -DPREFIX=\"$(PREFIX)\"
+ #                    Solaris 2 (SunOS 5) might need DEFS = -DNOSTRCMP
  OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC, OS2, VMS
  #                    RISCOS, BEOS, BS2000
- LIBS =             # extra libraries needed; Solaris 2 (SunOS 5) needs
-@@ -26,6 +27,8 @@
+@@ -27,6 +28,8 @@
  # Form interface options:
  FORMPROG = anlgform.cgi     # The program that processes the data from the form
  FORMSRC = anlgform.c        # The source code for that program
