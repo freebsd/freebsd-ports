@@ -63,6 +63,7 @@
     SUBDIR += linux-gtk
     SUBDIR += lunar
     SUBDIR += metalist
+    SUBDIR += miniChinput
     SUBDIR += mkisofs
     SUBDIR += moefonts-cid
     SUBDIR += moettf

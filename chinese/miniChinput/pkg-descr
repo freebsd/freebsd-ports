@@ -1,0 +1,5 @@
+miniChinput is a tiny version of Chinput, which is a GPLed Chinese 
+input method. miniChinput uses XIM protocol and provides several 
+input modules for both GB and BIG5 encodings.
+
+WWW: http://sourceforge.net/projects/minichinput
