@@ -18,6 +18,9 @@ EXTRACT_SUFX=	-1_ICS.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
+DEPRECATED=	http://vuxml.freebsd.org/ef253f8b-0727-11d9-b45d-000c41e2cdad.html (security)
+EXPIRATION_DATE=November 21, 2004
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
