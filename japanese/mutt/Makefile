@@ -9,13 +9,13 @@ PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
+		http://www.hiei.kit.ac.jp/~hitomi/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.guug.de/pub/mutt/ \
-		ftp://ftp.guug.de/pub/mutt/historic/ \
-		http://www.hiei.kit.ac.jp/~hitomi/mutt/
+		ftp://ftp.guug.de/pub/mutt/historic/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		manual_ja-${VERSION:R}i-1.tar.gz
+		manual_ja-${VERSION:R}i-2${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/2594/ \
 		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
 VERSION=	1.2.5
-JP_VERSION=	0
+JP_VERSION=	2
 
 DIST_SUBDIR=	mutt
 USE_GMAKE=	yes
