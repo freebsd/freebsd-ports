@@ -271,7 +271,7 @@ sub blame {
                 my @cvslog = readfrom "$portsdir/$origin",
                   $cvs, '-R', 'log', '-N', '-r' . ($revision{$origin} ? $revision{$origin} : '.'), 'Makefile';
                 foreach (@cvslog) {
-                    my $in_log = /^-/ ... /^[-=]/;
+                    my $in_log = /^-{28}$/ ... /^(-{28}|={77})$/;
                     print $fh "   | $_\n"
                       if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
                 }
