@@ -22,6 +22,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/RUNNING.txt
 %%T%%/bin/LauncherBootstrap.class
 %%T%%/bin/bootstrap.jar
+%%T%%/bin/catalina.50.sh
 %%T%%/bin/catalina.sh
 %%T%%/bin/catalina.xml
 %%T%%/bin/commons-daemon.jar
@@ -38,11 +39,12 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/startup.sh
 %%T%%/bin/tool-wrapper-using-launcher.sh
 %%T%%/bin/tool-wrapper.sh
+%%T%%/bin/version.sh
 %%T%%/common/endorsed/xercesImpl.jar
 %%T%%/common/endorsed/xml-apis.jar
 %%T%%/common/lib/ant-launcher.jar
 %%T%%/common/lib/ant.jar
-%%T%%/common/lib/commons-collections-2.1.1.jar
+%%T%%/common/lib/commons-collections-3.1.jar
 %%T%%/common/lib/commons-dbcp-1.2.1.jar
 %%T%%/common/lib/commons-el.jar
 %%T%%/common/lib/commons-pool-1.2.jar
