@@ -22,7 +22,6 @@ share/doc/dvi2dvi/changes.doc
 share/doc/dvi2dvi/dvi2dvi.doc
 share/doc/dvi2dvi/install.doc
 share/doc/dvi2dvi/lib.doc
-@exec mkdir -p -m 777 %D/share/fonts/vf-rot
 @dirrm lib/dvi2dvi/fonts
 @dirrm lib/dvi2dvi/fontsk
 @dirrm lib/dvi2dvi

@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Sep  3 22:01:59 1999
-+++ Makefile	Tue Nov 30 04:16:41 1999
++++ Makefile	Thu Aug 26 01:24:25 2004
 @@ -2,10 +2,10 @@
  # your site:
  #
@@ -34,3 +34,21 @@
  #CCFLAGS = -O -bsd	# NeXT
  #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
  #CCFLAGS = -O -DSYSV	# SysV
+@@ -74,7 +74,7 @@
+ 
+ newlib:
+ 	-mkdir lib
+-	cp -pr lib-dist/* lib
++	cp -r lib-dist/* lib
+ 
+ install: install-dvi2dvi
+ 
+@@ -83,7 +83,7 @@
+ 
+ install-lib:
+ 	-mkdir ${DVI2LIB}
+-	cp -pr lib/* ${DVI2LIB}
++	cp -r lib/* ${DVI2LIB}
+ 	chmod -R a+r ${DVI2LIB}
+ 
+ clean:	
