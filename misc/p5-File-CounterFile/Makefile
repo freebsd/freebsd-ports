@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-CounterFile
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -22,10 +22,9 @@ MAN3=		File::CounterFile.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
+# make PREFIX-clean under perl 5.005_03
 post-configure:
-	cd ${WRKSRC}; \
-	${PERL} -pi -e 's|(.*Fcntl.*) SEEK_SET(.*)|\1\2\nuse POSIX qw(SEEK_SET);|;' \
-		CounterFile.pm
+	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>
