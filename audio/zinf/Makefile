@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	zinf
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/musicbrainz \
-		id3:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
+		musicbrainz.2:${PORTSDIR}/audio/musicbrainz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
@@ -22,9 +24,8 @@ USE_GNOME=	gnomehier gdkpixbuf
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_FREETYPE=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=213
+USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS=	-I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include \
@@ -75,17 +76,12 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_LIBARTS	build with libArts output plugin"
+	@${ECHO_MSG} "WITH_LIBARTS		build with libArts output plugin"
 	@${ECHO_MSG} "WITHOUT_GNOME=esound	do NOT build with esd support"
-	@${ECHO_MSG} "WITHOUT_VORBIS	do NOT build with Ogg/Vorbis codec plugin"
+	@${ECHO_MSG} "WITHOUT_VORBIS		do NOT build with Ogg/Vorbis codec plugin"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
+	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes	build with all plugins"
 	@${ECHO_MSG}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\[en_US.ISO8859-1\]||g ; \
-		 s|/usr/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g' \
-			${WRKSRC}/installer/unix/linux/Zinf.desktop
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins

@@ -6,8 +6,7 @@ lib/zinf/plugins/cd.pmo
 lib/zinf/plugins/download.ui
 %%ESOUND%%lib/zinf/plugins/esound.pmo
 lib/zinf/plugins/httpinput.pmi
-lib/zinf/plugins/id3v1.mdf
-lib/zinf/plugins/id3v2.mdf
+lib/zinf/plugins/id3lib.mdf
 lib/zinf/plugins/irman.ui
 lib/zinf/plugins/kjofol.ftf
 lib/zinf/plugins/lcd.ui
