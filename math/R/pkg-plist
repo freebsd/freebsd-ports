@@ -1517,7 +1517,6 @@ share/R/library/eda/html/smooth.html
 share/R/library/eda/latex/line.tex
 share/R/library/eda/latex/medpolish.tex
 share/R/library/eda/latex/smooth.tex
-share/R/library/eda/libs/eda.so
 share/R/library/mva/INDEX
 share/R/library/mva/TITLE
 share/R/library/mva/R/mva
@@ -1545,7 +1544,6 @@ share/R/library/mva/latex/cmdscale.tex
 share/R/library/mva/latex/dist.tex
 share/R/library/mva/latex/hclust.tex
 share/R/library/mva/latex/prcomp.tex
-share/R/library/mva/libs/mva.so
 share/R/library/stepfun/INDEX
 share/R/library/stepfun/TITLE
 share/R/library/stepfun/R/stepfun
