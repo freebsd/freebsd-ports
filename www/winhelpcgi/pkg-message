@@ -1,7 +1,18 @@
 -----------------------------------------------------------------
-winhelpcgi.cgi has been installed into %%PREFIX%%/bin
+winhelpcgi.cgi has been installed into %%PREFIX%%/www/winhelpcgi/
 
-You now need to copy winhelpcgi.cgi along with all winhelp files
-you wish for it to handle into the cgi-bin/ (or a subdir in
-cgi-bin/) of a http server that can handle cgi (such as Apache).
+You now need to copy winhelp files into %%PREFIX%%/www/winhelpcgi/
+
+You also need to somehow make your webserver aware of winhelpcgi.
+For example, the following config fragment would make apache aware
+of winhelpcgi:
+
+Alias /winhelpcgi %%PREFIX%%/www/winhelpcgi
+<Directory /usr/local/www/winhelpcgi>
+      AddHandler cgi-script .cgi
+      AllowOverride All
+      Options ExecCGI
+</Directory>
+
 -----------------------------------------------------------------
+
