@@ -16,4 +16,6 @@ MD5_FILE=	${.CURDIR}/../ruby-dcl/distinfo
 DESCR=		${.CURDIR}/../ruby-dcl/pkg-descr
 PLIST=		${.CURDIR}/../ruby-dcl/pkg-plist
 
-.include 	"${.CURDIR}/../ruby-dcl/Makefile"
+MASTERDIR=	${.CURDIR}/../ruby-dcl
+
+.include 	"${MASTERDIR}/Makefile"
