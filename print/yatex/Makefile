@@ -3,7 +3,7 @@
 # Date created:		18 Feb. 1998
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/14 00:16:07 kuriyama Exp $
 #
 
 DISTNAME=	yatex9805062331
@@ -21,7 +21,8 @@ PLIST=		${.CURDIR}/pkg/PLIST
 WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \
-		nkf:${PORTSDIR}/japanese/nkf
+		nkf:${PORTSDIR}/japanese/nkf \
+		bash:${PORTSDIR}/shells/bash2
 .endif
 
 VERSION=	1.65.6
