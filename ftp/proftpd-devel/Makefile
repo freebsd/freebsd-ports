@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
