@@ -7,6 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -23,7 +24,8 @@ INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ARGS=	--with-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
 
 GUILE_VER=	1.6
 PLIST_SUB=	GUILE_VER=${GUILE_VER}
@@ -33,6 +35,7 @@ REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
 
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
+	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
 
 post-patch:
 	@cd ${WRKSRC} ; \
