@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apd
-PORTVERSION=	0.4p2
+PORTVERSION=	1.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -41,10 +41,6 @@ post-install-script:
 	@${MKDIR} ${DUMP_DIR}
 	@${CHMOD} a+w ${DUMP_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/pprofp ${PREFIX}/bin
-	@if [ ! -f ${PHP_INI} ]; then \
-		${ECHO_MSG} "===>   Creating ${PHP_INI} for PHP" ; \
-		${CP} -p ${PHP_INI}-dist ${PHP_INI} ; \
-	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
