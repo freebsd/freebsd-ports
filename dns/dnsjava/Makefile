@@ -20,7 +20,7 @@ JAVA_VERSION=	1.2+
 USE_ANT=	yes
 ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
-ALL_TARGET+=	docsclean docs
+ALL_TARGET+=	docs
 .endif
 
 SAMPLE_FILES=	examples.html USAGE dig.java jnamed.java lookup.java update.java
@@ -32,6 +32,15 @@ PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
 
 .include <bsd.port.pre.mk>
+
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+.if ${JDK_API} != ""
+MAKE_ARGS+=	-Dj2se.javadoc="${JDK_API}"
+.endif
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/doc
+	@${MKDIR} ${WRKSRC}/doc
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
