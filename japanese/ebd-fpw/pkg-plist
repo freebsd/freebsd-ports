@@ -1,0 +1,8 @@
+share/dict/ebd-fpw/catalogs
+share/dict/ebd-fpw/ebd/data/honmon
+@dirrm share/dict/ebd-fpw/ebd/data
+@dirrm share/dict/ebd-fpw/ebd
+@dirrm share/dict/ebd-fpw
+share/doc/ebd-fpw/readme.1st
+share/doc/ebd-fpw/readme.txt
+@dirrm share/doc/ebd-fpw
