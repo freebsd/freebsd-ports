@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="207f8ff3-f697-11d8-81b0-000347a4fa7d">
+    <topic>nss -- exploitable buffer overflow in SSLv2 protocol handler</topic>
+    <affects>
+      <package>
+        <name>nss</name>
+        <range><lt>3.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>ISS X-Force reports that a remotely exploitable buffer
+          overflow exists in the Netscape Security Services (NSS)
+	  library's implementation of SSLv2.  From their advisory:</p>
+	<blockquote cite="http://xforce.iss.net/xforce/alerts/id/180">
+          <p>The NSS library contains a flaw in SSLv2 record parsing
+            that may lead to remote compromise. When parsing the
+            first record in an SSLv2 negotiation, the client hello
+            message, the server fails to validate the length of a
+            record field. As a result, it is possible for an attacker
+            to trigger a heap-based overflow of arbitrary length.</p>
+	</blockquote>
+	<p>Note that the vulnerable NSS library is also present in
+	  Mozilla-based browsers.  However, it is not believed that
+	  browsers are affected, as the vulnerability is present only in
+	  code used by SSLv2 *servers*.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://xforce.iss.net/xforce/alerts/id/180</url>
+      <url>http://www.osvdb.org/9116</url>
+    </references>
+    <dates>
+      <discovery>2004-08-23</discovery>
+      <entry>2004-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85e19dff-e606-11d8-9b0a-000347a4fa7d">
     <topic>ripMIME -- decoding bug allowing content filter bypass</topic>
     <affects>
