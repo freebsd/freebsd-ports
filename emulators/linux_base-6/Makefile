@@ -35,7 +35,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-RPM_GLIBC=		glibc-2.1.3-26.${MACHINE_ARCH}.rpm
+RPM_GLIBC=		glibc-2.1.3-28.${MACHINE_ARCH}.rpm
 UPDATES=		${RPM_GLIBC} \
 			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
 			XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm \
