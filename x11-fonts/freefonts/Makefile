@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 
 RESTRICTED=	"see accompanying .license files"
 NO_WRKSUBDIR=	yes
