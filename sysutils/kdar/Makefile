@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdar
-PORTVERSION=	1.2.0.b.3
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kdar
@@ -17,11 +17,15 @@ COMMENT=	KDar is KDE-based backuptool using libdar
 
 LIB_DEPENDS=	dar.2:${PORTSDIR}/sysutils/dar
 
-BROKEN=		Configure fails
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_KDEBASE_VER=	3
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
