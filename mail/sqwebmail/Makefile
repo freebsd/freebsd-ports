@@ -27,9 +27,9 @@ COMMENT=	CGI Webmail client for Maildirs
 # set IMAGEURL to where on the web server URL the images are found
 #
 
-CGIBINDIR?=	www/cgi-bin.default
+CGIBINDIR?=	www/cgi-bin-dist
 CGIBINSUBDIR?=	sqwebmail
-WEBDATADIR?=	www/data.default
+WEBDATADIR?=	www/data-dist
 WEBDATASUBDIR?=	sqwebmail
 IMAGEURL?=	${WEBDATASUBDIR}
 
