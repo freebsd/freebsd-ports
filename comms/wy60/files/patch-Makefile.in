@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Sep  8 02:02:57 2002
++++ Makefile.in	Sun Sep  8 02:03:19 2002
+@@ -68,7 +68,7 @@
+ wy60_SOURCES = wy60.c wy60.h
+ man_MANS = wy60.1
+ etcdir = "$(sysconfdir)"
+-etc_DATA = wy60.rc
++etc_DATA = wy60.rc.sample
+ EXTRA_DIST = wy60.rc wy60.man.in wy60.ps
+ CPPFLAGS = -DETCDIR="\"$(sysconfdir)\""
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

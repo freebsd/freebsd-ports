@@ -1,3 +1,5 @@
 @comment $FreeBSD$
 bin/wy60
-share/examples/wy60/wy60.rc
+@unexec if cmp %D/etc/wy60.rc.sample %D/etc/wy60.rc 2>/dev/null; then rm -f %D/etc/wy60.rc; fi
+etc/wy60.rc.sample
+@exec if test ! -f %D/etc/wy60.rc; then cp -p %D/etc/wy60.rc.sample %D/etc/wy60.rc; fi

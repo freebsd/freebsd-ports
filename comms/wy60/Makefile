@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wy60
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	comms
 MASTER_SITES=	http://gutschke.com/wy60/html/archive/
 
@@ -15,8 +15,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		wy60.1
 
-post-install:
-	${MKDIR} ${PREFIX}/share/examples/wy60
-	${INSTALL_DATA} ${WRKSRC}/wy60.rc ${PREFIX}/share/examples/wy60
+pre-build:
+	@${CP} ${WRKSRC}/wy60.rc ${WRKSRC}/wy60.rc.sample
 
 .include <bsd.port.mk>
