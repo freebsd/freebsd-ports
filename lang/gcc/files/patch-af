@@ -1,5 +1,5 @@
---- gcc/config/i386/freebsd-elf.h.orig	Sat Dec  6 09:25:14 1997
-+++ gcc/config/i386/freebsd-elf.h	Fri Feb 13 11:43:46 1998
+--- gcc/config/i386/freebsd-elf.h.orig	Fri Mar  6 16:11:54 1998
++++ gcc/config/i386/freebsd-elf.h	Sun Mar 22 18:01:59 1998
 @@ -127,6 +127,9 @@
      }									\
  }
@@ -14,8 +14,8 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
--#define CPP_PREDEFINES "-Dunix -D__ELF__ -D__FreeBSD__=2 -Asystem(FreeBSD)"
-+#define CPP_PREDEFINES "-Dunix -D__ELF__ -D__FreeBSD__ -Asystem(FreeBSD)"
+-#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__=2 -Asystem(FreeBSD)"
++#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
  
  #undef CPP_SPEC
  #define CPP_SPEC "%(cpp_cpu) %[cpp_cpu] %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
