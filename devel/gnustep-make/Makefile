@@ -9,8 +9,7 @@ PORTNAME=	gnustep-make
 .if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	1.9.2
 .else
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.10.0
 .endif
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -30,14 +29,10 @@ USE_GNUSTEP=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ARGS+=	--with-thread-lib="${PTHREAD_LIBS}"
 
 .if defined(GNUSTEP_WITH_BASE_GCC)
 GNUSTEP_WITHOUT_LIBOBJC=	yes
 .endif
-
-post-configure:
-	${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
-	${SED} -e "s|\(objc_threaded:=\).*|\1${PTHREAD_LIBS}|" \
-		< ${WRKSRC}/config.make.sed > ${WRKSRC}/config.make
 
 .include <bsd.port.mk>

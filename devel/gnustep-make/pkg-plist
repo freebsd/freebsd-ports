@@ -1,5 +1,6 @@
 @exec mkdir -p %D/System/Library/Makefiles
 @exec ln -s Library/Makefiles %D/System
+%%GNUSTEP_STABLE%%System/.GNUsteprc
 System/Library/Makefiles/GNUstep-reset.sh
 System/Library/Makefiles/GNUstep.csh
 System/Library/Makefiles/GNUstep.sh
@@ -90,7 +91,7 @@ System/Library/Makefiles/library.make
 System/Library/Makefiles/messages.make
 System/Library/Makefiles/mkinstalldirs
 System/Library/Makefiles/names.make
-%%GNUSTEP_DEVEL%%System/Library/Makefiles/native-library.make
+System/Library/Makefiles/native-library.make
 System/Library/Makefiles/objc.make
 System/Library/Makefiles/os.sh
 System/Library/Makefiles/palette.make
@@ -101,7 +102,8 @@ System/Library/Makefiles/service.make
 System/Library/Makefiles/spec-debug-alone-rules.template
 System/Library/Makefiles/spec-debug-rules.template
 System/Library/Makefiles/spec-rules.template
-%%GNUSTEP_DEVEL%%System/Library/Makefiles/strip_makefiles.sh
+System/Library/Makefiles/strip_makefiles.sh
+%%GNUSTEP_STABLE%%System/Library/Makefiles/tar-exclude-list
 System/Library/Makefiles/subproject.make
 System/Library/Makefiles/target.make
 System/Library/Makefiles/test-application.make
@@ -153,11 +155,9 @@ System/share/config.site
 @dirrm System/Library
 @dirrm System/Applications
 @dirrm System
-%%GNUSTEP_STABLE%%@dirrm Network
 @dirrm Local
 @unexec rmdir %D
 @exec mkdir -p %D/Local
-%%GNUSTEP_STABLE%%@exec mkdir -p %D/Network
 @exec mkdir -p %D/System/Applications
 @exec mkdir -p %D/System/Library/ApplicationSupport
 @exec mkdir -p %D/System/Library/Bundles
