@@ -723,6 +723,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
+    SUBDIR += py-orbit2
     SUBDIR += py-period
     SUBDIR += py-plex
     SUBDIR += py-pqueue
