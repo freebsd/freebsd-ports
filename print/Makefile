@@ -177,6 +177,7 @@
     SUBDIR += wprint
     SUBDIR += xdvi
     SUBDIR += xdvik
+    SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xmltex
     SUBDIR += xpp
