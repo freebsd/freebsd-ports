@@ -166,6 +166,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -260,7 +261,7 @@ WITH_SVGALIB=	yes
 WITH_AALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if exists(${LOCALBASE}/lib/libSDL-1.1.so.6)
 WITH_SDL=	yes
 WITH_AALIB=	yes
 .endif
@@ -395,7 +396,7 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 .endif
 
 .if defined(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_SDL=	yes
 .endif
 
 .if defined(WITH_ESOUND)
