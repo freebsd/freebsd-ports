@@ -1,0 +1,11 @@
+--- programs/Imakefile.orig	Tue Feb 18 23:53:09 2003
++++ programs/Imakefile	Tue Feb 18 23:54:11 2003
+@@ -127,7 +127,7 @@
+ 	$(XTERMSRCDIR) $(XTRAPCLIENTDIRS) $(XVIDTUNESRCDIR) xwd xwininfo xwud \
+ 	$(XPMCLIENTDIRS) $(XVINFOSRCDIR) \
+ 	$(XSSRCDIR) $(XASSRCDIR) $(LBXPROXYSRCDIR) $(SCRIPTSDIR) \
+-	$(GLXCLIENTDIRS) $(XFTCACHEDIR) $(XRANDRDIR)
++	$(GLXCLIENTDIRS) $(XRANDRDIR)
+ #endif
+ 
+ MakeSubdirs($(SUBDIRS))

@@ -1,0 +1,11 @@
+--- programs/xterm/Imakefile.orig	Tue Feb 18 23:49:54 2003
++++ programs/xterm/Imakefile	Tue Feb 18 23:50:10 2003
+@@ -103,6 +103,8 @@
+         XRFLIBS = XftClientLibs $(XRENDERLIB)
+      XRFDEPLIBS = XftClientDepLibs $(DEPXRENDERLIB)
+ #endif
++         XRFDEF = -DXRENDERFONT `pkg-config xft --cflags`
++        XRFLIBS = `pkg-config xft --libs`
+ 
+    MAIN_DEFINES = $(UTMPDEF) $(TTYGROUPDEF) $(PUCCPTYDDEF) $(NOPOSIXTERMIOS) \
+ 		  -DOSMAJORVERSION=$(OSMAJORVERSION) \
