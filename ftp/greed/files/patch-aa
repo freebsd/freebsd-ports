@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May  4 09:49:31 1999
-+++ Makefile	Thu May  6 07:12:36 1999
+--- Makefile.orig	Thu Jan 20 10:31:46 2000
++++ Makefile	Tue Mar  7 16:31:40 2000
 @@ -4,10 +4,10 @@
  
  # Where to install binary and manpage on "make install":
@@ -12,7 +12,7 @@
  
  ###################################################
  ######                                       ######
-@@ -50,11 +50,10 @@
+@@ -57,11 +57,10 @@
  #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
  freebsd:
@@ -26,4 +26,17 @@
 +			-DREAL_IS_FLOAT -DUSE_MMAP ${FLAGS}' \
  		greed
  
- solaris:
+ openbsd:
+@@ -139,12 +138,6 @@
+ 	$(CC) $(CFLAGS) $(LDFLAGS) main.o connect.o download.o \
+ 		ftpheader.o httpheader.o parse.o util.o proxy.o $(OBJECTS) \
+ 		-o greed
+-	@echo ""
+-	@echo "Done!  Now just type in 'make install' to install it!"
+-	@echo "Greed will install in /usr, if you want it in another directory,"
+-	@echo "just edit the Makefile and change PREFIX"
+-	@echo ""
+-
+ 
+ greed.exe: main.o connect.o $(OBJECTS) ftpheader.o httpheader.o \
+ 		parse.o util.o download.o Makefile

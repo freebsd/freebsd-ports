@@ -1,22 +1,23 @@
 # New ports collection makefile for: 	greed
-# Version required:	0.801
+# Version required:	0.81+
 # Date created:		13 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	greed-0.801
+DISTNAME=	greed.81p
+PKGNAME=	greed-0.81p
 CATEGORIES=	ftp www
 MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
+ALL_TARGET=	freebsd
+WRKSRC=		${WRKDIR}/greed.81p
+
 MANCOMPRESSED=	yes
 MAN1=		greed.1
-
-ALL_TARGET=	freebsd
-WRKSRC=		${WRKDIR}/greed
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/greed ${PREFIX}/bin
