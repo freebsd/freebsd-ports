@@ -91,6 +91,7 @@ share/doc/ninix/extension.txt
 share/doc/ninix/TODO.ninix
 share/doc/ninix/README.ninix
 share/doc/ninix/ChangeLog
+@dirrm share/doc/ninix
 @dirrm libexec/ninix/ninix/dll
 @dirrm libexec/ninix/ninix
 @dirrm libexec/ninix
