@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	5.0r48
+PORTVERSION=	5.0r50
 CATEGORIES=	www graphics linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -14,8 +14,6 @@ DISTNAME=	flash_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
-
-FORBIDDEN=	"see http://www.macromedia.com/v1/developer/securityzone/"
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
