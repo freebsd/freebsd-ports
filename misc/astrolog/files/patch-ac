@@ -1,0 +1,46 @@
+--- astrolog.c.orig	Wed Dec 23 23:29:16 1998
++++ astrolog.c	Fri May 25 21:07:58 2001
+@@ -1146,8 +1146,18 @@
+     case 'z':
+       if (ch1 == '0') {
+         if (argc <= 1 || RParseSz(argv[1], pmZon) == rLarge) {
+-          i = us.dstDef != 0.0;
+-          SwitchF(i);
++	  if (argc > 1 && strcasecmp(argv[1], "current") == 0) {
++	    time_t t;
++	    struct tm *tm;
++
++	    (void) time(&t);
++	    tm = localtime(&t);
++	    i = tm->tm_isdst != 0;
++	    argc--; argv++;
++	  } else {
++	    i = us.dstDef != 0.0;
++	    SwitchF(i);
++	  }
+           SS = us.dstDef = i ? 1.0 : 0.0;
+         } else {
+           SS = us.dstDef = RParseSz(argv[1], pmZon);
+@@ -1236,9 +1246,19 @@
+         argc -= 2; argv += 2;
+         break;
+       }
+-      if (argc <= 1 || RParseSz(argv[1], pmZon) == rLarge)
+-        ZZ -= 1.0;
+-      else {
++      if (argc <= 1 || RParseSz(argv[1], pmZon) == rLarge) {
++	if (argc > 1 && strcasecmp(argv[1], "current") == 0) {
++	  time_t t;
++	  struct tm *tm;
++
++	  (void) time(&t);
++	  tm = localtime(&t);
++	  ZZ = us.zonDef = (tm->tm_isdst ? 1 : 0) -
++			   (real)tm->tm_gmtoff/(60*60);
++          argc--; argv++;
++	} else
++	  ZZ -= 1.0;
++      } else {
+         ZZ = us.zonDef = RParseSz(argv[1], pmZon);
+         if (!FValidZon(us.zonDef)) {
+           ErrorValR("z", us.zonDef);
