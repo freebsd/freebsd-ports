@@ -17,6 +17,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
+PLIST=		${WRKDIR}/plist
 RPM_SET=	expat-1.95.5-2.i386.rpm
 
 pre-install:
