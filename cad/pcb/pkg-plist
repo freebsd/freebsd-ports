@@ -1,54 +1,159 @@
+bin/pcb-bin
 bin/pcb
-lib/X11/app-defaults/Pcb
-lib/pcb/default_font
-lib/pcb/pcblib
-lib/pcb/pcblib.contents
-lib/pcb/CreateLibrary.sh
-lib/pcb/CreateLibraryContents.sh
-lib/pcb/ListLibraryContents.sh
-lib/pcb/QueryLibrary.sh
-lib/pcb/m4/TTL_74xx_DIL.m4
-lib/pcb/m4/crystal.m4
-lib/pcb/m4/connector.m4
-lib/pcb/m4/generic.m4
-lib/pcb/m4/linear.m4
-lib/pcb/m4/logic.m4
-lib/pcb/m4/lsi.m4
-lib/pcb/m4/memory.m4
-lib/pcb/m4/optical.m4
-lib/pcb/m4/resistor_array.m4
-lib/pcb/m4/resistor_0.25W.m4
-lib/pcb/m4/texas_inst_amplifier.m4
-lib/pcb/m4/texas_inst_voltage_reg.m4
-lib/pcb/m4/transistor.m4
-lib/pcb/m4/TTL_74xx_DIL.list
-lib/pcb/m4/crystal.list
-lib/pcb/m4/connector.list
-lib/pcb/m4/generic.list
-lib/pcb/m4/linear.list
-lib/pcb/m4/logic.list
-lib/pcb/m4/lsi.list
-lib/pcb/m4/memory.list
-lib/pcb/m4/optical.list
-lib/pcb/m4/common.m4
-lib/pcb/m4/resistor_array.list
-lib/pcb/m4/resistor_0.25W.list
-lib/pcb/m4/texas_inst_amplifier.list
-lib/pcb/m4/texas_inst_voltage_reg.list
-lib/pcb/m4/transistor.list
-lib/pcb/m4/connector.inc
-lib/pcb/m4/dil.inc
-lib/pcb/m4/misc.inc
-lib/pcb/m4/qfp.inc
-lib/pcb/m4/plcc.inc
-lib/pcb/m4/to.inc
-@unexec install-info --delete %D/info/pcb.info %D/info/dir
-info/pcb.info
-@exec install-info --section="Utilities" --entry="* PCB: (pcb).		Interactive printed circuit board layout system for X11" %D/info/pcb.info %D/info/dir
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/pcb.html
-%%DOCSDIR%%/pcb.ps
-%%DOCSDIR%%/refcard.ps
-@dirrm %%DOCSDIR%%
-@dirrm lib/pcb/m4
-@dirrm lib/pcb
+share/pcb/default_font
+share/pcb/Pcb
+share/pcb/pcblib
+share/pcb/pcblib.contents
+share/pcb/qfp.dat
+share/pcb/CreateLibraryContents.sh
+share/pcb/CreateLibrary.sh
+share/pcb/ListLibraryContents.sh
+share/pcb/QueryLibrary.sh
+share/pcb/qfp-ui
+share/pcb/m4/common.m4
+share/pcb/m4/TTL_74xx_DIL.m4
+share/pcb/m4/connector.m4
+share/pcb/m4/crystal.m4
+share/pcb/m4/geda.m4
+share/pcb/m4/generic.m4
+share/pcb/m4/genericsmt.m4
+share/pcb/m4/gtag.m4
+share/pcb/m4/jerry.m4
+share/pcb/m4/linear.m4
+share/pcb/m4/logic.m4
+share/pcb/m4/lsi.m4
+share/pcb/m4/memory.m4
+share/pcb/m4/optical.m4
+share/pcb/m4/pci.m4
+share/pcb/m4/resistor_0.25W.m4
+share/pcb/m4/resistor_adjust.m4
+share/pcb/m4/resistor_array.m4
+share/pcb/m4/texas_inst_amplifier.m4
+share/pcb/m4/texas_inst_voltage_reg.m4
+share/pcb/m4/transistor.m4
+share/pcb/m4/bga.inc
+share/pcb/m4/TTL_74xx_DIL.list
+share/pcb/m4/connector.list
+share/pcb/m4/crystal.list
+share/pcb/m4/geda.list
+share/pcb/m4/generic.list
+share/pcb/m4/genericsmt.list
+share/pcb/m4/gtag.list
+share/pcb/m4/jerry.list
+share/pcb/m4/linear.list
+share/pcb/m4/logic.list
+share/pcb/m4/lsi.list
+share/pcb/m4/memory.list
+share/pcb/m4/optical.list
+share/pcb/m4/pci.list
+share/pcb/m4/resistor_0.25W.list
+share/pcb/m4/resistor_adjust.list
+share/pcb/m4/resistor_array.list
+share/pcb/m4/texas_inst_amplifier.list
+share/pcb/m4/texas_inst_voltage_reg.list
+share/pcb/m4/transistor.list
+share/pcb/m4/dil.inc
+share/pcb/m4/connector.inc
+share/pcb/m4/geda.inc
+share/pcb/m4/genericsmt.inc
+share/pcb/m4/misc.inc
+share/pcb/m4/pci.inc
+share/pcb/m4/plcc.inc
+share/pcb/m4/qfp.inc
+share/pcb/m4/qfp2.inc
+share/pcb/m4/qfpdj.inc
+share/pcb/m4/resistor_adjust.inc
+share/pcb/m4/rules.inc
+share/pcb/m4/smt.inc
+share/pcb/m4/to.inc
+share/pcb/m4/zif.inc
+share/pcb/newlib/2_pin_thru-hole_packages/0.125W_Carbon_Resistor
+share/pcb/newlib/2_pin_thru-hole_packages/1W_Carbon_Resistor
+share/pcb/newlib/2_pin_thru-hole_packages/CK05_type_Capacitor
+share/pcb/newlib/2_pin_thru-hole_packages/CK06_type_capacitor
+share/pcb/newlib/2_pin_thru-hole_packages/IRU1015-33CT_3.3V_reg_TO220
+share/pcb/newlib/2_pin_thru-hole_packages/Makefile.am
+share/pcb/newlib/2_pin_thru-hole_packages/RN55_type_0.1W_Resistor
+share/pcb/newlib/2_pin_thru-hole_packages/T1.75_LED
+share/pcb/newlib/analog-devices/ADC12138CIMSA
+share/pcb/newlib/burr-brown/OPA340_SOT23-5
+share/pcb/newlib/connectors/100_Pin_jack
+share/pcb/newlib/connectors/16x1_SMD_jack
+share/pcb/newlib/connectors/3terminal_screw_block
+share/pcb/newlib/connectors/72pin45degreeSIMMconnector
+share/pcb/newlib/connectors/MOLEX_miniFitJr-12pin
+share/pcb/newlib/connectors/Power_Jack
+share/pcb/newlib/connectors/RightAngleSMA
+share/pcb/newlib/connectors/SJ-3523-SMT_3.5mm_stereo_jack
+share/pcb/newlib/crystal/CTX169_oscillator
+share/pcb/newlib/electro-optics/IRF_optical_switch
+share/pcb/newlib/generic_SMD_packages/0805_reflow_solder
+share/pcb/newlib/generic_SMD_packages/0805_wave_solder
+share/pcb/newlib/generic_SMD_packages/1206_reflow_solder
+share/pcb/newlib/generic_SMD_packages/SOT-23_Transistor
+share/pcb/newlib/headers/0.1_inch_10pin
+share/pcb/newlib/headers/0.1_inch_2pin
+share/pcb/newlib/headers/2mm_8pin_header
+share/pcb/newlib/msp430/MSP430F1121
+share/pcb/newlib/msp430/MSP430F1121+jtag
+share/pcb/newlib/not_vetted_ingo/pc104+.ele
+share/pcb/newlib/not_vetted_ingo/pc104.ele
+share/pcb/newlib/not_vetted_ingo/pq100.ele
+share/pcb/newlib/not_vetted_ingo/pq128.ele
+share/pcb/newlib/not_vetted_ingo/pq144.ele
+share/pcb/newlib/not_vetted_ingo/pq160.ele
+share/pcb/newlib/not_vetted_ingo/pq208.ele
+share/pcb/newlib/not_vetted_ingo/pq240.ele
+share/pcb/newlib/not_vetted_ingo/pq304.ele
+share/pcb/newlib/not_vetted_ingo/pq32.ele
+share/pcb/newlib/not_vetted_ingo/pq44.ele
+share/pcb/newlib/not_vetted_ingo/smt0402.ele
+share/pcb/newlib/not_vetted_ingo/smt0603.ele
+share/pcb/newlib/not_vetted_ingo/smt0805.ele
+share/pcb/newlib/not_vetted_ingo/smt1206.ele
+share/pcb/newlib/not_vetted_ingo/smt1210.ele
+share/pcb/newlib/not_vetted_ingo/smt1913.ele
+share/pcb/newlib/not_vetted_ingo/smt2416.ele
+share/pcb/newlib/tests/14DIP_oval_pad
+share/pcb/newlib/tests/Generic_TSOP48_Flash
+share/pcb/newlib/tests/MONOBLOCK_large
+share/pcb/newlib/tests/StrongARM_CPU
+share/pcb/newlib/tests/TK11950
+share/pcb/newlib/tests/TO99fromLED
+share/pcb/newlib/tests/UART
+share/pcb/newlib/tests/monoblock_small
+share/pcb/pcb.html
+share/pcb/pcb.ps
+share/pcb/refcard.ps
+share/pcb/pcb.pdf
+share/pcb/refcard.pdf
+share/pcb/examples/LED
+share/pcb/examples/LED.NET
+share/pcb/examples/LED2
+share/pcb/tools/apctools.zip
+share/pcb/tools/gerbertotk.c
+share/pcb/tools/pcb2ncap.tgz
+share/pcb/tools/tgo2pcb.tcl
+share/pcb/tools/MergePCBPS
+share/pcb/tools/PCB2HPGL
+share/pcb/tutorial/tut1.pcb
+@dirrm share/pcb/m4
+@dirrm share/pcb/newlib/2_pin_thru-hole_packages
+@dirrm share/pcb/newlib/analog-devices
+@dirrm share/pcb/newlib/burr-brown
+@dirrm share/pcb/newlib/connectors
+@dirrm share/pcb/newlib/crystal
+@dirrm share/pcb/newlib/cypress
+@dirrm share/pcb/newlib/electro-optics
+@dirrm share/pcb/newlib/generic_SMD_packages
+@dirrm share/pcb/newlib/headers
+@dirrm share/pcb/newlib/msp430
+@dirrm share/pcb/newlib/not_vetted_ingo
+@dirrm share/pcb/newlib/sockets
+@dirrm share/pcb/newlib/tests
+@dirrm share/pcb/newlib/toko
+@dirrm share/pcb/newlib
+@dirrm share/pcb/examples
+@dirrm share/pcb/tools
+@dirrm share/pcb/tutorial
+@dirrm share/pcb

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	1.7.3
+PORTVERSION=	20030815
 CATEGORIES=	cad
-MASTER_SITES=	http://bach.ece.jhu.edu/~haceaton/pcb/
-DISTNAME=	${PORTNAME}-wip
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
@@ -20,14 +19,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_IMAKE=	yes
+GNU_CONFIGURE=	yes
 
-MAN1=		pcb.1
-
-pre-install:
-	-${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${SETENV} PREFIX=${PREFIX} make install.info &&\
-	${INSTALL_DATA} index.html pcb.html pcb.ps refcard.ps ${DOCSDIR}
+INFO=		pcb
 
 post-install:
 	install-info --section="Utilities" \
