@@ -6,7 +6,12 @@ share/nls/fr_FR.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_BE.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_CA.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_CH.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_BE.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_CA.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_CH.ISO_8859-1/tcsh.cat
 share/nls/de_DE.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/de_AT.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/de_CH.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/de_AT.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/de_CH.ISO_8859-1/tcsh.cat
 share/nls/el_GR.ISO_8859-7/tcsh.cat
