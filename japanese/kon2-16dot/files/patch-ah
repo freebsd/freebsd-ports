@@ -1,5 +1,5 @@
---- src/display/vga.c	Sun Jan 26 18:05:00 1997
-+++ src/display/vga.c	Mon Apr  7 10:37:35 1997
+--- src/display/vga.c.orig	Sun Jan 26 18:05:00 1997
++++ src/display/vga.c	Mon Jan 31 14:09:55 2000
 @@ -382,7 +382,7 @@
  /*    if (!code) return;*/
      VgaSetColor(fc);
@@ -9,3 +9,15 @@
  	if (*code) {
  	    VgaOutByte(*code);
  	    *gram = *gram;
+@@ -620,7 +620,11 @@
+ 	Perror("ioctl CONSOLE_IO_ENABLE");
+ 	return FAILURE;
+     }
++#if (__FreeBSD__ <= 3)
+     if ((devMem = open("/dev/vga", O_RDWR|O_NDELAY) ) < 0) {
++#else
++    if ((devMem = open("/dev/mem", O_RDWR|O_NDELAY) ) < 0) {
++#endif
+ 	Perror("/dev/mem");
+ 	return FAILURE;
+     }
