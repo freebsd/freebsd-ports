@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1996/12/03 04:07:33 asami Exp $
+# $Id: Makefile,v 1.7 1997/11/10 11:23:34 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
-
-MAINTAINER=	ohmon@tom.sfc.keio.ac.jp
 
 MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
