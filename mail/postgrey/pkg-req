@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PATH=$PATH:/usr/local/bin
+
+if [ "x$1" = "xINSTALL" -o "x$2" = "xINSTALL" ]; then
+  perl -e "use BerkeleyDB;BerkeleyDB::Env->new(-Home => 'test',-Flags => DB_CREATE|DB_RECOVER|DB_INIT_TXN|DB_INIT_MPOOL|DB_INIT_LOG,-SetFlags => DB_AUTO_COMMIT|DB_TXN_NOSYNC);"
+  if [ $? != 0 ]; then
+    echo "-----------------------------------------------------------"
+    echo "Postgrey requires databases/p5-BerkeleyDB to be built with"
+    echo "Berkeley DB 4.1 or newer.  Please reinstall it with the"
+    echo "WITH_BDB_VER set to 41 or newer."
+    echo "-----------------------------------------------------------"
+    exit 1
+  fi
+fi

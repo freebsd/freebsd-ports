@@ -327,6 +327,7 @@
     SUBDIR += postfix1
     SUBDIR += postfix20
     SUBDIR += postfixadmin
+    SUBDIR += postgrey
     SUBDIR += postilion
     SUBDIR += prayer
     SUBDIR += premail
