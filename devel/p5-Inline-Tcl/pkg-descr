@@ -1,0 +1,14 @@
+The Inline::Tcl module allows you to put Tcl source code directly
+"inline" in a Perl script or module. A Tcl interpreter is loaded and the
+Tcl code is interpreted, then Perl asks the Tcl interpreter which global
+procedures have been defined. Those functions are made available to your
+Perl program as if they had been written in Perl.
+
+The process of interrogating the Tcl interpreter for globals only occurs
+the first time you run your Tcl code. The namespace is cached, and
+subsequent calls use the cached version.
+
+WWW: http://search.cpan.org/search?dist=Inline-Tcl
+
+-- Sergey Skvortsov
+skv@protey.ru
