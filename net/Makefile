@@ -75,6 +75,7 @@
     SUBDIR += gatekeeper
     SUBDIR += generic-nqs
     SUBDIR += ggsd
+    SUBDIR += ghtool
     SUBDIR += gicq
     SUBDIR += gkrellm_snmp
     SUBDIR += gnet
