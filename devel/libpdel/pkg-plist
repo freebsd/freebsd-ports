@@ -32,6 +32,7 @@ include/pdel/structs/type/float.h
 include/pdel/structs/type/id.h
 include/pdel/structs/type/int.h
 include/pdel/structs/type/ip4.h
+include/pdel/structs/type/ip6.h
 include/pdel/structs/type/null.h
 include/pdel/structs/type/pointer.h
 include/pdel/structs/type/regex.h
@@ -420,6 +421,7 @@ man/man3/structs_type_int32.3.gz
 man/man3/structs_type_int64.3.gz
 man/man3/structs_type_int8.3.gz
 man/man3/structs_type_ip4.3.gz
+man/man3/structs_type_ip6.3.gz
 man/man3/structs_type_long.3.gz
 man/man3/structs_type_null.3.gz
 man/man3/structs_type_pointer.3.gz
