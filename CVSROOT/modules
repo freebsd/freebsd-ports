@@ -9398,6 +9398,7 @@ recode		ports/converters/recode
 recombine	ports/biology/recombine
 redir		ports/net/redir
 redland		ports/textproc/redland
+redland-bindings	ports/textproc/redland-bindings
 reed		ports/misc/reed
 regexx		ports/devel/regexx
 regexxer	ports/devel/regexxer
