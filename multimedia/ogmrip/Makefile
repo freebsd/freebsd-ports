@@ -29,6 +29,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 libgnomeui gconf2 libgnome libglade2
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GCONF_SCHEMAS=	ogmrip.schemas
 
