@@ -1,18 +1,28 @@
-@unexec install-info --delete %D/info/ecb.info %D/info/dir
+@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/ecb.info %D/info/dir
 info/ecb.info
-@exec install-info %D/info/ecb.info %D/info/dir
-%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-buffertab.el
-%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-buffertab.elc
+info/ecb.info-1
+info/ecb.info-2
+info/ecb.info-3
+info/ecb.info-4
+info/ecb.info-5
+info/ecb.info-6
+@exec install-info --section="%%INFOSECTION%%" %D/info/ecb.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-create-layout.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-create-layout.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cycle.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cycle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-examples.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-examples.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout-defs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.el
@@ -21,16 +31,20 @@ info/ecb.info
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-tod.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-tod.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/silentcomp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/silentcomp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb
-%%PORTDOCS%%share/doc/ecb/HISTORY
-%%PORTDOCS%%share/doc/ecb/README
-%%PORTDOCS%%share/doc/ecb/RELEASE_NOTES
-%%PORTDOCS%%@dirrm share/doc/ecb
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
