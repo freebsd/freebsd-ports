@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	1.9.1
+PORTVERSION=	1.99.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -54,17 +54,17 @@ PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
-#.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
-#LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/misc/gucharmap
-#.else
+.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
+LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/misc/gucharmap
+.else
 CONFIGURE_ARGS+=	--enable-cmap=no
-#.endif
+.endif
 
-#pre-everything::
-#	@${ECHO_MSG} ""
-#	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
-#	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
-#	@${ECHO_MSG} ""
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%AUTOMAKE%%|${AUTOMAKE}|g ; \
