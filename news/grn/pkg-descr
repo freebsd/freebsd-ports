@@ -8,4 +8,4 @@ Grn also uses pthreads to allow the user to interact with the program during
 different time-consuming tasks (such as fetching grouplist or threading
 articles - these all run in another thread). 
 
-WWW: http://ivvs.ul.ru/~sc/grn/
+WWW: http://grn.sourceforge.net/
