@@ -1,6 +1,6 @@
 # Ports collection Makefile for:	gswitchit_applet
 # Date created:				5 June 2000
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,23 +13,20 @@ MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
 
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gswitchit_applet.1
 
 pre-patch:
-	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
+		${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
