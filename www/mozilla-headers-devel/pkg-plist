@@ -47,6 +47,7 @@ include/mozilla/imgIDecoder.h
 include/mozilla/imgIDecoderObserver.h
 include/mozilla/imgILoader.h
 include/mozilla/imgIRequest.h
+include/mozilla/imgScaler.h
 include/mozilla/interpreter.h
 include/mozilla/javaString.h
 include/mozilla/javaThreads.h
@@ -234,7 +235,7 @@ include/mozilla/nsEmitterUtils.h
 include/mozilla/nsEnumeratorUtils.h
 include/mozilla/nsError.h
 include/mozilla/nsEscape.h
-include/mozilla/nsExpatDTD.h
+include/mozilla/nsEvent.h
 include/mozilla/nsExternalHelperAppService.h
 include/mozilla/nsExternalProtocolHandler.h
 include/mozilla/nsFileSpec.h
@@ -285,8 +286,10 @@ include/mozilla/nsIAboutModule.h
 include/mozilla/nsIAcceptLang.h
 include/mozilla/nsIAccessibilityService.h
 include/mozilla/nsIAccessible.h
+include/mozilla/nsIAccessibleDocument.h
 include/mozilla/nsIAccessibleEventListener.h
 include/mozilla/nsIAccessibleEventReceiver.h
+include/mozilla/nsIAccessibleSelectable.h
 include/mozilla/nsIAddbookUrl.h
 include/mozilla/nsIAddrBookSession.h
 include/mozilla/nsIAddrDBAnnouncer.h
@@ -460,6 +463,7 @@ include/mozilla/nsIDOMDocumentEvent.h
 include/mozilla/nsIDOMDocumentFragment.h
 include/mozilla/nsIDOMDocumentRange.h
 include/mozilla/nsIDOMDocumentStyle.h
+include/mozilla/nsIDOMDocumentTraversal.h
 include/mozilla/nsIDOMDocumentType.h
 include/mozilla/nsIDOMDocumentView.h
 include/mozilla/nsIDOMDocumentXBL.h
@@ -569,6 +573,8 @@ include/mozilla/nsIDOMNSUIEvent.h
 include/mozilla/nsIDOMNamedNodeMap.h
 include/mozilla/nsIDOMNavigator.h
 include/mozilla/nsIDOMNode.h
+include/mozilla/nsIDOMNodeFilter.h
+include/mozilla/nsIDOMNodeIterator.h
 include/mozilla/nsIDOMNodeList.h
 include/mozilla/nsIDOMNotation.h
 include/mozilla/nsIDOMPaintListener.h
@@ -588,6 +594,7 @@ include/mozilla/nsIDOMStyleSheet.h
 include/mozilla/nsIDOMStyleSheetList.h
 include/mozilla/nsIDOMText.h
 include/mozilla/nsIDOMTextListener.h
+include/mozilla/nsIDOMTreeWalker.h
 include/mozilla/nsIDOMUIEvent.h
 include/mozilla/nsIDOMViewCSS.h
 include/mozilla/nsIDOMWindow.h
@@ -816,6 +823,7 @@ include/mozilla/nsILayoutDebugger.h
 include/mozilla/nsILayoutHistoryState.h
 include/mozilla/nsILineBreaker.h
 include/mozilla/nsILineBreakerFactory.h
+include/mozilla/nsILineInputStream.h
 include/mozilla/nsILineIterator.h
 include/mozilla/nsILinearIterator.h
 include/mozilla/nsILink.h
@@ -1095,6 +1103,8 @@ include/mozilla/nsISHTransaction.h
 include/mozilla/nsISHistory.h
 include/mozilla/nsISHistoryInternal.h
 include/mozilla/nsISHistoryListener.h
+include/mozilla/nsISOCKS4SocketInfo.h
+include/mozilla/nsISOCKS4SocketProvider.h
 include/mozilla/nsISOCKSSocketInfo.h
 include/mozilla/nsISOCKSSocketProvider.h
 include/mozilla/nsISSLSocketControl.h
@@ -1512,11 +1522,13 @@ include/mozilla/nsProxyEvent.h
 include/mozilla/nsQuickSort.h
 include/mozilla/nsRDFCID.h
 include/mozilla/nsRDFResource.h
+include/mozilla/nsReadLine.h
 include/mozilla/nsReadableUtils.h
 include/mozilla/nsRect.h
 include/mozilla/nsRenderingContextImpl.h
 include/mozilla/nsRepeater.h
 include/mozilla/nsRepository.h
+include/mozilla/nsRootAccessible.h
 include/mozilla/nsScriptSecurityManager.h
 include/mozilla/nsScriptableInputStream.h
 include/mozilla/nsSharableString.h
@@ -1540,6 +1552,7 @@ include/mozilla/nsStr.h
 include/mozilla/nsStreamConverter.h
 include/mozilla/nsString.h
 include/mozilla/nsString2.h
+include/mozilla/nsStringDefines.h
 include/mozilla/nsStringFragment.h
 include/mozilla/nsStringFwd.h
 include/mozilla/nsStringIO.h
@@ -1719,7 +1732,6 @@ include/mozilla/typedefs.h
 include/mozilla/typedefs_md.h
 include/mozilla/uconvutil.h
 include/mozilla/winfile.h
-include/mozilla/xlibrgb.h
 include/mozilla/xmlparse.h
 include/mozilla/xp_core.h
 include/mozilla/xp_file.h

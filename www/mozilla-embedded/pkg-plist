@@ -1,8 +1,13 @@
+lib/mozilla-embedded/TestGtkEmbed
 lib/mozilla-embedded/chrome/all-locales.rdf
 lib/mozilla-embedded/chrome/all-packages.rdf
 lib/mozilla-embedded/chrome/all-skins.rdf
 lib/mozilla-embedded/chrome/embed.jar
 lib/mozilla-embedded/chrome/installed-chrome.txt
+lib/mozilla-embedded/chrome/overlayinfo/communicator/content/overlays.rdf
+lib/mozilla-embedded/chrome/overlayinfo/navigator/content/overlays.rdf
+lib/mozilla-embedded/chrome/pipnss.jar
+lib/mozilla-embedded/chrome/pippki.jar
 lib/mozilla-embedded/chrome/user-locales.rdf
 lib/mozilla-embedded/chrome/user-skins.rdf
 lib/mozilla-embedded/component.reg
@@ -60,6 +65,8 @@ lib/mozilla-embedded/components/libnsgif.so
 lib/mozilla-embedded/components/libnsjpg.so
 lib/mozilla-embedded/components/libnslocale.so
 lib/mozilla-embedded/components/libnspng.so
+lib/mozilla-embedded/components/libpipnss.so
+lib/mozilla-embedded/components/libpippki.so
 lib/mozilla-embedded/components/libpref.so
 lib/mozilla-embedded/components/libprofile.so
 lib/mozilla-embedded/components/librdf.so
@@ -85,6 +92,8 @@ lib/mozilla-embedded/components/necko_http.xpt
 lib/mozilla-embedded/components/necko_jar.xpt
 lib/mozilla-embedded/components/necko_res.xpt
 lib/mozilla-embedded/components/necko_strconv.xpt
+lib/mozilla-embedded/components/pipnss.xpt
+lib/mozilla-embedded/components/pippki.xpt
 lib/mozilla-embedded/components/pref.xpt
 lib/mozilla-embedded/components/profile.xpt
 lib/mozilla-embedded/components/rdf.xpt
@@ -107,6 +116,7 @@ lib/mozilla-embedded/components/xpti.dat
 lib/mozilla-embedded/components/xptitemp.dat
 lib/mozilla-embedded/defaults/pref/all.js
 lib/mozilla-embedded/defaults/pref/initpref.js
+lib/mozilla-embedded/defaults/pref/security-prefs.js
 lib/mozilla-embedded/defaults/pref/unix.js
 lib/mozilla-embedded/gtkEmbed
 lib/mozilla-embedded/libgkgfx.so
@@ -137,5 +147,10 @@ lib/mozilla-embedded/run-mozilla.sh
 @dirrm lib/mozilla-embedded/defaults/pref
 @dirrm lib/mozilla-embedded/defaults
 @dirrm lib/mozilla-embedded/components
+@dirrm lib/mozilla-embedded/chrome/overlayinfo/navigator/content
+@dirrm lib/mozilla-embedded/chrome/overlayinfo/navigator
+@dirrm lib/mozilla-embedded/chrome/overlayinfo/communicator/content
+@dirrm lib/mozilla-embedded/chrome/overlayinfo/communicator
+@dirrm lib/mozilla-embedded/chrome/overlayinfo
 @dirrm lib/mozilla-embedded/chrome
 @dirrm lib/mozilla-embedded
