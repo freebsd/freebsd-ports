@@ -1,5 +1,5 @@
---- wireless/wireless-applet.c.orig	Sun Jan 26 12:40:10 2003
-+++ wireless/wireless-applet.c	Mon Feb 17 13:20:21 2003
+--- wireless/wireless-applet.c.orig	Mon Mar 10 12:46:16 2003
++++ wireless/wireless-applet.c	Mon Mar 10 17:24:52 2003
 @@ -30,12 +30,24 @@
  #include <math.h>
  #include <dirent.h>
@@ -190,7 +190,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -446,15 +562,21 @@
+@@ -446,17 +562,23 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -206,13 +206,15 @@
  {
 +#ifndef __FreeBSD__
  	if (applet->file == NULL) {
+ 		wireless_applet_update_state (applet,
+ 				applet->device, -1, -1, -1);
  		return FALSE;
  	}
 +#endif
  
  	wireless_applet_read_device_state (applet);
  
-@@ -517,6 +639,7 @@
+@@ -522,6 +644,7 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -220,7 +222,7 @@
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -525,6 +648,7 @@
+@@ -530,6 +653,7 @@
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -228,12 +230,13 @@
  }
  
  static void
-@@ -766,7 +890,9 @@
+@@ -775,8 +899,10 @@
  		applet->prefs = NULL;
  	}
  
 +#ifndef __FreeBSD__
- 	fclose (applet->file);
+ 	if (applet->file)
+ 		fclose (applet->file);
 +#endif
  }
  

@@ -219,6 +219,11 @@ share/gnome/gweather/Locations
 %%BATTERY%%share/gnome/help/battstat/C/figures/battstat-general.png
 %%BATTERY%%share/gnome/help/battstat/C/legal.xml
 %%BATTERY%%share/gnome/help/battstat/C/topic.dat
+%%BATTERY%%share/gnome/help/battstat/ja/battstat.xml
+%%BATTERY%%share/gnome/help/battstat/ja/figures/battstat-apperance.png
+%%BATTERY%%share/gnome/help/battstat/ja/figures/battstat-applet.png
+%%BATTERY%%share/gnome/help/battstat/ja/figures/battstat-general.png
+%%BATTERY%%share/gnome/help/battstat/ja/legal.xml
 share/gnome/help/cdplayer/C/cdplayer.xml
 share/gnome/help/cdplayer/C/figures/cdplayer_applet.png
 share/gnome/help/cdplayer/C/figures/cdplayer_applet_eject.png
@@ -229,11 +234,26 @@ share/gnome/help/cdplayer/C/figures/cdplayer_applet_prevtrack.png
 share/gnome/help/cdplayer/C/figures/cdplayer_applet_stop.png
 share/gnome/help/cdplayer/C/legal.xml
 share/gnome/help/cdplayer/C/topic.dat
+share/gnome/help/cdplayer/ja/cdplayer.xml
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/ja/figures/cdplayer_applet_stop.png
+share/gnome/help/cdplayer/ja/legal.xml
+share/gnome/help/cdplayer/ja/topic.dat
 share/gnome/help/char-palette/C/char-palette.xml
 share/gnome/help/char-palette/C/figures/charpick_applet.png
 share/gnome/help/char-palette/C/figures/charpick_characters.png
 share/gnome/help/char-palette/C/figures/charpick_chargroup.png
 share/gnome/help/char-palette/C/legal.xml
+share/gnome/help/char-palette/ja/char-palette.xml
+share/gnome/help/char-palette/ja/figures/charpick_applet.png
+share/gnome/help/char-palette/ja/figures/charpick_characters.png
+share/gnome/help/char-palette/ja/figures/charpick_chargroup.png
+share/gnome/help/char-palette/ja/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
@@ -262,11 +282,17 @@ share/gnome/help/mixer_applet2/C/legal.xml
 share/gnome/help/mixer_applet2/C/mixer_applet2.xml
 share/gnome/help/mixer_applet2/C/topic.dat
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
-@exec scrollkeeper-install -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+%%BATTERY%%share/gnome/omf/gnome-applets/battstat-ja.omf
+%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/cdplayer-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-C.omf
@@ -480,6 +506,7 @@ share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/fa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-applets-2.0.mo
@@ -492,6 +519,7 @@ share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
@@ -539,10 +567,19 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/command-line
 @dirrm share/gnome/help/char-palette/C/figures
 @dirrm share/gnome/help/char-palette/C
+@dirrm share/gnome/help/char-palette/ja/figures
+@dirrm share/gnome/help/char-palette/ja
 @dirrm share/gnome/help/char-palette
 @dirrm share/gnome/help/cdplayer/C/figures
 @dirrm share/gnome/help/cdplayer/C
+@dirrm share/gnome/help/cdplayer/ja/figures
+@dirrm share/gnome/help/cdplayer/ja
 @dirrm share/gnome/help/cdplayer
+%%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/C
+%%BATTERY%%@dirrm share/gnome/help/battstat/ja/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/ja
+%%BATTERY%%@dirrm share/gnome/help/battstat
 @dirrm share/gnome/gweather
 @dirrm share/gnome/gkb
 @dirrm share/gnome/gen_util
@@ -570,9 +607,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet
-@unexec scrollkeeper-uninstall -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
