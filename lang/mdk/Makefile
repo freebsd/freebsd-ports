@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mdk
-PORTVERSION=	1.1
-PORTREVISION=	0
+PORTVERSION=	1.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -18,19 +17,19 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
+COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-USE_GETTEXT=	yes
-USE_ICONV=	yes
-USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	glib12 gtk12 libglade gnomehack gnomehier gnomeprefix
+USE_GNOME=	gnometarget intlhack libglade2
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-INFO=	mdk
+INFO=		mdk
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
