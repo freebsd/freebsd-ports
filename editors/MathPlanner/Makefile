@@ -19,8 +19,14 @@ USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile with gcc 2.95.x"
+.endif
+
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s|malloc\.h|stdlib.h|"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
