@@ -1,8 +1,8 @@
---- Makefile.in.orig	Tue Feb  3 02:41:53 2004
-+++ Makefile.in	Sun Feb  8 23:53:06 2004
-@@ -194,7 +194,7 @@
+--- Makefile.in.orig	Wed Apr  7 13:38:51 2004
++++ Makefile.in	Wed Apr  7 23:23:22 2004
+@@ -201,7 +201,7 @@
  
- DISTCLEANFILES = uim.pc
+ DISTCLEANFILES = uim.pc intltool-extract intltool-merge intltool-update
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
