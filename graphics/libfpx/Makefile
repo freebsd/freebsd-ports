@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpx
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.0-3
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/delegates/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -31,7 +31,7 @@ MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/lib${DISTNAME}
+WRKSRC=		${WRKDIR}/lib${DISTNAME:C/-[^-]*$//}
 
 post-patch:
 	# Replacing references to <malloc.h> with <stdlib.h>
