@@ -18,9 +18,13 @@ MASTER_SITES=	ftp://ftp.cem2.univ-montp2.fr/pub/linux/soft/StarOffice/ \
 		ftp://ftp.gtn.com/os/Sun/patches/
 		
 DISTNAME=	so-5_2-ga-bin-linux-fr.bin
+.if defined(WITH_CDROM)
+DISTFILES=	109939-02.tar.Z
+.else
 DISTFILES=	so-5_2-ga-bin-linux-fr.bin 109939-02.tar.Z
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-5_2-ga-bin-linux-fr.bin so-5_2-ga-bin-linux-fr.bin
+.endif
 .endif
 EXTRACT_ONLY=	109939-02.tar.Z
 
@@ -97,13 +101,6 @@ pre-fetch:
 .endif
 .endif
 
-.if defined(WITH_CDROM)
-do-extract: do-extract-cdrom
-do-extract-cdrom:
-	@${MKDIR} ${WRKSRC}
-	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
-.else
-
 do-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
@@ -114,6 +111,17 @@ do-extract:
 .else
 	@${MKDIR} ${WRKSRC}
 	@${MKDIR} ${TMPDIR}
+.if defined(WITH_CDROM)
+.if !exists(${CD_MOUNTPT}/linux/office52/setup)
+.if defined(WITH_ADABAS)
+	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/adabas .
+	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/f_0000 .
+	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/f_0001 .
+.endif
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
+.endif
+.else
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
 .if defined(WITH_ADABAS)
@@ -123,6 +131,7 @@ do-extract:
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@${RM} ${WRKSRC}/${DISTNAME}
+.endif
 	@cd ../../
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -131,7 +140,6 @@ do-extract:
 			exit 1; \
 		 fi \
 	done
-.endif
 .endif
 
 post-configure:
