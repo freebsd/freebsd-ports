@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 04:27:02 steve Exp $
+# $Id: Makefile,v 1.2 1999/01/27 21:57:23 billf Exp $
 #
 
 DISTNAME=	stunnel-2.1
@@ -15,10 +15,11 @@ MASTER_SITES=	http://mike.daewoo.com.pl/computer/stunnel/ \
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
-		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/SSLeay \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/SSLeay
-RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
+RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/stunnel
