@@ -1,6 +1,6 @@
 # New ports collection makefile for:	SDL
 # Date created:				1 April 2000
-# Whom:					Maxim Sobolev <sobomax@altavista.net>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		http://www.devolution.com/~slouken/SDL/release/
 DISTNAME=		SDL-${PORTVERSION}
 
-MAINTAINER=		sobomax@altavista.net
+MAINTAINER=		sobomax@FreeBSD.org
 
 LIB_DEPENDS=		esd.2:${PORTSDIR}/audio/esound \
 			aa.1:${PORTSDIR}/graphics/aalib \

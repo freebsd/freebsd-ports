@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xls2xml
 # Date created:				4 November 1999
-# Whom:					Maxim Sobolev <sobomax@altavista.net>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://arturo.directmail.org/filters/archive/ \
 		http://homepages.go.com/~sobomax/filtersweb/
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 		xml.5:${PORTSDIR}/textproc/libxml

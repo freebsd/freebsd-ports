@@ -11,7 +11,7 @@ CATEGORIES=		games
 MASTER_SITES=		http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=		Maelstrom-${PORTVERSION}
 
-MAINTAINER=		sobomax@altavista.net
+MAINTAINER=		sobomax@FreeBSD.org
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
 			SDL-1.0.2:${PORTSDIR}/devel/sdl
