@@ -1,5 +1,5 @@
 bin/helium
-bin/helium-i
+bin/texthint
 bin/lvmrun
 helium/demo/Calendar.hs
 helium/demo/ParserDemo.hs
