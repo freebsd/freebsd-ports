@@ -25,7 +25,7 @@ MAN1=		weechat.1
 
 PLIST_FILES=	bin/weechat-curses share/locale/fr/LC_MESSAGES/weechat.mo
 
-post-patch:
+pre-configure:
 	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
 
 .include <bsd.port.mk>
