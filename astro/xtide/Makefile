@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.2
+PORTVERSION=	2.2.2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.world.gz
