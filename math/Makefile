@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.61 1999/06/01 13:17:49 tg Exp $
+# $Id: Makefile,v 1.62 1999/06/09 01:52:16 steve Exp $
 #
 
     SUBDIR += PDL
@@ -29,6 +29,7 @@
     SUBDIR += libranlib
     SUBDIR += linpack
     SUBDIR += metis
+    SUBDIR += netcdf
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
@@ -37,6 +38,7 @@
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += plplot
+    SUBDIR += py-scientific
     SUBDIR += pygist
     SUBDIR += rng
     SUBDIR += sc
