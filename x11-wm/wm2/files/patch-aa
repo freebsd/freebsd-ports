@@ -1,0 +1,42 @@
+*** Makefile.orig	Thu Jan 16 21:20:29 1997
+--- Makefile	Sat Mar  1 20:56:39 1997
+***************
+*** 1,10 ****
+  
+  # if you want pixmaps you'll need Xpm, so add -lXpm to the next line
+! LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
+  
+  CC	= gcc
+  CCC	= gcc
+! CFLAGS	= -O2
+  OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o listimpl.o
+  
+  .c.o:
+--- 1,10 ----
+  
+  # if you want pixmaps you'll need Xpm, so add -lXpm to the next line
+! LIBS	=  -L/usr/X11R6/lib -lXext -lX11 -lXmu -lm
+  
+  CC	= gcc
+  CCC	= gcc
+! CFLAGS	+= -O2 -I/usr/X11R6/include
+  OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o listimpl.o
+  
+  .c.o:
+***************
+*** 14,20 ****
+  	$(CCC) -c $(CFLAGS) $<
+  
+  wm2:	$(OBJECTS)
+! 	mv -f wm2 wm2.old >& /dev/null || true
+  	$(CCC) -o wm2 $(OBJECTS) $(LIBS)
+  
+  depend:
+--- 14,20 ----
+  	$(CCC) -c $(CFLAGS) $<
+  
+  wm2:	$(OBJECTS)
+! 	mv -f wm2 wm2.old 2> /dev/null || true
+  	$(CCC) -o wm2 $(OBJECTS) $(LIBS)
+  
+  depend:
