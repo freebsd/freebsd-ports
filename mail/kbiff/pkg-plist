@@ -13,15 +13,10 @@ share/apps/kbiff/pics/noconn.png
 share/apps/kbiff/pics/nomail.png
 share/apps/kbiff/pics/oldmail.png
 share/apps/kbiff/pics/playsound.png
-share/doc/HTML/de/kbiff/common
-share/doc/HTML/de/kbiff/index.docbook
 share/doc/HTML/en/kbiff/common
 share/doc/HTML/en/kbiff/index.docbook
 share/doc/HTML/en/kbiff/kbiff.png
-share/doc/HTML/es/kbiff/common
-share/doc/HTML/es/kbiff/index.docbook
-share/doc/HTML/fr/kbiff/common
-share/doc/HTML/fr/kbiff/index.docbook
+share/doc/HTML/en/kbiff/index.cache.bz2
 share/icons/hicolor/16x16/apps/kbiff.png
 share/icons/hicolor/32x32/apps/kbiff.png
 share/icons/hicolor/48x48/apps/kbiff.png
@@ -40,6 +35,7 @@ share/locale/hr/LC_MESSAGES/kbiff.mo
 share/locale/hu/LC_MESSAGES/kbiff.mo
 share/locale/is/LC_MESSAGES/kbiff.mo
 share/locale/it/LC_MESSAGES/kbiff.mo
+share/locale/ja/LC_MESSAGES/kbiff.mo
 share/locale/nl/LC_MESSAGES/kbiff.mo
 share/locale/no/LC_MESSAGES/kbiff.mo
 share/locale/no_NY/LC_MESSAGES/kbiff.mo

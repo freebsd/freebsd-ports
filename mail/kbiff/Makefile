@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	3.6
+PORTVERSION=	3.6.1
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
@@ -14,9 +14,14 @@ MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's,de en es fr,en,' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
-
