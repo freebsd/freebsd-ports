@@ -17,7 +17,7 @@
      InitInputManager(f);
      if (f.GetOption("startupmsg",true))
          StartupMsg();
-@@ -489,23 +490,23 @@
+@@ -489,29 +490,30 @@
      string s;
      s = f.GetOption(string("defaultencode"), string("gb2312"));
      if (s == "gb2312") {
@@ -46,3 +46,10 @@
          setenv("LC_ALL", "ko", 1);
          mDefaultEncode = GBK;
      } else {
+         throw runtime_error("unable to set default encode!");
+     }
+ 
++    setenv("LC_CTYPE", getenv("LC_ALL"), 1);
+     s = f.GetOption(string("autoencode"), string("manual"));
+     if (s == "auto")
+         mAutoEncode = AUTO;
