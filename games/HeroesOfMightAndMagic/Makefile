@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=	holger@eit.uni-kl.de
+MAINTAINER=	holger@e-gitt.net
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://pgp4pine.flatline.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	holger@flatline.de
+MAINTAINER=	holger@e-gitt.net
 
 # Global variables
 #

@@ -20,7 +20,7 @@ DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2:w32codec \
 		wmvds32.ax.gz
 EXTRACT_ONLY=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2
 
-MAINTAINER=	holger@eit.uni-kl.de
+MAINTAINER=	holger@e-gitt.net
 
 RESTRICTED=	Unsure of codec\'s license
 
