@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
+		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
 # Don't let stupid programs ask for configuration.
 
