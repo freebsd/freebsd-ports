@@ -55,6 +55,10 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 		dot:${PORTSDIR}/graphics/graphviz
 PORTDOCS=	html
 
+pre-patch:
+	${REINPLACE_CMD} -e 's,[[:cntrl:]]*$$,,' \
+		${WRKSRC}/examples/osgtesselate/osgtesselate.cpp
+
 post-build:
 	cd ${WRKSRC}/doc/Doxyfiles && OSGHOME=${WRKSRC} doxygen all_Doxyfile
 
