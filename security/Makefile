@@ -97,6 +97,7 @@
     SUBDIR += nessus-libraries-devel
     SUBDIR += nessus-plugins
     SUBDIR += nessus-plugins-devel
+    SUBDIR += nettle
     SUBDIR += nmap
     SUBDIR += nmapfe
     SUBDIR += oidentd
