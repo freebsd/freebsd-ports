@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	fbm
-PORTVERSION=	20010803
+PORTVERSION=	20030629
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
-DISTNAME=	${PORTNAME}.2001-08-31
+DISTNAME=	${PORTNAME}.2003-06-29
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible Bayesian Modeling and Markov Chain Sampling
 
-RESTRICTED=	'Free for educational use and research'
-NO_CDROM=	'Free for educational use and research'
-NO_PACKAGE=	'Free for educational use and research'
+USE_REINPLACE=	yes
 
-USE_REINPLACE=  yes
-
-SCRIPTS = 	bvg-circ bvg-wrap dist-circ dist-wrap gp-circ	\
-		gp-wrap mix-circ mix-wrap net-circ net-wrap
+SCRIPTS =	bvg-circ bvg-wrap dist-circ dist-wrap gp-circ	\
+		gp-wrap dft-circ dft-wrap mix-circ mix-wrap 	\
+		net-circ net-wrap
 PROGRAMS =	bvg-grad-test bvg-hist bvg-initial bvg-mc	\
 		bvg-plt bvg-spec bvg-stepsizes bvg-tbl calc	\
 		combine data-spec dist-display dist-est		\
 		dist-gen dist-genp dist-grad-test dist-hist	\
 		dist-initial dist-mc dist-plt dist-spec 	\
 		dist-stepsizes dist-tbl extract	find-min 	\
+		dft-cases dft-dendrogram dft-display dft-gen	\
+		dft-hist dft-mc dft-plt dft-pred dft-spec 	\
+		dft-tbl						\
 		gp-cov gp-display gp-eigen gp-eval gp-gen 	\
 		gp-genp gp-grad-test gp-hist gp-mc gp-plt 	\
 		gp-pred gp-spec gp-stepsizes gp-tbl grid 	\
@@ -40,7 +40,7 @@ PROGRAMS =	bvg-grad-test bvg-hist bvg-initial bvg-mc	\
 		net-gd net-gen net-genp net-grad-test net-hist	\
 		net-mc net-plt net-pred net-rej net-spec	\
 		net-stepsizes net-tbl rand-seed series
-TEXT=		mix-genp
+TEXT=		dft-genp mix-genp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g;' ${WRKSRC}/make.include
@@ -61,6 +61,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -R $(WRKSRC)/doc/* ${DOCSDIR}
+.for i in make-html make-manual rm-html
+	@${RM}  ${DOCSDIR}/${i}
+.endfor
 	@${MKDIR} ${DOCSDIR}/html
 	@${MV} ${DOCSDIR}/*.html ${DOCSDIR}/html
 	@${MKDIR} ${EXAMPLESDIR}
