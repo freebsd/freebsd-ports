@@ -134,6 +134,7 @@ Amaya/config/fi-corrdialogue
 Amaya/config/fi-libdialogue
 Amaya/config/fonts.gl
 Amaya/config/fonts.gl.deb
+Amaya/config/fonts.gl.win
 Amaya/config/fonts.tmpl
 Amaya/config/fonts.unix
 Amaya/config/fonts.unix.deb
@@ -712,7 +713,6 @@ Amaya/doc/images/Editor.gif
 Amaya/doc/images/Em.gif
 Amaya/doc/images/Forward.gif
 Amaya/doc/images/GeneralMenu-fr.gif
-Amaya/doc/images/GeneralMenu.gif
 Amaya/doc/images/GeomMenu-fr.gif
 Amaya/doc/images/GeomMenu.gif
 Amaya/doc/images/Graph.gif

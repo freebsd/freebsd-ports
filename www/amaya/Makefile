@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	8.1b
+PORTVERSION=	8.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		http://public.planetmirror.com/pub/amaya/ \
 		ftp://ftp.uni-koeln.de/WWW/amaya/ \
 		http://gd.tuwien.ac.at/infosys/browsers/amaya/ \
-		http://www.mirror.ac.uk/sites/ftp.w3.org/pub/afs/w3.org/ftp/pub/amaya/ \
 		http://ftp.ntua.gr/pub/www/W3C/amaya/ \
 		ftp://ftp.ntua.gr/pub/www/W3C/amaya/ \
 		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
