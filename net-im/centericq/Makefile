@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.11.0
+PORTVERSION=	4.12.0
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
