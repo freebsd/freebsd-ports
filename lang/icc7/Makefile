@@ -47,7 +47,7 @@ CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}clin/noncom.htm or https://premier.intel.com/ \(whichever has the file\; to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\; LOOK AT ALL 3 LOCATIONS, not every version is everywhere, but premier.intel.com has always the newest version\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
+IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${ICC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
 .endif
 
 .if exists(${LINUXBASE}/boot/kernel.h) || \
