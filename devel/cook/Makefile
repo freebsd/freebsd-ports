@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.21
+PORTVERSION=	2.23
 CATEGORIES=	devel
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
+MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Like make(1), but more powerful and clean

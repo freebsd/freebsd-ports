@@ -39,6 +39,7 @@ share/cook/en/user-guide.txt
 share/cook/as
 share/cook/bison
 share/cook/c
+share/cook/c++
 share/cook/f77
 share/cook/functions
 share/cook/g77
@@ -53,6 +54,9 @@ share/cook/rcs
 share/cook/recursive
 share/cook/sccs
 share/cook/text
+share/cook/en/tutorial.dvi
+share/cook/en/tutorial.ps
+share/cook/en/tutorial.txt
 share/cook/usr
 share/cook/usr.local
 share/cook/yacc
