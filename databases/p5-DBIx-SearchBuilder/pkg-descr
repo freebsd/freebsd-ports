@@ -1,4 +1,6 @@
 Perl extension for easy SQL SELECT Statement generation.
 
+WWW: http://search.cpan.org/search?dist=DBIx-SearchBuilder
+
 -Anton
 <tobez@FreeBSD.org>
