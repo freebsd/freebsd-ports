@@ -15,6 +15,8 @@ DISTFILES=	X410src-1.tgz X410src-2.tgz
 EXTRACT_ONLY=	X410src-1.tgz X410src-2.tgz
 MAINTAINER=	jmz@FreeBSD.org
 
+LATEST_LINK=	XFree86-4
+
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
