@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	balsa
+PORTNAME=	balsa2
 PORTVERSION=	2.0.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
