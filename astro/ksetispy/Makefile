@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	ksetispy
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.2
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hmendes@brturbo.com
 
-USE_QT_VER=	2
-USE_KDEBASE_VER=2
+USE_BZIP2=	yes
+USE_KDEBASE_VER=3
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -26,10 +27,10 @@ pre-everything::
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's/-O2//' ${CONFIGURE_WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 .ifdef(NOPORTDOCS)
-	@${PERL} -pi -e 's/^(all:) docs-am/\1/; s/^(SUBDIRS.+)?doc/\1/' \
+	@${REINPLACE_CMD} -E -e 's/^(all:)[[:space:]]+docs-am/\1/; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
 .endif
 
