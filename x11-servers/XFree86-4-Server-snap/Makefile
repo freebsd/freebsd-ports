@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1996/11/09 02:08:50 asami Exp $
+# $Id: Makefile,v 1.22 1996/11/10 12:05:56 peter Exp $
 #
 
 DISTNAME=	xc
@@ -28,6 +28,7 @@ INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 
 post-install:
+	chmod u-s ${PREFIX}/bin/SuperProbe
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
