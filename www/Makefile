@@ -578,6 +578,7 @@
     SUBDIR += xpath2rss
     SUBDIR += znavigator
     SUBDIR += zope
+    SUBDIR += zope-FileSystemSite
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfforum

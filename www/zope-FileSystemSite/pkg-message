@@ -1,0 +1,4 @@
+To complete the installation of FileSystemSite:
+    - Restart Zope.  This may be done from the Zope Control Panel.
+    - Verify that the FileSystemSite product is loaded properly by 
+      examining them in Control_Panel/Products.

@@ -1,0 +1,73 @@
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/DirectoryView.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/DirectoryView.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/EditorUtils/emacs-highlighting.el
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite/site/index_html.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/Extensions/SiteExport.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/Extensions/SiteExport.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSDTMLMethod.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSDTMLMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSExternalMethod.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSExternalMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSImage.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSImage.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSObject.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSObject.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPageTemplate.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPageTemplate.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPropertiesObject.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPropertiesObject.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPythonScript.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSPythonScript.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSSTXMethod.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSSTXMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSZSQLMethod.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/FSZSQLMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/Permissions.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/Permissions.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/addFSDirView.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custdtml.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custimage.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custprops.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custpt.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custpy.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custstx.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/custzsql.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml/dirview_properties.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/cookie.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/dirview.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fsdtml.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fsimage.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fsprops.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fspt.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fspy.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images/fssqlmethod.gif
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/templates/dtml
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/templates/script
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/templates/zsql
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSImage.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSImage.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSPageTemplate.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSPageTemplate.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSPythonScript.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSPythonScript.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSSecurity.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests/test_FSSecurity.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/utils.py
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/utils.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/version.txt
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/templates
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/images
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite/site
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/ExampleSite
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite/EditorUtils
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/FileSystemSite
