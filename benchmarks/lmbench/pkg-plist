@@ -12,6 +12,7 @@ lib/lmbench/Results/LIST-
 lib/lmbench/Results/Makefile
 lib/lmbench/Results/OUT
 lib/lmbench/Results/PAPER
+lib/lmbench/Results/RCS/Makefile,v
 lib/lmbench/Results/aix/6000-990
 lib/lmbench/Results/aix/powerpc.2
 lib/lmbench/Results/dgux/AViiON
@@ -110,6 +111,46 @@ lib/lmbench/scripts/rccs
 lib/lmbench/scripts/results
 lib/lmbench/scripts/save
 lib/lmbench/scripts/xroff
+lib/lmbench/scripts/RCS/rccs,v
+lib/lmbench/scripts/RCS/bargraph,v
+lib/lmbench/scripts/RCS/depend,v
+lib/lmbench/scripts/RCS/getbg,v
+lib/lmbench/scripts/RCS/getctx,v
+lib/lmbench/scripts/RCS/getlist,v
+lib/lmbench/scripts/RCS/getmax,v
+lib/lmbench/scripts/RCS/getmem,v
+lib/lmbench/scripts/RCS/graph,v
+lib/lmbench/scripts/RCS/getpercent,v
+lib/lmbench/scripts/RCS/getsummary,v
+lib/lmbench/scripts/RCS/lmbench,v
+lib/lmbench/scripts/RCS/os,v
+lib/lmbench/scripts/RCS/save,v
+lib/lmbench/scripts/RCS/xroff,v
+lib/lmbench/scripts/RCS/README,v
+lib/lmbench/scripts/RCS/Makefile,v
+lib/lmbench/scripts/RCS/results,v
+lib/lmbench/scripts/RCS/config-run,v
+lib/lmbench/scripts/RCS/allmem,v
+lib/lmbench/scripts/RCS/allctx,v
+@dirrm lib/lmbench/Results/FreeBSD
+@dirrm lib/lmbench/Results/GS
+@dirrm lib/lmbench/Results/PS
+@dirrm lib/lmbench/Results/RCS
+@dirrm lib/lmbench/Results/aix
+@dirrm lib/lmbench/Results/dgux
+@dirrm lib/lmbench/Results/hpux
+@dirrm lib/lmbench/Results/irix
+@dirrm lib/lmbench/Results/linux
+@dirrm lib/lmbench/Results/osf1
+@dirrm lib/lmbench/Results/solaris
+@dirrm lib/lmbench/Results/tmp
+@dirrm lib/lmbench/Results/unixware
+@dirrm lib/lmbench/Results
+@dirrm lib/lmbench/bin/bsd
+@dirrm lib/lmbench/bin
+@dirrm lib/lmbench/scripts/RCS
+@dirrm lib/lmbench/scripts
+@dirrm lib/lmbench
 man/man1/bargraph.1.gz
 man/man1/graph.1.gz
 man/man8/bw_file_rd.8.gz

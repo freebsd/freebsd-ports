@@ -3,16 +3,17 @@
 # Date created:		6 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:21:57 asami Exp $
+# $Id: Makefile,v 1.7 1997/05/28 02:18:12 fenner Exp $
 #
 
-DISTNAME=	lmbench-1.1
+DISTNAME=	lmbench
+PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/benchmarks/
+MASTER_SITES=	http://reality.sgi.com/lm_engr/lmbench/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/lmbench
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
 MAN1=		bargraph.1 graph.1
@@ -29,17 +30,17 @@ retest: build
 	@(cd ${WRKSRC}; make rerun)
 
 pre-install:
-	[ -d ${PREFIX}/lib/lmbench ] || mkdir -p ${PREFIX}/lib/lmbench
+	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
 
 do-install:
-	cp ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
+	${CP} ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
 	tar -C ${WRKSRC} -cf - Results bin scripts | \
 	  tar -C ${PREFIX}/lib/lmbench -xf -
 .for man in ${MAN1}
-	cp ${WRKSRC}/doc/${man} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man1
 .endfor
 .for man in ${MAN8}
-	cp ${WRKSRC}/doc/${man} ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man8
 .endfor
 
 .include <bsd.port.mk>
