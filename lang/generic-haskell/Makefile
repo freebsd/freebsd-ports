@@ -15,6 +15,7 @@ COMMENT=	The Generic Haskell compiler
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -16,6 +16,7 @@ COMMENT=	A Haskell-style language
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy
 
+USE_SIZE=	yes
 ALL_TARGET=	just-boo
 
 do-install:

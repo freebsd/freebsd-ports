@@ -19,6 +19,7 @@ COMMENT=	Haskell Ports Library provides ports in Haskell
 BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
+USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 

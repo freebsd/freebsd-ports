@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Tail multiple files on console with ncurses
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		multitail.1

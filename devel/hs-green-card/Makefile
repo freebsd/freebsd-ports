@@ -19,6 +19,7 @@ BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
 WRKSRC=		${WRKDIR}/gc-${PORTVERSION}
 
+USE_SIZE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all
 

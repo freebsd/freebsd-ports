@@ -17,6 +17,7 @@ COMMENT=	An interpreter for the functional programming language Haskell 98
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 HUGS_DATE=	Nov2003
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
