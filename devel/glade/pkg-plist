@@ -27,41 +27,8 @@ share/gnome/glade/gnome/gperf-check.m4
 share/gnome/glade/gnome/linger.m4
 share/gnome/glade/gnome/need-declaration.m4
 share/gnome/glade/gtk/autogen.sh
-share/gnome/help/glade/C/faq/docbook.css
-share/gnome/help/glade/C/faq/index.html
-share/gnome/help/glade/C/faq/faq.sgml
-share/gnome/help/glade/C/faq/ln7.html
-share/gnome/help/glade/C/faq/stylesheet-images/caution.gif
-share/gnome/help/glade/C/faq/stylesheet-images/home.gif
-share/gnome/help/glade/C/faq/stylesheet-images/important.gif
-share/gnome/help/glade/C/faq/stylesheet-images/next.gif
-share/gnome/help/glade/C/faq/stylesheet-images/note.gif
-share/gnome/help/glade/C/faq/stylesheet-images/prev.gif
-share/gnome/help/glade/C/faq/stylesheet-images/tip.gif
-share/gnome/help/glade/C/faq/stylesheet-images/toc-blank.gif
-share/gnome/help/glade/C/faq/stylesheet-images/toc-minus.gif
-share/gnome/help/glade/C/faq/stylesheet-images/toc-plus.gif
-share/gnome/help/glade/C/faq/stylesheet-images/up.gif
-share/gnome/help/glade/C/faq/stylesheet-images/warning.gif
 share/gnome/help/glade/C/topic.dat
-share/gnome/help/glade/C/turbo-start/docbook.css
-share/gnome/help/glade/C/turbo-start/index.html
-share/gnome/help/glade/C/turbo-start/ln7.html
-share/gnome/help/glade/C/turbo-start/stylesheet-images/caution.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/home.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/important.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/next.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/note.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/prev.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/tip.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/toc-blank.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/toc-minus.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/toc-plus.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/up.gif
-share/gnome/help/glade/C/turbo-start/stylesheet-images/warning.gif
-share/gnome/help/glade/C/turbo-start/turbo-start.sgml
 share/gnome/help/glade/C/user-guide/authors.html
-share/gnome/help/glade/C/user-guide/docbook.css
 share/gnome/help/glade/C/user-guide/edit-menu.html
 share/gnome/help/glade/C/user-guide/helloworld.html
 share/gnome/help/glade/C/user-guide/help-menu.html
@@ -74,20 +41,7 @@ share/gnome/help/glade/C/user-guide/output.html
 share/gnome/help/glade/C/user-guide/project-options.html
 share/gnome/help/glade/C/user-guide/quickstart.html
 share/gnome/help/glade/C/user-guide/settings-menu.html
-share/gnome/help/glade/C/user-guide/stylesheet-images/caution.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/home.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/important.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/next.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/note.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/prev.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/tip.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/toc-blank.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/toc-minus.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/toc-plus.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/up.gif
-share/gnome/help/glade/C/user-guide/stylesheet-images/warning.gif
 share/gnome/help/glade/C/user-guide/toolbar.html
-share/gnome/help/glade/C/user-guide/user-guide.sgml
 share/gnome/help/glade/C/user-guide/user-guide-images/edit-menu.png
 share/gnome/help/glade/C/user-guide/user-guide-images/file-menu.png
 share/gnome/help/glade/C/user-guide/user-guide-images/grid-options.png
@@ -104,6 +58,7 @@ share/gnome/help/glade/C/user-guide/user-guide-images/window-main.png
 share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-add.png
 share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-basic.png
 share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-gnome.png
+share/gnome/help/glade/C/user-guide/user-guide.sgml
 share/gnome/help/glade/C/user-guide/using.html
 share/gnome/help/glade/C/user-guide/view-menu.html
 share/gnome/help/glade/C/user-guide/windows-clipboard.html
@@ -113,25 +68,53 @@ share/gnome/help/glade/C/user-guide/windows-tree.html
 share/gnome/help/glade/C/user-guide/windows.html
 share/gnome/help/glade/C/user-guide/x225.html
 share/gnome/help/glade/C/user-guide/x324.html
-share/gnome/help/glade/it/faq/docbook.css            
-share/gnome/help/glade/it/faq/index.html            
-share/gnome/help/glade/it/faq/ln10.html            
-share/gnome/help/glade/it/faq/stylesheet-images/caution.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/home.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/important.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/next.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/note.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/prev.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/tip.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/toc-blank.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/toc-minus.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/toc-plus.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/up.gif            
-share/gnome/help/glade/it/faq/stylesheet-images/warning.gif            
 share/gnome/help/glade/it/topic.dat
+share/gnome/help/glade/it/user-guide/authors.html
+share/gnome/help/glade/it/user-guide/edit-menu.html
+share/gnome/help/glade/it/user-guide/helloworld.html
+share/gnome/help/glade/it/user-guide/help-menu.html
+share/gnome/help/glade/it/user-guide/index.html
+share/gnome/help/glade/it/user-guide/introduction.html
+share/gnome/help/glade/it/user-guide/libglade.html
+share/gnome/help/glade/it/user-guide/ln7.html
+share/gnome/help/glade/it/user-guide/menus.html
+share/gnome/help/glade/it/user-guide/output.html
+share/gnome/help/glade/it/user-guide/project-options.html
+share/gnome/help/glade/it/user-guide/quickstart.html
+share/gnome/help/glade/it/user-guide/settings-menu.html
+share/gnome/help/glade/it/user-guide/toolbar.html
+share/gnome/help/glade/it/user-guide/user-guide-images/edit-menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/file-menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/grid-options.png
+share/gnome/help/glade/it/user-guide/user-guide-images/help-menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/options-c.png
+share/gnome/help/glade/it/user-guide/user-guide-images/options-general.png
+share/gnome/help/glade/it/user-guide/user-guide-images/options-libglade.png
+share/gnome/help/glade/it/user-guide/user-guide-images/settings-menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/snap-options.png
+share/gnome/help/glade/it/user-guide/user-guide-images/toolbar.png
+share/gnome/help/glade/it/user-guide/user-guide-images/view-menu.png
+share/gnome/help/glade/it/user-guide/user-guide-images/window-main.png
+share/gnome/help/glade/it/user-guide/user-guide-images/window-palette-add.png
+share/gnome/help/glade/it/user-guide/user-guide-images/window-palette-basic.png
+share/gnome/help/glade/it/user-guide/user-guide-images/window-palette-gnome.png
+share/gnome/help/glade/it/user-guide/user-guide.sgml
+share/gnome/help/glade/it/user-guide/using.html
+share/gnome/help/glade/it/user-guide/view-menu.html
+share/gnome/help/glade/it/user-guide/windows-clipboard.html
+share/gnome/help/glade/it/user-guide/windows-editor.html
+share/gnome/help/glade/it/user-guide/windows-palette.html
+share/gnome/help/glade/it/user-guide/windows-tree.html
+share/gnome/help/glade/it/user-guide/windows.html
+share/gnome/help/glade/it/user-guide/x225.html
+share/gnome/help/glade/it/user-guide/x324.html
 share/gnome/omf/glade/faq-C.omf
+share/gnome/omf/glade/faq-it.omf
 share/gnome/omf/glade/turbo-start-C.omf
+share/gnome/omf/glade/turbo-start-it.omf
 share/gnome/omf/glade/user-guide-C.omf
+share/gnome/omf/glade/user-guide-it.omf
 share/gnome/pixmaps/glade.png
 share/gnome/pixmaps/glade/glade_logo.png
 share/locale/az/LC_MESSAGES/glade.mo
@@ -149,26 +132,27 @@ share/locale/hu/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
 share/locale/ko/LC_MESSAGES/glade.mo
+share/locale/lv/LC_MESSAGES/glade.mo
+share/locale/nl/LC_MESSAGES/glade.mo
+share/locale/nn/LC_MESSAGES/glade.mo
 share/locale/no/LC_MESSAGES/glade.mo
 share/locale/pl/LC_MESSAGES/glade.mo
+share/locale/pt/LC_MESSAGES/glade.mo
 share/locale/pt_BR/LC_MESSAGES/glade.mo
+share/locale/ro/LC_MESSAGES/glade.mo
 share/locale/ru/LC_MESSAGES/glade.mo
 share/locale/sk/LC_MESSAGES/glade.mo
 share/locale/sv/LC_MESSAGES/glade.mo
 share/locale/tr/LC_MESSAGES/glade.mo
 share/locale/uk/LC_MESSAGES/glade.mo
+share/locale/zh_CN/LC_MESSAGES/glade.mo
 @dirrm share/gnome/pixmaps/glade
 @dirrm share/gnome/omf/glade
-@dirrm share/gnome/help/glade/C/user-guide/user-guide-images
-@dirrm share/gnome/help/glade/C/user-guide/stylesheet-images
-@dirrm share/gnome/help/glade/C/user-guide
-@dirrm share/gnome/help/glade/C/turbo-start/stylesheet-images
-@dirrm share/gnome/help/glade/C/turbo-start
-@dirrm share/gnome/help/glade/it/faq/stylesheet-images
-@dirrm share/gnome/help/glade/it/faq
+@dirrm share/gnome/help/glade/it/user-guide/user-guide-images
+@dirrm share/gnome/help/glade/it/user-guide
 @dirrm share/gnome/help/glade/it
-@dirrm share/gnome/help/glade/C/faq/stylesheet-images
-@dirrm share/gnome/help/glade/C/faq
+@dirrm share/gnome/help/glade/C/user-guide/user-guide-images
+@dirrm share/gnome/help/glade/C/user-guide
 @dirrm share/gnome/help/glade/C
 @dirrm share/gnome/help/glade
 @dirrm share/gnome/glade/gtk

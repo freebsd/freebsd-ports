@@ -1,12 +1,14 @@
---- glade/gnome-db/gnomedblogin.c.orig	Sat Aug  5 06:37:50 2000
-+++ glade/gnome-db/gnomedblogin.c	Tue Jun 19 06:06:48 2001
-@@ -48,3 +48,3 @@
+
+$FreeBSD$
+
+--- glade/gnome-db/gnomedblogin.c	2002/01/28 13:18:44	1.1
++++ glade/gnome-db/gnomedblogin.c	2002/01/28 13:19:07
+@@ -117,7 +117,7 @@
  {
--  return gnome_db_login_new (NULL, NULL, NULL);
-+  return gnome_db_login_new (NULL);
- }
-@@ -119,3 +119,3 @@
+   if (data->create_widget)
      {
 -      source_add (data, "  %s = gnome_db_login_new (NULL, NULL, NULL);\n",
 +      source_add (data, "  %s = gnome_db_login_new (NULL);\n",
  		  data->wname);
+     }
+   gb_widget_write_standard_source (widget, data);
