@@ -3696,6 +3696,7 @@ kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpacman		ports/games/kpacman
+kpictorial	ports/games/kpictorial
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
 kprof		ports/devel/kprof
