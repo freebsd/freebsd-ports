@@ -80,7 +80,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
   "pcl3"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
   "hpdj"     "HP PCL 3+ (old drv.)" ON \
-  "hpijs"    "HP PhotoSmart/DeskJet series (HP developed driver)" ON \
+  "ijs"      "HP PhotoSmart/DeskJet series (HP developed driver)" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
