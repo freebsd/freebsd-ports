@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	ut
-PORTVERSION=	b2.3
-MASTER_SITES=	http://files.ausgamers.com:81/quake3/mods/urbanterror/ \
-		http://www.clandvs.com/downloads/ \
-		ftp://www.gamechannel.de/gcpro/ \
-		http://62.180.57.56/files/
-DISTFILES=	q3${PORTNAME}2.zip \
-		q3${PORTNAME}2_patch20to23.zip
+PORTVERSION=	2.4
+MASTER_SITES=	ftp://ut.petrovits.net/pub/UrbanTerror/ \
+		http://ut.zdwebhosting.com/ \
+		http://www.dailyfiles.dk/modifications/ \
+		ftp://ftp.barrysworld.com/pub/games/quake3/mods/urbanterror/official_patches/win32/ \
+		http://www.q3arena.gry.wp.pl/ut/pliki/ \
+		http://62.180.57.56/files/mods/ut2/ \
+		ftp://ftp.gcpro.de/mods/quake3/ut2/
+DISTNAME=	q3ut24_full
 
-WRKSRC=			${WRKDIR}/q3ut2
-EXTRACT_BEFORE_ARGS=	-o -qq
-HAS_WIERDPATCHES=	yes
-EXTRACT_ONLY=		q3${PORTNAME}2.zip
+WRKSRC=		${WRKDIR}/q3ut2
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 
