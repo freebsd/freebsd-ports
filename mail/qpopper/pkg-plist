@@ -1,2 +1,3 @@
 bin/popauth3
 libexec/popper3
+@dirrm etc/popper
