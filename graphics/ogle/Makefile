@@ -18,6 +18,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_SUBMAKE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -62,7 +63,7 @@ post-install:
 .if exists(${LOCALBASE}/lib/liba52.la)
 LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
 .else
-LIBA52_DEP_LIBS=	-L${LOCALBASE}/lib -ldjbfft -lm
+LIBA52_DEP_LIBS=
 .endif
 
 .if ${ARCH} == "i386"
