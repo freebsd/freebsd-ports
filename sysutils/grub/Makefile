@@ -19,6 +19,9 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd-freebsd${OSREL}
 MAN1=		mbchk.1
 MAN8=		grub.8 grub-install.8
 
+pre-build:
+	@${RM} ${WRKSRC}/docs/grub.info*
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
