@@ -7,13 +7,13 @@
 
 PORTNAME=	ricochet
 PORTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
 MAINTAINER=	leeym@leeym.com
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois \
