@@ -1,16 +1,16 @@
 # New ports collection makefile for:   ASFiles
-# Version required:		1.0
 # Date created:                17 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ASFiles-1.0
-PKGNAME=	asfiles-1.0
+PORTNAME=	asfiles
+PORTVERSION= 	1.0
 CATEGORIES=	x11-fm windowmaker
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/ASFiles/ \
 		ftp://ftp.uni-trier.de/pub/unix/X11/window-manager/AfterStep/apps/ASFiles/
+DISTNAME=	ASFiles-${PORTVERSION}
 
 MAINTAINER=	lukin@okbmei.msk.su
 

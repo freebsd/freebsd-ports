@@ -1,12 +1,12 @@
 # New ports collection makefile for:   fsv
-# Version required:    0.9
 # Date created:        06 February 2000
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fsv-0.9
+PORTNAME=	fsv
+PORTVERSION= 	0.9
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	xnc
-# Version required:	4.2.1
 # Date created:		5 February 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xnc-4.2.1.src
-PKGNAME=	xnc-4.2.1
+PORTNAME=	xnc
+PORTVERSION= 	4.2.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src/ \
 		ftp://ftp.chg.ru/pub/Linux/sunsite/X11/desktop/	\
 		ftp://sunsite.unx.edu/pub/Linux/X11/desktop/
+DISTNAME=	${PKGNAME}.src
 
 MAINTAINER=	dima@Chg.RU
 

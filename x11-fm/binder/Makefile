@@ -1,15 +1,15 @@
 # New ports collection makefile for:	JDE's Binder
-# Version required:	1.3
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Binder-1.3
-PKGNAME=	${LANGPREFIX}binder-1.3
+PORTNAME=	${LANGPREFIX}binder
+PORTVERSION= 	1.3
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+DISTNAME=	Binder-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

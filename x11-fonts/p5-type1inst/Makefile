@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-type1inst
-# Version required:	0.6.1
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       type1inst-0.6.1
-PKGNAME=	p5-type1inst-0.6.1
+PORTNAME=	p5-type1inst
+PORTVERSION=	0.6.1
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=X11/xutils
+DISTNAME=	type1inst-${PORTVERSION}
 
 MAINTAINER=     giffunip@asme.org
 

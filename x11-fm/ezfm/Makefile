@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ezfm
-# Version required:			0.4
 # Date created:				27 July 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	EZFM-0.4-src
-PKGNAME=	ezfm-0.4
+PORTNAME=	ezfm
+PORTVERSION= 	0.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
+DISTNAME=	EZFM-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

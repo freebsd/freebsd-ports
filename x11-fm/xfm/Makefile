@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xfm
-# Version required:	1.3.2
 # Date created:		28 December 1994
 # Whom:			jc@irbs.com John Capo
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xfm-1.3.2
+PORTNAME=	xfm
+PORTVERSION= 	1.3.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications

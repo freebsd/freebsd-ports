@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mfm
-# Version required:			1.3
 # Date created:				12 Jan 2000
 # Whom:					Michael Vasilenko <acid@stu.cn.ua>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mfm-1.3
+PORTNAME=	mfm
+PORTVERSION= 	1.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/mfm/archive/SOURCES/
 

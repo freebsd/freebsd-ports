@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkdesk
-# Version required:     1.0
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkdesk-1.1
+PORTNAME=	tkdesk
+PORTVERSION= 	1.1
 CATEGORIES=	x11-fm tk42
 MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
 
