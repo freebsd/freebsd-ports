@@ -68,6 +68,7 @@
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gutenbook
+    SUBDIR += gutenmark
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
     SUBDIR += haxml

@@ -1,0 +1,8 @@
+GutenMark is a tool for automatically creating high-quality HTML (or LaTeX)
+markup from Project Gutenberg etexts.  In combination with other freely-
+available conversion tools, GutenMark can convert Project Gutenberg etexts
+into publication-quality Postscript or PDF, for print-on-demand applications.
+
+This conversion is completely automatic, without manual markup or editing.
+
+WWW: http://www.sandroid.org/GutenMark/
