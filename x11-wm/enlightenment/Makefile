@@ -42,7 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if (${MACHINE} == "alpha") && (${XFREE86_VERSION} == 3)
-CONFIGURE_ARS+=	--disable-zoom
+CONFIGURE_ARGS+=--disable-zoom
 .endif
 
 MAN1=		enlightenment.1
