@@ -1,0 +1,14 @@
+Author: Aaron Watters <aaron_watters@msn.com>
+
+From the documentation:
+ The kjbuckets module defines three data types for Python: kjSet,
+ kjGraph, and kjDict. These types come with a number of associated
+ methods, including common set theoretical operations such as union,
+ intersection, difference, composition, transposition, reachability
+ sets, and transitive closure.
+
+ For suitably large compute intensive uses these types should provide
+ up to an order of magnitude speedup versus an implementation that uses
+ analogous operations implemented directly in Python.
+
+Jacques Vidrine <nectar@FreeBSD.ORG>

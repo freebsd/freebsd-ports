@@ -1,0 +1,30 @@
+# Ports collection Makefile for:	kjbuckets
+# Version required:			2.2
+# Date created:				03/27/1999
+# Whom:					nectar@FreeBSD.ORG
+#
+# $Id: Makefile,v 1.1.1.1 1999/03/20 08:50:50 nectar Exp $
+#
+
+DISTNAME=		kjb
+PKGNAME=		py-kjbuckets-2.2
+CATEGORIES=		devel
+MASTER_SITES=		http://www.chordate.com/kjbuckets/             \
+			http://www.nectar.com/distfiles/
+
+MAINTAINER=		nectar@FreeBSD.ORG
+
+BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
+RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+
+MAKEFILE=		makefile
+WRKSRC=			${WRKDIR}
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/kjbucketsmodule.so                   \
+		${PREFIX}/lib/python1.5/site-packages
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/kjbuckets.html ${PREFIX}/share/doc/
+.endif
+
+.include <bsd.port.mk>
