@@ -21,7 +21,8 @@ BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		automake14:${PORTSDIR}/devel/automake14 \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		autoconf213:${PORTSDIR}/devel/autoconf213 \
-		phpize:${PORTSDIR}/lang/php4-cli
+		phpize:${PORTSDIR}/lang/php4-cli \
+		php:${PORTSDIR}/lang/php4-cli
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-cli
 
 # Don't call autoconf directly, ./buildconf does this
