@@ -1,6 +1,8 @@
 bin/svm-predict
 bin/svm-scale
 bin/svm-train
+%%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svm.py
+%%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svmc.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
