@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.lilypond.org/pub/yodl/development/ \
 					http://ftp.dmz.digex.net/pub/packages/ \
 					http://linux.sarang.net/ftp/mirror/system/shell/zsh/GPL/
 
-MAINTAINER=	dburr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use but powerful document formatting/preparation language
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/latex \

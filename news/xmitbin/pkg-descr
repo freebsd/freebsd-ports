@@ -10,5 +10,3 @@ for you!
 I have included two shell scripts of my own, "mailbin" and "postbin".
 These scripts make it easy to mail and post (respectively) stuff using
 a good default set of command line switches.
-
-[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.microsoft.com/netshow/download/en/beta/
 DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	dburr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs

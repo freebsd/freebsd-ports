@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cherrynebula.net/downloads/
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to pretty-print TV Guide listings from www.tvguide.com
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

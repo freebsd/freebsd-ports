@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cadence.com/utils/
 DISTNAME=	xmitBin-1.9
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dburr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Posts or mails binary and sourcecode files intelligently
 
 MAN1=		xmitBin.1
