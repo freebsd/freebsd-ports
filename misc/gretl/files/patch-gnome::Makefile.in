@@ -1,15 +1,41 @@
---- gnome/Makefile.in.orig	Sun Aug 25 03:07:17 2002
-+++ gnome/Makefile.in	Wed Aug 28 03:10:35 2002
-@@ -18,9 +18,9 @@
+--- gnome/Makefile.in.orig	Tue Aug 27 03:11:56 2002
++++ gnome/Makefile.in	Mon Oct 21 08:27:48 2002
+@@ -2,10 +2,10 @@
+ docdir = ../doc
+ 
+ INSTALL = @INSTALL@
+-gnome_prefix = @gnome_prefix@
++datadir = @datadir@
+ have_gnome = @have_gnome@
+ 
+-sysconfdir = $(gnome_prefix)/etc
++sysconfdir = @sysconfdir@
+ 
+ GCONFTOOL = @GCONFTOOL@
+ GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
+@@ -24,11 +24,11 @@
    install_help = install-help-1
  endif
  
 -desktopdir = $(gnome_prefix)/share/applications
 -mimedir = $(gnome_prefix)/share/mime-info
 -gpixmaps = $(gnome_prefix)/share/pixmaps
-+desktopdir = $(gnome_prefix)/share/gnome/applications
-+mimedir = $(gnome_prefix)/share/gnome/mime-info
-+gpixmaps = $(gnome_prefix)/share/gnome/pixmaps
- ghelpdir = $(gnome_prefix)/share/gnome/help/gretl
+-ghelpdir = $(gnome_prefix)/share/gnome/help/gretl
+-schemadir = $(gnome_prefix)/etc/gconf/schemas
++desktopdir = $(datadir)/applications
++mimedir = $(datadir)/mime-info
++gpixmaps = $(datadir)/pixmaps
++ghelpdir = $(datadir)/help/gretl
++schemadir = $(sysconfdir)/gconf/schemas
  
- install: install-images install-misc install-help-dirs $(install_help)
+ install: install-images install-misc install-help-dirs $(install_help) $(install_schemas)
+ 
+@@ -58,7 +58,7 @@
+ 	  cat $$f | sed s+fileref=\"figures/[^\"]*+\&.png+g > \
+ 	  $(ghelpdir)/C/chapters/`basename $$f` ; done
+ 	$(INSTALL_DATA) $(docdir)/figures/*.png $(ghelpdir)/C/figures
+-	make -C $(omfdir) install
++	$(MAKE) -C $(omfdir) install
+ 
+ install-help-1:
+ 	$(INSTALL_DATA) topic.dat $(ghelpdir)/C

@@ -1,23 +1,28 @@
---- plugin/Makefile.in.orig	Mon Aug 26 02:32:01 2002
-+++ plugin/Makefile.in	Wed Aug 28 00:45:07 2002
-@@ -2,6 +2,7 @@
+--- plugin/Makefile.in.orig	Fri Oct 11 03:03:46 2002
++++ plugin/Makefile.in	Mon Oct 21 10:23:25 2002
+@@ -8,6 +8,10 @@
+ INSTALL = @INSTALL@
+ LN = @LN_S@
  
- prefix = @prefix@
- exec_prefix = @exec_prefix@
-+libdir = @libdir@
- CC = @CC@
- CFLAGS = @CFLAGS@
- MAKE = @MAKE@
-@@ -26,7 +27,7 @@
- endif
- 
- # Installation directory
--share = $(prefix)/share/gretl
-+gretldir = $(libdir)/gretl
- 
++CPPFLAGS = @CPPFLAGS@
++LDFLAGS = @LDFLAGS@
++INTL_LIBS = @LTLIBINTL@
++
+ have_gtk = @have_gtk@
+ GTK_CFLAGS = @GTK_CFLAGS@
+ GTK_LIBS = @GTK_LIBS@
+@@ -31,8 +35,8 @@
  override CFLAGS += -I.. -DHAVE_CONFIG_H
  
-@@ -48,7 +49,7 @@
+ LIBTOOL = $(topsrc)/libtool
+-COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
+-LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -shared
++COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(CPPFLAGS)
++LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -shared $(LDFLAGS)
+ 
+ GRETLINC = -I$(topsrc)/lib/src
+ GRETLLIB = ../lib/libgretl.la
+@@ -47,7 +51,7 @@
    PROGRESS_PLUGIN = progress_bar.so
    GNUMERIC_PLUGIN = gnumeric_import.so
    EXCEL_PLUGIN = excel_import.so
@@ -25,25 +30,18 @@
 +  GRETL_LIBOLE2_CFLAGS := -I. $(shell $(GLIB_CONFIG) --cflags)
  endif  
  
- PLUGINS = stats_tables.so panel_data.so des_import.so \
-@@ -139,15 +140,15 @@
+ PLUGINS = stats_tables.so panel_data.so des_import.so range-mean.so lad.so \
+@@ -156,11 +160,11 @@
  .PHONY: 
  
  install: $(PLUGINS) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) \
--	$(PLUGINS) $(share)/plugins
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) \
-+	$(PLUGINS) $(gretldir)/plugins
+ 	$(PLUGINS) $(plugindir)
  
  install-strip: $(PLUGINS) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s \
--	$(PLUGINS) $(share)/plugins
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) -s \
-+	$(PLUGINS) $(gretldir)/plugins
+ 	$(PLUGINS) $(plugindir)
  
  installdirs:
--	$(topsrc)/tools/mkinstalldirs $(share)/plugins
-+	$(topsrc)/tools/mkinstalldirs $(gretldir)/plugins
- 
- clean:
- 	rm -f *.o *.lo *.so core 

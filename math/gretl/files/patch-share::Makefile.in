@@ -1,14 +1,14 @@
---- share/Makefile.in.orig	Tue Aug 20 05:22:47 2002
-+++ share/Makefile.in	Wed Aug 28 00:48:06 2002
+--- share/Makefile.in.orig	Mon Sep 30 03:49:42 2002
++++ share/Makefile.in	Mon Oct 21 07:31:57 2002
 @@ -1,11 +1,12 @@
  topsrc = ..
  
  prefix = @prefix@
-+libdir = @libdir@
++datadir = @datadir@
  have_gtk = @have_gtk@
  
 -gretldir = $(prefix)/share/gretl
-+gretldir = $(libdir)/gretl
++gretldir = $(datadir)/gretl
  tooldir = $(topsrc)/tools
 -INSTALL_DATA = cp -fp
 +INSTALL_DATA = @INSTALL_DATA@

@@ -1,17 +1,18 @@
---- lib/Makefile.in.orig	Mon Aug 26 02:31:58 2002
-+++ lib/Makefile.in	Wed Aug 28 00:42:18 2002
-@@ -12,8 +12,8 @@
- XML_LIBS = @XML_LIBS@
+--- lib/Makefile.in.orig	Wed Nov 13 03:50:52 2002
++++ lib/Makefile.in	Mon Nov 18 20:04:11 2002
+@@ -14,6 +14,11 @@
+ GLIB_LIBS = @GLIB_LIBS@
  have_gtk = @have_gtk@
  
--ifeq ($(INSTALL_PROGRAM),)
--  INSTALL_PROGRAM = $(INSTALL) -m 755
-+ifeq ($(INSTALL_SCRIPT),)
-+  INSTALL_SCRIPT = $(INSTALL) -m 755
++datadir = @datadir@
++CPPFLAGS = @CPPFLAGS@ -DDATADIR=\"$(datadir)\"
++LDFLAGS = @LDFLAGS@
++INTL_LIBS = @LTLIBINTL@
++
+ ifeq ($(INSTALL_PROGRAM),)
+   INSTALL_PROGRAM = $(INSTALL) -m 755
  endif
- ifeq ($(INSTALL_DATA),)
-   INSTALL_DATA = $(INSTALL) -m 644
-@@ -26,7 +26,7 @@
+@@ -28,7 +33,7 @@
  libdir = $(prefix)/lib
  includedir = $(prefix)/include/gretl
  aclocaldir = $(prefix)/share/aclocal
@@ -20,33 +21,29 @@
  
  INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
  
-@@ -40,7 +40,7 @@
-   LIBGRETL = libgretl.la
+@@ -42,7 +47,7 @@
    INSTALL_CFG = install-cfg-old
  endif
--LIBS = -lm -ldl -L/usr/local/lib -lz $(XML_LIBS)
-+LIBS = -lm -lz $(XML_LIBS)
+ 
+-LIBS = -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) $(GLIB_LIBS)
++LIBS = -lm -lz $(XML_LIBS) $(GLIB_LIBS) $(INTL_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -77,17 +77,17 @@
+@@ -73,14 +78,14 @@
+ 
+ override CFLAGS += -I. -I./src -I.. $(XML_CFLAGS) $(GLIB_CFLAGS) -DHAVE_CONFIG_H
+ 
+-COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)
++COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(CPPFLAGS)
+ 
+ .c.o:        
+ 	$(COMPILE) $<
+ 
+ $(LIBGRETL): $(OBJS) $(LOBJS) $(CEPHES_OBJ) $(CEPHES_OBJ)
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(CEPHES_LOBJ) \
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:0:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:0:0 $(LDFLAGS)
+ 
  .PHONY: 
  
- install: $(LIBGRETL) install-data
--	$(LIBTOOL) $(INSTALL_PROGRAM) $< $(libdir)/$<
-+	$(LIBTOOL) $(INSTALL_DATA) $< $(libdir)/$<
- 
- install-strip: $(LIBGRETL) install-data
--	$(LIBTOOL) $(INSTALL_PROGRAM) -s $< $(libdir)/$<
-+	$(LIBTOOL) $(INSTALL_DATA) -s $< $(libdir)/$<
- 
- install-data: installdirs $(INSTALL_CFG)
- 	$(INSTALL_DATA) $(srcdir)/*.h $(includedir)
- 	$(INSTALL_DATA) ../gretl.m4 $(aclocaldir)
- 
- install-cfg-old: ../gretl-config
--	$(INSTALL_PROGRAM) ../gretl-config $(bindir)
-+	$(INSTALL_SCRIPT) ../gretl-config $(bindir)
- 
- install-cfg-new: ../gretl2.pc
- 	$(INSTALL_DATA) ../gretl2.pc $(pkgconfigdir)

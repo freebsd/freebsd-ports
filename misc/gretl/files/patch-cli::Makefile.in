@@ -1,0 +1,48 @@
+--- cli/Makefile.in.orig	Tue Nov 12 04:28:19 2002
++++ cli/Makefile.in	Mon Nov 18 20:00:01 2002
+@@ -15,6 +15,10 @@
+ RL_OBJ = @RL_OBJ@
+ USE_NLS = @USE_NLS@
+ 
++CPPFLAGS = @CPPFLAGS@
++LDFLAGS = @LDFLAGS@
++INTL_LIBS = @LTLIBINTL@
++
+ ifeq ($(CC),)
+   CC = gcc
+ endif
+@@ -25,15 +29,14 @@
+   LN = ln -sf
+ endif
+ ifeq ($(USE_NLS),yes)
+-  datadir = @datadir@
+-  localedir = $(datadir)/locale
++  localedir = $(prefix)/share/locale
+   DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
+ endif
+ 
+ GRETLLIB = ../lib/libgretl-1.0.la
+ 
+ # General compile options and libs:
+-LIBS = $(CLI_LIBS)
++LIBS = $(CLI_LIBS) $(INTL_LIBS)
+ 
+ # Directories
+ tooldir = $(topsrc)/tools
+@@ -41,14 +44,14 @@
+ 
+ #### End of system configuration section. ####
+ 
+-override CFLAGS += -I. -I.. -I$(libsrc) $(DEFS)
++override CFLAGS += -I. -I.. -I$(libsrc) $(DEFS) $(CPPFLAGS)
+ 
+ CLI = gretlcli
+ LIBTOOL = $(topsrc)/libtool
+ 
+ $(CLI): gretlcli.o $(RL_OBJ)
+ 	../libtool --mode=link $(CC) -o $@ $< \
+-	$(RL_OBJ) $(GRETLLIB) $(CLI_LIBS) 
++	$(RL_OBJ) $(GRETLLIB) $(CLI_LIBS) $(LDFLAGS)
+ 
+ .PHONY :
+ 
