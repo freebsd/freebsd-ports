@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		ftp://ftp.planetmirror.com/pub/horde/chora/		\
 		ftp://ftp.au.horde.org/pub/horde/chora/			\
 		ftp://ftp.be.horde.org/chora/				\
 		ftp://ftp.es.horde.org/pub/chora/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/chora/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/chora/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/	\
 		http://ftp.horde.org/pub/chora/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The Horde CVS web-viewer
 
 #-----------------------------------------------------------------------
@@ -56,6 +55,7 @@ DOCS=		COPYING README  docs/BUGS docs/CHANGES docs/CREDITS \
 CONFFILE=	conf.php cvsroots.php html.php longIntro.txt \
 		mime_drivers.php prefs.php
 SUB_DIRS=	config graphics lib locale po templates
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LHORDEDIR?=	www/horde
 LCHORADIR?=	${LHORDEDIR}/chora
@@ -112,7 +112,9 @@ do-install:
 post-install:
 	@${ECHO_MSG}
 	@${SED} -e "s:%%CHORADIR%%:${CHORADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g" ${PKGMESSAGE}
+		-e "s:%%CONFDIR%%:${CONFDIR}:g" < ${FILESDIR}/pkg-message.in	\
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
