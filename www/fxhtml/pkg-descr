@@ -1,0 +1,24 @@
+FxHTML adds an additional layer of extremely powerful HTML commands to
+your web server.
+
+HTML Has the following features:- 
+
+  +   Automatic session/context handling 
+  +   Method POST & Method GET automatically handled 
+  +   Choice of Content Types (HTML,TEXT,...) 
+  +   Floating point expression handling 
+  +   Text handling including search and replace, splitting, substrings and arrays. 
+  +   Variable subsitution 
+  +   Disk based variable handling 
+  +   Procedure calls including recursion capabilities 
+  +   Looping constructs 
+  +   Database handling including searching facilities and form generation 
+  +   Email handling 
+  +   File handling 
+  +   Interface to shell commands 
+  +   Bitmap handling and GIF generation 
+  +   Full error tracking system with formatted HTML output 
+  +   Common interface to handle files, sockets, devices and pipes. (*) 
+
+See http://www.cybercities.net/fxhtml for more details.
+
