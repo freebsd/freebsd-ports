@@ -73,6 +73,10 @@ PLIST_SUB+=	K1999="@comment "
 BASH2FIX=	src/modules/telemetry/telemetry.sh src/tools/launcher/torcs.in	\
 		Make-default.mk robotgen		\
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	You might define these options:"

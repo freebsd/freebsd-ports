@@ -23,6 +23,10 @@ MANLANG=	"" ja
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
 
