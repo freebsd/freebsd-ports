@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arping
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/netutils/arping/
@@ -16,8 +16,18 @@ COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
-ALL_TARGET=	freebsd
+LDFLAGS+=	-lpcap
+
 MAN8=		arping.8
+
+do-build:
+	cd ${WRKSRC} &&  \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+	-DUSE_NETIF=1  -DFREEBSD=1 -c `libnet-config --defines` \
+	`libnet-config --cflags` ${PORTNAME}.c && \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+	-DUSE_NETIF=1 -DFREEBSD=1 -o ${PORTNAME} ${PORTNAME}.o \
+	`libnet-config --libs` ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arping ${PREFIX}/sbin
