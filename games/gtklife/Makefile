@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		gtklife
-PORTVERSION=		3.0
+PORTVERSION=		4.1
 CATEGORIES=		games
-MASTER_SITES=		http://www.igs.net/~tril/gtklife/
+MASTER_SITES=		http://ironphoenix.org/tril/gtklife/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GTK+ implementation of Conway's Game of Life

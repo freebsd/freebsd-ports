@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug  7 21:03:49 2004
-+++ Makefile	Sat Aug  7 21:24:17 2004
+--- Makefile.orig	Thu Aug 19 06:12:17 2004
++++ Makefile	Tue Jan 18 04:02:28 2005
 @@ -1,16 +1,5 @@
 -# C compiler to use
 -CC=gcc
@@ -18,10 +18,12 @@
  
  ########## No user-serviceable parts below ##########
  
-@@ -32,8 +21,10 @@
+@@ -30,10 +19,11 @@
+ 	install -d $(DATADIR)
+ 	install -d $(DATADIR)/graphics
  	install -m 0644 graphics/* $(DATADIR)/graphics
- 	install -d $(DATADIR)/patterns
- 	install -m 0644 patterns/* $(DATADIR)/patterns
+-	rm -rf $(DATADIR)/patterns
+ 	umask 022; cp -r patterns $(DATADIR)
 +ifndef NOPORTDOCS
  	install -d $(DOCDIR)
  	install -m 0644 doc/* $(DOCDIR)
