@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		tet
-PORTVERSION=		3.3f
+PORTVERSION=		3.3h
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
 			${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
-DISTFILES=		${PORTNAME}${PORTVERSION}-unsup.src.tar.gz
+DISTFILES=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
 
 MAINTAINER=		jkoshy@freebsd.org
 
