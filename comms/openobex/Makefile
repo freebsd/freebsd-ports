@@ -21,6 +21,6 @@ USE_LIBTOOL_VER=	15
 USE_GMAKE=		yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+= --program-transform-name=""
+CONFIGURE_ARGS+=	--program-transform-name=""
 
 .include <bsd.port.mk>
