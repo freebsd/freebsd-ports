@@ -186,4 +186,3 @@ share/sgml/jade/style-sheet.dtd
 @dirrm include/sp
 @dirrm share/doc/jade
 @dirrm share/sgml/jade
-@unexec rmdir %D/share/sgml 2>/dev/null || true

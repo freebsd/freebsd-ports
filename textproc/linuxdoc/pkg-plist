@@ -7,4 +7,3 @@ share/sgml/linuxdoc/freebsd-1.1.dtd
 share/sgml/linuxdoc/linuxdoc.dec
 share/sgml/linuxdoc/original.dtd
 @dirrm share/sgml/linuxdoc
-@unexec rmdir %D/share/sgml 2>/dev/null || true
