@@ -86,7 +86,18 @@
  
  # If you don't have idlok() in your curses define NOIDLOK
  NO_IDLOK=
-@@ -158,8 +158,8 @@
+@@ -149,17 +149,17 @@
+ # IF you have problems w/ your yacc try bison, Berkeley yacc, or
+ # some other yacc. Some systems don't allow you to
+ # increase the number of terminals (mostly AT&T), SCO's does though.
+-#YACC=yacc
++YACC=yacc
+ # NOTE: Do not use with bison 1.16! Get a new version....
+-YACC=bison -y
++#YACC=bison -y
+ 
+ # MS-DOS needs y_tab instead of the normal y.tab
+ #YTAB=y_tab
  YTAB=y.tab
  
  # Command to use to make temporary copies of some source files.
