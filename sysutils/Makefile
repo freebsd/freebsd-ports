@@ -13,6 +13,7 @@
     SUBDIR += bchunk
     SUBDIR += bkpupsd
     SUBDIR += cd-write
+    SUBDIR += cd9660_unicode
     SUBDIR += cdrecord
     SUBDIR += cfengine
     SUBDIR += checkservice
