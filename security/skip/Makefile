@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.replaytv.com/pub/replay/crypto/APPS/skip/ \
 DISTFILES=		skipsrc-1.0.tar.Z
 EXTRACT_SUFX=		tar.Z
 
-MAINTAINER=		archie@whistle.com
+MAINTAINER=		archie@freebsd.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libxview.a:${PORTSDIR}/x11-toolkits/xview \
 		${X11BASE}/lib/X11/config/XView.cf:${PORTSDIR}/x11-toolkits/xview
@@ -47,6 +47,8 @@ MAN4=			skipd.conf.4 raw_keys.4
 
 # SKIP has a lot of hard coded paths in it. Our patches replace
 # them with @@PREFIX@@, which we then replace with ${PREFIX}.
+# Also, we remove all the "#pragma ident" lines that generate
+# a bazillion warnings from the compiler.
 post-patch:
 	@find ${WRKSRC} -name '*.orig' -print | xargs rm
 	@cd ${WRKSRC}; \
@@ -54,12 +56,12 @@ post-patch:
 	for FILE in $$FILES; do \
 	  ${SED} 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
 	  ${MV} $$FILE.new $$FILE; \
+	done; \
+	FILES=`find . -type f -name '*.[cCh]' -print \
+	  | xargs ${GREP} -l '^#pragma ident'`; \
+	for FILE in $$FILES; do \
+	  ${SED} '/^#pragma ident/d' < $$FILE > $$FILE.new ; \
+	  ${MV} $$FILE.new $$FILE; \
 	done
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400006
-BROKEN=		New character device registration issues and _KERNEL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,114 +1,45 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c work.new/skip/freebsd/skip_wrapper.c
---- skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c	Fri Oct 25 13:12:43 1996
-+++ work.new/skip/freebsd/skip_wrapper.c	Mon Mar  8 23:00:57 1999
-@@ -66,55 +66,69 @@
- #include <skip_es.h>
- #include <skip_if.h>
- 
--
--/*
-- * SunOS 4.1.x loadable driver wrapper for the SKIP module
-- */
--extern char		skip_module_name[];
--
--/*
-- * Module linkage information for the kernel.
-- */
--extern int		nulldev();
--
--struct cfdriver skipcd=
--        { NULL, "skip", NULL, NULL, DV_DULL, 0 };
--
- struct cdevsw skipdevsw = {
-         skip_ifopen, skip_ifclose, skip_ifread, skip_ifwrite, skip_ifioctl,
--	NULL, NULL, NULL, skip_ifselect, NULL, NULL 
-+	nullstop, noreset, nodevtotty, skip_ifpoll, nommap, nostrategy,
-+	"skip", NULL
- };
- 
--MOD_DEV("skipmod", LM_DT_CHAR, -1, (void *)&skipdevsw)
--
--extern int		skip_init(), skip_uninit();
-+static struct cdevsw	*old_dev;
-+static u_long		skip_major;
- 
--/*ARGSUSED*/
--int
--skipmod_load(struct lkm_table *lkmtp, int cmd)
-+/*
-+ * Handle loading and unloading of the SKIP module.
-+ */
-+static int
-+skip_mod_event(module_t mod, int event, void *data)
- {
-+	int error = 0;
-+	dev_t dev;
- 
--	int rc;
--	rc = skip_init();
--	if (rc != 0) {
--		return (rc);
--	}
--	uprintf("skip: driver loaded\n");
--	return (0);
--}
-+	switch (event) {
-+	case MOD_LOAD:
- 
--skipmod_unload(struct lkm_table *lkmtp, int cmd)
--{
--	
--	int rc;
--	rc = skip_uninit();
--	if (rc == 0) {
--		uprintf("skip: driver unloaded\n");
-+		/* Add character device, getting assigned a major number */
-+		dev = (dev_t) -1;
-+		if ((error = cdevsw_add(&dev, &skipdevsw, &old_dev)) != 0) {
-+			log(LOG_ERR, "skip: can't add device\n");
-+			break;
-+		}
-+		skip_major = major(dev);
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/Makefile.bmake work.new/skip/freebsd/Makefile.bmake
+--- skipsrc-1.0.orig/skip/freebsd/Makefile.bmake	Wed Dec 31 16:00:00 1969
++++ work.new/skip/freebsd/Makefile.bmake	Mon Jan 24 18:25:11 2000
+@@ -0,0 +1,41 @@
 +
-+		/* Initialize SKIP itself */
-+		if ((error = skip_init()) != 0) {
-+			/* XXX should remove char device */
-+			log(LOG_ERR, "skip: init failed\n");
-+			break;
-+		}
-+		log(LOG_INFO, "skip: device major=%lu, driver loaded\n",
-+			skip_major);
-+		break;
++.include "../../Makefile.defs"
 +
-+	case MOD_UNLOAD:
++CPPOPTS	=	-DINET $(K_FLAGS) -D$(K_ARCH) -D__$(K_ARCH)__ \
++		-I$(COMM_INC) -I. 
++COPTS	=	${CPPOPTS} -c 
++CFLAGS	=	${COPTS} $(K_DEBUG)
 +
-+		/* Uninitialize SKIP */
-+		if ((error = skip_uninit()) != 0) {
-+			log(LOG_INFO, "skip: uninit failed\n");
-+			break;
-+		}
++SRCS	=	skip_wrapper.c skip_es.c 
 +
-+		/* Replace original device driver (if any) */
-+		dev = makedev(skip_major, 0);
-+		(void) cdevsw_add(&dev, old_dev, NULL);
-+		break;
++CRYPTS	=	../bdcmod/simplecrypt/$(K_DIR)/simplecrypt.o \
++		../bdcmod/fast_des_cbc/$(K_DIR)/descbc.o  \
++		../bdcmod/fast_des_cbc/$(K_DIR)/des.o  \
++		../bdcmod/fast_des_cbc/$(K_DIR)/dessp.o  \
++		../bdcmod/des_ede_cbc/$(K_DIR)/des_ede_cbc.o \
++		../bdcmod/des_ede_cbc/$(K_DIR)/des_ede_ecb.o \
++		../bdcmod/safer/$(K_DIR)/skip_safercbc.o \
++		../bdcmod/safer/$(K_DIR)/safer.o 
 +
-+	default:
-+		error = EOPNOTSUPP;
-+		break;
- 	}
--	return (rc);
-+	return(error);
- }
- 
--xxxinit(struct lkm_table *lkmtp, int cmd, int ver)
--{
--	DISPATCH(lkmtp, cmd, ver, skipmod_load, skipmod_unload, nosys);
--}
-+static moduledata_t skip_mod = {
-+	"skip",
-+	skip_mod_event,
-+	NULL
-+};
-+DECLARE_MODULE(skip, skip_mod, SI_SUB_PROTO_END, SI_ORDER_MIDDLE);
++COMDIR	=	../common/$(K_DIR)
 +
++COMOBJS	=	$(COMDIR)/skip_hdr.o $(COMDIR)/skip_es_bypass.o \
++		$(COMDIR)/skip_crypt.o $(COMDIR)/skip_ioctl.o \
++		$(COMDIR)/skip_keystore.o $(COMDIR)/skip_keymgrmsgs.o \
++		$(COMDIR)/skip_ipsp.o $(COMDIR)/skip_nsid.o \
++		$(COMDIR)/skip_ah.o  $(COMDIR)/skip_md5.o $(COMDIR)/skip_acl.o
++
++MDV_OBJ	=	$(COMDIR)/md5.o
++
++OBJS	=	$(COMOBJS) $(CRYPTS) $($(AHOBJS))
++
++HDRS	=	$(COMM_INC)/skip_keymgrmsgs.h $(COMM_INC)/skip_ioctl.h \
++		$(COMM_INC)/skip_key.h $(COMM_INC)/skip_crypt.h \
++		$(COMM_INC)/skip_types.h $(COMM_INC)/skip_es.h \
++		$(COMM_INC)/skip_sunos.h $(COMM_INC)/skip_proto.h \
++		skip_if.h $(COMM_INC)/skip_acl.h
++
++KMOD	=	skip
++KLDMOD	=	yes
++
++.include <bsd.kmod.mk>

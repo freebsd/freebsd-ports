@@ -1,14 +1,14 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/raw_keys.4 work.new/skip/man/raw_keys.4
---- skipsrc-1.0.orig/skip/man/raw_keys.4	Fri Oct 25 13:12:56 1996
-+++ work.new/skip/man/raw_keys.4	Mon Mar  8 21:33:39 1999
-@@ -42,9 +42,4 @@
- link.
- .SH FILES
- .P
--.SH Solaris 2.x systems:
--/etc/opt/SUNWicg/skip/raw_keys
--.P
--.SH Other systems:
--.P
--/etc/skip/raw_keys
-+@@PREFIX@@/etc/skip/raw_keys
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_keymgr.h work.new/skip/keymgrd/skip_keymgr.h
+--- skipsrc-1.0.orig/skip/keymgrd/skip_keymgr.h	Fri Oct 25 13:12:49 1996
++++ work.new/skip/keymgrd/skip_keymgr.h	Tue Jan 25 09:58:59 2000
+@@ -128,8 +128,10 @@
+ Bstream skip_kp_to_Ekp(Bstream, u_char, int);
+ extern Bstream get_random_bytes(int len);
+ Bstream kijtokijn(Bstream, u_long);
++#if 0
+ skip_get_raw_keys(int , u_char , Bstream , ENC_ALG_TYPE , MAC_ALG_TYPE ,
+                   u_long , Bstream &, Bstream &, Bstream &);
++#endif
+ 
+ void set_kij_alg(int , unsigned char , unsigned char );
+ extern int skip_set_cdp_port(int, unsigned short);

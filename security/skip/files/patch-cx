@@ -1,0 +1,17 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipif.1m work.new/skip/man/skipif.1m
+--- skipsrc-1.0.orig/skip/man/skipif.1m	Fri Oct 25 13:12:58 1996
++++ work.new/skip/man/skipif.1m	Mon Jan 24 12:35:41 2000
+@@ -104,12 +104,8 @@
+ skipif will advise so.
+ .SH FILES
+ .br
+-.SS Solaris 2.x systems:
+ .P
+-/etc/opt/SUNWicg/skip/acl.<interface>
+-.SS Other systems:
+-.P
+-/etc/skip/acl.<interface>
++@@PREFIX@@/etc/skip/acl.<interface>
+ .P
+ .SH SEE ALSO
+ skiphost(1M), skipstat(1M), skiptool(1M), ifconfig(1M)

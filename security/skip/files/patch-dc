@@ -1,0 +1,19 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/Makefile work.new/skip/tools/skiptool/Makefile
+--- skipsrc-1.0.orig/skip/tools/skiptool/Makefile	Fri Oct 25 13:13:05 1996
++++ work.new/skip/tools/skiptool/Makefile	Mon Jan 24 12:35:42 2000
+@@ -97,11 +97,15 @@
+ 
+ # Compiler flags.
+ 
++PREFIX?=	@@PREFIX@@
++
+ DYNAMIC_PATH	= $(DYNAMIC_$(OSNAME))
+ CFLAGS 		+= $(U_DEBUG) $(OS) -DSKIP_RELEASE="\"$(SKIP_RELEASE)\""
+ SKIPINC_DIR 	=  -I../lib -I$(COMM_INC) -I$(DRVDIR)
+ CPPFLAGS 	+= -I$(WIN_HOME)/include -DMAIN $(SKIPINC_DIR)
+ CPPFLAGS 	+= -I$(WIN_HOME)/include/pixrect
++CPPFLAGS 	+= -I${PREFIX}/include
++CPPFLAGS 	+= -I${PREFIX}/include/pixrect
+ LDFLAGS 	+= -L$(WIN_HOME)/lib $(DYNAMIC_PATH)
+ LDLIBS 		+= ../lib/$(SKIP_LIB) $(OS_LIB) -lxview -lolgx -lX11
+ 

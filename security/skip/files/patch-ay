@@ -1,58 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/hash.c work.new/libdb/hash/hash.c
---- skipsrc-1.0.orig/libdb/hash/hash.c	Fri Oct 25 13:12:20 1996
-+++ work.new/libdb/hash/hash.c	Mon Mar  8 21:33:38 1999
-@@ -505,7 +505,7 @@
- 	else
- 		if (wsize != sizeof(HASHHDR)) {
- 			errno = EFTYPE;
--			hashp->errno = errno;
-+			hashp->errnum = errno;
- 			return (-1);
- 		}
- 	for (i = 0; i < NCACHED; i++)
-@@ -536,7 +536,7 @@
- 
- 	hashp = (HTAB *)dbp->internal;
- 	if (flag) {
--		hashp->errno = errno = EINVAL;
-+		hashp->errnum = errno = EINVAL;
- 		return (ERROR);
- 	}
- 	return (hash_access(hashp, HASH_GET, (DBT *)key, data));
-@@ -553,11 +553,11 @@
- 
- 	hashp = (HTAB *)dbp->internal;
- 	if (flag && flag != R_NOOVERWRITE) {
--		hashp->errno = errno = EINVAL;
-+		hashp->errnum = errno = EINVAL;
- 		return (ERROR);
- 	}
- 	if ((hashp->flags & O_ACCMODE) == O_RDONLY) {
--		hashp->errno = errno = EPERM;
-+		hashp->errnum = errno = EPERM;
- 		return (ERROR);
- 	}
- 	return (hash_access(hashp, flag == R_NOOVERWRITE ?
-@@ -574,11 +574,11 @@
- 
- 	hashp = (HTAB *)dbp->internal;
- 	if (flag && flag != R_CURSOR) {
--		hashp->errno = errno = EINVAL;
-+		hashp->errnum = errno = EINVAL;
- 		return (ERROR);
- 	}
- 	if ((hashp->flags & O_ACCMODE) == O_RDONLY) {
--		hashp->errno = errno = EPERM;
-+		hashp->errnum = errno = EPERM;
- 		return (ERROR);
- 	}
- 	return (hash_access(hashp, HASH_DELETE, (DBT *)key, NULL));
-@@ -729,7 +729,7 @@
- 
- 	hashp = (HTAB *)dbp->internal;
- 	if (flag && flag != R_FIRST && flag != R_NEXT) {
--		hashp->errno = errno = EINVAL;
-+		hashp->errnum = errno = EINVAL;
- 		return (ERROR);
- 	}
- #ifdef HASH_STATISTICS
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/userfuncs.C work.new/certs/lib/userfuncs.C
+--- skipsrc-1.0.orig/certs/lib/userfuncs.C	Fri Oct 25 13:11:51 1996
++++ work.new/certs/lib/userfuncs.C	Mon Jan 24 12:35:38 2000
+@@ -47,6 +47,8 @@
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <pwd.h>
++#include <unistd.h>
+ #include "Time.h"
+ #include "Bigint.h"
+ #include "Bstream.h"

@@ -1,0 +1,18 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipdb.1m work.new/skip/man/skipdb.1m
+--- skipsrc-1.0.orig/skip/man/skipdb.1m	Fri Oct 25 13:12:57 1996
++++ work.new/skip/man/skipdb.1m	Mon Jan 24 12:35:41 2000
+@@ -79,13 +79,9 @@
+ skipdb will always return 0 on Success and non-zero on error.  An appropriate
+ error message will be written to standard error.
+ .SH FILES
+-.SS Solaris 1.x systems:
+ .P
+-/etc/skip/certdb
++@@PREFIX@@/etc/skip/certdb
+ .br
+-.SS Solaris 2.x systems:
+-.P
+-/etc/opt/SUNWicg/skip/certdb
+ .P
+ .SH SEE ALSO
+ .BR skiplocal(1m)

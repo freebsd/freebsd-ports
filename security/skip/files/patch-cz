@@ -1,0 +1,92 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/lib/skip_freebsd.c work.new/skip/tools/lib/skip_freebsd.c
+--- skipsrc-1.0.orig/skip/tools/lib/skip_freebsd.c	Fri Oct 25 13:13:02 1996
++++ work.new/skip/tools/lib/skip_freebsd.c	Mon Jan 24 12:35:42 2000
+@@ -235,7 +235,7 @@
+ char *
+ skip_default_if()
+ {
+-#define	SKIP_DEFAULT_IF		"eth0"	/* 3com 3c589 */
++#define	SKIP_DEFAULT_IF		"ed1"
+ 	static char		devname[MAXPATHLEN];
+ 	char			cbuf[sizeof(struct ifreq) * 16];
+ 	struct ifconf		ifc;
+@@ -244,6 +244,7 @@
+ 	struct sockaddr_in	*sa;
+ 	char			hostname[MAXHOSTNAMELEN];
+ 	int			s, n;
++	int			goodness = 0;
+ 
+ 	strcpy(devname, SKIP_DEFAULT_IF);
+ 
+@@ -253,11 +254,13 @@
+ 
+ 	hp = _skip_gethostbyname(hostname);
+ 
++#if 0
+ 	if (hp == NULL) {
+ 		return(devname);
+ 	}
++#endif
+ 
+-	if ((s = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
++	if ((s = socket(PF_INET, SOCK_RAW, 0)) < 0) {
+ 		return (devname);
+ 	}
+ 
+@@ -276,33 +279,37 @@
+ 	 * just in case the primary can't be found.
+ 	 * 
+ 	 */
+-	end = (struct ifreq *) (ifc.ifc_buf + ifc.ifc_len);
+-	while (ifr < end) {
++	for (end = (struct ifreq *) (ifc.ifc_buf + ifc.ifc_len),
++	    ifr = ifc.ifc_req;
++	  ifr < end;
++	  ifr = (struct ifreq *)
++	    ((char *) &ifr->ifr_addr + ifr->ifr_addr.sa_len))
++	{
++		int	newgoodness = 0;
+ 
+ 		strcpy(ifflags.ifr_name, ifr->ifr_name);
+ 		if (ioctl(s, SIOCGIFFLAGS, (char *) &ifflags) < 0) {
+-			/*goto out;*/
++			continue;
+ 		}
+ 		if ((ifflags.ifr_flags & (IFF_LOOPBACK|IFF_UP|IFF_RUNNING)) ==
+ 					(IFF_UP|IFF_RUNNING)) {
+-			/*
+-			 * note the interface name just in case
+-			 */
+-			strcpy(devname, ifr->ifr_name);
+-			/*
+-			 * but try to find an exact match
+-			 */
+-			sa = (struct sockaddr_in *) &ifr->ifr_addr;
+-			if (memcmp(hp->h_addr_list[0], (void *) &sa->sin_addr,
+-							hp->h_length) == 0) {
+-					break;
++			/* try to find an exact match */
++			if (hp && ifr->ifr_addr.sa_family == AF_INET) {
++			    sa = (struct sockaddr_in *) &ifr->ifr_addr;
++			    if (memcmp(hp->h_addr_list[0],
++				(void *) &sa->sin_addr, hp->h_length) == 0)
++				    break;
++			}
++			/* try to prefer ethernet interfaces */
++			if (ifflags.ifr_flags & IFF_BROADCAST)
++				newgoodness += 1;
++			if (!(ifflags.ifr_flags & IFF_POINTOPOINT))
++				newgoodness += 1;
++			if (newgoodness > goodness) {
++				strcpy(devname, ifr->ifr_name);
++				goodness = newgoodness;
+ 			}
+ 		}
+-		if(ifr->ifr_addr.sa_len)      /* Dohw! */
+-			ifr = (struct ifreq *) ((caddr_t) ifr +
+-			ifr->ifr_addr.sa_len -
+-			sizeof(struct sockaddr));
+-		ifr++;
+ 	}
+ out:
+  	(void) close(s);

@@ -1,0 +1,18 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skiplocal.1m work.new/skip/man/skiplocal.1m
+--- skipsrc-1.0.orig/skip/man/skiplocal.1m	Fri Oct 25 13:12:58 1996
++++ work.new/skip/man/skiplocal.1m	Mon Jan 24 12:35:41 2000
+@@ -171,13 +171,9 @@
+ \fBskipd_restart\fP in order for the changes to take effect.
+ .P
+ .SH FILES
+-.SS Solaris 1.x systems:
+ .P
+-/etc/skip/localids
++@@PREFIX@@/etc/skip/localids
+ .br
+-.SS Solaris 2.x systems:
+-.P
+-/etc/opt/SUNWicg/skip/localids
+ .P
+ .SH BUGS
+ skiplocal export does not work well for communicating with multiple keys.

@@ -1,20 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipca.1m work.new/skip/man/skipca.1m
---- skipsrc-1.0.orig/skip/man/skipca.1m	Fri Oct 25 13:12:57 1996
-+++ work.new/skip/man/skipca.1m	Mon Mar  8 21:33:39 1999
-@@ -81,14 +81,10 @@
- .SH FILES
- .SS Solaris 1.x systems:
- .P
--/etc/skip/CAs
-+@@PREFIX@@/etc/skip/CAs
- .br
--.SS Solaris 2.x systems:
--.P
--/etc/opt/SUNWicg/skip/CAs
--.P
- .SH SEE ALSO
- .BR skipdb(1m)
--.BR skiplocala(1m)
-+.BR skiplocal(1m)
- .BR skipd(1m)
- 
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_log.h work.new/skip/keymgrd/skip_log.h
+--- skipsrc-1.0.orig/skip/keymgrd/skip_log.h	Fri Oct 25 13:12:51 1996
++++ work.new/skip/keymgrd/skip_log.h	Mon Jan 24 12:35:40 2000
+@@ -45,5 +45,6 @@
+ #pragma ident "@(#)skip_log.h	1.3 95/11/17"
+  
+ void skip_log(int,char*,...);
+-#define SKIP_ERROR 	1
+-#define	SKIP_NOTICE	2
++#define SKIP_ERROR 	LOG_ERR
++#define	SKIP_NOTICE	LOG_NOTICE
++#define	SKIP_INFO	LOG_INFO

@@ -1,14 +1,21 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipd.conf.4 work.new/skip/man/skipd.conf.4
---- skipsrc-1.0.orig/skip/man/skipd.conf.4	Fri Oct 25 13:12:57 1996
-+++ work.new/skip/man/skipd.conf.4	Mon Mar  8 21:33:40 1999
-@@ -85,9 +85,4 @@
- \fIskipd.conf\fP options may be set with the \fIskip_conf\fP command.
- .SH FILES
- .P
--.SH Solaris 2.x systems:
--/etc/opt/SUNWicg/skip/skipd.conf
--.P
--.SH Other systems:
--.P
--/etc/skip/skipd.conf
-+@@PREFIX@@/etc/skip/skipd.conf
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_msgs.C work.new/skip/keymgrd/skip_msgs.C
+--- skipsrc-1.0.orig/skip/keymgrd/skip_msgs.C	Fri Oct 25 13:12:51 1996
++++ work.new/skip/keymgrd/skip_msgs.C	Mon Jan 24 12:35:40 2000
+@@ -82,7 +82,7 @@
+         set.msgtype	= SKIP_SET_CDP_SERVER_PORT;
+         set.port	= cdp_port;
+ 	
+- 	skip_log(SKIP_NOTICE, "Setting CDP port=%d", cdp_port);
++ 	skip_log(SKIP_INFO, "Setting CDP port=%d", cdp_port);
+         fflush(stdout);
+  
+         if (put_kernel_message(fd, &set, sizeof(set)) < 0) {
+@@ -107,7 +107,7 @@
+         set.version     = version;
+         set.kij_alg     = kij_alg;
+ 	
+- 	skip_log(SKIP_NOTICE, "Setting supported kij alg=%d for version %d",
++ 	skip_log(SKIP_INFO, "Setting supported kij alg=%d for version %d",
+                                                         kij_alg, version);
+         fflush(stdout);
+  

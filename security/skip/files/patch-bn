@@ -1,193 +1,111 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h work.new/skip/freebsd/skip_os.h
---- skipsrc-1.0.orig/skip/freebsd/skip_os.h	Fri Oct 25 13:12:43 1996
-+++ work.new/skip/freebsd/skip_os.h	Tue Mar  9 19:16:28 1999
-@@ -54,7 +54,6 @@
- #ifndef KERNEL
- #include <stdio.h>
- #include <string.h>
--#include <strings.h>
- #include <errno.h>
- #include <fcntl.h>
- #include <unistd.h>
-@@ -69,6 +68,12 @@
- #include <dirent.h>
- #endif
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/Makefile work.new/skip/freebsd/Makefile
+--- skipsrc-1.0.orig/skip/freebsd/Makefile	Fri Oct 25 13:12:41 1996
++++ work.new/skip/freebsd/Makefile	Mon Jan 24 12:35:39 2000
+@@ -1,105 +1,3 @@
+-# SKIP Source Code License Statement:
+-# ------------------------------------------------------------------
+-#   Copyright
+-#   Sun Microsystems, Inc.
+-# 
+-# 
+-#   Copyright (C) 1994, 1995, 1996 Sun Microsystems, Inc.  All Rights
+-#   Reserved.
+-# 
+-#   Permission is hereby granted, free of charge, to any person
+-#   obtaining a copy of this software and associated documentation
+-#   files (the "Software"), to deal in the Software without
+-#   restriction, including without limitation the rights to use,
+-#   copy, modify, merge, publish, distribute, sublicense, and/or sell
+-#   copies of the Software or derivatives of the Software, and to 
+-#   permit persons to whom the Software or its derivatives is furnished 
+-#   to do so, subject to the following conditions:
+-# 
+-#   The above copyright notice and this permission notice shall be
+-#   included in all copies or substantial portions of the Software.
+-# 
+-#   The Software must not be transferred to persons who are not US
+-#   citizens or permanent residents of the US or exported outside
+-#   the US (except Canada) in any form (including by electronic
+-#   transmission) without prior written approval from the US
+-#   Government. Non-compliance with these restrictions constitutes
+-#   a violation of the U.S. Export Control Laws.
+-# 
+-#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+-#   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+-#   OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+-#   NONINFRINGEMENT.  IN NO EVENT SHALL SUN MICROSYSTEMS, INC., BE LIABLE
+-#   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+-#   OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+-#   CONNECTION WITH THE SOFTWARE OR DERIVATES OF THIS SOFTWARE OR 
+-#   THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-# 
+-#   Except as contained in this notice, the name of Sun Microsystems, Inc.
+-#   shall not be used in advertising or otherwise to promote
+-#   the sale, use or other dealings in this Software or its derivatives 
+-#   without prior written authorization from Sun Microsystems, Inc.
+-#pragma ident "@(#)Makefile	1.20 96/02/05 Sun Microsystems"
++all depend install clean:
++	MAKEFLAGS= MFLAGS= MAKELEVEL= /usr/bin/make -f Makefile.bmake $@
  
-+#include <osreldate.h>
-+
-+#ifdef KERNEL
-+#include <sys/cdefs.h>
-+#endif
-+
- #include <sys/types.h>
- #include <sys/errno.h>
- #include <sys/time.h>
-@@ -77,16 +82,19 @@
- #include <sys/malloc.h>
- #include <sys/stat.h>
- #include <sys/socket.h>
-+#include <sys/socketvar.h> 
- #include <sys/syslog.h>
- #include <sys/param.h>
- #include <sys/uio.h>
- #include <sys/file.h>
- #include <sys/sockio.h>
- #include <sys/wait.h>
-+#include <sys/fcntl.h>
- 
- #ifndef  __cplusplus
- #include <machine/cpu.h>
- #include <net/if.h>
-+#include <net/if_var.h>
- #include <netinet/in_systm.h>
- #endif
- #include <netinet/in.h>
-@@ -94,8 +102,9 @@
- #include <netinet/ip.h>
- #include <netinet/udp.h>
- #include <netinet/in_var.h>
--#include <arpa/inet.h>
-+#include <netinet/ip_var.h>
- #endif
-+#include <arpa/inet.h>
- 
- /* 
-  * Basic required types and constants
-@@ -116,6 +125,7 @@
- #include <sys/sysent.h>
- #include <sys/exec.h>
- #include <sys/lkm.h>
-+#include <sys/sysproto.h>
- #include <sys/protosw.h>
- #include <net/route.h>
- #include <sys/kernel.h>
-@@ -123,19 +133,34 @@
- #include <net/netisr.h>
- #include <sys/proc.h>
- #include <sys/device.h>
-+#include <sys/libkern.h>
-+#include <sys/module.h>
-+#include <sys/malloc.h>
-+#include <sys/poll.h>
- 
- #define	PANIC(s)		panic(s)
- 
- /*
-+ * SKIP malloc type
-+ */
-+MALLOC_DECLARE(M_SKIP);
-+
-+/*
-  * 4.x memory management macros
-  */
--#define	SYSMEM_ALLOC(size)	malloc((u_long)size, M_PCB, M_NOWAIT) 
--#define	SYSMEM_FREE(m, n)	free(m, M_PCB)
--#define	BCOPY(s, d, n)		bcopy((caddr_t) s, (caddr_t) d, n)
--#define	BZERO(s, n)		bzero((caddr_t) s, n)
--#define	BCMP(s, d, n)		bcmp((caddr_t) s, (caddr_t) d, n)
-+#define	SYSMEM_ALLOC(size)	malloc((u_long)size, M_SKIP, M_NOWAIT) 
-+#define	SYSMEM_FREE(m, n)	free(m, M_SKIP)
- #define	STATIC			static
- 
-+/*
-+ * The kernel doesn't have memcpy() or memcmp(), but gcc will inline them
-+ */
-+#ifdef KERNEL
-+extern int	memcmp(const void *, const void *, size_t);
-+#endif
-+#define	BCOPY(s, d, n)		memcpy((caddr_t) (d), (caddr_t) (s), n)
-+#define	BCMP(s, d, n)		memcmp((caddr_t) (d), (caddr_t) (s), n)
-+#define	BZERO(s, n)		bzero((caddr_t) (s), n)
- 
- #define ALIGNED(x)		(((unsigned int)(x)&(skip_alignment - 1)) == 0)
- 
-@@ -182,7 +207,7 @@
- /*
-  * 4.x timing defines
-  */
--#define SKIP_ES_CURRENTTIME	(time.tv_sec)
-+#define SKIP_ES_CURRENTTIME	((long)time_second)
- #define SKIP_ES_DELTATIME(then)	(SKIP_ES_CURRENTTIME - then)
- 
- /*
-@@ -204,27 +229,6 @@
- 	len = IPHLEN(ip); \
- }
- 
--/*
-- * ANSI prototypes for system routines
-- */
--extern int			splimp();
--extern int			splnet();
--extern void			splx(int);
--extern void			m_freem(struct mbuf *);
--extern void			panic(const char *, ...);
--extern int			tsleep(void *, int, char *, int);
--extern void			wakeup(void *);
--extern int			uiomove(caddr_t, int, struct uio *);
--extern int     			copyin(void *, void *, u_int );
--extern int			copyout(void *, void *, u_int);
--extern int			mclget(struct mbuf *);
--extern int			m_cpytoc(struct mbuf *, int, int, caddr_t);
+-include ../../Makefile.defs
 -
--extern void 			log(int, const char *, ...);
+-CPPOPTS	=	-DINET $(K_FLAGS) -D$(K_ARCH) -D__$(K_ARCH)__ \
+-		-I$(COMM_INC) -I. 
+-COPTS	=	${CPPOPTS} -c 
+-CFLAGS	=	${COPTS} $(K_DEBUG)
 -
--extern char			*strncpy(char *, const char *, size_t);
+-CFILES	=	skip_wrapper.c skip_es.c 
 -
--extern void			printf(const char *, ...);
- #else /* KERNEL */
- 
- /*
-@@ -251,37 +255,12 @@
- #endif
- #define	STATIC
- 
--/*
-- * ANSI prototypes for C library routines and syscalls
-- */
--extern int			gethostname(char *, int);
--extern int			fprintf(FILE *, const char *, ...);
--extern int			fflush(FILE *);
--extern int			fgetc(FILE *);
--extern int			fseek(FILE *, long, int);
--extern size_t			fread(void *, size_t, size_t, FILE *);
--extern int			fclose(FILE *);
--extern int			socket(int, int, int);
--extern int			ioctl(int, int, ...);
--extern int			pclose(FILE *);
--/*extern int			getrlimit(int, struct rlimit *); */
--extern void			perror(const char *);
--extern time_t			time(time_t *);
--extern int			getopt(int, char * const *, const char *);
--extern int			sscanf(const char *, const char *, ...);
 -
- #endif /* KERNEL */
- 
--/* XXX Bad IPPROTO_ENCAP define  ? */
--#ifdef IPPROTO_ENCAP
--#undef IPPROTO_ENCAP
--#endif
--#define IPPROTO_ENCAP		4
+-ES_OBJS =	$(CFILES:%.c=$(K_DIR)/%.o)
+-CRYPTS	=	../bdcmod/simplecrypt/$(K_DIR)/simplecrypt.o \
+-		../bdcmod/fast_des_cbc/$(K_DIR)/descbc.o  \
+-		../bdcmod/fast_des_cbc/$(K_DIR)/des.o  \
+-		../bdcmod/fast_des_cbc/$(K_DIR)/dessp.o  \
+-		../bdcmod/des_ede_cbc/$(K_DIR)/des_ede_cbc.o \
+-		../bdcmod/des_ede_cbc/$(K_DIR)/des_ede_ecb.o \
+-		../bdcmod/safer/$(K_DIR)/skip_safercbc.o \
+-		../bdcmod/safer/$(K_DIR)/safer.o 
+-		
+-COMDIR	=	../common/$(K_DIR)
 -
- /* SKIP specific */
- 
--#define SKIP_DIR		"/etc/skip/"
--#define SKIP_BIN		"/usr/skip/bin"
-+#define SKIP_DIR		"@@PREFIX@@/etc/skip/"
-+#define SKIP_BIN		"@@PREFIX@@/bin"
- #define KEYMGR			"/dev/skip_key"
- 
- /*
-@@ -306,12 +285,6 @@
- /* General purpose */
- 
- typedef unsigned char byte;
+-COMOBJS	=	$(COMDIR)/skip_hdr.o $(COMDIR)/skip_es_bypass.o \
+-		$(COMDIR)/skip_crypt.o $(COMDIR)/skip_ioctl.o \
+-		$(COMDIR)/skip_keystore.o $(COMDIR)/skip_keymgrmsgs.o \
+-		$(COMDIR)/skip_ipsp.o $(COMDIR)/skip_nsid.o \
+-		$(COMDIR)/skip_ah.o  $(COMDIR)/skip_md5.o $(COMDIR)/skip_acl.o
 -
--#if 0
--extern void			bcopy(void *, void *, int);
--extern void			bzero(void *, int);
--extern int			bcmp(void *, void *, int);
--#endif
- 
- #define	SKIP_IFCMP(if1, if2)    strcmp(if1, if2)
- 
+-MDV_OBJ	=	$(COMDIR)/md5.o
+-
+-OBJS	= $(ES_OBJS) $(COMOBJS) $(CRYPTS) $($(AHOBJS))
+-
+-HDRS	=	$(COMM_INC)/skip_keymgrmsgs.h $(COMM_INC)/skip_ioctl.h \
+-		$(COMM_INC)/skip_key.h $(COMM_INC)/skip_crypt.h \
+-		$(COMM_INC)/skip_types.h $(COMM_INC)/skip_es.h \
+-		$(COMM_INC)/skip_sunos.h $(COMM_INC)/skip_proto.h \
+-		skip_if.h $(COMM_INC)/skip_acl.h
+-
+-all:	$(K_DIR) $(K_DIR)/skip.o
+-
+-$(K_DIR)/skip_wrapper.o: skip_wrapper.c
+-	$(CC) $(CFLAGS) -o $@  $<
+-
+-$(K_DIR)/skip_es.o: skip_es.c
+-	$(CC) $(CFLAGS) -o $@  $<
+-
+-
+-$(K_DIR):
+-	@[ -d $(K_DIR) ] || mkdir -p $(K_DIR)
+-
+-$(K_DIR)/skip.o: $(OBJS)
+-	$(LD) -r -o $(K_DIR)/skip.o $(OBJS)
+-	@ /usr/bin/modstat
+-
+-clean:
+-	@$(RM) -r $(K_DIR) *.pp *.L 
+-	@-$(SCCSCLEAN)
+-
+-cleanall:
+-	@$(RM) -rf *bin.*
+-	@-$(SCCSCLEAN)
+-	

@@ -1,14 +1,39 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skip_conf.1m work.new/skip/man/skip_conf.1m
---- skipsrc-1.0.orig/skip/man/skip_conf.1m	Fri Oct 25 13:12:56 1996
-+++ work.new/skip/man/skip_conf.1m	Mon Mar  8 21:33:39 1999
-@@ -28,9 +28,4 @@
- and remove any max_certdb_size lines from \fIskipd.conf\fP.
- .SH FILES
- .P
--.SH Solaris 2.x systems:
--/etc/opt/SUNWicg/skip/skipd.conf
--.P
--.SH Other systems:
--.P
--/etc/skip/skipd.conf
-+@@PREFIX@@/etc/skip/skipd.conf
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_log.C work.new/skip/keymgrd/skip_log.C
+--- skipsrc-1.0.orig/skip/keymgrd/skip_log.C	Fri Oct 25 13:12:50 1996
++++ work.new/skip/keymgrd/skip_log.C	Mon Jan 24 12:35:40 2000
+@@ -60,7 +60,7 @@
+ 	strcpy(outbuf,buf);
+ }
+ 
+-FILE *skip_log_fp = NULL;
++int skip_log_syslog = 0;
+ 
+ void skip_log(int severity, char *control,...)
+ {
+@@ -71,15 +71,15 @@
+ 	get_time(buf);
+ 	va_start(va,control);
+ 
+-	if (skip_log_fp)
+-		out = skip_log_fp;
+-	else if (severity == SKIP_NOTICE) 
+-		out=stdout;
+-	else
+-		out=stderr;
+-
+-	fprintf(out,"%s",buf);
+-	vfprintf(out, control,va);
+-	fprintf(out,"\n");
+-	fflush(out);
++	if (skip_log_syslog) {
++	  vsyslog(severity, control, va);
++	} else {
++		out = (severity == SKIP_NOTICE) ? stdout : stderr;
++		fprintf(out, "%s",buf);
++		vfprintf(out, control, va);
++		fprintf(out, "\n");
++		fflush(out);
++	}
++	va_end(va);
+ }
++

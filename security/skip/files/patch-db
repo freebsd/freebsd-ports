@@ -1,0 +1,30 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiplog/skiplog.c work.new/skip/tools/skiplog/skiplog.c
+--- skipsrc-1.0.orig/skip/tools/skiplog/skiplog.c	Fri Oct 25 13:13:04 1996
++++ work.new/skip/tools/skiplog/skiplog.c	Tue Jan 25 12:54:49 2000
+@@ -514,7 +514,7 @@
+ 	destroy_msgs(msgs);
+ }
+ 
+-void
++int
+ main(int argc, char *argv[])
+ {
+ 	char			msg[STRSZ], *msgs[MAXMSGS] = { NULL };
+@@ -524,7 +524,7 @@
+ 
+ 	if (argc > 2) {
+ 		fprintf(stderr, "usage: %s [ interface ]\n", argv[0]);
+-		exit(1);
++		return(1);
+ 	}
+ 
+ 	if (argc == 2) {
+@@ -543,7 +543,7 @@
+ 			fprintf(stderr, "%s: error - %s\n", argv[0],
+ 								skip_errmsg);
+ 		}
+-		exit (1);
++		return (1);
+ 	}
+ 
+ 	if (skip_var_init(argv[0], ifname)) {

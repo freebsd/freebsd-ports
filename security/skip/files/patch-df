@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/es_timers.c work.new/skip/tools/skiptool/es_timers.c
+--- skipsrc-1.0.orig/skip/tools/skiptool/es_timers.c	Fri Oct 25 13:13:07 1996
++++ work.new/skip/tools/skiptool/es_timers.c	Tue Jan 25 09:59:23 2000
+@@ -302,7 +302,7 @@
+ print_timers()
+ {
+ 	timerentry_t	*curr = my_timers;
+-	register	abs=0;
++	register int	abs=0;
+ 
+ 	while (curr) {
+ 		abs += curr->t_timeout;

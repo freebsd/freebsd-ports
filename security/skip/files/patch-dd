@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/es_glue.c work.new/skip/tools/skiptool/es_glue.c
+--- skipsrc-1.0.orig/skip/tools/skiptool/es_glue.c	Fri Oct 25 13:13:05 1996
++++ work.new/skip/tools/skiptool/es_glue.c	Mon Jan 24 12:35:42 2000
+@@ -1948,7 +1948,7 @@
+ void
+ stats(int which)
+ {
+-	char					*opt, *t, s[STRSZ], *argv[12];
++	char					*opt = NULL, *t = NULL, s[STRSZ], *argv[12];
+ 	char					ifstats[STRSZ], *optarg = NULL;
+ 
+ 	switch (which) {

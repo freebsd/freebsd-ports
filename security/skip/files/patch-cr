@@ -1,12 +1,20 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiptool/es_glue.c work.new/skip/tools/skiptool/es_glue.c
---- skipsrc-1.0.orig/skip/tools/skiptool/es_glue.c	Fri Oct 25 13:13:05 1996
-+++ work.new/skip/tools/skiptool/es_glue.c	Mon Mar  8 21:33:39 1999
-@@ -1948,7 +1948,7 @@
- void
- stats(int which)
- {
--	char					*opt, *t, s[STRSZ], *argv[12];
-+	char					*opt = NULL, *t = NULL, s[STRSZ], *argv[12];
- 	char					ifstats[STRSZ], *optarg = NULL;
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipca.1m work.new/skip/man/skipca.1m
+--- skipsrc-1.0.orig/skip/man/skipca.1m	Fri Oct 25 13:12:57 1996
++++ work.new/skip/man/skipca.1m	Mon Jan 24 12:35:41 2000
+@@ -81,14 +81,10 @@
+ .SH FILES
+ .SS Solaris 1.x systems:
+ .P
+-/etc/skip/CAs
++@@PREFIX@@/etc/skip/CAs
+ .br
+-.SS Solaris 2.x systems:
+-.P
+-/etc/opt/SUNWicg/skip/CAs
+-.P
+ .SH SEE ALSO
+ .BR skipdb(1m)
+-.BR skiplocala(1m)
++.BR skiplocal(1m)
+ .BR skipd(1m)
  
- 	switch (which) {

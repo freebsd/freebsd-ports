@@ -1,30 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/common/skip_keystore.c work.new/skip/common/skip_keystore.c
---- skipsrc-1.0.orig/skip/common/skip_keystore.c	Fri Oct 25 13:12:41 1996
-+++ work.new/skip/common/skip_keystore.c	Tue Mar  9 20:23:43 1999
-@@ -308,7 +308,7 @@
- 		/*
- 	 	 * SKIP tunneling mode
- 	 	 */
--		params->payload_type = IPPROTO_ENCAP;
-+		params->payload_type = IPPROTO_IPIP;
- 	}
- 	/*
- 	 * Return offset of data to decrypt
-@@ -1177,7 +1177,7 @@
-  * Returns: none
-  */
- void
--skip_key_iterate(int (*f)(), void *arg)
-+skip_key_iterate(int (*f)(skip_keycb_t *, void *), void *arg)
- {
- 	skip_keycb_t	*cp, *ncp;
- 	int		i, rc;
-@@ -1209,7 +1209,7 @@
- 		for (cp = skip_decrypt_hashtable[i]; cp; cp = ncp) {
- 			ncp = cp->next;
- 
--			rc = (*f)(cp);
-+			rc = (*f)(cp, arg);
- 
- 			if (rc) {
- 				skip_hash_remove(cp, skip_decrypt_hashtable,
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/hash.h work.new/libdb/hash/hash.h
+--- skipsrc-1.0.orig/libdb/hash/hash.h	Fri Oct 25 13:12:21 1996
++++ work.new/libdb/hash/hash.h	Mon Jan 24 12:35:38 2000
+@@ -103,7 +103,7 @@
+ 	BUFHEAD 	*cpage;		/* Current page */
+ 	int		cbucket;	/* Current bucket */
+ 	int		cndx;		/* Index of next item on cpage */
+-	int		errno;		/* Error Number -- for DBM 
++	int		errnum;		/* Error Number -- for DBM 
+ 					 * compatability */
+ 	int		new_file;	/* Indicates if fd is backing store 
+ 					 * or no */

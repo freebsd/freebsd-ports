@@ -1,27 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/doc/INSTALL work.new/doc/INSTALL
---- skipsrc-1.0.orig/doc/INSTALL	Fri Oct 25 13:11:55 1996
-+++ work.new/doc/INSTALL	Mon Mar  8 21:33:38 1999
-@@ -1,6 +1,13 @@
- Quick-Start Guide
- -----------------
- 
-+    *** 
-+    ***        NOTE TO FREEBSD PORT USERS
-+    *** 
-+    *** If you've installed SKIP using the FreeBSD port
-+    *** or package, you can go directly to step #4.
-+    *** 
-+
- This is a quick-start guide for SKIP.  It covers installing the SKIP
- binaries and setting up IP-level encryption between two hosts.
- 
-@@ -64,7 +71,8 @@
- View the key manager log file to see if the the certificate
- exchange and the shared secret computation succeeded:
- 
--	tail /var/log/skip.log
-+	tail /var/log/skiphost.log
-+	tail /var/log/messages
- 
- If you have tcpdump, etherfind, snoop, or some other packet dumping
- utility, you can verify that encrypted packets are using protocol 57.
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/manualcrl.h work.new/certs/lib/manualcrl.h
+--- skipsrc-1.0.orig/certs/lib/manualcrl.h	Fri Oct 25 13:11:47 1996
++++ work.new/certs/lib/manualcrl.h	Mon Jan 24 13:01:14 2000
+@@ -58,7 +58,7 @@
+ 	int store(const char *filename);
+ 	void add(Bigint&);
+ 	void del(Bigint&);
+-	ispresent(Bigint&);
++	int ispresent(Bigint&);
+ 	ManualCRL();
+ 	ManualCRL(const ManualCRL&);
+ 	ManualCRL& operator =(const ManualCRL& rhs);

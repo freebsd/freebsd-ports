@@ -1,17 +1,11 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/PORT/freebsd2.1/include/compat.h work.new/libdb/PORT/freebsd2.1/include/compat.h
---- skipsrc-1.0.orig/libdb/PORT/freebsd2.1/include/compat.h	Fri Oct 25 13:12:04 1996
-+++ work.new/libdb/PORT/freebsd2.1/include/compat.h	Mon Mar  8 21:33:38 1999
-@@ -125,13 +125,6 @@
- #define	bcopy(a, b, n)		memmove(b, a, n)
- #endif
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/test_passwd.C work.new/certs/lib/test_passwd.C
+--- skipsrc-1.0.orig/certs/lib/test_passwd.C	Fri Oct 25 13:11:50 1996
++++ work.new/certs/lib/test_passwd.C	Mon Jan 24 12:35:38 2000
+@@ -46,6 +46,7 @@
  
--#if defined(BSD) || defined(BSD4_3)
--#define	strchr(a, b)		index(a, b)
--#define	strrchr(a, b)		rindex(a, b)
--#define	memcmp(a, b, n)		bcmp(a, b, n)
--#define	memmove(a, b, n)	bcopy(b, a, n)
--#endif
--
- /*
-  * 32-bit machine.  The db routines are theoretically independent of
-  * the size of u_shorts and u_longs, but I don't know that anyone has
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include "Bstream.h"
+ #include "Bigint.h"
+ #include "ObjId.h"

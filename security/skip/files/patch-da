@@ -1,0 +1,161 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/tools/skiphost/skiphost.c work.new/skip/tools/skiphost/skiphost.c
+--- skipsrc-1.0.orig/skip/tools/skiphost/skiphost.c	Fri Oct 25 13:13:03 1996
++++ work.new/skip/tools/skiphost/skiphost.c	Mon Jan 24 12:35:42 2000
+@@ -76,6 +76,7 @@
+ static char	*skip_version = NULL;
+ static char	*skip_mode = NULL;
+ static char	*tunnel = NULL;
++static char	*srcaddr = NULL;
+ 
+ static int	opt, opt_cpt;
+ static int	opt_action, opt_more;
+@@ -89,11 +90,14 @@
+ static int	opt_prt, opt_sh, opt_sel;
+ static int	opt_trs, opt_tunnel;
+ static int	opt_msk, opt_nomadic;
++static int	opt_source;
+ 
+ boolean_t       on_boot = B_FALSE;
+ 
+ #define		SKIP_HOST_MASK	"255.255.255.255"
+ 
++struct in_addr 	source_addr;
++
+ static void	usage();
+ 
+ /*
+@@ -218,6 +222,11 @@
+ 	if (params->ip_addr.s_addr != params->tunnel_addr.s_addr) {
+ 		printf(" -A %s", inet_ntoa(params->tunnel_addr));
+ 	}
++	
++	if(params->source != 0) {
++		source_addr.s_addr = params->source;	
++		printf(" -f %s", inet_ntoa(source_addr));
++	}
+ 
+ 	switch (params->version) {
+ 
+@@ -376,6 +385,11 @@
+ 		printf(" tunnel=%s", inet_ntoa(params->tunnel_addr));
+ 	}
+ 
++	if (params->source != 0) {
++		source_addr.s_addr = params->source;
++		printf(" source=%s", inet_ntoa(source_addr));
++	}
++
+ 	switch (params->version) {
+ 
+ 	case SKIP_NONE:
+@@ -907,12 +921,18 @@
+ 		}
+ 	}
+ 
++	if(opt_source) {
++		parms.source = inet_addr(srcaddr);
++	} else {
++		parms.source = 0;
++	}
++
+ 	/*
+ 	 * Check if a cleartext host...
+ 	 */
+ 	opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid;
+ 	opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+-	opt_sel += opt_vers + opt_nomadic + opt_tunnel;
++	opt_sel += opt_vers + opt_nomadic + opt_tunnel + opt_source;
+ 
+ 	if (!opt_sel) {
+ 		/*
+@@ -1531,6 +1551,7 @@
+ 		"\t\t[-r <receiver NSID>] [-R <receiver key Id>]...\n"
+ 		"\t\t[-s <sender NSID>] [-S <sender key Id>]...\n"
+ 		"\t\t[-v <SKIP version>] [-A <tunnel address>] [-T]\n"
++		"\t\t[-f <source address>]\n"
+ 		"\t%s [-i <interface>] "
+ 			"-x <hostname|IP address|\"*\"> [-M <mask>]...\n"
+ 		"\t\t[-k <kij algorithm>] [-t <crypt algorithm>]...\n"
+@@ -1592,6 +1613,7 @@
+ 	opt_trs = opt_msk = 0;
+ 	opt_prt = opt_sh = opt_mode = 0;
+ 	opt_nomadic = opt_tunnel = 0;
++	opt_source = 0;
+ 
+ 	ifname = skip_default_if();
+ 
+@@ -1614,7 +1636,7 @@
+ 	 */
+ 	optind = 1;
+ 	while ((opt = getopt(argc, argv,
+-			"phuPVTa:d:o:x:i:s:r:S:R:k:t:m:c:v:M:A:")) != -1) {
++			"phuPVTa:d:o:x:i:s:r:S:R:k:t:m:c:v:M:A:f:")) != -1) {
+ 
+ 		switch (opt) {
+ 	
+@@ -1761,7 +1783,10 @@
+ 			SKIP_ONE(&opt_tunnel);
+ 			tunnel = optarg;
+ 			break;
+-
++		case 'f':
++			SKIP_ONE(&opt_source);
++			srcaddr = optarg;
++			break;
+ 		case 'h':
+ 		default:
+ 			usage();
+@@ -1890,7 +1915,7 @@
+ 		opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+ 		opt_sel += opt_mode + opt_vers + opt_trs + opt_msk;
+-		opt_sel += opt_tunnel;
++		opt_sel += opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			fprintf(stderr, "%s -u does not take options\n",
+@@ -1912,7 +1937,7 @@
+ 		opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+ 		opt_sel += opt_mode + opt_vers + opt_trs + opt_msk;
+-		opt_sel += opt_tunnel;
++		opt_sel += opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			fprintf(stderr, "%s -p does not take options\n",
+@@ -1941,7 +1966,7 @@
+ 		opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+ 		opt_sel += opt_mode + opt_vers + opt_trs + opt_msk;
+-		opt_sel += opt_tunnel;
++		opt_sel += opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			fprintf(stderr, "%s -P does not take options\n",
+@@ -1963,7 +1988,7 @@
+ 		opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+ 		opt_sel += opt_mode + opt_vers + opt_trs + opt_msk;
+-		opt_sel += opt_tunnel;
++		opt_sel += opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			fprintf(stderr, "%s -V does not take options\n",
+@@ -1985,7 +2010,7 @@
+ 		opt_sel = opt_r_nsid + opt_s_nsid + opt_r_keyid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+ 		opt_sel += opt_vers + opt_trs + opt_msk;
+-		opt_sel += opt_tunnel;
++		opt_sel += opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			usage();
+@@ -2018,7 +2043,7 @@
+ 		 */
+ 		opt_sel = opt_s_nsid + opt_s_keyid;
+ 		opt_sel += opt_kij + opt_crypt + opt_mac + opt_comp;
+-		opt_sel += opt_mode + opt_trs + opt_tunnel;
++		opt_sel += opt_mode + opt_trs + opt_tunnel + opt_source;
+ 
+ 		if (opt_sel) {
+ 			usage();

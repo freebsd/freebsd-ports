@@ -1,17 +1,13 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipif.1m work.new/skip/man/skipif.1m
---- skipsrc-1.0.orig/skip/man/skipif.1m	Fri Oct 25 13:12:58 1996
-+++ work.new/skip/man/skipif.1m	Mon Mar  8 21:33:40 1999
-@@ -104,12 +104,8 @@
- skipif will advise so.
- .SH FILES
- .br
--.SS Solaris 2.x systems:
- .P
--/etc/opt/SUNWicg/skip/acl.<interface>
--.SS Other systems:
--.P
--/etc/skip/acl.<interface>
-+@@PREFIX@@/etc/skip/acl.<interface>
- .P
- .SH SEE ALSO
- skiphost(1M), skipstat(1M), skiptool(1M), ifconfig(1M)
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/t_mem.c work.new/skip/keymgrd/t_mem.c
+--- skipsrc-1.0.orig/skip/keymgrd/t_mem.c	Fri Oct 25 13:12:55 1996
++++ work.new/skip/keymgrd/t_mem.c	Mon Jan 24 12:35:41 2000
+@@ -45,8 +45,7 @@
+ #pragma ident "@(#)t_mem.c	1.2 95/11/23 Sun Microsystems"
+ 
+ #include "global.h"
+-#include <memory.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ void T_memset(POINTER s, int c, unsigned int n )
