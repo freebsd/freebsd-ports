@@ -8,7 +8,7 @@
 PORTNAME=       plasma
 PORTVERSION=	0.1
 CATEGORIES=     graphics
-MASTER_SITES=   http://ukug.uk.freebsd.org/~greid/
+MASTER_SITES=   http://users.uk.freebsd.org/~greid/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
