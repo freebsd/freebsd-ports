@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-IP
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -21,6 +21,5 @@ MAN3=		Net::IP.3
 
 post-patch:
 	${PERL} -pi -e 's,/usr/local/ncc/bin,${PREFIX}/bin,' ${WRKSRC}/Makefile.PL
-	${PERL} -pi -e 's,/usr/local/bin/perl5.6.0,${PERL},' ${WRKSRC}/ipcount
 
 .include <bsd.port.mk>
