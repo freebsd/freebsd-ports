@@ -1,0 +1,8 @@
+MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1
+as well as the MPEG-2 extension to Lower Sampling Frequencies. All
+three audio layers (Layer I, Layer II, and Layer III a.k.a. MP3) are
+fully implemented.
+
+This is madplay (MP3-player) which is part of the project
+
+WWW: http://mad.sourceforge.net/
