@@ -1,9 +1,9 @@
+@comment $FreeBSD$
 bin/qmail-notify
-share/examples/qmail-notify/cron.hourly
-share/examples/qmail-notify/message.txt
-%%PORTDOCS%%share/doc/qmail-notify/ANNOUNCEMENT
-%%PORTDOCS%%share/doc/qmail-notify/NEWS
-%%PORTDOCS%%share/doc/qmail-notify/README
-%%PORTDOCS%%share/doc/qmail-notify/TODO
-%%PORTDOCS%%@dirrm share/doc/qmail-notify
-@dirrm share/examples/qmail-notify
+%%EXAMPLESDIR%%/cron.hourly
+%%EXAMPLESDIR%%/message.txt
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
