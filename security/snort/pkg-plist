@@ -9,8 +9,6 @@ etc/snort.conf-sample
 %%PORTDOCS%%share/doc/snort/README
 %%PORTDOCS%%share/doc/snort/README.database
 %%PORTDOCS%%share/doc/snort/CREDITS
-%%PORTDOCS%%share/doc/snort/README.SNMP
-%%PORTDOCS%%share/doc/snort/README.xml
 %%PORTDOCS%%share/doc/snort/README.FLEXRESP
 %%PORTDOCS%%share/doc/snort/RULES.todo
 %%PORTDOCS%%share/doc/snort/FAQ
