@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calamaris
-PORTVERSION= 	2.39
+PORTVERSION= 	2.40
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/tools/squid/calamaris/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
