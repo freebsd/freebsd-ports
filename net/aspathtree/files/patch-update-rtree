@@ -1,0 +1,153 @@
+--- update-rtree.orig	Thu Apr 17 15:58:12 2003
++++ update-rtree	Sun Apr 27 02:01:49 2003
+@@ -1,13 +1,13 @@
+-#!/usr/local/bin/perl
++#!%%PATHPERLBIN%%
+ #### ASpath-tree v.4.2 - Released on Thu APR 17 2003, h.16:58:12
+ #### File: update-rtree Last modified on Tue MAR 18 2003, h.22:59:48
+ 
+ 
+ # Configuration File
+-my $CONFIGFILE = "/etc/ASpath-tree.config";
++my $CONFIGFILE = "%%PREFIX%%/etc/ASpath-tree.config";
+ 
+ # Global variables
+-use vars qw ($HOMEDIR $RSHDIR $ROUTER $LOCAL $ROUTERADDR $ROUTERUSER $CONTACTNAME $CONTACTMAIL $SITENAME $SITEPICTURE $HTMLDIR
++use vars qw ($HOMEDIR $RSHDIR $ROUTER $LOCAL $ROUTERADDR $ROUTERUSER $ROUTERUSERPASS $CONTACTNAME $CONTACTMAIL $SITENAME $SITEPICTURE $HTMLDIR
+              $WHOISLINK $QUIET $DEBUG $FILTEROUT $RIPEWHOISCLIENT $MORETREES);
+ use vars qw ($DATADIR $ROOTPICTURE $LIB $ICONS $WARNINGTIME $HISTORYPERIOD $FLAG_COLLECT $LONGDATE $CURRENTTIME $LASTRUN);
+ use vars qw ($SIXBONEDB $IPV6PREFIXTABLE $PTLA_FILE $HISTORYFILE $LASTRUNFILE $OLDASPATHSFILE $OLDDATEFILE $OLDBBASPATHSFILE
+@@ -106,6 +106,7 @@
+ 		if ($line =~ /^\s*LOCAL\s*=\s*(.*)/)         {$LOCAL = $1}
+ 		if ($line =~ /^\s*ROUTERADDR\s*=\s*(.*)/)    {$ROUTERADDR = $1}
+ 		if ($line =~ /^\s*ROUTERUSER\s*=\s*(.*)/)    {$ROUTERUSER = $1}
++		if ($line =~ /^\s*ROUTERUSERPASS\s*=\s*(.*)/)    {$ROUTERUSERPASS = $1}
+ 		if ($line =~ /^\s*CONTACTNAME\s*=\s*(.*)/)   {$CONTACTNAME = $1}
+ 		if ($line =~ /^\s*CONTACTMAIL\s*=\s*(.*)/)   {$CONTACTMAIL = $1}
+ 		if ($line =~ /^\s*SITENAME\s*=\s*(.*)/)      {$SITENAME = $1}
+@@ -120,9 +121,9 @@
+ 
+ # DEFAULT values setting...(if not explicitely declared) and ERROR checking ...
+ 	die "ERROR in configuration file: parameter HOMEDIR not set!\n"    unless ($HOMEDIR);
+-	die "ERROR in configuration file: parameter HOMEDIR not correct!\n"    unless (-e "$HOMEDIR/update-rtree");
++	die "ERROR in configuration file: parameter HOMEDIR not correct!\n"    unless (-d "$HOMEDIR");
+ 
+-	$LOGDIR = "$HOMEDIR/log"; unless (-e "$LOGDIR") {mkdir("$LOGDIR", 0777)};
++	$LOGDIR = "$HOMEDIR/log"; unless (-e "$LOGDIR") {mkdir("$LOGDIR", 0775)};
+ 	if ($DEBUG) {open(LOGFILE, "> $LOGDIR/runlog.txt"); close(LOGFILE)}
+ 	&log_it_and_die("ERROR in configuration file: parameter SITENAME not set!")   unless ($SITENAME);
+ 	&log_it_and_die("ERROR in configuration file: parameter ROUTER = \"$ROUTER\" not acceptable!") if ($ROUTER && !grep(/^$ROUTER$/, ("CISCO", "JUNIPER" , "ZEBRA", "ZEBRA93")));
+@@ -134,7 +135,7 @@
+ 	}
+ 	unless ($WHOISLINK)     {$WHOISLINK = "http://whois.6bone.net/cgi-bin/whois"}
+ 	unless ($DATADIR)       {$DATADIR = "$HOMEDIR/data"}
+-	unless ($LIB)           {$LIB = "$HOMEDIR/lib"}
++	unless ($LIB)           {$LIB = "%%PREFIX%%/libexec/aspathtree"}
+ 	unless ($FILTEROUT)     {$FILTEROUT = 0}
+ 	$ICONS = "./icons";
+ 	$WARNINGTIME = 5;
+@@ -199,13 +200,13 @@
+ 	$logtext .= "  LASTRUNFILE = \"$LASTRUNFILE\"\n";
+ 	$logtext .= "  PTLASHISTORYDIR = \"$PTLASHISTORYDIR\" ";
+ 	if (-e "$PTLASHISTORYDIR") {$logtext .= "(ok)\n"}
+-	else {mkdir("$PTLASHISTORYDIR", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$PTLASHISTORYDIR", 0775); $logtext .= "(created)\n"}
+ 	$logtext .= "  OTHERHISTORYDIR = \"$OTHERHISTORYDIR\" ";
+ 	if (-e "$OTHERHISTORYDIR") {$logtext .= "(ok)\n"}
+-	else {mkdir("$OTHERHISTORYDIR", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$OTHERHISTORYDIR", 0775); $logtext .= "(created)\n"}
+ 	$logtext .= "  Complete tree dir = \"$HOMEDIR/history/completetree\" ";
+ 	if (-e "$HOMEDIR/history/completetree") {$logtext .= "(ok)\n"}
+-	else {mkdir("$HOMEDIR/history/completetree", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$HOMEDIR/history/completetree", 0775); $logtext .= "(created)\n"}
+ 	$logtext .= "  OLDASPATHSFILE = \"$OLDASPATHSFILE\"\n";
+ 	$logtext .= "  OLDDATEFILE = \"$OLDDATEFILE\"\n";
+ 	if ($MORETREES) {
+@@ -215,12 +216,12 @@
+ 		$OLDBBDATEFILE         = "$HOMEDIR/history/bbtree/lastchangedate.txt";
+ 		$logtext .= "  BB tree dir = \"$HOMEDIR/history/bbtree\" ";
+ 		if (-e "$HOMEDIR/history/bbtree") {$logtext .= "(ok)\n"}
+-		else {mkdir("$HOMEDIR/history/bbtree", 0777); $logtext .= "(created)\n"}
++		else {mkdir("$HOMEDIR/history/bbtree", 0775); $logtext .= "(created)\n"}
+ 		$logtext .= "  OLDBBASPATHSFILE = \"$OLDBBASPATHSFILE\"\n";
+ 		$logtext .= "  OLDBBDATEFILE = \"$OLDBBDATEFILE\"\n";
+ 		$logtext .= "  2001 tree dir = \"$HOMEDIR/history/othertree\" ";
+ 		if (-e "$HOMEDIR/history/othertree") {$logtext .= "(ok)\n"}
+-		else {mkdir("$HOMEDIR/history/othertree", 0777); $logtext .= "(created)\n"}
++		else {mkdir("$HOMEDIR/history/othertree", 0775); $logtext .= "(created)\n"}
+ 		$logtext .= "  OLDOTHASPATHSFILE = \"$OLDOTHASPATHSFILE\"\n";
+ 		$logtext .= "  OLDOTHDATEFILE = \"$OLDOTHDATEFILE\"\n";
+ 	} else {
+@@ -246,7 +247,7 @@
+ 		$CHANGESDIR            = "$HTMLDIR_LOCAL/changes";
+ 		$logtext .= "  CHANGESDIR = \"$CHANGESDIR\" ";
+ 		if (-e "$CHANGESDIR") {$logtext .= "(ok)\n"}
+-		else {mkdir("$CHANGESDIR", 0777); $logtext .= "(created)\n"}
++		else {mkdir("$CHANGESDIR", 0775); $logtext .= "(created)\n"}
+ 		$OUTPUTCOMPLETECHANGES     = "$CHANGESDIR/bgp-page-complete-changes.html";
+ 		$logtext .= "  OUTPUTCOMPLETECHANGES = \"$OUTPUTCOMPLETECHANGES\"\n";
+ 		$OUTPUTBBCHANGES   = "$CHANGESDIR/bgp-page-backbone-changes.html";
+@@ -260,19 +261,19 @@
+ 	$DETAILDIRCO           = "$DETAILDIR/complete";
+ 	$logtext .= "  DETAILDIR = \"$DETAILDIR\" ";
+ 	if (-e "$DETAILDIR") {$logtext .= "(ok)\n"}
+-	else {mkdir("$DETAILDIR", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$DETAILDIR", 0775); $logtext .= "(created)\n"}
+ 	$logtext .= "  DETAILDIRCO = \"$DETAILDIRCO\" ";
+ 	if (-e "$DETAILDIRCO") {$logtext .= "(ok)\n"}
+-	else {mkdir("$DETAILDIRCO", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$DETAILDIRCO", 0775); $logtext .= "(created)\n"}
+ 	if ($MORETREES) {
+ 		$DETAILDIRBB   = "$DETAILDIR/backbone";
+ 		$DETAILDIRIANA = "$DETAILDIR/otherIANA";
+ 		$logtext .= "  DETAILDIRBB = \"$DETAILDIRBB\" ";
+ 		if (-e "$DETAILDIRBB") {$logtext .= "(ok)\n"}
+-		else {mkdir("$DETAILDIRBB", 0777); $logtext .= "(created)\n"}
++		else {mkdir("$DETAILDIRBB", 0775); $logtext .= "(created)\n"}
+ 		$logtext .= "  DETAILDIRIANA = \"$DETAILDIRIANA\" ";
+ 		if (-e "$DETAILDIRIANA") {$logtext .= "(ok)\n"}
+-		else {mkdir("$DETAILDIRIANA", 0777); $logtext .= "(created)\n"}
++		else {mkdir("$DETAILDIRIANA", 0775); $logtext .= "(created)\n"}
+ 	} else {
+ 		if (-e "$DETAILDIRBB") {system "rm -rf $DETAILDIRBB"}
+ 		if (-e "$DETAILDIRIANA") {system "rm -rf $DETAILDIRIANA"}
+@@ -280,30 +281,30 @@
+ 	$HISTORYHTMLDIR        = "$HTMLDIR_LOCAL/24h_history";
+ 	$logtext .= "  HISTORYHTMLDIR = \"$HISTORYHTMLDIR\" ";
+ 	if (-e "$HISTORYHTMLDIR") {$logtext .= "(ok)\n"}
+-	else {mkdir("$HISTORYHTMLDIR", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$HISTORYHTMLDIR", 0775); $logtext .= "(created)\n"}
+ 	$ICONSDIR              = "$HTMLDIR_LOCAL/icons";
+ 	$logtext .= "  ICONSDIR = \"$ICONSDIR\"\n";
+ 	$logtext .= "  Trash dir = \"$HTMLDIR_LOCAL/trash\" ";
+ 	if (-e "$HTMLDIR_LOCAL/trash") {system "rm -rf $HTMLDIR_LOCAL/trash/*"; $logtext .= "(ok, empty)\n"}
+-	else {mkdir("$HTMLDIR_LOCAL/trash", 0777); $logtext .= "(created)\n"}
++	else {mkdir("$HTMLDIR_LOCAL/trash", 0775); $logtext .= "(created)\n"}
+ 
+ 	$logtext .= "\n  HTMLDIR = \"$HTMLDIR\"\n";
+ 	if (-d $HTMLDIR) {
+-		unless (-e "$HTMLDIR/details") {mkdir("$HTMLDIR/details", 0777); $logtext .= "  $HTMLDIR/details created.\n"}
+-		unless (-e "$HTMLDIR/details/complete") {mkdir("$HTMLDIR/details/complete", 0777); $logtext .= "  $HTMLDIR/details/complete created.\n"}
++		unless (-e "$HTMLDIR/details") {mkdir("$HTMLDIR/details", 0775); $logtext .= "  $HTMLDIR/details created.\n"}
++		unless (-e "$HTMLDIR/details/complete") {mkdir("$HTMLDIR/details/complete", 0775); $logtext .= "  $HTMLDIR/details/complete created.\n"}
+ 		if ($MORETREES) {
+-			unless (-e "$HTMLDIR/details/backbone") {mkdir("$HTMLDIR/details/backbone", 0777); $logtext .= "  $HTMLDIR/details/backbone created.\n"}
+-			unless (-e "$HTMLDIR/details/otherIANA") {mkdir("$HTMLDIR/details/otherIANA", 0777); $logtext .= "  $HTMLDIR/details/otherIANA created.\n"}
++			unless (-e "$HTMLDIR/details/backbone") {mkdir("$HTMLDIR/details/backbone", 0775); $logtext .= "  $HTMLDIR/details/backbone created.\n"}
++			unless (-e "$HTMLDIR/details/otherIANA") {mkdir("$HTMLDIR/details/otherIANA", 0775); $logtext .= "  $HTMLDIR/details/otherIANA created.\n"}
+ 		} else {
+ 			if (-e "$HTMLDIR/details/backbone") {system "rm -rf $HTMLDIR/details/backbone"}
+ 			if (-e "$HTMLDIR/details/otherIANA") {system "rm -rf $HTMLDIR/details/otherIANA"}
+ 		}
+-		unless (-e "$HTMLDIR/24h_history") {mkdir("$HTMLDIR/24h_history", 0777); $logtext .= "  $HTMLDIR/24h_history created.\n"}
++		unless (-e "$HTMLDIR/24h_history") {mkdir("$HTMLDIR/24h_history", 0775); $logtext .= "  $HTMLDIR/24h_history created.\n"}
+ 		if ($CHANGESFLAG) {
+-			unless (-e "$HTMLDIR/changes") {mkdir("$HTMLDIR/changes", 0777); $logtext .= "  $HTMLDIR/changes created.\n"}
++			unless (-e "$HTMLDIR/changes") {mkdir("$HTMLDIR/changes", 0775); $logtext .= "  $HTMLDIR/changes created.\n"}
+ 		}
+ 		unless (-e "$HTMLDIR/icons") {
+-			mkdir("$HTMLDIR/icons", 0777);
++			mkdir("$HTMLDIR/icons", 0775);
+ 			system("cp $ICONSDIR/* $HTMLDIR/icons");
+ 			$logtext .= "  $HTMLDIR/icons created and template icons copied.\n";
+ 		}
