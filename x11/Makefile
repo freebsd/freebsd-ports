@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1997/06/04 00:39:27 asami Exp $
+# $Id: Makefile,v 1.139 1997/06/14 08:06:40 andreas Exp $
 #
 
     SUBDIR += FWF
@@ -34,6 +34,7 @@
     SUBDIR += mlvwm
     SUBDIR += neXtaw
     SUBDIR += olvwm
+    SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += piewm
     SUBDIR += pythonqt

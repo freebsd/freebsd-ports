@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1997/05/03 19:35:59 andreas Exp $
+# $Id: Makefile,v 1.70 1997/06/10 09:35:51 asami Exp $
 #
 
     SUBDIR += Gofer
@@ -31,6 +31,7 @@
     SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
     SUBDIR += ocaml
+    SUBDIR += p5-Tcl
     SUBDIR += p2c
     SUBDIR += pbasic
     SUBDIR += perl5

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1997/06/11 00:20:40 jfitz Exp $
+# $Id: Makefile,v 1.63 1997/06/15 14:20:20 max Exp $
 #
 
     SUBDIR += SWIG
@@ -40,6 +40,9 @@
     SUBDIR += p5-Data-Dumper
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Date-Manip
+    SUBDIR += p5-Devel-DProf
+    SUBDIR += p5-Devel-Peek
+    SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-Slurp
