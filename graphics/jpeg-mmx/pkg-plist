@@ -22,4 +22,4 @@ lib/libjpeg.so
 lib/libjpeg.so.9
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@dirrm shared/doc/jpeg
+@dirrm share/doc/jpeg
