@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.89 1999/08/26 09:24:16 dirk Exp $
+# $Id: Makefile,v 1.90 1999/08/26 21:18:12 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -88,7 +88,8 @@ CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}"
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}"
 
 INSTALL_TARGET=	install-quiet
 
