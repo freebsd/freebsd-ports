@@ -1,0 +1,13 @@
+This is Net::Rendezvous, a set of perl modules to utilize mDNS for service
+discovery.  This method of service discovery is branded as Rendezvous by 
+Apple Computer.  More information can be found at:
+
+http://www.zeroconf.org/
+http://developer.apple.com/macosx/rendezvous/index.html
+
+This library is free software; you can redistribute it and/or modify it under 
+the same terms as Perl itself.
+
+Rendezvous (in this context) is a trademark of Apple Computer, Inc.
+
+WWW: http://search.cpan.org/~chlige/Net-Rendezvous/
