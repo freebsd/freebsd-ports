@@ -1,5 +1,5 @@
---- compat_heimdal.c.orig	Mon Nov  6 13:27:02 2000
-+++ compat_heimdal.c	Mon Nov  6 13:43:10 2000
+--- compat_heimdal.c.orig	Wed Jan 24 12:40:26 2001
++++ compat_heimdal.c	Wed Jan 24 12:50:52 2001
 @@ -0,0 +1,133 @@
 +#include <errno.h>
 +#include <stdio.h>
@@ -20,7 +20,7 @@
 +void
 +compat_free_data_contents(krb5_context context, krb5_data *data)
 +{
-+	krb5_xfree(data);
++	krb5_xfree(data->data);
 +}
 +
 +krb5_error_code
