@@ -9,7 +9,7 @@
 
 DISTNAME=       less-346
 CATEGORIES=	misc
-MASTER_SITES=   http://www.flash.net/~marknu/less/ \
+MASTER_SITES=   http://home.flash.net/~marknu/less/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 
