@@ -1,0 +1,10 @@
+--- j1c.orig	Thu Nov 29 16:26:08 2001
++++ j1c	Thu Nov 29 16:26:36 2001
+@@ -0,0 +1,7 @@
++#!/bin/sh
++
++JAVAC_1=%%PREFIX%%/jdk1.1.8/bin/javac
++
++unset JAVA_HOME LD_LIBRARY_PATH LD_PRELOAD CLASSPATH
++
++exec "$JAVAC_1" "$@"

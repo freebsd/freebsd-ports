@@ -1,0 +1,21 @@
+--- build.xml.orig	Sat May 18 13:50:54 2002
++++ build.xml	Sat May 18 13:50:44 2002
+@@ -1,7 +1,7 @@
+ <project name="MM.MySQL" default="dist" basedir=".">
+ 	<property name="version" value="2.0.14"/>
+-	<property name="java1.1.home" value="c:/jdk1.1.8"/>
+-	<property name="javac.1.1" value="${java1.1.home}/bin/javac"/>
++	<property name="java1.1.home" value="%%PREFIX%%/jdk1.1.8"/>
++	<property name="javac.1.1" value="%%WRKSRC%%/j1c"/>
+ 	
+ 	<target name="init">
+ 		<filter token="VERSION" value="${version}"/>
+@@ -62,7 +62,7 @@
+ 
+ 	<target name="compile-jdbc1" depends="init, compile-core">
+ 		<exec dir="./build/mm.mysql-${version}/org/gjt/mm/mysql/jdbc1" executable="${javac.1.1}">
+-			<arg line="-g -classpath ${basedir}/build/mm.mysql-${version};${java1.1.home}/lib/classes.zip *.java"/>
++			<arg line="-g -classpath ${basedir}/build/mm.mysql-${version}:${java1.1.home}/lib/classes.zip *.java"/>
+ 		</exec>
+ 	</target>
+ 	
