@@ -11,11 +11,9 @@ bin/esdrec
 bin/esdsample
 include/esd.h
 lib/libesd.a
-lib/libesd.la
 lib/libesd.so
 lib/libesd.so.1
 lib/libesddsp.a
-lib/libesddsp.la
 lib/libesddsp.so
 lib/libesddsp.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
