@@ -17,6 +17,12 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
+.endif
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
@@ -41,4 +47,4 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
