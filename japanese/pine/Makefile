@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.12 1997/09/14 21:35:40 max Exp $
+# $Id: Makefile,v 1.13 1998/09/21 22:33:26 steve Exp $
 #
 
 DISTNAME=	pine3.95
@@ -17,6 +17,8 @@ PATCHFILES=	pine3.95lj1.1b2-b3.diff.gz
 PATCH_SITES=	ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/pine/pine3.95/
 
 MAINTAINER=	max@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna
