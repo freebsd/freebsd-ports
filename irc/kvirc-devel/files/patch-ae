@@ -1,0 +1,20 @@
+--- src/kvirc/kvi_dcc_voice.cpp	Sat Dec 18 08:29:36 1999
++++ src/kvirc/kvi_dcc_voice.cpp.new	Sat Jan 29 22:01:29 2000
+@@ -323,7 +323,7 @@
+ 	static int fmt=KVI_FORMAT;
+ 	if(ioctl(dcc->soundFd,SNDCTL_DSP_SETFMT,&fmt)<0)return KVI_ERROR_CanNotInitializeSoundCard;
+ 	static int chans=KVI_NUM_CHANNELS;
+-	if(ioctl(dcc->soundFd,SNDCTL_DSP_CHANNELS,&chans)<0)return KVI_ERROR_CanNotInitializeSoundCard;
++	if (ioctl(dcc->soundFd, SNDCTL_DSP_STEREO, &chans)<0) return KVI_ERROR_CanNotInitializeSoundCard;
+ 	static int speed=KVI_SPEED;
+ 	if(ioctl(dcc->soundFd,SNDCTL_DSP_SPEED,&speed)<0)return KVI_ERROR_CanNotInitializeSoundCard;
+ 	return KVI_ERROR_Success;
+@@ -905,7 +905,7 @@
+ 	kvi_threadTestCancel();
+ 
+ 	dcc->tmpBuffer.sprintf(__tr("Connected to %s on port %u"),dcc->szAddress.ptr(),dcc->uPort);
+-	KviDccEvent * e = new KviDccEvent(KVI_DCC_EVENT_MSG,dcc->tmpBuffer.ptr());
++	e = new KviDccEvent(KVI_DCC_EVENT_MSG,dcc->tmpBuffer.ptr());
+ 	g_pThreadEventDispatcher->postEvent(e,dcc->dccVoiceParent);
+ 
+ 	kvi_threadTestCancel();

@@ -1,0 +1,11 @@
+--- src/kvirc/kvi_helpqml.cpp	Fri Nov 19 11:15:33 1999
++++ src/kvirc/kvi_helpqml.cpp.new	Sat Jan 29 18:28:26 2000
+@@ -29,6 +29,8 @@
+ #include "kvi_options.h"
+ #include "kvi_fileutils.h"
+ 
++#undef read
++
+ #include <qfile.h>
+ #include <qtextstream.h>
+ #include <qnamespace.h>
