@@ -17,9 +17,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}:ssl
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
-PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
-PATCHFILES=		no_zombies.patch
+#PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
+#PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
+#PATCHFILES=		
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
@@ -28,8 +28,8 @@ CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
-APACHE_VERSION=		1.3.28
-APACHE_SSL_VERSION=	1.52
+APACHE_VERSION=		1.3.29
+APACHE_SSL_VERSION=	1.53
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes

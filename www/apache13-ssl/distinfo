@@ -1,3 +1,4 @@
-MD5 (apache_1.3.28.tar.gz) = 2cdece7b4881d541e072de6a2b65db77
-MD5 (apache_1.3.28+ssl_1.52.tar.gz) = 8394e1499ff4334491b6aead4b0d3880
-MD5 (no_zombies.patch) = 815be9373ac6b0d66729ca48d1d5ff73
+MD5 (apache_1.3.29.tar.gz) = e97fe9bf51dc2c9c233d53f63b1347e3
+SIZE (apache_1.3.29.tar.gz) = 2435809
+MD5 (apache_1.3.29+ssl_1.53.tar.gz) = 9baca466af847eae00ed09b6c9b82fb3
+SIZE (apache_1.3.29+ssl_1.53.tar.gz) = 58507
