@@ -1,9 +1,12 @@
 libexec/apache/mod_tsunami.so
 @exec %D/sbin/apxs -e -A -n tsunami %D/%F
 @unexec %D/sbin/apxs -e -A -n tsunami %D/%F
-%%PORTDOCS%%share/doc/mod_tsunami/AUTHORS
-%%PORTDOCS%%share/doc/mod_tsunami/Changelog
-%%PORTDOCS%%share/doc/mod_tsunami/INSTALL
-%%PORTDOCS%%share/doc/mod_tsunami/LICENSE
-%%PORTDOCS%%share/doc/mod_tsunami/README
-%%PORTDOCS%%@dirrm share/doc/mod_tsunami
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/mod_tsunami_files/index.gif
+%%PORTDOCS%%%%DOCSDIR%%/mod_tsunami_files/home.gif
+%%PORTDOCS%%%%DOCSDIR%%/mod_tsunami_files/sub.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mod_tsunami_files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

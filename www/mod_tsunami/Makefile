@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mod_tsunami
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mod-tsunami
+MASTER_SITES=	http://bertrand.demiddelaer.org/mod_tsunami/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache module which dynamically limits a site's slot usage
 
 USE_APACHE=	yes
-DOCS=		AUTHORS Changelog INSTALL LICENSE README
+DOCS=		AUTHORS Changelog README
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c mod_tsunami.c
@@ -27,6 +26,7 @@ do-install:
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 post-install:
