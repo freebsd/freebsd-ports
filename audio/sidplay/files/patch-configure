@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Mar 11 11:42:18 2002
++++ configure	Tue Jul 30 14:09:39 2002
+@@ -1416,7 +1416,7 @@
+ fi
+ done
+ 
+-for ac_hdr in sys/ioctl.h linux/soundcard.h machine/soundcard.h  \
++for ac_hdr in sys/ioctl.h linux/soundcard.h sys/soundcard.h  \
+   soundcard.h sys/audio.h sun/audioio.h sun/dbriio.h sys/audioio.h  \
+   audio.h dmedia/audio.h
+ do
