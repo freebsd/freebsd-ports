@@ -1,0 +1,5 @@
+Rtty is "remote tty" (not radioteletype).  You run a server per port
+and then connect to that server from any number of "tip"/"cu"-like
+clients.  I wrote it for our console concentrator, but there's no
+reason other than performance why you couldn't use it to drive modems,
+printers, prom programmers, and so on.
