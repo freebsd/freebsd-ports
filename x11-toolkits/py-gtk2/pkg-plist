@@ -92,3 +92,4 @@ share/examples/py-gtk/testgtk/testgtkrc
 @dirrm share/examples/py-gtk/simple
 @dirrm share/examples/py-gtk/testgtk
 @dirrm share/examples/py-gtk
+@dirrm include/pygtk
