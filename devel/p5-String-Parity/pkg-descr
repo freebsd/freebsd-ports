@@ -1,0 +1,2 @@
+The String::Parity module for perl5 may be used to generate and test
+even, odd, mark and space parity on arbitrary strings.
