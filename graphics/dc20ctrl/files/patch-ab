@@ -1,0 +1,11 @@
+--- dc20.h.orig	Mon Dec 21 21:09:11 1998
++++ dc20.h	Mon Dec 21 21:09:47 1998
+@@ -45,7 +45,7 @@
+ #include <string.h>
+ 
+ #ifdef USE_TIFF
+-#include <tiff34/tiffio.h>
++#include <tiffio.h>
+ #endif /* USE_TIFF */
+ 
+ #ifndef TRUE

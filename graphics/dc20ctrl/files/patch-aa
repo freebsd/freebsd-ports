@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Dec 21 21:09:06 1998
++++ Makefile	Mon Dec 21 21:09:19 1998
+@@ -79,7 +79,7 @@
+ #
+ #	Used only if you make the project with USE_TIFF defined.
+ #
+-TIFFLIB=-ltiff34
++TIFFLIB=-ltiff
+ 
+ #
+ #	Used only if you make the project with USE_PNG defined.
