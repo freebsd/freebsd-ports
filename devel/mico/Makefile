@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -22,7 +22,7 @@ INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-.if defined(WITH_GCC32)
+.if !defined(WITH_SYSTEM_GCC)
 USE_GCC=		3.2
 .endif
 
@@ -65,21 +65,15 @@ CONFIGURE_ENV+=		CPPFLAGS=${CPPFLAGS}
 MICO_TCL=		"@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITHOUT_SSL) || defined(WITHOUT_SERVICES)
 MICO_SSL=		"@comment "
 .else
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-ssl=${OPENSSLBASE}
-CONFIGURE_ARGS+=	--enable-csiv2
-#
-# CORBASecV2 doesn't build with gcc32 port because FlexLexer.h absent
-#
-.if !( ${OSVERSION} < 500035 && defined(WITH_GCC32) )
-CONFIGURE_ARGS+=	--enable-csl2
+CONFIGURE_ARGS+=	--enable-csiv2 --enable-csl2
 .endif
-.endif
+
+.include <bsd.port.pre.mk>
 
 PLIST_SUB+=	MICO_X11=${MICO_X11} MICO_QT=${MICO_QT} MICO_GTK=${MICO_GTK} \
 		MICO_TCL=${MICO_TCL} MICO_SSL=${MICO_SSL} \
@@ -89,10 +83,11 @@ MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
+
 pre-fetch:
 	@${ECHO} "============================================================================"
 .if ${OSVERSION} < 500035
-	@${ECHO} "Use WITH_GCC32=yes to build Mico with gcc 3.2 for better stability."
+	@${ECHO} "Use WITH_SYSTEM_GCC=yes to build Mico with system gcc."
 	@${ECHO}
 .endif
 	@${ECHO} "Following options are allowed:"
@@ -107,6 +102,9 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e "s#-O2#${CFLAGS}#" ${WRKSRC}/configure
+.if ${OSVERSION} < 500035 && defined(WITH_GCC32)
+	${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
+.endif
 
 post-configure:
 	${FIND} ${WRKSRC}/demo -name Makefile | ${XARGS} \
