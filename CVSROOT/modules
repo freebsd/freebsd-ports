@@ -4599,6 +4599,7 @@ libgtk-java	ports/x11-toolkits/libgtk-java
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
 libgtop2	ports/devel/libgtop2
+libgutenfetch	ports/devel/libgutenfetch
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
