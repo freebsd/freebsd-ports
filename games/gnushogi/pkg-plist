@@ -1,18 +1,34 @@
 bin/gnushogi
-bin/gnushogir
-libexec/gnushogix
-share/doc/gnushogi/BOOKFILES
-share/doc/gnushogi/CHANGES
-share/doc/gnushogi/CONTRIB
-share/doc/gnushogi/COPYING
-share/doc/gnushogi/GENERAL
-share/doc/gnushogi/INSTALL
-share/doc/gnushogi/PORTING
-share/doc/gnushogi/README-FIRST
-share/doc/gnushogi/listserv.ref
-share/doc/gnushogi/shogi.rules
-share/doc/gnushogi/tutorial1.gam
-share/doc/gnushogi/tutorial2.gam
-share/gnushogi/gnushogi.bbk
-@dirrm share/doc/gnushogi
-@dirrm share/gnushogi
+%%PORTDOCS%%%%DOCSDIR%%/BOOKFILES
+%%PORTDOCS%%%%DOCSDIR%%/PORTING
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_1.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_10.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_11.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_12.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_13.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_14.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_15.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_16.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_17.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_18.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_19.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_2.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_20.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_21.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_22.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_3.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_4.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_5.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_6.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_7.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_8.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_9.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_stoc.html
+%%PORTDOCS%%%%DOCSDIR%%/gnushogi_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/listserv.ref
+%%PORTDOCS%%%%DOCSDIR%%/shogi.rules
+%%PORTDOCS%%%%DOCSDIR%%/tutorial1.gam
+%%PORTDOCS%%%%DOCSDIR%%/tutorial2.gam
+%%DATADIR%%/gnushogi.bbk
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

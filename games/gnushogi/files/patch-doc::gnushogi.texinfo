@@ -1,0 +1,13 @@
+--- doc/gnushogi.texinfo.orig	Sat Apr 27 00:42:22 2002
++++ doc/gnushogi.texinfo	Mon Mar 15 20:19:37 2004
+@@ -3,6 +3,10 @@
+ @c % **  Start of header.
+ @setfilename gnushogi.info
+ @settitle GNU Shogi manual
++@dircategory
++@direntry Games
++* GNUShogi: (gnushogi).		GNU Shogi.
++@end direntry
+ @c % **  End of header.
+ 
+ @setchapternewpage odd
