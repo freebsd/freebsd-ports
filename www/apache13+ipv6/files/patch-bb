@@ -1,0 +1,60 @@
+--- src/support/suexec.c.orig	Wed Mar  5 18:50:29 2003
++++ src/support/suexec.c	Fri Jul 18 18:09:56 2003
+@@ -90,6 +90,9 @@
+ #include <sys/types.h>
+ 
+ #include <stdarg.h>
++#ifdef LOGIN_CAP
++#include <login_cap.h>
++#endif
+ 
+ #include "suexec.h"
+ 
+@@ -322,6 +325,9 @@
+ #ifdef LOG_EXEC
+         fprintf(stderr, " -D LOG_EXEC=\"%s\"\n", LOG_EXEC);
+ #endif
++#ifdef LOGIN_CAP
++	fprintf(stderr, " -D LOGIN_CAP\n");
++#endif
+ #ifdef SAFE_PATH
+         fprintf(stderr, " -D SAFE_PATH=\"%s\"\n", SAFE_PATH);
+ #endif
+@@ -480,7 +486,28 @@
+ 
+     /*
+      * Change UID/GID here so that the following tests work over NFS.
+-     *
++     */
++
++#ifdef LOGIN_CAP
++    /*
++     * Set user context (resources, priority and grouplist).
++     * If unsuccessful, error out.
++     */
++    if (setusercontext(NULL, pw, uid, LOGIN_SETRESOURCES | LOGIN_SETPRIORITY |
++      LOGIN_SETGROUP | LOGIN_SETLOGIN) == -1) {
++	log_err("emerg: failed to set user context (%ld: %s)\n", uid, cmd);
++	exit(108);
++    }
++
++    /*
++     * Set gid to the target group. If unsuccessful, error out.
++     */
++    if ((setgid(gid)) != 0) {
++	log_err("emerg: failed to setgid (%ld: %s)\n", gid, cmd);
++	exit(109);
++    }
++#else /* !LOGIN_CAP */
++    /*
+      * Initialize the group access list for the target user,
+      * and setgid() to the target group. If unsuccessful, error out.
+      */
+@@ -488,6 +515,7 @@
+ 	log_err("emerg: failed to setgid (%ld: %s)\n", gid, cmd);
+ 	exit(109);
+     }
++#endif /* LOGIN_CAP */
+ 
+     /*
+      * setuid() to the target user.  Error out on fail.
