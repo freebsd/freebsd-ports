@@ -140,6 +140,9 @@ lib/ecasound-plugins/libaudioio_arts.la
 lib/ecasound-plugins/libaudioio_arts.so
 share/ecasound/effect_presets
 share/ecasound/generic_oscillators
+lib/python1.5/site-packages/pyeca.py
+lib/python1.5/site-packages/libpyecasound.la
+lib/python1.5/site-packages/libpyecasound.so
 @dirrm share/ecasound
 @dirrm include/ecasound
 @dirrm lib/ecasound-plugins
