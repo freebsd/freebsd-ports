@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-avi
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/avi-xmms/ \
@@ -19,19 +20,22 @@ COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
+
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
 USE_SDL=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/src/ctrackbar.cpp
+post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-march=i586|@CXXFLAGS@|g ; \
+		 s|-O2||g ; \
+		 s|$$(CC_OPTS)|@CFLAGS@|g'
 
 # This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/Input
 do-install:
