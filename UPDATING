@@ -56,10 +56,10 @@ upgrades.
 
   The cryptplug port is not compatible with recent versions of gpgme
   and has been changed to depend on gpgme03 (the last version of gpg-
-  me compatible with cryptplug). 
-  Users who have been using cryptplug in order to enable PGP/MIME support 
+  me compatible with cryptplug).
+  Users who have been using cryptplug in order to enable PGP/MIME support
   in KMail should DEINSTALL BOTH cryptplug and gpgme03 before updating
-  KDE to version 3.3.2. Cryptplug is NOT necessary anymore to enable 
+  KDE to version 3.3.2. Cryptplug is NOT necessary anymore to enable
   PGP/MIME support in KMail and will cause the kdepim3 build to fail due
   to conflicting dependencies.
 
@@ -101,7 +101,7 @@ upgrades.
   are installed. Also, there is a shared library version bump on
   this update. Therefore:
 
-  1) Remove old ffmpeg 
+  1) Remove old ffmpeg
 
   pkg_delete -f /var/db/pkg/ffmpeg*
 
