@@ -1,5 +1,4 @@
 # ports collection makefile for:	VMware 1.1.2 for Linux
-# Version required:	1.1.2
 # Date created:		Fri 26 Nov 19:16:47 EST 1999
 # Whom:			vns@delta.odessa.ua
 #
@@ -7,8 +6,8 @@
 # $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.8 1999/12/17 00:38:27 vsilyaev Exp $
 #
 
-DISTNAME=	VMware-1.1.2-364
-PKGNAME=	vmware-1.1.2.364
+PORTNAME=	vmware
+PORTVERSION=	1.1.2.364
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -17,6 +16,7 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://www.vmware.co.uk/software/ \
 		http://mirror.aarnet.edu.au/pub/vmware/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
+DISTNAME=	VMware-1.1.2-364
 
 PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \

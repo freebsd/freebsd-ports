@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tuxnes
-# Version required:	0.73
 # Date created:		13 Feb 2000
 # Whom:			Jeroen Ruigrok van der Werven <asmodai@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tuxnes-0.73
+PORTNAME=	tuxnes
+PORTVERSION=	0.73
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.freebsd.org/~asmodai/mirror/ \
 		http://tmmm.simplenet.com/tuxnes/packages/

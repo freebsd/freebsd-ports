@@ -1,15 +1,15 @@
 # New ports collection makefile for:    hfs
-# Version required:     0.37
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hfs0_37
-PKGNAME=	hfs-0.37
+PORTNAME=	hfs
+PORTVERSION=	0.37
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	jmz@FreeBSD.org
 

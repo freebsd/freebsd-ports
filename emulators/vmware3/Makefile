@@ -1,5 +1,4 @@
 # ports collection makefile for:	VMware 2.0 for Linux
-# Version required:	2.0 - Build 476
 # Date created:		Fri 26 Nov 19:16:47 EST 1999
 # Whom:			vns@delta.odessa.ua
 #
@@ -7,8 +6,8 @@
 # $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.9 2000/01/23 22:29:24 vsilyaev Exp $
 #
 
-DISTNAME=	VMware-2.0-476
-PKGNAME=	vmware2-2.0.476
+PORTNAME=	vmware2
+PORTVERSION=	2.0.476
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -17,6 +16,7 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://www.vmware.co.uk/software/ \
 		http://mirror.aarnet.edu.au/pub/vmware/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
+DISTNAME=	VMware-2.0-476
 
 PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \

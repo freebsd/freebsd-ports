@@ -1,15 +1,15 @@
 # New ports collection makefile for:    fMSX
-# Version required:     1.5
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
 # $FreeBSD$
 #
 
-DISTNAME=       fMSX
-PKGNAME=	fmsx-1.5
+PORTNAME=	fmsx
+PORTVERSION=	1.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/fMSX/
+DISTNAME=       fMSX
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	dk@farm.org

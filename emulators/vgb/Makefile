@@ -1,15 +1,15 @@
 # New ports collection makefile for:   vgb
-# Version required:    0.7
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	VGB
-PKGNAME=	vgb-0.7
+PORTNAME=	vgb
+PORTVERSION=	0.7
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	VGB
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org

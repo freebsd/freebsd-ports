@@ -1,13 +1,12 @@
 # New ports collection makefile for:    linux_base
-# Version required:     6.1
 # Date created:         Jul 7, 1999
 # Whom:                 marcel@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		linux_base
-PKGNAME=		linux_base-6.1
+PORTNAME=		linux_base
+PORTVERSION=		6.1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \

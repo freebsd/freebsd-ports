@@ -1,16 +1,16 @@
 # New ports collection Makefile for:	bsvc
-# Version required:	2.1
 # Date created:		03-Mar-1997
 # Whom:			tenser@spitfire.ecsel.psu.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bsvc-2.1-src
-PKGNAME=	bsvc-2.1
+PORTNAME=	bsvc
+PORTVERSION=	2.1
 CATEGORIES=	emulators tk82
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jseger@FreeBSD.org
 

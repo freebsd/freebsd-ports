@@ -1,11 +1,11 @@
 # New ports collection makefile for:	vice
-# Version required:	1.2
 # Date created:		Mar 28, 1998
 # Whom:			dchapes@ddm.on.ca
 #
 # $FreeBSD$
 
-DISTNAME=	vice-1.2
+PORTNAME=	vice
+PORTVERSION=	1.2
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:   kmamerun
-# Version required:	0.3.0pre1
 # Date created:		24 Nov 1999
 # Whom:			Nick Sayer <nsayer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kmamerun-0.3.0pre1
-PKGNAME=	kmamerun-0.3.0.1
+PORTNAME=	kmamerun
+PORTVERSION=	0.3.0.1
 CATEGORIES=	emulators kde
 MASTER_SITES=	ftp://ftp.sad.it/pub/kde/local/
+DISTNAME=	kmamerun-0.3.0pre1
 
 MAINTAINER=	nsayer@freebsd.org
 

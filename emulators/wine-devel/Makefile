@@ -1,24 +1,23 @@
 # New ports collection makefile for:    wine
-# Version required:     980517
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-99.11.14
+PORTNAME=	wine
+PORTVERSION=	99.11.14
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
+DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
 MAINTAINER=	se@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		GL.14:${PORTSDIR}/graphics/Mesa3
 
-DATE=		991114
-WRKSRC=		${WRKDIR}/wine-${DATE}
+WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
 MAN1=		wine.1
 MAN5=		wine.conf.5

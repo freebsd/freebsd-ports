@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bfe
-# Version required:     991102
 # Date created:		02 February 2000
 # Whom:			jhb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       bfe-${DATE}
+PORTNAME=	bfe
+PORTVERSION=	991102
 CATEGORIES=     emulators
 MASTER_SITES=	http://www.qzx.com/bfe/
 EXTRACT_SUFX=	.tgz
@@ -17,8 +17,6 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 
 USE_X_PREFIX=	yes
-
-DATE=		991102
 
 WRKSRC=		${WRKDIR}/bfe
 
