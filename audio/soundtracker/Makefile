@@ -7,7 +7,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+		jack.0:${PORTSDIR}/audio/jack
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
@@ -42,5 +43,6 @@ CONFIGURE_ARGS+=	--disable-asm
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| install-exec-local||g'
+	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
