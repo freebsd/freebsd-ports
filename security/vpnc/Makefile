@@ -7,11 +7,11 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre8
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre9
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${STARTSCRIPT}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
