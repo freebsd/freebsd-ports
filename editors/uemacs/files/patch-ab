@@ -1139,7 +1139,7 @@ diff -crN ue312.orig/freebsd/makefile ue312/freebsd/makefile
 --- ue312/freebsd/makefile	Sat Jan 14 12:14:10 1995
 ***************
 *** 0 ****
---- 1,97 ----
+--- 1,102 ----
 + #	Unix makefile for
 + #		MicroEMACS 3.12
 + #		(C)Copyright 1993 by Daniel Lawrence
@@ -1178,9 +1178,14 @@ diff -crN ue312.orig/freebsd/makefile ue312/freebsd/makefile
 + 
 + all:	emacs
 + 
++ message:
++ 	@echo ""
++ 	@echo "Expect some warnings. None of them seem to be fatal.  --tg"
++ 	@echo ""
++ 
 + OFILES =	$(F1) $(F2) $(F3) $(F4) $(F5) $(F6) $(F7) $(F8)
 + 
-+ emacs:	$(OFILES)
++ emacs:	message $(OFILES)
 + 		$(CC) -s $(CFLAGS) $(OFILES) -ltermcap -lc -o emacs
 + 
 + $(OBJD)/basic.o: $(SRCD)/basic.c $(HFILES)
