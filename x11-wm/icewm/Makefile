@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.14
-PORTREVISION=	1
+PORTVERSION=	1.2.16
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	259
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-shaped-decorations \
@@ -62,6 +61,7 @@ CONFIGURE_ARGS+=	--with-icesound=oss
 CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+CONFIGURE_ARGS+=	--enable-gradients
 .endif
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XINERAMA)
