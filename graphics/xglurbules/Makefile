@@ -13,12 +13,6 @@ MASTER_SITES=	http://www.pepcross.com/glurbules/
 MAINTAINER=	steve@pepcross.com
 COMMENT=	Burning particle system eye candy program thingy for X11
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 MAN1=		xglurbules.1
 
 USE_XLIB=	yes
@@ -26,4 +20,4 @@ USE_X_PREFIX=	yes
 
 MANCOMPRESSED=	yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
