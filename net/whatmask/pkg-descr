@@ -1,20 +1,12 @@
-Notations supported:
+Whatmask is a small C program that will help you with network settings.
 
-	Name                  Example
-	---------------------------------
-	CIDR                         /24
-	Netmask            255.255.255.0
-	Wilcard Bits           0.0.0.255
+It displays the following information given IP address and/or netmask:
+- The netmask in the following formats: CIDR, Netmask, Hex, Wildcard Bits
+- The Network Address
+- The Broadcast Address
+- The number of Usable IP Addresses
+- The First Usable IP Address
+- The Last Usable IP Address
 
-The above notations are all identical. CIDR notation commonly has a "/" in
-front of the number (representing the number of bits). Whatmask can accept
-these notations with or without a slash. This notation is used more and more
-recently. A lot of popular routers and software supprt this notation. 
-
-Netmask notation is pretty much the standard old-school way of doing it. It is
-supported by most systems (Un*x, Win, Mac, etc.). 
-
-Wilcard bits are similar to the netmask, but they are the logical not of the
-netmask. This notation is used by a number of popular routers.
-
-WWW: http://www.laffeycomputer.com/whatmask.html
+Author:	Joe Laffey <joe@laffeycomputer.com>
+WWW:	http://www.laffeycomputer.com/whatmask.html
