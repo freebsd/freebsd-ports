@@ -9,7 +9,7 @@ PORTNAME=	nap
 CATEGORIES=	russian
 
 MAINTAINER=	sam@brj.pp.ru
-COMMENT=	Client for the OpenNAP network with Russian koi8 <> win1251 encoding patch
+COMMENT=	Client for the OpenNAP network with koi8 <> win1251 encoding patch
 
 MASTERDIR=	${.CURDIR}/../../audio/napster
 
