@@ -58,8 +58,10 @@ CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
 		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
-		--enable-locales-fix
+		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps
+.if defined(WITH_LOCALES_FIX)
+CONFIGURE_ARGS+=	--enable-locales-fix
+.endif
 .if defined(BATCH) || defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES_PORT)
