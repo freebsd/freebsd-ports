@@ -34,5 +34,6 @@ post-patch:
 	@${ECHO_MSG} "For example, CDROM=\"/dev/acd0c\" make"
 	@${ECHO_MSG} ""
 .endif
+	@${REINPLACE_CMD} -e "s|gpointer	data|gpointer	arg|" ${WRKSRC}/src/callbacks.c
 
 .include <bsd.port.mk>
