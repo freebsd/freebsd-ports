@@ -1,7 +1,9 @@
+%%RUBY_SITELIBDIR%%/gplot/ContourPlot.rb
 %%RUBY_SITELIBDIR%%/gplot/Gnuplot.rb
 %%RUBY_SITELIBDIR%%/gplot/Plot.rb
 %%RUBY_SITELIBDIR%%/gplot/PlotItem.rb
-%%RUBY_SITELIBDIR%%/gplot/Stream.rb
+%%RUBY_SITELIBDIR%%/gplot/Writer.rb
 @dirrm %%RUBY_SITELIBDIR%%/gplot
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnuplot/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnuplot/TODO
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnuplot
