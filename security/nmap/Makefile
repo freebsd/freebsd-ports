@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/
 DISTNAME=	nmap-${PORTVERSION}	# needed for security/nmapfe
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
 
 USE_BZIP2=	yes

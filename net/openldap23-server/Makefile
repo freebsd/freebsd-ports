@@ -29,7 +29,7 @@ PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
 DISTNAME=		openldap-${OPENLDAP_VERSION}alpha
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		eikemeier@fillmore-labs.com
+MAINTAINER=		eik@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
 OPENLDAP_VERSION=	2.2.0

@@ -13,7 +13,7 @@ DISTFILES=	dumpasn1.c dumpasn1.cfg
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
 
 .include <bsd.port.pre.mk>
