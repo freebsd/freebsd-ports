@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/onyx
 bin/onyx-%%ONYX_VERSION%%
 bin/onyx_config
@@ -46,7 +47,7 @@ include/libonyx/tsd.h
 include/libonyx/xep.h
 lib/libonyx.a
 lib/libonyx.so
-lib/libonyx.so.9
+lib/libonyx.so.10
 share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png
@@ -55,6 +56,7 @@ share/onyx-%%ONYX_VERSION%%/doc/html/img11.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img12.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img13.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img14.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img15.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img2.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img3.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img4.png
