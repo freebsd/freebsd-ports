@@ -1,31 +1,21 @@
-The Nemesis Project is designed to be a commandline-based, portable human IP
-stack for UNIX/Linux.  The suite is broken down by protocol, and should allow
-for useful scripting of injected packet streams from simple shell scripts.
+The Nemesis Project is designed to be a command line based, portable human IP
+stack for UNIX-like and Windows sytems.  The suite is broken down by protocol, 
+and should allow for useful scripting of injected packets from simple shell 
+scripts.
 
 Key Features:
 
-+ ARP/RARP, DNS, ICMP, IGMP, OSPF, RIP, TCP, UDP protocol support
++ ARP/RARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF*, RIP, TCP, UDP protocol support
 + Layer 2 or Layer 3 injection (by presence/absence of -d <dev> switch)
-+ Packet Payload from file
-+ tested on OpenBSD, NetBSD, FreeBSD, Solaris/Trusted Solaris, Linux,
-  and Mac OS X
+  on UNIX-like systems.
++ Layer 2 injection on Windows systems (regardless of whether 
+  -d <device number> is used.
++ Packet payload from file
++ IP and TCP options from file
++ Tested on OpenBSD, Linux, Solaris, Mac OS X and Windows 2000
 
-Example usage:
+Each supported protocol uses its own protocol "injector" which is accompanied
+by a man page explaning its functionality.
 
-* nemesis-tcp -v -S 192.168.1.1 -D 192.168.2.2 -fS -fA -y 22 -P foo
-  send TCP packet (SYN/ACK) with payload from ascii file 'foo' to target's
-  ssh port from 192.168.1.1 to 192.168.2.2. (-v allows a stdout visual of
-  current injected packet)
-       
-* nemesis-icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -i 5
-  send ICMP REDIRECT (network) packet from 10.10.10.3 to 10.10.10.1
-  with preferred gateway as source address.  
-
-* nemesis-arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
-  send ARP packet through device 'ne0' from hardware source address
-  00:01:02:03:04:05 with IP source address 10.11.30.5 to destination IP
-  address 10.10.15.1 with broadcast destination hardware address.
-  In other words, who-has the mac address of 10.10.15.1, tell 10.11.30.5 
-  - assuming 00:01:02:03:04:05 is the source mac address of our 'ne0' device.
 
 WWW:  http://www.packetfactory.net/projects/nemesis/
