@@ -1,11 +1,12 @@
---- Makefile.in.orig	Mon Jun 19 21:25:10 2000
-+++ Makefile.in	Tue Jun 20 11:30:03 2000
-@@ -157,7 +157,7 @@
- change_logs =  	OOChangeLog OChangeLog ChangeLog
+--- Makefile.in.orig	Mon Nov 13 19:56:19 2000
++++ Makefile.in	Tue Nov 14 15:34:05 2000
+@@ -159,3 +159,3 @@
  
+-SUBDIRS = . intl po macros idl plugins src doc icons templates
++SUBDIRS = . intl po macros idl plugins src icons templates
+ 
+@@ -164,3 +164,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = gnumericConf.sh
- 
- CLEANFILES = gnumericConf.sh
