@@ -34,6 +34,7 @@
     SUBDIR += dictfmt
     SUBDIR += dictionary
     SUBDIR += diff-mode.el
+    SUBDIR += diffsplit
     SUBDIR += diffstat
     SUBDIR += diffutils
     SUBDIR += docbook
