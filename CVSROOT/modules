@@ -963,6 +963,7 @@ cxconfig	src/sbin/i386/cxconfig
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
 cybervrml97	ports/graphics/cybervrml97
+cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
 cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
