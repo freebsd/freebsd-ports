@@ -91,8 +91,10 @@ share/locale/no/LC_MESSAGES/korganizer.mo
 share/locale/pl/LC_MESSAGES/korganizer.mo
 share/locale/fi/LC_MESSAGES/korganizer.mo
 share/locale/is/LC_MESSAGES/korganizer.mo
-share/icons/mini/korganizer.xpm
 share/icons/korganizer.xpm
+share/icons/mini/alarmd.xpm
+share/icons/mini/alarmd-disabled.xpm
+share/icons/mini/korganizer.xpm
 share/mimelnk/text/x-vcalendar.kdelnk
 share/applnk/Applications/korganizer.kdelnk
 @dirrm share/apps/korganizer/pics

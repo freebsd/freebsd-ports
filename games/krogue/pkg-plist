@@ -91,6 +91,7 @@ share/icons/krogue.xpm
 share/icons/kroguesg.xpm
 share/icons/mini/krogue.xpm
 share/icons/mini/kroguesg.xpm
+share/locale/fr/LC_MESSAGES/krogue.mo
 share/locale/pl/LC_MESSAGES/krogue.mo
 share/mimelnk/application/x-krogue.kdelnk
 @dirrm share/apps/krogue/pics

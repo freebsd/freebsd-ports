@@ -10,3 +10,4 @@ share/apps/kworldwatch/pics/world_dark.gif
 share/icons/kworldwatch.xpm
 share/icons/mini/kworldwatch.xpm
 @dirrm share/apps/kworldwatch/pics
+@dirrm share/apps/kworldwatch
