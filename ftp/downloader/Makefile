@@ -7,38 +7,35 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.30
+PORTVERSION=	2.0
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
-		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
-		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	nt-${PORTVERSION}
+		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/ \
+		http://www.scutty.co.uk/downloader/software/ \
+		ftp://ftp.uni-klu.ac.at/pub/linux/internet/downloader/
+DISTNAME=	d4x-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/main
+LIB_DEPENDS=	gdk_pixbuf:${PORTSDIR}/graphics/gdk-pixbuf \
+		intl.2:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_BISON=	yes
+USE_GLIB=	yes
 USE_GTK=	yes
+USE_ESOUND=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
-		OSTYPE="${OPSYS}" MAKE_CMD="${GMAKE}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+
 MAN1=		nt.1
 
-PORTDOCS=	ChangeLog LICENSE NAMES PLANS THANKS TODO TROUBLES \
-		FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr \
-		INSTALL INSTALL.de INSTALL.es INSTALL.fr INSTALL.gr \
-		INSTALL.he INSTALL.pl INSTALL.pt_BR \
-		README README.de README.en README.es README.gr \
-		README.pl README.pt_BR README.ru
-
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
-.endfor
-.endif
+post-patch:
+	@${PERL} -pi -e "s,Bison ,Bison,g ; \
+		s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${PERL} -pi -e 's,-not,\\!,g' ${WRKSRC}/share/Makefile.in
 
 .include <bsd.port.mk>

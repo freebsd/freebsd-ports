@@ -1,0 +1,20 @@
+--- DOC/Makefile.in.orig	Wed May  1 03:22:50 2002
++++ DOC/Makefile.in	Wed May  1 03:27:40 2002
+@@ -37,7 +37,7 @@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/doc/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..
+@@ -161,7 +161,7 @@
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+-	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
++	  inst=`echo $$inst`.$$ext; \
+ 	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+ 	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
