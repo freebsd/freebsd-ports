@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Displays free memory as a bargraph
 
-LIB_DEPENDS=	statgrab.4:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.5:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/freecolor
