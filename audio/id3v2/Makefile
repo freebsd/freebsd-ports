@@ -19,7 +19,7 @@ LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 MAN1=		id3v2.1
 
 do-install:
-                ${INSTALL_PROGRAM} ${WRKSRC}/id3v2 ${PREFIX}/bin
-                ${INSTALL_MAN} ${WRKSRC}/id3v2.1 ${PREFIX}/man/man1
+		${INSTALL_PROGRAM} ${WRKSRC}/id3v2 ${PREFIX}/bin
+		${INSTALL_MAN} ${WRKSRC}/id3v2.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
