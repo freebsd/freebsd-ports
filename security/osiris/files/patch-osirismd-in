@@ -1,5 +1,5 @@
---- src/install/freebsd/osirismd.in.old	Tue Jan 27 18:25:27 2004
-+++ src/install/freebsd/osirismd.in	Tue Jan 27 18:26:01 2004
+--- src/install/freebsd/osirismd.in.old	Wed Jul  7 15:43:07 2004
++++ src/install/freebsd/osirismd.in	Wed Jul  7 15:43:48 2004
 @@ -1,12 +1,12 @@
  #!/bin/sh
  

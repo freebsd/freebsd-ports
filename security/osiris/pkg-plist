@@ -4,6 +4,7 @@ sbin/osirisd
 %%OSIRISMD%%sbin/osirismd
 etc/rc.d/osirisd.sh.sample
 %%OSIRISMD%%etc/rc.d/osirismd.sh.sample
+osiris/configs/default.aix
 osiris/configs/default.bsdos
 osiris/configs/default.darwin
 osiris/configs/default.freebsd
@@ -14,6 +15,7 @@ osiris/configs/default.sunos
 osiris/configs/default.unix-generic
 osiris/configs/default.windows2000
 osiris/configs/default.windowsnt
+osiris/configs/default.windowsserver2003
 osiris/configs/default.windowsxp
 @dirrm osiris/configs
 @dirrm osiris
