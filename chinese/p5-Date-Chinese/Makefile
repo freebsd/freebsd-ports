@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	Date-Chinese
-PORTVERSION=	1.03
+PORTVERSION=	1.10
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Date
+MASTER_SITE_SUBDIR=	../by-authors/id/R/RB/RBOW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
 COMMENT=	Perl module to calculate dates in the Chinese calendar
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Date::Chinese.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-WRKDIST=	${WRKDIR}/Date-Chinese-1.3
-WRKSRC=		${WRKDIST}
 
 .include <bsd.port.mk>
