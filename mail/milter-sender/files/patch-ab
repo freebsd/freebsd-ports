@@ -10,7 +10,7 @@
 -./milter-sender help=1 >${MILTER_CF}.sample
 -chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
 -chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
-+./milter-sender help=1 | sed 's|^MilterSocket=.*|MilterSocket=unix:/var/milter-sender/socket|' >${MILTER_CF}.sample
++./milter-sender help=1 | sed 's|^MilterSocket=.*|MilterSocket=unix:/var/spool/milter-sender/socket|' >${MILTER_CF}.sample
 +[ ! -f ${MILTER_CF} ] && cp ${MILTER_CF}.sample ${MILTER_CF}
 +chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}*
 +chgrp ${GROUP} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}*

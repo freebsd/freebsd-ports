@@ -7,6 +7,7 @@
 
 PORTNAME=       milter-sender
 PORTVERSION=    0.50
+PORTREVISION=   1
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
 DISTFILES=      libsnert-1.31.tgz milter-sender-${PORTVERSION}.tgz
@@ -38,7 +39,7 @@ DOCS= CHANGES.TXT index.shtml style.css mailto.js \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+= --with-db --localstatedir=/var \
+CONFIGURE_ARGS+= --with-db --localstatedir=/var/spool \
 		 --enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
 pre-configure:
