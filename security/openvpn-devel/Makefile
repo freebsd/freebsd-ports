@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
