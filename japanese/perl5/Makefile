@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ja-perl5
-# Version required:	5.005_02
+# Version required:	5.005_03
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
 # $Id: Makefile,v 1.14 1999/03/01 09:38:14 shige Exp $
 #
 
-DISTNAME=	perl5.005_02
-PKGNAME=	ja-perl-5.005.02
+DISTNAME=	perl5.005_03
+PKGNAME=	ja-perl-5.005.03
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/src/5.0/ \
@@ -32,7 +32,7 @@ PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/authors/id/WATANABE/
-PATCHFILES=	jperl5.005_02-981225.pat.gz
+PATCHFILES=	jperl5.005_03-990503.pat.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -42,14 +42,14 @@ MAINTAINER=	shige@FreeBSD.ORG
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
-			-Dlibperl=libperl.so.${JPERL_SHLIBVER}
+			-Dlibperl=libperl.so.${PERL_SHLIBVER}
 
-JPERL_VERSION=	5.00502
+JPERL_VERSION=	5.00503
 JPERL_VER=	5.005
 .if ${PORTOBJFORMAT} == "aout"
-JPERL_SHLIBVER=	1.0
+PERL_SHLIBVER=	1.0
 .else
-JPERL_SHLIBVER=	1
+PERL_SHLIBVER=	1
 .endif
 PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER}
 
@@ -123,7 +123,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/jperl${JPERL_VERSION}
 	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/suidperl
 	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/jsuidperl
-	@${LN} -fs ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so.${JPERL_SHLIBVER} ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so
+	@${LN} -fs ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
