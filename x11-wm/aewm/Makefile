@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BROKEN=		"Does not install correctly"
-
+ALL_TARGET=	aewm
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
 		aesession \
@@ -33,10 +32,6 @@ WANT_GTK=	yes
 USE_GTK=yes
 .endif
 
-.if !defined(HAVE_GTK)
-ALL_TARGET=	aewm
-.endif
-
 do-patch:
 	${PERL} -pi -e 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
 		${WRKSRC}/aewm.h
@@ -46,6 +41,15 @@ do-patch:
 		${WRKSRC}/clients/Makefile
 	${PERL} -pi -e 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
 		${WRKSRC}/clients/lib/aeclients.h
+.endif
+
+post-build:
+.if defined(HAVE_GTK)
+	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+		${GTKCLIENTS} ${XAWCLIENTS}
+.else
+	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+		${XAWCLIENTS}
 .endif
 
 pre-install:
@@ -80,7 +84,6 @@ do-install:
 .for i in ${GTKCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
-.if defined(HAVE_GTK)
 	cd ${PREFIX}/bin && ${LN} -s aemenu-gtk aemenu && \
 		${LN} -s aepanel-gtk aepanel
 .else
@@ -88,7 +91,6 @@ do-install:
 		${LN} -s aepanel-xaw aepanel
 .endif
 	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample ${EXAMPLESDIR}
-.endif
 	${INSTALL_DATA} ${WRKSRC}/aewmrc.sample ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/aewmrc.sample ${PREFIX}/etc/aewmrc
 	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample \
