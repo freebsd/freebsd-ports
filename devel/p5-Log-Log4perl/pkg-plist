@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Log/Log4perl/Appender.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/DBI.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/File.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/Limit.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Screen.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Socket.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Synchronized.pm
