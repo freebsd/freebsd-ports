@@ -14,6 +14,8 @@ MASTER_SITES=	http://c64.org/~nr/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
+BROKEN=		"No listed MASTER_SITES carry the distfile"
+
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
