@@ -2,18 +2,19 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 2005/01/09 23:53:24 mezz7 Exp $
+# $Id: Makefile,v 1.20 2005/02/23 23:26:44 tmclau02 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An open source implementation of .NET Development Framework
+
+CONFLICTS=	mono-devel-*
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
