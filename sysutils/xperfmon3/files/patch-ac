@@ -1,5 +1,5 @@
 *** ../xperfmon++/xperfmon.c	Wed Jul 27 22:29:39 1994
---- ./xperfmon.c	Tue Jan 26 22:17:32 1999
+--- ./xperfmon.c	Tue Apr 10 22:01:25 2001
 ***************
 *** 1,6 ****
   /*
@@ -13,7 +13,7 @@
 !  * Enhancement and error correction for FreeBSD-3.X
 !  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 !  *
-!  *      $Id: xperfmon.c,v 3.5 1999/01/10 17:04:06 lkoeller Exp lkoeller $
+!  *      $Id: xperfmon.c,v 3.7 2001/04/10 20:01:01 lkoeller Exp lkoeller $
 !  */
 ! 
 ! /*
@@ -78,7 +78,7 @@
    */
   
 + #ifndef LINT
-+ static char rcsid[] = "$Id: xperfmon.c,v 3.5 1999/01/10 17:04:06 lkoeller Exp lkoeller $";
++ static char rcsid[] = "$Id: xperfmon.c,v 3.7 2001/04/10 20:01:01 lkoeller Exp lkoeller $";
 + #endif
 + 
 + #include "fbsd_vers.h"
@@ -103,12 +103,11 @@
   double testValue;
 ***************
 *** 94,99 ****
---- 110,122 ----
+--- 110,121 ----
        { NULL,           NULL      },
   };
   
 + /* LK!!! */
-+ char *info1 = "da1";
 + int  MIN_HEIGHT=78;
 + #define MIN_WIDTH 185
 + #define ADD_TO_TIMEH (11+(int)(appData.numGraphsOn*0.2))
@@ -118,7 +117,7 @@
   #define XtNcount "count"
   #define XtCCount "Count"
 ***************
-*** 101,156 ****
+*** 101,164 ****
   #define XtCFill "Fill"
   #define XtNfast "fast"
   #define XtCFast "Fast"
@@ -175,7 +174,15 @@
   
   #define DEF_INTERVAL	1
   #define DEF_COUNT	-1
---- 124,280 ----
+  #define MS_PER_SEC 1000
+  #define SLOWEST_INTERVAL 100
+  
+- static int defaultInterval = DEF_INTERVAL;
+- static int defaultCount = DEF_COUNT;
+  Widget perfmon[NUM_GRAPHS], timechart, labelBox;
+  
+  AppData appData;
+--- 123,285 ----
   #define XtCFill "Fill"
   #define XtNfast "fast"
   #define XtCFast "Fast"
@@ -333,6 +340,12 @@
   
   #define DEF_INTERVAL	1
   #define DEF_COUNT	-1
+  #define MS_PER_SEC 1000
+  #define SLOWEST_INTERVAL 100
+  
+  Widget perfmon[NUM_GRAPHS], timechart, labelBox;
+  
+  AppData appData;
 ***************
 *** 171,207 ****
   static XrmOptionDescRec optionDescList[] = {
@@ -372,7 +385,7 @@
       { "-lowinputAlarm", "*perfChartInput.lowAlarm", XrmoptionSepArg, NULL },
       { "-lowinputWarn", "*perfChartInput.lowWarn", XrmoptionSepArg, NULL },
       { "-highinputAlarm", "*perfChartInput.highAlarm", XrmoptionSepArg, NULL },
---- 295,392 ----
+--- 292,389 ----
   static XrmOptionDescRec optionDescList[] = {
       { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
       { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
@@ -473,7 +486,7 @@
       { "-highinputAlarm", "*perfChartInput.highAlarm", XrmoptionSepArg, NULL },
 ***************
 *** 217,222 ****
---- 402,438 ----
+--- 399,435 ----
       { "-highcollisionAlarm", "*perfChartCollision.highAlarm", XrmoptionSepArg, NULL },
       { "-highcollisionWarn", "*perfChartCollision.highWarn", XrmoptionSepArg, NULL },
   
@@ -557,7 +570,7 @@
       { XtNinterval, XtCInterval, XtRInt, sizeof(int),
   	  XtOffsetOf(AppData, interval), XtRImmediate, (caddr_t) DEF_INTERVAL },
       { XtNcount, XtCCount, XtRInt, sizeof(int),
---- 442,543 ----
+--- 439,540 ----
       { "-lownfsserverWarn", "*perfChartNFSServer.lowWarn", XrmoptionSepArg, NULL },
       { "-highnfsserverAlarm", "*perfChartNFSServer.highAlarm", XrmoptionSepArg, NULL },
       { "-highnfsserverWarn", "*perfChartNFSServer.highWarn", XrmoptionSepArg, NULL },
@@ -705,7 +718,7 @@
       { XtNnfsclientAdd, XtCNfsclientAdd, XtRBool, sizeof(Bool),
   	  XtOffsetOf(AppData, addG[NFS_CLT]), XtRImmediate, (XtPointer) NULL },
       { XtNnfsclientSub, XtCNfsclientSub, XtRBool, sizeof(Bool),
---- 548,684 ----
+--- 545,681 ----
   	  XtOffsetOf(AppData, debug), XtRImmediate, (caddr_t)NULL },
       { XtNfast, XtCFast, XtRBoolean, sizeof(Boolean),
   	  XtOffsetOf(AppData, fast), XtRImmediate, (XtPointer) NULL },
@@ -857,7 +870,7 @@
       fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
       fprintf(stderr, "options:\n");
       fprintf(stderr, "    [-display [{host}]:[{vs}]]\n");
---- 686,701 ----
+--- 683,698 ----
       { XtNnfsserverAdd, XtCNfsserverAdd, XtRBool, sizeof(Bool),
   	  XtOffsetOf(AppData, addG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
       { XtNnfsserverSub, XtCNfsserverSub, XtRBool, sizeof(Bool),
@@ -869,7 +882,7 @@
   usage()
   {
 + #if __FreeBSD_version >= 300000
-+     fprintf(stderr, "\nxperfmon++ V3.0 for FreeBSD-3.X\n");
++     fprintf(stderr, "\nxperfmon++ V3.1 for FreeBSD-3.X/4.X\n");
 + #endif
       fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
       fprintf(stderr, "options:\n");
@@ -894,7 +907,7 @@
       fprintf(stderr, "NOTE: The default is ALL graphs! A \"-\" option takes away from the default list.\n");
       fprintf(stderr, "      Any \"+\" option resets the default list to empty and then adds the option.\n\n");
       fprintf(stderr, "ALARMS:\n");
---- 712,761 ----
+--- 709,758 ----
       fprintf(stderr, "    [-fast]                (changes interval from seconds to milliseconds)\n");
       fprintf(stderr, "    [-immediate]           (background limit alarm color is based on current sample)\n");
       fprintf(stderr, "    [-fill]                (output filled graph instead of line graph)\n\n");
@@ -957,7 +970,7 @@
       fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
       exit(1);
   }
---- 765,785 ----
+--- 762,782 ----
       fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
       fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
       fprintf(stderr, "  Where \"*\" is one of the following:\n");
@@ -981,7 +994,7 @@
   }
 ***************
 *** 386,391 ****
---- 801,807 ----
+--- 798,804 ----
       time(&timeStamp);
       return;
   }
@@ -998,12 +1011,12 @@
       char eventString[60];
       switch (event->type) {
       case Expose:
---- 810,817 ----
+--- 807,814 ----
   Boolean *contin2disp;
   {
       Dimension neww, newh;
 !     Dimension hOverHead, boxH, timeH, newWidgetH;
-!     int i, window_size_changed;
+!     int i, window_size_changed=FALSE;
       char eventString[60];
       switch (event->type) {
       case Expose:
@@ -1022,7 +1035,7 @@
   	strcpy(eventString,"reparent");
   	break;
       case ConfigureNotify:
---- 820,837 ----
+--- 817,834 ----
   	strcpy(eventString,"expose");
   	break;
       case MapNotify:
@@ -1056,10 +1069,15 @@
       if ( appData.debug )
   	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
   	       (int)event->type, eventString,
---- 839,872 ----
+--- 836,874 ----
   	newh=event->xconfigure.height;
   	strcpy(eventString,"configure");
   	break;
++     default:
++ 	neww=MIN_WIDTH;
++ 	newh=w->core.height;
++ 	window_size_changed = TRUE;
++ 	break;
 +     }
   
 +     if ( neww < MIN_WIDTH ) {
@@ -1104,7 +1122,7 @@
   	if ( oldWidth == neww && oldHeight == newh ) return;
   
   	if ( appData.debug )
---- 874,880 ----
+--- 876,882 ----
   	       neww, newh);
   
       if ( event->type == ConfigureNotify ) {
@@ -1132,7 +1150,7 @@
   
       char *progname = argv[0];
       Bool foundAnAdd = FALSE;
---- 894,917 ----
+--- 896,918 ----
   	XFlush(XtDisplay(w));
   
       }
@@ -1149,7 +1167,6 @@
 +     /* LK!!! */
 +     Dimension timeH, newWidgetW, newWidgetH, hOverHead, boxH;
 +     unsigned int w, h;
-+     static char *da_str[] = {"da1 da2"};
 + 
       Arg arg;
       Pixmap icon_pixmap = None;
@@ -1169,14 +1186,10 @@
       if (argc != 1) usage();
   
       if ( appData.toplevel->core.depth == 1 )
---- 919,936 ----
+--- 920,933 ----
       int i;
       gprogname = progname;
   
-! 
-! /*    topNames[DA_MB] = da_str[0]; LK!!! */
-! 
-! 
 !     appData.toplevel = XtVaAppInitialize(&appData.app_context, "XPerfmon++",
 ! 				 optionDescList, XtNumber(optionDescList),
   				 &argc, argv,
@@ -1189,8 +1202,21 @@
   
       if ( appData.toplevel->core.depth == 1 )
 ***************
-*** 488,493 ****
---- 941,949 ----
+*** 488,500 ****
+      XtGetApplicationResources(appData.toplevel, &appData, resources,
+                                XtNumber(resources), NULL, 0 );
+  
+  /*check resources to make sure they are in range */
+  
+      if ( (int)appData.fast ) {
+  	short uid = getuid();
+  	short euid = geteuid();
+  	if ( appData.debug ) fprintf(stderr, "uid = %hd, euid = %hd\n", uid, euid);
+! 	if ( uid != 0 & euid != 0 ) {
+  	    fprintf(stderr, "xperfmon++: ERROR: Must be root to use \"-fast\"\n");
+  	    exit();
+  	}
+--- 938,953 ----
       XtGetApplicationResources(appData.toplevel, &appData, resources,
                                 XtNumber(resources), NULL, 0 );
   
@@ -1200,6 +1226,13 @@
   /*check resources to make sure they are in range */
   
       if ( (int)appData.fast ) {
+  	short uid = getuid();
+  	short euid = geteuid();
+  	if ( appData.debug ) fprintf(stderr, "uid = %hd, euid = %hd\n", uid, euid);
+! 	if ( (uid != 0) & (euid != 0) ) {
+  	    fprintf(stderr, "xperfmon++: ERROR: Must be root to use \"-fast\"\n");
+  	    exit();
+  	}
 ***************
 *** 512,518 ****
   
@@ -1209,7 +1242,7 @@
   	if ( appData.addG[i] ) {
   	    foundAnAdd = appData.graphOn[i] = TRUE;
   	    appData.numGraphsOn++;
---- 968,974 ----
+--- 965,971 ----
   
   /* build graphOn table */
   
@@ -1226,7 +1259,7 @@
   		appData.graphOn[i] = FALSE;
   	    else
   		appData.numGraphsOn++;
---- 976,982 ----
+--- 973,979 ----
       if ( !foundAnAdd ) {
   	for ( i=0; i<NUM_GRAPHS; i++ ) {
   	    appData.graphOn[i] = TRUE;
@@ -1258,7 +1291,7 @@
   				         XtNjustify, XtJustifyLeft,
   				         XtNinternalHeight, 0,
   					 XtNtop, XtChainTop,
---- 996,1047 ----
+--- 993,1044 ----
   		xperfmon_width, xperfmon_height));
   	XtSetValues(appData.toplevel, &arg, 1);
       }
@@ -1275,8 +1308,8 @@
   
 +     { /* LK!!! handle -geometry option correct, also small changes in handleResize */
 +       Window rwin;
-+       int x,y,px,py;
-+       unsigned int pw,ph,bw,d;
++       int x,y;
++       unsigned int bw,d;
 + 
 +       XtRealizeWidget(appData.toplevel);
 + 
@@ -1295,7 +1328,7 @@
 +       boxH = 22;
 +       timeH = 12;
 +       if (h > GRAPH_MIN_HEIGHT * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+ADD_TO_TIMEH))
-+ 	newWidgetH = (h - hOverHead - (boxH+7) - (timeH+ADD_TO_TIMEH) ) / appData.numGraphsOn;
++ 	newWidgetH = (h - hOverHead - (boxH+7) - (timeH+ADD_TO_TIMEH)) / appData.numGraphsOn;
 +       else
 + 	newWidgetH = GRAPH_MIN_HEIGHT;
 + 
@@ -1347,7 +1380,7 @@
 -     XtRealizeWidget(appData.toplevel);
       XtAppMainLoop(appData.app_context);
   }
---- 1053,1086 ----
+--- 1050,1085 ----
       for ( i=0; i<NUM_GRAPHS; i++ ) {
   	if ( appData.graphOn[i] ) {
   	    sprintf(hostname, "perfChart%s", widgetLabels[i]);
@@ -1381,4 +1414,6 @@
   		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
   
       XtAppMainLoop(appData.app_context);
++ 
++     exit(0);
   }

@@ -1,5 +1,5 @@
 *** ../xperfmon++/TimeChart.c	Wed Jul 27 22:29:31 1994
---- ./TimeChart.c	Sun Jan 10 18:08:06 1999
+--- ./TimeChart.c	Tue Apr 10 21:50:32 2001
 ***************
 *** 1,4 ****
 ! /* $XConsortium: TimeChart.c,v 1.20 91/05/24 17:20:42 converse Exp $ */
@@ -11,7 +11,7 @@
 !  * Enhancement and error correction for FreeBSD-3.X
 !  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 !  *
-!  *      $Id: TimeChart.c,v 1.4 1999/01/10 17:07:57 lkoeller Exp lkoeller $
+!  *      $Id: TimeChart.c,v 1.5 2001/04/10 19:50:19 lkoeller Exp lkoeller $
 !  */
   
   /***********************************************************
@@ -86,7 +86,7 @@
   ******************************************************************/
   
 + #ifndef LINT
-+ static char rcsid[] = "$Id: TimeChart.c,v 1.4 1999/01/10 17:07:57 lkoeller Exp lkoeller $";
++ static char rcsid[] = "$Id: TimeChart.c,v 1.5 2001/04/10 19:50:19 lkoeller Exp lkoeller $";
 + #endif
 + 
   #include <stdio.h>
@@ -169,6 +169,43 @@
   	(void) repaint_window ((TimeChartWidget)w, event->xgraphicsexpose.x,
   			       event->xgraphicsexpose.width);
 ***************
+*** 274,280 ****
+     TimeChartWidget w = (TimeChartWidget)client_data;
+     time_t value;
+     Display *dpy = XtDisplay(w);
+-    Window win = XtWindow(w);
+     int x,y;
+  
+  /*   if (w->time_chart.update > 0)
+--- 279,284 ----
+***************
+*** 342,353 ****
+  TimeChartWidget w;
+  int left, width;
+  {
+!     register int i, j;
+      int oldInterval;
+      register int next = w->time_chart.interval;
+      int scale = w->time_chart.scale;
+      int scalewidth = 0;
+!     int x, x1, x2, y, y1, y2;
+      char numstring[32];
+  #if 0
+      /* Compute the minimum scale required to graph the data, but don't go
+--- 346,357 ----
+  TimeChartWidget w;
+  int left, width;
+  {
+!     register int i;
+      int oldInterval;
+      register int next = w->time_chart.interval;
+      int scale = w->time_chart.scale;
+      int scalewidth = 0;
+!     int x, y;
+      char numstring[32];
+  #if 0
+      /* Compute the minimum scale required to graph the data, but don't go
+***************
 *** 364,388 ****
   
         SetPoints(w);
@@ -185,7 +222,7 @@
 !     
       if (XtIsRealized((Widget)w)) {
   	Display *dpy = XtDisplay(w);
-  	Window win = XtWindow(w);
+! 	Window win = XtWindow(w);
 ! 	
   	width += left - 1;
   	if (!scalewidth) scalewidth = width;
@@ -195,7 +232,7 @@
   	w->time_chart.next_x = 0;
   	w->time_chart.last_end = 0;
   	w->time_chart.num_timestamps = 0;
---- 369,393 ----
+--- 368,391 ----
   
         SetPoints(w);
   
@@ -211,7 +248,6 @@
 ! 
       if (XtIsRealized((Widget)w)) {
   	Display *dpy = XtDisplay(w);
-  	Window win = XtWindow(w);
 ! 
   	width += left - 1;
   	if (!scalewidth) scalewidth = width;
@@ -230,7 +266,7 @@
   	    w->time_chart.interval = oldInterval;
       }
       return(next);
---- 430,436 ----
+--- 428,434 ----
   		}
   	    }
   	}
@@ -238,6 +274,24 @@
   	    w->time_chart.interval = oldInterval;
       }
       return(next);
+***************
+*** 442,449 ****
+  TimeChartWidget w;
+  Boolean blit;
+  {
+!     double old_max;
+!     int left, i, j;
+      register int next = w->time_chart.interval;
+  
+      if (!XtIsRealized((Widget) w)) return;
+--- 445,451 ----
+  TimeChartWidget w;
+  Boolean blit;
+  {
+!     int j;
+      register int next = w->time_chart.interval;
+  
+      if (!XtIsRealized((Widget) w)) return;
 ***************
 *** 461,474 ****
       next = w->time_chart.interval = j;
@@ -254,7 +308,7 @@
   	       (unsigned int) w->core.width - j, (unsigned int)w->core.height,
   	       FALSE);
   
---- 466,479 ----
+--- 463,476 ----
       next = w->time_chart.interval = j;
   
       XCopyArea(XtDisplay((Widget)w), XtWindow((Widget)w), XtWindow((Widget)w),
@@ -281,7 +335,7 @@
   		   LABEL_ROOM, (unsigned int)w->core.height,
   		   FALSE);
   	for ( j=1; j < w->time_chart.num_timestamps; j++ ) {
---- 485,494 ----
+--- 482,491 ----
   	if ( j > 31 ) break;
   	w->time_chart.timestamp_end[j]--;
       }
@@ -301,7 +355,7 @@
       return;
   }
   
---- 496,502 ----
+--- 493,499 ----
   	}
   	w->time_chart.num_timestamps--;
       }
@@ -328,7 +382,7 @@
       DestroyGC(old, new_gc);
       CreateGC(w, new_gc);
   
---- 521,537 ----
+--- 518,534 ----
   */
       if ( w->time_chart.min_scale > (int) ((w->time_chart.max_value) + 1) )
         ret_val = TRUE;
@@ -355,7 +409,7 @@
       size = sizeof(XPoint) * (w->time_chart.scale - 1);
   
       points = (XPoint *) XtRealloc( (XtPointer) w->time_chart.points, size);
---- 559,565 ----
+--- 556,562 ----
   	w->time_chart.points = NULL;
   	return;
       }

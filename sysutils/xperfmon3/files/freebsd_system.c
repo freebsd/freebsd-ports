@@ -5,7 +5,7 @@
  *
  * Work has started on 7th Sep 1998 on Northsea island Föhr.
  *
- * $FreeBSD$
+ *      $Id: freebsd_system.c,v 3.8 2001/04/10 19:39:44 lkoeller Exp lkoeller $
  */
 
 /*
@@ -105,7 +105,7 @@
  */
 
 #ifndef LINT
-static char rcsid[] = "$FreeBSD$";
+static char rcsid[] = "$Id: freebsd_system.c,v 3.8 2001/04/10 19:39:44 lkoeller Exp lkoeller $";
 #endif
 
 #include "fbsd_vers.h"
@@ -121,7 +121,6 @@ static char rcsid[] = "$FreeBSD$";
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <sys/dkstat.h>
-#include <sys/buf.h>
 #include <sys/time.h>
 #include <vm/vm.h>
 #include <net/if.h>
@@ -139,6 +138,7 @@ static char rcsid[] = "$FreeBSD$";
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <strings.h>
 #include <unistd.h>
 #include <ctype.h>
@@ -223,8 +223,7 @@ static int interrupts, old_interrupts;
 static struct statinfo cur, last;
 static struct devstat_match *matches = NULL;
 static struct device_selection *dev_select = NULL;
-static devstat_select_mode select_mode;
-static int num_matches = 0, num_devices = 0;
+static int num_matches = 0, num_devices = 0, ncpu;
 static int num_selected = 0, num_selections = 0;
 static int num_devices_specified = 0, maxshowdevs;
 static long generation, select_generation;
@@ -254,23 +253,29 @@ static   void get_nfsstat(void);
 void
 sys_setup(void)
 {
+    int size;
+
     get_namelist(getbootfile(), _PATH_MEM);
 
+    /* To make calc of etime independent of number of CPUs */
+    size = sizeof(ncpu);
+    if (sysctlbyname("hw.ncpu", &ncpu, &size, NULL, 0) < 0)
+	ncpu = 1;
+
+    /* Initialize all stats, i.e. global variables */
     get_cpustat();
     get_load();
     get_ttystat();
+    interrupts=0;
     get_interrupts();
     init_diskio();
     get_diskio();
-
-    /*
-     * To force first scale of 'free swapspace' to 100%, we need this hack!
-     * Wee use a value < 0 cause it's not a valid value!
-     */
-    current_values[FREE_MEM] = -0.4 * SCALE_HACK;
-
     get_netstat();
-
+    /*
+     * To force first scale of 'free swapspace' to 100%, we need
+     * set it the first time by hand!
+     */
+    current_values[FREE_MEM] = 100 * SCALE_HACK;
     /*
      * Check if we have NFS in the kernel
      */
@@ -287,7 +292,7 @@ sys_setup(void)
 void
 update_stats(void)
 {
-    static int firsttime = 1;
+    static int firsttime = 1, i = FREE_MEM_INT;
     /*
      * For any stat we need etime, so get it!
      */
@@ -312,15 +317,18 @@ update_stats(void)
 	current_values[INTERRUPTS] = (interrupts - old_interrupts)/etime * SCALE_HACK;
     }
 
-    /*
-     * The first time called, we want to get 100%
-     * for the full scale of the graph!
-     */
-    if (perfmon[FREE_MEM] && !firsttime)
-	current_values[FREE_MEM] =
-	    (current_values[FREE_MEM] < 0 ? 100.0 * SCALE_HACK : get_swapspace() * SCALE_HACK);
-    else
-	--firsttime;
+    if (perfmon[FREE_MEM] && !firsttime) {
+	/* Calc swapspace only every FREE_MEM_INT intervals */
+	if ( i == FREE_MEM_INT ) {
+	    i = 1;
+	    current_values[FREE_MEM] = get_swapspace() * SCALE_HACK;
+	} else
+	    i++;
+    } else {
+	/* First time called we set freeswap to 100% to have full scale!*/
+	firsttime--;
+	current_values[FREE_MEM] = 100 * SCALE_HACK;
+    }
 
     if (perfmon[DISK_TRANSFERS]  || perfmon[DISK_MB] ||
 	perfmon[TAPE_TRANSFERS]  || perfmon[TAPE_MB] ||
@@ -341,6 +349,9 @@ update_stats(void)
 	    (packets.input  - old_packets.input)/etime * SCALE_HACK;
 	current_values[   OUTPUT_PACKETS] =
 	    (packets.output - old_packets.output)/etime * SCALE_HACK;
+	/* LK!!! DEBUG
+	   printf("input: %f   output: %f\n",current_values[INPUT_PACKETS]/SCALE_HACK,
+	   current_values[   OUTPUT_PACKETS]/SCALE_HACK); */
 	current_values[COLLISION_PACKETS] =
 	    (packets.collisions - old_packets.collisions)/etime * SCALE_HACK;
     }
@@ -402,7 +413,7 @@ get_namelist(kernel_name, memory_name)
     time(&now);
     nintv = now - boottime;
     if (nintv <= 0 || nintv > 60*60*24*365*10)
-	errx(1, "Time makes no sense ... namelist must be wrong", NULL);
+	errx(1, "Time makes no sense ... namelist must be wrong");
 }
 
 
@@ -442,6 +453,7 @@ get_cpustat(void)
 	etime = 1.0;
 
     etime /= (float)hz;
+    etime /= ncpu;
 
     /*
      * scale to percent
@@ -461,7 +473,7 @@ get_load(void)
     loadavg[0] = 0.0;
     if (getloadavg(loadavg, sizeof(loadavg)/sizeof(loadavg[0])) == -1) {
 	fprintf(stderr, "xperfmon++: getloadavg() returned no values\n");
-	return;
+	return(0.0);
     }
     return(loadavg[0]);
 }
@@ -490,12 +502,13 @@ get_interrupts(void)
     unsigned long *intrcnt;
     int nintr;
 
+    old_interrupts = interrupts;
+
     nintr = namelist[X_EINTRCNT].n_value - namelist[X_INTRCNT].n_value;
     if ((intrcnt = (unsigned long *)malloc((size_t) nintr)) == NULL)
 	err(1, "xperfmon++: malloc failed in get_interrupts()");
     nintr /= sizeof(long);
     kread(X_INTRCNT, intrcnt, (size_t)nintr*sizeof(long));
-    old_interrupts = interrupts;
     for (i = 0, interrupts = 0; i < nintr; i++)
 	interrupts += *(intrcnt + i);
     free(intrcnt);
@@ -521,7 +534,7 @@ get_nfsstat(void)
     size_t size = sizeof(nfsstats);
     if (sysctlbyname("vfs.nfs.nfsstats", &nfsstats, &size, (void *)0, (size_t)0) < 0) {
 #endif
-	fprintf(stderr, "xperfmon++: get_nfsstat(): Can?%t get NFS statistics with sysctl()\n");
+	fprintf(stderr, "xperfmon++: get_nfsstat(): Can't get NFS statistics with sysctl()\n");
 	return;
     }
 
@@ -619,7 +632,7 @@ get_swapspace(void)
     struct kvm_swap swapary[1];
 
     n = kvm_getswapinfo(kd, swapary, 1, 0);
-    if (n < 0)
+    if (n < 0 || swapary[0].ksw_total == 0)
 	return(0);
 
     percentfree = ((((double)swapary[0].ksw_total -
@@ -729,6 +742,7 @@ static void
 get_netstat(void)
 {
     off_t ifnetaddr;
+    char name[32], tname[16], *interface = '\0';
 
     if ((ifnetaddr = namelist[N_IFNET].n_value) != 0) {
 	struct ifnet ifnet;
@@ -748,9 +762,15 @@ get_netstat(void)
 	while (ifnetaddr || ifaddraddr) {
 	    if (ifaddraddr == 0) {
 		ifnetfound = ifnetaddr;
-		if(kvm_read(kd, ifnetaddr, (char *)&ifnet, sizeof ifnet) == -1)
+		/* Get stats and interface name to select a specific one (TODO) */
+		if(kvm_read(kd, ifnetaddr, (char *)&ifnet, sizeof ifnet) == -1 ||
+		   kvm_read(kd, (u_long)ifnet.if_name, (char *)tname, 16) ==  -1)
 		    return;
+		tname[15] = '\0';
 		ifnetaddr = (u_long)ifnet.if_link.tqe_next;
+		snprintf(name, 32, "%s%d", tname, ifnet.if_unit);
+                if (interface != 0 && (strcmp(name, interface) != 0))
+		    continue;
 		ifaddraddr = (u_long)ifnet.if_addrhead.tqh_first;
 	    }
 	    if (kvm_read(kd, ifaddraddr, (char *)&ifa, sizeof ifa) == -1) {
@@ -758,9 +778,9 @@ get_netstat(void)
 		continue;
 	    }
 	ifaddraddr = (u_long)ifa.ifa_link.tqe_next;
-
-	packets.input += ifnet.if_ipackets;
-	packets.output += ifnet.if_opackets;
+	/* Normalize number of packets, we count interface four timess */
+	packets.input += (ifnet.if_ipackets >> 2);
+	packets.output += (ifnet.if_opackets >> 2);
 	packets.collisions += ifnet.if_collisions;
 	}
     }
@@ -773,7 +793,7 @@ get_netstat(void)
 static void
 init_diskio(void)
 {
-    int retval, i;
+    int retval;
 
     cur.dinfo = (struct devinfo *) malloc(sizeof(struct devinfo));
     last.dinfo = (struct devinfo *) malloc(sizeof(struct devinfo));
@@ -823,11 +843,10 @@ init_diskio(void)
 static void
 get_diskio(void)
 {
-    register int i, dn;
+    register int dn;
     long double busy_seconds;
     long double transfers_per_second, mb_per_second;
     struct devinfo *tmp_dinfo;
-    int retval;
 
     tmp_dinfo = last.dinfo;
     last.dinfo = cur.dinfo;
@@ -890,7 +909,8 @@ get_diskio(void)
 	    errx(1, "xperfmon++: %s", devstat_errbuf);
 
 	if (strcmp(cur.dinfo->devices[di].device_name, "da") == 0 ||
-		strcmp(cur.dinfo->devices[di].device_name, "wd") == 0) {
+	    strcmp(cur.dinfo->devices[di].device_name, "ad") == 0 ||
+	    strcmp(cur.dinfo->devices[di].device_name, "wd") == 0) {
 #ifdef DEBUG
 	    printf( "da%d: %Lf %Lf\n", cur.dinfo->devices[di].unit_number, transfers_per_second, mb_per_second);
 #endif
@@ -904,8 +924,8 @@ get_diskio(void)
 	    diskstat.sa_trsf += transfers_per_second;
 	    diskstat.sa_mb   += mb_per_second;
 	}
-	if (strcmp(cur.dinfo->devices[di].device_name, "cd") == 0 ||
-		strcmp(cur.dinfo->devices[di].device_name, "acd") == 0) {
+	if (strcmp(cur.dinfo->devices[di].device_name, "cd")  == 0 ||
+	    strcmp(cur.dinfo->devices[di].device_name, "acd") == 0) {
 #ifdef DEBUG
 	    printf( "cd%d: %Lf %Lf\n", cur.dinfo->devices[di].unit_number, transfers_per_second, mb_per_second);
 #endif

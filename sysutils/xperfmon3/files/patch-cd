@@ -1,5 +1,5 @@
 *** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
---- ./xperfmon++.man	Sun Jan 10 21:28:14 1999
+--- ./xperfmon++.man	Tue Apr 10 22:04:19 2001
 ***************
 *** 1,5 ****
 ! ./" .TH XPERFMON++ 1 "19 January 1988" "X Version 11"
@@ -8,7 +8,7 @@
   xperfmon++ - X Window System-based performance monitor
   .SH SYNOPSIS
 --- 1,4 ----
-! .TH XPERFMON++ 1 "10 Oct 1998" "V3.0 for FreeBSD-3.X"
+! .TH XPERFMON++ 1 "10 Oct 1998" "V3.1 for FreeBSD-3.X/4.X"
   .SH NAME
   xperfmon++ - X Window System-based performance monitor
   .SH SYNOPSIS
@@ -149,7 +149,7 @@
   Graph \fISystem Interrupts\fP.
   .TP 26
 + .B \-freeswap | \+freeswap
-+ Graph \fIFree Swap in %\fP.
++ Graph \fIFree Swap in %\fP. Calculation is done only every 10 intervals.
 + .TP 26
 + .B \-diskxfr | \+diskxfr
 + Graph \fIDisk Transfers\fP per second.
@@ -580,7 +580,7 @@
   above address.
   .PP
   Enjoy!
---- 514,561 ----
+--- 514,566 ----
   If you like this program, or if you have difficulties, I would like to hear your comments.
   E-Mail me at rsmith@proteus.arc.nasa.gov.
   .PP
@@ -624,6 +624,11 @@
 + MBytes/s). Further bugs in autocalculating the window size dependent on the
 + number of graphs and rescaling the window fixed (hope this was the last time).
 + Output of Warn/Alarm values (press L|l in xperfmon++ window) corrected.
++ .PP
++ .I xperfmon++ V3.1 for FreeBSD 3.X/4.X (several bugfixes)
++ Calc etime correct for multi CPU machines, show disk stats for new
++ "ad" disk devices, count number of network in/out packets correctly,
++ get free swapspace only every 10 intervals to limit CPU usage.
 + .PP
 + Please E-Mail any bugs or comments with the subject
 + "xperfmon++ V3: ..." to Lars.Koeller@Uni-Bielefeld.DE or lkoeller@cc.FH-Lippe.DE.

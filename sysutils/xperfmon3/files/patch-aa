@@ -1,5 +1,5 @@
 *** ../xperfmon++/StripChart.c	Wed Jul 27 22:29:30 1994
---- ./StripChart.c	Sun Jan 10 21:14:40 1999
+--- ./StripChart.c	Tue Apr 10 21:49:59 2001
 ***************
 *** 1,4 ****
 ! /* $XConsortium: StripChart.c,v 1.20 91/05/24 17:20:42 converse Exp $ */
@@ -11,7 +11,7 @@
 !  * Enhancement and error correction for FreeBSD-3.X
 !  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 !  *
-!  *      $Id: StripChart.c,v 3.8 1999/01/10 20:14:30 lkoeller Exp lkoeller $
+!  *      $Id: StripChart.c,v 3.9 2001/04/10 19:49:34 lkoeller Exp lkoeller $
 !  */
   
   /***********************************************************
@@ -86,7 +86,7 @@
   ******************************************************************/
   
 + #ifndef LINT
-+ static char rcsid[] = "$Id: StripChart.c,v 3.8 1999/01/10 20:14:30 lkoeller Exp lkoeller $";
++ static char rcsid[] = "$Id: StripChart.c,v 3.9 2001/04/10 19:49:34 lkoeller Exp lkoeller $";
 + #endif
 + 
 + #include "fbsd_vers.h"
@@ -203,7 +203,11 @@
    *       going to hold off until then.
    */
 ***************
-*** 295,301 ****
+*** 291,301 ****
+  XtIntervalId *id;		/* unused */
+  {
+     PerfChartWidget w = (PerfChartWidget)client_data;
+-    XGCValues	myXGCV;
      double value, checkValue;
      Display *dpy = XtDisplay(w);
      Window win = XtWindow(w);
@@ -211,7 +215,10 @@
   /*   if (w->strip_chart.update > 0)
          w->strip_chart.interval_id =
          XtAppAddTimeOut(XtWidgetToApplicationContext( (Widget) w),
---- 324,330 ----
+--- 320,329 ----
+  XtIntervalId *id;		/* unused */
+  {
+     PerfChartWidget w = (PerfChartWidget)client_data;
      double value, checkValue;
      Display *dpy = XtDisplay(w);
      Window win = XtWindow(w);
@@ -232,7 +239,7 @@
      if (value > w->strip_chart.max_value) {
          w->strip_chart.max_value = value;
          if (w->strip_chart.max_value > w->strip_chart.scale) {
---- 340,350 ----
+--- 339,349 ----
   
      XtCallCallbacks( (Widget)w, XtNgetValue, (XtPointer)&value );
   
@@ -254,7 +261,7 @@
   
      w->strip_chart.valuedata[w->strip_chart.interval] = value;
      if (XtIsRealized((Widget)w)) {
---- 352,359 ----
+--- 351,358 ----
   	   w->strip_chart.interval = repaint_window(w, 0, (int) w->core.width);
          }
      }
@@ -325,7 +332,7 @@
   		   w->strip_chart.currentBG = w->strip_chart.okColor;
   	       }
   	   }
---- 361,420 ----
+--- 360,419 ----
   		       (int)(w->core.height * value) / w->strip_chart.scale);
   
   /* Check for high warnings and alarms */
@@ -409,7 +416,7 @@
   
   	if (w->strip_chart.points != NULL) {
   	w->strip_chart.points[0].x = w->strip_chart.interval;
---- 422,442 ----
+--- 421,441 ----
   
          if ( !w->strip_chart.fillRect ) {			  /* draw line graph */
   	   int y = (int) (w->core.height -
@@ -432,7 +439,7 @@
   	if (w->strip_chart.points != NULL) {
   	w->strip_chart.points[0].x = w->strip_chart.interval;
 ***************
-*** 434,440 ****
+*** 434,455 ****
   #define XDS(s) XDrawString(XtDisplay(w), XtWindow(w), \
   			   w->strip_chart.hiGC, x, y, s, strlen(s))
   
@@ -440,16 +447,13 @@
   repaint_window(w, left, width)
   PerfChartWidget w;
   int left, width;
---- 463,469 ----
-  #define XDS(s) XDrawString(XtDisplay(w), XtWindow(w), \
-  			   w->strip_chart.hiGC, x, y, s, strlen(s))
-  
-! static int
-  repaint_window(w, left, width)
-  PerfChartWidget w;
-  int left, width;
-***************
-*** 448,455 ****
+  {
+!     register int i, j;
+      register int next = w->strip_chart.interval;
+      int scale = w->strip_chart.scale;
+      int scalewidth = 0;
+!     int x, x1, x2, y, y1, y2;
+      char numstring[24];
   
       /* Compute the minimum scale required to graph the data, but don't go
          lower than min_scale. */
@@ -458,7 +462,21 @@
       if (scale < w->strip_chart.min_scale)
         scale = w->strip_chart.min_scale;
   
---- 477,486 ----
+--- 462,485 ----
+  #define XDS(s) XDrawString(XtDisplay(w), XtWindow(w), \
+  			   w->strip_chart.hiGC, x, y, s, strlen(s))
+  
+! static int
+  repaint_window(w, left, width)
+  PerfChartWidget w;
+  int left, width;
+  {
+!     register int i;
+      register int next = w->strip_chart.interval;
+      int scale = w->strip_chart.scale;
+      int scalewidth = 0;
+!     int x, y, y1;
+      char numstring[24];
   
       /* Compute the minimum scale required to graph the data, but don't go
          lower than min_scale. */
@@ -478,7 +496,7 @@
   	XClearWindow (XtDisplay (w), XtWindow (w));
   
       }
---- 492,498 ----
+--- 491,497 ----
   
         SetPoints(w);
   
@@ -512,7 +530,7 @@
   	x = LABEL_ROOM - XTW(numstring);
   	y = w->strip_chart.font_height - 4;
   	XDS(numstring);		/* draw max value */
---- 510,540 ----
+--- 509,539 ----
   /* draw titles */
   
   	if ( w->strip_chart.topLabel ) {
@@ -561,7 +579,7 @@
   		else	{
   		    /* If this is not the left most point, then draw a line
   		     * connecting this point with the one to its left.
---- 549,562 ----
+--- 548,561 ----
   
   		if ( i == left && left + 1 == width && width != next ) {
   		    y1 = (int) (w->core.height -
@@ -585,7 +603,7 @@
   			       i,	                                  /* x */
   			       y,					  /* y */
   			       (unsigned int) 1,			  /* width */
---- 573,579 ----
+--- 572,578 ----
   		int y = (int) (w->core.height -
   				(int)(w->core.height * w->strip_chart.valuedata[i]) /
   				w->strip_chart.scale);
@@ -602,7 +620,7 @@
   	for (i = 1; i < w->strip_chart.scale; i++) {
   	    j = i * ((int)w->core.height / w->strip_chart.scale);
   	    XDrawLine(dpy, win, w->strip_chart.hiGC, left , j, scalewidth, j);
---- 582,588 ----
+--- 581,587 ----
   
   	}
   
@@ -610,6 +628,25 @@
   	for (i = 1; i < w->strip_chart.scale; i++) {
   	    j = i * ((int)w->core.height / w->strip_chart.scale);
   	    XDrawLine(dpy, win, w->strip_chart.hiGC, left , j, scalewidth, j);
+***************
+*** 566,573 ****
+  PerfChartWidget w;
+  Boolean blit;
+  {
+!     double old_max, old_min;
+!     int left, i, j;
+      register int next = w->strip_chart.interval;
+  
+      if (!XtIsRealized((Widget) w)) return;
+--- 602,609 ----
+  PerfChartWidget w;
+  Boolean blit;
+  {
+!     double old_max;
+!     int i, j;
+      register int next = w->strip_chart.interval;
+  
+      if (!XtIsRealized((Widget) w)) return;
 ***************
 *** 582,598 ****
       bcopy((char *)(w->strip_chart.valuedata + next - j),
@@ -629,7 +666,7 @@
   	w->strip_chart.max_value = w->strip_chart.valuedata[i];
         if ( w->strip_chart.valuedata[i] < w->strip_chart.min_value )
   	  w->strip_chart.min_value = w->strip_chart.valuedata[i];
---- 619,645 ----
+--- 618,644 ----
       bcopy((char *)(w->strip_chart.valuedata + next - j),
   	  (char *)(w->strip_chart.valuedata), j * sizeof(double));
       next = w->strip_chart.interval = j;
@@ -671,7 +708,7 @@
       left = j;
       for (i = 1; i < w->strip_chart.scale; i++) {
         j = i * ((int)w->core.height / w->strip_chart.scale);
---- 658,669 ----
+--- 657,668 ----
   	      (unsigned int) j-LABEL_ROOM, (unsigned int) w->core.height,
   	      LABEL_ROOM, 0);
   
@@ -705,7 +742,7 @@
       DestroyGC(old, new_gc);
       CreateGC(w, new_gc);
   
---- 692,714 ----
+--- 691,713 ----
   				draw_graph, (XtPointer)w);
       }
   */
@@ -747,7 +784,7 @@
   	points[i - 1].y = HEIGHT / w->strip_chart.scale;
       }
   }
---- 737,753 ----
+--- 736,752 ----
   	w->strip_chart.points = NULL;
   	return;
       }
