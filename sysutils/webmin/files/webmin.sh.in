@@ -1,29 +1,28 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
+#
+# PROVIDE: webmin
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable webmin:
+#
+# webmin_enable="YES"
+#
 
-case $1 in
+webmin_enable="NO"
 
-	start)
-		LD_PRELOAD=/usr/lib/libpam.so
-		export LD_PRELOAD
-		if [ -x !!PREFIX!!/etc/webmin/start ]; then
-			!!PREFIX!!/etc/webmin/start >/dev/null
-			echo -n ' webmin'
-		fi
-		exit 0
-		;;
+. %%RC_SUBR%%
 
-	stop)
-		if [ -x !!PREFIX!!/etc/webmin/stop ]; then
-			!!PREFIX!!/etc/webmin/stop >/dev/null
-			echo -n ' webmin'
-		fi
-		exit 0
-		;;
+name=webmin
+rcvar=`set_rcvar`
 
-	*)
-		echo "usage: `basename $0` {start|stop}" >&2
-		exit 64
-		;;
-esac
+prefix=%%PREFIX%%
+procname=%%PERL5%%
+pidfile=/var/log/webmin/miniserv.pid
+required_dirs=${prefix}/etc/webmin
+command=${prefix}/etc/webmin/start
+
+load_rc_config ${name}
+run_rc_command "$1"

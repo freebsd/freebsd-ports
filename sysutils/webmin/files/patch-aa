@@ -1,23 +1,26 @@
---- setup.sh.orig	Mon Dec 13 12:57:41 1999
-+++ setup.sh	Tue Dec 14 10:20:32 1999
-@@ -33,12 +33,12 @@
+
+$FreeBSD$
+
+--- setup.sh.orig	Fri Jun  4 01:15:55 2004
++++ setup.sh	Sat Jun 19 19:24:25 2004
+@@ -89,12 +89,12 @@
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
  echo ""
 -printf "Config file directory [/etc/webmin]: "
-+printf "Config file directory [!!PREFIX!!/etc/webmin]: "
++printf "Config file directory [%%PREFIX%%/etc/webmin]: "
  if [ "$config_dir" = "" ]; then
  	read config_dir
  fi
  if [ "$config_dir" = "" ]; then
 -	config_dir=/etc/webmin
-+	config_dir=!!PREFIX!!/etc/webmin
++	config_dir=%%PREFIX%%/etc/webmin
  fi
  abspath=`echo $config_dir | grep "^/"`
  if [ "$abspath" = "" ]; then
-@@ -106,12 +106,12 @@
+@@ -199,12 +199,12 @@
  	fi
- else
+ 
  	# Ask for log directory
 -	printf "Log file directory [/var/webmin]: "
 +	printf "Log file directory [/var/log/webmin]: "
@@ -30,31 +33,53 @@
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -135,7 +135,9 @@
+@@ -232,7 +232,9 @@
  	echo "Webmin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
 -	if [ -x /usr/bin/perl ]; then
-+	if [ -x !!PERL5!! ]; then
-+		perldef=!!PERL5!!
++	if [ -x %%PERL5%% ]; then
++		perldef=%%PERL5%%
 +	elif [ -x /usr/bin/perl ]; then
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -313,11 +315,11 @@
- 		initsupp=`grep "^os_support=" $wadir/init/module.info | sed -e 's/os_support=//g' | grep $os_type`
- 		atboot=0
- 		if [ "$initsupp" != "" ]; then
+@@ -418,22 +420,6 @@
+ 		fi
+ 	fi
+ 
+-	# Ask whether to run at boot time
+-	if [ "$atboot" = "" ]; then
+-		initsupp=`grep "^os_support=" "$srcdir/init/module.info" | sed -e 's/os_support=//g' | grep $os_type`
+-		atboot=0
+-		if [ "$initsupp" != "" ]; then
 -			printf "Start Webmin at boot time (y/n): "
 -			read atbootyn
 -			if [ "$atbootyn" = "y" -o "$atbootyn" = "Y" ]; then
 -				atboot=1
 -			fi
-+			# printf "Start Webmin at boot time (y/n): "
-+			# read atbootyn
-+			# if [ "$atbootyn" = "y" -o "$atbootyn" = "Y" ]; then
-+			# 	atboot=1
-+			# fi
- 		else
- 			echo "Webmin does not support being started at boot time on your system."
- 		fi
+-		else
+-			echo "Webmin does not support being started at boot time on your system."
+-		fi
+-	fi
+-	makeboot=$atboot
+-
+ 	# Copy files to target directory
+ 	echo "***********************************************************************"
+ 	if [ "$wadir" != "$srcdir" ]; then
+@@ -535,6 +521,7 @@
+ 	fi
+ fi
+ 
++noperlpath="yes"
+ if [ "$noperlpath" = "" ]; then
+ 	echo "Inserting path to perl into scripts.."
+ 	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
+@@ -545,7 +532,6 @@
+ echo "Creating start and stop scripts.."
+ rm -f $config_dir/stop $config_dir/start $config_dir/restart
+ echo "#!/bin/sh" >>$config_dir/start
+-echo "echo Starting Webmin server in $wadir" >>$config_dir/start
+ echo "trap '' 1" >>$config_dir/start
+ echo "LANG=" >>$config_dir/start
+ echo "export LANG" >>$config_dir/start
