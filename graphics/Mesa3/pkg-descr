@@ -7,6 +7,6 @@ Those who want a licensed implementation of OpenGL should contact a licensed
 vendor.  This software is distributed under the terms of the GNU Library
 General Public License, see the LICENSE file for details.
 
-Note: Some examples are available under /usr/X11R6/share/Mesa.
+Note: Some examples are available under /usr/X11R6/share/examples/Mesa.
 
 paulo@isr.uc.pt
