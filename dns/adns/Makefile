@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.chiark.greenend.org.uk/users/ian/adns/
+MASTER_SITES=	ftp://ftp.chiark.greenend.org.uk/users/ian/adns/
 MASTER_SITE_SUBDIR=	adns
 
 MAINTAINER=	ports@FreeBSD.org
