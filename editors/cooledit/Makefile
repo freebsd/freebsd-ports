@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.13.2
+PORTVERSION=	3.14.1
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
@@ -32,5 +32,9 @@ pre-install:
 	fi
 	${INSTALL_SCRIPT} ${WRKSRC}/pixmap/coolicon.config \
 		${PREFIX}/etc/coolicon.config.dist
+
+post-install:
+	@${LN} -sf ${PREFIX}/share/cooledit/global.py \
+		${PREFIX}/share/coolicon/global.py
 
 .include <bsd.port.mk>

@@ -33,6 +33,7 @@ share/cooledit/syntax/lsm.syntax
 share/cooledit/syntax/mail.syntax
 share/cooledit/syntax/makefile.syntax
 share/cooledit/syntax/ml.syntax
+share/cooledit/syntax/mudela.syntax
 share/cooledit/syntax/nroff.syntax
 share/cooledit/syntax/pascal.syntax
 share/cooledit/syntax/perl.syntax
@@ -48,6 +49,7 @@ share/coolicon/cdrom_view.xpm
 share/coolicon/cooledit.xpm
 share/coolicon/dynamite.xpm
 share/coolicon/e.data
+share/coolicon/global.py
 share/coolicon/gmc.xpm
 share/coolicon/launch.xpm
 share/coolicon/lyx.xpm
