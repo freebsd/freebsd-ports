@@ -4,14 +4,13 @@
 pb=/var/portbuild
 
 . ${pb}/portbuild.conf
-
 . ${pb}/scripts/buildenv
 
 # packages for dependencies only
-dummyports="" #x11/XFree86"
+dummyports="x11/XFree86"
 
 # packages that take very long to build -- try to start building these first
-quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice games/hlserver-cs misc/heyu x11/gnome x11/kde2"
+quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice games/hlserver-cs misc/heyu x11/gnome x11/kde3"
 
 status=${pb}/status
 
@@ -21,7 +20,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-nobuild] [-nocdrom] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-nodummy] [-ftp] branch date"
+  echo "usage: [-restart] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] branch date"
   errorexit 1
 }
 
@@ -87,7 +86,7 @@ makeduds () {
   cp -p ${pb}/${branch}/duds ${pb}/${branch}/duds.old
 }
 
-# usage: setupnode pb scripts branch me node md5
+# usage: setupnode pb scripts branch me node md5 tmpdir
 setupnode () {
   pb=$1
   scripts=$2
@@ -95,11 +94,11 @@ setupnode () {
   me=$4
   node=$5
   md5=$6
+  tmpdir=$7
 
   echo "setting up of $node started at $(date)"
-  ssh -n ${node} mkdir -p ${scripts}
-  scp -p ${scripts}/setupnode ${node}:${scripts}
-  ssh -n ${node} ${scripts}/setupnode ${me} ${pb} ${branch} ${md5}
+  scp -p ${scripts}/setupnode ${node}:/tmp
+  ssh -n ${node} /tmp/setupnode ${me} ${pb} ${branch} ${tmpdir} ${md5}
   echo "setting up of $node ended at $(date)"
 }
 
@@ -115,8 +114,8 @@ restrictedlist () {
   echo "================================================"
   echo "restricted list generation started at $(date)"
   make ECHO_MSG=/usr/bin/true clean-restricted-list \
-    | sed -e "s./usr/ports/distfiles/./distfiles/.g" \
-          -e "s./usr/ports/./${branch}/.g" \
+    | sed -e "s./usr/ports/packages/.${pb}/${branch}/packages/.g" \
+      -e "s./usr/ports/.${pb}/${branch}/ports/.g" \
       > ${pb}/${branch}/restricted.sh
   echo "restricted list generation ended at $(date)"
   echo $(grep -c '^#' ${pb}/${branch}/restricted.sh) "ports in ${pb}/${branch}/restricted.sh"
@@ -159,7 +158,7 @@ generatemd5 () {
 
   echo "started generating CHECKSUM.MD5 at $(date)"
   cd ${pb}/${branch}/packages/All
-  find . -name '*.tgz' | sort | sed -e 's/^..//' | xargs md5 > CHECKSUM.MD5
+  find . -name '*.t[bg]z' | sort | sed -e 's/^..//' | xargs md5 > CHECKSUM.MD5
   echo "ended generating CHECKSUM.MD5 at $(date)"
 }
 
@@ -191,8 +190,9 @@ noportscvs=0
 norestr=0
 plistcheck=0
 nodummy=0
-nocdrom=0
+cdrom=0
 ftp=0
+restart=0
 
 # optional arguments
 while [ $# -gt 2 ]; do
@@ -206,8 +206,8 @@ while [ $# -gt 2 ]; do
     x-noduds)
       noduds=1
       ;;
-    x-nocdrom)
-      nocdrom=1
+    x-cdrom)
+      cdrom=1
       ;;
     x-nocvsup)
       nocvsup=1
@@ -230,6 +230,9 @@ while [ $# -gt 2 ]; do
     x-ftp)
       ftp=1
       ;;
+    x-restart)
+      restart=1
+      ;;
     *)
       usage
       ;;
@@ -240,66 +243,73 @@ done
 # mandatory arguments
 branch=$1
 date=$2
+
+buildenv ${pb} ${branch}
+
 if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 ]; then
   usage
 fi
 
 if [ "$norestr" = 1 ]; then
-  export NO_RESTRICTED=t
+  export NO_RESTRICTED=1
 fi
 
 if [ "$plistcheck" = 1 ]; then
-  export PLISTCHECK=t
+  export PLISTCHECK=1
 fi
 
 if [ "$nodummy" = 1 ]; then
-  export NODUMMY=t
+  export NODUMMY=1
 fi
 
-buildenv $branch
+if [ "$cdrom" = 1 ]; then
+  export FOR_CDROM=1
+fi
 
-cd ${PORTSDIR}
-if [ "$nocvsup" = 0 ]; then
-#  echo "================================================"
-#  echo "running cvsup"
-#  echo "================================================"
-#  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
+export DISTDIR=${pb}/${branch}/distfiles
+export PACKAGES=${pb}/${branch}/packages
+
+if [ "$restart" = 0 ]; then
   if [ "$noportscvs" = 0 ]; then
     echo "================================================"
-    echo "running cvs update on ${PORTSDIR}"
+    echo "running cvs update -PAd on ${PORTSDIR}"
     echo "================================================"
-    su ${user} -c 'cvs -qR update -d -P'
+    cd ${PORTSDIR}
+    su ${user} -c 'cvs -qR update -PAd'
     # XXX Check for conflicts
   fi
   date > ${pb}/cvsdone
+
+  echo "================================================"
+  echo "running cvs update on ${pb}/doc"
+  echo "================================================"
+  cd ${pb}/${branch}/doc
+  su ${user} -c 'cvs -qR update -PdA'
+  # XXX Check for conflicts
+  
+  if [ "$nocvs" = 0 ]; then
+    echo "================================================"
+    echo "running cvs update on ${SRCBASE}"
+    echo "================================================"
+    cd ${SRCBASE}
+    su ${user} -c 'cvs -qR update -Pd'
+    # XXX Check for conflicts
+  fi
+
   echo "================================================"
   echo "running make checksubdirs"
   echo "================================================"
+  cd ${PORTSDIR}
   make checksubdirs 
-  echo "================================================"
-  echo "running cvs update on /usr/opt/doc"
-  echo "================================================"
-  cd ${pb}/usr/opt/doc
-  su ${user} -c 'cvs -qR update -d -P'
-  # XXX Check for conflicts
-fi
-
-if [ "$nocvs" = 0 ]; then
-  echo "================================================"
-  echo "running cvs update on ${SRCBASE}"
-  echo "================================================"
-  cd ${SRCBASE}
-  su ${user} -c 'cvs -qR update -d -P'
-  # XXX Check for conflicts
-fi
-
-# this one not in background to check return status
-if [ "$noduds" = 0 ]; then
-  makeduds ${pb} ${scripts} ${branch}
-fi
-
-if [ "$noindex" = 0 ]; then
-  makeindex ${pb} ${scripts} ${branch} ${user} &
+  
+  # this one not in background to check return status
+  if [ "$noduds" = 0 ]; then
+    makeduds ${pb} ${scripts} ${branch}
+  fi
+  
+  if [ "$noindex" = 0 ]; then
+    makeindex ${pb} ${scripts} ${branch} ${user} &
+  fi
 fi
 
 md5=$(/sbin/md5 ${pb}/${branch}/tarballs/bindist.tar | awk '{print $4}')
@@ -307,99 +317,108 @@ echo "================================================"
 echo "setting up nodes"
 echo "================================================"
 for node in $(awk '{print $1}' ${pb}/mlist); do
-  setupnode ${pb} ${scripts} ${branch} ${me} ${node} ${md5} &
+  setupnode ${pb} ${scripts} ${branch} ${me} ${node} ${md5} ${scratchdir} &
   sleep 2
 done
 
-restrictedlist ${pb} ${scripts} ${branch} &
-sleep 2
-
-if [ "$nocdrom" = 0 ]; then
-  cdromlist ${pb} ${scripts} ${branch} &
+if [ "$restart" = 0 ]; then
+  restrictedlist ${pb} ${scripts} ${branch} &
+  sleep 2
+  
+  if [ "$cdrom" = 1 ]; then
+    cdromlist ${pb} ${scripts} ${branch} &
+  fi
 fi
-
+  
 wait
 
-checkindex ${pb} ${branch}
-
-echo "all preparation ended at $(date)"
-
-cd ${PORTSDIR}
-make parallel branch=${branch} > ${pb}/${branch}/Makefile
-
-if [ "$nodummy" = 0 ]; then
-  dummypkgs=""
-  for i in ${dummyports}; do
-    if [ -d $i ]; then
-      dummypkgs="${dummypkgs} $(cd $i; make package-name).tgz"
-    else
-      echo "dummy port directory \"$i\" does not exist -- skipping"
-    fi
-  done
-fi
-
-# hack to extend length of dependency chain to build quickports first
-for i in ${quickports}; do
-  if [ -d $i ]; then
-    quickpkg="$(cd $i; make package-name).tgz"
-    echo "all: dummy1-$quickpkg" >> ${pb}/${branch}/Makefile
-    echo "dummy1-$quickpkg: dummy2-$quickpkg" >> ${pb}/${branch}/Makefile
-    echo "dummy2-$quickpkg: dummy3-$quickpkg" >> ${pb}/${branch}/Makefile
-    echo "dummy3-$quickpkg: $quickpkg" >> ${pb}/${branch}/Makefile
-  else
-    echo "quick port directory \"$i\" does not exist -- skipping"
-  fi
-done
-
-cd ${pb}
-if [ "$nobuild" = 0 ]; then
-###  rm -rf bak/distfiles
-###  mv -f distfiles bak
-  mkdir -p ${branch}/distfiles
-  chown -R ${user} ${branch}/distfiles
-  cd ${pb}/${branch}/bak
-  rm -rf errors logs packages old-errors
-  cd ${pb}/${branch}
-  # need to preserve symlinks for packages but not for errorlogs
-  mv -f packages make.* tarballs/ports.tar.gz bak
-  cp -rp errors logs old-errors bak
-  rm -rf errors logs old-errors
-###delete old packages -- use when diskspace is scarce
-#  if cd bak/packages/All; then
-#    for i in *.tgz; do
-#      cp /dev/null $i
-#    done
-#  fi
-  shortdate=$(echo ${date} | sed -e 's/..$//')
-  cd ${pb}/${branch}
-  mkdir -p packages/All
-  mkdir -p ${pb}/archive/errorlogs
-  rm -rf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
-  mkdir -p ${pb}/archive/errorlogs/e.${branch}.${date}
-  ln -sf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/${branch}/errors
-  ln -sf e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
-  mkdir -p ${pb}/${branch}/errors/old-errors
-  rm -rf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
-  mkdir -p ${pb}/archive/errorlogs/a.${branch}.${date}
-  ln -sf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/${branch}/logs
-  ln -sf a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
-  chown -RL ${user} errors logs packages
-  echo "error logs in ${pb}/archive/errorlogs/e.${branch}.${date}"
-  cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/e.${branch}.${date}/cvsdone
-  cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/a.${branch}.${date}/cvsdone
-  cp -p ${pb}/${branch}/ports/INDEX-${branch} ${pb}/archive/errorlogs/e.${branch}.${date}/INDEX
-  cp -p ${pb}/${branch}/ports/INDEX-${branch} ${pb}/archive/errorlogs/a.${branch}.${date}/INDEX
+if [ "$restart" = 0 ]; then
+  checkindex ${pb} ${branch}
+  
+  cd ${PORTSDIR}
+  make parallel branch=${branch} > ${pb}/${branch}/Makefile
+  
   if [ "$nodummy" = 0 ]; then
-    for dir in ${dummyports}; do
-      cp -p tarballs/$(cd ${pb}/${branch}/ports/$dir; make package-name).tgz packages/All
+    dummypkgs=""
+    for i in ${dummyports}; do
+      if [ -d $i ]; then
+        dummypkgs="${dummypkgs} $(cd $i; make package-name)${PKGSUFFIX}"
+      else
+        echo "dummy port directory \"$i\" does not exist -- skipping"
+      fi
     done
   fi
+  
+  # hack to extend length of dependency chain to build quickports first
+  for i in ${quickports}; do
+    if [ -d $i ]; then
+      quickpkg="$(cd $i; make package-name)${PKGSUFFIX}"
+      echo "all: dummy1-$quickpkg" >> ${pb}/${branch}/Makefile
+      echo "dummy1-$quickpkg: dummy2-$quickpkg" >> ${pb}/${branch}/Makefile
+      echo "dummy2-$quickpkg: dummy3-$quickpkg" >> ${pb}/${branch}/Makefile
+      echo "dummy3-$quickpkg: $quickpkg" >> ${pb}/${branch}/Makefile
+    else
+      echo "quick port directory \"$i\" does not exist -- skipping"
+    fi
+  done
+  
+  cd ${pb}
+  if [ "$nobuild" = 0 ]; then
+    mkdir -p ${branch}/distfiles
+    chown -R ${user} ${branch}/distfiles
 
+    cd ${pb}/${branch}/bak
+    rm -rf errors logs packages old-errors
+
+    cd ${pb}/${branch}
+    # need to preserve symlinks for packages but not for errorlogs
+    mv -f packages make.* tarballs/ports.tar.gz bak
+
+    cp -rp errors logs old-errors bak
+    rm -rf errors logs old-errors
+
+    shortdate=$(echo ${date} | sed -e 's/..$//')
+
+    cd ${pb}/${branch}
+    mkdir -p packages/All
+    mkdir -p ${pb}/archive/errorlogs
+    rm -rf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
+    mkdir -p ${pb}/archive/errorlogs/e.${branch}.${date}
+    ln -sf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/${branch}/errors
+    ln -sf e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
+    mkdir -p ${pb}/${branch}/errors/old-errors
+    rm -rf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
+    mkdir -p ${pb}/archive/errorlogs/a.${branch}.${date}
+    ln -sf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/${branch}/logs
+    ln -sf a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
+    chown -RL ${user} errors logs packages
+
+    echo "error logs in ${pb}/archive/errorlogs/e.${branch}.${date}"
+    cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/e.${branch}.${date}/cvsdone
+    cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/a.${branch}.${date}/cvsdone
+    cp -p ${pb}/${branch}/ports/INDEX-${branch} ${pb}/archive/errorlogs/e.${branch}.${date}/INDEX
+    cp -p ${pb}/${branch}/ports/INDEX-${branch} ${pb}/archive/errorlogs/a.${branch}.${date}/INDEX
+
+    if [ "$nodummy" = 0 ]; then
+      for dir in ${dummyports}; do
+        pkgname=$(cd ${pb}/${branch}/ports/$dir; make package-name)${PKGSUFFIX}
+        if [ -f ${pb}/${branch}/tarballs/${pkgname} ]; then
+          cp -p ${pb}/${branch}/tarballs/${pkgname} packages/All
+        else
+          echo "Dummy package ${pkgname} does not exist!"
+        fi
+      done
+    fi
+  fi
+fi
+
+if [ "$nobuild" = 0 ]; then
   find /tmp -name 'make*' -mmin +60 | xargs rm -f
 
   count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist | sed -e 's/\..*$//')
   cd ${pb}/${branch}/packages/All
   ln -sf ../../Makefile .
+
   echo "================================================"
   echo "building packages (phase 1)"
   echo "================================================"
@@ -412,11 +431,13 @@ if [ "$nobuild" = 0 ]; then
   echo $(echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) - 2 | bc) "packages built"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
+
   cd ${pb}/${branch}
   if grep -qE '(ptimeout|pnohang): killing' make.0; then
     echo "The following port(s) timed out:"
     grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/' 
   fi
+
   ls -asFlrt ${pb}/${branch}/packages/All > ${pb}/${branch}/logs/ls-lrt-1
   cp -rp errors old-errors
   cd ${pb}/${branch}/old-errors
@@ -427,7 +448,7 @@ if [ "$nobuild" = 0 ]; then
   echo "setting up nodes"
   echo "================================================"
   for node in $(awk '{print $1}' ${pb}/mlist); do
-    setupnode ${pb} ${scripts} ${branch} ${me} ${node} ${md5} &
+    setupnode ${pb} ${scripts} ${branch} ${me} ${node} ${md5} ${scratchdir} &
     sleep 2
   done
 
@@ -446,42 +467,48 @@ if [ "$nobuild" = 0 ]; then
   echo "ended at $(date)"
   phase2end=$(date +%s)
   echo "phase 2 took $(date -u -j -r $(($phase2end - $phase2start)) | awk '{print $4}')"
+
   rm Makefile
-  if [ "$nodummy" = 0 ]; then
-    rm ${dummypkgs}
-  fi
+#  if [ "$nodummy" = 0 ]; then
+#    rm ${dummypkgs}
+#  fi
+
   ${pb}/scripts/chopindex ${pb}/${branch}/ports/INDEX-${branch} ${pb}/${branch}/packages > \
     ${pb}/${branch}/packages/INDEX
   echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
   echo $(cat ${pb}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
-  if [ "$norestr" = 0 ]; then
-    echo "deleting restricted ports"
-    sh ${pb}/${branch}/restricted.sh
-    ${pb}/scripts/chopindex ${pb}/${branch}/ports/INDEX ${pb}/${branch}/packages > \
-      ${pb}/${branch}/packages/INDEX
-    echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
-    echo $(cat ${pb}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
-    echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
-    echo $(echo $(du -sk ${pb}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
-  fi
+
+  # Always delete restricted packages/distfiles since they're published on the
+  # website
+  echo "deleting restricted ports"
+  sh ${pb}/${branch}/restricted.sh
+  ${pb}/scripts/chopindex ${pb}/${branch}/ports/INDEX ${pb}/${branch}/packages > \
+    ${pb}/${branch}/packages/INDEX
+  echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
+  echo $(cat ${pb}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
+  echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
+  echo $(echo $(du -sk ${pb}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
+
   rm -rf ${pb}/${branch}/bad
   mkdir -p ${pb}/${branch}/bad
   echo "checking packages"
-  for i in *.tgz; do
-    if ! gzip -t $i; then
+  for i in *${PKGSUFFIX}.; do
+    if ! ${PKGZIPCMD} -t $i; then
       echo "Warning: package $i is bad, moving to ${pb}/${branch}/bad"
       # the latest link will be left behind...
       mv $i ${pb}/${branch}/bad
       rm ../*/$i
     fi
   done
+
   cd ${pb}/${branch}
   if grep -qE '(ptimeout|pnohang): killing' make.1; then
     echo "The following port(s) timed out:"
     grep -E '(ptimeout|pnohang): killing' make.1 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
   fi
+
   cd ${pb}/${branch}/old-errors
   new=""
   for i in *.log; do
@@ -496,6 +523,7 @@ if [ "$nobuild" = 0 ]; then
   archiveports ${pb} ${branch} &
   generatemd5 ${pb} ${branch} &
   sleep 5
+
   echo "================================================"
   echo "new failures"
   echo "================================================"
@@ -505,17 +533,19 @@ if [ "$nobuild" = 0 ]; then
       echo -n " $(basename $i .log)"
     fi
   done
+
   if cd ${pb}/${branch}/bak/packages/All; then
     echo
     echo "================================================"
     echo "old packages"
     echo "================================================"
-    for i in *.tgz; do
+    for i in *${PKGSUFFIX}; do
       if [ ! -f ${pb}/${branch}/packages/All/$i ]; then
-        echo -n " $(basename $i .tgz)"
+        echo -n " $(basename $i ${PKGSUFFIX})"
       fi
     done
   fi
+
   if cd ${pb}/${branch}/bak/errors; then
     echo
     echo "================================================"
@@ -527,20 +557,23 @@ if [ "$nobuild" = 0 ]; then
       fi
     done
   fi
+
   echo
   echo "================================================"
   echo "new packages"
   echo "================================================"
   cd ${pb}/${branch}/packages/All
-  for i in *.tgz; do
+  for i in *${PKGSUFFIX}; do
     if [ ! -f ${pb}/${branch}/bak/packages/All/$i ]; then
-      echo -n " $(basename $i .tgz)"
+      echo -n " $(basename $i ${PKGSUFFIX})"
     fi
   done
   echo
   wait
+
   ls -asFlrt ${pb}/${branch}/packages/All > ${pb}/${branch}/logs/ls-lrt
   cp -p ${pb}/${branch}/make.[01] ${pb}/${branch}/logs
+
   echo "================================================"
   echo "copying distfiles"
   echo "================================================"
@@ -551,8 +584,10 @@ if [ "$nobuild" = 0 ]; then
   ${scripts}/dodistfiles ${pb}/${branch}/bak/distfiles
   rm -rf ${pb}/${branch}/bak/distfiles/.btmp
   rm -f ${pb}/${branch}/bak/distfiles/.done
+
   if [ "$branch" != "4-exp" ]; then
-    su ${user} -c "${scripts}/cpdistfiles ${branch} > ${pb}/${branch}/cpdistfiles.log 2>&1 </dev/null" &
+    # Currently broken - kk
+    #su ${user} -c "${scripts}/cpdistfiles ${branch} > ${pb}/${branch}/cpdistfiles.log 2>&1 </dev/null" &
     if [ "$ftp" = 1 ]; then
       echo "ended at $(date)"
       echo "================================================"
@@ -562,6 +597,7 @@ if [ "$nobuild" = 0 ]; then
     fi
   fi
 fi
+
 endtime=$(date +%s)
 echo "================================================"
 echo "all done at $(date)"
