@@ -48,7 +48,7 @@ CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-8* linux_base-debia*
 
 pre-install:
 	${ECHO_CMD} etc/resolv.conf > ${PLIST}
-	${TAR} tyf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} | cut -c3-100 \
+	${TAR} tyf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} | ${CUT} -c3-100 \
 		> ${WRKDIR}/list.txt
 	cd ${WRKDIR} && ${GREP} -v '/$$' ${WRKDIR}/list.txt >> ${PLIST}
 	${GREP} '/$$' ${WRKDIR}/list.txt | ${SED} -e "s:^:@dirrm :g" >> ${PLIST}

@@ -45,7 +45,7 @@ pre-install:
 		do ${ECHO_CMD} bin/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/../share/swm/pixmaps && \
-		${FIND} -s . -type f | cut -c3-999 | \
+		${FIND} -s . -type f | ${CUT} -c3-999 | \
 		${SED} -e 's:^:share/swm/pixmaps/:' >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
