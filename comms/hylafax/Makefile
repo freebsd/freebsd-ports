@@ -5,23 +5,12 @@
 # To Replace:		flexfax v2.3beta038special
 # Name changed from flexfax to hylafax by author of both: Sam Leffler.
 
-MAINTAINER=	jhs@FreeBSD.org
 DISTNAME=	hylafax-v3.0pl0
 PKGNAME=	hylafax-3.0.0
-MASTER_SITES=	ftp://ftp.sgi.com:sgi/fax/source/
 CATEGORIES+=	comms
-KEYWORDS+=	"fax modem"
-KEYWORDS+=	facsimile
 KEYWORDS+=	fax
-KEYWORDS+=	fax2ps
-KEYWORDS+=	faxalter
-KEYWORDS+=	faxcover
-KEYWORDS+=	faxd
-KEYWORDS+=	faxgetty
-KEYWORDS+=	faxmail
-KEYWORDS+=	faxrm
-KEYWORDS+=	faxstat
-KEYWORDS+=	sendfax
+MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
+EXTRACT_SUFX=	-tar.gz
 HAS_CONFIGURE=	yes
 
 INSTALL= "sh port/install.sh"
@@ -35,6 +24,8 @@ INSTALL= "sh port/install.sh"
 #	I would prefer to unset the INSTALL from the FreeBSD ports mechanism,
 #	but instead I reset it to what Hylafax wants.
 #	As this is still insufficient, See also patches/patch-ad.
+
+MAINTAINER=	jhs@FreeBSD.org
 
 .if !exists(patches/patch-ab)
 IS_INTERACTIVE= yes
@@ -69,18 +60,6 @@ FAXCOVER?= /etc/faxcover.ps
 #	as that wont work in `exists' below.
 
 # ------------------------------------------------------------------------------
-
-pre-fetch:
-	@# Ref. ${DISTNAME} ...
-	@echo "Warning - Original distribution is:"
-	@echo "	ftp://ftp.sgi.com/sgi/fax/source/hylafax-v3.0pl0-tar.gz"
-	@echo "but /usr/share/mk/bsd.port*mk expects something.tar.gz, and "
-	@echo "will not allow something-tar.gz, "
-	@#	Perhaps asami@freebsd.org can be persuaded to investigate ?
-	@echo -n "so until someone enhances"
-	@echo "FreeBSD make macros, do this:"
-	@echo -n "	cd /usr/ports/distfiles ; "
-	@echo "ln -s hylafax-v3.0pl0-tar.gz hylafax-v3.0pl0.tar.gz"
 
 post-configure:
 .if exists(${FAXCOVER})
