@@ -1,0 +1,11 @@
+--- doc/Makefile.in.bak	Mon Mar 29 21:57:04 2004
++++ doc/Makefile.in	Mon Mar 29 21:56:12 2004
+@@ -30,7 +30,7 @@
+ MANPAGES        = ircd.8
+ 
+ CONFS		= example.conf example.efnet.conf
+-DEFAULTCONFS	= ircd.motd kline.conf dline.conf
++DEFAULTCONFS	= ircd.motd.sample kline.conf.sample dline.conf.sample
+ 
+ SSL_LIBS	= @SSL_LIBS@
+ SSL_INCLUDES	= @SSL_INCLUDES@

@@ -85,6 +85,9 @@ CONFIGURE_ARGS+=	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#man8#man/man8#" ${WRKSRC}/doc/Makefile.in
+	@${MV} ${WRKSRC}/doc/ircd.motd ${WRKSRC}/doc/ircd.motd.sample
+	@${MV} ${WRKSRC}/doc/kline.conf ${WRKSRC}/doc/kline.conf.sample
+	@${MV} ${WRKSRC}/doc/dline.conf ${WRKSRC}/doc/dline.conf.sample
 
 pre-install:
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
