@@ -1,7 +1,7 @@
-# $Id: Makefile,v 1.1.1.1 1996/09/14 02:06:56 asami Exp $
+# $Id: Makefile,v 1.2 1996/09/17 22:53:37 chuckr Exp $
 #
 
-#    SUBDIR += celvis
+    SUBDIR += celvis
     SUBDIR += cxterm
 
 .include <bsd.port.subdir.mk>
