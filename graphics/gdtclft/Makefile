@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		gd.1:${PORTSDIR}/graphics/gd
+		gd.1:${PORTSDIR}/graphics/gd \
+		ttf.4:${PORTSDIR}/print/freetype
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	TCL_VER=8.2 MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}"
