@@ -1,0 +1,18 @@
+diff -uNr version.c
+--- version.c	Thu Nov 29 08:05:47 2001
++++ version.c	Thu Jan 17 14:10:55 2002
+@@ -77,6 +77,14 @@
+     "No HET BZIP2 support",
+ #endif
+ 
++#if defined(GNU_MTIO_SUPPORT)
++	"Using GNU tape handling",
++#elif defined(HAVE_MTIO_H)
++	"Using generic Unix tape handling",
++#else 
++	"No SCSI tape support",
++#endif
++
+ #if defined(CUSTOM_BUILD_STRING)
+     CUSTOM_BUILD_STRING,
+ #endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 

@@ -1,0 +1,11 @@
+diff -uNr hercules.h
+--- hercules.h	Wed Dec 19 07:18:17 2001
++++ hercules.h	Tue Jan 15 20:26:56 2002
+@@ -215,6 +215,7 @@
+         pthread_cond_timedwait((pcond),(plk),(timeout))
+ #define initialize_detach_attr(pat) \
+         pthread_attr_init((pat)); \
++		pthread_attr_setstacksize((pat),1048576); \
+         pthread_attr_setdetachstate((pat),PTHREAD_CREATE_DETACHED)
+ typedef void*THREAD_FUNC(void*);
+ #define create_thread(ptid,pat,fn,arg) \
