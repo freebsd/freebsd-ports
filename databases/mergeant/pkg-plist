@@ -1,11 +1,50 @@
 bin/mergeant
+lib/mergeant/plugins/libPnetaddr.so
+lib/mergeant/plugins/libPpicts.so
+lib/mergeant/plugins/libPsample.so
 share/gnome/application-registry/mergeant.applications
 share/gnome/applications/mergeant.desktop
+share/gnome/help/mergeant/C/c137.html
+share/gnome/help/mergeant/C/c220.html
+share/gnome/help/mergeant/C/c25.html
+share/gnome/help/mergeant/C/c254.html
+share/gnome/help/mergeant/C/c342.html
+share/gnome/help/mergeant/C/c372.html
+share/gnome/help/mergeant/C/c375.html
+share/gnome/help/mergeant/C/f20.html
+share/gnome/help/mergeant/C/images/env_form.jpg
+share/gnome/help/mergeant/C/images/env_grid.jpg
+share/gnome/help/mergeant/C/images/env_prop.jpg
+share/gnome/help/mergeant/C/images/framework.eps
+share/gnome/help/mergeant/C/images/framework.fig
+share/gnome/help/mergeant/C/images/framework.jpg
+share/gnome/help/mergeant/C/images/gas.gif
+share/gnome/help/mergeant/C/images/main.jpg
+share/gnome/help/mergeant/C/images/plugins_dt.jpg
+share/gnome/help/mergeant/C/images/plugins_objects.jpg
+share/gnome/help/mergeant/C/images/plugins_sum.jpg
+share/gnome/help/mergeant/C/images/properties.jpg
+share/gnome/help/mergeant/C/images/queryprop.jpg
+share/gnome/help/mergeant/C/images/queryprop_cond.jpg
+share/gnome/help/mergeant/C/images/queryprop_joins.jpg
+share/gnome/help/mergeant/C/images/queryprop_objects.jpg
+share/gnome/help/mergeant/C/images/queryprop_sql.jpg
+share/gnome/help/mergeant/C/images/rels.jpg
+share/gnome/help/mergeant/C/images/sysinfo.jpg
+share/gnome/help/mergeant/C/index.html
 share/gnome/help/mergeant/C/topic.dat
+share/gnome/help/mergeant/C/x110.html
+share/gnome/help/mergeant/C/x168.html
+share/gnome/help/mergeant/C/x210.html
+share/gnome/help/mergeant/C/x236.html
+share/gnome/help/mergeant/C/x245.html
+share/gnome/help/mergeant/C/x313.html
+share/gnome/help/mergeant/C/x32.html
+share/gnome/help/mergeant/C/x350.html
+share/gnome/help/mergeant/C/x66.html
+share/gnome/help/mergeant/C/x80.html
+share/gnome/help/mergeant/C/x92.html
 share/gnome/mergeant/dtd/mergeant.dtd
-share/gnome/mergeant/plugins/libPnetaddr.so
-share/gnome/mergeant/plugins/libPpicts.so
-share/gnome/mergeant/plugins/libPsample.so
 share/gnome/mime-info/mergeant.keys
 share/gnome/mime-info/mergeant.mime
 share/gnome/omf/mergeant/mergeant-C.omf
@@ -27,10 +66,12 @@ share/gnome/pixmaps/mergeant/query-view-query_16x16.png
 share/gnome/pixmaps/mergeant/query-view-table_16x16.png
 share/gnome/pixmaps/mergeant/query-view-view_16x16.png
 share/locale/am/LC_MESSAGES/mergeant.mo
+share/locale/ca/LC_MESSAGES/mergeant.mo
 share/locale/cs/LC_MESSAGES/mergeant.mo
 share/locale/da/LC_MESSAGES/mergeant.mo
 share/locale/de/LC_MESSAGES/mergeant.mo
 share/locale/es/LC_MESSAGES/mergeant.mo
+share/locale/fa/LC_MESSAGES/mergeant.mo
 share/locale/fr/LC_MESSAGES/mergeant.mo
 share/locale/it/LC_MESSAGES/mergeant.mo
 share/locale/ms/LC_MESSAGES/mergeant.mo
@@ -41,17 +82,20 @@ share/locale/pt/LC_MESSAGES/mergeant.mo
 share/locale/pt_BR/LC_MESSAGES/mergeant.mo
 share/locale/ru/LC_MESSAGES/mergeant.mo
 share/locale/sk/LC_MESSAGES/mergeant.mo
+share/locale/sr/LC_MESSAGES/mergeant.mo
+share/locale/sr@Latn/LC_MESSAGES/mergeant.mo
 share/locale/sv/LC_MESSAGES/mergeant.mo
 share/locale/tr/LC_MESSAGES/mergeant.mo
 share/locale/uk/LC_MESSAGES/mergeant.mo
 share/locale/vi/LC_MESSAGES/mergeant.mo
 @dirrm share/gnome/pixmaps/mergeant
 @dirrm share/gnome/omf/mergeant
-@dirrm share/gnome/mergeant/plugins
 @dirrm share/gnome/mergeant/dtd
 @dirrm share/gnome/mergeant
 @dirrm share/gnome/help/mergeant/C/stylesheet-images
 @dirrm share/gnome/help/mergeant/C/images
 @dirrm share/gnome/help/mergeant/C
 @dirrm share/gnome/help/mergeant
+@dirrm lib/mergeant/plugins
+@dirrm lib/mergeant
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mergeant/mergeant-C.omf 2>/dev/null || /usr/bin/true
