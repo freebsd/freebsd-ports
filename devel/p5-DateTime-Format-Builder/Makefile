@@ -1,0 +1,41 @@
+# New ports collection makefile for:	p5-DateTime-Format-Builder
+# Date created:	   2 july 2003
+# Whom:		   Mathieu Arnold <m@absolight.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	DateTime-Format-Builder
+PORTVERSION=	0.75
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DateTime
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	m@absolight.net
+COMMENT=	Create DateTime parser classes and objects
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
+		DateTime::Format::Builder::Parser::Dispatch.3 \
+		DateTime::Format::Builder::Parser::Regex.3 \
+		DateTime::Format::Builder::Parser::Strptime.3 \
+		DateTime::Format::Builder::Parser::generic.3 \
+		DateTime::Format::Builder::Tutorial.3 \
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>

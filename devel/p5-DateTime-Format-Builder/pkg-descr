@@ -1,0 +1,11 @@
+DateTime::Format::Builder creates DateTime parsers. Many string formats of
+dates and times are simple and just require a basic regular expression to
+extract the relevant information. Builder provides a simple way to do this
+without writing reams of structural code.
+
+Builder provides a number of methods, most of which you'll never need, or at
+least rarely need. They're provided more for exposing of the module's innards
+to any subclasses, or for when you need to do something slightly beyond what I
+expected. 
+
+WWW: http://datetime.perl.org/
