@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hpijs
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpinkjet
@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	`${IJS_CONFIG} --cflags`
+CPPFLAGS=	`${IJS_CONFIG} --cflags` -DHAVE_INTTYPES_H=1
 LDFLAGS=	`${IJS_CONFIG} --libs`
 
 post-patch:
@@ -34,9 +34,6 @@ post-patch:
 		 s| ijs_server.[cho]||g ; \
 		 s| ijs_exec_unix.[co]||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' ${WRKSRC}/platform.h
-.for file in global_types.h dj*.cpp phobos_cmaps.cpp
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|g' ${WRKSRC}/${file}
-.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
