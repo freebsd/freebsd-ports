@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.5.2
+PORTVERSION=	0.11.5.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/ \
 		http://128.113.139.111/~n/.naim_archive/0/11/
