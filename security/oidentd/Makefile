@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	oidentd
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
 
 USE_GMAKE=	yes
