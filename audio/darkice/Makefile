@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,13 +27,7 @@ CONFIGURE_ARGS=	--with-lame-prefix=${LOCALBASE} \
 MAN1=	darkice.1
 MAN5=	darkice.cfg.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 5000000
-USE_GCC=	3.1
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
