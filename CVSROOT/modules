@@ -2478,6 +2478,7 @@ glbiff		ports/mail/glbiff
 glbsp		ports/games/glbsp
 glchess		ports/games/glchess
 glclock		ports/x11-clocks/glclock
+gld		ports/mail/gld
 gle		ports/graphics/gle
 glean		ports/graphics/glean
 glens		ports/science/glens
