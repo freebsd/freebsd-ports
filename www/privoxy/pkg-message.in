@@ -1,0 +1,10 @@
+***********************************************************
+** Before running privoxy you must modify the file       **
+** %%PREFIX%%/etc/privoxy/config                         **
+**                                                       **
+** Start privoxy with:                                   **
+** %%PREFIX%%/sbin/privoxy %%PREFIX%%/etc/privoxy/config **
+**                                                       **
+** For documentation see:                                **  
+** %%PREFIX%%/share/doc/privoxy-manual or 'man privoxy'  **
+***********************************************************

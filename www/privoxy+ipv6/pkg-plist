@@ -1,3 +1,4 @@
+sbin/privoxy
 etc/privoxy/config
 etc/privoxy/default.action
 etc/privoxy/default.filter
@@ -35,22 +36,21 @@ etc/privoxy/templates/show-version
 etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
-privoxy-manual/actions-file.html
-privoxy-manual/configuration.html
-privoxy-manual/filter-file.html
-privoxy-manual/introduction.html
-privoxy-manual/startup.html
-privoxy-manual/appendix.html
-privoxy-manual/contact.html
-privoxy-manual/index.html
-privoxy-manual/quickstart.html
-privoxy-manual/templates.html
-privoxy-manual/config.html
-privoxy-manual/copyright.html
-privoxy-manual/installation.html
-privoxy-manual/seealso.html
-privoxy-manual/upgradersnote.html
-sbin/privoxy
+%%PORTDOCS%%share/doc/privoxy-manual/actions-file.html
+%%PORTDOCS%%share/doc/privoxy-manual/configuration.html
+%%PORTDOCS%%share/doc/privoxy-manual/filter-file.html
+%%PORTDOCS%%share/doc/privoxy-manual/introduction.html
+%%PORTDOCS%%share/doc/privoxy-manual/startup.html
+%%PORTDOCS%%share/doc/privoxy-manual/appendix.html
+%%PORTDOCS%%share/doc/privoxy-manual/contact.html
+%%PORTDOCS%%share/doc/privoxy-manual/index.html
+%%PORTDOCS%%share/doc/privoxy-manual/quickstart.html
+%%PORTDOCS%%share/doc/privoxy-manual/templates.html
+%%PORTDOCS%%share/doc/privoxy-manual/config.html
+%%PORTDOCS%%share/doc/privoxy-manual/copyright.html
+%%PORTDOCS%%share/doc/privoxy-manual/installation.html
+%%PORTDOCS%%share/doc/privoxy-manual/seealso.html
+%%PORTDOCS%%share/doc/privoxy-manual/upgradersnote.html
+%%PORTDOCS%%@dirrm share/doc/privoxy-manual
 @dirrm etc/privoxy/templates
 @dirrm etc/privoxy
-@dirrm privoxy-manual
