@@ -21,6 +21,8 @@ PATCHFILES=	openbsd28_${PORTVERSION}.patch
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
+FORBIDDEN=	Security Problem with PAM
+
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/ssh
 
