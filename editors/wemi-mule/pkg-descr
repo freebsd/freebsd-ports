@@ -40,8 +40,8 @@ WEMI, Library of MIME feature for GNU Emacs for mule.
 
 To use wemi, put the following setup into your ~/.emacs:
 
-	(require 'apel-setup)
-	(require 'flim-setup)
-	(require 'wemi-setup)
+	(require 'apel-setupel)
+	(require 'flim-setupel)
+	(require 'wemi-setupel)
 
 --- Porting by shige <shige@FreeBSD.ORG>

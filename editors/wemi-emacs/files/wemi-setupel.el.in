@@ -1,0 +1,8 @@
+;;
+;; @(#)wemi-setupel.el -- wemi emacs load-path setup elisp file.
+;;                                            --  by shige@FreeBSD.ORG
+
+(setq load-path (append '(
+	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/semi"
+ ) load-path))
+(provide 'wemi-setupel)

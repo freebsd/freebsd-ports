@@ -1,7 +1,5 @@
 #!/bin/sh
 
-TARGETS='wemi-setup.el'
-
 for i in ${TARGETS}
 do
 	if [ -f ${WRKDIR}/${i}.in ]; then
