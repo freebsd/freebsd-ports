@@ -1,0 +1,11 @@
+--- freecell/gdk-card-image/Makefile.in.orig	Sun Sep  6 00:43:03 1998
++++ freecell/gdk-card-image/Makefile.in	Sun Sep  6 00:43:17 1998
+@@ -128,7 +128,7 @@
+ libgdkcardimage_la_SOURCES = gdk-card-image.c
+ libgdkcardimageincludedir = $(includedir)/gdkcardimage
+ libgdkcardimageinclude_HEADERS = gdk-card-image.h
+-libgdkcardimage_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir) $(X_LIBS)
++libgdkcardimage_la_LDFLAGS = -version-info 0:30:0 -rpath $(libdir) $(X_LIBS)
+ libgdkcardimage_la_LIBADD = $(GTK_LIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
