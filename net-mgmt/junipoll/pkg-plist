@@ -1,3 +1,4 @@
 bin/junipoll
 %%SITE_PERL%%/HCInterfaceTemplate.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/junipoll/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/junipoll
