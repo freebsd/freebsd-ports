@@ -1,0 +1,10 @@
+bin/bnbt
+share/bnbt/footer.html
+share/bnbt/formats.txt
+share/bnbt/header.html
+share/bnbt/lesser.txt
+share/bnbt/link.txt
+share/bnbt/readme.txt
+share/bnbt/stealers.txt
+share/bnbt/users.txt
+@dirrm share/bnbt
