@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 15 22:17:51 1997
-+++ Makefile.in	Wed Oct  1 10:07:16 1997
+--- Makefile.in.orig	Wed Nov 18 14:54:53 1998
++++ Makefile.in		Tue Dec  1 13:10:35 1998
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,21 +11,16 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -94,11 +96,11 @@
+@@ -112,7 +114,7 @@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
 -LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
 +LIBS = -L${PREFIX}/lib -ltcl80 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
- # To change the compiler switches, for example to change from -O
- # to -g, change the following line:
--CFLAGS = -O
-+CFLAGS = @CFLAGS@
- 
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -134,7 +136,7 @@
+@@ -148,7 +150,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -34,19 +29,19 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -290,6 +292,11 @@
+@@ -311,6 +313,11 @@
  	@MAKE_LIB@
- 	$(RANLIB) @TK_LIB_FILE@
+ 	$(RANLIB) ${TK_LIB_FILE}
  
 +libtk80.a: ${OBJS}
 +	rm -f libtk80.a
 +	ar cr libtk80.a ${OBJS}
-+	$(RANLIB) libtk80.a
++	ranlib libtk80.a
 +
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -340,7 +347,7 @@
+@@ -365,7 +372,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -55,7 +50,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -354,13 +361,19 @@
+@@ -379,13 +386,19 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -76,7 +71,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -370,8 +383,18 @@
+@@ -395,8 +408,18 @@
  		else true; \
  		fi; \
  	    done;
@@ -97,7 +92,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -430,28 +453,28 @@
+@@ -455,28 +478,28 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
