@@ -3,15 +3,15 @@ bin/lftpget
 @unexec if cmp -s %D/etc/lftp.conf %D/etc/lftp.conf.sample; then rm -f %D/etc/lftp.conf; fi
 etc/lftp.conf.sample
 @exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
-%%PORTDOCS%%share/doc/lftp/COPYING
-%%PORTDOCS%%share/doc/lftp/FAQ
-%%PORTDOCS%%share/doc/lftp/NEWS
-%%PORTDOCS%%share/doc/lftp/README
-%%PORTDOCS%%share/doc/lftp/README.debug-levels
-%%PORTDOCS%%share/doc/lftp/README.modules
-%%PORTDOCS%%share/doc/lftp/THANKS
-%%PORTDOCS%%share/doc/lftp/TODO
-%%PORTDOCS%%share/doc/lftp/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.debug-levels
+%%PORTDOCS%%%%DOCSDIR%%/README.modules
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
 share/lftp/import-ncftp
 share/lftp/import-netscape
 share/locale/de/LC_MESSAGES/lftp.mo
@@ -25,5 +25,5 @@ share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
 share/locale/zh_TW/LC_MESSAGES/lftp.mo
-%%PORTDOCS%%@dirrm share/doc/lftp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/lftp
