@@ -1,5 +1,5 @@
 %%LOCALBASE%%/bin/audinfo
-%%LOCALBASE%%/bin/sndinfo
+%%LOCALBASE%%/bin/snd-info
 %%LOCALBASE%%/bin/sndplay
 %%LOCALBASE%%/bin/sndrecord
 %%LOCALBASE%%/bin/sndsine
