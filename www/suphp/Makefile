@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-checkuid
 CONFIGURE_ARGS+=	--disable-checkgid
 .endif
 ##   WITH_SETID_MODE: Mode to use for setting UID/GID.
-CONFIGURE_ARGS+=	--enable-setid=${WITH_SETID_MODE}
+CONFIGURE_ARGS+=	--enable-setid-mode=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
 
