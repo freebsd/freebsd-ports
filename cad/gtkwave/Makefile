@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkwave
 PORTVERSION=	2.0.0.p1
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/amulet/gtkwave/2.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
