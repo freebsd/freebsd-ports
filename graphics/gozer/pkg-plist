@@ -1,15 +1,15 @@
-bin/gom
-share/doc/gom/AUTHORS
-share/doc/gom/ChangeLog
-share/doc/gom/README
-share/doc/gom/TODO
-share/gom/fonts/20thcent.ttf
-share/gom/fonts/cinema.ttf
-share/gom/fonts/goodtime.ttf
-share/gom/fonts/joystix.ttf
-share/gom/fonts/morpheus.ttf
-share/gom/fonts/notepad.ttf
-share/gom/fonts/soulpapa.ttf
-@dirrm share/doc/gom
-@dirrm share/gom/fonts
-@dirrm share/gom
+bin/gozer
+share/doc/gozer/AUTHORS
+share/doc/gozer/ChangeLog
+share/doc/gozer/README
+share/doc/gozer/TODO
+share/gozer/fonts/20thcent.ttf
+share/gozer/fonts/cinema.ttf
+share/gozer/fonts/goodtime.ttf
+share/gozer/fonts/joystix.ttf
+share/gozer/fonts/morpheus.ttf
+share/gozer/fonts/notepad.ttf
+share/gozer/fonts/soulpapa.ttf
+@dirrm share/doc/gozer
+@dirrm share/gozer/fonts
+@dirrm share/gozer

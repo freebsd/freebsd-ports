@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Nov 10 08:52:39 2000
-+++ Makefile.in	Sun Nov 12 14:51:56 2000
+--- Makefile.in.orig	Fri Jan 26 18:40:12 2001
++++ Makefile.in	Sun Mar  4 23:10:07 2001
 @@ -78,7 +78,7 @@
- man_MANS = gom.1
+ man_MANS = gozer.1
  
  docs_DATA = README AUTHORS ChangeLog TODO
--docsdir = $(prefix)/doc/gom
-+docsdir = $(datadir)/doc/gom
+-docsdir = $(prefix)/doc/@PACKAGE@
++docsdir = $(datadir)/doc/@PACKAGE@
  
- EXTRA_DIST =  gom.spec gom.1 $(docs_DATA)
+ EXTRA_DIST =  gozer.spec gozer.1 $(docs_DATA)
  
