@@ -1,5 +1,5 @@
 --- libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
-+++ libjbig/Makefile	Mon Sep 14 16:45:39 1998
++++ libjbig/Makefile	Tue Sep 15 10:03:50 1998
 @@ -5,9 +5,9 @@
  CC = gcc
  
@@ -12,13 +12,17 @@
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,10 +18,21 @@
+@@ -18,10 +18,25 @@
  	ar rc libjbig.a jbig.o jbig_tab.o
  	ranlib libjbig.a
  
 +libjbig.so.1: jbig.so jbig_tab.so
 +	rm -f libjbig.so.1
++.if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
 +	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
++.else
++	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
++.endif
 +	ln -sf libjbig.so.1 libjbig.so
 +	
  jbig.o: jbig.c jbig.h
