@@ -8,7 +8,8 @@
 PORTNAME=	slush
 PORTVERSION=	0.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://violet.ibs.com.au/slush/files/ \
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/kris/ \
+		http://violet.ibs.com.au/slush/files/ \
 		ftp://www.dis.org/pub/Security/
 
 MAINTAINER=	shipley@dis.org
