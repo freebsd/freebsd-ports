@@ -1,0 +1,34 @@
+--- src/Cxx.cc.orig	Wed May  3 10:13:56 2000
++++ src/Cxx.cc	Tue Oct 10 12:50:19 2000
+@@ -491,10 +491,3 @@
+ 	if (Configuration.gnome_support)
+-	    f << "if test -r /usr/lib/gnomemmConf.sh ; then\n"
+-	    	 "  source /usr/lib/gnomemmConf.sh\n"
+-	    	 "elif test -r /opt/gnome/lib/gnomemmConf.sh ; then\n"
+-	    	 "  source /opt/gnome/lib/gnomemmConf.sh\n"
+-	    	 "elif test -r /usr/local/lib/gnomemmConf.sh ; then\n"
+-	    	 "  source /usr/local/lib/gnomemmConf.sh\n"
+-	    	 "else echo \"Cant find gnomemmConf.sh.\"\n"
+-	    	 "fi\n"
++	    f << "source %%X11BASE%%/etc/gnomemmConf.sh\n"
+ 	         "AC_SUBST(GNOMEMM_INCLUDEDIR)\n"
+@@ -540,17 +533,5 @@
+ 	if (Configuration.gnome_support)
+-	   f << "# Search for glade\\'s gnome.m4 directory (contains gnome macros).\n"
+-	        "# If you include gnome-common/macros in your application (recommended)\n"
+-	        "# also replace this autogen.sh.\n"
+-	        "if [ -r /opt/gnome/share/glade/gnome/gnome.m4 ]\n"
+-                "then \n"
+-                "  aclocal -I /opt/gnome/share/glade/gnome\n"
+-                "elif [ -r /usr/local/share/glade/gnome/gnome.m4 ]\n"
+-                "then\n"
+-                "  aclocal -I /usr/local/share/glade/gnome\n"
+-                "else\n"
+-                "  echo \"Can't find glade's gnome.m4 directory (gnome macros)\"\n"
+-                "  exit 2\n"
+-                "fi\n";
++	   f << "aclocal -I %%X11BASE%%/share/aclocal -I %%X11BASE%%/share/gnome/glade/gnome\n";
+ 	else
+-	   f << "aclocal\n";
++	   f << "aclocal -I %%X11BASE%%/share/aclocal\n";
+ 	f << 	"automake --add-missing --copy --gnu\n"

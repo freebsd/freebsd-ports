@@ -1,0 +1,17 @@
+--- src/glade--.cc.orig	Thu May  4 06:02:30 2000
++++ src/glade--.cc	Tue Oct 10 12:36:14 2000
+@@ -89,3 +89,3 @@
+ {  char buf[80];
+-   FILE *f=popen("gtk-config --version","r");
++   FILE *f=popen("%%GTK_CONFIG%% --version","r");
+    if (f)
+@@ -98,3 +98,3 @@
+             Configuration.gtk_version=v;
+-         else cerr << "gtk-config --version: strange result '" << buf << "'\n";
++         else cerr << "%%GTK_CONFIG%% --version: strange result '" << buf << "'\n";
+       }
+@@ -102,3 +102,3 @@
+    }
+-   else perror("gtk-config");
++   else perror("%%GTK_CONFIG%%");
+    f=popen("gtkmm-config --version","r");
