@@ -1615,7 +1615,6 @@ eclipse-lomboz	ports/java/eclipse-lomboz
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
-eclipse-xsd	ports/java/eclipse-xsd
 eclipseme	ports/java/eclipseme
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
