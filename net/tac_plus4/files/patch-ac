@@ -27,23 +27,3 @@
  contains the process id of the currently running daemon.  The port
  number is appended to the filename only if the port being used is not
  the default one of 49.
---- users_guide.orig	Sat Apr  3 08:03:48 1999
-+++ users_guide	Tue Nov  9 21:57:03 1999
-@@ -1368,7 +1368,7 @@
- and then send the daemon a SIGUSR1. This will cause it to reinitialize
- itself and re-read the configuration file.
- 
--On startup, tac_plus creates the file /etc/tac_plus.pid , if possible,
-+On startup, tac_plus creates the file /var/run/tac_plus.pid , if possible,
- containing its process id. If you invoke the daemon so that it listens
- on a non-standard port, the file created is /etc/tac_plus.pid.<port>
- instead, where <port> is the port number the daemon is listening on.
-@@ -1376,7 +1376,7 @@
- Assuming you are listening on the default port 49, something like the
- following should work:
- 
--# kill -USR1 `cat /etc/tac_plus.pid`
-+# kill -USR1 `cat /var/run/tac_plus.pid`
- 
- It's a good idea to check that the daemon is still running after
- sending it a SIGUSR1, since a syntactically incorrect configuration

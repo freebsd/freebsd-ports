@@ -7,6 +7,7 @@
 
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-eng.cisco.com/pub/tacacs/
 DISTNAME=	tac_plus.F4.0.4.alpha
@@ -36,6 +37,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
 CFLAGS+=	-DTAC_IOS_VERSION=${TAC_IOS_VERSION}
 .else
 CFLAGS+=	-DTAC_IOS_VERSION=11
+.endif
+
+.if exists(/usr/include/skey.h) && !defined(WITHOUT_SKEY)
+MAKE_ENV+=	WITH_SKEY=1
+.endif
+
+.if exists(/usr/include/opie.h) && !defined(WITHOUT_OPIE)
+MAKE_ENV+=	WITH_OPIE=1
 .endif
 
 do-install:
