@@ -146,10 +146,10 @@
 + 
 + install:
 + 	install -c libwrap.a ${PREFIX}/lib/libwrap.a
-+ 	install -c tcpd ${PREFIX}/libexec/tcpd
-+ 	install -c tcpdchk ${PREFIX}/sbin/tcpdchk
-+ 	install -c tcpdmatch ${PREFIX}/sbin/tcpdmatch
-+ 	install -c safe_finger ${PREFIX}/bin/safe_finger
++ 	install -cs tcpd ${PREFIX}/libexec/tcpd
++ 	install -cs tcpdchk ${PREFIX}/sbin/tcpdchk
++ 	install -cs tcpdmatch ${PREFIX}/sbin/tcpdmatch
++ 	install -cs safe_finger ${PREFIX}/bin/safe_finger
 + 	install -c tcpd.8 ${PREFIX}/man/man8/tcpd.8
 + 	install -c tcpdchk.8 ${PREFIX}/man/man8/tcpdchk.8
 + 	install -c tcpdmatch.8 ${PREFIX}/man/man8/tcpdmatch.8
