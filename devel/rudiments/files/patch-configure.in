@@ -1,0 +1,13 @@
+--- configure.in.orig	Fri Jun 29 14:14:19 2001
++++ configure.in	Mon Jul  2 16:32:29 2001
+@@ -112,8 +112,8 @@
+ VERSION="0.20"
+ AC_SUBST(VERSION)
+ AC_DEFINE_UNQUOTED(VERSION,"$VERSION",Version)
+-CXXFLAGS=""
+-CFLAGS=""
++#CXXFLAGS=""
++#CFLAGS=""
+ AC_PREFIX_DEFAULT(/usr/local/firstworks)
+ 
+ dnl Output files.

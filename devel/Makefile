@@ -466,6 +466,7 @@
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-unit
+    SUBDIR += rudiments
     SUBDIR += rvm
     SUBDIR += scandoc
     SUBDIR += sdcc

@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Wed Jun 20 13:57:31 2001
++++ Makefile.in	Mon Jul  2 16:52:51 2001
+@@ -16,6 +16,7 @@
+ install:
+ 	cd src; $(MAKE) install
+ 	cd include; $(MAKE) install
++doc-install:
+ 	cd doc; $(MAKE) install
+ 
+ uninstall:
