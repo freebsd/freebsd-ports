@@ -10,10 +10,10 @@ PORTNAME=	jpilot
 PORTVERSION=	0.99.6
 PORTREVISION=	1
 CATEGORIES+=	palm comms
-MASTER_SITES=	http://downloads.jpilot.org/
+MASTER_SITES=	http://jpilot.org/
 
 MAINTAINER?=	varju@webct.com
-COMMENT?=	Desktop Organizer Software for the Palm Pilot
+COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
 		intl.5:${PORTSDIR}/devel/gettext
@@ -24,7 +24,7 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include
-CONFIGURE_ENV+= CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
 MAN1=		jpilot-sync.1 jpilot.1
 
