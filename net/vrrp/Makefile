@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.vrrp.net/pub/vrrpd/ \
 		ftp://ftp.tecc.co.uk/pub/vrrpd/
 
-MAINTAINER=	minosh@engineer.com
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"The maintainer considers this an incomplete implementation of RFC2338"
 
