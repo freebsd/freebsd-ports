@@ -23,6 +23,7 @@
     SUBDIR += cronolog
     SUBDIR += daemontools
     SUBDIR += daemontools53
+    SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += diskusage
     SUBDIR += doconfig
