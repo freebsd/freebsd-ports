@@ -8,7 +8,8 @@
 
 DISTNAME=	idled-1.16
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.cs.hope.edu/pub/idled/
+MASTER_SITES=	http://www.darkwing.com/idled/download/	\
+				ftp://ftp.cs.hope.edu/pub/idled/
 
 MAINTAINER=     andrew@ugh.net.au
 
