@@ -12,6 +12,5 @@ MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 EXTRACT_SUFX=	.tar.gz
 PREFIX=		/usr/X11R6
 PKG_CMD=	pkg_create -N
-INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

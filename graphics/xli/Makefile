@@ -12,6 +12,5 @@ MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.gz
 NO_WRKSUBDIR=	yes
 # PKG_CMD=	pkg_create -N
-INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
