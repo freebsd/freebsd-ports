@@ -1,0 +1,261 @@
+--- gimprc.in~	Mon Nov 18 09:56:00 1996
++++ gimprc.in	Mon Nov 18 09:55:52 1996
+@@ -0,0 +1,258 @@
++# Lines that start with a '#' are comments.
++# Blank lines are ignored.
++
++# Set the temporary storage directory...files will appear here
++# during the course of running the gimp.  Most files will disappear
++# when the gimp exits, but some files are likely to remain,
++# such as working palette files, so it is best if this directory
++# not be one that is shared by other users or is cleared on machine
++# reboot such as /tmp.
++temp-path "~/.gimp/tmp"
++
++# Set the brush search path...this path will be searched for valid
++#  brushes at startup.
++brush-path "~/.gimp/brushes:@prefix@/share/gimp/brushes"
++
++# Specify a default brush. If none is specified it defaults to the
++#  "1circle.gbr" brush which is just a single pixel sized brush.
++#  The brush is searched for in the brush path.
++default-brush "19fcircle.gbr"
++
++# Set the pattern search path...this path will be searched for valid
++#  patterns at startup.
++pattern-path "~/.gimp/patterns:@prefix@/share/gimp/patterns"
++
++# Specify a default pattern.
++#  The pattern is searched for in the specified pattern paths.
++default-pattern "wood2.pat"
++
++# Set the palette search path...this path will be searched for valid
++#  palettes at startup.
++palette-path "~/.gimp/palettes:@prefix@/share/gimp/palettes"
++
++# Specify a default palette.
++#  The pattern is searched for in the specified pattern paths.
++default-palette "Default"
++
++# Set the gradient search path...this path will be searched for valid
++#  gradients at startup.
++gradient-path "~/.gimp/gradients:@prefix@/share/gimp/gradients"
++
++# Specify a default gradient.
++#  The gradient is searched for in the specified gradient paths.
++default-gradient "German_flag_smooth"
++
++# Set the plug-in search path...this path will be searched for
++#  plug-ins when the plug-in is run.
++plug-in-path "~/.gimp/plug-ins:@prefix@/libexec/gimp/plug-ins"
++
++# Speed of marching ants in the selection outline
++#  this value is in milliseconds
++#  (less time indicates faster marching)
++marching-ants-speed 300
++
++# Set the number of operations kept on the undo stack
++undo-levels 5
++
++# Set the color-cube resource for dithering on 8-bit displays
++#  The 3 values stand for Shades of red, green, and blue
++#  Multiplying the # of shades of each primary color yields
++#  the total number of colors that will be allocated from the
++#  gimp colormap.  This number should not exceed 256.  Most of the
++#  colors remaining after the allocation of the colorcube
++#  will be left to the system palette in an effort to reduce
++#  colormap "flashing".
++color-cube 6, 6, 4
++
++# Install a GIMP colormap by default -- only for 8-bit displays
++# install-colormap
++
++# Specify that marching ants for selected regions will be drawn
++#  with colormap cycling as oposed to redrawing with different stipple masks
++#  this color cycling option works only with 8-bit displays
++# colormap-cycling
++
++# Tools such as fuzzy-select and bucket fill find regions based on a
++#  seed-fill algorithm.  The seed fill starts at the intially selected
++#  pixel and progresses in all directions until the difference of pixel
++#  intensity from the original is greater than a specified threshold
++#  ==> This value represents the default threshold
++default-threshold 15
++
++# There is always a tradeoff between memory usage and speed.  In most
++#  cases, the GIMP opts for speed over memory.  However, if memory is
++#  a big issue, set stingy-memory-use
++# stingy-memory-use
++
++# When zooming into and out of images, this option enables the
++#  automatic resizing of windows
++# allow-resize-windows
++
++# Context-dependent cursors are cool.  They are enabled by default.
++#  However, they require overhead that you may want to do without.
++#  Uncomment this line to disable them.
++# no-cursor-updating
++
++# Layer preview sizes:
++#  None:    no previews in layers dialog/layer selector
++#  Small:   32x32
++#  Medium:  64x64
++#  Large:   128x128
++#  #:       #x#
++preview-size Medium
++
++# Controlling ruler visibility
++#  The default behavior is for rulers to be ON
++#  This can also be toggled with the View->Show Rulers command or shift+control+r
++# dont-show-rulers
++
++# Disable auto saving
++#  Just uncomment the line below...
++# dont-auto-save
++
++# Set the gamma correction values for the display
++#  1.0 corresponds to no gamma correction.  For most displays,
++#  gamma correction should be set to between 2.0 and 2.6
++#  Run the utility "gamma_correct" to determine appropriate values
++#  for your display.
++#
++# One important item to keep in mind:  Many images that you might
++#  get from outside sources will in all likelihood already be
++#  gamma-corrected.  In these cases, the image will look washed-out
++#  if the gimp has gamma-correction turned on.  If you are going
++#  to work with images of this sort, turn gamma correction off
++#  by removing this line, or setting the values to 1.0.
++#  gamma-correction 1.0
++#  gamma-correction 2.0
++#                ___
++gamma-correction 1.6
++
++# Set the manner in which transparency is displayed in images
++#  Transparency type can be one of:
++#    0: Light Checks
++#    1: Mid-Tone Checks
++#    2: Dark Checks
++#    3: White Only
++#    4: Gray Only
++#    5: Black Only
++#  Check size can be one of:
++#    0: Small
++#    1: Medium
++#    2: Large
++transparency-type 1
++transparency-size 2
++
++# Notify the GIMP of the available file plug-ins.
++# The format of the line is as follows:
++#  file-plug-in <image types> <plug-in name> <plug-in title> <extensions>
++# The `image types' argument specifies what types of images the
++#  plug-in can save. It is a 3 digit number where each digit is 0 or
++#  1. The digits correspond to `indexed images', `grayscale images'
++#  and `rgb images' respectively. For example, the "jpeg" file plug-in
++#  can save rgb and grayscale images but not indexed color, so the
++#  image types argument is 011.
++# The `plug-in name' is the name of the plug-in program.
++# The `plug-in title' is the title of the program is it will appear
++#  from the GIMP. This will most likely be the name of the plug-in.
++# The `extensions' are a comma separated string of extensions. These
++#  are used by the GIMP to map file names to images.
++#  Note: case does not matter for extensions.
++
++file-plug-in  jpeg	011	"jpeg"		"jpg,jpeg"
++file-plug-in  png	111	"png"		"png"
++file-plug-in  gif	110	"gif"		"gif"
++file-plug-in  tiff	111	"tiff"		"tiff,tif"
++file-plug-in  tga	111	"tga"		"tga,targa"
++file-plug-in  gbrush	010	"brush"		"gbr"
++file-plug-in  gpattern	010	"pattern"	"pat,gpat"
++file-plug-in  gicon	010	"gicon"		"gic,gico"
++file-plug-in  xpm	110	"xpm"		"xpm"
++file-plug-in  pnm	111	"pnm"		"pgm,ppm,pbm"
++file-plug-in  matlab	010	"matlab"	"m"
++file-plug-in  yuv411    001     "yuv"           "yuv"
++
++# Notify the GIMP of plug-ins that will exist in the `plug-ins' menu.
++# The format of the line is as follows:
++#  plug-in <plug-in name> <menu location> <accelerator>
++# The `plug-in name' is the name of the plug-in program.
++# The `menu location' is the item name and location in the plug-in
++#  menu. A slash indicates a submenu. Therefore, the menu location
++#  "Blur/Blur" specifies an item name of "Blur" in a submenu entitled
++#  "Blur". Multiple submenus are possible. If a menu already exists
++#  the item is simply placed in that menu. Menu items are placed in
++#  alphabetically sorted order in menus.
++# The `accelerator' is a string which designates a key combination
++#  which will invoke the plug-in. The format should be clear by
++#  inspection.  This string is optional.
++#
++# It is convention to only use the `alt' and `shift' key modifiers for
++#  plug-ins. The `control' key is used as a modifier for menu items by
++#  the main application. The main application will not use the `alt'
++#  or `shift' key modifiers.
++
++plug-in blur       "Blur/Blur"
++plug-in blur2      "Blur/Blur (variable)"        "Alt<Key>B"
++plug-in gauss_recurse      "Blur/Gaussian Blur (IIR)"         "Shift Alt<Key>B"
++plug-in gauss      "Blur/Gaussian Blur (RLE)"
++plug-in mblur      "Blur/Motion Blur"
++
++plug-in charcoal   "Effects/Artistic/Charcoal"  "Shift Alt<Key>H"
++plug-in cubism     "Effects/Artistic/Cubism"	"Shift Alt<Key>U"
++plug-in mosaic     "Effects/Artistic/Mosaic"	"Alt<Key>M"
++plug-in oilify     "Effects/Artistic/Oilify"
++plug-in sparkle    "Effects/Artistic/Sparkle"
++plug-in lic        "Effects/Artistic/Van-Goghify"
++plug-in bleed      "Effects/Image/Bleed"
++plug-in c_astretch "Effects/Image/Contrast Auto-Stretch"
++plug-in enhance    "Effects/Image/Enhance"      "Shift Alt<Key>E"
++plug-in gamma      "Effects/Image/Gamma"        "Alt<Key>G"
++plug-in grayify    "Effects/Image/Grayify"
++plug-in invert     "Effects/Image/Invert"       "Alt<Key>I"
++plug-in solarize   "Effects/Image/Solarize"     "Alt<Key>1"
++plug-in bumpmap    "Effects/Lighting/Bump Map"	"Alt<Key>2"
++plug-in displace   "Effects/Lighting/Displace"	"Alt<Key>3"
++plug-in lighting   "Effects/Lighting/Lighting"	"Alt<Key>4"
++plug-in edge       "Effects/Misc Ops/Edge Detect"        "Alt<Key>E"
++plug-in engrave    "Effects/Misc Ops/Engrave"
++plug-in extrude    "Effects/Misc Ops/Extrude"
++plug-in pixelize   "Effects/Misc Ops/Pixelize"
++plug-in relief     "Effects/Misc Ops/Relief"    "Alt<Key>R"
++plug-in checkerboard "Effects/Textures/Checkerboard"
++plug-in plasma     "Effects/Textures/Plasma"
++plug-in texture2   "Effects/Textures/Texture II"
++
++plug-in despeckle  "Distorts/Despeckle"
++plug-in map_sphere "Distorts/Map Sphere"
++plug-in noisify    "Distorts/Noise"
++plug-in pagecurl   "Distorts/Page Curl"         "Alt<Key>U"
++plug-in pinch      "Distorts/Pinch"             "Alt<Key>P"
++plug-in ripple     "Distorts/Ripple"
++plug-in shift      "Distorts/Shift"
++plug-in spread     "Distorts/Spread"
++plug-in whirl      "Distorts/Whirl"             "Alt<Key>W"
++plug-in waves      "Distorts/Waves"
++
++plug-in compose    "Conversions/Compose"
++plug-in decompose  "Conversions/Decompose"
++plug-in to-color   "Conversions/To Color"       "Shift Alt<Key>C"
++plug-in to-gray    "Conversions/To Grayscale"   "Shift Alt<Key>G"
++plug-in to-indexed "Conversions/To Indexed"     "Shift Alt<Key>I"
++
++plug-in autocrop   "Transforms/Autocrop"
++plug-in flip_horz  "Transforms/Flip Horizontal" "Alt<Key>H"
++plug-in flip_vert  "Transforms/Flip Vertical"   "Alt<Key>V"
++plug-in polar      "Transforms/Polar"
++plug-in rotate     "Transforms/Rotate"
++plug-in scale      "Transforms/Scale"           "Shift Alt<Key>S"
++plug-in tile       "Transforms/Tile"            "Alt<Key>T"
++plug-in tiler      "Transforms/Tiler"           "Alt<Key>T"
++
++plug-in blend      "Channel Ops/Blend"
++plug-in calculations "Channel Ops/Calculations" "Alt<Key>C"
++plug-in duplicate  "Channel Ops/Duplicate"      "Alt<Key>D"
++plug-in offset     "Channel Ops/Offset"         "Alt<Key>O"
++
++plug-in netpbm	   "Miscellaneous/Netpbm Filter" "Shift Alt<Key>N"
++plug-in rms_error  "Miscellaneous/RMS Error"
++plug-in photocd    "Miscellaneous/Photo CD"
++plug-in octave_srv "Miscellaneous/Octave Server"
