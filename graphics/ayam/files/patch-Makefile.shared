@@ -24,7 +24,7 @@ $FreeBSD$
 +CC ?= cc
  #CC = gcc
  
- # the C++ compiler (just in use for the Aycsg plugin)
+ # the C++ compiler (just in use for the AyCSG and onio plugin)
 -CXX = CC
 +CXX = ${CC}
  #CXX = g++-3.0
@@ -170,7 +170,7 @@ $FreeBSD$
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc
-@@ -413,9 +418,9 @@
+@@ -422,9 +427,9 @@
  .cpp.o:
  	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
  
