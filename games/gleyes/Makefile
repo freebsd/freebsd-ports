@@ -16,12 +16,9 @@ MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
 
 MAINTAINER=	malte.lance@gmx.net
 
-MAN1=		gleyes.1
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gleyes ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/gleyes.1 ${PREFIX}/man/man1/gleyes.1
+MAN1=		gleyes.1
 
 .include <bsd.port.mk>
