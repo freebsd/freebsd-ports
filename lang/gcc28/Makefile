@@ -23,6 +23,10 @@ LATEST_LINK=	gcc28
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
