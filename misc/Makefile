@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.122 1997/11/24 00:26:35 fenner Exp $
+# $Id: Makefile,v 1.123 1997/12/15 08:47:22 tg Exp $
 #
 
     SUBDIR += acron
@@ -15,6 +15,7 @@
     SUBDIR += dotfile
     SUBDIR += ecc
     SUBDIR += estic
+    SUBDIR += ewipe
     SUBDIR += fd
     SUBDIR += fep
     SUBDIR += figlet

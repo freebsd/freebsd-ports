@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.94 1997/11/12 05:13:26 itojun Exp $
+# $Id: Makefile,v 1.95 1997/12/15 20:44:50 max Exp $
 #
 
     SUBDIR += Canna
@@ -14,7 +14,6 @@
     SUBDIR += dvi2tty
     SUBDIR += elvis
     SUBDIR += escpf
-    SUBDIR += ewipe
     SUBDIR += expect
     SUBDIR += gawk
     SUBDIR += ghostscript
