@@ -251,6 +251,7 @@
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_log_data
     SUBDIR += mod_log_sql
+    SUBDIR += mod_log_sql2
     SUBDIR += mod_macro
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
