@@ -47,7 +47,9 @@ share/analog/lang/fiadom.tab
 share/analog/lang/fidom.tab
 share/analog/lang/fr.lng
 share/analog/lang/fra.lng
+share/analog/lang/fradesc.txt
 share/analog/lang/fradom.tab
+share/analog/lang/frdesc.txt
 share/analog/lang/frdom.tab
 share/analog/lang/frform.html
 share/analog/lang/gr.lng
@@ -91,6 +93,7 @@ share/analog/lang/kr.lng
 share/analog/lang/lt.lng
 share/analog/lang/lv.lng
 share/analog/lang/nl.lng
+share/analog/lang/nla.lng
 share/analog/lang/nladesc.txt
 share/analog/lang/nladom.tab
 share/analog/lang/nldesc.txt
@@ -112,8 +115,12 @@ share/analog/lang/ptdom.tab
 share/analog/lang/ro.lng
 share/analog/lang/rodom.tab
 share/analog/lang/ru.lng
-share/analog/lang/rua.lng
+share/analog/lang/ru1.lng
+share/analog/lang/ru1desc.txt
+share/analog/lang/ru1dom.tab
+share/analog/lang/rudesc.txt
 share/analog/lang/rudom.tab
+share/analog/lang/ruform.html
 share/analog/lang/se.lng
 share/analog/lang/se2.lng
 share/analog/lang/se2a.lng
@@ -137,10 +144,12 @@ share/analog/lang/ua.lng
 share/analog/lang/uadesc.txt
 share/analog/lang/uk.lng
 share/analog/lang/uk12.lng
+share/analog/lang/uka.lng
 share/analog/lang/ukdesc.txt
 share/analog/lang/ukdom.tab
 share/analog/lang/us.lng
 share/analog/lang/us24.lng
+share/analog/lang/usa.lng
 share/analog/lang/usdesc.txt
 share/analog/lang/usdom.tab
 share/analog/lang/usform.html
@@ -309,6 +318,30 @@ share/analog/lang/yudom.tab
 %%IMGDIR%%/barh4.png
 %%IMGDIR%%/barh8.gif
 %%IMGDIR%%/barh8.png
+%%IMGDIR%%/bari1.gif
+%%IMGDIR%%/bari1.png
+%%IMGDIR%%/bari16.gif
+%%IMGDIR%%/bari16.png
+%%IMGDIR%%/bari2.gif
+%%IMGDIR%%/bari2.png
+%%IMGDIR%%/bari32.gif
+%%IMGDIR%%/bari32.png
+%%IMGDIR%%/bari4.gif
+%%IMGDIR%%/bari4.png
+%%IMGDIR%%/bari8.gif
+%%IMGDIR%%/bari8.png
+%%IMGDIR%%/barj1.gif
+%%IMGDIR%%/barj1.png
+%%IMGDIR%%/barj16.gif
+%%IMGDIR%%/barj16.png
+%%IMGDIR%%/barj2.gif
+%%IMGDIR%%/barj2.png
+%%IMGDIR%%/barj32.gif
+%%IMGDIR%%/barj32.png
+%%IMGDIR%%/barj4.gif
+%%IMGDIR%%/barj4.png
+%%IMGDIR%%/barj8.gif
+%%IMGDIR%%/barj8.png
 %%IMGDIR%%/html2.gif
 %%IMGDIR%%/html2.png
 %%IMGDIR%%/sq0.png
@@ -326,4 +359,3 @@ share/analog/lang/yudom.tab
 @dirrm share/analog
 %%PORTDOCS%%@dirrm share/doc/analog
 @unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true
-
