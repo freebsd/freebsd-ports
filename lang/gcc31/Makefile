@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-07-01
+SNAPDATE=	2002-07-26
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -15,13 +15,12 @@ PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		ftp://gcc.gnu.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
-DISTFILES=	\
-		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	gcc/releases/gcc-3.1.1
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc31_${SNAPDATE}.diff
@@ -41,27 +40,28 @@ NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.else
+.if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
+.else
+CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
 GCC_REV=	3.1.1
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
-		SNAPVER=${SNAPVER}
+		SNAPVER=${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${TARGLIB}/include/g++
+		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
 #CONFIGURE_ARGS+=	--program-suffix=31
-CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
+#	Java
+CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
@@ -81,15 +81,6 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
-
-.if defined(NETWINDER_SS)
-post-extract:
-.for F in ${DISTFILES}
-	cd ${WRKDIR} ; rpm2cpio ${DISTDIR}/$F |cpio -idum
-.endfor
-	cd ${WRKDIR} ; ${TAR} -xzf gcc-${SNAPVER}.tar.gz
-	cd ${WRKDIR} ; ${LN} -sf gcc gcc-${SNAPVER}
-.endif
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
@@ -128,13 +119,15 @@ post-install:
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
 		${PREFIX}/man/man1/${file}-31.1 )
 .endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 .for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+	# Java
+	cd ${PREFIX}/lib ; ${MV} -f libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
 # I am sick and tired of this .info shit, makeinfo --no-split isn't working
