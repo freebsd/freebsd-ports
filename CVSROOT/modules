@@ -516,7 +516,6 @@ avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
 avida		ports/biology/avida
-avidemux	ports/multimedia/avidemux
 avidemux2	ports/multimedia/avidemux2
 aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
