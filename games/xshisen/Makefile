@@ -26,9 +26,9 @@ MANLANG=	"" ja
 MAN6=		xshisen.6
 
 post-install:
-	@${CHOWN} games:games ${PREFIX}/bin/xshisen
+	@${CHOWN} root:games ${PREFIX}/bin/xshisen
 	@${CHMOD} 2555 ${PREFIX}/bin/xshisen
-	@${CHOWN} games:games ${PREFIX}/lib/X11/xshisen/xshisen-scores
+	@${CHOWN} root:games ${PREFIX}/lib/X11/xshisen/xshisen-scores
 	@${CHMOD} 0660 ${PREFIX}/lib/X11/xshisen/xshisen-scores
 	${INSTALL_MAN} ${WRKSRC}/xshisen.man ${PREFIX}/man/man6/xshisen.6
 	@${PREFIX}/bin/xshisen -KCONV jis < ${WRKSRC}/xshisen.jman-jis \
