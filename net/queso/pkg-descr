@@ -1,4 +1,4 @@
-QueSO homepage -- http://www.apostols.org/projectz/queso/
+former QueSO home page <URL:http://www.apostols.org/projectz/queso/>:
 
 How we can determine the remote OS using simple tcp packets?  Well,
 it's easy, they're packets that don't make any sense, so the RFCs
@@ -19,5 +19,3 @@ QueSO sends:
         6 SYN+XXX+YYY   * XXX & YYY are unused TCP flags
 
 All packets have a random seq_num and a 0x0 ack_num.
-
-WWW: http://www.apostols.org/projectz/queso/
