@@ -1,0 +1,11 @@
+AdvanceCOMP is a collection of recompression utilities for your 
+  .ZIP archives
+  .PNG snapshots
+  .MNG video clips
+  .GZ files
+
+The main features are:
+ * Recompress ZIP, GZ, PNG and MNG files using the Deflate 7-Zip implementation.
+ * Recompress MNG files using Delta and Move optimization.
+
+WWW: http://advancemame.sourceforge.net/comp-readme.html 
