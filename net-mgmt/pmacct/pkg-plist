@@ -10,10 +10,9 @@ sbin/pmacctd
 %%EXAMPLESDIR%%/allow-list.example
 %%EXAMPLESDIR%%/gnuplot-example.sh
 %%EXAMPLESDIR%%/gnuplot.script.example
-%%EXAMPLESDIR%%/id_map.example
 %%EXAMPLESDIR%%/mrtg-example.sh
 %%EXAMPLESDIR%%/mrtg.conf.example
-%%EXAMPLESDIR%%/networks.example
+%%EXAMPLESDIR%%/networks.lst.example
 %%EXAMPLESDIR%%/nfacctd-print.conf.example
 %%EXAMPLESDIR%%/nfacctd-sql.conf.example
 %%EXAMPLESDIR%%/nfacctd-sql_v1.conf.example
@@ -23,7 +22,8 @@ sbin/pmacctd
 %%EXAMPLESDIR%%/pmacctd-sql.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
-%%EXAMPLESDIR%%/ports.example
+%%EXAMPLESDIR%%/ports.lst.example
+%%EXAMPLESDIR%%/pretag.map.example
 %%EXAMPLESDIR%%/rrdtool-example.sh
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
