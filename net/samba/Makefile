@@ -49,6 +49,18 @@ CONFIGURE_ARGS+=	--with-syslog
 CONFIGURE_ARGS+=	--with-ssl --with-sslinc=/usr/include/openssl --with-ssllib=/usr/lib
 .endif
 
+.if defined(WITH_QUOTAS)
+CONFIGURE_ARGS+=	--with-quotas
+.endif
+
+.if defined(WITH_UTMP)
+CONFIGURE_ARGS+=	--with-utmp
+.endif
+
+.if defined(WITH_MSDFS)
+CONFIGURE_ARGS+=	--with-msdfs
+.endif
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap2
 CONFIGURE_ARGS+=--with-ldapsam
