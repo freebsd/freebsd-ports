@@ -1,0 +1,20 @@
+--- configure.in.orig	Thu May 16 20:07:47 2002
++++ configure.in	Mon May 12 22:47:00 2003
+@@ -80,14 +80,9 @@
+ AC_CANONICAL_HOST
+ 
+ case "$host_os" in
+- freebsd4*)
+-    echo " + OS Type is FreeBSD 4.x"
+-    CFLAGS="-DFREEBSD_4 $CFLAGS"
+-    ;;
+-
+- freebsd5*)
+-    echo " + OS Type is FreeBSD 5.x"
+-    CFLAGS="-DFREEBSD_5 $CFLAGS"
++ freebsd*)
++    echo " + OS Type is FreeBSD"
++    CFLAGS="-DFREEBSD $CFLAGS"
+     ;;
+ 
+  darwin1.3.*)
