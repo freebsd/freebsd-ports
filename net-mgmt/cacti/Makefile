@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.5a
 CATEGORIES=	net
 MASTER_SITES=	http://www.raxnet.net/downloads/cacti/
 
@@ -25,6 +25,9 @@ CACTIDIR?=	share/cacti
 CACTIUSER?=	cacti
 CACTIGROUP?=	${CACTIUSER}
 PLIST_SUB+=	CACTIDIR=${CACTIDIR}
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/cactid/.deps
 
 post-patch:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \

@@ -264,6 +264,7 @@
 %%CACTIDIR%%/lib/form.php
 %%CACTIDIR%%/lib/functions.php
 %%CACTIDIR%%/lib/graph_export.php
+%%CACTIDIR%%/lib/graph_variables.php
 %%CACTIDIR%%/lib/import.php
 %%CACTIDIR%%/lib/rrd.php
 %%CACTIDIR%%/lib/snmp.php
@@ -288,6 +289,7 @@
 %%CACTIDIR%%/rra/.placeholder
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
 %%CACTIDIR%%/scripts/diskfree.pl
+%%CACTIDIR%%/scripts/diskfree.sh
 %%CACTIDIR%%/scripts/linux_memory.pl
 %%CACTIDIR%%/scripts/loadavg.pl
 %%CACTIDIR%%/scripts/loadavg_multi.pl
