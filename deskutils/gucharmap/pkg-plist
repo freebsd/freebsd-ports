@@ -52,5 +52,5 @@ share/locale/uk/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm include/gucharmap
-@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
-@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
+@exec %D/bin/gtk-query-immodules-2.0 >/dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
+@unexec %D/bin/gtk-query-immodules-2.0 >/dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
