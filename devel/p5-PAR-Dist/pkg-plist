@@ -1,4 +1,5 @@
 %%SITE_PERL%%/PAR/Dist.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR-Dist/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Dist/.packlist
 @dirrm %%SITE_PERL%%/PAR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR-Dist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Dist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR
