@@ -14,7 +14,6 @@ MAINTAINER=	sergei@kolobov.com
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
 USE_PERL5=	yes
-POD2MAN=	${LOCALBASE}/bin/pod2man
 
 MAN1=		maildirsync.1
 
@@ -26,7 +25,7 @@ BROKEN=	This port requires Perl 5.6.0 or higher.
 
 do-build:
 	${PERL} -pi -e 's!/usr/bin/perl!${PERL}!' ${WRKSRC}/maildirsync.pl
-	${POD2MAN} ${WRKSRC}/maildirsync.pod > ${WRKSRC}/maildirsync.1
+	pod2man ${WRKSRC}/maildirsync.pod > ${WRKSRC}/maildirsync.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/maildirsync.pl ${PREFIX}/bin/maildirsync
