@@ -1,0 +1,5 @@
+Kiltdown is an Email Client for UNIX. It is UI independant (I use both Gnome
+and KDE), and is fully featured, including MIME support, multiple accounts,
+filtering, etc. It currently runs under Linux, FreeBSD, and Solaris.
+
+WWW: http://kiltdown.sourceforge.net/

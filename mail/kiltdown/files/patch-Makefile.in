@@ -1,0 +1,20 @@
+--- kiltdown/Makefile.in.orig	Mon May 14 05:25:23 2001
++++ kiltdown/Makefile.in	Sat Jun 16 14:02:23 2001
+@@ -21,7 +21,7 @@
+ ###################################################################
+ #
+ 
+-MOC=$(QTBIN)moc
++MOC=$(QTBIN)moc2
+ UIC=$(QTBIN)uic
+ RESCOMP=../tools/rescomp
+ DLGSTRIP=../tools/dlgstrip
+@@ -29,7 +29,7 @@
+ CFLAGSBASE=-DQT_THREAD_SUPPORT $(OPT_DEFINES) $(SYS_CFLAGS) $(ALLINCLUDES) -Wall
+ CFLAGS=$(CFLAGSBASE) -fno-implicit-templates
+ LDFLAGS= $(SYS_LDFLAGS) -L$(QTLIB) -L$(DBLIB) -L$(X11LIB) $(USER_LPATH)
+-LIBS=-lSM -lX11 -lXext -lICE -lqt-mt -ldb $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
++LIBS=-lSM -lX11 -lXext -lICE -lqt2-mt -ldb $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
+ 
+ #
+ ###################################################################
