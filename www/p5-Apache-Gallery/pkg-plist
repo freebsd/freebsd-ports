@@ -1,0 +1,25 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Gallery.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+share/Apache-Gallery/templates/directory.tpl
+share/Apache-Gallery/templates/error.tpl
+share/Apache-Gallery/templates/index.tpl
+share/Apache-Gallery/templates/info.tpl
+share/Apache-Gallery/templates/layout.tpl
+share/Apache-Gallery/templates/movie.tpl
+share/Apache-Gallery/templates/navpicture.tpl
+share/Apache-Gallery/templates/orig.tpl
+share/Apache-Gallery/templates/picture.tpl
+share/Apache-Gallery/templates/scale.tpl
+share/Apache-Gallery/templates/showpicture.tpl
+share/Apache-Gallery/css/gallery.css
+www/icons/folder.png
+www/icons/video-asf.png
+www/icons/video-avi.png
+www/icons/video-mov.png
+www/icons/video-mpeg.png
+www/icons/video-mpg.png
+@dirrm share/Apache-Gallery/templates
+@dirrm share/Apache-Gallery/css
+@dirrm share/Apache-Gallery
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Gallery
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true

@@ -1,0 +1,21 @@
+---------------------------------------------------------------------------------------
+
+<VirtualHost 123.123.123.123>
+        ServerName   gallery.yourdomain.org
+        DocumentRoot /data/pictures/
+        ErrorLog     logs/gallery-error_log
+        TransferLog  logs/gallery-access_log
+        PerlSetVar   GalleryTemplateDir '%%PREFIX%%/share/Apache-Gallery/templates'
+        PerlSetVar   GalleryInfo 'Picture Taken => DateTimeOriginal, Flash => Flash' 
+        PerlSetVar   GallerySizes '640 1024 1600 2272'
+        PerlSetVar   GalleryThumbnailSize '100x75'
+        PerlSetVar   GalleryCacheDir '/var/tmp/Apache-Gallery/'
+        <Location />
+                SetHandler        perl-script
+                PerlHandler       Apache::Gallery
+        </Location>
+</VirtualHost>
+
+And copy %%PREFIX%%/share/Apache-Gallery/css/gallery.css to your DocumentRoot
+
+---------------------------------------------------------------------------------------

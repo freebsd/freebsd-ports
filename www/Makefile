@@ -254,6 +254,7 @@
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-DumpHeaders
     SUBDIR += p5-Apache-Filter
+    SUBDIR += p5-Apache-Gallery
     SUBDIR += p5-Apache-Icon
     SUBDIR += p5-Apache-Language
     SUBDIR += p5-Apache-MP3
