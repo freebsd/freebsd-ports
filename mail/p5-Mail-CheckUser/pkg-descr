@@ -1,0 +1,15 @@
+This Perl module provides routines for checking validity of email address.
+
+It makes several checks:
+
+   1. It checks the syntax of an email address.
+   2. It checks if there any MX records or A records for the domain part of
+      the email address.
+   3. It tries to connect to an email server directly via SMTP to check if
+      mailbox is valid. It uses a combination of MAIL and RCPT commands which
+      simulates sending an email. It can detect bad mailboxes in many cases.
+
+WWW: http://search.cpan.org/search?dist=Mail-CheckUser
+
+- Attila Nagy
+bra@fsn.hu
