@@ -9,7 +9,8 @@
 PORTNAME=	find_ddos
 PORTVERSION=	4.2
 CATEGORIES=	security
-MASTER_SITES=	http://ftp.cert.org.tw/tools/Security_Scanner/DDOS/ 
+MASTER_SITES=	http://www.nipc.gov/warnings/alerts/1999/ \
+		http://www.ucl.ac.uk/cert/tools/
 
 DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
@@ -25,8 +26,8 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/find_ddos ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/find_ddos
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/find_ddos
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
