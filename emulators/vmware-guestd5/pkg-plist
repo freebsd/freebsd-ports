@@ -1,3 +1,7 @@
-sbin/checkvm
+sbin/vmware-checkvm
 sbin/vmware-guestd
-etc/rc.d/vmware-guestd.sh
+etc/rc.d/vmware-guestd.sh.sample
+%%VMWARE_VMMEMCTL:%%etc/rc.d/vmware-guest_kmod.sh.sample
+%%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
+%%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools/modules 2>/dev/null || true
+%%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools 2>/dev/null || true

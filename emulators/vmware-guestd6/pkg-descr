@@ -1,6 +1,7 @@
 vmware-guestd daemon is for time synchronization with host OS and others.
 Beware, this port is for FreeBSD _guest_ OS.  You don't need to install
-this ports to FreeBSD _host_ OS.
+this ports to FreeBSD _host_ OS.  This ports also installs a kernel modules
+for FreeBSD guest.
 
 If you want to run FreeBSD as a VMware guest OS, install this port
 would help you.  If you want to run X, install vmware-tools too.

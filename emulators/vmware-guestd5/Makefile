@@ -5,44 +5,76 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vmware-guestd
+PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
+PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware time synchronization daemon for FreeBSD guest OS (for VMware 4.x)
+COMMENT?=VMware time synchronization daemon for FreeBSD guest OS (for VMware 4.x)
 
-LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+.if defined(VMWARE_X_PORTS)
+RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd4
+.endif
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
-WRKSRC=		${WRKDIR}/vmware-freebsd-tools
+WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
-NO_BUILD=	yes
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
+.endif
+.if defined(VMWARE_X_PORTS)
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	4.0.0
-BUILD_VER=	4460
+VMWARE_VER=	4.0.1
+BUILD_VER=	5289
 
-MOUNT_DEV?=	/dev/acd0c
+MOUNT_DEV?=	/dev/acd0
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
-do-fetch:
-	@${DO_NADA}
+.include <bsd.port.pre.mk>
+
+.if defined(VMWARE_X_PORTS)
+
+.if ${XFREE86_VERSION} == 3
+PLIST_SUB+=	INSTALLXSERVER3:=""
+PLIST_SUB+=	INSTALLXSERVER4:="@comment "
+.else
+PLIST_SUB+=	INSTALLXSERVER3:="@comment "
+PLIST_SUB+=	INSTALLXSERVER4:=""
+.endif
+
+.else
+
+.if !defined(WITHOUT_VMWARE_VMMEMCTL)
+WITH_VMWARE_VMMEMCTL=YES
+.endif
+VMWARE_KMODDIR=	${PREFIX}/lib/vmware-tools/modules
+.if defined(WITH_VMWARE_VMMEMCTL)
+PLIST_SUB+=	VMWARE_VMMEMCTL:=""
+PLIST_SUB+=	VMWARE_KMODDIR:="${VMWARE_KMODDIR}"
+.else
+PLIST_SUB+=	VMWARE_VMMEMCTL:="@comment "
+PLIST_SUB+=	VMWARE_KMODDIR:="@comment "
+.endif
+
+.endif
+
 fetch-list:
 	@${DO_NADA}
 
-pre-extract:
+do-fetch:
 	@${ECHO} ""
 	@${ECHO} "========================================================================"
 	@${ECHO} "Choose \"File\" -> \"Install VMware Tools...\" from the Workstation menu"
@@ -68,14 +100,46 @@ pre-extract:
 
 post-extract:
 	${UMOUNT} ${MOUNT_PT}
+.if !defined(VMWARE_X_PORTS)
+	(cd ${WRKDIR}; ${TAR} xf ${WRKSRC}/lib/modules/source/vmmemctl.tar)
+.endif
+
+.if defined(VMWARE_X_PORTS)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vmware-guestd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/checkvm ${PREFIX}/sbin
-	@if [ ! -f ${PREFIX}/etc/rc.d/vmware-guestd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/vmware-guestd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guestd.sh ${PREFIX}/etc/rc.d; \
-	fi
-	-${PREFIX}/sbin/vmware-guestd --cmd toolinstall.end
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${X11BASE}/bin
+.if ${XFREE86_VERSION} == 3
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware ${X11BASE}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-3/XF86Config ${X11BASE}/etc/XF86Config_VMware
+	@${ECHO} ""
+	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
+	@${ECHO} "${X11BASE}/etc/XF86Config_VMware is a sample XF86Config file."
+	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
+.else
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
+.endif
+	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
-.include <bsd.port.mk>
+.else
+
+do-build:
+.if defined(WITH_VMWARE_VMMEMCTL)
+	(cd ${WRKDIR}/vmmemctl-only; make)
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-guestd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-checkvm ${PREFIX}/sbin
+	${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guestd.sh \
+				${PREFIX}/etc/rc.d/vmware-guestd.sh.sample
+.if defined(WITH_VMWARE_VMMEMCTL)
+	${MKDIR} ${VMWARE_KMODDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
+	${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guest_kmod.sh \
+				${PREFIX}/etc/rc.d/vmware-guest_kmod.sh.sample
+.endif
+	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
+
+.endif
+
+.include <bsd.port.post.mk>
