@@ -9,6 +9,10 @@ The cgiwrap scripts have been installed in:
     ${PREFIX}/www/cgi-bin
 ...the default location for Apache's cgi-bin directory.
 
+The cgiwrapd and nph-cgiwrapd scripts are disabled by default, as they
+may give away sensitive information about the CGI environment.  To
+enable them, you must chmod 4755 ${PREFIX}/www/cgi-bin/cgiwrapd
+
 Access control enabled, you must create either
 ${PREFIX}/etc/cgiwrap.allow or ${PREFIX}/etc/cgiwrap.deny before
 cgiwrap will function.
