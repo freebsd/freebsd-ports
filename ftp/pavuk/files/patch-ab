@@ -1,6 +1,6 @@
---- src/net.c.orig	Tue May  4 13:20:43 1999
-+++ src/net.c	Tue May  4 13:22:13 1999
-@@ -101,9 +101,9 @@
+--- src/net.c.orig	Fri Jul 23 03:50:48 1999
++++ src/net.c	Wed Aug  4 20:32:42 1999
+@@ -106,9 +106,9 @@
  	{
  		return -1;
  	}
@@ -12,7 +12,7 @@
  	rv = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
  	if (rv && (errno != EINPROGRESS) && (errno != EISCONN))
  	{
-@@ -267,9 +267,9 @@
+@@ -296,9 +296,9 @@
  	int rv;
  
  	p = sizeof(caller);
