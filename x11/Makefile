@@ -146,7 +146,6 @@
     SUBDIR += wdm
     SUBDIR += wmappl
     SUBDIR += wmblob
-    SUBDIR += wmbsdbatt
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
     SUBDIR += wmdrawer
