@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/buildtool
 bin/buildtool-0
+libexec/buildtool-0/bt-012-to-013
 libexec/buildtool-0/bt_config
 libexec/buildtool-0/bt_dist
 libexec/buildtool-0/bt_doc
@@ -8,14 +9,29 @@ libexec/buildtool-0/bt_lint
 libexec/buildtool-0/bt_logic
 libexec/buildtool-0/bt_make
 libexec/buildtool-0/bt_pkgflags
+libexec/buildtool-0/bt_sh
 libexec/buildtool-0/bt_swcgen
 libexec/buildtool-0/bt_wizard
+libexec/buildtool-0/bt_wrap
+libexec/buildtool-0/depconv
+libexec/buildtool-0/oodate
 @dirrm libexec/buildtool-0
 share/buildtool-0/bt_config/base.subr
 share/buildtool-0/bt_config/pkgconfig.subr
 share/buildtool-0/bt_config/pthread.subr
 share/buildtool-0/bt_config/x11.subr
 @dirrm share/buildtool-0/bt_config
+share/buildtool-0/bt_logic/archive.subr
+share/buildtool-0/bt_logic/convert.subr
+share/buildtool-0/bt_logic/depend.subr
+share/buildtool-0/bt_logic/library.subr
+share/buildtool-0/bt_logic/null.subr
+share/buildtool-0/bt_logic/output.subr
+share/buildtool-0/bt_logic/program.subr
+share/buildtool-0/bt_logic/qt_program.subr
+share/buildtool-0/bt_logic/shlib.subr
+share/buildtool-0/bt_logic/texinfo.subr
+@dirrm share/buildtool-0/bt_logic
 share/buildtool-0/bt_swcgen/out_conf.m4
 share/buildtool-0/bt_swcgen/out_script.m4
 @dirrm share/buildtool-0/bt_swcgen
@@ -33,16 +49,14 @@ share/buildtool-0/mk/sys.mk
 @dirrm share/buildtool-0/mk
 share/buildtool-0/templates/README.bt
 share/buildtool-0/templates/bt_config.conf.in
-share/buildtool-0/templates/config
-share/buildtool-0/templates/defs
-share/buildtool-0/templates/docs
-share/buildtool-0/templates/mk_bin
-share/buildtool-0/templates/mk_top
 share/buildtool-0/templates/pkgflags
 @dirrm share/buildtool-0/templates
 @dirrm share/buildtool-0
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/PEOPLE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/DIFFS.bt_sh
+%%DOCSDIR%%/NOTES.bt_logic
+%%DOCSDIR%%/PEOPLE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+@dirrm %%DOCSDIR%%
