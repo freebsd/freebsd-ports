@@ -10,7 +10,7 @@
  		leaftoppm mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
 -		ppm3d ppmbrighten ppmchange ppmcolormask \
-+		ppm3d ppmbrighten ppmchange \
++		ppm3d ppmbrighten \
  		ppmdim ppmdist ppmdither \
  		ppmflash ppmhist ppmmake ppmmix ppmnorm \
  		ppmquant ppmrelief ppmshift ppmspread ppmtoacad \
@@ -25,7 +25,7 @@
 -		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
 +		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
-+SHHOPTBINARIES = ppmcolormask ppmtobmp tgatoppm ximtoppm
++SHHOPTBINARIES =	ppmchange ppmcolormask ppmtobmp tgatoppm ximtoppm
  
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.

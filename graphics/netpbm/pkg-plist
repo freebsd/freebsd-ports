@@ -25,7 +25,9 @@ bin/macptopbm
 bin/mdatopbm
 bin/mgrtopbm
 bin/mtvtoppm
+bin/pamchannel
 bin/pamcut
+bin/pamfile
 bin/pamtopnm
 bin/pbmclean
 bin/pbmlife
