@@ -663,6 +663,7 @@ www/icons/world2.png
 @dirrm share/doc/apache
 @unexec rmdir %D/www/data-dist 2>/dev/null || true
 @unexec rmdir %D/www/cgi-bin-dist 2>/dev/null || true
+@unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
