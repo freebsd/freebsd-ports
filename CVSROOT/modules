@@ -1014,6 +1014,7 @@ daemontools	ports/sysutils/daemontools
 daemontools53	ports/sysutils/daemontools53
 dagrab		ports/audio/dagrab
 dailystrips	ports/deskutils/dailystrips
+dansguardian	ports/www/dansguardian
 dante		ports/net/dante
 dap		ports/audio/dap
 darcnes		ports/emulators/darcnes
