@@ -1,10 +1,15 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+etc/apache/access.conf
 etc/apache/access.conf.default
+etc/apache/httpd.conf
 etc/apache/httpd.conf.default
+etc/apache/magic
 etc/apache/magic.default
+etc/apache/mime.types
 etc/apache/mime.types.default
+etc/apache/srm.conf
 etc/apache/srm.conf.default
 etc/apache/ssl.crt/README.CRT
 etc/apache/ssl.crt/Makefile
@@ -47,9 +52,8 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
-libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
-libexec/apache/mod_auth_db.so
+libexec/apache/mod_auth_dbm.so
 libexec/apache/mod_cern_meta.so
 libexec/apache/mod_digest.so
 libexec/apache/mod_expires.so
@@ -82,6 +86,7 @@ share/doc/apache/manual/env.html
 share/doc/apache/manual/footer.html
 share/doc/apache/manual/handler.html
 share/doc/apache/manual/header.html
+share/doc/apache/manual/images/apache_pb.gif
 share/doc/apache/manual/images/custom_errordocs.gif
 share/doc/apache/manual/images/home.gif
 share/doc/apache/manual/images/index.gif
@@ -90,6 +95,7 @@ share/doc/apache/manual/images/mod_rewrite_fig1.gif
 share/doc/apache/manual/images/mod_rewrite_fig2.fig
 share/doc/apache/manual/images/mod_rewrite_fig2.gif
 share/doc/apache/manual/images/mod_ssl.jpg
+share/doc/apache/manual/images/mod_ssl_sb.gif
 share/doc/apache/manual/images/ssleay.gif
 share/doc/apache/manual/images/sub.gif
 share/doc/apache/manual/index.html
@@ -272,17 +278,28 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+@exec cd %D/etc/apache/ssl.crt && make >/dev/null 2>&1
 @exec mkdir -p %D/www
 @exec mkdir -p %D/www/proxy
-@dirrm www/proxy
-@dirrm www
-@exec ln -fs %B %D/www/data.default
+@exec ln -fs %D/www/data.default %D/www/data
+@exec ln -fs %D/www/cgi-bin.default %D/www/cgi-bin
+@unexec rm -f %D/www/data
 @unexec rm -f %D/www/data.default
-@exec mkdir -p %D/etc/apache/ssl.crt
-@exec mkdir -p %D/etc/apache/ssl.csr
-@exec mkdir -p %D/etc/apache/ssl.key
-@exec cd %D/etc/apache/ssl.crt/ && make >/dev/null 2>&1
+@unexec rm -f %D/www/cgi-bin
+@dirrm www/cgi-bin.default
+@dirrm www/proxy
+@dirrm www/icons
+@dirrm www
 @unexec rm -f %D/etc/apache/ssl.crt/*.0
 @dirrm etc/apache/ssl.crt
 @dirrm etc/apache/ssl.csr
 @dirrm etc/apache/ssl.key
+@dirrm etc/apache
+@dirrm include/apache
+@dirrm libexec/apache
+@dirrm share/doc/apache/manual/images
+@dirrm share/doc/apache/manual/misc
+@dirrm share/doc/apache/manual/mod
+@dirrm share/doc/apache/manual/vhosts
+@dirrm share/doc/apache/manual
+@dirrm share/doc/apache

@@ -1,9 +1,9 @@
-# New ports collection makefile for:	apache + mod_ssl
-# Version required:	1.3.1
+# New ports collection makefile for:	Apache + mod_ssl
+# Version required:	1.3.1 + 2.0.10
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.4 1998/09/12 17:31:25 rse Exp $
+# $Id: Makefile,v 1.5 1998/09/14 16:18:50 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -25,25 +25,22 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
 VERSION_APACHE=	1.3.1
-VERSION_MODSSL=	2.0.9
+VERSION_MODSSL=	2.0.10
 
 RESTRICTED=	"Contains cryptography"
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= \
-		 --sysconfdir=${PREFIX}/etc/apache \
-		 --includedir=${PREFIX}/include/apache \
-		 --logfiledir=/var/log \
-		 --runtimedir=/var/run \
-		 --datadir=${PREFIX}/www \
-		 --proxycachedir=${PREFIX}/www/proxy \
-		 --libexecdir=${PREFIX}/libexec/apache \
-		 --without-confadjust \
-		 --enable-shared=remain \
-		 --enable-module=most \
-		 --enable-module=auth_db \
-		 --disable-module=auth_dbm \
-		 --enable-module=ssl
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/apache \
+		--includedir=${PREFIX}/include/apache \
+		--logfiledir=/var/log \
+		--runtimedir=/var/run \
+		--datadir=${PREFIX}/www \
+		--proxycachedir=${PREFIX}/www/proxy \
+		--libexecdir=${PREFIX}/libexec/apache \
+		--without-confadjust \
+		--enable-shared=remain \
+		--enable-module=most \
+		--enable-module=ssl
 
 OPTIM=\
 -DHARD_SERVER_LIMIT=512 \
@@ -56,7 +53,7 @@ OPTIM+= -DBUFFERED_LOGS
 CFLAGS+= -O6 -fomit-frame-pointer -fexpensive-optimizations
 .endif
 
-CONFIGURE_ENV=	OPTIM='${OPTIM}' SSL_BASE='SYSTEM'
+CONFIGURE_ENV=	OPTIM='${OPTIM}' SSL_BASE='SYSTEM' PATH="${PREFIX}/bin:${PATH}"
 
 INSTALL_TARGET=	install-quiet
 
@@ -72,6 +69,14 @@ pre-patch:
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
 	&& ./configure --with-apache=../${DISTNAME}
 
+post-patch:
+	@cd ${WRKSRC} \
+	&& find . -type f -name "*.orig" -print | xargs ${RM} -f
+
+post-build:
+	@cd ${WRKSRC} \
+	&& ${MAKE} certificate TYPE=dummy >/dev/null 2>&1
+
 certificate:
 	@cd ${WRKSRC} \
 	&& ${ECHO_MSG} "===>  Creating Test Certificate for Server" \
@@ -81,7 +86,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start >/dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl startssl >/dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 
