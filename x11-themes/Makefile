@@ -5,6 +5,7 @@
     SUBDIR += gnome-icons-crystal
     SUBDIR += gnome-icons-gentoo-test
     SUBDIR += gnome-icons-iris
+    SUBDIR += gnome-icons-noia-full
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
