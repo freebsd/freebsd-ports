@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.cvshome.org/files/70/10/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Texinfo to HTML converter
 
+USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	253
