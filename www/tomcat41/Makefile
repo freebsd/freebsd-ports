@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.9
 CATEGORIES=	www java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-${PORTVERSION:R}/release/v${PORTVERSION}/bin/ \
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${PORTVERSION}-beta/bin/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
@@ -18,18 +18,18 @@ MAINTAINER=	znerd@FreeBSD.org
 USE_JAVA=	1.2+
 NO_BUILD=	YES
 
-MAJOR_VER=	${PORTVERSION:R:R}
+MAJOR_VER=	${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LOG_DIR=	${APP_HOME}/logs
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Jakarta Tomcat
-APP_SHORTNAME=	tomcat${MAJOR_VER}
+APP_SHORTNAME=	tomcat${MAJOR_VER:S/.//}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 CONTROL_SCRIPT_MANPAGE_TITLE=	${CONTROL_SCRIPT_NAME:U}
 STARTUP_ORDER?=	020
-STARTUP_SCRIPT_NAME=	${PORTNAME}${MAJOR_VER}.sh
+STARTUP_SCRIPT_NAME=	${PORTNAME}${MAJOR_VER:S/.//}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
@@ -43,9 +43,9 @@ STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${FILESDIR}/daemonctl.c \
-		${FILESDIR}/daemonctl.1 \
-		${FILESDIR}/startup.sh \
+REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
+		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
+		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
