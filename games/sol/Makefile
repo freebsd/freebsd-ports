@@ -18,6 +18,8 @@ LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 		xalloc.1:${PORTSDIR}/devel/libxalloc \
 		shhcards.1:${PORTSDIR}/games/libshhcards
 
+CONFLICTS=	gnomegames2-2.4.*
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
