@@ -170,6 +170,7 @@
     SUBDIR += xhime
     SUBDIR += xinfocom
     SUBDIR += xinvaders
+    SUBDIR += xinvaders3d
     SUBDIR += xisola
     SUBDIR += xjewel
     SUBDIR += xjig
