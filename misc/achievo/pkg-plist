@@ -82,6 +82,7 @@ www/data.default/achievo/atk/javascript/newwindow.js
 www/data.default/achievo/atk/javascript/popup.js
 www/data.default/achievo/atk/javascript/xml.js
 www/data.default/achievo/atk/languages/brazilian_portuguese.lng
+www/data.default/achievo/atk/languages/catalan.lng
 www/data.default/achievo/atk/languages/chinese.lng
 www/data.default/achievo/atk/languages/czech.lng
 www/data.default/achievo/atk/languages/danish.lng
@@ -253,7 +254,7 @@ www/data.default/achievo/atk/themes/slash/layout.inc
 www/data.default/achievo/atk/themes/slash/login_top.tmpl
 www/data.default/achievo/atk/utils/adodb-time.inc.php
 www/data.default/achievo/atkconf.inc
-www/data.default/achievo/config.inc.php
+www/data.default/achievo/config.inc.php-default
 www/data.default/achievo/config.menu.inc
 www/data.default/achievo/contrib/README
 www/data.default/achievo/contrib/phase_convert.pl
@@ -280,6 +281,7 @@ www/data.default/achievo/include.php
 www/data.default/achievo/index.php
 www/data.default/achievo/javascript/menuload.js
 www/data.default/achievo/languages/brazilian_portuguese.lng
+www/data.default/achievo/languages/catalan.lng
 www/data.default/achievo/languages/chinese.lng
 www/data.default/achievo/languages/czech.lng
 www/data.default/achievo/languages/danish.lng
