@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-RAI
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/50/5/}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	RSS Abstraction Interface
 
+BUILD_DEPENDS=	${SITE_PERL}/XML/Elemental.pm:${PORTSDIR}/textproc/p5-XML-Elemental
 RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/XML/Elemental.pm:${PORTSDIR}/textproc/p5-XML-Elemental
 
