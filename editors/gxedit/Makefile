@@ -9,7 +9,8 @@
 DISTNAME=	GXedit1.23
 PKGNAME=	gxedit-1.23
 CATEGORIES=	editors
-MASTER_SITES=	http://devplanet.fastethernet.net/
+MASTER_SITES=	http://mirrors.darkelf.net/GXedit/ \
+		http://www.linuxbox.com/~drow/GXedit/
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
