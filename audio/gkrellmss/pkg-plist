@@ -1,0 +1,5 @@
+libexec/gkrellm/plugins/gkrellmss.so
+%%PORTDOCS%%share/doc/GKrellMSS/Changelog
+%%PORTDOCS%%share/doc/GKrellMSS/README
+%%PORTDOCS%%share/doc/GKrellMSS/Themes
+%%PORTDOCS%%@dirrm share/doc/GKrellMSS

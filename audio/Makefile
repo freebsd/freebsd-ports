@@ -64,6 +64,7 @@
     SUBDIR += gdcd
     SUBDIR += gdrdao
     SUBDIR += gkrellmms
+    SUBDIR += gkrellmss
     SUBDIR += gkrellmvolume
     SUBDIR += glame
     SUBDIR += gmixer
