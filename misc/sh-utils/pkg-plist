@@ -29,8 +29,6 @@ bin/gchroot
 bin/ghostid
 bin/gnice
 bin/gstty
-bin/ggroups
-bin/gnohup
 bin/gsu
 @unexec install-info --delete %D/info/sh-utils.info %D/info/dir
 info/sh-utils.info
