@@ -21,3 +21,10 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/previoushop.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/whitelist.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Gateway/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Gateway
+share/examples/Gateway/listgate
+share/examples/Gateway/listgate.m4
+share/examples/Gateway/listgate.readme
+share/examples/Gateway/raccmod
+share/examples/Gateway/raccpost
+share/examples/Gateway/racrmod
+@dirrm share/examples/Gateway
