@@ -1,0 +1,1479 @@
+===================================================================
+RCS file: /cvs/mime/shared-mime-info/freedesktop.org.xml.in,v
+retrieving revision 1.4
+retrieving revision 1.12
+diff -u -r1.4 -r1.12
+--- freedesktop.org.xml.in	2004/01/14 21:26:33	1.4
++++ freedesktop.org.xml.in	2004/03/19 14:39:57	1.12
+@@ -59,7 +59,7 @@
+     <glob pattern="*.ez"/>
+   </mime-type>
+   <mime-type type="application/illustrator">
+-    <_comment>Adobe Illustrator Document</_comment>
++    <_comment>Adobe Illustrator document</_comment>
+     <glob pattern="*.ai"/>
+   </mime-type>
+   <mime-type type="application/mac-binhex40">
+@@ -74,7 +74,6 @@
+       <match type="string" value="\x31\xbe\x00\x00" offset="0"/>
+       <match type="string" value="PO^Q`" offset="0"/>
+       <match type="string" value="\376\067\0\043" offset="0"/>
+-      <match type="string" value="\320\317\021\340\241\261" offset="0"/>
+       <match type="string" value="\333\245-\0\0\0" offset="0"/>
+       <match type="string" value="Microsoft Word 6.0 Document" offset="2080"/>
+       <match type="string" value="Microsoft Word document data" offset="2112"/>
+@@ -82,7 +81,7 @@
+     <glob pattern="*.doc"/>
+   </mime-type>
+   <mime-type type="application/octet-stream">
+-    <_comment>Unknown</_comment>
++    <_comment>unknown</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\036" offset="0"/>
+       <match type="host16" value="017437" offset="0"/>
+@@ -97,7 +96,7 @@
+     <glob pattern="*.oda"/>
+   </mime-type>
+   <mime-type type="application/pdf">
+-    <_comment>Pdf Document</_comment>
++    <_comment>PDF document</_comment>
+     <magic priority="50">
+       <match type="string" value="%PDF-" offset="0"/>
+     </magic>
+@@ -108,23 +107,23 @@
+     <glob pattern="*.pgp"/>
+   </mime-type>
+   <mime-type type="application/pgp-encrypted">
+-    <_comment>PGP/MIME encrypted message header</_comment>
++    <_comment>PGP/MIME-encrypted message header</_comment>
+   </mime-type>
+   <mime-type type="application/pgp-keys">
+     <_comment>PGP keys</_comment>
+   </mime-type>
+   <mime-type type="application/pgp-signature">
+-    <_comment>Detached OpenPGP signature</_comment>
++    <_comment>detached OpenPGP signature</_comment>
+   </mime-type>
+   <mime-type type="application/pkcs7-mime">
+     <_comment>S/MIME file</_comment>
+   </mime-type>
+   <mime-type type="application/pkcs7-signature">
+-    <_comment>Detached S/MIME signature</_comment>
++    <_comment>detached S/MIME signature</_comment>
+     <glob pattern="*.p7s"/>
+   </mime-type>
+   <mime-type type="application/postscript">
+-    <_comment>PostScript Document</_comment>
++    <_comment>PostScript document</_comment>
+     <magic priority="50">
+       <match type="string" value="\004%!" offset="0"/>
+       <match type="string" value="%!" offset="0"/>
+@@ -151,6 +150,14 @@
+     </magic>
+     <glob pattern="*.cdr"/>
+   </mime-type>
++  <mime-type type="application/vnd.hp-hpgl">
++    <_comment>HP Graphics Language (plotter)</_comment>
++    <glob pattern="*.hpgl"/>
++  </mime-type>
++  <mime-type type="application/vnd.hp-pcl">
++    <_comment>HP Printer Control Language file</_comment>
++    <glob pattern="*.pcl"/>
++  </mime-type>
+   <mime-type type="application/vnd.lotus-1-2-3">
+     <_comment>Lotus 1-2-3 spreadsheet</_comment>
+     <magic priority="50">
+@@ -177,7 +184,7 @@
+     <glob pattern="*.xld"/>
+   </mime-type>
+   <mime-type type="application/vnd.ms-powerpoint">
+-    <_comment>Microsoft PowerPoint document</_comment>
++    <_comment>Microsoft PowerPoint presentation</_comment>
+     <glob pattern="*.ppz"/>
+     <glob pattern="*.ppt"/>
+     <glob pattern="*.pps"/>
+@@ -186,6 +193,10 @@
+   <mime-type type="application/vnd.ms-word">
+     <_comment>Microsoft Word document</_comment>
+   </mime-type>
++  <mime-type type="application/vnd.palm">
++    <_comment>Palmpilot database/document</_comment>
++    <glob pattern="*.pdb"/>
++  </mime-type>
+   <mime-type type="application/vnd.rn-realmedia">
+     <_comment>RealAudio/Video document</_comment>
+   </mime-type>
+@@ -207,11 +218,11 @@
+     <glob pattern="*.sdp"/>
+   </mime-type>
+   <mime-type type="application/vnd.stardivision.mail">
+-    <_comment>StarMail file</_comment>
++    <_comment>StarMail email</_comment>
+     <glob pattern="*.smd"/>
+   </mime-type>
+   <mime-type type="application/vnd.stardivision.math">
+-    <_comment>StarMath document</_comment>
++    <_comment>StarMath formula</_comment>
+     <glob pattern="*.smf"/>
+   </mime-type>
+   <mime-type type="application/vnd.stardivision.writer">
+@@ -221,43 +232,43 @@
+     <glob pattern="*.sgl"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.calc">
+-    <_comment>OpenOffice spreadsheet</_comment>
++    <_comment>OpenOffice.org Calc spreadsheet</_comment>
+     <glob pattern="*.sxc"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.calc.template">
+-    <_comment>OpenOffice spreadsheet template</_comment>
++    <_comment>OpenOffice.org Calc spreadsheet template</_comment>
+     <glob pattern="*.stc"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.draw">
+-    <_comment>OpenOffice drawing</_comment>
++    <_comment>OpenOffice.org Draw drawing</_comment>
+     <glob pattern="*.sxd"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.draw.template">
+-    <_comment>OpenOffice drawing template</_comment>
++    <_comment>OpenOffice.org Draw drawing template</_comment>
+     <glob pattern="*.std"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.impress">
+-    <_comment>OpenOffice Impress presentation</_comment>
++    <_comment>OpenOffice.org Impress presentation</_comment>
+     <glob pattern="*.sxi"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.impress.template">
+-    <_comment>OpenOffice Impress presentation template</_comment>
++    <_comment>OpenOffice.org Impress presentation template</_comment>
+     <glob pattern="*.sti"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.math">
+-    <_comment>OpenOffice Math document</_comment>
++    <_comment>OpenOffice.org Math formula</_comment>
+     <glob pattern="*.sxm"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.writer">
+-    <_comment>OpenOffice Writer document</_comment>
++    <_comment>OpenOffice.org Writer document</_comment>
+     <glob pattern="*.sxw"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.writer.global">
+-    <_comment>OpenOffice Writer global document</_comment>
++    <_comment>OpenOffice.org Writer global document</_comment>
+     <glob pattern="*.sxg"/>
+   </mime-type>
+   <mime-type type="application/vnd.sun.xml.writer.template">
+-    <_comment>OpenOffice Writer template</_comment>
++    <_comment>OpenOffice.org Writer document template</_comment>
+     <glob pattern="*.stw"/>
+   </mime-type>
+   <mime-type type="application/wordperfect">
+@@ -269,14 +280,14 @@
+     <glob pattern="*.wpd"/>
+   </mime-type>
+   <mime-type type="application/xbell">
+-    <_comment>XBEL bookmarks file</_comment>
++    <_comment>XBEL bookmarks</_comment>
+     <magic priority="50">
+       <match type="string" value="&lt;!DOCTYPE\ xbel" offset="0:64"/>
+     </magic>
+     <glob pattern="*.xbel"/>
+   </mime-type>
+   <mime-type type="application/x-abiword">
+-    <_comment>AbiWord Document</_comment>
++    <_comment>AbiWord document</_comment>
+     <magic priority="50">
+       <match type="string" value="&lt;abiword" offset="0:64"/>
+       <match type="string" value="&lt;!DOCTYPE abiword" offset="0:64"/>
+@@ -290,7 +301,7 @@
+     <glob pattern="*.sam"/>
+   </mime-type>
+   <mime-type type="application/x-applix-spreadsheet">
+-    <_comment>Applix Spreadsheets document</_comment>
++    <_comment>Applix Spreadsheets spreadsheet</_comment>
+     <magic priority="50">
+       <match type="string" value="*BEGIN SPREADSHEETS" offset="0"/>
+       <match type="string" value="*BEGIN" offset="0">
+@@ -319,8 +330,8 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-archive">
+-    <_comment>Ar Archives</_comment>
+-    <magic priority="50">
++    <_comment>AR archive</_comment>
++    <magic priority="45">
+       <match type="string" value="&lt;ar&gt;" offset="0"/>
+       <match type="string" value="!&lt;arch&gt;" offset="0"/>
+     </magic>
+@@ -364,7 +375,7 @@
+     <glob pattern="*.torrent"/>
+   </mime-type>
+   <mime-type type="application/x-blender">
+-    <_comment>Blender file</_comment>
++    <_comment>Blender scene</_comment>
+     <glob pattern="*.blender"/>
+     <glob pattern="*.blend"/>
+     <glob pattern="*.BLEND"/>
+@@ -373,7 +384,7 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-bzip">
+-    <_comment>Bzip file</_comment>
++    <_comment>bzip archive</_comment>
+     <magic priority="50">
+       <match type="string" value="BZh" offset="0"/>
+     </magic>
+@@ -381,16 +392,16 @@
+     <glob pattern="*.bz2"/>
+   </mime-type>
+   <mime-type type="application/x-bzip-compressed-tar">
+-    <_comment>Bzipped Tar Archives</_comment>
++    <_comment>tar archive (bzip-compressed)</_comment>
+     <glob pattern="*.tar.bz"/>
+     <glob pattern="*.tar.bz2"/>
+   </mime-type>
+   <mime-type type="application/x-cd-image">
+-    <_comment>Raw CD image</_comment>
++    <_comment>raw CD image</_comment>
+     <glob pattern="*.iso"/>
+   </mime-type>
+   <mime-type type="application/x-cgi">
+-    <_comment>CGI program</_comment>
++    <_comment>CGI script</_comment>
+     <glob pattern="*.cgi"/>
+   </mime-type>
+   <mime-type type="application/x-chess-pgn">
+@@ -401,19 +412,19 @@
+     <_comment>Java byte code</_comment>
+   </mime-type>
+   <mime-type type="application/x-compress">
+-    <_comment>UNIX compressed file</_comment>
++    <_comment>UNIX-compressed file</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\235" offset="0"/>
+     </magic>
+     <glob pattern="*.Z"/>
+   </mime-type>
+   <mime-type type="application/x-compressed-tar">
+-    <_comment>Gzipped Tar Archive</_comment>
++    <_comment>tar archive (gzip-compressed)</_comment>
+     <glob pattern="*.tar.gz"/>
+     <glob pattern="*.tgz"/>
+   </mime-type>
+   <mime-type type="application/x-core">
+-    <_comment>Program crash data</_comment>
++    <_comment>program crash data</_comment>
+     <magic priority="50">
+       <match type="string" mask="0xffffffff000000000000000000000000ff" value="\177ELF            \004" offset="0"/>
+       <match type="string" value="\177ELF" offset="0">
+@@ -458,7 +469,7 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-dc-rom">
+-    <_comment>Dreamcast rom</_comment>
++    <_comment>Dreamcast ROM</_comment>
+     <glob pattern="*.dc"/>
+   </mime-type>
+   <mime-type type="application/x-deb">
+@@ -471,11 +482,11 @@
+     <glob pattern="*.deb"/>
+   </mime-type>
+   <mime-type type="application/x-designer">
+-    <_comment>Qt Designer File</_comment>
++    <_comment>Qt Designer file</_comment>
+     <glob pattern="*.ui"/>
+   </mime-type>
+   <mime-type type="application/x-desktop">
+-    <_comment>Desktop config file</_comment>
++    <_comment>desktop configuration file</_comment>
+     <magic priority="50">
+       <match type="string" value="[Desktop Entry]" offset="0:32"/>
+       <match type="string" value="[Desktop Action" offset="0"/>
+@@ -491,7 +502,7 @@
+     <glob pattern="*.dia"/>
+   </mime-type>
+   <mime-type type="application/x-dvi">
+-    <_comment>TeX Device Independent file</_comment>
++    <_comment>TeX DVI document</_comment>
+     <magic priority="50">
+       <match type="little16" value="0x02f7" offset="0"/>
+     </magic>
+@@ -502,11 +513,11 @@
+     <glob pattern="*.etheme"/>
+   </mime-type>
+   <mime-type type="application/x-egon">
+-    <_comment>Egon Animator</_comment>
++    <_comment>Egon Animator animation</_comment>
+     <glob pattern="*.egon"/>
+   </mime-type>
+   <mime-type type="application/x-executable">
+-    <_comment>Executable</_comment>
++    <_comment>executable</_comment>
+     <magic priority="40">
+       <match type="string" value="\177ELF" offset="0">
+         <match type="byte" value="1" offset="5">
+@@ -527,7 +538,7 @@
+     <glob pattern="*.exe"/>
+   </mime-type>
+   <mime-type type="application/x-font-type1">
+-    <_comment>Fonts</_comment>
++    <_comment>font</_comment>
+     <magic priority="50">
+       <match type="string" value="LWFN" offset="0"/>
+       <match type="string" value="LWFN" offset="65"/>
+@@ -623,7 +634,7 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-font-ttf">
+-    <_comment>Truetype Font</_comment>
++    <_comment>TrueType font</_comment>
+     <magic priority="50">
+       <match type="string" value="FFIL" offset="0"/>
+       <match type="string" value="FFIL" offset="65"/>
+@@ -649,7 +660,7 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-gameboy-rom">
+-    <_comment>Game Boy rom</_comment>
++    <_comment>Game Boy ROM</_comment>
+     <glob pattern="*.gb"/>
+   </mime-type>
+   <mime-type type="application/x-gdbm">
+@@ -660,12 +671,12 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-genesis-rom">
+-    <_comment>Genesis rom</_comment>
++    <_comment>Genesis ROM</_comment>
+     <glob pattern="*.gen"/>
+     <glob pattern="*.md"/>
+   </mime-type>
+   <mime-type type="application/x-gettext-translation">
+-    <_comment>Translated messages (machine-readable)</_comment>
++    <_comment>translated messages (machine-readable)</_comment>
+     <glob pattern="*.gmo"/>
+   </mime-type>
+   <mime-type type="application/x-glade">
+@@ -679,20 +690,20 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-gnucash">
+-    <_comment>GnuCash Workbook</_comment>
++    <_comment>GnuCash spreadsheet</_comment>
+     <glob pattern="*.gnucash"/>
+     <glob pattern="*.gnc"/>
+     <glob pattern="*.xac"/>
+   </mime-type>
+   <mime-type type="application/x-gnumeric">
+-    <_comment>GNUmeric spreadsheet</_comment>
++    <_comment>Gnumeric spreadsheet</_comment>
+     <magic priority="50">
+       <match type="string" value="gmr:Workbook" offset="0:64"/>
+     </magic>
+     <glob pattern="*.gnumeric"/>
+   </mime-type>
+   <mime-type type="application/x-graphite">
+-    <_comment>graphite - Scientific Graphs</_comment>
++    <_comment>Graphite scientific graph</_comment>
+     <glob pattern="*.gra"/>
+   </mime-type>
+   <mime-type type="application/x-gtar">
+@@ -700,20 +711,20 @@
+     <glob pattern="*.gtar"/>
+   </mime-type>
+   <mime-type type="application/x-gtktalog">
+-    <_comment>Gtktalog Catalogue</_comment>
++    <_comment>GTKtalog catalog</_comment>
+     <magic priority="50">
+       <match type="string" value="gtktalog " offset="4"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-gzip">
+-    <_comment>Gzip file</_comment>
++    <_comment>gzip archive</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0"/>
+     </magic>
+     <glob pattern="*.gz"/>
+   </mime-type>
+   <mime-type type="application/x-gzpostscript">
+-    <_comment>Gzipped PostScript File</_comment>
++    <_comment>PostScript document (gzip-compressed)</_comment>
+     <glob pattern="*.ps.gz"/>
+   </mime-type>
+   <mime-type type="application/x-hdf">
+@@ -721,17 +732,17 @@
+     <glob pattern="*.hdf"/>
+   </mime-type>
+   <mime-type type="application/x-ipod-firmware">
+-    <_comment>iPod software</_comment>
++    <_comment>iPod firmware</_comment>
+     <magic priority="50">
+       <match type="string" value="S T O P" offset="0"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-jar">
+-    <_comment>Java Archive</_comment>
++    <_comment>Java archive</_comment>
+     <glob pattern="*.jar"/>
+   </mime-type>
+   <mime-type type="application/x-java">
+-    <_comment>Java Class</_comment>
++    <_comment>Java class</_comment>
+     <magic priority="50">
+       <match type="host16" value="0xcafe" offset="0">
+         <match type="host16" value="0xbabe" offset="2"/>
+@@ -740,12 +751,12 @@
+     <glob pattern="*.class"/>
+   </mime-type>
+   <mime-type type="application/x-jbuilder-project">
+-    <_comment>JBuilder Project</_comment>
++    <_comment>JBuilder project</_comment>
+     <glob pattern="*.jpr"/>
+     <glob pattern="*.jpx"/>
+   </mime-type>
+   <mime-type type="application/x-karbon">
+-    <_comment>Karbon14 Document</_comment>
++    <_comment>Karbon14 drawing</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -761,7 +772,7 @@
+     <glob pattern="*.karbon"/>
+   </mime-type>
+   <mime-type type="application/x-kchart">
+-    <_comment>KChart</_comment>
++    <_comment>KChart chart</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -777,7 +788,7 @@
+     <glob pattern="*.chrt"/>
+   </mime-type>
+   <mime-type type="application/x-kformula">
+-    <_comment>KFormula</_comment>
++    <_comment>KFormula formula</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -793,7 +804,7 @@
+     <glob pattern="*.kfo"/>
+   </mime-type>
+   <mime-type type="application/x-killustrator">
+-    <_comment>KIllustrator document</_comment>
++    <_comment>KIllustrator drawing</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -804,7 +815,7 @@
+     <glob pattern="*.kil"/>
+   </mime-type>
+   <mime-type type="application/x-kivio">
+-    <_comment>Kivio</_comment>
++    <_comment>Kivio flowchart</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -820,7 +831,7 @@
+     <glob pattern="*.flw"/>
+   </mime-type>
+   <mime-type type="application/x-kontour">
+-    <_comment>Kontour</_comment>
++    <_comment>Kontour drawing</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -836,11 +847,11 @@
+     <glob pattern="*.kon"/>
+   </mime-type>
+   <mime-type type="application/x-kpovmodeler">
+-    <_comment>KPovModeler File</_comment>
++    <_comment>KPovModeler scene</_comment>
+     <glob pattern="*.kpm"/>
+   </mime-type>
+   <mime-type type="application/x-kpresenter">
+-    <_comment>KPresenter</_comment>
++    <_comment>KPresenter presentation</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -857,7 +868,7 @@
+     <glob pattern="*.kpt"/>
+   </mime-type>
+   <mime-type type="application/x-krita">
+-    <_comment>Krita</_comment>
++    <_comment>Krita document</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -873,7 +884,7 @@
+     <glob pattern="*.kra"/>
+   </mime-type>
+   <mime-type type="application/x-kspread">
+-    <_comment>KSpread</_comment>
++    <_comment>KSpread spreadsheet</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -889,7 +900,7 @@
+     <glob pattern="*.ksp"/>
+   </mime-type>
+   <mime-type type="application/x-kspread-crypt">
+-    <_comment>KSpread Encrypted</_comment>
++    <_comment>KSpread spreadsheet (encrypted)</_comment>
+     <magic priority="50">
+       <match type="big32" value="0x0d1a2702" offset="0"/>
+     </magic>
+@@ -900,11 +911,11 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-kugar">
+-    <_comment>Kugar Data File</_comment>
++    <_comment>Kugar document</_comment>
+     <glob pattern="*.kud"/>
+   </mime-type>
+   <mime-type type="application/x-kword">
+-    <_comment>KWord</_comment>
++    <_comment>KWord document</_comment>
+     <magic priority="50">
+       <match type="string" value="\037\213" offset="0">
+         <match type="string" value="KOffice" offset="10">
+@@ -921,13 +932,13 @@
+     <glob pattern="*.kwt"/>
+   </mime-type>
+   <mime-type type="application/x-kword-crypt">
+-    <_comment>KWord Encrypted</_comment>
++    <_comment>KWord document (encrypted)</_comment>
+     <magic priority="50">
+       <match type="big32" value="0x0d1a2701" offset="0"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-lha">
+-    <_comment>Lha Archives</_comment>
++    <_comment>LHA archive</_comment>
+     <magic priority="50">
+       <match type="string" value="-lh -" offset="2"/>
+       <match type="string" value="-lh0-" offset="2"/>
+@@ -946,42 +957,46 @@
+     <glob pattern="*.lzh"/>
+   </mime-type>
+   <mime-type type="application/x-lhz">
+-    <_comment>LHA archive</_comment>
++    <_comment>LHZ archive</_comment>
+     <glob pattern="*.lhz"/>
+   </mime-type>
+   <mime-type type="application/x-linguist">
+-    <_comment>Message Catalog</_comment>
++    <_comment>message catalog</_comment>
+     <glob pattern="*.ts"/>
+   </mime-type>
+   <mime-type type="application/x-lyx">
+-    <_comment>LyX Document</_comment>
++    <_comment>LyX document</_comment>
+     <magic priority="50">
+       <match type="string" value="#LyX" offset="0"/>
+     </magic>
+     <glob pattern="*.lyx"/>
+   </mime-type>
+   <mime-type type="application/x-lzop">
+-    <_comment>Lzopped File</_comment>
++    <_comment>LZO archive</_comment>
+     <glob pattern="*.lzo"/>
+   </mime-type>
++  <mime-type type="application/x-magicpoint">
++    <_comment>MagicPoint presentation</_comment>
++    <glob pattern="*.mgp"/>
++  </mime-type>
+   <mime-type type="application/x-macbinary">
+-    <_comment>MacBinary file</_comment>
++    <_comment>Macintosh MacBinary file</_comment>
+     <magic priority="50">
+       <match type="string" value="mBIN" offset="102"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-mif">
+-    <_comment>FrameMaker interchange document</_comment>
++    <_comment>FrameMaker MIF document</_comment>
+     <glob pattern="*.mif"/>
+   </mime-type>
+   <mime-type type="application/x-mozilla-bookmarks">
+-    <_comment>Mozilla bookmarks file</_comment>
++    <_comment>Mozilla bookmarks</_comment>
+     <magic priority="50">
+       <match type="string" value="&lt;!DOCTYPE NETSCAPE-Bookmark-file-1&gt;" offset="0:64"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-ms-dos-executable">
+-    <_comment>DOS/Windows program</_comment>
++    <_comment>DOS/Windows executable</_comment>
+     <magic priority="40">
+       <match type="string" value="MZ" offset="0"/>
+     </magic>
+@@ -996,11 +1011,11 @@
+     <glob pattern="*.wri"/>
+   </mime-type>
+   <mime-type type="application/x-msx-rom">
+-    <_comment>MSX rom</_comment>
++    <_comment>MSX ROM</_comment>
+     <glob pattern="*.msx"/>
+   </mime-type>
+   <mime-type type="application/x-n64-rom">
+-    <_comment>Nintendo64 rom</_comment>
++    <_comment>Nintendo64 ROM</_comment>
+     <glob pattern="*.n64"/>
+   </mime-type>
+   <mime-type type="application/x-nautilus-link">
+@@ -1010,22 +1025,22 @@
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-nes-rom">
+-    <_comment>NES rom</_comment>
++    <_comment>NES ROM</_comment>
+     <glob pattern="*.nes"/>
+   </mime-type>
+   <mime-type type="application/x-netcdf">
+-    <_comment>Unidata netCDF document</_comment>
++    <_comment>Unidata NetCDF document</_comment>
+     <glob pattern="*.cdf"/>
+     <glob pattern="*.nc"/>
+   </mime-type>
+   <mime-type type="application/x-netscape-bookmarks">
+-    <_comment>Netscape bookmarks file</_comment>
++    <_comment>Netscape bookmarks</_comment>
+     <magic priority="50">
+       <match type="string" value="&lt;!DOCTYPE NETSCAPE-Bookmark-file-1&gt;" offset="0:64"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-object">
+-    <_comment>Object Code</_comment>
++    <_comment>object code</_comment>
+     <magic priority="50">
+       <match type="string" value="\177ELF" offset="0">
+         <match type="byte" value="1" offset="5">
+@@ -1047,8 +1062,16 @@
+     </magic>
+     <glob pattern="*.ogg"/>
+   </mime-type>
++  <!-- These are typically compount document of various types, so prefer
++       extensions for these -->
++  <mime-type type="application/x-ole-storage">
++    <_comment>OLE2 compound document storage</_comment>
++    <magic priority="50">
++      <match type="string" value="\320\317\021\340\241\261\032\341" offset="0"/>
++    </magic>
++  </mime-type>
+   <mime-type type="application/x-oleo">
+-    <_comment>GNU Oleo Spreadsheet</_comment>
++    <_comment>GNU Oleo spreadsheet</_comment>
+     <magic priority="50">
+       <match type="string" value="Oleo" offset="31"/>
+     </magic>
+@@ -1058,13 +1081,13 @@
+     <_comment>Palm OS database</_comment>
+   </mime-type>
+   <mime-type type="application/x-pef-executable">
+-    <_comment>PEF program</_comment>
++    <_comment>PEF executable</_comment>
+     <magic priority="50">
+       <match type="string" value="Joy!" offset="0"/>
+     </magic>
+   </mime-type>
+   <mime-type type="application/x-perl">
+-    <_comment>PERL program</_comment>
++    <_comment>Perl script</_comment>
+     <magic priority="50">
+       <match type="string" value='eval \"exec /usr/local/bin/perl' offset="0"/>
+       <match type="string" value="/bin/perl" offset="1:16"/>
+@@ -1085,7 +1108,7 @@
+     <glob pattern="*.php4"/>
+   </mime-type>
+   <mime-type type="application/x-pkcs12">
+-    <_comment>PKCS#12 Certificate Bundle</_comment>
++    <_comment>PKCS#12 certificate bundle</_comment>
+     <glob pattern="*.p12"/>
+     <glob pattern="*.pfx"/>
+   </mime-type>
+@@ -1094,11 +1117,11 @@
+     <glob pattern="gmon.out"/>
+   </mime-type>
+   <mime-type type="application/x-pw">
+-    <_comment>Pathetic Writer</_comment>
++    <_comment>Pathetic Writer document</_comment>
+     <glob pattern="*.pw"/>
+   </mime-type>
+   <mime-type type="application/x-python">
+-    <_comment>Python program</_comment>
++    <_comment>Python script</_comment>
+     <magic priority="50">
+       <match type="string" value="#!/bin/python" offset="0"/>
+       <match type="string" value="#! /bin/python" offset="0"/>
+@@ -1122,7 +1145,7 @@
+     <glob pattern="*.pyo"/>
+   </mime-type>
+   <mime-type type="application/x-quattropro">
+-    <_comment>Quattro Pro file</_comment>
++    <_comment>Quattro Pro spreadsheet</_comment>
+     <glob pattern="*.wb1"/>
+     <glob pattern="*.wb2"/>
+     <glob pattern="*.wb3"/>
+@@ -1132,25 +1155,25 @@
+     <glob pattern="*.qif"/>
+   </mime-type>
+   <mime-type type="application/x-rar">
+-    <_comment>Rar archive</_comment>
++    <_comment>RAR archive</_comment>
+     <magic priority="50">
+       <match type="string" value="Rar!" offset="0"/>
+     </magic>
+     <glob pattern="*.rar"/>
+   </mime-type>
+   <mime-type type="application/x-reject">
+-    <_comment>rejected patch file</_comment>
++    <_comment>rejected patch</_comment>
+     <glob pattern="*.rej"/>
+   </mime-type>
+   <mime-type type="application/x-rpm">
+-    <_comment>RPM package file</_comment>
++    <_comment>RPM package</_comment>
+     <magic priority="50">
+       <match type="string" value="\xed\xab\xee\xdb" offset="0"/>
+     </magic>
+     <glob pattern="*.rpm"/>
+   </mime-type>
+   <mime-type type="application/x-ruby">
+-    <_comment>Ruby program</_comment>
++    <_comment>Ruby script</_comment>
+     <magic>
+       <match type="string" value="/bin/env ruby" offset="1:16"/>
+     </magic>
+@@ -1165,11 +1188,11 @@
+     <glob pattern="*.shar"/>
+   </mime-type>
+   <mime-type type="application/x-shared-library-la">
+-    <_comment>shared library</_comment>
++    <_comment>shared library (la)</_comment>
+     <glob pattern="*.la"/>
+   </mime-type>
+   <mime-type type="application/x-sharedlib">
+-    <_comment>Shared library</_comment>
++    <_comment>shared library</_comment>
+     <magic priority="50">
+       <match type="string" value="\177ELF" offset="0">
+         <match type="byte" value="1" offset="5">
+@@ -1201,26 +1224,32 @@
+       <match type="string" value="/bin/csh" offset="1:16"/>
+       <match type="string" value="/bin/zsh" offset="1:16"/>
+       <match type="string" value="/bin/sh" offset="1:16"/>
++      <match type="string" value="#!/usr/bin/env sh" offset="0"/>
++      <match type="string" value="#!/usr/bin/env bash" offset="0"/>
++      <match type="string" value="#!/usr/bin/env csh" offset="0"/>
++      <match type="string" value="#!/usr/bin/env tcsh" offset="0"/>
++      <match type="string" value="#!/usr/bin/env zsh" offset="0"/>
++
+     </magic>
+     <glob pattern="*.sh"/>
+     <glob pattern="*.csh"/>
+   </mime-type>
+   <mime-type type="application/x-shockwave-flash">
+-    <_comment>Shockwave Flash Media</_comment>
++    <_comment>Shockwave Flash file</_comment>
+     <magic priority="50">
+       <match type="string" value="FWS" offset="0"/>
+     </magic>
+     <glob pattern="*.swf"/>
+   </mime-type>
+   <mime-type type="application/x-siag">
+-    <_comment>Siag Spreadsheet</_comment>
++    <_comment>Siag spreadsheet</_comment>
+     <glob pattern="*.siag"/>
+   </mime-type>
+   <mime-type type="application/x-slp">
+     <_comment>Stampede package</_comment>
+   </mime-type>
+   <mime-type type="application/x-sms-rom">
+-    <_comment>SMS or Game Gear rom</_comment>
++    <_comment>SMS/Game Gear ROM</_comment>
+     <glob pattern="*.sms"/>
+     <glob pattern="*.gg"/>
+   </mime-type>
+@@ -1240,7 +1269,7 @@
+     <glob pattern="*.sv4crc"/>
+   </mime-type>
+   <mime-type type="application/x-tar">
+-    <_comment>Tar archive</_comment>
++    <_comment>tar archive</_comment>
+     <magic priority="50">
+       <match type="string" value="ustar\0" offset="257"/>
+       <match type="string" value="ustar\040\040\0" offset="257"/>
+@@ -1248,19 +1277,19 @@
+     <glob pattern="*.tar"/>
+   </mime-type>
+   <mime-type type="application/x-tarz">
+-    <_comment>Compressed Tar Archive</_comment>
++    <_comment>tar archive (compressed)</_comment>
+     <glob pattern="*.tar.Z"/>
+   </mime-type>
+   <mime-type type="application/x-tex-gf">
+-    <_comment>Generic Font files</_comment>
++    <_comment>generic font file</_comment>
+     <glob pattern="*.*gf"/>
+   </mime-type>
+   <mime-type type="application/x-tex-pk">
+-    <_comment>Packed Font file</_comment>
++    <_comment>packed font file</_comment>
+     <glob pattern="*pk"/>
+   </mime-type>
+   <mime-type type="application/x-tgif">
+-    <_comment>TGIF Document</_comment>
++    <_comment>TGIF document</_comment>
+     <magic priority="50">
+       <match type="string" value="%TGIF" offset="0"/>
+     </magic>
+@@ -1274,7 +1303,7 @@
+     <_comment>ToutDoux document</_comment>
+   </mime-type>
+   <mime-type type="application/x-trash">
+-    <_comment>Backup file</_comment>
++    <_comment>backup file</_comment>
+     <glob pattern="*~"/>
+     <glob pattern="*%"/>
+     <glob pattern="*.bak"/>
+@@ -1294,14 +1323,14 @@
+     <glob pattern="*.t"/>
+   </mime-type>
+   <mime-type type="application/x-troff-man">
+-    <_comment>Troff document with manpage macros</_comment>
++    <_comment>Troff document (with manpage macros)</_comment>
+     <glob pattern="*.man"/>
+   </mime-type>
+   <mime-type type="application/x-troff-man-compressed">
+     <_comment>manual page (compressed)</_comment>
+   </mime-type>
+   <mime-type type="application/x-tzo">
+-    <_comment>Lzopped Tar Archive</_comment>
++    <_comment>tar archive (LZO-compressed)</_comment>
+     <glob pattern="*.tar.lzo"/>
+     <glob pattern="*.tzo"/>
+   </mime-type>
+@@ -1313,8 +1342,12 @@
+     <_comment>WAIS source code</_comment>
+     <glob pattern="*.src"/>
+   </mime-type>
++  <mime-type type="application/x-wpg">
++    <_comment>WordPerfect/Drawperfect image</_comment>
++    <glob pattern="*.wpg"/>
++  </mime-type>
+   <mime-type type="application/x-x509-ca-cert">
+-    <_comment>DER, PEM, or Netscape encoded X.509 certificate</_comment>
++    <_comment>DER/PEM/Netscape-encoded X.509 certificate</_comment>
+     <glob pattern="*.der"/>
+     <glob pattern="*.cer"/>
+     <glob pattern="*.crt"/>
+@@ -1322,22 +1355,22 @@
+     <glob pattern="*.pem"/>
+   </mime-type>
+   <mime-type type="application/x-zerosize">
+-    <_comment>Empty Document</_comment>
++    <_comment>empty document</_comment>
+   </mime-type>
+   <mime-type type="application/x-zoo">
+-    <_comment>Zoo archive</_comment>
++    <_comment>zoo archive</_comment>
+     <magic priority="50">
+       <match type="little32" value="0xfdc4a7dc" offset="20"/>
+     </magic>
+     <glob pattern="*.zoo"/>
+   </mime-type>
+   <mime-type type="application/xhtml+xml">
+-    <_comment>XHTML Page</_comment>
++    <_comment>XHTML page</_comment>
+     <glob pattern="*.xhtml"/>
+     <root-XML namespaceURI='http://www.w3.org/1999/xhtml' localName='html'/>
+   </mime-type>
+   <mime-type type="application/zip">
+-    <_comment>Zip archive</_comment>
++    <_comment>ZIP archive</_comment>
+     <magic priority="40">
+       <match type="string" value="PK\003\004" offset="0"/>
+     </magic>
+@@ -1356,7 +1389,7 @@
+     <glob pattern="*.snd"/>
+   </mime-type>
+   <mime-type type="audio/prs.sid">
+-    <_comment>Commodore 64 Audio</_comment>
++    <_comment>Commodore 64 audio</_comment>
+     <magic priority="50">
+       <match type="string" value="PSID" offset="0"/>
+     </magic>
+@@ -1411,8 +1444,12 @@
+     </magic>
+     <glob pattern="*.it"/>
+   </mime-type>
++  <mime-type type="audio/x-flac">
++    <_comment>FLAC audio</_comment>
++    <glob pattern="*.flac"/>
++  </mime-type>
+   <mime-type type="audio/midi">
+-    <alias type='audio/x-midi'/>
++    <alias type="audio/x-midi"/>
+     <_comment>MIDI audio</_comment>
+     <magic priority="50">
+       <match type="string" value="MThd" offset="0"/>
+@@ -1421,7 +1458,7 @@
+     <glob pattern="*.midi"/>
+   </mime-type>
+   <mime-type type="audio/x-mod">
+-    <_comment>Amiga soundtracker audio</_comment>
++    <_comment>Amiga SoundTracker audio</_comment>
+     <glob pattern="*.mod"/>
+     <glob pattern="*.ult"/>
+     <glob pattern="*.uni"/>
+@@ -1431,7 +1468,7 @@
+     <glob pattern="*.669"/>
+   </mime-type>
+   <mime-type type="audio/x-mp3">
+-    <_comment>MPEG layer 3 audio</_comment>
++    <_comment>MP3 audio</_comment>
+     <magic priority="50">
+       <match type="big32" value="0xfffb" offset="0"/>
+       <match type="string" value="ID3" offset="0"/>
+@@ -1440,13 +1477,13 @@
+     <glob pattern="*.mp3"/>
+   </mime-type>
+   <mime-type type="audio/x-mp3-playlist">
+-    <_comment>MP3 audio playlist</_comment>
++    <_comment>MP3 playlist</_comment>
+   </mime-type>
+   <mime-type type="audio/x-mpeg">
+     <_comment>MP3 audio</_comment>
+   </mime-type>
+   <mime-type type="audio/x-mpegurl">
+-    <_comment>Streaming MPEG layer 3 audio</_comment>
++    <_comment>MP3 audio (streamed)</_comment>
+     <glob pattern="*.m3u"/>
+   </mime-type>
+   <mime-type type="audio/x-ms-asx">
+@@ -1468,7 +1505,8 @@
+   </mime-type>
+   <mime-type type="audio/x-riff">
+     <_comment>RIFF audio</_comment>
+-    <magic priority="50">
++    <!-- need to be lower prio than avi -->
++    <magic priority="45">
+       <match type="string" value="RIFF" offset="0"/>
+     </magic>
+   </mime-type>
+@@ -1477,7 +1515,7 @@
+     <glob pattern="*.s3m"/>
+   </mime-type>
+   <mime-type type="audio/x-scpls">
+-    <_comment>MP3 ShoutCast Playlist</_comment>
++    <_comment>MP3 ShoutCast playlist</_comment>
+     <glob pattern="*.pls"/>
+   </mime-type>
+   <mime-type type="audio/x-stm">
+@@ -1521,7 +1559,7 @@
+     <glob pattern="*.cgm"/>
+   </mime-type>
+   <mime-type type="image/fax-g3">
+-    <_comment>CCITT g3 fax</_comment>
++    <_comment>CCITT G3 fax</_comment>
+     <glob pattern="*.g3"/>
+   </mime-type>
+   <mime-type type="image/g3fax">
+@@ -1548,6 +1586,16 @@
+     <glob pattern="*.jpg"/>
+     <glob pattern="*.jpe"/>
+   </mime-type>
++  <mime-type type="image/jpeg2000">
++    <_comment>JPEG-2000 image</_comment>
++    <glob pattern="*.jp2"/>
++  </mime-type>
++  <mime-type type="image/x-pict">
++    <_comment>Macintosh Quickdraw/PICT drawing</_comment>
++    <glob pattern="*.pict"/>
++    <glob pattern="*.pict1"/>
++    <glob pattern="*.pict2"/>
++  </mime-type>
+   <mime-type type="image/png">
+     <_comment>PNG image</_comment>
+     <magic priority="50">
+@@ -1555,8 +1603,12 @@
+     </magic>
+     <glob pattern="*.png"/>
+   </mime-type>
++  <mime-type type="image/rle">
++    <_comment>Run Length Encoded bitmap</_comment>
++    <glob pattern="*.rle"/>
++  </mime-type>
+   <mime-type type="image/svg+xml">
+-    <_comment>Scalable Vector Graphics</_comment>
++    <_comment>scalable SVG image</_comment>
+     <magic priority="80">
+       <match type="string" value="&lt;!DOCTYPE svg" offset="0:256"/>
+       <match type="string" value="&lt;svg" offset="0:64"/>
+@@ -1564,7 +1616,7 @@
+     <glob pattern="*.svg"/>
+   </mime-type>
+   <mime-type type="image/tiff">
+-    <_comment>TIFF Image</_comment>
++    <_comment>TIFF image</_comment>
+     <magic priority="50">
+       <match type="string" value="MM\x00\x2a" offset="0"/>
+       <match type="string" value="II\x2a\x00" offset="0"/>
+@@ -1577,7 +1629,7 @@
+     <glob pattern="*.dwg"/>
+   </mime-type>
+   <mime-type type="image/vnd.dxf">
+-    <_comment>DXF vector graphic</_comment>
++    <_comment>DXF vector image</_comment>
+     <glob pattern="*.dxf"/>
+   </mime-type>
+   <mime-type type="image/x-3ds">
+@@ -1585,7 +1637,7 @@
+     <glob pattern="*.3ds"/>
+   </mime-type>
+   <mime-type type="image/x-applix-graphics">
+-    <_comment>Applix Graphics document</_comment>
++    <_comment>Applix Graphics image</_comment>
+     <magic priority="50">
+       <match type="string" value="*BEGIN" offset="0">
+         <match type="string" value="GRAPHICS" offset="7"/>
+@@ -1598,7 +1650,7 @@
+     <glob pattern="*.ras"/>
+   </mime-type>
+   <mime-type type="image/x-compressed-xcf">
+-    <_comment>compressed GIMP document</_comment>
++    <_comment>GIMP image (compressed)</_comment>
+     <glob pattern="*.xcf.gz"/>
+     <glob pattern="*.xcf.bz2"/>
+   </mime-type>
+@@ -1657,7 +1709,7 @@
+     <glob pattern="*.fits"/>
+   </mime-type>
+   <mime-type type="image/x-fpx">
+-    <_comment>FlashPix Image</_comment>
++    <_comment>FlashPix image</_comment>
+     <magic priority="50">
+       <match type="big32" value="0x46506978" offset="0"/>
+     </magic>
+@@ -1670,7 +1722,7 @@
+     <glob pattern="*.icb"/>
+   </mime-type>
+   <mime-type type="image/x-ico">
+-    <_comment>MSWindows Icons</_comment>
++    <_comment>Microsoft Windows icon</_comment>
+     <glob pattern="*.ico"/>
+   </mime-type>
+   <mime-type type="image/x-iff">
+@@ -1695,7 +1747,7 @@
+     <glob pattern="*.lws"/>
+   </mime-type>
+   <mime-type type="image/x-msod">
+-    <_comment>MS Office Drawing</_comment>
++    <_comment>Microsoft Office drawing</_comment>
+     <glob pattern="*.msod"/>
+   </mime-type>
+   <mime-type type="image/x-niff">
+@@ -1746,7 +1798,7 @@
+     <glob pattern="*.ppm"/>
+   </mime-type>
+   <mime-type type="image/x-psd">
+-    <_comment>Photoshop document</_comment>
++    <_comment>Photoshop image</_comment>
+     <magic priority="50">
+       <match type="string" mask="0xffffffff0000ffffffff" value="8BPS  \000\000\000\000" offset="0"/>
+     </magic>
+@@ -1756,8 +1808,12 @@
+     <_comment>RGB image</_comment>
+     <glob pattern="*.rgb"/>
+   </mime-type>
++  <mime-type type="image/x-sgi">
++    <_comment>Silicon Graphics IRIS image</_comment>
++    <glob pattern="*.sgi"/>
++  </mime-type>
+   <mime-type type="image/x-sun-raster">
+-    <_comment>SUN Rasterfile</_comment>
++    <_comment>SUN Rasterfile image</_comment>
+     <magic priority="50">
+       <match type="big32" value="0x59a66a95" offset="0"/>
+     </magic>
+@@ -1767,8 +1823,12 @@
+     <_comment>TarGA image</_comment>
+     <glob pattern="*.tga"/>
+   </mime-type>
++  <mime-type type="image/x-win-bitmap">
++    <_comment>Windows cursor</_comment>
++    <glob pattern="*.cur"/>
++  </mime-type>
+   <mime-type type="image/x-wmf">
+-    <_comment>Windows MetaFile</_comment>
++    <_comment>Microsoft WMF file</_comment>
+     <glob pattern="*.wmf"/>
+   </mime-type>
+   <mime-type type="image/x-xbitmap">
+@@ -1776,11 +1836,11 @@
+     <glob pattern="*.xbm"/>
+   </mime-type>
+   <mime-type type="image/x-xcf">
+-    <_comment>GIMP native image format</_comment>
++    <_comment>GIMP image</_comment>
+     <glob pattern="*.xcf"/>
+   </mime-type>
+   <mime-type type="image/x-xfig">
+-    <_comment>XFig File</_comment>
++    <_comment>XFig image</_comment>
+     <glob pattern="*.fig"/>
+     <magic priority="50">
+       <match type="string" value="#FIG" offset="0"/>
+@@ -1798,23 +1858,23 @@
+     <glob pattern="*.xwd"/>
+   </mime-type>
+   <mime-type type="inode/blockdevice">
+-    <_comment>Block Device</_comment>
++    <_comment>block device</_comment>
+   </mime-type>
+   <mime-type type="inode/chardevice">
+-    <_comment>Character Device</_comment>
++    <_comment>character device</_comment>
+   </mime-type>
+   <mime-type type="inode/directory">
+-    <_comment>Directory</_comment>
++    <_comment>folder</_comment>
+   </mime-type>
+   <mime-type type="inode/fifo">
+-    <_comment>Pipe</_comment>
++    <_comment>pipe</_comment>
+   </mime-type>
+   <mime-type type='inode/mount-point'>
+     <sub-class-of type='inode/directory'/>
+-    <_comment>Mount point</_comment>
++    <_comment>mount point</_comment>
+   </mime-type>
+   <mime-type type="inode/socket">
+-    <_comment>Socket</_comment>
++    <_comment>socket</_comment>
+   </mime-type>
+   <mime-type type="inode/symlink">
+     <_comment>symbolic link</_comment>
+@@ -1840,7 +1900,7 @@
+     <_comment>partial email message</_comment>
+   </mime-type>
+   <mime-type type="message/rfc822">
+-    <_comment>Email message</_comment>
++    <_comment>email message</_comment>
+     <magic priority="50">
+       <match type="string" value="#! rnews" offset="0"/>
+       <match type="string" value="Forward to" offset="0"/>
+@@ -1873,7 +1933,7 @@
+     <_comment>encrypted message</_comment>
+   </mime-type>
+   <mime-type type="multipart/mixed">
+-    <_comment>Compound documents</_comment>
++    <_comment>compound documents</_comment>
+   </mime-type>
+   <mime-type type="multipart/related">
+     <_comment>compound document</_comment>
+@@ -1885,7 +1945,7 @@
+     <_comment>signed message</_comment>
+   </mime-type>
+   <mime-type type="multipart/x-mixed-replace">
+-    <_comment>Stream of data (server push)</_comment>
++    <_comment>stream of data (server push)</_comment>
+   </mime-type>
+   <mime-type type="text/calendar">
+     <_comment>iCalendar file</_comment>
+@@ -1906,11 +1966,11 @@
+     <_comment>enriched text document</_comment>
+   </mime-type>
+   <mime-type type="text/x-gettext-translation">
+-    <_comment>Translated messages</_comment>
++    <_comment>translated messages</_comment>
+     <glob pattern="*.po"/>
+   </mime-type>
+   <mime-type type="text/html">
+-    <_comment>HTML Page</_comment>
++    <_comment>HTML page</_comment>
+     <magic priority="50">
+       <match type="string" value="&lt;!DOCTYPE HTML" offset="0:64"/>
+       <match type="string" value="&lt;!doctype html" offset="0:64"/>
+@@ -1941,7 +2001,7 @@
+     <glob pattern="*.mml"/>
+   </mime-type>
+   <mime-type type="text/plain">
+-    <_comment>Plain Text</_comment>
++    <_comment>plain text document</_comment>
+     <magic priority="50">
+       <match type="string" value="This is TeX," offset="0"/>
+       <match type="string" value="This is METAFONT," offset="0"/>
+@@ -1965,12 +2025,12 @@
+     <glob pattern="*.rss"/>
+   </mime-type>
+   <mime-type type="text/sgml">
+-    <_comment>SGML</_comment>
++    <_comment>SGML document</_comment>
+     <glob pattern="*.sgml"/>
+     <glob pattern="*.sgm"/>
+   </mime-type>
+   <mime-type type="text/spreadsheet">
+-    <_comment>Spreadsheet Interchange document</_comment>
++    <_comment>Spreadsheet interchange document</_comment>
+     <magic priority="50">
+       <match type="string" value="ID;" offset="0"/>
+     </magic>
+@@ -1978,7 +2038,7 @@
+     <glob pattern="*.slk"/>
+   </mime-type>
+   <mime-type type="text/tab-separated-values">
+-    <_comment>tab-separated text document</_comment>
++    <_comment>text document (with tab-separated values)</_comment>
+     <glob pattern="*.tsv"/>
+   </mime-type>
+   <mime-type type="text/vnd.wap.wml">
+@@ -1986,24 +2046,24 @@
+     <glob pattern="*.wml"/>
+   </mime-type>
+   <mime-type type="text/x-adasrc">
+-    <_comment>Ada sources</_comment>
++    <_comment>Ada source code</_comment>
+     <glob pattern="*.adb"/>
+     <glob pattern="*.ads"/>
+   </mime-type>
+   <mime-type type="text/x-authors">
+-    <_comment>authors list</_comment>
++    <_comment>author list</_comment>
+     <glob pattern="AUTHORS"/>
+   </mime-type>
+   <mime-type type="text/x-bibtex">
+-    <_comment>Bibliographic Data (bibtex)</_comment>
++    <_comment>Bibtex bibliographic data</_comment>
+     <glob pattern="*.bib"/>
+   </mime-type>
+   <mime-type type="text/x-c++hdr">
+-    <_comment>C++ headers</_comment>
++    <_comment>C++ source code header</_comment>
+     <glob pattern="*.hh"/>
+   </mime-type>
+   <mime-type type="text/x-c++src">
+-    <_comment>C++ sources</_comment>
++    <_comment>C++ source code</_comment>
+     <glob pattern="*.cpp"/>
+     <glob pattern="*.cxx"/>
+     <glob pattern="*.cc"/>
+@@ -2011,13 +2071,13 @@
+     <glob pattern="*.c++"/>
+   </mime-type>
+   <mime-type type="text/x-chdr">
+-    <_comment>C headers</_comment>
++    <_comment>C source code header</_comment>
+     <glob pattern="*.h"/>
+     <glob pattern="*.h++"/>
+     <glob pattern="*.hp"/>
+   </mime-type>
+   <mime-type type="text/x-comma-separated-values">
+-    <_comment>Text file with comma separated values</_comment>
++    <_comment>text document (with comma-separated values)</_comment>
+     <glob pattern="*.csv"/>
+   </mime-type>
+   <mime-type type="text/x-copying">
+@@ -2029,24 +2089,17 @@
+     <glob pattern="CREDITS"/>
+   </mime-type>
+   <mime-type type="text/x-csrc">
+-    <_comment>C sources</_comment>
++    <_comment>C source code</_comment>
+     <glob pattern="*.c"/>
+   </mime-type>
++  <mime-type type="text/x-csharp">
++    <_comment>C# source code</_comment>
++    <glob pattern="*.cs"/>
++  </mime-type>
+   <mime-type type="text/x-dcl">
+     <_comment>DCL script</_comment>
+     <glob pattern="*.dcl"/>
+   </mime-type>
+-  <mime-type type="text/x-diff">
+-    <_comment>Differences between files</_comment>
+-    <magic priority="50">
+-      <match type="string" value="diff\t" offset="0"/>
+-      <match type="string" value="***\t" offset="0"/>
+-      <match type="string" value="Only in\t" offset="0"/>
+-      <match type="string" value="Common subdirectories: " offset="0"/>
+-    </magic>
+-    <glob pattern="*.diff"/>
+-    <glob pattern="*.patch"/>
+-  </mime-type>
+   <mime-type type="text/x-dsl">
+     <_comment>DSSSL document</_comment>
+     <glob pattern="*.dsl"/>
+@@ -2085,7 +2138,7 @@
+     <glob pattern="INSTALL"/>
+   </mime-type>
+   <mime-type type="text/x-java">
+-    <_comment>Java sources</_comment>
++    <_comment>Java source code</_comment>
+     <glob pattern="*.java"/>
+   </mime-type>
+   <mime-type type="text/x-ksh">
+@@ -2104,7 +2157,7 @@
+     <glob pattern="*.lhs"/>
+   </mime-type>
+   <mime-type type="text/x-log">
+-    <_comment>Application log file</_comment>
++    <_comment>application log</_comment>
+     <glob pattern="*.log"/>
+   </mime-type>
+   <mime-type type="text/x-makefile">
+@@ -2113,27 +2166,32 @@
+     <glob pattern="[Mm]akefile"/>
+   </mime-type>
+   <mime-type type="text/x-moc">
+-    <_comment>Qt Meta Object File</_comment>
++    <_comment>Qt Meta Object file</_comment>
+     <glob pattern="*.moc"/>
+   </mime-type>
+   <mime-type type="text/x-objcsrc">
+-    <_comment>Objective-C sources</_comment>
++    <_comment>Objective-C source code</_comment>
+     <glob pattern="*.m"/>
+   </mime-type>
+   <mime-type type="text/x-pascal">
+-    <_comment>Pascal sources</_comment>
++    <_comment>Pascal source code</_comment>
+     <glob pattern="*.p"/>
+     <glob pattern="*.pas"/>
+   </mime-type>
+   <mime-type type="text/x-patch">
+-    <_comment>source code patch</_comment>
++    <_comment>differences between files</_comment>
+     <magic priority="50">
++      <match type="string" value="diff\t" offset="0"/>
+       <match type="string" value="diff " offset="0"/>
+-      <match type="string" value="Index:" offset="0"/>
++      <match type="string" value="***\t" offset="0"/>
+       <match type="string" value="*** " offset="0"/>
++      <match type="string" value="Only in\t" offset="0"/>
+       <match type="string" value="Only in " offset="0"/>
+       <match type="string" value="Common subdirectories: " offset="0"/>
++      <match type="string" value="Index:" offset="0"/>
+     </magic>
++    <glob pattern="*.diff"/>
++    <glob pattern="*.patch"/>
+   </mime-type>
+   <mime-type type="text/x-readme">
+     <_comment>README document</_comment>
+@@ -2155,12 +2213,12 @@
+     <glob pattern="*.sql"/>
+   </mime-type>
+   <mime-type type="text/x-tcl">
+-    <_comment>Tcl file</_comment>
++    <_comment>Tcl script</_comment>
+     <glob pattern="*.tcl"/>
+     <glob pattern="*.tk"/>
+   </mime-type>
+   <mime-type type="text/x-tex">
+-    <_comment>TeX file</_comment>
++    <_comment>TeX document</_comment>
+     <glob pattern="*.tex"/>
+     <glob pattern="*.ltx"/>
+     <glob pattern="*.sty"/>
+@@ -2172,20 +2230,24 @@
+     <glob pattern="*.texinfo"/>
+   </mime-type>
+   <mime-type type="text/x-troff-me">
+-    <_comment>troff me input document</_comment>
++    <_comment>Troff ME input document</_comment>
+     <glob pattern="*.me"/>
+   </mime-type>
+   <mime-type type="text/x-troff-mm">
+-    <_comment>troff mm input document</_comment>
++    <_comment>Troff MM input document</_comment>
+     <glob pattern="*.mm"/>
+   </mime-type>
+   <mime-type type="text/x-troff-ms">
+-    <_comment>troff ms input document</_comment>
++    <_comment>Troff MS input document</_comment>
+     <glob pattern="*.ms"/>
+   </mime-type>
++  <mime-type type="text/x-uil">
++    <_comment>X-Motif UIL table</_comment>
++    <glob pattern="*.uil"/>
++  </mime-type>
+   <mime-type type="text/x-uri">
+     <!-- Note: text/uri-list is reserved by the XDND protocol! -->
+-    <_comment>the location of some resource</_comment>
++    <_comment>resource location</_comment>
+     <glob pattern="*.uri"/>
+     <glob pattern="*.url"/>
+   </mime-type>
+@@ -2199,7 +2261,7 @@
+     <glob pattern="*.vcf"/>
+   </mime-type>
+   <mime-type type="text/x-vcard">
+-    <_comment>Electronic Business Card</_comment>
++    <_comment>electronic business card</_comment>
+     <magic priority="50">
+       <match type="string" value="BEGIN:VCARD" offset="0"/>
+       <match type="string" value="begin:vcard" offset="0"/>
+@@ -2213,7 +2275,7 @@
+     <glob pattern="*.xslfo"/>
+   </mime-type>
+   <mime-type type="text/x-xslt">
+-    <_comment>XSLT Stylesheet file</_comment>
++    <_comment>XSLT stylesheet</_comment>
+     <glob pattern="*.xslt"/>
+     <glob pattern="*.xsl"/>
+   </mime-type>
+@@ -2233,7 +2295,7 @@
+     <_comment>ISI video</_comment>
+   </mime-type>
+   <mime-type type="video/mpeg">
+-    <_comment>MPEG Video</_comment>
++    <_comment>MPEG video</_comment>
+     <magic priority="50">
+       <match type="string" value="\x47\x3f\xff\x10" offset="0"/>
+       <match type="big32" value="0x000001b3" offset="0"/>
+@@ -2247,7 +2309,7 @@
+     <glob pattern="*.dat"/>
+   </mime-type>
+   <mime-type type="video/quicktime">
+-    <_comment>Quicktime Video</_comment>
++    <_comment>QuickTime video</_comment>
+     <magic priority="50">
+       <match type="string" value="mdat" offset="12"/>
+       <match type="string" value="mdat" offset="4"/>
+@@ -2272,7 +2334,7 @@
+     <_comment>AVI video</_comment>
+   </mime-type>
+   <mime-type type="video/x-flic">
+-    <_comment>Autodesk's FLIC files</_comment>
++    <_comment>AutoDesk FLIC animation</_comment>
+     <magic priority="50">
+       <match type="little16" value="0xAF11" offset="0"/>
+       <match type="little16" value="0xAF12" offset="0"/>
+@@ -2281,11 +2343,11 @@
+     <glob pattern="*.flc"/>
+   </mime-type>
+   <mime-type type="video/x-mng">
+-    <_comment>MNG image</_comment>
++    <_comment>MNG animation</_comment>
+     <glob pattern="*.mng"/>
+   </mime-type>
+   <mime-type type="video/x-ms-asf">
+-    <_comment>MS ASF video</_comment>
++    <_comment>Microsoft ASF video</_comment>
+     <glob pattern="*.asf"/>
+     <glob pattern="*.asx"/>
+     <magic priority="50">
+@@ -2297,7 +2359,7 @@
+     <glob pattern="*.wmv"/>
+   </mime-type>
+   <mime-type type="video/x-msvideo">
+-    <_comment>Microsoft AVI Video</_comment>
++    <_comment>Microsoft AVI video</_comment>
+     <magic priority="50">
+       <match type="string" value="AVI " offset="8"/>
+       <match type="string" value="RIFF" offset="0"/>
