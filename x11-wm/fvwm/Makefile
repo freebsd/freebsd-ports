@@ -3,7 +3,7 @@
 # Date created:		25 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1994/09/14 16:18:10 jkh Exp $
+# $Id: Makefile,v 1.7 1994/09/14 16:35:25 jkh Exp $
 #
 
 DISTNAME=	fvwm-1.23b
@@ -12,7 +12,7 @@ DISTFILES=	fvwm-1.23b-core.tar.gz fvwm-1.23b-modules.tar.gz \
 		fvwm-1.23-icons.tar.gz
 MASTER_SITES=	ftp://spcot.sanders.com/pub/fvwm/
 USE_IMAKE=	yes
-DEPENDS=	x11/xpm
+DEPENDS=	${PORTSDIR}/x11/xpm
 
 pre-install:
 	@cp ${FILESDIR}/configure2.h ${WRKSRC}/configure.h
