@@ -30,6 +30,6 @@ MAN1=		Xvfb.1
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE= is part of X.Org
+IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 .endif
 .include <bsd.port.post.mk>
