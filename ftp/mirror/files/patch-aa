@@ -1,5 +1,5 @@
-*** makefile.orig	Tue Jan 18 22:58:21 1994
---- makefile	Mon May 15 17:50:25 1995
+*** makefile.orig	Thu Jun  1 21:26:26 1995
+--- makefile	Sat Mar 16 16:19:59 1996
 ***************
 *** 6,12 ****
   	support/cyber-patches support/lstest.pl new-patches-by
@@ -18,20 +18,58 @@
   mirror.tar: $(FILES)
   	rev=`./mirror -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
 ***************
-*** 20,22 ****
---- 20,34 ----
-  	checkin $(FILES)
+*** 25,50 ****
+  # mode to install executables
+  EXMODE = 755
+  # group to own all the files
+! GRP = gnu
+  # directory to install .pl (perl library) files
+! PLDIR = /usr/local/perl5/lib/perl5
+  # directory to install public executables
+! BINDIR = /usr/local/sbin
+  # directory to install man pages
+! MANDIR = /usr/local/man/man1
   
-  #  install, clean ...
-+ install:
-+ 	install -c ftp.pl ${PREFIX}/lib/mirror/
-+ 	install -c lsparse.pl ${PREFIX}/lib/mirror/
-+ 	install -c dateconv.pl ${PREFIX}/lib/mirror/
-+ 	install -c mirror.defaults ${PREFIX}/lib/mirror/mirror.defaults.sample
-+ 	install -c mirror.pl ${PREFIX}/bin/mirror
-+ 	install -c mirror.man ${PREFIX}/man/man1/mirror.1
-+ 	gzip -9nf ${PREFIX}/man/man1/mirror.1
-+ 	install -c mm ${PREFIX}/bin/mirrormaster
-+ 	install -c mm.man ${PREFIX}/man/man1/mirrormaster.1
-+ 	gzip -9nf ${PREFIX}/man/man1/mirrormaster.1
-+ 	install -c do_unlinks ${PREFIX}/lib/mirror/do_unlinks
+  install:
+! 	install -m $(PLMODE) -g $(GRP) lchat.pl $(PLDIR)
+! 	install -m $(PLMODE) -g $(GRP) chat2.pl $(PLDIR)
+! 	install -m $(PLMODE) -g $(GRP) dateconv.pl $(PLDIR)
+! 	install -m $(PLMODE) -g $(GRP) ftp.pl $(PLDIR)
+! 	install -m $(PLMODE) -g $(GRP) lsparse.pl $(PLDIR)
+! 	install -m $(EXMODE) -g $(GRP) mirror.pl $(PLDIR)
+! 	install -m $(EXMODE) -g $(GRP) do_unlinks $(BINDIR)
+! 	install -m $(EXMODE) -g $(GRP) pkgs_to_mmin $(BINDIR)
+! 	install -m $(EXMODE) -g $(GRP) mm $(BINDIR)/mirror-master
+! 	install -m $(PLMODE) -g $(GRP) mirror.man $(MANDIR)/mirror.1
+! 	install -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirror-master.1
+  
+  # directory to install .pl (perl library) files for rperl
+  RPLDIR = /usr/local/rperl5/lib/perl5
+--- 25,51 ----
+  # mode to install executables
+  EXMODE = 755
+  # group to own all the files
+! GRP = bin
+  # directory to install .pl (perl library) files
+! PLDIR = ${PREFIX}/lib/mirror
+  # directory to install public executables
+! BINDIR = ${PREFIX}/bin
+  # directory to install man pages
+! MANDIR = ${PREFIX}/man/man1
+  
+  install:
+! 	install -c -m $(PLMODE) -g $(GRP) lchat.pl $(PLDIR)
+! #	install -c -m $(PLMODE) -g $(GRP) chat2.pl $(PLDIR)
+! 	install -c -m $(PLMODE) -g $(GRP) dateconv.pl $(PLDIR)
+! 	install -c -m $(PLMODE) -g $(GRP) ftp.pl $(PLDIR)
+! 	install -c -m $(PLMODE) -g $(GRP) lsparse.pl $(PLDIR)
+! 	install -c -m $(EXMODE) -g $(GRP) mirror.pl $(BINDIR)/mirror
+! 	install -c -m $(EXMODE) -g $(GRP) do_unlinks $(BINDIR)
+! 	install -c -m $(EXMODE) -g $(GRP) pkgs_to_mmin $(BINDIR)
+! 	install -c -m $(EXMODE) -g $(GRP) mm $(BINDIR)/mirrormaster
+! 	install -c -m $(PLMODE) -g $(GRP) mirror.man $(MANDIR)/mirror.1
+! 	install -c -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirrormaster.1
+! 	install -c -m $(PLMODE) -g $(GRP) mirror.defaults $(PLDIR)/mirror.defaults.sample
+  
+  # directory to install .pl (perl library) files for rperl
+  RPLDIR = /usr/local/rperl5/lib/perl5

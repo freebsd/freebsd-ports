@@ -1,24 +1,24 @@
-*** mirror.pl.orig	Thu Jun 15 19:15:46 1995
---- mirror.pl	Thu Jun 15 19:15:26 1995
+*** mirror.pl.orig	Sat Mar 16 15:46:09 1996
+--- mirror.pl	Sat Mar 16 15:51:49 1996
 ***************
-*** 42,48 ****
+*** 75,81 ****
   
   # Try to find the default localation of various programs via
   # the users PATH then using $extra_path
-! $extra_path = '/usr/local/bin:/usr/new/bin:/usr/public/bin:/usr/ucb:/usr/bin:/bin:/etc:/usr/etc:/usr/local/etc:';
+! $extra_path = '/usr/local/bin:/usr/new/bin:/usr/public/bin:/usr/ucb:/usr/bin:/bin:/etc:/usr/etc:/usr/local/etc';
   $ENV{ 'PATH' } .= ':' . $extra_path;
   
-  # If compressing a local file to send need somewhere to store the temp
---- 42,48 ----
+  &trap_signals();
+--- 75,81 ----
   
   # Try to find the default localation of various programs via
   # the users PATH then using $extra_path
-! $extra_path = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:';
+! $extra_path = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin';
   $ENV{ 'PATH' } .= ':' . $extra_path;
   
-  # If compressing a local file to send need somewhere to store the temp
+  &trap_signals();
 ***************
-*** 90,108 ****
+*** 128,146 ****
   $rm_prog = &find_prog( 'rm' );
   
   # Generate checksums
@@ -38,7 +38,7 @@
   unshift( @INC, $dir );
   
   # Make sure that your PERLLIB environment variable can get you
---- 90,109 ----
+--- 128,147 ----
   $rm_prog = &find_prog( 'rm' );
   
   # Generate checksums
@@ -54,35 +54,8 @@
   $prod_interval = 60;
   
   # Put the directory that mirror is actually in at the start of PERLLIB.
-! #$dir = &real_dir_from_path( $0 );
-! $dir = "!!PREFIX!!/lib/mirror";
+! # $dir = &real_dir_from_path( $0 );
+! $dir = "!!PREFIX!!"/lib/mirror";
   unshift( @INC, $dir );
   
   # Make sure that your PERLLIB environment variable can get you
-***************
-*** 156,161 ****
---- 157,163 ----
-  $default{ 'local_dir' } = '';	# local directory to copy into
-  $default{ 'remote_user' } = 'anonymous';  # the remote guest account name
-  $default{ 'remote_password' } = "$me@$hostname";
-+ $default{ 'remote_acct' } = '';
-  $default{ 'get_patt' } = ".";	# regex of pathnames to retrieve
-  $default{ 'exclude_patt' } = ''; # regex of pathnames to ignore
-  $default{ 'update_local' } = 0;	# Don't just update local dirs
-***************
-*** 1022,1028 ****
-  	if( $con == 1 ){
-  		&msg( "login as $remote_user\n" ) if $debug > 1;
-  		$curr_remote_user = $remote_user;
-! 		if( ! &ftp'login( $remote_user, $remote_password ) ){
-  			&msg( "Cannot login, skipping package\n" );
-  			&disconnect();
-  			&msg( "\n" );
---- 1024,1030 ----
-  	if( $con == 1 ){
-  		&msg( "login as $remote_user\n" ) if $debug > 1;
-  		$curr_remote_user = $remote_user;
-! 		if( ! &ftp'login( $remote_user, $remote_password, $remote_acct ) ){
-  			&msg( "Cannot login, skipping package\n" );
-  			&disconnect();
-  			&msg( "\n" );
