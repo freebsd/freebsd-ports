@@ -82,6 +82,11 @@ OPSYS!=	/usr/bin/uname -s
 
 ECHO_MSG?=	echo
 
+# local customization of the ports tree
+.if exists(${.CURDIR}/Makefile.local)
+.include "${.CURDIR}/Makefile.local"
+.endif
+
 TARGETS+=	all
 TARGETS+=	build
 TARGETS+=	checksum
@@ -349,7 +354,9 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}"\
 	    -v display="$${display:-${PORTSEARCH_DISPLAY_FIELDS}}" \
 	'BEGIN { \
-	    sub(top, "${PORTSDIR}", there); \
+	    if (substr(there, 1, length(top)) == top) \
+	      there = "${PORTSDIR}" substr(there, 1 + length(top)); \
+	    therelen = length(there); \
 	    IGNORECASE=icase; \
 	    keylen = length(key); keylim = keylim && keylen; \
 	    if (!keylim && keylen) \
@@ -377,7 +384,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    } \
 	  } \
 	  { \
-	    if ($$2 !~ there) \
+	    if (substr($$2, 1, therelen) != there) \
 	      next; \
 	    for (i in parms) \
 	      if ($$i !~ parms[i]) \

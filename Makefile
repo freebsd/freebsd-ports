@@ -99,11 +99,17 @@ ${.CURDIR}/${INDEXFILE}:
 			echo "********************************************************************"; \
 			echo "Before reporting this error, verify that you are running a supported"; \
 			echo "version of FreeBSD (see http://www.FreeBSD.org/ports/) and that you"; \
-			echo "have a complete and up-to-date ports collection (INDEX builds are"; \
-			echo "not supported with partial or out-of-date ports collections).  If"; \
-			echo "so, then report the failure to ports@FreeBSD.org together with"; \
-			echo "relevant details of your ports configuration (including FreeBSD"; \
-			echo "version, environment and /etc/make.conf settings)."; \
+			echo "have a complete and up-to-date ports collection.  (INDEX builds are"; \
+			echo "not supported with partial or out-of-date ports collections -- in"; \
+			echo "particular, if you are using cvsup, you must cvsup the \"ports-all\""; \
+			echo "collection, and have no \"refuse\" files.)  If that is the case, then"; \
+			echo "report the failure to ports@FreeBSD.org together with relevant"; \
+			echo "details of your ports configuration (including FreeBSD version,"; \
+			echo "your architecture, your environment, and your /etc/make.conf"; \
+			echo "settings, especially compiler flags and WITH/WITHOUT settings)."; \
+			echo; \
+			echo "Note: the latest pre-generated version of INDEX may be fetched"; \
+			echo "automatically with \"make fetchindex\"."; \
 			echo "********************************************************************"; \
 			echo; \
 		fi; \
@@ -122,18 +128,7 @@ ${.CURDIR}/${INDEXFILE}:
 	echo " Done."
 
 print-index:	${.CURDIR}/${INDEXFILE}
-	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }' < ${.CURDIR}/${INDEXFILE}
-
-parallel: ${.CURDIR}/${INDEXFILE}
-.if !defined(branch)
-	@echo "The parallel target requires a branch parameter,"
-	@echo "e.g.: \"make parallel branch=X\""
-	@false
-.endif
-.for dir in ${SUBDIR}
-	@[ -r ${dir}/Makefile ] && echo "all: ${dir}-all" || true
-.endfor
-	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all: " me ".tgz"; print me ": " me ".tgz"; print me ".tgz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tgz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/${INDEXFILE}
+	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${.CURDIR}/${INDEXFILE}
 
 CVS?= cvs
 SUP?= cvsup

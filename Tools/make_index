@@ -2,12 +2,10 @@
 #
 # $FreeBSD$
 #
-# Written to speed-up INDEX file generation.  The new scheme
-# basically visits each port once and writes out each port's
-# build-depends and run-depends as a list of directories.  This
+# INDEX builds visit each port once and write out each port's
+# *-depends as a list of directories, using 'make describe'.  This
 # script goes back in and maps the directories back to pkgnames,
-# fixes up the build-depends and run-depends list, and writes
-# out the new INDEX file.
+# fixes up the *-depends list, and writes out the new INDEX file.
 
 require 5.002;
 
@@ -38,14 +36,40 @@ sub recurse {
     my $pkg = shift(@_);
     return if $pkg->{checked};
 
-  # build-depends = build-depends + recursive list of run-depends
-  #     for each build-depends
+  # extract-depends = extract-depends + recursive list of run-depends
+  #     for each extract-depends
     my @deps = ();
-    foreach $name (@{$pkg->{bdep}}) {
+    foreach $name (@{$pkg->{edep}}) {
         recurse($index{$name});
 	push(@deps, @{$index{$name}->{rdep}});
     }    
+    $pkg->{edep} = uniqify(@{$pkg->{edep}}, @deps);
+
+  # same as above except for patch-depends this time
+    @deps = ();
+    foreach $name (@{$pkg->{pdep}}) {
+	recurse($index{$name});
+	push(@deps, @{$index{$name}->{rdep}});
+    }
+    $pkg->{pdep} = uniqify(@{$pkg->{pdep}}, @deps);
+
+  # same as above except for fetch-depends this time
+    @deps = ();
+    foreach $name (@{$pkg->{fdep}}) {
+	recurse($index{$name});
+	push(@deps, @{$index{$name}->{rdep}});
+    }
+    $pkg->{fdep} = uniqify(@{$pkg->{fdep}}, @deps);
+    $pkg->{checked} = 1;
+
+  # same as above except for build-depends this time
+    @deps = ();
+    foreach $name (@{$pkg->{bdep}}) {
+	recurse($index{$name});
+	push(@deps, @{$index{$name}->{rdep}});
+    }
     $pkg->{bdep} = uniqify(@{$pkg->{bdep}}, @deps);
+    $pkg->{checked} = 1;
 
   # same as above except for run-depends this time
     @deps = ();
@@ -55,6 +79,7 @@ sub recurse {
     }
     $pkg->{rdep} = uniqify(@{$pkg->{rdep}}, @deps);
     $pkg->{checked} = 1;
+
 }
 
 # Given one or more lists as arguments return the set
@@ -85,9 +110,12 @@ while (<>) {
 
   # Create a hash table of the infomation we need about this port.
     my $pkg = {
-	'bdep'		=> [split(/ /, $f[7])],
-	'rdep'		=> [split(/ /, $f[8])],
-	'rest'		=> join('|', splice(@f, 9)),
+	'edep'		=> [split(/ /, $f[7])],
+	'pdep'		=> [split(/ /, $f[8])],
+	'fdep'		=> [split(/ /, $f[9])],
+	'bdep'		=> [split(/ /, $f[10])],
+	'rdep'		=> [split(/ /, $f[11])],
+	'rest'		=> join('|', splice(@f, 12)),
 	'text'		=> join('|', splice(@f, 0, 7))
     };
     $index{$name} = $pkg;
@@ -100,11 +128,26 @@ while (<>) {
 foreach $name (keys %index) {
     my $pkg = $index{$name};
   # first the build dependencies
+    if (@{$pkg->{edep}}) {
+	my @edep = map { by_path($_, $name) } @{$pkg->{edep}};
+	$pkg->{edep} = \@edep;
+    }
+  # 
+    if (@{$pkg->{pdep}}) {
+	my @pdep = map { by_path($_, $name) } @{$pkg->{pdep}};
+	$pkg->{pdep} = \@pdep;
+    }
+  # first the build dependencies
+    if (@{$pkg->{fdep}}) {
+	my @fdep = map { by_path($_, $name) } @{$pkg->{fdep}};
+	$pkg->{fdep} = \@fdep;
+    }
+  # first the build dependencies
     if (@{$pkg->{bdep}}) {
 	my @bdep = map { by_path($_, $name) } @{$pkg->{bdep}};
 	$pkg->{bdep} = \@bdep;
     }
-  # and now the run dependencies
+  # first the build dependencies
     if (@{$pkg->{rdep}}) {
 	my @rdep = map { by_path($_, $name) } @{$pkg->{rdep}};
 	$pkg->{rdep} = \@rdep;
@@ -123,7 +166,13 @@ foreach $name (@names) {
 	print join(' ', sort(@{$pkg->{bdep}})) if @{$pkg->{bdep}};
 	print "|";
 	print join(' ', sort(@{$pkg->{rdep}})) if @{$pkg->{rdep}};
-	print "|$pkg->{rest}\n";
+	print "|$pkg->{rest}|";
+	print join(' ', sort(@{$pkg->{edep}})) if @{$pkg->{edep}};
+	print "|";
+	print join(' ', sort(@{$pkg->{pdep}})) if @{$pkg->{pdep}};
+	print "|";
+	print join(' ', sort(@{$pkg->{fdep}})) if @{$pkg->{fdep}};
+	print "\n";
 	++$pkg->{'PRINTED'};
     }
 }

@@ -1493,7 +1493,7 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 .if defined(BROKEN_WITH_MYSQL)
 .	for VER in ${BROKEN_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-BROKEN=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
+IGNORE=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
 .		endif
 .	endfor
 .endif # BROKEN_WITH_MYSQL
@@ -3054,6 +3054,10 @@ do-configure:
 .if !defined(PERL_MODBUILD)
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+.if ${PERL_LEVEL} <= 500503
+	@cd ${CONFIGURE_WRKSRC} && \
+		${PERL5} -pi -e 's/^(INSTALLSITELIB|INSTALLSITEARCH|SITELIBEXP|SITEARCHEXP|INSTALLMAN1DIR|INSTALLMAN3DIR) = \/usr\/local/$$1 = \$$(PREFIX)/' Makefile
+.endif
 .endif
 .endif
 .if defined(USE_IMAKE)
@@ -3081,34 +3085,25 @@ do-build:
 .if !target(check-conflicts)
 check-conflicts:
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
-	@${RM} -f ${WRKDIR}/.CONFLICTS
-.for conflict in ${CONFLICTS}
-	@found="`${LS} -d ${PKG_DBDIR}/${conflict} 2>/dev/null || ${TRUE}`"; \
-	if [ X"$$found" != X"" ]; then \
-		${ECHO_CMD} "$$found" >> ${WRKDIR}/.CONFLICTS; \
-	fi
-.endfor
-	@if [ -s ${WRKDIR}/.CONFLICTS ]; then \
-		found=`${CAT} ${WRKDIR}/.CONFLICTS | ${SED} -e s'|${PKG_DBDIR}/||g' | ${TR} '\012' ' '`; \
-		conflicting=0; \
-		for entry in $${found}; do \
-			prfx=`${PKG_INFO} -q -p $${entry} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
-			if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-				conflicting=1;\
-				conflicts_with="$${conflicts_with} $${entry}";\
-			fi;\
+	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
+	conflicts_with=; \
+	for entry in $${found}; do \
+		prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
+		orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
+		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+			conflicts_with="$${conflicts_with} $${entry}"; \
+		fi; \
+	done; \
+	if [ -n "$${conflicts_with}" ]; then \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
+		for entry in $${conflicts_with}; do \
+			${ECHO_MSG} "      $${entry}"; \
 		done; \
 		${ECHO_MSG}; \
-		if [ "x$${conflicting}" = "x1" ] ; then \
-			${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
-			for entry in $${conflicts_with} ; do \
-				${ECHO_MSG} "      $${entry}";\
-			done;\
-			${ECHO_MSG} "      They install files into the same place."; \
-			${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
-			${RM} -f ${WRKDIR}/.CONFLICTS; \
-			exit 1; \
-		fi ;\
+		${ECHO_MSG} "      They install files into the same place."; \
+		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		exit 1; \
 	fi
 .endif  # CONFLICTS
 .endif
@@ -4386,13 +4381,14 @@ describe:
 			print q{|/dev/null}; \
 		} \
 		print q{|${MAINTAINER}|${CATEGORIES}|}; \
-		@bdirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS}})); \
+		@edirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS}})); \
+		@pdirs = map((split /:/)[1], split(q{ }, q{${PATCH_DEPENDS}})); \
+		@fdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS}})); \
+		@bdirs = map((split /:/)[1], split(q{ }, q{${BUILD_DEPENDS}})); \
 		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
-		@mdirs = ( \
-			map((split /:/)[0], split(q{ }, q{${DEPENDS}})), \
-			map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})) \
-		); \
-		for my $$i (\@bdirs, \@rdirs, \@mdirs) { \
+		@ddirs = map((split /:/)[0], split(q{ }, q{${DEPENDS}})); \
+		@ldirs = map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})); \
+		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs) { \
 			my @dirs = @$$i; \
 			@$$i = (); \
 			for (@dirs) { \
@@ -4404,14 +4400,26 @@ describe:
 				} \
 			} \
 		} \
-		for (@bdirs, @mdirs) { \
-			$$x{$$_} = 1; \
+		for (@edirs, @ddirs) { \
+			$$xe{$$_} = 1; \
 		} \
-		print join(q{ }, sort keys %x), q{|}; \
-		for (@rdirs, @mdirs) { \
-			$$y{$$_} = 1; \
+		print join(q{ }, sort keys %xe), q{|}; \
+		for (@pdirs, @ddirs) { \
+			$$xp{$$_} = 1; \
 		} \
-		print join(q{ }, sort keys %y), q{|}; \
+		print join(q{ }, sort keys %xp), q{|}; \
+		for (@fdirs, @ddirs) { \
+			$$xf{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xf), q{|}; \
+		for (@bdirs, @ddirs, @ldirs) { \
+			$$xb{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xb), q{|}; \
+		for (@rdirs, @ddirs, @ldirs) { \
+			$$xr{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xr), q{|}; \
 		if (open(DESCR, q{${DESCR}})) { \
 			while (<DESCR>) { \
 				if (/^WWW:\s+(\S+)/) { \
