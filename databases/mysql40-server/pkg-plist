@@ -4,6 +4,7 @@ bin/isamlog
 bin/make_win_src_distribution
 bin/msql2mysql
 bin/my_print_defaults
+bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack

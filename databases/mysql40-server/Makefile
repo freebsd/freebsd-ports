@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.17
+PORTVERSION=	4.0.18
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
@@ -139,7 +139,7 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
 
 post-build:
 	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
