@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	lemon
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hwaci.com/sw/lemon/
+MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/${PORTNAME}/
 DISTFILES=	lemon.c lempar.c
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	An LALR(1) parser generator. Similar in function to yacc and bison
-
-NO_WRKSUBDIR=	YES
 
 do-extract:
 	${MKDIR} ${WRKSRC}
