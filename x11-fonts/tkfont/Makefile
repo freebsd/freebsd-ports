@@ -3,12 +3,13 @@
 # Date created:		11 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.2 1998/08/07 22:43:09 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 23:56:50 asami Exp $
 #
 
 DISTNAME=	tkfont-1.1
 CATEGORIES=     x11-fonts tk80
-MASTER_SITES=	http://cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/ \
+		http://www.FreeBSD.org/~billf/
 
 MAINTAINER=     brett@peloton.physics.montana.edu
 
