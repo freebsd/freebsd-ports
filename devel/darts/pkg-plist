@@ -1,0 +1,14 @@
+include/darts.h
+libexec/darts/darts
+libexec/darts/mkdarts
+@dirrm libexec/darts
+%%PORTDOCS%%%%EXAMPLESDIR%%/darts.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mkdarts.cpp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/darts.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

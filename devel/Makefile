@@ -136,6 +136,7 @@
     SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cxref
+    SUBDIR += darts
     SUBDIR += ddd
     SUBDIR += decompyle
     SUBDIR += devtodo
