@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	open-motif-devel
-PORTVERSION=	2.2.1
+PORTVERSION=	2.1.30
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.2.1/binaries/metrolink/  \
-		ftp://ftp.opengroup.org/pub/openmotif/R2.2.1/binaries/metrolink/  \
+MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
+		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
 		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/binaries/metrolink/  \
 		ftp://ftp.kddlabs.co.jp:/X11/openmotif/binaries/metrolink/
 DISTNAME=	openmotif-devel-${PORTVERSION}-4_MLI
