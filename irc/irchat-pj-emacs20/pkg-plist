@@ -23,3 +23,5 @@
 %%ETCDIR%%/browse-url-plus-init.el
 %%ETCDIR%%/dot.irchat_vars.el
 @dirrm %%ETCDIR%%
+%%XEMACS_ONLY%%lib/xemacs/site-packages/pkginfo/MANIFEST.irchat-pj
+

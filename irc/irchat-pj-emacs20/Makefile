@@ -6,11 +6,16 @@
 #
 
 PORTNAME=	irchat-pj
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	irc elisp
-MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/
+MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. OLD
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	irchat-pj-${PORTVERSION}p
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	irchat-pj-2.5.6pl1.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
@@ -19,12 +24,12 @@ RUN_DEPENDS=	${LOCALBASE}/${LISPDIR:S,/${PORTNAME}$,/pure,}/pure-make.el:${PORTS
 		${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc
 
 EMACS_PORT_NAME?=	emacs20
+XEMACS_ONLY?=	"@comment "
 LISPDIR?=	${EMACS_LIBDIR}/site-lisp/${PORTNAME}
 ETCDIR=		share/doc/${PORTNAME}
 
-LDFLAGS=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS} -DUSE_PTHREAD -DENABLE_PTHREAD_ATTR
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LISPDIR=${PREFIX}/${EMACS_SITE_LISPDIR} \
+		PACKDIR=${PREFIX}/${EMACS_LIBDIR}/site-packages
 
 DOCS=		README.25 doc24/CHANGELOG doc24/FAQ-about-jp24.txt\
 		doc24/FAQ-irchat-PJ.txt doc24/INSTALL.irchat-pj\
@@ -32,7 +37,8 @@ DOCS=		README.25 doc24/CHANGELOG doc24/FAQ-about-jp24.txt\
 		doc24/browse-url-plus-init.el doc24/dot.irchat_vars.el
 
 PLIST_SUB=	LISPDIR=${LISPDIR} \
-		ETCDIR=${ETCDIR}
+		ETCDIR=${ETCDIR} \
+		XEMACS_ONLY=${XEMACS_ONLY}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -40,9 +46,6 @@ post-install:
 .for f in ${DOCS}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/${ETCDIR}
 .endfor
-.endif
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-	${RMDIR} ${PREFIX}/${EMACS_LIBDIR}/site-packages/etc/irchat-pj
 .endif
 
 .include <bsd.port.mk>
