@@ -245,6 +245,7 @@
     SUBDIR += nunnimcax
     SUBDIR += nux
     SUBDIR += ny-aspell
+    SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo
