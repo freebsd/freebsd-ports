@@ -20,12 +20,14 @@ LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-
+USE_GCC=	3.3
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
