@@ -1,0 +1,11 @@
+bin/updatenews
+etc/newscache.conf-dist
+sbin/NewsCache
+sbin/NewsCacheClean
+sbin/accesslog
+sbin/cachestat
+sbin/hostlog
+sbin/hoststat
+@unexec install-info --delete %D/info/NewsCache.info %D/info/dir
+info/NewsCache.info
+@exec install-info %D/info/NewsCache.info %D/info/dir

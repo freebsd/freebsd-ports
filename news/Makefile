@@ -24,6 +24,7 @@
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += leafnode+
+    SUBDIR += newscache
     SUBDIR += newsfetch
     SUBDIR += newsfish
     SUBDIR += newsgrab
