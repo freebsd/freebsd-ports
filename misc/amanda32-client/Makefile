@@ -18,7 +18,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 WRKSRC=		${WRKDIR}/amanda-2.4.1p1
 NO_LATEST_LINK=	yes
-GNU_CONFIGURE=  yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ARGS= --libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump \
