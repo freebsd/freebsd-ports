@@ -3,7 +3,7 @@
 # Date created:        18 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/11/18 21:02:48 billf Exp $
 #
 
 DISTNAME=	htdig-3.1.0b2
@@ -16,6 +16,8 @@ MAINTAINER=	billf@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 BUILD_TARGET=	depends all
+
+BROKEN=		package
 
 post-patch:
 
