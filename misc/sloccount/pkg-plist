@@ -3,6 +3,7 @@ bin/asm_count
 bin/awk_count
 bin/break_filelist
 bin/c_count
+bin/cobol_count
 bin/compute_all
 bin/compute_sloc_lang
 bin/count_extensions
