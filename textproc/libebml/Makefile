@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://dl.matroska.org/downloads/libebml/
+MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
+		http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
