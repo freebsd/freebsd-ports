@@ -1034,6 +1034,7 @@
     SUBDIR += php4-gettext
     SUBDIR += php4-mcve
     SUBDIR += php4-ncurses
+    SUBDIR += php4-pcntl
     SUBDIR += php4-pcre
     SUBDIR += php4-pear
     SUBDIR += php5-pcre
