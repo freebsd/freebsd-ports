@@ -3,7 +3,7 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.7 1997/12/25 22:29:33 asami Exp $
+# $Id: Makefile,v 1.8 1998/04/30 18:40:03 max Exp $
 #
 
 DISTNAME=	grep-2.0
@@ -13,7 +13,14 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
+MAN1=		grep.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ja-grep
+	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/ja-grep
+.endif
 
 .include <bsd.port.mk>
