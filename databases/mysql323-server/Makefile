@@ -191,7 +191,8 @@ USE_MYSQL=	yes
 WANT_MYSQL_VER=	323
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql323-scripts
 
