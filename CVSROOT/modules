@@ -7650,6 +7650,7 @@ splitvt		ports/misc/splitvt
 spooles		ports/math/spooles
 spooles-mpich	ports/math/spooles-mpich
 spread		ports/net/spread
+spread-j	ports/net/spread-j
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
 sqlite		ports/databases/sqlite
