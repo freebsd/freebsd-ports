@@ -29,7 +29,7 @@ BROKEN=		doesn\'t build on the alpha yet
 Y2K=		http://www.postgresql.org/y2k.html
 
 INSTALLS_SHLIB=	YES
-LDCONFIG_DIRS=	%%PREFIX%%/pgsql
+LDCONFIG_DIRS=	%%PREFIX%%/pgsql/lib
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make -DWITH_TCL
