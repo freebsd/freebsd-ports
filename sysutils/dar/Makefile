@@ -16,12 +16,14 @@ COMMENT=	A full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-libintl-prefix=${PREFIX}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -29,5 +31,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's,(_nl_expand_alias) \(0\),\1 (),g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
