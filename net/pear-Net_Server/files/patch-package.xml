@@ -1,0 +1,11 @@
+--- ../package.xml.orig	Sat Aug 21 23:43:15 2004
++++ ../package.xml	Sun Oct 24 09:36:17 2004
+@@ -30,8 +30,6 @@
+     <deps>
+       <dep type="php" rel="ge" version="4.2.0" optional="no"/>
+       <dep type="pkg" rel="has" optional="no">PEAR</dep>
+-      <dep type="ext" rel="has" optional="no">sockets</dep>
+-      <dep type="ext" rel="has" optional="yes">pcntl</dep>
+     </deps>
+     <filelist>
+       <file role="doc" baseinstalldir="Net" name="docs\todo.txt"/>
