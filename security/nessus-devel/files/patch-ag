@@ -1,9 +1,9 @@
---- nessus/preferences.c.old	Mon Dec 27 10:39:54 1999
-+++ nessus/preferences.c	Mon Dec 27 10:42:11 1999
-@@ -57,27 +57,6 @@
- static char * 
- preferences_get_filename()
- {
+--- nessus/preferences.c.orig	Sun Jan 30 12:22:46 2000
++++ nessus/preferences.c	Sun Jan 30 12:23:27 2000
+@@ -60,27 +60,6 @@
+  if(Alt_rcfile)return Alt_rcfile;
+  else
+   {
 -#ifdef ENABLE_CRYPTO_LAYER
 -  char *t, *s = peks_get_dirfile (NESSUS_RCFILE);
 -  if (s == 0) 
@@ -28,11 +28,11 @@
    char* home;
    char * ret;
    struct passwd * pwd;
-@@ -97,7 +76,6 @@
+@@ -100,7 +79,6 @@
     return(ret);
    } 
    return(NULL);
 -#endif
+  }
  }
   
- static int preferences_new()
