@@ -7,7 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.0.0rc7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 PKGNAMESUFFIX=	-devel
