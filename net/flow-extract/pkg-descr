@@ -2,7 +2,7 @@ A copy of this package can be found at:
 WWW: http://security.uchicago.edu/tools/net-forensics
 
 This package is a port of TAMU's extract program from NetLogger to look
-at flow data instead of netlogger data. Blame Larry for it's faults, not
+at flow data instead of netlogger data. Blame Larry for its faults, not
 TAMU. Blame me for the FreeBSD port, not Larry :-)
 
 If you don't already have a good guess what this program does and what
