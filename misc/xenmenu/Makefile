@@ -9,11 +9,12 @@ PORTNAME=	xenmenu
 PORTVERSION=	0.8b
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://freeport.xenos.net/~xenon/software/xenmenu/
+		http://www.xenos.net/software/xenmenu/
 MASTER_SITE_SUBDIR=	apps/misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly customizable, text-based menu generator
+DEPRECATED=	Project abandoned in 1998
 
 ALL_TARGET=	# empty
 GNU_CONFIGURE=	yes
