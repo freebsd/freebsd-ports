@@ -19,9 +19,12 @@ USE_IMAKE=	yes
 XLOADFACEDIR=	$(X11BASE)/lib/X11/xloadface
 
 MAN1=		xloadface.1
+MANLANG=	ja
+
+pre-build:
+	${LOCALBASE}/bin/nkf -e ${WRKSRC}/xloadface.1 > ${WRKSRC}/xloadface.man
 
 pre-install:
-	@nkf -e ${WRKSRC}/xloadface.1 > ${WRKSRC}/xloadface.man
 	${MKDIR} $(XLOADFACEDIR)
 	${INSTALL_DATA} ${WRKSRC}/README $(XLOADFACEDIR)
 	${INSTALL_DATA} ${WRKSRC}/host_org.sample $(XLOADFACEDIR)
