@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTVERSION=	0.1.12
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -29,7 +28,7 @@ MAN1=		gtkam.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libgimp-2.0.so)
+.if exists(${X11BASE}/lib/libgimp-2.0.so) && !defined(WITHOUT_GIMP)
 WITH_GIMP=	yes
 .endif
 
@@ -47,7 +46,7 @@ USE_GNOME+=	gnomeprefix libgnomeui
 MAKE_ENV+=	GNOME_SUBDIRS="help omf-install"
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
-CONFIGURE_ARGS+=	--without-bonobo-activation --without-gnome
+CONFIGURE_ARGS+=	--without-bonobo --without-gnome
 MAKE_ENV+=	GNOME_SUBDIRS=""
 .endif
 
@@ -63,8 +62,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \
 		 s|gimpui-1.3|gimpui-2.0|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|images/gtkam|gtkam/images|g'
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' ${WRKSRC}/src/Makefile.in
+		's|images/gtkam|gtkam/images|g ; \
+		 s|-pedantic||g ; \
+		 s|$$(libdir)/gimp/1.3/|$$(libexecdir)/gimp/2.0/|g'
+	@${ECHO_CMD} "Icon=gtkam.png" >> ${WRKSRC}/gtkam.desktop
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
