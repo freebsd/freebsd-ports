@@ -1,13 +1,11 @@
 --- ../lib/viqr/Makefile.orig	Thu Jul 15 18:19:16 1993
-+++ ../lib/viqr/Makefile	Tue Dec  3 20:58:43 1996
-@@ -11,7 +11,9 @@
- RANLIB= echo
++++ ../lib/viqr/Makefile	Fri Dec  6 11:48:24 1996
+@@ -8,7 +8,7 @@
+ SHELL	= /bin/sh
+ VNLIBDIR= ..
+ VNINCDIR= ../../include
+-RANLIB= echo
++RANLIB= ranlib
  
  SRCS	= vncompos.c vnkeys.c vk_qrto8.c vk_8toqr.c
--OBJS	= vncompos.o vnkeys.o vk_qrto8.o vk_8toqr.o
-+#	vncompos.o must be last to be included in the library, otherwise
-+#	FreeBSD's ld can't resolve _vncompose and _vncompose_init -- DEO [Dec96]
-+OBJS	= vnkeys.o vk_qrto8.o vk_8toqr.o vncompos.o
- LIB	= $(VNLIBDIR)/libviqr.a
- 
- INC	= -I$(VNINCDIR)
+ OBJS	= vncompos.o vnkeys.o vk_qrto8.o vk_8toqr.o
