@@ -1,6 +1,6 @@
 bin/cpp2latex
-%%PORTDOCS%%share/doc/cpp2latex/AUTHORS
-%%PORTDOCS%%share/doc/cpp2latex/ChangeLog
-%%PORTDOCS%%share/doc/cpp2latex/README
-%%PORTDOCS%%share/doc/cpp2latex/TODO
-%%PORTDOCS%%@dirrm share/doc/cpp2latex
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
