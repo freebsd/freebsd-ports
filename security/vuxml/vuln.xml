@@ -60,7 +60,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="e9f9d232-0cb2-11d9-8a8a-000c41e2cdad">
-    <topic>mozilla --- security icon spoofing</topic>
+    <topic>mozilla -- security icon spoofing</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -99,7 +99,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="7c188c55-0cb0-11d9-8a8a-000c41e2cdad">
-    <topic>mozilla --- NULL bytes in FTP URLs</topic>
+    <topic>mozilla -- NULL bytes in FTP URLs</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -139,7 +139,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="6e740881-0cae-11d9-8a8a-000c41e2cdad">
-    <topic>mozilla --- automated file upload</topic>
+    <topic>mozilla -- automated file upload</topic>
     <affects>
       <package>
 	<name>mozilla</name>
@@ -171,7 +171,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="8d823883-0ca9-11d9-8a8a-000c41e2cdad">
-    <topic>mozilla --- built-in CA certificates may be overridden</topic>
+    <topic>mozilla -- built-in CA certificates may be overridden</topic>
     <affects>
       <package>
         <name>firefox</name>
@@ -216,7 +216,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="a4815970-c5cc-11d8-8898-000d6111a684">
-    <topic>rssh --- file name disclosure bug</topic>
+    <topic>rssh -- file name disclosure bug</topic>
     <affects>
       <package>
 	<name>rssh</name>
@@ -254,7 +254,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="e6f0edd8-0b40-11d9-8a8a-000c41e2cdad">
-    <topic>gnu-radius --- SNMP-related denial-of-service</topic>
+    <topic>gnu-radius -- SNMP-related denial-of-service</topic>
     <affects>
       <package>
 	<name>gnu-radius</name>
@@ -290,7 +290,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="a268ef4a-0b35-11d9-8a8a-000c41e2cdad">
-    <topic>sudo --- sudoedit information disclosure</topic>
+    <topic>sudo -- sudoedit information disclosure</topic>
     <affects>
       <package>
 	<name>sudo</name>
@@ -339,7 +339,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="d2102505-f03d-11d8-81b0-000347a4fa7d">
-    <topic>cvs --- numerous vulnerabilities</topic>
+    <topic>cvs -- numerous vulnerabilities</topic>
     <affects>
       <package>
 	<name>cvs+ipv6</name>
@@ -414,7 +414,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="3d1e9267-073f-11d9-b45d-000c41e2cdad">
-    <topic>gdk-pixbuf --- image decoding vulnerabilities</topic>
+    <topic>gdk-pixbuf -- image decoding vulnerabilities</topic>
     <affects>
       <package>
 	<name>gdk-pixbuf</name>
@@ -452,7 +452,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="ef253f8b-0727-11d9-b45d-000c41e2cdad">
-    <topic>xpm --- image decoding vulnerabilities</topic>
+    <topic>xpm -- image decoding vulnerabilities</topic>
     <affects>
       <package>
 	<name>agenda-snow-libs</name>
@@ -508,7 +508,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="05dcf751-0733-11d9-b45d-000c41e2cdad">
-    <topic>cups --- print queue browser denial-of-service</topic>
+    <topic>cups -- print queue browser denial-of-service</topic>
     <affects>
       <package>
 	<name>cups-base</name>
@@ -532,7 +532,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="762d1c6d-0722-11d9-b45d-000c41e2cdad">
-    <topic>apache --- apr_uri_parse IPv6 address handling vulnerability</topic>
+    <topic>apache -- apr_uri_parse IPv6 address handling vulnerability</topic>
     <affects>
       <package>
 	<name>apache</name>
@@ -560,7 +560,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="013fa252-0724-11d9-b45d-000c41e2cdad">
-    <topic>mod_dav --- lock related denial-of-service</topic>
+    <topic>mod_dav -- lock related denial-of-service</topic>
     <affects>
       <package>
 	<name>apache</name>
@@ -589,7 +589,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="4d49f4ba-071f-11d9-b45d-000c41e2cdad">
-    <topic>apache --- ap_resolve_env buffer overflow</topic>
+    <topic>apache -- ap_resolve_env buffer overflow</topic>
     <affects>
       <package>
 	<name>apache</name>
@@ -622,7 +622,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="ae7b7f65-05c7-11d9-b45d-000c41e2cdad">
-    <topic>webmin --- insecure temporary file creation at installation time</topic>
+    <topic>webmin -- insecure temporary file creation at installation time</topic>
     <affects>
       <package>
 	<name>webmin</name>
@@ -681,7 +681,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="c1d97a8b-05ed-11d9-b45d-000c41e2cdad">
-    <topic>mozilla --- POP client heap overflow</topic>
+    <topic>mozilla -- POP client heap overflow</topic>
     <affects>
       <package>
 	<name>mozilla</name>
@@ -720,7 +720,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="a4fd8f53-05eb-11d9-b45d-000c41e2cdad">
-    <topic>mozilla --- SOAPParameter integer overflow</topic>
+    <topic>mozilla -- SOAPParameter integer overflow</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -768,7 +768,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="c62dc69f-05c8-11d9-b45d-000c41e2cdad">
-    <topic>openoffice --- document disclosure</topic>
+    <topic>openoffice -- document disclosure</topic>
     <affects>
       <package>
 	<name>openoffice</name>
@@ -1418,7 +1418,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="7884d56f-f7a1-11d8-9837-000c41e2cdad">
-    <topic>gnomevfs --- unsafe URI handling</topic>
+    <topic>gnomevfs -- unsafe URI handling</topic>
     <affects>
       <package>
 	<name>gnomevfs2</name>
