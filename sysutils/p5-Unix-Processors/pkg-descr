@@ -3,6 +3,3 @@ object is obtained with the Unix::Processors::processors call.  the
 operating system in a OS independent manner.
 
 WWW: http://search.cpan.org/dist/Unix-Processors/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
