@@ -3,7 +3,7 @@
 # Date created:         Fri Oct  6 23:43:28 MET 1995
 # Whom:			se
 #
-# $Id: Makefile,v 1.12 1995/10/10 07:21:33 asami Exp $
+# $Id: Makefile,v 1.13 1995/10/10 08:12:48 asami Exp $
 #
 
 DATE=		951003
@@ -13,7 +13,7 @@ CATEGORIES+=	emulation x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
 		ftp://tsx-11.mit.edu/pub/linux/ALPHA/Wine/development/ \
-		ftp://ftp.funet.fi/pub/OS/Linux/ALPHA/Wine/ \
+		ftp://ftp.dfv.rwth-aachen.de/pub/linux/sunsite/ALPHA/wine/ \
 		ftp://ftp.infomagic.com/pub/mirrors/linux/wine/development/
 
 MAINTAINER=	se@FreeBSD.ORG
