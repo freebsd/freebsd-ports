@@ -7,6 +7,7 @@
 
 PORTNAME=	tramp
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	net elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,6 +47,7 @@ pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
 	(cd ${WRKSRC}/contrib; ${GMAKE})
 .endif
+	${LN} -sf ../contrib/password.el ${WRKSRC}/lisp
 
 post-install:
 .if ${EMACS_PORT_NAME} == emacs20

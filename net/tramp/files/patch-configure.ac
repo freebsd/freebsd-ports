@@ -1,0 +1,16 @@
+--- configure.ac.orig	Sun Jan 16 19:43:17 2005
++++ configure.ac	Tue Feb 22 09:45:18 2005
+@@ -58,12 +58,11 @@
+ AC_EMACS_INFO
+ 
+ # Handle contrib files. "-" must be encoded as "_".
+-TRAMP_CONTRIB_FILES=
++TRAMP_CONTRIB_FILES=password.el
+ 
+ AC_CONTRIB_FILES([base64_encode_region],   [base64.el])
+ AC_CONTRIB_FILES([format_spec],            [format_spec.el])
+ AC_CONTRIB_FILES([md5],                    [md5.el],         [optional])
+-AC_CONTRIB_FILES([password_cache_add],     [password.el],    [optional])
+ AC_CONTRIB_FILES([uudecode_decode_region], [uudecode.el])
+ dnl run-at-time for XEmacs can be find in fsf-compat. Unfortunately,
+ dnl password.el doesn't honor it, and it requires run-at-time mandatory.
