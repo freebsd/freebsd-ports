@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -75,9 +75,9 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
 
-CPPFLAGS+=		-I${X11BASE}/include
+CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		-L${X11BASE}/lib
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
 LIBS+=			${PTHREAD_LIBS}
 
 EXTRA_SCRIPTS=		${PORTNAME}.rb
@@ -107,8 +107,10 @@ post-extract::
 post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
-	@${PERL} -pi -e 's|-lc_r|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
 	@${PERL} -pi -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/nsprpub/config/config.mk \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
