@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.6.0.2
+PORTVERSION=	2.6.0.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.6
@@ -21,6 +21,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -29,14 +30,16 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		gdm.1
 
+PLIST_SUB=	VERSION="2.6"
+
 OPTIONS=	IPV6 "Enable IPv6 support (This disables IPv4 support)" off
 
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/include/security/pam_misc.h)
-PLIST_SUB=	PAM_MISC=""
+PLIST_SUB+=	PAM_MISC=""
 .else
-PLIST_SUB=	PAM_MISC="@comment "
+PLIST_SUB+=	PAM_MISC="@comment "
 .endif
 
 .if defined(WITH_IPV6)
@@ -48,6 +51,9 @@ CONFIGURE_ARGS+=	--disable-ipv6
 post-extract:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
 		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g'
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
