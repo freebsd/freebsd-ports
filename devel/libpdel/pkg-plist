@@ -55,6 +55,7 @@ include/pdel/util/rsa_util.h
 include/pdel/util/string_quote.h
 include/pdel/util/tinfo.h
 include/pdel/util/typed_mem.h
+include/pdel/version.h
 lib/libpdel.a
 lib/libpdel.so
 lib/libpdel.so.0
