@@ -1182,6 +1182,7 @@ darkbot		ports/irc/darkbot
 darkice		ports/audio/darkice
 darkstat	ports/net/darkstat
 darts		ports/devel/darts
+dasher		ports/editors/dasher
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
