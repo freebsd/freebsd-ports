@@ -1,5 +1,4 @@
 %%PORTDOCS%%%%HLDSDIR%%/Admin/README
-%%PORTDOCS%%%%HLDSDIR%%/Admin/UPDATE_INFO
 %%HLDSDIR%%/Admin/config/Samples/ips.ini
 %%HLDSDIR%%/Admin/config/Samples/maps.ini
 %%HLDSDIR%%/Admin/config/Samples/models.ini
@@ -142,6 +141,7 @@
 %%HLDSDIR%%/Admin/scripting/binaries/admin.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_CS.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_TFC.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_antiflood.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_base.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_chat.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_cheat.amx
@@ -156,6 +156,7 @@
 %%HLDSDIR%%/Admin/scripting/examples/compile_all.sh
 %%HLDSDIR%%/Admin/scripting/examples/plugin_CS.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_TFC.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_antiflood.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_base.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_chat.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_cheat.sma
@@ -196,4 +197,3 @@
 @dirrm %%HLDSDIR%%/Admin/config/Samples
 @dirrm %%HLDSDIR%%/Admin/config
 @dirrm %%HLDSDIR%%/Admin
-@exec mkdir -p %D/%%HLDSDIR%%/Admin/scripting/mybinaries

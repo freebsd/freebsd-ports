@@ -7,21 +7,16 @@
 
 PORTNAME=	admin
 PORTVERSION=	2.50.26
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
-MASTER_SITES=	http://www.adminmod.org/downloads/ \
-		http://www.metamod.org/dl/dlls/
-DISTFILES=	halflife-admin-${PORTVERSION}.tgz \
-		metamod_i386.so
+MASTER_SITES=	http://www.adminmod.org/downloads/
+DISTNAME=	halflife-admin-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILES:S/metamod_i386.so//}
 
 WRKSRC=		${WRKDIR}/Admin
-FETCH_CMD=	/usr/bin/fetch
 
 slaveport-post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/metamod_i386.so \
-		${WRKSRC}/dlls
 	@${PERL} -pi.orig -e \
 		's|/usr/local/games/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
 		${WRKSRC}/install_admin
