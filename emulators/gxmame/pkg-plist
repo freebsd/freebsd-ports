@@ -1,13 +1,14 @@
 bin/gxmame
-share/locale/fr/LC_MESSAGES/gxmame.mo
+share/applications/gxmame.desktop
+share/locale/de/LC_MESSAGES/gxmame.mo
+share/locale/el/LC_MESSAGES/gxmame.mo
 share/locale/es/LC_MESSAGES/gxmame.mo
+share/locale/fr/LC_MESSAGES/gxmame.mo
 share/locale/it/LC_MESSAGES/gxmame.mo
 share/locale/nl/LC_MESSAGES/gxmame.mo
-share/locale/de/LC_MESSAGES/gxmame.mo
 share/locale/pl/LC_MESSAGES/gxmame.mo
 share/locale/zh_TW/LC_MESSAGES/gxmame.mo
-share/applnk/Games/Arcade/gxmame.desktop
-share/gnome/apps/Games/Arcade/gxmame.desktop
+share/locale/zh_CN/LC_MESSAGES/gxmame.mo
 share/icons/gxmame.png
 share/icons/mini/gxmame.xpm
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -20,7 +21,6 @@ share/icons/mini/gxmame.xpm
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc-2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc-3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc-4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gxmame-doc-5.html
