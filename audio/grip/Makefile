@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.nostatic.org/grip/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
