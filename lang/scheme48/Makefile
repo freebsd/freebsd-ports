@@ -14,8 +14,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R4RS
 
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"fails to install on ${MACHINE_ARCH}"
+CONFLICTS=	scsh-*
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"fails to install on ${ARCH}"
 .endif
 
 GNU_CONFIGURE=	yes
@@ -23,4 +27,4 @@ ALL_TARGET=	enough
 STRIP=
 MAN1=		scheme48.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
