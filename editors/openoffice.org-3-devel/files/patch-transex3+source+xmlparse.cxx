@@ -1,5 +1,9 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40184
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40184
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=2030&Path=SRC680%2Fpj16
+o pj16
 
+Description
 FreeBSD doesn't have alloca.h
 
 Index: source/xmlparse.cxx

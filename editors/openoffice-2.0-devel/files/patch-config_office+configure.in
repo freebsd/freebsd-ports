@@ -1,6 +1,10 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40176
-http://www.openoffice.org/issues/show_bug.cgi?id=40226
+#iZ and CWS data
+o http://www.openoffice.org/issues/show_bug.cgi?id=40176
+  http://www.openoffice.org/issues/show_bug.cgi?id=40226
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=1806&Path=SRC680%2Fconfigure4
+o configure4
 
+Description
 o Correct PTHREAD_CFLAGS, PTHREAD_LIBS
 o CUPS support via --enable-cups
 

@@ -1,4 +1,10 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=37731
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=37731
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=2030&Path=SRC680%2Fpj16
+o pj16
+
+Description
+Do not export LINK to environment
 
 Index: config_office/set_soenv.in
 ===================================================================

@@ -1,4 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40180
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40180
+
+Description
 
 Vendor name of FreeBSD's Java
 (http://www.freebsd.org/cgi/cvsweb.cgi/ports/java/jdk14/)

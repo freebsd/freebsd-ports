@@ -1,5 +1,10 @@
-http://qa.openoffice.org/issues/show_bug.cgi?id=24142
+#iZ and CWS data
+o http://qa.openoffice.org/issues/show_bug.cgi?id=24142
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=1274&Path=SRC680%2Fsdksample
+o sdksample
 
+Description
+N/A
 --- odk/settings/settings.mk	Sun Jan 25 18:41:02 2004
 +++ odk/settings/settings.mk	Sun Jan 25 18:45:09 2004
 @@ -368,3 +368,85 @@

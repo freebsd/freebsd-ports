@@ -1,5 +1,10 @@
-http://qa.openoffice.org/issues/show_bug.cgi?id=24142
+#iZ and CWS data
+o http://qa.openoffice.org/issues/show_bug.cgi?id=24142
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=1274&Path=SRC680%2Fsdksample
+o sdksample
 
+Description
+N/A
 --- odk/setsdkenv_unix.in	Sun Jan 25 18:41:01 2004
 +++ odk/setsdkenv_unix.in	Sun Jan 25 18:42:00 2004
 @@ -2,7 +2,8 @@

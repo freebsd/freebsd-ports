@@ -1,5 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40182
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40182
 
+Description
 o catch up recent unxlngi6.mk
 o -Wl,-z,defs -> comment out
 
