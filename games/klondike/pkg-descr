@@ -1,0 +1,7 @@
+Klondike is a solitaire game for X11.  It's strongly influenced
+by the user interface of Klondike for the Macintosh.
+
+Features of klondike include:
+	- time-based and Casino-style scoring
+	- persistent high score list
+	- on-line help
