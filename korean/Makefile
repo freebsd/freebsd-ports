@@ -5,7 +5,6 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += a2ps
-    SUBDIR += acroread-korfont
     SUBDIR += acroread5-korfont
     SUBDIR += ami
     SUBDIR += baekmukfonts-bdf

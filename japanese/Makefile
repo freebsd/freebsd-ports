@@ -12,7 +12,6 @@
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
     SUBDIR += ack
-    SUBDIR += acroread-jpnfont
     SUBDIR += acroread5-jpnfont
     SUBDIR += addttfont
     SUBDIR += alias-fonts
