@@ -1,26 +1,30 @@
-# New ports collection makefile for:   gdm
-# Date created:        12 September 2000
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
+# New ports collection makefile for:   gdm2
+# Date created:        20 May 2002
+# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gdm
-PORTVERSION=	2.2.5.5
+PORTNAME=	gdm2
+PORTVERSION=	2.3.90.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=		stable/sources/gdm
-DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=		pre-gnome2/releases/gnome-2.0-desktop-beta5
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2	
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 GDMDIR?=	${PREFIX}/etc/gdm

@@ -1,15 +1,11 @@
-
-$FreeBSD$
-
---- utils/Makefile.in.orig	Wed Mar 13 17:52:05 2002
-+++ utils/Makefile.in	Wed Mar 13 17:52:32 2002
-@@ -195,8 +195,7 @@
- gdmaskpass_LDADD = \
- 	$(GNOME_LIBDIR)		\
- 	$(INTLLIBS)		\
--	-lpam			\
--	-lpam_misc
-+	-lpam
+--- utils/Makefile.in.orig	Tue May 21 00:01:55 2002
++++ utils/Makefile.in	Tue May 21 00:02:20 2002
+@@ -160,7 +160,7 @@
+ gdmmktemp_SOURCES =  	gdmmktemp.c
  
  
- gdmopen_LDADD = \
+-gdmaskpass_LDADD =  	$(INTLLIBS)			-lpam				-lpam_misc
++gdmaskpass_LDADD =  	$(INTLLIBS)			-lpam
+ 
+ 
+ gdmopen_LDADD =  	$(INTLLIBS)

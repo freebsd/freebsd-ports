@@ -1,118 +1,111 @@
-
-$FreeBSD$
-
---- daemon/slave.c.orig	Tue Jan  1 04:48:07 2002
-+++ daemon/slave.c	Fri Jan 11 15:51:27 2002
-@@ -45,6 +45,11 @@
- #include <time.h>
- #include <syslog.h>
- 
+--- daemon/slave.c.orig	Tue May 21 00:04:14 2002
++++ daemon/slave.c	Tue May 21 00:17:55 2002
+@@ -26,6 +26,10 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
 +#ifdef HAVE_LOGINCAP
-+#include <unistd.h>
 +#include <login_cap.h>
 +#endif
 +
- #include <vicious.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -2008,6 +2012,7 @@
+ 		   const char *session,
+ 		   const char *save_session,
+ 		   const char *language,
++		   gboolean def_language,
+ 		   const char *gnome_session,
+ 		   gboolean usrcfgok,
+ 		   gboolean savesess,
+@@ -2023,6 +2028,11 @@
  
- #include "gdm.h"
-@@ -140,6 +145,8 @@
- static gboolean x_error_occured = FALSE;
- static gboolean gdm_got_usr2 = FALSE;
+ 	gdm_clearenv ();
  
-+static void		changeUser(struct passwd *pwent, char *login);
++	if (setsid() < 0)
++	    /* should never happen */
++	    gdm_error (_("%s: setsid() failed: %s!"),
++	    		"session_child_run", strerror(errno));
 +
- /* ignore handlers */
- static int
- ignore_xerror_handler (Display *disp, XErrorEvent *evt)
-@@ -1785,6 +1792,27 @@
- 
- }
- 
-+#ifdef HAVE_LOGINCAP
-+void changeUser(struct passwd *pwent, char *login) {
-+	if (setsid() == -1)
-+		gdm_child_exit (DISPLAY_REMANAGE, _("gdm_slave_session_start: setsid() failed for %s. Aborting."), login);
-+	if (setusercontext(NULL, pwent, pwent->pw_uid, LOGIN_SETALL) == -1)
-+		gdm_child_exit (DISPLAY_REMANAGE, _("gdm_slave_session_start: setusercontext() failed for %s. Aborting."), login);
-+}
-+#else
-+void changeUser(struct passwd *pwent, char *login) {
-+	setpgid(0, 0);
-+	umask(022);
-+	/* setup the user's correct group */
-+	if (setgid(pwent->pw_gid) < 0)
-+		gdm_child_exit (DISPLAY_REMANAGE, _("gdm_slave_session_start: Could not setgid %d. Aborting."), pwent->pw_gid);
-+	if (initgroups(login, pwent->pw_gid) < 0)
-+		gdm_child_exit (DISPLAY_REMANAGE, _("gdm_slave_session_start: initgroups() failed for %s. Aborting."), login);
-+	if (setuid(pwent->pw_uid) < 0) 
-+		gdm_child_exit (DISPLAY_REMANAGE, _("gdm_slave_session_start: Could not become %s. Aborting."), login);
-+}
-+#endif
-+
- static char *
- dequote (const char *in)
- {
-@@ -1840,12 +1871,6 @@
- 	if (gnome_session != NULL)
- 		ve_setenv ("GDM_GNOME_SESSION", gnome_session, TRUE);
- 
--	/* Special PATH for root */
--	if (pwent->pw_uid == 0)
--		ve_setenv ("PATH", GdmRootPath, TRUE);
--	else
--		ve_setenv ("PATH", GdmDefaultPath, TRUE);
--
- 	/* Eeeeek, this no lookie as a correct language code, let's
- 	 * try unaliasing it */
- 	if (strlen (language) < 3 ||
-@@ -1853,14 +1878,31 @@
+ 	/* Prepare user session */
+ 	gnome_setenv ("XAUTHORITY", d->userauth, TRUE);
+ 	gnome_setenv ("DISPLAY", d->name, TRUE);
+@@ -2050,10 +2060,6 @@
  		language = unaliaslang (language);
  	}
  
 -	/* Set locale */
-+	changeUser(pwent, login);
-+
-+	/*
-+	 * Set locale. XXX in the HAVE_LOGINCAP case we override user's
-+	 * default language, but there is no other way around, because there
-+	 * is no way to select "Use user's default language" in the GDM, so
-+	 * that we either have to give up ability to select language other
-+	 * one specified in the login.conf, or just ignore default setting.
-+	 * I selected the latter, which is suboptimal, but at least gives
-+	 * some freedom to the user.
-+	 */
- 	ve_setenv ("LANG", language, TRUE);
- 	ve_setenv ("GDM_LANG", language, TRUE);
-+
-+#ifndef HAVE_LOGINCAP
-+
-+	/* Special PATH for root */
-+	if (pwent->pw_uid == 0) 
-+		ve_setenv("PATH", GdmRootPath, TRUE);
-+	else
-+		ve_setenv("PATH", GdmDefaultPath, TRUE);
-+#else
-+	 /* Do not reset PATH */
-+#endif
-     
--	setpgid (0, 0);
--	
--	umask (022);
--	
- 	/* setup the verify env vars */
- 	if ( ! gdm_verify_setup_env (d))
- 		gdm_child_exit (DISPLAY_REMANAGE,
-@@ -1870,12 +1912,8 @@
- 
- 	/* setup egid to the correct group,
+-	gnome_setenv ("LANG", language, TRUE);
+-	gnome_setenv ("GDM_LANG", language, TRUE);
+-    
+ 	setpgid (0, 0);
+ 	
+ 	umask (022);
+@@ -2069,10 +2075,35 @@
  	 * not to leave the egid around */
--	setegid (pwent->pw_gid);
-+	/*setegid (pwent->pw_gid);*/
+ 	setegid (pwent->pw_gid);
  
--	if (setuid (pwent->pw_uid) < 0) 
--		gdm_child_exit (DISPLAY_REMANAGE,
--				_("gdm_slave_session_start: Could not become %s. Aborting."), login);
--	
++#ifdef HAVE_LOGINCAP
++	if (setusercontext (NULL, pwent, pwent->pw_uid,
++	    		    LOGIN_SETLOGIN | LOGIN_SETPATH |
++			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |
++			    LOGIN_SETUMASK | LOGIN_SETUSER) < 0)
++	    	gdm_child_exit (DISPLAY_REMANAGE,
++				_("%s: setusercontext() failed for %s. "
++				  "Aborting."), "gdm_slave_session_start",
++				login);
++	/* A different language was selected, or taken from the saved
++	 * prefs of the user */
++	if ( ! def_language) {
++	    gnome_setenv ("LANG", language, TRUE);
++	    gnome_setenv ("GDM_LANG", language, TRUE);
++	} else {
++	    /* setusercontext sets up user languages */
++	    gnome_setenv ("GDM_LANG", g_getenv ("LANG"), TRUE);
++	}
++#else
++
+ 	if (setuid (pwent->pw_uid) < 0) 
+ 		gdm_child_exit (DISPLAY_REMANAGE,
+ 				_("gdm_slave_session_start: Could not become %s. Aborting."), login);
+ 	
++	/* Set locale */
++	gnome_setenv ("LANG", language, TRUE);
++	gnome_setenv ("GDM_LANG", language, TRUE);
++#endif
++
  	chdir (home_dir);
  
  	/* anality, make sure nothing is in memory for gnome_config
+@@ -2259,6 +2290,7 @@
+     char *gnome_session = NULL;
+     gboolean savesess = FALSE, savelang = FALSE, savegnomesess = FALSE;
+     gboolean usrcfgok = FALSE, sessoptok = FALSE, authok = FALSE;
++    gboolean def_language = FALSE;
+     const char *home_dir = NULL;
+     gboolean home_dir_ok = FALSE;
+     pid_t pid;
+@@ -2392,12 +2424,13 @@
+ 		    language = g_strdup (lang);
+ 	    else
+ 		    language = g_strdup (GdmDefaultLocale);
+-	    savelang = TRUE;
+ 
+ 	    if (ve_string_empty (language)) {
+ 		    g_free (language);
+ 		    language = g_strdup ("C");
+ 	    }
++
++	    def_language = TRUE;
+     }
+ 
+     /* save this session as the users session */
+@@ -2499,6 +2532,7 @@
+ 			   session,
+ 			   save_session,
+ 			   language,
++			   def_language,
+ 			   gnome_session,
+ 			   usrcfgok,
+ 			   savesess,

@@ -1,7 +1,6 @@
-
---- gui/gdmlogin.c.orig	Mon Dec 31 21:51:17 2001
-+++ gui/gdmlogin.c	Tue Jan 29 18:12:12 2002
-@@ -3326,7 +3326,9 @@
+--- gui/gdmlogin.c.orig	Tue May 21 00:19:12 2002
++++ gui/gdmlogin.c	Tue May 21 00:20:02 2002
+@@ -3419,7 +3419,9 @@
  static gboolean
  gdm_login_check_exclude (struct passwd *pwent)
  {
@@ -11,7 +10,7 @@
  	gint i;
  
  	if ( ! GdmAllowRoot && pwent->pw_uid == 0)
-@@ -3335,11 +3337,13 @@
+@@ -3428,11 +3430,13 @@
  	if ( ! GdmAllowRemoteRoot && ! login_is_local && pwent->pw_uid == 0)
  		return TRUE;
  

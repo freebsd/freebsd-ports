@@ -1,5 +1,5 @@
---- config/PreSession.orig	Sun Jun  3 14:45:40 2001
-+++ config/PreSession	Sun Jun  3 14:47:23 2001
+--- config/PreSession.orig	Mon May 20 23:54:34 2002
++++ config/PreSession	Mon May 20 23:55:03 2002
 @@ -1,4 +1,4 @@
  #!/bin/sh
 -if [ -x /usr/bin/X11/sessreg ]; then
