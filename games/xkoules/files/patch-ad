@@ -1,0 +1,11 @@
+--- ./koules.sndsrv.freebsd.c.orig	Sun Sep  8 01:03:48 2002
++++ ./koules.sndsrv.freebsd.c	Sun Sep  8 01:03:55 2002
+@@ -14,7 +14,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #include <sys/time.h>
+ #include <signal.h>
+ #include <string.h>

@@ -1,0 +1,11 @@
+--- sound.c.orig	Wed Aug 25 09:27:16 1999
++++ sound.c	Sun Sep  8 00:55:06 2002
+@@ -110,7 +110,7 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #ifdef __FreeBSD__
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #else
+ #include <linux/soundcard.h>
+ #endif
