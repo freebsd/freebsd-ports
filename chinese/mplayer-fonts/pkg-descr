@@ -1,0 +1,12 @@
+This is the port which contains the superset of
+the fonts for the mplayer on-screen display and
+the sub title.
+
+In this stage it supports the following charsets:
+
+big5-kai
+big5-ming
+gb2312-kai
+gb2312-ming
+
+WWW: http://www.mplayerhq.hu/
