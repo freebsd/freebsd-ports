@@ -1,8 +1,10 @@
+include/libAfterBase/aslist.h
 include/libAfterBase/ashash.h
 include/libAfterBase/astypes.h
 include/libAfterBase/asvector.h
 include/libAfterBase/audit.h
 include/libAfterBase/fs.h
+include/libAfterBase/layout.h
 include/libAfterBase/mystring.h
 include/libAfterBase/os.h
 include/libAfterBase/output.h
@@ -16,7 +18,7 @@ include/libAfterBase/timer.h
 include/libAfterBase/trace.h
 include/libAfterBase/xprop.h
 include/libAfterBase/xwrap.h
-@dirrm include/libAfterBase
 lib/libAfterBase.a
 lib/libAfterBase.so
 lib/libAfterBase.so.0
+@dirrm include/libAfterBase
