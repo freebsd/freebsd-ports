@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	superlu
-PORTVERSION=	2.0.20020923
+PORTVERSION=	2.0.20021113
 CATEGORIES=	math
 MASTER_SITES=	http://www.nersc.gov/~xiaoye/SuperLU/
 DISTNAME=	${PORTNAME}_2.0
