@@ -3,13 +3,14 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1996/03/28 23:25:40 jmz Exp rootk $
+# $Id: Makefile,v 1.9 1996/05/13 15:41:00 jmz Exp $
 #
 
 DISTNAME=	psutils-1.13
 PKGNAME=	psutils-${PAPERSIZE}-1.13
 CATEGORIES+=	print
-MASTER_SITES=	ftp://ftp.sunet.se/pub/text-processing/postscript/utilities/psutils/
+MASTER_SITES=	ftp://nic.switch.ch/software/sources/psutils-1.8/ \
+		ftp://ftp.imag.fr/pub1/postscript/
 
 MAINTAINER=	jmz@FreeBSD.org
 
