@@ -1,21 +1,49 @@
---- Makefile.orig	Sun Jan 23 16:02:11 2000
-+++ Makefile	Sun Jan 23 16:02:35 2000
-@@ -64,14 +64,14 @@
- 	@echo "Done."
+--- Makefile.orig	Tue Feb  8 21:57:24 2000
++++ Makefile	Tue Feb  8 21:34:45 2000
+@@ -12,22 +12,22 @@
+ #
  
- install: all
--	install -s -o root -g ${GROUP} -m ${MODE} trafd/trafd ${PATH_BINDIR}
-+	install -c -s -o root -g ${GROUP} -m ${MODE} trafd/trafd ${PATH_BINDIR}
- 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafstart ${PATH_BINDIR}
- 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafstop ${PATH_BINDIR}
- 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafsave ${PATH_BINDIR}
- 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafdump ${PATH_BINDIR}
--	install -s -o root -g ${GROUP} -m ${MODE} trafstat/trafstat ${PATH_BINDIR}
--	install -s -o root -g ${GROUP} -m ${MODE} trafstatd/trafstatd ${PATH_BINDIR}
--	install -s -o root -g ${GROUP} -m ${MODE} traflog/traflog ${PATH_BINDIR}
-+	install -c -s -o root -g ${GROUP} -m ${MODE} trafstat/trafstat ${PATH_BINDIR}
-+	install -c -s -o root -g ${GROUP} -m ${MODE} trafstatd/trafstatd ${PATH_BINDIR}
-+	install -c -s -o root -g ${GROUP} -m ${MODE} traflog/traflog ${PATH_BINDIR}
- 	install -c -o root -g ${GROUP} -m ${MODE} traflog/traflog.format ${PATH_TRAFLOG_FMT}
- 	@echo Done.
+ # Target directory for install execution files.
+-PATH_BINDIR=/usr/local/bin
++PATH_BINDIR=${PREFIX}/bin
  
+ # Target directory for install man pages.
+-PATH_MANDIR=/usr/local/man/man1
++PATH_MANDIR=${MANPREFIX}/man1
+ 
+ # Trailing slash directory, summary traffic log files will be put there.
+-PATH_TOSAVE=/var/trafd/
++PATH_TOSAVE=${PREFIX}/var/trafd/
+ 
+ # Full pathname where locate tarfstat program.
+-PATH_TRAFSTAT=/usr/local/bin/trafstat
++PATH_TRAFSTAT=${PREFIX}/bin/trafstat
+ 
+ # Where locate trafstatd log file, if you want log then file must exist.
+-PATH_TRAFSTAT_LOG=/var/log/trafstat.log
++PATH_TRAFSTAT_LOG=${PREFIX}/var/log/trafstat.log
+ 
+ # File with user defined descriptions of the traflog output format.
+-PATH_TRAFLOG_FMT=/usr/local/etc/traflog.format
++PATH_TRAFLOG_FMT=${PREFIX}/etc/traflog.format
+ 
+ # Only group wheel can execute binary files.
+ SHELL	= /bin/sh
+@@ -36,7 +36,7 @@
+ 
+ # This options intended for BSD/OS V2.
+ CC	= gcc
+-FLAGS	= -O2
++#FLAGS	= -O2
+ DEFINE	= -DRETSIGTYPE=void -DRETSIGVAL=
+ #DEFINE += -DHAVE_FCNTL_H=1
+ #DEFINE += -DHAVE_MEMORY_H=1
+@@ -45,7 +45,7 @@
+ LDFLAGS	= -L../lib -lbpft -lpcap -lcurses -ltermcap -ll
+ 
+ INCLUDE	= -I../include
+-CFLAGS	= ${FLAGS} ${INCLUDE} ${DEFINE} \
++CFLAGS	+= ${INCLUDE} ${DEFINE} \
+ 	-DPATH_TOSAVE=\"${PATH_TOSAVE}\"\
+ 	-DPATH_TRAFSTAT=\"${PATH_TRAFSTAT}\"\
+ 	-DPATH_TRAFSTAT_LOG=\"${PATH_TRAFSTAT_LOG}\"\

@@ -1,0 +1,7 @@
+--- trafd/trafstart.orig	Tue Feb  8 00:14:42 2000
++++ trafd/trafstart	Tue Feb  8 00:15:38 2000
+@@ -1,3 +1,4 @@
++#!/bin/sh
+ #
+ #	trafstart	Copyright (c)1993 CAD lab
+ #
