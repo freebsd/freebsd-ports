@@ -1,10 +1,10 @@
 # New ports collection makefile for: pgp
-# Version required:     MIT 2.6.2 / International 2.6.3i dev
+# Version required:     MIT 2.6.2 / International 2.6.3i
 # PGP 2.6.3i homepage is http://www.ifi.uio.no/pgp/
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1995/12/06 10:42:18 markm Exp $
+# $Id: Makefile,v 1.13 1996/01/04 04:34:48 ache Exp $
 #
 
 CATEGORIES+=	security
@@ -64,14 +64,17 @@ post-extract:
 pre-build:
 	cd ${WRKDIR}/rsaref/install/unix; ${GMAKE}
 .else
-DISTNAME=       pgp263i-dev
+DISTNAME=       pgp263is
 PKGNAME=        pgp-2.6.3i
-MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/incoming/ \
+MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/src/ \
 		ftp://ftp.kiae.su/unix/crypto/pgp/
-EXTRACT_SUFX=   .tgz
-WRKSRC=         ${WRKDIR}/pgp263i/src
+WRKSRC=         ${WRKDIR}/src
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
+
+post-extract:
+	cd ${WRKDIR}; $(EXTRACT_CMD) -xf pgp263ii.tar; \
+		rm -f pgp263ii.tar
 
 .endif
 .endif
