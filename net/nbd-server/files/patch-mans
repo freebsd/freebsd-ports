@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sat Jun 12 12:02:17 2004
++++ Makefile.in	Sat Jul  3 01:06:55 2004
+@@ -540,7 +540,7 @@
+ 	       exit 1; } >&2
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(PROGRAMS) $(MANS) config.h
++all-am: Makefile $(PROGRAMS) config.h
+ 
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(sbindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(man8dir)
+@@ -589,7 +589,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-man
++install-data-am:
+ 
+ install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
+ 
