@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Apache::SSI.3
+MAN3=		Apache::SSI.3 \
+		Apache::FakeSSI.3
 
 .include <bsd.port.mk>
