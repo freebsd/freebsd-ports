@@ -151,6 +151,7 @@ share/gnome/gtkhtml-3.0/keybindingsrc.emacs
 share/locale/am/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/ar/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/az/LC_MESSAGES/gtkhtml-3.0.mo
+share/locale/be/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/ca/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/cs/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/da/LC_MESSAGES/gtkhtml-3.0.mo
@@ -180,6 +181,8 @@ share/locale/pt_BR/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/ru/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/sk/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/sl/LC_MESSAGES/gtkhtml-3.0.mo
+share/locale/sr/LC_MESSAGES/gtkhtml-3.0.mo
+share/locale/sr@Latn/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/sv/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/tr/LC_MESSAGES/gtkhtml-3.0.mo
 share/locale/uk/LC_MESSAGES/gtkhtml-3.0.mo
