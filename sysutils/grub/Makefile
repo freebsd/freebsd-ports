@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grub
-PORTVERSION=	0.5.96
+PORTVERSION=	0.90
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd-freebsd${OSREL}
 
 MAN1=		mbchk.1
-MAN8=		grub.8 grub-install.8
+MAN8=		grub.8 grub-install.8 grub-md5-crypt.8
 
 pre-build:
 	@${RM} ${WRKSRC}/docs/grub.info*
