@@ -4,7 +4,7 @@
 # Date created:                         2 Nov 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.5 1998/11/07 12:39:29 ache Exp $
+# $Id: Makefile,v 1.6 1998/11/26 05:24:59 asami Exp $
 #
 
 DISTNAME=       webglimpse-1.6.src
@@ -12,7 +12,7 @@ PKGNAME=        webglimpse-1.6
 CATEGORIES=     www textproc
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 
-RUN_DEPENDS+=   /usr/local/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=   ${PREFIX}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
 WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
 

@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.55 1999/04/18 06:46:51 max Exp $
+# $Id: Makefile,v 1.56 1999/05/23 21:15:07 peter Exp $
 #
 
 DISTNAME=	squid-2.2.STABLE3
@@ -96,8 +96,8 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/squid.sh; \
-		echo "if [ -x /usr/local/sbin/RunCache -a -f /usr/local/etc/squid/squid.conf ]; then" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		echo "	(cd /tmp; /usr/local/sbin/RunCache >/dev/null 2>&1 &) ; echo -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
+		echo "if [ -x ${PREFIX}/sbin/RunCache -a -f ${PREFIX}/etc/squid/squid.conf ]; then" >> ${PREFIX}/etc/rc.d/squid.sh; \
+		echo "	(cd /tmp; ${PREFIX}/sbin/RunCache >/dev/null 2>&1 &) ; echo -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		echo "fi" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
