@@ -1,0 +1,7 @@
+---------------------------------------------------
+The extra 3d objects are located in:
+	%%PREFIX%%/share/wmcube-gdk
+
+To run wmcube type:
+	wmcube-gdk -o %%PREFIX%%/share/wmcube-gdk &
+---------------------------------------------------

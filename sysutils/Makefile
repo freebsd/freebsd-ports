@@ -174,6 +174,7 @@
     SUBDIR += wmbattery
     SUBDIR += wmcpuload
     SUBDIR += wmcube
+    SUBDIR += wmcube-gdk
     SUBDIR += wmfire
     SUBDIR += wmfsm
     SUBDIR += wmhm
