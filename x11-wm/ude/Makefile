@@ -14,10 +14,12 @@ MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/udeproject/ \
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-BUILD_DEPENDS=	${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.mk>
