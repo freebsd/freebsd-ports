@@ -56,7 +56,9 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
 		REALCURDIR="${.CURDIR}" \
-		WITH_DB3="${WITH_DB3}"
+		WITH_DB3="${WITH_DB3}" \
+		WITH_MYSQL="${WITH_MYSQL}" \
+		WITH_LDAP="${WITH_LDAP}"
 
 .if defined(WITHOUT_OTP)
 CONFIGURE_ARGS+=	--disable-otp
@@ -71,12 +73,6 @@ CRAM=	"@comment "
 .if defined(WITHOUT_DIGEST)
 CONFIGURE_ARGS+=	--disable-digest
 DIGEST=	"@comment "
-.endif
-
-.if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
-CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -122,6 +118,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		DIGEST=${DIGEST} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
+		MYSQL=${MYSQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

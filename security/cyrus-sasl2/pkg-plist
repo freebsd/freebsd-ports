@@ -28,6 +28,9 @@ lib/sasl2/libanonymous.so.2
 lib/sasl2/liblogin.a
 lib/sasl2/liblogin.so
 lib/sasl2/liblogin.so.2
+%%MYSQL%%lib/sasl2/libmysql.a
+%%MYSQL%%lib/sasl2/libmysql.so
+%%MYSQL%%lib/sasl2/libmysql.so.2
 %%OTP%%lib/sasl2/libotp.a
 %%OTP%%lib/sasl2/libotp.so
 %%OTP%%lib/sasl2/libotp.so.2
