@@ -23,6 +23,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFLICTS=	gnomesu-*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	Corrupts PAM configuration
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -30,4 +36,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/libgnomesu.css ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
