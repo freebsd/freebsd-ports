@@ -23,7 +23,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	"i386"
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/jad ${PREFIX}/bin/
