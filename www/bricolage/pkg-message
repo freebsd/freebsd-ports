@@ -1,0 +1,49 @@
+************************************************************
+Bricolage has been installed but is not yet usable.
+
+You must: 1) Import the database
+          2) Edit your apache.conf file
+          3) Change the Bricolage admin user password
+
+1) If the database for Bricolage does not already exist, you
+   must create it now using %%PREFIX%%/bin/bric_pgimport.
+
+Common Supported Options:
+  -u Database user login.
+  -p Database user password.
+  -d Database name.
+  -c Create the database first.
+  -m Make a new user. Pass in the user name
+     and password separated by a colon.
+
+Example:
+
+	%%PREFIX%%/bin/bric_pgimport -u pgsql -d bric -c -m bric:password
+
+For additional options, see:
+
+	%%PREFIX%%/bin/bric_pgimport --help
+
+Edit %%PREFIX%%/etc/bricolage/bricolage.conf
+to reflect the database, username and password chosen
+for the bricolage database.
+
+
+2) Add the below lines to %%PREFIX%%/etc/apache/httpd.conf.
+
+	PerlPassEnv BRICOLAGE_ROOT
+	PerlModule Bric::App::ApacheConfig
+
+NOTE: Bricolage will take over the entire namespace of the
+      host it is associated to within Apache. If you are 
+      serving content other than Bricolage from this 
+      webserver, add those lines to a Bricolage specific 
+      Virtual Host.
+
+3) The default login and password for the Bricolage web
+   interface is (without quotes):
+
+	Login:	 	"admin"
+	Password:	"change me now!"
+
+************************************************************

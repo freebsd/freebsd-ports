@@ -45,6 +45,7 @@
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
+    SUBDIR += bricolage
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += caudium10
