@@ -19,6 +19,4 @@ With configurations, for Japanese encodings, you can also enjoy the
 embedded canna support.
 See /usr/local/share/vi/README.* for details of multilingual patch.
 
-original distribution site:
-	ftp://ftp.cs.berkeley.edu/ucb/4bsd/nvi-1.79.tar.gz
-	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+WWW: http://www.bostic.com/vi/
