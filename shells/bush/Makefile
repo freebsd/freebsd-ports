@@ -17,9 +17,7 @@ COMMENT=		The Business Shell
 
 BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat	\
 			bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
-POSTGRESQL_PORT?=	databases/postgresql7
+USE_PGSQL=		yes
 
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes
