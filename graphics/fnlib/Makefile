@@ -1,13 +1,13 @@
 # New ports collection makefile for:	fnlib
-# Version required:	0.2
+# Version required:	0.3
 # Date created:		23 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id $
+# $Id:$
 #
 
-DISTNAME=	fnlib_DR-0.2
-PKGNAME=	fnlib-0.2
+DISTNAME=	fnlib_DR-0.3
+PKGNAME=	fnlib-0.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/
 
