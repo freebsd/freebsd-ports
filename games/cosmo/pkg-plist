@@ -1,0 +1,5 @@
+bin/cosmo
+lib/X11/cosmo/cosmorc
+lib/X11/cosmo/best.dat
+lib/X11/cosmo/moon.tif.gz
+@dirrm lib/X11/cosmo

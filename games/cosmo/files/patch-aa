@@ -1,0 +1,17 @@
+--- Imakefile.orig	Sat May 11 16:06:00 1996
++++ Imakefile	Fri May  2 12:38:28 1997
+@@ -1,11 +1,12 @@
+-BINDIR = /usr/local/games
++PREFIX?= /usr/X11R6
++BINDIR = ${PREFIX}/bin
+ PAD = # -DUSE_PAD
+ CHMOD = /bin/chmod
+ MKDIR = /bin/mkdir
+ 
+ CC = gcc
+ REGULATE_TIMER = -DREG_TIMER
+-DATADIR = $(BINDIR)/cosmodir
++DATADIR = ${PREFIX}/lib/X11/cosmo
+ DATAFILE = $(DATADIR)/best.dat
+ PROTO_DEFINES = -DRANK_FILE=\"$(DATAFILE)\" $(PAD) $(REGULATE_TIMER) $(SIGNAL)
+ CDEBUGFLAGS = -O2 # -g
