@@ -203,6 +203,7 @@
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
+    SUBDIR += highmoon
     SUBDIR += hlserver-action
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs

@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Jan 20 15:00:24 2005
++++ Makefile	Thu Jan 20 14:51:52 2005
+@@ -1,17 +1,19 @@
+ # Makefile for ufo
+ 
+-CFLAGS = -g -O3 -Wall `sdl-config --cflags`
+-CXXFLAGS = $(CFLAGS)
+-LIBS = `sdl-config --libs` -lSDL_gfx
++CXXFLAGS += `sdl11-config --cflags`
++LIBS = `sdl11-config --libs`
+ MAINNAME = ufo
+-CC=g++
++CXX ?= g++
+ 
+ OBJS = main.o vector2d.o language.o sound.o graphics.o galaxy.o
+ 
++.cpp.o:
++	$(CXX) $(CXXFLAGS) -c $< -o $*.o
++
+ all:	ufo
+ 
+ ufo:	$(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(MAINNAME) $(OBJS) $(LIBS)
++	$(CXX) $(LDFLAGS) -o $(MAINNAME) $(OBJS) $(LIBS)
+ 
+ clean:        
+ 	rm -f *.o
