@@ -1,8 +1,8 @@
 ***********************************************************************
 * Japanese online manual has been successfully installed.             *
 *                                                                     *
-* (0) First, you may need to install ja-man-1.1i:                     *
-*        # pkg_add ja-man-1.1i.tgz                                    *
+* (0) First, you may need to install ja-man-1.1j or later:            *
+*        # pkg_add ja-man-1.1j.tgz                                    *
 *                                                                     *
 * (1) Then, see jman(1) with following command sequence:              *
 *        % setenv LC_CTYPE ja_JP.EUC                                  *
