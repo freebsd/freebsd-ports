@@ -313,6 +313,7 @@
     SUBDIR += teg
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
+    SUBDIR += tetris
     SUBDIR += textmaze
     SUBDIR += tileworld
     SUBDIR += tinymux
