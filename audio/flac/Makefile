@@ -17,7 +17,7 @@ MAINTAINER=	naddy@FreeBSD.org
 
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
-LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
+LIB_DEPENDS+=	xmms.2:${PORTSDIR}/audio/xmms
 PLIST_SUB=	XMMS=""
 .else
 PLIST_SUB=	XMMS="@comment "
