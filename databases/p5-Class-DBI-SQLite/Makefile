@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-SQLite
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -25,5 +25,14 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI::SQLite.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
