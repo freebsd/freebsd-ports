@@ -1,14 +1,5 @@
 --- configure.orig	Mon Jul 10 20:48:19 2000
 +++ configure	Tue Jul 11 19:15:28 2000
-@@ -4116,7 +4116,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -5795,8 +5795,8 @@
      { echo "configure: error: Did not find gdkpixbuf installed" 1>&2; exit 1; }
  fi

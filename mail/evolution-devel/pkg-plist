@@ -133,6 +133,7 @@ share/evolution/default_user/shortcuts.xml
 share/evolution/filtertypes.xml
 share/evolution/vfoldertypes.xml
 share/gnome/apps/Applications/evolution.desktop
+share/gnome/evolution/arrow.png
 share/gnome/evolution/default_user/local/Calendar/folder-metadata.xml
 share/gnome/evolution/default_user/local/Contacts/folder-metadata.xml
 share/gnome/evolution/default_user/local/Drafts/folder-metadata.xml
@@ -147,6 +148,7 @@ share/gnome/evolution/glade/alarm-notify.glade
 share/gnome/evolution/glade/alphabet.glade
 share/gnome/evolution/glade/categories.glade
 share/gnome/evolution/glade/contact-editor.glade
+share/gnome/evolution/glade/e-contact-editor-confirm-delete.glade
 share/gnome/evolution/glade/e-contact-print.glade
 share/gnome/evolution/glade/e-contact-print.glade.h
 share/gnome/evolution/glade/e-msg-composer-address-dialog.glade
@@ -163,6 +165,8 @@ share/gnome/evolution/glade/ldap-server-dialog.glade
 share/gnome/evolution/glade/ldap-server-dialog.glade.h
 share/gnome/evolution/glade/mail-config.glade
 share/gnome/evolution/glade/select-names.glade
+share/gnome/evolution/glade/task-editor-dialog.glade
+share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/fig/calendar.png
 share/gnome/help/evolution/C/fig/config-cal.png
 share/gnome/help/evolution/C/fig/config-mail.png
@@ -171,6 +175,10 @@ share/gnome/help/evolution/C/fig/filter-new-fig.png
 share/gnome/help/evolution/C/fig/mail-druid-pic.png
 share/gnome/help/evolution/C/fig/mainwindow-pic.png
 share/gnome/help/evolution/C/fig/vfolder-createrule-fig.png
+share/gnome/html/evolution-cal-client-decl.txt
+share/gnome/html/evolution-cal-client-sections.txt
+share/gnome/html/evolution-cal-client.hierarchy
+share/gnome/html/evolution-cal-client.types
 share/gnome/idl/addressbook.idl
 share/gnome/idl/evolution-calendar.idl
 share/gnome/images/evolution/briefcase.png
@@ -217,6 +225,7 @@ share/locale/tr/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/images/evolution
 @dirrm share/gnome/images
+@dirrm share/gnome/html/evolution-devel-guide
 @dirrm share/gnome/help/evolution/C/fig
 @dirrm share/gnome/help/evolution/C
 @dirrm share/gnome/help/evolution
@@ -231,6 +240,7 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution/default_user/local
 @dirrm share/gnome/evolution/default_user
 @dirrm share/gnome/evolution
+@dirrm share/evolution/default_user/news
 @dirrm share/evolution/default_user
 @dirrm share/evolution
 @dirrm lib/evolution/camel-providers/%%VERSION%%
