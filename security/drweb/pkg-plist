@@ -27,8 +27,6 @@ drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
 etc/rc.d/00.drwebd.sh
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm drweb/updates
 @dirrm drweb/update
 @dirrm drweb/run
