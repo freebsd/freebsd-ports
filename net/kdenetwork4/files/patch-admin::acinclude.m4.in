@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- admin/acinclude.m4.in.~2.131.2.8.~	Mon Nov  5 21:34:18 2001
++++ admin/acinclude.m4.in	Sat Dec  8 20:11:17 2001
+@@ -3754,7 +3754,7 @@
+ 
+     AC_CACHE_VAL(kde_cv_utmp_file,
+     [
+-    kde_cv_utmp_file=no
++    kde_cv_utmp_file=/var/run/utmp
+ 
+     for ac_file in    \
+                       \

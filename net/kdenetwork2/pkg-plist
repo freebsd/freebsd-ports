@@ -6,11 +6,15 @@ bin/kmailcvt
 bin/knewstickerstub
 bin/knode
 bin/korn
+bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/ksirc
 bin/ksticker
+bin/ktalkd
+bin/ktalkdlg
 bin/lisa
+bin/mail.local
 bin/reslisa
 include/kmailIface.h
 include/mimelib/address.h
@@ -47,6 +51,8 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
+lib/kde2/libkcm_ktalkd.la
+lib/kde2/libkcm_ktalkd.so
 lib/kio_lan.la
 lib/kio_lan.so
 lib/ksirc.la
@@ -76,6 +82,7 @@ share/applnk/Internet/Kppp.desktop
 share/applnk/Internet/kit.desktop
 share/applnk/Internet/kppplogview.desktop
 share/applnk/Internet/ksirc.desktop
+share/applnk/Settings/Network/kcmktalkd.desktop
 share/applnk/Settings/Network/kcmnewsticker.desktop
 share/applnk/Settings/Network/lanbrowser.desktop
 share/applnk/Settings/Personalization/kcmnewsticker.desktop
@@ -607,6 +614,7 @@ share/apps/ksirc/test.pl
 share/apps/ksirc/tester.pl
 share/apps/lisa/README
 share/config/ksircrc
+share/config/ktalkdrc
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/common
 share/doc/HTML/en/kdict/conf.png
@@ -726,6 +734,7 @@ share/icons/hicolor/16x16/apps/knode.png
 share/icons/hicolor/16x16/apps/korn.png
 share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/16x16/apps/ksirc.png
+share/icons/hicolor/16x16/apps/ktalkd.png
 share/icons/hicolor/32x32/apps/kdict.png
 share/icons/hicolor/32x32/apps/kit.png
 share/icons/hicolor/32x32/apps/kmail.png
@@ -735,6 +744,7 @@ share/icons/hicolor/32x32/apps/knode.png
 share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
+share/icons/hicolor/32x32/apps/ktalkd.png
 share/icons/hicolor/48x48/apps/kdict.png
 share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
@@ -744,10 +754,13 @@ share/icons/hicolor/48x48/apps/knode.png
 share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
+share/icons/hicolor/48x48/apps/ktalkd.png
 share/services/knewsservice.protocol
 share/services/kntsrcfilepropsdlg.desktop
 share/services/lan.protocol
 share/services/rlan.protocol
+share/sounds/ktalkd.wav
+@dirrm share/sounds
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/doc/HTML/en/lisa
