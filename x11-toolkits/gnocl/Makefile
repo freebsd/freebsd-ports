@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.5.15
+PORTVERSION=	0.5.16
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://www.dr-baum.net/gnocl/
@@ -26,10 +26,6 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-
-BROKEN=		"Does not build with gtk+-2.4"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 .include <bsd.port.pre.mk>
 
