@@ -18,18 +18,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"Does not compile on ${MACHINE_ARCH}"
-.endif
-
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
 USE_IMAKE=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
+
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} != i386
+BROKEN=		"Does not compile on ${MACHINE_ARCH}"
+.endif
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def Xvnc/config/cf/Imake.tmpl
