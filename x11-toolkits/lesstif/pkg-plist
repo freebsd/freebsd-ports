@@ -140,8 +140,8 @@ lib/libXm.la
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.1.2
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/LessTif/AUTHORS
 share/doc/LessTif/BUG-REPORTING
 share/doc/LessTif/COPYING
