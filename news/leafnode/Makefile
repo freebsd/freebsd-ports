@@ -1,11 +1,12 @@
 # ports collection Makefile for: leafnode
 # Whom:			Brian Somers <brian@FreeBSD.org>
+# Date created:		1997-06-27
 #
 # $FreeBSD$
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.27
+PORTVERSION=	1.9.29
 CATEGORIES=	news
 MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
@@ -17,7 +18,7 @@ MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		ftp://ftp.gigabell.net/pub/leafnode/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	matthias.andree@web.de
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
