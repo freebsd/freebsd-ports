@@ -1,0 +1,164 @@
+--- demo.c
++++ demo.c
+@@ -154,7 +154,7 @@
+ 
+     /* Construct the demo level filename */
+     if ((str = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        sprintf(levelPath, "%s/demo.data", str);
++        snprintf(levelPath, sizeof(levelPath),"%s/demo.data", str);
+     else
+         sprintf(levelPath, "%s/demo.data", LEVEL_INSTALL_DIR);
+ 
+--- editor.c
++++ editor.c
+@@ -213,7 +213,7 @@
+ 
+     /* Construct the Edit level filename */
+     if ((str = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        sprintf(levelPath, "%s/editor.data", str);
++        snprintf(levelPath,sizeof(levelPath)-1, "%s/editor.data", str);
+     else
+         sprintf(levelPath, "%s/editor.data", LEVEL_INSTALL_DIR);
+ 
+@@ -958,8 +958,8 @@
+     if ((num > 0) && (num <= MAX_NUM_LEVELS))
+     {
+ 	    /* Construct the Edit level filename */
+-   	 	if ((str2 = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        	sprintf(levelPath, "%s/level%02ld.data", str2, (u_long) num);
++ 	if ((str2 = getenv("XBOING_LEVELS_DIR")) != NULL)
++        	snprintf(levelPath, sizeof(levelPath)-1,"%s/level%02ld.data", str2, (u_long) num);
+     	else
+         	sprintf(levelPath, "%s/level%02ld.data", 
+ 				LEVEL_INSTALL_DIR, (u_long) num);
+@@ -1017,9 +1017,9 @@
+     num = atoi(str);
+     if ((num > 0) && (num <= MAX_NUM_LEVELS))
+     {
+-	    /* Construct the Edit level filename */
+-   	 	if ((str2 = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        	sprintf(levelPath, "%s/level%02ld.data", str2, (u_long) num);
++        /* Construct the Edit level filename */
++ 	if ((str2 = getenv("XBOING_LEVELS_DIR")) != NULL)
++        	snprintf(levelPath, sizeof(levelPath)-1,"%s/level%02ld.data", str2, (u_long) num);
+     	else
+         	sprintf(levelPath, "%s/level%02ld.data", 
+ 				LEVEL_INSTALL_DIR, (u_long) num);
+--- file.c
++++ file.c
+@@ -139,7 +139,7 @@
+ 
+     /* Construct the level filename */
+     if ((str = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        sprintf(levelPath, "%s/level%02ld.data", str, newLevel);
++        snprintf(levelPath,sizeof(levelPath), "%s/level%02ld.data", str, newLevel);
+     else
+         sprintf(levelPath, "%s/level%02ld.data", LEVEL_INSTALL_DIR, newLevel);
+ 
+@@ -177,7 +177,7 @@
+     static int bgrnd = 1;
+ 
+ 	/* Save the file in home directory - construct path */
+-	sprintf(levelPath, "%s/.xboing-saveinfo", GetHomeDir());
++	snprintf(levelPath, sizeof(levelPath)-1, "%s/.xboing-saveinfo", GetHomeDir());
+ 
+     /* Open the save file info for reading */
+     if ((saveFile = fopen(levelPath, "r+")) == NULL)
+@@ -239,7 +239,7 @@
+     DisplayLevelInfo(display, levelWindow, level);
+ 
+ 	/* Load the saved file in home directory - construct path */
+-	sprintf(levelPath, "%s/.xboing-savelevel", GetHomeDir());
++	snprintf(levelPath, sizeof(levelPath)-1, "%s/.xboing-savelevel", GetHomeDir());
+ 
+ 	/* Read in the saved level data */
+     if (ReadNextLevel(display, window, levelPath, True) == False)
+@@ -283,7 +283,7 @@
+ 	saveGame.numBullets	= GetNumberBullets();
+ 
+ 	/* Save the file in home directory - construct path */
+-	sprintf(levelPath, "%s/.xboing-saveinfo", GetHomeDir());
++	snprintf(levelPath, sizeof(levelPath)-1, "%s/.xboing-saveinfo", GetHomeDir());
+ 
+     /* Open the save file info for writing */
+     if ((saveFile = fopen(levelPath, "w+")) == NULL)
+@@ -309,7 +309,7 @@
+     	WarningMessage("Cannot close save game info file.");
+ 
+ 	/* Save the file in home directory - construct path */
+-	sprintf(levelPath, "%s/.xboing-savelevel", GetHomeDir());
++	snprintf(levelPath, sizeof(levelPath)-1, "%s/.xboing-savelevel", GetHomeDir());
+ 
+ 	if (SaveLevelDataFile(display, levelPath) == True)
+ 	{
+--- highscore.c
++++ highscore.c
+@@ -1023,7 +1023,7 @@
+ 	{
+ 		/* Use the environment variable if it exists */
+ 		if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+-			strcpy(filename, str);
++			strncpy(filename, str, sizeof(filename)-1);
+ 		else
+ 			strcpy(filename, HIGH_SCORE_FILE);
+ 	}
+@@ -1095,7 +1095,7 @@
+ 	{
+ 		/* Use the environment variable if it exists */
+ 		if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+-			strcpy(filename, str);
++			strncpy(filename, str, sizeof(filename)-1);
+ 		else
+ 			strcpy(filename, HIGH_SCORE_FILE);
+ 	}	
+@@ -1218,7 +1218,7 @@
+ 
+ 	/* Use the environment variable if it exists */
+ 	if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+-		strcpy(filename, str);
++		strncpy(filename, str, sizeof(filename)-1);
+ 	else
+ 		strcpy(filename, HIGH_SCORE_FILE);
+ 
+--- init.c
++++ init.c
+@@ -438,7 +438,7 @@
+ 		WarningMessage("Your X Window system display variable is not set.");
+ 	else
+ 	{
+-		sprintf(string, "Cannot connect to display called <%s>.", displayName);
++		snprintf(string, sizeof(string) - 1, "Cannot connect to display called <%s>.", displayName);
+ 		WarningMessage(string);
+ 	}
+ }
+--- misc.c
++++ misc.c
+@@ -427,7 +431,7 @@
+      */
+ 
+     if ((ptr = getenv("HOME")) != NULL)
+-        (void) strcpy(dest, ptr);
++        (void) strncpy(dest, ptr,sizeof(dest)-1);
+     else
+     {
+         /* HOME variable is not present so get USER var */
+@@ -441,7 +445,7 @@
+         }
+ 
+         if (pw)
+-            (void) strcpy(dest, pw->pw_dir);
++            (void) strncpy(dest, pw->pw_dir, sizeof(dest)-1);
+         else
+             *dest = '\0';
+     }
+--- preview.c
++++ preview.c
+@@ -139,7 +139,7 @@
+ 
+     /* Construct the Preview level filename */
+     if ((str = getenv("XBOING_LEVELS_DIR")) != NULL)
+-        sprintf(levelPath, "%s/level%02d.data", str, lnum);
++        snprintf(levelPath, sizeof(levelPath)-1, "%s/level%02d.data", str, lnum);
+     else
+         sprintf(levelPath, "%s/level%02d.data", LEVEL_INSTALL_DIR, lnum);
+ 
