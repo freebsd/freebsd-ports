@@ -22,7 +22,7 @@ name=clamav_clamd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/clamd
-pidfile=/var/run/clamav/clamd.pid
+pidfile=%%RUNDIR%%/clamd.pid
 required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/clamd.conf
 
