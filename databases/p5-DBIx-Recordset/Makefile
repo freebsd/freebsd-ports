@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl module for abstraction and simplification of database access
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -30,4 +27,14 @@ post-configure:
 		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 -lax/;' \
 			${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

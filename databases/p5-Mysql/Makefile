@@ -16,8 +16,7 @@ DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Perl5 modules for accessing MySQL databases
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
@@ -41,5 +40,13 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${PERL} -p -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
 
 .include <bsd.port.post.mk>

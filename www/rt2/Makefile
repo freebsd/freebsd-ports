@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/DBIx/DataSource.pm:${PORTSDIR}/databases/p5-DBIx-DataSource \
 		${SITE_PERL}/DBIx/SearchBuilder.pm:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \

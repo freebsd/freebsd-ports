@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	DBI driver for CSV files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -27,4 +26,14 @@ MAN3=		DBD::File.3 \
 		DBD::CSV.3 \
 		Bundle::DBD::CSV.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

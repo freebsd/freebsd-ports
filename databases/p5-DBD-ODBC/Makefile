@@ -15,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	DBD module interfacing the ODBC databases
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	-o ${LOCALBASE}
@@ -28,4 +26,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/[[:<:]]our[[:>:]]/my/g' \
 			  -e 's/^    @$$(NOOP)/	@$$(NOOP)/g' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

@@ -19,7 +19,6 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		expat.4:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \

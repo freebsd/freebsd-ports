@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Orthogonal Object Persistence in Relational Databases
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -33,4 +32,14 @@ MAN3=		Tangram.3 Tangram::Array.3 Tangram::Core.3 Tangram::Cursor.3 \
 		Tangram::Tour.3 Tangram::Type.3 Tangram::Type::Extending.3 \
 		Tangram::mysql.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

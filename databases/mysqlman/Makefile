@@ -13,8 +13,7 @@ DISTNAME=	mysqlman
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	MySQLMan is a web based MySQL database manager written in perl
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${WWW_DIR}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${WWW_DIR}:${PORTSDIR}/www/apache13
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 RESTRICTED=	"not redistributable, license agreement required"
@@ -60,5 +59,13 @@ post-install:
 			${PREFIX}/${MYMANDIR}/mysql.cfg.dist"
 	@${ECHO} "Modify to your needs!"
 	@${ECHO} ""
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
 
 .include <bsd.port.post.mk>

@@ -15,7 +15,6 @@ MAINTAINER=	dom@happygiraffe.net
 COMMENT=	An Extended SQL taglib for AxKit eXtensible Server Pages
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/AxKit/XSP/Util.pm:${PORTSDIR}/www/p5-AxKit-XSP-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -26,4 +25,14 @@ MAN3=		AxKit::XSP::ESQL.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

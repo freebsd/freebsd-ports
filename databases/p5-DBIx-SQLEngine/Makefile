@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
 COMMENT=	Extends DBI with high-level operations
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD \
+BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD \
 		${SITE_PERL}/Class/MakeMethods/Template.pm:${PORTSDIR}/devel/p5-Class-MakeMethods
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
