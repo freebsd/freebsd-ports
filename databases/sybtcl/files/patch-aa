@@ -1,0 +1,105 @@
+--- generic/sybtcl.c	Wed Aug 30 20:24:18 2000
++++ generic/sybtcl.c	Mon Mar 29 16:18:01 2004
+@@ -279,4 +279,12 @@
+ #endif
+ 
++#ifndef CS_INTERNAL
++#define CS_INTERNAL	/* Not defined by FreeTDS */
++#endif
++
++#ifndef TDS_DEF_CHARSET
++#define TDS_DEF_CHARSET NULL /* Not defined by Sybase */
++#endif
++
+ typedef struct SybTclProcs {	/* struct for handle entries */
+     int         in_use;		/* if this entry is opened */
+@@ -393,5 +401,5 @@
+ #else
+ 
+-extern void * malloc();
++#include <stdlib.h>
+ 
+ #endif
+@@ -461,7 +469,9 @@
+ 			Tcl_Interp *interp));
+ 
++#ifdef POLLED_EVENTS
+ static int dbEventProc _ANSI_ARGS_((Tcl_Event *evPtr, int flags));
+ static void dbSetupProc _ANSI_ARGS_((ClientData cd_hand, int flags));
+ static void dbCheckProc _ANSI_ARGS_((ClientData cd_hand, int flags));
++#endif
+ void Sybtcl_Kill _ANSI_ARGS_((ClientData clientData));
+ static int CS_INTERNAL syb_tcl_err_handler _ANSI_ARGS_((
+@@ -496,4 +506,5 @@
+ 
+ 
++#ifdef POLLED_EVENTS /* { */
+ /*
+  *----------------------------------------------------------------------
+@@ -566,5 +577,5 @@
+     }
+ }
+-
++#endif /* POLLED_EVENTS } */
+ 
+ 
+@@ -1669,6 +1680,8 @@
+ 
+ 
+-#ifdef DBVERSION_100
++#ifdef SYBBOUNDARY
+ 	case SYBBOUNDARY:
++#endif
++#ifdef SYBSENSITIVITY
+ 	case SYBSENSITIVITY:
+ #endif  
+@@ -2556,5 +2569,7 @@
+ 
+     DBSETLUSER(login,Tcl_GetStringFromObj(objv[1],NULL));
+-    DBSETLPWD(login, Tcl_GetStringFromObj(objv[2],NULL));
++    server_str = Tcl_GetStringFromObj(objv[2],&len);
++    if (len > 0)
++	DBSETLPWD(login, server_str);
+ 
+     /* check for server optional parameter */
+@@ -2594,8 +2609,8 @@
+             DBSETLCHARSET(login, charset_str);
+ 	} else {
+-            DBSETLCHARSET(login, NULL);
++            DBSETLCHARSET(login, TDS_DEF_CHARSET);
+ 	}
+     } else {
+-        DBSETLCHARSET(login, NULL);
++        DBSETLCHARSET(login, TDS_DEF_CHARSET);
+     }
+ 
+@@ -2607,5 +2622,6 @@
+     if (SybProcs[hand].dbproc == NULL) {
+ 	Sybtcl_AppendObjResult (interp, CMD_STR,
+-	   ": sybconnect failed in dbopen", (char *) NULL);
++	   ": sybconnect to ", server_str ? server_str : "(DEFAULT)",
++	   " failed in dbopen", (char *) NULL);
+ 	return TCL_ERROR;
+     }
+@@ -2909,5 +2925,5 @@
+     if (SybProcs[hand].last_text != SybOptions[i].maxtext) {
+ 	SybProcs[hand].last_text = SybOptions[i].maxtext;
+-	sprintf(conv_buf,"%d",SybOptions[i].maxtext);
++	sprintf(conv_buf,"%ld",SybOptions[i].maxtext);
+ 	dbsetopt(SybProcs[hand].dbproc, DBTEXTSIZE, conv_buf, -1);
+ 	dbsqlexec(SybProcs[hand].dbproc);  /* execute dbsetopt() */
+@@ -4190,5 +4206,5 @@
+     int      obj_parm;
+     int      isvar = 0;
+-    Tcl_Channel fd;
++    Tcl_Channel fd = NULL;
+ #ifndef MAC_TCL
+     struct stat stat_buf;		
+@@ -4305,5 +4321,6 @@
+     txtptr = dbtxptr(SybProcs[hand].dbproc,col);
+     if (txtptr == NULL) {
+-        Tcl_Close (NULL,fd);
++	if (fd != NULL)
++            Tcl_Close (NULL,fd);
+         Sybtcl_AppendObjResult (interp, CMD_STR,
+ 	   ": dbtxptr failed ", (char *) NULL);

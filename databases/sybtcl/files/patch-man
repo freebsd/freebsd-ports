@@ -1,0 +1,78 @@
+The supplied man-page provides comprehensive documentation, but contains
+an amazing amount of spelling typos. I ran it through ispell, but, quite
+possibly, some remain. Please, let me know if you find something, I missed.
+
+	-mi
+
+--- doc/sybtcl.man	Thu Dec 28 18:25:29 2000
++++ doc/sybtcl.man	Mon Mar 29 17:28:33 2004
+@@ -9,3 +9,3 @@
+ Sybase Open Client (a.k.a. DB-Library) library functions.
+-Programmers using Sybtcl should be familar with basic concepts of
++Programmers using Sybtcl should be familiar with basic concepts of
+ DB-Library programming.  
+@@ -23,5 +23,5 @@
+ value is passed to the server to display during a process list.
+-If \fIifile\fR is specified, that file is used to resovle server addresses;
++If \fIifile\fR is specified, that file is used to resolve server addresses;
+ if not specified, the normal $SYBASE/interfaces file is used.
+-If \fIcharset\fR is specified, the charset should reference a vaild
++If \fIcharset\fR is specified, the charset should reference a valid
+ character set available on your Sybase installation.  
+@@ -31,4 +31,4 @@
+ \fILogin-name\fR and \fIpassword\fR are required parameters.  All other
+-parameters are optional postitional parameters.  For example, to specify
+-the \fIifile\fR paramater, \fIserver\fR and \fIappname\fR must
++parameters are optional positional parameters.  For example, to specify
++the \fIifile\fR parameter, \fIserver\fR and \fIappname\fR must
+ also be specified.  Optional parameters may be a null string, in which
+@@ -141,3 +141,3 @@
+ .I line
+-The line numer of the procedure generating the message, if any.
++The line number of the procedure generating the message, if any.
+ .RE
+@@ -177,3 +177,3 @@
+ called to determine if result rows were generated.  If \fB-async\fR is omitted,
+-then sybsql will wait until the server has responed.
++then sybsql will wait until the server has responded.
+ Sybsql will return "REG_ROW" if
+@@ -415,3 +415,3 @@
+ be opened or a failure in internal DB-Library routines.  Common failures
+-are specifing \fB-nolog\fR when the database does not support nolog; 
++are specifying \fB-nolog\fR when the database does not support nolog; 
+ unable to access a valid text pointer 
+@@ -516,3 +516,3 @@
+ The dateformat string can contain substitution values or literals.
+-Substitions are made from the list below; other literals are copied
++Substitutions are made from the list below; other literals are copied
+ verbatim.  The default value is null, which will format dates a default format.
+@@ -603,3 +603,3 @@
+ causes the polling loop to execute more frequently, which may cause
+-higer CPU usage. 
++higher CPU usage. 
+ .sp
+@@ -618,3 +618,3 @@
+ indicates the handle of the last sybtcl command.  Handle is set on every
+-sybtcl command (execpt where an invalid handle is used.)
++sybtcl command (except where an invalid handle is used.)
+ .sp
+@@ -706,3 +706,3 @@
+ Since each sybtcl command
+-may invoke several DB-Lib routines, there is a possiblity that
++may invoke several DB-Lib routines, there is a possibility that
+ several messages may be received from the server.  Sybtcl will 
+@@ -714,3 +714,3 @@
+ the message text associated with msgno.  Since each sybtcl command
+-may invoke several DB-Lib routines, there is a possiblity that
++may invoke several DB-Lib routines, there is a possibility that
+ several messages may be received from the server.  Sybtcl will 
+@@ -718,3 +718,3 @@
+ separating individual messages by newlines.
+-Output from Transact-SQL PRINT statments are collected in msgtext.
++Output from Transact-SQL PRINT statements are collected in msgtext.
+ .TP
+@@ -766,3 +766,3 @@
+ values are: "system10" if linked with Sybase System 10 DB-Libs or higher, 
+-"ctcompt" if compiled with the CT-Lib compatiblity library.
++"ctcompt" if compiled with the CT-Lib compatibility library.
+ .sp

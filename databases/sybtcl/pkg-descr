@@ -1,0 +1,6 @@
+This is Sybtcl -- a dynamicly loadable TCL extension, which provides
+your interpreter with connectivity to a Sybase server. Althghough it was
+written to work with Sybase's own client libraries (not available for
+FreeBSD), this port patches it enough to make it work with FreeTDS.
+
+WWW: http://sybtcl.sourceforge.net/

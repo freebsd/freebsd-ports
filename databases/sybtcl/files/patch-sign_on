@@ -1,0 +1,16 @@
+--- samples/sign_on.tcl	Fri Jun  2 02:35:54 2000
++++ samples/sign_on.tcl	Mon Mar 29 18:16:50 2004
+@@ -19,5 +19,5 @@
+   #upvar 1 $p password
+   #upvar 1 $s server
+-  global env mainwindow
++  global env mainwindow tcl_platform
+ 
+   # get valid servers from interfaces file
+@@ -91,5 +91,5 @@
+   frame $mainwindow.s.p
+   entry $mainwindow.s.p.pw  -relief sunken -width 10 \
+-		 -font -*-symbol-*-r-*--20-*-*-*-*-*-*-*
++	-show * -exportselection false
+   label $mainwindow.s.p.p   -text "  Password" -anchor e
+ 
