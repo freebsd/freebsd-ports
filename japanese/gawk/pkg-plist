@@ -1,5 +1,8 @@
 bin/gawk
 bin/igawk
+@unexec install-info --delete %D/info/gawk.info %D/info/dir
+info/gawk.info
+@exec install-info %D/info/gawk.info %D/info/dir
 libexec/awk/grcat
 libexec/awk/pwcat
 share/awk/assert.awk
@@ -14,10 +17,8 @@ share/awk/nextfile.awk
 share/awk/ord.awk
 share/awk/passwd.awk
 share/awk/round.awk
-share/doc/ja/awk/OREADME.MB
-share/doc/ja/awk/README.MB
-@unexec install-info --delete %D/info/gawk.info %D/info/dir
-info/gawk.info
-@dirrm libexec/awk
-@dirrm share/doc/ja/awk
+%%PORTDOCS%%share/doc/ja-gawk/OREADME.MB
+%%PORTDOCS%%share/doc/ja-gawk/README.MB
 @dirrm share/awk
+%%PORTDOCS%%@dirrm share/doc/ja-gawk
+@dirrm libexec/awk
