@@ -21,6 +21,7 @@
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
     SUBDIR += gdesklets-calendar
+    SUBDIR += gdesklets-gnomebar
     SUBDIR += gdesklets-ltvariations
     SUBDIR += gdesklets-psi_displaypackage
     SUBDIR += gdesklets-psi_themes
