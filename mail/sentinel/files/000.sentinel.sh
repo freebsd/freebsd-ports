@@ -7,7 +7,7 @@ fi
 
 SMFILTER=${PREFIX}/sbin/sentinel
 CONFIG=${PREFIX}/etc/sentinel.cf
-SOCKET=${PREFIX}/var/sentinel/sentinel.socket
+SOCKET=/var/sentinel/sentinel.socket
 
 case "$1" in
 start)

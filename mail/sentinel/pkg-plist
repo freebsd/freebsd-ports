@@ -1,8 +1,8 @@
 sbin/sentinel
 etc/sentinel.cf.dist
 etc/rc.d/sentinel.sh-dist
-@exec mkdir %D/var/sentinel
-@exec chown smmsp:smmsp %D/var/sentinel
-@unexec rmdir %D/var/sentinel 2>/dev/null || true
+@exec mkdir /var/sentinel
+@exec chown smmsp:smmsp /var/sentinel
+@unexec rm -rf /var/sentinel
 %%PORTDOCS%%share/doc/sentinel/README
 %%PORTDOCS%%@dirrm share/doc/sentinel
