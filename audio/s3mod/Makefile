@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
+
 ALL_TARGET=	freebsd
 
 pre-patch:
