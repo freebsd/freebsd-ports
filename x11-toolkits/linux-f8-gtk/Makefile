@@ -27,7 +27,7 @@ EXTRACT_ONLY=
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 PLIST?=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE?=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=		en
