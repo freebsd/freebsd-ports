@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 
