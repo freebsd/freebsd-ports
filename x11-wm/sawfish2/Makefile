@@ -25,7 +25,9 @@ USE_GMAKE=	yes
 USE_IMLIB=	yes
 WANT_GNOME=	yes
 USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	--with-readline
+CONFIGURE_ARGS=	--with-readline \
+		--localstatedir=${PREFIX}/share \
+		--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -35,7 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 USE_GNOME=	yes
 CONFIGURE_ARGS+=--enable-capplet
 PLIST_SUB+=	GNOME:=""
-BROKEN=		"pkg-plist broken due to inability to disable reg's CONFIGURE_ARGS"
 .else
 CONFIGURE_ARGS+=--disable-capplet \
 		--disable-gnome-widgets \
