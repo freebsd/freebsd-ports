@@ -33,6 +33,7 @@
     SUBDIR += firebird
     SUBDIR += firebird-devel
     SUBDIR += fireprofile
+    SUBDIR += fpc-ibase
     SUBDIR += fpc-odbc
     SUBDIR += fpc-oracle
     SUBDIR += fpc-postgres
