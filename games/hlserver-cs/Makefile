@@ -50,7 +50,7 @@ PKGMESSAGE!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PKGMESSAGE
 # 3.1.0.8 Beta A patch
 HALFLIFESERVER_PORT_WRKSRC!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V WRKSRC
 
-.if !target(post-extract)
+.if (${PORTNAME}==cs) && !target(post-extract)
 post-extract:
 .if exists(${HALFLIFESERVER_PORT_WRKSRC}/cstrike)
 	${CP} -Rp ${HALFLIFESERVER_PORT_WRKSRC}/cstrike ${WRKDIR}
