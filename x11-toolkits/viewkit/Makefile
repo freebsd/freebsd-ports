@@ -11,7 +11,9 @@
 PORTNAME=       viewkit
 PORTVERSION=    0.00
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/
+MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 DISTNAME=       libvk-Apr19-2243
 
 MAINTAINER=	peterho@ned.dem.csiro.au
