@@ -15,8 +15,7 @@ MASTER_SITES=	http://www.davidsansome.com/ \
 MAINTAINER=	brian@quynh-and-brian.org
 COMMENT=	An Acqua-like native window decoration for KDE 3
 
-BROKEN=		'Does not build since KDE 3.2'
-IGNORE=	${BROKEN}
+BROKEN=		Does not build since KDE 3.2
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 INSTALLS_SHLIB=	yes
