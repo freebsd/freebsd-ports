@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cstr.ed.ac.uk/pub/festival/${PORTVERSION}/ \
 		http://www.speech.cs.cmu.edu/festival/cstr/festival/${PORTVERSION}/ \
 		ftp://ftp.leb.net/pub/blinux/${SUB} \
 		ftp://ftp.mayn.de/pub/linux/BLinux/${SUB} \
-		ftp://ftp.tuwien.ac.at/zaux024/opsys/linux/blinux/${SUB}
+		ftp://ftp.tuwien.ac.at/opsys/linux/blinux/${SUB}
 SUB=		festival/mirror.festival_home/${PORTVERSION}/
 .if defined (WITH_OGI)
 MASTER_SITES+=	${PATCH_SITES}
