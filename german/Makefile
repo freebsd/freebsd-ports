@@ -14,6 +14,7 @@
     SUBDIR += koffice-i18n
     SUBDIR += ksteak
     SUBDIR += linux-eagle
+    SUBDIR += linux-mozillafirebird
     SUBDIR += manpages
     SUBDIR += netscape7
     SUBDIR += ooodict-de_CH
