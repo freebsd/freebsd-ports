@@ -20,6 +20,23 @@
   # neutralize SystemV genius
   SHELL=/bin/sh
 ***************
+*** 46,52 ****
+  # -DHAVE_MMAP can be defined for SunOS4.x and other systems
+  # that have a general purpose mmap call that allows memory-mapped files.
+  #
+! NORMALDEFS=-DHAVE_MMAP # -DSTDHEADERS -DSHORTNAMES -DUSESTDIO
+  
+  # CC = gcc -ansi -Wall -O # -pedantic # add -pedantic if you fixed your includes.
+  # SGI needs cc -xansi -D__STDC__ on Irix4.0.5.
+--- 46,52 ----
+  # -DHAVE_MMAP can be defined for SunOS4.x and other systems
+  # that have a general purpose mmap call that allows memory-mapped files.
+  #
+! NORMALDEFS=-DHAVE_MMAP -DSTDHEADERS # -DSHORTNAMES -DUSESTDIO
+  
+  # CC = gcc -ansi -Wall -O # -pedantic # add -pedantic if you fixed your includes.
+  # SGI needs cc -xansi -D__STDC__ on Irix4.0.5.
+***************
 *** 62,72 ****
 --- 62,75 ----
   RANLIB = ranlib
