@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Dec 20 04:17:13 2004
++++ src/Makefile.in	Wed Dec 29 23:06:46 2004
+@@ -233,7 +233,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ dist_pkglib_DATA = gv_system.ad gv_user.ad gv_class.ad gv_spartan.dat gv_user_res.dat gv_copyright.dat
+-appdefaultsdir = $(pkglibdir)
++appdefaultsdir = $(libdir)/app-defaults
+ appdefaults_DATA = GV
+ EXTRA_DIST = ad2c gv_font_res.dat gv_layout_res.dat gv_misc_res.dat Aaa_bison.yacc \
+            gv_current.xbm gv_doc.xbm gv_empty.xbm gv_even.xbm gv_icon.xbm gv_odd.xbm \
