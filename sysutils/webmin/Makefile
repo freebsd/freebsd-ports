@@ -24,10 +24,14 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	servers-1.020-1.wbm.gz mysql-1.020-1.wbm.gz \
-		lpadmin-1.020-2.wbm.gz usermin-1.020-2.wbm.gz \
-		file-1.020-2.wbm.gz majordomo-1.020-2.wbm.gz \
-		postgresql-1.020-2.wbm.gz webmin-1.020-1.wbm.gz
+WEBMIN_MODULES=	file-1.020-2.wbm.gz \
+		lpadmin-1.020-2.wbm.gz \
+		majordomo-1.020-2.wbm.gz \
+		mysql-1.020-1.wbm.gz \
+		postgresql-1.020-2.wbm.gz \
+		servers-1.020-1.wbm.gz \
+		usermin-1.020-2.wbm.gz \
+		webmin-1.020-1.wbm.gz
 
 WEBMIN_THEMES=
 
