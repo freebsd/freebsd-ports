@@ -21,6 +21,8 @@ NO_BUILD=	YES
 NO_CDROM=	"Our installer must be run for proper permissions to be set"
 NO_PACKAGE=	"Our installer must be run for proper permissions to be set"
 
+BROKEN=		"Does not build with a read-only ports tree"
+
 # Feel free to change this to the user you want Urchin 5 to
 # run as and the files to be owned by (except root).  It's *strongly*
 # advised to make this a non-privileged user.  The port can be changed
