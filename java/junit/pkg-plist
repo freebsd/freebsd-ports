@@ -1,0 +1,185 @@
+share/java/classes/junit.jar
+share/java/%%JUNIT_SUBDIR%%/README.html
+share/java/%%JUNIT_SUBDIR%%/doc/changes21.html
+share/java/%%JUNIT_SUBDIR%%/doc/cookbook/IMG00001.GIF
+share/java/%%JUNIT_SUBDIR%%/doc/cookbook/IMG00002.GIF
+share/java/%%JUNIT_SUBDIR%%/doc/cookbook/cookbook.htm
+share/java/%%JUNIT_SUBDIR%%/doc/cookbook/logo.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image1.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image2.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image3.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image4.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image5.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image6.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/Image7.gif
+share/java/%%JUNIT_SUBDIR%%/doc/cookstour/cookstour.htm
+share/java/%%JUNIT_SUBDIR%%/doc/faq/faq.htm
+share/java/%%JUNIT_SUBDIR%%/doc/license.htm
+share/java/%%JUNIT_SUBDIR%%/doc/testinfected/IMG00001.GIF
+share/java/%%JUNIT_SUBDIR%%/doc/testinfected/IMG00002.GIF
+share/java/%%JUNIT_SUBDIR%%/doc/testinfected/IMG00003.GIF
+share/java/%%JUNIT_SUBDIR%%/doc/testinfected/logo.gif
+share/java/%%JUNIT_SUBDIR%%/doc/testinfected/testing.htm
+share/java/%%JUNIT_SUBDIR%%/doc/vaj/vaj.htm
+share/java/%%JUNIT_SUBDIR%%/javadoc/allclasses-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/deprecated-list.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/help-doc.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/index-all.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/index.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/ActiveTest.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/ExceptionTestCase.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/RepeatedTest.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/TestDecorator.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/TestSetup.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/Assert.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/AssertionFailedError.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/Protectable.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/Test.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/TestCase.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/TestFailure.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/TestListener.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/TestResult.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/TestSuite.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui/LoadingTestRunner.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui/TestRunner.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/textui/TestRunner.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/textui/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/textui/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/textui/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui/LoadingTestRunner.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui/TestRunner.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/ReloadingTestSuiteLoader.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/StandardTestSuiteLoader.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/StringUtil.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/TestCaseClassLoader.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/TestSuiteLoader.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/Version.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/package-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/package-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util/package-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/overview-frame.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/overview-summary.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/overview-tree.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/package-list
+share/java/%%JUNIT_SUBDIR%%/javadoc/packages.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/serialized-form.html
+share/java/%%JUNIT_SUBDIR%%/javadoc/stylesheet.css
+share/java/%%JUNIT_SUBDIR%%/junit/samples/AllTests.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/AllTests.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/SimpleTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/SimpleTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/VectorTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/VectorTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/IMoney.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/IMoney.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/Money.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/Money.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/MoneyBag.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/MoneyBag.java
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/MoneyTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/samples/money/MoneyTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/AllTests.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/AllTests.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ClassLoaderTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ClassLoaderTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest$1.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest$2.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest$3.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest$4.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest$5.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExceptionTestCaseTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$1.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$2.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$3.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$4.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$5.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest$TornDown.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ExtensionTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/InheritedTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/InheritedTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NoTestCaseClass.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NoTestCaseClass.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NoTestCases.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NoTestCases.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NotPublicTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NotPublicTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NotVoidTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/NotVoidTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/OneTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/OneTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/OverrideTestCase.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/OverrideTestCase.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/SuiteTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/SuiteTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestListenerTest$1.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestListenerTest$2.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestListenerTest$3.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestListenerTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestListenerTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$1.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$10.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$11.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$12.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$13.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$14.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$2.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$3.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$4.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$5.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$6.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$7.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$8.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$9.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest$TornDown.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTestCaseClassLoader.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/TestTestCaseClassLoader.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest$1.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest$2.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest$3.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest$4.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/ThreadTest.java
+share/java/%%JUNIT_SUBDIR%%/junit/tests/WasRun.class
+share/java/%%JUNIT_SUBDIR%%/junit/tests/WasRun.java
+share/java/%%JUNIT_SUBDIR%%/src.zip
+share/java/%%JUNIT_SUBDIR%%/vaj/tools/test-ui/default.ini
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc/cookbook
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc/cookstour
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc/faq
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc/testinfected
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc/vaj
+@dirrm share/java/%%JUNIT_SUBDIR%%/doc
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/extensions
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/framework
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/swingui
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/textui
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/ui
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit/util
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc/junit
+@dirrm share/java/%%JUNIT_SUBDIR%%/javadoc
+@dirrm share/java/%%JUNIT_SUBDIR%%/junit/samples/money
+@dirrm share/java/%%JUNIT_SUBDIR%%/junit/samples
+@dirrm share/java/%%JUNIT_SUBDIR%%/junit/tests
+@dirrm share/java/%%JUNIT_SUBDIR%%/junit
+@dirrm share/java/%%JUNIT_SUBDIR%%/vaj/tools/test-ui
+@dirrm share/java/%%JUNIT_SUBDIR%%/vaj/tools
+@dirrm share/java/%%JUNIT_SUBDIR%%/vaj
+@dirrm share/java/%%JUNIT_SUBDIR%%
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
