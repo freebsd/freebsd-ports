@@ -1,0 +1,13 @@
+diff -u old/gui.c gui.c
+--- old/gui.c	Thu Jul 28 14:53:01 1994
++++ gui.c	Fri Jan 12 17:25:53 1996
+@@ -646,7 +665,7 @@
+ 
+ 	    for(y=MARGIN; y<raw->height-MARGIN; y++)
+ 	    {
+-		p = raw->data + (y * raw->width + MARGIN) * 3;
++		p = raw->data + y * raw->width + MARGIN * 3;
+ 
+ 		for(x=MARGIN; x<raw->width-MARGIN; x++)
+ 		{
+Only in work: oldmain.c

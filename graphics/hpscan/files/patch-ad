@@ -1,0 +1,17 @@
+--- /dev/null	Sat Jan 13 17:05:14 1996
++++ Imakefile	Fri Jan 12 17:49:11 1996
+@@ -0,0 +1,14 @@
++XCOMM
++XCOMM Imakefile for Richard Tobin's HP scanner utility,
++XCOMM written by Jörg Wunsch, 96/01/12.
++XCOMM
++
++ EXTRA_INCLUDES = -I/sys
++
++        DEPLIBS = XawClientDepLibs
++LOCAL_LIBRARIES = XawClientLibs MathLibrary
++
++           SRCS = main.c scsi.c scanner.c scl.c gui.c colour.c Plain.c
++           OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
++
++ComplexProgramTarget(hpscan)
