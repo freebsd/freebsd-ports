@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	etcmerge
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
