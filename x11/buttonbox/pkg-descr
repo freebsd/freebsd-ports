@@ -1,11 +1,9 @@
-from the Web page:
+from the former Web page:
 
 	ButtonBox is a simple application for the X Window System
 	that sits in the corner of the screen, waiting for you to
 	click on one of the buttons it provides.  When you do, it
 	launches the program.
-
-WWW:  http://www.sto-kerrig.org/buttonbox/
 
 Trevor Johnson
 trevor@FreeBSD.org
