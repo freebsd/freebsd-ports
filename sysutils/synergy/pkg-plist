@@ -3,8 +3,8 @@ bin/synergys
 share/examples/synergy/synergy.conf
 %%PORTDOCS%%share/doc/synergy/AUTHORS
 %%PORTDOCS%%share/doc/synergy/BUGS
-%%PORTDOCS%%share/doc/synergy/ChangeLog
 %%PORTDOCS%%share/doc/synergy/COPYING
+%%PORTDOCS%%share/doc/synergy/ChangeLog
 %%PORTDOCS%%share/doc/synergy/FAQ
 %%PORTDOCS%%share/doc/synergy/HISTORY
 %%PORTDOCS%%share/doc/synergy/INSTALL
