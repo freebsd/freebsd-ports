@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.60.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -20,7 +21,7 @@ DISTNAME=	MPlayer-0.60
 MAINTAINER=	riggs@rrr.de
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		giconv.2:${PORTSDIR}/converters/iconv \
+		giconv.2:${PORTSDIR}/converters/libiconv \
 		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
