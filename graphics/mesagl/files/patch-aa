@@ -1,29 +1,32 @@
-*** samples/speed.c.0	Fri Mar  3 16:38:42 1995
---- samples/speed.c	Sun Mar  5 18:59:23 1995
-***************
-*** 35,40 ****
---- 35,44 ----
-  #include <sys/param.h>
-  #endif
-  
-+ #ifdef __STDC__
-+ #include <time.h>
-+ #endif
-+ 
-  
-  #define GAP 10
-  #define ROWS 1
-***************
-*** 122,128 ****
---- 126,136 ----
-      clock_t clk;
-  
-      clk = times(&tm);
-+ #ifdef __STDC__
-+     return (double)clk / (double)CLOCKS_PER_SEC;
-+ #else
-      return (double)clk / (double)HZ;
-+ #endif
-  #else
-      return 0;
-  #endif
+--- Makefile.orig	Wed May  8 21:34:09 1996
++++ Makefile	Wed May  8 21:44:14 1996
+@@ -178,6 +178,29 @@
+ 	cd samples ; $(MAKE) $@
+ 	cd book ; $(MAKE) $@
+ 
++install:
++	install -c -m 444 lib/libMesaGL.a ${X11BASE}/lib
++	install -c -m 444 lib/libMesaGL.so.12.7 ${X11BASE}/lib
++	install -c -m 444 lib/libMesaGLU.a ${X11BASE}/lib
++	install -c -m 444 lib/libMesaGLU.so.12.7 ${X11BASE}/lib
++	install -c -m 444 lib/libMesaaux.a ${X11BASE}/lib
++	install -c -m 444 lib/libMesaaux.so.12.7 ${X11BASE}/lib
++	install -c -m 444 lib/libMesatk.a ${X11BASE}/lib
++	install -c -m 444 lib/libMesatk.so.12.7 ${X11BASE}/lib
++	mkdir -p -m 0775 ${X11BASE}/include/Mesa/GL
++	install -c include/glaux.h ${X11BASE}/include/Mesa
++	install -c include/gltk.h ${X11BASE}/include/Mesa
++	install -c include/GL/amesa.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/fgl.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/gl.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/glu.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/glx.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/osmesa.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/svgamesa.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/wmesa.h ${X11BASE}/include/Mesa/GL
++	install -c include/GL/xmesa.h ${X11BASE}/include/Mesa/GL
++	ldconfig -m ${X11BASE}/lib
++
+ next:
+ 	-mkdir lib
+ 	cd src ; $(MAKE) -f Makefile.NeXT $@
