@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.etla.net/libstroke/
 
-MAINTAINER=	jerry@thehutt.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A stroke translation library
 
 USE_XLIB=	yes

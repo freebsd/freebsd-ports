@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	http://expect.nist.gov/src/
 
-MAINTAINER=	jerry@thehutt.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 .if !defined(WITHOUT_X11)
