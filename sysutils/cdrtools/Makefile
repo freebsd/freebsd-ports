@@ -28,7 +28,7 @@ SLAVEDIRS=	sysutils/mkisofs
 
 .if ${MACHINE_ARCH} != "i386"
 post-extract:
-	${LN} -s ${WRKSRC}/RULES/i386-freebsd-cc.rul \
+	${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
 		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
 .endif
 
