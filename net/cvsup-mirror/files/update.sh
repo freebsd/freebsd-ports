@@ -39,28 +39,31 @@ cd ${base} || exit
 
 colldir=sup.client
 startup=${PREFIX}/etc/rc.d
+options="-1gL 1 -b ${base} -c ${colldir}"
 
 umask 2
-
+ok=yes
 if [ ${host_crypto} = ${host} ]; then
     echo "Updating from ${host}"
-    cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host} supfile
+    cvsup ${options} -h ${host} supfile || ok=no
 else
     if [ -d prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
-	cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host_crypto} supfile.crypto
+	cvsup ${options} -h ${host_crypto} supfile.crypto || ok=no
     fi
     echo "Updating from ${host}"
-    cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host} supfile.non-crypto
+    cvsup ${options} -h ${host} supfile.non-crypto || ok=no
 fi
 
-if [ -f .start_server ]; then
-    if [ -x ${startup}/cvsupd.sh ]; then
-	echo -n "Starting the server:"
-	/bin/sh ${startup}/cvsupd.sh
-	echo "."
+if [ ${ok} = yes ]; then
+    if [ -f .start_server ]; then
+	if [ -x ${startup}/cvsupd.sh ]; then
+	    echo -n "Starting the server:"
+	    /bin/sh ${startup}/cvsupd.sh
+	    echo "."
+	fi
+	rm -f .start_server
     fi
-    rm -f .start_server
 fi
 
 E*O*F
