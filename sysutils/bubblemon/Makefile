@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bubblemon
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/ \
 		http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/attic/
@@ -28,12 +27,6 @@ MANLANG=	"" hu sv
 
 DOCS=	AUTHORS COPYING ChangeLog FAQ PROFILING TRANSLATIONS NEWS README TODO
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ;' ${WRKSRC}/configure
 
@@ -45,4 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
