@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stickynotes_applet
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://loban.caltech.edu/stickynotes/packages/
 
