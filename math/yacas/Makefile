@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.55
+PORTVERSION=	1.0.56
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
@@ -31,6 +31,9 @@ CONFIGURE_ARGS+=	--with-numlib=gmp
 PLIST_SUB+=	GMP="" NOGMP="@comment "
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.    if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.x with libgmp"
+.    endif
 .else
 CONFIGURE_ARGS+=	--with-numlib=native
 PLIST_SUB+=	GMP="@comment " NOGMP=""
