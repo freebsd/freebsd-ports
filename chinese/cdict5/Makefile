@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ijliao
 DISTFILES=	cdict5.tgz cdict5-file.tgz
 EXTRACT_ONLY=	cdict5.tgz
+IGNOREFILES=	cdict5-file.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -31,13 +32,14 @@ ALL_TARGET=	# empty
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/cdict5|${DATADIR}|" ${WRKSRC}/cdict5.h
 
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} index
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	${TAR} -zxf ${DISTDIR}/cdict5-file.tgz -C ${DATADIR} && \
 		${MV} ${DATADIR}/cdict5-file/* ${DATADIR} && \
 		${RMDIR} ${DATADIR}/cdict5-file
-	(cd ${WRKSRC} ; \
-	 ${SETENV} CFLAGS="${CFLAGS}" LOCALBASE="${LOCALBASE}" ${MAKE} index)
 	${INSTALL_PROGRAM} ${WRKSRC}/cdict5 ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Index.gdbm ${DATADIR}
 
