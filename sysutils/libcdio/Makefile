@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.68
-PORTREVISION=	1
+PORTVERSION=	0.69
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -24,11 +23,4 @@ USE_REINPLACE=	yes
 
 INFO=		libcdio
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} >= 500000
-	@${REINPLACE_CMD} -e 's|acd0c|acd0|' ${WRKSRC}/lib/_cdio_freebsd.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
