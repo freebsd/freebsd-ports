@@ -1,5 +1,5 @@
---- install.sh.orig	Wed Jun  2 05:13:50 2004
-+++ install.sh	Sun Jun  6 01:48:11 2004
+--- install.sh.orig	Fri Jul 16 07:39:52 2004
++++ install.sh	Tue Jul 20 00:34:42 2004
 @@ -758,25 +758,21 @@
  
      debug_msg 0 "in generate_wrapper()"
@@ -134,7 +134,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1086,7 +1054,7 @@
+@@ -1089,7 +1057,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -143,7 +143,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1121,7 +1089,7 @@
+@@ -1124,7 +1092,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -152,16 +152,21 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1155,7 +1123,7 @@
- 	if test -d ini; then
- 	    mkdir $mkdirv $mkdirp $share_dir/ini/
- 	    chmod $chmodv 755 $share_dir/ini
--	    cp $cpv $cpf $cpR ini/* $share_dir/ini/
-+	    cp $cpv $cpf $cpR ini/*.ini $share_dir/ini/
- 	    if test -f $share_dir/ini/pluginpath.ini; then
- 		echo ${str_localdirplugin} >> $share_dir/ini/pluginpath.ini
- 	    fi
-@@ -1255,8 +1223,9 @@
+@@ -1223,13 +1191,6 @@
+ 		plugin_support='yes'
+ 	fi
+ 
+-	if test -f plugins/operamotifwrapper-1
+-	    then
+-		cp $cpv $cpf plugins/operamotifwrapper-1 $plugin_dir/
+-		chmod $chmodv 755 $plugin_dir/operamotifwrapper-1
+-		plugin_support='yes'
+-	fi
+-
+ 	if test -f plugins/operamotifwrapper-2
+ 	    then
+ 		cp $cpv $cpf plugins/operamotifwrapper-2 $plugin_dir/
+@@ -1279,8 +1240,9 @@
  	if test -z "${OPERADESTDIR}"; then
  
  	# System wide configuration files
@@ -172,7 +177,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1268,6 +1237,7 @@
+@@ -1292,6 +1254,7 @@
  		cp $cpv $cpf config/opera6rc $config_dir
  		cp $cpv $cpf config/opera6rc.fixed $config_dir
  	    fi
@@ -180,7 +185,7 @@
  	else
  	    echo
  	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1281,9 +1251,9 @@
+@@ -1305,9 +1268,9 @@
  	icons
  	gnome
  	kde 3
@@ -193,7 +198,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1328,13 +1298,13 @@
+@@ -1352,13 +1315,13 @@
  {
      # arg1 = location
  
@@ -211,7 +216,7 @@
  Terminal=0
  Type=Application'
  
-@@ -1367,42 +1337,13 @@
+@@ -1391,42 +1354,13 @@
  
      debug_msg 0 "in icons()"
  
@@ -260,16 +265,16 @@
      fi
  }
  
-@@ -1412,72 +1353,36 @@
+@@ -1436,72 +1370,36 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
-+    if test -d %%X11BASE%%/share/gnome/; then
- 
+-
 -      # /opt/gnome share
 -      if test -d /opt/gnome/share; then
--
++    if test -d %%X11BASE%%/share/gnome/; then
+ 
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
 -	  if test -w /opt/gnome/share; then
@@ -305,7 +310,7 @@
 -	      generate_desktop /opt/gnome/share/gnome/apps/Networking/WWW
 +          elif test -d %%X11BASE%%/share/gnome/apps/Networking/WWW/; then
 +            if test -w %%X11BASE%%/share/gnome/apps/Networking/WWW; then
-+	     generate_desktop %%X11BASE%%/share/gnome/apps/Networking/WWW
++	      generate_desktop %%X11BASE%%/share/gnome/apps/Networking/WWW
  	    fi
 -	  elif test -w /opt/gnome/share/gnome/apps; then
 -	    mkdir $mkdirv $mkdirp /opt/gnome/share/gnome/apps/Internet/
@@ -355,7 +360,7 @@
     fi
     # Add ximian here
  }
-@@ -1488,39 +1393,31 @@
+@@ -1512,39 +1410,31 @@
  
      debug_msg 1 "in kde()"
  

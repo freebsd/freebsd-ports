@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.51.20040602
-PORTREVISION=	1
+PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/751/final/en/i386/static/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/751/final/en/i386/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/751/final/en/i386/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/751/final/en/i386/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/linux/751/final/en/i386/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/linux/751/final/en/i386/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/linux/751/final/en/i386/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/751/final/en/i386/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/751/final/en/i386/static/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/751/final/en/i386/static/&,}
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		http://mirrors.pmmf.hu/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://ftp.task.gda.pl/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/&,}
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2004/-2004/}.1-static-qt.i386-en
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386-en
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
@@ -36,6 +35,8 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
+OPERA_VER=	7.53
+OPERA_DATE=	20040716
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
@@ -77,6 +78,8 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
 			${WRKSRC}/ini/spellcheck.ini ${WRKSRC}/config/opera6rc
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh \
