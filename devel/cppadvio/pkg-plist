@@ -1,0 +1,16 @@
+lib/libcppadvio.a
+%%PORTDOCS%%share/doc/cppadvio/README
+%%PORTDOCS%%@dirrm share/doc/cppadvio
+include/cppadvio/Logger.h
+include/cppadvio/TCPstream.h
+include/cppadvio/arithm.h
+include/cppadvio/arithm_modadapt.h
+include/cppadvio/arithm_modadh.h
+include/cppadvio/builtin.h
+include/cppadvio/endian_io.h
+include/cppadvio/histogram.h
+include/cppadvio/minmax.h
+include/cppadvio/myenv.h
+include/cppadvio/std.h
+include/cppadvio/voc.h
+@dirrm include/cppadvio

@@ -1,0 +1,84 @@
+--- Makefile	Sun Nov 19 14:57:06 2000
++++ Makefile	Thu Nov 23 14:12:35 2000
+@@ -62,8 +62,8 @@
+ #
+ # $Id: Makefile,v 4.2 2000/11/19 22:57:06 oleg Exp oleg $
+ 
+-CC=./c++
+-CCL=g++ -pipe
++CCXC=./c++
++CCL=$(CXX)
+ .SUFFIXES: .cc
+ MODULES=myenv.cc endian_io.cc \
+ 	arithm_coding.cc arithm_model.cc arithm_modadapt.cc \
+@@ -83,10 +83,10 @@
+ #	Rules, new style
+ 
+ %.o : %.cc
+-	$(CC) $*.cc
++	$(CCXC) $*.cc
+ 
+ $(LIBRARY)(%.o) : %.cc
+-	$(CC) $*.cc
++	$(CCXC) $*.cc
+ 	ar rcv $(LIBRARY) $*.o
+ 	rm -f $*.o
+ 
+@@ -95,7 +95,7 @@
+ 	./$@
+ 
+ % :: %.cc
+-	$(CC) $*.cc
++	$(CCXC) $*.cc
+ 	$(CCL) $*.o $(CLDEF) $(LIBRARY) $(LIBS) -o $@
+ 	./$@
+ 
+@@ -104,11 +104,11 @@
+ #	$(CCL) $*.o $(CLDEF) $(LIBRARY) $(LIBS) -o $*
+ #	./$*
+ #.cc: 	$*.cc $(LIBRARY)
+-#	$(CC) $*.cc
++#	$(CCXC) $*.cc
+ #	$(CCL) $*.o $(CLDEF) $(LIBRARY) $(LIBS) -o $*
+ #	./$*
+ #.cc.o:
+-#	$(CC) $*.cc
++#	$(CCXC) $*.cc
+ #
+ 
+ # Primary goal
+@@ -126,7 +126,7 @@
+ 
+ #$(LIBRARY)::    $(MODULES)
+ # 			Compile the source files that have been changed 
+-#	$(CC) $?
++#	$(CCXC) $?
+ #	listobj=`echo $? | sed s/.cc/.o/g` ; \
+ #	ar rv $(LIBRARY) $$listobj &&	\
+ #	rm $$listobj
+@@ -151,14 +151,14 @@
+ 
+ # Optimization causes internal compiler error...
+ #vmyenv.o: vmyenv.cc
+-#	$(CC) -O0 vmyenv.cc
++#	$(CCXC) -O0 vmyenv.cc
+ 
+ vTCPstream: vTCPstream.o $(LIBRARY)
+ 	$(CCL) $^ -o $@ $(NETLIBS) -lm
+ 	ECHO_HOST=$(ECHO_HOST) ./$@
+ 
+ vTCPstream_server.o: vTCPstream_server.cc
+-	$(CC) -DDO_FORK vTCPstream_server.cc 
++	$(CCXC) -DDO_FORK vTCPstream_server.cc 
+ 
+ vTCPstream_server: vTCPstream_server.o $(LIBRARY)
+ 	$(CCL) $^ -o $@ $(NETLIBS) -lm
+@@ -177,7 +177,7 @@
+ 
+ 
+ vendian_io_ext:	sys_open_glue.o open_ext.o
+-	$(CC) -DEXT_OPEN=1 -DEXT_NETIO=$(ECHO_HOST) vendian_io.cc
++	$(CCXC) -DEXT_OPEN=1 -DEXT_NETIO=$(ECHO_HOST) vendian_io.cc
+ 	$(CCL) vendian_io.o $^ $(LIBRARY) $(NETLIBS) -o $@ -lm
+ 	./$@
+ 
