@@ -3761,6 +3761,7 @@ jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
 jc		ports/java/jc
+jcalendar	ports/java/jcalendar
 jce-aba		ports/java/jce-aba
 jcommon		ports/java/jcommon
 jday		ports/astro/jday
