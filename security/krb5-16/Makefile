@@ -8,21 +8,8 @@
 PORTNAME=		krb5
 PORTVERSION=		1.3.5
 CATEGORIES=		security
-# USE_TARBALL tells the port that the user has fetched the source
-# directly from MIT or crypto-publish.org (CRYTPO-PUBLISH).
-USE_KRB5_TARBALL?=		MIT
-
-.if defined(USE_KRB5_TARBALL) && ${USE_KRB5_TARBALL} == "CRYPTO-PUBLISH"
-# XXX crypto-publish.org still distributes krb5-1.3.1
-PORTVERSION=		1.3.1
-PORTREVISION=		5
-# XXX ---
-MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
-EXTRACT_SUFX=		.tar.gz
-.else
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
-.endif
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
