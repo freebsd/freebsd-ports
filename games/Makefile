@@ -192,6 +192,7 @@
     SUBDIR += klondike
     SUBDIR += knights
     SUBDIR += kobodeluxe
+    SUBDIR += kpacman
     SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
