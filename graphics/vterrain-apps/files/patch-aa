@@ -1,0 +1,11 @@
+--- ORIG/Make.defs	Tue Aug 28 20:35:10 2001
++++ Make.defs	Wed Aug 29 16:58:09 2001
+@@ -91,7 +91,7 @@
+ # NOTE: VTP_ROOT is set in each Makefile
+ 
+ APIS_DIR         = $(VTP_ROOT)/APIs
+-TERRAIN_SDK_DIR  = $(VTP_ROOT)/TerrainSDK
++TERRAIN_SDK_DIR  = $(X11BASE)/include/TerrainSDK
+ TERRAIN_APPS_DIR = $(VTP_ROOT)/TerrainApps
+ VTDATA_DIR       = $(TERRAIN_SDK_DIR)/vtdata
+ VTLIB_DIR        = $(TERRAIN_SDK_DIR)/vtlib
