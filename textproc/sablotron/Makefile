@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.44
+PORTVERSION=	0.51
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.gingerall.cz/sablot/
-
-PATCH_SITES=	http://www.gingerall.com/download/
-PATCHFILES=	Sablot-0.44.1.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	skv@protey.ru
 
@@ -21,15 +17,12 @@ LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv \
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib
-
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 
 post-patch:
-.for f in configure.in
-	@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/${f}
-.endfor
 .if defined(WITH_RUSSIAN)
 	@${ECHO_MSG} "Patching for russian support..."
 	@cd ${WRKDIR} ; \
