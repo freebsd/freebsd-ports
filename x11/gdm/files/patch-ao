@@ -1,21 +1,14 @@
---- config/Makefile.in.orig	Fri Apr 20 20:32:57 2001
-+++ config/Makefile.in	Fri Apr 20 20:33:15 2001
-@@ -139,7 +139,7 @@
+--- config/Makefile.in.orig	Fri May  4 20:22:08 2001
++++ config/Makefile.in	Tue May  8 11:34:26 2001
+@@ -151,3 +151,3 @@
  
- noinst_DATA = gdm.conf
+-EXTRA_DIST =  	gdm.conf.in 	Gnome.in 	gnomerc.in 	Xsession 	Failsafe.in 	gdm 	locale.alias 	Default 	PostSession 	PreSession 	Default.redhat 	Default.debian 	Failsafe.redhat
++EXTRA_DIST =  	gdm.conf.in 	Gnome.in 	gnomerc.in 	Failsafe.in 	gdm 	locale.alias 	Default 	PostSession 	PreSession 	Default.redhat 	Default.debian 	Failsafe.redhat
  
--EXTRA_DIST =  	gdm.conf.in 	Gnome.in 	gnomerc.in 	Xsession 	Failsafe.in 	gdm 	locale.alias 	Default 	PostSession 	PreSession 	Default.redhat 	Failsafe.redhat
-+EXTRA_DIST =  	gdm.conf.in 	Gnome.in 	gnomerc.in 	Failsafe.in 	gdm 	locale.alias 	Default 	PostSession 	PreSession 	Default.redhat 	Failsafe.redhat
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -270,9 +270,6 @@
- 	if test '!' -d $(sessdir); then \
- 		$(mkinstalldirs) $(sessdir); \
+@@ -282,6 +282,2 @@
  		chmod 755 $(sessdir); \
 -	fi
+-
 -	if test '!' -f $(sessdir)/Xsession; then \
 -		$(INSTALL_SCRIPT) $(srcdir)/Xsession $(sessdir)/Xsession; \
  	fi
- 	if test '!' -f $(sessdir)/Gnome; then \
- 		$(INSTALL_SCRIPT) Gnome $(sessdir)/Gnome; \
