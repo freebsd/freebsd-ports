@@ -1,24 +1,25 @@
 # New ports collection makefile for:	gnofract4d
-# Version required:			1.0
+# Version required:			1.2
 # Date created:				30 Dec 1999
 # Whom:					Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnofract4d-1.0
+DISTNAME=	gnofract4d-1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/gnofract4d/
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gnomeui.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
+CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG} \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--datadir=${PREFIX}/share
 USE_NEWGCC=	yes
 
