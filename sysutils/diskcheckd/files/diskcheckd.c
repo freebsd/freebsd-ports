@@ -45,7 +45,9 @@ static const char rcsid[] =
 #include <unistd.h>
 
 #define DKTYPENAMES
+#define FSTYPENAMES
 #include <sys/disklabel.h>
+#include <sys/diskmbr.h>
 
 #ifndef _PATH_CONF
 #define	_PATH_CONF	"/usr/local/etc/diskcheckd.conf"
