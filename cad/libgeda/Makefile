@@ -17,10 +17,8 @@ MAINTAINER=	bruno@tinkerbox.org
 LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
 		guile.10:${PORTSDIR}/lang/guile
 
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
-
-AUTOCONF=	autoconf
+USE_LIBTOOL=		yes
+USE_AUTOCONF_VER=	253
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
