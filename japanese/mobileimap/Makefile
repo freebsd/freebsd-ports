@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mobileimap
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://namazu.org/~satoru/mobileimap/
 
