@@ -45,7 +45,6 @@ MASTER_SITE_AFTERSTEP+=	\
 MASTER_SITE_APACHE+=	\
 	http://www.apache.org/dist/%SUBDIR%/ \
 	http://archive.apache.org/dist/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/pub/infosys/servers/http/apache/dist/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.pop-mg.com.br/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/%SUBDIR%/ \
@@ -148,8 +147,6 @@ MASTER_SITE_ECLIPSE+= \
 	http://mirror.ini2.net/eclipse/%SUBDIR%/ \
 	http://www.eclipse.ps.pl/downloads/drops/%SUBDIR%/ \
 	http://eclipse.planetmirror.com/downloads/drops/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/softeng/eclipse/%SUBDIR%/ \
-	http://gd.tuwien.ac.at/softeng/eclipse/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/eclipse/downloads/drops/&,} \
 	http://mirror.island.liu.se/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/downloads/drops/%SUBDIR%/ \
@@ -160,7 +157,6 @@ MASTER_SITE_EXIM+=	\
 	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
 	http://public.planetmirror.com/pub/exim/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
 	ftp://ftp.easynet.be/exim/%SUBDIR%/ \
 	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/mail/exim/%SUBDIR%/ \
@@ -265,8 +261,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.muug.mb.ca/pub/fedora/linux/core/%SUBDIR%/ \
 	http://fedora.mirrored.ca/fedora/%SUBDIR%/ \
 	ftp://fedora.mirrored.ca/fedora/%SUBDIR%/ \
-	http://gd.tuwien.ac.at/opsys/linux/fedora/core/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/opsys/linux/fedora/core/%SUBDIR%/ \
 	http://ftp.univie.ac.at/systems/linux/fedora/%SUBDIR%/ \
 	ftp://ftp.univie.ac.at/systems/linux/fedora/%SUBDIR%/ \
 	ftp://ftp.tugraz.at/mirror/redhat-linux/fedora/linux/core/%SUBDIR%/ \
@@ -628,7 +622,6 @@ MASTER_SITE_GNU_ALPHA+=	\
 
 MASTER_SITE_ISC+=	\
 	ftp://ftp.isc.org/isc/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/infosys/servers/isc/%SUBDIR%/ \
 	ftp://ftp.ciril.fr/pub/isc/%SUBDIR%/ \
 	ftp://ftp.grolier.fr/pub/isc/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
@@ -671,7 +664,6 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
 
 MASTER_SITE_MYSQL+=	\
-	ftp://gd.tuwien.ac.at/db/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.easynet.be/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.fi.muni.cz/pub/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.cybercity.dk/Downloads/%SUBDIR%/ \
@@ -714,7 +706,6 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
      ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.weird.com/pub/NetBSD/distfiles/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
      ftp://sunsite.rediris.es/sites/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
@@ -967,7 +958,6 @@ MASTER_SITE_SAMBA+= \
 	ftp://de.samba.org/samba.org/%SUBDIR%/ \
 	ftp://ftp.k2.net/mirrors/samba/%SUBDIR%/ \
 	ftp://ftp.oss.eznetsols.org/samba/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/infosys/servers/samba/%SUBDIR%/ \
 	ftp://giswitch.sggw.waw.pl/pub/unix/samba/%SUBDIR%/ \
 	ftp://ru.samba.org/pub/samba/%SUBDIR%/ \
 	ftp://tr.samba.org/samba/%SUBDIR%/ \
@@ -1005,13 +995,11 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/%SUBDIR%/ \
 	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
 	http://sourceware.urc.bl.ac.yu/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.physics.auth.gr/pub/mirrors/ibiblio/Linux/%SUBDIR%/ \
@@ -1051,7 +1039,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.mirrors.net.ar/pub/suse/%SUBDIR%/ \
 	http://www.mirrors.net.ar/pub/suse/%SUBDIR%/ \
 	ftp://ftp.telekabel.at/pub/linux/suse/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/linux/suse/suse.com/%SUBDIR%/ \
 	ftp://ftp.skynet.be/mirror/suse.com/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.belnet.be/linux/suse/%SUBDIR%/ \
 	ftp://mirrors.telenet.be/mirrors/ftp.suse.com/%SUBDIR%/ \
@@ -1180,7 +1167,6 @@ MASTER_SITE_TCLTK+= \
 	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/languages/tcl/scriptics/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=  \
@@ -1190,7 +1176,6 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/publishing/tex/CTAN/%SUBDIR%/ \
 	ftp://ftp.ntnu.no/pub/tex/CTAN/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/CTAN/&,} \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/
@@ -1209,7 +1194,6 @@ MASTER_SITE_VIM+= \
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/hci/windowmaker/%SUBDIR%/ \
 	ftp://ftp.zcu.cz/pub/X11/windowmaker/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-hamburg.de/pub/soft/X/contrib/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub8/X11/window-managers/windowmaker/%SUBDIR%/ \
@@ -1228,7 +1212,6 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://mirror.xmission.com/X/contrib/%SUBDIR%/ \
 	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
 	ftp://sunsite.tus.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/hci/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/contrib/%SUBDIR%/ \
@@ -1243,7 +1226,6 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
 	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/editors/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 
 MASTER_SITE_XFREE+= \
@@ -1254,7 +1236,6 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.mirrorcentral.com/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.dti.ad.jp/pub/X/XFree86/XFree86/%SUBDIR%/source/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
-	ftp://gd.tuwien.Ac.at/hci/X11/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.fit.vutbr.cz/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.free.fr/pub/XFree86/%SUBDIR%/source/ \
 	ftp://mir1.ovh.net/ftp.xfree86.org/%SUBDIR%/source/ \
