@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION= 	0.77
+PORTVERSION= 	0.79
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/download/
 
 MAINTAINER=	andreas@FreeBSD.org
+
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
