@@ -1,0 +1,13 @@
+--- Imakefile.orig     Fri Jun 18 04:41:41 1999
++++ Imakefile  Tue Jun 27 22:55:53 2000
+@@ -1,7 +1,9 @@
+ DEPLIBS = $(DEPXLIB)
+ XPMLIB = -lXpm
+ 
+-LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)
++LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -lgnugetopt -L${LOCALBASE}/lib
++
++EXTRA_INCLUDES = -I${LOCALBASE}/include
+ 
+ SRCS = dockapp.c wmmount.c
+ OBJS = dockapp.o wmmount.o

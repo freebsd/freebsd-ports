@@ -3,6 +3,6 @@ lib/X11/wmmount/blank.xpm
 lib/X11/wmmount/cdrom.xpm
 lib/X11/wmmount/floppy.xpm
 lib/X11/wmmount/harddisk.xpm
-lib/X11/wmmount/zip.xpm
 lib/X11/wmmount/system.wmmount
+lib/X11/wmmount/zip.xpm
 @dirrm lib/X11/wmmount
