@@ -7,22 +7,20 @@
 #
 
 PORTNAME=	psim-freebsd
-PORTVERSION=	5.2.1
+PORTVERSION=	6.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
 DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	mp@FreeBSD.org
-COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 5
+COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim
-
-pre-configure:
-	@cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
