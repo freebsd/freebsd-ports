@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Oct 11 04:16:15 2000
-+++ Makefile.in	Sat Nov  4 19:52:07 2000
+--- Makefile.in.orig	Tue Nov 14 19:32:08 2000
++++ Makefile.in	Mon Dec 18 22:28:07 2000
 @@ -19,6 +19,7 @@
  SHELL=/bin/sh
  
@@ -8,14 +8,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  INCLUDEDIR = @includedir@
-@@ -30,13 +31,13 @@
- libdir = @libdir@
- mandir = @mandir@
- 
--CFLAGS = @CFLAGS@ @DEFS@ -I. @XPM_CFLAGS@ -I./libxfig -I./libdib -I./xgd-1.7.3 @TTF_CFLAGS@
-+CFLAGS = @CFLAGS@ @DEFS@ -I. @XPM_CFLAGS@ -I./libxfig -I./libdib -I./xgd-1.7.3 @TTF_CFLAGS@ @CPPFLAGS@
- 
- MKINSTALLDIRS = $(srcdir)/mkinstalldirs
+@@ -36,7 +37,7 @@
  
  SHELL = /bin/sh
  
