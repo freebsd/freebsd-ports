@@ -194,6 +194,7 @@
     SUBDIR += paledit
     SUBDIR += perl5
     SUBDIR += pgp.language
+    SUBDIR += pine
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-common
