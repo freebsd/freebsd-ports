@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	apache+mod_ssl
-PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
+PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}${PVERSION_MODSNMP}${PVERSION_MODACCEL}
 PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		${MASTER_SITES_MODSSL:S/$/:modssl/}
+		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
+		http://www.mod-snmp.com/distr/:mod_snmp \
+		http://sysoev.ru/mod_accel/:mod_accel
+PKGNAMESUFFIX=	${MODSNMP_SUFFIX}${MODACCEL_SUFFIX}${IPV6_SUFFIX}
 DISTNAME=	apache_${VERSION_APACHE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE}:mod_ssl \
+		${MODSNMP_DISTFILE} ${MODACCEL_DISTFILE}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
+		${MODACCEL_FILE}
 
-.if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
-PATCH_SITES=	http://www.mod-snmp.com/distr/:modsnmp
-MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}.tar.gz
-PATCHFILES=	${MODSNMP_FILE}:modsnmp
-.endif
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/
 PATCHFILES+=	apache-1.3.29modssl-v6-20031204.diff.gz
-.else
-EXTRA_PATCHES+=	${FILESDIR}/mod_access.c.patch
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -39,6 +37,7 @@ CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 VERSION_APACHE=	1.3.29
 VERSION_MODSSL=	2.8.16
 VERSION_MODSNMP=	1.3.14.12
+VERSION_MODACCEL=	1.0.31
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
@@ -47,6 +46,9 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
+MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
+MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
+MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
@@ -132,19 +134,53 @@ OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O3
 .endif
 
+.if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
+MODSNMP_DISTFILE=	${MODSNMP_FILE}:mod_snmp
+.endif
 .if defined(APACHE_WITH_MODSNMP)
+CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* \
+		apache+mod_ssl+mod_accel-1.* \
+		apache+mod_ssl+mod_accel+ipv6-1.* 
+MODSNMP_SUFFIX=	+mod_snmp
+PVERSION_MODSNMP=	+${VERSION_MODSNMP}
 CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
 CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
 		-DSNMPLOCALONLY
+EXTRA_PATCHES+=	${WRKSRC}/src/modules/snmp_agt/mod_snmp.patch
 PLIST_SUB+=	WITHSNMP=""
 .else
 PLIST_SUB+=	WITHSNMP="@comment "
 .endif
 
+.if defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
+MODACCEL_DISTFILE=	${MODACCEL_FILE}:mod_accel
+.endif
+.if defined(APACHE_WITH_MODACCEL)
+CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* \
+		apache+mod_ssl+mod_snmp-1.* apache+mod_ssl+mod_snmp+ipv6-1.*
+MODACCEL_SUFFIX=	+mod_accel
+PVERSION_MODACCEL=	+${VERSION_MODACCEL}
+CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
+		--activate-module=src/modules/extra/mod_freeze.o \
+		--activate-module=src/modules/accel/libaccel.a
+PLIST_SUB+=	WITHACCEL=""
+.else
+PLIST_SUB+=	WITHACCEL="@comment "
+.endif
+
 .if defined(APACHE_WITH_IPV6)
+.if defined(APACHE_WITH_MODACCEL)
+BROKEN=		"mod_accel and ipv6 don't compile together"
+.endif
+
+CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+mod_snmp-1.* \
+		apache+mod_ssl+mod_accel-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel-1.*
+IPV6_SUFFIX=	+ipv6
 CONFIGURE_ARGS+=	--enable-rule=INET6
 PLIST_SUB+=	WITHIPV6=""
 .else
+EXTRA_PATCHES+=	${FILESDIR}/mod_access.c.patch
 PLIST_SUB+=	WITHIPV6="@comment "
 .endif
 
@@ -206,6 +242,16 @@ pre-fetch:
 	@${ECHO_MSG} "				This setting turns IPv6 support on."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_WITH_MODSNMP=yes	mod_snmp support."
+	@${ECHO_MSG} "				This setting turns support for SNMP on."
+	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_WITH_MODACCEL=yes	mod_accel support."
+	@${ECHO_MSG} "				This setting activates build of mod_accel."
+	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} ""
+
+post-extract:
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
@@ -218,6 +264,12 @@ pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --expert
+.if defined(APACHE_WITH_MODACCEL)
+	@cd ${WRKDIR}/mod_accel-${VERSION_MODACCEL} \
+	&& ${ECHO_MSG} "===>  Applying mod_accel-${VERSION_MODACCEL} extension" \
+	&& ./configure --with-apache=../${DISTNAME} --with-mod_randban --with-mod_freeze \
+	&& ${MAKE}
+.endif
 
 post-patch:
 	@${PERL} -pi -e 's|-print|-print0|;s|xargs|xargs -0|' \
