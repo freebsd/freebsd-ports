@@ -350,6 +350,7 @@
     SUBDIR += skkinput
     SUBDIR += skkinput3
     SUBDIR += skkserv
+    SUBDIR += slimeforest
     SUBDIR += slirc
     SUBDIR += slrn
     SUBDIR += squirrelmail
