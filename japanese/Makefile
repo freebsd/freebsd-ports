@@ -325,6 +325,7 @@
     SUBDIR += xv
     SUBDIR += xyagamo
     SUBDIR += yc.el
+    SUBDIR += zangband
     SUBDIR += zipcodes
 
 .include <bsd.port.subdir.mk>
