@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       xawtv
-PORTVERSION=	3.69
+PORTVERSION=	3.70
 CATEGORIES=     graphics
 MASTER_SITES=   http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XPM=	yes
 USE_X_PREFIX=	yes
 
 FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
