@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esound
-PORTVERSION=	0.2.29
+PORTVERSION=	0.2.30
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/esound/0.2
@@ -20,8 +20,8 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 USE_GETOPT_LONG=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnometarget gnomehack
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	esd-config.1 esd.1 esdcat.1 esdctl.1 esddsp.1 esdfilt.1 esdloop.1 \
 	esdmon.1 esdplay.1 esdrec.1 esdsample.1
