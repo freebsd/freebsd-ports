@@ -50,6 +50,7 @@
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
+    SUBDIR += ion-devel
     SUBDIR += jewel
     SUBDIR += kappdock
     SUBDIR += kdeartwork3
