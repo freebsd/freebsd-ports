@@ -1,5 +1,5 @@
 DISTNAME=	dviselect
-MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/latex/software/
+MASTER_SITES=	ftp://ftp.cs.umb.edu/pub/latex/software/
 
 pre-install:
 	@mkdir -p ${PREFIX}/man/man1
