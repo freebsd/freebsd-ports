@@ -1,0 +1,13 @@
+--- configure.orig	Sun Jun 13 18:58:35 1999
++++ configure	Tue Jun 15 08:15:07 1999
+@@ -1271,8 +1271,8 @@
+ #define CNEWS 1
+ EOF
+ 
+-  CPPFLAGS="$CPPFLAGS -I$nsrc/libdbz"
+-  LIBS="-L$nsrc -lcnews $LIBS"
++  CPPFLAGS="$CPPFLAGS -I$prefix/include"
++  LIBS="-L$prefix/lib -lcnews $LIBS"
+   PROGS="fastcancel"
+   
+ newslib=`$AWK '/^'NEWSCTL'[^A-Z_]/ {print $'2'}' $nsrc/conf/substitutions`
