@@ -114,6 +114,8 @@ share/heroes/mod/heroes10.xm
 share/heroes/mod/intro.xm
 share/heroes/mod/menu.xm
 share/heroes/mod/sound.conf
+share/heroes/pics/arrow.fig
+share/heroes/pics/arrow.pcx
 share/heroes/pics/background.pcx
 share/heroes/pics/bonusa.pcx
 share/heroes/pics/bonusb.pcx
