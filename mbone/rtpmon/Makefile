@@ -7,6 +7,7 @@
 
 PORTNAME=	rtpmon
 PORTVERSION=	1.0a7
+PORTREVISION=	1
 CATEGORIES=	mbone tk82
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
