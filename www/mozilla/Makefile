@@ -6,14 +6,14 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 	      	${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -109,12 +109,15 @@ CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
 .endif
 .endif
 
+MOZ_EXTENSIONS=		default
 .if !defined(WITHOUT_CHATZILLA)
-CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
-.else
-CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
+MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 .endif
-CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+.if !defined(WITHOUT_XMLTERM)
+MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},xmlterm
+.endif
+CONFIGURE_ARGS+=	--enable-extensions=${MOZ_EXTENSIONS}
+CONFIGURE_ENV=		MOZ_INTERNAL_LIBART_LGPL=1
 
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-jsd \
@@ -179,6 +182,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_COMPOSER=yes	Disables the HTML Composer module"
 	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
 	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
+	@${ECHO_MSG} "	WITHOUT_XMLTERM=yes	Disable the XMLTerm module"
 	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
 	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS=yes	Enable -O2 optimization"
 	@${ECHO_MSG} ""
@@ -220,7 +224,9 @@ pre-install:
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 	    ${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
-	${ECHO_CMD} bin/${MOZILLA} >> ${PLIST}
+	if [ "${MOZILLA}" != "mozilla" ]; then \
+	    ${ECHO_CMD} bin/${MOZILLA} >> ${PLIST} ; \
+	fi
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
 	    ${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \

@@ -1,32 +1,32 @@
---- gfx/src/gtk/nsFontMetricsXft.cpp.orig	Thu May 29 19:10:54 2003
-+++ gfx/src/gtk/nsFontMetricsXft.cpp	Mon Jun 30 23:11:39 2003
-@@ -90,6 +90,7 @@
+--- gfx/src/gtk/nsFontMetricsXft.cpp.save	Thu Aug  7 12:14:49 2003
++++ gfx/src/gtk/nsFontMetricsXft.cpp	Thu Aug  7 12:33:45 2003
+@@ -106,6 +106,7 @@
      FcPattern *mPattern;
      FcPattern *mFontName;
      FcCharSet *mCharset;
 +    int        mNotXft;
  };
  
- struct MozXftLangGroup {
-@@ -774,7 +775,7 @@
+ class nsFontXftInfo;
+@@ -1051,7 +1052,7 @@
      // font in our loaded list that supports the character
      for (PRInt32 i = 0, end = mLoadedFonts.Count(); i < end; ++i) {
          nsFontXft *font = (nsFontXft *)mLoadedFonts.ElementAt(i);
--        if (FcCharSetHasChar(font->mCharset, aChar))
-+        if (FcCharSetHasChar(font->mCharset, aChar) && font->GetXftFont())
+-        if (font->HasChar(PRUint32(aChar)))
++        if (font->HasChar(PRUint32(aChar)) && font->GetXftFont())
              return font;
      }
  
-@@ -1196,7 +1197,7 @@
+@@ -1492,7 +1493,7 @@
+         // this character.
          for (PRInt32 j = 0, end = mLoadedFonts.Count(); j < end; ++j) {
-             nsFontXft *font;
              font = (nsFontXft *)mLoadedFonts.ElementAt(j);
--            if (FcCharSetHasChar(font->mCharset, c)) {
-+            if (FcCharSetHasChar(font->mCharset, c) && font->GetXftFont()) {
-                 foundFont = font;
-                 break;
+-            if (font->HasChar(c)) {
++            if (font->HasChar(c) && font->GetXftFont()) {
+                 currFont = font;
+                 goto FoundFont; // for speed -- avoid "if" statement
              }
-@@ -1566,6 +1567,7 @@
+@@ -1922,6 +1923,7 @@
      FcPatternReference(mFontName);
  
      mXftFont = nsnull;
@@ -34,7 +34,7 @@
  
      // set up our charset
      mCharset = nsnull;
-@@ -1592,7 +1594,7 @@
+@@ -1948,7 +1950,7 @@
  XftFont *
  nsFontXft::GetXftFont(void)
  {
@@ -43,7 +43,7 @@
          FcPattern *pat = FcFontRenderPrepare(0, mPattern, mFontName);
          if (!pat)
              return nsnull;
-@@ -1611,8 +1613,10 @@
+@@ -1967,8 +1969,10 @@
              FcPatternDel(pat, FC_SPACING);
  
          mXftFont = XftFontOpenPattern(GDK_DISPLAY(), pat);
