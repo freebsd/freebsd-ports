@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
+BROKEN=		"Does not compile (different error on 4.x and 5.x)"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		nspr4.1:${PORTSDIR}/devel/nspr \
 		openal.0:${PORTSDIR}/audio/openal \
