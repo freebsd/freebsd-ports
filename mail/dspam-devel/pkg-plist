@@ -89,7 +89,6 @@ libdata/pkgconfig/dspam.pc
 %%CGI%%@unexec rmdir %D/www 2>/dev/null || true
 @dirrm include/dspam
 @unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @cwd %%DSPAM_HOME%%
 firstrun.txt.sample
 firstspam.txt.sample
