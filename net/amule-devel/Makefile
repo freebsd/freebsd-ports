@@ -7,6 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.0.0rc7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 PKGNAMESUFFIX=	-devel
@@ -20,7 +21,7 @@ LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 #		gd.4:${PORTSDIR}/graphics/gd
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-CONFLICTS=	aMule-1*
+CONFLICTS=	aMule-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
