@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.17 1998/11/07 18:31:13 fenner Exp $
+# $Id: Makefile,v 1.18 1998/11/14 09:43:20 asami Exp $
 #
 
 DISTNAME=	eispack
@@ -17,7 +17,7 @@ DIST_SUBDIR=	${DISTNAME}
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
-EXTRACT_CMD=	${SCRIPTDIR}/uncomp
+EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
 EXTRACT_SUFX=	.gz
 EXTRACT_ARGS=	${WRKDIR}
 
@@ -40,9 +40,6 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
-
-pre-extract:
-	chmod +x ${SCRIPTDIR}/uncomp
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
