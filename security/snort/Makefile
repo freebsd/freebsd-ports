@@ -7,21 +7,25 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_FLEXRESP)
-BUILD_DEPENDS=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
-CONFIGURE_ARGS=		--enable-flexresp
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS}"
-LDFLAGS+=		"-L${LOCALBASE}/lib"
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+CONFIGURE_ARGS+=	--enable-flexresp \
+			--with-libnet-includes=${LOCALBASE}/include \
+			--with-libnet-libraries=${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_MYSQL)
@@ -51,10 +55,8 @@ CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
 MAN8=	snort.8
-DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
-	CREDITS README.FLEXRESP FAQ snort_manual.pdf \
-	README.PLUGINS USAGE README.thresholding README.flow \
-	README.flow-portscan README.http_inspect README.wireless
+DOCS=	ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
+	doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
 
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
@@ -68,11 +70,12 @@ pre-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}; \
-	${INSTALL_DATA} ${WRKSRC}/etc/classification.config ${DATADIR}/classification.config-sample; \
+	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
+		${DATADIR}/classification.config-sample; \
 	if [ ! -f ${DATADIR}/classification.config ]; then \
 	    ${CP} ${DATADIR}/classification.config-sample \
 		${DATADIR}/classification.config; \
