@@ -3928,6 +3928,7 @@ mesg		src/usr.bin/mesg
 mess822		ports/mail/mess822
 messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
+metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
 metamail	ports/mail/metamail
 metatheme	ports/misc/metatheme
