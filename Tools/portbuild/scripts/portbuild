@@ -25,7 +25,9 @@ cleanup()
       fi
     done
     chroot ${chroot} /sbin/ldconfig -R
-    chroot ${chroot} /sbin/ldconfig -aout -R  #XXX i386 only
+    if [ ${arch} = "i386" ]; then
+	chroot ${chroot} /sbin/ldconfig -aout -R
+    fi
     rm -rf ${chroot}/var/db/pkg/*
     rm ${chroot}/used/${pkgname}
     rmdir ${chroot}/used
@@ -81,8 +83,9 @@ shift 2
 
 buildenv ${pb} ${branch}
 
-export WRKDIRPREFIX=${buildroot}
+export WRKDIRPREFIX=/tmp
 export DISTDIR=/tmp/distfiles
+export PACKAGES=/tmp/packages
 
 # to catch missing dependencies
 #export DEPENDS_TARGET=/usr/bin/true
@@ -199,9 +202,12 @@ fi
 
 chroot ${chroot} /sbin/ldconfig -m /usr/lib/compat
 chroot ${chroot} /sbin/ldconfig -R
-chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
-chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
-chroot ${chroot} /sbin/ldconfig -aout -R
+if [ ${arch} = "i386" ]; then
+	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
+	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
+	chroot ${chroot} /sbin/ldconfig -aout -R
+fi
+
 
 while [ $# -gt 0 ]; do
   if [ -f ${packages}/All/$1 ]; then
@@ -219,7 +225,11 @@ cp -p ${pb}/scripts/buildscript ${pb}/scripts/pnohang ${chroot}
 
 # phase 1, make checksum
 chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
-error=$(cat ${chroot}/tmp/status)
+if [ -f ${chroot}/tmp/status ]; then
+  error=$(cat ${chroot}/tmp/status)
+else
+  error=255
+fi
 
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
