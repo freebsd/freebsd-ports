@@ -1109,6 +1109,7 @@ cwtext		ports/textproc/cwtext
 cxconfig	src/sbin/i386/cxconfig
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
+cy-aspell	ports/textproc/cy-aspell
 cybervrml97	ports/graphics/cybervrml97
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
