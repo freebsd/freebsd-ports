@@ -1,0 +1,7 @@
+DBD::PgPP is a Pure Perl client interface for the PostgreSQL database.
+It implements the PostgreSQL client/server network protocol and doesn't
+need an external PostgreSQL client library like "libpq" for it to work.
+Consequently, it allows one to connect to a PostgreSQL server from
+operating systems to which PostgreSQL has not been ported.
+
+WWW: http://search.cpan.org/dist/DBD-PgPP/

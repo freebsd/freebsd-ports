@@ -1,0 +1,6 @@
+%%SITE_PERL%%/DBD/PgPP.pm
+%%SITE_PERL%%/DBD/DBD-PgPP.ja.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP
+@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
