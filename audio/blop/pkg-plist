@@ -1,0 +1,4 @@
+lib/ladspa/pulse.so
+lib/ladspa/sawtooth.so
+lib/ladspa/square.so
+lib/ladspa/triangle.so

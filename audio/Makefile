@@ -21,6 +21,7 @@
     SUBDIR += autozen
     SUBDIR += baudline
     SUBDIR += bladeenc
+    SUBDIR += blop
     SUBDIR += bonk
     SUBDIR += btc
     SUBDIR += cam
