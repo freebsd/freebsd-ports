@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	4.33.0
-PORTREVISION=	1
+PORTVERSION=	5.06.2
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/
-MASTER_SITE_SUBDIR=	pcre-ocaml
+MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
@@ -19,13 +18,36 @@ COMMENT=	Perl compatible regular expressions for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
 .if !defined(WITH_CUSTOM)
 MAKE_ENV+=	NO_CUSTOM=y
+.endif
+ALL_TARGET=	all
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+ALL_TARGET+=	doc
+PORTDOCS=	*
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+.endif
+
+post-install:
+	@${ECHO_CMD} "@unexec ocamlfind remove pcre 2>/dev/null || true" >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
