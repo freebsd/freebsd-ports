@@ -5,7 +5,7 @@
  # --- Files --------------------------------------------------------
  
 -.IF "$(COM)$(OS)$(CPU)" == "GCCFREEBSDI"
-+.IF "$(COM)$(OS)$(CPU)$(COMNAME)" == "GCCFREEBSDIgcc2"
++.IF "$(COM)$(OS)$(CPU)$(COMNAME)-$(EXCEPTIONS)" == "GCCFREEBSDIgcc2-dwarf2"
  
  CFLAGSNOOPT=-O0
  NOOPTFILES=$(SLO)$/uno2cpp.obj
