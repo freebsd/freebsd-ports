@@ -23,6 +23,4 @@ USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
-
 .include <bsd.port.mk>
