@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 .for AM in config.sub config.guess install-sh missing mkinstalldirs
-	${LN} -fs ${LOCALBASE}/share/automake14/automake/${AM} ${WRKSRC}/${AM}
+	${LN} -fs ${AUTOMAKE_DIR}/${AM} ${WRKSRC}/${AM}
 .endfor
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/gnome-cmd-data.c
