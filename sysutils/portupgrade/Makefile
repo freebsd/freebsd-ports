@@ -22,6 +22,15 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 
 USE_RUBY=	yes
 
+RUBY_SHEBANG_FILES=	\
+		${WRKSRC}/pkg_glob \
+		${WRKSRC}/pkgdepfix \
+		${WRKSRC}/portcvsweb \
+		${WRKSRC}/portsclean \
+		${WRKSRC}/portsdb \
+		${WRKSRC}/portupgrade \
+		${WRKSRC}/portversion
+
 NO_BUILD=	yes
 
 MAN1=		pkg_deinstall.1 \
