@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.15 1999/01/10 18:33:36 steve Exp $
+# $Id: Makefile,v 1.16 1999/03/08 16:27:28 erich Exp $
 #
 
 DISTNAME=	cu-sudo.v1.5.8p1
@@ -12,6 +12,8 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 
 MAINTAINER=	erich@FreeBSD.ORG
+
+BROKEN= '1.5.8p2 is out'
 
 WRKSRC=		${WRKDIR}/sudo.v1.5.8p1
 GNU_CONFIGURE=	yes
