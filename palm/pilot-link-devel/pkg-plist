@@ -28,7 +28,7 @@ bin/pilot-foto
 bin/pilot-prc
 bin/pilot-schlep
 bin/pilot-xfer
-bin/pitclsh
+%%WITH_TCL%%bin/pitclsh
 bin/read-expenses
 bin/read-ical
 bin/read-notepad
@@ -86,10 +86,10 @@ lib/libpisync.a
 lib/libpisync.la
 lib/libpisync.so
 lib/libpisync.so.0
-lib/libpitcl.a
-lib/libpitcl.la
-lib/libpitcl.so.0
-lib/libpitcl.so
+%%WITH_TCL%%lib/libpitcl.a
+%%WITH_TCL%%lib/libpitcl.la
+%%WITH_TCL%%lib/libpitcl.so.0
+%%WITH_TCL%%lib/libpitcl.so
 share/aclocal/pilot-link.m4
 share/pilot-link/getrom.prc
 share/pilot-link/getrom2.prc
