@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.99 1998/02/22 00:24:06 steve Exp $
+# $Id: LEGAL,v 1.100 1998/03/04 10:06:43 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -106,4 +106,5 @@ webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
+xmdiary-*		ports/misc/xmdiary	Don't sell for profit
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
