@@ -1,0 +1,3 @@
+bin/tsito
+%%DATADIR%%/book.dat
+@dirrm share/tsito
