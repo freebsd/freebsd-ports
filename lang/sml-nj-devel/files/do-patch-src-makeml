@@ -1,0 +1,31 @@
+--- src/system/makeml.orig	Wed Apr 18 17:43:09 2001
++++ src/system/makeml	Wed Aug 15 18:36:30 2001
+@@ -6,7 +6,9 @@
+ twoup=`pwd`
+ cd $here
+ 
+-LINK=$twoup/bin/.link-sml
++INSTALLROOT=${INSTALLROOT:-$twoup}
++
++LINK=$INSTALLROOT/bin/.link-sml
+ 
+ if [ ! -x $LINK ] ; then
+     echo $this: link script $LINK is not operational.
+@@ -47,14 +49,14 @@
+ # ... unless it was already set at the time we run this script.
+ #
+ 
+-CM_PATHCONFIG_DEFAULT=${CM_PATHCONFIG_DEFAULT:-$twoup/lib/pathconfig}
++CM_PATHCONFIG_DEFAULT=${CM_PATHCONFIG_DEFAULT:-$INSTALLROOT/lib/pathconfig}
+ export CM_PATHCONFIG_DEFAULT
+ 
+ #
+ # use the arch-n-opsys script to determine the ARCH/OS if possible
+ #
+-if [ -f $twoup/bin/.arch-n-opsys ]; then
+-    ARCH_N_OPSYS=`$twoup/bin/.arch-n-opsys`
++if [ -f $INSTALLROOT/bin/.arch-n-opsys ]; then
++    ARCH_N_OPSYS=`$INSTALLROOT/bin/.arch-n-opsys`
+     if [ "$?" = "0" ]; then
+ 	eval $ARCH_N_OPSYS
+ 	echo $this: architecture = $ARCH

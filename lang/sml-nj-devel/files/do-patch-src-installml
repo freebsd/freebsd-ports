@@ -1,0 +1,48 @@
+--- src/system/installml.orig	Thu Jun  1 20:33:57 2000
++++ src/system/installml	Wed Aug 15 18:49:56 2001
+@@ -3,7 +3,7 @@
+ # The tmpfile is for pathconfig editing (see below).
+ tmpfile=pathconfig.tmp.$$
+ 
+-trap 'rm -f $tmpfile; exit 1' 0 1 2 3 15
++trap 'rm -f $tmpfile; exit 1' 1 2 3 15
+ 
+ this=$0
+ here=`pwd`
+@@ -11,8 +11,10 @@
+ twoup=`pwd`
+ cd $here
+ 
+-MAIN_HEAP_DIR=$twoup/bin/.heap
+-MAIN_LIB_DIR=$twoup/lib
++INSTALLROOT=${INSTALLROOT:-$twoup}
++
++MAIN_HEAP_DIR=$INSTALLROOT/bin/.heap
++MAIN_LIB_DIR=$INSTALLROOT/lib
+ 
+ if [ $# -gt 0 ] ; then
+     STEM=$1
+@@ -54,7 +56,7 @@
+     fi
+ }
+ 
+-HEAP_FILE=$STEM.$ARCH-$OPSYS
++HEAP_FILE=$STEM.$HEAP_SUFFIX
+ LIB_DIR=$STEM.lib
+ 
+ if [ ! -f $HEAP_FILE ] ; then
+@@ -68,7 +70,7 @@
+ fi
+ 
+ # Moving the heap image to its place
+-mv $HEAP_FILE $MAIN_HEAP_DIR/sml.$ARCH-$OPSYS
++mv $HEAP_FILE $MAIN_HEAP_DIR/sml.$HEAP_SUFFIX
+ 
+ # Moving each individual library...
+ cd $LIB_DIR
+@@ -94,4 +96,5 @@
+ END { for (i in mapping) print i, mapping[i] }' \
+  | sort >$pcfile
+ 
++rm -f $tmpfile
+ rm -r $LIB_DIR

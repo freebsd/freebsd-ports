@@ -1,5 +1,5 @@
---- config/install.sh.orig	Wed May 23 03:36:12 2001
-+++ config/install.sh	Mon Jun 18 14:40:02 2001
+--- config/install.sh.orig	Wed Jun 20 22:39:12 2001
++++ config/install.sh	Wed Aug 15 19:16:18 2001
 @@ -408,6 +408,28 @@
  }
  
@@ -29,11 +29,21 @@
  # create the various sub directories
  #
  for dir in $BINDIR $HEAPDIR $RUNDIR $LIBDIR $SRCDIR ; do
-@@ -519,6 +541,7 @@
- # build the run-time system
- #
- unpack "run-time" $SRCDIR runtime runtime
-+do_patch extra-patch-global-names
- if [ -x $RUNDIR/run.$ARCH-$OPSYS ]; then
-     echo $this: Run-time system already exists.
- else
+@@ -527,7 +549,7 @@
+     $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
+     if [ -x run.$ARCH-$OPSYS ]; then
+ 	mv run.$ARCH-$OPSYS $RUNDIR
+-	$MAKE MAKE=$MAKE clean
++	[ "$MLNORUNTIMECLEAN" ] || $MAKE MAKE=$MAKE clean
+     else
+ 	echo "$this: !!! Run-time system build failed for some reason."
+ 	exit 1
+@@ -594,6 +616,8 @@
+ 	do
+ 	    unpack $src $ROOT/src $src $src
+         done
++	do_patch do-patch-src-makeml
++	do_patch do-patch-src-installml
+ 	;;
+       ml-yacc)
+ 	standalone ml-yacc ML-Yacc src

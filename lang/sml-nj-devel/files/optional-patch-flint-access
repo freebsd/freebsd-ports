@@ -1,0 +1,29 @@
+--- src/compiler/viscomp-core.cm.orig	Tue May  8 23:25:14 2001
++++ src/compiler/viscomp-core.cm	Thu Aug  9 00:06:53 2001
+@@ -69,6 +69,26 @@
+ 
+ 	functor DummyCCallsFn
+ 	structure ClusterAnnotation
++
++      	(* export of structures required to use FLINT directly -5- *)
++	structure Types
++	structure Translate
++	(* in 110.27 already exported above: structure FLINT *)
++	structure LtyKernel
++	structure PrimTyc  
++	structure LtyDef
++	structure LtyExtern
++	structure PPFlint
++	structure LContract
++	(* currently unused?: structure FContract *)
++	structure Specialize
++	structure PrimOp
++	structure LambdaVar
++	structure ChkFlint
++	(* accessible via GenericVC: structure Symbol *)
++	structure Access
++	structure DebIndex
++
+ is
+ 
+ TopLevel/batch/batchconfig.sml
