@@ -1,21 +1,21 @@
---- etc/Makefile.in.orig	Sat Mar 10 19:51:58 2001
-+++ etc/Makefile.in	Sat Mar 10 19:55:01 2001
+--- etc/Makefile.in.orig	Wed Apr  4 12:39:19 2001
++++ etc/Makefile.in	Wed Apr  4 12:41:14 2001
 @@ -23,15 +23,9 @@
  	fi
  
  install: build
--	@echo Checking for existing teapop.passwd; \
--	if [ -f ${sysconfdir}/teapop.passwd ]; then \
--		echo "Exists...NOT installing teapop.passwd"; \
--	else \
--		echo "Not found, installing teapop.passwd"; \
--		${INSTALL} -d ${sysconfdir}; \
--		${INSTALL} teapop.passwd ${sysconfdir}; \
--		${CHMOD} 0755 ${sysconfdir}/teapop.passwd; \
+-	@ echo Checking for existing teapop.passwd;			\
+-	if [ -f ${sysconfdir}/teapop.passwd ]; then			\
+-		echo "Exists...NOT installing teapop.passwd";		\
+-	else								\
+-		echo "Not found, installing teapop.passwd";		\
+-		${INSTALL} -d ${sysconfdir};				\
+-		${INSTALL} teapop.passwd ${sysconfdir};			\
+-		${CHMOD} 0755 ${sysconfdir}/teapop.passwd;		\
 -	fi
 +	@echo Installing teapop.passwd.sample; \
-+	${INSTALL} -d ${sysconfdir}
-+	${INSTALL} -m 0644 teapop.passwd ${sysconfdir}/teapop.passwd.sample;
++	${INSTALL} -d ${sysconfdir}; \
++	${INSTALL} -m 0644 teapop.passwd ${sysconfdir}/teapop.passwd.sample; \
  
  makefile: ../config/timestamp
- 	@echo Updating Makefile
+ 	@ echo Updating Makefile
