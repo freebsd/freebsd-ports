@@ -13,6 +13,8 @@ MASTER_SITES=	http://savannah.gnu.org/download/linphone/${PORTVERSION}/sources/
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
+BROKEN=		"Does not install"
+
 LIB_DEPENDS=	osip.0:${PORTSDIR}/net/libosip \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
