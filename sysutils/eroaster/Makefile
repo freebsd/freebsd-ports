@@ -7,6 +7,7 @@
 
 PORTNAME=	eroaster
 PORTVERSION=	2.2.0.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/
@@ -42,5 +43,6 @@ pre-everything::
 post-patch::
 	@cd ${WRKSRC} && ${RM} process.py.orig
 	@${REINPLACE_CMD} -e 's|share/applets/Utility|share/gnome/apps/Utilities|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| --activate-goad-server=eroaster||' ${WRKSRC}/eroaster.desktop
 
 .include <bsd.port.mk>
