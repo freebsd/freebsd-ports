@@ -4,6 +4,8 @@ lib/libswigpl.a
 lib/libswigpy.a
 lib/libswigpl.so
 lib/libswigpy.so
+lib/libswigtcl.a
+lib/libswigtcl.so
 include/swig.h
 lib/swig_lib/Makefile
 lib/swig_lib/array.i

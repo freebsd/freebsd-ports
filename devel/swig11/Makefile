@@ -7,7 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.1p5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5 python tcl82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/1.1/ \
