@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kwatch
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
@@ -17,8 +17,9 @@ MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_KDELIBS_VER=	2
+USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
 
 post-patch:
