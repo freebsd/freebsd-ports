@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.9.0
+PORTVERSION= 	0.9.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		PropList.2:${PORTSDIR}/devel/libPropList
@@ -32,8 +32,17 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${PREFIX} \
-		--enable-threads
+		--enable-threads \
+		--disable-more-warnings
 
 MAN1=		balsa.1
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
+		 s|\$\(gnomedatadir\)/gnome|\$\(gnomedatadir\)|g'
 
 .include <bsd.port.mk>
