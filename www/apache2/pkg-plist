@@ -6,11 +6,11 @@ etc/apache2/highperformance-std.conf
 @unexec if cmp -s %D/etc/apache2/httpd.conf %D/etc/apache2/httpd-std.conf; then rm -f %D/etc/apache2/httpd.conf; fi
 etc/apache2/httpd-std.conf
 @exec [ -f %B/httpd.conf ] || cp %B/%f %B/httpd.conf
-@unexec if cmp -s %D/etc/apache2/magic %D/etc/apache2/magic.default; then rm -f %D/etc/apache2/magic; fi
-etc/apache2/magic.default
+@unexec if cmp -s %D/etc/apache2/magic %D/etc/apache2/magic-dist; then rm -f %D/etc/apache2/magic; fi
+etc/apache2/magic-dist
 @exec [ -f %B/magic ] || cp %B/%f %B/magic
-@unexec if cmp -s %D/etc/apache2/mime.types %D/etc/apache2/mime.types.default; then rm -f %D/etc/apache2/mime.types; fi
-etc/apache2/mime.types.default
+@unexec if cmp -s %D/etc/apache2/mime.types %D/etc/apache2/mime.types-dist; then rm -f %D/etc/apache2/mime.types; fi
+etc/apache2/mime.types-dist
 @exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
 @unexec if cmp -s %D/etc/apache2/ssl.conf %D/etc/apache2/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
 etc/apache2/ssl-std.conf
@@ -495,46 +495,46 @@ share/apache2/special.mk
 %%PORTDOCS%%share/doc/apache2/vhosts/name-based.html.ja.jis
 @exec mkdir -p %D/www
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
-@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin.default %D/www/cgi-bin
-www/cgi-bin.default/printenv
-www/cgi-bin.default/test-cgi
+@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin-dist %D/www/cgi-bin
+www/cgi-bin-dist/printenv
+www/cgi-bin-dist/test-cgi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
-@exec [ ! -d %D/www/data ] && ln -fs %D/www/data.default %D/www/data
-www/data.default/apache_pb.gif
-www/data.default/apache_pb.png
-www/data.default/apache_pb2.gif
-www/data.default/apache_pb2.png
-www/data.default/apache_pb2_ani.gif
-www/data.default/index.html.ca
-www/data.default/index.html.cz.iso8859-2
-www/data.default/index.html.de
-www/data.default/index.html.dk
-www/data.default/index.html.ee
-www/data.default/index.html.el
-www/data.default/index.html.en
-www/data.default/index.html.es
-www/data.default/index.html.et
-www/data.default/index.html.fr
-www/data.default/index.html.he.iso8859-8
-www/data.default/index.html.hr.iso8859-2
-www/data.default/index.html.it
-www/data.default/index.html.ja.iso2022-jp
-www/data.default/index.html.ko.euc-kr
-www/data.default/index.html.lb.utf8
-www/data.default/index.html.nl
-www/data.default/index.html.nn
-www/data.default/index.html.no
-www/data.default/index.html.po.iso8859-2
-www/data.default/index.html.pt
-www/data.default/index.html.pt-br
-www/data.default/index.html.ru.cp-1251
-www/data.default/index.html.ru.cp866
-www/data.default/index.html.ru.iso-ru
-www/data.default/index.html.ru.koi8-r
-www/data.default/index.html.ru.utf8
-www/data.default/index.html.se
-www/data.default/index.html.var
-www/data.default/index.html.zh
+@exec [ ! -d %D/www/data ] && ln -fs %D/www/data-dist %D/www/data
+www/data-dist/apache_pb.gif
+www/data-dist/apache_pb.png
+www/data-dist/apache_pb2.gif
+www/data-dist/apache_pb2.png
+www/data-dist/apache_pb2_ani.gif
+www/data-dist/index.html.ca
+www/data-dist/index.html.cz.iso8859-2
+www/data-dist/index.html.de
+www/data-dist/index.html.dk
+www/data-dist/index.html.ee
+www/data-dist/index.html.el
+www/data-dist/index.html.en
+www/data-dist/index.html.es
+www/data-dist/index.html.et
+www/data-dist/index.html.fr
+www/data-dist/index.html.he.iso8859-8
+www/data-dist/index.html.hr.iso8859-2
+www/data-dist/index.html.it
+www/data-dist/index.html.ja.iso2022-jp
+www/data-dist/index.html.ko.euc-kr
+www/data-dist/index.html.lb.utf8
+www/data-dist/index.html.nl
+www/data-dist/index.html.nn
+www/data-dist/index.html.no
+www/data-dist/index.html.po.iso8859-2
+www/data-dist/index.html.pt
+www/data-dist/index.html.pt-br
+www/data-dist/index.html.ru.cp-1251
+www/data-dist/index.html.ru.cp866
+www/data-dist/index.html.ru.iso-ru
+www/data-dist/index.html.ru.koi8-r
+www/data-dist/index.html.ru.utf8
+www/data-dist/index.html.se
+www/data-dist/index.html.var
+www/data-dist/index.html.zh
 www/error/HTTP_BAD_GATEWAY.html.var
 www/error/HTTP_BAD_REQUEST.html.var
 www/error/HTTP_FORBIDDEN.html.var
@@ -784,8 +784,8 @@ www/icons/world2.png
 @dirrm www/icons
 @dirrm www/error/include
 @dirrm www/error
-@dirrm www/data.default
-@dirrm www/cgi-bin.default
+@dirrm www/data-dist
+@dirrm www/cgi-bin-dist
 @dirrm www
 %%PORTDOCS%%@dirrm share/doc/apache2/vhosts
 %%PORTDOCS%%@dirrm share/doc/apache2/style
