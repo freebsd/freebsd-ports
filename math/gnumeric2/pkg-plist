@@ -56,6 +56,8 @@ etc/gconf/schemas/gnumeric-dialogs.schemas
 etc/gconf/schemas/gnumeric-general.schemas
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
 lib/gnumeric/%%VERSION%%/plugins/applix/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/corba/corba.so
+lib/gnumeric/%%VERSION%%/plugins/corba/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/derivatives/derivatives.so
 lib/gnumeric/%%VERSION%%/plugins/derivatives/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/dif/dif.so
@@ -102,6 +104,8 @@ lib/gnumeric/%%VERSION%%/plugins/numtheory/numtheory.so
 lib/gnumeric/%%VERSION%%/plugins/numtheory/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/openoffice/openoffice.so
+lib/gnumeric/%%VERSION%%/plugins/openoffice/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
@@ -187,6 +191,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/goto.glade
 share/gnome/gnumeric/%%VERSION%%/glade/graph-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
 share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
+share/gnome/gnumeric/%%VERSION%%/glade/hyperlink.glade
 share/gnome/gnumeric/%%VERSION%%/glade/insert-cells.glade
 share/gnome/gnumeric/%%VERSION%%/glade/mean-tests.glade
 share/gnome/gnumeric/%%VERSION%%/glade/merge.glade
@@ -216,26 +221,38 @@ share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-tools.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/appendix-glossary.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/authors.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/autocorrect.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/autofill.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/autosave.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/cell_refer.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/chapter-autofill.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/chapter-getting-started.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/copying-moving.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/editing.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/fdl-appendix.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/files.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/filter.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/formulas.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/func-footer.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/func-header.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/functions.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/gnumeric.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/graphs.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/gui-elements.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/license.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/menus.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/number-format.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/preface.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/printing.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/selections.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/simulation.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/solver.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/toolbars.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/worksheet.xml
 share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric.idl
-share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric_Graph.idl
+share/gnome/gnumeric/%%VERSION%%/plot-types.xml
 share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.py
 share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.pyc
 share/gnome/gnumeric/%%VERSION%%/python/gnumeric_startup.py
@@ -254,9 +271,71 @@ share/gnome/pixmaps/gnome-application-x-generic-spreadsheet.png
 share/gnome/pixmaps/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnome-application-x-xls.png
 share/gnome/pixmaps/gnome-gnumeric.png
+share/gnome/pixmaps/gnumeric/area.xpm
+share/gnome/pixmaps/gnumeric/bar.xpm
 share/gnome/pixmaps/gnumeric/bottom_border
+share/gnome/pixmaps/gnumeric/bubble.xpm
+share/gnome/pixmaps/gnumeric/chart_bar_1_1.png
+share/gnome/pixmaps/gnumeric/chart_bar_1_2.png
+share/gnome/pixmaps/gnumeric/chart_bar_1_3.png
+share/gnome/pixmaps/gnumeric/chart_bar_2_1.png
+share/gnome/pixmaps/gnumeric/chart_bar_2_2.png
+share/gnome/pixmaps/gnumeric/chart_bar_2_3.png
+share/gnome/pixmaps/gnumeric/chart_bubble_1_1.png
+share/gnome/pixmaps/gnumeric/chart_column_1_1.png
+share/gnome/pixmaps/gnumeric/chart_column_1_2.png
+share/gnome/pixmaps/gnumeric/chart_column_1_3.png
+share/gnome/pixmaps/gnumeric/chart_column_2_1.png
+share/gnome/pixmaps/gnumeric/chart_column_2_2.png
+share/gnome/pixmaps/gnumeric/chart_column_2_3.png
+share/gnome/pixmaps/gnumeric/chart_column_3_1.png
+share/gnome/pixmaps/gnumeric/chart_cone_1_1.png
+share/gnome/pixmaps/gnumeric/chart_cone_1_2.png
+share/gnome/pixmaps/gnumeric/chart_cone_1_3.png
+share/gnome/pixmaps/gnumeric/chart_cone_2_1.png
+share/gnome/pixmaps/gnumeric/chart_cone_2_2.png
+share/gnome/pixmaps/gnumeric/chart_cone_2_3.png
+share/gnome/pixmaps/gnumeric/chart_cone_3_1.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_1_1.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_1_2.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_1_3.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_2_1.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_2_2.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_2_3.png
+share/gnome/pixmaps/gnumeric/chart_cylinder_3_1.png
+share/gnome/pixmaps/gnumeric/chart_line_1_1.png
+share/gnome/pixmaps/gnumeric/chart_line_1_2.png
+share/gnome/pixmaps/gnumeric/chart_line_1_3.png
+share/gnome/pixmaps/gnumeric/chart_line_2_1.png
+share/gnome/pixmaps/gnumeric/chart_line_2_2.png
+share/gnome/pixmaps/gnumeric/chart_line_2_3.png
+share/gnome/pixmaps/gnumeric/chart_line_3_1.png
+share/gnome/pixmaps/gnumeric/chart_pie_1_1.png
+share/gnome/pixmaps/gnumeric/chart_pie_1_2.png
+share/gnome/pixmaps/gnumeric/chart_pie_1_3.png
+share/gnome/pixmaps/gnumeric/chart_pie_2_1.png
+share/gnome/pixmaps/gnumeric/chart_pie_2_2.png
+share/gnome/pixmaps/gnumeric/chart_pie_2_3.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_1_1.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_1_2.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_1_3.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_2_1.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_2_2.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_2_3.png
+share/gnome/pixmaps/gnumeric/chart_pyramid_3_1.png
+share/gnome/pixmaps/gnumeric/chart_scatter_1_1.png
+share/gnome/pixmaps/gnumeric/chart_scatter_2_1.png
+share/gnome/pixmaps/gnumeric/chart_scatter_2_2.png
+share/gnome/pixmaps/gnumeric/chart_scatter_3_1.png
+share/gnome/pixmaps/gnumeric/chart_scatter_3_2.png
+share/gnome/pixmaps/gnumeric/chart_stock_1_1.png
+share/gnome/pixmaps/gnumeric/chart_stock_1_2.png
+share/gnome/pixmaps/gnumeric/chart_stock_2_1.png
+share/gnome/pixmaps/gnumeric/chart_stock_2_2.png
+share/gnome/pixmaps/gnumeric/column.xpm
 share/gnome/pixmaps/gnumeric/diag_border
 share/gnome/pixmaps/gnumeric/down-right.png
+share/gnome/pixmaps/gnumeric/doughnut.xpm
 share/gnome/pixmaps/gnumeric/gnome-application-vnd.lotus-1-2-3.png
 share/gnome/pixmaps/gnumeric/gnome-application-x-applix-spreadsheet.png
 share/gnome/pixmaps/gnumeric/gnome-application-x-generic-spreadsheet.png
@@ -304,14 +383,20 @@ share/gnome/pixmaps/gnumeric/line_pattern_medium_dash_dot_dot
 share/gnome/pixmaps/gnumeric/line_pattern_slant
 share/gnome/pixmaps/gnumeric/line_pattern_thick
 share/gnome/pixmaps/gnumeric/line_pattern_thin
+share/gnome/pixmaps/gnumeric/linegraph.xpm
 share/gnome/pixmaps/gnumeric/no_border
 share/gnome/pixmaps/gnumeric/orient-horizontal.png
 share/gnome/pixmaps/gnumeric/orient-vertical.png
 share/gnome/pixmaps/gnumeric/outline_border
+share/gnome/pixmaps/gnumeric/pie.xpm
+share/gnome/pixmaps/gnumeric/radar.xpm
 share/gnome/pixmaps/gnumeric/rev_diag_border
 share/gnome/pixmaps/gnumeric/right-down.png
 share/gnome/pixmaps/gnumeric/right_border
+share/gnome/pixmaps/gnumeric/scatter.xpm
 share/gnome/pixmaps/gnumeric/stf-druid.png
+share/gnome/pixmaps/gnumeric/stock.xpm
+share/gnome/pixmaps/gnumeric/surface.xpm
 share/gnome/pixmaps/gnumeric/top_border
 share/locale/bg/LC_MESSAGES/gnumeric.mo
 share/locale/ca/LC_MESSAGES/gnumeric.mo
@@ -381,6 +466,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
+@dirrm lib/gnumeric/%%VERSION%%/plugins/openoffice
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
@@ -403,6 +489,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/excel
 @dirrm lib/gnumeric/%%VERSION%%/plugins/dif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/derivatives
+@dirrm lib/gnumeric/%%VERSION%%/plugins/corba
 @dirrm lib/gnumeric/%%VERSION%%/plugins/applix
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/undo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/printsetup
