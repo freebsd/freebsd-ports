@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.1 1995/01/15 07:37:16 gpalmer Exp $
+# $Id: Makefile,v 1.2 1995/05/14 03:29:21 asami Exp $
 #
 
-SUBDIR= msql
+    SUBDIR += msql
+    SUBDIR += exodus
 
 .include <bsd.port.subdir.mk>
