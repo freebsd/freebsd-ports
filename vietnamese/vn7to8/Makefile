@@ -17,8 +17,14 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
-CFLAGS+=	-I../../include
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
+
+CFLAGS+=	-I${PREFIX}/include/viet
 MAN1=		vn7to8.1 vn8to7.1 vn80to81.1
+
+post-extract:
+	@ ${MV} ${WRKDIR}/lib ${WRKDIR}/DONT.lib
+	@ ${MV} ${WRKDIR}/include ${WRKDIR}/DONT.include
 
 post-install:
 	@${INSTALL_MAN} ${FILESDIR}/vn7to8.1 ${PREFIX}/man/man1
