@@ -18,6 +18,8 @@ MAINTAINER=	jmz@FreeBSD.org
 LATEST_LINK=	XFree86-4
 
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
+PLIST=		${WRKDIR}/pkg-plist
+
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
 .endif
@@ -25,7 +27,7 @@ ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
-SCRIPTS_ENV=	OSVERSION=${OSVERSION}
+SCRIPTS_ENV=	OSVERSION=${OSVERSION} PKGDIR=${PKGDIR}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 MAKE_ARGS=	WORLDOPTS=
 .ifdef DISTRIB
@@ -45,11 +47,9 @@ IS_INTERACTIVE=	yes	# configure script asks questions
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .if (${MACHINE} == "pc98")
 SCRIPTS_ENV+=	MACHINE=pc98
-PLIST=		${PKGDIR}/pkg-plist.pc98
 .endif
 .if (${MACHINE} == "alpha")
 SCRIPTS_ENV+=	MACHINE=alpha
-PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 pre-configure:
