@@ -476,6 +476,7 @@ battleball	ports/games/battleball
 battlestar	src/games/battlestar
 battstat-applet ports/sysutils/battstat-applet
 baudline	ports/audio/baudline
+bayespam	ports/mail/bayespam
 bayonne		ports/comms/bayonne
 bb		ports/misc/bb
 bbapm		ports/x11-wm/bbapm
