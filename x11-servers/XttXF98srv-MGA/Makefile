@@ -1,13 +1,13 @@
 # New ports collection makefile for:	X98server for MGA with X True Type
-# Version required:	1.0
+# Version required:	1.1
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@zeisei.dpri.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/05 06:12:38 kuriyama Exp $
 #
 
 DISTNAME=	xc
-PKGNAME=	xtt-98MGA-1.0
+PKGNAME=	xtt-98MGA-1.1
 CATEGORIES=	x11
 
 MAINTAINER=	nakaji@zeisei.dpri.kyoto-u.ac.jp
