@@ -1,0 +1,7 @@
+--- configure.orig	Thu Dec 14 12:54:55 2000
++++ configure	Thu Dec 14 16:34:25 2000
+@@ -3932,3 +3932,3 @@
+ 	BACKUP_LDFLAGS=$LDFLAGS
+-	LDFLAGS="$LDFLAGS `gtk-config --libs`"
++	LDFLAGS="$LDFLAGS `$GTK_CONFIG --libs`"
+ 	echo $ac_n "checking for gdk_im_begin""... $ac_c" 1>&6
