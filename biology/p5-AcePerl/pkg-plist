@@ -40,6 +40,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Homol.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Multi.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Transcript.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/SocketServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GFF/Filehandle.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.so
