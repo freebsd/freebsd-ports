@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	jameso@elwood.net
 
+ONLY_FOR_ARCHS=	i386
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
