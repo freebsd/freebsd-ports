@@ -1055,6 +1055,7 @@
     SUBDIR += php5-sysvmsg
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm
+    SUBDIR += php5-tokenizer
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
