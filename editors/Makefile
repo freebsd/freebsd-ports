@@ -39,6 +39,7 @@
     SUBDIR += flim-emacs20
     SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
+    SUBDIR += flim113-emacs19
     SUBDIR += flim113-emacs20
     SUBDIR += flim113-mule
     SUBDIR += flim113-xemacs21-mule
