@@ -34,6 +34,7 @@ USE_XLIB=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
+LATEST_LINK=	${PORTNAME}35
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
