@@ -17,7 +17,8 @@ Y2K=		http://www.sleepycat.com/faq.html#A8
 MANUAL_PACKAGE_BUILD=	incompatible with libc internal db calls
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-GNU_CONFIGURE=	YES
+INSTALLS_SHLIBS=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dump185 --enable-cxx

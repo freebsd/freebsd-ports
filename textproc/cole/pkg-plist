@@ -7,7 +7,5 @@ include/cole/cole.h
 lib/libcole.a
 lib/libcole.so
 lib/libcole.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/cole.m4
 @dirrm include/cole

@@ -16,6 +16,8 @@ MAINTAINER=	hetzels@westbend.net
 
 USE_OPENSSL=	RSA
 
+INSTALLS_SHLIBS=	yes
+
 .include <bsd.port.pre.mk>
 
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
@@ -95,7 +97,6 @@ pre-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${SED}  -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
 		> ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh

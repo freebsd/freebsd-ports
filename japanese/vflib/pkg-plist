@@ -425,5 +425,3 @@ share/fonts/watanabe_font/mincho.vf2
 @dirrm share/VFlib/%%VFLIB_VERSION%%
 @dirrm share/VFlib
 @dirrm share/fonts/watanabe_font
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

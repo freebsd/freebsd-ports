@@ -36,6 +36,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 
 .if !defined(WITH_PERL)

@@ -21,6 +21,7 @@ LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOCONF=	yes
 USE_XLIB=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
@@ -51,7 +52,6 @@ pre-install:
 
 post-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so
 .endif

@@ -5,8 +5,6 @@ include/linkage.h
 lib/lib%%SHLIBBASE%%.a
 lib/%%SHLIBNAME%%
 lib/lib%%SHLIBBASE%%.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d

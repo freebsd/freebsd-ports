@@ -18,7 +18,5 @@ lib/libgdk_imlib.a
 lib/libgdk_imlib.la
 lib/libgdk_imlib.so
 lib/libgdk_imlib.so.5
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/imlib.m4
 @dirrm etc/imlib

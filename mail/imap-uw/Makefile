@@ -22,6 +22,7 @@ MAINTAINER=	imap-uw@freebsd.ady.ro
 
 Y2K=		http://www.washington.edu/imap/IMAP-FAQs/FAQ-00002.html
 
+INSTALLS_SHLIBS=	yes
 PAMAUTH?=	yes
 .if ${PAMAUTH} != "no"
 ALL_TARGET=	bfp
@@ -78,7 +79,6 @@ do-install:
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PAMAUTH} != "no"
 	@${CAT} ${PKGMESSAGE}
 .endif

@@ -18,6 +18,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+INSTALLS_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS=	--enable-i386-hacks

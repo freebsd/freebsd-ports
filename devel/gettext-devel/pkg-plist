@@ -13,8 +13,6 @@ include/libintl.h
 lib/libintl.a
 lib/libintl.so
 lib/libintl.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gettext.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4

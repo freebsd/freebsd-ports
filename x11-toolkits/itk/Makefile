@@ -17,6 +17,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		itcl30.1:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/itcl3.0.1/itk/unix
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2 --with-itcl=${PREFIX}/lib/itcl3.0 --with-tk=${PREFIX}/lib/tk8.2
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITK_LIB_FILE=${ITK_LIB_FILE}
@@ -46,6 +47,5 @@ pre-build:
 post-install:
 	${LN} -sf itkwish3.0 ${PREFIX}/bin/itkwish
 	${LN} -sf ${ITK_LIB_FILE} ${PREFIX}/lib/${ITK_LIB}
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

@@ -185,8 +185,6 @@ share/fox/html/win32-project.png
 share/fox/html/win32-tooloptions.png
 share/fox/html/win32.html
 share/fox/html/wintextedit.png
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/fox
 @dirrm share/fox/html
 @dirrm share/fox

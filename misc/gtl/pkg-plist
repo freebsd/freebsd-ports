@@ -28,6 +28,4 @@ lib/libGTL.a
 lib/libGTL.la
 lib/libGTL.so
 lib/libGTL.so.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/GTL

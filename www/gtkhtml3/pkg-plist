@@ -77,7 +77,5 @@ include/gtkhtml/htmlvspace.h
 lib/libgtkhtml.a
 lib/libgtkhtml.so
 lib/libgtkhtml.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/oaf/html-editor-control.oafinfo
 @dirrm include/gtkhtml

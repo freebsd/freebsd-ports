@@ -20,8 +20,9 @@ MAINTAINER=	jfieber@FreeBSD.org
 BROKEN=		nsgmls coredumps in static constructors
 .endif
 
-USE_GMAKE=	YES
-USE_LIBTOOL=	YES
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
@@ -42,7 +43,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
 	${MKDIR} ${PREFIX}/share/sgml/jade
 	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
 	@if [ ! -f ${PREFIX}/share/sgml/catalog ]; then \
 		${ECHO} "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"" > ${PREFIX}/share/sgml/catalog; \
 	else \

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.styx.net/projects/flux/
 MAINTAINER=	will@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 
 post-install:

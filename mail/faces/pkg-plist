@@ -4,8 +4,6 @@ bin/uncompface
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/compface.h
 bin/icon2ikon
 bin/ikon2icon

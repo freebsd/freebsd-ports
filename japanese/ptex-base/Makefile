@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	max@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 EXTRACT_ONLY=	${DISTFILES:Ntexmflib-*}
 DIST_SUBDIR=	${PORTNAME}
@@ -52,7 +53,6 @@ pre-install:
 	#@${RMDIR} ${PREFIX}/share/texmf/tex/generic/images ${PREFIX}/share/texmf/bibtex/bib/misc
 
 post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 .for bin in ${BINARIES}
 	@strip ${PREFIX}/bin/${bin}
 .endfor

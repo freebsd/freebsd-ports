@@ -28,5 +28,3 @@ lib/libwnn6.so.1
 lib/libwnn.a
 share/doc/ja-Wnn6-lib/README
 @dirrm share/doc/ja-Wnn6-lib
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -34,7 +34,5 @@ lib/libdiacanvas.a
 lib/libdiacanvas.la
 lib/libdiacanvas.so
 lib/libdiacanvas.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/aclocal/diacanvas.m4
 @dirrm include/diacanvas

@@ -19,8 +19,10 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_XLIB=	YES
+USE_XLIB=	yes
 .endif
+
+INSTALLS_SHLIBS=	yes
 
 pre-fetch:
 .if !defined(WITH_X11)
@@ -30,8 +32,5 @@ pre-fetch:
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -7,8 +7,6 @@ include/gnet/udp.h
 lib/libgnet.a
 lib/libgnet.so
 lib/libgnet.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gnet.m4
 share/doc/libgnet1.0-dev/html/book1.html
 share/doc/libgnet1.0-dev/html/dnstest.html

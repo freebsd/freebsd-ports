@@ -44,8 +44,6 @@ lib/libpsres.a
 lib/libpsres.la
 lib/libpsres.so
 lib/libpsres.so.0
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/path_dps.m4
 share/ghostscript/5.50/Fontmap
 share/ghostscript/5.50/doc/Bug-form.htm

@@ -17,8 +17,6 @@ include/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.so
 lib/libcapplet.so.4
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/apps/Settings/Desktop/.directory
 share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/screensaver-properties.desktop

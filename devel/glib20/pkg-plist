@@ -14,7 +14,5 @@ lib/libgmodule12.so.3
 lib/libgthread12.a
 lib/libgthread12.so
 lib/libgthread12.so.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/glib.m4
 @dirrm include/glib12

@@ -99,8 +99,6 @@ lib/libguilereadline.so.0
 lib/libqthreads.a
 lib/libqthreads.so
 lib/libqthreads.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/guile.m4
 share/aclocal/qthreads.m4
 share/guile/%%GUILE_VER%%/ice-9/and-let*.scm

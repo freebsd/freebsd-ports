@@ -21,6 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	andrew@chg.ru
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 GSLREF=		gsl-ref.ps.gz
 
 post-install:

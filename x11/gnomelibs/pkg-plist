@@ -199,8 +199,6 @@ lib/libgtkxmhtml.so.4
 lib/libzvt.a
 lib/libzvt.so
 lib/libzvt.so.4
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/libart.m4
 share/gnome/gtkrc
 share/gnome/gtkrc.el

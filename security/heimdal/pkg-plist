@@ -113,5 +113,3 @@ sbin/ktutil
 sbin/replay_log
 @dirrm include/kadm5
 @dirrm include/ss
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

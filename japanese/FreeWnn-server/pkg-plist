@@ -415,8 +415,6 @@ lib/X11/app-defaults/Xwnmo
 lib/libwnn.a
 lib/libwnn4.so
 lib/libwnn4.so.1.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/libjd.a
 include/wnn/jllib.h
 include/wnn/jlib.h

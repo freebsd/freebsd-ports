@@ -16,6 +16,7 @@ MAINTAINER=	midom@dammit.lt
 WRKSRC=		${WRKDIR}/freetds
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tdsver=7.0 \
 		--enable-dbmfix

@@ -48,8 +48,6 @@ lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
 lib/libgimpui.so.23
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.1/modules/libcdisplay_gamma.la
 libexec/gimp/1.1/modules/libcdisplay_gamma.so
 libexec/gimp/1.1/modules/libcdisplay_highcontrast.la

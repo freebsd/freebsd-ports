@@ -3,5 +3,3 @@ include/hesiod.h
 lib/libhesiod.a
 lib/libhesiod.so
 lib/libhesiod.so.3.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

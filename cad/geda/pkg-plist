@@ -457,5 +457,3 @@ share/gEDA/scheme/gsymcheck.scm
 @dirrm share/gEDA/source
 @dirrm share/gEDA/scheme
 @dirrm share/gEDA
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -99,8 +99,6 @@ info/web2c.info-4
 @exec install-info %D/info/kpathsea.info %D/info/dir
 @exec install-info %D/info/web2c.info %D/info/dir
 lib/libkpathsea.so.3
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 lib/libkpathsea.so
 lib/libkpathsea.a
 share/texmf/VERSION-7.3
