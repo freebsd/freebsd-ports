@@ -130,3 +130,11 @@ set at 20 + 16 * MAXUSERS.
    If other threads has been joined by the main thread before it calls
    exit then exit handling should be fairly safe and the correct exit
    code can be detected by the parent process.
+
+6) If the rate of sched_yield() calls is very high (due to 
+   malloc / spinlock interaction) then 
+   LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING can be defined when
+   compiling the linuxthreads library.  This has the same effect
+   as if the kernel was compiled without the _KPOSIX_PRIORITY_SCHEDULING
+   option, but limited to the linuxthread library.
+

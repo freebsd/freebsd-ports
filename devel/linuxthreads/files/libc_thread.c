@@ -82,6 +82,7 @@ static void _pthread_initialize(void)
 {
 
 #if defined(LINUXTHREADS)
+#if !defined(LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING)
 	int mib[2];
 	size_t len;
 
@@ -90,6 +91,7 @@ static void _pthread_initialize(void)
 	mib[1] = CTL_P1003_1B_PRIORITY_SCHEDULING;
 	if (-1 == sysctl (mib, 2, &_posix_priority_scheduling, &len, NULL, 0))
 		_posix_priority_scheduling = 0;
+#endif
 #endif
 
 	/* This turns on thread safe behaviour in libc when we link with it */
