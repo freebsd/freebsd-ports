@@ -8,7 +8,9 @@
 PORTNAME=	gphpedit
 PORTVERSION=	0.9.50
 CATEGORIES=	editors gnome
-MASTER_SITES=	http://www.gphpedit.org/download/store/
+MASTER_SITES=	http://www.gphpedit.org/download/store/ \
+		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
+		http://www.jolupatech.info/crux/gphpedit/
 
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	PHP, HTML and CSS development environment for GNOME 2.x
