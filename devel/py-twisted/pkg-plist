@@ -43,6 +43,7 @@ bin/manhole
 bin/mapeditor
 bin/mktap
 bin/runtests
+bin/t-im
 bin/twistd
 bin/twistd-debug
 lib/%%PYTHON_VERSION%%/site-packages/twisted/__init__.py
@@ -51,6 +52,24 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/authorizer.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/authorizer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/authorizer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/identity.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/identity.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/identity.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/perspective.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/perspective.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/perspective.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/service.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/service.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/service.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/util.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/util.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/cred/util.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.pyo
@@ -201,6 +220,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldaperrors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/oscar.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/oscar.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/oscar.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/pop3.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/pop3.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/pop3.pyo
@@ -216,6 +238,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/pureldap.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/smtp.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/smtp.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/smtp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/socks.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/socks.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/socks.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/telnet.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/telnet.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/telnet.pyo
@@ -349,6 +374,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/banana.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/banana.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/banana.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/cBanana.so
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/flavors.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/flavors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/flavors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/jelly.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/jelly.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/jelly.pyo
@@ -370,6 +398,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/tkutil.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/chord.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/chord.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/chord.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.pyo
@@ -382,6 +413,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/manhole.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/socks.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/socks.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/socks.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/stupid.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/stupid.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/stupid.pyo
@@ -614,6 +648,7 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/mail
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/internet
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/cred
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted
 %%PORTDOCS%%@dirrm share/examples/twisted
 %%PORTDOCS%%@dirrm share/doc/twisted/img

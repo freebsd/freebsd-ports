@@ -1,6 +1,6 @@
---- setup.py.orig	Fri Sep 14 03:22:48 2001
-+++ setup.py	Tue Sep 25 16:07:37 2001
-@@ -80,8 +80,10 @@
+--- setup.py.orig	Mon Jan 28 11:41:12 2002
++++ setup.py	Wed Feb 13 15:20:01 2002
+@@ -82,8 +82,11 @@
      setup_args['platforms'] = "win32 posix"
  
  if os.name == 'posix':
@@ -9,7 +9,8 @@
 +    setup_args['scripts'] = ['bin/accepttests', 'bin/cpyrght', 'bin/faucet',
 +                             'bin/gnusto', 'bin/im', 'bin/malyon',
 +                             'bin/manhole', 'bin/mapeditor', 'bin/mktap',
-+                             'bin/runtests', 'bin/twistd', 'bin/twistd-debug']
++                             'bin/runtests', 'bin/t-im', 'bin/twistd',
++                             'bin/twistd-debug']
  
  #'"
  # for building C banana...
