@@ -6,28 +6,28 @@ if [ "$2" != "PRE-INSTALL" ]; then
 	exit 0
 fi
 
-USER=www
-GROUP=${USER}
-UID=80
-GID=${UID}
+WWWUSER=www
+WWWGROUP=${WWWUSER}
+WWWUID=80
+WWWGID=${WWWUID}
 
-if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
-	if pw groupadd ${GROUP} -g ${GID}; then
-		echo "Added group \"${GROUP}\"."
+if ! pw groupshow "${WWWGROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${WWWGROUP} -g ${WWWGID}; then
+		echo "Added group \"${WWWGROUP}\"."
 	else
-		echo "Adding group \"${GROUP}\" failed..."
+		echo "Adding group \"${WWWGROUP}\" failed..."
 		exit 1
 	fi
 fi
 
-if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+if ! pw usershow "${WWWUSER}" 2>/dev/null 1>&2; then
+	if pw useradd ${WWWUSER} -u ${WWWUID} -g ${WWWGROUP} -h - \
 		-s "/sbin/nologin" -d "/nonexistent" \
 		-c "World Wide Web Owner"; \
 	then
-		echo "Added user \"${USER}\"."
+		echo "Added user \"${WWWUSER}\"."
 	else
-		echo "Adding user \"${USER}\" failed..."
+		echo "Adding user \"${WWWUSER}\" failed..."
 		exit 1
 	fi
 fi
