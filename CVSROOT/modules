@@ -1682,6 +1682,7 @@ fprobe		ports/net/fprobe
 fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-daCode	ports/french/daCode
+fr-eficas	ports/french/eficas
 fr-facturier	ports/french/facturier
 fr-gfaim	ports/french/gfaim
 fr-ispell	ports/french/ispell
