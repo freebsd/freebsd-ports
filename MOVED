@@ -143,3 +143,7 @@ devel/autoconf254|devel/autoconf257|2003-01-06|new version from FSF
 devel/ncurses-dialog|devel/cdialog|2003-01-11|renamed by delete+add
 graphics/dvdrip|multimedia/dvdrip|2003-01-17|new category
 misc/pipebench|benchmarks/pipebench|2003-01-18|fix category
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+x11-toolkits/gnustep-gui-devel|x11-toolkits/gnustep-gui|2003-01-20|merged
+x11-toolkits/gnustep-xgps|x11-toolkits/gnustep-back|full substitute

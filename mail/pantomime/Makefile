@@ -10,20 +10,12 @@ PORTVERSION=	1.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/libs/
-.if defined(GNUSTEP_GUI_DEVEL)
-PKGNAMESUFFIX?=	-devel
-.endif
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if !defined(GNUSTEP_GUI_OLD)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-.else
-BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-.endif
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/Pantomime
@@ -33,7 +25,6 @@ ALL_TARGET=
 NO_MTREE=	yes
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 

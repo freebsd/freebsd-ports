@@ -6,21 +6,11 @@
 #
 
 PORTNAME=	gnustep-gui
-.if defined(GNUSTEP_GUI_DEVEL)
 PORTVERSION=	0.8.3
-.else
-PORTVERSION=	0.7.6
-.endif
 CATEGORIES=	x11-toolkits
-.if defined(GNUSTEP_GUI_DEVEL)
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
 MASTER_SITE_SUBDIR=	core
-PKGNAMESUFFIX?=	-devel
-.else
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
-.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -28,19 +18,9 @@ BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-.if defined(GNUSTEP_GUI_DEVEL)
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-.endif
 
 BREAKS_IF_PEDANTIC=	yes
-.if defined(GNUSTEP_GUI_DEVEL)
-EXTRA_PATCHES=	${FILESDIR}/extra-pa_unix_oss.c
-PLIST_SUB+=	DEVEL=""
-PLIST_SUB+=	NODEVEL="@comment "
-.else
-PLIST_SUB+=	DEVEL="@comment "
-PLIST_SUB+=	NODEVEL=""
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -76,13 +56,11 @@ post-extract:
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
 
-.if defined(GNUSTEP_GUI_DEVEL)
 pre-configure:
 	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
 	${SED} -e "s=-lphread=${PTHREAD_LIBS}=" -e "s;CFLAGS =;CFLAGS+=;" \
 		-e "s;-Wall;-Wall ${PTHREAD_CFLAGS:S=""==};" \
 		${EXTRA_FIX}.sed > ${EXTRA_FIX}
-.endif
 
 do-configure:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \

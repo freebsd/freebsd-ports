@@ -9,34 +9,21 @@ PORTNAME=	gshisen
 PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/
-.if defined(GNUSTEP_GUI_DEVEL)
-PKGNAMESUFFIX?=	-devel
-.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if !defined(GNUSTEP_GUI_OLD)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-.else
-BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-.endif
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/GShisen
 USE_GMAKE=	yes
 MAKEFILE=
-.if !defined(GNUSTEP_GUI_OLD)
 MAKE_FLAGS=	GUI_BACKEND_LIB=back
-.else
-MAKE_FLAGS=	GUI_BACKEND_LIB=xgps
-.endif
 ALL_TARGET=
 NO_MTREE=	yes
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
