@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-File
-PORTVERSION=	0.22
-PORTREVISION=	0
+PORTVERSION=	0.33
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -21,7 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statemen
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DBD::File.3
+MAN3=		DBD::File.3 \
+		DBI::SQL::Nano.3
 
 .include <bsd.port.pre.mk>
 
