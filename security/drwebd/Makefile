@@ -14,13 +14,11 @@ MAINTAINER=     ache@FreeBSD.org
 
 DESCR=          ${PORTSDIR}/security/drweb/pkg-descr
 
-NO_BUILD=       yes
-NO_WRKSUBDIR=   yes
-
 RUN_DEPENDS=    ${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
-checksum:
-	@${DO_NADA}
+NO_BUILD=       yes
+NO_WRKSUBDIR=   yes
+NO_CHECKSUM=	yes
 
 do-fetch:
 	@${DO_NADA}
