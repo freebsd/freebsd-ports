@@ -3701,6 +3701,7 @@ jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
 jffnms		ports/net/jffnms
 jfk		ports/games/jfk
+jflex		ports/java/jflex
 jfreechart	ports/java/jfreechart
 jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
