@@ -17,6 +17,7 @@ COMMENT=	A library and executables which allow access to Microsoft Word files
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
