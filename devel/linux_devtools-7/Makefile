@@ -7,12 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		7.1
-.include <bsd.port.pre.mk>
-.if (${MACHINE_ARCH} == "alpha")
-PORTREVISION=		2
-.else
 PORTREVISION=		3
-.endif
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -46,10 +41,13 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
+.include <bsd.port.pre.mk>
+
 .if (${MACHINE_ARCH} == "alpha")
 PATCH_SITES=	\
 	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
 	ftp://alpha.crl.dec.com/pub/linux/redhat/7.2-alpha/updates/rpms/alpha/
+PORTREVISION=	2
 .endif
 
 .if (${MACHINE_ARCH} == "i386")
