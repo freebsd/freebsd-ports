@@ -3,7 +3,7 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/18 08:41:40 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	grace-5.0.3gamma
