@@ -89,6 +89,13 @@
 # defaulting to usleep() timing. This can improve cpu load as well
 # as run-time accuracy.
 #
+# WITH_KERN_HZ
+# default: 1024
+# This option allows you to control the default kern.hz when using RTC support.
+# If you have a older/slower processor you may want to lower the default level.
+# ie. 512 seems to produce better quality video on a PII 400MHz than 1024 does
+# CAUTION: lower than 512 may produce jerky video.
+#
 # Feature options:
 # These options influence, which libraries mplayer is linked to.
 # Note: The libraries are needed to play the particular files under
@@ -567,6 +574,12 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 .endif
 
+.if defined(WITH_KERN_HZ)
+DEFAULT_KERN_HZ=${WITH_KERN_HZ}
+.else
+DEFAULT_KERN_HZ=1024
+.endif
+
 # "enable" build for other archs
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_RUNTIME_CPUDETECTION)
@@ -647,6 +660,9 @@ post-patch:
 		${WRKSRC}/mplayer.c
 	@${REINPLACE_CMD} -e \
 		's|rtc_fd|rtc|' \
+		${WRKSRC}/mplayer.c
+	@${REINPLACE_CMD} -e \
+		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
 
