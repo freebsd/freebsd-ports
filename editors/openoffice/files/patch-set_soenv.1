@@ -1,5 +1,5 @@
 --- set_soenv.1.orig	Tue Nov 20 18:26:33 2001
-+++ set_soenv.1	Sat Mar  9 23:19:31 2002
++++ set_soenv.1	Sun Mar 10 22:44:58 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -40,7 +40,7 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -857,7 +861,10 @@
+@@ -857,11 +861,14 @@
                          $D.$OS.
                          $D.$CPUNAME;
  if  ($platform eq "$FreeBSD")
@@ -52,6 +52,11 @@
  }
  $SOLARDEF            .= $D."_REENTRANT".
                          $D."_POSIX_PTHREAD_SEMANTICS";
+-if  (($platform ne "$Tru64") && ( $platform ne "$Irix") && ( $platform ne "$Irix64"))
++if  (($platform ne "$Tru64") && ( $platform ne "$Irix") && ( $platform ne "$Irix64") && ( $platform ne "FreeBSD" ) && ( $platform ne "NetBSD" ))
+ {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
+ }
+ $SOLARDEF            .= $D."SUPD=$UPD".
 @@ -954,7 +961,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
