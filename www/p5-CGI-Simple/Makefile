@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Simple
-PORTVERSION=	0.075
+PORTVERSION=	0.077
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JF/JFREEMAN
@@ -22,8 +22,5 @@ MAN3=		CGI::Simple.3 \
 		CGI::Simple::Cookie.3 \
 		CGI::Simple::Standard.3 \
 		CGI::Simple::Util.3
-
-pre-configure:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>
