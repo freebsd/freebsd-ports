@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.7 1998/11/14 04:16:09 obrien Exp $
+# $Id: Makefile,v 1.8 1998/11/18 10:16:47 obrien Exp $
 #
 
 DISTNAME=	ups-3.33
@@ -23,5 +23,8 @@ BROKEN_ELF=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ups
 MAN1=		ups.1
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
