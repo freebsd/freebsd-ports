@@ -9,6 +9,7 @@ lib/libgwrapguile.a
 lib/libgwrapguile.so
 lib/libgwrapguile.so.0
 libexec/g-wrap-guile
+share/aclocal/g-wrap.m4
 share/guile/site/g-wrap.scm
 share/guile/site/g-wrap/g-translate.scm
 share/guile/site/g-wrap/guile-types.scm
