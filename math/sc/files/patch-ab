@@ -1,0 +1,16 @@
+--- lex.c.orig	Mon May 11 20:43:36 1992
++++ lex.c	Thu Jul 30 20:26:51 1998
+@@ -384,11 +384,11 @@
+ 	ctl('z'), 0
+ };
+ 
+-void
++int
+ charout(c)
+ int c;
+ {
+-	(void)putchar(c);
++	return putchar(c);
+ }
+ 
+ void

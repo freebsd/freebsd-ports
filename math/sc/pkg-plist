@@ -1,0 +1,6 @@
+bin/sc
+bin/scqref
+bin/psc
+share/sc/tutorial.sc
+man/man1/sc.1.gz
+man/man1/psc.1.gz
