@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesper@FreeBSD.org
 
+NO_PACKAGE=	"Runaway package build"
+
 PERL_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=	${PERL_BASE}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
 		${PERL_BASE}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
