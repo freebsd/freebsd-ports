@@ -14,12 +14,16 @@ DISTFILES=      libsnert-1.20.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=     ache@FreeBSD.org
 COMMENT=        Real-time sender address verification, based on Milter API
+
 RESTRICTED=     see LICENSE.TXT
 
 GNU_CONFIGURE=  yes
 
 WRKSRC=         ${WRKDIR}/com/snert/src/milter-sender
 MAKEFILE=       makefile
+PKGMESSAGE=     ${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
 IGNORE=         requires Sendmail 8.12
@@ -34,9 +38,13 @@ DOCS= CHANGES.TXT index.shtml style.css mailto.js \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+= ${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=  LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=  LDFLAGS="${LDFLAGS}" LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+= --localstatedir=${PREFIX} --with-db
 MAKE_ENV+=       PREFIX="${PREFIX}"
+
+post-patch:
+	@${SED} 's|\/usr\/local|${PREFIX}|g' ${PKGDIR}/pkg-message > \
+	${WRKDIR}/pkg-message
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
@@ -66,4 +74,4 @@ post-deinstall:
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
