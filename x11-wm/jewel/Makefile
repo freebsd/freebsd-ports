@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jewel
-PORTVERSION=	0.12.29
+PORTVERSION=	0.12.31
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
 
@@ -19,8 +19,6 @@ DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-#CXXFLAGS+=	-I${X11BASE}/include
-#LIBS+=		-L${X11BASE}/lib
 
 post-patch:
 	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
