@@ -1,13 +1,11 @@
---- doc/Makefile.in.orig	Tue Dec 28 11:31:20 1999
-+++ doc/Makefile.in	Tue Dec 28 11:32:30 1999
-@@ -30,8 +30,8 @@
- infodir = @infodir@
- mandir = @mandir@
- man1dir = $(mandir)/man1
--dvidir = $(mandir)/dvi
--htmldir = $(mandir)/html
-+dvidir = @prefix@/share/doc/gperf
-+htmldir = @prefix@/share/doc/gperf
+--- doc/Makefile.in.orig	Tue Sep 26 04:32:31 2000
++++ doc/Makefile.in	Tue Nov 28 09:39:20 2000
+@@ -34,5 +34,5 @@
+ docdir = $(prefix)/doc/@PACKAGE@
+-dvidir = $(docdir)
+-psdir = $(docdir)
+-htmldir = $(docdir)
++dvidir = $(prefix)/share/doc/gperf
++psdir = $(prefix)/share/doc/gperf
++htmldir = $(prefix)/share/doc/gperf
  
- # Programs used by "make":
- RM = rm -f
