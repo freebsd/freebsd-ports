@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	lmtp2nntp
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/lmtp2nntp/
 
-MAINTAINER=	thomas.lotterer@cw.com
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"OSSP mail to news gateway"
 
 MAN8=		lmtp2nntp.8
 HAS_CONFIGURE=	yes
