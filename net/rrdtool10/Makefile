@@ -14,8 +14,10 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 USE_PERL5=	yes
-MAKE_ENV+=	PERL=${PERL}
+MAKE_ENV=	PERL=${PERL}
 
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
@@ -32,21 +34,22 @@ MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
 MAN3=		RRDp.3 RRDs.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+OPTIONS=	"ISO-8859-2 fonts support" off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LATIN2)
-CONFIGURE_ARGS+=	--enable-latin2
+CONFIGURE_ARGS+=--enable-latin2
 .endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--with-pic
 .endif
 
-pre-extract:
-.if !defined(WITH_LATIN2)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can enable support for ISO-8859-2 fonts by defining WITH_LATIN2."
-	@${ECHO_MSG} ""
+post-extract:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
