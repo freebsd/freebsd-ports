@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.81 1997/09/12 10:18:25 pst Exp $
+# $Id: Makefile,v 1.82 1997/09/30 07:49:24 asami Exp $
 #
 
     SUBDIR += Gofer
@@ -32,6 +32,7 @@
     SUBDIR += modula-3-lib
     SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
+    SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += p2c
     SUBDIR += p5-Tcl
@@ -53,6 +54,7 @@
     SUBDIR += tcl75
     SUBDIR += tcl76
     SUBDIR += tcl80
+    SUBDIR += tclX75
     SUBDIR += xpl
 
 .include <bsd.port.subdir.mk>
