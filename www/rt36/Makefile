@@ -89,13 +89,19 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 DB_TYPE?=	mysql
 
+.if ${DB_TYPE} == "Oracle"
+BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+.else
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.else
+.if ${DB_TYPE} == "SQLite"
+BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .else
 DB_TYPE=	mysql
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+.endif
+.endif
 .endif
 
 USE_PERL5=	yes
@@ -114,7 +120,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      DB_TYPE=type                    Pg for postgresql, mysql for MySQL (mysql)"
+	@${ECHO} "      DB_TYPE=type                    mysql, Oracle, Pg or SQLite (mysql)"
 	@${ECHO} "      DB_HOST=hostname                The database host (localhost)"
 	@${ECHO} "      DB_PORT=port                    The database port"
 	@${ECHO} "      DB_DBA_USER=password            Name of database administrator (root)"
