@@ -15,10 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-WRKSRC=		${WRKDIR}/gtkportscan
+GTK_CONFIG?=   ${X11BASE}/bin/gtk12-config
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtkportscan ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/portscan ${PREFIX}/bin
+WRKSRC=                ${WRKDIR}/${PORTNAME}
+MAKE_ENV=      GTK_CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>

@@ -1,20 +1,20 @@
---- Makefile.orig	Thu Mar 11 01:58:41 1999
-+++ Makefile	Sun Sep 12 20:59:30 1999
+--- Makefile.orig	Thu Mar 11 17:58:41 1999
++++ Makefile	Sun Jul 16 00:45:14 2000
 @@ -1,21 +1,21 @@
 -CC=gcc
 -GTK_FLAGS=`gtk-config --cflags` `gtk-config  --libs` 
 +CC?=gcc
-+GTK_FLAGS=`gtk12-config --cflags` `gtk12-config  --libs` 
++GTK_FLAGS=`$(GTK_CONFIG) --cflags` `$(GTK_CONFIG) --libs`
  
  all: gtkportscan portscan
  
  portscan: portscan.c
 -	$(CC) -O2 -Wall portscan.c -o portscan -g
-+	$(CC) $(CFLAgS) -Wall portscan.c -o portscan ${CFLAGS}
++	$(CC) $(CFLAGS) portscan.c -o portscan
  
  gtkportscan: gtkportscan.c
 -	$(CC) -Wall $(GTK_FLAGS) gtkportscan.c -o gtkportscan -g
-+	$(CC) -Wall $(GTK_FLAGS) gtkportscan.c -o gtkportscan ${CFLAGS}
++	$(CC) $(CFLAGS) $(GTK_FLAGS) gtkportscan.c -o gtkportscan
  
  install:
 -	cp portscan /usr/local/bin
