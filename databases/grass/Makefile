@@ -9,11 +9,14 @@
 DISTNAME=	grass5.0beta5
 PKGNAME=	grass-5.0b5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://grass.baylor.edu/pub/grass/
+MASTER_SITES=	ftp://grass.baylor.edu/pub/grass/grass5.0beta/source/ \
+		http://www.geog.uni-hannover.de/grass/grass5/source/
 
 MAINTAINER=	reg@freebsd.org
 
 LIB_DEPENDS=    tiff.4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-tiff-includes=${LOCALBASE}/include \
@@ -35,7 +38,7 @@ SED_FILES= \
 		scripts/create_fifos.sh
 
 pre-configure:
-	@${MKDIR} -p ${WRKDIR}/grass5/bin
+	@${MKDIR} ${WRKDIR}/grass5/bin
 
 do-install:
 	${MKDIR} ${PREFIX}/grass5
@@ -43,9 +46,8 @@ do-install:
 	cd ${WRKDIR}/grass5 && ${TAR} -cf - * | \
 		${TAR} -xpf - -C ${PREFIX}/grass5
 .for F in ${SED_FILES}
-	@${SED} -e "s^${WRKDIR}^${PREFIX}^g" \
+	${SED} -e "s^${WRKDIR}^${PREFIX}^g" \
 	  ${WRKDIR}/grass5/$F > ${PREFIX}/grass5/$F
 .endfor
 
 .include <bsd.port.mk>
-
