@@ -1,0 +1,12 @@
+Set of modules:
+
+* Pod::Man - convert POD data to formatted *roff input
+* Pod::ParseLink - parse an Lltgt formatting code in POD text
+* Pod::Text - convert POD data to formatted ASCII text
+* Pod::Text::Color - convert POD data to formatted color ASCII text
+* Pod::Text::Overstrike - convert POD data to formatted overstrike text
+
+WWW: http://search.cpan.org/search?dist=podlators
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

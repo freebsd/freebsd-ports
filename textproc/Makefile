@@ -213,6 +213,7 @@
     SUBDIR += p5-XML-XSLT
     SUBDIR += p5-dTemplate
     SUBDIR += p5-libxml
+    SUBDIR += p5-podlators
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pdftohtml
