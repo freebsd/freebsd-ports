@@ -1,0 +1,257 @@
+*** release.orig/tksol.in	Tue Aug  1 16:14:11 1995
+--- release/tksol.in	Wed Oct 11 13:52:16 1995
+***************
+*** 22,28 ****
+  
+      global argv tksol
+  
+!     set tksol(colormodel) [tk colormodel .]
+  
+      set tksol(version) 1.0;		# don't change this!
+      set tksol(debug) 0
+--- 22,30 ----
+  
+      global argv tksol
+  
+!     option add *highlightThickness 0
+! 
+!     set tksol(colormodel) [winfo depth .]
+  
+      set tksol(version) 1.0;		# don't change this!
+      set tksol(debug) 0
+***************
+*** 70,76 ****
+      set tksol(bottom_level) 150;	# position of bottom level stacks
+  
+      set tksol(button.font) 9x15
+!     if {$tksol(colormodel) == "color"} {
+  	set tksol(button.foreground) White
+  	set tksol(button.background) DeepSkyBlue1
+  	set tksol(button.activeForeground) Black
+--- 72,78 ----
+      set tksol(bottom_level) 150;	# position of bottom level stacks
+  
+      set tksol(button.font) 9x15
+!     if {$tksol(colormodel) > 1} {
+  	set tksol(button.foreground) White
+  	set tksol(button.background) DeepSkyBlue1
+  	set tksol(button.activeForeground) Black
+***************
+*** 165,171 ****
+      set tksol(canvas.height) $canvas_height
+  
+      # create the canvas
+!     if {$tksol(colormodel) == "color"} {
+  	canvas .canvas -width $canvas_width -height $canvas_height \
+  	    -background $tksol(canvas.background) -relief raise
+      } else {
+--- 167,173 ----
+      set tksol(canvas.height) $canvas_height
+  
+      # create the canvas
+!     if {$tksol(colormodel) > 1} {
+  	canvas .canvas -width $canvas_width -height $canvas_height \
+  	    -background $tksol(canvas.background) -relief raise
+      } else {
+***************
+*** 192,198 ****
+      # create the dividing line
+      set midpt [expr ($tksol(top_level) + $tksol(bottom_level) + \
+  		     $tksol(card.height)) / 2]
+!     if {$tksol(colormodel) == "color"} {
+  	.canvas create line 0 $midpt $canvas_width $midpt -fill black
+      } else {
+  	.canvas create line 0 $midpt $canvas_width $midpt -fill white
+--- 194,200 ----
+      # create the dividing line
+      set midpt [expr ($tksol(top_level) + $tksol(bottom_level) + \
+  		     $tksol(card.height)) / 2]
+!     if {$tksol(colormodel) > 1} {
+  	.canvas create line 0 $midpt $canvas_width $midpt -fill black
+      } else {
+  	.canvas create line 0 $midpt $canvas_width $midpt -fill white
+***************
+*** 223,229 ****
+  
+      # create the bottom level placeholders, which are invisible
+      set x $tksol(side_margin)
+!     if {$tksol(colormodel) == "color"} {
+  	set placeholder_color "-fill $tksol(canvas.background)"
+      } else {
+  	set placeholder_color "-fill black -stipple gray50"
+--- 225,231 ----
+  
+      # create the bottom level placeholders, which are invisible
+      set x $tksol(side_margin)
+!     if {$tksol(colormodel) > 1} {
+  	set placeholder_color "-fill $tksol(canvas.background)"
+      } else {
+  	set placeholder_color "-fill black -stipple gray50"
+***************
+*** 632,638 ****
+      pack .b.outline -side top -fill x -padx 2 -pady 2
+      label .b.outline.label -width $label_width -anchor e -text "Drag Outline:"
+      foreach toggle {yes no} {
+! 	radiobutton .b.outline.$toggle -text $toggle -variable tksol(outline)
+      }
+      .b.outline.$tksol(outline) select
+      pack .b.outline.label -side left -padx 2 -pady 2
+--- 634,641 ----
+      pack .b.outline -side top -fill x -padx 2 -pady 2
+      label .b.outline.label -width $label_width -anchor e -text "Drag Outline:"
+      foreach toggle {yes no} {
+! 	radiobutton .b.outline.$toggle -text $toggle \
+! 	    -variable tksol(outline) -value $toggle
+      }
+      .b.outline.$tksol(outline) select
+      pack .b.outline.label -side left -padx 2 -pady 2
+***************
+*** 701,707 ****
+  
+      # finally setup the bitmap canvas
+      canvas .b.bitmap.canvas -background $tksol(canvas.background)
+!     scrollbar .b.bitmap.scroll -background $tksol(canvas.background) \
+  	-command ".b.bitmap.canvas yview" -relief sunken
+      pack .b.bitmap.scroll -side right -fill y -padx 2 -pady 2
+      pack .b.bitmap.canvas -fill both -padx 2 -pady 2
+--- 704,710 ----
+  
+      # finally setup the bitmap canvas
+      canvas .b.bitmap.canvas -background $tksol(canvas.background)
+!     scrollbar .b.bitmap.scroll -troughcolor $tksol(canvas.background) \
+  	-command ".b.bitmap.canvas yview" -relief sunken
+      pack .b.bitmap.scroll -side right -fill y -padx 2 -pady 2
+      pack .b.bitmap.canvas -fill both -padx 2 -pady 2
+***************
+*** 712,718 ****
+  	.b.entry.bitmap.e insert 0 "$bitmap"; 
+      }
+  
+!     .b.bitmap.canvas bind bitmap_Tag <Any-Double-ButtonPress-1> {
+  	set bitmap [file tail [lindex [.b.bitmap.canvas gettags current] 1]]; \
+  	.b.entry.bitmap.e delete 0 end; \
+  	.b.entry.bitmap.e insert 0 "$bitmap"; \
+--- 715,721 ----
+  	.b.entry.bitmap.e insert 0 "$bitmap"; 
+      }
+  
+!     .b.bitmap.canvas bind bitmap_Tag <Double-ButtonPress-1> {
+  	set bitmap [file tail [lindex [.b.bitmap.canvas gettags current] 1]]; \
+  	.b.entry.bitmap.e delete 0 end; \
+  	.b.entry.bitmap.e insert 0 "$bitmap"; \
+***************
+*** 762,768 ****
+      .b.bitmap.canvas configure -height $canvas_height \
+  	-background $tksol(canvas.background) \
+  	-scrollregion [list 0 0 $canvas_width $scroll_height] \
+! 	-yscroll ".b.bitmap.scroll set" -relief sunken
+  
+      set x_offset [expr int($margin + ($spacing / 2))]
+      set y_offset $x_offset
+--- 765,771 ----
+      .b.bitmap.canvas configure -height $canvas_height \
+  	-background $tksol(canvas.background) \
+  	-scrollregion [list 0 0 $canvas_width $scroll_height] \
+! 	-yscrollcommand ".b.bitmap.scroll set" -relief sunken
+  
+      set x_offset [expr int($margin + ($spacing / 2))]
+      set y_offset $x_offset
+***************
+*** 1019,1031 ****
+      set xdistance [expr [lindex $endstk 0] - [lindex $beginstk 0]]
+      # note that we divide by 12, not 13, since the last card is positioned
+      # on the coordinates of the last playstack, ie. playspot6
+!     set x_offset [expr $xdistance / 12]
+      set ydistance [expr $tksol(canvas.height) - [lindex $beginstk 1] - \
+  				$tksol(card.height)]
+      # we divide by 3 here since the bottom stack must be fully visible ...
+      set y_offset [expr $ydistance / 3]
+!     set x [lindex $beginstk 0]
+!     set y [lindex $beginstk 1]
+      for {set endstk_no 0} {$endstk_no < 4} {incr endstk_no} {
+  	# layout each suit on the canvas
+  	.canvas raise endstk${endstk_no}_Tag all
+--- 1022,1034 ----
+      set xdistance [expr [lindex $endstk 0] - [lindex $beginstk 0]]
+      # note that we divide by 12, not 13, since the last card is positioned
+      # on the coordinates of the last playstack, ie. playspot6
+!     set x_offset [expr round([expr $xdistance / 12])]
+      set ydistance [expr $tksol(canvas.height) - [lindex $beginstk 1] - \
+  				$tksol(card.height)]
+      # we divide by 3 here since the bottom stack must be fully visible ...
+      set y_offset [expr $ydistance / 3]
+!     set x [expr round([lindex $beginstk 0])]
+!     set y [expr round([lindex $beginstk 1])]
+      for {set endstk_no 0} {$endstk_no < 4} {incr endstk_no} {
+  	# layout each suit on the canvas
+  	.canvas raise endstk${endstk_no}_Tag all
+***************
+*** 1040,1046 ****
+  	    update idletasks
+  	    incr x $x_offset
+  	}
+! 	set x [lindex $beginstk 0]
+  	incr y [expr round(floor($y_offset))]
+      }
+  
+--- 1043,1049 ----
+  	    update idletasks
+  	    incr x $x_offset
+  	}
+! 	set x [expr round([lindex $beginstk 0])]
+  	incr y [expr round(floor($y_offset))]
+      }
+  
+***************
+*** 1950,1974 ****
+      global tksol
+  
+      # single click on drawleft stack flip the card over to drawright
+!     .canvas bind drawleft_Tag <Any-ButtonPress-1> "MoveRightMany"
+  
+      # single click on flip move all the cards from drawright over
+!     .canvas bind flip_Tag <Any-ButtonPress-1> "MoveLeft"
+  
+      # single click on a facedown card on top of a stack flip it
+!     .canvas bind down_Tag <Any-ButtonPress-1> "FlipUp"
+  
+      # press of button-1 on a faceup card setup the current working stack
+!     .canvas bind up_Tag <Any-ButtonPress-1> "SetupWorkStack %x %y"
+  
+      # motion drags the current working stack around
+!     .canvas bind up_Tag <Any-B1-Motion> "DragWorkStack %x %y"
+  
+      # release of button-1 moves the working stack to a new location (maybe)
+!     .canvas bind up_Tag <Any-ButtonRelease-1> "ProcessWorkStack %x %y"
+  
+      # double click on an up card attempts to move it to the end stack
+!     .canvas bind up_Tag <Any-Double-ButtonPress-1> "ClearWorkStack %x %y"
+  }
+  
+  
+--- 1953,1977 ----
+      global tksol
+  
+      # single click on drawleft stack flip the card over to drawright
+!     .canvas bind drawleft_Tag <ButtonPress-1> {MoveRightMany; break}
+  
+      # single click on flip move all the cards from drawright over
+!     .canvas bind flip_Tag <ButtonPress-1> "MoveLeft"
+  
+      # single click on a facedown card on top of a stack flip it
+!     .canvas bind down_Tag <ButtonPress-1> "FlipUp"
+  
+      # press of button-1 on a faceup card setup the current working stack
+!     .canvas bind up_Tag <ButtonPress-1> "SetupWorkStack %x %y"
+  
+      # motion drags the current working stack around
+!     .canvas bind up_Tag <B1-Motion> "DragWorkStack %x %y"
+  
+      # release of button-1 moves the working stack to a new location (maybe)
+!     .canvas bind up_Tag <ButtonRelease-1> "ProcessWorkStack %x %y"
+  
+      # double click on an up card attempts to move it to the end stack
+!     .canvas bind up_Tag <Double-ButtonPress-1> "ClearWorkStack %x %y"
+  }
+  
+  
