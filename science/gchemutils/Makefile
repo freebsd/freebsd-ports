@@ -7,12 +7,9 @@
 PORTNAME=	gchemutils
 PORTVERSION=	0.2.0
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION} \
-		pav/:local
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,local
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	C++ classes and Gtk2 widgets related to chemistry
