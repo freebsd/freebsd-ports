@@ -7,6 +7,7 @@
 
 PORTNAME=	sodipodi
 PORTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,9 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
 
+BROKEN=		"Requires update for libgnomeprint-2-2"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
