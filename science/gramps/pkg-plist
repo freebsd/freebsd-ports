@@ -1,5 +1,3 @@
-bin/gramps
-lib/gramps/grampslib.so
 share/pixmaps/gramps.png
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
@@ -13,6 +11,7 @@ share/locale/nb/LC_MESSAGES/gramps.mo
 share/locale/it/LC_MESSAGES/gramps.mo
 share/locale/hu/LC_MESSAGES/gramps.mo
 share/locale/fr/LC_MESSAGES/gramps.mo
+share/locale/fi/LC_MESSAGES/gramps.mo
 share/locale/es/LC_MESSAGES/gramps.mo
 share/locale/eo/LC_MESSAGES/gramps.mo
 share/locale/de/LC_MESSAGES/gramps.mo
@@ -48,6 +47,8 @@ share/gnome/gramps/plugins/rel_it.pyo
 share/gnome/gramps/plugins/rel_it.py
 share/gnome/gramps/plugins/rel_hu.pyo
 share/gnome/gramps/plugins/rel_hu.py
+share/gnome/gramps/plugins/rel_fi.pyo
+share/gnome/gramps/plugins/rel_fi.py
 share/gnome/gramps/plugins/rel_de.pyo
 share/gnome/gramps/plugins/rel_de.py
 share/gnome/gramps/plugins/pkgexport.glade
@@ -660,6 +661,8 @@ share/gnome/gramps/AddSpouse.py
 share/gnome/gramps/AddMedia.pyo
 share/gnome/gramps/AddMedia.py
 share/gnome/apps/Applications/gramps.desktop
+lib/gramps/grampslib.so
+bin/gramps
 @dirrm share/gnome/omf/gramps
 @dirrm share/gnome/gramps/plugins
 @dirrm share/gnome/gramps/help/gramps/C/figures
