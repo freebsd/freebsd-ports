@@ -23,7 +23,6 @@ EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	arved@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
 .endif
@@ -31,7 +30,7 @@ LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
 WRKSRC=		${WRKDIR}/BitchX
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-AUTOCONF=	${LOCALBASE}/bin/autoconf
+USE_AUTOCONF_VER=253
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=
@@ -144,9 +143,6 @@ post-extract:
 	@${CP} ${DISTDIR}/freebsd4-tcl83-bx1.0c19-tcl.o ${WRKSRC}/source/tcl.o
 
 .endif
-
-pre-configure:
-	cd ${WRKSRC}/${dir}; ${LOCALBASE}/bin/autoconf
 
 post-install:
 .if !defined(NOPORTDOCS)
