@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/07/24 11:30:27	1.1
++++ Makefile.in	2001/07/24 11:31:08
+@@ -147,7 +147,7 @@
+ 
+ SUBDIRS = po intl src idl pixmaps
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gdfConf.sh
+ 
+ bin_SCRIPTS = gdf-clean.sh
