@@ -77,22 +77,14 @@ create_user() {
 
 create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
-		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd -p -c cyrus
-		if [ `${PKG_PREFIX}/sbin/sasldblistusers | wc -l` -eq 0 ] ; then
+		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd2 -p -c cyrus
+		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ] ; then
                         echo "WARNING: Failed to create ${PKG_PREFIX}/etc/$SASLDB_NAME}"
                 else
-			${PKG_PREFIX}/sbin/saslpasswd -d cyrus
+			${PKG_PREFIX}/sbin/saslpasswd2 -d cyrus
 			chown cyrus:mail ${SASLDB_NAME}
 			chmod 640 ${SASLDB_NAME}
 		fi
-	fi
-}
-
-# This should really be installed by Sendmail
-
-sendmail_conf() {
-	if [ ! -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf ]; then
-		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf
 	fi
 }
 
@@ -103,7 +95,6 @@ case $2 in
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
 			create_sasldb
-			sendmail_conf
 		fi
 		;;
 
