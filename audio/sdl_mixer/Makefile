@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=  	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
 		vorbis.1:${PORTSDIR}/audio/libvorbis
 
