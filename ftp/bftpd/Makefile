@@ -13,7 +13,7 @@ MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
 MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS+=	--enable-pam
+CONFIGURE_ARGS+=	--enable-pam
 USE_GMAKE=	yes
 
 MAN8=		bftpd.8
