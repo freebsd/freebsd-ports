@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libslang
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
 DISTNAME=	slang-${PORTVERSION}
@@ -17,7 +16,6 @@ MAINTAINER=	xaa+ports@madison-gurkha.com
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-#WRKSRC=		${WRKDIR}/slang
 
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
