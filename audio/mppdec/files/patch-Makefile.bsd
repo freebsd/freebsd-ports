@@ -1,11 +1,11 @@
---- Makefile.bsd.orig	Mon May 12 07:55:51 2003
-+++ Makefile.bsd	Mon May 12 07:56:15 2003
+--- Makefile.bsd.orig	Wed Jul 31 00:19:57 2002
++++ Makefile.bsd	Fri Jan 23 10:47:12 2004
 @@ -10,11 +10,11 @@
  #LDADD  += -lossaudio
  
  include version
 -OPTIM    = -O3 -march=pentiumpro -ffast-math -s
-+OPTIM    = -O3 -ffast-math -s
++#OPTIM    = -O3 -ffast-math -s
  
  WARN     =
  
@@ -14,3 +14,17 @@
  
  TARGETS  = mppdec
  
+@@ -38,9 +38,11 @@
+ 	tools.o      \
+ 	wave_out.o   \
+ 	stderr.o     \
+-	cpu_feat.o   \
+-	synthasm.o   \
+ 	_setargv.o   \
++
++.if ${ARCH} == i386
++OBJ+=	cpu_feat.o synthasm.o
++.endif
+ 
+ 
+ all:    $(TARGETS)
