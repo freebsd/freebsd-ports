@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 1999/04/04 19:34:09 proff Exp $
+share/festival/lib/voices/english/don_diphone/diphlocs.txt
+share/festival/lib/voices/english/don_diphone/lpcdiphs.bin
+share/festival/lib/voices/english/don_diphone/festvox/don_diphone.scm
+share/festival/lib/voices/english/don_diphone/COPYING
+@dirrm share/festival/lib/voices/english/don_diphone/festvox
+@dirrm share/festival/lib/voices/english/don_diphone

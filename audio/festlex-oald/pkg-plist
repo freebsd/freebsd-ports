@@ -1,0 +1,12 @@
+@comment $NetBSD: PLIST,v 1.2 1999/10/27 15:41:31 hubertf Exp $
+share/festival/lib/dicts/oald/cuvoald710-0.2.scm
+share/festival/lib/dicts/oald/oald_lts_rules.scm
+share/festival/lib/dicts/oald/oaldlex.scm
+share/festival/lib/dicts/oald/README.oald
+share/festival/lib/dicts/oald/Makefile
+share/festival/lib/dicts/oald/oald_extensions.scm
+share/festival/lib/dicts/oald/oald2ft.tar.gz
+share/festival/lib/dicts/oald/oald-0.4.out
+share/festival/lib/dicts/oald/COPYING
+@dirrm share/festival/lib/dicts/oald
+@dirrm share/festival/lib/dicts

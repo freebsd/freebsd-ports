@@ -1,0 +1,15 @@
+$NetBSD: patch-af,v 1.1 1999/10/11 14:13:49 proff Exp $
+
+--- festival/config/project.mak-dist	Mon Oct 11 21:41:08 1999
++++ festival/config/project.mak	Mon Oct 11 22:27:37 1999
+@@ -70,8 +70,8 @@
+ 
+ # Place where programs are compiled
+ 
+-PROJECT_MAIN_DIR=$(FESTIVAL_HOME)/src/main
+-PROJECT_SCRIPTS_DIR=$(FESTIVAL_HOME)/src/scripts
++PROJECT_MAIN_DIR=$(PKG_FESTIVAL_BUILD_HOME)/src/main
++PROJECT_SCRIPTS_DIR=$(PKG_FESTIVAL_BUILD_HOME)/src/scripts
+ 
+ # Where the main RCS tree is, probably only used within CSTR
+ 

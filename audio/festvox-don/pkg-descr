@@ -1,0 +1,13 @@
+note from the NetBSD maintainer:
+
+This voice uses a very small and efficient pulse-excited LPC diphone
+synthesis method.  It was originally written by Steve Isard.  The
+front end uses the same British English lexicon, intonation and
+duration methods as rab_diphone.
+
+This voice can be activated via (voice_don_diphone).
+
+WWW:  http://www.cstr.ed.ac.uk/projects/festival.html
+
+Trevor Johnson
+trevor@jpj.net

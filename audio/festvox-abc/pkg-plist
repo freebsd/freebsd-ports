@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.2 1999/10/28 00:48:32 hubertf Exp $
+share/festival/lib/voices/spanish/abc_diphone/festvox/abc_diphone.scm
+share/festival/lib/voices/spanish/abc_diphone/festvox/abcdiph.msec
+share/festival/lib/voices/spanish/abc_diphone/group/abc_di_resLPC.group
+@dirrm share/festival/lib/voices/spanish/abc_diphone/festvox
+@dirrm share/festival/lib/voices/spanish/abc_diphone/group
+@dirrm share/festival/lib/voices/spanish/abc_diphone
+@dirrm share/festival/lib/voices/spanish
+@dirrm share/festival/lib/voices
+@dirrm share/festival/lib

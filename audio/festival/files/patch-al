@@ -1,0 +1,16 @@
+$NetBSD: patch-al,v 1.1 2000/05/31 14:51:17 dmcmahill Exp $
+
+work around pmax compiler bug
+
+--- festival/src/modules/Duration/Makefile.orig	Sun May 30 08:07:31 1999
++++ festival/src/modules/Duration/Makefile	Wed May 31 09:22:01 2000
+@@ -51,3 +51,9 @@
+ include $(TOP)/config/common_make_rules
+ 
++ifeq ($(MACHINETYPE),pmax)
++
++duration.o:duration.cc
++	${CXX} -c -fno-implicit-templates -fguiding-decls  -Wall -I../include -I../../../src/include -I../../../../speech_tools/include ${OS_INCLUDES} duration.cc
++
++endif
+ 
