@@ -35,7 +35,7 @@ or if you want to use canna-leim, as follows:
 
 This input-method toggle key-binding is C-\.
 
-And you must use emacs-dl-20.4 (not emacs-20.4!).
+And you must use emacs-dl-20.5 (not emacs-20.5!).
 
 This dynamic loading module sources and emacs20 dynamic loading patch
 is placed on the following URL:

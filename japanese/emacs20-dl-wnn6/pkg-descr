@@ -26,7 +26,7 @@ To use Wnn, put in your $HOME/.emacs as follows:
 
 	(autoload 'egg "egg" "Initialize EGG." t)
 
-and M-x egg on emacs-dl-20.4 (not emacs-20.4!).
+and M-x egg on emacs-dl-20.5 (not emacs-20.5!).
 
 This dynamic loading module sources and emacs20 dynamic loading module patch
 is placed on the following URL:

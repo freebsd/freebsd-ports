@@ -19,7 +19,7 @@ load path) and info path as well.
 editors/emacs : emacs-19.34b
     ${PREFIX}/share/emacs/site-lisp/mew          -> mail/mew         (mew-emacs-1.94)
     ${PREFIX}/share/emacs/info (info path)
-editors/emacs20 : emacs-20.3
+editors/emacs20 : emacs-20.5
     ${PREFIX}/share/emacs/site-lisp/mew          -> mail/mew-emacs20(mew-emacs20-1.94)
     ${PREFIX}/share/emacs/info (info path)
 editors/mule,mule-common;japanese/mule-*;korean/mule-wnn4;chinese/mule-wnn4 : mule-2.3
