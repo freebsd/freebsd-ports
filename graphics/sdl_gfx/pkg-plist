@@ -5,4 +5,4 @@ include/SDL11/SDL_imageFilter.h
 include/SDL11/SDL_rotozoom.h
 lib/libSDL_gfx.a
 lib/libSDL_gfx.so
-lib/libSDL_gfx.so.7
+lib/libSDL_gfx.so.8
