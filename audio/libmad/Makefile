@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmad
-PORTVERSION=	0.15.0b
+PORTVERSION=	0.15.1b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
