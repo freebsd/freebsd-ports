@@ -20,6 +20,7 @@
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += kcfonts
+    SUBDIR += libtabe
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += mule-wnn4
