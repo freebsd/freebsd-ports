@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	docbook-xml
-PORTVERSION= 	4.0
+PORTVERSION= 	4.1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.docbook.org/xml/4.0/
-DISTNAME=	docbkx40
+MASTER_SITES=	http://www.docbook.org/xml/4.1.2/
+DISTNAME=	docbkx412
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -22,7 +22,7 @@ INSTDIR=	${PREFIX}/share/xml
 DTDDIR=		${INSTDIR}/dtd/docbook
 ENTDIR=		${INSTDIR}/entity
 MISCDIR=	${INSTDIR}/misc/docbook
-DTDFILES=	calstblx.dtd dbcentx.mod dbgenent.ent dbhierx.mod \
+DTDFILES=	calstblx.dtd dbcentx.mod dbgenent.mod dbhierx.mod \
 		dbnotnx.mod dbpoolx.mod docbookx.dtd soextblx.dtd
 MISCFILES=	40chg.txt readme.txt
 
