@@ -27,7 +27,7 @@ MLINKS=		idl.1 hidl.1	- irdel.1	- irfeed.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
+.if ${OSVERSION} >= 502000 || ${ARCH} != "i386"
 BROKEN=		"Does not compile"
 .endif
 
