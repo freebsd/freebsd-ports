@@ -159,7 +159,7 @@ post-install:
 	@${MV} ${INSTDB.INS} ${INSTDB.INS}.orig
 	@${SED} -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
 	    ${INSTDB.INS}.orig > ${INSTDB.INS}
-	@${INSTALL_PROGRAM} ${PREFIX}/${SOVERSION}/program/soffice \
+	@${INSTALL_SCRIPT} ${PREFIX}/${SOVERSION}/program/soffice \
 		${PREFIX}/${SOVERSION}/program/spadmin
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
 	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${PREFIX}/${SOVERSION}/program/libXrender.so
