@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1996/12/31 21:31:14 peter Exp $
+# $Id: Makefile,v 1.38 1997/01/10 02:39:48 pst Exp $
 #
 
     SUBDIR += elm
@@ -24,6 +24,7 @@
     SUBDIR += popclient
     SUBDIR += poppassd
     SUBDIR += popper
+    SUBDIR += premail
     SUBDIR += procmail
     SUBDIR += smail
     SUBDIR += xfaces
