@@ -1,11 +1,10 @@
-Napster is a MP3 file sharing, search, and chat client, all rolled
-into one.  With it, you can join a global community of MP3 enthusiasts,
-sharing your MP3 collection with them and downloading from their shared
-MP3 collections.
+Nap is a console Napster client that supports MP3 sharing, search, and
+chatting.  It now defaults to connecting to the OpenNAP network because
+the official Napster.com network has client filters.
 
-For more info on Napster, please visit http://www.napster.com/ and
-http://www.napster.com/FAQ/.
+For more information on OpenNAP, visit http://www.opennap.com/.
 
-WWW: http://www.gis.net/~nite/
+WWW: http://nap.sourceforge.net/
 
-Donald Burr <dburr@FreeBSD.ORG>
+- Pete
+petef@databits.net

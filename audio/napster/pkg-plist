@@ -1,6 +1,4 @@
 bin/nap
-share/nap/nap.conf.dist
-@dirrm share/nap
-%%PORTDOCSshare/doc/nap/NEWS
-%%PORTDOCSshare/doc/nap/README
-%%PORTDOCS@dirrm share/doc/nap
+%%PORTDOCS%%share/doc/nap/NEWS
+%%PORTDOCS%%share/doc/nap/README
+%%PORTDOCS%%@dirrm share/doc/nap
