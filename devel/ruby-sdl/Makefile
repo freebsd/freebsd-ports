@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,16 +23,36 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
 INSTALL_TARGET=	site-install
+
+RD_DOCS_JA=	rubysdl_doc.rd
+
+DOCS_EN=	rubysdl_const_list.txt
+DOCS_JA=	README ${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
+
+post-build:
+.if !defined(NOPORTDOCS)
+.for f in ${RD_DOCS_JA}
+	@cd ${WRKSRC} && ${RUBY_RD} ${f} > ${f:S/.rd$/.html/}
+.endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/ja/
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>
