@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.xtradius.com/files/stable/
 DISTNAME=	xtradius-1.0beta3
 EXTRACT_SUFX=	.tgz
 
+FORBIDDEN=	"Remotely exploitable buffer overflow"
+
 MAINTAINER=	pal@paladin7.net
 
 MAKEFILE=	Makefile.BSD
