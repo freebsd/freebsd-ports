@@ -6,7 +6,7 @@ include/stringprep.h
 lib/libidn.a
 lib/libidn.so
 lib/libidn.so.12
-lib/pkgconfig/libidn.pc
+libdata/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
 %%PORTDOCS%%%%DOCSDIR%%/README
