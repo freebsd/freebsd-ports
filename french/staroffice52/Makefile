@@ -60,9 +60,10 @@ pre-fetch:
 .endif
 
 .if defined(WITH_CDROM)
-do-extract:
-	@${MKDIR} ${WRKSRC}/office52
-	@cd ${WRKSRC}/office52 && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
+do-extract: do-extract-cdrom
+do-extract-cdrom:
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
 .else
 
 do-extract:
