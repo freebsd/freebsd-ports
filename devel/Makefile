@@ -513,6 +513,7 @@
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-Peek
+    SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-Symdump
