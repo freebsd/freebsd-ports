@@ -4404,6 +4404,7 @@ nbench		ports/benchmarks/nbench
 nbsmtp		ports/mail/nbsmtp
 nbtscan		ports/net/nbtscan
 nc		ports/net/nc
+nc6		ports/net/nc6
 ncal		src/usr.bin/ncal
 ncbi-toolkit	ports/biology/ncbi-toolkit
 ncftp		ports/ftp/ncftp
