@@ -50,7 +50,7 @@ LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --enable-lzw
+		--without-gslib
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -76,6 +76,12 @@ CONFIGURE_ARGS+=	--without-threads
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
+.endif
+
+# Produce standard (small) GIFs
+.if defined(HAVE_UNISYS_LICENSE) || \
+    (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
+CONFIGURE_ARGS+=	--enable-lzw
 .endif
 
 # Loadable coders, smaller executable, but PerlMagick not really works

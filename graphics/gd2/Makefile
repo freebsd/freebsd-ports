@@ -41,8 +41,29 @@ MAKE_ARGS+=	-j2
 MAKE_ARGS+=	$v="${$v}"
 .endfor
 
+.if defined(HAVE_UNISYS_LICENSE) || \
+    (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
+WITH_LZW=	yes
+.endif
+
+.if !defined(WITH_LZW)
+pre-fetch:
+	@${ECHO_CMD} "************************************************************"
+	@${ECHO_CMD} "*      If you live outside US and Canada, you can define   *"
+	@${ECHO_CMD} "*      WITH_LZW to enable GIF compression support.         *"
+	@${ECHO_CMD} "************************************************************"
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/g* ${WRKSRC}
+
+post-patch:
+.if !defined(WITH_LZW)
+	${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.nogif && \
+		${SED} -e "s|#define LZW_LICENCED||g" \
+			< ${WRKSRC}/gd_gif_out.c.nogif \
+			> ${WRKSRC}/gd_gif_out.c
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
