@@ -1,0 +1,329 @@
+#-*- mode: Fundamental; tab-width: 4; -*-
+# ex:ts=4
+#
+# bsd.java.mk - Support for Java-based ports.
+#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
+#
+# For FreeBSD committers:
+# Please send all suggested changes to the maintainer instead of committing
+# them to CVS yourself.
+#
+# $FreeBSD$
+#
+
+.if !defined(Java_Include)
+
+Java_Include=				bsd.java.mk
+Java_Include_MAINTAINER=	znerd@FreeBSD.org
+
+.	if defined(USE_JAVA)
+
+
+#-----------------------------------------------------------------------------
+# Stage 1: Define constants
+#
+
+# The complete list of Java versions supported.
+_JAVA_VERSIONS=		1.1 1.2 1.3 1.4
+
+# Set the JAVA_HOME directories for all recognized JDK's
+_JAVA_HOME_FREEBSD_1_1=			${LOCALBASE}/jdk1.1.8
+_JAVA_HOME_FREEBSD_1_2=			${LOCALBASE}/jdk1.2.2
+_JAVA_HOME_FREEBSD_1_3=			${LOCALBASE}/jdk1.3.1
+_JAVA_HOME_BLACKDOWN_LINUX_1_2=	${LOCALBASE}/linux-jdk1.2.2
+_JAVA_HOME_IBM_LINUX_1_3=		${LOCALBASE}/linux-ibm-jdk1.3.0
+_JAVA_HOME_SUN_LINUX_1_3=		${LOCALBASE}/linux-jdk1.3.1
+_JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-jdk1.4.0
+
+# Set the JDK ports for all recognized JDK's
+_JAVA_PORT_FREEBSD_1_1=			java/jdk
+_JAVA_PORT_FREEBSD_1_2=			java/jdk12-beta
+_JAVA_PORT_FREEBSD_1_3=			java/jdk13
+_JAVA_PORT_BLACKDOWN_LINUX_1_2=	java/linux-jdk
+_JAVA_PORT_IBM_LINUX_1_3=		java/linux-ibm-jdk13
+_JAVA_PORT_SUN_LINUX_1_3=		java/linux-jdk13
+_JAVA_PORT_SUN_LINUX_1_4=		java/linux-jdk14
+
+# Set the name of the file that indicates that a JDK is indeed installed, as a
+# relative path within the JAVA_HOME directory.
+JDK_FILE=bin/javac
+
+# Set the path to Jikes and define the Jikes dependency
+_JIKES_PATH=	${LOCALBASE}/bin/jikes
+_DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
+
+
+#-----------------------------------------------------------------------------
+# Stage 2: Deal with JAVA_HOME if it is already set
+#
+
+# See if JAVA_HOME points to a known JDK. If it does, then undefine JAVA_HOME
+# and actually use JAVA_PORT instead, so that we do not screw with our
+# dependencies.
+.		if defined(JAVA_HOME)
+_JAVA_HOME=	${JAVA_HOME}
+.			undef(JAVA_HOME)
+.			if ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_1}
+JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_1}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_2}
+JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_2}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_3}
+JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
+JAVA_PORT=	${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_IBM_LINUX_1_3}
+JAVA_PORT=	${_JAVA_PORT_IBM_LINUX_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_SUN_LINUX_1_3}
+JAVA_PORT=	${_JAVA_PORT_SUN_LINUX_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_SUN_LINUX_1_4}
+JAVA_PORT=	${_JAVA_PORT_SUN_LINUX_1_4}
+.			else
+JAVA_HOME=	${_JAVA_HOME}
+.			endif
+.		endif
+
+
+#-----------------------------------------------------------------------------
+# Stage 3: Decide the exact JDK version if only a minimum version is specified
+#
+
+# If USE_JAVA is 1.1+, 1.2+, 1.3+ or 1.4+, then set it to 1.1, 1.2, 1.3 or
+# 1.4, depending on what JDK's are already installed. The FreeBSD JDK will be
+# preferred. The Sun JDK 1.4 for Linux is always the least preferred JDK.
+# However, the most respected rule is that if a JDK is already installed, then
+# no JDK will be downloaded unless necessary.
+#
+# The following rules will be used, per setting:
+#
+# If the setting is 1.1+, then use an existing 1.2 or 1.3 JDK if installed,
+# otherwise use the JDK 1.1.8 for FreeBSD if it is already installed. If no
+# other JDK than the Sun JDK 1.4 for Linux is installed, then that one will be
+# used. It is the least preferred alternative.
+#
+# If the setting is 1.2+, then use an already installed 1.2, 1.3 or 1.4 JDK.
+# If there is no such JDK, then set USE_JAVA to 1.2. An 1.3 JDK is preferred
+# over 1.2 JDK's.
+#
+# If the setting is 1.3+, then see if the Sun JDK 1.4 for Linux is installed,
+# while no 1.3 JDK's are installed. If that is the case, then USE_JAVA will be
+# set to 1.4. Otherwise it will be set to 1.3. All 1.3 JDK's are currently
+# preferred over a 1.4.0 JDK since it is considered less stable.
+#
+# If the setting is 1.4+, then set it to 1.4 right away. There is no other
+# option at the moment.
+
+.		if (${USE_JAVA} == "1.1+")
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE})
+USE_JAVA=	1.3
+.			elif exists(${_JAVA_HOME_FREEBSD_1_2}/${JDK_FILE}) || \
+			     exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${JDK_FILE})
+USE_JAVA=	1.2
+.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${JDK_FILE})
+USE_JAVA=	1.1
+.			else
+USE_JAVA=	1.4
+.			endif
+
+.		elif (${USE_JAVA} == "1.2+")
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE})
+USE_JAVA=	1.3
+.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4})
+USE_JAVA=	1.2
+.			else
+USE_JAVA=	1.4
+.			endif
+.		elif (${USE_JAVA} == "1.3+")
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE}) || \
+			  !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${JDK_FILE})
+USE_JAVA=	1.3
+.			else
+USE_JAVA=	1.4
+.			endif
+.		elif (${USE_JAVA} == "1.4+")
+USE_JAVA=	1.4
+.		else
+.BEGIN:
+	@${ECHO} "${Java_Include}: Internal error. \"${USE_JAVA}\" is not caught as a valid value for USE_JAVA. Please send an email to ${Java_Include_MAINTAINER} with a detailed description of what you did and what the output was.";
+	@${FALSE}
+.		endif
+
+
+#-----------------------------------------------------------------------------
+# Stage 4: Decide the exact JDK to use.
+#
+
+# Apply different settings for different values of USE_JAVA.
+#
+# If the port needs Java 1.1, then there's only one choice, the JDK 1.1.8 for
+# FreeBSD.
+.		if (${USE_JAVA} == "1.1")
+JAVA_VENDOR=	FreeBSD
+JAVA_VER=		1.1.8
+JAVA_OS=		FreeBSD
+JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_1}
+JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_1}
+
+# If the port needs Java 1.2, then there are 2 choices. They are, in order or
+# preference:
+#
+#    (1) JDK 1.2.2 for FreeBSD
+#    (2) Blackdown JDK 1.2.2 for Linux
+#
+# If the Blackdown JDK 1.2.2 is installed, but the FreeBSD JDK 1.2.2 is *not*
+# installed, then the Blackdown JDK will be used as the dependency. Otherwise
+# the FreeBSD JDK 1.2.2 will be used as the dependency.
+.		elif ${USE_JAVA} == "1.2"
+.			if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_2}/${JDK_FILE})
+JAVA_VENDOR=	Blackdown
+JAVA_VER=		1.2.2
+JAVA_OS=		Linux
+JAVA_HOME=		${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
+JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
+.			else
+JAVA_VENDOR=	FreeBSD
+JAVA_VER=		1.2.2
+JAVA_OS=		FreeBSD
+JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_2}
+JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
+.			endif
+
+# If the port needs Java 1.3, then there are 3 choices. They are, in order or
+# preference:
+#
+#    (1) JDK 1.3.1 for FreeBSD
+#    (2) Sun JDK 1.3.1 for Linux
+#    (3) IBM JDK 1.3.1 for Linux
+#
+# If the FreeBSD JDK 1.3.1 is installed or if none of the 1.3.1 JDK's is
+# installed, then the FreeBSD JDK 1.3.1 is used as a dependency for the port.
+#
+# Otherwise, if the Sun JDK 1.3.1 is already installed, then that will be
+# used. If it is not installed, but the IBM JDK 1.3.1 is installed, then that
+# one will be used.
+.		elif ${USE_JAVA} == "1.3"
+.			if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})
+JAVA_VENDOR=	IBM
+JAVA_VER=		1.3.1
+JAVA_OS=		Linux
+JAVA_HOME=		${_JAVA_HOME_IBM_LINUX_1_3}
+JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_3}
+.			elif exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})
+JAVA_VENDOR=	Sun
+JAVA_VER=		1.3.1
+JAVA_OS=		Linux
+JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_3}
+JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_3}
+.			else
+JAVA_VENDOR=	FreeBSD
+JAVA_VER=		1.3.1
+JAVA_OS=		FreeBSD
+JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_3}
+JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_3}
+.			endif
+
+# If the port needs JDK 1.4, then there's currently only one choice, the Sun
+# JDK 1.4.0 for Linux.
+.		elif ${USE_JAVA} == "1.4"
+JAVA_VENDOR=	Sun
+JAVA_VER=		1.4.0
+JAVA_OS=		Linux
+JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_4}
+JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
+.		else
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${USE_JAVA}\" is not a valid value for USE_JAVA. It should be one of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
+	@${FALSE}
+.		endif
+
+
+#-----------------------------------------------------------------------------
+# Stage 5: Define all settings for the port to use
+
+# At this stage JAVA_HOME is definitely given a value. JAVA_PORT may or may
+# not be defined.
+
+# Define the location of the Java compiler. If USE_JIKES is set to YES, then
+# use Jikes. If USE_JIKES is set to NO, then don't use it. If it is set to a
+# different value, then fail with an error message. Otherwise USE_JIKES is not
+# set, in which case it is checked if Jikes is already installed. If it is,
+# then it will be used, otherwise it will not be used.
+.		undef JAVAC
+.		if defined(USE_JIKES)
+.			if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
+JAVAC=		${_JIKES_PATH}
+WITH_JIKES=	YES
+.			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+	@${FALSE}
+.			endif
+.		elif exists(${_JIKES_PATH})
+JAVAC=		${_JIKES_PATH}
+WITH_JIKES=	YES
+.		endif
+.		if !defined(JAVAC)
+JAVAC=	${JAVA_HOME}/bin/javac
+.		endif
+
+.		if ${JAVAC} == ${_JIKES_PATH}
+.			if !defined(NO_BUILD_DEPENDS_JAVA)
+BUILD_DEPENDS+=		${_DEPEND_JIKES}
+.			endif
+.			if !defined(NO_RUN_DEPENDS_JAVA)
+RUN_DEPENDS+=		${_DEPEND_JIKES}
+.			endif
+.		endif
+
+# Define the location of some more executables.
+APPLETVIEWER=	${JAVA_HOME}/bin/appletviewer
+JAR=			${JAVA_HOME}/bin/jar
+JAVA=			${JAVA_HOME}/bin/java
+JAVADOC=		${JAVA_HOME}/bin/javadoc
+JAVAH=			${JAVA_HOME}/bin/javah
+JAVAP=			${JAVA_HOME}/bin/javap
+JAVA_N2A=		${JAVA_HOME}/bin/native2ascii
+JAVA_SERIALVER=	${JAVA_HOME}/bin/serialver
+RMIC=			${JAVA_HOME}/bin/rmic
+RMIREGISTRY=	${JAVA_HOME}/bin/rmiregistry
+
+# Some executables only exists in JDK 1.2 and up
+.		if defined(USE_JAVA) && ${USE_JAVA} != 1.1
+JAVA_KEYTOOL=		${JAVA_HOME}/bin/keytool
+JAVA_POLICYTOOL=	${JAVA_HOME}/bin/policytool
+RMID=				${JAVA_HOME}/bin/rmid
+.		endif
+
+# Set the location of the ZIP or JAR file with all standard Java classes.
+.		if defined(USE_JAVA) && ${USE_JAVA} == "1.1"
+JAVA_CLASSES=	${JAVA_HOME}/lib/classes.zip
+.		else
+JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
+.		endif
+
+# Add the Java port to the dependencies
+.		if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+	@${FALSE}
+.		endif
+_DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
+.		if !defined(JAVA_NO_BUILD_DEPENDS)
+BUILD_DEPENDS+=		${_DEPEND_JAVA}
+.BEGIN:
+.		endif
+.		if !defined(JAVA_NO_RUN_DEPENDS)
+RUN_DEPENDS+=		${_DEPEND_JAVA}
+.		endif
+.	endif
+.endif

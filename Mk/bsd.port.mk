@@ -782,6 +782,10 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
+.if defined(USE_JAVA)
+.include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
+
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
