@@ -7,6 +7,7 @@ sbin/zoneserver
 %%PORTDOCS%%share/doc/maradns/TODO.done
 %%PORTDOCS%%share/doc/maradns/TODO.first
 %%PORTDOCS%%share/doc/maradns/TODO.second
+%%PORTDOCS%%share/doc/maradns/TODO.third
 %%PORTDOCS%%share/doc/maradns/en/QuickStart
 %%PORTDOCS%%share/doc/maradns/en/README
 %%PORTDOCS%%share/doc/maradns/en/examples/example_authoritative_mararc.txt
