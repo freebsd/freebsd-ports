@@ -8,6 +8,6 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/c4.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
-share/locale/sv/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gsasl.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
