@@ -1,6 +1,17 @@
---- Makefile.0	Wed Nov 12 01:22:21 1997
-+++ Makefile	Mon Jul 13 11:02:39 1998
-@@ -37,7 +37,7 @@
+--- Makefile.orig	Thu Jan  4 16:53:08 2001
++++ Makefile	Thu Feb  1 22:13:36 2001
+@@ -1,8 +1,8 @@
+ # Makefile for jam
+ 
+-CC = cc
++#CC = cc
+ TARGET = -o jam0
+-CFLAGS =
++#CFLAGS =
+ 
+ # Special flavors - uncomment appropriate lines
+ 
+@@ -54,7 +54,7 @@
  	rules.c scan.c search.c timestamp.c variable.c
  
  all: jam0

@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	jam
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-HTML_DOCS_DIR=	${PREFIX}/share/doc/jam
-HTML_DOCS=	Jam.html Jambase.html Jamfile.html Jamlang.html
+NO_WRKSUBDIR=	yes
+USE_ZIP=	yes
 
 do-install:
-	(cd ${WRKSRC}; \
-	 ./jam0 install; \
-	 ${MKDIR} ${HTML_DOCS_DIR}; \
-	 ${INSTALL_MAN} ${HTML_DOCS} ${HTML_DOCS_DIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/bin.freebsd/jam ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/jam
+	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/jam
+.endif
 
 .include <bsd.port.mk>

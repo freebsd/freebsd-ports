@@ -1,6 +1,5 @@
 bin/jam
-share/doc/jam/Jam.html
-share/doc/jam/Jambase.html
-share/doc/jam/Jamfile.html
-share/doc/jam/Jamlang.html
-@dirrm share/doc/jam
+%%PORTDOCS%%share/doc/jam/Jam.html
+%%PORTDOCS%%share/doc/jam/Jambase.html
+%%PORTDOCS%%share/doc/jam/Jamfile.html
+%%PORTDOCS%%@dirrm share/doc/jam
