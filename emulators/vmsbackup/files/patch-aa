@@ -1,0 +1,43 @@
+*** Makefile	Tue Jun 13 04:49:54 1989
+--- ../../src/Makefile	Tue Apr 18 20:43:30 1995
+***************
+*** 6,22 ****
+  CFLAGS= $(SWAP) $(REMOTE) -O
+  LFLAGS=
+! LIBS= -lrmt   			# remote magtape library
+! OWNER=tar			# user for remote tape access
+! MODE=4755
+  BINDIR=/usr/local/bin
+! MANSEC=l
+! MANDIR=/usr/man/man$(MANSEC)
+  
+- #
+  vmsbackup: vmsbackup.o match.o
+! 	cc $(LFLAGS) -o vmsbackup vmsbackup.o match.o -lV
+  install:
+  	install -m $(MODE) -o $(OWNER) -s vmsbackup $(BINDIR)	
+! 	cp vmsbackup.1 $(MANDIR)/vmsbackup.$(MANSEC)
+  clean:
+  	rm -f vmsbackup *.o core
+--- 6,26 ----
+  CFLAGS= $(SWAP) $(REMOTE) -O
+  LFLAGS=
+! #	LIBS= -lrmt   			# remote magtape library
+! OWNER=bin			# user for remote tape access
+! MODE=755
+  BINDIR=/usr/local/bin
+! MANSEC=1
+! MANDIR=/usr/local/man/man$(MANSEC)
+! 
+! all:	vmsbackup
+  
+  vmsbackup: vmsbackup.o match.o
+! 	cc $(LFLAGS) -o vmsbackup vmsbackup.o match.o
+! 
+  install:
+  	install -m $(MODE) -o $(OWNER) -s vmsbackup $(BINDIR)	
+! 	gzip vmsbackup.1
+! 	cp vmsbackup.1.gz $(MANDIR)
+! 
+  clean:
+  	rm -f vmsbackup *.o core
