@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	2.3.12
+PORTVERSION=	3.4.2
 CATEGORIES=	mail kde
-MASTER_SITES=	http://granroth.kde.org/kbiff/
+MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
 MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-USE_KDELIBS_VER=1
+USE_KDELIBS_VER=2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
