@@ -8295,6 +8295,7 @@ wmwork		ports/misc/wmwork
 wmx		ports/x11-wm/wmx
 wmx10		ports/misc/wmx10
 wmxss		ports/x11/wmxss
+wmymail		ports/mail/wmymail
 wmzazof		ports/sysutils/wmzazof
 wol		ports/net/wol
 wolfpack	ports/games/wolfpack
