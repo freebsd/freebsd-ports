@@ -10,27 +10,27 @@ lib/jpilot/plugins/libkeyring.so.0
 lib/jpilot/plugins/libsynctime.la
 lib/jpilot/plugins/libsynctime.so
 lib/jpilot/plugins/libsynctime.so.0
-%%PORTDOCS%%share/doc/jpilot/AUTHORS
-%%PORTDOCS%%share/doc/jpilot/BUGS
-%%PORTDOCS%%share/doc/jpilot/COPYING
-%%PORTDOCS%%share/doc/jpilot/ChangeLog
-%%PORTDOCS%%share/doc/jpilot/INSTALL
-%%PORTDOCS%%share/doc/jpilot/README
-%%PORTDOCS%%share/doc/jpilot/README.icons
-%%PORTDOCS%%share/doc/jpilot/TODO
-%%PORTDOCS%%share/doc/jpilot/UPGRADING
-%%PORTDOCS%%share/doc/jpilot/jpilot-address.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-datebook.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-expense.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-install.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-memo.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-prefs.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-print.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-search.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-todo.png
-%%PORTDOCS%%share/doc/jpilot/jpilot-toplogo.jpg
-%%PORTDOCS%%share/doc/jpilot/manual.html
-%%PORTDOCS%%share/doc/jpilot/plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.icons
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-address.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-datebook.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-expense.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-install.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-memo.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-prefs.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-print.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-search.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-todo.png
+%%PORTDOCS%%%%DOCSDIR%%/jpilot-toplogo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin.html
 share/gnome/apps/Applications/jpilot.desktop
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
@@ -65,7 +65,7 @@ share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot/icons
 @dirrm share/jpilot
-%%PORTDOCS%%@dirrm share/doc/jpilot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/jpilot/plugins
 @dirrm lib/jpilot
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true

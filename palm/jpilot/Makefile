@@ -7,8 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.6
-PORTREVISION=	2
+PORTVERSION=	0.99.7
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
@@ -55,28 +54,28 @@ post-install:
 	${CP} ${WRKSRC}/jpilotrc.purple ${PREFIX}/share/jpilot
 	${CP} ${WRKSRC}/jpilotrc.steel ${PREFIX}/share/jpilot
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/manual.html ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/plugin.html ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/BUGS ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/COPYING ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/README ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/TODO ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/UPGRADING ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-address.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-datebook.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-expense.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-install.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-memo.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-prefs.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-print.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-search.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-todo.png ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/docs/jpilot-toplogo.jpg ${PREFIX}/share/doc/jpilot
-	${CP} ${WRKSRC}/icons/README ${PREFIX}/share/doc/jpilot/README.icons
+	${MKDIR} ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/manual.html ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/plugin.html ${DOCSDIR}
+	${CP} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${CP} ${WRKSRC}/BUGS ${DOCSDIR}
+	${CP} ${WRKSRC}/COPYING ${DOCSDIR}
+	${CP} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${CP} ${WRKSRC}/INSTALL ${DOCSDIR}
+	${CP} ${WRKSRC}/README ${DOCSDIR}
+	${CP} ${WRKSRC}/TODO ${DOCSDIR}
+	${CP} ${WRKSRC}/UPGRADING ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-address.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-datebook.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-expense.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-install.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-memo.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-prefs.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-print.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-search.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-todo.png ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/jpilot-toplogo.jpg ${DOCSDIR}
+	${CP} ${WRKSRC}/icons/README ${DOCSDIR}/README.icons
 .endif
 
 .include <bsd.port.mk>
