@@ -7,7 +7,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		1.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://www.fcusack.com/soft/
 
