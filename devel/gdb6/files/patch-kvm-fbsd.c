@@ -1,6 +1,6 @@
---- /dev/null	Mon Oct 21 01:38:23 2002
-+++ gdb/kvm-fbsd.c	Mon Oct 21 01:37:48 2002
-@@ -0,0 +1,743 @@
+--- gdb/kvm-fbsd.c	Fri Jan  3 08:57:23 2003
++++ gdb/kvm-fbsd.c	Fri Jan  3 08:57:20 2003
+@@ -0,0 +1,756 @@
 +/* Kernel core dump functions below target vector, for GDB.
 +   Copyright 1986, 1987, 1989, 1991, 1992, 1993, 1994, 1995
 +   Free Software Foundation, Inc.
@@ -22,7 +22,7 @@
 +Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 +*/
 +
-+/* $FreeBSD: /tmp/pcvs/ports/devel/gdb6/files/Attic/patch-kvm-fbsd.c,v 1.3 2002-10-21 21:29:09 mp Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/devel/gdb6/files/Attic/patch-kvm-fbsd.c,v 1.4 2003-01-04 20:19:55 mp Exp $ */
 +
 +/*
 + * This works like "remote" but, you use it like this:
@@ -62,6 +62,7 @@
 +#include "gdbcore.h"
 +#include "regcache.h"
 +
++#if __FreeBSD_version >= 500032
 +static void
 +kcore_files_info (struct target_ops *);
 +
@@ -719,10 +720,21 @@
 +  if (set_context ((CORE_ADDR) val))
 +    error ("invalid proc address");
 +}
++#else
++int kernel_debugging = 0;
++int kernel_writablecore = 0;
++
++CORE_ADDR
++fbsd_kern_frame_saved_pc (struct frame_info *fi)
++{
++  return 0;
++}
++#endif
 +
 +void
 +_initialize_kcorelow (void)
 +{
++#if __FreeBSD_version >= 500032
 +  kcore_ops.to_shortname = "kcore";
 +  kcore_ops.to_longname = "Kernel core dump file";
 +  kcore_ops.to_doc =
@@ -743,5 +755,5 @@
 +
 +  add_target (&kcore_ops);
 +  add_com ("proc", class_obscure, set_proc_cmd, "Set current process context");
++#endif
 +}
-
