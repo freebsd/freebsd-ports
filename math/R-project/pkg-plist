@@ -3,7 +3,6 @@ bin/Rd2txt
 bin/Rdconv
 bin/Rdindex
 bin/Sd2Rd
-info/dir
 lib/R/bin/R.binary
 lib/R/bin/R
 lib/R/bin/BATCH

@@ -2,4 +2,3 @@ bin/wdiff
 @unexec install-info --delete %D/info/wdiff.info %D/info/dir
 info/wdiff.info
 @exec install-info %D/info/wdiff.info %D/info/dir
-info/dir
