@@ -25,7 +25,6 @@
     SUBDIR += hanyangfonts
     SUBDIR += hcode
     SUBDIR += helvis
-    SUBDIR += hlatex-wansungstd
     SUBDIR += hlatexfonts-ocf
     SUBDIR += hlatexp
     SUBDIR += hlatexp-pkfonts300
