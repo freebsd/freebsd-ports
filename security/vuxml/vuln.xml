@@ -32,6 +32,73 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="09d418db-70fd-11d8-873f-0020ed76ef5a">
+    <topic>Apache 1.3 IP address access control failure on some 64-bit
+      platforms</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<name>apache+ipv6</name>
+	<name>apache+ssl</name>
+	<name>apache+mod_ssl</name>
+	<range><lt>1.3.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Henning Brauer discovered a programming error in Apache
+          1.3's mod_access that results in the netmasks in IP address
+          access control rules being interpreted incorrectly on
+          64-bit, big-endian platforms.  In some cases, this could
+          cause a `deny from' IP address access control rule including
+          a netmask to fail.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0993</cvename>
+      <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
+      <url>http://www.apacheweek.com/features/security-13</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</url>
+    </references>
+    <dates>
+      <discovery>2004-03-07</discovery>
+      <entry>2004-03-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="492f8896-70fa-11d8-873f-0020ed76ef5a">
+    <topic>Apache 2 mod_ssl denial-of-service</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><ge>2.0</ge><le>apache-2.0.48_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jon Orton reports a memory leak in Apache 2's mod_ssl.
+          A remote attacker may issue HTTP requests on an HTTPS
+          port, causing an error.  Due to a bug in processing this
+          condition, memory associated with the connection is
+          not freed.  Repeated requests can result in consuming
+          all available memory resources, probably resulting in
+          termination of the Apache process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0113</cvename>
+      <url>http://www.apacheweek.com/features/security-20</url>
+      <url>http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&amp;r2=1.100.2.12</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=27106</url>
+    </references>
+    <dates>
+      <discovery>2004-02-20</discovery>
+      <entry>2004-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9fccad5a-7096-11d8-873f-0020ed76ef5a">
     <topic>mpg123 vulnerabilities</topic>
     <affects>
@@ -56,7 +123,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2003-01-16</discovery>
-      <entry>2004-03-08</entry>
+      <entry>2004-03-07</entry>
     </dates>
   </vuln>
 
