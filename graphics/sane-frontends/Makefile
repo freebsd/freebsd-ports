@@ -4,7 +4,7 @@
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.9 1998/09/22 22:55:54 asami Exp $
+# $Id: Makefile,v 1.10 1998/10/05 03:04:00 steve Exp $
 #
 
 DISTNAME=       sane-0.74
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
 MAINTAINER=	gary@hotlava.com
+
+BROKEN_ELF=	build
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
