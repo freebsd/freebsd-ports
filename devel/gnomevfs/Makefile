@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomevfs
-PORTVERSION=	0.2
+PORTVERSION=	0.3.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-vfs

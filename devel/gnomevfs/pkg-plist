@@ -9,6 +9,7 @@ etc/vfscorbaConf.sh
 etc/vfspthreadConf.sh
 include/libgnomevfs/gnome-vfs-async-ops.h
 include/libgnomevfs/gnome-vfs-backend.h
+include/libgnomevfs/gnome-vfs-cancellable-ops.h
 include/libgnomevfs/gnome-vfs-cancellation.h
 include/libgnomevfs/gnome-vfs-configuration.h
 include/libgnomevfs/gnome-vfs-constants.h
@@ -17,6 +18,7 @@ include/libgnomevfs/gnome-vfs-directory-filter.h
 include/libgnomevfs/gnome-vfs-directory-list.h
 include/libgnomevfs/gnome-vfs-directory.h
 include/libgnomevfs/gnome-vfs-file-info.h
+include/libgnomevfs/gnome-vfs-file-size.h
 include/libgnomevfs/gnome-vfs-find-directory.h
 include/libgnomevfs/gnome-vfs-handle.h
 include/libgnomevfs/gnome-vfs-inet-connection.h
@@ -35,7 +37,6 @@ include/libgnomevfs/gnome-vfs-module-shared.h
 include/libgnomevfs/gnome-vfs-module.h  
 include/libgnomevfs/gnome-vfs-ops.h
 include/libgnomevfs/gnome-vfs-parse-ls.h
-include/libgnomevfs/gnome-vfs-private-ops.h
 include/libgnomevfs/gnome-vfs-private-types.h
 include/libgnomevfs/gnome-vfs-private-utils.h
 include/libgnomevfs/gnome-vfs-private.h
@@ -71,6 +72,7 @@ lib/vfs/extfs/patchfs
 lib/vfs/extfs/rar
 lib/vfs/extfs/rpm
 lib/vfs/extfs/rpms
+lib/vfs/extfs/tar
 lib/vfs/extfs/trpm
 lib/vfs/extfs/zip
 lib/vfs/extfs/zoo
@@ -97,9 +99,11 @@ share/locale/el/LC_MESSAGES/gnome-vfs.mo
 share/locale/fr/LC_MESSAGES/gnome-vfs.mo
 share/locale/gl/LC_MESSAGES/gnome-vfs.mo
 share/locale/hu/LC_MESSAGES/gnome-vfs.mo
+share/locale/it/LC_MESSAGES/gnome-vfs.mo
 share/locale/ja/LC_MESSAGES/gnome-vfs.mo
 share/locale/ko/LC_MESSAGES/gnome-vfs.mo
 share/locale/lt/LC_MESSAGES/gnome-vfs.mo
+share/locale/nl/LC_MESSAGES/gnome-vfs.mo
 share/locale/no/LC_MESSAGES/gnome-vfs.mo
 share/locale/pl/LC_MESSAGES/gnome-vfs.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-vfs.mo
@@ -109,7 +113,9 @@ share/locale/sv/LC_MESSAGES/gnome-vfs.mo
 share/locale/tr/LC_MESSAGES/gnome-vfs.mo
 share/locale/uk/LC_MESSAGES/gnome-vfs.mo  
 @dirrm lib/vfs/modules
+@dirrm lib/vfs/include
 @dirrm lib/vfs/extfs
+@dirrm lib/vfs
 @dirrm include/libgnomevfs
 @dirrm etc/vfs/modules
 @dirrm etc/vfs
