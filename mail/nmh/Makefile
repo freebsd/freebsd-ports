@@ -30,20 +30,32 @@
 # NMH_LOCKING - specify the style of locking to be used by nmh for the
 #           users' spool files (e.g. the 'inc' command). Must match the
 #           locking style used by your MTA - the default is FLOCK_LOCKING
-#           (the documented behavior for the 'mail.local' delivery
-#           program).
+#           (the documented behavior for the 'mail.local' delivery program).
+#           Do a 'make patch', then look in the source directory (currently
+#           the config.h.in file) for more information on different locking
+#           settings. Current valid settings are:
+#             DOT_LOCKING FCNTL_LOCKING LOCKF_LOCKING FLOCK_LOCKING
+#
+# NMH_MASQUERADE - specify the type(s) of masquerading to allow.  This
+#           is passed through to nmh's "--enable-masquerade" configure
+#           option and the current syntax for that string is:
+#             'draft_from[ mmailid[ username_extension]]'
+#
+# NMH_SMTPSERVERS - specify a blank-separated list of SMTP servers -
+#           passed through to nmh's configure scripts '--with-smtpservers'
+#           option.
 #
 
 PORTNAME=	nmh
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		http://people.FreeBSD.org/~jkoshy/PORTS/
 
-MAINTAINER=     Scott.Blachowicz@seaslug.org
+MAINTAINER=	Scott.Blachowicz@seaslug.org
 
-USE_AUTOCONF=   yes
-CONFIGURE_ARGS= --libdir=${PREFIX}/libexec/nmh \
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
 .ifdef NMH_MTS
 CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
@@ -51,34 +63,37 @@ CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
 .ifdef NMH_EDITOR
 CONFIGURE_ARGS+= --with-editor=${NMH_EDITOR}
 .endif
+.ifdef NMH_MASQUERADE
+CONFIGURE_ARGS+= --enable-masquerade="${NMH_MASQUERADE}"
+.endif
 .ifdef NMH_PAGER
 CONFIGURE_ARGS+= --with-pager=${NMH_PAGER}
+.endif
+.ifdef NMH_SMTPSERVERS
+CONFIGURE_ARGS+= --with-smtpservers="${NMH_SMTPSERVERS}"
 .endif
 
 .ifndef NMH_LOCKING
 NMH_LOCKING=FLOCK_LOCKING
 .endif
-CFLAGS+= -D$(NMH_LOCKING)
+CFLAGS+= -D${NMH_LOCKING}
 
-MAN1= ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
-      inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
-      mhn.1 mhparam.1 mhpath.1 mhshow.1 mhstore.1 msgchk.1 msh.1 \
-      next.1 nmh.1 packf.1 pick.1 prev.1 prompter.1 rcvdist.1 \
-      rcvpack.1 rcvstore.1 rcvtty.1 refile.1 repl.1 rmf.1 rmm.1 \
-      scan.1 send.1 sendfiles.1 show.1 slocal.1 sortm.1 \
-      vmh.1 whatnow.1 whom.1
+MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
+	inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
+	mhn.1 mhparam.1 mhpath.1 mhshow.1 mhstore.1 msgchk.1 msh.1 \
+	next.1 nmh.1 packf.1 pick.1 prev.1 prompter.1 rcvdist.1 \
+	rcvpack.1 rcvstore.1 rcvtty.1 refile.1 repl.1 rmf.1 rmm.1 \
+	scan.1 send.1 sendfiles.1 show.1 slocal.1 sortm.1 \
+	vmh.1 whatnow.1 whom.1
 
-MAN5= mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
-      mh-sequence.5 mh-tailor.5
-MLINKS= mh-profile.5 mh_profile.5
+MAN5=	mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
+	mh-sequence.5 mh-tailor.5
+MLINKS=	mh-profile.5 mh_profile.5
 
-MAN8= ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
-
-pre-configure:
-	cd ${WRKSRC}; chmod +w configure
+MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
 
 post-install:
-	@PKG_PREFIX='${PREFIX}' sh ${PKGDIR}/INSTALL
+	@PKG_PREFIX='${PREFIX}' ${SH} ${PKGDIR}/INSTALL
 	chgrp mail ${PREFIX}/bin/inc
 	${CHMOD} g+s ${PREFIX}/bin/inc
 

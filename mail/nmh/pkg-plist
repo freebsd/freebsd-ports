@@ -54,6 +54,8 @@ etc/nmh/rcvdistcomps
 etc/nmh/rcvdistcomps.outbox
 etc/nmh/replcomps
 etc/nmh/replgroupcomps
+etc/nmh/scan.MMDDYY
+etc/nmh/scan.YYYYMMDD
 etc/nmh/scan.default
 etc/nmh/scan.mailx
 etc/nmh/scan.nomime
