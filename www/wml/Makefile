@@ -18,9 +18,8 @@ MAINTAINER=	rse@engelschall.com
 .include <bsd.port.pre.mk>
 
 USE_PERL5=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-perl=${PERL5}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-perl=${PERL5}
 
 CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
 	wml_aux_wwwtable.1 wml_p2_mhc.1 wml_p4_gm4.1

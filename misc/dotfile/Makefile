@@ -20,15 +20,17 @@ MAN1=		dotfile.1
 
 NO_BUILD=	yes
 
-.if !defined(DISPLAY)
-BROKEN=		requires X display
-.endif
-
 post-configure:
 	@(cd ${WRKSRC}/Modules/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+
+.if !defined(DISPLAY)
+PLIST=		${WRKDIR}/PLIST
+pre-install:
+	@${CAT} ${PKGDIR}/PLIST | ${SED} -e '/fvwm.\/bytecompile/d' > ${PLIST}
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}

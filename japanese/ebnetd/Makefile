@@ -19,8 +19,6 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${VARDIR} --with-eb --with-zlib \
 		--with-eb-includes=${PREFIX}/include \
 		--with-eb-libraries=${PREFIX}/lib
-CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DATA="${INSTALL_DATA}"
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	Maybe_interactive_at_install_stage

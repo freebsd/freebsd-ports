@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-2.5.x/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

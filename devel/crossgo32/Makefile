@@ -13,12 +13,12 @@ PKGNAME=	crossgo32-1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cygnus.com/pub/embedded/crossgcc/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --target=${TARGET}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes
 TARGET= 	i386-go32
 
