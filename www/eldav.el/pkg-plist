@@ -8,5 +8,3 @@ share/emacs/site-lisp/vc-eldav.el
 @unexec rm %D/lib/xemacs/site-lisp/vc-eldav.el
 @unexec rmdir %D/lib/xemacs/site-lisp
 @unexec rmdir %D/lib/xemacs
-@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/emacs 2>/dev/null || true
