@@ -13,3 +13,9 @@ rl_get_screen_size (int *rows, int *cols)
   if (rows) *rows = screenheight;
   if (cols) *cols = screenwidth;
 }
+
+#if 0
+#define	savestring
+#include <readline/readline.h>
+#undef	savestring
+#endif
