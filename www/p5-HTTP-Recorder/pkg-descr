@@ -1,7 +1,7 @@
-This module implements a HTTP proxy, using a HTTP::Daemon to accept client
-connections, and a LWP::UserAgent to ask for the requested pages.
+Set HTTP::Recorder as the user agent for a proxy, and it rewrites HTTP
+responses so that additional requests can be recorded.
 
-The most interesting feature of this proxy object is its hability to filter the
-HTTP requests and responses through user-defined filters.
+Then, tell your web browser to use this proxy, and the script will be recorded
+in the specified file.
 
-WWW: http://search.cpan.org/dist/HTTP-Proxy/
+WWW: http://search.cpan.org/dist/HTTP-Recorder/
