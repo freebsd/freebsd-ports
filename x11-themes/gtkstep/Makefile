@@ -8,7 +8,7 @@
 
 DISTNAME=	gtkstep-2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ulli.linuxbox.com/gtkstep/
+MASTER_SITES=	http://ulli.linuxave.net/gtkstep/
 
 MAINTAINER=	ports@FreeBSD.org
 
