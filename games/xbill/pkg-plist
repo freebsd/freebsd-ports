@@ -63,3 +63,6 @@ share/xbill/bitmaps/os2.xbm
 share/xbill/bitmaps/redhat.xbm
 share/xbill/bitmaps/sgi.xbm
 share/xbill/bitmaps/sun.xbm
+@dirrm share/xbill/bitmaps
+@dirrm share/xbill/pixmaps
+@dirrm share/xbill
