@@ -3,14 +3,14 @@
 # Date created:		05 August 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/06 22:54:18 sada Exp $
+# $Id: Makefile,v 1.2 1999/01/07 20:59:07 sada Exp $
 #
 
 DISTNAME=	checkpassword-0.81
 CATEGORIES=	security
 MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/ \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/ \
-		http://WWW.jp.FreeBSD.ORG/~sada/distfiles/
+		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	sada@FreeBSD.ORG
 
