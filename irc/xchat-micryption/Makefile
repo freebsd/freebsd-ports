@@ -1,4 +1,4 @@
-# New ports collection makefile for:	waste server
+# New ports collection makefile for:	XChat encryption
 # Date created:		Sat Jan  8 21:48:41 UTC 2005
 # Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
