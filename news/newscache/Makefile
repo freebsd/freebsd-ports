@@ -7,6 +7,7 @@
 
 PORTNAME=	newscache
 PORTVERSION=	1.1.12
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/ \
 		http://www.infosys.tuwien.ac.at/NewsCache/download/
