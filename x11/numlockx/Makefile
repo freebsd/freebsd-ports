@@ -7,6 +7,7 @@
 
 PORTNAME=	numlockx
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
 	http://dforce.sh.cvut.cz/~seli/en/numlockx/
@@ -14,9 +15,7 @@ MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
 
-BROKEN=		Package build fails, will be removed after Feb 2
-
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 # Needed for the "configure" program to find XTest and XKB header files
