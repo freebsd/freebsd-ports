@@ -17,6 +17,7 @@ COMMENT=	Internet Go Server client and game editor
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_AUTOMAKE=	yes
 ALL_TARGET=
 MAN6=		cgoban.6
 
