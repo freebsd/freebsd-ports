@@ -11,7 +11,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://scrollz.broken.com/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	eviilboy@cox.net
 
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
