@@ -7,7 +7,7 @@
 
 PORTNAME=	vsftpd
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
@@ -33,6 +33,8 @@ do-configure:
 		${WRKSRC}/builddefs.h
 	${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
+	${REINPLACE_CMD} -e "s=/etc/v=${PREFIX}/etc/v=" \
+		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${PREFIX}/libexec/
