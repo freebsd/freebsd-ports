@@ -1,0 +1,18 @@
+`chpp' is a preprocessor. Therefore, its main purpose is to modify
+input text by including other input files and by macro expansion.
+
+What distinguishes `chpp' from other textprocessors are mainly two
+features:
+
+* `chpp' is non-intrusive. This means that you can take your
+     favourite text and it is very unlikely that it will be changed when
+     piped through `chpp'. Due to this feature it is pretty easy to
+     start using `chpp' since you can just start writing your text and
+     need not concern yourself with `chpp' sitting in the background
+     changing it for no obvious reason.
+
+* `chpp' is not just a package for performing simple macro expansion,
+     but can indeed be considered a full-fledged programming language.
+     Most importantly, it provides support for complex data structures,
+     namely lists and hashes (associative arrays), which can be nested
+     arbitrarily.
