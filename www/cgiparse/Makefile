@@ -9,7 +9,7 @@ PORTNAME=	cgiparse
 PORTVERSION= 	0.8e
 CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/	\
-		http://d182-89.uoregon.edu/~jmg/
+		http://www.funkthat.com/~jmg/
 
 MAINTAINER=	jmg@FreeBSD.org
 
