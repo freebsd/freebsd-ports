@@ -3,7 +3,7 @@
 # Date created:		17 April 1998
 # Whom:			sada
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/25 22:06:49 kuriyama Exp $
 #
 
 DISTNAME=	vje
@@ -17,7 +17,7 @@ MAINTAINER=	sada@e-mail.ne.jp
 
 DIST_SUBDIR=	${PKGNAME}
 NO_BUILD=	yes
-RESTRICTED=	Redistribution is forbidden.
+RESTRICTED=	Redistribution is forbidden
 
 INSTALL_DIR=	${PREFIX}/vje
 DOC_DIR=	${PREFIX}/share/doc/${PKGNAME}
