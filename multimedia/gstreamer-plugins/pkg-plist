@@ -1,5 +1,9 @@
 bin/gst-launch-ext
 bin/gst-visualise
+etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/default/%gconf.xml
+etc/gconf/gconf.xml.defaults/system/gstreamer/%gconf.xml
+etc/gconf/gconf.xml.defaults/system/gstreamer/default/%gconf.xml
 etc/gconf/schemas/gstreamer.schemas
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
 include/gstreamer-%%VERSION%%/gst/floatcast/floatcast.h
@@ -136,6 +140,10 @@ libdata/pkgconfig/gstreamer-play-%%VERSION%%.pc
 @dirrm include/gstreamer-%%VERSION%%/gst/gconf
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
+@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/default
+@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer
+@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/default
+@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer
 @unexec rmdir %D/include/gstreamer-%%VERSION%% 2>/dev/null || true
 @exec %%X11BASE%%/bin/gst-register 2>/dev/null
 @unexec %%X11BASE%%/bin/gst-register 2>/dev/null
