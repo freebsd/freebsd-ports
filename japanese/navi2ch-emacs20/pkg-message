@@ -2,12 +2,16 @@ To use navi2ch, put the following into ~/.emacs.
 
 (require 'navi2ch)
 
-To use monafonts with Xemacs, put
+To use monafonts with FSF Emacs-21 or Xemacs, put
 
-(require 'navi2ch-mona)
-(add-hook 'navi2ch-article-arrange-message-hook
-           'navi2ch-mona-arrange-message)
+(cond
+ ((and (eq window-system 'x)
+       (or (featurep 'xemacs)
+	   (and (boundp 'emacs-major-version)
+		(>= emacs-major-version 21))))
+  (require 'navi2ch-mona)
+  (add-hook 'navi2ch-article-arrange-message-hook
+	    'navi2ch-mona-arrange-message)
+  (setq navi2ch-mona-enable t)))
 
-into ~/.xemacs and set board name to be viewed with monafonts.
-
-(setq navi2ch-mona-enable-board-list '("mona" "prog"))
+into ~/.navi2ch/init.el. 
