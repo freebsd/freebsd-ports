@@ -7747,6 +7747,7 @@ streamripper	ports/audio/streamripper
 streamtuner	ports/audio/streamtuner
 streamtuner-live365	ports/audio/streamtuner-live365
 streamtuner-local	ports/audio/streamtuner-local
+streamtuner-python	ports/audio/streamtuner-python
 strobe		ports/security/strobe
 stuffit		ports/archivers/stuffit
 stunnel		ports/security/stunnel
