@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.0";
+my $VERSION	= "2.7.1";
 my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -512,8 +512,8 @@ sub find_library($) {
     $ldconfig = capture(\&cmd, (&PATH_LDCONFIG, "-r"));
     defined($ldconfig)
 	or errx(1, "unable to run ldconfig");
-    if ($ldconfig =~ m/^\s*\d+:-l$library => (.*)$/m) {
-	info("The $library library is installed as $1");
+    if ($ldconfig =~ m/^\s*\d+:-l$library(\.\d+)* => (.*)$/m) {
+	info("The $library library is installed as $2");
 	return 1;
     }
     return 0;
@@ -541,38 +541,23 @@ sub find_binary($) {
 }
 
 #
-# Find a port's dependencies
+# Process a dependency list
 #
-sub find_dependencies($) {
+sub add_dependencies($$@) {
     my $port = shift;		# Port
+    my $finder = shift;		# Finder function
+    my @dependlist = @_;	# Dependency list
 
-    my $dependvars;		# Dependency variables
     my $item;			# Iterator
-    my %depends;		# Hash of dependencies
-    my ($lhs, $rhs);		# Left, right hand side of dependency spec
-    my $target;			# Dependency target
 
-    return () unless $need_deps;
-    return keys(%{$port_dep{$port}}) if exists($port_dep{$port});
-
-    $dependvars = capture(\&make, ($port,
-				   "-VFETCH_DEPENDS",
-				   "-VBUILD_DEPENDS",
-				   "-VRUN_DEPENDS",
-				   "-VLIB_DEPENDS",
-				   "-VDEPENDS"));
-    defined($dependvars)
-	or bsd::errx(1, "failed to obtain dependency list");
-    %depends = ();
-    while ($dependvars =~ m/\G\s*((?:[^\s\`]|\`[^\`]+\`)+)/g) {
-	$item = $1;
+    foreach $item (@dependlist) {
 	$item =~ s|\`([^\`]+)\`|capture(\&cmd, "sh", "-c", $1)|eg;
 	if ($item !~ m|^(?:([^:]+):)?$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	    next;
 	}
-	($lhs, $rhs, $target) = ($1, $2, $3);
-	next if ($depends{$rhs});
+	my ($lhs, $rhs, $target) = ($1, $2, $3);
+	next if ($port_dep{$port}->{$rhs});
 	# XXX this isn't quite right; lhs-less dependencies should be
 	# XXX checked against /var/db/pkg or something.
 	if ($exclude && defined($lhs)) {
@@ -580,9 +565,7 @@ sub find_dependencies($) {
 		next;
 	    }
 	    info("Verifying status of $rhs ($lhs)");
-	    if (($lhs =~ m|^/| && -f $lhs) ||
-		($lhs =~ m/\.\d+$/ && find_library($lhs)) ||
-		find_binary($lhs)) {
+	    if (($lhs =~ m|^/| && -f $lhs) || &{$finder}($lhs)) {
 		info("$rhs seems to be installed");
 		$have_dep{$rhs} = 1;
 		next;
@@ -590,10 +573,34 @@ sub find_dependencies($) {
 	    $have_dep{$rhs} = -1;
 	}
 	info("Adding $rhs as a dependency for $port");
-	$depends{$rhs} = $target || 'install';
+	$port_dep{$port}->{$rhs} = $target || 'install';
     }
-    $port_dep{$port} = \%depends;
-    return keys(%depends);
+}
+
+#
+# Find a port's dependencies
+#
+sub find_dependencies($) {
+    my $port = shift;		# Port
+
+    my $dependvars;		# Dependency variables
+
+    return () unless $need_deps;
+    if (!exists($port_dep{$port})) {
+	$dependvars = capture(\&make, ($port, "-VLIB_DEPENDS"));
+	defined($dependvars)
+	    or bsd::errx(1, "failed to obtain dependency list");
+	add_dependencies($port, \&find_library, split(' ', $dependvars));
+	$dependvars = capture(\&make, ($port,
+				       "-VFETCH_DEPENDS",
+				       "-VBUILD_DEPENDS",
+				       "-VRUN_DEPENDS",
+				       "-VDEPENDS"));
+	defined($dependvars)
+	    or bsd::errx(1, "failed to obtain dependency list");
+	add_dependencies($port, \&find_binary, split(' ', $dependvars));
+    }
+    return keys(%{$port_dep{$port}});
 }
 
 #
@@ -807,8 +814,6 @@ sub show_port_plist($) {
 
 #
 # Compare two package names to determine which is newer
-# XXX Not used because it is slower than lt/gt, and not really any
-# XXX better (yet).
 #
 sub cmp_version($$) {
     my $inst = shift;		# Installed package
@@ -824,6 +829,16 @@ sub cmp_version($$) {
 	return '?';
     }
 
+    # Compare port epochs
+    if ((($a) = ($inst =~ m/,(\d+)$/)) ||
+	(($b) = ($pkgname{$port} =~ m/,(\d+)$/))) {
+	$a = int($a || 0);
+	$b = int($b || 0);
+	if ($a != $b) {
+	    return ($a > $b) ? '>' : '<';
+	}
+    }
+
     # Split it into components
     my @a = split('.', substr($inst, length($portname{$port})));
     my @b = split('.', substr($pkgname{$port}, length($portname{$port})));
@@ -832,7 +847,9 @@ sub cmp_version($$) {
     while (@a && @b) {
 	($a, $b) = (shift(@a), shift(@b));
 	next if $a eq $b;
-	# XXX too simplistic!
+	if ($a =~ m/^\d+$/ && $b =~ m/^\d+$/) {
+	    return ($a > $b) ? '>' : '<';
+	}
 	return ($a gt $b) ? '>' : '<';
     }
 
@@ -850,19 +867,21 @@ sub cmp_version($$) {
 #
 sub list_installed() {
 
-    my $port;			# Port
+    my $pkg;			# Installed package
     my $origin;			# Origin
+    my $cmp;			# Comparator
 
-    foreach $port (sort(keys(%installed))) {
-	$origin = $installed{$port};
+    foreach $pkg (sort(keys(%installed))) {
+	$origin = $installed{$pkg};
 	if (!defined($origin) || !defined($pkgname{$origin})) {
-	    print(" ? $port\n");
-	} elsif ($port lt $pkgname{$origin}) {
-	    print(" < $port ($pkgname{$origin})\n");
-	} elsif ($port gt $pkgname{$origin}) {
-	    print(" > $port ($pkgname{$origin})\n");
+	    print(" ? $pkg\n");
 	} else {
-	    print("   $port\n");
+	    $cmp = cmp_version($pkg, $origin);
+	    if ($cmp eq '=') {
+		print("   $pkg\n");
+	    } else {
+		printf(" $cmp $pkg ($pkgname{$origin})\n");
+	    }
 	}
     }
 }
