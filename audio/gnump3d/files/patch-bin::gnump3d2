@@ -1,0 +1,39 @@
+--- bin/gnump3d2.orig	Tue Feb  4 18:25:13 2003
++++ bin/gnump3d2	Mon Feb 10 09:22:35 2003
+@@ -2397,9 +2397,9 @@
+   {
+       $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
+   }
+-  elsif ( -e "/etc/gnump3d/gnump3d.conf" )
++  elsif ( -e "%%PREFIX%%/etc/gnump3d/gnump3d.conf" )
+   {
+-      $CONFIG_FILE = "/etc/gnump3d/gnump3d.conf";
++      $CONFIG_FILE = "%%PREFIX%%/etc/gnump3d/gnump3d.conf";
+   }
+   elsif ( -e "gnump3d.conf" )
+   {
+@@ -2534,8 +2534,8 @@
+   $PORT          = getConfig( "port" )            || 8888;
+   $bind_address  = getConfig( "binding_host" )    || "";
+   $host          = getConfig( "hostname" )        || "localhost";
+-  $theme_dir     = getConfig( "theme_directory" ) || "/usr/share/gnump3d";
+-  $plugin_dir    = getConfig( "plugin_directory" )|| "/usr/lib/perl5/gnump3d/plugins";
++  $theme_dir     = getConfig( "theme_directory" ) || "%%PREFIX%%/share/gnump3d";
++  $plugin_dir    = getConfig( "plugin_directory" )|| "%%PERL_SITELIBDIR%%/gnump3d/plugins";
+   $always_stream = getConfig( "always_stream" )   || 1;
+   $access_log    = getConfig( "logfile" )         || "/var/log/gnump3d/access.log";
+   $error_log     = getConfig( "errorlog" )        || "/var/log/gnump3d/error.log";
+@@ -2543,11 +2543,11 @@
+   $client_host   = getConfig( "use_client_host" ) || 1;
+   $default_theme = getConfig( "theme" )           || "default";
+   $TIMEOUT       = getConfig( "read_time" )       || 10;
+-  $STATSPROG     = getConfig( "stats_program" )   || "/usr/bin/gnump3d-top";
++  $STATSPROG     = getConfig( "stats_program" )   || "%%PREFIX%%/bin/gnump3d-top";
+   $STATSARGS     = getConfig( "stats_args" )      || "--count=40";
+   $play_all      = getConfig( "play_all_text" )   || "Play All";
+   $play_rec      = getConfig( "play_recursively_text" ) || "Play Recursively";
+-  $mime_file     = getConfig( "mime_file" )       || "/etc/gnump3d/mime.types";
++  $mime_file     = getConfig( "mime_file" )       || "%%PREFIX%%/etc/gnump3d/mime.types";
+   $enable_browse = getConfig( "enable_browsing" ) || 1;
+   $sort_order    = getConfig( "sort_order" )      || '$SONGNAME';
+ 
