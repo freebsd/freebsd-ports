@@ -9,7 +9,7 @@ PORTNAME=	kdeaddons
 PORTVERSION=	2.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SIDE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -9,7 +9,7 @@ PORTNAME=	kdesupport
 PORTVERSION=	2.1
 CATEGORIES=	converters kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
 MAINTAINER=	will@FreeBSD.org
 
