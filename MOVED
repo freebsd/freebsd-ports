@@ -1252,3 +1252,4 @@ japanese/xdvik-vflib|japanese/xdvik|2004-08-20|renamed
 japanese/dvipsk-vflib|japanese/dvipsk|2004-08-20|no longer maintained
 emulators/vmware_xf4mod||2004-08-20|This module is now part of XFree86 as of 4.1.0
 misc/bibletime-doc||2004-08-27|Documentation has included in base port
+security/keyprint|security/opieprint|2004-08-28|newer version with a new name
