@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} http://poe.perl.org/poedown/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Component::Server::TCP.3 POE::Driver.3 \
 		POE::Driver::SysRW.3 POE::Filter.3 POE::Filter::Block.3 \
