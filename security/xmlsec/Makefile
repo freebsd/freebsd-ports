@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/
 
@@ -18,5 +18,7 @@ LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+
+MAN1=	xmlsec.1 xmlsec-config.1
 
 .include <bsd.port.mk>
