@@ -18,11 +18,23 @@ COMMENT=	An LDAP module for python
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-python=${PYTHON_CMD}
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 
-pre-configure:
-	@${CP} ${FILESDIR}/Makefile.pre.in ${WRKSRC}/Misc/Makefile.python-1.4
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+	${REINPLACE_CMD} -e '15s,^.*$$,#include "config.h",g' \
+		${WRKSRC}/Modules/LDAPObject.c
+
+pre-configure:
+.if ${PYTHON_REL} >= 230
+	@${SED} -e 's,@DEFS@,,g' ${FILESDIR}/Makefile.pre.in > \
+		${WRKSRC}/Misc/Makefile.python-1.4
+.else
+	@${CP} ${FILESDIR}/Makefile.pre.in ${WRKSRC}/Misc/Makefile.python-1.4
+.endif
+
+.include <bsd.port.post.mk>
