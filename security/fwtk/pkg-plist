@@ -1,3 +1,7 @@
+sbin/authdump
+sbin/authload
+sbin/authmgr
+sbin/mqueue
 libexec/authsrv
 libexec/ftp-gw
 libexec/http-gw
@@ -8,6 +12,7 @@ libexec/smap
 libexec/smapd
 libexec/tn-gw
 libexec/x-gw
+etc/netperm-table
 man/man3/auth.3.gz
 man/man5/netperm-table.5.gz
 man/man8/authmgr.8.gz
@@ -22,13 +27,10 @@ man/man8/smap.8.gz
 man/man8/smapd.8.gz
 man/man8/tn-gw.8.gz
 man/man8/x-gw.8.gz
-sbin/authdump
-sbin/authload
-sbin/authmgr
 share/doc/fwtk/LICENSE
-share/doc/fwtk/sample-report.txt
-share/doc/fwtk/manpages.ps
 share/doc/fwtk/admin_guide.ps
-share/doc/fwtk/user_guide.ps
+share/doc/fwtk/manpages.ps
 share/doc/fwtk/overview.ps
 share/doc/fwtk/presentation.ps
+share/doc/fwtk/sample-report.txt
+share/doc/fwtk/user_guide.ps
