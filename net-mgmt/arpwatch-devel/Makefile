@@ -16,6 +16,8 @@ DISTNAME=	arpwatch-2.1a11
 MAINTAINER=	mdg@secureworks.net
 COMMENT=	Monitor arp & rarp requests
 
+CONFLICTS=	arpwatch-2.*
+
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
