@@ -1,0 +1,19 @@
+include/upnp/tools/config.h
+include/upnp/tools/upnptools.h
+include/upnp/upnp.h
+include/upnp/upnpdom/Attr.h
+include/upnp/upnpdom/DOMException.h
+include/upnp/upnpdom/Document.h
+include/upnp/upnpdom/Element.h
+include/upnp/upnpdom/NamedNodeMap.h
+include/upnp/upnpdom/Node.h
+include/upnp/upnpdom/NodeAct.h
+include/upnp/upnpdom/NodeList.h
+include/upnp/upnpdom/Parser.h
+include/upnp/upnpdom/all.h
+include/upnp/upnpdom/domCif.h
+lib/libupnp.so
+lib/libupnp.so.1
+@dirrm include/upnp/upnpdom
+@dirrm include/upnp/tools
+@dirrm include/upnp
