@@ -1,32 +1,34 @@
---- Makefile.config.orig	Wed May  1 17:36:22 1996
-+++ Makefile.config	Wed May  1 17:37:41 1996
-@@ -74,13 +74,13 @@
- #CFLAGS2 = 
+--- Makefile.config.dist	Fri May 24 12:29:32 1996
++++ Makefile.config	Wed May 29 13:23:06 1996
+@@ -81,7 +81,7 @@
+ #------------------------------------------------------------------------
+ 
+ # This will work for most systems:
+-CFLAGS2 = -O2 -Wall
++#CFLAGS2 = -O2 -Wall
  
  # If you're using g++ 2.7.x, you'll want to use -Wno-unused:
--CFLAGS2 = -Wno-unused
-+#CFLAGS2 = -Wno-unused
+ #CFLAGS2 = -O2 -Wall -Wno-unused
+@@ -90,7 +90,7 @@
+ #CFLAGS2 = -O2 -Wall -I/usr/X11R6/include -Wno-unused
  
- # For Linux systems using XFree86:
- #CFLAGS2 = -I/usr/X11/include -Wno-unused
- 
- # For FreeBSD systems using XFree86:
--#CFLAGS2 = -I$(X11BASE)/include -Wno-unused
-+CFLAGS2 = -I$(X11BASE)/include -Wno-unused
+ # For official FreeBSD port (using the FreeBSD makefiles):
+-#CFLAGS2 = -O2 -Wall -I$(X11BASE)/include -Wno-unused
++CFLAGS2 = -O2 -Wall -I$(X11BASE)/include -Wno-unused
  
  # For Solaris:
- #CFLAGS2 = -I/usr/openwin/include
-@@ -97,13 +97,13 @@
+ #CFLAGS2 = -O2 -Wall -I/usr/openwin/include
+@@ -110,13 +110,13 @@
  #------------------------------------------------------------------------
  
  # For most systems, just grab the X library:
 -XLIBS = -lX11
 +#XLIBS = -lX11
  
- # For Linux systems using XFree86:
- #XLIBS = -L/usr/X11/lib -lX11
+ # For Linux/FreeBSD/NetBSD systems using XFree86:
+ #XLIBS = -L/usr/X11R6/lib -lX11
  
- # For FreeBSD systems using XFree86:
+ # For official FreeBSD port (using the FreeBSD makefiles):
 -#XLIBS = -L$(X11BASE)/lib -lX11
 +XLIBS = -L$(X11BASE)/lib -lX11
  
