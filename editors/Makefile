@@ -81,6 +81,7 @@
     SUBDIR += mule-common
     SUBDIR += nano
     SUBDIR += nedit
+    SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
