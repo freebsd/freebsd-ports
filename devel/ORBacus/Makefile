@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/
 DISTNAME=	OB-${PORTVERSION}
 
-MAINTAINER=	ejc@bazzle.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2 implementation
 
 USE_XLIB=	yes
