@@ -11,7 +11,7 @@
  # endif
  # define XF86SCANPCI_WRAPPER ia64ScanPCIWrapper
  #elif defined(__i386__)
-@@ -315,14 +319,18 @@
+@@ -315,14 +319,20 @@
  # elif defined(sun)
  #  define ARCH_PCI_INIT sparcPciInit
  #  define INCLUDE_XF86_MAP_PCI_MEM
@@ -21,7 +21,9 @@
  #  define INCLUDE_XF86_MAP_PCI_MEM
  #  define INCLUDE_XF86_NO_DOMAIN
  # endif
++# if !defined(__FreeBSD__)
  # define ARCH_PCI_PCI_BRIDGE sparcPciPciBridge
++# endif
  #elif defined(__AMD64__)
 -# define ARCH_PCI_INIT ix86PciInit
 +# if defined(__FreeBSD__)

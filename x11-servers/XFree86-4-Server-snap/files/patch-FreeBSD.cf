@@ -58,20 +58,23 @@
  	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
  # define HasX86Support          YES
  # define HasMMXSupport		YES
-@@ -349,10 +359,8 @@
+@@ -349,11 +359,13 @@
  #ifdef i386Architecture
  #define ServerExtraDefines GccGasOption XFree86ServerDefines
  #endif
 -#ifdef AlphaArchitecture
--#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
--#endif
--#ifdef Sparc64Architecture
 +#if defined(AlphaArchitecture) || defined(Sparc64Architecture) || \
 +	defined(ia64Architecture) || defined(x86_64Architecture)
  #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
  #endif
+ #ifdef Sparc64Architecture
+-#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#define AsVISOption		-Av9a
++#define AsOutputArchSize	64
+ #endif
  
-@@ -376,18 +384,8 @@
+ #define StandardDefines       -DCSRG_BASED
+@@ -376,18 +388,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
