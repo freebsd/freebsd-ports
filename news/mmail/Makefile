@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mmail
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_SUNSITE}
@@ -28,4 +28,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mm ${PREFIX}/bin/mmail
 	${INSTALL_MAN} ${WRKSRC}/mm.1 ${MANPREFIX}/man/man1/mmail.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
