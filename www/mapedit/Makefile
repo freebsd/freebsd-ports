@@ -3,7 +3,7 @@
 # Date created:		Fr   4 Apr 1997 17:45:31 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/04/09 03:09:50 asami Exp $
+# $Id: Makefile,v 1.7 1997/10/04 14:53:06 andreas Exp $
 #
 
 DISTNAME=	mapedit2.24
@@ -23,7 +23,7 @@ pre-install:
 	@echo ""
 
 do-install:
-	${MKDIR} -p ${DOCDIR}
+	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/help.html ${DOCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapedit ${PREFIX}/bin
