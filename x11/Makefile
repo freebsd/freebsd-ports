@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.131 1997/03/25 15:30:45 max Exp $
+# $Id: Makefile,v 1.132 1997/04/21 02:28:34 jfitz Exp $
 #
 
     SUBDIR += FWF
@@ -33,6 +33,7 @@
     SUBDIR += olvwm
     SUBDIR += p5-Tk
     SUBDIR += piewm
+    SUBDIR += pythonqt
     SUBDIR += qt
     SUBDIR += qvwm
     SUBDIR += rclock
