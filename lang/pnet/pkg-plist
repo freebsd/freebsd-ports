@@ -17,6 +17,7 @@ bin/ilverify
 bin/resgen
 include/pnet/il_coder.h
 include/pnet/il_config.h
+include/pnet/il_crypt.h
 include/pnet/il_decimal.h
 include/pnet/il_dumpasm.h
 include/pnet/il_gc.h
