@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION= 	0.33.1
+PORTVERSION= 	0.34
 #PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -53,9 +53,6 @@ pre-patch:
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
 		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} \( -name "*.jl" -or -name "*.jl.in" \) | \
-		xargs ${GREP} -l "../locale" | \
-		xargs ${PERL} -pi -e "s|\.\./locale|../../../locale|g"
 
 post-install:
 	install-info --section="X11 window manager" \

@@ -212,6 +212,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/keymap.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/keymap.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/match-window.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/match-window.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/modifier-list.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/modifier-list.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/workspace-geometry.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/workspace-geometry.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/wm.jl
@@ -351,6 +353,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/decode-events.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/decode-events.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-window.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-window.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jl
@@ -361,6 +365,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/keymap.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/nokogiri.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/nokogiri.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/ping.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/ping.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/play-audio.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/play-audio.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt-extras.jl
@@ -416,6 +422,7 @@ share/sawfish/%%VERSION%%/sounds/toggled.wav
 %%GNOME:%%share/sawfish/%%VERSION%%/themer.glade
 share/sawfish/%%VERSION%%/themes/absolute-e/README
 share/sawfish/%%VERSION%%/themes/absolute-e/README.gl
+share/sawfish/%%VERSION%%/themes/absolute-e/README.it
 share/sawfish/%%VERSION%%/themes/absolute-e/README.ja
 share/sawfish/%%VERSION%%/themes/absolute-e/README.pl
 share/sawfish/%%VERSION%%/themes/absolute-e/bar_clicked_active.png
@@ -425,6 +432,7 @@ share/sawfish/%%VERSION%%/themes/absolute-e/bar_normal_active.png
 share/sawfish/%%VERSION%%/themes/absolute-e/theme.jl
 share/sawfish/%%VERSION%%/themes/brushed-metal/README
 share/sawfish/%%VERSION%%/themes/brushed-metal/README.gl
+share/sawfish/%%VERSION%%/themes/brushed-metal/README.it
 share/sawfish/%%VERSION%%/themes/brushed-metal/README.ja
 share/sawfish/%%VERSION%%/themes/brushed-metal/README.pl
 share/sawfish/%%VERSION%%/themes/brushed-metal/b1-.png
@@ -462,6 +470,7 @@ share/sawfish/%%VERSION%%/themes/brushed-metal/t5b.png
 share/sawfish/%%VERSION%%/themes/brushed-metal/theme.jl
 share/sawfish/%%VERSION%%/themes/gradient/README
 share/sawfish/%%VERSION%%/themes/gradient/README.gl
+share/sawfish/%%VERSION%%/themes/gradient/README.it
 share/sawfish/%%VERSION%%/themes/gradient/README.ja
 share/sawfish/%%VERSION%%/themes/gradient/README.pl
 share/sawfish/%%VERSION%%/themes/gradient/as_close-b.png
@@ -471,6 +480,7 @@ share/sawfish/%%VERSION%%/themes/gradient/as_min.png
 share/sawfish/%%VERSION%%/themes/gradient/theme.jl
 share/sawfish/%%VERSION%%/themes/gtk/README
 share/sawfish/%%VERSION%%/themes/gtk/README.gl
+share/sawfish/%%VERSION%%/themes/gtk/README.it
 share/sawfish/%%VERSION%%/themes/gtk/README.ja
 share/sawfish/%%VERSION%%/themes/gtk/README.pl
 share/sawfish/%%VERSION%%/themes/gtk/as_close-b.png
@@ -480,6 +490,7 @@ share/sawfish/%%VERSION%%/themes/gtk/as_min.png
 share/sawfish/%%VERSION%%/themes/gtk/theme.jl
 share/sawfish/%%VERSION%%/themes/microGUI/README
 share/sawfish/%%VERSION%%/themes/microGUI/README.gl
+share/sawfish/%%VERSION%%/themes/microGUI/README.it
 share/sawfish/%%VERSION%%/themes/microGUI/README.ja
 share/sawfish/%%VERSION%%/themes/microGUI/README.pl
 share/sawfish/%%VERSION%%/themes/microGUI/TODO
@@ -525,6 +536,7 @@ share/sawfish/%%VERSION%%/themes/microGUI/top_right.png
 share/sawfish/%%VERSION%%/themes/microGUI/top_right_s.png
 share/sawfish/%%VERSION%%/themes/mono/README
 share/sawfish/%%VERSION%%/themes/mono/README.gl
+share/sawfish/%%VERSION%%/themes/mono/README.it
 share/sawfish/%%VERSION%%/themes/mono/README.ja
 share/sawfish/%%VERSION%%/themes/mono/README.pl
 share/sawfish/%%VERSION%%/themes/mono/close-c.png
@@ -540,6 +552,7 @@ share/sawfish/%%VERSION%%/themes/mono/restore.png
 share/sawfish/%%VERSION%%/themes/mono/theme.jl
 share/sawfish/%%VERSION%%/themes/simple/README
 share/sawfish/%%VERSION%%/themes/simple/README.gl
+share/sawfish/%%VERSION%%/themes/simple/README.it
 share/sawfish/%%VERSION%%/themes/simple/README.ja
 share/sawfish/%%VERSION%%/themes/simple/README.pl
 share/sawfish/%%VERSION%%/themes/simple/as_close-b.png
@@ -549,6 +562,7 @@ share/sawfish/%%VERSION%%/themes/simple/as_min.png
 share/sawfish/%%VERSION%%/themes/simple/theme.jl
 share/sawfish/%%VERSION%%/themes/smaker/README
 share/sawfish/%%VERSION%%/themes/smaker/README.gl
+share/sawfish/%%VERSION%%/themes/smaker/README.it
 share/sawfish/%%VERSION%%/themes/smaker/README.ja
 share/sawfish/%%VERSION%%/themes/smaker/README.pl
 share/sawfish/%%VERSION%%/themes/smaker/bar_clicked_active.png
