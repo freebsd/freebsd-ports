@@ -1,0 +1,7 @@
+--- ports/FreeBSD.elf/Config.orig	Mon Jan 29 14:44:37 2001
++++ ports/FreeBSD.elf/Config	Sat Mar 31 02:45:39 2001
+@@ -15 +14,0 @@
+-CFLAGS='-O2 -g'
+@@ -29 +28 @@
+-	SYMLINK_CMD CC_CMD CFLAGS SHL_SUPPORT LD_SHL_CMD AR_CMD RANLIB_CMD \
++	SYMLINK_CMD CC_CMD SHL_SUPPORT LD_SHL_CMD AR_CMD RANLIB_CMD \
