@@ -5,7 +5,7 @@ bin/wwwoffle-read
 bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
-etc/rc.d/wwwoffled.sh.sample
+etc/rc.d/wwwoffled.sh
 sbin/wwwoffled
 share/doc/wwwoffle/CHANGES.CONF
 share/doc/wwwoffle/CONVERT
@@ -17,52 +17,19 @@ share/doc/wwwoffle/README
 share/doc/wwwoffle/README.1st
 share/doc/wwwoffle/README.CONF
 share/doc/wwwoffle/README.PWD
+share/doc/wwwoffle/README.URL
 share/doc/wwwoffle/README.htdig
 share/doc/wwwoffle/README.lang
+share/doc/wwwoffle/README.udmsearch
 share/doc/wwwoffle/README.win32
-share/doc/wwwoffle/UPGRADE
 @dirrm share/doc/wwwoffle
 @cwd %%SPOOL%%
 wwwoffle/html/FAQ.html
 wwwoffle/html/Welcome.html
-wwwoffle/html/htdig/button1.gif
-wwwoffle/html/htdig/button10.gif
-wwwoffle/html/htdig/button2.gif
-wwwoffle/html/htdig/button3.gif
-wwwoffle/html/htdig/button4.gif
-wwwoffle/html/htdig/button5.gif
-wwwoffle/html/htdig/button6.gif
-wwwoffle/html/htdig/button7.gif
-wwwoffle/html/htdig/button8.gif
-wwwoffle/html/htdig/button9.gif
-wwwoffle/html/htdig/buttonl.gif
-wwwoffle/html/htdig/buttonr.gif
-wwwoffle/html/htdig/conf/htdig-full.conf
-wwwoffle/html/htdig/conf/htdig-incr.conf
-wwwoffle/html/htdig/conf/htdig-lasttime.conf
-wwwoffle/html/htdig/conf/htfuzzy.conf
-wwwoffle/html/htdig/conf/htmerge.conf
-wwwoffle/html/htdig/conf/htsearch.conf
-wwwoffle/html/htdig/htdig.gif
-wwwoffle/html/htdig/index.html
-wwwoffle/html/htdig/scripts/wwwoffle-htdig-full
-wwwoffle/html/htdig/scripts/wwwoffle-htdig-incr
-wwwoffle/html/htdig/scripts/wwwoffle-htdig-lasttime
-wwwoffle/html/htdig/scripts/wwwoffle-htfuzzy
-wwwoffle/html/htdig/scripts/wwwoffle-htsearch
-wwwoffle/html/htdig/search.html
-wwwoffle/html/htdig/star.gif
-wwwoffle/html/htdig/star_blank.gif
-wwwoffle/html/htdig/start-lt2.html
-wwwoffle/html/htdig/start-lt3.html
-wwwoffle/html/htdig/start-lt4.html
-wwwoffle/html/htdig/start1.html
-wwwoffle/html/htdig/start2.html
-wwwoffle/html/htdig/start3.html
-wwwoffle/html/htdig/start4.html
 wwwoffle/html/index.html
 wwwoffle/html/local/images/trans-1x1.gif
 wwwoffle/html/messages/AddCacheInfo.html
+wwwoffle/html/messages/AliasRedirect.html
 wwwoffle/html/messages/CantRefreshPosted.html
 wwwoffle/html/messages/ConfigEditPage-Body.html
 wwwoffle/html/messages/ConfigEditPage-Head.html
@@ -83,6 +50,7 @@ wwwoffle/html/messages/FTPDir-Tail.html
 wwwoffle/html/messages/FTPDirRedirect.html
 wwwoffle/html/messages/FTPPut.html
 wwwoffle/html/messages/FileLocked.html
+wwwoffle/html/messages/HostNotCached.html
 wwwoffle/html/messages/HostNotGot.html
 wwwoffle/html/messages/IllegalProtocol.html
 wwwoffle/html/messages/Index-Head.html
@@ -92,12 +60,12 @@ wwwoffle/html/messages/IndexHost-Body.html
 wwwoffle/html/messages/IndexHost-Head.html
 wwwoffle/html/messages/IndexHost-Tail.html
 wwwoffle/html/messages/IndexIllegal.html
+wwwoffle/html/messages/IndexLastOut-Body.html
+wwwoffle/html/messages/IndexLastOut-Head.html
+wwwoffle/html/messages/IndexLastOut-Tail.html
 wwwoffle/html/messages/IndexLastTime-Body.html
 wwwoffle/html/messages/IndexLastTime-Head.html
 wwwoffle/html/messages/IndexLastTime-Tail.html
-wwwoffle/html/messages/IndexLatest-Body.html
-wwwoffle/html/messages/IndexLatest-Head.html
-wwwoffle/html/messages/IndexLatest-Tail.html
 wwwoffle/html/messages/IndexMonitor-Body.html
 wwwoffle/html/messages/IndexMonitor-Head.html
 wwwoffle/html/messages/IndexMonitor-Tail.html
@@ -127,10 +95,55 @@ wwwoffle/html/messages/RefreshRedirect.html
 wwwoffle/html/messages/RefreshWillGet.html
 wwwoffle/html/messages/RefusedRequest.html
 wwwoffle/html/messages/RemoteHostError.html
+wwwoffle/html/messages/SearchIllegal.html
 wwwoffle/html/messages/ServerError.html
 wwwoffle/html/messages/UserNeedsPass.html
 wwwoffle/html/messages/WillGet.html
 wwwoffle/html/robots.txt
+wwwoffle/html/search/htdig/button1.gif
+wwwoffle/html/search/htdig/button10.gif
+wwwoffle/html/search/htdig/button2.gif
+wwwoffle/html/search/htdig/button3.gif
+wwwoffle/html/search/htdig/button4.gif
+wwwoffle/html/search/htdig/button5.gif
+wwwoffle/html/search/htdig/button6.gif
+wwwoffle/html/search/htdig/button7.gif
+wwwoffle/html/search/htdig/button8.gif
+wwwoffle/html/search/htdig/button9.gif
+wwwoffle/html/search/htdig/buttonl.gif
+wwwoffle/html/search/htdig/buttonr.gif
+wwwoffle/html/search/htdig/conf/htdig-full.conf
+wwwoffle/html/search/htdig/conf/htdig-incr.conf
+wwwoffle/html/search/htdig/conf/htdig-lasttime.conf
+wwwoffle/html/search/htdig/conf/htfuzzy.conf
+wwwoffle/html/search/htdig/conf/htmerge.conf
+wwwoffle/html/search/htdig/conf/htsearch.conf
+wwwoffle/html/search/htdig/htdig.gif
+wwwoffle/html/search/htdig/index.html
+wwwoffle/html/search/htdig/scripts/wwwoffle-htdig-full
+wwwoffle/html/search/htdig/scripts/wwwoffle-htdig-incr
+wwwoffle/html/search/htdig/scripts/wwwoffle-htdig-lasttime
+wwwoffle/html/search/htdig/scripts/wwwoffle-htfuzzy
+wwwoffle/html/search/htdig/scripts/wwwoffle-htsearch
+wwwoffle/html/search/htdig/search.html
+wwwoffle/html/search/htdig/star.gif
+wwwoffle/html/search/htdig/star_blank.gif
+wwwoffle/html/search/start-lt2.html
+wwwoffle/html/search/start-lt3.html
+wwwoffle/html/search/start-lt4.html
+wwwoffle/html/search/start1.html
+wwwoffle/html/search/start2.html
+wwwoffle/html/search/start3.html
+wwwoffle/html/search/start4.html
+wwwoffle/html/search/udmsearch/conf/indexer-full.conf
+wwwoffle/html/search/udmsearch/conf/indexer-incr.conf
+wwwoffle/html/search/udmsearch/conf/search.html
+wwwoffle/html/search/udmsearch/index.html
+wwwoffle/html/search/udmsearch/scripts/wwwoffle-indexer-full
+wwwoffle/html/search/udmsearch/scripts/wwwoffle-indexer-incr
+wwwoffle/html/search/udmsearch/scripts/wwwoffle-udmsearch
+wwwoffle/html/search/udmsearch/search.html
+wwwoffle/html/search/udmsearch/udm.gif
 wwwoffle/html/wwwoffle.pac
 wwwoffle/outgoing/Owwwoffle-browser
 wwwoffle/outgoing/Owwwoffle-user
@@ -138,17 +151,22 @@ wwwoffle/outgoing/Uwwwoffle-browser
 wwwoffle/outgoing/Uwwwoffle-user
 wwwoffle/upgrade-config.pl
 wwwoffle/wwwoffle.conf.default
-@dirrm wwwoffle/html/htdig/conf
-@dirrm wwwoffle/html/htdig/db
-@dirrm wwwoffle/html/htdig/db-lasttime
-@dirrm wwwoffle/html/htdig/scripts
-@dirrm wwwoffle/html/htdig
 @dirrm wwwoffle/html/local/images
 @dirrm wwwoffle/html/local
 @dirrm wwwoffle/html/messages
+@dirrm wwwoffle/html/search/htdig/conf
+@dirrm wwwoffle/html/search/htdig/db
+@dirrm wwwoffle/html/search/htdig/db-lasttime
+@dirrm wwwoffle/html/search/htdig/scripts
+@dirrm wwwoffle/html/search/htdig
+@dirrm wwwoffle/html/search/udmsearch/conf
+@dirrm wwwoffle/html/search/udmsearch/scripts
+@dirrm wwwoffle/html/search/udmsearch
+@dirrm wwwoffle/html/search
 @dirrm wwwoffle/html
 @dirrm wwwoffle/http
 @dirrm wwwoffle/lasttime
 @dirrm wwwoffle/monitor
 @dirrm wwwoffle/outgoing
 @dirrm wwwoffle/prevtime1
+@dirrm wwwoffle
