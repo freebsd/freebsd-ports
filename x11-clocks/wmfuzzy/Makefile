@@ -14,11 +14,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A fuzzy clock WindowMaker dockapp
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<getopt\.h>|<unistd.h>|g'\
+		${WRKSRC}/wmfuzzy.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${PREFIX}/bin
