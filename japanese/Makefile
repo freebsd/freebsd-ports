@@ -146,6 +146,7 @@
     SUBDIR += kanji26
     SUBDIR += kanjipad
     SUBDIR += kappa20
+    SUBDIR += kasumi
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
