@@ -2174,6 +2174,7 @@ glmaze		ports/games/glmaze
 global		ports/devel/global
 glove		ports/math/glove
 glpk		ports/math/glpk
+glrparser	ports/devel/glrparser
 gltk		ports/graphics/gltk
 gltron		ports/games/gltron
 gltt		ports/graphics/gltt
