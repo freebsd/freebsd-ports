@@ -1,5 +1,9 @@
 MD5 (webmin-1.130.tar.gz) = 32942590125673df578e032e2a4dbcfb
 SIZE (webmin-1.130.tar.gz) = 6888140
+MD5 (apache-1.130-1.wbm.gz) = f2cdef77d7a0835623da2f5bf6cf2ac8
+SIZE (apache-1.130-1.wbm.gz) = 295498
+MD5 (fdisk-1.130-2.wbm.gz) = c8eb26334559729552613cd8d6878265
+SIZE (fdisk-1.130-2.wbm.gz) = 87259
 MD5 (firewall-1.130-1.wbm.gz) = 09003c296ef972d14d32f7435838179d
 SIZE (firewall-1.130-1.wbm.gz) = 45193
 MD5 (htaccess-htpasswd-1.130-1.wbm.gz) = a797d03c2dc5744ef627358310abd440
@@ -10,5 +14,7 @@ MD5 (quota-1.130-1.wbm.gz) = 85490532f02c5aa8b7a6691759f9fcee
 SIZE (quota-1.130-1.wbm.gz) = 106336
 MD5 (shorewall-1.130-1.wbm.gz) = fc354757bb036570441b4665dacc2827
 SIZE (shorewall-1.130-1.wbm.gz) = 36084
+MD5 (software-1.130-2.wbm.gz) = ea5b020848c863c26b53ec027bbd64b5
+SIZE (software-1.130-2.wbm.gz) = 109560
 MD5 (webmin-1.130-1.wbm.gz) = 8d708ee47cdd883535d9521e38508e4b
 SIZE (webmin-1.130-1.wbm.gz) = 218405
