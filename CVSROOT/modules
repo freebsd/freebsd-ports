@@ -4011,6 +4011,7 @@ libical		ports/devel/libical
 libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
 libicq2000	ports/net/libicq2000
+libid3tag	ports/audio/libid3tag
 libidea		ports/security/libidea
 libident	ports/security/libident
 libidn		ports/devel/libidn
