@@ -1,0 +1,21 @@
+--- Makefile.orig	Wed Jul  5 19:14:15 2000
++++ Makefile	Wed Jul  5 19:14:57 2000
+@@ -1,6 +1,6 @@
+ VERSION=0.2.2
+ PACKAGE=ftpcopy
+-prefix=/usr/local
++prefix=$(PREFIX)
+ 
+ PACKAGE_VERSION=$(PACKAGE)-$(VERSION)
+ HEADERS= ftpparse.h ftplib.h urlparse.h timeoutio.h
+@@ -8,8 +8,8 @@
+ EXTRA_DIST= README  $(man_MANS) NEWS ChangeLog install.list
+ INCLUDES=-I. -DPACKAGE_VERSION=\"$(PACKAGE)-$(VERSION)\" -DPACKAGE=\"$(PACKAGE)\" -DVERSION=\"$(VERSION)\"
+ EXTRA_DIST+=premake.defs premake.pl Makefile.pre premake.rules
+-TAR=tar
+-CC=gcc
++TAR?=tar
++CC?=gcc
+ LINK=./link.sh
+ COMPILE=./compile.sh
+ AR=ar
