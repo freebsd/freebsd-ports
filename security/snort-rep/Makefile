@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort-rep
-PORTVERSION=	1.2
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/snort-rep/pub/
 
