@@ -1292,7 +1292,6 @@
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += scsh-install-lib
-    SUBDIR += sdcc
     SUBDIR += sdl12
     SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
