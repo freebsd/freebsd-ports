@@ -1,17 +1,16 @@
 # Ports collection makefile for:    dhcp
-# Version required:     ISC-DHCP-BETA-0
+# Version required:     ISC-DHCP-BETA-16
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.5 1997/01/14 05:29:25 pst Exp $
+# $Id: Makefile,v 1.6 1997/01/14 20:15:49 pst Exp $
 #
 
-DISTNAME=       DHCPD-BETA-5.14
-PKGNAME=	isc-dhcp-b5.14
+DISTNAME=       DHCPD-BETA-5.16
+PKGNAME=	isc-dhcp-b5.16
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.vix.com/pub/dhcp/
+MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 
-MAINTAINER=	se@FreeBSD.ORG
 HAS_CONFIGURE=	yes
 
 MAN5=		dhcpd.conf.5${ZEXTENSION}
