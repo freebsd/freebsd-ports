@@ -9,37 +9,37 @@ PORTNAME=	xnibbles
 PORTVERSION=	1.0.b3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
-DISTNAME=	xnibbles-1.0BETA3
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=	linux
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-WRKSRC=		${WRKDIR}/xnibbles
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+ALL_TARGET=	linux
 
 MAN6=		xnibbles.6
 
-CFLAGS+=	-I ${X11BASE}/include -L ${X11BASE}/lib
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/xnibbles ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/xnibbles.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/xnibbles ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xnibbles.6 ${MANPREFIX}/man/man6
 	@${MKDIR} ${PREFIX}/share/xnibbles/sounds
-	@${INSTALL_DATA} ${WRKSRC}/sounds/*.ub ${PREFIX}/share/xnibbles/sounds
+	${INSTALL_DATA} ${WRKSRC}/sounds/*.ub ${PREFIX}/share/xnibbles/sounds
 	@${MKDIR} ${PREFIX}/share/xnibbles/levels
-	@if [ -f ${PREFIX}/share/xnibbles/levels/LEVELS ]; then \
-		${RM} ${PREFIX}/share/xnibbles/levels/LEVELS; \
-	 fi
+.if exists(${PREFIX}/share/xnibbles/levels/LEVELS)
+	@${RM} ${PREFIX}/share/xnibbles/levels/LEVELS
+.endif
 	@${TOUCH} ${PREFIX}/share/xnibbles/levels/LEVELS
 .for file in 001 002 003 004 005 006 007 008 009 010 011 012
 	@${ECHO} ${PREFIX}/share/xnibbles/levels/level${file}.xnl >> ${PREFIX}/share/xnibbles/levels/LEVELS
-	@${INSTALL_DATA} ${WRKSRC}/levels/*.xnl ${PREFIX}/share/xnibbles/levels
+	${INSTALL_DATA} ${WRKSRC}/levels/*.xnl ${PREFIX}/share/xnibbles/levels
 .endfor
 	@${MKDIR} ${PREFIX}/share/doc/xnibbles
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xnibbles
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/xnibbles
-	@${INSTALL_DATA} ${WRKSRC}/levels/README ${PREFIX}/share/doc/xnibbles/README.levels
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xnibbles
+	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/xnibbles
+	${INSTALL_DATA} ${WRKSRC}/levels/README ${PREFIX}/share/doc/xnibbles/README.levels
 
 .include <bsd.port.mk>
