@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://quenix.dyndns.org/freebsd/ \
 		http://mitglied.lycos.de/buran/linux/soft/9menu/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
 
 USE_XLIB=		yes

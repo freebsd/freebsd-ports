@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://freesoftware.fsf.org/download/9box/ \
 		http://savannah.nongnu.org/download/9box/
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
 
 USE_REINPLACE=	yes
