@@ -1,19 +1,54 @@
-*** src/setup.orig	Wed Feb 22 18:16:06 1995
---- src/setup	Wed Feb 22 18:16:20 1995
-***************
-*** 47,53 ****
-  fi
-  
-  
-! PID_DIRS="/var/adm /var/log /usr/adm /private/adm"
-  PID_DIR=""
-  for dir in $PID_DIRS
-  do
---- 47,53 ----
-  fi
-  
-  
-! PID_DIRS="/var/run /var/adm /var/log /usr/adm /private/adm"
-  PID_DIR=""
-  for dir in $PID_DIRS
-  do
+--- src/setup.orig	Wed Jun 19 09:30:27 1996
++++ src/setup	Thu Oct  3 20:11:48 1996
+@@ -28,47 +28,10 @@
+ echo "	       or symbolic paths such as ~user/msql will not work"
+ echo
+ echo 
+-$ECHO_N "	Top of install tree ? [/usr/local/Minerva] $ECHO_C"
+-read INST_TOP
+-if test "$INST_TOP." = "."
+-then
+-	INST_TOP=/usr/local/Minerva
+-fi
+-
+-$ECHO_N "	Will this installation be running as root ? [y] $ECHO_C"
+-read ANS
+-if test "$ANS." = "."
+-then
+-	ANS="y"
+-fi
+-if echo $ANS | grep -i "y" > /dev/null
+-then
+-	ROOT_EXEC="-DROOT_EXEC"
+-	ROOT="root"
+-else
+-	ROOT_EXEC=""
+-	$ECHO_N "	What username will it run under ?  $ECHO_C"
+-	read ROOT
+-fi
+-
+-
+-PID_DIRS="/var/adm /var/log /usr/adm /private/adm"
+-PID_DIR=""
+-for dir in $PID_DIRS
+-do
+-	if test -d $dir
+-	then
+-		PID_DIR=${dir}
+-		break
+-	fi
+-done
+-$ECHO_N "	Directory for pid file ? [${PID_DIR}] $ECHO_C"
+-read RESPONSE
+-if test "$RESPONSE." != "."
+-then
+-	PID_DIR=$RESPONSE
+-fi
+-
++INST_TOP=$PREFIX/Minerva
++ROOT_EXEC="-DROOT_EXEC"
++ROOT="root"
++PID_DIR=/var/run
+ 
+ echo
+ echo

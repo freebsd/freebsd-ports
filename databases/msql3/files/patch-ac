@@ -1,36 +1,21 @@
-*** scripts/run_daemon.orig	Mon Dec 18 20:27:42 1995
---- scripts/run_daemon	Sun Jul 21 22:15:25 1996
-***************
-*** 9,16 ****
-  #
-  #					bambi@Bond.edu.au
-  
-! INST_DIR=/usr/local/Minerva
-! ADMIN="you@some.machine"
-  PROG=$1
-  
-  if test ! -d "${INST_DIR}/debug"
---- 9,16 ----
-  #
-  #					bambi@Bond.edu.au
-  
-! INST_DIR=@@PREFIX@@
-! ADMIN="root@@@HOSTNAME@@"
-  PROG=$1
-  
-  if test ! -d "${INST_DIR}/debug"
-***************
-*** 34,39 ****
-  
-  " > mail.tmp
-  	cat output >> mail.tmp
-! 	/usr/ucb/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
-  	sleep 15
-  done
---- 34,39 ----
-  
-  " > mail.tmp
-  	cat output >> mail.tmp
-! 	/usr/bin/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
-  	sleep 15
-  done
+--- scripts/run_daemon.orig	Mon Dec 18 20:27:42 1995
++++ scripts/run_daemon	Thu Oct  3 20:08:24 1996
+@@ -9,8 +9,8 @@
+ #
+ #					bambi@Bond.edu.au
+ 
+-INST_DIR=/usr/local/Minerva
+-ADMIN="you@some.machine"
++INST_DIR=@@PREFIX@@
++ADMIN="root@@@HOSTNAME@@"
+ PROG=$1
+ 
+ if test ! -d "${INST_DIR}/debug"
+@@ -34,6 +34,6 @@
+ 
+ " > mail.tmp
+ 	cat output >> mail.tmp
+-	/usr/ucb/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
++	/usr/bin/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
+ 	sleep 15
+ done
