@@ -32,6 +32,29 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c592c4a-1bcc-11d9-a3ec-00061bd2d56f">
+    <topic>cyrus-sasl -- potential buffer overflow in DIGEST-MD5 plugin</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><ge>2.*</ge><lt>2.1.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Cyrus SASL DIGEST-MD5 plugin contains a potential
+          buffer overflow when quoting is required in the output.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.andrew.cmu.edu/cgi-bin/cvsweb.cgi/src/sasl/plugins/digestmd5.c#rev1.171</url>
+    </references>
+    <dates>
+      <discovery>2004-07-06</discovery>
+      <entry>2004-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92268205-1947-11d9-bc4a-000c41e2cdad">
     <topic>cyrus-sasl -- dynamic library loading and set-user-ID
       applications</topic>
