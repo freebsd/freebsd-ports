@@ -1,5 +1,14 @@
 --- configure.orig	Thu Dec 11 14:28:41 2003
 +++ configure	Thu Dec 11 14:28:48 2003
+@@ -48,6 +48,8 @@
+     QSLANG="en_GB"
+ fi
+ 
++QSLANG=`echo $QSLANG|sed 's/\..*//'`
++
+ if [ ! -d "./locale/$QSLANG" ]; then
+     echo "
+ 
 @@ -83,7 +83,8 @@ DEBUG_LEVEL="1"
  FORCE_UNZIP="0"
  DESCRIPTIVE_HEADERS="0"
