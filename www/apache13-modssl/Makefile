@@ -30,7 +30,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
