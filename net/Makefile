@@ -263,6 +263,7 @@
     SUBDIR += jarl
     SUBDIR += java-beepcore
     SUBDIR += javadc
+    SUBDIR += jffnms
     SUBDIR += jumpgate
     SUBDIR += junipoll
     SUBDIR += jwhois

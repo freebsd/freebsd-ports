@@ -1,0 +1,14 @@
+====================================================
+ACHTUNG!!!
+
+1) Run %JFFNMSDIR%/jffnms_db.sh
+when MySQL is running
+
+2) Configure apache to serve pages from
+%JFFNMSDIR%
+
+3) Modify 'Register globals = on' in php.ini
+
+4) Go to http://<your-hostname>/htdocs/admin/setup.php and
+finish setting up JFFNMS
+====================================================
