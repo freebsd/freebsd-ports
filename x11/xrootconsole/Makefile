@@ -13,7 +13,7 @@ MASTER_SITES=	http://de-fac.to/bob/xrootconsole/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	incabulos@mac.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Writes any log live onto the background
 
 USE_REINPLACE=	yes
