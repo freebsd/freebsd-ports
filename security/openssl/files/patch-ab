@@ -5,7 +5,7 @@
  MAKE=     make -f Makefile.ssl
  
 -MANDIR=$(OPENSSLDIR)/man
-+MANDIR?=$(MANPREFIX)/man
++MANDIR=$(MANPREFIX)/man
  MAN1=1
  MAN3=3
  SHELL=/bin/sh

@@ -62,24 +62,24 @@ lib/libcrypto.a
 lib/libssl.a
 %%SHARED%%lib/libssl.so
 %%SHARED%%lib/libssl.so.%%SHLIBVER%%
-openssl/misc/CA.pl
-openssl/misc/CA.sh
-openssl/misc/c_hash
-openssl/misc/c_info
-openssl/misc/c_issuer
-openssl/misc/c_name
-openssl/misc/der_chop
-openssl/openssl.cnf.sample
+%%NOBASE%%openssl/misc/CA.pl
+%%NOBASE%%openssl/misc/CA.sh
+%%NOBASE%%openssl/misc/c_hash
+%%NOBASE%%openssl/misc/c_info
+%%NOBASE%%openssl/misc/c_issuer
+%%NOBASE%%openssl/misc/c_name
+%%NOBASE%%openssl/misc/der_chop
+%%NOBASE%%openssl/openssl.cnf.sample
 %%PORTDOCS%%share/doc/openssl/openssl.txt
 @dirrm include/openssl
-@dirrm openssl/certs
-@dirrm openssl/lib
+%%NOBASE%%@dirrm openssl/certs
+%%NOBASE%%@dirrm openssl/lib
 %%MANDIR%%@dirrm openssl/man/man1
 %%MANDIR%%@dirrm openssl/man/man3
 %%MANDIR%%@dirrm openssl/man/man5
-%%MANDIR%%@dirrm openssl/man/man7 
-%%MANDIR%%@dirrm openssl/man   
-@dirrm openssl/misc
-@dirrm openssl/private
-@dirrm openssl
+%%MANDIR%%@dirrm openssl/man/man7
+%%MANDIR%%@dirrm openssl/man
+%%NOBASE%%@dirrm openssl/misc
+%%NOBASE%%@dirrm openssl/private
+%%NOBASE%%@dirrm openssl
 %%PORTDOCS%%@dirrm share/doc/openssl
