@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 INSTALLS_SHLIB=	yes
