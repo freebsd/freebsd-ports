@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Dec  3 18:43:57 2003
++++ src/Makefile.in	Wed Dec  3 18:44:12 2003
+@@ -76,7 +76,7 @@
+ VERSION = @VERSION@
+ 
+ CFLAGS = $(GLIB_CFLAGS)
+-execgamesdir = $(prefix)/games
++execgamesdir = $(prefix)/bin
+ execgames_PROGRAMS = robotfindskitten
+ 
+ robotfindskitten_SOURCES = cunit.h cunit.c draw.h messages.h robotfindskitten.c 
