@@ -1,0 +1,29 @@
+--- dosrel-1.0/coff2exe.c.orig	Sun May 18 20:24:59 1997
++++ dosrel-1.0/coff2exe.c	Sun May 18 20:23:50 1997
+@@ -79,14 +79,14 @@
+     while (left)
+     {
+       char buf[512];
+-      int r = _read(stub_file, buf, 512);
++      int r = read(stub_file, buf, 512);
+       if (wrote == 0)
+         hsize = align_hsize(stub_length, (unsigned char *)buf);
+-      _write(ofile, buf, r);
++      write(ofile, buf, r);
+       left -= r;
+       wrote += r;
+     }
+-    _write(ofile, buf, 512-((int)wrote&511));
++    write(ofile, buf, 512-((int)wrote&511));
+   }
+   else
+   {
+@@ -120,7 +120,7 @@
+   if (argc > 2 && strcmp(argv[1], "-s") == 0)
+   {
+     struct stat s;
+-    stub_file = _open(argv[2], O_RDONLY);
++    stub_file = open(argv[2], O_RDONLY);
+     if (stub_file < 0)
+     {
+       perror(argv[2]);
