@@ -1,0 +1,11 @@
+--- doc/crypto/EVP_BytesToKey.pod.orig	Mon Dec  3 04:07:37 2001
++++ doc/crypto/EVP_BytesToKey.pod	Tue Sep 30 18:55:24 2003
+@@ -2,7 +2,7 @@
+ 
+ =head1 NAME
+ 
+- EVP_BytesToKey - password based encryption routine
++EVP_BytesToKey - password based encryption routine
+ 
+ =head1 SYNOPSIS
+ 

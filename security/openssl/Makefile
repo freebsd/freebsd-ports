@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.7b
-PORTREVISION=	1
+PORTVERSION=	0.9.7c
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -813,9 +812,7 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_password.3 \
 	ui_compat.3 des_read_pw.3 \
 	ui_compat.3 des_read_pw_string.3 \
-	des_modes.7 DES.7 \
-	des_modes.7 Modes.7 \
-	des_modes.7 of.7
+	des_modes.7 Modes_of_DES.7
 
 .include <bsd.port.pre.mk>
 
