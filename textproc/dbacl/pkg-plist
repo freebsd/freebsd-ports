@@ -2,7 +2,9 @@
 bin/bayesol
 bin/dbacl
 bin/mailcross
+bin/mailfoot
 bin/mailinspect
+bin/mailtoe
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbacl
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,19 +18,27 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
 PROGRAMS=	bayesol dbacl mailinspect
-SCRIPTS=	mailcross
-MAN1=		bayesol.1 dbacl.1 mailcross.1 mailinspect.1
-DOCS=		AUTHORS ChangeLog README dbacl.ps email.html tutorial.html
+SCRIPTS=	mailcross mailtoe mailfoot
+MAN1=		bayesol.1 dbacl.1 mailcross.1 mailinspect.1 mailtoe.1 mailfoot.1
+DOCS=		AUTHORS ChangeLog README doc/dbacl.ps doc/email.html doc/tutorial.html
 EXAMPLES=	sample*.txt japanese.txt example*.risk toy.risk prop.pl
+
+pre-install:
+	@cd ${WRKSRC}/src && \
+	${REINPLACE_CMD} -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
+		${SCRIPTS}
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/src && \
 		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+	cd ${WRKSRC}/man && \
 		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
+	cd ${WRKSRC}/doc && \
 		${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
