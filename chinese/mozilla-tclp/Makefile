@@ -33,6 +33,7 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
+	${MV} all-locales.rdf all-locales.rdf.orig; \
 	${MV} user-locales.rdf user-locales.rdf.orig; \
 	${MV} installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
@@ -42,6 +43,8 @@ do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
+	${INSTALL_DATA} ${FILESDIR}/all-locales.rdf \
+		${PREFIX}/lib/mozilla/chrome;
 	${INSTALL_DATA} ${WRKSRC}/chrome/user-locales.rdf \
 		${PREFIX}/lib/mozilla/chrome;
 	${INSTALL_DATA} ${WRKSRC}/chrome/zh-TW.jar \
