@@ -1,0 +1,20 @@
+--- lib/Makefile.in	2000/09/28 12:23:33	1.1
++++ lib/Makefile.in	2000/09/28 12:24:16
+@@ -109,7 +109,7 @@
+ INCLUDES = -I../src
+ 
+ # These files are always compiled
+-libheroes_a_SOURCES =  getopt.c getopt1.c getshline.c
++libheroes_a_SOURCES =  getshline.c
+ 
+ 
+ # Additional files to compile, when functions are missing.
+@@ -125,7 +125,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libheroes_a_OBJECTS =  getopt.o getopt1.o getshline.o
++libheroes_a_OBJECTS =  getshline.o
+ AR = ar
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
