@@ -723,6 +723,7 @@ cdpr		ports/net/cdpr
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
 cdrdao		ports/audio/cdrdao
+cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
 celestia	ports/astro/celestia
