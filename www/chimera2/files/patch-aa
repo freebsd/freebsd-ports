@@ -1,11 +1,11 @@
---- ./Common.tmpl.dist.org	Fri Dec 16 20:10:16 1994
-+++ ./Common.tmpl.dist	Mon Dec 19 02:52:52 1994
-@@ -103,7 +103,7 @@
- NEEDFUNCS = -DNEED_STRSTR -DNEED_GETCWD
- */
+--- ./Common.tmpl.dist.org	Sat Apr  1 19:20:24 1995
++++ ./Common.tmpl.dist	Tue Apr  4 07:51:01 1995
+@@ -80,7 +80,7 @@
+ #define NEED_STRCASECMP 0
  
--EXTRA_DEFINES = -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_UNISTD_H -DHAVE_MALLOC_H $(MYPROTO) $(MYBSD) $(NEEDFUNCS)
-+EXTRA_DEFINES = -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_UNISTD_H $(MYPROTO) $(MYBSD) $(NEEDFUNCS)
+ CEXTRA_DEFINES = -DHAVE_MKTIME -DHAVE_STDLIB_H -DHAVE_STRING_H \
+-                 -DHAVE_UNISTD_H -DHAVE_MALLOC_H
++                 -DHAVE_UNISTD_H
  
  /*
-  * Extra libraries
+  * OSF1 needs -D_BSD
