@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -41,8 +41,6 @@ pre-fetch:
 	@${ECHO} "    -DWITH_PLOT to enable ploting, requires X11 libraries"
 	@${ECHO} "    -DWITH_SAMBA to enable the use of smbclient"
 	@${ECHO} "    -DWITH_MTX to enable the use of mtx changer scripts"
-	@${ECHO} "    -DWITHOUT_GNUTAR to NOT use GNUTar and use the"
-	@${ECHO} "        native FreeBSD version"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_TAPE=tape to specify the default tape device"
@@ -98,12 +96,6 @@ BUILD_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 .endif
 
-.if !defined (WITHOUT_GNUTAR)
-CONFIGURE_ARGS+=	--with-gnutar=${PREFIX}/bin/gtar
-BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-.endif
-
 .if defined (AMANDA_SERVER)
 CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
 CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
@@ -154,8 +146,6 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "    -DWITHOUT_GNUTAR to NOT use GNUTar and use the"
-	@${ECHO} "        native FreeBSD version"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
@@ -191,12 +181,6 @@ post-install:
 		${WRKSRC}/example/chg-scsi.conf \
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
-
-.if !defined (WITHOUT_GNUTAR)
-CONFIGURE_ARGS+=	--with-gnutar=${PREFIX}/bin/gtar
-BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-.endif
 
 .if defined (AMANDA_SERVER)
 CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
