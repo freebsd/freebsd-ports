@@ -56,6 +56,8 @@ BLOCKS+=	xsp
 
 .if defined(WITH_LUCENE)
 BLOCKS+=	lucene
+BLOCKS+=	forms
+BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_NAMING)
@@ -66,17 +68,14 @@ BLOCKS+=	naming
 BLOCKS+=	paranoid
 .endif
 
-.if defined(WITH_PHP)
-BLOCKS+=	php
-.endif
-
 .if defined(WITH_POI)
 BLOCKS+=	poi
 .endif
 
-.if defined(WITH_PORTAL_FW)
-BLOCKS+=	portal-fw
+.if defined(WITH_PORTAL)
+BLOCKS+=	portal
 BLOCKS+=	authentication-fw
+BLOCKS+=	html
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
 .endif
@@ -93,10 +92,6 @@ BLOCKS+=	xsp
 .if defined(WITH_SESSION_FW)
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
-.endif
-
-.if defined(WITH_SWF)
-BLOCKS+=	swf
 .endif
 
 .if defined(WITH_VELOCITY)
@@ -141,6 +136,19 @@ BLOCKS+=	deli
 
 .if defined(WITH_EVENTCACHE)
 BLOCKS+=	eventcache
+BLOCKS+=	databases
+BLOCKS+=	hsqldb
+BLOCKS+=	jms
+BLOCKS+=	xsp
+.endif
+
+.if defined(WITH_FACES)
+BLOCKS+=	faces
+BLOCKS+=	authentication-fw
+BLOCKS+=	html
+BLOCKS+=	portal
+BLOCKS+=	session-fw
+BLOCKS+=	taglib
 BLOCKS+=	xsp
 .endif
 
@@ -153,6 +161,7 @@ BLOCKS+=	xsp
 BLOCKS+=	javaflow
 BLOCKS+=	databases
 BLOCKS+=	forms
+BLOCKS+=	hsqldb
 BLOCKS+=	ojb
 BLOCKS+=	xsp
 .endif
@@ -160,7 +169,6 @@ BLOCKS+=	xsp
 .if defined(WITH_JMS)
 BLOCKS+=	jms
 BLOCKS+=	databases
-BLOCKS+=	eventcache
 BLOCKS+=	hsqldb
 BLOCKS+=	xsp
 .endif
@@ -172,11 +180,6 @@ BLOCKS+=	linotype
 .if defined(WITH_MAIL)
 BLOCKS+=	mail
 BLOCKS+=	asciiart
-BLOCKS+=	batik
-BLOCKS+=	cron
-BLOCKS+=	scratchpad
-BLOCKS+=	velocity
-BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_MIDI)
@@ -187,6 +190,7 @@ BLOCKS+=	midi
 BLOCKS+=	ojb
 BLOCKS+=	databases
 BLOCKS+=	forms
+BLOCKS+=	hsqldb
 BLOCKS+=	xsp
 .endif
 
@@ -196,14 +200,6 @@ BLOCKS+=	databases
 BLOCKS+=	forms
 BLOCKS+=	hsqldb
 BLOCKS+=	velocity
-BLOCKS+=	xsp
-.endif
-
-.if defined(WITH_PORTAL)
-BLOCKS+=	portal
-BLOCKS+=	authentication-fw
-BLOCKS+=	html
-BLOCKS+=	session-fw
 BLOCKS+=	xsp
 .endif
 
@@ -219,14 +215,21 @@ BLOCKS+=	qdox
 BLOCKS+=	repository
 BLOCKS+=	databases
 BLOCKS+=	eventcache
+BLOCKS+=	hsqldb
+BLOCKS+=	jms
 BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_SCRATCHPAD)
 BLOCKS+=	scratchpad
+BLOCKS+=	axis
 BLOCKS+=	batik
 BLOCKS+=	cron
-BLOCKS+=	velocity
+BLOCKS+=	databases
+BLOCKS+=	eventcache
+BLOCKS+=	hsqldb
+BLOCKS+=	jms
+BLOCKS+=	repository
 BLOCKS+=	xsp
 .endif
 
@@ -268,8 +271,25 @@ BLOCKS+=	xsp
 BLOCKS+=	webdav
 BLOCKS+=	databases
 BLOCKS+=	eventcache
+BLOCKS+=	hsqldb
+BLOCKS+=	jms
 BLOCKS+=	repository
 BLOCKS+=	xsp
+.endif
+
+.if defined(WITH_PHP)
+BLOCKS+=	php
+.endif
+
+.if defined(WITH_PORTAL_FW)
+BLOCKS+=	portal-fw
+BLOCKS+=	authentication-fw
+BLOCKS+=	session-fw
+BLOCKS+=	xsp
+.endif
+
+.if defined(WITH_SWF)
+BLOCKS+=	swf
 .endif
 
 .if defined(WITH_WOODY)
