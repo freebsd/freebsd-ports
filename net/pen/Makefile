@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
 
 MAINTAINER=	clement@FreeBSD.org
-COMMENT=	A load balancer for "simple" tcp based protocols
+COMMENT=	A load balancer for simple tcp based protocols
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR}
