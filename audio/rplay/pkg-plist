@@ -1,14 +1,20 @@
+etc/rc.d/rplayd.sh
+etc/rplay.hosts
 bin/rplay
 bin/rptp
 @comment requires XForms
 @comment bin/xrplay
-bin/rplayd
+sbin/rplayd
 include/rplay.h
 lib/librplay.a
-@comment where did these go?
-@comment man/man1/rplay.1
-@comment man/man1/rplayd.1
-@comment man/man1/rptp.1
+info/librplay.info
+info/rplay.info
+info/RPLAY.info
+info/RPTP.info
+man/man1/rplay.1.gz
+man/man1/rplayd.1.gz
+man/man1/xrplay.1.gz
+man/man1/rptp.1.gz
 man/man5/rplay.conf.5.gz
 man/man5/rplay.hosts.5.gz
 man/man5/rplay.servers.5.gz
