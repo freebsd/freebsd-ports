@@ -14,6 +14,8 @@ DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+USE_AUTOMAKE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
@@ -23,8 +25,6 @@ MAN1=	a52dec.1 extract_a52.1
 HEADER_FILES=	liba52/a52_internal.h
 
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-USE_AUTOCONF=	yes
-
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
 .endif
 
