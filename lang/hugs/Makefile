@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hugs98
-PORTVERSION=	200211
+PORTVERSION=	200311
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
@@ -14,22 +14,19 @@ DISTNAME=	${PORTNAME}-${HUGS_DATE}
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
-IGNORE=	"Does not build on ${MACHINE_ARCH}"
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-HUGS_DATE=	Nov2002
+HUGS_DATE=	Nov2003
 USE_REINPLACE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 ALL_TARGET=	default ffihugs
 
-MAN1=		hugs.1
+MAN1=		hugs.1 hugs-package.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(install		:: install_notes\)|#\1|' \
+	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
+		/^install		:: install_guide/d' \
 		${WRKSRC}/MkInstal.in
 
 do-configure:
