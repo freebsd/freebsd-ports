@@ -3,7 +3,7 @@
 PATH=/bin:/usr/sbin
 
 if [ -z "${SYSCONF_DIR}" ]; then
-    SYSCONF_DIR=/usr/local/etc/quagga
+    SYSCONF_DIR=${PREFIX}/etc/quagga
 fi
 
 if [ -z "${LOCALSTATE_DIR}" ]; then

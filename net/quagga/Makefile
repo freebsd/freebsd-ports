@@ -6,50 +6,97 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.96.5
-PORTREVISION=	1
+PORTVERSION=	0.98.0
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
 PATCH_SITES=	http://quagga.net/
 
 MAINTAINER=	boris@tagnet.ru
-COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software (server/reflector)
+COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
-CONFLICTS=	zebra-devel-* zebra-0*
+CONFLICTS=	zebra-devel-[0-9]* zebra-0*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_SUBMAKE=	yes
-WANT_AUTOCONF_VER=	259
-WANT_AUTOMAKE_VER=	19
-AUTOMAKE_ARGS=	-a -i
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
+USE_PERL5_BUILD=yes
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
+OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
+		PAM		"PAM authentication for vtysh"	off \
+		OSPF_NSSA	"NSSA support (RFC1587)"	off \
+		OSPF_OPAQUE_LSA	"OSPF Opaque-LSA support (RFC2370)" off \
+		RTADV		"IPv6 Router Advertisements"	off \
+		SNMP		"SNMP support"			off \
+		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off
+
+.if !defined(BATCH)
+SEL_OPTIONS=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
-SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4} \
+SCRIPTS_ENV=	PREFIX=${PREFIX} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.quagga
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=${PATCHDIR}/extra-patch-zebra.h
 .endif
 
-.if ${CONFIGURE_ARGS:M--enable-opaque-lsa} != ""
+.if defined(WITH_ISISD) && !defined(WITHOUT_ISISD)
+CONFIGURE_ARGS+=--enable-isisd
+PLIST_SUB+=	ISISD_SBIN=sbin/isisd
+PLIST_SUB+=	ISISD_CONF=%%EXAMPLESDIR%%/isisd.conf.sample
+.else
+PLIST_SUB+=	ISISD_SBIN="@comment"
+PLIST_SUB+=	ISISD_CONF="@comment"
+.endif
+MAN8+=		isisd.8
+
+.if defined(WITH_PAM) && !defined(WITHOUT_PAM)
+CONFIGURE_ARGS+=--with-libpam
+.endif
+
+.if defined(WITH_OSPFNSSA) && !defined(WITHOUT_OSPF_NSSA)
+CONFIGURE_ARGS+=--enable-nssa
+.endif
+
+.if defined(WITH_OSPF_OPAQUE_LSA) && !defined(WITHOUT_OSPF_OPAQUE_LSA)
+CONFIGURE_ARGS+=--enable-opaque-lsa
 PLIST_SUB+=	OSPFAPI_HEADER="include/quagga/ospfapi/ospf_apiclient.h"
 PLIST_SUB+=	OSPFAPI_PATH="@dirrm include/quagga/ospfapi"
-PLIST_SUB+=	OSPFAPI_LIB="lib/libospfapiclient.a"
+PLIST_SUB+=	OSPFAPI_LIBA="lib/libospfapiclient.a"
+PLIST_SUB+=	OSPFAPI_LIBSO="lib/libospfapiclient.so"
+PLIST_SUB+=	OSPFAPI_LIBSO0="lib/libospfapiclient.so.0"
 PLIST_SUB+=	OSPFAPI_SBIN="sbin/ospfclient"
 .else
 PLIST_SUB+=	OSPFAPI_HEADER=
 PLIST_SUB+=	OSPFAPI_PATH=
-PLIST_SUB+=	OSPFAPI_LIB=
+PLIST_SUB+=	OSPFAPI_LIBA=
+PLIST_SUB+=	OSPFAPI_LIBSO=
+PLIST_SUB+=	OSPFAPI_LIBSO0=
 PLIST_SUB+=	OSPFAPI_SBIN=
+.endif
+
+.if defined(WITH_RTADV) && !defined(WITHOUT_RTADV)
+CONFIGURE_ARGS+=--enable-rtadv
+.endif
+
+.if defined(WITH_SNMP) && !defined(WITHOUT_SNMP)
+CONFIGURE_ARGS+=--enable-snmp
+.if defined(WITH_SNMP_4)
+LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4:install
+.else
+LIB_DEPENDS+=netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp:install
+.endif
 .endif
 
 .if !defined(ENABLE_USER)
@@ -77,8 +124,6 @@ CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
 .endif
 
 CONFIGURE_ARGS+=--enable-vtysh
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500038
 RC_SUBR?=	${DESTDIR}/etc/rc.subr
@@ -116,31 +161,31 @@ pre-everything::
 	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
 	@${ECHO}
 	@${ECHO} "The following options may be configured interactively:"
-	@${ECHO} "QUAGGA_OPTIONS    Specify additional switches, including:"
-	@${ECHO} "   LIBPAM           PAM authentication for vtysh"
-	@${ECHO} "   OSPF_NSSA        NSSA support (RFC1587)"
-	@${ECHO} "   OSPF_OPAQUE_LSA  OSPF Opaque-LSA with OSPFAPI support (RFC2370)"
-	@${ECHO} "   RTADV            IPv6 Router Advertisements"
-	@${ECHO} "   SNMP             SNMP support"
-	@${ECHO} "   TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
-	@${ECHO} "   TCPMD5           TCP-MD5 support for BGP sessions"
+	@${ECHO} "   WITH_PAM              PAM authentication for vtysh"
+	@${ECHO} "   WITH_OSPF_NSSA        NSSA support (RFC1587)"
+	@${ECHO} "   WITH_OSPF_OPAQUE_LSA  OSPF Opaque-LSA with OSPFAPI support (RFC2370)"
+	@${ECHO} "   WITH_RTADV            IPv6 Router Advertisements"
+	@${ECHO} "   WITH_SNMP             SNMP support"
+	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 
 pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} )
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
-		${AUTOHEADER_ARGS})
-	-@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
-		${AUTOMAKE_ARGS})
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
+# disable AUTO* tools
+	@${FIND} -E ${WRKSRC} -type f \
+		-iregex ".*(Makefile.in|configure)" \
+		| ${XARGS} -x -n 10 \
+		${REINPLACE_CMD} -E \
+			-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/watchquagga.sh > ${WRKDIR}/watchquagga.sh
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} "===>     installing ${PORTNAME} startup file..."
-	@${ECHO} "Add the folliwing lines to /etc/rc.conf to enable quagga:"
+	@${INSTALL_SCRIPT} ${WRKDIR}/quagga.sh ${RC_DIR}/quagga${RC_SUFX}
+	@${INSTALL_SCRIPT} ${WRKDIR}/watchquagga.sh ${RC_DIR}/watchquagga${RC_SUFX}
+	@${ECHO} "Add the following lines to /etc/rc.conf to enable quagga:"
 	@${ECHO} ""
 	@${ECHO} "defaultrouter=\"NO\""
 	@${ECHO} "quagga_enable=\"YES\""
@@ -150,6 +195,8 @@ post-install:
 	@${ECHO} "quagga_flags=\"....\""
 	@${ECHO} "quagga_extralibs_path=\"/path1 /path2\""
 	@${ECHO} "router_enable=\"NO\""
+	@${ECHO} "watchquagga_enable=\"YES\""
+	@${ECHO} "watchquagga_flags=\"...\""
 	@${ECHO} ""
 	@${ECHO} "Note!!! Since 0.96.4_5 port uses new id for quagga user and group."
 	@${ECHO} "        So, You need to manually chown files:"
@@ -158,7 +205,6 @@ post-install:
 	@${ECHO} "        if You had never do this before. Or run"
 	@${ECHO} "        make changeuser"
 	@${ECHO} ""
-	@${INSTALL_SCRIPT} ${WRKDIR}/quagga.sh ${RC_DIR}/quagga${RC_SUFX}
 
 .if !defined(BATCH)
 post-clean:
