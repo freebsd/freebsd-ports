@@ -1,15 +1,15 @@
 bin/kp
-lib/kp/bit_saddy.h
-lib/kp/bit_smiley.h
-lib/kp/cursor.tcl
-lib/kp/entry.tcl
-lib/kp/file.tcl
-lib/kp/filter.tcl
-lib/kp/help.tcl
-lib/kp/keyboard.tcl
-lib/kp/main.tcl
-lib/kp/menu.tcl
-lib/kp/options.tcl
-lib/kp/smileys.tcl
-lib/kp/status.tcl
-@dirrm lib/kp
+share/kp/COPYRIGHT
+share/kp/README
+share/kp/xmodmaps/dec.dv
+share/kp/xmodmaps/dec.qw
+share/kp/xmodmaps/hp.dv
+share/kp/xmodmaps/hp.qw
+share/kp/xmodmaps/pc.dv
+share/kp/xmodmaps/pc.qw
+share/kp/xmodmaps/sgi.dv
+share/kp/xmodmaps/sgi.qw
+share/kp/xmodmaps/sun.dv
+share/kp/xmodmaps/sun.qw
+@dirrm share/kp/xmodmaps
+@dirrm share/kp
