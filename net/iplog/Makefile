@@ -1,12 +1,12 @@
 # New ports collection makefile for:        iplog
-# Version required:	1.2
+# Version required:	2.0-1017
 # Date created:		4 Oct 1999
 # Whom:			Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iplog-2.0-1002
+DISTNAME=	iplog-2.0-1017
 CATEGORIES=	security
 MASTER_SITES=	http://www.numb.org/~odin/stuff/
 
