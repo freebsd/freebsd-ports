@@ -1,7 +1,0 @@
-bin/xmlwf
-include/xml/xmlparse.h
-include/xml/xmltok.h
-lib/libexpat.a
-lib/libexpat.so
-lib/libexpat.so.%%SHLIB_MAJOR%%
-@dirrm include/xml
