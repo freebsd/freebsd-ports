@@ -3,6 +3,8 @@ bin/gst-visualise-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/audioclock.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
+include/gstreamer-%%VERSION%%/gst/audio/multichannel-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/audio/multichannel.h
 include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalance-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalance.h
 include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalancechannel.h
@@ -38,6 +40,7 @@ lib/gstreamer-%%VERSION%%/libgstadder.so
 lib/gstreamer-%%VERSION%%/libgstalaw.so
 lib/gstreamer-%%VERSION%%/libgstalpha.so
 lib/gstreamer-%%VERSION%%/libgstalphacolor.so
+lib/gstreamer-%%VERSION%%/libgstapetag.so
 %%ARTS%%lib/gstreamer-%%VERSION%%/libgstartsdsink.so
 lib/gstreamer-%%VERSION%%/libgstasf.so
 lib/gstreamer-%%VERSION%%/libgstaudioconvert.so
@@ -49,6 +52,7 @@ lib/gstreamer-%%VERSION%%/libgstaudioscale.so
 lib/gstreamer-%%VERSION%%/libgstauparse.so
 lib/gstreamer-%%VERSION%%/libgstavi.so
 %%LIBCACA%%lib/gstreamer-%%VERSION%%/libgstcacasink.so
+%%CAIRO%%lib/gstreamer-%%VERSION%%/libgstcairo.so
 %%LIBCDAUDIO%%lib/gstreamer-%%VERSION%%/libgstcdaudio.so
 %%CDPARANOIA%%lib/gstreamer-%%VERSION%%/libgstcdparanoia.so
 lib/gstreamer-%%VERSION%%/libgstcdplayer.so
@@ -107,6 +111,7 @@ lib/gstreamer-%%VERSION%%/libgstmpegaudio.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudioparse.so
 lib/gstreamer-%%VERSION%%/libgstmpegstream.so
 %%MNG%%lib/gstreamer-%%VERSION%%/libgstmng.so
+%%MMS%%lib/gstreamer-%%VERSION%%/libgstmms.so
 %%MJPEGTOOLS%%lib/gstreamer-%%VERSION%%/libgstmplex.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
 lib/gstreamer-%%VERSION%%/libgstmultifilesink.so
@@ -150,6 +155,7 @@ lib/gstreamer-%%VERSION%%/libgsttextoverlay.so
 %%LIBTHEORA%%lib/gstreamer-%%VERSION%%/libgsttheora.so
 lib/gstreamer-%%VERSION%%/libgsttimeoverlay.so
 %%LIBMUSICBRAINZ%%lib/gstreamer-%%VERSION%%/libgsttrm.so
+lib/gstreamer-%%VERSION%%/libgsttta.so
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
 lib/gstreamer-%%VERSION%%/libgstudp.so
 lib/gstreamer-%%VERSION%%/libgstvbidec.so
