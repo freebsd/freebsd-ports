@@ -30,7 +30,6 @@ lib/mailagent/help/remauth
 lib/mailagent/help/set
 lib/mailagent/help/setauth
 lib/mailagent/help/user
-man/man1/mailhelp.1
 lib/mailagent/examples/README
 lib/mailagent/examples/daemon
 lib/mailagent/examples/mailfolders
@@ -47,14 +46,17 @@ share/examples/mailagent/misc/fakesend/freplcomps
 share/examples/mailagent/misc/fakesend/mh_profile
 share/examples/mailagent/misc/getcost/README
 share/examples/mailagent/misc/getcost/getcost
+share/examples/mailagent/misc/getcost/getcost.bak
 share/examples/mailagent/misc/getcost/rules
 share/examples/mailagent/misc/getcost/spamconfig
 share/examples/mailagent/misc/mime/README
 share/examples/mailagent/misc/mime/rules
 share/examples/mailagent/misc/mime/unmime
+share/examples/mailagent/misc/mime/unmime.bak
 share/examples/mailagent/misc/news/README
 share/examples/mailagent/misc/news/ml.map
 share/examples/mailagent/misc/news/newsgate
+share/examples/mailagent/misc/news/newsgate.bak
 share/examples/mailagent/misc/news/rules
 share/examples/mailagent/misc/pbounce/README
 share/examples/mailagent/misc/pbounce/mailagent.cf
