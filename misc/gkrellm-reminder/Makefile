@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reminder
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.engr.orst.edu/~simonsen/reminder/
 PKGNAMEPREFIX=	gkrellm-
