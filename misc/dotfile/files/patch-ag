@@ -1,0 +1,8 @@
+--- Generator/makeHelp.orig	Sun Dec 21 05:40:27 1997
++++ Generator/makeHelp	Sun Jan 30 19:31:42 2000
+@@ -3,4 +3,4 @@
+ cp $1/help.html helpfile.data
+ echo "\n\n<h1>---------------</h1>" >> helpfile.data
+ cat $2 >> helpfile.data
+-wish $1/makeHelp.tcl helpfile.data generatedHelp $1
++wish8.2 $1/makeHelp.tcl helpfile.data generatedHelp $1
