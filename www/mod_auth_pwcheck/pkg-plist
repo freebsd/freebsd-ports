@@ -1,4 +1,5 @@
 %%AP_LIBEXEC%%/mod_auth_pwcheck.so
 %%AUTH_PWCHECK_DOCS%%/index.html
 @unexec %%APXS%% -e -A -n auth_pwcheck mod_auth_pwcheck.so
+@unexec /bin/rm %%AP_SYSCONF%%/httpd.conf.bak
 @dirrm %%AUTH_PWCHECK_DOCS%%

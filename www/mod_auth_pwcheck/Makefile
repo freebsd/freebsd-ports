@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_pwcheck
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 
@@ -30,8 +31,9 @@ AP_CATEGORY!=	${APXS} -q CFLAGS 2>/dev/null \
 		| ${GREP} DRUSSIAN_APACHE >/dev/null \
 		&& ${ECHO} russian \
 		|| ${ECHO} www
-AP_TARGET!=	${APXS} -q TARGET 2>/dev/null || ${ECHO}
+AP_TARGET!=	${APXS} -q TARGET 2>/dev/null
 AP_LIBEXEC!=	${APXS} -q LIBEXECDIR 2>/dev/null | ${SED} 's@^${PREFIX}/@@'
+AP_SYSCONF!=	${APXS} -q SYSCONFDIR 2>/dev/null
 .else
 AP_CATEGORY=	www
 .endif
@@ -40,6 +42,7 @@ AP_PORT=	apache13${AP_MOD_SSL_SUFFIX}
 AUTH_PWCHECK_DOCS=	share/doc/apache/manual/mod/mod_auth_pwcheck
 PLIST_SUB=	AUTH_PWCHECK_DOCS="${AUTH_PWCHECK_DOCS}" \
 		AP_LIBEXEC="${AP_LIBEXEC}" \
+		AP_SYSCONF="${AP_SYSCONF}" \
 		APXS="${APXS}"
 
 .include <bsd.port.post.mk>
