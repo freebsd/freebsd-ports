@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xskat-3.1
+DISTNAME=	xskat-3.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.gulu.net/xskat/
 
