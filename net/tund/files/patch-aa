@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Aug 24 03:48:00 1999
-+++ Makefile	Sat Feb  5 22:30:00 2000
++++ Makefile	Tue Mar  7 22:35:21 2000
 @@ -1,22 +1,24 @@
  
  RSA_KEY_LENGTH	=	1024
@@ -28,7 +28,7 @@
  
  tund: main.o tund.o secur.o scb.o utils.o md5.o alarm.o cipher.o search.o
 -	$(CC) -static -o tund main.o tund.o secur.o scb.o utils.o md5.o alarm.o cipher.o search.o $(LIB) -lmd -lcrypto
-+	$(CC) -static -o tund main.o tund.o secur.o scb.o utils.o md5.o alarm.o cipher.o search.o $(LIB) -lmd -lcrypto $(EXTRA_SSL_LIBS)
++	$(CC) -o tund main.o tund.o secur.o scb.o utils.o md5.o alarm.o cipher.o search.o $(LIB) -lmd -lcrypto $(EXTRA_SSL_LIBS)
  
  main.o: main.c tund.h
  	$(CC) -c main.c $(INC)
