@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latex2rtf
-PORTVERSION=	1.9.14
+PORTVERSION=	1.9.15
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_TEX_CTAN}
@@ -16,5 +16,8 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
 MAN1=		latex2rtf.1 latex2png.1
+INFO=		latex2rtf
+
+INSTALL_TARGET=	install install-info
 
 .include <bsd.port.mk>

@@ -1,5 +1,8 @@
 bin/latex2png
 bin/latex2rtf
+share/doc/latex2rtf/latex2rtf.html
+share/doc/latex2rtf/latex2rtf.pdf
+share/doc/latex2rtf/latex2rtf.txt
 share/latex2rtf/cfg/afrikaans.cfg
 share/latex2rtf/cfg/bahasa.cfg
 share/latex2rtf/cfg/basque.cfg
@@ -21,6 +24,7 @@ share/latex2rtf/cfg/galician.cfg
 share/latex2rtf/cfg/german.cfg
 share/latex2rtf/cfg/icelandic.cfg
 share/latex2rtf/cfg/ignore.cfg
+share/latex2rtf/cfg/inc_test.tex
 share/latex2rtf/cfg/irish.cfg
 share/latex2rtf/cfg/italian.cfg
 share/latex2rtf/cfg/latin.cfg
@@ -38,12 +42,11 @@ share/latex2rtf/cfg/serbian.cfg
 share/latex2rtf/cfg/slovak.cfg
 share/latex2rtf/cfg/slovene.cfg
 share/latex2rtf/cfg/spanish.cfg
+share/latex2rtf/cfg/style.cfg
 share/latex2rtf/cfg/swedish.cfg
 share/latex2rtf/cfg/turkish.cfg
 share/latex2rtf/cfg/usorbian.cfg
 share/latex2rtf/cfg/welsh.cfg
-share/latex2rtf/latex2rtf.html
-share/latex2rtf/latex2rtf.pdf
-share/latex2rtf/latex2rtf.txt
+@dirrm share/doc/latex2rtf
 @dirrm share/latex2rtf/cfg
 @dirrm share/latex2rtf

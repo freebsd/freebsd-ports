@@ -1,0 +1,1954 @@
+--- doc/latex2rtf.info.orig	Thu Oct 30 06:38:25 2003
++++ doc/latex2rtf.info	Wed Apr 28 12:14:05 2004
+@@ -1,21 +1,21 @@
+ This is latex2rtf.info, produced by makeinfo version 4.2 from
+ latex2rtf.texi.
+ 
+-       This file documents LaTeX2RTF , a converter that
+-translates LaTeX  to RTF.  Copyright 1998-2002 Georg Lehner, 
+-updates Copyright 1999-2003 by Wilfried Hennings and Scott Prahl, 
+-with contributions by Mikhail Polianski.  Permission is granted to
+-make and distribute verbatim copies of this manual provided the
+-copyright notice and this permission notice are preserved on all
+-copies.  versions of this manual under the conditions for verbatim
+-copying, provided also that the sections entitled "Copying" and "GNU
+-General Public License" are included exactly as in the original, and
+-provided that the entire resulting derived work is distributed under
+-the terms of a permission notice identical to this one. 
++       This file documents LaTeX2RTF , a converter that
++translates LaTeX  to RTF.  Copyright 1998-2002 Georg Lehner, 
++updates Copyright 1999-2003 by Wilfried Hennings and Scott Prahl, 
++with contributions by Mikhail Polianski.  Permission is granted to
++make and distribute verbatim copies of this manual provided the
++copyright notice and this permission notice are preserved on all
++copies.  versions of this manual under the conditions for verbatim
++copying, provided also that the sections entitled "Copying" and "GNU
++General Public License" are included exactly as in the original, and
++provided that the entire resulting derived work is distributed under
++the terms of a permission notice identical to this one. 
+ Permission is granted to copy and distribute translations of this
+-manual into another language, under the above conditions for modified
+-versions, except that this permission notice may be stated in a
+-translation approved by the Free Software Foundation.   
++manual into another language, under the above conditions for modified
++versions, except that this permission notice may be stated in a
++translation approved by the Free Software Foundation.   
+ 
+ 
+ File: latex2rtf.info,  Node: Top,  Next: Introduction,  Up: (dir)
+@@ -23,21 +23,21 @@
+ LaTeX2RTF
+ *********
+ 
+-    This file documents LaTeX2RTF , a converter that translates LaTeX
+-to RTF.  
++    This file documents LaTeX2RTF , a converter that translates LaTeX
++to RTF.  
+ 
+ * Menu:
+ 
+-* Introduction::                
+-* Installation::          
+-* Using LaTeX2RTF::          
+-* Features::                    
+-* Configuration::      
+-* Error Messages and Logging ::  
+-* LaTeX2RTF under Development ::  
+-* History::                     
+-* Index::  
+-   
++* Introduction::                
++* Installation::          
++* Using LaTeX2RTF::          
++* Features::                    
++* Configuration::      
++* Error Messages and Logging ::  
++* LaTeX2RTF under Development ::  
++* History::                     
++* Index::  
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Introduction,  Next: Installation,  Prev: Top,  Up: Top
+@@ -45,49 +45,49 @@
+ Introduction
+ ************
+ 
+-    LaTeX2RTF  is a translator program from LaTeX  text into "rich
+-text format" files.  These files are commonly referred to as RTF
+-files.  RTF is a published standard format by Microsoft.  This
+-standard can be ambiguous in places and Microsoft ignores parts of
++    LaTeX2RTF  is a translator program from LaTeX  text into "rich
++text format" files.  These files are commonly referred to as RTF
++files.  RTF is a published standard format by Microsoft.  This
++standard can be ambiguous in places and Microsoft ignores parts of
+ the standard it finds inconvenient, but RTF is widely used by many
+-WYSIWIG text editors and is supported by Microsoft Word and most text
+-processors.  LaTeX2RTF  translates the text and as much of the
+-formatting information from LaTeX  to RTF. Be forewarned that the
+-typeset output is not nearly as good as what you would get  from
+-using LaTeX  directly. So, why bother translating? Consider, 
++WYSIWIG text editors and is supported by Microsoft Word and most text
++processors.  LaTeX2RTF  translates the text and as much of the
++formatting information from LaTeX  to RTF. Be forewarned that the
++typeset output is not nearly as good as what you would get  from
++using LaTeX  directly. So, why bother translating? Consider, 
+   1. You use LaTeX  and hate everything beginning with MS-....
+-     Nevertheless, you have to share your documents with people who
+-     don't even now that there exist other things than MS-....
+-     
++     Nevertheless, you have to share your documents with people who
++     don't even now that there exist other things than MS-....
++     
+ 
+   2. You know somebody who frequently sends you very fine LaTeX
+-     documents. Unfortunately, you are "on the other side" and need
+-     to import her files, steal some part, and then desktop publish
+-     it in your fine MS-... environment.       
+-         There are drawbacks to the conversion process. In fact,
+-don't expect any LaTeX  file to be converted as you would like, don't
+-expect it to be converted without errors or warnings, and don't be
+-especially surprised when it doesn't convert at all.  LaTeX2RTF  is
++     documents. Unfortunately, you are "on the other side" and need
++     to import her files, steal some part, and then desktop publish
++     it in your fine MS-... environment.       
++         There are drawbacks to the conversion process. In fact,
++don't expect any LaTeX  file to be converted as you would like, don't
++expect it to be converted without errors or warnings, and don't be
++especially surprised when it doesn't convert at all.  LaTeX2RTF  is
+ known to have many bugs and many missing features. Paradoxically, this
+-number seems to grow more and more with each day.  However, we can
+-categorically state that there are some special cases,  in which a
+-LaTeX  file will be translated to RTF satisfactorily by LaTeX2RTF  --
+-This was sort of disclaimer, ok? OK!  LaTeX  is a system for
+-typesetting text and therefore it focuses on the logical structure of
++number seems to grow more and more with each day.  However, we can
++categorically state that there are some special cases,  in which a
++LaTeX  file will be translated to RTF satisfactorily by LaTeX2RTF  --
++This was sort of disclaimer, ok? OK!  LaTeX  is a system for
++typesetting text and therefore it focuses on the logical structure of
+ a document, whilst RTF is meant to be a transport format for a family
+-of Desktop Publishing Software, dealing mostly with the design of a
+-text.  Although the possible different commands and styles in LaTeX
+-are much more flexible and standardized than in RTF, only a small
+-subset of commands has been implemented to date.  *Note Unimplemented
+-Features::.  Some of the capabilities of LaTeX2RTF  are restricted
+-in scope or buggy. *Note Known Bugs::.  RTF is a moving target,
+-because Microsoft does not stop inventing new extensions and
++of Desktop Publishing Software, dealing mostly with the design of a
++text.  Although the possible different commands and styles in LaTeX
++are much more flexible and standardized than in RTF, only a small
++subset of commands has been implemented to date.  *Note Unimplemented
++Features::.  Some of the capabilities of LaTeX2RTF  are restricted
++in scope or buggy. *Note Known Bugs::.  RTF is a moving target,
++because Microsoft does not stop inventing new extensions and
+ features, consequently you cannot view newer RTF files with older word
+-processors.   The syntax and semantics of RTF are somewhat
+-artistic, i.e., you can generate a syntactically correct RTF file
+-that cannot be displayed by some/most word processors. For more
++processors.   The syntax and semantics of RTF are somewhat
++artistic, i.e., you can generate a syntactically correct RTF file
++that cannot be displayed by some/most word processors. For more
+ details on RTF the specification consult the links at
+-`http://latex2rtf.sf.net/' 
++`http://latex2rtf.sf.net/' 
+ 
+ 
+ File: latex2rtf.info,  Node: Installation,  Next: Using LaTeX2RTF,  Prev: Introduction,  Up: Top
+@@ -95,54 +95,54 @@
+ Installation
+ ************
+ 
+-   
++   
+ 
+ * Menu:
+ 
+-* General ::
+-* Obtaining LaTeX2RTF ::
+-* UNIX ::
+-* DOS or Windows ::
+-* Win32 systems ::
+-* Macintosh ::
+-* Problems Compiling ::
+-* Problems with make check ::
+-   
++* General ::
++* Obtaining LaTeX2RTF ::
++* UNIX ::
++* DOS or Windows ::
++* Win32 systems ::
++* Macintosh ::
++* Problems Compiling ::
++* Problems with make check ::
++   
+ 
+ 
+ File: latex2rtf.info,  Node: General,  Next: Obtaining LaTeX2RTF,  Prev: Installation,  Up: Installation
+ 
+-   
++   
+ 
+ General
+ =======
+ 
+-    The documentation of the program is found in the `doc/' directory
+-in the file `latex2rtf.texi' in the GNU TeXInfo format.  For your
+-convenience, you can find HTML and PDF versions of the manual there
+-as well. 
++    The documentation of the program is found in the `doc/' directory
++in the file `latex2rtf.texi' in the GNU TeXInfo format.  For your
++convenience, you can find HTML and PDF versions of the manual there
++as well. 
+ 
+ 
+ File: latex2rtf.info,  Node: Obtaining LaTeX2RTF,  Next: UNIX,  Prev: General,  Up: Installation
+ 
+-   
++   
+ 
+ Obtaining LaTeX2RTF
+ ===================
+ 
+-    LaTeX2RTF  is available for many Unix Platforms, for the
+-Macintosh, and for MS-DOS, including all versions of MS Windows. 
+-The latest version of LaTeX2RTF  is available at  SourceForge
++    LaTeX2RTF  is available for many Unix Platforms, for the
++Macintosh, and for MS-DOS, including all versions of MS Windows. 
++The latest version of LaTeX2RTF  is available at  SourceForge
+ (http://sourceforge.net/projects/latex2rtf/) and -- with some delay --
+-on CTAN sites: e.g., `http://www.dante.de' or `http://www.ctan.org'.
+- The MS-DOS version (1.8aa and up) will also run under all MS Windows
+-versions. It requires an i386 processor or better.    The Win32
+-distribution (starting from LaTeX2RTF  1.9.15) is the MS-DOS version 
+-plus Win32 GUI program (l2rshell).  There are a couple of people
+-working on the LaTeX2RTF , coordinated by Wilfried Hennings
+-<W.Hennings@fz-juelich.de>.  See the SourceForge
+-(http://sourceforge.net/projects/latex2rtf/)  project pages for the
+-latest news. 
++on CTAN sites: e.g., `http://www.dante.de' or `http://www.ctan.org'.
++ The MS-DOS version (1.8aa and up) will also run under all MS Windows
++versions. It requires an i386 processor or better.    The Win32
++distribution (starting from LaTeX2RTF  1.9.15) is the MS-DOS version 
++plus Win32 GUI program (l2rshell).  There are a couple of people
++working on the LaTeX2RTF , coordinated by Wilfried Hennings
++<W.Hennings@fz-juelich.de>.  See the SourceForge
++(http://sourceforge.net/projects/latex2rtf/)  project pages for the
++latest news. 
+ 
+ 
+ File: latex2rtf.info,  Node: UNIX,  Next: DOS or Windows,  Prev: Obtaining LaTeX2RTF,  Up: Installation
+@@ -150,54 +150,54 @@
+ UNIX
+ ====
+ 
+-    To install, 
++    To install, 
+   1. Edit `Makefile' for your local configuration.  In particular, pay
+-     attention to the `PREFIX' variable.  If you do not have root
+-     access you might wish  to set the makefile variable `PREFIX' to
+-     be your home directory.   On some machines the cc compiler
+-     will issue errors. Therefore the  default compiler command in
+-     the Makefile is `CC=gcc'. 
++     attention to the `PREFIX' variable.  If you do not have root
++     access you might wish  to set the makefile variable `PREFIX' to
++     be your home directory.   On some machines the cc compiler
++     will issue errors. Therefore the  default compiler command in
++     the Makefile is `CC=gcc'. 
+ 
+   2. As of version 1.9.13, LaTeX2RTF  supports conversion of LaTeX
+-     equations to bitmaps using the shell script `latex2png', found
+-     in `scripts/'.   `latex2png' requires that both LaTeX  and
+-     `ImageMagick' are installed.  LaTeX2RTF  will translate
+-     documents without a working `latex2png', but some features will
+-     be missing.  You can verify that the `latex2png' script is
+-     working by typing `make' in the `scripts/' directory. 
+-
+-  3. `make'   If this is not your first time installation, you may
+-     want to preserve   your old configuration (`*.cfg') files. Copy
+-     them to a safe place before   installing.  On IBM AIX, the
+-     IBM make utility does not support some of the commands used in
+-     Makefile. In this case use `gmake' (from GNU) instead.  Sun
+-     has decided to support the XPG4 standard on Solaris by an
++     equations to bitmaps using the shell script `latex2png', found
++     in `scripts/'.   `latex2png' requires that both LaTeX  and
++     `ImageMagick' are installed.  LaTeX2RTF  will translate
++     documents without a working `latex2png', but some features will
++     be missing.  You can verify that the `latex2png' script is
++     working by typing `make' in the `scripts/' directory. 
++
++  3. `make'   If this is not your first time installation, you may
++     want to preserve   your old configuration (`*.cfg') files. Copy
++     them to a safe place before   installing.  On IBM AIX, the
++     IBM make utility does not support some of the commands used in
++     Makefile. In this case use `gmake' (from GNU) instead.  Sun
++     has decided to support the XPG4 standard on Solaris by an
+      alternative set of binaries.  So allow bitmap conversion of
+-     equations, two things are needed.  First, change the first line
+-     of latex2png to `#!/usr/xpg4/bin/sh' Second, define the
+-     XPG4_GREP environment variable accordingly, for bash-like shells
+-     `XPG4_GREP=/usr/xpg4/bin/grep; export XPG4_GREP' or for
+-     tsch-like shells `setenv XPG4_GREP /usr/xpg4/bin/grep'. 
+-
+-  4. `make install'  If your `mkdir' doesn't support the `-p'
+-     option, then create   the necessary directories by hand and
+-     remove the option from the `$MKDIR' variable.   If you have
+-     other problems, just copy `latex2rtf' and `latex2png' to   a
++     equations, two things are needed.  First, change the first line
++     of latex2png to `#!/usr/xpg4/bin/sh' Second, define the
++     XPG4_GREP environment variable accordingly, for bash-like shells
++     `XPG4_GREP=/usr/xpg4/bin/grep; export XPG4_GREP' or for
++     tsch-like shells `setenv XPG4_GREP /usr/xpg4/bin/grep'. 
++
++  4. `make install'  If your `mkdir' doesn't support the `-p'
++     option, then create   the necessary directories by hand and
++     remove the option from the `$MKDIR' variable.   If you have
++     other problems, just copy `latex2rtf' and `latex2png' to   a
+      binary directory, and move the contents of the `cfg/' directory
+-     to   the location specified by `$CFG_INSTALL'.  
++     to   the location specified by `$CFG_INSTALL'.  
+ 
+-  5. `make check'  [OPTIONAL] This tests LaTeX2RTF  on a variety of
+-     LaTeX  files.  Expect a whole lot of warnings, but no outright
+-     errors. (On IBM AIX, use `gmake check'.) Note that this will
+-     check the basic functionality of the `latex2png' script, and
+-     then that of `latex2rtf'. 
+-
+-  6. `make install-info'  [OPTIONAL] This installs `.info' files
+-     for use with the `info' program. 
+-         You no longer need to define the environment variable
+-`RTFPATH'. This is only necessary if you move the directory
+-containing the `.cfg' files.   Just define `RTFPATH' to be the path
+-to the new location.  
++  5. `make check'  [OPTIONAL] This tests LaTeX2RTF  on a variety of
++     LaTeX  files.  Expect a whole lot of warnings, but no outright
++     errors. (On IBM AIX, use `gmake check'.) Note that this will
++     check the basic functionality of the `latex2png' script, and
++     then that of `latex2rtf'. 
++
++  6. `make install-info'  [OPTIONAL] This installs `.info' files
++     for use with the `info' program. 
++         You no longer need to define the environment variable
++`RTFPATH'. This is only necessary if you move the directory
++containing the `.cfg' files.   Just define `RTFPATH' to be the path
++to the new location.  
+ 
+ 
+ File: latex2rtf.info,  Node: DOS or Windows,  Next: Win32 systems,  Prev: UNIX,  Up: Installation
+@@ -205,100 +205,100 @@
+ DOS or Windows
+ ==============
+ 
+-    The UNIX and Mac distributions do not contain an executable for
+-DOS  or Windows. Instead, get the DOS port as file
+-`latex2rtf-x.xx_dos.zip' (where x.xx is the version number) from  
+-SourceForge (http://sourceforge.net/projects/latex2rtf/)  The DOS
+-distribution contains a precompiled executable which should run 
+-under plain DOS and also under any MS Windows system.  The MS-DOS
+-version starting from 1.9.14a has an optional Win32 GUI interface 
+-(LaTeX2RTF Shell), *Note Win32 systems::.  To install latex2rtf,
+-extract all files from the zip archive to `C:\l2r' or to another
+-folder (i.e. directory) of your choice, preserving the folder
++    The UNIX and Mac distributions do not contain an executable for
++DOS  or Windows. Instead, get the DOS port as file
++`latex2rtf-x.xx_dos.zip' (where x.xx is the version number) from  
++SourceForge (http://sourceforge.net/projects/latex2rtf/)  The DOS
++distribution contains a precompiled executable which should run 
++under plain DOS and also under any MS Windows system.  The MS-DOS
++version starting from 1.9.14a has an optional Win32 GUI interface 
++(LaTeX2RTF Shell), *Note Win32 systems::.  To install latex2rtf,
++extract all files from the zip archive to `C:\l2r' or to another
++folder (i.e. directory) of your choice, preserving the folder
+ structure (winzip: check "use folder names").
+- If you extracted them to another folder (e.g. `C:\Program
+-Files\l2r'), edit the files `L2R.BAT', `L2RSEM.BAT' and `L2RPREP.BAT'
+- and change the folder `C:\l2r' to where you put them. If there is
+-a blank in any of the folder names (as in e.g. "Program Files"), then
+-you need to enclose both the file-ID and the cfg path in double
++ If you extracted them to another folder (e.g. `C:\Program
++Files\l2r'), edit the files `L2R.BAT', `L2RSEM.BAT' and `L2RPREP.BAT'
++ and change the folder `C:\l2r' to where you put them. If there is
++a blank in any of the folder names (as in e.g. "Program Files"), then
++you need to enclose both the file-ID and the cfg path in double
+ quotes, e.g.
+- `"C:\Program Files\l2r\latex2rt" -P "C:\Program Files\l2r\cfg" %1 %2
++ `"C:\Program Files\l2r\latex2rt" -P "C:\Program Files\l2r\cfg" %1 %2
+ ...'
+- or use the DOS filename equivalent instead, e.g.
+- `C:\Progra~1\l2r\latex2rt -P C:\Progra~1\l2r\cfg %1 %2 ...'  If
+-you install LaTeX2RTF  under WinNT, Win2000 or WinXP and  you want
+-other users to be able to use LaTeX2RTF , you must assign the files
+-and folders appropriate user permissions (at least read & execute).
+-If you don't know about user permissions, put LaTeX2RTF  into
+-`C:\Program Files\l2r' or what else the standard folder  for
+-installing applications is named (e.g. in the German version it  is
+-`C:\Programme\l2r').   Make sure that the folder containing the
+-file `L2RPREP.BAT'   is in your search path, or put this file into
+-a folder  which is in your search path (e.g. `C:\Windows').
+- To display the current search path, enter `path'  from the command
+-prompt (with no arguments).  To add a folder - e.g. C:\l2r - to the
+-search path:
+-   * DOS, Win3.1, Win95, Win98, WinME
+-        * Open the file `C:\Autoexec.bat' either with Edit (DOS) or 
+-          with Notepad (Windows).
++ or use the DOS filename equivalent instead, e.g.
++ `C:\Progra~1\l2r\latex2rt -P C:\Progra~1\l2r\cfg %1 %2 ...'  If
++you install LaTeX2RTF  under WinNT, Win2000 or WinXP and  you want
++other users to be able to use LaTeX2RTF , you must assign the files
++and folders appropriate user permissions (at least read & execute).
++If you don't know about user permissions, put LaTeX2RTF  into
++`C:\Program Files\l2r' or what else the standard folder  for
++installing applications is named (e.g. in the German version it  is
++`C:\Programme\l2r').   Make sure that the folder containing the
++file `L2RPREP.BAT'   is in your search path, or put this file into
++a folder  which is in your search path (e.g. `C:\Windows').
++ To display the current search path, enter `path'  from the command
++prompt (with no arguments).  To add a folder - e.g. C:\l2r - to the
++search path:
++   * DOS, Win3.1, Win95, Win98, WinME
++        * Open the file `C:\Autoexec.bat' either with Edit (DOS) or 
++          with Notepad (Windows).
+ 
+         * At the end of that file, add the line
+-           `PATH=C:\l2r;%PATH%' 
++           `PATH=C:\l2r;%PATH%' 
+ 
+-        * Save the file to its original location.
++        * Save the file to its original location.
+ 
+-   * WinNT, Win2000, WinXP
++   * WinNT, Win2000, WinXP
+         * Right-click "My Computer" (German: "Arbeitsplatz"), then
+-          select "Properties";
++          select "Properties";
+ 
+         * NT: Click the "Environment" tab;
+-           XP: Click the "Extended" tab, then the "Environment
+-          variables" button;
++           XP: Click the "Extended" tab, then the "Environment
++          variables" button;
+ 
+         * Find the line beginning with `PATH=' and insert the string
+-           `C:\l2r;'
+-           so that the complete line looks like
+-           `PATH=C:\l2r;C:\WINDOWS;...'
+-
+-        * Click "OK"
+- To start the program under Windows,
+- open a command prompt (or console window)
+- - under DOS you are already at the command prompt -,
+- use `cd <folder>' to make the folder with your TeX files the
++           `C:\l2r;'
++           so that the complete line looks like
++           `PATH=C:\l2r;C:\WINDOWS;...'
++
++        * Click "OK"
++ To start the program under Windows,
++ open a command prompt (or console window)
++ - under DOS you are already at the command prompt -,
++ use `cd <folder>' to make the folder with your TeX files the
+ current folder,
+- then enter either `L2R <filename> <options>' or `L2RSEM <filename>
++ then enter either `L2R <filename> <options>' or `L2RSEM <filename>
+ <options>'
+- where <filename> is the name of your TeX file without the .tex
++ where <filename> is the name of your TeX file without the .tex
+ extension.
+- `L2R.BAT' and `L2RSEM.BAT' only differ in the character being used
++ `L2R.BAT' and `L2RSEM.BAT' only differ in the character being used
+ as parameter separator in the EQ fields, see chapter *Note
+-Equations::.  If your LaTeX  document refers to external graphic
+-files, e.g. eps,  or you want to use the option to convert equations
+-to bitmaps (-M# where # is greater than 3), you must have TeX,
+-ImageMagick and Ghostscript installed.  These programs are freely
+-available for download at `http://www.miktex.org/', 
+-`http://www.imagemagick.org' and `http://www.ghostscript.com'. This
++Equations::.  If your LaTeX  document refers to external graphic
++files, e.g. eps,  or you want to use the option to convert equations
++to bitmaps (-M# where # is greater than 3), you must have TeX,
++ImageMagick and Ghostscript installed.  These programs are freely
++available for download at `http://www.miktex.org/', 
++`http://www.imagemagick.org' and `http://www.ghostscript.com'. This
+ works only on win32 systems (Win95, Win98, WinME, WinNT4, Win2000,
+-WinXP) because ImageMagick is available only for win32, not for pure
+-DOS.  Either the folders where TeX, ImageMagick and Ghostscript are
+-installed must be in your search path, or you must edit the file
+-`L2RPREP.BAT',  ensure that the pathes in this file point to the
+-folders where  TeX, ImageMagick and Ghostscript are installed on your
+-machine, and call `L2RPREP' once after opening your command prompt
+-window and before calling `l2r', `l2rsem' or `latex2rt'. Under
+-Windows you can create another command prompt link in which you  can
+-include the call to `L2RPREP.BAT'.   LaTeX2RTF  first writes a
+-temporary .tex file to disk which consists of only  the equation to
+-be converted. It then sends the call for latex2pn.bat to the
+-operating system. There were problems that this didn't work although
++WinXP) because ImageMagick is available only for win32, not for pure
++DOS.  Either the folders where TeX, ImageMagick and Ghostscript are
++installed must be in your search path, or you must edit the file
++`L2RPREP.BAT',  ensure that the pathes in this file point to the
++folders where  TeX, ImageMagick and Ghostscript are installed on your
++machine, and call `L2RPREP' once after opening your command prompt
++window and before calling `l2r', `l2rsem' or `latex2rt'. Under
++Windows you can create another command prompt link in which you  can
++include the call to `L2RPREP.BAT'.   LaTeX2RTF  first writes a
++temporary .tex file to disk which consists of only  the equation to
++be converted. It then sends the call for latex2pn.bat to the
++operating system. There were problems that this didn't work although
+ manually calling latex2pn.bat from the command prompt worked.
+- There were several bugs in interfacing between Windows XP and DJGPP
+-which  finally caused this. One fix needed was truncating the
+-filename of  `latex2png.bat' to the DOS convention of 8.3 characters
+-so that it is  now named `latex2pn.bat' and the executable program
+-`latex2rt.exe'. The other fix is now hardcoded in latex2rt.exe,
+-making sure the DOS environment  space in which latex2pn.bat is
+-executed is large enough to store the needed  variables.  
++ There were several bugs in interfacing between Windows XP and DJGPP
++which  finally caused this. One fix needed was truncating the
++filename of  `latex2png.bat' to the DOS convention of 8.3 characters
++so that it is  now named `latex2pn.bat' and the executable program
++`latex2rt.exe'. The other fix is now hardcoded in latex2rt.exe,
++making sure the DOS environment  space in which latex2pn.bat is
++executed is large enough to store the needed  variables.  
+ 
+ 
+ File: latex2rtf.info,  Node: Win32 systems,  Next: Macintosh,  Prev: DOS or Windows,  Up: Installation
+@@ -306,17 +306,17 @@
+ Win32 systems
+ =============
+ 
+-    To install LaTeX2RTF  on a Win32 system (Win9x, WinME, WinNT,
+-Win2000, WinXP), execute the  `latex2rtf-x.x.x_win.exe' and follow
+-the instructions.  To start the program double-click the LaTeX2RTF
+-icon, or drag and drop a `.tex' file onto the icon.  If your LaTeX
+-document refers to external graphic files, e.g. eps,  or you want to
+-use the option to convert equations to bitmaps, you must have LaTeX,
+-ImageMagick and Ghostscript installed. These programs are  freely
+-available for download at `http://www.miktex.org/', 
+-`http://www.imagemagick.org' and `http://www.ghostscript.com' 
++    To install LaTeX2RTF  on a Win32 system (Win9x, WinME, WinNT,
++Win2000, WinXP), execute the  `latex2rtf-x.x.x_win.exe' and follow
++the instructions.  To start the program double-click the LaTeX2RTF
++icon, or drag and drop a `.tex' file onto the icon.  If your LaTeX
++document refers to external graphic files, e.g. eps,  or you want to
++use the option to convert equations to bitmaps, you must have LaTeX,
++ImageMagick and Ghostscript installed. These programs are  freely
++available for download at `http://www.miktex.org/', 
++`http://www.imagemagick.org' and `http://www.ghostscript.com' 
+ Paths to LaTeX, ImageMagick and Ghostscript executables have to be
+-specified in the  "Environment" tab of the LaTeX2RTF  window.  
++specified in the  "Environment" tab of the LaTeX2RTF  window.  
+ 
+ 
+ File: latex2rtf.info,  Node: Macintosh,  Next: Problems Compiling,  Prev: Win32 systems,  Up: Installation
+@@ -324,17 +324,17 @@
+ Macintosh
+ =========
+ 
+-    If you want a MacOS X version, make sure that you have installed
+-the developer tools CD that is appropriate for your OS version, and
+-then follow the directions above for UNIX installation.  There is
++    If you want a MacOS X version, make sure that you have installed
++the developer tools CD that is appropriate for your OS version, and
++then follow the directions above for UNIX installation.  There is
+ a classic MacOS PPC port of the 1.9k of LaTeX2RTF  and I have made a
+-binary distribution of this application.  Unfortunately, because I
+-(Scott Prahl) do all development under MacOS X, the binaries for the
+-Classic version often lag (far) behind the current UNIX version. 
++binary distribution of this application.  Unfortunately, because I
++(Scott Prahl) do all development under MacOS X, the binaries for the
++Classic version often lag (far) behind the current UNIX version. 
+ To convert a LaTeX  file, just drag the file onto the LaTeX2RTF
+-application icon.  The translation is best if there are `.aux' and
+-`.bbl' files in the same folder as the `.tex' file to be converted.
+-These should be generated using LaTeX  and `bibtex'. 
++application icon.  The translation is best if there are `.aux' and
++`.bbl' files in the same folder as the `.tex' file to be converted.
++These should be generated using LaTeX  and `bibtex'. 
+ 
+ 
+ File: latex2rtf.info,  Node: Problems Compiling,  Next: Problems with make check,  Prev: Macintosh,  Up: Installation
+@@ -342,18 +342,18 @@
+ Problems Compiling
+ ==================
+ 
+-    The code for LaTeX2RTF  is standard ANSI C.  Some possible
+-pitfalls are
+-   * Not correctly defining your compiler in the Makefile. The
+-     default is to use `gcc'.   
++    The code for LaTeX2RTF  is standard ANSI C.  Some possible
++pitfalls are
++   * Not correctly defining your compiler in the Makefile. The
++     default is to use `gcc'.   
+ 
+    * Encountering errors because the compiler options.  During
+-     development all compiler warnings are turned on.  However,
+-     different compilers have different interpretations of `-Wall'
+-     and  may generate errors that were not found in a different
+-     development system.  Please report these, but a quick fix is to
+-     remove all compiler options.   
+-   
++     development all compiler warnings are turned on.  However,
++     different compilers have different interpretations of `-Wall'
++     and  may generate errors that were not found in a different
++     development system.  Please report these, but a quick fix is to
++     remove all compiler options.   
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Problems with make check,  Prev: Problems Compiling,  Up: Installation
+@@ -361,12 +361,12 @@
+ Problems with `make check'
+ ==========================
+ 
+-    All the files in the `test' directory are converted (with varying
+-degrees of success) using LaTeX2RTF  and are tested before most CVS
+-check-ins and with all released tarballs.  There will be many warning
+-messages, but there should be no actual error messages.  If you do
+-not have a working latex2png script, then some of the files will fail
+-to be translated. 
++    All the files in the `test' directory are converted (with varying
++degrees of success) using LaTeX2RTF  and are tested before most CVS
++check-ins and with all released tarballs.  There will be many warning
++messages, but there should be no actual error messages.  If you do
++not have a working latex2png script, then some of the files will fail
++to be translated. 
+ 
+ 
+ File: latex2rtf.info,  Node: Using LaTeX2RTF,  Next: Features,  Prev: Installation,  Up: Top
+@@ -374,14 +374,14 @@
+ Using LaTeX2RTF
+ ***************
+ 
+-   
++   
+ 
+ * Menu:
+ 
+-* General Assumptions ::
+-* LaTeX2RTF Options ::
+-* Debugging::                   
+-   
++* General Assumptions ::
++* LaTeX2RTF Options ::
++* Debugging::                   
++   
+ 
+ 
+ File: latex2rtf.info,  Node: General Assumptions,  Next: LaTeX2RTF Options,  Prev: Using LaTeX2RTF,  Up: Using LaTeX2RTF
+@@ -389,31 +389,31 @@
+ General Assumptions
+ ===================
+ 
+-    LaTeX2RTF  assumes that the `.tex' file you want to convert is a
+-valid  LaTeX  document.  The chances of a successful LaTeX2RTF
+-conversion are slightly better than the proverbial snowball's if the
+-`.tex' file doesn't `latex' properly.  Use  LaTeX  to find and
+-correct errors before using LaTeX2RTF .  To correctly convert font
+-names you must edit the `fonts.cfg' configuration file. This file is
++    LaTeX2RTF  assumes that the `.tex' file you want to convert is a
++valid  LaTeX  document.  The chances of a successful LaTeX2RTF
++conversion are slightly better than the proverbial snowball's if the
++`.tex' file doesn't `latex' properly.  Use  LaTeX  to find and
++correct errors before using LaTeX2RTF .  To correctly convert font
++names you must edit the `fonts.cfg' configuration file. This file is
+ used to specify the needed font names and how the LaTeX  default font
+-names should be converted to RTF.  *Note Font Configuration::. LaTeX
+-variables and user defined commands are not evaluated. They will be
+-simply ignored. To let LaTeX2RTF  know the names of variables you can
+-add them in the `ignore.cfg' file.  *Note Ignore Command::.  The
++names should be converted to RTF.  *Note Font Configuration::. LaTeX
++variables and user defined commands are not evaluated. They will be
++simply ignored. To let LaTeX2RTF  know the names of variables you can
++add them in the `ignore.cfg' file.  *Note Ignore Command::.  The
+ environment variable RTFPATH may contain a search path for the support
+-files (all files ending in `.cfg'). If no file is found during the
+-search in the search-path or if the environment variable is not set,
+-the compiled-in default for the configuration-file directory is used.
+-If the files are not found at all the program aborts.  In the
++files (all files ending in `.cfg'). If no file is found during the
++search in the search-path or if the environment variable is not set,
++the compiled-in default for the configuration-file directory is used.
++If the files are not found at all the program aborts.  In the
+ MS-DOS version the search path is separated by `;' in the Unix version
+-by `:'. For the paths themselves apply `\' and `/'. A separator may
+-appear at the beginning or ending of RTFPATH.  Make sure that the
++by `:'. For the paths themselves apply `\' and `/'. A separator may
++appear at the beginning or ending of RTFPATH.  Make sure that the
+ configuration files are in the correct directory. LaTeX2RTF  will need
+-at least `fonts.cfg', `direct.cfg', `ignore.cfg', `english.cfg'. You
+-may have to change one ore more of them to suit your needs. *Note
+-Configuration::.  *Note Missing options::, for actual
+-implementations irregularities.  *Note Reporting Bugs::, for
+-information on how to reach the maintainer. 
++at least `fonts.cfg', `direct.cfg', `ignore.cfg', `english.cfg'. You
++may have to change one ore more of them to suit your needs. *Note
++Configuration::.  *Note Missing options::, for actual
++implementations irregularities.  *Note Reporting Bugs::, for
++information on how to reach the maintainer. 
+ 
+ 
+ File: latex2rtf.info,  Node: LaTeX2RTF Options,  Next: Debugging,  Prev: General Assumptions,  Up: Using LaTeX2RTF
+@@ -421,172 +421,172 @@
+ LaTeX2RTF Options
+ =================
+ 
+-    The LaTeX2RTF  command converts a LaTeX  file into RTF text
+-format. The text and much of the formatting information is translated
+-to RTF making the new file look similar to the original.  The command
+-line syntax is: 
+-     latex2rtf [-options] inputfile.[tex]
+-    The `-options' may consist of one or more of the following 
++    The LaTeX2RTF  command converts a LaTeX  file into RTF text
++format. The text and much of the formatting information is translated
++to RTF making the new file look similar to the original.  The command
++line syntax is: 
++     latex2rtf [-options] inputfile.[tex]
++    The `-options' may consist of one or more of the following 
+ `-a auxfile'
+-     specify an `.aux' file (for table and figure references) that
+-     differs from `inputfile.aux'. If this is omitted, the name of the
++     specify an `.aux' file (for table and figure references) that
++     differs from `inputfile.aux'. If this is omitted, the name of the
+      inputfile with the suffix replaced `.aux''will be taken.  You
+-     must provide both files (`.tex' and the `.aux') to be able to
+-     convert cross-references in a LaTeX  file.  The `.aux' is created
+-     by running the `inputfile.tex' through `latex'. 
++     must provide both files (`.tex' and the `.aux') to be able to
++     convert cross-references in a LaTeX  file.  The `.aux' is created
++     by running the `inputfile.tex' through `latex'. 
+ 
+ `-b bblfile'
+      Unless an `bblfile' is specified with the `-b' option, LaTeX2RTF
+-     uses a `inputfile.bbl'.  The `bblfile' file is used for
+-     citations and is typically created by running `inputfile.aux'
+-     through `bibtex'. 
++     uses a `inputfile.bbl'.  The `bblfile' file is used for
++     citations and is typically created by running `inputfile.aux'
++     through `bibtex'. 
+ 
+ `-C codepage'
+      used to specify the character set (code page) used in the LaTeX
+-     document. This is only important when non-ansi characters are
+-     included in the LaTeX  document. Typically this is done in a
++     document. This is only important when non-ansi characters are
++     included in the LaTeX  document. Typically this is done in a
+      LaTeX2e  file by using `\usepackage[codepage]{inputenc}' This
+-     command is not needed if the above command is already in the
+-     LaTeX2e  file.  You may select any of the following code pages:
+-     ansinew, applemac, cp437, cp437de, cp850, cp852, cp865,
++     command is not needed if the above command is already in the
++     LaTeX2e  file.  You may select any of the following code pages:
++     ansinew, applemac, cp437, cp437de, cp850, cp852, cp865,
+      decmulti, cp1250, cp1252, latin1, latin2, latin3, latin4, latin5,
+-     latin9, next.  The default behavior is to use ansinew (code page
+-     1252).  Cyrillic support includes conversion of koi8-r, koi8-u,
+-     cp1251, cp855, cp866, maccyr, and macukr encodings. 
++     latin9, next.  The default behavior is to use ansinew (code page
++     1252).  Cyrillic support includes conversion of koi8-r, koi8-u,
++     cp1251, cp855, cp866, maccyr, and macukr encodings. 
+ 
+ `-d debug_level'
+      The `-d' option determines the amount of debugging information to
+-     send to stderr while translating. debug_level=0 means only
+-     Errors, `1' Warning Messages (default) also.  The debug_level
+-     can go as high as `7' for insane amounts of  debugging fun. 
++     send to stderr while translating. debug_level=0 means only
++     Errors, `1' Warning Messages (default) also.  The debug_level
++     can go as high as `7' for insane amounts of  debugging fun. 
+ 
+ `-D dots_per_inch'
+      used to specify the number of dots per inch for equations
+-     converted to bitmaps.   This value is also used when picture
+-     environments are converted to bitmaps as well as when EPS
++     converted to bitmaps.   This value is also used when picture
++     environments are converted to bitmaps as well as when EPS
+      graphics are converted to png files.  The default value is 300
+-     dots per inch. 
++     dots per inch. 
+ 
+ `-f#'
+-     where # selects which fields to use during conversion:
++     where # selects which fields to use during conversion:
+     `-f0'
+-          do not use fields in RTF.  This is handy when primitive RTF 
+-             editors are being used to view the RTF output.
++          do not use fields in RTF.  This is handy when primitive RTF 
++             editors are being used to view the RTF output.
+ 
+     `-f1'
+-          use fields for equations but not `\ref' and `\cite'.  
++          use fields for equations but not `\ref' and `\cite'.  
+ 
+     `-f2'
+-          use fields for `\ref' and `\cite' but not equations.  This
++          use fields for `\ref' and `\cite' but not equations.  This
+             will be useful for versions of OpenOffice that import
+-          cross-references     properly (as of Sept 2003 in a
+-          soon-to-be released version) but do not properly     handle
+-          fields in equations.
++          cross-references     properly (as of Sept 2003 in a
++          soon-to-be released version) but do not properly     handle
++          fields in equations.
+ 
+     `-f3'
+           use fields when possible.  This is the default and is most
+-          useful when     the RTF file is being exported to be used
+-          in Word.  This retains the most     information from the
+-          original LaTeX  file.     
++          useful when     the RTF file is being exported to be used
++          in Word.  This retains the most     information from the
++          original LaTeX  file.     
+ 
+ `-F'
+      use LaTeX to create bitmaps for all figures.  This may help when
+-     figures are not translated properly with the default settings.
+-     This typically requires  a functional version of ImageMagick on
+-     your machine to work properly. 
++     figures are not translated properly with the default settings.
++     This typically requires  a functional version of ImageMagick on
++     your machine to work properly. 
+ 
+ `-h'
+-     a short usage description 
++     a short usage description 
+ 
+ `-i language'
+      used to set the idiom or language used by the LaTeX  document.
+-     Typically, this is specified in a LaTeX2e  document by including
+-     `\usepackage[language]{babel}' where `language' is one of the
+-     languages supported by the `babel' package.   All languages
++     Typically, this is specified in a LaTeX2e  document by including
++     `\usepackage[language]{babel}' where `language' is one of the
++     languages supported by the `babel' package.   All languages
+      listed in the babel system are supported so far as translations
+-     for "Chapter," "References," and the like.  Furthermore, some
+-     commands found in the style files for german, french, russian,
+-     and czech style are supported. *Note Language Configuration::.
+-     
++     for "Chapter," "References," and the like.  Furthermore, some
++     commands found in the style files for german, french, russian,
++     and czech style are supported. *Note Language Configuration::.
++     
+ 
+ `-l'
+      same as `-i latin1' (Note that the default behavior is to use
+-     `ansinew' which is a superset of `latin1'). Included for
+-     backwards compatibility. 
++     `ansinew' which is a superset of `latin1'). Included for
++     backwards compatibility. 
+ 
+ `-M#'
+-     where # selects the type of equation conversion.  Use
++     where # selects the type of equation conversion.  Use
+     `-M1'
+-          convert displayed equations to RTF
++          convert displayed equations to RTF
+ 
+     `-M2'
+-          convert inline equations to RTF
++          convert inline equations to RTF
+ 
+     `-M4'
+-          convert displayed equations to bitmap
++          convert displayed equations to bitmap
+ 
+     `-M8'
+-          convert inline equations to bitmap
++          convert inline equations to bitmap
+ 
+     `-M16'
+           insert Word comment field that contains the original equation
+-          text     These switches can be added together to get the
+-     desired conversion.  Handy examples are
++          text     These switches can be added together to get the
++     desired conversion.  Handy examples are
+     `-M3'
+-          convert both inline and displayed equations to RTF (default)
++          convert both inline and displayed equations to RTF (default)
+ 
+     `-M6'
+           convert inline equations to RTF and displayed equations to
+-          bitmaps
++          bitmaps
+ 
+     `-M12'
+-          convert both inline and displayed equations to bitmaps
++          convert both inline and displayed equations to bitmaps
+      Bitmap conversion requires that you have installed a working
+-     latex2png script. Producing bitmaps is slow. 
++     latex2png script. Producing bitmaps is slow. 
+ 
+ `-o outputfile'
+      Unless an `outputfile' is specified with the `-o' option, the
+-     resulting RTF filename is formed by removing `.tex' from the
+-     `inputfile' and appending `.rtf'. 
++     resulting RTF filename is formed by removing `.tex' from the
++     `inputfile' and appending `.rtf'. 
+ 
+ `-p'
+      Do not quote printed parentheses in mathematical formulas, as some
+-     versions of Word (e.g., Word 2000) have deep psychological
+-     problems with EQ fields using quoted parentheses. If Word
++     versions of Word (e.g., Word 2000) have deep psychological
++     problems with EQ fields using quoted parentheses. If Word
+      displays some formulas with parentheses as "Error!", try this
+-     option. See also the -S option.  This is an option because
+-     it will break typesetting equations with non-matching
++     option. See also the -S option.  This is an option because
++     it will break typesetting equations with non-matching
+      parentheses (because an unmatched unquoted parenthesis would
+-     terminate the field). 
++     terminate the field). 
+ 
+ `-P /path/to/cfg'
+-     used to specify the directory that contains the `.cfg' files 
++     used to specify the directory that contains the `.cfg' files 
+ 
+ `-S'
+      used to specify that semicolons should be used to separate
+-     arguments in RTF fields (instead of commas).  Typically this is
+-     needed when the machine that opens the RTF file has a version of
+-     Windows that uses `,' for decimal points. 
++     arguments in RTF fields (instead of commas).  Typically this is
++     needed when the machine that opens the RTF file has a version of
++     Windows that uses `,' for decimal points. 
+ 
+ `-V'
+-     prints version information on standard output and exits. 
++     prints version information on standard output and exits. 
+ 
+ `-W'
+-     includes warnings directly in the RTF file 
++     includes warnings directly in the RTF file 
+ 
+ `-Z#'
+      add the specified number of extra `}' to the end of the RTF file.
+-     This is useful for files that are not cleanly converted by
+-     LaTeX2RTF .   With no arguments other than switches starting
+-with a "-",  LaTeX2RTF  acts as a filter, i.e., it reads from `stdin'
+-and writes to `stdout'. In addition, diagnostic messages are sent to
+-`stderr'. If these standard channels are not redirected using `<' and
+-`>', then the input is read from the command line, and both output
+-and error messages are printed on the screen.  If a non-switch
+-argument is present, LaTeX2RTF  assumes it is the name of the input
+-file. The file must have extension ".tex" but the extension is
+-optional. The output file is constructed from the input file name by
+-removing the extension ".tex" and adding ".rtf". 
++     This is useful for files that are not cleanly converted by
++     LaTeX2RTF .   With no arguments other than switches starting
++with a "-",  LaTeX2RTF  acts as a filter, i.e., it reads from `stdin'
++and writes to `stdout'. In addition, diagnostic messages are sent to
++`stderr'. If these standard channels are not redirected using `<' and
++`>', then the input is read from the command line, and both output
++and error messages are printed on the screen.  If a non-switch
++argument is present, LaTeX2RTF  assumes it is the name of the input
++file. The file must have extension ".tex" but the extension is
++optional. The output file is constructed from the input file name by
++removing the extension ".tex" and adding ".rtf". 
+ 
+ 
+ File: latex2rtf.info,  Node: Debugging,  Prev: LaTeX2RTF Options,  Up: Using LaTeX2RTF
+@@ -594,24 +594,24 @@
+ Debugging
+ =========
+ 
+-    With the `-d' option you can specify how much processing
+-information LaTeX2RTF  reports. If there is a logfile specified the
+-output goes to this file. Nonetheless Warnings and Errors are logged
+-to stderr always.  Possible values of `-d' are
+-  0. only errors.
++    With the `-d' option you can specify how much processing
++information LaTeX2RTF  reports. If there is a logfile specified the
++output goes to this file. Nonetheless Warnings and Errors are logged
++to stderr always.  Possible values of `-d' are
++  0. only errors.
+ 
+-  1. Translation Warnings (default).
++  1. Translation Warnings (default).
+ 
+-  2. shows preparsing of sections
++  2. shows preparsing of sections
+ 
+-  3. Reasonably high level debugging messages
++  3. Reasonably high level debugging messages
+ 
+-  4. Show all function calls
++  4. Show all function calls
+ 
+-  5. Show all each character as it is processed
++  5. Show all each character as it is processed
+ 
+-  6. Show processing of characters as they are output as well
+-        
++  6. Show processing of characters as they are output as well
++        
+ 
+ 
+ File: latex2rtf.info,  Node: Features,  Next: Configuration,  Prev: Using LaTeX2RTF,  Up: Top
+@@ -619,21 +619,21 @@
+ Features
+ ********
+ 
+-    In this chapter you find what styles is LaTeX2RTF  supposed to
+-translate correctly to RTF. 
++    In this chapter you find what styles is LaTeX2RTF  supposed to
++translate correctly to RTF. 
+ 
+ * Menu:
+ 
+-* LaTeX2e::                     
+-* Input Encoding ::          
+-* Language Support ::          
+-* Cross References ::            
+-* Equations ::  
+-* Tables ::
+-* Graphics ::          
+-* Pagestyles ::                  
+-* Hyperlatex ::  
+-   
++* LaTeX2e::                     
++* Input Encoding ::          
++* Language Support ::          
++* Cross References ::            
++* Equations ::  
++* Tables ::
++* Graphics ::          
++* Pagestyles ::                  
++* Hyperlatex ::  
++   
+ 
+ 
+ File: latex2rtf.info,  Node: LaTeX2e,  Next: Input Encoding,  Prev: Features,  Up: Features
+@@ -641,10 +641,10 @@
+ LaTeX2e
+ =======
+ 
+-    LaTeX2RTF  understands most of the commands introduced with
+-LaTeX2e .  It supports both the old 2.09 version of
+-`\documentstyle[options]{format#}' and the newer
+-`\documentclass[options]{format}'.   
++    LaTeX2RTF  understands most of the commands introduced with
++LaTeX2e .  It supports both the old 2.09 version of
++`\documentstyle[options]{format#}' and the newer
++`\documentclass[options]{format}'.   
+ 
+ 
+ File: latex2rtf.info,  Node: Input Encoding,  Next: Language Support,  Prev: LaTeX2e,  Up: Features
+@@ -652,16 +652,16 @@
+ Input Encoding
+ ==============
+ 
+-    It is not necesary to specify the `-C' option if you use
+-`\usepackage{isolatin1}' or `\documentstyle[isolatin1]{...}'.
+-LaTeX2RTF  automagically detects these packages/style options and
+-switches to processing of ISO-Latin1 codes.  The following encodings
+-are supported: ansinew, applemac, cp437, cp437de, cp850, cp852, cp865,
++    It is not necesary to specify the `-C' option if you use
++`\usepackage{isolatin1}' or `\documentstyle[isolatin1]{...}'.
++LaTeX2RTF  automagically detects these packages/style options and
++switches to processing of ISO-Latin1 codes.  The following encodings
++are supported: ansinew, applemac, cp437, cp437de, cp850, cp852, cp865,
+ decmulti, cp1250, cp1252, latin1, latin2, latin3, latin4, latin5,
+-latin9, next, koi8-r, koi8-u, cp1251, cp855, cp866, maccyr, and
+-macukr.  The encoding used in RTF files is cp1252.  If cyrillic fonts
+-are present, then these are represented in the RTF file using cp1251
+-(Windows Cyrillic).  
++latin9, next, koi8-r, koi8-u, cp1251, cp855, cp866, maccyr, and
++macukr.  The encoding used in RTF files is cp1252.  If cyrillic fonts
++are present, then these are represented in the RTF file using cp1251
++(Windows Cyrillic).  
+ 
+ 
+ File: latex2rtf.info,  Node: Language Support,  Next: Cross References,  Prev: Input Encoding,  Up: Features
+@@ -669,26 +669,26 @@
+ Language Support
+ ================
+ 
+-    The following languages from the Babel package are supported:
+-afrikaans, german, nynorsk, spanish, bahasa, dutch, icelandic,
+-polish, swedish, basque, english, portuges, turkish, brazil,
+-esperanto, irish, romanian, usorbian, breton, estonian, italian,
+-samin, welsh, catalan, finnish, latin, scottish, croatian, lsorbian,
+-serbian, czech, french, magyar, slovak, danish, galician, norsk,
+-slovene,  The only thing that these files do is to translate
+-various words usually emitted by LaTeX  during processing.  For
+-example, this ensures that the LaTeX2RTF  will provide the correct
+-translation of the word "Chapter" in the converted document.  You
+-can select any of the above languages using the `-l' option.  This is
++    The following languages from the Babel package are supported:
++afrikaans, german, nynorsk, spanish, bahasa, dutch, icelandic,
++polish, swedish, basque, english, portuges, turkish, brazil,
++esperanto, irish, romanian, usorbian, breton, estonian, italian,
++samin, welsh, catalan, finnish, latin, scottish, croatian, lsorbian,
++serbian, czech, french, magyar, slovak, danish, galician, norsk,
++slovene,  The only thing that these files do is to translate
++various words usually emitted by LaTeX  during processing.  For
++example, this ensures that the LaTeX2RTF  will provide the correct
++translation of the word "Chapter" in the converted document.  You
++can select any of the above languages using the `-l' option.  This is
+ not needed if your LaTeX  file contains
+-`\usepackage[language]{babel}'.  Encountering the `german' package
+-or documentstyle option (by H. Partl of the Viena University) makes
+-LaTeX2RTF  behave like that: German Quotes, German Umlauts by `"a',
+-etc....  This support is programmed directly  into LaTeX2RTF  and
+-supporting similar features for other languages will require 
+-patching the source code.  *Note Language Configuration::, for
+-details on how to write a `language.cfg' file for your language by
+-yourself. 
++`\usepackage[language]{babel}'.  Encountering the `german' package
++or documentstyle option (by H. Partl of the Viena University) makes
++LaTeX2RTF  behave like that: German Quotes, German Umlauts by `"a',
++etc....  This support is programmed directly  into LaTeX2RTF  and
++supporting similar features for other languages will require 
++patching the source code.  *Note Language Configuration::, for
++details on how to write a `language.cfg' file for your language by
++yourself. 
+ 
+ 
+ File: latex2rtf.info,  Node: Cross References,  Next: Equations,  Prev: Language Support,  Up: Features
+@@ -696,34 +696,34 @@
+ Cross References
+ ================
+ 
+-    Cross references include everything that you might expect and
+-then some: bibliographic citations, equation references, table
+-references, figure  references, and section references.  Section,
+-equation, table and figure references are implemented by placing RTF
+-bookmarks around the equation number (or table number or figure
+-number).    Page references work but are implemented as "warm"
+-cross-references.  This means that Word does not automatically update
+-the page references when the file is opened.  To update the page
+-references you must select the entire document (in Word) and press
+-`F9'.  Bibliographic references currently require that a valid
+-`.aux' file be present.  This is where LaTeX2RTF  obtains the
+-reference numbers.  It would be nice if LaTeX2RTF  just automatically
+-numbered the references when there was no `.aux' file, but LaTeX2RTF
+-does not do this yet.   Footnotes are implemented and appear at the
+-bottom of each page.    Indexing is reasonable well supported.  The
+-simple mark-up of `makeindex'
+-     \index{topic!subtopic@\textit{subtopic}}
++    Cross references include everything that you might expect and
++then some: bibliographic citations, equation references, table
++references, figure  references, and section references.  Section,
++equation, table and figure references are implemented by placing RTF
++bookmarks around the equation number (or table number or figure
++number).    Page references work but are implemented as "warm"
++cross-references.  This means that Word does not automatically update
++the page references when the file is opened.  To update the page
++references you must select the entire document (in Word) and press
++`F9'.  Bibliographic references currently require that a valid
++`.aux' file be present.  This is where LaTeX2RTF  obtains the
++reference numbers.  It would be nice if LaTeX2RTF  just automatically
++numbered the references when there was no `.aux' file, but LaTeX2RTF
++does not do this yet.   Footnotes are implemented and appear at the
++bottom of each page.    Indexing is reasonable well supported.  The
++simple mark-up of `makeindex'
++     \index{topic!subtopic@\textit{subtopic}}
+    is supported.  The rest of the fancy indexing stuff is not
+-implemented. The index is created at the location of the
+-`\printindex' command. When a file with an index is first opened in
+-Word, you must select the  entire file and update the page references
+-and fields by pressing `F9'.  Currently, there is no support for
+-`\labels' of `\item's in enumerate environments.  The conversion of
+-cross-references is not perfect because of the different mechanisms
+-in the LaTeX  and Word worlds.  In particular, if there are  multiple
++implemented. The index is created at the location of the
++`\printindex' command. When a file with an index is first opened in
++Word, you must select the  entire file and update the page references
++and fields by pressing `F9'.  Currently, there is no support for
++`\labels' of `\item's in enumerate environments.  The conversion of
++cross-references is not perfect because of the different mechanisms
++in the LaTeX  and Word worlds.  In particular, if there are  multiple
+ `\label' in a figure, table, or section environment then only the
+-first gets processed.  It is also possible to confuse the LaTeX2RTF
+-in eqnarray environments. 
++first gets processed.  It is also possible to confuse the LaTeX2RTF
++in eqnarray environments. 
+ 
+ 
+ File: latex2rtf.info,  Node: Equations,  Next: Tables,  Prev: Cross References,  Up: Features
+@@ -731,24 +731,24 @@
+ Equations
+ =========
+ 
+-    There are four separate levels of equation translation based on
+-the -M switch,  *Note LaTeX2RTF Options::. Each equation is now
+-converted either to an EQ field or to a bitmap.   This is an
+-interim solution (for some definition of "interim").  Ideally the
+-equations would become OLE equation objects in the RTF file, but this
+-needs to be implemented.  Some functions in the EQ fields have two
+-or more parameters with a separator  between each two. Unfortunately,
+-the interpretation of these separators depends  on the country
+-specific settings in the MS Windows system in which the rtf file  is
++    There are four separate levels of equation translation based on
++the -M switch,  *Note LaTeX2RTF Options::. Each equation is now
++converted either to an EQ field or to a bitmap.   This is an
++interim solution (for some definition of "interim").  Ideally the
++equations would become OLE equation objects in the RTF file, but this
++needs to be implemented.  Some functions in the EQ fields have two
++or more parameters with a separator  between each two. Unfortunately,
++the interpretation of these separators depends  on the country
++specific settings in the MS Windows system in which the rtf file  is
+ opened. E.g. in English versions of MS Windows, the default parameter
+-separator  is the comma, in German versions the default is the
+-semicolon. If the parameter  in the RTF file does not match the
+-Windows setting, some EQ fields are not  interpreted correctly. You
+-can check and set the separator in [Windows control panel  - country
+-settings - numbers - list separator]. By default, latex2rtf uses the
++separator  is the comma, in German versions the default is the
++semicolon. If the parameter  in the RTF file does not match the
++Windows setting, some EQ fields are not  interpreted correctly. You
++can check and set the separator in [Windows control panel  - country
++settings - numbers - list separator]. By default, latex2rtf uses the
+ comma as separator. If latex2rtf is called with the command line
+-parameter -S , the semicolon is inserted as parameter delimiter.  
+- 
++parameter -S , the semicolon is inserted as parameter delimiter.  
++ 
+ 
+ 
+ File: latex2rtf.info,  Node: Tables,  Next: Graphics,  Prev: Equations,  Up: Features
+@@ -756,8 +756,8 @@
+ Tables
+ ======
+ 
+-    The table code is currently barely working.  It needs to be
+-rewritten. 
++    The table code is currently barely working.  It needs to be
++rewritten. 
+ 
+ 
+ File: latex2rtf.info,  Node: Graphics,  Next: Pagestyles,  Prev: Tables,  Up: Features
+@@ -765,10 +765,10 @@
+ Graphics
+ ========
+ 
+-    There is now rudimentary support for `\includegraphics'.  Three
+-file types will be inserted into the RTF file without needing
+-conversion: .pict, .jpeg, and .png files.  EPS files are converted to
+-PNG using `convert' from the ImageMagick  package.   
++    There is now rudimentary support for `\includegraphics'.  Three
++file types will be inserted into the RTF file without needing
++conversion: .pict, .jpeg, and .png files.  EPS files are converted to
++PNG using `convert' from the ImageMagick  package.   
+ 
+ 
+ File: latex2rtf.info,  Node: Pagestyles,  Next: Hyperlatex,  Prev: Graphics,  Up: Features
+@@ -776,14 +776,14 @@
+ Pagestyles
+ ==========
+ 
+-    If there is no `\pagestyle' command, the RTF output is generated
+-as with plain pagestyle, i.e. each page get's its page number
+-centered at the bottom.  You must turn this off with the
+-\pagestyle{empty} command in the LaTeX  file if you don't want
+-pagenumbers. The headings and myheadings styles are silently ignored
+-by now. The twosided option to the \documentstyle or \documentclass
+-produces the corresponding RTF tokens. Note that these features
+-require RTF Version 1.4. 
++    If there is no `\pagestyle' command, the RTF output is generated
++as with plain pagestyle, i.e. each page get's its page number
++centered at the bottom.  You must turn this off with the
++\pagestyle{empty} command in the LaTeX  file if you don't want
++pagenumbers. The headings and myheadings styles are silently ignored
++by now. The twosided option to the \documentstyle or \documentclass
++produces the corresponding RTF tokens. Note that these features
++require RTF Version 1.4. 
+ 
+ 
+ File: latex2rtf.info,  Node: Hyperlatex,  Prev: Pagestyles,  Up: Features
+@@ -791,21 +791,21 @@
+ Hyperlatex
+ ==========
+ 
+-    Hyperlatex support is largely broken at the moment, but continues
+-to improve.  Otfried Schwarzkopf has created the "Hyperlatex Markup
+-Language" which is a "little package that allows you to use LaTeX  to
+-prepare documents in HTML." It brings an Emacs lisp program with it
+-to convert the Hyperlatex file to HTML. Hyperlatex can be obtained
+-from the CTAN-sites, *Note Obtaining LaTeX2RTF::. There are two
+-convenient commands that avoid typing: \link and \xlink that generate
+-an "internal" label which then is used in the following \Ref and
+-\Pageref commands.  LaTeX  makes it possible to write
+-`\link{anchor}[ltx]{label}', which typesets: `anchor ltx'. LaTeX2RTF
+-does NOT support this aproach since the optional parameter is thrown
+-away right now, *Note LaTeX2RTF under Development::.  Note that you
+-have to update your `.cfg' files if you are upgrading, since there
+-are a lot of HTML oriented commands in Hyperlatex that we simply can
+-`ignore'. 
++    Hyperlatex support is largely broken at the moment, but continues
++to improve.  Otfried Schwarzkopf has created the "Hyperlatex Markup
++Language" which is a "little package that allows you to use LaTeX  to
++prepare documents in HTML." It brings an Emacs lisp program with it
++to convert the Hyperlatex file to HTML. Hyperlatex can be obtained
++from the CTAN-sites, *Note Obtaining LaTeX2RTF::. There are two
++convenient commands that avoid typing: \link and \xlink that generate
++an "internal" label which then is used in the following \Ref and
++\Pageref commands.  LaTeX  makes it possible to write
++`\link{anchor}[ltx]{label}', which typesets: `anchor ltx'. LaTeX2RTF
++does NOT support this aproach since the optional parameter is thrown
++away right now, *Note LaTeX2RTF under Development::.  Note that you
++have to update your `.cfg' files if you are upgrading, since there
++are a lot of HTML oriented commands in Hyperlatex that we simply can
++`ignore'. 
+ 
+ 
+ File: latex2rtf.info,  Node: Configuration,  Next: Error Messages and Logging,  Prev: Features,  Up: Top
+@@ -813,17 +813,17 @@
+ Configuration
+ *************
+ 
+-   
++   
+ 
+ * Menu:
+ 
+-* Input processing ::           
+-* Output formatting ::          
+-* Direct Conversion ::               
+-* Ignore Command ::               
+-* Font Configuration ::                
+-* Language Configuration ::             
+-   
++* Input processing ::           
++* Output formatting ::          
++* Direct Conversion ::               
++* Ignore Command ::               
++* Font Configuration ::                
++* Language Configuration ::             
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Input processing,  Next: Output formatting,  Prev: Configuration,  Up: Configuration
+@@ -831,26 +831,26 @@
+ Input processing
+ ================
+ 
+-    On processing input LaTeX2RTF  first converts the LaTeX  special
+-characters. If it encounters one of the standard commands it is
+-converted internally. If a command is not known to LaTeX2RTF  it is
+-first looked up in `direct.cfg' and the RTF code specified there is
+-output. If not found there it is looked up in the section
+-`ignore.cfg'.  This file includes a lot of LaTeX  commands that do
+-not affect the output (cross reference information and the like), or
+-that we are not able or willing to convert to RTF.  You can use
+-`ignore.cfg' if you get tired of seeing 
+-     WARNING: command: `foo' not found - ignored
+-    and you don't need `foo' in your RTF document.  It would be nice
+-to send your additions to the LaTeX2RTF  mailing list for inclusion
+-in later distributions.  LaTeX2RTF  accepts Unix, MS-DOS, and
+-Macintosh line ending codes (\n, \r\n and \r).  The files it creates
+-are the line ending for the platform on which LaTeX2RTF  was
+-compiled.  The LaTeX  file may have been created with a wide
+-variety of character sets.  If the LaTeX  lacks the
+-`\package[codepage]{inputenc}' definition, then you may need to use
+-the command line switch to manually select the proper code page.
+-*Note Input Encoding::. 
++    On processing input LaTeX2RTF  first converts the LaTeX  special
++characters. If it encounters one of the standard commands it is
++converted internally. If a command is not known to LaTeX2RTF  it is
++first looked up in `direct.cfg' and the RTF code specified there is
++output. If not found there it is looked up in the section
++`ignore.cfg'.  This file includes a lot of LaTeX  commands that do
++not affect the output (cross reference information and the like), or
++that we are not able or willing to convert to RTF.  You can use
++`ignore.cfg' if you get tired of seeing 
++     WARNING: command: `foo' not found - ignored
++    and you don't need `foo' in your RTF document.  It would be nice
++to send your additions to the LaTeX2RTF  mailing list for inclusion
++in later distributions.  LaTeX2RTF  accepts Unix, MS-DOS, and
++Macintosh line ending codes (\n, \r\n and \r).  The files it creates
++are the line ending for the platform on which LaTeX2RTF  was
++compiled.  The LaTeX  file may have been created with a wide
++variety of character sets.  If the LaTeX  lacks the
++`\package[codepage]{inputenc}' definition, then you may need to use
++the command line switch to manually select the proper code page.
++*Note Input Encoding::. 
+ 
+ 
+ File: latex2rtf.info,  Node: Output formatting,  Next: Direct Conversion,  Prev: Input processing,  Up: Configuration
+@@ -858,15 +858,15 @@
+ Output formatting
+ =================
+ 
+- On writing output, LaTeX2RTF  generates `\n' as line ending code.
++ On writing output, LaTeX2RTF  generates `\n' as line ending code.
+ Your RTF Reader should accept this on any platform. If you ftp your RTF
+-file from or to MS-DOS platforms the line ending code can be
+-converted to `\r\n'. As this should also be legal to any RTF Reader
+-the resulting RTF rendering should not be affected.  LaTeX2RTF
+-does not offer a whole lot of flexibility in how files are translated,
++file from or to MS-DOS platforms the line ending code can be
++converted to `\r\n'. As this should also be legal to any RTF Reader
++the resulting RTF rendering should not be affected.  LaTeX2RTF
++does not offer a whole lot of flexibility in how files are translated,
+ but it does offer some.  This flexibility resides in four files
+-`direct.cfg', `ignore.cfg', `fonts.cfg', and `language.cfg'.  These
+-filese are documented in the next four sections. 
++`direct.cfg', `ignore.cfg', `fonts.cfg', and `language.cfg'.  These
++filese are documented in the next four sections. 
+ 
+ 
+ File: latex2rtf.info,  Node: Direct Conversion,  Next: Ignore Command,  Prev: Output formatting,  Up: Configuration
+@@ -874,17 +874,17 @@
+ Direct Conversion
+ =================
+ 
+-    The file `direct.cfg' is used for converting LaTeX  commands by
+-simple text replacement. The format consists of lines with a LaTeX
+-command with backslash followed by comma. The rest of the line until
+-a `.' character will be written to the RTF file when the command is
+-found in the LaTeX  file. Lines starting with a `#' character are
+-ignored. After the `.' everything is ignored to end of line. To
+-select a specific font use `*fontname*', where  `fontname' be defined
+-in `fonts.cfg'. To write the `*' character use `**'. 
+-     \alpha,{\f*Symbol* a}. #alpha in the Symbol Font
+-     \copyright,\'a9.
+-   
++    The file `direct.cfg' is used for converting LaTeX  commands by
++simple text replacement. The format consists of lines with a LaTeX
++command with backslash followed by comma. The rest of the line until
++a `.' character will be written to the RTF file when the command is
++found in the LaTeX  file. Lines starting with a `#' character are
++ignored. After the `.' everything is ignored to end of line. To
++select a specific font use `*fontname*', where  `fontname' be defined
++in `fonts.cfg'. To write the `*' character use `**'. 
++     \alpha,{\f*Symbol* a}. #alpha in the Symbol Font
++     \copyright,\'a9.
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Ignore Command,  Next: Font Configuration,  Prev: Direct Conversion,  Up: Configuration
+@@ -892,50 +892,50 @@
+ Ignore Command
+ ==============
+ 
+-    The file `ignore.cfg' is used for defining how to ignore specific
+-commands. This file is used for recognition of LaTeX  variables, user
+-defined variables, and some simple commands. All variables are
+-ignored but the converter must know the names to correctly ignore
+-assignments to variables. Lines in this file consist of a variable
+-name with backslash, followed by comma and the type of the variable
+-followed by `.'. Possible types are 
++    The file `ignore.cfg' is used for defining how to ignore specific
++commands. This file is used for recognition of LaTeX  variables, user
++defined variables, and some simple commands. All variables are
++ignored but the converter must know the names to correctly ignore
++assignments to variables. Lines in this file consist of a variable
++name with backslash, followed by comma and the type of the variable
++followed by `.'. Possible types are 
+ `NUMBER'
+-     simple numeric value
++     simple numeric value
+ 
+ `MEASURE'
+-     numeric value with following unit of measure
++     numeric value with following unit of measure
+ 
+ `OTHER'
+      ignores anything to the first character after `=' and from there
+-     to next space. e.g., `\setbox\bak=\hbox'
++     to next space. e.g., `\setbox\bak=\hbox'
+ 
+ `COMMAND'
+      ignores anything to next `\' and from there to the occurence of
+-     anything but a letter e.g., `\newbox\bak'
++     anything but a letter e.g., `\newbox\bak'
+ 
+ `SINGLE'
+-     ignore single command e.g., `\noindent'
++     ignore single command e.g., `\noindent'
+ 
+ `PARAMETER'
+-     ignores a command with one parameter e.g., `\foo{bar}'
++     ignores a command with one parameter e.g., `\foo{bar}'
+ 
+ `PACKAGE'
+      does not produce a Warning message if PACKAGE is encountered,
+-     e.g., `PACKAGE,kleenex.'
++     e.g., `PACKAGE,kleenex.'
+ 
+ `ENVCMD'
+      proceses contents of unknown environment as if it were plain LaTeX
+-      eg. `ENVCMD,environ.' Therefore `\begin{environ} text
+-     \end{environ}'' as `text'.
++      eg. `ENVCMD,environ.' Therefore `\begin{environ} text
++     \end{environ}'' as `text'.
+ 
+ `ENVIRONMENT'
+      ignores contents of that environment, e.g., with
+-     `ENVIRONMENT,ifhtml.' `\begin{ifhtml} text \end{ifhtml}' ignores
+-     `text'.  The types are in upper case exactly as above. Do not
+-use spaces. Lines starting with a `#' character are ignored. After
+-the `.' everything is ignored to end of line. Example:
+-     \pagelength,MEASURE.
+-   
++     `ENVIRONMENT,ifhtml.' `\begin{ifhtml} text \end{ifhtml}' ignores
++     `text'.  The types are in upper case exactly as above. Do not
++use spaces. Lines starting with a `#' character are ignored. After
++the `.' everything is ignored to end of line. Example:
++     \pagelength,MEASURE.
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Font Configuration,  Next: Language Configuration,  Prev: Ignore Command,  Up: Configuration
+@@ -943,24 +943,24 @@
+ Font Configuration
+ ==================
+ 
+-    The file `fonts.cfg' contains the font name mapping.  For
+-example, this file determines what font is used to represent `\rm'
+-characters in the RTF file.    A line consists of a font name in
+-LaTeX  followed by comma and a font name in RTF. The end is marked by
+-a `.'. No spaces are allowed. The LaTeX  font will be converted to
+-the RTF font when it is found in the LaTeX  file. If multiple
+-translations for the same LaTeX  font are specified, only the first
+-is used. All fonts in a LaTeX  file that are not in this file will be
+-mapped to the default font. All RTF fonts listed in this file will be
+-in every RTF file header whether used or not.  Lines starting with a
+-`#' character are ignored. After the `.' everything is ignored to end
+-of line.   To add a RTF font not used as substitute for a LaTeX
+-font -- for example a Symbol font used in `direct.cfg' -- use a dummy
+-LaTeX  name like in the following
+-     Dummy3,MathematicalSymbols.
+-    Make sure you use the correct font name. Take care of spaces in
+-font names. The default fonts are named Roman `\rm', Slanted `\sl',
+-Sans Serif `\sf', Typewriter `\tt', or Calligraphic `\cal'. 
++    The file `fonts.cfg' contains the font name mapping.  For
++example, this file determines what font is used to represent `\rm'
++characters in the RTF file.    A line consists of a font name in
++LaTeX  followed by comma and a font name in RTF. The end is marked by
++a `.'. No spaces are allowed. The LaTeX  font will be converted to
++the RTF font when it is found in the LaTeX  file. If multiple
++translations for the same LaTeX  font are specified, only the first
++is used. All fonts in a LaTeX  file that are not in this file will be
++mapped to the default font. All RTF fonts listed in this file will be
++in every RTF file header whether used or not.  Lines starting with a
++`#' character are ignored. After the `.' everything is ignored to end
++of line.   To add a RTF font not used as substitute for a LaTeX
++font -- for example a Symbol font used in `direct.cfg' -- use a dummy
++LaTeX  name like in the following
++     Dummy3,MathematicalSymbols.
++    Make sure you use the correct font name. Take care of spaces in
++font names. The default fonts are named Roman `\rm', Slanted `\sl',
++Sans Serif `\sf', Typewriter `\tt', or Calligraphic `\cal'. 
+ 
+ 
+ File: latex2rtf.info,  Node: Language Configuration,  Prev: Font Configuration,  Up: Configuration
+@@ -968,14 +968,14 @@
+ Language Configuration
+ ======================
+ 
+-    The file(s) `language.cfg' control the translation of LaTeX 's
+-"hardcoded" sectioning names. The standard LaTeX  styles have some
+-fixed Title names like `Part', `Reference' or `Bibliography' that
+-appeared in English or German in the output with the original
+-versions of LaTeX2RTF .   It is unlikely that you will need to
+-create a new `language.cfg' file. However, just look at one of the
+-existing files and follow the pattern. The format is really simple.
+- 
++    The file(s) `language.cfg' control the translation of LaTeX 's
++"hardcoded" sectioning names. The standard LaTeX  styles have some
++fixed Title names like `Part', `Reference' or `Bibliography' that
++appeared in English or German in the output with the original
++versions of LaTeX2RTF .   It is unlikely that you will need to
++create a new `language.cfg' file. However, just look at one of the
++existing files and follow the pattern. The format is really simple.
++ 
+ 
+ 
+ File: latex2rtf.info,  Node: Error Messages and Logging,  Next: History,  Prev: Configuration,  Up: Top
+@@ -983,45 +983,45 @@
+ Error Messages and Logging
+ **************************
+ 
+-    As stated in the Debugging section, LaTeX2RTF  provides a means
+-to control  the amount of debugging information through the `-d#'
+-switch.   By using a debugging level of 4, you can get a pretty good
+-idea of what LaTeX  command caused the problem and what line that
+-command might be found on.   
++    As stated in the Debugging section, LaTeX2RTF  provides a means
++to control  the amount of debugging information through the `-d#'
++switch.   By using a debugging level of 4, you can get a pretty good
++idea of what LaTeX  command caused the problem and what line that
++command might be found on.   
+ `Fatal error messages'
+      indicate a bug in the source code. PLEASE report them, if they do
+-     not apear in the documentation. *Note Reporting Bugs::. 
++     not apear in the documentation. *Note Reporting Bugs::. 
+ 
+ `Error messages'
+      always abort the program and are caused by conditions that
+-     prevent further conversion of the input file.  Typically this is
+-     cause by LaTeX2RTF  getting hopelessly confused by the number of
+-     braces in the LaTeX  file. 
++     prevent further conversion of the input file.  Typically this is
++     cause by LaTeX2RTF  getting hopelessly confused by the number of
++     braces in the LaTeX  file. 
+ 
+ `Warning messages'
+      inform you, that there is some conversion loss from LaTeX  to RTF,
+-     or that the output file has some restrictions on some RTF
+-     Readers. Most of these  warnings can be supressed by add the
+-     offending command to the `ignore.cfg' file.  Error and
+-Warning messages should follow the GNU Coding standards, i.e. they
+-have the format
+-     inputfile':line: Error|Warning: message
+-    You can also control the level of debugging output by inserting
+-`\verbositylevel{#}' in the LaTeX  file.  This is very handy if you
+-have a large LaTeX  file that is failing in only a small section.
+-For example,
+-     problem free latex file ....
+-     \verbositylevel{5}
+-     problematic code
+-     \verbositylevel{0}
+-    will cause a huge amount of debugging information to be emitted
+-for the problematic code.  Error reporting and logging still has
+-many inconsistencies, but it gets better with each release. Don't
+-try to make any sense in debugging levels above 4, these are for my
+-own delight only and can change significantly between versions. 
+-The `inputfile' may be incorrectly identified if it is incorporated
+-through `\input' or `\include'.  The line may be also be wrong at
+-times.  *Note Known Bugs::. 
++     or that the output file has some restrictions on some RTF
++     Readers. Most of these  warnings can be supressed by add the
++     offending command to the `ignore.cfg' file.  Error and
++Warning messages should follow the GNU Coding standards, i.e. they
++have the format
++     inputfile':line: Error|Warning: message
++    You can also control the level of debugging output by inserting
++`\verbositylevel{#}' in the LaTeX  file.  This is very handy if you
++have a large LaTeX  file that is failing in only a small section.
++For example,
++     problem free latex file ....
++     \verbositylevel{5}
++     problematic code
++     \verbositylevel{0}
++    will cause a huge amount of debugging information to be emitted
++for the problematic code.  Error reporting and logging still has
++many inconsistencies, but it gets better with each release. Don't
++try to make any sense in debugging levels above 4, these are for my
++own delight only and can change significantly between versions. 
++The `inputfile' may be incorrectly identified if it is incorporated
++through `\input' or `\include'.  The line may be also be wrong at
++times.  *Note Known Bugs::. 
+ 
+ 
+ File: latex2rtf.info,  Node: History,  Next: LaTeX2RTF under Development,  Prev: Error Messages and Logging,  Up: Top
+@@ -1029,34 +1029,34 @@
+ History & Copyright
+ *******************
+ 
+- In 1994 the first Version of LaTeX2RTF  was written by Fernando
+-Dorner and Andreas Granzer of the Viena University supervised by Ralf
+-Schlatterbeck in a one-semester course. They created a simple LaTeX
+-parser and added most of the infrastructure for the program. This was
++ In 1994 the first Version of LaTeX2RTF  was written by Fernando
++Dorner and Andreas Granzer of the Viena University supervised by Ralf
++Schlatterbeck in a one-semester course. They created a simple LaTeX
++parser and added most of the infrastructure for the program. This was
+ version 1.0 of LaTeX2RTF .  In 1995, work on LaTeX2RTF  was continued
+-in another one-semester course by Friedrich Polzer and Gerhard
+-Trisko. The result was LaTeX2RTF  version 1.5.  Ralf Schlatterbeck
+-<ralf@zoo.priv.at> maintained and extended LaTeX2RTF  until 1998. 
++in another one-semester course by Friedrich Polzer and Gerhard
++Trisko. The result was LaTeX2RTF  version 1.5.  Ralf Schlatterbeck
++<ralf@zoo.priv.at> maintained and extended LaTeX2RTF  until 1998. 
+ In 1998 Georg Lehner <jorge_lehner@gmx.net> found the reference to
+-LaTeX2RTF  on the TeX Conversion Webpage
+-(http://tug.org/utilities/texconv/index.html)  of Wilfried Hennings
+-<W.Hennings@fz-juelich.de> and added some functionality and took over
++LaTeX2RTF  on the TeX Conversion Webpage
++(http://tug.org/utilities/texconv/index.html)  of Wilfried Hennings
++<W.Hennings@fz-juelich.de> and added some functionality and took over
+ the maintainence of the program.  The last version release by Georg is
+-1.8aa. The bulk of development post 1.8aa was done by Scott Prahl.  
++1.8aa. The bulk of development post 1.8aa was done by Scott Prahl.  
+ Wilfried Hennings now coordinates the development of the program and
+-maintains the project on SourceForge
+-(http://sourceforge.net/projects/latex2rtf/) where there are also
++maintains the project on SourceForge
++(http://sourceforge.net/projects/latex2rtf/) where there are also
+ (low volume) mailing lists for users
+-<latex2rtf-users@lists.sourceforge.net> and developers
+-<latex2rtf-developers@lists.sourceforge.net>. For subscription to
+-these lists:
+-<latex2rtf-users-request@lists.sourceforge.net?subject=subscribe> or
+-<latex2rtf-developers-request@lists.sourceforge.net?subject=subscribe>
+- As of October 2002, version 1.9.14 of LaTeX2RTF  is available. 
++<latex2rtf-users@lists.sourceforge.net> and developers
++<latex2rtf-developers@lists.sourceforge.net>. For subscription to
++these lists:
++<latex2rtf-users-request@lists.sourceforge.net?subject=subscribe> or
++<latex2rtf-developers-request@lists.sourceforge.net?subject=subscribe>
++ As of October 2002, version 1.9.14 of LaTeX2RTF  is available. 
+ One day there shall be a jump to Version 2.0, but this is not history
+-but future ...  The contents of this manual were composed by
+-copying shamelessly what was available in the original sources and
+-documentation. 
++but future ...  The contents of this manual were composed by
++copying shamelessly what was available in the original sources and
++documentation. 
+ 
+ 
+ File: latex2rtf.info,  Node: LaTeX2RTF under Development,  Next: Index,  Prev: History,  Up: Top
+@@ -1064,16 +1064,16 @@
+ LaTeX2RTF under Development
+ ***************************
+ 
+-   
++   
+ 
+ * Menu:
+ 
+-* Unimplemented Features ::     
+-* Missing options ::  
+-* Known Bugs ::                 
+-* Reporting Bugs ::             
+-* Todo List ::                  
+-   
++* Unimplemented Features ::     
++* Missing options ::  
++* Known Bugs ::                 
++* Reporting Bugs ::             
++* Todo List ::                  
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Unimplemented Features,  Next: Missing options,  Prev: LaTeX2RTF under Development,  Up: LaTeX2RTF under Development
+@@ -1081,28 +1081,28 @@
+ Unimplemented Features
+ ======================
+ 
+-   
++   
+    * LaTeX2RTF  ignores some of the optional parameters of
+-     `\documentstyle' 
++     `\documentstyle' 
+ 
+    * Need to finish code page support.  Some characters that need to
+-     be       constructed using RTF `\field' commands are not
+-     implemented.
++     be       constructed using RTF `\field' commands are not
++     implemented.
+ 
+-   * Add the code to produce the corresponding chapter, section,
++   * Add the code to produce the corresponding chapter, section,
+      and page numbering with headings and myheadings pagestyles.
+-     Implement       `\markboth' and `\markright'.
++     Implement       `\markboth' and `\markright'.
+ 
+    * To support `\tableofcontents' there would be two approaches:
+-     Transfer       sectioning information, title text and then
+-     produce page numbers by the rtf-       reader. Scan and label
+-     all of the sectioning commands while reading and       then
++     Transfer       sectioning information, title text and then
++     produce page numbers by the rtf-       reader. Scan and label
++     all of the sectioning commands while reading and       then
+      construct the sectioning information using these labels. Needs
+-     two       passes on LaTeX  input.
++     two       passes on LaTeX  input.
+ 
+    * Include the GNU gettext package to internationalize LaTeX2RTF 's
+-     Messages.
+-   
++     Messages.
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Missing options,  Next: Known Bugs,  Prev: Unimplemented Features,  Up: LaTeX2RTF under Development
+@@ -1110,34 +1110,34 @@
+ Missing options
+ ===============
+ 
+-    Missing or buggy command line options. 
++    Missing or buggy command line options. 
+ `-V'
+      The version information output is not compatible with the GNU
+-     Coding Standards. 
++     Coding Standards. 
+ 
+ `-d'
+      Information logging and Error reporting is not implemented
+-     consistently. Need to test and track problems with the
+-     linenumber and with the file name. 
++     consistently. Need to test and track problems with the
++     linenumber and with the file name. 
+ 
+ `-?'
+      There should be an option to intersperse RTF-Output with the LaTeX
+-     input that produced it to aid debugging. 
++     input that produced it to aid debugging. 
+ 
+ `-q'
+      There should be a `-q' (quiet) option, to suppress Warning
+-     Messages. By now this can be achieved by the `-d0' option. 
++     Messages. By now this can be achieved by the `-d0' option. 
+ 
+ `-rmajor.minor'
+      There should be an option that restrict the generation of RTF code
+-     with version greater than major,minor. Actually this is done at
+-     compile time. There are some Warning messages if "newer" RTF
+-     Code is generated, but it is not consistent at all. 
++     with version greater than major,minor. Actually this is done at
++     compile time. There are some Warning messages if "newer" RTF
++     Code is generated, but it is not consistent at all. 
+ 
+ `--long_names'
+      It would be useful to implement the GNU long option names, e.g.:
+-     `-debug', `-output_file', `-quiet', etc.  This could be done by
+-     switching to the GNU getopt package.  
++     `-debug', `-output_file', `-quiet', etc.  This could be done by
++     switching to the GNU getopt package.  
+ 
+ 
+ File: latex2rtf.info,  Node: Known Bugs,  Next: Reporting Bugs,  Prev: Missing options,  Up: LaTeX2RTF under Development
+@@ -1145,21 +1145,21 @@
+ Known Bugs
+ ==========
+ 
+-   
++   
+   1. The first parameter of a \link{anchor}[ltx]{label} is converted to
+-     the       rtf-output. Label is stored to hyperref for later use,
+-     the optional       parameter is ignored. [ltx] should be
+-     processed as Otfried recommends it,       to use for exclusive
+-     LaTeX  output.e.g: \link{readhere}[~\Ref]{explaining:
++     the       rtf-output. Label is stored to hyperref for later use,
++     the optional       parameter is ignored. [ltx] should be
++     processed as Otfried recommends it,       to use for exclusive
++     LaTeX  output.e.g: \link{readhere}[~\Ref]{explaining:
+      chapter}. Since {explaining:chapter} is yet read by LaTeX  and
+-     hyperlatex       when [...] is evaluated it produces the correct
+-     reference. LaTeX2RTF  is       only strolling from left to right
+-     through the text and can't remember       what she will see in
+-     the future.
+-
+-  2. The diagnostics routine does not output the correct (actual)
+-      inputfilename. (`.aux', `.bbl', `\input').
+-        
++     hyperlatex       when [...] is evaluated it produces the correct
++     reference. LaTeX2RTF  is       only strolling from left to right
++     through the text and can't remember       what she will see in
++     the future.
++
++  2. The diagnostics routine does not output the correct (actual)
++      inputfilename. (`.aux', `.bbl', `\input').
++        
+ 
+ 
+ File: latex2rtf.info,  Node: Reporting Bugs,  Next: Todo List,  Prev: Known Bugs,  Up: LaTeX2RTF under Development
+@@ -1167,34 +1167,34 @@
+ Reporting Bugs
+ ==============
+ 
+-    Report bugs to to the bug tracking system at SourceForge
+-(http://sourceforge.net/projects/latex2rtf/).  Only report bugs for
+-the latest version of LaTeX2RTF  that is available.    Please provide
+-the following information and observe the following guidelines when
+-reporting a bug in the program:
++    Report bugs to to the bug tracking system at SourceForge
++(http://sourceforge.net/projects/latex2rtf/).  Only report bugs for
++the latest version of LaTeX2RTF  that is available.    Please provide
++the following information and observe the following guidelines when
++reporting a bug in the program:
+   1. State the version of LaTeX2RTF  that you are using.  You can get
+-     the version by specifying the `-V' option to LaTeX2RTF .  
++     the version by specifying the `-V' option to LaTeX2RTF .  
+ 
+   2. Specify the your operating system and version. Be sure to check
+-     the file `Makefile' for settings that may be specific to your
+-     machine, especially for some versions of SunOS there may be
++     the file `Makefile' for settings that may be specific to your
++     machine, especially for some versions of SunOS there may be
+      settings which are needed to compile successfully. Do this before
+-     submitting a bug report. 
++     submitting a bug report. 
+ 
+   3. If the program produces wrong output or does not work for you,
+-     include a short LaTeX  file along with a description of the
+-     problem.  Isolating the bug into a small LaTeX  file does two
++     include a short LaTeX  file along with a description of the
++     problem.  Isolating the bug into a small LaTeX  file does two
+      things.  First, it provides a file that can be used to test
+-     future versions of LaTeX2RTF  and second, it certainly improves
+-     the chances that the bug will get some attention.  Do not send
+-     me large LaTeX  or RTF files, I simply do not have the time to
+-     wade through large files to search for a bug! 
++     future versions of LaTeX2RTF  and second, it certainly improves
++     the chances that the bug will get some attention.  Do not send
++     me large LaTeX  or RTF files, I simply do not have the time to
++     wade through large files to search for a bug! 
+ 
+   4. Be patient. I am maintaining the program in my free time. I did
+-     not write most of the code. Often I do not have the time to
+-     answer to your question. I will, however, try to fix reported
+-     bugs in upcoming releases.
+-        
++     not write most of the code. Often I do not have the time to
++     answer to your question. I will, however, try to fix reported
++     bugs in upcoming releases.
++        
+ 
+ 
+ File: latex2rtf.info,  Node: Todo List,  Prev: Reporting Bugs,  Up: LaTeX2RTF under Development
+@@ -1202,29 +1202,29 @@
+ Todo List
+ =========
+ 
+-    Scott's ToDo list
+-   * Use lex/yacc to implement getSection
++    Scott's ToDo list
++   * Use lex/yacc to implement getSection
+ 
+-   * Add support for pagestyle
++   * Add support for pagestyle
+ 
+-   * Improve graphic/graphicx support
++   * Improve graphic/graphicx support
+ 
+-   * Better support for ignoring commands
+-    Georg's todo list
++   * Better support for ignoring commands
++    Georg's todo list
+    * Make this Manual more consistent, the ToDo and Known Bug List
+-     shorter and       the Features List longer.
++     shorter and       the Features List longer.
+ 
+-   * Harmonize all of the error and warning messages.
++   * Harmonize all of the error and warning messages.
+ 
+    * Put warnings everywhere applicable about producing RTF 1.4
+-     tokens.
++     tokens.
+ 
+-   * Provide an Error and Warning recovery guide to the user.
++   * Provide an Error and Warning recovery guide to the user.
+ 
+    * Add a chapter with lists of all LaTeX  commands that convert, and
+-     that do       not convert to RTF, including their status (for
+-     future releases, never,       partially functional, ...).
+-   
++     that do       not convert to RTF, including their status (for
++     future releases, never,       partially functional, ...).
++   
+ 
+ 
+ File: latex2rtf.info,  Node: Index,  Prev: LaTeX2RTF under Development,  Up: Top
+@@ -1232,14 +1232,14 @@
+ Index
+ *****
+ 
+-   
++   
+ 
+ * Menu:
+ 
+ * Copyright issues:                      History.
+ * History of the programm:               History.
+ 
+-     
++     
+ 
+ 
+ 
