@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Memoize
-PORTVERSION=	0.66
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Memoize
@@ -29,5 +29,8 @@ MAN3=		Memoize.3 \
 		Memoize::Saves.3 \
 		Memoize::Storable.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	${PERL} -pi -e '$$_=";" if /warnings::/' ${WRKSRC}/Memoize.pm
 
 .include <bsd.port.mk>
