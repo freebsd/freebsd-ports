@@ -1,0 +1,13 @@
+--- kplot3d/kplot3d.cpp.orig	Sat Nov 27 08:30:23 1999
++++ kplot3d/kplot3d.cpp	Sat Nov 27 08:31:45 1999
+@@ -178,8 +178,8 @@
+ //  toolBar()->insertButton(Icon("editpaste.xpm"), ID_EDIT_PASTE, true, i18n("Paste"));
+ //  toolBar()->insertSeparator();
+ 
+-	toolBar()->insertButton( QPixmap( axes ), ID_GENERAL, true, i18n("Axes options"));
+-  toolBar()->insertButton( QPixmap( toggle_icon ), ID_TOGGLE, true, i18n("Toggle surface type"));
++	toolBar()->insertButton( QPixmap( (const char**)axes ), ID_GENERAL, true, i18n("Axes options"));
++  toolBar()->insertButton( QPixmap( (const char**)toggle_icon ), ID_TOGGLE, true, i18n("Toggle surface type"));
+   toolBar()->insertButton(Icon("help.xpm"), ID_HELP, SIGNAL(pressed()), kapp, SLOT(appHelpActivated()), true, i18n("Help"));
+ 
+   ///////////////////////////////////////////////////////////////////
