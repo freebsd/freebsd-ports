@@ -1,75 +1,11 @@
---- ./headers.h.org	Mon Nov 21 19:57:57 1994
-+++ ./headers.h	Tue Dec 13 00:49:58 1994
+--- ./headers.h.org	Thu Dec  1 18:06:22 1994
++++ ./headers.h	Mon Mar 27 21:53:02 1995
 @@ -9,7 +9,7 @@
   * prototypes, this is unneeded.
   */
  
--#ifndef __NetBSD__
-+#if !(defined(__NetBSD__) || defined(__FreeBSD__))
+-#if !defined(__NetBSD__) && !defined(linux)
++#if !defined(__NetBSD__) && !defined (__FreeBSD__) && !defined(linux)
  #ifdef __GNUC__
  /* These do not seem to be needed with gcc-2.5.0.  In fact, having
   * them declared causes errors.
---- ./porting.c.org	Tue Nov 22 13:21:16 1994
-+++ ./porting.c	Tue Dec 13 00:49:58 1994
-@@ -1,4 +1,4 @@
--#ifndef __NetBSD__
-+#if !(defined(__NetBSD__) || defined(__FreeBSD__))
- #include <rpcsvc/rstat.h>
- #endif
- #include "xsysstats.h"
-@@ -10,10 +10,13 @@
- #define FSCALE (1<<FSHIFT)
- #endif
- 
--#ifdef __NetBSD__
-+#if (defined(__NetBSD__) || defined(__FreeBSD__))
- #include <rpc/rpc.h>
- #undef FSHIFT
- #undef FSCALE
-+#ifdef __FreeBSD__
-+#include <rpc/types.h>
-+#endif
- #include <rpcsvc/rstat.h>
- 
- #ifdef ultrix
---- ./Imakefile.org	Mon Nov 21 19:47:44 1994
-+++ ./Imakefile	Tue Dec 13 00:57:57 1994
-@@ -9,7 +9,7 @@
-  */
- 
- 
--CFLAGS = -I/usr/X11R6/include  -g -Wall
-+CFLAGS = -I/usr/X11R6/include  -O2 -Wall
- CC = gcc
- 
- /* If using Solaris 2, uncomment the line below *
-@@ -20,7 +20,7 @@
- 	DEFINES = -DSOLARIS2
- 	LIBS = -lrpcsvc -lnsl
- #else
--	LIBS = -lrpcsvc
-+        LIBS = -lrpcsvc
- #endif
- 
-         DEPLIBS = $(DEPXLIB)
---- ./xsysstats.h.org	Mon Nov 21 20:57:47 1994
-+++ ./xsysstats.h	Tue Dec 13 00:49:58 1994
-@@ -2,9 +2,17 @@
- #include <X11/Xutil.h>
- #include <stdio.h>
- #include <sys/param.h>
-+#include <sys/types.h>
-+#if defined(BSD) && (BSD >= 199306)
-+#include <stdlib.h>
-+#else
- #include <malloc.h>
-+#endif
- 
--#ifdef SOLARIS2
-+#include <string.h>
-+#include <unistd.h>
-+
-+#if (defined(SOLARIS2) || defined(__FreeBSD__))
- #include <netdb.h>
- #endif
- 
