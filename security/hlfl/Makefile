@@ -1,16 +1,16 @@
 # New ports collection makefile for:	hlfl
 # Date Created:				8 Jun 2001
-# Whom:					Arnaud S. Launay <asl@launay.org>
+# Whom:					Arnaud Launay <alaunay@hlfl.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	hlfl
-PORTVERSION=	0.60.0
+PORTVERSION=	0.60.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 
-MAINTAINER=	asl@launay.org
+MAINTAINER=	alaunay@hlfl.org
 COMMENT=	High Level Firewall Language
 
 GNU_CONFIGURE=	yes
