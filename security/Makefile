@@ -74,5 +74,6 @@
     SUBDIR += tripwire
     SUBDIR += vscan
     SUBDIR += xinetd
+    SUBDIR += zebedee
 
 .include <bsd.port.subdir.mk>
