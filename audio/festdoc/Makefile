@@ -30,6 +30,7 @@ post-extract:
 
 do-install:
 	${MKDIR} ${FDOC}
+	${RM} ${WRKSRC}/festival/info/festival.info.orig
 	cd ${WRKSRC} && info=`find . -name '*.info*' -type f` && \
 	  ${CP} $$info ${PREFIX}/info && \
 	  ${CP} -r ${WRKSRC}/* ${FDOC} && \
