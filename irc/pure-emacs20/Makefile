@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	irc elisp
 MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
