@@ -17,6 +17,7 @@
     SUBDIR += fox
     SUBDIR += fox-xunicode
     SUBDIR += gal
+    SUBDIR += gevas
     SUBDIR += gnome--
     SUBDIR += gnome-look
     SUBDIR += gob
