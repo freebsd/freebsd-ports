@@ -7,6 +7,7 @@
 
 PORTNAME=	phpicalendar
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +27,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/${dir} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/${dir}
 .endfor
-.for f in TIMEZONES admin.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
+.for f in index.php TIMEZONES admin.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
 	@${CP} ${WRKSRC}/${f} ${WWWDIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${f}
 .endfor
