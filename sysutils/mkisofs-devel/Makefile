@@ -3,10 +3,10 @@
 # Date created:		07 Aug 1996
 # Whom:			jhk
 #
-# $Id: Makefile,v 1.10 1999/02/23 16:18:44 dirk Exp $
+# $Id: Makefile,v 1.11 1999/03/31 11:17:08 dirk Exp $
 #
 
-DISTNAME=	mkisofs-1.12b4
+DISTNAME=	mkisofs-1.12b5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/mkisofs/ \
