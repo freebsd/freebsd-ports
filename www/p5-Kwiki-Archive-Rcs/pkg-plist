@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Kwiki/Archive/Rcs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/Rcs/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/Rcs
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki/Archive 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki 2>/dev/null || true
