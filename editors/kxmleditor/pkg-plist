@@ -1,4 +1,7 @@
 bin/kxmleditor
+lib/libkxmleditor.la
+lib/libkxmleditor.so
+lib/libkxmleditor.so.1.0
 share/applnk/Applications/kxmleditor.desktop
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_prev.png
@@ -58,6 +61,7 @@ share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_element.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_up.png
+share/apps/kxmleditor/kxmleditorpart.rc
 share/apps/kxmleditor/kxmleditorui.rc
 share/apps/kxmleditor/pics/xml_attribute.png
 share/apps/kxmleditor/pics/xml_cdata.png
@@ -65,7 +69,7 @@ share/apps/kxmleditor/pics/xml_comment.png
 share/apps/kxmleditor/pics/xml_contents.png
 share/apps/kxmleditor/pics/xml_element.png
 share/apps/kxmleditor/pics/xml_text.png
-share/doc/HTML/en/kxmleditor/common
+share/doc/HTML/en/kxmleditor/index.cache.bz2
 share/doc/HTML/en/kxmleditor/index.docbook
 share/doc/HTML/en/kxmleditor/screenshot.png
 share/doc/HTML/en/kxmleditor/setupspcchr.png
