@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
 USE_INC_LIBTOOL_VER=	13
