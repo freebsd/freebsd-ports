@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rpm
-# Version required:	2.5.5
+# Version required:	2.5.6
 # Date created:		30 April 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rpm-2.5.5
+DISTNAME=	rpm-2.5.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-2.5.x/
 
