@@ -1,2 +1,3 @@
 bin/nasm
+bin/nasm-0.98
 bin/ndisasm
