@@ -210,8 +210,9 @@ share/thot/schemas/TableP.P
 share/thot/schemas/TableT.T
 share/thot/schemas/Text_ASCII.inc
 share/thot/schemas/Text_SGML.inc
-
-
-
-
-
+@dirrm share/thot/schemas
+@dirrm share/thot/fonts
+@dirrm share/thot/doc
+@exec mkdir -p %D/share/thot/doc
+@dirrm share/thot/dicopar
+@dirrm share/thot/config
