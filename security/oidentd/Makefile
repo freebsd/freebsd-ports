@@ -7,7 +7,7 @@
 
 PORTNAME=	oidentd
 PORTVERSION=	2.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
@@ -22,7 +22,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=		oidentd.conf.5 oidentd_masq.conf.5
 MAN8=		oidentd.8
-PLIST_FILES=	sbin/oidentd
+PLIST_FILES=	sbin/oidentd etc/rc.d/oidentd.sh etc/oidentd.conf.sample \
+		etc/oidentd_masq.conf.sample
 
 .include <bsd.port.pre.mk>
 
