@@ -7116,6 +7116,7 @@ xmulti		ports/games/xmulti
 xmx		ports/x11/xmx
 xmysql		ports/databases/xmysql
 xmysqladmin	ports/databases/xmysqladmin
+xnap		ports/audio/xnap
 xnc		ports/x11-fm/xnc
 xneko		ports/games/xneko
 xnibbles	ports/games/xnibbles
