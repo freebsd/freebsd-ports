@@ -10,6 +10,7 @@ CATEGORIES=     chinese
 LANG_PKGNAME=   zh
 LANG_EXT=       86
 LANG_CONFIGURE_ARG=     CHINSIM
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/moe_kai.ttf:${PORTSDIR}/chinese/moettf
 MASTERDIR=      ${.CURDIR}/../../editors/openoffice
 
 .include "${MASTERDIR}/Makefile"
