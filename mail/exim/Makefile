@@ -303,7 +303,7 @@ SEDLIST+=	-e 's,^LOOKUP_LIBS=,\#LOOKUP_LIBS=,' \
 		-e 's,^LOOKUP_INCLUDE=,\#LOOKUP_INCLUDE=,'
 .endif
 
-.if defined(WITH_DNSDB)
+.if !defined(WITHOUT_DNSDB)
 SEDLIST+=	-e 's,^\# LOOKUP_DNSDB=,LOOKUP_DNSDB=,'
 .endif
 
