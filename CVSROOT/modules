@@ -3910,7 +3910,6 @@ libgtop		ports/devel/libgtop
 libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
-libhelp		ports/x11/libhelp
 libical		ports/devel/libical
 libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
