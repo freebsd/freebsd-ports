@@ -18,12 +18,11 @@ COMMENT=	C++ class library for eXtended Scientific Computing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
+USE_GCC=	3.3
 .endif
 
 .include <bsd.port.post.mk>
