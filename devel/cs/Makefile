@@ -7,8 +7,10 @@
 
 PORTNAME=	cs
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/
+MASTER_SITES=	http://www.moria.de/~michael/cs/
+DIST_SUBDIR=	cs/0.5-19990925
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -16,14 +18,11 @@ ALL_TARGET=	cs
 MAN1=		cs.1
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/cs ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/cs.1 ${PREFIX}/man/man1
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cs ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cs.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/cs
-	@ ${INSTALL_DATA} ${WRKSRC}/ANNOUNCE ${PREFIX}/share/doc/cs
-	@ ${INSTALL_DATA} ${WRKSRC}/cs.html ${PREFIX}/share/doc/cs
+	${MKDIR} ${PREFIX}/share/doc/cs
+	${INSTALL_DATA} ${WRKSRC}/ANNOUNCE ${PREFIX}/share/doc/cs
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- Makefile	Sat Sep 19 19:10:58 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Dec 15 20:44:22 1998
+--- Makefile.orig	Sat Sep 25 06:33:12 1999
++++ Makefile	Fri Jan  5 11:09:24 2001
 @@ -2,7 +2,7 @@
  #DB=		BINARY_DB
  
@@ -18,11 +18,11 @@
 -#LIBS=		-lncurses -lmytinfo
 -#LDFLAGS=	
 -#MAKEDEPEND=	gcc -MM
-+CFLAGS+=		-pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common $(CPPFLAGS)
++CFLAGS+=		-pedantic -fno-common $(CPPFLAGS)
 +CPPFLAGS=	-I.curses.h -DNO_POSIX_SOURCE -D$(DB)
 +LIBS=		-lncurses -lmytinfo
 +LDFLAGS=	
-+MAKEDEPEND=	gcc -MM
++MAKEDEPEND=	${CC} -MM
  #}}}
  #{{{ BSDI
  #CC=		gcc
