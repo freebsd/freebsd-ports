@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/Makefile.in	2002/04/24 09:50:45	1.1
++++ tools/Makefile.in	2002/04/24 09:51:15
+@@ -91,7 +91,7 @@
+ 
+ 
+ LDADD = \
+-  $(top_builddir)/lib3ds/lib3ds.a \
++  -L$(top_builddir)/lib3ds -l3ds \
+   @DMALLOC_LIBS@ -lm
+ 
+ 

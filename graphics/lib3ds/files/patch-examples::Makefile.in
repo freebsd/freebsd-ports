@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- examples/Makefile.in.orig	Mon Jan 14 16:24:34 2002
++++ examples/Makefile.in	Wed Apr 24 13:08:54 2002
+@@ -88,26 +88,26 @@
+ @GLUT_CHECK_TRUE@PLAYER = @GLUT_CHECK_TRUE@player
+ @GLUT_CHECK_FALSE@PLAYER = 
+ 
+-noinst_PROGRAMS = \
++PROGRAMS = \
+   3ds2rib \
+   $(PLAYER)
+ 
+ 
+ LDADD = \
+-  $(top_builddir)/lib3ds/lib3ds.a \
++  -L$(top_builddir)/lib3ds -l3ds \
+   @DMALLOC_LIBS@ -lm
+ 
+ 
+ player_SOURCES = player.c
+ player_LDADD = \
+-  $(top_builddir)/lib3ds/lib3ds.a \
++  -L$(top_builddir)/lib3ds -l3ds \
+   @GLUT_LIBS@ \
+   @DMALLOC_LIBS@ -lm
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES =  glstub.h
+-PROGRAMS =  $(noinst_PROGRAMS)
++#PROGRAMS =  $(noinst_PROGRAMS)
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
