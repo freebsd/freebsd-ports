@@ -1874,8 +1874,7 @@ gconfmm		ports/devel/gconfmm
 gctpc		ports/misc/gctpc
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
-gd-nox11	ports/graphics/gd-nox11
-gd2		ports/graphics/gd2
+gd1		ports/graphics/gd2
 gdal		ports/graphics/gdal
 gdb52		ports/devel/gdb52
 gdb53		ports/devel/gdb53
@@ -2837,6 +2836,7 @@ ja-gal		ports/japanese/gal
 ja-gauche-kakasi	ports/japanese/gauche-kakasi
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
+ja-gd1		ports/japanese/gd1
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
 ja-gn-gnspool	ports/japanese/gn-gnspool
@@ -5307,7 +5307,7 @@ p5-GD-Barcode	ports/graphics/p5-GD-Barcode
 p5-GD-Graph	ports/graphics/p5-GD-Graph
 p5-GD-Graph3d	ports/graphics/p5-GD-Graph3d
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
-p5-GD2		ports/graphics/p5-GD2
+p5-GD1		ports/graphics/p5-GD1
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
