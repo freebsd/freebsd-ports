@@ -8,7 +8,7 @@ include/bakery/View/View.h
 include/bakery/View/ViewBase.h
 include/bakery/View/View_Composite.h
 include/bakery/bakery.h
-lib/libbakery-0.6.so.3
+lib/libbakery-0.7.so.4
 lib/libbakery.a
 lib/libbakery.so
 share/aclocal/bakery.m4
