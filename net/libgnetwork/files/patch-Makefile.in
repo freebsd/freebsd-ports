@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Dec 12 01:51:23 2003
++++ Makefile.in	Fri Dec 12 01:51:29 2003
+@@ -197,7 +197,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.7
+ 
+-SUBDIRS = libgnetwork tests data doc po
++SUBDIRS = libgnetwork data doc po
+ 
+ EXTRA_DIST = \
+ 	intltool-merge.in \
