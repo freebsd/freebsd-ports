@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.24 1997/05/17 05:21:44 peter Exp $
+# $Id: log_accum.pl,v 1.25 1997/05/23 04:29:24 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -16,7 +16,9 @@
 #  with parts stolen from Greg Woods <woods@most.wierd.com> version.
 #
 
-require 5.003;	# might work with older perl5
+require 5.003;		# might work with older perl5
+
+use Sys::Hostname;	# get hostname() function
 
 ############################################################
 #
@@ -328,8 +330,15 @@ sub do_changes_file {
 
 sub mail_notification {
     local(@text) = @_;
-    local($line, $word, $subjlines, $subjwords, @mailaddrs);
+    local($line, $word, $subjlines, $subjwords, @mailaddrs, $host, $dom);
     local(%unique);
+
+    $host = hostname();
+    if ($host =~ /\.freebsd\.org$/i) {
+	$dom = '@FreeBSD.org';
+    } else {
+	$dom = '';
+    }
 
     print "Mailing the commit message...\n";
 
@@ -343,11 +352,11 @@ sub mail_notification {
 	open(MAIL, "| /usr/sbin/sendmail -odb -oem -t");
     }
 
-    print(MAIL 'To: cvs-committers@FreeBSD.org, cvs-all@FreeBSD.org');
+    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
     foreach $line (@mailaddrs) {
 	next if ($unique{$line});
 	$unique{$line} = 1;
-	print(MAIL ", ", $line, '@FreeBSD.org');
+	print(MAIL ", " . $line . $dom);
     }
     print(MAIL "\n");
 
