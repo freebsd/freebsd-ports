@@ -24,7 +24,7 @@ lib/dserver/doc/ACKNOWLEDGMENT
 lib/dserver/doc/CHANGES
 lib/dserver/doc/Copyright.kenjiro
 lib/dserver/doc/DICTIONARIES
-lib/dserver/doc/README.FreeBSD-setup
+lib/dserver/doc/README.FreeBSD-setup.euc
 lib/dserver/doc/README.diclookup-mule
 lib/dserver/doc/README.dserver
 lib/dserver/doc/README.kenjiro
