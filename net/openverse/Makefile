@@ -20,10 +20,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/OpenVerse
 USE_REINPLACE=	yes
 
-STRIP=	# Nothing to strip
+STRIP=	# Nothing to Strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${PREFIX}/bin/wish8.2|g' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${LOCALBASE}/bin/wish8.2|g' \
 	-e 's|/usr/lib/OpenVerse|${PREFIX}/lib/OpenVerse|g' \
 		${WRKSRC}/OpenVerse.tcl
 
@@ -34,13 +34,13 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/OpenVerse.tcl ${WRKSRC}/server.cfg ${WRKSRC}/server.tcl \
 		${WRKSRC}/passageways.txt ${PREFIX}/lib/OpenVerse/
-	${MKDIR} ${PREFIX}/share/doc/OpenVerse/help
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/help
 	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/doc/OpenVerse/help
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/OpenVerse/README
+.endif
 
 post-install:
-	@${ECHO} "Please read the documentation for OpenVerse located in"
-	@${ECHO} "${PREFIX}/share/doc/OpenVerse/help and ${PREFIX}/share/doc/OpenVerse/README."
 	${LN} -sf ${PREFIX}/lib/OpenVerse/OpenVerse.tcl ${PREFIX}/bin/OpenVerse
 
 .include <bsd.port.mk>
