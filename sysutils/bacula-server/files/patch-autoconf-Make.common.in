@@ -1,5 +1,5 @@
-*** autoconf/Make.common.in.orig	Thu May  8 14:40:44 2003
---- autoconf/Make.common.in	Sat Oct 11 10:50:22 2003
+*** autoconf/Make.common.in.orig	Sat Jun 19 23:16:06 2004
+--- autoconf/Make.common.in	Sun Jun 27 18:38:11 2004
 ***************
 *** 24,29 ****
 --- 24,30 ----
@@ -15,15 +15,15 @@
   RANLIB = @RANLIB@
   INSTALL = @INSTALL@
   # add the -s to the following in PRODUCTION mode
-! INSTALL_PROGRAM = @INSTALL@ -m 754
+! INSTALL_PROGRAM = @INSTALL@ -m @SBINPERM@
   INSTALL_DATA = @INSTALL@ -m 644
-  INSTALL_SCRIPT = @INSTALL@ -m 754
+  INSTALL_SCRIPT = @INSTALL@ -m @SBINPERM@
   INSTALL_CONFIG = @INSTALL@ -m 640
 --- 44,50 ----
   RANLIB = @RANLIB@
   INSTALL = @INSTALL@
   # add the -s to the following in PRODUCTION mode
-! INSTALL_PROGRAM = @INSTALL@ -s -m 754
+! INSTALL_PROGRAM = @INSTALL@ -s -m @SBINPERM@
   INSTALL_DATA = @INSTALL@ -m 644
-  INSTALL_SCRIPT = @INSTALL@ -m 754
+  INSTALL_SCRIPT = @INSTALL@ -m @SBINPERM@
   INSTALL_CONFIG = @INSTALL@ -m 640
