@@ -26,7 +26,7 @@ LIB_DEPENDS=	Xbae.8:${PORTSDIR}/x11-toolkits/xbae 	\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.4:${PORTSDIR}/graphics/png		\
-		t1.1:${PORTSDIR}/devel/t1lib		\
+		t1.2:${PORTSDIR}/devel/t1lib		\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
 		pdf.3:${PORTSDIR}/print/pdflib3
 
