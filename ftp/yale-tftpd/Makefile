@@ -3,12 +3,12 @@
 # Date created:		Oct 8, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1996/12/01 01:23:24 obrien Exp $
+# $Id: Makefile,v 1.8 1997/07/10 15:50:53 pst Exp $
 #
 
 DISTNAME=	yale-tftpd-3.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cisco.com/pub/
+MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/net/yale-tftpd/
 
 MAINTAINER=	ports@FreeBSD.org
 
