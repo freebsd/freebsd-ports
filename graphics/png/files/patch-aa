@@ -45,7 +45,7 @@
 +.SUFFIXES: .c .so .o
 +
 +.c.so:
-+	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	${CC} ${CFLAGS} -fPIC -DPIC -o $@ -c $<
 +
 +all: libpng.a libpng.so.${PNGVER}
  
@@ -73,12 +73,12 @@
 -	chmod 644 $(prefix)/include/pngconf.h
 -	cp libpng.a $(prefix)/lib
 -	chmod 644 $(prefix)/lib/libpng.a
-+	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
-+	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${PNGVER} $(prefix)/lib
++	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
++	${BSD_INSTALL_DATA} libpng.a libpng.so.${PNGVER} $(prefix)/lib
 +	ln -sf libpng.so.${PNGVER} $(prefix)/lib/libpng.so
 +	ranlib $(prefix)/lib/libpng.a
-+	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
-+	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
++	${BSD_INSTALL_MAN} libpng.3 libpngpf.3 $(prefix)/man/man3
++	${BSD_INSTALL_MAN} png.5 $(prefix)/man/man5
  
  clean:
  	rm -f *.o libpng.a pngtest pngout.png
