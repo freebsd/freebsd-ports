@@ -34,6 +34,7 @@
     SUBDIR += wmtz
     SUBDIR += xalarm
     SUBDIR += xdaliclock
+    SUBDIR += xmms-alarm
     SUBDIR += xtimer
     SUBDIR += xtu
 
