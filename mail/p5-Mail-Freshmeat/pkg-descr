@@ -1,0 +1,12 @@
+Mail::Freshmeat is a parser for the daily newsletters from freshmeat.net.
+See <http://www.new.ox.ac.uk/~adam/computing/fmscore/> for what may be
+the only sensible application of this module.  (Quick summary: fmscore
+is a Perl5 program which uses Mail::Freshmeat to parse freshmeat daily
+e-mail newsletters, and then rank them by interest according to highly
+flexible user-supplied ranking rules. Articles below a specified score
+will be removed from the output. fmscore is ideal for use as a
+procmail filter.)
+
+Author: Adam Spiers <adam@spiers.net>
+
+--will
