@@ -18,6 +18,7 @@ COMMENT=	Problem reporting system
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 
 CONFLICTS=	libpreps-1.6.*
+LATEST_LINK=	libpreps-devel
 
 INSTALLS_SHLIB=	yes
 
