@@ -1,0 +1,20 @@
+bin/rping
+bin/rtraceroute
+bin/rftp
+bin/rfinger
+bin/rwhois
+bin/rarchie
+bin/rtelnet
+bin/socks5
+bin/runsocks
+bin/stopsocks
+include/socks.h
+man/man1/runsocks.1
+man/man1/socks5.1
+man/man1/stopsocks.1
+man/man5/libsocks5.conf.5
+man/man5/socks5.conf.5
+lib/libsocks5.a
+@exec ranlib -m %D/lib/libsocks5.a
+lib/libsocks5_sh.so
+@exec /sbin/ldconfig -m %D/lib
