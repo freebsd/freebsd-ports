@@ -47,7 +47,6 @@ PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
-BROKEN=		"pkg-plist broken due to inability to disable reg's CONFIGURE_ARGS"
 .else
 CONFIGURE_ARGS=	--without-gnome
 .endif
