@@ -5,10 +5,10 @@
 
 # PROVIDE: ddclient
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable ddclient:
+# Add the following line to /etc/rc.conf to enable ddclient:
 #
 #ddclient_enable="YES"
 #
