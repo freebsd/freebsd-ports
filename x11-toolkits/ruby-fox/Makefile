@@ -18,7 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 #BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel
 LIB_DEPENDS=	FOX.1:${PORTSDIR}/x11-toolkits/fox \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 FOX_VERSION=	0.99.174

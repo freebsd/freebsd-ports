@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.linux-games.com/penguin-command/
 MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

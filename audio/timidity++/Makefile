@@ -27,7 +27,7 @@ WANT_ESOUND=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
 
 DIST_SUBDIR=	timidity

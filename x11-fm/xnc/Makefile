@@ -24,7 +24,7 @@ MAINTAINER=	demon@FreeBSD.org
 #RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 #.endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
