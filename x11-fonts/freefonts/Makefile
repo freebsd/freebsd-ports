@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefonts
-PORTVERSION= 	0.10
+PORTVERSION=	0.10
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/

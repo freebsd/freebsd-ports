@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ttmkfdir
-PORTVERSION= 	0.0
+PORTVERSION=	0.0
 CATEGORIES=	x11-fonts x11
 MASTER_SITES=	http://www.joerg-pommnitz.de/TrueType/
 DISTNAME=	${PORTNAME}

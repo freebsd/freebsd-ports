@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkfont
-PORTVERSION= 	1.1
+PORTVERSION=	1.1
 CATEGORIES=	x11-fonts tk82
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/linux/tsx-11/sources/usr.bin.X11/ \
 		${MASTER_SITE_LOCAL}
