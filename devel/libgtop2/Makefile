@@ -7,6 +7,7 @@
 
 PORTNAME=	libgtop2
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -30,6 +31,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		libgtop2
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|int64_t|gint64|g' \
+		${WRKSRC}/include/glibtop/command.h \
+		${WRKSRC}/include/glibtop/proclist.h \
+		${WRKSRC}/lib/lib.pl
 
 post-install:
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
