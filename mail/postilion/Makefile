@@ -7,37 +7,25 @@
 
 PORTNAME=	postilion
 PORTVERSION=	0.9.3c
-CATEGORIES=	mail tk82
+CATEGORIES=	mail tk83
 MASTER_SITES=	http://www.postilion.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		img.1:${PORTSDIR}/graphics/libimg
-BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+		c-client4:${PORTSDIR}/mail/cclient
+RUN_DEPENDS=	${LOCALBASE}/lib/Img1.2/pkgIndex.tcl:${PORTSDIR}/graphics/libimg
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 
 FETCH_BEFORE_ARGS=	-b
-GNU_CONFIGURE=	yes
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ARGS=	PORTVERSION="${PORTVERSION}" LOCALBASE="${LOCALBASE}" \
+		MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" \
+		DIR=lib/postilionlib SED="${SED}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/imap/*'
 
-CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2
-
-#.if defined(STEPIFY)
-#LIB_DEPENDS+=	tkstep80.1:${PORTSDIR}/x11-toolkits/tkstep80 \
-#		Dnd.1:${PORTSDIR}/x11/libdnd \
-#		tiff.4:${PORTSDIR}/graphics/tiff \
-#		jpeg.9:${PORTSDIR}/graphics/jpeg
-#USE_XPM=	yes
-#CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/lib/tkstep8.0
-#pre-patch:
-#	${SED} s/'(DND) 0/(DND) 1'/ ${FILESDIR}/options.tcl > \
-#	${WRKSRC}/postilion/options.tcl
-#.else
-#pre-extract:
-#	@${ECHO} ""
-#	@${ECHO} "You can build postilion with NeXtStep style widgets by defining STEPIFY"
-#	@${ECHO} ""
-LIB_DEPENDS+=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/lib/tk8.2
-#.endif
+do-configure:
+	${LN} -s ${FILESDIR}/config.h ${WRKSRC}
 
 .include <bsd.port.mk>
