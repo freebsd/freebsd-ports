@@ -8,3 +8,12 @@
  #include <tulip/TulipPlugin.h>
  
  using namespace std;
+@@ -9,7 +10,7 @@
+ };
+ 
+ namespace std {
+-  struct less<edgeS>
++  template <> struct less<edgeS>
+   {
+     bool operator()(const edgeS &c,const edgeS &d) const
+     {

@@ -39,10 +39,6 @@ LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC from shared library objects)"
 .endif
