@@ -1,6 +1,58 @@
---- vid.c.old	Mon May  8 00:59:03 2000
-+++ vid.c	Wed Jan 31 14:26:27 2001
-@@ -217,12 +217,15 @@
+--- ../vid-1.0.1-old/vid.c	Mon May  8 05:59:03 2000
++++ vid.c	Sun Apr 21 17:02:53 2002
+@@ -48,6 +48,7 @@
+   struct usb_ctl_request ur;
+   unsigned char data[1024];
+   
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
+   ur.request.bmRequestType = UT_READ_VENDOR_INTERFACE;
+   ur.request.bRequest = 2;
+   
+@@ -57,6 +58,17 @@
+   ur.data = data;
+   ur.flags = 0;
+   ur.actlen = 0;
++#else
++  ur.ucr_request.bmRequestType = UT_READ_VENDOR_INTERFACE;
++  ur.ucr_request.bRequest = 2;
++  
++  USETW(ur.ucr_request.wValue, 0);	/* unused */
++  USETW(ur.ucr_request.wIndex, reg); /* index */
++  USETW(ur.ucr_request.wLength, 1);	/* payload len in bytes */
++  ur.ucr_data = data;
++  ur.ucr_flags = 0;
++  ur.ucr_actlen = 0;
++#endif
+   
+   if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
+     return -1;
+@@ -72,6 +84,7 @@
+ 
+   data[0] = val;
+   
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
+   ur.request.bmRequestType = UT_WRITE_VENDOR_INTERFACE;
+   ur.request.bRequest = 2;
+   
+@@ -81,6 +94,17 @@
+   ur.data = data;
+   ur.flags = 0;
+   ur.actlen = 0;
++#else
++  ur.ucr_request.bmRequestType = UT_WRITE_VENDOR_INTERFACE;
++  ur.ucr_request.bRequest = 2;
++  
++  USETW(ur.ucr_request.wValue, 0);	/* unused */
++  USETW(ur.ucr_request.wIndex, reg); /* index */
++  USETW(ur.ucr_request.wLength, 1);	/* payload len in bytes */
++  ur.ucr_data = data;
++  ur.ucr_flags = 0;
++  ur.ucr_actlen = 0;
++#endif
+   
+   if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
+     return -1;
+@@ -217,12 +241,15 @@
    struct vidstate vs;		/* current read state */
    int small = 0;		/* use 320x240 */
    int frmnm = 0;		/* cyclic frame number key */
@@ -17,7 +69,7 @@
  	      "\nCopyright 2000 Peter S. Housel"
  	      "\nThis program is free software; "
  	      "you may redistribute it under the terms of"
-@@ -235,7 +238,7 @@
+@@ -235,7 +262,7 @@
        exit(0);
      } else if(strcmp(*argv, "--help") == 0) {
        fprintf(stderr, "usage: vid [options]\n"
@@ -26,29 +78,41 @@
  	      "and write image data to standard output in PNM format\n\n"
  	      "--version              print program version information\n"
  	      "--usage                summarize command line options\n"
-@@ -287,8 +290,9 @@
+@@ -287,8 +314,14 @@
        exit(1);
      }
  
 -    if(udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
 -      fprintf(stderr, "device %s is not an OmniVision OV511\n", devname);
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
 +    if(udi.vendorNo != 0x05A9 || (udi.productNo != 0x0511 &&
 +				  udi.productNo != 0xa511)) {
++#else
++    if(udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
++				  udi.udi_productNo != 0xa511)) {
++#endif
 +      fprintf(stderr, "device %s is not an OmniVision OV511 or OV511+\n", devname);
        exit(1);
      }
    } else {
-@@ -298,7 +302,8 @@
+@@ -297,8 +330,15 @@
+       sprintf(dev, "/dev/ugen%d", i);
        if((fd = open(dev, O_RDWR)) < 0)
  	continue;
-       if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
--	 || udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++      if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
 +	 || udi.vendorNo != 0x05A9 || (udi.productNo != 0x0511 &&
 +				       udi.productNo != 0xa511)) {
++#else
+       if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
+-	 || udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
++	 || udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
++				       udi.udi_productNo != 0xa511)) {
++#endif
  	close(fd);
  	fd = -1;
  	continue;
-@@ -308,12 +313,15 @@
+@@ -308,12 +348,19 @@
      }
  
      if(fd < 0) {
@@ -60,12 +124,16 @@
      devname = dev;
    }
 +
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
 +  isplus = udi.productNo == 0xa511;
++#else
++  isplus = udi.udi_productNo == 0xa511;
++#endif
 +  bufsize = (isplus ? 961 : 993);
    
    /* reset the OV511 */
    if(ov511_reg_write(fd, OV511_REG_RST, 0x7f) < 0)
-@@ -398,23 +406,55 @@
+@@ -398,23 +445,55 @@
    if(ov511_reg_write(fd, OV511_REG_CE_EN, 0x0) < 0)
      exit(1);
  
@@ -88,7 +156,8 @@
 +  if((is20 = ov511_i2c_read(fd, OV7610_REG_COMI)) < 0)
 +    exit(1);
 +  is20 = !is20;
-+
+ 
+-  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
 +  /* set up the OV7610/OV7620 */
 +  if(is20) {
 +    ov511_i2c_write(fd, OV7610_REG_EC,      0xff);
@@ -130,14 +199,13 @@
 +    ov511_i2c_write(fd, OV7610_REG_COMJ, 0x93);
 +    ov511_i2c_write(fd, OV7610_REG_BADJ, 0x48);
 +    ov511_i2c_write(fd, OV7610_REG_COMK, 0x81);
- 
--  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
++
 +    ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
 +  }
  
    if(small) {
      vs.width = 320;
-@@ -442,14 +482,14 @@
+@@ -442,14 +521,19 @@
    ov511_reg_write(fd, OV511_REG_LNDV, 0x00);
  
    /* set FIFO format (993-byte packets) */
@@ -148,13 +216,18 @@
      exit(1);
  
    /* select the 993-byte alternative */
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
    alt.interface_index = 0;
 -  alt.alt_no = 1;
 +  alt.alt_no = (isplus ? 7 : 1);
++#else
++  alt.uai_interface_index = 0;
++  alt.uai_alt_no = (isplus ? 7 : 1);
++#endif
    if(ioctl(fd, USB_SET_ALTINTERFACE, &alt) < 0) {
      perror("USB_SET_ALTINTERFACE");
      exit(1);
-@@ -475,36 +515,38 @@
+@@ -475,36 +559,38 @@
    }
  
    /* read, looking for start and end frames */
