@@ -62,7 +62,7 @@ DO_NOT_COMPILE+=	xine_artsplugin
 CONFIGURE_ARGS+=	--disable-xinetest
 .elif defined(WITH_XINE)
 PLIST_APPEND+=	plist.xine
-LIB_DEPENDS+=	xine.8:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.9:${PORTSDIR}/multimedia/libxine
 BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
 .endif # defined(WITHOUT_XINE)
