@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flac
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTVERSION=	1.1.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,13 +22,13 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-sse --enable-3dnow \
+CONFIGURE_ARGS=	--enable-sse \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include" \
-		XMMS_CONFIG=/usr/bin/false      # must be absolute path
+		ac_cv_path_XMMS_CONFIG=no
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
@@ -48,6 +47,6 @@ post-build:
 	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/flac.1
 
 test: build
-	@cd ${WRKSRC}; make check
+	@cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.mk>

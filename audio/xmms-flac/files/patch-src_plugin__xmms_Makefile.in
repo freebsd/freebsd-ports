@@ -1,25 +1,25 @@
 
 $FreeBSD$
 
---- src/plugin_xmms/Makefile.in.orig	Tue Jun 10 00:24:23 2003
-+++ src/plugin_xmms/Makefile.in	Tue Jun 10 00:25:16 2003
-@@ -173,8 +173,7 @@
+--- src/plugin_xmms/Makefile.in.orig
++++ src/plugin_xmms/Makefile.in
+@@ -77,8 +77,7 @@
  	$(top_builddir)/src/share/grabbag/libgrabbag.la \
- 	$(top_builddir)/src/share/gain_analysis/libgain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
+-	$(top_builddir)/src/share/utf8/libutf8.la \
+-	$(top_builddir)/src/libFLAC/libFLAC.la
++	$(top_builddir)/src/share/utf8/libutf8.la
+ am__objects_1 = charset.lo configure.lo fileinfo.lo http.lo plugin.lo \
+ 	tag.lo
+ am_libxmms_flac_la_OBJECTS = $(am__objects_1)
+@@ -296,8 +295,7 @@
+ 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
  	$(top_builddir)/src/share/utf8/libutf8.la \
 -	$(top_builddir)/src/libFLAC/libFLAC.la \
 -	-L$(top_builddir)/src/libFLAC/.libs \
 +	-lFLAC \
  	@XMMS_LIBS@ \
- 	@ID3LIB_LIBS@
+ 	@LIBICONV@
  
-@@ -189,8 +188,7 @@
- 	$(top_builddir)/src/plugin_common/libplugin_common.la \
- 	$(top_builddir)/src/share/grabbag/libgrabbag.la \
- 	$(top_builddir)/src/share/gain_analysis/libgain_analysis.la \
--	$(top_builddir)/src/share/utf8/libutf8.la \
--	$(top_builddir)/src/libFLAC/libFLAC.la
-+	$(top_builddir)/src/share/utf8/libutf8.la
- am__objects_1 = charset.lo configure.lo plugin.lo wrap_id3.lo \
- 	fileinfo.lo
- @FLaC__HAS_ID3LIB_TRUE@am_libxmms_flac_la_OBJECTS = $(am__objects_1)

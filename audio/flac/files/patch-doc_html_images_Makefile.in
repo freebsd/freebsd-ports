@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/html/images/Makefile.in.orig	Sat Oct  5 01:22:31 2002
-+++ doc/html/images/Makefile.in	Sat Oct  5 01:23:21 2002
-@@ -133,7 +133,7 @@
- 
+--- doc/html/images/Makefile.in.orig
++++ doc/html/images/Makefile.in
+@@ -226,7 +226,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html/images
 +docdir = $(datadir)/doc/$(PACKAGE)/html/images
- 
  doc_DATA = \
  	1x1.gif \
+ 	cafebug.gif \
