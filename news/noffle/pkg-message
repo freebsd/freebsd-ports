@@ -1,0 +1,7 @@
+
+****************************************************************************
+To enable the noffle-daemon, add the following line to your /etc/inetd.conf:
+
+nntp stream tcp nowait news /usr/local/bin/noffle -r
+****************************************************************************
+

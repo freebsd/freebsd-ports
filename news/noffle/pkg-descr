@@ -1,0 +1,8 @@
+Noffle is a Usenet news server optimized for few users and low
+speed dial-up connections to the Internet. It acts as a server
+to news clients running on the local host, but gets its news
+feed by acting as a client to a remote server. Allows reading
+news offline with many news clients, even if they do not
+support offline reading by themselves.
+
+WWW: http://noffle.sourceforge.net
