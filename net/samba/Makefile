@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.4
+PORTREVISION=   1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -19,12 +20,32 @@ MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_BZIP2=	YES
 
+.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
+USE_GMAKE=	YES
+.endif
+
+AUDIT=		"@comment "
+RECYCLE=	"@comment "
+LIBSAMBA=	"@comment "
+
+.if defined(WITH_AUDIT)
+AUDIT=		""
+LIBSAMBA=	""
+.endif
+
+.if defined(WITH_RECYCLE)
+RECYCLE=	""
+LIBSAMBA=	""
+.endif
+
 # directories
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
 SAMBA_LOGDIR=	${VARDIR}/log
 SAMBA_PRIVATE=	${PREFIX}/private
 SAMBA_CONFDIR=	${PREFIX}/etc
+SAMBA_VFSDIR=	${PREFIX}/lib/samba
+
 # sample files
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
@@ -89,6 +110,7 @@ CONFIGURE_ARGS+=	--with-acl-support
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
+PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME}
 
 MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
 		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 \
@@ -101,9 +123,34 @@ MAN8=		nmbd.8 pdbedit.8 smbd.8 smbmnt.8 smbmount.8 \
 
 SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 
+PLIST_SUB=      AUDIT=${AUDIT} \
+		RECYCLE=${RECYCLE} \
+		LIBSAMBA=${LIBSAMBA}
+
+.if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
+post-build:
+	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
+		${GMAKE}
+.endif
+
 post-install:
+.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
+	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
+.if defined(WITH_AUDIT)
+	${INSTALL_PROGRAM) ${WRKDIR}/${DISTNAME}/examples/VFS/audit.so ${SAMBA_VFSDIR}
+.endif
+.if defined(WITH_RECYCLE)
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle.so ${SAMBA_VFSDIR}
+.endif
+.endif
 	${MKDIR} ${PREFIX}/share/examples/samba
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
+.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
+	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
+	@for file in Makefile.orig audit.o audit.so recycle.o recycle.so skel.o skel.so ; do \
+		${RM} ${PREFIX}/share/examples/samba/VFS/$${file} ; \
+	done
+.endif
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
 		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
@@ -114,6 +161,7 @@ post-install:
 		${SED} -e 's!%%SAMBA_SPOOL%%!${SAMBA_SPOOL}!'		\
 			-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'	\
 			-e 's!%%SAMBA_CONFDIR%%!${SAMBA_CONFDIR}!'	\
+			-e 's!%%SAMBA_VFSDIR%%!${SAMBA_VFSDIR}!'	\
 			${FILESDIR}/smb.conf.default			\
 			> ${SAMPLE_CONFIG} ;				\
 	fi

@@ -49,6 +49,8 @@ etc/codepages/unicode_map.ISO8859-9
 etc/codepages/unicode_map.KOI8-R
 etc/rc.d/samba.sh.sample
 etc/smb.conf.default
+%%AUDIT%%lib/samba/audit.so
+%%RECYCLE%%lib/samba/recycle.so
 sbin/nmbd
 sbin/smbd
 sbin/swat
@@ -480,3 +482,4 @@ share/swat/using_samba/this_edition.html
 %%PORTDOCS%%@dirrm share/doc/samba/faq
 %%PORTDOCS%%@dirrm share/doc/samba
 @dirrm etc/codepages
+%%LIBSAMBA%%@dirrm lib/samba
