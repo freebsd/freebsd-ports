@@ -1,0 +1,40 @@
+--- examples/Makefile.in~	Wed Dec 11 15:42:53 1996
++++ examples/Makefile.in	Wed Dec 11 15:41:41 1996
+@@ -28,7 +28,7 @@
+ 		$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
+ 
+ demo.h demo.dbd: demo.ddl
+-		../util/ddlp -a4 -f demo
++		env LD_LIBRARY_PATH=../src ../util/ddlp -a4 -f demo
+ 
+ lint:
+ 		lint -u $(DEFINES) $(SRCS)
+--- util/Makefile.in~	Wed Dec 11 16:10:14 1996
++++ util/Makefile.in	Wed Dec 11 16:14:42 1996
+@@ -8,11 +8,10 @@
+ CC		= @cc@
+ CFLAGS		= @cflags@
+ LIBS		= -ltyphoon
+-PREFIX		= /usr/local
+ LDFLAGS		= -L../src
+ DESTBIN		= $(PREFIX)/bin
+-DESTOWN		= root
+-DESTGRP		= local
++DESTOWN		= bin
++DESTGRP		= bin
+ SHELL		= /bin/sh
+ PROGRAMS	= ddlp dbdview tyexport tyimport # tybackup tyrestore
+ MADESRCS	= ddl.c exp.c imp.c
+@@ -74,11 +74,11 @@
+ 
+ install:	$(PROGRAMS)
+ 		cp $(PROGRAMS) $(DESTBIN)
+-		cd $(DESTBIN) && -mcs -c $(PROGRAMS)
+ 		cd $(DESTBIN) && strip $(PROGRAMS)
+ 		cd $(DESTBIN) && chmod 755 $(PROGRAMS)
+ 		cd $(DESTBIN) && chown $(DESTOWN) $(PROGRAMS)
+ 		cd $(DESTBIN) && chgrp $(DESTGRP) $(PROGRAMS)
++		install -m 644 ../man/ddlp.1 ${PREFIX}/man/man1
+ 
+ uninstall:
+ 		cd $(DESTBIN) && rm -f $(PROGRAMS)

@@ -1,0 +1,48 @@
+--- configure~	Wed Dec 11 15:21:16 1996
++++ configure	Wed Dec 11 15:22:18 1996
+@@ -1,6 +1,7 @@
+ #
+ # configure script
+ #
++alias type=which
+ CC=cc
+ 
+ compile='$CC -o conftest conftest.c >/dev/null 2>&1'
+@@ -152,10 +153,10 @@
+ echo Checking for cc
+ if test -z "$CC" && type cc >/dev/null 2>/dev/null ; then
+ 	CC=cc
+-	CFLAGS="-g $(DEFINES)"
++	CFLAGS="-O2 $(DEFINES)"
+ else
+ 	CC=gcc
+-	CFLAGS="-g -W -Wunused -Wpointer-arith -Wswitch \$(DEFINES)"
++	CFLAGS="-O2 -W -Wunused -Wpointer-arith -Wswitch \$(DEFINES)"
+ fi
+ 
+ #
+--- Makefile.orig	Sun May 21 11:47:05 1995
++++ Makefile	Wed Dec 11 16:33:44 1996
+@@ -1,11 +1,10 @@
+ # Makefile for:  typhoon - top level makefile
+ 
+ MANEXT		= l
+-PREFIX		= /usr/local
+ DESTMAN		= $(PREFIX)/man/man$(MANEXT)
+ DESTCAT		= $(PREFIX)/man/cat$(MANEXT)
+-DESTOWN		= root
+-DESTGRP		= local
++DESTOWN		= bin
++DESTGRP		= bin
+ SHELL		= /bin/sh
+ MAKE		= make
+ 
+@@ -14,8 +13,6 @@
+ all install uninstall: include/ansi.h include/environ.h
+ 		cd src; $(MAKE) $@
+ 		cd util; $(MAKE) $@
+-		cd examples; $(MAKE) $@
+-		cd man; $(MAKE) $@
+ 
+ include/ansi.h include/environ.h:
+ 		configure
