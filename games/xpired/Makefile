@@ -16,11 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	An action-puzzle maze escape game (SDL)
 
-LIB_DEPENDS=	SDL_gfx.10:${PORTSDIR}/graphics/sdl_gfx \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src
 
 do-install:
