@@ -26,8 +26,14 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 NO_WRKSUBDIR=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm_mpeg ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
