@@ -25,6 +25,7 @@
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Zlib
+    SUBDIR += p5-Mac-Macbinary
     SUBDIR += pkzip
     SUBDIR += ppunpack
     SUBDIR += rar
