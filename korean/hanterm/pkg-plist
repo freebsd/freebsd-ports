@@ -1,5 +1,5 @@
 bin/hanterm
 lib/X11/app-defaults/Hanterm
-share/doc/hanterm/CHANGELOG
+share/doc/hanterm/ChangeLog
 share/doc/hanterm/hanterm.html
 @dirrm share/doc/hanterm
