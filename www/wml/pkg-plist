@@ -90,6 +90,12 @@ lib/wml/perl/lib/site_perl/Getopt/Long.pm
 lib/wml/perl/lib/site_perl/Bit/Vector.pm
 lib/wml/perl/lib/site_perl/File/PathConvert.pm
 lib/wml/perl/lib/site_perl/Image/Size.pm
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/Configure.al
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/Croak.al
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/FindOption.al
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/GetOptions.al
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/autosplit.ix
+lib/wml/perl/lib/site_perl/auto/Getopt/Long/config.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/gifsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/xbmsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/xpmsize.al
@@ -218,6 +224,8 @@ man/cat7/wml_std_html40.7.gz
 @dirrm lib/wml/perl/lib/site_perl/Bit
 @dirrm lib/wml/perl/lib/site_perl/File
 @dirrm lib/wml/perl/lib/site_perl/Image
+@dirrm lib/wml/perl/lib/site_perl/auto/Getopt/Long
+@dirrm lib/wml/perl/lib/site_perl/auto/Getopt
 @dirrm lib/wml/perl/lib/site_perl/auto/Image/Size
 @dirrm lib/wml/perl/lib/site_perl/auto/Image
 @dirrm lib/wml/perl/lib/site_perl/auto/GD
