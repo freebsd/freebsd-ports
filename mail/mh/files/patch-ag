@@ -1,0 +1,12 @@
+--- sbr/m_atoi.c.orig	Wed Dec  1 13:01:23 1993
++++ sbr/m_atoi.c	Tue Jan  7 18:53:15 1997
+@@ -19,6 +19,9 @@
+ 	i *= 10;
+ 	i += *cp++ - '0';
+     }
++    if (*cp) { /* non-digit ended string -- return 0. */
++	return 0;
++    }
+ #else
+     while (*cp) {
+ 	if (*cp < '0' || *cp > '9')
