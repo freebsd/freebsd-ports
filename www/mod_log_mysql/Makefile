@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_mysql
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.grubbybaby.com/mod_log_mysql/
 
