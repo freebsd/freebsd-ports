@@ -14,6 +14,8 @@ DISTNAME=	gateway-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
