@@ -54,6 +54,7 @@
     SUBDIR += ggsd
     SUBDIR += gicq
     SUBDIR += gnome-icu
+    SUBDIR += gnome-vnc
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher
