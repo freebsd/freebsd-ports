@@ -61,16 +61,6 @@ SITE+=	${FILESDIR}/site.config.m4
 SITE+=	${FILESDIR}/site.config.m4.ipv6
 .endif
 .endif
-.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.if ! defined(WITH_OPENSSL_BASE)
-SITE+=	${FILESDIR}/site.config.m4.ssl
-.else
-.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
-SITE+=	${FILESDIR}/site.config.m4.ssl
-.endif
-.endif
-SITE+=	${FILESDIR}/site.config.m4.tls
-.endif
 .if defined(SENDMAIL_WITH_SASL)
 SITE+=	${FILESDIR}/site.config.m4.sasl
 .endif
@@ -101,11 +91,12 @@ post-extract:
 
 do-configure:
 	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
-	${SED} -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
-		-e "s,\`-O\',\`${CFLAGS}\'," \
+	${SED} -e "s;\`-pthread\';\`${PTHREAD_LIBS}\';" \
+		-e "s;\`-O\';\`${CFLAGS}\';" \
 		${WRKSRC}/devtools/OS/FreeBSD.sed \
 		> ${WRKSRC}/devtools/OS/FreeBSD
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
+		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
 .if defined(SENDMAIL_WITH_PICKY_HELO_CHECK)
 	${ECHO_CMD} \
@@ -243,6 +234,10 @@ tls-install:
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if ! defined(WITH_OPENSSL_BASE)
+SITE+=	${FILESDIR}/site.config.m4.ssl
+.endif
+SITE+=	${FILESDIR}/site.config.m4.tls
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
