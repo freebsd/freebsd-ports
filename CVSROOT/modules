@@ -871,6 +871,7 @@ clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
 claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
+clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
 cleanscore	ports/news/cleanscore
