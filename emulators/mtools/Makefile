@@ -1,30 +1,30 @@
 # New ports collection makefile for:    mtools
-# Version required:     3.9.1
+# Version required:     3.9.4
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.25 1999/01/28 19:46:16 obrien Exp $
+# $Id: Makefile,v 1.26 1999/01/31 12:31:06 obrien Exp $
 #
 
-DISTNAME=	mtools-3.9.1
-PKGNAME=	mtools-3.9.1.3110
+DISTNAME=	mtools-3.9.4
+PKGNAME=	mtools-3.9.4.2703b
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
 
-PATCHFILES=	mtools-3.9.1-3110.diff.gz
+PATCHFILES=	mtools-3.9.4-2703b.diff.gz
 PATCH_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
 
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-xdf --prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-xdf
 
 USE_GMAKE=	yes
 
-MAN1=		mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
+MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
 		mdir.1 mdu.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 \
 		mmove.1 mpartition.1 mrd.1 mread.1 mren.1 mshowfat.1 \
 		mtoolstest.1 mtools.1 mtype.1 mzip.1
