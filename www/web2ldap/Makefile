@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.web2ldap.de/download/ \
 
 MAINTAINER=	oddbjorn@tricknology.org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/ldapmodule
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/py-ldap1
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
