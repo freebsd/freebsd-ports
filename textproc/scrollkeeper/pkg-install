@@ -208,7 +208,7 @@ xmlcatalog --noout --add "delegatePublic" \
 #
 top=`dirname $docbookdir`
 found=`find $top -name chunk.xsl 2> /dev/null`
-found=`find ${PREFIX} -name chunk.xsl 2> /dev/null`
+found=`find ${PREFIX}/ -name chunk.xsl 2> /dev/null`
 if [ "$found" = "" ] ; then
     echo could not locate chunk-common.xsl of DocBook XSLT stylesheets
     exit 1
