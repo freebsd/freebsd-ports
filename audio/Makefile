@@ -179,6 +179,7 @@
     SUBDIR += gstreamer-plugins-ogg
     SUBDIR += gstreamer-plugins-polypaudio
     SUBDIR += gstreamer-plugins-shout
+    SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-sidplay
     SUBDIR += gstreamer-plugins-smoothwave
     SUBDIR += gstreamer-plugins-sndfile

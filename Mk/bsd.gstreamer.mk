@@ -57,9 +57,9 @@ _USE_GSTREAMER_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdparanoia \
 			gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
 			jpeg-mmx ladspa lame libcaca libfame libmng libpng \
 			libvisual mad mikmod mpeg2dec mpeg2enc mplex musepack \
-			musicbrainz nas sdl shout sidplay smoothwave sndfile \
-			speex theora ogg pango polypaudio swfdec vorbis xine \
-			xvid
+			musicbrainz nas sdl shout shout2 sidplay smoothwave \
+			sndfile speex theora ogg pango polypaudio swfdec \
+			vorbis xine xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
