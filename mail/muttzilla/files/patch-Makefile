@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Jan 26 23:11:08 2000
-+++ Makefile	Fri Nov 24 14:33:13 2000
++++ Makefile	Fri Nov 24 14:42:09 2000
 @@ -1 +1 @@
 -CFLAGS = -O2 -Wall
 +CFLAGS += -Wall
@@ -12,7 +12,7 @@
 +ETCDIR = ${PREFIX}/etc
 @@ -18 +18 @@
 -	$(LD) $(LDFLAGS) -o $@ $^
-+	$(LD) $(LDFLAGS) -o $@ $> /usr/lib/libgcc_pic.a
++	$(CC) -shared -o $@ $>
 @@ -27,5 +27,5 @@
 -	install --mode=0755 muttzilla.so $(LIBDIR)
 -	install --mode=0755 -d $(MZLIBDIR)
