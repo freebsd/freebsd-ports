@@ -1,0 +1,11 @@
+--- unixport/makefile.orig	Sun May  6 02:18:49 2001
++++ unixport/makefile	Mon Dec  3 19:36:08 2001
+@@ -16,7 +16,7 @@
+ MPFILES= $(MPDIR)/mpi.o $(MPDIR)/mp2.o  $(MPDIR)/libmport.a
+ MPFILES= $(MPDIR)/mpi.o $(MPDIR)/mp2.o  $(MPDIR)/libmport.a
+ INIT_SYSTEM_LSP=init_$(SYSTEM).lsp
+-SPECIAL_RSYM = rsym.c
++SPECIAL_RSYM = rsym_elf.c
+ 
+ # begin makedefs
+ 

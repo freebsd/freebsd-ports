@@ -1,0 +1,42 @@
+--- info/gcl-tk.texi.orig	Mon Dec  6 17:44:04 1999
++++ info/gcl-tk.texi	Mon Dec  3 18:57:22 2001
+@@ -2,6 +2,10 @@
+ @c -*-texinfo-*-
+ @c @smallbook
+ @setfilename gcl-tk.info
++@dircategory GNU Common Lisp
++@direntry
++* GCL TK: (gcl-tk).	Tk bindings for GCL.
++@end direntry
+ 
+ @c to update the menus do: 
+ @c (texinfo-multiple-files-update "gcl-tk.texi" t t)
+--- info/control.texi.orig	Mon Dec  3 19:12:25 2001
++++ info/control.texi	Mon Dec  3 19:14:06 2001
+@@ -78,12 +78,10 @@
+ The command will be executed at global level (outside the context
+ of any Tcl procedure).
+ If an error occurs while executing the delayed command then the
+-@b{tkerror} mechanism is used to report the error.
++@b{tkerror} mechanism (@pxref{tkerror}) is used to report the error.
+ 
+ The @b{after} command always returns an empty string.
+ 
+-@xref{tkerror}
+-
+ @unnumberedsubsec Keywords
+ delay, sleep, time
+ @node bind, destroy, after, Control
+@@ -472,11 +470,9 @@
+ 
+ 
+ If an error occurs in executing the command for a binding then the
+-@b{tkerror} mechanism is used to report the error.
++@b{tkerror} mechanism (@pxref{tkerror}) is used to report the error.
+ The command will be executed at global level (outside the context
+ of any Tcl procedure).
+-
+-@xref{tkerror}
+ 
+ @unnumberedsubsec Keywords
+ form, manual
