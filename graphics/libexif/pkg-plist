@@ -10,7 +10,7 @@ include/libexif/exif-tag.h
 include/libexif/exif-utils.h
 lib/libexif.a
 lib/libexif.so
-lib/libexif.so.9
+lib/libexif.so.10
 libdata/pkgconfig/libexif.pc
 share/locale/de/LC_MESSAGES/libexif.mo
 share/locale/es/LC_MESSAGES/libexif.mo
