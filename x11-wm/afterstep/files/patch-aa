@@ -4,7 +4,7 @@
 -#define AFTERDIR     "/usr/lib/X11/afterstep"
 -#define AFTER_ICONDIR   "/usr/include/X11/bitmaps:/usr/include/X11/pixmaps"
 -#define STEPRC         "/usr/lib/X11/afterstep/system.steprc"
-+#define AFTERDIR     "@@PREFIX@@/lib/afterstep"
++#define AFTERDIR     "@@PREFIX@@/lib/X11/afterstep"
 +#define AFTER_ICONDIR   "@@PREFIX@@/include/X11/bitmaps:@@PREFIX@@/include/X11/pixmaps"
 +#define STEPRC         "@@PREFIX@@/lib/X11/afterstep/system.steprc"
  
