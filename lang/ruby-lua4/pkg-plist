@@ -1,0 +1,10 @@
+%%RUBY_SITEARCHLIBDIR%%/lua.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubylua.txt
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html_ssi_lua.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_lua.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_ssi_lua2_2.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_ssi_lua3_2.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_ssi_lua_2.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_ssi_lua_2.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
