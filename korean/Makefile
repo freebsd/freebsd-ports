@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1998/09/17 14:15:20 kuriyama Exp $
+# $Id: Makefile,v 1.25 1998/10/10 08:05:04 steve Exp $
 #
 
     SUBDIR += Wnn
@@ -24,6 +24,8 @@
     SUBDIR += mizifont
     SUBDIR += mule-wnn4
     SUBDIR += netscape3
+    SUBDIR += netscape4-communicator
+    SUBDIR += netscape4-navigator
     SUBDIR += nh2ps
     SUBDIR += nhpf
     SUBDIR += nhppf
