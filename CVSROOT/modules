@@ -4080,6 +4080,7 @@ linux-mozilla	ports/www/linux-mozilla
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-peops-spu	ports/emulators/linux-peops-spu
+linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
 linux-phoenix	ports/www/linux-phoenix
 linux-png	ports/graphics/linux-png
 linux-q3ademo	ports/games/linux-q3ademo
