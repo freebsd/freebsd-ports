@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	Tue May 21 01:52:35 2002
++++ examples/Makefile.in	Tue May 21 01:52:51 2002
+@@ -116,7 +116,7 @@
+ LIBS = @LIBS@
+ menus_OBJECTS =  menus.$(OBJEXT)
+ menus_DEPENDENCIES =  $(top_builddir)/src/libdvdnav.la
+-menus_LDFLAGS = 
++menus_LDFLAGS = $(THREAD_LIBS)
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
