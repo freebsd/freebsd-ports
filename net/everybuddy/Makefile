@@ -7,22 +7,48 @@
 
 PORTNAME=	everybuddy
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	jim@FreeBSD.org
 
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_GTK=	yes
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+WANT_ESOUND=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -laudiofile"
+CONFIGURE_ARGS=	--disable-arts
+
 MAN1=		everybuddy.1
 
-# no idea why config.h isn't created, but an empty one seems to work OK
-post-patch:
-	touch ${WRKSRC}/config.h
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+.else
+CONFIGURE_ARGS+=	--disable-esd
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+		 s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
+		 s|-D_REENTRANT -Wall -g|-D_REENTRANT ${PTHREAD_CFLAGS}|g' \
+			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|share/everybuddy/modules|/lib/everybuddy/modules|g' \
+			${WRKSRC}/src/config.sh.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^Utilitiesdir|#Utilitiesdir|g; \
+		 s|^Utilities_DATA|#Utilities_DATA|g; \
+		 s|[(]datadir[)]/everybuddy|(prefix)/lib/everybuddy|g; \
+		 s|-module|-module -avoid-version|g'
+
+.include <bsd.port.post.mk>
