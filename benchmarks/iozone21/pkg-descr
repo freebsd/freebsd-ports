@@ -1,9 +1,13 @@
-Iozone: 'IO Zone' Benchmark Program
+Iozone: 'IO Zone' Benchmark Program (older 2.1 version)
 
 Iozone tests the speed of sequential I/O to actual files.  Therefore,
 this measurement factors in the efficiency of your machine's file
 system, operating system, C compiler, and C runtime library.  It
 produces a measurement which is the number of bytes per second that
 your system can read or write to a file.
+
+This is the 2.1 version of iozone.  The new 3.x+ versions of iozone have
+completely changed their testing methods, thus their output is useless in
+comparing with older statistics.
 
 WWW: http://www.iozone.org/
