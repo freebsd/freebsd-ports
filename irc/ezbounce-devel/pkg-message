@@ -1,0 +1,6 @@
+------------------------------------------------------------------
+You will need to read /usr/local/share/doc/ezbounce/README
+and /usr/local/share/doc/ezbounce/mdidentd.README to set up
+this program.
+Also, edit /usr/local/etc/ezbounce.conf to your liking.
+------------------------------------------------------------------
