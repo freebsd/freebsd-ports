@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,21 +17,11 @@ COMMENT=	A simple TCP session re-engineering tool
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 MAN1=		tcpreen.1
 
-DOC_FILES=	README
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-.endif
+DOC_FILES=	AUTHORS NEWS README THANKS TODO
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -41,4 +31,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
