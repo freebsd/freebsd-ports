@@ -6,12 +6,19 @@
 #
 
 PORTNAME=	flog
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://oss.ezic.com/flog/
+MASTER_SITES=	http://oss.ezic.com/flog/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A small STDIN-to-file logger with support for log rotation
+
+USE_REINPLACE=	yes
+PORTDOCS=	README
+
+post-patch:
+	${REINPLACE_CMD} -e "s@|O_LARGEFILE@@" ${WRKSRC}/flog.c
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/flog ${WRKSRC}/flog.c
@@ -19,7 +26,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flog ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL} -d -m 0755 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
