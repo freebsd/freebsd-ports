@@ -1,5 +1,5 @@
---- tkhonyaku.orig	Sat Aug 19 21:40:31 2000
-+++ tkhonyaku	Sun Aug 20 01:00:28 2000
+--- tkhonyaku.orig	Sun Apr 15 13:47:31 2001
++++ tkhonyaku	Sun Apr 15 13:47:41 2001
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restart using wish \
@@ -7,24 +7,4 @@
 +exec wish8.0jp "$0" "$@"
  
  #=============================================================================
- # 『Tk翻訳』version 1.4 for Unix/Windows/Macintosh
-@@ -27,7 +27,7 @@
-   global  disp_debug
-   global  tcl_platform env username server port
-   global  txtin_bg txtin_fg txtout_bg txtout_fg
--  global  style ximstyle win_dir ejmode jemode my_osk my_omk
-+  global  style ximstyle win_dir ejmode jemode mode my_osk my_omk
- 
-   set disp_debug no         ;# デバッグ用ウィンドウを表示しない
-   switch $tcl_platform(platform) {
-@@ -95,8 +95,8 @@
-       set respdir   ~/.tkhonyaku/           ;# レスポンスファイルのディレクトリ
-       set logdir    ~/.tkhonyaku/           ;# エラーログのディレクトリ
-       set conf_file ~/.tkhonyaku/tkhonyaku.conf ;# 設定ファイルのフルパス
--      set helpdir   /usr/doc/tkhonyaku-1.4  ;# ヘルプファイルのディレクトリ
--      set gifdir    /usr/local/tkhonyaku    ;# GIF ファイルのディレクトリ
-+      set helpdir   /usr/local/share/doc/tkhonyaku ;# ヘルプファイルのディレクトリ
-+      set gifdir    /usr/local/share/tkhonyaku;# GIF ファイルのディレクトリ
-       if { ! [file exists $helpdir] } {
-           if { [file type $argv0] == "link" } {
-               set helpdir [file dirname [file readlink $argv0] ]
+ # 『Tk翻訳』version 1.6 for Unix/Windows/Macintosh
