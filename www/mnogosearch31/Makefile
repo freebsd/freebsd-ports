@@ -76,9 +76,9 @@ CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_ARGS+=        --with-built-in
 
 .else
-pre-fetch:
+pre-configure:
 	@${ECHO}
-	@${ECHO} "One of databases should be choosed."
+	@${ECHO} "One of the databases should be choosed."
 	@exit 1
 .endif
 
