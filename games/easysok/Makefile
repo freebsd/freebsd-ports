@@ -19,6 +19,12 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -26,4 +32,4 @@ post-patch:
 		's|-lkdeprint|$$(LIB_KDEPRINT) $$(LIBPTHREAD)|g' \
 			${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
