@@ -3,6 +3,7 @@
 
     COMMENT = Hungarian language support
 
+    SUBDIR += aspell
     SUBDIR += hu-phone
     SUBDIR += hu-zipcodes
     SUBDIR += hunspell
