@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Checks if the 'www' user and group exist. If they don't, then
+# an attempt is made to create both.
+#
+# $FreeBSD$
+#
+
+# Make sure we're called during the 'make install' process
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+# Set some constants
+USER=www
+GROUP=${USER}
+UID=80
+GID=${UID}
+
+# See if the group already exists
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+
+	# If not, try to create it
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+# See if the user already exists
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+
+	# If not, try to create it
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "World Wide Web Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+exit 0
