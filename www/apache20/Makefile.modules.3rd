@@ -1,4 +1,4 @@
-# Third party modules hack
+# Makefile.modules.3rd
 #
 # $FreeBSD$
 #
@@ -20,6 +20,9 @@ OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
 
 .if exists(${APXS})
 APXS_PREFIX!=	${APXS} -q prefix
+.   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
+IGNORE=	PREFIX must be egal to APXS_PREFIX.
+.   endif
 .else
 APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
 .endif
@@ -95,11 +98,10 @@ ap-gen-plist:
 .if defined(AP_GENPLIST)
 .   if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-	@${ECHO} "@cwd ${APXS_PREFIX}" > ${PLIST}
-	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
+	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%" > ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
-	@${ECHO} "@cwd ${PREFIX}" >> ${PLIST}	
+	@${ECHO} "@unexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
 .   endif
 .else
 	@${DO_NADA}
