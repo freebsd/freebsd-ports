@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astime
-PORTVERSION=	2.6
+PORTVERSION=	2.8
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/astime/ \
 		http://www.tigr.net/afterstep/as-apps/download/astime/ \
