@@ -2915,6 +2915,7 @@ iiimf-headers	ports/textproc/iiimf-headers
 iiimf-le-unit	ports/textproc/iiimf-le-unit
 iiimf-protocol-lib	ports/textproc/iiimf-protocol-lib
 iiimf-server	ports/textproc/iiimf-server
+iiimf-x		ports/textproc/iiimf-x
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
