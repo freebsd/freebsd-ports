@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames/Netscape.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames/Windows.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames/X.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Graphics/ColorNames
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Graphics 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Graphics/ColorNames
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Graphics 2>/dev/null || true
