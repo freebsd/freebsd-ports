@@ -9,14 +9,13 @@ PORTNAME=	robocode
 PORTVERSION=	1.0.6
 PORTREVISION=	1
 CATEGORIES=	games java
-MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
-DISTNAME=	robocode-setup-${PORTVERSION}
+MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/ \
+		http://robocode.alphaworks.ibm.com/
+DISTNAME=	robocode-setup
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
-
-BROKEN=		"Unfetchable"
 
 USE_JAVA=	1.3+
 
