@@ -1,0 +1,180 @@
+--- sanei/sanei_scsi.c.orig	Sat Aug 12 23:54:15 2000
++++ sanei/sanei_scsi.c	Fri Sep  8 22:38:49 2000
+@@ -2424,6 +2424,169 @@
+    cam_freeccb(ccb);
+    return SANE_STATUS_GOOD;
+ }
++
++#define WE_HAVE_FIND_DEVICES
++
++int
++cam_compare_inquiry(int fd, path_id_t path_id,
++		    target_id_t target_id, lun_id_t target_lun,
++		    const char *vendor, const char *product, const char *type)
++{
++  struct ccb_dev_match	cdm;
++  struct device_match_pattern *pattern;
++  struct scsi_inquiry_data *inq;
++  int retval = 0;
++
++  /* build ccb for device match */
++  bzero(&cdm, sizeof(cdm));
++  cdm.ccb_h.func_code = XPT_DEV_MATCH;
++
++  /* result buffer */
++  cdm.match_buf_len = sizeof(struct dev_match_result);
++  cdm.matches = (struct dev_match_result *)malloc(cdm.match_buf_len);
++  cdm.num_matches = 0;
++
++  /* pattern buffer */
++  cdm.num_patterns = 1;
++  cdm.pattern_buf_len = sizeof(struct dev_match_pattern);
++  cdm.patterns = (struct dev_match_pattern *)malloc(cdm.pattern_buf_len);
++
++  /* assemble conditions */
++  cdm.patterns[0].type = DEV_MATCH_DEVICE;
++  pattern = &cdm.patterns[0].pattern.device_pattern;
++  pattern->flags = DEV_MATCH_PATH | DEV_MATCH_TARGET | DEV_MATCH_LUN;
++  pattern->path_id = path_id;
++  pattern->target_id = target_id;
++  pattern->target_lun = target_lun;
++  
++  if (ioctl(fd, CAMIOCOMMAND, &cdm) == -1) {
++    DBG (1, "error sending CAMIOCOMMAND ioctl");
++    retval = -1;
++    goto ret;
++  }
++
++  if ((cdm.ccb_h.status != CAM_REQ_CMP)
++      || ((cdm.status != CAM_DEV_MATCH_LAST)
++	  && (cdm.status != CAM_DEV_MATCH_MORE))) {
++    DBG (1, "got CAM error %#x, CDM error %d\n",
++	 cdm.ccb_h.status, cdm.status);
++    retval = -1;
++    goto ret;
++  }
++
++  if (cdm.num_matches == 0) {
++    DBG (1, "not found\n");
++    retval = -1;
++    goto ret;
++  }
++	    
++  if (cdm.matches[0].type != DEV_MATCH_DEVICE) {
++    DBG (1, "no device match\n");
++    retval = -1;
++    goto ret;
++  }
++
++  inq = &cdm.matches[0].result.device_result.inq_data;
++  if ((vendor && cam_strmatch(inq->vendor, vendor, SID_VENDOR_SIZE)) ||
++      (product && cam_strmatch(inq->product, product, SID_PRODUCT_SIZE)))
++    retval = 1;
++ 
++ ret:
++  free(cdm.patterns);
++  free(cdm.matches);
++  return(retval);
++}
++
++void
++sanei_scsi_find_devices (const char *findvendor, const char *findmodel,
++			 const char *findtype,
++			 int findbus, int findchannel, int findid, int findlun,
++			 SANE_Status (*attach) (const char *dev))
++{
++  int		fd;
++  struct ccb_dev_match	cdm;
++  struct periph_match_pattern *pattern;
++  struct periph_match_result *result;
++  int		i;
++  char devname[16];
++
++  DBG_INIT();
++
++  if ((fd = open(XPT_DEVICE, O_RDWR)) == -1) {
++    DBG (1, "could not open %s\n", XPT_DEVICE);
++    return;
++  }
++
++  /* build ccb for device match */
++  bzero(&cdm, sizeof(cdm));
++  cdm.ccb_h.func_code = XPT_DEV_MATCH;
++
++  /* result buffer */
++  cdm.match_buf_len = sizeof(struct dev_match_result) * 100;
++  cdm.matches = (struct dev_match_result *)malloc(cdm.match_buf_len);
++  cdm.num_matches = 0;
++
++  /* pattern buffer */
++  cdm.num_patterns = 1;
++  cdm.pattern_buf_len = sizeof(struct dev_match_pattern);
++  cdm.patterns = (struct dev_match_pattern *)malloc(cdm.pattern_buf_len);
++
++  /* assemble conditions ... findchannel is ignored */
++  cdm.patterns[0].type = DEV_MATCH_PERIPH;
++  pattern = &cdm.patterns[0].pattern.periph_pattern;
++  pattern->flags = PERIPH_MATCH_NAME;
++  strcpy(pattern->periph_name, "pass");
++  if (findbus != -1) {
++    pattern->path_id = findbus;
++    pattern->flags |= PERIPH_MATCH_PATH;
++  }    
++  if (findid != -1) {
++    pattern->target_id = findid;
++    pattern->flags |= PERIPH_MATCH_TARGET;
++  }
++  if (findlun != -1) {
++    pattern->target_lun = findlun;
++    pattern->flags |= PERIPH_MATCH_LUN;
++  }
++
++  /* result loop */
++  do {
++    if (ioctl(fd, CAMIOCOMMAND, &cdm) == -1) {
++      DBG (1, "error sending CAMIOCOMMAND ioctl");
++      break;
++    }
++
++    if ((cdm.ccb_h.status != CAM_REQ_CMP)
++	|| ((cdm.status != CAM_DEV_MATCH_LAST)
++	    && (cdm.status != CAM_DEV_MATCH_MORE))) {
++      DBG (1, "got CAM error %#x, CDM error %d\n", 
++	   cdm.ccb_h.status, cdm.status);
++      break;
++    }
++    
++    for (i = 0; i < cdm.num_matches; i++) {
++      if (cdm.matches[i].type != DEV_MATCH_PERIPH)
++	continue;
++      result = &cdm.matches[i].result.periph_result;
++      DBG (4, "%s%d on scbus%d %d:%d\n",
++	      result->periph_name, result->unit_number,
++	      result->path_id, result->target_id, result->target_lun);
++      if (cam_compare_inquiry(fd, result->path_id,
++			      result->target_id, result->target_lun,
++			      findvendor, findmodel, findtype) == 0) {
++	sprintf(devname, "/dev/%s%d", result->periph_name, result->unit_number);
++	(*attach) (devname);
++      }
++    }
++  } while ((cdm.ccb_h.status == CAM_REQ_CMP)
++	   && (cdm.status == CAM_DEV_MATCH_MORE));
++
++  free(cdm.patterns);
++  free(cdm.matches);
++  close(fd);
++  return;
++}
++
+ #endif
+ 
+ 
+@@ -3722,6 +3885,7 @@
+ 			 int findbus, int findchannel, int findid, int findlun,
+ 			 SANE_Status (*attach) (const char *dev))
+ {
++  DBG_INIT();
+   DBG (1, "sanei_scsi_find_devices: not implemented for this platform\n");
+ }
+ 
