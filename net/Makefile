@@ -139,6 +139,7 @@
     SUBDIR += mudix
     SUBDIR += naim
     SUBDIR += nam
+    SUBDIR += ncat
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += netatalk
@@ -197,6 +198,7 @@
     SUBDIR += pptpclient
     SUBDIR += ppxp
     SUBDIR += priss
+    SUBDIR += proxy
     SUBDIR += pvm
     SUBDIR += queso
     SUBDIR += radius
