@@ -13,7 +13,7 @@ MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	pdf:${PORTSDIR}/print/pdflib3 \
+LIB_DEPENDS=	pdf:${PORTSDIR}/print/pdflib \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
