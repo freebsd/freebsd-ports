@@ -1,0 +1,13 @@
+diff -urP webjob-1.3.0/configure.in webjob-1.3.0.amd64/configure.in
+--- configure.in.orig	Thu Jun 26 14:01:14 2003
++++ configure.in	Sun Apr  4 23:47:36 2004
+@@ -87,6 +87,9 @@
+ alpha*)
+         AC_DEFINE(K_CPU_ALPHA, 1, Define to 1 if the host cpu is alpha.)
+ 	;;
++amd64*)
++        AC_DEFINE(K_CPU_AMD64, 1, Define to 1 if the host cpu is amd64.)
++	;;
+ ia64*)
+         AC_DEFINE(K_CPU_IA64, 1, Define to 1 if the host cpu is ia64.)
+ 	;;

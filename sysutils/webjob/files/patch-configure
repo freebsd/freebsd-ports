@@ -1,0 +1,17 @@
+diff -urP webjob-1.3.0/configure webjob-1.3.0.amd64/configure
+--- configure.orig	Fri Jul 25 18:19:17 2003
++++ configure	Sun Apr  4 23:52:02 2004
+@@ -1413,6 +1413,13 @@
+ _ACEOF
+ 
+ 	;;
++amd64*)
++
++cat >>confdefs.h <<\_ACEOF
++#define K_CPU_AMD64 1
++_ACEOF
++
++	;;
+ ia64*)
+ 
+ cat >>confdefs.h <<\_ACEOF
