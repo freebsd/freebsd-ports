@@ -1,11 +1,63 @@
---- server.c.orig	Fri Dec 20 00:00:41 2002
-+++ server.c	Fri Dec 20 00:00:55 2002
+--- server.c.orig	Sun Feb 23 13:12:06 2003
++++ server.c	Sun Mar  7 12:30:02 2004
 @@ -55,7 +55,7 @@
  
- #define VERSION "0.30.5"
+ #define VERSION "0.30.6-dev"
  
 -#define CONFIG "/etc/xbms.conf"
 +#define CONFIG "@@PREFIX@@/etc/xbms.conf"
  #define PIDFILE "/var/run/xbms.pid"
  #define C_SERVER_PORT 1400
  #define MAX_MSG_LENGTH 4096
+@@ -465,9 +465,10 @@
+       if (main_config->debug_lvl >= 1) d_log("OPEN\n");
+       
+       /* Get the argument after comma */
+-      ptr = strtok(line,",");
+-      ptr = strtok(NULL,",");
+-      
++      ptr = strstr(line,",");
++//      ptr = strtok(NULL,",");
++      if (ptr!=NULL) {
++		  ptr++;
+       fileName = (char *)malloc(strlen(ptr)+1);
+   //    targetfileName = (char *)malloc(strlen(TARGET_PATH)+strlen(ptr)+2);
+       
+@@ -508,7 +509,8 @@
+ 	    }
+ 	}
+       else d_log("Illegal string in filename: %s\n", fileName); 
+-    }
++	  } else d_log("Illegal filename: %s\n", fileName);
++	}
+ 
+   /***************************** READ A PART OF A FILE ****************/
+   if (strcmp(cmd,"READ") == 0)
+@@ -632,13 +634,14 @@
+   /* mp3 playlists work from now on                          */
+   if (strcmp(cmd,"*CAT") == 0) {
+ 	  if (main_config->debug_lvl >= 5) 
+-			d_log("CurDirectory: %s\n",main_config->current_path);
++			d_log("CurDirectory: %s\n",main_config->root_dir);
+ 
+       /* Get the character after the comma, if any */
+-      ptr = strtok(line,",");
+-      if ((ptr = strtok(NULL,",")))	{
++      ptr = strstr(line,",");
++      if (ptr!=NULL)	{
+ 		  /* Check the command */
+-		if (!strcmp(ptr,"BACK")) {
++		  ptr++;
++		  if (!strcmp(ptr,"BACK")) {
+ 			  /* We can't go back if the current path is empty ! */
+ 			if (main_config->current_path!=NULL && main_config->current_path[0] != 0) {
+ 				  fileName = (char *)malloc(strlen(main_config->current_path)+1);
+@@ -654,7 +657,7 @@
+ 			  if (main_config->current_path!=NULL) free(main_config->current_path);
+ 			  main_config->current_path=strdup(ptr);
+ 		  }
+-	  }
++	  } else {main_config->current_path=NULL;}
+ 
+ 	  if (main_config->debug_lvl >= 5) 
+ 		  d_log("targetpath: %s - curpath: %s - ptr: %s\n",TARGET_PATH,main_config->current_path,ptr);
