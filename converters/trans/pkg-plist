@@ -206,3 +206,9 @@ lib/trans/src/mkxlt
 lib/trans/src/datatype.h
 lib/trans/README
 lib/trans/encoding.lis
+@dirrm lib/trans/bin
+@dirrm lib/trans/cedf
+@dirrm lib/trans/doc
+@dirrm lib/trans/src
+@dirrm lib/trans/xlt
+@dirrm lib/trans
