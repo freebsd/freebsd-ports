@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 WRKSRC=		${WRKDIR}/cmpsfont
 TEXDIR=		${PREFIX}/share/texmf
 
+IGNORE=		is already included in the teTeX distribution
+
 do-build:
 	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog -q)
 
