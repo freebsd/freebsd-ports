@@ -14,9 +14,7 @@
 use strict;
 
 my $filename = shift;
-unless ($filename) {
-	die "Usage: logcheck filename\n";
-}
+die "Usage: logcheck filename\n" unless $filename;
 my $tmpfile = $filename . "tmp";
 
 open(IN, "< $filename") ||
@@ -25,62 +23,55 @@ open(IN, "< $filename") ||
 open(OUT, "> $tmpfile") ||
 	die "logcheck: Cannot open for writing: $tmpfile: $!\n";
 
-# In-place edit the result of the user's edit on the file.
-my $blank = 0;	# true if the last line was blank
-my $first = 0;	# true if we have seen the first real text
 
-while(<IN>) {
-	# Dont let CVS: lines upset things, strip them out.
-	if (/^CVS:/) {
+
+# Read the log file in, stripping 'CVS:' lines and removing trailing
+# white spaces.
+my @log_in = map { s/^(.*)\s*$/$1/; $1 } grep { !/^CVS:/ } <IN>;
+
+# Remove leading, trailing and duplicate blank lines.
+my $i = 0;
+while ($i < scalar(@log_in)) {
+	unless ($log_in[$i] or $log_in[$i + 1]) {
+		splice(@log_in, $i, 1);
 		next;
-	}
-
-	chomp;		# strip trailing newline
-	s/[\s]+$//;	# strip trailing whitespace
-
-	# collapse multiple blank lines, and trailing blank lines.
-	if (/^$/) {
-		# Blank line. Remember in case more text follows.
-		$blank = 1;
-		next;
-	} else {
-		# Delete if they only have whitespace after them.
-		if (/^Reviewed by:$/i ||
-		    /^Submitted by:$/i ||
-		    /^Obtained from:$/i ||
-		    /^Approved by:$/i ||
-		    /^PR:$/i) {
-			next;
-		}
-
-		# Special handling for type checking the 'MFC after' field.
-		if (/^MFC after:\s*(.*)$/) {
-			# Ignore it if no value was filled in.
-			next unless $1;
-
-			unless ($1 =~ /[\d]+ (days?|weeks?)$/) {
-				print "Parse error in 'MFC after:'\n";
-				exit 1;
-			}
-		}
-
-		if ($blank && $first) {
-			# Previous line(s) was blank, this isn't. Close the
-			# collapsed section.
-			print OUT "\n";
-		}
-		$blank = 0;	# record non-blank
-		$first = 1;	# record first line
-		print OUT "$_\n";
-	}
+        }
+        ++$i;
 }
-close(IN);
-close(OUT);
+shift @log_in unless $log_in[0];
 
-unlink($filename . "~");	# Nuke likely editor backups..
-unlink($filename . ".bak");	# Nuke likely editor backups..
+# Filter out blank templated entries, and type check if necessary.
+foreach (@log_in) {
+	# Delete if they only have whitespace after them.
+	if (/^Reviewed by:$/i ||
+	    /^Submitted by:$/i ||
+	    /^Obtained from:$/i ||
+	    /^Approved by:$/i ||
+	    /^PR:$/i) {
+		next;
+	}
+
+	# Special handling for type checking the 'MFC after' field.
+	if (/^MFC after:\s*(.*)$/) {
+		# Ignore it if no value was filled in.
+		next unless $1;
+
+		unless ($1 =~ /[\d]+ (days?|weeks?)$/) {
+			print "Parse error in 'MFC after:'\n";
+			exit 1;
+		}
+	}
+
+	print OUT "$_\n";
+}
+close IN;
+close OUT;
+
+# Nuke likely editor backups.
+unlink "$filename.~";
+unlink "$filename.bak";
 
 rename("$tmpfile", "$filename") ||
-	die("logcheck: Could not rename $tmpfile to $filename: $!");
+	die "logcheck: Could not rename $tmpfile to $filename: $!";
 
-exit(0);
+exit 0;
