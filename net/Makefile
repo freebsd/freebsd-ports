@@ -431,8 +431,6 @@
     SUBDIR += priss
     SUBDIR += proxy-suite
     SUBDIR += psi
-    SUBDIR += punkbuster
-    SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe

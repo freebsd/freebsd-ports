@@ -1,5 +1,0 @@
-%%PUNKBUSTER_DIR%%cvar.cfg
-%%PUNKBUSTER_DIR%%pbclhl.dat
-%%PUNKBUSTER_DIR%%pbclhl_
-%%PUNKBUSTER_DIR%%%%PUNKBUSTER_DATA%%
-@unexec rmdir ${PKG_PREFIX}/%%PUNKBUSTER_DIR%% 2>/dev/null || true
