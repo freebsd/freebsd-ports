@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20011127
+PORTVERSION=	20011210
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -37,7 +37,8 @@ CONF1=	access aliases canonical main.cf master.cf \
 CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
 	sample-filter.cf sample-flush.cf sample-local.cf sample-misc.cf \
 	sample-qmqpd.cf \
-	sample-rate.cf sample-regexp.cf sample-relocated.cf \
+	sample-rate.cf sample-regexp-access.cf sample-regexp-body.cf \
+	sample-regexp-header.cf sample-relocated.cf \
 	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
 	sample-smtpd.cf sample-transport.cf sample-virtual.cf install.cf
 
