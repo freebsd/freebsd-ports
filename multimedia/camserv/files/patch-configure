@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb  7 00:01:51 2004
++++ configure	Sat Feb  7 00:17:32 2004
+@@ -5465,7 +5465,7 @@
+ if test "$GDKPIXBUF_CONFIG"x != "x"; then
+ 	GDKPIXBUF_VERSION=`$GDKPIXBUF_CONFIG --version`
+ 	case "$GDKPIXBUF_VERSION" in
+-	    0.11.*) have_gdkpixbuf=yes
++	    0.22.*) have_gdkpixbuf=yes
+ 		 GDKPIXBUF_CFLAGS=`$GDKPIXBUF_CONFIG --cflags`
+ 		 GDKPIXBUF_LIBS=`$GDKPIXBUF_CONFIG --libs`
+ 		 ac_safe=`echo "gdk-pixbuf/gdk-pixbuf.h" | sed 'y%./+-%__p_%'`
