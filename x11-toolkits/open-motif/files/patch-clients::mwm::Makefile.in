@@ -1,0 +1,10 @@
+--- clients/mwm/Makefile.in.orig	Wed Oct 16 09:52:28 2002
++++ clients/mwm/Makefile.in	Wed Oct 16 09:53:14 2002
+@@ -104,6 +104,7 @@
+            -DCDE_INSTALLATION_TOP=\"@CDE_INSTALLATION_TOP@\" \
+            -DCDE_CONFIGURATION_TOP=\"@CD_CONFIGURATION_TOP@\" \
+            -DBITMAPDIR=\"@INCDIR@/bitmaps\" \
++           -DLIBDIR=\"@LIBDIR@\" \
+            -I$(srcdir)/../../lib ${X_CFLAGS}
+ 
+ 
