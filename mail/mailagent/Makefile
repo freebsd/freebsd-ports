@@ -27,10 +27,9 @@ CONFIGURE_ARGS=		-dres \
 MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH}
 INSTALL_TARGET=	install install.man
 
-# Note that mailhelp.1 is intentionally left uncompressed as it is referred
-# from several other man pages with .so macro.
-MAN1=			edusers.1 mailagent.1 maildist.1  \
-			maillist.1 mailpatch.1 package.1
+MAN1=		edusers.1 mailagent.1 package.1 mailhelp.1
+MLINKS=		mailhelp.1 maildist.1  mailhelp.1 mailpatch.1 \
+		mailhelp.1 maillist.1
 
 pre-extract:
 	@if [ `${SH} -c umask` != 0022 ]; then \
