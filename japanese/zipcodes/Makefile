@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20040730
+PORTVERSION=	20041004
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://dist.bsdlab.org/
-DISTFILES=	ken_all-${PORTVERSION}.lzh jigyosyo-${PORTVERSION}.lzh
+DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
@@ -24,6 +24,8 @@ NO_WRKSUBDIR=	yes
 
 USE_PERL5_BUILD=yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL}
+PORTVERSION_K?=	20040929
+PORTVERSION_J?=	${PORTVERSION}
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
