@@ -1,5 +1,6 @@
 bin/bluefish
 share/bluefish/php3_functions
+share/bluefish/php4_functions
 share/bluefish/ssi_functions
 share/bluefish/rxml_functions
 share/doc/bluefish/README
