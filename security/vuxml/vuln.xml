@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d4a7054a-6d96-11d9-a9e7-0001020eed82">
+    <topic>yamt -- arbitrary command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>yamt</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Manigandan Radhakrishnan discovered a security
+	  vulnerability in YAMT which can lead to execution of
+	  arbitrary commands with the privileges of the user running
+	  YAMT when sorting based on MP3 tags.  The problem exist in
+	  the <code>id3tag_sort()</code> routine which does not
+	  properly sanitize the artist tag from the MP3 file before
+	  using it as an argument to the mv command.</p>
+      </body>
+    </description>
+    <references>
+      <bid>11999</bid>
+      <cvename>CAN-2004-1302</cvename>
+      <url>http://tigger.uic.edu/~jlongs2/holes/yamt.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e4bd2c2-6bd5-11d9-9e1e-c296ac722cb3">
     <topic>squid -- HTTP response splitting cache pollution attack</topic>
     <affects>
