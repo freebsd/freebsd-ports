@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.1.18
+PORTVERSION=	1.1.19
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/old/v${PORTVERSION}/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/old/v${PORTVERSION}/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/old/v${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
+		ftp://ftp.gimp.org/pub/gimp/unstable/old/v${PORTVERSION}/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-.if !defined (WITHOUT_PERL)
+.if defined(USE_PERL)
 BUILD_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
@@ -37,9 +38,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-.if defined (WITHOUT_PERL)
+
+.if !defined(USE_PERL)
 CONFIGURE_ARGS=	--disable-perl
 .endif
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
@@ -52,7 +55,7 @@ MAN5=		gimprc.5
 WITH_GNOME=	yes
 .endif
 
-.if defined(WITHOUT_PERL)
+.if !defined(USE_PERL)
 PLISTORIG=		${PKGDIR}/PLIST
 PLIST=			${WRKDIR}/PLIST
 .else

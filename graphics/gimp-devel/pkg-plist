@@ -28,6 +28,7 @@ include/libgimp/gimppixmap.h
 include/libgimp/gimpquerybox.h
 include/libgimp/gimpsizeentry.h
 include/libgimp/gimpui.h
+include/libgimp/gimputils.h
 include/libgimp/gimpunit.h
 include/libgimp/gimpunitmenu.h
 include/libgimp/gimpvector.h
@@ -39,15 +40,15 @@ include/libgimp/parasiteio.h
 lib/libgck.a
 lib/libgck.la
 lib/libgck.so
-lib/libgck.so.18
+lib/libgck.so.19
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.18
+lib/libgimp.so.19
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.18
+lib/libgimpui.so.19
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.1/modules/libcdisplay_gamma.la
@@ -271,6 +272,7 @@ share/gimp/devel-docs/html/libgimp/gimppixmap.html
 share/gimp/devel-docs/html/libgimp/gimpsizeentry.html
 share/gimp/devel-docs/html/libgimp/gimpunitmenu.html
 share/gimp/devel-docs/html/libgimp/index.html
+share/gimp/devel-docs/html/libgimp/index.sgml
 share/gimp/devel-docs/html/libgimp/libgimp-color-display.html
 share/gimp/devel-docs/html/libgimp/libgimp-color-selector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimp.html
@@ -289,6 +291,7 @@ share/gimp/devel-docs/html/libgimp/libgimp-gimpmenu.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpprotocol.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpquerybox.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimputils.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpunit.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpvector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpwidgets.html
@@ -349,7 +352,6 @@ share/gimp/gflare/Distant_Sun
 share/gimp/gflare/GFlare_101
 share/gimp/gflare/GFlare_102
 share/gimp/gflare/Hidden_Planet
-share/gimp/gimp1_1_splash.ppm
 share/gimp/gimp_logo.ppm
 share/gimp/gimp_splash.ppm
 share/gimp/gimprc
@@ -463,6 +465,7 @@ share/gimp/gradients/Cold_Steel
 share/gimp/gradients/Cold_Steel_2
 share/gimp/gradients/Crown_molding
 share/gimp/gradients/Dark_1
+share/gimp/gradients/Danish_flag
 share/gimp/gradients/Deep_Sea
 share/gimp/gradients/Default
 share/gimp/gradients/Flare_Glow_Angular_1
@@ -604,6 +607,7 @@ share/gimp/help/C/dialogs/paths/index.html
 share/gimp/help/C/dialogs/paths/paths.html
 share/gimp/help/C/dialogs/paths/rename_path.html
 share/gimp/help/C/dialogs/pattern_selection.html
+share/gimp/help/C/dialogs/preferences/default_comment.html
 share/gimp/help/C/dialogs/preferences/directories.html
 share/gimp/help/C/dialogs/preferences/display.html
 share/gimp/help/C/dialogs/preferences/environment.html
@@ -1078,6 +1082,7 @@ share/gimp/scripts/alien-glow-bar.scm
 share/gimp/scripts/alien-glow-bullet.scm
 share/gimp/scripts/alien-glow-button.scm
 share/gimp/scripts/alien-glow-logo.scm
+share/gimp/scripts/alien-neon-logo.scm
 share/gimp/scripts/asc2img.scm
 share/gimp/scripts/basic1-logo.scm
 share/gimp/scripts/basic2-logo.scm
@@ -1151,7 +1156,6 @@ share/gimp/scripts/starscape-logo.scm
 share/gimp/scripts/swirltile.scm
 share/gimp/scripts/swirly-pattern.scm
 share/gimp/scripts/t-o-p-logo.scm
-share/gimp/scripts/test-sphere.scm
 share/gimp/scripts/text-circle.scm
 share/gimp/scripts/texture.jpg
 share/gimp/scripts/texture1.jpg
@@ -1175,6 +1179,7 @@ share/gimp/tips/gimp_tips.ja.txt
 share/gimp/tips/gimp_tips.ko.txt
 share/gimp/tips/gimp_tips.pl.txt
 share/gimp/tips/gimp_tips.ru.txt
+share/gimp/tips/gimp_tips.uk.txt
 share/gimp/tips/gimp_tips.txt
 share/gimp/unitrc
 share/gimp/user_install
