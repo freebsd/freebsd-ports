@@ -17,6 +17,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/BethSerif.png
 %%PORTDOCS%%%%DOCSDIR%%/Big5.txt
 %%PORTDOCS%%%%DOCSDIR%%/BitmapView.png
+%%PORTDOCS%%%%DOCSDIR%%/Bperspective.png
 %%PORTDOCS%%%%DOCSDIR%%/C1.png
 %%PORTDOCS%%%%DOCSDIR%%/C10.png
 %%PORTDOCS%%%%DOCSDIR%%/C2.png
@@ -42,6 +43,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/Ehinted.png
 %%PORTDOCS%%%%DOCSDIR%%/EhintedTtf.png
 %%PORTDOCS%%%%DOCSDIR%%/Encodings.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Eperspective.png
 %%PORTDOCS%%%%DOCSDIR%%/FVHMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FVVMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FontForgeSplash.png
@@ -78,6 +80,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/PageSetup.png
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdit-TeX.html
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdits.gif
+%%PORTDOCS%%%%DOCSDIR%%/PoV.png
 %%PORTDOCS%%%%DOCSDIR%%/Print.png
 %%PORTDOCS%%%%DOCSDIR%%/ReviewHints.png
 %%PORTDOCS%%%%DOCSDIR%%/SelectByATT.png
@@ -176,8 +179,10 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/cvknifeicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvmagicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvpenicon.png
+%%PORTDOCS%%%%DOCSDIR%%/cvperspectiveicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvpolyicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvrecticon.png
+%%PORTDOCS%%%%DOCSDIR%%/cvrotate3dicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvrotateicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvrulericon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvscaleicon.png
@@ -188,6 +193,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/diffs.html
 %%PORTDOCS%%%%DOCSDIR%%/display.html
 %%PORTDOCS%%%%DOCSDIR%%/document.nvd
+%%PORTDOCS%%%%DOCSDIR%%/doublestruck-B.png
 %%PORTDOCS%%%%DOCSDIR%%/editcvt.png
 %%PORTDOCS%%%%DOCSDIR%%/editexample.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample2.html
@@ -258,8 +264,11 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/fontview.fr.png
 %%PORTDOCS%%%%DOCSDIR%%/fontview.html
 %%PORTDOCS%%%%DOCSDIR%%/fontview.ru.png
+%%PORTDOCS%%%%DOCSDIR%%/fraktur-A.png
 %%PORTDOCS%%%%DOCSDIR%%/freehandctl.png
 %%PORTDOCS%%%%DOCSDIR%%/future.html
+%%PORTDOCS%%%%DOCSDIR%%/fv-normal.png
+%%PORTDOCS%%%%DOCSDIR%%/fv-smallcaps.png
 %%PORTDOCS%%%%DOCSDIR%%/generate.html
 %%PORTDOCS%%%%DOCSDIR%%/generate.png
 %%PORTDOCS%%%%DOCSDIR%%/getinfo.html
@@ -337,6 +346,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/newanchor.png
 %%PORTDOCS%%%%DOCSDIR%%/newcountermask.png
 %%PORTDOCS%%%%DOCSDIR%%/newfont.png
+%%PORTDOCS%%%%DOCSDIR%%/non-linear.png
 %%PORTDOCS%%%%DOCSDIR%%/non-standard.html
 %%PORTDOCS%%%%DOCSDIR%%/o-baddir.png
 %%PORTDOCS%%%%DOCSDIR%%/o1.png
@@ -386,6 +396,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/rplref.png
 %%PORTDOCS%%%%DOCSDIR%%/rplserifs.png
 %%PORTDOCS%%%%DOCSDIR%%/sans-serif-def.png
+%%PORTDOCS%%%%DOCSDIR%%/script-A.png
 %%PORTDOCS%%%%DOCSDIR%%/scripting.html
 %%PORTDOCS%%%%DOCSDIR%%/scriptlist-pulldown.png
 %%PORTDOCS%%%%DOCSDIR%%/scriptlist.png
@@ -452,6 +463,7 @@ share/fontforge/Adobe-Japan2-0.cidmap
 share/fontforge/Adobe-Korea1-2.cidmap
 share/fontforge/pfaedit-de.ui
 share/fontforge/pfaedit-en.ui
+share/fontforge/pfaedit-es.ui
 share/fontforge/pfaedit-fr.ui
 share/fontforge/pfaedit-gr.ui
 share/fontforge/pfaedit-it.ui
