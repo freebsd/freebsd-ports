@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.58.3
+PORTVERSION?=	0.59.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
 		http://cheat.retrogames.com/ \
-		http://www.sys2064.com/files/mame/
+		http://www.win.tue.nl/~stijn/xmame/
 DISTNAME=	xmame-${XMAMEVERSION:S/p/pre/}
 DIST_SUBDIR=	xmame
 
