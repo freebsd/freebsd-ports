@@ -7,6 +7,7 @@
 
 PORTNAME=	bubblemon
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/ \
 		http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/attic/
