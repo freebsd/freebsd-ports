@@ -7,3 +7,4 @@ lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
 lib/mirror/lsparse.pl
 lib/mirror/mirror.defaults.sample
+@dirrm lib/mirror
