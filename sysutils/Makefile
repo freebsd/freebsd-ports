@@ -75,6 +75,7 @@
     SUBDIR += rdate
     SUBDIR += rtty
     SUBDIR += roottail
+    SUBDIR += ruby-syslog
     SUBDIR += sarah
     SUBDIR += sdd
     SUBDIR += setcdboot
