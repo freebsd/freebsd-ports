@@ -47,6 +47,7 @@
     SUBDIR += gdome2
     SUBDIR += glimpse
     SUBDIR += gmat
+    SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed
     SUBDIR += gtk-doc
