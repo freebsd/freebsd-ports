@@ -9,7 +9,9 @@ PORTNAME=		sms_client
 PORTVERSION=		3.0.2
 PORTREVISION=		1
 CATEGORIES=		comms
-MASTER_SITES=		http://www.styx.demon.co.uk/archive/
+MASTER_SITES=		http://www.styx.demon.co.uk/archive/ \
+			http://www.smsclient.org/download/smsclient-3.0-testing/ \
+			http://www.mirrors.wiretapped.net/security/host-monitoring/sms-client/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
