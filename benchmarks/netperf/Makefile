@@ -3,7 +3,7 @@
 # Date created:		19 July 1996
 # Whom:			koshy
 #
-# $Id: Makefile,v 1.3 1996/08/03 19:45:55 pst Exp $
+# $Id: Makefile,v 1.1.1.1 1996/08/03 19:51:04 pst Exp $
 #
 
 DISTNAME=	netperf-2.1pl1
@@ -12,6 +12,7 @@ CATEGORIES+=	benchmarks
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
 
 MAINTAINER=	pst@freebsd.org
+
 MAKEFILE=	makefile
 
 post-install:
