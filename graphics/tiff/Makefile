@@ -2,17 +2,17 @@
 # Version required:	3.4
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
-#			Mikhail Teterin <mi@aldan.ziplink.net>
+#			Mikhail Teterin <mi@aldan.algebra.com>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.15 1999/03/01 15:42:35 itojun Exp $
+# $Id: Makefile,v 1.16 1999/03/29 06:41:43 asami Exp $
 #
 
-DISTNAME=	tiff-v3.4
-PKGNAME=	tiff-3.4a
+DISTNAME=	tiff-v3.4beta037
+PKGNAME=	tiff-3.4b37
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/
-EXTRACT_SUFX=	-tar.gz
+MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
+		ftp://ftp.fifi.org/pub/ImageMagick/delegates/
 
 MAINTAINER=	ports@freebsd.org
 
@@ -27,8 +27,14 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_GZLIB=/usr/lib \
 		--with-DIR_JPEGLIB=${PREFIX}/lib \
 		--with-LIBGL=no --with-LIBIMAGE=no \
-		--with-INSTALL="/bin/sh ${WRKSRC}/port/install.sh" \
+		--with-INSTALL="${SH} ${WRKSRC}/port/install.sh" \
 		--noninteractive
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--with-HTML=no
+PLIST=${PKGDIR}/PLIST.nodocs
+.endif
+
 MAN1=	fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 ras2tiff.1 \
 	rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 tiff2ps.1 tiffcmp.1 \
 	tiffcp.1 tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \

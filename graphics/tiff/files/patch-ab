@@ -1,22 +1,18 @@
---- configure.orig	Mon Apr 29 17:16:17 1996
-+++ configure	Fri Sep 18 16:38:02 1998
-@@ -1140,6 +1140,19 @@
- 	DSOOPTS='-shared'
- 	DSO=OSF
- 	;;
-+    *-freebsd*)
+--- configure.orig	Tue Sep  2 13:54:16 1997
++++ configure	Sat Jan 23 10:58:22 1999
+@@ -1146,5 +1146,13 @@
+     *-freebsd*)
+-	DSOSUF=so.${DIST_MAJOR}.0
 +	DSOSUF=so
-+	LIBCOPTS='-fpic -DPIC'
+ 	LIBCOPTS='-fpic -fPIC'
+-	DSO=FREEBSD
 +	if [ $PORTOBJFORMAT = elf ]; then
-+	    DSOSUF_VERSION=${DSOSUF}.4
-+	    DSOOPTS='-shared'
-+	    DSO=FREEBSD_ELF
++		DSOSUF_VERSION=${DSOSUF}.4
++		DSOOPTS='-shared'
++		DSO=FREEBSD_ELF
 +	else
-+	    DSOSUF_VERSION=${DSOSUF}.4.0
-+	    DSOOPTS='-Bshareable'
-+	    DSO=FREEBSD_AOUT
++		DSOSUF_VERSION=${DSOSUF}.4.0
++		DSOOPTS='-Bshareable'
++		DSO=FREEBSD_AOUT
 +	fi
-+	;;
-     *)  DSO=no;;
-     esac
-     test -z "$DSOSUF_VERSION" && DSOSUF_VERSION=${DSOSUF}
+ 	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
