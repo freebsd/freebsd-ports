@@ -14,4 +14,4 @@ share/sgml/docbook/3.1/docbook.dtd
 share/sgml/docbook/3.1/catalog
 share/sgml/docbook/3.1/readme.txt
 @dirrm share/sgml/docbook/3.1
-@dirrm share/sgml/docbook
+@unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
