@@ -7,7 +7,7 @@
 
 PORTNAME=	gn
 PORTVERSION= 	2.24
-CATEGORIES=	www net
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
 MAINTAINER=	adam@veda.is
