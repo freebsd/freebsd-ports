@@ -1,6 +1,6 @@
 bin/musixflx
 bin/musixtex
-share/texmf/ini/musixtex.fmt
+share/texmf/web2c/musixtex.fmt
 share/texmf/mf/musexgen.mf
 share/texmf/mf/musix11.mf
 share/texmf/mf/musix13.mf
@@ -98,6 +98,10 @@ share/texmf/fonts/tfm/xgreg16.tfm
 share/texmf/fonts/tfm/xgreg20.tfm
 share/texmf/fonts/tfm/xgreg24.tfm
 share/texmf/fonts/tfm/xgreg29.tfm
+share/texmf/fonts/tfm/xhsld16.tfm
+share/texmf/fonts/tfm/xhsld20.tfm
+share/texmf/fonts/tfm/xhslu16.tfm
+share/texmf/fonts/tfm/xhslu20.tfm
 share/texmf/fonts/tfm/xsld11.tfm
 share/texmf/fonts/tfm/xsld13.tfm
 share/texmf/fonts/tfm/xsld16.tfm
