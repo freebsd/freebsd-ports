@@ -1,4 +1,3 @@
-diff -u multiFile.cpp.orig multiFile.cpp
 --- multiFile.cpp.orig	Mon May 18 04:13:18 1998
 +++ multiFile.cpp	Thu Oct 30 21:42:04 2003
 @@ -23,7 +23,7 @@
@@ -32,24 +31,24 @@ diff -u multiFile.cpp.orig multiFile.cpp
 -    string smoothType = interpList->currentText();
 -    string style = fileStyleList->currentText();
 -    string filter = filterEdit->text();
-+    string filename = string(multiFileList->currentText());
-+    string dataSetStart = string(dataSetStartEdit->text());
-+    string dataSetEnd = string(dataSetEndEdit->text());
-+    string dataSetInc = string(dataSetIncEdit->text());
-+    string sampPointInc = string(pointIncEdit->text());
-+    string sampLineInc = string(lineIncEdit->text());
-+    string sampStartPoint = string(startPointEdit->text());
-+    string sampStartLine = string(startLineEdit->text());
-+    string sampEndPoint = string(endPointEdit->text());
-+    string sampEndLine = string(endLineEdit->text());
-+    string xcol = string(xColumnEdit->text());
-+    string ycol = string(yColumnEdit->text());
-+    string zcol = string(zColumnEdit->text());
-+    string format = string(formatEdit->text());
-+    string rawformat = string(rawFormatEdit->text());
-+    string smoothType = string(interpList->currentText());
-+    string style = string(fileStyleList->currentText());
-+    string filter = string(filterEdit->text());
++    string filename = multiFileList->currentText().ascii();
++    string dataSetStart = dataSetStartEdit->text().ascii();
++    string dataSetEnd = dataSetEndEdit->text().ascii();
++    string dataSetInc = dataSetIncEdit->text().ascii();
++    string sampPointInc = pointIncEdit->text().ascii();
++    string sampLineInc = lineIncEdit->text().ascii();
++    string sampStartPoint = startPointEdit->text().ascii();
++    string sampStartLine = startLineEdit->text().ascii();
++    string sampEndPoint = endPointEdit->text().ascii();
++    string sampEndLine = endLineEdit->text().ascii();
++    string xcol = xColumnEdit->text().ascii();
++    string ycol = yColumnEdit->text().ascii();
++    string zcol = zColumnEdit->text().ascii();
++    string format = formatEdit->text().ascii();
++    string rawformat = rawFormatEdit->text().ascii();
++    string smoothType = interpList->currentText().ascii();
++    string style = fileStyleList->currentText().ascii();
++    string filter = filterEdit->text().ascii();
  
      gnuInt->setMultiFileStyleOption(filename, style);
      gnuInt->setMultiFileDataSetStart(filename,dataSetStart);
@@ -58,16 +57,25 @@ diff -u multiFile.cpp.orig multiFile.cpp
      gnuInt->setMultiFileSmoothType(filename,smoothType);
  
 -    string title = legendTitleEdit->text();
-+    string title = string(legendTitleEdit->text());
++    string title = legendTitleEdit->text().ascii();
      gnuInt->setMultiFileLegendTitle(filename, title);
  
      if (legendTitleDefaultButton->isChecked() == TRUE)
+@@ -150,7 +150,7 @@
+   
+   if ( !filename.isNull() )
+   {
+-    temp = filename;
++    temp = filename.ascii();
+ 
+     multiFileList->insertItem(filename,0);
+     gnuInt->insertMultiFileNew(temp);
 @@ -165,7 +165,7 @@
    if (multiFileList->count() > 0)
    { 
      // get current file in combo box
 -    string filename = multiFileList->currentText();
-+    string filename = string(multiFileList->currentText());
++    string filename = multiFileList->currentText().ascii();
      
      int currentItem = multiFileList->currentItem();
      
@@ -76,7 +84,7 @@ diff -u multiFile.cpp.orig multiFile.cpp
  {
    // get options for this file
 -  string filename = multiFileList->currentText();
-+  string filename = string(multiFileList->currentText());
++  string filename = multiFileList->currentText().ascii();
    string dataSetStart = gnuInt->getMultiFileDataSetStart(filename);
    string dataSetEnd = gnuInt->getMultiFileDataSetEnd(filename);
    string dataSetInc = gnuInt->getMultiFileDataSetIncrement(filename);

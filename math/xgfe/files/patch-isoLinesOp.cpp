@@ -7,8 +7,8 @@ diff -u isoLinesOp.cpp.orig isoLinesOp.cpp
  {
 -  string isoU = isoUEdit->text();
 -  string isoV = isoVEdit->text();
-+  string isoU = string(isoUEdit->text());
-+  string isoV = string(isoVEdit->text());
++  string isoU = isoUEdit->text().ascii();
++  string isoV = isoVEdit->text().ascii();
    
    gnuInt->setIsolineU(isoU);
    gnuInt->setIsolineV(isoV);

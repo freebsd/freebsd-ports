@@ -9,10 +9,10 @@ diff -u pbmOp.cpp.orig pbmOp.cpp
 -  string colormode = colorMode->currentText();
 -  string hSize = horizSize->text();
 -  string vSize = vertSize->text();
-+  string size = string(fontSize->currentText());
-+  string colormode = string(colorMode->currentText());
-+  string hSize = string(horizSize->text());
-+  string vSize = string(vertSize->text());
++  string size = fontSize->currentText().ascii();
++  string colormode = colorMode->currentText().ascii();
++  string hSize = horizSize->text().ascii();
++  string vSize = vertSize->text().ascii();
  
    gnuInt->setTermPBMFontSize(size);
    gnuInt->setTermPBMColormode(colormode);

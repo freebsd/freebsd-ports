@@ -6,7 +6,7 @@ diff -u ticsLevel.cpp.orig ticsLevel.cpp
  void ticsLevel::setTicsLevel()
  {
 -  string level = ticsLevelEdit->text();
-+  string level = string(ticsLevelEdit->text());
++  string level = ticsLevelEdit->text().ascii();
  
    gnuInt->setTicsLevel(level);
    

@@ -7,8 +7,8 @@ diff -u rotation.cpp.orig rotation.cpp
  {  
 -  string scale = plotScalingEdit->text();
 -  string zscale = zAxisScalingEdit->text();
-+  string scale = string(plotScalingEdit->text());
-+  string zscale = string(zAxisScalingEdit->text());
++  string scale = plotScalingEdit->text().ascii();
++  string zscale = zAxisScalingEdit->text().ascii();
  
    gnuInt->setRotationXAxis(xAxisRotation);
    gnuInt->setRotationZAxis(zAxisRotation);

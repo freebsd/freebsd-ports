@@ -1,4 +1,3 @@
-diff -u xgfeMainData.cpp.orig xgfeMainData.cpp
 --- xgfeMainData.cpp.orig	Thu Oct 30 21:54:58 2003
 +++ xgfeMainData.cpp	Thu Oct 30 21:42:04 2003
 @@ -34,10 +34,13 @@
@@ -17,3 +16,12 @@ diff -u xgfeMainData.cpp.orig xgfeMainData.cpp
  )
  	:
    Inherited( parent, name, TRUE, WStyle_Customize | WStyle_NormalBorder 
+@@ -973,7 +976,7 @@
+ 
+   if (!f.isEmpty())
+   {
+-    temp = f;
++    temp = f.ascii();
+     gnuInt->setOutput(temp);
+     outputLabel->setText(f);
+   }

@@ -6,7 +6,7 @@ diff -u funcLegendTitle.cpp.orig funcLegendTitle.cpp
  void funcLegendTitle::setFuncLegendTitleOK()
  {
 -  string title = funcLegendTitleEdit->text();
-+  string title = string(funcLegendTitleEdit->text());
++  string title = funcLegendTitleEdit->text().ascii();
    gnuInt->setFuncLegendTitle(title);
  
    if (defaultCButton->isChecked() == TRUE)

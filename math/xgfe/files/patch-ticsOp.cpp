@@ -8,9 +8,9 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string xticsLocation = xticsLocationCBox->currentText();
 -  string xticsMirror = xticsMirrorCBox->currentText();
 -  string xticsRotation = xticsRotationCBox->currentText();
-+  string xticsLocation = string(xticsLocationCBox->currentText());
-+  string xticsMirror = string(xticsMirrorCBox->currentText());
-+  string xticsRotation = string(xticsRotationCBox->currentText());
++  string xticsLocation = xticsLocationCBox->currentText().ascii();
++  string xticsMirror = xticsMirrorCBox->currentText().ascii();
++  string xticsRotation = xticsRotationCBox->currentText().ascii();
  
    string xticsPositionType;
  
@@ -22,10 +22,10 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string xticsIncPos = xticsIncPosEdit->text();
 -  string xticsEndPos = xticsEndPosEdit->text();
 -  string xticsLabelsPos = xticsLabelsPosEdit->text();
-+  string xticsStartPos = string(xticsStartPosEdit->text());
-+  string xticsIncPos = string(xticsIncPosEdit->text());
-+  string xticsEndPos = string(xticsEndPosEdit->text());
-+  string xticsLabelsPos = string(xticsLabelsPosEdit->text());
++  string xticsStartPos = xticsStartPosEdit->text().ascii();
++  string xticsIncPos = xticsIncPosEdit->text().ascii();
++  string xticsEndPos = xticsEndPosEdit->text().ascii();
++  string xticsLabelsPos = xticsLabelsPosEdit->text().ascii();
  
    gnuInt->setXticsLocation(xticsLocation);
    gnuInt->setXticsMirror(xticsMirror);
@@ -36,9 +36,9 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string yticsLocation = yticsLocationCBox->currentText();
 -  string yticsMirror = yticsMirrorCBox->currentText();
 -  string yticsRotation = yticsRotationCBox->currentText();
-+  string yticsLocation = string(yticsLocationCBox->currentText());
-+  string yticsMirror = string(yticsMirrorCBox->currentText());
-+  string yticsRotation = string(yticsRotationCBox->currentText());
++  string yticsLocation = yticsLocationCBox->currentText().ascii();
++  string yticsMirror = yticsMirrorCBox->currentText().ascii();
++  string yticsRotation = yticsRotationCBox->currentText().ascii();
  
    string yticsPositionType;
  
@@ -50,10 +50,10 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string yticsIncPos = yticsIncPosEdit->text();
 -  string yticsEndPos = yticsEndPosEdit->text();
 -  string yticsLabelsPos = yticsLabelsPosEdit->text();
-+  string yticsStartPos = string(yticsStartPosEdit->text());
-+  string yticsIncPos = string(yticsIncPosEdit->text());
-+  string yticsEndPos = string(yticsEndPosEdit->text());
-+  string yticsLabelsPos = string(yticsLabelsPosEdit->text());
++  string yticsStartPos = yticsStartPosEdit->text().ascii();
++  string yticsIncPos = yticsIncPosEdit->text().ascii();
++  string yticsEndPos = yticsEndPosEdit->text().ascii();
++  string yticsLabelsPos = yticsLabelsPosEdit->text().ascii();
  
    gnuInt->setYticsLocation(yticsLocation);
    gnuInt->setYticsMirror(yticsMirror);
@@ -63,8 +63,8 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
  
 -  string zticsMirror = zticsMirrorCBox->currentText();
 -  string zticsRotation = zticsRotationCBox->currentText();
-+  string zticsMirror = string(zticsMirrorCBox->currentText());
-+  string zticsRotation = string(zticsRotationCBox->currentText());
++  string zticsMirror = zticsMirrorCBox->currentText().ascii();
++  string zticsRotation = zticsRotationCBox->currentText().ascii();
  
    string zticsPositionType;
  
@@ -76,10 +76,10 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string zticsIncPos = zticsIncPosEdit->text();
 -  string zticsEndPos = zticsEndPosEdit->text();
 -  string zticsLabelsPos = zticsLabelsPosEdit->text();
-+  string zticsStartPos = string(zticsStartPosEdit->text());
-+  string zticsIncPos = string(zticsIncPosEdit->text());
-+  string zticsEndPos = string(zticsEndPosEdit->text());
-+  string zticsLabelsPos = string(zticsLabelsPosEdit->text());
++  string zticsStartPos = zticsStartPosEdit->text().ascii();
++  string zticsIncPos = zticsIncPosEdit->text().ascii();
++  string zticsEndPos = zticsEndPosEdit->text().ascii();
++  string zticsLabelsPos = zticsLabelsPosEdit->text().ascii();
  
    gnuInt->setZticsMirror(zticsMirror);
    gnuInt->setZticsRotation(zticsRotation);
@@ -90,9 +90,9 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string x2ticsLocation = x2ticsLocationCBox->currentText();
 -  string x2ticsMirror = x2ticsMirrorCBox->currentText();
 -  string x2ticsRotation = x2ticsRotationCBox->currentText();
-+  string x2ticsLocation = string(x2ticsLocationCBox->currentText());
-+  string x2ticsMirror = string(x2ticsMirrorCBox->currentText());
-+  string x2ticsRotation = string(x2ticsRotationCBox->currentText());
++  string x2ticsLocation = x2ticsLocationCBox->currentText().ascii();
++  string x2ticsMirror = x2ticsMirrorCBox->currentText().ascii();
++  string x2ticsRotation = x2ticsRotationCBox->currentText().ascii();
  
    string x2ticsPositionType;
  
@@ -104,10 +104,10 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string x2ticsIncPos = x2ticsIncPosEdit->text();
 -  string x2ticsEndPos = x2ticsEndPosEdit->text();
 -  string x2ticsLabelsPos = x2ticsLabelsPosEdit->text();
-+  string x2ticsStartPos = string(x2ticsStartPosEdit->text());
-+  string x2ticsIncPos = string(x2ticsIncPosEdit->text());
-+  string x2ticsEndPos = string(x2ticsEndPosEdit->text());
-+  string x2ticsLabelsPos = string(x2ticsLabelsPosEdit->text());
++  string x2ticsStartPos = x2ticsStartPosEdit->text().ascii();
++  string x2ticsIncPos = x2ticsIncPosEdit->text().ascii();
++  string x2ticsEndPos = x2ticsEndPosEdit->text().ascii();
++  string x2ticsLabelsPos = x2ticsLabelsPosEdit->text().ascii();
  
    gnuInt->setX2ticsLocation(x2ticsLocation);
    gnuInt->setX2ticsMirror(x2ticsMirror);
@@ -118,9 +118,9 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string y2ticsLocation = y2ticsLocationCBox->currentText();
 -  string y2ticsMirror = y2ticsMirrorCBox->currentText();
 -  string y2ticsRotation = y2ticsRotationCBox->currentText();
-+  string y2ticsLocation = string(y2ticsLocationCBox->currentText());
-+  string y2ticsMirror = string(y2ticsMirrorCBox->currentText());
-+  string y2ticsRotation = string(y2ticsRotationCBox->currentText());
++  string y2ticsLocation = y2ticsLocationCBox->currentText().ascii();
++  string y2ticsMirror = y2ticsMirrorCBox->currentText().ascii();
++  string y2ticsRotation = y2ticsRotationCBox->currentText().ascii();
  
    string y2ticsPositionType;
  
@@ -132,10 +132,10 @@ diff -u ticsOp.cpp.orig ticsOp.cpp
 -  string y2ticsIncPos = y2ticsIncPosEdit->text();
 -  string y2ticsEndPos = y2ticsEndPosEdit->text();
 -  string y2ticsLabelsPos = y2ticsLabelsPosEdit->text();
-+  string y2ticsStartPos = string(y2ticsStartPosEdit->text());
-+  string y2ticsIncPos = string(y2ticsIncPosEdit->text());
-+  string y2ticsEndPos = string(y2ticsEndPosEdit->text());
-+  string y2ticsLabelsPos = string(y2ticsLabelsPosEdit->text());
++  string y2ticsStartPos = y2ticsStartPosEdit->text().ascii();
++  string y2ticsIncPos = y2ticsIncPosEdit->text().ascii();
++  string y2ticsEndPos = y2ticsEndPosEdit->text().ascii();
++  string y2ticsLabelsPos = y2ticsLabelsPosEdit->text().ascii();
  
    gnuInt->setY2ticsLocation(y2ticsLocation);
    gnuInt->setY2ticsMirror(y2ticsMirror);

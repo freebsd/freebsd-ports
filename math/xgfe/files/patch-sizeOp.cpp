@@ -7,8 +7,8 @@ diff -u sizeOp.cpp.orig sizeOp.cpp
  {
 -  string hSize = hSizeEdit->text();
 -  string vSize = vSizeEdit->text();
-+  string hSize = string(hSizeEdit->text());
-+  string vSize = string(vSizeEdit->text());
++  string hSize = hSizeEdit->text().ascii();
++  string vSize = vSizeEdit->text().ascii();
  
    gnuInt->setHorizSize(hSize);
    gnuInt->setVertSize(vSize);

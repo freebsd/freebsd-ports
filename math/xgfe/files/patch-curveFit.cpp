@@ -15,16 +15,16 @@ diff -u curveFit.cpp.orig curveFit.cpp
 -  string varYRangeMin = varYRangeMinEdit->text();
 -  string varYRangeMax = varYRangeMaxEdit->text();
 -  string paramFile = paramFileEdit->text();
-+  string functionName = string(functionNameEdit->text());
-+  string functionValue = string(functionValueEdit->text());
-+  string dataFile = string(dataFileEdit->text());
-+  string varXRangeName = string(varXRangeNameEdit->text());
-+  string varXRangeMin = string(varXRangeMinEdit->text());
-+  string varXRangeMax = string(varXRangeMaxEdit->text());
-+  string varYRangeName = string(varYRangeNameEdit->text());
-+  string varYRangeMin = string(varYRangeMinEdit->text());
-+  string varYRangeMax = string(varYRangeMaxEdit->text());
-+  string paramFile = string(paramFileEdit->text());
++  string functionName = functionNameEdit->text().ascii();
++  string functionValue = functionValueEdit->text().ascii();
++  string dataFile = dataFileEdit->text().ascii();
++  string varXRangeName = varXRangeNameEdit->text().ascii();
++  string varXRangeMin = varXRangeMinEdit->text().ascii();
++  string varXRangeMax = varXRangeMaxEdit->text().ascii();
++  string varYRangeName = varYRangeNameEdit->text().ascii();
++  string varYRangeMin = varYRangeMinEdit->text().ascii();
++  string varYRangeMax = varYRangeMaxEdit->text().ascii();
++  string paramFile = paramFileEdit->text().ascii();
  
    int paramFileFlag;
    int paramCSLFlag;
@@ -49,23 +49,23 @@ diff -u curveFit.cpp.orig curveFit.cpp
 -  string zColumn = zColumnEdit->text();
 -  string format = formatEdit->text();
 -  string rawFormat = rawFormatEdit->text();
-+  string paramCSL = string(paramCSLEdit->text());
-+  string fitLimit = string(fitLimitEdit->text());
-+  string fitMaxIter = string(fitMaxIterEdit->text());
-+  string dataSetStart = string(dataSetStartEdit->text());
-+  string dataSetEnd = string(dataSetEndEdit->text());
-+  string dataSetInc = string(dataSetIncEdit->text());
-+  string pointInc = string(pointIncEdit->text());
-+  string lineInc = string(lineIncEdit->text());
-+  string startPoint = string(startPointEdit->text());
-+  string startLine = string(startLineEdit->text());
-+  string endPoint = string(endPointEdit->text());
-+  string endLine = string(endLineEdit->text());
-+  string xColumn = string(xColumnEdit->text());
-+  string yColumn = string(yColumnEdit->text());
-+  string zColumn = string(zColumnEdit->text());
-+  string format = string(formatEdit->text());
-+  string rawFormat = string(rawFormatEdit->text());
++  string paramCSL = paramCSLEdit->text().ascii();
++  string fitLimit = fitLimitEdit->text().ascii();
++  string fitMaxIter = fitMaxIterEdit->text().ascii();
++  string dataSetStart = dataSetStartEdit->text().ascii();
++  string dataSetEnd = dataSetEndEdit->text().ascii();
++  string dataSetInc = dataSetIncEdit->text().ascii();
++  string pointInc = pointIncEdit->text().ascii();
++  string lineInc = lineIncEdit->text().ascii();
++  string startPoint = startPointEdit->text().ascii();
++  string startLine = startLineEdit->text().ascii();
++  string endPoint = endPointEdit->text().ascii();
++  string endLine = endLineEdit->text().ascii();
++  string xColumn = xColumnEdit->text().ascii();
++  string yColumn = yColumnEdit->text().ascii();
++  string zColumn = zColumnEdit->text().ascii();
++  string format = formatEdit->text().ascii();
++  string rawFormat = rawFormatEdit->text().ascii();
  
    // set options
  
