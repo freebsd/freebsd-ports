@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
@@ -40,23 +40,23 @@ post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
 pre-patch:
-	${TR} -d '\015' < ${WRKDIR}/Xspin4.1/xspin412.tcl \
-		> ${WRKDIR}/Xspin4.1/xspin412.tcl.tmp
-	${MV} -f ${WRKDIR}/Xspin4.1/xspin412.tcl.tmp \
-		${WRKDIR}/Xspin4.1/xspin412.tcl
+	${TR} -d '\015' < ${WRKDIR}/Xspin4.1/xspin413.tcl \
+		> ${WRKDIR}/Xspin4.1/xspin413.tcl.tmp
+	${MV} -f ${WRKDIR}/Xspin4.1/xspin413.tcl.tmp \
+		${WRKDIR}/Xspin4.1/xspin413.tcl
 
 post-patch:
 	@WISH=`(cd ${LOCALBASE}/bin ; ${LS} wish8* ) | tail -1` ; \
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.1/xspin412.tcl
+		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.1/xspin413.tcl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
 .if !defined(WITHOUT_XSPIN)
 	${RM} -f ${PREFIX}/bin/xspin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.1/xspin412.tcl ${PREFIX}/bin/xspin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.1/xspin413.tcl ${PREFIX}/bin/xspin
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/Doc
