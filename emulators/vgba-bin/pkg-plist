@@ -1,6 +1,3 @@
-bin/vgb
-bin/vgb-debug
-share/vgb/CART.GB
-%%PORTDOCS%%share/doc/vgb/VGB.html
-%%PORTDOCS%%@dirrm share/doc/vgb
-@dirrm share/vgb
+bin/vgba
+%%PORTDOCS%%%%DOCSDIR%%/VGBA.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
