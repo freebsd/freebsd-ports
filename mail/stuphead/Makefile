@@ -16,6 +16,8 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
+BROKEN=		"Does not package correctly"
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
