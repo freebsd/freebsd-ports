@@ -7,6 +7,7 @@
 
 PORTNAME=	wordnet
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.devEiate.org/code/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${WORDNET_DIR}/adj.exc:${PORTSDIR}/textproc/wordnet \
 		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
-WORDNET_DIR=	${LOCALBASE}/share/WordNet-1.7.1
+WORDNET_DIR=	${LOCALBASE}/share/WordNet-2.0
 
 USE_BZIP2=	yes
 USE_RUBY=	yes

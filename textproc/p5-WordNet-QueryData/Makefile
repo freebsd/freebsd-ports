@@ -7,6 +7,7 @@
 
 PORTNAME=	WordNet-QueryData
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WordNet
@@ -15,9 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	Perl interface to the WordNet database files
 
-LIB_DEPENDS=	wn1.7:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	wn2:${PORTSDIR}/textproc/wordnet
 
-WNHOME?=	${LOCALBASE}/share/WordNet-1.7.1
+WNHOME?=	${LOCALBASE}/share/WordNet-2.0
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
