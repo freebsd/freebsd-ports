@@ -4,7 +4,6 @@ libexec/wn
 sbin/swn
 bin/wndex
 wn/docs
-wn/images
 wn/index
 wn/wnlogs
 @cwd ./wn
