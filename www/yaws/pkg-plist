@@ -53,9 +53,9 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_vsn.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 www/yaws/END
-www/yaws/EXHEAD
+www/yaws/END2
 www/yaws/HEAD
-www/yaws/TOPTAB
+www/yaws/TAB.inc
 www/yaws/api.yaws
 www/yaws/appmods.yaws
 www/yaws/arg.yaws
@@ -207,6 +207,8 @@ www/yaws/readcookie.yaws
 www/yaws/readpcookie.yaws
 www/yaws/redirect.yaws
 www/yaws/redirect2.yaws
+www/yaws/redirect3.yaws
+www/yaws/redirect4.yaws
 www/yaws/session.yaws
 www/yaws/session1.yaws
 www/yaws/setcookie.yaws
@@ -226,6 +228,7 @@ www/yaws/simple.yaws
 www/yaws/simple_ex1.yaws
 www/yaws/simple_ex2.yaws
 www/yaws/simple_ex3.yaws
+www/yaws/simple_ex4.yaws
 www/yaws/small.yaws
 www/yaws/spacer.gif
 www/yaws/ssi.yaws
@@ -237,10 +240,13 @@ www/yaws/static.html
 www/yaws/stats.yaws
 www/yaws/stats_ex.yaws
 www/yaws/stil.css
+www/yaws/stream.yaws
 www/yaws/todo.yaws
 www/yaws/upload.yaws
 www/yaws/upload0.yaws
+www/yaws/urandom.yaws
 www/yaws/ybed.erl
+www/yaws/yman.yaws
 %%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 @dirrm www/yaws/ssi
 @dirrm www/yaws/shopingcart
