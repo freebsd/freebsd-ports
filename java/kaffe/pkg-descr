@@ -1,0 +1,13 @@
+This is Kaffe, a virtual machine design to execute Java bytecode.  Unlike
+other virtual machines available, this machine performs "just-in-time"
+code conversion from the abstract code to the host machine's native code.
+This will ultimately allow execution of Java code at the same speed as
+standard compiled code but while maintaining the advantages and flexibility
+of code independence.
+
+Please note, this is version 0.2 and many feature are not yet implemented
+(notable there is no graphics support at the moment) and there are likely
+to be various odd bugs.  All comments to the mail address below.
+
+Tim
+tim@sarc.city.ac.uk
