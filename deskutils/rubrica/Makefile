@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c1$/cr1/}
