@@ -695,6 +695,7 @@
     SUBDIR += winhelpcgi
     SUBDIR += wml
     SUBDIR += wmnetselect
+    SUBDIR += wnews
     SUBDIR += wordpress
     SUBDIR += wsmake
     SUBDIR += www6to4
