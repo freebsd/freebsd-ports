@@ -1,0 +1,16 @@
+The IntelR 82802 Firmware Hub (FWH) discrete component is compatible
+with several Intel chipset platforms and a variety of applications.  The
+device operates under the LPC/FWH interface/protocol.  The hardware
+features of this device include a Random Number Generator (RNG), five
+General-Purpose Inputs (GPIs), register-based block locking, and
+hardware-based locking.
+
+This port is a driver for the Intel 82802, implemented as kernel
+loadable module.  The driver currently supports reading directly via
+/dev/rng, or indirectly via kern_random (/dev/random).
+
+Author:	Stacy L. Millions <stacy@millions.ca>
+WWW: 	http://www.millions.ca/~stacy/82802rng.html
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
