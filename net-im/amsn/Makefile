@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/amsn-0_93
+WRKSRC=		${WRKDIR}/amsn-0_94
 
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
@@ -38,9 +38,10 @@ post-extract:
 	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -rf
 
 do-configure:
+	export WISH=`which wish8.4` && ${SED} s=!!PREFIX!!=`dirname $${WISH}|${SED} sx/binxxg`=g ${FILESDIR}/Makefile.traydoc | ${SED} s=!!X11BASE!!=${X11BASE}=g > ${WRKSRC}/plugins/traydock/Makefile
 
 do-build:
-
+	cd ${WRKSRC}/plugins/traydock && make && ${RM} Makefile
 do-install:
 	@${MKDIR} ${LIBDIR}
 	@cd ${WRKSRC}; tar cf - ${CORE} | ( cd ${LIBDIR}; tar xpf - )
@@ -60,5 +61,7 @@ post-install:
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn-remote
 	@${CHMOD} 555 ${PREFIX}/lib/msn/utils/amsnctl.pl
+	@uudecode -o ${PREFIX}/lib/msn/skins/default/pixmaps/logolinmsn.gif \
+		${FILESDIR}/logolinmsn.gif.uue
 
 .include <bsd.port.mk>
