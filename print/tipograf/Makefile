@@ -32,4 +32,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wall -O0|@CXXFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
+pre-build:
+.for file in about.h firststart.h help.h tipograf.h
+	@cd ${WRKSRC}/src && ${RM} -f ${file} && ${GMAKE} ${file}
+.endfor
+
 .include <bsd.port.mk>
