@@ -73,6 +73,7 @@ MASTER_SITE_FREEBSD_ORG+=	\
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.nectec.or.th/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,FreeBSD/&,}
 
 MASTER_SITE_GNOME+=	\
@@ -83,6 +84,8 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/%SUBDIR%/ \
@@ -127,6 +130,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
@@ -194,6 +198,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://uiarchive.uiuc.edu/pub/ftp/cpan.cse.msu.edu/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
 	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/lang/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.bora.net/pub/CPAN/modules/by-module/%SUBDIR%/ \
@@ -266,6 +271,7 @@ MASTER_SITE_RINGSERVER+=	\
 
 MASTER_SITE_RUBY+= \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
@@ -343,6 +349,7 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.cise.ufl.edu/tex-archive/%SUBDIR%/ \
 	ftp://ftp.tex.ac.uk/tex-archive/%SUBDIR%/  \
 	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/lang/CTAN/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
@@ -372,6 +379,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/XFree86/X.Org/contrib/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/contrib/%SUBDIR%/ \
 	ftp://mirror.xmission.com/X/contrib/%SUBDIR%/ \
 	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
@@ -389,6 +397,7 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
 	ftp://ftp.usyd.edu.au/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
 	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 
@@ -397,6 +406,7 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.rge.com/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://archive.progeny.com/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.mirrorcentral.com/pub/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.dti.ad.jp/pub/X/XFree86/XFree86/%SUBDIR%/source/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
 	ftp://gd.tuwien.Ac.at/hci/X11/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.fit.vutbr.cz/pub/XFree86/%SUBDIR%/source/ \
