@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strscan
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www1.u-netsurf.ne.jp/~brew/mine/soft/
@@ -23,12 +23,9 @@ USE_RUBY_SETUP=	yes
 DOCS_EN=	README.en \
 		doc.en/changes.html doc.en/index.html \
 		doc.en/reference.html doc.en/usage.html
-DOCS_JA=	doc.ja/changes.html doc.ja/index.html \
+DOCS_JA=	README.ja \
+		doc.ja/changes.html doc.ja/index.html \
 		doc.ja/reference.html doc.ja/usage.html
-
-post-patch:
-	${PERL} -i -ne '/\bstrscan\b/ and print' ${WRKSRC}/lib/PATHCONV
-	for d in amstd; do ${RM} -rf ${WRKSRC}/lib/$$d; done
 
 do-install:
 .if !defined(NOPORTDOCS)
