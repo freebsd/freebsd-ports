@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/pr
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
 		mktexlsr:${PORTSDIR}/print/teTeX
 
+BROKEN=		Configure fails
+
 EMACS_PORT_NAME?=	emacs21
 
 INFO=		preview-latex
