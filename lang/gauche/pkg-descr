@@ -1,0 +1,7 @@
+Gauche is a Scheme interpreter conforming Revised^5 Report on
+Algorithmic Language Scheme.  It is designed for rapid development
+of daily tools like system management and text processing.
+It can handle multibyte character strings natively.
+
+Author:	Shiro Kawai <shiro@acm.org>
+WWW:	http://www.shiro.dreamhost.com/scheme/gauche/index.html
