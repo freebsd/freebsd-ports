@@ -41,6 +41,7 @@
     SUBDIR += gswitchit_applet
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid
+    SUBDIR += gxset
     SUBDIR += gyroscope
     SUBDIR += imwheel
     SUBDIR += kb2mb2

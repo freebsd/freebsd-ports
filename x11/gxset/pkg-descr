@@ -1,0 +1,14 @@
+From the author's website:
+
+GTK xset is a graphical frontend to the X command line tool xset(1).
+It is a gtk application, designed with Glade. GTK xset can set auto
+repeat, key click, bell, mouse, screen saver and DPMS parameters.
+It also has a font path editor. GTK xset can save a xset command,
+which restores all settings, to the file file ~/.xset.sh. This file
+can be read from .xinitrc or other startup file.
+
+Author: rene@seindal.dk
+WWW: http://www.seindal.dk/rene/software/gxset/
+
+Bruce
+bms@spc.org
