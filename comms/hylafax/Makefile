@@ -21,7 +21,6 @@ IS_INTERACTIVE= yes
 #	( If you need interactive config, rm patch-ab )
 .endif
 
-EXEC_DEPENDS+=	ghostview:${PORTSDIR}/print/ghostview
 EXEC_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript
 EXEC_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
