@@ -22,6 +22,7 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	3.3
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
