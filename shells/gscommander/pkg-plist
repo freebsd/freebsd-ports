@@ -5,12 +5,8 @@ Local/Applications/GSCommander.app/Resources/GSCommander.tiff
 Local/Applications/GSCommander.app/Resources/GSCommanderInfo.plist
 Local/Applications/GSCommander.app/Resources/Info-gnustep.plist
 Local/Applications/GSCommander.app/Resources/README
-%%GNUSTEP_STABLE%%Local/Applications/GSCommander.app/%%NOFLAT%%GSCommander
-Local/Applications/GSCommander.app/%%NOFLAT%%library_paths.openapp
+Local/Applications/GSCommander.app/library_paths.openapp
 Local/Applications/GSCommander.app/stamp.make
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%
 @dirrm Local/Applications/GSCommander.app/Resources
 @dirrm Local/Applications/GSCommander.app
 @dirrm Local/Applications
