@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
-MAINTAINER=	jmacd@FreeBSD.org
+MAINTAINER=	c9710216@atlas.newcastle.edu.au
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
