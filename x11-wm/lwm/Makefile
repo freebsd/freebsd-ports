@@ -9,7 +9,7 @@ PORTNAME=	lwm
 PORTVERSION=	1.00
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://users.ch.genedata.com/~enh/lwm/
+MASTER_SITES=	http://www.boognish.org.uk/enh/lwm/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
