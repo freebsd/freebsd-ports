@@ -24,4 +24,7 @@ MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		pilot-xfer.1 read-ical.1
 MAN7=		pilot-link.7
 
+post-install:
+        ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
 .include <bsd.port.mk>
