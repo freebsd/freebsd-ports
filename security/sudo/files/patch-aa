@@ -46,7 +46,7 @@
  
  if test "$with_skey" = "yes"; then
 -    SUDO_LIBS="${SUDO_LIBS} -lskey"
-+    SUDO_LIBS="${SUDO_LIBS} -lskey /usr/lib/libmd.a"
++    SUDO_LIBS="${SUDO_LIBS} -lskey -lmd"
      if test -f /usr/include/skey.h -a -f /usr/lib/libskey.a; then
  	:
      elif test -f /usr/local/include/skey.h; then
