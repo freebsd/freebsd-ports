@@ -7,7 +7,7 @@
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +17,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Prosper is a LaTeX class for writing transparencies
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_BUILD=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-TEXMF?=		share/texmf
-LPROSPERDIR=	${TEXMF}/tex/latex/misc/prosper
+TEXMFDIR?=	share/texmf
+LPROSPERDIR=	${TEXMFDIR}/tex/latex/prosper
 PROSPERDIR=	${PREFIX}/${LPROSPERDIR}
 
 PLIST_SUB=	PROSPERDIR=${LPROSPERDIR}
