@@ -31,6 +31,7 @@ bin/xfwm
 etc/xfce/Xclients
 etc/xfce/fvwm2rc
 etc/xfce/fvwmrc
+etc/xfce/taskbarrc
 etc/xfce/xfbdrc
 etc/xfce/xfce3rc
 etc/xfce/xfce3rc.cs
@@ -64,6 +65,7 @@ share/locale/et/LC_MESSAGES/xfce.mo
 share/locale/fi/LC_MESSAGES/xfce.mo
 share/locale/fr/LC_MESSAGES/xfce.mo
 share/locale/gl/LC_MESSAGES/xfce.mo
+share/locale/he/LC_MESSAGES/xfce.mo
 share/locale/hu/LC_MESSAGES/xfce.mo
 share/locale/it/LC_MESSAGES/xfce.mo
 share/locale/ja/LC_MESSAGES/xfce.mo
@@ -264,27 +266,6 @@ share/xfce/help/html/copyright.html
 share/xfce/help/html/fileman.html
 share/xfce/help/html/gpl.html
 share/xfce/help/html/help.html
-share/xfce/help/html/images/buttons.jpg
-share/xfce/help/html/images/xfbd.jpg
-share/xfce/help/html/images/xfbdmgr.jpg
-share/xfce/help/html/images/xfce_panel.jpg
-share/xfce/help/html/images/xfce_popup.jpg
-share/xfce/help/html/images/xfce_setup1.jpg
-share/xfce/help/html/images/xfce_setup2.jpg
-share/xfce/help/html/images/xfce_setup3.jpg
-share/xfce/help/html/images/xfce_setup4.jpg
-share/xfce/help/html/images/xfce_slogan.jpg
-share/xfce/help/html/images/xfce_snap.jpg
-share/xfce/help/html/images/xfclock.jpg
-share/xfce/help/html/images/xfdiff.jpg
-share/xfce/help/html/images/xfglob.jpg
-share/xfce/help/html/images/xfmouse.jpg
-share/xfce/help/html/images/xfpager.jpg
-share/xfce/help/html/images/xfrun.jpg
-share/xfce/help/html/images/xfsamba.jpg
-share/xfce/help/html/images/xfsound.jpg
-share/xfce/help/html/images/xftree.jpg
-share/xfce/help/html/images/xfumed.jpg
 share/xfce/help/html/install.html
 share/xfce/help/html/intro.html
 share/xfce/help/html/license.html
@@ -324,6 +305,27 @@ share/xfce/help/html/utils-xfsound.html
 share/xfce/help/html/utils-xfumed.html
 share/xfce/help/html/wm-examples-2.html
 share/xfce/help/html/wm.html
+share/xfce/help/images/buttons.jpg
+share/xfce/help/images/xfbd.jpg
+share/xfce/help/images/xfbdmgr.jpg
+share/xfce/help/images/xfce_panel.jpg
+share/xfce/help/images/xfce_popup.jpg
+share/xfce/help/images/xfce_setup1.jpg
+share/xfce/help/images/xfce_setup2.jpg
+share/xfce/help/images/xfce_setup3.jpg
+share/xfce/help/images/xfce_setup4.jpg
+share/xfce/help/images/xfce_slogan.jpg
+share/xfce/help/images/xfce_snap.jpg
+share/xfce/help/images/xfclock.jpg
+share/xfce/help/images/xfdiff.jpg
+share/xfce/help/images/xfglob.jpg
+share/xfce/help/images/xfmouse.jpg
+share/xfce/help/images/xfpager.jpg
+share/xfce/help/images/xfrun.jpg
+share/xfce/help/images/xfsamba.jpg
+share/xfce/help/images/xfsound.jpg
+share/xfce/help/images/xftree.jpg
+share/xfce/help/images/xfumed.jpg
 share/xfce/icons/3dpaint.xpm
 share/xfce/icons/ABC.xpm
 share/xfce/icons/AZ.xpm
@@ -490,6 +492,7 @@ share/xfce/palettes/KDE
 share/xfce/palettes/KStyle2
 share/xfce/palettes/KXfce
 share/xfce/palettes/Kdetheme
+share/xfce/palettes/Kindaker
 share/xfce/palettes/LightBulb
 share/xfce/palettes/LightBulb2
 share/xfce/palettes/LightBulb3
@@ -522,6 +525,7 @@ share/xfce/palettes/Prune
 share/xfce/palettes/PruneDark
 share/xfce/palettes/Quartz
 share/xfce/palettes/Reader
+share/xfce/palettes/Redmond
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
 share/xfce/palettes/SaltLake
@@ -559,6 +563,7 @@ share/xfce/palettes/Win3
 share/xfce/palettes/XLight
 share/xfce/palettes/Xfce-1
 share/xfce/palettes/Xfce-2
+share/xfce/palettes/Xfce-light
 share/xfce/sounds/alert01.wav
 share/xfce/sounds/beep01.wav
 share/xfce/sounds/beep02.wav
@@ -641,18 +646,16 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@exec ln -s %D/share/xfce/help/html/images %D/share/xfce/help/images
-@unexec rm %D/share/xfce/help/images
-@dirrm etc/xfce
-@dirrm share/xfce/backdrops
-@dirrm share/xfce/cursors
-@dirrm share/xfce/fonts
-@dirrm share/xfce/help/html/images
+@dirrm share/xfce/textures
+@dirrm share/xfce/sounds
+@dirrm share/xfce/palettes
+@dirrm share/xfce/icons
 @dirrm share/xfce/help/html/stylesheet-images
 @dirrm share/xfce/help/html
+@dirrm share/xfce/help/images
 @dirrm share/xfce/help
-@dirrm share/xfce/icons
-@dirrm share/xfce/palettes
-@dirrm share/xfce/sounds
-@dirrm share/xfce/textures
+@dirrm share/xfce/fonts
+@dirrm share/xfce/cursors
+@dirrm share/xfce/backdrops
 @dirrm share/xfce
+@dirrm etc/xfce

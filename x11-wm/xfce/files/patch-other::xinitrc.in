@@ -1,0 +1,14 @@
+--- other/xinitrc.in.orig	Thu May 23 06:24:35 2002
++++ other/xinitrc.in	Tue Nov 19 04:22:00 2002
+@@ -41,7 +41,10 @@
+ # fi
+ 
+ # Launch xscreensaver (if available)
+-xscreensaver -no-splash &
++XBINDIR=%%X11BASE%%/bin
++if [ -x $XBINDIR/xscreensaver ]; then
++	xscreensaver -no-splash &
++fi
+ 
+ # Finally, launch XFce window manager
+ exec xfwm
