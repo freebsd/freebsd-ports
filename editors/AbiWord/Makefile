@@ -10,12 +10,14 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.7.12
+PORTVERSION=	0.7.13
 CATEGORIES=	editors
-MASTER_SITES=	http://download.abisource.com/releases/${PORTVERSION}/src/
+MASTER_SITES=	http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
 DISTNAME=	abi-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat.tar.gz unixfonts.tar.gz \
-		wv.tar.gz abidistfiles.tar.gz libiconv.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat-${PORTVERSION}.tar.gz \
+		unixfonts-${PORTVERSION}.tar.gz wv-${PORTVERSION}.tar.gz \
+		abidistfiles-${PORTVERSION}.tar.gz \
+		psiconv-${PORTVERSION}.tar.gz libiconv-${PORTVERSION}.tar.gz
 
 MAINTAINER=	wolman@cs.washington.edu
 
@@ -27,19 +29,13 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/abi-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/abi/src
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 MAKE_ENV=	prefix="${PREFIX}"
 
 .include <bsd.port.pre.mk>
-
-# start by deleting some junk files that should never have been placed
-# in the tar file
-pre-build:
-	cd ${WRKSRC} && ${RM} -f ../user/wp/help/en-US/images/?line.jpg
-	cd ${WRKSRC} && ${RM} -f ../user/wp/help/en-US/images/?space.jpg
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
