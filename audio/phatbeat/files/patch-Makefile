@@ -1,0 +1,82 @@
+--- Makefile.orig	Tue Jun 22 14:28:51 2004
++++ Makefile	Tue Jun 22 14:47:27 2004
+@@ -1,11 +1,10 @@
+-CPP = g++
+-SDL_LIBS = `sdl-config --libs`
+-SDL_CFLAGS = `sdl-config --cflags`
++SDL_LIBS = `$(SDL_CONFIG) --libs`
++SDL_CFLAGS = `$(SDL_CONFIG) --cflags`
+ ## dirs must be appended with a / character!
+-LOCAL = /usr/local/
+-SHAREDIR = $(LOCAL)share/phatbeat/
++LOCAL = $(PREFIX)
++SHAREDIR = $(LOCAL)/share/phatbeat/
+ D_PFLAGS = -Wall -g 	## For debugging, use this.
+-PFLAGS = -Wall -finline-functions -O3 $(SDL_CFLAGS)
++PFLAGS = $(CFLAGS) $(SDL_CFLAGS)
+ XFLAGS = $(PFLAGS) $(SDL_LIBS) -lSDL_image -lm
+ PROGS = phatbeat phatx
+ 
+@@ -18,34 +17,34 @@
+ all: $(PROGS)
+ 
+ phatbeat: BeatCounter.o phatbeat.o
+-	$(CPP) $(PFLAGS) phatbeat.o BeatCounter.o -o phatbeat
++	$(CXX) $(PFLAGS) phatbeat.o BeatCounter.o -o phatbeat
+ 
+ phatx: BeatCounter.o phatx.o numbers.o resize.o portability.o
+-	$(CPP) $(XFLAGS) portability.o phatx.o resize.o numbers.o BeatCounter.o -o phatx
++	$(CXX) $(XFLAGS) portability.o phatx.o resize.o numbers.o BeatCounter.o -o phatx
+ 
+ BeatCounter.o: BeatCounter.h BeatCounter.cpp
+-	$(CPP) $(PFLAGS) -c BeatCounter.cpp
++	$(CXX) $(PFLAGS) -c BeatCounter.cpp
+ 
+ numbers.o: numbers.h numbers.cpp portability.o
+-	$(CPP) $(PFLAGS) -c numbers.cpp
+-	
++	$(CXX) $(PFLAGS) -c numbers.cpp
++
+ resize.o: resize.h resize.cpp
+-	$(CPP) $(PFLAGS) -c resize.cpp
++	$(CXX) $(PFLAGS) -c resize.cpp
+ 
+ phatbeat.o: phatbeat.cpp
+-	$(CPP) $(PFLAGS) -c phatbeat.cpp 
++	$(CXX) $(PFLAGS) -c phatbeat.cpp 
+ 
+ phatx.o: phatx.cpp
+-	$(CPP) $(PFLAGS) -c phatx.cpp 
++	$(CXX) $(PFLAGS) -c phatx.cpp 
+ 
+ portability.o: portability.cpp
+-	$(CPP) $(PFLAGS) -D'SHAREDIR="$(SHAREDIR)"' -c portability.cpp 
++	$(CXX) $(PFLAGS) -D'SHAREDIR="$(SHAREDIR)"' -c portability.cpp 
+ 
+ ## For compiling a win32 version under cygwin, issue
+ ## 'make phat_win', and it will do so.
+ 
+ phat_win: BeatCounter.o phatx.o numbers.o resize.o phatres.o
+-	$(CPP) -o phat_win.exe phatx.o resize.o numbers.o BeatCounter.o portability.o phatres.o $(XFLAGS)
++	$(CXX) -o phat_win.exe phatx.o resize.o numbers.o BeatCounter.o portability.o phatres.o $(XFLAGS)
+ 
+ phatres.o: phatres.rc
+ 	windres phatres.rc phatres.o
+@@ -55,10 +54,10 @@
+ 
+ ## Installation routines for unix.   
+ install: 
+-	## First, install the programs.
+-	/usr/bin/install -c -m 755 phatbeat $(LOCAL)/bin
+-	/usr/bin/install -c -m 755 phatx $(LOCAL)/bin
+-	/usr/bin/install -c -m 444 phatbeat.1 $(LOCAL)/man/man1
+-	## Then, the images
+-	mkdir -p $(SHAREDIR)/images
+-	/usr/bin/install -c -m 444 images/* $(SHAREDIR)/images
++	$(MKDIR) $(LOCAL)/bin
++	$(INSTALL_PROGRAM) phatbeat $(LOCAL)/bin
++	$(INSTALL_PROGRAM) phatx $(LOCAL)/bin
++	$(MKDIR) $(LOCAL)/man/man1
++	$(INSTALL_MAN) phatbeat.1 $(LOCAL)/man/man1
++	$(MKDIR) $(SHAREDIR)images
++	$(INSTALL_DATA) images/* $(SHAREDIR)images
