@@ -85,11 +85,7 @@ describe:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500043
-CONFIGURE_ARGS+=	--enable-recursor
-PLIST_SUB+=		RECURSOR=""
-
-.if defined(WITH_LDAP)
+.if ${OSVERSION} >= 500043 && defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
 CONFIGURE_MODULES+=	"ldap"
@@ -103,6 +99,9 @@ post-patch:
 		${WRKSRC}/pdns/Makefile.in
 .endif
 
+.if ${OSVERSION} >= 500043 && ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-recursor
+PLIST_SUB+=		RECURSOR=""
 .else
 PLIST_SUB+=		RECURSOR="@comment "
 .endif
