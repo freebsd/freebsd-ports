@@ -24,18 +24,18 @@ INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11_ONLY=""
 CFLAGS+=	-I${X11BASE}/include
 .else
 PLIST_SUB+=	X11_ONLY="@comment "
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 pre-configure:
 	${ECHO} "HAVE_X11 => no" > ${WRKSRC}/configure.cache
