@@ -3,7 +3,7 @@
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/01 04:56:05 mph Exp $
 #
 
 DISTNAME=	crafty-15.10
@@ -22,9 +22,7 @@ DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-15.10.tar.gz
 
 MAN6=		crafty.6
-NO_CDROM=	yes
 NO_WRKSUBDIR=	yes
-RESTRICTED=	"found no copyright notice or anything else - better be safe than sorry"
 
 post-extract:
 	(cd ${WRKDIR}; unzip ${DISTDIR}/${DIST_SUBDIR}/start.zip)
