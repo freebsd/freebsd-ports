@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	nkf
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	japanese perl5
-MASTER_SITES=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
+MASTER_SITES=	http://www.ie.u-ryukyu.ac.jp/~kono/nkf/dist/
 PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	A perl extension module to use NKF

@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nkf
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	japanese
-MASTER_SITES=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
+MASTER_SITES=	http://www.ie.u-ryukyu.ac.jp/~kono/nkf/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Network Kanji code conversion Filter
