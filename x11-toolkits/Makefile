@@ -59,6 +59,8 @@
     SUBDIR += qt22
     SUBDIR += rep-gtk
     SUBDIR += ruby-gtk
+    SUBDIR += ruby-qt
+    SUBDIR += ruby-qt-i18n
     SUBDIR += rubytk
     SUBDIR += slingshot
     SUBDIR += thinice
