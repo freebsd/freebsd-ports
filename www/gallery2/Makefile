@@ -54,6 +54,7 @@ LANGPACKS=	af_ZA-pack-${LANGVERSION}-u1${EXTRACT_SUFX} \
 		zh_TW-pack-${LANGVERSION}-u1${EXTRACT_SUFX} \
 		zh_TW.utf8-pack-${LANGVERSION}${EXTRACT_SUFX}
 
+USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -63,9 +64,6 @@ DOCFILES=	AUTHORS ChangeLog README RELEASE_NOTES
 EXCEPTFILES=	${DOCFILES} LICENSE.txt
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB=	GALLERYDIR=${GALLERYDIR}
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 pre-fetch:
 .if !defined(GALLERYDIR)
@@ -106,4 +104,4 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

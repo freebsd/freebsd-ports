@@ -20,17 +20,15 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 USE_BZIP2=	yes
+USE_PHP=	yes
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
 
 PGADMDIR?=      www/data/phpPgAdmin
 PLIST_SUB+=     PGADMDIR=${PGADMDIR}
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
-
 do-install:
 	${MKDIR} ${PREFIX}/${PGADMDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${PGADMDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

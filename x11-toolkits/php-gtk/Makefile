@@ -21,17 +21,14 @@ USE_LIBTOOL=	yes
 WANT_AUTOMAKE_VER=	15
 WANT_AUTOCONF_VER=	253
 LIBTOOLFILES=	# none
+USE_PHP=	yes
 USE_PHPIZE=	yes
+WANT_PHP_CLI=	yes
 USE_AUTOCONF=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
-
-BUILD_DEPENDS+=	${PREFIX}/bin/php:${PORTSDIR}/lang/php4
 
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
@@ -120,4 +117,4 @@ post-install:
 	@${CAT} ${MASTERDIR}/pkg-message
 	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

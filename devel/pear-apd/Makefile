@@ -15,12 +15,12 @@ COMMENT=	A full-featured engine-level PHP profiler/debugger
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-apd
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 .if exists(${LOCALBASE}/bin/php-config)

@@ -16,15 +16,13 @@ COMMENT=	A tool to cache applications written in PHP
 
 WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 WITH_PHP_MOD=	yes
 
 CONFIGURE_ARGS+=--enable-bware_cache=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
@@ -38,4 +36,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,14 +21,12 @@ COMMENT=	A template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-templates=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
@@ -46,4 +44,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

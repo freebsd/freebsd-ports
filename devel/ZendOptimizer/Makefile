@@ -15,6 +15,7 @@ COMMENT=	An optimizer for PHP code
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
+USE_PHP=	yes
 BROKEN_WITH_PHP=5
 
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
@@ -23,7 +24,6 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 # Check for FreeBSD version
 .if ${OSVERSION} >= 500000

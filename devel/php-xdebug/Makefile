@@ -15,12 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	Xdebug extension for PHP
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 CONFIGURE_ARGS=	--enable-xdebug --with-php-config=${PREFIX}/bin/php-config
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
@@ -34,4 +32,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

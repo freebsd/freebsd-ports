@@ -15,12 +15,12 @@ COMMENT=	Alternative PHP Cache
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-apc
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 .if exists(${LOCALBASE}/bin/php-config)

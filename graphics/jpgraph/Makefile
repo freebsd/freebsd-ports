@@ -15,10 +15,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
+USE_PHP=	yes
 WANT_PHP_WEB=	yes
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
@@ -40,4 +38,4 @@ do-install:
 	${CP} -R ${WRKSRC}/src/Examples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

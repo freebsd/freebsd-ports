@@ -20,12 +20,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 CONFIGURE_ARGS+=--enable-php_screw=shared
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
@@ -57,4 +55,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

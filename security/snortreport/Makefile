@@ -17,13 +17,11 @@ COMMENT=	Add-on module for snort to generate real-time web reports
 RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph
 .endif
 
+USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
@@ -57,4 +55,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
