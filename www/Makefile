@@ -207,8 +207,11 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += mozilla
+    SUBDIR += mozilla-devel
     SUBDIR += mozilla-embedded
+    SUBDIR += mozilla-embedded-devel
     SUBDIR += mozilla-headers
+    SUBDIR += mozilla-headers-devel
     SUBDIR += nautilus-gtkhtml
     SUBDIR += neon
     SUBDIR += neowebscript
