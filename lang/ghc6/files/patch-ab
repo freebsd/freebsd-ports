@@ -1,0 +1,100 @@
+*** mk/config.mk.in~       Thu Jun  1 12:02:31 2000
+--- mk/config.mk.in        Sat Sep  2 16:35:34 2000
+***************
+*** 365,371 ****
+  # this in build.mk or set your environment variable "TMPDIR" to point
+  # to somewhere with more space.  (TMPDIR=. is a good choice).
+  
+! TMPDIR			= /tmp
+  
+  # FPTOOLS_TOP: the top of the fptools hierarchy, absolute path.
+  
+--- 365,371 ----
+  # this in build.mk or set your environment variable "TMPDIR" to point
+  # to somewhere with more space.  (TMPDIR=. is a good choice).
+
+! GHC_TMPDIR            = /tmp
+
+  # FPTOOLS_TOP: the top of the fptools hierarchy, absolute path.
+
+*** ghc/driver/Makefile~   Thu Apr 27 12:04:37 2000
+--- ghc/driver/Makefile    Sat Sep  2 16:35:43 2000
+***************
+*** 65,71 ****
+  ifeq "$(BIN_DIST)" "1"
+  SCRIPT_PREFIX_FILES=prefix.txt
+  else
+! SCRIPT_SUBST_VARS += libdir includedir libexecdir datadir bindir TMPDIR TOP_PWD
+  endif
+
+  all :: $(DYN_LOADABLE_BITS)
+--- 65,71 ----
+  ifeq "$(BIN_DIST)" "1"
+  SCRIPT_PREFIX_FILES=prefix.txt
+  else
+! SCRIPT_SUBST_VARS += libdir includedir libexecdir datadir bindir GHC_TMPDIR TOP_PWD
+  endif
+
+  all :: $(DYN_LOADABLE_BITS)
+*** ghc/driver/ghc.lprl~	Wed Aug  9 14:55:39 2000
+--- ghc/driver/ghc.lprl		Sat Sep  2 16:56:16 2000
+***************
+*** 108,114 ****
+  
+  bindir libdir libexecdir datadir
+  
+! CURRENT_DIR TMPDIR
+  
+  GHC_LIB_DIR GHC_RUNTIME_DIR GHC_INCLUDE_DIR
+  
+--- 108,114 ----
+  
+  bindir libdir libexecdir datadir
+  
+! CURRENT_DIR GHC_TMPDIR
+  
+  GHC_LIB_DIR GHC_RUNTIME_DIR GHC_INCLUDE_DIR
+  
+***************
+*** 157,177 ****
+  @INC = ( ( $INSTALLING ) ? $InstLibDirGhc
+  			   : "$TopPwd/${CURRENT_DIR}" );
+  
+! $ENV{'TMPDIR'} = $TMPDIR if $TargetPlatform =~ /^.*(cygwin32|mingw32)$/;
+! if ( $ENV{'TMPDIR'} ) { # where to make tmp file names
+!     # Try to find a $Tmp_prefix which isn't being used...
+!     $tmp = $$;
+!     do {
+!       $Tmp_prefix = ($ENV{'TMPDIR'} . "/ghc$tmp");
+!       $tmp++;
+!     } while ( -e "$Tmp_prefix.hc" ||
+! 	      -e "$Tmp_Prefix.s"  || 
+! 	      -e "$Tmp_Prefix.hi" );
+! } else {
+!     print STDERR "TMPDIR has not been set to anything useful!\n" if (${TMPDIR} eq '');
+!     $Tmp_prefix ="${TMPDIR}/ghc$$"; # TMPDIR set via Makefile when booting..
+!     $ENV{'TMPDIR'} = ${TMPDIR}; # set the env var as well
+  }
+  
+  # Some shells run into real trouble when command line and environment
+  # gets big (e.g., cmd lines of >4K to /bin/sh causes havoc on our 
+--- 157,177 ----
+  @INC = ( ( $INSTALLING ) ? $InstLibDirGhc
+  			   : "$TopPwd/${CURRENT_DIR}" );
+  
+! $ENV{'TMPDIR'} = ${GHC_TMPDIR} if $TargetPlatform =~ /^.*(cygwin32|mingw32)$/;
+! if ( ! $ENV{'TMPDIR'} ) {
+!     print STDERR "TMPDIR has not been set to anything useful!\n" if (${GHC_TMPDIR} eq '');
+!     $ENV{'TMPDIR'} = ${GHC_TMPDIR}; # set the env var as well
+  }
++ # Try to find a $Tmp_prefix which isn't being used...
++ $tmp = $$;
++ do {
++     $Tmp_prefix = ($ENV{'TMPDIR'} . "/ghc$tmp");
++     $tmp++;
++ } while ( -e "$Tmp_prefix.hc" ||
++         -e "$Tmp_Prefix.s"  ||
++         -e "$Tmp_Prefix.hi" );
+  
+  # Some shells run into real trouble when command line and environment
+  # gets big (e.g., cmd lines of >4K to /bin/sh causes havoc on our 

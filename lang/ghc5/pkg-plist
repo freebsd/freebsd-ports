@@ -1,5 +1,5 @@
 bin/ghc
-bin/ghc-4.08
+bin/ghc-4.08.1
 bin/ghcprof
 bin/hp2ps
 bin/stat2resid
