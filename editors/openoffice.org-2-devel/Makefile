@@ -10,7 +10,7 @@ PORTVERSION=	641c
 CATEGORIES=	editors x11
 MASTER_SITES=	http://sf1.mirror.openoffice.org/641c/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
-		ftp://ftp.netbsd.org/pub/NetBSD/misc/mrauch/ 
+		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
 EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
@@ -83,9 +83,9 @@ post-extract:
 	done
 	${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	${CP} ${WRKDIR}/NETBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip
-	${CP} ${WRKDIR}/NETBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip
-	${CP} ${WRKDIR}/NETBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip
+	${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
+	${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
+	${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 
 post-patch:
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
