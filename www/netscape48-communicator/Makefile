@@ -8,32 +8,7 @@
 PORTNAME?=	linux-netscape-${BROWSER_NAME}
 PORTVERSION=	${BROWSER_VER}
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.cuhk.edu.hk/pub/www/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.spin.ad.jp/pub/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.kmitl.ac.th/pub/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.tuwien.ac.at/z134/infosys/browsers/netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.euronet.be/pub/mirror/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.uni-heidelberg.de/pub/Netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.cica.es/pub5/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.calvacom.fr/pub1/browser/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.ciril.fr/pub1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.uniroma2.it/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.nluug.nl/vol/2/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.ntnu.no/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://sunsite.uio.no/pub/network/web/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.man.poznan.pl/vols/vol1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.uakom.sk/pub/WWW/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.unicamp.br/pub6/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.mox.uniandes.edu.co/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.nsu.ru/pub/mirrors/ftp-de.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.curtin.edu.au/pub/internet/netscape/${NETSCAPE_DIST_SUBDIR}/
+MASTER_SITES=	${MASTER_SITE_NETSCAPE}
 DISTFILES=	${BROWSER_NAME}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MAINTAINER=	sada@FreeBSD.org
@@ -50,7 +25,7 @@ STRIP=		# null
 #PKGDIR=	${.CURDIR}
 PLIST_SUB=	BROWSER=${BROWSER_ARC} BROWSER_VER=${BROWSER_VER} \
 		NSUBDIR=${NSUBDIR}
-
+MASTER_SITE_SUBDIR=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 
 BROWSER_NAME?=	communicator
 BROWSER_ARC=	${BROWSER_NAME}-linux
@@ -61,7 +36,6 @@ NETSCAPE_DIST_GRADE=	navigator_standalone
 .endif
 NETSCAPE_DIST_GRADE?=	complete_install
 NETSCAPE_DIST_ARCH=	supported/linux22
-NETSCAPE_DIST_SUBDIR=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 NETSCAPE_DIST_TAG=	x86-unknown-linux2.2
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR=	lib/netscape-linux
