@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 bin/babel
+libexec/babel
 share/babel/element.lis
 share/babel/new.lis
 share/babel/quanta.lis

@@ -7,8 +7,8 @@
 
 PORTNAME=	babel
 PORTVERSION=	1.6
-PORTREVISION=	1
-CATEGORIES=	biology
+PORTREVISION=	2
+CATEGORIES=	biology converters
 MASTER_SITES=	http://smog.com/chem/babel/files/ \
 		http://www.ccl.net/cca/software/UNIX/babel/ \
 		ftp://ccl.osc.edu/pub/chemistry/software/UNIX/babel/
@@ -18,14 +18,18 @@ MAINTAINER=	ports@FreeBSD.org
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+post-build:
+	${SED} -e 's%@PREFIX@%${PREFIX}%g' \
+		${FILESDIR}/babel.sh >${WRKSRC}/babel.sh
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/babel ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/babel ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/babel.sh ${PREFIX}/bin/babel
 	@${MKDIR} ${PREFIX}/share/babel
 	${INSTALL_DATA} ${WRKSRC}/*.lis ${PREFIX}/share/babel
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/babel
 	${INSTALL_DATA} ${WRKSRC}/README.1ST ${PREFIX}/share/doc/babel
 .endif
-	@${SED} -e 's:/usr/local:${PREFIX}:' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
