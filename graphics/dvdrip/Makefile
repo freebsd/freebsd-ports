@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.44
-CATEGORIES=	graphics
+PORTVERSION=	0.48.8
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
@@ -23,15 +23,21 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable
 RUN_DEPENDS+=	xine:${PORTSDIR}/graphics/xine \
 		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/graphics/xine_d4d_plugin
 .endif
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick \
-		transcode:${PORTSDIR}/graphics/transcode
+RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		mkisofs:${PORTSDIR}/sysutils/mkisofs \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		transcode:${PORTSDIR}/graphics/transcode \
+		vcdimager:${PORTSDIR}/graphics/vcdimager
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
 
-MAN1=		splitpipe.1
+MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Video::DVDRip.3
@@ -48,7 +54,7 @@ pre-everything::
 .if !defined(WITH_XINE)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_XINE to pull in XINE as a dependency"
-	@${ECHO_MSG} "(used for previewing DVDs prior to ripping)"
+	@${ECHO_MSG} "(alternative DVD previewer)"
 	@${ECHO_MSG}
 .endif
 
@@ -61,5 +67,9 @@ post-patch:
 		${WRKSRC}/dvdrip-master
 	@${PERL} -pi -e 's#cc#${CC}#' \
 		${WRKSRC}/src/Makefile
+	@${FIND} ${WRKSRC} -name *.orig -delete
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
