@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri Apr 28 13:11:32 2000
++++ Makefile	Thu May 11 01:52:23 2000
+@@ -30,10 +30,10 @@
+ endif
+ 
+ # common definition
+-LD=gcc
++#LD=gcc
+ #LD=gcc -Wl,-Map,gogo.map
+ LIBS=-lm
+-CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-pointer -funroll-loops
++#CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-pointer -funroll-loops
+ # This option is available for gcc-2.8.x
+ #CC=gcc -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
+ # This option is available for gcc-2.95.1, gcc-2.95.2, gcc-2.95.3,...
