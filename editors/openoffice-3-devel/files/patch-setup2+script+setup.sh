@@ -5,8 +5,8 @@
  	 export LD_LIBRARY_PATH
  	 ;;
 +  FreeBSD)
-+	 LD_LIBRARYN32_PATH=${sd_archive_path}:.
-+	 export LD_LIBRARYN32_PATH
++	 LD_LIBRARY_PATH=${sd_archive_path}:.
++	 export LD_LIBRARY_PATH
 +	 ;;
    Darwin)
  	 DYLD_LIBRARY_PATH=${sd_archive_path}:.
