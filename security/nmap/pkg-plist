@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nmap
 share/nmap/nmap-os-fingerprints
 share/nmap/nmap-protocols
