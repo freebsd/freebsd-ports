@@ -14,22 +14,18 @@ DISTNAME=	SDL_net-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		GUI.0:${PORTSDIR}/graphics/guilib
+LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_LIBTOOL=	yes
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-
-post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|-release \$$\(LT_RELEASE\)||g'
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+			${WRKSRC}/libtool
 
 .include <bsd.port.mk>
