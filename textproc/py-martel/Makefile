@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	martel
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	textproc biology python
 MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
 PKGNAMEPREFIX=	py-
@@ -15,11 +14,9 @@ DISTNAME=	Martel-${PORTVERSION}
 
 MAINTAINER=	johann@egenetics.com
 
-RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/TextTools/__init__.py:${PORTSDIR}/textproc/py-mxTextTools
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/TextTools/__init__.py:${PORTSDIR}/textproc/py-mxTextTools
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Martel
-USE_PYTHON=	yes
+PYTHON_VERSION=	python2.0
 NO_BUILD=	yes
 
 MARTEL_DIR=	${PYTHON_SITELIBDIR}/Martel
