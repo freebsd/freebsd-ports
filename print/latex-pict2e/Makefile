@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	latex-pict2e
-PORTVERSION=	0.2.20040219
+PORTVERSION=	0.2.20040806
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/pict2e
-DISTFILES=	README.pict2e p2e-drivers.dtx pict2e.dtx pict2e.ins pict2e.pdf
+DISTFILES=	p2e-drivers.dtx pict2e.dtx pict2e.ins ${DOC_FILES}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -37,7 +38,7 @@ CLASS_FILES=	p2e-drivers.dtx p2e-dvipdfm.def p2e-dvips.def \
 		pict2e-example.cfg pict2e.dtx pict2e.ins pict2e.sty \
 		pict2e.cfg
 
-DOC_FILES=	README.pict2e pict2e.pdf
+DOC_FILES=	README pict2e.pdf p2e-drivers.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
