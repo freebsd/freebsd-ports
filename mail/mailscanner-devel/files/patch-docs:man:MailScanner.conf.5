@@ -1,106 +1,187 @@
---- ../MailScanner-4.21-9.orig/docs/man/MailScanner.conf.5	Sun May 11 02:35:52 2003
-+++ docs/man/MailScanner.conf.5	Thu Jun 12 15:29:18 2003
+--- ../MailScanner-4.22-5.old/docs/man/MailScanner.conf.5	Mon Aug 11 12:15:30 2003
++++ docs/man/MailScanner.conf.5	Mon Aug 11 12:36:06 2003
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.14-5" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.21-9" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.22-4" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.23" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -303,7 +303,7 @@
+@@ -279,9 +279,15 @@
  .br 
  
  .br 
--Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kavdaemonclient, inoculate, onoculan, nod32, f\-secure, f\-prot, panda, rav, antivir, clamav, trend, none (no virus scanning at all)
-+Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kavdaemonclient, inoculate, onoculan, nod32, f\-secure, f\-prot, panda, rav, antivir, clamav, trend, bitdefender, none (no virus scanning at all)
+-Anything on the next line that appears in brackets at the end of a line of output from Sophos will cause the error/infection to be ignored. Use of this option is dangerous, and should only be used if you are having trouble with lots of corrupt PDF files, for example. Example: 
++Anything on the next line that appears in brackets at the end of a line of output from Sophos will cause the error/infection to be ignored. Use of this option is dangerous, and should only be used if you are having trouble with lots of corrupt PDF files, for example. This option allows for multiple strings as well. In this case, the strings should be put in double quotes (") and each string separated with commas. Examples: 
  .br 
- 
- .br 
-@@ -335,7 +335,12 @@
- .br 
- 
- .br 
--Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. 
-+Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 2 special keywords
+ Allowed Sophos Error Messages = corrupt format not supported
 +.br 
-+HTML\-IFrame: inserting this will stop senders being warned about HTML Iframe tags, when they are not allowed.
++Allowed Sophos Error Messages = "corrupt", "format not supported"
 +.br 
-+HTML\-Codebase: inserting this will stop senders being warned about HTML Object Codebase tags, when they are not allowed.
 +
++.br 
++The first version will match "corrupt format not supported" only. The second version will match "corrupt" and "format not supported".
  
  .TP 
- \fBStill Deliver Silent Viruses\fR
-@@ -621,6 +626,15 @@
- If this is set to yes then you get the normal fully detailed spam report in spam messages. If this is set to no then you simply get a "spam" or "not spam" report. The exact text inserted can be configured in the languages.conf file for your language. 
+ \fBSophos IDE Dir\fR
+@@ -358,11 +364,13 @@
+ .br 
+ 
+ .br 
+-Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 2 special keywords
++Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 3 special keywords
+ .br 
+ HTML\-IFrame: inserting this will stop senders being warned about HTML Iframe tags, when they are not allowed.
+ .br 
+ HTML\-Codebase: inserting this will stop senders being warned about HTML Object Codebase tags, when they are not allowed.
++.br 
++All\-Viruses: inserting this will stop senders being warned about any virus, while still allowing you to warn senders about HTML\-based attacks.
+ 
  
  .TP 
-+\fBInclude Scores In SpamAssassin Report\fR
+@@ -539,7 +547,31 @@
+ .br 
+ 
+ .br 
+-When an attachment is deleted from a message (and the attachment has been stored in the quarantine) because the filename failed the filename rules in force for the message, it is replaced by the contents of this file. A few variable substitutions can be made in this file, an example of each of which is contained in the supplied sample file. 
++When an attachment is deleted and stored from a message (and the attachment has been stored in the quarantine) because the filename failed the filename rules in force for the message, it is replaced by the contents of this file. A few variable substitutions can be made in this file, an example of each of which is contained in the supplied sample file. 
++
++.TP 
++\fBDeleted Bad Content Message Report\fR
++Default: /opt/MailScanner/etc/reports/en/deleted.content.message.txt
++.br 
++Default Linux: /etc/MailScanner/reports/en/deleted.content.message.txt
++.br 
++Default FreeBSD: /usr/local/share/MailScanner/reports/en/deleted.content.message.txt
++.br 
++
++.br 
++This report is sent when a message is deleted because it contained bad or dangerous content. A few variable substitutions can be made in this file, an example of each of which is contained in the supplied sample file. 
++
++.TP 
++\fBStored Bad Content Message Report\fR
++Default: /opt/MailScanner/etc/reports/en/stored.content.message.txt
++.br 
++Default Linux: /etc/MailScanner/reports/en/stored.content.message.txt
++.br 
++Default FreeBSD: /usr/local/share/MailScanner/reports/en/stored.content.message.txt
++.br 
++
++.br 
++This report is sent when a message is stored because it contained bad or dangerous content. A few variable substitutions can be made in this file, an example of each of which is contained in the supplied sample file. 
+ 
+ .TP 
+ \fBDisinfected Report\fR
+@@ -600,7 +632,8 @@
+ 
+ .br 
+ When an attachment is trapped by the filename rules, this message is sent back to the sender. 
+-:
++
++
+ .TP 
+ \fBSender Virus Report\fR
+ Default: /opt/MailScanner/etc/reports/en/sender.virus.report.txt
+@@ -613,6 +646,7 @@
+ .br 
+ When an attachment is removed because of a virus, this message is sent back to the sender. 
+ 
++
+ .TP 
+ \fBHide Incoming Work Dir\fR
+ Default: yes
+@@ -623,11 +657,13 @@
+ 
+ .TP 
+ \fBInclude Scanner Name in Reports\fR
+-Default: no
++Default: yes
+ .br 
+ 
+ .br 
+-Include the name of the virus scanner in each of the scanner reports. Very useful if you use several virus scanners, but a bad idea if you don't want to let your customers know which scanners you use.
++Include the name of the virus scanner in each of the scanner reports. This also includes the translation of "MailScanner" in each of the report lines resulting from one of MailScanner's own checks such as filename, filetype or dangerous HTML content. To change the name "MailScanner", look in reports/...../languages.conf.
++.br 
++Very useful if you use several virus scanners, but a bad idea if you don't want to let your customers know which scanners you use.
+ .SH "Changes to message headers"
+ .TP 
+ \fBMail Header\fR
+@@ -839,17 +875,34 @@
+ .br 
+ 
+ .br 
+-If this is set, then the "Subject:" line of a message that had an attachment with a dangerous filename will have the "Virus Subject Text" text inserted at the start. 
++If this is set, then the "Subject:" line of a message that had an attachment with a dangerous filename will have the "Filename Subject Text" text inserted at the start. 
+ 
+ .TP 
+ \fBFilename Subject Text\fR
+-Default: yes
++Default: {Virus?}
+ .br 
+ 
+ .br 
+ This is the text inserted at the start of the "Subject:" line if the "Filename Modify Subject" option is set. 
+ 
+ .TP 
++\fBContent Modify Subject\fR
 +Default: yes
 +.br 
 +
 +.br 
-+Do you want to include the numerical scores in the detailed SpamAssassin report, or just list the names of the scores?
++If this is set, then the "Subject:" line of a message that triggered a content check without anything else wrong in the message will have the "Content Subject Text" text inserted at the start. 
++
++.TP 
++\fBContent Subject Text\fR
++Default: {Filename?}
++.br 
++
++.br 
++This is the text inserted at the start of the "Subject:" line if the "Content Modify Subject" option is set. 
 +
 +
 +.TP 
- \fBSpam Score Character\fR
- Default: s
+ \fBSpam Modify Subject\fR
+ Default: yes
  .br 
-@@ -979,6 +993,14 @@
- This provides a space\-separated list of "Spam Lists" (or RBL's or DNSBL's) which are checked for each message. These lists are based on the domain name of the sender address of each message. Every list used here must be defined in the "Spam List Definitions" file mentioned above. 
+@@ -1081,6 +1134,14 @@
+ .br 
+ This option would normally be a ruleset. Any messages for which the ruleset result is "yes" will always be marked as spam. This is used to create a spam "blacklist" of addresses of known spammers. 
  
- .TP 
-+\fBSpam Lists To Reach High Score\fR
-+Default: 5
++.TP 
++\fBDefinite Spam Is High Scoring\fR
++Default: no
 +.br 
 +
 +.br 
-+If a message appears in at least this number of "Spam Lists" (as defined above), then the message will be treated as "High Scoring Spam" and so the "High Scoring Spam Actions" will happen. You probably want to set this to 2 if you are actually using this feature. 5 is high enough that it will never happen unless you use lots of "Spam Lists". This can also be the filename of a ruleset.
++Setting this to yes means that spam found in the blacklist is treated as "High Scoring Spam" in the "Spam Actions" section below. Setting it to no means that it will be treated as "normal" spam. This can also be the filename of a ruleset.
++
+ .SH "SpamAssassin"
+ .TP 
+ \fBUse SpamAssassin\fR
+@@ -1411,6 +1472,27 @@
+ 
+ .br 
+ Are you using Exim with split spool directories? If you don't understand this, the answer is probably "no". Refer to the Exim documentation for more information about split spool directories.
 +
 +.TP 
- \fBSpam List Timeout\fR
- Default: 10
- .br 
-@@ -1146,6 +1168,9 @@
- .br 
- "striphtml" \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
- 
-+.br 
-+"attachment" \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
-+
- .TP 
- \fBHigh Scoring Spam Actions\fR
- Default: deliver
-@@ -1155,6 +1180,14 @@
- This is the same as the "Spam Actions" option above, but it gives the actions to apply to any message whose SpamAssassin score is above the "High Scoring" threshold described above. 
- 
- .TP 
-+\fBNon Spam Actions\fR
-+Default: deliver
++\fBUse Default Rules With Multiple Recipients\fR
++Default: no
 +.br 
 +
 +.br 
-+This is the same as the "Spam Actions" option above, except that it applies to messages that are NOT spam. The bounce option does not make much sense here so do not use it.
-+
-+.TP 
- \fBSender Spam Report\fR
- Default: /opt/MailScanner/etc/reports/en/sender.spam.report.txt
- .br 
-@@ -1189,6 +1222,18 @@
- 
- .br 
- When the "bounce" spam action is applied to a message that triggered SpamAssassin, this file gives the text to put in that message. 
-+
-+.TP 
-+\fBInline Spam Warning\fR
-+Default: /opt/MailScanner/etc/reports/en/inline.spam.warning.txt
-+.br 
-+Default Linux: /etc/MailScanner/reports/en/inline.spam.warning.txt
-+.br 
-+Default FreeBSD: /usr/local/share/MailScanner/reports/en/inline.spam.warning.txt
++When trying to work out the value of configuration parameters which are using a ruleset, this controls the behaviour when a rule is checking the  "To:" addresses.  If this option is set to "yes", then the following happens when checking the ruleset:
 +.br 
 +
 +.br 
-+If you use the 'attachment' Spam Action or High Scoring Spam Action then this is the location of inline spam report that is inserted at the top of the message.
- .SH "System logging"
- .TP 
- \fBSyslog Facility\fR
++a) 1 recipient. Same behaviour as normal.
++.br 
++b) Several recipients, but all in the same domain (domain.com for example). The rules are checked for one that matches the string "*@domain.com".
++.br 
++c) Several recipients, not all in the same domain. The rules are checked for one that matches the string "*@*".
++.br 
++
++.br 
++If this option is set to "no", then some rules will use the result they get from the first matching rule for any of the recipients of a message, so the exact value cannot be predicted for messages with more than 1 recipient. This value *cannot* be the filename of a ruleset.
++
+ .SH "RULESETS"
+ .LP 
+ Ruleset files should all be put in /opt/MailScanner/etc/rules (FreeBSD: /usr/local/etc/MailScanner/rules) and their filename should end in ".rules" wherever possible.

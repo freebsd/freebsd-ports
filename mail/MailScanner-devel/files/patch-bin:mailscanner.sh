@@ -1,5 +1,5 @@
---- ../MailScanner-4.21-9.orig/bin/mailscanner.sh	Thu Jan  1 01:00:00 1970
-+++ bin/mailscanner.sh	Thu Jun 12 15:29:39 2003
+--- ../MailScanner-4.22-5.old/bin/mailscanner.sh	Thu Jan  1 01:00:00 1970
++++ bin/mailscanner.sh	Mon Aug 11 12:36:06 2003
 @@ -0,0 +1,55 @@
 +#!/bin/sh
 +

@@ -1,5 +1,5 @@
---- ../MailScanner-4.21-9.orig/docs/README.FreeBSD.port	Thu Jan  1 01:00:00 1970
-+++ docs/README.FreeBSD.port	Thu Jun 12 15:29:39 2003
+--- ../MailScanner-4.22-5.old/docs/README.FreeBSD.port	Thu Jan  1 01:00:00 1970
++++ docs/README.FreeBSD.port	Mon Aug 11 12:36:06 2003
 @@ -0,0 +1,48 @@
 +The MailScanner port is using the original MailScanner tarball from 
 +www.mailscanner.info. This tarball puts all the MailScanner files in 

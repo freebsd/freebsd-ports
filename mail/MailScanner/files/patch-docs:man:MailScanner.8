@@ -1,8 +1,122 @@
---- ../MailScanner-4.21-9.orig/docs/man/MailScanner.8	Tue Mar 25 12:37:38 2003
-+++ docs/man/MailScanner.8	Thu Jun 12 15:29:07 2003
-@@ -1,4 +1,4 @@
--.TH "MailScanner" "8" "4.14-5" "Julian Field" "Mail"
-+.TH "MailScanner" "8" "4.21-9" "Julian Field" "Mail"
- .SH "NAME"
- .LP 
- MailScanner \- Virus/Spam Scanner for Sendmail and Exim
+--- ../MailScanner-4.22-5.old/docs/man/MailScanner.8	Mon Aug 11 12:15:30 2003
++++ docs/man/MailScanner.8	Mon Aug 11 12:36:06 2003
+@@ -1,102 +1,17 @@
+-.TH "MailScanner" "8" "4.22-4" "Julian Field" "Mail"
+-.SH "NAME"
+-.LP 
+-MailScanner \- Virus/Spam Scanner for Sendmail and Exim
+-.SH "SYNOPSIS"
+-.LP 
+-\fBMailScanner\fR [\fIconfigfile\fR]
+-
+-.SH "DESCRIPTION"
+-.LP 
+-\fBMailScanner\fR starts the main MailScanner process. [\fIconfigfile\fR] should point to a valid MailScanner configuration file (see MailScanner.conf(3) for details). The default location for this file depends on the operating system.
+-.br 
+-
+-.br 
+-Linux: /etc/MailScanner/MailScanner.conf
+-.br 
+-
+-.br 
+-FreeBSD: /usr/local/etc/MailScanner/MailScanner.conf
+-.br 
+-
+-.br 
+-Other: /opt/MailScanner/etc/MailScanner.conf
+-
+-.LP 
+-The main process then spawns \fIn\fR number of child processes. \fIn\fR is configured in [\fIconfigfile\fR] with the option "Max Children". Each process waits for messages to appear in the "Incoming Queue Dir", processes these messages and then puts them in the "Outgoing Queue Dir". You may need to adjust the configuration of your MTA (or the startup of your MTA) to make it work with MailScanner.
+-
+-.SH "MTA SETUP"
+-.LP 
+-It is important that your MTA only queues incoming mail and does not deliver it automatically. You need two mail queues (incoming and outgoing). Moreover you should setup two instances of your MTA. One that accepts incoming mail and puts it to an incoming queue and one that sends out mail that resides in the outgoing queue. 
+-
+-.LP 
+-A common setup for Sendmail could look like this:
+-.br 
+-
+-.br 
+-1. Verify that you already have one queue (e.g. in /var/spool/mqueue).
+-.br 
+-
+-.br 
+-2. Create a second queue (e.g. /var/spool/mqueue.in) and apply the same owner/group/mode.
+-.br 
+-
+-.br 
+-3. Change your sendmail startup from
+-.br 
+-
+-.br 
+-    sendmail \-bd \-q15m (or similar)
+-.br 
+-
+-.br 
+-   to
+-.br 
+-
+-.br 
+-    sendmail \-bd \-OPrivacyOptions=noetrn \-ODeliveryMode=queueonly \-OQueueDirectory=/var/spool/mqueue.in
+-.br 
+-    sendmail \-q15m
+-
+-.LP 
+-A similar setup for Exim could look like this:
+-.br 
+-
+-.br 
+-1. Create two queues (e.g. /var/spool/exim.in and /var/spool/exim.out) with appropriate owner/group/mode (e.g. owner=mailnull, group=mail, mode=750).
+-.br 
+-
+-.br 
+-2. Create two exim configurations (e.g. /usr/local/etc/exim/configure.in, /usr/local/etc/exim/configure.out).
+-.br 
+-
+-.br 
+-3. Make sure that the incoming exim configuration only queues mails and never delivers mail itself. This can be achieved by using the Exim config option "queue_only = true" and/or a special router definition (Exim 4 syntax):
+-.br 
+-
+-.br 
+-    defer_router:
+-.br 
+-    driver = manualroute
+-.br 
+-    self = defer   
+-.br 
+-    transport = remote_smtp
+-.br 
+-    route_list = *  127.0.0.1  byname
+-.br 
+-    verify = false
+-.br 
+-
+-.br 
+-4. Start two exim instances:
+-.br 
+-
+-.br 
+-    exim \-C /usr/local/etc/exim/configure.in
+-.br 
+-    exim \-C /usr/local/etc/exim/configure.out
+-
+-.SH "SEE ALSO"
+-.LP 
+-MailScanner.conf(3)
++<!-- Creator     : groff version 1.19 -->
++<!-- CreationDate: Mon Aug 11 12:28:56 2003 -->
++<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
++"http://www.w3.org/TR/html4/loose.dtd">
++<html>
++<head>
++<meta name="generator" content="groff -Thtml, see www.gnu.org">
++<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
++<meta name="Content-Style" content="text/css">
++<title></title>
++</head>
++<body>
++
++<hr>
++<hr>
++</body>
++</html>

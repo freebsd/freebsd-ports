@@ -1,5 +1,5 @@
---- ../MailScanner-4.21-9.orig/lib/MailScanner/SystemDefs.pm	Sun Nov 10 16:02:15 2002
-+++ lib/MailScanner/SystemDefs.pm	Thu Jun 12 15:29:39 2003
+--- ../MailScanner-4.22-5.old/lib/MailScanner/SystemDefs.pm	Mon Aug 11 12:15:30 2003
++++ lib/MailScanner/SystemDefs.pm	Mon Aug 11 12:36:06 2003
 @@ -36,6 +36,6 @@
  $global::rm  = '/bin/rm';
  $global::cp  = '/bin/cp';
