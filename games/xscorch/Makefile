@@ -19,6 +19,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk
@@ -27,9 +28,9 @@ MAN6=		xscorch.6
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomeprefix gnomelibs
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif
