@@ -49,11 +49,11 @@ $COMMITCHECK_EXTRA = sub {
 my $hostname = `/bin/hostname`;
 die "Can't determine hostname!\n" if $? >> 8;
 chomp $hostname;
-if ($hostname =~ /^freefall\.freebsd\.org$/i) {
+if ($hostname =~ /^repoman\.freebsd\.org$/i) {
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 	$MAILADDRS = 'cvs@FreeBSD.org' if $DEBUG;
 
-	@COMMIT_HOSTS = qw(freefall.freebsd.org);
+	@COMMIT_HOSTS = qw(repoman.freebsd.org);
 }
 
 
