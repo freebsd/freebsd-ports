@@ -12,8 +12,6 @@ MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
 MAINTAINER=	stijn@win.tue.nl
 
-RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
