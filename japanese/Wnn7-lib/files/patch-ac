@@ -1,31 +1,43 @@
---- config/X11.tmpl.orig	Wed Oct 28 13:36:37 1998
-+++ config/X11.tmpl	Sun Nov 22 01:24:46 1998
-@@ -417,7 +417,8 @@
+--- work/src/config/X11.tmpl~	Wed Oct 17 10:37:18 2001
++++ config/X11.tmpl	Sat Oct 19 18:08:32 2002
+@@ -510,7 +510,7 @@
+ #endif
  
- #define	WnnSpecialObjectRule(obj, depends, direct, define)	@@\
- obj : depends							@@\
--	$(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c	@@\
-+	(cd unshared ; $(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c)	@@\
-+	$(CC) -c $(CFLAGS) define $(SHLIBDEF) $(SHAREDCODEDEF) $(PICFLAGS) direct/`basename $@ .o`.c	@@\
+ #ifndef WnnWnnDir
+-#define WnnWnnDir	/usr/lib/wnn7
++#define WnnWnnDir	/usr/local/lib/wnn7
+ #endif
  
- #ifdef	MakeDir
- #undef MakeDir
-@@ -520,7 +521,9 @@
+ #ifndef WnnEtcDir
+@@ -522,11 +522,11 @@
+ #endif
+ 
+ #ifndef WnnIncDir
+-#define WnnIncDir	$(INCROOT)
++#define WnnIncDir	/usr/local/include/wnn7
  #endif
  
  #ifndef WnnLibDir
 -#define WnnLibDir	$(USRLIBDIR)
-+#undef UsrLibDirPath
-+#define UsrLibDirPath	/usr/local/lib
 +#define WnnLibDir	/usr/local/lib
  #endif
  
-        WNNOWNER = WnnOwner
-@@ -660,6 +663,7 @@
- XCOMM for SDK
- #define BuildWnn	YES
- #define BuildJlib	YES
-+#define InstallOnlyJlib	YES
+ #ifndef WnnVarDir
+@@ -534,7 +534,7 @@
+ #endif
  
-  EXTRA_INCLUDES =
-   EXTRA_DEFINES =
+ #ifndef WnnShareDir
+-#define WnnShareDir	/usr/share/wnn7
++#define WnnShareDir	/usr/local/share/wnn7
+ #endif
+ 
+        WNNOWNER = WnnOwner
+@@ -599,7 +599,7 @@
+      XWNMOJDSRC = $(XWNMOTOP)/jd
+ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
+   XWNMOINCLUDES = -I$(XWNMOROMKANMSRC) -I$(WNNINCLUDESRC)
+-      XWNMOJLIB = $(XWNMOJLIBSRC)/libwnn_m.a
++      XWNMOJLIB = $(XWNMOJLIBSRC)/libwnn7_m.a
+  XWNMOLIBRARIES = $(XWNMOJLIB)
+       XWNMODEFS = $(XVERSION) -DUSING_BUSHU
+      XCOMMONDIR = $(IMTOP)/XClient/Common/src

@@ -1,63 +1,45 @@
-diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
---- src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile	Wed Oct 28 13:36:30 1998
-+++ Wnn/jlib/Imakefile	Fri Oct 30 03:42:54 1998
-@@ -4,7 +4,7 @@
- 
- #ifdef NEED_DEFINE_LIB
- #define DoNormalLib YES
--#define DoSharedLib NO
-+#define DoSharedLib YES
- #define DoDebugLib NO
- #define DoProfileLib NO
- #endif
-@@ -55,13 +55,29 @@
- 	$(WNNROMKANSRC)/rk_vars.o \
- 	$(WNNROMKANSRC)/rk_multi.o
- 
-+UNSHARED_LOCAL_RKOBJS= $(WNNROMKANSRC)/unshared/rk_bltinfn.o \
-+	$(WNNROMKANSRC)/unshared/rk_main.o \
-+	$(WNNROMKANSRC)/unshared/rk_modread.o \
-+	$(WNNROMKANSRC)/unshared/rk_read.o \
-+	$(WNNROMKANSRC)/unshared/rk_vars.o \
-+	$(WNNROMKANSRC)/unshared/rk_multi.o
-+
- LOCAL_ETCSRCS = $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
- LOCAL_ETCOBJS = $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
- SRCS= $(SRC1) $(LOCAL_ETCSRCS)
- OBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
-+UNSHAREDOBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
-+
-+
-+SOWNN6LIBREV=1.0
+--- work/src/Wnn/jlib/Imakefile	Wed Oct 17 10:37:17 2001
++++ Wnn/jlib/Imakefile	Sat Oct 19 17:15:25 2002
+@@ -60,9 +60,9 @@
  
  LibraryObjectRule()
-+
-+#if DoSharedLib
-+AllTarget($(OBJS) libwnn6_fromsrc.a libwnn6.so.$(SOWNN6LIBREV))
-+#else
- AllTarget($(OBJS) libwnn6_fromsrc.a)
-+#endif
+ #if DoSharedLib
+-AllTarget($(OBJS) libwnn.a libwnn.so.$(SOWNN7LIBREV))
++AllTarget($(OBJS) libwnn7.a libwnn7.so.$(SOWNN7LIBREV))
+ #else
+-AllTarget($(OBJS) libwnn.a)
++AllTarget($(OBJS) libwnn7.a)
+ #endif
  
  
- js.o : js.c \
-@@ -72,10 +88,19 @@
- 
+@@ -75,23 +75,23 @@
  SingleProgramTarget(kankana,kankana.o,$(WNNJLIB),)
  
--NormalLibraryTarget(wnn6_fromsrc,$(OBJS))
-+
-+#if DoSharedLib
-+SharedLibraryTarget(wnn6,$(SOWNN6LIBREV),$(OBJS),.,.)
-+#endif
-+
-+UnsharedLibraryTarget(wnn6_fromsrc,$(UNSHAREDOBJS),unshared,..)
- LintLibraryTarget(wnn6_fromsrc,$(SRCS))
+ #if DoSharedLib
+-SharedLibraryTarget(wnn,$(SOWNN7LIBREV),$(OBJS),.,.)
++SharedLibraryTarget(wnn7,$(SOWNN7LIBREV),$(OBJS),.,.)
+ #endif
+-UnsharedLibraryTarget(wnn,$(UNSHAREDOBJS),unshared,..)
+-LintLibraryTarget(wnn,$(SRCS))
++UnsharedLibraryTarget(wnn7,$(UNSHAREDOBJS),unshared,..)
++LintLibraryTarget(wnn7,$(SRCS))
+ 
+ 
  
  instlib:: install
-+
-+#if DoSharedLib
-+InstallSharedLibrary(wnn6,$(SOWNN6LIBREV),$(WNNLIBDIR))
-+#endif
  
- InstallLibrary(wnn6_fromsrc,$(WNNLIBDIR))
+ #if DoSharedLib
+-InstallSharedLibrary(wnn,$(SOWNN7LIBREV),$(WNNLIBDIR))
++InstallSharedLibrary(wnn7,$(SOWNN7LIBREV),$(WNNLIBDIR))
+ #endif
+-InstallLibrary(wnn,$(WNNLIBDIR))
++InstallLibrary(wnn7,$(WNNLIBDIR))
  
+ #if ProfileLibJlib
+-ProfiledLibraryTarget(wnn,$(OBJS))
+-InstallLibrary(wnn_p,$(WNNLIBDIR))
++ProfiledLibraryTarget(wnn7,$(OBJS))
++InstallLibrary(wnn7_p,$(WNNLIBDIR))
+ #endif
+ 
+ #if DoSharedLib
