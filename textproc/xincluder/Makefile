@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xincluder
-PORTVERSION=	1.0.d10
+PORTVERSION=	1.0.d11
 PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/languages/java/javafaq/
-DISTNAME=	${PORTNAME}
+DISTNAME=	${PORTNAME}-1.0d11
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java-based XInclude processors
@@ -27,7 +27,7 @@ ANT_TARGET=	jar javadoc
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
-WRKSRC=		${WRKDIR}/XInclude
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
