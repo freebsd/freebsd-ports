@@ -8,7 +8,7 @@
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}.b${JP_SUBVERSION}
 CATEGORIES=	japanese mail
-MASTER_SITES=	http://www.ne.jp/asahi/cyber/taki/unix-mailer/mutt-dev/ \
+MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/ \
 		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
@@ -30,9 +30,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
 PRE_VERSION=	1.2
-VERSION=	1.3.9
+VERSION=	1.3.10
 JP_VERSION=	0
-JP_SUBVERSION=	0
+JP_SUBVERSION=	1
 
 DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
