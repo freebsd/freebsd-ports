@@ -7,16 +7,15 @@
 #
 
 PORTNAME=	cscope
-PORTVERSION=	15.1
-PORTREVISION=	3
+PORTVERSION=	15.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
+
 MAN1=		cscope.1
 
 .include <bsd.port.mk>
