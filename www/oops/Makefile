@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oops
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.17
 CATEGORIES=	www
 MASTER_SITES=	http://zipper.paco.net/~igor/oops/
 
@@ -19,7 +19,8 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
 		--localstatedir=/var/run \
 		--libdir=${PREFIX}/libexec/oops \
-		--enable-oops-user=oops
+		--enable-oops-user=oops \
+		--without-DB
 
 MAN8=		oops.8 oopsctl.8
 
