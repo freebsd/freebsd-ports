@@ -186,6 +186,7 @@
     SUBDIR += libart_lgpl2
     SUBDIR += libaux
     SUBDIR += libdjvu++
+    SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libflash
