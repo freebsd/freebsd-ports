@@ -1,6 +1,11 @@
---- ile.c	Tue Jun  8 23:12:33 1993
-+++ ile.c	Tue Jun  4 20:34:21 2002
-@@ -51,7 +51,7 @@
+--- ile.c.orig	Tue Jun  8 20:12:33 1993
++++ ile.c	Sun Nov  3 15:10:18 2002
+@@ -47,11 +47,12 @@
+ #include <string.h>
+ #include <strings.h>
+ #include <pwd.h>
++#include <sys/types.h>
+ #include <utmp.h>
  #include <errno.h>
  #include <sys/ioctl.h>
  #include <sys/types.h>
@@ -9,7 +14,7 @@
  #include <sys/file.h>
  #include <sys/time.h>
  #include <sys/wait.h>
-@@ -63,7 +63,6 @@
+@@ -63,7 +64,6 @@
  /* Definitions of system stuff.  */
  extern int errno;
  
@@ -17,7 +22,7 @@
  char *malloc();
  char *realloc();
  time_t time();
-@@ -113,7 +112,7 @@
+@@ -113,7 +113,7 @@
  struct ltchars tty_ltchars;
  struct winsize tty_winsize;
  int expect_exception, ignorestop, new_prompt, output_complete;
@@ -26,7 +31,7 @@
  int tty_ldisc;
  int tty_mode;
  
-@@ -267,44 +266,46 @@
+@@ -267,44 +267,46 @@
  did, i.e., suspend, abort, exit with the proper status etc.
  */
  void handle_child() {
