@@ -1,0 +1,5 @@
+@cwd /usr/local
+include/png.h
+include/pngconf.h
+lib/libpng.a
+lib/libpng.so.0.81

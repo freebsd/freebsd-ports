@@ -1,0 +1,108 @@
+*** makefile.old	Fri Aug 25 08:09:40 1995
+--- makefile	Tue Dec  5 05:26:18 1995
+***************
+*** 2,27 ****
+  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+  # For conditions of distribution and use, see copyright notice in png.h
+  
+! CC=cc
+! CFLAGS=-I../zlib -O
+! LDFLAGS=-L. -L../zlib/ -lpng -lz -lm
+  
+  #RANLIB=ranlib
+- RANLIB=echo
+  
+  # where make install puts libpng.a and png.h
+! prefix=/usr/local
+  
+  OBJS = png.o pngrcb.o pngrutil.o pngtrans.o pngwutil.o \
+  	pngread.o pngio.o pngwrite.o pngrtran.o pngwtran.o \
+     pngmem.o pngerror.o
+  
+! all: libpng.a pngtest
+  
+  libpng.a: $(OBJS)
+  	ar rc $@  $(OBJS)
+  	$(RANLIB) $@
+  
+  pngtest: pngtest.o libpng.a
+  	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
+  
+--- 2,34 ----
+  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+  # For conditions of distribution and use, see copyright notice in png.h
+  
+! #CC=cc
+! CFLAGS+=-I/usr/local/include
+! LDFLAGS=-L. -L/usr/local/lib -lpng -lz -lm -static
+  
+  #RANLIB=ranlib
+  
+  # where make install puts libpng.a and png.h
+! prefix=${PREFIX}
+  
+  OBJS = png.o pngrcb.o pngrutil.o pngtrans.o pngwutil.o \
+  	pngread.o pngio.o pngwrite.o pngrtran.o pngwtran.o \
+     pngmem.o pngerror.o
+  
+! .SUFFIXES: .c .so .o
+! 
+! .c.so:
+! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+! 
+! all: libpng.a libpng.so.0.81
+  
+  libpng.a: $(OBJS)
+  	ar rc $@  $(OBJS)
+  	$(RANLIB) $@
+  
++ libpng.so.0.81: $(OBJS:S/o$/so/g)
++ 	ld -Bshareable -o $@ $(OBJS:S/o$/so/g)
++ 
+  pngtest: pngtest.o libpng.a
+  	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
+  
+***************
+*** 31,42 ****
+  install: libpng.a
+  	-@mkdir $(prefix)/include
+  	-@mkdir $(prefix)/lib
+! 	cp png.h $(prefix)/include
+! 	cp pngconf.h $(prefix)/include
+! 	chmod 644 $(prefix)/include/png.h
+! 	chmod 644 $(prefix)/include/pngconf.h
+! 	cp libpng.a $(prefix)/lib
+! 	chmod 644 $(prefix)/lib/libpng.a
+  
+  clean:
+  	rm -f *.o libpng.a pngtest pngout.png
+--- 38,46 ----
+  install: libpng.a
+  	-@mkdir $(prefix)/include
+  	-@mkdir $(prefix)/lib
+! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
+! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.0.81 $(prefix)/lib
+! 	ranlib $(prefix)/lib/libpng.a
+  
+  clean:
+  	rm -f *.o libpng.a pngtest pngout.png
+***************
+*** 56,58 ****
+--- 60,76 ----
+  pngwrite.o: png.h pngconf.h
+  pngwtran.o: png.h pngconf.h
+  pngwutil.o: png.h pngconf.h
++ 
++ png.so: png.h pngconf.h
++ pngerror.so: png.h pngconf.h
++ pngio.so: png.h pngconf.h
++ pngmem.so: png.h pngconf.h
++ pngrcb.so: png.h pngconf.h
++ pngread.so: png.h pngconf.h
++ pngrtran.so: png.h pngconf.h
++ pngrutil.so: png.h pngconf.h
++ pngtest.so: png.h pngconf.h
++ pngtrans.so: png.h pngconf.h
++ pngwrite.so: png.h pngconf.h
++ pngwtran.so: png.h pngconf.h
++ pngwutil.so: png.h pngconf.h
