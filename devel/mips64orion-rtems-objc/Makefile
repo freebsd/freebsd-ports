@@ -7,7 +7,7 @@
 
 PORTNAME=	objc
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	mips64orion-rtems
 .include "${.CURDIR}/../i386-rtems-objc/Makefile"

@@ -7,7 +7,7 @@
 
 PORTNAME=	g77
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	powerpc-rtems
 .include "${.CURDIR}/../i386-rtems-g77/Makefile"

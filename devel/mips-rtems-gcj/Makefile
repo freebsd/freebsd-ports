@@ -7,7 +7,7 @@
 
 PORTNAME=	gcj
 
-MAINTAINER=	jim@thehousleys.net
+MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	mips64orion-rtems
 .include "${.CURDIR}/../i386-rtems-gcj/Makefile"
