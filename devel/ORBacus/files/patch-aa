@@ -1,84 +1,72 @@
-Only in ../OB-1.0b8.freebsd/config: Make.rules
-diff -c -r -b ./demo/Makefile.in ../OB-1.0b8.freebsd/demo/Makefile.in
-*** ./demo/Makefile.in	Fri May  9 12:43:29 1997
---- ../OB-1.0b8.freebsd/demo/Makefile.in	Sun May 18 09:16:54 1997
+*** ob/demo/chat/Client.cpp.orig	Mon Jun  8 16:55:23 1998
+--- ob/demo/chat/Client.cpp	Tue Jun 23 09:57:59 1998
 ***************
-*** 20,26 ****
-  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-  INSTALL_DATA    = @INSTALL_DATA@
+*** 42,48 ****
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &TerminalSettings);
+  #else
+!     ioctl(STDIN_FILENO, TCSETS, &TerminalSettings);
+  #endif
   
-! SUBDIRS		= hello nested chat repository naming
+      //
+--- 42,48 ----
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &TerminalSettings);
+  #else
+!     ioctl(STDIN_FILENO, TCSANOW, &TerminalSettings);
+  #endif
   
-  all::
-  
---- 20,26 ----
-  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-  INSTALL_DATA    = @INSTALL_DATA@
-  
-! SUBDIRS		= hello nested repository naming
-  
-  all::
-  
-diff -c -r -b ./demo/chat/Client.cpp ../OB-1.0b8.freebsd/demo/chat/Client.cpp
-*** ./demo/chat/Client.cpp	Fri May  9 12:43:43 1997
---- ../OB-1.0b8.freebsd/demo/chat/Client.cpp	Sat May 17 20:12:21 1997
+      //
 ***************
-*** 17,23 ****
-  #include <stdlib.h>
-  #include <signal.h>
-  #include <unistd.h>
-! #include <termio.h>
-  #include <sys/ioctl.h>
-  
-  static struct termio TerminalSettings;
---- 17,23 ----
-  #include <stdlib.h>
-  #include <signal.h>
-  #include <unistd.h>
-! #include <term.h>
-  #include <sys/ioctl.h>
-  
-  static struct termio TerminalSettings;
-diff -c -r -b ./demo/chat/Receiver_impl.h ../OB-1.0b8.freebsd/demo/chat/Receiver_impl.h
-*** ./demo/chat/Receiver_impl.h	Fri May  9 12:43:40 1997
---- ../OB-1.0b8.freebsd/demo/chat/Receiver_impl.h	Sat May 17 20:12:31 1997
+*** 129,136 ****
+      ioctl(STDIN_FILENO, TCGETA, &ctl);
+  #else
+      struct termios ctl;
+!     ioctl(STDIN_FILENO, TCGETS, &TerminalSettings);
+!     ioctl(STDIN_FILENO, TCGETS, &ctl);
+  #endif
+      ctl.c_lflag &= ~(ICANON | ECHO);
+      ctl.c_cc[VMIN] = 1;
+--- 129,136 ----
+      ioctl(STDIN_FILENO, TCGETA, &ctl);
+  #else
+      struct termios ctl;
+!     tcgetattr(STDIN_FILENO, &TerminalSettings);
+!     tcgetattr(STDIN_FILENO, &ctl);
+  #endif
+      ctl.c_lflag &= ~(ICANON | ECHO);
+      ctl.c_cc[VMIN] = 1;
 ***************
-*** 14,20 ****
-  #include <Broadcaster.h>
-  #include <ReceiverBase_impl.h>
-  #include <OB/Reactor.h>
-! #include <termio.h>
+*** 138,144 ****
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &ctl);
+  #else
+!     ioctl(STDIN_FILENO, TCSETS, &ctl);
+  #endif
   
-  class Receiver_impl : public ReceiverBase_impl, public OBEventHandler
-  {
---- 14,20 ----
-  #include <Broadcaster.h>
-  #include <ReceiverBase_impl.h>
-  #include <OB/Reactor.h>
-! #include <term.h>
+      //
+--- 138,144 ----
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &ctl);
+  #else
+!     tcsetattr(STDIN_FILENO, TCSANOW, &ctl);
+  #endif
   
-  class Receiver_impl : public ReceiverBase_impl, public OBEventHandler
-  {
-Only in ../OB-1.0b8.freebsd/demo/chat: server
-Only in ../OB-1.0b8.freebsd/demo/hello: Hello.ref
-Only in ../OB-1.0b8.freebsd/demo/naming: Naming.ref
-Only in ../OB-1.0b8.freebsd/demo/nested: Peer.ref
-Only in ../OB-1.0b8.freebsd/demo/repository: Interface.ref
-Only in ../OB-1.0b8.freebsd/demo/repository: Repository.ref
-Only in ./idl: Gram.cpp
-Only in ./idl: Gram.h
-Only in ./idl: Scan.cpp
-Only in ../OB-1.0b8.freebsd/include/OB: Config.h
-diff -c -r -b ./include/OB/Except.h ../OB-1.0b8.freebsd/include/OB/Except.h
-*** ./include/OB/Except.h	Fri May  9 12:43:41 1997
---- ../OB-1.0b8.freebsd/include/OB/Except.h	Sat May 17 17:02:43 1997
+      //
 ***************
-*** 10,15 ****
---- 10,16 ----
+*** 179,185 ****
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &TerminalSettings);
+  #else
+!     ioctl(STDIN_FILENO, TCSETS, &TerminalSettings);
+  #endif
   
-  #ifndef OB_EXCEPT_H
-  #define OB_EXCEPT_H
-+ #undef minor()
+      return status;
+--- 179,185 ----
+  #ifdef HAVE_TERMIO_H
+      ioctl(STDIN_FILENO, TCSETA, &TerminalSettings);
+  #else
+!     tcsetattr(STDIN_FILENO, TCSANOW, &TerminalSettings);
+  #endif
   
-  //
-  // The Exception classes
+      return status;
