@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd-games
 PORTVERSION=	5.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
@@ -48,6 +48,14 @@ MAN6=	\
 
 MANCOMPRESSED=	maybe
 
+PATHNAME_FILES=	atc/pathnames.h \
+		cribbage/pathnames.h \
+		fish/pathnames.h \
+		larn/pathnames.h \
+		quiz/datfiles/index \
+		quiz/pathnames.h \
+		wump/pathnames.h
+
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
@@ -56,8 +64,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|share/games|local/share/games|g'
-	@${REINPLACE_CMD} -e 's|/usr/local/local/local|${PREFIX}|g' \
-		${WRKSRC}/quiz/pathnames.h ${WRKSRC}/quiz/datfiles/index
+	@for file in ${PATHNAME_FILES}; do \
+		${REINPLACE_CMD} -e 's|/usr/local/local/local|${PREFIX}|g' \
+			${WRKSRC}/$${file}; \
+	done
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		"${WRKSRC}/hack/hack.unix.c"
 
