@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
@@ -17,26 +17,32 @@ COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-BROKEN=		"Unfetchable"
-
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_BUILD=	yes
 STRIP=
 
-BRANDELF?=	/usr/bin/brandelf
+# Linux binary should not be stripped by INSTALL_PROGRAM
+# because as a side effect it brands the binary as FreeBSD.
+STRIP=
 
 RESTRICTED=	"author requests no distribution except from their site"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 .include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTFILES})
+IGNORE=		may not be automatically fetched due to licensing\
+		restrictions. You must manually fetch ${DISTFILES} from\
+		http://www.baudline.com/download.html. Once ${DISTFILES}\
+		has been downloaded, move it to ${DISTDIR} and then\
+		restart this build
+.endif
 
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
 
 pre-everything::
-.if !${LINPROCFS}
+.if !empty(LINPROCFS)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Check if linprocfs is running: YES"
 .else
@@ -53,7 +59,6 @@ pre-everything::
 .endif
 
 do-install:
-	@${BRANDELF} -t Linux ${WRKSRC}/baudline
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
