@@ -151,9 +151,12 @@ JAVASHAREDIR?=	${PREFIX}/share/java
 JAVAJARDIR?=	${JAVASHAREDIR}/classes
 JAVALIBDIR?=	${LOCALBASE}/share/java/classes
 
-# Add appropriate substitutions to PLIST_SUB
+# Add appropriate substitutions to PLIST_SUB and LIST_SUB
 PLIST_SUB+=		JAVASHAREDIR="${JAVASHAREDIR:S,^${PREFIX}/,,}" \
-			JAVAJARDIR="${JAVAJARDIR:S,^${PREFIX}/,,}"
+				JAVAJARDIR="${JAVAJARDIR:S,^${PREFIX}/,,}"
+SUB_LIST+=		JAVASHAREDIR="${JAVASHAREDIR}" \
+				JAVAJARDIR="${JAVAJARDIR}" \
+				JAVALIBDIR="${JAVALIBDIR}"
 
 # The complete list of Java versions, os and vendors supported.
 __JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4
