@@ -1,0 +1,3 @@
+libxode provides a library of XML and string helper functions.
+
+Jabber agents use libxode extensively.
