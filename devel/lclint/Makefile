@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://lclint.cs.virginia.edu/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	s.moeding@ndh.net
+MAINTAINER=	ports@FreeBSD.Org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
