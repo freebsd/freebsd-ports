@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1998/03/16 07:01:32 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/07/12 23:30:50 steve Exp $
 #
 
     SUBDIR += babel
@@ -7,5 +7,6 @@
     SUBDIR += povchem
     SUBDIR += rasmol
     SUBDIR += seaview
+    SUBDIR += tinker
 
 .include <bsd.port.subdir.mk>
