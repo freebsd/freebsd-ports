@@ -53,7 +53,7 @@ PKGNAMESUFFIX=	-xinerama
 XINERAMA=	-no-xinerama
 .endif # defined(WITH_XINERAMA)
 
-CUPS=	-cups -L/usr/local/lib -I/usr/local/include
+CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} \
