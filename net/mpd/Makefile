@@ -9,6 +9,7 @@ PORTNAME=	mpd
 PORTVERSION=	2.0.b2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/mpd/
+DISTNAME=	mpd-2.0b2
 
 MAINTAINER=	archie@freebsd.org
 
