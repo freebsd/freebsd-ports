@@ -3,14 +3,13 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.2 1998/10/10 04:34:51 steve Exp $
+# $Id: Makefile,v 1.3 1998/12/12 04:18:46 asami Exp $
 #
 
 DISTNAME=	edict-19981007
 PKGNAME=	ja-edict-19981007
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/
-MASTER_SITES+=	ftp://ftp.cdrom.com/pub/japanese/monash/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/japanese/monash/
 MASTER_SITES+=	ftp://ftp.sedl.org/pub/mirrors/nihongo/
 MASTER_SITES+=	ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
 EXTRACT_SUFX=
