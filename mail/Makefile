@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.33 1996/11/11 06:18:28 obrien Exp $
+# $Id: Makefile,v 1.34 1996/11/26 08:46:54 asami Exp $
 #
 
     SUBDIR += elm
     SUBDIR += exim
     SUBDIR += exmh
+    SUBDIR += faces
     SUBDIR += fetchmail
     SUBDIR += mailagent
     SUBDIR += majordomo
@@ -22,6 +23,7 @@
     SUBDIR += popper
     SUBDIR += procmail
     SUBDIR += smail
+    SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff
     SUBDIR += youbin
