@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2001/03/16 10:20:50 wilfried Exp $
+--- configure.orig	Wed Mar 29 11:28:23 2000
++++ configure	Thu Mar 15 22:28:24 2001
+@@ -522,7 +522,6 @@ fi
+ 
+ 
+ 
+-CFLAGS=-O2
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
