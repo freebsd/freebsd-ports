@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.6
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -22,6 +22,7 @@ BUILD_DEPENDS= \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
 BUILD_DEPENDS+=	 \
@@ -40,8 +41,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=	tv_cat.1 tv_extractinfo_en.1 tv_grab_de.1 tv_grab_na.1 \
 	tv_grab_sn.1 tv_grab_uk.1 tv_grab_uk_rt.1 tv_grep.1 tv_sort.1 \
+	tv_grab_fi.1 tv_grab_nz.1 tv_split.1 \
 	tv_to_latex.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	XMLTV.3
 
 # idea taken from devel/cvsweb port
@@ -57,6 +58,10 @@ ICONSDIR?=	www/icons
 PLIST_SUB+=      CGIDIR="${CGIDIR}"
 
 post-patch:
+# fix man install location
+	@${REINPLACE_CMD} -e \
+		's|share/man|man|' \
+		${WRKSRC}/Makefile.PL
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} \
 		-e 's|/usr/bin/perl|${PERL}|'
