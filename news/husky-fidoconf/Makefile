@@ -14,7 +14,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration library for Husky Fidosoft Project
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
 
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
