@@ -64,7 +64,7 @@ do-configure:
 	${CP} ${WRKDIR}/about ${WRKDIR}/splash
 
 do-install:
-	${INSTALL_DATA} ${MASTERDIR}/files/preferences.js ${NDIR}
+	${INSTALL_DATA} ${MASTERDIR}/files/preferences.js ${NDIR}/
 	${MKDIR} ${NDIR}/locale
 	${LN} -sf /usr/share/locale/en_US.ISO_8859-1 ${NDIR}/locale/${LANG}
 	${MKDIR} ${NDIR}/${LANG}
