@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	anders@codefactory.se
 
@@ -20,15 +19,12 @@ CONFIGURE_ENV=	IRCLIB="${IRCLIB}"
 
 IRCLIB=		${PREFIX}/share/ninja
 
-pre-patch:
-	@${CP} ${WRKSRC}/config/configure ${WRKSRC}
-
 post-patch:
 	@${PERL} -e "s|%%IRCLIB%%|${IRCLIB}|g" ${WRKSRC}/include/config.h.dist
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/source/ninja ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/source/wserv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ninjawserv ${PREFIX}/bin
 	@${MKDIR} ${IRCLIB}/translation
 	${INSTALL_DATA} ${WRKSRC}/translation/* ${IRCLIB}/translation
 
