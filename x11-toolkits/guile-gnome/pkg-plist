@@ -1,4 +1,7 @@
 bin/gnomeg
+lib/libguilebonobo.a
+lib/libguilebonobo.so
+lib/libguilebonobo.so.0
 lib/libguilegdkpixbuf.a
 lib/libguilegdkpixbuf.so
 lib/libguilegdkpixbuf.so.0
@@ -17,12 +20,14 @@ lib/libguilegnorba.so.0
 lib/libguilezvt.a
 lib/libguilezvt.so
 lib/libguilezvt.so.0
+share/gnome/guile-gnome/bonobo.defs
 share/gnome/guile-gnome/ghttp.defs
 share/gnome/guile-gnome/gnome.defs
 share/gnome/guile-gnome/gnorba.defs
 share/gnome/guile-gnome/zvt.defs
 share/gnome/guile-gtk/gdkpixbuf.defs
 share/gnome/guile-gtk/libglade.defs
+share/gnome/guile/gnome/bonobo.scm
 share/gnome/guile/gnome/ghttp.scm
 share/gnome/guile/gnome/gnome.scm
 share/gnome/guile/gnome/gnorba.scm
