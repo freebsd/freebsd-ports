@@ -115,4 +115,6 @@ slaveport-post-install:
 post-install: slaveport-post-install
 	@${CAT} ${PKGMESSAGE}
 
+.ifndef(_DONT_INCLUDE_MK_)
 .include <bsd.port.mk>
+.endif
