@@ -676,6 +676,7 @@ br-aspell	ports/textproc/br-aspell
 braa		ports/net/braa
 braincurses	ports/games/braincurses
 bricons		ports/x11/bricons
+briquolo	ports/games/briquolo
 british-ispell	ports/textproc/british-ispell
 bro		ports/security/bro
 brs		ports/misc/brs
