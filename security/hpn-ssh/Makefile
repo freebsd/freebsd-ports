@@ -136,7 +136,7 @@ post-install:
 
 test:
 	(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} \
-	PATH=${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
+	PATH=${WRKSRC}:${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} )
 
 .include <bsd.port.pre.mk>
