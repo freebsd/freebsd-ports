@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.6 1997/11/22 20:38:23 jseger Exp $
+# $Id: Makefile,v 1.7 1998/02/23 04:09:58 steve Exp $
 #
 
 DISTNAME=	dotfile-2.2
@@ -14,6 +14,8 @@ MAINTAINER=	oly@world.std.com
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+
+BROKEN=		package
 
 GNU_CONFIGURE=	yes
 MAN1=		dotfile.1
