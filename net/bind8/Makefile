@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	8.2.2.p7
+PORTVERSION=	8.2.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.2-P7/
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.3/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/src
 
 MAN1=		dig.1 dnskeygen.1 dnsquery.1 host.1
 MAN3=		getaddrinfo.3 gethostbyname.3 getipnodebyname.3 getnetent.3 \
-		inet_cidr.3 hesiod.3 resolver.3 tsig.3
+		getnameinfo.3 inet_cidr.3 hesiod.3 resolver.3 tsig.3
 MAN5=		irs.conf.5 named.conf.5 resolver.5
 MAN7=		hostname.7 mailaddr.7
 MAN8=		named-bootconf.8 named-xfer.8 named.8 ndc.8 nslookup.8 \
