@@ -69,7 +69,76 @@ postgres95/include/utils/geo-decls.h
 postgres95/include/libpq-fe.h
 postgres95/include/postgres.h
 postgres95/include/c.h
+postgres95/man/man1/cleardbdir.1.gz
+postgres95/man/man1/psql.1.gz
+postgres95/man/man1/postmaster.1.gz
+postgres95/man/man1/postgres.1.gz
+postgres95/man/man1/pg_dump.1.gz
+postgres95/man/man1/monitor.1.gz
+postgres95/man/man1/ipcclean.1.gz
+postgres95/man/man1/initdb.1.gz
+postgres95/man/man1/destroyuser.1.gz
+postgres95/man/man1/destroydb.1.gz
+postgres95/man/man1/createuser.1.gz
+postgres95/man/man1/createdb.1.gz
+postgres95/man/man1/unix.1.gz
+postgres95/man/man3/libpq.3.gz
+postgres95/man/man3/large_objects.3.gz
+postgres95/man/man3/catalogs.3.gz
+postgres95/man/man3/built-in.3.gz
+postgres95/man/man5/template.5.gz
+postgres95/man/man5/pg_hba.5.gz
+postgres95/man/man5/page.5.gz
+postgres95/man/man5/files.5.gz
+postgres95/man/man5/bki.5.gz
+postgres95/man/manl/abort.l.gz
+postgres95/man/manl/update.l.gz
+postgres95/man/manl/sql.l.gz
+postgres95/man/manl/select.l.gz
+postgres95/man/manl/rollback.l.gz
+postgres95/man/manl/revoke.l.gz
+postgres95/man/manl/rename.l.gz
+postgres95/man/manl/remove_view.l.gz
+postgres95/man/manl/purge.l.gz
+postgres95/man/manl/notify.l.gz
+postgres95/man/manl/load.l.gz
+postgres95/man/manl/listen.l.gz
+postgres95/man/manl/insert.l.gz
+postgres95/man/manl/grant.l.gz
+postgres95/man/manl/fetch.l.gz
+postgres95/man/manl/end.l.gz
+postgres95/man/manl/drop_type.l.gz
+postgres95/man/manl/drop_rule.l.gz
+postgres95/man/manl/drop_operator.l.gz
+postgres95/man/manl/drop_index.l.gz
+postgres95/man/manl/drop_function.l.gz
+postgres95/man/manl/drop_aggregate.l.gz
+postgres95/man/manl/drop.l.gz
+postgres95/man/manl/destroydb.l.gz
+postgres95/man/manl/copy.l.gz
+postgres95/man/manl/delete.l.gz
+postgres95/man/manl/createdb.l.gz
+postgres95/man/manl/create_view.l.gz
+postgres95/man/manl/create_version.l.gz
+postgres95/man/manl/create_type.l.gz
+postgres95/man/manl/create_table.l.gz
+postgres95/man/manl/create_rule.l.gz
+postgres95/man/manl/create_operator.l.gz
+postgres95/man/manl/create_index.l.gz
+postgres95/man/manl/create_function.l.gz
+postgres95/man/manl/create_aggregate.l.gz
+postgres95/man/manl/commit.l.gz
+postgres95/man/manl/cluster.l.gz
+postgres95/man/manl/close.l.gz
+postgres95/man/manl/begin.l.gz
+postgres95/man/manl/alter_table.l.gz
+postgres95/man/manl/vacuum.l.gz
 postgres95/post-install-notes
+@dirrm postgres95/man/man1/
+@dirrm postgres95/man/man3/
+@dirrm postgres95/man/man5/
+@dirrm postgres95/man/manl/
+@dirrm postgres95/man/
 @dirrm postgres95/lib/
 @dirrm postgres95/include/utils/
 @dirrm postgres95/include/port/BSD44_derived/
