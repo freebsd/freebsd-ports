@@ -23,7 +23,6 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_FREETYPE=	yes
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib"
 USE_GMAKE=	yes

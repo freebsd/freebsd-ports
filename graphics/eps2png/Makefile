@@ -16,7 +16,6 @@ MAINTAINER=	nik@freebsd.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=		eps2png.1

@@ -15,7 +15,6 @@ DISTNAME=	html_object-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

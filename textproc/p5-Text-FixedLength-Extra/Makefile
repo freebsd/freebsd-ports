@@ -23,7 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 BROKEN="Requires perl that has 'our' keyword"
 .endif
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::FixedLength::Extra.3
