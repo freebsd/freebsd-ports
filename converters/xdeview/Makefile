@@ -3,14 +3,13 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.7 1997/11/08 08:39:04 obrien Exp $
+# $Id: Makefile,v 1.8 1997/11/21 05:10:13 hoek Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
 PKGNAME=	xdeview-0.5.13
 CATEGORIES=	converters tk80
-MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
-		http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/ \
+MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/ \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/
 
 MAINTAINER=	hoek@FreeBSD.ORG
