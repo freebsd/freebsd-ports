@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       xpilot
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		${MASTER_SITE_XCONTRIB}
