@@ -8,8 +8,7 @@
 PORTNAME=	BitchX
 PORTVERSION=	1.1
 CATEGORIES+=	irc
-MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
-		ftp://ftp.bitchx.org/pub/BitchX/source/ \
+MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
 DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX} \
