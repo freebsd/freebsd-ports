@@ -167,6 +167,7 @@ qresizeevent.3qt \
 qscrollbar.3qt \
 qscrollview.3qt \
 qsemimodal.3qt \
+qserversocket.3qt \
 qsessionmanager.3qt \
 qshared.3qt \
 qshowevent.3qt \
@@ -177,6 +178,8 @@ qsize.3qt \
 qsizegrip.3qt \
 qsizepolicy.3qt \
 qslider.3qt \
+qsocket.3qt \
+qsocketaddress.3qt \
 qsocketnotifier.3qt \
 qsortedlist.3qt \
 qspaceritem.3qt \

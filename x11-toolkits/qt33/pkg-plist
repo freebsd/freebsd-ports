@@ -183,6 +183,7 @@ include/qt2/qscrbar.h
 include/qt2/qscrollbar.h
 include/qt2/qscrollview.h
 include/qt2/qsemimodal.h
+include/qt2/qserversocket.h
 include/qt2/qsession.h
 include/qt2/qsessionmanager.h
 include/qt2/qshared.h
@@ -196,6 +197,8 @@ include/qt2/qsizepolicy.h
 include/qt2/qsjiscodec.h
 include/qt2/qslider.h
 include/qt2/qsmartptr.h
+include/qt2/qsocket.h
+include/qt2/qsocketdevice.h
 include/qt2/qsocketnotifier.h
 include/qt2/qsocknot.h
 include/qt2/qsortedlist.h
@@ -282,7 +285,6 @@ share/doc/qt2/html/desktop-desktop-cpp.html
 share/doc/qt2/html/dialogs.html
 share/doc/qt2/html/dirview-main-cpp.html
 share/doc/qt2/html/dnd.html
-share/doc/qt2/html/dochead.jpg
 share/doc/qt2/html/dochead.png
 share/doc/qt2/html/drawdemo-drawdemo-cpp.html
 share/doc/qt2/html/drawing.html
@@ -846,6 +848,9 @@ share/doc/qt2/html/qscrollview.html
 share/doc/qt2/html/qsemimodal-h.html
 share/doc/qt2/html/qsemimodal-members.html
 share/doc/qt2/html/qsemimodal.html
+share/doc/qt2/html/qserversocket-h.html
+share/doc/qt2/html/qserversocket-members.html
+share/doc/qt2/html/qserversocket.html
 share/doc/qt2/html/qsessionmanager-h.html
 share/doc/qt2/html/qsessionmanager-members.html
 share/doc/qt2/html/qsessionmanager.html
@@ -877,6 +882,12 @@ share/doc/qt2/html/qslider-m.png
 share/doc/qt2/html/qslider-members.html
 share/doc/qt2/html/qslider-w.png
 share/doc/qt2/html/qslider.html
+share/doc/qt2/html/qsocket-h.html
+share/doc/qt2/html/qsocket-members.html
+share/doc/qt2/html/qsocket.html
+share/doc/qt2/html/qsocketaddress-members.html
+share/doc/qt2/html/qsocketaddress.html
+share/doc/qt2/html/qsocketdevice-h.html
 share/doc/qt2/html/qsocketnotifier-h.html
 share/doc/qt2/html/qsocketnotifier-members.html
 share/doc/qt2/html/qsocketnotifier.html
@@ -1164,6 +1175,6 @@ share/doc/qt2/html/wizard-main-cpp.html
 share/doc/qt2/html/xform-xform-cpp.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
-@dirrm include/qt2
 @dirrm share/doc/qt2/html
 @dirrm share/doc/qt2
+@dirrm include/qt2

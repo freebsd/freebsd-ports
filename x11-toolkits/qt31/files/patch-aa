@@ -1,5 +1,5 @@
---- configs/freebsd-g++-shared.orig	Tue Jul 20 11:45:01 1999
-+++ configs/freebsd-g++-shared	Thu Aug 12 21:26:28 1999
+--- configs/freebsd-g++-shared.orig	Fri Sep 24 18:21:55 1999
++++ configs/freebsd-g++-shared	Fri Oct  1 22:07:46 1999
 @@ -1,33 +1,33 @@
  # Compiling
 -SYSCONF_CXX		= g++
@@ -81,10 +81,10 @@
  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
  # Compiling application source
--SYSCONF_CXXFLAGS	= -pipe -DNO_DEBUG -O2
--SYSCONF_CFLAGS		= -pipe -DNO_DEBUG -O2
-+SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS) -DNO_DEBUG
-+SYSCONF_CFLAGS		= $(SYS_CXXFLAGS) -DNO_DEBUG
+-SYSCONF_CXXFLAGS	= -pipe -O2
+-SYSCONF_CFLAGS		= -pipe -O2
++SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS)
++SYSCONF_CFLAGS		= $(SYS_CXXFLAGS)
  # Compiling library source
  SYSCONF_CXXFLAGS_LIB	= -fPIC
  SYSCONF_CFLAGS_LIB	= -fPIC
