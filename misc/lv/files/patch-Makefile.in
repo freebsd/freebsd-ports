@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Fri Jun 16 17:06:20 2000
++++ Makefile.in	Sat Mar  1 21:46:14 2003
+@@ -64,7 +64,7 @@
+ #
+ 
+ install::
+-	$(INSTALL) -s -o bin -g bin -m 555 lv $(bindir)
++	$(INSTALL) -s -m 555 lv $(bindir)
+ 	if test -f $(bindir)/lgrep; then \
+ 		/bin/rm -f $(bindir)/lgrep; \
+ 	fi
+@@ -72,9 +72,9 @@
+ 	if test ! -d $(lvlibdir); then \
+ 		mkdir -p $(lvlibdir); \
+ 	fi
+-	$(INSTALL) -o bin -g bin -m 444 $(srcdir)/../lv.hlp $(lvlibdir)
++	$(INSTALL) -m 444 $(srcdir)/../lv.hlp $(lvlibdir)
+ 	if test -d $(mandir) -a -d $(mandir)/man1; then \
+-		$(INSTALL) -o bin -g bin -m 444 $(srcdir)/../lv.1 $(mandir)/man1; \
++		$(INSTALL) -m 444 $(srcdir)/../lv.1 $(mandir)/man1; \
+ 	fi
+ 
+ uninstall::
