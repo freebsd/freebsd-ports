@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 44bsd-rdist
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += adns
