@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Media player for KDE
 
-LIB_DEPENDS=    tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=    tag.4:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
@@ -22,10 +21,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-OPTIONS=	ARTS "aRts support" on \
-		GSTREAMER "GStreamer support" off \
+OPTIONS=	ARTS "aRts support" off \
+		GSTREAMER "GStreamer support" on \
+		XINE "xine support" off \
 		XMMS "XMMS visualizations" on \
 		OPENGL "OpenGL support" on \
+		AMAZON "Amazon cover fetching support" on
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +46,14 @@ LIB_DEPENDS+=	gstplay-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins
 PLIST_SUB+=	GSTREAMER=""
 .endif
 
+.if defined(WITHOUT_XINE)
+CONFIGURE_ARGS+=--without-xine
+PLIST_SUB+=     XINE="@comment "
+.else
+LIB_DEPENDS+=   xine.9:${PORTSDIR}/multimedia/libxine
+PLIST_SUB+=     XINE=""
+.endif
+
 .if defined(WITHOUT_XMMS)
 PLIST_SUB+=	XMMS="@comment "
 .else
@@ -57,12 +66,18 @@ PLIST_SUB+=	XMMS=""
 CONFIGURE_ARGS+=--without-opengl
 .endif
 
+.if defined(WITHOUT_AMAZON)
+CONFIGURE_ARGS+=--without-amazon
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 
 post-configure:
 .if defined(WITHOUT_XMMS)
 	@${REINPLACE_CMD} -e '/XMMS /d' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's/xmmswrapper//g' ${WRKSRC}/amarok/src/vis/Makefile
 .endif
 
 .include <bsd.port.post.mk>
