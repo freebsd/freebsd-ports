@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/fop
 %%PORTDOCS%%%%DOCSDIR%%/anttask.html
 %%PORTDOCS%%%%DOCSDIR%%/anttask.pdf
@@ -137,47 +138,46 @@ bin/fop
 %%PORTDOCS%%%%DOCSDIR%%/status.pdf
 %%PORTDOCS%%%%DOCSDIR%%/team.html
 %%PORTDOCS%%%%DOCSDIR%%/team.pdf
-share/fop/CHANGES
-share/fop/LICENSE
-share/fop/README
-share/fop/ReleaseNotes.html
-share/fop/STATUS
-share/fop/build/fop.jar
-share/fop/conf/config.dtd
-share/fop/conf/config.xml
-share/fop/conf/userconfig.xml
-share/fop/fop.sh
-share/fop/hyph/README
-share/fop/hyph/en.xml
-share/fop/hyph/es.xml
-share/fop/hyph/fi.xml
-share/fop/hyph/hu.xml
-share/fop/hyph/hyphenation.dtd
-share/fop/hyph/it.xml
-share/fop/hyph/pl.xml
-share/fop/hyph/pt.xml
-share/fop/hyph/ru.xml
-share/fop/lib/ant-1.5.1.jar
-share/fop/lib/ant.license.txt
-share/fop/lib/avalon-framework-cvs-20020806.jar
-share/fop/lib/avalon.LICENSE.txt
-share/fop/lib/batik.LICENSE.txt
-share/fop/lib/batik.jar
-share/fop/lib/bin/antRun
-share/fop/lib/readme
-share/fop/lib/xalan-2.4.1.jar
-share/fop/lib/xalan.LICENSE.txt
-share/fop/lib/xerces.LICENSE.txt
-share/fop/lib/xercesImpl-2.2.1.jar
-share/fop/lib/xml-apis.LICENSE.txt
-share/fop/lib/xml-apis.README.txt
-share/fop/lib/xml-apis.jar
-@dirrm share/fop/lib/bin
-@dirrm share/fop/lib
-@dirrm share/fop/hyph
-@dirrm share/fop/conf
-@dirrm share/fop/build
-@dirrm share/fop
+%%DATADIR%%/CHANGES
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/ReleaseNotes.html
+%%DATADIR%%/STATUS
+%%DATADIR%%/build/fop.jar
+%%DATADIR%%/conf/config.dtd
+%%DATADIR%%/conf/config.xml
+%%DATADIR%%/conf/userconfig.xml
+%%DATADIR%%/hyph/README
+%%DATADIR%%/hyph/en.xml
+%%DATADIR%%/hyph/es.xml
+%%DATADIR%%/hyph/fi.xml
+%%DATADIR%%/hyph/hu.xml
+%%DATADIR%%/hyph/hyphenation.dtd
+%%DATADIR%%/hyph/it.xml
+%%DATADIR%%/hyph/pl.xml
+%%DATADIR%%/hyph/pt.xml
+%%DATADIR%%/hyph/ru.xml
+%%DATADIR%%/lib/ant-1.5.1.jar
+%%DATADIR%%/lib/ant.license.txt
+%%DATADIR%%/lib/avalon-framework-cvs-20020806.jar
+%%DATADIR%%/lib/avalon.LICENSE.txt
+%%DATADIR%%/lib/batik.LICENSE.txt
+%%DATADIR%%/lib/batik.jar
+%%DATADIR%%/lib/bin/antRun
+%%DATADIR%%/lib/readme
+%%DATADIR%%/lib/xalan-2.4.1.jar
+%%DATADIR%%/lib/xalan.LICENSE.txt
+%%DATADIR%%/lib/xerces.LICENSE.txt
+%%DATADIR%%/lib/xercesImpl-2.2.1.jar
+%%DATADIR%%/lib/xml-apis.LICENSE.txt
+%%DATADIR%%/lib/xml-apis.README.txt
+%%DATADIR%%/lib/xml-apis.jar
+@dirrm %%DATADIR%%/lib/bin
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/hyph
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%/build
+@dirrm %%DATADIR%%
 @unexec rmdir %D/%%DOCSDIR%%/skin/css 2>/dev/null || true
 @dirrm %%DOCSDIR%%/skin/images
 @unexec rmdir %D/%%DOCSDIR%%/skin/scripts 2>/dev/null || true

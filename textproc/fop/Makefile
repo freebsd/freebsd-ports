@@ -8,36 +8,39 @@
 PORTNAME=	fop
 PORTVERSION=	0.20.5
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.apache.org/dist/xml/fop/ \
-		http://nagoya.apache.org/mirror/xml/fop/recent/
+MASTER_SITES=	${MASTER_SITE_APACHE_XML}
+MASTER_SITE_SUBDIR=	fop
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
+BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 NO_BUILD=	yes
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-USE_JAVA=	1.2+
-NO_BUILD_DEPENDS_JAVA=	YES
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
-pre-install:
-	${MKDIR} ${DATADIR} ${DATADIR}/build ${DOCSDIR}
-	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) -exec ${RM} -rf \{} \;
+SUB_FILES=	fop.sh
 
 do-install:
+	${MKDIR} ${DATADIR}/build
 	cd ${WRKSRC}; \
-		${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html \
-			STATUS ${DATADIR}; \
-		${INSTALL_SCRIPT} fop.sh ${DATADIR}; \
-		${SED} -i "" -e s,%%PREFIX%%,${PREFIX}, ${DATADIR}/fop.sh ;\
-		${LN} -sf ${DATADIR}/fop.sh ${PREFIX}/bin/fop; \
-		${CP} -R conf src/hyph lib ${DATADIR}; \
-		${CP} build/fop.jar ${DATADIR}/build
+	  ${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html STATUS ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/fop.sh ${PREFIX}/bin/fop
+	cd ${WRKSRC} \
+	  && ${FIND} conf lib -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} conf lib -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	cd ${WRKSRC}/src \
+	  && ${FIND} hyph -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} hyph -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${INSTALL_DATA} ${WRKSRC}/build/fop.jar ${DATADIR}/build/
 .if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/build/site && \
-		${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
+	cd ${WRKSRC}/build/site \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
 .include <bsd.port.mk>
