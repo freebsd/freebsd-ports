@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	5.0.0.p4
+PORTVERSION=	5.0.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \
 		ftp://grass.baylor.edu/pub/grass/grass5/source/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.p/pre/}
-DISTFILES=	${DISTNAME}_src${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	reg@FreeBSD.org
 
@@ -32,13 +31,16 @@ BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 		wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-EXTRACT_AFTER_ARGS=	| tar -xf - --exclude *CVS*
-USE_XLIBS=	yes
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude *CVS*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_XLIB=	yes
 USE_MESA=	yes
+USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
 		--with-gd-includes=${LOCALBASE}/include/gd \
@@ -56,6 +58,6 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 
 post-install:
 	-(cd ${PREFIX} && ${GREP} -v "@" ${PLIST} | \
-	  xargs ${STRIP_CMD} 2> /dev/null)
+	  ${XARGS} ${STRIP_CMD} 2> /dev/null || ${TRUE})
 
 .include <bsd.port.mk>

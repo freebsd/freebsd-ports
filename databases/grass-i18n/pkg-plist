@@ -356,11 +356,9 @@ grass5/bin/v.in.dlg2
 grass5/bin/v.in.dxf
 grass5/bin/v.in.dxf3d
 grass5/bin/v.in.gshhs
-grass5/bin/v.in.mif
 grass5/bin/v.in.poly
 grass5/bin/v.in.sdts
 grass5/bin/v.in.shape
-grass5/bin/v.in.shape.pg
 grass5/bin/v.in.tig.basic
 grass5/bin/v.in.tig.lndmk
 grass5/bin/v.in.transects
@@ -2187,11 +2185,9 @@ grass5/etc/bin/cmd/v.in.dlg2
 grass5/etc/bin/cmd/v.in.dxf
 grass5/etc/bin/cmd/v.in.dxf3d
 grass5/etc/bin/cmd/v.in.gshhs
-grass5/etc/bin/cmd/v.in.mif
 grass5/etc/bin/cmd/v.in.poly
 grass5/etc/bin/cmd/v.in.sdts
 grass5/etc/bin/cmd/v.in.shape
-grass5/etc/bin/cmd/v.in.shape.pg
 grass5/etc/bin/cmd/v.in.tig.basic
 grass5/etc/bin/cmd/v.in.tig.lndmk
 grass5/etc/bin/cmd/v.in.transects
@@ -3302,14 +3298,14 @@ grass5/etc/nviz2.2/scripts/unique.tcl
 grass5/etc/nviz2.2/scripts/widgets.tcl
 grass5/etc/nviz2.2/scripts/wirecolorPopup.tcl
 grass5/etc/paint/char.test
+grass5/etc/paint/driver/ppm
+grass5/etc/paint/driver/preview
+grass5/etc/paint/driver/preview2
 grass5/etc/paint/driver.rsh
 grass5/etc/paint/driver.sh/preview
 grass5/etc/paint/driver.sh/preview2
 grass5/etc/paint/driver.shell
 grass5/etc/paint/driver.uninst/ppm
-grass5/etc/paint/driver/ppm
-grass5/etc/paint/driver/preview
-grass5/etc/paint/driver/preview2
 grass5/etc/paint/header
 grass5/etc/paint/hres.test
 grass5/etc/paint/patcc
@@ -3375,10 +3371,25 @@ grass5/include/gisdefs.h
 grass5/include/site.h
 grass5/lib/libdatetime.a
 grass5/lib/libgis.a
+grass5/locale/ru/LC_MESSAGES/d.rast.pg.mo
+grass5/locale/ru/LC_MESSAGES/d.site.pg.mo
+grass5/locale/ru/LC_MESSAGES/d.vect.pg.mo
+grass5/locale/ru/LC_MESSAGES/d.what.r.pg.mo
+grass5/locale/ru/LC_MESSAGES/d.what.s.pg.mo
+grass5/locale/ru/LC_MESSAGES/d.what.v.pg.mo
+grass5/locale/ru/LC_MESSAGES/g.column.pg.mo
+grass5/locale/ru/LC_MESSAGES/g.select.pg.mo
+grass5/locale/ru/LC_MESSAGES/g.stats.pg.mo
+grass5/locale/ru/LC_MESSAGES/g.table.pg.mo
+grass5/locale/ru/LC_MESSAGES/pg.in.dbf.mo
+grass5/locale/ru/LC_MESSAGES/s.surf.rst.mo
+grass5/locale/ru/LC_MESSAGES/v.in.arc.pg.mo
+grass5/locale/ru/LC_MESSAGES/v.in.shape.pg.mo
+grass5/locale/ru/LC_MESSAGES/v.reclass.pg.mo
+grass5/locale/ru/LC_MESSAGES/v.to.pg.mo
 grass5/man/man1/3d.view.sh.1
 grass5/man/man1/SG3d.1
 grass5/man/man1/aboutus.1
-grass5/man/man1/ascii_formats.1
 grass5/man/man1/blend.sh.1
 grass5/man/man1/bug.report.sh.1
 grass5/man/man1/cell.out.tiff.1
@@ -3453,7 +3464,6 @@ grass5/man/man1/d.what.vect.1
 grass5/man/man1/d.where.1
 grass5/man/man1/d.zoom.1
 grass5/man/man1/d.zoom.last.sh.1
-grass5/man/man1/database.1
 grass5/man/man1/db.columns.1
 grass5/man/man1/db.connect.1
 grass5/man/man1/db.createdb.1
@@ -3466,11 +3476,7 @@ grass5/man/man1/db.execute.1
 grass5/man/man1/db.select.1
 grass5/man/man1/db.tables.1
 grass5/man/man1/dcorrelate.sh.1
-grass5/man/man1/display.1
-grass5/man/man1/drivers.1
-grass5/man/man1/env_vars.1
 grass5/man/man1/exit.1
-grass5/man/man1/export.1
 grass5/man/man1/g.access.1
 grass5/man/man1/g.ask.1
 grass5/man/man1/g.column.pg.1
@@ -3496,11 +3502,8 @@ grass5/man/man1/g.tempfile.1
 grass5/man/man1/g.version.1
 grass5/man/man1/g3.region.1
 grass5/man/man1/g3.setregion.1
-grass5/man/man1/general.1
 grass5/man/man1/grass.logo.sh.1
 grass5/man/man1/grass5.1
-grass5/man/man1/grass_commandlist.1
-grass5/man/man1/grid3d.1
 grass5/man/man1/hsv.rgb.sh.1
 grass5/man/man1/htmlmapdriver.1
 grass5/man/man1/i.cca.1
@@ -3541,8 +3544,6 @@ grass5/man/man1/i.texture.1
 grass5/man/man1/i.vpoints.1
 grass5/man/man1/i.zc.1
 grass5/man/man1/imagery.1
-grass5/man/man1/import.1
-grass5/man/man1/index.1
 grass5/man/man1/m.bsplit.1
 grass5/man/man1/m.clump.1
 grass5/man/man1/m.datum.shift.1
@@ -3579,9 +3580,6 @@ grass5/man/man1/m.svfit.1
 grass5/man/man1/m.tiger.region.1
 grass5/man/man1/m.u2ll.1
 grass5/man/man1/mapcalculator.sh.1
-grass5/man/man1/misc.1
-grass5/man/man1/missing.1
-grass5/man/man1/models.1
 grass5/man/man1/monitorcap.1
 grass5/man/man1/nviz.1
 grass5/man/man1/p.chart.1
@@ -3596,15 +3594,12 @@ grass5/man/man1/p.vrml.1
 grass5/man/man1/paint.1
 grass5/man/man1/parser.1
 grass5/man/man1/pg.in.dbf.1
-grass5/man/man1/photo.1
 grass5/man/man1/photo.2image.1
 grass5/man/man1/photo.2target.1
 grass5/man/man1/photo.camera.1
 grass5/man/man1/photo.init.1
 grass5/man/man1/photo.rectify.1
 grass5/man/man1/pngdriver.1
-grass5/man/man1/projections.1
-grass5/man/man1/ps.1
 grass5/man/man1/ps.icon.1
 grass5/man/man1/ps.map.1
 grass5/man/man1/ps.select.1
@@ -3773,7 +3768,6 @@ grass5/man/man1/r3.out.v5d.1
 grass5/man/man1/r3.showdspf.1
 grass5/man/man1/r3.timestamp.1
 grass5/man/man1/r3.to.sites.1
-grass5/man/man1/raster.1
 grass5/man/man1/rgb.hsv.sh.1
 grass5/man/man1/s.buffer.1
 grass5/man/man1/s.datum.shift.1
@@ -3819,23 +3813,18 @@ grass5/man/man1/s.vol.rst.1
 grass5/man/man1/s.voronoi.1
 grass5/man/man1/s.what.1
 grass5/man/man1/s.windavg.1
-grass5/man/man1/scripts.1
-grass5/man/man1/searchhtml.1
 grass5/man/man1/shade.clr.sh.1
 grass5/man/man1/shade.rel.sh.1
 grass5/man/man1/show.color.sh.1
 grass5/man/man1/show.fonts.sh.1
-grass5/man/man1/sites.1
 grass5/man/man1/sites.S.1
 grass5/man/man1/sites.format.1
 grass5/man/man1/sites.occur.1
 grass5/man/man1/sites.report.1
 grass5/man/man1/slide.show.sh.1
 grass5/man/man1/split.sh.1
-grass5/man/man1/terminology.1
 grass5/man/man1/tig.rim.sh.1
 grass5/man/man1/tiger.info.sh.1
-grass5/man/man1/tips_and_tricks.1
 grass5/man/man1/v.alabel.1
 grass5/man/man1/v.apply.census.1
 grass5/man/man1/v.area.1
@@ -3930,7 +3919,6 @@ grass5/man/man1/v.to.sites.b.1
 grass5/man/man1/v.transform.1
 grass5/man/man1/v.trim.1
 grass5/man/man1/v.what.1
-grass5/man/man1/vector.1
 grass5/man/man1/xdriver.1
 grass5/man/man1/xganim.1
 grass5/scripts/3d.view.sh
@@ -4042,7 +4030,6 @@ grass5/tcltkgrass/main/help-netscape.tcl
 grass5/tcltkgrass/main/help-scripting.tcl
 grass5/tcltkgrass/main/help.tcl
 grass5/tcltkgrass/main/menu.tcl
-grass5/tcltkgrass/main/monscale.tcl
 grass5/tcltkgrass/main/pause
 grass5/tcltkgrass/main/tcltkgrass.tcl
 grass5/tcltkgrass/main/tksys.tcl
@@ -4454,8 +4441,9 @@ grass5/txt/WEIGHT/syntax
 @dirrm grass5/man/man1
 @dirrm grass5/man/help
 @dirrm grass5/man
-@dirrm grass5/locks/magma
 @dirrm grass5/locks
+@dirrm grass5/locale/ru/LC_MESSAGES
+@dirrm grass5/locale/ru
 @dirrm grass5/locale
 @dirrm grass5/lib
 @dirrm grass5/include
