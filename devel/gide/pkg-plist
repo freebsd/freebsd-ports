@@ -1,2 +1,13 @@
 bin/gdbio
 bin/gide
+share/gnome/gIDE/extra/README
+share/gnome/gIDE/extra/compile_sets
+share/gnome/gIDE/extra/functions.highlight
+share/gnome/gIDE/extra/functions.ignore
+share/gnome/gIDE/extra/gide.scm
+share/gnome/gIDE/extra/glob
+share/gnome/gIDE/extra/glob.scm
+share/gnome/gIDE/extra/patterns
+share/gnome/gIDE/extra/patterns.scm
+@dirrm share/gnome/gIDE/extra
+@dirrm share/gnome/gIDE
