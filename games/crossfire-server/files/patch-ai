@@ -1,0 +1,11 @@
+--- doc/playbook/makeps.orig	Fri Nov  1 15:34:44 1996
++++ doc/playbook/makeps	Fri Nov  1 15:35:33 1996
+@@ -7,7 +7,7 @@
+ 
+ BEGIN {
+     # Set colour to 1 if you want colour postscript.
+-    colour = 0;
++    colour = 1;
+ 
+     if (colour) {
+       xpm2ps = "xpmtoppm | pnmdepth 255 | pnmtops"

@@ -1,0 +1,33 @@
+--- include/config.h.orig	Tue Oct 29 11:58:02 1996
++++ include/config.h	Fri Nov  1 13:13:05 1996
+@@ -174,6 +174,8 @@
+ 
+ #define FULL_RING_DESCRIPTION
+ 
++#define SHOP_LISTINGS
++
+ /* if EXPLORE_MODE is defined, it allows players to enter explore mode,
+  * where they can not die.  Unlike other games (nethack for instance) explore
+  * modes, the only thing Crossfire explore mode does is prevent death.
+@@ -305,7 +307,7 @@
+  */
+ 
+ #ifndef DM_MAIL
+-/* #define DM_MAIL "master@rahul.net" */
++#define DM_MAIL "master@rahul.net"
+ #endif
+ 
+ /*
+@@ -499,10 +501,10 @@
+ /* CF 0.91.6 - SAVE_PLAYER now standard part of game */
+ /*#define SAVE_PLAYER*/
+ 
+-/* #define SAVE_HOMEDIR */
++#define SAVE_HOMEDIR
+ /* #define LOCK_PLAYER */
+ #define USE_CHECKSUM
+-/* #define ENABLE_CHECKSUM */ /* Will be default in distant future versions */
++#define ENABLE_CHECKSUM	/* Will be default in distant future versions */
+ 
+ #ifndef PLAYERDIR
+ #define PLAYERDIR "players"
