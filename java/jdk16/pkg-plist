@@ -1539,8 +1539,8 @@ jdk%%JDK_VERSION%%/src.zip
 %%DEBUG:%%jdk%%JDK_VERSION%%/lib/htmlconverter_g.jar
 @exec	mkdir -p %D/share/doc/java
 @unexec	rmdir %D/share/doc/java 2>/dev/null || true
-@exec	%D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
-@unexec	%D/bin/unregistervm FREEBSD-JDK%%JDK_VERSION%%
+@exec	%%LOCALBASE%%/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
+@unexec	%%LOCALBASE%%/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
 @dirrm jdk%%JDK_VERSION%%/bin
 %%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/audio
 %%MINIMAL:%%@dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans
