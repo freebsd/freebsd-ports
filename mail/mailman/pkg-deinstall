@@ -1,4 +1,6 @@
 #! /bin/sh
+#
+# $FreeBSD$
 
 delete_account() {
   local u g home
@@ -31,8 +33,8 @@ case $2 in
 DEINSTALL)
   zero_crontab %%USER%%
   if ps -axwU %%USER%% | grep -q python; then
-    echo 'Killing all running processes belonging to user "%%USER%%".'
-    killall -m -u %%USER%% python
+    echo "Stopping Mailman's qrunner daemon."
+    %%PREFIX%%/etc/rc.d/mailman.sh stop >/dev/null 2>&1
     sleep 2
   fi
   ;;

@@ -1,4 +1,6 @@
 #! /bin/sh
+#
+# $FreeBSD$
 
 make_account() {
   local u uid g gid gcos home shell
