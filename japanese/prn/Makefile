@@ -3,13 +3,13 @@
 # Date created:		19 Jun 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:35:46 max Exp $
+# $Id: Makefile,v 1.3 1998/06/06 03:45:00 itojun Exp $
 #
 
 DISTNAME=	prn
 PKGNAME=	ja-prn-1.0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
+MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/incoming/distfiles/
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
