@@ -1,0 +1,8 @@
+--- Makefile.orig	Fri Dec  9 11:16:58 1994
++++ Makefile	Sun Oct 19 02:23:29 2003
+@@ -1,4 +1,4 @@
+-CFLAGS = -O2
++CFLAGS ?= -O -pipe
+ 
+ LIBS = # -lsent
+ 
