@@ -1,10 +1,13 @@
---- ./xli.h.org	Thu Jul 28 18:13:28 1994
-+++ ./xli.h	Wed Nov 23 21:03:24 1994
-@@ -288,6 +288,7 @@
+--- Imakefile--	Wed Feb  9 09:23:32 2000
++++ Imakefile	Thu Feb 10 18:38:21 2000
+@@ -12,8 +12,8 @@
+       CCOPTIONS = -Aa -D_HPUX_SOURCE
+ #endif
  
- void          flipBits();	/* value.c */
+-JPEG_INCLUDES = 
+-JPEG_LDFLAGS = 
++JPEG_INCLUDES = -I/usr/local/include
++JPEG_LDFLAGS = -L/usr/local/lib
  
-+#define zopen zzopen /* to avoid conflict with zopen in stdio.h */
- ZFILE   *zopen(); /* zio.c */
- int      zread();
- void     zunread();
+ PNG_INCLUDES = 
+ PNG_LDFLAGS = 
