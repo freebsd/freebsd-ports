@@ -1,6 +1,9 @@
-Before you can run the command:
+*************************************************************
+Before using ldapsh, you'll probably want to :
 
 - Create the configuration file (an example is in
-  /usr/local/etc/LdapConfig.pl.sample)
-- See the file COMMANDS in the DOCSDIR (most likely
-  /usr/local/share/doc/ldapsh) for an overview of the commands.
+  %%EXAMPLESDIR%%/LdapConfig.pl, modify it to
+  suit your needs and place it in %%PREFIX%%/etc/)
+- See %%DOCSDIR%%/COMMANDS for an overview of
+  the available commands.
+*************************************************************
