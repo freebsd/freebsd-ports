@@ -17,14 +17,21 @@ SRC_FILE?=	${MODULENAME}.c
 OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
 			PKGNAMESUFFIX
 
-.if exists(${LOCALBASE}/include/apache2/http_core.h)
+
+.if exists(${APXS})
+APXS_PREFIX!=	${APXS} -q prefix
+.else
+APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
+.endif
+
+.if exists(${APXS_PREFIX}/include/apache2/http_core.h)
 WITH_APACHE2=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 13
 IGNORE=		"This module require apache13 and you have apache2 installed"
 .     endif
 .   endif
-.elif exists(${LOCALBASE}/include/apache/http_core.h)
+.elif exists(${APXS_PREFIX}/include/apache/http_core.h)
 WITH_APACHE13=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 2
@@ -80,12 +87,6 @@ AP_EXTRAS+=	-I ${AP_INC}
 .endif
 .if defined(AP_LIB)
 AP_EXTRAS+=	-L ${AP_LIB}
-.endif
-
-.if exists(${APXS})
-APXS_PREFIX!=	${APXS} -q prefix
-.else
-APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
 .endif
 
 .if defined(AP_FAST_BUILD)
@@ -155,18 +156,19 @@ _APACHE_MODULES+=	${${category}_MODULES}
 
 
 .if !defined(WITH_STATIC_APACHE)
+.    if ${WANT_APACHE} == common2
 # FYI
 #DYNAMIC_MODULES=	so
 CONFIGURE_ARGS+=	--enable-so
+.    endif
 .else
+.    if ${WANT_APACHE} == common2
 CONFIGURE_ARGS+=	--disable-so
+.    endif
 WITH_ALL_STATIC_MODULES=	YES
 .endif
 
 .if defined(WITH_SUEXEC)
-.if !defined(WANT_APACHE)
-WANT_APACHE=	"Too bad, guy!"
-.endif
 .if ${WANT_APACHE} == common13
 SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
