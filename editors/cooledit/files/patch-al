@@ -1,0 +1,11 @@
+--- editor/Makefile.in.orig	Fri Jan 28 22:41:04 2000
++++ editor/Makefile.in	Fri Jan 28 22:41:32 2000
+@@ -116,7 +116,7 @@
+ datadir = $(prefix)/@DATADIRNAME@
+ localedir = $(datadir)/locale
+ 
+-DEFS = -DLOCALEDIR=\"$(localedir)\" -DLIBDIR=\"${exec_prefix}/lib/cooledit\" @DEFS@ 
++DEFS = -DLOCALEDIR=\"$(localedir)\" -DLIBDIR=\"${exec_prefix}/lib/cooledit\" -DSYSCONFDIR=\"$(sysconfdir)\" -DDATADIR=\"$(datadir)/coolicon\" @DEFS@ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

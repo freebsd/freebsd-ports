@@ -1,5 +1,5 @@
---- syntax/Makefile.in.orig	Mon Jun  7 15:12:47 1999
-+++ syntax/Makefile.in	Mon Jun  7 15:15:31 1999
+--- syntax/Makefile.in.orig	Tue Nov 30 02:34:36 1999
++++ syntax/Makefile.in	Wed Jan 26 18:35:05 2000
 @@ -99,7 +99,7 @@
  VERSION = @VERSION@
  l = @l@
@@ -7,5 +7,5 @@
 -syntaxdir = $(libdir)/cooledit/syntax
 +syntaxdir = $(datadir)/cooledit/syntax
  
- syntax_DATA = c.syntax changelog.syntax diff.syntax diffc.syntax html.syntax 	java.syntax latex.syntax lsm.syntax makefile.syntax ml.syntax 	nroff.syntax pascal.syntax perl.syntax python.syntax sh.syntax 	smalltalk.syntax texinfo.syntax unknown.syntax swig.syntax
+ syntax_DATA = c.syntax changelog.syntax diff.syntax diffc.syntax html.syntax 	java.syntax latex.syntax lsm.syntax makefile.syntax ml.syntax 	nroff.syntax pascal.syntax perl.syntax python.syntax sh.syntax 	smalltalk.syntax texinfo.syntax unknown.syntax swig.syntax mail.syntax 	ada95.syntax
  

@@ -16,6 +16,7 @@ lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/cooledit/global.py
+share/cooledit/syntax/ada95.syntax
 share/cooledit/syntax/c.syntax
 share/cooledit/syntax/changelog.syntax
 share/cooledit/syntax/diff.syntax
@@ -24,6 +25,7 @@ share/cooledit/syntax/html.syntax
 share/cooledit/syntax/java.syntax
 share/cooledit/syntax/latex.syntax
 share/cooledit/syntax/lsm.syntax
+share/cooledit/syntax/mail.syntax
 share/cooledit/syntax/makefile.syntax
 share/cooledit/syntax/ml.syntax
 share/cooledit/syntax/nroff.syntax
