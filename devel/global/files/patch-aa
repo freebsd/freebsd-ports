@@ -1,15 +1,16 @@
---- doc/Makefile.in.orig	Thu Nov 14 20:04:38 2002
-+++ doc/Makefile.in	Thu Nov 14 20:09:05 2002
-@@ -311,14 +311,7 @@
+--- doc/Makefile.in.orig	Fri Oct  3 11:16:01 2003
++++ doc/Makefile.in	Mon Oct 20 13:53:50 2003
+@@ -358,15 +358,7 @@
  	  done; \
  	done
  	@$(POST_INSTALL)
 -	@if (install-info --version && \
--	     install-info --version | fgrep -i -v debian) >/dev/null 2>&1; then \
+-	     install-info --version | grep -i -v debian) >/dev/null 2>&1; then \
 -	  list='$(INFO_DEPS)'; \
 -	  for file in $$list; do \
--	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
--	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+-	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
+-	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile";\
+-	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile || :;\
 -	  done; \
 -	else : ; fi
 +
