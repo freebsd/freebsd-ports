@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
+NO_CDROM=	CSS code may violate the DMCA
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
