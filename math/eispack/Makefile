@@ -3,26 +3,21 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.7 1995/04/28 13:35:32 jkh Exp $
+# $Id: Makefile,v 1.8 1995/06/24 11:40:23 asami Exp $
 #
 
 DISTNAME=	eispack
 PKGNAME=	eispack-1.0
-
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-
 CATEGORIES+=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/eispack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/eispack/
-.undef MASTER_SITE_OVERRIDE
-.endif
+
+DIST_SUBDIR=	${DISTNAME}
 
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
 
-WRKSRC=${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	bandv.f bisect.f bqr.f cbabk2.f cbal.f cg.f ch.f cinvit.f combak.f \
