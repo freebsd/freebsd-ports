@@ -24,7 +24,7 @@ For additional options, see:
 
 	%%PREFIX%%/bin/bric_pgimport --help
 
-Edit %%PREFIX%%/etc/bricolage/bricolage.conf
+Edit %%PREFIX%%/bricolage/conf/bricolage.conf
 to reflect the database, username and password chosen
 for the bricolage database.
 
