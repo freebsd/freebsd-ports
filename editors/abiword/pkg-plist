@@ -59,7 +59,6 @@ share/AbiSuite/AbiWord/help/en-US/interface/index.html
 share/AbiSuite/AbiWord/help/en-US/interface/menucontextual.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuedit.html
 share/AbiSuite/AbiWord/help/en-US/interface/menufile.html
-share/AbiSuite/AbiWord/help/en-US/interface/menufile.xhtml_data/menufile.png
 share/AbiSuite/AbiWord/help/en-US/interface/menuformat.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuhelp.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuinsert.html
@@ -294,17 +293,11 @@ share/AbiSuite/fonts/s050000l.u2g
 share/AbiSuite/fonts/symbol.e2u
 share/AbiSuite/fonts/z003034l.afm
 share/AbiSuite/fonts/z003034l.pfb
-share/AbiSuite/icons/abiword_16.xpm
 share/AbiSuite/icons/abiword_48.png
 share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
 %%GNOME:%%share/AbiSuite/icons/abiword_logo.xpm
-share/AbiSuite/templates/2-columns.awt
-share/AbiSuite/templates/Employee-Directory.awt
-share/AbiSuite/templates/Fax-Coversheet.awt
-share/AbiSuite/templates/a4.awt
 share/AbiSuite/templates/normal.awt
-share/AbiSuite/templates/us-letter.awt
 %%GNOME:%%share/gnome/apps/Applications/abiword.desktop
 %%GNOME:%%share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite/templates
@@ -317,7 +310,6 @@ share/AbiSuite/templates/us-letter.awt
 @dirrm share/AbiSuite/AbiWord/help/en-US/tutorial
 @dirrm share/AbiSuite/AbiWord/help/en-US/problems
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface/workspace.xhtml_data
-@dirrm share/AbiSuite/AbiWord/help/en-US/interface/menufile.xhtml_data
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface/dialogreplace.xhtml_data
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface
 @dirrm share/AbiSuite/AbiWord/help/en-US/info
