@@ -8,6 +8,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 PKGNAMESUFFIX=	-base
@@ -23,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include --with-libiconv=${LOCALBASE}
-#USE_LIBTOOL=	yes
+USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:
