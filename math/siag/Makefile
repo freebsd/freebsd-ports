@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(GUILE)
-LIB_DEPENDS+=	guile.4:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.6:${PORTSDIR}/lang/guile
 .endif
 
 .if !defined(NOGDBM)
