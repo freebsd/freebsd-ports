@@ -1,0 +1,12 @@
+LIB=		cache
+
+SHLIB_MAJOR?=	0
+NOPROFILE=	yes
+
+SRCS=		src/access.c src/parse.c
+
+CFLAGS+=	-I${.CURDIR}/include
+
+LIBDIR=		${PREFIX}/lib
+
+.include <bsd.lib.mk>
