@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Mar 28 01:08:16 2003
-+++ Makefile	Sun Apr  6 12:31:26 2003
++++ Makefile	Tue Apr  8 02:27:07 2003
 @@ -3,13 +3,13 @@
  
  DESTDIR =
@@ -19,15 +19,17 @@
  
  ifdef USE_GDKPIXBUF
  PIXBUF_DEF = -DUSE_GDKPIXBUF
-@@ -19,7 +19,7 @@
+@@ -19,8 +19,8 @@
  
  ifdef USE_GDKPIXBUF2
  PIXBUF_DEF = -DUSE_GDKPIXBUF2
 -CFLAGS = -O3  -Wall `pkg-config --cflags gdk-pixbuf-xlib-2.0` -I/usr/X11R6/include
+-LDFLAGS = `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
 +CFLAGS += `pkg-config --cflags gdk-pixbuf-xlib-2.0` -I/usr/X11R6/include
- LDFLAGS = `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
++LDFLAGS += `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
  endif
  
+ PRGS = wmdrawer
 @@ -40,10 +40,10 @@
  	$(RM) *.o $(PRGS)
  
