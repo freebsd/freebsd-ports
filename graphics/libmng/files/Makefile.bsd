@@ -8,7 +8,7 @@ SHLIB_MINOR?=	0
 LOBJS!=		${MAKE} -f ${.CURDIR}/Makefile.in -V libmng_la_OBJECTS
 SRCS=		${LOBJS:.lo=.c}
 
-CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS
+CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS -DMNG_BUILD_SO
 
 INCS=		libmng.h libmng_conf.h libmng_types.h
 INCSDIR=	${LOCALBASE}/include
