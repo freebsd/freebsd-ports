@@ -1,0 +1,18 @@
+--- configure.old	Tue Feb  5 11:17:34 2002
++++ configure	Tue Feb  5 11:18:00 2002
+@@ -3224,13 +3224,13 @@
+ 			DSO="\$(CC)"
+ 			DSOFLAGS="$DSOFLAGS -Wl,-rpath,\$(libdir),-set_version,sgi2.4,-soname,\$@ -shared \$(OPTIM)"
+ 			;;
+-		OSF1* | Linux* | NetBSD* | OpenBSD*)
++		OSF1* | Linux* | NetBSD* | OpenBSD* | FreeBSD*)
+ 			LIBCUPS="libcups.so.2"
+ 			LIBCUPSIMAGE="libcupsimage.so.2"
+ 			DSO="\$(CC)"
+ 			DSOFLAGS="$DSOFLAGS -Wl,-soname,\$@ -shared \$(OPTIM)"
+ 			;;
+-		Darwin* | FreeBSD*)
++		Darwin*)
+ 			LIBCUPS="libcups.2.dylib"
+ 			LIBCUPSIMAGE="libcupsimage.2.dylib"
+ 			DSO="ld"
