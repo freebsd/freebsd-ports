@@ -15,6 +15,8 @@ COMMENT=	A simple netgraph module for multihop ad hoc networks
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		"Does not compile"
+
 .if !exists(/usr/src/sys/netgraph/netgraph.h)
 IGNORE=		"Requires kernel source /usr/src/sys to build"
 .endif
