@@ -1,8 +1,8 @@
 bin/swf_play
 include/swfdec/swf.h
 include/swfdec/swfdec.h
-lib/gtk-2.0/2.2.0/loaders/swf_loader.a
-lib/gtk-2.0/2.2.0/loaders/swf_loader.so
+lib/gtk-2.0/2.4.0/loaders/swf_loader.a
+lib/gtk-2.0/2.4.0/loaders/swf_loader.so
 lib/libswfdec.a
 lib/libswfdec.so
 lib/libswfdec.so.0

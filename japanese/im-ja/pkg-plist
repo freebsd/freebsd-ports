@@ -2,7 +2,7 @@ bin/im-ja-conf
 bin/im-ja-xim-server
 etc/gconf/schemas/im-ja.schemas
 lib/gnome-panel/im-ja-applet
-lib/gtk-2.0/2.2.0/immodules/im-ja.so
+lib/gtk-2.0/2.4.0/immodules/im-ja.so
 lib/im-ja/kpengine
 @dirrm lib/im-ja
 libdata/bonobo/servers/GNOME_ImJaApplet.server
