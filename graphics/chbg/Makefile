@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	chbg
-PORTVERSION=	0.8.1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.idata.sk/~ondrej/sw/
-DISTNAME=	${PORTNAME}-0.8pl1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.idata.sk/~ondrej/sw/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	p@dancris.com
 
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		chbg.1
 
 .include <bsd.port.mk>
