@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.36.4.orig/docs/man/MailScanner.conf.5	Wed Dec 15 20:31:43 2004
-+++ docs/man/MailScanner.conf.5	Wed Dec 15 20:32:29 2004
+--- ../MailScanner-install-4.37.7.orig/docs/man/MailScanner.conf.5	Mon Jan 17 13:18:55 2005
++++ docs/man/MailScanner.conf.5	Mon Jan 17 13:19:08 2005
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.36.4" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.37.7" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -15,7 +15,23 @@
  .br 
  
  .br 
-@@ -1266,12 +1266,11 @@
+@@ -781,6 +781,15 @@
+ When an entire message is saved in the quarantine for any reason, do you want to save it as the raw data files out of the mail queue (which can be processed with the df2mbox script, and which is easier to send to its original recipients), or do you want a conventional message file consisting of the header followed by the body of the message. If the previous option is switched off, then this will only affect archived mail and quarantined spam. If the previous option is on, then this also affects quarantined infections. 
+ 
+ .TP 
++\fBKeep Spam And MCP Archive Clean\fR
++Default: no
++.br 
++
++.br 
++Do you want to stop any virus\-infected spam getting into the spam or MCP archives? If you have a system where users can release messages from the spam or MCP archives, then you probably want to stop them being able to release any infected messages, so set this to yes. It is set to no by default as it causes a small hit in performance, and many people don't allow users to access the spam quarantine, so don't need it. This can also be the filename of a ruleset.
++
++
++.TP 
+ \fBLanguage Strings\fR
+ Default: %reports\-dir%/languages.conf
+ .br 
+@@ -1266,12 +1275,11 @@
  
  .TP 
  \fBAttachment Encoding Charset\fR
@@ -30,7 +46,40 @@
  .SH "Mail archiving and monitoring"
  .TP 
  \fBArchive Mail\fR
-@@ -1725,8 +1724,16 @@
+@@ -1595,22 +1603,24 @@
+ .br 
+ .RS 7
+ .IP  \(bu 4
+-"deliver" \- the message is delivered to the recipient as normal 
++deliver \- the message is delivered to the recipient as normal 
+ .IP  \(bu 4
+-"delete" \- the message is deleted 
++delete \- the message is deleted 
+ .IP  \(bu 4
+-"store" \- the message is stored in the quarantine 
++store \- the message is stored in the quarantine 
+ 
+ .IP  \(bu 4
+-"forward" \- an email address is supplied, to which the message is forwarded 
++forward \- an email address is supplied, to which the message is forwarded 
+ .IP  \(bu 4
+-"notify" \- Send the recipients a short notification that spam addressed to them was not delivered. They can then take action to request retrieval of the orginal message if they think it was not spam.
++notify \- Send the recipients a short notification that spam addressed to them was not delivered. They can then take action to request retrieval of the orginal message if they think it was not spam.
+ .IP  \(bu 4
+-"striphtml" \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
++striphtml \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
+ .IP  \(bu 4
+-"attachment" \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
++attachment \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
+ .IP  \(bu 4
+-"bounce" \- bounce the spam message. This option should not be used and must be enabled with the "Enable Spam Bounce" option first.
++bounce \- bounce the spam message. This option should not be used and must be enabled with the "Enable Spam Bounce" option first.
++.IP  \(bu 4
++header "name: value" \- Add the header "name: value" to the message. name must not contain any spaces.
+ .RE
+ 
+ .TP 
+@@ -1725,8 +1735,16 @@
  
  .br 
  Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
@@ -48,7 +97,7 @@
  
  .TP 
  \fBSpamAssassin User State Dir\fR
-@@ -1734,7 +1741,7 @@
+@@ -1734,7 +1752,7 @@
  .br 
  
  .br 
