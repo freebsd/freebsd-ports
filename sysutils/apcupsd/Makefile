@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.10.13
-#PORTREVISION=	1
+PORTVERSION=	3.10.15
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,14 +33,10 @@ OPTIONS+=       CGI "Compile with CGI programms to show status" off
 
 .include <bsd.port.pre.mk>
 
-# We need this below
-CONF_FILES=apcupsd.conf
-
 .if defined(WITH_CGI)
 CONFIGURE_ARGS+=--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 PLIST_SUB+=	CGI=""
-CONF_FILES+=	multimon.conf hosts.conf
 .else
 PLIST_SUB+=	CGI="@comment "
 .endif
@@ -89,17 +85,6 @@ post-configure:
 	${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
 
 post-install:
-	# Check if the install presaves the configuration files
-	for na in ${CONF_FILES}; do \
-		if [ -f ${PREFIX}/etc/apcupsd/$$na.new ]; then \
-			${ECHO_CMD} "etc/apcupsd/$$na.new" >> ${TMPPLIST}; \
-			if cmp -s ${PREFIX}/etc/apcupsd/$$na.new ${PREFIX}/etc/apcupsd/$$na; then \
-				${ECHO_CMD} "etc/apcupsd/$$na" >> ${TMPPLIST}; \
-			fi \
-		else \
-			${ECHO_CMD} "etc/apcupsd/$$na" >> ${TMPPLIST}; \
-		fi; \
-	done
 	# If the files presaved are identical with the new one, include then in
 	# the package list. So the port could be removed without problems
 	for na in apccontrol commfailure mainsback mastertimeout \
@@ -110,7 +95,6 @@ post-install:
 			fi \
 		fi; \
 	done
-	${ECHO_CMD} "@dirrm etc/apcupsd" >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec if [ -d %D/etc/apcupsd ]; then echo \"If you are permanently removing this port, you should do a ``rm -rf ${PREFIX}/etc/apcupsd`` to remove config files left.\" | fmt ; fi" >> ${TMPPLIST}
 	# Install sample startup script
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}

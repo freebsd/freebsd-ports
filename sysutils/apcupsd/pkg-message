@@ -7,8 +7,17 @@ the serial line the USV is connected to, e.g.
   cd /dev
   ln -s cuaa1 usv
 
-Read the MANUAL to do site specific configuration
+Read the manual to do site specific configuration
 assigenments! Especially have a detailed look into
 the chapter describing the shutdown procedure.
+
+Sample files are installed in ${PREFIX}/etc/apcupsd:
+
+  apcupsd.conf.sample, apcupsd.conf.net-master.sample
+  apcupsd.conf.net-slave.sample, hosts.conf.sample
+  multimon.conf.sample and cgi/apcupsd.css.sample
+
+These files must be copied and/or configured for a
+proper working apcupsd. Look into the manual!
 
 **************************************************
