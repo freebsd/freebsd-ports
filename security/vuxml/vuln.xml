@@ -66,7 +66,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="fc99c736-3499-11d9-98a7-0090962cff2a">
-    <topic>gnats4 -- format string vulnerability</topic>
+    <topic>gnats -- format string vulnerability</topic>
     <affects>
       <package>
 	<name>gnats</name>
@@ -81,6 +81,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0623</cvename>
       <mlist msgid="20040625164231.7437.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108820000823191</mlist>
     </references>
     <dates>
