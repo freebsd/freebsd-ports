@@ -1,14 +1,14 @@
---- configure.orig	Sun Jun  1 13:55:59 2003
-+++ configure	Mon Jun  2 02:36:19 2003
-@@ -7863,6 +7863,7 @@
+--- configure.orig	Mon Sep  8 20:00:28 2003
++++ configure	Wed Sep 24 23:29:28 2003
+@@ -8250,6 +8250,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+c_aux_dir/ltconfig $LIBTOOL_DEPS
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11202,6 +11203,7 @@
+@@ -11792,6 +11793,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
  *netbsd*) CDROM_HOST=netbsd;cd_device_path="/dev/rcd0";;
@@ -16,7 +16,16 @@
  *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";cdplayer_type_sun=true;;
  esac
  case "$host" in
-@@ -12771,14 +12773,14 @@
+@@ -11856,7 +11858,7 @@
+ 
+ 	;;
+   # list of supported OS cores
+-  *-*-linux*|*-*-freebsd*|*-*-openbsd*)
++  *-*-linux*|i386-*-freebsd*|*-*-openbsd*)
+ 	echo "$as_me:$LINENO: checking for apm_read in -lapm" >&5
+ echo $ECHO_N "checking for apm_read in -lapm... $ECHO_C" >&6
+ if test "${ac_cv_lib_apm_apm_read+set}" = set; then
+@@ -13646,14 +13648,14 @@
  ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
  
  cat >>confdefs.h <<_ACEOF
