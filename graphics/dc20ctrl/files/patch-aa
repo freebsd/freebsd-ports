@@ -1,5 +1,23 @@
---- Makefile.orig	Mon Dec 21 21:09:06 1998
-+++ Makefile	Mon Dec 21 21:09:19 1998
+--- Makefile.orig	Wed Feb 18 19:30:56 1998
++++ Makefile	Wed Jun 14 19:38:36 2000
+@@ -50,7 +50,7 @@
+ #
+ #	How to install the package.
+ #
+-INSTALL=/usr/bin/install
++INSTALL?=/usr/bin/install
+ #
+ #	Under FreeBSD we need to make it SGID to dialer, that is the serial port
+ #	owner.
+@@ -60,7 +60,7 @@
+ #
+ #	Where to install it.
+ #
+-ROOTDIR=/usr/local
++ROOTDIR=${PREFIX}
+ BINDIR=${ROOTDIR}/bin
+ MANDIR=${ROOTDIR}/man
+ 
 @@ -79,7 +79,7 @@
  #
  #	Used only if you make the project with USE_TIFF defined.
@@ -9,3 +27,37 @@
  
  #
  #	Used only if you make the project with USE_PNG defined.
+@@ -91,8 +91,8 @@
+ #	make the project with at least one between USE_JPEG, USE_TIFF and USE_PNG
+ #	defined.
+ #
+-EXTRA_LIBS_PATH=-L/usr/local/lib
+-EXTRA_INCLUDES_PATH=-I/usr/local/include
++EXTRA_LIBS_PATH=-L${LOCALBASE}/lib
++EXTRA_INCLUDES_PATH=-I${LOCALBASE}/include
+ 
+ #
+ # Do not change anything below this line
+@@ -151,11 +151,10 @@
+ install: install.bin install.man
+ 
+ install.bin: $(PROJECT)
+-	${INSTALL} -c -g ${INSTALL_GROUP} -m ${INSTALL_MODE} ${PROJECT} ${BINDIR}
++	${INSTALL} -c -o ${BINOWN} -g ${INSTALL_GROUP} -m ${INSTALL_MODE} ${PROJECT} ${BINDIR}
+ 
+ install.man:
+-	${INSTALL} -c ${PROJECT}.man ${MANDIR}/man1/${PROJECT}.1
+-	gzip --best ${MANDIR}/man1/${PROJECT}.1
++	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} ${PROJECT}.man ${MANDIR}/man1/${PROJECT}.1
+ 
+ man: ${PROJECT}.1
+ 
+@@ -163,7 +162,7 @@
+ 	nroff -man ${PROJECT}.man >${PROJECT}.1
+ 
+ $(PROJECT): $(OBJ)
+-	cc -o $@ $(OBJ) $(LFLAGS) $(LIBS)
++	${CC} -o $@ $(OBJ) $(LFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJ) $(PROJECT) core $(PROJECT).core *.bak a.out .depend $(PROJECT)-${VERSION}.${REVISION}.tar.gz
