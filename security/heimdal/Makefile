@@ -29,6 +29,7 @@ USE_LIBTOOL=		no	# Uses included version.
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared --without-krb4
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
