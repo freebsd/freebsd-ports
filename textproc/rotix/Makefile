@@ -14,7 +14,7 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME
 
 MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

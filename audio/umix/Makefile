@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ionstream.fi/sakari/umix/files/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="$(CC) -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"

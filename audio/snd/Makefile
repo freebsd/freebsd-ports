@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		trevor@FreeBSD.org
 
 LIB_DEPENDS=		gsl.3:${PORTSDIR}/math/gsl \
-			intl.2:${PORTSDIR}/devel/gettext
+			intl.4:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound

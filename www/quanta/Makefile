@@ -22,7 +22,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	jeremy@external.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
 USE_XPM=	yes

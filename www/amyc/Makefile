@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.crevola.com/about/current/
 
 MAINTAINER=	petef@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 #
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 USE_REINPLACE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GTK=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/
 
 MAINTAINER=	emikulic@optushome.com.au
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 

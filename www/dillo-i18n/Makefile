@@ -15,7 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes

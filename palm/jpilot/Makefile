@@ -15,7 +15,7 @@ MASTER_SITES=	http://jpilot.org/
 MAINTAINER?=	varju@webct.com
 
 LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
 USE_LIBTOOL=	yes

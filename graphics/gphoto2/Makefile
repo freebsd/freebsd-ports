@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

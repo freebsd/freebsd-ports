@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \

@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/graphics/libdivxdecore \
 		xmps.0:${PORTSDIR}/graphics/xmps \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes

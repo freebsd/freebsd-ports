@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= jedgar
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

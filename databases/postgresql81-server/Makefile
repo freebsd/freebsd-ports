@@ -59,7 +59,7 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	"LIBS=-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "

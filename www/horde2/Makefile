@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 #
 #-----------------------------------------------------------------------
 
-LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
@@ -80,7 +80,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "lintl.2"; then \
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "lintl.4"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with gettext support." ; \
 	    ${ECHO_MSG} "" ; \

@@ -25,7 +25,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes

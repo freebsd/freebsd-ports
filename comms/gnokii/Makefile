@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-0.4.0pre20
 
 MAINTAINER=	anders@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 .if !defined(WITHOUT_X11)

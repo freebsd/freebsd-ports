@@ -15,7 +15,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=3
 USE_XPM=	yes

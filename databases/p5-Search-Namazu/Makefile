@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		nmz.5:${PORTSDIR}/databases/namazu2
 
 PERL_CONFIGURE=	YES

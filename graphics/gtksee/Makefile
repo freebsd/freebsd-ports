@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.linux.tucows.com/files/x11/graphics/ \
 
 MAINTAINER=	dirk@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff

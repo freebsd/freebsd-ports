@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(USE_DB2)
 LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db3

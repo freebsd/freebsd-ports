@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mita@FreeBSD.org
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 VFLIB_VERSION=	2.25.6

@@ -24,7 +24,7 @@ MAINTAINER=	shuna@pop16.odn.ne.jp
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 .else
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .endif

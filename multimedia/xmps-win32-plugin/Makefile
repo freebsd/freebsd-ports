@@ -14,7 +14,7 @@ MASTER_SITES=	http://xmps.sourceforge.net/sources/
 MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/graphics/xmps \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 USE_GMAKE=	yes

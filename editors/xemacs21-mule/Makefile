@@ -33,7 +33,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORT
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
 .endif
 LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		${LIB_INPUT_METHOD}
 
 CONFIGURE_ARGS?=--with-x11 \

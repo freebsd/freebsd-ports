@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dgilbert@velocet.ca
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
