@@ -1,0 +1,6 @@
+bin/netpanzer
+bin/netpanzerbrowser
+share/pixmaps/netpanzer/netpanzer.png
+share/pixmaps/netpanzer/netpanzer.xpm
+@dirrm share/pixmaps/netpanzer
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
