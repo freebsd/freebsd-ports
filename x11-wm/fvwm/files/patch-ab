@@ -1,5 +1,5 @@
-*** ../fvwm-1.24r/configure.h	Mon Nov 28 21:08:47 1994
---- configure.h	Fri May 12 10:43:43 1995
+*** configure.h.orig	Mon Nov 28 15:08:47 1994
+--- configure.h	Sun May 30 11:01:24 1999
 ***************
 *** 1,7 ****
 ! #define FVWMDIR     "/usr/lib/X11/fvwm"
@@ -94,3 +94,20 @@
   
   /***************************************************************************
    *#define PRUNE
+***************
+*** 186,192 ****
+  #define CLOSE_STRING3   "destroy"
+  #define CLOSE_STRING4   "quit"
+  
+! #ifdef __alpha
+  #define NEEDS_ALPHA_HEADER
+  #undef BROKEN_SUN_HEADERS
+  #endif /* (__alpha) */
+--- 186,192 ----
+  #define CLOSE_STRING3   "destroy"
+  #define CLOSE_STRING4   "quit"
+  
+! #if defined(__alpha) && !defined(__FreeBSD__)
+  #define NEEDS_ALPHA_HEADER
+  #undef BROKEN_SUN_HEADERS
+  #endif /* (__alpha) */
