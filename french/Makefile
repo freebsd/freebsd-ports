@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xtel
 
     SUBDIR += ispell
     SUBDIR += kde2-i18n

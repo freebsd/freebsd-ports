@@ -1,0 +1,10 @@
+[please see english description below]
+
+XTEL permet d'émuler un Minitel 1B, 2. Xtel est aussi utilisable en réseau,
+et il permet d'émuler les TVR et les I-Minitel, mais ceci n'est pas encore
+pris en compte ce port FreeBSD.
+
+XTEL is an emulator for the Minitel. The Minitel is a passive terminal, used
+in France to access to different network services via a telephone line. 
+
+WWW: http://www.com1.fr/~pficheux/xtel/

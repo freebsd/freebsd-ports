@@ -1,0 +1,43 @@
+****************************************************************************
+Xtel has been installed on %%PREFIX%%/bin/xtel.
+
+In order to use it, you have to edit the file /etc/services
+and add the line:
+
+xtel            1313/tcp   #xtel Minitel emulator
+
+Then you have to edit the file /etc/inetd.conf (or its equivalent
+if you run another internet services daemon) and add the line:
+
+xtel	stream	tcp	nowait	root	%%PREFIX%%/bin/xteld	xteld
+
+Force the super-daemon to re-read its configuration file by
+killall -1 inetd
+
+If your modem is plugged to /dev/cuaax (where x = 0, 1, 2,...)
+detect its initialization string by:
+
+mdmdetect cuaax
+
+After some time while your computer should be dialoguing with the
+modem, you should get such a line
+
+ModemModel , 38400 \dat&fm1e0&k3f3\r-OK
+
+Take note of the second (speed) and last parameters, and report them
+into the file %%PREFIX%%/lib/X11/xtel/xtel.lignes so that you have a
+line like this one:
+
+modem0,/dev/cuaa0,38400,7,E,\dat&fm1e0&k3f3\r OK atdt\T\r CONNECT,30
+
+where cuaa0 should be adjusted to your port number, 38400 to the speed
+detected by mdmdetect, and where the string included between "E," and atdt
+corresponds to the third parameter (Note that the "-" has been replaced by
+a space).
+
+To end, you just have to install the fonts, either by entering
+xset +fp %%PREFIX%%/lib/X11/fonts/xtel
+xset fp rehash
+or by adding %%PREFIX%%/lib/X11/fonts/xtel to FontPath in your
+XF86Config.
+****************************************************************************
