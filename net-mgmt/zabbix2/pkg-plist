@@ -58,12 +58,23 @@ bin/zabbix_trapperd
 %%DATADIR%%/php/trends.php
 %%DATADIR%%/php/triggers.php
 %%DATADIR%%/php/users.php
+%%DATADIR%%/php/images/sysmaps/old/Notebook.png
+%%DATADIR%%/php/images/sysmaps/old/Hub.png
+%%DATADIR%%/php/images/sysmaps/old/Printer.png
+%%DATADIR%%/php/images/sysmaps/old/Router.png
+%%DATADIR%%/php/images/sysmaps/old/Server.png
+%%DATADIR%%/php/images/sysmaps/old/Workstation.png
 %%DATADIR%%/php/images/sysmaps/Notebook.png
 %%DATADIR%%/php/images/sysmaps/Hub.png
 %%DATADIR%%/php/images/sysmaps/Printer.png
 %%DATADIR%%/php/images/sysmaps/Router.png
 %%DATADIR%%/php/images/sysmaps/Server.png
 %%DATADIR%%/php/images/sysmaps/Workstation.png
+%%DATADIR%%/php/images/sysmaps/README
+%%DATADIR%%/php/images/sysmaps/Phone.png
+%%DATADIR%%/php/images/sysmaps/Battery.png
+%%DATADIR%%/php/images/sysmaps/Network.png
+%%DATADIR%%/php/images/sysmaps/Satellite.png
 %%DATADIR%%/php/include/.htaccess
 %%DATADIR%%/php/include/classes.inc.php
 %%DATADIR%%/php/include/config.inc.php
@@ -109,8 +120,11 @@ bin/zabbix_trapperd
 %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql/patch.sql
 %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql/patch.sql
 %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/postgresql/patch.sql
 @dirrm etc/zabbix
 @dirrm %%DATADIR%%/php/audio
+@dirrm %%DATADIR%%/php/images/sysmaps/old
 @dirrm %%DATADIR%%/php/images/sysmaps
 @dirrm %%DATADIR%%/php/images
 @dirrm %%DATADIR%%/php/include
@@ -173,6 +187,9 @@ bin/zabbix_trapperd
 @dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql
 @dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql
 @dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13
 @dirrm %%DATADIR%%/dbpatches
 @dirrm %%DATADIR%%
 @exec ln -sf %D/etc/zabbix /etc/zabbix
