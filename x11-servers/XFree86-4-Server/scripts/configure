@@ -230,6 +230,14 @@ if [ $cpwh != NO ]; then
   echo "#define	HasXdmAuth		$answ"	>> $F
 fi
 
+# ELF detection
+if [ `sysctl -n kern.osreldate` -ge 300004 -a  X`objformat` = Xelf ]; then
+  ELF=yes
+  echo "#define UseElfFormat		YES" >> $F
+else
+  ELF=no
+fi
+
 cat <<'END'
 
  XDM can be built so that it will get a KerberosIV TGT for your users
@@ -246,11 +254,16 @@ cat <<'END'
  will not be enabled if the kerberos libraries are unavailable.
 
 END
-#yesno "Do you want to enable KerberosIV support? [YES] "
-answ=NO
+yesno "Do you want to enable KerberosIV support? [YES] "
 cpkb=NO
 if [ $answ = YES ]; then
-    LIBKRB=/usr/lib/libkrb.a
+    if [ $ELF = yes ]; then
+      LIBKRB=/usr/lib/libkrb.a
+    elif [ -d /usr/lib/aout ]; then
+      LIBKRB=/usr/lib/aout/libkrb.a
+    else
+      LIBKRB=/usr/lib/libkrb.a
+    fi
     K4PATCH=$FILESDIR/kerberos4.diffs
     K4XDM="$FILESDIR/krb4auth.c $FILESDIR/krb4auth.h"
     XDMDIR=$WRKDIR/xc/programs/xdm/
@@ -267,11 +280,6 @@ fi
 if [ $cpkb != NO ]; then
   echo "#define	HasKrb4		$answ"	>> $F
 fi
-
-# ELF detection
-test `sysctl -n kern.osreldate` -ge 300004 &&
-  test `objformat` = elf &&
-  echo "#define UseElfFormat		YES" >> $F
 
 echo
 echo "End of configuration questions. No more user input required"
