@@ -13,7 +13,7 @@ DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-MAN6=		vms-empire.6
+MAN6=		empire.6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire
