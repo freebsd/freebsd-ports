@@ -12,23 +12,34 @@ MASTER_SITES=	http://www.shoup.net/ntl/
 
 MAINTAINER=	matthiasb@acm.org
 
-BUILD_DEPENDS=  libgmp3:${PORTSDIR}/math/libgmp3
-RUN_DEPENDS=    libgmp3:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= "GMP_INCDIR=${LOCALBASE}/include" "GMP_LIBDIR=${LOCALBASE}/lib" "GMP_PREFIX=${LOCALBASE}" "NTL_GMP_LIP=on"
-MAKE_ARGS=	"DOCDIR=${LOCALBASE}/share/doc GMP_PREFIX=${LOCALBASE}"
+CONFIGURE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}"
+CONFIGURE_WRKSRC= ${BUILD_WRKSRC}
+
+BUILD_WRKSRC=	${WRKSRC}/src
+MAKEFILE=	makefile
+
+# Build with WITH_ISO_CXX=yes if you want to use the "Standard C++"
+# version of NTL. In this version, all of NTL is "wrapped" inside
+# the namespace NTL, and are no longer directly accessible---you must
+# either use explicit qualification, or using directives, or
+# using declarations.
+
+.if defined(WITH_ISO_CXX)
+CONFIGURE_ARGS+= NTL_STD_CXX=on
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/NTL
-	${INSTALL_DATA} ${WRKSRC}/../include/NTL/*  ${PREFIX}/include/NTL/.
-	${INSTALL_DATA} ${WRKSRC}/ntl.a ${PREFIX}/lib/libntl.a
+	${INSTALL_DATA} ${WRKSRC}/include/NTL/*  ${PREFIX}/include/NTL/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/ntl.a ${PREFIX}/lib/libntl.a
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/NTL
-	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/NTL/.
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/NTL/
 .endif
 
 .include <bsd.port.mk>
