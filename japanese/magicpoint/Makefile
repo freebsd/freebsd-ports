@@ -16,8 +16,6 @@ CATEGORIES=	japanese
 
 MAINTAINER=	itojun@itojun.org
 
-BROKEN=		"Security hole (buffer overflow yielding setgid uucp)"
-
 # dirty, but this is required for version independent-ness
 CONFIGURE_ARGS=		--with-vfontcap=`${ECHO} ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
 CONFIGURE_ARGS+=	--enable-freetype-charset16
