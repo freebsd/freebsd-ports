@@ -23,6 +23,8 @@ COMMENT=	Replacement for crypt(1)
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/
 
+BROKEN=		Incomplete pkg-plist
+
 WANT_AUTOCONF_VER=	259
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
 LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+BROKEN=		Incomplete pkg-plist
+
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
 MANCOMPRESSED=	yes
 

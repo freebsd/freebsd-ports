@@ -17,6 +17,8 @@ COMMENT=	GXmame is a GTK frontend for xmame
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETTEXT=	yes
 USE_GZIP=	yes
 USE_ICONV=	yes

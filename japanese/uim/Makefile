@@ -17,6 +17,8 @@ COMMENT=	Input method library
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
 		m17n.1:${PORTSDIR}/devel/m17n-lib
 
+BROKEN=		Incomplete pkg-plist
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes

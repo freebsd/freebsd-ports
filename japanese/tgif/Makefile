@@ -18,6 +18,8 @@ COMMENT=	2-D drawing facility (with Japanese configuration)
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif-nls\
 		${PREFIX}/lib/X11/fonts/local/knm12p.pcf.gz:${PORTSDIR}/japanese/k12
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
