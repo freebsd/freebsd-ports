@@ -3,7 +3,7 @@
 # Date created:		11 November 1998
 # Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
-# $Id: Makefile,v 1.9 1999/02/12 07:46:58 flathill Exp $
+# $Id: Makefile,v 1.10 1999/02/22 03:35:54 steve Exp $
 #
 
 DISTNAME=	ircii-EPIC4pre2.001-NR14
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
 DISTFILES=	epic4pre2.001-NR14.tar.gz epic4pre2-help.tar.gz
 
 MAINTAINER=	benhutch@xfiles.org.uk
+
+BROKEN=	'distfiles missing from all MASTER_SITES'
 
 DIST_SUBDIR=	epic4
 
