@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GSLREF}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GSLREF} ${GSLREFHTML}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -24,13 +24,16 @@ MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
 MAN3=		gsl.3
 
 GSLREF=		gsl-ref.ps.gz
-IGNOREFILES=	${GSLREF}
+GSLREFHTML =    gsl-ref-html.tar.gz
+IGNOREFILES=	${GSLREF} ${GSLREFHTML}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gsl
 	${INSTALL_DATA} ${_DISTDIR}/${GSLREF} ${PREFIX}/share/doc/gsl
 	${GUNZIP_CMD} ${PREFIX}/share/doc/gsl/${GSLREF}
+	tar xfz ${_DISTDIR}/${GSLREFHTML} -C ${PREFIX}/share/doc/gsl
+	cd ${PREFIX}/share/doc/gsl && ${LN} -s gsl-ref-html html
 .endif
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ include/gsl/gsl_block_ulong.h
 include/gsl/gsl_block_ushort.h
 include/gsl/gsl_cblas.h
 include/gsl/gsl_chebyshev.h
+include/gsl/gsl_combination.h
 include/gsl/gsl_complex.h
 include/gsl/gsl_complex_math.h
 include/gsl/gsl_const.h
@@ -242,6 +243,57 @@ lib/libgslcblas.so.0
 libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
 %%PORTDOCS%%share/doc/gsl/gsl-ref.ps
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_1.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_10.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_11.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_12.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_13.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_14.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_15.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_16.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_17.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_18.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_19.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_2.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_20.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_21.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_22.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_23.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_24.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_25.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_26.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_27.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_28.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_29.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_3.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_30.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_31.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_32.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_33.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_34.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_35.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_36.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_37.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_38.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_39.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_4.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_40.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_41.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_42.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_43.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_44.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_45.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_46.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_47.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_48.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_5.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_6.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_7.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_8.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_9.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_toc.html
+%%PORTDOCS%%share/doc/gsl/html 
+%%PORTDOCS%%@dirrm share/doc/gsl/gsl-ref-html
 %%PORTDOCS%%@dirrm share/doc/gsl
 @dirrm include/gsl
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
