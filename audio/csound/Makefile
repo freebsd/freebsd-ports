@@ -26,13 +26,18 @@ RESTRICTED=	"no redistribution; no commercial use except to make music (see http
 MAKE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 NO_WRKSUBDIR=	yes
+PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 
 pre-build:
+	find ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
+
+post-build:
 	${RM} -f ${PLIST}
-.for i in bin/csound share/csound/csound.dat
-	${ECHO} ${i} >> ${PLIST}
-.endfor
+	@for i in `find ${WRKDIR} -type f -perm 755`; do \
+		${ECHO} bin/`${BASENAME} $${i}` >> ${PLIST}; \
+	done
+	${ECHO} share/csound/csound.dat >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	${ECHO} share/doc/csound/Version${PORTVERSION:S/./_/}.Notes >> ${PLIST}
 	${ECHO} "@dirrm share/doc/csound" >> ${PLIST}
@@ -49,10 +54,9 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/Version${PORTVERSION:S/./_/}.Notes \
 		${PREFIX}/share/doc/csound
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/csound ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/csound.txt ${PREFIX}/share/csound/csound.dat
-
-post-clean:
-	${RM} -f ${PLIST}
+	for i in `find ${WRKDIR} -type f -perm 755`; do \
+		${INSTALL_PROGRAM} $${i} ${PREFIX}/bin ; \
+	done
 
 .include <bsd.port.mk>
