@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	6.10.20021015
-PORTREVISION=	1
+PORTVERSION=	6.10.20021029
 CATEGORIES=	www
-MASTER_SITES=	http://opera.online.no/linux/610/beta1/en/static_freebsd/ \
-		ftp://ftp.opera.com/pub/opera/linux/610/beta1/en/static_freebsd/
+MASTER_SITES=	http://opera.online.no/unix/freebsd/610/final/en/static/ \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/610/final/en/static/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/10./10-/}.1-static-qt.i386.freebsd
 
 MAINTAINER=	des@FreeBSD.org

@@ -356,12 +356,6 @@ share/opera/java/lc.jar
 share/opera/java/opera.jar
 share/opera/java/opera.policy
 share/opera/opera6.adr
-share/opera/plugins/libnpp.so
-share/opera/plugins/libnpp.so.0
-share/opera/plugins/libnpp.so.0.1
-share/opera/plugins/libnpp.so.0.1.8
-share/opera/plugins/operamotifwrapper
-share/opera/plugins/operaplugincleaner
 share/opera/skin/foreground.png
 share/opera/styles/OPF.css
 share/opera/styles/about.css
