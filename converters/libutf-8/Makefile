@@ -9,11 +9,11 @@ PORTNAME=	libutf
 PORTVERSION=	8.1.0
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
-		ftp://ftp.whizkidtech.net/unix/ \
+		ftp://ftp.whizkidtech.redprince.net/unix/ \
 		http://www.whizkidtech.net/ISO-8859-2/
 DISTNAME=	libutf-8-1.0
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
 
 INSTALLS_SHLIB=	yes
