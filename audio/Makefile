@@ -37,6 +37,7 @@
     SUBDIR += blop
     SUBDIR += bmp-faad
     SUBDIR += bmp-scrobbler
+    SUBDIR += bmp-songchange
     SUBDIR += bmp-wma
     SUBDIR += bonk
     SUBDIR += boodler
