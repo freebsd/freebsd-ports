@@ -438,7 +438,6 @@
     SUBDIR += xsu
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
-    SUBDIR += xwatch
     SUBDIR += xwipower
     SUBDIR += yawho
     SUBDIR += zidrav
