@@ -23,7 +23,7 @@ CONFLICTS=	kaffe-1.[!1].* javavmwrapper-2.*
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
-NOT_FOR_ARCHS=	amd64 alpha
+ONLY_FOR_ARCHS=	i386
 
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
