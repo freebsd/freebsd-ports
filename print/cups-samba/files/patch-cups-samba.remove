@@ -1,0 +1,37 @@
+--- cups-samba.remove.old	Tue Feb 10 17:30:45 2004
++++ cups-samba.remove	Tue Feb 10 17:45:55 2004
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!%%LOCALBASE%%/bin/bash
+ # Removal script for CUPS - SAMBA Drivers for Windows NT/2k/XP/2k3 version 5.0rc3.
+ # Produced using ESP Package Manager v3.7.0; report problems to epm@easysw.com.
+ #%product CUPS - SAMBA Drivers for Windows NT/2k/XP/2k3
+@@ -8,8 +8,8 @@
+ #%rootsize 0
+ #%usrsize 503
+ #
+-PATH=/usr/xpg4/bin:/bin:/usr/bin:/usr/ucb:${PATH}
+-SHELL=/bin/sh
++PATH=/bin:/usr/bin:${PATH}
++SHELL=%%LOCALBASE%%/bin/bash
+ case "`uname`" in
+ 	Darwin*)
+ 	case "`id -un`" in
+@@ -73,8 +73,8 @@
+ 	done
+ fi
+ echo Removing/restoring installed files...
+-if test -w /usr ; then
+-	for file in /usr/share/cups/drivers/cups5.hlp /usr/share/cups/drivers/cupsdrv5.dll /usr/share/cups/drivers/cupsui5.dll; do
++if test -w %%PREFIX%% ; then
++	for file in %%PREFIX%%/share/cups/drivers/cups5.hlp %%PREFIX%%/share/cups/drivers/cupsdrv5.dll %%PREFIX%%/share/cups/drivers/cupsui5.dll; do
+ 		rm -f "$file"
+ 		if test -d "$file.O" -o -f "$file.O" -o -h "$file.O"; then
+ 			mv -f "$file.O" "$file"
+@@ -82,5 +82,5 @@
+ 	done
+ fi
+ echo Checking configuration files...
+-rm -f /etc/software/cups-samba.remove
++rm -f %%PREFIX%%/etc/software/cups-samba.remove
+ echo Removal is complete.

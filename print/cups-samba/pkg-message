@@ -1,0 +1,84 @@
+**********************************************************************
+**********************************************************************
+MANUAL INSTALL INSTRUCTIONS:
+==============================
+
+To complete the installation of print/cups-samba, do in order:
+
+CUPS-BASE
+-----------
+
+1) Uncomment application/octet-stream line in mime.types
+2) Uncomment application/octet-stream line in mime.convs
+3) Restart cupsd
+
+SAMBA
+-------
+
+1) edit the [global] section of smb.conf and make sure it has these
+   lines:
+
+[global]
+	load printer = yes
+	printing = cups
+	printcap name = cups
+
+2) edit the [printers] section of smb.conf and make sure it has these
+   lines:
+
+[printers]
+	comment = All Printers
+	path = /var/spool/samba
+	printer admin = root
+	guest ok = yes
+	printable = yes
+	browseable = no
+	public = yes
+	writable = no
+
+3) edit the [print$] section of smb.conf and make sure it has these
+   lines:
+
+[print$]
+	comment = Printer Drivers
+	path = %%PREFIX%%/share/cups/drivers
+	browseable = yes
+	guest ok = no
+	read only = yes
+	write list = root
+
+4) restart Samba
+
+____________
+NOTE:  Samba needs to know about the passwords for printer admin and
+write list or authentication will fail.
+
+
+CUPS-LPR
+----------
+
+1) Run cupsaddsmb
+
+If only a subset of your printers will be installed as exportable to
+MS Windows NT/XP/2000/2003 clients:
+
+#cupsaddsmb -U root cups_printer_1 cups_printer_2 ...
+
+To export all printers to MS Windows NT/XP/2000/2003 clients:
+
+#cupsaddsmb -U root -a
+
+In either case, you will be prompted for the root password.
+
+WINDOWS
+---------
+
+1) Browse and install for a network printer as usual.  The drivers
+will be automagically installed.
+
+____________
+NOTE:  Other settings in smb.conf may work, but your REALLY need to
+know what your are doing.  :)
+
+**********************************************************************
+**********************************************************************

@@ -1,0 +1,9 @@
+CUPS-SAMBA provides a means to export CUPS printers from a FreeBSD
+server to Windows NT/XP/2000/2003 clients with a single Windows
+driver that customizes the printer based on the PPD file for the
+printer.
+
+WWW: http://www.easysw.com/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>
