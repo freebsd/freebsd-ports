@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
+USE_GCC=	3.3
 USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
