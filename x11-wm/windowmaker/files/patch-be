@@ -1,5 +1,8 @@
---- plugins/libwmfun/Makefile.in.orig	Thu Jan  4 12:16:06 2001
-+++ plugins/libwmfun/Makefile.in	Fri Jan  5 12:47:05 2001
+
+$FreeBSD$
+
+--- plugins/libwmfun/Makefile.in.orig	Mon Feb 19 21:10:18 2001
++++ plugins/libwmfun/Makefile.in	Mon Feb 19 21:20:52 2001
 @@ -38,7 +38,7 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
@@ -23,9 +26,9 @@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
 -libwmfun_la_LIBADD = 
-+libwmfun_la_LIBADD = -lfreetype
++libwmfun_la_LIBADD =
  libwmfun_la_OBJECTS =  bilinear.lo fade.lo generic.lo getopt.lo \
- getopt1.lo wave.lo drawstring.lo
+ getopt1.lo wave.lo
  CFLAGS = @CFLAGS@
 @@ -107,12 +109,12 @@
  all: all-redirect

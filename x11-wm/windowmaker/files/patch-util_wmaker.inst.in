@@ -1,24 +1,14 @@
---- util/wmaker.inst.in	2001/01/08 01:41:27	1.1
-+++ util/wmaker.inst.in	2001/01/08 01:48:25
-@@ -65,12 +65,18 @@
- 	elif [ "$file" = "WMRootMenu" ]; then
- 		if [ "$LOCALE" ]; then
-             	    if [ -f $GLOBALDIR/plmenu.${LOCALE%_*} ]; then
--                	cp $GLOBALDIR/plmenu.${LOCALE%_*} $GSDIR/Defaults/WMRootMenu
-+                	sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
-+				-e "s:#wmdatadir#:$GLOBALDIR:g" \
-+					$GLOBALDIR/plmenu.${LOCALE%_*} > $GSDIR/Defaults/WMRootMenu
- 		    else
--			cp $GLOBALDIR/plmenu $GSDIR/Defaults/WMRootMenu
-+			sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
-+				-e "s:#wmdatadir#:$GLOBALDIR:g" \
-+					$GLOBALDIR/plmenu > $GSDIR/Defaults/WMRootMenu
-             	    fi
-         	else
--            	    cp $GLOBALDIR/plmenu $GSDIR/Defaults/WMRootMenu
-+            	    sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
-+				-e "s:#wmdatadir#:$GLOBALDIR:g" \
-+					$GLOBALDIR/plmenu > $GSDIR/Defaults/WMRootMenu
-         	fi
- 	else
- 		if test "x$GNUSTEP_USER_ROOT" = "x"; then
+
+$FreeBSD$
+
+--- util/wmaker.inst.in	2001/02/19 20:05:14	1.1
++++ util/wmaker.inst.in	2001/02/19 20:05:29
+@@ -293,7 +293,7 @@
+  echo "menu that will be used by default is the property list one. Read"
+  echo "    $GSDIR/Library/WindowMaker/README"
+  echo "for information on how to change it."
+-    if [ "${inst_menu%.*}" == "menu" ]; then
++    if [ "${inst_menu%.*}" = "menu" ]; then
+  echo "However, since you have locale set to $LOCALE and plmenu for such locale"
+  echo "was not found, your WMRootMenu contains path to text formated menu:"
+  echo "    $GSDIR/Library/WindowMaker/$inst_menu"
