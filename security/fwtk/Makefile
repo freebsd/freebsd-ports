@@ -3,22 +3,21 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.5 1996/11/13 18:15:02 markm Exp $
+# $Id: Makefile,v 1.6 1996/11/18 11:39:24 asami Exp $
 #
 
 DISTNAME=	fwtk-1.3
 CATEGORIES=	security net
-DISTFILES=	fwtk-v1.3.tar.Z fwtk-doc-only.tar.Z
+DISTFILES=	fwtk-v1.3${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
+
+RESTRICTED=	"No form of redistribution is allowed"
 
 WRKSRC=		${WRKDIR}/fwtk
 HAS_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	fixmake
-
-RESTRICTED=	"No form of redistribution is allowed"
-
-INSTMAN=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
 
 MAN3=		auth.3
 MAN5=		netperm-table.5
@@ -31,24 +30,32 @@ LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 		tn-gw x-gw
 
 fetch:
-	@if [ ! -f ${DISTDIR}/fwtk-v1.3.tar.Z ]; then \
+	@if [ ! -f ${DISTDIR}/fwtk-v1.3${EXTRACT_SUFX} ]; then \
+	  echo ""; \
 	  echo "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
-	  echo "for details of how to obtain the FTWK source. Put the files"; \
-	  echo "fwtk-v1.3.tar.Z and fwtk-doc-only.tar.Z in the directory"; \
+	  echo "for details of how to obtain the FTWK source.  Put the files"; \
+	  echo "fwtk-v1.3${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} in the directory"; \
 	  echo "${DISTDIR} and run make again"; \
+	  echo ""; \
 	  exit 1;\
 	fi
+
+pre-configure:
+	@/usr/bin/sed -e s:%%FWTKSRCDIR%%:${WRKSRC}: \
+				-e s:%%BSD_PREFIX%%:${PREFIX}: \
+				${WRKSRC}/Makefile.config > ${WRKSRC}/Makefile.config.out
+	@/bin/mv ${WRKSRC}/Makefile.config.out ${WRKSRC}/Makefile.config
 
 post-install:
 	( cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS} )
 	( cd ${PREFIX}/libexec ; mv ${SBIN_BINS} ../sbin )
-	mkdir -p ${PREFIX}/share/doc/fwtk
-	${INSTMAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/fwtk
-	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN3} ${PREFIX}/man/man3 )
-	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN5} ${PREFIX}/man/man5 )
-	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN8} ${PREFIX}/man/man8 )
+	${MKDIR} ${PREFIX}/share/doc/fwtk
+	${INSTALL_MAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/fwtk
+	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 )
+	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5 )
+	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8 )
 .if !defined(NOPORTDOCS)
-	( cd ${WRKSRC}/doc ; cp ${DOCS} ${PREFIX}/share/doc/fwtk )
+	( cd ${WRKSRC}/doc ; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/fwtk )
 .endif
 
 .include <bsd.port.mk>
