@@ -5831,6 +5831,7 @@ moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 momspider	ports/www/momspider
+monit		ports/sysutils/monit
 monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
