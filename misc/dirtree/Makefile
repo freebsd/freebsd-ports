@@ -10,7 +10,7 @@ PORTNAME=	dirtree
 PORTVERSION=	1.2.0
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	http://home.pages.at/kingleo/development/
+MASTER_SITES=	http://kingleo.pages.at/development/cpp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line tool for displaying directory trees
