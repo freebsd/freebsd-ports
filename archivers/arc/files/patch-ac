@@ -1,0 +1,22 @@
+*** marc.c.old	Wed Apr 15 02:59:21 1992
+--- marc.c	Sat Dec 31 20:40:30 1994
+***************
+*** 35,40 ****
+--- 35,41 ----
+  #endif
+  VOID	arcdie();
+  static VOID expandlst(), merge();
++ char *makefnam();                  /* filename fixup routine */
+  
+  FILE *src;			       /* source archive */
+  char srcname[STRLEN];		       /* source archive name */
+***************
+*** 47,53 ****
+  int nargs;			       /* number of arguments */
+  char *arg[];			       /* pointers to arguments */
+  {
+-     char *makefnam();		       /* filename fixup routine */
+      char *envfind();
+  #if	!_MTS
+      char *arctemp2, *mktemp();		/* temp file stuff */
+--- 48,53 ----
