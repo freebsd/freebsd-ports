@@ -117,6 +117,19 @@ pre-patch:
 		${MKDIR} hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
 			${PATCH} < ${WRKDIR}/jdk131.patches
 
+.if !defined(NATIVE_BOOTSTRAP)
+pre-build:
+	@if [ "$${WRKDIRPREFIX}" -a \
+	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
+	     x`readlink "/compat/linux/$${WRKDIRPREFIX}"` = x"$${WRKDIRPREFIX}" ]; \
+	then \
+		echo "Please set WRKDIRPREFIX to something which doesn't"; \
+		echo "have a matching symbolic link in /compat/linux."; \
+		echo "This is known to cause problems during bootstrapping."; \
+		exit 1; \
+	fi
+.endif
+
 post-build:
 	# Prune empty dirs
 	${FIND} ${JDKIMAGEDIR} -type d | ${SORT} -r | \
