@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.3.2
+PORTVERSION=	7.3.4
 CATEGORIES=	japanese databases
-MASTER_SITES=	http://www.postgresql.jp/document/pg732doc/
+MASTER_SITES=	http://www.postgresql.jp/document/pg734doc/
 PKGNAMESUFFIX=	-man
 DISTNAME=	man
 DIST_SUBDIR=	postgresql/${PORTVERSION}
