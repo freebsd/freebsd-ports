@@ -1,14 +1,17 @@
-OpenH323 is a multi-platform H323 Video Conferencing program.
-It can exchange full duplex audio and video with other H323
+OpenH323 is a multi-platform H323 Video Conferencing library.
+
+This can be used to make H323 Video Conferencing applications.
+and the port produces a sample application called OhPhone.
+
+OhPhone can exchange full duplex audio and video with other H323
 compliant video conferencing programs including Microsoft NetMeeting
 It requires a sound card for audio support and a Bt848/878 based
 video card (using the bktr driver) for video capture.
 
-It makes use of PWLib.
-
+The OpenH323library, and ohpone makes use of PWLib.
 PWLib is a multi-platform code library that can be used to write
-applications that will compile and run on Windows, Linux and a few other
-Unix variants. It was developed by Equivalence Ltd Pty
+applications that will compile and run on the BSD Unixes, Windows, Linux
+and a few other Unix variants. It was developed by Equivalence Ltd Pty.
 
 For more information see
 http://www.openh323.org
