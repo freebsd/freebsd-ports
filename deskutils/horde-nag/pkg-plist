@@ -22,6 +22,7 @@
 %%NAGDIR%%/graphics/list.gif
 %%NAGDIR%%/graphics/nag.gif
 %%NAGDIR%%/graphics/note.gif
+%%NAGDIR%%/graphics/print.gif
 %%NAGDIR%%/graphics/refresh.gif
 %%NAGDIR%%/graphics/search.gif
 %%NAGDIR%%/graphics/up.gif
@@ -34,8 +35,11 @@
 %%NAGDIR%%/lib/constants.php
 %%NAGDIR%%/lib/version.php
 %%NAGDIR%%/list.php
+%%NAGDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/el_GR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/en_US/help.xml
 %%NAGDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
@@ -44,19 +48,25 @@
 %%NAGDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/lt_LT/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/nb_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/nl_NL/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
 %%NAGDIR%%/menu.php
 %%NAGDIR%%/po/Makefile
 %%NAGDIR%%/po/README
+%%NAGDIR%%/po/bg_BG.po
 %%NAGDIR%%/po/cs_CZ.po
+%%NAGDIR%%/po/da_DK.po
 %%NAGDIR%%/po/de_DE.po
+%%NAGDIR%%/po/el_GR.po
 %%NAGDIR%%/po/es_ES.po
 %%NAGDIR%%/po/extract.pl
 %%NAGDIR%%/po/fi_FI.po
@@ -64,11 +74,15 @@
 %%NAGDIR%%/po/hu_HU.po
 %%NAGDIR%%/po/it_IT.po
 %%NAGDIR%%/po/ko_KR.po
+%%NAGDIR%%/po/lt_LT.po
+%%NAGDIR%%/po/nag.pot
+%%NAGDIR%%/po/nb_NO.po
 %%NAGDIR%%/po/nl_NL.po
 %%NAGDIR%%/po/nn_NO.po
 %%NAGDIR%%/po/pt_BR.po
 %%NAGDIR%%/po/ru_RU.po
 %%NAGDIR%%/po/ru_RU.KOI8-R.po
+%%NAGDIR%%/po/sk_SK.po
 %%NAGDIR%%/po/sv_SE.po
 %%NAGDIR%%/po/zh_CN.po
 %%NAGDIR%%/po/zh_TW.po
@@ -83,6 +97,8 @@
 %%NAGDIR%%/templates/common-header.inc
 %%NAGDIR%%/templates/index/css.inc
 %%NAGDIR%%/templates/index/notconfigured.inc
+%%NAGDIR%%/templates/javascript/open_print_win.js
+%%NAGDIR%%/templates/javascript/print.js
 %%NAGDIR%%/templates/list/actions.inc
 %%NAGDIR%%/templates/list/empty.inc
 %%NAGDIR%%/templates/list/footer.inc
@@ -92,6 +108,7 @@
 %%NAGDIR%%/templates/list/task_headers.inc
 %%NAGDIR%%/templates/list/task_summaries.inc
 %%NAGDIR%%/templates/menu/menu.inc
+%%NAGDIR%%/templates/prefs/category_management.inc
 %%NAGDIR%%/templates/search/begin.inc
 %%NAGDIR%%/templates/search/end.inc
 %%NAGDIR%%/templates/search/search.inc
@@ -107,10 +124,16 @@
 @dirrm %%NAGDIR%%/graphics
 @dirrm %%NAGDIR%%/lib/Driver
 @dirrm %%NAGDIR%%/lib
+@dirrm %%NAGDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/bg_BG
 @dirrm %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/cs_CZ
+@dirrm %%NAGDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/da_DK
 @dirrm %%NAGDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/de_DE
+@dirrm %%NAGDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/el_GR
 @dirrm %%NAGDIR%%/locale/en_US
 @dirrm %%NAGDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/es_ES
@@ -124,6 +147,10 @@
 @dirrm %%NAGDIR%%/locale/it_IT
 @dirrm %%NAGDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ko_KR
+@dirrm %%NAGDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/lt_LT
+@dirrm %%NAGDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/nb_NO
 @dirrm %%NAGDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/nl_NL
 @dirrm %%NAGDIR%%/locale/nn_NO/LC_MESSAGES
@@ -134,6 +161,8 @@
 @dirrm %%NAGDIR%%/locale/ru_RU
 @dirrm %%NAGDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ru_RU.KOI8-R
+@dirrm %%NAGDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/sk_SK
 @dirrm %%NAGDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/sv_SE
 @dirrm %%NAGDIR%%/locale/zh_CN/LC_MESSAGES
@@ -145,8 +174,10 @@
 @dirrm %%NAGDIR%%/scripts/drivers
 @dirrm %%NAGDIR%%/scripts
 @dirrm %%NAGDIR%%/templates/index
+@dirrm %%NAGDIR%%/templates/javascript
 @dirrm %%NAGDIR%%/templates/list
 @dirrm %%NAGDIR%%/templates/menu
+@dirrm %%NAGDIR%%/templates/prefs
 @dirrm %%NAGDIR%%/templates/search
 @dirrm %%NAGDIR%%/templates/task
 @dirrm %%NAGDIR%%/templates/view
