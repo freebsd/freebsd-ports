@@ -6,29 +6,28 @@
 #
 
 PORTNAME=	bzflag
-PORTVERSION=	1.7g.2
+PORTVERSION=	1.10.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}.20031209
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 3D tank battle game
 
-USE_MESA=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.9.10.20031209
+
+USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
+MAN6=	bzadmin.6 bzflag.6 bzfls.6 bzfquery.6 bzfrelay.6 bzfs.6
 
 post-patch:
-	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|@LINUX_TRUE@||g ; \
 		 s|@LINUX_FALSE@|#|g' ${WRKSRC}/src/platform/Makefile.in
 
