@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.24 1998/09/17 00:32:32 asami Exp $
+# $Id: Makefile,v 1.25 1998/09/28 02:06:11 steve Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
@@ -11,8 +11,6 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.real-time.com/pub/games/crossfire/ \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.pyramid.com/pub/crossfire/ \
-		ftp://yoyo.cc.monash.edu.au/pub/crossfire/ \
-		ftp://ftp.cs.city.ac.uk/pub/games/crossfire/ \
 		ftp://ftp.sunet.se/pub/unix/games/crossfire/ \
 		ftp://ftp.cs.titech.ac.jp/pub/games/crossfire/
 DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
