@@ -18,6 +18,7 @@ MAINTAINER=	wvengen@stack.nl
 COMMENT=	Bible, lexicon and commentary modules for SWORD
 
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
 USE_ZIP=	yes

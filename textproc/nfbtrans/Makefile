@@ -16,6 +16,7 @@ COMMENT=	ASCII text to Grade Two braille translator
 
 RESTRICTED=	"Unclear copyright status"
 
+BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-q -a -L -o
 NO_WRKSUBDIR=		yes
