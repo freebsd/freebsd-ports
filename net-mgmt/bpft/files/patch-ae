@@ -1,0 +1,13 @@
+--- trafd/trafstart.orig	Wed Oct 27 09:04:52 1993
++++ trafd/trafstart	Mon Oct 25 11:26:55 1999
+@@ -1,3 +1,4 @@
++#!/bin/sh
+ #
+ #	trafstart	Copyright (c)1993 CAD lab
+ #
+@@ -20,4 +21,4 @@
+ #trafd -i ne0 port ftp or ftp-data
+ #
+ echo I am storage, before use invoke editor and edit as your need.
+-trafd -?
++/usr/local/sbin/trafd -?
