@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.56 1999/04/08 09:18:10 flathill Exp $
+# $Id: Makefile,v 1.57 1999/05/01 02:43:22 steve Exp $
 
 DISTNAME=	WindowMaker-0.53.0
 PKGNAME=	windowmaker-i18n-0.53.0
@@ -34,7 +34,6 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
 		LINGUAS="de es fi fr hr it ja_JP.EUC ko nl no pl pt ru"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${PREFIX}/share/locale \
-	--with-gfx-incs="-I${LOCALBASE}/include/giflib" \
 	--disable-debug --enable-kanji --disable-shared
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \

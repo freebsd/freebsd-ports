@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.33 1999/05/03 22:29:03 se Exp $
+# $Id: Makefile,v 1.34 1999/05/20 19:08:00 asami Exp $
 #
 
 DISTNAME=	kdenetwork-1.1.1
@@ -27,8 +27,7 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--with-extra-includes=$(PREFIX)/include/giflib"
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:57:16 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/07 17:45:26 jseger Exp $
 #
 
 DISTNAME=	ktelnet-0.61
@@ -22,9 +22,7 @@ LIB_DEPENDS=	qt.2:${PORTSDIR}/x11-toolkits/qt142 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--with-extra-includes=$(PREFIX)/include/giflib"
-
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 
