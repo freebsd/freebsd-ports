@@ -1,7 +1,9 @@
 www/data/WebSVN/blame.php
 www/data/WebSVN/cache/tmp
 www/data/WebSVN/changes.txt
+www/data/WebSVN/comp.php
 www/data/WebSVN/diff.php
+www/data/WebSVN/dl.php
 www/data/WebSVN/filedetails.php
 www/data/WebSVN/form.php
 www/data/WebSVN/include/command.inc
@@ -27,14 +29,18 @@ www/data/WebSVN/languages/korean-utf8.inc
 www/data/WebSVN/languages/portuguese.inc
 www/data/WebSVN/languages/russian.inc
 www/data/WebSVN/languages/swedish.inc
+www/data/WebSVN/languages/tchinese-utf8.inc
+www/data/WebSVN/languages/tchinese.inc
 www/data/WebSVN/licence.txt
 www/data/WebSVN/listing.php
 www/data/WebSVN/log.php
 www/data/WebSVN/rss.php
 www/data/WebSVN/templates.txt
 www/data/WebSVN/templates/BlueGrey/blame.tmpl
+www/data/WebSVN/templates/BlueGrey/compare.tmpl
 www/data/WebSVN/templates/BlueGrey/diff.tmpl
 www/data/WebSVN/templates/BlueGrey/directory.tmpl
+www/data/WebSVN/templates/BlueGrey/e-node.png
 www/data/WebSVN/templates/BlueGrey/file.png
 www/data/WebSVN/templates/BlueGrey/file.tmpl
 www/data/WebSVN/templates/BlueGrey/filec.png
@@ -43,14 +49,18 @@ www/data/WebSVN/templates/BlueGrey/files.png
 www/data/WebSVN/templates/BlueGrey/folder.png
 www/data/WebSVN/templates/BlueGrey/footer.tmpl
 www/data/WebSVN/templates/BlueGrey/header.tmpl
+www/data/WebSVN/templates/BlueGrey/i-node.png
 www/data/WebSVN/templates/BlueGrey/index.tmpl
+www/data/WebSVN/templates/BlueGrey/l-node.png
 www/data/WebSVN/templates/BlueGrey/log.tmpl
 www/data/WebSVN/templates/BlueGrey/png.js
 www/data/WebSVN/templates/BlueGrey/repo.png
 www/data/WebSVN/templates/BlueGrey/styles.css
 www/data/WebSVN/templates/BlueGrey/subversion.png
+www/data/WebSVN/templates/BlueGrey/t-node.png
 www/data/WebSVN/templates/BlueGrey/xml.gif
 www/data/WebSVN/templates/Standard/blame.tmpl
+www/data/WebSVN/templates/Standard/compare.tmpl
 www/data/WebSVN/templates/Standard/diff.tmpl
 www/data/WebSVN/templates/Standard/directory.tmpl
 www/data/WebSVN/templates/Standard/file.tmpl
@@ -60,7 +70,18 @@ www/data/WebSVN/templates/Standard/index.tmpl
 www/data/WebSVN/templates/Standard/log.tmpl
 www/data/WebSVN/templates/Standard/styles.css
 www/data/WebSVN/templates/Standard/xml.gif
+www/data/WebSVN/templates/Zinn/blame.tmpl
+www/data/WebSVN/templates/Zinn/compare.tmpl
+www/data/WebSVN/templates/Zinn/diff.tmpl
+www/data/WebSVN/templates/Zinn/directory.tmpl
+www/data/WebSVN/templates/Zinn/file.tmpl
+www/data/WebSVN/templates/Zinn/footer.tmpl
+www/data/WebSVN/templates/Zinn/header.tmpl
+www/data/WebSVN/templates/Zinn/index.tmpl
+www/data/WebSVN/templates/Zinn/log.tmpl
+www/data/WebSVN/templates/Zinn/styles.css
 www/data/WebSVN/wsvn.php
+@dirrm www/data/WebSVN/templates/Zinn
 @dirrm www/data/WebSVN/templates/Standard
 @dirrm www/data/WebSVN/templates/BlueGrey
 @dirrm www/data/WebSVN/templates
