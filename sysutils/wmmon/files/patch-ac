@@ -1,0 +1,16 @@
+--- wmmon.c.orig	Fri Jan  8 16:54:07 1999
++++ wmmon.c	Fri Jan  8 16:54:25 1999
+@@ -220,11 +220,13 @@
+ 		}
+ 	}
+ 
++#if __FreeBSD_version >= 300000
+ 	if( checkversion() < 0 )
+ 	{
+ 		fprintf( stderr, devstat_errbuf );
+ 		exit(1);
+ 	}
++#endif
+ 
+ 	wmmon_routine(argc, argv);
+ }
