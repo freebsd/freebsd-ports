@@ -3,7 +3,6 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
-etc/rndc.conf.sample
 include/dns/a6.h
 include/dns/acl.h
 include/dns/adb.h
@@ -206,9 +205,10 @@ sbin/rndc-confgen
 %%PORTDOCS%%@dirrm share/doc/bind9/arm
 %%PORTDOCS%%@dirrm share/doc/bind9/misc
 %%PORTDOCS%%@dirrm share/doc/bind9
+@unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 @dirrm include/dns
 @dirrm include/dst
-@dirrm include/isc
+@unexec rmdir %D/include/isc 2>/dev/null || true
 @dirrm include/isccc
 @dirrm include/isccfg
 @dirrm include/lwres
