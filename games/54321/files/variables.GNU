@@ -14,10 +14,10 @@ LDFLAGS += \
 	-L${SDL}/lib -Wl,-rpath -Wl,${SDL}/lib \
 	-lSDL_image -lSDL-1.1 -lSDLmain-1.1 -pthread -lpng
 
-prog:	Release/54321-$(ARCH)
+prog:	Release/54321-$(OPSYS)
 
-Release/54321-$(ARCH):
+Release/54321-$(OPSYS):
 	-@$(MKDIR_CMD)
 	echo '#!/bin/sh' > $@
-	echo "cd ./bin/$(ARCH) && exec ./54321 \$$*" >> $@
+	echo "cd ./bin/$(OPSYS) && exec ./54321 \$$*" >> $@
 	chmod 755 $@
