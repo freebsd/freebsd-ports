@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Mar 14 01:21:45 2001
++++ Makefile	Fri Jun 29 20:36:40 2001
+@@ -19,10 +19,10 @@
+ 
+ ifeq ($(USE_CONCORDE),YES)
+ # Set CONCORDE_ROOT to the location of the compiler concorde libraries
+-  CONCORDE_ROOT   = $(HOME)/concorde
+-  CONCORDE_INC    = $(CONCORDE_ROOT)/INCLUDE
++  CONCORDE_ROOT   = /usr/local
++  CONCORDE_INC    = $(CONCORDE_ROOT)/include/concorde
+   CONCORDE_CFLAGS = -I$(CONCORDE_INC) -DCONCORDE
+-  CONCORDE_LIB    = $(CONCORDE_ROOT)/concorde.a
++  CONCORDE_LIB    = $(CONCORDE_ROOT)/lib/libconcorde.a
+ else
+   CONCORDE_CFLAGS =
+   CONCORDE_LIB    =
