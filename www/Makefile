@@ -195,6 +195,7 @@
     SUBDIR += mod_mysqluserdir
     SUBDIR += mod_pcgi2
     SUBDIR += mod_perl
+    SUBDIR += mod_perl2
     SUBDIR += mod_php3
     SUBDIR += mod_php4
     SUBDIR += mod_proxy_add_forward
