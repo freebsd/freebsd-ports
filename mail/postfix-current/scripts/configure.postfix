@@ -24,8 +24,8 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 TLS		"SSL and TLS" "$status_TLS" \
-IPv6		"IPv6 support (broken)" "$status_IPv6" \
-IPv6TLS		"IPv6 support with SSL and TLS (broken)" "$status_IPv6TLS" \
+IPv6		"IPv6 support" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
@@ -63,6 +63,7 @@ echo "PREFIX=	${PREFIX}"
 
 SUB_TLS="@comment "
 SUB_TEST="@comment "
+SUB_IPV6="@comment "
 
 while [ "$1" ]; do
 	case $1 in
@@ -196,11 +197,12 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.15-pf-2.0.12-20030621.patch.gz"
+			echo "PATCHFILES+=	ipv6-1.17-pf-2.0.14-20030812.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
 			IPv6SELECTED=YES
+			SUB_IPV6=""
 			;;
 		IPv6TLS)
 			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
@@ -213,10 +215,11 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.15-pf-2.0.12-20030621.patch.gz"
+			echo "PATCHFILES+=	tls+ipv6-1.17-pf-2.0.14-20030812.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
+			SUB_IPV6=""
 			;;
 		*)
 			echo "Unknown option(s): $*" > /dev/stderr
@@ -229,6 +232,7 @@ done
 
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
+echo "PLIST_SUB+=	SUB_IPV6=\"${SUB_IPV6}\""
 
 # for some reason, if we alter the pkg name this way, the first build (where
 # we ask the configure questions) doesn't pick up the extensions, but
