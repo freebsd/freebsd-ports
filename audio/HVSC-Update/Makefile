@@ -1,0 +1,36 @@
+# New ports collection makefile for:	HVSC-Update
+# Date created:				13 October 2002
+# Whom:					Anders Nordby <anders@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HVSC-Update
+PORTVERSION=	2.8.1
+CATEGORIES=	audio emulators
+MASTER_SITES=	http://sidplay2.sourceforge.net/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/
+DISTNAME=	${PORTNAME}-Tool-${PORTVERSION}-Source
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	anders@FreeBSD.org
+
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-Tool-${PORTVERSION}-Source
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+DOCS=	HVSC_Update.txt PSID_v2NG.txt
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d -m 0755 ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
