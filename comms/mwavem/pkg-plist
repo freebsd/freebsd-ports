@@ -69,14 +69,7 @@ share/mwavem/vv_hdlc.dsp
 share/mwavem/vv_prot.dsp
 share/mwavem/mwmmem.prf
 share/mwavem/tigr1040.wtt
-share/mwavem/mwavedd.ko
-lib/libmwave.a
-lib/libmeio.a
-lib/libmwmutil.a
-lib/libmwwtt32.a
-lib/libmwmlw32.a
-lib/libmwmpw32.a
-lib/libmwmbl.a
+share/mwavem/mwave.ko
 @dirrm share/mwavem
 @exec rm -f /dev/mwave
 @exec mknod /dev/mwave c 96 0
