@@ -1170,6 +1170,7 @@
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Var_Dump
+    SUBDIR += pear-XML_NITF
     SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RSS
