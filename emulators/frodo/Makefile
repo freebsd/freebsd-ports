@@ -1,15 +1,15 @@
 # New ports collection makefile for:	frodo
-# Version required:	4.1
 # Date created:		11 Dez 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	FrodoV4_1a.Src
-PKGNAME=	frodo-4.1
+PORTNAME=	frodo
+PORTVERSION=	4.1a
 CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
+DISTNAME=	FrodoV4_1a.Src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	cpm-emulator
-# Version required:	0.2.1.1
 # Date created:		28 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cpm-0.2.1
-PKGNAME=	cpmemu-0.2.1.1
+PORTNAME=	cpmemu
+PORTVERSION=	0.2.1.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.cdrom.com/pub/linux/slackware-4.0/source/extra-stuff/CPM-80-emulator/
 MASTER_SITE_SUBDIR=	system/emulators
+DISTNAME=	cpm-0.2.1
 
 PATCH_SITES=	${MASTER_SITE_SUNSITE}
 PATCH_SITE_SUBDIR=	system/emulators

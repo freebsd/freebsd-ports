@@ -1,12 +1,12 @@
 # New ports collection makefile for:	hfsutils
-# Version required:	3.2.6
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hfsutils-3.2.6
+PORTNAME=	hfsutils
+PORTVERSION=	3.2.6
 CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 

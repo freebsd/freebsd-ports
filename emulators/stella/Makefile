@@ -1,16 +1,16 @@
 # New ports collection makefile for:   	stella-1.1
-# Version required:			1.1
 # Date created:				March 4, 1999
 # Whom:					Jacques Vidrine <nectar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	stella-1.1-src
-PKGNAME=	stella-1.1
+PORTNAME=	stella
+PORTVERSION=	1.1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/stella/1.1/ \
 		http://www.nectar.com/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nectar@FreeBSD.org
 

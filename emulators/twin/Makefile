@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Willows
-# Version required:	1999.06.16
 # Date created:		5 June 1999
 # Whom:			Pedro F. Giffuni
 #
 # $FreeBSD$
 #
 
-DISTNAME=	twin-19991230
-PKGNAME=	twin-1999.12.30
+PORTNAME=	twin
+PORTVERSION=	1999.12.30
 CATEGORIES=	emulators devel
 MASTER_SITES=	ftp://ftp.willows.com/pub/development/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	giffunip@asme.org
 

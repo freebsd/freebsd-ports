@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  osf1_base
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netscape-4.7-1.alpha
-PKGNAME=	osf1_base-4.0f
+PORTNAME=	osf1_base
+PORTVERSION=	4.0f
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.digital.com/private/netscape/
+DISTNAME=	netscape-4.7-1.alpha
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org

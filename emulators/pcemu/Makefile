@@ -1,15 +1,13 @@
 # New ports collection makefile for:	pcemu(1)
-# Version required:	1.01alpha
 # Date created:		7 March 1995
 # Whom:			joerg
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pcemu1.01alpha
-PKGNAME=	pcemu-1.01b
+PORTNAME=	pcemu
+PORTVERSION=	1.01b
 CATEGORIES=	emulators
-
 #
 # This could in theory become a chicken-and-egg problem.  Anyway,
 # wcarchive is well connected, and the distfile hasn't been changed
@@ -22,6 +20,7 @@ MASTER_SITES+=	ftp://ftp.interface-business.de/pub/outgoing/
 #
 # This is the original master site, but better use a well-connected server
 MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
+DISTNAME=	pcemu1.01alpha
 
 MAINTAINER=	joerg@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  dlx
-# Version required: 0.0
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dlx
-PKGNAME=	dlx-2.0
+PORTNAME=	dlx
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://max.stanford.edu/pub/hennessy-patterson.software/
+DISTFILE=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

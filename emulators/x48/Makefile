@@ -1,12 +1,12 @@
 # New ports collection makefile for:    x48
-# Version required:  0.4.0   
 # Date created:         Thu Oct 24 13:10:59 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	x48-0.4.0
+PORTNAME=	x48
+PORTVERSION=	0.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators

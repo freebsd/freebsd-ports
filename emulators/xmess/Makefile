@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xmess
-# Version required:			0.2b4.1
 # Date created:				Tue Aug 17 00:21:10 MET DST 1999
 # Whom:					nox@jelal.kn-bremen.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	unix02s4
-PKGNAME=	xmess-0.2b4.1
+PORTNAME=	xmess
+PORTVERSION=	0.2b4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://mess.emuverse.com/files/ \
 		http://www.vintagegaming.com/hosted/vectrex/
+DISTNAME=	unix02s4
 DISTFILES=	${DISTNAME}.tgz pdp1.zip
 
 #MAINTAINER=	mycroft@NetBSD.ORG	# NetBSD

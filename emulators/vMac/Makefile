@@ -1,21 +1,21 @@
 # New ports collection makefile for:	vMac
-# Version required:		 	0.1.9.3
 # Date created:				Jul 11th 1999
 # Whom:					troll
 #
 # $FreeBSD$
 #
 
-DISTNAME=		vMac-0.1.9.3-src
-PKGNAME=		vMac-0.1.9.3
+PORTNAME=		vMac
+PORTVERSION=		0.1.9.3
 CATEGORIES=		emulators
 MASTER_SITES=		http://www.vmac.org/download/XWindows/
+DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		troll@digitalspark.net
 
 MAKEFILE=		Makefile
-WRKSRC=			${WRKDIR}/vMac-0.1.9.3
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	 	yes
 HAS_CONFIGURE=		yes
 USE_XLIB=		yes

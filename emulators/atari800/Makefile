@@ -1,16 +1,16 @@
-# New ports collection makefile for:   Atari800-0.8.6
-# Version required:	0.8.6
+# New ports collection makefile for:   Atari800
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Atari800-0.8.6
-PKGNAME=	atari800-0.8.6
+PORTNAME=	atari800
+PORTVERSION=	0.8.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
 		http://cas3.zlin.vutbr.cz/~stehlik/a800/
+DISTNAME=	Atari800-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	jsutton@bbcon.com.au

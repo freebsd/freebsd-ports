@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rtc
-# Version required:	2000.03.28
 # Date created:		28 March 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rtc-2000.03.28
+PORTNAME=	rtc
+PORTVERSION=	2000.03.28
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none

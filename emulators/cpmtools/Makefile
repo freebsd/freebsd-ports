@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cpm(1)
-# Version required:	1.1
 # Date created:		25 December 1994
 # Whom:			joerg
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cpm-1.1
-PKGNAME=	cpmtools-1.1
+PORTNAME=	cpmtools
+PORTVERSION=	1.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	cpm-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    sim
-# Version required:     2.3d
 # Date created:         7 November 1997
 # Whom:			jraynard
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sim_2.3d
-PKGNAME=	sim-2.3d
+PORTNAME=	sim
+PORTVERSION=	2.3d
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/ \
 		http://people.FreeBSD.org/~jedgar/distfiles/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
