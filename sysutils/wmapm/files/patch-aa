@@ -1,10 +1,28 @@
---- Makefile.~1~	Tue Dec 15 23:58:08 1998
-+++ Makefile	Fri Jul  2 23:01:51 1999
+--- Makefile.orig	Tue Dec 15 16:58:08 1998
++++ Makefile	Wed Aug 25 23:55:58 1999
 @@ -1,6 +1,6 @@
- CC     = gcc
- CFLAGS = -O2 -Wall
+-CC     = gcc
+-CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11
++CC?     = gcc
++CFLAGS? = -O2 -Wall
 +INCDIR = -I/usr/X11R6/include
  DESTDIR= /usr/X11R6
  LIBDIR = -L/usr/X11R6/lib
  LIBS   = -lXpm -lX11 -lXext
+@@ -8,13 +8,13 @@
+          ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	$(CC) $(COPTS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
+ 
+ all:	wmapm.o wmapm
+ 
+ wmapm.o: wmapm_master.xpm wmapm_mask.xbm wmapm.h
+ wmapm: $(OBJS)
+-	$(CC) $(COPTS) $(SYSTEM) -o wmapm $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) $(SYSTEM) -o wmapm $^ $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
