@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan 19 09:55:17 2002
++++ configure	Sat Jan 19 09:54:37 2002
+@@ -1167,7 +1167,7 @@
+   rm -f conf.sdltest
+ 
+ CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
+-LIS="$LIBS $SDL_LIBS"
++LIBS="$LIBS $SDL_LIBS"
+ 
+ echo $ac_n "checking for main in -lSDL_mixer""... $ac_c" 1>&6
+ echo "configure:1174: checking for main in -lSDL_mixer" >&5
