@@ -27,14 +27,13 @@ GNU_CONFIGURE=		YES
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == elf
-SHLIB=libhesiod.so.3
-CONFIGURE_ENV+=		LDFLAGS="-shared -Wl,-soname,${SHLIB}"
+VERSION=3
+SONAME="-Wl,-soname,libhesiod.so.${VERSION}"
 .else
-SHLIB=libhesiod.so.3.0
-CONFIGURE_ENV+=		LDFLAGS="-shared"
+VERSION=3.0
 .endif
 
-MAKE_ENV+=		SHLIB="${SHLIB}"
+MAKE_ENV+=		VERSION="${VERSION}" SONAME="${SONAME}"
 
 post-install:
 	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
