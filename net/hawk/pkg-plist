@@ -11,10 +11,10 @@ www/data-dist/hawk/images/redsphere.png
 www/data-dist/hawk/images/yellowsphere.png
 www/data-dist/hawk/hawk.php
 www/data-dist/hawk/hawk.css
-%%PORTDOCS%%share/doc/hawk/README
-%%PORTDOCS%%share/doc/hawk/create_hawk_db.sql
-%%PORTDOCS%%share/doc/hawk/create_hawk_user.sql
-%%PORTDOCS%%@dirrm share/doc/hawk
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/create_hawk_db.sql
+%%PORTDOCS%%%%DOCSDIR%%/create_hawk_user.sql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/hawk 2>/dev/null || true
 @dirrm www/data-dist/hawk/images
 @dirrm www/data-dist/hawk
