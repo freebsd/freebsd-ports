@@ -9,10 +9,4 @@ PythonDebug On
 
 For more information, see http://www.modpython.org/.
 
-And, if you built apache without thread support, you may need to add the
-following lines to $PREFIX/sbin/envvars:
-
-LD_PRELOAD=/usr/lib/libc_r.so  # or libpthread.so
-export LD_PRELOAD
-
 ================================================================================
