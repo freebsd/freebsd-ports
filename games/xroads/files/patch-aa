@@ -1,0 +1,20 @@
+--- Makefile	Mon Jun 29 22:40:15 1998
++++ /home/andy/tmp/wrk/Makefile	Tue Jun 30 15:15:12 1998
+@@ -31,7 +31,7 @@
+ # window and monochrome graphics.
+ ###########################################################################
+ 
+-FLAGS = -O3 -DXPLOSIONS -DGAMEDELAY=10000
++FLAGS= ${CFLAGS} -DXPLOSIONS -DGAMEDELAY=10000 -I${X11BASE}/include
+ 
+ # These lines ain't needed... but I'm not taking 'em out yet
+ #BOGOMIPS = `grep bogomips /proc/cpuinfo | awk '{ printf("%s", $$3) }'`
+@@ -48,7 +48,7 @@
+ # Make sure there is a / at the end of the path
+ ###########################################################################
+ 
+-XRMPATH = ./
++XRMPATH = ${X11BASE}/share/xroads/
+ 
+ ###########################################################################
+ # Links necessary for X11                                                 
