@@ -85,6 +85,7 @@
     SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
+    SUBDIR += pfaedit
     SUBDIR += pic2fig
     SUBDIR += pips-sc680_777
     SUBDIR += pips-sc880
