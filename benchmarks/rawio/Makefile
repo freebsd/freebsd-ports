@@ -7,8 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rawio
-PKGNAME=	rawio-1.0
+DISTNAME=	rawio-1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
