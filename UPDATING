@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050117:
+  AFFECTS: users of astk-client
+  AUTHOR: thierry@FreeBSD.org
+
+ASTK has been moved; if there exists files $HOME/.astkrc/config_serveurs,
+you have to update the entry rep_serv from /usr/local/ASTK/ASTK_SERV/bin
+to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
+
 20050114:
   AFFECTS: users of security/libgnomesu, esp. on FreeBSD 4.x.
   AUTHOR: adamw@FreeBSD.org
