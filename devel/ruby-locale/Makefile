@@ -7,21 +7,20 @@
 
 PORTNAME=	locale
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://kafka.salemstate.edu/~yashi/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A simple Ruby module that provides setlocale(3)
 
 #USE_BZIP2=	yes	# only saves 500 bytes..
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 INSTALL_TARGET=	site-install
 
 post-install:
