@@ -1,0 +1,8 @@
+--- Makefile.PL.orig	Sat Sep 13 19:04:08 1997
++++ Makefile.PL	Sat Sep 13 19:04:23 1997
+@@ -1,4 +1,4 @@
+ 
+ use ExtUtils::MakeMaker;
+ 
+-&WriteMakefile;
++&WriteMakefile( 'NAME' => "PGP::Pipe" );
