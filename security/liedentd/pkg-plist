@@ -1,0 +1,2 @@
+sbin/liedentd
+etc/rc.d/liedentd.sh
