@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcptrace
-PORTVERSION=	6.4.2
+PORTVERSION=	6.6.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
 
