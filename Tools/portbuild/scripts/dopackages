@@ -5,6 +5,8 @@ pb=/var/portbuild
 
 . ${pb}/portbuild.conf
 
+. ${pb}/scripts/buildenv
+
 # packages for dependencies only
 dummyports="" #x11/XFree86"
 
@@ -252,12 +254,11 @@ fi
 
 if [ "$nodummy" = 1 ]; then
   export NODUMMY=t
-  export XFREE86_VERSION=4
 fi
 
-export PORTSDIR=${pb}/${branch}/ports
+buildenv $branch
 
-cd ${pb}/${branch}/ports
+cd ${PORTSDIR}
 if [ "$nocvsup" = 0 ]; then
 #  echo "================================================"
 #  echo "running cvsup"
@@ -265,7 +266,7 @@ if [ "$nocvsup" = 0 ]; then
 #  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
   if [ "$noportscvs" = 0 ]; then
     echo "================================================"
-    echo "running cvs update on ${pb}/${branch}/ports"
+    echo "running cvs update on ${PORTSDIR}"
     echo "================================================"
     su ${user} -c 'cvs -qR update -d -P'
     # XXX Check for conflicts
@@ -285,17 +286,14 @@ fi
 
 if [ "$nocvs" = 0 ]; then
   echo "================================================"
-  echo "running cvs update on ${pb}/${branch}/src"
+  echo "running cvs update on ${SRCBASE}"
   echo "================================================"
-  cd ${pb}/${branch}/src
+  cd ${SRCBASE}
   su ${user} -c 'cvs -qR update -d -P'
   # XXX Check for conflicts
 fi
 
-export SRCPREFIX=${pb}/${branch}/src
-
 # this one not in background to check return status
-
 if [ "$noduds" = 0 ]; then
   makeduds ${pb} ${scripts} ${branch}
 fi
@@ -326,10 +324,8 @@ checkindex ${pb} ${branch}
 
 echo "all preparation ended at $(date)"
 
-cd ${pb}/${branch}/ports
+cd ${PORTSDIR}
 make parallel branch=${branch} > ${pb}/${branch}/Makefile
-
-cd ${pb}/${branch}/ports
 
 if [ "$nodummy" = 0 ]; then
   dummypkgs=""
