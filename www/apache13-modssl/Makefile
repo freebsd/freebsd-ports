@@ -268,6 +268,10 @@ PLIST_FILES+=	include/apache/sa_len.h \
 		include/apache/sockaddr_storage.h
 .endif
 
+.if defined(WITH_APACHE_LATESTLOG)
+EXTRA_PATCHES+=	${FILESDIR}/rotatelogs.c.patch
+.endif
+
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
 		SSL_BASE='${OPENSSLBASE}' \
@@ -321,6 +325,7 @@ pre-fetch:
 	@${ECHO_MSG} "				This setting may produce broken code and thus"
 	@${ECHO_MSG} "				is not recommended for production servers."
 	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} "  WITH_APACHE_LATESTLOG=yes	keep a hardlink on the lastest log."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_APACHE_IPV6=yes		IPv6 support."
 	@${ECHO_MSG} "				This setting turns IPv6 support on."
