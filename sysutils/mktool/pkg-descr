@@ -1,0 +1,13 @@
+Tools to manage processes and networked services, modeled after Daniel
+Bernsteins daemontools and ucspi-tcp packages. The tools are written to be
+portable to a wide variety of platforms that support POSIX services.
+
+babysit   Supervises a program, allowing it to started/stopped automatically
+bsok      Check if a program is being babysat
+envuidgid Sets environment variables based on user, then runs a program
+setugid   Sets uid and gid, then runs a program
+tcpaccept Accepts connections on stdin, then runs a program
+tcplisten Connects a network port to another program's stdin
+execlp    Allows argv[0] to be set when running a program
+ 
+WWW: http://www.io.com/~manoj/file/
