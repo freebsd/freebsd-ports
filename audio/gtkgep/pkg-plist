@@ -1,0 +1,24 @@
+bin/gtkgep
+lib/libfilter.a
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/bandeq1.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/bandeq12.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/bandeq3.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/compressor.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/distorthard.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/distortnormal.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/distortsoft.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/echo.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/flanger.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/guitarfilter.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/highpass4.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/lowpass.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/lowpass4.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/ngexp.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/noisegate.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/overdrive.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/reverb.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/simplehighpass.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/simplelowpass.so
+lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/volume.so
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/plugins
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%
