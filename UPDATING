@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041118:
+  AFFECTS: users of sysutils/portupgrade
+  AUTHOR: lofi@freebsd.org
+
+  portsdb(1) is part of the portupgrade suite and is used to convert a ports 
+  INDEX file to a binary INDEX.db database. By default, it uses the libc-builtin
+  berkeley db to do so, which has a buggy btree implementation.
+
+  If you see errors like "[BUG] Segmentation fault" while a portsdb update is
+  in progress, adjust the PORTS_DBDRIVER variable (in your environment or in
+  pkgtools.conf) to either bdb_hash or bdb_btree (the latter requires you to install
+  the sysutils/ruby-bdb port).
+
 20041116:
   AFFECTS: users of www/bricolage
   AUTHOR: ports@rbt.ca
