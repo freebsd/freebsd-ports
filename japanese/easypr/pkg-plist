@@ -1,2 +1,3 @@
 bin/easypr
 bin/lpr2
+bin/setcap

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	easypr
-PORTVERSION=	0.25
+PORTVERSION=	0.60
 CATEGORIES=	japanese print
-MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
+MASTER_SITES=	http://plamo.linet.gr.jp/~mituiwa/
 DISTNAME=	print-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
@@ -21,9 +21,11 @@ RUN_DEPENDS=	e2ps:${PORTSDIR}/japanese/e2ps \
 do-build:
 	${ECHO} '#!${PREFIX}/bin/wish4.2jp' > ${WRKSRC}/easypr
 	${CAT} ${WRKSRC}/easypr.in >> ${WRKSRC}/easypr
+	cd ${WRKSRC}; ${CC} -o setcap setcap.c
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/easypr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/lpr2 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/setcap ${PREFIX}/bin
 
 .include <bsd.port.mk>
