@@ -7,6 +7,7 @@
 
 PORTNAME=	wv2
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -20,12 +21,13 @@ CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
 
 USE_GNOME=	gnometarget libgsf
 USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	# none, we want to keep libwv2.la
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-post-extract:
+pre-configure:
 	@${TOUCH} ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
 
