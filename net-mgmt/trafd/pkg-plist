@@ -9,6 +9,9 @@ bin/trafstop
 etc/traflog.format
 %%PORTDOCS%%share/doc/trafd/README
 %%PORTDOCS%%@dirrm share/doc/trafd
-@dirrm var/trafd
+@exec mkdir %D/var 2>/dev/null || true
+@exec mkdir %D/var/log 2>/dev/null || true
+@exec mkdir %D/var/trafd 2>/dev/null || true
+@unexec rmdir %D/var/trafd 2>/dev/null || true
 @unexec rmdir %D/var/log 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
