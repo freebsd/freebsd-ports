@@ -748,7 +748,6 @@ cdd		ports/audio/cdd
 cdecl		ports/devel/cdecl
 cdif		ports/textproc/cdif
 cdiff		ports/textproc/cdiff
-cdindex		ports/audio/cdindex
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdpd		ports/net/cdpd

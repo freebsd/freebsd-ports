@@ -29,7 +29,6 @@
     SUBDIR += cd-console
     SUBDIR += cd-discid
     SUBDIR += cd2mp3
-    SUBDIR += cdindex
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
     SUBDIR += cdrdao
