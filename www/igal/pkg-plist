@@ -1,5 +1,10 @@
 bin/igal
+lib/igal/COPYING
+lib/igal/ChangeLog
+lib/igal/README
+lib/igal/THANKS
+lib/igal/igal.css
 lib/igal/indextemplate.html
 lib/igal/slidetemplate.html
-lib/igal/tile.gif
+lib/igal/tile.png
 @dirrm lib/igal

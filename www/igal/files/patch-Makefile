@@ -1,23 +1,15 @@
-*** Makefile.orig	Mon Sep  3 19:26:32 2001
---- Makefile	Wed Aug 14 17:27:24 2002
-***************
-*** 12,19 ****
-  	rm -f $(BINDIR)/igal	
-  	rm -f $(MANDIR)/igal.1
-  
-  install:: igal
-! 	install -D -m 0755 igal $(BINDIR)/igal
-! 	install -D -m 0644 igal.1 $(MANDIR)/igal.1
-  	install -d -m 0755 $(LIBDIR)
-  	install -m 0644 indextemplate.html slidetemplate.html tile.gif $(LIBDIR)
---- 12,21 ----
-  	rm -f $(BINDIR)/igal
-  	rm -f $(MANDIR)/igal.1
-
-+ all:: igal
+--- Makefile.orig	Tue Feb  4 07:41:31 2003
++++ Makefile	Thu Jan 29 11:18:43 2004
+@@ -12,8 +12,10 @@
+ 	rm -f $(BINDIR)/igal	
+ 	rm -f $(MANDIR)/igal.1
+ 
++all:: igal
 +
-  install:: igal
-! 	install -m 0755 igal $(BINDIR)/igal
-! 	install -m 0644 igal.1 $(MANDIR)/igal.1
-  	install -d -m 0755 $(LIBDIR)
-  	install -m 0644 indextemplate.html slidetemplate.html tile.gif $(LIBDIR)
+ install:: igal
+-	install -D -m 0755 igal $(BINDIR)/igal
+-	install -D -m 0644 igal.1 $(MANDIR)/igal.1
++	install -m 0755 igal $(BINDIR)/igal
++	install -m 0644 igal.1 $(MANDIR)/igal.1
+ 	install -d -m 0755 $(LIBDIR)
+ 	install -m 0644 README THANKS ChangeLog COPYING indextemplate.html slidetemplate.html tile.png igal.css $(LIBDIR)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	igal
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.stanford.edu/~epop/igal/ \
 		http://planetmirror.com/pub/igal/
