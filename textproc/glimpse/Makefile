@@ -1,19 +1,20 @@
 # New ports collection makefile for:	glimpse
-# Version required:	3.6
+# Version required:     4.*
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.13 1998/10/13 10:53:36 jseger Exp $
+# $Id: Makefile,v 1.14 1998/10/13 23:37:06 jseger Exp $
 #
 
-DISTNAME=       glimpse-4.0.src
-PKGNAME=	glimpse-4.0
+DISTNAME=       glimpse-4.1.src
+PKGNAME=        glimpse-4.1
 CATEGORIES=	textproc databases
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	chuckr@freebsd.org
 
+WRKSRC=         ${WRKDIR}/glimpse-4.1
 USE_GMAKE=	yes
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes
