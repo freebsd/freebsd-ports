@@ -728,6 +728,7 @@
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rbtree
+    SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
