@@ -1,0 +1,15 @@
+--- MCONFIG.orig	Sat Mar 10 21:03:55 2001
++++ MCONFIG	Sat Mar 10 21:04:12 2001
+@@ -12,11 +12,11 @@
+ 
+ # Target Operating System (LINUX/FREEBSD/NETBSD/OPENBSD/BEOS/ATHEOS/LIBC)
+ 
+-OS = LINUX
++OS = FREEBSD
+ 
+ # Kernel version (1.2 = 12, 2.4 = 24, 3.6 = 36, etc)
+ 
+-KERNEL = 24
++KERNEL = %%KERNEL%%
+ 
+ # Optimization method (SIZE/SPEED)
