@@ -1,0 +1,15 @@
+--- Makefile	Wed May 31 12:39:28 2000
++++ Makefile.new	Wed Jul 12 10:23:42 2000
+@@ -1,5 +1,11 @@
++LOCALBASE	?=	/usr/local
++CC		?=	cc
++INC		?=	-I$(LOCALBASE)/include
++LIB		?=	-L$(LOCALBASE)/lib
++CFLAGS		?=	-O -pipe
++
+ all:
+-	gcc jslice.c -o jslice -Wall -ljpeg
++	$(CC) $(CFLAGS) $(INC) $(LIB) jslice.c -o jslice -Wall -ljpeg
+ 
+ install:
+ 	cp jslice /usr/local/bin
