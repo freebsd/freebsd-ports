@@ -135,6 +135,10 @@ foreach my $i (@osdep) {
 		last;
 	}
 }
+
+# The PORTSDIR environment variable overrides our defaults.
+$portsdir = $ENV{PORTSDIR} if ( defined $ENV{'PORTSDIR'} );
+
 if ($verbose) {
 	print "OK: config: portsdir: \"$portsdir\" ".
 		"rcsidstr: \"$rcsidstr\" ".
