@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	mpg321
 # Date created:			Mar 17, 2001
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
@@ -7,10 +6,9 @@
 #
 
 PORTNAME=	mpg321
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linuxberg.com/files/ \
-		http://gemini.woot.net/~hosehead/packages/
+MASTER_SITES=	http://people.debian.org/~drew/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	naddy@mips.inka.de
