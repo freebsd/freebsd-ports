@@ -26,8 +26,8 @@ LANGUAGE?=	English
 .if (${LANGUAGE} == "English")
 FORBIDDEN=	Broken unless someone makes it work with tcl/tk 8.X
 ALL_TARGET=	filters
-LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
-RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
+#LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
+#RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
 LANGEXT=	en
 DOCDIRNAME=	Doc
 DOCEXT=
