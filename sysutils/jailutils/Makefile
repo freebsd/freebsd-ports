@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jailutils
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/nielsen/freebsd/jails/jailutils/
 
@@ -17,10 +17,4 @@ GNU_CONFIGURE=	YES
 
 MAN8=		jails.8 killjail.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-BROKEN=		"Currently does not support -CURRENT"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
