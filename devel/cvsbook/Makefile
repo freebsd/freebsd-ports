@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tutorial and reference for CVS
 
+BROKEN=		"Size mismatch"
+
 ALL_TARGET=	version
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INFO=		cvsbook
