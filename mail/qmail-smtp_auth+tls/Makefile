@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
@@ -40,20 +41,16 @@ QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 
 DOCFILES+=	${WRKDIR}/TLS.readme
 
-yetanotherone-pre-fetch: tls-pre-fetch
+slaveport-pre-fetch: qmail-tls-pre-fetch
 
-tls-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_TLS_DEBUG=yes	enable additional debug information"
-	@${ECHO_MSG} ""
+qmail-tls-pre-fetch:
+	@${ECHO_MSG} "WITH_TLS_DEBUG=yes		enable additional debug information"
 
-yetanotherone-post-patch: tls-post-patch
+slaveport-post-patch: qmail-tls-post-patch
 
-tls-post-patch:
+qmail-tls-post-patch:
 	@${HEAD} -74 ${DISTDIR}/tls.patch > ${WRKDIR}/TLS.readme
-	@${PERL} -pi -ne "s|/var/qmail|${PREFIX}|;s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
+	@${PERL} -pi -ne "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
 
 # Primary Ugh... ;-)
 # idea stolen from www/apache13-ssl, a target written by adam@algroup.co.uk

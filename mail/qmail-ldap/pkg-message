@@ -18,3 +18,16 @@ You can enable qmail as your default mailer:
 
 # enable qmail as your default MTA
 2) do "make enable-qmail"
+
+=====><=====
+
+If you've built this port with TLS support (WITH_TLS=yes)
+
+==> You will need to provide a working certificate in /var/qmail/control/cert.pem :
+
+# makes a self-signed certificate
+3) do "make certificate"
+
+# makes a certificate request
+4) do "make certificate-req"
+
