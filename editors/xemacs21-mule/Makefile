@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.10 1998/10/10 15:27:50 kuriyama Exp $
+# $Id: Makefile,v 1.11 1998/11/11 12:55:23 asami Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.4/ \
 		ftp://ftp.xemacs.org/pub/xemacs-20.4/ \
 		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/ \
-		ftp://ftp.jpl.org/pub/elisp/alpha/
+		ftp://ftp.jpl.org/pub/elisp/
 DISTFILES=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz \
 		ps-print-jp.el.gz
@@ -26,10 +26,10 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.2:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
-RUN_DEPENDS=	${PREFIX}/lib/xemacs-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
+RUN_DEPENDS=	${PREFIX}/lib/${XEMACS_DIR}/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
 
 EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
-		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
+		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
 WRKSRC=		${WRKDIR}/xemacs-20.4
 PATCHDIR=	${.CURDIR}/../../editors/xemacs-mule-common/patches
 FILESDIR=	${.CURDIR}/../../editors/xemacs-mule-common/files
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	i386-unknown-freebsd \
 		--x-libraries=${X11BASE}/lib \
 		--site-libraries='${SITE_LIBRARIES}' \
 		--site-includes='${SITE_INCLUDES}' \
-		--sitelispdir=${PREFIX}/lib/xemacs-20.4/lisp:${PREFIX}/lib/xemacs-20.4/site-lisp:${PREFIX}/lib/xemacs/site-lisp:${PREFIX}/share/emacs/site-lisp \
+		--sitelispdir=${PREFIX}/lib/${XEMACS_DIR}/lisp:${PREFIX}/lib/${XEMACS_DIR}/site-lisp:${PREFIX}/lib/xemacs/site-lisp:${PREFIX}/share/emacs/site-lisp \
 		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		${MISC_OPTIONS} ${WITH_INPUT_METHOD} ${WITH_WIDGETS}
 
@@ -55,9 +55,10 @@ STRIP=
 
 INSTALL_TARGET=	install-arch-dep
 
-PLIST_SUB=	XEMACS_DIR=xemacs-20.4
+PLIST_SUB=	XEMACS_DIR=${XEMACS_DIR}
 
 PKGLDIR=	${.CURDIR}/../../editors/xemacs-mule/pkg
+XEMACS_DIR=	xemacs-20.4
 
 .if defined(WNN4)
 SITE_INCLUDES=		${X11BASE}/include
@@ -96,6 +97,9 @@ pre-build:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 .if (${LANGUAGE} == "Japanese")
+	@if [ -e ${WRKSRC}/lisp/packages/ps-print.elc ]; then \
+		${RM} -f ${WRKSRC}/lisp/packages/ps-print.elc; \
+	fi
 	@${GZCAT} ${DISTDIR}/ps-print-jp.el.gz > ${WRKSRC}/lisp/packages/ps-print.el
 .endif
 
@@ -113,4 +117,3 @@ post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
 .include <bsd.port.mk>
-
