@@ -7,8 +7,9 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.10.5
+PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER} \
@@ -20,7 +21,8 @@ MASTER_SITE_SUBDIR=	net/mrtg
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 .if defined(WITH_GD1)
 LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
