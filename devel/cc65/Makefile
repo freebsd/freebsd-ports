@@ -29,6 +29,9 @@ CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 # Need ${WRKSRC} so that the (slightly ugly) != assignments work
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}

@@ -22,4 +22,10 @@ CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 MAN1=		abridge.1
 PLIST_FILES=	bin/abridge
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
+.include <bsd.port.post.mk>
