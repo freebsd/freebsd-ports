@@ -1,0 +1,8 @@
+See /usr/ports/editors/xemacs20/pkg/DESCR for details. :)
+
+This port adds XIM support to XEmacs, thus you can use X input server
+like xcin to input Chinese. It also comes with Chinese Big5 settings,
+including Big5-localized menus and buffer-file support.
+
+The Big5-localized menus are contributed by
+Clem Chuang (b5506056@csie.ntu.edu.tw)

@@ -1,0 +1,103 @@
+# New ports collection makefile for:	zh-XEmacs
+# Version required:	20.4
+# Date created:		30 Oct 1999
+# Whom:			Keith Jang <keith@freebsd.sinica.edu.tw>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	xemacs-20.4
+PKGNAME=	zh-xemacs-20.4
+CATEGORIES=	chinese editors
+MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
+		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${DISTNAME}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
+
+MAINTAINER=	keith@freebsd.sinica.edu.tw
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.3:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	xcin2.5:${PORTSDIR}/chinese/xcin25 \
+		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
+
+USE_GMAKE=	yes
+STRIP=
+HAS_CONFIGURE=	yes
+XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
+CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
+		--with-mule \
+		${WITH_XIM} \
+		--with-xfs \
+		--with-clash-detection \
+		--lockdir=/var/run/emacs/lock \
+		--with-sound=native \
+		--site-includes=${PREFIX}/include \
+		--site-libraries=${PREFIX}/lib \
+		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
+		--with-session=yes \
+		${WITH_MENUBARS} ${WITH_DIALOGS} \
+		${WITH_XFACE} ${WITH_OFFIX}
+MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
+		gnuserv.1 xemacs.1
+ALL_TARGET=	all dist
+PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
+
+.if defined(REAL_MOTIF)
+WITH_MENUBARS=	--with-menubars=lucid
+WITH_XIM=	--with-xim=motif
+.else
+WITH_MENUBARS=	--with-menubars=lucid
+WITH_XIM=	--with-xim=xlib
+.endif
+
+# Have
+pre-configure:
+.if defined(HAVE_MOTIF)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If your MOTIF library is actually lesstif, you might"
+	@${ECHO_MSG} "occasionally experience locked-up frames."
+	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC"
+	@${ECHO_MSG} "and recompile, which will force the use of athena
+	@${ECHO_MSG} "widgets for dialogs."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Since XIM of LessTif is reported buggy, you have to set"
+	@${ECHO_MSG} "REAL_MOTIF if you really have Motif. Otherwise it is"
+	@${ECHO_MSG} "compiled with raw xlib by default."
+.endif
+
+# hack to avoid shipping binaries linked with Motif
+.if defined(MOTIF_STATIC)
+WITH_DIALOGS=	--with-dialogs=athena
+.endif
+
+# Drop faces (libcompface) and offix (libDnd) if building package,
+# autodetect otherwise
+.if defined(PACKAGE_BUILDING)
+WITH_XFACE?=	--with-xface=no
+WITH_OFFIX?=	--with-offix=no
+.endif
+
+post-install:
+.for file in b2m ctags etags gnuclient ${DISTNAME}
+	strip ${PREFIX}/bin/${file}
+.endfor
+# ``make install'' does not set the permissions like pkg_add does.
+	${CHMOD} 1777 /var/run/emacs/lock
+	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
+	${CHMOD} 755 ${PREFIX}/share/emacs/site-lisp
+	${RM} -f ${PREFIX}/bin/send-pr
+	${RM} -f ${PREFIX}/lib/xemacs-20.4/lisp/mule/mule-init.el.orig
+# Install xemacs20.sh into ${PREFIX}/etc/rc.d
+	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
+	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${PREFIX}/etc/rc.d
+# Install Chinese Big5 related files.
+	@${MKDIR} ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+	@${INSTALL_DATA} ${FILESDIR}/Emacs ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+	@${INSTALL_DATA} ${FILESDIR}/sample.emacs ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+# Display XIM usages.
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
