@@ -12,10 +12,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not compile"
-
-LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon \
-		intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
@@ -25,7 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--enable-netrc \
-		--with-neon=${LOCALBASE}
+		--with-included-neon \
+		--with-included-expat
 ALL_TARGET=	cadaver
 
 post-install:
