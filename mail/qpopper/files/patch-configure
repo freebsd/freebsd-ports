@@ -8,7 +8,7 @@ $FreeBSD$
  
      SSL_DIR_INC="-I${openssl}/include"
 -    SSL_LIBS="-L${openssl}/lib -lssl -lcrypto"
-+    SSL_LIBS="-L${openssl}/lib -lrsaref -lssl -lcrypto ${RSAGLUE}"
++    SSL_LIBS="-L${openssl}/lib -lssl -lcrypto ${RSAGLUE}"
  fi
  
  
