@@ -1,0 +1,167 @@
+#! /bin/sh
+
+# $FreeBSD$
+
+#
+# configure - apsfilter package dependency configuration
+#
+
+if [ "${BATCH}" ]; then
+	/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
+	: > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript55" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	cjpeg:${PORTSDIR}/graphics/jpeg" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	anytopnm:${PORTSDIR}/graphics/netpbm" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	echo "RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter" \
+		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	exit
+fi
+
+/usr/bin/dialog --title "supported file types" --clear \
+	--checklist "\n\
+Select file types you want to print:" -1 -1 14	\
+LETTER		"LETTER printing"		ON	\
+LETTERDJ	"LETTERDJ printing"		OFF	\
+A4		"A4 printing"			OFF	\
+PS		"Postscript and PDF files"	ON	\
+ASCII		"ASCII/English Text/Scripts"	ON	\
+MAIL		"Mail/News articles"		ON	\
+DVI		"TeX DVI files"			OFF	\
+HTML		"HTML documents"		OFF	\
+TROFF		"Troff documents"		ON	\
+JPEG		"JPEG pictures"			OFF	\
+TIFF		"TIFF pictures"			OFF	\
+PBM		"GIF/PNM/PBM/PPM/BMP pictures"	ON	\
+FIG		"XFIG drawings"			OFF	\
+FAXG3		"Fax Group 3 files"		OFF	\
+2> /tmp/apsfilter-checklist.$$
+
+retval=$?
+
+if [ -s /tmp/apsfilter-checklist.$$ ]; then
+	set `cat /tmp/apsfilter-checklist.$$`
+fi
+rm -f /tmp/apsfilter-checklist.$$
+
+case $retval in
+	0)	if [ -z "$*" ]; then
+			echo "Nothing selected"
+		fi
+		;;
+	1)	echo "Cancel pressed."
+		exit 1
+		;;
+esac
+
+/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+while [ "$1" ]; do
+    case $1 in
+	\"LETTER\")
+		PAPERSIZE=letter
+		echo "PAPERSIZE=letter"
+		;;
+	\"LETTERDJ\")
+		PAPERSIZE=letterdj
+		echo "PAPERSIZE=letterdj"
+		;;
+	\"A4\")
+		PAPERSIZE=a4
+		echo "PAPERSIZE=a4"
+		;;
+	\"PS\")
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript55
+		;;
+	\"ASCII\")
+		case $PAPERSIZE in
+		    letter)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letter
+			;;
+		    letterdj)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letterdj
+			;;
+		    a4)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-a4
+			;;
+		esac
+		;;
+	\"MAIL\")
+		case $PAPERSIZE in
+		    letter)
+			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-letter
+			;;
+		    letterdj)
+			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-letter
+			;;
+		    a4)
+			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-a4
+			;;
+		esac
+		;;
+	\"DVI\")
+		echo RUN_DEPENDS+=dvips:${PORTSDIR}/print/teTeX
+		;;
+	\"HTML\")
+		case $PAPERSIZE in
+		    letter)
+		      echo RUN_DEPENDS+=html2ps:${PORTSDIR}/print/html2ps-letter
+		      ;;
+		    letterdj)
+		      echo RUN_DEPENDS+=html2ps:${PORTSDIR}/print/html2ps-letter
+		      ;;
+		    a4)
+		      echo RUN_DEPENDS+=html2ps:${PORTSDIR}/print/html2ps-a4
+		      ;;
+		esac
+		;;
+	\"TROFF\")
+		TROFF=YES
+		;;
+	\"JPEG\")
+		echo RUN_DEPENDS+=cjpeg:${PORTSDIR}/graphics/jpeg
+		;;
+	\"TIFF\")
+		echo LIB_DEPENDS+=tiff.4:${PORTSDIR}/graphics/tiff
+		;;
+	\"PBM\")
+		echo RUN_DEPENDS+=anytopnm:${PORTSDIR}/graphics/netpbm
+		;;
+	\"FIG\")
+		echo RUN_DEPENDS+=fig2dev:${PORTSDIR}/print/transfig
+		;;
+	\"FAXG3\")
+		echo RUN_DEPENDS+=g3cat:${PORTSDIR}/comms/mgetty+sendfax
+		;;
+    esac
+    shift
+done
+
+echo "post-install:"
+echo "	@\${MKDIR} ${PREFIX}/apsfilter/filter"
+echo "	@touch ${PREFIX}/apsfilter/filter/.keep_me"
+ echo "	@\${ECHO} \"========================================================\""
+ echo "	@\${ECHO} \"************ Post Installation Tasks *******************\""
+ echo "	@\${ECHO} \"========================================================\""
+if [ $TROFF ]
+then
+ echo "	@\${ECHO} \"If you want to print troff files with apsfilter         \""
+ echo "	@\${ECHO} \"then you have to install the grog utility               \""
+ echo "	@\${ECHO} \"from the groff sources:                                 \""
+ echo "	@\${ECHO} \"    cp /usr/src/contrib/groff/grog/grog.sh /usr/bin/grog\""
+ echo "	@\${ECHO} \"    chmod 555 /usr/bin/grog                             \""
+ echo "	@\${ECHO} \"--------------------------------------------------------\""
+ echo "	@\${ECHO} \"*** Printer installation ***        \""
+ echo "	@\${ECHO} \"    cd ${PREFIX}/apsfilter; ./SETUP \""
+fi
