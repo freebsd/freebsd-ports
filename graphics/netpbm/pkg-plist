@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/411toppm
 bin/anytopnm
 bin/asciitopgm
@@ -49,6 +50,7 @@ bin/pamstretch
 bin/pamstretch-gen
 bin/pamtohdiff
 bin/pamtopnm
+bin/pamtotga
 bin/pamtouil
 bin/pbmclean
 bin/pbmlife
@@ -157,6 +159,7 @@ bin/pnmtofits
 bin/pnmtojbig
 bin/pnmtojpeg
 bin/pnmtopalm
+bin/pnmtopclxl
 bin/pnmtoplainpnm
 bin/pnmtopng
 bin/pnmtops
@@ -215,7 +218,6 @@ bin/ppmtopjxl
 bin/ppmtopuzz
 bin/ppmtorgb3
 bin/ppmtosixel
-bin/ppmtotga
 bin/ppmtouil
 bin/ppmtowinicon
 bin/ppmtoxpm
