@@ -15,6 +15,8 @@ DISTNAME=	verilog-20031009
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	A Verilog simulation and synthesis tool
 
+BROKEN=		"fails to compile - missing definition of TIME_FMT"
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
