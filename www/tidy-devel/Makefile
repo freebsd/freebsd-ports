@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	030629
+PORTVERSION=	030702
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
-		http://tidy.sourceforge.net/docs/:docs
+		http://tidy.sourceforge.net/docs/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX?=	-devel
 DISTNAME=	tidy_src
