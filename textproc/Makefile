@@ -87,7 +87,6 @@
     SUBDIR += gmat
     SUBDIR += gmetadom
     SUBDIR += gnomespell
-    SUBDIR += gnomespell-devel
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed
