@@ -5,7 +5,7 @@
  
  install:
 -	for i in $(LANGS); do install -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
-+	for i in $(LANGS); do install -d -m 644 ${datadir}/locale/$$i/LC_MESSAGES; install -C -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
++	for i in $(LANGS); do install -d -m 755 ${datadir}/locale/$$i/LC_MESSAGES; install -C -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
  
  clean:
  #	for i in $(LANGS); do $(RM) $$i.mo; done

@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:   	centericq
 # Date created:                        	25 December 1999
 # Whom:                                 Chris Piazza <cpiazza@FreeBSD.org>
@@ -6,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	3.13.3
+PORTVERSION=	3.20.5
 CATEGORIES=	net
 MASTER_SITES=	http://download.konst.org.ua/
 
