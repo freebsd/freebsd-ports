@@ -17,12 +17,4 @@ COMMENT=	Perl5 package which allows use of macros defined in 'C' header files
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Include.3
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not install correctly"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
