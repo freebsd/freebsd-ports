@@ -2,10 +2,10 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.103
-retrieving revision 1.105
-diff -u -r1.103 -r1.105
+retrieving revision 1.106
+diff -u -r1.103 -r1.106
 --- webmagick.in	28 Aug 2002 21:42:32 -0000	1.103
-+++ webmagick.in	5 Sep 2002 18:21:47 -0000	1.105
++++ webmagick.in	6 Sep 2002 23:28:46 -0000	1.106
 @@ -302,7 +302,7 @@
  $opt_serversidemap = 0;         # Enable server-side maps writting
  				
@@ -24,33 +24,18 @@ diff -u -r1.103 -r1.105
  
      $currentDate = strftime ($opt_msg_date_format, localtime);
  
-@@ -1596,8 +1598,11 @@
+@@ -1596,8 +1598,8 @@
  	 'address'		=> $opt_address,	 
  	 'anonymous'		=> $opt_anonymous,
  	 'backgroundimg'	=> $opt_icons{'background'},
 -	 'cachedir'             => $opt_cachedir,
 -	 'lowresdir'             => $opt_lowresdir,
-+	 'cache'                => $opt_cache,
-+	 'cachedir'             => !$opt_cache ? "" : $opt_cachedir,
-+	 'cacheformat'          => !$opt_cache ? "" : $opt_cacheformat,
-+	 'cachegeom'            => !$opt_cache ? "" : $opt_cachegeom,
-+	 'cachemin'             => !$opt_cache ? 0 : $opt_cachemin,
++	 'cache'                => !$opt_tables ? 0 : $opt_cache,
++	 'cachedir'             => !$opt_cache || !$opt_tables ? "" : $opt_cachedir,
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
-@@ -1634,6 +1639,11 @@
- 	 'jsfunctions'          => !$opt_javascript ? "" : $fileNames{'jsFunctions'},
- 	 'jspageindex'          => !$opt_javascript ? "" : $fileNames{'jsPageIndex'},
- 	 'jsvariables'          => !$opt_javascript ? "" : $fileNames{'jsVariables'},
-+	 'lowres'               => $opt_lowres,
-+	 'lowresdir'            => !$opt_lowres ? "" : $opt_lowresdir,
-+	 'lowresformat'         => !$opt_lowres ? "" : $opt_lowresformat,
-+	 'lowresgeom'           => !$opt_lowres ? "" : $opt_lowresgeom,
-+	 'lowresmin'            => !$opt_lowres ? 0 : $opt_lowresmin,
- 	 'metaauthor'		=> $opt_metaauthor,
- 	 'metacharset'          => $opt_metacharset,
- 	 'metaclassification'	=> $opt_metaclassification,
-@@ -1904,14 +1914,13 @@
+@@ -1904,14 +1906,13 @@
      # Clean up cached thumbnails
      #
      if( $opt_cache && -d $opt_cachedir ) {
@@ -68,7 +53,7 @@ diff -u -r1.103 -r1.105
  
          grep( $tarray{$_}++, @imgfiles );
          @extra = grep( $_ = "$opt_cachedir/$_", grep( ! $tarray{$_}, @cacheFiles ));
-@@ -1922,14 +1931,13 @@
+@@ -1922,14 +1923,13 @@
      # Clean up cached low resolution images
      #
      if( $opt_lowres && -d $opt_lowresdir ) {
@@ -86,7 +71,7 @@ diff -u -r1.103 -r1.105
  
          grep( $tarray{$_}++, @imgfiles );
          @extra = grep( $_ = "$opt_lowresdir/$_", grep( ! $tarray{$_}, @lowresFiles ));
-@@ -2889,12 +2897,12 @@
+@@ -2889,12 +2889,12 @@
      #
      # If caching thumbnails then ensure that directory exists
      #
@@ -101,7 +86,7 @@ diff -u -r1.103 -r1.105
  
      # Read images into PerlMagick object
      print( STDERR "\nReading images: ", join(' ', @{$imageNames[$pageNumber - 1]}), "\n" )
-@@ -2925,18 +2933,20 @@
+@@ -2925,18 +2925,20 @@
  				$filesize,	# Image file size
  				$magick);
  
@@ -132,7 +117,7 @@ diff -u -r1.103 -r1.105
  
  		#then do the thumbnail
  		($rc, $filesize, $width, $height, $magick) = 
-@@ -3910,7 +3920,10 @@
+@@ -3910,7 +3912,10 @@
  		# the size specified (it returns a number of standard
  		# scaled sizes) but not smaller.
  		# This uses a feature available in PerlMagick 1.12 and beyond
