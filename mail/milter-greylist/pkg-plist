@@ -1,0 +1,13 @@
+bin/milter-greylist
+etc/mail/greylist.conf.sample
+etc/rc.d/milter-greylist.sh
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/greylist.conf
+@exec /bin/mkdir -p /var/milter-greylist
+@exec /bin/mkdir -p /var/db/milter-greylist
+@exec /usr/sbin/chown smmsp /var/milter-greylist /var/db/milter-greylist
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm etc/mail
+@unexec /bin/rmdir /var/milter-greylist 2>/dev/null || true
+@unexec [ -f /var/db/milter-greylist/greylist.db ] || /bin/rmdir /var/db/milter-greylist || true

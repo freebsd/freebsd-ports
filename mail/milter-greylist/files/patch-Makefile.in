@@ -1,0 +1,57 @@
+--- Makefile.in.orig	Sat Apr  3 11:26:11 2004
++++ Makefile.in	Tue May 25 23:04:47 2004
+@@ -29,9 +29,9 @@
+ # OF THE POSSIBILITY OF SUCH DAMAGE.
+ #
+ 
+-CFLAGS= 	@CFLAGS@ -D_BSD_SOURCE -Wall -ansi
+-LDFLAGS=	@LDFLAGS@
+-LIBS= 		@LIBS@
++CFLAGS= 	@CFLAGS@ -D_BSD_SOURCE -Wall -ansi -pthread
++LDFLAGS=	@LDFLAGS@ -pthread
++LIBS= 		-lmilter
+ prefix=		@prefix@
+ exec_prefix=	@exec_prefix@
+ SYSCONFDIR=	@sysconfdir@
+@@ -66,34 +66,20 @@
+ dump_yacc.o:	dump_yacc.c dump_lex.c
+ 
+ rc-bsd.sh:      rc-bsd.sh.in
+-	${SED} "s|@BINDIR@|${BINDIR}|g" rc-bsd.sh.in > rc-bsd.sh
++	${SED} -e "s|@BINDIR@|${BINDIR}|g" \
++	-e "s|@SYSCONFDIR@|${SYSCONFDIR}|g" rc-bsd.sh.in > rc-bsd.sh
+ rc-linux.sh:    rc-linux.sh.in
+ 	${SED} "s|@BINDIR@|${BINDIR}|g" rc-linux.sh.in > rc-linux.sh
+ 
+ install:	milter-greylist
+-	${INSTALL} -d 755 ${BINDIR}
+-	${INSTALL} -d 755 ${MANDIR}/man8
+-	${INSTALL} -d 755 ${MANDIR}/man5
++	${INSTALL} -d -m 755 ${BINDIR}
++	${INSTALL} -d -m 755 ${SYSCONFDIR}/mail
++	${INSTALL} -d -m 755 ${MANDIR}/man8
++	${INSTALL} -d -m 755 ${MANDIR}/man5
+ 	${INSTALL} -m 755 milter-greylist ${BINDIR}
+ 	${INSTALL} -m 644 milter-greylist.8 ${MANDIR}/man8
+ 	${INSTALL} -m 644 greylist.conf.5 ${MANDIR}/man5
+-	${TEST} -f /etc/mail/greylist.conf -o -f /etc/mail/greylist.except || \
+-	     ${INSTALL} -m 644 greylist.conf /etc/mail
+-	${INSTALL} -d -m 755 -o ${USER} /var/milter-greylist
+-	@${TEST} -f /var/db/greylist.db && (			 	   \
+-		echo "	================================================"; \
+-		echo "	  WARNING: the dump file location has changed,  "; \
+-		echo "	  Please move /var/db/greylist.db, the default  "; \
+-		echo "	  location is now in /var/milter-greylist/      "; \
+-		echo "	================================================"; \
+-	) || ${TRUE}
+-	@${TEST} -f /etc/mail/greylist.except && (		 	   \
+-		echo "	================================================"; \
+-		echo "	 WARNING: the config file name has changed,     "; \
+-		echo "	 Please rename /etc/mail/greylist.except, the   "; \
+-		echo "	 default name is now in /etc/mail/greylist.conf "; \
+-		echo "	================================================"; \
+-	) || ${TRUE}
++	${INSTALL} -m 644 greylist.conf ${SYSCONFDIR}/mail/greylist.conf.sample
+ 
+ depend:
+ 	${MKDEP} ${CFLAGS} ${SRC}
