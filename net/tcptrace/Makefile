@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tcptrace
-PORTVERSION=	6.0.0b2
+PORTVERSION=	6.3.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
-DISTNAME=	tcptrace.${PORTVERSION}
 
 MAINTAINER=	fenner@FreeBSD.org
 
@@ -19,11 +18,13 @@ ALL_TARGET=	tcptrace
 MAN1=		tcptrace.1
 
 DOCFILES=	ARGS CHANGES COPYING COPYRIGHT FAQ README README.mailing_list \
-		README.modules README.tput_graphs THANKS WWW \
-		dot_tcptracerc.sample
+		README.modules README.tline_graphs README.tput_graphs \
+		README.version README.xpl2gpl THANKS WWW \
+		dot_tcptracerc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/xpl2gpl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/tcptrace.man ${PREFIX}/man/man1/tcptrace.1
 	${MKDIR} ${PREFIX}/share/doc/tcptrace
