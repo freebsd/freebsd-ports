@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	math
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gsl/ \
 		ftp://ftp.freesoftware.com/pub/sourceware/gsl/ \
