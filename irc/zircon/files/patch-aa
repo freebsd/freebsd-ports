@@ -1,11 +1,20 @@
---- installer/unix.tcl.orig	Sat Sep 20 20:47:35 1997
-+++ installer/unix.tcl	Sat Sep 20 20:47:37 1997
-@@ -228,7 +228,7 @@
+--- installer/unix.tcl.orig	Wed Jul 14 05:39:14 1999
++++ installer/unix.tcl	Fri Oct 29 12:56:37 1999
+@@ -181,7 +181,7 @@
  proc getCC {} {
      global CC GCC SCflag CFlags Type SLDflag share scflags
      switch {} $CC {} default return
 -    set CFlags -O
-+    set CFlags {-O -I/usr/local/include/tcl8.1}
++    set CFlags {-O -I/usr/local/include/tcl8.2}
      catch {set CFlags $cflags($Type)}
      switch BSDI $Type {
  	set CC gcc2
+@@ -220,7 +220,7 @@
+ proc findWish {} {
+     global env
+     foreach x [split $env(PATH) :] {
+-	foreach y {wish8.1 wish8.0 wish4.2 wish4.1 wish wishx} {
++	foreach y {wish8.2 wish8.1 wish8.0 wish4.2 wish4.1 wish wishx} {
+ 	    if {[file exists [set f [file join $x $y]]]} {
+ 		return $f
+ 	    }
