@@ -20,11 +20,14 @@ MAINTAINER=	ve@sci.fi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS
 CONFIGURE_ENV=  LDFLAGS="${CFLAGS}"
-.if defined(USE_INET6)
-CONFIGURE_ARGS+=--enable-inet6
-.endif
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+=--enable-inet6
+.endif
 
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS += --with-kerberos=/usr/include
@@ -50,4 +53,4 @@ post-install:
 	${MV} ${PREFIX}/bin/fetchmailconf ${PREFIX}/libexec/fetchmailconf.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
