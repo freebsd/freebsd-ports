@@ -3,27 +3,28 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1997/08/10 22:31:33 fenner Exp $
+# $Id: Makefile,v 1.11 1998/09/23 01:01:20 steve Exp $
 #
 
-DISTNAME=       unrar-2.01
+DISTNAME=       unrar-2.06.1
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-EXTRACT_SUFX=   .tgz
+MASTER_SITES=   ${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/compress
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-NO_WRKSUBDIR=   Yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} -D_UNIX unrar.c -o unrar
 
 do-install:
-	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
+	@cd ${WRKSRC} && ${INSTALL_PROGRAM} unrar ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/unrar
+	@cd ${WRKDIR}/${DISTNAME} && ${INSTALL_MAN} README.TXT LICENSE.TXT \
 		${PREFIX}/share/doc/unrar
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} unrar ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} readme.txt license.txt \
-		${PREFIX}/share/doc/unrar
+.endif
 
 .include <bsd.port.mk>

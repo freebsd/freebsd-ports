@@ -1,4 +1,4 @@
 bin/unrar
-share/doc/unrar/license.txt
-share/doc/unrar/readme.txt
+share/doc/unrar/LICENSE.TXT
+share/doc/unrar/README.TXT
 @dirrm share/doc/unrar
