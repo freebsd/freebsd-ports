@@ -5280,6 +5280,7 @@ mixer.app	ports/audio/mixer.app
 mixer_port	ports/sysutils/mixer
 mixmaster	ports/mail/mixmaster
 mixminion	ports/mail/mixminion
+mixmos		ports/audio/mixmos
 mixxx		ports/audio/mixxx
 mjpegtools	ports/multimedia/mjpegtools
 mkbold		ports/x11-fonts/mkbold
