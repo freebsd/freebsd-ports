@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgda2
-PORTVERSION=	0.91.0
+PORTVERSION=	1.0.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.91
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.0
 DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--without-postgres
 .endif
 
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 PLIST_SUB+=		LDAP:=""
 .else
