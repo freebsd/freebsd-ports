@@ -15,7 +15,7 @@ PORTNAME=	lire
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://logreport.org/pub/
+MASTER_SITES=	http://logreport.org/pub/archive/
 
 MAINTAINER=	edwin@mavetju.org
 
