@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to authenticate against an LDAP directory
 
-LIB_DEPENDS=	lber.2:${PORTSDIR}/${LDAP_PORT}
-
+USE_OPENLDAP=	yes
 USE_APACHE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-llber"
@@ -24,8 +23,6 @@ CONFIGURE_ARGS=	--with-sdk-headers=${LOCALBASE}/include \
 		--with-ldap-sdk=openldap \
 		--with-apxs=${APXS}
 USE_GMAKE=	yes
-
-LDAP_PORT?=	net/openldap20-client
 
 MAKE_ARGS+=	APXS=${APXS}
 
