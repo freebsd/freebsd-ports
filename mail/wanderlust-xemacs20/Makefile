@@ -14,7 +14,7 @@ EMACS_NAME=		xemacs
 EMACS_PORT=		xemacs20
 EMACS_VER=		20.4
 EMACS_LIBDIR=		lib/xemacs
-EMACS_VER_LIBDIR=	lib/xemacs-20.4
+
 IS_SLAVE=	yes
 
 .include <${MASTERDIR}/Makefile>
