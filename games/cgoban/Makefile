@@ -17,11 +17,15 @@ COMMENT=	Internet Go Server client and game editor
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
+USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 MAN6=		cgoban.6
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/bin/gnugo|${LOCALBASE}/bin/gnugo|' ${WRKSRC}/src/cgoban.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cgoban ${PREFIX}/bin
