@@ -7,29 +7,32 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.12.2
+PORTVERSION=	1.14
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
+WANT_PHP_WEB=	yes
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
-.if !exists(${LOCALBASE}/bin/php) && !exists(${LOCALBASE}/libexec/apache/libphp4.so) && !exists(${LOCALBASE}/libexec/apache2/libphp4.so)
-BROKEN=	"need PHP 4.04 or above"
-.endif
-
-.if !exists(${LOCALBASE}/lib/libgd.a)
-BROKEN=	"PHP have to build with GD support"
-.endif
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You have to configure PHP with GD support."
+	@${ECHO} ""
+	@${ECHO} "If you have already compiled PHP without GD,"
+	@${ECHO} "press CTRL+C now and rebuild it before installing jpgraph."
+	@${ECHO} ""
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/src/*.php ${DATADIR}
 	${CP} ${WRKSRC}/src/*.inc ${DATADIR}
+	${CP} ${WRKSRC}/src/*.dat ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
