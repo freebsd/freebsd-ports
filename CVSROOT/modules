@@ -8866,6 +8866,7 @@ pound		ports/www/pound
 povchem		ports/biology/povchem
 povray		ports/graphics/povray
 povray31	ports/graphics/povray31
+poweradmin	ports/dns/poweradmin
 powerdns	ports/dns/powerdns
 powerman	ports/sysutils/powerman
 powermanga	ports/games/powermanga
