@@ -1,22 +1,31 @@
 # New ports collection makefile for:	wmtimebomb
-# Version required:	0.6
+# Version required:	0.2.0
 # Date created:		10 August 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/17 00:32:33 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/18 06:42:59 asami Exp $
 
-DISTNAME=	wmtimebomb.6
-PKGNAME=	wmtimebomb-0.1.6
+DISTNAME=	wmtimebomb.20
+PKGNAME=	wmtimebomb-0.2.0
 CATEGORIES=	games windowmaker
-MASTER_SITES=	http://www.gpf.or.th/~mhz/wmtimebomb/
+MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		PropList.1:${PORTSDIR}/devel/libPropList \
+		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		gif.3:${PORTSDIR}/graphics/giflib \
+		png.3:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${PREFIX}/lib/libWMaker.a:${PORTSDIR}/x11-wm/windowmaker
 
-WRKSRC=		${WRKDIR}/wmtimebomb
+WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+
+post-patch:
+	${PERL} -pi -e 's,\@LOCALBASE\@,${LOCALBASE},g' ${WRKSRC}/Imakefile
+	${PERL} -pi -e 's,\@X11BASE\@,${X11BASE},g' ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
