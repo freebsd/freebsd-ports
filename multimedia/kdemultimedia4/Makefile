@@ -8,6 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -17,7 +18,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
 RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-LIB_DEPENDS+=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
+		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		mp3lame:${PORTSDIR}/audio/lame \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
@@ -42,6 +44,7 @@ CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" \
 
 .if defined(WITH_MIDI) || defined(WITH_KMIDI)
 PLIST_APPEND+=	plist.midi
+CONFLICTS=	timidity-* timidity++-*
 .if ${MACHINE_ARCH} == "alpha"
 USE_REINPLACE=	yes
 post-patch::
@@ -51,21 +54,25 @@ post-patch::
 DO_NOT_COMPILE+=	kmidi
 .endif #  defined(WITH_MIDI) || defined(WITH_KMIDI)
 
-#.if exists(${X11BASE}/bin/xine-config)
-#WITH_XINE=	yes
-#.endif # exists(${LOCALBASE}/bin/xine-config)
-
-WITHOUT_XINE=yes
+.if exists(${X11BASE}/bin/xine-config)
+WITH_XINE=	yes
+.endif # exists(${LOCALBASE}/bin/xine-config)
 
 .if defined(WITHOUT_XINE)
 DO_NOT_COMPILE+=	xine_artsplugin
-#CONFIGURE_ARGS+=	--disable-xinetest
-#.elif defined(WITH_XINE)
-#PLIST_APPEND+=	plist.xine
-#LIB_DEPENDS+=	xine.4:${PORTSDIR}/multimedia/libxine
-#BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
-#CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
+CONFIGURE_ARGS+=	--disable-xinetest
+.elif defined(WITH_XINE)
+PLIST_APPEND+=	plist.xine
+LIB_DEPENDS+=	xine.8:${PORTSDIR}/multimedia/libxine
+BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
 .endif # defined(WITHOUT_XINE)
+
+.if defined(WITHOUT_MPEGLIB)
+PLIST_APPEND+=	plist.no-mpeglib
+.else
+PLIST_APPEND+=	plist.mpeglib
+.endif
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
@@ -73,6 +80,20 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+
+pre-configure:
+.if defined(WITHOUT_MPEGLIB)
+	${REINPLACE_CMD} -e \
+	'/FreeBSD/,/;$$/s/kde_mpeglib_compiles=yes/kde_mpeglib_compiles=no/g' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/union semun/,/;$$/s/.*//g' \
+		${WRKSRC}/oggvorbis_artsplugin/oggPlayObject_impl.h
+.endif
+
+post-configure:
+	${REINPLACE_CMD} -e '/^XINE_CFLAGS/s/-D_THREAD_SAFE//g' \
+			-e 's/-pthread/${PTHREAD_LIBS}/g' \
+		${WRKSRC}/xine_artsplugin/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
