@@ -1,0 +1,5 @@
+%%RUBY_SITELIBDIR%%/narray_miss.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/narray_miss.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

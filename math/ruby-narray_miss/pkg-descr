@@ -1,0 +1,5 @@
+This is an additional class of ruby with conduct processing of missing value
+to NArray which is a numeric multi-dimensional array class.
+
+Author:	Seiya Nishizawa <seiya@kugi.kyoto-u.ac.jp>
+WWW:	http://ruby.gfd-dennou.org/products/narray_miss/
