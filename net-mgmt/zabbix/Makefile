@@ -6,32 +6,30 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.0b7
+PORTVERSION=	1.0b10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
-DISTNAME=	${PORTNAME}-1.0beta7
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|b|beta|}
 
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Very advanced network monitoring system
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .ifdef(ZABBIX_AGENT_ONLY)
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4 \
+CONFIGURE_ARGS=	--with-mysql --with-net-snmp
+
+LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp \
 		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS+=	safe_mysqld:${PORTSDIR}/databases/mysql323-server
+BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
+RUN_DEPENDS=	safe_mysqld:${PORTSDIR}/databases/mysql323-server
 .endif
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
 ZABBIX_BINARIES=zabbix_agent zabbix_agentd zabbix_sender
 ZABBIX_CONFIGS=	zabbix_agent.conf zabbix_agentd.conf
@@ -57,6 +55,7 @@ do-install:
 			${PREFIX}/share/zabbix/create
 	${CP} -Rf ${WRKSRC}/frontends/* ${PREFIX}/share/zabbix
 	${CP} -Rf ${WRKSRC}/create/* ${PREFIX}/share/zabbix/create
+	${CP} -Rf ${WRKSRC}/upgrades/dbpatches ${PREFIX}/share/zabbix
 	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/dbsetup.sh \
 			${PREFIX}/share/zabbix/create
 	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/zabbix.sh.sample \

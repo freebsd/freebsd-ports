@@ -11,71 +11,163 @@ bin/zabbix_sender
 bin/zabbix_suckerd
 bin/zabbix_trapper
 bin/zabbix_trapperd
+%%DATADIR%%/php/audio/disaster_on.wav
+%%DATADIR%%/php/audio/warning_off.wav
+%%DATADIR%%/php/audio/warning_on.wav
+%%DATADIR%%/php/about.php
+%%DATADIR%%/php/actions.php
+%%DATADIR%%/php/alarms.php
+%%DATADIR%%/php/alerts.php
+%%DATADIR%%/php/chart.php
+%%DATADIR%%/php/chart2.php
+%%DATADIR%%/php/chart3.php
+%%DATADIR%%/php/chart4.php
+%%DATADIR%%/php/chart5.php
+%%DATADIR%%/php/chart_diff.php
+%%DATADIR%%/php/chart_sla.php
+%%DATADIR%%/php/charts.php
+%%DATADIR%%/php/compare.php
+%%DATADIR%%/php/config.php
+%%DATADIR%%/php/css.css
+%%DATADIR%%/php/graph.php
+%%DATADIR%%/php/graphs.php
+%%DATADIR%%/php/helpdesk.php
+%%DATADIR%%/php/history.php
+%%DATADIR%%/php/hosts.php
+%%DATADIR%%/php/index.php
+%%DATADIR%%/php/items.php
+%%DATADIR%%/php/latest.php
+%%DATADIR%%/php/latestalarms.php
+%%DATADIR%%/php/map.php
+%%DATADIR%%/php/maps.php
+%%DATADIR%%/php/media.php
+%%DATADIR%%/php/queue.php
+%%DATADIR%%/php/report1.php
+%%DATADIR%%/php/report2.php
+%%DATADIR%%/php/report3.php
+%%DATADIR%%/php/screenconf.php
+%%DATADIR%%/php/screenedit.php
+%%DATADIR%%/php/screens.php
+%%DATADIR%%/php/services.php
+%%DATADIR%%/php/srv_status.php
+%%DATADIR%%/php/sysmap.php
+%%DATADIR%%/php/sysmaps.php
+%%DATADIR%%/php/tr_comments.php
+%%DATADIR%%/php/tr_status.php
+%%DATADIR%%/php/trend.php
+%%DATADIR%%/php/trends.php
+%%DATADIR%%/php/triggers.php
+%%DATADIR%%/php/users.php
+%%DATADIR%%/php/images/sysmaps/Notebook.png
+%%DATADIR%%/php/images/sysmaps/Hub.png
+%%DATADIR%%/php/images/sysmaps/Printer.png
+%%DATADIR%%/php/images/sysmaps/Router.png
+%%DATADIR%%/php/images/sysmaps/Server.png
+%%DATADIR%%/php/images/sysmaps/Workstation.png
+%%DATADIR%%/php/include/.htaccess
+%%DATADIR%%/php/include/config.inc.php
+%%DATADIR%%/php/include/db.inc.php
+%%DATADIR%%/php/include/defines.inc.php
+%%DATADIR%%/create/data/data.sql
+%%DATADIR%%/create/mysql/schema.sql
+%%DATADIR%%/create/postgresql/schema.sql
+%%DATADIR%%/create/dbsetup.sh
+%%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql/patch.sql
 @dirrm etc/zabbix
-share/zabbix/php/audio/warning_off.wav
-share/zabbix/php/audio/warning_on.wav
-share/zabbix/php/about.php
-share/zabbix/php/actions.php
-share/zabbix/php/alarms.php
-share/zabbix/php/alerts.php
-share/zabbix/php/chart.php
-share/zabbix/php/chart2.php
-share/zabbix/php/chart3.php
-share/zabbix/php/chart4.php
-share/zabbix/php/chart5.php
-share/zabbix/php/chart_diff.php
-share/zabbix/php/charts.php
-share/zabbix/php/compare.php
-share/zabbix/php/config.php
-share/zabbix/php/css.css
-share/zabbix/php/graph.php
-share/zabbix/php/graphs.php
-share/zabbix/php/helpdesk.php
-share/zabbix/php/history.php
-share/zabbix/php/hosts.php
-share/zabbix/php/index.php
-share/zabbix/php/items.php
-share/zabbix/php/latest.php
-share/zabbix/php/latestalarms.php
-share/zabbix/php/map.php
-share/zabbix/php/maps.php
-share/zabbix/php/media.php
-share/zabbix/php/queue.php
-share/zabbix/php/report1.php
-share/zabbix/php/report2.php
-share/zabbix/php/services.php
-share/zabbix/php/srv_status.php
-share/zabbix/php/sysmap.php
-share/zabbix/php/sysmaps.php
-share/zabbix/php/tr_comments.php
-share/zabbix/php/tr_status.php
-share/zabbix/php/trend.php
-share/zabbix/php/trends.php
-share/zabbix/php/triggers.php
-share/zabbix/php/users.php
-share/zabbix/php/images/sysmaps/Notebook.png
-share/zabbix/php/images/sysmaps/Hub.png
-share/zabbix/php/images/sysmaps/Printer.png
-share/zabbix/php/images/sysmaps/Router.png
-share/zabbix/php/images/sysmaps/Server.png
-share/zabbix/php/images/sysmaps/Workstation.png
-share/zabbix/php/include/.htaccess
-share/zabbix/php/include/config.inc.php
-share/zabbix/php/include/db.inc.php
-share/zabbix/php/include/defines.inc.php
-share/zabbix/create/data/data.sql
-share/zabbix/create/mysql/schema.sql
-share/zabbix/create/postgresql/schema.sql
-share/zabbix/create/dbsetup.sh
-@dirrm share/zabbix/php/audio
-@dirrm share/zabbix/php/images/sysmaps
-@dirrm share/zabbix/php/images
-@dirrm share/zabbix/php/include
-@dirrm share/zabbix/php
-@dirrm share/zabbix/create/data
-@dirrm share/zabbix/create/mysql
-@dirrm share/zabbix/create/postgresql
-@dirrm share/zabbix/create
-@dirrm share/zabbix
+@dirrm %%DATADIR%%/php/audio
+@dirrm %%DATADIR%%/php/images/sysmaps
+@dirrm %%DATADIR%%/php/images
+@dirrm %%DATADIR%%/php/include
+@dirrm %%DATADIR%%/php
+@dirrm %%DATADIR%%/create/data
+@dirrm %%DATADIR%%/create/mysql
+@dirrm %%DATADIR%%/create/postgresql
+@dirrm %%DATADIR%%/create
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10
+@dirrm %%DATADIR%%/dbpatches
+@dirrm %%DATADIR%%
 @exec ln -sf %D/etc/zabbix /etc/zabbix
 @unexec rm /etc/zabbix
