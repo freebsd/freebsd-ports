@@ -5,23 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	mod_authenticache
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://killa.net/infosec/mod_authenticache/
-DIST_SUBDIR=	apache
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A generic credential caching module for Apache 2.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-
-do-build:
-	@(cd ${WRKSRC}/ && ${APXS} -I. -c ${PORTNAME}.c)
-
-do-install:
-	@(cd ${WRKSRC}/ && ${APXS} -A -i ${PORTNAME}.la)
+USE_APACHE=	YES
+WITH_APACHE2=	YES
+USE_GMAKE=	YES
+MAKE_ENV+=	APXS="${APXS}"
 
 .include <bsd.port.mk>
