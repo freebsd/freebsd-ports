@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Oct  7 12:35:19 1999
-+++ Makefile.in	Tue Oct 12 15:51:59 1999
-@@ -97,11 +97,11 @@
+--- Makefile.in.orig	Fri Mar  2 17:37:20 2001
++++ Makefile.in	Tue Mar  6 09:26:01 2001
+@@ -96,11 +96,11 @@
  
  AUTOMAKE_OPTIONS = 1.4
  
@@ -15,42 +15,61 @@
  
  BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
  
-@@ -136,7 +136,7 @@
+@@ -114,7 +114,7 @@
+ libglib_la_SOURCES =  	garray.c		gcache.c		gcompletion.c		gdataset.c		gdate.c         	gerror.c		ghash.c			ghook.c			giochannel.c    	giounix.c       	glist.c			gmain.c         	gmem.c			gmessages.c		gmutex.c		gnode.c			gprimes.c		grel.c			gscanner.c		gslist.c		gstrfuncs.c		gstring.c		gtimer.c		gtree.c			gutils.c
+ 
+ 
+-glibincludedir = $(includedir)/glib-1.2
++glibincludedir = $(includedir)
+ glibinclude_HEADERS =  	glib.h
+ 
+ 
+@@ -139,7 +139,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  glib.spec glib-config
-+CONFIG_CLEAN_FILES =  glib.spec glib@LT_RELEASE@-config
+-CONFIG_CLEAN_FILES =  glib.spec glib-config glib.pc gmodule.pc \
++CONFIG_CLEAN_FILES =  glib.spec glib@LT_RELEASE@-config glib.pc gmodule.pc \
+ gthread.pc
  LTLIBRARIES =  $(lib_LTLIBRARIES)
  
- 
-@@ -236,7 +236,7 @@
+@@ -240,7 +240,7 @@
  maintainer-clean-hdr:
  glib.spec: $(top_builddir)/config.status glib.spec.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
 -glib-config: $(top_builddir)/config.status glib-config.in
 +glib@LT_RELEASE@-config: $(top_builddir)/config.status glib@LT_RELEASE@-config.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
- 
- mostlyclean-libLTLIBRARIES:
-@@ -545,7 +545,6 @@
+ glib.pc: $(top_builddir)/config.status glib.pc.in
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+@@ -574,7 +574,7 @@
  	      || exit 1; \
  	  fi; \
  	done
 -	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
++
+ garray.lo garray.o : garray.c glib.h glibconfig.h
+ gcache.lo gcache.o : gcache.c glib.h glibconfig.h
+ gcompletion.lo gcompletion.o : gcompletion.c glib.h glibconfig.h
+@@ -619,7 +619,7 @@
+ install-exec: install-exec-recursive
  
- info-am:
- info: info-recursive
-@@ -572,7 +571,7 @@
+ install-data-am: install-configincludeDATA install-m4dataDATA \
+-		install-pkgconfigDATA install-glibincludeHEADERS
++		install-glibincludeHEADERS
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+@@ -629,7 +629,7 @@
  		uninstall-configincludeDATA uninstall-m4dataDATA \
- 		uninstall-includeHEADERS
+ 		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
  		$(HEADERS) config.h
  all-redirect: all-recursive-am
  install-strip:
-@@ -650,7 +649,9 @@
+@@ -708,7 +708,9 @@
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
  
@@ -61,20 +80,29 @@
  glibconfig.h: stamp-gc-h
  	@:
  stamp-gc-h: config.status
---- gmodule/Makefile.in.orig	Tue May 11 05:06:37 1999
-+++ gmodule/Makefile.in	Mon May 17 22:28:24 1999
-@@ -333,7 +333,7 @@
+--- gmodule/Makefile.in.orig	Fri Mar  2 17:37:21 2001
++++ gmodule/Makefile.in	Tue Mar  6 09:24:01 2001
+@@ -100,7 +100,7 @@
+ 
+ BUILT_SOURCES = gmoduleconf.h
+ 
+-glibincludedir = $(includedir)/glib-1.2
++glibincludedir = $(includedir)
+ glibinclude_HEADERS =  		gmodule.h
+ 
+ 
+@@ -341,7 +341,7 @@
  install: install-am
- uninstall-am: uninstall-libLTLIBRARIES uninstall-includeHEADERS
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-glibincludeHEADERS
  uninstall: uninstall-am
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
 +all-am: Makefile $(LTLIBRARIES) $(HEADERS)
  all-redirect: all-am
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- gthread/Makefile.in.orig	Tue May 11 05:06:39 1999
-+++ gthread/Makefile.in	Mon May 17 22:28:24 1999
-@@ -128,7 +128,7 @@
+--- gthread/Makefile.in.orig	Tue Mar  6 09:12:20 2001
++++ gthread/Makefile.in	Tue Mar  6 09:12:59 2001
+@@ -127,7 +127,7 @@
  testgthread_OBJECTS =  testgthread.o
  testgthread_DEPENDENCIES =  ../libglib.la libgthread.la
  testgthread_LDFLAGS = 
@@ -83,7 +111,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
-@@ -297,7 +297,7 @@
+@@ -300,7 +300,7 @@
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES
  uninstall: uninstall-am
@@ -92,9 +120,9 @@
  all-redirect: all-am
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- docs/Makefile.in.orig	Tue May 11 05:06:40 1999
-+++ docs/Makefile.in	Mon May 17 22:28:24 1999
-@@ -95,9 +95,9 @@
+--- docs/Makefile.in.orig	Tue Mar  6 09:13:07 2001
++++ docs/Makefile.in	Tue Mar  6 09:14:01 2001
+@@ -94,9 +94,9 @@
  
  info_TEXINFOS = glib.texi
  
@@ -106,7 +134,7 @@
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
-@@ -133,6 +133,8 @@
+@@ -132,6 +132,8 @@
  glib.info: glib.texi
  glib.dvi: glib.texi
  
