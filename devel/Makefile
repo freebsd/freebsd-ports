@@ -404,6 +404,7 @@
     SUBDIR += lightning
     SUBDIR += lincvs
     SUBDIR += linguist
+    SUBDIR += linux-allegro
     SUBDIR += linux-atk
     SUBDIR += linux-glib2
     SUBDIR += linux-libglade

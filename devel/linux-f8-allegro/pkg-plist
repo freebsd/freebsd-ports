@@ -1,0 +1,21 @@
+etc/allegrorc
+usr/lib/allegro/4.0/alleg-artsdigi.so
+usr/lib/allegro/4.0/alleg-dga2.so
+usr/lib/allegro/4.0/alleg-fbcon.so
+usr/lib/allegro/4.0/alleg-svgalib.so
+usr/lib/allegro/4.0/alleg-vga.so
+usr/lib/allegro/4.0/modules.lst
+usr/lib/liballeg.so.4.0
+usr/lib/liballeg-4.0.3.so
+usr/share/allegro/keyboard.dat
+usr/share/allegro/language.dat
+usr/share/doc/allegro-4.0.3/AUTHORS
+usr/share/doc/allegro-4.0.3/CHANGES
+usr/share/doc/allegro-4.0.3/linux.txt
+usr/share/doc/allegro-4.0.3/readme.txt
+usr/share/doc/allegro-4.0.3/THANKS
+usr/share/doc/allegro-4.0.3/unix.txt
+@dirrm usr/share/doc/allegro-4.0.3
+@dirrm usr/share/allegro
+@dirrm usr/lib/allegro/4.0
+@dirrm usr/lib/allegro
