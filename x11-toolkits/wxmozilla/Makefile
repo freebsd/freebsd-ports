@@ -29,4 +29,10 @@ CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/firefox/lib/pkgconfig"
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
