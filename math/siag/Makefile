@@ -1,12 +1,12 @@
 # New ports collection makefile for:	siag (Scheme In A Grid)
-# Version required:	3.2.0
 # Date created:		27 Jan 1998
 # Whom:			mi@aldan.algebra.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	siag-3.2.0
+PORTNAME=	siag
+PORTVERSION=	3.2.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
 		ftp://ftp.icm.edu.pl/site/siag/

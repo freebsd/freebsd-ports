@@ -1,15 +1,15 @@
 # New ports collection makefile for:	rcalc
-# Version required:			0.1
 # Date created:				28 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rCalc-0.1
-PKGNAME=	rcalc-0.1
+PORTNAME=	rcalc
+PORTVERSION=	0.1
 CATEGORIES=	math gnome
 MASTER_SITES=	http://members.xoom.com/ratsoft/download/
+DISTNAME=	rCalc-${PORTVERSION}
 
 MAINTAINER=	jedgar@fxp.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xwpl
-# Version required:	1.3
 # Date created:		31 Nov 97
 # Whom:			Pedro Giffuni <giffunip@asme.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xwpl-1.3-freebsd
-PKGNAME=	xwpl-1.3
+PORTNAME=	xwpl
+PORTVERSION=	1.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://pascal.math.yale.edu/pub/wavelets/software/xwpl/other-versions/
+DISTNAME=	${PKGNAME}-freebsd
 
 MAINTAINER=	giffunip@asme.org
 

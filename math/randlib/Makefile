@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ranlib
-# Version required:	?
 # Date created:		06 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ranlib.c
-PKGNAME=	ranlib-1.0
+PORTNAME=	ranlib
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/random/
+DISTNAME=	ranlib.c
 
 MAINTAINER=	tg@FreeBSD.org
 

@@ -1,16 +1,17 @@
 # New ports collection makefile for:	py-scientific
-# Version required:	2.0b1
 # Date created:		29 July 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ScientificPython-2.0b1
-PKGNAME=	py-scientific-2.0b1
+PORTNAME=	scientific
+PORTVERSION=	2.0b1
 CATEGORIES=	math python
 MASTER_SITES=	http://starship.python.net/crew/hinsen/ \
 		http://dirac.cnrs-orleans.fr/programs/
+PKGNAMEPREFIX=	py-
+DISTNAME=	ScientificPython-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	add
-# Version required:			1.0
 # Date created:				20 August 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	add
-PKGNAME=	add-1.0
+PORTNAME=	add
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.clark.net/pub/dickey/add/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

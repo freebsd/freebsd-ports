@@ -1,15 +1,15 @@
 # New ports collection makefile for:	calctool-2.4pl13
-# Version required:			1.14.5
 # Date created:				2 Dec 1996
 # Whom:					nsayer@quack.kfu.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=       calctool-2.4pl13
-PKGNAME=        calctool-2.4.13
+PORTNAME=       calctool
+PORTVERSION=	2.4.13
 CATEGORIES=     math
 MASTER_SITES=   ftp://ftp.kfu.com/pub/
+DISTNAME=       calctool-2.4pl13
 
 MAINTAINER=     nsayer@quack.kfu.com
 

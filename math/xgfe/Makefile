@@ -1,14 +1,14 @@
 # New ports collection makefile for:	xgfe
-# Version required:    2.0
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xgfe-2.0
-CATEGORIES=		math
-MASTER_SITES=		http://people.FreeBSD.org/~mph/distfiles/
+PORTNAME=	xgfe
+PORTVERSION=	2.0
+CATEGORIES=	math
+MASTER_SITES=	http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   freefem
-# Version required:    3.4
 # Date created:        20 December 1996
 # Whom:                Pedro Giffuni
 #
 # $FreeBSD$
 #
 
-DISTNAME=	freefem-3.4
+PORTNAME=	freefem
+PORTVERSION=	3.4
 CATEGORIES=	math cad
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/
 

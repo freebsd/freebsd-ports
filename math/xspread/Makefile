@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xspread
-# Version required:	3.1.1c
 # Date created:		28 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xspread3.1.1c
-PKGNAME=	xspread-3.1.1c
+PORTNAME=	xspread
+PORTVERSION=	3.1.1c
 CATEGORIES=	math
 MASTER_SITES=	http://www.linuxberg.com/files/x11/office/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

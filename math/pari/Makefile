@@ -1,15 +1,15 @@
 # New ports collection makefile for:	PARI
-# Version required:	2.0.18b
 # Date created:		19 January 1999
 # Whom:	Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pari-2.0.18.beta
-PKGNAME=	pari-2.0.18b
+PORTNAME=	pari
+PORTVERSION=	2.0.18b
 CATEGORIES=	math
 MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.0/
+DISTNAME=	pari-2.0.18.beta
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
 

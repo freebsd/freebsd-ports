@@ -1,13 +1,12 @@
 # New ports collection makefile for:	linpack
-# Version required:	?
 # Date created:		31 October 1994
 # Whom:			ljo
 #
 # $FreeBSD$
 #
 
-DISTNAME=	linpack
-PKGNAME=	linpack-1.0
+PORTNAME=	linpack
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/linpack/ \
 		ftp://netlib.bell-labs.com/netlib/linpack/ \
@@ -18,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
 
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
