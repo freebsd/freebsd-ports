@@ -1,8 +1,4 @@
 bin/qbrew
-share/doc/qbrew/ChangeLog
-share/doc/qbrew/LICENSE
-share/doc/qbrew/README
-share/doc/qbrew/TODO
 share/doc/qbrew/en/primer-design.html
 share/doc/qbrew/en/primer-equipment.html
 share/doc/qbrew/en/primer-firstbrew.html
@@ -32,8 +28,12 @@ share/doc/qbrew/en/qbrew-using.html
 share/doc/qbrew/en/qbrew.docbook
 share/doc/qbrew/en/qbrew.dsl
 share/doc/qbrew/en/sqa.docbook
+share/qbrew/LICENSE
+share/qbrew/README
+share/qbrew/paleale.qbrew
 share/qbrew/qbrew.xpm
 share/qbrew/qbrewdata
-@dirrm share/qbrew
+share/qbrew/stout.qbrew
 @dirrm share/doc/qbrew/en
 @dirrm share/doc/qbrew
+@dirrm share/qbrew
