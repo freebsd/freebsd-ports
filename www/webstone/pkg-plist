@@ -1,0 +1,40 @@
+webstone/bin/WebStone-common.pl
+webstone/bin/WebStone-manage.pl
+webstone/bin/WebStone-run.pl
+webstone/bin/WebStone-setup.pl
+webstone/bin/checkfilelist
+webstone/bin/genfiles
+webstone/bin/genfiles-from-filelist.sh
+webstone/bin/genrand
+webstone/bin/gui-configure
+webstone/bin/killbench
+webstone/bin/killbench.pl
+webstone/bin/mine-logs.pl
+webstone/bin/move-filelist.pl
+webstone/bin/move-runs.pl
+webstone/bin/rebootall
+webstone/bin/runbench
+webstone/bin/runbench.pl
+webstone/bin/runbench~
+webstone/bin/tabs2html
+webstone/bin/view-results.pl
+webstone/bin/webclient
+webstone/bin/webmaster
+webstone/bin/webstone-gui.pl
+webstone/bin/write-testbed.pl
+webstone/bin/wscollect.pl
+webstone/conf/filelist
+webstone/conf/filelist.cgi-heavy
+webstone/conf/filelist.dynamic-heavy
+webstone/conf/filelist.dynamic-light
+webstone/conf/filelist.dynamic-medium
+webstone/conf/filelist.homepage
+webstone/conf/filelist.sample
+webstone/conf/filelist.standard
+webstone/conf/fileset
+webstone/conf/paths.pl
+webstone/conf/paths.sh
+webstone/conf/testbed
+@dirrm webstone/bin
+@dirrm webstone/conf
+@dirrm webstone
