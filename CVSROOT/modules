@@ -4016,6 +4016,7 @@ jslice		ports/graphics/jslice
 jtans		ports/games/jtans
 jtop		ports/sysutils/jtop
 jude_take	ports/devel/jude_take
+judy		ports/devel/judy
 juk		ports/audio/juk
 juke		ports/audio/juke
 jump		ports/java/jump
