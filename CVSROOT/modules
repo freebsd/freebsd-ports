@@ -8393,6 +8393,7 @@ ruby-nodedump	ports/devel/ruby-nodedump
 ruby-nora	ports/www/ruby-nora
 ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-numru_misc	ports/math/ruby-numru_misc
+ruby-numru_units	ports/math/ruby-numru_units
 ruby-o_dbm	ports/databases/ruby-o_dbm
 ruby-odbc	ports/databases/ruby-odbc
 ruby-opengl	ports/graphics/ruby-opengl
