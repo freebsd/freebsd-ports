@@ -99,6 +99,13 @@ while ($j >= 0) {
 }
 
 
+# Make sure that there is some content in the log message.
+# XXX Note that logcheck isn't evoked if the log message is
+# completely empty.  This is a bug in cvs.
+my $log = "@log_in";
+die "Log message contains no content!\n" if $log =~ /^\s*$/;
+
+
 # Write the modified log file back out.
 my $tmpfile = $filename . "tmp";
 open OUT, "> $tmpfile" or
