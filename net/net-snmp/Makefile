@@ -71,6 +71,9 @@ CONFIGURE_ARGS+=--with-mib-modules="ucd-snmp/diskio" --with-libs="-ldevstat"
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/aclocal.m4
+
 post-install:
 	@( cd ${PREFIX}/bin && strip ${BIN} )
 	@( cd ${PREFIX}/sbin && strip ${SBIN} )
