@@ -19,6 +19,7 @@ share/applications/WebHTTrack.desktop
 share/doc/httrack/history.txt
 share/doc/httrack/html/abuse.html
 share/doc/httrack/html/addurl.html
+share/doc/httrack/html/cache.html
 share/doc/httrack/html/cmddoc.html
 share/doc/httrack/html/contact.html
 share/doc/httrack/html/dev.html
@@ -125,7 +126,9 @@ share/doc/httrack/html/step9_opt7.html
 share/doc/httrack/html/step9_opt8.html
 share/doc/httrack/html/step9_opt9.html
 share/doc/httrack/httrack-doc.html
+share/httrack/html
 share/httrack/icons/webhttrack.xpm
+share/httrack/lang/Bulgarian.txt
 share/httrack/lang/Castellano.txt
 share/httrack/lang/Cesky.txt
 share/httrack/lang/Chinese-BIG5.txt
@@ -154,6 +157,9 @@ share/httrack/lang/Turkish.txt
 share/httrack/lang/Ukrainian.txt
 share/httrack/lang.def
 share/httrack/lang.indexes
+share/httrack/libtest/callbacks-example-contentfilter.c
+share/httrack/libtest/callbacks-example-filename.c
+share/httrack/libtest/callbacks-example-filename2.c
 share/httrack/libtest/callbacks-example.c
 share/httrack/libtest/example.c
 share/httrack/libtest/example.dsp
@@ -165,6 +171,7 @@ share/httrack/templates/index-body.html
 share/httrack/templates/index-footer.html
 share/httrack/templates/index-header.html
 share/httrack/templates/topindex-body.html
+share/httrack/templates/topindex-bodycat.html
 share/httrack/templates/topindex-footer.html
 share/httrack/templates/topindex-header.html
 share/pixmaps/httrack.xpm

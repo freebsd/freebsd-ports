@@ -7,6 +7,7 @@
 
 PORTNAME=	httrack
 PORTVERSION=	3.31
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://httrack.free.fr/mirror/ \
 		http://www.httrack.com/
@@ -14,8 +15,9 @@ MASTER_SITES=	http://httrack.free.fr/mirror/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.30.01
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.0
 
+USE_GCC=	3.3
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
