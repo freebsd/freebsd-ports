@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.qzx.com/bfe/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhb@FreeBSD.org
+MAINTAINER=	greid@FreeBSD.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
