@@ -25,6 +25,9 @@ For csh/tcsh Add the following to /etc/csh.cshrc:
  setenv PATH %%PREFIX%%/libexec/ccache/:$PATH
  setenv CCACHE_PATH /usr/bin:%%LOCALBASE%%/bin
 
+For icc users:
+ Add %%ICCPREFIX%% to CCACHE_PATH
+
 --
 
 To use distcc:
