@@ -10,14 +10,18 @@
 
 package cfg;
 use strict;
-use vars qw(%TEMPLATE_HEADERS);
+use vars qw($DEBUG $TMPDIR %TEMPLATE_HEADERS);
 
 
-############################################################
-#
-# Configurable options
-#
-############################################################
+######################
+### global options ###
+######################
+
+# Debug level, 0 = off, 1 = on.
+$DEBUG = 0;
+
+# Location of temporary directory.
+$TMPDIR = "/tmp/";
 
 
 ################
