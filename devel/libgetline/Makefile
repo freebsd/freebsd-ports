@@ -8,7 +8,7 @@
 PORTNAME=	getline
 PORTVERSION=	3.9
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/lib/
+MASTER_SITES=	ftp://ftp2.caldera.com/pub/skunkware/src/libraries/
 DISTNAME=	${PORTNAME}-39-src
 
 MAINTAINER=	ports@FreeBSD.Org
