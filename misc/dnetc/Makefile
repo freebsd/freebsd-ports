@@ -40,7 +40,7 @@ LIBDIR=		${PREFIX}/etc/rc.d/
 CLIENTUID=	nobody
 CLIENTGID=	daemon
 
-SBINMODE=	7700
+SBINMODE=	700
 BINMODE=	700
 
 MAN1=		dnetc.1
