@@ -15,9 +15,9 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
 PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
@@ -119,14 +119,14 @@ post-patch:
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in icc.cfg icpc.cfg
-	@${ECHO} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .if ${OSVERSION} >= 500039
-	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # C++ hack for icpc
-	@${ECHO} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" \
+	@${ECHO_CMD} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" \
 		>>${WRKSRC}/opt/${COMPILERDIR}/bin/icpc.cfg
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s icc.cfg iccbin.cfg \
 		&& ${LN} -s icpc.cfg icpcbin.cfg
@@ -179,46 +179,46 @@ do-install:
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
-	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
-	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
-	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "In order to be able to compile C++ source with icpc you have to install"
-	@${ECHO_CMD} "devel/stlport-icc."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you use icc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
-	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
-	@${ECHO_CMD} "if you do not know how to do this), else icc will hang forever."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: If you use icc while having linux_devtools installed, icc will use"
-	@${ECHO_CMD} "the wrong includes and therefore will generate bogus (not working) binaries!"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you encounter further problems with icc please consult the errata at"
-	@${ECHO_CMD} "http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm"
-	@${ECHO_CMD} "first."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Call for benchmarks:"
-	@${ECHO_CMD} "Intel is interested to see some benchmark numbers which compare gcc with icc."
-	@${ECHO_CMD} "If you have a CPU produced by Intel and are able to do benchmarks with"
-	@${ECHO_CMD} "either your own source or with one of our major ports (e.g. with"
-	@${ECHO_CMD} "a webserver, a mailserver, a database system, an important graphics"
-	@${ECHO_CMD} "suite/program or some important math tool, ...) please try to spend some time"
-	@${ECHO_CMD} "to do a benchmark and send me (${MAINTAINER}) the result. You should"
-	@${ECHO_CMD} "include your system specs (CPU: speed/model, RAM: amount/speed, used disks"
-	@${ECHO_CMD} "(if necessary), chipset/mainboard type, ...), the version of the used"
-	@${ECHO_CMD} "software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and"
-	@${ECHO_CMD} "the used compiler switches. If you don't use some 'standard' benchmark"
-	@${ECHO_CMD} "(e.g. the official MySQL benchmark, or the performance test suite of your"
-	@${ECHO_CMD} "prefered scripting language), please include a description about the"
-	@${ECHO_CMD} "benchmark too."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Please use FreeBSD as the name of your OS in communications with the support,"
-	@${ECHO_CMD} "the larger the FreeBSD userbase is, the more work gets done on FreeBSD"
-	@${ECHO_CMD} "specific issues by Intel. And please thank them for the FreeBSD support,"
-	@${ECHO_CMD} "they are already spending some time to improve icc on FreeBSD."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "To read the entire post install message again, just run"
-	@${ECHO_CMD} "'make post-install | less'."
+	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
+	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
+	@${ECHO} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
+	@${ECHO} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
+	@${ECHO}
+	@${ECHO} "In order to be able to compile C++ source with icpc you have to install"
+	@${ECHO} "devel/stlport-icc."
+	@${ECHO}
+	@${ECHO} "If you use icc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
+	@${ECHO} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
+	@${ECHO} "if you do not know how to do this), else icc will hang forever."
+	@${ECHO}
+	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use"
+	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
+	@${ECHO}
+	@${ECHO} "If you encounter further problems with icc please consult the errata at"
+	@${ECHO} "http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm"
+	@${ECHO} "first."
+	@${ECHO}
+	@${ECHO} "Call for benchmarks:"
+	@${ECHO} "Intel is interested to see some benchmark numbers which compare gcc with icc."
+	@${ECHO} "If you have a CPU produced by Intel and are able to do benchmarks with"
+	@${ECHO} "either your own source or with one of our major ports (e.g. with"
+	@${ECHO} "a webserver, a mailserver, a database system, an important graphics"
+	@${ECHO} "suite/program or some important math tool, ...) please try to spend some time"
+	@${ECHO} "to do a benchmark and send me (${MAINTAINER}) the result. You should"
+	@${ECHO} "include your system specs (CPU: speed/model, RAM: amount/speed, used disks"
+	@${ECHO} "(if necessary), chipset/mainboard type, ...), the version of the used"
+	@${ECHO} "software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and"
+	@${ECHO} "the used compiler switches. If you don't use some 'standard' benchmark"
+	@${ECHO} "(e.g. the official MySQL benchmark, or the performance test suite of your"
+	@${ECHO} "prefered scripting language), please include a description about the"
+	@${ECHO} "benchmark too."
+	@${ECHO}
+	@${ECHO} "Please use FreeBSD as the name of your OS in communications with the support,"
+	@${ECHO} "the larger the FreeBSD userbase is, the more work gets done on FreeBSD"
+	@${ECHO} "specific issues by Intel. And please thank them for the FreeBSD support,"
+	@${ECHO} "they are already spending some time to improve icc on FreeBSD."
+	@${ECHO}
+	@${ECHO} "To read the entire post install message again, just run"
+	@${ECHO} "'make post-install | less'."
 
 .include <bsd.port.post.mk>
