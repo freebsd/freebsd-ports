@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ntop.org/pub/local/ntop/source/ \
 		ftp://ftp.us.ntop.org/pub/ntop/source/ \
@@ -36,7 +36,11 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-gdbm-root=${LOCALBASE} \
-		--with-gdchart-root=${LOCALBASE} \
+		--with-gdchart-root=${LOCALBASE}
+
+.if !defined(WITHOUT_TCPWRAP)
+CONFIGURE_ARGS+=	--enable-tcpwrap
+.endif
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400014
