@@ -8,7 +8,7 @@
 #
 
 DISTNAME=       WebMagick-1.46
-CATEGORIES=     www
+CATEGORIES=     www graphics
 MASTER_SITES=   ftp://ftp.simplesystems.org/pub/WebMagick/
 
 LIB_DEPENDS=    Magick.4:${PORTSDIR}/graphics/ImageMagick
