@@ -16,37 +16,33 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Jakarta library with helper utilities for the java.lang API
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
-USE_JAVA=	1.2+
+USE_ANT=	yes
+USE_JIKES=	no
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	jar
-.else
-ANT_TARGET=	jar javadoc
+ALL_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
+
 JARFILE=	${PORTNAME}-${PORTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
-
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/${DESTJARFILE}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/dist/docs/api \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
