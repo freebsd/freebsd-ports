@@ -8291,6 +8291,7 @@ php_doc-ja	ports/japanese/php_doc
 php_doc-pl	ports/polish/php_doc
 php_doc-pt	ports/portuguese/php_doc-br
 phpbb		ports/www/phpbb
+phpbt		ports/devel/phpbt
 phpeclipse	ports/java/phpeclipse
 phpgedview	ports/www/phpgedview
 phpgroupware	ports/deskutils/phpgroupware
