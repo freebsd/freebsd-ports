@@ -1,10 +1,10 @@
---- tools/Makefile.in.orig	Tue Jul 17 22:13:37 2001
-+++ tools/Makefile.in	Sat Dec 15 00:00:00 2001
-@@ -113,8 +113,7 @@
+--- tools/Makefile.in.orig	Mon Aug 12 00:01:46 2002
++++ tools/Makefile.in	Wed Oct  8 00:19:39 2003
+@@ -115,8 +115,7 @@
  install: all
- 	${INSTALL} -idb nostrip -idb tiff.sw.tools -m 755 		\
+ 	${INSTALL} -idb tiff.sw.tools -m 755 				\
  		-dir ${DESTDIR}@DIR_BIN@
--	${INSTALL} -idb nostrip -idb tiff.sw.tools -m 755 		\
+-	${INSTALL} -idb tiff.sw.tools -m 755 				\
 -		-F ${DESTDIR}@DIR_BIN@ -O ${TARGETS}
 +	${BSD_INSTALL_PROGRAM} ${TARGETS} ${DESTDIR}@DIR_BIN@
  	@if [ "@LIBIMAGE@" = yes ]; then 				\
