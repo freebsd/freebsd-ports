@@ -8,18 +8,14 @@
 PORTNAME=	prodosemu
 PORTVERSION=	0.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/emulators/prodosemu/ \
-		ftp://apple2.caltech.edu/pub/apple2/emulators/
+MASTER_SITES=	ftp://apple2.caltech.edu/pub/apple2/emulators/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 NO_PACKAGE=	yes
 RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.
-WRKSRC=		${WRKDIR}/prodosemu-v0.1
-
-post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/*.c
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

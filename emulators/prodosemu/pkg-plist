@@ -1,5 +1,5 @@
 bin/prodos
-libdata/apple2/prodos-2e.rom
+share/apple2/prodos-2e.rom
 share/doc/prodosemu/README
 @dirrm share/doc/prodosemu
-@dirrm libdata/apple2
+@dirrm share/apple2
