@@ -7,30 +7,20 @@
 #
 
 DISTNAME=	platex2e
-PKGNAME=	jp-platex2e-95.09
+PKGNAME=	jp-platex2e-96.03
 CATEGORIES+=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
-	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
-	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
-	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/corresponding-sources/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1996-03-05/ \
 	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
-	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
-	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/corresponding-sources/ \
 	ftp://ftp.riken.go.jp/pub/tex-archive/systems/knuth/lib/ 
-DISTFILES=	base-9506.tar.gz hyphen.tex
-EXTRACT_ONLY=	base-9506.tar.gz
-
-# base-9506.tar.gz is in */corresponding-sources/ 
-# hyphen.tex is in */systems/knuth/lib/ 
-# pl2e-jis.tar.gz, pl2e-sj.tar.gz and pl2e-euc.tar.gz are in 
-# */corresponding-sources/ 
+DISTFILES=	base-9512.tar.gz hyphen.tex.gz
+EXTRACT_ONLY=	base-9512.tar.gz
 
 MAINTAINER=	max@sfc.wide.ad.jp
 
 BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
 
-WRKSRC=		${WRKDIR}/9509b
+WRKSRC=		${WRKDIR}/9603
 
 pre-fetch:
 .if !defined(KANJI-CODE)
@@ -54,16 +44,16 @@ pre-fetch:
 KANJI-CODE=	JIS
 .endif
 .if ${KANJI-CODE} == JIS
-DISTFILES+=	pl2e-jis.tar.gz
-EXTRACT_ONLY+=	pl2e-jis.tar.gz
+DISTFILES+=	pl9603j.tar.gz
+EXTRACT_ONLY+=	pl9603j.tar.gz
 .endif
 .if ${KANJI-CODE} == SJIS
-DISTFILES+=	pl2e-sj.tar.gz
-EXTRACT_ONLY+=	pl2e-sj.tar.gz
+DISTFILES+=	pl9603s.tar.gz
+EXTRACT_ONLY+=	pl9603s.tar.gz
 .endif
 .if ${KANJI-CODE} == EUC
-DISTFILES+=	pl2e-euc.tar.gz
-EXTRACT_ONLY+=	pl2e-euc.tar.gz
+DISTFILES+=	pl9603e.tar.gz
+EXTRACT_ONLY+=	pl9603e.tar.gz
 .endif
 .if ${KANJI-CODE} != JIS && ${KANJI-CODE} != SJIS && ${KANJI-CODE} != EUC
 	@echo "Error: invalid value for KANJI-CODE: \"${KANJI-CODE}\""
@@ -73,7 +63,7 @@ EXTRACT_ONLY+=	pl2e-euc.tar.gz
 
 post-extract:
 	@rm ${WRKDIR}/base/hyphen.tex
-	@cp ${DISTDIR}/hyphen.tex ${WRKDIR}/base/hyphen.tex
+	@gzip -cd ${DISTDIR}/hyphen.tex.gz > ${WRKDIR}/base/hyphen.tex
 
 do-build:
 	@(cd ${WRKDIR}/base ; yes | initex unpack.ins ; initex latex.ltx)
@@ -81,28 +71,28 @@ do-build:
 	yes | iniptex plcore.ins ; iniptex platex.ltx) 
 
 do-install:
-	@rm -rf /usr/local/lib/texmf/tex/latex2e/base/*
-.if !exists(/usr/local/lib/texmf/tex/latex2e)
-	@mkdir /usr/local/lib/texmf/tex/latex2e
-.endif 
-.if !exists(/usr/local/lib/texmf/tex/latex2e/base)
-	@mkdir /usr/local/lib/texmf/tex/latex2e/base
-.endif 
+	@rm -rf ${PREFIX}/lib/texmf/tex/latex2e/base/*
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e ]; then ;\
+	mkdir ${PREFIX}/lib/texmf/tex/latex2e ;\
+	fi)
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e/base ]; then ; \
+	mkdir ${PREFIX}/lib/texmf/tex/latex2e/base; \
+	fi)
 	@(cd ${WRKDIR}/base ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx \
-	/usr/local/lib/texmf/tex/latex2e/base ; \
-	mv latex.fmt /usr/local/lib/texmf/ini)
-	@rm -f  /usr/local/bin/latex
-	@ln -s /usr/local/bin/virtex /usr/local/bin/latex
-.if !exists(/usr/local/lib/texmf/tex/platex2e)
-	@mkdir /usr/local/lib/texmf/tex/platex2e
-.endif 
-.if !exists(/usr/local/lib/texmf/tex/platex2e/base)
-	@mkdir /usr/local/lib/texmf/tex/platex2e/base
-.endif 
+	${PREFIX}/lib/texmf/tex/latex2e/base ; \
+	mv latex.fmt ${PREFIX}/lib/texmf/ini)
+	@rm -f  ${PREFIX}/bin/latex
+	@ln -s ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e ] ; then ; \
+	mkdir ${PREFIX}/lib/texmf/tex/platex2e ;\
+	fi)
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e/base ]; then ;\
+	mkdir ${PREFIX}/lib/texmf/tex/platex2e/base ;\
+	fi)
 	@(cd ${WRKSRC} ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx *.cfg \
-	/usr/local/lib/texmf/tex/platex2e/base ; \
-	cp -f platex.fmt /usr/local/lib/texmf/ini)
-	@rm -f /usr/local/bin/platex
-	@ln -s /usr/local/bin/virptex /usr/local/bin/platex
+	${PREFIX}/lib/texmf/tex/platex2e/base ; \
+	cp -f platex.fmt ${PREFIX}/lib/texmf/ini)
+	@rm -f ${PREFIX}/bin/platex
+	@ln -s ${PREFIX}/bin/virptex ${PREFIX}/bin/platex
 
 .include <bsd.port.mk>
