@@ -1,0 +1,52 @@
+bin/gau
+bin/gau-install
+@exec ln -s %D/bin/gau %D/bin/gaui
+@unexec rm -f %D/bin/gaui
+doc/gau-0.3.1/README
+doc/gau-0.3.1/README-0.1a
+doc/gau-0.3.1/README-0.2
+doc/gau-0.3.1/README-0.3
+doc/gau-0.3.1/TODO
+doc/gau-0.3.1/USAGE
+@dirrm doc/gau-0.3.1
+share/gau/IS.so
+share/gau/auto-response
+share/gau/cap/INFO
+share/gau/chat-binding
+share/gau/chollian.menu
+share/gau/down/INFO
+share/gau/gaurc
+share/gau/gtkrc
+share/gau/hitel.menu
+share/gau/modem-menu
+share/gau/now.menu
+share/gau/phonelist
+share/gau/script/01420.scr
+share/gau/script/01421.scr
+share/gau/script/114.scr
+share/gau/script/INFO
+share/gau/script/chol-login.scr
+share/gau/script/hitel-login.scr
+share/gau/script/hitel.scr
+share/gau/script/local
+share/gau/script/now-login.scr
+share/gau/script/now.scr
+share/gau/script/snu.scr
+share/gau/script/unitel.scr
+@exec mkdir -p %D/share/gau/sound
+share/gau/telnet-menu
+share/gau/xpm/INFO
+share/gau/xpm/bluetree.xpm
+share/gau/xpm/flag.xpm.0
+share/gau/xpm/flag.xpm.1
+share/gau/xpm/flag.xpm.2
+share/gau/xpm/flag.xpm.3
+share/gau/xpm/flag.xpm.4
+share/gau/xpm/flag.xpm.5
+share/gau/xpm/flower.xpm
+@dirrm share/gau/cap
+@dirrm share/gau/down
+@dirrm share/gau/script
+@dirrm share/gau/sound
+@dirrm share/gau/xpm
+@dirrm share/gau
