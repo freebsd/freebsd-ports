@@ -187,6 +187,33 @@ lib/libFOX.so
 lib/libFOX.so.%%LIBVER%%
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/adie.html
 %%PORTDOCS%%share/doc/fox/html/app.html
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/bigpenguin.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/foxlogo.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/foxstart.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/freespeach.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/ill.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/ilr.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/innernerd.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/iul.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/iur.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/nerd_inside.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/oll.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/olr.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/opengl_logo.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/oul.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/oul_grey.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/our.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/progress.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/scribble.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/sgitextedit.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/slingerzbutton1.gif
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-libraries.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-linkoutput.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-postbuild.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-preprocessor.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-project.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/win32-tooloptions.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/art/wintextedit.png
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/bigpenguin.png
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/calc.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/cfdrc.png
@@ -226,6 +253,26 @@ lib/libFOX.so.%%LIBVER%%
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/rex.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/scribble.png
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots.html
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie_colors.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie_del.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie_edit.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie_font.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/adie_pat.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/colordialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/dirdialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/filedialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/fontdialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/foxcalc.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/foxcalc_prefdialog_01_small.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/foxcalc_prefdialog_02_small.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/foxcalc_prefdialog_03_small.jpg
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/glview.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/pathfinder.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/printdialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/replacedialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/searchdialog.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots/table.png
 %%PORTDOCS%%share/doc/fox/html/serialization.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/sgitextedit.png
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/styles.css
@@ -244,5 +291,7 @@ lib/libFOX.so.%%LIBVER%%
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/wintextedit.png
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/window.html
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/xml.html
+%%PORTDOCS%%%%NEWFILE%%@dirrm share/doc/fox/html/screenshots
+%%PORTDOCS%%%%NEWFILE%%@dirrm share/doc/fox/html/art
 %%PORTDOCS%%@dirrm share/doc/fox/html
 %%PORTDOCS%%@dirrm share/doc/fox
