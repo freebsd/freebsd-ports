@@ -1,0 +1,14 @@
+Rtorrent is a ncurses BitTorrent Client written in C++ for *nix.
+
+Main Features are :
+  * Use an URL or file path to add torrents at runtime
+  * Stop/delete/resume torrents
+  * Optionally loads/saves/deletes torrents automatically in a session directory
+  * Safe fast resume support
+  * Peer's download speed calculated from incoming HAVE messages
+  * Peer download progress
+
+WWW: http://libtorrent.rakshasa.no/
+
+- Florent Thoumie
+flz@FreeBSD.org

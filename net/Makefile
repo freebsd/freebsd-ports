@@ -666,6 +666,7 @@
     SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += rtg
+    SUBDIR += rtorrent
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
