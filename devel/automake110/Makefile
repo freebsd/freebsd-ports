@@ -7,6 +7,7 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -45,5 +46,6 @@ post-patch:
 		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in \
 	)
+	@${REINPLACE_CMD} -e 's,%%X11BASE%%,${X11BASE},g' ${WRKSRC}/aclocal.in
 
 .include <bsd.port.mk>
