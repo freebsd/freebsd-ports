@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java www
 MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
 		${MASTER_SITE_LOCAL} \
@@ -36,22 +36,27 @@ TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MKDIR} ${ORION_HOME}
-	@${CP} -R ${WRKSRC}/* ${ORION_HOME}
-	@${CHMOD} 755 `find ${ORION_HOME} -type d`
-	@${CAT} ${FILESDIR}/${ORIONCTL_NAME} \
+	${MKDIR} ${ORION_HOME}
+	${CP} -R ${WRKSRC}/* ${ORION_HOME}
+	${CHMOD} 755 `find ${ORION_HOME} -type d`
+	${CAT} ${FILESDIR}/${ORIONCTL_NAME} \
 	| ${SED} "/%%PORTNAME%%/s//${PORTNAME}/" \
 	| ${SED} "/%%PORTVERSION%%/s//${PORTVERSION}/" \
 	| ${SED} "/%%ORION_HOME%%/s//${ORION_HOME:S/\//\\\//g}/" \
 	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
 	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
 	> ${ORIONCTL_DEST}
-	@${CHMOD} 755 ${ORIONCTL_DEST}
-	@${LN} -sf ${ORIONCTL_DEST} ${RC_SCRIPT}
-	@${MKDIR} ${ORION_HOME}/application-deployments
-	@${LN} -sf ${JAVA_HOME}/jre/tools.jar ${ORION_HOME}/tools.jar
+	${CAT} ${FILESDIR}/${ORIONCTL_NAME}.1 \
+	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
+	> ${WRKDIR}/${ORIONCTL_NAME}.1
+	${CHMOD} 755 ${ORIONCTL_DEST}
+	${LN} -sf ${ORIONCTL_DEST} ${RC_SCRIPT}
+	${MKDIR} ${ORION_HOME}/application-deployments
+	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${ORION_HOME}/tools.jar
+	${INSTALL_MAN} ${WRKDIR}/orionctl.1 ${MANPREFIX}/man/man1
 
 post-install:
-	@echo "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_HOME}."
+	@${ECHO} "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_HOME}."
+	@${ECHO} "Use 'man orionctl' for information about starting and stopping Orion."
 
 .include <bsd.port.post.mk>
