@@ -1805,6 +1805,7 @@ fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
 freebirth	ports/audio/freebirth
+freebsd-games	ports/games/freebsd-games
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
 freeciv		ports/games/freeciv
