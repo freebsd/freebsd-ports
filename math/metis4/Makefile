@@ -3,12 +3,12 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/26 03:55:22 mph Exp $
+# $Id: Makefile,v 1.2 1998/10/10 05:40:54 steve Exp $
 #
 
 DISTNAME=	metis-4.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.cs.umn.edu/~karypis/metis/metis/files/
+MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/metis/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
