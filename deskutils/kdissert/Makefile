@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--qtincludes=${QT_PREFIX}/include \
 		--qtlibs=${QT_PREFIX}/lib \
-		--kdeincluds=${KDE_PREFIX}/include \
+		--kdeincludes=${KDE_PREFIX}/include \
 		--kdelibs=${KDE_PREFIX}/lib
 
 post-patch:
