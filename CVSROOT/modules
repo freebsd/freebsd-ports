@@ -47,6 +47,7 @@ editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
 mod_auth_imap	ports/www/mod_auth_imap
+mod_auth_imap2	ports/www/mod_auth_imap2
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
