@@ -10,6 +10,9 @@ PORTVERSION=	2.3.8
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}+2.diff
+
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb
