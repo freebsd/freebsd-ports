@@ -1322,6 +1322,7 @@
     SUBDIR += pyobfuscate
     SUBDIR += pyrex
     SUBDIR += pyumlgraph
+    SUBDIR += qca
     SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qsa
