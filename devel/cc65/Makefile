@@ -33,7 +33,6 @@ CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 BROKEN=		"Does not compile on !i386"
 .endif
 
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 
 DEVNULL=	${__empty_string_for_portlint}/dev/null
