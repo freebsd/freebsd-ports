@@ -1,0 +1,12 @@
+$FreeBSD$
+--- doc/Makefile.in.orig	Wed Mar 21 15:53:20 2001
++++ doc/Makefile.in	Wed Mar 21 15:53:49 2001
+@@ -89,7 +89,7 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ SUBDIRS = vorbisfile vorbisenc
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = v-comment.html vorbisword2.png white-ogg.png programming.html 	vorbis.html wait.png white-xifish.png vorbis-clip.txt 	vorbis-errors.txt
+ 
