@@ -1,20 +1,22 @@
 # New ports collection makefile for: jp-dvi2ps
-# Version required:	2.0beta4
+# Version required:	2.0gamma
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1996/11/11 10:11:47 max Exp $
+# $Id: Makefile,v 1.3 1996/12/07 00:20:24 asami Exp $
 #
 
-DISTNAME=	dvi2ps-2.0j-beta4
-PKGNAME=	jp-dvi2ps-2.0b4
+DISTNAME=	dvi2ps-2.0j-gamma
+PKGNAME=	jp-dvi2ps-2.0g
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
-DISTFILES=	dvi2ps-2.0j-beta4.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
+
+MAN1=		dvi2ps.1 ../ja_JP.EUC/man1/dvi2ps.1
 
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
@@ -28,6 +30,10 @@ post-install:
 	@(cd  ${WRKSRC}; \
 	make install-lib; \
 	${CP} -R doc ${PREFIX}/lib/dvi2ps/ ;\
+	mv ${PREFIX}/lib/dvi2ps/doc/dvi2ps.man ${PREFIX}/man/man1/dvi2ps.1 ;\
+	nkf -e ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman > \
+			${PREFIX}/man/ja_JP.EUC/man1/dvi2ps.1 ;\
+	${RM} -f ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman ;\
 	${INSTALL_SCRIPT} tools/lnfonts ${PREFIX}/lib/dvi2ps ;\
 	${INSTALL_PROGRAM} tools/nup ${PREFIX}/bin ;\
 	${INSTALL_PROGRAM} tools/texfix ${PREFIX}/bin ;\

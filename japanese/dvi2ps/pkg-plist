@@ -26,11 +26,13 @@ lib/dvi2ps/tombo.ps
 lib/dvi2ps/vflib
 lib/dvi2ps/vtexe
 lib/dvi2ps/wadalab
+lib/dvi2ps/doc/DOCS
+lib/dvi2ps/doc/dvi2ps.1
+lib/dvi2ps/doc/dvi2ps.1j
+lib/dvi2ps/doc/hints.doc
 lib/dvi2ps/doc/bugs.doc
 lib/dvi2ps/doc/changes.doc
 lib/dvi2ps/doc/dvi2ps.doc
-lib/dvi2ps/doc/dvi2ps.jman
-lib/dvi2ps/doc/dvi2ps.man
 lib/dvi2ps/doc/fontdesc.doc
 lib/dvi2ps/doc/history
 lib/dvi2ps/doc/install.doc
@@ -89,3 +91,5 @@ lib/dvi2ps/printer/LW16
 lib/dvi2ps/printer/LWII
 lib/dvi2ps/printer/RicohSP10
 lib/dvi2ps/printer/SPARC
+man/ja_JP.EUC/man1/dvi2ps.1.gz
+man/man1/dvi2ps.1.gz

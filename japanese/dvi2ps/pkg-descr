@@ -1,11 +1,12 @@
-dvi to postscrpt converter.
+dvi to PostScript converter.
 
-Sample font description file `/usr/local/lib/dvi2ps/fontdesc' is installed.
+A sample font description file `/usr/local/lib/dvi2ps/fontdesc' is installed.
 Those who want to print out English fonts by pkfont and Japanese by 
 printer builtin font can use it directly. 
 (Remember to add pkfonts by package or so.)
 
-Default resolution is set to 300dpi in fontdesc file, 
-modify it according to your site.
+Default resolution is set to 300dpi in fontdesc file. You can 
+modify it according to your site, or override it by command line option:
+dvi2ps -D RESOLUTION=(your resolution).
 
 See /usr/local/lib/dvi2ps/doc/* files for customize.
