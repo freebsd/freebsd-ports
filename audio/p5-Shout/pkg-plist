@@ -9,5 +9,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/example2.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/mach 2>/dev/null || true
