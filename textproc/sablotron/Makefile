@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--enable-debugger
 .endif
 
 .ifndef(NOPORTDOCS)
-BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}
 .endif
 
