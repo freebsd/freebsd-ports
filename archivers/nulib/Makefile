@@ -3,7 +3,7 @@
 # Date created:         Thu May  8 00:14:31 PDT 1997
 # Whom:                 Steven Wallace <swallace@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/01/23 00:43:33 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nulib325

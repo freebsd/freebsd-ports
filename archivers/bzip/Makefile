@@ -3,7 +3,7 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1997/11/26 22:55:53 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       bzip-0.21

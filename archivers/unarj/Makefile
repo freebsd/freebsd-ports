@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1998/09/23 01:00:52 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       unarj-2.43

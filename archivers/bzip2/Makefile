@@ -4,7 +4,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1999/08/10 07:29:48 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bzip2-0.9.5c

@@ -3,7 +3,7 @@
 # Date created:         17 Mar 1999
 # Whom:                 xxx
 #
-# $Id: Makefile,v 1.3 1999/07/21 14:55:26 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pklin251

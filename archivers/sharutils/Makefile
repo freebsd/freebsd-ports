@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1999/01/27 07:41:03 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       sharutils-4.2

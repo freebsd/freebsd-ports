@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1999/04/21 12:17:16 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rarbsd

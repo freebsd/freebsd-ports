@@ -3,7 +3,7 @@
 # Date created:				21 Feb 1998
 # Whom:					giffunip@asme.org
 #
-# $Id: Makefile,v 1.4 1999/04/19 19:28:34 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       lzo-1.04
