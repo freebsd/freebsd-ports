@@ -3,7 +3,7 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.2.1.2.1.10.2 1999/01/05 11:03:50 itojun Exp $
+# $Id: Makefile,v 1.8 1999/01/07 06:28:35 itojun Exp $
 #
 
 DISTNAME=	zebra-981222
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	andreas@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
