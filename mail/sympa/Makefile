@@ -56,11 +56,13 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 .endif
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
 		--with-confdir=${PREFIX}/etc \
-		--with-initdir=${PREFIX}/etc/rc.d
+		--with-initdir=${PREFIX}/etc/rc.d \
+		${CONFIGURE_TARGET}
+CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 
 pre-fetch:
