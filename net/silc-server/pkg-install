@@ -52,7 +52,7 @@ POST-INSTALL)
 	else
 		${SILC_DAEMON} -C ${CONF_DIR}
 	fi
-	${INSTALL_DIR} ${PKG_PREFIX}/libexec/silc/modules ${PKG_PREFIX}/silc/logs
+	${INSTALL_DIR} ${PKG_PREFIX}/silc/logs
 	;;
 
 DEINSTALL)
@@ -71,12 +71,6 @@ DEINSTALL)
 		[ -f ${CONF_DIR}/${key_file} ] && echo "$PKGNAME: rm -f ${CONF_DIR}/${key_file}"
 	done
 	echo "$PKGNAME: Also, do not forget to 'rmdir ${CONF_DIR} 2>/dev/null'"
-
-	${RMDIR} ${PKG_PREFIX}/libexec/silc/modules 2>/dev/null
-	if [ -d ${PKG_PREFIX}/libexec/silc ]
-	then
-		${RMDIR} ${PKG_PREFIX}/libexec/silc 2>/dev/null || echo "$PKGNAME: Will not remove silc modules. If permanently removing the port, 'rm -Rf ${PKG_PREFIX}/libexec/silc'"
-	fi
 
 	${RMDIR} ${PKG_PREFIX}/silc/logs 2>/dev/null
 	if [ -d ${PKG_PREFIX}/silc ]

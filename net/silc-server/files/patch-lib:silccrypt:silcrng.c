@@ -1,5 +1,5 @@
---- lib/silccrypt/silcrng.c.orig	Sun Nov  4 07:59:11 2001
-+++ lib/silccrypt/silcrng.c	Thu Nov  8 14:34:30 2001
+--- lib/silccrypt/silcrng.c.orig	Wed Nov 14 12:44:05 2001
++++ lib/silccrypt/silcrng.c	Wed Nov 14 22:19:57 2001
 @@ -28,12 +28,23 @@
  
  #include "silcincludes.h"
@@ -15,11 +15,11 @@
 +#else
 +
  #ifdef HAVE_GETSID
- extern __pid_t getsid (__pid_t __pid);
+ extern pid_t getsid (pid_t __pid);
  #endif
  
  #ifdef HAVE_GETPGID
- extern __pid_t getpgid (__pid_t __pid);
+ extern pid_t getpgid (pid_t __pid);
 +#endif
  #endif
  
