@@ -7,7 +7,7 @@
 
 PORTNAME=	XFree86
 PORTVERSION= 	4.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -85,10 +85,16 @@ post-patch:
 	  ${WRKSRC}/include/Xarch.h; fi
 .endif
 
+pre-build:
+	@cd  ${WRKSRC}/extras/freetype2 && make -f Makefile.freetype
 pre-install:
 	${MKDIR} ${PREFIX}
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/freetype2/lib/libfreetype.a ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/extras/freetype2/lib/libfreetype.so.6 ${PREFIX}/lib
+	ln -sf ${PREFIX}/lib/libfreetype.so.6 ${PREFIX}/lib/libfreetype.so
+
 .ifndef DISTRIB
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .endif
