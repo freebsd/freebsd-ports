@@ -7,6 +7,7 @@
 
 PORTNAME=	oneko
 PORTVERSION=	2.0b
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www02.so-net.ne.jp/~nsasaki/oneko/ \
 		http://www.net24.ne.jp/~ryo2/archives/:ryo2 \
@@ -15,8 +16,15 @@ DISTFILES=	oneko-2.0b.tar.gz \
 		oneko-2.0b-pop1.1-patch.tar.gz \
 		oneko-2.0b-tip1.7.tar.gz:ryo2 \
 		oneko-2.0b-sender0.4.tar.gz:hsaka
+DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/distfiles/
+PATCHFILES=	oneko-2.0b-bsd0.1.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	candy@kgc.co.jp
+
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
@@ -28,7 +36,7 @@ MAKE_ARGS=	MANSUFFIX=6 \
 		MANDIR=${PREFIX}/man/man6 \
 		JMANDIR=${PREFIX}/man/ja/man6
 
-do-patch:
+pre-patch:
 	@(cd ${WRKSRC}; \
 	${PATCH} -p1 < ../oneko-2.0b-pop1.1.patch ; \
 	${PATCH} -p1 < oneko-2.0b-tip1.7.patch ; \
