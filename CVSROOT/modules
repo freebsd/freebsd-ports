@@ -7695,6 +7695,7 @@ ruby18_static	ports/lang/ruby18_static
 rubyphoto	ports/graphics/rubyphoto
 rudiments	ports/devel/rudiments
 runit		ports/sysutils/runit
+runwhen		ports/sysutils/runwhen
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
 rwhois		ports/net/rwhois
