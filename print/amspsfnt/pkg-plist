@@ -32,48 +32,11 @@ lib/afm/wncyi10.afm
 lib/afm/wncyr10.afm
 lib/afm/wncysc10.afm
 lib/afm/wncyss10.afm
-share/doc/amspsfnt/READ.ME
-share/texmf/dvips/mapfiles.ams/readme.txt
+%%PORTDOCS%%share/doc/amspsfnt/READ.ME
+share/texmf/dvips/mapfiles.ams/psfonts.ams
 share/texmf/dvips/mapfiles.ams/psfonts.amx
 share/texmf/dvips/mapfiles.ams/psfonts.amz
-share/texmf/dvips/mapfiles.ams/psfonts.ams
-share/texmf/fonts/ams/type1/Fontmap
-share/texmf/fonts/ams/type1/fonts.dir
-share/texmf/fonts/ams/type1/fonts.scale
-share/texmf/fonts/ams/type1/cmmib5.pfb
-share/texmf/fonts/ams/type1/euex10.pfb
-share/texmf/fonts/ams/type1/eufb5.pfb
-share/texmf/fonts/ams/type1/eufm10.pfb
-share/texmf/fonts/ams/type1/eufm7.pfb
-share/texmf/fonts/ams/type1/eurb5.pfb
-share/texmf/fonts/ams/type1/eurm10.pfb
-share/texmf/fonts/ams/type1/eurm7.pfb
-share/texmf/fonts/ams/type1/eusb5.pfb
-share/texmf/fonts/ams/type1/eusm10.pfb
-share/texmf/fonts/ams/type1/eusm7.pfb
-share/texmf/fonts/ams/type1/msam5.pfb
-share/texmf/fonts/ams/type1/msbm10.pfb
-share/texmf/fonts/ams/type1/msbm7.pfb
-share/texmf/fonts/ams/type1/wncyi10.pfb
-share/texmf/fonts/ams/type1/wncysc10.pfb
-share/texmf/fonts/ams/type1/cmbsy5.pfb
-share/texmf/fonts/ams/type1/cmbsy7.pfb
-share/texmf/fonts/ams/type1/cmmib7.pfb
-share/texmf/fonts/ams/type1/eufb10.pfb
-share/texmf/fonts/ams/type1/eufb7.pfb
-share/texmf/fonts/ams/type1/eufm5.pfb
-share/texmf/fonts/ams/type1/eurb10.pfb
-share/texmf/fonts/ams/type1/eurb7.pfb
-share/texmf/fonts/ams/type1/eurm5.pfb
-share/texmf/fonts/ams/type1/eusb10.pfb
-share/texmf/fonts/ams/type1/eusb7.pfb
-share/texmf/fonts/ams/type1/eusm5.pfb
-share/texmf/fonts/ams/type1/msam10.pfb
-share/texmf/fonts/ams/type1/msam7.pfb
-share/texmf/fonts/ams/type1/msbm5.pfb
-share/texmf/fonts/ams/type1/wncyb10.pfb
-share/texmf/fonts/ams/type1/wncyr10.pfb
-share/texmf/fonts/ams/type1/wncyss10.pfb
+share/texmf/dvips/mapfiles.ams/readme.txt
 share/texmf/fonts/ams/tfm/cmbsy5.tfm
 share/texmf/fonts/ams/tfm/cmbsy6.tfm
 share/texmf/fonts/ams/tfm/cmbsy7.tfm
@@ -164,12 +127,49 @@ share/texmf/fonts/ams/tfm/wncysc10.tfm
 share/texmf/fonts/ams/tfm/wncyss10.tfm
 share/texmf/fonts/ams/tfm/wncyss8.tfm
 share/texmf/fonts/ams/tfm/wncyss9.tfm
-@dirrm share/doc/amspsfnt
-@dirrm share/texmf/dvips/mapfiles.ams
-@dirrm lib/afm
-@dirrm share/texmf/fonts/ams/tfm
+share/texmf/fonts/ams/type1/Fontmap
+share/texmf/fonts/ams/type1/cmbsy5.pfb
+share/texmf/fonts/ams/type1/cmbsy7.pfb
+share/texmf/fonts/ams/type1/cmmib5.pfb
+share/texmf/fonts/ams/type1/cmmib7.pfb
+share/texmf/fonts/ams/type1/euex10.pfb
+share/texmf/fonts/ams/type1/eufb10.pfb
+share/texmf/fonts/ams/type1/eufb5.pfb
+share/texmf/fonts/ams/type1/eufb7.pfb
+share/texmf/fonts/ams/type1/eufm10.pfb
+share/texmf/fonts/ams/type1/eufm5.pfb
+share/texmf/fonts/ams/type1/eufm7.pfb
+share/texmf/fonts/ams/type1/eurb10.pfb
+share/texmf/fonts/ams/type1/eurb5.pfb
+share/texmf/fonts/ams/type1/eurb7.pfb
+share/texmf/fonts/ams/type1/eurm10.pfb
+share/texmf/fonts/ams/type1/eurm5.pfb
+share/texmf/fonts/ams/type1/eurm7.pfb
+share/texmf/fonts/ams/type1/eusb10.pfb
+share/texmf/fonts/ams/type1/eusb5.pfb
+share/texmf/fonts/ams/type1/eusb7.pfb
+share/texmf/fonts/ams/type1/eusm10.pfb
+share/texmf/fonts/ams/type1/eusm5.pfb
+share/texmf/fonts/ams/type1/eusm7.pfb
+share/texmf/fonts/ams/type1/fonts.dir
+share/texmf/fonts/ams/type1/fonts.scale
+share/texmf/fonts/ams/type1/msam10.pfb
+share/texmf/fonts/ams/type1/msam5.pfb
+share/texmf/fonts/ams/type1/msam7.pfb
+share/texmf/fonts/ams/type1/msbm10.pfb
+share/texmf/fonts/ams/type1/msbm5.pfb
+share/texmf/fonts/ams/type1/msbm7.pfb
+share/texmf/fonts/ams/type1/wncyb10.pfb
+share/texmf/fonts/ams/type1/wncyi10.pfb
+share/texmf/fonts/ams/type1/wncyr10.pfb
+share/texmf/fonts/ams/type1/wncysc10.pfb
+share/texmf/fonts/ams/type1/wncyss10.pfb
 @dirrm share/texmf/fonts/ams/type1
+@dirrm share/texmf/fonts/ams/tfm
 @dirrm share/texmf/fonts/ams
 @unexec rmdir %D/share/texmf/fonts 2>/dev/null || true
+@dirrm share/texmf/dvips/mapfiles.ams
 @unexec rmdir %D/share/texmf/dvips 2>/dev/null || true
 @unexec rmdir %D/share/texmf 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/amspsfnt
+@dirrm lib/afm
