@@ -18,6 +18,7 @@
     SUBDIR += korganizer11-i18n
     SUBDIR += kproject
     SUBDIR += moneydance
+    SUBDIR += notebook
     SUBDIR += offix-trash
     SUBDIR += plan
     SUBDIR += sliderule
