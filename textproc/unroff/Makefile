@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1996/11/17 08:45:18 obrien Exp $
+# $Id: Makefile,v 1.4 1997/03/06 09:46:28 tg Exp $
 #
 
 DISTNAME=	unroff-1.0
@@ -13,7 +13,7 @@ MASTER_SITES=	${UNROFF_SITE}/dist/ \
 		${UNROFF_SITE}/contrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	wosch@freebsd.org
 
 RUN_DEPENDS=	elk:${PORTSDIR}/lang/elk
 BUILD_DEPENDS=	elk:${PORTSDIR}/lang/elk
