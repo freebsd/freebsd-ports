@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-power-tools
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -27,7 +28,8 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany-1.6/extensions/libgesturesextension.so:${PO
 		gnomesu:${PORTSDIR}/security/libgnomesu \
 		bpm:${PORTSDIR}/sysutils/bpm \
 		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
-		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager
+		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
+		gnome-menu-editor:${PORTSDIR}/deskutils/gnome-menu-editor
 
 NO_BUILD=	yes
 
