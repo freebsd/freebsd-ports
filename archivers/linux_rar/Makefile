@@ -11,7 +11,8 @@ DISTNAME=       rarlnx26
 PKGNAME=        linux_rar-2.60
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
-		ftp://ftp.cdrom.com/pub/cheats/dlh/rar/
+		ftp://ftp.cdrom.com/pub/cheats/dlh/rar/ \
+		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=   .sfx
 
 MAINTAINER=     k5@cheerful.com
