@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xhippo
-# Version required:			1.1
+# Version required:			2.0
 # Date created:				16 March 1999
-# Whom:					Rod Taylor <tr49986@rcc.on.ca>
+# Whom:					Rod Taylor <rod@zort.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xhippo-1.1
+DISTNAME=	xhippo-2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://zenchaos.netpedia.net/software/
 
-MAINTAINER=	tr49986@rcc.on.ca
+MAINTAINER=	ron@zort.on.ca
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
