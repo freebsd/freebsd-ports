@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jan  1 14:56:42 2002
++++ Makefile	Tue Jan  1 14:57:17 2002
+@@ -20,7 +20,7 @@
+ 
+ INSTALL = install
+ CDEFS  = CS=CS_ANSI $(CPPTABLES) SXMPATH=\"$(INSTALL_ROOT)$(bindir)/$(engine)\"
+-CFLAGS = -Wall -pedantic -O2 $(CDEFS:%=-D%)
++CFLAGS += $(CDEFS:%=-D%)
+ 
+ # destinations for installer
+ prefix=/usr/local
