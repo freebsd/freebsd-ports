@@ -1,17 +1,21 @@
 # New ports collection makefile for:	lyx
-# Version required:	1.0.4
+# Version required:	1.1.4
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lyx-1.0.4
+DISTNAME=	lyx-1.1.4
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/devel/ \
 		ftp://la1ad.uio.no/pub/lyx/ \
-		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
-		ftp://ftp.sdsc.edu/pub/other/lyx/stable/
+		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/devel/ \
+		ftp://ftp.sdsc.edu/pub/other/lyx/devel/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-1.1.4fix1.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -23,9 +27,9 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
+USE_NEWGCC=	yes
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
-STRIP=
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS= --with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11 ${LOCALBASE}/include"
 MAN1=		lyx.1 reLyX.1
 
