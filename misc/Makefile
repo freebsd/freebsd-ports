@@ -71,6 +71,7 @@
     SUBDIR += gwhich
     SUBDIR += hello
     SUBDIR += heyu
+    SUBDIR += histring
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
