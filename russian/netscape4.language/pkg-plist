@@ -1,0 +1,5 @@
+@cwd /usr/X11R6
+lib/X11/app-defaults/Netscape
+lib/X11/nls/nls.dir
+lib/X11/nls/nls.alias
+lib/X11/nls/ru_SU.KOI8-R
