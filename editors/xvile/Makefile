@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.3s
+PORTVERSION=	9.3u
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -32,7 +32,9 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3p.patch.gz \
 		vile-9.3q.patch.gz \
 		vile-9.3r.patch.gz \
-		vile-9.3s.patch.gz
+		vile-9.3s.patch.gz \
+		vile-9.3t.patch.gz \
+		vile-9.3u.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
