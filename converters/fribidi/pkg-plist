@@ -19,3 +19,4 @@ lib/libfribidi.la
 lib/libfribidi.so
 lib/libfribidi.so.0
 lib/pkgconfig/fribidi.pc
+@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
