@@ -100,7 +100,11 @@ else
     echo "#define InstallFSConfig NO" >> $F
 fi
 
-
+yesno YES "Do you want support for TrueType fonts?"
+if [ $answ = NO ]; then
+    echo "#define BuildFreeType           NO" >> $F
+    echo "#define BuildXTrueType          NO" >> $F
+fi
 cat <<'END'
  Do you want to Build Fonts (Usually you only want to build and install
  fonts once, if this is a first time install you will want to build the
