@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.2.1b6
+PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
@@ -17,12 +17,12 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 MAN1=		everybuddy.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+# no idea why config.h isn't created, but an empty one seems to work OK
+post-patch:
+	touch ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
