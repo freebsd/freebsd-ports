@@ -1,16 +1,16 @@
---- src/config/wdm-config.in.orig	Sun Aug 30 17:15:53 1998
-+++ src/config/wdm-config.in	Fri Sep 11 09:22:53 1998
-@@ -25,11 +25,12 @@
+--- src/config/wdm-config.in.orig	Thu Sep 16 16:27:58 1999
++++ src/config/wdm-config.in	Sat Oct 30 12:41:26 1999
+@@ -25,11 +25,11 @@
  ! display screen background--if not set or set to none, then the
  !                            background is not set by wdm.
- ! DisplayManager*wdmBg:		none
--DisplayManager*wdmBg:		solid:RoyalBlue
-+! DisplayManager*wdmBg:		solid:RoyalBlue
- ! DisplayManager*wdmBg:		dgradient:RoyalBlue,FireBrick,Black
- ! DisplayManager*wdmBg:		hgradient:RoyalBlue,FireBrick,Black
- ! DisplayManager*wdmBg:		vgradient:RoyalBlue,FireBrick,Black
- ! DisplayManager*wdmBg:		pixmap:#configdir#/pixmaps/Stars.jpg
-+DisplayManager*wdmBg:		pixmap:#configdir#/pixmaps/daemon1-HQ-1280x960.jpg
+ ! DisplayManager*wdmBg:         none
+-DisplayManager*wdmBg:           solid:RoyalBlue
++! DisplayManager*wdmBg:         solid:RoyalBlue
+ ! DisplayManager*wdmBg:         dgradient:RoyalBlue,FireBrick,Black
+ ! DisplayManager*wdmBg:         hgradient:RoyalBlue,FireBrick,Black
+ ! DisplayManager*wdmBg:         vgradient:RoyalBlue,FireBrick,Black
+-! DisplayManager*wdmBg:         pixmap:#configdir#/pixmaps/Stars.jpg
++DisplayManager*wdmBg:           pixmap:#configdir#/pixmaps/daemon1-HQ-1280x960.jpg
  !
  ! optional pixmap for logo
- #pixmapcomment#DisplayManager*wdmLogo: 	#configdir#/pixmaps/#pixmapfile#
+ #pixmapcomment#DisplayManager*wdmLogo:  #configdir#/pixmaps/#pixmapfile#

@@ -5,7 +5,7 @@
  scaled to use the full screen.
  .SH FILES
 -\fBwdmLogin\fP can be customized by modifying \fI/etc/X11/wdm/wdm-config\fP.
-+\fBwdmLogin\fP can be customized by modifying \fI/usr/X11R6/lib/X11/wdm/wdm-config\fP.
++\fBwdmLogin\fP can be customized by modifying \fI%%X11BASE%%/lib/X11/wdm/wdm-config\fP.
  .SH SEE ALSO
  .BR wdm (1x)
  .SH AUTHOR
