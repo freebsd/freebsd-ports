@@ -1450,6 +1450,7 @@ dsniff		ports/security/dsniff
 dspam		ports/mail/dspam
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
+dt		ports/sysutils/dt
 dtcp		ports/net/dtcp
 dtcpclient	ports/net/dtcpclient
 dtd-catalogs	ports/textproc/dtd-catalogs
