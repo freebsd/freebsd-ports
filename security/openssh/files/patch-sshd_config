@@ -1,8 +1,8 @@
---- sshd_config.orig	Sun Jun 30 21:25:40 2002
-+++ sshd_config	Wed Jul  3 06:22:22 2002
+--- sshd_config.orig	Thu Oct 17 06:02:17 2002
++++ sshd_config	Thu Oct 17 06:02:17 2002
 @@ -32,6 +32,7 @@
  
- #LoginGraceTime 600
+ #LoginGraceTime 120
  #PermitRootLogin yes
 +PermitRootLogin no
  #StrictModes yes
@@ -16,11 +16,3 @@
  
  # Kerberos options
  #KerberosAuthentication no
-@@ -75,6 +77,7 @@
- #KeepAlive yes
- #UseLogin no
- #UsePrivilegeSeparation yes
-+UsePrivilegeSeparation yes
- #Compression yes
- 
- #MaxStartups 10
