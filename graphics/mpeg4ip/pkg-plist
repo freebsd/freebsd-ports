@@ -47,6 +47,10 @@ lib/mp4player_plugin/celp_plugin.a
 lib/mp4player_plugin/celp_plugin.la
 lib/mp4player_plugin/celp_plugin.so
 lib/mp4player_plugin/celp_plugin.so.0
+lib/mp4player_plugin/isma_rtp_plugin.a
+lib/mp4player_plugin/isma_rtp_plugin.la
+lib/mp4player_plugin/isma_rtp_plugin.so
+lib/mp4player_plugin/isma_rtp_plugin.so.0
 lib/mp4player_plugin/mp3_plugin.a
 lib/mp4player_plugin/mp3_plugin.la
 lib/mp4player_plugin/mp3_plugin.so
