@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cd-write
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -27,11 +26,13 @@ IGNORE=		"FreeBSD 3.X or greater is required to support this port"
 .endif
 
 pre-build:
-	@cd ${WRKSRC}; ${MV} Makefile Makefile~; \
-		${SED} -e s:/usr/local:${PREFIX}:g -e s/CFL/CXXFL/ <Makefile~ >Makefile;\
-		${ECHO_CMD} all: cd-write >> Makefile
+	@cd ${WRKSRC}; ${ECHO_CMD} all: cd-write >> Makefile
 	@cd ${WRKSRC}/c++tk; ${MV} Makefile Makefile~; \
-		${SED} -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile
+		${SED} -e s:/usr/local:${PREFIX}:g \
+		-e s:/usr/X11R6:${X11BASE}:g <Makefile~ >Makefile
+	@cd ${WRKSRC}; ${MV} Makefile Makefile~; \
+		${SED} -e s:/usr/local:${PREFIX}:g \
+		-e s:/usr/X11R6:${X11BASE}:g <Makefile~ >Makefile
 
 post-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
