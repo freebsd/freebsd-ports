@@ -1,13 +1,13 @@
 # New ports collection makefile for:	Wanderlust (for emacs)
-# Version required:	1.0.2
+# Version required:	1.0.x
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/23 19:54:50 sada Exp $
 #
 
-DISTNAME=	wl-1.0.2
-PKGNAME=	wanderlust-${EMACS_PORT}-1.0.2
+DISTNAME=	wl-1.0.3
+PKGNAME=	wanderlust-${EMACS_PORT}-1.0.3
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/wanderlust/stable/ \
@@ -29,12 +29,13 @@ EMACS_CMD=	${EMACS_NAME}-${EMACS_VER}
 .if !defined(HAVE_COMMON_PORT)
 HAVE_COMMON_PORT=	no
 .endif
-BUILD_DEPENDS= 	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if (${HAVE_COMMON_PORT} == "yes")
 # depends on common port
-BUILD_DEPENDS+=	${PKG_DBDIR}/${EMACS_PORT}-common-${MULE_VER}:${PORTSDIR}/editors/${EMACS_PORT}-common
-RUN_DEPENDS+=	${PKG_DBDIR}/${EMACS_PORT}-common-${MULE_VER}:${PORTSDIR}/editors/${EMACS_PORT}-common
+BUILD_DEPENDS=	${PKG_DBDIR}/${EMACS_PORT}-common-${MULE_VER}:${PORTSDIR}/editors/${EMACS_PORT}-common
+RUN_DEPENDS=	${PKG_DBDIR}/${EMACS_PORT}-common-${MULE_VER}:${PORTSDIR}/editors/${EMACS_PORT}-common
+.else
+BUILD_DEPENDS= 	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
+RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
 # depends on semi
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}-current
@@ -52,7 +53,7 @@ ALL_TARGET=	all info
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER_LIBDIR=${EMACS_VER_LIBDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/wanderlust
-DOCS=		00README 00README.ja ChangeLog
+DOCS=		00README 00README.ja ChangeLog ChangeLog.ja
 SAMPLESDIR=	${PREFIX}/share/examples/wanderlust
 SAMPLES=	sample.addresses sample.dot.wl sample.folders
 

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Wanderlust (for mule)
-# Version required:	1.0.2
+# Version required:	1.0.x
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/25 21:22:09 sada Exp $
 #
 
 MAINTAINER=	nobutaka@nobutaka.com
