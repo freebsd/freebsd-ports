@@ -194,6 +194,7 @@
     SUBDIR += xin
     SUBDIR += xloadface
     SUBDIR += xlogmaster
+    SUBDIR += xmbmon
     SUBDIR += xosview
     SUBDIR += xperfmon
     SUBDIR += xperfmon3

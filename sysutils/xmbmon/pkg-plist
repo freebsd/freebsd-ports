@@ -1,0 +1,7 @@
+bin/mbmon
+bin/xmbmon
+%%PORTDOCS%%share/doc/xmbmon/00README.txt
+%%PORTDOCS%%share/doc/xmbmon/00READMEj.txt
+%%PORTDOCS%%share/doc/xmbmon/DEBUG_Info
+%%PORTDOCS%%share/doc/xmbmon/xmbmon.resources
+%%PORTDOCS%%@dirrm share/doc/xmbmon
