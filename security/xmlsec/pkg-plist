@@ -23,14 +23,14 @@ include/xmlsec0/xmlsec/xmlenc.h
 include/xmlsec0/xmlsec/xmlsec.h
 include/xmlsec0/xmlsec/xmltree.h
 lib/libxmlsec.a
-lib/libxmlsec.la
 lib/libxmlsec.so
 lib/libxmlsec.so.0
-lib/pkgconfig/xmlsec.pc
+libdata/pkgconfig/xmlsec.pc
 %%PORTDOCS%%share/doc/xmlsec/api/.cvsignore
 %%PORTDOCS%%share/doc/xmlsec/api/Makefile
 %%PORTDOCS%%share/doc/xmlsec/api/Makefile.am
 %%PORTDOCS%%share/doc/xmlsec/api/Makefile.in
+%%PORTDOCS%%share/doc/xmlsec/api/Makefile.in.bak
 %%PORTDOCS%%share/doc/xmlsec/api/index.html
 %%PORTDOCS%%share/doc/xmlsec/api/index.sgml
 %%PORTDOCS%%share/doc/xmlsec/api/sgml/base64.sgml
@@ -318,4 +318,3 @@ lib/pkgconfig/xmlsec.pc
 %%PORTDOCS%%@dirrm share/doc/xmlsec
 @dirrm include/xmlsec0/xmlsec
 @dirrm include/xmlsec0
-@unexec rmdir $D/lib/pkgconfig 2>/dev/null || true
