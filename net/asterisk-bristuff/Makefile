@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -17,7 +18,8 @@ COMMENT=	An Open Source PBX and telephony toolkit
 ONLY_FOR_ARCHS=	i386 sparc64
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
+		newt.51:${PORTSDIR}/devel/newt
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 GNU_CONFIGURE=	yes
