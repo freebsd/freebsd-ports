@@ -1,143 +1,127 @@
 @comment $FreeBSD$
-bin/MakeTeXPK
-bin/access
-%%DVIPSK%%bin/afm2tfm
-bin/allcm
-bin/allec
-bin/allneeded
+bin/mktexpk
+bin/mktexmf
+bin/mktextfm
+bin/mktexlsr
+bin/kpsewhich
+bin/kpsestat
+bin/kpseaccess
+bin/kpsereadlink
+bin/omega
+bin/otp2ocp
+bin/outocp
+bin/mkocp
+bin/mkofm
+bin/omfonts
+bin/aleph
+bin/pdfetex
+bin/pdfxtex
+bin/tex
+bin/mf
+bin/mf-nowin
+bin/mpost
+bin/newer
+bin/dmp
+bin/mpto
+bin/makempx
 bin/bibtex
 bin/ctangle
+bin/ctie
 bin/cweave
-bin/dmp
-bin/dvi2fax
 bin/dvicopy
-bin/dvihp
-bin/dvilj
-bin/dvilj2p
-bin/dvilj4
-bin/dvilj4l
-bin/dvilj6
-bin/dvipdfm
-bin/dvipdft
-%%DVIPSK%%bin/dvips
-bin/dvired
 bin/dvitomp
 bin/dvitype
-bin/e2pall
-bin/ebb
-bin/einitex
-bin/elatex
-bin/epstopdf
-bin/etex
-bin/evirtex
-bin/fdf2tan
-bin/fmtutil
-bin/fontexport
-bin/fontimport
-bin/fontinst
 bin/gftodvi
 bin/gftopk
 bin/gftype
-bin/gsftopk
-bin/inimf
-bin/inimpost
-bin/iniomega
-bin/initex
-bin/kpsepath
-bin/kpsestat
-bin/kpsetool
-bin/kpsewhich
-bin/kpsexpand
-bin/lambda
-bin/latex
-bin/mag
-bin/makeindex
-bin/makempx
-bin/makempy
-bin/mf
-%%X11BITS%%bin/mf-nowin
 bin/mft
-%%X11BITS%%bin/mfw
-bin/mkfontdesc
-bin/mkindex
-bin/mkocp
-bin/mkofm
-bin/mktexfmt
-bin/mktexlsr
-bin/mktexmf
-bin/mktexpk
-bin/mktextfm
-bin/mpost
-bin/mpto
-bin/mptopdf
-bin/newer
 bin/odvicopy
-%%DVIPSK%%bin/odvips
 bin/odvitype
-bin/ofm2opl
-bin/omega
-bin/omfonts
-bin/opl2ofm
 bin/otangle
-bin/otp2ocp
-bin/outocp
-bin/ovf2ovp
-bin/ovp2ovf
-%%X11BITS%%%%XDVIK%%bin/oxdvi
-%%X11BITS%%%%XDVIK%%bin/oxdvi.bin
 bin/patgen
-bin/pdfeinitex
-bin/pdfelatex
-bin/pdfetex
-bin/pdfevirtex
-bin/pdfinitex
-bin/pdflatex
-bin/pdftex
-bin/pdftosrc
-bin/pdfvirtex
-bin/pfb2pfa
-bin/pk2bm
 bin/pktogf
 bin/pktype
 bin/pltotf
 bin/pooltype
-bin/ps2frag
+bin/tangle
+bin/tftopl
+bin/tie
+bin/ttf2afm
+bin/vftovp
+bin/vptovf
+bin/weave
+bin/dvilj
+bin/dvilj2p
+bin/dvilj4
+bin/dvilj4l
+bin/dvihp
+bin/dvilj6
+bin/ebb
+bin/dvipdfm
+bin/dvipdft
+bin/dvipng
+bin/dvigif
+bin/gsftopk
+bin/makeindex
+bin/mkindex
+bin/pfb2pfa
+bin/mag
+bin/pk2bm
 bin/ps2pk
+bin/allcm
+bin/allneeded
+bin/dvi2fax
+bin/dvired
+bin/fmtutil
+bin/fmtutil-sys
+bin/fontinst
+bin/kpsetool
+bin/kpsewhere
+bin/ps2frag
 bin/pslatex
-bin/readlink
 bin/rubibtex
 bin/rumakeindex
-%%XDVIK%%bin/t1mapper
-bin/tangle
-bin/tex
 bin/texconfig
+bin/texconfig-dialog
+bin/texconfig-sys
 bin/texdoc
 bin/texdoctk
 bin/texexec
+bin/texlinks
+bin/updmap
+bin/updmap-sys
+bin/ps4pdf
+bin/a2ping
+bin/e2pall
+bin/epstopdf
+bin/mptopdf
+bin/allec
+bin/kpsepath
+bin/kpsexpand
+bin/texhash
+bin/fdf2tan
+bin/fdf2tex
+bin/makempy
 bin/texfind
 bin/texfont
-bin/texhash
-bin/texi2dvi
-bin/texi2html
-bin/texi2pdf
-bin/texlinks
 bin/texshow
 bin/texutil
-bin/tftopl
 bin/thumbpdf
-bin/tie
-bin/ttf2afm
-bin/updmap
-bin/vftovp
-bin/virmf
-bin/virmpost
-bin/viromega
-bin/virtex
-bin/vptovf
-%%XDVIK%%bin/xdvi
-%%XDVIK%%bin/xdvi.bin
-%%XDVIK%%bin/xdvizilla
-bin/weave
+bin/pdfcrop
+bin/uniqleaf
+bin/mktexfmt
+bin/ofm2opl
+bin/opl2ofm
+bin/ovf2ovp
+bin/ovp2ovf
+bin/latex
+bin/etex
+bin/pdftex
+bin/pdflatex
+bin/lambda
+bin/lamed
+bin/texi2dvi
+bin/texi2pdf
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
@@ -189,99 +173,82 @@ include/kpathsea/variable.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
 lib/libkpathsea.a
-%%TEXMF%%/doc/tetex/TETEXDOC.dvi
-%%TEXMF%%/doc/tetex/TETEXDOC.pdf
-%%TEXMF%%/doc/tetex/TETEXDOC.ps
-%%TEXMF%%/doc/tetex/teTeX-FAQ
-%%TEXMF%%/dvips/gsftopk/render.ps
-%%TEXMF%%/texconfig/README
-%%TEXMF%%/texconfig/g/generic
-%%TEXMF%%/texconfig/generic
-%%TEXMF%%/texconfig/v/vt100
-%%TEXMF%%/texconfig/x/xterm
-%%TEXMF%%/web2c/etex-pl.pool
-%%TEXMF%%/web2c/etex.pool
-%%TEXMF%%/web2c/fmtutil.cnf
-%%TEXMF%%/web2c/mf.pool
-%%TEXMF%%/web2c/mktex.opt
-%%TEXMF%%/web2c/mktexdir
-%%TEXMF%%/web2c/mktexdir.opt
-%%TEXMF%%/web2c/mktexnam
-%%TEXMF%%/web2c/mktexnam.opt
-%%TEXMF%%/web2c/mktexupd
-%%TEXMF%%/web2c/mp.pool
-%%TEXMF%%/web2c/omega.pool
-%%TEXMF%%/web2c/pdfetex-pl.pool
-%%TEXMF%%/web2c/pdfetex.pool
-%%TEXMF%%/web2c/pdftex-pl.pool
-%%TEXMF%%/web2c/pdftex.pool
-%%TEXMF%%/web2c/tex-pl.pool
-%%TEXMF%%/web2c/tex.pool
-%%TEXMF%%/web2c/texmf.cnf
-%%TEXMFVAR%%/web2c/cont-en.log
-%%TEXMFVAR%%/web2c/cont-en.efmt
-%%TEXMFVAR%%/web2c/elatex.efmt
-%%TEXMFVAR%%/web2c/elatex.log
-%%TEXMFVAR%%/web2c/etex.efmt
-%%TEXMFVAR%%/web2c/etex.log
-%%TEXMFVAR%%/web2c/lambda.log
-%%TEXMFVAR%%/web2c/lambda.oft
-%%TEXMFVAR%%/web2c/latex.fmt
-%%TEXMFVAR%%/web2c/latex.log
-%%TEXMFVAR%%/web2c/metafun.log
-%%TEXMFVAR%%/web2c/metafun.mem
-%%TEXMFVAR%%/web2c/mf-nowin.base
-%%TEXMFVAR%%/web2c/mf.base
-%%TEXMFVAR%%/web2c/mf.log
-%%TEXMFVAR%%/web2c/mfw.base
-%%TEXMFVAR%%/web2c/mpost.log
-%%TEXMFVAR%%/web2c/mpost.mem
-%%TEXMFVAR%%/web2c/mptopdf.efmt
-%%TEXMFVAR%%/web2c/mptopdf.log
-%%TEXMFVAR%%/web2c/omega.log
-%%TEXMFVAR%%/web2c/omega.oft
-%%TEXMFVAR%%/web2c/pdfelatex.efmt
-%%TEXMFVAR%%/web2c/pdfelatex.log
-%%TEXMFVAR%%/web2c/pdfetex.efmt
-%%TEXMFVAR%%/web2c/pdfetex.log
-%%TEXMFVAR%%/web2c/pdflatex.fmt
-%%TEXMFVAR%%/web2c/pdflatex.log
-%%TEXMFVAR%%/web2c/pdftex.fmt
-%%TEXMFVAR%%/web2c/pdftex.log
-%%TEXMFVAR%%/web2c/plain.base
-%%TEXMFVAR%%/web2c/plain.fmt
-%%TEXMFVAR%%/web2c/plain.mem
-%%TEXMFVAR%%/web2c/tex.fmt
-%%TEXMFVAR%%/web2c/tex.log
-%%XDVIK%%%%TEXMF%%/xdvi/xdvi.cfg
-@exec mkdir -p %D/%%TEXMF%%/fonts/afm/hoekwater
-@exec mkdir -p %D/%%TEXMF%%/fonts/bh
-@exec mkdir -p %D/%%TEXMF%%/fonts/bh/lucidabr
-@exec mkdir -p %D/%%TEXMF%%/fonts/bh/lumath
-@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/public/ommincho
-@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc
-@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/gothic
-@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/myoungjo
-@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/taza
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/public/ommincho
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/gothic
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/myoungjo
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/taza
-@exec mkdir -p %D/%%TEXMF%%/fonts/ovp/public/ommincho
-@exec mkdir -p %D/%%TEXMF%%/fonts/pk
-@exec mkdir -p %D/%%TEXMF%%/fonts/tfm/monotype
-@exec mkdir -p %D/%%TEXMF%%/fonts/vf/monotype
-@exec mkdir -p %D/%%TEXMF%%/omega/generic
-@exec mkdir -p %D/%%TEXMF%%/omega/generic/config
-@exec mkdir -p %D/%%TEXMF%%/omega/ocp/omegajapanese
-@exec mkdir -p %D/%%TEXMF%%/omega/otp/omega-j
-@exec mkdir -p %D/%%TEXMF%%/omega/otp/omegajapanese
-@exec mkdir -p %D/%%TEXMF%%/xdvi
+%%TEXMFDIR%%/web2c/mktex.opt
+%%TEXMFDIR%%/web2c/mktexdir
+%%TEXMFDIR%%/web2c/mktexdir.opt
+%%TEXMFDIR%%/web2c/mktexnam
+%%TEXMFDIR%%/web2c/mktexnam.opt
+%%TEXMFDIR%%/web2c/mktexupd
+%%TEXMFDIR%%/web2c/texmf.cnf
+%%TEXMFDIR%%/web2c/omega.pool
+%%TEXMFDIR%%/web2c/aleph.pool
+%%TEXMFDIR%%/web2c/pdfetex.pool
+%%TEXMFDIR%%/web2c/pdfxtex.pool
+%%TEXMFDIR%%/web2c/tex.pool
+%%TEXMFDIR%%/web2c/mf.pool
+%%TEXMFDIR%%/web2c/mp.pool
+%%TEXMFDIR%%/web2c/fmtutil.cnf
+%%TEXMFDIR%%/web2c/pdfetex-pl.pool
+%%TEXMFDIR%%/dvips/gsftopk/render.ps
+%%TEXMFDIR%%/doc/tetex/TETEXDOC.pdf
+%%TEXMFDIR%%/doc/tetex/TETEXDOC.ps
+%%TEXMFDIR%%/doc/tetex/TETEXDOC.dvi
+%%TEXMFDIR%%/doc/tetex/teTeX-FAQ
+%%TEXMFDIR%%/texconfig/g/generic
+%%TEXMFDIR%%/texconfig/v/vt100
+%%TEXMFDIR%%/texconfig/x/xterm
+%%TEXMFDIR%%/texconfig/README
+%%TEXMFDIR%%/texconfig/generic
+%%TEXMFDIR%%/texconfig/tcfmgr
+%%TEXMFDIR%%/texconfig/tcfmgr.map
+%%TEXMFDIR%%/release-tetex-src.txt
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/download35.map
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/builtin35.map
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_t1.map
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_pk.map
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/ps2pk.map
+%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts.map
+%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_dl14.map
+%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_ndl14.map
+%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex.map
+%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_dl14.map
+%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
+%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/aleph.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/cont-en.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/etex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/lambda.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/lamed.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/latex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/metafun.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mf.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mpost.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mptopdf.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/omega.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdfetex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdflatex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdftex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/tex.log
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/aleph.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/cont-en.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/etex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/lambda.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/lamed.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/latex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mptopdf.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/omega.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdfetex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdflatex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/pdftex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/tex.fmt
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/metafun.mem
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mpost.mem
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mf.base
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/updmap.log
 @dirrm include/kpathsea
-@dirrm %%TEXMF%%/texconfig/x
-@dirrm %%TEXMF%%/texconfig/v
-@dirrm %%TEXMF%%/texconfig/g
-@dirrm %%TEXMF%%/texconfig
-@dirrm %%TEXMF%%/dvips/gsftopk
+@dirrm %%TEXMFDIR%%/texconfig/x
+@dirrm %%TEXMFDIR%%/texconfig/v
+@dirrm %%TEXMFDIR%%/texconfig/g
+@dirrm %%TEXMFDIR%%/texconfig
+@dirrm %%TEXMFDIR%%/dvips/gsftopk
 @exec %%MKTEXLSR%%

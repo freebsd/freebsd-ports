@@ -1,40 +1,5 @@
---- libs/xpdf/xpdf/Catalog.cc.orig	Mon Nov  4 07:15:36 2002
-+++ libs/xpdf/xpdf/Catalog.cc	Fri Oct 29 09:18:17 2004
-@@ -22,6 +22,7 @@
- #include "Error.h"
- #include "Link.h"
- #include "Catalog.h"
-+#include <limits.h>
- 
- //------------------------------------------------------------------------
- // Catalog
-@@ -63,6 +64,12 @@
-   }
-   pagesSize = numPages0 = obj.getInt();
-   obj.free();
-+  if ((pagesSize >= INT_MAX / sizeof(Page *)) ||
-+      (pagesSize >= INT_MAX / sizeof(Ref))) {
-+    error(-1, "Invalid 'pagesSize'");
-+    ok = gFalse;
-+    return;
-+  }
-   pages = (Page **)gmalloc(pagesSize * sizeof(Page *));
-   pageRefs = (Ref *)gmalloc(pagesSize * sizeof(Ref));
-   for (i = 0; i < pagesSize; ++i) {
-@@ -190,6 +197,11 @@
-       }
-       if (start >= pagesSize) {
- 	pagesSize += 32;
-+	if ((pagesSize >= INT_MAX/sizeof(Page *)) ||
-+	    (pagesSize >= INT_MAX/sizeof(Ref))) {
-+	  error(-1, "Invalid 'pagesSize' parameter.");
-+	  goto err3;
-+	}
- 	pages = (Page **)grealloc(pages, pagesSize * sizeof(Page *));
- 	pageRefs = (Ref *)grealloc(pageRefs, pagesSize * sizeof(Ref));
- 	for (j = pagesSize - 32; j < pagesSize; ++j) {
---- libs/xpdf/xpdf/XRef.cc.orig	Mon Nov  4 07:15:37 2002
-+++ libs/xpdf/xpdf/XRef.cc	Fri Oct 29 09:18:17 2004
+--- libs/xpdf/xpdf/XRef.cc.orig	Thu Jan  6 10:31:51 2005
++++ libs/xpdf/xpdf/XRef.cc	Thu Jan  6 10:30:39 2005
 @@ -28,6 +28,7 @@
  #include "Error.h"
  #include "ErrorCodes.h"
@@ -43,48 +8,47 @@
  
  //------------------------------------------------------------------------
  
-@@ -76,6 +77,11 @@
- 
-   // trailer is ok - read the xref table
-   } else {
-+    if ( size >= INT_MAX/sizeof(XRefEntry)) {
-+      error(-1, "Invalid 'size' inside xref table.");
-+      ok = gFalse;
-+      return;
-+    }
-     entries = (XRefEntry *)gmalloc(size * sizeof(XRefEntry));
-     for (i = 0; i < size; ++i) {
-       entries[i].offset = 0xffffffff;
-@@ -267,6 +273,10 @@
-     // table size
-     if (first + n > size) {
-       newSize = size + 256;
-+      if (newSize >= INT_MAX/sizeof(XRefEntry)) {
-+	error(-1, "Invalid 'newSize'");
-+	goto err2;
+@@ -388,6 +389,10 @@
+       if (newSize < 0) {
+ 	goto err1;
+       }
++      if ( newSize >= INT_MAX/sizeof(XRefEntry)) {
++        error(-1, "Invalid 'newSize' inside xref table.");
++	goto err1;
 +      }
        entries = (XRefEntry *)grealloc(entries, newSize * sizeof(XRefEntry));
        for (i = size; i < newSize; ++i) {
  	entries[i].offset = 0xffffffff;
-@@ -410,6 +420,10 @@
- 	    if (!strncmp(p, "obj", 3)) {
- 	      if (num >= size) {
- 		newSize = (num + 1 + 255) & ~255;
-+		if (newSize >= INT_MAX / sizeof(XRefEntry)) {
-+		  error(-1, "Invalid 'obj' parameters.");
-+		  return gFalse;
-+		}
- 		entries = (XRefEntry *)
- 		            grealloc(entries, newSize * sizeof(XRefEntry));
- 		for (i = size; i < newSize; ++i) {
-@@ -431,6 +445,10 @@
+@@ -492,6 +497,10 @@
+   if (newSize < 0) {
+     goto err1;
+   }
++  if (newSize >= INT_MAX/sizeof(XRefEntry)) {
++    error(-1, "Invalid 'newSize'");
++    goto err1;
++  }
+   if (newSize > size) {
+     entries = (XRefEntry *)grealloc(entries, newSize * sizeof(XRefEntry));
+     for (i = size; i < newSize; ++i) {
+@@ -583,6 +592,10 @@
+     if (newSize < 0) {
+       return gFalse;
+     }
++    if (newSize >= INT_MAX/sizeof(XRefEntry)) {
++      error(-1, "Invalid 'newSize'");
++      return gFalse;
++    }
+     entries = (XRefEntry *)grealloc(entries, newSize * sizeof(XRefEntry));
+     for (i = size; i < newSize; ++i) {
+       entries[i].offset = 0xffffffff;
+@@ -741,6 +754,10 @@
      } else if (!strncmp(p, "endstream", 9)) {
        if (streamEndsLen == streamEndsSize) {
  	streamEndsSize += 64;
 +  	if (streamEndsSize >= INT_MAX/sizeof(int)) {
 +  	  error(-1, "Invalid 'endstream' parameter.");
 +  	  return gFalse;
-+  	}
++	}
  	streamEnds = (Guint *)grealloc(streamEnds,
  				       streamEndsSize * sizeof(int));
        }

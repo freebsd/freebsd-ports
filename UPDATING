@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050206:
+  AFFECTS: users of print/teTeX and japanese/teTeX
+  AUTHOR: hrs@FreeBSD.org
+
+  print/teTeX is now based on a teTeX 3.0 release candidate
+  (2.99.13.20050204) and the other related ports are also updated.
+  Since upgrading from previous versions should be done at a time,
+  you may want to use the portupgrade utility or reinstall
+  print/teTeX after deinstalling all of the related ports.
+
+  If your teTeX environment became broken during the upgrade,
+  please see the following URL which explains how to fix it.
+
+  http://people.freebsd.org/~hrs/tetex-upgrade.txt
+
+  This file also includes notes for people who are familiar
+  with the teTeX distribution to explain structure of the ports.
+
 20050205:
   AFFECTS: users of lang/ruby16_r, lang/ruby18_r and lang/ruby18
   AUTHOR: knu@FreeBSD.org
