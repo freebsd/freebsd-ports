@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cache
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://savannah.nongnu.org/download/pupa/ruby-cache.pkg/${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
