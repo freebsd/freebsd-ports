@@ -4,6 +4,7 @@
     SUBDIR += aish
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += cn2jp
     SUBDIR += dumpasn1
     SUBDIR += fconv
     SUBDIR += i18ntools
