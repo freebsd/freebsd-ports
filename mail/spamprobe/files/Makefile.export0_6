@@ -1,0 +1,10 @@
+# $FreeBSD: /tmp/pcvs/ports/mail/spamprobe/files/Attic/Makefile.export0_6,v 1.1 2002-09-16 19:36:22 mdodd Exp $
+#
+PREFIX?=	/usr/local
+BINDIR=		${PREFIX}/bin
+NOMAN=
+PROG_CXX=	spamprobe-export_0.6
+CXXFLAGS=	-Wall -DUSE_DBM
+SRCS=		File.cc export0_6.cc
+
+.include <bsd.prog.mk>

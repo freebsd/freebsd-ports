@@ -1,0 +1,15 @@
+
+
+			*** WARNING ***
+
+If you are using a version of SpamProbe earlier than 0.7 the database
+format has changed!  You will need to rebuild your database.
+
+You may convert your database using the following command:
+
+		spamprobe-export_0.6 | spamprobe import
+
+			*** WARNING ***
+
+
+
