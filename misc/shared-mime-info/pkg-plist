@@ -1,0 +1,3 @@
+share/mime/mime-info/freedesktop-shared.mimeinfo
+@unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
+@unexec rmdir %D/share/mime 2>/dev/null || true
