@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libotf
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	print devel
-MASTER_SITES=	http://tsukuba.m17n.org/libotf/
+MASTER_SITES=	http://www.m17n.org/libotf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for handling OpenType fonts
@@ -17,9 +17,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XLIB=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-MAKE_ARGS=	AM_CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
