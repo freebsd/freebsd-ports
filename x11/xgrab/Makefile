@@ -15,6 +15,13 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
@@ -27,4 +34,4 @@ BROKEN=		"Requires an active X session (and DISPLAY variable) to run xrdb.  Plea
 
 MAN1=		xgrab.1 xgrabsc.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
