@@ -9442,6 +9442,7 @@ suck-cnews	ports/news/suck-cnews
 suckblow	ports/net/suckblow
 sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
+sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
 sup_port	ports/net/sup
 super		ports/security/super
