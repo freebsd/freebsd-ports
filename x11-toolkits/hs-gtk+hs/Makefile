@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk+hs
-PORTVERSION=	0.15.2
-PORTREVISION=	1
+PORTVERSION=	0.15.3
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/gtk/
 PKGNAMEPREFIX=	hs-
@@ -30,7 +29,6 @@ GHCMAJOR=	5
 GHC=		ghc-6.2.1
 GHCDEP=		ghc
 GHCMAJOR=	6
-EXTRA_PATCHES=	${PATCHDIR}/extra-ghc6-patch-gdk-GdkGC.chs
 .endif
 PKGNAMESUFFIX=	-${GHCDEP}
 
