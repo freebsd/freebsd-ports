@@ -1,6 +1,6 @@
---- ../product/util/makefile.mk.orig	Mon Dec 17 18:15:54 2001
-+++ ../product/util/makefile.mk	Sun Mar 10 23:18:09 2002
-@@ -117,6 +117,15 @@
+--- ../product/util/makefile.mk.orig	Wed Feb 27 12:32:19 2002
++++ ../product/util/makefile.mk	Mon Mar 11 14:10:27 2002
+@@ -115,6 +115,15 @@
  STLPORTLIBNAME=stlport_vc6.dll
  ADDITIONAL_DLLS= \
  	$(DESTDIRDLL)$/w9xucwrp.dll
@@ -16,7 +16,7 @@
  .ENDIF
  
  STLPORTDEST=$(DESTDIRDLL)$/$(STLPORTLIBNAME)
-@@ -373,8 +382,8 @@
+@@ -367,8 +376,8 @@
  	$(GNUCOPY) -p $(DLLOUT)$/$(@:f) $@
  
  $(DESTDIRDLL)$/%$(MY_VERSION_LINKPOSTFIX) : $(DESTDIRDLL)$/%$(MY_VERSION_DLLPOSTFIX) $(DIRLIST)
@@ -27,16 +27,16 @@
  
  
  #---------------------------------------------------------
-@@ -385,7 +394,7 @@
- 
- $(DESTDIRDLL)$/libstdc++.so.3 : $(DESTDIRDLL)$/libstdc++.so.3.0.1 $(DIRLIST)
- 	-rm -f $@
--	+ln -s libstdc++.so.3.0.1 $@
-+	+ln -fs libstdc++.so.3.0.1 $@
+@@ -379,7 +388,7 @@
+ #
+ #$(DESTDIRDLL)$/libstdc++.so.3 : $(DESTDIRDLL)$/libstdc++.so.3.0.1 $(DIRLIST)
+ #	-rm -f $@
+-#	+ln -s libstdc++.so.3.0.1 $@
++#	+ln -fs libstdc++.so.3.0.1 $@
  
  $(DESTDIRDLL)$/libgcc_s.so.1 : $(DLLOUT)$/libgcc_s.so.1 $(DIRLIST)
  	-rm -f $@
-@@ -393,7 +402,7 @@
+@@ -387,7 +396,7 @@
  
  $(DESTDIRDLL)$/libgcc_s.so : $(DESTDIRDLL)$/libgcc_s.so.1 $(DIRLIST)
  	-rm -f $@
