@@ -24,12 +24,17 @@ postgresql-plperl, postgresql-pltcl & postgresql-plruby
 
 etc etc...
 
+Note that many files have moved around compared to previous versions
+of PostgreSQL. For example, plpgsql.so and all other language modules
+are now in /usr/local/lib/postgresql.
+
 If you have many tables and many clients running, consider raising
-kern.maxfiles using sysctl(8).
+kern.maxfiles using sysctl(8), or reconfigure your kernel
+appropriately.
 
 You should vacuum and backup your database regularly. There is a
 periodic script, /usr/local/share/postgresql/502.pgsql, that you may
-use.
+find useful.
 
 To allow many simultaneous connections to your PostgreSQL server, you
 should raise the SystemV shared memory limits in your kernel. Here are

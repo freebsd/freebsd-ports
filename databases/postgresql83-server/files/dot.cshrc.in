@@ -1,6 +1,6 @@
-set path = ( %%PREFIX%%/%%PG_PREFIX%%bin $path )
+set path = ( %%PREFIX%%/bin $path )
 
-setenv PGLIB %%PREFIX%%/%%PG_PREFIX%%lib
+setenv PGLIB %%PREFIX%%/lib
 
 # note: PGDATA can be overridden by the -D startup option
 setenv PGDATA $HOME/data

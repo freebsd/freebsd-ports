@@ -6,9 +6,11 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.2
+PORTVERSION?=	7.2.1
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
+		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
+		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
@@ -39,8 +41,6 @@ MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
 ## The rest of this file is for normal base installation
 INSTALLS_SHLIB=	YES
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-locale --enable-syslog --with-CXX \
 		--docdir=${PREFIX}/share/doc --with-libdir=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include
@@ -62,13 +62,6 @@ LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "
-.endif
-
-.if defined(WITHOUT_SERVER)
-PKGMESSAGE=	${PKGDIR}/pkg-message.client
-PLIST_SUB+=	SERVER="@comment "
-.else
-PLIST_SUB+=	SERVER=""
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -113,6 +106,13 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+.if defined(WITHOUT_SERVER)
+PKGMESSAGE=	${PKGDIR}/pkg-message.client
+PLIST_SUB+=	SERVER="@comment "
+.else
+PLIST_SUB+=	SERVER=""
+.endif
+
 .if defined(WITHOUT_MULTIBYTE)
 PLIST_SUB+=	MULTIBYTE="@comment "
 .else
@@ -138,14 +138,15 @@ post-install:
 		${SED} "s|/usr/local|${PREFIX}|g" |\
 		tee ${PREFIX}/share/postgresql/post-install-notes
 .if !defined(DEBUG_FLAGS)
-.for file in ecpg pg_dump pg_id pg_passwd pg_restore postgres psql
-	@ strip ${PREFIX}/${PG_PREFIX}bin/${file}
+.for file in ecpg pg_dump pg_id pg_passwd pg_restore psql
+	@ strip ${PREFIX}/bin/${file}
 .endfor
 .endif
 .if !defined(WITHOUT_SERVER)
 # install shell defaults for pgsql user
+	@ strip ${PREFIX}/bin/postgres
 .for i in profile cshrc
-	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%PG_PREFIX%%|${PG_PREFIX}|g" \
+	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \
 		> ${PREFIX}/share/postgresql/dot.$i.dist; \
 	${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/; \
@@ -164,6 +165,16 @@ post-install:
 			${WRKSRC}/src/interfaces/odbc/odbc.sql \
 			${WRKSRC}/src/interfaces/odbc/odbc-drop.sql \
 			${PREFIX}/share/postgresql
+.else
+do-install:
+	@ cd ${WRKSRC}; \
+	${GMAKE} -C src/bin install ;\
+	${GMAKE} -C src/include install ;\
+	${GMAKE} -C src/interfaces install
+.if !defined(NOPORTDOCS)
+	@ cd ${WRKSRC}; \
+	${GMAKE} -C doc install
+.endif
 .endif
 
 post-clean:

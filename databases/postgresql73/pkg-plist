@@ -1,5 +1,5 @@
-bin/postmaster
-bin/postgres
+%%SERVER%%bin/postmaster
+%%SERVER%%bin/postgres
 bin/ecpg
 bin/initdb
 bin/initlocation
@@ -61,16 +61,16 @@ lib/libpgeasy.so.2
 lib/libpq++.so
 lib/libpq++.a
 lib/libpq++.so.4
-lib/postgresql/plpgsql.so
+%%SERVER%%lib/postgresql/plpgsql.so
 @unexec rmdir %D/lib/postgresql 2>/dev/null || true
 %%SERVER%%share/postgresql/502.pgsql
 %%SERVER%%share/postgresql/odbc.sql
 %%SERVER%%share/postgresql/odbc-drop.sql
-share/postgresql/postgres.bki
-share/postgresql/postgres.description
-share/postgresql/pg_hba.conf.sample
-share/postgresql/pg_ident.conf.sample
-share/postgresql/postgresql.conf.sample
+%%SERVER%%share/postgresql/postgres.bki
+%%SERVER%%share/postgresql/postgres.description
+%%SERVER%%share/postgresql/pg_hba.conf.sample
+%%SERVER%%share/postgresql/pg_ident.conf.sample
+%%SERVER%%share/postgresql/postgresql.conf.sample
 share/postgresql/post-install-notes
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
 %%PORTDOCS%%share/doc/postgresql/html/index.html
@@ -221,6 +221,7 @@ share/postgresql/post-install-notes
 %%PORTDOCS%%share/doc/postgresql/html/regress-evaluation.html
 %%PORTDOCS%%share/doc/postgresql/html/regress-platform.html
 %%PORTDOCS%%share/doc/postgresql/html/release.html
+%%PORTDOCS%%share/doc/postgresql/html/release-7-2.html
 %%PORTDOCS%%share/doc/postgresql/html/release-7-1-3.html
 %%PORTDOCS%%share/doc/postgresql/html/release-7-1-2.html
 %%PORTDOCS%%share/doc/postgresql/html/release-7-1-1.html
@@ -611,13 +612,12 @@ share/postgresql/post-install-notes
 %%PORTDOCS%%share/doc/postgresql/html/doc-build.html
 %%PORTDOCS%%share/doc/postgresql/html/doc-sources.html
 %%PORTDOCS%%share/doc/postgresql/html/setindex.html
-%%PORTDOCS%%share/doc/postgresql/html/ln8.html
 %%PORTDOCS%%share/doc/postgresql/html/ln25.html
 %%PORTDOCS%%share/doc/postgresql/html/ln650.html
-%%PORTDOCS%%share/doc/postgresql/html/ln13544.html
-%%PORTDOCS%%share/doc/postgresql/html/ln19341.html
-%%PORTDOCS%%share/doc/postgresql/html/ln31695.html
-%%PORTDOCS%%share/doc/postgresql/html/ln43726.html
+%%PORTDOCS%%share/doc/postgresql/html/ln13560.html
+%%PORTDOCS%%share/doc/postgresql/html/ln19374.html
+%%PORTDOCS%%share/doc/postgresql/html/ln31728.html
+%%PORTDOCS%%share/doc/postgresql/html/ln43811.html
 %%PORTDOCS%%share/doc/postgresql/html/catalogs.gif
 %%PORTDOCS%%share/doc/postgresql/html/connections.gif
 %%PORTDOCS%%share/doc/postgresql/html/stylesheet.css
