@@ -7,11 +7,21 @@
 
 PORTNAME=	enlightenment
 PORTVERSION= 	0.16.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
 		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
-		ftp://beaver.its.vu.edu.au/pub/enlightenment/
+		ftp://beaver.its.vu.edu.au/pub/enlightenment/ \
+		ftp://freebsd.sinica.edu.tw/pub/clive/
+#		${MASTER_SITE_LOCAL}
+#MASTER_SITE_SUBDIR=	vanilla
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Aqua.etheme \
+		BlueSteel.etheme.zh_TW.Big5 \
+		BrushedMetal-Tigert.etheme.zh_TW.Big5 \
+		ShinyMetal.etheme.zh_TW.Big5
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
@@ -30,6 +40,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
 MAN1=		enlightenment.1
+
+pre-build:
+.for i in Aqua.etheme BlueSteel.etheme.zh_TW.Big5 BrushedMetal-Tigert.etheme.zh_TW.Big5 ShinyMetal.etheme.zh_TW.Big5
+	${CP} ${DISTDIR}/$i ${WRKSRC}/src/themes
+.endfor
 
 post-install:
 	${CHOWN} -R root:wheel ${PREFIX}/share/enlightenment/themes
