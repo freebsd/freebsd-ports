@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- modules/extfs/Makefile.in	2002/02/16 16:49:13	1.1
++++ modules/extfs/Makefile.in	2002/02/16 16:52:26
+@@ -163,7 +163,7 @@
+ XML_REQUIRED = @XML_REQUIRED@
+ cxxflags_set = @cxxflags_set@
+ 
+-extfsdir = $(prefix)/lib/vfs/extfs
++extfsdir = $(prefix)/lib/vfs2/extfs
+ 
+ extfs_DATA =  	README
+ 

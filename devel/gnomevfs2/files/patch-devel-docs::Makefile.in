@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- devel-docs/Makefile.in	2002/02/16 16:44:53	1.1
++++ devel-docs/Makefile.in	2002/02/16 16:45:47
+@@ -168,7 +168,7 @@
+ TEXT_FILES =  	gnome-vfs-mime-type-handling.txt
+ 
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ doc_DATA = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

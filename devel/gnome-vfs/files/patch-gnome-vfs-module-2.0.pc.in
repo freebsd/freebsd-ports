@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- gnome-vfs-module-2.0.pc.in	2002/02/16 13:07:42	1.1
++++ gnome-vfs-module-2.0.pc.in	2002/02/16 13:07:51
+@@ -8,5 +8,5 @@
+ Description: The GNOME virtual file-system module include info
+ Version: @VERSION@
+ Requires: bonobo-activation-2.0,gthread-2.0,gmodule-2.0
+-Libs: -L${libdir} -lgnomevfs-2
++Libs: -L${libdir} -lgnomevfs-2 @PTHREAD_LIB@
+ Cflags: -I${includedir}/gnome-vfs-2.0 -I${includedir}/gnome-vfs-module-2.0 -I${libdir}/gnome-vfs-2.0/include
