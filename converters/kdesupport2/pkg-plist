@@ -1,7 +1,3 @@
-include/Pix.h
-include/QwCluster.h
-include/QwPublicList.h
-include/QwSpriteField.h
 include/mimelib/address.h
 include/mimelib/addrlist.h
 include/mimelib/binhex.h
@@ -36,8 +32,6 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
-lib/libQwSpriteField.la
-lib/libQwSpriteField.so.8
 lib/libmimelib.la
-lib/libmimelib.so.1
-include/mimelib
+lib/libmimelib.so.3
+@dirrm include/mimelib

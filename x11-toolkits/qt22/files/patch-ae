@@ -1,0 +1,18 @@
+--- configure	Mon Aug  7 19:31:32 2000
++++ configure.new	Mon Aug  7 22:25:11 2000
+@@ -49,6 +49,7 @@
+ MODULES=`$MAKE -f src/Makefile.in listallmodules`
+ 
+ # Free edition - may only be used under the terms of the QPL.
++if false; then
+ if [ -f LICENSE.QPL ]
+ then
+     Licensee=you
+@@ -164,6 +165,7 @@
+ 	echo
+ 	exit 0
+     fi
++fi
+ fi
+ 
+ # Remove the build options file
