@@ -1,0 +1,207 @@
+/*
+ * CSS for WiKicker
+ * $FreeBSD$
+ */
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    defaults
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+/*
+* {
+  border: 1px solid;
+}
+*/
+
+body {
+    margin: .5em 20px .1em 20px;
+    background-color: white;
+    color: black;
+}
+
+h1 {
+  text-align: left;
+  margin: 0em 0em 0em 0em;
+}
+
+h2 {
+  text-align: left;
+  border: #999 1px solid;
+  color: black;
+  background: #eee;
+  padding: .3em .5em .3em .5em;
+  clear: both;
+  margin-top: .1em;
+  margin-bottom: .1em;
+}
+
+h3 {
+  text-align: left;
+  border-bottom: solid 2px #999999;
+  clear: both;
+  margin-top: .1em;
+  margin-bottom: .1em;
+}
+
+
+hr {
+  clear: both;
+}
+
+pre {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-style:solid;
+  border-width: 1px;
+}
+
+table {
+  background: gray;
+}
+
+td {
+  margin: 1px;
+  padding: 5px;
+  background: white;
+}
+
+p {
+  line-height: 1.4;
+}
+
+li {
+  margin-bottom: 0.1em;
+  line-height: 1.4;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    with class
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+div.head-toolbar {
+  text-align: right;
+  font-size: small;
+}
+
+div.page-toolbar {
+  text-align: right;
+  font-size: small;
+}
+
+div.section-toolbar {
+  text-align: right;
+  font-size: x-small;
+  clear: both;
+  padding-bottom: 0px;
+  margin-bottom: .1em;
+}
+
+div.head-hierarchy {
+  font-size: small;
+  margin: 0em 0em 0.5em 0;
+}
+
+div.head-name {
+  border: #999 3px ridge;
+  color: black;
+  background: #eee;
+  padding: .5em .5em .2em .5em;
+  margin: .2em 0 0 0;
+}
+
+div.head-lastmodified {
+  text-align: right;
+  font-size: small;
+  font-style: italic;
+  margin: .5em 0em 0em 0em;
+}
+
+div.toc {
+  font-size: small;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+span.DanglingLink {
+  border-bottom: 1px blue dashed;
+  padding-bottom: 0px;
+}
+
+table.rlog {
+  border-style:solid;
+  border-width: 1px;
+}
+
+
+.preview {
+  padding: 20px;
+  background: #fcc;
+}
+
+.added {
+	color: blue;
+}
+.deleted {
+	color: red;
+}
+.same {
+	color: #666;
+}
+
+span.Sunday {
+  color: red;
+}
+
+span.Saturday {
+  color: blue;
+}
+
+img.left {
+  margin: 1em 1em 1em 0em;
+  float: left;
+}
+
+img.right {
+  float: right;
+  margin: 1em 0em 1em 1em;
+}
+
+div.toc li {
+  line-height: normal;
+}
+
+ol.changes li {
+  line-height: normal;
+}
+
+ul.index li {
+  line-height: normal;
+}
+
+div.trackback {
+  font-size: x-small;
+  border-style: dashed;
+  border-color: #999;
+  padding: 0.2em 1em 1em 1em;
+  border-width: 1px;
+  line-height: 1.2;
+}
+
+div.trackback dt {
+  margin-top: 0.5em;
+}
+
+div.trackbackpingurl {
+  margin-top: 1em;
+  font-size: x-small;
+  font-style: italic;
+  text-align: right;
+}
+
+a.auto {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}

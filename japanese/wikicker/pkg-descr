@@ -1,0 +1,14 @@
+WiKicker is WikiEngine implemented by a Perl language.
+
+WiKicker policy:
+     - Not losing being integrated
+     - The certification be unnecessary in writing
+     - Do reading / editing in a spread Web browser
+     - Safety
+                           (It works only in Japanese)
+
+           See http://www.naney.org/wiki/WiKicker.html
+
+Copyright (C) 2003 WATANABE Yoshimasa <naney@naney.org>
+
+WWW: http://www.naney.org/wiki/

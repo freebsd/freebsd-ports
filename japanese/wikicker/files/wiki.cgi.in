@@ -1,0 +1,8 @@
+#!/usr/bin/perl -w
+# $FreeBSD$
+use strict;
+#use lib qw(/usr/local/wikicker/.....);
+use CGI::Carp qw(fatalsToBrowser);
+use WiKicker::CGI::Controller;
+my $app = new WiKicker::CGI::Controller;
+$app->run;

@@ -1,0 +1,9 @@
+# $FreeBSD$
+# See .. http://www.naney.org/wiki/WiKicker/INSTALL.html
+wikicker.name: HOGEWiki
+wikicker.database.directory: /home/HOGE/var/wiki
+admin.name: HOGE
+admin.notify.email: HOGE@EXAMPLE.JP
+html.stylesheet: http://EXAMPLE.JP/~HOGE/wiki/wiki.css
+user.timezone: JST
+

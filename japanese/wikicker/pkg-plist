@@ -1,0 +1,5 @@
+%%SITE_PERL%%/WiKicker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WiKicker/.packlist
+bin/importyk2
+bin/wikicker-html-exporter
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WiKicker

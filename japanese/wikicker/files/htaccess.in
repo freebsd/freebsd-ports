@@ -1,0 +1,15 @@
+#
+# $FreeBSD$ 
+#
+
+Options -Indexes
+
+DirectoryIndex wiki.cgi
+
+<Files "*.properties">
+        deny from all
+</Files>
+
+<Files "var.*">
+        deny from all
+</Files>
