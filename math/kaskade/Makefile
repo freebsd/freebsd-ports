@@ -6,40 +6,32 @@
 #
 
 PORTNAME=	kaskade
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 DISTNAME=	${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400004
-MAKE_ENV+=	HAVE_G2C=yes
-.endif
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+GNU_CONFIGURE=	yes
 
 DIST_SUBDIR=	kaskade
-WRKSRC=		${WRKDIR}/3.1
-MAKEFILE=	makefile
-ALL_TARGET=	k6
+WRKSRC=		${WRKDIR}/3.2.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/k6 ${PREFIX}/bin
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/configure ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/kaskade
-	${INSTALL_DATA} ${WRKSRC}/*.cmd ${PREFIX}/share/examples/kaskade
-	${INSTALL_DATA} ${WRKSRC}/*.geo ${PREFIX}/share/examples/kaskade
-	${INSTALL_DATA} ${WRKSRC}/*.mat ${PREFIX}/share/examples/kaskade
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.cmd ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.ex ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.geo ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/kaskade.init ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.mat ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
