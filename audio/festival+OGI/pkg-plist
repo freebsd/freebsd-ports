@@ -122,6 +122,7 @@ share/festival/examples/make_utts
 share/festival/examples/dumpfeats
 share/festival/examples/durmeanstd
 @dirrm share/festival/lib/voices/spanish
+@dirrm share/festival/lib/voices/italian
 @dirrm share/festival/lib/voices/english
 @dirrm share/festival/lib/voices
 @dirrm share/festival/lib/dicts
