@@ -17,6 +17,7 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
 NOT_FOR_ARCHS=	amd64 sparc64 ia64 # cf. lang/gcc30
 
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-build
 
 MAN1=	gccxml.1
