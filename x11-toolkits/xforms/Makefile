@@ -10,9 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-release
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://savannah.nongnu.org/download/xforms/stable.pkg/1.0/
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
