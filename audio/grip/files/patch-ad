@@ -1,0 +1,15 @@
+--- grip.c.orig	Tue Apr 18 10:37:44 2000
++++ grip.c	Mon Sep  4 17:59:26 2000
+@@ -1279,6 +1279,12 @@
+     CDStat(cd_desc,&info,FALSE);
+ 
+     if(info.disc_present) {
++    /* FreeBSD CD ioctl CDIOREADTOCHEADER fails when old disk is ejected
++     * and a new disk one entered. Re-opening device fixes this.
++     */
++      CDCloseDevice(cd_desc);
++      cd_desc = CDInitDevice(cddevice);
++
+       CDStat(cd_desc,&info,TRUE);
+ 
+       Debug("CDStat found a disc, checking tracks\n");
