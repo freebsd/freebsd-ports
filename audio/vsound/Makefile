@@ -17,10 +17,16 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
 USE_LIBTOOL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on ia64 or amd64"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
