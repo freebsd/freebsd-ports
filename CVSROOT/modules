@@ -5138,6 +5138,7 @@ mapserver	ports/graphics/mapserver
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marbles		ports/games/marbles
+marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 masqmail	ports/mail/masqmail
