@@ -1,0 +1,12 @@
+bin/kworldwatch
+share/applnk/Utilities/KWorldWatch.kdelnk
+share/apps/kworldwatch/pics/flag-blue.xpm
+share/apps/kworldwatch/pics/flag-green.xpm
+share/apps/kworldwatch/pics/flag-red.xpm
+share/apps/kworldwatch/pics/flag-yellow.xpm
+share/apps/kworldwatch/pics/world.gif
+share/apps/kworldwatch/pics/world2.gif
+share/apps/kworldwatch/pics/world_dark.gif
+share/icons/kworldwatch.xpm
+share/icons/mini/kworldwatch.xpm
+@dirrm share/apps/kworldwatch/pics
