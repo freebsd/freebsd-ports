@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.114 1999/03/14 02:52:30 flathill Exp $
+# $Id: Makefile,v 1.115 1999/03/19 22:23:22 asami Exp $
 #
 
     SUBDIR += 4va
@@ -78,6 +78,7 @@
     SUBDIR += png
     SUBDIR += pnmtopng
     SUBDIR += povray
+    SUBDIR += povray31
     SUBDIR += ppm2fli
     SUBDIR += pstoedit
     SUBDIR += py-imaging
