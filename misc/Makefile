@@ -33,6 +33,7 @@
     SUBDIR += cave
     SUBDIR += cfe
     SUBDIR += cheatah
+    SUBDIR += chef
     SUBDIR += chord
     SUBDIR += cmatrix
     SUBDIR += colorls
