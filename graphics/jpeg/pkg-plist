@@ -16,3 +16,4 @@ include/jerror.h
 lib/libjpeg.so.6.0
 @exec /sbin/ldconfig -m %B
 lib/libjpeg.a
+@exec ranlib %D/%F
