@@ -19,25 +19,17 @@ MAKEFILE=	makefile
 MAN1=		hsftp.1
 PLIST_FILES=	bin/hsftp
 
-.if defined(WITH_OPENSSH)
-RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
-CONFIGURE_ARGS+=	--with-openssh
-.endif
+OPTIONS=	OPENSSH "Build with OpenSSH support" off
 
-pre-everything::
-.if !defined(WITH_OPENSSH)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you would like build hsftp with OpenSSH support"
-	@${ECHO_MSG} "you must set the variable WITH_OPENSSH"
-	@${ECHO_MSG}
-.else
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Building hsftp with OpenSSH support"
-	@${ECHO_MSG}
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSH)
+RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh
+CONFIGURE_ARGS+=	--with-openssh
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
