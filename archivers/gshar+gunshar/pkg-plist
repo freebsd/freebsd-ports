@@ -3,9 +3,3 @@ bin/gmailshar
 bin/gremsync
 bin/gshar
 bin/gunshar
-@unexec install-info --delete %D/info/sharutils.info %D/info/dir
-@unexec install-info --delete %D/info/remsync.info %D/info/dir
-info/sharutils.info
-info/remsync.info
-@exec install-info %D/info/sharutils.info %D/info/dir
-@exec install-info %D/info/remsync.info %D/info/dir

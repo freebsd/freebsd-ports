@@ -1,8 +1,5 @@
 @comment $FreeBSD$
 bin/gtar
-@unexec install-info --delete %D/info/tar.info %D/info/dir
-info/tar.info
-@exec install-info %D/info/tar.info %D/info/dir
 libexec/grmt
 share/locale/cs/LC_MESSAGES/tar.mo
 share/locale/da/LC_MESSAGES/tar.mo
