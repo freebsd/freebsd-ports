@@ -1,11 +1,34 @@
---- Imakefile.orig	Thu Jun  6 10:45:33 2002
-+++ Imakefile	Tue Jul 16 02:25:45 2002
-@@ -3,7 +3,7 @@
+--- Imakefile.orig	Tue Oct  1 19:51:51 2002
++++ Imakefile	Mon Oct  7 01:16:37 2002
+@@ -2,7 +2,7 @@
+ 
  /* Fairly important stuff */
  
- #define DoOptimize YES
 -#define OptimizationLevel -O4
 +#define OptimizationLevel -O
  #define DoWall NO
  
  #define BuildShared YES
+@@ -31,7 +31,7 @@
+ 
+ /* Out in the Tall Weeds */
+ 
+-#define InstallNonstandard YES
++#define InstallNonstandard NO
+ #define XFormsNonstandardInstallDir /usr/local
+ 
+ #define NonstandardXpm NO 
+@@ -44,10 +44,10 @@
+ #define TiffIncLoc /put/the/include/path/here
+ #define TiffLibLoc /put/the/library/path/here
+ 
+-#define NonstandardJpeg NO
++#define NonstandardJpeg YES
+ 
+-#define JpegIncLoc /put/the/include/path/here
+-#define JpegLibLoc /put/the/library/path/here
++#define JpegIncLoc $(LOCALBASE)/include
++#define JpegLibLoc $(LOCALBASE)/lib
+ 
+ ######################################################################
+ #                                                                    #

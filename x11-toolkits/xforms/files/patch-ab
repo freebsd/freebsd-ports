@@ -1,5 +1,5 @@
---- fdesign/Imakefile.orig	Fri Jun 28 02:23:08 2002
-+++ fdesign/Imakefile	Fri Jun 28 02:23:51 2002
+--- fdesign/Imakefile.orig	Sun Oct  6 23:19:19 2002
++++ fdesign/Imakefile	Sun Oct  6 23:20:13 2002
 @@ -78,6 +78,8 @@
  INCDIR		= XFormsNonstandardInstallDir/include
  #endif
@@ -9,9 +9,19 @@
  EXTRA_INCLUDES  = \
  		  $(SNPINC) \
  		  -I$(BUILDINCDIR) \
---- demos/Imakefile.orig	Fri Jun 28 02:26:52 2002
-+++ demos/Imakefile	Fri Jun 28 02:27:23 2002
-@@ -137,6 +137,8 @@
+--- demos/Imakefile.orig	Fri Sep 27 16:11:45 2002
++++ demos/Imakefile	Mon Oct  7 01:27:39 2002
+@@ -97,6 +97,9 @@
+ DEPOBJS		= $(DEPSRCS:.c=.o)
+ PROGRAMS	= $(DEMOSRCS:.c=)
+ 
++JPEGLIBLOC	= JpegLibLoc
++JPEGLIB		= -L$(JPEGLIBLOC) -ljpeg
++
+ #if Solaris64Bit
+ LDPRELIB	= -L/usr/openwin/lib/sparcv9 -L/usr/local/lib/sparcv9
+ CCENVSETUP	= LD_RUN_PATH=/usr/openwin/lib/sparcv9
+@@ -125,6 +128,8 @@
  DEPSNPLIB	= $(SNPLIBDIR)/libformssnp.a
  #endif
  
@@ -20,3 +30,12 @@
  EXTRA_INCLUDES  = \
  		  $(SNPINC) \
  		  -I$(BUILDINCDIR) \
+@@ -143,7 +148,7 @@
+ 		  $(XPMLIB) \
+ 		  $(SNPLIB) \
+ 		  $(UNSTATIC) \
+-		  $(JPEG) \
++		  $(JPEGLIB) \
+ 		  -lm
+ 
+ EXTRA_DEFINES	= 
