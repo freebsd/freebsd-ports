@@ -3565,6 +3565,7 @@ kcd		ports/misc/kcd
 kcpuload	ports/sysutils/kcpuload
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
+kde-lite	ports/x11/kde-lite
 kde3		ports/x11/kde3
 kde3-i18n	ports/misc/kde3-i18n
 kde3-i18n-af	ports/misc/kde3-i18n-af
