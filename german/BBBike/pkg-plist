@@ -1,3 +1,4 @@
+bin/cmdbbbike
 BBBike/Ampelschaltung.pm
 BBBike/BBBikeAdvanced.pm
 BBBike/BBBikeAlarm.pm
