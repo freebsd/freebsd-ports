@@ -900,6 +900,7 @@ cfm		ports/x11-fm/cfm
 cfs		ports/security/cfs
 cftp		ports/ftp/cftp
 cfv		ports/security/cfv
+cg		ports/news/cg
 cgi-lib		ports/www/cgi-lib
 cgi-lib.pl	ports/www/cgi-lib.pl
 cgic		ports/www/cgic
