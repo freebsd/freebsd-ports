@@ -7207,6 +7207,7 @@ ppptraf		ports/net/ppptraf
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
 ppxp		ports/net/ppxp
+prayer		ports/mail/prayer
 prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
 prcs		ports/devel/prcs
