@@ -5,14 +5,15 @@ bin/gnutls-cli
 bin/gnutls-srpcrypt
 bin/gnutls-cli-debug
 include/gnutls/extra.h
+include/gnutls/compat4.h
 include/gnutls/openssl.h
 include/gnutls/gnutls.h
 @dirrm include/gnutls
-lib/libgnutls.so.6
+lib/libgnutls.so.7
 lib/libgnutls.so
 lib/libgnutls.la
 lib/libgnutls.a
-lib/libgnutls-extra.so.6
+lib/libgnutls-extra.so.7
 lib/libgnutls-extra.so
 lib/libgnutls-extra.la
 lib/libgnutls-extra.a
@@ -25,3 +26,15 @@ share/aclocal/libgnutls-extra.m4
 %%PORTDOCS%%share/doc/gnutls/gnutls-logo.ps
 %%PORTDOCS%%share/doc/gnutls/gnutls.ps
 %%PORTDOCS%%@dirrm share/doc/gnutls
+share/examples/gnutls/ex-alert.c
+share/examples/gnutls/ex-client-resume.c
+share/examples/gnutls/ex-client-srp.c
+share/examples/gnutls/ex-client1.c
+share/examples/gnutls/ex-client2.c
+share/examples/gnutls/ex-info.c
+share/examples/gnutls/ex-pgp-keyserver.c
+share/examples/gnutls/ex-rfc2818.c
+share/examples/gnutls/ex-serv-export.c
+share/examples/gnutls/ex-serv-pgp.c
+share/examples/gnutls/ex-serv-srp.c
+share/examples/gnutls/ex-serv1.c

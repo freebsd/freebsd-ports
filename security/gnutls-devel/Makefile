@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	0.5.11
+PORTVERSION=	0.6.0
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
+MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/ \
+	ftp://ftp.gnutls.org/pub/gnutls/ \
 	ftp://ftp.gnupg.org/pub/gcrypt/alpha/gnutls/ \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
 	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -20,13 +21,15 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 DOCS=		AUTHORS NEWS README THANKS
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.c ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
