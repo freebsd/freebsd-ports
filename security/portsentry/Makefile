@@ -1,22 +1,22 @@
 # New ports collection makefile for:	sentry
-# Version required:	0.90
+# Version required:	1.0
 # Date created:		3 January 1998
 # Whom:			chris@still.whet.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	portsentry-0.90
+DISTNAME=	portsentry-1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/tools/
 
-MAINTAINER=	chris@still.whet.org
+MAINTAINER=	dan@freebsddiary.org
 
 ALL_TARGET=	freebsd
 
 post-patch:
-	@/usr/bin/perl -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry.conf
-	@/usr/bin/perl -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry_config.h
+	@${PERL} -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry.conf
+	@${PERL} -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry_config.h
 
 do-install:
 .if !exists($(PREFIX)/etc/portsentry.conf)
