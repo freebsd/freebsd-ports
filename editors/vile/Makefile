@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.2j
+PORTVERSION=	9.2p
 DISTNAME=	vile-9.2
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.phred.org/pub/vile/ \
@@ -21,7 +21,13 @@ PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2g.patch.gz \
 		vile-9.2h.patch.gz \
 		vile-9.2i.patch.gz \
-		vile-9.2j.patch.gz
+		vile-9.2j.patch.gz \
+		vile-9.2k.patch.gz \
+		vile-9.2l.patch.gz \
+		vile-9.2m.patch.gz \
+		vile-9.2n.patch.gz \
+		vile-9.2o.patch.gz \
+		vile-9.2p.patch.gz
 
 EXTRACT_SUFX=	.tgz
 

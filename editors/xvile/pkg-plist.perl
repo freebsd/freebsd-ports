@@ -1,3 +1,4 @@
+bin/vileget
 bin/xvile
 bin/xvile-pager
 bin/xshell.sh
@@ -22,6 +23,7 @@ lib/xvile/vile-html-filt
 lib/xvile/vile-imake-filt
 lib/xvile/vile-latex-filt
 lib/xvile/vile-lex-filt
+lib/xvile/vile-lisp-filt
 lib/xvile/vile-m4-filt
 lib/xvile/vile-mail-filt
 lib/xvile/vile-make-filt
@@ -66,16 +68,19 @@ share/doc/xvile/vile-perl-api.doc
 @dirrm share/doc/xvile
 share/xvile/vile/perl/Vile/Exporter.pm
 share/xvile/vile/perl/Vile/Manual.pm
+share/xvile/vile/perl/Breadcrumbs.pm
 share/xvile/vile/perl/Glob2re.pm
 share/xvile/vile/perl/Vile.pm
 share/xvile/vile/perl/Vileserv.pm
 share/xvile/vile/perl/Visit.pm
 share/xvile/vile/perl/capture.pm
+share/xvile/vile/perl/dict.pm
 share/xvile/vile/perl/directory.pm
 share/xvile/vile/perl/dirlist.pm
 share/xvile/vile/perl/gdb.pm
 share/xvile/vile/perl/hgrep.pm
 share/xvile/vile/perl/lock.pm
+share/xvile/vile/perl/man.pm
 share/xvile/vile/perl/mime.pl
 share/xvile/vile/perl/plugins.pl
 share/xvile/vile/perl/search.pm
@@ -84,6 +89,7 @@ share/xvile/vile/perl/spell.pm
 share/xvile/vile/perl/winops.pm
 @unexec rm -f %D/share/xvile/vile/.vilemenu
 share/xvile/vile/color-ls.rc
+share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
 share/xvile/vile/manpage.rc
 share/xvile/vile/palettes.rc
@@ -142,10 +148,13 @@ share/xvile/vile/ti.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/macros/color-ls.rc
+share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
+share/xvile/macros/gnugpg.rc
 share/xvile/macros/manpage.rc
 share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
+share/xvile/macros/search.rc
 share/xvile/macros/shifts.rc
 share/xvile/macros/vileinit.rc
 share/xvile/macros/vilemenu.rc
