@@ -27,9 +27,9 @@ USE_GTK=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ggsd ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ggsd
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ggsd
-	${INSTALL_DATA} ${WRKSRC}/example.scr ${PREFIX}/share/doc/ggsd
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.scr ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

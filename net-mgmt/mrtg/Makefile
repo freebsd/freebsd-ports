@@ -35,16 +35,16 @@ do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
 		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pod
-		${MKDIR} -m 755 ${PREFIX}/share/mrtg
+		${MKDIR} -m 755 ${DATADIR}
 .if !defined(NOPORTDOCS)
-		${MKDIR} -m 755 ${PREFIX}/share/doc/mrtg
+		${MKDIR} -m 755 ${DOCSDIR}
 		for file in ANNOUNCE CHANGES COPYRIGHT MANIFEST README \
 			doc/*.html doc/*.pod doc/*.txt doc/*wml doc/*.png ; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/mrtg/; \
+			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
 		done
 .endif
 		${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${PREFIX}/etc/mrtg/mrtg.cfg.sample
-		${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/mrtg
+		${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}
 		${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/Pod/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pod

@@ -24,10 +24,10 @@ DOCFILES=	glpk_lr-1.1.1.ps.gz glpk_sm.ps.gz glpk_ug-1.1.1.ps.gz
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/glpk
+	@${MKDIR} ${DOCSDIR}
 	for file in ${DOCFILES} ; do \
-		${INSTALL_DATA} ${DISTDIR}/$$file ${PREFIX}/share/doc/glpk/ ; \
-		${GUNZIP_CMD} ${PREFIX}/share/doc/glpk/$$file ; \
+		${INSTALL_DATA} ${DISTDIR}/$$file ${DOCSDIR} ; \
+		${GUNZIP_CMD} ${DOCSDIR}/$$file ; \
 	done
 .endif
 

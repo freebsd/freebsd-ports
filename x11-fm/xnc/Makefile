@@ -35,8 +35,8 @@ MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/xnc
-		@${INSTALL_DATA} ${WRKSRC}/Docs/* ${PREFIX}/share/doc/xnc
+		@${MKDIR} ${DOCSDIR}
+		@${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
 .endif
 		@${CAT} ${PKGMESSAGE}
 
