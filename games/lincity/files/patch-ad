@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sun Feb 14 07:55:02 1999
++++ Imakefile	Tue Sep 12 02:35:21 2000
+@@ -15,4 +15,4 @@
+            OBJS = xmain.o xmouse.o xscreen.o xmps.o xtypeinit.o\
+                   xengine.o xtransport.o xmarket.o xhelp.o lcx11.o
+ 
+-ComplexProgramTarget(xlincity)
++ComplexProgramTargetNoMan(xlincity)
