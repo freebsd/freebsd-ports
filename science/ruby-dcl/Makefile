@@ -43,6 +43,12 @@ DEMODAT=	grph1/scpack/t810630.dat grph1/scpack/t811231.dat \
 		grph2/umpack/t811231.dat grph2/ximage/MEMO \
 		grph2/ximage/tomsclm.dat
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (Needs to link against shared libraries)"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
@@ -78,4 +84,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
