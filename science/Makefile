@@ -39,6 +39,7 @@
     SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += psi3
+    SUBDIR += py-scipy
     SUBDIR += ruby-dcl
     SUBDIR += ruby-dcl-gtk
     SUBDIR += ruby-gphys

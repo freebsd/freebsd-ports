@@ -1,0 +1,9 @@
+SciPy is an open source library of scientific tools for Python. SciPy
+supplements the popular Numeric module, gathering a variety of high level
+science and engineering modules together as a single package.
+
+SciPy includes modules for graphics and plotting, optimization, integration,
+special functions, signal and image processing, genetic algorithms, ODE
+solvers, and others.
+
+WWW: http://www.scipy.org/
