@@ -13,7 +13,8 @@ MASTER_SITES=	http://ddt.mirstyle.org/data/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	English-Korean Dictionary Client for GNOME2
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/atk.so:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/atk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
