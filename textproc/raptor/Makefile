@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.10
-PORTREVISION=	0
+PORTVERSION=	0.9.11
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -17,12 +16,11 @@ MASTER_SITE_SUBDIR=	librdf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xmlparse.1:${PORTSDIR}/www/libwww \
-		curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
+		xmlparse.1:${PORTSDIR}/www/libwww
 
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	glib20 gnomehack gnometarget libxml2
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
