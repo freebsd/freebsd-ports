@@ -7,7 +7,7 @@
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
 .elseif defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
