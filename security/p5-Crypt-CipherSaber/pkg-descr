@@ -1,0 +1,6 @@
+Crypt::CipherSaber is a Perl module providing an object oriented interface to
+CipherSaber-1 and CipherSaber-2 encryption.
+
+Author: chromatic <chromatic@wgz.org>
+
+--will
