@@ -1,14 +1,9 @@
-bin/simage-convert.scm
 bin/simage-config
 include/simage.h
-include/guilesimage.h
+lib/libsimage.a
 lib/libsimage.so
-lib/libsimage.so.22
-lib/libguilesimage.so
-lib/libguilesimage.so.0
-share/aclocal/simage.m4
-share/guile/coin/simage.scm
+lib/libsimage.so.26
 share/Coin/conf/simage-default.cfg
-@dirrm share/guile/coin
+share/aclocal/simage.m4
 @unexec rmdir %D/share/Coin/conf 2>/dev/null || true
 @unexec rmdir %D/share/Coin 2>/dev/null || true

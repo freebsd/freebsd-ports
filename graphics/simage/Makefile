@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	simage
-PORTVERSION=	1.2.2
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library with image format loaders and front-ends
 
-BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		png.5:${PORTSDIR}/graphics/png
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/" --with-ungif=${LOCALBASE} \
-		--with-jpeg --with-png --with-tiff --with-mpeg2enc
+CONFIGURE_ARGS=	--with-mpeg2enc
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/resize.c
 
 .include <bsd.port.mk>
