@@ -15,8 +15,6 @@ DISTNAME=       ${PORTNAME}-2.03pre1
 
 MAINTAINER=	ache@freebsd.org
 
-BROKEN=		"Configure fails"
-
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5=	yes
@@ -27,6 +25,10 @@ CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_htimage="" \
 		webmagick_cv_maptype=ncsa \
 		PERL=${PERL}
+
+.if !exists(${X11BASE}/bin/xlsfonts)
+WITHOUT_X11=	yes
+.endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ENV+=with_x=no
