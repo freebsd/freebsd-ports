@@ -23,16 +23,19 @@ RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 
+VFLIB_VERSION=  2.25.6
+
 do-extract:
-		@${RM} -rf ${WRKDIR}
-		@${MKDIR} ${WRKDIR}
-		@for file in ${DISTFILES}; do \
+		${RM} -rf ${WRKDIR}
+		${MKDIR} ${WRKDIR}
+		for file in ${DISTFILES}; do \
 			${CP} ${DISTDIR}/${DIST_SUBDIR}/$${file} ${WRKSRC}; \
 		done
 
 do-build:
-		@cd ${WRKSRC}; ${MV} ${DISTNAME} ${DISTNAME}.orig; \
-			${SED} -e 's;^#! */usr/bin/perl *;#!${PERL5};' \
+		cd ${WRKSRC}; ${MV} ${DISTNAME} ${DISTNAME}.orig; \
+			${SED}	-e 's;^#! */usr/bin/perl *;#!${PERL5};' \
+				-e 's;/share/VFlib/2.25.2/vfontcap;/share/VFlib/${VFLIB_VERSION}/vfontcap;' \
 				${DISTNAME}.orig > ${DISTNAME}
 
 do-install:
