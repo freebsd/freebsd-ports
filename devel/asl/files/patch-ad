@@ -1,0 +1,29 @@
+--- sysdefs.h.orig	Mon May 31 11:30:28 1999
++++ sysdefs.h	Mon May 31 11:34:47 1999
+@@ -514,6 +514,26 @@
+ #define LOCALE_NLS
+ #endif
+ 
++#ifdef __FreeBSD__
++#define ARCHSYSNAME "unknown-freebsd"
++#define DEFSMADE
++#define OPENRDMODE "r"
++#define OPENWRMODE "w"
++#define OPENUPMODE "r+"
++#define IEEEFLOAT
++typedef signed char Integ8;
++typedef unsigned char Card8;
++typedef signed short Integ16;
++typedef unsigned short Card16;
++#define HAS16
++typedef signed int Integ32;
++typedef unsigned int Card32;
++typedef signed long Integ64;
++typedef unsigned long Card64;
++#define HAS64
++#define NO_NLS
++#endif
++
+ #endif /* __alpha */
+ 
+ /*===========================================================================*/
