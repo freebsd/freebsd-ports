@@ -1,0 +1,17 @@
+LinkCheck is a free software package that checks a web site for bad links.
+
+Features
+Understands HTML 3.0
+Understands Frames
+Understands JavaScript
+Fast and lean, written in C. Source code is free
+Can check a whole web site
+Can be restricted to subdirectory checks
+Estimates download times for each page and flags slow pages
+Validates and reports temporarily moved pages and checks the new location
+Reports server types
+Reports html files last modification time
+Validates mailto hrefs for valid DNS MX record on the internet
+Validates ftp/file hrefs by getting actual file via ftp protocol
+Reports news:, telnet:, wais:, gopher, powwow: urls
+Automatically walks the entire web site tree
