@@ -79,26 +79,26 @@ SHELL=		/bin/sh
 #
 #          For RedHat Linux 5.1 (and other linuxes?) add -DHAVE_STRERROR
 #
-#	   For FreeBSD 4.2-STABLE, there seems to be a dependency
-#	   on bison.  Berkeley yacc was very problematic.
-CC=		cc
+#CC=
 LEX=    	flex
-YACC=   	bison -y -t
+YACC=   	yacc
 AR=		ar
 #
 #  Set the C-preprocessor.  Code for a small preprocessor is in
 #    uccp-0.7;  it gets installed as $(NABHOME)/bin/$(ARCH)/ucpp;
 #    this should generally *not* be changed.
+#  Changed 14 Feb 2003 to use the ucpp port (FreeBSD). MLD
 #
-#  Again, for FreeBSD 4.2-STABLE, I had problems using the system
-#    C-preprocessor.
+#  For FreeBSD 4.x, I had problems using the system C-preprocessor. MLD
 #
 CPP=    ucpp -l
 #
 #  Use these CFLAGS if AVS = 0
 #
-CFLAGS= -O -pipe
-OCFLAGS= -O -pipe
+# Pick up initial CFLAGS from /etc/make.conf instead of here
+# This is a Berkeley make- (pmake-)specific construct
+CFLAGS+=
+OCFLAGS= ${CFLAGS}
 NABFLAGS=
 #
 #  Use these CFLAGS if AVS = 1
