@@ -21,7 +21,7 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 # patches from the master port that brake this one are now allowed
 MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER=	yes
 
-MYSQL_PATCH_VERSION=	1.1.1
+MYSQL_PATCH_VERSION=	1.1.8
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
@@ -40,7 +40,7 @@ slaveport-post-patch: qmail-mysql-post-patch
 
 qmail-mysql-post-patch:
 	@${PERL} -pi -ne \
-		 "s|/usr/local/mysql/lib|${LOCALBASE}/lib|;s|/usr/local/mysql/include|${LOCALBASE}/include|;s|-lm|-lm -lz|" \
+		 's|/opt/mysql|${LOCALBASE}|' \
 			${WRKSRC}/Makefile
 
 # Local overrides
