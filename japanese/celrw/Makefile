@@ -11,6 +11,7 @@ CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
+COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 

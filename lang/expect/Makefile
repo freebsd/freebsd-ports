@@ -11,6 +11,7 @@ CATEGORIES=	lang tcl83 tk83
 MASTER_SITES=	http://expect.nist.gov/src/
 
 MAINTAINER=	jerry@thehutt.org
+COMMENT=	A sophisticated scripter based on tcl/tk
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83

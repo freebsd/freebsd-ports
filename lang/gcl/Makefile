@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/gcl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	twp@unchi.org
+COMMENT=	GNU Common Lisp
 
 BROKEN=		"Dies with sig11 during build"
 

@@ -11,6 +11,7 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA018758/archive/
 
 MAINTAINER=	ele@pop17.odn.ne.jp
+COMMENT=	A VZ like full-screen text editor with Japanese support
 
 WRKSRC=		${WRKDIR}/ne
 GNU_CONFIGURE=	yes

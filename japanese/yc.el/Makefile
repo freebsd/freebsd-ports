@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ceres.dti.ne.jp/~knak/
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	t@nakao.org
+COMMENT=	Yet another Canna client for Emacs/XEmacs
 
 EXTRACT_AFTER_ARGS=	> yc.el
 NO_WRKSUBDIR=	yes

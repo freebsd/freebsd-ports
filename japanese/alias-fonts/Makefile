@@ -11,6 +11,7 @@ CATEGORIES=	japanese x11-fonts
 DISTFILES=	# empty
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+COMMENT=	A meta-port which setups Japanese fonts
 
 RUN_DEPENDS=	\
 	${FONTSDIR}/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \

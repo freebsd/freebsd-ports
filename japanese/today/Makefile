@@ -14,6 +14,7 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 		td${PORTVERSION:S/.//}m.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
+COMMENT=	Tells you what day today is
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf

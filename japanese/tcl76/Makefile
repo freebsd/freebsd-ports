@@ -15,6 +15,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp-patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	Japanized Tcl (Tool Command Language)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOCONF=	yes

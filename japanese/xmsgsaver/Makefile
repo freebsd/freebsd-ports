@@ -11,6 +11,7 @@ CATEGORIES=	japanese misc
 MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 
 MAINTAINER=	cdr@ga.xdsl.ne.jp
+COMMENT=	An X11 screensaver using VFlib
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 

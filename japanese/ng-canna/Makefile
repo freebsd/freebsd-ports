@@ -8,14 +8,14 @@
 PKGNAMESUFFIX=	-canna
 
 MASTERDIR=	${.CURDIR}/../ng
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
-.include "${MASTERDIR}/Makefile"
-
 MAINTAINER=	honda@kashio.info.mie-u.ac.jp
+COMMENT=	A very lightweight Emacs-clone with Japanese and Canna support
+
+.include "${MASTERDIR}/Makefile"
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DCANNA" \
 		LIBS="-L${LOCALBASE}/lib -lcanna -ltermcap"

@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	yu@pastel.club.or.jp
+COMMENT=	A hexadecimal dump tool which handles Japanese
 
 MANLANG=	ja
 MAN1=		hex.1

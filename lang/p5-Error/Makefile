@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=Error
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pvh@wfeet.za.net
+COMMENT=	Perl module to provide Error/exception support for perl: Error
 
 PERL_CONFIGURE=	YES
 

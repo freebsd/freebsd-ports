@@ -13,6 +13,7 @@ MASTER_SITES=	http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	An implementation of new/posix awk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes

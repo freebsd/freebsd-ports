@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	c.rued@xsb.com
+COMMENT=	A tabled Logic Programming and Deductive Database system
 
 WRKSRC=		${WRKDIR}/XSB/build
 USE_GMAKE=	yes

@@ -15,6 +15,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${VERSION}-patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	Japanized TK (Tcl Tool Kit)
 
 LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
 DISTNAME=	se-${PORTVERSION}
 
 MAINTAINER=	berend@pobox.com
+COMMENT=	SmartEiffel, the GNU compiler for the object-oriented language Eiffel
 
 WRKSRC=		${WRKDIR}/SmartEiffel
 

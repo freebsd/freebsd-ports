@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	Japanized Tool Command Language, version 8.0
 
 VERSION=	${PORTVERSION:R}
 TOPDIR=		${WRKDIR}/${DISTNAME}

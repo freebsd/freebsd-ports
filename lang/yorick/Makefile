@@ -32,6 +32,7 @@ MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	munro1@llnl.gov
+COMMENT=	Interpreted language and scientific graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

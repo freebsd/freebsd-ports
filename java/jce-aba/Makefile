@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
 MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	greg@greg.rim.or.jp
+COMMENT=	Clean room implementation of the Java Cryptograph Extension (JCE) API
 
 USE_JAVA=	1.1+
 

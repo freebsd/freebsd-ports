@@ -14,6 +14,7 @@ DISTFILES=	kochi-mincho-0.2.${MINCHO_VER}.tar.bz2 \
 		kochi-gothic-0.2.${GOTHIC_VER}.tar.bz2
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
+COMMENT=	Free Japanese TrueType fonts named 'Kochi'
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
 
 MAINTAINER=	cjuniet@entreview.com
+COMMENT=	Japanese Handwriting recognition
 
 USE_X_PREFIX=	yes
 USE_XLIB=	yes

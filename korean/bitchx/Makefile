@@ -18,6 +18,7 @@ PATCHFILES=	bx-korean-aa.patch\
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	An alternative ircII color client support patched for korean
 
 WRKSRC=		${WRKDIR}/BitchX
 

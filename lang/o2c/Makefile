@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
 		http://www.breuninger.org/files/distfiles/
 
 MAINTAINER=	ob@breuninger.org
+COMMENT=	Oberon-2 compiler
 
 # does not support 64-bit platforms
 ONLY_FOR_ARCHS=	i386

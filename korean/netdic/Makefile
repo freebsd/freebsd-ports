@@ -13,6 +13,7 @@ DISTNAME=	netdic
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	rapzzard@rapzzard.pe.kr
+COMMENT=	A network English dictionary utility for Korean
 
 do-extract:
 	@${RM} -rf ${WRKDIR} && \

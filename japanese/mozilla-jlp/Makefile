@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}1.2-jajppack-kv0.4
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@luna2.org
+COMMENT=	Mozilla Japanese Language Pack (JLP)
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \

@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	junya-w@remus.dti.ne.jp
+COMMENT=	Tools for manipulating MSDOS files + support 1232KB , Unicode LFN
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xdf

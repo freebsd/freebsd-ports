@@ -14,6 +14,7 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	Support lib for Tensile/NSL
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes

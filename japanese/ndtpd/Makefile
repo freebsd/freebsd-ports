@@ -14,6 +14,7 @@ PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+COMMENT=	Server for accessing CD-ROM books with NDTP
 
 LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
 

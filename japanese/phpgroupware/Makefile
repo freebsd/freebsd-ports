@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PATCHFILE}
 
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
+COMMENT=	A web based GroupWare system
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

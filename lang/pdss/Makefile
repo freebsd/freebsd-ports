@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nin@Jp.FreeBSD.org
+COMMENT=	The KL1 programming environment on an ordinary UNIX system
 
 USE_REINPLACE=	YES
 

@@ -31,6 +31,7 @@ PATCHFILES=	${DISTNAME}-j1.04.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
+COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
 
 LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS+=	makejvf:${PORTSDIR}/japanese/makejvf

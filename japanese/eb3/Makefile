@@ -19,6 +19,7 @@ PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

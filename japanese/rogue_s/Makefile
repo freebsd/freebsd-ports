@@ -21,6 +21,7 @@ PATCH_SITE_SUBDIR=	knu
 PATCHFILES=	rogue_s.patch04
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	Japanized and message separated version of Rogue-clone: Version II
 
 BUILD_DEPENDS=  nkf:${PORTSDIR}/japanese/nkf
 

@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja
 DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
+COMMENT=	A free SMB and CIFS client and server for UNIX
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 

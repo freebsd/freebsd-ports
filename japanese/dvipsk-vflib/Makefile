@@ -20,6 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PKGNAMESUFFIX}-1.1alpha.patch.tgz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+COMMENT=	A DVI to PostScript translator + Japanese patch + vflib patch
 
 RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib

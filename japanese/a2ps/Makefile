@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=
 
 MAINTAINER=	saito@miv.t.u-tokyo.ac.jp
+COMMENT=	Text file to postscript converter (with Japanese support)
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

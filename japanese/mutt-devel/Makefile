@@ -21,6 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	mutt
 
 MAINTAINER=	iwashita@cqmail.net
+COMMENT=	Text-based mail client (Japanised development version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv

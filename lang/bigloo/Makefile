@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tacho@daemonz.org
+COMMENT=	A Scheme interpreter and native code compiler
 
 USE_GMAKE=	yes
 ALL_TARGET=

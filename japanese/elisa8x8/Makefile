@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.tea.forus.or.jp/toshi/exhibition/
 DISTNAME=	elisat10
 
 MAINTAINER=	toshi@tea.forus.or.jp
+COMMENT=	X11 8-dot kanji font 'elisa font'
 
 USE_X_PREFIX=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
 MAINTAINER=	honda@kashio.info.mie-u.ac.jp
+COMMENT=	An xterm replacement that supports pixmap background and Japanese
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${KPATHSEA_PARENT}${EXTRACT_SUFX}
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+COMMENT=	Index formatter for Japanese (EUC)
 
 USE_GMAKE=	yes
 DIST_SUBDIR=	ptex

@@ -21,6 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	mutt
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
+COMMENT=	Text-based mail client (Japanised Version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv

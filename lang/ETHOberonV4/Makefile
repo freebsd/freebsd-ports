@@ -13,6 +13,7 @@ DISTNAME=	ETHLinuxOberon
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhicks@glenatl.glenayre.com
+COMMENT=	Oberon-2/V4 from ETH (Linux emulation)
 
 BROKEN=		"Does not run"
 NO_CDROM=	licensing

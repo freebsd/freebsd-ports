@@ -22,6 +22,7 @@ DISTNAME=	jgnat-${PORTVERSION}-doc
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	Documentation for the JGNAT compiler
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-doc$//}/doc
 NO_BUILD=	yes

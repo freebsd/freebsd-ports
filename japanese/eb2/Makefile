@@ -21,6 +21,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/old/2.3/
 PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/engdic/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	An English dictionary utility for Korean
 
 ALL_TARGET=	clean all
 USE_REINPLACE=	yes

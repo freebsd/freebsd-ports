@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		web2c-7.2a.tar.gz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+COMMENT=	A DVI to DVI transformer
 
 RUN_DEPENDS=	${PREFIX}/share/fonts/vf-n2a:${PORTSDIR}/japanese/vftool
 

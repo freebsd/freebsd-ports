@@ -22,6 +22,7 @@ PKGNAMESUFFIX=	-${DOCFORMAT}
 DISTNAME=	gnat-${PORTVERSION}-docs
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	Documentation for the GNAT compiler
 
 WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-docs
 NO_BUILD=	yes

@@ -17,6 +17,7 @@ PATCHFILES=	l2h-2002-2-1+jp${JP_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ixtl@utmc.or.jp
+COMMENT=	Japanese LaTeX2HTML with JA patch
 
 RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-euc \
 		dvips:${PORTSDIR}/japanese/dvipsk-vflib \

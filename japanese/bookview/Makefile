@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+COMMENT=	NDTP client using Japanized Tcl/Tk
 
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 

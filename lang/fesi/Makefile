@@ -13,6 +13,7 @@ DISTNAME=	fesikit
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	Free EcmaScript Interpreter written in Java
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk11
 

@@ -13,6 +13,7 @@ CATEGORIES=	japanese print
 DISTFILES=	# none
 
 MAINTAINER=	inagaki@tg.rim.or.jp
+COMMENT=	English PK fonts, for ghostscripts, xdvik, dvipsk and so on
 
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}
 

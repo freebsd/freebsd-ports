@@ -24,6 +24,7 @@ DISTFILES=	${GNATNAME}.tgz:gnat \
 		gcc-2.8.1.tar.gz:gcc
 
 MAINTAINER=	eischen@vigrid.com
+COMMENT=	The GNU Ada Compiler system
 
 BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28
 

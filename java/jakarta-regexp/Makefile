@@ -10,6 +10,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/regexp/
 
 MAINTAINER=	dglo@ssec.wisc.edu
+COMMENT=	Regular expressions for Java
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
 

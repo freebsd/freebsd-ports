@@ -14,6 +14,7 @@ MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/2050/ \
 DISTNAME=	mplus_fonts_J-${PORTVERSION}
 
 MAINTAINER=	Ys@PixyGarden.net
+COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
 
 USE_X_PREFIX=	yes
 

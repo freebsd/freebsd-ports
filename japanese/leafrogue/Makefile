@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.lab3.kuis.kyoto-u.ac.jp/~roguelike/leaf/dl/
 DISTNAME=	lfrog${PORTVERSION:S/.//}
 
 MAINTAINER=	kaoru@kaisei.org
+COMMENT=	LeafRogue for message separated version of Rogue-clone
 
 RUN_DEPENDS=	rogue_s:${PORTSDIR}/japanese/rogue_s
 

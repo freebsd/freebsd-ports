@@ -11,6 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 
 MAINTAINER=	noway@nohow.demon.co.uk
+COMMENT=	JDBC connection pool
 
 USE_JAVA=	1.2+
 NO_BUILD=	yes

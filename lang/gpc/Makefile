@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://agnes.dida.physik.uni-essen.de/gnu-pascal/beta/
 DISTNAME=	gpc-19990118
 
 MAINTAINER=	antonz@library.ntu-kpi.kiev.ua
+COMMENT=	A free 32-bit Pascal compiler
 
 BROKEN=		"Does not package correctly"
 

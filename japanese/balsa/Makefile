@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.critical.ne.jp/pub/balsa-ja/
 DISTNAME=	balsa-0.8.0-ja
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
+COMMENT=	A mail reader for the gnome interface (Japanized)
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 

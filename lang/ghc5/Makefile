@@ -28,6 +28,7 @@ DISTFILES+=	${BOOT_DIST5}
 .endif
 
 MAINTAINER=	simonmar@microsoft.com
+COMMENT=	A Compiler for the functional language Haskell
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

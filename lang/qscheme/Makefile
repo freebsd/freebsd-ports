@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
 MAINTAINER=	erik@smluc.org
+COMMENT=	A small and fast Scheme interpreter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre

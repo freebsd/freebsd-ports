@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
 MAINTAINER=	daichi@ongs.gr.jp
+COMMENT=	Yet another Honyaku-Damashii client with rich functionality
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
 

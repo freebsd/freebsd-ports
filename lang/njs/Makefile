@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.bbassett.net/pub/njs/	\
 DISTNAME=	js-${PORTVERSION}
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

@@ -13,6 +13,7 @@ DISTNAME=	jsdk20-solaris2-sparc
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	greg@greg.rim.or.jp
+COMMENT=	Sun's Java Servlet Developers Kit
 
 USE_JAVA=	1.1+
 

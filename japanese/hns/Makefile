@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.h14m.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 MAINTAINER=	hnsmaster@h14m.org
+COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
 
 USE_PERL5=	yes
 NO_BUILD=	yes
