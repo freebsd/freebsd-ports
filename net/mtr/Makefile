@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.42
-PORTREVISION=	2
+PORTVERSION=	0.44
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://www.giovannelli.it/~gmarco/files/
+		ftp://ftp.netsw.org/net/ip/audit/packets/ \
+		ftp://ftp.gw.com/mirrors/pub/unix/mtr/
 
 MAINTAINER=	billf@FreeBSD.org
 
@@ -22,7 +22,7 @@ MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
+.if ${OSVERSION} >= 400014 && 0
 PATCHFILES=	mtr-042-v6-20010508.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
@@ -36,8 +36,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 USE_XLIB=	yes
 USE_GTK=	yes
 .else
-EXTRA_PATCHES= ${FILESDIR}/kill-gtk
-CONFIGURE_ARGS+=--with-gtk-prefix=/nopath
+CONFIGURE_ARGS+=--without-gtk
 .endif
 
 do-install:
