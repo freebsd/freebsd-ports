@@ -1,15 +1,16 @@
---- core/make/platforms.mk.orig	Thu May 27 01:59:29 1999
-+++ core/make/platforms.mk	Sun Jun 20 17:15:46 1999
+--- core/make/platforms.mk.orig	Sun Jul  4 07:46:04 1999
++++ core/make/platforms.mk	Thu Jul  8 18:23:35 1999
 @@ -2,10 +2,10 @@
  #
  
  ifeq (${OS},UNIX)
 -	CC=			gcc
+-	MAKE=			gmake
 +	CC?=			gcc
- 	MAKE=			gmake
- 	SHOWOFFCC_OPTS=		-Wall -Wshadow -Wpointer-arith -Wcast-qual -Waggregate-return
++	MAKE=			${GMAKE}
+ 	SHOWOFFCC_OPTS=		-Wall
 -	OPTCC_OPTS=		-O
-+	OPTCC_OPTS=		${CFLAGS}
- 	BASECC_OPTS=		-c -x ${LANG} -ggdb -DUNIX
- 	BASELINK_OPTS=		${LIBRARYPATH} -ggdb
++	OPTCC_OPTS=	 	${CFLAGS}	
+ 	BASECC_OPTS=		-c -DUNIX
+ 	BASELINK_OPTS=		${LIBRARYPATH}
  	MAKE_OPTS=		

@@ -1,7 +1,5 @@
-This program is a combination of screen and BNC.  It allows you to detach
-and reattach from an IRC session without actually disconnecting from IRC.
+TrickyIRC combines the functionality of screen and BNC, that is, it allows
+you to detach and reattach from an IRC session without actually
+disconnecting from the server.
 
----------------------------------
-- Trolld
-- troll@digitalspark.net
--
+WWW: http://www.leb.net/~troll/
