@@ -7716,6 +7716,7 @@ php4-shmop	ports/devel/php4-shmop
 php4-sybase	ports/databases/php4-sybase
 php4-sybase_ct	ports/databases/php4-sybase_ct
 php4-sysvmsg	ports/devel/php4-sysvmsg
+php4-sysvsem	ports/devel/php4-sysvsem
 php4-xml	ports/textproc/php4-xml
 php4-zlib	ports/archivers/php4-zlib
 php5		ports/lang/php5
