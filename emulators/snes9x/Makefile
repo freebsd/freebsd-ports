@@ -6,62 +6,38 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.lysator.liu.se/snes9x/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src-2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1-src
 
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/snes9x
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1-src/snes9x
 
 USE_X_PREFIX=	YES
+GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" CCC="${CXX} ${CXXFLAGS}" \
 		INCLUDES="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDLIBS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
-		THREAD_SOUND=1 NETPLAY=1 UNZIP=1
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-MAKE_ARGS+=	ZSNESFX=1 ZSNESC4=1 ASMCPU=1 NASM="nasm" I386SPC="i386/SPC.O"
+CONFIGURE_ARGS+=	--with-assembler
 .if defined(WITH_MMX)
-MAKE_ARGS+=	ASMKREED=1
+CONFIGURE_ARGS+=	--with-mmx
 .endif
 .endif
 
 .if exists(/usr/lib/libusbhid.a)
-JOYDEFINES=	-DJOYSTICK_SUPPORT
-SYSLIBS=	-lusbhid
+CONFIGURE_ARGS+=	--with-joystick
+.else
+CONFIGURE_ARGS+=	--without-joystick
 .endif
-
-do-configure:
-	@cd ${WRKSRC} && ${SED} \
-		's:@ZSNESFX@:: ; \
-		 s:@ZSNESC4@::g ; \
-		 s:@ASMCPU@::g ; \
-		 s:@SPC700ASM@::g ; \
-		 s:@GLIDE@::g ; \
-		 s:@OPENGL@::g ; \
-		 s:@AIDO@::g ; \
-		 s:@THREAD_SOUND@::g ; \
-		 s:@ASMKREED@::g ; \
-		 s:@I386SPC@:$${I386SPC}:g ; \
-		 s:@JOYDEFINES@:${JOYDEFINES}:g ; \
-		 s:@CXX@::g ; \
-		 s:@RTTIFLAG@::g ; \
-		 s:@CC@::g ; \
-		 s:@NASM@::g ; \
-		 s:@XINCLUDES@::g ; \
-		 s:@OPTIMIZE@::g ; \
-		 s:@CPUINC@::g ; \
-		 s:@SYSDEFINES@:-DZLIB:g ; \
-		 s:@SYSLIBS@:${SYSLIBS}:g ; \
-		 s: -lpthread::g ; \
-		 s: \.\./zlib/libz\.a::g' < Makefile.in > Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
