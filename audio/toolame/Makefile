@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	toolame
-PORTVERSION=	0.2i
+PORTVERSION=	0.2k
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,7 +45,11 @@ post-patch:
 		${WRKSRC}/Makefile
 .endif
 	@${REINPLACE_CMD} -E -e \
-		's@\$$\((ARCH|DMALLOCLIB|DMAL|OPTIM|WARNING)\)@@g' \
+		's@\$$\((ARCH|OPTIM|WARNINGS)\)@@g' \
+		${WRKSRC}/Makefile
+# we can't rely on existence of _sincos in gcc
+	@${REINPLACE_CMD} -E \
+		-e 's|-DSINCOS||' \
 		${WRKSRC}/Makefile
 
 post-configure:
