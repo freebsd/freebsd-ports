@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
-MAINTAINER=	freebsd-ports@freebsd.org
+MAINTAINER=	roam@freebsd.org
 
 USE_OPENSSL=	YES
 
