@@ -2403,6 +2403,7 @@ gliv		ports/graphics/gliv
 glload		ports/sysutils/glload
 glmaze		ports/games/glmaze
 global		ports/devel/global
+globus2		ports/misc/globus2
 glove		ports/math/glove
 glpk		ports/math/glpk
 glrparser	ports/devel/glrparser
