@@ -1,0 +1,14 @@
+Makedepend is a makefile dependency generator from The XFree86 Project, Inc. 
+If you have X installed, you already have makedepend and do not need this port!
+
+Makedepend reads each sourcefile in sequence and parses it like a 
+C-preprocessor, processing all #include, #define, #undef, #ifdef, #ifndef, 
+#endif, #if and #else directives so that it can correctly tell which #include, 
+directives would be used in a compilation. Any #include, directives can 
+reference files having other #include directives, and parsing will occur in 
+these files as well.
+
+Every file that a sourcefile includes, directly or indirectly, is what 
+makedepend calls a "dependency". These dependencies are then written to a 
+makefile in such a way that make will know which object files must be 
+recompiled when a dependency has changed.
