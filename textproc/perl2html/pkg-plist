@@ -1,0 +1,5 @@
+bin/perl2html
+share/doc/perl2html/AUTHORS
+share/doc/perl2html/NEWS
+share/doc/perl2html/README
+@dirrm share/doc/perl2html

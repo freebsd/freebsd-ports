@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed May 26 19:31:36 1999
++++ Makefile.in	Thu May 27 21:54:22 1999
+@@ -9,7 +9,7 @@
+ # for gzip because otherwise the load on the web server
+ # grows without having big benefits.
+ # COMPRESSION = -DCOMPRESSION=4
+-COMPRESSION = -DCOMPRESSION=1
++COMPRESSION ?= -DCOMPRESSION=1
+ 
+ # Dont change things beyond this line.
+ TARGET          = @PROJECT_NAME@
+@@ -40,7 +40,7 @@
+ srcdir          = @srcdir@
+ CPPFLAGS        = @CPPFLAGS@
+ 
+-CFLAGS += -O2 -Wall
++CFLAGS ?= -O2 -Wall
+ ALL_CFLAGS = $(CFLAGS) -I$(srcdir) $(COMPRESSION) 
+ 
+ all: $(TARGET)
