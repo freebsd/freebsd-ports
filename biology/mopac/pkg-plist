@@ -3,4 +3,13 @@ bin/rmopac
 share/doc/mopac/mopac.tex
 share/doc/mopac/mopac.dvi
 share/doc/mopac/h2o.dat
+share/doc/mopac/test_cos.dat
+share/doc/mopac/test_cos.out
+share/doc/mopac/test_ef_.dat
+share/doc/mopac/test_ef_.out
+share/doc/mopac/test_gre.dat
+share/doc/mopac/test_gre.end
+share/doc/mopac/test_gre.out
+share/doc/mopac/test_pol.dat
+share/doc/mopac/test_pol.out
 @dirrm share/doc/mopac

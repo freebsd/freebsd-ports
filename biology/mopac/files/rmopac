@@ -1,7 +1,6 @@
 #!/bin/csh -f
 #
 set job = $1
-set mopacdir = /usr/local/bin
 set smallmopac = MOPAC7
 #
 #  Check that prior copies of files do not exist
@@ -26,7 +25,7 @@ if -e core rm core
 if -e fort.2 rm fort.2
 if -e fort.16 rm fort.16
 #
-time $mopacdir/$smallmopac >> $job.log  
+time $smallmopac >> $job.log  
 #
 echo job $job is finished
 head -3 $job.dat

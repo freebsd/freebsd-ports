@@ -1,0 +1,25 @@
+*** sympro.f2	Sun Apr 18 21:32:48 1999
+--- sympro.f	Sun Apr 18 21:42:30 1999
+***************
+*** 170,179 ****
+     50 CONTINUE
+        IF (ALLINT) THEN
+          WRITE(6,210)ISYMT(1+NENT),(ITEMP(I),I=1,NVALUE-1)
+!  210  FORMAT(X,A10,I7,8I7)
+        ELSE
+          WRITE(6,220)ISYMT(1+NENT),ITEMP(1),(TEMP(I),I=2,NVALUE-1)
+!  220  FORMAT(X,A10,I7,8F7.3)
+        ENDIF
+        SIGMA = 1
+        IF (ITEMP(1) .LE. -3) SIGMA = -1
+--- 170,179 ----
+     50 CONTINUE
+        IF (ALLINT) THEN
+          WRITE(6,210)ISYMT(1+NENT),(ITEMP(I),I=1,NVALUE-1)
+!  210  FORMAT(1X,A10,I7,8I7)
+        ELSE
+          WRITE(6,220)ISYMT(1+NENT),ITEMP(1),(TEMP(I),I=2,NVALUE-1)
+!  220  FORMAT(1X,A10,I7,8F7.3)
+        ENDIF
+        SIGMA = 1
+        IF (ITEMP(1) .LE. -3) SIGMA = -1

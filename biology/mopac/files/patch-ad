@@ -1,7 +1,17 @@
-*** Makefile.2	Wed Apr 23 22:14:31 1997
---- Makefile	Wed Apr 23 22:16:32 1997
+*** Makefile.orig	Sun Apr 18 22:38:02 1999
+--- Makefile	Sun Apr 18 22:49:30 1999
 ***************
-*** 15,21 ****
+*** 8,13 ****
+--- 8,14 ----
+  #	make clean	Clean up disk to minimum config
+  #
+  FFLAGS	        = -O2 -w
++ LFLAGS		= -lf2c
+  HDRS		= SIZES
+  SRCS		:= $(shell ls *.f)
+  CSRCS           := $(shell ls *.c) 
+***************
+*** 15,28 ****
   SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
   SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
   MOPAC		= MOPAC7
@@ -9,7 +19,14 @@
   BINDIR		= /usr/local/bin
   OWNER		= root.bin
   
---- 15,21 ----
+  $(MOPAC):     	SIZES $(OBJS) 
+  		@echo -n "Loading $@ ... "
+! 		f77 -O $(OBJS) -o $@
+  		@echo "done"
+  
+  clean:
+  	 	$(RM) $(OBJS) *.trace core
+--- 16,31 ----
   SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
   SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
   MOPAC		= MOPAC7
@@ -17,11 +34,9 @@
   BINDIR		= /usr/local/bin
   OWNER		= root.bin
   
-***************
-*** 23,28 ****
---- 23,30 ----
+  $(MOPAC):     	SIZES $(OBJS) 
   		@echo -n "Loading $@ ... "
-  		f77 -O $(OBJS) -o $@
+! 		$(FC) -O $(OBJS) $(LFLAGS) -o $@
   		@echo "done"
 + 
 + all:          $(MOPAC)
