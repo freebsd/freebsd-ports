@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.chez.com/prigaux/ \
 MASTER_SITE_SUBDIR=	utils/file/hex
 EXTRACT_SUFX=		.src.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		obrien@FreeBSD.org
 
 USE_AUTOCONF=		yes
 

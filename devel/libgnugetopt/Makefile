@@ -10,7 +10,7 @@ DISTNAME=	libgnugetopt-1.1
 CATEGORIES=	devel
 MASTER_SITES= 	http://people.FreeBSD.org/~andy/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/getopt.h ${PREFIX}/include
