@@ -1,0 +1,7 @@
+gnuserv allows you to attach to an already running Emacs.  This allows
+external programs to make use of Emacs' editing capabilities.  It is
+like GNU Emacs' emacsserver/server.el, but has many more features.
+
+WWW: http://meltin.net/hacks/emacs/
+
+-- ported by Ilya Martynov <ilya@martynov.org>

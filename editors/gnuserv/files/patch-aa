@@ -1,0 +1,11 @@
+--- gnuserv.c~	Thu Jan 25 13:41:48 2001
++++ gnuserv.c	Sat Feb 10 18:00:44 2001
+@@ -790,7 +790,7 @@
+ 	     + strlen (server.sun_path) + 1);
+   server.sun_len = bindlen;
+ #else
+-  bindlen = strlen (server.sun_path) + sizeof (server.sun_family);
++  bindlen = strlen (server.sun_path) + 1 + sizeof (server.sun_family);
+ #endif
+ 
+   if (bind(ls,(struct sockaddr *)&server,bindlen) < 0)
