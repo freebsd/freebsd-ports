@@ -1,16 +1,15 @@
---- src/command.C.orig	Sun Sep  5 11:25:22 2004
-+++ src/command.C	Wed Oct 13 22:55:27 2004
-@@ -51,6 +51,9 @@
+--- src/command.C.orig	Wed Dec  1 01:41:39 2004
++++ src/command.C	Wed Dec  1 21:25:37 2004
+@@ -51,6 +51,8 @@
  #include "command.h"
  
  #include <wchar.h>
 +#include <sys/param.h>
 +#include <sys/types.h>
-+#include <signal.h>
+ #include <signal.h>
  
  /*----------------------------------------------------------------------*/
- 
-@@ -2697,7 +2700,9 @@
+@@ -2698,7 +2700,9 @@
        if (len == (size_t)-2)
          {
            // the mbstate stores incomplete sequences. didn't know this :/
@@ -20,7 +19,7 @@
            break;
          }
  
-@@ -4295,7 +4300,7 @@
+@@ -4296,7 +4300,7 @@
      {
        if (v_buflen == 0)
          {
@@ -29,7 +28,7 @@
  
            if ((unsigned int)written == len)
              return;
-@@ -4313,7 +4318,7 @@
+@@ -4314,7 +4318,7 @@
  
    for (;;)
      {
