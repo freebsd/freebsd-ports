@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	File and print server for AppleTalk networks
 
 .if !defined(WITHOUT_CNID)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
@@ -47,7 +47,7 @@ PLIST_SUB+=	NETATALKCNID="@comment "
 # This method of DID calculation is not persistent, but has been tested to
 # work with MacOS X (10.0.3-10.1.3) as well as MacOS 7-9.2.2.
 CONFIGURE_ARGS+=	--with-did=cnid \
-			--with-db3=${LOCALBASE}
+			--with-bdb=${LOCALBASE}
 PLIST_SUB+=	NETATALKCNID=""
 .endif
 .if defined (WITH_TIMELORD)
@@ -56,8 +56,12 @@ PLIST_SUB+=	TIMELORD=""
 .else
 PLIST_SUB+=	TIMELORD="@comment "
 .endif
+.if defined (WITH_MANGLING) && !defined (WITHOUT_CNID)
+# Enable long file name mangling support (requires CNID).
+CONFIGURE_ARGS+=	--with-mangling
+.endif
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=       --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
@@ -75,6 +79,18 @@ MAN4=		atalk.4
 MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
 		netatalk.conf.5 papd.conf.5
 MAN8=		afpd.8 atalkd.8 papd.8 papstatus.8 psf.8 timelord.8
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Netatalk has the following tunable options:"
+	@${ECHO_MSG} "		WITHOUT_CNID=yes	Turns off CNID persistent DID support"
+	@${ECHO_MSG} "		WITH_SRVLOC=yes		Enable Service Location Protocol support"
+	@${ECHO_MSG} "		WITH_PAM=yes		Enable PAM support"
+	@${ECHO_MSG} "		WITH_TIMELOARD=yes	Enable Timelord network time service"
+	@${ECHO_MSG} "		WITH_MANGLING=yes	Enable long file name mangling support (requires CNID)"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "See Netatalk's Makefile for more details on some of these options."
+	@${ECHO_MSG} ""
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/netatalk.sh \

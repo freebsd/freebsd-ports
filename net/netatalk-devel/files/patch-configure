@@ -1,20 +1,9 @@
---- configure.orig	Mon Nov 25 22:08:45 2002
-+++ configure	Sun Dec 15 16:59:28 2002
-@@ -1543,10 +1543,6 @@
- 
- # The aliases save the names the user supplied, while $host etc.
- # will get canonicalized.
--test -n "$target_alias" &&
--  test "$program_prefix$program_suffix$program_transform_name" = \
--    NONENONEs,x,x, &&
--  program_prefix=${target_alias}-
- am__api_version="1.4"
- # Find a good install program.  We prefer a C program (faster),
- # so one script is as good as another.  But avoid the broken or
-@@ -12252,13 +12248,13 @@
+--- configure.orig	Sun Feb 23 00:39:17 2003
++++ configure	Sun Feb 23 00:39:38 2003
+@@ -13066,13 +13066,13 @@
  			savedldflags="$LDFLAGS"
- 			CFLAGS="$CFLAGS -I$db3dir"
- 			LDFLAGS="-L$db3libdir $LDFLAGS"
+ 			CFLAGS="$CFLAGS -I$bdbdir"
+ 			LDFLAGS="-L$bdblibdir $LDFLAGS"
 -			echo "$as_me:$LINENO: checking for main in -ldb" >&5
 -echo $ECHO_N "checking for main in -ldb... $ECHO_C" >&6
 +			echo "$as_me:$LINENO: checking for main in -ldb3" >&5
@@ -27,13 +16,13 @@
 +LIBS="-ldb3  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
- #include "confdefs.h"
-@@ -12299,7 +12295,7 @@
+ /* confdefs.h.  */
+@@ -13118,7 +13118,7 @@
  
- 				db3found=yes
- 				DB3_CFLAGS="-I$db3dir"
--				DB3_LIBS="-L$db3libdir -ldb"
-+				DB3_LIBS="-L$db3libdir -ldb3"
- 				DB3_PATH="`echo $db3dir | sed 's,include/db3$,,'`"
+ 				bdbfound=yes
+ 				BDB_CFLAGS="-I$bdbdir"
+-				BDB_LIBS="-L$bdblibdir -ldb"
++				BDB_LIBS="-L$bdblibdir -ldb3"
+ 				BDB_BIN=$bdbbindir
+ 				BDB_PATH="`echo $bdbdir | sed 's,include/db3$,,'`"
  
- fi
