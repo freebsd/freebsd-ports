@@ -85,6 +85,7 @@
     SUBDIR += hypermail
     SUBDIR += indexme
     SUBDIR += jakarta-tomcat
+    SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetty
     SUBDIR += junkbuster
