@@ -1,6 +1,4 @@
 @cwd /usr/X11R6
-@comment this doesn't work on 2.0R
-@comment @pkgdep xpm
 @owner bin
 @group bin
 @mode 755

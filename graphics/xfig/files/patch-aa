@@ -1,21 +1,40 @@
-diff -u -r1.1 fig.h
---- 1.1	1995/01/25 19:48:10
-+++ fig.h	1995/01/25 19:58:44
-@@ -20,6 +20,7 @@
- /* For the X stuff, include only Xlib.h and Intrinsic.h here - 
-    use figx.h for widget stuff */
+--- Imakefile.orig	Thu Aug 17 20:24:24 1995
++++ Imakefile	Sun Sep 24 12:52:35 1995
+@@ -42,10 +42,10 @@
+ XCOMM You need XPM version 3.4c or newer.  This is available from ftp.x.org
+ XCOMM   in /contrib/libraries.
  
-+#include <sys/param.h>
- #include <sys/stat.h>
+-XCOMM XPMDEFINES = -DUSE_XPM -DUSE_XPM_ICON
+-XCOMM XPMLIBDIR = /usr/lib
+-XCOMM XPMINCDIR = /usr/include/X11
+-XCOMM XPMLIB = -L$(XPMLIBDIR) -lXpm
++XPMDEFINES = -DUSE_XPM -DUSE_XPM_ICON
++XPMLIBDIR = $(USRLIBDIR)
++XPMINCDIR = $(INCROOT)/X11
++XPMLIB = -L$(XPMLIBDIR) -lXpm
  
- #if defined(__convex__) && defined(__STDC__)
-@@ -41,7 +42,9 @@
+ XCOMM If you have installed the jpeg library on your system, uncomment the
+ XCOMM USEINSTALLEDJPEG variable, change the JPEGLIBDIR variable to the directory
+@@ -56,11 +56,11 @@
+ XCOMM set JPEGLIBDIR after the #else to the directory where you have the source
+ XCOMM for jpeg.
  
- extern int	errno;
- extern int	sys_nerr;
-+#if (! (defined(BSD) && (BSD >= 199306)))
- extern char    *sys_errlist[];
-+#endif
- extern char    *mktemp();
+-XCOMM #define USEINSTALLEDJPEG
++#define USEINSTALLEDJPEG
  
- #include <math.h>	/* for sin(), cos() etc */
+ #ifdef USEINSTALLEDJPEG
+ JPEGLIBDIR = /usr/local/lib
+-JPEGINCDIR = /usr/include/X11
++JPEGINCDIR = /usr/local/include
+ #else
+ JPEGLIBDIR = ../jpeg
+ JPEGINCDIR = $(JPEGLIBDIR)
+@@ -147,7 +147,7 @@
+ 
+ XCOMM *** You shouldn't have to change anything below this point. ***
+ 
+-DEFINES =             $(STRDEFINES) -DGSBIT $(XPMDEFINES)
++DEFINES =             $(STRDEFINES) $(XPMDEFINES)
+ 
+ XFIGSRC =	d_arc.c d_arcbox.c d_box.c d_ellipse.c d_picobj.c \
+ 		d_intspline.c d_line.c d_regpoly.c d_spline.c d_text.c \
